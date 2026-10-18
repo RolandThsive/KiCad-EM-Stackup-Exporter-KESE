@@ -126,7 +126,7 @@ the example boards has one). KESE reads, per layer:
 | `(thickness ...)`, `(type "core" / "prepreg")`, `(material ...)`, `(epsilon_r ...)`, `(loss_tangent ...)` of each `dielectric N` layer | one `Dielectric` per gap between copper layers | `Board.USE_STACKUP_EPSILON_R`, `Board.USE_STACKUP_LOSS_TANGENT` |
 | `(thickness ...)` of the first `*.Mask` layer that has one | the mask thickness, over laminate and over copper | `SolderMask.USE_STACKUP_MASK_THICKNESS` |
 | `(color ...)` of `F.Mask`, `B.Mask`, `F.SilkS`, `B.SilkS` | the colours in GLB, OBJ and the `look` of `materials.json`, and in STEP when `"mask"` / `"silk"` are added to `Run.STEP_WRITE_ROLES` | `Color.USE_STACKUP_COLORS` |
-| `(copper_finish "...")` | the finish type | `Finish.FINISH_TYPE = "file"` |
+| `(copper_finish "...")` | the finish type, when `Finish.FINISH_ENABLED = True` (off by default) | `Finish.FINISH_TYPE = "file"` |
 | `(edge_plating yes)`, `(castellated_pads yes)` | edge plating and castellations | `Copper.EDGE_PLATING = "file"`, `Copper.CASTELLATION = "file"` |
 
 A stack-up is **usable** when it has exactly one group of dielectric layers between every pair of

@@ -121,10 +121,17 @@ Points that matter:
 
 ## 21.3 Octave / MATLAB
 
-The same route exists with the Octave interface: `ImportSTL(CSX, 'Copper_GND', 20,
-'stl/Copper_GND.stl')` after `AddMetal(CSX, 'Copper_GND')`, and `AddMaterial` /
-`SetMaterialProperty(CSX, 'Board_dielectric_1', 'Epsilon', 4.5, 'Kappa', kappa)` for the
-dielectrics; read the property values from `materials.json` with `jsondecode`.
+The same route exists with the Octave interface. Each call returns the updated `CSX`, which
+must be assigned:
+
+```matlab
+CSX = AddMetal(CSX, 'Copper_GND');
+CSX = ImportSTL(CSX, 'Copper_GND', 20, 'stl/Copper_GND.stl');
+CSX = AddMaterial(CSX, 'Board_dielectric_1');
+CSX = SetMaterialProperty(CSX, 'Board_dielectric_1', 'Epsilon', 4.5, 'Kappa', kappa);
+```
+
+Read the property values from `materials.json` with `jsondecode`.
 
 ## 21.4 Checking The Import
 
