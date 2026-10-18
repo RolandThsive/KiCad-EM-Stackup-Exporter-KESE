@@ -32,6 +32,11 @@ Python · KiCad 6 To 10 · 1 To 6 Copper Layers · GLB, STEP, STL And OBJ · Fre
 > (35 µm copper, 10 µm solder mask), not to any fabricator's process. Set your fabricator's
 > numbers in `Parameters/` before trusting a simulation built on the output.
 
+> [!WARNING]
+> **Fill Your Zones Before Exporting.** KESE uses the zone fills KiCad stores in the board file.
+> A ground plane or copper pour that has not been filled (press **B** in KiCad) and saved is left
+> out entirely; `report.txt` counts it under "zones with no fill".
+
 - This is an open, non-commercial project. The source code is free to read, use, study and
   improve for non-commercial purposes.
 - **Commercial use requires a separate written license.** See [Licensing](#licensing).
@@ -42,9 +47,9 @@ Python · KiCad 6 To 10 · 1 To 6 Copper Layers · GLB, STEP, STL And OBJ · Fre
 
 The goal is a **one-step path from a KiCad board to a simulation-ready 3D model**: every
 dielectric, every net's copper and every via at its true height, with every copper solid named
-after its net (for example `Copper_GND`), ready to drop into an EM solver
-such as HFSS, CST, openEMS, FEKO or COMSOL, with no hand cleanup in CAD. The same board should also
-come out as a light, good-looking model for web viewers and renders.
+after its net (for example `Copper_GND`), ready to drop into an EM solver such as HFSS, CST,
+openEMS, FEKO or COMSOL, with no hand cleanup in CAD. The same board should also come out as a
+light, good-looking model for web viewers and renders.
 
 ---
 
@@ -56,16 +61,16 @@ dielectric as its own body with its own εr and tanδ, copper at its real thickn
 solid per net so ports and excitations can be assigned.
 
 KESE reads the `.kicad_pcb` file directly (KiCad itself does not need to be installed), rebuilds
-the stack-up layer by layer and writes it out in two modes:
+the stack-up layer by layer and writes it out in one of two modes:
 
-- **real**: the physical board as it leaves the factory. Every layer is a closed solid: each core
-  and prepreg, each net's copper with all its layers and vias joined, via and hole plating, solder
-  mask conformal over the copper, silkscreen, and optionally the surface finish.
-- **pretty**: only the visible surface of the same geometry, for web viewers such as
-  `<model-viewer>`. Surfaces only microns apart no longer fight in the depth buffer.
+- **simulation**: the physical board as it leaves the factory. Every layer is a closed solid: each
+  core and prepreg, each net's copper with all its layers and vias joined, via and hole plating,
+  solder mask conformal over the copper, silkscreen, and optionally the surface finish.
+- **visual**: only the visible surface of the same geometry, for web viewers such as
+  `<model-viewer>` and three.js. Surfaces only microns apart no longer fight in the depth buffer.
 
 Nothing is hard-coded: every number lives in `Parameters/`, and each output comes with a
-`parameters.txt` listing exactly what produced it.
+`parameters.txt` listing exactly what produced it, including every command-line override.
 
 ---
 
@@ -74,21 +79,24 @@ Nothing is hard-coded: every number lives in `Parameters/`, and each output come
 | Area | Capability |
 |---|---|
 | Input | `.kicad_pcb` from KiCad 6 to 10, 1 to 6 copper layers, stack-up read from Board Setup |
-| Copper | One solid per net (default), per layer, or all merged; through, blind, buried and micro vias; etch factor |
+| Copper | One solid per net (default), per layer, or all merged; through, blind and buried vias; etch trapezoid |
+| Edges | Castellated holes plated on the notch wall; edge plating joined to its net |
 | Dielectrics | One solid per core / prepreg with εr and tanδ, or the whole laminate as one solid |
-| Mask, Silk, Finish | Solder mask over laminate and copper, silkscreen in KiCad's own stroke font, ENIG / HASL and other finishes |
-| Output | GLB, STEP (one named exact solid per part), one STL per part, OBJ with `.mtl`, in mm or m |
+| Mask And Silk | Solder mask over laminate and copper; silkscreen in KiCad's own stroke font, clipped off the pads as fabricators do |
+| Finish | ENIG, ENEPIG, HASL, OSP, immersion tin and silver, hard gold; one part per metal, or per metal and net (off by default) |
+| Output | GLB, STEP with exact arcs (one named solid per part), one STL per part, OBJ with `.mtl`, in mm or m |
+| Presets | `--for hfss`, `cst`, `openems` or `viewer` set units, origin, grouping and formats in one go |
 | Records | `materials.json` per part (role, layer, net, z range, εr, tanδ, conductivity), `parameters.txt`, `report.txt` |
-| Checks | Opt-in verifier: closed solids, no overlaps, one visible surface, glTF validation |
-| Not Modelled | Component 3D models, text boxes, dimensions, edge plating, castellations, rigid-flex |
+| Checks | Opt-in verifier (closed solids, no overlaps, one visible surface, glTF validation) and a regression suite in `Tests/` |
+| Not Modelled | Component 3D models, text boxes, dimensions, images, rigid-flex |
 
-### What The Real Model Is Good For
+### What The Simulation Model Is Good For
 
-These uses rely on the real-mode output: per-net copper, dielectrics with εr and tanδ, plating
-and finish.
+These uses rely on the simulation-mode output: per-net copper, dielectrics with εr and tanδ,
+plating and finish.
 
 - **Full-wave EM.** S-parameters, impedance, crosstalk, antenna patterns and resonances. For an
-  inductive encoder stator like the example board, the TX/RX coil coupling and the
+  inductive encoder stator like the example boards, the TX/RX coil coupling and the
   position-dependent signal can be simulated instead of only measured.
 - **Signal Integrity.** Trace impedance and eye diagrams, where the exact copper thickness, the
   etch trapezoid and the prepreg-versus-core εr matter.
@@ -107,37 +115,41 @@ and finish.
 
 ## Examples
 
-The repository includes one example board in `Input/`: a 4-layer inductive encoder stator
-(50 mm outer radius, 4 loops, SIN, COS and TX coils). Exporting it in real mode takes about
-20 seconds and produces one solid per net and per dielectric:
+`Input/` holds two inductive encoder stators. Exported in simulation mode, each comes out as one
+solid per net and per dielectric:
 
-| Part | Triangles |
-|---|---|
-| `Copper_SIN_Signal` | 42,436 |
-| `Copper_COS_Signal` | 42,444 |
-| `Copper_TX` | 24,384 |
-| `Board_dielectric 1` to `3` (FR4 core, 0.51 mm each) | 57,220 |
-| `Top Solder Mask`, `Bottom Solder Mask` | 212,518 |
+| Board | Copper Parts | Dielectrics | Simulation GLB | Visual GLB |
+|---|---|---|---|---|
+| `Coil_30_50_4_1_3_Series_SteppedDiagonal_Stator` (4 layers, 53 vias) | `Copper_SIN_Signal`, `Copper_COS_Signal`, `Copper_TX` | 3 FR4 cores, 0.51 mm each | 15 MB | 10 MB |
+| `Stator` (2 layers, 13 vias) | `Copper_1`, `Copper_2`, `Copper_TX` | 1 FR4 core, 1.6 mm | 5.0 MB | 4.1 MB |
 
-The real-mode GLB is about 15 MB; the pretty-mode GLB of the same board is about 10 MB.
+Copper parts take the board's net names as they are, so the second board's unnamed nets `1` and
+`2` become `Copper_1` and `Copper_2`. Both boards also get a top and bottom solder mask part.
 
 ---
 
 ## Quick Start
 
 ```bash
-python -m pip install -r requirements.txt     # Python 3.10 or later; cadquery is only needed for STEP
+python -m pip install -r requirements.txt     # Python 3.12 or later; cadquery is only needed for STEP
 
-python run.py                                  # Every board in Input/, settings from Parameters/
-python run.py --format glb stl obj             # The default format is STEP
-python run.py Input/board.kicad_pcb --mode pretty
-python run.py board.kicad_pcb --verify         # Opt-in checks, results in report.txt
-python run.py board.kicad_pcb --set Copper.VIA_WALL_MM=0.02
+python run_KESE.py                                     # Every board in Input/, settings from Parameters/
+python run_KESE.py Input/Stator.kicad_pcb --for hfss   # STEP in mm with KiCad's origin, for HFSS
+python run_KESE.py --mode simulation --format glb stl obj
+python run_KESE.py --for viewer                        # Visual surface, GLB in metres, centred
+python run_KESE.py board.kicad_pcb --verify            # Opt-in checks, results in report.txt
+python run_KESE.py board.kicad_pcb --set Copper.VIA_WALL_MM=0.02
 ```
 
-Edit only the files in `Parameters/`, or override one value for a single run with `--set`. Each
-run writes to `Output/<board>/<mode>/`: the model files, `materials.json`, `parameters.txt` and
-`report.txt`, which lists the stack-up heights, what was read and what was skipped and why.
+With no options a run uses `Parameters/Run_Parameters.py`: simulation mode, GLB, metres, board
+centred at the origin. Run the commands from the project folder. Edit only the files in
+`Parameters/`, or override one value for a single run with `--set`. Each run writes to
+`Output/<board>/<mode>_<FORMATS>/`, numbered `__1`, `__2` and so on so no run overwrites another.
+The folder holds the model files, `materials.json`, `parameters.txt` and `report.txt`, which lists
+the stack-up heights, what was read and what was skipped and why.
+
+On Python 3.11, install the same packages without the version pins. With cadquery installed,
+`python -m pytest Tests` checks a change against the recorded results.
 
 ---
 
