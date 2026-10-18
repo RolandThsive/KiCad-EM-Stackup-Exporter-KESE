@@ -8,7 +8,7 @@ output needs `cadquery`, which needs Python 3.11 or later.
 
 ```bash
 git clone https://github.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE.git
-cd KiCad-EM-Stackup-Exporter-KESE-
+cd KiCad-EM-Stackup-Exporter-KESE
 python -m pip install -r requirements.txt
 ```
 
