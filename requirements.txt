@@ -1,0 +1,11 @@
+# Kicad_PCB__to__3D_Model - everything, including STEP output
+#   python -m pip install -r requirements.txt
+numpy
+scipy
+networkx
+shapely>=2.0
+trimesh>=4.0
+manifold3d
+mapbox_earcut
+rtree
+cadquery>=2.4
