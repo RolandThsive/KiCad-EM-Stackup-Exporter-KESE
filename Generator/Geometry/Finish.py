@@ -25,14 +25,16 @@ def build(b, ps):
         return
     ps.notes.append(f"finish: {kind} " + " + ".join(f"{m} {t} mm" for m, t in layers))
     for side, layer, sign, tb in (("F", "F.Cu", 1, "Top"), ("B", "B.Cu", -1, "Bottom")):
-        cu = b.copper_all.get(layer, sh.EMPTY)
-        exposed = sh.inter(cu, b.mask_open[side])
-        if exposed.is_empty:
-            continue
-        z = abs(st.band[layer][1] if sign > 0 else st.band[layer][0])
-        for metal, t in layers:
-            props = {"side": side, "metal": metal, "thickness_mm": t,
-                     "conductivity_S_per_m": F.FINISH_CONDUCTIVITY_S_PER_M.get(metal, 0.0)}
-            ps.add(f"{tb} Finish {metal}", "finish", exposed, sign * z, sign * (z + t),
-                   layer=f"{side}.Finish", props=props)
-            z += t
+        # one part per metal and side, or per metal and net (FINISH_GROUPING = "net")
+        groups = b.copper[layer].items() if F.FINISH_GROUPING == "net" else [(None, b.copper_all.get(layer, sh.EMPTY))]
+        for net, cu in groups:
+            exposed = sh.inter(cu, b.mask_open[side])
+            if exposed.is_empty:
+                continue
+            z = abs(st.band[layer][1] if sign > 0 else st.band[layer][0])
+            for metal, t in layers:
+                props = {"side": side, "metal": metal, "thickness_mm": t,
+                         "conductivity_S_per_m": F.FINISH_CONDUCTIVITY_S_PER_M.get(metal, 0.0)}
+                part = f"{tb} Finish {metal}" + (f"_{net}" if net is not None else "")
+                ps.add(part, "finish", exposed, sign * z, sign * (z + t), layer=f"{side}.Finish", net=net, props=props)
+                z += t

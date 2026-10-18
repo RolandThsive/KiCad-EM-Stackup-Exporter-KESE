@@ -106,7 +106,6 @@ class Breakdown:
     tent_default: dict = field(default_factory=dict)
     tent_source: str = ""
     mask_clearance: float = 0.0
-    subtract_mask_from_silk: bool = True
     # resolved (board frame, Y up, snapped)
     outline: object = None
     copper: dict = field(default_factory=dict)        # layer -> {net: region}
@@ -119,6 +118,9 @@ class Breakdown:
     silk: dict = field(default_factory=dict)          # "F"/"B" -> silk
     transform_note: str = ""
     to_board: object = None                            # affine params used
+    to_board_T: object = None
+    edge_band: object = None
+    edge_net: object = None
 
 
 class _Collector:
@@ -153,12 +155,6 @@ class _Collector:
             open_ = bool(vom) and yes(vom[1])
             b.tent_default = {"F": not open_, "B": not open_}
             b.tent_source = "plot setting viasonmask" if vom else "KiCad default (vias tented)"
-        pp = child(setup, "pcbplotparams")
-        smfs = child(pp, "subtractmaskfromsilk") if pp else None
-        if M.SUBTRACT_MASK_FROM_SILK == "file":
-            b.subtract_mask_from_silk = yes(smfs[1]) if smfs else True
-        else:
-            b.subtract_mask_from_silk = M.SUBTRACT_MASK_FROM_SILK == "yes"
 
         self.conditional_pads = []
         vias = []
@@ -251,7 +247,10 @@ class _Collector:
             if len(pts) >= 3:
                 self._add(layer_of(fp) or zone_layer, Polygon(pts).buffer(0), "zone fills", net)
         if not fills:
-            self.b.skipped["zones with no fill (keepouts, or unfilled - press B in KiCad)"] += 1
+            if child(node, "keepout"):
+                self.b.skipped["keepout / rule areas (no copper by design)"] += 1
+            else:
+                self.b.skipped["zones with no fill (unfilled - press B in KiCad and save)"] += 1
 
     def _graphic(self, node, T, in_footprint=False):
         layer = layer_of(node)
@@ -482,6 +481,45 @@ def via_openings(b):
     return out
 
 
+def edge_plating(b, drills, log):
+    """Copper band inside the outline when the board edge is plated (Copper_Parameters.EDGE_PLATING).
+    Sets b.edge_band (board frame) and b.edge_net, and moves other nets' copper out of the band."""
+    C = P.Copper
+    plated = {"file": b.stackup.edge_plating, "yes": True, "no": False}[C.EDGE_PLATING]
+    b.edge_band, b.edge_net = None, None
+    if not plated:
+        return
+    band = sh.snap(sh.diff(b.outline, b.outline.buffer(-C.EDGE_PLATING_WALL_MM)))
+    hole = b.to_board_T(drills(lambda h: True))          # every hole that reaches the edge interrupts the plating
+    band = sh.diff(band, hole)
+    if C.EDGE_PLATING_NET == "auto":
+        touching = defaultdict(float)
+        for l in b.layers:
+            for net, r in b.copper[l].items():
+                a = r.intersection(band).area
+                if a > 0:
+                    touching[net] += a
+        named = {n: a for n, a in touching.items() if n != C.NO_NET_NAME}
+        net = max(named, key=named.get) if named else C.NO_NET_NAME
+    else:
+        net = C.EDGE_PLATING_NET
+    moved = Counter()
+    for l in b.layers:
+        for other in list(b.copper[l]):
+            if other != net and b.copper[l][other].intersects(band):
+                inside = sh.inter(b.copper[l][other], band)
+                if inside.area > 0:
+                    moved[other] += 1
+                    b.copper[l][other] = sh.diff(b.copper[l][other], band)
+                    if b.copper[l][other].is_empty:
+                        del b.copper[l][other]
+                    b.copper[l][net] = sh.snap(union([b.copper[l].get(net, EMPTY), inside]))
+    for other, n in moved.items():
+        log(f"edge plating: copper of net {other!r} inside the edge band moved to net {net!r} on {n} layer(s)")
+    b.edge_band, b.edge_net = band, net
+    b.found["edge plating band (net " + net + ")"] += 1
+
+
 def resolve(b, log):
     """KiCad-frame items -> board-frame regions, snapped; holes applied per layer span."""
     R = P.Run
@@ -497,8 +535,24 @@ def resolve(b, log):
     # KiCad (x, y down) -> board (x - cx, -(y - cy)): Y up, F.Cu toward +Z
     T = lambda g: sh.snap(affinity.affine_transform(sh.polys_only(g), [1, 0, 0, -1, -cx, cy])) \
         if g is not None and not g.is_empty else EMPTY
+    b.to_board_T = T
     layers, last = b.layers, len(b.layers) - 1
     b.outline = T(outline_k)
+    C = P.Copper
+    # castellations: plated holes the outline cuts through
+    castellate = C.CASTELLATION == "auto" or (C.CASTELLATION == "file" and b.stackup.castellated_pads)
+    for h in b.holes:
+        if h.plated and not outline_k.contains(h.drill) and h.drill.intersects(outline_k):
+            b.found["castellated holes (plated holes cut by the board edge)"] += 1
+            if castellate:
+                h.wall = C.CASTELLATION_WALL_MM
+            else:
+                h.plated, h.wall = False, 0.0
+                b.skipped["castellation plating (CASTELLATION is 'off')"] += 1
+    if C.CASTELLATION == "file" and not b.stackup.castellated_pads and \
+            b.found["castellated holes (plated holes cut by the board edge)"]:
+        b.notes.append("plated holes cross the board edge but the stackup has no (castellated_pads yes); "
+                       "set Copper.CASTELLATION = 'auto' to plate them")
 
     def drills(pred):
         return union([h.drill for h in b.holes if pred(h)])
@@ -533,21 +587,34 @@ def resolve(b, log):
             taken = union([taken, regions[net]])
         b.copper[l] = {n: r for n, r in regions.items() if not r.is_empty}
         b.copper_all[l] = sh.snap(union(list(b.copper[l].values())))
+    edge_plating(b, drills, log)
+    if b.edge_band is not None:
+        # the band takes the laminate's place at the edge (like a barrel in its drill hole); on the
+        # outer layers it is part of the edge net's copper, which caps it like an annular ring
+        b.slab = [sh.diff(s, b.edge_band) for s in b.slab]
+        for l in (layers[0], layers[-1]):
+            b.copper[l][b.edge_net] = sh.snap(union([b.copper[l].get(b.edge_net, EMPTY), b.edge_band]))
+    for l in layers:
+        b.copper_all[l] = sh.snap(union(list(b.copper[l].values())))
+    for k, l in enumerate(layers):
         if 0 < k < last:
             hole = T(drills(lambda h, k=k: h.i <= k <= h.j))
-            b.band_laminate[l] = sh.diff(sh.diff(b.outline, hole), b.copper_all[l])
+            lam = sh.diff(sh.diff(b.outline, hole), b.copper_all[l])
+            b.band_laminate[l] = sh.diff(lam, b.edge_band) if b.edge_band is not None else lam
     spans = defaultdict(list)
     for h in b.holes:
         if h.plated:
-            spans[(h.i, h.j, h.net)].append(h.drill.difference(h.drill.buffer(-h.wall)))
+            spans[(h.i, h.j, h.net)].append(h.drill.difference(h.drill.buffer(-h.wall)).intersection(outline_k))
     b.barrels = [(T(union(rings)), i, j, net) for (i, j, net), rings in spans.items()]
+    if b.edge_band is not None:
+        b.barrels.append((b.edge_band, 0, last, b.edge_net))
     vo = via_openings(b)
     for side in ("F", "B"):
         openings = union(b.mask_open_items[side] + vo[side])
         b.mask_open[side] = T(openings.intersection(outline_k))
         silk = union(b.silk_items[side]).intersection(outline_k).difference(
             bores(lambda h: h.i == 0) if side == "F" else bores(lambda h: h.j == last))
-        if b.subtract_mask_from_silk:
+        if not P.Silkscreen.SILKSCREEN_OVER_COPPER:      # no ink where there is no mask (openings, bare copper)
             silk = silk.difference(openings)
         b.silk[side] = T(silk)
     return b
@@ -555,6 +622,10 @@ def resolve(b, log):
 
 def breakdown(raw, log):
     b = _Collector(raw, log).b
+    unfilled = b.skipped.get("zones with no fill (unfilled - press B in KiCad and save)", 0)
+    if unfilled:
+        log(f"warning: {unfilled} copper zone(s) have no fill stored in the file and are ignored "
+            "(fill the zones in KiCad, press B, and save; see Copper_Parameters)")
     _, note = Text.font()
     b.notes.append(note)
     return resolve(b, log)

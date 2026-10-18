@@ -20,9 +20,5 @@ MASK_EDGE_PULLBACK_MM = 0.005
 # Pad-to-mask clearance in mm, or None to follow the board file (pad / footprint / board setup)
 PAD_TO_MASK_CLEARANCE_MM = None
 
-# Silkscreen is removed where it crosses a mask opening:
-#   "file" - follow the board's plot setting (subtractmaskfromsilk), "yes", "no"
-SUBTRACT_MASK_FROM_SILK = "file"
-
 # Curve quality of the little walls where the mask climbs over a trace (segments per quarter circle)
 MASK_WALL_QUAD_SEGS = 4

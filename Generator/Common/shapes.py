@@ -7,6 +7,7 @@ import shapely
 import trimesh
 from shapely.geometry import GeometryCollection, LineString, Point, Polygon
 
+from Generator.Geometry import geometry as geo
 from Parameters import P
 
 EMPTY = GeometryCollection()
@@ -41,9 +42,7 @@ def thicken(line, w):
 
 
 def arc_pts(c, r, a0, sweep, first=None, last=None):
-    n = max(2, math.ceil(abs(math.degrees(sweep)) / G().ARC_STEP_DEG))
-    pts = [(c[0] + r * math.cos(a0 + sweep * i / n), c[1] + r * math.sin(a0 + sweep * i / n))
-           for i in range(n + 1)]
+    pts = geo.arc_points(c, r, a0, sweep, max(2, math.ceil(abs(math.degrees(sweep)) / G().ARC_STEP_DEG)))
     if first is not None:
         pts[0] = first
     if last is not None:
@@ -53,25 +52,16 @@ def arc_pts(c, r, a0, sweep, first=None, last=None):
 
 def arc3(p1, p2, p3):
     """Points along the arc from p1 through p2 to p3."""
-    (x1, y1), (x2, y2), (x3, y3) = p1, p2, p3
-    d = 2 * (x1 * (y2 - y3) + x2 * (y3 - y1) + x3 * (y1 - y2))
-    if abs(d) < 1e-12:
+    circle = geo.circle_through(p1, p2, p3)
+    if circle is None:
         return [p1, p3]
-    s1, s2, s3 = x1 * x1 + y1 * y1, x2 * x2 + y2 * y2, x3 * x3 + y3 * y3
-    ux = (s1 * (y2 - y3) + s2 * (y3 - y1) + s3 * (y1 - y2)) / d
-    uy = (s1 * (x3 - x2) + s2 * (x1 - x3) + s3 * (x2 - x1)) / d
-    r = math.hypot(x1 - ux, y1 - uy)
-    a1, a2, a3 = (math.atan2(y - uy, x - ux) for x, y in (p1, p2, p3))
-    tau = 2 * math.pi
-    sweep = (a3 - a1) % tau if (a2 - a1) % tau <= (a3 - a1) % tau else -((a1 - a3) % tau)
-    return arc_pts((ux, uy), r, a1, sweep, p1, p3)
+    c, r = circle
+    a0, sweep = geo.arc_sweep(c, p1, p2, p3)
+    return arc_pts(c, r, a0, sweep, p1, p3)
 
 
 def bezier(p):
-    t = np.linspace(0, 1, G().BEZIER_SEGMENTS + 1)[:, None]
-    p = np.array(p)
-    return list(map(tuple, (1 - t) ** 3 * p[0] + 3 * (1 - t) ** 2 * t * p[1]
-                    + 3 * (1 - t) * t ** 2 * p[2] + t ** 3 * p[3]))
+    return geo.bezier_points(p, G().BEZIER_SEGMENTS)
 
 
 # ---- set operations -------------------------------------------------------------------------------
@@ -139,13 +129,10 @@ def polygons(g, part=True):
 
 # ---- footprint placement -------------------------------------------------------------------------
 def make_transform(at_numbers):
-    """Footprint local -> board coordinates.  KiCad angles are CCW on screen (Y down)."""
+    """Footprint local -> board coordinates."""
     if not at_numbers:
         return lambda p: p
-    fx, fy = at_numbers[0], at_numbers[1]
-    rot = math.radians(at_numbers[2]) if len(at_numbers) > 2 else 0.0
-    c, s = math.cos(rot), math.sin(rot)
-    return lambda p: (fx + p[0] * c + p[1] * s, fy - p[0] * s + p[1] * c)
+    return geo.rotation((at_numbers[0], at_numbers[1]), at_numbers[2] if len(at_numbers) > 2 else 0.0)
 
 
 # ---- extrusion -------------------------------------------------------------------------------------

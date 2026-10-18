@@ -23,5 +23,5 @@ BEZIER_SEGMENTS = 32                    # straight pieces per Bezier curve
 # Polygons whose rings touch at a single point are opened by this much so they can be meshed
 PINCH_POINT_OPENING_MM = 1e-4
 
-# Pretty mode (visible skin)
+# Visual mode (visible skin)
 SKIN_BURIED_TEST_OFFSET_MM = 0.0005     # a face is dropped if a point this far outside it lies inside another solid

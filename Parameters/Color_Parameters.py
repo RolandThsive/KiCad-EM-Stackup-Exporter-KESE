@@ -18,7 +18,7 @@ MATERIALS = {
     # solder mask
     "Top Solder Mask":    {"color": "#126830", "alpha": 0.80, "metallic": 0.0, "roughness": 0.30},
     "Bottom Solder Mask": {"color": "#126830", "alpha": 0.80, "metallic": 0.0, "roughness": 0.30},
-    # pretty mode: the mask where it lies on top of copper (traces read through real mask)
+    # visual mode: the mask where it lies on top of copper (traces read through real mask)
     "Top Mask over Copper":    {"color": "#3F8F3A", "alpha": 1.0, "metallic": 0.0, "roughness": 0.30},
     "Bottom Mask over Copper": {"color": "#3F8F3A", "alpha": 1.0, "metallic": 0.0, "roughness": 0.30},
     # silkscreen
@@ -32,8 +32,8 @@ MATERIALS = {
     "OSP":                {"color": "#D9955A", "alpha": 1.0,  "metallic": 0.8, "roughness": 0.35},
 }
 
-# In "pretty" mode the mask is opaque regardless of the alpha above (it is a surface, not a solid)
-PRETTY_MASK_OPAQUE = True
+# In "visual" mode the mask is opaque regardless of the alpha above (it is a surface, not a solid)
+VISUAL_MASK_OPAQUE = True
 
 # Honour the colour names in the board's stackup ((layer "F.Mask" ... (color "Green"))) using the
 # tables below; False = always use MATERIALS.
@@ -47,7 +47,7 @@ STACKUP_MASK_COLORS = {
 STACKUP_SILK_COLORS = {
     "white": "#F0F0EC", "black": "#141414", "yellow": "#E6C828",
 }
-# When the stackup mask colour is used in pretty mode, the mask-over-copper colour is this one
+# When the stackup mask colour is used in visual mode, the mask-over-copper colour is this one
 # instead; set to None to keep the MATERIALS entry.
 STACKUP_MASK_OVER_COPPER_COLORS = {
     "green": "#3F8F3A", "red": "#C8503C", "blue": "#3C5AB4", "black": "#2E2E30", "white": "#F2EFD8",

@@ -1,6 +1,6 @@
-"""Skin.py - "pretty" mode: the board's visible surface only.
+"""Skin.py - "visual" mode: the board's visible surface only.
 
-Takes the real PrismSet, slices every prism at every height in the stack, rebuilds all regions
+Takes the simulation PrismSet, slices every prism at every height in the stack, rebuilds all regions
 from one planar arrangement (so neighbours share exact vertices), triangulates, then drops every
 face that lies inside another prism.  The result is one closed outer surface, still split into
 named parts.  Layers only microns apart no longer fight for the same pixels in web viewers."""

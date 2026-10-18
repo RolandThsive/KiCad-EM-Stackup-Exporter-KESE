@@ -5,6 +5,11 @@ Silkscreen_Parameters.py - legend ink and text rendering.
 # Ink thickness in mm (typical 0.010-0.020)
 SILK_THICKNESS_MM = 0.010
 
+# Silkscreen where the solder mask is open (pads, exposed copper, bare laminate in openings):
+#   False - no ink wherever there is no mask (what fabricators do: silk is clipped off the pads)
+#   True  - keep the ink there too, as drawn in KiCad
+SILKSCREEN_OVER_COPPER = False
+
 # Font.  None -> KiCad's own stroke font (Parameters/Fonts/kicad_newstroke.json.gz).
 # A path (relative to Parameters/Fonts) to a custom font: this project's stroke-font JSON,
 # or a Hershey .jhf file.  If the file is missing the default is used and the report says so.

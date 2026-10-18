@@ -37,7 +37,7 @@ def build(b, ps, mode):
         base = st.half                         # laminate face
         flat, top, wall = sh.conformal_regions(region, cu, t_lam, M.MASK_WALL_QUAD_SEGS)
         part = f"{tb} Solder Mask"
-        over = f"{tb} Mask over Copper" if mode == "pretty" else part
+        over = f"{tb} Mask over Copper" if mode == "visual" else part
         props = {"side": side, "thickness_over_laminate_mm": t_lam, "thickness_over_copper_mm": t_cu}
         z = lambda v: sign * v
         ps.add(part, "mask", flat, z(base), z(base + t_lam), layer=f"{side}.Mask", props=props)

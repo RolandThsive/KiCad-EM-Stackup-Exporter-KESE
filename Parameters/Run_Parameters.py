@@ -4,9 +4,9 @@ Run_Parameters.py - what to make, where, and in which formats.
 Every value here is recorded in parameters.txt next to each output.
 """
 
-# "real"   : the physical stack-up, every layer a closed solid at its true height
-# "pretty" : the board's visible surface only, for web viewers such as <model-viewer>
-MODE = "real"
+# "simulation" : the physical stack-up, every layer a closed solid at its true height (EM solvers, CAD)
+# "visual"     : the board's visible surface only, for web viewers such as <model-viewer>
+MODE = "simulation"
 
 # Folders, relative to the project root (the folder that holds run.py)
 INPUT_DIR = "Input"
@@ -17,11 +17,11 @@ OUTPUT_DIR = "Output"
 #   "stl"  - one STL file per solid in an stl/ folder                           (openEMS, CST)
 #   "obj"  - Wavefront OBJ, one object per solid                                (viewing, Blender)
 #   "step" - STEP AP214 with one named exact solid per part                     (HFSS, CST, FEKO, COMSOL)
-# "pretty" mode can only produce "glb" and "obj" (its skin is a surface, not solids).
-FILE_FORMAT = ["step"]
+# "visual" mode can only produce "glb" and "obj" (its skin is a surface, not solids).
+FILE_FORMAT = ["glb"]
 
 # Units of the written files: "mm" (EM solvers, CAD) or "m" (glTF viewers expect metres)
-UNITS = "mm"
+UNITS = "m"
 
 # Where the origin is:
 #   "center" - the board outline's centre is at (0, 0)
@@ -32,16 +32,19 @@ ORIGIN = "center"
 # "flat"   : board in the XZ plane, F.Cu facing +Y
 ORIENTATION = "upright"
 
-# Copper grouping in "real" mode:
+# Copper grouping in "simulation" mode:
 #   "net"    - one solid per net (all its layers and vias joined)  <- what EM ports need
 #   "layer"  - one solid per copper layer, plating separate
 #   "merged" - all copper in one solid
 COPPER_GROUPING = "net"
 
-# Dielectric grouping in "real" mode:
+# Dielectric grouping in "simulation" mode:
 #   "layer"  - one solid per stackup dielectric (core / prepreg), each with its own material
 #   "merged" - the whole laminate as one solid
 DIELECTRIC_GROUPING = "layer"
+
+# Live "running <stage> ... 1m 23s" line in the terminal while a board is generated
+SHOW_PROGRESS = True
 
 # Run the Verifier after generation (adds 10-60 s per board). Results go in report.txt.
 VERIFY = False
@@ -56,6 +59,14 @@ SMOOTH_SHADE_ANGLE_DEG = 25.0          # edges sharper than this stay crisp; cyl
 
 # STEP export
 #
+# STEP_EXACT_ARCS - write circles and arcs as true curves.  The 2D geometry is built from
+#   polylines (every curve faceted to Geometry_Parameters); in the STEP file, runs of vertices
+#   that lie on one circle (vias, round pads, round outlines, track ends, arc tracks) are written
+#   as exact circular arcs instead.  Smaller files, true cylinders for CAD.  Meshes are unchanged.
+STEP_EXACT_ARCS = True
+STEP_ARC_FIT_TOLERANCE_MM = 0.0002     # vertices within this of one circle form an arc (2 x the snap grid)
+STEP_ARC_MIN_POINTS = 5                # at least this many vertices in a run
+#
 # Every part has a "role".  The roles are:
 #   "board"            the laminate: one part per dielectric (core / prepreg), e.g. "Board_dielectric 1"
 #   "copper"           copper of the layers, grouped per COPPER_GROUPING, e.g. "Copper_GND"
@@ -63,8 +74,8 @@ SMOOTH_SHADE_ANGLE_DEG = 25.0          # edges sharper than this stay crisp; cyl
 #                      with "net" or "merged" the barrels belong to the copper parts)
 #   "finish"           surface finish metals on bare copper, e.g. "Top Finish Gold" (if FINISH_ENABLED)
 #   "mask"             solder mask on laminate and the walls beside traces: "Top Solder Mask", "Bottom Solder Mask"
-#   "mask_over_copper" the mask lying on top of copper (a separate part only in "pretty" mode; in
-#                      "real" mode these prisms are part of the "Top/Bottom Solder Mask" parts)
+#   "mask_over_copper" the mask lying on top of copper (a separate part only in "visual" mode; in
+#                      "simulation" mode these prisms are part of the "Top/Bottom Solder Mask" parts)
 #   "silk"             silkscreen ink: "Top Silkscreen", "Bottom Silkscreen"
 #
 # STEP_WRITE_ROLES - which roles are written to the STEP file at all.
@@ -87,3 +98,19 @@ STEP_FUSE_ROLES = ["board", "copper", "plating", "finish"]
 # KiCad file-format versions this project has been tested with (the Reader warns outside this range)
 KICAD_VERSION_MIN = 20211014           # KiCad 6
 KICAD_VERSION_MAX = 20260206           # KiCad 10
+
+# Presets: `kese --for <name>` applies these overrides before any --set on the command line, and
+# parameters.txt records the preset and every value it changed.  Each entry is Module.NAME: value.
+PRESETS = {
+    # STEP in mm with KiCad's origin: port and probe positions read off the layout match the model
+    "hfss": {"Run.MODE": "simulation", "Run.FILE_FORMAT": ["step"], "Run.UNITS": "mm", "Run.ORIGIN": "kicad",
+             "Run.COPPER_GROUPING": "net", "Run.DIELECTRIC_GROUPING": "layer", "Run.WRITE_MATERIALS_JSON": True},
+    # as hfss, plus one STL per part for the import route CST falls back to
+    "cst": {"Run.MODE": "simulation", "Run.FILE_FORMAT": ["step", "stl"], "Run.UNITS": "mm", "Run.ORIGIN": "kicad",
+            "Run.COPPER_GROUPING": "net", "Run.DIELECTRIC_GROUPING": "layer", "Run.WRITE_MATERIALS_JSON": True},
+    # openEMS has no STEP reader: one STL per net / dielectric, properties from materials.json
+    "openems": {"Run.MODE": "simulation", "Run.FILE_FORMAT": ["stl"], "Run.UNITS": "mm", "Run.ORIGIN": "kicad",
+                "Run.COPPER_GROUPING": "net", "Run.DIELECTRIC_GROUPING": "layer", "Run.WRITE_MATERIALS_JSON": True},
+    # web viewers (<model-viewer>, three.js): metres, centred, the visible surface only
+    "viewer": {"Run.MODE": "visual", "Run.FILE_FORMAT": ["glb"], "Run.UNITS": "m", "Run.ORIGIN": "center"},
+}

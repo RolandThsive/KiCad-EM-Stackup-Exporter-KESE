@@ -1,7 +1,7 @@
 """Step 6 - Verifier (opt-in): checks the Model proves itself.
 
-real   : every part is a closed, consistently wound solid; no two parts overlap (vertical rays)
-pretty : the skin has exactly one top and one bottom surface along every vertical ray
+simulation : every part is a closed, consistently wound solid; no two parts overlap (vertical rays)
+visual     : the skin has exactly one top and one bottom surface along every vertical ray
 both   : the glTF file passes the Khronos validator, if the `gltf_validator` CLI is on PATH"""
 import shutil
 import subprocess
@@ -19,7 +19,7 @@ def verify(model, glb_path=None, rays=3000):
     # merge vertices at the geometry snap grid (Geometry_Parameters.SNAP_GRID_MM), whatever the units
     digits = int(round(-np.log10(P.Geometry.SNAP_GRID_MM / scale))) + 2
     ok = True
-    if model.mode == "real":
+    if model.mode == "simulation":
         for part, g in meshes.items():
             m = g.copy()
             m.merge_vertices(digits_vertex=digits)

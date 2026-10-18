@@ -30,7 +30,7 @@ def write_report(path, raw, b, model, outputs, timings, verify_lines, log_lines)
     for i, d in enumerate(st.dielectrics):
         lo, hi = st.dielectric_z(i)
         L.append(f"  {d.name:24s} {d.kind:8s} {d.material:10s} {d.thickness:.4f} mm  er {d.epsilon_r}  tan d {d.loss_tangent}   z {lo:+.4f} .. {hi:+.4f}")
-    L.append(f"  vias: {b.tent_source}; pad-to-mask clearance {b.mask_clearance} mm; subtract mask from silk: {b.subtract_mask_from_silk}")
+    L.append(f"  vias: {b.tent_source}; pad-to-mask clearance {b.mask_clearance} mm; silkscreen over copper (mask openings): {P.Silkscreen.SILKSCREEN_OVER_COPPER}")
     L.append(f"  {b.transform_note}")
     L.append("")
     L.append("read")

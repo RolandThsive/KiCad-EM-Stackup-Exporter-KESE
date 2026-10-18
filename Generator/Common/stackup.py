@@ -30,6 +30,8 @@ class Stackup:
     colors: dict = field(default_factory=dict)   # layer -> colour name from the stackup
     copper_finish: str | None = None
     file_board_thickness: float | None = None
+    edge_plating: bool = False                # (edge_plating yes) in the stackup
+    castellated_pads: bool = False            # (castellated_pads yes) in the stackup
     band: dict = field(default_factory=dict)  # copper layer -> (z_lo, z_hi) after heights()
     half: float = 0.0
 
@@ -66,6 +68,7 @@ def read_stackup(tree, copper_layers, file_thickness, log):
     setup = child(tree, "setup") or []
     st = child(setup, "stackup")
     cu_t, colors, mask_t, finish = {}, {}, None, None
+    flags = {"edge_plating": False, "castellated_pads": False}
     gaps = []                          # dielectric layers between consecutive copper layers
     found = False
     if st:
@@ -98,6 +101,7 @@ def read_stackup(tree, copper_layers, file_thickness, log):
         cf = child(st, "copper_finish")
         if cf:
             finish = str(cf[1])
+        flags = {k: str((child(st, k) or [None, "no"])[1]).lower() == "yes" for k in ("edge_plating", "castellated_pads")}
     n = len(copper_layers)
     for l in copper_layers:
         if l not in cu_t:
@@ -138,4 +142,5 @@ def read_stackup(tree, copper_layers, file_thickness, log):
         dielectrics.append(d)
     return Stackup(copper_layers=copper_layers, copper_thickness=cu_t, dielectrics=dielectrics,
                    laminate_thickness=laminate, thickness_source=source, mask_thickness=mask_t,
-                   colors=colors, copper_finish=finish, file_board_thickness=file_thickness)
+                   colors=colors, copper_finish=finish, file_board_thickness=file_thickness,
+                   edge_plating=flags["edge_plating"], castellated_pads=flags["castellated_pads"])

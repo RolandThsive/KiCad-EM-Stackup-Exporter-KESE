@@ -4,12 +4,18 @@ Finish_Parameters.py - the surface finish on copper left bare by the solder mask
 Off by default so the geometry matches KiCad; turn on for an as-fabricated model.
 """
 
-FINISH_ENABLED = True
+FINISH_ENABLED = False
 
 # "file" - take the type from the stackup's (copper_finish "...") field, else FINISH_DEFAULT_TYPE
 # or one of the keys of FINISH_TYPES
 FINISH_TYPE = "file"
 FINISH_DEFAULT_TYPE = "ENIG"
+
+# Finish parts:
+#   "metal" - one part per side and metal: "Top Finish Nickel", "Top Finish Gold", ...
+#   "net"   - one part per side, metal and net: "Top Finish Gold_GND", so a net's copper, nickel
+#             and gold can be picked together in the solver (Copper_GND, Top Finish Nickel_GND, ...)
+FINISH_GROUPING = "metal"
 
 # Layers of each finish, bottom to top, in mm.  Each becomes its own solid on the exposed copper.
 FINISH_TYPES = {

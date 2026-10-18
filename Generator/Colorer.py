@@ -14,13 +14,13 @@ def _key(part, role, props, mode):
         kind = props.get("kind", "")
         return f"Board_{kind}" if P.Run.DIELECTRIC_GROUPING == "layer" and f"Board_{kind}" in mats else "Board"
     if role in ("copper", "plating"):
-        if mode == "pretty":
+        if mode == "visual":
             return "Copper_exposed"
         return "Plating" if role == "plating" else "Copper"
     if role in ("mask", "mask_over_copper", "silk"):
         return part                                   # "Top Solder Mask", "Top Mask over Copper", ...
     if role == "finish":
-        return part.split()[-1]                       # "Top Finish Gold" -> "Gold"
+        return props["metal"]                         # "Gold", "Nickel", ...
     return "Board"
 
 
@@ -33,14 +33,14 @@ def material_for(part, role, props, stackup, mode):
         side = "F" if part.startswith("Top") else "B"
         mask_name = (stackup.colors.get(f"{side}.Mask") or "").lower()
         if role in ("mask", "mask_over_copper") and mask_name:
-            table = C.STACKUP_MASK_OVER_COPPER_COLORS if (role == "mask_over_copper" and mode == "pretty") \
+            table = C.STACKUP_MASK_OVER_COPPER_COLORS if (role == "mask_over_copper" and mode == "visual") \
                 else C.STACKUP_MASK_COLORS
             if table.get(mask_name):
                 m["color"] = table[mask_name]
         silk_name = (stackup.colors.get(f"{side}.SilkS") or "").lower()
         if role == "silk" and C.STACKUP_SILK_COLORS.get(silk_name):
             m["color"] = C.STACKUP_SILK_COLORS[silk_name]
-    if mode == "pretty" and role in ("mask", "mask_over_copper") and C.PRETTY_MASK_OPAQUE:
+    if mode == "visual" and role in ("mask", "mask_over_copper") and C.VISUAL_MASK_OPAQUE:
         m["alpha"] = 1.0
     m["rgb"] = _hex_to_rgb(m["color"])
     return m

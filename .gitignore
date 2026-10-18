@@ -1,3 +1,6 @@
 Output/*
 !Output/.gitkeep
+Tests/out/
 __pycache__/
+*.egg-info/
+build/

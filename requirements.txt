@@ -1,11 +1,17 @@
-# Kicad_PCB__to__3D_Model - everything, including STEP output
+# KiCad EM Stackup Exporter (KESE) - tested versions, everything including STEP output
 #   python -m pip install -r requirements.txt
-numpy
-scipy
-networkx
-shapely>=2.0
-trimesh>=4.0
-manifold3d
-mapbox_earcut
-rtree
-cadquery>=2.4
+#
+# Tested with Python 3.13 (Linux) on these exact versions.  Binary wheels for Windows (win_amd64),
+# Linux and macOS exist on PyPI for Python 3.11, 3.12, 3.13 and 3.14 for every package below
+# (checked 2026-10-18); Python 3.10 works without STEP (cadquery 2.8 needs Python >= 3.11).
+numpy==2.5.3
+scipy==1.18.1
+networkx==3.6.1
+shapely==2.2.0
+trimesh==5.1.1
+manifold3d==3.5.4
+mapbox_earcut==2.1.0
+rtree==1.4.1
+# STEP output (optional: without it every other format still works and the run says cadquery is missing)
+cadquery==2.8.0
+cadquery-ocp>=7.9.3.1,<8.0

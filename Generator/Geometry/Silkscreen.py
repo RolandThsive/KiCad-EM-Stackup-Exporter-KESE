@@ -21,9 +21,13 @@ def build(b, ps):
         props = {"side": side, "thickness_mm": t_silk}
         z = lambda v: sign * v
         masked = mask_region(b, side)
-        on_mask, off_mask = sh.inter(silk, masked), sh.diff(silk, masked)
-        # on the mask: the mask's own surface is flat on laminate, raised over copper, with a wall
-        flat, top, wall = sh.conformal_regions(on_mask, cu, t_lam, M.MASK_WALL_QUAD_SEGS)
+        # where the ink leaves the mask (openings that keep their silk) it steps down the mask edge
+        off_mask, on_mask, step = sh.conformal_regions(silk, masked, t_silk, M.MASK_WALL_QUAD_SEGS)
+        ps.add(part, "silk", step, z(base), z(base + t_lam + t_silk), layer=f"{side}.SilkS", props=props)
+        # on the mask: the mask's surface is flat on laminate and raised over copper and the mask's
+        # own wall beside it; the ink climbs that step with a wall of its own, t_silk wide
+        raised = sh.snap(cu.buffer(t_lam, quad_segs=M.MASK_WALL_QUAD_SEGS)) if not cu.is_empty else cu
+        flat, top, wall = sh.conformal_regions(on_mask, raised, t_silk, M.MASK_WALL_QUAD_SEGS)
         ps.add(part, "silk", flat, z(base + t_lam), z(base + t_lam + t_silk), layer=f"{side}.SilkS", props=props)
         ps.add(part, "silk", top, z(base + cu_t + t_cu), z(base + cu_t + t_cu + t_silk), layer=f"{side}.SilkS", props=props)
         ps.add(part, "silk", wall, z(base + t_lam), z(base + cu_t + t_cu + t_silk), layer=f"{side}.SilkS", props=props)
