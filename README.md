@@ -32,8 +32,8 @@ KiCad itself does not need to be installed; the board file is read directly.
 
 ## Install
 
-    git clone https://github.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE-.git
-    cd KiCad-EM-Stackup-Exporter-KESE-
+    git clone https://github.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE.git
+    cd KiCad-EM-Stackup-Exporter-KESE
     python -m pip install -r requirements.txt
 
 ## Quick start
