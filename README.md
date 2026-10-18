@@ -82,6 +82,27 @@ Nothing is hard-coded: every number lives in `Parameters/`, and each output come
 | Checks | Opt-in verifier: closed solids, no overlaps, one visible surface, glTF validation |
 | Not Modelled | Component 3D models, text boxes, dimensions, edge plating, castellations, rigid-flex |
 
+### What The Real Model Is Good For
+
+These uses rely on the real-mode output: per-net copper, dielectrics with εr and tanδ, plating
+and finish.
+
+- **Full-wave EM.** S-parameters, impedance, crosstalk, antenna patterns and resonances. For an
+  inductive encoder stator like the example board, the TX/RX coil coupling and the
+  position-dependent signal can be simulated instead of only measured.
+- **Signal Integrity.** Trace impedance and eye diagrams, where the exact copper thickness, the
+  etch trapezoid and the prepreg-versus-core εr matter.
+- **Power Integrity And DC-IR Drop.** A per-net GND or power solid with real plating thickness is
+  exactly what PDN tools need.
+- **Thermal.** The same solids with electrical conductivity swapped for thermal conductivity;
+  copper planes, via barrels and the laminate are the heat paths.
+- **Mechanical And FEA.** Warp and stress with the real copper distribution and core/prepreg
+  layers, since every layer is a closed solid.
+- **Parasitic Extraction.** Capacitance and inductance between nets, because each net is its own
+  body.
+- **What-If On Fabrication.** Change plating, via wall, mask thickness or etch factor in
+  `Parameters/` and re-simulate to see how much fab tolerances move your results.
+
 ---
 
 ## Examples
