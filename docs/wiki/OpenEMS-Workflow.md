@@ -1,9 +1,8 @@
 # 21. openEMS Workflow
 
 openEMS is a free FDTD solver; its geometry front end CSXCAD has no STEP reader but imports STL
-files, one per material. KESE's `openems` preset writes exactly that: one closed STL per net and
-per dielectric, in mm, on KiCad's origin, with `materials.json` carrying εr, tanδ and
-conductivity.
+files, each into one material. KESE's `openems` preset writes one closed STL per net and per
+dielectric, in mm, on KiCad's origin, with `materials.json` carrying εr, tanδ and conductivity.
 
 > [!NOTE]
 > This page describes the intended route and a script skeleton built from the CSXCAD Python
