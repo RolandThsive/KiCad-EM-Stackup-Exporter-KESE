@@ -46,7 +46,8 @@ DIELECTRIC_GROUPING = "layer"
 # Live "running <stage> ... 1m 23s" line in the terminal while a board is generated
 SHOW_PROGRESS = True
 
-# Run the Verifier after generation (adds 10-60 s per board). Results go in report.txt.
+# Run the Verifier after generation (adds about 3-8 s per board on the example boards, more on
+# dense boards). Results go in report.txt.
 VERIFY = False
 
 # Write materials.json next to the outputs (per solid: material, thickness, er, tan d, conductivity, net, layer)
