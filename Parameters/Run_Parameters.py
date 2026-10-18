@@ -8,7 +8,7 @@ Every value here is recorded in parameters.txt next to each output.
 # "visual"     : the board's visible surface only, for web viewers such as <model-viewer>
 MODE = "simulation"
 
-# Folders, relative to the project root (the folder that holds run.py)
+# Folders, relative to the folder the command is run from (the working directory)
 INPUT_DIR = "Input"
 OUTPUT_DIR = "Output"
 

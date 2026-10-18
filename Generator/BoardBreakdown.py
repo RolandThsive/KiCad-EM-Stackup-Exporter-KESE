@@ -432,12 +432,13 @@ class _Collector:
         tent = dict(b.tent_default)
         vt = child(node, "tenting")
         if vt is not None:
+            words = atoms(vt)
             for side, key in (("F", "front"), ("B", "back")):
                 c = child(vt, key)
-                if c is not None:
+                if c is not None:                       # KiCad 10: (tenting (front yes) (back no))
                     tent[side] = yes(c[1])
-                elif key in atoms(vt):
-                    tent[side] = True
+                elif words:                             # KiCad 9: (tenting front back) / (tenting none): complete list
+                    tent[side] = key in words
         b.via_tenting.append((pad, span, tent))
 
 

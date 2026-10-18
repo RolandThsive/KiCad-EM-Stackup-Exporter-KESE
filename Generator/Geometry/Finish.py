@@ -7,10 +7,13 @@ def finish_type(st):
     F = P.Finish
     if F.FINISH_TYPE != "file":
         return F.FINISH_TYPE
-    name = (st.copper_finish or "").replace(" ", "").replace("-", "_")
-    for key in F.FINISH_TYPES:
-        if key.lower() == name.lower():
-            return key
+    fold = lambda s: s.lower().replace(" ", "").replace("-", "").replace("_", "")
+    name = fold(st.copper_finish or "")
+    if name == "none":
+        return None                                      # the board says: no finish
+    for key in list(F.FINISH_TYPES) + list(F.FINISH_NAME_ALIASES):
+        if fold(key) == name:
+            return F.FINISH_NAME_ALIASES.get(key, key)
     return F.FINISH_DEFAULT_TYPE
 
 
@@ -19,6 +22,9 @@ def build(b, ps):
     if not F.FINISH_ENABLED:
         return
     kind = finish_type(st)
+    if kind is None:
+        ps.notes.append("finish: the board's stackup says None, nothing applied")
+        return
     layers = F.FINISH_TYPES.get(kind)
     if not layers:
         ps.notes.append(f"finish: unknown type {kind!r}, none applied")

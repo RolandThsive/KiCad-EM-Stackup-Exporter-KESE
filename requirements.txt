@@ -1,9 +1,11 @@
 # KiCad EM Stackup Exporter (KESE) - tested versions, everything including STEP output
 #   python -m pip install -r requirements.txt
 #
-# Tested with Python 3.13 (Linux) on these exact versions.  Binary wheels for Windows (win_amd64),
-# Linux and macOS exist on PyPI for Python 3.11, 3.12, 3.13 and 3.14 for every package below
-# (checked 2026-10-18); Python 3.10 works without STEP (cadquery 2.8 needs Python >= 3.11).
+# Tested with Python 3.13 (Linux) on these exact versions.  These pins need Python 3.12 or newer
+# (numpy 2.5 and scipy 1.18 require >= 3.12); binary wheels for Windows (win_amd64), Linux and
+# macOS exist on PyPI for Python 3.12, 3.13 and 3.14 for every package below (checked 2026-10-18).
+# On Python 3.11 install without the pins (python -m pip install numpy scipy ...): pip picks the
+# last versions built for it.
 numpy==2.5.3
 scipy==1.18.1
 networkx==3.6.1

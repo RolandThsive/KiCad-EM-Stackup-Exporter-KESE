@@ -1,4 +1,4 @@
-"""The linear flow:  Reader -> BoardBreakdown -> Geometry -> Colorer -> Assembler -> Verifier -> Packager."""
+"""The linear flow:  Reader -> BoardBreakdown -> Geometry -> Colorer -> Assembler -> Packager -> Verifier -> report."""
 import time
 from pathlib import Path
 

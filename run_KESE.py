@@ -65,7 +65,11 @@ def main():
         P.override(key.strip(), value)
         overrides.append((key.strip(), value))
 
-    formats = args.format or P.Run.FILE_FORMAT
+    for key, value in (("Run.MODE", args.mode), ("Run.FILE_FORMAT", args.format), ("Run.VERIFY", True if args.verify else None)):
+        if value is not None:                             # command-line choices are overrides too
+            P.override(key, value)
+            overrides.append((key, value))
+    formats = P.Run.FILE_FORMAT
     missing = missing_packages(formats)
     if missing:
         sys.exit(f"missing Python package(s): {', '.join(missing)}\n"
@@ -81,8 +85,7 @@ def main():
     failures = 0
     for pcb in boards:
         try:
-            generate(pcb, mode=args.mode, formats=args.format, out_root=out_root, overrides=overrides,
-                     verify=True if args.verify else None)
+            generate(pcb, out_root=out_root, overrides=overrides)
         except Exception as exc:
             failures += 1
             print(f"{pcb.name}: FAILED - {exc}")
