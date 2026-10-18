@@ -21,7 +21,8 @@ settings are in `Parameters/Copper_Parameters.py`.
 
 ## 11.1 What Makes Copper
 
-Per copper layer, these items are collected with their net:
+Per copper layer, these items are collected with their net (graphics and text always as no net,
+see 11.1.1):
 
 | Item | Shape |
 |---|---|
@@ -47,7 +48,7 @@ X_k = \begin{cases} \bigcup_{h : a_h \le k \le b_h} \left( H_h \ominus w_h \righ
 | Symbol | Meaning | Parameter |
 |---|---|---|
 | $`C_{k,n}`$ | copper region of net $`n`$ on layer $`l_k`$ | |
-| $`I_{k,n}`$ | the items of net $`n`$ on layer $`l_k`$ (tracks, pads, via rings, zone fills, graphics, text) | |
+| $`I_{k,n}`$ | the items of net $`n`$ on layer $`l_k`$ (tracks, pads, via rings, zone fills; graphics and text only in `no_net`) | |
 | $`G_j`$ | the 2D shape of item $`j`$ | |
 | $`O`$ | the board outline, equation (10.3) | |
 | $`X_k`$ | the holes cut out of layer $`l_k`$ | |
@@ -59,9 +60,11 @@ X_k = \begin{cases} \bigcup_{h : a_h \le k \le b_h} \left( H_h \ominus w_h \righ
 ### 11.1.1 Nets
 
 In KiCad 6 to 9 an item carries a net **number** that is looked up in the file's net table; KiCad
-10 writes the net **name** directly, and KESE reads both. Copper with no net (board graphics,
-pads without a net such as mounting holes, net 0) is named `Copper.NO_NET_NAME`, `no_net` by
-default, so it becomes `Copper_no_net`. Pads of pins left unconnected in the schematic carry
+10 writes the net **name** directly, and KESE reads both. Copper with no net (pads without a net such
+as mounting holes, net 0) is named `Copper.NO_NET_NAME`, `no_net` by default, so it becomes
+`Copper_no_net`. Graphic shapes and text on a copper layer always go there too: KESE does not
+read the net KiCad stores on a shape assigned to a net, so such a shape is not joined to that
+net's part. Pads of pins left unconnected in the schematic carry
 KiCad's own `unconnected-(...)` nets and become parts of their own, such as
 `Copper_unconnected-(U5-OUT-Pad3)`.
 

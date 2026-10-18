@@ -21,7 +21,7 @@
 | LPI | Liquid photo-imageable solder mask, the common mask process. |
 | Mask opening | A place where the solder mask is absent: pads, untented vias, drawn openings. KiCad's mask layers draw openings, not mask. |
 | Mid-plane | The height half-way through the laminate; z = 0 in KESE. |
-| Net | A set of electrically connected copper items; KESE makes one solid per net. |
+| Net | A set of electrically connected copper items; with the default `Run.COPPER_GROUPING = "net"`, KESE makes one solid per net. |
 | NPTH | Non-plated through hole: a hole with no copper in it. |
 | Part | One named solid (or skin piece) in the output: `Copper_GND`, `Board_dielectric 1`, `Top Solder Mask`. |
 | Prepreg | A resin-impregnated glass sheet that bonds cores together under heat; its resin flows into the gaps between inner traces. |

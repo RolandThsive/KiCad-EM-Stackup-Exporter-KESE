@@ -28,8 +28,8 @@ Without `cadquery`, every other format still works and a run that asks for STEP 
 message that names the missing package. The program checks the packages before it starts and
 prints the `pip install` line to run, instead of a traceback.
 
-Or install the project itself through `pyproject.toml`, with the packages unpinned (this also
-works on Python 3.11):
+Or install the project itself through `pyproject.toml`, with the packages unpinned (it also
+accepts Python 3.11, which is not tested):
 
 ```bash
 python -m pip install -e .            # the kese command, the same as python run_KESE.py
