@@ -148,7 +148,8 @@ approach can be discussed.
 
 ## License
 
-KESE is released under the MIT License. See [LICENSE](LICENSE) for details.
+KESE may be used for research and education only. Commercial use is not permitted unless your
+company is on the author's list of approved companies. See [LICENSE](LICENSE) for the full terms.
 
 The stroke font data in `Parameters/Fonts/` comes from KiCad and keeps its own notice; see
 [`Parameters/Fonts/LICENSE_fonts.txt`](Parameters/Fonts/LICENSE_fonts.txt).
