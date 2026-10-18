@@ -77,3 +77,7 @@ The **licensor** is the individual or entity offering these terms, and the **sof
 Required Notice: Copyright (c) 2026 RolandThsive (https://github.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE)
 
 Required Notice: Commercial use is not permitted under these terms. It requires a separate written commercial license from RolandThsive. See COMMERCIAL.md.
+
+Required Notice: The file Parameters/Fonts/kicad_newstroke.json.gz is not licensed under these terms. It is derived from KiCad's "newstroke" font and is licensed under the GNU General Public License, version 2 or later. See Parameters/Fonts/LICENSE_fonts.txt. Every other file in this repository is licensed under these terms.
+
+Required Notice: Contributions are accepted only under the Contributor License Agreement in CONTRIBUTING.md.
