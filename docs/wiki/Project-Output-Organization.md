@@ -29,9 +29,7 @@ KiCad-EM-Stackup-Exporter-KESE/
 
 Every run writes to:
 
-```text
-<OUTPUT_DIR>/<board>/<mode>_<FORMATS>/
-```
+<h2 align="center"><code>&lt;OUTPUT_DIR&gt;/&lt;board&gt;/&lt;mode&gt;_&lt;FORMATS&gt;/</code></h2>
 
 - `<OUTPUT_DIR>` is `Run.OUTPUT_DIR` (`Output/`) or `--out`.
 - `<board>` is the file name without `.kicad_pcb`.
