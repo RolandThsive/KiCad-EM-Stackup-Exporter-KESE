@@ -48,7 +48,8 @@ A preset is only a set of overrides: `--for hfss --format step glb` writes both.
 | **`Run.ORIGIN`** | The outline's bounding-box centre is at (0, 0). Good for viewers. The default. | KiCad's page origin is kept: x equals the layout's x and y is the layout's y negated, since KESE's Y points up. Good for placing ports. |
 
 `Run.ORIENTATION`: `upright` (board in XY, `F.Cu` toward +Z, Y up, KiCad's top view not
-mirrored) or `flat` (board in XZ, `F.Cu` toward +Y, the convention of some viewers).
+mirrored) or `flat` (board in XZ, `F.Cu` toward +Y, the convention of some viewers). The Verifier's ray
+checks assume `upright`; run `--verify` without `flat`.
 
 ## 9.4 Grouping
 

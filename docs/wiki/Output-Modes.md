@@ -63,9 +63,9 @@ Differences from simulation mode:
   surface with nothing behind it would look wrong.
 - All copper and plating take the `Copper_exposed` colour, since only bare copper is visible.
 - The parts are not closed solids: the Verifier's closed-solid and winding checks do not apply (the
-  copper parts even come out with zero or negative signed volumes in the regression baseline), and
-  it checks instead that every vertical ray that hits the board meets exactly one upward and one
-  downward face.
+  copper parts of the repository's boards even come out with negative signed volumes in the
+  regression baseline), and it checks instead that every vertical ray that hits the board meets
+  exactly one upward and one downward face.
 
 ## 8.3 Which Mode For What
 

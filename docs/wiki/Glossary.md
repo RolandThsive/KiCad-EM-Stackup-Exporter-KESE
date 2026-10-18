@@ -8,7 +8,7 @@
 | Board frame | KESE's internal coordinates: mm, Y up, origin at the outline centre or KiCad's origin, z = 0 at the laminate mid-plane, `F.Cu` toward +Z. |
 | Bore | The open hole left inside a plated barrel: the drill minus the plating wall. |
 | Castellation | A plated hole cut through by the board edge, leaving a half-barrel on the edge. |
-| Conformal mask | Solder mask that follows the copper: it lies on top of each trace and on the laminate between them, with a wall beside each trace. On real boards it is often thinner on top of copper; KESE sets the two thicknesses separately (both 10 µm by default). |
+| Conformal mask | Solder mask that follows the copper: it lies on top of each trace and on the laminate between them, with a wall beside each trace. On real boards it is often thinner on top of copper; KESE has a parameter for each (both 10 µm by default); a mask thickness in the board's stack-up replaces both unless `SolderMask.USE_STACKUP_MASK_THICKNESS = False`. |
 | Core | A dielectric sheet that comes with copper already bonded to it; stiff, fixed thickness. |
 | Dielectric | A non-conducting layer of the laminate: a core or a prepreg, with εr and tanδ. |
 | Edge plating | Copper on the routed edge of the board. |

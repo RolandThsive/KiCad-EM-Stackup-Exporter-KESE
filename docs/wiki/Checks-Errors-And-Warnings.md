@@ -75,15 +75,16 @@ stroke font.
 | `keepout / rule areas (no copper by design)` | Rule areas never carry copper; listed for completeness. |
 | `<item> on <layer> (not a physical layer)` | Graphics on fab, courtyard, paste, user and comment layers, which are not part of the board (text there is left out without a count). |
 | `gr_text_box / fp_text_box / dimension on <layer> (not modelled)` | Text boxes and dimensions are not rendered. |
-| `image / target / group / generated / table items` | Not physical. |
+| `image / target / group / generated / table items` | Not physical. For a group or a generated item (such as a length-tuning pattern) only the record is skipped; the items in it are read as usual. |
 | `pads of shape <shape>` | A pad shape KESE does not know. |
 | `TrueType text on <layer> (DRAW_TRUETYPE_TEXT_WITH_STROKE_FONT is False)` | Skipped by the setting. |
 | `castellation plating (CASTELLATION is 'off')` | The holes stay bare. The same line appears with `CASTELLATION = "file"` when the stack-up lacks `(castellated_pads yes)`. |
 
 ## 17.3 The Verifier
 
-`Generator/Verifier.py`, run with `--verify` or `Run.VERIFY = True`. It proves the written model,
-not the input.
+`Generator/Verifier.py`, run with `--verify` or `Run.VERIFY = True`. It checks the meshes that
+GLB, STL and OBJ are written from, not the input. The STEP file is built separately and is not
+checked at run time (the regression suite reads it back with OCP).
 
 | Mode | Check | Pass condition |
 |---|---|---|
@@ -91,6 +92,11 @@ not the input.
 | simulation | no two parts overlap: 3,000 random vertical rays through the model, the intervals each part occupies along every ray | worst overlap below 0.1 µm (`worst 0.000 um` on the example boards) |
 | visual | the skin is one visible surface: along every ray that hits the model, exactly one upward-facing and one downward-facing hit | the line `visible surfaces per vertical ray: up {...} down {...}` holds only the count 1 on each side (with numpy 2 it prints as `np.int64(1): ...`) |
 | both, when a GLB was written | the GLB through the Khronos glTF validator, when the `gltf_validator` command-line tool is on the PATH | not a pass condition: the validator's last line is only reported; otherwise `gltf_validator not on PATH: glTF validation skipped`; with no GLB in the run the line is absent |
+
+> [!NOTE]
+> The ray checks cast along the output's −Z axis, so they assume `Run.ORIENTATION = "upright"`.
+> With `"flat"` the rays run along the board plane, and the visual check reports FAIL on a
+> correct skin.
 
 Example tail of a `report.txt`:
 

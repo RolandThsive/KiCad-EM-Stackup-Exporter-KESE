@@ -149,6 +149,13 @@ On the `F` side, with $`h = L/2`$ the laminate face, these are extruded over:
 The last three exist only with `SILKSCREEN_OVER_COPPER = True`; otherwise the ink was already
 removed from every opening. On the `B` side every z is mirrored.
 
+> [!WARNING]
+> With `SILKSCREEN_OVER_COPPER = True` the ink can overlap other parts: $`S^{\mathrm{step}}`$
+> starts at the laminate face even where the opening's edge lies on copper, and
+> $`S^{\mathrm{off}} \cap C`$ sits directly on the copper, inside any surface finish there. The
+> Verifier then reports an overlap (5 µm with the default finish). Use it for viewing, not for
+> simulation.
+
 | Symbol | Meaning | Parameter |
 |---|---|---|
 | $`S`$ | silk region after clipping to the outline, the edge pull-back and the bores | |
@@ -166,7 +173,7 @@ in `materials.json`.
 | Name | Default | Range | Meaning |
 |---|---|---|---|
 | `SILK_THICKNESS_MM` | `0.010` | mm > 0 | Ink thickness (typical 0.010 to 0.020) |
-| `SILKSCREEN_OVER_COPPER` | `False` | bool | Keep ink where the mask is open |
+| `SILKSCREEN_OVER_COPPER` | `False` | bool | Keep ink where the mask is open (for viewing only: it can overlap the copper and finish) |
 | `FONT_FILE` | `None` | None or a file name in `Parameters/Fonts/` | Custom font; `None` = KiCad newstroke |
 | `DRAW_TRUETYPE_TEXT_WITH_STROKE_FONT` | `True` | bool | Draw TrueType-face text with the stroke font |
 | `INTERLINE_PITCH`, `INTERLINE_LEGACY_FACTOR` | `1.68`, `0.9583` | > 0 | KiCad's line pitch and stroke-font correction |

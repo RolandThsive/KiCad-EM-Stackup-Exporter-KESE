@@ -29,7 +29,7 @@ The openings are:
 | Opening | Size |
 |---|---|
 | every pad that lists the mask layer (`F.Mask`, `B.Mask`, `*.Mask`) | the pad shape grown by its mask margin: the pad's own `solder_mask_margin`, else the footprint's, else the board's pad-to-mask clearance, or `SolderMask.PAD_TO_MASK_CLEARANCE_MM` when set |
-| every untented via (see [via tenting](Copper-And-Traces.md#1132-via-tenting)) | the via pad grown by the board's clearance |
+| every untented via (see [via tenting](Copper-And-Traces.md#1132-via-tenting)) | the via pad grown by the same clearance: the board's, or `SolderMask.PAD_TO_MASK_CLEARANCE_MM` when set |
 | graphics, text and zone fills drawn on the mask layer | as drawn |
 
 Together:

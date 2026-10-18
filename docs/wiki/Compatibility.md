@@ -25,7 +25,7 @@ KiCad itself is not needed, only the `.kicad_pcb` file. Footprints are read from
 | Zones | stored fills only (fill in KiCad first); rule areas skipped |
 | Graphics: line, arc, circle, rect, polygon (with arc segments), Bézier | on copper, mask and silk layers; outline from `Edge.Cuts` |
 | Text: `gr_text`, `fp_text`, footprint properties | KiCad's stroke font and layout; TrueType faces drawn with the stroke font |
-| Text boxes, dimensions, images, groups, tables, generated items | skipped; counted when they sit on a copper, silk or mask layer (text boxes, dimensions) or at the top level of the file (images, groups, tables, generated items), otherwise left out without a count |
+| Text boxes, dimensions, images, groups, tables, generated items | skipped; counted when they sit on a copper, silk or mask layer (text boxes, dimensions) or at the top level of the file (images, groups, tables, generated items), otherwise left out without a count. For groups and generated items (such as length-tuning patterns) only the record itself is skipped: the tracks, footprints and graphics they hold are read as usual |
 | Footprint 3D models | skipped (bare board) |
 | Rigid-flex, multiple stack-up regions | not modelled |
 

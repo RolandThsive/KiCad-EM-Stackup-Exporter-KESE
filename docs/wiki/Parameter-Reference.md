@@ -156,7 +156,7 @@ Details in [Silkscreens](Silkscreens.md).
 | Name | Default | Range | Meaning |
 |---|---|---|---|
 | `SILK_THICKNESS_MM` | `0.010` | mm > 0 | Ink thickness (typical 0.010 to 0.020) |
-| `SILKSCREEN_OVER_COPPER` | `False` | bool | Keep ink where the mask is open; `False` clips it off the pads as fabricators do |
+| `SILKSCREEN_OVER_COPPER` | `False` | bool | Keep ink where the mask is open; `False` clips it off the pads as fabricators do. `True` can overlap the copper and finish, so it is for viewing only |
 | `FONT_FILE` | `None` | None or a file in `Parameters/Fonts/` | Custom stroke-font JSON or Hershey `.jhf`; `None` = KiCad newstroke |
 | `DRAW_TRUETYPE_TEXT_WITH_STROKE_FONT` | `True` | bool | Text in a TrueType face is drawn with the stroke font |
 | `INTERLINE_PITCH` | `1.68` | > 0 | Line pitch as a multiple of the text height (KiCad's value) |
@@ -254,7 +254,8 @@ centre $`\mathbf{c}`$, $`r`$ is the fitted radius and $`\tau_{\mathrm{arc}}`$ is
 
 ## 16.8 Color (`Color_Parameters.py`)
 
-The look of every part for GLB and OBJ. Details in [Colorizing](Colorizing.md).
+The look of every part: the GLB and OBJ materials, the part colours in STEP and the `look` field of
+`materials.json`. Details in [Colorizing](Colorizing.md).
 
 | Name | Default | Range | Meaning |
 |---|---|---|---|

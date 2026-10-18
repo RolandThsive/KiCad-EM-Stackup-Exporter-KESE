@@ -67,18 +67,20 @@ Last, `parameters.txt` and `report.txt` are written next to the model files.
 
 Everything is built from **2D regions snapped to one grid** and extruded between **heights
 computed once** from the stack-up. Every vertex of every 2D region is rounded to the grid
-(the only exception: polygons that touch at a point or along a line are parted by a hair,
-`Geometry.PINCH_POINT_OPENING_MM`, just before extrusion, inside one region and between the
-regions of one part, so those few vertices sit just off the grid):
+(the one exception is where polygons touch: just before extrusion, inside one region a polygon
+that touches another at a point or along a line is shrunk all round by half of
+`Geometry.PINCH_POINT_OPENING_MM`, and between the regions of one part a single touching point is
+notched out, so those vertices sit just off the grid):
 
 ```math
 x' = g \cdot \mathrm{round}\left( \frac{x}{g} \right), \qquad y' = g \cdot \mathrm{round}\left( \frac{y}{g} \right) \qquad (6.1)
 ```
 
 where $`g`$ is the grid pitch, `Geometry.SNAP_GRID_MM` (0.1 µm by default). Heights are not
-rounded. Because neighbouring
-layers share identical vertices and exact z values, the solids of different parts touch without
-gaps or overlaps, the per-part unions succeed, and the Verifier's overlap test comes back at
+rounded. Because neighbouring layers share identical vertices and exact z values, the solids of
+different parts touch without gaps or overlaps (the one known exception is silkscreen kept in mask
+openings with `Silkscreen.SILKSCREEN_OVER_COPPER = True`, see
+[Silkscreens](Silkscreens.md)), the per-part unions succeed, and the Verifier's overlap test comes back at
 0.000 µm on the example boards. The price is that curves are faceted in the mesh formats; the STEP
 writer recovers the true circles from the faceted rings so that CAD gets real cylinders.
 
