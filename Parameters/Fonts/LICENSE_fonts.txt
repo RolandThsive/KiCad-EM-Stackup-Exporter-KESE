@@ -1,0 +1,14 @@
+kicad_newstroke.json.gz
+  Converted from KiCad's built-in stroke font "newstroke"
+  (kicad-source-mirror: common/newstroke_font.cpp).
+  Copyright (C) 2010 Vladimir Uryvaev; CJK glyphs copyright (c) 2018 Lingdong Huang.
+  The generated source file carries the GNU GPL v2-or-later header of the KiCad
+  project; the CJK portion is under an MIT-style permission notice.
+  The file in this folder is font data only, used by Generator/Geometry/Text.py.
+  If you redistribute this project, keep this notice.
+
+Custom fonts
+  Drop a font here and point Silkscreen_Parameters.FONT_FILE at it.
+  Supported: this project's stroke-font JSON format, or a Hershey .jhf file.
+  If FONT_FILE is None or the file is missing, kicad_newstroke.json.gz is used and
+  the report says so.
