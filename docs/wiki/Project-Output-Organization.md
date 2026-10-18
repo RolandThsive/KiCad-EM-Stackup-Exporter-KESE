@@ -29,7 +29,7 @@ KiCad-EM-Stackup-Exporter-KESE/
 
 Every run writes to:
 
-<h2 align="center"><code>&lt;OUTPUT_DIR&gt;/&lt;board&gt;/&lt;mode&gt;_&lt;FORMATS&gt;/</code></h2>
+<h3 align="center"><code>&lt;OUTPUT_DIR&gt;/&lt;board&gt;/&lt;mode&gt;_&lt;FORMATS&gt;/</code></h3>
 
 - `<OUTPUT_DIR>` is `Run.OUTPUT_DIR` (`Output/`) or `--out`.
 - `<board>` is the file name without `.kicad_pcb`.
@@ -46,7 +46,7 @@ the folder that was written.
 
 | File | Written when | Content |
 |---|---|---|
-| `<board>.glb` | `glb` requested | binary glTF 2.0; one node and one mesh per part, named after the part; PBR materials; `KHR` extensions none |
+| `<board>.glb` | `glb` requested | binary glTF 2.0; one node and one mesh per part, named after the part; PBR materials; no glTF extensions |
 | `<board>.obj` + `<board>.mtl` | `obj` requested | one `o <part>` object per part with vertices, normals and faces; the `.mtl` has one material per part (`Kd`, `d`) |
 | `stl/<part>.stl` | `stl` requested | one binary STL per part, in a `stl/` sub-folder; the name is the part name with spaces and unsafe characters replaced by `_` (`Top_Solder_Mask.stl`, `Board_dielectric_1.stl`) |
 | `<board>.step` | `step` requested and `cadquery` installed | STEP AP214 assembly named after the board, one named shape per part (fused solid or compound), with colours |

@@ -96,6 +96,26 @@ Verifier: PASS
   gltf_validator not on PATH: glTF validation skipped
 ```
 
+The overlap test works on the vertical rays. For each ray and each part, the pairs of hits give
+the z intervals the part occupies along that ray; for every two different parts the overlap of
+their intervals is measured, and the worst is reported:
+
+```math
+\Omega = \max_{\text{rays}} \ \max_{A \neq B} \ \left( \min\left( z^{A}_{\mathrm{top}}, z^{B}_{\mathrm{top}} \right) - \max\left( z^{A}_{\mathrm{bot}}, z^{B}_{\mathrm{bot}} \right) \right) \qquad (17.1)
+```
+
+```math
+\text{PASS} \iff \text{every part closed and consistently wound and } \ \Omega < 10^{-4} \text{ mm} \qquad (17.2)
+```
+
+| Symbol | Meaning |
+|---|---|
+| $`\Omega`$ | worst overlap, reported in µm |
+| $`z^{A}_{\mathrm{top}}, z^{A}_{\mathrm{bot}}`$ | one z interval of part $`A`$ along a ray |
+| rays | 3,000 vertical rays at random (x, y) inside the model's bounding box, the same every run (fixed seed) |
+
+A negative value means the intervals do not meet; touching parts give 0.
+
 A `FAIL` names the part: an open solid means a union did not close (see the `note: boolean
 union unavailable` warning), an overlap above 0.1 µm means two parts share volume. Both are
 bugs worth reporting with the board file.
@@ -110,8 +130,14 @@ python -m pytest Tests                 # or:  python Tests/test_boards.py
 python Tests/test_boards.py --accept   # re-record the baseline after an intended geometry change
 ```
 
-A board fails when the Verifier fails, when a part's volume moved by more than 0.1 % from the
-recorded baseline, when a part disappeared or a new one appeared, or (for the small boards
+A board fails when the Verifier fails, when a part's volume moved from the recorded baseline by
+more than
+
+```math
+\left| V - V_0 \right| > 10^{-3} \cdot \max\left( |V_0|,\ 10^{-9} \right) \qquad (17.3)
+```
+
+where $`V`$ is the part's volume now and $`V_0`$ the baseline, both in mm³, when a part disappeared or a new one appeared, or (for the small boards
 `one_layer`, `six_layer`, `synthetic`, when `cadquery` is installed) when the STEP file has an
 invalid solid or a free edge, checked by reading it back with OCP.
 

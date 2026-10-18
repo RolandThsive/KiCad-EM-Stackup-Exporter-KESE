@@ -19,7 +19,29 @@ copper; it never changes the copper itself.
 On each side, the finish covers **exposed copper**: the copper of the outer layer intersected
 with the mask openings of that side (pads with their pad-to-mask clearance, drawn openings,
 untented vias). Copper under the mask gets no finish. The finish layers are stacked from the top
-of the outer copper outward, in the order the finish type lists them, each one its own solid.
+of the outer copper outward, in the order the finish type lists them, each one its own solid:
+
+```math
+X_\sigma = C_\sigma \cap Q_\sigma \qquad (13.1)
+```
+
+```math
+z_j \in \left[ \frac{L}{2} + t_{\mathrm{out}} + \sum_{i<j} \tau_i,\ \ \frac{L}{2} + t_{\mathrm{out}} + \sum_{i \le j} \tau_i \right] \qquad (13.2)
+```
+
+On the `B` side every z is mirrored.
+
+| Symbol | Meaning | Parameter |
+|---|---|---|
+| $`X_\sigma`$ | exposed copper of side $`\sigma`$ (per net with `FINISH_GROUPING = "net"`) | |
+| $`C_\sigma`$ | outer copper of side $`\sigma`$ | |
+| $`Q_\sigma`$ | mask openings of side $`\sigma`$, equation (15.2) | |
+| $`z_j`$ | z range of finish layer $`j`$ ($`j = 1`$ is the layer on the copper) | |
+| $`\tau_i`$ | thickness of finish layer $`i`$ | `Finish.FINISH_TYPES` |
+| $`L`$, $`t_{\mathrm{out}}`$ | laminate thickness and finished outer copper, equations (7.1) and (7.3) | |
+
+For ENIG on `F.Cu` of a 1.6 mm board with 35 µm copper: nickel from 0.835 to 0.840 mm, gold from
+0.840 to 0.84008 mm.
 
 ## 13.3 Finish Types
 

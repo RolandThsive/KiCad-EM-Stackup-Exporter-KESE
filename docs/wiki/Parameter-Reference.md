@@ -158,7 +158,7 @@ Details in [Silkscreens](Silkscreens.md).
 | `DRAW_TRUETYPE_TEXT_WITH_STROKE_FONT` | `True` | bool | Text in a TrueType face is drawn with the stroke font |
 | `INTERLINE_PITCH` | `1.68` | > 0 | Line pitch as a multiple of the text height (KiCad's value) |
 | `INTERLINE_LEGACY_FACTOR` | `0.9583` | > 0 | KiCad's correction for stroke fonts |
-| `INTER_CHAR_SPACING` | `0.2` | ≥ 0 | Extra advance between glyphs, as a fraction of the text width |
+| `INTER_CHAR_SPACING` | `0.2` | ≥ 0 | Spacing each glyph width includes, as a fraction of the text width; dropped from the line width ([Silkscreens](Silkscreens.md), equation (14.2)) |
 | `ITALIC_TILT` | `0.125` | ≥ 0 | x shift per unit of y for italic text |
 | `BOLD_THICKNESS_RATIO`, `NORMAL_THICKNESS_RATIO` | `0.2`, `0.15` | > 0 | Stroke thickness as a fraction of the text height when the file gives none |
 | `TEXT_STROKE_QUAD_SEGS` | `4` | int ≥ 1 | Roundness of stroke ends |
@@ -193,7 +193,59 @@ These do not change dimensions.
 | `TRACK_END_MIN_QUAD_SEGS` | `4` | int ≥ 1 | Roundness of track ends |
 | `BEZIER_SEGMENTS` | `32` | int ≥ 1 | Straight pieces per Bézier curve |
 | `PINCH_POINT_OPENING_MM` | `1e-4` | mm > 0 | Polygons whose rings touch at a single point are opened by this much so they can be meshed |
-| `SKIN_BURIED_TEST_OFFSET_MM` | `0.0005` | mm > 0 | Visual mode: a face is dropped if a point this far outside it lies inside another solid |
+| `SKIN_BURIED_TEST_OFFSET_MM` | `0.0005` | mm > 0 | Visual mode: a face is dropped if a point this far outside it lies inside another solid ([Output Modes](Output-Modes.md), equation (8.1)) |
+
+### 16.7.1 How The Curve Settings Are Used
+
+A circle of radius $`r`$ (a via, a round pad, a track end) is flattened to $`4q`$ straight
+segments, with $`q`$ segments per quarter circle chosen so that no chord strays more than
+$`\varepsilon_c`$ from the true circle:
+
+```math
+n_c = \frac{\pi}{\arccos\left( 1 - \min\left( \dfrac{\varepsilon_c}{r},\ 1 \right) \right)} \qquad (16.1)
+```
+
+```math
+q = \min\left( q_{\max},\ \max\left( q_{\min},\ \left\lceil \frac{n_c}{4} \right\rceil \right) \right) \qquad (16.2)
+```
+
+An arc (an arc track, an arc on a drawing layer) of sweep $`\varphi`$ is cut into
+
+```math
+n_a = \max\left( 2,\ \left\lceil \frac{|\varphi|}{\Delta\varphi} \right\rceil \right) \qquad (16.3)
+```
+
+segments, and the round ends of a track of width $`w`$ use
+
+```math
+q_{\mathrm{end}} = \max\left( q_{\mathrm{track}},\ \left\lfloor \frac{q(w/2)}{2} \right\rfloor \right) \qquad (16.4)
+```
+
+segments per quarter circle.
+
+| Symbol | Meaning | Parameter |
+|---|---|---|
+| $`\varepsilon_c`$ | chord tolerance (2 µm) | `CIRCLE_CHORD_TOLERANCE_MM` |
+| $`n_c`$ | segments a full circle needs for that tolerance | |
+| $`q`$, $`q_{\min}`$, $`q_{\max}`$ | segments per quarter circle and its bounds (8, 128) | `CIRCLE_MIN_QUAD_SEGS`, `CIRCLE_MAX_QUAD_SEGS` |
+| $`\varphi`$, $`\Delta\varphi`$ | arc sweep and maximum step (3°) | `ARC_STEP_DEG` |
+| $`q_{\mathrm{track}}`$ | minimum roundness of track ends (4) | `TRACK_END_MIN_QUAD_SEGS` |
+| $`q(w/2)`$ | equation (16.2) for radius $`w/2`$ | |
+
+Example: a 0.3 mm via ($`r = 0.15`$ mm) gives $`n_c = 19.2`$, so $`q = \max(8, \lceil 4.8 \rceil) = 8`$, 32
+segments around the via; the floor $`q_{\min}`$ decides for every circle below about 0.4 mm radius.
+
+In STEP files (`Run.STEP_EXACT_ARCS`), a run of at least `STEP_ARC_MIN_POINTS` consecutive ring
+vertices is written as one true arc when a least-squares (Kåsa) circle through them fits every
+vertex within `STEP_ARC_FIT_TOLERANCE_MM`, the turn between vertices keeps one sense and is
+nearly the same everywhere, and the run sweeps at least 10°:
+
+```math
+\max_{p \in \text{run}} \left| \lVert \mathbf{p} - \mathbf{c} \rVert - r \right| \le \tau_{\mathrm{arc}} \qquad (16.5)
+```
+
+where $`\mathbf{c}`$ and $`r`$ are the fitted centre and radius and $`\tau_{\mathrm{arc}}`$ is
+`STEP_ARC_FIT_TOLERANCE_MM` (0.2 µm).
 
 ## 16.8 Color (`Color_Parameters.py`)
 

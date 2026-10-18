@@ -49,7 +49,23 @@ Consider before exporting:
 For each part in `materials.json`, create one property from its `properties` and import the STL
 named in `file_names.stl`. Metals become `AddMetal` (PEC) or `AddConductingSheet` / a lossy
 material with `kappa` = conductivity; dielectrics become `AddMaterial` with `epsilon` and a
-`kappa` derived from tanδ at the frequency of interest.
+`kappa` derived from tanδ at the frequency of interest. FDTD models dielectric loss as a
+conductivity, which equals the loss tangent at one frequency:
+
+```math
+\kappa = 2 \pi f_0 \varepsilon_0 \varepsilon_r \tan\delta \qquad (21.1)
+```
+
+| Symbol | Meaning | Source |
+|---|---|---|
+| $`\kappa`$ | equivalent conductivity of the dielectric, S/m | |
+| $`f_0`$ | frequency at which the loss is matched, Hz | your choice |
+| $`\varepsilon_0`$ | vacuum permittivity, $`8.854 \times 10^{-12}`$ F/m | |
+| $`\varepsilon_r`$, $`\tan\delta`$ | relative permittivity and loss tangent of the part | `materials.json`: `epsilon_r`, `loss_tangent` |
+
+Example: FR4 with $`\varepsilon_r = 4.5`$, $`\tan\delta = 0.02`$ at $`f_0 = 2.45`$ GHz gives
+$`\kappa \approx 0.0123`$ S/m. The loss is exact at $`f_0`$ only; away from it a constant
+$`\kappa`$ gives a loss tangent that falls as $`1/f`$.
 
 ```python
 import json, os

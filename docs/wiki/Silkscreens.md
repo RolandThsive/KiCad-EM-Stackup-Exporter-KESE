@@ -33,16 +33,78 @@ clipped off the pads. With `True` the ink is kept there as drawn in KiCad.
 
 KESE ships KiCad's own stroke font, **newstroke**, converted to a JSON file
 (`Parameters/Fonts/kicad_newstroke.json.gz`, with its notice in `LICENSE_fonts.txt`). Text is laid
-out following KiCad's `STROKE_FONT` and `drawMultilineText` code:
+out following KiCad's `STROKE_FONT` and `drawMultilineText` code (`Generator/Geometry/Text.py`).
 
-- glyph advance from the glyph width plus `INTER_CHAR_SPACING` × text width;
-- line pitch `INTERLINE_PITCH` × text height × `INTERLINE_LEGACY_FACTOR`;
-- horizontal and vertical justification with KiCad's offsets, mirrored text for the back side;
-- italic as a shear of `ITALIC_TILT`;
-- stroke thickness from the file, else `BOLD_THICKNESS_RATIO` or `NORMAL_THICKNESS_RATIO` × height;
-- round stroke ends with `TEXT_STROKE_QUAD_SEGS` segments per quarter circle;
-- `${REFERENCE}`, `${VALUE}` and other footprint fields substituted;
-- `\n` line breaks.
+### 14.2.1 Layout Of One Line
+
+Each character advances the pen by its glyph width; a line's width drops the spacing that the
+last glyph carries:
+
+```math
+x_{j+1} = x_j + a_j W, \qquad a_j = \begin{cases} w_{g} & \text{a glyph } g \\ w_{\mathrm{sp}} & \text{a space} \\ 4 w_{\mathrm{sp}} & \text{a tab} \end{cases} \qquad (14.1)
+```
+
+```math
+\lambda = x_{\mathrm{end}} - s_c W \qquad (14.2)
+```
+
+A stroke point $`(u, v)`$ of a glyph (in units of the text size, $`v`$ down) is placed at
+
+```math
+x = x_j + \left( u - \tau v \right) W, \qquad y = v H \qquad (14.3)
+```
+
+### 14.2.2 Lines And Justification
+
+```math
+p = H \cdot \pi_\ell \cdot \kappa_\ell \qquad (14.4)
+```
+
+```math
+\hat{H} = 1.17 H + (n_\ell - 1) p \qquad (14.5)
+```
+
+```math
+o_x = \frac{T}{1.52}, \qquad o_y = H - 0.052 T - \begin{cases} 0 & \text{top} \\ \hat{H} & \text{bottom} \\ \hat{H}/2 & \text{centre} \end{cases} \qquad (14.6)
+```
+
+```math
+x_{\mathrm{start},i} = o_x + \begin{cases} 0 & \text{left} \\ -\left( \lambda_i + o_x \right) & \text{right} \\ -\lambda_i / 2 & \text{centre} \end{cases}, \qquad y_{\mathrm{start},i} = o_y + i p \qquad (14.7)
+```
+
+### 14.2.3 Placement And Stroke
+
+Every local point $`(x, y)`$ is mirrored for back-side text ($`x \to -x`$), then rotated by the
+text angle $`\theta`$ about the anchor $`(X_0, Y_0)`$, in KiCad's frame (Y down):
+
+```math
+X = X_0 + x \cos\theta + y \sin\theta, \qquad Y = Y_0 - x \sin\theta + y \cos\theta \qquad (14.8)
+```
+
+The strokes are then thickened to the stroke width:
+
+```math
+T = \begin{cases} T_{\mathrm{file}} & \text{if the file gives one} \\ \rho_b H & \text{bold} \\ \rho_n H & \text{normal} \end{cases}, \qquad \text{glyph region} = \bigcup \text{strokes} \oplus \frac{T}{2} \qquad (14.9)
+```
+
+| Symbol | Meaning | Parameter |
+|---|---|---|
+| $`H`$, $`W`$ | text height and width | the file's `(size h w)` |
+| $`x_j`$ | pen position before character $`j`$ ($`x_0 = 0`$) | |
+| $`w_g`$, $`w_{\mathrm{sp}}`$ | width of glyph $`g`$ and of a space, in units of $`W`$ (from the font file) | |
+| $`s_c`$ | inter-character spacing included in each glyph width | `Silkscreen.INTER_CHAR_SPACING` (0.2) |
+| $`\lambda`$, $`\lambda_i`$ | width of a line, of line $`i`$ | |
+| $`\tau`$ | italic tilt (0 for upright text) | `Silkscreen.ITALIC_TILT` (0.125) |
+| $`p`$ | line pitch | |
+| $`\pi_\ell`$, $`\kappa_\ell`$ | interline pitch and legacy factor | `Silkscreen.INTERLINE_PITCH` (1.68), `Silkscreen.INTERLINE_LEGACY_FACTOR` (0.9583) |
+| $`n_\ell`$ | number of lines (`\n` breaks) | |
+| $`\hat{H}`$ | block height | |
+| $`o_x`$, $`o_y`$ | KiCad's stroke-font offsets | |
+| $`T`$ | stroke width | the file's `(thickness ...)`, else `Silkscreen.BOLD_THICKNESS_RATIO` $`\rho_b`$ (0.2) or `Silkscreen.NORMAL_THICKNESS_RATIO` $`\rho_n`$ (0.15) |
+| $`\theta`$, $`(X_0, Y_0)`$ | text angle and anchor | the file's `(at x y angle)` |
+
+Stroke ends are round with `TEXT_STROKE_QUAD_SEGS` segments per quarter circle. `${REFERENCE}`,
+`${VALUE}` and the other footprint fields are substituted before layout.
 
 Text in a TrueType face (KiCad 7+ `(font (face "..."))`) is drawn with the stroke font when
 `DRAW_TRUETYPE_TEXT_WITH_STROKE_FONT = True` (the default) and counted in `report.txt`; with
@@ -55,16 +117,40 @@ is used and `report.txt` says so on its `font:` note.
 
 ## 14.3 Ink Geometry
 
-The ink is `SILK_THICKNESS_MM` thick (10 µm by default) and follows the mask surface, which is
-flat over laminate and raised over copper (by the copper thickness plus the mask-over-copper
-thickness):
+The ink follows the mask surface, which is flat over laminate and raised over copper. First the
+silk region $`S`$ is split against the mask region $`M`$ of equation (15.1), then the part on the
+mask is split against the raised mask over copper, $`K = C \oplus m_L`$:
 
-| Where | z range (top side, from the laminate face) |
-|---|---|
-| on the mask over laminate | mask thickness to mask thickness + ink |
-| on the mask over copper | copper + mask over copper to that + ink |
-| the step beside a trace, where the mask climbs | a wall from the mask surface to the raised surface + ink |
-| where the ink leaves the mask (only with `SILKSCREEN_OVER_COPPER = True`) | it steps down the mask edge and lies on the laminate or on bare copper |
+```math
+S^{\mathrm{off}} = S \setminus \left( M \oplus s \right), \qquad S^{\mathrm{on}} = S \cap M, \qquad S^{\mathrm{step}} = S \cap \left( \left( M \oplus s \right) \setminus M \right) \qquad (14.10)
+```
+
+```math
+S^{\mathrm{flat}} = S^{\mathrm{on}} \setminus \left( K \oplus s \right), \qquad S^{\mathrm{top}} = S^{\mathrm{on}} \cap K, \qquad S^{\mathrm{wall}} = S^{\mathrm{on}} \cap \left( \left( K \oplus s \right) \setminus K \right) \qquad (14.11)
+```
+
+On the `F` side, with $`h = L/2`$ the laminate face, these are extruded over:
+
+| Region | z range | Where |
+|---|---|---|
+| $`S^{\mathrm{flat}}`$ | $`[h + m_L,\ h + m_L + s]`$ | on the mask over laminate |
+| $`S^{\mathrm{top}}`$ | $`[h + t + m_C,\ h + t + m_C + s]`$ | on the mask over copper |
+| $`S^{\mathrm{wall}}`$ | $`[h + m_L,\ h + t + m_C + s]`$ | climbing the mask step beside a trace |
+| $`S^{\mathrm{step}}`$ | $`[h,\ h + m_L + s]`$ | stepping down the edge of a mask opening |
+| $`S^{\mathrm{off}} \setminus C`$ | $`[h,\ h + s]`$ | on bare laminate in an opening |
+| $`S^{\mathrm{off}} \cap C`$ | $`[h + t,\ h + t + s]`$ | on bare copper in an opening |
+
+The last three exist only with `SILKSCREEN_OVER_COPPER = True`; otherwise the ink was already
+removed from every opening. On the `B` side every z is mirrored.
+
+| Symbol | Meaning | Parameter |
+|---|---|---|
+| $`S`$ | silk region after clipping to the outline, the edge pull-back and the bores | |
+| $`M`$ | mask region, equation (15.1) | |
+| $`C`$ | outer copper of that side, every net | |
+| $`s`$ | ink thickness | `Silkscreen.SILK_THICKNESS_MM` (0.010) |
+| $`m_L`$, $`m_C`$ | mask thickness over laminate and over copper | `SolderMask.MASK_OVER_LAMINATE_MM`, `SolderMask.MASK_OVER_COPPER_MM` |
+| $`t`$ | finished outer copper thickness, equation (7.3) | |
 
 Each side is one part, `Top Silkscreen` or `Bottom Silkscreen`, with `side` and `thickness_mm`
 in `materials.json`.
@@ -78,7 +164,7 @@ in `materials.json`.
 | `FONT_FILE` | `None` | None or a file name in `Parameters/Fonts/` | Custom font; `None` = KiCad newstroke |
 | `DRAW_TRUETYPE_TEXT_WITH_STROKE_FONT` | `True` | bool | Draw TrueType-face text with the stroke font |
 | `INTERLINE_PITCH`, `INTERLINE_LEGACY_FACTOR` | `1.68`, `0.9583` | > 0 | KiCad's line pitch and stroke-font correction |
-| `INTER_CHAR_SPACING` | `0.2` | ≥ 0 | Extra advance between glyphs, fraction of text width |
+| `INTER_CHAR_SPACING` | `0.2` | ≥ 0 | Spacing each glyph width includes, as a fraction of the text width; dropped from the line width, equation (14.2) |
 | `ITALIC_TILT` | `0.125` | ≥ 0 | x shift per unit of y for italic text |
 | `BOLD_THICKNESS_RATIO`, `NORMAL_THICKNESS_RATIO` | `0.2`, `0.15` | > 0 | Stroke = ratio × text height when the file gives none |
 | `TEXT_STROKE_QUAD_SEGS` | `4` | int ≥ 1 | Roundness of stroke ends |

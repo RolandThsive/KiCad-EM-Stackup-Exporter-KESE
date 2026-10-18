@@ -64,8 +64,15 @@ Reader -> BoardBreakdown -> Geometry -> Colorer -> Assembler -> Verifier -> Pack
 
 ## 6.1 The Design Choice That Matters Most
 
-Everything is built from **2D regions snapped to one grid** (`Geometry.SNAP_GRID_MM`, 0.1 µm by
-default) and extruded between **heights computed once** from the stack-up. Because neighbouring
+Everything is built from **2D regions snapped to one grid** and extruded between **heights
+computed once** from the stack-up. Every vertex of every 2D region is rounded to the grid:
+
+```math
+x' = g \cdot \operatorname{round}\left( \frac{x}{g} \right), \qquad y' = g \cdot \operatorname{round}\left( \frac{y}{g} \right) \qquad (6.1)
+```
+
+where $`g`$ is the grid pitch, `Geometry.SNAP_GRID_MM` (0.1 µm by default). Heights are not
+rounded. Because neighbouring
 layers share identical vertices and exact z values, the solids of different parts touch without
 gaps or overlaps, the per-part unions succeed, and the Verifier's overlap test comes back at
 0.000 µm on the example boards. The price is that curves are faceted in the mesh formats; the STEP
@@ -79,8 +86,36 @@ writer recovers the true circles from the faceted rings so that CAD gets real cy
 | Board | inside KESE | mm, X right, Y **up**, origin at the outline centre (`Run.ORIGIN = "center"`) or at KiCad's page origin (`"kicad"`); z = 0 at the laminate mid-plane, `F.Cu` toward +Z |
 | Output | the files | mm or m (`Run.UNITS`); board in the XY plane with `F.Cu` toward +Z (`Run.ORIENTATION = "upright"`) or in the XZ plane with `F.Cu` toward +Y (`"flat"`) |
 
-`report.txt` states which origin was used, with the offset in KiCad coordinates, so positions can
-be mapped back to the layout.
+From KiCad to the board frame (in `BoardBreakdown.resolve`), every 2D point is shifted to the
+origin and the Y axis is flipped:
+
+```math
+x_b = x_k - c_x, \qquad y_b = -\left(y_k - c_y\right) \qquad (6.2)
+```
+
+```math
+(c_x, c_y) = \begin{cases} \left( \dfrac{x_{\min} + x_{\max}}{2},\ \dfrac{y_{\min} + y_{\max}}{2} \right) & \text{origin at the centre} \\ (0,\ 0) & \text{KiCad origin} \end{cases} \qquad (6.3)
+```
+
+From the board frame to the written files (in `Assembler.output_transform`), every 3D point is
+scaled to the output units and, for the flat orientation, turned so that `F.Cu` faces +Y:
+
+```math
+\begin{pmatrix} x_o \\ y_o \\ z_o \end{pmatrix} = u R \begin{pmatrix} x_b \\ y_b \\ z_b \end{pmatrix}, \qquad u = \begin{cases} 1 & \text{mm} \\ 10^{-3} & \text{m} \end{cases}, \qquad R = \begin{cases} I & \text{upright} \\ \begin{pmatrix} 1 & 0 & 0 \\ 0 & 0 & 1 \\ 0 & -1 & 0 \end{pmatrix} & \text{flat} \end{cases} \qquad (6.4)
+```
+
+| Symbol | Meaning | Parameter |
+|---|---|---|
+| $`x_k, y_k`$ | a point in KiCad's frame (mm, Y down) | |
+| $`x_b, y_b, z_b`$ | the same point in the board frame (mm, Y up, $`z_b = 0`$ at the laminate mid-plane) | |
+| $`c_x, c_y`$ | the origin in KiCad coordinates | `Run.ORIGIN` |
+| $`x_{\min} \dots y_{\max}`$ | bounding box of the board outline in KiCad coordinates | |
+| $`x_o, y_o, z_o`$ | the point as written to the files | |
+| $`u`$ | unit scale | `Run.UNITS` |
+| $`R`$ | orientation | `Run.ORIENTATION` |
+
+`report.txt` states which origin was used, with the offset $`(c_x, c_y)`$ in KiCad coordinates, so
+positions can be mapped back to the layout.
 
 | Previous | Next |
 |:---|---:|

@@ -9,21 +9,95 @@ can be checked against it.
 
 ## 7.1 Heights
 
-All heights are in mm, measured from the **laminate mid-plane** (z = 0), with the `F.Cu` side
-positive.
+All heights are in mm, measured from the **laminate mid-plane** ($`z = 0`$), with the `F.Cu` side
+positive. A board has $`N`$ copper layers $`l_0 \dots l_{N-1}`$, counted from `F.Cu`
+($`l_0`$) to `B.Cu` ($`l_{N-1}`$), and $`N-1`$ dielectrics $`d_1 \dots d_{N-1}`$, where
+$`d_i`$ lies between $`l_{i-1}`$ and $`l_i`$. Equations are numbered per page.
 
-- The laminate is the stack of dielectrics plus the inner copper layers, of total thickness
-  $L$. Its faces are at $z = \pm L/2$.
-- **Outer copper** sits on the laminate faces: `F.Cu` from $+L/2$ up to $+L/2 + t_F$, `B.Cu` from
-  $-L/2$ down to $-L/2 - t_B$, where $t$ is the finished outer copper,
-  $t = \text{foil} + \texttt{Copper.OUTER\_PLATING\_ADDED\_MM}$.
-- **Inner copper** lies inside the laminate. Walking down from the top face, each dielectric
-  takes its thickness, then the inner copper below it takes its foil thickness, and so on.
-- The solder mask starts at the laminate face and the silkscreen on top of the mask; see
-  [Solder Masks](Solder-Masks.md) and [Silkscreens](Silkscreens.md).
+### 7.1.1 Laminate And Faces
+
+The laminate is the stack of dielectrics plus the inner copper layers:
+
+```math
+L = \sum_{i=1}^{N-1} h_i + \sum_{k=1}^{N-2} t_k \qquad (7.1)
+```
+
+```math
+z_{\mathrm{face}} = \pm \frac{L}{2} \qquad (7.2)
+```
+
+| Symbol | Meaning | Unit |
+|---|---|---|
+| $`L`$ | laminate thickness: dielectrics plus inner copper | mm |
+| $`h_i`$ | thickness of dielectric $`d_i`$ | mm |
+| $`t_k`$ | foil thickness of inner copper layer $`l_k`$ | mm |
+| $`z_{\mathrm{face}}`$ | height of the laminate faces: $`+L/2`$ on the `F.Cu` side, $`-L/2`$ on the `B.Cu` side | mm |
+
+### 7.1.2 Outer Copper
+
+Outer copper sits on the laminate faces. Its finished thickness is the foil plus the plating
+added during hole plating:
+
+```math
+t_{\mathrm{out}} = t_{\mathrm{foil}} + t_{\mathrm{plate}} \qquad (7.3)
+```
+
+```math
+z_{\mathrm{F.Cu}} \in \left[ \frac{L}{2},\ \frac{L}{2} + t_{\mathrm{out},F} \right] \qquad (7.4)
+```
+
+```math
+z_{\mathrm{B.Cu}} \in \left[ -\frac{L}{2} - t_{\mathrm{out},B},\ -\frac{L}{2} \right] \qquad (7.5)
+```
+
+| Symbol | Meaning | Parameter |
+|---|---|---|
+| $`t_{\mathrm{out}}`$ | finished outer copper thickness ($`t_{\mathrm{out},F}`$ for `F.Cu`, $`t_{\mathrm{out},B}`$ for `B.Cu`) | |
+| $`t_{\mathrm{foil}}`$ | foil thickness of the outer layer | stack-up, else `Copper.DEFAULT_OUTER_FOIL_MM` |
+| $`t_{\mathrm{plate}}`$ | copper added to the outer layers by plating | `Copper.OUTER_PLATING_ADDED_MM` |
+| $`z_{\mathrm{F.Cu}}`$, $`z_{\mathrm{B.Cu}}`$ | z range of the outer copper | |
+
+### 7.1.3 Inner Copper
+
+Inner copper lies inside the laminate. Walking down from the top face, each dielectric takes its
+thickness and each inner copper layer below it its foil thickness:
+
+```math
+z_{\mathrm{top}}(l_k) = \frac{L}{2} - \sum_{i=1}^{k} h_i - \sum_{m=1}^{k-1} t_m \qquad (7.6)
+```
+
+```math
+z_{\mathrm{bot}}(l_k) = z_{\mathrm{top}}(l_k) - t_k \qquad (7.7)
+```
+
+for every inner layer, $`k = 1 \dots N-2`$.
+
+| Symbol | Meaning | Unit |
+|---|---|---|
+| $`z_{\mathrm{top}}(l_k)`$, $`z_{\mathrm{bot}}(l_k)`$ | top and bottom of inner copper layer $`l_k`$ | mm |
+| $`h_i`$ | thickness of dielectric $`d_i`$ | mm |
+| $`t_m`$ | foil thickness of inner copper layer $`l_m`$ | mm |
+
+### 7.1.4 Dielectrics
+
+Dielectric $`d_i`$ fills the space between the copper layers above and below it, and reaches the
+laminate face where there is no copper layer inside the laminate above or below it:
+
+```math
+z_{\mathrm{top}}(d_i) = \begin{cases} L/2 & i = 1 \\ z_{\mathrm{bot}}(l_{i-1}) & i > 1 \end{cases} \qquad (7.8)
+```
+
+```math
+z_{\mathrm{bot}}(d_i) = \begin{cases} -L/2 & i = N-1 \\ z_{\mathrm{top}}(l_i) & i < N-1 \end{cases} \qquad (7.9)
+```
+
+The mask starts at the laminate face and the silkscreen lies on top of the mask; their heights
+are in [Solder Masks](Solder-Masks.md) and [Silkscreens](Silkscreens.md).
 
 For a 6-layer board with 0.1 / 0.3 / 0.2 / 0.3 / 0.1 mm dielectrics, 17.5 µm inner foil and
-35 µm outer foil (the `Tests/boards/six_layer.kicad_pcb` board):
+35 µm outer foil (the `Tests/boards/six_layer.kicad_pcb` board), equation (7.1) gives
+$`L = 1.0 + 4 \times 0.0175 = 1.07`$ mm and equation (7.6) gives the top of `In1.Cu` at
+$`0.535 - 0.1 = 0.435`$ mm, as `report.txt` shows:
 
 ```text
 laminate 1.0700 mm (stackup dielectrics (+ inner copper); board total in file 1.2 mm)
@@ -58,8 +132,20 @@ A stack-up is **usable** when it has exactly one group of dielectric layers betw
 consecutive copper layers and every group has a thickness above zero. A gap made of several plies
 (two prepregs, or prepreg + core + prepreg) becomes **one** dielectric solid with the summed
 thickness and the first ply's type, material, εr and tanδ; its name joins the ply names
-(`dielectric 1 + dielectric 2`). The laminate thickness is then the sum of all dielectrics plus
-the inner copper, so that laminate + outer copper + mask equals KiCad's board thickness.
+(`dielectric 1 + dielectric 2`):
+
+```math
+h_i = \sum_{p=1}^{P_i} h_{i,p} \qquad (7.10)
+```
+
+| Symbol | Meaning |
+|---|---|
+| $`h_i`$ | thickness of the dielectric solid in gap $`i`$ |
+| $`P_i`$ | number of plies in gap $`i`$ |
+| $`h_{i,p}`$ | thickness of ply $`p`$ of gap $`i`$, from the stack-up |
+
+The laminate thickness is then equation (7.1), so that laminate + outer copper + mask equals
+KiCad's board thickness.
 
 Any value the stack-up leaves out falls back to the parameter defaults:
 `Copper.DEFAULT_OUTER_FOIL_MM`, `Copper.DEFAULT_INNER_FOIL_MM`, `Board.DEFAULT_DIELECTRIC_MATERIAL`,
@@ -73,19 +159,47 @@ When the file has no stack-up block, or an unusable one:
 - The laminate thickness is the file's `(general (thickness ...))`, or 1.6 mm when the file has
   none.
 - The laminate minus the inner copper is divided **evenly** between the copper layers
-  (`Board.DIELECTRIC_SPLIT = "even"`, the only split implemented). Each gap becomes a dielectric
-  named `dielectric 1`, `dielectric 2`, ... of the default type and material with the default εr
-  and tanδ.
+  (`Board.DIELECTRIC_SPLIT = "even"`, the only split implemented), equation (7.11). Each gap
+  becomes a dielectric named `dielectric 1`, `dielectric 2`, ... of the default type and material
+  with the default εr and tanδ.
 - Every copper layer gets the default foil thickness.
 
-The 4-layer `Coil_30_50_...` example has no stack-up: 1.6 mm minus two 35 µm inner foils gives
-three dielectrics of 0.51 mm each.
+```math
+h_i = \frac{L - \sum_{k=1}^{N-2} t_k}{N - 1} \qquad (7.11)
+```
+
+| Symbol | Meaning | Parameter |
+|---|---|---|
+| $`h_i`$ | thickness of every dielectric | |
+| $`L`$ | laminate thickness: the file's board thickness, else 1.6 mm | `(general (thickness ...))` |
+| $`t_k`$ | foil of inner copper layer $`l_k`$ | `Copper.DEFAULT_INNER_FOIL_MM` |
+| $`N`$ | number of copper layers | |
+
+The 4-layer `Coil_30_50_...` example has no stack-up: $`h_i = (1.6 - 2 \times 0.035) / 3 = 0.51`$
+mm for each of the three dielectrics.
 
 ### 7.2.3 Forcing The Laminate Thickness
 
 `Board.BOARD_THICKNESS_MM` (default `None`) overrides the laminate thickness. With a usable
 stack-up the dielectric thicknesses are **scaled** so their proportions are kept; without one the
-even split is applied to the forced value. `report.txt` states the source on the `laminate` line:
+even split of equation (7.11) is applied to the forced value:
+
+```math
+s = \frac{L^{*} - \sum_{k=1}^{N-2} t_k}{\sum_{i=1}^{N-1} h_i} \qquad (7.12)
+```
+
+```math
+h_i^{*} = s \cdot h_i \qquad (7.13)
+```
+
+| Symbol | Meaning | Parameter |
+|---|---|---|
+| $`L^{*}`$ | forced laminate thickness | `Board.BOARD_THICKNESS_MM` |
+| $`h_i`$ | dielectric thickness from the stack-up | |
+| $`h_i^{*}`$ | dielectric thickness used | |
+| $`s`$ | scale factor | |
+
+ `report.txt` states the source on the `laminate` line:
 
 | `report.txt` says | Meaning |
 |---|---|
@@ -103,10 +217,10 @@ even split is applied to the forced value. `report.txt` states the source on the
 
 | Feature | Height used |
 |---|---|
-| Dielectric $i$ | from the bottom of the copper layer above it to the top of the copper layer below it (the faces of the laminate for the outermost) |
+| Dielectric $`d_i`$ | equations (7.8) and (7.9) |
 | Resin beside inner copper | the inner copper's own band, filled by the neighbouring prepreg's material ([Board](Board.md)) |
-| Copper of layer $l$ | its band `(z_lo, z_hi)` |
-| Via barrel from layer $i$ to $j$ | between the copper layers it joins; outer copper caps it, inner copper is drilled through, so the barrel passes through inner bands ([Copper And Traces](Copper-And-Traces.md)) |
+| Copper of layer $`l_k`$ | its band, equations (7.4) to (7.7) |
+| Via barrel from layer $`l_i`$ to $`l_j`$ | between the copper layers it joins; outer copper caps it, inner copper is drilled through, so the barrel passes through inner bands ([Copper And Traces](Copper-And-Traces.md)) |
 | Solder mask | from the laminate face: mask thickness over laminate, copper + mask thickness over copper ([Solder Masks](Solder-Masks.md)) |
 | Silkscreen | on top of the mask surface ([Silkscreens](Silkscreens.md)) |
 | Surface finish | stacked on top of the outer copper where the mask is open ([Top And Bottom Copper Finishings](Copper-Finishings.md)) |

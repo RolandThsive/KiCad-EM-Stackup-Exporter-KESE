@@ -17,10 +17,24 @@ and tanδ. With `Run.DIELECTRIC_GROUPING = "layer"` (the default) each becomes i
 `Board_dielectric 1`, `Board_dielectric 2`, ... counted from the `F.Cu` side; with `"merged"`
 every dielectric prism goes into one part named `Board`.
 
-Each dielectric prism is the outline minus every hole that passes through that gap (a via from
-layer *i* to layer *j* drills dielectrics *i* to *j* − 1, a through via and a through-hole pad
-drill them all). The dielectric's z range runs from the bottom of the copper layer above it to the
-top of the copper layer below it.
+Each dielectric prism is the outline minus every hole that passes through that gap: a via from
+copper layer $`l_a`$ to $`l_b`$ drills the dielectrics between them, and a through via or a
+through-hole pad drills them all.
+
+```math
+D_i = O \setminus \bigcup_{h : a_h \le i-1,\ b_h \ge i} H_h \qquad (10.1)
+```
+
+| Symbol | Meaning |
+|---|---|
+| $`D_i`$ | 2D region of dielectric $`d_i`$ (between copper layers $`l_{i-1}`$ and $`l_i`$) |
+| $`O`$ | the board outline region (section 10.3) |
+| $`H_h`$ | the drill of hole $`h`$ (round or slot) |
+| $`a_h, b_h`$ | index of the first and last copper layer hole $`h`$ spans ($`0`$ to $`N-1`$ for a through hole) |
+| $`\setminus`$, $`\cup`$, $`\cap`$ | region difference, union and intersection |
+
+The prism is extruded over the z range of equations (7.8) and (7.9) in
+[Stack-Up Model](Stack-Up-Model.md).
 
 In `materials.json` every dielectric part carries `kind` (core / prepreg), `material`,
 `thickness_mm`, `epsilon_r`, `loss_tangent` and `between` (the two copper layers it separates).
@@ -30,8 +44,21 @@ In `materials.json` every dielectric part carries `kind` (core / prepreg), `mate
 In a pressed laminate the resin of the prepreg flows into the spaces between the inner-layer
 traces, so there is no air inside the board. KESE models this with
 `Board.RESIN_FILL_BETWEEN_INNER_COPPER = True` (the default): for every inner copper layer, the
-area of the outline that carries **no** copper on that layer, minus the holes, is filled over
-the copper's own z band and added to a dielectric part:
+area of the outline that carries **no** copper on that layer, minus the holes through that
+layer, is filled over the copper's own z band:
+
+```math
+F_k = \left( O \setminus \bigcup_{h : a_h \le k \le b_h} H_h \right) \setminus C_k, \qquad z \in \left[ z_{\mathrm{bot}}(l_k),\ z_{\mathrm{top}}(l_k) \right] \qquad (10.2)
+```
+
+| Symbol | Meaning |
+|---|---|
+| $`F_k`$ | resin-fill region beside inner copper layer $`l_k`$ |
+| $`C_k`$ | all copper of layer $`l_k`$, every net |
+| $`z_{\mathrm{bot}}(l_k)`$, $`z_{\mathrm{top}}(l_k)`$ | the copper band of $`l_k`$, equations (7.6) and (7.7) |
+
+With edge plating on, the edge band is also removed from $`F_k`$. The fill is added to a
+dielectric part:
 
 - the prepreg **below** the copper layer when the layer above is a core and the one below a
   prepreg;
@@ -57,11 +84,29 @@ The outline comes from `Edge.Cuts`:
    `Edge.Cuts lines/arcs do not form a closed outline`.
 3. Rings nested at an **even** depth are board, rings at an **odd** depth are cut-outs. A circle
    drawn inside the outer outline is a hole through the whole board; a ring inside that would be
-   board again.
+   board again:
 
-Without any `Edge.Cuts` at all, `Board.OUTLINE_FALLBACK` decides: `"copper_hull"` (the default)
-uses the convex hull of all copper grown by `Board.OUTLINE_FALLBACK_MARGIN_MM` (1 mm) and warns;
-`"error"` stops the run.
+```math
+O = \bigcup_{r : n_r \text{ even}} r \ \setminus \bigcup_{r : n_r \text{ odd}} r \qquad (10.3)
+```
+
+| Symbol | Meaning |
+|---|---|
+| $`O`$ | the board outline region |
+| $`r`$ | one closed ring found on `Edge.Cuts` |
+| $`n_r`$ | how many other rings contain $`r`$ |
+
+Without any `Edge.Cuts` at all, the fallback outline is
+
+```math
+O = \operatorname{hull}\left( \bigcup C \right) \oplus m \qquad (10.4)
+```
+
+where $`\operatorname{hull}`$ is the convex hull of all copper, $`\oplus m`$ grows a region
+outward by $`m`$ (a buffer), and $`m`$ is `Board.OUTLINE_FALLBACK_MARGIN_MM`.
+
+`Board.OUTLINE_FALLBACK` decides whether the fallback is used: `"copper_hull"` (the default)
+uses equation (10.4) with $`m = 1`$ mm and warns; `"error"` stops the run.
 
 Everything on every layer is clipped to the outline: copper, mask openings and silkscreen never
 reach past the board edge.

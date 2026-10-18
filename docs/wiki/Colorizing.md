@@ -58,12 +58,27 @@ Names are matched in lower case; a name not in the table keeps the `MATERIALS` c
 
 | File | How the colour is written |
 |---|---|
-| GLB | one PBR material per part: `baseColorFactor` (sRGB converted to linear), `metallicFactor`, `roughnessFactor`, `alphaMode: BLEND` when alpha < 1 |
+| GLB | one PBR material per part: `baseColorFactor` (sRGB converted to linear, equation (12.1)), `metallicFactor`, `roughnessFactor`, `alphaMode: BLEND` when alpha < 1 |
 | OBJ | an `.mtl` next to the `.obj` with `newmtl <part>`, `Kd r g b`, `d alpha` |
 | STEP | the assembly colour of each solid (RGB and alpha) |
 | STL | none (STL has no colour) |
 | `materials.json` | `look: {color, alpha}` per part |
 | `report.txt` | the material key, hex and alpha on every `parts` line |
+
+glTF stores base colours in linear light, so each 8-bit sRGB channel of the hex colour is
+converted with the standard sRGB transfer function before it is written to the GLB:
+
+```math
+c_{\mathrm{lin}} = \begin{cases} \dfrac{c}{12.92} & c \le 0.04045 \\ \left( \dfrac{c + 0.055}{1.055} \right)^{2.4} & c > 0.04045 \end{cases}, \qquad c = \frac{C_8}{255} \qquad (12.1)
+```
+
+| Symbol | Meaning |
+|---|---|
+| $`C_8`$ | one channel of the hex colour, 0 to 255 |
+| $`c`$ | that channel as sRGB, 0 to 1 (also what the OBJ `.mtl` `Kd` line carries) |
+| $`c_{\mathrm{lin}}`$ | the linear value in the GLB `baseColorFactor`, rounded to 5 decimals |
+
+The fourth component of `baseColorFactor` is the alpha, unchanged.
 
 ## 12.5 Settings
 

@@ -34,9 +34,19 @@ Part names in simulation mode, with the default grouping:
 `--mode visual`: **only the visible surface** of the same geometry, for web viewers such as
 `<model-viewer>` and three.js, and for renders. The `Skin` builder (`Generator/Geometry/Skin.py`)
 slices every prism at every height in the stack, rebuilds all regions from one planar
-arrangement so that neighbours share exact vertices, triangulates, and then drops every face
-whose centre, pushed `Geometry.SKIN_BURIED_TEST_OFFSET_MM` outward along its normal, lies inside
-another prism. What remains is one closed outer surface, still split into named parts.
+arrangement so that neighbours share exact vertices, triangulates, and then drops every face that is buried inside another prism:
+
+```math
+\text{keep face } f \iff \nexists P : \ \mathbf{c}_f + \varepsilon \hat{\mathbf{n}}_f \in P \qquad (8.1)
+```
+
+| Symbol | Meaning | Parameter |
+|---|---|---|
+| $`\mathbf{c}_f`$, $`\hat{\mathbf{n}}_f`$ | centre and outward unit normal of triangle $`f`$ | |
+| $`\varepsilon`$ | test offset (0.5 µm) | `Geometry.SKIN_BURIED_TEST_OFFSET_MM` |
+| $`P`$ | any prism of the model (a region between two heights), tested with the open z interval | |
+
+What remains is one closed outer surface, still split into named parts.
 
 Why it exists: in the simulation model the mask lies on the copper and the copper on the
 laminate, with surfaces only microns apart. Viewers draw these with a depth buffer and the
