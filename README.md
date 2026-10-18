@@ -148,8 +148,12 @@ approach can be discussed.
 
 ## License
 
-KESE may be used for research and education only. Commercial use is not permitted unless your
-company is on the author's list of approved companies. See [LICENSE](LICENSE) for the full terms.
+KESE is licensed under the [PolyForm Noncommercial License 1.0.0](LICENSE)
+(SPDX: `PolyForm-Noncommercial-1.0.0`). You may use it for any noncommercial purpose, including
+research, education and personal or hobby projects.
+
+Commercial use needs a separate license from the author. See [COMMERCIAL.md](COMMERCIAL.md) for
+how to ask for one.
 
 The stroke font data in `Parameters/Fonts/` comes from KiCad and keeps its own notice; see
 [`Parameters/Fonts/LICENSE_fonts.txt`](Parameters/Fonts/LICENSE_fonts.txt).
