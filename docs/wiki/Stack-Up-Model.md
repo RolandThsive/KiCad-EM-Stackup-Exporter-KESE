@@ -100,24 +100,25 @@ $`L = 1.0 + 4 \times 0.0175 = 1.07`$ mm and equation (7.6) gives the top of `In1
 $`0.535 - 0.1 = 0.435`$ mm, as `report.txt` shows:
 
 ```text
-laminate 1.0700 mm (stackup dielectrics (+ inner copper); board total in file 1.2 mm)
-F.Cu     z +0.5350 .. +0.5700 mm  (foil 0.035 mm)
-In1.Cu   z +0.4175 .. +0.4350 mm  (foil 0.0175 mm)
-In2.Cu   z +0.1000 .. +0.1175 mm  (foil 0.0175 mm)
-In3.Cu   z -0.1175 .. -0.1000 mm  (foil 0.0175 mm)
-In4.Cu   z -0.4350 .. -0.4175 mm  (foil 0.0175 mm)
-B.Cu     z -0.5700 .. -0.5350 mm  (foil 0.035 mm)
-dielectric 1   prepreg  FR4  0.1000 mm  er 4.5  tan d 0.02   z +0.4350 .. +0.5350
-dielectric 2   core     FR4  0.3000 mm  er 4.5  tan d 0.02   z +0.1175 .. +0.4175
-...
+  laminate 1.0700 mm (stackup dielectrics (+ inner copper); board total in file 1.2 mm)
+  F.Cu     z +0.5350 .. +0.5700 mm  (foil 0.035 mm)
+  In1.Cu   z +0.4175 .. +0.4350 mm  (foil 0.0175 mm)
+  In2.Cu   z +0.1000 .. +0.1175 mm  (foil 0.0175 mm)
+  In3.Cu   z -0.1175 .. -0.1000 mm  (foil 0.0175 mm)
+  In4.Cu   z -0.4350 .. -0.4175 mm  (foil 0.0175 mm)
+  B.Cu     z -0.5700 .. -0.5350 mm  (foil 0.035 mm)
+  dielectric 1             prepreg  FR4        0.1000 mm  er 4.5  tan d 0.02   z +0.4350 .. +0.5350
+  dielectric 2             core     FR4        0.3000 mm  er 4.5  tan d 0.02   z +0.1175 .. +0.4175
+  ...
 ```
 
 ## 7.2 Where The Numbers Come From
 
 ### 7.2.1 With A Stack-Up In The File
 
-KiCad writes `(setup (stackup (layer ...) ...))` once the stack-up has been edited in Board
-Setup > Physical Stackup. KESE reads, per layer:
+KiCad writes `(setup (stackup (layer ...) ...))` once the stack-up has been confirmed in Board
+Setup > Physical Stackup; a board whose stack-up was never set there has no such block (none of
+the example boards has one). KESE reads, per layer:
 
 | From the stack-up | Used for | Switch |
 |---|---|---|
@@ -131,8 +132,9 @@ Setup > Physical Stackup. KESE reads, per layer:
 A stack-up is **usable** when it has exactly one group of dielectric layers between every pair of
 consecutive copper layers and every group has a thickness above zero. A gap made of several plies
 (two prepregs, or prepreg + core + prepreg) becomes **one** dielectric solid with the summed
-thickness and the first ply's type, material, εr and tanδ; its name joins the ply names
-(`dielectric 1 + dielectric 2`):
+thickness and the first ply's type, material, εr and tanδ. Plies written as sub-layers of one
+stack-up dielectric keep that dielectric's name (`dielectric 3` in `six_layer`); separate stack-up
+dielectrics in one gap give a joined name (`dielectric 1 + dielectric 2`):
 
 ```math
 h_i = \sum_{p=1}^{P_i} h_{i,p} \qquad (7.10)
@@ -144,8 +146,10 @@ h_i = \sum_{p=1}^{P_i} h_{i,p} \qquad (7.10)
 | $`P_i`$ | number of plies in gap $`i`$ |
 | $`h_{i,p}`$ | thickness of ply $`p`$ of gap $`i`$, from the stack-up |
 
-The laminate thickness is then equation (7.1), so that laminate + outer copper + mask equals
-KiCad's board thickness.
+The laminate thickness is then equation (7.1). The file's `(general (thickness ...))` is not used
+when a usable stack-up is present; `report.txt` only shows it as `board total in file`. (KiCad computes
+that number from the stack-up as all copper + all dielectrics + both masks, so for a stack-up
+saved from Board Setup it equals the laminate plus the two outer foils and the two masks.)
 
 Any value the stack-up leaves out falls back to the parameter defaults:
 `Copper.DEFAULT_OUTER_FOIL_MM`, `Copper.DEFAULT_INNER_FOIL_MM`, `Board.DEFAULT_DIELECTRIC_MATERIAL`,
@@ -162,7 +166,8 @@ When the file has no stack-up block, or an unusable one:
   (`Board.DIELECTRIC_SPLIT = "even"`, the only split implemented), equation (7.11). Each gap
   becomes a dielectric named `dielectric 1`, `dielectric 2`, ... of the default type and material
   with the default εr and tanδ.
-- Every copper layer gets the default foil thickness.
+- Copper layers without a thickness in the file get the default foil thickness (an unusable
+  stack-up block may still supply some).
 
 ```math
 h_i = \frac{L - \sum_{k=1}^{N-2} t_k}{N - 1} \qquad (7.11)
@@ -218,7 +223,7 @@ h_i^{*} = s \cdot h_i \qquad (7.13)
 | Feature | Height used |
 |---|---|
 | Dielectric $`d_i`$ | equations (7.8) and (7.9) |
-| Resin beside inner copper | the inner copper's own band, filled by the neighbouring prepreg's material ([Board](Board.md)) |
+| Resin beside inner copper | the inner copper's own band, filled from the adjacent prepreg, else from the dielectric above ([Board](Board.md)) |
 | Copper of layer $`l_k`$ | its band, equations (7.4) to (7.7) |
 | Via barrel from layer $`l_i`$ to $`l_j`$ | between the copper layers it joins; outer copper caps it, inner copper is drilled through, so the barrel passes through inner bands ([Copper And Traces](Copper-And-Traces.md)) |
 | Solder mask | from the laminate face: mask thickness over laminate, copper + mask thickness over copper ([Solder Masks](Solder-Masks.md)) |

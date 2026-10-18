@@ -1,8 +1,10 @@
 # 3. Getting Started
 
 KESE is a pure Python program. It reads the `.kicad_pcb` text file itself, so KiCad does not need
-to be installed on the machine that runs it. It needs Python 3.10 or later; the optional STEP
-output needs `cadquery`, which needs Python 3.11 or later.
+to be installed on the machine that runs it. With the versions pinned in `requirements.txt` it
+needs Python 3.12 or later: `numpy` 2.5.3 and `scipy` 1.18.1 require it. On Python 3.11, install
+the same packages without the pinned versions (`python -m pip install numpy scipy ...`) and pip
+picks the last versions built for 3.11, as `requirements.txt` explains.
 
 ## 3.1 Install
 
@@ -12,23 +14,34 @@ cd KiCad-EM-Stackup-Exporter-KESE
 python -m pip install -r requirements.txt
 ```
 
-`requirements.txt` pins the versions the project was tested with (Python 3.13 on Linux); binary
-wheels exist on PyPI for Python 3.11 to 3.14 on Windows, Linux and macOS. The packages are:
+`requirements.txt` pins the versions the project was tested with (Python 3.13 on Linux). The
+packages are:
 
 | Package | Used for |
 |---|---|
 | `numpy`, `scipy`, `networkx` | Numerics and the mesh libraries' dependencies |
 | `shapely` | All 2D geometry: tracks, pads, zones, outline, mask, silk |
-| `trimesh`, `manifold3d`, `mapbox_earcut`, `rtree` | Extrusion, boolean union of solids, GLB / STL / OBJ export, the Verifier's ray tests |
+| `trimesh`, `manifold3d`, `mapbox_earcut`, `rtree` | Extrusion, boolean union of solids, GLB and STL export, the Verifier's ray tests (KESE writes OBJ itself) |
 | `cadquery`, `cadquery-ocp` | STEP output only (optional) |
 
 Without `cadquery`, every other format still works and a run that asks for STEP stops with a
 message that names the missing package. The program checks the packages before it starts and
 prints the `pip install` line to run, instead of a traceback.
 
+Or install the project itself through `pyproject.toml`, with the packages unpinned (this also
+works on Python 3.11):
+
+```bash
+python -m pip install -e .            # the kese command, the same as python run_KESE.py
+python -m pip install -e ".[step]"    # the same, with cadquery for STEP output
+```
+
+`-e` keeps `Parameters/` editable in place. `Input/` and `Output/` stay relative to the folder
+the command is run from.
+
 ## 3.2 First Run
 
-1. Put a board file in `Input/`, or use one of the three example boards already there (see
+1. Put a board file in `Input/`, or use one of the two example boards already there (see
    [Examples](Examples.md)). Make sure every copper zone in the board has been filled in KiCad
    (press **B**) and the file saved: KESE takes the zone fill polygons stored in the file, and a
    zone without a stored fill produces no copper.
@@ -74,15 +87,19 @@ python run_KESE.py --version
 | `--mode` | `simulation` or `visual`. The old names `real` and `pretty` are still accepted. Default: `Run.MODE`. |
 | `--format` | Any of `glb`, `stl`, `obj`, `step`, several at once. Default: `Run.FILE_FORMAT` (`["glb"]`). Visual mode allows only `glb` and `obj`. |
 | `--for` | Applies a preset from `Run.PRESETS` before any `--set`: `hfss`, `cst`, `openems`, `viewer`. See [Choosing An Export](Choosing-An-Export.md). |
-| `--verify` | Runs the Verifier after generation (10 to 60 s per board). See [Checks, Errors And Warnings](Checks-Errors-And-Warnings.md). |
+| `--verify` | Runs the Verifier after the model files are written (about 3 to 8 s on the example boards). See [Checks, Errors And Warnings](Checks-Errors-And-Warnings.md). |
 | `--out` | Output root. Default: `Run.OUTPUT_DIR` (`Output/`). |
 | `--set Module.NAME=value` | Overrides one parameter for this run. `Module` is the short name of the parameter file (`Run`, `Board`, `Copper`, `SolderMask`, `Silkscreen`, `Finish`, `Geometry`, `Color`). The value is parsed as a Python literal (`0.02`, `True`, `"net"`, `["glb","stl"]`); anything that does not parse is kept as a string. An unknown name stops the run. |
-| `--version` | Prints `kese 1.1.0`. |
+| `--version` | Prints `kese 2.2.0`. |
 
-Every preset and `--set` override is recorded at the top of the run's `parameters.txt`.
+Every preset, `--set`, `--mode`, `--format` and `--verify` is applied as an override of the
+parameters (`--mode` sets `Run.MODE`, `--format` sets `Run.FILE_FORMAT`, `--verify` sets
+`Run.VERIFY`), so all of them are listed on the first line of the run's `parameters.txt` and show
+in its values. Only `--out` is not recorded there; the run folder's path shows it.
 
 > [!NOTE]
-> Run the program from the project folder, so that `Parameters/` and `Generator/` are found. The
+> Run the program from the project folder: `Input/` and `Output/` (`Run.INPUT_DIR`,
+> `Run.OUTPUT_DIR`) are relative to the folder the command is run from. The
 > exit code is 0 when every board succeeded and 1 when any board failed; with a single board the
 > full traceback is shown, with several the failing board is reported and the run continues.
 
@@ -98,9 +115,11 @@ Every preset and `--set` override is recorded at the top of the run's `parameter
 4. **Colour.** Each part gets a material from `Color_Parameters` (or the stack-up's colour names).
 5. **Assemble.** The regions are extruded and, in simulation mode, all pieces of a part are
    joined into one closed solid; in visual mode only the visible surface is kept.
-6. **Package.** The requested files are written, with `materials.json`, `parameters.txt` and
-   `report.txt` next to them.
-7. **Verify** (only with `--verify` or `Run.VERIFY = True`).
+6. **Package.** The requested model files are written, with `materials.json` next to them.
+7. **Verify** (only with `--verify` or `Run.VERIFY = True`), on the model just written; the GLB
+   file also goes through `gltf_validator` when that tool is on the PATH.
+8. **Report.** `parameters.txt` and `report.txt` are written last, so the report carries the
+   Verifier's result.
 
 The stages are described in [Working Principle](Working-Principle.md). While a board runs, a
 live `running <stage> ... 1m 23s` line shows the current stage on a terminal

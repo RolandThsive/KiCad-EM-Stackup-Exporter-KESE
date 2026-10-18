@@ -1,8 +1,10 @@
 # 17. Checks, Errors And Warnings
 
 KESE reports in three places: the terminal while it runs, `report.txt` next to every output,
-and the opt-in Verifier whose lines are appended to `report.txt`. Nothing is dropped silently:
-every item the model leaves out is counted under `skipped` with the reason.
+and the opt-in Verifier whose lines are appended to `report.txt`. Most items the model leaves
+out are counted under `skipped` with the reason. A few are left out without a count: text on
+non-physical layers (such as the Value fields on `F.Fab`), hidden text, pad paste layers, and
+images or groups inside footprints.
 
 ```bash
 python run_KESE.py board.kicad_pcb --verify     # generate, then run the Verifier
@@ -26,12 +28,12 @@ python Tests/test_boards.py                     # the regression suite over ever
 | `<file> is not a KiCad board file (expected (kicad_pcb ...))` | Not a `.kicad_pcb`. Export the board from pcbnew. |
 | `<file>: no (layers ...) block` | A damaged or very old file. |
 | `<file>: copper layers ['F.Cu', 'B.Cu'] are not declared` | Both outer copper layers must exist. |
-| `MODE must be 'simulation' or 'visual', not ...` | A typo in `Run.MODE` or `--mode`. |
+| `MODE must be 'simulation' or 'visual', not ...` | A typo in `Run.MODE` (or `--set Run.MODE=...`). A typo in `--mode` is caught earlier by the command line: `argument --mode: invalid choice`, exit code 2. |
 | `unknown FILE_FORMAT entries [...]` | Only `glb`, `stl`, `obj`, `step`. |
 | `visual mode is a surface, not solids: FILE_FORMAT may only contain glb / obj` | STL and STEP need closed solids; use simulation mode. |
-| `no Edge.Cuts outline and OUTLINE_FALLBACK is 'error'` | Draw an outline, or set `Board.OUTLINE_FALLBACK = "copper_hull"`. |
+| `no Edge.Cuts outline and OUTLINE_FALLBACK is 'error'` | Draw a closed outline, or set `Board.OUTLINE_FALLBACK = "copper_hull"`. |
 | `missing Python package(s): ...` | Printed before anything runs, with the `pip install` line to use. |
-| `<Module>_Parameters has no parameter <NAME>` | A `--set` with a misspelt name. |
+| `<Module>_Parameters has no parameter <NAME>` | A `--set` with a misspelt name. A misspelt module gives a Python `AttributeError`, and a `--set` without a `.` a `ValueError`. |
 | `no boards given and none found in Input/` | Put a board in `Input/` or give a path. |
 
 ### 17.1.2 Warnings
@@ -45,9 +47,14 @@ python Tests/test_boards.py                     # the regression suite over ever
 | `Edge.Cuts lines/arcs do not form a closed outline` | The outline could not be polygonized; closed shapes on `Edge.Cuts` are still used. |
 | `no Edge.Cuts outline; using the copper's convex hull + 1.0 mm` | The fallback outline. |
 | `DIELECTRIC_SPLIT=... unknown, using 'even'` | Only `"even"` is implemented. |
-| `step: cadquery is not installed (pip install cadquery); STEP skipped` | The other formats are written. |
-| `step: fuse failed for <part> (...); written as a compound` | That part is touching solids instead of one body. |
-| `note: boolean union unavailable (...); pieces left touching` | A part could not be unioned; its pieces are concatenated. The Verifier will report it as not closed. |
+
+### 17.1.3 Notes Worth Knowing
+
+| Message in `notes` | Meaning |
+|---|---|
+| `<part>: note: boolean union unavailable (...); pieces left touching` | A part could not be unioned; its pieces are concatenated. The Verifier may then report it as not closed. |
+| `step: fuse failed for <part> (...); written as a compound` | In the STEP file that part is touching solids instead of one body. |
+| `step: cadquery is not installed (pip install cadquery); STEP skipped` | Only when `Generator.Pipeline.generate` is called directly (as the regression suite does). From `run_KESE.py`, asking for STEP without `cadquery` stops before anything runs with `missing Python package(s): cadquery`. |
 
 ## 17.2 What `report.txt` Counts
 
@@ -66,12 +73,12 @@ stroke font.
 | `3D component models (bare board only)` | Footprint `(model ...)` files are not loaded; KESE models the bare board. |
 | `zones with no fill (unfilled - press B in KiCad and save)` | No fill polygons in the file. |
 | `keepout / rule areas (no copper by design)` | Rule areas never carry copper; listed for completeness. |
-| `<item> on <layer> (not a physical layer)` | Fab, courtyard, paste, user and comment layers are not part of the board. |
+| `<item> on <layer> (not a physical layer)` | Graphics on fab, courtyard, paste, user and comment layers, which are not part of the board (text there is left out without a count). |
 | `gr_text_box / fp_text_box / dimension on <layer> (not modelled)` | Text boxes and dimensions are not rendered. |
 | `image / target / group / generated / table items` | Not physical. |
 | `pads of shape <shape>` | A pad shape KESE does not know. |
 | `TrueType text on <layer> (DRAW_TRUETYPE_TEXT_WITH_STROKE_FONT is False)` | Skipped by the setting. |
-| `castellation plating (CASTELLATION is 'off')` | The holes stay bare. |
+| `castellation plating (CASTELLATION is 'off')` | The holes stay bare. The same line appears with `CASTELLATION = "file"` when the stack-up lacks `(castellated_pads yes)`. |
 
 ## 17.3 The Verifier
 
@@ -82,8 +89,8 @@ not the input.
 |---|---|---|
 | simulation | every part is a closed, consistently wound solid; its volume is printed in mm³ | `closed=True winding=True` for every part |
 | simulation | no two parts overlap: 3,000 random vertical rays through the model, the intervals each part occupies along every ray | worst overlap below 0.1 µm (`worst 0.000 um` on the example boards) |
-| visual | the skin is one visible surface: along every ray exactly one upward-facing and one downward-facing hit | `up {1: n} down {1: n}` |
-| both | the GLB passes the Khronos glTF validator, when the `gltf_validator` command-line tool is on the PATH | the validator's last line; otherwise `gltf_validator not on PATH: glTF validation skipped` |
+| visual | the skin is one visible surface: along every ray exactly one upward-facing and one downward-facing hit | the line `visible surfaces per vertical ray: up {...} down {...}` holds only the count 1 on each side (with numpy 2 it prints as `np.int64(1): ...`) |
+| both, when a GLB was written | the GLB through the Khronos glTF validator, when the `gltf_validator` command-line tool is on the PATH | not a pass condition: the validator's last line is only reported; otherwise `gltf_validator not on PATH: glTF validation skipped`; with no GLB in the run the line is absent |
 
 Example tail of a `report.txt`:
 
@@ -101,7 +108,7 @@ the z intervals the part occupies along that ray; for every two different parts 
 their intervals is measured, and the worst is reported:
 
 ```math
-\Omega = \max_{\text{rays}} \ \max_{A \neq B} \ \left( \min\left( z^{A}_{\mathrm{top}}, z^{B}_{\mathrm{top}} \right) - \max\left( z^{A}_{\mathrm{bot}}, z^{B}_{\mathrm{bot}} \right) \right) \qquad (17.1)
+\Omega = \max\left( 0, \ \max_{\text{rays}} \ \max_{A \neq B} \ \left( \min\left( z^{A}_{\mathrm{top}}, z^{B}_{\mathrm{top}} \right) - \max\left( z^{A}_{\mathrm{bot}}, z^{B}_{\mathrm{bot}} \right) \right) \right) \qquad (17.1)
 ```
 
 ```math
@@ -114,11 +121,12 @@ their intervals is measured, and the worst is reported:
 | $`z^{A}_{\mathrm{top}}, z^{A}_{\mathrm{bot}}`$ | one z interval of part $`A`$ along a ray |
 | rays | 3,000 vertical rays at random (x, y) inside the model's bounding box, the same every run (fixed seed) |
 
-A negative value means the intervals do not meet; touching parts give 0.
+Parts that do not meet, or only touch, give 0.
 
-A `FAIL` names the part: an open solid means a union did not close (see the `note: boolean
-union unavailable` warning), an overlap above 0.1 µm means two parts share volume. Both are
-bugs worth reporting with the board file.
+A `closed=False` or `winding=False` line names the part: an open solid means a union did not
+close (see the `boolean union unavailable` note). An overlap above 0.1 µm means two parts share
+volume; that line gives only the worst value, not the parts. Both are bugs worth reporting with
+the board file.
 
 ## 17.4 The Regression Suite
 
@@ -141,9 +149,16 @@ where $`V`$ is the part's volume now and $`V_0`$ the baseline, both in mm³, whe
 `one_layer`, `six_layer`, `synthetic`, when `cadquery` is installed) when the STEP file has an
 invalid solid or a free edge, checked by reading it back with OCP.
 
-The test boards cover: a one-layer board with text, a six-layer board with a full stack-up
-(prepreg / core, 17.5 µm inner foil, black mask, blind and buried vias, "remove unused layers"
-vias, zone fills), and a synthetic board with a two-ply stack-up.
+The test boards in `Tests/boards/` cover:
+
+- `one_layer`: a single-sided board with silkscreen text (it declares `F.Cu` and `B.Cu`, with
+  tracks on `F.Cu` only);
+- `six_layer`: a full stack-up (prepreg / core, a prepreg of two sub-layers, 17.5 µm inner foil,
+  black mask, blind, buried and micro vias, a "remove unused layers" via, zone fills);
+- `synthetic`: a two-layer board with one core and 70 µm copper, exercising an outline of lines
+  and an arc with a circular cut-out, a blue mask with a drawn opening and pad mask margins, an
+  arc track, a via tented by the plot setting (`viasonmask false`), a zone fill, an oval drill, an NPTH, and items skipped on purpose
+  (a 3D model, an `F.Fab` line).
 
 ## 17.5 Inputs KESE Refuses Or Changes
 

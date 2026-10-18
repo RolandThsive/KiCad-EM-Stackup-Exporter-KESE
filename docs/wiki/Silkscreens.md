@@ -20,8 +20,13 @@ Items on the layers in `Silkscreen.SILK_LAYERS` (`F.SilkS` and `B.SilkS` by defa
 | text (`gr_text`, `fp_text`, footprint `property` fields such as Reference and Value) | glyphs of the stroke font, laid out as KiCad lays them out |
 | zone fills on a silk layer | the stored polygons |
 
-Items on `F.Fab`, `B.Fab`, courtyard and user layers are not physical and are counted under
-`skipped` in `report.txt`. Text boxes and dimensions are not modelled (also counted).
+Graphics on `F.Fab`, `B.Fab`, courtyard and user layers are not physical and are counted under
+`skipped` in `report.txt`. Text on those layers (including the footprints' Value fields, which
+usually sit on `F.Fab`) and hidden text are ignored without a count. Text is drawn only on
+`F.SilkS` and `B.SilkS` (and copper and mask layers), even if another layer is added to
+`SILK_LAYERS`; graphics follow `SILK_LAYERS`, each drawn on the top or bottom side by the first
+letter of its layer name. Text boxes and dimensions on those layers are not
+modelled and are counted under `skipped`.
 
 Everything is clipped to the outline, pulled back from the edge by the same
 `SolderMask.MASK_EDGE_PULLBACK_MM` as the mask, and cut away over open hole bores. Then, with
@@ -74,7 +79,8 @@ x_{\mathrm{start},i} = o_x + \begin{cases} 0 & \text{left} \\ -\left( \lambda_i 
 
 ### 14.2.3 Placement And Stroke
 
-Every local point $`(x, y)`$ is mirrored for back-side text ($`x \to -x`$), then rotated by the
+Every local point $`(x, y)`$ is mirrored when the text is marked `(justify mirror)` in the file
+($`x \to -x`$; KiCad sets this on back-side text), then rotated by the
 text angle $`\theta`$ about the anchor $`(X_0, Y_0)`$, in KiCad's frame (Y down):
 
 ```math
@@ -169,7 +175,7 @@ in `materials.json`.
 | `BOLD_THICKNESS_RATIO`, `NORMAL_THICKNESS_RATIO` | `0.2`, `0.15` | > 0 | Stroke = ratio × text height when the file gives none |
 | `TEXT_STROKE_QUAD_SEGS` | `4` | int ≥ 1 | Roundness of stroke ends |
 | `DRAW_HIDDEN_TEXT` | `False` | bool | Draw text marked hidden |
-| `SILK_LAYERS` | `["F.SilkS", "B.SilkS"]` | list of layer names | Layers drawn as silkscreen |
+| `SILK_LAYERS` | `["F.SilkS", "B.SilkS"]` | list of `F.*` / `B.*` layer names | Layers drawn as silkscreen, on the side their first letter names; any other name stops the run with a `KeyError` |
 
 | Previous | Next |
 |:---|---:|

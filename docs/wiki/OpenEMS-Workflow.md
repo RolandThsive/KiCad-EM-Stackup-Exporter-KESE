@@ -33,8 +33,9 @@ report.txt
 ```
 
 The preset sets simulation mode, STL, mm, `ORIGIN = "kicad"`, copper per net and dielectrics per
-layer, so coordinates in the STL files equal the layout's in mm (KiCad's Y axis points down; KESE's
-points up, with the same origin; `report.txt` states this on its `origin:` line).
+layer, so x in the STL files equals the layout's x in mm and y is the layout's y negated (KiCad's Y axis
+points down, KESE's up, with the same origin; `report.txt` names the origin on its `origin:`
+line).
 
 Consider before exporting:
 
@@ -46,8 +47,8 @@ Consider before exporting:
 
 ## 21.2 Building The CSXCAD Model
 
-For each part in `materials.json`, create one property from its `properties` and import the STL
-named in `file_names.stl`. Metals become `AddMetal` (PEC) or `AddConductingSheet` / a lossy
+For each part in `materials.json`, create one property from its `properties` and import the
+STL named in `file_names.stl`. Metals become `AddMetal` (PEC) or `AddConductingSheet` / a lossy
 material with `kappa` = conductivity; dielectrics become `AddMaterial` with `epsilon` and a
 `kappa` derived from tanδ at the frequency of interest. FDTD models dielectric loss as a
 conductivity, which equals the loss tangent at one frequency:
@@ -87,6 +88,8 @@ FDTD.SetCSX(CSX)
 for name, part in mats["parts"].items():
     role, pr = part["role"], part["properties"]
     stl = os.path.join(run, "stl", part["file_names"]["stl"])
+    if not os.path.exists(stl):
+        continue                                          # parts with an empty mesh have no file
     if role in ("copper", "plating"):
         prop = CSX.AddMetal(name)                        # or a lossy metal:
         # prop = CSX.AddMaterial(name, kappa=pr["conductivity_S_per_m"])
@@ -124,7 +127,8 @@ dielectrics; read the property values from `materials.json` with `jsondecode`.
 
 ## 21.4 Checking The Import
 
-- The number of imported STL files must equal the number of parts you kept from `materials.json`.
+- The number of imported STL files should equal the number of parts you kept from
+  `materials.json` (a part whose mesh came out empty has an entry but no file).
 - View the structure with AppCSXCAD before running: every net should be a separate colour, and
   the vias should pass through the dielectrics.
 - Run `--verify` on the export first: an STL that is not closed (`closed=False` in the Verifier)

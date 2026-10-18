@@ -1,5 +1,12 @@
 # 11. Copper And Traces
 
+> [!WARNING]
+> **Zones must be filled in KiCad.** KESE takes the fill polygons KiCad stores in the file,
+> which exist only after the zones have been filled (press **B**) and the file saved. A zone with
+> no stored fill produces **no copper**; the run warns and `report.txt` counts it under
+> `zones with no fill (unfilled - press B in KiCad and save)`. Keep-out and rule areas are
+> listed separately and are not an error.
+
 Copper is what the model is for: one closed solid per net, with every layer's traces, pads and
 zone fills joined to its vias and plated holes. `Generator/BoardBreakdown.py` collects and
 resolves the copper per layer and net; `Generator/Geometry/Copper.py` turns it into prisms; the
@@ -30,7 +37,7 @@ Then, per layer and per net: union, clip to the outline, subtract the holes, sim
 the board frame (equation (6.2)) and snap to the grid (equation (6.1)):
 
 ```math
-C_{k,n} = \operatorname{simplify}_{\varepsilon}\left( \left( \bigcup_{j \in I_{k,n}} G_j \cap O \right) \setminus X_k \right) \qquad (11.1)
+C_{k,n} = \mathrm{simplify}_{\varepsilon}\left( \left( \bigcup_{j \in I_{k,n}} G_j \cap O \right) \setminus X_k \right) \qquad (11.1)
 ```
 
 ```math
@@ -49,13 +56,6 @@ X_k = \begin{cases} \bigcup_{h : a_h \le k \le b_h} \left( H_h \ominus w_h \righ
 | $`\ominus w`$ | shrinks a region inward by $`w`$ (a negative buffer) | |
 | $`\varepsilon`$ | simplification tolerance (0.5 µm) | `Geometry.SIMPLIFY_TOLERANCE_MM` |
 
-> [!WARNING]
-> **Zones must be filled in KiCad.** KESE takes the fill polygons KiCad stores in the file,
-> which exist only after the zones have been filled (press **B**) and the file saved. A zone with
-> no stored fill produces **no copper**; the run warns and `report.txt` counts it under
-> `zones with no fill (unfilled - press B in KiCad and save)`. Keep-out and rule areas are
-> listed separately and are not an error.
-
 ### 11.1.1 Nets
 
 In KiCad 6 to 9 an item carries a net **number** that is looked up in the file's net table; KiCad
@@ -71,7 +71,10 @@ solids stay disjoint:
 C_{k,n_j} \leftarrow C_{k,n_j} \setminus \bigcup_{i < j} C_{k,n_i} \qquad (11.3)
 ```
 
-where $`n_1, n_2, \dots`$ are the nets of layer $`l_k`$ in the order they were first met in the file.
+where $`n_1, n_2, \dots`$ are the nets of layer $`l_k`$ in the order of their first copper item
+on that layer. Items are collected in file order (tracks, arcs, zones, graphics, footprints and
+text as they come), then all vias, then the via rings kept by equation (11.8), so a net that
+appears only on vias comes after every net with a track, zone or pad on that layer.
 
 ## 11.2 Grouping And Part Names
 
@@ -150,7 +153,9 @@ ring on such a layer only when other copper of the board already touches it ther
 \text{keep } P_v \text{ on } l_k \iff P_v \cap \bigcup_{j \in I_k} G_j \neq \varnothing \qquad (11.8)
 ```
 
-where $`P_v`$ is the via's round pad and $`I_k`$ every other copper item on $`l_k`$. The start
+where $`P_v`$ is the via's round pad and $`I_k`$ every copper item already collected on $`l_k`$
+(tracks, zones, pads, graphics and the vias' own rings, but not other vias' conditional rings),
+tested before the outline and hole cuts. The start
 and end layers are always kept when the via says `keep_end_layers`. `report.txt` counts the rings
 removed under `via rings removed on unconnected layers`.
 
@@ -161,7 +166,7 @@ open. `Copper.VIA_TENTING`:
 
 | Value | Meaning |
 |---|---|
-| `"file"` (default) | follow the board: KiCad 9 / 10 `(tenting ...)` in Board Setup and per via, else the older plot setting `viasonmask`, else KiCad's default (tented) |
+| `"file"` (default) | follow the board: the default comes from KiCad 9 / 10 `(tenting ...)` in Board Setup, else the older plot setting `viasonmask`, else KiCad's default (tented); a via's own `(tenting ...)` then overrides that default for that via, whichever source it came from: KiCad 9's short form (`(tenting front back)`, `(tenting front)`, `(tenting none)`) is the complete list of tented sides, so `none` opens both; KiCad 10's `(tenting (front yes) (back no))` sets each side it names |
 | `"tented"` | mask over every via |
 | `"open"` | mask open over every via, with the pad-to-mask clearance |
 
@@ -190,15 +195,15 @@ KiCad; set it for an as-fabricated model. Each copper part records `foil_mm` and
 Real traces are trapezoids: etching undercuts the resist, so a trace is narrower at its free
 face than at its foot. `Copper.ETCH_FACTOR` (0 by default, a rectangle as in KiCad) leans each
 side wall in over the copper height. The trapezoid is built as `Copper.ETCH_STEPS` stacked
-slices, each inset a little more than the one nearer the foot. Slice $`s`$ of $`n`$
-($`s = 0 \dots n-1`$, counted from the bottom of the copper band) is:
+slices, each inset a little more than the one nearer the foot. Slice $`s`$ of $`m`$
+($`s = 0 \dots m-1`$, counted from the bottom of the copper band) is:
 
 ```math
-z_s \in \left[ z_0 + \frac{s}{n} t,\ z_0 + \frac{s+1}{n} t \right] \qquad (11.10)
+z_s \in \left[ z_0 + \frac{s}{m} t,\ z_0 + \frac{s+1}{m} t \right] \qquad (11.10)
 ```
 
 ```math
-f_s = \begin{cases} \dfrac{s + 0.5}{n} & \text{foot at the bottom} \\ 1 - \dfrac{s + 0.5}{n} & \text{foot at the top} \end{cases} \qquad (11.11)
+f_s = \begin{cases} \frac{s + 0.5}{m} & \text{foot at the bottom} \\ 1 - \frac{s + 0.5}{m} & \text{foot at the top} \end{cases} \qquad (11.11)
 ```
 
 ```math
@@ -207,7 +212,8 @@ f_s = \begin{cases} \dfrac{s + 0.5}{n} & \text{foot at the bottom} \\ 1 - \dfrac
 
 | Symbol | Meaning | Parameter |
 |---|---|---|
-| $`n`$ | number of slices | `Copper.ETCH_STEPS` (4) |
+| $`m`$ | number of slices | `Copper.ETCH_STEPS` (4) |
+| $`C_{k,n}`$ | copper of net $`n`$ on layer $`l_k`$, equation (11.1) | |
 | $`z_0`$, $`t`$ | bottom and thickness of the copper band | equations (7.4) to (7.7), (11.9) |
 | $`f_s`$ | height fraction of the middle of slice $`s`$, measured from the foot | |
 | $`e`$ | etch factor | `Copper.ETCH_FACTOR` |
@@ -215,19 +221,21 @@ f_s = \begin{cases} \dfrac{s + 0.5}{n} & \text{foot at the bottom} \\ 1 - \dfrac
 | $`R_s`$ | region of slice $`s`$ (mitred corners) | |
 
 The wall therefore leans in by close to $`e \cdot t`$ across the copper height: the slice at
-the free face is inset by $`e \cdot t \cdot (n - 0.5)/n`$.
+the free face is inset by $`e \cdot t \cdot (m - 0.5)/m`$.
 
 - On `F.Cu` the foot is at the bottom (on the laminate), on `B.Cu` at the top.
 - Inner layers are etched only with `Copper.ETCH_APPLY_TO_INNER_LAYERS = True`; their foot faces
-  the board centre (the core side).
+  the board centre (layers in the upper half have it at the bottom, layers in the lower half at
+  the top), whichever dielectric is on that side.
 
-Example: $`e = 0.5`$, $`t = 35`$ µm, $`n = 4`$ gives offsets of 2.19, 6.56, 10.94 and 15.31 µm
+Example: $`e = 0.5`$, $`t = 35`$ µm, $`m = 4`$ gives offsets of 2.19, 6.56, 10.94 and 15.31 µm
 from the foot to the free face.
 
 ## 11.6 Castellated Holes
 
-A castellation is a plated hole that the board edge cuts through (module edge connectors). KiCad
-has no per-pad flag; KESE finds them as plated holes whose drill crosses `Edge.Cuts`:
+A castellation is a plated hole that the board edge cuts through (module edge connectors). KESE
+does not read KiCad's "Castellated pad" fabrication property of a pad; it finds castellations from
+the geometry, as plated holes whose drill crosses `Edge.Cuts`:
 
 ```math
 h \text{ is a castellation} \iff h \text{ plated},\ H_h \not\subseteq O,\ H_h \cap O \neq \varnothing \qquad (11.13)
@@ -238,11 +246,10 @@ Then `Copper.CASTELLATION`:
 | Value | Meaning |
 |---|---|
 | `"auto"` (default) | every plated hole crossing the outline is a castellation: the drill notches the edge and its plating is a part-barrel on the notch wall, joined to the hole's net, with wall `Copper.CASTELLATION_WALL_MM` |
-| `"file"` | as `"auto"`, but only when the stack-up says `(castellated_pads yes)`; otherwise a note in `report.txt` says how to turn it on |
+| `"file"` | as `"auto"`, but only when the stack-up says `(castellated_pads yes)`; otherwise the holes are left unplated, as with `"off"`, and a note in `report.txt` says how to turn it on |
 | `"off"` | holes crossing the edge are not plated at all |
 
-The XIAO example has 14 castellated holes; `report.txt` counts them under `castellated holes
-(plated holes cut by the board edge)`.
+`report.txt` counts them under `castellated holes (plated holes cut by the board edge)`.
 
 ## 11.7 Edge Plating
 
@@ -265,21 +272,24 @@ E = \left( O \setminus \left( O \ominus w_e \right) \right) \setminus \bigcup_h 
 ```
 
 ```math
-n^{*} = \underset{n \in \mathcal{N}}{\arg\max} \sum_{k=0}^{N-1} \operatorname{area}\left( C_{k,n} \cap E \right) \qquad (11.15)
+n^{*} = \arg\max_{n \in S} \sum_{k=0}^{N-1} \mathrm{area}\left( C_{k,n} \cap E \right) \qquad (11.15)
 ```
 
 | Symbol | Meaning | Parameter |
 |---|---|---|
 | $`E`$ | the edge plating band | |
 | $`w_e`$ | width of the band | `Copper.EDGE_PLATING_WALL_MM` |
-| $`\mathcal{N}`$ | the named nets (every net except `no_net`) | |
+| $`S`$ | the named nets (every net except `no_net`) | |
+| $`C_{k,n}`$, $`N`$ | copper of net $`n`$ on layer $`l_k`$, equation (11.1), and the number of copper layers | |
 | $`n^{*}`$ | the edge net when `EDGE_PLATING_NET = "auto"` (`no_net` when no named net touches the band) | `Copper.EDGE_PLATING_NET` |
 
 ## 11.8 Electrical Properties
 
-Every copper and plating part carries `conductivity_S_per_m` (`Copper.COPPER_CONDUCTIVITY_S_PER_M`,
+Every copper part carries `conductivity_S_per_m` (`Copper.COPPER_CONDUCTIVITY_S_PER_M`,
 5.8 × 10⁷ S/m) and `surface_roughness_um` (`Copper.COPPER_SURFACE_ROUGHNESS_UM`, 0 = ignore; a
-solver setting, not geometry) in `materials.json`. See
+solver setting, not geometry) in `materials.json`. A separate `Plating` part (with
+`Run.COPPER_GROUPING = "layer"`) carries only `conductivity_S_per_m`. `thickness_mm`, `foil_mm`
+and `plating_added_mm` are those of the part's first layer. See
 [Material Properties](Material-Properties.md).
 
 ## 11.9 Settings

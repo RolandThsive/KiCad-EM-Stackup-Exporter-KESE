@@ -6,21 +6,22 @@
 KiCad-EM-Stackup-Exporter-KESE/
 ├── run_KESE.py              the command-line entry point
 ├── requirements.txt         pinned Python packages
+├── pyproject.toml           for pip install -e . (the kese command), unpinned
 ├── Parameters/              every setting, one file per subject (the only files you edit)
 │   ├── Run_Parameters.py, Board_Parameters.py, Copper_Parameters.py,
 │   │   SolderMask_Parameters.py, Silkscreen_Parameters.py, Finish_Parameters.py,
 │   │   Geometry_Parameters.py, Color_Parameters.py
 │   └── Fonts/               kicad_newstroke.json.gz and its notice; custom fonts go here
 ├── Generator/               the pipeline
-│   ├── Pipeline.py          Reader -> BoardBreakdown -> Geometry -> Colorer -> Assembler -> Verifier -> Packager
+│   ├── Pipeline.py          Reader -> BoardBreakdown -> Geometry -> Colorer -> Assembler -> Packager -> Verifier
 │   ├── Reader.py, BoardBreakdown.py, Colorer.py, Assembler.py, Verifier.py, Status.py
 │   ├── Common/              s-expression parser, 2D shape helpers, stack-up, prisms
 │   ├── Geometry/            Board, Copper, SolderMask, Silkscreen, Finish, Skin, Text, geometry maths
 │   └── Packager/            glb, stl, obj, step, materials_json, report
-├── Input/                   boards to export (three examples included)
+├── Input/                   boards to export (two examples included)
 ├── Output/                  one folder per board and run (ignored by git except .gitkeep)
 ├── Tests/                   regression suite, test boards, baseline.json
-├── docs/wiki/, docs/images/ this wiki and its pictures
+├── docs/wiki/, docs/images/ this wiki, and the folder for its pictures (to come)
 ├── LICENSE, COMMERCIAL.md, CONTRIBUTING.md
 └── README.md
 ```
@@ -34,9 +35,9 @@ Every run writes to:
 - `<OUTPUT_DIR>` is `Run.OUTPUT_DIR` (`Output/`) or `--out`.
 - `<board>` is the file name without `.kicad_pcb`.
 - `<mode>` is `simulation` or `visual`.
-- `<FORMATS>` are the formats written, in upper case, joined by `_`, in the order
-  `glb`, `obj`, `stl`, `step` as given: `simulation_GLB`, `simulation_STEP_STL`,
-  `visual_GLB_OBJ`.
+- `<FORMATS>` are the requested formats, in upper case, joined by `_`, in the order given by
+  `--format` or `Run.FILE_FORMAT` (not sorted; a format given twice appears twice):
+  `--format glb stl obj` gives `simulation_GLB_STL_OBJ`, `--for cst` gives `simulation_STEP_STL`.
 
 **No run overwrites another.** When the folder already exists, the new one gets a suffix:
 `simulation_GLB__1`, `simulation_GLB__2`, ... The terminal line at the end of every board names
@@ -47,11 +48,11 @@ the folder that was written.
 | File | Written when | Content |
 |---|---|---|
 | `<board>.glb` | `glb` requested | binary glTF 2.0; one node and one mesh per part, named after the part; PBR materials; no glTF extensions |
-| `<board>.obj` + `<board>.mtl` | `obj` requested | one `o <part>` object per part with vertices, normals and faces; the `.mtl` has one material per part (`Kd`, `d`) |
-| `stl/<part>.stl` | `stl` requested | one binary STL per part, in a `stl/` sub-folder; the name is the part name with spaces and unsafe characters replaced by `_` (`Top_Solder_Mask.stl`, `Board_dielectric_1.stl`) |
-| `<board>.step` | `step` requested and `cadquery` installed | STEP AP214 assembly named after the board, one named shape per part (fused solid or compound), with colours |
+| `<board>.obj` + `<board>.mtl` | `obj` requested | one `o <name>` object per part with vertices, normals and faces; the `.mtl` has one material per part (`Kd`, `d`); object and material names are sanitised as for STL (`Top_Solder_Mask`) |
+| `stl/<name>.stl` | `stl` requested | one binary STL per part, in a `stl/` sub-folder; the name is the part name with every run of characters other than `A-Z a-z 0-9 _ . + -` replaced by `_`, and leading or trailing `_` removed (`Top_Solder_Mask.stl`, `Board_dielectric_1.stl`, `Copper__RESET.stl` for net `~{RESET}`) |
+| `<board>.step` | `step` requested and `cadquery` installed | STEP AP214 assembly named after the board, one named shape per part whose role is in `Run.STEP_WRITE_ROLES` (fused solid or compound), with colours; mask and silk are left out by default |
 | `materials.json` | `Run.WRITE_MATERIALS_JSON` | per part: role, layer, net, z range, properties, look, file names ([Material Properties](Material-Properties.md)) |
-| `parameters.txt` | always | every parameter of every `Parameters/` file as it was during the run; the first line lists the preset and `--set` overrides |
+| `parameters.txt` | always | every parameter of every `Parameters/` file as it stood for the run; when `--for`, `--set`, `--mode`, `--format` or `--verify` was used, the first line lists those overrides (`--out` is not recorded) |
 | `report.txt` | always | see below |
 
 ### 19.2.2 `report.txt`
@@ -101,7 +102,7 @@ Verifier: PASS
 
 | Section | Content |
 |---|---|
-| header | board, file, time of the run, mode, formats, units, KiCad format and generator, title block |
+| header | board, file, time of the run, mode, formats, units, KiCad format and generator, the title from the title block |
 | warnings | the Reader's warnings, if any |
 | `stack-up` | laminate thickness and its source, the z band and foil of every copper layer, every dielectric with type, material, thickness, εr, tanδ and z range, the via tenting source, the pad-to-mask clearance, the silk-over-copper setting, the origin used |
 | `read` | a count of every kind of item that went into the model |
@@ -109,23 +110,29 @@ Verifier: PASS
 | `notes` | the font, the mask thickness and its source, finish, resin fill, castellation and edge plating notes, warnings raised while building |
 | `parts` | every part with its triangle count, material key, colour and alpha |
 | `timing` | seconds per stage |
-| Verifier | only with `--verify`; see [Checks, Errors And Warnings](Checks-Errors-And-Warnings.md) |
+| Verifier | only with `--verify` or `Run.VERIFY = True`; see [Checks, Errors And Warnings](Checks-Errors-And-Warnings.md) |
 
 ## 19.3 Part Names
 
-Part names are the same in every file of a run: the GLB node, the OBJ object, the STL file (with
-`_` for spaces), the STEP solid and the `materials.json` key.
+The GLB node, the STEP solid and the `materials.json` key carry the part name exactly. The STL
+file name and the OBJ object and material names carry it sanitised (the rule in section 19.2.1).
 
 | Role | Names |
 |---|---|
-| board | `Board_dielectric 1`, `Board_dielectric 2`, ... or `Board`; a merged gap: `Board_dielectric 1 + dielectric 2` |
-| copper | `Copper_<net>` (`Copper_GND`, `Copper_no_net`, `Copper_~{CHG}`), or `Copper_F.Cu` ... and `Plating`, or `Copper` |
+| board | `Board_dielectric 1`, `Board_dielectric 2`, ... or `Board`; a gap of several stack-up dielectrics: `Board_dielectric 1 + dielectric 2` |
+| copper | `Copper_<net>` (`Copper_GND`, `Copper_no_net`, `Copper_~{RESET}`), or `Copper_F.Cu` ... and `Plating`, or `Copper` |
 | mask | `Top Solder Mask`, `Bottom Solder Mask`; visual mode also `Top Mask over Copper`, `Bottom Mask over Copper` |
 | silk | `Top Silkscreen`, `Bottom Silkscreen` |
 | finish | `Top Finish Nickel`, `Bottom Finish Gold`, or `Top Finish Gold_<net>` |
 
-Net names are used as KiCad stores them, including characters such as `~{CHG}` or `N$12`; only
-the STL file names are sanitised.
+Net names are used as KiCad stores them, including characters such as `~{RESET}`, `/SDA` or
+`Net-(R1-Pad2)`, so for such nets the STL and OBJ names differ from the part name
+(`Copper__RESET`, `Copper__SDA`, `Copper_Net-_R1-Pad2`). `materials.json` gives the STL name
+under `file_names.stl`, built with the same rule, so it always matches the file on disk.
+
+> [!NOTE]
+> Two part names that sanitise to the same string (for example nets `/SDA` and `~{SDA}`) would
+> write the same STL file, and the second would replace the first.
 
 ## 19.4 Tests Output
 

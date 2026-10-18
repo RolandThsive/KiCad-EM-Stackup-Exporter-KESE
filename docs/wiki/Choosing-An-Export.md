@@ -8,7 +8,7 @@ or the files in `Parameters/` change any single value.
 
 | Need | Choice | Reason |
 |---|---|---|
-| HFSS | `--for hfss`: simulation, STEP, mm, KiCad origin, copper per net, dielectrics per layer | HFSS imports STEP with one named solid per part; mm and KiCad's origin make port positions read off the layout match the model |
+| HFSS | `--for hfss`: simulation, STEP, mm, KiCad origin, copper per net, dielectrics per layer | HFSS imports STEP with one named solid per part; with mm and KiCad's origin a port position read off the layout is the same x and the negated y in the model (KiCad's Y points down, KESE's up) |
 | CST | `--for cst`: as hfss plus one STL per part | CST imports STEP; the STL files serve the import route CST falls back to |
 | openEMS / CSXCAD | `--for openems`: simulation, STL, mm, KiCad origin, per net, per layer | openEMS has no STEP reader; it imports one STL per material, and `materials.json` carries the properties. See [openEMS Workflow](OpenEMS-Workflow.md) |
 | FEKO, COMSOL, mechanical CAD | `--format step --set Run.UNITS=mm` | STEP with exact solids |
@@ -16,7 +16,7 @@ or the files in `Parameters/` change any single value.
 | Blender, renders | `--mode visual --format glb obj` | OBJ carries an `.mtl` with the colours; GLB carries PBR materials |
 | Thermal or FEA tool that reads STL | `--format stl --set Run.UNITS=mm` | one closed STL per part |
 | DC-IR / PDN with one solid per copper layer | `--set Run.COPPER_GROUPING=layer` | copper per layer, plating as its own `Plating` part |
-| A single body for the whole laminate | `--set Run.DIELECTRIC_GROUPING=merged` | one `Board` solid instead of one per core / prepreg |
+| A single body for the whole laminate | `--set Run.DIELECTRIC_GROUPING=merged` | one `Board` solid instead of one per dielectric |
 
 ## 9.2 The Presets
 
@@ -40,7 +40,7 @@ A preset is only a set of overrides: `--for hfss --format step glb` writes both.
 
 | | `center` | `kicad` |
 |---|---|---|
-| **`Run.ORIGIN`** | The outline's bounding-box centre is at (0, 0). Good for viewers. The default. | KiCad's page origin is kept, so coordinates match the layout and the Gerbers. Good for placing ports. |
+| **`Run.ORIGIN`** | The outline's bounding-box centre is at (0, 0). Good for viewers. The default. | KiCad's page origin is kept: x equals the layout's x and y is the layout's y negated, since KESE's Y points up. Good for placing ports. |
 
 `Run.ORIENTATION`: `upright` (board in XY, `F.Cu` toward +Z, Y up, KiCad's top view not
 mirrored) or `flat` (board in XZ, `F.Cu` toward +Y, the convention of some viewers).

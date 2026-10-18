@@ -4,11 +4,11 @@
      left, the seven stages, the output files on the right. -->
 
 KESE is a linear pipeline of seven stages (`Generator/Pipeline.py`). Every stage works on one
-in-memory object and hands it to the next; nothing is recomputed per output format.
+in-memory object and hands it to the next; nothing is recomputed per output format. The Packager
+writes the model files before the Verifier runs, because the Verifier also checks the written
+GLB; the two text records come last so that the report carries the Verifier's result.
 
-```text
-Reader -> BoardBreakdown -> Geometry -> Colorer -> Assembler -> Verifier -> Packager
-```
+<h4 align="center">Reader → BoardBreakdown → Geometry → Colorer → Assembler → Packager → Verifier</h4>
 
 1. **Reader** (`Generator/Reader.py`). Parses the s-expression file into a tree. Checks that it is
    a `(kicad_pcb ...)` file, reads the `(version ...)` and `(generator ...)`, lists the copper
@@ -22,10 +22,11 @@ Reader -> BoardBreakdown -> Geometry -> Colorer -> Assembler -> Verifier -> Pack
    thick lines, pads become their KiCad shape at their position and angle, zones contribute their
    stored fill polygons, graphics and text become painted strokes, vias become a round pad on
    every layer they span plus a hole. The stack-up is read from Board Setup
-   ([Stack-Up Model](Stack-Up-Model.md)). Then `resolve()` builds the outline from `Edge.Cuts`,
-   moves everything into the board frame (Y up, origin at the outline centre or at KiCad's
-   origin), snaps it to the geometry grid, unions the copper per layer and per net, clips it to
-   the outline, drills the holes and computes the plated barrels, mask openings and silkscreen.
+   ([Stack-Up Model](Stack-Up-Model.md)). Then `resolve()` builds the outline from `Edge.Cuts`;
+   per layer and per net it unions the copper, clips it to the outline and drills the holes, still
+   in KiCad's frame, then moves the result into the board frame (Y up, origin at the outline
+   centre or at KiCad's origin) and snaps it to the geometry grid; it also computes the plated
+   barrels, mask openings and silkscreen.
    The result is a `Breakdown`: per-layer regions with nets, plus counters of what was found and
    what was skipped.
 
@@ -50,25 +51,29 @@ Reader -> BoardBreakdown -> Geometry -> Colorer -> Assembler -> Verifier -> Pack
    the output orientation and given smooth normals across edges flatter than
    `Run.SMOOTH_SHADE_ANGLE_DEG`.
 
-6. **Verifier** (`Generator/Verifier.py`, opt-in). Proves the model: in simulation mode every
+6. **Packager** (`Generator/Packager/`). Writes the requested files from the same `Model`: GLB,
+   OBJ and STL from the meshes; STEP from the prisms themselves as exact B-rep solids (not from
+   triangles), with runs of vertices that lie on one circle written back as true arcs; then
+   `materials.json`. See [Project Output Organization](Project-Output-Organization.md).
+
+7. **Verifier** (`Generator/Verifier.py`, opt-in). Proves the model: in simulation mode every
    part must be watertight with consistent winding and no two parts may overlap along 3,000
    random vertical rays; in visual mode every ray must cross exactly one upward and one downward
-   surface. If the Khronos `gltf_validator` is on the PATH, the GLB is validated too. See
-   [Checks, Errors And Warnings](Checks-Errors-And-Warnings.md).
+   surface. If the Khronos `gltf_validator` is on the PATH, the written GLB is run through it and
+   its last line reported. See [Checks, Errors And Warnings](Checks-Errors-And-Warnings.md).
 
-7. **Packager** (`Generator/Packager/`). Writes the requested files from the same `Model`: GLB,
-   OBJ and STL from the meshes; STEP from the prisms themselves as exact B-rep solids (not from
-   triangles), with runs of vertices that lie on one circle written back as true arcs. Then
-   `materials.json`, `parameters.txt` and `report.txt`. See
-   [Project Output Organization](Project-Output-Organization.md).
+Last, `parameters.txt` and `report.txt` are written next to the model files.
 
 ## 6.1 The Design Choice That Matters Most
 
 Everything is built from **2D regions snapped to one grid** and extruded between **heights
-computed once** from the stack-up. Every vertex of every 2D region is rounded to the grid:
+computed once** from the stack-up. Every vertex of every 2D region is rounded to the grid
+(the only exception: polygons that touch at a point or along a line are parted by a hair,
+`Geometry.PINCH_POINT_OPENING_MM`, just before extrusion, inside one region and between the
+regions of one part, so those few vertices sit just off the grid):
 
 ```math
-x' = g \cdot \operatorname{round}\left( \frac{x}{g} \right), \qquad y' = g \cdot \operatorname{round}\left( \frac{y}{g} \right) \qquad (6.1)
+x' = g \cdot \mathrm{round}\left( \frac{x}{g} \right), \qquad y' = g \cdot \mathrm{round}\left( \frac{y}{g} \right) \qquad (6.1)
 ```
 
 where $`g`$ is the grid pitch, `Geometry.SNAP_GRID_MM` (0.1 µm by default). Heights are not
@@ -94,7 +99,7 @@ x_b = x_k - c_x, \qquad y_b = -\left(y_k - c_y\right) \qquad (6.2)
 ```
 
 ```math
-(c_x, c_y) = \begin{cases} \left( \dfrac{x_{\min} + x_{\max}}{2},\ \dfrac{y_{\min} + y_{\max}}{2} \right) & \text{origin at the centre} \\ (0,\ 0) & \text{KiCad origin} \end{cases} \qquad (6.3)
+(c_x, c_y) = \begin{cases} \left( \frac{x_{\min} + x_{\max}}{2},\ \frac{y_{\min} + y_{\max}}{2} \right) & \text{origin at the centre} \\ (0,\ 0) & \text{KiCad origin} \end{cases} \qquad (6.3)
 ```
 
 From the board frame to the written files (in `Assembler.output_transform`), every 3D point is

@@ -9,12 +9,12 @@ KESE writes the same geometry in two modes, chosen with `Run.MODE` or `--mode`. 
 ## 8.1 Simulation Mode
 
 `--mode simulation`: the physical board as it leaves the factory. **Every part is a closed
-solid**: each core and prepreg, each net's copper with all of its layers and vias joined into
+solid**: each dielectric between two copper layers (core or prepreg), each net's copper with all of its layers and vias joined into
 one body, via and hole plating, solder mask conformal over the copper, silkscreen and, if
 enabled, the surface finish.
 
 - Parts touch exactly (shared vertices, exact z values) and never overlap; the Verifier checks
-  both.
+  that every part is closed and that no two parts overlap.
 - All four formats are allowed: GLB, STEP, STL, OBJ.
 - This is the mode for EM, SI / PI, thermal and mechanical solvers and for CAD.
 
@@ -37,7 +37,7 @@ slices every prism at every height in the stack, rebuilds all regions from one p
 arrangement so that neighbours share exact vertices, triangulates, and then drops every face that is buried inside another prism:
 
 ```math
-\text{keep face } f \iff \nexists P : \ \mathbf{c}_f + \varepsilon \hat{\mathbf{n}}_f \in P \qquad (8.1)
+\text{keep face } f \iff \mathbf{c}_f + \varepsilon \hat{\mathbf{n}}_f \notin P \ \text{ for every prism } P \qquad (8.1)
 ```
 
 | Symbol | Meaning | Parameter |
@@ -62,9 +62,9 @@ Differences from simulation mode:
 - The mask is drawn opaque whatever its alpha (`Color.VISUAL_MASK_OPAQUE`), since a translucent
   surface with nothing behind it would look wrong.
 - All copper and plating take the `Copper_exposed` colour, since only bare copper is visible.
-- The parts are not closed solids: the Verifier's volume test does not apply (volumes can even
-  come out negative in the regression baseline), and it checks instead that every vertical ray
-  meets exactly one upward and one downward face.
+- The parts are not closed solids: the Verifier's closed-solid and winding checks do not apply
+  (the copper parts even come out with negative signed volumes in the regression baseline), and it checks instead
+  that every vertical ray meets exactly one upward and one downward face.
 
 ## 8.3 Which Mode For What
 

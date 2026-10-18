@@ -2,14 +2,17 @@
 
 Every setting lives in one of eight files in `Parameters/`. These are the only files you edit.
 Units are mm unless a name says otherwise. The **Range** column is what the program uses
-sensibly; "None" means the program works the value out itself. Every value is recorded in the
-`parameters.txt` written next to each output, and any value can be overridden for one run with
-`--set Module.NAME=value`, where `Module` is the short name in the heading of each section.
+sensibly; "None" means the program works the value out itself. Any value can be overridden for
+one run with `--set Module.NAME=value`, where `Module` is the short name in the heading of each
+section. The `parameters.txt` written next to each output records every value as it stood for
+the run: `--for`, `--set`, `--mode`, `--format` and `--verify` are all applied as overrides first,
+and listed on its first line.
 
 > [!NOTE]
-> Defaults are those of the parameter files on `main`. KESE does not validate ranges: a value
-> outside the range below produces a wrong model or an error from the geometry library, not a
-> named check.
+> Defaults are those of the parameter files on `main`. Only a few values are checked by name:
+> `MODE`, `FILE_FORMAT` and `DIELECTRIC_SPLIT` (an error or a warning), and `FINISH_TYPE` and
+> `FONT_FILE` (a note in `report.txt`). For the rest, a value outside the range below produces a
+> wrong model or a plain Python error, not a named check.
 
 ## 16.1 Run (`Run_Parameters.py`)
 
@@ -20,7 +23,7 @@ What to make, where, and in which formats.
 | Name | Default | Range | Meaning |
 |---|---|---|---|
 | `MODE` | `"simulation"` | `"simulation"` / `"visual"` | Closed solids for solvers, or the visible surface for viewers ([Output Modes](Output-Modes.md)) |
-| `INPUT_DIR`, `OUTPUT_DIR` | `"Input"`, `"Output"` | paths relative to the project root | Where boards are looked for and outputs written |
+| `INPUT_DIR`, `OUTPUT_DIR` | `"Input"`, `"Output"` | paths relative to the current working directory (run from the repository folder) | Where boards are looked for and outputs written |
 | `FILE_FORMAT` | `["glb"]` | any of `"glb"`, `"stl"`, `"obj"`, `"step"` | Files to write; visual mode allows only glb and obj |
 | `UNITS` | `"m"` | `"mm"` / `"m"` | Units of the written files |
 | `ORIGIN` | `"center"` | `"center"` / `"kicad"` | Outline centre at (0, 0), or KiCad's page origin kept |
@@ -38,7 +41,7 @@ What to make, where, and in which formats.
 | Name | Default | Range | Meaning |
 |---|---|---|---|
 | `SHOW_PROGRESS` | `True` | bool | Live `running <stage> ... 1m 23s` line on a terminal |
-| `VERIFY` | `False` | bool | Run the Verifier after generation (10 to 60 s per board) |
+| `VERIFY` | `False` | bool | Run the Verifier after generation (about 3 to 8 s on the example boards; longer on dense boards) |
 | `WRITE_MATERIALS_JSON` | `True` | bool | Write `materials.json` next to the outputs |
 
 ### 16.1.4 Mesh Export (GLB, STL, OBJ)
@@ -74,7 +77,7 @@ The laminate: thickness, dielectrics, outline and holes. Details in [Board](Boar
 
 | Name | Default | Range | Meaning |
 |---|---|---|---|
-| `BOARD_THICKNESS_MM` | `None` | None or mm > 0 | Laminate thickness; `None` takes it from the file (stack-up, else `(general (thickness))`) |
+| `BOARD_THICKNESS_MM` | `None` | None or mm > 0 | Laminate thickness; `None` takes it from the file (a usable stack-up, else `(general (thickness))`, else 1.6 mm) |
 | `DIELECTRIC_SPLIT` | `"even"` | `"even"` | How the laminate is divided between copper layers when the file has no stack-up |
 | `DEFAULT_DIELECTRIC_MATERIAL`, `DEFAULT_DIELECTRIC_TYPE` | `"FR4"`, `"core"` | text; `"core"` / `"prepreg"` | Used when the stack-up gives none |
 | `DEFAULT_EPSILON_R`, `DEFAULT_LOSS_TANGENT` | `4.5`, `0.02` | > 0 | Typical FR4 at 1 GHz, used when the stack-up gives none |
@@ -82,7 +85,7 @@ The laminate: thickness, dielectrics, outline and holes. Details in [Board](Boar
 | `RESIN_FILL_BETWEEN_INNER_COPPER` | `True` | bool | Prepreg resin fills the space between inner copper traces |
 | `INCLUDE_NON_PLATED_HOLES` | `True` | bool | NPTH pads become holes through the board |
 | `OUTLINE_LINE_SNAP_MM` | `1e-5` | mm > 0 | `Edge.Cuts` end points closer than this are joined |
-| `OUTLINE_FALLBACK` | `"copper_hull"` | `"copper_hull"` / `"error"` | Without `Edge.Cuts`: convex hull of the copper plus a margin, or stop |
+| `OUTLINE_FALLBACK` | `"copper_hull"` | `"copper_hull"` / `"error"` | When `Edge.Cuts` gives no closed outline: convex hull of the copper plus a margin, or stop |
 | `OUTLINE_FALLBACK_MARGIN_MM` | `1.0` | mm ≥ 0 | Margin of the fallback hull |
 
 ## 16.3 Copper (`Copper_Parameters.py`)
@@ -143,7 +146,7 @@ Short name `SolderMask`. Details in [Solder Masks](Solder-Masks.md).
 | `MASK_OVER_COPPER_MM` | `0.010` | mm > 0 | Mask thickness on top of copper (typical 0.010 to 0.015) |
 | `USE_STACKUP_MASK_THICKNESS` | `True` | bool | The stack-up's one mask value is used for both when present |
 | `MASK_EDGE_PULLBACK_MM` | `0.005` | mm ≥ 0 | Mask and silk stop this far short of the board edge |
-| `PAD_TO_MASK_CLEARANCE_MM` | `None` | None or mm ≥ 0 | Clearance around pads; `None` follows the board file (pad, footprint, board setup) |
+| `PAD_TO_MASK_CLEARANCE_MM` | `None` | None or mm ≥ 0 | Clearance around pads and untented vias; `None` takes the board setup's value from the file. A number replaces only the board setup's value: a pad's or footprint's own `solder_mask_margin` in the file still wins |
 | `MASK_WALL_QUAD_SEGS` | `4` | int ≥ 1 | Segments per quarter circle on the walls where the mask climbs a trace |
 
 ## 16.5 Silkscreen (`Silkscreen_Parameters.py`)
@@ -163,7 +166,7 @@ Details in [Silkscreens](Silkscreens.md).
 | `BOLD_THICKNESS_RATIO`, `NORMAL_THICKNESS_RATIO` | `0.2`, `0.15` | > 0 | Stroke thickness as a fraction of the text height when the file gives none |
 | `TEXT_STROKE_QUAD_SEGS` | `4` | int ≥ 1 | Roundness of stroke ends |
 | `DRAW_HIDDEN_TEXT` | `False` | bool | Draw text marked `(hide yes)` |
-| `SILK_LAYERS` | `["F.SilkS", "B.SilkS"]` | list of layer names | Layers drawn as silkscreen; others are listed as skipped |
+| `SILK_LAYERS` | `["F.SilkS", "B.SilkS"]` | list of `F.*` / `B.*` layer names | Layers whose graphics are drawn as silkscreen, on the side their first letter names (any other name stops the run with a `KeyError`); graphics on other non-physical layers are counted as skipped. Text is drawn only on `F.SilkS` / `B.SilkS`; text on other non-physical layers is ignored without a count |
 
 ## 16.6 Finish (`Finish_Parameters.py`)
 
@@ -172,11 +175,12 @@ Details in [Top And Bottom Copper Finishings](Copper-Finishings.md).
 | Name | Default | Range | Meaning |
 |---|---|---|---|
 | `FINISH_ENABLED` | `False` | bool | Build the surface finish on bare copper |
-| `FINISH_TYPE` | `"file"` | `"file"` or a key of `FINISH_TYPES` | Take the type from the stack-up's `(copper_finish ...)`, or name it |
-| `FINISH_DEFAULT_TYPE` | `"ENIG"` | a key of `FINISH_TYPES` | Type when the file gives none |
+| `FINISH_TYPE` | `"file"` | `"file"` or a key of `FINISH_TYPES` | Take the type from the stack-up's `(copper_finish ...)` (KiCad's `None` builds no finish), or name it |
+| `FINISH_DEFAULT_TYPE` | `"ENIG"` | a key of `FINISH_TYPES` | Type when the file gives none, or gives a name that matches no key of `FINISH_TYPES` and no alias |
 | `FINISH_GROUPING` | `"metal"` | `"metal"` / `"net"` | One part per side and metal, or per side, metal and net |
-| `FINISH_TYPES` | ENIG, HASL, HASL_LF, OSP, ImmersionSilver, ImmersionTin, HardGold | `{key: [(metal, mm), ...]}` bottom to top | Layers of each finish |
-| `FINISH_CONDUCTIVITY_S_PER_M` | Nickel `1.4e7`, Gold `4.1e7`, Tin `9.1e6`, Silver `6.3e7`, OSP `0.0` | `{metal: S/m}` | Written to `materials.json` |
+| `FINISH_TYPES` | ENIG, ENEPIG, HASL, HASL_LF, OSP, ImmersionSilver, ImmersionTin, HardGold | `{key: [(metal, mm), ...]}` bottom to top | Layers of each finish |
+| `FINISH_NAME_ALIASES` | 6 KiCad names (`HAL SnPb` → `HASL`, `HAL lead-free` → `HASL_LF`, `Hard gold`, `Immersion tin`, `Immersion silver`, `HT_OSP` → `OSP`) | `{KiCad name: key of FINISH_TYPES}` | KiCad finish names that differ from a key; matching ignores case, spaces, `-` and `_` |
+| `FINISH_CONDUCTIVITY_S_PER_M` | Nickel `1.4e7`, Gold `4.1e7`, Palladium `9.5e6`, Tin `9.1e6`, Silver `6.3e7`, OSP `0.0` | `{metal: S/m}` | Written to `materials.json` |
 
 ## 16.7 Geometry (`Geometry_Parameters.py`)
 
@@ -202,7 +206,7 @@ segments, with $`q`$ segments per quarter circle chosen so that no chord strays 
 $`\varepsilon_c`$ from the true circle:
 
 ```math
-n_c = \frac{\pi}{\arccos\left( 1 - \min\left( \dfrac{\varepsilon_c}{r},\ 1 \right) \right)} \qquad (16.1)
+n_c = \frac{\pi}{\arccos\left( 1 - \min\left( \frac{\varepsilon_c}{r},\ 1 \right) \right)} \qquad (16.1)
 ```
 
 ```math
@@ -241,10 +245,11 @@ vertex within `STEP_ARC_FIT_TOLERANCE_MM`, the turn between vertices keeps one s
 nearly the same everywhere, and the run sweeps at least 10°:
 
 ```math
-\max_{p \in \text{run}} \left| \lVert \mathbf{p} - \mathbf{c} \rVert - r \right| \le \tau_{\mathrm{arc}} \qquad (16.5)
+\max_{\mathbf{p} \in \text{run}} \left| d(\mathbf{p}, \mathbf{c}) - r \right| \le \tau_{\mathrm{arc}} \qquad (16.5)
 ```
 
-where $`\mathbf{c}`$ and $`r`$ are the fitted centre and radius and $`\tau_{\mathrm{arc}}`$ is
+where $`d(\mathbf{p}, \mathbf{c})`$ is the distance from vertex $`\mathbf{p}`$ to the fitted
+centre $`\mathbf{c}`$, $`r`$ is the fitted radius and $`\tau_{\mathrm{arc}}`$ is
 `STEP_ARC_FIT_TOLERANCE_MM` (0.2 µm).
 
 ## 16.8 Color (`Color_Parameters.py`)
@@ -253,12 +258,12 @@ The look of every part for GLB and OBJ. Details in [Colorizing](Colorizing.md).
 
 | Name | Default | Range | Meaning |
 |---|---|---|---|
-| `MATERIALS` | 19 entries (Board, Board_core, Board_prepreg, Copper, Copper_exposed, Plating, the masks, mask over copper, silkscreens, Nickel, Gold, Tin, Silver, OSP) | `{key: {color hex, alpha 0-1, metallic 0-1, roughness 0-1}}` | Material of each part kind; alpha < 1 writes a glTF BLEND material |
+| `MATERIALS` | 18 entries (Board, Board_core, Board_prepreg, Copper, Copper_exposed, Plating, the masks, mask over copper, silkscreens, Nickel, Gold, Tin, Silver, Palladium, OSP) | `{key: {color hex, alpha 0-1, metallic 0-1, roughness 0-1}}` | Material of each part kind; alpha < 1 writes a glTF BLEND material |
 | `VISUAL_MASK_OPAQUE` | `True` | bool | In visual mode the mask is opaque whatever its alpha |
 | `USE_STACKUP_COLORS` | `True` | bool | Honour the colour names in the board's stack-up |
 | `STACKUP_MASK_COLORS` | 11 names | `{name: hex}` | Mask colour names |
 | `STACKUP_SILK_COLORS` | white, black, yellow | `{name: hex}` | Silkscreen colour names |
-| `STACKUP_MASK_OVER_COPPER_COLORS` | 11 names | `{name: hex}` or `None` | Visual-mode colour of the mask over copper per stack-up colour |
+| `STACKUP_MASK_OVER_COPPER_COLORS` | 11 names | `{name: hex or None}` | Visual-mode colour of the mask over copper per stack-up colour; an entry set to `None` (or left out) keeps the `MATERIALS` colour |
 
 | Previous | Next |
 |:---|---:|

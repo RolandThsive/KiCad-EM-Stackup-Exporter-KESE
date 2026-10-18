@@ -14,8 +14,12 @@ outline and stack-up; the settings are in `Parameters/Board_Parameters.py`.
 Each gap between two consecutive copper layers is one dielectric from the
 [Stack-Up Model](Stack-Up-Model.md): a core or a prepreg with its own thickness, material, εr
 and tanδ. With `Run.DIELECTRIC_GROUPING = "layer"` (the default) each becomes its own part,
-`Board_dielectric 1`, `Board_dielectric 2`, ... counted from the `F.Cu` side; with `"merged"`
-every dielectric prism goes into one part named `Board`.
+named `Board_` plus the stack-up's name for that dielectric (`Board_dielectric 1`,
+`Board_dielectric 2`, ... from the `F.Cu` side). A gap holds one part however many plies it has:
+plies written as sub-layers of one stack-up dielectric keep that dielectric's name, and separate
+stack-up dielectrics between the same two copper layers give one part named like
+`Board_dielectric 2 + dielectric 3`. With `"merged"` every dielectric prism goes into
+one part named `Board`.
 
 Each dielectric prism is the outline minus every hole that passes through that gap: a via from
 copper layer $`l_a`$ to $`l_b`$ drills the dielectrics between them, and a through via or a
@@ -24,6 +28,9 @@ through-hole pad drills them all.
 ```math
 D_i = O \setminus \bigcup_{h : a_h \le i-1,\ b_h \ge i} H_h \qquad (10.1)
 ```
+
+With edge plating on (section 11.7 of [Copper And Traces](Copper-And-Traces.md)), the edge band
+is also removed from every $`D_i`$, since the plating takes the laminate's place at the edge.
 
 | Symbol | Meaning |
 |---|---|
@@ -65,7 +72,9 @@ dielectric part:
 - otherwise the dielectric **above** it.
 
 So a core-prepreg-core stack-up gets its inner pockets filled from the prepreg, as in the
-factory. These prisms carry `resin_fill_beside: <layer>` in their properties. With the setting
+factory. Inside KESE these prisms are tagged `resin_fill_beside: <layer>`; `materials.json` takes
+a part's properties from its first prism, the dielectric slab itself, so the tag does not appear
+there. With the setting
 `False`, the pockets stay empty and `report.txt` notes it. With `Run.DIELECTRIC_GROUPING =
 "merged"` the fill goes into the single `Board` part.
 
@@ -79,8 +88,10 @@ factory. These prisms carry `resin_fill_beside: <layer>` in their properties. Wi
 The outline comes from `Edge.Cuts`:
 
 1. Closed shapes (circles, rectangles, polygons) are taken as rings.
-2. Open lines, arcs and Béziers are snapped at their end points to `Board.OUTLINE_LINE_SNAP_MM`
-   (10 nm by default) and polygonized into faces. If they do not close, the run warns
+2. Open lines, arcs and Béziers have every coordinate rounded to a grid set by
+   `Board.OUTLINE_LINE_SNAP_MM` (10 nm by default; the value counts only to the nearest power of
+   ten), so end points that round to the same grid point join, and are then polygonized into
+   faces. If they form no face at all, the run warns
    `Edge.Cuts lines/arcs do not form a closed outline`.
 3. Rings nested at an **even** depth are board, rings at an **odd** depth are cut-outs. A circle
    drawn inside the outer outline is a hole through the whole board; a ring inside that would be
@@ -96,13 +107,14 @@ O = \bigcup_{r : n_r \text{ even}} r \ \setminus \bigcup_{r : n_r \text{ odd}} r
 | $`r`$ | one closed ring found on `Edge.Cuts` |
 | $`n_r`$ | how many other rings contain $`r`$ |
 
-Without any `Edge.Cuts` at all, the fallback outline is
+When `Edge.Cuts` gives no closed outline (nothing drawn, or lines that do not close), the
+fallback outline is
 
 ```math
-O = \operatorname{hull}\left( \bigcup C \right) \oplus m \qquad (10.4)
+O = \mathrm{hull}\left( \bigcup C \right) \oplus m \qquad (10.4)
 ```
 
-where $`\operatorname{hull}`$ is the convex hull of all copper, $`\oplus m`$ grows a region
+where $`\mathrm{hull}`$ is the convex hull of all copper, $`\oplus m`$ grows a region
 outward by $`m`$ (a buffer), and $`m`$ is `Board.OUTLINE_FALLBACK_MARGIN_MM`.
 
 `Board.OUTLINE_FALLBACK` decides whether the fallback is used: `"copper_hull"` (the default)
@@ -116,7 +128,7 @@ reach past the board edge.
 | Source | Hole | Setting |
 |---|---|---|
 | Via | drill of the via's `(drill ...)`, spanning the via's layers | plated, wall `Copper.VIA_WALL_MM` |
-| Through-hole pad (`thru_hole`) | the pad's drill, round or oval (slot), with its offset | plated, wall `Copper.PTH_WALL_MM` |
+| Through-hole pad (`thru_hole`) | the pad's drill, round or oval (slot), at the pad position; the drill's `(offset ...)` moves the copper pad, not the hole, as in KiCad | plated, wall `Copper.PTH_WALL_MM` |
 | Non-plated pad (`np_thru_hole`) | the pad's drill | not plated; included when `Board.INCLUDE_NON_PLATED_HOLES` (default `True`) |
 
 A plated hole leaves its barrel in the laminate: the dielectric is cut by the full drill and the
@@ -126,7 +138,8 @@ copper barrel fills the ring between the drill and the drill minus the wall. See
 ## 10.5 Board Thickness
 
 `Board.BOARD_THICKNESS_MM = None` (the default) takes the laminate from the stack-up, or from the
-file's `(general (thickness ...))` when there is no stack-up. A number forces the laminate
+file's `(general (thickness ...))` when there is no usable stack-up (1.6 mm when the file gives no
+thickness either). A number forces the laminate
 thickness; see [Stack-Up Model](Stack-Up-Model.md) for how the dielectrics are scaled.
 
 ## 10.6 Settings
@@ -138,10 +151,10 @@ thickness; see [Stack-Up Model](Stack-Up-Model.md) for how the dielectrics are s
 | `DEFAULT_DIELECTRIC_MATERIAL`, `DEFAULT_DIELECTRIC_TYPE` | `"FR4"`, `"core"` | text; `"core"` / `"prepreg"` | Material and type when the stack-up gives none |
 | `DEFAULT_EPSILON_R`, `DEFAULT_LOSS_TANGENT` | `4.5`, `0.02` | > 0 | Typical FR4 at 1 GHz, used when the stack-up gives none |
 | `USE_STACKUP_EPSILON_R`, `USE_STACKUP_LOSS_TANGENT` | `True`, `True` | bool | Stack-up values win over the defaults when present |
-| `RESIN_FILL_BETWEEN_INNER_COPPER` | `True` | bool | Fill the space beside inner copper with the neighbouring prepreg |
+| `RESIN_FILL_BETWEEN_INNER_COPPER` | `True` | bool | Fill the space beside inner copper from the adjacent prepreg, else from the dielectric above (section 10.2) |
 | `INCLUDE_NON_PLATED_HOLES` | `True` | bool | NPTH pads become holes through the board |
-| `OUTLINE_LINE_SNAP_MM` | `1e-5` | mm > 0 | `Edge.Cuts` end points closer than this are joined |
-| `OUTLINE_FALLBACK` | `"copper_hull"` | `"copper_hull"` / `"error"` | What to do without `Edge.Cuts` |
+| `OUTLINE_LINE_SNAP_MM` | `1e-5` | mm > 0 | Grid that open `Edge.Cuts` coordinates are rounded to (nearest power of ten), so their end points join |
+| `OUTLINE_FALLBACK` | `"copper_hull"` | `"copper_hull"` / `"error"` | What to do when `Edge.Cuts` gives no closed outline |
 | `OUTLINE_FALLBACK_MARGIN_MM` | `1.0` | mm ≥ 0 | Margin around the copper hull in the fallback |
 
 | Previous | Next |

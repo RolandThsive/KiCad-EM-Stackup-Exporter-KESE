@@ -23,7 +23,7 @@ writes a glTF `BLEND` material.
 | `Top Solder Mask`, `Bottom Solder Mask` | the mask parts | `#126830`, alpha 0.80 |
 | `Top Mask over Copper`, `Bottom Mask over Copper` | the mask on top of copper, visual mode only | `#3F8F3A`, opaque |
 | `Top Silkscreen`, `Bottom Silkscreen` | silkscreen | `#F0F0EC` |
-| `Nickel`, `Gold`, `Tin`, `Silver`, `OSP` | finish metals, by the metal name | metallic greys, gold, tin |
+| `Nickel`, `Gold`, `Tin`, `Silver`, `Palladium`, `OSP` | finish metals, by the metal name | `#B8B8B0`, `#E6C15A`, `#C9C9C9`, `#E4E4E0`, `#DFDAD4` (all metallic 1.0), and copper-toned `#D9955A` (metallic 0.8) for OSP |
 
 How a part finds its key: a `board` part by its kind; `copper` and `plating` by role and mode;
 `mask`, `mask_over_copper` and `silk` parts by their own part name; a `finish` part by its metal.
@@ -59,7 +59,7 @@ Names are matched in lower case; a name not in the table keeps the `MATERIALS` c
 | File | How the colour is written |
 |---|---|
 | GLB | one PBR material per part: `baseColorFactor` (sRGB converted to linear, equation (12.1)), `metallicFactor`, `roughnessFactor`, `alphaMode: BLEND` when alpha < 1 |
-| OBJ | an `.mtl` next to the `.obj` with `newmtl <part>`, `Kd r g b`, `d alpha` |
+| OBJ | an `.mtl` next to the `.obj` with `newmtl <part>` (the part name with spaces and other characters replaced by `_`, e.g. `Top_Solder_Mask`), `Kd r g b`, `d alpha` |
 | STEP | the assembly colour of each solid (RGB and alpha) |
 | STL | none (STL has no colour) |
 | `materials.json` | `look: {color, alpha}` per part |
@@ -69,16 +69,19 @@ glTF stores base colours in linear light, so each 8-bit sRGB channel of the hex 
 converted with the standard sRGB transfer function before it is written to the GLB:
 
 ```math
-c_{\mathrm{lin}} = \begin{cases} \dfrac{c}{12.92} & c \le 0.04045 \\ \left( \dfrac{c + 0.055}{1.055} \right)^{2.4} & c > 0.04045 \end{cases}, \qquad c = \frac{C_8}{255} \qquad (12.1)
+c_{\mathrm{lin}} = \begin{cases} \frac{c}{12.92} & c \le 0.04045 \\ \left( \frac{c + 0.055}{1.055} \right)^{2.4} & c > 0.04045 \end{cases}, \qquad c = \frac{C_8}{255} \qquad (12.1)
 ```
 
 | Symbol | Meaning |
 |---|---|
 | $`C_8`$ | one channel of the hex colour, 0 to 255 |
 | $`c`$ | that channel as sRGB, 0 to 1 (also what the OBJ `.mtl` `Kd` line carries) |
-| $`c_{\mathrm{lin}}`$ | the linear value in the GLB `baseColorFactor`, rounded to 5 decimals |
+| $`c_{\mathrm{lin}}`$ | the linear value in the GLB `baseColorFactor` |
 
-The fourth component of `baseColorFactor` is the alpha, unchanged.
+KESE rounds $`c_{\mathrm{lin}}`$ to 5 decimals, but `trimesh` stores the factor in 8 bits, so the
+GLB holds the nearest step of 1/255: `#968A58` is written as 0.30588, 0.25490, 0.09804 rather than
+0.30499, 0.25415, 0.09759. The fourth component of `baseColorFactor` is the alpha, stored in the
+same 1/255 steps (0.80 stays 0.80; 0.85 would become 0.85098).
 
 ## 12.5 Settings
 
@@ -88,7 +91,7 @@ The fourth component of `baseColorFactor` is the alpha, unchanged.
 | `VISUAL_MASK_OPAQUE` | `True` | bool | Draw the mask opaque in visual mode |
 | `USE_STACKUP_COLORS` | `True` | bool | Honour the colour names in the board's stack-up |
 | `STACKUP_MASK_COLORS`, `STACKUP_SILK_COLORS` | tables above | name to hex | Stack-up colour names |
-| `STACKUP_MASK_OVER_COPPER_COLORS` | table above | name to hex, or `None` | Visual-mode colour of the mask over copper per stack-up colour; `None` keeps the `MATERIALS` entry |
+| `STACKUP_MASK_OVER_COPPER_COLORS` | table above | name to hex or `None` per entry | Visual-mode colour of the mask over copper per stack-up colour; an entry set to `None` keeps the `MATERIALS` entry (the table itself must stay a dict) |
 
 | Previous | Next |
 |:---|---:|

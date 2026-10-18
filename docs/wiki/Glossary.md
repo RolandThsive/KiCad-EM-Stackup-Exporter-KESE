@@ -8,13 +8,13 @@
 | Board frame | KESE's internal coordinates: mm, Y up, origin at the outline centre or KiCad's origin, z = 0 at the laminate mid-plane, `F.Cu` toward +Z. |
 | Bore | The open hole left inside a plated barrel: the drill minus the plating wall. |
 | Castellation | A plated hole cut through by the board edge, leaving a half-barrel on the edge. |
-| Conformal mask | Solder mask that follows the copper: thin on top of a trace, thicker on the laminate, with a wall beside each trace. |
+| Conformal mask | Solder mask that follows the copper: it lies on top of each trace and on the laminate between them, with a wall beside each trace. On real boards it is often thinner on top of copper; KESE sets the two thicknesses separately (both 10 µm by default). |
 | Core | A dielectric sheet that comes with copper already bonded to it; stiff, fixed thickness. |
 | Dielectric | A non-conducting layer of the laminate: a core or a prepreg, with εr and tanδ. |
 | Edge plating | Copper on the routed edge of the board. |
 | Etch factor | How much a trace's side walls lean in because etching undercuts the resist; a trapezoid instead of a rectangle. |
 | εr (epsilon_r) | Relative permittivity of a dielectric. |
-| Finish | The metal deposited on bare copper after the mask: ENIG (nickel + gold), HASL (tin), OSP, immersion silver or tin, hard gold. |
+| Finish | The metal deposited on bare copper after the mask: ENIG (nickel + gold), ENEPIG (nickel + palladium + gold), HASL (tin), OSP, immersion silver or tin, hard gold. |
 | Foil | The base copper thickness of a layer, before plating (1 oz = 35 µm). |
 | GLB | Binary glTF 2.0, the web and real-time 3D format. |
 | Laminate | The stack of dielectrics and inner copper between the two outer copper layers. |
