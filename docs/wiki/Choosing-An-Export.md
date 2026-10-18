@@ -20,8 +20,9 @@ or the files in `Parameters/` change any single value.
 
 > [!NOTE]
 > By default the STEP file holds only the board, copper, plating and finish parts
-> (`Run.STEP_WRITE_ROLES`). Add `"mask"`, `"mask_over_copper"` and `"silk"` there when the solver
-> must see the solder mask or silkscreen; GLB, STL and OBJ always contain them.
+> (`Run.STEP_WRITE_ROLES`). Add `"mask"` (the whole mask, including the mask on copper) and
+> `"silk"` there when the solver must see the solder mask or silkscreen; GLB, STL and OBJ always
+> contain them.
 
 ## 9.2 The Presets
 

@@ -61,7 +61,8 @@ the command is run from.
    ```
 
 4. Open `Output/<board>/simulation_GLB/report.txt`. It lists the stack-up heights, every item that
-   was read, every item that was skipped and why, and the triangle count of every part. See
+   was read, every item that was skipped and why (hidden text and text on layers that are not drawn are left
+   out without a count), and the triangle count of every part. See
    [Project Output Organization](Project-Output-Organization.md).
 
 5. Bring the model into your solver or viewer: [Choosing An Export](Choosing-An-Export.md) and

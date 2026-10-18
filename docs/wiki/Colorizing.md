@@ -58,7 +58,7 @@ Names are matched in lower case; a name not in the table keeps the `MATERIALS` c
 
 | File | How the colour is written |
 |---|---|
-| GLB | a PBR material named after the part's `MATERIALS` key, shared by parts with the same look (every `Copper_<net>` uses one `Copper` material): `baseColorFactor` (sRGB converted to linear, equation (12.1)), `metallicFactor`, `roughnessFactor`, `alphaMode: BLEND` when alpha < 1 |
+| GLB | a PBR material named after the part's `MATERIALS` key, shared by parts with the same key and look (every `Copper_<net>` uses one `Copper` material; the top and bottom mask and silkscreen each keep their own): `baseColorFactor` (sRGB converted to linear, equation (12.1)), `metallicFactor`, `roughnessFactor`, `alphaMode: BLEND` when alpha < 1 |
 | OBJ | an `.mtl` next to the `.obj` with `newmtl <part>` (the part name with spaces and other characters replaced by `_`, e.g. `Top_Solder_Mask`), `Kd r g b`, `d alpha` |
 | STEP | the assembly colour of each solid (RGB and alpha) |
 | STL | none (STL has no colour) |

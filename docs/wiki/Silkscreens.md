@@ -150,11 +150,12 @@ The last three exist only with `SILKSCREEN_OVER_COPPER = True`; otherwise the in
 removed from every opening. On the `B` side every z is mirrored.
 
 > [!WARNING]
-> With `SILKSCREEN_OVER_COPPER = True` the ink can overlap other parts: $`S^{\mathrm{step}}`$
-> starts at the laminate face even where the opening's edge lies on copper, and
-> $`S^{\mathrm{off}} \cap C`$ sits directly on the copper, inside any surface finish there. The
-> Verifier then reports an overlap (5 µm with the default finish). Use it for viewing, not for
-> simulation.
+> With `SILKSCREEN_OVER_COPPER = True` the ink can overlap other parts. $`S^{\mathrm{step}}`$
+> starts at the laminate face even where the opening's edge lies on copper, so it overlaps the
+> copper by $`m_L + s`$ (20 µm by default); that band is only $`s`$ wide, so the Verifier's random
+> rays usually miss it and the run can still PASS. $`S^{\mathrm{off}} \cap C`$ sits directly on the
+> copper, inside any surface finish there: with `Finish.FINISH_ENABLED = True` the Verifier reports
+> the finish thickness as overlap (5 µm for ENIG). Use it for viewing, not for simulation.
 
 | Symbol | Meaning | Parameter |
 |---|---|---|

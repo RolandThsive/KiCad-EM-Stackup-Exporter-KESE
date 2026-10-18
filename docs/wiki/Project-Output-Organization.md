@@ -85,6 +85,8 @@ notes
 
 parts
   Board_dielectric 1                       3540 triangles  material Board_core #968A58 alpha 1.0
+  Copper_1                                 9516 triangles  material Copper #CD803E alpha 1.0
+  Copper_2                                 9516 triangles  material Copper #CD803E alpha 1.0
   Copper_TX                                9068 triangles  material Copper #CD803E alpha 1.0
   ...
 
@@ -105,7 +107,7 @@ Verifier: PASS
 | header | board, file, time of the run, mode, formats, units, KiCad format and generator, the title from the title block |
 | warnings | the Reader's warnings, if any |
 | `stack-up` | laminate thickness and its source, the z band and foil of every copper layer, every dielectric with type, material, thickness, εr, tanδ and z range, the via tenting source, the pad-to-mask clearance, the silk-over-copper setting, the origin used |
-| `read` | a count of every kind of item that went into the model |
+| `read` | a count of every kind of item read from the file (non-plated holes are counted here even when `Board.INCLUDE_NON_PLATED_HOLES = False` leaves them out) |
 | `skipped` | a count of the items left out, with the reason (hidden text and text on layers that are not drawn are left out without a count) |
 | `notes` | the font, the mask thickness and its source, finish, resin fill, castellation and edge plating notes, warnings raised while building |
 | `parts` | every part with its triangle count, material key, colour and alpha |

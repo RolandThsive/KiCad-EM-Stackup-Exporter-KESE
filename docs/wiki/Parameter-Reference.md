@@ -62,13 +62,15 @@ What to make, where, and in which formats.
 | `STEP_WRITE_ROLES` | `["board", "copper", "plating", "finish"]` | subset of the roles below | Roles written to the STEP file; mask and silk are left out by default since on a dense board they are thousands of solids and need many GB of memory |
 | `STEP_FUSE_ROLES` | `["board", "copper", "plating", "finish"]` | subset of `STEP_WRITE_ROLES` | Roles whose parts are fused into **one** solid each (what solvers need; slow on parts with many pieces); the others are compounds of touching solids (fast; fine for viewing) |
 
-The roles are `board`, `copper`, `plating`, `finish`, `mask`, `mask_over_copper`, `silk`.
+The roles are `board`, `copper`, `plating`, `finish`, `mask`, `mask_over_copper`, `silk`. A part's role
+in STEP is that of its first prism, so in simulation mode the mask on copper belongs to the `mask`
+part and `mask_over_copper` selects nothing (STEP is not written in visual mode).
 
 ### 16.1.6 KiCad Versions And Presets
 
 | Name | Default | Range | Meaning |
 |---|---|---|---|
-| `KICAD_VERSION_MIN`, `KICAD_VERSION_MAX` | `20211014`, `20260206` | KiCad file format numbers | Tested range (KiCad 6 to 10); the Reader warns outside it |
+| `KICAD_VERSION_MIN`, `KICAD_VERSION_MAX` | `20211014`, `20260206` | KiCad file format numbers | Accepted range (KiCad 6 to 10; the repository's boards are KiCad 7, 8 and 9 files); the Reader warns outside it |
 | `PRESETS` | `hfss`, `cst`, `openems`, `viewer` | `{name: {"Module.NAME": value}}` | Sets of overrides applied with `--for <name>` ([Choosing An Export](Choosing-An-Export.md)) |
 
 ## 16.2 Board (`Board_Parameters.py`)
@@ -144,7 +146,7 @@ Short name `SolderMask`. Details in [Solder Masks](Solder-Masks.md).
 |---|---|---|---|
 | `MASK_OVER_LAMINATE_MM` | `0.010` | mm > 0 | Mask thickness over bare laminate (typical 0.020 to 0.030) |
 | `MASK_OVER_COPPER_MM` | `0.010` | mm > 0 | Mask thickness on top of copper (typical 0.010 to 0.015) |
-| `USE_STACKUP_MASK_THICKNESS` | `True` | bool | The first mask thickness in the stack-up (normally `F.Mask`) is used for both values on both faces |
+| `USE_STACKUP_MASK_THICKNESS` | `True` | bool | The first mask thickness found in the stack-up (normally `F.Mask`'s) is used for both values on both faces |
 | `MASK_EDGE_PULLBACK_MM` | `0.005` | mm ≥ 0 | Mask and silk stop this far short of the board edge |
 | `PAD_TO_MASK_CLEARANCE_MM` | `None` | None or mm ≥ 0 | Clearance around pads and untented vias; `None` takes the board setup's value from the file. A number replaces only the board setup's value: a pad's or footprint's own `solder_mask_margin` in the file still wins |
 | `MASK_WALL_QUAD_SEGS` | `4` | int ≥ 1 | Segments per quarter circle on the walls where the mask climbs a trace |

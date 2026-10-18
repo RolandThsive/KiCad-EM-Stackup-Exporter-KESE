@@ -70,7 +70,9 @@ computed once** from the stack-up. Every vertex of every 2D region is rounded to
 (the one exception is where polygons touch: just before extrusion, inside one region a polygon
 that touches another at a point or along a line is shrunk all round by half of
 `Geometry.PINCH_POINT_OPENING_MM`, and between the regions of one part a single touching point is
-notched out, so those vertices sit just off the grid):
+notched out; as a last resort, a polygon whose own rings pinch and that cannot be extruded
+watertight is shrunk all round by the full `Geometry.PINCH_POINT_OPENING_MM`. Those vertices sit
+just off the grid):
 
 ```math
 x' = g \cdot \mathrm{round}\left( \frac{x}{g} \right), \qquad y' = g \cdot \mathrm{round}\left( \frac{y}{g} \right) \qquad (6.1)
