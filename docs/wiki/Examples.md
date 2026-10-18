@@ -19,8 +19,9 @@ What this board shows:
 - A board **without a stack-up** in Board Setup: the laminate is the file's `(general (thickness 1.6))`,
   one FR4 core with the default εr 4.5 and tanδ 0.02, copper 35 µm from the defaults.
 - Copper per net: `Copper_TX`, `Copper_1` and `Copper_2`, each with its vias joined.
-- Mask without any openings: the board has no pads, and its vias are tented (KiCad's default
-  when the file sets nothing), so the mask covers them too. The two mask solids climb over every
+- No pad or drawn mask openings: the board has no pads, and its vias are tented (KiCad's default
+  when the file sets nothing), so the mask covers their rings; only the 13 open via bores
+  (0.35 mm across) pass through it. The two mask solids climb over every
   trace and carry three quarters of the triangles.
 
 Excerpt of `report.txt` from `python run_KESE.py Input/Stator.kicad_pcb --format glb stl obj --verify`:

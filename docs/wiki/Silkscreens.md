@@ -175,7 +175,7 @@ in `materials.json`.
 | `BOLD_THICKNESS_RATIO`, `NORMAL_THICKNESS_RATIO` | `0.2`, `0.15` | > 0 | Stroke = ratio × text height when the file gives none |
 | `TEXT_STROKE_QUAD_SEGS` | `4` | int ≥ 1 | Roundness of stroke ends |
 | `DRAW_HIDDEN_TEXT` | `False` | bool | Draw text marked hidden |
-| `SILK_LAYERS` | `["F.SilkS", "B.SilkS"]` | list of `F.*` / `B.*` layer names | Layers drawn as silkscreen, on the side their first letter names; any other name stops the run with a `KeyError` |
+| `SILK_LAYERS` | `["F.SilkS", "B.SilkS"]` | list of `F.*` / `B.*` layer names | Layers drawn as silkscreen, on the side their first letter names; any other name stops the run with a `KeyError` when the board has graphics on that layer |
 
 | Previous | Next |
 |:---|---:|

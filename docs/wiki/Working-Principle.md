@@ -17,18 +17,17 @@ GLB; the two text records come last so that the report carries the Verifier's re
    tested range or more than six copper layers gives a warning; missing `F.Cu` or `B.Cu` is an
    error.
 
-2. **BoardBreakdown** (`Generator/BoardBreakdown.py`). Walks the tree and turns every element into
-   a flat 2D shape in KiCad's coordinate frame (mm, Y down): track segments and arcs become
-   thick lines, pads become their KiCad shape at their position and angle, zones contribute their
-   stored fill polygons, graphics and text become painted strokes, vias become a round pad on
-   every layer they span plus a hole. The stack-up is read from Board Setup
-   ([Stack-Up Model](Stack-Up-Model.md)). Then `resolve()` builds the outline from `Edge.Cuts`;
-   per layer and per net it unions the copper, clips it to the outline and drills the holes, still
-   in KiCad's frame, then moves the result into the board frame (Y up, origin at the outline
-   centre or at KiCad's origin) and snaps it to the geometry grid; it also computes the plated
-   barrels, mask openings and silkscreen.
-   The result is a `Breakdown`: per-layer regions with nets, plus counters of what was found and
-   what was skipped.
+2. **BoardBreakdown** (`Generator/BoardBreakdown.py`). Walks the tree and turns every element into a
+   flat 2D shape in KiCad's coordinate frame (mm, Y down): track segments and arcs become thick
+   lines, pads become their KiCad shape at their position and angle, zones contribute their stored
+   fill polygons, graphics and text become painted strokes, vias become a round pad on every layer
+   they span (except rings dropped by KiCad's "remove unused layers") plus a hole. The stack-up is
+   read from Board Setup ([Stack-Up Model](Stack-Up-Model.md)). Then `resolve()` builds the outline
+   from `Edge.Cuts`; per layer and per net it unions the copper, clips it to the outline and drills
+   the holes, still in KiCad's frame, then moves the result into the board frame (Y up, origin at
+   the outline centre or at KiCad's origin) and snaps it to the geometry grid; it also computes the
+   plated barrels, mask openings and silkscreen. The result is a `Breakdown`: per-layer regions with
+   nets, plus counters of what was found and what was skipped.
 
 3. **Geometry** (`Generator/Geometry/`). Five builders turn the regions into *prisms*, each a
    flat region between two heights with a part name, a role and physical properties:
@@ -56,11 +55,11 @@ GLB; the two text records come last so that the report carries the Verifier's re
    triangles), with runs of vertices that lie on one circle written back as true arcs; then
    `materials.json`. See [Project Output Organization](Project-Output-Organization.md).
 
-7. **Verifier** (`Generator/Verifier.py`, opt-in). Proves the model: in simulation mode every
-   part must be watertight with consistent winding and no two parts may overlap along 3,000
-   random vertical rays; in visual mode every ray must cross exactly one upward and one downward
-   surface. If the Khronos `gltf_validator` is on the PATH, the written GLB is run through it and
-   its last line reported. See [Checks, Errors And Warnings](Checks-Errors-And-Warnings.md).
+7. **Verifier** (`Generator/Verifier.py`, opt-in). Proves the model: in simulation mode every part
+   must be watertight with consistent winding and no two parts may overlap along 3,000 random
+   vertical rays; in visual mode every ray that hits the board must cross exactly one upward and one
+   downward surface. If the Khronos `gltf_validator` is on the PATH, the written GLB is run through
+   it and its last line reported. See [Checks, Errors And Warnings](Checks-Errors-And-Warnings.md).
 
 Last, `parameters.txt` and `report.txt` are written next to the model files.
 

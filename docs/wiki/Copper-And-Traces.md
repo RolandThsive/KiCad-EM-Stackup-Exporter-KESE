@@ -27,8 +27,8 @@ Per copper layer, these items are collected with their net:
 |---|---|
 | `segment` (track) | the centre line thickened by the track width, round ends |
 | `arc` (arc track) | the arc flattened to `Geometry.ARC_STEP_DEG` steps, thickened |
-| `via` | a disc of the via's size on **every** layer it spans (see 11.3) |
-| `pad` | the pad shape (circle, rect, oval, roundrect, trapezoid, custom with anchor and primitives) at its position and angle, with the drill offset, on each copper layer the pad lists (`*.Cu`, `F&B.Cu` expanded) |
+| `via` | a disc of the via's size on every layer it spans, except rings dropped by KiCad's "remove unused layers" (see 11.3) |
+| `pad` | the pad shape (circle, rect, oval, roundrect, trapezoid, custom with anchor and primitives) at its position and angle, with the drill offset, on each copper layer the pad lists (`*.Cu`, `F&B.Cu` expanded); an NPTH pad gives no copper, only its hole |
 | `zone` fill | the `filled_polygon` polygons stored in the file |
 | `gr_*` / `fp_*` graphics on a copper layer | lines and arcs thickened by their stroke width; filled shapes filled; unfilled closed shapes as their outline stroke |
 | text on a copper layer | the stroke-font glyphs, as on silkscreen |
@@ -84,8 +84,10 @@ appears only on vias comes after every net with a track, zone or pad on that lay
 | `"layer"` | layer | `Copper_F.Cu`, `Copper_In1.Cu`, ... | separate `Plating` part |
 | `"merged"` | all copper | `Copper` | inside it |
 
-With `"net"` grouping the whole net is one closed body: every layer's copper, every annular ring
-and every barrel. That is what a solver needs to assign one port or one conductor to a net.
+With `"net"` grouping the whole net is one part: every layer's copper, every annular ring and every
+barrel, joined into one closed body where the copper connects in the file (`Copper_no_net` usually
+holds many separate bodies). That is what a solver needs to assign one port or one conductor to a
+net.
 
 ## 11.3 Vias And Plated Holes
 

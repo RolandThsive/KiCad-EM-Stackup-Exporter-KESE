@@ -16,9 +16,10 @@ conductivity. An EM solver needs each dielectric as its own body with its own ε
 at its real thickness, and one closed solid per net so that ports and excitations can be
 assigned, with the material values alongside. KESE reads the `.kicad_pcb` file directly (KiCad
 itself does not need to be installed), rebuilds the stack-up layer by layer and writes it out as
-closed solids for solvers, or as the visible surface for viewers. Every number that shapes the
-model lives in `Parameters/`, and each output comes with a `parameters.txt` that lists the
-parameter values behind it.
+closed solids for solvers, or as the visible surface for viewers. Almost every number that
+shapes the model lives in `Parameters/` (the 1.6 mm laminate used when the file gives no
+thickness is built into the code; `Board.BOARD_THICKNESS_MM` overrides it), and each output
+comes with a `parameters.txt` that lists the parameter values behind it.
 
 > [!IMPORTANT]
 > **Validation against measurements is pending.** The models have not yet been compared with

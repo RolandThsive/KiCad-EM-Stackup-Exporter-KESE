@@ -99,8 +99,9 @@ one closed solid. In visual mode the **top** region becomes its own part,
 
 Two values, `MASK_OVER_LAMINATE_MM` and `MASK_OVER_COPPER_MM`, both 10 µm by default (KiCad's own
 value). Typical production is 10 to 15 µm over copper and 20 to 30 µm over laminate. When the
-stack-up gives a mask thickness and `USE_STACKUP_MASK_THICKNESS = True`, that one value is used
-for both. `report.txt` notes the values and their source:
+stack-up gives a mask thickness and `USE_STACKUP_MASK_THICKNESS = True`, the first one in the
+stack-up (normally `F.Mask`) is used for both values on both faces; a different `B.Mask`
+thickness is ignored. `report.txt` notes the values and their source:
 `solder mask: 0.01 mm over laminate, 0.01 mm over copper (stackup)`.
 
 ## 15.3 Edge Pull-Back
@@ -122,7 +123,7 @@ mask over the annular ring; its bore is still open.
 |---|---|---|---|
 | `MASK_OVER_LAMINATE_MM` | `0.010` | mm > 0 | Mask thickness over bare laminate |
 | `MASK_OVER_COPPER_MM` | `0.010` | mm > 0 | Mask thickness on top of copper |
-| `USE_STACKUP_MASK_THICKNESS` | `True` | bool | The stack-up's mask thickness wins, for both values |
+| `USE_STACKUP_MASK_THICKNESS` | `True` | bool | The first mask thickness in the stack-up (normally `F.Mask`) wins, for both values on both faces |
 | `MASK_EDGE_PULLBACK_MM` | `0.005` | mm ≥ 0 | Mask and silk stop this far from the edge |
 | `PAD_TO_MASK_CLEARANCE_MM` | `None` | None or mm ≥ 0 | Board-wide clearance around pads; `None` follows Board Setup. A pad's or footprint's own `solder_mask_margin` still wins |
 | `MASK_WALL_QUAD_SEGS` | `4` | int ≥ 1 | Curve quality of the walls beside traces |

@@ -10,9 +10,9 @@ and listed on its first line.
 
 > [!NOTE]
 > Defaults are those of the parameter files on `main`. Only a few values are checked by name:
-> `MODE`, `FILE_FORMAT` and `DIELECTRIC_SPLIT` (an error or a warning), and `FINISH_TYPE` and
-> `FONT_FILE` (a note in `report.txt`). For the rest, a value outside the range below produces a
-> wrong model or a plain Python error, not a named check.
+> `MODE`, `FILE_FORMAT` and `DIELECTRIC_SPLIT` (an error or a warning), and `FINISH_TYPE`,
+> `FINISH_DEFAULT_TYPE` and `FONT_FILE` (a note in `report.txt`). For the rest, a value outside
+> the range below produces a wrong model or a plain Python error, not a named check.
 
 ## 16.1 Run (`Run_Parameters.py`)
 
@@ -48,7 +48,7 @@ What to make, where, and in which formats.
 
 | Name | Default | Range | Meaning |
 |---|---|---|---|
-| `EXPORT_INCLUDE_NORMALS` | `True` | bool | Write vertex normals |
+| `EXPORT_INCLUDE_NORMALS` | `True` | bool | Write vertex normals in the GLB (OBJ always has them) |
 | `EXPORT_SET_BUFFERVIEW_TARGETS` | `True` | bool | Set glTF bufferView targets, which keeps the Khronos validator report free of hints |
 | `SMOOTH_SHADE_ANGLE_DEG` | `25.0` | degrees | Edges sharper than this stay crisp; flatter ones (cylinders) shade smooth |
 
@@ -84,8 +84,8 @@ The laminate: thickness, dielectrics, outline and holes. Details in [Board](Boar
 | `USE_STACKUP_EPSILON_R`, `USE_STACKUP_LOSS_TANGENT` | `True`, `True` | bool | Stack-up values win over the defaults when present |
 | `RESIN_FILL_BETWEEN_INNER_COPPER` | `True` | bool | Prepreg resin fills the space between inner copper traces |
 | `INCLUDE_NON_PLATED_HOLES` | `True` | bool | NPTH pads become holes through the board |
-| `OUTLINE_LINE_SNAP_MM` | `1e-5` | mm > 0 | `Edge.Cuts` end points closer than this are joined |
-| `OUTLINE_FALLBACK` | `"copper_hull"` | `"copper_hull"` / `"error"` | When `Edge.Cuts` gives no closed outline: convex hull of the copper plus a margin, or stop |
+| `OUTLINE_LINE_SNAP_MM` | `1e-5` | mm > 0 | Grid that open `Edge.Cuts` coordinates are rounded to (nearest power of ten), so their end points join |
+| `OUTLINE_FALLBACK` | `"copper_hull"` | `"copper_hull"` / `"error"` | When `Edge.Cuts` gives no closed ring at all: convex hull of the copper plus a margin, or stop |
 | `OUTLINE_FALLBACK_MARGIN_MM` | `1.0` | mm ≥ 0 | Margin of the fallback hull |
 
 ## 16.3 Copper (`Copper_Parameters.py`)
@@ -144,7 +144,7 @@ Short name `SolderMask`. Details in [Solder Masks](Solder-Masks.md).
 |---|---|---|---|
 | `MASK_OVER_LAMINATE_MM` | `0.010` | mm > 0 | Mask thickness over bare laminate (typical 0.020 to 0.030) |
 | `MASK_OVER_COPPER_MM` | `0.010` | mm > 0 | Mask thickness on top of copper (typical 0.010 to 0.015) |
-| `USE_STACKUP_MASK_THICKNESS` | `True` | bool | The stack-up's one mask value is used for both when present |
+| `USE_STACKUP_MASK_THICKNESS` | `True` | bool | The first mask thickness in the stack-up (normally `F.Mask`) is used for both values on both faces |
 | `MASK_EDGE_PULLBACK_MM` | `0.005` | mm ≥ 0 | Mask and silk stop this far short of the board edge |
 | `PAD_TO_MASK_CLEARANCE_MM` | `None` | None or mm ≥ 0 | Clearance around pads and untented vias; `None` takes the board setup's value from the file. A number replaces only the board setup's value: a pad's or footprint's own `solder_mask_margin` in the file still wins |
 | `MASK_WALL_QUAD_SEGS` | `4` | int ≥ 1 | Segments per quarter circle on the walls where the mask climbs a trace |
@@ -166,7 +166,7 @@ Details in [Silkscreens](Silkscreens.md).
 | `BOLD_THICKNESS_RATIO`, `NORMAL_THICKNESS_RATIO` | `0.2`, `0.15` | > 0 | Stroke thickness as a fraction of the text height when the file gives none |
 | `TEXT_STROKE_QUAD_SEGS` | `4` | int ≥ 1 | Roundness of stroke ends |
 | `DRAW_HIDDEN_TEXT` | `False` | bool | Draw text marked `(hide yes)` |
-| `SILK_LAYERS` | `["F.SilkS", "B.SilkS"]` | list of `F.*` / `B.*` layer names | Layers whose graphics are drawn as silkscreen, on the side their first letter names (any other name stops the run with a `KeyError`); graphics on other non-physical layers are counted as skipped. Text is drawn only on `F.SilkS` / `B.SilkS`; text on other non-physical layers is ignored without a count |
+| `SILK_LAYERS` | `["F.SilkS", "B.SilkS"]` | list of `F.*` / `B.*` layer names | Layers whose graphics are drawn as silkscreen, on the side their first letter names (any other name stops the run with a `KeyError` when the board has graphics on that layer); graphics on other non-physical layers are counted as skipped. Text is drawn only on `F.SilkS` / `B.SilkS`; text on other non-physical layers is ignored without a count |
 
 ## 16.6 Finish (`Finish_Parameters.py`)
 
@@ -201,7 +201,7 @@ These do not change dimensions.
 
 ### 16.7.1 How The Curve Settings Are Used
 
-A circle of radius $`r`$ (a via, a round pad, a track end) is flattened to $`4q`$ straight
+A circle of radius $`r`$ (a via, a round pad) is flattened to $`4q`$ straight
 segments, with $`q`$ segments per quarter circle chosen so that no chord strays more than
 $`\varepsilon_c`$ from the true circle:
 

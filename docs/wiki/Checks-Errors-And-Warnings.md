@@ -89,7 +89,7 @@ not the input.
 |---|---|---|
 | simulation | every part is a closed, consistently wound solid; its volume is printed in mm³ | `closed=True winding=True` for every part |
 | simulation | no two parts overlap: 3,000 random vertical rays through the model, the intervals each part occupies along every ray | worst overlap below 0.1 µm (`worst 0.000 um` on the example boards) |
-| visual | the skin is one visible surface: along every ray exactly one upward-facing and one downward-facing hit | the line `visible surfaces per vertical ray: up {...} down {...}` holds only the count 1 on each side (with numpy 2 it prints as `np.int64(1): ...`) |
+| visual | the skin is one visible surface: along every ray that hits the model, exactly one upward-facing and one downward-facing hit | the line `visible surfaces per vertical ray: up {...} down {...}` holds only the count 1 on each side (with numpy 2 it prints as `np.int64(1): ...`) |
 | both, when a GLB was written | the GLB through the Khronos glTF validator, when the `gltf_validator` command-line tool is on the PATH | not a pass condition: the validator's last line is only reported; otherwise `gltf_validator not on PATH: glTF validation skipped`; with no GLB in the run the line is absent |
 
 Example tail of a `report.txt`:
@@ -97,8 +97,11 @@ Example tail of a `report.txt`:
 ```text
 Verifier: PASS
   Board_dielectric 1                   closed=True winding=True volume=2530.6188 mm3
+  Copper_1                             closed=True winding=True volume=2.1699 mm3
+  Copper_2                             closed=True winding=True volume=2.1699 mm3
   Copper_TX                            closed=True winding=True volume=3.1673 mm3
   Top Solder Mask                      closed=True winding=True volume=16.0024 mm3
+  Bottom Solder Mask                   closed=True winding=True volume=16.2848 mm3
   overlap between different parts along 3000 vertical rays: worst 0.000 um
   gltf_validator not on PATH: glTF validation skipped
 ```
@@ -138,16 +141,18 @@ python -m pytest Tests                 # or:  python Tests/test_boards.py
 python Tests/test_boards.py --accept   # re-record the baseline after an intended geometry change
 ```
 
-A board fails when the Verifier fails, when a part's volume moved from the recorded baseline by
+A board fails when the Verifier reports an open or wrongly wound part or an overlap (simulation
+mode; a visual-mode Verifier FAIL is not caught by the suite today), when a part's volume moved from the recorded baseline by
 more than
 
 ```math
 \left| V - V_0 \right| > 10^{-3} \cdot \max\left( |V_0|,\ 10^{-9} \right) \qquad (17.3)
 ```
 
-where $`V`$ is the part's volume now and $`V_0`$ the baseline, both in mm³, when a part disappeared or a new one appeared, or (for the small boards
-`one_layer`, `six_layer`, `synthetic`, when `cadquery` is installed) when the STEP file has an
-invalid solid or a free edge, checked by reading it back with OCP.
+where $`V`$ is the part's volume now and $`V_0`$ the baseline, both in mm³, when a part disappeared
+or a new one appeared, or (for the small boards `one_layer`, `six_layer`, `synthetic`, when
+`cadquery` is installed) when the STEP file has an invalid solid or a free edge, checked by reading
+it back with OCP.
 
 The test boards in `Tests/boards/` cover:
 
@@ -155,10 +160,10 @@ The test boards in `Tests/boards/` cover:
   tracks on `F.Cu` only);
 - `six_layer`: a full stack-up (prepreg / core, a prepreg of two sub-layers, 17.5 µm inner foil,
   black mask, blind, buried and micro vias, a "remove unused layers" via, zone fills);
-- `synthetic`: a two-layer board with one core and 70 µm copper, exercising an outline of lines
-  and an arc with a circular cut-out, a blue mask with a drawn opening and pad mask margins, an
-  arc track, a via tented by the plot setting (`viasonmask false`), a zone fill, an oval drill, an NPTH, and items skipped on purpose
-  (a 3D model, an `F.Fab` line).
+- `synthetic`: a two-layer board with one core and 70 µm copper, exercising an outline of lines and
+  an arc with a circular cut-out, a blue mask with a drawn opening and pad mask margins, an arc
+  track, a via tented by the plot setting (`viasonmask false`), a zone fill, an oval drill, an NPTH,
+  and items skipped on purpose (a 3D model, an `F.Fab` line).
 
 ## 17.5 Inputs KESE Refuses Or Changes
 

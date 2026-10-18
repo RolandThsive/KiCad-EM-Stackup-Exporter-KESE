@@ -107,8 +107,8 @@ O = \bigcup_{r : n_r \text{ even}} r \ \setminus \bigcup_{r : n_r \text{ odd}} r
 | $`r`$ | one closed ring found on `Edge.Cuts` |
 | $`n_r`$ | how many other rings contain $`r`$ |
 
-When `Edge.Cuts` gives no closed outline (nothing drawn, or lines that do not close), the
-fallback outline is
+When `Edge.Cuts` gives no closed ring at all (nothing drawn, or only lines that do not close),
+the fallback outline is
 
 ```math
 O = \mathrm{hull}\left( \bigcup C \right) \oplus m \qquad (10.4)
@@ -118,7 +118,9 @@ where $`\mathrm{hull}`$ is the convex hull of all copper, $`\oplus m`$ grows a r
 outward by $`m`$ (a buffer), and $`m`$ is `Board.OUTLINE_FALLBACK_MARGIN_MM`.
 
 `Board.OUTLINE_FALLBACK` decides whether the fallback is used: `"copper_hull"` (the default)
-uses equation (10.4) with $`m = 1`$ mm and warns; `"error"` stops the run.
+uses equation (10.4) with $`m = 1`$ mm and warns; `"error"` stops the run. When the lines do not
+close but a closed shape (a circle, rectangle or polygon) is drawn on `Edge.Cuts`, there is no
+fallback: that shape alone becomes the outline, even if it was meant as a cut-out.
 
 Everything on every layer is clipped to the outline: copper, mask openings and silkscreen never
 reach past the board edge.
@@ -154,7 +156,7 @@ thickness; see [Stack-Up Model](Stack-Up-Model.md) for how the dielectrics are s
 | `RESIN_FILL_BETWEEN_INNER_COPPER` | `True` | bool | Fill the space beside inner copper from the adjacent prepreg, else from the dielectric above (section 10.2) |
 | `INCLUDE_NON_PLATED_HOLES` | `True` | bool | NPTH pads become holes through the board |
 | `OUTLINE_LINE_SNAP_MM` | `1e-5` | mm > 0 | Grid that open `Edge.Cuts` coordinates are rounded to (nearest power of ten), so their end points join |
-| `OUTLINE_FALLBACK` | `"copper_hull"` | `"copper_hull"` / `"error"` | What to do when `Edge.Cuts` gives no closed outline |
+| `OUTLINE_FALLBACK` | `"copper_hull"` | `"copper_hull"` / `"error"` | What to do when `Edge.Cuts` gives no closed ring at all |
 | `OUTLINE_FALLBACK_MARGIN_MM` | `1.0` | mm ≥ 0 | Margin around the copper hull in the fallback |
 
 | Previous | Next |

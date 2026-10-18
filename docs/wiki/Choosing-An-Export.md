@@ -18,6 +18,11 @@ or the files in `Parameters/` change any single value.
 | DC-IR / PDN with one solid per copper layer | `--set Run.COPPER_GROUPING=layer` | copper per layer, plating as its own `Plating` part |
 | A single body for the whole laminate | `--set Run.DIELECTRIC_GROUPING=merged` | one `Board` solid instead of one per dielectric |
 
+> [!NOTE]
+> By default the STEP file holds only the board, copper, plating and finish parts
+> (`Run.STEP_WRITE_ROLES`). Add `"mask"`, `"mask_over_copper"` and `"silk"` there when the solver
+> must see the solder mask or silkscreen; GLB, STL and OBJ always contain them.
+
 ## 9.2 The Presets
 
 `Run_Parameters.PRESETS`; `--for <name>` applies these overrides before any `--set`, and
