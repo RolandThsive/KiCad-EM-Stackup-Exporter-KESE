@@ -80,9 +80,10 @@ x' = g \cdot \mathrm{round}\left( \frac{x}{g} \right), \qquad y' = g \cdot \math
 
 where $`g`$ is the grid pitch, `Geometry.SNAP_GRID_MM` (0.1 µm by default). Heights are not
 rounded. Because neighbouring layers share identical vertices and exact z values, the solids of
-different parts touch without gaps or overlaps (the one known exception is silkscreen kept in mask
-openings with `Silkscreen.SILKSCREEN_OVER_COPPER = True`, see
-[Silkscreens](Silkscreens.md)), the per-part unions succeed, and the Verifier's overlap test comes back at
+different parts touch without gaps or overlaps (two known exceptions: silkscreen kept in mask
+openings with `Silkscreen.SILKSCREEN_OVER_COPPER = True`, see [Silkscreens](Silkscreens.md); and
+with `Copper.ETCH_FACTOR > 0` an empty wedge beside each sloped copper wall, see
+[Copper And Traces](Copper-And-Traces.md#115-etch-factor)), the per-part unions succeed, and the Verifier's overlap test comes back at
 0.000 µm on the example boards. The price is that curves are faceted in the mesh formats; the STEP
 writer recovers the true circles from the faceted rings so that CAD gets real cylinders.
 

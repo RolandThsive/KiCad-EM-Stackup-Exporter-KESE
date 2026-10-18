@@ -74,7 +74,7 @@ the command is run from.
 python run_KESE.py                                   # every .kicad_pcb in Input/, settings from Parameters/
 python run_KESE.py Input/board.kicad_pcb             # one board (several paths are allowed)
 python run_KESE.py board.kicad_pcb --mode visual     # simulation (solids) or visual (surface for viewers)
-python run_KESE.py board.kicad_pcb --format glb step stl obj
+python run_KESE.py board.kicad_pcb --format glb step stl obj --set Run.UNITS=mm   # STEP needs mm
 python run_KESE.py board.kicad_pcb --for hfss        # a preset: hfss, cst, openems or viewer
 python run_KESE.py board.kicad_pcb --verify          # run the Verifier; results in report.txt
 python run_KESE.py board.kicad_pcb --out /some/dir   # output root other than Output/

@@ -155,7 +155,7 @@ removed from every opening. On the `B` side every z is mirrored.
 > copper by $`m_L + s`$ (20 µm by default); that band is only $`s`$ wide, so the Verifier's random
 > rays usually miss it and the run can still PASS. $`S^{\mathrm{off}} \cap C`$ sits directly on the
 > copper, inside any surface finish there: with `Finish.FINISH_ENABLED = True` the Verifier reports
-> the finish thickness as overlap (5 µm for ENIG). Use it for viewing, not for simulation.
+> an overlap (5 µm with ENIG, the nickel layer). Use it for viewing, not for simulation.
 
 | Symbol | Meaning | Parameter |
 |---|---|---|

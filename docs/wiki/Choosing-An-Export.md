@@ -42,7 +42,7 @@ A preset is only a set of overrides: `--for hfss --format step glb` writes both.
 
 | | `mm` | `m` |
 |---|---|---|
-| **`Run.UNITS`** | EM solvers and CAD. Dimensions in the file equal the layout's. | glTF viewers (the glTF specification is in metres). The default. |
+| **`Run.UNITS`** | EM solvers and CAD. Dimensions in the file equal the layout's. Required for STEP, whose header always says millimetres. | glTF viewers (the glTF specification is in metres). The default. |
 
 | | `center` | `kicad` |
 |---|---|---|

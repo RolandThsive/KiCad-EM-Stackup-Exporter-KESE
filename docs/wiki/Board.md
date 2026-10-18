@@ -43,8 +43,10 @@ is also removed from every $`D_i`$, since the plating takes the laminate's place
 The prism is extruded over the z range of equations (7.8) and (7.9) in
 [Stack-Up Model](Stack-Up-Model.md).
 
-In `materials.json` every dielectric part carries `kind` (core / prepreg), `material`,
-`thickness_mm`, `epsilon_r`, `loss_tangent` and `between` (the two copper layers it separates).
+In `materials.json`, with `"layer"` grouping, every dielectric part carries `kind` (core /
+prepreg), `material`, `thickness_mm`, `epsilon_r`, `loss_tangent` and `between` (the two copper
+layers it separates). With `"merged"` the single `Board` part carries only the first dielectric's
+values (its kind, thickness, εr, tanδ and `between`).
 
 ## 10.2 Resin Fill Beside Inner Copper
 

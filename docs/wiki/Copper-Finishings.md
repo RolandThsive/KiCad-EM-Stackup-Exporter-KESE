@@ -104,9 +104,12 @@ In STEP, finish parts are written and fused by default (`Run.STEP_WRITE_ROLES` a
 
 > [!NOTE]
 > The gold of ENIG is 80 nm thick. Heights are not snapped to the 0.1 µm grid (only the 2D
-> shapes are), so it is built as a real solid, but an FDTD or FEM mesher may not resolve a body
-> that thin. Solvers that struggle can take the finish as a surface impedance instead and leave
-> `FINISH_ENABLED` off.
+> shapes are), so in simulation mode it is built as a real solid, but an FDTD or FEM mesher may
+> not resolve a body that thin. Solvers that struggle can take the finish as a surface impedance
+> instead and leave `FINISH_ENABLED` off. In visual mode, a finish layer thinner than
+> `Geometry.SKIN_BURIED_TEST_OFFSET_MM` (0.5 µm: the gold and palladium of ENIG and ENEPIG,
+> immersion silver, OSP) does not hide the surface below it, so the skin shows two surfaces there
+> and the visual Verifier reports FAIL.
 
 ## 13.5 Settings
 

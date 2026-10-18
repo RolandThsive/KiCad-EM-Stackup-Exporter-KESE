@@ -34,7 +34,7 @@ KiCad itself is not needed, only the `.kicad_pcb` file. Footprints are read from
 | Format | What is in it | Units | Written by |
 |---|---|---|---|
 | GLB (binary glTF 2.0) | one mesh per part, PBR materials, vertex normals, bufferView targets | `Run.UNITS` (viewers expect m) | `trimesh` |
-| STEP AP214 | one named shape per part whose role is in `Run.STEP_WRITE_ROLES`: exact B-rep solids built from the prisms, true arcs, fused per part or compounds; mask and silk off by default | `Run.UNITS` (CAD expects mm) | `cadquery` / OCCT |
+| STEP AP214 | one named shape per part whose role is in `Run.STEP_WRITE_ROLES`: exact B-rep solids built from the prisms, true arcs, fused per part or compounds; mask and silk off by default | mm only in practice: the file always declares millimetres, so with `Run.UNITS = "m"` (the default) the board comes in 1000 times too small; use `--set Run.UNITS=mm` or a preset | `cadquery` / OCCT |
 | STL (binary) | one file per part | `Run.UNITS` | `trimesh` |
 | OBJ + MTL | one object per part, normals, colours | `Run.UNITS` | KESE |
 

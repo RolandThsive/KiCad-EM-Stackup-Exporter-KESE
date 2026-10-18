@@ -60,8 +60,10 @@ X_k = \begin{cases} \bigcup_{h : a_h \le k \le b_h} \left( H_h \ominus w_h \righ
 
 In KiCad 6 to 9 an item carries a net **number** that is looked up in the file's net table; KiCad
 10 writes the net **name** directly, and KESE reads both. Copper with no net (board graphics,
-unconnected pads, net 0) is named `Copper.NO_NET_NAME`, `no_net` by default, so it becomes
-`Copper_no_net`.
+pads without a net such as mounting holes, net 0) is named `Copper.NO_NET_NAME`, `no_net` by
+default, so it becomes `Copper_no_net`. Pads of pins left unconnected in the schematic carry
+KiCad's own `unconnected-(...)` nets and become parts of their own, such as
+`Copper_unconnected-(U5-OUT-Pad3)`.
 
 Copper of different nets never overlaps on a real board. If the file has an overlap (two nets'
 shapes drawn on top of each other), the net that was resolved first keeps the shared area, so the
@@ -229,6 +231,8 @@ the free face is inset by $`e \cdot t \cdot (m - 0.5)/m`$.
 - Inner layers are etched only with `Copper.ETCH_APPLY_TO_INNER_LAYERS = True`; their foot faces
   the board centre (layers in the upper half have it at the bottom, layers in the lower half at
   the top), whichever dielectric is on that side.
+- Only the copper is etched: the solder mask, the resin fill beside inner copper and the finish
+  still follow the drawn outline, so the wedge between them and the sloped wall stays empty (air).
 
 Example: $`e = 0.5`$, $`t = 35`$ µm, $`m = 4`$ gives offsets of 2.19, 6.56, 10.94 and 15.31 µm
 from the foot to the free face.
