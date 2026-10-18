@@ -13,8 +13,9 @@ solid**: each dielectric between two copper layers (core or prepreg), each net's
 one body, via and hole plating, solder mask conformal over the copper, silkscreen and, if
 enabled, the surface finish.
 
-- Parts touch exactly (shared vertices, exact z values) and never overlap; the Verifier checks
-  that every part is closed and that no two parts overlap.
+- Parts touch exactly (shared vertices, exact z values) and do not overlap, apart from the known
+  exceptions listed in [Working Principle](Working-Principle.md#61-the-design-choice-that-matters-most); the Verifier checks that every
+  part is closed and that no two parts overlap.
 - All four formats are allowed: GLB, STEP, STL, OBJ.
 - This is the mode for EM, SI / PI, thermal and mechanical solvers and for CAD.
 

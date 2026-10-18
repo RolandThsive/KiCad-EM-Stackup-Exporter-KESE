@@ -155,7 +155,7 @@ thickness; see [Stack-Up Model](Stack-Up-Model.md) for how the dielectrics are s
 | `DEFAULT_DIELECTRIC_MATERIAL`, `DEFAULT_DIELECTRIC_TYPE` | `"FR4"`, `"core"` | text; `"core"` / `"prepreg"` | Material and type when the stack-up gives none |
 | `DEFAULT_EPSILON_R`, `DEFAULT_LOSS_TANGENT` | `4.5`, `0.02` | > 0 | Typical FR4 at 1 GHz, used when the stack-up gives none |
 | `USE_STACKUP_EPSILON_R`, `USE_STACKUP_LOSS_TANGENT` | `True`, `True` | bool | Stack-up values win over the defaults when present |
-| `RESIN_FILL_BETWEEN_INNER_COPPER` | `True` | bool | Fill the space beside inner copper from the adjacent prepreg, else from the dielectric above (section 10.2) |
+| `RESIN_FILL_BETWEEN_INNER_COPPER` | `True` | bool | `True`: fill the space beside inner copper from the adjacent prepreg (otherwise from the dielectric above); `False`: those pockets stay empty and `report.txt` notes it (section 10.2) |
 | `INCLUDE_NON_PLATED_HOLES` | `True` | bool | NPTH pads become holes through the board |
 | `OUTLINE_LINE_SNAP_MM` | `1e-5` | mm > 0 | Grid that open `Edge.Cuts` coordinates are rounded to (nearest power of ten), so their end points join |
 | `OUTLINE_FALLBACK` | `"copper_hull"` | `"copper_hull"` / `"error"` | What to do when `Edge.Cuts` gives no closed ring at all |

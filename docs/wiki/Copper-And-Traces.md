@@ -275,7 +275,10 @@ Edge plating is copper on the routed board edge (edge-card connectors, RF shield
 - the band belongs to one net, `Copper.EDGE_PLATING_NET`: `"auto"` picks the named net with the
   most copper touching the band (or `no_net`), or give a net name such as `"GND"`;
 - copper of **other** nets inside the band is moved to the edge net, since edge plating shorts
-  everything that reaches the edge; `report.txt` lists what was moved.
+  everything that reaches the edge; `report.txt` lists what was moved;
+- inner-layer copper inside the band is not cut back: with `"net"` or `"merged"` grouping it
+  merges with the band, but with `Run.COPPER_GROUPING = "layer"` it overlaps the `Plating` part
+  by the inner copper thickness and the Verifier reports FAIL.
 
 ```math
 E = \left( O \setminus \left( O \ominus w_e \right) \right) \setminus \bigcup_h H_h \qquad (11.14)
