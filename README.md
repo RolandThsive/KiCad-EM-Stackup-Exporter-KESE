@@ -1,95 +1,175 @@
-# Kicad_PCB__to__3D_Model
+<div align="center">
 
-Converts a KiCad board file (`.kicad_pcb`, KiCad 6–10, 1–6 copper layers) into a 3D model.
+# KiCad EM Stackup Exporter (KESE)
 
-Two modes:
+**Real 3D Models Of KiCad Boards, With The True Stack-Up And Copper Split Per Net**
 
-- **real** – the physical stack-up as it leaves the factory. Every layer is a closed solid at its
-  true height: each dielectric (core / prepreg), every net's copper (all its layers and vias
-  joined), the via and hole plating, top and bottom solder mask (conformal over the copper), top
-  and bottom silkscreen, and optionally the surface finish. Meant for EM simulation (HFSS, CST,
-  openEMS, FEKO, COMSOL) and CAD.
-- **pretty** – the board's visible surface only, for web viewers such as `<model-viewer>`.
-  Same geometry, but surfaces that are only microns apart no longer fight in the depth buffer.
+Python · KiCad 6 To 10 · 1 To 6 Copper Layers · GLB, STEP, STL And OBJ · Free For Non-Commercial Use
 
-Nothing is hard-coded in the generator: every number lives in `Parameters/`, and each output
-comes with a `parameters.txt` listing exactly what produced it.
+</div>
 
-## Install
+---
 
-    pip install -r requirements.txt            # numpy shapely trimesh manifold3d mapbox_earcut rtree
-    pip install -r requirements-step.txt       # optional, for STEP output (cadquery; large)
+## Contents
 
-## Use
+1. [Disclaimer](#disclaimer)
+2. [Goal](#goal)
+3. [Introduction](#introduction)
+4. [Project Capabilities](#project-capabilities)
+5. [Examples](#examples)
+6. [Quick Start](#quick-start)
+7. [Where To Read More](#where-to-read-more)
+8. [Licensing](#licensing)
+9. [About Me](#about-me)
 
-    python run.py                                   # every board in Input/, settings from Parameters/
-    python run.py Input/board.kicad_pcb
-    python run.py board.kicad_pcb --mode pretty
-    python run.py board.kicad_pcb --format glb step stl
-    python run.py board.kicad_pcb --verify          # opt-in checks, results in report.txt
-    python run.py board.kicad_pcb --set Copper.VIA_WALL_MM=0.02 --set Board.BOARD_THICKNESS_MM=0.8
+---
 
-Output goes to `Output/<board>/<mode>/`:
+## Disclaimer
 
-| file | what |
+> [!IMPORTANT]
+> **Validation Against Measurements Is Pending.** The models have not yet been compared with
+> measured boards or with reference solver results. Thicknesses default to KiCad's own values
+> (35 µm copper, 10 µm solder mask), not to any fabricator's process. Set your fabricator's
+> numbers in `Parameters/` before trusting a simulation built on the output.
+
+- This is an open, non-commercial project. The source code is free to read, use, study and
+  improve for non-commercial purposes.
+- **Commercial use requires a separate written license.** See [Licensing](#licensing).
+
+---
+
+## Goal
+
+The goal is a **one-step path from a KiCad board to a simulation-ready 3D model**: every
+dielectric, every net's copper and every via at its true height, with every copper solid named
+after its net (for example `Copper_GND`), ready to drop into an EM solver
+such as HFSS, CST, openEMS, FEKO or COMSOL, with no hand cleanup in CAD. The same board should also
+come out as a light, good-looking model for web viewers and renders.
+
+---
+
+## Introduction
+
+KiCad's own 3D export is made for mechanical fit. Copper is flattened onto the board, and nothing
+in the file says which net a piece of copper belongs to. An EM solver needs the opposite: each
+dielectric as its own body with its own εr and tanδ, copper at its real thickness, and one closed
+solid per net so ports and excitations can be assigned.
+
+KESE reads the `.kicad_pcb` file directly (KiCad itself does not need to be installed), rebuilds
+the stack-up layer by layer and writes it out in two modes:
+
+- **real**: the physical board as it leaves the factory. Every layer is a closed solid: each core
+  and prepreg, each net's copper with all its layers and vias joined, via and hole plating, solder
+  mask conformal over the copper, silkscreen, and optionally the surface finish.
+- **pretty**: only the visible surface of the same geometry, for web viewers such as
+  `<model-viewer>`. Surfaces only microns apart no longer fight in the depth buffer.
+
+Nothing is hard-coded: every number lives in `Parameters/`, and each output comes with a
+`parameters.txt` listing exactly what produced it.
+
+---
+
+## Project Capabilities
+
+| Area | Capability |
 |---|---|
-| `<board>.glb` | binary glTF, one mesh per part, materials from `Color_Parameters` |
-| `<board>.step` | STEP assembly, one named exact solid per part: dielectrics, copper per net, plating, finish (real mode only; mask/silk optional via `STEP_WRITE_ROLES`, memory-heavy) |
-| `stl/<part>.stl` | one STL per part (real mode only) |
-| `<board>.obj` + `.mtl` | Wavefront OBJ, one object per part |
-| `materials.json` | per part: role, layer, net, z range, thickness, εr, tanδ, conductivity, colour |
-| `parameters.txt` | every parameter value used for this output, plus command-line overrides |
-| `report.txt` | stack-up heights, what was read, what was skipped and why, timings, verifier |
+| Input | `.kicad_pcb` from KiCad 6 to 10, 1 to 6 copper layers, stack-up read from Board Setup |
+| Copper | One solid per net (default), per layer, or all merged; through, blind, buried and micro vias; etch factor |
+| Dielectrics | One solid per core / prepreg with εr and tanδ, or the whole laminate as one solid |
+| Mask, Silk, Finish | Solder mask over laminate and copper, silkscreen in KiCad's own stroke font, ENIG / HASL and other finishes |
+| Output | GLB, STEP (one named exact solid per part), one STL per part, OBJ with `.mtl`, in mm or m |
+| Records | `materials.json` per part (role, layer, net, z range, εr, tanδ, conductivity), `parameters.txt`, `report.txt` |
+| Checks | Opt-in verifier: closed solids, no overlaps, one visible surface, glTF validation |
+| Not Modelled | Component 3D models, text boxes, dimensions, edge plating, castellations, rigid-flex |
 
-## Workflow (Generator/)
+---
 
-    Reader          .kicad_pcb -> parsed tree, version and layer check
-    BoardBreakdown  tree -> tracks, zones, pads, vias, holes, outline, mask openings, silk, text
-                    -> flat regions per layer, per net, holes drilled per layer span, heights
-    Geometry/       regions -> prisms (flat region + z range + part + role + properties)
-        Board.py        one prism per dielectric, resin around inner copper
-        Copper.py       every copper layer per net, plating of every hole, etch factor
-        SolderMask.py   top/bottom mask, thicker on laminate than on copper, walls at traces
-        Silkscreen.py   ink on the mask surface (Text.py renders KiCad's own stroke font)
-        Finish.py       ENIG / HASL / ... on bare copper (off by default)
-        Skin.py         pretty mode: prisms -> visible surface
-    Colorer         material per part from Color_Parameters (stackup colours honoured)
-    Assembler       one in-memory Model: meshes + prisms in output units and orientation
-    Verifier        opt-in: closed solids, no overlaps, one visible surface, glTF validation
-    Packager/       the Model -> glb / stl / obj / step / materials.json / report, nothing rebuilt per format
+## Examples
 
-## Parameters/
+The repository includes one example board in `Input/`: a 4-layer inductive encoder stator
+(50 mm outer radius, 4 loops, SIN, COS and TX coils). Exporting it in real mode takes about
+20 seconds and produces one solid per net and per dielectric:
 
-| file | covers |
+| Part | Triangles |
 |---|---|
-| `Run_Parameters.py` | mode, folders, file formats, units, origin, orientation, copper/dielectric grouping, verifier, export details |
-| `Board_Parameters.py` | laminate thickness source, dielectric defaults (εr, tanδ), resin fill, holes, outline fallback |
-| `Copper_Parameters.py` | foil thicknesses, plating added to outer copper, via/PTH wall, etch factor, tenting, conductivity |
-| `SolderMask_Parameters.py` | mask thickness over laminate / over copper, edge pullback, pad clearance, silk subtraction |
-| `Silkscreen_Parameters.py` | ink thickness, font file, KiCad text metrics |
-| `Finish_Parameters.py` | finish on/off, type, layer thicknesses per finish, conductivities |
-| `Geometry_Parameters.py` | snap grid, curve faceting, simplification, skin test offset |
-| `Color_Parameters.py` | colour / alpha / metallic / roughness per material, KiCad stackup colour tables |
+| `Copper_SIN_Signal` | 42,436 |
+| `Copper_COS_Signal` | 42,444 |
+| `Copper_TX` | 24,384 |
+| `Board_dielectric 1` to `3` (FR4 core, 0.51 mm each) | 57,220 |
+| `Top Solder Mask`, `Bottom Solder Mask` | 212,518 |
 
-Thicknesses default to KiCad's own values (35 µm copper, 10 µm mask) so a fresh run matches
-KiCad. For an as-fabricated model set your fabricator's numbers: `OUTER_PLATING_ADDED_MM`,
-`VIA_WALL_MM`, `MASK_OVER_LAMINATE_MM` / `MASK_OVER_COPPER_MM`, `ETCH_FACTOR`, `FINISH_ENABLED`.
+The real-mode GLB is about 15 MB; the pretty-mode GLB of the same board is about 10 MB.
 
-## Fonts
+---
 
-Text is drawn with KiCad's own stroke font (`Parameters/Fonts/kicad_newstroke.json.gz`, see
-`LICENSE_fonts.txt`) using KiCad's layout rules, so silkscreen labels match the layout. A custom
-font (this JSON format or a Hershey `.jhf`) can be named in `Silkscreen_Parameters.FONT_FILE`;
-if it is missing the default is used and `report.txt` says so. TrueType faces named in a board
-are drawn with the stroke font.
+## Quick Start
 
-## Not modelled
+```bash
+python -m pip install -r requirements.txt     # Python 3.10 or later; cadquery is only needed for STEP
 
-Component 3D models, text boxes and dimensions, edge plating / castellations, rigid-flex. Every
-skipped item is counted in `report.txt`.
+python run.py                                  # Every board in Input/, settings from Parameters/
+python run.py --format glb stl obj             # The default format is STEP
+python run.py Input/board.kicad_pcb --mode pretty
+python run.py board.kicad_pcb --verify         # Opt-in checks, results in report.txt
+python run.py board.kicad_pcb --set Copper.VIA_WALL_MM=0.02
+```
 
-## Tests/boards
+Edit only the files in `Parameters/`, or override one value for a single run with `--set`. Each
+run writes to `Output/<board>/<mode>/`: the model files, `materials.json`, `parameters.txt` and
+`report.txt`, which lists the stack-up heights, what was read and what was skipped and why.
 
-Synthetic boards covering a single-sided board, a 6-layer board with a full stackup, blind /
-buried / micro vias, `remove_unused_layers`, KiCad 9 layer numbering, and a board with every pad
-shape, mask openings, zones and text.
+---
+
+## Where To Read More
+
+A wiki with full documentation of every parameter, the generator workflow and the output formats
+is being made and will be available shortly.
+
+---
+
+## Licensing
+
+**License:** [PolyForm Noncommercial License 1.0.0](LICENSE) (SPDX: `PolyForm-Noncommercial-1.0.0`).
+
+| Free Under The License | Needs A Commercial License |
+|---|---|
+| Research and teaching at schools, universities and public research bodies | Running KESE at, or for, a for-profit company, including internal design and simulation work |
+| Personal study, hobby projects and private research | Designing, modelling or simulating a product that is sold, or meant to be sold |
+| Use by charities and government institutions | Paid consulting, contract or client work, or selling KESE or anything built on it |
+
+**Commercial Use.** Companies and startups are welcome once terms are agreed. See
+[COMMERCIAL.md](COMMERCIAL.md) for what counts as commercial use, how to ask for a license and
+the list of approved companies. If you are not sure which side you are on, ask first.
+
+**Contributing.** Code, documentation and other material are accepted under the Contributor
+License Agreement in [CONTRIBUTING.md](CONTRIBUTING.md). Bug reports and ideas do not need it.
+
+The stroke font data in `Parameters/Fonts/` comes from KiCad and keeps its own notice; see
+[`LICENSE_fonts.txt`](Parameters/Fonts/LICENSE_fonts.txt).
+
+---
+
+<div align="center">
+
+## About Me
+
+A traveller and mechatronics engineer who loves building machines that move, from the mechanics
+to the electronics and the firmware. Trained in mechanical design and robotics, with a research
+master's in mechatronics, I have built robotic hands, a humanoid torso, industrial bin-picking
+cells and rocket electronics, designing PCBs in KiCad and firmware for STM32 and Espressif chips.
+
+Without a job at the moment, I put my full time into building industrial-grade software and making
+well-researched but hard-to-find scientific knowledge free for everyone. KESE exists so that a
+board designed in KiCad can go straight into an EM solver without being rebuilt by hand in CAD. I
+will keep maintaining it until it becomes the go-to bridge from KiCad to EM simulation, with
+models that match real, fabricated boards.
+
+**[Website](https://ro-h-bots.blogspot.com/)** ·
+**[Instagram](https://www.instagram.com/ro_h_bots)** ·
+**[MyAnimeList](https://myanimelist.net/profile/RolandThsive)** ·
+**[Email](mailto:rolandthsive@yahoo.com)**
+
+*Contributions of every kind are welcome. Together we can make this the reference tool for turning
+KiCad boards into EM-ready models.*
+
+</div>
