@@ -3,7 +3,7 @@
 ## 19.1 The Repository
 
 ```text
-KiCad-EM-Stackup-Exporter-KESE-/
+KiCad-EM-Stackup-Exporter-KESE/
 ├── run_KESE.py              the command-line entry point
 ├── requirements.txt         pinned Python packages
 ├── Parameters/              every setting, one file per subject (the only files you edit)

@@ -30,7 +30,7 @@ are those of the parameter files on `main`.
 
 ## 1.2 Links
 
-- [Repository README](https://github.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE-#readme)
+- [Repository README](https://github.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE#readme)
 - [Getting Started](Getting-Started.md): install and export a first board.
 - [Contents](Contents.md): every page of this wiki.
 
