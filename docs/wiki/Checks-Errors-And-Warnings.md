@@ -2,9 +2,9 @@
 
 KESE reports in three places: the terminal while it runs, `report.txt` next to every output,
 and the opt-in Verifier whose lines are appended to `report.txt`. Most items the model leaves
-out are counted under `skipped` with the reason. A few are left out without a count: text on
-non-physical layers (such as the Value fields on `F.Fab`), hidden text, pad paste layers, and
-images or groups inside footprints.
+out are counted under `skipped` with the reason. A few are left out without a count: text,
+text boxes and dimensions on non-physical layers (such as the Value fields on `F.Fab`, or a
+dimension on `Dwgs.User`), hidden text, pad paste layers, and images or groups inside footprints.
 
 ```bash
 python run_KESE.py board.kicad_pcb --verify     # generate, then run the Verifier
@@ -74,7 +74,7 @@ stroke font.
 | `zones with no fill (unfilled - press B in KiCad and save)` | No fill polygons in the file. |
 | `keepout / rule areas (no copper by design)` | Rule areas never carry copper; listed for completeness. |
 | `<item> on <layer> (not a physical layer)` | Graphics on fab, courtyard, paste, user and comment layers, which are not part of the board (text there is left out without a count). |
-| `gr_text_box / fp_text_box / dimension on <layer> (not modelled)` | Text boxes and dimensions are not rendered. |
+| `gr_text_box / fp_text_box / dimension on <layer> (not modelled)` | Text boxes and dimensions on copper, mask or silkscreen layers are counted here and not rendered; on other layers, where dimensions usually sit, they are left out without a count. |
 | `image / target / group / generated / table items` | Not physical. For a group or a generated item (such as a length-tuning pattern) only the record is skipped; the items in it are read as usual. |
 | `pads of shape <shape>` | A pad shape KESE does not know. |
 | `TrueType text on <layer> (DRAW_TRUETYPE_TEXT_WITH_STROKE_FONT is False)` | Skipped by the setting. |

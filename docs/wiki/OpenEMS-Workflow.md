@@ -48,8 +48,8 @@ Consider before exporting:
 ## 21.2 Building The CSXCAD Model
 
 For each part in `materials.json`, create one property from its `properties` and import the
-STL named in `file_names.stl`. Metals become `AddMetal` (PEC) or `AddConductingSheet` / a lossy
-material with `kappa` = conductivity; dielectrics become `AddMaterial` with `epsilon` and a
+STL named in `file_names.stl`. Metals become `AddMetal` (PEC) or a lossy material with
+`kappa` = conductivity; dielectrics become `AddMaterial` with `epsilon` and a
 `kappa` derived from tanδ at the frequency of interest. FDTD models dielectric loss as a
 conductivity, which equals the loss tangent at one frequency:
 
@@ -112,8 +112,10 @@ Points that matter:
 - **Mesh lines at the copper heights.** `report.txt` lists the z band of every copper layer in
   mm (`F.Cu z +0.8000 .. +0.8350 mm`). Put mesh lines on those values, and on the dielectric
   boundaries, so the 35 µm copper is resolved or, with coarser cells, is at least on a cell
-  boundary. For thin copper, `AddConductingSheet` with the copper thickness is the usual openEMS
-  way to avoid cells of 35 µm.
+  boundary. openEMS's other way to avoid cells of 35 µm, `AddConductingSheet`, works only on
+  flat (2D) shapes: KESE's STL parts are closed solids, so openEMS treats a sheet made from them
+  as PEC. To use a conducting sheet, draw the copper as flat polygons at its height instead of
+  importing its STL.
 - **Units.** `SetDeltaUnit(1e-3)` matches `Run.UNITS = "mm"`. If you exported in metres, use `1`.
 - **Ports.** Place them in the layout's coordinates: with `ORIGIN = "kicad"` the x of a pad is the
   same as in KiCad, and y is KiCad's y negated.

@@ -165,14 +165,15 @@ removed under `via rings removed on unconnected layers`.
 
 ### 11.3.2 Via Tenting
 
-Tenting decides whether the solder mask covers the via (the mask has no opening over it) or is
-open. `Copper.VIA_TENTING`:
+Tenting decides whether the solder mask covers the via's annular ring or leaves it open; the
+bore (the drill minus the plating wall) is always left open through the mask, see
+[Solder Masks](Solder-Masks.md). `Copper.VIA_TENTING`:
 
 | Value | Meaning |
 |---|---|
 | `"file"` (default) | follow the board: the default comes from KiCad 9 / 10 `(tenting ...)` in Board Setup, else the older plot setting `viasonmask`, else KiCad's default (tented); a via's own `(tenting ...)` then overrides that default for that via, whichever source it came from: KiCad 9's short form (`(tenting front back)`, `(tenting front)`, `(tenting none)`) is the complete list of tented sides, so `none` opens both; KiCad 10's `(tenting (front yes) (back no))` sets each side it names |
-| `"tented"` | mask over every via |
-| `"open"` | mask open over every via, with the pad-to-mask clearance |
+| `"tented"` | mask over every via's ring (the bore stays open) |
+| `"open"` | mask open over every via's pad, with the pad-to-mask clearance |
 
 `report.txt` states the source on the `vias:` line (`board setup (tenting)`, `plot setting
 viasonmask`, `KiCad default (vias tented)`).
