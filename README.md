@@ -41,7 +41,8 @@ Python · KiCad 6 To 10 · 1 To 6 Copper Layers · GLB, STEP, STL And OBJ · Fre
 ## Goal
 
 The goal is a **one-step path from a KiCad board to a simulation-ready 3D model**: every
-dielectric, every net's copper and every via at its true height, ready to drop into an EM solver
+dielectric, every net's copper and every via at its true height, with every copper solid named
+after its net (for example `Copper_GND`), ready to drop into an EM solver
 such as HFSS, CST, openEMS, FEKO or COMSOL, with no hand cleanup in CAD. The same board should also
 come out as a light, good-looking model for web viewers and renders.
 
