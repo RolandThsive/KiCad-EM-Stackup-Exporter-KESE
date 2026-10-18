@@ -148,7 +148,10 @@ centred at the origin. Run the commands from the project folder. Edit only the f
 The folder holds the model files, `materials.json`, `parameters.txt` and `report.txt`, which lists
 the stack-up heights, what was read and what was skipped and why.
 
-On Python 3.11, install the same packages without the version pins. With cadquery installed,
+To get a `kese` command that works from any folder, install the project itself with
+`python -m pip install .` (add `".[step]"` for STEP output), then run `kese` in place of
+`python run_KESE.py`; `kese --version` prints the installed version. On Python 3.11, install the
+same packages without the version pins, or use `pip install .`, which does not pin them. With cadquery installed,
 `python -m pytest Tests` checks a change against the recorded results.
 
 ---
