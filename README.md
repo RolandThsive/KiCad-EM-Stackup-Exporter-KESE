@@ -165,6 +165,8 @@ is being made and will be available shortly.
 
 ## Licensing
 
+Hi Seth, Its not greedy man here. 
+
 **License:** [GNU General Public License, version 3 or later](LICENSE) (SPDX: `GPL-3.0-or-later`).
 
 KESE includes material derived from KiCad, which is GPL-licensed: KiCad's "newstroke" stroke font
