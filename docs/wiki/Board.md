@@ -95,9 +95,10 @@ The outline comes from `Edge.Cuts`:
    ten), so end points that round to the same grid point join, and are then polygonized into
    faces. If they form no face at all, the run warns
    `Edge.Cuts lines/arcs do not form a closed outline`.
-3. Rings nested at an **even** depth are board, rings at an **odd** depth are cut-outs. A circle
-   drawn inside the outer outline is a hole through the whole board; a ring inside that would be
-   board again:
+3. Rings nested at an **even** depth are joined as board, rings at an **odd** depth are cut-outs,
+   and the cut-outs are subtracted last. A circle drawn inside the outer outline is a hole through
+   the whole board; a ring drawn inside such a cut-out does not become board again, because
+   everything inside a cut-out is removed:
 
 ```math
 O = \bigcup_{r : n_r \text{ even}} r \ \setminus \bigcup_{r : n_r \text{ odd}} r \qquad (10.3)

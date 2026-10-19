@@ -178,8 +178,9 @@ bore (the drill minus the plating wall) is always left open through the mask, se
 | `"tented"` | mask over every via's ring (the bore stays open) |
 | `"open"` | mask open over every via's pad, with the pad-to-mask clearance |
 
-`report.txt` states the source on the `vias:` line (`board setup (tenting)`, `plot setting
-viasonmask`, `KiCad default (vias tented)`).
+`report.txt` names the board's own tenting source on the `vias:` line (`board setup (tenting)`,
+`plot setting viasonmask`, `KiCad default (vias tented)`). That line does not change when
+`VIA_TENTING` is `"tented"` or `"open"`; the override shows only in `parameters.txt`.
 
 ## 11.4 Copper Thickness And Plating
 
