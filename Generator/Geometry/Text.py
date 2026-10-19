@@ -3,7 +3,10 @@
 Default font: KiCad's own "newstroke" (Parameters/Fonts/kicad_newstroke.json.gz).  Custom fonts:
 this JSON format or a Hershey .jhf file, named in Silkscreen_Parameters.FONT_FILE.
 
-Glyph coordinates are fractions of the text height, y DOWN (KiCad's convention), baseline near 0."""
+Glyph coordinates are fractions of the text height, y DOWN (KiCad's convention), baseline near 0.
+
+The layout below is derived from KiCad's stroke-font text code (Copyright (C) The KiCad Developers,
+GPL-3.0-or-later); see NOTICE.md."""
 import gzip
 import json
 import math

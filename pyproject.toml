@@ -7,7 +7,7 @@ name = "kese"
 description = "KiCad EM Stackup Exporter: .kicad_pcb boards to exact stack-up solids (STEP, STL, GLB) for EM simulation"
 readme = "README.md"
 requires-python = ">=3.11"
-license = {text = "PolyForm-Noncommercial-1.0.0"}
+license = {text = "GPL-3.0-or-later"}
 dynamic = ["version"]
 dependencies = [
     "numpy", "scipy", "networkx", "shapely>=2.0", "trimesh>=4.0", "manifold3d", "mapbox_earcut", "rtree",

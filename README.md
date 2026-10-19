@@ -4,7 +4,7 @@
 
 **Real 3D Models Of KiCad Boards, With The True Stack-Up And Copper Split Per Net**
 
-Python · KiCad 6 To 10 · 1 To 6 Copper Layers · GLB, STEP, STL And OBJ · Free For Non-Commercial Use
+Python · KiCad 6 To 10 · 1 To 6 Copper Layers · GLB, STEP, STL And OBJ · Free Software (GPL-3.0)
 
 </div>
 
@@ -37,9 +37,9 @@ Python · KiCad 6 To 10 · 1 To 6 Copper Layers · GLB, STEP, STL And OBJ · Fre
 > A ground plane or copper pour that has not been filled (press **B** in KiCad) and saved is left
 > out entirely; `report.txt` counts it under "zones with no fill".
 
-- This is an open, non-commercial project. The source code is free to read, use, study and
-  improve for non-commercial purposes.
-- **Commercial use requires a separate written license.** See [Licensing](#licensing).
+- KESE is free software under the GNU GPL, version 3 or later. You may use, study, change and
+  share it for any purpose, commercial included, as long as what you share stays under the GPL.
+  See [Licensing](#licensing).
 
 ---
 
@@ -165,23 +165,23 @@ is being made and will be available shortly.
 
 ## Licensing
 
-**License:** [PolyForm Noncommercial License 1.0.0](LICENSE) (SPDX: `PolyForm-Noncommercial-1.0.0`).
+**License:** [GNU General Public License, version 3 or later](LICENSE) (SPDX: `GPL-3.0-or-later`).
 
-| Free Under The License | Needs A Commercial License |
+KESE includes material derived from KiCad, which is GPL-licensed: KiCad's "newstroke" stroke font
+and its text layout. KESE is therefore distributed under the GPL as well, and KiCad's copyright
+notices are kept in [NOTICE.md](NOTICE.md) and [`LICENSE_fonts.txt`](Parameters/Fonts/LICENSE_fonts.txt).
+
+| You May | As Long As |
 |---|---|
-| Research and teaching at schools, universities and public research bodies | Running KESE at, or for, a for-profit company, including internal design and simulation work |
-| Personal study, hobby projects and private research | Designing, modelling or simulating a product that is sold, or meant to be sold |
-| Use by charities and government institutions | Paid consulting, contract or client work, or selling KESE or anything built on it |
+| Run KESE for any purpose, including commercial work | Nothing; running it needs no permission |
+| Study and change the source code | Changed versions you distribute are also GPL-3.0-or-later, with their source |
+| Share copies, modified or not | Recipients get the same rights and the full source |
 
-**Commercial Use.** Companies and startups are welcome once terms are agreed. See
-[COMMERCIAL.md](COMMERCIAL.md) for what counts as commercial use, how to ask for a license and
-the list of approved companies. If you are not sure which side you are on, ask first.
+The GPL covers the program. The 3D models KESE writes from your own board are generally not
+covered by it, in the same way a document printed by a GPL program is not.
 
-**Contributing.** Code, documentation and other material are accepted under the Contributor
-License Agreement in [CONTRIBUTING.md](CONTRIBUTING.md). Bug reports and ideas do not need it.
-
-The stroke font data in `Parameters/Fonts/` comes from KiCad and keeps its own notice; see
-[`LICENSE_fonts.txt`](Parameters/Fonts/LICENSE_fonts.txt).
+**Contributing.** Contributions are accepted under the same license; see
+[CONTRIBUTING.md](CONTRIBUTING.md).
 
 ---
 

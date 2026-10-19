@@ -22,7 +22,7 @@ KiCad-EM-Stackup-Exporter-KESE/
 ├── Output/                  one folder per board and run (ignored by git except .gitkeep)
 ├── Tests/                   regression suite, test boards, baseline.json
 ├── docs/wiki/, docs/images/ this wiki, and the folder for its pictures (to come)
-├── LICENSE, COMMERCIAL.md, CONTRIBUTING.md
+├── LICENSE, NOTICE.md, CONTRIBUTING.md
 └── README.md
 ```
 

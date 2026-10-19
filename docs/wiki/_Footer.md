@@ -1,1 +1,1 @@
-Code and documentation: PolyForm Noncommercial 1.0.0 (commercial use needs a written license, see [License](License.md)) · Font data: KiCad newstroke notice · [Repository](https://github.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE)
+Code, documentation and font data: GNU GPL v3 or later, including material derived from KiCad (see [License](License.md)) · [Repository](https://github.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE)

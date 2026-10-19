@@ -1,55 +1,45 @@
 # 25. License
 
-KESE is open and free for non-commercial use. The repository's
+KESE is free software, licensed under the **GNU General Public License, version 3 or later**
+(SPDX `GPL-3.0-or-later`). The repository's
 [`LICENSE`](https://github.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/blob/main/LICENSE)
-file is the authority; this page summarises it.
+and [`NOTICE.md`](https://github.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/blob/main/NOTICE.md)
+files are the authority; this page summarises them.
 
-| Content | License | What it allows |
-|---|---|---|
-| Code, documentation (this wiki), example boards and other material in the repository | [PolyForm Noncommercial License 1.0.0](https://polyformproject.org/licenses/noncommercial/1.0.0/) (SPDX `PolyForm-Noncommercial-1.0.0`) | Read, use, study, change and share it for any **non-commercial** purpose, with the notices kept. |
-| Stroke font data in `Parameters/Fonts/` | KiCad's own notice (newstroke, GPL v2 or later; CJK glyphs under an MIT-style notice), kept in [`LICENSE_fonts.txt`](https://github.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/blob/main/Parameters/Fonts/LICENSE_fonts.txt) | Font data only, used by the text renderer; keep the notice when redistributing. |
-| Models KESE writes from **your** board | The `LICENSE` does not address output files. | [`COMMERCIAL.md`](https://github.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/blob/main/COMMERCIAL.md) counts modelling or simulating a product that is sold, and selling a product or service built on KESE's output files, as commercial use. |
+## 25.1 Why The GPL
 
-## 25.1 Free Under The License
+KESE includes material derived from KiCad, which is licensed under the GPL:
 
-- Research and teaching at schools, universities and public research bodies.
-- Personal study, hobby projects and private research with no commercial application in view.
-- Use by charities and government institutions.
+- the default stroke font, `Parameters/Fonts/kicad_newstroke.json.gz`, converted from KiCad's
+  "newstroke" font (GPL v2 or later; CJK glyphs under an MIT-style notice), and
+- the text layout in `Generator/Geometry/Text.py`, which follows KiCad's stroke-font text code.
 
-## 25.2 Needs A Commercial License
+Work derived from GPL code has to stay under the GPL, with the original copyright notices kept.
+KiCad's notices are kept in `NOTICE.md` and
+[`LICENSE_fonts.txt`](https://github.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/blob/main/Parameters/Fonts/LICENSE_fonts.txt).
 
-Any commercial use needs a separate written license from the copyright holder, RolandThsive:
+## 25.2 What You May Do
 
-- Running KESE at, or for, a for-profit company, including internal design, evaluation or
-  simulation work.
-- Designing, modelling, simulating or documenting a product or part that is sold, or meant to be
-  sold.
-- Paid consulting, contract or client work.
-- Selling KESE, a modified version of it, or a product or service built on it or on its output
-  files.
+| You May | As Long As |
+|---|---|
+| Run KESE for any purpose, including commercial work | Nothing; running it needs no permission |
+| Study and change the source code | Changed versions you distribute are also GPL-3.0-or-later, with their source |
+| Share copies, modified or not | Recipients get the same rights and the full source |
 
-Companies and start-ups are welcome once terms are agreed. How to ask, what counts as commercial
-use and the list of licensed companies are in
-[`COMMERCIAL.md`](https://github.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/blob/main/COMMERCIAL.md).
-If you are not sure which side you are on, ask first.
+The GPL covers the program. The 3D models KESE writes from your own board are generally not
+covered by it, in the same way a document printed by a GPL program is not.
 
 ## 25.3 Contributing
 
-Code, documentation and other material are accepted under the KESE Contributor License
-Agreement in
+Contributions are accepted under the same license, GPL-3.0-or-later; you keep the copyright in
+your contribution. If it includes someone else's work, say where it comes from and keep its
+notice. See
 [`CONTRIBUTING.md`](https://github.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/blob/main/CONTRIBUTING.md).
-In short: you keep your copyright; you grant the maintainer, and anyone who receives KESE from
-the maintainer, a perpetual, irrevocable licence to use, change, sublicense and distribute your
-contribution, including the right to license it under any terms the maintainer chooses
-(non-commercial or paid commercial) and to change those terms; you also grant a patent licence
-for it; and you receive no payment, including from commercial licences. The agreement itself is
-the authority. Every author of a commit in a pull request agrees by checking the box in the pull
-request description or by commenting "I agree to the KESE Contributor License Agreement." Bug
-reports and ideas need no agreement.
 
 ## 25.4 No Warranty
 
-KESE is provided as is. The models have not yet been validated against measured boards; see
+KESE is provided as is, without any warranty; see sections 15 and 16 of the GPL. The models have
+not yet been validated against measured boards; see
 [Immediate Next Steps](Immediate-Next-Steps.md).
 
 | Previous | Next |
