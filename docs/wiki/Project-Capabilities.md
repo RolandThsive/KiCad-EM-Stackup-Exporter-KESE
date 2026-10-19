@@ -40,11 +40,13 @@ The numbers below come from runs of the two example boards in `Input/` and a boa
 `Tests/boards/` with the default parameters on `main` (35 µm copper, 10 µm mask, GLB in metres),
 on one Linux machine. They say what to expect, not what the limit is.
 
-| Board | Layers | Items | Simulation run | Parts and triangles |
+| Board | Layers | Items | Simulation run\* | Parts and triangles |
 |---|---|---|---|---|
 | `Stator` (1-loop encoder stator) | 2 | 2,414 tracks, 13 vias | 16 s with the Verifier (assemble 8.9 s, verify 3.4 s); GLB 5.0 MB, OBJ 13.5 MB, six STL files 6.4 MB together | `Copper_TX` 9,068, `Copper_1` and `Copper_2` 9,516 each, `Board_dielectric 1` 3,540, top and bottom mask 33,728 and 63,402 |
 | `Coil_30_50_4_1_3_Series_SteppedDiagonal_Stator` (4-loop encoder stator) | 4 | 6,216 tracks, 53 vias | 48 s with the Verifier (assemble 31 s, verify 7 s); 50 s in visual mode (assemble 43 s); GLB 15.1 MB, visual-mode GLB 10.2 MB | `Copper_SIN_Signal` 42,436, `Copper_COS_Signal` 42,444, `Copper_TX` 24,384, three dielectrics 57,220 together, both masks 212,518 together |
 | `six_layer` (test board) | 6 | 6 tracks, 6 vias, 2 zone fills | 7 s with the Verifier | 10 parts, 23,602 triangles |
+
+\* Measured on an Intel Core i9-14900K with 8 GB of RAM.
 
 - The slowest stage on the two `Input/` boards is assembly, and most of it goes into preparing and joining
   the solder-mask parts, which climb over every trace (on the Coil board the two masks take about
