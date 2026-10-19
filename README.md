@@ -169,7 +169,7 @@ is being made and will be available shortly.
 
 KESE includes material derived from KiCad, which is GPL-licensed: KiCad's "newstroke" stroke font
 and its text layout. KESE is therefore distributed under the GPL as well, and KiCad's copyright
-notices are kept in [NOTICE.md](NOTICE.md) and [`LICENSE_fonts.txt`](Parameters/Fonts/LICENSE_fonts.txt).
+copyright headers are kept word for word in [`licenses/`](licenses), listed in [NOTICE.md](NOTICE.md).
 
 | You May | As Long As |
 |---|---|

@@ -18,14 +18,24 @@ this program. If not, see <https://www.gnu.org/licenses/>. The full text is in
 
 ## Work derived from KiCad
 
-KESE contains material derived from KiCad (<https://www.kicad.org>), which is
-licensed under the GNU General Public License. Its copyright notices are kept
-here, and these parts are distributed under the GPL like the rest of KESE.
+KESE contains material derived from KiCad (<https://www.kicad.org>), a free EDA
+application licensed under the GNU General Public License. The original
+copyright and license headers of the KiCad source files it comes from are kept,
+word for word, in the [`licenses/`](licenses) folder, together with KiCad's
+`AUTHORS.txt`, which those headers refer to.
 
-| KESE file | Derived from | Copyright | License |
-|-----------|--------------|-----------|---------|
-| `Parameters/Fonts/kicad_newstroke.json.gz` | KiCad `common/newstroke_font.cpp` (the "newstroke" stroke font) | Copyright (C) 2010 Vladimir Uryvaev; CJK glyphs copyright (c) 2018 Lingdong Huang; Copyright (C) The KiCad Developers | GPL-2.0-or-later; CJK glyphs under an MIT-style notice. See [`Parameters/Fonts/LICENSE_fonts.txt`](Parameters/Fonts/LICENSE_fonts.txt). |
-| `Generator/Geometry/Text.py`, and the text metrics in `Parameters/Silkscreen_Parameters.py` | KiCad's stroke-font text layout (`STROKE_FONT`, `FONT::drawMultilineText`) | Copyright (C) The KiCad Developers | GPL-3.0-or-later |
+| KESE file | Derived from (KiCad source) | Copyright | License |
+|-----------|-----------------------------|-----------|---------|
+| `Parameters/Fonts/kicad_newstroke.json.gz` | `common/newstroke_font.cpp` | Copyright (C) 2010 vladimir uryvaev; Copyright The KiCad Developers, see AUTHORS.txt for contributors | GPL-2.0-or-later. Header: [`licenses/KiCad-newstroke_font.cpp-header.txt`](licenses/KiCad-newstroke_font.cpp-header.txt) |
+| CJK glyphs in the same file | `common/newstroke_font.cpp`, CJK portion added in 2019, drawn from Adobe's Source Han Sans | Code copyright (c) 2018 Lingdong Huang; Source Han Sans Copyright 2014-2019 Adobe, with Reserved Font Name 'Source' | MIT-style permission notice, and the SIL Open Font License 1.1 for the font. Both are in the same header file. |
+| `Generator/Geometry/Text.py`, and the text metrics in `Parameters/Silkscreen_Parameters.py` | `common/font/font.cpp` (`FONT::drawMultilineText`) and `common/font/stroke_font.cpp` (`STROKE_FONT`) | Copyright (C) 2021 Ola Rinta-Koski; Copyright (C) 2012 Torsten Hueter; Copyright (C) 2013 CERN; Copyright The KiCad Developers, see AUTHORS.txt for contributors | GPL-2.0-or-later. Headers: [`licenses/KiCad-font.cpp-header.txt`](licenses/KiCad-font.cpp-header.txt), [`licenses/KiCad-stroke_font.cpp-header.txt`](licenses/KiCad-stroke_font.cpp-header.txt) |
 
-KiCad's full license and the list of its contributors are in the KiCad source
-code: <https://gitlab.com/kicad/code/kicad>.
+KiCad's list of contributors: [`licenses/KiCad-AUTHORS.txt`](licenses/KiCad-AUTHORS.txt).
+
+The KiCad material is licensed under the GPL version 2 or later, which allows
+KESE as a whole to be distributed under version 3 or later. The CJK glyph data
+keeps its MIT and SIL Open Font License terms: the font data may not be sold by
+itself, and a modified version may not use the reserved name "Source".
+
+The headers were copied from KiCad's master branch on 19 October 2026:
+<https://gitlab.com/kicad/code/kicad>.
