@@ -42,7 +42,8 @@ GLB; the two text records come last so that the report carries the Verifier's re
 
 5. **Assembler** (`Generator/Assembler.py`). Builds one in-memory `Model`. In simulation mode,
    every prism is extruded to a closed triangle mesh and all pieces of a part (a net's traces on
-   every layer plus its vias) are joined by a boolean union into one closed solid. Before the
+   every layer plus its vias) are joined by a boolean union into closed solids: one where the
+   pieces touch, separate bodies within the part where they do not. Before the
    union, regions that touch are made to share exact boundary vertices (no T-junctions) and
    regions that touch at a single point are parted by a hair so each solid is manifold. In visual
    mode the `Skin` builder keeps only the faces that are not buried inside another prism

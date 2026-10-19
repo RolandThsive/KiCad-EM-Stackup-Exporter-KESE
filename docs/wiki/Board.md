@@ -152,7 +152,7 @@ thickness; see [Stack-Up Model](Stack-Up-Model.md) for how the dielectrics are s
 | Name | Default | Range | Meaning |
 |---|---|---|---|
 | `BOARD_THICKNESS_MM` | `None` | None or mm > 0 | Laminate thickness; `None` takes it from the file |
-| `DIELECTRIC_SPLIT` | `"even"` | `"even"` | How the laminate is divided when the file has no stack-up |
+| `DIELECTRIC_SPLIT` | `"even"` | `"even"` | How the laminate is divided when the file has no usable stack-up |
 | `DEFAULT_DIELECTRIC_MATERIAL`, `DEFAULT_DIELECTRIC_TYPE` | `"FR4"`, `"core"` | text; `"core"` / `"prepreg"` | Material and type when the stack-up gives none |
 | `DEFAULT_EPSILON_R`, `DEFAULT_LOSS_TANGENT` | `4.5`, `0.02` | > 0 | Typical FR4 at 1 GHz, used when the stack-up gives none |
 | `USE_STACKUP_EPSILON_R`, `USE_STACKUP_LOSS_TANGENT` | `True`, `True` | bool | Stack-up values win over the defaults when present |

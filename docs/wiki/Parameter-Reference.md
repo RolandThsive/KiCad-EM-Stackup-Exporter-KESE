@@ -80,7 +80,7 @@ The laminate: thickness, dielectrics, outline and holes. Details in [Board](Boar
 | Name | Default | Range | Meaning |
 |---|---|---|---|
 | `BOARD_THICKNESS_MM` | `None` | None or mm > 0 | Laminate thickness; `None` takes it from the file (a usable stack-up, else `(general (thickness))`, else 1.6 mm) |
-| `DIELECTRIC_SPLIT` | `"even"` | `"even"` | How the laminate is divided between copper layers when the file has no stack-up |
+| `DIELECTRIC_SPLIT` | `"even"` | `"even"` | How the laminate is divided between copper layers when the file has no usable stack-up |
 | `DEFAULT_DIELECTRIC_MATERIAL`, `DEFAULT_DIELECTRIC_TYPE` | `"FR4"`, `"core"` | text; `"core"` / `"prepreg"` | Used when the stack-up gives none |
 | `DEFAULT_EPSILON_R`, `DEFAULT_LOSS_TANGENT` | `4.5`, `0.02` | > 0 | Typical FR4 at 1 GHz, used when the stack-up gives none |
 | `USE_STACKUP_EPSILON_R`, `USE_STACKUP_LOSS_TANGENT` | `True`, `True` | bool | Stack-up values win over the defaults when present |

@@ -114,8 +114,9 @@ in its values. Only `--out` is not recorded there; the run folder's path shows i
 3. **Geometry.** Every layer becomes flat regions between two heights: dielectrics, copper per
    net, via barrels, solder mask, silkscreen and, if enabled, the surface finish.
 4. **Colour.** Each part gets a material from `Color_Parameters` (or the stack-up's colour names).
-5. **Assemble.** The regions are extruded and, in simulation mode, all pieces of a part are
-   joined into one closed solid; in visual mode only the visible surface is kept.
+5. **Assemble.** The regions are extruded and, in simulation mode, the pieces of each part are
+   joined by a boolean union into closed solids (pieces that do not touch, such as silkscreen
+   letters, stay separate bodies in the part); in visual mode only the visible surface is kept.
 6. **Package.** The requested model files are written, with `materials.json` next to them.
 7. **Verify** (only with `--verify` or `Run.VERIFY = True`), on the model just written; the GLB
    file also goes through `gltf_validator` when that tool is on the PATH.

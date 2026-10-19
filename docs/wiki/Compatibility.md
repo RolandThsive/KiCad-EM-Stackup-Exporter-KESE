@@ -55,7 +55,7 @@ Research underway.
 | FreeCAD, Fusion, SolidWorks, Onshape | STEP | true cylinders for vias and round pads thanks to `Run.STEP_EXACT_ARCS` |
 | Blender | GLB or OBJ (visual mode for renders) | |
 | `<model-viewer>`, three.js | GLB, m, centred (`--for viewer`) | the visual-mode skin is made to avoid z-fighting ([Output Modes](Output-Modes.md)) |
-| Thermal / FEA tools reading STL (CalculiX, Elmer with a mesher) | STL per part, mm | one closed solid per part; mesh them with the tool's own mesher |
+| Thermal / FEA tools reading STL (CalculiX, Elmer with a mesher) | STL per part, mm | closed solids per part (a part can hold several separate bodies); mesh them with the tool's own mesher |
 
 ## 20.4 Python And Packages
 

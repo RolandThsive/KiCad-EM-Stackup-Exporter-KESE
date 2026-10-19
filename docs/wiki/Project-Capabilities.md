@@ -13,7 +13,7 @@
 | Output | GLB (one mesh per part, PBR materials), STEP (one named exact solid per part, true arcs), one STL per part, OBJ with `.mtl`; in mm or m (STEP only in mm, see [Compatibility](Compatibility.md)); board centred or on KiCad's origin; upright or flat |
 | Records | `materials.json` per part (role, layer, net, z range, εr, tanδ, conductivity, file names), `parameters.txt` (every setting of the run), `report.txt` (stack-up heights, what was read, what was skipped and why, triangle counts, timings) |
 | Checks | Opt-in Verifier: every solid closed and consistently wound, no overlap between parts, exactly one visible surface in visual mode, Khronos glTF validation when the validator is installed; a regression suite with recorded part volumes |
-| Not modelled | Component 3D models, text boxes, dimensions, images, rigid-flex (groups and length-tuning patterns are ignored as records, but the items in them are modelled). See [Checks, Errors And Warnings](Checks-Errors-And-Warnings.md) for the complete list of skipped items. |
+| Not modelled | Component 3D models, text boxes, dimensions, images, tables, rigid-flex (groups and length-tuning patterns are ignored as records, but the items in them are modelled). See [Checks, Errors And Warnings](Checks-Errors-And-Warnings.md) for the complete list of skipped items. |
 
 ## 4.2 What The Simulation Model Is Good For
 
