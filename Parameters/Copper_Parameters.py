@@ -31,7 +31,8 @@ ETCH_STEPS = 4                          # the trapezoid is built as this many st
 ETCH_APPLY_TO_INNER_LAYERS = False      # inner copper is etched from the core side; foot toward the board centre
 
 # Castellated holes: plated holes that the board edge cuts through (module edge connectors).
-# KiCad has no per-pad flag; a castellation is a plated hole whose drill crosses Edge.Cuts.
+# KiCad has a per-pad "Castellated pad" fabrication property, but KESE does not read it: here a
+# castellation is a plated hole whose drill crosses Edge.Cuts.
 #   "auto" - every plated hole crossing the outline is a castellation: the drill notches the
 #            edge and its plating is a part-barrel on the notch wall, joined to the hole's net
 #   "file" - as "auto", but only when the board's stackup says (castellated_pads yes)
