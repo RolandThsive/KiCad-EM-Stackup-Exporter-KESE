@@ -167,7 +167,7 @@ The test boards in `Tests/boards/` cover:
 - `six_layer`: a full stack-up (prepreg / core, a prepreg of two sub-layers, 17.5 µm inner foil,
   black mask, blind, buried and micro vias, a "remove unused layers" via, zone fills);
 - `synthetic`: a two-layer board with one core and 70 µm copper, exercising an outline of lines and
-  an arc with a circular cut-out, a blue mask with a drawn opening and pad mask margins, an arc
+  an arc with a circular cut-out, a blue top mask with a drawn opening and pad mask margins, an arc
   track, a via tented by the plot setting (`viasonmask false`), a zone fill, an oval drill, an NPTH,
   and items skipped on purpose (a 3D model, an `F.Fab` line).
 

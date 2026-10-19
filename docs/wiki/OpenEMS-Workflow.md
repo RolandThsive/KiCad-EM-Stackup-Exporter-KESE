@@ -131,7 +131,10 @@ CSX = AddMaterial(CSX, 'Board_dielectric_1');
 CSX = SetMaterialProperty(CSX, 'Board_dielectric_1', 'Epsilon', 4.5, 'Kappa', kappa);
 ```
 
-Read the property values from `materials.json` with `jsondecode`.
+In Octave the STL is read only when openEMS runs, from inside the simulation folder
+(`RunOpenEMS` changes into `Sim_Path` first), so give `ImportSTL` an absolute path, for example
+`fullfile(pwd, 'Output/board/simulation_STL/stl/Copper_GND.stl')`. Read the property values from
+`materials.json` with `jsondecode`.
 
 ## 21.4 Checking The Import
 
