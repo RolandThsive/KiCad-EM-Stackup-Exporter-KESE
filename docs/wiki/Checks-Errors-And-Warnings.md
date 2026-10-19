@@ -15,7 +15,7 @@ python Tests/test_boards.py                     # the regression suite over ever
 
 | Level | Meaning | What happens |
 |---|---|---|
-| Error | The file cannot be modelled, or the request is impossible. | Nothing is written for that board. With one board the traceback is shown; with several, `<board>: FAILED - <reason>` is printed and the run continues. Exit code 1. |
+| Error | The file cannot be modelled, or the request is impossible. | Nothing is written for that board. With one board the traceback is shown; with several, `<file>: FAILED - <reason>` is printed (the file name with `.kicad_pcb`) and the run continues. Exit code 1. |
 | Warning | The board is modelled, but something is likely to be wrong or missing. | Printed as `warning: ...` and written to `report.txt`. |
 | Skipped | An item KESE does not model, or that is not physical. | Counted in `report.txt` under `skipped`, with a reason in the name. |
 | Note | A fact about the run. | In `report.txt` under `notes`. |
