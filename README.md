@@ -196,7 +196,7 @@ to the electronics and the firmware. Trained in mechanical design and robotics, 
 master's in mechatronics, I have built robotic hands, a humanoid torso, industrial bin-picking
 cells and rocket electronics, designing PCBs in KiCad and firmware for STM32 and Espressif chips.
 
-Without a job at the moment, I put my full time into building industrial-grade software and making
+I put my full time into building industrial-grade software and making
 well-researched but hard-to-find scientific knowledge free for everyone. KESE exists so that a
 board designed in KiCad can go straight into an EM solver without being rebuilt by hand in CAD. I
 will keep maintaining it until it becomes the go-to bridge from KiCad to EM simulation, with
