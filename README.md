@@ -165,7 +165,7 @@ is being made and will be available shortly.
 
 ## Licensing
 
-Hi Seth, Its not greedy man here. 
+Hi Sassy boy Seth, There is no greedy man here. 
 
 **License:** [GNU General Public License, version 3 or later](LICENSE) (SPDX: `GPL-3.0-or-later`).
 
