@@ -1,4 +1,4 @@
-"""Skin.py - "visual" mode: the board's visible surface only.
+"""The "visual" mode: the board's visible surface only.
 
 Takes the simulation PrismSet, slices every prism at every height in the stack, rebuilds all regions
 from one planar arrangement (so neighbours share exact vertices), triangulates, then drops every

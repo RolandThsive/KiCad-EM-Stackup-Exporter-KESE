@@ -1,21 +1,25 @@
-"""report.txt and parameters.txt next to every output."""
+"""Stage 9 - report: report.txt (what was read, made and skipped, and how long each stage took)
+and parameters.txt (every setting of the run) next to every output."""
 from datetime import datetime
 
+from kese.s4_geometry.heights import dielectric_z
+from kese.s9_report.parameters_txt import write_parameters
 from parameters import P
 
 
-def write_parameters(path, overrides):
-    text = P.snapshot()
-    if overrides:
-        text = "# command-line overrides applied: " + ", ".join(f"{k}={v!r}" for k, v in overrides) + "\n\n" + text
-    path.write_text(text, encoding="utf-8")
-    return path
+def run(files, job):
+    write_parameters(files.out_dir / "parameters.txt", job.overrides)
+    write_report(files.out_dir / "report.txt", files, job)
+    return files
 
 
-def write_report(path, raw, b, model, outputs, timings, verify_lines, log_lines):
+def write_report(path, files, job):
+    model = files.model
+    b = model.prismset.regions
+    raw = b.items.raw
     L = []
     L.append(f"{raw.name}  ({raw.path.name})   generated {datetime.now():%Y-%m-%d %H:%M}")
-    L.append(f"mode: {model.mode}   formats: {', '.join(outputs)}   units: {model.units}")
+    L.append(f"mode: {model.mode}   formats: {', '.join(job.formats)}   units: {model.units}")
     L.append(f"KiCad format {raw.version}, generator {raw.generator}" + (f", title: {raw.title}" if raw.title else ""))
     for w in raw.warnings:
         L.append(f"warning: {w}")
@@ -28,7 +32,7 @@ def write_report(path, raw, b, model, outputs, timings, verify_lines, log_lines)
         lo, hi = st.band[l]
         L.append(f"  {l:8s} z {lo:+.4f} .. {hi:+.4f} mm  (foil {st.copper_thickness[l]} mm)")
     for i, d in enumerate(st.dielectrics):
-        lo, hi = st.dielectric_z(i)
+        lo, hi = dielectric_z(st, i)
         L.append(f"  {d.name:24s} {d.kind:8s} {d.material:10s} {d.thickness:.4f} mm  er {d.epsilon_r}  tan d {d.loss_tangent}   z {lo:+.4f} .. {hi:+.4f}")
     L.append(f"  vias: {items.tent_source}; pad-to-mask clearance {items.mask_clearance} mm; silkscreen over copper (mask openings): {P.Silkscreen.SILKSCREEN_OVER_COPPER}")
     L.append(f"  {b.transform_note}")
@@ -43,7 +47,7 @@ def write_report(path, raw, b, model, outputs, timings, verify_lines, log_lines)
         L.append("  nothing")
     L.append("")
     L.append("notes")
-    for n in items.notes + model.prismset.notes + log_lines:
+    for n in items.notes + model.prismset.notes + job.log_lines:
         L.append(f"  {n}")
     L.append("")
     L.append("parts")
@@ -52,10 +56,10 @@ def write_report(path, raw, b, model, outputs, timings, verify_lines, log_lines)
         L.append(f"  {part:36s} {len(mesh.faces):8d} triangles  material {m['name']} {m['color']} alpha {m['alpha']}")
     L.append("")
     L.append("timing")
-    for k, v in timings:
+    for k, v in job.timings:
         L.append(f"  {k:14s} {v:7.1f} s")
-    if verify_lines:
+    if files.verify_lines:
         L.append("")
-        L.extend(verify_lines)
+        L.extend(files.verify_lines)
     path.write_text("\n".join(L) + "\n", encoding="utf-8")
     return path

@@ -1,4 +1,4 @@
-"""STL packaging: one binary STL per part in an stl/ folder (what openEMS / CSXCAD import)."""
+"""STL: one binary STL per part in an stl/ folder (what openEMS / CSXCAD import)."""
 from kese.core.names import safe
 
 

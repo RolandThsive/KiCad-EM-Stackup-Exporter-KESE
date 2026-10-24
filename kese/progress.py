@@ -1,4 +1,4 @@
-"""Status.py - the live "running <stage> ... 1m 23s" line in the terminal.
+"""The live "running <stage> ... 1m 23s" line in the terminal.
 
 A daemon thread redraws the line once a second from the wall clock, independent of what the
 pipeline is doing, so the counter keeps running through the long steps (copper unions, STEP

@@ -1,26 +1,24 @@
-"""Silkscreen.py - legend ink printed on the solder mask surface."""
+"""Silkscreen: legend ink printed on the solder mask surface."""
 from kese.core import shapes2d as sh
-from kese.Geometry.SolderMask import mask_region, thicknesses
+from kese.s4_geometry.heights import mask_thicknesses
 from parameters import P
 
 
-def build(b, ps):
-    st, S, M = b.stackup, P.Silkscreen, P.SolderMask
+def build(r, ps):
+    st, S, M = r.stackup, P.Silkscreen, P.SolderMask
     t_silk = S.SILK_THICKNESS_MM
-    t_lam, t_cu, _ = thicknesses(st)
+    t_lam, t_cu, _ = mask_thicknesses(st)
     for side, layer, sign, tb in (("F", "F.Cu", 1, "Top"), ("B", "B.Cu", -1, "Bottom")):
-        silk = b.silk.get(side, sh.EMPTY)
-        if M.MASK_EDGE_PULLBACK_MM > 0 and not silk.is_empty:   # silk keeps the same edge clearance as the mask
-            silk = sh.inter(silk, sh.snap(b.outline.buffer(-M.MASK_EDGE_PULLBACK_MM, quad_segs=M.MASK_WALL_QUAD_SEGS * 2)))
+        silk = r.silk.get(side, sh.EMPTY)
         if silk.is_empty:
             continue
-        cu = b.copper_all.get(layer, sh.EMPTY)
+        cu = r.copper_all.get(layer, sh.EMPTY)
         cu_t = st.band[layer][1] - st.band[layer][0]
         base = st.half
         part = f"{tb} Silkscreen"
         props = {"side": side, "thickness_mm": t_silk}
         z = lambda v: sign * v
-        masked = mask_region(b, side)
+        masked = r.mask[side]
         # where the ink leaves the mask (openings that keep their silk) it steps down the mask edge
         off_mask, on_mask, step = sh.conformal_regions(silk, masked, t_silk, M.MASK_WALL_QUAD_SEGS)
         ps.add(part, "silk", step, z(base), z(base + t_lam + t_silk), layer=f"{side}.SilkS", props=props)

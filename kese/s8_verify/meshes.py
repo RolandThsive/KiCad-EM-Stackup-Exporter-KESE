@@ -1,4 +1,4 @@
-"""Step 6 - Verifier (opt-in): checks the Model proves itself.
+"""The checks of stage 8 (verify): the Model proves itself.
 
 simulation : every part is a closed, consistently wound solid; no two parts overlap (vertical rays)
 visual     : the skin has exactly one top and one bottom surface along every vertical ray

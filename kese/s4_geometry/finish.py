@@ -1,4 +1,4 @@
-"""Finish.py - surface finish (ENIG, HASL, ...) on copper left bare by the solder mask."""
+"""Surface finish (ENIG, HASL, ...) on the copper the solder mask leaves bare."""
 from kese.core import shapes2d as sh
 from parameters import P
 
@@ -17,8 +17,8 @@ def finish_type(st):
     return F.FINISH_DEFAULT_TYPE
 
 
-def build(b, ps):
-    F, st = P.Finish, b.stackup
+def build(r, ps):
+    F, st = P.Finish, r.stackup
     if not F.FINISH_ENABLED:
         return
     kind = finish_type(st)
@@ -32,9 +32,9 @@ def build(b, ps):
     ps.notes.append(f"finish: {kind} " + " + ".join(f"{m} {t} mm" for m, t in layers))
     for side, layer, sign, tb in (("F", "F.Cu", 1, "Top"), ("B", "B.Cu", -1, "Bottom")):
         # one part per metal and side, or per metal and net (FINISH_GROUPING = "net")
-        groups = b.copper[layer].items() if F.FINISH_GROUPING == "net" else [(None, b.copper_all.get(layer, sh.EMPTY))]
+        groups = r.copper[layer].items() if F.FINISH_GROUPING == "net" else [(None, r.copper_all.get(layer, sh.EMPTY))]
         for net, cu in groups:
-            exposed = sh.inter(cu, b.mask_open[side])
+            exposed = sh.inter(cu, r.mask_open[side])
             if exposed.is_empty:
                 continue
             z = abs(st.band[layer][1] if sign > 0 else st.band[layer][0])

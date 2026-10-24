@@ -15,6 +15,11 @@ from kese.s2_collect.vias import add_via, drop_unconnected_rings
 from kese.s2_collect.zones import UNFILLED, add_zone
 
 
+def run(raw, job):
+    with job.stage("collect", "collect (tracks, pads, zones, vias, drawings, text)"):
+        return collect(raw, job.note)
+
+
 def collect(raw, log):
     """RawBoard -> Items."""
     tree = raw.tree

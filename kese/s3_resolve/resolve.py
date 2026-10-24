@@ -5,9 +5,14 @@ from kese.s3_resolve.copper import copper_layers, join_nets
 from kese.s3_resolve.edge_plating import edge_plating
 from kese.s3_resolve.frame import place
 from kese.s3_resolve.holes import band_laminate, barrels, castellate, exact_circles, slabs
-from kese.s3_resolve.mask import mask_openings
+from kese.s3_resolve.mask import mask_openings, mask_regions
 from kese.s3_resolve.outline import outline_from
 from kese.s3_resolve.silk import clip_silk
+
+
+def run(items, job):
+    with job.stage("resolve", "resolve (regions per layer and net, holes applied)"):
+        return resolve(items, job.note)
 
 
 def resolve(items, log):
@@ -25,5 +30,6 @@ def resolve(items, log):
     barrels(r, items, outline_k)
     exact_circles(r, items)
     openings = mask_openings(r, items, outline_k)
+    mask_regions(r)
     clip_silk(r, items, outline_k, openings)
     return r

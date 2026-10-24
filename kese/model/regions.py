@@ -17,6 +17,7 @@ class Regions:
     barrels: list = field(default_factory=list)        # (ring region, i, j, net)
     circles: list = field(default_factory=list)        # exact (centre, radius) of drills, bores and via pads
     mask_open: dict = field(default_factory=dict)      # "F"/"B" -> openings
+    mask: dict = field(default_factory=dict)           # "F"/"B" -> where the mask is (outline - bores - openings, pulled back)
     silk: dict = field(default_factory=dict)           # "F"/"B" -> silk
     transform_note: str = ""
     to_board: object = None                            # (cx, cy): the KiCad point that becomes the origin

@@ -14,8 +14,8 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 
-from kese.Pipeline import generate  # noqa: E402
-from kese.Verifier import verify  # noqa: E402
+from kese.pipeline import generate  # noqa: E402
+from kese.s8_verify.meshes import verify  # noqa: E402
 
 BASELINE = ROOT / "tests" / "baseline.json"
 OUT = ROOT / "tests" / "out"

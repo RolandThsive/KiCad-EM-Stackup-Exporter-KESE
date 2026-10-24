@@ -1,4 +1,4 @@
-"""OBJ packaging: one .obj with one object per part and an .mtl with the colours."""
+"""OBJ: one .obj with one object per part and an .mtl with the colours."""
 from kese.core.names import safe
 
 

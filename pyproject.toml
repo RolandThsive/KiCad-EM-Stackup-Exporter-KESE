@@ -17,10 +17,7 @@ dependencies = [
 step = ["cadquery>=2.5"]
 
 [project.scripts]
-kese = "run_KESE:main"
-
-[tool.setuptools]
-py-modules = ["run_KESE"]
+kese = "kese.cli:main"
 
 [tool.setuptools.packages.find]
 include = ["kese*", "parameters*"]

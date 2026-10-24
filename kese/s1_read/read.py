@@ -1,10 +1,20 @@
-"""Step 1 - Reader: read a .kicad_pcb, check it is one we can handle, hand on the parsed tree."""
+"""Stage 1 - read: the .kicad_pcb file -> RawBoard: the parsed tree and the copper layers,
+after checking it is a board KESE can handle."""
 import re
 from pathlib import Path
 
 from kese.core.sexp import child, num, parse
 from kese.model.raw_board import RawBoard
 from parameters import P
+
+
+def run(pcb_path, job):
+    with job.stage("read", "read"):
+        raw = read(pcb_path)
+        job.say(f"{raw.name}: KiCad format {raw.version}, {len(raw.copper_layers)} copper layers, mode {job.mode}")
+        for w in raw.warnings:
+            job.note(f"warning: {w}")
+    return raw
 
 
 def read(path):

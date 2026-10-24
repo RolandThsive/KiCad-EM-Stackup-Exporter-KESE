@@ -1,4 +1,4 @@
-"""GLB packaging: one mesh per part, PBR materials from the Colorer."""
+"""GLB: one mesh per part, with PBR materials from stage 5 (materials)."""
 import json
 import struct
 

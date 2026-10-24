@@ -6,8 +6,8 @@ from kese.model.prisms import PrismSet
 
 @dataclass
 class Model:
-    """What the Assembler hands to the Packager: prisms (for STEP) and meshes (for glb/stl/obj),
-    both already in output units and orientation."""
+    """What stage 6 (assemble) hands to stage 7 (write): prisms (for STEP) and meshes (for
+    glb/stl/obj), both already in output units and orientation."""
     name: str
     mode: str
     prismset: PrismSet

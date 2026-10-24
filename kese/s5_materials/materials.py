@@ -1,6 +1,13 @@
-"""Step 4 - Colorer: give every part a material (its look) from parameters/color.py, honouring the
-board's stackup colours when asked.  EM/physical properties stay on the prisms."""
+"""Stage 5 - materials: give every part of the PrismSet a material (its look) from
+parameters/color.py, honouring the board's stackup colours when asked.  EM/physical properties
+stay on the prisms."""
 from parameters import P
+
+
+def run(ps, job):
+    with job.stage("materials", "materials (a colour per part)"):
+        ps.materials = color(ps, ps.regions.stackup, job.mode)
+    return ps
 
 
 def _hex_to_rgb(h):
