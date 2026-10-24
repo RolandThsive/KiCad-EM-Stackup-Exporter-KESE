@@ -70,6 +70,7 @@ def generate(pcb_path, mode=None, formats=None, out_root=None, overrides=(), ver
     materials = Colorer.color(ps, b.stackup, mode)
     status.set("assemble (" + ("visible skin" if mode == "visual" else "joining the solids of every part") + ")")
     model = Assembler.assemble(raw.name, mode, ps, materials, note)
+    model.circles = b.circles
     timings.append(("assemble", time.time() - t)); t = time.time()
 
     # Output/<board>/<mode>_<FORMATS>, then <mode>_<FORMATS>__1, __2, ... so no run overwrites another

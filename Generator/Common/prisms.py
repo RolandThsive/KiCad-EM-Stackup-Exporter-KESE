@@ -58,3 +58,4 @@ class Model:
     transform: object            # 4x4 numpy matrix mm-board -> output
     units: str
     report: list                 # lines
+    circles: list = field(default_factory=list)   # exact (centre, radius) of holes and via pads, mm board frame

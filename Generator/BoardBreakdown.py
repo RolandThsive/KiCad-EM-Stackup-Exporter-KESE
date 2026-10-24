@@ -84,6 +84,8 @@ class Hole:
     plated: bool
     net: str
     wall: float            # plating wall thickness (0 for NPTH)
+    centre: tuple = None   # centre of a round hole (None for slots); with the drill radius it is the exact circle
+    radius: float = 0.0
 
 
 @dataclass
@@ -114,6 +116,7 @@ class Breakdown:
     band_laminate: dict = field(default_factory=dict) # inner layer -> laminate beside its copper
     bores_side: dict = field(default_factory=dict)    # "F"/"B" -> open bores on that face
     barrels: list = field(default_factory=list)       # (ring region, i, j, net)
+    circles: list = field(default_factory=list)       # exact (centre, radius) of drills, bores and via pads
     mask_open: dict = field(default_factory=dict)     # "F"/"B" -> openings
     silk: dict = field(default_factory=dict)          # "F"/"B" -> silk
     transform_note: str = ""
@@ -378,7 +381,7 @@ class _Collector:
             g = affinity.translate(g, *offset)
             return affinity.translate(affinity.rotate(g, -ang, origin=(0, 0)), *pos)
 
-        offset, hole = (0.0, 0.0), EMPTY
+        offset, hole, round_r = (0.0, 0.0), EMPTY, 0.0
         if drill is not None:
             off = child(drill, "offset")
             offset = (float(off[1]), float(off[2])) if off else (0.0, 0.0)
@@ -388,8 +391,10 @@ class _Collector:
                 d = abs(dw - dh) / 2
                 hole = disk((0, 0), dw / 2) if d < 1e-9 else thicken(
                     LineString([(-d, 0), (d, 0)] if dw > dh else [(0, -d), (0, d)]), min(dw, dh))
+                round_r = dw / 2 if d < 1e-9 else 0.0
             elif a:
                 hole = disk((0, 0), float(a[0]) / 2)
+                round_r = float(a[0]) / 2
             hole = place(hole)
         shape = place(self._pad_shape(pad, w, h), offset if drill is not None else (0.0, 0.0))
         layers = self._expand(child(pad, "layers")[1:])
@@ -398,14 +403,14 @@ class _Collector:
         last = len(self.layers) - 1
         if ptype == "np_thru_hole":
             if not hole.is_empty and P.Board.INCLUDE_NON_PLATED_HOLES:
-                b.holes.append(Hole(hole, 0, last, False, "", 0.0))
+                b.holes.append(Hole(hole, 0, last, False, "", 0.0, pos if round_r else None, round_r))
             b.found["non-plated holes"] += 1
         else:
             for l in layers:
                 if l in self.layers:
                     b.copper_items[l].append((shape, net))
             if ptype == "thru_hole" and not hole.is_empty:
-                b.holes.append(Hole(hole, 0, last, True, net, C.PTH_WALL_MM))
+                b.holes.append(Hole(hole, 0, last, True, net, C.PTH_WALL_MM, pos if round_r else None, round_r))
             b.found["pads"] += 1
         for side in ("F", "B"):
             if f"{side}.Mask" in layers:
@@ -428,7 +433,8 @@ class _Collector:
             else:
                 b.copper_items[l].append((pad, net))
         i, j = self.layers.index(span[0]), self.layers.index(span[-1])
-        b.holes.append(Hole(disk((x, y), drill / 2), i, j, True, net, C.VIA_WALL_MM))
+        b.holes.append(Hole(disk((x, y), drill / 2), i, j, True, net, C.VIA_WALL_MM, (x, y), drill / 2))
+        b.circles.append(((x, y), size / 2))
         through = i == 0 and j == len(self.layers) - 1
         b.found["through vias" if through else "blind/buried vias"] += 1
         tent = dict(b.tent_default)
@@ -609,6 +615,16 @@ def resolve(b, log):
         if h.plated:
             spans[(h.i, h.j, h.net)].append(h.drill.difference(h.drill.buffer(-h.wall)).intersection(outline_k))
     b.barrels = [(T(union(rings)), i, j, net) for (i, j, net), rings in spans.items()]
+    # the true circles of every round hole (drill wall and plated bore) and via pad, board frame:
+    # the STEP writer builds those rings from these, so the copper's hole and the barrel's wall
+    # are one identical circle instead of two fits to slightly different polygons
+    circles = list(b.circles)
+    for h in b.holes:
+        if h.centre is not None:
+            circles.append((h.centre, h.radius))
+            if h.wall > 0:
+                circles.append((h.centre, h.radius - h.wall))
+    b.circles = [((x - cx, -(y - cy)), r) for (x, y), r in circles if r > 0]
     if b.edge_band is not None:
         b.barrels.append((b.edge_band, 0, last, b.edge_net))
     vo = via_openings(b)
