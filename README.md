@@ -144,7 +144,8 @@ python run_KESE.py board.kicad_pcb --set Copper.VIA_WALL_MM=0.02
 
 With no options a run uses `parameters/run.py`: simulation mode, GLB, metres, board
 centred at the origin. Run the commands from the `Generator/` folder, which holds everything KESE
-is made of; the rest of the repository is its documentation and licences. Edit only the files in
+is made of; the rest of the repository is its documentation, its licences and `featureTest/`, one
+small KiCad board for each group of features KESE reads, from KiCad 6 to 10. Edit only the files in
 `parameters/`, or override one value for a single run with `--set`. Each run writes to
 `Output/<board>/<mode>_<FORMATS>/`, numbered `__1`, `__2` and so on so no run overwrites another.
 The folder holds the model files, `materials.json`, `parameters.txt` and `report.txt`, which lists
