@@ -20,11 +20,13 @@ step = ["cadquery>=2.5"]
 kese = "run_KESE:main"
 
 [tool.setuptools]
-packages = ["Generator", "Generator.Common", "Generator.Geometry", "Generator.Packager", "Parameters"]
 py-modules = ["run_KESE"]
 
+[tool.setuptools.packages.find]
+include = ["kese*", "parameters*"]
+
 [tool.setuptools.package-data]
-Parameters = ["Fonts/*"]
+kese = ["assets/fonts/*"]
 
 [tool.setuptools.dynamic]
-version = {attr = "Generator.__version__"}
+version = {attr = "kese.__version__"}

@@ -2,17 +2,17 @@
 """
 KiCad EM Stackup Exporter (KESE)
 
-    kese                                         every .kicad_pcb in Input/, settings from Parameters/
+    kese                                         every .kicad_pcb in Input/, settings from parameters/
     kese Input/board.kicad_pcb                   one board
     kese board.kicad_pcb --mode visual           simulation (solids) or visual (surface for viewers)
     kese board.kicad_pcb --format glb step stl
-    kese board.kicad_pcb --for hfss              a preset: units, origin, grouping, formats (Run_Parameters.PRESETS)
+    kese board.kicad_pcb --for hfss              a preset: units, origin, grouping, formats (Run.PRESETS)
     kese board.kicad_pcb --verify
     kese board.kicad_pcb --set Copper.VIA_WALL_MM=0.02 --set Board.BOARD_THICKNESS_MM=0.8
     kese --version
 
 Without `pip install .` run it as  python run_KESE.py ...  from the project folder.
-Every parameter lives in Parameters/*.py; --for and --set override values for this run and the
+Every parameter lives in parameters/*.py; --for and --set override values for this run and the
 overrides are recorded in the output's parameters.txt.  Outputs go to Output/<board>/<mode>_<FORMATS>/,
 numbered __1, __2, ... when the folder already exists.
 """
@@ -24,8 +24,8 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
-from Generator import __version__  # noqa: E402
-from Parameters import P  # noqa: E402
+from kese import __version__  # noqa: E402
+from parameters import P  # noqa: E402
 
 REQUIRED = ["numpy", "scipy", "networkx", "shapely", "trimesh", "manifold3d", "mapbox_earcut", "rtree"]
 OPTIONAL = {"step": "cadquery"}
@@ -42,9 +42,9 @@ def main():
     ap.add_argument("boards", nargs="*", help=".kicad_pcb files (default: all in Input/)")
     ap.add_argument("--mode", choices=["simulation", "visual", "real", "pretty"], help="real / pretty are the old names")
     ap.add_argument("--format", nargs="+", metavar="FMT", help="glb stl obj step")
-    ap.add_argument("--for", dest="preset", choices=sorted(P.Run.PRESETS), help="apply a preset from Run_Parameters.PRESETS")
+    ap.add_argument("--for", dest="preset", choices=sorted(P.Run.PRESETS), help="apply a preset from Run.PRESETS")
     ap.add_argument("--verify", action="store_true", help="run the Verifier (opt-in)")
-    ap.add_argument("--out", help="output root (default Run_Parameters.OUTPUT_DIR)")
+    ap.add_argument("--out", help="output root (default Run.OUTPUT_DIR)")
     ap.add_argument("--set", action="append", default=[], metavar="Module.NAME=value",
                     help="override a parameter, e.g. Copper.ETCH_FACTOR=0.5")
     ap.add_argument("--version", action="version", version=f"kese {__version__}")
@@ -76,7 +76,7 @@ def main():
                  f"install them with:  python -m pip install {' '.join(missing)}\n"
                  "(or everything at once:  python -m pip install -r requirements.txt)")
 
-    from Generator.Pipeline import generate  # after the overrides, so the modules see them
+    from kese.Pipeline import generate  # after the overrides, so the modules see them
 
     boards = [Path(b) for b in args.boards] or sorted(Path(P.Run.INPUT_DIR).glob("*.kicad_pcb"))
     if not boards:
