@@ -19,7 +19,7 @@ def write_report(path, raw, b, model, outputs, timings, verify_lines, log_lines)
     L.append(f"KiCad format {raw.version}, generator {raw.generator}" + (f", title: {raw.title}" if raw.title else ""))
     for w in raw.warnings:
         L.append(f"warning: {w}")
-    st = b.stackup
+    st, items = b.stackup, b.items
     L.append("")
     L.append("stack-up")
     L.append(f"  copper layers: {', '.join(b.layers)}")
@@ -30,20 +30,20 @@ def write_report(path, raw, b, model, outputs, timings, verify_lines, log_lines)
     for i, d in enumerate(st.dielectrics):
         lo, hi = st.dielectric_z(i)
         L.append(f"  {d.name:24s} {d.kind:8s} {d.material:10s} {d.thickness:.4f} mm  er {d.epsilon_r}  tan d {d.loss_tangent}   z {lo:+.4f} .. {hi:+.4f}")
-    L.append(f"  vias: {b.tent_source}; pad-to-mask clearance {b.mask_clearance} mm; silkscreen over copper (mask openings): {P.Silkscreen.SILKSCREEN_OVER_COPPER}")
+    L.append(f"  vias: {items.tent_source}; pad-to-mask clearance {items.mask_clearance} mm; silkscreen over copper (mask openings): {P.Silkscreen.SILKSCREEN_OVER_COPPER}")
     L.append(f"  {b.transform_note}")
     L.append("")
     L.append("read")
-    for what, n in sorted(b.found.items()):
+    for what, n in sorted(items.found.items()):
         L.append(f"  {n:6d}  {what}")
     L.append("skipped")
-    for what, n in sorted(b.skipped.items()):
+    for what, n in sorted(items.skipped.items()):
         L.append(f"  {n:6d}  {what}")
-    if not b.skipped:
+    if not items.skipped:
         L.append("  nothing")
     L.append("")
     L.append("notes")
-    for n in b.notes + model.prismset.notes + log_lines:
+    for n in items.notes + model.prismset.notes + log_lines:
         L.append(f"  {n}")
     L.append("")
     L.append("parts")

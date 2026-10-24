@@ -1,4 +1,4 @@
-"""Reading the board's stack-up from (setup (stackup ...)), or making one from the parameters."""
+"""Stack-up: read from (setup (stackup ...)), or made from the parameters when the board has none."""
 from kese.core.sexp import child, children, num
 from kese.model.stackup import Dielectric, Stackup
 from parameters import P

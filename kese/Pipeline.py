@@ -1,12 +1,14 @@
-"""The linear flow:  Reader -> BoardBreakdown -> Geometry -> Colorer -> Assembler -> Packager -> Verifier -> report."""
+"""The linear flow:  Reader -> collect -> resolve -> Geometry -> Colorer -> Assembler -> Packager -> Verifier -> report."""
 import time
 from pathlib import Path
 
-from kese import Assembler, BoardBreakdown, Colorer, Reader, Verifier
+from kese import Assembler, Colorer, Reader, Verifier
 from kese.Status import Status, hms
 from kese.model.prisms import PrismSet
 from kese.Geometry import Board, Copper, Finish, Silkscreen, SolderMask
 from kese.Packager import glb, materials_json, obj, report, step, stl
+from kese.s2_collect.collect import collect
+from kese.s3_resolve.resolve import resolve
 from parameters import P
 
 MODES = {"simulation": "simulation", "visual": "visual", "real": "simulation", "pretty": "visual"}   # old names accepted
@@ -50,7 +52,7 @@ def generate(pcb_path, mode=None, formats=None, out_root=None, overrides=(), ver
     timings.append(("read", time.time() - t)); t = time.time()
 
     status.set("breakdown (tracks, pads, zones, holes -> regions per layer and net)")
-    b = BoardBreakdown.breakdown(raw, note)
+    b = resolve(collect(raw, note), note)
     timings.append(("breakdown", time.time() - t)); t = time.time()
 
     # heights: finished outer copper = foil + plating
