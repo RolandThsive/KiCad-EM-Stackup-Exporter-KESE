@@ -1,5 +1,5 @@
 """Silkscreen.py - legend ink printed on the solder mask surface."""
-from kese.Common import shapes as sh
+from kese.core import shapes2d as sh
 from kese.Geometry.SolderMask import mask_region, thicknesses
 from parameters import P
 

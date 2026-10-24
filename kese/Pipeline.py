@@ -4,7 +4,7 @@ from pathlib import Path
 
 from kese import Assembler, BoardBreakdown, Colorer, Reader, Verifier
 from kese.Status import Status, hms
-from kese.Common.prisms import PrismSet
+from kese.model.prisms import PrismSet
 from kese.Geometry import Board, Copper, Finish, Silkscreen, SolderMask
 from kese.Packager import glb, materials_json, obj, report, step, stl
 from parameters import P

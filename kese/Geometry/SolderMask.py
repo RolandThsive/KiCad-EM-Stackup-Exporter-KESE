@@ -3,7 +3,7 @@
 KiCad's mask layers are negative: the mask is  outline - openings - open bores,  pulled back
 from the board edge.  It is MASK_OVER_LAMINATE_MM thick on bare laminate and
 MASK_OVER_COPPER_MM thick on top of copper, with a wall where it climbs over a trace."""
-from kese.Common import shapes as sh
+from kese.core import shapes2d as sh
 from parameters import P
 
 

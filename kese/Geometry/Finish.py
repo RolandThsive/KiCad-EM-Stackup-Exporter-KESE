@@ -1,5 +1,5 @@
 """Finish.py - surface finish (ENIG, HASL, ...) on copper left bare by the solder mask."""
-from kese.Common import shapes as sh
+from kese.core import shapes2d as sh
 from parameters import P
 
 

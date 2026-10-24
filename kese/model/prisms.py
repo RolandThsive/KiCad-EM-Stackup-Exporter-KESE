@@ -43,19 +43,3 @@ class PrismSet:
         for p in self.prisms:
             out.setdefault(p.part, []).append(p)
         return out
-
-
-@dataclass
-class Model:
-    """What the Assembler hands to the Packager: prisms (for STEP) and meshes (for glb/stl/obj),
-    both already in output units and orientation."""
-    name: str
-    mode: str
-    prismset: PrismSet
-    meshes: dict                 # part name -> trimesh.Trimesh (output units)
-    materials: dict              # part name -> material dict (colour, alpha, ...)
-    props: dict                  # part name -> physical/EM properties
-    transform: object            # 4x4 numpy matrix mm-board -> output
-    units: str
-    report: list                 # lines
-    circles: list = field(default_factory=list)   # exact (centre, radius) of holes and via pads, mm board frame

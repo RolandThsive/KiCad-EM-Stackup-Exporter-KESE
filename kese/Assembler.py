@@ -5,8 +5,9 @@ import numpy as np
 import shapely
 import trimesh
 
-from kese.Common import shapes as sh
-from kese.Common.prisms import Model
+from kese.core import shapes2d as sh
+from kese.core.extrude import extrude, solid_union
+from kese.model.output_model import Model
 from kese.Geometry.Skin import skin_meshes
 from parameters import P
 
@@ -83,8 +84,8 @@ def assemble(name, mode, ps, materials, log):
         raw = {}
         for part, prisms in ps.by_part().items():
             regions = _part_regions(prisms)
-            solids = [m for m in (sh.extrude(r, p.z0, p.z1) for r, p in zip(regions, prisms)) if m is not None]
-            raw[part] = sh.solid_union(solids, log=lambda s: log(f"{part}: {s}"))
+            solids = [m for m in (extrude(r, p.z0, p.z1) for r, p in zip(regions, prisms)) if m is not None]
+            raw[part] = solid_union(solids, log=lambda s: log(f"{part}: {s}"))
     for part in sorted(raw, key=rank):
         m = raw[part]
         if m is None:

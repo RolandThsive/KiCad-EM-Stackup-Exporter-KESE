@@ -1,24 +1,10 @@
 """Step 1 - Reader: read a .kicad_pcb, check it is one we can handle, hand on the parsed tree."""
 import re
-from dataclasses import dataclass, field
 from pathlib import Path
 
-from kese.Common.sexp import child, num, parse
+from kese.core.sexp import child, num, parse
+from kese.model.raw_board import RawBoard
 from parameters import P
-
-
-@dataclass
-class RawBoard:
-    path: Path
-    name: str
-    tree: list
-    version: int
-    generator: str
-    copper_layers: list            # outermost first
-    all_layers: list
-    file_thickness: float | None
-    title: str
-    warnings: list = field(default_factory=list)
 
 
 def read(path):

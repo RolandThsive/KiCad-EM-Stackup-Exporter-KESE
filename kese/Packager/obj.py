@@ -1,5 +1,5 @@
 """OBJ packaging: one .obj with one object per part and an .mtl with the colours."""
-from kese.Packager.stl import safe
+from kese.core.names import safe
 
 
 def write(model, path):

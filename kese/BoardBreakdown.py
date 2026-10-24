@@ -13,11 +13,11 @@ from shapely import affinity
 from shapely.geometry import LineString, Polygon, box
 from shapely.ops import polygonize
 
-from kese.Common import shapes as sh
-from kese.Common.sexp import atoms, child, children, flag, layer_of, num, numbers, pt, yes
-from kese.Common.shapes import EMPTY, arc3, arc_pts, bezier, disk, thicken, union
+from kese.core import shapes2d as sh
+from kese.core.sexp import atoms, child, children, flag, layer_of, num, numbers, pt, yes
+from kese.core.shapes2d import EMPTY, arc3, arc_pts, bezier, disk, thicken, union
 from kese.Common.stackup import read_stackup
-from kese.Geometry import Text
+from kese.core import font
 from parameters import P
 
 GRAPHICS = {"gr_line", "gr_arc", "gr_circle", "gr_rect", "gr_poly", "gr_curve", "gr_bezier",
@@ -304,7 +304,7 @@ class _Collector:
                 b.skipped[f"TrueType text on {layer} (DRAW_TRUETYPE_TEXT_WITH_STROKE_FONT is False)"] += 1
                 return
             b.found[f"text in a TrueType face, drawn with the stroke font, on {layer}"] += 1
-        geom = Text.render(text, pos, angle, h, w, thick, just, "mirror" in just, italic)
+        geom = font.render(text, pos, angle, h, w, thick, just, "mirror" in just, italic)
         self._add(layer, geom, "text")
 
     def _footprint(self, fp):
@@ -645,6 +645,6 @@ def breakdown(raw, log):
     if unfilled:
         log(f"warning: {unfilled} copper zone(s) have no fill stored in the file and are ignored "
             "(fill the zones in KiCad, press B, and save; see parameters/copper.py)")
-    _, note = Text.font()
+    _, note = font.load()
     b.notes.append(note)
     return resolve(b, log)

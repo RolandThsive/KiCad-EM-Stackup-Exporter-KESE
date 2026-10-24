@@ -16,7 +16,7 @@ from pathlib import Path
 
 import shapely
 
-from kese.Common.shapes import EMPTY
+from kese.core.shapes2d import EMPTY
 from parameters import P
 
 FONTS_DIR = Path(__file__).resolve().parents[1] / "assets" / "fonts"
@@ -58,7 +58,7 @@ def _load_jhf(path):
     return {"name": Path(path).name, "first_codepoint": 32, "glyphs": glyphs}
 
 
-def font():
+def load():
     """Load the font once; returns (font dict, note for the report)."""
     global _font, _font_note
     if _font is not None:
@@ -92,7 +92,7 @@ def render(text, anchor, angle_deg, size_h, size_w, thickness, justify=(), mirro
     Follows KiCad's STROKE_FONT / FONT::drawMultilineText layout: glyph advance from the glyph
     width, inter-character spacing, interline pitch, H/V justification with KiCad's offsets."""
     S = P.Silkscreen
-    f, _ = font()
+    f, _ = load()
     if not text.strip():
         return EMPTY
     space_w = f["glyphs"][0]["w"]

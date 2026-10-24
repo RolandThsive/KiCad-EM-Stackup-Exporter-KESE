@@ -1,4 +1,4 @@
-"""geometry.py - the plain mathematics every other module builds on: distances, circles through
+"""The plain mathematics every other module builds on: distances, circles through
 points, arcs, Bezier curves, rotations, and recognising circular arcs in a polyline.
 
 Nothing here reads parameters or knows about boards; every function takes numbers and returns

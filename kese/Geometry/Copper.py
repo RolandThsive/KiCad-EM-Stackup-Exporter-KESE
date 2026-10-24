@@ -1,5 +1,5 @@
 """Copper.py - every copper layer (per net) and the plating of every hole."""
-from kese.Common import shapes as sh
+from kese.core import shapes2d as sh
 from parameters import P
 
 

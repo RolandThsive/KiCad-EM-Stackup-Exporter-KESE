@@ -10,7 +10,8 @@ import numpy as np
 import shapely
 import trimesh
 
-from kese.Common import shapes as sh
+from kese.core import shapes2d as sh
+from kese.core.extrude import extrude
 from parameters import P
 
 
@@ -57,7 +58,7 @@ def skin_meshes(ps):
     eps = P.Geometry.SKIN_BURIED_TEST_OFFSET_MM
     groups = defaultdict(list)
     for p, cells in pairs:
-        pieces = [m for m in (sh.extrude(c, p.z0, p.z1) for c in cells) if m is not None]
+        pieces = [m for m in (extrude(c, p.z0, p.z1) for c in cells) if m is not None]
         if not pieces:
             continue
         m = trimesh.util.concatenate(pieces)

@@ -5,8 +5,8 @@ import math
 
 import numpy as np
 
-from kese.Common import shapes as sh
-from kese.Geometry import geometry as geo
+from kese.core import shapes2d as sh
+from kese.core import math2d as geo
 from parameters import P
 
 
