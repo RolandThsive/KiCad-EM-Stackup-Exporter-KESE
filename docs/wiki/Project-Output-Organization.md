@@ -4,36 +4,42 @@
 
 ```text
 KiCad-EM-Stackup-Exporter-KESE/
-├── run_KESE.py              the command-line entry point (python run_KESE.py; the code is in kese/cli.py)
-├── requirements.txt         pinned Python packages
-├── pyproject.toml           for pip install -e . (the kese command), unpinned
-├── parameters/              every setting, one file per subject (the only files you edit)
-│   └── run.py, board.py, copper.py, solder_mask.py, silkscreen.py, finish.py, geometry.py, color.py
-├── kese/                    the program
-│   ├── pipeline.py          runs the nine stages in order
-│   ├── cli.py, job.py, progress.py   command-line options, one run's request, the live status line
-│   ├── core/                shared tools: s-expression parser, 2D maths and shapes, extrusion,
-│   │                        stroke font, safe file names
-│   ├── model/               the data handed from stage to stage: RawBoard, Items, Stackup,
-│   │                        Regions, PrismSet, Model, Files
-│   ├── s1_read/             the file, parsed and checked
-│   ├── s2_collect/          every item as a flat shape on its layer, one file per kind of item
-│   ├── s3_resolve/          outline, holes, copper per net, edge plating, mask openings, silk clipping
-│   ├── s4_geometry/         prisms: laminate, copper, plating, solder mask, silkscreen, finish
-│   ├── s5_materials/        a material (the look) per part
-│   ├── s6_assemble/         meshes: closed solids or the visible skin, in output units
-│   ├── s7_write/            glb, obj, stl, step, materials.json, and the run folder
-│   ├── s8_verify/           the opt-in Verifier
-│   ├── s9_report/           report.txt and parameters.txt
-│   └── assets/fonts/        kicad_newstroke.json.gz and its notice; custom fonts go here
-├── Input/                   boards to export (two examples included)
-├── Output/                  one folder per board and run (ignored by git except .gitkeep)
-├── tests/                   regression suite, layout rules, test boards, baseline.json
-├── docs/wiki/, docs/images/ this wiki, and the folder for its pictures (to come)
-├── licenses/                KiCad copyright headers and AUTHORS.txt
+├── Generator/                   KESE itself; run every command from here
+│   ├── run_KESE.py              the command-line entry point (python run_KESE.py; the code is in kese/cli.py)
+│   ├── requirements.txt         pinned Python packages
+│   ├── pyproject.toml           for pip install -e . (the kese command), unpinned
+│   ├── README.md                what is in this folder, and the first commands
+│   ├── parameters/              every setting, one file per subject (the only files you edit)
+│   │   └── run.py, board.py, copper.py, solder_mask.py, silkscreen.py, finish.py, geometry.py, color.py
+│   ├── kese/                    the program
+│   │   ├── pipeline.py          runs the nine stages in order
+│   │   ├── cli.py, job.py, progress.py   command-line options, one run's request, the live status line
+│   │   ├── core/                shared tools: s-expression parser, 2D maths and shapes, extrusion,
+│   │   │                        stroke font, safe file names
+│   │   ├── model/               the data handed from stage to stage: RawBoard, Items, Stackup,
+│   │   │                        Regions, PrismSet, Model, Files
+│   │   ├── s1_read/             the file, parsed and checked
+│   │   ├── s2_collect/          every item as a flat shape on its layer, one file per kind of item
+│   │   ├── s3_resolve/          outline, holes, copper per net, edge plating, mask openings, silk clipping
+│   │   ├── s4_geometry/         prisms: laminate, copper, plating, solder mask, silkscreen, finish
+│   │   ├── s5_materials/        a material (the look) per part
+│   │   ├── s6_assemble/         meshes: closed solids or the visible skin, in output units
+│   │   ├── s7_write/            glb, obj, stl, step, materials.json, and the run folder
+│   │   ├── s8_verify/           the opt-in Verifier
+│   │   ├── s9_report/           report.txt and parameters.txt
+│   │   └── assets/fonts/        kicad_newstroke.json.gz and its notice; custom fonts go here
+│   ├── Input/                   boards to export (two examples included)
+│   ├── Output/                  one folder per board and run (ignored by git except .gitkeep)
+│   └── tests/                   regression suite, layout rules, test boards, baseline.json
+├── docs/wiki/, docs/images/     this wiki, and the folder for its pictures (to come)
+├── licenses/                    KiCad copyright headers and AUTHORS.txt
 ├── LICENSE, NOTICE.md, CONTRIBUTING.md
 └── README.md
 ```
+
+Everything KESE is made of is in `Generator/`; the root holds what belongs to the repository.
+The paths on every other page of this wiki, such as `parameters/` or `kese/s2_collect/`, are
+inside `Generator/`.
 
 ## 19.2 Run Folders
 

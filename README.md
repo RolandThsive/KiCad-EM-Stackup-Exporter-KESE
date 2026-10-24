@@ -30,7 +30,7 @@ Python · KiCad 6 To 10 · 1 To 6 Copper Layers · GLB, STEP, STL And OBJ · Fre
 > **Validation Against Measurements Is Pending.** The models have not yet been compared with
 > measured boards or with reference solver results. Thicknesses default to KiCad's own values
 > (35 µm copper, 10 µm solder mask), not to any fabricator's process. Set your fabricator's
-> numbers in `parameters/` before trusting a simulation built on the output.
+> numbers in `Generator/parameters/` before trusting a simulation built on the output.
 
 > [!WARNING]
 > **Fill Your Zones Before Exporting.** KESE uses the zone fills KiCad stores in the board file.
@@ -69,7 +69,7 @@ the stack-up layer by layer and writes it out in one of two modes:
 - **visual**: only the visible surface of the same geometry, for web viewers such as
   `<model-viewer>` and three.js. Surfaces only microns apart no longer fight in the depth buffer.
 
-Nothing is hard-coded: every number lives in `parameters/`, and each output comes with a
+Nothing is hard-coded: every number lives in `Generator/parameters/`, and each output comes with a
 `parameters.txt` listing exactly what produced it, including every command-line override.
 
 ---
@@ -87,7 +87,7 @@ Nothing is hard-coded: every number lives in `parameters/`, and each output come
 | Output | GLB, STEP with exact arcs (one named solid per part), one STL per part, OBJ with `.mtl`, in mm or m |
 | Presets | `--for hfss`, `cst`, `openems` or `viewer` set units, origin, grouping and formats in one go |
 | Records | `materials.json` per part (role, layer, net, z range, εr, tanδ, conductivity), `parameters.txt`, `report.txt` |
-| Checks | Opt-in verifier (closed solids, no overlaps, one visible surface, glTF validation) and a regression suite in `tests/` |
+| Checks | Opt-in verifier (closed solids, no overlaps, one visible surface, glTF validation) and a regression suite in `Generator/tests/` |
 | Not Modelled | Component 3D models, text boxes, dimensions, images, rigid-flex |
 
 ### What The Simulation Model Is Good For
@@ -109,13 +109,13 @@ plating and finish.
 - **Parasitic Extraction.** Capacitance and inductance between nets, because each net is its own
   body.
 - **What-If On Fabrication.** Change plating, via wall, mask thickness or etch factor in
-  `parameters/` and re-simulate to see how much fab tolerances move your results.
+  `Generator/parameters/` and re-simulate to see how much fab tolerances move your results.
 
 ---
 
 ## Examples
 
-`Input/` holds two inductive encoder stators. Exported in simulation mode, each comes out as one
+`Generator/Input/` holds two inductive encoder stators. Exported in simulation mode, each comes out as one
 solid per net and per dielectric:
 
 | Board | Copper Parts | Dielectrics | Simulation GLB | Visual GLB |
@@ -131,6 +131,7 @@ Copper parts take the board's net names as they are, so the second board's unnam
 ## Quick Start
 
 ```bash
+cd Generator                                  # KESE lives here: the code, its settings, Input/ and Output/
 python -m pip install -r requirements.txt     # Python 3.12 or later; cadquery is only needed for STEP
 
 python run_KESE.py                                     # Every board in Input/, settings from parameters/
@@ -142,7 +143,8 @@ python run_KESE.py board.kicad_pcb --set Copper.VIA_WALL_MM=0.02
 ```
 
 With no options a run uses `parameters/run.py`: simulation mode, GLB, metres, board
-centred at the origin. Run the commands from the project folder. Edit only the files in
+centred at the origin. Run the commands from the `Generator/` folder, which holds everything KESE
+is made of; the rest of the repository is its documentation and licences. Edit only the files in
 `parameters/`, or override one value for a single run with `--set`. Each run writes to
 `Output/<board>/<mode>_<FORMATS>/`, numbered `__1`, `__2` and so on so no run overwrites another.
 The folder holds the model files, `materials.json`, `parameters.txt` and `report.txt`, which lists

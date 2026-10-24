@@ -1,6 +1,6 @@
 # 5. Examples
 
-The repository ships two boards in `Input/`. `python run_KESE.py` with no arguments exports both
+The repository ships two boards in `Generator/Input/`. `python run_KESE.py` with no arguments exports both
 of them. The boards in `tests/boards/` are small synthetic boards for the regression suite and are
 described in [Checks, Errors And Warnings](Checks-Errors-And-Warnings.md).
 
@@ -81,6 +81,7 @@ What this board shows:
 ## 5.3 Running The Examples
 
 ```bash
+cd Generator                                           # the program folder
 python run_KESE.py                                     # both boards, simulation, GLB in metres
 python run_KESE.py Input/Stator.kicad_pcb --for viewer # visual mode for <model-viewer>
 python run_KESE.py Input/Stator.kicad_pcb --for openems

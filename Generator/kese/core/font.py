@@ -8,7 +8,8 @@ Glyph coordinates are fractions of the text height, y DOWN (KiCad's convention),
 The layout below is derived from KiCad's common/font/font.cpp and common/font/stroke_font.cpp:
 Copyright (C) 2021 Ola Rinta-Koski; Copyright (C) 2012 Torsten Hueter; Copyright (C) 2013 CERN;
 Copyright The KiCad Developers, see AUTHORS.txt for contributors.  GPL-2.0-or-later; KESE as a
-whole is GPL-3.0-or-later.  The original headers are in licenses/; see NOTICE.md."""
+whole is GPL-3.0-or-later.  The original headers are in licenses/ at the top of the repository;
+see NOTICE.md."""
 import gzip
 import json
 import math

@@ -1,6 +1,6 @@
-Output/*
-!Output/.gitkeep
-tests/out/
+Generator/Output/*
+!Generator/Output/.gitkeep
+Generator/tests/out/
 __pycache__/
 *.egg-info/
 build/

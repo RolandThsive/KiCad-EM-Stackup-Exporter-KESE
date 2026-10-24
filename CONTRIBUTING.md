@@ -15,6 +15,11 @@ make sure its license is compatible with GPL-3.0-or-later.
 
 ## How the code is laid out
 
+All of KESE lives in `Generator/`: the `kese/` package, the settings in `parameters/`, the
+tests in `tests/`, `run_KESE.py`, `pyproject.toml` and `requirements.txt`, and the `Input/` and
+`Output/` folders. The repository root keeps only what belongs to the repository: the README,
+the licence files, `docs/` and `.github/`. The paths below are inside `Generator/`.
+
 `kese/pipeline.py` runs nine stages in order, one folder each in `kese/`. Each stage takes what
 the stage before it made and hands its own result to the next:
 
@@ -47,6 +52,7 @@ These rules keep each piece small and the flow one way:
 6. **One concern per file.** One kind of KiCad item per collect file, one output format per
    write file, one check per verify file.
 7. **One naming style.** Lowercase module and folder names (PEP 8), CamelCase for data classes.
+8. **KESE stays in `Generator/`.** No Python or TOML file anywhere else in the repository.
 
 `tests/test_layout.py` checks every rule except the sixth, which needs a person's judgement.
 
@@ -61,6 +67,7 @@ Where new work goes:
 ## Before a pull request
 
 ```bash
+cd Generator
 python tests/test_layout.py      # the layout rules, about a second
 python tests/test_boards.py      # every test board through both modes, against tests/baseline.json
 ```

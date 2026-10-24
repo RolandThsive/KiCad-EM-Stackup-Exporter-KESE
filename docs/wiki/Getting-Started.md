@@ -10,9 +10,12 @@ picks the last versions built for 3.11, as `requirements.txt` explains.
 
 ```bash
 git clone https://github.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE.git
-cd KiCad-EM-Stackup-Exporter-KESE
+cd KiCad-EM-Stackup-Exporter-KESE/Generator
 python -m pip install -r requirements.txt
 ```
+
+`Generator/` holds everything KESE is made of: the program, its settings, `Input/`, `Output/` and
+the tests. Every command on this page runs from there.
 
 `requirements.txt` pins the versions the project was tested with (Python 3.13 on Linux). The
 packages are:
@@ -99,7 +102,7 @@ parameters (`--mode` sets `Run.MODE`, `--format` sets `Run.FILE_FORMAT`, `--veri
 in its values. Only `--out` is not recorded there; the run folder's path shows it.
 
 > [!NOTE]
-> Run the program from the project folder: `Input/` and `Output/` (`Run.INPUT_DIR`,
+> Run the program from the `Generator/` folder: `Input/` and `Output/` (`Run.INPUT_DIR`,
 > `Run.OUTPUT_DIR`) are relative to the folder the command is run from. The
 > exit code is 0 when every board succeeded and 1 when any board failed; with a single board the
 > full traceback is shown, with several the failing board is reported and the run continues.

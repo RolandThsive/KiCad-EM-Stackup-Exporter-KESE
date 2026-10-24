@@ -1,14 +1,15 @@
 """Layout rules of kese/ (CONTRIBUTING.md explains them): what may import what, model/ holds data
-only, one run() per stage, no import cycles, short files, lowercase names.  Reads the source; no
-board is run, so it takes a second.
+only, one run() per stage, no import cycles, short files, lowercase names, and no code outside
+Generator/.  Reads the source; no board is run, so it takes a second.
 
     python -m pytest tests/test_layout.py        (or:  python tests/test_layout.py)"""
 import ast
+import os
 import re
 import sys
 from pathlib import Path
 
-ROOT = Path(__file__).resolve().parents[1]
+ROOT = Path(__file__).resolve().parents[1]                # Generator/
 KESE = ROOT / "kese"
 MAX_LINES = 200
 STAGE = re.compile(r"s(\d+)_[a-z0-9_]+")
@@ -147,6 +148,19 @@ def test_names_are_lowercase():
              if (p.suffix == ".py" or (p.is_dir() and (p / "__init__.py").exists())) and "__pycache__" not in p.parts]
     bad = [rel(p) for p in paths if not LOWERCASE.fullmatch(p.stem if p.is_file() else p.name)]
     assert not bad, "\n".join(bad)
+
+
+def test_kese_stays_in_generator():
+    """Every Python and TOML file of the repository is inside Generator/; the root and its other
+    folders hold the repository's own files (README, licences, docs, workflows, test boards)."""
+    repo = ROOT.parent
+    if not (repo / ".git").exists():
+        return                                    # Generator/ on its own, outside a checkout
+    bad = []
+    for top, dirs, files in os.walk(repo):
+        dirs[:] = [d for d in dirs if not d.startswith(".") and Path(top, d) != ROOT]
+        bad += [Path(top, f).relative_to(repo).as_posix() for f in files if Path(f).suffix in (".py", ".toml")]
+    assert not bad, "outside Generator/:\n" + "\n".join(sorted(bad))
 
 
 if __name__ == "__main__":

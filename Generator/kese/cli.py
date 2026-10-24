@@ -9,7 +9,7 @@
     kese board.kicad_pcb --set Copper.VIA_WALL_MM=0.02 --set Board.BOARD_THICKNESS_MM=0.8
     kese --version
 
-Without `pip install .` run it as  python run_KESE.py ...  from the project folder.
+Without `pip install .` run it as  python run_KESE.py ...  from the Generator/ folder.
 Every parameter lives in parameters/*.py; --for and --set override values for this run and the
 overrides are recorded in the output's parameters.txt.  Outputs go to Output/<board>/<mode>_<FORMATS>/,
 numbered __1, __2, ... when the folder already exists.

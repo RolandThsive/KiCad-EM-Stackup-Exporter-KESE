@@ -28,7 +28,8 @@ comes with a `parameters.txt` that lists the parameter values behind it.
 > numbers in `parameters/` before trusting a simulation built on the output.
 
 This wiki documents KESE version 2.2.0 (`kese/__init__.py`). Defaults quoted on every page
-are those of the parameter files on `main`.
+are those of the parameter files on `main`. Everything KESE is made of lives in the repository's
+`Generator/` folder, and the paths in this wiki, such as `parameters/` and `kese/`, are inside it.
 
 ## 1.2 Links
 

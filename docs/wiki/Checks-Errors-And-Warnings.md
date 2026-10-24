@@ -7,6 +7,7 @@ text boxes and dimensions on non-physical layers (such as the Value fields on `F
 dimension on `Dwgs.User`), hidden text, pad paste layers, and images or groups inside footprints.
 
 ```bash
+cd Generator                                    # the program folder
 python run_KESE.py board.kicad_pcb --verify     # generate, then run the Verifier
 python tests/test_boards.py                     # the regression suite over every board
 ```
@@ -173,7 +174,7 @@ The test boards in `tests/boards/` cover:
 
 `python -m pytest tests` also runs `tests/test_layout.py`, which checks the code rather than the
 boards: which folders of `kese/` may import which, one `run()` per stage, no file over 200 lines,
-lowercase names. It only reads the source, so it takes about a second
+lowercase names, and no code outside `Generator/`. It only reads the source, so it takes about a second
 (`python tests/test_layout.py`).
 [`CONTRIBUTING.md`](https://github.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/blob/main/CONTRIBUTING.md)
 explains the rules.

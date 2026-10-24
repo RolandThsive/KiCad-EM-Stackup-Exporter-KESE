@@ -19,7 +19,7 @@ KESE includes material derived from KiCad, which is licensed under the GPL:
 Work derived from GPL code has to stay under the GPL, with the original copyright notices kept.
 KiCad's original copyright headers and its `AUTHORS.txt` are kept word for word in the
 repository's `licenses/` folder, listed in `NOTICE.md` and
-[`LICENSE_fonts.txt`](https://github.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/blob/main/kese/assets/fonts/LICENSE_fonts.txt).
+[`LICENSE_fonts.txt`](https://github.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/blob/main/Generator/kese/assets/fonts/LICENSE_fonts.txt).
 
 ## 25.2 What You May Do
 
