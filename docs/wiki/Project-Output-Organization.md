@@ -4,23 +4,31 @@
 
 ```text
 KiCad-EM-Stackup-Exporter-KESE/
-├── run_KESE.py              the command-line entry point
+├── run_KESE.py              the command-line entry point (python run_KESE.py; the code is in kese/cli.py)
 ├── requirements.txt         pinned Python packages
 ├── pyproject.toml           for pip install -e . (the kese command), unpinned
-├── Parameters/              every setting, one file per subject (the only files you edit)
-│   ├── Run_Parameters.py, Board_Parameters.py, Copper_Parameters.py,
-│   │   SolderMask_Parameters.py, Silkscreen_Parameters.py, Finish_Parameters.py,
-│   │   Geometry_Parameters.py, Color_Parameters.py
-│   └── Fonts/               kicad_newstroke.json.gz and its notice; custom fonts go here
-├── Generator/               the pipeline
-│   ├── Pipeline.py          Reader -> BoardBreakdown -> Geometry -> Colorer -> Assembler -> Packager -> Verifier
-│   ├── Reader.py, BoardBreakdown.py, Colorer.py, Assembler.py, Verifier.py, Status.py
-│   ├── Common/              s-expression parser, 2D shape helpers, stack-up, prisms
-│   ├── Geometry/            Board, Copper, SolderMask, Silkscreen, Finish, Skin, Text, geometry maths
-│   └── Packager/            glb, stl, obj, step, materials_json, report
+├── parameters/              every setting, one file per subject (the only files you edit)
+│   └── run.py, board.py, copper.py, solder_mask.py, silkscreen.py, finish.py, geometry.py, color.py
+├── kese/                    the program
+│   ├── pipeline.py          runs the nine stages in order
+│   ├── cli.py, job.py, progress.py   command-line options, one run's request, the live status line
+│   ├── core/                shared tools: s-expression parser, 2D maths and shapes, extrusion,
+│   │                        stroke font, safe file names
+│   ├── model/               the data handed from stage to stage: RawBoard, Items, Stackup,
+│   │                        Regions, PrismSet, Model, Files
+│   ├── s1_read/             the file, parsed and checked
+│   ├── s2_collect/          every item as a flat shape on its layer, one file per kind of item
+│   ├── s3_resolve/          outline, holes, copper per net, edge plating, mask openings, silk clipping
+│   ├── s4_geometry/         prisms: laminate, copper, plating, solder mask, silkscreen, finish
+│   ├── s5_materials/        a material (the look) per part
+│   ├── s6_assemble/         meshes: closed solids or the visible skin, in output units
+│   ├── s7_write/            glb, obj, stl, step, materials.json, and the run folder
+│   ├── s8_verify/           the opt-in Verifier
+│   ├── s9_report/           report.txt and parameters.txt
+│   └── assets/fonts/        kicad_newstroke.json.gz and its notice; custom fonts go here
 ├── Input/                   boards to export (two examples included)
 ├── Output/                  one folder per board and run (ignored by git except .gitkeep)
-├── Tests/                   regression suite, test boards, baseline.json
+├── tests/                   regression suite, layout rules, test boards, baseline.json
 ├── docs/wiki/, docs/images/ this wiki, and the folder for its pictures (to come)
 ├── licenses/                KiCad copyright headers and AUTHORS.txt
 ├── LICENSE, NOTICE.md, CONTRIBUTING.md
@@ -53,7 +61,7 @@ the folder that was written.
 | `stl/<name>.stl` | `stl` requested | one binary STL per part, in a `stl/` sub-folder; the name is the part name with every run of characters other than `A-Z a-z 0-9 _ . + -` replaced by `_`, and leading or trailing `_` removed (`Top_Solder_Mask.stl`, `Board_dielectric_1.stl`, `Copper__RESET.stl` for net `~{RESET}`) |
 | `<board>.step` | `step` requested and `cadquery` installed | STEP AP214 assembly named after the board, one named shape per part whose role is in `Run.STEP_WRITE_ROLES` (fused solid or compound), with colours; mask and silk are left out by default |
 | `materials.json` | `Run.WRITE_MATERIALS_JSON` | per part: role, layer, net, z range, properties, look, file names ([Material Properties](Material-Properties.md)) |
-| `parameters.txt` | always | every parameter of every `Parameters/` file as it stood for the run; when `--for`, `--set`, `--mode`, `--format` or `--verify` was used, the first line lists those overrides (`--out` is not recorded) |
+| `parameters.txt` | always | every parameter of every `parameters/` file as it stood for the run; when `--for`, `--set`, `--mode`, `--format` or `--verify` was used, the first line lists those overrides (`--out` is not recorded) |
 | `report.txt` | always | see below |
 
 ### 19.2.2 `report.txt`
@@ -82,7 +90,7 @@ skipped
 
 notes
   font: KiCad newstroke (kicad_newstroke.json.gz)
-  solder mask: 0.01 mm over laminate, 0.01 mm over copper (SolderMask_Parameters)
+  solder mask: 0.01 mm over laminate, 0.01 mm over copper (parameters/solder_mask.py)
 
 parts
   Board_dielectric 1                       3540 triangles  material Board_core #968A58 alpha 1.0
@@ -93,11 +101,13 @@ parts
 
 timing
   read               0.0 s
-  breakdown          1.4 s
+  collect            0.6 s
+  resolve            0.3 s
   geometry           0.3 s
-  assemble           8.9 s
-  package            2.4 s
-  verify             3.4 s
+  materials          0.0 s
+  assemble           4.8 s
+  write              1.0 s
+  verify             1.8 s
 
 Verifier: PASS
   ...
@@ -106,13 +116,13 @@ Verifier: PASS
 | Section | Content |
 |---|---|
 | header | board, file, time of the run, mode, formats, units, KiCad format and generator, the title from the title block |
-| warnings | the Reader's warnings, if any |
+| warnings | the warnings from reading the file, if any |
 | `stack-up` | laminate thickness and its source, the z band and foil of every copper layer, every dielectric with type, material, thickness, εr, tanδ and z range, the via tenting source, the pad-to-mask clearance, the silk-over-copper setting, the origin used |
 | `read` | a count of every kind of item read from the file (non-plated holes are counted here even when `Board.INCLUDE_NON_PLATED_HOLES = False` leaves them out) |
 | `skipped` | a count of the items left out, with the reason (hidden text and text on layers that are not drawn are left out without a count) |
 | `notes` | the font, the mask thickness and its source, finish, resin fill, castellation and edge plating notes, warnings raised while building |
 | `parts` | every part with its triangle count, material key, colour and alpha |
-| `timing` | seconds per stage |
+| `timing` | seconds per stage (verify only when the Verifier ran) |
 | Verifier | only with `--verify` or `Run.VERIFY = True`; see [Checks, Errors And Warnings](Checks-Errors-And-Warnings.md) |
 
 ## 19.3 Part Names
@@ -139,8 +149,8 @@ under `file_names.stl`, built with the same rule, so it always matches the file 
 
 ## 19.4 Tests Output
 
-`Tests/test_boards.py` writes its runs to `Tests/out/`, which is deleted at the start of every
-test run and ignored by git.
+`tests/test_boards.py` writes its runs to `tests/out/`, which is deleted at the start of every
+test run and ignored by git. `tests/test_layout.py` writes nothing.
 
 | Previous | Next |
 |:---|---:|

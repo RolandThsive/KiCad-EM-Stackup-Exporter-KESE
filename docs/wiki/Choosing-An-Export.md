@@ -2,7 +2,7 @@
 
 The choices to make before a run are the mode, the file formats, the units, the origin and how
 copper and dielectrics are grouped. The presets bundle the right combination per tool; `--set`
-or the files in `Parameters/` change any single value.
+or the files in `parameters/` change any single value.
 
 ## 9.1 Decision Table
 
@@ -26,7 +26,7 @@ or the files in `Parameters/` change any single value.
 
 ## 9.2 The Presets
 
-`Run_Parameters.PRESETS`; `--for <name>` applies these overrides before any `--set`, and
+`Run.PRESETS` (in `parameters/run.py`); `--for <name>` applies these overrides before any `--set`, and
 `parameters.txt` records the preset and every value it changed.
 
 | Preset | `MODE` | `FILE_FORMAT` | `UNITS` | `ORIGIN` | `COPPER_GROUPING` | `DIELECTRIC_GROUPING` | `WRITE_MATERIALS_JSON` |
@@ -81,7 +81,7 @@ For an EM simulation of a board in the solver's own units:
 | `Run.VERIFY` or `--verify` | on, for the first export of a new board |
 
 That is the `hfss` preset with `--verify`. Then set the fabricator's values in
-`Copper_Parameters.py`, `SolderMask_Parameters.py` and `Board_Parameters.py` before trusting the
+`parameters/copper.py`, `parameters/solder_mask.py` and `parameters/board.py` before trusting the
 results; see [Parameter Reference](Parameter-Reference.md).
 
 | Previous | Next |

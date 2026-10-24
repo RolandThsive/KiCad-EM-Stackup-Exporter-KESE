@@ -1,8 +1,8 @@
 # 12. Colorizing
 
 Colours decide only the look of the GLB and OBJ files (and the colour tag of each STEP solid).
-They never change geometry or the physical properties in `materials.json`. The Colorer
-(`Generator/Colorer.py`) gives every part one material from `Parameters/Color_Parameters.py`.
+They never change geometry or the physical properties in `materials.json`. Stage 5, materials
+(`kese/s5_materials/materials.py`), gives every part one material from `parameters/color.py`.
 
 <!-- Pictures wanted for this page (made by Roland):
      Color 1: the default palette, one swatch per MATERIALS entry.

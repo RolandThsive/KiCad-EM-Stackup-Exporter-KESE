@@ -1,8 +1,8 @@
 # 10. Board
 
 The board is the laminate: the dielectric layers between and around the copper, with the
-outline, the cut-outs and the holes. `Generator/Geometry/Board.py` builds it from the resolved
-outline and stack-up; the settings are in `Parameters/Board_Parameters.py`.
+outline, the cut-outs and the holes. `kese/s4_geometry/laminate.py` builds it from the resolved
+outline and stack-up; the settings are in `parameters/board.py`.
 
 <!-- Pictures wanted for this page (made by Roland):
      Board 1: the outline of a board with a cut-out and NPTH holes, as KESE resolves it.

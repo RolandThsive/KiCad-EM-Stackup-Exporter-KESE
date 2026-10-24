@@ -1,8 +1,8 @@
 # 13. Top And Bottom Copper Finishings
 
 The surface finish is the metal a fabricator deposits on the copper that the solder mask leaves
-bare: pads, exposed traces and test points. `Generator/Geometry/Finish.py` builds it; the settings
-are in `Parameters/Finish_Parameters.py`.
+bare: pads, exposed traces and test points. `kese/s4_geometry/finish.py` builds it; the settings
+are in `parameters/finish.py`.
 
 <!-- Pictures wanted for this page (made by Roland):
      Finish 1: a pad in cross-section with mask, copper, nickel and gold layers (ENIG), to scale.

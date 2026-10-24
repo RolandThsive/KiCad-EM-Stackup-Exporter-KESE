@@ -1,9 +1,9 @@
 # 14. Silkscreens
 
 The silkscreen is the legend ink printed on top of the solder mask: reference designators,
-values, logos and outlines. `Generator/Geometry/Silkscreen.py` builds it,
-`Generator/Geometry/Text.py` renders the text; the settings are in
-`Parameters/Silkscreen_Parameters.py`.
+values, logos and outlines. `kese/s4_geometry/silkscreen.py` builds it from the ink that
+`kese/s3_resolve/silk.py` clips off the pads, and `kese/core/font.py` renders the text; the
+settings are in `parameters/silkscreen.py`.
 
 <!-- Pictures wanted for this page (made by Roland):
      Silk 1: a reference designator rendered by KESE next to KiCad's own rendering of the same text.
@@ -37,8 +37,8 @@ clipped off the pads. With `True` the ink is kept there as drawn in KiCad.
 ## 14.2 Text Rendering
 
 KESE ships KiCad's own stroke font, **newstroke**, converted to a JSON file
-(`Parameters/Fonts/kicad_newstroke.json.gz`, with its notice in `LICENSE_fonts.txt`). Text is laid
-out following KiCad's `STROKE_FONT` and `drawMultilineText` code (`Generator/Geometry/Text.py`).
+(`kese/assets/fonts/kicad_newstroke.json.gz`, with its notice in `LICENSE_fonts.txt`). Text is laid
+out following KiCad's `STROKE_FONT` and `drawMultilineText` code (`kese/core/font.py`).
 
 ### 14.2.1 Layout Of One Line
 
@@ -117,7 +117,7 @@ Text in a TrueType face (KiCad 7+ `(font (face "..."))`) is drawn with the strok
 `False` it is skipped. Text the file marks hidden (`(hide yes)`) is skipped unless
 `DRAW_HIDDEN_TEXT = True`.
 
-A custom font can replace newstroke: set `FONT_FILE` to a file in `Parameters/Fonts/`, either in
+A custom font can replace newstroke: set `FONT_FILE` to a file in `kese/assets/fonts/`, either in
 this project's stroke-font JSON format or a Hershey `.jhf` file. If the file is missing, newstroke
 is used and `report.txt` says so on its `font:` note.
 
@@ -175,7 +175,7 @@ in `materials.json`.
 |---|---|---|---|
 | `SILK_THICKNESS_MM` | `0.010` | mm > 0 | Ink thickness (typical 0.010 to 0.020) |
 | `SILKSCREEN_OVER_COPPER` | `False` | bool | Keep ink where the mask is open (for viewing only: it can overlap the copper and finish) |
-| `FONT_FILE` | `None` | None or a file name in `Parameters/Fonts/` | Custom font; `None` = KiCad newstroke |
+| `FONT_FILE` | `None` | None or a file name in `kese/assets/fonts/` | Custom font; `None` = KiCad newstroke |
 | `DRAW_TRUETYPE_TEXT_WITH_STROKE_FONT` | `True` | bool | Draw TrueType-face text with the stroke font |
 | `INTERLINE_PITCH`, `INTERLINE_LEGACY_FACTOR` | `1.68`, `0.9583` | > 0 | KiCad's line pitch and stroke-font correction |
 | `INTER_CHAR_SPACING` | `0.2` | ≥ 0 | Spacing each glyph width includes, as a fraction of the text width; dropped from the line width, equation (14.2) |

@@ -96,7 +96,7 @@ STEP_WRITE_ROLES = ["board", "copper", "plating", "finish"]
 #   Roles listed here but not in STEP_WRITE_ROLES are ignored.
 STEP_FUSE_ROLES = ["board", "copper", "plating", "finish"]
 
-# KiCad file-format versions this project has been tested with (the Reader warns outside this range)
+# KiCad file-format versions this project has been tested with (stage 1, read, warns outside this range)
 KICAD_VERSION_MIN = 20211014           # KiCad 6
 KICAD_VERSION_MAX = 20260206           # KiCad 10
 

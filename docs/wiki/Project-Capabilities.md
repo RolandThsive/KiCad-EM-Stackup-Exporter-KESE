@@ -32,12 +32,12 @@ plating and finish.
 - **Parasitic extraction.** Capacitance and inductance between nets, because each net is its own
   body.
 - **What-if on fabrication.** Change plating, via wall, mask thickness or etch factor in
-  `Parameters/` and re-simulate to see how much fabrication tolerances move your results.
+  `parameters/` and re-simulate to see how much fabrication tolerances move your results.
 
 ## 4.3 Tested Sizes
 
 The numbers below come from runs of the two example boards in `Input/` and a board in
-`Tests/boards/` with the default parameters on `main` (35 µm copper, 10 µm mask, GLB in metres),
+`tests/boards/` with the default parameters on `main` (35 µm copper, 10 µm mask, GLB in metres),
 on one Linux machine. They say what to expect, not what the limit is.
 
 | Board | Layers | Items | Simulation run | Parts and triangles |
@@ -50,7 +50,7 @@ on one Linux machine. They say what to expect, not what the limit is.
   the solder-mask parts, which climb over every trace (on the Coil board the two masks take about
   25 s, the three nets about 2 s). STEP timings have not been measured yet.
 - STEP files leave out the solder mask and silkscreen by default (`Run.STEP_WRITE_ROLES`): on a
-  dense board they are thousands of solids, and the note in `Run_Parameters.py` says the export
+  dense board they are thousands of solids, and the note in `parameters/run.py` says the export
   then needs many GB of memory (not measured for this wiki). GLB, STL and OBJ always contain them.
 - The Verifier added 3 to 7 s per board on these examples.
 

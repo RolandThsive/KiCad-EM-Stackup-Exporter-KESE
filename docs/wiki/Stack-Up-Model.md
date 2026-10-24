@@ -1,8 +1,8 @@
 # 7. Stack-Up Model
 
-The stack-up decides the height of every layer. It is built once per board in
-`Generator/Common/stackup.py` and printed at the top of `report.txt`, so every z value in the model
-can be checked against it.
+The stack-up decides the height of every layer. It is read once per board
+(`kese/s2_collect/stackup.py`), its heights are computed once (`kese/s4_geometry/heights.py`), and
+it is printed at the top of `report.txt`, so every z value in the model can be checked against it.
 
 <!-- Picture wanted: Stackup 1, a cross-section of a 4-layer board with the z axis, the laminate
      mid-plane at z = 0, outer copper on the faces, inner copper inside, mask and silk on top. -->
@@ -95,7 +95,7 @@ The mask starts at the laminate face and the silkscreen lies on top of the mask;
 are in [Solder Masks](Solder-Masks.md) and [Silkscreens](Silkscreens.md).
 
 For a 6-layer board with 0.1 / 0.3 / 0.2 / 0.3 / 0.1 mm dielectrics, 17.5 µm inner foil and
-35 µm outer foil (the `Tests/boards/six_layer.kicad_pcb` board), equation (7.1) gives
+35 µm outer foil (the `tests/boards/six_layer.kicad_pcb` board), equation (7.1) gives
 $`L = 1.0 + 4 \times 0.0175 = 1.07`$ mm and equation (7.6) gives the top of `In1.Cu` at
 $`0.535 - 0.1 = 0.435`$ mm, as `report.txt` shows:
 
@@ -211,12 +211,12 @@ h_i^{*} = s \cdot h_i \qquad (7.13)
 | `stackup dielectrics (+ inner copper); board total in file X mm` | summed from the stack-up |
 | `file (general (thickness)) - no usable stackup` | the file's board thickness, split evenly |
 | `default 1.6 mm (no thickness in file)` | neither was available |
-| `Board_Parameters.BOARD_THICKNESS_MM` (`... (stackup dielectric proportions kept)`) | forced by the parameter |
+| `Board.BOARD_THICKNESS_MM` (`... (stackup dielectric proportions kept)`) | forced by the parameter |
 
 > [!IMPORTANT]
 > KiCad's defaults (35 µm copper on every layer, 10 µm mask, εr 4.5, tanδ 0.02) are what you get
 > when the stack-up is missing. They are typical, not your fabricator's. For lab work, enter the
-> fabricator's stack-up in KiCad's Board Setup or set the defaults in `Parameters/`.
+> fabricator's stack-up in KiCad's Board Setup or set the defaults in `parameters/`.
 
 ## 7.3 How The Heights Feed The Model
 

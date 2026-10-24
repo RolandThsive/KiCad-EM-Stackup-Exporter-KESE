@@ -8,9 +8,9 @@
 > listed separately and are not an error.
 
 Copper is what the model is for: one closed solid per net, with every layer's traces, pads and
-zone fills joined to its vias and plated holes. `Generator/BoardBreakdown.py` collects and
-resolves the copper per layer and net; `Generator/Geometry/Copper.py` turns it into prisms; the
-settings are in `Parameters/Copper_Parameters.py`.
+zone fills joined to its vias and plated holes. `kese/s2_collect/` collects the copper per layer
+and net and `kese/s3_resolve/` resolves it; `kese/s4_geometry/copper.py` and `plating.py` turn it
+into prisms; the settings are in `parameters/copper.py`.
 
 <!-- Pictures wanted for this page (made by Roland):
      Copper 1: one net's solid alone (traces on two layers joined by vias).

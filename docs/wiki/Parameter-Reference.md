@@ -1,6 +1,6 @@
 # 16. Parameter Reference
 
-Every setting lives in one of eight files in `Parameters/`. These are the only files you edit.
+Every setting lives in one of eight files in `parameters/`. These are the only files you edit.
 Units are mm unless a name says otherwise. The **Range** column is what the program uses
 sensibly; "None" means the program works the value out itself. Any value can be overridden for
 one run with `--set Module.NAME=value`, where `Module` is the short name in the heading of each
@@ -14,7 +14,7 @@ and listed on its first line.
 > `FINISH_DEFAULT_TYPE` and `FONT_FILE` (a note in `report.txt`). For the rest, a value outside
 > the range below produces a wrong model or a plain Python error, not a named check.
 
-## 16.1 Run (`Run_Parameters.py`)
+## 16.1 Run (`parameters/run.py`)
 
 What to make, where, and in which formats.
 
@@ -70,10 +70,10 @@ part and `mask_over_copper` selects nothing (STEP is not written in visual mode)
 
 | Name | Default | Range | Meaning |
 |---|---|---|---|
-| `KICAD_VERSION_MIN`, `KICAD_VERSION_MAX` | `20211014`, `20260206` | KiCad file format numbers | Accepted range (KiCad 6 to 10; the repository's boards are KiCad 7, 8 and 9 files); the Reader warns outside it |
+| `KICAD_VERSION_MIN`, `KICAD_VERSION_MAX` | `20211014`, `20260206` | KiCad file format numbers | Accepted range (KiCad 6 to 10; the repository's boards are KiCad 7, 8 and 9 files); outside it the run gives a warning |
 | `PRESETS` | `hfss`, `cst`, `openems`, `viewer` | `{name: {"Module.NAME": value}}` | Sets of overrides applied with `--for <name>` ([Choosing An Export](Choosing-An-Export.md)) |
 
-## 16.2 Board (`Board_Parameters.py`)
+## 16.2 Board (`parameters/board.py`)
 
 The laminate: thickness, dielectrics, outline and holes. Details in [Board](Board.md).
 
@@ -90,7 +90,7 @@ The laminate: thickness, dielectrics, outline and holes. Details in [Board](Boar
 | `OUTLINE_FALLBACK` | `"copper_hull"` | `"copper_hull"` / `"error"` | When `Edge.Cuts` gives no closed ring at all: convex hull of the copper plus a margin, or stop |
 | `OUTLINE_FALLBACK_MARGIN_MM` | `1.0` | mm ≥ 0 | Margin of the fallback hull |
 
-## 16.3 Copper (`Copper_Parameters.py`)
+## 16.3 Copper (`parameters/copper.py`)
 
 Copper foils, plating, vias and the finished copper geometry. Details in
 [Copper And Traces](Copper-And-Traces.md).
@@ -138,7 +138,7 @@ Copper foils, plating, vias and the finished copper geometry. Details in
 | `COPPER_CONDUCTIVITY_S_PER_M` | `5.8e7` | S/m | Written to `materials.json` for every copper part |
 | `COPPER_SURFACE_ROUGHNESS_UM` | `0.0` | µm ≥ 0 | Written to `materials.json`; 0 = ignore; e.g. 1.5 for standard foil. A solver setting, not geometry |
 
-## 16.4 Solder Mask (`SolderMask_Parameters.py`)
+## 16.4 Solder Mask (`parameters/solder_mask.py`)
 
 Short name `SolderMask`. Details in [Solder Masks](Solder-Masks.md).
 
@@ -151,7 +151,7 @@ Short name `SolderMask`. Details in [Solder Masks](Solder-Masks.md).
 | `PAD_TO_MASK_CLEARANCE_MM` | `None` | None or mm ≥ 0 | Clearance around pads and untented vias; `None` takes the board setup's value from the file. A number replaces only the board setup's value: a pad's or footprint's own `solder_mask_margin` in the file still wins |
 | `MASK_WALL_QUAD_SEGS` | `4` | int ≥ 1 | Segments per quarter circle on the walls where the mask climbs a trace |
 
-## 16.5 Silkscreen (`Silkscreen_Parameters.py`)
+## 16.5 Silkscreen (`parameters/silkscreen.py`)
 
 Details in [Silkscreens](Silkscreens.md).
 
@@ -159,7 +159,7 @@ Details in [Silkscreens](Silkscreens.md).
 |---|---|---|---|
 | `SILK_THICKNESS_MM` | `0.010` | mm > 0 | Ink thickness (typical 0.010 to 0.020) |
 | `SILKSCREEN_OVER_COPPER` | `False` | bool | Keep ink where the mask is open; `False` clips it off the pads as fabricators do. `True` can overlap the copper and finish, so it is for viewing only |
-| `FONT_FILE` | `None` | None or a file in `Parameters/Fonts/` | Custom stroke-font JSON or Hershey `.jhf`; `None` = KiCad newstroke |
+| `FONT_FILE` | `None` | None or a file in `kese/assets/fonts/` | Custom stroke-font JSON or Hershey `.jhf`; `None` = KiCad newstroke |
 | `DRAW_TRUETYPE_TEXT_WITH_STROKE_FONT` | `True` | bool | Text in a TrueType face is drawn with the stroke font |
 | `INTERLINE_PITCH` | `1.68` | > 0 | Line pitch as a multiple of the text height (KiCad's value) |
 | `INTERLINE_LEGACY_FACTOR` | `0.9583` | > 0 | KiCad's correction for stroke fonts |
@@ -170,7 +170,7 @@ Details in [Silkscreens](Silkscreens.md).
 | `DRAW_HIDDEN_TEXT` | `False` | bool | Draw text marked `(hide yes)` |
 | `SILK_LAYERS` | `["F.SilkS", "B.SilkS"]` | list of `F.*` / `B.*` layer names | Layers whose graphics are drawn as silkscreen, on the side their first letter names (any other name stops the run with a `KeyError` when the board has graphics on that layer); graphics on other non-physical layers are counted as skipped. Text is drawn only on `F.SilkS` / `B.SilkS`; text on other non-physical layers is ignored without a count |
 
-## 16.6 Finish (`Finish_Parameters.py`)
+## 16.6 Finish (`parameters/finish.py`)
 
 Details in [Top And Bottom Copper Finishings](Copper-Finishings.md).
 
@@ -184,7 +184,7 @@ Details in [Top And Bottom Copper Finishings](Copper-Finishings.md).
 | `FINISH_NAME_ALIASES` | 6 KiCad names (`HAL SnPb` → `HASL`, `HAL lead-free` → `HASL_LF`, `Hard gold`, `Immersion tin`, `Immersion silver`, `HT_OSP` → `OSP`) | `{KiCad name: key of FINISH_TYPES}` | KiCad finish names that differ from a key; matching ignores case, spaces, `-` and `_` |
 | `FINISH_CONDUCTIVITY_S_PER_M` | Nickel `1.4e7`, Gold `4.1e7`, Palladium `9.5e6`, Tin `9.1e6`, Silver `6.3e7`, OSP `0.0` | `{metal: S/m}` | Written to `materials.json` |
 
-## 16.7 Geometry (`Geometry_Parameters.py`)
+## 16.7 Geometry (`parameters/geometry.py`)
 
 Numerical quality: how finely curves are faceted and how neighbouring layers share exact edges.
 These do not change dimensions.
@@ -254,7 +254,7 @@ where $`d(\mathbf{p}, \mathbf{c})`$ is the distance from vertex $`\mathbf{p}`$ t
 centre $`\mathbf{c}`$, $`r`$ is the fitted radius and $`\tau_{\mathrm{arc}}`$ is
 `STEP_ARC_FIT_TOLERANCE_MM` (0.2 µm).
 
-## 16.8 Color (`Color_Parameters.py`)
+## 16.8 Color (`parameters/color.py`)
 
 The look of every part: the GLB and OBJ materials, the part colours in STEP and the `look` field of
 `materials.json`. Details in [Colorizing](Colorizing.md).

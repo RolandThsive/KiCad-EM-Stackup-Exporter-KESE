@@ -91,7 +91,7 @@ them must be given them by hand.
 > [!IMPORTANT]
 > These are typical values, not measured ones. FR4's εr and tanδ vary with frequency, resin
 > content and vendor; enter the fabricator's datasheet values in KiCad's stack-up, or in
-> `Board_Parameters.py` (`DEFAULT_EPSILON_R`, `DEFAULT_LOSS_TANGENT`). Those apply only where the
+> `parameters/board.py` (`DEFAULT_EPSILON_R`, `DEFAULT_LOSS_TANGENT`). Those apply only where the
 > stack-up gives no value, unless `USE_STACKUP_EPSILON_R` / `USE_STACKUP_LOSS_TANGENT` are set to
 > `False`. KESE reads the stack-up per gap between copper layers: when a gap holds
 > several plies (or sub-layers), it becomes one solid with the summed thickness and the first

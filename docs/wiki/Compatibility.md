@@ -6,9 +6,9 @@
 |---|---|---|
 | 5 and older | 20171130 (KiCad 5), or no `(version ...)` | read best-effort with a warning; KiCad 5 arcs (`start` = centre, `angle`) are understood |
 | 6 | 20211014 | inside the accepted range (`Run.KICAD_VERSION_MIN`); no KiCad 6 file in the repository |
-| 7 | 20221018 | the two stator examples and `Tests/boards/synthetic` |
-| 8 | 20240108 | `Tests/boards/one_layer`, a small hand-written file with KiCad 8's version number |
-| 9 | 20241229 | `Tests/boards/six_layer`, likewise hand-written; per-via `(tenting ...)` is parsed, though no file in the repository uses it |
+| 7 | 20221018 | the two stator examples and `tests/boards/synthetic` |
+| 8 | 20240108 | `tests/boards/one_layer`, a small hand-written file with KiCad 8's version number |
+| 9 | 20241229 | `tests/boards/six_layer`, likewise hand-written; per-via `(tenting ...)` is parsed, though no file in the repository uses it |
 | 10 | 20260206 | inside the accepted range (`Run.KICAD_VERSION_MAX`); no KiCad 10 file in the repository; net names stored directly on items (KiCad 10's form) are read |
 | newer | above 20260206 | read best-effort with a warning; raise `Run.KICAD_VERSION_MAX` once checked |
 
@@ -43,7 +43,7 @@ Visual mode writes GLB and OBJ only.
 ## 20.3 Tools
 
 None of these imports has been tried with KESE output yet: the routes follow each tool's
-documented import formats and the presets in `Run_Parameters.py`, and are to be confirmed.
+documented import formats and the presets in `parameters/run.py`, and are to be confirmed.
 Research underway.
 
 | Tool | Route | Notes |

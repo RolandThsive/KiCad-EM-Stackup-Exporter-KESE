@@ -33,7 +33,7 @@ Part names in simulation mode, with the default grouping:
 ## 8.2 Visual Mode
 
 `--mode visual`: **only the visible surface** of the same geometry, for web viewers such as
-`<model-viewer>` and three.js, and for renders. The `Skin` builder (`Generator/Geometry/Skin.py`)
+`<model-viewer>` and three.js, and for renders. The skin builder (`kese/s6_assemble/skin.py`)
 slices every prism at every height in the stack, rebuilds all regions from one planar
 arrangement so that neighbours share exact vertices, triangulates, and then drops every face that is buried inside another prism:
 

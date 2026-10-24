@@ -8,7 +8,7 @@ dimension on `Dwgs.User`), hidden text, pad paste layers, and images or groups i
 
 ```bash
 python run_KESE.py board.kicad_pcb --verify     # generate, then run the Verifier
-python Tests/test_boards.py                     # the regression suite over every board
+python tests/test_boards.py                     # the regression suite over every board
 ```
 
 ## 17.1 Levels
@@ -33,7 +33,7 @@ python Tests/test_boards.py                     # the regression suite over ever
 | `visual mode is a surface, not solids: FILE_FORMAT may only contain glb / obj` | STL and STEP need closed solids; use simulation mode. |
 | `no Edge.Cuts outline and OUTLINE_FALLBACK is 'error'` | Draw a closed outline, or set `Board.OUTLINE_FALLBACK = "copper_hull"`. |
 | `missing Python package(s): ...` | Printed before anything runs, with the `pip install` line to use. |
-| `<Module>_Parameters has no parameter <NAME>` | A `--set` with a misspelt name. A misspelt module gives a Python `AttributeError`, and a `--set` without a `.` a `ValueError`. |
+| `parameters/<module>.py has no parameter <NAME>` | A `--set` with a misspelt name. A misspelt module gives a Python `AttributeError`, and a `--set` without a `.` a `ValueError`. |
 | `no boards given and none found in Input/` | Put a board in `Input/` or give a path. |
 
 ### 17.1.2 Warnings
@@ -54,7 +54,7 @@ python Tests/test_boards.py                     # the regression suite over ever
 |---|---|
 | `<part>: note: boolean union unavailable (...); pieces left touching` | A part could not be unioned; its pieces are concatenated. The Verifier may then report it as not closed. |
 | `step: fuse failed for <part> (...); written as a compound` | In the STEP file that part is touching solids instead of one body. |
-| `step: cadquery is not installed (pip install cadquery); STEP skipped` | Only when `Generator.Pipeline.generate` is called directly (as the regression suite does). From `run_KESE.py`, asking for STEP without `cadquery` stops before anything runs with `missing Python package(s): cadquery`. |
+| `step: cadquery is not installed (pip install cadquery); STEP skipped` | Only when `kese.pipeline.generate` is called directly (as the regression suite does). From `run_KESE.py`, asking for STEP without `cadquery` stops before anything runs with `missing Python package(s): cadquery`. |
 
 ## 17.2 What `report.txt` Counts
 
@@ -82,7 +82,7 @@ stroke font.
 
 ## 17.3 The Verifier
 
-`Generator/Verifier.py`, run with `--verify` or `Run.VERIFY = True`. It checks the meshes that
+`kese/s8_verify/`, run with `--verify` or `Run.VERIFY = True`. It checks the meshes that
 GLB, STL and OBJ are written from, not the input. The STEP file is built separately and is not
 checked at run time (the regression suite reads it back with OCP).
 
@@ -139,12 +139,12 @@ the board file.
 
 ## 17.4 The Regression Suite
 
-`Tests/test_boards.py` runs every board in `Tests/boards/` and `Input/` through **both** modes
-with the Verifier and compares every part's volume with `Tests/baseline.json`:
+`tests/test_boards.py` runs every board in `tests/boards/` and `Input/` through **both** modes
+with the Verifier and compares every part's volume with `tests/baseline.json`:
 
 ```bash
-python -m pytest Tests                 # or:  python Tests/test_boards.py
-python Tests/test_boards.py --accept   # re-record the baseline after an intended geometry change
+python -m pytest tests                 # or:  python tests/test_boards.py
+python tests/test_boards.py --accept   # re-record the baseline after an intended geometry change
 ```
 
 A board fails when the Verifier reports an open or wrongly wound part or an overlap (simulation
@@ -160,7 +160,7 @@ or a new one appeared, or (for the small boards `one_layer`, `six_layer`, `synth
 `cadquery` is installed) when the STEP file has an invalid solid or a free edge, checked by reading
 it back with OCP.
 
-The test boards in `Tests/boards/` cover:
+The test boards in `tests/boards/` cover:
 
 - `one_layer`: a single-sided board with silkscreen text (it declares `F.Cu` and `B.Cu`, with
   tracks on `F.Cu` only);
@@ -170,6 +170,13 @@ The test boards in `Tests/boards/` cover:
   an arc with a circular cut-out, a blue top mask with a drawn opening and pad mask margins, an arc
   track, a via tented by the plot setting (`viasonmask false`), a zone fill, an oval drill, an NPTH,
   and items skipped on purpose (a 3D model, an `F.Fab` line).
+
+`python -m pytest tests` also runs `tests/test_layout.py`, which checks the code rather than the
+boards: which folders of `kese/` may import which, one `run()` per stage, no file over 200 lines,
+lowercase names. It only reads the source, so it takes about a second
+(`python tests/test_layout.py`).
+[`CONTRIBUTING.md`](https://github.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/blob/main/CONTRIBUTING.md)
+explains the rules.
 
 ## 17.5 Inputs KESE Refuses Or Changes
 

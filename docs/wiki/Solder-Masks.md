@@ -1,7 +1,8 @@
 # 15. Solder Masks
 
-The solder mask is the lacquer (LPI) over both faces of the board. `Generator/Geometry/SolderMask.py`
-builds it; the settings are in `Parameters/SolderMask_Parameters.py`.
+The solder mask is the lacquer (LPI) over both faces of the board. `kese/s4_geometry/solder_mask.py`
+builds it around the openings that `kese/s3_resolve/mask.py` works out; the settings are in
+`parameters/solder_mask.py`.
 
 <!-- Pictures wanted for this page (made by Roland):
      Mask 1: a top view of mask openings: pads with clearance, an untented via, a drawn opening.

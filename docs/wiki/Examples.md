@@ -1,7 +1,7 @@
 # 5. Examples
 
 The repository ships two boards in `Input/`. `python run_KESE.py` with no arguments exports both
-of them. The boards in `Tests/boards/` are small synthetic boards for the regression suite and are
+of them. The boards in `tests/boards/` are small synthetic boards for the regression suite and are
 described in [Checks, Errors And Warnings](Checks-Errors-And-Warnings.md).
 
 <!-- Pictures wanted for this page (made by Roland):
