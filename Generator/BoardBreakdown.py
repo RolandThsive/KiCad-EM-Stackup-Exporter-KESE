@@ -261,7 +261,9 @@ class _Collector:
             (self.b.edge_closed if closed else self.b.edge_open).append(geom)
             self.b.found["outline shapes on Edge.Cuts"] += 1
         else:
-            self._add(layer, painted(geom, closed, w, filled), "footprint graphics" if in_footprint else "graphics")
+            # copper shapes can carry a net (KiCad 8+); without one they stay on NO_NET_NAME
+            self._add(layer, painted(geom, closed, w, filled), "footprint graphics" if in_footprint else "graphics",
+                      self.net_name(node))
 
     def _text(self, node, T=lambda p: p, subst=None):
         S = P.Silkscreen
