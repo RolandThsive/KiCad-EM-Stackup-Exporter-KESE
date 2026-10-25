@@ -25,7 +25,7 @@ def pbr(mat):
 def scene_of(model):
     scene = trimesh.Scene()
     for part, mesh in model.meshes.items():
-        m = mesh.copy()
+        m = mesh.copy(include_cache=True)    # keeps the normals finish_mesh set; trimesh would redo zero ones
         m.visual = TextureVisuals(material=pbr(model.materials[part]))
         scene.add_geometry(m, node_name=part, geom_name=part)
     return scene
