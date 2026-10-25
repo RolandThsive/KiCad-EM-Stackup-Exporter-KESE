@@ -16,14 +16,14 @@ MATERIALS = {
     "Copper_exposed":     {"color": "#DEBA60", "alpha": 1.0,  "metallic": 1.0, "roughness": 0.25},
     "Plating":            {"color": "#CD803E", "alpha": 1.0,  "metallic": 0.9, "roughness": 0.35},
     # solder mask
-    "Top Solder Mask":    {"color": "#126830", "alpha": 0.80, "metallic": 0.0, "roughness": 0.30},
-    "Bottom Solder Mask": {"color": "#126830", "alpha": 0.80, "metallic": 0.0, "roughness": 0.30},
+    "Top Solder Mask":    {"color": "#EBEBE6", "alpha": 0.80, "metallic": 0.0, "roughness": 0.30},
+    "Bottom Solder Mask": {"color": "#EBEBE6", "alpha": 0.80, "metallic": 0.0, "roughness": 0.30},
     # visual mode: the mask where it lies on top of copper (traces read through real mask)
-    "Top Mask over Copper":    {"color": "#3F8F3A", "alpha": 1.0, "metallic": 0.0, "roughness": 0.30},
-    "Bottom Mask over Copper": {"color": "#3F8F3A", "alpha": 1.0, "metallic": 0.0, "roughness": 0.30},
+    "Top Mask over Copper":    {"color": "#F2EFD8", "alpha": 1.0, "metallic": 0.0, "roughness": 0.30},
+    "Bottom Mask over Copper": {"color": "#F2EFD8", "alpha": 1.0, "metallic": 0.0, "roughness": 0.30},
     # silkscreen
-    "Top Silkscreen":     {"color": "#F0F0EC", "alpha": 1.0,  "metallic": 0.0, "roughness": 0.75},
-    "Bottom Silkscreen":  {"color": "#F0F0EC", "alpha": 1.0,  "metallic": 0.0, "roughness": 0.75},
+    "Top Silkscreen":     {"color": "#141414", "alpha": 1.0,  "metallic": 0.0, "roughness": 0.75},
+    "Bottom Silkscreen":  {"color": "#141414", "alpha": 1.0,  "metallic": 0.0, "roughness": 0.75},
     # surface finish metals
     "Nickel":             {"color": "#B8B8B0", "alpha": 1.0,  "metallic": 1.0, "roughness": 0.40},
     "Gold":               {"color": "#E6C15A", "alpha": 1.0,  "metallic": 1.0, "roughness": 0.20},

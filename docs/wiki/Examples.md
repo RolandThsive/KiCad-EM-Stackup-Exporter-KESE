@@ -39,8 +39,8 @@ parts
   Copper_1                                 9516 triangles  material Copper #CD803E alpha 1.0
   Copper_2                                 9516 triangles  material Copper #CD803E alpha 1.0
   Copper_TX                                9068 triangles  material Copper #CD803E alpha 1.0
-  Top Solder Mask                         33728 triangles  material Top Solder Mask #126830 alpha 0.8
-  Bottom Solder Mask                      63402 triangles  material Bottom Solder Mask #126830 alpha 0.8
+  Top Solder Mask                         33728 triangles  material Top Solder Mask #EBEBE6 alpha 0.8
+  Bottom Solder Mask                      63402 triangles  material Bottom Solder Mask #EBEBE6 alpha 0.8
 
 Verifier: PASS
   Board_dielectric 1                   closed=True winding=True volume=2530.6188 mm3

@@ -20,9 +20,9 @@ writes a glTF `BLEND` material.
 | `Copper` | copper parts in simulation mode | `#CD803E`, metallic 0.9, roughness 0.35 |
 | `Plating` | the `Plating` part (layer grouping) | as `Copper` |
 | `Copper_exposed` | all copper and plating in visual mode | `#DEBA60`, metallic 1.0 |
-| `Top Solder Mask`, `Bottom Solder Mask` | the mask parts | `#126830`, alpha 0.80 |
-| `Top Mask over Copper`, `Bottom Mask over Copper` | the mask on top of copper, visual mode only | `#3F8F3A`, opaque |
-| `Top Silkscreen`, `Bottom Silkscreen` | silkscreen | `#F0F0EC` |
+| `Top Solder Mask`, `Bottom Solder Mask` | the mask parts | white `#EBEBE6`, alpha 0.80 |
+| `Top Mask over Copper`, `Bottom Mask over Copper` | the mask on top of copper, visual mode only | `#F2EFD8`, opaque |
+| `Top Silkscreen`, `Bottom Silkscreen` | silkscreen | black `#141414` |
 | `Nickel`, `Gold`, `Tin`, `Silver`, `Palladium`, `OSP` | finish metals, by the metal name | `#B8B8B0`, `#E6C15A`, `#C9C9C9`, `#E4E4E0`, `#DFDAD4` (all metallic 1.0), and copper-toned `#D9955A` (metallic 0.8) for OSP |
 
 How a part finds its key: a `board` part by its kind; `copper` and `plating` by role and mode;
