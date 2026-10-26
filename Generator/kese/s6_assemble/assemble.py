@@ -24,17 +24,24 @@ def rank(name):
     return (len(PART_ORDER), name)
 
 
+def made(ps, mode, log):
+    """(part, mesh) one after another: the skin is made in one go, the solids one part at a time."""
+    if mode == "visual":
+        skin = skin_meshes(ps)
+        while skin:
+            yield skin.popitem()
+    else:
+        yield from solid_meshes(ps, log)
+
+
 def assemble(ps, mode, log):
     mat = output_transform()
-    raw = skin_meshes(ps) if mode == "visual" else solid_meshes(ps, log)
-    meshes = {}
-    for part in sorted(raw, key=rank):
-        m = raw[part]
-        if m is None:
-            continue
-        m = finish_mesh(m, mat)
+    done = {}
+    for part, m in made(ps, mode, log):      # finished as soon as it is made: one raw mesh at a time
+        m = finish_mesh(m, mat) if m is not None else None
         if m is not None:
-            meshes[part] = m
+            done[part] = m
+    meshes = {part: done[part] for part in sorted(done, key=rank)}
     props = {}
     for part, prisms in ps.by_part().items():
         p0 = prisms[0]
