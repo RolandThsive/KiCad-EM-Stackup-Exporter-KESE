@@ -56,7 +56,7 @@ What to make, where, and in which formats.
 
 | Name | Default | Range | Meaning |
 |---|---|---|---|
-| `STEP_EXACT_ARCS` | `True` | bool | Runs of vertices on one circle (vias, round pads, round outlines, track ends, arc tracks) are written as true arcs; smaller files, real cylinders in CAD |
+| `STEP_EXACT_ARCS` | `True` | bool | Runs of vertices on one circle (vias, round pads, round outlines, track ends, arc tracks) are written as true arcs, except where an arc would cross another outline (16.7.1); smaller files, real cylinders in CAD |
 | `STEP_ARC_FIT_TOLERANCE_MM` | `0.0002` | mm > 0 | Vertices within this of one circle form an arc (2 × the snap grid) |
 | `STEP_ARC_MIN_POINTS` | `5` | int ≥ 3 | Minimum vertices in a run |
 | `STEP_WRITE_ROLES` | `["board", "copper", "plating", "finish"]` | subset of the roles below | Roles written to the STEP file; mask and silk are left out by default since on a dense board they are thousands of solids, which make the file five times bigger and the export seven times slower (the Coil board in `Input/`, in mm: 206 MB in 200 s instead of 39 MB in 30 s) |
@@ -256,6 +256,37 @@ nearly the same everywhere, and the run sweeps at least 10°:
 where $`d(\mathbf{p}, \mathbf{c})`$ is the distance from vertex $`\mathbf{p}`$ to the fitted
 centre $`\mathbf{c}`$, $`r`$ is the fitted radius and $`\tau_{\mathrm{arc}}`$ is
 `STEP_ARC_FIT_TOLERANCE_MM` (0.2 µm).
+
+Such an arc is written only where it cannot cross anything. The curve bulges out from every chord
+it replaces by the chord's sagitta
+
+```math
+s = r \left( 1 - \cos \frac{\Delta\theta}{2} \right) \qquad (16.6)
+```
+
+where $`\Delta\theta`$ is the angle the chord spans at the centre: $`s`$ is at most
+$`\varepsilon_c`$ (2 µm) on the circles KESE facets, up to about five times that on track ends and
+oval drills, which get half as many segments (16.4), and up to 5 µm on outlines the board file
+holds already faceted, such as zone fills. Where another edge passes closer to the chords than
+that, as along a sliver between two pads, the curve would cross it and the face would be invalid.
+So each arc gets a strip that holds its chords and its curve with $`g`$ to spare on both sides of
+the curve, where $`g`$ is one step of the snap grid (`SNAP_GRID_MM`, 0.1 µm): from its vertices,
+each one that is less than $`g`$ inside the curve (or outside it) moved to $`g`$ inside it, out to
+$`g`$ beyond the curve (or its furthest vertex, if that is further out), closed at its two end
+vertices; for a whole circle, the ring from $`g`$ inside the circle (or its nearest chord, if that
+is further in) out to $`g`$ beyond it (or its furthest vertex). The arc is written only when no
+edge of the band's polygons enters its strip, except the two edges at its ends, and when no other
+arc's strip overlaps it; otherwise its vertices stay straight edges. The edges at its ends may run
+along the curve, where the outline doubles back (as at the corners of a notch as wide as its pad)
+or goes on along the tangent, but must not cut into its circle by more than 0.05 nm (`TANGENT_MM`
+in `kese/s7_write/step_arcs.py`): OpenCascade takes two curves within about $`2 \times 10^{-7}`$ of
+the file's unit for touching, 0.2 nm in mm, the stricter unit, so a line a hair off the tangent
+only touches the arc, however far along it meets the circle again. An edge that joins both ends of
+an arc, as the straight side of a half round does, cannot cross it. On PC110 this keeps
+3 of 144,933 arcs straight: two had made invalid solids of a net's copper and of the dielectric
+around it, and the third an invalid band of the copper with no net, which the fuse then dropped,
+and with it the whole solid around that oval hole (0.99 mm³ of copper), leaving only valid solids
+in the file.
 
 ## 16.8 Color (`parameters/color.py`)
 

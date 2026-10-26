@@ -156,8 +156,8 @@ under `file_names.stl`, built with the same rule, so it always matches the file 
 ## 19.4 Tests Output
 
 `tests/test_boards.py` writes its runs to `tests/out/`, which is deleted at the start of every
-test run and ignored by git. `tests/test_layout.py` writes nothing, and `tests/test_step_file.py`
-writes only in a temporary folder that it removes.
+test run and ignored by git. `tests/test_layout.py` and `tests/test_step_arcs.py` write nothing,
+and `tests/test_step_file.py` writes only in a temporary folder that it removes.
 
 | Previous | Next |
 |:---|---:|

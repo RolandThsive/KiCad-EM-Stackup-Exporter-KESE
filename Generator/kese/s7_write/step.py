@@ -8,6 +8,7 @@ from pathlib import Path
 import numpy as np
 
 from kese.core import shapes2d as sh
+from kese.s7_write.step_arcs import ring_arcs
 from kese.s7_write.step_curves import Circles, wire
 from kese.s7_write.step_file import StepFile
 from parameters import P
@@ -21,22 +22,17 @@ def available():
         return False
 
 
-def _face(poly, z, cq, M, circles):
-    return cq.Face.makeFromWires(wire(poly.exterior, z, cq, M, circles),
-                                 [wire(r, z, cq, M, circles) for r in poly.interiors])
+def _face(rings, z, cq, M):
+    return cq.Face.makeFromWires(wire(*rings[0], z, cq, M), [wire(*r, z, cq, M) for r in rings[1:]])
 
 
 def _solid(prism, cq, M, circles):
     """All polygons of one prism, extruded, as a list of cq.Solid, built directly in output
     units and orientation (transforming afterwards would convert every edge to splines)."""
-    out = []
     d = M[:3, :3] @ np.array([0.0, 0.0, prism.z1 - prism.z0])
-    for poly in sh.polygons(prism.region):
-        if poly.area <= 1e-10:
-            continue
-        face = _face(poly, prism.z0, cq, M, circles)
-        out.append(cq.Solid.extrudeLinear(face, cq.Vector(*map(float, d))))
-    return out
+    polys = [poly for poly in sh.polygons(prism.region) if poly.area > 1e-10]
+    return [cq.Solid.extrudeLinear(_face(rings, prism.z0, cq, M), cq.Vector(*map(float, d)))
+            for rings in ring_arcs(polys, circles)]
 
 
 def write(model, path, log):

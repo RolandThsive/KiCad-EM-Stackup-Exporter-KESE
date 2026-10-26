@@ -63,7 +63,9 @@ SMOOTH_SHADE_ANGLE_DEG = 25.0          # edges sharper than this stay crisp; cyl
 # STEP_EXACT_ARCS - write circles and arcs as true curves.  The 2D geometry is built from
 #   polylines (every curve faceted to parameters/geometry.py); in the STEP file, runs of vertices
 #   that lie on one circle (vias, round pads, round outlines, track ends, arc tracks) are written
-#   as exact circular arcs instead.  Smaller files, true cylinders for CAD.  Meshes are unchanged.
+#   as exact circular arcs instead, except where another outline passes closer to the vertices
+#   than the arc bulges out from them (a sliver of a few µm), which the arc would cross.
+#   Smaller files, true cylinders for CAD.  Meshes are unchanged.
 STEP_EXACT_ARCS = True
 STEP_ARC_FIT_TOLERANCE_MM = 0.0002     # vertices within this of one circle form an arc (2 x the snap grid)
 STEP_ARC_MIN_POINTS = 5                # at least this many vertices in a run

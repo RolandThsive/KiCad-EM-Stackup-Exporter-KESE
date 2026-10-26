@@ -4,7 +4,7 @@ import math
 
 import numpy as np
 
-from kese.core import math2d as geo
+from kese.s7_write.step_arcs import mid
 from parameters import P
 
 
@@ -43,35 +43,23 @@ class Circles:
         return best
 
 
-def wire(ring, z, cq, M, circles):
-    """Closed wire of one polygon ring in output coordinates.  With STEP_EXACT_ARCS the vertex
-    runs that lie on one circle (faceted vias, pads, round outlines, track ends, arc tracks)
-    become true circular arcs; everything else stays a straight edge.  A ring that is a whole
-    circle becomes one circle edge, on the board's exact circle when it is one (see Circles)."""
-    R = P.Run
-    pts = list(ring.coords)[:-1]
+def wire(pts, arcs, z, cq, M):
+    """Closed wire of one ring (vertices and arcs from step_arcs.ring_arcs) in output coordinates:
+    every arc a true circular arc, a whole circle one circle edge, every other edge straight."""
     V = lambda p: cq.Vector(*xf(M, p[0], p[1], z))
-    arcs = geo.arcs_in_ring(pts, R.STEP_ARC_FIT_TOLERANCE_MM, R.STEP_ARC_MIN_POINTS) if R.STEP_EXACT_ARCS else []
     if not arcs:
         return cq.Wire.makePolygon([V(p) for p in pts], close=True)
     n = len(pts)
-    if arcs[0][1] - arcs[0][0] < n:          # an arc found at index 0 may continue from the ring's end:
-        s = arcs[0][1] % n                   # restart the ring where it ends and look again
-        pts = pts[s:] + pts[:s]
-        arcs = geo.arcs_in_ring(pts, R.STEP_ARC_FIT_TOLERANCE_MM, R.STEP_ARC_MIN_POINTS)
     if arcs[0][1] - arcs[0][0] == n:         # a full circle: one closed edge, seam at a fixed angle
-        c, r = circles.match(arcs[0][2], arcs[0][3])
+        c, r = arcs[0][2], arcs[0][3]
         normal = M[:3, :3] @ np.array([0.0, 0.0, 1.0])
         scale = float(np.linalg.norm(normal))
         return cq.Wire.assembleEdges([cq.Edge.makeCircle(r * scale, V(c), cq.Vector(*map(float, normal / scale)))])
-    on = lambda c, r, a: (c[0] + r * math.cos(a), c[1] + r * math.sin(a))
     edges, k = [], arcs[0][0]                # walk once around the ring from the first arc
     for i, j, c, r, ccw in arcs:
         for m in range(k, i):                # straight edges up to the arc
             edges.append(cq.Edge.makeLine(V(pts[m % n]), V(pts[(m + 1) % n])))
-        a0, a1 = geo.angle(c, pts[i % n]), geo.angle(c, pts[j % n])
-        sweep = (a1 - a0) % geo.TAU if ccw else -((a0 - a1) % geo.TAU)
-        edges.append(cq.Edge.makeThreePointArc(V(pts[i % n]), V(on(c, r, a0 + sweep / 2)), V(pts[j % n])))
+        edges.append(cq.Edge.makeThreePointArc(V(pts[i % n]), V(mid(pts, i, j, c, r, ccw)), V(pts[j % n])))
         k = j
     for m in range(k, arcs[0][0] + n):       # straight edges back to the start
         edges.append(cq.Edge.makeLine(V(pts[m % n]), V(pts[(m + 1) % n])))

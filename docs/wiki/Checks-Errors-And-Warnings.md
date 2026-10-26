@@ -184,6 +184,13 @@ parts, with a `#`, a `;`, a quote and letters outside ASCII in their names, into
 part by part, as `<board>.step` is written, and reads it back against the file OpenCascade
 writes for the same parts at once: the same names, placements, colours, solids and volumes. It
 needs `cadquery` and takes a few seconds (`python tests/test_step_file.py`).
+The command also runs `tests/test_step_arcs.py`, which builds outlines where the arc of a faceted
+circle would cross an edge of its own ring, a hole, another polygon or another arc, and checks that
+those vertices stay straight, while the same arcs a little further away are kept, and so are an arc
+that the outline doubles back along or leaves along its tangent and the arc of a half round; with
+`cadquery` it also checks that OpenCascade finds the faces and solids made from them valid, and
+those with the crossing arcs written invalid. It takes a few seconds
+(`python tests/test_step_arcs.py`).
 [`CONTRIBUTING.md`](https://github.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/blob/main/CONTRIBUTING.md)
 explains the rules.
 
