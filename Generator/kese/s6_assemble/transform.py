@@ -32,5 +32,6 @@ def finish_mesh(mesh, mat):
     bad = np.linalg.norm(normals, axis=1) < 0.5
     if bad.any():
         normals[bad] = [0.0, 0.0, 1.0]
-        mesh.vertex_normals = normals
-    return mesh
+    # a fresh mesh with only its normals: what smooth_shade left cached (every triangle's corners,
+    # face normals and angles) is three times the mesh itself
+    return trimesh.Trimesh(mesh.vertices, mesh.faces, vertex_normals=normals, process=False)

@@ -25,24 +25,28 @@ def pbr(mat):
 def scene_of(model):
     scene = trimesh.Scene()
     for part, mesh in model.meshes.items():
-        m = mesh.copy(include_cache=True)    # keeps the normals finish_mesh set; trimesh would redo zero ones
-        m.visual = TextureVisuals(material=pbr(model.materials[part]))
+        # the same arrays, with the normals finish_mesh set (trimesh would redo zero ones), and
+        # the material: a copy of every mesh would double the memory on a big board
+        m = trimesh.Trimesh(mesh.vertices, mesh.faces, vertex_normals=mesh.vertex_normals, process=False,
+                            visual=TextureVisuals(material=pbr(model.materials[part])))
         scene.add_geometry(m, node_name=part, geom_name=part)
     return scene
 
 
 def write(model, path):
     glb = scene_of(model).export(file_type="glb", include_normals=P.Run.EXPORT_INCLUDE_NORMALS)
-    if P.Run.EXPORT_SET_BUFFERVIEW_TARGETS:
-        glb = _set_targets(glb)
-    path.write_bytes(glb)
+    with open(path, "wb") as f:
+        for piece in (_set_targets(glb) if P.Run.EXPORT_SET_BUFFERVIEW_TARGETS else [glb]):
+            f.write(piece)
     return path
 
 
 def _set_targets(glb):
+    """The GLB with a target on every buffer view, as the pieces to write one after another (the
+    binary chunk is not copied)."""
     jlen = struct.unpack_from("<I", glb, 12)[0]
     j = json.loads(glb[20:20 + jlen])
-    rest = glb[20 + jlen:]
+    rest = memoryview(glb)[20 + jlen:]
     for mesh in j.get("meshes", []):
         for prim in mesh["primitives"]:
             for acc in prim.get("attributes", {}).values():
@@ -55,5 +59,5 @@ def _set_targets(glb):
                     j["bufferViews"][bv]["target"] = 34963
     js = json.dumps(j, separators=(",", ":")).encode()
     js += b" " * (-len(js) % 4)
-    body = struct.pack("<I4s", len(js), b"JSON") + js + rest
-    return struct.pack("<4sII", b"glTF", 2, 12 + len(body)) + body
+    chunk = struct.pack("<I4s", len(js), b"JSON") + js
+    return [struct.pack("<4sII", b"glTF", 2, 12 + len(chunk) + len(rest)), chunk, rest]

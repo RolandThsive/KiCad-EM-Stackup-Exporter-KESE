@@ -47,8 +47,8 @@ def verify(model, glb_path=None, rays=3000):
 
 
 def _rays(meshes, n):
-    allm = trimesh.util.concatenate(list(meshes.values()))
-    b = allm.bounds
+    corners = np.array([m.bounds for m in meshes.values()])
+    b = np.array([corners[:, 0].min(axis=0), corners[:, 1].max(axis=0)])
     rng = np.random.default_rng(1)
     pts = rng.uniform(b[0][:2], b[1][:2], size=(n, 2))
     zs = b[1][2] + (b[1][2] - b[0][2]) + 1e-6
@@ -59,6 +59,7 @@ def _overlap(meshes, n, scale):
     O, D = _rays(meshes, n)
     iv = {}
     for name, g in meshes.items():
+        g = trimesh.Trimesh(g.vertices, g.faces, process=False)    # the ray index it builds goes with it
         locs, ri, _ = g.ray.intersects_location(O, D, multiple_hits=True)
         locs = np.asarray(locs).reshape(-1, 3)
         for r in np.unique(ri):
