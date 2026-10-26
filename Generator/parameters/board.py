@@ -31,6 +31,6 @@ RESIN_FILL_BETWEEN_INNER_COPPER = True
 INCLUDE_NON_PLATED_HOLES = True         # NPTH pads become holes through the board
 
 # Board outline
-OUTLINE_LINE_SNAP_MM = 1e-5             # Edge.Cuts line/arc end points closer than this are joined
+OUTLINE_LINE_SNAP_MM = 0.01             # loose Edge.Cuts line/arc ends closer than this are joined (KiCad: 0.01 mm)
 OUTLINE_FALLBACK = "copper_hull"        # when there is no Edge.Cuts: "copper_hull" (convex hull of the copper + margin) or "error"
 OUTLINE_FALLBACK_MARGIN_MM = 1.0

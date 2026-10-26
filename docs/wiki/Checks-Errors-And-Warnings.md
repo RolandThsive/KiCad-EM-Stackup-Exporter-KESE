@@ -53,6 +53,7 @@ python tests/test_boards.py                     # the regression suite over ever
 
 | Message in `notes` | Meaning |
 |---|---|
+| `note: Edge.Cuts line ends up to D mm apart joined (Board.OUTLINE_LINE_SNAP_MM = S mm)` | The outline's lines had small gaps between their ends; they were closed as KiCad closes them (KiCad joins ends up to 0.01 mm apart, the default of `Board.OUTLINE_LINE_SNAP_MM`), so the board shape is the one KiCad shows. |
 | `<part>: note: boolean union unavailable (...); pieces left touching` | A part could not be unioned; its pieces are concatenated. The Verifier may then report it as not closed. |
 | `step: fuse failed for <part> (...); written as a compound` | In the STEP file that part is touching solids instead of one body. |
 | `step: cadquery is not installed (pip install cadquery); STEP skipped` | Only when `kese.pipeline.generate` is called directly (as the regression suite does). From `run_KESE.py`, asking for STEP without `cadquery` stops before anything runs with `missing Python package(s): cadquery`. |

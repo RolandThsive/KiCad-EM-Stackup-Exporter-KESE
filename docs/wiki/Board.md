@@ -90,11 +90,12 @@ there. With the setting
 The outline comes from `Edge.Cuts`:
 
 1. Closed shapes (circles, rectangles, polygons) are taken as rings.
-2. Open lines, arcs and Béziers have every coordinate rounded to a grid set by
-   `Board.OUTLINE_LINE_SNAP_MM` (10 nm by default; the value counts only to the nearest power of
-   ten), so end points that round to the same grid point join, and are then polygonized into
-   faces. If they form no face at all, the run warns
-   `Edge.Cuts lines/arcs do not form a closed outline`.
+2. Open lines, arcs and Béziers are joined end to end the way KiCad chains them. An end that
+   meets no other end is moved onto the nearest other such end within
+   `Board.OUTLINE_LINE_SNAP_MM` (0.01 mm by default, KiCad's own chaining distance), the closest
+   pairs first; ends that already meet stay where they are. The lines are then polygonized into
+   faces. When a gap was closed this way, `report.txt` notes the widest one. If the lines form no
+   face at all, the run warns `Edge.Cuts lines/arcs do not form a closed outline`.
 3. Rings nested at an **even** depth are joined as board, rings at an **odd** depth are cut-outs,
    and the cut-outs are subtracted last. A circle drawn inside the outer outline is a hole through
    the whole board; a ring drawn inside such a cut-out does not become board again, because
@@ -158,7 +159,7 @@ thickness; see [Stack-Up Model](Stack-Up-Model.md) for how the dielectrics are s
 | `USE_STACKUP_EPSILON_R`, `USE_STACKUP_LOSS_TANGENT` | `True`, `True` | bool | Stack-up values win over the defaults when present |
 | `RESIN_FILL_BETWEEN_INNER_COPPER` | `True` | bool | `True`: fill the space beside inner copper from the adjacent prepreg (otherwise from the dielectric above); `False`: those pockets stay empty and `report.txt` notes it (section 10.2) |
 | `INCLUDE_NON_PLATED_HOLES` | `True` | bool | NPTH pads become holes through the board |
-| `OUTLINE_LINE_SNAP_MM` | `1e-5` | mm > 0 | Grid that open `Edge.Cuts` coordinates are rounded to (nearest power of ten), so their end points join |
+| `OUTLINE_LINE_SNAP_MM` | `0.01` | mm > 0 | Open `Edge.Cuts` line and arc ends closer than this are joined, as KiCad joins them (its chaining distance is 0.01 mm) |
 | `OUTLINE_FALLBACK` | `"copper_hull"` | `"copper_hull"` / `"error"` | What to do when `Edge.Cuts` gives no closed ring at all |
 | `OUTLINE_FALLBACK_MARGIN_MM` | `1.0` | mm ≥ 0 | Margin around the copper hull in the fallback |
 

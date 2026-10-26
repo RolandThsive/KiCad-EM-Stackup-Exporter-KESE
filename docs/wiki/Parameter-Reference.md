@@ -86,7 +86,7 @@ The laminate: thickness, dielectrics, outline and holes. Details in [Board](Boar
 | `USE_STACKUP_EPSILON_R`, `USE_STACKUP_LOSS_TANGENT` | `True`, `True` | bool | Stack-up values win over the defaults when present |
 | `RESIN_FILL_BETWEEN_INNER_COPPER` | `True` | bool | `True`: fill the space beside inner copper from the adjacent prepreg (otherwise from the dielectric above); `False`: those pockets stay empty and `report.txt` notes it (see [Board](Board.md#102-resin-fill-beside-inner-copper)) |
 | `INCLUDE_NON_PLATED_HOLES` | `True` | bool | NPTH pads become holes through the board |
-| `OUTLINE_LINE_SNAP_MM` | `1e-5` | mm > 0 | Grid that open `Edge.Cuts` coordinates are rounded to (nearest power of ten), so their end points join |
+| `OUTLINE_LINE_SNAP_MM` | `0.01` | mm > 0 | Open `Edge.Cuts` line and arc ends closer than this are joined, as KiCad joins them (its chaining distance is 0.01 mm) |
 | `OUTLINE_FALLBACK` | `"copper_hull"` | `"copper_hull"` / `"error"` | When `Edge.Cuts` gives no closed ring at all: convex hull of the copper plus a margin, or stop |
 | `OUTLINE_FALLBACK_MARGIN_MM` | `1.0` | mm ≥ 0 | Margin of the fallback hull |
 
