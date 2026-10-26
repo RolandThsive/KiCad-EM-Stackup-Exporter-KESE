@@ -34,8 +34,15 @@ Part names in simulation mode, with the default grouping:
 
 `--mode visual`: **only the visible surface** of the same geometry, for web viewers such as
 `<model-viewer>` and three.js, and for renders. The skin builder (`kese/s6_assemble/skin.py`)
-slices every prism at every height in the stack, rebuilds all regions from one planar
-arrangement so that neighbours share exact vertices, triangulates, and then drops every face that is buried inside another prism:
+extrudes every prism on its own and joins all of them in one exact boolean union (Manifold, in
+double precision). Where two prisms meet, their touching faces cancel, so what is left is the
+surface between material and air; every triangle remembers the prism it came from, so the surface
+is still split into named parts. Two kinds of faces are then dropped:
+
+- the walls of a hollow sealed inside the board, such as the open bore of a buried via with
+  nothing stacked on it: a closed shell of the union that faces inward, which no one can see;
+- a face that looks at another prism across less than $`\varepsilon`$, two pieces that meet but
+  for rounding:
 
 ```math
 \text{keep face } f \iff \mathbf{c}_f + \varepsilon \hat{\mathbf{n}}_f \notin P \ \text{ for every prism } P \qquad (8.1)
@@ -47,7 +54,22 @@ arrangement so that neighbours share exact vertices, triangulates, and then drop
 | $`\varepsilon`$ | test offset (0.5 µm) | `Geometry.SKIN_BURIED_TEST_OFFSET_MM` |
 | $`P`$ | any prism of the model (a region between two heights), tested with the open z interval | |
 
-What remains is one closed outer surface, still split into named parts.
+What remains is one outer surface, still split into named parts, closed but for the mouth of a
+slit whose walls (8.1) took out (a crack well under a micron wide). A part with no face in
+sight, such as the copper of a net that runs only on inner layers and through buried vias, has no
+surface left and is not in the file. A finish thinner than $`\varepsilon`$ (the 80 nm gold of
+ENIG) leaves one surface too: the nickel and copper faces under it touch the layer above and
+cancel in the union.
+
+A big board is joined in tiles, one after another, of about `Geometry.SKIN_TILE_POINTS` outline
+points each (250,000 by default), as KiCad cuts big polygons into a grid of cells before it
+triangulates them: one union of a whole dense board would need many GB at once. The tile edges lie
+halfway between two points of the snap grid, where no outline vertex is, and every outline edge
+that crosses one gets its crossing point first, worked out from the edge's lower end, so that every
+region with that edge gets the same point. The tiles therefore meet in exactly the same vertices.
+The faces that only close a tile are left out, and where one tile kept a vertex along the cut that
+its neighbour merged away (two faces in one plane made one), the neighbour's edge is split there.
+The result is the same surface as one union of the whole board.
 
 Why it exists: in the simulation model the mask lies on the copper and the copper on the
 laminate, with surfaces only microns apart. Viewers draw these with a depth buffer and the
@@ -65,8 +87,11 @@ Differences from simulation mode:
 - All copper and plating take the `Copper_exposed` colour, since only bare copper is visible.
 - The parts are not closed solids: the Verifier's closed-solid and winding checks do not apply (the
   copper parts of the repository's boards even come out with negative signed volumes in the
-  regression baseline), and it checks instead that every vertical ray that hits the board meets
-  exactly one upward and one downward face.
+  regression baseline), and it checks instead that along every vertical ray that hits the board
+  the faces take turns, one going into the material and the next out of it: in, out on most rays,
+  and in, out, in, out where a ray crosses a hollow open to the air, such as the bore of a buried
+  via under stacked micro vias. A face left inside the material, or two faces in one place, gives
+  two of a kind in a row.
 
 ## 8.3 Which Mode For What
 

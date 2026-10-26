@@ -92,7 +92,7 @@ checked at run time (the regression suite reads it back with OCP).
 |---|---|---|
 | simulation | every part is a closed, consistently wound solid; its volume is printed in mm³ | `closed=True winding=True` for every part |
 | simulation | no two parts overlap: 3,000 random vertical rays through the model, the intervals each part occupies along every ray | worst overlap below 0.1 µm (`worst 0.000 um` on the example boards) |
-| visual | the skin is one visible surface: along every ray that hits the model, exactly one upward-facing and one downward-facing hit | the line `visible surfaces per vertical ray: up {...} down {...}` holds only the count 1 on each side (with numpy 2 it prints as `np.int64(1): ...`) |
+| visual | the skin is one outer surface: along every ray that hits the model the faces take turns, one going into the material and the next out of it (two faces on most rays; four where a ray crosses a hollow open to the air, such as the bore of a buried via under stacked micro vias) | the line `visible surfaces per vertical ray: faces met {2: ...}; rays where in and out do not alternate: 0` ends in 0 |
 | both, when a GLB was written | the GLB through the Khronos glTF validator, when the `gltf_validator` command-line tool is on the PATH | not a pass condition: the validator's last line is only reported; otherwise `gltf_validator not on PATH: glTF validation skipped`; with no GLB in the run the line is absent |
 
 > [!NOTE]
@@ -151,9 +151,9 @@ python tests/test_boards.py --accept   # re-record the baseline after an intende
 python tests/test_boards.py --add      # record only the boards the baseline does not have yet
 ```
 
-A board fails when the Verifier reports an open or wrongly wound part or an overlap (simulation
-mode; a visual-mode Verifier FAIL is not caught by the suite today), when a part's volume moved from the recorded baseline by
-more than
+A board fails when the Verifier fails (an open or wrongly wound part or an overlap in simulation
+mode, faces that do not take turns in visual mode), when a part's volume moved from the recorded
+baseline by more than
 
 ```math
 \left| V - V_0 \right| > 10^{-3} \cdot \max\left( |V_0|,\ 10^{-9} \right) \qquad (17.3)

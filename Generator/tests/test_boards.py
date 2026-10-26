@@ -5,10 +5,9 @@ the Verifier on: simulation mode written as GLB and STEP, visual mode as GLB.
     python tests/test_boards.py --accept   re-record tests/baseline.json after an intended geometry change
     python tests/test_boards.py --add      record only the boards the baseline does not have yet
 
-A board fails when the Verifier finds an open or wrongly wound solid or an overlap (a visual-mode
-Verifier FAIL is not caught yet), when a STEP solid is invalid or has a free edge, or when a part's
-volume moved by more than VOLUME_TOLERANCE from the recorded baseline (so a fix for one board
-cannot silently change another)."""
+A board fails when the Verifier fails (open solid, overlap, broken skin), when a STEP solid is
+invalid or has a free edge, or when a part's volume moved by more than VOLUME_TOLERANCE from the
+recorded baseline (so a fix for one board cannot silently change another)."""
 import json
 import shutil
 import sys
@@ -72,7 +71,8 @@ def run_board(pcb, mode):
 
 def check(pcb, mode, baseline):
     ok, lines, volumes, step = run_board(pcb, mode)
-    problems = [] if ok else [l for l in lines[1:] if "False" in l or "worst" in l]
+    problems = [] if ok else [l.strip() for l in lines[1:] if "False" in l or "worst" in l or "alternate" in l] \
+        or ["Verifier: FAIL"]
     if step and step != (0, 0):
         problems.append(f"STEP: {step[0]} invalid solids, {step[1]} free edges")
     key = f"{pcb.stem}/{mode}"

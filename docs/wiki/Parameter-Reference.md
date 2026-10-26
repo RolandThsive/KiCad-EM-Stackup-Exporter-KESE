@@ -200,6 +200,7 @@ These do not change dimensions.
 | `BEZIER_SEGMENTS` | `32` | int ≥ 1 | Straight pieces per Bézier curve |
 | `PINCH_POINT_OPENING_MM` | `1e-4` | mm > 0 | Polygons whose rings touch at a single point are opened by this much so they can be meshed |
 | `SKIN_BURIED_TEST_OFFSET_MM` | `0.0005` | mm > 0 | Visual mode: a face is dropped if a point this far outside it lies inside another solid ([Output Modes](Output-Modes.md), equation (8.1)) |
+| `SKIN_TILE_POINTS` | `250_000` | > 0 | Visual mode: a big board's skin is joined in tiles of about this many outline points; smaller tiles need less memory ([Output Modes](Output-Modes.md)) |
 
 ### 16.7.1 How The Curve Settings Are Used
 

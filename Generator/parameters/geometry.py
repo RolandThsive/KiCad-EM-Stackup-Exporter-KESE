@@ -25,3 +25,4 @@ PINCH_POINT_OPENING_MM = 1e-4
 
 # Visual mode (visible skin)
 SKIN_BURIED_TEST_OFFSET_MM = 0.0005     # a face is dropped if a point this far outside it lies inside another solid
+SKIN_TILE_POINTS = 250_000              # outline points joined at once; a big board is joined in tiles of about this size

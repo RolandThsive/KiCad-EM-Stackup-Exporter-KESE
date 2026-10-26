@@ -52,7 +52,8 @@ last so that the report carries the Verifier's result.
    one where the pieces touch, separate bodies within the part where they do not. Before the
    union, regions that touch are made to share exact boundary vertices (no T-junctions) and
    regions that touch at a single point are parted by a hair so each solid is manifold. In visual
-   mode the skin builder (`skin.py`) keeps only the faces that are not buried inside another prism
+   mode the skin builder (`skin.py`) joins every prism in one exact union, tile by tile on a big
+   board (`tiles.py`), and keeps the surface between material and air
    ([Output Modes](Output-Modes.md)). The meshes are then scaled to the output units, rotated to
    the output orientation and given smooth normals across edges flatter than
    `Run.SMOOTH_SHADE_ANGLE_DEG` (`transform.py`).
@@ -65,9 +66,9 @@ last so that the report carries the Verifier's result.
 
 8. **Verify** (`kese/s8_verify/`, opt-in). The Verifier proves the model: in simulation mode
    every part must be watertight with consistent winding and no two parts may overlap along 3,000
-   random vertical rays; in visual mode every ray that hits the board must cross exactly one
-   upward and one downward surface. If the Khronos `gltf_validator` is on the PATH, the written
-   GLB is run through it and its last line reported. See
+   random vertical rays; in visual mode the faces along every ray that hits the board must take
+   turns, into the material and out of it. If the Khronos `gltf_validator` is on the PATH, the
+   written GLB is run through it and its last line reported. See
    [Checks, Errors And Warnings](Checks-Errors-And-Warnings.md).
 
 9. **Report** (`kese/s9_report/`). Writes `parameters.txt` and `report.txt` next to the model

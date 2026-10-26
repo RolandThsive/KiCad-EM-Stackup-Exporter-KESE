@@ -1,7 +1,7 @@
 """The checks of stage 8 (verify): the Model proves itself.
 
 simulation : every part is a closed, consistently wound solid; no two parts overlap (vertical rays)
-visual     : the skin has exactly one top and one bottom surface along every vertical ray
+visual     : along every vertical ray the skin's faces take turns, into the material and out of it
 both   : the glTF file passes the Khronos validator, if the `gltf_validator` CLI is on PATH"""
 import shutil
 import subprocess
@@ -31,9 +31,9 @@ def verify(model, glb_path=None, rays=3000):
         lines.append(f"  overlap between different parts along {rays} vertical rays: worst {worst * 1000:.3f} um")
         ok &= worst < 1e-4
     else:
-        up, down = _skin_surfaces(meshes, rays)
-        lines.append(f"  visible surfaces per vertical ray: up {up} down {down}  (want exactly one of each)")
-        ok &= set(up) <= {1} and set(down) <= {1}
+        met, wrong = _skin_surfaces(meshes, rays)
+        lines.append(f"  visible surfaces per vertical ray: faces met {met}; rays where in and out do not alternate: {wrong}")
+        ok &= wrong == 0
     if glb_path is not None:
         exe = shutil.which("gltf_validator")
         if exe:
@@ -76,12 +76,21 @@ def _overlap(meshes, n, scale):
 
 
 def _skin_surfaces(meshes, n):
+    """({faces met: rays}, rays whose faces, from the top down, do not take turns into the material
+    and out of it).  A closed outer surface gives in, out on every ray, or in, out, in, out where
+    the ray crosses a hollow open to the air (the bore of a buried via under stacked micro vias); a
+    face left inside the material or a doubled one gives two of a kind in a row."""
     O, D = _rays(meshes, n)
     allm = trimesh.util.concatenate(list(meshes.values()))
     locs, ri, ti = allm.ray.intersects_location(O, D, multiple_hits=True)
     nz = allm.face_normals[ti][:, 2]
-    up = np.bincount(ri[nz > 0.5], minlength=n)
-    down = np.bincount(ri[nz < -0.5], minlength=n)
-    hit = (up + down) > 0
-    return dict(zip(*map(list, np.unique(up[hit], return_counts=True)))), \
-        dict(zip(*map(list, np.unique(down[hit], return_counts=True))))
+    flat = np.abs(nz) > 0.5
+    ri, z, into = ri[flat], np.asarray(locs).reshape(-1, 3)[flat, 2], nz[flat] > 0
+    order = np.lexsort((-z, ri))
+    ri, into = ri[order], into[order]
+    count = np.bincount(ri, minlength=n)
+    k = np.arange(len(ri)) - (np.cumsum(count) - count)[ri]      # 0, 1, 2, ... down each ray
+    wrong = count % 2 == 1
+    wrong[ri[into != (k % 2 == 0)]] = True
+    met = np.unique(count[count > 0], return_counts=True)
+    return {int(a): int(b) for a, b in zip(*met)}, int(wrong.sum())
