@@ -1,5 +1,6 @@
 """Holes: plated holes cut by the board edge, the laminate drilled where holes pass, the plating
-barrels, and the exact circle of every round hole."""
+barrels, and the exact circle of every round hole.  As in KiCad, every distinct set of holes is
+joined only once (Regions.holes_made) and reused wherever the same holes pass."""
 from collections import defaultdict
 
 from kese.core import shapes2d as sh
@@ -7,14 +8,35 @@ from kese.core.shapes2d import union
 from parameters import P
 
 
-def drills(items, pred):
-    """The drilled outlines of the holes for which pred(hole) holds, KiCad frame."""
-    return union([h.drill for h in items.holes if pred(h)])
+def hole_shapes(items, pred, bore=False):
+    """The holes for which pred(hole) holds, one shape each, KiCad frame: the drilled outline, or
+    with bore=True the open bore inside the plating."""
+    return [h.drill.buffer(-h.wall) if bore and h.wall > 0 else h.drill for h in items.holes if pred(h)]
 
 
-def bores(items, pred):
-    """The open bores (inside the plating) of the holes for which pred(hole) holds, KiCad frame."""
-    return union([h.drill.buffer(-h.wall) if h.wall > 0 else h.drill for h in items.holes if pred(h)])
+def made_once(r, kind, pred, make):
+    """make(), or what it made before for the same kind and the same holes."""
+    holes = r.items.holes
+    picked = tuple(i for i, h in enumerate(holes) if pred(h))
+    key = (kind, picked, tuple(holes[i].wall for i in picked))
+    if key not in r.holes_made:
+        r.holes_made[key] = make()
+    return r.holes_made[key]
+
+
+def drills(r, pred):
+    """The drilled outlines of the holes for which pred(hole) holds, joined, KiCad frame."""
+    return made_once(r, "drills", pred, lambda: union(hole_shapes(r.items, pred)))
+
+
+def bores(r, pred):
+    """The open bores (inside the plating) of the holes for which pred(hole) holds, joined, KiCad frame."""
+    return made_once(r, "bores", pred, lambda: union(hole_shapes(r.items, pred, bore=True)))
+
+
+def drilled(r, pred):
+    """The outline drilled by the holes for which pred(hole) holds, board frame."""
+    return made_once(r, "drilled", pred, lambda: sh.diff(r.outline, r.to_board_T(drills(r, pred))))
 
 
 def castellate(items, outline_k):
@@ -39,17 +61,16 @@ def slabs(r, items):
     """r.slab: the laminate between copper k and k+1, drilled by every hole through it;
     r.bores_side: the open bores on each face."""
     T, last = r.to_board_T, len(items.layers) - 1
-    r.slab = [sh.diff(r.outline, T(drills(items, lambda h, k=k: h.i <= k and h.j >= k + 1))) for k in range(last)]
-    r.bores_side = {"F": T(bores(items, lambda h: h.i == 0)), "B": T(bores(items, lambda h: h.j == last))}
+    r.slab = [drilled(r, lambda h, k=k: h.i <= k and h.j >= k + 1) for k in range(last)]
+    r.bores_side = {"F": T(bores(r, lambda h: h.i == 0)), "B": T(bores(r, lambda h: h.j == last))}
 
 
 def band_laminate(r, items):
     """r.band_laminate: on each inner copper layer, the laminate beside the copper, drilled."""
-    T, last = r.to_board_T, len(items.layers) - 1
+    last = len(items.layers) - 1
     for k, l in enumerate(items.layers):
         if 0 < k < last:
-            hole = T(drills(items, lambda h, k=k: h.i <= k <= h.j))
-            lam = sh.diff(sh.diff(r.outline, hole), r.copper_all[l])
+            lam = sh.diff(drilled(r, lambda h, k=k: h.i <= k <= h.j), r.copper_all[l])
             r.band_laminate[l] = sh.diff(lam, r.edge_band) if r.edge_band is not None else lam
 
 

@@ -12,7 +12,7 @@ def clip_silk(r, items, outline_k, openings):
     last = len(items.layers) - 1
     for side in ("F", "B"):
         silk = union(items.silk_items[side]).intersection(outline_k).difference(
-            bores(items, lambda h: h.i == 0) if side == "F" else bores(items, lambda h: h.j == last))
+            bores(r, lambda h: h.i == 0) if side == "F" else bores(r, lambda h: h.j == last))
         if not S.SILKSCREEN_OVER_COPPER:      # no ink where there is no mask (openings, bare copper)
             silk = silk.difference(openings[side])
         silk = r.to_board_T(silk)

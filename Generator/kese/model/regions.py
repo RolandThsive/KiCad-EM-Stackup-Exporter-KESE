@@ -24,3 +24,4 @@ class Regions:
     to_board_T: object = None                          # KiCad-frame shape -> board-frame shape
     edge_band: object = None
     edge_net: object = None
+    holes_made: dict = field(default_factory=dict)     # (kind, hole indices, walls) -> shape; each set of holes joined once

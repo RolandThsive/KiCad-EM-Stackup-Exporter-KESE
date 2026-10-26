@@ -17,7 +17,7 @@ def edge_plating(r, items, log):
     if not plated:
         return
     band = sh.snap(sh.diff(r.outline, r.outline.buffer(-C.EDGE_PLATING_WALL_MM)))
-    hole = r.to_board_T(drills(items, lambda h: True))   # every hole that reaches the edge interrupts the plating
+    hole = r.to_board_T(drills(r, lambda h: True))       # every hole that reaches the edge interrupts the plating
     band = sh.diff(band, hole)
     if C.EDGE_PLATING_NET == "auto":
         touching = defaultdict(float)

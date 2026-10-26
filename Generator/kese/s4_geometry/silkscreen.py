@@ -1,5 +1,6 @@
 """Silkscreen: legend ink printed on the solder mask surface."""
 from kese.core import shapes2d as sh
+from kese.core.conformal import conformal_regions, grow, near
 from kese.s4_geometry.heights import mask_thicknesses
 from parameters import P
 
@@ -12,7 +13,8 @@ def build(r, ps):
         silk = r.silk.get(side, sh.EMPTY)
         if silk.is_empty:
             continue
-        cu = r.copper_all.get(layer, sh.EMPTY)
+        # only the copper the ink can reach matters: what lies farther than t_lam + t_silk is left out
+        cu = near(r.copper_all.get(layer, sh.EMPTY), silk, t_lam + t_silk + 8 * sh.grid())
         cu_t = st.band[layer][1] - st.band[layer][0]
         base = st.half
         part = f"{tb} Silkscreen"
@@ -20,12 +22,12 @@ def build(r, ps):
         z = lambda v: sign * v
         masked = r.mask[side]
         # where the ink leaves the mask (openings that keep their silk) it steps down the mask edge
-        off_mask, on_mask, step = sh.conformal_regions(silk, masked, t_silk, M.MASK_WALL_QUAD_SEGS)
+        off_mask, on_mask, step = conformal_regions(silk, masked, t_silk, M.MASK_WALL_QUAD_SEGS, around="region")
         ps.add(part, "silk", step, z(base), z(base + t_lam + t_silk), layer=f"{side}.SilkS", props=props)
         # on the mask: the mask's surface is flat on laminate and raised over copper and the mask's
         # own wall beside it; the ink climbs that step with a wall of its own, t_silk wide
-        raised = sh.snap(cu.buffer(t_lam, quad_segs=M.MASK_WALL_QUAD_SEGS)) if not cu.is_empty else cu
-        flat, top, wall = sh.conformal_regions(on_mask, raised, t_silk, M.MASK_WALL_QUAD_SEGS)
+        raised = grow(cu, t_lam, M.MASK_WALL_QUAD_SEGS) if not cu.is_empty else cu
+        flat, top, wall = conformal_regions(on_mask, raised, t_silk, M.MASK_WALL_QUAD_SEGS, around="region")
         ps.add(part, "silk", flat, z(base + t_lam), z(base + t_lam + t_silk), layer=f"{side}.SilkS", props=props)
         ps.add(part, "silk", top, z(base + cu_t + t_cu), z(base + cu_t + t_cu + t_silk), layer=f"{side}.SilkS", props=props)
         ps.add(part, "silk", wall, z(base + t_lam), z(base + cu_t + t_cu + t_silk), layer=f"{side}.SilkS", props=props)

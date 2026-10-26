@@ -1,8 +1,8 @@
-"""2D shape helpers (shapely): circles, strokes, set operations on the snapping grid, and the
-split of a coating over raised copper.  All tolerances come from parameters/geometry.py; nothing
-numeric is defined here."""
+"""2D shape helpers (shapely): circles, strokes and set operations on the snapping grid.  All
+tolerances come from parameters/geometry.py; nothing numeric is defined here."""
 import math
 
+import numpy as np
 import shapely
 from shapely.geometry import GeometryCollection, Point
 
@@ -78,12 +78,63 @@ def polys_only(g):
 
 
 def snap(g):
-    """Snap a shape to the grid (makes touching layers share identical vertices).  Snapping can
-    leave two parts of a multipolygon sharing an edge, so the result is unioned once more."""
-    g = polys_only(shapely.set_precision(polys_only(g), grid()))
-    if g.geom_type == "MultiPolygon":
-        g = polys_only(shapely.union_all(g, grid_size=grid()))
-    return g
+    """Snap a shape to the grid (makes touching layers share identical vertices).  Every part is
+    rounded on its own (a part already on the grid is kept as it is) and only parts that then
+    meet are joined again: rounding a whole layer at once costs minutes on a big board."""
+    parts = shapely.get_parts(polys_only(g))
+    if not len(parts):
+        return EMPTY
+    off = ~on_grid(parts)
+    parts[off] = shapely.set_precision(parts[off], grid())
+    return joined([p for q in parts for p in shapely.get_parts(polys_only(q)) if not p.is_empty])
+
+
+def on_grid(parts):
+    """For each polygon: True when it is valid and all its vertices lie on the grid already."""
+    xy, which = shapely.get_coordinates(parts, return_index=True)
+    k = xy / grid()
+    off = np.abs(k - np.round(k)).max(axis=1) > 1e-6 if len(xy) else np.zeros(0, bool)
+    return (np.bincount(which[off], minlength=len(parts)) == 0) & shapely.is_valid(parts)
+
+
+def side_by_side(regions):
+    """The union of regions that mostly do not touch (the nets of one copper layer), as joined()."""
+    return joined([p for x in regions for p in shapely.get_parts(polys_only(x)) if not p.is_empty])
+
+
+def meeting(parts):
+    """The parts in groups (lists of indices): parts within a grid step of each other share a group."""
+    a, b = shapely.STRtree(parts).query(parts, predicate="dwithin", distance=grid())
+    group = list(range(len(parts)))
+
+    def root(i):
+        while group[i] != i:
+            group[i] = group[group[i]]
+            i = group[i]
+        return i
+    for i, j in zip(a.tolist(), b.tolist()):
+        group[root(i)] = root(j)
+    members = {}
+    for i in range(len(parts)):
+        members.setdefault(root(i), []).append(i)
+    return list(members.values())
+
+
+def joined(parts):
+    """Polygons on the grid as one region: a part that meets no other stays as it is and only the
+    groups that meet are joined (on the grid), as KiCad joins only what meets."""
+    if len(parts) < 2:
+        return parts[0] if len(parts) else EMPTY
+    out = []
+    for idx in meeting(parts):
+        out += [parts[idx[0]]] if len(idx) == 1 else \
+            list(shapely.get_parts(polys_only(shapely.union_all([parts[i] for i in idx], grid_size=grid()))))
+    return as_region(out)
+
+
+def as_region(polys):
+    """Polygons that do not overlap as one region."""
+    return shapely.MultiPolygon(polys) if len(polys) > 1 else polys[0] if polys else EMPTY
 
 
 def part_touching(g):
@@ -132,18 +183,3 @@ def make_transform(at_numbers):
     if not at_numbers:
         return lambda p: p
     return geo.rotation((at_numbers[0], at_numbers[1]), at_numbers[2] if len(at_numbers) > 2 else 0.0)
-
-
-def conformal_regions(region, raised, t, wall_quad_segs):
-    """Split a coating of thickness t laid over `raised` (copper) into
-    (flat on the base, on top of the raised copper, wall beside the copper)."""
-    region, raised = snap(region), snap(raised)
-    if region.is_empty:
-        return EMPTY, EMPTY, EMPTY
-    if raised.is_empty:
-        return region, EMPTY, EMPTY
-    grown = snap(raised.buffer(t, quad_segs=wall_quad_segs))
-    flat = diff(region, grown)
-    top = inter(region, raised)
-    wall = inter(region, diff(grown, raised))
-    return flat, top, wall
