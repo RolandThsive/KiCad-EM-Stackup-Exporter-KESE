@@ -1,5 +1,6 @@
 """Extrusion: a 2D region between two heights as a closed triangle mesh (trimesh), and the
 union of such meshes into one solid."""
+import manifold3d as mf
 import numpy as np
 import shapely
 import trimesh
@@ -20,7 +21,9 @@ def extrude(geom, z0, z1, _retry=True):
         if p.area <= 1e-10:
             continue
         m = trimesh.creation.extrude_polygon(p, height=z1 - z0)
-        m.apply_translation([0, 0, z0])
+        v = m.vertices.copy()              # exactly z0 and z1, so prisms that meet in z meet exactly
+        v[:, 2] = np.where(v[:, 2] > (z1 - z0) / 2, z1, z0)
+        m.vertices = v
         if not m.is_watertight:          # earcut trips on holes touching the outer ring
             m = extrude_cdt(p, z0, z1)
         if not m.is_watertight and _retry:   # rings pinch at a point: part them slightly
@@ -61,13 +64,24 @@ def extrude_cdt(p, z0, z1):
 
 
 def solid_union(meshes, log=None):
+    """One solid of the meshes, joined by Manifold in double precision.  trimesh's own call to
+    Manifold rounds every vertex to float32 (in steps of 7.6 nm at 100 mm, a thirteenth of the snap
+    grid), and prisms that met exactly could come back as two vertices at one place: an open solid
+    once merged."""
     meshes = [m for m in meshes if m is not None and len(m.faces)]
     if not meshes:
         return None
     if len(meshes) == 1:
         return meshes[0]
     try:
-        return trimesh.boolean.union(meshes, engine="manifold")
+        solids = [mf.Manifold(mesh=mf.Mesh64(vert_properties=np.asarray(m.vertices, dtype=np.float64),
+                                             tri_verts=np.asarray(m.faces, dtype=np.uint32))) for m in meshes]
+        bad = [s.status() for s in solids if s.status() != mf.Error.NoError]
+        if bad:
+            raise ValueError(f"{len(bad)} of {len(solids)} pieces are not closed ({bad[0]})")
+        out = mf.Manifold.batch_boolean(solids, mf.OpType.Add).to_mesh64()
+        # copies, so Manifold's own arrays are freed with it
+        return trimesh.Trimesh(np.array(out.vert_properties)[:, :3], np.array(out.tri_verts, dtype=np.int64), process=False)
     except Exception as exc:
         if log is not None:
             log(f"note: boolean union unavailable ({exc}); pieces left touching")
