@@ -140,12 +140,14 @@ the board file.
 
 ## 17.4 The Regression Suite
 
-`tests/test_boards.py` runs every board in `tests/boards/` and `Input/` through **both** modes
-with the Verifier and compares every part's volume with `tests/baseline.json`:
+`tests/test_boards.py` runs every board in `tests/boards/`, `featureTest/` and `Input/` through
+every output, with the Verifier: simulation mode written as GLB and STEP, visual mode as GLB. It
+compares every part's volume with `tests/baseline.json`:
 
 ```bash
 python -m pytest tests                 # or:  python tests/test_boards.py
 python tests/test_boards.py --accept   # re-record the baseline after an intended geometry change
+python tests/test_boards.py --add      # record only the boards the baseline does not have yet
 ```
 
 A board fails when the Verifier reports an open or wrongly wound part or an overlap (simulation
@@ -157,9 +159,9 @@ more than
 ```
 
 where $`V`$ is the part's volume now and $`V_0`$ the baseline, both in mm³, when a part disappeared
-or a new one appeared, or (for the small boards `one_layer`, `six_layer`, `synthetic`, when
-`cadquery` is installed) when the STEP file has an invalid solid or a free edge, checked by reading
-it back with OCP.
+or a new one appeared, or (when `cadquery` is installed) when the STEP file has an invalid solid or
+a free edge, checked by reading it back with OCP. In visual mode the "volume" is the signed volume
+of an open surface: it means nothing on its own, but it moves when the skin does.
 
 The test boards in `tests/boards/` cover:
 

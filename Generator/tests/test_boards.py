@@ -1,18 +1,24 @@
-"""Regression suite: every board in tests/boards and Input/ through both modes with the Verifier on.
+"""Regression suite: every board in tests/boards, featureTest/ and Input/ through every output with
+the Verifier on: simulation mode written as GLB and STEP, visual mode as GLB.
 
     python -m pytest tests                 (or:  python tests/test_boards.py)
     python tests/test_boards.py --accept   re-record tests/baseline.json after an intended geometry change
+    python tests/test_boards.py --add      record only the boards the baseline does not have yet
 
-A board fails when the Verifier fails (open solid, overlap, broken skin), when a STEP solid is
-invalid or has a free edge, or when a part's volume moved by more than VOLUME_TOLERANCE from the
-recorded baseline (so a fix for one board cannot silently change another)."""
+A board fails when the Verifier finds an open or wrongly wound solid or an overlap (a visual-mode
+Verifier FAIL is not caught yet), when a STEP solid is invalid or has a free edge, or when a part's
+volume moved by more than VOLUME_TOLERANCE from the recorded baseline (so a fix for one board
+cannot silently change another)."""
 import json
 import shutil
 import sys
+import time
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
+
+import numpy as np  # noqa: E402
 
 from kese.pipeline import generate  # noqa: E402
 from kese.s8_verify.meshes import verify  # noqa: E402
@@ -20,8 +26,10 @@ from kese.s8_verify.meshes import verify  # noqa: E402
 BASELINE = ROOT / "tests" / "baseline.json"
 OUT = ROOT / "tests" / "out"
 VOLUME_TOLERANCE = 1e-3          # relative, per part
-BOARDS = sorted((ROOT / "tests" / "boards").glob("*.kicad_pcb")) + sorted((ROOT / "Input").glob("*.kicad_pcb"))
-STEP_BOARDS = {"one_layer", "six_layer", "synthetic"}   # small enough to write and audit STEP every run
+BOARDS = (sorted((ROOT / "tests" / "boards").glob("*.kicad_pcb")) + sorted((ROOT.parent / "featureTest").glob("*.kicad_pcb"))
+          + sorted((ROOT / "Input").glob("*.kicad_pcb")))
+MODES = ("simulation", "visual")
+FORMATS = {"simulation": ["glb", "step"], "visual": ["glb"]}
 
 
 def step_audit(path):
@@ -47,11 +55,12 @@ def step_audit(path):
 
 def run_board(pcb, mode):
     """-> (verifier ok, verifier lines, {part: volume mm3}, step problems or None)"""
-    formats = ["glb"] + (["step"] if mode == "simulation" and pcb.stem in STEP_BOARDS else [])
+    formats = FORMATS[mode]
     out_dir, model = generate(pcb, mode=mode, formats=formats, out_root=OUT, verify=False, log=lambda s: None)
     ok, lines = verify(model)
     scale = 1000.0 if model.units == "m" else 1.0
-    volumes = {part: float(m.volume) * scale ** 3 for part, m in model.meshes.items()}
+    with np.errstate(divide="ignore", invalid="ignore"):     # a skin part with no volume has no centre either
+        volumes = {part: float(m.volume) * scale ** 3 for part, m in model.meshes.items()}
     step = None
     if "step" in formats:
         try:
@@ -87,8 +96,8 @@ def load_baseline():
 def pytest_generate_tests(metafunc):
     shutil.rmtree(OUT, ignore_errors=True)
     if "pcb" in metafunc.fixturenames:
-        metafunc.parametrize("pcb,mode", [(p, m) for p in BOARDS for m in ("simulation", "visual")],
-                             ids=[f"{p.stem}-{m}" for p in BOARDS for m in ("simulation", "visual")])
+        metafunc.parametrize("pcb,mode", [(p, m) for p in BOARDS for m in MODES],
+                             ids=[f"{p.stem}-{m}" for p in BOARDS for m in MODES])
 
 
 def test_board(pcb, mode):
@@ -98,20 +107,22 @@ def test_board(pcb, mode):
 
 # ---- plain python entry -----------------------------------------------------------------------------------
 if __name__ == "__main__":
-    accept = "--accept" in sys.argv
+    accept, add = "--accept" in sys.argv, "--add" in sys.argv
     shutil.rmtree(OUT, ignore_errors=True)
     baseline, failed = load_baseline(), 0
     for pcb in BOARDS:
-        for mode in ("simulation", "visual"):
-            problems, volumes = check(pcb, mode, {} if accept else baseline)
+        for mode in MODES:
             key = f"{pcb.stem}/{mode}"
-            if accept:
+            record = accept or (add and key not in baseline)
+            t0 = time.perf_counter()
+            problems, volumes = check(pcb, mode, {} if record else baseline)
+            if record:
                 baseline[key] = {k: round(v, 9) for k, v in sorted(volumes.items())}
             failed += bool(problems)
-            print(f"{key:48s} {'FAIL' if problems else 'ok'}")
+            print(f"{key:56s} {'FAIL' if problems else 'ok':4s} {time.perf_counter() - t0:7.1f} s", flush=True)
             for p in problems:
-                print("    " + p)
-    if accept:
+                print("    " + p, flush=True)
+    if accept or add:
         BASELINE.write_text(json.dumps(baseline, indent=1))
         print(f"baseline written: {BASELINE}")
     sys.exit(1 if failed else 0)

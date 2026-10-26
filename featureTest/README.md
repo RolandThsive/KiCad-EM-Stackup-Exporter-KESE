@@ -9,6 +9,9 @@ cd Generator
 python tests/feature_boards/make.py
 ```
 
+The regression suite (`Generator/tests/test_boards.py`) runs every board here through every
+output; after changing a board, run `python tests/test_boards.py --accept` to record it again.
+
 Boards in KiCad 7's format were read back, zone-filled and saved by KiCad 7 itself, so they are
 exactly what KiCad writes, including the outlines of TrueType text. Features that only KiCad 8, 9
 or 10 have are on hand-written boards in that version's format, written from KiCad's own file
