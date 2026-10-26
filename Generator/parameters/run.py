@@ -81,8 +81,9 @@ STEP_ARC_MIN_POINTS = 5                # at least this many vertices in a run
 #
 # STEP_WRITE_ROLES - which roles are written to the STEP file at all.
 #   Each written part is made of closed, exact solids.  Mask and silk are left out by default:
-#   on a dense board they are thousands of solids and the export needs many GB of memory
-#   (GLB / STL / OBJ always contain them).  To write everything:
+#   on a dense board they are thousands of solids, which make the file five times bigger and
+#   the export seven times slower (the Coil board in Input/, in mm: 206 MB in 200 s instead of
+#   39 MB in 30 s).  GLB / STL / OBJ always contain them.  To write everything:
 #   STEP_WRITE_ROLES = ["board", "copper", "plating", "finish", "mask", "mask_over_copper", "silk"]
 STEP_WRITE_ROLES = ["board", "copper", "plating", "finish"]
 #

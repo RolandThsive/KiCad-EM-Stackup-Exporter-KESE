@@ -66,7 +66,8 @@ last so that the report carries the Verifier's result.
 7. **Write** (`kese/s7_write/`, one file per format). Writes the requested files from the same
    `Model` into a new run folder: GLB, OBJ and STL from the meshes; STEP from the prisms
    themselves as exact B-rep solids (not from triangles), with runs of vertices that lie on one
-   circle written back as true arcs; then `materials.json`. See
+   circle written back as true arcs, one part at a time so that only one part's solids are in
+   memory (`step_file.py`); then `materials.json`. See
    [Project Output Organization](Project-Output-Organization.md).
 
 8. **Verify** (`kese/s8_verify/`, opt-in). The Verifier proves the model: in simulation mode

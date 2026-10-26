@@ -59,7 +59,7 @@ What to make, where, and in which formats.
 | `STEP_EXACT_ARCS` | `True` | bool | Runs of vertices on one circle (vias, round pads, round outlines, track ends, arc tracks) are written as true arcs; smaller files, real cylinders in CAD |
 | `STEP_ARC_FIT_TOLERANCE_MM` | `0.0002` | mm > 0 | Vertices within this of one circle form an arc (2 × the snap grid) |
 | `STEP_ARC_MIN_POINTS` | `5` | int ≥ 3 | Minimum vertices in a run |
-| `STEP_WRITE_ROLES` | `["board", "copper", "plating", "finish"]` | subset of the roles below | Roles written to the STEP file; mask and silk are left out by default since on a dense board they are thousands of solids and need many GB of memory |
+| `STEP_WRITE_ROLES` | `["board", "copper", "plating", "finish"]` | subset of the roles below | Roles written to the STEP file; mask and silk are left out by default since on a dense board they are thousands of solids, which make the file five times bigger and the export seven times slower (the Coil board in `Input/`, in mm: 206 MB in 200 s instead of 39 MB in 30 s) |
 | `STEP_FUSE_ROLES` | `["board", "copper", "plating", "finish"]` | subset of `STEP_WRITE_ROLES` | Roles whose parts are fused into **one** solid each (what solvers need; slow on parts with many pieces); the others are compounds of touching solids (fast; fine for viewing) |
 
 The roles are `board`, `copper`, `plating`, `finish`, `mask`, `mask_over_copper`, `silk`. A part's role

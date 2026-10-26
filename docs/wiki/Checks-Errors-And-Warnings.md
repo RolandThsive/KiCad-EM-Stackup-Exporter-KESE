@@ -57,6 +57,7 @@ python tests/test_boards.py                     # the regression suite over ever
 | `<part>: note: boolean union unavailable (...); pieces left touching` | A part could not be unioned; its pieces are concatenated. The Verifier may then report it as not closed. |
 | `step: fuse failed for <part> (...); written as a compound` | In the STEP file that part is touching solids instead of one body. |
 | `step: cadquery is not installed (pip install cadquery); STEP skipped` | Only when `kese.pipeline.generate` is called directly (as the regression suite does). From `run_KESE.py`, asking for STEP without `cadquery` stops before anything runs with `missing Python package(s): cadquery`. |
+| `step: no part to write; STEP skipped` | No part has its role in `Run.STEP_WRITE_ROLES`, or none of those parts has a solid, so no `<board>.step` is written. |
 
 ## 17.2 What `report.txt` Counts
 
@@ -178,7 +179,11 @@ The test boards in `tests/boards/` cover:
 `python -m pytest tests` also runs `tests/test_layout.py`, which checks the code rather than the
 boards: which folders of `kese/` may import which, one `run()` per stage, no file over 200 lines,
 lowercase names, and no code outside `Generator/`. It only reads the source, so it takes about a second
-(`python tests/test_layout.py`).
+(`python tests/test_layout.py`). The same command runs `tests/test_step_file.py`, which writes four small
+parts, with a `#`, a `;`, a quote and letters outside ASCII in their names, into one STEP file
+part by part, as `<board>.step` is written, and reads it back against the file OpenCascade
+writes for the same parts at once: the same names, placements, colours, solids and volumes. It
+needs `cadquery` and takes a few seconds (`python tests/test_step_file.py`).
 [`CONTRIBUTING.md`](https://github.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/blob/main/CONTRIBUTING.md)
 explains the rules.
 

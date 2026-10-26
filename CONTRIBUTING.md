@@ -69,8 +69,9 @@ Where new work goes:
 ```bash
 cd Generator
 python tests/test_layout.py      # the layout rules, about a second
+python tests/test_step_file.py   # a STEP file written part by part against OpenCascade's own
 python tests/test_boards.py      # every test board through both modes, against tests/baseline.json
 ```
 
-`python -m pytest tests` runs both. When a change is meant to move the geometry, re-record the
+`python -m pytest tests` runs all three. When a change is meant to move the geometry, re-record the
 baseline with `python tests/test_boards.py --accept` and say why in the pull request.

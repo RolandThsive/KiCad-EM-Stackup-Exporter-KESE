@@ -48,10 +48,13 @@ on one Linux machine. They say what to expect, not what the limit is.
 
 - The slowest stage on the two `Input/` boards is assembly, and most of it goes into preparing and joining
   the solder-mask parts, which climb over every trace (on the Coil board the two masks take about
-  25 s, the three nets about 2 s). STEP timings have not been measured yet.
+  25 s, the three nets about 2 s). Writing the Coil board's STEP file, in millimetres, takes
+  another 30 s (39 MB).
 - STEP files leave out the solder mask and silkscreen by default (`Run.STEP_WRITE_ROLES`): on a
-  dense board they are thousands of solids, and the note in `parameters/run.py` says the export
-  then needs many GB of memory (not measured for this wiki). GLB, STL and OBJ always contain them.
+  dense board they are thousands of solids. With them the Coil board's STEP file is 206 MB
+  instead of 39 MB and takes 200 s instead of 30 s. The file is written one part at a time, so
+  the export needs 1.4 GB on top of the run with them and 0.6 GB without. GLB, STL and OBJ always
+  contain them.
 - The Verifier added 3 to 7 s per board on these examples.
 
 > [!NOTE]
