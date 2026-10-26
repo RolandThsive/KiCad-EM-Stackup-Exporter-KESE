@@ -17,7 +17,8 @@ import trimesh
 from scipy.sparse import coo_matrix
 from scipy.sparse.csgraph import connected_components
 
-from kese.s6_assemble.tiles import joined_tiles, split_at, tile_edges, tile_surface
+from kese.core.cells import split_at
+from kese.s6_assemble.tiles import joined_tiles, tile_edges, tile_surface
 from parameters import P
 
 POINTS_PER_QUERY = 200_000

@@ -2,8 +2,8 @@
 into a grid of cells before it triangulates them: one union of a whole dense board would need many
 GB at once.  The tile edges lie halfway between two points of the snap grid, where no outline
 vertex is, and every outline edge that crosses one gets its crossing point first, the same point
-for every region that has the edge; so the tiles meet in exactly the same vertices, and the faces
-that only close a tile are left out."""
+for every region that has the edge (kese/core/cells.py); so the tiles meet in exactly the same
+vertices, and the faces that only close a tile are left out."""
 from collections import defaultdict
 
 import manifold3d as mf
@@ -31,47 +31,6 @@ def tile_edges(prisms):
     def edges(lo, hi, k):
         return np.unique((np.floor((lo + (hi - lo) * np.arange(1, k) / k) / g) + 0.5) * g)
     return edges(x0, x1, nx), edges(y0, y1, ny)
-
-
-def split_at(g, xs, ys):
-    """The region with a vertex wherever one of its edges crosses a tile edge.  The point is worked
-    out from the edge's lower end, so a region that has the same edge in the other direction gets
-    the same point."""
-    polys = shapely.get_parts(polys_only(g))
-    rings, of_poly = shapely.get_rings(polys, return_index=True)
-    xy, of_ring = shapely.get_coordinates(rings, return_index=True)
-    edge = np.flatnonzero(of_ring[1:] == of_ring[:-1])            # edge k runs from xy[k] to xy[k + 1]
-    a, b = xy[edge], xy[edge + 1]
-    keys, points = [edge.astype(float)], [a]
-    for axis, lines in ((0, xs), (1, ys)):
-        if not len(lines):
-            continue
-        ia, ib = np.searchsorted(lines, a[:, axis]), np.searchsorted(lines, b[:, axis])
-        n = np.abs(ib - ia)
-        e = np.repeat(np.arange(len(a)), n)
-        if not len(e):
-            continue
-        line = lines[np.repeat(np.minimum(ia, ib), n) + np.arange(len(e)) - np.repeat(np.cumsum(n) - n, n)]
-        p, q = a[e], b[e]
-        low = (p[:, axis] < q[:, axis])[:, None]
-        lo, hi = np.where(low, p, q), np.where(low, q, p)
-        cross = np.empty((len(e), 2))
-        cross[:, axis] = line
-        s = (line - lo[:, axis]) / (hi[:, axis] - lo[:, axis])
-        cross[:, 1 - axis] = lo[:, 1 - axis] + s * (hi[:, 1 - axis] - lo[:, 1 - axis])
-        keys.append(edge[e] + (line - p[:, axis]) / (q[:, axis] - p[:, axis]))
-        points.append(cross)
-    if len(points) == 1:
-        return g
-    key = np.concatenate(keys)
-    order = np.argsort(key, kind="stable")
-    pts, ring = np.concatenate(points)[order], of_ring[np.floor(key[order]).astype(np.int64)]
-    first = np.r_[0, np.flatnonzero(np.diff(ring)) + 1]
-    closed = np.insert(pts, np.r_[first[1:], len(pts)], pts[first], axis=0)
-    ring_of = np.insert(ring, np.r_[first[1:], len(ring)], ring[first])
-    new_rings = shapely.linearrings(closed, indices=ring_of)
-    out = shapely.polygons(new_rings, indices=of_poly)
-    return shapely.MultiPolygon(list(out)) if len(out) > 1 else out[0]
 
 
 def tile_surface(prisms, regions, box, index, loose):

@@ -46,17 +46,22 @@ last so that the report carries the Verifier's result.
    properties (εr, conductivity) stay on the prisms; this stage only decides the look. See
    [Colorizing](Colorizing.md).
 
-6. **Assemble** (`kese/s6_assemble/`). Builds one in-memory `Model`. In simulation mode
-   (`solids.py`), every prism is extruded to a closed triangle mesh and all pieces of a part (a
-   net's traces on every layer plus its vias) are joined by a boolean union into closed solids:
-   one where the pieces touch, separate bodies within the part where they do not. Before the
-   union, regions that touch are made to share exact boundary vertices (no T-junctions) and
-   regions that touch at a single point are parted by a hair so each solid is manifold. In visual
-   mode the skin builder (`skin.py`) joins every prism in one exact union, tile by tile on a big
-   board (`tiles.py`), and keeps the surface between material and air
-   ([Output Modes](Output-Modes.md)). The meshes are then scaled to the output units, rotated to
-   the output orientation and given smooth normals across edges flatter than
-   `Run.SMOOTH_SHADE_ANGLE_DEG` (`transform.py`).
+6. **Assemble** (`kese/s6_assemble/`). Builds one in-memory `Model`. Every prism is extruded to a
+   closed triangle mesh (`kese/core/extrude.py`): its walls stand on the region's own edges and its
+   top and bottom are cut into triangles by earcut, as in KiCad's 3D viewer, a polygon of more than
+   `Geometry.TRIANGULATE_CELL_POINTS` points strip by strip, as KiCad cuts big polygons into 1 cm
+   cells (`kese/core/triangulate.py`). Every triangulation is checked to close exactly on the
+   polygon's edges: earcut can run two holes whose edges lie on one line into one, through a slit
+   of no width, and a polygon it gets wrong is cut again by Manifold's triangulator. In simulation
+   mode (`solids.py`), all pieces of a part (a net's traces on every layer plus its vias) are
+   joined by a boolean union into closed solids: one where the pieces touch, separate bodies
+   within the part where they do not. Before the union, regions that touch are made to share
+   exact boundary vertices (no T-junctions) and regions that touch at a single point are parted
+   by a hair so each solid is manifold. In visual mode the skin builder (`skin.py`) joins every
+   prism in one exact union, tile by tile on a big board (`tiles.py`), and keeps the surface
+   between material and air ([Output Modes](Output-Modes.md)). The meshes are then scaled to the
+   output units, rotated to the output orientation and given smooth normals across edges flatter
+   than `Run.SMOOTH_SHADE_ANGLE_DEG` (`transform.py`).
 
 7. **Write** (`kese/s7_write/`, one file per format). Writes the requested files from the same
    `Model` into a new run folder: GLB, OBJ and STL from the meshes; STEP from the prisms

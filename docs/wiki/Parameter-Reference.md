@@ -199,6 +199,8 @@ These do not change dimensions.
 | `TRACK_END_MIN_QUAD_SEGS` | `4` | int ≥ 1 | Roundness of track ends |
 | `BEZIER_SEGMENTS` | `32` | int ≥ 1 | Straight pieces per Bézier curve |
 | `PINCH_POINT_OPENING_MM` | `1e-4` | mm > 0 | Polygons whose rings touch at a single point are opened by this much so they can be meshed |
+| `TRIANGULATE_CELL_POINTS` | `5000` | > 0 | A polygon with more points than this has its top and bottom cut into triangles strip by strip, much faster when it has many holes (earcut's time grows with the points times the holes). The points the strips add are taken out again, so the solid keeps exactly the polygon's own vertices |
+| `TRIANGULATE_CELL_MM` | `10.0` | mm > 0 | Width of those strips, as KiCad cuts big polygons into 1 cm cells before it triangulates them |
 | `SKIN_BURIED_TEST_OFFSET_MM` | `0.0005` | mm > 0 | Visual mode: a face is dropped if a point this far outside it lies inside another solid ([Output Modes](Output-Modes.md), equation (8.1)) |
 | `SKIN_TILE_POINTS` | `250_000` | > 0 | Visual mode: a big board's skin is joined in tiles of about this many outline points; smaller tiles need less memory ([Output Modes](Output-Modes.md)) |
 

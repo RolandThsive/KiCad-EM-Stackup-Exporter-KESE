@@ -6,33 +6,63 @@ import shapely
 import trimesh
 
 from kese.core.shapes2d import polygons, polys_only
+from kese.core.triangulate import caps, cells_cut, manifold_cut
 from parameters import P
 
 
 # ---- extrusion -------------------------------------------------------------------------------------
 def extrude(geom, z0, z1, _retry=True):
-    """A closed triangle mesh of the polygon(s) between z0 and z1, or None."""
+    """A closed triangle mesh of the polygon(s) between z0 and z1, or None.  The top and bottom of
+    every polygon are cut into triangles (kese/core/triangulate.py) and its walls stand on its own
+    edges, all polygons of the region at once; a polygon neither triangulator closes goes through
+    extrude_cdt(), and is parted where its rings pinch."""
     geom = polys_only(geom)
     if geom.is_empty or abs(z1 - z0) < 1e-12:
         return None
     z0, z1 = min(z0, z1), max(z0, z1)
+    left = np.array(polygons(geom), dtype=object)
+    left = left[shapely.area(left) > 1e-10]
+    if not len(left):
+        return None
     meshes = []
-    for p in polygons(geom):
-        if p.area <= 1e-10:
-            continue
-        m = trimesh.creation.extrude_polygon(p, height=z1 - z0)
-        v = m.vertices.copy()              # exactly z0 and z1, so prisms that meet in z meet exactly
-        v[:, 2] = np.where(v[:, 2] > (z1 - z0) / 2, z1, z0)
-        m.vertices = v
-        if not m.is_watertight:          # earcut trips on holes touching the outer ring
-            m = extrude_cdt(p, z0, z1)
-        if not m.is_watertight and _retry:   # rings pinch at a point: part them slightly
-            opened = polys_only(shapely.set_precision(p, 0).buffer(-P.Geometry.PINCH_POINT_OPENING_MM, quad_segs=1))
-            pieces = [q for q in (extrude(x, z0, z1, _retry=False) for x in polygons(opened)) if q is not None]
-            if pieces and all(q.is_watertight for q in pieces):
-                m = trimesh.util.concatenate(pieces)
-        meshes.append(m)
-    return trimesh.util.concatenate(meshes) if meshes else None
+    for cut in (cells_cut, manifold_cut):
+        if len(left):
+            m, bad = prism_mesh(left, z0, z1, cut)
+            meshes.append(m)
+            left = left[bad]
+    meshes += [slow_prism(p, z0, z1, _retry) for p in left]
+    meshes = [m for m in meshes if m is not None]
+    return meshes[0] if len(meshes) == 1 else trimesh.util.concatenate(meshes) if meshes else None
+
+
+def prism_mesh(polys, z0, z1, cut):
+    """The polygons between z0 and z1 as one mesh, their tops and bottoms cut into triangles by
+    cut (caps()), and the indices of the polygons whose triangles do not close exactly on their
+    edges, which are left out of it."""
+    xy, nxt, poly, tri, bad = caps(polys, cut)
+    keep = ~bad[poly]
+    m = int(keep.sum())
+    if not m:
+        return None, np.flatnonzero(bad)
+    new = np.cumsum(keep) - 1
+    t = new[tri[~bad[poly[tri[:, 0]]]]]
+    i, j = new[keep], new[nxt[keep]]
+    v = np.concatenate([np.c_[xy[keep], np.full(m, z0)], np.c_[xy[keep], np.full(m, z1)]])
+    # the bottom facing down, the top facing up, and on every ring edge a wall of two triangles
+    f = np.concatenate([t[:, ::-1], t + m, np.c_[i, j, j + m], np.c_[i, j + m, i + m]])
+    return trimesh.Trimesh(v, f, process=False), np.flatnonzero(bad)
+
+
+def slow_prism(p, z0, z1, retry):
+    """A polygon neither triangulator closes (rings that touch): GEOS's constrained Delaunay
+    triangles, and if they do not close either, the polygon parted slightly where its rings pinch."""
+    m = extrude_cdt(p, z0, z1)
+    if not m.is_watertight and retry:
+        opened = polys_only(shapely.set_precision(p, 0).buffer(-P.Geometry.PINCH_POINT_OPENING_MM, quad_segs=1))
+        pieces = [q for q in (extrude(x, z0, z1, _retry=False) for x in polygons(opened)) if q is not None]
+        if pieces and all(q.is_watertight for q in pieces):
+            m = trimesh.util.concatenate(pieces)
+    return m
 
 
 def extrude_cdt(p, z0, z1):

@@ -76,7 +76,7 @@
   "Copper_SIN_Signal": -2.113573543,
   "Copper_TX": -0.081308559,
   "Top Mask over Copper": -0.025798322,
-  "Top Solder Mask": 61.532681703
+  "Top Solder Mask": 61.431564668
  },
  "Stator/simulation": {
   "Board_dielectric 1": 2530.618758592,
@@ -145,8 +145,8 @@
  "TheMainBoard/visual": {
   "Board_dielectric 1": 2846.083952814,
   "Bottom Mask over Copper": 0.066367721,
-  "Bottom Silkscreen": 1.057080714,
-  "Bottom Solder Mask": 165.362919736,
+  "Bottom Silkscreen": 1.057078869,
+  "Bottom Solder Mask": 165.354168078,
   "Copper_+3V3": -0.708075681,
   "Copper_+5V": -0.34215466,
   "Copper_/AS5600_1_SCL": -0.027041017,
@@ -166,7 +166,7 @@
   "Copper_/SHT40_SCL": -0.06744594,
   "Copper_/SHT40_SDA": -1.001057668,
   "Copper_/protected_5V": -1.378014074,
-  "Copper_GND": -6.111772216,
+  "Copper_GND": -6.081659589,
   "Copper_Net-(U1-GND)": -0.342165197,
   "Copper_Net-(U1-V++)": -0.342160833,
   "Copper_Net-(U10-RX)": -0.34215466,
@@ -188,7 +188,7 @@
   "Copper_unconnected-(U7-D9{slash}BOOT-Pad10)_1": -0.41592627,
   "Top Mask over Copper": 0.134574272,
   "Top Silkscreen": 0.623310434,
-  "Top Solder Mask": 147.893541894
+  "Top Solder Mask": 147.291326807
  },
  "TheMainBoardVOC/simulation": {
   "Board_dielectric 1": 6374.042703889,
@@ -251,7 +251,7 @@
   "Board_dielectric 1": 6395.068795999,
   "Bottom Mask over Copper": -1.474534251,
   "Bottom Silkscreen": 7.392532751,
-  "Bottom Solder Mask": 371.259873983,
+  "Bottom Solder Mask": 371.259842389,
   "Copper_+3V3": -2.38679695,
   "Copper_+5V": -1.095667232,
   "Copper_/AS5600_1_SCL": -0.415153556,
@@ -273,7 +273,7 @@
   "Copper_/SPG40_1_SCL": -0.167570033,
   "Copper_/SPG40_1_SDA": -0.313581306,
   "Copper_/protected_5V": -0.428848789,
-  "Copper_GND": -5.891970346,
+  "Copper_GND": -5.892044612,
   "Copper_Net-(D1-K)": 0.0,
   "Copper_Net-(D2-A)": 0.0,
   "Copper_Net-(D2-K)": 0.0,
@@ -288,7 +288,7 @@
   "Copper_Net-(U10-GPIO)": 0.0,
   "Copper_Net-(U10-RX)": 0.0,
   "Copper_Net-(U10-TX)": 0.0,
-  "Copper_Net-(U2-AISEN)": -1.1241e-05,
+  "Copper_Net-(U2-AISEN)": 0.0,
   "Copper_Net-(U2-BISEN)": 0.0,
   "Copper_Net-(U2-VCP)": 0.0,
   "Copper_Net-(U2-VINT)": 0.0,
@@ -303,8 +303,8 @@
   "Copper_unconnected-(U7-D9{slash}BOOT-Pad10)": 0.0,
   "Copper_unconnected-(U7-D9{slash}BOOT-Pad10)_1": -0.428848789,
   "Top Mask over Copper": -0.057755218,
-  "Top Silkscreen": 34.071653681,
-  "Top Solder Mask": 324.494854708
+  "Top Silkscreen": 34.071579295,
+  "Top Solder Mask": 324.464173601
  },
  "01_holes_slotted/simulation": {
   "Board_dielectric 1": 1540.944635315,
@@ -628,7 +628,7 @@
   "Copper_no_net": 0.0,
   "Top Mask over Copper": -6.6054e-05,
   "Top Silkscreen": 0.014102545,
-  "Top Solder Mask": 14.924717903
+  "Top Solder Mask": 14.922608696
  },
  "08_copper_graphics/simulation": {
   "Board_dielectric 1": 1087.2,
@@ -992,7 +992,7 @@
   "Copper_SIG2": 0.0,
   "Top Mask over Copper": 0.005795221,
   "Top Silkscreen": 0.041720018,
-  "Top Solder Mask": 4.049563292
+  "Top Solder Mask": 4.053523641
  },
  "20b_format_kicad7/simulation": {
   "Board_dielectric 1": 578.471594572,
@@ -1015,7 +1015,7 @@
   "Copper_SIG2": 0.0,
   "Top Mask over Copper": 0.005795221,
   "Top Silkscreen": 0.040355099,
-  "Top Solder Mask": 4.049563292
+  "Top Solder Mask": 4.053523641
  },
  "20c_format_kicad8/simulation": {
   "Board_dielectric 1": 578.471594572,
@@ -1038,7 +1038,7 @@
   "Copper_SIG2": 0.0,
   "Top Mask over Copper": 0.005795221,
   "Top Silkscreen": 0.042231303,
-  "Top Solder Mask": 4.049563292
+  "Top Solder Mask": 4.053523641
  },
  "20d_format_kicad9/simulation": {
   "Board_dielectric 1": 578.471594572,
@@ -1061,7 +1061,7 @@
   "Copper_SIG2": 0.0,
   "Top Mask over Copper": 0.005795221,
   "Top Silkscreen": 0.041720247,
-  "Top Solder Mask": 4.049563292
+  "Top Solder Mask": 4.053523641
  },
  "20e_format_kicad10/simulation": {
   "Board_dielectric 1": 578.471594572,
@@ -1084,6 +1084,6 @@
   "Copper_SIG2": 0.0,
   "Top Mask over Copper": 0.005795221,
   "Top Silkscreen": 0.044446469,
-  "Top Solder Mask": 4.049563292
+  "Top Solder Mask": 4.053523641
  }
 }
