@@ -132,7 +132,7 @@ Copper parts take the board's net names as they are, so the second board's unnam
 
 ```bash
 cd Generator                                  # KESE lives here: the code, its settings, Input/ and Output/
-python -m pip install -r requirements.txt     # Python 3.12 or later; cadquery is only needed for STEP
+python -m pip install -r requirements.txt     # Python 3.12 or later; cadquery only for STEP by OpenCascade (Run.BUILD_WITH_KERNELS)
 
 python run_KESE.py                                     # Every board in Input/, settings from parameters/
 python run_KESE.py Input/Stator.kicad_pcb --for hfss   # STEP in mm with KiCad's origin, for HFSS

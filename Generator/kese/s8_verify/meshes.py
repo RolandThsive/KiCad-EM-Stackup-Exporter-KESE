@@ -13,6 +13,7 @@ from parameters import P
 
 
 def verify(model, glb_path=None, rays=3000):
+    """(ok, report lines) of the checks below."""
     lines = []
     meshes = model.meshes
     scale = 1000.0 if model.units == "m" else 1.0      # report in mm
@@ -42,7 +43,6 @@ def verify(model, glb_path=None, rays=3000):
             lines.append(f"  gltf_validator: {tail[0]}")
         else:
             lines.append("  gltf_validator not on PATH: glTF validation skipped")
-    lines.insert(0, f"Verifier: {'PASS' if ok else 'FAIL'}")
     return ok, lines
 
 

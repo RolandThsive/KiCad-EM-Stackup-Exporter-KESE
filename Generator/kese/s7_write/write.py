@@ -26,7 +26,7 @@ def write(model, out_dir, formats, status, log):
         status("writing STL")
         files.written += stl.write(model, out_dir / "stl")
     if "step" in formats:
-        status("writing STEP (exact solids, fusing per part - the slowest step on dense boards)")
+        status("writing STEP" + (" (exact solids, fusing per part - the slowest step on dense boards)" if P.Run.BUILD_WITH_KERNELS else ""))
         p = step.write(model, out_dir / f"{model.name}.step", log)
         if p:
             files.written.append(p)

@@ -14,6 +14,7 @@ trimesh==5.1.1
 manifold3d==3.5.4
 mapbox_earcut==2.1.0
 rtree==1.4.1
-# STEP output (optional: without it every other format still works and the run says cadquery is missing)
+# STEP by OpenCascade (Run.BUILD_WITH_KERNELS) and the tests' read-back of STEP files (optional: STEP is
+# written without it; with BUILD_WITH_KERNELS the run says cadquery is missing)
 cadquery==2.8.0
 cadquery-ocp>=7.9.3.1,<8.0

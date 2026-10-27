@@ -20,7 +20,7 @@ sys.path.insert(0, str(ROOT))
 import numpy as np  # noqa: E402
 
 from kese.pipeline import generate  # noqa: E402
-from kese.s8_verify.meshes import verify  # noqa: E402
+from kese.s8_verify.verify import every_check  # noqa: E402
 
 BASELINE = ROOT / "tests" / "baseline.json"
 OUT = ROOT / "tests" / "out"
@@ -56,7 +56,7 @@ def run_board(pcb, mode):
     """-> (verifier ok, verifier lines, {part: volume mm3}, step problems or None)"""
     formats = FORMATS[mode]
     out_dir, model = generate(pcb, mode=mode, formats=formats, out_root=OUT, verify=False, log=lambda s: None)
-    ok, lines = verify(model)
+    ok, lines = every_check(model)
     scale = 1000.0 if model.units == "m" else 1.0
     with np.errstate(divide="ignore", invalid="ignore"):     # a skin part with no volume has no centre either
         volumes = {part: float(m.volume) * scale ** 3 for part, m in model.meshes.items()}

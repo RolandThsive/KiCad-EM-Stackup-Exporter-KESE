@@ -18,3 +18,4 @@ class Model:
     units: str
     report: list                 # lines
     circles: list = field(default_factory=list)   # exact (centre, radius) of holes and via pads, mm board frame
+    boundaries: dict = field(default_factory=dict)  # part name -> Boundary (mm, board frame), the faces STEP writes

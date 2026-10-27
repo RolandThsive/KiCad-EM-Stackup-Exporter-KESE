@@ -43,6 +43,18 @@ COPPER_GROUPING = "net"
 #   "merged" - the whole laminate as one solid
 DIELECTRIC_GROUPING = "layer"
 
+# How the solids of "simulation" mode are built:
+#   False - the boundary of every part is found in 2D from its prisms (the material between two
+#           heights, the faces at every height) and written as it is: the same faces go into the
+#           meshes and, without a CAD kernel, into the STEP file
+#   True  - the old way: every prism extruded and joined by Manifold; STEP solids built and fused
+#           by OpenCascade (slow on dense boards)
+BUILD_WITH_KERNELS = False
+
+# How many parts are built at once in "simulation" mode (threads; the 2D geometry library runs
+# outside Python's lock): 0 = one per processor core
+WORKERS = 0
+
 # Live "running <stage> ... 1m 23s" line in the terminal while a board is generated
 SHOW_PROGRESS = True
 
@@ -59,6 +71,10 @@ EXPORT_SET_BUFFERVIEW_TARGETS = True   # keeps the Khronos glTF validator report
 SMOOTH_SHADE_ANGLE_DEG = 25.0          # edges sharper than this stay crisp; cylinders shade smooth
 
 # STEP export
+#
+# Without a kernel (BUILD_WITH_KERNELS = False) every part is written as the closed solid stage 6
+# built, one body per connected piece, with its flat faces and walls as they are: STEP_EXACT_ARCS
+# and STEP_FUSE_ROLES below only apply to the OpenCascade writer (BUILD_WITH_KERNELS = True).
 #
 # STEP_EXACT_ARCS - write circles and arcs as true curves.  The 2D geometry is built from
 #   polylines (every curve faceted to parameters/geometry.py); in the STEP file, runs of vertices

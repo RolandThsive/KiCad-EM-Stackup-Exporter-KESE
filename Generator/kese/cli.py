@@ -29,7 +29,7 @@ OPTIONAL = {"step": "cadquery"}
 
 def missing_packages(formats):
     """Names of packages that are not installed, so the run can say so instead of a traceback."""
-    needed = REQUIRED + [pkg for fmt, pkg in OPTIONAL.items() if fmt in formats]
+    needed = REQUIRED + [pkg for fmt, pkg in OPTIONAL.items() if fmt in formats and P.Run.BUILD_WITH_KERNELS]
     return [pkg for pkg in needed if importlib.util.find_spec(pkg) is None]
 
 

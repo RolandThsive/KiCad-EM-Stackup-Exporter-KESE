@@ -18,11 +18,14 @@ def output_transform():
     return np.diag([scale, scale, scale, 1.0]) @ rot
 
 
-def finish_mesh(mesh, mat):
-    # merge vertices two decades below the snap grid, then drop only faces that collapsed onto a
-    # repeated vertex (zero-area triangles with three distinct vertices stay: the union needs them)
-    digits = int(round(-np.log10(P.Geometry.SNAP_GRID_MM))) + 2
-    mesh.merge_vertices(digits_vertex=digits)
+def finish_mesh(mesh, mat, merged=False):
+    """The mesh in output units and orientation, shaded smooth.  Vertices within two decades of
+    the snap grid of each other are merged first, unless `merged` says the mesh has every vertex
+    once already (one built from faces that share their vertices, kese/core/boundary_mesh.py);
+    then only the faces that collapsed onto a repeated vertex go (zero-area triangles with three
+    distinct vertices stay: the union needs them)."""
+    if not merged:
+        mesh.merge_vertices(digits_vertex=int(round(-np.log10(P.Geometry.SNAP_GRID_MM))) + 2)
     f = mesh.faces
     mesh.update_faces((f[:, 0] != f[:, 1]) & (f[:, 1] != f[:, 2]) & (f[:, 0] != f[:, 2]))
     mesh.remove_unreferenced_vertices()
