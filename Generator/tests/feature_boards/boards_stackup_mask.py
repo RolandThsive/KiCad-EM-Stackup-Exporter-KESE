@@ -1,9 +1,11 @@
-"""Boards 14 to 18: stack-ups, plated edges and castellated pads, solder mask and silkscreen, and
-gold edge fingers."""
+"""Boards 14 to 18: stack-ups, plated edges and castellated pads, a plated edge with a copper border,
+solder mask and silkscreen, and gold edge fingers."""
+import math
+
 from common import OUTER, PLAIN, at, new_board
 from footprints7 import footprint, pad, shape, text
-from kicad7 import (copper_names, core, gr_circle, gr_line, gr_poly, gr_rect, gr_text, prepreg, segment,
-                    stackup, via, zone)
+from kicad7 import (arc, copper_names, core, gr_arc, gr_circle, gr_line, gr_poly, gr_rect, gr_text, prepreg,
+                    segment, stackup, via, zone)
 
 THT = ("*.Cu", "*.Mask")
 SMD = ("F.Cu", "F.Paste", "F.Mask")
@@ -72,6 +74,99 @@ def edge_plating_castellation():
     return b
 
 
+def rounded_rect(x0, y0, x1, y1, r):
+    """The sides of a rectangle with corners rounded to radius r, in turn from the top: ("line", a, c)
+    and ("arc", start, mid, end), points given from the board's top-left corner."""
+    k = r * (1 - math.sqrt(0.5))
+    return [("line", (x0 + r, y0), (x1 - r, y0)), ("arc", (x1 - r, y0), (x1 - k, y0 + k), (x1, y0 + r)),
+            ("line", (x1, y0 + r), (x1, y1 - r)), ("arc", (x1, y1 - r), (x1 - k, y1 - k), (x1 - r, y1)),
+            ("line", (x1 - r, y1), (x0 + r, y1)), ("arc", (x0 + r, y1), (x0 + k, y1 - k), (x0, y1 - r)),
+            ("line", (x0, y1 - r), (x0, y0 + r)), ("arc", (x0, y0 + r), (x0 + k, y0 + k), (x0 + r, y0))]
+
+
+def drawn(b, sides, layer, width):
+    """The sides as graphic lines and arcs on a layer."""
+    return [gr_line(b, at(*s[1]), at(*s[2]), layer, width) if s[0] == "line" else
+            gr_arc(b, at(*s[1]), at(*s[2]), at(*s[3]), layer, width) for s in sides]
+
+
+def tracked(b, sides, layer, width, net):
+    """The sides as tracks and arc tracks of a net."""
+    return [segment(b, at(*s[1]), at(*s[2]), width, layer, net) if s[0] == "line" else
+            arc(b, at(*s[1]), at(*s[2]), at(*s[3]), width, layer, net) for s in sides]
+
+
+def along(sides, step):
+    """Points about step apart along the straight sides, both ends included."""
+    out = []
+    for s in sides:
+        if s[0] == "line":
+            (ax, ay), (cx, cy) = s[1], s[2]
+            n = max(1, round(math.dist(s[1], s[2]) / step))
+            out += [(ax + (cx - ax) * i / n, ay + (cy - ay) * i / n) for i in range(n + 1)]
+    return out
+
+
+def edge_plating_border():
+    """A plated board edge (edge_plating yes) as RF boards have it: a GND border 1.2 mm wide on every
+    copper layer along the rounded outline and 1.0 mm wide around a rounded cut-out, the solder mask
+    open over it on both sides, a fence of GND vias in the border, GND planes on F.Cu, In1.Cu and
+    B.Cu, a +3V3 plane on In2.Cu, plated mounting holes, and a few parts.  Green mask, white silk,
+    ENIG."""
+    b = new_board("edge_plating_border", 4, None, stack=False)
+    stackup(b, PLAIN[4], [OUTER, 0.0175, 0.0175, OUTER], mask_color="Green", silk_color="White", finish="ENIG",
+            extra=("(edge_plating yes)",))
+    W, H, R = 40.0, 28.0, 2.0                                   # outline, corner radius
+    CUT, RC = (14.0, 18.0, 26.0, 23.0), 1.0                      # cut-out, corner radius
+    RIM, RIM_CUT = 1.2, 1.0                                      # border widths
+    outer = rounded_rect(0, 0, W, H, R)
+    cut = rounded_rect(*CUT, RC)
+    rim = rounded_rect(RIM / 2, RIM / 2, W - RIM / 2, H - RIM / 2, R - RIM / 2)
+    x0, y0, x1, y1 = CUT
+    h = RIM_CUT / 2
+    rim_cut = rounded_rect(x0 - h, y0 - h, x1 + h, y1 + h, RC + h)
+    b.add(*drawn(b, outer, "Edge.Cuts", 0.1), *drawn(b, cut, "Edge.Cuts", 0.1))
+    for layer in copper_names(4):
+        b.add(*tracked(b, rim, layer, RIM, "GND"), *tracked(b, rim_cut, layer, RIM_CUT, "GND"))
+    for layer in ("F.Mask", "B.Mask"):                           # the mask open over the border
+        b.add(*drawn(b, rim, layer, RIM + 0.1), *drawn(b, rim_cut, layer, RIM_CUT + 0.1))
+    b.add(*[via(b, at(*p), 0.6, 0.3, "GND") for p in along(rim, 2.0) + along(rim_cut, 1.5)])
+    full = [at(0, 0), at(W, 0), at(W, H), at(0, H)]
+    b.add(zone(b, "GND", ["F.Cu"], full), zone(b, "GND", ["In1.Cu"], full),
+          zone(b, "+3V3", ["In2.Cu"], full, clearance=0.5), zone(b, "GND", ["B.Cu"], full))
+    for i, (x, y) in enumerate(((4, 4), (W - 4, 4), (4, H - 4), (W - 4, H - 4))):
+        b.add(footprint(b, "Feature:MountingHole", at(x, y), children=[
+            text("reference", f"H{i + 1}", (0, -2.6), "F.SilkS", hide=True, size=1, thickness=0.15),
+            pad("1", "thru_hole", "circle", (0, 0), (3.6, 3.6), THT, drill=2.2, net="GND")]))
+    qfn = [pad(str(i + 1), "smd", "rect", p, sz, SMD, net=n) for i, (p, sz, n) in enumerate(
+        [((-1.9, -0.8 + 0.8 * k), (0.8, 0.4), ("GND", "RF_IN", "GND")[k]) for k in range(3)]
+        + [((1.9, -0.8 + 0.8 * k), (0.8, 0.4), ("GND", "RF_OUT", "GND")[k]) for k in range(3)]
+        + [((-0.8 + 0.8 * k, -1.9), (0.4, 0.8), ("+3V3", "+3V3", "GND")[k]) for k in range(3)]
+        + [((-0.8 + 0.8 * k, 1.9), (0.4, 0.8), "GND") for k in range(3)])]
+    b.add(footprint(b, "Feature:QFN12", at(20, 9), children=[
+        ref("U1", -3.4), *qfn, pad("13", "smd", "rect", (0, 0), (2.0, 2.0), SMD, net="GND"),
+        shape("rect", "F.SilkS", 0.15, a=(-2.6, -2.6), c=(2.6, 2.6))]))
+    for name, x, net in (("J1", 6.5, "RF_IN"), ("J2", 33.5, "RF_OUT")):
+        b.add(footprint(b, "Feature:RFLaunch", at(x, 9), children=[
+            ref(name, -2.6), pad("1", "smd", "rect", (0, 0), (1.5, 1.0), SMD, net=net),
+            pad("2", "smd", "rect", (0, -1.6), (1.5, 1.2), SMD, net="GND"),
+            pad("3", "smd", "rect", (0, 1.6), (1.5, 1.2), SMD, net="GND")]))
+    b.add(footprint(b, "Feature:C0603", at(20, 4), children=[
+        ref("C1", -1.6), pad("1", "smd", "rect", (-0.8, 0), (0.9, 0.9), SMD, net="+3V3"),
+        pad("2", "smd", "rect", (0.8, 0), (0.9, 0.9), SMD, net="GND")]))
+    b.add(segment(b, at(7.25, 9), at(17.7, 9), 0.5, "F.Cu", "RF_IN"),
+          segment(b, at(22.3, 9), at(32.75, 9), 0.5, "F.Cu", "RF_OUT"),
+          segment(b, at(19.2, 6.7), at(19.2, 4), 0.3, "F.Cu", "+3V3"),
+          segment(b, at(19.2, 7.1), at(20, 7.1), 0.3, "F.Cu", "+3V3"),
+          segment(b, at(19.2, 4), at(17, 4), 0.3, "F.Cu", "+3V3"),
+          via(b, at(17, 4), 0.6, 0.3, "+3V3"),
+          *[via(b, at(20 + dx, 9 + dy), 0.6, 0.3, "GND") for dx in (-0.5, 0.5) for dy in (-0.5, 0.5)])
+    b.add(gr_text(b, "KESE", at(9, 15.2), "F.SilkS", size=2, thickness=0.3),
+          gr_text(b, "PLATED EDGE", at(31, 15.2), "F.SilkS", size=1, thickness=0.15),
+          gr_text(b, "EDGE PLATING", at(20, 25.6), "B.SilkS", size=1, thickness=0.15, justify=("mirror",)))
+    return b
+
+
 def mask_silk():
     """Solder mask openings from the board's pad-to-mask clearance, a footprint's margin, a pad's own
     margin and a negative one; plated pads; openings drawn on F.Mask and B.Mask (a rectangle over
@@ -124,4 +219,4 @@ def finishes():
     return b
 
 
-BOARDS = [stackup_full, stackup_none, edge_plating_castellation, mask_silk, finishes]
+BOARDS = [stackup_full, stackup_none, edge_plating_castellation, edge_plating_border, mask_silk, finishes]

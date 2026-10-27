@@ -31,6 +31,7 @@ ORDER = [("01", hv.holes_slotted), ("02", hv.holes_round), ("03", hv.vias_throug
          ("08b", later.copper_graphics_nets), ("09", pc.copper_text), ("10", pc.tracks_arcs),
          ("11", zo.zones), ("12", zo.outline_shapes), ("13a", zo.outline_none), ("13b", zo.outline_two),
          ("14", sm.stackup_full), ("15", sm.stackup_none), ("16", sm.edge_plating_castellation),
+         ("16b", sm.edge_plating_border),
          ("17", sm.mask_silk), ("18", sm.finishes), ("19", sk.skipped_items),
          ("19b", sk.skipped_items_k10), *[(f"20{c}", fn) for c, fn in later.VERSIONS]]
 FORMATS = {20211014: "KiCad 6", 20221018: "KiCad 7", 20240108: "KiCad 8", 20241229: "KiCad 9",
@@ -87,11 +88,13 @@ cd Generator
 python tests/feature_boards/make.py
 ```
 
+The regression suite (`Generator/tests/test_boards.py`) runs every board here through every
+output; after changing a board, run `python tests/test_boards.py --accept` to record it again.
+
 Boards in KiCad 7's format were read back, zone-filled and saved by KiCad 7 itself, so they are
-exactly what KiCad writes, including the outlines of TrueType text. Features that only KiCad 10
-has, and the small board repeated in KiCad 6, 8, 9 and 10's formats, are written by hand, token for
-token as that version's file writer does, with the zone fills KiCad 7 makes for the same zones.
-KiCad 7 reads the KiCad 6 board; open the others once in their KiCad to confirm they load.
+exactly what KiCad writes, including the outlines of TrueType text. Features that only KiCad 8, 9
+or 10 have are on hand-written boards in that version's format, written from KiCad's own file
+writer source; open those once in that KiCad to confirm they load.
 
 | File | Format | What it covers |
 |---|---|---|

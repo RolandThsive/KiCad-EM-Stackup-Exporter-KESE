@@ -50,3 +50,10 @@ def edge_plating(r, items, log):
     r.slab = [sh.diff(s, band) for s in r.slab]
     for l in (r.layers[0], r.layers[-1]):
         r.copper[l][net] = sh.snap(union([r.copper[l].get(net, EMPTY), band]))
+    # the band runs through the inner layers' copper bands, as a barrel through its drill: the
+    # inner copper stops at the band and touches it
+    for l in r.layers[1:-1]:
+        if net in r.copper[l]:
+            r.copper[l][net] = sh.diff(r.copper[l][net], band)
+            if r.copper[l][net].is_empty:
+                del r.copper[l][net]

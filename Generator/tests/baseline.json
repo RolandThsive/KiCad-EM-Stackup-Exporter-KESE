@@ -1085,5 +1085,30 @@
   "Top Mask over Copper": 0.005795221,
   "Top Silkscreen": 0.044446469,
   "Top Solder Mask": 4.053523641
+ },
+ "16b_edge_plating_border/simulation": {
+  "Board_dielectric 1": 206.744942526,
+  "Board_dielectric 2": 1129.749637361,
+  "Board_dielectric 3": 208.406497535,
+  "Bottom Silkscreen": 0.037317228,
+  "Bottom Solder Mask": 8.221544451,
+  "Copper_+3V3": 12.535233814,
+  "Copper_GND": 100.694886376,
+  "Copper_RF_IN": 0.246896545,
+  "Copper_RF_OUT": 0.246896545,
+  "Top Silkscreen": 0.148702191,
+  "Top Solder Mask": 8.103721038
+ },
+ "16b_edge_plating_border/visual": {
+  "Bottom Mask over Copper": 8.518093005,
+  "Bottom Silkscreen": 0.037317228,
+  "Bottom Solder Mask": -1.09250215,
+  "Copper_+3V3": -0.077900416,
+  "Copper_GND": 1661.677914061,
+  "Copper_RF_IN": 0.0,
+  "Copper_RF_OUT": 0.0,
+  "Top Mask over Copper": 8.544568515,
+  "Top Silkscreen": 0.117638199,
+  "Top Solder Mask": -2.588852984
  }
 }
