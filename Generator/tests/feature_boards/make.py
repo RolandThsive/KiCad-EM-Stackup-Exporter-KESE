@@ -32,7 +32,8 @@ ORDER = [("01", hv.holes_slotted), ("02", hv.holes_round), ("03", hv.vias_throug
          ("11", zo.zones), ("12", zo.outline_shapes), ("13a", zo.outline_none), ("13b", zo.outline_two),
          ("14", sm.stackup_full), ("15", sm.stackup_none), ("16", sm.edge_plating_castellation),
          ("16b", sm.edge_plating_border),
-         ("17", sm.mask_silk), ("18", sm.finishes), ("19", sk.skipped_items),
+         ("17", sm.mask_silk), ("17b", sm.silk_over_copper),
+         ("18", sm.finishes), ("19", sk.skipped_items),
          ("19b", sk.skipped_items_k10), *[(f"20{c}", fn) for c, fn in later.VERSIONS]]
 FORMATS = {20211014: "KiCad 6", 20221018: "KiCad 7", 20240108: "KiCad 8", 20241229: "KiCad 9",
            20260206: "KiCad 10"}

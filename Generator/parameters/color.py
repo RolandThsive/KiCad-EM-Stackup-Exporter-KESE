@@ -48,6 +48,7 @@ STACKUP_MASK_COLORS = {
 }
 STACKUP_SILK_COLORS = {
     "white": "#F0F0EC", "black": "#141414", "yellow": "#E6C828",
+    "green": "#126830", "red": "#A01414", "blue": "#14328C", "purple": "#501E6E",
 }
 # When the stackup mask colour is used in visual mode, the mask-over-copper colour is this one
 # instead; set to None to keep the MATERIALS entry.

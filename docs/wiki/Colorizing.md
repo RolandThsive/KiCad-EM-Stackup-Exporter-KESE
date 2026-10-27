@@ -38,7 +38,7 @@ those names are honoured through three tables:
 | Table | Maps | Entries |
 |---|---|---|
 | `STACKUP_MASK_COLORS` | mask colour name to hex | green, red, blue, black, white, yellow, purple, matte green, matte black, matte blue, matte red |
-| `STACKUP_SILK_COLORS` | silkscreen colour name to hex | white, black, yellow |
+| `STACKUP_SILK_COLORS` | silkscreen colour name to hex | white, black, yellow, green, red, blue, purple (every named colour KiCad's Board Setup offers) |
 | `STACKUP_MASK_OVER_COPPER_COLORS` | mask colour name to the lighter "mask on copper" hex used in visual mode | the same mask colours |
 
 Names are matched in lower case; a name not in the table keeps the `MATERIALS` colour. The

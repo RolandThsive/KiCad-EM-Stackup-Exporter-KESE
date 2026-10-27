@@ -1110,5 +1110,39 @@
   "Top Mask over Copper": 8.544568515,
   "Top Silkscreen": 0.117638199,
   "Top Solder Mask": -2.588852984
+ },
+ "17b_silk_over_copper/simulation": {
+  "Board_dielectric 1": 904.820143501,
+  "Bottom Silkscreen": 0.041178387,
+  "Bottom Solder Mask": 6.011992192,
+  "Copper_J": 0.224359992,
+  "Copper_T1": 0.21334871,
+  "Copper_T2": 0.433396891,
+  "Copper_T3": 0.893573565,
+  "Copper_T4": 1.897399784,
+  "Copper_U1": 0.0294,
+  "Copper_U2": 0.0294,
+  "Copper_U3": 0.0294,
+  "Copper_U4": 0.0294,
+  "Copper_U5": 0.0294,
+  "Copper_U6": 0.0294,
+  "Top Silkscreen": 0.173448434,
+  "Top Solder Mask": 5.858479744
+ },
+ "17b_silk_over_copper/visual": {
+  "Board_dielectric 1": 906.0,
+  "Bottom Mask over Copper": 0.0,
+  "Bottom Silkscreen": 0.074690887,
+  "Bottom Solder Mask": 7.776552527,
+  "Copper_J": -1.113923226,
+  "Copper_U1": 0.0,
+  "Copper_U2": 0.0,
+  "Copper_U3": 0.0,
+  "Copper_U4": 0.0,
+  "Copper_U5": 0.0,
+  "Copper_U6": 0.0,
+  "Top Mask over Copper": 0.0,
+  "Top Silkscreen": -0.440179779,
+  "Top Solder Mask": 8.446579781
  }
 }

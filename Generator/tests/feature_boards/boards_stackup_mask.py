@@ -1,5 +1,5 @@
 """Boards 14 to 18: stack-ups, plated edges and castellated pads, a plated edge with a copper border,
-solder mask and silkscreen, and gold edge fingers."""
+solder mask and silkscreen, silkscreen over copper, and gold edge fingers."""
 import math
 
 from common import OUTER, PLAIN, at, new_board
@@ -202,6 +202,34 @@ def mask_silk():
     return b
 
 
+def silk_over_copper():
+    """Silkscreen over copper: text and a line printed across four tracks 0.25 to 2 mm wide on F.Cu,
+    and a line across the same tracks on B.Cu, so the ink rides over the mask on the copper; a
+    footprint whose silk outline runs across its pads, a silk circle across a through-hole pad, and
+    silk text across an opening drawn on F.Mask (for SILKSCREEN_OVER_COPPER).  White mask, black
+    silk, ENIG."""
+    b = new_board("silk_over_copper", 2, (30, 20), stack=False)
+    stackup(b, PLAIN[2], OUTER, mask_color="White", silk_color="Black", finish="ENIG")
+    for i, (x, w) in enumerate(((3.5, 0.25), (6.5, 0.5), (10, 1.0), (14.5, 2.0))):
+        b.add(segment(b, at(x, 2), at(x, 14), w, "F.Cu", f"T{i + 1}"),
+              segment(b, at(x, 2), at(x, 14), w, "B.Cu", f"T{i + 1}"))
+    b.add(gr_text(b, "SILK ON TRACES", at(9.25, 5.5), "F.SilkS", size=1.2, thickness=0.25),
+          gr_line(b, at(1.5, 10), at(17.5, 10), "F.SilkS", 0.25),
+          gr_line(b, at(1.5, 10), at(17.5, 10), "B.SilkS", 0.25))
+    smd = lambda n, x, y: pad(n, "smd", "rect", (x, y), (1.4, 0.6), SMD, net=f"U{n}")
+    b.add(footprint(b, "Feature:SilkAcrossPads", at(24, 5.5), children=[
+        ref("U1", -3), smd("1", -2, -1.27), smd("2", -2, 0), smd("3", -2, 1.27),
+        smd("4", 2, 1.27), smd("5", 2, 0), smd("6", 2, -1.27),
+        shape("rect", "F.SilkS", 0.2, a=(-2, -2.1), c=(2, 2.1)),
+        shape("circle", "F.SilkS", 0, filled=True, c=(-2.9, -1.27), r=0.25)]))
+    b.add(footprint(b, "Feature:SilkAcrossTHT", at(21.5, 13), children=[
+        ref("J1", -1.8), pad("1", "thru_hole", "circle", (0, 0), (1.7, 1.7), THT, drill=1.0, net="J"),
+        shape("circle", "F.SilkS", 0.2, c=(0, 0), r=0.75)]))
+    b.add(gr_rect(b, at(25, 11.5), at(28.5, 14.5), "F.Mask", 0.1, filled=True),
+          gr_text(b, "OPEN", at(26.75, 13), "F.SilkS", size=1.2, thickness=0.25))
+    return b
+
+
 def finishes():
     """Gold edge fingers: edge-connector pads on both sides running to a bevelled card edge
     (edge_connector bevelled), with a hard gold finish."""
@@ -219,4 +247,5 @@ def finishes():
     return b
 
 
-BOARDS = [stackup_full, stackup_none, edge_plating_castellation, edge_plating_border, mask_silk, finishes]
+BOARDS = [stackup_full, stackup_none, edge_plating_castellation, edge_plating_border, mask_silk, silk_over_copper,
+          finishes]

@@ -299,7 +299,7 @@ The look of every part: the GLB and OBJ materials, the part colours in STEP and 
 | `VISUAL_MASK_OPAQUE` | `True` | bool | In visual mode the mask is opaque whatever its alpha |
 | `USE_STACKUP_COLORS` | `True` | bool | Honour the colour names in the board's stack-up |
 | `STACKUP_MASK_COLORS` | 11 names | `{name: hex}` | Mask colour names |
-| `STACKUP_SILK_COLORS` | white, black, yellow | `{name: hex}` | Silkscreen colour names |
+| `STACKUP_SILK_COLORS` | white, black, yellow, green, red, blue, purple | `{name: hex}` | Silkscreen colour names |
 | `STACKUP_MASK_OVER_COPPER_COLORS` | 11 names | `{name: hex or None}` | Visual-mode colour of the mask over copper per stack-up colour; an entry set to `None` (or left out) keeps the `MATERIALS` colour |
 
 | Previous | Next |
