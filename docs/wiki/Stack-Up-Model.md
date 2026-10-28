@@ -4,8 +4,7 @@ The stack-up decides the height of every layer. It is read once per board
 (`kese/s2_collect/stackup.py`), its heights are computed once (`kese/s4_geometry/heights.py`), and
 it is printed at the top of `report.txt`, so every z value in the model can be checked against it.
 
-<!-- Picture wanted: Stackup 1, a cross-section of a 4-layer board with the z axis, the laminate
-     mid-plane at z = 0, outer copper on the faces, inner copper inside, mask and silk on top. -->
+![Board tests/boards/six_layer cut through pad 1 of J1 at true scale: the silkscreen on the mask, the mask on the laminate faces, the ENIG finish on the pad, the outer copper on the faces, the four inner copper layers between five dielectrics, the plated barrel; every layer listed with its thickness and its heights from the laminate mid-plane, and close-ups of the silk on the mask and of the pad's top edge](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/stackup_1_cross_section.png)
 
 ## 7.1 Heights
 
@@ -95,7 +94,7 @@ The mask starts at the laminate face and the silkscreen lies on top of the mask;
 are in [Solder Masks](Solder-Masks.md) and [Silkscreens](Silkscreens.md).
 
 For a 6-layer board with 0.1 / 0.3 / 0.2 / 0.3 / 0.1 mm dielectrics, 17.5 µm inner foil and
-35 µm outer foil (the `tests/boards/six_layer.kicad_pcb` board), equation (7.1) gives
+35 µm outer foil (the `tests/boards/six_layer.kicad_pcb` board in the picture), equation (7.1) gives
 $`L = 1.0 + 4 \times 0.0175 = 1.07`$ mm and equation (7.6) gives the top of `In1.Cu` at
 $`0.535 - 0.1 = 0.435`$ mm, as `report.txt` shows:
 
@@ -223,7 +222,7 @@ h_i^{*} = s \cdot h_i \qquad (7.13)
 | Feature | Height used |
 |---|---|
 | Dielectric $`d_i`$ | equations (7.8) and (7.9) |
-| Resin beside inner copper | the inner copper's own band, filled from the adjacent prepreg, else from the dielectric above ([Board](Board.md)) |
+| Resin beside inner copper | the inner copper's own band, filled from the adjacent prepreg, else from the dielectric above (box 2 of the picture; [Board](Board.md)) |
 | Copper of layer $`l_k`$ | its band, equations (7.4) to (7.7) |
 | Via barrel from layer $`l_i`$ to $`l_j`$ | between the copper layers it joins; outer copper caps it, inner copper is drilled through, so the barrel passes through inner bands ([Copper And Traces](Copper-And-Traces.md)) |
 | Solder mask | from the laminate face: mask thickness over laminate, copper + mask thickness over copper ([Solder Masks](Solder-Masks.md)) |
