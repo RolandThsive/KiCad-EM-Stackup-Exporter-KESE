@@ -23,20 +23,22 @@ packages are:
 | Package | Used for |
 |---|---|
 | `numpy`, `scipy`, `networkx` | Numerics and the mesh libraries' dependencies |
-| `shapely` | All 2D geometry: tracks, pads, zones, outline, mask, silk |
-| `trimesh`, `manifold3d`, `mapbox_earcut`, `rtree` | Extrusion, boolean union of solids, GLB and STL export, the Verifier's ray tests (KESE writes OBJ itself) |
-| `cadquery`, `cadquery-ocp` | STEP output only (optional) |
+| `shapely` | All 2D geometry: tracks, pads, zones, outline, mask, silk, and the faces of every solid |
+| `mapbox_earcut`, `manifold3d` | Cutting the faces into triangles: earcut, and Manifold's triangulator where earcut's triangles do not close on the edges |
+| `trimesh`, `rtree` | The meshes, GLB and STL export, and the Verifier's ray tests (KESE writes OBJ and STEP itself) |
+| `cadquery`, `cadquery-ocp` | Optional: only for `Run.BUILD_WITH_KERNELS = True`, the older way that joins the solids with Manifold and builds the STEP file with OpenCascade, and for the tests that read STEP files back |
 
-Without `cadquery`, every other format still works and a run that asks for STEP stops with a
-message that names the missing package. The program checks the packages before it starts and
-prints the `pip install` line to run, instead of a traceback.
+KESE writes STEP itself, so every format works without `cadquery`. Only a run with
+`Run.BUILD_WITH_KERNELS = True` that asks for STEP needs it, and stops with a message that names
+the missing package. The program checks the packages before it starts and prints the
+`pip install` line to run, instead of a traceback.
 
 Or install the project itself through `pyproject.toml`, with the packages unpinned (it also
 accepts Python 3.11, which is not tested):
 
 ```bash
 python -m pip install -e .            # the kese command, the same as python run_KESE.py
-python -m pip install -e ".[step]"    # the same, with cadquery for STEP output
+python -m pip install -e ".[step]"    # the same, with cadquery (Run.BUILD_WITH_KERNELS)
 ```
 
 `-e` keeps `parameters/` editable in place. `Input/` and `Output/` stay relative to the folder
@@ -64,8 +66,8 @@ the command is run from.
    ```
 
 4. Open `Output/<board>/simulation_GLB/report.txt`. It lists the stack-up heights, every item that
-   was read, every item that was skipped and why (hidden text and text on layers that are not drawn are left
-   out without a count), and the triangle count of every part. See
+   was read, every item that was skipped and why (hidden text and text on layers that are not drawn
+   are left out without a count), and the triangle count of every part. See
    [Project Output Organization](Project-Output-Organization.md).
 
 5. Bring the model into your solver or viewer: [Choosing An Export](Choosing-An-Export.md) and
@@ -77,7 +79,7 @@ the command is run from.
 python run_KESE.py                                   # every .kicad_pcb in Input/, settings from parameters/
 python run_KESE.py Input/board.kicad_pcb             # one board (several paths are allowed)
 python run_KESE.py board.kicad_pcb --mode visual     # simulation (solids) or visual (surface for viewers)
-python run_KESE.py board.kicad_pcb --format glb step stl obj --set Run.UNITS=mm   # STEP needs mm
+python run_KESE.py board.kicad_pcb --format glb step stl obj --set Run.UNITS=mm   # mm for CAD and solvers
 python run_KESE.py board.kicad_pcb --for hfss        # a preset: hfss, cst, openems or viewer
 python run_KESE.py board.kicad_pcb --verify          # run the Verifier; results in report.txt
 python run_KESE.py board.kicad_pcb --out /some/dir   # output root other than Output/
@@ -119,9 +121,11 @@ in its values. Only `--out` is not recorded there; the run folder's path shows i
    net, via barrels, solder mask, silkscreen and, if enabled, the surface finish.
 5. **Materials.** Each part gets a material from `parameters/color.py` (or the stack-up's colour
    names).
-6. **Assemble.** The regions are extruded and, in simulation mode, the pieces of each part are
-   joined by a boolean union into closed solids (pieces that do not touch, such as silkscreen
-   letters, stay separate bodies in the part); in visual mode only the visible surface is kept.
+6. **Assemble.** In simulation mode the surface of every part is worked out in 2D, height by
+   height: the faces looking up and down at each height and the walls between them, cut into
+   triangles. Each part comes out as closed solids without any 3D boolean operation (pieces that
+   do not touch, such as silkscreen letters, stay separate bodies in the part). In visual mode
+   only the surface that can be seen is kept, found the same way for all parts at once.
 7. **Write.** The requested model files are written, with `materials.json` next to them.
 8. **Verify** (only with `--verify` or `Run.VERIFY = True`), on the model just written; the GLB
    file also goes through `gltf_validator` when that tool is on the PATH.

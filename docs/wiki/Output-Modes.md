@@ -8,14 +8,15 @@ KESE writes the same geometry in two modes, chosen with `Run.MODE` or `--mode`. 
 
 ## 8.1 Simulation Mode
 
-`--mode simulation`: the physical board as it leaves the factory. **Every part is a closed
-solid**: each dielectric between two copper layers (core or prepreg), each net's copper with all of its layers and vias joined into
-one body, via and hole plating, solder mask conformal over the copper, silkscreen and, if
-enabled, the surface finish.
+`--mode simulation`: the physical board as it leaves the factory. **Every part is a closed solid**:
+each dielectric between two copper layers (core or prepreg), each net's copper with all of its
+layers and vias joined into one body, via and hole plating, solder mask conformal over the copper,
+silkscreen and, if enabled, the surface finish.
 
 - Parts touch exactly (shared vertices, exact z values) and do not overlap, apart from the known
-  exceptions listed in [Working Principle](Working-Principle.md#61-the-design-choice-that-matters-most); the Verifier checks that every
-  part is closed and that no two parts overlap.
+  exceptions listed in
+  [Working Principle](Working-Principle.md#61-the-design-choice-that-matters-most); the Verifier
+  checks that every part is closed, that its volume adds up and that no two parts overlap.
 - All four formats are allowed: GLB, STEP, STL, OBJ.
 - This is the mode for EM, SI / PI, thermal and mechanical solvers and for CAD.
 
@@ -33,43 +34,46 @@ Part names in simulation mode, with the default grouping:
 ## 8.2 Visual Mode
 
 `--mode visual`: **only the visible surface** of the same geometry, for web viewers such as
-`<model-viewer>` and three.js, and for renders. The skin builder (`kese/s6_assemble/skin.py`)
-extrudes every prism on its own and joins all of them in one exact boolean union (Manifold, in
-double precision). Where two prisms meet, their touching faces cancel, so what is left is the
-surface between material and air; every triangle remembers the prism it came from, so the surface
-is still split into named parts. Two kinds of faces are then dropped:
+`<model-viewer>` and three.js, and for renders. It is found in 2D, as the solids of simulation
+mode are, but for all parts at once (`kese/s6_assemble/skin_faces.py`): at every height, a face
+that looks up is one part's material below minus every part's material above, and a face that
+looks down one part's material above minus every part's material below; a wall of a part is kept
+where no other part's material stands against it. Where two parts meet, their touching faces are
+never made, so what is left is the surface between material and air, every face still in the
+part it came from. The faces are cut into triangles with their vertices shared across all parts
+(`skin_mesh.py`), a big face strip by strip as in simulation mode, and two kinds of triangles are
+then dropped:
 
-- the walls of a hollow sealed inside the board, such as the open bore of a buried via with
-  nothing stacked on it: a closed shell of the union that faces inward, which no one can see;
-- a face that looks at another prism across less than $`\varepsilon`$, two pieces that meet but
-  for rounding:
+- a triangle that looks at material across less than $`\varepsilon`$, two pieces that meet but
+  for rounding, or a slit narrower than that:
 
 ```math
-\text{keep face } f \iff \mathbf{c}_f + \varepsilon \hat{\mathbf{n}}_f \notin P \ \text{ for every prism } P \qquad (8.1)
+\text{keep face } f \iff \left(p_x,\ p_y\right) \notin M_k, \qquad \mathbf{p} = \mathbf{c}_f + \varepsilon \hat{\mathbf{n}}_f, \qquad z_k \le p_z < z_{k+1} \qquad (8.1)
 ```
 
 | Symbol | Meaning | Parameter |
 |---|---|---|
 | $`\mathbf{c}_f`$, $`\hat{\mathbf{n}}_f`$ | centre and outward unit normal of triangle $`f`$ | |
 | $`\varepsilon`$ | test offset (0.5 µm) | `Geometry.SKIN_BURIED_TEST_OFFSET_MM` |
-| $`P`$ | any prism of the model (a region between two heights), tested with the open z interval | |
+| $`\mathbf{p}`$ | the probe point, $`\varepsilon`$ in front of the triangle | |
+| $`z_k, z_{k+1}`$ | the two neighbouring heights of the model that $`p_z`$ falls between | |
+| $`M_k`$ | the material of every part between $`z_k`$ and $`z_{k+1}`$, joined into one region | |
+
+- the walls of a hollow sealed inside the board, such as the open bore of a buried via with
+  nothing stacked on it: a closed shell that faces inward, which no one can see.
 
 What remains is one outer surface, still split into named parts, closed but for the mouth of a
 slit whose walls (8.1) took out (a crack well under a micron wide). A part with no face in
 sight, such as the copper of a net that runs only on inner layers and through buried vias, has no
 surface left and is not in the file. A finish thinner than $`\varepsilon`$ (the 80 nm gold of
-ENIG) leaves one surface too: the nickel and copper faces under it touch the layer above and
-cancel in the union.
+ENIG) leaves one surface too: the nickel's and the copper's faces under it are covered by the
+layer above, so they are never made.
 
-A big board is joined in tiles, one after another, of about `Geometry.SKIN_TILE_POINTS` outline
-points each (250,000 by default), as KiCad cuts big polygons into a grid of cells before it
-triangulates them: one union of a whole dense board would need many GB at once. The tile edges lie
-halfway between two points of the snap grid, where no outline vertex is, and every outline edge
-that crosses one gets its crossing point first, worked out from the edge's lower end, so that every
-region with that edge gets the same point. The tiles therefore meet in exactly the same vertices.
-The faces that only close a tile are left out, and where one tile kept a vertex along the cut that
-its neighbour merged away (two faces in one plane made one), the neighbour's edge is split there.
-The result is the same surface as one union of the whole board.
+With `Run.BUILD_WITH_KERNELS = True` the skin is made the older way (`kese/s6_assemble/skin.py`):
+every prism extruded on its own and all of them joined in one exact boolean union (Manifold, in
+double precision), where touching faces cancel, the same two kinds of faces dropped afterwards.
+A big board is then joined in tiles of about `Geometry.SKIN_TILE_POINTS` outline points each
+(250,000 by default) that meet in exactly the same vertices (`tiles.py`).
 
 Why it exists: in the simulation model the mask lies on the copper and the copper on the
 laminate, with surfaces only microns apart. Viewers draw these with a depth buffer and the
@@ -100,7 +104,7 @@ Differences from simulation mode:
 | HFSS, CST, openEMS, FEKO, COMSOL, any FEA or thermal solver | simulation |
 | Mechanical CAD, checking the stack-up in a CAD viewer | simulation (STEP) |
 | A web page, a product render, a Blender scene | visual |
-| Smallest GLB of a dense board | visual (about 10 MB against 15 MB for the 4-layer example) |
+| Smallest GLB of a dense board | visual (6.5 MB against 13.3 MB in simulation mode for the 4-layer Coil example) |
 
 The `viewer` preset (`--for viewer`) selects visual mode, GLB, metres and a centred origin in one
 go. See [Choosing An Export](Choosing-An-Export.md).

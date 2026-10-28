@@ -12,14 +12,14 @@ zone fills joined to its vias and plated holes. `kese/s2_collect/` collects the 
 and net and `kese/s3_resolve/` resolves it; `kese/s4_geometry/copper.py` and `plating.py` turn it
 into prisms; the settings are in `parameters/copper.py`.
 
-<!-- Pictures wanted for this page (made by Roland):
-     Copper 1: one net's solid alone (traces on two layers joined by vias).
-     Copper 2: a via in cross-section: drill, plated wall, annular rings, the outer copper capping
-               the barrel, an inner layer drilled through.
-     Copper 3: the etch-factor trapezoid at ETCH_FACTOR 0 and 0.5, ETCH_STEPS 4.
-     Copper 4: a castellated edge and an edge-plated board edge. -->
+<!-- Picture still wanted for this page:
+     the etch-factor trapezoid at ETCH_FACTOR 0 and 0.5, ETCH_STEPS 4 (11.5). -->
 
 ## 11.1 What Makes Copper
+
+![Net GND on board 03_vias_through: the board from the top, the net's copper on each layer pulled apart, the closed solid Copper_GND, and a cut through one of its vias](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/copper_1_one_net_one_solid.png)
+
+![Net STAGGER on board 05_vias_micro: the copper of each of its layers in its own colour, the pieces in 3D at their heights, and a true-scale cut through its five vias](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/copper_2_net_eight_layers.png)
 
 Per copper layer, these items are collected with their net (text always as no net, see 11.1.1):
 
@@ -61,15 +61,14 @@ X_k = \begin{cases} \bigcup_{h : a_h \le k \le b_h} \left( H_h \ominus w_h \righ
 
 ### 11.1.1 Nets
 
-In KiCad 6 to 9 an item carries a net **number** that is looked up in the file's net table; KiCad
-10 writes the net **name** directly, and KESE reads both. Copper with no net (pads without a net such
+In KiCad 6 to 9 an item carries a net **number** that is looked up in the file's net table; KiCad 10
+writes the net **name** directly, and KESE reads both. Copper with no net (pads without a net such
 as mounting holes, net 0) is named `Copper.NO_NET_NAME`, `no_net` by default, so it becomes
 `Copper_no_net`. A graphic shape on a copper layer (a line, arc, circle, rectangle or polygon drawn
 as copper) takes the net KiCad stores on it, so a shape assigned to a net in KiCad joins that net's
-part; a shape with no net goes to `no_net`. Text on a copper layer has no net and always goes
-there. Pads of pins left unconnected in the schematic carry
-KiCad's own `unconnected-(...)` nets and become parts of their own, such as
-`Copper_unconnected-(U5-OUT-Pad3)`.
+part; a shape with no net goes to `no_net`. Text on a copper layer has no net and always goes there.
+Pads of pins left unconnected in the schematic carry KiCad's own `unconnected-(...)` nets and become
+parts of their own, such as `Copper_unconnected-(U5-OUT-Pad3)`.
 
 Copper of different nets never overlaps on a real board. If the file has an overlap (two nets'
 shapes drawn on top of each other), the net that was resolved first keeps the shared area, so the
@@ -108,8 +107,12 @@ A via contributes:
 - a plated **barrel**: the ring between the drill and the drill shrunk by the plating wall,
   running between the copper layers it joins, equations (11.4) to (11.6).
 
+![A through via on board 04_vias_blind_buried cut through its centre with its drill, bore and 25 µm wall, close-ups of the top and of an inner layer, and a through, a blind and a buried via side by side](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/copper_3_via_section.png)
+
 A through-hole pad contributes its pad shape on the listed layers and a barrel with
 `Copper.PTH_WALL_MM`. Oval (slot) drills become slot-shaped barrels.
+
+![Pad 1 of SLOT_H on board 01_holes_slotted: the board from the top, the slot cut along its length in 3D and at true scale, and the slot-shaped barrel at mid-height](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/copper_4_slotted_hole.png)
 
 The bore (the open hole left inside the plating) and the barrel of hole $`h`$ are:
 
@@ -187,6 +190,10 @@ bore (the drill minus the plating wall) is always left open through the mask, se
 
 ## 11.4 Copper Thickness And Plating
 
+![Board 14_stackup_full cut across its four traces at true scale, with close-ups of F.Cu 35 µm, In1.Cu 17.5 µm, In2.Cu 17.5 µm and B.Cu 70 µm](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/copper_5_thickness.png)
+
+![The plated hole of board 14_stackup_full at the top and bottom faces, without outer plating and with 20 µm of it, the foil, the outer plating and the hole's wall plating each in its own shade](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/copper_6_plating.png)
+
 ```math
 t_k = \begin{cases} t_{\mathrm{foil},k} + t_{\mathrm{plate}} & k = 0 \text{ or } k = N-1 \ \ \text{(outer)} \\ t_{\mathrm{foil},k} & 0 < k < N-1 \ \ \text{(inner)} \end{cases} \qquad (11.9)
 ```
@@ -247,6 +254,8 @@ from the foot to the free face.
 
 ## 11.6 Castellated Holes
 
+![The right edge of board 16_edge_plating_castellation with edge plating off: from the top, from outside, cut through castellation C3 at true scale, and its half-barrel at mid-height](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/copper_7_castellation.png)
+
 A castellation is a plated hole that the board edge cuts through (module edge connectors). KESE
 does not read KiCad's "Castellated pad" fabrication property of a pad; it finds castellations from
 the geometry, as plated holes whose drill crosses `Edge.Cuts`:
@@ -267,6 +276,10 @@ Then `Copper.CASTELLATION`:
 
 ## 11.7 Edge Plating
 
+![Board 16_edge_plating_castellation with its edge plated: the plated corner from outside, the left edge at true scale, and F.Cu at castellation C3 with and without the plated edge; GND in copper, C1 to C4 each in its own colour, with a colour key](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/copper_8_edge_plating.png)
+
+![Board 16b_edge_plating_border: the whole board with its plated sides, cut-out, GND border and via fence; the front right corner close up; and the left edge cut at true scale with the side plating, the GND border on all four copper layers and the +3V3 plane beside it](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/copper_9_edge_side_plating.png)
+
 Edge plating is copper on the routed board edge (edge-card connectors, RF shielding).
 `Copper.EDGE_PLATING`: `"file"` (default) follows the stack-up's `(edge_plating yes)`, `"yes"` and
 `"no"` force it. When on:
@@ -280,9 +293,9 @@ Edge plating is copper on the routed board edge (edge-card connectors, RF shield
   most copper touching the band (or `no_net`), or give a net name such as `"GND"`;
 - copper of **other** nets inside the band is moved to the edge net, since edge plating shorts
   everything that reaches the edge; `report.txt` lists what was moved;
-- inner-layer copper inside the band is not cut back: with `"net"` or `"merged"` grouping it
-  merges with the band, but with `Run.COPPER_GROUPING = "layer"` it overlaps the `Plating` part
-  by the inner copper thickness and the Verifier reports FAIL.
+- on the inner layers the band runs through the copper band as a barrel runs through its drill:
+  the inner copper, by then all of it the edge net's, stops at the band and touches it, and the
+  resin fill beside the inner copper stops there too.
 
 ```math
 E = \left( O \setminus \left( O \ominus w_e \right) \right) \setminus \bigcup_h H_h \qquad (11.14)
