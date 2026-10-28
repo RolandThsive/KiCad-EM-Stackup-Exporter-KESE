@@ -21,12 +21,17 @@ def build(r, ps):
         props = {"side": side, "thickness_mm": t_silk}
         z = lambda v: sign * v
         masked = r.mask[side]
-        # where the ink leaves the mask (openings that keep their silk) it steps down the mask edge
-        off_mask, on_mask, step = conformal_regions(silk, masked, t_silk, M.MASK_WALL_QUAD_SEGS, around="region")
-        ps.add(part, "silk", step, z(base), z(base + t_lam + t_silk), layer=f"{side}.SilkS", props=props)
-        # on the mask: the mask's surface is flat on laminate and raised over copper and the mask's
-        # own wall beside it; the ink climbs that step with a wall of its own, t_silk wide
+        # the mask's surface is flat on laminate and raised over copper and the mask's own wall beside it
         raised = grow(cu, t_lam, M.MASK_WALL_QUAD_SEGS) if not cu.is_empty else cu
+        # where the ink leaves the mask (openings that keep their silk) it steps down the mask edge,
+        # from the mask's surface beside it down to the copper or the laminate under it
+        off_mask, on_mask, step = conformal_regions(silk, masked, t_silk, M.MASK_WALL_QUAD_SEGS, around="region")
+        step_cu, step_off = sh.inter(step, cu), sh.diff(step, cu)
+        step_raised, step_flat = sh.inter(step_off, raised), sh.diff(step_off, raised)
+        ps.add(part, "silk", step_cu, z(base + cu_t), z(base + cu_t + t_cu + t_silk), layer=f"{side}.SilkS", props=props)
+        ps.add(part, "silk", step_raised, z(base), z(base + cu_t + t_cu + t_silk), layer=f"{side}.SilkS", props=props)
+        ps.add(part, "silk", step_flat, z(base), z(base + t_lam + t_silk), layer=f"{side}.SilkS", props=props)
+        # on the mask: the ink climbs the mask's raised surface with a wall of its own, t_silk wide
         flat, top, wall = conformal_regions(on_mask, raised, t_silk, M.MASK_WALL_QUAD_SEGS, around="region")
         ps.add(part, "silk", flat, z(base + t_lam), z(base + t_lam + t_silk), layer=f"{side}.SilkS", props=props)
         ps.add(part, "silk", top, z(base + cu_t + t_cu), z(base + cu_t + t_cu + t_silk), layer=f"{side}.SilkS", props=props)

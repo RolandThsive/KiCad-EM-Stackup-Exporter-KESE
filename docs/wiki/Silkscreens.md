@@ -148,20 +148,21 @@ On the `F` side, with $`h = L/2`$ the laminate face, these are extruded over:
 | $`S^{\mathrm{flat}}`$ | $`[h + m_L,\ h + m_L + s]`$ | on the mask over laminate |
 | $`S^{\mathrm{top}}`$ | $`[h + t + m_C,\ h + t + m_C + s]`$ | on the mask over copper |
 | $`S^{\mathrm{wall}}`$ | $`[h + m_L,\ h + t + m_C + s]`$ | climbing the mask step beside a trace |
-| $`S^{\mathrm{step}}`$ | $`[h,\ h + m_L + s]`$ | stepping down the edge of a mask opening |
+| $`S^{\mathrm{step}} \cap C`$ | $`[h + t,\ h + t + m_C + s]`$ | stepping down the edge of a mask opening onto copper |
+| $`(S^{\mathrm{step}} \setminus C) \cap K`$ | $`[h,\ h + t + m_C + s]`$ | stepping down to the laminate from the raised mask beside copper |
+| $`S^{\mathrm{step}} \setminus K`$ | $`[h,\ h + m_L + s]`$ | stepping down the edge of a mask opening onto the laminate |
 | $`S^{\mathrm{off}} \setminus C`$ | $`[h,\ h + s]`$ | on bare laminate in an opening |
 | $`S^{\mathrm{off}} \cap C`$ | $`[h + t,\ h + t + s]`$ | on bare copper in an opening |
 
-The last three exist only with `SILKSCREEN_OVER_COPPER = True`; otherwise the ink was already
-removed from every opening. On the `B` side every z is mirrored.
+The last five exist only with `SILKSCREEN_OVER_COPPER = True`; otherwise the ink was already
+removed from every opening. On the `B` side every z is mirrored. Each piece of the step starts on
+what lies under it, the copper or the laminate, and rises to the top of the ink on the mask beside
+it.
 
-> [!WARNING]
-> With `SILKSCREEN_OVER_COPPER = True` the ink can overlap other parts. $`S^{\mathrm{step}}`$
-> starts at the laminate face even where the opening's edge lies on copper, so it overlaps the
-> copper by $`m_L + s`$ (20 µm by default); that band is only $`s`$ wide, so the Verifier's random
-> rays usually miss it and the run can still PASS. $`S^{\mathrm{off}} \cap C`$ sits directly on the
-> copper, inside any surface finish there: with `Finish.FINISH_ENABLED = True` the Verifier reports
-> an overlap (5 µm with ENIG, the nickel layer). Use it for viewing, not for simulation.
+> [!NOTE]
+> With `SILKSCREEN_OVER_COPPER = True` the ink in an opening lies on the bare copper, and a
+> surface finish (`Finish.FINISH_ENABLED = True`) is left out under it, as when the legend is
+> printed before the finish. So the ink overlaps no other part with either setting.
 
 | Symbol | Meaning | Parameter |
 |---|---|---|
@@ -180,7 +181,7 @@ in `materials.json`.
 | Name | Default | Range | Meaning |
 |---|---|---|---|
 | `SILK_THICKNESS_MM` | `0.010` | mm > 0 | Ink thickness (typical 0.010 to 0.020) |
-| `SILKSCREEN_OVER_COPPER` | `False` | bool | Keep ink where the mask is open (for viewing only: it can overlap the copper and finish) |
+| `SILKSCREEN_OVER_COPPER` | `False` | bool | Keep ink where the mask is open, on the pads and the bare laminate (the finish is left out under it); `False` clips it off as fabricators do |
 | `FONT_FILE` | `None` | None or a file name in `kese/assets/fonts/` | Custom font; `None` = KiCad newstroke |
 | `DRAW_TRUETYPE_TEXT_WITH_STROKE_FONT` | `True` | bool | Draw TrueType-face text with the stroke font |
 | `INTERLINE_PITCH`, `INTERLINE_LEGACY_FACTOR` | `1.68`, `0.9583` | > 0 | KiCad's line pitch and stroke-font correction |

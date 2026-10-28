@@ -16,11 +16,13 @@ copper; it never changes the copper itself.
 
 On each side, the finish covers **exposed copper**: the copper of the outer layer intersected
 with the mask openings of that side (pads with their pad-to-mask clearance, drawn openings,
-untented vias). Copper under the mask gets no finish. The finish layers are stacked from the top
+untented vias). Copper under the mask gets no finish, nor does copper under silkscreen ink kept
+in an opening (`Silkscreen.SILKSCREEN_OVER_COPPER = True`): the legend is taken as printed
+before the finish. The finish layers are stacked from the top
 of the outer copper outward, in the order the finish type lists them, each one its own solid:
 
 ```math
-X_\sigma = C_\sigma \cap Q_\sigma \qquad (13.1)
+X_\sigma = \left( C_\sigma \cap Q_\sigma \right) \setminus S_\sigma \qquad (13.1)
 ```
 
 ```math
@@ -34,6 +36,7 @@ On the `B` side every z is mirrored.
 | $`X_\sigma`$ | exposed copper of side $`\sigma`$ (per net with `FINISH_GROUPING = "net"`) | |
 | $`C_\sigma`$ | outer copper of side $`\sigma`$ | |
 | $`Q_\sigma`$ | mask openings of side $`\sigma`$, equation (15.2) | |
+| $`S_\sigma`$ | silkscreen ink of side $`\sigma`$ kept in the openings; empty unless `SILKSCREEN_OVER_COPPER = True` | `Silkscreen.SILKSCREEN_OVER_COPPER` |
 | $`z_j`$ | z range of finish layer $`j`$ ($`j = 1`$ is the layer on the copper) | |
 | $`\tau_i`$ | thickness of finish layer $`i`$ | `Finish.FINISH_TYPES` |
 | $`L`$, $`t_{\mathrm{out}}`$ | laminate thickness and finished outer copper, equations (7.1) and (7.3) | |

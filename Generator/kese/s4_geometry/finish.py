@@ -31,10 +31,14 @@ def build(r, ps):
         return
     ps.notes.append(f"finish: {kind} " + " + ".join(f"{m} {t} mm" for m, t in layers))
     for side, layer, sign, tb in (("F", "F.Cu", 1, "Top"), ("B", "B.Cu", -1, "Bottom")):
+        # ink kept in the openings (SILKSCREEN_OVER_COPPER) is printed before the finish and keeps it off
+        inked = r.silk.get(side, sh.EMPTY) if P.Silkscreen.SILKSCREEN_OVER_COPPER else sh.EMPTY
         # one part per metal and side, or per metal and net (FINISH_GROUPING = "net")
         groups = r.copper[layer].items() if F.FINISH_GROUPING == "net" else [(None, r.copper_all.get(layer, sh.EMPTY))]
         for net, cu in groups:
             exposed = sh.inter(cu, r.mask_open[side])
+            if not inked.is_empty:
+                exposed = sh.diff(exposed, inked)
             if exposed.is_empty:
                 continue
             z = abs(st.band[layer][1] if sign > 0 else st.band[layer][0])

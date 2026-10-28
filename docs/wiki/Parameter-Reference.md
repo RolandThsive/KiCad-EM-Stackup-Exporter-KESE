@@ -160,7 +160,7 @@ Details in [Silkscreens](Silkscreens.md).
 | Name | Default | Range | Meaning |
 |---|---|---|---|
 | `SILK_THICKNESS_MM` | `0.010` | mm > 0 | Ink thickness (typical 0.010 to 0.020) |
-| `SILKSCREEN_OVER_COPPER` | `False` | bool | Keep ink where the mask is open; `False` clips it off the pads as fabricators do. `True` can overlap the copper and finish, so it is for viewing only |
+| `SILKSCREEN_OVER_COPPER` | `False` | bool | Keep ink where the mask is open; `False` clips it off the pads as fabricators do. With `True` the ink lies on the copper and the finish is left out under it |
 | `FONT_FILE` | `None` | None or a file in `kese/assets/fonts/` | Custom stroke-font JSON or Hershey `.jhf`; `None` = KiCad newstroke |
 | `DRAW_TRUETYPE_TEXT_WITH_STROKE_FONT` | `True` | bool | Text in a TrueType face is drawn with the stroke font |
 | `INTERLINE_PITCH` | `1.68` | > 0 | Line pitch as a multiple of the text height (KiCad's value) |

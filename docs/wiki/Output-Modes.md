@@ -13,7 +13,7 @@ layers and vias joined into one body, via and hole plating, solder mask conforma
 silkscreen and, if enabled, the surface finish.
 
 - Parts touch exactly (shared vertices, exact z values) and do not overlap, apart from the known
-  exceptions listed in
+  exception listed in
   [Working Principle](Working-Principle.md#61-the-design-choice-that-matters-most); the Verifier
   checks that every part is closed, that its volume adds up and that no two parts overlap.
 - All four formats are allowed: GLB, STEP, STL, OBJ.

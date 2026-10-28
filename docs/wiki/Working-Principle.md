@@ -52,10 +52,8 @@ parts[off] = shapely.set_precision(parts[off], grid())      # Geometry.SNAP_GRID
 - Where a region would pinch to a point (two pieces touching at one vertex), a disc of
   `Geometry.PINCH_POINT_OPENING_MM` is cut out of the smaller piece so that the solid can close
   (`kese/core/pinches.py`). Those vertices sit just off the grid.
-- Two known exceptions, where parts can overlap or leave a gap: silkscreen kept in mask openings
-  (`Silkscreen.SILKSCREEN_OVER_COPPER = True`, see [Silkscreens](Silkscreens.md)) and the wedge
-  beside a sloped copper wall (`Copper.ETCH_FACTOR > 0`, see
-  [Copper And Traces](Copper-And-Traces.md#115-etch-factor)).
+- One known exception, where parts can overlap or leave a gap: the wedge beside a sloped copper
+  wall (`Copper.ETCH_FACTOR > 0`, see [Copper And Traces](Copper-And-Traces.md#115-etch-factor)).
 - The price: curves are polygons, in the meshes and in the STEP file alike. Only the older
   OpenCascade path (`Run.BUILD_WITH_KERNELS = True`) writes true circles back into STEP.
 
