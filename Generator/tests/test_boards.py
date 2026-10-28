@@ -1,9 +1,11 @@
 """Regression suite: every board in tests/boards, featureTest/ and Input/ through every output with
-the Verifier on: simulation mode written as GLB and STEP, visual mode as GLB.
+the Verifier on: simulation mode written as GLB and STEP, visual mode as GLB.  Every board runs with
+the parameters in parameters/, but for the changes SETTINGS lists for it.
 
     python -m pytest tests                 (or:  python tests/test_boards.py)
     python tests/test_boards.py --accept   re-record tests/baseline.json after an intended geometry change
     python tests/test_boards.py --add      record only the boards the baseline does not have yet
+    python tests/test_boards.py --accept 18_finishes 18b_finish_pads   only the boards named (by file name)
 
 A board fails when the Verifier fails (open solid, overlap, broken skin), when a STEP solid is
 invalid or has a free edge, or when a part's volume moved by more than VOLUME_TOLERANCE from the
@@ -12,6 +14,7 @@ import json
 import shutil
 import sys
 import time
+from contextlib import contextmanager
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -21,6 +24,7 @@ import numpy as np  # noqa: E402
 
 from kese.pipeline import generate  # noqa: E402
 from kese.s8_verify.verify import every_check  # noqa: E402
+from parameters import P  # noqa: E402
 
 BASELINE = ROOT / "tests" / "baseline.json"
 OUT = ROOT / "tests" / "out"
@@ -29,6 +33,24 @@ BOARDS = (sorted((ROOT / "tests" / "boards").glob("*.kicad_pcb")) + sorted((ROOT
           + sorted((ROOT / "Input").glob("*.kicad_pcb")))
 MODES = ("simulation", "visual")
 FORMATS = {"simulation": ["glb", "step"], "visual": ["glb"]}
+# Boards run with other values than parameters/ has: the finish boards with the finish on, which is
+# off by default (Finish.FINISH_ENABLED), so that the finish parts are built and checked too
+SETTINGS = {"18_finishes": {"Finish.FINISH_ENABLED": True},
+            "18b_finish_pads": {"Finish.FINISH_ENABLED": True}}
+
+
+@contextmanager
+def settings_for(pcb):
+    """The board's SETTINGS, applied for one run and put back after it; -> the (key, value) pairs."""
+    changes = SETTINGS.get(pcb.stem, {})
+    saved = {key: getattr(getattr(P, key.split(".")[0]), key.split(".")[1]) for key in changes}
+    for key, value in changes.items():
+        P.override(key, value)
+    try:
+        yield tuple(changes.items())
+    finally:
+        for key, value in saved.items():
+            P.override(key, value)
 
 
 def step_audit(path):
@@ -55,8 +77,10 @@ def step_audit(path):
 def run_board(pcb, mode):
     """-> (verifier ok, verifier lines, {part: volume mm3}, step problems or None)"""
     formats = FORMATS[mode]
-    out_dir, model = generate(pcb, mode=mode, formats=formats, out_root=OUT, verify=False, log=lambda s: None)
-    ok, lines = every_check(model)
+    with settings_for(pcb) as overrides:
+        out_dir, model = generate(pcb, mode=mode, formats=formats, out_root=OUT, overrides=overrides, verify=False,
+                                  log=lambda s: None)
+        ok, lines = every_check(model)
     scale = 1000.0 if model.units == "m" else 1.0
     with np.errstate(divide="ignore", invalid="ignore"):     # a skin part with no volume has no centre either
         volumes = {part: float(m.volume) * scale ** 3 for part, m in model.meshes.items()}
@@ -108,9 +132,13 @@ def test_board(pcb, mode):
 # ---- plain python entry -----------------------------------------------------------------------------------
 if __name__ == "__main__":
     accept, add = "--accept" in sys.argv, "--add" in sys.argv
+    named = [a for a in sys.argv[1:] if not a.startswith("--")]
+    unknown = sorted(set(named) - {p.stem for p in BOARDS})
+    if unknown:
+        sys.exit(f"no such board: {', '.join(unknown)}")
     shutil.rmtree(OUT, ignore_errors=True)
     baseline, failed = load_baseline(), 0
-    for pcb in BOARDS:
+    for pcb in [p for p in BOARDS if p.stem in named] if named else BOARDS:
         for mode in MODES:
             key = f"{pcb.stem}/{mode}"
             record = accept or (add and key not in baseline)
@@ -123,6 +151,6 @@ if __name__ == "__main__":
             for p in problems:
                 print("    " + p, flush=True)
     if accept or add:
-        BASELINE.write_text(json.dumps(baseline, indent=1))
+        BASELINE.write_text(json.dumps(baseline, indent=1) + "\n")
         print(f"baseline written: {BASELINE}")
     sys.exit(1 if failed else 0)

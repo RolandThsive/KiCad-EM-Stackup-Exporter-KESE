@@ -918,6 +918,8 @@
  },
  "18_finishes/simulation": {
   "Board_dielectric 1": 723.66870643,
+  "Bottom Finish Gold": 0.045,
+  "Bottom Finish Nickel": 0.225,
   "Bottom Solder Mask": 4.389703554,
   "Copper_G1": 0.724178323,
   "Copper_G2": 0.724178323,
@@ -925,22 +927,26 @@
   "Copper_G4": 0.724178323,
   "Copper_G5": 0.724178323,
   "Copper_G6": 0.724178323,
+  "Top Finish Gold": 0.045,
+  "Top Finish Nickel": 0.225,
   "Top Silkscreen": 0.005048499,
   "Top Solder Mask": 4.389703554
  },
  "18_finishes/visual": {
   "Board_dielectric 1": 724.8,
+  "Bottom Finish Gold": 0.0,
   "Bottom Mask over Copper": -0.005728675,
-  "Bottom Solder Mask": 6.454885755,
+  "Bottom Solder Mask": 6.724885755,
   "Copper_G1": -0.150855114,
   "Copper_G2": -0.150855114,
   "Copper_G3": -0.150855114,
   "Copper_G4": -0.150855114,
   "Copper_G5": -0.150855114,
   "Copper_G6": -0.150855114,
+  "Top Finish Gold": 0.0,
   "Top Mask over Copper": -0.005728675,
   "Top Silkscreen": 0.005048499,
-  "Top Solder Mask": 6.454885755
+  "Top Solder Mask": 6.724885755
  },
  "19_skipped_items/simulation": {
   "Board_dielectric 1": 1812.0,
@@ -1147,6 +1153,8 @@
  },
  "18b_finish_pads/simulation": {
   "Board_dielectric 1": 903.451738073,
+  "Bottom Finish Gold": 0.00055219,
+  "Bottom Finish Nickel": 0.034511903,
   "Bottom Silkscreen": 0.009802563,
   "Bottom Solder Mask": 5.910554838,
   "Copper_J1": 0.268233273,
@@ -1160,12 +1168,16 @@
   "Copper_S6": 0.0315,
   "Copper_S7": 0.0315,
   "Copper_S8": 0.0315,
+  "Top Finish Gold": 0.001781457,
+  "Top Finish Nickel": 0.111341047,
   "Top Silkscreen": 0.047345592,
   "Top Solder Mask": 5.611377321
  },
  "18b_finish_pads/visual": {
   "Board_dielectric 1": 906.0,
-  "Bottom Mask over Copper": -0.041148646,
+  "Bottom Finish Gold": 0.00023064,
+  "Bottom Finish Nickel": 0.01441497,
+  "Bottom Mask over Copper": -0.020730162,
   "Bottom Silkscreen": 0.009802563,
   "Bottom Solder Mask": 6.312181785,
   "Copper_J1": -0.911623226,
@@ -1179,7 +1191,9 @@
   "Copper_S6": 0.0315,
   "Copper_S7": 0.0315,
   "Copper_S8": 0.0315,
-  "Top Mask over Copper": -0.041704779,
+  "Top Finish Gold": 0.001455457,
+  "Top Finish Nickel": 0.090966047,
+  "Top Mask over Copper": -0.021003779,
   "Top Silkscreen": 0.047345592,
   "Top Solder Mask": 5.874073289
  }
