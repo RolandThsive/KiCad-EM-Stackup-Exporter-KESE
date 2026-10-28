@@ -4,7 +4,7 @@ The stack-up decides the height of every layer. It is read once per board
 (`kese/s2_collect/stackup.py`), its heights are computed once (`kese/s4_geometry/heights.py`), and
 it is printed at the top of `report.txt`, so every z value in the model can be checked against it.
 
-![Board tests/boards/six_layer cut through pad 1 of J1 at true scale: the silkscreen on the mask, the mask on the laminate faces, the ENIG finish on the pad, the outer copper on the faces, the four inner copper layers between five dielectrics, the plated barrel; every layer listed with its thickness and its heights from the laminate mid-plane, and close-ups of the silk on the mask and of the pad's top edge](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/stackup_1_cross_section.png)
+![Board tests/boards/six_layer cut through pad 1 of J1 at true scale: the silkscreen on the mask, the mask on the laminate faces, the ENIG finish on the pad, the outer copper on the faces, the four inner copper layers between five dielectrics, the plated barrel; every layer listed with its thickness and its heights from the laminate mid-plane, and close-ups of the silk on the mask and of the pad's top edge, then two closer still: the finish at the pad's edge, 5 µm of nickel under 0.08 µm of gold beside the mask, and the 80 nm of gold alone](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/stackup_1_cross_section.png)
 
 ## 7.1 Heights
 
@@ -227,7 +227,7 @@ h_i^{*} = s \cdot h_i \qquad (7.13)
 | Via barrel from layer $`l_i`$ to $`l_j`$ | between the copper layers it joins; outer copper caps it, inner copper is drilled through, so the barrel passes through inner bands ([Copper And Traces](Copper-And-Traces.md)) |
 | Solder mask | from the laminate face: mask thickness over laminate, copper + mask thickness over copper ([Solder Masks](Solder-Masks.md)) |
 | Silkscreen | on top of the mask surface ([Silkscreens](Silkscreens.md)) |
-| Surface finish | stacked on top of the outer copper where the mask is open ([Top And Bottom Copper Finishings](Copper-Finishings.md)) |
+| Surface finish | stacked on top of the outer copper where the mask is open (boxes 4 and 5 of the picture; [Top And Bottom Copper Finishings](Copper-Finishings.md)) |
 
 | Previous | Next |
 |:---|---:|

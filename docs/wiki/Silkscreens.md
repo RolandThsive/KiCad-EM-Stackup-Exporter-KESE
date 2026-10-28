@@ -5,9 +5,6 @@ values, logos and outlines. `kese/s4_geometry/silkscreen.py` builds it from the 
 `kese/s3_resolve/silk.py` clips off the pads, and `kese/core/font.py` renders the text; the
 settings are in `parameters/silkscreen.py`.
 
-<!-- Picture still wanted for this page:
-     a reference designator rendered by KESE next to KiCad's own rendering of the same text (14.2). -->
-
 ![The same board eight times from the top in a simulation-mode GLB, once in each silkscreen colour: white and yellow silk on black mask, and black, not set, green, red, blue and purple silk on white mask, each labelled with its colour and hex value](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/silk_1_colors_simulation.png)
 
 ## 14.1 What Is Drawn
@@ -42,7 +39,10 @@ KESE ships KiCad's own stroke font, **newstroke**, converted to a JSON file
 (`kese/assets/fonts/kicad_newstroke.json.gz`, with its notice in `LICENSE_fonts.txt`). Text is laid
 out following KiCad's `STROKE_FONT` and `FONT::getLinePositions` code (`kese/core/font.py`), which
 KiCad 7, 8 and 9 share, so it lands where KiCad plots it: `tests/test_text_layout.py` checks
-sixteen texts against KiCad 7.0.11's plot to 5 µm.
+sixteen texts against KiCad 7.0.11's plot to 5 µm, and the two references below agree with it to
+2 µm.
+
+![TP7 from featureTest/11_zones and J2 at 45 degrees from featureTest/01_holes_slotted, each three times at the same scale: KiCad 7.0.11's plot with its strokes, KESE's silk region with its vertices, and KiCad's outline on KESE's ink, with a close-up of the join in P where they differ most, 2.0 µm where KESE draws KiCad's round corner as one chord, and a table of the outlines, centroids and areas of both](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/silk_5_kicad_text.png)
 
 ### 14.2.1 Layout Of One Line
 
