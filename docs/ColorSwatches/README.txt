@@ -7,6 +7,6 @@ In a page, by its raw URL on main (it shows in the wiki only after it is on main
 
 <img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/ColorSwatches/CD803E.png" width="12" height="12" align="absmiddle" alt=""> `#CD803E`
 
-After a colour in parameters/color.py changes, make the boxes again:
+After a colour in parameters/color.py changes, make the boxes again (from Generator/):
 
-python docs/ColorSwatches/make_swatches.py
+python tools/make_swatches.py
