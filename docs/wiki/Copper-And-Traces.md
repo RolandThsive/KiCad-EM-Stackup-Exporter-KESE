@@ -34,7 +34,8 @@ Per copper layer, these items are collected with their net (text always as no ne
 | text on a copper layer | the stroke-font glyphs, as on silkscreen |
 
 Then, per layer and per net: union, simplify, clip to the outline, subtract the holes, move to
-the board frame (equation (6.2)) and snap to the grid (equation (6.1)). The union is simplified
+the board frame ([6.3](Working-Principle.md#63-coordinate-frames)) and snap to the grid
+([6.1](Working-Principle.md#61-the-design-choice-that-matters-most)). The union is simplified
 before the outline and the holes cut it, so the copper's edge at the board edge and in every hole
 is the very polygon of the laminate and of the barrel (a 0.05 mm via bore simplified after the
 cut kept every other vertex, and the copper stood up to half a micron into the bore):
