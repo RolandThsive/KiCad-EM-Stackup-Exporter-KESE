@@ -9,26 +9,35 @@ the parameters in parameters/, but for the changes SETTINGS lists for it.
 
 A board fails when the Verifier fails (open solid, overlap, broken skin), when a STEP solid is
 invalid or has a free edge, or when a part's volume moved by more than VOLUME_TOLERANCE from the
-recorded baseline (so a fix for one board cannot silently change another)."""
+recorded baseline (so a fix for one board cannot silently change another).
+
+Run on its own (python tests/test_boards.py), the suite reads the STEP files back in AUDITORS
+background processes while it exports the next boards, and prints a board's line once its STEP file
+is checked, in the order the boards ran."""
 import json
+import multiprocessing
 import shutil
 import sys
 import time
+from concurrent.futures import ProcessPoolExecutor
 from contextlib import contextmanager
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
+sys.path.insert(0, str(Path(__file__).resolve().parent))
 
 import numpy as np  # noqa: E402
 
 from kese.pipeline import generate  # noqa: E402
 from kese.s8_verify.verify import every_check  # noqa: E402
 from parameters import P  # noqa: E402
+from step_audit import step_audit  # noqa: E402
 
 BASELINE = ROOT / "tests" / "baseline.json"
 OUT = ROOT / "tests" / "out"
 VOLUME_TOLERANCE = 1e-3          # relative, per part
+AUDITORS = 2                     # background processes reading STEP files back (plain python entry)
 BOARDS = (sorted((ROOT / "tests" / "boards").glob("*.kicad_pcb")) + sorted((ROOT.parent / "featureTest").glob("*.kicad_pcb"))
           + sorted((ROOT / "Input").glob("*.kicad_pcb")))
 MODES = ("simulation", "visual")
@@ -53,29 +62,9 @@ def settings_for(pcb):
             P.override(key, value)
 
 
-def step_audit(path):
-    """(invalid solids, free edges) of a STEP file, via OCP."""
-    from OCP.BRepCheck import BRepCheck_Analyzer
-    from OCP.STEPControl import STEPControl_Reader
-    from OCP.TopAbs import TopAbs_EDGE, TopAbs_FACE, TopAbs_SOLID
-    from OCP.TopExp import TopExp, TopExp_Explorer
-    from OCP.TopTools import TopTools_IndexedDataMapOfShapeListOfShape
-    rd = STEPControl_Reader()
-    rd.ReadFile(str(path))
-    rd.TransferRoots()
-    ex, invalid, free = TopExp_Explorer(rd.OneShape(), TopAbs_SOLID), 0, 0
-    while ex.More():
-        s = ex.Current()
-        invalid += not BRepCheck_Analyzer(s).IsValid()
-        m = TopTools_IndexedDataMapOfShapeListOfShape()
-        TopExp.MapShapesAndAncestors_s(s, TopAbs_EDGE, TopAbs_FACE, m)
-        free += sum(1 for i in range(1, m.Extent() + 1) if m.FindFromIndex(i).Size() < 2)
-        ex.Next()
-    return invalid, free
-
-
-def run_board(pcb, mode):
-    """-> (verifier ok, verifier lines, {part: volume mm3}, step problems or None)"""
+def run_board(pcb, mode, audit=step_audit):
+    """-> (verifier ok, verifier lines, {part: volume mm3}, what `audit` gave for the STEP file or
+    None).  The suite's own loop passes an `audit` that hands the file to a background process."""
     formats = FORMATS[mode]
     with settings_for(pcb) as overrides:
         out_dir, model = generate(pcb, mode=mode, formats=formats, out_root=OUT, overrides=overrides, verify=False,
@@ -87,18 +76,22 @@ def run_board(pcb, mode):
     step = None
     if "step" in formats:
         try:
-            step = step_audit(out_dir / f"{pcb.stem}.step")
-        except ImportError:
+            step = audit(out_dir / f"{pcb.stem}.step")
+        except ImportError:                     # OCP is not installed: the STEP file is not checked
             step = None
     return ok, lines, volumes, step
 
 
-def check(pcb, mode, baseline):
-    ok, lines, volumes, step = run_board(pcb, mode)
+def step_problems(step):
+    """The problem line of a STEP audit, (invalid solids, free edges, seconds) or None."""
+    return [f"STEP: {step[0]} invalid solids, {step[1]} free edges"] if step and step[:2] != (0, 0) else []
+
+
+def check(pcb, mode, baseline, audit=step_audit):
+    """-> (problems but the STEP file's, {part: volume mm3}, what `audit` gave for the STEP file)"""
+    ok, lines, volumes, step = run_board(pcb, mode, audit)
     problems = [] if ok else [l.strip() for l in lines[1:] if "False" in l or "worst" in l or "alternate" in l] \
         or ["Verifier: FAIL"]
-    if step and step != (0, 0):
-        problems.append(f"STEP: {step[0]} invalid solids, {step[1]} free edges")
     key = f"{pcb.stem}/{mode}"
     for part, vol in baseline.get(key, {}).items():
         now = volumes.get(part)
@@ -109,7 +102,7 @@ def check(pcb, mode, baseline):
     for part in volumes:
         if key in baseline and part not in baseline[key]:
             problems.append(f"new part {part!r}")
-    return problems, volumes
+    return problems, volumes, step
 
 
 def load_baseline():
@@ -125,32 +118,59 @@ def pytest_generate_tests(metafunc):
 
 
 def test_board(pcb, mode):
-    problems, _ = check(pcb, mode, load_baseline())
+    problems, _, step = check(pcb, mode, load_baseline())
+    problems += step_problems(step)
     assert not problems, "\n".join(problems)
 
 
 # ---- plain python entry -----------------------------------------------------------------------------------
-if __name__ == "__main__":
-    accept, add = "--accept" in sys.argv, "--add" in sys.argv
-    named = [a for a in sys.argv[1:] if not a.startswith("--")]
+def report(queue, wait):
+    """Print the boards at the head of the queue whose STEP file is checked (all of them when
+    `wait`), in the order they ran; -> how many of them failed."""
+    failed = 0
+    while queue and (wait or queue[0][3] is None or queue[0][3].done()):
+        key, problems, seconds, step = queue.pop(0)
+        read_back = ""
+        if step is not None:
+            try:
+                step = step.result()
+                problems += step_problems(step)
+                read_back = f"   STEP read back in {step[2]:.1f} s"
+            except ImportError:                 # OCP is not installed: the STEP file is not checked
+                pass
+        failed += bool(problems)
+        print(f"{key:56s} {'FAIL' if problems else 'ok':4s} {seconds:7.1f} s{read_back}", flush=True)
+        for p in problems:
+            print("    " + p, flush=True)
+    return failed
+
+
+def main(args):
+    accept, add = "--accept" in args, "--add" in args
+    named = [a for a in args if not a.startswith("--")]
     unknown = sorted(set(named) - {p.stem for p in BOARDS})
     if unknown:
         sys.exit(f"no such board: {', '.join(unknown)}")
     shutil.rmtree(OUT, ignore_errors=True)
-    baseline, failed = load_baseline(), 0
-    for pcb in [p for p in BOARDS if p.stem in named] if named else BOARDS:
-        for mode in MODES:
-            key = f"{pcb.stem}/{mode}"
-            record = accept or (add and key not in baseline)
-            t0 = time.perf_counter()
-            problems, volumes = check(pcb, mode, {} if record else baseline)
-            if record:
-                baseline[key] = {k: round(v, 9) for k, v in sorted(volumes.items())}
-            failed += bool(problems)
-            print(f"{key:56s} {'FAIL' if problems else 'ok':4s} {time.perf_counter() - t0:7.1f} s", flush=True)
-            for p in problems:
-                print("    " + p, flush=True)
+    baseline, queue, failed = load_baseline(), [], 0
+    with ProcessPoolExecutor(AUDITORS, mp_context=multiprocessing.get_context("spawn")) as pool:
+        for pcb in [p for p in BOARDS if p.stem in named] if named else BOARDS:
+            for mode in MODES:
+                key = f"{pcb.stem}/{mode}"
+                record = accept or (add and key not in baseline)
+                t0 = time.perf_counter()
+                problems, volumes, step = check(pcb, mode, {} if record else baseline,
+                                                lambda path: pool.submit(step_audit, path))
+                if record:
+                    baseline[key] = {k: round(v, 9) for k, v in sorted(volumes.items())}
+                queue.append((key, problems, time.perf_counter() - t0, step))
+                failed += report(queue, wait=False)
+        failed += report(queue, wait=True)
     if accept or add:
         BASELINE.write_text(json.dumps(baseline, indent=1) + "\n")
         print(f"baseline written: {BASELINE}")
     sys.exit(1 if failed else 0)
+
+
+if __name__ == "__main__":
+    main(sys.argv[1:])

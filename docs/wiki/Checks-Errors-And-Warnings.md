@@ -214,6 +214,14 @@ or a new one appeared, or (when `cadquery` is installed) when the STEP file has 
 a free edge, checked by reading it back with OCP. In visual mode the "volume" is the signed volume
 of an open surface: it means nothing on its own, but it moves when the skin does.
 
+Reading a STEP file back takes longer than writing it: about 3.5 minutes for the 65 MB file of
+`16b_edge_plating_border`, over a minute to turn the file into shapes and two more to check the
+solids. So
+`python tests/test_boards.py` reads the STEP files back in two background processes
+(`AUDITORS` in `tests/test_boards.py`, `tests/step_audit.py`) while it exports the next boards,
+and prints a board's line once its file is checked, in the order the boards ran, with the time the
+read-back took (`STEP read back in 3.4 s`). Under `pytest` every board is checked in turn.
+
 The test boards in `tests/boards/` cover:
 
 - `one_layer`: a single-sided board with silkscreen text (it declares `F.Cu` and `B.Cu`, with
