@@ -12,6 +12,8 @@ each dielectric between two copper layers (core or prepreg), each net's copper w
 layers and vias joined into one body, via and hole plating, solder mask conformal over the copper,
 silkscreen and, if enabled, the surface finish.
 
+![Side profile of the 4-layer board featureTest/14_stackup_full in simulation mode, cut through its plated pad J1 at true scale: the three dielectrics, the mask on both faces and the pad's copper fill the cut, the pad's ring on each of the four copper layers joined by the 25 µm plated barrel into the one part Copper_GND; a table gives each layer's thickness and the part it is in](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/modes_2_simulation_side.png)
+
 - Parts touch exactly (shared vertices, exact z values) and do not overlap, apart from the known
   exception listed in
   [Working Principle](Working-Principle.md#61-the-design-choice-that-matters-most); the Verifier
@@ -67,6 +69,8 @@ sight, such as the copper of a net that runs only on inner layers and through bu
 surface left and is not in the file. A finish thinner than $`\varepsilon`$ (the 80 nm gold of
 ENIG) leaves one surface too: the nickel's and the copper's faces under it are covered by the
 layer above, so they are never made.
+
+![The same side profile in visual mode: only the faces between material and air are in the file, the mask's outside, the pad's top and bottom, the bore and the board's edge, drawn over thin grey outlines of the simulation solids; the inside of the board is empty, In1.Cu and In2.Cu leave nothing, and what is left is the outside that a 2-layer board of the same thickness would have](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/modes_3_visual_side.png)
 
 With `Run.BUILD_WITH_KERNELS = True` the skin is made the older way (`kese/s6_assemble/skin.py`):
 every prism extruded on its own and all of them joined in one exact boolean union (Manifold, in

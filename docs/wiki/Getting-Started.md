@@ -6,6 +6,8 @@ needs Python 3.12 or later: `numpy` 2.5.3 and `scipy` 1.18.1 require it. On Pyth
 the same packages without the pinned versions (`python -m pip install numpy scipy ...`) and pip
 picks the last versions built for 3.11, as `requirements.txt` explains.
 
+![The 4-layer Coil stator from Input/ turning, exported in visual mode (left) and in simulation mode (right) and drawn with the same camera. Halfway through the turn its layers are drawn apart: the simulation model has every layer as a closed solid, the copper of all four layers included, while the visual model has only the faces that can be seen, the mask, the board's edge walls and the via bores, and nothing inside](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/start_1_modes.webp)
+
 ## 3.1 Install
 
 ```bash
