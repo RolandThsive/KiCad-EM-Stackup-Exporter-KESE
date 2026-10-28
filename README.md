@@ -1,6 +1,8 @@
 <div align="center">
 
-# KiCad EM Stackup Exporter (KESE)
+<h1><img src="docs/logo/Kese_Square.svg" width="72" height="72" align="center" alt="KESE logo"> KESE</h1>
+
+<code>KiCad EM Stackup Exporter</code>
 
 **Real 3D Models Of KiCad Boards, With The True Stack-Up And Copper Split Per Net**
 
