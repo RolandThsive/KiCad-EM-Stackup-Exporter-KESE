@@ -3,8 +3,7 @@
 KESE writes the same geometry in two modes, chosen with `Run.MODE` or `--mode`. The old names
 `real` (for `simulation`) and `pretty` (for `visual`) are still accepted.
 
-<!-- Picture wanted: Modes 1, the same corner of a board in simulation mode (an exploded view
-     showing the closed solids) and in visual mode (the skin only). -->
+![Board tests/boards/six_layer in simulation mode (left) and in visual mode (right): as a web viewer draws them, the translucent mask against the opaque one, the track under the mask and the two colours of bare copper; and cut open along the via row, where the closed solids of simulation mode fill the cut and the skin of visual mode is empty inside, without the buried via and the inner zone fills](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/modes_1_simulation_visual.png)
 
 ## 8.1 Simulation Mode
 
