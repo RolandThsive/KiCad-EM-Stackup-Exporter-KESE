@@ -1,5 +1,5 @@
 """Boards 14 to 18: stack-ups, plated edges and castellated pads, a plated edge with a copper border,
-solder mask and silkscreen, silkscreen over copper, and gold edge fingers."""
+solder mask and silkscreen, silkscreen over copper, gold edge fingers, and finish on bare copper."""
 import math
 
 from common import OUTER, PLAIN, at, new_board
@@ -247,5 +247,35 @@ def finishes():
     return b
 
 
+def finish_pads():
+    """Surface finish on every kind of bare copper: an eight-pin SOIC-style footprint, a 3 mm square
+    pad, a two-pin through-hole header (finish on both faces), a track left bare by an opening drawn
+    on F.Mask, a tented via, and a round pad on the bottom.  Pad-to-mask clearance 0.05 mm.  Green
+    mask, white silk, ENIG."""
+    b = new_board("finish_pads", 2, (30, 20), stack=False)
+    stackup(b, PLAIN[2], OUTER, mask_color="Green", silk_color="White", finish="ENIG")
+    b.setup.append("(pad_to_mask_clearance 0.05)")
+    soic = lambda n, x, y: pad(n, "smd", "rect", (x, y), (1.5, 0.6), SMD, net=f"S{n}")
+    b.add(footprint(b, "Feature:FinishSOIC", at(7, 7), children=[
+        ref("U1", -3.4), *[soic(str(i + 1), -2.7, -1.905 + 1.27 * i) for i in range(4)],
+        *[soic(str(8 - i), 2.7, -1.905 + 1.27 * i) for i in range(4)],
+        shape("rect", "F.SilkS", 0.15, a=(-1.6, -2.6), c=(1.6, 2.6)),
+        shape("circle", "F.SilkS", 0, filled=True, c=(-1.0, -2.0), r=0.2)]))
+    b.add(footprint(b, "Feature:FinishPad", at(17, 7), children=[
+        ref("TP1", -2.6), pad("1", "smd", "rect", (0, 0), (3, 3), SMD, net="PAD")]))
+    b.add(footprint(b, "Feature:FinishHeader", at(6, 15), children=[
+        ref("J1", -1.9), pad("1", "thru_hole", "rect", (0, 0), (1.7, 1.7), THT, drill=1.0, net="J1"),
+        pad("2", "thru_hole", "circle", (2.54, 0), (1.7, 1.7), THT, drill=1.0, net="J2")]))
+    b.add(segment(b, at(18.5, 7), at(27, 7), 0.5, "F.Cu", "PAD"),
+          gr_rect(b, at(21, 5.5), at(25.5, 8.5), "F.Mask", 0.1, filled=True),
+          via(b, at(27, 7), 0.8, 0.4, "PAD"),
+          segment(b, at(27, 7), at(27, 15), 0.5, "B.Cu", "PAD"),
+          segment(b, at(27, 15), at(22, 15), 0.5, "B.Cu", "PAD"))
+    b.add(footprint(b, "Feature:FinishBack", at(22, 15), side="B", children=[
+        ref("TP2", -2.2, "B.SilkS"),
+        pad("1", "smd", "circle", (0, 0), (2, 2), ("B.Cu", "B.Paste", "B.Mask"), net="PAD")]))
+    return b
+
+
 BOARDS = [stackup_full, stackup_none, edge_plating_castellation, edge_plating_border, mask_silk, silk_over_copper,
-          finishes]
+          finishes, finish_pads]
