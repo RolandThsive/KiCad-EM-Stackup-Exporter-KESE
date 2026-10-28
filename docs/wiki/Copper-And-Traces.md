@@ -12,9 +12,6 @@ zone fills joined to its vias and plated holes. `kese/s2_collect/` collects the 
 and net and `kese/s3_resolve/` resolves it; `kese/s4_geometry/copper.py` and `plating.py` turn it
 into prisms; the settings are in `parameters/copper.py`.
 
-<!-- Picture still wanted for this page:
-     the etch-factor trapezoid at ETCH_FACTOR 0 and 0.5, ETCH_STEPS 4 (11.5). -->
-
 ## 11.1 What Makes Copper
 
 ![Net GND on board 03_vias_through: the board from the top, the net's copper on each layer pulled apart, the closed solid Copper_GND, and a cut through one of its vias](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/copper_1_one_net_one_solid.png)
@@ -211,6 +208,8 @@ KiCad; set it for an as-fabricated model. Each copper part records `foil_mm` and
 `plating_added_mm` in `materials.json`.
 
 ## 11.5 Etch Factor
+
+![Board 10_tracks_arcs cut across its 0.25 mm track at true scale with ETCH_FACTOR 0 and 0.5 (four slices), and close-ups of an etched wall on F.Cu and on B.Cu with the inset of every slice](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/copper_10_etch_factor.png)
 
 Real traces are trapezoids: etching undercuts the resist, so a trace is narrower at its free
 face than at its foot. `Copper.ETCH_FACTOR` (0 by default, a rectangle as in KiCad) leans each
