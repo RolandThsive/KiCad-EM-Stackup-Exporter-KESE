@@ -32,3 +32,5 @@ def add_footprint(ctx, fp):
             add_zone(ctx, node)
         elif node[0] in TEXT or (node[0] == "property" and layer_of(node)):
             add_text(ctx, node, T, subst)
+        elif node[0] == "barcode":                   # KiCad 10: drawn from its text, no shape in the file
+            items.skipped["barcode items"] += 1

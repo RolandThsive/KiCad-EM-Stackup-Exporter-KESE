@@ -18,7 +18,7 @@ KiCad itself is not needed, only the `.kicad_pcb` file. Footprints are read from
 
 | Board feature | Support |
 |---|---|
-| Copper layers | boards with 2, 4 and 6 declared copper layers are in the repository (one of them single-sided: tracks only on `F.Cu`, and on `B.Cu` only its two through-hole pads); more than 6 are modelled with a warning; `F.Cu` and `B.Cu` must be declared |
+| Copper layers | boards with 2, 4, 6 and 8 declared copper layers are in the repository (one of them single-sided: tracks only on `F.Cu`, and on `B.Cu` only its two through-hole pads); more than 8 are modelled with a warning; `F.Cu` and `B.Cu` must be declared |
 | Stack-up from Board Setup | thickness, type, material, εr, tanδ per dielectric; copper thickness per layer; mask thickness; mask and silk colours; copper finish; edge plating and castellated pads flags |
 | Tracks, arc tracks, vias (through, blind, buried, micro) | yes |
 | Pads: circle, rect, oval, roundrect, trapezoid, custom | yes; round and oval drills, drill offsets (which move the copper, not the hole), per-pad mask margins; chamfered corners are drawn as the plain rounded rectangle |

@@ -46,7 +46,7 @@ def collect(raw, log):
             add_footprint(ctx, node)
         elif k in TEXT:
             add_text(ctx, node)
-        elif k in ("image", "target", "group", "generated", "table"):
+        elif k in ("image", "target", "group", "generated", "table", "barcode", "point"):
             items.skipped[f"{k} items"] += 1
     for v in vias:
         add_via(ctx, v)

@@ -4,7 +4,7 @@
 
 **Real 3D Models Of KiCad Boards, With The True Stack-Up And Copper Split Per Net**
 
-Python · KiCad 6 To 10 · 1 To 6 Copper Layers · GLB, STEP, STL And OBJ · Free Software (GPL-3.0)
+Python · KiCad 6 To 10 · 1 To 8 Copper Layers · GLB, STEP, STL And OBJ · Free Software (GPL-3.0)
 
 </div>
 
@@ -78,7 +78,7 @@ Nothing is hard-coded: every number lives in `Generator/parameters/`, and each o
 
 | Area | Capability |
 |---|---|
-| Input | `.kicad_pcb` from KiCad 6 to 10, 1 to 6 copper layers, stack-up read from Board Setup |
+| Input | `.kicad_pcb` from KiCad 6 to 10, 1 to 8 copper layers, stack-up read from Board Setup |
 | Copper | One solid per net (default), per layer, or all merged; through, blind and buried vias; etch trapezoid |
 | Edges | Castellated holes plated on the notch wall; edge plating joined to its net |
 | Dielectrics | One solid per core / prepreg with εr and tanδ, or the whole laminate as one solid |

@@ -43,7 +43,7 @@ python tests/test_boards.py                     # the regression suite over ever
 |---|---|
 | `file has no (version ...): treated as legacy KiCad 5` | Best-effort read. |
 | `file format N is outside the tested range 20211014-20260206; proceeding best-effort` | Older than KiCad 6 or newer than KiCad 10. |
-| `N copper layers: more than the 6 this project has been tested with` | The layers are still modelled. |
+| `N copper layers: more than the 8 this project has been tested with` | The layers are still modelled. |
 | `N copper zone(s) have no fill stored in the file and are ignored` | Fill the zones in KiCad (press **B**) and save. Until then those zones produce no copper. |
 | `Edge.Cuts lines/arcs do not form a closed outline` | The outline could not be polygonized; closed shapes on `Edge.Cuts` are still used. |
 | `no Edge.Cuts outline; using the copper's convex hull + 1.0 mm` | The fallback outline. |
@@ -78,7 +78,8 @@ stroke font.
 | `keepout / rule areas (no copper by design)` | Rule areas never carry copper; listed for completeness. |
 | `<item> on <layer> (not a physical layer)` | Graphics on fab, courtyard, paste, user and comment layers, which are not part of the board (text there is left out without a count). |
 | `gr_text_box / fp_text_box / dimension on <layer> (not modelled)` | Text boxes and dimensions on copper, mask or silkscreen layers are counted here and not rendered; on other layers, where dimensions usually sit, they are left out without a count. |
-| `image / target / group / generated / table items` | Not physical. For a group or a generated item (such as a length-tuning pattern) only the record is skipped; the items in it are read as usual. |
+| `image / target / group / generated / table / point items` | Not physical (a point is KiCad 10's snap point). For a group or a generated item (such as a length-tuning pattern) only the record is skipped; the items in it are read as usual. |
+| `barcode items` | KiCad 10 barcodes (QR codes and others), on the board or in a footprint. The file holds only the barcode's text and size, which KiCad turns into a pattern when it plots, so KESE leaves them out, even on copper or silkscreen. |
 | `pads of shape <shape>` | A pad shape KESE does not know. |
 | `TrueType text on <layer> (DRAW_TRUETYPE_TEXT_WITH_STROKE_FONT is False)` | Skipped by the setting. |
 | `castellation plating (CASTELLATION is 'off')` | The holes stay bare. The same line appears with `CASTELLATION = "file"` when the stack-up lacks `(castellated_pads yes)`. |
