@@ -238,7 +238,11 @@ boards: which folders of `kese/` may import which, one `run()` per stage, no fil
 lowercase names, and no code outside `Generator/`. It only reads the source, so it takes about a second
 (`python tests/test_layout.py`). The same command runs `tests/test_colors.py`, which reads named,
 user-defined and unknown stack-up colours as [Colorizing](Colorizing.md#122-colours-from-the-stack-up)
-describes, in a moment (`python tests/test_colors.py`), and four STEP tests, each also on its own
+describes, in a moment (`python tests/test_colors.py`); `tests/test_text_layout.py`, which lays out
+sixteen texts (each justification, two lines, two lines with a line spacing KiCad does not plot, tabs,
+an angle, italic, bold, a wide font, an escaped quote, mirrored text on the back and the reference of
+a turned footprint) and finds each where KiCad 7.0.11 plots it, to 5 µm, in about three seconds
+(`python tests/test_text_layout.py`); and four STEP tests, each also on its own
 (`python tests/<name>.py`):
 
 | Test | Path | What it checks |

@@ -90,33 +90,41 @@ def render(text, anchor, angle_deg, size_h, size_w, thickness, justify=(), mirro
            italic=False):
     """Text as a shapely polygon in board coordinates (mm, Y down).
 
-    Follows KiCad's STROKE_FONT / FONT::drawMultilineText layout: glyph advance from the glyph
-    width, inter-character spacing, interline pitch, H/V justification with KiCad's offsets."""
+    Follows KiCad's STROKE_FONT / FONT::getLinePositions layout: glyph advance from the glyph
+    width, interline pitch, H/V justification with KiCad's offsets.  A line is as wide as its pen's
+    advance, the spacing after the last glyph included (FONT::getLinePositions measures it so; only
+    the bounding box leaves that spacing out), and a centred or right-justified line does not get
+    the left offset T / 1.52."""
     S = P.Silkscreen
     f, _ = load()
     if not text.strip():
         return EMPTY
     space_w = f["glyphs"][0]["w"]
-    interline = size_h * S.INTERLINE_PITCH * S.INTERLINE_LEGACY_FACTOR
+    interline = size_h * S.INTERLINE_PITCH * S.INTERLINE_LEGACY_FACTOR      # KiCad 7 to 10 plot no (line_spacing)
     tilt = S.ITALIC_TILT if italic else 0.0
     lines = text.split("\n")
 
     # layout each line in local coordinates (x right, y down), origin = line start on the baseline
     laid, widths = [], []
     for line in lines:
-        cursor, strokes = 0.0, []
+        cursor, strokes, count = 0.0, [], 0
         for ch in line:
             if ch == " ":
                 cursor += size_w * space_w
-                continue
-            if ch == "\t":
-                cursor += size_w * space_w * 4
-                continue
-            g = _glyph(f, ch)
-            for st in g["s"]:
-                strokes.append([(cursor + (x - y * tilt) * size_w, y * size_h) for x, y in st])
-            cursor += g["w"] * size_w
-        widths.append(cursor - S.INTER_CHAR_SPACING * size_w)
+            elif ch == "\t":                 # to KiCad's next tab stop: every fourth column of width W
+                count = (count // 4 + 1) * 4 - 1
+                stop = size_w * (count + space_w)
+                while stop <= cursor:
+                    count += 4
+                    stop += size_w * 4
+                cursor = stop
+            else:
+                g = _glyph(f, ch)
+                for st in g["s"]:
+                    strokes.append([(cursor + (x - y * tilt) * size_w, y * size_h) for x, y in st])
+                cursor += g["w"] * size_w
+            count += 1
+        widths.append(cursor)
         laid.append(strokes)
 
     n = len(lines)
@@ -133,7 +141,7 @@ def render(text, anchor, angle_deg, size_h, size_w, thickness, justify=(), mirro
     segs = []
     for i, strokes in enumerate(laid):
         if "left" in justify:
-            lx = 0.0
+            lx = off_x
         elif "right" in justify:
             lx = -(widths[i] + off_x)
         else:
@@ -142,7 +150,7 @@ def render(text, anchor, angle_deg, size_h, size_w, thickness, justify=(), mirro
         for st in strokes:
             pts = []
             for x, y in st:
-                x, y = x + lx + off_x, y + ly
+                x, y = x + lx, y + ly
                 if mirror:
                     x = -x
                 pts.append((anchor[0] + x * c + y * s, anchor[1] - x * s + y * c))

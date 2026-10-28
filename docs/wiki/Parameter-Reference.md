@@ -165,7 +165,6 @@ Details in [Silkscreens](Silkscreens.md).
 | `DRAW_TRUETYPE_TEXT_WITH_STROKE_FONT` | `True` | bool | Text in a TrueType face is drawn with the stroke font |
 | `INTERLINE_PITCH` | `1.68` | > 0 | Line pitch as a multiple of the text height (KiCad's value) |
 | `INTERLINE_LEGACY_FACTOR` | `0.9583` | > 0 | KiCad's correction for stroke fonts |
-| `INTER_CHAR_SPACING` | `0.2` | ≥ 0 | Spacing each glyph width includes, as a fraction of the text width; dropped from the line width ([Silkscreens](Silkscreens.md), equation (14.2)) |
 | `ITALIC_TILT` | `0.125` | ≥ 0 | x shift per unit of y for italic text |
 | `BOLD_THICKNESS_RATIO`, `NORMAL_THICKNESS_RATIO` | `0.2`, `0.15` | > 0 | Stroke thickness as a fraction of the text height when the file gives none |
 | `TEXT_STROKE_QUAD_SEGS` | `4` | int ≥ 1 | Roundness of stroke ends |

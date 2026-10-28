@@ -21,7 +21,6 @@ DRAW_TRUETYPE_TEXT_WITH_STROKE_FONT = True
 # KiCad text metrics (from KiCad's font code; change only to match a different font)
 INTERLINE_PITCH = 1.68                  # line pitch as a multiple of the text height
 INTERLINE_LEGACY_FACTOR = 0.9583        # KiCad's correction for stroke fonts
-INTER_CHAR_SPACING = 0.2                # extra advance between glyphs, as a fraction of text width
 ITALIC_TILT = 0.125                     # x shift per unit of y for italic text
 BOLD_THICKNESS_RATIO = 0.2              # bold text stroke = this x text height when the file gives none
 NORMAL_THICKNESS_RATIO = 0.15           # normal text stroke = this x text height when the file gives none

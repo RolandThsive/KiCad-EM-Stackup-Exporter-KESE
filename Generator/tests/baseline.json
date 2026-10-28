@@ -44,7 +44,7 @@
   "Board_dielectric 1": 996.236954625,
   "Bottom Solder Mask": 13.62178241,
   "Copper_no_net": 9.101035767,
-  "Top Silkscreen": 0.137969394,
+  "Top Silkscreen": 0.138115708,
   "Top Solder Mask": 13.367442438
  },
  "synthetic/visual": {
@@ -53,8 +53,8 @@
   "Bottom Solder Mask": 21.218652072,
   "Copper_no_net": -1.183240581,
   "Top Mask over Copper": -0.001909558,
-  "Top Silkscreen": 0.137969394,
-  "Top Solder Mask": 13.982885618
+  "Top Silkscreen": 0.138115684,
+  "Top Solder Mask": 13.982885588
  },
  "Coil_30_50_4_1_3_Series_SteppedDiagonal_Stator/simulation": {
   "Board_dielectric 1": 2733.39554203,
@@ -98,7 +98,7 @@
  },
  "TheMainBoard/simulation": {
   "Board_dielectric 1": 2826.55901801,
-  "Bottom Silkscreen": 0.559927029,
+  "Bottom Silkscreen": 0.559825219,
   "Bottom Solder Mask": 39.505977238,
   "Copper_+3V3": 6.837251437,
   "Copper_+5V": 1.182653332,
@@ -137,16 +137,16 @@
   "Copper_unconnected-(U3-SD0-Pad4)": 0.022448768,
   "Copper_unconnected-(U5-OUT-Pad3)": 0.0315,
   "Copper_unconnected-(U5-PGO-Pad5)": 0.0315,
-  "Copper_unconnected-(U7-D9{slash}BOOT-Pad10)": 0.077787565,
+  "Copper_unconnected-(U7-D9{slash}BOOT-Pad10)": 0.077804129,
   "Copper_unconnected-(U7-D9{slash}BOOT-Pad10)_1": 0.136879521,
-  "Top Silkscreen": 0.670198448,
-  "Top Solder Mask": 38.135742467
+  "Top Silkscreen": 0.670987974,
+  "Top Solder Mask": 38.135742431
  },
  "TheMainBoard/visual": {
   "Board_dielectric 1": 2846.083952814,
   "Bottom Mask over Copper": 0.066367721,
-  "Bottom Silkscreen": 1.057172508,
-  "Bottom Solder Mask": 165.231350092,
+  "Bottom Silkscreen": 1.164584273,
+  "Bottom Solder Mask": 165.05399922,
   "Copper_+3V3": -0.708075707,
   "Copper_+5V": -0.34215466,
   "Copper_/AS5600_1_SCL": -0.027041017,
@@ -185,15 +185,15 @@
   "Copper_unconnected-(U5-OUT-Pad3)": 0.0315,
   "Copper_unconnected-(U5-PGO-Pad5)": 0.0315,
   "Copper_unconnected-(U7-D9{slash}BOOT-Pad10)": -0.000236184,
-  "Copper_unconnected-(U7-D9{slash}BOOT-Pad10)_1": -0.428860154,
+  "Copper_unconnected-(U7-D9{slash}BOOT-Pad10)_1": -0.428623823,
   "Top Mask over Copper": 0.134574272,
-  "Top Silkscreen": 0.623408502,
-  "Top Solder Mask": 148.247106927
+  "Top Silkscreen": 0.378352134,
+  "Top Solder Mask": 148.492214338
  },
  "TheMainBoardVOC/simulation": {
   "Board_dielectric 1": 6374.042703889,
-  "Bottom Silkscreen": 1.345561147,
-  "Bottom Solder Mask": 89.500736239,
+  "Bottom Silkscreen": 1.345415362,
+  "Bottom Solder Mask": 89.500736218,
   "Copper_+3V3": 22.559540589,
   "Copper_+5V": 3.931650508,
   "Copper_/AS5600_1_SCL": 0.576221481,
@@ -242,16 +242,16 @@
   "Copper_unconnected-(U2-~{NFAULT}-Pad8)": 0.018335447,
   "Copper_unconnected-(U5-OUT-Pad3)": 0.034125,
   "Copper_unconnected-(U5-PGO-Pad5)": 0.034125,
-  "Copper_unconnected-(U7-D9{slash}BOOT-Pad10)": 0.095655395,
+  "Copper_unconnected-(U7-D9{slash}BOOT-Pad10)": 0.095679103,
   "Copper_unconnected-(U7-D9{slash}BOOT-Pad10)_1": 0.136880585,
-  "Top Silkscreen": 6.732575887,
-  "Top Solder Mask": 87.287553638
+  "Top Silkscreen": 6.733011595,
+  "Top Solder Mask": 87.287584272
  },
  "TheMainBoardVOC/visual": {
   "Board_dielectric 1": 6395.068795999,
-  "Bottom Mask over Copper": -1.474534282,
-  "Bottom Silkscreen": 7.392471837,
-  "Bottom Solder Mask": 372.099836988,
+  "Bottom Mask over Copper": -1.474650232,
+  "Bottom Silkscreen": 6.922900208,
+  "Bottom Solder Mask": 372.569443952,
   "Copper_+3V3": -2.38679695,
   "Copper_+5V": -1.095667232,
   "Copper_/AS5600_1_SCL": -0.415153556,
@@ -302,13 +302,13 @@
   "Copper_unconnected-(U5-PGO-Pad5)": 0.0,
   "Copper_unconnected-(U7-D9{slash}BOOT-Pad10)": 0.0,
   "Copper_unconnected-(U7-D9{slash}BOOT-Pad10)_1": -0.428848789,
-  "Top Mask over Copper": -0.058732963,
-  "Top Silkscreen": 34.072143584,
-  "Top Solder Mask": 324.38275419
+  "Top Mask over Copper": -0.058732245,
+  "Top Silkscreen": 33.746667234,
+  "Top Solder Mask": 324.707057658
  },
  "01_holes_slotted/simulation": {
   "Board_dielectric 1": 1540.944635315,
-  "Bottom Silkscreen": 0.005873775,
+  "Bottom Silkscreen": 0.005873895,
   "Bottom Solder Mask": 9.943547028,
   "Copper_SLOT_BACK": 0.335441677,
   "Copper_SLOT_FP45": 0.747199892,
@@ -320,13 +320,13 @@
   "Copper_SLOT_ROUND": 0.285307595,
   "Copper_SLOT_SMALL": 0.109255096,
   "Copper_SLOT_V": 0.335441677,
-  "Top Silkscreen": 0.010899299,
+  "Top Silkscreen": 0.01084096,
   "Top Solder Mask": 9.929577899
  },
  "01_holes_slotted/visual": {
   "Board_dielectric 1": 1565.068663476,
   "Bottom Mask over Copper": 0.0,
-  "Bottom Silkscreen": 0.005873775,
+  "Bottom Silkscreen": 0.005873895,
   "Bottom Solder Mask": 12.006411586,
   "Copper_SLOT_BACK": -1.863391233,
   "Copper_SLOT_FP45": -3.727111359,
@@ -339,8 +339,8 @@
   "Copper_SLOT_SMALL": -0.273984356,
   "Copper_SLOT_V": -1.863391233,
   "Top Mask over Copper": 0.0,
-  "Top Silkscreen": 0.105007478,
-  "Top Solder Mask": 11.522861555
+  "Top Silkscreen": -0.027556013,
+  "Top Solder Mask": 11.664072172
  },
  "02_holes_round/simulation": {
   "Board_dielectric 1": 991.058765744,
@@ -743,7 +743,7 @@
   "Copper_SIG": 0.187396159,
   "Copper_SPLIT": 0.248198446,
   "Copper_UNF": 0.205709922,
-  "Top Silkscreen": 0.073268604,
+  "Top Silkscreen": 0.073583639,
   "Top Solder Mask": 12.401602662
  },
  "11_zones/visual": {
@@ -762,8 +762,8 @@
   "Copper_SIG": 0.0,
   "Copper_UNF": -0.527040256,
   "Top Mask over Copper": -0.050865711,
-  "Top Silkscreen": 0.157959662,
-  "Top Solder Mask": 33.15273134
+  "Top Silkscreen": 0.231951828,
+  "Top Solder Mask": 33.079474131
  },
  "12_outline_shapes/simulation": {
   "Board_dielectric 1": 1640.098429128,
@@ -866,13 +866,13 @@
  "16_edge_plating_castellation/simulation": {
   "Board_dielectric 1": 899.3141171,
   "Bottom Solder Mask": 5.949498007,
-  "Copper_C1": 0.184679127,
-  "Copper_C2": 0.184679127,
-  "Copper_C3": 0.184679127,
-  "Copper_C4": 0.184679127,
+  "Copper_C1": 0.184675352,
+  "Copper_C2": 0.184675352,
+  "Copper_C3": 0.184675352,
+  "Copper_C4": 0.184675352,
   "Copper_GND": 33.062274317,
-  "Top Silkscreen": 0.00782836,
-  "Top Solder Mask": 5.96042117
+  "Top Silkscreen": 0.007879869,
+  "Top Solder Mask": 5.960420564
  },
  "16_edge_plating_castellation/visual": {
   "Bottom Mask over Copper": 4.786782985,
@@ -883,8 +883,8 @@
   "Copper_C4": 18.613435564,
   "Copper_GND": 870.699512338,
   "Top Mask over Copper": 5.015647538,
-  "Top Silkscreen": 0.014387522,
-  "Top Solder Mask": -4.998478723
+  "Top Silkscreen": 0.035122851,
+  "Top Solder Mask": -5.020145131
  },
  "17_mask_silk/simulation": {
   "Board_dielectric 1": 1809.451738073,
@@ -1102,26 +1102,26 @@
   "Board_dielectric 1": 206.744942526,
   "Board_dielectric 2": 1129.749637361,
   "Board_dielectric 3": 208.406497535,
-  "Bottom Silkscreen": 0.037317228,
+  "Bottom Silkscreen": 0.037316748,
   "Bottom Solder Mask": 8.221544451,
   "Copper_+3V3": 12.535233814,
   "Copper_GND": 100.694886376,
   "Copper_RF_IN": 0.246896545,
   "Copper_RF_OUT": 0.246896545,
-  "Top Silkscreen": 0.148702191,
+  "Top Silkscreen": 0.14843858,
   "Top Solder Mask": 8.103721038
  },
  "16b_edge_plating_border/visual": {
   "Bottom Mask over Copper": 8.518093005,
-  "Bottom Silkscreen": 0.037317228,
+  "Bottom Silkscreen": 0.037316748,
   "Bottom Solder Mask": -1.09250215,
   "Copper_+3V3": -0.077900416,
   "Copper_GND": 1661.677914061,
   "Copper_RF_IN": 0.0,
   "Copper_RF_OUT": 0.0,
   "Top Mask over Copper": 8.544568515,
-  "Top Silkscreen": 0.117638199,
-  "Top Solder Mask": -2.588852984
+  "Top Silkscreen": 0.199036209,
+  "Top Solder Mask": -2.670514492
  },
  "17b_silk_over_copper/simulation": {
   "Board_dielectric 1": 904.820143501,
@@ -1138,7 +1138,7 @@
   "Copper_U4": 0.0294,
   "Copper_U5": 0.0294,
   "Copper_U6": 0.0294,
-  "Top Silkscreen": 0.173448434,
+  "Top Silkscreen": 0.174368263,
   "Top Solder Mask": 5.858479744
  },
  "17b_silk_over_copper/visual": {
@@ -1154,8 +1154,8 @@
   "Copper_U5": 0.0,
   "Copper_U6": 0.0,
   "Top Mask over Copper": 0.0,
-  "Top Silkscreen": -0.440179779,
-  "Top Solder Mask": 8.446579781
+  "Top Silkscreen": 0.388780573,
+  "Top Solder Mask": 7.618539246
  },
  "18b_finish_pads/simulation": {
   "Board_dielectric 1": 903.451738073,

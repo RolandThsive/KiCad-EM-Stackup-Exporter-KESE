@@ -32,7 +32,7 @@ def add_footprint(ctx, fp):
         elif node[0] == "zone":
             add_zone(ctx, node)
         elif node[0] in TEXT or (node[0] == "property" and layer_of(node)):
-            add_text(ctx, node, T, subst)
+            add_text(ctx, node, T, subst, in_footprint=True)
         elif node[0] == "barcode":                   # KiCad 10: drawn from its text, no shape in the file
             items.skipped["barcode items"] += 1
         elif str(node[0]).startswith("fp_"):          # a drawing of a kind KESE does not know (fp_ellipse ...)

@@ -1,13 +1,41 @@
 """Text on copper, mask and silkscreen layers (gr_text, fp_text, footprint properties), drawn with
 the stroke font."""
+import re
+
 from kese.core import font
 from kese.core.sexp import atoms, child, flag, layer_of, num, numbers, yes
 from parameters import P
 
 TEXT = {"gr_text", "fp_text", "gr_text_box", "fp_text_box", "dimension", "gr_dimension"}
+ESCAPES = {"n": "\n", "r": "\r", "t": "\t"}
 
 
-def add_text(ctx, node, T=lambda p: p, subst=None):
+def unescape(text):
+    """A quoted string of the file as KiCad reads it: \\n a new line, \\t a tab, \\" and \\\\ the
+    character itself (KiCad writes \\n, \\r, \\" and \\\\, and a tab as it is)."""
+    return re.sub(r"\\(.)", lambda m: ESCAPES.get(m.group(1), m.group(1)), text, flags=re.DOTALL)
+
+
+def kept_upright(node):
+    """Whether KiCad keeps a footprint text upright: unless the file says (unlocked yes), or before
+    KiCad 8 a bare unlocked in its (at ...)."""
+    if "unlocked" in [str(a) for a in atoms(child(node, "at"))]:
+        return False
+    unlocked = child(node, "unlocked")
+    return unlocked is None or (len(unlocked) > 1 and not yes(unlocked[1]))
+
+
+def upright(angle):
+    """The angle KiCad draws a footprint text at when it keeps it upright, in ]-90, 90] degrees
+    (PCB_TEXT::GetDrawRotation): turned half a turn when it would read upside down."""
+    while angle > 90.0:
+        angle -= 180.0
+    while angle <= -90.0:
+        angle += 180.0
+    return angle
+
+
+def add_text(ctx, node, T=lambda p: p, subst=None, in_footprint=False):
     S = P.Silkscreen
     items = ctx.items
     layer = layer_of(node)
@@ -24,12 +52,14 @@ def add_text(ctx, node, T=lambda p: p, subst=None):
     if kind in ("gr_text_box", "fp_text_box", "dimension", "gr_dimension") or child(node, "at") is None:
         items.skipped[f"{kind} on {layer} (not modelled)"] += 1
         return
-    text = str(node[2] if kind in ("fp_text", "property") else node[1]).replace("\\n", "\n")
+    text = unescape(str(node[2] if kind in ("fp_text", "property") else node[1]))
     for key, val in (subst or {}).items():
         text = text.replace("${" + key + "}", val)
     vals = numbers(child(node, "at"))
     pos = T((vals[0], vals[1]))
     angle = vals[2] if len(vals) > 2 else 0.0          # text angles are stored absolute
+    if in_footprint and kept_upright(node):
+        angle = upright(angle)
     fnt = child(effects, "font") or []
     size = child(fnt, "size")
     h, w = (float(size[1]), float(size[2])) if size else (1.0, 1.0)
