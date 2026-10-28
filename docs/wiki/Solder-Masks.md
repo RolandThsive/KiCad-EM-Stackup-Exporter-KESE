@@ -30,12 +30,13 @@ The openings are:
 |---|---|
 | every pad that lists the mask layer (`F.Mask`, `B.Mask`, `*.Mask`) | the pad shape grown by its mask margin: the pad's own `solder_mask_margin`, else the footprint's, else the board's pad-to-mask clearance, or `SolderMask.PAD_TO_MASK_CLEARANCE_MM` when set |
 | every untented via (see [via tenting](Copper-And-Traces.md#1132-via-tenting)) | the via pad grown by the same clearance: the board's, or `SolderMask.PAD_TO_MASK_CLEARANCE_MM` when set |
+| every track, arc track and copper drawing that the mask leaves bare (KiCad 9 and later: it lists both layers, `(layers "F.Cu" "F.Mask")`; only `F.Cu` is bared by `F.Mask` and `B.Cu` by `B.Mask`) | its copper shape grown by its mask margin: its own `solder_mask_margin`, else the board's pad-to-mask clearance, or `SolderMask.PAD_TO_MASK_CLEARANCE_MM` when set. As in KiCad, a negative margin narrows a stroke at most to nothing; the opening of a filled drawing is never smaller than its inside |
 | graphics, text and zone fills drawn on the mask layer | as drawn |
 
 Together:
 
 ```math
-Q_\sigma = \left( \bigcup_{\text{pads}} \left( P \oplus m_P \right) \cup \bigcup_{\text{open vias}} \left( V \oplus c \right) \cup \bigcup_{\text{drawn}} G \right) \cap O \qquad (15.2)
+Q_\sigma = \left( \bigcup_{\text{pads}} \left( P \oplus m_P \right) \cup \bigcup_{\text{open vias}} \left( V \oplus c \right) \cup \bigcup_{\text{bare}} \left( T \oplus m_T \right) \cup \bigcup_{\text{drawn}} G \right) \cap O \qquad (15.2)
 ```
 
 ```math
@@ -45,12 +46,14 @@ m_P = \begin{cases} m_{\mathrm{pad}} & \text{if the pad gives one} \\ m_{\mathrm
 | Symbol | Meaning | Parameter |
 |---|---|---|
 | $`P`$, $`V`$, $`G`$ | a pad shape, a via pad, a shape drawn on the mask layer | |
+| $`T`$, $`m_T`$ | the copper of a track or drawing the mask leaves bare, and its `solder_mask_margin` ($`c`$ when it gives none) | the board file |
 | $`\oplus m`$ | grows a region outward by $`m`$ (a buffer) | |
 | $`m_{\mathrm{pad}}`$, $`m_{\mathrm{fp}}`$ | the pad's and the footprint's `solder_mask_margin` | the board file |
 | $`c`$ | pad-to-mask clearance | board setup, or `SolderMask.PAD_TO_MASK_CLEARANCE_MM` when set |
 
-Openings are clipped to the outline. `report.txt` counts `pad mask openings on F.Mask` and the
-clearance used on its `vias:` line.
+Openings are clipped to the outline. `report.txt` counts `pad mask openings on F.Mask`, the bare
+copper's openings (`track mask openings on F.Mask`, `arc track ...`, `graphic ...`, `footprint graphic ...`)
+and the clearance used on its `vias:` line.
 
 ## 15.2 Conformal Mask
 

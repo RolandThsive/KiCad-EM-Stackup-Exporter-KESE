@@ -25,12 +25,12 @@ Per copper layer, these items are collected with their net (text always as no ne
 
 | Item | Shape |
 |---|---|
-| `segment` (track) | the centre line thickened by the track width, round ends |
-| `arc` (arc track) | the arc flattened to `Geometry.ARC_STEP_DEG` steps, thickened |
+| `segment` (track) | the centre line thickened by the track width, round ends; a track left bare by the solder mask (KiCad 9 and later) also opens the mask, see [Solder Masks](Solder-Masks.md#151-kicads-mask-layers-are-negative) |
+| `arc` (arc track) | the arc flattened to `Geometry.ARC_STEP_DEG` steps, thickened; left bare by the solder mask, it opens the mask as a track does |
 | `via` | a disc of the via's size on every layer it spans, except rings dropped by KiCad's "remove unused layers" (see 11.3) |
 | `pad` | the pad shape (circle, rect, oval, roundrect, trapezoid, custom with anchor and primitives; chamfered corners are drawn as the plain rounded rectangle) at its position and angle, with the drill offset, on each copper layer the pad lists (`*.Cu`, `F&B.Cu` expanded); an NPTH pad gives no copper, only its hole |
 | `zone` fill | the `filled_polygon` polygons stored in the file |
-| `gr_*` / `fp_*` graphics on a copper layer | lines and arcs thickened by their stroke width; filled shapes filled; unfilled closed shapes as their outline stroke |
+| `gr_*` / `fp_*` graphics on a copper layer | lines and arcs thickened by their stroke width; filled shapes filled; unfilled closed shapes as their outline stroke; rectangles with their rounded corners (KiCad 10); a drawing left bare by the solder mask (KiCad 9 and later) also opens the mask, as a track does |
 | text on a copper layer | the stroke-font glyphs, as on silkscreen |
 
 Then, per layer and per net: union, simplify, clip to the outline, subtract the holes, move to

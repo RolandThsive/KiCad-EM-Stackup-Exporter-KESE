@@ -86,7 +86,8 @@ there. With the setting
 
 The outline comes from `Edge.Cuts`:
 
-1. Closed shapes (circles, rectangles, polygons) are taken as rings.
+1. Closed shapes (circles, rectangles, polygons) are taken as rings; a rectangle keeps its rounded
+   corners when it has them (KiCad 10, `(radius ...)`, at most half its shorter side, as in KiCad).
 2. Open lines, arcs and Béziers are joined end to end the way KiCad chains them. An end that
    meets no other end is moved onto the nearest other such end within
    `Board.OUTLINE_LINE_SNAP_MM` (0.01 mm by default, KiCad's own chaining distance), the closest

@@ -5,8 +5,8 @@ import math
 
 from shapely.geometry import LineString, Polygon
 
-from kese.core.sexp import child, layer_of, num, pt, yes
-from kese.core.shapes2d import EMPTY, arc3, arc_pts, bezier, disk, thicken, union
+from kese.core.sexp import child, layer_and_mask, num, pt, yes
+from kese.core.shapes2d import EMPTY, arc3, arc_pts, bezier, disk, rounded_rect, thicken, union
 from kese.s2_collect.nets import net_name
 
 GRAPHICS = {"gr_line", "gr_arc", "gr_circle", "gr_rect", "gr_poly", "gr_curve", "gr_bezier",
@@ -38,7 +38,10 @@ def graphic(node, T):
         return disk(c, math.hypot(e[0] - c[0], e[1] - c[1])), True, w, filled
     if kind == "rect":
         (x1, y1), (x2, y2) = pt(child(node, "start")), pt(child(node, "end"))
-        return Polygon([T(p) for p in ((x1, y1), (x2, y1), (x2, y2), (x1, y2))]), True, w, filled
+        r = num(node, "radius", 0.0)                        # KiCad 10: rounded corners
+        corners = rounded_rect(x1, y1, x2, y2, r).exterior.coords[:-1] if r > 0 else \
+            ((x1, y1), (x2, y1), (x2, y2), (x1, y2))
+        return Polygon([T(p) for p in corners]), True, w, filled
     if kind == "poly":
         pts = []
         for p in child(node, "pts")[1:]:
@@ -63,7 +66,7 @@ def painted(geom, closed, w, filled):
 
 
 def add_drawing(ctx, node, T, in_footprint=False):
-    layer = layer_of(node)
+    layer, bare = layer_and_mask(node)
     geom, closed, w, filled = graphic(node, T)
     if geom is None or geom.is_empty:
         return
@@ -71,6 +74,9 @@ def add_drawing(ctx, node, T, in_footprint=False):
         (ctx.items.edge_closed if closed else ctx.items.edge_open).append(geom)
         ctx.items.found["outline shapes on Edge.Cuts"] += 1
     else:
+        kind = "footprint graphic" if in_footprint else "graphic"
         # copper shapes can carry a net (KiCad 8+); without one they stay on NO_NET_NAME
-        ctx.add(layer, painted(geom, closed, w, filled), "footprint graphics" if in_footprint else "graphics",
-                net_name(ctx.items, node))
+        ctx.add(layer, painted(geom, closed, w, filled), kind + "s", net_name(ctx.items, node))
+        if bare:
+            m = ctx.bare_margin(node, w, solid=closed and filled)
+            ctx.add(f"{bare}.Mask", painted(geom, closed, w + 2 * m, filled), kind + " mask openings")

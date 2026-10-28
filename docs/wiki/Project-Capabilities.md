@@ -17,7 +17,7 @@ solvers and CAD, and a **visual model** of the visible surface for viewers.
 | Holes | Plated and non-plated, round and slotted; plated walls on the plated ones |
 | Board edge | Castellated holes and edge plating |
 | Dielectrics | One solid per gap between copper layers with its own εr and tanδ; resin fills the space beside inner copper |
-| Solder mask | Openings as KiCad draws them (pads, drawn openings, untented vias); conformal over every trace; pulled back from the board edge; open over every bore, so on a tented via it covers only the ring |
+| Solder mask | Openings as KiCad draws them (pads, drawn openings, untented vias, and tracks and copper drawings the mask leaves bare); conformal over every trace; pulled back from the board edge; open over every bore, so on a tented via it covers only the ring |
 | Silkscreen | KiCad's stroke font and text layout (TrueType text is drawn in the stroke font; a custom stroke or Hershey font is optional); removed inside mask openings, as fabricators do |
 | Surface finish | ENIG, ENEPIG, HASL, lead-free HASL, OSP, immersion silver, immersion tin, hard gold: each metal its own layer on the bare copper, taken from KiCad's finish name. Off by default. |
 | Etching | Optional sloped copper walls (`Copper.ETCH_FACTOR`) |

@@ -76,6 +76,19 @@ def layer_of(node):
     return c[1] if c else None
 
 
+def layer_and_mask(node):
+    """A track's or drawing's layer, and the side ("F" / "B") whose solder mask leaves it bare, or None.
+    KiCad 9+ writes such an item with both layers, (layers "F.Cu" "F.Mask"); as in KiCad, only F.Cu
+    is bared by F.Mask and only B.Cu by B.Mask."""
+    c = child(node, "layers")
+    if c is None:
+        return layer_of(node), None
+    names = [str(l) for l in c[1:]]
+    layer = next((l for l in names if l.endswith(".Cu")), names[0] if names else None)
+    masked = any(l in ("F.Mask", "B.Mask") for l in names)
+    return layer, (layer[0] if masked and layer in ("F.Cu", "B.Cu") else None)
+
+
 def yes(value):
     return str(value).lower() in ("yes", "true", "solid")
 

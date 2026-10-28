@@ -73,7 +73,8 @@ the STEP file with OpenCascade:
 ### 17.2.1 Read
 
 Tracks and arc tracks per layer, zone fills per layer, graphics and footprint graphics per layer,
-text per layer, pads, pad mask openings per side, non-plated holes, through vias, blind/buried
+text per layer, pads, pad mask openings per side, the mask openings of tracks, arc tracks and
+drawings the mask leaves bare (KiCad 9 and later) per side, non-plated holes, through vias, blind/buried
 vias, footprints, outline shapes on `Edge.Cuts`, via rings removed on unconnected layers,
 castellated holes, the edge plating band and its net, text in a TrueType face drawn with the
 stroke font.

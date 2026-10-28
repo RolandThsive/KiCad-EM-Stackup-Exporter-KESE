@@ -8,7 +8,7 @@
 | 6 | 20211014 | the lower end of the accepted range (`Run.KICAD_VERSION_MIN`); `featureTest/20a_format_kicad6`, written by hand in KiCad 6's format |
 | 7 | 20221018 | the two stator examples, `tests/boards/synthetic` and most of `featureTest/`, saved by KiCad 7 itself |
 | 8 | 20240108 | `tests/boards/one_layer` and `featureTest/20c_format_kicad8`, small hand-written files in KiCad 8's format |
-| 9 | 20241229 | `tests/boards/six_layer` and `featureTest/20d_format_kicad9`, likewise hand-written; per-via `(tenting front back)` is parsed, though no file in the repository uses it |
+| 9 | 20241229 | `tests/boards/six_layer` and `featureTest/20d_format_kicad9`, likewise hand-written; per-via `(tenting front back)` is parsed, though no file in the repository uses it; tracks and drawings left bare by the solder mask, `(layers "F.Cu" "F.Mask")` with an optional `(solder_mask_margin ...)`, are read (in `featureTest/08b_copper_graphics_nets`) |
 | 10 | 20260206 | the upper end of the accepted range (`Run.KICAD_VERSION_MAX`); five hand-written feature boards (`03b_vias_k10`, `06_padstacks`, `08b_copper_graphics_nets`, `19b_skipped_items_k10`, `20e_format_kicad10`); net names stored directly on items and per-via `(tenting (front yes) (back no))` are read |
 | newer | above 20260206 | read best-effort with a warning; raise `Run.KICAD_VERSION_MAX` once checked |
 
@@ -20,10 +20,10 @@ KiCad itself is not needed, only the `.kicad_pcb` file. Footprints are read from
 |---|---|
 | Copper layers | boards with 2, 4, 6 and 8 declared copper layers are in the repository (one of them single-sided: tracks only on `F.Cu`, and on `B.Cu` only its two through-hole pads); more than 8 are modelled with a warning; `F.Cu` and `B.Cu` must be declared |
 | Stack-up from Board Setup | thickness, type, material, εr, tanδ per dielectric; copper thickness per layer; mask thickness; mask and silk colours; copper finish; edge plating and castellated pads flags |
-| Tracks, arc tracks, vias (through, blind, buried, micro) | yes |
+| Tracks, arc tracks, vias (through, blind, buried, micro) | yes; a track the solder mask leaves bare (KiCad 9 and later) opens the mask over itself, grown by its own mask margin or the board's pad-to-mask clearance |
 | Pads: circle, rect, oval, roundrect, trapezoid, custom | yes; round and oval drills, drill offsets (which move the copper, not the hole), per-pad mask margins; chamfered corners are drawn as the plain rounded rectangle |
 | Zones | stored fills only (fill in KiCad first); rule areas skipped |
-| Graphics: line, arc, circle, rect, polygon (with arc segments), Bézier | on copper, mask and silk layers; outline from `Edge.Cuts` |
+| Graphics: line, arc, circle, rect, polygon (with arc segments), Bézier | on copper, mask and silk layers; outline from `Edge.Cuts`; rectangles with rounded corners (KiCad 10), on every layer and on `Edge.Cuts`; copper drawings the mask leaves bare (KiCad 9 and later) open it as tracks do |
 | Text: `gr_text`, `fp_text`, footprint properties | KiCad's stroke font and layout; TrueType faces drawn with the stroke font |
 | Text boxes, dimensions, images, groups, tables, generated items | skipped; counted when they sit on a copper, silk or mask layer (text boxes, dimensions) or at the top level of the file (images, groups, tables, generated items), otherwise left out without a count. For groups and generated items (such as length-tuning patterns) only the record itself is skipped: the tracks, footprints and graphics they hold are read as usual |
 | Footprint 3D models | skipped (bare board) |

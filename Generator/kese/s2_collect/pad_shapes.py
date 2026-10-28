@@ -19,10 +19,7 @@ def pad_shape(items, pad, w, h):
         d = abs(w - h) / 2
         return thicken(LineString([(-d, 0), (d, 0)] if w > h else [(0, -d), (0, d)]), min(w, h))
     if shape == "roundrect":
-        r = min(num(pad, "roundrect_rratio", 0.25) * min(w, h), min(w, h) / 2)
-        core = box(-w / 2 + r, -h / 2 + r, w / 2 - r, h / 2 - r) if r < min(w, h) / 2 else \
-            LineString([(-w / 2 + r, -h / 2 + r), (w / 2 - r, h / 2 - r)])
-        return core.buffer(r, quad_segs=sh.circle_quads(r)) if r > 0 else box(-w / 2, -h / 2, w / 2, h / 2)
+        return sh.rounded_rect(-w / 2, -h / 2, w / 2, h / 2, num(pad, "roundrect_rratio", 0.25) * min(w, h))
     if shape == "trapezoid":
         rd = child(pad, "rect_delta")
         dx, dy = (float(rd[1]) / 2, float(rd[2]) / 2) if rd else (0.0, 0.0)

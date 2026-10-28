@@ -4,7 +4,7 @@ import math
 
 import numpy as np
 import shapely
-from shapely.geometry import GeometryCollection, Point
+from shapely.geometry import GeometryCollection, LineString, Point, box
 
 from kese.core import math2d as geo
 from parameters import P
@@ -38,6 +38,18 @@ def thicken(line, w):
     if w <= 0:
         return EMPTY
     return line.buffer(w / 2, quad_segs=max(G().TRACK_END_MIN_QUAD_SEGS, circle_quads(w / 2) // 2))
+
+
+def rounded_rect(x1, y1, x2, y2, r):
+    """The rectangle between two opposite corners, its corners rounded to radius r (at most half its
+    shorter side)."""
+    (x1, x2), (y1, y2) = sorted((x1, x2)), sorted((y1, y2))
+    r = min(r, (x2 - x1) / 2, (y2 - y1) / 2)
+    if r <= 0:
+        return box(x1, y1, x2, y2)
+    core = box(x1 + r, y1 + r, x2 - r, y2 - r) if r < min(x2 - x1, y2 - y1) / 2 else \
+        LineString([(x1 + r, y1 + r), (x2 - r, y2 - r)])
+    return core.buffer(r, quad_segs=circle_quads(r))
 
 
 def arc_pts(c, r, a0, sweep, first=None, last=None):

@@ -1,5 +1,6 @@
 """What every item handler shares while the tree is walked: the Items being filled, and where a
 shape on a given layer goes (copper of a net, a mask opening, silkscreen, or nowhere)."""
+from kese.core.sexp import num
 from parameters import P
 
 
@@ -28,6 +29,14 @@ class Context:
         """The copper layers from a to b, outermost first."""
         i, j = sorted((self.layers.index(a), self.layers.index(b)))
         return self.layers[i:j + 1]
+
+    def bare_margin(self, node, w, solid=False):
+        """How far the mask opening of a bare track or drawing (KiCad 9+) reaches past its copper: its own
+        solder_mask_margin, else the board's pad-to-mask clearance.  As in KiCad, a negative margin
+        narrows a stroke at most to nothing (-w/2); a filled shape's opening keeps at least its inside."""
+        m = num(node, "solder_mask_margin")
+        m = self.items.mask_clearance if m is None else m
+        return m if solid or m >= 0 else max(m, -w / 2)
 
     def add(self, layer, geom, what, net=None):
         """File a shape under its layer, and count it for the report as `what`."""
