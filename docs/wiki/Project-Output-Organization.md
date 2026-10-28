@@ -30,8 +30,10 @@ KiCad-EM-Stackup-Exporter-KESE/
 │   │   └── assets/fonts/        kicad_newstroke.json.gz and its notice; custom fonts go here
 │   ├── Input/                   boards to export (two examples included)
 │   ├── Output/                  one folder per board and run (ignored by git except .gitkeep)
-│   └── tests/                   regression suite, layout rules, test boards, baseline.json
-├── docs/wiki/, docs/images/     this wiki, and the folder for its pictures (to come)
+│   ├── tests/                   regression suite, layout rules, test boards, baseline.json
+│   └── tools/                   make_swatches.py: the colour boxes of docs/ColorSwatches/
+├── docs/wiki/, docs/images/     this wiki, and its pictures
+├── docs/ColorSwatches/          the colour squares in the wiki's colour tables
 ├── licenses/                    KiCad copyright headers and AUTHORS.txt
 ├── LICENSE, NOTICE.md, CONTRIBUTING.md
 └── README.md

@@ -4,10 +4,6 @@ Colours decide only the look of the GLB and OBJ files (and the colour tag of eac
 They never change geometry or the physical properties in `materials.json`. Stage 5, materials
 (`kese/s5_materials/materials.py`), gives every part one material from `parameters/color.py`.
 
-<!-- Pictures wanted for this page (made by Roland):
-     Color 1: the default palette, one swatch per MATERIALS entry.
-     Color 2: the same board with a green, a black and a red stack-up mask colour. -->
-
 ## 12.1 Materials
 
 `Color.MATERIALS`: one entry per key, a colour as an sRGB hex string and the glTF PBR values.
@@ -68,6 +64,10 @@ out
 <img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/ColorSwatches/121214.png" width="12" height="12" align="absmiddle" alt=""> `#121214`.
 Set `USE_STACKUP_COLORS = False` to always use `MATERIALS`.
 
+![The board featureTest/17_mask_silk from the top in a simulation-mode GLB, once for every mask colour name in the table and once with none set, each labelled with its name and hex value](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/mask_1_colors_simulation.png)
+
+![The same board once for every silkscreen colour: white and yellow silk on black mask, and black, not set, green, red, blue and purple silk on white mask](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/silk_1_colors_simulation.png)
+
 ## 12.3 Mode Differences
 
 - **Simulation mode**: the mask is translucent (alpha 0.80) so the copper under it can be seen in
@@ -76,6 +76,8 @@ Set `USE_STACKUP_COLORS = False` to always use `MATERIALS`.
   True`), because the skin has nothing behind it; the mask over copper is its own part with the
   lighter "over copper" colour, so traces read through the mask as on a real board; all copper
   takes `Copper_exposed`.
+
+![The mask colour gallery again in a visual-mode GLB: the mask opaque, and the mask on the copper in its lighter colour, so the tracks read through it](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/mask_2_colors_visual.png)
 
 ## 12.4 Where The Colours Go
 

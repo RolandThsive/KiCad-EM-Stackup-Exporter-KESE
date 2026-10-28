@@ -4,11 +4,6 @@ The board is the laminate: the dielectric layers between and around the copper, 
 outline, the cut-outs and the holes. `kese/s4_geometry/laminate.py` builds it from the resolved
 outline and stack-up; the settings are in `parameters/board.py`.
 
-<!-- Pictures wanted for this page (made by Roland):
-     Board 1: the outline of a board with a cut-out and NPTH holes, as KESE resolves it.
-     Board 2: a cross-section of a 4-layer laminate: cores, prepregs, inner copper with the
-              resin fill beside it (one colour per dielectric). -->
-
 ## 10.1 Dielectric Solids
 
 Each gap between two consecutive copper layers is one dielectric from the
@@ -73,8 +68,10 @@ dielectric part:
   prepreg;
 - otherwise the dielectric **above** it.
 
-So a core-prepreg-core stack-up gets its inner pockets filled from the prepreg, as in the
-factory. Inside KESE these prisms are tagged `resin_fill_beside: <layer>`; `materials.json` takes
+![Board 11_zones cut at true scale across the track that splits its inner zones, each dielectric part in its own colour: the resin beside In1.Cu belongs to the prepreg above it, the resin beside In2.Cu to the prepreg below it; and the bands of In1.Cu and In2.Cu from above, copper and resin](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/board_2_resin_fill.png)
+
+So both common 4-layer builds, prepreg-core-prepreg (as in the picture) and core-prepreg-core,
+get their inner pockets filled from a prepreg, as in the factory. Inside KESE these prisms are tagged `resin_fill_beside: <layer>`; `materials.json` takes
 a part's properties from its first prism, the dielectric slab itself, so the tag does not appear
 there. With the setting
 `False`, the pockets stay empty and `report.txt` notes it. With `Run.DIELECTRIC_GROUPING =
@@ -110,6 +107,8 @@ O = \bigcup_{r : n_r \text{ even}} r \ \setminus \bigcup_{r : n_r \text{ odd}} r
 | $`O`$ | the board outline region |
 | $`r`$ | one closed ring found on `Edge.Cuts` |
 | $`n_r`$ | how many other rings contain $`r`$ |
+
+![Board 12_outline_shapes: its Edge.Cuts shapes, open ones in blue and closed ones in red, over the outline KESE resolves from them, with a numbered key; the laminate solid KESE writes for it; and board synthetic with a circular cut-out, a non-plated hole, two plated holes and a via](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/board_1_outline.png)
 
 When `Edge.Cuts` gives no closed ring at all (nothing drawn, or only lines that do not close),
 the fallback outline is
