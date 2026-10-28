@@ -1,8 +1,8 @@
 <div align="center">
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="docs/logo/Kese_Rectangular.svg">
-  <img src="docs/logo/Kese_Rectangular_Transparent.svg" width="420" alt="KESE: KiCad EM Stackup Exporter">
+  <source media="(prefers-color-scheme: dark)" srcset="docs/logo/Kese_Rectangular_DarkMode.svg">
+  <img src="docs/logo/Kese_Rectangular.svg" width="420" alt="KESE: KiCad EM Stackup Exporter">
 </picture>
 
 **Real 3D Models Of KiCad Boards, With The True Stack-Up And Copper Split Per Net**
