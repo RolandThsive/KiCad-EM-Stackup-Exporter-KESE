@@ -25,7 +25,7 @@ What to make, where, and in which formats.
 | `MODE` | `"simulation"` | `"simulation"` / `"visual"` | Closed solids for solvers, or the visible surface for viewers ([Output Modes](Output-Modes.md)) |
 | `INPUT_DIR`, `OUTPUT_DIR` | `"Input"`, `"Output"` | paths relative to the current working directory (run from the `Generator/` folder) | Where boards are looked for and outputs written |
 | `FILE_FORMAT` | `["glb"]` | any of `"glb"`, `"stl"`, `"obj"`, `"step"` | Files to write; visual mode allows only glb and obj |
-| `UNITS` | `"m"` | `"mm"` / `"m"` | Units of the written files. Use `"mm"` for STEP: the STEP file always declares millimetres, so metre values come in 1000 times too small |
+| `UNITS` | `"m"` | `"mm"` / `"m"` | Units of the written files. Use `"mm"` for STEP, as CAD tools and solvers expect: the STEP file declares the units it is written in, but with `BUILD_WITH_KERNELS = True` it always declares millimetres, so metre values come in 1000 times too small |
 | `ORIGIN` | `"center"` | `"center"` / `"kicad"` | Outline centre at (0, 0), or KiCad's page origin kept |
 | `ORIENTATION` | `"upright"` | `"upright"` / `"flat"` | Board in XY with `F.Cu` toward +Z, or in XZ with `F.Cu` toward +Y |
 
@@ -40,6 +40,8 @@ What to make, where, and in which formats.
 
 | Name | Default | Range | Meaning |
 |---|---|---|---|
+| `BUILD_WITH_KERNELS` | `False` | bool | How stage 6 builds the model. `False`: every part's faces are found in 2D from its prisms and go as they are into the meshes and the STEP file ([Working Principle](Working-Principle.md#62-how-a-part-becomes-a-closed-solid)). `True`: the older way, every prism extruded and joined by Manifold, and the STEP file built and fused by OpenCascade (needs `cadquery`; much slower on dense boards) |
+| `WORKERS` | `0` | int ≥ 0 | Threads stage 6 works with when `BUILD_WITH_KERNELS` is `False`: parts built at once in simulation mode, slices in visual mode. `0` = one per processor core |
 | `SHOW_PROGRESS` | `True` | bool | Live `running <stage> ... 1m 23s` line on a terminal |
 | `VERIFY` | `False` | bool | Run the Verifier after generation (about 3 to 8 s on the example boards; longer on dense boards) |
 | `WRITE_MATERIALS_JSON` | `True` | bool | Write `materials.json` next to the outputs |
@@ -56,11 +58,11 @@ What to make, where, and in which formats.
 
 | Name | Default | Range | Meaning |
 |---|---|---|---|
-| `STEP_EXACT_ARCS` | `True` | bool | Runs of vertices on one circle (vias, round pads, round outlines, track ends, arc tracks) are written as true arcs, except where an arc would cross another outline (16.7.1); smaller files, real cylinders in CAD |
+| `STEP_EXACT_ARCS` | `True` | bool | Only with `BUILD_WITH_KERNELS = True`: runs of vertices on one circle (vias, round pads, round outlines, track ends, arc tracks) are written as true arcs, except where an arc would cross another outline (16.7.1); smaller files, real cylinders in CAD. The default writer keeps every curve faceted, as in the meshes |
 | `STEP_ARC_FIT_TOLERANCE_MM` | `0.0002` | mm > 0 | Vertices within this of one circle form an arc (2 × the snap grid) |
 | `STEP_ARC_MIN_POINTS` | `5` | int ≥ 3 | Minimum vertices in a run |
-| `STEP_WRITE_ROLES` | `["board", "copper", "plating", "finish"]` | subset of the roles below | Roles written to the STEP file; mask and silk are left out by default since on a dense board they are thousands of solids, which make the file five times bigger and the export seven times slower (the Coil board in `Input/`, in mm: 206 MB in 200 s instead of 39 MB in 30 s) |
-| `STEP_FUSE_ROLES` | `["board", "copper", "plating", "finish"]` | subset of `STEP_WRITE_ROLES` | Roles whose parts are fused into **one** solid each (what solvers need; slow on parts with many pieces); the others are compounds of touching solids (fast; fine for viewing) |
+| `STEP_WRITE_ROLES` | `["board", "copper", "plating", "finish"]` | subset of the roles below | Roles written to the STEP file; mask and silk are left out by default since on a dense board they are thousands of solids, which make the file more than twice as big (the Coil board in `Input/`, in mm: 147 MB written in 4.3 s instead of 63 MB in 1.8 s) |
+| `STEP_FUSE_ROLES` | `["board", "copper", "plating", "finish"]` | subset of `STEP_WRITE_ROLES` | Only with `BUILD_WITH_KERNELS = True`: roles whose parts are fused into **one** solid each (what solvers need; slow on parts with many pieces); the others are compounds of touching solids (fast; fine for viewing). The default writer writes every part as the closed solids of stage 6, one per separate body |
 
 The roles are `board`, `copper`, `plating`, `finish`, `mask`, `mask_over_copper`, `silk`. A part's role
 in STEP is that of its first prism, so in simulation mode the mask on copper belongs to the `mask`
@@ -70,7 +72,7 @@ part and `mask_over_copper` selects nothing (STEP is not written in visual mode)
 
 | Name | Default | Range | Meaning |
 |---|---|---|---|
-| `KICAD_VERSION_MIN`, `KICAD_VERSION_MAX` | `20211014`, `20260206` | KiCad file format numbers | Accepted range (KiCad 6 to 10; the repository's boards are KiCad 7, 8 and 9 files); outside it the run gives a warning |
+| `KICAD_VERSION_MIN`, `KICAD_VERSION_MAX` | `20211014`, `20260206` | KiCad file format numbers | Accepted range (KiCad 6 to 10; the repository has boards in each of these formats, [Compatibility](Compatibility.md#201-kicad-files)); outside it the run gives a warning |
 | `PRESETS` | `hfss`, `cst`, `openems`, `viewer` | `{name: {"Module.NAME": value}}` | Sets of overrides applied with `--for <name>` ([Choosing An Export](Choosing-An-Export.md)) |
 
 ## 16.2 Board (`parameters/board.py`)
@@ -244,10 +246,11 @@ segments per quarter circle.
 Example: a 0.3 mm via ($`r = 0.15`$ mm) gives $`n_c = 19.2`$, so $`q = \max(8, \lceil 4.8 \rceil) = 8`$, 32
 segments around the via; the floor $`q_{\min}`$ decides for every circle below about 0.4 mm radius.
 
-In STEP files (`Run.STEP_EXACT_ARCS`), a run of at least `STEP_ARC_MIN_POINTS` consecutive ring
-vertices is written as one true arc when a least-squares (Kåsa) circle through them fits every
-vertex within `STEP_ARC_FIT_TOLERANCE_MM`, the turn between vertices keeps one sense and is
-nearly the same everywhere, and the run sweeps at least 10°:
+In STEP files written with `Run.BUILD_WITH_KERNELS = True` and `Run.STEP_EXACT_ARCS`, a run of at
+least `STEP_ARC_MIN_POINTS` consecutive ring vertices is written as one true arc when a
+least-squares (Kåsa) circle through them fits every vertex within `STEP_ARC_FIT_TOLERANCE_MM`,
+the turn between vertices keeps one sense and is nearly the same everywhere, and the run sweeps
+at least 10°:
 
 ```math
 \max_{\mathbf{p} \in \text{run}} \left| d(\mathbf{p}, \mathbf{c}) - r \right| \le \tau_{\mathrm{arc}} \qquad (16.5)

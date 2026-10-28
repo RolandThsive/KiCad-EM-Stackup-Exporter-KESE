@@ -34,11 +34,11 @@
 | Skin | The visible outer surface of the board; what visual mode writes. |
 | Snap grid | The 0.1 µm grid every 2D shape is rounded to, so neighbouring layers share exact vertices. |
 | Stack-up | The ordered list of copper and dielectric layers with their thicknesses and materials; KiCad stores it in Board Setup. |
-| STEP | The CAD exchange format (ISO 10303); KESE writes AP214 with exact solids. |
+| STEP | The CAD exchange format (ISO 10303); KESE writes AP214, every part as closed solids of flat faces. |
 | tanδ (loss tangent) | Dielectric loss of a material. |
 | Tenting | Covering a via with solder mask instead of leaving it open. |
 | Through via | A via from `F.Cu` to `B.Cu`. |
-| Verifier | KESE's opt-in check that every solid is closed, no parts overlap, and the skin is one surface. |
+| Verifier | KESE's opt-in check that every solid is closed and holds the volume of its prisms, no parts overlap, and the skin is one surface. |
 | Visual mode | Output as the visible skin only, for viewers and renders. |
 | Z-fighting | Flicker in a 3D viewer when two surfaces lie at almost the same depth; the reason visual mode exists. |
 

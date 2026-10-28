@@ -54,10 +54,19 @@ python tests/test_boards.py                     # the regression suite over ever
 | Message in `notes` | Meaning |
 |---|---|
 | `note: Edge.Cuts line ends up to D mm apart joined (Board.OUTLINE_LINE_SNAP_MM = S mm)` | The outline's lines had small gaps between their ends; they were closed as KiCad closes them (KiCad joins ends up to 0.01 mm apart, the default of `Board.OUTLINE_LINE_SNAP_MM`), so the board shape is the one KiCad shows. |
+| `<part>: faces and walls still changing after 20 rounds` | Stage 6 could not give the part's faces and walls the same vertices ([Working Principle](Working-Principle.md#62-how-a-part-becomes-a-closed-solid)). The part may be open; the Verifier then says so. |
+| `<part>: pinch points left after 10 rounds of cutting` (or `pinch edges between two heights left ...`) | Two pieces of the part still touch at a point or along an edge after the cut-out disc grew to 512 times `Geometry.PINCH_POINT_OPENING_MM`. The part may be open there. |
+| `step: <part>: N edges are not shared by two faces (the solid is open there)` | The STEP writer found the part open. It is still written, and a CAD tool will report free edges on it. |
+| `step: no part to write; STEP skipped` | No part has its role in `Run.STEP_WRITE_ROLES`, or none of those parts has a solid, so no `<board>.step` is written. |
+
+Only with `Run.BUILD_WITH_KERNELS = True`, the older path that builds the solids with Manifold and
+the STEP file with OpenCascade:
+
+| Message in `notes` | Meaning |
+|---|---|
 | `<part>: note: boolean union unavailable (...); pieces left touching` | A part could not be unioned; its pieces are concatenated. The Verifier may then report it as not closed. |
 | `step: fuse failed for <part> (...); written as a compound` | In the STEP file that part is touching solids instead of one body. |
 | `step: cadquery is not installed (pip install cadquery); STEP skipped` | Only when `kese.pipeline.generate` is called directly (as the regression suite does). From `run_KESE.py`, asking for STEP without `cadquery` stops before anything runs with `missing Python package(s): cadquery`. |
-| `step: no part to write; STEP skipped` | No part has its role in `Run.STEP_WRITE_ROLES`, or none of those parts has a solid, so no `<board>.step` is written. |
 
 ## 17.2 What `report.txt` Counts
 
@@ -87,13 +96,15 @@ stroke font.
 ## 17.3 The Verifier
 
 `kese/s8_verify/`, run with `--verify` or `Run.VERIFY = True`. It checks the meshes that
-GLB, STL and OBJ are written from, not the input. The STEP file is built separately and is not
-checked at run time (the regression suite reads it back with OCP).
+GLB, STL and OBJ are written from and, in simulation mode, the faces that the STEP file is
+written from, not the input. The STEP file itself is not read back at run time (the regression
+suite reads it back with OCP).
 
 | Mode | Check | Pass condition |
 |---|---|---|
 | simulation | every part is a closed, consistently wound solid; its volume is printed in mm³ | `closed=True winding=True` for every part |
 | simulation | no two parts overlap: 3,000 random vertical rays through the model, the intervals each part occupies along every ray | worst overlap below 0.1 µm (`worst 0.000 um` on the example boards) |
+| simulation | every part's volume found four ways (`volumes.py`): from its flat faces, from its slices, from its mesh and from the prisms it was built from. Not with `Run.BUILD_WITH_KERNELS = True` | `closed=True whole=True` for every part: the faces and the mesh within 1 part in 10⁷ of the slices, the prisms within that plus 0.001 mm³ (what opening pinch points may take) |
 | visual | the skin is one outer surface: along every ray that hits the model the faces take turns, one going into the material and the next out of it (two faces on most rays; four where a ray crosses a hollow open to the air, such as the bore of a buried via under stacked micro vias) | the line `visible surfaces per vertical ray: faces met {2: ...}; rays where in and out do not alternate: 0` ends in 0 |
 | both, when a GLB was written | the GLB through the Khronos glTF validator, when the `gltf_validator` command-line tool is on the PATH | not a pass condition: the validator's last line is only reported; otherwise `gltf_validator not on PATH: glTF validation skipped`; with no GLB in the run the line is absent |
 
@@ -102,18 +113,34 @@ checked at run time (the regression suite reads it back with OCP).
 > With `"flat"` the rays run along the board plane, and the visual check reports FAIL on a
 > correct skin.
 
-Example tail of a `report.txt`:
+Example tail of a `report.txt` (`Input/Stator.kicad_pcb` in simulation mode):
 
 ```text
 Verifier: PASS
   Board_dielectric 1                   closed=True winding=True volume=2530.6188 mm3
   Copper_1                             closed=True winding=True volume=2.1699 mm3
   Copper_2                             closed=True winding=True volume=2.1699 mm3
-  Copper_TX                            closed=True winding=True volume=3.1673 mm3
+  Copper_TX                            closed=True winding=True volume=3.1674 mm3
   Top Solder Mask                      closed=True winding=True volume=16.0024 mm3
   Bottom Solder Mask                   closed=True winding=True volume=16.2848 mm3
   overlap between different parts along 3000 vertical rays: worst 0.000 um
   gltf_validator not on PATH: glTF validation skipped
+  Board_dielectric 1                   volume from faces 2530.618759 mesh 2530.618759 slices 2530.618759 prisms 2530.618759 mm3 closed=True whole=True
+  Copper_1                             volume from faces 2.169868 mesh 2.169868 slices 2.169868 prisms 2.169868 mm3 closed=True whole=True
+  Copper_2                             volume from faces 2.169863 mesh 2.169863 slices 2.169863 prisms 2.169863 mm3 closed=True whole=True
+  Copper_TX                            volume from faces 3.167362 mesh 3.167362 slices 3.167362 prisms 3.167362 mm3 closed=True whole=True
+  Top Solder Mask                      volume from faces 16.002391 mesh 16.002391 slices 16.002391 prisms 16.002391 mm3 closed=True whole=True
+  Bottom Solder Mask                   volume from faces 16.284824 mesh 16.284824 slices 16.284824 prisms 16.284824 mm3 closed=True whole=True
+```
+
+The volume from the faces needs nothing but the faces: walls are vertical and add nothing, so a
+closed surface holds the sum of height times signed area over its flat faces
+(`Boundary.volume()`):
+
+```python
+v = 0
+for z, region, up in boundary.flats:
+    v += (1 if up else -1) * z * region.area
 ```
 
 The overlap test works on the vertical rays. For each ray and each part, the pairs of hits give
@@ -125,7 +152,7 @@ their intervals is measured, and the worst is reported:
 ```
 
 ```math
-\text{PASS} \iff \text{every part closed and consistently wound and } \ \Omega < 10^{-4} \text{ mm} \qquad (17.2)
+\text{PASS} \iff \text{every part closed, consistently wound and whole, and } \ \Omega < 10^{-4} \text{ mm} \qquad (17.2)
 ```
 
 | Symbol | Meaning |
@@ -136,10 +163,12 @@ their intervals is measured, and the worst is reported:
 
 Parts that do not meet, or only touch, give 0.
 
-A `closed=False` or `winding=False` line names the part: an open solid means a union did not
-close (see the `boolean union unavailable` note). An overlap above 0.1 µm means two parts share
-volume; that line gives only the worst value, not the parts. Both are bugs worth reporting with
-the board file.
+A `closed=False`, `winding=False` or `whole=False` line names the part. An open solid means its
+faces and walls do not meet on the same edges (see the `faces and walls still changing` and
+`pinch points left` notes, or with kernels the `boolean union unavailable` note); `whole=False`
+means the solid holds more or less material than the prisms it was built from. An overlap above
+0.1 µm means two parts share volume; that line gives only the worst value, not the parts. All of
+these are bugs worth reporting with the board file.
 
 ## 17.4 The Regression Suite
 
@@ -180,18 +209,14 @@ The test boards in `tests/boards/` cover:
 `python -m pytest tests` also runs `tests/test_layout.py`, which checks the code rather than the
 boards: which folders of `kese/` may import which, one `run()` per stage, no file over 200 lines,
 lowercase names, and no code outside `Generator/`. It only reads the source, so it takes about a second
-(`python tests/test_layout.py`). The same command runs `tests/test_step_file.py`, which writes four small
-parts, with a `#`, a `;`, a quote and letters outside ASCII in their names, into one STEP file
-part by part, as `<board>.step` is written, and reads it back against the file OpenCascade
-writes for the same parts at once: the same names, placements, colours, solids and volumes. It
-needs `cadquery` and takes a few seconds (`python tests/test_step_file.py`).
-The command also runs `tests/test_step_arcs.py`, which builds outlines where the arc of a faceted
-circle would cross an edge of its own ring, a hole, another polygon or another arc, and checks that
-those vertices stay straight, while the same arcs a little further away are kept, and so are an arc
-that the outline doubles back along or leaves along its tangent and the arc of a half round; with
-`cadquery` it also checks that OpenCascade finds the faces and solids made from them valid, and
-those with the crossing arcs written invalid. It takes a few seconds
-(`python tests/test_step_arcs.py`).
+(`python tests/test_layout.py`). The same command runs three STEP tests, each also on its own
+(`python tests/<name>.py`):
+
+| Test | Path | What it checks |
+|---|---|---|
+| `test_step_native.py` | the default writer (`kese/s7_write/step.py`) | a box with a through hole beside a second box, written from their faces and read back by OpenCascade as two valid solids with no free edge, the right faces and the right volume; names with a quote and letters outside ASCII come back as they went in. Needs OCP, which `cadquery` installs; takes a second |
+| `test_step_file.py` | `Run.BUILD_WITH_KERNELS = True` (`step_file.py`) | four small parts, with a `#`, a `;`, a quote and letters outside ASCII in their names, written part by part and read back against the file OpenCascade writes for the same parts at once: the same names, placements, colours, solids and volumes. Needs `cadquery`; takes a second |
+| `test_step_arcs.py` | `Run.BUILD_WITH_KERNELS = True` (`step_arcs.py`, the true circles written back into STEP) | outlines where the arc of a faceted circle would cross an edge of its own ring, a hole, another polygon or another arc keep those vertices straight, while the same arcs a little further away are kept, and so are an arc that the outline doubles back along or leaves along its tangent and the arc of a half round; with `cadquery`, OpenCascade finds the faces and solids made from them valid, and those with the crossing arcs invalid. Takes a few seconds |
 [`CONTRIBUTING.md`](https://github.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/blob/main/CONTRIBUTING.md)
 explains the rules.
 
