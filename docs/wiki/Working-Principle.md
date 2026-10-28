@@ -1,133 +1,125 @@
 # 6. Working Principle
 
-<!-- Picture wanted: Introduction 1, one overview picture of the pipeline: the .kicad_pcb on the
-     left, the seven stages, the output files on the right. -->
+![The nine stages of KESE as cards, read to report, each with its folder, a picture of what it made for board 20b_format_kicad7, and the object it hands to the next stage: RawBoard, Items, Regions, PrismSet, PrismSet, Model, Files, Files, Files. Card 1 shows the board file as KiCad draws it, card 8 one net's volume found four ways, and card 9 what report.txt lists](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/wp_1_pipeline.png)
 
-KESE is a linear pipeline of seven stages (`Generator/Pipeline.py`). Every stage works on one
-in-memory object and hands it to the next; nothing is recomputed per output format. The Packager
-writes the model files before the Verifier runs, because the Verifier also checks the written
-GLB; the two text records come last so that the report carries the Verifier's result.
+KESE is one straight pipeline, `kese/pipeline.py`. Every stage is a folder in `kese/` with a
+`run(what the stage before made, job)` that returns what it makes:
 
-<h4 align="center">Reader → BoardBreakdown → Geometry → Colorer → Assembler → Packager → Verifier</h4>
+```python
+STAGES = (read, collect, resolve, geometry, materials, assemble, write, verify, report)
 
-1. **Reader** (`Generator/Reader.py`). Parses the s-expression file into a tree. Checks that it is
-   a `(kicad_pcb ...)` file, reads the `(version ...)` and `(generator ...)`, lists the copper
-   layers in order (`F.Cu`, `In1.Cu` ... `InN.Cu`, `B.Cu`), takes the board thickness from
-   `(general (thickness ...))` and the title from the title block. A file format outside the
-   tested range or more than six copper layers gives a warning; missing `F.Cu` or `B.Cu` is an
-   error.
+out = pcb_path
+for stage in STAGES:
+    out = stage.run(out, job)
+```
 
-2. **BoardBreakdown** (`Generator/BoardBreakdown.py`). Walks the tree and turns every element into a
-   flat 2D shape in KiCad's coordinate frame (mm, Y down): track segments and arcs become thick
-   lines, pads become their KiCad shape at their position and angle, zones contribute their stored
-   fill polygons, graphics and text become painted strokes, vias become a round pad on every layer
-   they span (except rings dropped by KiCad's "remove unused layers") plus a hole. The stack-up is
-   read from Board Setup ([Stack-Up Model](Stack-Up-Model.md)). Then `resolve()` builds the outline
-   from `Edge.Cuts`; per layer and per net it unions the copper, clips it to the outline and drills
-   the holes, still in KiCad's frame, then moves the result into the board frame (Y up, origin at
-   the outline centre or at KiCad's origin) and snaps it to the geometry grid; it also computes the
-   plated barrels, mask openings and silkscreen. The result is a `Breakdown`: per-layer regions with
-   nets, plus counters of what was found and what was skipped.
+| # | Stage | Gets | Gives | What it does |
+|---|---|---|---|---|
+| 1 | `s1_read` | `.kicad_pcb` file | `RawBoard` | Parses the file and lists the copper layers, the board thickness and the file format. Warns outside KiCad 6 to 10 and above eight copper layers; stops if `F.Cu` or `B.Cu` is missing |
+| 2 | `s2_collect` | `RawBoard` | `Items` | Every track, pad, zone fill, graphic, text and via as a flat shape on its layer, with its net, in KiCad's frame; the stack-up from Board Setup; counts of what was read and what was skipped |
+| 3 | `s3_resolve` | `Items` | `Regions` | The outline; the copper joined per layer and net, clipped and drilled; barrels, edge plating, mask openings and silkscreen; everything moved to the board frame and snapped to the grid |
+| 4 | `s4_geometry` | `Regions` | `PrismSet` | The heights from the stack-up, once; every part as prisms, each a flat region between two heights |
+| 5 | `s5_materials` | `PrismSet` | `PrismSet` | A material for every part ([Colorizing](Colorizing.md)) |
+| 6 | `s6_assemble` | `PrismSet` | `Model` | Closed solids (simulation mode) or the visible surface (visual mode), in the output units and orientation (6.2) |
+| 7 | `s7_write` | `Model` | `Files` | GLB, STEP, STL, OBJ and `materials.json` in a new run folder |
+| 8 | `s8_verify` | `Files` | `Files` | Only with `--verify`: every part closed and consistently wound, its volume the same four ways, no two parts overlapping ([Checks, Errors And Warnings](Checks-Errors-And-Warnings.md)) |
+| 9 | `s9_report` | `Files` | `Files` | `report.txt` and `parameters.txt` |
 
-3. **Geometry** (`Generator/Geometry/`). Five builders turn the regions into *prisms*, each a
-   flat region between two heights with a part name, a role and physical properties:
-   `Board` (dielectrics), `Copper` (copper per net, via barrels, etch slices), `SolderMask`,
-   `Silkscreen` and `Finish`. All prisms go into one `PrismSet` (`Generator/Common/prisms.py`).
-   This is the master geometry; everything downstream is made from it.
+Nothing is rebuilt per output format: stage 7 writes every file from the one `Model`. The files are
+written before the Verifier runs, because it also checks the written GLB, and the report comes last
+so that it carries the Verifier's result.
 
-4. **Colorer** (`Generator/Colorer.py`). Gives every part a material from
-   `Color_Parameters.MATERIALS`, honouring the stack-up's colour names when
-   `Color.USE_STACKUP_COLORS` is on. Physical properties (εr, conductivity) stay on the prisms;
-   the Colorer only decides the look. See [Colorizing](Colorizing.md).
-
-5. **Assembler** (`Generator/Assembler.py`). Builds one in-memory `Model`. In simulation mode,
-   every prism is extruded to a closed triangle mesh and all pieces of a part (a net's traces on
-   every layer plus its vias) are joined by a boolean union into closed solids: one where the
-   pieces touch, separate bodies within the part where they do not. Before the
-   union, regions that touch are made to share exact boundary vertices (no T-junctions) and
-   regions that touch at a single point are parted by a hair so each solid is manifold. In visual
-   mode the `Skin` builder keeps only the faces that are not buried inside another prism
-   ([Output Modes](Output-Modes.md)). The meshes are then scaled to the output units, rotated to
-   the output orientation and given smooth normals across edges flatter than
-   `Run.SMOOTH_SHADE_ANGLE_DEG`.
-
-6. **Packager** (`Generator/Packager/`). Writes the requested files from the same `Model`: GLB,
-   OBJ and STL from the meshes; STEP from the prisms themselves as exact B-rep solids (not from
-   triangles), with runs of vertices that lie on one circle written back as true arcs; then
-   `materials.json`. See [Project Output Organization](Project-Output-Organization.md).
-
-7. **Verifier** (`Generator/Verifier.py`, opt-in). Proves the model: in simulation mode every part
-   must be watertight with consistent winding and no two parts may overlap along 3,000 random
-   vertical rays; in visual mode every ray that hits the board must cross exactly one upward and one
-   downward surface. If the Khronos `gltf_validator` is on the PATH, the written GLB is run through
-   it and its last line reported. See [Checks, Errors And Warnings](Checks-Errors-And-Warnings.md).
-
-Last, `parameters.txt` and `report.txt` are written next to the model files.
+Two shared folders sit below the stages: `kese/core/` holds the tools that know nothing about
+stages (the s-expression parser, 2D shapes, the boundary of a stack of prisms, triangulation, the
+stroke font), and `kese/model/` the classes handed from one stage to the next. A stage uses only
+those, `parameters/` and the stages before it; `tests/test_layout.py` checks this
+([Project Output Organization](Project-Output-Organization.md) shows the whole tree).
 
 ## 6.1 The Design Choice That Matters Most
 
-Everything is built from **2D regions snapped to one grid** and extruded between **heights
-computed once** from the stack-up. Every vertex of every 2D region is rounded to the grid
-(the one exception is where polygons touch: just before extrusion, inside one region a polygon
-that touches another at a point or along a line is shrunk all round by half of
-`Geometry.PINCH_POINT_OPENING_MM`, and between the regions of one part a single touching point is
-notched out; as a last resort, a polygon whose own rings pinch and that cannot be extruded
-watertight is shrunk all round by the full `Geometry.PINCH_POINT_OPENING_MM`. Those vertices sit
-just off the grid):
+Everything is built from **2D regions snapped to one grid**, between **heights worked out once**
+from the stack-up:
 
-```math
-x' = g \cdot \mathrm{round}\left( \frac{x}{g} \right), \qquad y' = g \cdot \mathrm{round}\left( \frac{y}{g} \right) \qquad (6.1)
+```python
+# kese/core/shapes2d.py, snap(): every polygon that is not on the grid yet is rounded to it
+off = ~on_grid(parts)
+parts[off] = shapely.set_precision(parts[off], grid())      # Geometry.SNAP_GRID_MM, 0.1 µm
 ```
 
-where $`g`$ is the grid pitch, `Geometry.SNAP_GRID_MM` (0.1 µm by default). Heights are not
-rounded. Because neighbouring layers share identical vertices and exact z values, the solids of
-different parts touch without gaps or overlaps (three known exceptions: silkscreen kept in mask
-openings with `Silkscreen.SILKSCREEN_OVER_COPPER = True`, see [Silkscreens](Silkscreens.md); with
-`Copper.ETCH_FACTOR > 0` an empty wedge beside each sloped copper wall, see
-[Copper And Traces](Copper-And-Traces.md#115-etch-factor); and edge plating with
-`Run.COPPER_GROUPING = "layer"`, where inner copper overlaps the band, see
-[Copper And Traces](Copper-And-Traces.md#117-edge-plating)), the per-part unions succeed, and the Verifier's overlap test comes back at
-0.000 µm on the example boards. The price is that curves are faceted in the mesh formats; the STEP
-writer recovers the true circles from the faceted rings so that CAD gets real cylinders.
+- Every vertex of every region lies on the grid; heights are not rounded. So two parts that touch
+  have the very same edges and heights: no gap and no overlap between them, and every part's
+  surface closes. The Verifier's overlap test finds no shared material on any board of the
+  regression suite.
+- Where a region would pinch to a point (two pieces touching at one vertex), a disc of
+  `Geometry.PINCH_POINT_OPENING_MM` is cut out of the smaller piece so that the solid can close
+  (`kese/core/pinches.py`). Those vertices sit just off the grid.
+- One known exception, where parts can overlap or leave a gap: the wedge beside a sloped copper
+  wall (`Copper.ETCH_FACTOR > 0`, see [Copper And Traces](Copper-And-Traces.md#115-etch-factor)).
+- The price: curves are polygons, in the meshes and in the STEP file alike. Only the older
+  OpenCascade path (`Run.BUILD_WITH_KERNELS = True`) writes true circles back into STEP.
 
-## 6.2 Coordinate Frames
+## 6.2 How A Part Becomes A Closed Solid
 
-| Frame | Where | Axes |
-|---|---|---|
-| KiCad | the file | mm, X right, Y **down**, page origin |
-| Board | inside KESE | mm, X right, Y **up**, origin at the outline centre (`Run.ORIGIN = "center"`) or at KiCad's page origin (`"kicad"`); z = 0 at the laminate mid-plane, `F.Cu` toward +Z |
-| Output | the files | mm or m (`Run.UNITS`); board in the XY plane with `F.Cu` toward +Z (`Run.ORIENTATION = "upright"`) or in the XZ plane with `F.Cu` toward +Y (`"flat"`) |
+![Stage 6 on one net of board 04_vias_blind_buried, a through via with a track on In3.Cu: its four prisms, its five slices between six heights, its six flat faces looking up or down, its walls, its 1,048 triangles, and the same volume found four ways, from the prisms, the slices, the faces and the triangles, as four equal bars](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/wp_2_solid.png)
 
-From KiCad to the board frame (in `BoardBreakdown.resolve`), every 2D point is shifted to the
-origin and the Y axis is flipped:
+Stage 6 needs no CAD kernel. Every part's surface is worked out in 2D from its prisms
+(`kese/core/boundary.py`) and then cut into triangles (`kese/core/boundary_mesh.py`):
 
-```math
-x_b = x_k - c_x, \qquad y_b = -\left(y_k - c_y\right) \qquad (6.2)
+```python
+def boundary_of(part, prisms, log=None):
+    """The prisms of one part -> its Boundary, closed by construction."""
+    levels = heights_of(prisms)                    # every height where a prism starts or ends
+    slices = slices_of_part(prisms, levels, log)   # the material between two neighbouring heights
+    for _ in range(ROUNDS):
+        flats = flat_faces(slices, levels)         # below minus above looks up, above minus below down
+        slices, changed = slices_sharing_vertices(slices, flats, levels, log)
+        if not changed:
+            break
+    ...
+
+mesh = mesh_of_boundary(boundary)                  # faces cut into triangles, two per wall edge
 ```
 
-```math
-(c_x, c_y) = \begin{cases} \left( \frac{x_{\min} + x_{\max}}{2},\ \frac{y_{\min} + y_{\max}}{2} \right) & \text{origin at the centre} \\ (0,\ 0) & \text{KiCad origin} \end{cases} \qquad (6.3)
+- The walls are the rings of every slice, stood up between the slice's two heights
+  (`Boundary.walls()`). Faces and walls must meet on identical edges, so the slices that meet at a
+  height are given each other's vertices, and their faces' vertices, until nothing changes
+  (`kese/core/vertices.py`). Then the mesh closes by construction.
+- The faces are cut by earcut, as in KiCad's 3D viewer; a polygon of more than
+  `Geometry.TRIANGULATE_CELL_POINTS` points strip by strip, as KiCad cuts big polygons into cells.
+  A cut that does not close exactly on the polygon's edges is done again by Manifold's
+  triangulator (`kese/core/triangulate.py`).
+- `Run.WORKERS` parts are built at once, the biggest first. Every part keeps its faces (its
+  `Boundary`), and the STEP writer writes those same faces as a closed solid.
+- Visual mode does the same for all parts at once and keeps only the faces between material and
+  air (`skin_faces.py`, `skin_mesh.py`, see [Output Modes](Output-Modes.md)).
+- Last, every mesh is scaled to the output units, turned to the output orientation and shaded
+  smooth across edges flatter than `Run.SMOOTH_SHADE_ANGLE_DEG` (`transform.py`).
+- With `Run.BUILD_WITH_KERNELS = True` the older path runs instead: every prism is extruded and the
+  pieces of a part are joined by Manifold's boolean union (`solids.py`, `skin.py`).
+
+## 6.3 Coordinate Frames
+
+![The outline of board 20c_format_kicad8 and its top left corner P in three frames: KiCad's, in mm with Y down from the page's corner; the board frame, in mm with Y up from the outline's centre and z from the laminate's mid-plane; and the output, in metres, upright or flat](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/wp_3_frames.png)
+
+| Frame | Where | Units and axes | Origin |
+|---|---|---|---|
+| KiCad | the `.kicad_pcb` file | mm; X right, Y **down** | the page's top left corner |
+| Board | inside KESE, stages 3 to 6 | mm; X right, Y **up**; `F.Cu` toward +Z | the outline's centre (`Run.ORIGIN = "center"`) or KiCad's origin (`"kicad"`); z = 0 at the laminate's mid-plane |
+| Output | the written files | mm or m (`Run.UNITS`); the board in the XY plane with `F.Cu` toward +Z (`Run.ORIENTATION = "upright"`) or in the XZ plane with `F.Cu` toward +Y (`"flat"`) | as the board frame |
+
+```python
+# kese/s3_resolve/frame.py: KiCad (x, y down) -> board (x - cx, -(y - cy)), on the grid
+sh.snap(affinity.affine_transform(g, [1, 0, 0, -1, -cx, cy]))
+
+# kese/s6_assemble/transform.py: board -> output
+scale = 1.0 if R.UNITS == "mm" else 0.001
+if R.ORIENTATION == "flat":      # board in XZ, F.Cu toward +Y
+    rot = np.array([[1, 0, 0, 0], [0, 0, 1, 0], [0, -1, 0, 0], [0, 0, 0, 1]], dtype=float)
 ```
 
-From the board frame to the written files (in `Assembler.output_transform`), every 3D point is
-scaled to the output units and, for the flat orientation, turned so that `F.Cu` faces +Y:
-
-```math
-\begin{pmatrix} x_o \\ y_o \\ z_o \end{pmatrix} = u R \begin{pmatrix} x_b \\ y_b \\ z_b \end{pmatrix}, \qquad u = \begin{cases} 1 & \text{mm} \\ 10^{-3} & \text{m} \end{cases}, \qquad R = \begin{cases} I & \text{upright} \\ \begin{pmatrix} 1 & 0 & 0 \\ 0 & 0 & 1 \\ 0 & -1 & 0 \end{pmatrix} & \text{flat} \end{cases} \qquad (6.4)
-```
-
-| Symbol | Meaning | Parameter |
-|---|---|---|
-| $`x_k, y_k`$ | a point in KiCad's frame (mm, Y down) | |
-| $`x_b, y_b, z_b`$ | the same point in the board frame (mm, Y up, $`z_b = 0`$ at the laminate mid-plane) | |
-| $`c_x, c_y`$ | the origin in KiCad coordinates | `Run.ORIGIN` |
-| $`x_{\min} \dots y_{\max}`$ | bounding box of the board outline in KiCad coordinates | |
-| $`x_o, y_o, z_o`$ | the point as written to the files | |
-| $`u`$ | unit scale | `Run.UNITS` |
-| $`R`$ | orientation | `Run.ORIENTATION` |
-
-`report.txt` states which origin was used, with the offset $`(c_x, c_y)`$ in KiCad coordinates, so
-positions can be mapped back to the layout.
+`report.txt` names the origin used, for example
+`origin: outline centre (112.0000, 108.0000) in KiCad coordinates`, so a position in the model can
+be mapped back to the layout.
 
 | Previous | Next |
 |:---|---:|

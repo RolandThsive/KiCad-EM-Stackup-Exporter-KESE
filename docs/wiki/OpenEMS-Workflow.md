@@ -12,6 +12,7 @@ dielectric, in mm, on KiCad's origin, with `materials.json` carrying εr, tanδ 
 ## 21.1 Export
 
 ```bash
+cd Generator
 python run_KESE.py Input/board.kicad_pcb --for openems --verify
 ```
 

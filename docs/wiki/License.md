@@ -10,16 +10,16 @@ files are the authority; this page summarises them.
 
 KESE includes material derived from KiCad, which is licensed under the GPL:
 
-- the default stroke font, `Parameters/Fonts/kicad_newstroke.json.gz`, converted from KiCad's
+- the default stroke font, `kese/assets/fonts/kicad_newstroke.json.gz`, converted from KiCad's
   "newstroke" font (GPL v2 or later; its CJK glyphs come from Adobe's Source Han Sans under an
   MIT-style notice and the SIL Open Font License 1.1), and
-- the text layout in `Generator/Geometry/Text.py`, which follows KiCad's stroke-font text code
+- the text layout in `kese/core/font.py`, which follows KiCad's stroke-font text code
   (GPL v2 or later).
 
 Work derived from GPL code has to stay under the GPL, with the original copyright notices kept.
 KiCad's original copyright headers and its `AUTHORS.txt` are kept word for word in the
 repository's `licenses/` folder, listed in `NOTICE.md` and
-[`LICENSE_fonts.txt`](https://github.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/blob/main/Parameters/Fonts/LICENSE_fonts.txt).
+[`LICENSE_fonts.txt`](https://github.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/blob/main/Generator/kese/assets/fonts/LICENSE_fonts.txt).
 
 ## 25.2 What You May Do
 

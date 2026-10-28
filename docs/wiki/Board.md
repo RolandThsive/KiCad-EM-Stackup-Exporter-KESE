@@ -1,13 +1,8 @@
 # 10. Board
 
 The board is the laminate: the dielectric layers between and around the copper, with the
-outline, the cut-outs and the holes. `Generator/Geometry/Board.py` builds it from the resolved
-outline and stack-up; the settings are in `Parameters/Board_Parameters.py`.
-
-<!-- Pictures wanted for this page (made by Roland):
-     Board 1: the outline of a board with a cut-out and NPTH holes, as KESE resolves it.
-     Board 2: a cross-section of a 4-layer laminate: cores, prepregs, inner copper with the
-              resin fill beside it (one colour per dielectric). -->
+outline, the cut-outs and the holes. `kese/s4_geometry/laminate.py` builds it from the resolved
+outline and stack-up; the settings are in `parameters/board.py`.
 
 ## 10.1 Dielectric Solids
 
@@ -73,8 +68,10 @@ dielectric part:
   prepreg;
 - otherwise the dielectric **above** it.
 
-So a core-prepreg-core stack-up gets its inner pockets filled from the prepreg, as in the
-factory. Inside KESE these prisms are tagged `resin_fill_beside: <layer>`; `materials.json` takes
+![Board 11_zones cut at true scale across the track that splits its inner zones, each dielectric part in its own colour: the resin beside In1.Cu belongs to the prepreg above it, the resin beside In2.Cu to the prepreg below it; and the bands of In1.Cu and In2.Cu from above, copper and resin](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/board_2_resin_fill.png)
+
+So both common 4-layer builds, prepreg-core-prepreg (as in the picture) and core-prepreg-core,
+get their inner pockets filled from a prepreg, as in the factory. Inside KESE these prisms are tagged `resin_fill_beside: <layer>`; `materials.json` takes
 a part's properties from its first prism, the dielectric slab itself, so the tag does not appear
 there. With the setting
 `False`, the pockets stay empty and `report.txt` notes it. With `Run.DIELECTRIC_GROUPING =
@@ -89,12 +86,14 @@ there. With the setting
 
 The outline comes from `Edge.Cuts`:
 
-1. Closed shapes (circles, rectangles, polygons) are taken as rings.
-2. Open lines, arcs and Béziers have every coordinate rounded to a grid set by
-   `Board.OUTLINE_LINE_SNAP_MM` (10 nm by default; the value counts only to the nearest power of
-   ten), so end points that round to the same grid point join, and are then polygonized into
-   faces. If they form no face at all, the run warns
-   `Edge.Cuts lines/arcs do not form a closed outline`.
+1. Closed shapes (circles, rectangles, polygons) are taken as rings; a rectangle keeps its rounded
+   corners when it has them (KiCad 10, `(radius ...)`, at most half its shorter side, as in KiCad).
+2. Open lines, arcs and Béziers are joined end to end the way KiCad chains them. An end that
+   meets no other end is moved onto the nearest other such end within
+   `Board.OUTLINE_LINE_SNAP_MM` (0.01 mm by default, KiCad's own chaining distance), the closest
+   pairs first; ends that already meet stay where they are. The lines are then polygonized into
+   faces. When a gap was closed this way, `report.txt` notes the widest one. If the lines form no
+   face at all, the run warns `Edge.Cuts lines/arcs do not form a closed outline`.
 3. Rings nested at an **even** depth are joined as board, rings at an **odd** depth are cut-outs,
    and the cut-outs are subtracted last. A circle drawn inside the outer outline is a hole through
    the whole board; a ring drawn inside such a cut-out does not become board again, because
@@ -109,6 +108,8 @@ O = \bigcup_{r : n_r \text{ even}} r \ \setminus \bigcup_{r : n_r \text{ odd}} r
 | $`O`$ | the board outline region |
 | $`r`$ | one closed ring found on `Edge.Cuts` |
 | $`n_r`$ | how many other rings contain $`r`$ |
+
+![Board 12_outline_shapes: its Edge.Cuts shapes, open ones in blue and closed ones in red, over the outline KESE resolves from them, with a numbered key; the laminate solid KESE writes for it; and board synthetic with a circular cut-out, a non-plated hole, two plated holes and a via](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/board_1_outline.png)
 
 When `Edge.Cuts` gives no closed ring at all (nothing drawn, or only lines that do not close),
 the fallback outline is
@@ -158,7 +159,7 @@ thickness; see [Stack-Up Model](Stack-Up-Model.md) for how the dielectrics are s
 | `USE_STACKUP_EPSILON_R`, `USE_STACKUP_LOSS_TANGENT` | `True`, `True` | bool | Stack-up values win over the defaults when present |
 | `RESIN_FILL_BETWEEN_INNER_COPPER` | `True` | bool | `True`: fill the space beside inner copper from the adjacent prepreg (otherwise from the dielectric above); `False`: those pockets stay empty and `report.txt` notes it (section 10.2) |
 | `INCLUDE_NON_PLATED_HOLES` | `True` | bool | NPTH pads become holes through the board |
-| `OUTLINE_LINE_SNAP_MM` | `1e-5` | mm > 0 | Grid that open `Edge.Cuts` coordinates are rounded to (nearest power of ten), so their end points join |
+| `OUTLINE_LINE_SNAP_MM` | `0.01` | mm > 0 | Open `Edge.Cuts` line and arc ends closer than this are joined, as KiCad joins them (its chaining distance is 0.01 mm) |
 | `OUTLINE_FALLBACK` | `"copper_hull"` | `"copper_hull"` / `"error"` | What to do when `Edge.Cuts` gives no closed ring at all |
 | `OUTLINE_FALLBACK_MARGIN_MM` | `1.0` | mm ≥ 0 | Margin around the copper hull in the fallback |
 

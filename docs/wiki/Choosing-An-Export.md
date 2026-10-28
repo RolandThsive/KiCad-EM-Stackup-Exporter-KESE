@@ -2,16 +2,16 @@
 
 The choices to make before a run are the mode, the file formats, the units, the origin and how
 copper and dielectrics are grouped. The presets bundle the right combination per tool; `--set`
-or the files in `Parameters/` change any single value.
+or the files in `parameters/` change any single value.
 
 ## 9.1 Decision Table
 
 | Need | Choice | Reason |
 |---|---|---|
-| HFSS | `--for hfss`: simulation, STEP, mm, KiCad origin, copper per net, dielectrics per layer | HFSS imports STEP with one named solid per part; with mm and KiCad's origin a port position read off the layout is the same x and the negated y in the model (KiCad's Y points down, KESE's up) |
+| HFSS | `--for hfss`: simulation, STEP, mm, KiCad origin, copper per net, dielectrics per layer | HFSS imports STEP with every part under its own name; with mm and KiCad's origin a port position read off the layout is the same x and the negated y in the model (KiCad's Y points down, KESE's up) |
 | CST | `--for cst`: as hfss plus one STL per part | CST imports STEP; the STL files serve the import route CST falls back to |
 | openEMS / CSXCAD | `--for openems`: simulation, STL, mm, KiCad origin, per net, per layer | openEMS has no STEP reader; it imports STL files, each into one material, and `materials.json` carries the properties. See [openEMS Workflow](OpenEMS-Workflow.md) |
-| FEKO, COMSOL, mechanical CAD | `--format step --set Run.UNITS=mm` | STEP with exact solids |
+| FEKO, COMSOL, mechanical CAD | `--format step --set Run.UNITS=mm` | STEP with every part as closed solids of flat faces; curves stay faceted, as in the meshes, unless `Run.BUILD_WITH_KERNELS = True` |
 | Web viewer, three.js, `<model-viewer>` | `--for viewer`: visual, GLB, metres, centred | glTF viewers expect metres and a model around the origin; the skin does not z-fight |
 | Blender, renders | `--mode visual --format glb obj` | OBJ carries an `.mtl` with the colours; GLB carries PBR materials |
 | Thermal or FEA tool that reads STL | `--format stl --set Run.UNITS=mm` | one closed STL per part |
@@ -26,7 +26,7 @@ or the files in `Parameters/` change any single value.
 
 ## 9.2 The Presets
 
-`Run_Parameters.PRESETS`; `--for <name>` applies these overrides before any `--set`, and
+`Run.PRESETS` (in `parameters/run.py`); `--for <name>` applies these overrides before any `--set`, and
 `parameters.txt` records the preset and every value it changed.
 
 | Preset | `MODE` | `FILE_FORMAT` | `UNITS` | `ORIGIN` | `COPPER_GROUPING` | `DIELECTRIC_GROUPING` | `WRITE_MATERIALS_JSON` |
@@ -42,7 +42,7 @@ A preset is only a set of overrides: `--for hfss --format step glb` writes both.
 
 | | `mm` | `m` |
 |---|---|---|
-| **`Run.UNITS`** | EM solvers and CAD. Dimensions in the file equal the layout's. Required for STEP, whose header always says millimetres. | glTF viewers (the glTF specification is in metres). The default. |
+| **`Run.UNITS`** | EM solvers and CAD. Dimensions in the file equal the layout's. Use it for STEP: the file declares the units it is written in, but CAD tools and solvers are set up in millimetres. | glTF viewers (the glTF specification is in metres). The default. |
 
 | | `center` | `kicad` |
 |---|---|---|
@@ -81,7 +81,7 @@ For an EM simulation of a board in the solver's own units:
 | `Run.VERIFY` or `--verify` | on, for the first export of a new board |
 
 That is the `hfss` preset with `--verify`. Then set the fabricator's values in
-`Copper_Parameters.py`, `SolderMask_Parameters.py` and `Board_Parameters.py` before trusting the
+`parameters/copper.py`, `parameters/solder_mask.py` and `parameters/board.py` before trusting the
 results; see [Parameter Reference](Parameter-Reference.md).
 
 | Previous | Next |

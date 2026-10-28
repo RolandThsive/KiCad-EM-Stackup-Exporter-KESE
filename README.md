@@ -4,7 +4,7 @@
 
 **Real 3D Models Of KiCad Boards, With The True Stack-Up And Copper Split Per Net**
 
-Python · KiCad 6 To 10 · 1 To 6 Copper Layers · GLB, STEP, STL And OBJ · Free Software (GPL-3.0)
+Python · KiCad 6 To 10 · 1 To 8 Copper Layers · GLB, STEP, STL And OBJ · Free Software (GPL-3.0)
 
 </div>
 
@@ -30,7 +30,7 @@ Python · KiCad 6 To 10 · 1 To 6 Copper Layers · GLB, STEP, STL And OBJ · Fre
 > **Validation Against Measurements Is Pending.** The models have not yet been compared with
 > measured boards or with reference solver results. Thicknesses default to KiCad's own values
 > (35 µm copper, 10 µm solder mask), not to any fabricator's process. Set your fabricator's
-> numbers in `Parameters/` before trusting a simulation built on the output.
+> numbers in `Generator/parameters/` before trusting a simulation built on the output.
 
 > [!WARNING]
 > **Fill Your Zones Before Exporting.** KESE uses the zone fills KiCad stores in the board file.
@@ -69,7 +69,7 @@ the stack-up layer by layer and writes it out in one of two modes:
 - **visual**: only the visible surface of the same geometry, for web viewers such as
   `<model-viewer>` and three.js. Surfaces only microns apart no longer fight in the depth buffer.
 
-Nothing is hard-coded: every number lives in `Parameters/`, and each output comes with a
+Nothing is hard-coded: every number lives in `Generator/parameters/`, and each output comes with a
 `parameters.txt` listing exactly what produced it, including every command-line override.
 
 ---
@@ -78,7 +78,7 @@ Nothing is hard-coded: every number lives in `Parameters/`, and each output come
 
 | Area | Capability |
 |---|---|
-| Input | `.kicad_pcb` from KiCad 6 to 10, 1 to 6 copper layers, stack-up read from Board Setup |
+| Input | `.kicad_pcb` from KiCad 6 to 10, 1 to 8 copper layers, stack-up read from Board Setup |
 | Copper | One solid per net (default), per layer, or all merged; through, blind and buried vias; etch trapezoid |
 | Edges | Castellated holes plated on the notch wall; edge plating joined to its net |
 | Dielectrics | One solid per core / prepreg with εr and tanδ, or the whole laminate as one solid |
@@ -87,7 +87,7 @@ Nothing is hard-coded: every number lives in `Parameters/`, and each output come
 | Output | GLB, STEP with exact arcs (one named solid per part), one STL per part, OBJ with `.mtl`, in mm or m |
 | Presets | `--for hfss`, `cst`, `openems` or `viewer` set units, origin, grouping and formats in one go |
 | Records | `materials.json` per part (role, layer, net, z range, εr, tanδ, conductivity), `parameters.txt`, `report.txt` |
-| Checks | Opt-in verifier (closed solids, no overlaps, one visible surface, glTF validation) and a regression suite in `Tests/` |
+| Checks | Opt-in verifier (closed solids, no overlaps, one visible surface, glTF validation) and a regression suite in `Generator/tests/` |
 | Not Modelled | Component 3D models, text boxes, dimensions, images, rigid-flex |
 
 ### What The Simulation Model Is Good For
@@ -109,13 +109,13 @@ plating and finish.
 - **Parasitic Extraction.** Capacitance and inductance between nets, because each net is its own
   body.
 - **What-If On Fabrication.** Change plating, via wall, mask thickness or etch factor in
-  `Parameters/` and re-simulate to see how much fab tolerances move your results.
+  `Generator/parameters/` and re-simulate to see how much fab tolerances move your results.
 
 ---
 
 ## Examples
 
-`Input/` holds two inductive encoder stators. Exported in simulation mode, each comes out as one
+`Generator/Input/` holds two inductive encoder stators. Exported in simulation mode, each comes out as one
 solid per net and per dielectric:
 
 | Board | Copper Parts | Dielectrics | Simulation GLB | Visual GLB |
@@ -131,9 +131,10 @@ Copper parts take the board's net names as they are, so the second board's unnam
 ## Quick Start
 
 ```bash
-python -m pip install -r requirements.txt     # Python 3.12 or later; cadquery is only needed for STEP
+cd Generator                                  # KESE lives here: the code, its settings, Input/ and Output/
+python -m pip install -r requirements.txt     # Python 3.12 or later; cadquery only for STEP by OpenCascade (Run.BUILD_WITH_KERNELS)
 
-python run_KESE.py                                     # Every board in Input/, settings from Parameters/
+python run_KESE.py                                     # Every board in Input/, settings from parameters/
 python run_KESE.py Input/Stator.kicad_pcb --for hfss   # STEP in mm with KiCad's origin, for HFSS
 python run_KESE.py --mode simulation --format glb stl obj
 python run_KESE.py --for viewer                        # Visual surface, GLB in metres, centred
@@ -141,18 +142,21 @@ python run_KESE.py board.kicad_pcb --verify            # Opt-in checks, results 
 python run_KESE.py board.kicad_pcb --set Copper.VIA_WALL_MM=0.02
 ```
 
-With no options a run uses `Parameters/Run_Parameters.py`: simulation mode, GLB, metres, board
-centred at the origin. Run the commands from the project folder. Edit only the files in
-`Parameters/`, or override one value for a single run with `--set`. Each run writes to
+With no options a run uses `parameters/run.py`: simulation mode, GLB, metres, board
+centred at the origin. Run the commands from the `Generator/` folder, which holds everything KESE
+is made of; the rest of the repository is its documentation, its licences and `featureTest/`, one
+small KiCad board for each group of features KESE reads, from KiCad 6 to 10. Edit only the files in
+`parameters/`, or override one value for a single run with `--set`. Each run writes to
 `Output/<board>/<mode>_<FORMATS>/`, numbered `__1`, `__2` and so on so no run overwrites another.
 The folder holds the model files, `materials.json`, `parameters.txt` and `report.txt`, which lists
 the stack-up heights, what was read and what was skipped and why.
 
 To get a `kese` command that works from any folder, install the project itself with
-`python -m pip install .` (add `".[step]"` for STEP output), then run `kese` in place of
+`python -m pip install .` (add `".[step]"` for `Run.BUILD_WITH_KERNELS`), then run `kese` in place of
 `python run_KESE.py`; `kese --version` prints the installed version. On Python 3.11, install the
-same packages without the version pins, or use `pip install .`, which does not pin them. With cadquery installed,
-`python -m pytest Tests` checks a change against the recorded results.
+same packages without the version pins, or use `pip install .`, which does not pin them.
+`python -m pytest tests` checks a change against the recorded results (with cadquery installed,
+it also reads the STEP files back).
 
 ---
 
