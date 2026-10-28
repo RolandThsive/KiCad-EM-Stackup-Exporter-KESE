@@ -73,12 +73,13 @@ The full list is in [Checks, Errors And Warnings](Checks-Errors-And-Warnings.md)
 
 | Board | Layers | Items | Simulation GLB | STEP in mm | Visual GLB |
 |---|---|---|---|---|---|
-| `Stator` | 2 | 2,414 tracks, 13 vias | 6 s, 4.3 MB | 3 s, 10.5 MB | 3 s, 2.6 MB |
-| `Coil_30_50_4_1_3_Series_SteppedDiagonal_Stator` | 4 | 6,216 tracks, 53 vias | 14 s, 13.3 MB | 9 s, 63.4 MB; with mask and silk 11 s, 146.9 MB | 9 s, 6.5 MB |
-| `six_layer` | 6 | 6 tracks, 6 vias, 2 zone fills | 5 s, 0.9 MB | 1 s, 6.2 MB | 2 s, 0.45 MB |
+| `Stator` | 2 | 2,414 tracks, 13 vias | 2 s, 4.3 MB | 2 s, 10.5 MB | 3 s, 2.6 MB |
+| `Coil_30_50_4_1_3_Series_SteppedDiagonal_Stator` | 4 | 6,216 tracks, 53 vias | 7 s, 13.3 MB | 7 s, 63.4 MB; with mask and silk 10 s, 146.9 MB | 7 s, 6.5 MB |
+| `six_layer` | 6 | 6 tracks, 6 vias, 2 zone fills | 1 s, 0.9 MB | 1 s, 6.2 MB | 1 s, 0.45 MB |
 
 Default parameters, GLB runs with the Verifier, on one Linux machine with 4 cores: what to expect,
-not a limit.
+not a limit. The times are the ones the run prints (`in 0m 07s`); starting Python and loading its
+packages adds about 2.5 s to each command.
 
 > [!NOTE]
 > Every dimension in the model is a model value until it is measured. Validation against

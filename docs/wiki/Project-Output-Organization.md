@@ -14,8 +14,9 @@ KiCad-EM-Stackup-Exporter-KESE/
 │   ├── kese/                    the program
 │   │   ├── pipeline.py          runs the nine stages in order
 │   │   ├── cli.py, job.py, progress.py   command-line options, one run's request, the live status line
-│   │   ├── core/                shared tools: s-expression parser, 2D maths and shapes, extrusion,
-│   │   │                        stroke font, safe file names
+│   │   ├── core/                shared tools: s-expression parser, 2D maths and shapes, the
+│   │   │                        boundary of a stack of prisms and its mesh, triangulation,
+│   │   │                        shared vertices, extrusion, stroke font, safe file names
 │   │   ├── model/               the data handed from stage to stage: RawBoard, Items, Stackup,
 │   │   │                        Regions, PrismSet, Model, Files
 │   │   ├── s1_read/             the file, parsed and checked
@@ -75,7 +76,7 @@ the folder that was written.
 ### 19.2.2 `report.txt`
 
 ```text
-Stator  (Stator.kicad_pcb)   generated 2026-10-18 15:47
+Stator  (Stator.kicad_pcb)   generated 2026-10-28 18:33
 mode: simulation   formats: glb, stl, obj   units: m
 KiCad format 20221018, generator pcbnew, title: Stator 1 loop, no sub-coils
 
@@ -102,20 +103,20 @@ notes
 
 parts
   Board_dielectric 1                       3540 triangles  material Board_core #968A58 alpha 1.0
-  Copper_1                                 9516 triangles  material Copper #CD803E alpha 1.0
+  Copper_1                                 9508 triangles  material Copper #CD803E alpha 1.0
   Copper_2                                 9516 triangles  material Copper #CD803E alpha 1.0
   Copper_TX                                9068 triangles  material Copper #CD803E alpha 1.0
   ...
 
 timing
   read               0.0 s
-  collect            0.6 s
-  resolve            0.3 s
-  geometry           0.3 s
+  collect            0.7 s
+  resolve            0.2 s
+  geometry           0.1 s
   materials          0.0 s
-  assemble           4.8 s
-  write              1.0 s
-  verify             1.8 s
+  assemble           1.3 s
+  write              1.2 s
+  verify             0.5 s
 
 Verifier: PASS
   ...

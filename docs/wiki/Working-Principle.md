@@ -109,7 +109,7 @@ mesh = mesh_of_boundary(boundary)                  # faces cut into triangles, t
 
 ```python
 # kese/s3_resolve/frame.py: KiCad (x, y down) -> board (x - cx, -(y - cy)), on the grid
-sh.snap(affinity.affine_transform(g, [1, 0, 0, -1, -cx, cy]))
+sh.snap(affinity.affine_transform(sh.polys_only(g), [1, 0, 0, -1, -cx, cy]))
 
 # kese/s6_assemble/transform.py: board -> output
 scale = 1.0 if R.UNITS == "mm" else 0.001

@@ -78,10 +78,10 @@ What this board shows:
 - Copper per net across layers: each of the three nets is one solid, its tracks on every layer
   joined by the barrels and rings of its vias (53 through vias, a ring on every layer; no blind
   or buried vias).
-- The largest example: exporting it in simulation mode with the Verifier takes 13 s on a 4-core
-  machine (4.6 s of it in assembly, 6.8 s verifying) and gives a GLB of 13.3 MB; the visual-mode
-  GLB is 6.5 MB and takes 7 s. In visual mode the copper under the mask is not in the file at
-  all: each copper part keeps only the walls of its via bores.
+- The largest example: exporting it in simulation mode with the Verifier takes 7 s on a 4-core
+  machine (3.8 s of it in assembly, 1.5 s verifying) and gives a GLB of 13.3 MB; the visual-mode
+  GLB is 6.5 MB and takes 5 s, 7 s with the Verifier. In visual mode the copper under the mask
+  is not in the file at all: each copper part keeps only the walls of its via bores.
 
 | Part (simulation mode) | Triangles |
 |---|---|

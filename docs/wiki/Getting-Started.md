@@ -64,7 +64,7 @@ the command is run from.
 
    ```text
    Stator: KiCad format 20221018, 2 copper layers, mode simulation
-     -> Output/Stator/simulation_GLB  (Stator.glb, materials.json)  in 0m 12s
+     -> Output/Stator/simulation_GLB  (Stator.glb, materials.json)  in 0m 02s
    ```
 
 4. Open `Output/<board>/simulation_GLB/report.txt`. It lists the stack-up heights, every item that
@@ -95,7 +95,7 @@ python run_KESE.py --version
 | `--mode` | `simulation` or `visual`. The old names `real` and `pretty` are still accepted. Default: `Run.MODE`. |
 | `--format` | Any of `glb`, `stl`, `obj`, `step`, several at once. Default: `Run.FILE_FORMAT` (`["glb"]`). Visual mode allows only `glb` and `obj`. |
 | `--for` | Applies a preset from `Run.PRESETS` before any `--set`: `hfss`, `cst`, `openems`, `viewer`. See [Choosing An Export](Choosing-An-Export.md). |
-| `--verify` | Runs the Verifier after the model files are written (about 3 to 8 s on the example boards). See [Checks, Errors And Warnings](Checks-Errors-And-Warnings.md). |
+| `--verify` | Runs the Verifier after the model files are written (under 2 s on the example boards). See [Checks, Errors And Warnings](Checks-Errors-And-Warnings.md). |
 | `--out` | Output root. Default: `Run.OUTPUT_DIR` (`Output/`). |
 | `--set Module.NAME=value` | Overrides one parameter for this run. `Module` is the short name of the parameter file (`Run`, `Board`, `Copper`, `SolderMask`, `Silkscreen`, `Finish`, `Geometry`, `Color`). The value is parsed as a Python literal (`0.02`, `True`); anything that does not parse, such as `net`, is kept as a string. Quote a list for the shell, as in `--set 'Run.FILE_FORMAT=["glb","stl"]'`: unquoted, the shell strips its inner quotes and the run stops. An unknown name stops the run. |
 | `--version` | Prints `kese 2.2.0`. |

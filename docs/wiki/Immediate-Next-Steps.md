@@ -7,7 +7,6 @@ Already known:
 
 - **Validation against measurements is pending.** The models have not yet been compared with
   measured boards or with reference solver results.
-- **Pictures for this wiki** are on their way.
 
 | Previous | Next |
 |:---|---:|

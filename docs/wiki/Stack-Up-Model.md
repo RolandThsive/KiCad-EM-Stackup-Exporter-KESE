@@ -203,7 +203,7 @@ h_i^{*} = s \cdot h_i \qquad (7.13)
 | $`h_i^{*}`$ | dielectric thickness used | |
 | $`s`$ | scale factor | |
 
- `report.txt` states the source on the `laminate` line:
+`report.txt` states the source on the `laminate` line:
 
 | `report.txt` says | Meaning |
 |---|---|
