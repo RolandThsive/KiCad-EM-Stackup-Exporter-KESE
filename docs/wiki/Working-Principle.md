@@ -48,7 +48,8 @@ parts[off] = shapely.set_precision(parts[off], grid())      # Geometry.SNAP_GRID
 
 - Every vertex of every region lies on the grid; heights are not rounded. So two parts that touch
   have the very same edges and heights: no gap and no overlap between them, and every part's
-  surface closes. The Verifier's overlap test comes back at 0.000 µm on the example boards.
+  surface closes. The Verifier's overlap test finds no shared material on any board of the
+  regression suite.
 - Where a region would pinch to a point (two pieces touching at one vertex), a disc of
   `Geometry.PINCH_POINT_OPENING_MM` is cut out of the smaller piece so that the solid can close
   (`kese/core/pinches.py`). Those vertices sit just off the grid.

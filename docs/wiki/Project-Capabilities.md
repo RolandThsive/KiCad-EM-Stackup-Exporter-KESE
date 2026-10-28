@@ -35,7 +35,7 @@ solvers and CAD, and a **visual model** of the visible surface for viewers.
 | Other parts | Each dielectric, plating, silkscreen, finish | The same; a part with nothing in sight is left out |
 | Physical data | εr, tanδ, conductivity, thickness and z range per part in `materials.json` | The same file |
 | What-if | Change plating, via wall, mask thickness or etch factor in `parameters/` and export again | |
-| Verifier (`--verify`) | Every part closed and consistently wound; its volume the same from its faces, slices, mesh and prisms; no overlap along 3,000 vertical rays | Along 3,000 vertical rays the faces take turns, into the material and out of it |
+| Verifier (`--verify`) | Every part closed and consistently wound; its volume the same from its faces, slices, mesh and prisms; no two parts sharing material, every slice against every other | Along 3,000 vertical rays the faces take turns, into the material and out of it |
 | 4-layer Coil example | GLB 13.3 MB, 393,840 triangles | GLB 6.5 MB, 199,288 triangles |
 | Presets | `--for hfss`, `--for cst`, `--for openems` | `--for viewer` |
 

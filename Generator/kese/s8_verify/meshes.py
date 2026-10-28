@@ -1,6 +1,6 @@
 """The checks of stage 8 (verify): the Model proves itself.
 
-simulation : every part is a closed, consistently wound solid; no two parts overlap (vertical rays)
+simulation : every part is a closed, consistently wound solid; no two parts overlap (overlap.py)
 visual     : along every vertical ray the skin's faces take turns, into the material and out of it
 both   : the glTF file passes the Khronos validator, if the `gltf_validator` CLI is on PATH"""
 import shutil
@@ -9,6 +9,7 @@ import subprocess
 import numpy as np
 import trimesh
 
+from kese.s8_verify.overlap import overlaps
 from parameters import P
 
 
@@ -28,9 +29,11 @@ def verify(model, glb_path=None, rays=3000):
             vol = m.volume * scale ** 3
             lines.append(f"  {part:36s} closed={closed} winding={consistent} volume={vol:.4f} mm3")
             ok &= closed and consistent
-        worst = _overlap(meshes, rays, scale)
-        lines.append(f"  overlap between different parts along {rays} vertical rays: worst {worst * 1000:.3f} um")
-        ok &= worst < 1e-4
+        found = overlaps(model)
+        lines.append("  overlap between different parts, every slice against the others: " + (
+            f"worst {found[0][0]:.3e} mm3, {found[0][1]} and {found[0][2]} at z {found[0][3]:+.4f} .. "
+            f"{found[0][4]:+.4f} mm ({len(found)} place{'s' * (len(found) > 1)})" if found else "none"))
+        ok &= not found
     else:
         met, wrong = _skin_surfaces(meshes, rays)
         lines.append(f"  visible surfaces per vertical ray: faces met {met}; rays where in and out do not alternate: {wrong}")
@@ -53,26 +56,6 @@ def _rays(meshes, n):
     pts = rng.uniform(b[0][:2], b[1][:2], size=(n, 2))
     zs = b[1][2] + (b[1][2] - b[0][2]) + 1e-6
     return np.c_[pts, np.full(n, zs)], np.tile([0, 0, -1.0], (n, 1))
-
-
-def _overlap(meshes, n, scale):
-    O, D = _rays(meshes, n)
-    iv = {}
-    for name, g in meshes.items():
-        g = trimesh.Trimesh(g.vertices, g.faces, process=False)    # the ray index it builds goes with it
-        locs, ri, _ = g.ray.intersects_location(O, D, multiple_hits=True)
-        locs = np.asarray(locs).reshape(-1, 3)
-        for r in np.unique(ri):
-            z = np.sort(np.unique(np.round(locs[ri == r, 2] * scale, 6)))[::-1]
-            if len(z) % 2 == 0:
-                iv.setdefault(r, []).extend((name, z[k], z[k + 1]) for k in range(0, len(z), 2))
-    worst = 0.0
-    for L in iv.values():
-        for a in range(len(L)):
-            for c in range(a + 1, len(L)):
-                if L[a][0] != L[c][0]:
-                    worst = max(worst, min(L[a][1], L[c][1]) - max(L[a][2], L[c][2]))
-    return worst
 
 
 def _skin_surfaces(meshes, n):

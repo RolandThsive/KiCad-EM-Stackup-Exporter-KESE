@@ -105,13 +105,13 @@ suite reads it back with OCP).
 | Mode | Check | Pass condition |
 |---|---|---|
 | simulation | every part is a closed, consistently wound solid; its volume is printed in mm³ | `closed=True winding=True` for every part |
-| simulation | no two parts overlap: 3,000 random vertical rays through the model, the intervals each part occupies along every ray | worst overlap below 0.1 µm (`worst 0.000 um` on the example boards) |
+| simulation | no two parts share material: every slice of every part (a flat region between two heights, what the faces are cut from; with `Run.BUILD_WITH_KERNELS = True` every prism) against every slice of every other part | `none`: no two slices of different parts overlap in height while their regions share an area wider than two grid steps, 0.2 µm (`none` on every board of the regression suite) |
 | simulation | every part's volume found four ways (`volumes.py`): from its flat faces, from its slices, from its mesh and from the prisms it was built from. Not with `Run.BUILD_WITH_KERNELS = True` | `closed=True whole=True` for every part: the faces and the mesh within 1 part in 10⁷ of the slices, the prisms within that plus 0.001 mm³ (what opening pinch points may take) |
 | visual | the skin is one outer surface: along every ray that hits the model the faces take turns, one going into the material and the next out of it (two faces on most rays; four where a ray crosses a hollow open to the air, such as the bore of a buried via under stacked micro vias) | the line `visible surfaces per vertical ray: faces met {2: ...}; rays where in and out do not alternate: 0` ends in 0 |
 | both, when a GLB was written | the GLB through the Khronos glTF validator, when the `gltf_validator` command-line tool is on the PATH | not a pass condition: the validator's last line is only reported; otherwise `gltf_validator not on PATH: glTF validation skipped`; with no GLB in the run the line is absent |
 
 > [!NOTE]
-> The ray checks cast along the output's −Z axis, so they assume `Run.ORIENTATION = "upright"`.
+> The visual check casts its rays along the output's −Z axis, so it assumes `Run.ORIENTATION = "upright"`.
 > With `"flat"` the rays run along the board plane, and the visual check reports FAIL on a
 > correct skin.
 
@@ -125,7 +125,7 @@ Verifier: PASS
   Copper_TX                            closed=True winding=True volume=3.1674 mm3
   Top Solder Mask                      closed=True winding=True volume=16.0024 mm3
   Bottom Solder Mask                   closed=True winding=True volume=16.2848 mm3
-  overlap between different parts along 3000 vertical rays: worst 0.000 um
+  overlap between different parts, every slice against the others: none
   gltf_validator not on PATH: glTF validation skipped
   Board_dielectric 1                   volume from faces 2530.618759 mesh 2530.618759 slices 2530.618759 prisms 2530.618759 mm3 closed=True whole=True
   Copper_1                             volume from faces 2.169868 mesh 2.169868 slices 2.169868 prisms 2.169868 mm3 closed=True whole=True
@@ -145,32 +145,42 @@ for z, region, up in boundary.flats:
     v += (1 if up else -1) * z * region.area
 ```
 
-The overlap test works on the vertical rays. For each ray and each part, the pairs of hits give
-the z intervals the part occupies along that ray; for every two different parts the overlap of
-their intervals is measured, and the worst is reported:
+The overlap test (`overlap.py`) works on what the solids are made of. Between two neighbouring
+heights a part is one flat region, a slice ([Working Principle](Working-Principle.md#62-how-a-part-becomes-a-closed-solid)),
+so two parts share material exactly where a slice of one and a slice of the other overlap in
+height and their regions share an area. Every polygon of every slice is shrunk by one grid step
+first: parts that only touch, along an edge or across the grid step that sharing vertices may
+bend an edge by, then no longer meet. An R-tree finds the polygons whose boxes meet; of those
+from different parts that overlap in height, the shrunk polygons are tested, and every pair that
+still meets is reported with the volume the two parts share:
 
 ```math
-\Omega = \max\left( 0, \ \max_{\text{rays}} \ \max_{A \neq B} \ \left( \min\left( z^{A}_{\mathrm{top}}, z^{B}_{\mathrm{top}} \right) - \max\left( z^{A}_{\mathrm{bot}}, z^{B}_{\mathrm{bot}} \right) \right) \right) \qquad (17.1)
+V_{AB} = \operatorname{area}\left( R_A \cap R_B \right) \cdot h_{AB}, \qquad h_{AB} = \min\left( z^{A}_{1}, z^{B}_{1} \right) - \max\left( z^{A}_{0}, z^{B}_{0} \right) \qquad (17.1)
 ```
 
 ```math
-\text{PASS} \iff \text{every part closed, consistently wound and whole, and } \ \Omega < 10^{-4} \text{ mm} \qquad (17.2)
+\text{PASS} \iff \text{every part closed, consistently wound and whole, and no pair with } \ h_{AB} > 10^{-9} \text{ mm and } \left( R_A \ominus g \right) \cap \left( R_B \ominus g \right) \neq \varnothing \qquad (17.2)
 ```
 
 | Symbol | Meaning |
 |---|---|
-| $`\Omega`$ | worst overlap, reported in µm |
-| $`z^{A}_{\mathrm{top}}, z^{A}_{\mathrm{bot}}`$ | one z interval of part $`A`$ along a ray |
-| rays | 3,000 vertical rays at random (x, y) inside the model's bounding box, the same every run (fixed seed) |
+| $`R_A, z^{A}_{0}, z^{A}_{1}`$ | one polygon of a slice of part $`A`$, and the slice's two heights, in mm |
+| $`h_{AB}`$ | how far the two slices overlap in height; heights are told apart to $`10^{-9}`$ mm, a picometre |
+| $`g`$ | one grid step, `Geometry.SNAP_GRID_MM` (0.1 µm) |
+| $`R \ominus g`$ | the polygon shrunk by $`g`$ all round |
+| $`V_{AB}`$ | the material the two parts share there, in mm³; the line gives the biggest |
 
-Parts that do not meet, or only touch, give 0.
+So an overlap 0.3 µm deep is found, while two parts that only touch, or meet across less than two
+grid steps, pass. A sliver 20 µm wide and 2 mm long hidden in the laminate is found wherever it
+lies; 3,000 random vertical rays, the test this one replaced, found 6 of 20 such slivers.
 
 A `closed=False`, `winding=False` or `whole=False` line names the part. An open solid means its
 faces and walls do not meet on the same edges (see the `faces and walls still changing` and
 `pinch points left` notes, or with kernels the `boolean union unavailable` note); `whole=False`
-means the solid holds more or less material than the prisms it was built from. An overlap above
-0.1 µm means two parts share volume; that line gives only the worst value, not the parts. All of
-these are bugs worth reporting with the board file.
+means the solid holds more or less material than the prisms it was built from. An overlap line
+other than `none` means two parts share material; it names the two parts and the heights of the
+biggest overlap, and how many places there are. All of these are bugs worth reporting with the
+board file.
 
 ## 17.4 The Regression Suite
 

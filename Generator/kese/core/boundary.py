@@ -27,7 +27,7 @@ from kese.core.pinches import open_pinches, open_pinches_between
 from kese.core.triangulate import rings_of
 from kese.core.vertices import noded, share_vertices
 
-HEIGHT_DIGITS = 9                # heights are told apart to a nanometre
+HEIGHT_DIGITS = 9                # heights are told apart to 1e-9 mm, a picometre
 ROUNDS = 20                      # of cutting the faces and sharing their vertices, see above
 
 

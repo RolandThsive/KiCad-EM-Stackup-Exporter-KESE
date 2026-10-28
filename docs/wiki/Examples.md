@@ -45,7 +45,7 @@ Verifier: PASS
   Copper_TX                            closed=True winding=True volume=3.1674 mm3
   Top Solder Mask                      closed=True winding=True volume=16.0024 mm3
   Bottom Solder Mask                   closed=True winding=True volume=16.2848 mm3
-  overlap between different parts along 3000 vertical rays: worst 0.000 um
+  overlap between different parts, every slice against the others: none
   gltf_validator not on PATH: glTF validation skipped
   Board_dielectric 1                   volume from faces 2530.618759 mesh 2530.618759 slices 2530.618759 prisms 2530.618759 mm3 closed=True whole=True
   ...
