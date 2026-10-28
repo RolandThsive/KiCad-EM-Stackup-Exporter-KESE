@@ -17,8 +17,10 @@ def volumes_agree(model):
         return True, []
     scale = 1000.0 if model.units == "m" else 1.0
     prisms = model.prismset.by_part()
+    listed = {part: i for i, part in enumerate(model.meshes)}       # the order the parts are listed everywhere
     ok, lines = True, []
-    for part, boundary in model.boundaries.items():
+    for part in sorted(model.boundaries, key=lambda part: listed.get(part, len(listed))):
+        boundary = model.boundaries[part]
         faces, slices = boundary.volume(), boundary.volume_of_slices()
         mesh = float(model.meshes[part].volume) * scale ** 3 if part in model.meshes else 0.0
         built = sum(p.region.area * (p.z1 - p.z0) for p in prisms[part])
