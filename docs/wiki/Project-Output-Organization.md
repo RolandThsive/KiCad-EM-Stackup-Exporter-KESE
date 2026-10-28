@@ -67,7 +67,7 @@ the folder that was written.
 | `<board>.glb` | `glb` requested | binary glTF 2.0; one node and one mesh per part, named after the part; PBR materials; no glTF extensions |
 | `<board>.obj` + `<board>.mtl` | `obj` requested | one `o <name>` object per part with vertices, normals and faces; the `.mtl` has one material per part (`Kd`, `d`); object and material names are sanitised as for STL (`Top_Solder_Mask`) |
 | `stl/<name>.stl` | `stl` requested | one binary STL per part, in a `stl/` sub-folder; the name is the part name with every run of characters other than `A-Z a-z 0-9 _ . + -` replaced by `_`, and leading or trailing `_` removed (`Top_Solder_Mask.stl`, `Board_dielectric_1.stl`, `Copper__RESET.stl` for net `~{RESET}`) |
-| `<board>.step` | `step` requested (simulation mode) | STEP AP214 assembly named after the board, one named shape per part whose role is in `Run.STEP_WRITE_ROLES`, with colours: the part's closed solids, one per separate body, in `Run.UNITS`; mask and silk are left out by default. It is written straight into the file one part at a time and removed when the export fails. With `Run.BUILD_WITH_KERNELS = True` (needs `cadquery`) each part is a fused solid or a compound, always in millimetres, and until the file is done `<board>.step.part` and `<board>.step.body` sit beside it; they are removed at the end, also when the export fails |
+| `<board>.step` | `step` requested (simulation mode) | STEP AP214 assembly named after the board, one named shape per part whose role is in `Run.STEP_WRITE_ROLES`, with colours: the part's closed solids, one per separate body, in `Run.UNITS`; mask and silk are left out by default. It is written straight into the file one part at a time and removed when the export fails. With `Run.BUILD_WITH_KERNELS = True` (needs `cadquery`) each part is a fused solid or a compound, also in `Run.UNITS`, and until the file is done `<board>.step.part` and `<board>.step.body` sit beside it; they are removed at the end, also when the export fails |
 | `materials.json` | `Run.WRITE_MATERIALS_JSON` | per part: role, layer, net, z range, properties, look, file names ([Material Properties](Material-Properties.md)) |
 | `parameters.txt` | always | every parameter of every `parameters/` file as it stood for the run; when `--for`, `--set`, `--mode`, `--format` or `--verify` was used, the first line lists those overrides (`--out` is not recorded) |
 | `report.txt` | always | see below |
@@ -159,8 +159,8 @@ under `file_names.stl`, built with the same rule, so it always matches the file 
 
 `tests/test_boards.py` writes its runs to `tests/out/`, which is deleted at the start of every
 test run and ignored by git. `tests/test_layout.py`, `tests/test_colors.py` and
-`tests/test_step_arcs.py` write nothing, and `tests/test_step_file.py` writes only in a temporary
-folder that it removes.
+`tests/test_step_arcs.py` write nothing, and `tests/test_step_native.py`, `tests/test_step_file.py`
+and `tests/test_step_kernel.py` write only in a temporary folder that they remove.
 
 | Previous | Next |
 |:---|---:|

@@ -85,5 +85,13 @@ def _write_part(part, prisms, model, cq, M, circles, one, log):
     rgb = model.materials[part]["rgb"]
     asm = cq.Assembly(name=model.name)
     asm.add(shape, name=part, color=cq.Color(rgb[0] / 255, rgb[1] / 255, rgb[2] / 255, model.materials[part]["alpha"]))
-    asm.export(str(one), exportType="STEP")   # cadquery >= 2.5 (save() is deprecated)
+    # the solids are built in output units: the file declares those, not OpenCascade's millimetres
+    unit = "M" if model.units == "m" else "MM"
+    try:
+        asm.export(str(one), exportType="STEP", unit=unit)    # cadquery >= 2.5 (save() is deprecated)
+    finally:
+        # cadquery sets the unit for the whole process: a STEP file read later would come in metres
+        from OCP.Interface import Interface_Static
+        for key in ("xstep.cascade.unit", "write.step.unit"):
+            Interface_Static.SetCVal_s(key, "MM")
     return True

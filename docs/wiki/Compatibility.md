@@ -37,7 +37,7 @@ KiCad itself is not needed, only the `.kicad_pcb` file. Footprints are read from
 | Format | What is in it | Units | Written by |
 |---|---|---|---|
 | GLB (binary glTF 2.0) | one mesh per part, PBR materials, vertex normals, bufferView targets | `Run.UNITS` (viewers expect m) | `trimesh` |
-| STEP AP214 | one named shape per part whose role is in `Run.STEP_WRITE_ROLES`: the part's closed solids from stage 6, one per separate body, with planar faces (curves are polygons, as in the meshes); mask and silk off by default. With `Run.BUILD_WITH_KERNELS = True`: exact B-rep solids built from the prisms, true arcs, fused per part or compounds | `Run.UNITS`: the file declares millimetres or metres. With `Run.BUILD_WITH_KERNELS = True` the file always declares millimetres, so with `Run.UNITS = "m"` (the default) the board comes in 1000 times too small; use `--set Run.UNITS=mm` or a preset | KESE (`kese/s7_write/step.py`); `cadquery` / OCCT with kernels |
+| STEP AP214 | one named shape per part whose role is in `Run.STEP_WRITE_ROLES`: the part's closed solids from stage 6, one per separate body, with planar faces (curves are polygons, as in the meshes); mask and silk off by default. With `Run.BUILD_WITH_KERNELS = True`: exact B-rep solids built from the prisms, true arcs, fused per part or compounds | `Run.UNITS`: the file declares millimetres or metres, with or without `Run.BUILD_WITH_KERNELS` | KESE (`kese/s7_write/step.py`); `cadquery` / OCCT with kernels |
 | STL (binary) | one file per part | `Run.UNITS` | `trimesh` |
 | OBJ + MTL | one object per part, normals, colours | `Run.UNITS` | KESE |
 
