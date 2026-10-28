@@ -300,10 +300,11 @@ The look of every part: the GLB and OBJ materials, the part colours in STEP and 
 |---|---|---|---|
 | `MATERIALS` | 18 entries (Board, Board_core, Board_prepreg, Copper, Copper_exposed, Plating, the masks, mask over copper, silkscreens, Nickel, Gold, Tin, Silver, Palladium, OSP) | `{key: {color hex, alpha 0-1, metallic 0-1, roughness 0-1}}` | Material of each part kind; alpha < 1 writes a glTF BLEND material |
 | `VISUAL_MASK_OPAQUE` | `True` | bool | In visual mode the mask is opaque whatever its alpha |
-| `USE_STACKUP_COLORS` | `True` | bool | Honour the colour names in the board's stack-up |
+| `USE_STACKUP_COLORS` | `True` | bool | Honour the mask and silkscreen colours in the board's stack-up, named or user-defined (`#RRGGBBAA`, its opacity not used) |
 | `STACKUP_MASK_COLORS` | 11 names | `{name: hex}` | Mask colour names |
 | `STACKUP_SILK_COLORS` | white, black, yellow, green, red, blue, purple | `{name: hex}` | Silkscreen colour names |
 | `STACKUP_MASK_OVER_COPPER_COLORS` | 11 names | `{name: hex or None}` | Visual-mode colour of the mask over copper per stack-up colour; an entry set to `None` (or left out) keeps the `MATERIALS` colour |
+| `USER_MASK_OVER_COPPER_LIGHTEN` | `0.15` | 0-1 | With a user-defined (`#RRGGBBAA`) mask colour in the stack-up, how far the visual-mode mask over copper is mixed toward white |
 
 | Previous | Next |
 |:---|---:|

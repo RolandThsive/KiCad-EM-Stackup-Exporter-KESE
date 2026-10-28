@@ -48,6 +48,7 @@ python tests/test_boards.py                     # the regression suite over ever
 | `Edge.Cuts lines/arcs do not form a closed outline` | The outline could not be polygonized; closed shapes on `Edge.Cuts` are still used. |
 | `no Edge.Cuts outline; using the copper's convex hull + 1.0 mm` | The fallback outline. |
 | `DIELECTRIC_SPLIT=... unknown, using 'even'` | Only `"even"` is implemented. |
+| `the stack-up colour '<value>' of <layer> is neither a colour name of parameters/color.py nor #RRGGBBAA; its parts keep their MATERIALS colour` | A mask or silkscreen colour KESE cannot read keeps KESE's colour. Add the name to the tables in `parameters/color.py` ([Colorizing](Colorizing.md#122-colours-from-the-stack-up)). |
 
 ### 17.1.3 Notes Worth Knowing
 
@@ -210,7 +211,9 @@ The test boards in `tests/boards/` cover:
 `python -m pytest tests` also runs `tests/test_layout.py`, which checks the code rather than the
 boards: which folders of `kese/` may import which, one `run()` per stage, no file over 200 lines,
 lowercase names, and no code outside `Generator/`. It only reads the source, so it takes about a second
-(`python tests/test_layout.py`). The same command runs three STEP tests, each also on its own
+(`python tests/test_layout.py`). The same command runs `tests/test_colors.py`, which reads named,
+user-defined and unknown stack-up colours as [Colorizing](Colorizing.md#122-colours-from-the-stack-up)
+describes, in a moment (`python tests/test_colors.py`), and three STEP tests, each also on its own
 (`python tests/<name>.py`):
 
 | Test | Path | What it checks |

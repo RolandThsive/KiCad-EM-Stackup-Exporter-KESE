@@ -15,10 +15,11 @@ sys.path.insert(0, str(GENERATOR))
 from parameters import color as C  # noqa: E402
 
 SIZE, BORDER, EDGE = 24, 2, (110, 119, 129)        # GitHub's muted grey #6E7781
+EXAMPLES = ("#1B5E20", "#3D7641")                 # Colorizing's user-defined colour, and over copper
 
 
 def colours():
-    found = {m["color"].upper() for m in C.MATERIALS.values()}
+    found = {m["color"].upper() for m in C.MATERIALS.values()} | set(EXAMPLES)
     for table in (C.STACKUP_MASK_COLORS, C.STACKUP_SILK_COLORS, C.STACKUP_MASK_OVER_COPPER_COLORS):
         found |= {h.upper() for h in table.values() if h}
     return sorted(found)

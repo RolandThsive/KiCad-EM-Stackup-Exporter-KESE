@@ -40,10 +40,12 @@ A key with no entry in `MATERIALS` takes the `Board` entry.
 
 ## 12.2 Colours From The Stack-Up
 
-KiCad's Board Setup can name a colour for the mask and silkscreen layers
-(`(layer "F.Mask" ... (color "Green"))`). With `Color.USE_STACKUP_COLORS = True` (the default)
-the name, in lower case, is looked up in three tables; a name that is not in a table keeps the
-`MATERIALS` colour.
+KiCad's Board Setup gives the mask and silkscreen layers a colour: one of its names (Green, Red,
+Blue, Purple, Black, White, Yellow), written as the name (`(layer "F.Mask" ... (color "Green"))`),
+or one picked under "User defined", written as `#RRGGBBAA` with its opacity last
+(`(color "#1B5E20D4")`). With `Color.USE_STACKUP_COLORS = True` (the default) a name, in lower
+case, is looked up in three tables. A name the mask or silkscreen table does not have keeps the
+`MATERIALS` colour, and `report.txt` warns about it.
 
 | Name | `STACKUP_MASK_COLORS` | `STACKUP_MASK_OVER_COPPER_COLORS` (visual mode) | `STACKUP_SILK_COLORS` |
 |---|---|---|---|
@@ -63,6 +65,23 @@ The `six_layer` test board, for example, has a black mask in its stack-up, so it
 out
 <img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/ColorSwatches/121214.png" width="12" height="12" align="absmiddle" alt=""> `#121214`.
 Set `USE_STACKUP_COLORS = False` to always use `MATERIALS`.
+
+A user-defined colour is used as it is, for the mask and the silkscreen alike. Its opacity is not:
+the mask keeps the alpha of `MATERIALS`, 0.8 in simulation mode and opaque in visual mode, as with
+a named colour. In visual mode the mask over copper takes the colour mixed part of the way toward
+white, each channel
+
+```math
+c' = c + L \cdot (255 - c) \qquad (12.1)
+```
+
+| Symbol | Meaning |
+|---|---|
+| $`c`$ | one channel of the user-defined colour, 0 to 255 |
+| $`c'`$ | the same channel over copper, rounded |
+| $`L`$ | `USER_MASK_OVER_COPPER_LIGHTEN`, 0.15 by default |
+
+With $`L = 0.15`$, `#1B5E20D4` gives <img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/ColorSwatches/1B5E20.png" width="12" height="12" align="absmiddle" alt=""> `#1B5E20` for the mask and <img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/ColorSwatches/3D7641.png" width="12" height="12" align="absmiddle" alt=""> `#3D7641` over copper.
 
 ![The board featureTest/17_mask_silk from the top in a simulation-mode GLB, once for every mask colour name in the table and once with none set, each labelled with its name and hex value](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/mask_1_colors_simulation.png)
 
@@ -113,9 +132,10 @@ carries the sRGB values as they are, `s` above.
 |---|---|---|---|
 | `MATERIALS` | the table above | dict of `{color, alpha, metallic, roughness}` | Look of every part kind |
 | `VISUAL_MASK_OPAQUE` | `True` | bool | Draw the mask opaque in visual mode |
-| `USE_STACKUP_COLORS` | `True` | bool | Honour the colour names in the board's stack-up |
+| `USE_STACKUP_COLORS` | `True` | bool | Honour the mask and silkscreen colours in the board's stack-up, named or user-defined |
 | `STACKUP_MASK_COLORS`, `STACKUP_SILK_COLORS` | tables above | name to hex | Stack-up colour names |
 | `STACKUP_MASK_OVER_COPPER_COLORS` | table above | name to hex or `None` per entry | Visual-mode colour of the mask over copper per stack-up colour; an entry set to `None` keeps the `MATERIALS` entry (the table itself must stay a dict) |
+| `USER_MASK_OVER_COPPER_LIGHTEN` | `0.15` | 0 to 1 | With a user-defined mask colour, how far the visual-mode mask over copper is mixed toward white (0 the same colour, 1 white) |
 
 | Previous | Next |
 |:---|---:|

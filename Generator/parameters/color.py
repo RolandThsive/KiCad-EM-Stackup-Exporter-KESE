@@ -57,3 +57,7 @@ STACKUP_MASK_OVER_COPPER_COLORS = {
     "yellow": "#E6CC50", "purple": "#7A4696", "matte green": "#4A7D4A", "matte black": "#343434",
     "matte blue": "#3C5A96", "matte red": "#AA4646",
 }
+# A user-defined stackup colour (Board Setup's "User defined", written as #RRGGBBAA) is used as it is
+# for the masks and the silkscreens, with the alpha of MATERIALS; in visual mode the mask over copper
+# is that colour mixed this much of the way toward white (0 = the same colour, 1 = white)
+USER_MASK_OVER_COPPER_LIGHTEN = 0.15
