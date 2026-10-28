@@ -35,5 +35,6 @@ class Items:
     via_tenting: list = field(default_factory=list)   # (pad geom, span layers, {"F": tented, "B": tented})
     tent_default: dict = field(default_factory=dict)
     tent_source: str = ""
+    via_protection: dict = field(default_factory=dict)  # KiCad 10: covering, plugging, ... when a via does not say
     mask_clearance: float = 0.0
     via_pads: list = field(default_factory=list)      # exact (centre, radius) of every via pad

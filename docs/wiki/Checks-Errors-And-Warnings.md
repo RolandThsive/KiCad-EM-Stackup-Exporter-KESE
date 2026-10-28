@@ -48,6 +48,8 @@ python tests/test_boards.py                     # the regression suite over ever
 | `Edge.Cuts lines/arcs do not form a closed outline` | The outline could not be polygonized; closed shapes on `Edge.Cuts` are still used. |
 | `no Edge.Cuts outline; using the copper's convex hull + 1.0 mm` | The fallback outline. |
 | `DIELECTRIC_SPLIT=... unknown, using 'even'` | Only `"even"` is implemented. |
+| `not modelled, see 'skipped' in report.txt: backdrills of vias, filled vias, ...` | The board has padstacks, or holes that KiCad 10 backdrills, post-machines, covers, plugs, caps or fills. KESE models the front shape on every layer and the hole plated through its whole span and open; `skipped` gives the counts. |
+| `left out, of a kind KESE does not know: gr_ellipse (2), ...` | Items of a kind KESE does not read, such as the ellipses of KiCad's development version. They are missing from the model. |
 | `the stack-up colour '<value>' of <layer> is neither a colour name of parameters/color.py nor #RRGGBBAA; its parts keep their MATERIALS colour` | A mask or silkscreen colour KESE cannot read keeps KESE's colour. Add the name to the tables in `parameters/color.py` ([Colorizing](Colorizing.md#122-colours-from-the-stack-up)). |
 
 ### 17.1.3 Notes Worth Knowing
@@ -89,9 +91,14 @@ stroke font.
 | `keepout / rule areas (no copper by design)` | Rule areas never carry copper; listed for completeness. |
 | `<item> on <layer> (not a physical layer)` | Graphics on fab, courtyard, paste, user and comment layers, which are not part of the board (text there is left out without a count). |
 | `gr_text_box / fp_text_box / dimension on <layer> (not modelled)` | Text boxes and dimensions on copper, mask or silkscreen layers are counted here and not rendered; on other layers, where dimensions usually sit, they are left out without a count. |
-| `image / target / group / generated / table / point items` | Not physical (a point is KiCad 10's snap point). For a group or a generated item (such as a length-tuning pattern) only the record is skipped; the items in it are read as usual. |
+| `image / target / group / generated / table / point / grid_item / drill_chart / drill_map items` | Not physical (a point is KiCad 10's snap point; grid items, drill charts and drill maps come from KiCad's development version). For a group or a generated item (such as a length-tuning pattern) only the record is skipped; the items in it are read as usual. |
 | `barcode items` | KiCad 10 barcodes (QR codes and others), on the board or in a footprint. The file holds only the barcode's text and size, which KiCad turns into a pattern when it plots, so KESE leaves them out, even on copper or silkscreen. |
 | `pads of shape <shape>` | A pad shape KESE does not know. |
+| `<kind> items (unknown to KESE)` | An item at the top level of the file, or a footprint drawing (`fp_...`), of a kind KESE does not read; also a warning. |
+| `pads with a padstack` / `vias with a padstack (the front shape is used on every layer)` | KiCad 9 and later: another shape on the inner layers or on the back, not modelled; also a warning. |
+| `backdrills` / `tertiary drills of pads` / `of vias (the hole is plated through its whole span)` | KiCad 10: the drill that removes the plating from part of the hole, not modelled; also a warning. |
+| `counterbores` / `countersinks of pads` / `of vias (not cut)` | KiCad 10's post-machining of a hole's end, not modelled; also a warning. |
+| `covered` / `plugged` / `capped` / `filled vias (the ... is not modelled)` | KiCad 10's via protection, set on the via or, when it does not say, in the board setup; the hole stays open. Also a warning. |
 | `TrueType text on <layer> (DRAW_TRUETYPE_TEXT_WITH_STROKE_FONT is False)` | Skipped by the setting. |
 | `castellation plating (CASTELLATION is 'off')` | The holes stay bare. The same line appears with `CASTELLATION = "file"` when the stack-up lacks `(castellated_pads yes)`. |
 

@@ -2,6 +2,7 @@
 from kese.core import shapes2d as sh
 from kese.core.sexp import child, children, layer_of, num, numbers
 from kese.s2_collect.drawings import GRAPHICS, add_drawing
+from kese.s2_collect.left_out import UNKNOWN
 from kese.s2_collect.pads import add_pad
 from kese.s2_collect.text import TEXT, add_text
 from kese.s2_collect.zones import add_zone
@@ -34,3 +35,5 @@ def add_footprint(ctx, fp):
             add_text(ctx, node, T, subst)
         elif node[0] == "barcode":                   # KiCad 10: drawn from its text, no shape in the file
             items.skipped["barcode items"] += 1
+        elif str(node[0]).startswith("fp_"):          # a drawing of a kind KESE does not know (fp_ellipse ...)
+            items.skipped[f"{node[0]} {UNKNOWN}"] += 1

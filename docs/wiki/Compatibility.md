@@ -25,10 +25,11 @@ KiCad itself is not needed, only the `.kicad_pcb` file. Footprints are read from
 | Zones | stored fills only (fill in KiCad first); rule areas skipped |
 | Graphics: line, arc, circle, rect, polygon (with arc segments), Bézier | on copper, mask and silk layers; outline from `Edge.Cuts`; rectangles with rounded corners (KiCad 10), on every layer and on `Edge.Cuts`; copper drawings the mask leaves bare (KiCad 9 and later) open it as tracks do |
 | Text: `gr_text`, `fp_text`, footprint properties | KiCad's stroke font and layout; TrueType faces drawn with the stroke font |
-| Text boxes, dimensions, images, groups, tables, generated items | skipped; counted when they sit on a copper, silk or mask layer (text boxes, dimensions) or at the top level of the file (images, groups, tables, generated items), otherwise left out without a count. For groups and generated items (such as length-tuning patterns) only the record itself is skipped: the tracks, footprints and graphics they hold are read as usual |
+| Text boxes, dimensions, images, groups, tables, generated items; grid items, drill charts and drill maps (KiCad's development version) | skipped; counted when they sit on a copper, silk or mask layer (text boxes, dimensions) or at the top level of the file (images, groups, tables, generated items, grid items, drill charts, drill maps), otherwise left out without a count. For groups and generated items (such as length-tuning patterns) only the record itself is skipped: the tracks, footprints and graphics they hold are read as usual |
 | Footprint 3D models | skipped (bare board) |
-| Padstacks (KiCad 9 and later: another pad or via shape on the inner layers or on the back) | not modelled: the front shape is used on every layer, with no count in `report.txt` |
-| Backdrills, counterbores and countersinks; covered, plugged, capped and filled vias (KiCad 10) | not modelled: the hole is drilled and plated through its whole span, with no count in `report.txt` |
+| Padstacks (KiCad 9 and later: another pad or via shape on the inner layers or on the back) | not modelled: the front shape is used on every layer; counted under `skipped` in `report.txt`, with a warning |
+| Backdrills, tertiary drills, counterbores and countersinks of pads and vias; covered, plugged, capped and filled vias, also when the board setup makes them so (KiCad 10) | not modelled: the hole is drilled and plated through its whole span and left open; counted under `skipped` in `report.txt`, with a warning |
+| Item kinds KESE does not know, such as the ellipses and elliptical arcs of KiCad's development version (`gr_ellipse`, `fp_ellipse_arc`, ...) | skipped; counted under `skipped` in `report.txt` as `<kind> items (unknown to KESE)`, with a warning |
 | Hatched fills of graphics (KiCad 10) | not modelled: the shape is drawn as its outline only |
 | Rigid-flex, multiple stack-up regions | not modelled |
 

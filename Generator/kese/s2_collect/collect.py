@@ -6,6 +6,7 @@ from kese.model.items import Items
 from kese.s2_collect.context import Context
 from kese.s2_collect.drawings import GRAPHICS, add_drawing
 from kese.s2_collect.footprints import add_footprint
+from kese.s2_collect.left_out import UNKNOWN, warn
 from kese.s2_collect.nets import read_nets
 from kese.s2_collect.setup import read_setup
 from kese.s2_collect.stackup import read_stackup
@@ -13,6 +14,14 @@ from kese.s2_collect.text import TEXT, add_text
 from kese.s2_collect.tracks import add_track
 from kese.s2_collect.vias import add_via, drop_unconnected_rings
 from kese.s2_collect.zones import UNFILLED, add_zone
+
+# items that are not part of the physical board, counted under skipped
+NOT_PHYSICAL = ("image", "target", "group", "generated", "table", "barcode", "point", "grid_item", "drill_chart",
+                "drill_map")
+# the rest of a board file: settings, not items (KiCad 4 to KiCad's development version)
+SETTINGS = {"version", "host", "generator", "generator_version", "general", "page", "paper", "title_block", "layers",
+            "setup", "property", "net", "net_class", "net_chains", "variants", "constraint", "embedded_fonts",
+            "embedded_files"}
 
 
 def run(raw, job):
@@ -46,8 +55,10 @@ def collect(raw, log):
             add_footprint(ctx, node)
         elif k in TEXT:
             add_text(ctx, node)
-        elif k in ("image", "target", "group", "generated", "table", "barcode", "point"):
+        elif k in NOT_PHYSICAL:
             items.skipped[f"{k} items"] += 1
+        elif k not in SETTINGS:
+            items.skipped[f"{k} {UNKNOWN}"] += 1
     for v in vias:
         add_via(ctx, v)
     drop_unconnected_rings(ctx)
@@ -55,6 +66,7 @@ def collect(raw, log):
     if unfilled:
         log(f"warning: {unfilled} copper zone(s) have no fill stored in the file and are ignored "
             "(fill the zones in KiCad, press B, and save; see parameters/copper.py)")
+    warn(items, log)
     _, note = font.load()
     items.notes.append(note)
     return items

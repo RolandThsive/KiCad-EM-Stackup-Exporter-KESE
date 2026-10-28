@@ -2,6 +2,7 @@
 from kese.core.sexp import atoms, child, flag, num, pt, yes
 from kese.core.shapes2d import disk, union
 from kese.model.items import Hole
+from kese.s2_collect.left_out import count
 from kese.s2_collect.nets import net_name
 from parameters import P
 
@@ -37,6 +38,7 @@ def add_via(ctx, node):
             elif words:                             # KiCad 9: (tenting front back) / (tenting none): complete list
                 tent[side] = key in words
     items.via_tenting.append((pad, span, tent))
+    count(items, node, "vias")
 
 
 def drop_unconnected_rings(ctx):

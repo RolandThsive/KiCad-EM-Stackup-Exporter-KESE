@@ -5,6 +5,7 @@ from shapely.geometry import LineString
 from kese.core.sexp import atoms, child, num, numbers
 from kese.core.shapes2d import EMPTY, disk, thicken
 from kese.model.items import Hole
+from kese.s2_collect.left_out import count
 from kese.s2_collect.nets import net_name
 from kese.s2_collect.pad_shapes import pad_shape
 from parameters import P
@@ -13,6 +14,7 @@ from parameters import P
 def add_pad(ctx, pad, T, fp_margin):
     items, C = ctx.items, P.Copper
     ptype = pad[2]
+    count(items, pad, "pads")
     vals = numbers(child(pad, "at"))
     pos = T((vals[0], vals[1]))
     ang = vals[2] if len(vals) > 2 else 0.0            # pad angles are stored absolute
