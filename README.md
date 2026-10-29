@@ -102,18 +102,13 @@ Every feature and every parameter is in the wiki:
 [Checks, Errors And Warnings](https://github.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/wiki/Checks-Errors-And-Warnings).
 
 <p align="center">
-  <img src="docs/example_images/rf_module/top_visual.webp" width="32%" alt="RF sensor module, top">
-  <img src="docs/example_images/hdi_module/top_visual.webp" width="32%" alt="HDI module, top">
-  <img src="docs/example_images/pcie_card/top_visual.webp" width="32%" alt="PCIe card, top">
-  <br>
-  <img src="docs/example_images/rf_module/layers_apart_simulation.webp" width="32%" alt="RF sensor module, layers apart">
-  <img src="docs/example_images/hdi_module/layers_apart_simulation.webp" width="32%" alt="HDI module, layers apart">
-  <img src="docs/example_images/pcie_card/layers_apart_simulation.webp" width="32%" alt="PCIe card, layers apart">
+  <img src="docs/images/readme_1_feature_test_boards.webp" alt="The 31 feature test boards, each exported by KESE in visual mode">
 </p>
 
-<p align="center"><sub>The three example boards of <code>Generator/Input/</code>, whole and with their layers apart: a
-4-layer RF sensor module with a plated board edge, a 6-layer HDI module with micro vias and castellated holes, and a
-4-layer PCIe card with gold fingers. More on the <a href="https://github.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/wiki/Examples">Examples</a> page.</sub></p>
+<p align="center"><sub>The 31 feature test boards of <code>featureTest/</code>, each labelled with the KiCad features it
+tests and exported in visual mode. Boards whose stack-up sets no colours are given a green mask and white silkscreen
+for this picture. The folder's other three boards are the example boards of the
+<a href="https://github.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/wiki/Examples">Examples</a> page.</sub></p>
 
 ## Status And Next Steps
 
