@@ -36,7 +36,7 @@ solvers and CAD, and a **visual model** of the visible surface for viewers.
 | Physical data | εr, tanδ, conductivity, thickness and z range per part in `materials.json` | The same file |
 | What-if | Change plating, via wall, mask thickness or etch factor in `parameters/` and export again | |
 | Verifier (`--verify`) | Every part closed and consistently wound; its volume the same from its faces, slices, mesh and prisms; no two parts sharing material, every slice against every other | Along 3,000 vertical rays the faces take turns, into the material and out of it |
-| 4-layer Coil example | GLB 13.3 MB, 393,840 triangles | GLB 6.5 MB, 199,288 triangles |
+| 4-layer PCIe card example | GLB 32.1 MB, 942,340 triangles | GLB 18.3 MB, 591,381 triangles |
 | Presets | `--for hfss`, `--for cst`, `--for openems` | `--for viewer` |
 
 More in [Output Modes](Output-Modes.md).
@@ -65,6 +65,7 @@ More in [Output Modes](Output-Modes.md).
 | Keepout and rule areas | No copper, by design |
 | Zones never filled | No copper, with a warning: fill them in KiCad (**B**) and save |
 | Chamfered pad corners | Drawn as the plain rounded rectangle |
+| Bevel of an edge connector | Not read: the edge stays square |
 | Rigid-flex, several stack-ups in one board | Not modelled |
 
 The full list is in [Checks, Errors And Warnings](Checks-Errors-And-Warnings.md).
@@ -73,12 +74,13 @@ The full list is in [Checks, Errors And Warnings](Checks-Errors-And-Warnings.md)
 
 | Board | Layers | Items | Simulation GLB | STEP in mm | Visual GLB |
 |---|---|---|---|---|---|
-| `Stator` | 2 | 2,414 tracks, 13 vias | 2 s, 4.3 MB | 2 s, 10.5 MB | 3 s, 2.6 MB |
-| `Coil_30_50_4_1_3_Series_SteppedDiagonal_Stator` | 4 | 6,216 tracks, 53 vias | 7 s, 13.3 MB | 7 s, 63.4 MB; with mask and silk 10 s, 146.9 MB | 7 s, 6.5 MB |
+| `rf_module` | 4 | 190 tracks, 33 arcs, 307 vias, 7 zone fills | 21 s, 29.9 MB | 22 s, 224.3 MB; with mask and silk 26 s, 330.2 MB | 20 s, 17.1 MB |
+| `hdi_module` | 6 | 199 tracks, 150 vias, 34 zone fills | 14 s, 17.0 MB | 15 s, 125.3 MB; with mask and silk 16 s, 183.2 MB | 15 s, 8.8 MB |
+| `pcie_card` | 4 | 226 tracks, 239 vias, 19 zone fills | 19 s, 32.1 MB | 21 s, 214.6 MB; with mask and silk 24 s, 347.8 MB | 21 s, 18.3 MB |
 | `six_layer` | 6 | 6 tracks, 6 vias, 2 zone fills | 1 s, 0.9 MB | 1 s, 6.2 MB | 1 s, 0.45 MB |
 
 Default parameters, GLB runs with the Verifier, on one Linux machine with 4 cores: what to expect,
-not a limit. The times are the ones the run prints (`in 0m 07s`); starting Python and loading its
+not a limit. The times are the ones the run prints (`in 0m 21s`); starting Python and loading its
 packages adds about 2.5 s to each command.
 
 > [!NOTE]

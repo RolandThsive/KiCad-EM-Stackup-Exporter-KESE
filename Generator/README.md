@@ -9,7 +9,7 @@ What KESE does, its examples and its licence are in the [main README](../README.
 | `run_KESE.py` | Runs KESE from this folder without installing it |
 | `kese/` | The program: nine stages that run in order, plus `core/` and `model/` |
 | `parameters/` | Every setting, one file per subject (the only files you edit) |
-| `Input/` | Boards to export (two examples included) |
+| `Input/` | Boards to export (three examples included) |
 | `Output/` | One folder per board and run |
 | `tests/` | The layout rules, the regression suite, its test boards and their baseline |
 | `tools/` | Scripts for the repository itself: `make_swatches.py` makes the wiki's colour boxes |

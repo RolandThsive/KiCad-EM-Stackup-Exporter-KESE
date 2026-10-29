@@ -6,7 +6,7 @@
 |---|---|---|
 | 5 and older | 20171130 (KiCad 5), or no `(version ...)` | read best-effort with a warning; KiCad 5 arcs (`start` = centre, `angle`) are understood |
 | 6 | 20211014 | the lower end of the accepted range (`Run.KICAD_VERSION_MIN`); `featureTest/20a_format_kicad6`, written by hand in KiCad 6's format |
-| 7 | 20221018 | the two stator examples, `tests/boards/synthetic` and most of `featureTest/`, saved by KiCad 7 itself |
+| 7 | 20221018 | the three example boards of `Input/`, `tests/boards/synthetic` and most of `featureTest/`, saved by KiCad 7 itself |
 | 8 | 20240108 | `tests/boards/one_layer` and `featureTest/20c_format_kicad8`, small hand-written files in KiCad 8's format |
 | 9 | 20241229 | `tests/boards/six_layer` and `featureTest/20d_format_kicad9`, likewise hand-written; per-via `(tenting front back)` is parsed, though no file in the repository uses it; tracks and drawings left bare by the solder mask, `(layers "F.Cu" "F.Mask")` with an optional `(solder_mask_margin ...)`, are read (in `featureTest/08b_copper_graphics_nets`) |
 | 10 | 20260206 | the upper end of the accepted range (`Run.KICAD_VERSION_MAX`); five hand-written feature boards (`03b_vias_k10`, `06_padstacks`, `08b_copper_graphics_nets`, `19b_skipped_items_k10`, `20e_format_kicad10`); net names stored directly on items and per-via `(tenting (front yes) (back no))` are read |
@@ -31,6 +31,7 @@ KiCad itself is not needed, only the `.kicad_pcb` file. Footprints are read from
 | Backdrills, tertiary drills, counterbores and countersinks of pads and vias; covered, plugged, capped and filled vias, also when the board setup makes them so (KiCad 10) | not modelled: the hole is drilled and plated through its whole span and left open; counted under `skipped` in `report.txt`, with a warning |
 | Item kinds KESE does not know, such as the ellipses and elliptical arcs of KiCad's development version (`gr_ellipse`, `fp_ellipse_arc`, ...) | skipped; counted under `skipped` in `report.txt` as `<kind> items (unknown to KESE)`, with a warning |
 | Hatched fills of graphics (KiCad 10) | not modelled: the shape is drawn as its outline only |
+| Edge connector flag of Board Setup (`(edge_connector yes)` or `bevelled`) | not read: the fingers are the pads they are, and a bevelled edge stays square |
 | Rigid-flex, multiple stack-up regions | not modelled |
 
 ## 20.2 Output Formats

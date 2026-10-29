@@ -56,46 +56,6 @@
   "Top Silkscreen": 0.138115684,
   "Top Solder Mask": 13.982885588
  },
- "Coil_30_50_4_1_3_Series_SteppedDiagonal_Stator/simulation": {
-  "Board_dielectric 1": 2733.39554203,
-  "Board_dielectric 2": 2735.777239851,
-  "Board_dielectric 3": 2561.553104995,
-  "Bottom Solder Mask": 50.855859164,
-  "Copper_COS_Signal": 5.870378226,
-  "Copper_SIN_Signal": 5.870037249,
-  "Copper_TX": 12.214750958,
-  "Top Solder Mask": 51.213063654
- },
- "Coil_30_50_4_1_3_Series_SteppedDiagonal_Stator/visual": {
-  "Board_dielectric 1": 2739.374684854,
-  "Board_dielectric 2": 2739.374684854,
-  "Board_dielectric 3": 2563.451539955,
-  "Bottom Mask over Copper": -0.025798322,
-  "Bottom Solder Mask": 57.47741823,
-  "Copper_COS_Signal": -2.113437689,
-  "Copper_SIN_Signal": -2.113573543,
-  "Copper_TX": -0.081308559,
-  "Top Mask over Copper": -0.025798322,
-  "Top Solder Mask": 61.431564668
- },
- "Stator/simulation": {
-  "Board_dielectric 1": 2530.618758592,
-  "Bottom Solder Mask": 16.284824396,
-  "Copper_1": 2.169868301,
-  "Copper_2": 2.169863457,
-  "Copper_TX": 3.1673623,
-  "Top Solder Mask": 16.002391145
- },
- "Stator/visual": {
-  "Board_dielectric 1": 2533.21580064,
-  "Bottom Mask over Copper": -0.012410072,
-  "Bottom Solder Mask": 21.20035863,
-  "Copper_1": -0.956516915,
-  "Copper_2": -0.956516915,
-  "Copper_TX": -0.159448126,
-  "Top Mask over Copper": -0.012410072,
-  "Top Solder Mask": 18.09421102
- },
  "TheMainBoard/simulation": {
   "Board_dielectric 1": 2826.55901801,
   "Bottom Silkscreen": 0.559825219,

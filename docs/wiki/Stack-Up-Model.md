@@ -116,8 +116,8 @@ $`0.535 - 0.1 = 0.435`$ mm, as `report.txt` shows:
 ### 7.2.1 With A Stack-Up In The File
 
 KiCad writes `(setup (stackup (layer ...) ...))` once the stack-up has been confirmed in Board
-Setup > Physical Stackup; a board whose stack-up was never set there has no such block (none of
-the example boards has one). KESE reads, per layer:
+Setup > Physical Stackup; a board whose stack-up was never set there has no such block (the
+three example boards have one, `featureTest/15_stackup_none` has none). KESE reads, per layer:
 
 | From the stack-up | Used for | Switch |
 |---|---|---|
@@ -179,8 +179,8 @@ h_i = \frac{L - \sum_{k=1}^{N-2} t_k}{N - 1} \qquad (7.11)
 | $`t_k`$ | foil of inner copper layer $`l_k`$ | `Copper.DEFAULT_INNER_FOIL_MM` |
 | $`N`$ | number of copper layers | |
 
-The 4-layer `Coil_30_50_...` example has no stack-up: $`h_i = (1.6 - 2 \times 0.035) / 3 = 0.51`$
-mm for each of the three dielectrics.
+The 4-layer `featureTest/15_stackup_none` has no stack-up and a 1.2 mm board:
+$`h_i = (1.2 - 2 \times 0.035) / 3 = 0.3767`$ mm for each of the three dielectrics.
 
 ### 7.2.3 Forcing The Laminate Thickness
 

@@ -43,7 +43,7 @@ What to make, where, and in which formats.
 | `BUILD_WITH_KERNELS` | `False` | bool | How stage 6 builds the model. `False`: every part's faces are found in 2D from its prisms and go as they are into the meshes and the STEP file ([Working Principle](Working-Principle.md#62-how-a-part-becomes-a-closed-solid)). `True`: the older way, every prism extruded and joined by Manifold, and the STEP file built and fused by OpenCascade (needs `cadquery`; much slower on dense boards) |
 | `WORKERS` | `0` | int ≥ 0 | Threads stage 6 works with when `BUILD_WITH_KERNELS` is `False`: parts built at once in simulation mode, slices in visual mode. `0` = one per processor core |
 | `SHOW_PROGRESS` | `True` | bool | Live `running <stage> ... 1m 23s` line on a terminal |
-| `VERIFY` | `False` | bool | Run the Verifier after generation (under 2 s on the example boards; longer on dense boards) |
+| `VERIFY` | `False` | bool | Run the Verifier after generation (2 to 4 s on the example boards; longer on dense boards) |
 | `WRITE_MATERIALS_JSON` | `True` | bool | Write `materials.json` next to the outputs |
 
 ### 16.1.4 Mesh Export (GLB, STL, OBJ)
@@ -61,7 +61,7 @@ What to make, where, and in which formats.
 | `STEP_EXACT_ARCS` | `True` | bool | Only with `BUILD_WITH_KERNELS = True`: runs of vertices on one circle (vias, round pads, round outlines, track ends, arc tracks) are written as true arcs, except where an arc would cross another outline (16.7.1); smaller files, real cylinders in CAD. The default writer keeps every curve faceted, as in the meshes |
 | `STEP_ARC_FIT_TOLERANCE_MM` | `0.0002` | mm > 0 | Vertices within this of one circle form an arc (2 × the snap grid) |
 | `STEP_ARC_MIN_POINTS` | `5` | int ≥ 3 | Minimum vertices in a run |
-| `STEP_WRITE_ROLES` | `["board", "copper", "plating", "finish"]` | subset of the roles below | Roles written to the STEP file; mask and silk are left out by default since on a dense board they are thousands of solids, which make the file more than twice as big (the Coil board in `Input/`, in mm: 147 MB written in 4.3 s instead of 63 MB in 1.4 s) |
+| `STEP_WRITE_ROLES` | `["board", "copper", "plating", "finish"]` | subset of the roles below | Roles written to the STEP file; mask and silk are left out by default since they are many more solids, which make the file 1.5 to 1.6 times as big (the PCIe card in `Input/`, in mm: 348 MB and 320 solids written in 8.8 s instead of 215 MB and 84 solids in 5.6 s) |
 | `STEP_FUSE_ROLES` | `["board", "copper", "plating", "finish"]` | subset of `STEP_WRITE_ROLES` | Only with `BUILD_WITH_KERNELS = True`: roles whose parts are fused into **one** solid each (what solvers need; slow on parts with many pieces); the others are compounds of touching solids (fast; fine for viewing). The default writer writes every part as the closed solids of stage 6, one per separate body |
 
 The roles are `board`, `copper`, `plating`, `finish`, `mask`, `mask_over_copper`, `silk`. A part's role

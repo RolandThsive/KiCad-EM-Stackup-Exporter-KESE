@@ -8,7 +8,7 @@ default). This page says what the numbers are and where each one comes from.
 
 ```json
 {
-  "board": "Stator",
+  "board": "rf_module",
   "mode": "simulation",
   "units_of_files": "m",
   "orientation": "board in XY, F.Cu toward +Z, Y up",
@@ -17,25 +17,25 @@ default). This page says what the numbers are and where each one comes from.
       "role": "board",
       "layer": "dielectric 1",
       "net": null,
-      "z_range_mm": [-0.8, 0.8],
+      "z_range_mm": [0.5475, 0.765],
       "properties": {
-        "kind": "core", "material": "FR4", "thickness_mm": 1.6,
-        "epsilon_r": 4.5, "loss_tangent": 0.02, "between": ["F.Cu", "B.Cu"]
+        "kind": "prepreg", "material": "FR4", "thickness_mm": 0.2,
+        "epsilon_r": 4.5, "loss_tangent": 0.02, "between": ["F.Cu", "In1.Cu"]
       },
-      "look": {"color": "#968A58", "alpha": 1.0},
+      "look": {"color": "#A89C66", "alpha": 1.0},
       "file_names": {"stl": "Board_dielectric_1.stl", "glb_node": "Board_dielectric 1", "step_solid": "Board_dielectric 1"}
     },
-    "Copper_TX": {
+    "Copper_GND": {
       "role": "copper",
       "layer": "F.Cu",
-      "net": "TX",
-      "z_range_mm": [-0.835, 0.835],
+      "net": "GND",
+      "z_range_mm": [-0.8, 0.8],
       "properties": {
         "thickness_mm": 0.035, "conductivity_S_per_m": 58000000.0, "surface_roughness_um": 0.0,
         "foil_mm": 0.035, "plating_added_mm": 0.0
       },
       "look": {"color": "#CD803E", "alpha": 1.0},
-      "file_names": {"stl": "Copper_TX.stl", "glb_node": "Copper_TX", "step_solid": "Copper_TX"}
+      "file_names": {"stl": "Copper_GND.stl", "glb_node": "Copper_GND", "step_solid": "Copper_GND"}
     }
   }
 }
