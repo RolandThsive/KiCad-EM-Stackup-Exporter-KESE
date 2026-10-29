@@ -1,0 +1,101 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<style>html,body{margin:0;background:transparent}</style>
+<script type="importmap">{"imports":{"three":"/three/build/three.module.js","three/addons/":"/three/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+// The frames of render_animation.py: one GLB, stood up facing the camera and turned about the vertical
+// axis through the middle of its bounding box, drawn once a frame on a transparent background.
+import * as THREE from 'three';
+import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
+import { RoomEnvironment } from 'three/addons/environments/RoomEnvironment.js';
+
+window.render = async (o) => {
+  const root = (await new GLTFLoader().loadAsync(o.glb)).scene;
+  // the model in a pivot, moved so that the middle of its bounding box is on the pivot's origin
+  const box = new THREE.Box3().setFromObject(root);
+  const centre = box.getCenter(new THREE.Vector3()), size = box.getSize(new THREE.Vector3());
+  root.position.sub(centre);
+  const pivot = new THREE.Group();
+  pivot.add(root);
+  const scene = new THREE.Scene();
+  scene.add(pivot);
+
+  const renderer = new THREE.WebGLRenderer({ antialias: true, preserveDrawingBuffer: true, alpha: true });
+  renderer.setPixelRatio(1);
+  renderer.setSize(o.width, o.height);
+  renderer.setClearColor(0x000000, 0);
+  renderer.outputColorSpace = THREE.SRGBColorSpace;
+  renderer.toneMapping = THREE.NoToneMapping;
+  const pmrem = new THREE.PMREMGenerator(renderer);
+  const envTex = pmrem.fromScene(new RoomEnvironment(), 0.04).texture;
+  // every material gets the room as its own envMap, so that metals and the rest reflect it by
+  // different amounts (scene.environment would give one amount to all)
+  root.traverse(n => {
+    if (!n.isMesh || !n.material || !n.material.isMeshStandardMaterial) return;
+    const metal = n.material.metalness > 0.5;
+    if (metal && o.metalness !== null) n.material.metalness = o.metalness;
+    if (metal && o.roughness !== null) n.material.roughness = o.roughness;
+    n.material.envMap = envTex;
+    n.material.envMapIntensity = metal ? o.reflectionMetal : o.reflectionOther;
+    n.material.needsUpdate = true;
+  });
+
+  // the camera looks at the pivot from -y, `elevation` above, as close as it can come while the
+  // corners of the bounding box, at every degree of the turn, stay inside the margin
+  const e = THREE.MathUtils.degToRad(o.elevation);
+  const camera = new THREE.PerspectiveCamera(o.fov, o.width / o.height, 1e-6, 1);
+  const half = size.clone().multiplyScalar(0.5);
+  const corners = [];
+  for (const sx of [-1, 1]) for (const sy of [-1, 1]) for (const sz of [-1, 1])
+    corners.push(new THREE.Vector3(sx * half.x, sy * half.y, sz * half.z));
+  const turned = new THREE.Object3D();
+  turned.rotation.order = 'ZYX';            // stood up about x first, then turned about the vertical z
+  const place = dist => {
+    camera.position.set(0, -dist * Math.cos(e), dist * Math.sin(e));
+    camera.up.set(0, 0, 1);
+    camera.lookAt(0, 0, 0);
+    camera.near = dist / 100; camera.far = dist * 10;
+    camera.updateProjectionMatrix();
+    camera.updateMatrixWorld(true);
+  };
+  const fits = dist => {
+    place(dist);
+    for (let deg = 0; deg < 360; deg += 1) {
+      turned.rotation.set(Math.PI / 2, 0, THREE.MathUtils.degToRad(deg));
+      turned.updateMatrixWorld(true);
+      for (const c of corners) {
+        const v = c.clone().applyMatrix4(turned.matrixWorld).project(camera);
+        if (Math.abs(v.x) > 1 - 2 * o.margin || Math.abs(v.y) > 1 - 2 * o.margin || v.z > 1) return false;
+      }
+    }
+    return true;
+  };
+  let lo = size.length(), hi = lo * 2;     // nearer than the whole diagonal, corners could be behind the camera
+  while (!fits(hi)) hi *= 2;
+  if (fits(lo)) hi = lo;
+  for (let k = 0; k < 40; k++) { const mid = (lo + hi) / 2; if (fits(mid)) hi = mid; else lo = mid; }
+  place(hi);
+  scene.add(camera);
+  for (const l of o.lights) {
+    const light = new THREE.DirectionalLight(0xffffff, l.intensity);
+    light.position.fromArray(l.dir);
+    scene.add(light);
+  }
+  scene.add(new THREE.AmbientLight(0xffffff, o.ambient));
+
+  const urls = [];
+  pivot.rotation.order = 'ZYX';             // stood up about x first, then turned about the vertical z
+  for (const deg of o.angles) {
+    pivot.rotation.set(Math.PI / 2, 0, THREE.MathUtils.degToRad(deg));
+    pivot.updateMatrixWorld(true);
+    renderer.render(scene, camera);
+    urls.push(renderer.domElement.toDataURL('image/png'));
+  }
+  pmrem.dispose();
+  renderer.dispose();
+  return urls;
+};
+window.ready = true;
+</script>
+</body></html>
