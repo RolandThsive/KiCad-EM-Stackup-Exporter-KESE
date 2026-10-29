@@ -59,7 +59,7 @@ WORKERS = 0
 # Live "running <stage> ... 1m 23s" line in the terminal while a board is generated
 SHOW_PROGRESS = True
 
-# Run the Verifier after generation (adds about 3-8 s per board on the example boards, more on
+# Run the Verifier after generation (adds about 2-4 s per board on the example boards, more on
 # dense boards). Results go in report.txt.
 VERIFY = False
 
@@ -99,9 +99,9 @@ STEP_ARC_MIN_POINTS = 5                # at least this many vertices in a run
 #   "silk"             silkscreen ink: "Top Silkscreen", "Bottom Silkscreen"
 #
 # STEP_WRITE_ROLES - which roles are written to the STEP file at all.
-#   Each written part is made of closed solids.  Mask and silk are left out by default: on a
-#   dense board they are thousands of solids, which make the file more than twice as big (the
-#   Coil board in Input/, in mm: 147 MB written in 4.3 s instead of 63 MB in 1.8 s; with
+#   Each written part is made of closed solids.  Mask and silk are left out by default: they are
+#   many more solids, which make the file 1.5 to 1.6 times as big (the PCIe card in Input/, in mm:
+#   348 MB and 320 solids written in 8.8 s instead of 215 MB and 84 solids in 5.6 s; with
 #   BUILD_WITH_KERNELS the difference is bigger still).  GLB / STL / OBJ always contain them.  To
 #   write everything:
 #   STEP_WRITE_ROLES = ["board", "copper", "plating", "finish", "mask", "mask_over_copper", "silk"]

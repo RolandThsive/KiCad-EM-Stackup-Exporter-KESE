@@ -5,192 +5,149 @@
   <img src="docs/logo/Kese_Rectangular.svg" width="420" alt="KESE: KiCad EM Stackup Exporter">
 </picture>
 
-**Real 3D Models Of KiCad Boards, With The True Stack-Up And Copper Split Per Net**
+**Real 3D models of KiCad boards, with the true stack-up and the copper split per net.**
+Give it a `.kicad_pcb` file, get every dielectric, every net's copper and every via at its true height, ready for an EM solver or a web viewer.
 
-Python · KiCad 6 To 10 · 1 To 8 Copper Layers · GLB, STEP, STL And OBJ · Free Software (GPL-3.0)
+[![Getting Started](https://img.shields.io/badge/Getting_Started-First_export-0078D6?style=for-the-badge&logo=data%3Aimage%2Fsvg%2Bxml%3Bbase64%2CPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSJ3aGl0ZSIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiPjxwb2x5Z29uIHBvaW50cz0iNyA0IDE5IDEyIDcgMjAgNyA0Ii8%2BPC9zdmc%2BCg%3D%3D)](https://github.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/wiki/Getting-Started)
+[![Wiki](https://img.shields.io/badge/Wiki-Read_the_docs-333333?style=for-the-badge&logo=data%3Aimage%2Fsvg%2Bxml%3Bbase64%2CPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSJ3aGl0ZSIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiPjxwYXRoIGQ9Ik0xMiA2djE0Ii8%2BPHBhdGggZD0iTTEyIDZDMTAgNC41IDYuNSA0IDMgNC41djE0YzMuNS0uNSA3IDAgOSAxLjUiLz48cGF0aCBkPSJNMTIgNmMyLTEuNTAwIDUuNTAwLTIgOS0xLjUwMHYxNGMtMy41MDAtLjUwMC03IDAtOSAxLjUwMCIvPjwvc3ZnPgo%3D)](https://github.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/wiki)
+[![Examples](https://img.shields.io/badge/Examples-Pictures-E95420?style=for-the-badge&logo=data%3Aimage%2Fsvg%2Bxml%3Bbase64%2CPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSJ3aGl0ZSIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiPjxwYXRoIGQ9Ik0yIDEyYzIuNTAwLTggNS41MDAtOCA4IDBzNS41MDAgOCA4IDAgMi41MDAtNCA0LTQiLz48L3N2Zz4K)](https://github.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/wiki/Examples)
+
+[![Roadmap](https://img.shields.io/badge/Roadmap-Next_steps-8957E5?style=for-the-badge&logo=data%3Aimage%2Fsvg%2Bxml%3Bbase64%2CPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSJ3aGl0ZSIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiPjxwYXRoIGQ9Ik01IDIxVjQiLz48cGF0aCBkPSJNNSA0aDEybC0yLjUwMCA0IDIuNTAwIDRINSIvPjwvc3ZnPgo%3D)](https://github.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/wiki/Future-Upgrades-And-Planning)
+[![Contributing](https://img.shields.io/badge/Contributing-Get_involved-2EA44F?style=for-the-badge&logo=data%3Aimage%2Fsvg%2Bxml%3Bbase64%2CPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSJ3aGl0ZSIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiPjxjaXJjbGUgY3g9IjEwIiBjeT0iOCIgcj0iNCIvPjxwYXRoIGQ9Ik0zIDIxYzAtNCAzLTcgNy03czcgMyA3IDciLz48cGF0aCBkPSJNMTkgNHY2Ii8%2BPHBhdGggZD0iTTE2IDdoNiIvPjwvc3ZnPgo%3D)](CONTRIBUTING.md)
+[![License](https://img.shields.io/badge/License-GPL--3.0--or--later-F28C28?style=for-the-badge&logo=data%3Aimage%2Fsvg%2Bxml%3Bbase64%2CPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSJ3aGl0ZSIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiPjxwYXRoIGQ9Ik02IDNoOWw0IDR2MTRINnoiLz48cGF0aCBkPSJNMTUgM3Y0aDQiLz48cGF0aCBkPSJNOSAxMmg3Ii8%2BPHBhdGggZD0iTTkgMTZoNyIvPjwvc3ZnPgo%3D)](LICENSE)
+
+![Version](https://img.shields.io/badge/Version-2.2.0-555555)
+![Python](https://img.shields.io/badge/Python-3.12%2B-555555)
+![KiCad](https://img.shields.io/badge/KiCad-6%20to%2010-555555)
+![Copper layers](https://img.shields.io/badge/Copper_layers-1_to_8-blueviolet)
+![Formats](https://img.shields.io/badge/Formats-GLB%20%C2%B7%20STEP%20%C2%B7%20STL%20%C2%B7%20OBJ-blueviolet)
+![Stars](https://img.shields.io/github/stars/RolandThsive/KiCad-EM-Stackup-Exporter-KESE?style=flat)
+![Last commit](https://img.shields.io/github/last-commit/RolandThsive/KiCad-EM-Stackup-Exporter-KESE)
+
+KiCad's 3D export is made for mechanical fit. An EM solver needs every core and prepreg as its own body with its εr
+and tanδ, copper at its real thickness, and one closed solid per net for ports. KESE reads the `.kicad_pcb` directly
+(no KiCad install needed) and writes exactly that for HFSS, CST, openEMS, FEKO or COMSOL, with each copper solid named
+after its net (`Copper_GND`) and the material values in `materials.json`. The same board also comes out as a light
+surface model for web viewers and renders.
+
+<img src="docs/example_images/rf_module/turning_visual.webp" width="640" alt="The RF sensor module example board turning, as KESE exports it in visual mode">
+
+<sub>The RF sensor module of <code>Generator/Input/</code>, exported in visual mode.</sub>
 
 </div>
 
----
-
-## Contents
-
-1. [Disclaimer](#disclaimer)
-2. [Goal](#goal)
-3. [Introduction](#introduction)
-4. [Project Capabilities](#project-capabilities)
-5. [Examples](#examples)
-6. [Quick Start](#quick-start)
-7. [Where To Read More](#where-to-read-more)
-8. [Licensing](#licensing)
-9. [About Me](#about-me)
-
----
-
-## Disclaimer
-
-> [!IMPORTANT]
-> **Validation Against Measurements Is Pending.** The models have not yet been compared with
-> measured boards or with reference solver results. Thicknesses default to KiCad's own values
-> (35 µm copper, 10 µm solder mask), not to any fabricator's process. Set your fabricator's
-> numbers in `Generator/parameters/` before trusting a simulation built on the output.
 
 > [!WARNING]
-> **Fill Your Zones Before Exporting.** KESE uses the zone fills KiCad stores in the board file.
-> A ground plane or copper pour that has not been filled (press **B** in KiCad) and saved is left
-> out entirely; `report.txt` counts it under "zones with no fill".
+> **Fill your zones before exporting.** KESE uses the zone fills KiCad stores in the board file. A ground plane or
+> copper pour that has not been filled (press **B** in KiCad) and saved is left out; `report.txt` counts it under
+> "zones with no fill".
 
-- KESE is free software under the GNU GPL, version 3 or later. You may use, study, change and
-  share it for any purpose, commercial included, as long as what you share stays under the GPL.
-  See [Licensing](#licensing).
+## Documentation
 
----
-
-## Goal
-
-The goal is a **one-step path from a KiCad board to a simulation-ready 3D model**: every
-dielectric, every net's copper and every via at its true height, with every copper solid named
-after its net (for example `Copper_GND`), ready to drop into an EM solver such as HFSS, CST,
-openEMS, FEKO or COMSOL, with no hand cleanup in CAD. The same board should also come out as a
-light, good-looking model for web viewers and renders.
-
----
-
-## Introduction
-
-KiCad's own 3D export is made for mechanical fit. Copper is flattened onto the board, and nothing
-in the file says which net a piece of copper belongs to. An EM solver needs the opposite: each
-dielectric as its own body with its own εr and tanδ, copper at its real thickness, and one closed
-solid per net so ports and excitations can be assigned.
-
-KESE reads the `.kicad_pcb` file directly (KiCad itself does not need to be installed), rebuilds
-the stack-up layer by layer and writes it out in one of two modes:
-
-- **simulation**: the physical board as it leaves the factory. Every layer is a closed solid: each
-  core and prepreg, each net's copper with all its layers and vias joined, via and hole plating,
-  solder mask conformal over the copper, silkscreen, and optionally the surface finish.
-- **visual**: only the visible surface of the same geometry, for web viewers such as
-  `<model-viewer>` and three.js. Surfaces only microns apart no longer fight in the depth buffer.
-
-Nothing is hard-coded: every number lives in `Generator/parameters/`, and each output comes with a
-`parameters.txt` listing exactly what produced it, including every command-line override.
-
----
-
-## Project Capabilities
-
-| Area | Capability |
+| I want to | Read |
 |---|---|
-| Input | `.kicad_pcb` from KiCad 6 to 10, 1 to 8 copper layers, stack-up read from Board Setup |
-| Copper | One solid per net (default), per layer, or all merged; through, blind and buried vias; etch trapezoid |
-| Edges | Castellated holes plated on the notch wall; edge plating joined to its net |
-| Dielectrics | One solid per core / prepreg with εr and tanδ, or the whole laminate as one solid |
-| Mask And Silk | Solder mask over laminate and copper; silkscreen in KiCad's own stroke font, clipped off the pads as fabricators do |
-| Finish | ENIG, ENEPIG, HASL, OSP, immersion tin and silver, hard gold; one part per metal, or per metal and net (off by default) |
-| Output | GLB, STEP with exact arcs (one named solid per part), one STL per part, OBJ with `.mtl`, in mm or m |
-| Presets | `--for hfss`, `cst`, `openems` or `viewer` set units, origin, grouping and formats in one go |
-| Records | `materials.json` per part (role, layer, net, z range, εr, tanδ, conductivity), `parameters.txt`, `report.txt` |
-| Checks | Opt-in verifier (closed solids, no overlaps, one visible surface, glTF validation) and a regression suite in `Generator/tests/` |
-| Not Modelled | Component 3D models, text boxes, dimensions, images, rigid-flex |
-
-### What The Simulation Model Is Good For
-
-These uses rely on the simulation-mode output: per-net copper, dielectrics with εr and tanδ,
-plating and finish.
-
-- **Full-wave EM.** S-parameters, impedance, crosstalk, antenna patterns and resonances. For an
-  inductive encoder stator like the example boards, the TX/RX coil coupling and the
-  position-dependent signal can be simulated instead of only measured.
-- **Signal Integrity.** Trace impedance and eye diagrams, where the exact copper thickness, the
-  etch trapezoid and the prepreg-versus-core εr matter.
-- **Power Integrity And DC-IR Drop.** A per-net GND or power solid with real plating thickness is
-  exactly what PDN tools need.
-- **Thermal.** The same solids with electrical conductivity swapped for thermal conductivity;
-  copper planes, via barrels and the laminate are the heat paths.
-- **Mechanical And FEA.** Warp and stress with the real copper distribution and core/prepreg
-  layers, since every layer is a closed solid.
-- **Parasitic Extraction.** Capacitance and inductance between nets, because each net is its own
-  body.
-- **What-If On Fabrication.** Change plating, via wall, mask thickness or etch factor in
-  `Generator/parameters/` and re-simulate to see how much fab tolerances move your results.
-
----
-
-## Examples
-
-`Generator/Input/` holds two inductive encoder stators. Exported in simulation mode, each comes out as one
-solid per net and per dielectric:
-
-| Board | Copper Parts | Dielectrics | Simulation GLB | Visual GLB |
-|---|---|---|---|---|
-| `Coil_30_50_4_1_3_Series_SteppedDiagonal_Stator` (4 layers, 53 vias) | `Copper_SIN_Signal`, `Copper_COS_Signal`, `Copper_TX` | 3 FR4 cores, 0.51 mm each | 15 MB | 10 MB |
-| `Stator` (2 layers, 13 vias) | `Copper_1`, `Copper_2`, `Copper_TX` | 1 FR4 core, 1.6 mm | 5.0 MB | 4.1 MB |
-
-Copper parts take the board's net names as they are, so the second board's unnamed nets `1` and
-`2` become `Copper_1` and `Copper_2`. Both boards also get a top and bottom solder mask part.
-
----
+| Start | [Getting Started](https://github.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/wiki/Getting-Started), [Project Capabilities](https://github.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/wiki/Project-Capabilities), [Examples](https://github.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/wiki/Examples) |
+| Understand it | [Working Principle](https://github.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/wiki/Working-Principle), [Stack-Up Model](https://github.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/wiki/Stack-Up-Model), [Output Modes](https://github.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/wiki/Output-Modes) |
+| Export for my tool | [Choosing An Export](https://github.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/wiki/Choosing-An-Export), [KiCad And Solver Compatibility](https://github.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/wiki/Compatibility), [openEMS Workflow](https://github.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/wiki/OpenEMS-Workflow) |
+| Know what gets modelled | [Board](https://github.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/wiki/Board), [Copper And Traces](https://github.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/wiki/Copper-And-Traces), [Solder Masks](https://github.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/wiki/Solder-Masks), [Silkscreens](https://github.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/wiki/Silkscreens), [Copper Finishings](https://github.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/wiki/Copper-Finishings), [Colorizing](https://github.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/wiki/Colorizing) |
+| Look something up | [Parameter Reference](https://github.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/wiki/Parameter-Reference), [Checks, Errors And Warnings](https://github.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/wiki/Checks-Errors-And-Warnings), [Material Properties](https://github.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/wiki/Material-Properties), [Project Output Organization](https://github.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/wiki/Project-Output-Organization), [Glossary](https://github.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/wiki/Glossary) |
+| See what is next | [Immediate Next Steps](https://github.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/wiki/Immediate-Next-Steps), [Future Upgrades And Planning](https://github.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/wiki/Future-Upgrades-And-Planning) |
 
 ## Quick Start
 
 ```bash
-cd Generator                                  # KESE lives here: the code, its settings, Input/ and Output/
-python -m pip install -r requirements.txt     # Python 3.12 or later; cadquery only for STEP by OpenCascade (Run.BUILD_WITH_KERNELS)
+cd Generator
+python -m pip install -r requirements.txt
 
-python run_KESE.py                                     # Every board in Input/, settings from parameters/
-python run_KESE.py Input/Stator.kicad_pcb --for hfss   # STEP in mm with KiCad's origin, for HFSS
-python run_KESE.py --mode simulation --format glb stl obj
-python run_KESE.py --for viewer                        # Visual surface, GLB in metres, centred
-python run_KESE.py board.kicad_pcb --verify            # Opt-in checks, results in report.txt
+python run_KESE.py                                       # Every board in Input/: simulation mode, GLB in metres, centred
+python run_KESE.py Input/rf_module.kicad_pcb --for hfss  # STEP in mm at KiCad's origin, one solid per net and dielectric
+python run_KESE.py board.kicad_pcb --for openems         # One STL per part in mm, with materials.json
+python run_KESE.py board.kicad_pcb --for viewer          # The visible surface only, GLB for web viewers
+python run_KESE.py board.kicad_pcb --verify              # Check every solid is closed and no two parts overlap
 python run_KESE.py board.kicad_pcb --set Copper.VIA_WALL_MM=0.02
 ```
 
-With no options a run uses `parameters/run.py`: simulation mode, GLB, metres, board
-centred at the origin. Run the commands from the `Generator/` folder, which holds everything KESE
-is made of; the rest of the repository is its documentation, its licences and `featureTest/`, one
-small KiCad board for each group of features KESE reads, from KiCad 6 to 10. Edit only the files in
-`parameters/`, or override one value for a single run with `--set`. Each run writes to
-`Output/<board>/<mode>_<FORMATS>/`, numbered `__1`, `__2` and so on so no run overwrites another.
-The folder holds the model files, `materials.json`, `parameters.txt` and `report.txt`, which lists
-the stack-up heights, what was read and what was skipped and why.
+Run every command from `Generator/`, which holds the program, its settings, `Input/` and `Output/`. Edit only the
+files in `Generator/parameters/`, or override one value for a single run with `--set`. Each run writes a new folder,
+`Output/<board>/<mode>_<FORMATS>/`, with the model files, `materials.json` (role, layer, net, z range, εr, tanδ and
+conductivity of every part), `parameters.txt` and `report.txt`, and never overwrites an earlier one. The pinned
+packages need Python 3.12 or later; `cadquery` is optional. `python -m pip install .` gives a `kese` command that works
+from any folder. Full walk-through: [Getting Started](https://github.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/wiki/Getting-Started).
 
-To get a `kese` command that works from any folder, install the project itself with
-`python -m pip install .` (add `".[step]"` for `Run.BUILD_WITH_KERNELS`), then run `kese` in place of
-`python run_KESE.py`; `kese --version` prints the installed version. On Python 3.11, install the
-same packages without the version pins, or use `pip install .`, which does not pin them.
-`python -m pytest tests` checks a change against the recorded results (with cadquery installed,
-it also reads the STEP files back).
+## What Works
 
----
+- **Input:** `.kicad_pcb` files from KiCad 6 to 10, 1 to 8 copper layers, stack-up read from Board Setup (thickness,
+  εr and tanδ of every core and prepreg, copper and mask thickness, colours, finish). Footprints are read from the
+  board file, so no libraries are needed.
+- **Copper:** tracks, arcs, pads of every shape, zone fills, copper graphics and text; one solid per net (default),
+  per layer, or all merged; through, blind, buried and micro vias with plated barrels; castellated holes and edge
+  plating; optional etch trapezoid.
+- **Board:** one solid per dielectric with its own εr and tanδ, resin filling the space beside inner copper, any
+  outline from `Edge.Cuts` with cut-outs, plated and non-plated round and slotted holes.
+- **Mask, silk and finish:** solder mask conformal over every trace, pulled back from the edge and open over every
+  bore; silkscreen in KiCad's own stroke font and text layout, clipped off the pads; ENIG, ENEPIG, HASL, lead-free
+  HASL, OSP, immersion silver and tin, and hard gold, each metal its own layer (off by default).
+- **Two modes:** `simulation` writes closed solids that touch exactly and never overlap, as GLB, STEP, STL and OBJ;
+  `visual` writes only the surface you can see, as GLB and OBJ, so nothing z-fights in a viewer.
+- **STEP without a CAD kernel:** KESE writes STEP AP214 itself, every part under its own name.
+- **Presets:** `--for hfss`, `cst`, `openems` or `viewer` set mode, formats, units, origin and grouping in one go.
+- **Checks:** an opt-in Verifier (closed solids, the same volume found four ways, no overlaps, one visible surface)
+  and a regression suite that runs 40 boards through every output before a pull request.
+- **Not modelled yet:** component 3D models, text boxes, dimensions, images, padstacks, rigid-flex.
 
-## Where To Read More
+Every feature and every parameter is in the wiki:
+[Project Capabilities](https://github.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/wiki/Project-Capabilities),
+[Copper And Traces](https://github.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/wiki/Copper-And-Traces),
+[Parameter Reference](https://github.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/wiki/Parameter-Reference) and
+[Checks, Errors And Warnings](https://github.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/wiki/Checks-Errors-And-Warnings).
 
-A wiki with full documentation of every parameter, the generator workflow and the output formats
-is being made and will be available shortly.
+<p align="center">
+  <img src="docs/example_images/rf_module/top_visual.webp" width="32%" alt="RF sensor module, top">
+  <img src="docs/example_images/hdi_module/top_visual.webp" width="32%" alt="HDI module, top">
+  <img src="docs/example_images/pcie_card/top_visual.webp" width="32%" alt="PCIe card, top">
+  <br>
+  <img src="docs/example_images/rf_module/layers_apart_simulation.webp" width="32%" alt="RF sensor module, layers apart">
+  <img src="docs/example_images/hdi_module/layers_apart_simulation.webp" width="32%" alt="HDI module, layers apart">
+  <img src="docs/example_images/pcie_card/layers_apart_simulation.webp" width="32%" alt="PCIe card, layers apart">
+</p>
 
----
+<p align="center"><sub>The three example boards of <code>Generator/Input/</code>, whole and with their layers apart: a
+4-layer RF sensor module with a plated board edge, a 6-layer HDI module with micro vias and castellated holes, and a
+4-layer PCIe card with gold fingers. More on the <a href="https://github.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/wiki/Examples">Examples</a> page.</sub></p>
+
+## Status And Next Steps
+
+- **Validation.** The models will be compared with measured boards and with reference solver results, and corrected
+  wherever they disagree.
+- **Solver imports.** The routes into HFSS, CST, openEMS, COMSOL and FEKO follow each tool's documented import formats
+  and still have to be confirmed on each tool.
+- **Planned:** a web application, a desktop application, maybe a KiCad add-on, and tighter integration with openEMS or
+  other solvers.
+
+## Contributing
+
+Help with code, bug reports, test boards, solver checks, measurements and documentation is welcome. Read
+[CONTRIBUTING.md](CONTRIBUTING.md) for the code layout, the rules every change keeps and the tests to run before a pull
+request.
 
 ## Licensing
 
-Hi Sassy boy Seth, There is no greedy man here. 
+Hi Sassy boy Seth, There is no greedy man here.
 
-**License:** [GNU General Public License, version 3 or later](LICENSE) (SPDX: `GPL-3.0-or-later`).
+KESE is **free software** under the [GNU General Public License, version 3 or later](LICENSE)
+(`GPL-3.0-or-later`). You may run it for any purpose, commercial work included, and study, change and share it, as long
+as what you share stays under the GPL with its source. The 3D models KESE writes from your own board are generally not
+covered by the GPL, in the same way a document printed by a GPL program is not.
 
-KESE includes material derived from KiCad, which is GPL-licensed: KiCad's "newstroke" stroke font
-and its text layout. KESE is therefore distributed under the GPL as well, and KiCad's original
-copyright headers are kept word for word in [`licenses/`](licenses), listed in [NOTICE.md](NOTICE.md).
+KESE includes material derived from KiCad, which is GPL-licensed: KiCad's "newstroke" stroke font and its text layout.
+KiCad's original copyright headers are kept word for word in [`licenses/`](licenses) and listed in
+[NOTICE.md](NOTICE.md). Contributions are accepted under the same license; see [CONTRIBUTING.md](CONTRIBUTING.md).
 
-| You May | As Long As |
-|---|---|
-| Run KESE for any purpose, including commercial work | Nothing; running it needs no permission |
-| Study and change the source code | Changed versions you distribute are also GPL-3.0-or-later, with their source |
-| Share copies, modified or not | Recipients get the same rights and the full source |
-
-The GPL covers the program. The 3D models KESE writes from your own board are generally not
-covered by it, in the same way a document printed by a GPL program is not.
-
-**Contributing.** Contributions are accepted under the same license; see
-[CONTRIBUTING.md](CONTRIBUTING.md).
+**Contact (only through these channels):**
+[Email](mailto:rolandthsive@yahoo.com) ·
+[GitHub](https://github.com/RolandThsive) ·
+[MyAnimeList](https://myanimelist.net/profile/RolandThsive) ·
+[Instagram](https://www.instagram.com/ro_h_bots)
 
 ---
 
@@ -198,23 +155,22 @@ covered by it, in the same way a document printed by a GPL program is not.
 
 ## About Me
 
-A traveller and mechatronics engineer who loves building machines that move, from the mechanics
-to the electronics and the firmware. Trained in mechanical design and robotics, with a research
-master's in mechatronics, I have built robotic hands, a humanoid torso, industrial bin-picking
-cells and rocket electronics, designing PCBs in KiCad and firmware for STM32 and Espressif chips.
+A traveller and mechatronics engineer who loves building machines that move, from the mechanics to the electronics
+and the firmware. Trained in mechanical design and robotics, with a research master's in mechatronics, I have built
+robotic hands, a humanoid torso, industrial bin-picking cells and rocket electronics, designing PCBs in KiCad and
+firmware for STM32 and Espressif chips.
 
-I put my full time into building industrial-grade software and making
-well-researched but hard-to-find scientific knowledge free for everyone. KESE exists so that a
-board designed in KiCad can go straight into an EM solver without being rebuilt by hand in CAD. I
-will keep maintaining it until it becomes the go-to bridge from KiCad to EM simulation, with
-models that match real, fabricated boards.
+I put my full time into building industrial-grade software and making well-researched but hard-to-find scientific
+knowledge free for everyone. KESE exists so that a board designed in KiCad can go straight into an EM solver without
+being rebuilt by hand in CAD. I will keep maintaining it until it becomes the go-to bridge from KiCad to EM
+simulation, with models that match real, fabricated boards.
 
 **[Website](https://ro-h-bots.blogspot.com/)** ·
 **[Instagram](https://www.instagram.com/ro_h_bots)** ·
 **[MyAnimeList](https://myanimelist.net/profile/RolandThsive)** ·
 **[Email](mailto:rolandthsive@yahoo.com)**
 
-*Contributions of every kind are welcome. Together we can make this the reference tool for turning
-KiCad boards into EM-ready models.*
+*Contributions of every kind are welcome. Together we can make this the reference tool for turning KiCad boards into
+EM-ready models.*
 
 </div>

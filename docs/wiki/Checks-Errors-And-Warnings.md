@@ -122,25 +122,33 @@ suite reads it back with OCP).
 > With `"flat"` the rays run along the board plane, and the visual check reports FAIL on a
 > correct skin.
 
-Example tail of a `report.txt` (`Input/Stator.kicad_pcb` in simulation mode):
+Example tail of a `report.txt` (`Input/rf_module.kicad_pcb` in simulation mode, `...` where
+lines are left out):
 
 ```text
 Verifier: PASS
-  Board_dielectric 1                   closed=True winding=True volume=2530.6188 mm3
-  Copper_1                             closed=True winding=True volume=2.1699 mm3
-  Copper_2                             closed=True winding=True volume=2.1699 mm3
-  Copper_TX                            closed=True winding=True volume=3.1674 mm3
-  Top Solder Mask                      closed=True winding=True volume=16.0024 mm3
-  Bottom Solder Mask                   closed=True winding=True volume=16.2848 mm3
+  Board_dielectric 1                   closed=True winding=True volume=537.9918 mm3
+  Board_dielectric 2                   closed=True winding=True volume=2939.6554 mm3
+  Board_dielectric 3                   closed=True winding=True volume=545.0504 mm3
+  Copper_+3V3                          closed=True winding=True volume=30.0643 mm3
+  ...
+  Copper_GND                           closed=True winding=True volume=233.5935 mm3
+  ...
+  Top Solder Mask                      closed=True winding=True volume=22.5245 mm3
+  Bottom Solder Mask                   closed=True winding=True volume=23.5600 mm3
+  Top Silkscreen                       closed=True winding=True volume=1.2008 mm3
+  Bottom Silkscreen                    closed=True winding=True volume=0.5142 mm3
   overlap between different parts, every slice against the others: none
   gltf_validator not on PATH: glTF validation skipped
-  Board_dielectric 1                   volume from faces 2530.618759 mesh 2530.618759 slices 2530.618759 prisms 2530.618759 mm3 closed=True whole=True
-  Copper_1                             volume from faces 2.169868 mesh 2.169868 slices 2.169868 prisms 2.169868 mm3 closed=True whole=True
-  Copper_2                             volume from faces 2.169863 mesh 2.169863 slices 2.169863 prisms 2.169863 mm3 closed=True whole=True
-  Copper_TX                            volume from faces 3.167362 mesh 3.167362 slices 3.167362 prisms 3.167362 mm3 closed=True whole=True
-  Top Solder Mask                      volume from faces 16.002391 mesh 16.002391 slices 16.002391 prisms 16.002391 mm3 closed=True whole=True
-  Bottom Solder Mask                   volume from faces 16.284824 mesh 16.284824 slices 16.284824 prisms 16.284824 mm3 closed=True whole=True
+  Board_dielectric 1                   volume from faces 537.991825 mesh 537.991825 slices 537.991825 prisms 537.991825 mm3 closed=True whole=True
+  ...
+  Copper_GND                           volume from faces 233.593533 mesh 233.593533 slices 233.593533 prisms 233.593666 mm3 closed=True whole=True
+  ...
+  Bottom Silkscreen                    volume from faces 0.514160 mesh 0.514160 slices 0.514160 prisms 0.514160 mm3 closed=True whole=True
 ```
+
+The prisms of `Copper_GND` hold 0.00013 mm³ more than its faces, within the 0.001 mm³ the
+check allows them.
 
 The volume from the faces needs nothing but the faces: walls are vertical and add nothing, so a
 closed surface holds the sum of height times signed area over its flat faces
@@ -235,7 +243,9 @@ The test boards in `tests/boards/` cover:
 
 `python -m pytest tests` also runs `tests/test_layout.py`, which checks the code rather than the
 boards: which folders of `kese/` may import which, one `run()` per stage, no file over 200 lines,
-lowercase names, and no code outside `Generator/`. It only reads the source, so it takes about a second
+lowercase names, and no code outside `Generator/`.
+[`CONTRIBUTING.md`](https://github.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/blob/main/CONTRIBUTING.md)
+explains these rules. It only reads the source, so it takes about a second
 (`python tests/test_layout.py`). The same command runs `tests/test_colors.py`, which reads named,
 user-defined and unknown stack-up colours as [Colorizing](Colorizing.md#122-colours-from-the-stack-up)
 describes, in a moment (`python tests/test_colors.py`); `tests/test_text_layout.py`, which lays out
@@ -251,8 +261,6 @@ a turned footprint) and finds each where KiCad 7.0.11 plots it, to 5 µm, in abo
 | `test_step_file.py` | `Run.BUILD_WITH_KERNELS = True` (`step_file.py`) | four small parts, with a `#`, a `;`, a quote and letters outside ASCII in their names, written part by part and read back against the file OpenCascade writes for the same parts at once: the same names, placements, colours, solids and volumes. Needs `cadquery`; takes a second |
 | `test_step_kernel.py` | `Run.BUILD_WITH_KERNELS = True` (`step_cadquery.py`) | `tests/boards/one_layer` written in metres and in millimetres: each file declares the units it is written in, so OpenCascade reads both at the same size, and a STEP file read afterwards in the same process still comes in millimetres. Needs `cadquery`; takes ten seconds |
 | `test_step_arcs.py` | `Run.BUILD_WITH_KERNELS = True` (`step_arcs.py`, the true circles written back into STEP) | outlines where the arc of a faceted circle would cross an edge of its own ring, a hole, another polygon or another arc keep those vertices straight, while the same arcs a little further away are kept, and so are an arc that the outline doubles back along or leaves along its tangent and the arc of a half round; with `cadquery`, OpenCascade finds the faces and solids made from them valid, and those with the crossing arcs invalid. Takes a few seconds |
-[`CONTRIBUTING.md`](https://github.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/blob/main/CONTRIBUTING.md)
-explains the rules.
 
 ## 17.5 Inputs KESE Refuses Or Changes
 

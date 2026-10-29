@@ -4,7 +4,7 @@ The stack-up decides the height of every layer. It is read once per board
 (`kese/s2_collect/stackup.py`), its heights are computed once (`kese/s4_geometry/heights.py`), and
 it is printed at the top of `report.txt`, so every z value in the model can be checked against it.
 
-![Board tests/boards/six_layer cut through pad 1 of J1 at true scale: the silkscreen on the mask, the mask on the laminate faces, the ENIG finish on the pad, the outer copper on the faces, the four inner copper layers between five dielectrics, the plated barrel; every layer listed with its thickness and its heights from the laminate mid-plane, and close-ups of the silk on the mask and of the pad's top edge, then two closer still: the finish at the pad's edge, 5 µm of nickel under 0.08 µm of gold beside the mask, and the 80 nm of gold alone](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/stackup_1_cross_section.png)
+![Board tests/boards/six_layer cut through pad 1 of J1 at true scale: the silkscreen on the mask, the mask on the laminate faces, the ENIG finish on the pad, the outer copper on the faces, the four inner copper layers between five dielectrics, the plated barrel; every layer listed with its thickness and its heights from the laminate mid-plane, and close-ups of the silk on the mask and of the pad's top edge, then two closer still: the finish at the pad's edge, 5 µm of nickel under 0.08 µm of gold beside the mask, and the 80 nm of gold alone](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/stackup_1_cross_section.webp)
 
 ## 7.1 Heights
 
@@ -116,8 +116,8 @@ $`0.535 - 0.1 = 0.435`$ mm, as `report.txt` shows:
 ### 7.2.1 With A Stack-Up In The File
 
 KiCad writes `(setup (stackup (layer ...) ...))` once the stack-up has been confirmed in Board
-Setup > Physical Stackup; a board whose stack-up was never set there has no such block (none of
-the example boards has one). KESE reads, per layer:
+Setup > Physical Stackup; a board whose stack-up was never set there has no such block (the
+three example boards have one, `featureTest/15_stackup_none` has none). KESE reads, per layer:
 
 | From the stack-up | Used for | Switch |
 |---|---|---|
@@ -179,8 +179,8 @@ h_i = \frac{L - \sum_{k=1}^{N-2} t_k}{N - 1} \qquad (7.11)
 | $`t_k`$ | foil of inner copper layer $`l_k`$ | `Copper.DEFAULT_INNER_FOIL_MM` |
 | $`N`$ | number of copper layers | |
 
-The 4-layer `Coil_30_50_...` example has no stack-up: $`h_i = (1.6 - 2 \times 0.035) / 3 = 0.51`$
-mm for each of the three dielectrics.
+The 4-layer `featureTest/15_stackup_none` has no stack-up and a 1.2 mm board:
+$`h_i = (1.2 - 2 \times 0.035) / 3 = 0.3767`$ mm for each of the three dielectrics.
 
 ### 7.2.3 Forcing The Laminate Thickness
 
@@ -203,7 +203,7 @@ h_i^{*} = s \cdot h_i \qquad (7.13)
 | $`h_i^{*}`$ | dielectric thickness used | |
 | $`s`$ | scale factor | |
 
- `report.txt` states the source on the `laminate` line:
+`report.txt` states the source on the `laminate` line:
 
 | `report.txt` says | Meaning |
 |---|---|

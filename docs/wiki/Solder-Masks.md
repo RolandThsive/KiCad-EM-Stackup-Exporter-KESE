@@ -4,9 +4,9 @@ The solder mask is the lacquer (LPI) over both faces of the board. `kese/s4_geom
 builds it around the openings that `kese/s3_resolve/mask.py` works out; the settings are in
 `parameters/solder_mask.py`.
 
-![The board featureTest/17_mask_silk from the top in a simulation-mode GLB, once in each solder mask colour KESE knows and once with none set, each labelled with its name and hex value](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/mask_1_colors_simulation.png)
+![The board featureTest/17_mask_silk from the top in a simulation-mode GLB, once in each solder mask colour KESE knows and once with none set, each labelled with its name and hex value](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/mask_1_colors_simulation.webp)
 
-![The same twelve boards in a visual-mode GLB](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/mask_2_colors_visual.png)
+![The same twelve boards in a visual-mode GLB](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/mask_2_colors_visual.webp)
 
 ## 15.1 KiCad's Mask Layers Are Negative
 
@@ -57,7 +57,7 @@ and the clearance used on its `vias:` line.
 
 ## 15.2 Conformal Mask
 
-![Board 17_mask_silk from the top with a dashed box over a trace, and the boxed region cut across the trace: the mask flat on the laminate, climbing the trace's side and lying on its top](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/mask_3_conformal.png)
+![Board 17_mask_silk from the top with a dashed box over a trace, and the boxed region cut across the trace: the mask flat on the laminate, climbing the trace's side and lying on its top](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/mask_3_conformal.webp)
 
 LPI mask follows the copper: it is thin on top of a trace and thicker on the bare laminate
 beside it, and it climbs the side of every trace. KESE splits the mask region of equation (15.1)
@@ -102,7 +102,7 @@ In visual mode the **top** region becomes its own part,
 
 ### 15.2.1 Thickness
 
-![Board 14_stackup_full cut through a via at true scale with every layer labelled, and the top and bottom faces enlarged with rulers on the mask, the copper and the dielectrics](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/mask_4_thickness.png)
+![Board 14_stackup_full cut through a via at true scale with every layer labelled, and the top and bottom faces enlarged with rulers on the mask, the copper and the dielectrics](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/mask_4_thickness.webp)
 
 Two values, `MASK_OVER_LAMINATE_MM` and `MASK_OVER_COPPER_MM`, both 10 µm by default (KiCad's own
 value). Typical production is 10 to 15 µm over copper and 20 to 30 µm over laminate. When the
@@ -113,7 +113,7 @@ thickness is ignored. `report.txt` notes the values and their source:
 
 ## 15.3 Edge Pull-Back
 
-![Board 17_mask_silk from the top with a dashed box on its right edge, the edge seen from outside, and its top corner close up: the mask ends 5 µm before the edge over a strip of bare laminate](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/mask_5_edge_pullback.png)
+![Board 17_mask_silk from the top with a dashed box on its right edge, the edge seen from outside, and its top corner close up: the mask ends 5 µm before the edge over a strip of bare laminate](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/mask_5_edge_pullback.webp)
 
 The mask, and the silkscreen on it, stop `MASK_EDGE_PULLBACK_MM` (5 µm) short of the board edge:
 the $`\cap (O \ominus p)`$ term of equation (15.1).
@@ -122,7 +122,7 @@ from treating a translucent mask flush with the board edge as a baked shadow.
 
 ## 15.4 Over Holes
 
-![Board 17_mask_silk from the top with a dashed box on its tented via, the via cut through its centre, and the top of the hole close up: the mask covers the via pad and stops at the edge of the open bore](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/mask_6_over_holes.png)
+![Board 17_mask_silk from the top with a dashed box on its tented via, the via cut through its centre, and the top of the hole close up: the mask covers the via pad and stops at the edge of the open bore](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/mask_6_over_holes.webp)
 
 The mask is removed over the open bore of every hole that reaches that side (the drill minus the
 plated wall, or the whole drill of an NPTH), so no mask floats over a hole. A tented via keeps its

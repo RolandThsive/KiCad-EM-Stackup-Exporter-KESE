@@ -1,6 +1,6 @@
 # 6. Working Principle
 
-![The nine stages of KESE as cards, read to report, each with its folder, a picture of what it made for board 20b_format_kicad7, and the object it hands to the next stage: RawBoard, Items, Regions, PrismSet, PrismSet, Model, Files, Files, Files. Card 1 shows the board file as KiCad draws it, card 8 one net's volume found four ways, and card 9 what report.txt lists](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/wp_1_pipeline.png)
+![The nine stages of KESE as cards, read to report, each with its folder, a picture of what it made for board 20b_format_kicad7, and the object it hands to the next stage: RawBoard, Items, Regions, PrismSet, PrismSet, Model, Files, Files, Files. Card 1 shows the board file as KiCad draws it, card 8 one net's volume found four ways, and card 9 what report.txt lists](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/wp_1_pipeline.webp)
 
 KESE is one straight pipeline, `kese/pipeline.py`. Every stage is a folder in `kese/` with a
 `run(what the stage before made, job)` that returns what it makes:
@@ -60,7 +60,7 @@ parts[off] = shapely.set_precision(parts[off], grid())      # Geometry.SNAP_GRID
 
 ## 6.2 How A Part Becomes A Closed Solid
 
-![Stage 6 on one net of board 04_vias_blind_buried, a through via with a track on In3.Cu: its four prisms, its five slices between six heights, its six flat faces looking up or down, its walls, its 1,048 triangles, and the same volume found four ways, from the prisms, the slices, the faces and the triangles, as four equal bars](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/wp_2_solid.png)
+![Stage 6 on one net of board 04_vias_blind_buried, a through via with a track on In3.Cu: its four prisms, its five slices between six heights, its six flat faces looking up or down, its walls, its 1,048 triangles, and the same volume found four ways, from the prisms, the slices, the faces and the triangles, as four equal bars](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/wp_2_solid.webp)
 
 Stage 6 needs no CAD kernel. Every part's surface is worked out in 2D from its prisms
 (`kese/core/boundary.py`) and then cut into triangles (`kese/core/boundary_mesh.py`):
@@ -99,7 +99,7 @@ mesh = mesh_of_boundary(boundary)                  # faces cut into triangles, t
 
 ## 6.3 Coordinate Frames
 
-![The outline of board 20c_format_kicad8 and its top left corner P in three frames: KiCad's, in mm with Y down from the page's corner; the board frame, in mm with Y up from the outline's centre and z from the laminate's mid-plane; and the output, in metres, upright or flat](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/wp_3_frames.png)
+![The outline of board 20c_format_kicad8 and its top left corner P in three frames: KiCad's, in mm with Y down from the page's corner; the board frame, in mm with Y up from the outline's centre and z from the laminate's mid-plane; and the output, in metres, upright or flat](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/wp_3_frames.webp)
 
 | Frame | Where | Units and axes | Origin |
 |---|---|---|---|
@@ -109,7 +109,7 @@ mesh = mesh_of_boundary(boundary)                  # faces cut into triangles, t
 
 ```python
 # kese/s3_resolve/frame.py: KiCad (x, y down) -> board (x - cx, -(y - cy)), on the grid
-sh.snap(affinity.affine_transform(g, [1, 0, 0, -1, -cx, cy]))
+sh.snap(affinity.affine_transform(sh.polys_only(g), [1, 0, 0, -1, -cx, cy]))
 
 # kese/s6_assemble/transform.py: board -> output
 scale = 1.0 if R.UNITS == "mm" else 0.001
