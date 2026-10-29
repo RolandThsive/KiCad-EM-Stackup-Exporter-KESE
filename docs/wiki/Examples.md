@@ -22,12 +22,17 @@ mask colour of its own, saved by KiCad 7. Between them they use most of what KES
 | Board edge | plated all round and in the cut-out | 43 castellated pads | 36 gold fingers |
 | Mask, silkscreen, finish | blue, white, ENIG | black, white, immersion silver | green, white, hard gold |
 | Simulation GLB with `--verify` | 42 parts, 887,012 triangles; 21 s, 29.9 MB | 60 parts, 499,544 triangles; 14 s, 17.0 MB | 59 parts, 942,340 triangles; 19 s, 32.1 MB |
+| Simulation STEP with `--verify` | 38 parts, 49 solids; 26 s, 225.0 MB | 56 parts, 58 solids; 15 s, 125.9 MB | 55 parts, 84 solids; 23 s, 215.3 MB |
 | Visual GLB with `--verify` | 20 s, 17.1 MB | 15 s, 8.8 MB | 21 s, 18.3 MB |
 
 The times are the ones the run prints, with the default parameters on one Linux machine with 4
-cores; [Project Capabilities](Project-Capabilities.md#45-tested-sizes) adds the STEP files. The
-same three files are in `featureTest/` as `21_rf_module`, `22_hdi_module` and `23_pcie_card`, so
-the regression suite checks every part of each in both modes.
+cores. The STEP files were made with `--for hfss --verify`: millimetres and KiCad's origin, and,
+as `Run.STEP_WRITE_ROLES` has it by default, no solder mask or silkscreen, so they have four parts
+fewer than the GLB files ([Project Capabilities](Project-Capabilities.md#45-tested-sizes) gives
+them with both). Read back with OpenCascade, every solid in them is valid and closed, and their
+volume is the one the Verifier finds. The same three files are in `featureTest/` as
+`21_rf_module`, `22_hdi_module` and `23_pcie_card`, so the regression suite checks every part of
+each in both modes.
 
 The pictures on this page are the boards' GLB files drawn with three.js. They were exported with
 `--set Run.COPPER_GROUPING=layer`, so that the copper of each layer is one part and the layers
