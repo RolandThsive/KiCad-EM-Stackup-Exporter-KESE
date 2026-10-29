@@ -46,9 +46,6 @@ line runs through a matching network to a coax connector between rows of stitchi
 fed from a 6-pin header, three LEDs, test points on both sides and plated mounting holes. GND fills
 F.Cu, In1.Cu and B.Cu, and In2.Cu is split into +3V3 and +5V.
 
-<p align="center">
-<img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/example_images/rf_module/turning_visual_and_simulation.webp" width="70%" alt="The RF module stood on its side and turning, so that its top and its bottom come round in turn: above in visual mode, the opaque blue mask with the tracks reading through it in a lighter blue, the bare copper and the plated edge in gold; below in simulation mode, the mask translucent over the copper and the plated edge in copper colour">
-</p>
 
 <p align="center">
 <img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/example_images/rf_module/top_visual.webp" width="49%" alt="The top in visual mode: the blue mask with the tracks reading through it, the white silkscreen, the bare copper of the pads, test points and mounting holes, the GND border along the rounded outline and around the cut-out with its fence of vias, and the plated edge">
@@ -99,10 +96,6 @@ What this board shows:
   `--set Finish.FINISH_ENABLED=True` adds the nickel and the gold on the bare copper
   ([ENIG](Copper-Finishings.md#1331-enig)).
 
-<p align="center">
-<img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/example_images/rf_module/logo.webp" width="61%" alt="The logo on the back close up in visual mode: the K mark and the name, beside the plated wall of the cut-out">
-<img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/example_images/rf_module/logo_zoom.webp" width="37%" alt="The K mark closer still: the stem in white silkscreen, one arm in bare copper, the other arm in copper under the mask, a lighter blue than the mask around it">
-</p>
 
 <p align="center">
 <img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/example_images/rf_module/layers_apart_simulation.webp" width="49%" alt="The board in simulation mode with its layers drawn apart, from the top: the top mask and silkscreen, F.Cu, the first prepreg, In1.Cu, the core with the via barrels and the plated edge, In2.Cu with its +3V3 and +5V halves, the second prepreg, B.Cu, and the bottom mask and silkscreen, each one closed solid">
@@ -167,20 +160,11 @@ What this board shows:
   ([ImmersionSilver](Copper-Finishings.md#1336-immersionsilver)).
 
 <p align="center">
-<img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/example_images/hdi_module/top_closeup.webp" width="51%" alt="The top close up in visual mode: the BGA's ball pads, a microvia in each inner pad, the flash U2, the crystal Y1 and the feed of the antenna">
-<img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/example_images/hdi_module/top_simulation.webp" width="47%" alt="The top in simulation mode: the black mask translucent over the copper, so the planes, the BGA's fan-out and the antenna show through it">
-</p>
-
-<p align="center">
 <img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/example_images/hdi_module/layers_apart_simulation.webp" width="49%" alt="The module in simulation mode with its layers drawn apart: the masks, the six copper layers and the five dielectrics, each one closed solid, the via barrels between the layers they join">
 <img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/example_images/hdi_module/layers_apart_visual.webp" width="49%" alt="The same in visual mode: the top mask and silkscreen, the bare copper of F.Cu with the castellated pads, and the walls of the via bores at the heights of their own layers; the inner copper layers leave almost nothing">
 </p>
 
 <p align="center"><sub><b>Left:</b> simulation mode, every layer a closed solid. <b>Right:</b> visual mode, only the faces you can see.</sub></p>
-
-<p align="center">
-<img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/example_images/hdi_module/logo.webp" width="70%" alt="The bottom close up in visual mode: the logo beside the exposed GND pad, and the castellated pads with their pin numbers">
-</p>
 
 ## 5.3 PCIe x1 Card
 
@@ -221,21 +205,11 @@ What this board shows:
   walls are bare laminate, with no plating and no ring.
 
 <p align="center">
-<img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/example_images/pcie_card/fingers_closeup.webp" width="55%" alt="The tongue close up in visual mode: the B side fingers from B1, the key between them, and the chamfered corners of the tongue">
-<img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/example_images/pcie_card/isolation_closeup.webp" width="43%" alt="The isolation barrier close up in visual mode: the slot, the dashed line in silkscreen, the 2 mm band with no copper, the PSE controller U3, the MOSFET Q1 and the 48 V input">
-</p>
-
-<p align="center">
 <img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/example_images/pcie_card/layers_apart_simulation.webp" width="49%" alt="The card in simulation mode with its layers drawn apart: the masks, the four copper layers and the three dielectrics, each one closed solid; the PoE planes and the logic planes on each layer are apart across the band and the slot">
 <img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/example_images/pcie_card/layers_apart_visual.webp" width="49%" alt="The same in visual mode: the top mask and silkscreen, the bare copper of F.Cu with the fingers, and the walls of the via bores and the slot; the inner copper layers leave nothing">
 </p>
 
 <p align="center"><sub><b>Left:</b> simulation mode, every layer a closed solid. <b>Right:</b> visual mode, only the faces you can see.</sub></p>
-
-<p align="center">
-<img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/example_images/pcie_card/top_simulation.webp" width="43%" alt="The top in simulation mode: the green mask translucent over the copper, the planes stopping at the isolation band">
-<img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/example_images/pcie_card/logo.webp" width="55%" alt="The logo on the front close up in visual mode: the K mark, the name, PoE+ GIGABIT NIC, PCIe x1, REV A, and a box for the serial number">
-</p>
 
 ## 5.4 Exporting The Examples
 
