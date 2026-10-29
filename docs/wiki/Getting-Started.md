@@ -115,38 +115,12 @@ in its values. Only `--out` is not recorded there; the run folder's path shows i
 > exit code is 0 when every board succeeded and 1 when any board failed; with a single board the
 > full traceback is shown, with several the failing board is reported and the run continues.
 
-## 3.4 What Happens In A Run
-
-1. **Read.** The `.kicad_pcb` is parsed; the KiCad format version, the copper layers and the
-   board thickness are taken from it. Formats outside KiCad 6 to 10 give a warning, not an error.
-2. **Collect.** Tracks, arcs, vias, pads, zone fills, graphics and text are collected per layer
-   and per net; the stack-up is read from Board Setup or built from the defaults.
-3. **Resolve.** The outline is built from `Edge.Cuts`; the copper of every layer and net is
-   joined, clipped to the outline and drilled; plating, mask openings and silkscreen follow.
-4. **Geometry.** Every layer becomes flat regions between two heights: dielectrics, copper per
-   net, via barrels, solder mask, silkscreen and, if enabled, the surface finish.
-5. **Materials.** Each part gets a material from `parameters/color.py` (or the stack-up's colour
-   names).
-6. **Assemble.** In simulation mode the surface of every part is worked out in 2D, height by
-   height: the faces looking up and down at each height and the walls between them, cut into
-   triangles. Each part comes out as closed solids without any 3D boolean operation (pieces that
-   do not touch, such as silkscreen letters, stay separate bodies in the part). In visual mode
-   only the surface that can be seen is kept, found the same way for all parts at once.
-7. **Write.** The requested model files are written, with `materials.json` next to them.
-8. **Verify** (only with `--verify` or `Run.VERIFY = True`), on the model just written; the GLB
-   file also goes through `gltf_validator` when that tool is on the PATH.
-9. **Report.** `parameters.txt` and `report.txt` are written last, so the report carries the
-   Verifier's result.
-
-The stages are described in [Working Principle](Working-Principle.md). While a board runs, a
-live `running <stage> ... 1m 23s` line shows the current stage on a terminal
-(`Run.SHOW_PROGRESS`).
-
-## 3.5 Next
+## 3.4 Next
 
 - Decide what to export for your solver: [Choosing An Export](Choosing-An-Export.md).
 - Set your fabricator's thicknesses: [Parameter Reference](Parameter-Reference.md).
 - See what the model contains: [Board](Board.md) and [Copper And Traces](Copper-And-Traces.md).
+- See what happens in a run, stage by stage: [Working Principle](Working-Principle.md).
 
 | Previous | Next |
 |:---|---:|

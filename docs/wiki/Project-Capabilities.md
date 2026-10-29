@@ -74,14 +74,14 @@ The full list is in [Checks, Errors And Warnings](Checks-Errors-And-Warnings.md)
 
 | Board | Layers | Items | Simulation GLB | STEP in mm | Visual GLB |
 |---|---|---|---|---|---|
-| `rf_module` | 4 | 190 tracks, 33 arcs, 307 vias, 7 zone fills | 21 s, 29.9 MB | 22 s, 224.3 MB; with mask and silk 26 s, 330.2 MB | 20 s, 17.1 MB |
-| `hdi_module` | 6 | 199 tracks, 150 vias, 34 zone fills | 14 s, 17.0 MB | 15 s, 125.3 MB; with mask and silk 16 s, 183.2 MB | 15 s, 8.8 MB |
-| `pcie_card` | 4 | 226 tracks, 239 vias, 19 zone fills | 19 s, 32.1 MB | 21 s, 214.6 MB; with mask and silk 24 s, 347.8 MB | 21 s, 18.3 MB |
+| `rf_module` | 4 | 190 tracks, 33 arcs, 307 vias, 7 zone fills | 21 s, 29.9 MB | 26 s, 225.0 MB; with mask and silk 31 s, 331.4 MB | 20 s, 17.1 MB |
+| `hdi_module` | 6 | 199 tracks, 150 vias, 34 zone fills | 14 s, 17.0 MB | 15 s, 125.9 MB; with mask and silk 18 s, 184.0 MB | 15 s, 8.8 MB |
+| `pcie_card` | 4 | 226 tracks, 239 vias, 19 zone fills | 19 s, 32.1 MB | 23 s, 215.3 MB; with mask and silk 28 s, 349.0 MB | 21 s, 18.3 MB |
 | `six_layer` | 6 | 6 tracks, 6 vias, 2 zone fills | 1 s, 0.9 MB | 1 s, 6.2 MB | 1 s, 0.45 MB |
 
-Default parameters, GLB runs with the Verifier, on one Linux machine with 4 cores: what to expect,
-not a limit. The times are the ones the run prints (`in 0m 21s`); starting Python and loading its
-packages adds about 2.5 s to each command.
+Default parameters, GLB and STEP runs with the Verifier, on one Linux machine with 4 cores: what
+to expect, not a limit. The times are the ones the run prints (`in 0m 21s`); starting Python and
+loading its packages adds about 2.5 s to each command.
 
 > [!NOTE]
 > Every dimension in the model is a model value until it is measured. Validation against
