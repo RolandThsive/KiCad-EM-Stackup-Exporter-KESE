@@ -68,7 +68,7 @@ dielectric part:
   prepreg;
 - otherwise the dielectric **above** it.
 
-![Board 11_zones cut at true scale across the track that splits its inner zones, each dielectric part in its own colour: the resin beside In1.Cu belongs to the prepreg above it, the resin beside In2.Cu to the prepreg below it; and the bands of In1.Cu and In2.Cu from above, copper and resin](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/board_2_resin_fill.png)
+![Board 11_zones cut at true scale across the track that splits its inner zones, each dielectric part in its own colour: the resin beside In1.Cu belongs to the prepreg above it, the resin beside In2.Cu to the prepreg below it; and the bands of In1.Cu and In2.Cu from above, copper and resin](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/board_2_resin_fill.webp)
 
 So both common 4-layer builds, prepreg-core-prepreg (as in the picture) and core-prepreg-core,
 get their inner pockets filled from a prepreg, as in the factory. Inside KESE these prisms are tagged `resin_fill_beside: <layer>`; `materials.json` takes
@@ -109,7 +109,7 @@ O = \bigcup_{r : n_r \text{ even}} r \ \setminus \bigcup_{r : n_r \text{ odd}} r
 | $`r`$ | one closed ring found on `Edge.Cuts` |
 | $`n_r`$ | how many other rings contain $`r`$ |
 
-![Board 12_outline_shapes: its Edge.Cuts shapes, open ones in blue and closed ones in red, over the outline KESE resolves from them, with a numbered key; the laminate solid KESE writes for it; and board synthetic with a circular cut-out, a non-plated hole, two plated holes and a via](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/board_1_outline.png)
+![Board 12_outline_shapes: its Edge.Cuts shapes, open ones in blue and closed ones in red, over the outline KESE resolves from them, with a numbered key; the laminate solid KESE writes for it; and board synthetic with a circular cut-out, a non-plated hole, two plated holes and a via](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/board_1_outline.webp)
 
 When `Edge.Cuts` gives no closed ring at all (nothing drawn, or only lines that do not close),
 the fallback outline is

@@ -12,7 +12,7 @@ copper; it never changes the copper itself.
 
 ## 13.2 Where The Finish Goes
 
-![Board 18b with ENIG from above and from below with a numbered key of the copper that gets finish, and header pad J1 pad 2 cut through its hole at true scale](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/finish_1_where.png)
+![Board 18b with ENIG from above and from below with a numbered key of the copper that gets finish, and header pad J1 pad 2 cut through its hole at true scale](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/finish_1_where.webp)
 
 On each side, the finish covers **exposed copper**: the copper of the outer layer intersected
 with the mask openings of that side (pads with their pad-to-mask clearance, drawn openings,
@@ -95,7 +95,7 @@ The bottom face is the mirror image, with the parts named `Bottom Finish ...`.
 
 ### 13.3.1 ENIG
 
-![ENIG on board 18b: how it looks, a cut-away of a pad's edge, the side profile at true scale with heights, and the thin layers enlarged](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/finish_2_enig.png)
+![ENIG on board 18b: how it looks, a cut-away of a pad's edge, the side profile at true scale with heights, and the thin layers enlarged](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/finish_2_enig.webp)
 
 Electroless nickel, immersion gold; KiCad's `ENIG`.
 
@@ -109,7 +109,7 @@ laminate, at z = 0.79508 mm; at true scale the gold is under a pixel, so part 4 
 
 ### 13.3.2 ENEPIG
 
-![ENEPIG on board 18b: how it looks, a cut-away of a pad's edge, the side profile at true scale with heights, and the thin layers enlarged](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/finish_3_enepig.png)
+![ENEPIG on board 18b: how it looks, a cut-away of a pad's edge, the side profile at true scale with heights, and the thin layers enlarged](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/finish_3_enepig.webp)
 
 Electroless nickel, electroless palladium, immersion gold; KiCad's `ENEPIG`.
 
@@ -124,7 +124,7 @@ gold's top is 40.15 µm above the laminate.
 
 ### 13.3.3 HASL
 
-![HASL on board 18b: how it looks, a cut-away of a pad's edge, and the side profile at true scale with heights](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/finish_4_hasl.png)
+![HASL on board 18b: how it looks, a cut-away of a pad's edge, and the side profile at true scale with heights](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/finish_4_hasl.webp)
 
 Hot air solder levelling with tin-lead solder; KiCad's `HAL SnPb`.
 
@@ -138,7 +138,7 @@ thickest finish, and the only one with no layer thin enough to need part 4; on b
 
 ### 13.3.4 HASL_LF
 
-![HASL_LF on board 18b: how it looks, a cut-away of a pad's edge, and the side profile at true scale with heights](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/finish_5_hasl_lf.png)
+![HASL_LF on board 18b: how it looks, a cut-away of a pad's edge, and the side profile at true scale with heights](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/finish_5_hasl_lf.webp)
 
 Lead-free hot air solder levelling; KiCad's `HAL lead-free`.
 
@@ -150,7 +150,7 @@ KESE builds it exactly as `HASL`: the same layer of tin, the same part and the s
 
 ### 13.3.5 OSP
 
-![OSP on board 18b: how it looks, a cut-away of a pad's edge, the side profile at true scale with heights, and the thin layers enlarged](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/finish_6_osp.png)
+![OSP on board 18b: how it looks, a cut-away of a pad's edge, the side profile at true scale with heights, and the thin layers enlarged](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/finish_6_osp.webp)
 
 Organic solderability preservative; KiCad's `OSP` and `HT_OSP`.
 
@@ -163,7 +163,7 @@ laminate.
 
 ### 13.3.6 ImmersionSilver
 
-![ImmersionSilver on board 18b: how it looks, a cut-away of a pad's edge, the side profile at true scale with heights, and the thin layers enlarged](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/finish_7_immersion_silver.png)
+![ImmersionSilver on board 18b: how it looks, a cut-away of a pad's edge, the side profile at true scale with heights, and the thin layers enlarged](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/finish_7_immersion_silver.webp)
 
 Immersion silver; KiCad's `Immersion silver`.
 
@@ -175,7 +175,7 @@ Coloured `#E4E4E0`. On board 18b its top is 35.2 µm above the laminate.
 
 ### 13.3.7 ImmersionTin
 
-![ImmersionTin on board 18b: how it looks, a cut-away of a pad's edge, the side profile at true scale with heights, and the thin layers enlarged](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/finish_8_immersion_tin.png)
+![ImmersionTin on board 18b: how it looks, a cut-away of a pad's edge, the side profile at true scale with heights, and the thin layers enlarged](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/finish_8_immersion_tin.webp)
 
 Immersion tin; KiCad's `Immersion tin`.
 
@@ -188,7 +188,7 @@ its top is 36 µm above the laminate.
 
 ### 13.3.8 HardGold
 
-![HardGold on board 18b: how it looks, a cut-away of a pad's edge, the side profile at true scale with heights, and the thin layers enlarged](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/finish_9_hard_gold.png)
+![HardGold on board 18b: how it looks, a cut-away of a pad's edge, the side profile at true scale with heights, and the thin layers enlarged](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/finish_9_hard_gold.webp)
 
 Electroplated hard gold, the finish of edge-connector fingers; KiCad's `Hard gold`.
 

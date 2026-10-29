@@ -4,7 +4,7 @@ The stack-up decides the height of every layer. It is read once per board
 (`kese/s2_collect/stackup.py`), its heights are computed once (`kese/s4_geometry/heights.py`), and
 it is printed at the top of `report.txt`, so every z value in the model can be checked against it.
 
-![Board tests/boards/six_layer cut through pad 1 of J1 at true scale: the silkscreen on the mask, the mask on the laminate faces, the ENIG finish on the pad, the outer copper on the faces, the four inner copper layers between five dielectrics, the plated barrel; every layer listed with its thickness and its heights from the laminate mid-plane, and close-ups of the silk on the mask and of the pad's top edge, then two closer still: the finish at the pad's edge, 5 µm of nickel under 0.08 µm of gold beside the mask, and the 80 nm of gold alone](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/stackup_1_cross_section.png)
+![Board tests/boards/six_layer cut through pad 1 of J1 at true scale: the silkscreen on the mask, the mask on the laminate faces, the ENIG finish on the pad, the outer copper on the faces, the four inner copper layers between five dielectrics, the plated barrel; every layer listed with its thickness and its heights from the laminate mid-plane, and close-ups of the silk on the mask and of the pad's top edge, then two closer still: the finish at the pad's edge, 5 µm of nickel under 0.08 µm of gold beside the mask, and the 80 nm of gold alone](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/stackup_1_cross_section.webp)
 
 ## 7.1 Heights
 

@@ -5,7 +5,7 @@ values, logos and outlines. `kese/s4_geometry/silkscreen.py` builds it from the 
 `kese/s3_resolve/silk.py` clips off the pads, and `kese/core/font.py` renders the text; the
 settings are in `parameters/silkscreen.py`.
 
-![The same board eight times from the top in a simulation-mode GLB, once in each silkscreen colour: white and yellow silk on black mask, and black, not set, green, red, blue and purple silk on white mask, each labelled with its colour and hex value](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/silk_1_colors_simulation.png)
+![The same board eight times from the top in a simulation-mode GLB, once in each silkscreen colour: white and yellow silk on black mask, and black, not set, green, red, blue and purple silk on white mask, each labelled with its colour and hex value](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/silk_1_colors_simulation.webp)
 
 ## 14.1 What Is Drawn
 
@@ -31,7 +31,7 @@ Everything is clipped to the outline, pulled back from the edge by the same
 is open (pads, exposed copper, bare laminate in openings), which is what fabricators do: silk is
 clipped off the pads. With `True` the ink is kept there as drawn in KiCad.
 
-![U1, J1 and the text OPEN on board 17b_silk_over_copper with SILKSCREEN_OVER_COPPER False and True: from the top with a numbered key, U1 at an angle, and a true-scale cut along U1's outline across pad 2](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/silk_4_mask_subtract.png)
+![U1, J1 and the text OPEN on board 17b_silk_over_copper with SILKSCREEN_OVER_COPPER False and True: from the top with a numbered key, U1 at an angle, and a true-scale cut along U1's outline across pad 2](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/silk_4_mask_subtract.webp)
 
 ## 14.2 Text Rendering
 
@@ -42,7 +42,7 @@ KiCad 7, 8 and 9 share, so it lands where KiCad plots it: `tests/test_text_layou
 sixteen texts against KiCad 7.0.11's plot to 5 µm, and the two references below agree with it to
 2 µm.
 
-![TP7 from featureTest/11_zones and J2 at 45 degrees from featureTest/01_holes_slotted, each three times at the same scale: KiCad 7.0.11's plot with its strokes, KESE's silk region with its vertices, and KiCad's outline on KESE's ink, with a close-up of the join in P where they differ most, 2.0 µm where KESE draws KiCad's round corner as one chord, and a table of the outlines, centroids and areas of both](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/silk_5_kicad_text.png)
+![TP7 from featureTest/11_zones and J2 at 45 degrees from featureTest/01_holes_slotted, each three times at the same scale: KiCad 7.0.11's plot with its strokes, KESE's silk region with its vertices, and KiCad's outline on KESE's ink, with a close-up of the join in P where they differ most, 2.0 µm where KESE draws KiCad's round corner as one chord, and a table of the outlines, centroids and areas of both](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/silk_5_kicad_text.webp)
 
 ### 14.2.1 Layout Of One Line
 
@@ -149,9 +149,9 @@ is used and `report.txt` says so on its `font:` note.
 
 ## 14.3 Ink Geometry
 
-![Board 17b_silk_over_copper from the top with a dashed box where a silk line crosses a 0.5 mm track, and the boxed region cut along the silk line: the ink on the mask over the laminate, climbing the mask's wall, and on the mask over the track](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/silk_2_conformal.png)
+![Board 17b_silk_over_copper from the top with a dashed box where a silk line crosses a 0.5 mm track, and the boxed region cut along the silk line: the ink on the mask over the laminate, climbing the mask's wall, and on the mask over the track](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/silk_2_conformal.webp)
 
-![Board 17b_silk_over_copper cut along the silk lines across a 1 mm track at true scale with all seven layers labelled, and the top face at the track's edge close up with rulers for the height of every surface above the laminate](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/silk_3_height.png)
+![Board 17b_silk_over_copper cut along the silk lines across a 1 mm track at true scale with all seven layers labelled, and the top face at the track's edge close up with rulers for the height of every surface above the laminate](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/silk_3_height.webp)
 
 The ink follows the mask surface, which is flat over laminate and raised over copper. First the
 silk region $`S`$ is split against the mask region $`M`$ of equation (15.1), then the part on the

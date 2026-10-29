@@ -3,7 +3,7 @@
 KESE writes the same geometry in two modes, chosen with `Run.MODE` or `--mode`. The old names
 `real` (for `simulation`) and `pretty` (for `visual`) are still accepted.
 
-![Board tests/boards/six_layer in simulation mode (left) and in visual mode (right): as a web viewer draws them, the translucent mask against the opaque one, the track under the mask and the two colours of bare copper; and cut open along the via row, where the closed solids of simulation mode fill the cut and the skin of visual mode is empty inside, without the buried via and the inner zone fills](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/modes_1_simulation_visual.png)
+![Board tests/boards/six_layer in simulation mode (left) and in visual mode (right): as a web viewer draws them, the translucent mask against the opaque one, the track under the mask and the two colours of bare copper; and cut open along the via row, where the closed solids of simulation mode fill the cut and the skin of visual mode is empty inside, without the buried via and the inner zone fills](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/modes_1_simulation_visual.webp)
 
 ## 8.1 Simulation Mode
 
@@ -12,7 +12,7 @@ each dielectric between two copper layers (core or prepreg), each net's copper w
 layers and vias joined into one body, via and hole plating, solder mask conformal over the copper,
 silkscreen and, if enabled, the surface finish.
 
-![Side profile of the 4-layer board featureTest/14_stackup_full in simulation mode, cut through its plated pad J1 at true scale: the three dielectrics, the mask on both faces and the pad's copper fill the cut, the pad's ring on each of the four copper layers joined by the 25 µm plated barrel into the one part Copper_GND; a table gives each layer's thickness and the part it is in](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/modes_2_simulation_side.png)
+![Side profile of the 4-layer board featureTest/14_stackup_full in simulation mode, cut through its plated pad J1 at true scale: the three dielectrics, the mask on both faces and the pad's copper fill the cut, the pad's ring on each of the four copper layers joined by the 25 µm plated barrel into the one part Copper_GND; a table gives each layer's thickness and the part it is in](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/modes_2_simulation_side.webp)
 
 - Parts touch exactly (shared vertices, exact z values) and do not overlap, apart from the known
   exception listed in
@@ -70,7 +70,7 @@ surface left and is not in the file. A finish thinner than $`\varepsilon`$ (the 
 ENIG) leaves one surface too: the nickel's and the copper's faces under it are covered by the
 layer above, so they are never made.
 
-![The same side profile in visual mode: only the faces between material and air are in the file, the mask's outside, the pad's top and bottom, the bore and the board's edge, drawn over thin grey outlines of the simulation solids; the inside of the board is empty, In1.Cu and In2.Cu leave nothing, and what is left is the outside that a 2-layer board of the same thickness would have](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/modes_3_visual_side.png)
+![The same side profile in visual mode: only the faces between material and air are in the file, the mask's outside, the pad's top and bottom, the bore and the board's edge, drawn over thin grey outlines of the simulation solids; the inside of the board is empty, In1.Cu and In2.Cu leave nothing, and what is left is the outside that a 2-layer board of the same thickness would have](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/modes_3_visual_side.webp)
 
 With `Run.BUILD_WITH_KERNELS = True` the skin is made the older way (`kese/s6_assemble/skin.py`):
 every prism extruded on its own and all of them joined in one exact boolean union (Manifold, in

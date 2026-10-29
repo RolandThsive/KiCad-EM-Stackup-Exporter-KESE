@@ -35,7 +35,7 @@ KiCad-EM-Stackup-Exporter-KESE/
 │   └── tools/                   make_swatches.py: the colour boxes of docs/ColorSwatches/
 ├── docs/wiki/, docs/images/     this wiki, and its pictures
 ├── docs/ColorSwatches/          the colour squares in the wiki's colour tables
-├── docs/logo/                   the KESE logo as SVG and PNG, and favicon.ico
+├── docs/logo/                   the KESE logo as SVG and WebP, and favicon.ico
 ├── licenses/                    KiCad copyright headers and AUTHORS.txt
 ├── LICENSE, NOTICE.md, CONTRIBUTING.md
 └── README.md

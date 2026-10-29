@@ -10,9 +10,9 @@ described in [Checks, Errors And Warnings](Checks-Errors-And-Warnings.md).
 stator with one loop and three nets: `TX`, `1` and `2`. 2,414 track segments and 13 through
 vias, no footprints, no zones, no stack-up block in the file.
 
-![The Stator in simulation mode: its top, and its bottom seen from below, as a web viewer draws them, the copper showing faintly through the translucent mask; and a true-scale side profile through the TX via, where the 1.6 mm FR4 core, the copper on each face and the mask fill the cut](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/examples_3_stator_simulation.png)
+![The Stator in simulation mode: its top, and its bottom seen from below, as a web viewer draws them, the copper showing faintly through the translucent mask; and a true-scale side profile through the TX via, where the 1.6 mm FR4 core, the copper on each face and the mask fill the cut](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/examples_3_stator_simulation.webp)
 
-![The Stator in visual mode, drawn the same way: the opaque mask, the tracks reading through it as Mask over Copper and the open via bores as the only copper in the file; in the same side profile only the mask's outside, the via's bore and the board's edge are left, and neither F.Cu nor B.Cu leaves anything in the cut](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/examples_4_stator_visual.png)
+![The Stator in visual mode, drawn the same way: the opaque mask, the tracks reading through it as Mask over Copper and the open via bores as the only copper in the file; in the same side profile only the mask's outside, the via's bore and the board's edge are left, and neither F.Cu nor B.Cu leaves anything in the cut](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/examples_4_stator_visual.webp)
 
 What this board shows:
 
@@ -66,9 +66,9 @@ A 4-layer inductive encoder stator, a ring from 30 to 50 mm radius, with the net
 `F.Cu` and `In1.Cu`, with a short run on `In2.Cu` at each pair of vias, and the three turns of the
 `TX` coil on `F.Cu` and `B.Cu`.
 
-![The Coil stator in simulation mode as a web viewer draws it: the whole board with its translucent mask, the same with the masks hidden and each net's copper in its own colour, and a close-up of the right edge with only the copper shown, at its true heights on the four layers, joined by the through vias](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/examples_1_coil_simulation.png)
+![The Coil stator in simulation mode as a web viewer draws it: the whole board with its translucent mask, the same with the masks hidden and each net's copper in its own colour, and a close-up of the right edge with only the copper shown, at its true heights on the four layers, joined by the through vias](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/examples_1_coil_simulation.webp)
 
-![The Coil stator in visual mode, drawn exactly as the simulation picture: the whole board with its opaque mask, the same with the masks hidden, where only the laminate's edge walls and the walls of the 53 via bores are left, and the close-up of the right edge, where each net keeps only the walls of its via bores](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/examples_2_coil_visual.png)
+![The Coil stator in visual mode, drawn exactly as the simulation picture: the whole board with its opaque mask, the same with the masks hidden, where only the laminate's edge walls and the walls of the 53 via bores are left, and the close-up of the right edge, where each net keeps only the walls of its via bores](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/examples_2_coil_visual.webp)
 
 What this board shows:
 
