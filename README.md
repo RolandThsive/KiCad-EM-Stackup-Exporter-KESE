@@ -83,7 +83,7 @@ from any folder. Full walk-through: [Getting Started](https://github.com/RolandT
   per layer, or all merged; through, blind, buried and micro vias with plated barrels; castellated holes and edge
   plating; optional etch trapezoid.
 - **Board:** one solid per dielectric with its own εr and tanδ, resin filling the space beside inner copper, any
-  outline from `Edge.Cuts` with cut-outs, plated and non-plated round and slotted holes.
+  outline from `Edge.Cuts` with cut-outs and boards inside them, plated and non-plated round and slotted holes.
 - **Mask, silk and finish:** solder mask conformal over every trace, pulled back from the edge and open over every
   bore; silkscreen in KiCad's own stroke font and text layout, clipped off the pads; ENIG, ENEPIG, HASL, lead-free
   HASL, OSP, immersion silver and tin, and hard gold, each metal its own layer (off by default).

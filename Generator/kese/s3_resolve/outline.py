@@ -1,5 +1,5 @@
 """The board outline from Edge.Cuts: closed shapes as they are, open lines and arcs joined into
-faces.  An outline inside another one is a cut-out."""
+faces.  An outline inside another one is a cut-out, and an outline inside a cut-out a board again."""
 import numpy as np
 import shapely
 from shapely.geometry import LineString, Polygon
@@ -33,9 +33,10 @@ def outline_from(items, log):
         allcu = union([g for gs in items.copper_items.values() for g, _ in gs])
         return allcu.convex_hull.buffer(B.OUTLINE_FALLBACK_MARGIN_MM)
     depth = [sum(1 for j, o in enumerate(uniq) if j != i and o.contains(s)) for i, s in enumerate(uniq)]
-    solid = union([s for s, d in zip(uniq, depth) if d % 2 == 0])
-    cut = union([s for s, d in zip(uniq, depth) if d % 2 == 1])
-    return solid.difference(cut)
+    # as KiCad does: a cut-out is taken out of the outline one level up that holds it, so an outline
+    # inside a cut-out is a board again
+    return union([s.difference(union([h for h, e in zip(uniq, depth) if e == d + 1 and s.contains(h)]))
+                  for s, d in zip(uniq, depth) if d % 2 == 0])
 
 
 def joined_ends(lines, d):

@@ -11,7 +11,7 @@ solvers and CAD, and a **visual model** of the visible surface for viewers.
 | Board file | `.kicad_pcb` from KiCad 6 to 10 (file formats 20211014 to 20260206); older and newer files are read with a warning. KiCad itself is not needed. |
 | Copper layers | 1 to 8 in the test boards. Above 8, KESE warns but still models the board. `F.Cu` and `B.Cu` must be declared. |
 | Stack-up | From Board Setup: every core and prepreg with its thickness, εr and tanδ, the copper and mask thicknesses, the mask and silk colours, the finish. Defaults from `parameters/` when the file has none. |
-| Outline | `Edge.Cuts` of any shape, with cut-outs |
+| Outline | `Edge.Cuts` of any shape, with cut-outs and boards inside them |
 | Copper | Tracks, arc tracks, pads (circle, rect, oval, roundrect, trapezoid, custom), zone fills, copper graphics and text |
 | Vias | Through, blind, buried and micro vias with plated barrels; rings on unconnected layers dropped as KiCad does |
 | Holes | Plated and non-plated, round and slotted; plated walls on the plated ones |
