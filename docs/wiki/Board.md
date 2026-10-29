@@ -94,19 +94,20 @@ The outline comes from `Edge.Cuts`:
    pairs first; ends that already meet stay where they are. The lines are then polygonized into
    faces. When a gap was closed this way, `report.txt` notes the widest one. If the lines form no
    face at all, the run warns `Edge.Cuts lines/arcs do not form a closed outline`.
-3. Rings nested at an **even** depth are joined as board, rings at an **odd** depth are cut-outs,
-   and the cut-outs are subtracted last. A circle drawn inside the outer outline is a hole through
-   the whole board; a ring drawn inside such a cut-out does not become board again, because
-   everything inside a cut-out is removed:
+3. Rings nested at an **even** depth are boards, rings at an **odd** depth are cut-outs. As in
+   KiCad, each cut-out is taken out of the ring one level up that holds it. A circle drawn inside
+   the outer outline is a hole through the whole board, and a ring drawn inside such a cut-out is a
+   board again, like a small board inside a panel frame (`featureTest/13b_outline_two`):
 
 ```math
-O = \bigcup_{r : n_r \text{ even}} r \ \setminus \bigcup_{r : n_r \text{ odd}} r \qquad (10.3)
+O = \bigcup_{r : n_r \text{ even}} \Big( r \ \setminus \bigcup_{h \subset r,\ n_h = n_r + 1} h \Big) \qquad (10.3)
 ```
 
 | Symbol | Meaning |
 |---|---|
 | $`O`$ | the board outline region |
 | $`r`$ | one closed ring found on `Edge.Cuts` |
+| $`h`$ | a cut-out: a ring inside $`r`$, one level deeper |
 | $`n_r`$ | how many other rings contain $`r`$ |
 
 ![Board 12_outline_shapes: its Edge.Cuts shapes, open ones in blue and closed ones in red, over the outline KESE resolves from them, with a numbered key; the laminate solid KESE writes for it; and board synthetic with a circular cut-out, a non-plated hole, two plated holes and a via](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/board_1_outline.webp)

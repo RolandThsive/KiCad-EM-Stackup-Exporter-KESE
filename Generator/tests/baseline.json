@@ -759,21 +759,22 @@
   "Top Solder Mask": 0.92154984
  },
  "13b_outline_two/simulation": {
-  "Board_dielectric 1": 935.622592852,
-  "Bottom Solder Mask": 6.202960577,
+  "Board_dielectric 1": 959.782592852,
+  "Bottom Solder Mask": 6.362161577,
   "Copper_A_NET": 0.286698446,
   "Copper_B_GND": 10.014476174,
-  "Top Silkscreen": 0.009167643,
-  "Top Solder Mask": 6.188369731
+  "Copper_ISLAND": 0.041698446,
+  "Top Silkscreen": 0.009168014,
+  "Top Solder Mask": 6.349527638
  },
  "13b_outline_two/visual": {
-  "Board_dielectric 1": 936.2,
+  "Board_dielectric 1": 960.36,
   "Bottom Mask over Copper": -0.007136843,
-  "Bottom Solder Mask": 16.113925744,
+  "Bottom Solder Mask": 16.273126744,
   "Copper_B_GND": -0.520452253,
   "Top Mask over Copper": 0.0,
-  "Top Silkscreen": 0.009167643,
-  "Top Solder Mask": 6.528761131
+  "Top Silkscreen": 0.009168014,
+  "Top Solder Mask": 6.731617483
  },
  "14_stackup_full/simulation": {
   "Board_dielectric 1": 142.161827195,

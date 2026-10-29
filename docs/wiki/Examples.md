@@ -104,6 +104,8 @@ What this board shows:
 <img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/example_images/rf_module/layers_apart_visual.webp" width="49%" alt="The same in visual mode, where the file holds only the faces that can be seen: the top mask and silkscreen, the bare copper of F.Cu, the walls of the via bores and the plated edge; the faces of the bottom side look down, away from the camera, and the inner copper layers leave almost nothing">
 </p>
 
+<p align="center"><sub><b>Left:</b> simulation mode, every layer a closed solid. <b>Right:</b> visual mode, only the faces you can see.</sub></p>
+
 | Part (simulation mode) | Triangles |
 |---|---|
 | `Copper_GND`: the planes, the border, the via fence, the plated edge | 333,000 |
@@ -169,6 +171,8 @@ What this board shows:
 <img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/example_images/hdi_module/layers_apart_visual.webp" width="49%" alt="The same in visual mode: the top mask and silkscreen, the bare copper of F.Cu with the castellated pads, and the walls of the via bores at the heights of their own layers; the inner copper layers leave almost nothing">
 </p>
 
+<p align="center"><sub><b>Left:</b> simulation mode, every layer a closed solid. <b>Right:</b> visual mode, only the faces you can see.</sub></p>
+
 <p align="center">
 <img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/example_images/hdi_module/logo.webp" width="70%" alt="The bottom close up in visual mode: the logo beside the exposed GND pad, and the castellated pads with their pin numbers">
 </p>
@@ -220,6 +224,8 @@ What this board shows:
 <img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/example_images/pcie_card/layers_apart_simulation.webp" width="49%" alt="The card in simulation mode with its layers drawn apart: the masks, the four copper layers and the three dielectrics, each one closed solid; the PoE planes and the logic planes on each layer are apart across the band and the slot">
 <img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/example_images/pcie_card/layers_apart_visual.webp" width="49%" alt="The same in visual mode: the top mask and silkscreen, the bare copper of F.Cu with the fingers, and the walls of the via bores and the slot; the inner copper layers leave nothing">
 </p>
+
+<p align="center"><sub><b>Left:</b> simulation mode, every layer a closed solid. <b>Right:</b> visual mode, only the faces you can see.</sub></p>
 
 <p align="center">
 <img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/example_images/pcie_card/top_simulation.webp" width="43%" alt="The top in simulation mode: the green mask translucent over the copper, the planes stopping at the isolation band">
