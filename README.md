@@ -102,12 +102,12 @@ Every feature and every parameter is in the wiki:
 [Checks, Errors And Warnings](https://github.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/wiki/Checks-Errors-And-Warnings).
 
 <p align="center">
-  <img src="docs/images/readme_1_feature_test_boards.webp" alt="The 31 feature test boards, each exported by KESE in visual mode">
+  <img src="docs/images/readme_1_feature_test_boards.webp" alt="24 of the feature test boards, each exported by KESE in visual mode">
 </p>
 
-<p align="center"><sub>The 31 feature test boards of <code>featureTest/</code>, each labelled with the KiCad features it
+<p align="center"><sub>24 of the feature test boards of <code>featureTest/</code>, each labelled with the KiCad features it
 tests and exported in visual mode. Boards whose stack-up sets no colours are given a green mask and white silkscreen
-for this picture. The folder's other three boards are the example boards of the
+for this picture. Left out are the boards of items KESE skips (19 and 19b), the same board in five KiCad formats (20a to 20e), and the example boards of the
 <a href="https://github.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/wiki/Examples">Examples</a> page.</sub></p>
 
 ## Status And Next Steps
