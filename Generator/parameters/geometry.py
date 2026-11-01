@@ -12,6 +12,9 @@ SNAP_GRID_MM = 0.0001
 # Simplification tolerance for copper outlines after union, mm (0 = none)
 SIMPLIFY_TOLERANCE_MM = 0.0005
 
+# A polygon of less area than this (mm2) is a sliver left by the set operations, and is dropped
+SLIVER_AREA_MM2 = 1e-10
+
 # Circles and arcs
 ARC_STEP_DEG = 3.0                      # max angle per segment when flattening arcs
 CIRCLE_CHORD_TOLERANCE_MM = 0.002       # max deviation of a flattened circle from the true one
@@ -22,6 +25,8 @@ BEZIER_SEGMENTS = 32                    # straight pieces per Bezier curve
 
 # Polygons whose rings touch at a single point are opened by this much so they can be meshed
 PINCH_POINT_OPENING_MM = 1e-4
+PINCH_CUT_ROUNDS = 10                   # tries at opening one, the cut's radius doubling each time
+PINCH_DISC_TURN_DEG = 17.0              # turn of the octagon cut at a pinch, off the axes a board's edges follow
 
 # The tops and bottoms of prisms are cut into triangles by earcut, as in KiCad's 3D viewer
 TRIANGULATE_CELL_POINTS = 5000          # a polygon with more points than this is cut strip by strip

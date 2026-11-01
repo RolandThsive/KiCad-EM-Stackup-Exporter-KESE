@@ -39,7 +39,7 @@ def mesh_with_shared_vertices(pieces, heights):
 def flat_face_triangles(region, level, up):
     """A flat face at the height of index `level` as (xy (n, 2), level (n,), triangles (m, 3)
     into xy), wound to look up or down."""
-    polys = np.array([p for p in shapely.get_parts(sh.polys_only(region)) if p.area > 1e-10], dtype=object)
+    polys = np.array([p for p in shapely.get_parts(sh.polys_only(region)) if p.area > sh.G().SLIVER_AREA_MM2], dtype=object)
     xy, tri = polygon_triangles(polys)
     if not up:
         tri = tri[:, ::-1]

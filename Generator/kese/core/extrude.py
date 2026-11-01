@@ -21,7 +21,7 @@ def extrude(geom, z0, z1, _retry=True):
         return None
     z0, z1 = min(z0, z1), max(z0, z1)
     left = np.array(polygons(geom), dtype=object)
-    left = left[shapely.area(left) > 1e-10]
+    left = left[shapely.area(left) > P.Geometry.SLIVER_AREA_MM2]
     if not len(left):
         return None
     meshes = []

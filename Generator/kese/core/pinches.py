@@ -17,8 +17,6 @@ from kese.core import shapes2d as sh
 from kese.core.vertices import grid_keys, near_edge, noded, pairs_in, vertex_keys
 from parameters import P
 
-DISC_TURN_DEG = 17.0     # see cut_disc
-CUT_ROUNDS = 10          # the radius doubles each round: up to 512 times Geometry.PINCH_POINT_OPENING_MM
 
 
 def open_pinches(region, log=None):
@@ -29,7 +27,7 @@ def open_pinches(region, log=None):
     parts = list(shapely.get_parts(region))
     check = range(len(parts))                              # the parts whose rings are checked this round
     cut_any = False
-    for round_ in range(CUT_ROUNDS):
+    for round_ in range(sh.G().PINCH_CUT_ROUNDS):
         cuts = pieces_too_close(parts)
         for k in check:
             for p in repeated_vertices(parts[k]):
@@ -43,18 +41,18 @@ def open_pinches(region, log=None):
         check, cut_any = sorted(cuts), True
     else:
         if log:
-            log(f"pinch points left after {CUT_ROUNDS} rounds of cutting")
+            log(f"pinch points left after {sh.G().PINCH_CUT_ROUNDS} rounds of cutting")
     if not cut_any:
         return region
-    return sh.as_region([q for p in parts for q in shapely.get_parts(p) if q.area > 1e-10])
+    return sh.as_region([q for p in parts for q in shapely.get_parts(p) if q.area > sh.G().SLIVER_AREA_MM2])
 
 
 def cut_disc(p, r):
-    """The disc cut out around a pinch point: an octagon turned by DISC_TURN_DEG, so that none of its
+    """The disc cut out around a pinch point: an octagon turned by Geometry.PINCH_DISC_TURN_DEG, so that none of its
     corners lies on the horizontal, vertical or 45-degree line through the point.  KiCad's edges run
     along those lines, and an octagon corner on an edge through the point (two holes touching at a
     corner of their collinear edges) makes a new pinch there, round after round."""
-    a = np.radians(DISC_TURN_DEG + 45.0 * np.arange(8))
+    a = np.radians(sh.G().PINCH_DISC_TURN_DEG + 45.0 * np.arange(8))
     return shapely.Polygon(np.c_[p[0] + r * np.cos(a), p[1] + r * np.sin(a)])
 
 
@@ -101,7 +99,7 @@ def open_pinches_between(below, above, log=None):
     open_pinches().  -> (below, above, whether anything was cut)."""
     parts = [list(shapely.get_parts(sh.polys_only(below))), list(shapely.get_parts(sh.polys_only(above)))]
     cut_any = False
-    for round_ in range(CUT_ROUNDS):
+    for round_ in range(sh.G().PINCH_CUT_ROUNDS):
         cuts = edges_against_each_other(*parts)
         if not cuts:
             break
@@ -112,10 +110,10 @@ def open_pinches_between(below, above, log=None):
         cut_any = True
     else:
         if log:
-            log(f"pinch edges between two heights left after {CUT_ROUNDS} rounds of cutting")
+            log(f"pinch edges between two heights left after {sh.G().PINCH_CUT_ROUNDS} rounds of cutting")
     if not cut_any:
         return below, above, False
-    below, above = (sh.as_region([q for p in side for q in shapely.get_parts(p) if q.area > 1e-10]) for side in parts)
+    below, above = (sh.as_region([q for p in side for q in shapely.get_parts(p) if q.area > sh.G().SLIVER_AREA_MM2]) for side in parts)
     return below, above, True
 
 

@@ -26,7 +26,7 @@ def _slices(region, z0, z1, foot_at_bottom, unetched=None):
         if inset > 0:
             g = region.buffer(-inset, join_style="mitre")
             if unetched is not None and not unetched.is_empty:
-                near = sh.inter(region, unetched.buffer(inset * 1.5, join_style="mitre"))
+                near = sh.inter(region, unetched.buffer(inset * C.ETCH_UNETCHED_REACH, join_style="mitre"))
                 g = sh.union([g, near])
             g = sh.snap(g)
         out.append((g, z0 + t * s / n, z0 + t * (s + 1) / n))

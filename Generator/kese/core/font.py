@@ -28,6 +28,9 @@ DEFAULT_FONT = "kicad_newstroke.json.gz"
 # text heights over the baseline, a tenth of the width shorter at each end
 SUPER_SUB_SIZE, SUPER_OFFSET, SUB_OFFSET = 0.8, -0.35, 0.15
 OVERBAR_HEIGHT, BAR_TRIM = 1.23, 0.1
+# KiCad's stroke-font block: a line's box is 1.17 heights tall, a left-justified line starts pen / 1.52
+# in, and the first baseline sits a height less 0.052 pens below the top (font.cpp, getLinePositions)
+BLOCK_HEIGHT, LEFT_OFFSET_DIV, TOP_OFFSET = 1.17, 1.52, 0.052
 
 _font = None
 _font_note = ""
@@ -146,8 +149,8 @@ def render(text, anchor, angle_deg, size_h, size_w, thickness, justify=(), mirro
         laid.append(strokes)
 
     n = len(lines)
-    height = size_h * 1.17 + (n - 1) * interline          # KiCad's block height
-    off_x, off_y = thickness / 1.52, size_h - thickness * 0.052   # KiCad stroke-font offsets
+    height = size_h * BLOCK_HEIGHT + (n - 1) * interline
+    off_x, off_y = thickness / LEFT_OFFSET_DIV, size_h - thickness * TOP_OFFSET
     if "top" in justify:
         pass
     elif "bottom" in justify:

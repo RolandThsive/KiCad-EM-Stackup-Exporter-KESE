@@ -23,6 +23,7 @@ LEGACY_ZERO_MARGIN = 20240201          # up to here a solder_mask_margin of 0 me
 NEW_OVERBAR = 20210606                 # from here an overbar is ~{text}; before, text between two ~
 STROKED_FILL_UNTIL = 20250210          # before this a zone fill is stroked, unless the zone says not
 KICAD_DEFAULT_VIA = (0.6, 0.3, 0.3, 0.1)    # via size, drill, micro via size, drill (netclass.cpp)
+ROUNDRECT_RRATIO = 0.25                # a roundrect pad that gives no ratio (padstack.cpp, PADSTACK defaults)
 
 
 @dataclass
@@ -163,6 +164,11 @@ def legacy_arc(node, T):
     c, p0 = T(pt(child(node, "start"))), T(pt(child(node, "end")))
     r = math.hypot(p0[0] - c[0], p0[1] - c[1])
     return c, r, math.atan2(p0[1] - c[1], p0[0] - c[0]), math.radians(num(node, "angle", 0.0)), p0
+
+
+def roundrect_ratio(pad):
+    """A roundrect pad's corner radius as a fraction of its shorter side."""
+    return num(pad, "roundrect_rratio", ROUNDRECT_RRATIO)
 
 
 def mask_margin(node, d):

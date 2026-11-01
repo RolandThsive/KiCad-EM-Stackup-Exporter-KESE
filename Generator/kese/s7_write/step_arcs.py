@@ -35,7 +35,8 @@ def _fit(pts, circles):
     """One ring's arcs, the ring restarted where its first arc ends so that the ring's start does
     not split an arc: (vertices, arcs)."""
     R = P.Run
-    find = lambda q: geo.arcs_in_ring(q, R.STEP_ARC_FIT_TOLERANCE_MM, R.STEP_ARC_MIN_POINTS)
+    find = lambda q: geo.arcs_in_ring(q, R.STEP_ARC_FIT_TOLERANCE_MM, R.STEP_ARC_MIN_POINTS,
+                                           R.STEP_ARC_MIN_SWEEP_DEG)
     arcs, n = find(pts), len(pts)
     if arcs and arcs[0][1] - arcs[0][0] < n:     # an arc found at index 0 may continue from the ring's end:
         s = arcs[0][1] % n                       # restart the ring where it ends and look again

@@ -13,8 +13,9 @@ from kese.s8_verify.overlap import overlaps
 from parameters import P
 
 
-def verify(model, glb_path=None, rays=3000):
+def verify(model, glb_path=None, rays=None):
     """(ok, report lines) of the checks below."""
+    rays = rays or P.Run.VERIFY_RAYS
     lines = []
     meshes = model.meshes
     scale = 1000.0 if model.units == "m" else 1.0      # report in mm

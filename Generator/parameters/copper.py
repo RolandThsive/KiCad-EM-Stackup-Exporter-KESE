@@ -29,6 +29,11 @@ PTH_WALL_MM = 0.025                     # plated wall thickness of through-hole 
 ETCH_FACTOR = 0.0
 ETCH_STEPS = 4                          # the trapezoid is built as this many stacked slices
 ETCH_APPLY_TO_INNER_LAYERS = False      # inner copper is etched from the core side; foot toward the board centre
+ETCH_UNETCHED_REACH = 1.5               # copper within this x the inset of a hole wall or board edge keeps its outline
+
+# A hole in one net's copper narrower than this on average (2 x area / perimeter) is no hole: it is
+# filled (the gap KiCad leaves between a zone fill and a pad it meets, a hair wide)
+HAIRLINE_HOLE_MM = 1e-3
 
 # Castellated holes: plated holes that the board edge cuts through (module edge connectors).
 # KiCad has a per-pad "Castellated pad" fabrication property, but KESE does not read it: here a

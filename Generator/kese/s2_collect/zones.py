@@ -2,6 +2,7 @@
 from shapely.geometry import Polygon
 
 from kese.core.sexp import child, children, layer_of, pt
+from kese.core.shapes2d import circle_quads
 from kese.s1_read.parse_kicad_version import stroked_fill_pen
 from kese.s2_collect.nets import net_name
 
@@ -18,7 +19,7 @@ def add_zone(ctx, node):
         if len(pts) >= 3:
             fill = Polygon(pts).buffer(0)
             if pen > 0:
-                fill = fill.buffer(pen / 2, quad_segs=16)
+                fill = fill.buffer(pen / 2, quad_segs=circle_quads(pen / 2))
             ctx.add(layer_of(fp) or zone_layer, fill, "zone fills", net)
             ctx.zone_fills.add(id(fill))
     if not fills:

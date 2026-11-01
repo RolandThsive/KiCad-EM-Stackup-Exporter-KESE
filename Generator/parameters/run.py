@@ -62,6 +62,7 @@ SHOW_PROGRESS = True
 # Run the Verifier after generation (adds about 2-4 s per board on the example boards, more on
 # dense boards). Results go in report.txt.
 VERIFY = False
+VERIFY_RAYS = 3000                     # vertical rays the Verifier casts through a visual model to test its surfaces
 
 # Write materials.json next to the outputs (per solid: material, thickness, er, tan d, conductivity, net, layer)
 WRITE_MATERIALS_JSON = True
@@ -86,6 +87,7 @@ SMOOTH_SHADE_ANGLE_DEG = 25.0          # edges sharper than this stay crisp; cyl
 STEP_EXACT_ARCS = True
 STEP_ARC_FIT_TOLERANCE_MM = 0.0002     # vertices within this of one circle form an arc (2 x the snap grid)
 STEP_ARC_MIN_POINTS = 5                # at least this many vertices in a run
+STEP_ARC_MIN_SWEEP_DEG = 10.0          # and turning at least this far
 #
 # Every part has a "role".  The roles are:
 #   "board"            the laminate: one part per dielectric (core / prepreg), e.g. "Board_dielectric 1"
@@ -120,6 +122,7 @@ STEP_FUSE_ROLES = ["board", "copper", "plating", "finish"]
 # KiCad file-format versions this project has been tested with (stage 1, read, warns outside this range)
 KICAD_VERSION_MIN = 20211014           # KiCad 6
 KICAD_VERSION_MAX = 20260206           # KiCad 10
+TESTED_COPPER_LAYERS = 8               # stage 1 warns above this many copper layers (the most among the test boards)
 
 # Presets: `kese --for <name>` applies these overrides before any --set on the command line, and
 # parameters.txt records the preset and every value it changed.  Each entry is Module.NAME: value.

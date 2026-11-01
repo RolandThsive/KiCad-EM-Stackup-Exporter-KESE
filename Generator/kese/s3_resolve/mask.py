@@ -7,7 +7,6 @@ from kese.core.shapes2d import union
 from parameters import P
 
 
-WEB_HAIRLINE_MM = 1e-3     # a piece narrower than twice this between grown and exact openings is no web
 
 
 def via_openings(items):
@@ -44,7 +43,7 @@ def min_width_joined(items, openings, side):
     # only the webs: the hairlines where the grown and shrunk curves miss the exact ones are not
     # openings KiCad makes (it adds the exact shapes back for that), and would only add slivers
     webs = [p for p in shapely.get_parts(sh.diff(joined, openings))
-            if p.geom_type == "Polygon" and not p.buffer(-WEB_HAIRLINE_MM).is_empty]
+            if p.geom_type == "Polygon" and not p.buffer(-P.SolderMask.MASK_WEB_HAIRLINE_MM).is_empty]
     if not webs:
         return openings
     items.found[f"mask webs under the min width ({w} mm) removed on {side}.Mask"] += len(webs)

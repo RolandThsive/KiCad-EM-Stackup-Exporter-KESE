@@ -24,6 +24,7 @@ PAD_TO_MASK_CLEARANCE_MM = None
 # As KiCad plots the mask (and the fab makes it), openings closer than this are joined: no strip of
 # mask narrower than this stays between them.  0 = keep every web.
 MASK_MIN_WIDTH_MM = None
+MASK_WEB_HAIRLINE_MM = 1e-3             # a web the minimum width adds that is narrower than twice this is dropped
 
 # Curve quality of the little walls where the mask climbs over a trace (segments per quarter circle)
 MASK_WALL_QUAD_SEGS = 4

@@ -158,7 +158,7 @@ def slices_sharing_vertices(slices, flats, levels, log, pinches_opened=True):
 def wall_segments(region):
     """Every edge of the region's rings as (a, b), the material on the left: outer rings run
     counter-clockwise, holes clockwise.  An (n, 2, 2) array."""
-    polys = np.array([p for p in shapely.get_parts(sh.polys_only(region)) if p.area > 1e-10], dtype=object)
+    polys = np.array([p for p in shapely.get_parts(sh.polys_only(region)) if p.area > sh.G().SLIVER_AREA_MM2], dtype=object)
     if not len(polys):
         return np.empty((0, 2, 2))
     xy, nxt, _, _, _ = rings_of(polys)

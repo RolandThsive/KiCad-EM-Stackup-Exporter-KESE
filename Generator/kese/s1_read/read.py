@@ -8,7 +8,6 @@ from kese.model.raw_board import RawBoard
 from kese.s1_read import parse_kicad_version as kv
 from parameters import P
 
-TESTED_COPPER_LAYERS = 8      # the most copper layers among the test boards (featureTest/05_vias_micro)
 
 
 def run(pcb_path, job):
@@ -52,8 +51,9 @@ def read(path):
     missing = [l for l in ("F.Cu", "B.Cu") if l not in names]
     if missing:
         raise ValueError(f"{path.name}: copper layers {missing} are not declared")
-    if len(copper) > TESTED_COPPER_LAYERS:
-        warnings.append(f"{len(copper)} copper layers: more than the {TESTED_COPPER_LAYERS} this project has been tested with")
+    tested = P.Run.TESTED_COPPER_LAYERS
+    if len(copper) > tested:
+        warnings.append(f"{len(copper)} copper layers: more than the {tested} this project has been tested with")
 
     general = child(tree, "general")
     file_thickness = num(general, "thickness") if general else None

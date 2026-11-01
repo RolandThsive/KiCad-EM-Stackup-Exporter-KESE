@@ -57,7 +57,6 @@ def close_hairline_gaps(cu):
     return sh.snap(union([joined] + [p for k, p in enumerate(parts) if k not in keep]))
 
 
-HAIRLINE_HOLE_MM = 1e-3      # a hole in one net's copper narrower than this on average is no hole
 
 
 def fill_hairline_holes(cu):
@@ -65,12 +64,12 @@ def fill_hairline_holes(cu):
     of its own net with other arcs than the pad's own polygon, the union leaves needle-thin holes
     between the two (a real board had 193 under 1 um wide, and none between 1 and 3 um), which pinch
     the solid where they touch.  A hole whose mean width, twice its area over its perimeter, is
-    under HAIRLINE_HOLE_MM is filled; drills and clearances are far wider."""
+    under Copper.HAIRLINE_HOLE_MM is filled; drills and clearances are far wider."""
     if cu.is_empty or cu.geom_type not in ("Polygon", "MultiPolygon"):
         return cu
     parts, changed = [], False
     for p in shapely.get_parts(cu):
-        keep = [r for r in p.interiors if 2 * shapely.Polygon(r).area >= HAIRLINE_HOLE_MM * r.length]
+        keep = [r for r in p.interiors if 2 * shapely.Polygon(r).area >= P.Copper.HAIRLINE_HOLE_MM * r.length]
         changed |= len(keep) != len(p.interiors)
         parts.append(shapely.Polygon(p.exterior, keep) if len(keep) != len(p.interiors) else p)
     return union(parts) if changed else cu      # union: a filled hole may hold a speck of its own

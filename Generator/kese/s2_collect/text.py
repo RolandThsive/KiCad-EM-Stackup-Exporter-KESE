@@ -19,6 +19,7 @@ TEXT = {"gr_text", "fp_text", "gr_text_box", "fp_text_box", "dimension", "gr_dim
 
 
 TEXT_VAR = re.compile(r"\$\{([^{}]+)\}")
+KNOCKOUT_MARGIN_RATIO = 1 / 9         # of the text height, KiCad's GetKnockoutTextMargin (gr_text.h)
 
 
 def board_text_vars(items):
@@ -159,7 +160,7 @@ def knocked_out(geom, pos, angle, h, thick):
     """Knockout text: the text's box, square to the text and grown
     by max(pen / 2, height / 9), with the letters cut out of it (PCB_TEXT::TransformTextToPolySet,
     buildBoundingHull and GetKnockoutTextMargin in KiCad's gr_text.h)."""
-    margin = max(thick / 2, h / 9)
+    margin = max(thick / 2, h * KNOCKOUT_MARGIN_RATIO)
     upright = affinity.rotate(geom, angle, origin=pos)          # font.render turned it by -angle
     x0, y0, x1, y1 = upright.bounds
     hull = affinity.rotate(box(x0 - margin, y0 - margin, x1 + margin, y1 + margin), -angle, origin=pos)

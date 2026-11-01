@@ -30,7 +30,7 @@ def _solid(prism, cq, M, circles):
     """All polygons of one prism, extruded, as a list of cq.Solid, built directly in output
     units and orientation (transforming afterwards would convert every edge to splines)."""
     d = M[:3, :3] @ np.array([0.0, 0.0, prism.z1 - prism.z0])
-    polys = [poly for poly in sh.polygons(prism.region) if poly.area > 1e-10]
+    polys = [poly for poly in sh.polygons(prism.region) if poly.area > sh.G().SLIVER_AREA_MM2]
     return [cq.Solid.extrudeLinear(_face(rings, prism.z0, cq, M), cq.Vector(*map(float, d)))
             for rings in ring_arcs(polys, circles)]
 

@@ -50,7 +50,7 @@ def topology_of(boundary):
     plane_origin, plane_axis, plane_ref, plane_origin_use = [], [], [], []   # per plane; the origin as a use, or -1
     uses = planes = 0
     for z, region, up in boundary.flats:
-        polys = np.array([p for p in shapely.get_parts(sh.polys_only(region)) if p.area > 1e-10], dtype=object)
+        polys = np.array([p for p in shapely.get_parts(sh.polys_only(region)) if p.area > sh.G().SLIVER_AREA_MM2], dtype=object)
         if not len(polys):
             continue
         ring_xy, _, _, spans, _ = rings_of(polys)

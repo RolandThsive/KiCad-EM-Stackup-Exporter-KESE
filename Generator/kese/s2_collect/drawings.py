@@ -7,7 +7,8 @@ import shapely
 from shapely.geometry import LineString, Polygon
 
 from kese.core.sexp import child, num, pt
-from kese.core.shapes2d import EMPTY, G, arc3, arc_pts, bezier, disk, polys_only, rounded_rect, thicken, union
+from kese.core.shapes2d import (EMPTY, G, arc3, arc_pts, bezier, circle_quads, disk, polys_only, rounded_rect, thicken,
+                                 union)
 from kese.s1_read.parse_kicad_version import is_filled, layer_and_mask, legacy_arc, stroke_width
 from kese.s2_collect.nets import net_name
 
@@ -113,7 +114,7 @@ def add_drawing(ctx, node, T, in_footprint=False):
             # rectangle keeps its whole inside
             curved = node[0].endswith("circle") or (node[0].endswith("rect") and num(node, "radius", 0.0) > 0)
             if closed and filled and curved and w / 2 + m < 0:
-                opening = geom.buffer(w / 2 + m, quad_segs=16)
+                opening = geom.buffer(w / 2 + m, quad_segs=circle_quads(abs(w / 2 + m)))
             else:
                 opening = painted(geom, closed, w + 2 * m, filled)
             ctx.add(f"{bare}.Mask", opening, kind + " mask openings")

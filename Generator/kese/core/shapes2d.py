@@ -163,7 +163,7 @@ def part_touching(g):
     for i, p in enumerate(parts):
         if i in touching:
             q = shapely.set_precision(p, 0).buffer(-eps, join_style="mitre")
-            out += [x for x in polygons(q) if x.area > 1e-10]
+            out += [x for x in polygons(q) if x.area > G().SLIVER_AREA_MM2]
         else:
             out.append(p)
     return shapely.MultiPolygon(out) if len(out) > 1 else shapely.MultiPolygon([out[0]]) if out else EMPTY

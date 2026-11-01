@@ -4,6 +4,7 @@ from shapely.geometry import LineString, Polygon, box
 from kese.core import shapes2d as sh
 from kese.core.sexp import child, num
 from kese.core.shapes2d import EMPTY, disk, thicken, union
+from kese.s1_read.parse_kicad_version import roundrect_ratio
 from kese.s2_collect.drawings import GRAPHICS, graphic, painted
 
 
@@ -19,7 +20,7 @@ def pad_shape(items, pad, w, h):
         d = abs(w - h) / 2
         return thicken(LineString([(-d, 0), (d, 0)] if w > h else [(0, -d), (0, d)]), min(w, h))
     if shape == "roundrect":
-        rounded = sh.rounded_rect(-w / 2, -h / 2, w / 2, h / 2, num(pad, "roundrect_rratio", 0.25) * min(w, h))
+        rounded = sh.rounded_rect(-w / 2, -h / 2, w / 2, h / 2, roundrect_ratio(pad) * min(w, h))
         return chamfered(pad, rounded, w, h)
     if shape == "trapezoid":
         rd = child(pad, "rect_delta")

@@ -24,7 +24,7 @@ def outline_from(items, log):
             log("warning: Edge.Cuts lines/arcs do not form a closed outline")
     uniq = []
     for r in rings:
-        if r.is_valid and r.area > 1e-9 and not any(r.symmetric_difference(u).area < 1e-6 for u in uniq):
+        if r.is_valid and r.area > 1e-9 and not any(r.symmetric_difference(u).area < B.OUTLINE_DUPLICATE_AREA_MM2 for u in uniq):
             uniq.append(r)
     if not uniq:
         if B.OUTLINE_FALLBACK == "error":

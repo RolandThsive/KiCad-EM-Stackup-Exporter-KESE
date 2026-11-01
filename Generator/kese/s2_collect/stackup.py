@@ -67,11 +67,11 @@ def read_stackup(tree, copper_layers, file_thickness, log):
     else:
         # KiCad's (general (thickness)) is the finished board: as KiCad's default stack-up does
         # (BOARD_STACKUP::BuildDefaultStackupList), the outer copper and the two masks come off it
-        total = file_thickness or 1.6
+        total = file_thickness or B.DEFAULT_BOARD_THICKNESS_MM
         mask = mask_t if M.USE_STACKUP_MASK_THICKNESS and mask_t else M.MASK_OVER_COPPER_MM
         laminate = total - cu_t[copper_layers[0]] - cu_t[copper_layers[-1]] - 2 * mask
         source = (f"file (general (thickness {total})) less the outer copper and the masks - no usable stackup"
-                  if file_thickness else "default 1.6 mm less the outer copper and the masks (no thickness in file)")
+                  if file_thickness else f"default {total} mm (Board.DEFAULT_BOARD_THICKNESS_MM) less the outer copper and the masks (no thickness in file)")
     if not usable:
         if B.DIELECTRIC_SPLIT != "even":
             log(f"warning: DIELECTRIC_SPLIT={B.DIELECTRIC_SPLIT!r} unknown, using 'even'")
