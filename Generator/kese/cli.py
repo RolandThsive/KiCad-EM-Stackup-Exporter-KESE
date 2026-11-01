@@ -23,7 +23,7 @@ from pathlib import Path
 from kese import __version__
 from parameters import P
 
-REQUIRED = ["numpy", "scipy", "networkx", "shapely", "trimesh", "manifold3d", "mapbox_earcut", "rtree"]
+REQUIRED = ["numpy", "scipy", "shapely", "trimesh", "manifold3d", "mapbox_earcut"]
 OPTIONAL = {"step": "cadquery"}
 
 
