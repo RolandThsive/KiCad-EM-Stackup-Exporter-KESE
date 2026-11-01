@@ -241,6 +241,9 @@ export class Viewer {
     this.camera.position.set(d * Math.sin(ph) * Math.sin(th), d * Math.cos(ph), d * Math.sin(ph) * Math.cos(th));
     this.camera.up.set(0, 1, 0);
     this.controls.enableRotate = !(name === "top" || name === "bottom");
+    // the studio light comes from above; seen from below the board would face the dim floor, so for Bottom the
+    // studio is turned over and the bottom gets the same light the top gets in Top
+    this.scene.environmentRotation.set(name === "bottom" ? Math.PI : 0, 0, 0);
     this.controls.target.set(0, 0, 0);
     this.controls.update();
     this.draw();
