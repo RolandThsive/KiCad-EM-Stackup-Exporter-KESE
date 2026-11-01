@@ -67,7 +67,21 @@ SMOOTH_SHADE_ANGLE_DEG = 25.0          # edges sharper than this stay crisp; cyl
 # STEP export
 #
 # Every part is written as the closed solid stage 6 built, one body per connected piece, with its
-# flat faces and walls as they are (curves are polygons, as in the meshes).
+# flat faces and walls as they are (curves are polygons, as in the meshes), unless STEP_EXACT_ARCS.
+#
+# STEP_EXACT_ARCS - write circles and arcs as true curves (KESE's own STEP writer, no CAD kernel).
+#   Where the outline of a part runs through vertices that lie on one circle (holes, vias, round
+#   pads, track ends, arc tracks, round outlines), their chords become one CIRCLE edge and the walls
+#   on them one CYLINDRICAL_SURFACE face, at every height alike, except where another edge at that
+#   height passes closer to the vertices than the arc bulges out from them (a sliver of a few µm),
+#   which the arc would cross.  Smaller files and true cylinders for CAD and EM solvers; every
+#   other edge stays a line and every other face a plane.  Meshes (GLB / STL / OBJ) are unchanged.
+STEP_EXACT_ARCS = False
+STEP_ARC_FIT_TOLERANCE_MM = 0.0002     # vertices within this of one circle form an arc (2 x the snap grid)
+STEP_ARC_MIN_POINTS = 5                # at least this many vertices in a run
+STEP_ARC_MIN_SWEEP_DEG = 10.0          # and turning at least this far
+STEP_ARC_MAX_TURN_DEG = 30.0           # but at most this far at one vertex: a polygon with fewer than 12
+                                       # sides (an octagonal pad, a square) is a polygon, not a circle
 #
 # Every part has a "role".  The roles are:
 #   "board"            the laminate: one part per dielectric (core / prepreg), e.g. "Board_dielectric 1"

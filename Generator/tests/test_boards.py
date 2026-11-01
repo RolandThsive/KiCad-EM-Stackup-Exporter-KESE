@@ -6,6 +6,7 @@ the parameters in parameters/, but for the changes SETTINGS lists for it.
     python tests/test_boards.py --accept   re-record tests/baseline.json after an intended geometry change
     python tests/test_boards.py --add      record only the boards the baseline does not have yet
     python tests/test_boards.py --accept 18_finishes 18b_finish_pads   only the boards named (by file name)
+    python tests/test_boards.py --arcs     the STEP files with true arcs and cylinders (Run.STEP_EXACT_ARCS)
 
 A board fails when the Verifier fails (open solid, overlap, broken skin), when a STEP solid is
 invalid or has a free edge, or when a part's volume moved by more than VOLUME_TOLERANCE from the
@@ -150,6 +151,8 @@ def report(queue, wait):
 
 def main(args):
     accept, add = "--accept" in args, "--add" in args
+    if "--arcs" in args:
+        P.override("Run.STEP_EXACT_ARCS", True)
     named = [a for a in args if not a.startswith("--")]
     unknown = sorted(set(named) - {p.stem for p in BOARDS})
     if unknown:

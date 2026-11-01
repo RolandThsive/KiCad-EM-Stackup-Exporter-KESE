@@ -62,6 +62,7 @@ python tests/test_boards.py                     # the regression suite over ever
 | `<part>: faces and walls still changing after 20 rounds` | Stage 6 could not give the part's faces and walls the same vertices ([Working Principle](Working-Principle.md#62-how-a-part-becomes-a-closed-solid)). The part may be open; the Verifier then says so. |
 | `<part>: pinch points left after 10 rounds of cutting` (or `pinch edges between two heights left ...`) | Two pieces of the part still touch at a point or along an edge after the cut-out disc grew to 512 times `Geometry.PINCH_POINT_OPENING_MM`. The part may be open there. |
 | `step: <part>: N edges are not shared by two faces (the solid is open there)` | The STEP writer found the part open. It is still written, and a CAD tool will report free edges on it. |
+| `step: <part>: written without arcs (...)` | With `Run.STEP_EXACT_ARCS`, finding the part's arcs failed (a bug: please report it with the board). The part is written with flat faces only, as with the parameter off; the rest of the file keeps its arcs. |
 | `step: no part to write; STEP skipped` | No part has its role in `Run.STEP_WRITE_ROLES`, or none of those parts has a solid, so no `<board>.step` is written. |
 
 ## 17.2 What `report.txt` Counts
