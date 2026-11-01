@@ -32,7 +32,7 @@ fewer than the GLB files ([Project Capabilities](Project-Capabilities.md#45-test
 them with both). Read back with OpenCascade, every solid in them is valid and closed, and their
 volume is the one the Verifier finds. The same three files are in `featureTest/` as
 `21_rf_module`, `22_hdi_module` and `23_pcie_card`, so the regression suite checks every part of
-each in both modes.
+each in both modes (once: it skips the copies in `Input/`).
 
 The pictures on this page are the boards' GLB files drawn with three.js. They were exported with
 `--set Run.COPPER_GROUPING=layer`, so that the copper of each layer is one part and the layers
