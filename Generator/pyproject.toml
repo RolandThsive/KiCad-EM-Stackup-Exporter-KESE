@@ -14,7 +14,8 @@ dependencies = [
 ]
 
 [project.optional-dependencies]
-step = ["cadquery>=2.5", "manifold3d"]          # Run.BUILD_WITH_KERNELS
+kernels = ["manifold3d"]                         # Run.BUILD_WITH_KERNELS: solid unions (about 4 MB)
+step = ["manifold3d", "cadquery>=2.5"]           # and STEP by OpenCascade (cadquery: about 1.7 GB)
 
 [project.scripts]
 kese = "kese.cli:main"

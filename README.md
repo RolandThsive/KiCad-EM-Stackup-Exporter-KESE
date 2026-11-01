@@ -71,7 +71,8 @@ Run every command from `Generator/`, which holds the program, its settings, `Inp
 files in `Generator/parameters/`, or override one value for a single run with `--set`. Each run writes a new folder,
 `Output/<board>/<mode>_<FORMATS>/`, with the model files, `materials.json` (role, layer, net, z range, εr, tanδ and
 conductivity of every part), `parameters.txt` and `report.txt`, and never overwrites an earlier one. The pinned
-packages need Python 3.12 or later; `manifold3d` and `cadquery` are optional. `python -m pip install .` gives a `kese` command that works
+packages need Python 3.12 or later. The optional CAD kernels (`manifold3d`, `cadquery`, only for `Run.BUILD_WITH_KERNELS`) are in
+`requirements-kernels.txt`; `cadquery` brings about 1.7 GB with it. `python -m pip install .` gives a `kese` command that works
 from any folder. Full walk-through: [Getting Started](https://github.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/wiki/Getting-Started).
 
 ## What Works

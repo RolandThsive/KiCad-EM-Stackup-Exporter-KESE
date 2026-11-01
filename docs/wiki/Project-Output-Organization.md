@@ -7,6 +7,7 @@ KiCad-EM-Stackup-Exporter-KESE/
 ├── Generator/                   KESE itself; run every command from here
 │   ├── run_KESE.py              the command-line entry point (python run_KESE.py; the code is in kese/cli.py)
 │   ├── requirements.txt         pinned Python packages
+│   ├── requirements-kernels.txt optional CAD kernels (Run.BUILD_WITH_KERNELS)
 │   ├── pyproject.toml           for pip install -e . (the kese command), unpinned
 │   ├── README.md                what is in this folder, and the first commands
 │   ├── parameters/              every setting, one file per subject (the only files you edit)

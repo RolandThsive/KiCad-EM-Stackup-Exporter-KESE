@@ -70,9 +70,10 @@ def main():
     formats = P.Run.FILE_FORMAT
     missing = missing_packages(formats)
     if missing:
+        listed = "requirements-kernels.txt" if set(missing) - set(REQUIRED) else "requirements.txt"
         sys.exit(f"missing Python package(s): {', '.join(missing)}\n"
                  f"install them with:  python -m pip install {' '.join(missing)}\n"
-                 "(or everything at once:  python -m pip install -r requirements.txt)")
+                 f"(or the tested versions:  python -m pip install -r {listed})")
 
     from kese.pipeline import generate  # after the overrides, so the modules see them
 

@@ -20,14 +20,21 @@ python -m pip install -r requirements.txt
 the tests. Every command on this page runs from there.
 
 `requirements.txt` pins the versions the project was tested with (Python 3.13 on Linux). The
-packages are:
+optional CAD kernels are in a file of their own, because `cadquery` pulls in `scipy`, `vtk`,
+`casadi`, `numba`, `matplotlib` and more (about 450 MB to download and 1.7 GB installed):
+
+```bash
+python -m pip install -r requirements-kernels.txt    # optional: only for Run.BUILD_WITH_KERNELS
+```
+
+The packages are:
 
 | Package | Used for |
 |---|---|
 | `numpy` | Numerics, and the meshes: KESE builds them, writes GLB, STL, OBJ and STEP, and casts the Verifier's rays itself |
 | `shapely` | All 2D geometry: tracks, pads, zones, outline, mask, silk, and the faces of every solid |
 | `mapbox_earcut` | Cutting the faces into triangles (GEOS's constrained Delaunay triangulation, through `shapely`, where earcut's triangles do not close on the edges) |
-| `manifold3d`, `cadquery`, `cadquery-ocp` | Optional: only for `Run.BUILD_WITH_KERNELS = True`, the older way that joins the solids with Manifold and builds the STEP file with OpenCascade, and for the tests that read STEP files back |
+| `manifold3d`, `cadquery`, `cadquery-ocp` | Optional, in `requirements-kernels.txt`: only for `Run.BUILD_WITH_KERNELS = True`, the older way that joins the solids with Manifold and builds the STEP file with OpenCascade, and for the tests that read STEP files back |
 
 KESE writes STEP itself, so every format works without `cadquery`. Only a run with
 `Run.BUILD_WITH_KERNELS = True` that asks for STEP needs it, and stops with a message that names
@@ -39,7 +46,8 @@ accepts Python 3.11, which is not tested):
 
 ```bash
 python -m pip install -e .            # the kese command, the same as python run_KESE.py
-python -m pip install -e ".[step]"    # the same, with cadquery and manifold3d (Run.BUILD_WITH_KERNELS)
+python -m pip install -e ".[kernels]" # the same, with manifold3d: Run.BUILD_WITH_KERNELS unions (about 4 MB)
+python -m pip install -e ".[step]"    # with manifold3d and cadquery: also STEP by OpenCascade (about 1.7 GB)
 ```
 
 `-e` keeps `parameters/` editable in place. `Input/` and `Output/` stay relative to the folder

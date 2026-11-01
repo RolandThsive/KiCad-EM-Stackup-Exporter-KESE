@@ -88,7 +88,7 @@ Research underway.
 |---|---|
 | Python | 3.12 or later with the pinned versions (`numpy` 2.5.3 requires it); 3.11 with the packages installed unpinned, as `requirements.txt` describes, or through `pyproject.toml` (`requires-python >= 3.11`, not tested); tested on 3.13 |
 | `numpy` 2.5.3, `shapely` 2.2.0, `mapbox_earcut` 2.1.0 | the versions in `requirements.txt` |
-| `manifold3d` 3.5.4, `cadquery` 2.8.0, `cadquery-ocp` 7.9.3.1 or later below 8.0 | optional: only for `Run.BUILD_WITH_KERNELS = True` and for the tests that read STEP files back; STEP is written without them |
+| `manifold3d` 3.5.4, `cadquery` 2.8.0, `cadquery-ocp` 7.9.3.1 or later below 8.0 | the versions in `requirements-kernels.txt`, optional: only for `Run.BUILD_WITH_KERNELS = True` and for the tests that read STEP files back; STEP is written without them |
 | `gltf_validator` (Khronos, command line) | optional; used by the Verifier when on the PATH |
 
 Operating systems: anything the packages above run on. Tested on Linux.

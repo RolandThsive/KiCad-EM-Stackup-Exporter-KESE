@@ -16,7 +16,7 @@ make sure its license is compatible with GPL-3.0-or-later.
 ## How the code is laid out
 
 All of KESE lives in `Generator/`: the `kese/` package, the settings in `parameters/`, the
-tests in `tests/`, `run_KESE.py`, `pyproject.toml` and `requirements.txt`, and the `Input/` and
+tests in `tests/`, `run_KESE.py`, `pyproject.toml`, `requirements.txt` and `requirements-kernels.txt`, and the `Input/` and
 `Output/` folders. The repository root keeps only what belongs to the repository: the README,
 the licence files, `docs/` and `.github/`. The paths below are inside `Generator/`.
 
