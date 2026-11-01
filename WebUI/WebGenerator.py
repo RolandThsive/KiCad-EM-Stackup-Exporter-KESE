@@ -311,8 +311,11 @@ def _font_check(pcb_text):
              f"({shown}) is drawn as '?'; the desktop KESE draws them"}]
 
 
-def generate(board_name, values_json):
-    """One run.  Returns {ok, folder, files [{path, size}], checks, seconds?} or {ok: false, checks}."""
+def generate(board_name, values_json, on_line=None):
+    """One run.  Returns {ok, folder, files [{path, size}], checks, seconds?} or {ok: false, checks}.
+
+    on_line(kind, text), when given, hears the run as the command line shows it: kind "stage" when the generator's
+    status line names a new stage ("running geometry (...)"), kind "log" for each printed line."""
     values = json.loads(values_json)
     pcb = os.path.join(ROOT, "Input", board_name)
     out_root = os.path.join(ROOT, "Output")
@@ -322,12 +325,25 @@ def generate(board_name, values_json):
     _reset_parameters()
     overrides = _apply(values)
     log = io.StringIO()
+
+    def say(s):
+        log.write(s + "\n")
+        if on_line:
+            on_line("log", s)
     with open(pcb, encoding="utf-8", errors="replace") as fh:
         extra = _font_check(fh.read())
     try:
         from kese.pipeline import generate as kese_generate
+        if on_line:                                              # the terminal's status line, sent to the page instead
+            import kese.progress as kp
+            plain_set = kp.Status.set
+
+            def set_stage(self, stage):
+                on_line("stage", stage)
+                plain_set(self, stage)
+            kp.Status.set = set_stage
         out_dir, _model = kese_generate(__import__("pathlib").Path(pcb), out_root=__import__("pathlib").Path(out_root),
-                                        overrides=overrides, log=lambda s: log.write(s + "\n"))
+                                        overrides=overrides, log=say)
     except Exception as e:                                       # noqa: BLE001  (shown in Checks, not raised)
         msg = f"{type(e).__name__}: {e}"
         tail = traceback.format_exc().strip().split("\n")[-3:]

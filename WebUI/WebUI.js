@@ -47,6 +47,7 @@ function startWorker() {
   worker.onmessage = (ev) => {
     const m = ev.data;
     if (m.type === "progress") { setProgressText(m.text); return; }
+    if (m.type === "line") { runLine(m); return; }
     const p = pending.get(m.id); if (!p) return;
     pending.delete(m.id);
     if (m.ok) p.resolve(m.result); else p.reject(new Error(m.error));
@@ -84,6 +85,36 @@ function checkRow(level, stage, msg) {
   return el("div", { class: "check " + level }, el("span", { class: "lvl" }, level.toUpperCase()), el("span", { class: "stage" }, stage),
     el("span", { class: "msg" }, msg));
 }
+/* ---- the run as the command line shows it: each stage, each log line and the time since Generate ----------- */
+function hms(s) { const m = Math.floor(s / 60); return `${m}m ${String(Math.floor(s % 60)).padStart(2, "0")}s`; }
+const run = { t0: 0, timer: 0, stage: null };
+function runStart() {
+  run.t0 = performance.now(); run.stage = null;
+  $("run-log").replaceChildren();
+  $("run-card").hidden = false;
+  $("run-note").textContent = "KESE is running in your browser. A big board can take from a minute to an hour.";
+  runTick();
+  run.timer = setInterval(runTick, 1000);
+}
+function runTick() {
+  const t = hms((performance.now() - run.t0) / 1000);
+  $("run-time").textContent = t;
+  if (run.stage) run.stage.lastChild.textContent = ` ... ${t}`;
+}
+function runLine(m) {
+  const box = $("run-log");
+  const atEnd = box.scrollHeight - box.scrollTop - box.clientHeight < 24;
+  if (m.kind === "stage") {
+    if (run.stage) run.stage.classList.add("done");
+    run.stage = el("div", { class: "run-stage" }, `running ${m.text}`, el("span", { class: "run-time" }, ""));
+    box.append(run.stage);
+    runTick();
+  } else box.append(el("div", { class: "run-line" }, m.text.replace(/^\s+/, "")));
+  if (atEnd) box.scrollTop = box.scrollHeight;
+}
+function runStop() { clearInterval(run.timer); run.timer = 0; run.stage = null; $("run-card").hidden = true; }
+function seconds(s) { return s < 60 ? `${s.toFixed(0)} s` : hms(s); }
+
 function setBusy(on) { state.busy = on; $("progress").classList.toggle("busy", on); }
 function fatal(text) {
   setBusy(false);
@@ -434,7 +465,7 @@ async function generate() {
   setBusy(true);
   const btn = $("btn-generate");
   btn.disabled = true; btn.textContent = "Generating…";
-  $("run-note").textContent = "KESE is running in your browser. A big board takes a minute or two.";
+  runStart();
   updateStale();
   const sent = clone(state.values);
   try {
@@ -445,14 +476,15 @@ async function generate() {
     if (r.ok) {
       store.setRun(r);
       state.materials = store.has("materials.json") ? JSON.parse(await store.text("materials.json")) : null;
-      $("run-note").textContent = `Done in ${r.seconds.toFixed(0)} s. Nothing was uploaded; the files are kept ${r.storage === "disk"
-        ? "on your disk (the browser's storage for this site)" : "in memory"} until you leave or reload this page.`;
-    } else $("run-note").textContent = "Not generated: see Checks.";
+      runStop();
+      $("run-note").replaceChildren("Done in ", el("b", {}, seconds(r.seconds)), ".");
+    } else { runStop(); $("run-note").textContent = "Not generated: see Checks."; }
     renderChecks();
     renderDownloads();
     renderPreviewTabs();
     if (r.ok) await showPreview();
   } catch (e) {
+    runStop();
     state.result = { ok: false, checks: [{ level: "error", stage: "python", msg: String(e.message || e) }] };
     renderChecks();
   } finally {

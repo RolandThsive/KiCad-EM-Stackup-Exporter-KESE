@@ -1,7 +1,7 @@
 /* PyodideWorker.js - runs KESE in a background thread, so the page never freezes.
 
    The page sends {id, cmd, args}; the worker answers {id, ok, result} or {id, ok: false, error}, and sends
-   {type: "progress", text} while it loads.  The commands:
+   {type: "progress", text} while it loads, and {type: "line", kind, text, t} for each step of a run.  The commands:
      init       {pyodideBase, packages, config}  ->  {description, version, seconds}
      generate   {board: {name, bytes}, values, tabId}
                                                  ->  {ok, name, files [{path, size}], checks, log, seconds,
@@ -127,7 +127,9 @@ async function generate({ board, values, tabId }) {
   const t0 = performance.now();
   clearInput();
   pyodide.FS.writeFile(`${ROOT}/Input/${board.name}`, new Uint8Array(board.bytes));
-  const result = JSON.parse(WG.generate(board.name, JSON.stringify(values)));
+  // Each stage and log line goes to the page as it happens (the page is free while Python works here).
+  const onLine = (kind, text) => postMessage({ type: "line", kind, text, t: (performance.now() - t0) / 1000 });
+  const result = JSON.parse(WG.generate(board.name, JSON.stringify(values), onLine));
   result.seconds = (performance.now() - t0) / 1000;
   if (!result.ok) return { result };
   let onDisk = null;
