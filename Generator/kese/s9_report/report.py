@@ -20,7 +20,7 @@ def write_report(path, files, job):
     L = []
     L.append(f"{raw.name}  ({raw.path.name})   generated {datetime.now():%Y-%m-%d %H:%M}")
     L.append(f"mode: {model.mode}   formats: {', '.join(job.formats)}   units: {model.units}")
-    L.append(f"KiCad format {raw.version}, generator {raw.generator}" + (f", title: {raw.title}" if raw.title else ""))
+    L.append(f"{raw.dialect.describe()}, generator {raw.generator}" + (f", title: {raw.title}" if raw.title else ""))
     for w in raw.warnings:
         L.append(f"warning: {w}")
     st, items = b.stackup, b.items

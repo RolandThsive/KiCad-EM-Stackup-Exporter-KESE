@@ -2,13 +2,13 @@
 from shapely import affinity
 from shapely.geometry import LineString
 
-from kese.core.sexp import atoms, child, children, flag, num, numbers
+from kese.core.sexp import atoms, child, numbers
 from kese.core.shapes2d import EMPTY, disk, thicken
 from kese.model.items import Hole
+from kese.s1_read.parse_kicad_version import flag, mask_margin, padstack_entries, zone_layer_connections
 from kese.s2_collect.left_out import count
 from kese.s2_collect.nets import net_name
 from kese.s2_collect.pad_shapes import pad_shape
-from kese.s2_collect.vias import zone_layer_connections
 from parameters import P
 
 
@@ -59,7 +59,7 @@ def add_pad(ctx, pad, T, fp_margin):
         return made[id(node)]
 
     layers = ctx.expand(child(pad, "layers")[1:])
-    margin = num(pad, "solder_mask_margin")
+    margin = mask_margin(pad, items.raw.dialect)
     margin = margin if margin is not None else (fp_margin if fp_margin is not None else items.mask_clearance)
     if not any(l in ctx.layers for l in layers):
         margin = 0.0        # a pad on no copper layer opens the mask as drawn (PAD::GetSolderMaskExpansion)
@@ -119,22 +119,15 @@ SHAPE_KEYS = {"size", "offset", "rect_delta", "roundrect_rratio", "chamfer_ratio
 
 
 def padstack_layers(pad, copper):
-    """KiCad 9+ (padstack (mode front_inner_back | custom) (layer "Inner" | "B.Cu" | "In1.Cu" ...
-    (shape ...) (size ...) ...)): {copper layer: a pad node with that layer's shape, size and
-    options in front of the pad's own}, for the layers whose shape is not the front one.  "Inner"
-    stands for every inner layer."""
-    ps = child(pad, "padstack")
-    if ps is None:
-        return {}
+    """{copper layer: a pad node with that layer's shape, size and options in front of the pad's
+    own}, for the layers whose padstack shape is not the front one."""
     out = {}
-    for entry in children(ps, "layer"):
-        name, body = str(entry[1]), [c for c in entry[2:] if isinstance(c, list)]
+    for layers, entry in padstack_entries(pad, copper):
+        body = [c for c in entry[2:] if isinstance(c, list)]
         sh = child(entry, "shape")
         rest = [c for c in pad[4:] if not (isinstance(c, list) and c and c[0] in SHAPE_KEYS)]
         if child(entry, "size") is None:
             body.append(child(pad, "size"))
         node = ["pad", pad[1], pad[2], str(sh[1]) if sh else pad[3], *body, *rest]
-        for l in (copper[1:-1] if name == "Inner" else [name]):
-            if l in copper and l != "F.Cu":
-                out[l] = node
+        out.update((l, node) for l in layers)
     return out

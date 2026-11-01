@@ -7,14 +7,8 @@ import shapely
 import trimesh
 
 from kese.core import shapes2d as sh
-from kese.core.triangulate import (
-    caps,
-    cells_cut,
-    lookup,
-    manifold_cut,
-    rings_of,
-    twice_area,
-)
+from kese.core.flat_triangles import twice_area
+from kese.core.triangulate import caps, cells_cut, lookup, manifold_cut, rings_of
 from kese.core.vertices import grid_keys, vertices_in_order
 
 

@@ -6,8 +6,9 @@ import math
 import shapely
 from shapely.geometry import LineString, Polygon
 
-from kese.core.sexp import child, layer_and_mask, layer_of, num, pt, yes
+from kese.core.sexp import child, num, pt
 from kese.core.shapes2d import EMPTY, G, arc3, arc_pts, bezier, disk, polys_only, rounded_rect, thicken, union
+from kese.s1_read.parse_kicad_version import is_filled, layer_and_mask, legacy_arc, stroke_width
 from kese.s2_collect.nets import net_name
 
 GRAPHICS = {"gr_line", "gr_arc", "gr_circle", "gr_rect", "gr_poly", "gr_curve", "gr_bezier",
@@ -18,33 +19,24 @@ GRAPHICS = {"gr_line", "gr_arc", "gr_circle", "gr_rect", "gr_poly", "gr_curve", 
 def graphic(node, T):
     """A gr_*/fp_* drawing -> (centre-line geometry, closed?, stroke width, filled?)."""
     kind = node[0].split("_", 1)[1]
-    w = num(node, "width")
-    if w is None:
-        stroke = child(node, "stroke")
-        w = num(stroke, "width", 0.0) if stroke else 0.0
-    fill = child(node, "fill")
-    if fill and len(fill) > 1:
-        filled = yes(fill[1])
-    else:   # no fill flag (KiCad 5, 6 pad primitives): as KiCad reads it, a circle or rectangle of width 0
-        # is filled, and so is a polygon off Edge.Cuts (pcb_io_kicad_sexpr_parser.cpp, parsePCB_SHAPE)
-        filled = (kind in ("circle", "rect") and w == 0) or (kind == "poly" and layer_of(node) != "Edge.Cuts")
+    w = stroke_width(node)
+    filled = is_filled(node, kind, w)
     if kind == "line":
         return LineString([T(pt(child(node, "start"))), T(pt(child(node, "end")))]), False, w, False
     if kind == "arc":
-        if child(node, "mid"):
+        legacy = legacy_arc(node, T)
+        if legacy is None:
             pts = arc3(T(pt(child(node, "start"))), T(pt(child(node, "mid"))), T(pt(child(node, "end"))))
-        else:  # KiCad 5: (start centre) (end arc-start) (angle deg)
-            c, p0 = T(pt(child(node, "start"))), T(pt(child(node, "end")))
-            r = math.hypot(p0[0] - c[0], p0[1] - c[1])
-            a0 = math.atan2(p0[1] - c[1], p0[0] - c[0])
-            pts = arc_pts(c, r, a0, math.radians(num(node, "angle", 0.0)), first=p0)
+        else:
+            c, r, a0, sweep, p0 = legacy
+            pts = arc_pts(c, r, a0, sweep, first=p0)
         return LineString(pts), False, w, False
     if kind == "circle":
         c, e = T(pt(child(node, "center"))), T(pt(child(node, "end")))
         return disk(c, math.hypot(e[0] - c[0], e[1] - c[1])), True, w, filled
     if kind == "rect":
         (x1, y1), (x2, y2) = pt(child(node, "start")), pt(child(node, "end"))
-        r = num(node, "radius", 0.0)                        # KiCad 10: rounded corners
+        r = num(node, "radius", 0.0)                        # rounded corners
         corners = rounded_rect(x1, y1, x2, y2, r).exterior.coords[:-1] if r > 0 else \
             ((x1, y1), (x2, y1), (x2, y2), (x1, y2))
         return Polygon([T(p) for p in corners]), True, w, filled
@@ -112,7 +104,7 @@ def add_drawing(ctx, node, T, in_footprint=False):
         ctx.items.found["outline shapes on Edge.Cuts"] += 1
     else:
         kind = "footprint graphic" if in_footprint else "graphic"
-        # copper shapes can carry a net (KiCad 8+); without one they stay on NO_NET_NAME
+        # a copper shape can carry a net; without one it stays on NO_NET_NAME
         ctx.add(layer, painted(geom, closed, w, filled), kind + "s", net_name(ctx.items, node))
         if bare:
             m = ctx.bare_margin(node, w, solid=closed and filled)

@@ -17,11 +17,17 @@ from pathlib import Path
 
 import shapely
 
+from kese.core import markup
 from kese.core.shapes2d import EMPTY
 from parameters import P
 
 FONTS_DIR = Path(__file__).resolve().parents[1] / "assets" / "fonts"
 DEFAULT_FONT = "kicad_newstroke.json.gz"
+# KiCad's markup layout (stroke_font.h, font_metrics.h, font.cpp drawMarkup): a superscript or
+# subscript at 0.8 of the size, its baseline 0.35 of its height up or 0.15 down; an overbar 1.23
+# text heights over the baseline, a tenth of the width shorter at each end
+SUPER_SUB_SIZE, SUPER_OFFSET, SUB_OFFSET = 0.8, -0.35, 0.15
+OVERBAR_HEIGHT, BAR_TRIM = 1.23, 0.1
 
 _font = None
 _font_note = ""
@@ -107,23 +113,35 @@ def render(text, anchor, angle_deg, size_h, size_w, thickness, justify=(), mirro
     # layout each line in local coordinates (x right, y down), origin = line start on the baseline
     laid, widths = [], []
     for line in lines:
-        cursor, strokes, count = 0.0, [], 0
-        for ch in line:
-            if ch == " ":
-                cursor += size_w * space_w
-            elif ch == "\t":                 # to KiCad's next tab stop: every fourth column of width W
-                count = (count // 4 + 1) * 4 - 1
-                stop = size_w * (count + space_w)
-                while stop <= cursor:
-                    count += 4
-                    stop += size_w * 4
-                cursor = stop
-            else:
-                g = _glyph(f, ch)
-                for st in g["s"]:
-                    strokes.append([(cursor + (x - y * tilt) * size_w, y * size_h) for x, y in st])
-                cursor += g["w"] * size_w
-            count += 1
+        cursor, strokes = 0.0, []
+        runs, bars = markup.parse(line)
+        starts = []
+        for run, styles in runs:
+            starts.append(cursor)
+            small = "^" in styles or "_" in styles          # nested, still 0.8 once; subscript wins
+            k = SUPER_SUB_SIZE if small else 1.0
+            dy = size_h * k * (SUB_OFFSET if "_" in styles else SUPER_OFFSET if small else 0.0)
+            run_x, count = cursor, 0
+            for ch in run:
+                if ch == " ":
+                    cursor += size_w * k * space_w
+                elif ch == "\t":             # to KiCad's next tab stop: every fourth column of width W
+                    count = (count // 4 + 1) * 4 - 1
+                    stop = run_x + size_w * (count + space_w)
+                    while size_w > 0 and stop <= cursor:
+                        count += 4
+                        stop += size_w * 4
+                    cursor = stop
+                else:
+                    g = _glyph(f, ch)
+                    for st in g["s"]:
+                        strokes.append([(cursor + (x - y * tilt) * size_w * k, y * size_h * k + dy) for x, y in st])
+                    cursor += g["w"] * size_w * k
+                count += 1
+        starts.append(cursor)
+        for a, b in bars:                    # an overbar: a stroke over its run, a tenth of W in at each end
+            y = -size_h * OVERBAR_HEIGHT
+            strokes.append([(starts[a] + size_w * BAR_TRIM, y), (starts[b] - size_w * BAR_TRIM, y)])
         widths.append(cursor)
         laid.append(strokes)
 

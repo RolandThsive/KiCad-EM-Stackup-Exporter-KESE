@@ -1,6 +1,7 @@
 """Board setup: the pad-to-mask clearance, and whether vias are tented (or covered, plugged,
 capped, filled) when they don't say."""
-from kese.core.sexp import atoms, child, num, yes
+from kese.core.sexp import num
+from kese.s1_read.parse_kicad_version import board_tenting
 from kese.s2_collect.left_out import protection_defaults
 from parameters import P
 
@@ -12,17 +13,5 @@ def read_setup(items, setup):
         else M.PAD_TO_MASK_CLEARANCE_MM
     items.mask_min_width = num(setup, "solder_mask_min_width", 0.0) if M.MASK_MIN_WIDTH_MM is None \
         else M.MASK_MIN_WIDTH_MM
-    ten = child(setup, "tenting")
-    if ten is not None:
-        items.tent_default = {}
-        for side, key in (("F", "front"), ("B", "back")):
-            c = child(ten, key)
-            items.tent_default[side] = yes(c[1]) if c is not None and len(c) > 1 else key in atoms(ten)
-        items.tent_source = "board setup (tenting)"
-    else:
-        pp = child(setup, "pcbplotparams")
-        vom = child(pp, "viasonmask") if pp else None
-        open_ = bool(vom) and yes(vom[1])
-        items.tent_default = {"F": not open_, "B": not open_}
-        items.tent_source = "plot setting viasonmask" if vom else "KiCad default (vias tented)"
+    items.tent_default, items.tent_source = board_tenting(setup)
     items.via_protection = protection_defaults(setup)

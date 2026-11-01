@@ -17,7 +17,8 @@ sys.path.insert(0, str(ROOT))
 from kese.job import start  # noqa: E402
 from kese.pipeline import STAGES  # noqa: E402
 from kese.core.sexp import parse, unescape  # noqa: E402
-from kese.s2_collect.text import kept_upright, upright  # noqa: E402
+from kese.s1_read.parse_kicad_version import kept_upright  # noqa: E402
+from kese.s2_collect.text import upright  # noqa: E402
 from parameters import P  # noqa: E402
 
 TOLERANCE_MM = 0.005

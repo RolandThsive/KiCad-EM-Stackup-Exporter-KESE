@@ -12,6 +12,11 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]                # Generator/
 KESE = ROOT / "kese"
 MAX_LINES = 200
+# every way a board file differs by KiCad version, kept in one file on purpose (its docstring says why)
+VERSION_FILE = KESE / "s1_read" / "parse_kicad_version.py"
+LONGER = {VERSION_FILE: 500}
+FORMAT_NUMBER = range(19_000_000, 21_000_000)      # a KiCad format date, (version 20240108)
+RELEASE_NAME = re.compile(r"\bKiCad\s*[<>=]*\s*\d")
 STAGE = re.compile(r"s(\d+)_[a-z0-9_]+")
 LOWERCASE = re.compile(r"[a-z][a-z0-9_]*|__init__")
 CAMELCASE = re.compile(r"[A-Z][A-Za-z0-9]*")
@@ -139,8 +144,44 @@ def test_no_import_cycles_inside_a_stage():
 
 def test_files_are_short():
     long = [f"{rel(p)}: {n} lines" for p in sorted(KESE.rglob("*.py"))
-            if (n := len(p.read_text(encoding="utf-8").splitlines())) > MAX_LINES]
+            if (n := len(p.read_text(encoding="utf-8").splitlines())) > LONGER.get(p, MAX_LINES)]
     assert not long, f"over {MAX_LINES} lines (split by concern):\n" + "\n".join(long)
+
+
+def docstrings(t):
+    """The ids of the docstring constants of a parsed file (comments are not in the tree at all)."""
+    out = set()
+    for node in ast.walk(t):
+        body = getattr(node, "body", None)
+        if isinstance(body, list) and body and isinstance(body[0], ast.Expr) and isinstance(body[0].value, ast.Constant):
+            out.add(id(body[0].value))
+    return out
+
+
+def test_version_checks_stay_in_parse_kicad_version():
+    """Only s1_read/parse_kicad_version.py looks at which KiCad wrote the file: no other file reads a
+    .version, the dialect's format or release, or the (version ...) token, holds a format number
+    (20240108), or names a KiCad release in its code.  Comments and docstrings may."""
+    bad = []
+    for p in sorted(KESE.rglob("*.py")):
+        if p == VERSION_FILE:
+            continue
+        t = tree(p)
+        doc = docstrings(t)
+        for node in ast.walk(t):
+            where = f"{rel(p)}:{getattr(node, 'lineno', '?')}"
+            if isinstance(node, ast.Attribute):
+                if node.attr == "version" or (node.attr in ("format", "release", "stated")
+                                              and "dialect" in ast.unparse(node.value)):
+                    bad.append(f"{where} reads {ast.unparse(node)}")
+            elif isinstance(node, ast.Call) and any(isinstance(a, ast.Constant) and a.value == "version" for a in node.args):
+                bad.append(f"{where} reads the (version) token: {ast.unparse(node)}")
+            elif isinstance(node, ast.Constant) and id(node) not in doc:
+                if isinstance(node.value, int) and not isinstance(node.value, bool) and node.value in FORMAT_NUMBER:
+                    bad.append(f"{where} holds the format number {node.value}")
+                elif isinstance(node.value, str) and RELEASE_NAME.search(node.value):
+                    bad.append(f"{where} names a KiCad release in code: {node.value!r}")
+    assert not bad, "version checks outside s1_read/parse_kicad_version.py:\n" + "\n".join(bad)
 
 
 def test_names_are_lowercase():
