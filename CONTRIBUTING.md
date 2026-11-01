@@ -80,3 +80,10 @@ python tests/test_boards.py      # every test board through both modes, against 
 
 `python -m pytest tests` runs all eight. When a change is meant to move the geometry, re-record the
 baseline with `python tests/test_boards.py --accept` and say why in the pull request.
+
+Every pull request into main runs the same tests by itself (`.github/workflows/RegressionTests.yml`):
+the quick tests, and every board through both modes, with simulation mode written as GLB, STL and
+STEP (solder mask, silkscreen and surface finish included) and each STL and STEP file read back. The
+boards are spread over six machines that run at once; the slowest, the PCIe card, takes about
+eleven minutes on its own because of the time OpenCascade needs to check its solder mask. A pull
+request that only changes documentation does not run it.
