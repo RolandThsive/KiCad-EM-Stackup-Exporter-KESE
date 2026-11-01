@@ -131,18 +131,21 @@ def slices_sharing_vertices(slices, flats, levels, log, pinches_opened=True):
     meets there, that lies on one of its edges; a slice that changed is noded again.  For a solid
     (pinches_opened) a gap is cut wherever the two slices at a height meet along an edge, and the
     pinch points of a changed slice are opened again (kese/core/pinches.py).  The heights are gone
-    through again as long as a slice changes: a vertex a slice got can lie on an edge of the next
-    slice up as well (a via barrel through every layer).
+    through again as long as a slice changes, at most ROUNDS times: a vertex a slice got can lie on
+    an edge of the next slice up as well (a via barrel through every layer).  A height whose two
+    slices are cut apart again in the next round (the cut's new vertices shared, and met again
+    along an edge, as on a KiCad 6 board) is cut wider each round.
     (slices, the indices of the slices that changed)."""
-    slices, changed = list(slices), set()
-    while True:
+    slices, changed, cuts = list(slices), set(), [0] * len(levels)
+    for _ in range(ROUNDS):
         moved_now = set()
         for k, z in enumerate(levels):
             at = [i for i in (k - 1, k) if 0 <= i < len(slices)]
             if len(at) == 2 and pinches_opened:
-                slices[k - 1], slices[k], cut = open_pinches_between(slices[k - 1], slices[k], log)
+                slices[k - 1], slices[k], cut = open_pinches_between(slices[k - 1], slices[k], log, cuts[k])
                 if cut:
                     moved_now |= {k - 1, k}
+                    cuts[k] += 1
             new, moved = share_vertices([slices[i] for i in at], [region for height, region, _ in flats if height == z])
             for j, i in enumerate(at):
                 slices[i] = new[j]
@@ -153,6 +156,9 @@ def slices_sharing_vertices(slices, flats, levels, log, pinches_opened=True):
         changed |= moved_now
         if not moved_now:
             return slices, changed
+    if log:
+        log(f"slices still sharing new vertices after {ROUNDS} rounds")
+    return slices, changed
 
 
 def wall_segments(region):

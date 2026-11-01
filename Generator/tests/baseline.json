@@ -43,9 +43,9 @@
  "synthetic/simulation": {
   "Board_dielectric 1": 996.236954625,
   "Bottom Solder Mask": 13.62178241,
-  "Copper_no_net": 9.101035767,
-  "Top Silkscreen": 0.138115708,
-  "Top Solder Mask": 13.367442438
+  "Copper_no_net": 9.101041807,
+  "Top Silkscreen": 0.134466169,
+  "Top Solder Mask": 13.367443514
  },
  "synthetic/visual": {
   "Board_dielectric 1": 998.312737248,
@@ -53,8 +53,8 @@
   "Bottom Solder Mask": 21.218652072,
   "Copper_no_net": -1.183240581,
   "Top Mask over Copper": -0.001909558,
-  "Top Silkscreen": 0.138115684,
-  "Top Solder Mask": 13.982885588
+  "Top Silkscreen": 0.134470721,
+  "Top Solder Mask": 13.982892704
  },
  "TheMainBoard/simulation": {
   "Board_dielectric 1": 2826.55901801,

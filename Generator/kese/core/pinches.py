@@ -92,14 +92,15 @@ def repeated_vertices(polygon):
     return [tuple(p) for p in xy[idx[count > 1]]]
 
 
-def open_pinches_between(below, above, log=None):
+def open_pinches_between(below, above, log=None, first=0):
     """The material below a height and the material above it, with a gap cut wherever a piece of
     one meets a piece of the other along an edge with the material on opposite sides (see
     above): a strip along the edge, out of the smaller piece, twice as wide each round as for
-    open_pinches().  -> (below, above, whether anything was cut)."""
+    open_pinches(), starting at round `first` (a height cut again and again starts wider each
+    time).  -> (below, above, whether anything was cut)."""
     parts = [list(shapely.get_parts(sh.polys_only(below))), list(shapely.get_parts(sh.polys_only(above)))]
     cut_any = False
-    for round_ in range(sh.G().PINCH_CUT_ROUNDS):
+    for round_ in range(first, first + sh.G().PINCH_CUT_ROUNDS):
         cuts = edges_against_each_other(*parts)
         if not cuts:
             break
