@@ -15,7 +15,7 @@ for stage in STAGES:
 
 | # | Stage | Gets | Gives | What it does |
 |---|---|---|---|---|
-| 1 | `s1_read` | `.kicad_pcb` file | `RawBoard` | Parses the file and lists the copper layers, the board thickness and the file format. Warns outside KiCad 6 to 10 and above eight copper layers; stops if `F.Cu` or `B.Cu` is missing |
+| 1 | `s1_read` | `.kicad_pcb` file | `RawBoard` | Parses the file and lists the copper layers, the board thickness and the file format; every rule that depends on the KiCad version is in `parse_kicad_version.py`. Warns outside KiCad 4 to 10 and above eight copper layers; stops if `F.Cu` or `B.Cu` is missing |
 | 2 | `s2_collect` | `RawBoard` | `Items` | Every track, pad, zone fill, graphic, text and via as a flat shape on its layer, with its net, in KiCad's frame; the stack-up from Board Setup; counts of what was read and what was skipped |
 | 3 | `s3_resolve` | `Items` | `Regions` | The outline; the copper joined per layer and net, clipped and drilled; barrels, edge plating, mask openings and silkscreen; everything moved to the board frame and snapped to the grid |
 | 4 | `s4_geometry` | `Regions` | `PrismSet` | The heights from the stack-up, once; every part as prisms, each a flat region between two heights |

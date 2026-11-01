@@ -19,7 +19,7 @@ What KESE does, its examples and its licence are in the [main README](../README.
 
 ```bash
 cd Generator
-python -m pip install -r requirements.txt     # Python 3.12 or later; cadquery only for STEP by OpenCascade (Run.BUILD_WITH_KERNELS)
+python -m pip install -r requirements.txt     # Python 3.12 or later; manifold3d and cadquery only for Run.BUILD_WITH_KERNELS
 python run_KESE.py                            # Every board in Input/, settings from parameters/
 python run_KESE.py --help                     # Every option
 ```

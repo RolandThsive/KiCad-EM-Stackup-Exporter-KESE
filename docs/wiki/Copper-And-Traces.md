@@ -26,7 +26,7 @@ Per copper layer, these items are collected with their net (text always as no ne
 | `arc` (arc track) | the arc flattened to `Geometry.ARC_STEP_DEG` steps, thickened; left bare by the solder mask, it opens the mask as a track does |
 | `via` | a disc of the via's size on every layer it spans, except rings dropped by KiCad's "remove unused layers" (see 11.3) |
 | `pad` | the pad shape (circle, rect, oval, roundrect, trapezoid, custom with anchor and primitives; a chamfered rectangle has the corners its `chamfer` lists cut straight, legs `chamfer_ratio` x the shorter side, and those corners not rounded) at its position and angle, with the drill offset, on each copper layer the pad lists (`*.Cu`, `F&B.Cu` expanded), except inner rings of a through-hole pad dropped by "remove unused layers" (see 11.3.1); an NPTH pad gives its hole, and a copper ring only where KiCad flashes it (`PAD::FlashLayer`): not for a round (or oval) pad no bigger than its round (or oval) drill and not offset |
-| `zone` fill | the `filled_polygon` polygons stored in the file; a fill KiCad 5 drew with a pen (a file older than format 20250210 without `(filled_areas_thickness no)`) grows by half the zone's `min_thickness`, round at the corners, as KiCad does when it opens such a file |
+| `zone` fill | the `filled_polygon` polygons stored in the file; a fill KiCad 5 drew with a pen (a file older than format 20250210 without `(filled_areas_thickness no)`) grows by half the zone's `min_thickness`, round at the corners, as KiCad does when it opens such a file; a KiCad 4 or 5 zone stored only as `fill_segments` is those segments, each drawn with a pen of `min_thickness` |
 | `gr_*` / `fp_*` graphics on a copper layer | lines and arcs thickened by their stroke width; filled shapes filled (with no `fill` in the file, as KiCad reads it: a circle or rectangle of width 0, and a polygon off Edge.Cuts); a self-crossing polygon keeps every lobe; unfilled closed shapes as their outline stroke; rectangles with their rounded corners (KiCad 10); a drawing left bare by the solder mask (KiCad 9 and later) also opens the mask, as a track does |
 | text on a copper layer | the stroke-font glyphs, as on silkscreen; knockout text (`(layer "F.Cu" knockout)`) is the text's box, square to the text and grown by max(pen / 2, height / 9), with the letters cut out |
 
@@ -70,8 +70,9 @@ Three clean-ups follow, both for shapes of one net that only just meet:
 
 ### 11.1.1 Nets
 
-In KiCad 6 to 9 an item carries a net **number** that is looked up in the file's net table; KiCad 10
-writes the net **name** directly, and KESE reads both. Copper with no net (pads without a net such
+In KiCad 4 to 9 an item carries a net **number** that is looked up in the file's net table; KiCad 10
+writes the net **name** directly, and KESE reads both. Net names in files older than format 20210606
+write an overbar the old way, between two `~`; they are read as `~{...}`, as KiCad reads them. Copper with no net (pads without a net such
 as mounting holes, net 0) is named `Copper.NO_NET_NAME`, `no_net` by default, so it becomes
 `Copper_no_net`. A graphic shape on a copper layer (a line, arc, circle, rectangle or polygon drawn
 as copper) takes the net KiCad stores on it, so a shape assigned to a net in KiCad joins that net's

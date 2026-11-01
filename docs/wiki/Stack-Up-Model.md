@@ -159,8 +159,8 @@ Any value the stack-up leaves out falls back to the parameter defaults:
 
 When the file has no stack-up block, or an unusable one:
 
-- The laminate thickness is the file's `(general (thickness ...))`, or 1.6 mm when the file has
-  none, less the outer copper and the two masks (`SolderMask.MASK_OVER_COPPER_MM` each), as
+- The laminate thickness is the file's `(general (thickness ...))`, or 1.6 mm
+  (`Board.DEFAULT_BOARD_THICKNESS_MM`) when the file has none, less the outer copper and the two masks (`SolderMask.MASK_OVER_COPPER_MM` each), as
   KiCad's default stack-up counts them (`BOARD_STACKUP::BuildDefaultStackupList`), so the
   finished board is KiCad's board thickness, equation (7.10b).
 - The laminate minus the inner copper is divided **evenly** between the copper layers
@@ -182,7 +182,7 @@ h_i = \frac{L - \sum_{k=1}^{N-2} t_k}{N - 1} \qquad (7.11)
 |---|---|---|
 | $`h_i`$ | thickness of every dielectric | |
 | $`L`$ | laminate thickness, equation (7.10b) | |
-| $`T`$ | the file's board thickness, else 1.6 mm | `(general (thickness ...))` |
+| $`T`$ | the file's board thickness, else `Board.DEFAULT_BOARD_THICKNESS_MM` (1.6 mm) | `(general (thickness ...))` |
 | $`t_{l_0}`$, $`t_{l_{N-1}}`$ | foil of the outer copper layers | `Copper.DEFAULT_OUTER_FOIL_MM` |
 | $`m`$ | mask thickness over copper | `SolderMask.MASK_OVER_COPPER_MM` |
 | $`t_k`$ | foil of inner copper layer $`l_k`$ | `Copper.DEFAULT_INNER_FOIL_MM` |

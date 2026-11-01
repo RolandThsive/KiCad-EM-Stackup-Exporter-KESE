@@ -28,6 +28,7 @@ python tests/test_boards.py                     # the regression suite over ever
 |---|---|
 | `<file> is not a KiCad board file (expected (kicad_pcb ...))` | Not a `.kicad_pcb`. Export the board from pcbnew. |
 | `<file>: no (layers ...) block` | A damaged or very old file. |
+| `<file>: the file ends with N parentheses still open: it is cut short (an incomplete download or copy?)` | The file stops in the middle; KiCad refuses it too. Save or download it again. |
 | `<file>: copper layers ['F.Cu', 'B.Cu'] are not declared` | Both outer copper layers must exist. |
 | `MODE must be 'simulation' or 'visual', not ...` | A typo in `Run.MODE` (or `--set Run.MODE=...`). A typo in `--mode` is caught earlier by the command line: `argument --mode: invalid choice`, exit code 2. |
 | `unknown FILE_FORMAT entries [...]` | Only `glb`, `stl`, `obj`, `step`. |
@@ -41,10 +42,10 @@ python tests/test_boards.py                     # the regression suite over ever
 
 | Message | Meaning |
 |---|---|
-| `file has no (version ...): treated as legacy KiCad 5` | Best-effort read. |
-| `file format N is outside the tested range 20211014-20260206; proceeding best-effort` | Older than KiCad 6 or newer than KiCad 10. |
+| `file has no (version ...): read as format 20201115, as KiCad does` | Best-effort read, by KiCad's own rule for such files. |
+| `file format N is outside the tested range 4-20260206; proceeding best-effort` | Older than KiCad 4 or newer than KiCad 10 (`Run.KICAD_VERSION_MIN`, `Run.KICAD_VERSION_MAX`). |
 | `N copper layers: more than the 8 this project has been tested with` | The layers are still modelled. |
-| `copper layers named by the user, read by their number: TOP = F.Cu, ...` | A KiCad 4 or 5 file whose copper layers were renamed (any name other than `F.Cu`, `B.Cu` or `In<n>.Cu`, also one that ends in `.Cu` such as `GND.Cu`): each is read as the layer its number says (0 = `F.Cu`, 31 = `B.Cu`, n = `In<n>.Cu`). |
+| `layers named by the user or in an old language, read as KiCad reads them: TOP = F.Cu, ...` | Copper layers with names other than `F.Cu`, `B.Cu` and `In<n>.Cu` (KiCad 3 to 5 let the user rename them; KiCad 3 also wrote Italian, Polish and French names such as `Contorno.scheda`). Each is read as KiCad reads it: copper layers by their place in the list (first = `F.Cu`, last = `B.Cu`, the ones between `In1.Cu`, `In2.Cu`, ...), the old names by KiCad's own table. |
 | `N copper zone(s) have no fill stored in the file and are ignored` | Fill the zones in KiCad (press **B**) and save. Until then those zones produce no copper. |
 | `Edge.Cuts lines/arcs do not form a closed outline` | The outline could not be polygonized; closed shapes on `Edge.Cuts` are still used. |
 | `no Edge.Cuts outline; using the copper's convex hull + 1.0 mm` | The fallback outline. |
@@ -243,8 +244,9 @@ The test boards in `tests/boards/` cover:
   and items skipped on purpose (a 3D model, an `F.Fab` line).
 
 `python -m pytest tests` also runs `tests/test_layout.py`, which checks the code rather than the
-boards: which folders of `kese/` may import which, one `run()` per stage, no file over 200 lines,
-lowercase names, and no code outside `Generator/`.
+boards: which folders of `kese/` may import which, one `run()` per stage, no file over 200 lines
+(`parse_kicad_version.py` 500), lowercase names, no KiCad version test outside
+`kese/s1_read/parse_kicad_version.py`, and no code outside `Generator/`.
 [`CONTRIBUTING.md`](https://github.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/blob/main/CONTRIBUTING.md)
 explains these rules. It only reads the source, so it takes about a second
 (`python tests/test_layout.py`). The same command runs `tests/test_colors.py`, which reads named,
@@ -253,7 +255,10 @@ describes, in a moment (`python tests/test_colors.py`); `tests/test_text_layout.
 sixteen texts (each justification, two lines, two lines with a line spacing KiCad does not plot, tabs,
 an angle, italic, bold, a wide font, an escaped quote, mirrored text on the back and the reference of
 a turned footprint) and finds each where KiCad 7.0.11 plots it, to 5 µm, in about three seconds
-(`python tests/test_text_layout.py`); and four STEP tests, each also on its own
+(`python tests/test_text_layout.py`); `tests/test_kicad_version.py`, which checks the rules of each
+KiCad version (release of each format number, copper layers by their place, the zero mask margin,
+KiCad 4's text size, the text pen, segment-filled zones, the old overbar, markup) against what
+KiCad's own parser does, without a board, in under a second; and four STEP tests, each also on its own
 (`python tests/<name>.py`):
 
 | Test | Path | What it checks |

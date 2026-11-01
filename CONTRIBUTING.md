@@ -48,11 +48,15 @@ These rules keep each piece small and the flow one way:
 3. **One entry per stage.** Each stage has one `run(previous_result, job)`, in its entry file
    (`read.py`, `collect.py`, `resolve.py`, ...), and `kese/pipeline.py` calls them in order.
 4. **No cycles inside a stage.** Files in a stage import each other in one direction only.
-5. **No file in `kese/` over 200 lines.** A file that grows past it is split by concern.
+5. **No file in `kese/` over 200 lines.** A file that grows past it is split by concern. The one
+   exception is `kese/s1_read/parse_kicad_version.py`, allowed 500, which holds every rule that
+   depends on the KiCad version.
 6. **One concern per file.** One kind of KiCad item per collect file, one output format per
    write file, one check per verify file.
 7. **One naming style.** Lowercase module and folder names (PEP 8), CamelCase for data classes.
 8. **KESE stays in `Generator/`.** No Python or TOML file anywhere else in the repository.
+9. **Version rules in one place.** No file but `kese/s1_read/parse_kicad_version.py` tests a KiCad
+   file format number or release; the others ask it.
 
 `tests/test_layout.py` checks every rule except the sixth, which needs a person's judgement.
 
@@ -71,6 +75,7 @@ cd Generator
 python tests/test_layout.py      # the layout rules, about a second
 python tests/test_colors.py      # stack-up colours: named, user-defined and unknown
 python tests/test_text_layout.py # text laid out where KiCad 7.0.11 plots it
+python tests/test_kicad_version.py # the rules of each KiCad version, against KiCad's own parser
 python tests/test_step_native.py # a solid written from its faces, with no kernel, read back by OpenCascade
 python tests/test_step_file.py   # a STEP file written part by part against OpenCascade's own
 python tests/test_step_kernel.py # a STEP file in metres read back at the right size

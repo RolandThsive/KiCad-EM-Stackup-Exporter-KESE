@@ -44,6 +44,7 @@ What to make, where, and in which formats.
 | `WORKERS` | `0` | int ≥ 0 | Threads stage 6 works with when `BUILD_WITH_KERNELS` is `False`: parts built at once in simulation mode, slices in visual mode. `0` = one per processor core |
 | `SHOW_PROGRESS` | `True` | bool | Live `running <stage> ... 1m 23s` line on a terminal |
 | `VERIFY` | `False` | bool | Run the Verifier after generation (2 to 4 s on the example boards; longer on dense boards) |
+| `VERIFY_RAYS` | `3000` | int > 0 | Vertical rays the Verifier casts through a visual model to test its surfaces |
 | `WRITE_MATERIALS_JSON` | `True` | bool | Write `materials.json` next to the outputs |
 
 ### 16.1.4 Mesh Export (GLB, STL, OBJ)
@@ -61,6 +62,7 @@ What to make, where, and in which formats.
 | `STEP_EXACT_ARCS` | `True` | bool | Only with `BUILD_WITH_KERNELS = True`: runs of vertices on one circle (vias, round pads, round outlines, track ends, arc tracks) are written as true arcs, except where an arc would cross another outline (16.7.1); smaller files, real cylinders in CAD. The default writer keeps every curve faceted, as in the meshes |
 | `STEP_ARC_FIT_TOLERANCE_MM` | `0.0002` | mm > 0 | Vertices within this of one circle form an arc (2 × the snap grid) |
 | `STEP_ARC_MIN_POINTS` | `5` | int ≥ 3 | Minimum vertices in a run |
+| `STEP_ARC_MIN_SWEEP_DEG` | `10.0` | degrees > 0 | And turning at least this far |
 | `STEP_WRITE_ROLES` | `["board", "copper", "plating", "finish"]` | subset of the roles below | Roles written to the STEP file; mask and silk are left out by default since they are many more solids, which make the file 1.5 to 1.6 times as big (the PCIe card in `Input/`, in mm: 348 MB and 320 solids written in 8.8 s instead of 215 MB and 84 solids in 5.6 s) |
 | `STEP_FUSE_ROLES` | `["board", "copper", "plating", "finish"]` | subset of `STEP_WRITE_ROLES` | Only with `BUILD_WITH_KERNELS = True`: roles whose parts are fused into **one** solid each (what solvers need; slow on parts with many pieces); the others are compounds of touching solids (fast; fine for viewing). The default writer writes every part as the closed solids of stage 6, one per separate body |
 
@@ -72,7 +74,8 @@ part and `mask_over_copper` selects nothing (STEP is not written in visual mode)
 
 | Name | Default | Range | Meaning |
 |---|---|---|---|
-| `KICAD_VERSION_MIN`, `KICAD_VERSION_MAX` | `20211014`, `20260206` | KiCad file format numbers | Accepted range (KiCad 6 to 10; the repository has boards in each of these formats, [Compatibility](Compatibility.md#201-kicad-files)); outside it the run gives a warning |
+| `KICAD_VERSION_MIN`, `KICAD_VERSION_MAX` | `4`, `20260206` | KiCad file format numbers | Tested range, KiCad 4 to 10 (KiCad 4 files say `(version 4)`, KiCad 5 files `20171130`); a file outside it is read with a warning ([Compatibility](Compatibility.md#201-kicad-files)) |
+| `TESTED_COPPER_LAYERS` | `8` | int > 0 | Stage 1 warns above this many copper layers (the most among the test boards); they are still modelled |
 | `PRESETS` | `hfss`, `cst`, `openems`, `viewer` | `{name: {"Module.NAME": value}}` | Sets of overrides applied with `--for <name>` ([Choosing An Export](Choosing-An-Export.md)) |
 
 ## 16.2 Board (`parameters/board.py`)
@@ -82,6 +85,7 @@ The laminate: thickness, dielectrics, outline and holes. Details in [Board](Boar
 | Name | Default | Range | Meaning |
 |---|---|---|---|
 | `BOARD_THICKNESS_MM` | `None` | None or mm > 0 | Laminate thickness; `None` takes it from the file (a usable stack-up, else `(general (thickness))` less the outer copper and the masks, else 1.6 mm less the same) |
+| `DEFAULT_BOARD_THICKNESS_MM` | `1.6` | mm > 0 | Finished board thickness when the file gives none (KiCad's default) |
 | `DIELECTRIC_SPLIT` | `"even"` | `"even"` | How the laminate is divided between copper layers when the file has no usable stack-up |
 | `DEFAULT_DIELECTRIC_MATERIAL`, `DEFAULT_DIELECTRIC_TYPE` | `"FR4"`, `"core"` | text; `"core"` / `"prepreg"` | Used when the stack-up gives none |
 | `DEFAULT_EPSILON_R`, `DEFAULT_LOSS_TANGENT` | `4.5`, `0.02` | > 0 | Typical FR4 at 1 GHz, used when the stack-up gives none |
@@ -91,6 +95,7 @@ The laminate: thickness, dielectrics, outline and holes. Details in [Board](Boar
 | `OUTLINE_LINE_SNAP_MM` | `0.01` | mm > 0 | Open `Edge.Cuts` line and arc ends closer than this are joined, as KiCad joins them (its chaining distance is 0.01 mm) |
 | `OUTLINE_FALLBACK` | `"copper_hull"` | `"copper_hull"` / `"error"` | When `Edge.Cuts` gives no closed ring at all: convex hull of the copper plus a margin, or stop |
 | `OUTLINE_FALLBACK_MARGIN_MM` | `1.0` | mm ≥ 0 | Margin of the fallback hull |
+| `OUTLINE_DUPLICATE_AREA_MM2` | `1e-6` | mm² > 0 | Two closed `Edge.Cuts` outlines that differ by less than this area are one (a ring drawn twice) |
 
 ## 16.3 Copper (`parameters/copper.py`)
 
@@ -114,6 +119,7 @@ Copper foils, plating, vias and the finished copper geometry. Details in
 | `ETCH_FACTOR` | `0.0` | ≥ 0 | Each side wall leans in by this × copper thickness over the copper height; 0 = rectangular, as KiCad |
 | `ETCH_STEPS` | `4` | int ≥ 1 | Slices the trapezoid is built from |
 | `ETCH_APPLY_TO_INNER_LAYERS` | `False` | bool | Etch inner copper too (foot toward the board centre) |
+| `ETCH_UNETCHED_REACH` | `1.5` | ≥ 0 | Copper within this × the etch inset of a hole wall or the board edge keeps its outline |
 
 ### 16.3.3 Castellations And Edge Plating
 
@@ -132,6 +138,7 @@ Copper foils, plating, vias and the finished copper geometry. Details in
 | `VIA_TENTING` | `"file"` | `"file"` / `"tented"` / `"open"` | Mask over vias: follow the board, cover all, open all |
 | `HONOUR_REMOVE_UNUSED_LAYERS` | `True` | bool | Drop via and through-hole pad annular rings on layers nothing connects to, as KiCad's option does |
 | `NO_NET_NAME` | `"no_net"` | text | Name of copper that belongs to no net |
+| `HAIRLINE_HOLE_MM` | `1e-3` | mm ≥ 0 | A hole in one net's copper narrower than this on average (2 × area / perimeter) is filled: the hair-wide gap KiCad leaves between a zone fill and a pad of its own net |
 
 ### 16.3.5 Electrical Properties
 
@@ -152,6 +159,7 @@ Short name `SolderMask`. Details in [Solder Masks](Solder-Masks.md).
 | `MASK_EDGE_PULLBACK_MM` | `0.005` | mm ≥ 0 | Mask and silk stop this far short of the board edge |
 | `PAD_TO_MASK_CLEARANCE_MM` | `None` | None or mm ≥ 0 | Clearance around pads and untented vias; `None` takes the board setup's value from the file. A number replaces only the board setup's value: a pad's or footprint's own `solder_mask_margin` in the file still wins |
 | `MASK_MIN_WIDTH_MM` | `None` | None or mm ≥ 0 | Narrowest web of mask kept between two openings; `None` follows Board Setup (`solder_mask_min_width`), 0 keeps every web |
+| `MASK_WEB_HAIRLINE_MM` | `1e-3` | mm ≥ 0 | A web the minimum width adds that is narrower than twice this is dropped |
 | `MASK_WALL_QUAD_SEGS` | `4` | int ≥ 1 | Segments per quarter circle on the walls where the mask climbs a trace |
 
 ## 16.5 Silkscreen (`parameters/silkscreen.py`)
@@ -167,7 +175,8 @@ Details in [Silkscreens](Silkscreens.md).
 | `INTERLINE_PITCH` | `1.68` | > 0 | Line pitch as a multiple of the text height (KiCad's value) |
 | `INTERLINE_LEGACY_FACTOR` | `0.9583` | > 0 | KiCad's correction for stroke fonts |
 | `ITALIC_TILT` | `0.125` | ≥ 0 | x shift per unit of y for italic text |
-| `BOLD_THICKNESS_RATIO`, `NORMAL_THICKNESS_RATIO` | `0.2`, `0.15` | > 0 | Stroke thickness as a fraction of the text height when the file gives none |
+| `BOLD_THICKNESS_RATIO`, `NORMAL_THICKNESS_RATIO` | `0.2`, `0.125` | > 0 | Stroke thickness as a fraction of the text width when the file gives none (KiCad's `GetPenSizeForBold` and `GetPenSizeForNormal`) |
+| `MAX_PEN_RATIO` | `0.25` | > 0 | A stroke is at most this × the smaller of the text's width and height, whatever the file says (KiCad's `ClampTextPenSize`) |
 | `TEXT_STROKE_QUAD_SEGS` | `4` | int ≥ 1 | Roundness of stroke ends |
 | `DRAW_HIDDEN_TEXT` | `False` | bool | Draw text marked `(hide yes)` |
 | `SILK_LAYERS` | `["F.SilkS", "B.SilkS"]` | list of `F.*` / `B.*` layer names | Layers whose graphics are drawn as silkscreen, on the side their first letter names (any other name stops the run with a `KeyError` when the board has graphics on that layer); graphics on other non-physical layers are counted as skipped. Text is drawn only on `F.SilkS` / `B.SilkS`; text on other non-physical layers is ignored without a count |
@@ -201,10 +210,15 @@ These do not change dimensions.
 | `TRACK_END_MIN_QUAD_SEGS` | `4` | int ≥ 1 | Roundness of track ends |
 | `BEZIER_SEGMENTS` | `32` | int ≥ 1 | Straight pieces per Bézier curve |
 | `PINCH_POINT_OPENING_MM` | `1e-4` | mm > 0 | Polygons whose rings touch at a single point are opened by this much so they can be meshed |
+| `PINCH_CUT_ROUNDS` | `10` | int ≥ 1 | Tries at opening one, the cut's radius doubling each time |
+| `PINCH_DISC_TURN_DEG` | `17.0` | degrees | Turn of the octagon cut at a pinch, off the axes a board's edges follow |
+| `SLIVER_AREA_MM2` | `1e-10` | mm² > 0 | A polygon of less area is a sliver left by the set operations, and is dropped |
 | `TRIANGULATE_CELL_POINTS` | `5000` | > 0 | A polygon with more points than this has its top and bottom cut into triangles strip by strip, much faster when it has many holes (earcut's time grows with the points times the holes). The points the strips add are taken out again, so the solid keeps exactly the polygon's own vertices |
 | `TRIANGULATE_CELL_MM` | `10.0` | mm > 0 | Width of those strips, as KiCad cuts big polygons into 1 cm cells before it triangulates them |
 | `SKIN_BURIED_TEST_OFFSET_MM` | `0.0005` | mm > 0 | Visual mode: a face is dropped if a point this far outside it lies inside another solid ([Output Modes](Output-Modes.md), equation (8.1)) |
 | `SKIN_TILE_POINTS` | `250_000` | > 0 | Visual mode: a big board's skin is joined in tiles of about this many outline points; smaller tiles need less memory ([Output Modes](Output-Modes.md)) |
+| `MESH_MERGE_DIGITS` | `8` | int | Mesh vertices that round to the same point at 10^-8 (in mm or m) are one; angles under 1e-8 rad are none |
+| `FLAT_FACET_THRESHOLD` | `5000` | > 0 | Smooth shading: two faces are one flat facet where (edge radius / edge span)² exceeds this |
 
 ### 16.7.1 How The Curve Settings Are Used
 
