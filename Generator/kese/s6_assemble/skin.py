@@ -14,10 +14,9 @@ from collections import defaultdict
 import numpy as np
 import shapely
 import trimesh
-from scipy.sparse import coo_matrix
-from scipy.sparse.csgraph import connected_components
 
 from kese.core.cells import split_at
+from kese.core.graph import connected_components
 from kese.s6_assemble.tiles import joined_tiles, tile_edges, tile_surface
 from parameters import P
 
@@ -69,8 +68,7 @@ def sealed(v, f):
     if not len(f):
         return np.zeros(0, dtype=bool)
     edges = np.concatenate([f[:, :2], f[:, 1:]])
-    graph = coo_matrix((np.ones(len(edges), dtype=bool), (edges[:, 0], edges[:, 1])), shape=(len(v), len(v)))
-    _, shell = connected_components(graph, directed=False)
+    _, shell = connected_components(len(v), edges[:, 0], edges[:, 1])
     shell = shell[f[:, 0]]
     o = (v.min(axis=0) + v.max(axis=0)) / 2
     a, b, c = v[f[:, 0]] - o, v[f[:, 1]] - o, v[f[:, 2]] - o

@@ -23,7 +23,7 @@ from pathlib import Path
 from kese import __version__
 from parameters import P
 
-REQUIRED = ["numpy", "scipy", "shapely", "trimesh", "mapbox_earcut"]
+REQUIRED = ["numpy", "shapely", "trimesh", "mapbox_earcut"]
 KERNELS = ["manifold3d"]                # Run.BUILD_WITH_KERNELS: solid unions, and STEP by cadquery
 OPTIONAL = {"step": "cadquery"}
 

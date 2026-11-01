@@ -10,7 +10,7 @@ requires-python = ">=3.11"
 license = {text = "GPL-3.0-or-later"}
 dynamic = ["version"]
 dependencies = [
-    "numpy", "scipy", "shapely>=2.0", "trimesh>=4.0", "mapbox_earcut",
+    "numpy", "shapely>=2.0", "trimesh>=4.0", "mapbox_earcut",
 ]
 
 [project.optional-dependencies]

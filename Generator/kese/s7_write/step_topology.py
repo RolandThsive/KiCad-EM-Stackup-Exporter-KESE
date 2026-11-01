@@ -10,10 +10,9 @@ from dataclasses import dataclass
 
 import numpy as np
 import shapely
-from scipy.sparse import coo_matrix
-from scipy.sparse.csgraph import connected_components
 
 from kese.core import shapes2d as sh
+from kese.core.graph import connected_components
 from kese.core.triangulate import rings_of
 from kese.core.vertices import grid_keys, vertices_in_order
 
@@ -121,6 +120,5 @@ def shells_of(use_edge, use_loop, loop_face):
     first = np.r_[0, np.cumsum(count)[:-1]][count == 2]                # where the uses of every edge used twice start
     f1, f2 = use_face[order[first]], use_face[order[first + 1]]
     faces = int(loop_face.max()) + 1 if len(loop_face) else 0
-    graph = coo_matrix((np.ones(len(f1), dtype=bool), (f1, f2)), shape=(faces, faces))
-    shells, face_shell = connected_components(graph, directed=False)
+    shells, face_shell = connected_components(faces, f1, f2)
     return face_shell, shells, int((count != 2).sum())

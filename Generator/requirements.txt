@@ -2,12 +2,11 @@
 #   python -m pip install -r requirements.txt
 #
 # Tested with Python 3.13 (Linux) on these exact versions.  These pins need Python 3.12 or newer
-# (numpy 2.5 and scipy 1.18 require >= 3.12); binary wheels for Windows (win_amd64), Linux and
+# (numpy 2.5 requires >= 3.12); binary wheels for Windows (win_amd64), Linux and
 # macOS exist on PyPI for Python 3.12, 3.13 and 3.14 for every package below (checked 2026-10-18).
-# On Python 3.11 install without the pins (python -m pip install numpy scipy ...): pip picks the
+# On Python 3.11 install without the pins (python -m pip install numpy shapely ...): pip picks the
 # last versions built for it.
 numpy==2.5.3
-scipy==1.18.1
 shapely==2.2.0
 trimesh==5.1.1
 mapbox_earcut==2.1.0

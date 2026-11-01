@@ -2,8 +2,8 @@
 import numpy as np
 import trimesh
 from trimesh import tol
-from trimesh.graph import connected_component_labels
 
+from kese.core.graph import connected_components
 from parameters import P
 
 
@@ -53,10 +53,10 @@ def smooth_shaded(mesh, angle):
         # radius = span / (2 sin(turn)) and infinite below a turn of 0.01 degrees (it also takes two
         # faces of no area as flat, but they never make a facet big)
         flat =(turn <= np.radians(0.01)) | (2 * np.abs(np.sin(turn)) < 1 / np.sqrt(tol.facet_threshold))
-        facet = connected_component_labels(pairs[flat], node_count=len(faces))
+        facet = connected_components(len(faces), *pairs[flat].T)[1]
         big = ((np.bincount(facet) > 1) & (np.bincount(facet, weights=mesh.area_faces) > mesh.area / 10))[facet]
         smooth = smooth[~big[smooth].any(axis=1)]
-    group = connected_component_labels(smooth, node_count=len(faces)).astype(np.int64)
+    group = connected_components(len(faces), *smooth.T)[1].astype(np.int64)
     if big.any():
         group = np.where(big, group.max() + 1 + facet, group)
     n = len(mesh.vertices)
