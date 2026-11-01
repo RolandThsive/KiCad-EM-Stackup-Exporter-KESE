@@ -21,6 +21,8 @@ NO_VERSION = 20201115           # parseHeader: a file without (version) is read 
 LEGACY_ARC_FORMATTING = 20210925       # up to here an arc is (start centre) (end first point) (angle)
 LEGACY_ZERO_MARGIN = 20240201          # up to here a solder_mask_margin of 0 means "inherit"
 NEW_OVERBAR = 20210606                 # from here an overbar is ~{text}; before, text between two ~
+BOLD_MULTIPLIER_FROM = 20260826       # from here a bold text's thickness is its base pen, drawn x 1.6
+BOLD_STROKE_MULTIPLIER = 1.6           # gr_text.h
 STROKED_FILL_UNTIL = 20250210          # before this a zone fill is stroked, unless the zone says not
 KICAD_DEFAULT_VIA = (0.6, 0.3, 0.3, 0.1)    # via size, drill, micro via size, drill (netclass.cpp)
 ROUNDRECT_RRATIO = 0.25                # a roundrect pad that gives no ratio (padstack.cpp, PADSTACK defaults)
@@ -193,6 +195,22 @@ def stroked_fill_pen(node, d):
     if not stroked or child(node, "keepout"):
         return 0.0
     return num(node, "min_thickness", 0.0)
+
+
+def legacy_fill_segments(node):
+    """A zone filled in KiCad 4/5's segment mode and stored with no polygons: [(a, b)] of its
+    (fill_segments (pts (xy) (xy)) ...), each a stroke of the zone's min_thickness, as KiCad reads
+    it (parseZONE, "legacy segment fill"); [] for any other zone, whose segments, if any, go with
+    the polygons it stores."""
+    if children(node, "filled_polygon"):
+        return []
+    out = []
+    for fs in children(node, "fill_segments"):
+        for p in children(fs, "pts"):
+            xy = [pt(q) for q in p[1:] if isinstance(q, list) and q and q[0] == "xy"]
+            if len(xy) == 2:
+                out.append((xy[0], xy[1]))
+    return out
 
 
 # ---- pads and vias -----------------------------------------------------------------------------
@@ -377,6 +395,17 @@ def text_size(font_node):
     """(height, width) of a text's font; KiCad 4 wrote none for the 60 mil default."""
     size = child(font_node, "size")
     return (float(size[1]), float(size[2])) if size else (LEGACY_TEXT_SIZE_MM, LEGACY_TEXT_SIZE_MM)
+
+
+def text_pen(font_node, d):
+    """A stroke-font text's (thickness), None when it gives none (or 0, which KiCad takes as none).
+    From format BOLD_MULTIPLIER_FROM (after KiCad 10) a bold text stores its base pen and is drawn
+    with BOLD_STROKE_MULTIPLIER times it (EDA_TEXT::GetEffectiveTextPenWidth); an older file's
+    thickness is the pen itself (parseEDA_TEXT, MigrateLegacyBoldStrokeWidth)."""
+    t = num(font_node, "thickness")
+    if t is None or t <= 1e-6:
+        return None
+    return t * BOLD_STROKE_MULTIPLIER if d.format >= BOLD_MULTIPLIER_FROM and flag(font_node, "bold") else t
 
 
 def is_hidden(node):

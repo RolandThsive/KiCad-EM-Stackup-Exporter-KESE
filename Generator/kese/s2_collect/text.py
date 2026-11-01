@@ -9,9 +9,9 @@ from shapely.geometry import Polygon, box
 
 from kese.core import font
 from kese.core.shapes2d import polys_only
-from kese.core.sexp import atoms, child, children, layer_of, num, numbers
+from kese.core.sexp import atoms, child, children, layer_of, numbers
 from kese.s1_read.parse_kicad_version import (flag, footprint_text_fields, is_footprint, is_hidden, is_knockout,
-                                              overbar_markup,
+                                              overbar_markup, text_pen,
                                               kept_upright, render_cache_rings, text_size)
 from parameters import P
 
@@ -126,7 +126,11 @@ def add_text(ctx, node, T=lambda p: p, subst=None, in_footprint=False):
     h, w = text_size(fnt)
     bold = flag(fnt, "bold")
     italic = flag(fnt, "italic")
-    thick = num(fnt, "thickness", (S.BOLD_THICKNESS_RATIO if bold else S.NORMAL_THICKNESS_RATIO) * h)
+    # KiCad's pen (EDA_TEXT::GetEffectiveTextPenWidth): the file's, else a fifth (bold) or an eighth of
+    # the text width, and at most a quarter of its smaller size (ClampTextPenSize)
+    thick = text_pen(fnt, items.raw.dialect)
+    thick = (S.BOLD_THICKNESS_RATIO if bold else S.NORMAL_THICKNESS_RATIO) * abs(w) if thick is None else thick
+    thick = min(thick, S.MAX_PEN_RATIO * min(abs(h), abs(w)))
     just = child(effects, "justify")
     just = [str(j) for j in atoms(just)] if just else []
     geom = None

@@ -22,8 +22,9 @@ DRAW_TRUETYPE_TEXT_WITH_STROKE_FONT = True
 INTERLINE_PITCH = 1.68                  # line pitch as a multiple of the text height
 INTERLINE_LEGACY_FACTOR = 0.9583        # KiCad's correction for stroke fonts
 ITALIC_TILT = 0.125                     # x shift per unit of y for italic text
-BOLD_THICKNESS_RATIO = 0.2              # bold text stroke = this x text height when the file gives none
-NORMAL_THICKNESS_RATIO = 0.15           # normal text stroke = this x text height when the file gives none
+BOLD_THICKNESS_RATIO = 0.2              # bold text stroke = this x text width when the file gives none
+NORMAL_THICKNESS_RATIO = 0.125          # normal text stroke = this x text width when the file gives none
+MAX_PEN_RATIO = 0.25                    # a stroke is at most this x the text's smaller size (ClampTextPenSize)
 TEXT_STROKE_QUAD_SEGS = 4               # roundness of stroke ends
 
 # Draw text that the file marks hidden (reference/value with (hide yes))

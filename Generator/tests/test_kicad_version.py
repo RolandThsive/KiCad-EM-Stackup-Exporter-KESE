@@ -48,6 +48,24 @@ def test_kicad_4_default_text_size():
     assert kv.text_size(parse("(font (size 1 0.8))")) == (1.0, 0.8)
 
 
+def test_text_pen():
+    """The file's thickness; none (or 0) leaves it to KiCad's default; after format 20260826 a bold
+    text's thickness is its base pen, drawn 1.6 times as wide."""
+    k10, k11 = kv.dialect(board("(version 20260206)")), kv.dialect(board("(version 20261031)"))
+    assert kv.text_pen(parse("(font (size 1 1) (thickness 0.15))"), k10) == 0.15
+    assert kv.text_pen(parse("(font (size 1 1) (thickness 0))"), k10) is None
+    assert kv.text_pen(parse("(font (size 1 1) (thickness 0.15) (bold yes))"), k10) == 0.15
+    assert abs(kv.text_pen(parse("(font (size 1 1) (thickness 0.15) (bold yes))"), k11) - 0.24) < 1e-12
+
+
+def test_legacy_segment_fill():
+    """A KiCad 4/5 zone filled with segments only; with polygons too, the polygons are the fill."""
+    only = parse("(zone (min_thickness 0.25) (fill_segments (pts (xy 0 0) (xy 1 0)) (pts (xy 0 0.2) (xy 1 0.2))))")
+    assert kv.legacy_fill_segments(only) == [((0.0, 0.0), (1.0, 0.0)), ((0.0, 0.2), (1.0, 0.2))]
+    both = parse("(zone (filled_polygon (pts (xy 0 0) (xy 1 0) (xy 1 1))) (fill_segments (pts (xy 0 0) (xy 1 0))))")
+    assert kv.legacy_fill_segments(both) == []
+
+
 def test_old_overbar_notation():
     """string_utils.cpp ConvertToNewOverbarNotation, for files before format 20210606."""
     k5, k6 = kv.dialect(board("(version 20171130)")), kv.dialect(board("(version 20211014)"))
