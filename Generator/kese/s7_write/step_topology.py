@@ -33,6 +33,14 @@ class Topology:
     face_shell: np.ndarray         # per face: its shell
     shells: int
     edges_not_used_twice: int      # zero when the boundary is closed
+    # true circles (step_curved.with_arcs; None: every edge a line, every face a plane)
+    edge_circle: np.ndarray = None     # per edge: the circle it is an arc of, or -1 for a line
+    edge_ccw: np.ndarray = None        # per edge: an arc runs counter-clockwise seen from +z
+    face_cylinder: np.ndarray = None   # per face: its cylinder, or -1 (its plane is face_plane, else -1)
+    circle_xy: np.ndarray = None       # (circles, 2): the centre
+    circle_r: np.ndarray = None        # per circle: the radius
+    cylinder_circle: np.ndarray = None  # per cylinder: its circle
+    cylinder_z: np.ndarray = None      # per cylinder: the height it starts at (its axis points up)
 
 
 def topology_of(boundary):

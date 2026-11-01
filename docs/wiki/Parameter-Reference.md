@@ -58,11 +58,23 @@ What to make, where, and in which formats.
 
 | Name | Default | Range | Meaning |
 |---|---|---|---|
+| `STEP_EXACT_ARCS` | `False` | bool | Write circles and arcs as true curves: where a part's outline runs through vertices on one circle (holes, vias, round pads, track ends, arc tracks, round outlines), their chords become one `CIRCLE` edge and the walls on them one `CYLINDRICAL_SURFACE` face, at every height alike; every other edge stays a line and every other face a plane. Left straight where another edge at that height passes closer to the vertices than the arc bulges out from them, which the arc would cross. Written by KESE's own writer; files are about 4 to 9 times smaller (the RF module in `Input/`, in m: 30 MB instead of 230 MB, written in 2.6 s instead of 4.2 s). Meshes are unchanged |
+| `STEP_ARC_FIT_TOLERANCE_MM` | `0.0002` | mm > 0 | Vertices within this of one circle form an arc (2 x the snap grid) |
+| `STEP_ARC_MIN_POINTS` | `5` | int >= 3 | An arc runs through at least this many vertices |
+| `STEP_ARC_MIN_SWEEP_DEG` | `10.0` | degrees | and turns at least this far |
+| `STEP_ARC_MAX_TURN_DEG` | `30.0` | degrees | but at most this far at one vertex, so that a polygon of fewer than 12 sides (an octagonal pad, a square) stays a polygon |
 | `STEP_WRITE_ROLES` | `["board", "copper", "plating", "finish"]` | subset of the roles below | Roles written to the STEP file; mask and silk are left out by default since they are many more solids, which make the file 1.5 to 1.6 times as big (the PCIe card in `Input/`, in mm: 348 MB and 320 solids written in 8.8 s instead of 215 MB and 84 solids in 5.6 s) |
 
 The roles are `board`, `copper`, `plating`, `finish`, `mask`, `mask_over_copper`, `silk`. A part's role
 in STEP is that of its first prism, so in simulation mode the mask on copper belongs to the `mask`
 part and `mask_over_copper` selects nothing (STEP is not written in visual mode).
+
+With `STEP_EXACT_ARCS` the file uses these entities beside the planar ones: `CIRCLE` (on an
+`AXIS2_PLACEMENT_3D` at the centre, its axis the board's normal), referenced by the `EDGE_CURVE` of
+an arc edge whose sense says which way it runs, and `CYLINDRICAL_SURFACE` (on the circle's placement
+at the wall's lower height) under the `ADVANCED_FACE` of a curved wall. An arc turns at most about
+half a circle: a whole circle is two arcs between two vertices, on one `CIRCLE`, so there are no
+seam edges and every edge has two vertices and two faces.
 
 ### 16.1.6 KiCad Versions And Presets
 

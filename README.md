@@ -91,6 +91,8 @@ from any folder. Full walk-through: [Getting Started](https://github.com/RolandT
   `visual` writes only the surface you can see, as GLB and OBJ, so nothing z-fights in a viewer.
 - **STEP without a CAD kernel, meshes without a mesh library:** KESE builds its own meshes and writes STEP AP214,
   GLB, STL and OBJ itself, every part under its own name; it needs only `numpy`, `shapely` and `mapbox_earcut`.
+  With `Run.STEP_EXACT_ARCS` holes, vias, round pads and arcs go into STEP as true circles and cylinders, in files
+  4 to 9 times smaller.
 - **Presets:** `--for hfss`, `cst`, `openems` or `viewer` set mode, formats, units, origin and grouping in one go.
 - **Checks:** an opt-in Verifier (closed solids, the same volume found four ways, no overlaps, one visible surface)
   and a regression suite that runs 40 boards through every output before a pull request.

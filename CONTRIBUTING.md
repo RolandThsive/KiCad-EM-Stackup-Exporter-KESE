@@ -77,8 +77,9 @@ python tests/test_colors.py      # stack-up colours: named, user-defined and unk
 python tests/test_text_layout.py # text laid out where KiCad 7.0.11 plots it
 python tests/test_kicad_version.py # the rules of each KiCad version, against KiCad's own parser
 python tests/test_step_native.py # a solid written from its faces, read back by OpenCascade
+python tests/test_step_arcs.py   # true arcs and cylinders in STEP (Run.STEP_EXACT_ARCS), read back too
 python tests/test_boards.py      # every test board through both modes, against tests/baseline.json
 ```
 
-`python -m pytest tests` runs all six. When a change is meant to move the geometry, re-record the
+`python -m pytest tests` runs all seven. When a change is meant to move the geometry, re-record the
 baseline with `python tests/test_boards.py --accept` and say why in the pull request.

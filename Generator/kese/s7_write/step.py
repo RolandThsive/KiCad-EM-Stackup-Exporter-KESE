@@ -1,6 +1,7 @@
 """STEP: every part's solid written from its Boundary straight into a STEP assembly, one named
 product per part, planar faces sharing their edges and vertices: closed by construction."""
 from kese.s7_write.step_brep import write_brep
+from kese.s7_write.step_curved import with_arcs
 from kese.s7_write.step_topology import topology_of
 from kese.s7_write.step_writer import StepWriter
 from parameters import P
@@ -30,4 +31,9 @@ def write_part(w, part, boundary, transform, log):
     topo = topology_of(boundary)
     if topo.edges_not_used_twice:
         log(f"step: {part}: {topo.edges_not_used_twice} edges are not shared by two faces (the solid is open there)")
+    if P.Run.STEP_EXACT_ARCS:
+        try:
+            topo = with_arcs(topo)
+        except Exception as e:                            # a bug in the arcs must not cost the file: faceted instead
+            log(f"step: {part}: written without arcs ({type(e).__name__}: {e})")
     return write_brep(w, topo, transform)
