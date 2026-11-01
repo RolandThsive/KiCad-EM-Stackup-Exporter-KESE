@@ -118,6 +118,11 @@
         </div>
         <div class="stale-badge" id="stale-badge" hidden>Settings changed: press Generate to update the model</div>
         <div class="empty-note" id="empty-note">Choose a board, then press Generate.<br><span class="hint">The model is made in your browser.</span></div>
+        <div class="run-card" id="run-card" hidden aria-live="polite">
+          <div class="spinner" aria-hidden="true"></div>
+          <div class="run-head">Generating <b id="run-time">0m 00s</b></div>
+          <div class="run-log" id="run-log"></div>
+        </div>
         <div class="hover-card" id="hover-card" hidden></div>
         <div class="readout" id="readout"></div>
         <div class="sliders">
