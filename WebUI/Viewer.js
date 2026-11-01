@@ -8,7 +8,7 @@
 
    The board lies flat in the scene, its top up (+Y), whatever orientation the files have (Run.ORIENTATION): the
    thinnest side of the model is taken as the board's thickness.  Tools: views (Iso, Top, Bottom, Side), Fit,
-   cross-section (a cut across X, its cut faces filled), screenshot.
+   cross-section (a cut across X that shows each solid's true section, Section.js), screenshot.
    It draws only when something changed (a 600k-triangle STEP would make a constant loop heavy). */
 import * as THREE from "three";
 import { OrbitControls } from "three/addons/controls/OrbitControls.js";
@@ -17,6 +17,7 @@ import { STLLoader } from "three/addons/loaders/STLLoader.js";
 import { OBJLoader } from "three/addons/loaders/OBJLoader.js";
 import { MTLLoader } from "three/addons/loaders/MTLLoader.js";
 import { useModelViewerLook } from "./mvEnvironment.js";
+import { sectionTriangles } from "./Section.js";
 
 const METAL_ROLES = /^(copper|plating|finish|via|pad)/i;
 
@@ -87,6 +88,8 @@ export class Viewer {
   }
 
   clear() {
+    clearTimeout(this.capTimer);
+    this.sectionFaces(null);
     if (this.root) {
       this.scene.remove(this.root);
       this.root.traverse((o) => {
@@ -144,17 +147,6 @@ export class Viewer {
           x.side = THREE.FrontSide;
           x.polygonOffset = rank > 0; x.polygonOffsetFactor = -rank; x.polygonOffsetUnits = -4 * rank;
         }
-        /* The cut face: KESE's parts are closed solids, so where the cross-section opens one, the camera looks at
-           the inside of its far walls.  Those inside faces are drawn flat in the part's colour, so a cut solid
-           reads as filled, not hollow.  They sit just behind real faces, so a touching part's surface wins. */
-        const base = mats[0];
-        const cap = new THREE.Mesh(m.geometry, new THREE.MeshBasicMaterial({
-          color: (base.color ? base.color.clone() : new THREE.Color("#b0b0b0")).multiplyScalar(0.82),
-          side: THREE.BackSide, clippingPlanes: [this.clip], transparent: base.transparent, opacity: base.opacity ?? 1,
-          polygonOffset: true, polygonOffsetFactor: 1, polygonOffsetUnits: 4 }));
-        cap.userData.part = p;
-        cap.raycast = () => {};                                   // the hover card reads the real faces
-        m.add(cap);
         m.userData.part = p;
       }
     }
@@ -260,12 +252,63 @@ export class Viewer {
     this.cut = f;
     if (!this.root) return;
     const box = new THREE.Box3().setFromObject(this.root);
-    this.clip.constant = f >= 1 ? Infinity : -(box.max.x - (box.max.x - box.min.x) * f);   // the part nearer the camera goes
+    const x = box.max.x - (box.max.x - box.min.x) * f;
+    this.clip.constant = f >= 1 ? Infinity : -x;             // the part nearer the camera goes
+    clearTimeout(this.capTimer);                            // the section faces follow once the slider rests
+    this.capTimer = setTimeout(() => this.sectionFaces(f >= 1 ? null : x), 120);
+    this.draw();
+  }
+
+  // every part's world-space triangles, 9 floats each (made once per model, for the sections)
+  worldTriangles(p) {
+    if (p.world) return p.world;
+    const chunks = [];
+    const v = new THREE.Vector3();
+    for (const m of p.meshes) {
+      const pos = m.geometry.attributes.position, idx = m.geometry.index;
+      const n = idx ? idx.count : pos.count, out = new Float32Array(n * 3);
+      for (let i = 0; i < n; i++) {
+        v.fromBufferAttribute(pos, idx ? idx.getX(i) : i).applyMatrix4(m.matrixWorld);
+        out[3 * i] = v.x; out[3 * i + 1] = v.y; out[3 * i + 2] = v.z;
+      }
+      chunks.push(out);
+    }
+    if (chunks.length === 1) return (p.world = chunks[0]);
+    const all = new Float32Array(chunks.reduce((s2, c) => s2 + c.length, 0));
+    let o = 0; for (const c of chunks) { all.set(c, o); o += c.length; }
+    return (p.world = all);
+  }
+
+  // the true section of every part at x (null: no cut), in the part's colour, on the cut plane
+  sectionFaces(x) {
+    if (this.caps) { this.scene.remove(this.caps); this.caps.traverse((o) => { if (o.geometry) o.geometry.dispose(); if (o.material) o.material.dispose(); }); }
+    this.caps = null;
+    if (x == null || !this.root) { this.draw(); return; }
+    this.caps = new THREE.Group();
+    for (const p of this.parts) {
+      const tri = sectionTriangles(this.worldTriangles(p), x);
+      if (!tri) continue;
+      const g = new THREE.BufferGeometry();
+      g.setAttribute("position", new THREE.BufferAttribute(tri, 3));
+      const base = p.meshes[0].material, b = Array.isArray(base) ? base[0] : base;
+      const rank = depthRank(`${this.roleOf(p.name) || ""} ${p.name}`);
+      const mat = new THREE.MeshStandardMaterial({ color: b.color ? b.color.clone() : new THREE.Color("#b0b0b0"),
+        metalness: b.metalness ?? 0, roughness: b.roughness ?? 0.7, side: THREE.DoubleSide,
+        transparent: b.transparent, opacity: b.opacity ?? 1,
+        polygonOffset: rank > 0, polygonOffsetFactor: -rank, polygonOffsetUnits: -4 * rank });
+      const mesh = new THREE.Mesh(g, mat);
+      g.computeVertexNormals();
+      mesh.userData.part = p;
+      mesh.visible = p.visible;
+      p.cap = mesh;
+      this.caps.add(mesh);
+    }
+    this.scene.add(this.caps);
     this.draw();
   }
 
   setVisible(name, on) {
-    for (const p of this.parts) if (p.name === name) { p.visible = on; for (const m of p.meshes) m.visible = on; }
+    for (const p of this.parts) if (p.name === name) { p.visible = on; for (const m of p.meshes) m.visible = on; if (p.cap) p.cap.visible = on; }
     this.draw();
   }
 
@@ -275,7 +318,7 @@ export class Viewer {
     const r = this.canvas.getBoundingClientRect();
     const v = new THREE.Vector2(((this.pointer.clientX - r.left) / r.width) * 2 - 1, -((this.pointer.clientY - r.top) / r.height) * 2 + 1);
     this.raycaster.setFromCamera(v, this.camera);
-    const hits = this.raycaster.intersectObject(this.root, true).filter((h) => h.object.visible && (this.cut >= 1 || this.clip.distanceToPoint(h.point) >= 0));
+    const hits = this.raycaster.intersectObjects(this.caps ? [this.root, this.caps] : [this.root], true).filter((h) => h.object.visible && (this.cut >= 1 || this.clip.distanceToPoint(h.point) >= -1e-9 * this.size));
     this.onHover(hits.length ? hits[0].object.userData.part : null);
   }
 
