@@ -347,7 +347,6 @@ function setUI(ui) {
   document.querySelectorAll("#ui-switch button").forEach((b) => b.classList.toggle("on", b.dataset.ui === ui));
   $("app").classList.toggle("advanced", ui === "advanced");
   renderSections();
-  setTimeout(() => viewer && viewer.resize(), 560);
 }
 
 /* ---- mode and formats ------------------------------------------------------------------------- */
@@ -480,14 +479,8 @@ function previewChoices() {
   }
   return out;
 }
+// the Showing menu (top centre of the preview): the run's previewable files
 function renderPreviewTabs() {
-  const box = $("preview-tabs"), run = state.result && state.result.ok ? state.runValues[CFG.mode] : null;
-  box.replaceChildren();
-  for (const m of CFG.previewTabs || state.desc.modes) {
-    const made = m === run;
-    box.append(el("button", { type: "button", class: made ? "on" : "", disabled: !made,
-      "data-tip": made ? `This run: ${choiceText(m)} mode` : `Not made in this run. Switch Mode to ${choiceText(m)} and Generate.` }, choiceText(m)));
-  }
   const sel = $("showing"), choices = previewChoices();
   sel.replaceChildren(...choices.map((c) => el("option", { value: c.key }, c.label)));
   sel.disabled = choices.length < 2;

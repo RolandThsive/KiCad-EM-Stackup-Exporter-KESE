@@ -103,12 +103,10 @@ html.embedded .standalone-nav { display: none; }
 
 #workspace {
   display: grid; min-height: 0; gap: 12px;
-  grid-template-columns: 350px minmax(0, 1fr) 310px;       /* controls: 350 px in Basic, 470 px in Advanced (below) */
+  grid-template-columns: 350px minmax(0, 1fr) 310px;       /* the same in Basic and Advanced: no resizing */
   grid-template-rows: minmax(0, 1fr);
   grid-template-areas: "controls preview side";
-  transition: grid-template-columns 0.5s cubic-bezier(0.32, 0.72, 0, 1);   /* Apple-style ease-out */
 }
-#app.advanced #workspace { grid-template-columns: 470px minmax(0, 1fr) 310px; }
 #controls { grid-area: controls; }
 #preview { grid-area: preview; }
 #side { grid-area: side; }
@@ -341,9 +339,8 @@ button.group-title.collapsed .chevron { transform: rotate(-90deg); }
 /* Basic <-> Advanced: the controls fade and slide out, the panel resizes, the new controls fade in */
 
 /* ---- preview ------------------------------------------------------------------- */
-#preview { display: flex; flex-direction: column; padding: 10px 12px 6px; }
-.preview-head { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; }
-.canvas-wrap { position: relative; flex: 1; min-height: 0; margin-top: 8px; border-radius: 8px; overflow: hidden;
+#preview { display: flex; flex-direction: column; padding: 8px; }
+.canvas-wrap { position: relative; flex: 1; min-height: 0; border-radius: 8px; overflow: hidden;
   background: rgba(255, 255, 255, 0.5); }
 .canvas-wrap canvas { width: 100%; height: 100%; display: block; cursor: grab; }
 .canvas-wrap canvas.dragging { cursor: grabbing; }
@@ -366,7 +363,7 @@ button.group-title.collapsed .chevron { transform: rotate(-90deg); }
 .readout { position: absolute; left: 12px; bottom: 10px; font-size: 12px; color: var(--text-2); font-variant-numeric: tabular-nums;
   background: rgba(255, 255, 255, 0.7); padding: 2px 8px; border-radius: 6px; pointer-events: none; }
 .readout:empty { display: none; }
-.stale-badge { position: absolute; top: 28px; left: 50%; transform: translate(-50%, -50%); white-space: nowrap; z-index: 3;
+.stale-badge { position: absolute; top: 66px; left: 50%; transform: translate(-50%, -50%); white-space: nowrap; z-index: 3;
   background: rgba(255, 255, 255, 0.92);
   border: 1px solid var(--accent); color: var(--accent); font-size: 12.5px; padding: 4px 12px; border-radius: 14px; box-shadow: var(--shadow-btn); }
 .stale-badge.two-line { white-space: normal; width: max-content; max-width: 150px; text-align: center; line-height: 1.25; padding: 4px 10px; }
@@ -456,9 +453,9 @@ dialog pre { font-family: var(--mono); font-size: 12px; white-space: pre-wrap; m
 #run-note { margin: 6px 0 0; font-size: 12px; }
 #run-note:empty { display: none; }
 /* preview */
-.preview-head .segmented button[disabled] { opacity: 0.38; cursor: not-allowed; }
-.preview-head .segmented button[disabled]:hover { color: var(--text-2); }
-.showing { display: flex; align-items: center; gap: 8px; font-size: 13px; margin-left: auto; }
+/* Showing: top centre of the preview, between the tool buttons and the views */
+.showing { position: absolute; top: 10px; left: 50%; transform: translateX(-50%); z-index: 10; display: flex; align-items: center; gap: 8px;
+  font-size: 13px; background: rgba(255, 255, 255, 0.6); padding: 3px 4px 3px 10px; border-radius: var(--radius); }
 .showing select { font: inherit; font-size: 13px; padding: 4px 8px; border-radius: 8px; border: 1px solid rgba(0, 0, 0, 0.12); background: #fff; max-width: 260px; }
 .canvas-wrap { background: radial-gradient(ellipse at 50% 40%, #fbfaf6 0%, #ebe6da 100%); }
 .views { position: absolute; top: 10px; right: 10px; z-index: 10; background: rgba(255, 255, 255, 0.6); }
@@ -502,7 +499,6 @@ dialog pre { font-family: var(--mono); font-size: 12px; white-space: pre-wrap; m
 /* narrow laptops: the title and the side columns tighten so the preview keeps its room */
 @media (max-width: 1360px) {
   #workspace { grid-template-columns: 320px minmax(0, 1fr) 280px; }
-  #app.advanced #workspace { grid-template-columns: 420px minmax(0, 1fr) 280px; }
   #topbar h1 { font-size: 21px; }
 }
 @media (max-width: 1180px) {
@@ -513,7 +509,7 @@ dialog pre { font-family: var(--mono); font-size: 12px; white-space: pre-wrap; m
 /* portrait monitors and narrow windows: the preview on top and tall, the controls and the side column under it */
 @media (orientation: portrait), (max-width: 1080px) {
   #app { height: auto; min-height: 100vh; }
-  #workspace, #app.advanced #workspace { grid-template-columns: 1fr 1fr; grid-template-rows: 62vh auto;
+  #workspace { grid-template-columns: 1fr 1fr; grid-template-rows: 62vh auto;
     grid-template-areas: "preview preview" "controls side"; }
   #controls { max-height: 90vh; }
   #topbar h1 { font-size: 16px; }
