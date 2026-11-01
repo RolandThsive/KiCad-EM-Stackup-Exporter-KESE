@@ -62,8 +62,8 @@ def wall_triangles(segments, lower, upper):
 
 def polygon_triangles(polys):
     """The polygons cut into counter-clockwise triangles on their own vertices: (xy, triangles into
-    xy).  Earcut first (kese/core/triangulate.py), Manifold's triangulator for the polygons it
-    gets wrong, and constrained Delaunay triangles for what neither closes (rings that touch)."""
+    xy).  Earcut first, strip by strip on a big polygon (kese/core/triangulate.py), and GEOS's
+    constrained Delaunay triangles for what earcut gets wrong (rings that touch)."""
     xys, tris, n = [], [], 0
     left = polys
     for cut in (cells_cut, geos_cut):

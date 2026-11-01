@@ -216,9 +216,7 @@ Tin 9.1 × 10⁶, Silver 6.3 × 10⁷ S/m, OSP 0 since it is organic). Colours c
 in `Color.MATERIALS` ([Colorizing](Colorizing.md)).
 
 In STEP, finish parts are written by default (`Run.STEP_WRITE_ROLES` includes `"finish"`), each
-as the closed solids stage 6 built, one per connected piece. With the OpenCascade writer
-(`Run.BUILD_WITH_KERNELS = True`) their pieces are also fused, as `Run.STEP_FUSE_ROLES` includes
-`"finish"`.
+as the closed solids stage 6 built, one per connected piece.
 
 > [!NOTE]
 > The gold of ENIG is 80 nm thick and that of ENEPIG 50 nm. Heights are not snapped to the

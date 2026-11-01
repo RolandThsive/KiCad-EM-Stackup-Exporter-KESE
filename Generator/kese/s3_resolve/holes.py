@@ -84,17 +84,3 @@ def barrels(r, items, outline_k):
     r.barrels = [(r.to_board_T(union(rings)), i, j, net) for (i, j, net), rings in spans.items()]
     if r.edge_band is not None:
         r.barrels.append((r.edge_band, 0, len(items.layers) - 1, r.edge_net))
-
-
-def exact_circles(r, items):
-    """r.circles: the true circles of every round hole (drill wall and plated bore) and via pad,
-    board frame.  The STEP writer builds those rings from these, so the copper's hole and the
-    barrel's wall are one identical circle instead of two fits to slightly different polygons."""
-    cx, cy = r.to_board
-    circles = list(items.via_pads)
-    for h in items.holes:
-        if h.centre is not None:
-            circles.append((h.centre, h.radius))
-            if h.wall > 0:
-                circles.append((h.centre, h.radius - h.wall))
-    r.circles = [((x - cx, -(y - cy)), rad) for (x, y), rad in circles if rad > 0]

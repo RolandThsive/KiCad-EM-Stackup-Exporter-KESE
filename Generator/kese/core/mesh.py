@@ -12,8 +12,7 @@ from parameters import P
 
 
 class Mesh:
-    def __init__(self, vertices, faces, vertex_normals=None, face_normals=None, merge=False):
-        """merge: vertices that round to the same point at Geometry.MESH_MERGE_DIGITS made one."""
+    def __init__(self, vertices, faces, vertex_normals=None, face_normals=None):
         self.vertices = np.asarray(vertices, dtype=np.float64, order="C").reshape((-1, 3))
         self.faces = np.asarray(faces, dtype=np.int64, order="C").reshape((-1, 3))
         self.vertex_normals = None
@@ -23,8 +22,6 @@ class Mesh:
         self._normals, self._key = None, None
         if face_normals is not None:
             self._keep_normals(face_normals)
-        if merge:
-            self.merge_vertices()
 
     # ---- the face normals, kept while the mesh stays the same ----------------------------------
     def _content(self):
@@ -60,10 +57,6 @@ class Mesh:
     @property
     def triangles(self):
         return self.vertices[self.faces]
-
-    @property
-    def triangles_center(self):
-        return self.triangles.mean(axis=1)
 
     @property
     def area_faces(self):
@@ -182,17 +175,3 @@ class Mesh:
         if kept is not None:
             self._normals, self._key = kept, self._content()
         return self
-
-
-def concatenate(meshes):
-    """One mesh of them all, the vertices and faces in their order (the face normals carried
-    when any of them has its own kept)."""
-    if len(meshes) == 1:
-        return meshes[0].copy()
-    offset = np.append(0, np.cumsum([len(m.vertices) for m in meshes])[:-1])
-    vertices = np.vstack([m.vertices for m in meshes])
-    faces = np.vstack([m.faces + o for m, o in zip(meshes, offset) if len(m.faces)] or [np.zeros((0, 3), np.int64)])
-    normals = None
-    if any(m._cached_normals() is not None for m in meshes):
-        normals = np.vstack([m.face_normals for m in meshes])
-    return Mesh(vertices, faces, face_normals=normals)

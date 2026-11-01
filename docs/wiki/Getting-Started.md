@@ -20,34 +20,24 @@ python -m pip install -r requirements.txt
 the tests. Every command on this page runs from there.
 
 `requirements.txt` pins the versions the project was tested with (Python 3.13 on Linux). The
-optional CAD kernels are in a file of their own, because `cadquery` pulls in `scipy`, `vtk`,
-`casadi`, `numba`, `matplotlib` and more (about 450 MB to download and 1.7 GB installed):
-
-```bash
-python -m pip install -r requirements-kernels.txt    # optional: only for Run.BUILD_WITH_KERNELS
-```
-
-The packages are:
+packages are:
 
 | Package | Used for |
 |---|---|
 | `numpy` | Numerics, and the meshes: KESE builds them, writes GLB, STL, OBJ and STEP, and casts the Verifier's rays itself |
 | `shapely` | All 2D geometry: tracks, pads, zones, outline, mask, silk, and the faces of every solid |
 | `mapbox_earcut` | Cutting the faces into triangles (GEOS's constrained Delaunay triangulation, through `shapely`, where earcut's triangles do not close on the edges) |
-| `manifold3d`, `cadquery`, `cadquery-ocp` | Optional, in `requirements-kernels.txt`: only for `Run.BUILD_WITH_KERNELS = True`, the older way that joins the solids with Manifold and builds the STEP file with OpenCascade, and for the tests that read STEP files back |
 
-KESE writes STEP itself, so every format works without `cadquery`. Only a run with
-`Run.BUILD_WITH_KERNELS = True` that asks for STEP needs it, and stops with a message that names
-the missing package. The program checks the packages before it starts and prints the
-`pip install` line to run, instead of a traceback.
+KESE writes every format itself, STEP included, with no CAD kernel. The program checks the
+packages before it starts and prints the `pip install` line to run, instead of a traceback. Only
+the tests that read STEP files back use OpenCascade (`python -m pip install cadquery-ocp`), and
+they skip that check without it.
 
 Or install the project itself through `pyproject.toml`, with the packages unpinned (it also
 accepts Python 3.11, which is not tested):
 
 ```bash
 python -m pip install -e .            # the kese command, the same as python run_KESE.py
-python -m pip install -e ".[kernels]" # the same, with manifold3d: Run.BUILD_WITH_KERNELS unions (about 4 MB)
-python -m pip install -e ".[step]"    # with manifold3d and cadquery: also STEP by OpenCascade (about 1.7 GB)
 ```
 
 `-e` keeps `parameters/` editable in place. `Input/` and `Output/` stay relative to the folder
@@ -103,7 +93,7 @@ python run_KESE.py --version
 | Option | Meaning |
 |---|---|
 | `boards` | One or more `.kicad_pcb` paths. With none, every board in `Run.INPUT_DIR` (`Input/`) is exported. |
-| `--mode` | `simulation` or `visual`. The old names `real` and `pretty` are still accepted. Default: `Run.MODE`. |
+| `--mode` | `simulation` or `visual`. Default: `Run.MODE`. |
 | `--format` | Any of `glb`, `stl`, `obj`, `step`, several at once. Default: `Run.FILE_FORMAT` (`["glb"]`). Visual mode allows only `glb` and `obj`. |
 | `--for` | Applies a preset from `Run.PRESETS` before any `--set`: `hfss`, `cst`, `openems`, `viewer`. See [Choosing An Export](Choosing-An-Export.md). |
 | `--verify` | Runs the Verifier after the model files are written (2 to 4 s on the example boards). See [Checks, Errors And Warnings](Checks-Errors-And-Warnings.md). |

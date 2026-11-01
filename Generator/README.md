@@ -14,14 +14,12 @@ What KESE does, its examples and its licence are in the [main README](../README.
 | `tests/` | The layout rules, the regression suite, its test boards and their baseline |
 | `tools/` | Scripts for the repository itself: `make_swatches.py` makes the wiki's colour boxes |
 | `pyproject.toml`, `requirements.txt` | The package, and the Python packages it was tested with |
-| `requirements-kernels.txt` | The optional CAD kernels (`manifold3d`, `cadquery`), only for `Run.BUILD_WITH_KERNELS` and the STEP read-back tests |
 
 ## Quick Start
 
 ```bash
 cd Generator
 python -m pip install -r requirements.txt     # Python 3.12 or later
-# python -m pip install -r requirements-kernels.txt   # optional: only for Run.BUILD_WITH_KERNELS (cadquery: about 1.7 GB)
 python run_KESE.py                            # Every board in Input/, settings from parameters/
 python run_KESE.py --help                     # Every option
 ```

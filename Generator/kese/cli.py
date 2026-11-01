@@ -24,15 +24,11 @@ from kese import __version__
 from parameters import P
 
 REQUIRED = ["numpy", "shapely", "mapbox_earcut"]
-KERNELS = ["manifold3d"]                # Run.BUILD_WITH_KERNELS: solid unions, and STEP by cadquery
-OPTIONAL = {"step": "cadquery"}
 
 
-def missing_packages(formats):
+def missing_packages():
     """Names of packages that are not installed, so the run can say so instead of a traceback."""
-    kernels = P.Run.BUILD_WITH_KERNELS
-    needed = REQUIRED + KERNELS * kernels + [pkg for fmt, pkg in OPTIONAL.items() if fmt in formats and kernels]
-    return [pkg for pkg in needed if importlib.util.find_spec(pkg) is None]
+    return [pkg for pkg in REQUIRED if importlib.util.find_spec(pkg) is None]
 
 
 def main():
@@ -67,13 +63,11 @@ def main():
         if value is not None:                             # command-line choices are overrides too
             P.override(key, value)
             overrides.append((key, value))
-    formats = P.Run.FILE_FORMAT
-    missing = missing_packages(formats)
+    missing = missing_packages()
     if missing:
-        listed = "requirements-kernels.txt" if set(missing) - set(REQUIRED) else "requirements.txt"
         sys.exit(f"missing Python package(s): {', '.join(missing)}\n"
                  f"install them with:  python -m pip install {' '.join(missing)}\n"
-                 f"(or the tested versions:  python -m pip install -r {listed})")
+                 "(or the tested versions:  python -m pip install -r requirements.txt)")
 
     from kese.pipeline import generate  # after the overrides, so the modules see them
 

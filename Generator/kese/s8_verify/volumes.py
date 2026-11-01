@@ -1,11 +1,10 @@
-"""The volume check of stage 8, for solids built without a kernel (Run.BUILD_WITH_KERNELS off).
+"""The volume check of stage 8 in simulation mode.
 A closed surface encloses, by the divergence theorem, the sum over its flat faces of height
 times signed area (positive looking up, negative looking down; walls are vertical and count for
 nothing).  So every part's Boundary must come to the volume of its material slice by slice, and
 the mesh cut from the same faces must enclose that volume too.  The prisms the part was built
 from come to the same volume as well, less the pinch points that were opened (a small disc cut
 out around each, see kese/core/pinches.py)."""
-from parameters import P
 
 RELATIVE_TOLERANCE = 1e-7       # of the part's volume: numerical noise of areas and meshes
 OPENED_TOLERANCE_MM3 = 1e-3     # what the opened pinch points may take from the prisms' volume
@@ -13,7 +12,7 @@ OPENED_TOLERANCE_MM3 = 1e-3     # what the opened pinch points may take from the
 
 def volumes_agree(model):
     """(ok, report lines): per part, the volume from its faces, its slices, its mesh and its prisms."""
-    if model.mode != "simulation" or P.Run.BUILD_WITH_KERNELS:
+    if model.mode != "simulation":
         return True, []
     scale = 1000.0 if model.units == "m" else 1.0
     prisms = model.prismset.by_part()

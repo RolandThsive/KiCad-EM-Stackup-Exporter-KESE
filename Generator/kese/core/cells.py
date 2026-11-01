@@ -6,7 +6,7 @@ big board is joined tile by tile (kese/s6_assemble/tiles.py)."""
 import numpy as np
 import shapely
 
-from kese.core.shapes2d import grid, polys_only
+from kese.core.shapes2d import grid
 from parameters import P
 
 
@@ -62,12 +62,3 @@ def crossed(polys, xs, ys):
     closed = np.insert(pts, np.r_[first[1:], len(pts)], pts[first], axis=0)
     ring_of = np.insert(ring, np.r_[first[1:], len(ring)], ring[first])
     return shapely.polygons(shapely.linearrings(closed, indices=ring_of), indices=of_poly)
-
-
-def split_at(g, xs, ys):
-    """The region with a point wherever one of its edges crosses one of the lines (crossed())."""
-    polys = shapely.get_parts(polys_only(g))
-    out = crossed(polys, xs, ys)
-    if out is polys:
-        return g
-    return shapely.MultiPolygon(list(out)) if len(out) > 1 else out[0]

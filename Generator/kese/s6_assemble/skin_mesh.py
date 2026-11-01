@@ -15,9 +15,9 @@ from kese.core.boundary_mesh import (
     mesh_with_shared_vertices,
     wall_triangles,
 )
+from kese.core.graph import connected_components
 from kese.core.mesh import Mesh
 from kese.s6_assemble.boundaries import workers_wanted
-from kese.s6_assemble.skin import sealed
 from parameters import P
 
 
@@ -90,3 +90,17 @@ def place_in_slice(pieces, at, probe, inside, k):
     shapely.prepare(joined)
     rows = np.flatnonzero(at == k)
     inside[rows] = shapely.contains_xy(joined, probe[rows, 0], probe[rows, 1])
+
+
+def sealed(v, f):
+    """Which faces belong to a closed shell that faces inward: the wall of a hollow inside the
+    material, out of sight from every side."""
+    if not len(f):
+        return np.zeros(0, dtype=bool)
+    edges = np.concatenate([f[:, :2], f[:, 1:]])
+    _, shell = connected_components(len(v), edges[:, 0], edges[:, 1])
+    shell = shell[f[:, 0]]
+    o = (v.min(axis=0) + v.max(axis=0)) / 2
+    a, b, c = v[f[:, 0]] - o, v[f[:, 1]] - o, v[f[:, 2]] - o
+    volume = np.bincount(shell, weights=np.einsum("ij,ij->i", a, np.cross(b, c)))
+    return volume[shell] < 0

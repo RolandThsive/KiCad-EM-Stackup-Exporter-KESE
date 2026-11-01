@@ -55,8 +55,7 @@ parts[off] = shapely.set_precision(parts[off], grid())      # Geometry.SNAP_GRID
   (`kese/core/pinches.py`). Those vertices sit just off the grid.
 - One known exception, where parts can overlap or leave a gap: the wedge beside a sloped copper
   wall (`Copper.ETCH_FACTOR > 0`, see [Copper And Traces](Copper-And-Traces.md#115-etch-factor)).
-- The price: curves are polygons, in the meshes and in the STEP file alike. Only the older
-  OpenCascade path (`Run.BUILD_WITH_KERNELS = True`) writes true circles back into STEP.
+- The price: curves are polygons, in the meshes and in the STEP file alike.
 
 ## 6.2 How A Part Becomes A Closed Solid
 
@@ -98,8 +97,6 @@ mesh = mesh_of_boundary(boundary)                  # faces cut into triangles, t
 - Last, every mesh is scaled to the output units, turned to the output orientation and shaded
   smooth across edges flatter than `Run.SMOOTH_SHADE_ANGLE_DEG` (`transform.py`). The meshes are
   KESE's own (`kese/core/mesh.py`), and so are the GLB, STL, OBJ and STEP writers (`kese/s7_write/`).
-- With `Run.BUILD_WITH_KERNELS = True` the older path runs instead: every prism is extruded and the
-  pieces of a part are joined by Manifold's boolean union (`solids.py`, `skin.py`).
 
 ## 6.3 Coordinate Frames
 

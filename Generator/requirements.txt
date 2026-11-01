@@ -6,8 +6,8 @@
 # macOS exist on PyPI for Python 3.12, 3.13 and 3.14 for every package below (checked 2026-10-18).
 # On Python 3.11 install without the pins (python -m pip install numpy shapely mapbox_earcut): pip picks
 # the last versions built for it.
-# The optional CAD kernels (Run.BUILD_WITH_KERNELS, and the tests that read STEP files back) are in
-# requirements-kernels.txt: cadquery brings about 1.7 GB with it, so it is kept out of this file.
+# The tests that read STEP files back also use OpenCascade (python -m pip install cadquery-ocp); they
+# skip that check without it, and KESE itself never needs it.
 numpy==2.5.3
 shapely==2.2.0
 mapbox_earcut==2.1.0

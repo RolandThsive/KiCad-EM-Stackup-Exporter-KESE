@@ -35,7 +35,6 @@ def add_via(ctx, node):
             items.copper_items[l].append((ring, net))
     i, j = ctx.layers.index(span[0]), ctx.layers.index(span[-1])
     items.holes.append(Hole(disk((x, y), drill / 2), i, j, True, net, C.VIA_WALL_MM, (x, y), drill / 2))
-    items.via_pads += [((x, y), d / 2) for d in sorted({size, *(sizes[l] for l in span if l in sizes)})]
     through = i == 0 and j == len(ctx.layers) - 1
     items.found["through vias" if through else "blind/buried vias"] += 1
     items.via_tenting.append((pad, span, via_tenting(node, items.tent_default)))

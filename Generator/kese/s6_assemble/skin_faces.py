@@ -1,4 +1,4 @@
-"""The "visual" mode without a kernel: the board's visible surface, found in 2D as the boundary of
+"""The "visual" mode: the board's visible surface, found in 2D as the boundary of
 a part is (kese/core/boundary.py), but for all parts at once.  At every height, what looks up is
 one part's material below minus every part's material above, and what looks down one part's
 material above minus every part's material below; a wall of a part is visible where no other

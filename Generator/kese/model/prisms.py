@@ -2,8 +2,7 @@
 
 A Prism is a flat region (shapely polygon, mm, board coordinates with Y up) between two
 heights.  Stage 4 (geometry) makes them; stage 6 (assemble) finds each part's faces from them
-and turns those into triangle meshes, and stage 7 (write) writes the faces to STEP; with
-Run.BUILD_WITH_KERNELS the STEP solids are built from the prisms themselves."""
+and turns those into triangle meshes, and stage 7 (write) writes the faces to STEP."""
 from dataclasses import dataclass, field
 
 

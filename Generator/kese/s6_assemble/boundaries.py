@@ -1,4 +1,4 @@
-"""The "simulation" mode without a geometry kernel: every part as one closed solid, its boundary
+"""The "simulation" mode: every part as one closed solid, its boundary
 found in 2D from its prisms (kese/core/boundary.py) and then cut into triangles
 (kese/core/boundary_mesh.py).  The Boundary itself is kept on the Model, so that the STEP writer
 can write the same faces as exact solids.  Run.WORKERS parts are built at once, in threads: the 2D

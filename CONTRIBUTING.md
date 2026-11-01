@@ -16,7 +16,7 @@ make sure its license is compatible with GPL-3.0-or-later.
 ## How the code is laid out
 
 All of KESE lives in `Generator/`: the `kese/` package, the settings in `parameters/`, the
-tests in `tests/`, `run_KESE.py`, `pyproject.toml`, `requirements.txt` and `requirements-kernels.txt`, and the `Input/` and
+tests in `tests/`, `run_KESE.py`, `pyproject.toml` and `requirements.txt`, and the `Input/` and
 `Output/` folders. The repository root keeps only what belongs to the repository: the README,
 the licence files, `docs/` and `.github/`. The paths below are inside `Generator/`.
 
@@ -76,12 +76,9 @@ python tests/test_layout.py      # the layout rules, about a second
 python tests/test_colors.py      # stack-up colours: named, user-defined and unknown
 python tests/test_text_layout.py # text laid out where KiCad 7.0.11 plots it
 python tests/test_kicad_version.py # the rules of each KiCad version, against KiCad's own parser
-python tests/test_step_native.py # a solid written from its faces, with no kernel, read back by OpenCascade
-python tests/test_step_file.py   # a STEP file written part by part against OpenCascade's own
-python tests/test_step_kernel.py # a STEP file in metres read back at the right size
-python tests/test_step_arcs.py   # true arcs in STEP only where they cannot cross another outline
+python tests/test_step_native.py # a solid written from its faces, read back by OpenCascade
 python tests/test_boards.py      # every test board through both modes, against tests/baseline.json
 ```
 
-`python -m pytest tests` runs all eight. When a change is meant to move the geometry, re-record the
+`python -m pytest tests` runs all six. When a change is meant to move the geometry, re-record the
 baseline with `python tests/test_boards.py --accept` and say why in the pull request.

@@ -40,8 +40,7 @@ What to make, where, and in which formats.
 
 | Name | Default | Range | Meaning |
 |---|---|---|---|
-| `BUILD_WITH_KERNELS` | `False` | bool | How stage 6 builds the model. `False`: every part's faces are found in 2D from its prisms and go as they are into the meshes and the STEP file ([Working Principle](Working-Principle.md#62-how-a-part-becomes-a-closed-solid)). `True`: the older way, every prism extruded and joined by Manifold, and the STEP file built and fused by OpenCascade (needs `cadquery`; much slower on dense boards) |
-| `WORKERS` | `0` | int ≥ 0 | Threads stage 6 works with when `BUILD_WITH_KERNELS` is `False`: parts built at once in simulation mode, slices in visual mode. `0` = one per processor core |
+| `WORKERS` | `0` | int ≥ 0 | Threads stage 6 works with: parts built at once in simulation mode, slices in visual mode. `0` = one per processor core |
 | `SHOW_PROGRESS` | `True` | bool | Live `running <stage> ... 1m 23s` line on a terminal |
 | `VERIFY` | `False` | bool | Run the Verifier after generation (2 to 4 s on the example boards; longer on dense boards) |
 | `VERIFY_RAYS` | `3000` | int > 0 | Vertical rays the Verifier casts through a visual model to test its surfaces |
@@ -59,12 +58,7 @@ What to make, where, and in which formats.
 
 | Name | Default | Range | Meaning |
 |---|---|---|---|
-| `STEP_EXACT_ARCS` | `True` | bool | Only with `BUILD_WITH_KERNELS = True`: runs of vertices on one circle (vias, round pads, round outlines, track ends, arc tracks) are written as true arcs, except where an arc would cross another outline (16.7.1); smaller files, real cylinders in CAD. The default writer keeps every curve faceted, as in the meshes |
-| `STEP_ARC_FIT_TOLERANCE_MM` | `0.0002` | mm > 0 | Vertices within this of one circle form an arc (2 × the snap grid) |
-| `STEP_ARC_MIN_POINTS` | `5` | int ≥ 3 | Minimum vertices in a run |
-| `STEP_ARC_MIN_SWEEP_DEG` | `10.0` | degrees > 0 | And turning at least this far |
 | `STEP_WRITE_ROLES` | `["board", "copper", "plating", "finish"]` | subset of the roles below | Roles written to the STEP file; mask and silk are left out by default since they are many more solids, which make the file 1.5 to 1.6 times as big (the PCIe card in `Input/`, in mm: 348 MB and 320 solids written in 8.8 s instead of 215 MB and 84 solids in 5.6 s) |
-| `STEP_FUSE_ROLES` | `["board", "copper", "plating", "finish"]` | subset of `STEP_WRITE_ROLES` | Only with `BUILD_WITH_KERNELS = True`: roles whose parts are fused into **one** solid each (what solvers need; slow on parts with many pieces); the others are compounds of touching solids (fast; fine for viewing). The default writer writes every part as the closed solids of stage 6, one per separate body |
 
 The roles are `board`, `copper`, `plating`, `finish`, `mask`, `mask_over_copper`, `silk`. A part's role
 in STEP is that of its first prism, so in simulation mode the mask on copper belongs to the `mask`
@@ -216,7 +210,6 @@ These do not change dimensions.
 | `TRIANGULATE_CELL_POINTS` | `5000` | > 0 | A polygon with more points than this has its top and bottom cut into triangles strip by strip, much faster when it has many holes (earcut's time grows with the points times the holes). The points the strips add are taken out again, so the solid keeps exactly the polygon's own vertices |
 | `TRIANGULATE_CELL_MM` | `10.0` | mm > 0 | Width of those strips, as KiCad cuts big polygons into 1 cm cells before it triangulates them |
 | `SKIN_BURIED_TEST_OFFSET_MM` | `0.0005` | mm > 0 | Visual mode: a face is dropped if a point this far outside it lies inside another solid ([Output Modes](Output-Modes.md), equation (8.1)) |
-| `SKIN_TILE_POINTS` | `250_000` | > 0 | Visual mode: a big board's skin is joined in tiles of about this many outline points; smaller tiles need less memory ([Output Modes](Output-Modes.md)) |
 | `MESH_MERGE_DIGITS` | `8` | int | Mesh vertices that round to the same point at 10^-8 (in mm or m) are one; angles under 1e-8 rad are none |
 | `FLAT_FACET_THRESHOLD` | `5000` | > 0 | Smooth shading: two faces are one flat facet where (edge radius / edge span)² exceeds this |
 
@@ -259,51 +252,6 @@ segments per quarter circle.
 
 Example: a 0.3 mm via ($`r = 0.15`$ mm) gives $`n_c = 19.2`$, so $`q = \max(8, \lceil 4.8 \rceil) = 8`$, 32
 segments around the via; the floor $`q_{\min}`$ decides for every circle below about 0.4 mm radius.
-
-In STEP files written with `Run.BUILD_WITH_KERNELS = True` and `Run.STEP_EXACT_ARCS`, a run of at
-least `STEP_ARC_MIN_POINTS` consecutive ring vertices is written as one true arc when a
-least-squares (Kåsa) circle through them fits every vertex within `STEP_ARC_FIT_TOLERANCE_MM`,
-the turn between vertices keeps one sense and is nearly the same everywhere, and the run sweeps
-at least 10°:
-
-```math
-\max_{\mathbf{p} \in \text{run}} \left| d(\mathbf{p}, \mathbf{c}) - r \right| \le \tau_{\mathrm{arc}} \qquad (16.5)
-```
-
-where $`d(\mathbf{p}, \mathbf{c})`$ is the distance from vertex $`\mathbf{p}`$ to the fitted
-centre $`\mathbf{c}`$, $`r`$ is the fitted radius and $`\tau_{\mathrm{arc}}`$ is
-`STEP_ARC_FIT_TOLERANCE_MM` (0.2 µm).
-
-Such an arc is written only where it cannot cross anything. The curve bulges out from every chord
-it replaces by the chord's sagitta
-
-```math
-s = r \left( 1 - \cos \frac{\Delta\theta}{2} \right) \qquad (16.6)
-```
-
-where $`\Delta\theta`$ is the angle the chord spans at the centre: $`s`$ is at most
-$`\varepsilon_c`$ (2 µm) on the circles KESE facets, up to about five times that on track ends and
-oval drills, which get half as many segments (16.4), and up to 5 µm on outlines the board file
-holds already faceted, such as zone fills. Where another edge passes closer to the chords than
-that, as along a sliver between two pads, the curve would cross it and the face would be invalid.
-So each arc gets a strip that holds its chords and its curve with $`g`$ to spare on both sides of
-the curve, where $`g`$ is one step of the snap grid (`SNAP_GRID_MM`, 0.1 µm): from its vertices,
-each one that is less than $`g`$ inside the curve (or outside it) moved to $`g`$ inside it, out to
-$`g`$ beyond the curve (or its furthest vertex, if that is further out), closed at its two end
-vertices; for a whole circle, the ring from $`g`$ inside the circle (or its nearest chord, if that
-is further in) out to $`g`$ beyond it (or its furthest vertex). The arc is written only when no
-edge of the band's polygons enters its strip, except the two edges at its ends, and when no other
-arc's strip overlaps it; otherwise its vertices stay straight edges. The edges at its ends may run
-along the curve, where the outline doubles back (as at the corners of a notch as wide as its pad)
-or goes on along the tangent, but must not cut into its circle by more than 0.05 nm (`TANGENT_MM`
-in `kese/s7_write/step_arcs.py`): OpenCascade takes two curves within about $`2 \times 10^{-7}`$ of
-the file's unit for touching, 0.2 nm in mm, the stricter unit, so a line a hair off the tangent
-only touches the arc, however far along it meets the circle again. An edge that joins both ends of
-an arc, as the straight side of a half round does, cannot cross it. On PC110 this keeps
-3 of 144,933 arcs straight: two had made invalid solids of a net's copper and of the dielectric
-around it, and the third an invalid band of the copper with no net, which the fuse then dropped,
-and with it the whole solid around that oval hole (0.99 mm³ of copper), leaving only valid solids
-in the file.
 
 ## 16.8 Color (`parameters/color.py`)
 
