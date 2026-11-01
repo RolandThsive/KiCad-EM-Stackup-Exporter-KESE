@@ -50,6 +50,9 @@ def parse(text):
                 stack.pop()
         else:
             stack[-1].append(tok[1] if isinstance(tok, tuple) else tok)
+    if len(stack) > 1:      # KiCad refuses such a file too
+        raise ValueError(f"the file ends with {len(stack) - 1} parenthes{'es' if len(stack) > 2 else 'is'} "
+                         "still open: it is cut short (an incomplete download or copy?)")
     return root[0] if root else []
 
 

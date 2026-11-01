@@ -22,7 +22,10 @@ def run(pcb_path, job):
 def read(path):
     path = Path(path)
     text = path.read_text(encoding="utf-8")
-    tree = parse(text)
+    try:
+        tree = parse(text)
+    except ValueError as exc:
+        raise ValueError(f"{path.name}: {exc}") from None
     if not tree or tree[0] != "kicad_pcb":
         raise ValueError(f"{path.name} is not a KiCad board file (expected (kicad_pcb ...))")
     warnings = []
