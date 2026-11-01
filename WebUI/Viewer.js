@@ -235,13 +235,20 @@ export class Viewer {
   view(name) {
     this.lastView = name;
     const deg = THREE.MathUtils.degToRad;
-    const [theta, phi] = { iso: [-25, 60], top: [0, 0.01], bottom: [0, 179.99], side: [0, 90] }[name] || [-25, 60];
+    // Top and Bottom look straight down or up, the board's top edge up on screen.  OrbitControls keeps camera.up as
+    // it was when it started (+Y), so the views go near the poles instead of changing up (which made turning wild);
+    // turning is off there, zoom and pan stay.  3D View (iso) turns freely again.
+    const [theta, phi] = { iso: [-25, 60], top: [0, 0.001], bottom: [0, 179.999] }[name] || [-25, 60];
     const fit = 0.5 * this.size / Math.sin(deg(this.camera.fov / 2)) * 0.8 / Math.min(1, this.camera.aspect);
-    const d = Math.max(fit, 1e-6);
+    let d = Math.max(fit, 1e-6);
+    if ((name === "top" || name === "bottom") && this.root) {     // straight on: the whole board fits, with a margin
+      const sz = new THREE.Box3().setFromObject(this.root).getSize(new THREE.Vector3()), t = Math.tan(deg(this.camera.fov / 2));
+      d = 1.35 * Math.max(sz.z / 2 / t, sz.x / 2 / (t * this.camera.aspect)) + sz.y / 2;
+    }
     const th = deg(theta), ph = deg(phi);
     this.camera.position.set(d * Math.sin(ph) * Math.sin(th), d * Math.cos(ph), d * Math.sin(ph) * Math.cos(th));
     this.camera.up.set(0, 1, 0);
-    if (name === "top" || name === "bottom") this.camera.up.set(0, 0, -1);
+    this.controls.enableRotate = !(name === "top" || name === "bottom");
     this.controls.target.set(0, 0, 0);
     this.controls.update();
     this.draw();

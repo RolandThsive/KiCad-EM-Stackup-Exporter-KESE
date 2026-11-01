@@ -38,7 +38,6 @@
   "presetTitles": {"hfss": "HFSS", "cst": "CST", "openems": "openEMS", "viewer": "Viewer"},
 
   "_preview": "Which generated file the preview opens first in each mode, when several were made.",
-  "previewTabs": ["visual", "simulation"],
   "previewOrder": {"simulation": ["step", "stl", "glb", "obj"], "visual": ["glb", "obj"]},
 
   "links": {

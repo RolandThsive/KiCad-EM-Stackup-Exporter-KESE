@@ -75,7 +75,7 @@
     <!-- Controls -->
     <aside id="controls" class="panel">
       <div id="controls-scroll">
-        <h2 class="pacifico">Board</h2>
+        <h2 class="pacifico">Upload a Board</h2>
         <label class="drop" id="drop" data-tip="Drop a .kicad_pcb here, or click to choose one. It is read in your browser and never uploaded.">
           <svg viewBox="0 0 24 24"><path d="M12 15V4M7.5 8.5 12 4l4.5 4.5"/><path d="M4 15v4a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-4"/></svg>
           <span class="drop-text"><b id="board-name">Choose a .kicad_pcb</b><span id="board-meta" class="hint">or drop it here</span></span>
@@ -100,11 +100,6 @@
 
     <!-- Preview -->
     <section id="preview" class="panel">
-      <div class="preview-head">
-        <div class="segmented" id="preview-tabs"></div>
-        <label class="showing" data-tip="Which of this run's files the preview shows">Showing
-          <select id="showing" disabled></select></label>
-      </div>
       <div class="canvas-wrap" id="canvas-wrap">
         <canvas id="view"></canvas>
         <div class="canvas-tools">
@@ -114,11 +109,12 @@
             <button class="glass-btn small icon-btn" id="btn-shot" aria-label="Screenshot" data-tip="Save the view as a PNG"><svg viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="13" rx="2"/><circle cx="12" cy="13.5" r="3.5"/><path d="M8 7l1.5-3h5L16 7"/></svg></button>
           </span>
         </div>
+        <label class="showing" data-tip="Which of this run's files the preview shows" hidden>Showing
+          <select id="showing" disabled></select></label>
         <div class="segmented views" id="views">
-          <button data-view="top" data-tip="Look down on the top of the board">Top</button>
-          <button data-view="bottom" data-tip="Look up at the bottom of the board">Bottom</button>
-          <button data-view="iso" class="on" data-tip="25° from the left, 30° above: the view of the project's model pages">Iso</button>
-          <button data-view="side" data-tip="Look at the edge of the board, to see the layers">Side</button>
+          <button data-view="top" data-tip="Look straight down on the top of the board. Turning is off; zoom and pan still work">Top</button>
+          <button data-view="bottom" data-tip="Look straight up at the bottom of the board. Turning is off; zoom and pan still work">Bottom</button>
+          <button data-view="iso" class="on" data-tip="Turn the model freely; starts 25° from the left and 30° above (the view of the project's model pages)">3D View</button>
         </div>
         <div class="stale-badge" id="stale-badge" hidden>Settings changed: press Generate to update the model</div>
         <div class="empty-note" id="empty-note">Choose a board, then press Generate.<br><span class="hint">The model is made in your browser.</span></div>
