@@ -22,18 +22,58 @@ def copper_layers(r, items, outline_k):
             per_net[net].append(g)
         regions = {}
         for net, gs in per_net.items():
-            cu = union(gs)
+            # joined on the grid: two shapes whose edges run along the same line only to within
+            # floating point (two zone fills, a fill and a pad) join cleanly instead of leaving a crack
+            cu = shapely.union_all(gs, grid_size=sh.grid()) if len(gs) > 1 else gs[0]
             if P.Geometry.SIMPLIFY_TOLERANCE_MM > 0:   # before the cuts: the board edge and the holes stay exact
                 cu = cu.simplify(P.Geometry.SIMPLIFY_TOLERANCE_MM)
             cu = cu.intersection(outline_k)
             near = tree.query(cu, predicate="intersects") if not cu.is_empty else []
             if len(near):                          # only the holes this net touches, as KiCad cuts
                 cu = cu.difference(union([holes[i] for i in near]))
-            cu = T(cu)
+            cu = close_hairline_gaps(fill_hairline_holes(T(cu)))     # on the grid, where the hairlines show
             if not cu.is_empty:
                 regions[net] = cu
         r.copper[l] = first_net_keeps(regions)
         r.copper_all[l] = side_by_side(list(r.copper[l].values()))
+
+
+def close_hairline_gaps(cu):
+    """A net's copper with the pieces that meet within two grid steps joined.  Two shapes of one net
+    that only just meet (a KiCad 5 zone fill grown to a pad's edge, the pad's polygon a hair off it)
+    union to two pieces along a sliver, and once on the grid their shared wall is two walls that
+    do not quite agree, which leaves the solid open.  Only the pieces that meet are closed (grown
+    and shrunk back by a grid step, mitred), so the rest of the copper is untouched."""
+    parts = list(shapely.get_parts(cu)) if cu.geom_type == "MultiPolygon" else []
+    if len(parts) < 2:
+        return cu
+    g = sh.grid()
+    i, j = shapely.STRtree(parts).query(parts, predicate="dwithin", distance=2 * g)
+    near = sorted(set(i[i < j].tolist()) | set(j[i < j].tolist()))
+    if not near:
+        return cu
+    joined = union([parts[k].buffer(g, join_style="mitre") for k in near]).buffer(-g, join_style="mitre")
+    keep = set(near)
+    return sh.snap(union([joined] + [p for k, p in enumerate(parts) if k not in keep]))
+
+
+HAIRLINE_HOLE_MM = 1e-3      # a hole in one net's copper narrower than this on average is no hole
+
+
+def fill_hairline_holes(cu):
+    """A net's copper with its hairline holes filled: where KiCad's zone fill runs round a pad or via
+    of its own net with other arcs than the pad's own polygon, the union leaves needle-thin holes
+    between the two (a real board had 193 under 1 um wide, and none between 1 and 3 um), which pinch
+    the solid where they touch.  A hole whose mean width, twice its area over its perimeter, is
+    under HAIRLINE_HOLE_MM is filled; drills and clearances are far wider."""
+    if cu.is_empty or cu.geom_type not in ("Polygon", "MultiPolygon"):
+        return cu
+    parts, changed = [], False
+    for p in shapely.get_parts(cu):
+        keep = [r for r in p.interiors if 2 * shapely.Polygon(r).area >= HAIRLINE_HOLE_MM * r.length]
+        changed |= len(keep) != len(p.interiors)
+        parts.append(shapely.Polygon(p.exterior, keep) if len(keep) != len(p.interiors) else p)
+    return union(parts) if changed else cu      # union: a filled hole may hold a speck of its own
 
 
 def first_net_keeps(regions):

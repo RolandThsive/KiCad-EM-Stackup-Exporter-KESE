@@ -44,12 +44,13 @@ python tests/test_boards.py                     # the regression suite over ever
 | `file has no (version ...): treated as legacy KiCad 5` | Best-effort read. |
 | `file format N is outside the tested range 20211014-20260206; proceeding best-effort` | Older than KiCad 6 or newer than KiCad 10. |
 | `N copper layers: more than the 8 this project has been tested with` | The layers are still modelled. |
+| `copper layers named by the user, read by their number: TOP = F.Cu, ...` | A KiCad 4 or 5 file whose copper layers were renamed (any name other than `F.Cu`, `B.Cu` or `In<n>.Cu`, also one that ends in `.Cu` such as `GND.Cu`): each is read as the layer its number says (0 = `F.Cu`, 31 = `B.Cu`, n = `In<n>.Cu`). |
 | `N copper zone(s) have no fill stored in the file and are ignored` | Fill the zones in KiCad (press **B**) and save. Until then those zones produce no copper. |
 | `Edge.Cuts lines/arcs do not form a closed outline` | The outline could not be polygonized; closed shapes on `Edge.Cuts` are still used. |
 | `no Edge.Cuts outline; using the copper's convex hull + 1.0 mm` | The fallback outline. |
 | `DIELECTRIC_SPLIT=... unknown, using 'even'` | Only `"even"` is implemented. |
-| `not modelled, see 'skipped' in report.txt: backdrills of vias, filled vias, ...` | The board has padstacks, or holes that KiCad 10 backdrills, post-machines, covers, plugs, caps or fills. KESE models the front shape on every layer and the hole plated through its whole span and open; `skipped` gives the counts. |
-| `left out, of a kind KESE does not know: gr_ellipse (2), ...` | Items of a kind KESE does not read, such as the ellipses of KiCad's development version. They are missing from the model. |
+| `not modelled, see 'skipped' in report.txt: backdrills of vias, filled vias, ...` | The board has holes that KiCad 10 backdrills, post-machines, covers, plugs, caps or fills. KESE models the hole plated through its whole span and open; `skipped` gives the counts. |
+| `left out, of a kind KESE does not know: fp_foo (2), ...` | Items of a kind KESE does not read, such as a drawing kind newer than this version of KESE. They are missing from the model. |
 | `the stack-up colour '<value>' of <layer> is neither a colour name of parameters/color.py nor #RRGGBBAA; its parts keep their MATERIALS colour` | A mask or silkscreen colour KESE cannot read keeps KESE's colour. Add the name to the tables in `parameters/color.py` ([Colorizing](Colorizing.md#122-colours-from-the-stack-up)). |
 
 ### 17.1.3 Notes Worth Knowing
@@ -79,7 +80,7 @@ Tracks and arc tracks per layer, zone fills per layer, graphics and footprint gr
 text per layer, pads, pad mask openings per side, the mask openings of tracks, arc tracks and
 drawings the mask leaves bare (KiCad 9 and later) per side, non-plated holes, through vias, blind/buried
 vias, footprints, outline shapes on `Edge.Cuts`, via rings removed on unconnected layers,
-castellated holes, the edge plating band and its net, text in a TrueType face drawn with the
+castellated holes, the edge plating band and its net, text in a TrueType face from its render cache or drawn with the
 stroke font.
 
 ### 17.2.2 Skipped
@@ -95,7 +96,7 @@ stroke font.
 | `barcode items` | KiCad 10 barcodes (QR codes and others), on the board or in a footprint. The file holds only the barcode's text and size, which KiCad turns into a pattern when it plots, so KESE leaves them out, even on copper or silkscreen. |
 | `pads of shape <shape>` | A pad shape KESE does not know. |
 | `<kind> items (unknown to KESE)` | An item at the top level of the file, or a footprint drawing (`fp_...`), of a kind KESE does not read; also a warning. |
-| `pads with a padstack` / `vias with a padstack (the front shape is used on every layer)` | KiCad 9 and later: another shape on the inner layers or on the back, not modelled; also a warning. |
+| `pads with a padstack (a shape per layer)` / `vias with a padstack (a shape per layer)` (under found) | KiCad 9 and later: another shape on the inner layers or on the back; each copper layer gets its own shape, and the back mask opening follows the back shape. |
 | `backdrills` / `tertiary drills of pads` / `of vias (the hole is plated through its whole span)` | KiCad 10: the drill that removes the plating from part of the hole, not modelled; also a warning. |
 | `counterbores` / `countersinks of pads` / `of vias (not cut)` | KiCad 10's post-machining of a hole's end, not modelled; also a warning. |
 | `covered` / `plugged` / `capped` / `filled vias (the ... is not modelled)` | KiCad 10's via protection, set on the via or, when it does not say, in the board setup; the hole stays open. Also a warning. |

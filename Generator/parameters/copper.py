@@ -59,7 +59,7 @@ EDGE_PLATING_NET = "auto"
 #   "open"   - open the mask over every via
 VIA_TENTING = "file"
 
-# KiCad's "remove unused layers" on vias: drop annular rings on layers nothing connects to
+# KiCad's "remove unused layers" on vias and through-hole pads: drop annular rings on layers nothing connects to
 HONOUR_REMOVE_UNUSED_LAYERS = True
 
 # Electrical properties (written to materials.json for the solver)

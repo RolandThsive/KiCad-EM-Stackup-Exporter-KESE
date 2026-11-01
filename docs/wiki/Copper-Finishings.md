@@ -42,9 +42,9 @@ On the `B` side every z is mirrored.
 | $`L`$, $`t_{\mathrm{out}}`$ | laminate thickness and finished outer copper, equations (7.1) and (7.3) | |
 
 For ENIG on `F.Cu` of a board with no stack-up and `(general (thickness 1.6))`, so
-$`L = 1.6`$ mm, and 35 µm copper: nickel from 0.835 to 0.840 mm, gold from 0.840 to 0.84008 mm.
-With a stack-up the laminate is thinner than the board's total thickness and the heights shift
-accordingly: on board 18b below, a 1.51 mm core, the nickel starts at 0.790 mm.
+$`L = 1.6 - 2 \times 0.035 - 2 \times 0.010 = 1.51`$ mm, and 35 µm copper: nickel from 0.790 to
+0.795 mm, gold from 0.795 to 0.79508 mm. With a stack-up the laminate is the stack-up's dielectrics
+and the heights follow them: on board 18b below, a 1.51 mm core, the nickel also starts at 0.790 mm.
 
 ## 13.3 Finish Types
 

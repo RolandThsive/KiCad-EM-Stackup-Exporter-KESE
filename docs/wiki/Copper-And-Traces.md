@@ -25,10 +25,10 @@ Per copper layer, these items are collected with their net (text always as no ne
 | `segment` (track) | the centre line thickened by the track width, round ends; a track left bare by the solder mask (KiCad 9 and later) also opens the mask, see [Solder Masks](Solder-Masks.md#151-kicads-mask-layers-are-negative) |
 | `arc` (arc track) | the arc flattened to `Geometry.ARC_STEP_DEG` steps, thickened; left bare by the solder mask, it opens the mask as a track does |
 | `via` | a disc of the via's size on every layer it spans, except rings dropped by KiCad's "remove unused layers" (see 11.3) |
-| `pad` | the pad shape (circle, rect, oval, roundrect, trapezoid, custom with anchor and primitives; chamfered corners are drawn as the plain rounded rectangle) at its position and angle, with the drill offset, on each copper layer the pad lists (`*.Cu`, `F&B.Cu` expanded); an NPTH pad gives no copper, only its hole |
-| `zone` fill | the `filled_polygon` polygons stored in the file |
-| `gr_*` / `fp_*` graphics on a copper layer | lines and arcs thickened by their stroke width; filled shapes filled; unfilled closed shapes as their outline stroke; rectangles with their rounded corners (KiCad 10); a drawing left bare by the solder mask (KiCad 9 and later) also opens the mask, as a track does |
-| text on a copper layer | the stroke-font glyphs, as on silkscreen |
+| `pad` | the pad shape (circle, rect, oval, roundrect, trapezoid, custom with anchor and primitives; a chamfered rectangle has the corners its `chamfer` lists cut straight, legs `chamfer_ratio` x the shorter side, and those corners not rounded) at its position and angle, with the drill offset, on each copper layer the pad lists (`*.Cu`, `F&B.Cu` expanded), except inner rings of a through-hole pad dropped by "remove unused layers" (see 11.3.1); an NPTH pad gives its hole, and a copper ring only where KiCad flashes it (`PAD::FlashLayer`): not for a round (or oval) pad no bigger than its round (or oval) drill and not offset |
+| `zone` fill | the `filled_polygon` polygons stored in the file; a fill KiCad 5 drew with a pen (a file older than format 20250210 without `(filled_areas_thickness no)`) grows by half the zone's `min_thickness`, round at the corners, as KiCad does when it opens such a file |
+| `gr_*` / `fp_*` graphics on a copper layer | lines and arcs thickened by their stroke width; filled shapes filled (with no `fill` in the file, as KiCad reads it: a circle or rectangle of width 0, and a polygon off Edge.Cuts); a self-crossing polygon keeps every lobe; unfilled closed shapes as their outline stroke; rectangles with their rounded corners (KiCad 10); a drawing left bare by the solder mask (KiCad 9 and later) also opens the mask, as a track does |
+| text on a copper layer | the stroke-font glyphs, as on silkscreen; knockout text (`(layer "F.Cu" knockout)`) is the text's box, square to the text and grown by max(pen / 2, height / 9), with the letters cut out |
 
 Then, per layer and per net: union, simplify, clip to the outline, subtract the holes, move to
 the board frame ([6.3](Working-Principle.md#63-coordinate-frames)) and snap to the grid
@@ -56,6 +56,17 @@ X_k = \begin{cases} \bigcup_{h : a_h \le k \le b_h} \left( H_h \ominus w_h \righ
 | $`a_h, b_h`$ | first and last copper layer index hole $`h`$ spans | |
 | $`\ominus w`$ | shrinks a region inward by $`w`$ (a negative buffer) | |
 | $`\varepsilon`$ | simplification tolerance (0.5 µm) | `Geometry.SIMPLIFY_TOLERANCE_MM` |
+
+Three clean-ups follow, both for shapes of one net that only just meet:
+
+- The union is taken on the grid, so two edges that run along one line only to within floating
+  point (two zone fills, a fill and a pad) join without a crack.
+- A hole in $`C_{k,n}`$ whose mean width, twice its area over its perimeter, is under 1 µm is
+  filled. Such needle holes are left where a zone fill runs round a pad or via of its own net
+  with other arcs than the pad's own polygon (on one KiCad 10 board 193 of them, and no hole
+  between 1 and 3 µm); they pinch the solid where they touch. Drills and clearances are far wider.
+- Pieces of one net that come within two grid steps of each other are joined (grown and shrunk
+  back by a grid step, mitred), so their walls cannot leave the solid open on the grid.
 
 ### 11.1.1 Nets
 
@@ -156,19 +167,27 @@ region; with `"net"` grouping they go into the net's part, with `"layer"` groupi
 
 ### 11.3.1 Remove Unused Layers
 
-KiCad's via option "remove unused layers" drops the annular rings on layers where nothing
-connects. With `Copper.HONOUR_REMOVE_UNUSED_LAYERS = True` (the default), KESE keeps a via's
-ring on such a layer only when other copper of the board already touches it there:
+KiCad's via and through-hole pad option "remove unused layers" drops the annular rings on layers
+where nothing connects. With `Copper.HONOUR_REMOVE_UNUSED_LAYERS = True` (the default), KESE keeps
+a via's (or pad's) ring on such a layer only when copper of its net already touches it there, as
+KiCad's `FlashLayer` (pad.cpp, pcb_track.cpp) decides:
 
 ```math
-\text{keep } P_v \text{ on } l_k \iff P_v \cap \bigcup_{j \in I_k} G_j \neq \varnothing \qquad (11.8)
+\text{keep } P_v \text{ on } l_k \iff l_k \in Z_v \;\lor\; P_v \cap \bigcup_{j \in I_k(n_v)} G_j \neq \varnothing \qquad (11.8)
 ```
 
-where $`P_v`$ is the via's round pad and $`I_k`$ every copper item already collected on $`l_k`$
-(tracks, zones, pads, graphics and the vias' own rings, but not other vias' conditional rings),
-tested before the outline and hole cuts. The start
-and end layers are always kept when the via says `keep_end_layers`. `report.txt` counts the rings
-removed under `via rings removed on unconnected layers`.
+where $`P_v`$ is the via's round pad (or the pad's shape on that layer), $`n_v`$ its net and
+$`I_k(n)`$ every copper item of net $`n`$ already collected on $`l_k`$ (tracks, pads, graphics and
+the vias' own rings, but not other conditional rings), tested before the outline and hole cuts. A
+ring with no net is tested against all copper. $`Z_v`$ is the list KiCad 7+ writes as
+`(zone_layer_connections "In1.Cu" ...)`: the layers where the zone filler found a zone meeting the
+ring. KiCad flashes the ring there, and zones do not count in the test on the other layers. A
+file older than KiCad 7 has no such list, and zones count like any copper.
+
+The start and end layers are always kept when the via or pad says `keep_end_layers`. A KiCad 10
+via with `(start_end_only yes)` keeps its rings on its start and end layers only, whatever meets
+it. `report.txt` counts the rings removed under `via rings removed on unconnected layers` (pad
+rings included).
 
 ### 11.3.2 Via Tenting
 
@@ -339,7 +358,7 @@ and `plating_added_mm` are those of the part's first layer. See
 | `EDGE_PLATING_WALL_MM` | `0.025` | mm > 0 | Width of the edge band |
 | `EDGE_PLATING_NET` | `"auto"` | `"auto"` or a net name | Which net the edge copper belongs to |
 | `VIA_TENTING` | `"file"` | `"file"` / `"tented"` / `"open"` | Mask over vias |
-| `HONOUR_REMOVE_UNUSED_LAYERS` | `True` | bool | Drop via rings on layers nothing connects to |
+| `HONOUR_REMOVE_UNUSED_LAYERS` | `True` | bool | Drop via and through-hole pad rings on layers nothing connects to |
 | `COPPER_CONDUCTIVITY_S_PER_M` | `5.8e7` | S/m | Written to `materials.json` |
 | `COPPER_SURFACE_ROUGHNESS_UM` | `0.0` | µm ≥ 0 | Written to `materials.json`; 0 = ignore |
 | `NO_NET_NAME` | `"no_net"` | text | Name of copper that belongs to no net |

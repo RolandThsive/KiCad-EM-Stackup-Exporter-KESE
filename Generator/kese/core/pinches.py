@@ -17,6 +17,7 @@ from kese.core import shapes2d as sh
 from kese.core.vertices import grid_keys, near_edge, noded, pairs_in, vertex_keys
 from parameters import P
 
+DISC_TURN_DEG = 17.0     # see cut_disc
 CUT_ROUNDS = 10          # the radius doubles each round: up to 512 times Geometry.PINCH_POINT_OPENING_MM
 
 
@@ -37,7 +38,7 @@ def open_pinches(region, log=None):
             break
         r = P.Geometry.PINCH_POINT_OPENING_MM * 2 ** round_
         for k, pts in cuts.items():
-            discs = shapely.union_all([shapely.Point(p).buffer(r, quad_segs=2) for p in pts])
+            discs = shapely.union_all([cut_disc(p, r) for p in pts])
             parts[k] = noded(parts[k].difference(discs, grid_size=sh.grid()))
         check, cut_any = sorted(cuts), True
     else:
@@ -46,6 +47,15 @@ def open_pinches(region, log=None):
     if not cut_any:
         return region
     return sh.as_region([q for p in parts for q in shapely.get_parts(p) if q.area > 1e-10])
+
+
+def cut_disc(p, r):
+    """The disc cut out around a pinch point: an octagon turned by DISC_TURN_DEG, so that none of its
+    corners lies on the horizontal, vertical or 45-degree line through the point.  KiCad's edges run
+    along those lines, and an octagon corner on an edge through the point (two holes touching at a
+    corner of their collinear edges) makes a new pinch there, round after round."""
+    a = np.radians(DISC_TURN_DEG + 45.0 * np.arange(8))
+    return shapely.Polygon(np.c_[p[0] + r * np.cos(a), p[1] + r * np.sin(a)])
 
 
 def pieces_too_close(parts):
@@ -73,7 +83,11 @@ def points_of(g):
 
 def repeated_vertices(polygon):
     """The vertices a polygon has twice (where its rings touch each other or themselves), as xy."""
+    if polygon is None or polygon.is_empty:          # a piece the cuts took away entirely
+        return []
     keys, ring, xy = vertex_keys(polygon)
+    if len(keys) == 0:
+        return []
     ring_end = np.flatnonzero(np.r_[ring[1:] != ring[:-1], True])    # a ring's closing point repeats its first
     keys, xy = np.delete(keys, ring_end), np.delete(xy, ring_end, axis=0)
     _, idx, count = np.unique(keys, return_index=True, return_counts=True)

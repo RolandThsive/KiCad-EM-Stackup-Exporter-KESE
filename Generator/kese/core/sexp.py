@@ -2,6 +2,16 @@
 import re
 
 
+ESCAPES = {"n": "\n", "r": "\r", "t": "\t"}
+
+
+def unescape(text):
+    """A quoted string of the file as KiCad reads it: \\n a new line, \\t a tab, \\" and \\\\ the
+    character itself (KiCad writes \\n, \\r, \\" and \\\\, and a tab as it is).  Done once, here, for
+    every quoted string: net names, text and properties alike."""
+    return re.sub(r"\\(.)", lambda m: ESCAPES.get(m.group(1), m.group(1)), text, flags=re.DOTALL)
+
+
 def _tokenize(text):
     i, n = 0, len(text)
     while i < n:
@@ -15,7 +25,8 @@ def _tokenize(text):
             j = i + 1
             while j < n and text[j] != '"':
                 j += 2 if text[j] == "\\" else 1
-            yield ("str", text[i + 1:j])
+            raw = text[i + 1:j]
+            yield ("str", unescape(raw) if "\\" in raw else raw)
             i = j + 1
         else:
             j = i

@@ -87,7 +87,10 @@ mesh = mesh_of_boundary(boundary)                  # faces cut into triangles, t
 - The faces are cut by earcut, as in KiCad's 3D viewer; a polygon of more than
   `Geometry.TRIANGULATE_CELL_POINTS` points strip by strip, as KiCad cuts big polygons into cells.
   A cut that does not close exactly on the polygon's edges is done again by Manifold's
-  triangulator (`kese/core/triangulate.py`).
+  triangulator (`kese/core/triangulate.py`). Earcut makes a flat triangle (three points on one
+  line, area zero) where a ring has a point on a straight run, the vertex another face shares; such
+  a triangle is flipped away with its neighbour across its long edge, so no mesh holds a triangle
+  of zero area, which some meshers and STL importers reject.
 - `Run.WORKERS` parts are built at once, the biggest first. Every part keeps its faces (its
   `Boundary`), and the STEP writer writes those same faces as a closed solid.
 - Visual mode does the same for all parts at once and keeps only the faces between material and

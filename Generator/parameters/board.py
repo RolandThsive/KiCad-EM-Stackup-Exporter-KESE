@@ -8,7 +8,8 @@ fabricator's datasheet numbers for lab work.
 # Laminate thickness in mm, or None to take it from the board file:
 #   with a stackup   -> sum of the stackup's dielectric layers (+ inner copper), so the finished
 #                       board (laminate + outer copper + mask) equals KiCad's board thickness
-#   without stackup  -> KiCad's (general (thickness ...)) value
+#   without stackup  -> KiCad's (general (thickness ...)) value less the outer copper and the two
+#                       masks, so the finished board again equals KiCad's board thickness
 BOARD_THICKNESS_MM = None
 
 # When the file has no stackup, how the laminate is divided between copper layers:

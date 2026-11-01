@@ -160,7 +160,9 @@ Any value the stack-up leaves out falls back to the parameter defaults:
 When the file has no stack-up block, or an unusable one:
 
 - The laminate thickness is the file's `(general (thickness ...))`, or 1.6 mm when the file has
-  none.
+  none, less the outer copper and the two masks (`SolderMask.MASK_OVER_COPPER_MM` each), as
+  KiCad's default stack-up counts them (`BOARD_STACKUP::BuildDefaultStackupList`), so the
+  finished board is KiCad's board thickness, equation (7.10b).
 - The laminate minus the inner copper is divided **evenly** between the copper layers
   (`Board.DIELECTRIC_SPLIT = "even"`, the only split implemented), equation (7.11). Each gap
   becomes a dielectric named `dielectric 1`, `dielectric 2`, ... of the default type and material
@@ -169,18 +171,26 @@ When the file has no stack-up block, or an unusable one:
   stack-up block may still supply some).
 
 ```math
+L = T - t_{l_0} - t_{l_{N-1}} - 2\,m \qquad (7.10b)
+```
+
+```math
 h_i = \frac{L - \sum_{k=1}^{N-2} t_k}{N - 1} \qquad (7.11)
 ```
 
 | Symbol | Meaning | Parameter |
 |---|---|---|
 | $`h_i`$ | thickness of every dielectric | |
-| $`L`$ | laminate thickness: the file's board thickness, else 1.6 mm | `(general (thickness ...))` |
+| $`L`$ | laminate thickness, equation (7.10b) | |
+| $`T`$ | the file's board thickness, else 1.6 mm | `(general (thickness ...))` |
+| $`t_{l_0}`$, $`t_{l_{N-1}}`$ | foil of the outer copper layers | `Copper.DEFAULT_OUTER_FOIL_MM` |
+| $`m`$ | mask thickness over copper | `SolderMask.MASK_OVER_COPPER_MM` |
 | $`t_k`$ | foil of inner copper layer $`l_k`$ | `Copper.DEFAULT_INNER_FOIL_MM` |
 | $`N`$ | number of copper layers | |
 
 The 4-layer `featureTest/15_stackup_none` has no stack-up and a 1.2 mm board:
-$`h_i = (1.2 - 2 \times 0.035) / 3 = 0.3767`$ mm for each of the three dielectrics.
+$`L = 1.2 - 2 \times 0.035 - 2 \times 0.010 = 1.11`$ mm and
+$`h_i = (1.11 - 2 \times 0.035) / 3 = 0.3467`$ mm for each of the three dielectrics.
 
 ### 7.2.3 Forcing The Laminate Thickness
 
@@ -208,8 +218,8 @@ h_i^{*} = s \cdot h_i \qquad (7.13)
 | `report.txt` says | Meaning |
 |---|---|
 | `stackup dielectrics (+ inner copper); board total in file X mm` | summed from the stack-up |
-| `file (general (thickness)) - no usable stackup` | the file's board thickness, split evenly |
-| `default 1.6 mm (no thickness in file)` | neither was available |
+| `file (general (thickness T)) less the outer copper and the masks - no usable stackup` | the file's board thickness less outer copper and masks, split evenly |
+| `default 1.6 mm less the outer copper and the masks (no thickness in file)` | neither was available |
 | `Board.BOARD_THICKNESS_MM` (`... (stackup dielectric proportions kept)`) | forced by the parameter |
 
 > [!IMPORTANT]

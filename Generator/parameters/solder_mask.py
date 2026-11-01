@@ -20,5 +20,10 @@ MASK_EDGE_PULLBACK_MM = 0.005
 # Pad-to-mask clearance in mm, or None to follow the board file (pad / footprint / board setup)
 PAD_TO_MASK_CLEARANCE_MM = None
 
+# Solder mask minimum web width in mm, or None to follow the board file (setup (solder_mask_min_width)).
+# As KiCad plots the mask (and the fab makes it), openings closer than this are joined: no strip of
+# mask narrower than this stays between them.  0 = keep every web.
+MASK_MIN_WIDTH_MM = None
+
 # Curve quality of the little walls where the mask climbs over a trace (segments per quarter circle)
 MASK_WALL_QUAD_SEGS = 4

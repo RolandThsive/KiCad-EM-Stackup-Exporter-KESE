@@ -18,7 +18,7 @@ solvers and CAD, and a **visual model** of the visible surface for viewers.
 | Board edge | Castellated holes and edge plating |
 | Dielectrics | One solid per gap between copper layers with its own εr and tanδ; resin fills the space beside inner copper |
 | Solder mask | Openings as KiCad draws them (pads, drawn openings, untented vias, and tracks and copper drawings the mask leaves bare); conformal over every trace; pulled back from the board edge; open over every bore, so on a tented via it covers only the ring |
-| Silkscreen | KiCad's stroke font and text layout (TrueType text is drawn in the stroke font; a custom stroke or Hershey font is optional); removed inside mask openings, as fabricators do |
+| Silkscreen | KiCad's stroke font and text layout (TrueType text from the glyphs KiCad saves with it, else in the stroke font; a custom stroke or Hershey font is optional); removed inside mask openings, as fabricators do |
 | Surface finish | ENIG, ENEPIG, HASL, lead-free HASL, OSP, immersion silver, immersion tin, hard gold: each metal its own layer on the bare copper, taken from KiCad's finish name. Off by default. |
 | Etching | Optional sloped copper walls (`Copper.ETCH_FACTOR`) |
 | Colours | One material per part; KiCad's mask and silk colour names honoured |
@@ -64,7 +64,6 @@ More in [Output Modes](Output-Modes.md).
 | KiCad 10 barcodes and points | Skipped and listed in `report.txt`; the file holds no pattern for a barcode, only its text |
 | Keepout and rule areas | No copper, by design |
 | Zones never filled | No copper, with a warning: fill them in KiCad (**B**) and save |
-| Chamfered pad corners | Drawn as the plain rounded rectangle |
 | Bevel of an edge connector | Not read: the edge stays square |
 | Rigid-flex, several stack-ups in one board | Not modelled |
 

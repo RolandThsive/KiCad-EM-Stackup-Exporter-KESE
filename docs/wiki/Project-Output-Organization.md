@@ -185,14 +185,18 @@ file name and the OBJ object and material names carry it sanitised (the rule in 
 | silk | `Top Silkscreen`, `Bottom Silkscreen` |
 | finish | `Top Finish Nickel`, `Bottom Finish Gold`, or `Top Finish Gold_<net>` |
 
-Net names are used as KiCad stores them, including characters such as `~{RESET}`, `/SDA` or
-`Net-(R1-Pad2)`, so for such nets the STL and OBJ names differ from the part name
-(`Copper__RESET`, `Copper__SDA`, `Copper_Net-_R1-Pad2`). `materials.json` gives the STL name
-under `file_names.stl`, built with the same rule, so it always matches the file on disk.
+Net names are used as KiCad shows them: the escapes KiCad stores for characters a net name cannot
+hold (`{slash}`, `{colon}`, `{dblquote}` and the rest of KiCad's `UnescapeString`) are turned back
+into those characters, and markup such as `~{RESET}` is kept as written. Names with characters
+such as `~{RESET}`, `/SDA` or `Net-(R1-Pad2)` therefore give STL and OBJ names that differ from
+the part name (`Copper__RESET`, `Copper__SDA`, `Copper_Net-_R1-Pad2`: letters of any script,
+digits and `_ . + -` are kept, every other run of characters becomes one `_`). `materials.json`
+gives the STL name under `file_names.stl`, built with the same rule, so it always matches the file
+on disk.
 
-> [!NOTE]
-> Two part names that sanitise to the same string (for example nets `/SDA` and `~{SDA}`) would
-> write the same STL file, and the second would replace the first.
+Two part names that sanitise to the same string (for example nets `/SDA` and `~{SDA}`, or
+`VCC(3V3)` and `VCC_3V3`) get a counter on the second, `Copper__SDA_2`, compared without regard to
+case as Windows and macOS file systems do, so no file replaces another.
 
 ## 19.4 Tests Output
 

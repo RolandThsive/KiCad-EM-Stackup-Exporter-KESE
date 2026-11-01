@@ -37,4 +37,5 @@ class Items:
     tent_source: str = ""
     via_protection: dict = field(default_factory=dict)  # KiCad 10: covering, plugging, ... when a via does not say
     mask_clearance: float = 0.0
+    mask_min_width: float = 0.0          # setup (solder_mask_min_width): narrower mask webs are not made
     via_pads: list = field(default_factory=list)      # exact (centre, radius) of every via pad

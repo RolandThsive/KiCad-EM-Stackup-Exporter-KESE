@@ -135,11 +135,27 @@ T = \begin{cases} T_{\mathrm{file}} & \text{if the file gives one} \\ \rho_b H &
 
 Stroke ends are round with `TEXT_STROKE_QUAD_SEGS` segments per quarter circle. The file's text
 is read with KiCad's escapes (`\n` starts a new line, `\"` and `\\` stand for a quote and a
-backslash; a tab is written as it is), and `${REFERENCE}`, `${VALUE}` and the other footprint
-fields are substituted before layout.
+backslash; a tab is written as it is). Text variables are resolved before layout, in the order
+KiCad's `PCB_TEXT::GetShownText` uses:
 
-Text in a TrueType face (KiCad 7+ `(font (face "..."))`) is drawn with the stroke font when
-`DRAW_TRUETYPE_TEXT_WITH_STROKE_FONT = True` (the default) and counted in `report.txt`; with
+| Variable | Value |
+|---|---|
+| `${LAYER}` | the text's layer, by the name the board shows (`F.Silkscreen` in KiCad 7+) |
+| `${REFERENCE}`, `${VALUE}`, any other field, `${FOOTPRINT_LIBRARY}`, `${FOOTPRINT_NAME}` | in a footprint, that footprint's |
+| `${TITLE}`, `${REVISION}`, `${ISSUE_DATE}`, `${COMPANY}`, `${COMMENT1}` ... `${COMMENT9}` | the board's title block |
+| `${FILENAME}`, `${FILEPATH}`, `${CURRENT_DATE}` | the board file's name and path, today's date |
+| any name in the board's own `(property "name" "value")` | that value |
+| `${R1:VALUE}` (saved by KiCad as `${<uuid>:VALUE}`) | that field of the other footprint, or `<Unresolved: R1:VALUE>` as KiCad shows it |
+
+A variable only the project file defines (`.kicad_pro` text variables, `${PROJECTNAME}`) is
+left as written, as KiCad shows an unknown one.
+
+Text in a TrueType face (KiCad 7+ `(font (face "..."))`) is drawn from the glyphs KiCad saves
+with it, `(render_cache "text" angle (polygon (pts ...) ...))`: the filled outlines exactly as
+KiCad draws them in that face (`PCB_TEXT::TransformTextToPolySet`), with no font needed. A cache
+made for another text or angle is stale, as KiCad would draw the text anew; such text, and text
+with no cache, is drawn with the stroke font when
+`DRAW_TRUETYPE_TEXT_WITH_STROKE_FONT = True` (the default). Both are counted in `report.txt`; with
 `False` it is skipped. Text the file marks hidden (`(hide yes)`) is skipped unless
 `DRAW_HIDDEN_TEXT = True`.
 

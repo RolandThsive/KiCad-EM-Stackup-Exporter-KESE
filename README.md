@@ -93,7 +93,7 @@ from any folder. Full walk-through: [Getting Started](https://github.com/RolandT
 - **Presets:** `--for hfss`, `cst`, `openems` or `viewer` set mode, formats, units, origin and grouping in one go.
 - **Checks:** an opt-in Verifier (closed solids, the same volume found four ways, no overlaps, one visible surface)
   and a regression suite that runs 40 boards through every output before a pull request.
-- **Not modelled yet:** component 3D models, text boxes, dimensions, images, padstacks, rigid-flex.
+- **Not modelled yet:** component 3D models, text boxes, dimensions, images, rigid-flex.
 
 Every feature and every parameter is in the wiki:
 [Project Capabilities](https://github.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/wiki/Project-Capabilities),

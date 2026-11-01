@@ -1,14 +1,14 @@
 """OBJ: one .obj with one object per part and an .mtl with the colours."""
-from kese.core.names import safe
+from kese.core.names import model_file_names
 
 
 def write(model, path):
     mtl_path = path.with_suffix(".mtl")
     obj = [f"mtllib {mtl_path.name}"]
     mtl = []
-    offset = 1
+    offset, names = 1, model_file_names(model)
     for part, mesh in model.meshes.items():
-        name = safe(part)
+        name = names[part]
         m = model.materials[part]
         r, g, b = (c / 255 for c in m["rgb"])
         mtl += [f"newmtl {name}", f"Kd {r:.4f} {g:.4f} {b:.4f}", f"d {m['alpha']:.3f}", ""]
