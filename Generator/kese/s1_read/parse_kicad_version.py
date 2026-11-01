@@ -80,12 +80,18 @@ OLD_LAYER_NAMES = {
 def copper_layer_names(layers_node):
     """KiCad 4 and 5 write a copper layer the user renamed under its new name only, e.g.
     (0 TOP_L1.Sig mixed), and every item on it uses that name.  KiCad reads the copper layers by
-    their place in the list, not their number (parseLayers): the first is F.Cu, the last B.Cu, and
+    their place in the list, not their number (parseLayers): the run of copper-typed layers that
+    opens the list is the copper, a later layer typed signal (KiCad 9 lets a User.n layer be) is not;
+    of that run the first is F.Cu, the last B.Cu, and
     one between is In<n>.Cu by its canonical name, else by its place (KiCad 3 numbered them the other
     way round, 15 F.Cu and 0 B.Cu).  A canonical name keeps its layer: KiCad writes the list in stack
     order, so that is what KiCad reads too, and a list written in another order still reads right.  Non-copper layers KiCad 3 wrote in Italian, Polish or French
     take their English names.  -> {name in the file: name KESE uses}, or {}."""
-    cu = [l for l in layers_node[1:] if isinstance(l, list) and len(l) > 2 and str(l[2]) in COPPER_TYPES]
+    cu = []
+    for l in layers_node[1:]:          # the copper layers come first; KiCad stops at the first other one
+        if not (isinstance(l, list) and len(l) > 2 and str(l[2]) in COPPER_TYPES):
+            break
+        cu.append(l)
     renamed = {}
     for i, l in enumerate(cu):
         name = str(l[1])

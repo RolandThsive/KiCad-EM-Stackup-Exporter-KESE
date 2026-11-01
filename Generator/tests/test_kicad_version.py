@@ -34,6 +34,8 @@ def test_copper_layers_read_by_place():
     assert kv.copper_layer_names(v5) == {"GND.Cu": "In1.Cu", "PWR": "In2.Cu", "Bottom": "B.Cu"}
     v9 = parse('(layers (0 "F.Cu" signal) (2 "B.Cu" signal) (4 "In1.Cu" signal) (6 "In2.Cu" power))')
     assert kv.copper_layer_names(v9) == {}
+    user = parse('(layers (0 "F.Cu" signal) (2 "B.Cu" signal) (25 "Edge.Cuts" user) (39 "User.1" signal))')
+    assert kv.copper_layer_names(user) == {}           # a signal-typed User layer after the copper is not copper
 
 
 def test_zero_mask_margin_inherits_before_kicad_9():
