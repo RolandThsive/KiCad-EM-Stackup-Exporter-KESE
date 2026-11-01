@@ -43,7 +43,7 @@ python tests/test_boards.py                     # the regression suite over ever
 | Message | Meaning |
 |---|---|
 | `file has no (version ...): read as format 20201115, as KiCad does` | Best-effort read, by KiCad's own rule for such files. |
-| `file format N is outside the tested range 4-20260206; proceeding best-effort` | Older than KiCad 4 or newer than KiCad 10 (`Run.KICAD_VERSION_MIN`, `Run.KICAD_VERSION_MAX`). |
+| `file format N is outside the tested range 3-20260206; proceeding best-effort` | Older than the 2013 builds before KiCad 4 or newer than KiCad 10 (`Run.KICAD_VERSION_MIN`, `Run.KICAD_VERSION_MAX`). |
 | `N copper layers: more than the 8 this project has been tested with` | The layers are still modelled. |
 | `layers named by the user or in an old language, read as KiCad reads them: TOP = F.Cu, ...` | Copper layers with names other than `F.Cu`, `B.Cu` and `In<n>.Cu` (KiCad 3 to 5 let the user rename them; KiCad 3 also wrote Italian, Polish and French names such as `Contorno.scheda`). Each is read as KiCad reads it: copper layers by their place in the list (first = `F.Cu`, last = `B.Cu`, the ones between `In1.Cu`, `In2.Cu`, ...), the old names by KiCad's own table. |
 | `N copper zone(s) have no fill stored in the file and are ignored` | Fill the zones in KiCad (press **B**) and save. Until then those zones produce no copper. |

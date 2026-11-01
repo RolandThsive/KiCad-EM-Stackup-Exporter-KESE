@@ -4,8 +4,9 @@
 
 | KiCad | File format number of the release | Status |
 |---|---|---|
-| 3 and older | 3, or no `(version ...)` | read best-effort with a warning; a file with no `(version ...)` is read as format 20201115, as KiCad reads it; KiCad 3's layer names in Italian, Polish and French are understood |
-| 4 | 4 | the lower end of the tested range (`Run.KICAD_VERSION_MIN`); 25 public boards saved by KiCad 4 |
+| older | no `(version ...)` | read best-effort with a warning, as format 20201115, as KiCad reads such a file |
+| BZR builds of 2013-2014 | 3 | the lower end of the tested range (`Run.KICAD_VERSION_MIN`); 6 public boards; the layer names those builds wrote in Italian, Polish and French are understood |
+| 4 | 4 | 19 public boards saved by KiCad 4 |
 | 5 | 20171130 | 25 public boards saved by KiCad 5; KiCad 5 arcs (`start` = centre, `angle`), zones filled with segments only (`fill_segments`), net names written with the old overbar (`~RESET~`) |
 | 6 | 20211014 | 25 public boards, among them development builds of 6 (formats 20201116 to 20210925, read as KiCad 6); `featureTest/20a_format_kicad6`, written by hand in KiCad 6's format |
 | 7 | 20221018 | 25 public boards; the three example boards of `Input/`, `tests/boards/synthetic` and most of `featureTest/`, saved by KiCad 7 itself |
@@ -14,7 +15,7 @@
 | 10 | 20260206 | the upper end of the tested range (`Run.KICAD_VERSION_MAX`); five hand-written feature boards (`03b_vias_k10`, `06_padstacks`, `08b_copper_graphics_nets`, `19b_skipped_items_k10`, `20e_format_kicad10`); net names stored directly on items and per-via `(tenting (front yes) (back no))` are read |
 | newer | above 20260206 | read best-effort with a warning; raise `Run.KICAD_VERSION_MAX` once checked. A bold text's thickness after format 20260826 is read as its base pen, drawn 1.6 times as wide, as KiCad's development version does |
 
-The 150 public boards (25 for each release from 4 to 9) were downloaded for testing and are not kept
+The 150 public boards (25 for each release from 4 to 9, six of the "KiCad 4" ones saved by the builds before it) were downloaded for testing and are not kept
 in the repository; every complete one of them runs, and the Verifier passes on all but one, whose file
 places two pin headers of different nets on the same spot. One more KiCad 5 file is cut short (it
 ends inside a pad) and is refused with a message that says so, as KiCad refuses it. Every rule that depends on the version

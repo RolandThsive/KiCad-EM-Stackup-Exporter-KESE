@@ -8,7 +8,7 @@ solvers and CAD, and a **visual model** of the visible surface for viewers.
 
 | Board feature | What KESE builds |
 |---|---|
-| Board file | `.kicad_pcb` from KiCad 4 to 10 (file formats 4 to 20260206), each version read by KiCad's own rules for it (`kese/s1_read/parse_kicad_version.py`); older and newer files are read with a warning. KiCad itself is not needed. |
+| Board file | `.kicad_pcb` from KiCad 4 to 10 (file formats 3 to 20260206), each version read by KiCad's own rules for it (`kese/s1_read/parse_kicad_version.py`); older and newer files are read with a warning. KiCad itself is not needed. |
 | Copper layers | 1 to 8 in the test boards. Above 8, KESE warns but still models the board. `F.Cu` and `B.Cu` must be declared. |
 | Stack-up | From Board Setup: every core and prepreg with its thickness, εr and tanδ, the copper and mask thicknesses, the mask and silk colours, the finish. Defaults from `parameters/` when the file has none. |
 | Outline | `Edge.Cuts` of any shape, with cut-outs and boards inside them |

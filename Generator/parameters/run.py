@@ -120,7 +120,7 @@ STEP_WRITE_ROLES = ["board", "copper", "plating", "finish"]
 STEP_FUSE_ROLES = ["board", "copper", "plating", "finish"]
 
 # KiCad file-format versions this project has been tested with (stage 1, read, warns outside this range)
-KICAD_VERSION_MIN = 4                  # KiCad 4 (KiCad 4 files say (version 4), KiCad 5 files 20171130)
+KICAD_VERSION_MIN = 3                  # the BZR builds of 2013-2014 before KiCad 4 (KiCad 4 files say (version 4), KiCad 5 20171130)
 KICAD_VERSION_MAX = 20260206           # KiCad 10
 TESTED_COPPER_LAYERS = 8               # stage 1 warns above this many copper layers (the most among the test boards)
 
