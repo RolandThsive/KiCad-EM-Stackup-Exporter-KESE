@@ -8,7 +8,8 @@
 
    The board lies flat in the scene, its top up (+Y), whatever orientation the files have (Run.ORIENTATION): the
    thinnest side of the model is taken as the board's thickness.  Tools: views (Iso, Top, Bottom, Side), Fit,
-   cross-section (a cut across X that shows each solid's true section, Section.js), screenshot.
+   cross-section (a cut across X that shows each solid's true section, worked out in SectionWorker.js while the
+   slider moves), screenshot.
    It draws only when something changed (a 600k-triangle STEP would make a constant loop heavy). */
 import * as THREE from "three";
 import { OrbitControls } from "three/addons/controls/OrbitControls.js";
@@ -17,7 +18,6 @@ import { STLLoader } from "three/addons/loaders/STLLoader.js";
 import { OBJLoader } from "three/addons/loaders/OBJLoader.js";
 import { MTLLoader } from "three/addons/loaders/MTLLoader.js";
 import { useModelViewerLook } from "./mvEnvironment.js";
-import { sectionTriangles } from "./Section.js";
 
 const METAL_ROLES = /^(copper|plating|finish|via|pad)/i;
 
@@ -28,6 +28,14 @@ const METAL_ROLES = /^(copper|plating|finish|via|pad)/i;
    geometry.  The rank is read from the part's role (materials.json) or, without one, its name. */
 const DEPTH_RANKS = [[/silk/, 5], [/mask.?over.?copper/, 4], [/mask/, 3], [/finish|nickel|gold|palladium|silver|tin|osp/, 2],
   [/copper|plating|via|pad/, 1]];
+// a copy of a position attribute as x, y, z floats (a glTF file may interleave them with other attributes)
+function plainPositions(attr) {
+  if (!attr.isInterleavedBufferAttribute && attr.array instanceof Float32Array && attr.itemSize === 3) return new Float32Array(attr.array);
+  const out = new Float32Array(attr.count * 3);
+  for (let i = 0; i < attr.count; i++) { out[3 * i] = attr.getX(i); out[3 * i + 1] = attr.getY(i); out[3 * i + 2] = attr.getZ(i); }
+  return out;
+}
+
 function depthRank(text) {
   const t = text.toLowerCase();
   for (const [re, rank] of DEPTH_RANKS) if (re.test(t)) return rank;
@@ -88,8 +96,7 @@ export class Viewer {
   }
 
   clear() {
-    clearTimeout(this.capTimer);
-    this.sectionFaces(null);
+    this.dropSections();
     if (this.root) {
       this.scene.remove(this.root);
       this.root.traverse((o) => {
@@ -153,6 +160,8 @@ export class Viewer {
     this.parts = [...byName.values()];
     this.root = root;
     this.scene.add(root);
+    this.box = new THREE.Box3().setFromObject(root);         // once: the slider must not walk 900k corners per move
+    this.startSections();
     this.setCut(this.cut ?? 1);
     this.view(this.lastView || "iso");
     return this.parts;
@@ -254,64 +263,90 @@ export class Viewer {
   setCut(f) {
     this.cut = f;
     if (!this.root) return;
-    const box = new THREE.Box3().setFromObject(this.root);
-    const x = box.max.x - (box.max.x - box.min.x) * f;
-    this.clip.constant = f >= 1 ? Infinity : -x;             // the part nearer the camera goes
-    clearTimeout(this.capTimer);                            // the section faces follow once the slider rests
-    this.capTimer = setTimeout(() => this.sectionFaces(f >= 1 ? null : x), 120);
+    const x = this.box.max.x - (this.box.max.x - this.box.min.x) * f;
+    this.clip.constant = f >= 1 ? Infinity : -x;             // the GPU hides the cut-away side at once
+    if (f >= 1) { this.wantX = null; if (this.caps) this.caps.visible = false; }
+    else { this.wantX = x; this.askSection(); }
     this.draw();
   }
 
-  // every part's world-space triangles, 9 floats each (made once per model, for the sections)
-  worldTriangles(p) {
-    if (p.world) return p.world;
-    const chunks = [];
-    const v = new THREE.Vector3();
-    for (const m of p.meshes) {
-      const pos = m.geometry.attributes.position, idx = m.geometry.index;
-      const n = idx ? idx.count : pos.count, out = new Float32Array(n * 3);
-      for (let i = 0; i < n; i++) {
-        v.fromBufferAttribute(pos, idx ? idx.getX(i) : i).applyMatrix4(m.matrixWorld);
-        out[3 * i] = v.x; out[3 * i + 1] = v.y; out[3 * i + 2] = v.z;
-      }
-      chunks.push(out);
+  /* ---- the true section faces (SectionWorker.js) ------------------------------------------------
+     The worker gets the model's triangles once.  While the slider moves, only the newest position is ever sent:
+     a request goes out when the worker is free, and when its answer comes back the next request carries wherever
+     the slider is by then.  So the page never waits and nothing queues up; the faces follow a step behind. */
+  startSections() {
+    this.dropSections();
+    if (!this.sectionWorker) {
+      this.sectionWorker = new Worker(new URL("./SectionWorker.js", import.meta.url), { type: "module" });
+      this.sectionWorker.onmessage = (ev) => this.gotSection(ev.data);
     }
-    if (chunks.length === 1) return (p.world = chunks[0]);
-    const all = new Float32Array(chunks.reduce((s2, c) => s2 + c.length, 0));
-    let o = 0; for (const c of chunks) { all.set(c, o); o += c.length; }
-    return (p.world = all);
-  }
-
-  // the true section of every part at x (null: no cut), in the part's colour, on the cut plane
-  sectionFaces(x) {
-    if (this.caps) { this.scene.remove(this.caps); this.caps.traverse((o) => { if (o.geometry) o.geometry.dispose(); if (o.material) o.material.dispose(); }); }
-    this.caps = null;
-    if (x == null || !this.root) { this.draw(); return; }
+    this.modelId = (this.modelId || 0) + 1;
     this.caps = new THREE.Group();
-    for (const p of this.parts) {
-      const tri = sectionTriangles(this.worldTriangles(p), x);
-      if (!tri) continue;
-      const g = new THREE.BufferGeometry();
-      g.setAttribute("position", new THREE.BufferAttribute(tri, 3));
+    this.caps.visible = false;
+    const meshes = [];
+    this.parts.forEach((p, k) => {
       const base = p.meshes[0].material, b = Array.isArray(base) ? base[0] : base;
       const rank = depthRank(`${this.roleOf(p.name) || ""} ${p.name}`);
       const mat = new THREE.MeshStandardMaterial({ color: b.color ? b.color.clone() : new THREE.Color("#b0b0b0"),
         metalness: b.metalness ?? 0, roughness: b.roughness ?? 0.7, side: THREE.DoubleSide,
         transparent: b.transparent, opacity: b.opacity ?? 1,
         polygonOffset: rank > 0, polygonOffsetFactor: -rank, polygonOffsetUnits: -4 * rank });
-      const mesh = new THREE.Mesh(g, mat);
-      g.computeVertexNormals();
-      mesh.userData.part = p;
-      mesh.visible = p.visible;
-      p.cap = mesh;
-      this.caps.add(mesh);
-    }
+      p.cap = new THREE.Mesh(new THREE.BufferGeometry(), mat);
+      p.cap.userData.part = p;
+      p.cap.visible = false;
+      this.caps.add(p.cap);
+      for (const m of p.meshes) {
+        const g = m.geometry;
+        meshes.push({ part: k, positions: plainPositions(g.attributes.position), index: g.index ? new Uint32Array(g.index.array) : null,
+          matrix: m.matrixWorld.elements.slice() });
+      }
+    });
     this.scene.add(this.caps);
+    this.sectionBusy = false; this.sentX = null; this.wantX = null;
+    this.sectionWorker.postMessage({ type: "model", model: this.modelId, meshes },
+      meshes.flatMap((m) => (m.index ? [m.positions.buffer, m.index.buffer] : [m.positions.buffer])));
+  }
+
+  askSection() {
+    if (this.sectionBusy || this.wantX == null || this.wantX === this.sentX || !this.sectionWorker) return;
+    this.sectionBusy = true;
+    this.sentX = this.wantX;
+    this.sectionWorker.postMessage({ type: "cut", model: this.modelId, seq: 0, x: this.wantX });
+  }
+
+  gotSection(m) {
+    if (m.model !== this.modelId) return;                   // an answer for a model that is gone
+    this.sectionBusy = false;
+    const faces = new Map(m.faces.map((f) => [f.part, f.triangles]));
+    this.parts.forEach((p, k) => {
+      const tri = faces.get(k);
+      p.cap.geometry.dispose();
+      const g = new THREE.BufferGeometry();
+      if (tri) {
+        g.setAttribute("position", new THREE.BufferAttribute(tri, 3));
+        const nrm = new Float32Array(tri.length);
+        for (let i = 0; i < nrm.length; i += 3) nrm[i] = -1;  // every face lies in the plane, facing the camera's side
+        g.setAttribute("normal", new THREE.BufferAttribute(nrm, 3));
+      }
+      p.cap.geometry = g;
+      p.cap.visible = !!tri && p.visible;
+    });
+    this.caps.visible = this.wantX != null;
     this.draw();
+    this.askSection();                                      // the slider moved meanwhile: catch up
+  }
+
+  dropSections() {
+    if (this.caps) {
+      this.scene.remove(this.caps);
+      this.caps.traverse((o) => { if (o.geometry) o.geometry.dispose(); if (o.material) o.material.dispose(); });
+    }
+    this.caps = null;
+    this.modelId = (this.modelId || 0) + 1;                 // answers still on their way are ignored
   }
 
   setVisible(name, on) {
-    for (const p of this.parts) if (p.name === name) { p.visible = on; for (const m of p.meshes) m.visible = on; if (p.cap) p.cap.visible = on; }
+    for (const p of this.parts) if (p.name === name) { p.visible = on; for (const m of p.meshes) m.visible = on; if (p.cap) p.cap.visible = on && !!p.cap.geometry.attributes.position; }
     this.draw();
   }
 
@@ -321,7 +356,7 @@ export class Viewer {
     const r = this.canvas.getBoundingClientRect();
     const v = new THREE.Vector2(((this.pointer.clientX - r.left) / r.width) * 2 - 1, -((this.pointer.clientY - r.top) / r.height) * 2 + 1);
     this.raycaster.setFromCamera(v, this.camera);
-    const hits = this.raycaster.intersectObjects(this.caps ? [this.root, this.caps] : [this.root], true).filter((h) => h.object.visible && (this.cut >= 1 || this.clip.distanceToPoint(h.point) >= -1e-9 * this.size));
+    const hits = this.raycaster.intersectObjects(this.caps && this.caps.visible ? [this.root, this.caps] : [this.root], true).filter((h) => h.object.visible && (this.cut >= 1 || this.clip.distanceToPoint(h.point) >= -1e-9 * this.size));
     this.onHover(hits.length ? hits[0].object.userData.part : null);
   }
 

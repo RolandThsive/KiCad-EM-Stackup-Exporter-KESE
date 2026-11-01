@@ -483,8 +483,8 @@ function previewChoices() {
 function renderPreviewTabs() {
   const sel = $("showing"), choices = previewChoices();
   sel.replaceChildren(...choices.map((c) => el("option", { value: c.key }, c.label)));
-  sel.disabled = choices.length < 2;
-  sel.parentElement.hidden = !choices.length;
+  sel.disabled = false;
+  sel.parentElement.hidden = choices.length < 2;          // one file: nothing to choose, no menu
   state.preview.key = choices.length ? choices[0].key : null;
 }
 async function showPreview() {
