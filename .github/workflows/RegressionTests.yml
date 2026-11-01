@@ -1,0 +1,149 @@
+# Runs the regression suite on every pull request into main: the quick tests, and every board in
+# featureTest/ (with tests/boards/ and Generator/Input/) through both modes against
+# Generator/tests/baseline.json, the same checks as `python -m pytest tests` (CONTRIBUTING.md):
+# simulation mode written as GLB, STL and STEP (with solder mask, silkscreen and surface finish in the
+# STEP file), visual mode as GLB.
+#
+# Kept fast by:
+#   - the Python environment (with OpenCascade, OCP, which reads the STEP files back) cached between
+#     runs, so a run installs nothing unless requirements.txt or OCP_VERSION changed;
+#   - the boards split over five machines that run at once (tests/test_boards.py): the three runs whose
+#     STEP file takes minutes to read back get one each, where the file is cut into pieces that one
+#     process per core reads back at once (tests/step_audit.py); the rest go in two near-equal
+#     shares, each on every core of its machine (pytest-xdist);
+#   - a newer push to the same pull request cancelling the run still going for the older one;
+#   - pull requests that change nothing the suite reads (docs, README, wiki) not running it.
+# Nothing is left out: every board, both modes, the Verifier, the volume baseline, and the STL and
+# STEP files read back.
+name: Regression Tests
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - "Generator/**"
+      - "featureTest/**"
+      - ".github/workflows/RegressionTests.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: regression-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+env:
+  PYTHON_VERSION: "3.13"            # the version requirements.txt is tested with
+  OCP_VERSION: "7.9.3.1.1"          # OpenCascade for Python, only the tests need it (requirements.txt)
+  PIP_DISABLE_PIP_VERSION_CHECK: "1"
+  OMP_NUM_THREADS: "1"              # one process per core already: no extra threads per process
+  OPENBLAS_NUM_THREADS: "1"
+  MKL_NUM_THREADS: "1"
+
+jobs:
+  quick:
+    name: Quick tests
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+
+      - id: python
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+
+      - name: Restore the Python environment
+        id: venv
+        uses: actions/cache@v4
+        with:
+          path: .venv
+          key: venv-${{ runner.os }}-py${{ steps.python.outputs.python-version }}-${{ hashFiles('Generator/requirements.txt') }}-ocp${{ env.OCP_VERSION }}-v2
+
+      - name: Install the requirements
+        if: steps.venv.outputs.cache-hit != 'true'
+        run: |
+          python -m venv .venv
+          .venv/bin/python -m pip install -r Generator/requirements.txt pytest pytest-xdist "cadquery-ocp==$OCP_VERSION"
+
+      - name: Check that OpenCascade loads (without it the suite would skip the STEP read-back)
+        run: .venv/bin/python -c "import OCP.STEPControl"
+
+      - name: Layout, colours, text, KiCad version and STEP writer tests
+        working-directory: Generator
+        run: ../.venv/bin/python -m pytest tests --ignore=tests/test_boards.py -q -p no:cacheprovider
+
+  boards:
+    name: ${{ matrix.name }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    strategy:
+      fail-fast: false              # show every failing board, not only the first job's
+      matrix:
+        include:
+          # Every run but the HEAVY ones (tests/test_boards.py), in two near-equal shares, each on
+          # every core of its machine (pytest-xdist)
+          - { name: "Boards 1/2", shard: "1/2", run: "", xdist: "-n auto --dist worksteal" }
+          - { name: "Boards 2/2", shard: "2/2", run: "", xdist: "-n auto --dist worksteal" }
+          # The runs whose STEP file takes minutes to read back, one machine each: the file is read
+          # back in one process per core (tests/step_audit.py)
+          - { name: "RF module, simulation", shard: "", run: "21_rf_module/simulation", xdist: "" }
+          - { name: "PCIe card, simulation", shard: "", run: "23_pcie_card/simulation", xdist: "" }
+          - { name: "HDI module, simulation", shard: "", run: "22_hdi_module/simulation", xdist: "" }
+    steps:
+      - uses: actions/checkout@v4
+
+      - id: python
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+
+      - name: Restore the Python environment
+        id: venv
+        uses: actions/cache@v4
+        with:
+          path: .venv
+          key: venv-${{ runner.os }}-py${{ steps.python.outputs.python-version }}-${{ hashFiles('Generator/requirements.txt') }}-ocp${{ env.OCP_VERSION }}-v2
+
+      - name: Install the requirements
+        if: steps.venv.outputs.cache-hit != 'true'
+        run: |
+          python -m venv .venv
+          .venv/bin/python -m pip install -r Generator/requirements.txt pytest pytest-xdist "cadquery-ocp==$OCP_VERSION"
+
+      - name: Check that OpenCascade loads (without it the suite would skip the STEP read-back)
+        run: .venv/bin/python -c "import OCP.STEPControl"
+
+      - name: The boards through both modes, against the baseline
+        working-directory: Generator
+        env:
+          KESE_SHARD: ${{ matrix.shard }}
+          KESE_RUN: ${{ matrix.run }}
+        run: >-
+          ../.venv/bin/python -m pytest tests/test_boards.py ${{ matrix.xdist }}
+          -p no:cacheprovider -rf --durations=10 --junitxml=tests/out/junit.xml
+
+      - name: Keep the reports of a failed job
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: board-reports-${{ strategy.job-index }}
+          path: |
+            Generator/tests/out/junit.xml
+            Generator/tests/out/**/report.txt
+            Generator/tests/out/**/parameters.txt
+          retention-days: 7
+          if-no-files-found: ignore
+
+  # One check to require in branch protection: it passes only when the quick tests and every share pass.
+  result:
+    name: Regression result
+    if: always()
+    needs: [quick, boards]
+    runs-on: ubuntu-latest
+    steps:
+      - name: All regression jobs passed
+        run: |
+          echo "quick: ${{ needs.quick.result }}   boards: ${{ needs.boards.result }}"
+          test "${{ needs.quick.result }}" = success && test "${{ needs.boards.result }}" = success

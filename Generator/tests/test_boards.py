@@ -1,6 +1,7 @@
 """Regression suite: every board in tests/boards, featureTest/ and Input/ through every output with
-the Verifier on: simulation mode written as GLB and STEP, visual mode as GLB.  Every board runs with
-the parameters in parameters/, but for the changes SETTINGS lists for it.
+the Verifier on: simulation mode written as GLB, STL and STEP, visual mode as GLB (visual mode is a
+surface, so it writes no solids: no STL or STEP).  Every board runs with the parameters in
+parameters/, but for the changes ALL_PARTS and SETTINGS list for it.
 
     python -m pytest tests                 (or:  python tests/test_boards.py)
     python tests/test_boards.py --accept   re-record tests/baseline.json after an intended geometry change
@@ -9,14 +10,16 @@ the parameters in parameters/, but for the changes SETTINGS lists for it.
     python tests/test_boards.py --faceted  the STEP files with flat faces only (Run.STEP_EXACT_ARCS = False)
 
 A board fails when the Verifier fails (open solid, overlap, broken skin), when a STEP solid is
-invalid or has a free edge, or when a part's volume moved by more than VOLUME_TOLERANCE from the
-recorded baseline (so a fix for one board cannot silently change another).
+invalid, has a free edge or is not read back, when an STL file is missing, not closed or not its
+part's volume, or when a part's volume moved by more than VOLUME_TOLERANCE from the recorded
+baseline (so a fix for one board cannot silently change another).
 
 Run on its own (python tests/test_boards.py), the suite reads the STEP files back in AUDITORS
 background processes while it exports the next boards, and prints a board's line once its STEP file
 is checked, in the order the boards ran."""
 import json
 import multiprocessing
+import os
 import shutil
 import sys
 import time
@@ -30,7 +33,10 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 
 import numpy as np  # noqa: E402
 
+from kese.core.mesh import Mesh  # noqa: E402
+from kese.core.names import model_file_names  # noqa: E402
 from kese.pipeline import generate  # noqa: E402
+from kese.s7_write.stl import TRIANGLE  # noqa: E402
 from kese.s8_verify.verify import every_check  # noqa: E402
 from parameters import P  # noqa: E402
 from step_audit import step_audit  # noqa: E402
@@ -45,7 +51,7 @@ COPIES = {p.read_bytes() for p in FEATURES}
 BOARDS = (sorted((ROOT / "tests" / "boards").glob("*.kicad_pcb")) + FEATURES
           + [p for p in sorted((ROOT / "Input").glob("*.kicad_pcb")) if p.read_bytes() not in COPIES])
 MODES = ("simulation", "visual")
-FORMATS = {"simulation": ["glb", "step"], "visual": ["glb"]}
+FORMATS = {"simulation": ["glb", "stl", "step"], "visual": ["glb"]}
 # Boards run with other values than parameters/ has, as {board stem: {"Module.NAME": value}}: the
 # boards made for a setting that is off by default.  Every board also runs with ALL_PARTS: the solder
 # mask and silkscreen are off by default, but the suite checks every part.
@@ -74,14 +80,48 @@ def settings_for(pcb):
             P.override(key, value)
 
 
+def read_stl(path):
+    """A binary STL file as a Mesh, corners at the same point joined into one vertex."""
+    data = path.read_bytes()
+    count = int(np.frombuffer(data, "<u4", 1, 80)[0])
+    corners = np.frombuffer(data, TRIANGLE, count, 84)["vertices"].reshape(-1, 3)
+    vertices, faces = np.unique(corners, axis=0, return_inverse=True)
+    return Mesh(vertices.astype(float), faces.reshape(-1, 3))
+
+
+def stl_problems(out_dir, model):
+    """What is wrong with the STL files of one run: each part read back from its own file must be
+    there, be closed and have the part's volume (within VOLUME_TOLERANCE).  STL holds its corners
+    as 32-bit floats, which moves a corner by up to a few nm on a board a few cm across: on an 80 nm
+    gold finish that is a few tenths of a percent of its volume.  So the volume read back is held
+    against the part's mesh with its corners rounded the same way, which the file must give back
+    as written."""
+    problems, names = [], model_file_names(model)
+    for part, mesh in model.meshes.items():
+        path = out_dir / "stl" / f"{names[part]}.stl"
+        if not path.exists():
+            problems.append(f"STL: {path.name} missing")
+            continue
+        back = read_stl(path)
+        if not back.is_watertight:
+            problems.append(f"STL: {path.name} is not closed")
+            continue
+        written = Mesh(mesh.vertices.astype(np.float32).astype(float), mesh.faces).volume
+        if abs(back.volume - written) > VOLUME_TOLERANCE * max(abs(written), 1e-30):
+            problems.append(f"STL: {path.name} volume {written:.6g} -> {back.volume:.6g} read back")
+    return problems
+
+
 def run_board(pcb, mode, audit=step_audit):
     """-> (verifier ok, verifier lines, {part: volume mm3}, what `audit` gave for the STEP file or
-    None).  The suite's own loop passes an `audit` that hands the file to a background process."""
+    None, the STL problems).  The suite's own loop passes an `audit` that hands the file to a
+    background process."""
     formats = FORMATS[mode]
     with settings_for(pcb) as overrides:
         out_dir, model = generate(pcb, mode=mode, formats=formats, out_root=OUT, overrides=overrides, verify=False,
                                   log=lambda s: None)
         ok, lines = every_check(model)
+    stl = stl_problems(out_dir, model) if "stl" in formats else []
     scale = 1000.0 if model.units == "m" else 1.0
     with np.errstate(divide="ignore", invalid="ignore"):     # a skin part with no volume has no centre either
         volumes = {part: float(m.volume) * scale ** 3 for part, m in model.meshes.items()}
@@ -91,19 +131,22 @@ def run_board(pcb, mode, audit=step_audit):
             step = audit(out_dir / f"{pcb.stem}.step")
         except ImportError:                     # OCP is not installed: the STEP file is not checked
             step = None
-    return ok, lines, volumes, step
+    return ok, lines, volumes, step, stl
 
 
 def step_problems(step):
-    """The problem line of a STEP audit, (invalid solids, free edges, seconds) or None."""
-    return [f"STEP: {step[0]} invalid solids, {step[1]} free edges"] if step and step[:2] != (0, 0) else []
+    """The problem line of a STEP audit, (invalid solids, free edges, seconds, solids left out) or None."""
+    if not step or (step[0], step[1], step[3]) == (0, 0, 0):
+        return []
+    return [f"STEP: {step[0]} invalid solids, {step[1]} free edges, {step[3]} solids not read back"]
 
 
 def check(pcb, mode, baseline, audit=step_audit):
     """-> (problems but the STEP file's, {part: volume mm3}, what `audit` gave for the STEP file)"""
-    ok, lines, volumes, step = run_board(pcb, mode, audit)
+    ok, lines, volumes, step, stl = run_board(pcb, mode, audit)
     problems = [] if ok else [l.strip() for l in lines[1:] if "False" in l or "worst" in l or "alternate" in l] \
         or ["Verifier: FAIL"]
+    problems += stl
     key = f"{pcb.stem}/{mode}"
     for part, vol in baseline.get(key, {}).items():
         now = volumes.get(part)
@@ -121,16 +164,64 @@ def load_baseline():
     return json.loads(BASELINE.read_text()) if BASELINE.exists() else {}
 
 
+# ---- continuous integration ---------------------------------------------------------------------------------
+# .github/workflows/RegressionTests.yml splits the suite over several machines with two environment
+# variables.  Run without them, the suite runs every board on one machine as before.
+#   KESE_RUN=board/mode        run only this one run, e.g. 21_rf_module/simulation
+#   KESE_SHARD=i/n             run only the i-th of n near-equal shares of the runs HEAVY does not list
+# The runs whose STEP file takes minutes to read back: each gets a machine of its own in CI, where the
+# file is read back in one process per core (step_audit.py).  The other runs take about 15 minutes of
+# processor time in all.
+HEAVY = {"21_rf_module/simulation", "22_hdi_module/simulation", "23_pcie_card/simulation"}
+
+
+def shard(runs, spec):
+    """The `spec` ("i/n", i from 1) share of the (board, mode) runs.  The runs are dealt longest first,
+    each to the share with the least work so far, by the board file's size and the mode's cost
+    (simulation also writes STL and STEP files and reads them back), so the shares take about as long."""
+    i, n = (int(x) for x in spec.split("/"))
+    if not 1 <= i <= n:
+        sys.exit(f"KESE_SHARD={spec}: i must be 1 to n")
+    cost = {"simulation": 4.0, "visual": 1.0}
+    work = {run: (run[0].stat().st_size + 50_000) * cost[run[1]] for run in runs}    # a fixed cost per run, too
+    load, share = [0.0] * n, [[] for _ in range(n)]
+    for run in sorted(runs, key=lambda r: (-work[r], r[0].stem, r[1])):
+        k = load.index(min(load))
+        load[k] += work[run]
+        share[k].append(run)
+    return sorted(share[i - 1], key=lambda r: (BOARDS.index(r[0]), MODES.index(r[1])))
+
+
+def ci_runs():
+    """The (board, mode) runs, after KESE_RUN and KESE_SHARD."""
+    runs = [(p, m) for p in BOARDS for m in MODES]
+    one = os.environ.get("KESE_RUN")
+    if one:
+        runs = [r for r in runs if f"{r[0].stem}/{r[1]}" == one]
+        if not runs:
+            sys.exit(f"KESE_RUN={one}: no such board/mode")
+        return runs
+    spec = os.environ.get("KESE_SHARD")
+    return shard([r for r in runs if f"{r[0].stem}/{r[1]}" not in HEAVY], spec) if spec else runs
+
+
+def audit_workers():
+    """Processes to read a big STEP file back in: one per core, but one under pytest-xdist, whose
+    workers already keep every core busy."""
+    return 1 if os.environ.get("PYTEST_XDIST_WORKER") else os.cpu_count() or 1
+
+
 # ---- pytest entry -----------------------------------------------------------------------------------------
 def pytest_generate_tests(metafunc):
-    shutil.rmtree(OUT, ignore_errors=True)
+    if not os.environ.get("PYTEST_XDIST_WORKER"):       # pytest-xdist workers share OUT: none may clear it
+        shutil.rmtree(OUT, ignore_errors=True)
     if "pcb" in metafunc.fixturenames:
-        metafunc.parametrize("pcb,mode", [(p, m) for p in BOARDS for m in MODES],
-                             ids=[f"{p.stem}-{m}" for p in BOARDS for m in MODES])
+        runs = ci_runs()
+        metafunc.parametrize("pcb,mode", runs, ids=[f"{p.stem}-{m}" for p, m in runs])
 
 
 def test_board(pcb, mode):
-    problems, _, step = check(pcb, mode, load_baseline())
+    problems, _, step = check(pcb, mode, load_baseline(), lambda path: step_audit(path, audit_workers()))
     problems += step_problems(step)
     assert not problems, "\n".join(problems)
 
