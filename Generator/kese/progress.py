@@ -1,9 +1,5 @@
-"""The live "running <stage> ... 1m 23s" line in the terminal.
-
-A daemon thread redraws the line once a second from the wall clock, independent of what the
-pipeline is doing, so the counter keeps running through the long steps (copper unions, STEP
-fusing).  It is only drawn on a real terminal and when Run.SHOW_PROGRESS is on; any
-normal log line erases it first (Status.clear) so the output stays clean."""
+"""The live "running <stage> ... 1m 23s" line in the terminal, redrawn once a second by a daemon
+thread; only on a real terminal with Run.SHOW_PROGRESS on, erased before every log line."""
 import sys
 import threading
 import time

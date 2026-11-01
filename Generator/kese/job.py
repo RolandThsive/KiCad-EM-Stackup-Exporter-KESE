@@ -7,7 +7,7 @@ from dataclasses import dataclass, field
 from kese.progress import Status
 from parameters import P
 
-MODES = {"simulation": "simulation", "visual": "visual", "real": "simulation", "pretty": "visual"}   # old names accepted
+MODES = ("simulation", "visual")
 VISUAL_FORMATS = {"glb", "obj"}
 FORMATS = ("glb", "stl", "obj", "step")
 
@@ -47,11 +47,10 @@ class Job:
 def start(mode=None, formats=None, out_root=None, overrides=(), verify=None, log=print):
     """The request, checked; None takes the value from parameters/run.py.  Raises ValueError."""
     R = P.Run
-    asked = mode or R.MODE
-    mode = MODES.get(asked)
+    mode = mode or R.MODE
     formats = list(formats or R.FILE_FORMAT)
-    if mode is None:
-        raise ValueError(f"MODE must be 'simulation' or 'visual', not {asked!r}")
+    if mode not in MODES:
+        raise ValueError(f"MODE must be 'simulation' or 'visual', not {mode!r}")
     bad = [f for f in formats if f not in FORMATS]
     if bad:
         raise ValueError(f"unknown FILE_FORMAT entries {bad}")

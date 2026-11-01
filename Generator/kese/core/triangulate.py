@@ -1,8 +1,5 @@
-"""The tops and bottoms of prisms: polygons cut into triangles.  As in KiCad's 3D viewer, earcut cuts
-them, and a big polygon strip by strip, as KiCad cuts big polygons into 1 cm cells first: earcut's
-time grows with the points times the holes.  Earcut is not always right (it runs two holes whose
-edges lie on one line into one, through a slit of no width), so every cut is checked, and a
-polygon or a strip whose triangles do not close exactly on its edges is cut again by GEOS's
+"""The tops and bottoms of prisms cut into triangles: by earcut, as KiCad's 3D viewer does (a big
+polygon strip by strip), and every cut checked; what earcut gets wrong is cut again by GEOS's
 constrained Delaunay triangulation."""
 from collections import defaultdict
 
@@ -17,10 +14,9 @@ from parameters import P
 
 
 def caps(polys, cut):
-    """The polygons' tops cut into triangles by cut(points, ring ends): (xy, nxt, poly, tri, bad),
-    with xy, nxt and poly as rings_of() gives them, tri counter-clockwise, and bad marking the
-    polygons whose triangles fold over or do not close exactly on their edges, and those with a
-    point twice (rings that touch there: the slow way, extrude_cdt(), takes them)."""
+    """The polygons' tops cut by cut(points, ring ends): (xy, nxt, poly, tri, bad), as rings_of() gives
+    them, tri counter-clockwise, bad marking polygons whose triangles fold over or do not close, or
+    that have a point twice."""
     xy, nxt, poly, spans, bad = rings_of(polys)
     tri = [cut(xy[a:b], ends) + a for (a, b, ends), skip in zip(spans, bad.tolist()) if not skip]
     tri = np.concatenate(tri).astype(np.int64) if tri else np.empty((0, 3), dtype=np.int64)
@@ -36,10 +32,8 @@ def caps(polys, cut):
 
 
 def rings_of(polys):
-    """The points of the polygons' rings, outer rings counter-clockwise and holes clockwise, without
-    the closing points: (xy, the next point along the ring of every point, the polygon of every
-    point, [(first point, end, ring ends from the first point)] of every polygon, polygons with a
-    point twice)."""
+    """The points of the polygons' rings (outer counter-clockwise, holes clockwise): (xy, next point,
+    polygon of each point, [(first point, end, ring ends)] per polygon, polygons with a point twice)."""
     rings, ring_poly = shapely.get_rings(polys, return_index=True)
     xy, ring = shapely.get_coordinates(rings, return_index=True)
     keep = np.r_[ring[1:] == ring[:-1], False]           # every ring ends on its first point again
@@ -106,11 +100,8 @@ def geos_cut(xy, ends):
 
 
 def cells_cut(xy, ends):
-    """earcut_cut, and a polygon of more than Geometry.TRIANGULATE_CELL_POINTS points strip by strip:
-    the polygon gets a point wherever an edge crosses a strip edge (kese/core/cells.py), every strip
-    is cut on its own (a strip earcut gets wrong by GEOS's triangulator), and the points the
-    strips added are taken out again (without()), so the walls keep exactly the polygon's own
-    edges.  No triangles when that fails: the polygon is then cut whole."""
+    """earcut_cut, and a polygon of more than Geometry.TRIANGULATE_CELL_POINTS points strip by strip,
+    the strips' extra points taken out again (without()).  No triangles when that fails."""
     xs = cell_lines(xy[:, 0].min(), xy[:, 0].max()) if len(xy) > P.Geometry.TRIANGULATE_CELL_POINTS else []
     if not len(xs):
         return earcut_cut(xy, ends)
@@ -150,10 +141,8 @@ def lookup(xy, pts, missing=False):
 
 
 def without(tri, xy, nxt, extra):
-    """The triangles (counter-clockwise, of a polygon whose rings run along nxt) with the points extra
-    taken out: every such point lies on an edge of the polygon, between its ring neighbours a and b,
-    so the fan of triangles around it is the polygon a, b and the points around it, cut anew.  None
-    when a fan is not whole."""
+    """The triangles with the extra points taken out: each lies on a polygon edge, so the fan around it
+    is cut anew without it.  None when a fan is not whole."""
     prv = np.empty_like(nxt)
     prv[nxt] = np.arange(len(nxt))
     nxt = nxt.copy()

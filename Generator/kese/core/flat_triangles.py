@@ -4,10 +4,8 @@ import numpy as np
 
 
 def flip_flat(xy, tri, twice, size):
-    """The triangles with every flat one (three points on one line, which earcut makes where a ring
-    has a point on a straight run) taken out: its middle point b lies on its long edge x-z, so the
-    triangle across that edge, x z d, becomes x b d and b z d, and the flat one goes.  The area and
-    the ring edges stay as they are; a mesher gets no triangle of zero area."""
+    """The triangles with every flat one (three points on one line, as earcut makes) taken out by
+    flipping the edge it lies on; the area and the ring edges stay as they are."""
     flat = np.flatnonzero(np.abs(twice) <= 1e-12 * size)
     if not len(flat):
         return tri, twice

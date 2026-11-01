@@ -1,11 +1,6 @@
-"""The topology of a Boundary for STEP: every vertex, every edge and every face once, so that the
-faces that meet share their edges and the edges their vertices (what makes a B-rep closed), and
-the faces grouped into shells.  Everything is in board mm; nothing is written here.
-
-A loop is a ring of a face: a run of "uses", each a step along one edge, forwards (from the
-edge's start vertex to its end) or backwards.  The vertices of a flat face are those of its rings
-at the face's height; a wall on the segment a -> b of a slice has the loop a, b at the lower
-height, then b, a at the upper one."""
+"""The topology of a Boundary for STEP: every vertex, edge and face once, faces grouped into shells
+(board mm).  A loop is a ring of a face, a run of uses of edges forwards or backwards; a wall on
+a -> b has the loop a, b low, then b, a high."""
 from dataclasses import dataclass
 
 import numpy as np

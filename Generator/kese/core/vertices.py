@@ -1,10 +1,6 @@
-"""Shared vertices.  Where two polygons meet, each must have the other's vertices that lie on its
-edges, so that no edge ends in the middle of another edge (no T-junctions): then the faces built
-on them meet on identical edges.  The same holds between the rings of one polygon.  Polygons cut
-from one another on the snap grid share their vertices already, so the vertices are first looked
-up and only the rings that lack one are changed.  A region is first brought into the form the
-grid's set operations leave it in (noded()), so that cutting from it changes nothing else.
-Everything here is 2D, on the grid of Geometry.SNAP_GRID_MM."""
+"""Shared vertices: where two polygons meet, each gets the other's vertices that lie on its edges,
+so the faces built on them meet on identical edges (no T-junctions).  All 2D, on the grid of
+Geometry.SNAP_GRID_MM."""
 import numpy as np
 import shapely
 
@@ -12,10 +8,8 @@ from kese.core import shapes2d as sh
 
 
 def near_edge():
-    """How far from an edge a vertex may lie and still count as on it.  Where two edges cross,
-    GEOS rounds the crossing to the grid, which puts it up to half a grid diagonal (0.71 of a
-    step) off either edge; and two distinct grid points are a full step apart, so nothing else
-    is caught."""
+    """How far from an edge a vertex may lie and still count as on it: half a grid diagonal (GEOS
+    rounds crossings to the grid), less than the full step between two grid points."""
     return sh.grid() * 0.75
 
 
@@ -55,12 +49,8 @@ def pairs_in(a, b, c, d):
 
 
 def share_vertices(regions, sources=()):
-    """The regions, every ring of them with every vertex of the other regions and of the sources
-    that lies on one of its edges, and the indices of the regions that changed.  A vertex of its
-    own region a ring has already wherever it matters: GEOS put it on the edge, noding (noded()),
-    if the edge came within the vertex's hot pixel, and no set operation will bend the edge
-    otherwise.  The vertices are gathered once, and against the edges of each region only the
-    vertices it lacks are looked up, in one query of an index of those edges."""
+    """The regions, every ring with every vertex of the other regions and the sources that lies on one
+    of its edges, and the indices of the regions that changed."""
     pieces, owner = [], []
     for i, r in enumerate(regions):
         for p in shapely.get_parts(r):
@@ -103,12 +93,8 @@ def share_vertices(regions, sources=()):
 
 
 def walls_split_at_vertices(walls, sources=()):
-    """The wall segments of several regions (wall_segments() of each), every segment split at each
-    vertex of the other regions and of the sources that lies on it, within near_edge(): where
-    share_vertices() would bend the edge onto the vertex, nothing moves here; the vertex goes into
-    the wall as it is, so that the wall meets the face or the neighbouring wall that has the vertex
-    on identical edges.  A region's own vertices its walls have already (its rings are noded).
-    -> the segments per region, (n, 2, 2) arrays."""
+    """The wall segments of several regions, each split at every vertex of the other regions and the
+    sources that lies on it (near_edge()), nothing moved.  -> the segments per region, (n, 2, 2)."""
     segments = np.concatenate(walls)
     region = np.repeat(np.arange(len(walls)), [len(w) for w in walls])
     more = shapely.get_coordinates(list(sources)) if len(sources) else np.empty((0, 2))
@@ -141,14 +127,8 @@ NODING_ROUNDS = 8        # of a set operation on the grid, until it changes noth
 
 
 def noded(g):
-    """The region as a set operation on the grid leaves it.  GEOS nodes the inputs of every set
-    operation on the grid: wherever an edge passes within half a grid step of a vertex (through
-    the vertex's "hot pixel"), the vertex is put on the edge, and a spike that collapses onto its
-    own edge then goes.  It does so in one pass, which can bend an edge onto a vertex and through
-    another vertex's hot pixel; so the operation (taking nothing away) is repeated until it changes
-    nothing, and from then on every set operation meets the region on identical edges.  (Not
-    set_precision(), which leaves an edge that only touches the corner of one of its own ring's
-    hot pixels as it is.)"""
+    """The region as a set operation on the grid leaves it: noded (GEOS's hot pixels) again until it
+    changes nothing, so every later set operation meets it on identical edges."""
     g = sh.polys_only(g)
     for _ in range(NODING_ROUNDS):
         try:

@@ -1,10 +1,5 @@
-"""The volume check of stage 8 in simulation mode.
-A closed surface encloses, by the divergence theorem, the sum over its flat faces of height
-times signed area (positive looking up, negative looking down; walls are vertical and count for
-nothing).  So every part's Boundary must come to the volume of its material slice by slice, and
-the mesh cut from the same faces must enclose that volume too.  The prisms the part was built
-from come to the same volume as well, less the pinch points that were opened (a small disc cut
-out around each, see kese/core/pinches.py)."""
+"""The volume check of stage 8 in simulation mode: by the divergence theorem every part's faces,
+its slices and its mesh hold the same volume, and its prisms that less the opened pinch points."""
 
 RELATIVE_TOLERANCE = 1e-7       # of the part's volume: numerical noise of areas and meshes
 OPENED_TOLERANCE_MM3 = 1e-3     # what the opened pinch points may take from the prisms' volume

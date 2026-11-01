@@ -1,9 +1,6 @@
-"""The visible faces of every part (kese/s6_assemble/skin_faces.py) as meshes: flat faces cut
-into triangles and walls into two triangles each, with the vertices shared across every part, as
-for a solid (kese/core/boundary_mesh.py).  Then two kinds of triangles go: those that look at
-other material across less than Geometry.SKIN_BURIED_TEST_OFFSET_MM (two parts that meet but for
-rounding, or a slit narrower than that), and those on a closed surface that faces inward, the
-wall of a hollow sealed inside the board, which no one can see."""
+"""The visible faces of every part as meshes, vertices shared across parts; then the triangles that
+look at material within Geometry.SKIN_BURIED_TEST_OFFSET_MM, and those of hollows sealed inside
+the board, go."""
 from concurrent.futures import ThreadPoolExecutor
 from functools import partial
 
@@ -60,11 +57,8 @@ PROBES_AT_A_TIME = 2_000_000     # triangles: their probe points and normals tak
 
 
 def looks_at_material(v, f, levels, pieces):
-    """Which triangles have material just in front of them: a point SKIN_BURIED_TEST_OFFSET_MM
-    out from the triangle's centre, along its normal, lies in some part's material.  The material
-    of a slice, all of it joined as one region and prepared (indexed) once, places every probe
-    point in the slice at once; the slices are taken Run.WORKERS at a time, each by one thread,
-    and the triangles PROBES_AT_A_TIME at a time, for the memory."""
+    """Which triangles have material just in front of them: a point SKIN_BURIED_TEST_OFFSET_MM out along
+    the normal lies in some part's material.  Slices Run.WORKERS at a time, PROBES_AT_A_TIME probes."""
     inside = np.zeros(len(f), dtype=bool)
     with ThreadPoolExecutor(workers_wanted()) as pool:
         for start in range(0, len(f), PROBES_AT_A_TIME):

@@ -18,10 +18,8 @@ def output_transform():
 
 
 def finish_mesh(mesh, mat):
-    """The mesh in output units and orientation, shaded smooth.  The mesh has every vertex once
-    already (it is built from faces that share their vertices, kese/core/boundary_mesh.py); only
-    the faces that collapsed onto a repeated vertex go (zero-area triangles with three distinct
-    vertices stay)."""
+    """The mesh in output units and orientation, shaded smooth; the faces that collapsed onto a
+    repeated vertex go (zero-area triangles with three distinct vertices stay)."""
     f = mesh.faces
     mesh.update_faces((f[:, 0] != f[:, 1]) & (f[:, 1] != f[:, 2]) & (f[:, 0] != f[:, 2]))
     mesh.remove_unreferenced_vertices()
@@ -35,11 +33,9 @@ def finish_mesh(mesh, mat):
 
 
 def smooth_shaded(mesh, angle):
-    """(vertices, faces, vertex normals) of the mesh shaded as trimesh's graph.smooth_shade() shaded
-    it, without its loop over every group of faces.  The faces fall into groups joined across the
-    edges flatter than angle, a flat facet of more than a tenth of the mesh's area being a group of
-    its own (trimesh's facets); every group gets its own copy of its vertices, and every vertex the
-    angle-weighted mean normal of its group's faces around it, or [0, 0, 1] where they have none."""
+    """(vertices, faces, vertex normals) shaded as trimesh's smooth_shade(): faces grouped across edges
+    flatter than angle (big flat facets on their own), each group's vertices copied and given the
+    angle-weighted mean normal of its faces, or [0, 0, 1]."""
     faces, normals = mesh.faces, mesh.face_normals
     pairs, turn = mesh.face_adjacency, mesh.face_adjacency_angles
     smooth = pairs[turn < angle]

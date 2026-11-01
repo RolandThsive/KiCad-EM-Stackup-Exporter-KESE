@@ -1,11 +1,6 @@
-"""The overlap check of stage 8 in simulation mode: no two parts share material.  Every part is
-built from flat regions between two heights, its slices (kese/core/boundary.py).  So two parts overlap exactly
-where a slice of one and a slice of the other overlap in height and their regions share an area,
-and every pair of them is looked at.  Each polygon is shrunk by a grid step first
-(Geometry.SNAP_GRID_MM): parts that only touch, along an edge or across the grid step that sharing
-vertices may bend an edge by, then no longer meet.  An R-tree gives the polygons whose boxes
-meet; of those from different parts at overlapping heights, the shrunk polygons are tested, the
-one with more vertices prepared (a laminate full of holes is tested once against an index)."""
+"""The overlap check of stage 8 in simulation mode: every slice of a part against every slice of
+another that overlaps it in height, each polygon shrunk by a grid step (parts that only touch do
+not meet), the candidates found by an R-tree."""
 import numpy as np
 import shapely
 

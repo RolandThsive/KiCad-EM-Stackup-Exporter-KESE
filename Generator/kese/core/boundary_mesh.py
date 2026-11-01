@@ -1,7 +1,5 @@
-"""A Boundary as a closed triangle mesh: every flat face cut into triangles, every wall segment
-two triangles, and every vertex once.  The faces are cut one after another, each on its own
-points; then the points are numbered by (height, grid point), so that the faces that share a
-vertex in the Boundary share it in the mesh too, and the mesh closes as the Boundary does."""
+"""A Boundary as a closed triangle mesh: every flat face cut into triangles, every wall segment two
+triangles, and every vertex once, numbered by (height, grid point) so the faces share it."""
 import numpy as np
 import shapely
 
@@ -47,10 +45,8 @@ def flat_face_triangles(region, level, up):
 
 
 def wall_triangles(segments, lower, upper):
-    """The wall on every segment (a, b), the material on its left, between the heights of index
-    `lower` and `upper`: (xy (4n, 2), level (4n,), triangles (2n, 3) into xy).  The corners are
-    a, b at the lower height and b, a at the upper; the triangles a0 b0 b1 and a0 b1 a1 face away
-    from the material."""
+    """The wall on every segment (a, b), material on its left, between heights `lower` and `upper`:
+    (xy (4n, 2), level (4n,), triangles (2n, 3) into xy), facing away from the material."""
     a, b = segments[:, 0], segments[:, 1]
     n = len(a)
     xy = np.concatenate([a, b, b, a])

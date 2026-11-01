@@ -40,10 +40,8 @@ def outline_from(items, log):
 
 
 def joined_ends(lines, d):
-    """The open lines (rounded to KiCad's 1 nm), with every loose end moved onto the nearest other
-    loose end within d, the closest pairs first, as KiCad chains the Edge.Cuts shapes of an outline.
-    Ends that already meet are left as they are, so a run of tiny segments never folds up.  Returns
-    the lines and the widest gap joined (0 if none)."""
+    """The open lines (rounded to 1 nm), every loose end moved onto the nearest other loose end within
+    d, closest pairs first, as KiCad chains Edge.Cuts.  -> (lines, the widest gap joined)."""
     coords = [np.round(np.asarray(g.coords, dtype=float), 6) for g in lines]
     ends = np.array([c[k] for c in coords for k in (0, -1)])
     pts, count = np.unique(ends, axis=0, return_counts=True)

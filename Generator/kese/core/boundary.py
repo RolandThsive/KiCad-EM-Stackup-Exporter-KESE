@@ -1,20 +1,6 @@
-"""The boundary of a stack of flat prisms, found in 2D.
-
-Every prism is a flat region between two heights, and the prisms of one part only touch, never
-overlap.  So between two neighbouring heights (a slice) the material is one 2D region, the union
-of the prisms that span the slice; at a height, the material below minus the material above is a
-face that looks up, and the material above minus the material below a face that looks down; and
-each ring of a slice's region, stood up between the slice's two heights, is a row of walls with
-the material on its left.  Nothing is computed in 3D.
-
-The faces and the walls must meet on identical edges, with no edge ending in the middle of
-another (no T-junctions).  GEOS cuts the faces from the slices on the snap grid, and wherever an
-edge of one slice passes within half a grid step of a vertex of the other it puts that vertex on
-the edge: the faces have it, the slice does not.  So the slices that meet at a height are given
-each other's vertices first (kese/core/vertices.py), which bends an edge by up to a grid step;
-then the faces are cut, and the slices are given the vertices of their faces as well; where that
-changed a slice, its faces are cut again, until nothing changes any more.  Then the boundary
-closes by construction, and its volume says so (kese/s8_verify/volumes.py)."""
+"""The boundary of a stack of flat prisms, found in 2D: per slice the material as one region, at
+every height the faces looking up and down, and the walls of every ring.  Slices and faces share
+their vertices (kese/core/vertices.py) until nothing changes, so the boundary closes."""
 from dataclasses import dataclass, field
 from itertools import pairwise
 
@@ -75,10 +61,8 @@ def heights_of(prisms):
 
 
 def slices_of_part(prisms, levels, log=None, pinches_opened=True):
-    """One part's material between every two neighbouring heights, ready for its faces to be cut
-    from: the slices sharing each other's vertices (then the faces bring few new ones), and the
-    pinch points of every slice opened, unless the part is only looked at (a skin need not be
-    manifold, and the gap would show)."""
+    """One part's material between every two neighbouring heights, sharing each other's vertices,
+    with the pinch points of every slice opened unless the part is only looked at (a skin)."""
     slices = slices_of(prisms, levels)
     if pinches_opened:
         slices = [open_pinches(s, log) for s in slices]
@@ -97,12 +81,8 @@ def slices_of(prisms, levels):
 
 
 def joined_regions(regions, exact=True):
-    """The union of regions that touch but never overlap: GEOS's coverage union, which only drops
-    the edges two pieces share, in a fraction of the time a union takes.  Where the pieces' shared
-    edges do not match (a vertex of one on an edge of the other, as happens between two parts) the
-    coverage union is not a valid region, and a union is taken instead: on the grid when exact (a
-    solid's own slices, whose faces must meet on identical edges), else in floating point, three
-    times faster (the material of several parts, which only cuts faces and answers questions)."""
+    """The union of regions that touch but never overlap: GEOS's coverage union, or, where the shared
+    edges do not match, a union (on the grid when exact, else in floating point)."""
     pieces = [piece for r in regions for piece in shapely.get_parts(sh.polys_only(r))]
     try:
         joined = sh.polys_only(shapely.coverage_union_all(pieces))
@@ -127,15 +107,9 @@ def flat_faces(slices, levels):
 
 
 def slices_sharing_vertices(slices, flats, levels, log, pinches_opened=True):
-    """The slices, each with every vertex of the faces at its two heights, and of the slice it
-    meets there, that lies on one of its edges; a slice that changed is noded again.  For a solid
-    (pinches_opened) a gap is cut wherever the two slices at a height meet along an edge, and the
-    pinch points of a changed slice are opened again (kese/core/pinches.py).  The heights are gone
-    through again as long as a slice changes, at most ROUNDS times: a vertex a slice got can lie on
-    an edge of the next slice up as well (a via barrel through every layer).  A height whose two
-    slices are cut apart again in the next round (the cut's new vertices shared, and met again
-    along an edge, as on a KiCad 6 board) is cut wider each round.
-    (slices, the indices of the slices that changed)."""
+    """The slices, each with the vertices of the faces and the slice it meets that lie on its edges,
+    repeated until no slice changes (at most ROUNDS times; a height cut again is cut wider).
+    -> (slices, the indices of the slices that changed)."""
     slices, changed, cuts = list(slices), set(), [0] * len(levels)
     for _ in range(ROUNDS):
         moved_now = set()

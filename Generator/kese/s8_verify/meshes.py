@@ -1,8 +1,6 @@
-"""The checks of stage 8 (verify): the Model proves itself.
-
-simulation : every part is a closed, consistently wound solid; no two parts overlap (overlap.py)
-visual     : along every vertical ray the skin's faces take turns, into the material and out of it
-both   : the glTF file passes the Khronos validator, if the `gltf_validator` CLI is on PATH"""
+"""The checks of stage 8 (verify).  simulation: every part closed and consistently wound, no two
+parts overlapping (overlap.py); visual: faces take turns in and out along vertical rays; both: the
+Khronos gltf_validator, when on PATH."""
 import shutil
 import subprocess
 
@@ -60,9 +58,7 @@ def _rays(meshes, n):
 
 def _skin_surfaces(meshes, n):
     """({faces met: rays}, rays whose faces, from the top down, do not take turns into the material
-    and out of it).  A closed outer surface gives in, out on every ray, or in, out, in, out where
-    the ray crosses a hollow open to the air (the bore of a buried via under stacked micro vias); a
-    face left inside the material or a doubled one gives two of a kind in a row."""
+    and out of it, as a closed outer surface does)."""
     xy = _rays(meshes, n)
     vs, fs, at = [], [], 0
     for m in meshes.values():

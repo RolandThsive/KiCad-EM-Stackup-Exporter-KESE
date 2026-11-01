@@ -97,13 +97,8 @@ def _glyph(f, ch):
 
 def render(text, anchor, angle_deg, size_h, size_w, thickness, justify=(), mirror=False,
            italic=False):
-    """Text as a shapely polygon in board coordinates (mm, Y down).
-
-    Follows KiCad's STROKE_FONT / FONT::getLinePositions layout: glyph advance from the glyph
-    width, interline pitch, H/V justification with KiCad's offsets.  A line is as wide as its pen's
-    advance, the spacing after the last glyph included (FONT::getLinePositions measures it so; only
-    the bounding box leaves that spacing out), and a centred or right-justified line does not get
-    the left offset T / 1.52."""
+    """Text as a shapely polygon in board coordinates (mm, Y down), laid out as KiCad's STROKE_FONT /
+    FONT::getLinePositions lays it out: advance, interline pitch and justification offsets."""
     S = P.Silkscreen
     f, _ = load()
     if not text.strip():

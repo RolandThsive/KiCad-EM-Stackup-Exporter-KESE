@@ -1,7 +1,5 @@
-"""STL: one binary STL per part in an stl/ folder (what openEMS / CSXCAD import).
-
-Binary STL: an 80 byte header (zeros), the triangle count, and per triangle its unit normal, its
-three corners (float32) and two bytes of attributes (zero)."""
+"""STL: one binary STL per part in an stl/ folder (what openEMS / CSXCAD import): an 80 byte zero
+header, the triangle count, per triangle its unit normal, three float32 corners and 2 zero bytes."""
 import numpy as np
 
 from kese.core.names import model_file_names

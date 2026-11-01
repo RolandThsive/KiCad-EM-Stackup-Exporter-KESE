@@ -1,8 +1,5 @@
-"""The master geometry: a PrismSet.
-
-A Prism is a flat region (shapely polygon, mm, board coordinates with Y up) between two
-heights.  Stage 4 (geometry) makes them; stage 6 (assemble) finds each part's faces from them
-and turns those into triangle meshes, and stage 7 (write) writes the faces to STEP."""
+"""The master geometry: a PrismSet.  A Prism is a flat region (shapely polygon, mm, board frame
+with Y up) between two heights; stage 4 makes them, stage 6 turns them into faces and meshes."""
 from dataclasses import dataclass, field
 
 

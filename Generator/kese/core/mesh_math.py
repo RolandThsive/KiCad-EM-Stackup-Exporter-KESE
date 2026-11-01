@@ -1,7 +1,5 @@
 """The arithmetic of triangle meshes (kese/core/mesh.py): unit vectors, face normals and angles,
-transforms, and the edges two faces share.  Every formula is written the way trimesh 4/5 writes
-it, in the same order of operations, so a mesh comes out bit for bit as it did when trimesh built
-it (the files the Model is written to are compared byte for byte)."""
+transforms and shared edges, written in trimesh 4/5's order of operations, bit for bit."""
 import numpy as np
 
 ZERO = float(np.finfo(np.float64).resolution * 100)    # a length below this is no length

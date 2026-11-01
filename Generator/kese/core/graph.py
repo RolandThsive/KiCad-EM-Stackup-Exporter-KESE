@@ -1,8 +1,5 @@
-"""Connected components of an undirected graph, in numpy: what scipy's csgraph gave KESE, without
-scipy.  Every edge hooks the larger of its two roots under the smaller, then the pointers jump until
-each node points at its root, again until no edge joins two roots.  So every component's root is
-its smallest node, and the components are numbered in the order of their smallest nodes, as scipy
-and trimesh number them."""
+"""Connected components of an undirected graph, in numpy.  Every component is numbered in the
+order of its smallest node, as scipy and trimesh number them."""
 import numpy as np
 
 

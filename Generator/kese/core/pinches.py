@@ -1,15 +1,6 @@
-"""Pinch points: where two pieces of a region, or two rings of one piece, touch at a single
-point, the solid built on it is pinched to a line there and could not close on its own; and
-where a vertex of one ring lies within a grid step of another ring's edge, the vertex sharing
-(kese/core/vertices.py) would bend the edge onto it and make such a pinch.  So a disc around
-every such point is cut out of the smaller piece, and the cut is tried again with twice the
-radius until the pieces are clear of each other: two tangent circles leave each other so slowly
-that a cut of a grid step can end on the other's edge again.
-
-The same happens between two heights: where a piece of the material below a height and a piece
-of the material above it meet along an edge with the material on opposite sides, the solid is
-pinched to that edge, with four faces on it (the two walls, a face looking up, one looking down).
-A strip along the edge is cut out of the smaller piece then (open_pinches_between)."""
+"""Pinch points: where two pieces or rings touch at a point, or a vertex lies within a grid step
+of another ring, a disc is cut out of the smaller piece (doubled until clear); where pieces below
+and above a height meet along an edge, a strip is cut (open_pinches_between)."""
 import numpy as np
 import shapely
 
@@ -48,10 +39,8 @@ def open_pinches(region, log=None):
 
 
 def cut_disc(p, r):
-    """The disc cut out around a pinch point: an octagon turned by Geometry.PINCH_DISC_TURN_DEG, so that none of its
-    corners lies on the horizontal, vertical or 45-degree line through the point.  KiCad's edges run
-    along those lines, and an octagon corner on an edge through the point (two holes touching at a
-    corner of their collinear edges) makes a new pinch there, round after round."""
+    """The disc cut out around a pinch point: an octagon turned by Geometry.PINCH_DISC_TURN_DEG, so no
+    corner lies on KiCad's horizontal, vertical or 45-degree lines through the point."""
     a = np.radians(sh.G().PINCH_DISC_TURN_DEG + 45.0 * np.arange(8))
     return shapely.Polygon(np.c_[p[0] + r * np.cos(a), p[1] + r * np.sin(a)])
 
@@ -93,11 +82,9 @@ def repeated_vertices(polygon):
 
 
 def open_pinches_between(below, above, log=None, first=0):
-    """The material below a height and the material above it, with a gap cut wherever a piece of
-    one meets a piece of the other along an edge with the material on opposite sides (see
-    above): a strip along the edge, out of the smaller piece, twice as wide each round as for
-    open_pinches(), starting at round `first` (a height cut again and again starts wider each
-    time).  -> (below, above, whether anything was cut)."""
+    """The material below and above a height, with a strip cut out of the smaller piece wherever
+    two meet along an edge with the material on opposite sides, wider from round `first` on.
+    -> (below, above, whether anything was cut)."""
     parts = [list(shapely.get_parts(sh.polys_only(below))), list(shapely.get_parts(sh.polys_only(above)))]
     cut_any = False
     for round_ in range(first, first + sh.G().PINCH_CUT_ROUNDS):

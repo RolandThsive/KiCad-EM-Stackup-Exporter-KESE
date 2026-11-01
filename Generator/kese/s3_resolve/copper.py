@@ -39,11 +39,8 @@ def copper_layers(r, items, outline_k):
 
 
 def close_hairline_gaps(cu):
-    """A net's copper with the pieces that meet within two grid steps joined.  Two shapes of one net
-    that only just meet (a KiCad 5 zone fill grown to a pad's edge, the pad's polygon a hair off it)
-    union to two pieces along a sliver, and once on the grid their shared wall is two walls that
-    do not quite agree, which leaves the solid open.  Only the pieces that meet are closed (grown
-    and shrunk back by a grid step, mitred), so the rest of the copper is untouched."""
+    """A net's copper with the pieces that meet within two grid steps joined (grown and shrunk back
+    by a grid step, mitred), which would otherwise leave two walls that do not quite agree."""
     parts = list(shapely.get_parts(cu)) if cu.geom_type == "MultiPolygon" else []
     if len(parts) < 2:
         return cu
@@ -60,11 +57,8 @@ def close_hairline_gaps(cu):
 
 
 def fill_hairline_holes(cu):
-    """A net's copper with its hairline holes filled: where KiCad's zone fill runs round a pad or via
-    of its own net with other arcs than the pad's own polygon, the union leaves needle-thin holes
-    between the two (a real board had 193 under 1 um wide, and none between 1 and 3 um), which pinch
-    the solid where they touch.  A hole whose mean width, twice its area over its perimeter, is
-    under Copper.HAIRLINE_HOLE_MM is filled; drills and clearances are far wider."""
+    """A net's copper with its hairline holes filled: a hole whose mean width (twice its area over its
+    perimeter) is under Copper.HAIRLINE_HOLE_MM, as KiCad's zone fill leaves round its own pads."""
     if cu.is_empty or cu.geom_type not in ("Polygon", "MultiPolygon"):
         return cu
     parts, changed = [], False

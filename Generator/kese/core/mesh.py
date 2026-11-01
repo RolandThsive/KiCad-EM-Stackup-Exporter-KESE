@@ -1,10 +1,5 @@
-"""A triangle mesh: vertices (n, 3) float, faces (m, 3) int, and what the stages ask of it.
-
-It does what trimesh's Trimesh did for KESE, the same way (kese/core/mesh_math.py has the
-formulas), so the files come out byte for byte as before.  One habit of trimesh's is kept on
-purpose: the face normals, once worked out, are kept while the vertices and faces stay the same
-(by content), kept through update_faces(), and turned with the mesh by apply_transform() instead
-of being worked out again."""
+"""A triangle mesh: vertices (n, 3) float, faces (m, 3) int, and what the stages ask of it, done
+as trimesh did it (kese/core/mesh_math.py), face normals kept while the mesh stays the same."""
 import numpy as np
 
 from kese.core import mesh_math as mm

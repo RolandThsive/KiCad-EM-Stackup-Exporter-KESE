@@ -33,9 +33,7 @@ class Context:
 
     def bare_margin(self, node, w, solid=False):
         """How far the mask opening of a bare track or drawing (KiCad 9+) reaches past its copper: its own
-        solder_mask_margin, else the board's pad-to-mask clearance.  As in KiCad, a negative margin
-        narrows a stroke at most to nothing (-w/2); a filled shape gets the margin as it is (see add_drawing:
-        a filled circle or rounded rectangle shrinks, a polygon or plain rectangle keeps its inside)."""
+        solder_mask_margin, else the board's; a negative one narrows a stroke at most to nothing."""
         m = num(node, "solder_mask_margin")
         m = self.items.mask_clearance if m is None else m
         return m if solid or m >= 0 else max(m, -w / 2)

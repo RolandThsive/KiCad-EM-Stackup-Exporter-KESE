@@ -1,8 +1,5 @@
 """Cutting polygons along straight lines: a point wherever an edge crosses a line, worked out the
-same way for every polygon that has the edge, so that pieces cut apart meet in exactly the same
-points.  A big polygon is cut into triangles strip by strip this way (kese/core/triangulate.py),
-as KiCad cuts big polygons into 1 cm cells before it triangulates them, and the visual skin of a
-big board is joined tile by tile (kese/s6_assemble/tiles.py)."""
+same way for every polygon that has the edge, so pieces cut apart meet in the same points."""
 import numpy as np
 import shapely
 
@@ -21,10 +18,8 @@ def cell_lines(lo, hi):
 
 
 def crossed(polys, xs, ys):
-    """The polygons (an array) with a point wherever one of their edges crosses one of the lines
-    x = xs or y = ys.  The point is worked out from the edge's lower end, so a polygon that has the
-    same edge in the other direction gets the same point; an edge that only ends on a line gets
-    none."""
+    """The polygons (an array) with a point wherever an edge crosses x = xs or y = ys, worked out from
+    the edge's lower end (an edge that only ends on a line gets none)."""
     if not len(polys) or not (len(xs) or len(ys)):
         return polys
     rings, of_poly = shapely.get_rings(polys, return_index=True)

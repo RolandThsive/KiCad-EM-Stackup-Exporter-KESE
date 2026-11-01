@@ -1,8 +1,5 @@
-"""What KESE reads past, counted under "skipped" in report.txt and summed up in a warning: items of
-a kind it does not know, and what a pad or via says that is not
-modelled: KiCad 10's drilling and protection of holes:
-backdrills and tertiary drills (the hole stays plated through its whole span), counterbores and
-countersinks (not cut), and vias that are covered, plugged, capped or filled (the hole stays open)."""
+"""What KESE reads past, counted under "skipped" in report.txt: unknown items, and KiCad 10's hole
+options (backdrills, counterbores, countersinks, covered, plugged, capped or filled vias)."""
 from kese.core.sexp import child, yes
 
 UNKNOWN = "items (unknown to KESE)"

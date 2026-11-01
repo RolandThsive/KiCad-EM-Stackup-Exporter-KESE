@@ -69,10 +69,8 @@ def footprint_fields(fp):
 
 
 def shown_text(items, text, layer, fp_vars=None):
-    """A text with its ${...} variables resolved as PCB_TEXT::GetShownText does: LAYER (the layer's
-    name as the board shows it), then the footprint's fields, then the board's variables, and
-    ${REF:FIELD} from another footprint (by its uuid, as KiCad saves it, or its reference).  One that
-    needs the project file stays as written, as KiCad leaves an unknown variable."""
+    """A text with its ${...} variables resolved as PCB_TEXT::GetShownText does (LAYER, the footprint's
+    fields, the board's variables, ${REF:FIELD}); one that needs the project file stays as written."""
     if "${" not in text:
         return text
     board = board_text_vars(items)

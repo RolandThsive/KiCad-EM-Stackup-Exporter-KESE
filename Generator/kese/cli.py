@@ -34,7 +34,7 @@ def missing_packages():
 def main():
     ap = argparse.ArgumentParser(prog="kese", description="KiCad EM Stackup Exporter: .kicad_pcb -> solids for EM simulation, or a visual surface")
     ap.add_argument("boards", nargs="*", help=".kicad_pcb files (default: all in Input/)")
-    ap.add_argument("--mode", choices=["simulation", "visual", "real", "pretty"], help="real / pretty are the old names")
+    ap.add_argument("--mode", choices=["simulation", "visual"])
     ap.add_argument("--format", nargs="+", metavar="FMT", help="glb stl obj step")
     ap.add_argument("--for", dest="preset", choices=sorted(P.Run.PRESETS), help="apply a preset from Run.PRESETS")
     ap.add_argument("--verify", action="store_true", help="run the Verifier (opt-in)")

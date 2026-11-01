@@ -1,8 +1,5 @@
-"""The plain mathematics every other module builds on: distances, circles through
-points, arcs, Bezier curves, rotations, and recognising circular arcs in a polyline.
-
-Nothing here reads parameters or knows about boards; every function takes numbers and returns
-numbers (or lists of points)."""
+"""The plain mathematics every other module builds on: distances, circles through points, arcs,
+Bezier curves and rotations.  Nothing here reads parameters or knows about boards."""
 import math
 
 import numpy as np

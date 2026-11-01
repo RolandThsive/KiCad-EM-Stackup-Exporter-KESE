@@ -1,10 +1,5 @@
-"""KiCad's text markup: ~{overbar}, ^{superscript} and _{subscript}, nested as deep as wanted, the way
-KiCad's markup parser reads a line of text (include/markup_parser.h, its PEG grammar): a marker
-starts a run only when followed by {, the run ends at its closing }, and a marker whose } never
-comes is plain text.  Inside a run, {name} (an escape such as {slash}) is plain text.
-
-A line -> [(text, (style, ...)), ...] runs in order, each style "~", "^" or "_"; and the same line
-as [(start run, end run)] for each overbar, end exclusive."""
+"""KiCad's text markup: ~{overbar}, ^{superscript} and _{subscript}, nested, read as KiCad's markup
+parser reads it (include/markup_parser.h).  A marker whose } never comes is plain text."""
 import re
 
 ESCAPE = re.compile(r"\{[A-Za-z_][A-Za-z0-9_]*\}")

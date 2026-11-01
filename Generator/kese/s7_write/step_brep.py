@@ -1,8 +1,5 @@
-"""The B-rep of one part as STEP entities: its vertices, straight edges, planes, faces and
-shells, from its Topology (kese/s7_write/step_topology.py), in output units and orientation.
-Entities are numbered in blocks: so many per vertex, per edge, per loop, and the number of any
-one of them is a sum, never looked up.  The text is made and written a slice of rows at a time,
-so that a part of millions of edges never has more than a slice of it as Python objects."""
+"""The B-rep of one part as STEP entities from its Topology, in output units, numbered in blocks
+(so many per vertex, edge, loop), written a slice of rows at a time to bound the memory."""
 import numpy as np
 
 from kese.s7_write.step_writer import real, refs

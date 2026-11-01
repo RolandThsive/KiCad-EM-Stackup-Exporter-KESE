@@ -1,7 +1,5 @@
 """A STEP file (AP214, as OpenCascade writes it) put together from text: the header, one product
-per part with its solids and colour, and the assembly that holds the parts.  Entities are numbered
-as they are reserved and written as they are made; the assembly, which lists every part's
-placement, comes last."""
+per part with its solids and colour, and the assembly that holds the parts last."""
 from datetime import UTC, datetime
 from pathlib import Path
 
@@ -45,9 +43,7 @@ def refs(ids):
 
 class StepWriter:
     """reserve() ids, write() lines of entities, add_part() when a part's solids are written, then
-    close().  The file is written from its first line as the parts come; the assembly that holds
-    the parts (entities #1 to #24, which list every part's placement) goes at the end of the data
-    section, where a STEP reader finds it as well as at the start."""
+    close(), which writes the assembly (entities #1 to #24) at the end of the data section."""
 
     def __init__(self, path, name, units):
         self.path, self.name, self.units = Path(path), name, units

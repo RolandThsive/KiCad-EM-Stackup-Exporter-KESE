@@ -1,9 +1,5 @@
-"""GLB: one mesh per part, with PBR materials from stage 5 (materials).
-
-A glTF 2.0 binary file (https://registry.khronos.org/glTF/specs/2.0/glTF-2.0.html), laid out as
-trimesh 4/5 laid it out, so the file is byte for byte what it was: per part its indices (uint32),
-positions and normals (float32) in one buffer, a buffer view per array (an array met before is
-not stored again), and one node per part in the scene."""
+"""GLB: one mesh per part, PBR materials from stage 5, laid out as trimesh 4/5 laid out a glTF 2.0
+binary: indices, positions and normals in one buffer, each array stored once, one node per part."""
 import json
 import struct
 
@@ -14,7 +10,7 @@ from parameters import P
 
 ARRAY_BUFFER, ELEMENT_ARRAY_BUFFER = 34962, 34963       # buffer view targets
 FLOAT, UNSIGNED_INT, TRIANGLES = 5126, 5125, 4
-GENERATOR = "https://github.com/mikedh/trimesh"           # unchanged, so the file stays the same
+GENERATOR = "KESE"
 
 
 def _srgb_to_linear(rgb):

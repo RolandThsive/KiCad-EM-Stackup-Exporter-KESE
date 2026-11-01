@@ -62,10 +62,8 @@ def graphic(node, T):
 
 
 def ellipse_pts(node, arc):
-    """An ellipse or elliptical arc (KiCad after 10): centre, major and minor radius, the major axis
-    turned by rotation_angle, and an arc from start_angle up to end_angle, the angles the
-    ellipse's own parameter: centre + R(rotation) (a cos t, b sin t) in KiCad's frame
-    (libs/kimath/src/geometry/shape_ellipse.cpp)."""
+    """An ellipse or elliptical arc (KiCad after 10): centre + R(rotation) (a cos t, b sin t) from
+    start_angle to end_angle, in KiCad's frame (libs/kimath/src/geometry/shape_ellipse.cpp)."""
     cx, cy = pt(child(node, "center"))
     a, b = num(node, "major_radius", 0.0), num(node, "minor_radius", 0.0)
     rot = math.radians(num(node, "rotation_angle", 0.0))

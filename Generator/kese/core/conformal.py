@@ -1,7 +1,5 @@
 """The split of a coating laid over raised copper: flat on the base, on top of the copper, and the
-wall beside it.  As KiCad builds every piece of copper on its own, each piece is grown and cut on
-its own against only the coating near it; one boolean operation over the whole board gives the
-same regions, to a fraction of a micron, in many times the time."""
+wall beside it.  Each piece of copper is grown and cut on its own, as KiCad builds it."""
 import numpy as np
 import shapely
 from shapely.geometry import Polygon

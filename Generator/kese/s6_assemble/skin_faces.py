@@ -1,13 +1,6 @@
-"""The "visual" mode: the board's visible surface, found in 2D as the boundary of
-a part is (kese/core/boundary.py), but for all parts at once.  At every height, what looks up is
-one part's material below minus every part's material above, and what looks down one part's
-material above minus every part's material below; a wall of a part is visible where no other
-part's material stands against it.  Every face keeps the part it came from.  Faces and walls meet
-on identical edges, as for a solid, but nothing is bent to that end and nothing is cut twice: a
-wall is split wherever a vertex of a face at its heights, or of a neighbouring part's wall, lies on
-it (kese/core/vertices.py).  What looks at other material across less than a hair, and the
-surfaces of hollows sealed inside the board, are taken out afterwards, triangle by triangle
-(kese/s6_assemble/skin_mesh.py)."""
+"""The "visual" mode: the board's visible surface, found in 2D as a part's boundary is but for all
+parts at once: one part's faces less every part's material across them, walls less those another
+part stands against.  Faces keep their part; hidden triangles go in skin_mesh.py."""
 from concurrent.futures import ThreadPoolExecutor
 from itertools import pairwise
 from threading import get_ident
@@ -30,10 +23,8 @@ BIG_PIECE = 10_000       # coordinates: a piece this big (a dielectric, with eve
 
 
 def skin_faces(ps, log):
-    """PrismSet -> (levels, the material of every slice (material_of_every_slice), {part: (flats,
-    walls)}): the visible faces of every part, mm, board frame; flats as (z, region, looks up),
-    walls as (z0, z1, segments).  The parts are cut, and the slices' walls found, Run.WORKERS at
-    a time."""
+    """PrismSet -> (levels, the material of every slice, {part: (flats, walls)}): flats as
+    (z, region, looks up), walls as (z0, z1, segments), mm, board frame; Run.WORKERS at a time."""
     levels = heights_of(ps.prisms)
     by_part = {part: [p for p in prisms if not p.region.is_empty] for part, prisms in ps.by_part().items()}
     order = biggest_first(by_part)
@@ -71,10 +62,8 @@ def material_of_every_slice(slices, pool):
 
 
 def visible_flats(part_slices, levels, pieces):
-    """One part's flat faces: at every height, its material below minus everyone's material
-    above (looking up), and its material above minus everyone's material below (looking down).
-    Where the part's material is the same below and above a height, there is no face there (a
-    via barrel through every layer)."""
+    """One part's flat faces: at every height its material below less everyone's above (looking up),
+    and its material above less everyone's below (looking down)."""
     out = []
     for k, z in enumerate(levels):
         below = part_slices[k - 1] if k else sh.EMPTY
@@ -91,13 +80,8 @@ def visible_flats(part_slices, levels, pieces):
 
 
 def cut_away(region, material):
-    """The region less the material of a slice (its polygons, their parts, an index of them, all
-    of them joined, and each thread's prepared copy of that).  What reaches into the region is cut
-    away: a few small pieces joined; a big piece on its own (GEOS keeps only what reaches into the
-    region's box); and more pieces than that as all the slice's material in one overlay, which
-    costs less than joining them.  Where a big piece or many reach it, the region is first asked
-    whether it lies wholly against material, as most faces of a board do (a trace's underside on
-    the dielectric, its top under the solder mask), and is gone if so."""
+    """The region less the material of a slice: a few pieces joined, a big piece on its own, more as
+    one overlay; a region wholly against material (most faces of a board) is gone at once."""
     polys, _, tree, joined, _ = material
     near = tree.query(region)                                  # by box; the exact test below costs a tenth of the
     near = near[shapely.intersects(polys[near], region)]       # index's own, which would try every ring of a big piece
@@ -115,10 +99,8 @@ def cut_away(region, material):
 
 
 def lies_against_material(region, material):
-    """Whether the slice's material covers the region wholly.  GEOS answers in a fraction of the
-    time an overlay takes once the material is prepared (indexed), but a prepared geometry keeps
-    working state that two threads cannot share: so every thread asks a copy of its own, made the
-    first time it asks about this slice."""
+    """Whether the slice's material covers the region wholly, asked of a prepared copy of the material
+    that each thread makes for itself (prepared geometries cannot be shared between threads)."""
     *_, joined, copies = material
     mine = copies.get(get_ident())
     if mine is None:
@@ -128,10 +110,8 @@ def lies_against_material(region, material):
 
 
 def visible_walls(slices, levels, flats, pool):
-    """Every part's walls per slice, split where a face at the slice's heights or another part's
-    wall has a vertex on them, less those another part's material stands against: a wall segment
-    a -> b (the material on its left) is hidden when some part has b -> a.  (No part has a segment
-    both ways itself: the pieces of one region never share an edge.)  -> {part: [(z0, z1, segments)]}."""
+    """Every part's walls per slice, split at the vertices of faces and other parts' walls, less those
+    hidden by another part's segment b -> a.  -> {part: [(z0, z1, segments)]}."""
     faces_at = {}
     for part_flats in flats.values():
         for z, region, _ in part_flats:

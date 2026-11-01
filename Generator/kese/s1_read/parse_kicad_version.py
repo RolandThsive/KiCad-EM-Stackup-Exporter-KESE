@@ -1,12 +1,6 @@
-"""Every way a board file differs by KiCad version, and nothing else.  The other files of KESE ask
-the questions below and never test a format number or a KiCad release themselves
-(tests/test_layout.py, test_version_checks_stay_in_parse_kicad_version, keeps it so).
-
-Where KiCad decides by what the file holds - (mid ...) on an arc, (filled_areas_thickness no) on a
-zone, a (layers ...) pair - so does this file, before it looks at the number, so a development
-build's file reads as KiCad reads it.  The numbers are the (version N) KiCad writes; their history
-is in KiCad's pcb_io_kicad_sexpr.h, and the rules are those of its board parser,
-pcb_io_kicad_sexpr_parser.cpp (cited by function below)."""
+"""Every way a board file differs by KiCad version, and nothing else (tests/test_layout.py keeps
+version checks here).  Where KiCad decides by what the file holds, so does this file; the rules
+are those of KiCad's pcb_io_kicad_sexpr_parser.cpp (cited by function below)."""
 import math
 import re
 from dataclasses import dataclass
@@ -78,15 +72,9 @@ OLD_LAYER_NAMES = {
 
 
 def copper_layer_names(layers_node):
-    """KiCad 4 and 5 write a copper layer the user renamed under its new name only, e.g.
-    (0 TOP_L1.Sig mixed), and every item on it uses that name.  KiCad reads the copper layers by
-    their place in the list, not their number (parseLayers): the run of copper-typed layers that
-    opens the list is the copper, a later layer typed signal (KiCad 9 lets a User.n layer be) is not;
-    of that run the first is F.Cu, the last B.Cu, and
-    one between is In<n>.Cu by its canonical name, else by its place (KiCad 3 numbered them the other
-    way round, 15 F.Cu and 0 B.Cu).  A canonical name keeps its layer: KiCad writes the list in stack
-    order, so that is what KiCad reads too, and a list written in another order still reads right.  Non-copper layers KiCad 3 wrote in Italian, Polish or French
-    take their English names.  -> {name in the file: name KESE uses}, or {}."""
+    """{name in the file: name KESE uses}, or {}: the run of copper layers that opens the list is
+    F.Cu .. In<n>.Cu .. B.Cu by place, as KiCad's parseLayers reads it (KiCad 4/5 renamed layers,
+    KiCad 3's reversed numbers); KiCad 3's non-English layer names take their English names."""
     cu = []
     for l in layers_node[1:]:          # the copper layers come first; KiCad stops at the first other one
         if not (isinstance(l, list) and len(l) > 2 and str(l[2]) in COPPER_TYPES):
@@ -189,11 +177,8 @@ def mask_margin(node, d):
 
 # ---- zones -------------------------------------------------------------------------------------
 def stroked_fill_pen(node, d):
-    """The pen a zone's stored fill is drawn with, 0 for none.  KiCad 5 and older stored a fill shrunk by
-    half the zone's min_thickness and drew its outline with a pen of min_thickness; KiCad 6 to 8 write
-    (filled_areas_thickness no) on a zone they filled, and files from format STROKED_FILL_UNTIL on are
-    never stroked.  As KiCad does on reading such a file, a stroked fill grows by half the min_thickness,
-    round at the corners (parseZONE: isStrokedFill and InflateWithLinkedHoles)."""
+    """The pen a zone's stored fill is drawn with, 0 for none: KiCad 5 and older stroked the fill
+    outline with min_thickness, never from STROKED_FILL_UNTIL on (parseZONE: isStrokedFill)."""
     flag_ = child(node, "filled_areas_thickness")
     stroked = d.format < STROKED_FILL_UNTIL
     if flag_ and len(flag_) > 1 and str(flag_[1]) in ("no", "false"):
@@ -204,10 +189,8 @@ def stroked_fill_pen(node, d):
 
 
 def legacy_fill_segments(node):
-    """A zone filled in KiCad 4/5's segment mode and stored with no polygons: [(a, b)] of its
-    (fill_segments (pts (xy) (xy)) ...), each a stroke of the zone's min_thickness, as KiCad reads
-    it (parseZONE, "legacy segment fill"); [] for any other zone, whose segments, if any, go with
-    the polygons it stores."""
+    """A zone filled in KiCad 4/5's segment mode with no polygons stored: [(a, b)] of its fill_segments,
+    each a stroke of min_thickness (parseZONE, "legacy segment fill"); [] for any other zone."""
     if children(node, "filled_polygon"):
         return []
     out = []
@@ -221,12 +204,8 @@ def legacy_fill_segments(node):
 
 # ---- pads and vias -----------------------------------------------------------------------------
 def zone_layer_connections(node):
-    """(layers where a zone keeps the ring, whether zones count when the ring is tested).  KiCad 7+
-    writes (zone_layer_connections "In1.Cu" ...) on a pad or via with remove_unused_layers: the zone
-    filler's verdict, the layers where a zone connects to it.  KiCad then flashes the ring there and,
-    on the other layers, only where a track, arc, via or pad of its net meets it, not a zone
-    (pad.cpp / pcb_track.cpp FlashLayer, ZLO_FORCE_FLASHED).  An older file has no such list and
-    any copper counts."""
+    """(layers where a zone keeps the ring, whether zones count when the ring is tested): KiCad 7+'s
+    zone_layer_connections list (pad.cpp / pcb_track.cpp FlashLayer); an older file lets any copper count."""
     z = child(node, "zone_layer_connections")
     if z is None:
         return set(), True
@@ -267,11 +246,8 @@ def board_tenting(setup):
 
 
 def net_class_vias(tree, unescape):
-    """What a via that gives no size or drill takes (KiCad 4/5 leave out what is at its net class's
-    value): (the Default class's, {net: its class's}), each (size, drill, micro size, micro drill).
-    A class takes what it leaves out from the board setup's via_size / via_drill, the setup from
-    KiCad's defaults (PCB_VIA::GetDrillValue takes the net class's when the via has none).
-    `unescape` reads the class's net names."""
+    """What a via that gives no size or drill takes (KiCad 4/5): (the Default class's, {net: its
+    class's}), each (size, drill, micro size, micro drill), falling back to setup and KiCad's defaults."""
     setup = child(tree, "setup") or []
     d = KICAD_DEFAULT_VIA
     board = (num(setup, "via_size", d[0]), num(setup, "via_drill", d[1]),
@@ -404,10 +380,8 @@ def text_size(font_node):
 
 
 def text_pen(font_node, d):
-    """A stroke-font text's (thickness), None when it gives none (or 0, which KiCad takes as none).
-    From format BOLD_MULTIPLIER_FROM (after KiCad 10) a bold text stores its base pen and is drawn
-    with BOLD_STROKE_MULTIPLIER times it (EDA_TEXT::GetEffectiveTextPenWidth); an older file's
-    thickness is the pen itself (parseEDA_TEXT, MigrateLegacyBoldStrokeWidth)."""
+    """A stroke-font text's thickness, None when it gives none (or 0).  From BOLD_MULTIPLIER_FROM a bold
+    text stores its base pen, drawn BOLD_STROKE_MULTIPLIER times (GetEffectiveTextPenWidth)."""
     t = num(font_node, "thickness")
     if t is None or t <= 1e-6:
         return None
@@ -452,10 +426,8 @@ def footprint_text_fields(fp):
 
 
 def render_cache_rings(node, text, angle):
-    """The glyph polygons KiCad 7+ stores with a TrueType text, (render_cache "text" angle (polygon
-    (pts outline) (pts hole) ...) ...), as [[outline, hole, ...] per polygon] of (x, y) in board
-    coordinates.  None when there is none or it is stale - made for another text or angle - as KiCad
-    then draws it anew (EDA_TEXT::GetRenderCache)."""
+    """The glyph polygons KiCad 7+ stores with a TrueType text, [[outline, hole, ...] per polygon] in
+    board coordinates; None when there is none or it is stale (EDA_TEXT::GetRenderCache)."""
     rc = child(node, "render_cache")
     if rc is None or len(rc) < 3 or isinstance(rc[1], list) or str(rc[1]) != text:
         return None
