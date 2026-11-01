@@ -30,7 +30,8 @@
     "Finish": ["Finish.FINISH_ENABLED", "Finish.FINISH_TYPE", "Finish.FINISH_GROUPING"],
     "Color": ["Color.USE_STACKUP_COLORS", "Color.VISUAL_MASK_OPAQUE"]
   },
-  "basicOpen": ["Run", "Board"],
+  "_basicOpen": "Sections open when the page starts. None: every section shows closed, so all are in view and the visitor opens what they need.",
+  "basicOpen": [],
 
   "_titles": "Section titles. Run is called Output on the page.",
   "sectionTitles": {"Run": "Output", "Board": "Board", "Copper": "Copper", "SolderMask": "Solder Mask", "Silkscreen": "Silkscreen", "Finish": "Finish", "Geometry": "Geometry", "Color": "Color"},
