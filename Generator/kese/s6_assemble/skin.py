@@ -13,10 +13,10 @@ from collections import defaultdict
 
 import numpy as np
 import shapely
-import trimesh
 
 from kese.core.cells import split_at
 from kese.core.graph import connected_components
+from kese.core.mesh import Mesh, concatenate
 from kese.s6_assemble.tiles import joined_tiles, tile_edges, tile_surface
 from parameters import P
 
@@ -24,7 +24,7 @@ POINTS_PER_QUERY = 200_000
 
 
 def skin_meshes(ps):
-    """PrismSet -> {part name: trimesh of its visible faces} (mm, board frame)."""
+    """PrismSet -> {part name: mesh of its visible faces} (mm, board frame)."""
     prisms = [p for p in ps.prisms if not p.region.is_empty]
     for p in prisms:
         shapely.prepare(p.region)
@@ -51,7 +51,7 @@ def skin_meshes(ps):
     pieces = []
     for fi in np.split(by, cuts) if len(by) else []:
         used, faces = np.unique(f[fi], return_inverse=True)
-        pieces.append((parts[owner[fi[0]]], trimesh.Trimesh(v[used], faces.reshape(-1, 3), process=False)))
+        pieces.append((parts[owner[fi[0]]], Mesh(v[used], faces.reshape(-1, 3))))
     meshes = defaultdict(list)
     for part, m in pieces + loose:
         keep = ~buried(prisms, m.triangles_center + m.face_normals * P.Geometry.SKIN_BURIED_TEST_OFFSET_MM)
@@ -59,7 +59,7 @@ def skin_meshes(ps):
             m.update_faces(keep)
             m.remove_unreferenced_vertices()
             meshes[part].append(m)
-    return {part: ms[0] if len(ms) == 1 else trimesh.util.concatenate(ms) for part, ms in meshes.items()}
+    return {part: ms[0] if len(ms) == 1 else concatenate(ms) for part, ms in meshes.items()}
 
 
 def sealed(v, f):

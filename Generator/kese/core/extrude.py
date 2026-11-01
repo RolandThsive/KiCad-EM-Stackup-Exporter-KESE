@@ -1,9 +1,9 @@
-"""Extrusion: a 2D region between two heights as a closed triangle mesh (trimesh), and the
+"""Extrusion: a 2D region between two heights as a closed triangle mesh (kese/core/mesh.py), and the
 union of such meshes into one solid."""
 import numpy as np
 import shapely
-import trimesh
 
+from kese.core.mesh import Mesh, concatenate
 from kese.core.shapes2d import polygons, polys_only
 from kese.core.triangulate import caps, cells_cut, geos_cut
 from parameters import P
@@ -31,7 +31,7 @@ def extrude(geom, z0, z1, _retry=True):
             left = left[bad]
     meshes += [slow_prism(p, z0, z1, _retry) for p in left]
     meshes = [m for m in meshes if m is not None]
-    return meshes[0] if len(meshes) == 1 else trimesh.util.concatenate(meshes) if meshes else None
+    return meshes[0] if len(meshes) == 1 else concatenate(meshes) if meshes else None
 
 
 def prism_mesh(polys, z0, z1, cut):
@@ -49,7 +49,7 @@ def prism_mesh(polys, z0, z1, cut):
     v = np.concatenate([np.c_[xy[keep], np.full(m, z0)], np.c_[xy[keep], np.full(m, z1)]])
     # the bottom facing down, the top facing up, and on every ring edge a wall of two triangles
     f = np.concatenate([t[:, ::-1], t + m, np.c_[i, j, j + m], np.c_[i, j + m, i + m]])
-    return trimesh.Trimesh(v, f, process=False), np.flatnonzero(bad)
+    return Mesh(v, f), np.flatnonzero(bad)
 
 
 def slow_prism(p, z0, z1, retry):
@@ -60,7 +60,7 @@ def slow_prism(p, z0, z1, retry):
         opened = polys_only(shapely.set_precision(p, 0).buffer(-P.Geometry.PINCH_POINT_OPENING_MM, quad_segs=1))
         pieces = [q for q in (extrude(x, z0, z1, _retry=False) for x in polygons(opened)) if q is not None]
         if pieces and all(q.is_watertight for q in pieces):
-            m = trimesh.util.concatenate(pieces)
+            m = concatenate(pieces)
     return m
 
 
@@ -87,16 +87,13 @@ def extrude_cdt(p, z0, z1):
         for (ax, ay), (bx, by) in zip(c[:-1], c[1:]):
             tri((ax, ay, z0), (bx, by, z0), (bx, by, z1))
             tri((ax, ay, z0), (bx, by, z1), (ax, ay, z1))
-    m = trimesh.Trimesh(np.array(verts), np.array(faces), process=True)
-    m.merge_vertices()
-    return m
+    return Mesh(np.array(verts), np.array(faces), merge=True)
 
 
 def solid_union(meshes, log=None):
-    """One solid of the meshes, joined by Manifold in double precision.  trimesh's own call to
-    Manifold rounds every vertex to float32 (in steps of 7.6 nm at 100 mm, a thirteenth of the snap
-    grid), and prisms that met exactly could come back as two vertices at one place: an open solid
-    once merged."""
+    """One solid of the meshes, joined by Manifold in double precision (Mesh64): in float32 every
+    vertex moves in steps of 7.6 nm at 100 mm, a thirteenth of the snap grid, and prisms that met
+    exactly could come back as two vertices at one place: an open solid once merged."""
     meshes = [m for m in meshes if m is not None and len(m.faces)]
     if not meshes:
         return None
@@ -111,8 +108,8 @@ def solid_union(meshes, log=None):
             raise ValueError(f"{len(bad)} of {len(solids)} pieces are not closed ({bad[0]})")
         out = mf.Manifold.batch_boolean(solids, mf.OpType.Add).to_mesh64()
         # copies, so Manifold's own arrays are freed with it
-        return trimesh.Trimesh(np.array(out.vert_properties)[:, :3], np.array(out.tri_verts, dtype=np.int64), process=False)
+        return Mesh(np.array(out.vert_properties)[:, :3], np.array(out.tri_verts, dtype=np.int64))
     except Exception as exc:
         if log is not None:
             log(f"note: boolean union unavailable ({exc}); pieces left touching")
-        return trimesh.util.concatenate(meshes)
+        return concatenate(meshes)

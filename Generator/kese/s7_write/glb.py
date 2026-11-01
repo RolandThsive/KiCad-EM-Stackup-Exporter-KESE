@@ -1,13 +1,20 @@
-"""GLB: one mesh per part, with PBR materials from stage 5 (materials)."""
+"""GLB: one mesh per part, with PBR materials from stage 5 (materials).
+
+A glTF 2.0 binary file (https://registry.khronos.org/glTF/specs/2.0/glTF-2.0.html), laid out as
+trimesh 4/5 laid it out, so the file is byte for byte what it was: per part its indices (uint32),
+positions and normals (float32) in one buffer, a buffer view per array (an array met before is
+not stored again), and one node per part in the scene."""
 import json
 import struct
 
 import numpy as np
-import trimesh
-from trimesh.visual.material import PBRMaterial
-from trimesh.visual.texture import TextureVisuals
 
+from kese.core.mesh_math import unitize
 from parameters import P
+
+ARRAY_BUFFER, ELEMENT_ARRAY_BUFFER = 34962, 34963       # buffer view targets
+FLOAT, UNSIGNED_INT, TRIANGLES = 5126, 5125, 4
+GENERATOR = "https://github.com/mikedh/trimesh"           # unchanged, so the file stays the same
 
 
 def _srgb_to_linear(rgb):
@@ -15,49 +22,90 @@ def _srgb_to_linear(rgb):
     return np.where(s <= 0.04045, s / 12.92, ((s + 0.055) / 1.055) ** 2.4)
 
 
-def pbr(mat):
-    factor = [*np.round(_srgb_to_linear(mat["rgb"]), 5), round(float(mat["alpha"]), 4)]
-    kw = {"alphaMode": "BLEND"} if mat["alpha"] < 1 else {}
-    return PBRMaterial(name=mat["name"], baseColorFactor=factor, metallicFactor=mat["metallic"],
-                       roughnessFactor=mat["roughness"], **kw)
+def material(mat):
+    """The glTF material of a stage 5 material: the colour factor held as 8 bit RGBA, as trimesh held it."""
+    factor = np.array([*np.round(_srgb_to_linear(mat["rgb"]), 5), round(float(mat["alpha"]), 4)])
+    rgba = np.clip(factor * 255, 0.0, 255).round().astype(np.uint8)
+    out = {"pbrMetallicRoughness": {"baseColorFactor": (rgba.astype(np.float64) / 255).tolist(),
+                                    "roughnessFactor": float(mat["roughness"]), "metallicFactor": float(mat["metallic"])},
+           "name": mat["name"]}
+    if mat["alpha"] < 1:
+        out["alphaMode"] = "BLEND"
+    out["doubleSided"] = False
+    return out
 
 
-def scene_of(model):
-    scene = trimesh.Scene()
+class _Store:
+    """The binary buffer, its views and the accessors, each array stored once."""
+    def __init__(self):
+        self.views, self.accessors, self._acc = {}, [], {}
+
+    def add(self, blob, data, kind_width):
+        raw = data.tobytes()
+        if raw not in self.views:
+            self.views[raw] = len(self.views)
+        blob["bufferView"] = self.views[raw]
+        key = tuple(blob.items())
+        if key in self._acc:
+            return self._acc[key]
+        rows = data.reshape((-1, kind_width))
+        blob["count"] = len(rows)
+        blob["max"] = rows.max(axis=0).astype(data.dtype).tolist()
+        blob["min"] = rows.min(axis=0).astype(data.dtype).tolist()
+        self.accessors.append(blob)
+        self._acc[key] = len(self.accessors) - 1
+        return self._acc[key]
+
+
+def glb_bytes(model, normals=True, targets=True):
+    store, meshes, materials, mat_index, nodes = _Store(), [], [], {}, []
     for part, mesh in model.meshes.items():
-        # the same arrays, with the normals finish_mesh set (trimesh would redo zero ones), and
-        # the material: a copy of every mesh would double the memory on a big board
-        m = trimesh.Trimesh(mesh.vertices, mesh.faces, vertex_normals=mesh.vertex_normals, process=False,
-                            visual=TextureVisuals(material=pbr(model.materials[part])))
-        scene.add_geometry(m, node_name=part, geom_name=part)
-    return scene
+        if not len(mesh.faces) or not len(mesh.vertices):
+            continue
+        faces = store.add({"componentType": UNSIGNED_INT, "type": "SCALAR"}, mesh.faces.astype(np.uint32), 1)
+        pos = store.add({"componentType": FLOAT, "type": "VEC3", "byteOffset": 0}, mesh.vertices.astype(np.float32), 3)
+        prim = {"attributes": {"POSITION": pos}, "indices": faces, "mode": TRIANGLES}
+        mat = material(model.materials[part])
+        key = json.dumps(mat)
+        if key not in mat_index:
+            mat_index[key] = len(materials)
+            materials.append(mat)
+        prim["material"] = mat_index[key]
+        if normals:
+            n = unitize(mesh.vertex_normals).astype(np.float32)
+            prim["attributes"]["NORMAL"] = store.add(
+                {"componentType": FLOAT, "count": len(mesh.vertices), "type": "VEC3", "byteOffset": 0}, n, 3)
+        nodes.append({"name": part, "mesh": len(meshes)})
+        meshes.append({"name": part, "extras": {}, "primitives": [prim]})
+    tree = {"scene": 0, "scenes": [{"nodes": list(range(len(nodes)))}],
+            "asset": {"version": "2.0", "generator": GENERATOR}}
+    for key, value in (("accessors", store.accessors), ("meshes", meshes), ("materials", materials)):
+        if value:
+            tree[key] = value
+    tree["nodes"] = nodes
+    pieces, views, at = [], [], 0
+    for raw in store.views:
+        pieces.append(raw + b"\x00" * (-len(raw) % 4))
+        views.append({"buffer": 0, "byteOffset": at, "byteLength": len(pieces[-1])})
+        at += len(pieces[-1])
+    if at:
+        tree["buffers"] = [{"byteLength": at}]
+        tree["bufferViews"] = views
+    if targets:
+        for m in meshes:
+            prim = m["primitives"][0]
+            for acc in prim["attributes"].values():
+                views[store.accessors[acc]["bufferView"]]["target"] = ARRAY_BUFFER
+            views[store.accessors[prim["indices"]]["bufferView"]]["target"] = ELEMENT_ARRAY_BUFFER
+    content = json.dumps(tree, separators=(",", ":"))
+    # trimesh pads the JSON to 4 bytes with 1 to 4 spaces; the targets pass re-pads it with 0 to 3
+    content = (content + " " * ((-len(content) % 4) if targets else 4 - len(content) % 4)).encode("utf-8")
+    head = struct.pack("<4sII", b"glTF", 2, 12 + 8 + len(content) + 8 + at) + struct.pack("<I4s", len(content), b"JSON")
+    return [head, content, struct.pack("<I4s", at, b"BIN\x00"), *pieces]
 
 
 def write(model, path):
-    glb = scene_of(model).export(file_type="glb", include_normals=P.Run.EXPORT_INCLUDE_NORMALS)
     with open(path, "wb") as f:
-        for piece in (_set_targets(glb) if P.Run.EXPORT_SET_BUFFERVIEW_TARGETS else [glb]):
+        for piece in glb_bytes(model, P.Run.EXPORT_INCLUDE_NORMALS, P.Run.EXPORT_SET_BUFFERVIEW_TARGETS):
             f.write(piece)
     return path
-
-
-def _set_targets(glb):
-    """The GLB with a target on every buffer view, as the pieces to write one after another (the
-    binary chunk is not copied)."""
-    jlen = struct.unpack_from("<I", glb, 12)[0]
-    j = json.loads(glb[20:20 + jlen])
-    rest = memoryview(glb)[20 + jlen:]
-    for mesh in j.get("meshes", []):
-        for prim in mesh["primitives"]:
-            for acc in prim.get("attributes", {}).values():
-                bv = j["accessors"][acc].get("bufferView")
-                if bv is not None:
-                    j["bufferViews"][bv]["target"] = 34962
-            if "indices" in prim:
-                bv = j["accessors"][prim["indices"]].get("bufferView")
-                if bv is not None:
-                    j["bufferViews"][bv]["target"] = 34963
-    js = json.dumps(j, separators=(",", ":")).encode()
-    js += b" " * (-len(js) % 4)
-    chunk = struct.pack("<I4s", len(js), b"JSON") + js
-    return [struct.pack("<4sII", b"glTF", 2, 12 + len(chunk) + len(rest)), chunk, rest]

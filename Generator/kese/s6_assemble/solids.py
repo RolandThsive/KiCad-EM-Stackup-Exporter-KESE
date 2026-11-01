@@ -76,7 +76,7 @@ def shares_an_edge(a, b):
 
 
 def solid_meshes(ps, log):
-    """PrismSet -> (part name, closed trimesh, or None when the union failed) for one part after
+    """PrismSet -> (part name, closed mesh, or None when the union failed) for one part after
     another (mm, board frame), so that each can be finished before the next one is built.  The
     biggest parts come first: their union, the one that needs the most memory, runs while little
     else is held."""
@@ -87,6 +87,6 @@ def solid_meshes(ps, log):
 
 
 def part_solid(prisms, log):
-    """The prisms of one part -> its closed trimesh, or None when the union failed."""
+    """The prisms of one part -> its closed mesh, or None when the union failed."""
     regions = part_regions(prisms)
     return solid_union([m for m in (extrude(r, p.z0, p.z1) for r, p in zip(regions, prisms)) if m is not None], log=log)

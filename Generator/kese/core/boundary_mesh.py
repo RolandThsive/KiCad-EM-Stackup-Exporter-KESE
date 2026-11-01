@@ -4,21 +4,21 @@ points; then the points are numbered by (height, grid point), so that the faces 
 vertex in the Boundary share it in the mesh too, and the mesh closes as the Boundary does."""
 import numpy as np
 import shapely
-import trimesh
 
 from kese.core import shapes2d as sh
 from kese.core.flat_triangles import twice_area
+from kese.core.mesh import Mesh
 from kese.core.triangulate import caps, cells_cut, lookup, geos_cut, rings_of
 from kese.core.vertices import grid_keys, vertices_in_order
 
 
 def mesh_of_boundary(boundary):
-    """Boundary -> trimesh (mm, board frame), or None when it has no faces."""
+    """Boundary -> Mesh (mm, board frame), or None when it has no faces."""
     at = {z: k for k, z in enumerate(boundary.levels)}
     pieces = [flat_face_triangles(region, at[z], up) for z, region, up in boundary.flats]
     pieces += [wall_triangles(segments, at[z0], at[z1]) for z0, z1, segments in boundary.walls()]
     xyz, tri = mesh_with_shared_vertices(pieces, boundary.levels)
-    return trimesh.Trimesh(xyz, tri, process=False) if len(tri) else None
+    return Mesh(xyz, tri) if len(tri) else None
 
 
 def mesh_with_shared_vertices(pieces, heights):

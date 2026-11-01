@@ -1,5 +1,22 @@
-"""STL: one binary STL per part in an stl/ folder (what openEMS / CSXCAD import)."""
+"""STL: one binary STL per part in an stl/ folder (what openEMS / CSXCAD import).
+
+Binary STL: an 80 byte header (zeros), the triangle count, and per triangle its unit normal, its
+three corners (float32) and two bytes of attributes (zero)."""
+import numpy as np
+
 from kese.core.names import model_file_names
+
+HEADER = np.dtype([("header", np.void, 80), ("face_count", "<u4")])
+TRIANGLE = np.dtype([("normals", "<f4", (3,)), ("vertices", "<f4", (3, 3)), ("attributes", "<u2")])
+
+
+def stl_bytes(mesh):
+    header = np.zeros(1, dtype=HEADER)
+    header["face_count"] = len(mesh.faces)
+    packed = np.zeros(len(mesh.faces), dtype=TRIANGLE)
+    packed["normals"] = mesh.face_normals
+    packed["vertices"] = mesh.triangles
+    return header.tobytes() + packed.tobytes()
 
 
 def write(model, folder):
@@ -7,6 +24,6 @@ def write(model, folder):
     names, written = model_file_names(model), []
     for part, mesh in model.meshes.items():
         p = folder / f"{names[part]}.stl"
-        mesh.export(p, file_type="stl")
+        p.write_bytes(stl_bytes(mesh))
         written.append(p)
     return written

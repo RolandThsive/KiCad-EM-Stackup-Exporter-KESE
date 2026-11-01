@@ -8,7 +8,6 @@
 # last versions built for it.
 numpy==2.5.3
 shapely==2.2.0
-trimesh==5.1.1
 mapbox_earcut==2.1.0
 # Run.BUILD_WITH_KERNELS (solid unions by Manifold, STEP by OpenCascade) and the tests' read-back of
 # STEP files (optional: STEP is written without them; with BUILD_WITH_KERNELS the run says what is missing)

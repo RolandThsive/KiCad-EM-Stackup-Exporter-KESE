@@ -9,20 +9,20 @@ from functools import partial
 
 import numpy as np
 import shapely
-import trimesh
 
 from kese.core.boundary_mesh import (
     flat_face_triangles,
     mesh_with_shared_vertices,
     wall_triangles,
 )
+from kese.core.mesh import Mesh
 from kese.s6_assemble.boundaries import workers_wanted
 from kese.s6_assemble.skin import sealed
 from parameters import P
 
 
 def skin_meshes_from_faces(levels, pieces, faces):
-    """-> {part: trimesh of its visible faces} (mm, board frame)."""
+    """-> {part: mesh of its visible faces} (mm, board frame)."""
     at = {z: k for k, z in enumerate(levels)}
     made, owners, parts = [], [], []
     for part, (flats, walls) in faces.items():
@@ -43,7 +43,7 @@ def skin_meshes_from_faces(levels, pieces, faces):
 
 
 def meshes_per_part(v, f, owner, parts):
-    """{part: a trimesh of the triangles it owns}: the triangles sorted by owner once, in their
+    """{part: a mesh of the triangles it owns}: the triangles sorted by owner once, in their
     order, not searched through once per part."""
     order = np.argsort(owner, kind="stable")
     first = np.searchsorted(owner[order], np.arange(len(parts) + 1))
@@ -52,7 +52,7 @@ def meshes_per_part(v, f, owner, parts):
         mine = f[order[first[k]:first[k + 1]]]
         if len(mine):
             used, faces_of = np.unique(mine, return_inverse=True)
-            out[part] = trimesh.Trimesh(v[used], faces_of.reshape(-1, 3), process=False)
+            out[part] = Mesh(v[used], faces_of.reshape(-1, 3))
     return out
 
 

@@ -20,7 +20,7 @@ def workers_wanted():
 
 
 def boundaries_and_meshes(ps, log, finish):
-    """PrismSet -> (part name, Boundary, trimesh or None) for one part after another, the mesh
+    """PrismSet -> (part name, Boundary, mesh or None) for one part after another, the mesh
     finished by `finish` (output units, vertices merged) by the worker that built it, so that the
     raw mesh of a part, several times the size of the finished one, is gone before the next part
     is begun.  The biggest parts go first, so the one that needs the most memory runs while

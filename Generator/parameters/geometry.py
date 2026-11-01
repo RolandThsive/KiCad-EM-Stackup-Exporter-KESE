@@ -35,3 +35,7 @@ TRIANGULATE_CELL_MM = 10.0              # width of those strips (KiCad cuts big 
 # Visual mode (visible skin)
 SKIN_BURIED_TEST_OFFSET_MM = 0.0005     # a face is dropped if a point this far outside it lies inside another solid
 SKIN_TILE_POINTS = 250_000              # outline points joined at once; a big board is joined in tiles of about this size
+
+# Triangle meshes (kese/core/mesh.py)
+MESH_MERGE_DIGITS = 8                   # vertices that round to the same point at 10^-8 (mm or m) are one; angles under 1e-8 rad are none
+FLAT_FACET_THRESHOLD = 5000             # smooth shading: two faces are one flat facet where (edge radius / edge span)^2 exceeds this

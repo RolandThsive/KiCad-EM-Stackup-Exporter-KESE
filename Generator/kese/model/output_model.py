@@ -13,7 +13,7 @@ class Model:
     name: str
     mode: str
     prismset: PrismSet
-    meshes: dict                 # part name -> trimesh.Trimesh (output units)
+    meshes: dict                 # part name -> kese.core.mesh.Mesh (output units)
     materials: dict              # part name -> material dict (colour, alpha, ...)
     props: dict                  # part name -> physical/EM properties
     transform: object            # 4x4 numpy matrix mm-board -> output
