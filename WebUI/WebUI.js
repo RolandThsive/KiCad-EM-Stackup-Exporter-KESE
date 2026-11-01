@@ -85,32 +85,24 @@ function checkRow(level, stage, msg) {
   return el("div", { class: "check " + level }, el("span", { class: "lvl" }, level.toUpperCase()), el("span", { class: "stage" }, stage),
     el("span", { class: "msg" }, msg));
 }
-/* ---- the run as the command line shows it: each stage, each log line and the time since Generate ----------- */
+/* ---- while a run works: the generator's current line, as its command line shows it ------------------------- */
+// A stage line ("running geometry (...) ... 1m 23s") counts up each second, like the terminal's status line;
+// a log line replaces it until the next stage starts.
 function hms(s) { const m = Math.floor(s / 60); return `${m}m ${String(Math.floor(s % 60)).padStart(2, "0")}s`; }
 const run = { t0: 0, timer: 0, stage: null };
 function runStart() {
   run.t0 = performance.now(); run.stage = null;
-  $("run-log").replaceChildren();
+  $("run-line").textContent = "Starting…";
   $("run-card").hidden = false;
   $("run-note").textContent = "KESE is running in your browser. A big board can take from a minute to an hour.";
-  runTick();
   run.timer = setInterval(runTick, 1000);
 }
 function runTick() {
-  const t = hms((performance.now() - run.t0) / 1000);
-  $("run-time").textContent = t;
-  if (run.stage) run.stage.lastChild.textContent = ` ... ${t}`;
+  if (run.stage) $("run-line").textContent = `running ${run.stage} ... ${hms((performance.now() - run.t0) / 1000)}`;
 }
 function runLine(m) {
-  const box = $("run-log");
-  const atEnd = box.scrollHeight - box.scrollTop - box.clientHeight < 24;
-  if (m.kind === "stage") {
-    if (run.stage) run.stage.classList.add("done");
-    run.stage = el("div", { class: "run-stage" }, `running ${m.text}`, el("span", { class: "run-time" }, ""));
-    box.append(run.stage);
-    runTick();
-  } else box.append(el("div", { class: "run-line" }, m.text.replace(/^\s+/, "")));
-  if (atEnd) box.scrollTop = box.scrollHeight;
+  if (m.kind === "stage") { run.stage = m.text; runTick(); }
+  else { run.stage = null; $("run-line").textContent = m.text.trim(); }
 }
 function runStop() { clearInterval(run.timer); run.timer = 0; run.stage = null; $("run-card").hidden = true; }
 function seconds(s) { return s < 60 ? `${s.toFixed(0)} s` : hms(s); }
