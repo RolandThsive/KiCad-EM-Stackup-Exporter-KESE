@@ -120,7 +120,7 @@ def _srgb_to_linear(rgb):                    # rgb: the hex colour as three 0-25
 factor = [*np.round(_srgb_to_linear(mat["rgb"]), 5), round(float(mat["alpha"]), 4)]
 ```
 
-`trimesh` then stores the factor in 8 bits, so the GLB holds the nearest step of 1/255:
+The GLB writer then stores the factor in 8 bits, so the GLB holds the nearest step of 1/255:
 <img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/ColorSwatches/968A58.webp" width="12" height="12" align="absmiddle" alt=""> `#968A58`
 is written as 0.30588, 0.25490, 0.09804 rather than 0.30499, 0.25415, 0.09759. The alpha is
 stored in the same 1/255 steps (0.80 stays 0.80; 0.85 would become 0.85098). The OBJ `Kd` line

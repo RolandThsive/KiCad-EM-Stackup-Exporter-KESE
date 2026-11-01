@@ -38,9 +38,9 @@ KiCad itself is not needed, only the `.kicad_pcb` file. Footprints are read from
 
 | Format | What is in it | Units | Written by |
 |---|---|---|---|
-| GLB (binary glTF 2.0) | one mesh per part, PBR materials, vertex normals, bufferView targets | `Run.UNITS` (viewers expect m) | `trimesh` |
+| GLB (binary glTF 2.0) | one mesh per part, PBR materials, vertex normals, bufferView targets | `Run.UNITS` (viewers expect m) | KESE (`kese/s7_write/glb.py`) |
 | STEP AP214 | one named shape per part whose role is in `Run.STEP_WRITE_ROLES`: the part's closed solids from stage 6, one per separate body, with planar faces (curves are polygons, as in the meshes); mask and silk off by default. With `Run.BUILD_WITH_KERNELS = True`: exact B-rep solids built from the prisms, true arcs, fused per part or compounds | `Run.UNITS`: the file declares millimetres or metres, with or without `Run.BUILD_WITH_KERNELS` | KESE (`kese/s7_write/step.py`); `cadquery` / OCCT with kernels |
-| STL (binary) | one file per part | `Run.UNITS` | `trimesh` |
+| STL (binary) | one file per part | `Run.UNITS` | KESE (`kese/s7_write/stl.py`) |
 | OBJ + MTL | one object per part, normals, colours | `Run.UNITS` | KESE |
 
 Visual mode writes GLB and OBJ only.
@@ -66,9 +66,9 @@ Research underway.
 
 | | Version |
 |---|---|
-| Python | 3.12 or later with the pinned versions (`numpy` 2.5.3 and `scipy` 1.18.1 require it); 3.11 with the packages installed unpinned, as `requirements.txt` describes, or through `pyproject.toml` (`requires-python >= 3.11`, not tested); tested on 3.13 |
-| `numpy` 2.5.3, `scipy` 1.18.1, `networkx` 3.6.1, `shapely` 2.2.0, `trimesh` 5.1.1, `manifold3d` 3.5.4, `mapbox_earcut` 2.1.0, `rtree` 1.4.1 | the versions in `requirements.txt` |
-| `cadquery` 2.8.0, `cadquery-ocp` 7.9.3.1 or later below 8.0 | optional: only for `Run.BUILD_WITH_KERNELS = True` and for the tests that read STEP files back; STEP is written without it |
+| Python | 3.12 or later with the pinned versions (`numpy` 2.5.3 requires it); 3.11 with the packages installed unpinned, as `requirements.txt` describes, or through `pyproject.toml` (`requires-python >= 3.11`, not tested); tested on 3.13 |
+| `numpy` 2.5.3, `shapely` 2.2.0, `mapbox_earcut` 2.1.0 | the versions in `requirements.txt` |
+| `manifold3d` 3.5.4, `cadquery` 2.8.0, `cadquery-ocp` 7.9.3.1 or later below 8.0 | optional: only for `Run.BUILD_WITH_KERNELS = True` and for the tests that read STEP files back; STEP is written without them |
 | `gltf_validator` (Khronos, command line) | optional; used by the Verifier when on the PATH |
 
 Operating systems: anything the packages above run on. Tested on Linux.

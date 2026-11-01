@@ -86,8 +86,8 @@ mesh = mesh_of_boundary(boundary)                  # faces cut into triangles, t
   (`kese/core/vertices.py`). Then the mesh closes by construction.
 - The faces are cut by earcut, as in KiCad's 3D viewer; a polygon of more than
   `Geometry.TRIANGULATE_CELL_POINTS` points strip by strip, as KiCad cuts big polygons into cells.
-  A cut that does not close exactly on the polygon's edges is done again by Manifold's
-  triangulator (`kese/core/triangulate.py`). Earcut makes a flat triangle (three points on one
+  A cut that does not close exactly on the polygon's edges is done again by GEOS's constrained
+  Delaunay triangulation, through `shapely` (`kese/core/triangulate.py`). Earcut makes a flat triangle (three points on one
   line, area zero) where a ring has a point on a straight run, the vertex another face shares; such
   a triangle is flipped away with its neighbour across its long edge, so no mesh holds a triangle
   of zero area, which some meshers and STL importers reject.
@@ -96,7 +96,8 @@ mesh = mesh_of_boundary(boundary)                  # faces cut into triangles, t
 - Visual mode does the same for all parts at once and keeps only the faces between material and
   air (`skin_faces.py`, `skin_mesh.py`, see [Output Modes](Output-Modes.md)).
 - Last, every mesh is scaled to the output units, turned to the output orientation and shaded
-  smooth across edges flatter than `Run.SMOOTH_SHADE_ANGLE_DEG` (`transform.py`).
+  smooth across edges flatter than `Run.SMOOTH_SHADE_ANGLE_DEG` (`transform.py`). The meshes are
+  KESE's own (`kese/core/mesh.py`), and so are the GLB, STL, OBJ and STEP writers (`kese/s7_write/`).
 - With `Run.BUILD_WITH_KERNELS = True` the older path runs instead: every prism is extruded and the
   pieces of a part are joined by Manifold's boolean union (`solids.py`, `skin.py`).
 

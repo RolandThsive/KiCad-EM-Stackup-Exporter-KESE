@@ -2,8 +2,8 @@
 
 KESE is a pure Python program. It reads the `.kicad_pcb` text file itself, so KiCad does not need
 to be installed on the machine that runs it. With the versions pinned in `requirements.txt` it
-needs Python 3.12 or later: `numpy` 2.5.3 and `scipy` 1.18.1 require it. On Python 3.11, install
-the same packages without the pinned versions (`python -m pip install numpy scipy ...`) and pip
+needs Python 3.12 or later: `numpy` 2.5.3 requires it. On Python 3.11, install
+the same packages without the pinned versions (`python -m pip install numpy shapely mapbox_earcut`) and pip
 picks the last versions built for 3.11, as `requirements.txt` explains.
 
 ![The 4-layer RF sensor module from Input/ turning in simulation mode, so that its top and its bottom come round in turn: the blue solder mask translucent over the copper, the planes and tracks showing through it, and the plated board edge and the walls of the cut-out in copper colour](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/start_1_simulation.webp)
@@ -24,11 +24,10 @@ packages are:
 
 | Package | Used for |
 |---|---|
-| `numpy`, `scipy`, `networkx` | Numerics and the mesh libraries' dependencies |
+| `numpy` | Numerics, and the meshes: KESE builds them, writes GLB, STL, OBJ and STEP, and casts the Verifier's rays itself |
 | `shapely` | All 2D geometry: tracks, pads, zones, outline, mask, silk, and the faces of every solid |
-| `mapbox_earcut`, `manifold3d` | Cutting the faces into triangles: earcut, and Manifold's triangulator where earcut's triangles do not close on the edges |
-| `trimesh`, `rtree` | The meshes, GLB and STL export, and the Verifier's ray tests (KESE writes OBJ and STEP itself) |
-| `cadquery`, `cadquery-ocp` | Optional: only for `Run.BUILD_WITH_KERNELS = True`, the older way that joins the solids with Manifold and builds the STEP file with OpenCascade, and for the tests that read STEP files back |
+| `mapbox_earcut` | Cutting the faces into triangles (GEOS's constrained Delaunay triangulation, through `shapely`, where earcut's triangles do not close on the edges) |
+| `manifold3d`, `cadquery`, `cadquery-ocp` | Optional: only for `Run.BUILD_WITH_KERNELS = True`, the older way that joins the solids with Manifold and builds the STEP file with OpenCascade, and for the tests that read STEP files back |
 
 KESE writes STEP itself, so every format works without `cadquery`. Only a run with
 `Run.BUILD_WITH_KERNELS = True` that asks for STEP needs it, and stops with a message that names
@@ -40,7 +39,7 @@ accepts Python 3.11, which is not tested):
 
 ```bash
 python -m pip install -e .            # the kese command, the same as python run_KESE.py
-python -m pip install -e ".[step]"    # the same, with cadquery (Run.BUILD_WITH_KERNELS)
+python -m pip install -e ".[step]"    # the same, with cadquery and manifold3d (Run.BUILD_WITH_KERNELS)
 ```
 
 `-e` keeps `parameters/` editable in place. `Input/` and `Output/` stay relative to the folder

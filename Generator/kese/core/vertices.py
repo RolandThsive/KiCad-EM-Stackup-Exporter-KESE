@@ -151,7 +151,10 @@ def noded(g):
     hot pixels as it is.)"""
     g = sh.polys_only(g)
     for _ in range(NODING_ROUNDS):
-        again = sh.polys_only(g.difference(sh.EMPTY, grid_size=sh.grid()))
+        try:
+            again = sh.polys_only(g.difference(sh.EMPTY, grid_size=sh.grid()))
+        except shapely.errors.GEOSException:      # a ring that crosses itself (a KiCad 4 board): made valid
+            again = sh.polys_only(sh.polys_only(shapely.make_valid(g)).difference(sh.EMPTY, grid_size=sh.grid()))
         if same_vertices(again, g):
             return again
         g = again
