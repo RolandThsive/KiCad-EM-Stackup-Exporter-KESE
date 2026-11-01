@@ -8,7 +8,7 @@
 
    The board lies flat in the scene, its top up (+Y), whatever orientation the files have (Run.ORIENTATION): the
    thinnest side of the model is taken as the board's thickness.  Tools: views (Iso, Top, Bottom, Side), Fit,
-   explode (the layers move apart in proportion to their height), cross-section (a cut across X), screenshot.
+   cross-section (a cut across X, its cut faces filled), screenshot.
    It draws only when something changed (a 600k-triangle STEP would make a constant loop heavy). */
 import * as THREE from "three";
 import { OrbitControls } from "three/addons/controls/OrbitControls.js";
@@ -20,9 +20,23 @@ import { useModelViewerLook } from "./mvEnvironment.js";
 
 const METAL_ROLES = /^(copper|plating|finish|via|pad)/i;
 
+/* Simulation models are solids that touch: the mask lies on the copper, the copper on the laminate, so two parts
+   share the same faces and the GPU cannot tell which is in front (z-fighting, a flickering pattern).  Each part is
+   pulled toward the camera by a depth offset that grows with how much it should win where faces meet: silkscreen
+   over mask, mask over finish, finish over copper, copper over laminate.  Only the depth test changes, not the
+   geometry.  The rank is read from the part's role (materials.json) or, without one, its name. */
+const DEPTH_RANKS = [[/silk/, 5], [/mask.?over.?copper/, 4], [/mask/, 3], [/finish|nickel|gold|palladium|silver|tin|osp/, 2],
+  [/copper|plating|via|pad/, 1]];
+function depthRank(text) {
+  const t = text.toLowerCase();
+  for (const [re, rank] of DEPTH_RANKS) if (re.test(t)) return rank;
+  return 0;
+}
+
 export class Viewer {
-  constructor(canvas, { onHover = () => {}, onProgress = () => {} } = {}) {
+  constructor(canvas, { onHover = () => {}, onProgress = () => {}, roleOf = () => "" } = {}) {
     this.canvas = canvas;
+    this.roleOf = roleOf;
     this.onHover = onHover;
     this.onProgress = onProgress;
     this.renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: true, preserveDrawingBuffer: true });
@@ -34,11 +48,10 @@ export class Viewer {
     this.controls = new OrbitControls(this.camera, canvas);
     this.controls.enableDamping = false;
     this.controls.addEventListener("change", () => this.draw());
-    this.clip = new THREE.Plane(new THREE.Vector3(-1, 0, 0), 0);
+    this.clip = new THREE.Plane(new THREE.Vector3(1, 0, 0), 0);     // keeps x >= -constant: the cut faces the Iso camera
     this.clipOn = false;
     this.root = null;
     this.parts = [];                       // [{name, meshes: [Mesh], color, triangles, visible, baseY}]
-    this.explode = 0;
     this.size = 1;
     this.raycaster = new THREE.Raycaster();
     this.pointer = null;
@@ -60,7 +73,17 @@ export class Viewer {
   draw() {
     if (this.drawQueued) return;
     this.drawQueued = true;
-    requestAnimationFrame(() => { this.drawQueued = false; this.renderer.render(this.scene, this.camera); });
+    requestAnimationFrame(() => { this.drawQueued = false; this.fitDepth(); this.renderer.render(this.scene, this.camera); });
+  }
+
+  // the near and far planes follow the camera, so the depth buffer's precision is spent on the model, close up too
+  fitDepth() {
+    const d = this.camera.position.distanceTo(this.controls.target);
+    const near = Math.max(d - this.size, d / 50, this.size / 1e5);
+    const far = d + this.size * 2;
+    if (Math.abs(near - this.camera.near) > 1e-9 * d || Math.abs(far - this.camera.far) > 1e-9 * d) {
+      this.camera.near = near; this.camera.far = far; this.camera.updateProjectionMatrix();
+    }
   }
 
   clear() {
@@ -112,23 +135,32 @@ export class Viewer {
       p.triangles += g.index ? g.index.count / 3 : g.attributes.position.count / 3;
     });
     for (const p of byName.values()) {
-      const b = new THREE.Box3();
-      for (const m of p.meshes) b.expandByObject(m);
-      p.baseY = (b.min.y + b.max.y) / 2;
-      for (const m of p.meshes) {
+      const rank = depthRank(`${this.roleOf(p.name) || ""} ${p.name}`);
+      for (const m of [...p.meshes]) {
+        m.material = Array.isArray(m.material) ? m.material.map((x) => x.clone()) : m.material.clone();
+        const mats = Array.isArray(m.material) ? m.material : [m.material];
+        for (const x of mats) {
+          x.clippingPlanes = [this.clip];                         // clone() copies the planes: keep the shared one
+          x.side = THREE.FrontSide;
+          x.polygonOffset = rank > 0; x.polygonOffsetFactor = -rank; x.polygonOffsetUnits = -4 * rank;
+        }
+        /* The cut face: KESE's parts are closed solids, so where the cross-section opens one, the camera looks at
+           the inside of its far walls.  Those inside faces are drawn flat in the part's colour, so a cut solid
+           reads as filled, not hollow.  They sit just behind real faces, so a touching part's surface wins. */
+        const base = mats[0];
+        const cap = new THREE.Mesh(m.geometry, new THREE.MeshBasicMaterial({
+          color: (base.color ? base.color.clone() : new THREE.Color("#b0b0b0")).multiplyScalar(0.82),
+          side: THREE.BackSide, clippingPlanes: [this.clip], transparent: base.transparent, opacity: base.opacity ?? 1,
+          polygonOffset: true, polygonOffsetFactor: 1, polygonOffsetUnits: 4 }));
+        cap.userData.part = p;
+        cap.raycast = () => {};                                   // the hover card reads the real faces
+        m.add(cap);
         m.userData.part = p;
-        m.userData.p0 = m.position.clone();
-        // world +Y in the mesh's parent's frame (the files may be turned and scaled): explode moves along it
-        const inv = new THREE.Matrix4().copy(m.parent.matrixWorld).invert();
-        m.userData.up = new THREE.Vector3(0, 1, 0).transformDirection(inv).multiplyScalar(
-          new THREE.Vector3(0, 1, 0).applyMatrix4(inv).sub(new THREE.Vector3().applyMatrix4(inv)).length());
       }
     }
     this.parts = [...byName.values()];
     this.root = root;
     this.scene.add(root);
-    this.camera.near = this.size / 1000; this.camera.far = this.size * 20; this.camera.updateProjectionMatrix();
-    this.setExplode(this.explode);
     this.setCut(this.cut ?? 1);
     this.view(this.lastView || "iso");
     return this.parts;
@@ -216,20 +248,12 @@ export class Viewer {
   }
   fit() { this.view(this.lastView || "iso"); }
 
-  // 0 .. 1: each part moves up or down in proportion to its height in the board (the stack spreads to 40 % of the model's size)
-  setExplode(e) {
-    this.explode = e;
-    const k = (0.4 * this.size / this.thickness) * e;
-    for (const p of this.parts) for (const m of p.meshes) m.position.copy(m.userData.p0).addScaledVector(m.userData.up, p.baseY * k);
-    this.draw();
-  }
-
-  // 0 .. 1 across the model in X; 1 = no cut
+  // 0 .. 1: how much of the model is kept, cut across X from the side the Iso view looks from; 1 = no cut
   setCut(f) {
     this.cut = f;
     if (!this.root) return;
     const box = new THREE.Box3().setFromObject(this.root);
-    this.clip.constant = f >= 1 ? Infinity : box.min.x + (box.max.x - box.min.x) * f;
+    this.clip.constant = f >= 1 ? Infinity : -(box.max.x - (box.max.x - box.min.x) * f);   // the part nearer the camera goes
     this.draw();
   }
 
