@@ -417,7 +417,7 @@ dialog pre { font-family: var(--mono); font-size: 12px; white-space: pre-wrap; m
 #topbar h1 { display: flex; align-items: center; gap: 10px; }
 #topbar h1 .logo { width: 36px; height: 36px; flex: none; position: relative; top: 0.08em; }   /* undo the title's lift */
 #phone-message img { display: block; margin: 0 auto 12px; }
-#controls-scroll > h2 { margin-bottom: 6px; }
+#controls-scroll > h2 { margin-bottom: 14px; text-align: center; }   /* room under p, g, y so the box border does not touch them */
 /* the board card: click or drop */
 .drop { display: flex; align-items: center; gap: 12px; padding: 10px 12px; border: 2px dashed rgba(169, 62, 51, 0.35); border-radius: var(--radius);
   background: rgba(255, 255, 255, 0.5); cursor: pointer; transition: all var(--ease); }
