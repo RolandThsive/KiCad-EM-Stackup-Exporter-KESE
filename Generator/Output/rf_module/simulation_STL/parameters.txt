@@ -1,11 +1,11 @@
-# command-line overrides applied: Run.STEP_EXACT_ARCS=True, Run.MODE='simulation', Run.FILE_FORMAT=['step', 'glb', 'stl']
+# command-line overrides applied: Run.MODE='simulation', Run.FILE_FORMAT=['stl']
 
 [parameters/run.py]
 COPPER_GROUPING = 'net'
 DIELECTRIC_GROUPING = 'layer'
 EXPORT_INCLUDE_NORMALS = True
 EXPORT_SET_BUFFERVIEW_TARGETS = True
-FILE_FORMAT = ['step', 'glb', 'stl']
+FILE_FORMAT = ['stl']
 INPUT_DIR = 'Input'
 KICAD_VERSION_MAX = 20260206
 KICAD_VERSION_MIN = 3
@@ -20,7 +20,7 @@ STEP_ARC_FIT_TOLERANCE_MM = 0.0002
 STEP_ARC_MAX_TURN_DEG = 30.0
 STEP_ARC_MIN_POINTS = 5
 STEP_ARC_MIN_SWEEP_DEG = 10.0
-STEP_EXACT_ARCS = True
+STEP_EXACT_ARCS = False
 STEP_WRITE_ROLES = ['board', 'copper', 'plating', 'finish']
 TESTED_COPPER_LAYERS = 8
 UNITS = 'm'

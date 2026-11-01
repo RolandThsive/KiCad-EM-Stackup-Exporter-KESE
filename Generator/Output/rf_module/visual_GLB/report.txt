@@ -1,4 +1,4 @@
-rf_module  (rf_module.kicad_pcb)   generated 2026-11-01 21:30
+rf_module  (rf_module.kicad_pcb)   generated 2026-11-01 21:33
 mode: visual   formats: glb   units: m
 KiCad format 20221018 (KiCad 7), generator pcbnew
 
@@ -103,8 +103,8 @@ parts
 timing
   read               0.1 s
   collect            0.7 s
-  resolve            2.6 s
-  geometry           1.8 s
+  resolve            2.4 s
+  geometry           1.7 s
   materials          0.0 s
-  assemble           9.4 s
+  assemble           8.8 s
   write              0.1 s

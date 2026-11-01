@@ -1,0 +1,1060 @@
+{
+  "board": "rf_module",
+  "mode": "simulation",
+  "units_of_files": "m",
+  "orientation": "board in XY, F.Cu toward +Z, Y up",
+  "parts": {
+    "Board_dielectric 1": {
+      "role": "board",
+      "layer": "dielectric 1",
+      "net": null,
+      "z_range_mm": [
+        0.5475,
+        0.765
+      ],
+      "properties": {
+        "kind": "prepreg",
+        "material": "FR4",
+        "thickness_mm": 0.2,
+        "epsilon_r": 4.5,
+        "loss_tangent": 0.02,
+        "between": [
+          "F.Cu",
+          "In1.Cu"
+        ]
+      },
+      "look": {
+        "color": "#A89C66",
+        "alpha": 1.0
+      },
+      "file_names": {
+        "stl": "Board_dielectric_1.stl",
+        "glb_node": "Board_dielectric 1",
+        "step_solid": "Board_dielectric 1"
+      }
+    },
+    "Board_dielectric 2": {
+      "role": "board",
+      "layer": "dielectric 2",
+      "net": null,
+      "z_range_mm": [
+        -0.5475,
+        0.5475
+      ],
+      "properties": {
+        "kind": "core",
+        "material": "FR4",
+        "thickness_mm": 1.095,
+        "epsilon_r": 4.5,
+        "loss_tangent": 0.02,
+        "between": [
+          "In1.Cu",
+          "In2.Cu"
+        ]
+      },
+      "look": {
+        "color": "#968A58",
+        "alpha": 1.0
+      },
+      "file_names": {
+        "stl": "Board_dielectric_2.stl",
+        "glb_node": "Board_dielectric 2",
+        "step_solid": "Board_dielectric 2"
+      }
+    },
+    "Board_dielectric 3": {
+      "role": "board",
+      "layer": "dielectric 3",
+      "net": null,
+      "z_range_mm": [
+        -0.765,
+        -0.5475
+      ],
+      "properties": {
+        "kind": "prepreg",
+        "material": "FR4",
+        "thickness_mm": 0.2,
+        "epsilon_r": 4.5,
+        "loss_tangent": 0.02,
+        "between": [
+          "In2.Cu",
+          "B.Cu"
+        ]
+      },
+      "look": {
+        "color": "#A89C66",
+        "alpha": 1.0
+      },
+      "file_names": {
+        "stl": "Board_dielectric_3.stl",
+        "glb_node": "Board_dielectric 3",
+        "step_solid": "Board_dielectric 3"
+      }
+    },
+    "Copper_SCK": {
+      "role": "copper",
+      "layer": "F.Cu",
+      "net": "SCK",
+      "z_range_mm": [
+        0.765,
+        0.8
+      ],
+      "properties": {
+        "thickness_mm": 0.035,
+        "conductivity_S_per_m": 58000000.0,
+        "surface_roughness_um": 0.0,
+        "foil_mm": 0.035,
+        "plating_added_mm": 0.0
+      },
+      "look": {
+        "color": "#CD803E",
+        "alpha": 1.0
+      },
+      "file_names": {
+        "stl": "Copper_SCK.stl",
+        "glb_node": "Copper_SCK",
+        "step_solid": "Copper_SCK"
+      }
+    },
+    "Copper_MOSI": {
+      "role": "copper",
+      "layer": "F.Cu",
+      "net": "MOSI",
+      "z_range_mm": [
+        0.765,
+        0.8
+      ],
+      "properties": {
+        "thickness_mm": 0.035,
+        "conductivity_S_per_m": 58000000.0,
+        "surface_roughness_um": 0.0,
+        "foil_mm": 0.035,
+        "plating_added_mm": 0.0
+      },
+      "look": {
+        "color": "#CD803E",
+        "alpha": 1.0
+      },
+      "file_names": {
+        "stl": "Copper_MOSI.stl",
+        "glb_node": "Copper_MOSI",
+        "step_solid": "Copper_MOSI"
+      }
+    },
+    "Copper_MISO": {
+      "role": "copper",
+      "layer": "F.Cu",
+      "net": "MISO",
+      "z_range_mm": [
+        0.765,
+        0.8
+      ],
+      "properties": {
+        "thickness_mm": 0.035,
+        "conductivity_S_per_m": 58000000.0,
+        "surface_roughness_um": 0.0,
+        "foil_mm": 0.035,
+        "plating_added_mm": 0.0
+      },
+      "look": {
+        "color": "#CD803E",
+        "alpha": 1.0
+      },
+      "file_names": {
+        "stl": "Copper_MISO.stl",
+        "glb_node": "Copper_MISO",
+        "step_solid": "Copper_MISO"
+      }
+    },
+    "Copper_CS": {
+      "role": "copper",
+      "layer": "F.Cu",
+      "net": "CS",
+      "z_range_mm": [
+        0.765,
+        0.8
+      ],
+      "properties": {
+        "thickness_mm": 0.035,
+        "conductivity_S_per_m": 58000000.0,
+        "surface_roughness_um": 0.0,
+        "foil_mm": 0.035,
+        "plating_added_mm": 0.0
+      },
+      "look": {
+        "color": "#CD803E",
+        "alpha": 1.0
+      },
+      "file_names": {
+        "stl": "Copper_CS.stl",
+        "glb_node": "Copper_CS",
+        "step_solid": "Copper_CS"
+      }
+    },
+    "Copper_IRQ": {
+      "role": "copper",
+      "layer": "F.Cu",
+      "net": "IRQ",
+      "z_range_mm": [
+        0.765,
+        0.8
+      ],
+      "properties": {
+        "thickness_mm": 0.035,
+        "conductivity_S_per_m": 58000000.0,
+        "surface_roughness_um": 0.0,
+        "foil_mm": 0.035,
+        "plating_added_mm": 0.0
+      },
+      "look": {
+        "color": "#CD803E",
+        "alpha": 1.0
+      },
+      "file_names": {
+        "stl": "Copper_IRQ.stl",
+        "glb_node": "Copper_IRQ",
+        "step_solid": "Copper_IRQ"
+      }
+    },
+    "Copper_GND": {
+      "role": "copper",
+      "layer": "F.Cu",
+      "net": "GND",
+      "z_range_mm": [
+        -0.8,
+        0.8
+      ],
+      "properties": {
+        "thickness_mm": 0.035,
+        "conductivity_S_per_m": 58000000.0,
+        "surface_roughness_um": 0.0,
+        "foil_mm": 0.035,
+        "plating_added_mm": 0.0
+      },
+      "look": {
+        "color": "#CD803E",
+        "alpha": 1.0
+      },
+      "file_names": {
+        "stl": "Copper_GND.stl",
+        "glb_node": "Copper_GND",
+        "step_solid": "Copper_GND"
+      }
+    },
+    "Copper_+3V3": {
+      "role": "copper",
+      "layer": "F.Cu",
+      "net": "+3V3",
+      "z_range_mm": [
+        -0.8,
+        0.8
+      ],
+      "properties": {
+        "thickness_mm": 0.035,
+        "conductivity_S_per_m": 58000000.0,
+        "surface_roughness_um": 0.0,
+        "foil_mm": 0.035,
+        "plating_added_mm": 0.0
+      },
+      "look": {
+        "color": "#CD803E",
+        "alpha": 1.0
+      },
+      "file_names": {
+        "stl": "Copper_+3V3.stl",
+        "glb_node": "Copper_+3V3",
+        "step_solid": "Copper_+3V3"
+      }
+    },
+    "Copper_no_net": {
+      "role": "copper",
+      "layer": "F.Cu",
+      "net": "no_net",
+      "z_range_mm": [
+        -0.8,
+        0.8
+      ],
+      "properties": {
+        "thickness_mm": 0.035,
+        "conductivity_S_per_m": 58000000.0,
+        "surface_roughness_um": 0.0,
+        "foil_mm": 0.035,
+        "plating_added_mm": 0.0
+      },
+      "look": {
+        "color": "#CD803E",
+        "alpha": 1.0
+      },
+      "file_names": {
+        "stl": "Copper_no_net.stl",
+        "glb_node": "Copper_no_net",
+        "step_solid": "Copper_no_net"
+      }
+    },
+    "Copper_RF": {
+      "role": "copper",
+      "layer": "F.Cu",
+      "net": "RF",
+      "z_range_mm": [
+        0.765,
+        0.8
+      ],
+      "properties": {
+        "thickness_mm": 0.035,
+        "conductivity_S_per_m": 58000000.0,
+        "surface_roughness_um": 0.0,
+        "foil_mm": 0.035,
+        "plating_added_mm": 0.0
+      },
+      "look": {
+        "color": "#CD803E",
+        "alpha": 1.0
+      },
+      "file_names": {
+        "stl": "Copper_RF.stl",
+        "glb_node": "Copper_RF",
+        "step_solid": "Copper_RF"
+      }
+    },
+    "Copper_SDA2": {
+      "role": "copper",
+      "layer": "F.Cu",
+      "net": "SDA2",
+      "z_range_mm": [
+        -0.8,
+        0.8
+      ],
+      "properties": {
+        "thickness_mm": 0.035,
+        "conductivity_S_per_m": 58000000.0,
+        "surface_roughness_um": 0.0,
+        "foil_mm": 0.035,
+        "plating_added_mm": 0.0
+      },
+      "look": {
+        "color": "#CD803E",
+        "alpha": 1.0
+      },
+      "file_names": {
+        "stl": "Copper_SDA2.stl",
+        "glb_node": "Copper_SDA2",
+        "step_solid": "Copper_SDA2"
+      }
+    },
+    "Copper_SCL2": {
+      "role": "copper",
+      "layer": "F.Cu",
+      "net": "SCL2",
+      "z_range_mm": [
+        -0.8,
+        0.8
+      ],
+      "properties": {
+        "thickness_mm": 0.035,
+        "conductivity_S_per_m": 58000000.0,
+        "surface_roughness_um": 0.0,
+        "foil_mm": 0.035,
+        "plating_added_mm": 0.0
+      },
+      "look": {
+        "color": "#CD803E",
+        "alpha": 1.0
+      },
+      "file_names": {
+        "stl": "Copper_SCL2.stl",
+        "glb_node": "Copper_SCL2",
+        "step_solid": "Copper_SCL2"
+      }
+    },
+    "Copper_PWRLED": {
+      "role": "copper",
+      "layer": "F.Cu",
+      "net": "PWRLED",
+      "z_range_mm": [
+        0.765,
+        0.8
+      ],
+      "properties": {
+        "thickness_mm": 0.035,
+        "conductivity_S_per_m": 58000000.0,
+        "surface_roughness_um": 0.0,
+        "foil_mm": 0.035,
+        "plating_added_mm": 0.0
+      },
+      "look": {
+        "color": "#CD803E",
+        "alpha": 1.0
+      },
+      "file_names": {
+        "stl": "Copper_PWRLED.stl",
+        "glb_node": "Copper_PWRLED",
+        "step_solid": "Copper_PWRLED"
+      }
+    },
+    "Copper_RF2": {
+      "role": "copper",
+      "layer": "F.Cu",
+      "net": "RF2",
+      "z_range_mm": [
+        0.765,
+        0.8
+      ],
+      "properties": {
+        "thickness_mm": 0.035,
+        "conductivity_S_per_m": 58000000.0,
+        "surface_roughness_um": 0.0,
+        "foil_mm": 0.035,
+        "plating_added_mm": 0.0
+      },
+      "look": {
+        "color": "#CD803E",
+        "alpha": 1.0
+      },
+      "file_names": {
+        "stl": "Copper_RF2.stl",
+        "glb_node": "Copper_RF2",
+        "step_solid": "Copper_RF2"
+      }
+    },
+    "Copper_+5V": {
+      "role": "copper",
+      "layer": "F.Cu",
+      "net": "+5V",
+      "z_range_mm": [
+        -0.8,
+        0.8
+      ],
+      "properties": {
+        "thickness_mm": 0.035,
+        "conductivity_S_per_m": 58000000.0,
+        "surface_roughness_um": 0.0,
+        "foil_mm": 0.035,
+        "plating_added_mm": 0.0
+      },
+      "look": {
+        "color": "#CD803E",
+        "alpha": 1.0
+      },
+      "file_names": {
+        "stl": "Copper_+5V.stl",
+        "glb_node": "Copper_+5V",
+        "step_solid": "Copper_+5V"
+      }
+    },
+    "Copper_LEDA3": {
+      "role": "copper",
+      "layer": "F.Cu",
+      "net": "LEDA3",
+      "z_range_mm": [
+        0.765,
+        0.8
+      ],
+      "properties": {
+        "thickness_mm": 0.035,
+        "conductivity_S_per_m": 58000000.0,
+        "surface_roughness_um": 0.0,
+        "foil_mm": 0.035,
+        "plating_added_mm": 0.0
+      },
+      "look": {
+        "color": "#CD803E",
+        "alpha": 1.0
+      },
+      "file_names": {
+        "stl": "Copper_LEDA3.stl",
+        "glb_node": "Copper_LEDA3",
+        "step_solid": "Copper_LEDA3"
+      }
+    },
+    "Copper_LED3": {
+      "role": "copper",
+      "layer": "F.Cu",
+      "net": "LED3",
+      "z_range_mm": [
+        0.765,
+        0.8
+      ],
+      "properties": {
+        "thickness_mm": 0.035,
+        "conductivity_S_per_m": 58000000.0,
+        "surface_roughness_um": 0.0,
+        "foil_mm": 0.035,
+        "plating_added_mm": 0.0
+      },
+      "look": {
+        "color": "#CD803E",
+        "alpha": 1.0
+      },
+      "file_names": {
+        "stl": "Copper_LED3.stl",
+        "glb_node": "Copper_LED3",
+        "step_solid": "Copper_LED3"
+      }
+    },
+    "Copper_SWDIO": {
+      "role": "copper",
+      "layer": "F.Cu",
+      "net": "SWDIO",
+      "z_range_mm": [
+        0.765,
+        0.8
+      ],
+      "properties": {
+        "thickness_mm": 0.035,
+        "conductivity_S_per_m": 58000000.0,
+        "surface_roughness_um": 0.0,
+        "foil_mm": 0.035,
+        "plating_added_mm": 0.0
+      },
+      "look": {
+        "color": "#CD803E",
+        "alpha": 1.0
+      },
+      "file_names": {
+        "stl": "Copper_SWDIO.stl",
+        "glb_node": "Copper_SWDIO",
+        "step_solid": "Copper_SWDIO"
+      }
+    },
+    "Copper_SWCLK": {
+      "role": "copper",
+      "layer": "F.Cu",
+      "net": "SWCLK",
+      "z_range_mm": [
+        0.765,
+        0.8
+      ],
+      "properties": {
+        "thickness_mm": 0.035,
+        "conductivity_S_per_m": 58000000.0,
+        "surface_roughness_um": 0.0,
+        "foil_mm": 0.035,
+        "plating_added_mm": 0.0
+      },
+      "look": {
+        "color": "#CD803E",
+        "alpha": 1.0
+      },
+      "file_names": {
+        "stl": "Copper_SWCLK.stl",
+        "glb_node": "Copper_SWCLK",
+        "step_solid": "Copper_SWCLK"
+      }
+    },
+    "Copper_NRST": {
+      "role": "copper",
+      "layer": "F.Cu",
+      "net": "NRST",
+      "z_range_mm": [
+        0.765,
+        0.8
+      ],
+      "properties": {
+        "thickness_mm": 0.035,
+        "conductivity_S_per_m": 58000000.0,
+        "surface_roughness_um": 0.0,
+        "foil_mm": 0.035,
+        "plating_added_mm": 0.0
+      },
+      "look": {
+        "color": "#CD803E",
+        "alpha": 1.0
+      },
+      "file_names": {
+        "stl": "Copper_NRST.stl",
+        "glb_node": "Copper_NRST",
+        "step_solid": "Copper_NRST"
+      }
+    },
+    "Copper_LEDA1": {
+      "role": "copper",
+      "layer": "F.Cu",
+      "net": "LEDA1",
+      "z_range_mm": [
+        0.765,
+        0.8
+      ],
+      "properties": {
+        "thickness_mm": 0.035,
+        "conductivity_S_per_m": 58000000.0,
+        "surface_roughness_um": 0.0,
+        "foil_mm": 0.035,
+        "plating_added_mm": 0.0
+      },
+      "look": {
+        "color": "#CD803E",
+        "alpha": 1.0
+      },
+      "file_names": {
+        "stl": "Copper_LEDA1.stl",
+        "glb_node": "Copper_LEDA1",
+        "step_solid": "Copper_LEDA1"
+      }
+    },
+    "Copper_LED1": {
+      "role": "copper",
+      "layer": "F.Cu",
+      "net": "LED1",
+      "z_range_mm": [
+        0.765,
+        0.8
+      ],
+      "properties": {
+        "thickness_mm": 0.035,
+        "conductivity_S_per_m": 58000000.0,
+        "surface_roughness_um": 0.0,
+        "foil_mm": 0.035,
+        "plating_added_mm": 0.0
+      },
+      "look": {
+        "color": "#CD803E",
+        "alpha": 1.0
+      },
+      "file_names": {
+        "stl": "Copper_LED1.stl",
+        "glb_node": "Copper_LED1",
+        "step_solid": "Copper_LED1"
+      }
+    },
+    "Copper_XIN": {
+      "role": "copper",
+      "layer": "F.Cu",
+      "net": "XIN",
+      "z_range_mm": [
+        0.765,
+        0.8
+      ],
+      "properties": {
+        "thickness_mm": 0.035,
+        "conductivity_S_per_m": 58000000.0,
+        "surface_roughness_um": 0.0,
+        "foil_mm": 0.035,
+        "plating_added_mm": 0.0
+      },
+      "look": {
+        "color": "#CD803E",
+        "alpha": 1.0
+      },
+      "file_names": {
+        "stl": "Copper_XIN.stl",
+        "glb_node": "Copper_XIN",
+        "step_solid": "Copper_XIN"
+      }
+    },
+    "Copper_XOUT": {
+      "role": "copper",
+      "layer": "F.Cu",
+      "net": "XOUT",
+      "z_range_mm": [
+        0.765,
+        0.8
+      ],
+      "properties": {
+        "thickness_mm": 0.035,
+        "conductivity_S_per_m": 58000000.0,
+        "surface_roughness_um": 0.0,
+        "foil_mm": 0.035,
+        "plating_added_mm": 0.0
+      },
+      "look": {
+        "color": "#CD803E",
+        "alpha": 1.0
+      },
+      "file_names": {
+        "stl": "Copper_XOUT.stl",
+        "glb_node": "Copper_XOUT",
+        "step_solid": "Copper_XOUT"
+      }
+    },
+    "Copper_INT2": {
+      "role": "copper",
+      "layer": "F.Cu",
+      "net": "INT2",
+      "z_range_mm": [
+        0.765,
+        0.8
+      ],
+      "properties": {
+        "thickness_mm": 0.035,
+        "conductivity_S_per_m": 58000000.0,
+        "surface_roughness_um": 0.0,
+        "foil_mm": 0.035,
+        "plating_added_mm": 0.0
+      },
+      "look": {
+        "color": "#CD803E",
+        "alpha": 1.0
+      },
+      "file_names": {
+        "stl": "Copper_INT2.stl",
+        "glb_node": "Copper_INT2",
+        "step_solid": "Copper_INT2"
+      }
+    },
+    "Copper_SDA": {
+      "role": "copper",
+      "layer": "F.Cu",
+      "net": "SDA",
+      "z_range_mm": [
+        -0.8,
+        0.8
+      ],
+      "properties": {
+        "thickness_mm": 0.035,
+        "conductivity_S_per_m": 58000000.0,
+        "surface_roughness_um": 0.0,
+        "foil_mm": 0.035,
+        "plating_added_mm": 0.0
+      },
+      "look": {
+        "color": "#CD803E",
+        "alpha": 1.0
+      },
+      "file_names": {
+        "stl": "Copper_SDA.stl",
+        "glb_node": "Copper_SDA",
+        "step_solid": "Copper_SDA"
+      }
+    },
+    "Copper_SCL": {
+      "role": "copper",
+      "layer": "F.Cu",
+      "net": "SCL",
+      "z_range_mm": [
+        -0.8,
+        0.8
+      ],
+      "properties": {
+        "thickness_mm": 0.035,
+        "conductivity_S_per_m": 58000000.0,
+        "surface_roughness_um": 0.0,
+        "foil_mm": 0.035,
+        "plating_added_mm": 0.0
+      },
+      "look": {
+        "color": "#CD803E",
+        "alpha": 1.0
+      },
+      "file_names": {
+        "stl": "Copper_SCL.stl",
+        "glb_node": "Copper_SCL",
+        "step_solid": "Copper_SCL"
+      }
+    },
+    "Copper_TX": {
+      "role": "copper",
+      "layer": "F.Cu",
+      "net": "TX",
+      "z_range_mm": [
+        -0.8,
+        0.8
+      ],
+      "properties": {
+        "thickness_mm": 0.035,
+        "conductivity_S_per_m": 58000000.0,
+        "surface_roughness_um": 0.0,
+        "foil_mm": 0.035,
+        "plating_added_mm": 0.0
+      },
+      "look": {
+        "color": "#CD803E",
+        "alpha": 1.0
+      },
+      "file_names": {
+        "stl": "Copper_TX.stl",
+        "glb_node": "Copper_TX",
+        "step_solid": "Copper_TX"
+      }
+    },
+    "Copper_RX": {
+      "role": "copper",
+      "layer": "F.Cu",
+      "net": "RX",
+      "z_range_mm": [
+        -0.8,
+        0.8
+      ],
+      "properties": {
+        "thickness_mm": 0.035,
+        "conductivity_S_per_m": 58000000.0,
+        "surface_roughness_um": 0.0,
+        "foil_mm": 0.035,
+        "plating_added_mm": 0.0
+      },
+      "look": {
+        "color": "#CD803E",
+        "alpha": 1.0
+      },
+      "file_names": {
+        "stl": "Copper_RX.stl",
+        "glb_node": "Copper_RX",
+        "step_solid": "Copper_RX"
+      }
+    },
+    "Copper_LEDA2": {
+      "role": "copper",
+      "layer": "F.Cu",
+      "net": "LEDA2",
+      "z_range_mm": [
+        0.765,
+        0.8
+      ],
+      "properties": {
+        "thickness_mm": 0.035,
+        "conductivity_S_per_m": 58000000.0,
+        "surface_roughness_um": 0.0,
+        "foil_mm": 0.035,
+        "plating_added_mm": 0.0
+      },
+      "look": {
+        "color": "#CD803E",
+        "alpha": 1.0
+      },
+      "file_names": {
+        "stl": "Copper_LEDA2.stl",
+        "glb_node": "Copper_LEDA2",
+        "step_solid": "Copper_LEDA2"
+      }
+    },
+    "Copper_LED2": {
+      "role": "copper",
+      "layer": "F.Cu",
+      "net": "LED2",
+      "z_range_mm": [
+        0.765,
+        0.8
+      ],
+      "properties": {
+        "thickness_mm": 0.035,
+        "conductivity_S_per_m": 58000000.0,
+        "surface_roughness_um": 0.0,
+        "foil_mm": 0.035,
+        "plating_added_mm": 0.0
+      },
+      "look": {
+        "color": "#CD803E",
+        "alpha": 1.0
+      },
+      "file_names": {
+        "stl": "Copper_LED2.stl",
+        "glb_node": "Copper_LED2",
+        "step_solid": "Copper_LED2"
+      }
+    },
+    "Copper_FCS": {
+      "role": "copper",
+      "layer": "F.Cu",
+      "net": "FCS",
+      "z_range_mm": [
+        0.765,
+        0.8
+      ],
+      "properties": {
+        "thickness_mm": 0.035,
+        "conductivity_S_per_m": 58000000.0,
+        "surface_roughness_um": 0.0,
+        "foil_mm": 0.035,
+        "plating_added_mm": 0.0
+      },
+      "look": {
+        "color": "#CD803E",
+        "alpha": 1.0
+      },
+      "file_names": {
+        "stl": "Copper_FCS.stl",
+        "glb_node": "Copper_FCS",
+        "step_solid": "Copper_FCS"
+      }
+    },
+    "Copper_FMISO": {
+      "role": "copper",
+      "layer": "F.Cu",
+      "net": "FMISO",
+      "z_range_mm": [
+        0.765,
+        0.8
+      ],
+      "properties": {
+        "thickness_mm": 0.035,
+        "conductivity_S_per_m": 58000000.0,
+        "surface_roughness_um": 0.0,
+        "foil_mm": 0.035,
+        "plating_added_mm": 0.0
+      },
+      "look": {
+        "color": "#CD803E",
+        "alpha": 1.0
+      },
+      "file_names": {
+        "stl": "Copper_FMISO.stl",
+        "glb_node": "Copper_FMISO",
+        "step_solid": "Copper_FMISO"
+      }
+    },
+    "Copper_FMOSI": {
+      "role": "copper",
+      "layer": "F.Cu",
+      "net": "FMOSI",
+      "z_range_mm": [
+        0.765,
+        0.8
+      ],
+      "properties": {
+        "thickness_mm": 0.035,
+        "conductivity_S_per_m": 58000000.0,
+        "surface_roughness_um": 0.0,
+        "foil_mm": 0.035,
+        "plating_added_mm": 0.0
+      },
+      "look": {
+        "color": "#CD803E",
+        "alpha": 1.0
+      },
+      "file_names": {
+        "stl": "Copper_FMOSI.stl",
+        "glb_node": "Copper_FMOSI",
+        "step_solid": "Copper_FMOSI"
+      }
+    },
+    "Copper_FSCK": {
+      "role": "copper",
+      "layer": "F.Cu",
+      "net": "FSCK",
+      "z_range_mm": [
+        0.765,
+        0.8
+      ],
+      "properties": {
+        "thickness_mm": 0.035,
+        "conductivity_S_per_m": 58000000.0,
+        "surface_roughness_um": 0.0,
+        "foil_mm": 0.035,
+        "plating_added_mm": 0.0
+      },
+      "look": {
+        "color": "#CD803E",
+        "alpha": 1.0
+      },
+      "file_names": {
+        "stl": "Copper_FSCK.stl",
+        "glb_node": "Copper_FSCK",
+        "step_solid": "Copper_FSCK"
+      }
+    },
+    "Copper_VBAT": {
+      "role": "copper",
+      "layer": "B.Cu",
+      "net": "VBAT",
+      "z_range_mm": [
+        -0.8,
+        -0.765
+      ],
+      "properties": {
+        "thickness_mm": 0.035,
+        "conductivity_S_per_m": 58000000.0,
+        "surface_roughness_um": 0.0,
+        "foil_mm": 0.035,
+        "plating_added_mm": 0.0
+      },
+      "look": {
+        "color": "#CD803E",
+        "alpha": 1.0
+      },
+      "file_names": {
+        "stl": "Copper_VBAT.stl",
+        "glb_node": "Copper_VBAT",
+        "step_solid": "Copper_VBAT"
+      }
+    },
+    "Top Solder Mask": {
+      "role": "mask",
+      "layer": "F.Mask",
+      "net": null,
+      "z_range_mm": [
+        0.765,
+        0.81
+      ],
+      "properties": {
+        "side": "F",
+        "thickness_over_laminate_mm": 0.01,
+        "thickness_over_copper_mm": 0.01
+      },
+      "look": {
+        "color": "#14328C",
+        "alpha": 0.8
+      },
+      "file_names": {
+        "stl": "Top_Solder_Mask.stl",
+        "glb_node": "Top Solder Mask",
+        "step_solid": "Top Solder Mask"
+      }
+    },
+    "Bottom Solder Mask": {
+      "role": "mask",
+      "layer": "B.Mask",
+      "net": null,
+      "z_range_mm": [
+        -0.81,
+        -0.765
+      ],
+      "properties": {
+        "side": "B",
+        "thickness_over_laminate_mm": 0.01,
+        "thickness_over_copper_mm": 0.01
+      },
+      "look": {
+        "color": "#14328C",
+        "alpha": 0.8
+      },
+      "file_names": {
+        "stl": "Bottom_Solder_Mask.stl",
+        "glb_node": "Bottom Solder Mask",
+        "step_solid": "Bottom Solder Mask"
+      }
+    },
+    "Top Silkscreen": {
+      "role": "silk",
+      "layer": "F.SilkS",
+      "net": null,
+      "z_range_mm": [
+        0.775,
+        0.82
+      ],
+      "properties": {
+        "side": "F",
+        "thickness_mm": 0.01
+      },
+      "look": {
+        "color": "#F0F0EC",
+        "alpha": 1.0
+      },
+      "file_names": {
+        "stl": "Top_Silkscreen.stl",
+        "glb_node": "Top Silkscreen",
+        "step_solid": "Top Silkscreen"
+      }
+    },
+    "Bottom Silkscreen": {
+      "role": "silk",
+      "layer": "B.SilkS",
+      "net": null,
+      "z_range_mm": [
+        -0.82,
+        -0.765
+      ],
+      "properties": {
+        "side": "B",
+        "thickness_mm": 0.01
+      },
+      "look": {
+        "color": "#F0F0EC",
+        "alpha": 1.0
+      },
+      "file_names": {
+        "stl": "Bottom_Silkscreen.stl",
+        "glb_node": "Bottom Silkscreen",
+        "step_solid": "Bottom Silkscreen"
+      }
+    }
+  }
+}

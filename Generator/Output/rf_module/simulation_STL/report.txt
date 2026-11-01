@@ -1,0 +1,109 @@
+rf_module  (rf_module.kicad_pcb)   generated 2026-11-01 21:34
+mode: simulation   formats: stl   units: m
+KiCad format 20221018 (KiCad 7), generator pcbnew
+
+stack-up
+  copper layers: F.Cu, In1.Cu, In2.Cu, B.Cu
+  laminate 1.5300 mm (stackup dielectrics (+ inner copper); board total in file 1.6 mm)
+  F.Cu     z +0.7650 .. +0.8000 mm  (foil 0.035 mm)
+  In1.Cu   z +0.5475 .. +0.5650 mm  (foil 0.0175 mm)
+  In2.Cu   z -0.5650 .. -0.5475 mm  (foil 0.0175 mm)
+  B.Cu     z -0.8000 .. -0.7650 mm  (foil 0.035 mm)
+  dielectric 1             prepreg  FR4        0.2000 mm  er 4.5  tan d 0.02   z +0.5650 .. +0.7650
+  dielectric 2             core     FR4        1.0950 mm  er 4.5  tan d 0.02   z -0.5475 .. +0.5475
+  dielectric 3             prepreg  FR4        0.2000 mm  er 4.5  tan d 0.02   z -0.7650 .. -0.5650
+  vias: plot setting viasonmask; pad-to-mask clearance 0.05 mm; silkscreen over copper (mask openings): False
+  origin: outline centre (132.0000, 122.0000) in KiCad coordinates
+
+read
+       9  arc tracks on B.Cu
+       8  arc tracks on F.Cu
+       8  arc tracks on In1.Cu
+       8  arc tracks on In2.Cu
+       1  edge plating band (net GND)
+       2  footprint graphics on B.SilkS
+      37  footprint graphics on F.SilkS
+      46  footprints
+       1  graphics on B.Cu
+      18  graphics on B.Mask
+       5  graphics on B.SilkS
+      23  graphics on F.Mask
+       1  graphics on F.SilkS
+      16  outline shapes on Edge.Cuts
+      18  pad mask openings on B.Mask
+     154  pad mask openings on F.Mask
+     162  pads
+       1  text on B.Cu
+      11  text on B.SilkS
+       1  text on F.Cu
+      46  text on F.SilkS
+       1  text on In1.Cu
+       1  text on In2.Cu
+     307  through vias
+      30  tracks on B.Cu
+     144  tracks on F.Cu
+       8  tracks on In1.Cu
+       8  tracks on In2.Cu
+       1  zone fills on B.Cu
+       3  zone fills on F.Cu
+       1  zone fills on In1.Cu
+       2  zone fills on In2.Cu
+skipped
+       3  keepout / rule areas (no copper by design)
+
+notes
+  font: KiCad newstroke (kicad_newstroke.json.gz)
+  solder mask: 0.01 mm over laminate, 0.01 mm over copper (stackup)
+
+parts
+  Board_dielectric 1                      53980 triangles  material Board_prepreg #A89C66 alpha 1.0
+  Board_dielectric 2                      43812 triangles  material Board_core #968A58 alpha 1.0
+  Board_dielectric 3                      88464 triangles  material Board_prepreg #A89C66 alpha 1.0
+  Copper_+3V3                             40396 triangles  material Copper #CD803E alpha 1.0
+  Copper_+5V                              10192 triangles  material Copper #CD803E alpha 1.0
+  Copper_CS                                 268 triangles  material Copper #CD803E alpha 1.0
+  Copper_FCS                                364 triangles  material Copper #CD803E alpha 1.0
+  Copper_FMISO                              364 triangles  material Copper #CD803E alpha 1.0
+  Copper_FMOSI                              316 triangles  material Copper #CD803E alpha 1.0
+  Copper_FSCK                               316 triangles  material Copper #CD803E alpha 1.0
+  Copper_GND                             334352 triangles  material Copper #CD803E alpha 1.0
+  Copper_INT2                               284 triangles  material Copper #CD803E alpha 1.0
+  Copper_IRQ                                268 triangles  material Copper #CD803E alpha 1.0
+  Copper_LED1                               316 triangles  material Copper #CD803E alpha 1.0
+  Copper_LED2                               316 triangles  material Copper #CD803E alpha 1.0
+  Copper_LED3                               316 triangles  material Copper #CD803E alpha 1.0
+  Copper_LEDA1                              300 triangles  material Copper #CD803E alpha 1.0
+  Copper_LEDA2                              300 triangles  material Copper #CD803E alpha 1.0
+  Copper_LEDA3                              300 triangles  material Copper #CD803E alpha 1.0
+  Copper_MISO                               268 triangles  material Copper #CD803E alpha 1.0
+  Copper_MOSI                               268 triangles  material Copper #CD803E alpha 1.0
+  Copper_NRST                               776 triangles  material Copper #CD803E alpha 1.0
+  Copper_PWRLED                             300 triangles  material Copper #CD803E alpha 1.0
+  Copper_RF                                 216 triangles  material Copper #CD803E alpha 1.0
+  Copper_RF2                                136 triangles  material Copper #CD803E alpha 1.0
+  Copper_RX                                3520 triangles  material Copper #CD803E alpha 1.0
+  Copper_SCK                                268 triangles  material Copper #CD803E alpha 1.0
+  Copper_SCL                               3504 triangles  material Copper #CD803E alpha 1.0
+  Copper_SCL2                              3288 triangles  material Copper #CD803E alpha 1.0
+  Copper_SDA                               3484 triangles  material Copper #CD803E alpha 1.0
+  Copper_SDA2                              3288 triangles  material Copper #CD803E alpha 1.0
+  Copper_SWCLK                              272 triangles  material Copper #CD803E alpha 1.0
+  Copper_SWDIO                              272 triangles  material Copper #CD803E alpha 1.0
+  Copper_TX                                3500 triangles  material Copper #CD803E alpha 1.0
+  Copper_VBAT                               156 triangles  material Copper #CD803E alpha 1.0
+  Copper_XIN                                324 triangles  material Copper #CD803E alpha 1.0
+  Copper_XOUT                               344 triangles  material Copper #CD803E alpha 1.0
+  Copper_no_net                            2660 triangles  material Copper #CD803E alpha 1.0
+  Top Solder Mask                        154868 triangles  material Top Solder Mask #14328C alpha 0.8
+  Bottom Solder Mask                      75122 triangles  material Bottom Solder Mask #14328C alpha 0.8
+  Top Silkscreen                          40466 triangles  material Top Silkscreen #F0F0EC alpha 1.0
+  Bottom Silkscreen                       15824 triangles  material Bottom Silkscreen #F0F0EC alpha 1.0
+
+timing
+  read               0.1 s
+  collect            0.8 s
+  resolve            2.4 s
+  geometry           1.7 s
+  materials          0.0 s
+  assemble           8.9 s
+  write              0.3 s

@@ -1,5 +1,5 @@
-rf_module  (rf_module.kicad_pcb)   generated 2026-11-01 21:29
-mode: simulation   formats: step, glb, stl   units: m
+rf_module  (rf_module.kicad_pcb)   generated 2026-11-01 21:32
+mode: simulation   formats: step   units: m
 KiCad format 20221018 (KiCad 7), generator pcbnew
 
 stack-up
@@ -102,8 +102,8 @@ parts
 timing
   read               0.1 s
   collect            0.8 s
-  resolve            2.5 s
+  resolve            2.6 s
   geometry           1.7 s
   materials          0.0 s
   assemble           9.4 s
-  write              3.0 s
+  write              2.6 s
