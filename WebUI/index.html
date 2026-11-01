@@ -125,7 +125,6 @@
         <div class="hover-card" id="hover-card" hidden></div>
         <div class="readout" id="readout"></div>
         <div class="sliders">
-          <label class="view-slider" data-tip="Move the layers apart, to see inside the stack-up">Explode <input type="range" id="explode" min="0" max="100" value="0"><output id="explode-out">0 %</output></label>
           <label class="view-slider" data-tip="Cut the model across, to see its cross-section">Cross-Section <input type="range" id="cut" min="0" max="100" value="100"><output id="cut-out">Off</output></label>
         </div>
       </div>
@@ -140,9 +139,9 @@
           <span>Info</span>
           <span class="switch"><input type="checkbox" id="show-info"><span class="knob"></span></span>
         </label>
-        <button class="glass-btn small" id="btn-report" disabled data-tip="The run's report.txt: what was read, skipped and written">Report</button>
       </div>
       <div class="checks-list" id="checks-list"><p class="hint">Starting Python in your browser. The first visit downloads about 30 MB; later visits are cached.</p></div>
+      <button class="glass-btn" id="btn-report" disabled data-tip="Opens the run's report.txt: what was read, skipped, noted and written, and how long each stage took">Show Report</button>
 
       <h2 class="pacifico">Parts</h2>
       <div class="parts" id="parts"><p class="hint">The solids of the model, once it is made. Click one to hide it.</p></div>

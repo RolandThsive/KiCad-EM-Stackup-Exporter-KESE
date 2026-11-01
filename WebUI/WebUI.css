@@ -463,11 +463,11 @@ dialog pre { font-family: var(--mono); font-size: 12px; white-space: pre-wrap; m
 .canvas-wrap { background: radial-gradient(ellipse at 50% 40%, #fbfaf6 0%, #ebe6da 100%); }
 .views { position: absolute; top: 10px; right: 10px; z-index: 10; background: rgba(255, 255, 255, 0.6); }
 .empty-note { position: absolute; inset: 0; display: grid; place-content: center; text-align: center; font-size: 15px; color: var(--text-2); pointer-events: none; line-height: 1.6; }
-.readout { left: 12px; bottom: 58px; }
+.readout { left: 12px; bottom: 16px; max-width: calc(100% - 460px); }
 .hover-card { position: absolute; right: 12px; bottom: 58px; max-width: 360px; z-index: 4; background: rgba(255, 255, 255, 0.94); border-radius: 10px;
   padding: 7px 10px; box-shadow: var(--shadow-card); font-size: 12px; line-height: 1.5; border-left: 4px solid var(--accent); pointer-events: none; }
 .hover-card b { font-family: var(--mono); }
-.sliders { position: absolute; left: 12px; right: 12px; bottom: 10px; display: flex; gap: 12px; z-index: 4; }
+.sliders { position: absolute; right: 12px; width: min(420px, calc(100% - 24px)); bottom: 10px; display: flex; gap: 12px; z-index: 4; }
 .view-slider { flex: 1; display: flex; align-items: center; gap: 10px; font-size: 12.5px; background: rgba(255, 255, 255, 0.8);
   padding: 4px 12px; border-radius: 10px; box-shadow: var(--shadow-btn); }
 .view-slider output { width: 44px; text-align: right; font-variant-numeric: tabular-nums; }
@@ -494,6 +494,7 @@ dialog pre { font-family: var(--mono); font-size: 12px; white-space: pre-wrap; m
 .download-row { display: flex; flex-wrap: wrap; gap: 6px; }
 .download-row .glass-btn { padding: 4px 10px; font-size: 12px; color: #000; border: 2px solid var(--accent); font-weight: 600; }
 #btn-download:hover:not(:disabled), .download-row .glass-btn:hover:not(:disabled) { color: var(--accent); background: var(--cream); }
+#btn-report { width: 100%; font-weight: 600; }
 #report-dialog { width: min(1000px, 94vw); max-width: none; }
 #report-dialog form > .glass-btn { display: block; width: 100%; font-weight: 600; }
 

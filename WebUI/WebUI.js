@@ -695,7 +695,6 @@ function wire() {
     document.querySelectorAll("#views button").forEach((x) => x.classList.toggle("on", x === b));
     viewer.view(b.dataset.view);
   }));
-  $("explode").addEventListener("input", (e) => { viewer.setExplode(e.target.value / 100); $("explode-out").textContent = `${e.target.value} %`; });
   $("cut").addEventListener("input", (e) => { const v = +e.target.value; viewer.setCut(v / 100); $("cut-out").textContent = v >= 100 ? "Off" : `${v} %`; });
   document.addEventListener("keydown", (e) => { if ((e.ctrlKey || e.metaKey) && e.key === "Enter") generate(); });
 }
@@ -721,7 +720,7 @@ async function main() {
   const links = CFG.links || {};
   $("foot").replaceChildren("Generator: ", el("a", { href: links.repository, target: "_blank", rel: "noopener" }, "KiCad EM Stackup Exporter"),
     " · GPL-3.0-or-later · runs in your browser, nothing is uploaded");
-  viewer = new Viewer($("view"), { onHover: showHover, onProgress: (f) => { $("readout").textContent = `Reading the STEP… ${Math.round(f * 100)} %`; } });
+  viewer = new Viewer($("view"), { roleOf: (name) => (partInfo(name) || {}).role, onHover: showHover, onProgress: (f) => { $("readout").textContent = `Reading the STEP… ${Math.round(f * 100)} %`; } });
   wire();
   store.start();
   startWorker();
