@@ -347,7 +347,6 @@ function setUI(ui) {
   document.querySelectorAll("#ui-switch button").forEach((b) => b.classList.toggle("on", b.dataset.ui === ui));
   $("app").classList.toggle("advanced", ui === "advanced");
   renderSections();
-  setTimeout(() => viewer && viewer.resize(), 560);
 }
 
 /* ---- mode and formats ------------------------------------------------------------------------- */
