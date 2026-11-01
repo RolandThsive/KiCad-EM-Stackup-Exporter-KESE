@@ -6,7 +6,6 @@ for every region that has the edge (kese/core/cells.py); so the tiles meet in ex
 vertices, and the faces that only close a tile are left out."""
 from collections import defaultdict
 
-import manifold3d as mf
 import numpy as np
 import shapely
 
@@ -39,6 +38,7 @@ def tile_surface(prisms, regions, box, index, loose):
     loose as they are."""
     x0, y0, x1, y1 = box
     clip = np.isfinite(box).any()
+    import manifold3d as mf                         # only Run.BUILD_WITH_KERNELS reaches here
     solids, owner = [], {}
     for p, r in zip(prisms, regions):
         if clip:

@@ -2,11 +2,10 @@
 them, and a big polygon strip by strip, as KiCad cuts big polygons into 1 cm cells first: earcut's
 time grows with the points times the holes.  Earcut is not always right (it runs two holes whose
 edges lie on one line into one, through a slit of no width), so every cut is checked, and a
-polygon or a strip whose triangles do not close exactly on its edges is cut again by Manifold's
-triangulator."""
+polygon or a strip whose triangles do not close exactly on its edges is cut again by GEOS's
+constrained Delaunay triangulation."""
 from collections import defaultdict
 
-import manifold3d as mf
 import mapbox_earcut
 import numpy as np
 import shapely
@@ -86,18 +85,30 @@ def earcut_cut(xy, ends):
         return np.empty((0, 3), dtype=np.int64)       # no triangles: the polygon fails the check
 
 
-def manifold_cut(xy, ends):
-    """earcut_cut by Manifold's triangulator: slower, but it keeps to the edges it is given."""
+def geos_cut(xy, ends):
+    """earcut_cut by GEOS's constrained Delaunay triangulation (through shapely, already loaded):
+    slower, but it keeps to the edges it is given and adds no point.  No triangles when it adds one
+    or fails."""
+    nothing = np.empty((0, 3), dtype=np.int64)
     try:
-        return np.asarray(mf.triangulate(np.split(xy, ends[:-1]))).reshape(-1, 3)
+        rings = np.split(xy, ends[:-1])
+        tris = shapely.get_parts(shapely.constrained_delaunay_triangles(shapely.Polygon(rings[0], rings[1:])))
+        pts = shapely.get_coordinates(shapely.get_exterior_ring(tris)).reshape(len(tris), 4, 2)[:, :3]
     except Exception:
-        return np.empty((0, 3), dtype=np.int64)
+        return nothing
+    at = lookup(xy, pts.reshape(-1, 2)) if len(tris) else None
+    if at is None:
+        return nothing
+    tri = at.reshape(-1, 3)
+    turn = twice_area(xy, tri) < 0                       # every triangle counter-clockwise
+    tri[turn] = tri[turn][:, ::-1]
+    return tri
 
 
 def cells_cut(xy, ends):
     """earcut_cut, and a polygon of more than Geometry.TRIANGULATE_CELL_POINTS points strip by strip:
     the polygon gets a point wherever an edge crosses a strip edge (kese/core/cells.py), every strip
-    is cut on its own (a strip earcut gets wrong by Manifold's triangulator), and the points the
+    is cut on its own (a strip earcut gets wrong by GEOS's triangulator), and the points the
     strips added are taken out again (without()), so the walls keep exactly the polygon's own
     edges.  No triangles when that fails: the polygon is then cut whole."""
     xs = cell_lines(xy[:, 0].min(), xy[:, 0].max()) if len(xy) > P.Geometry.TRIANGULATE_CELL_POINTS else []
@@ -113,7 +124,7 @@ def cells_cut(xy, ends):
     strips = np.array([p for a, b in zip(np.r_[xy[:, 0].min() - 1, xs], np.r_[xs, xy[:, 0].max() + 1])
                        for p in shapely.get_parts(polys_only(shapely.clip_by_rect(whole[0], a, y0, b, y1)))], dtype=object)
     out = []
-    for cut in (earcut_cut, manifold_cut):
+    for cut in (earcut_cut, geos_cut):
         if len(strips):
             sxy, _, poly, tri, bad = caps(strips, cut)
             at = lookup(wxy, sxy)

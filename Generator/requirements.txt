@@ -10,9 +10,9 @@ numpy==2.5.3
 scipy==1.18.1
 shapely==2.2.0
 trimesh==5.1.1
-manifold3d==3.5.4
 mapbox_earcut==2.1.0
-# STEP by OpenCascade (Run.BUILD_WITH_KERNELS) and the tests' read-back of STEP files (optional: STEP is
-# written without it; with BUILD_WITH_KERNELS the run says cadquery is missing)
+# Run.BUILD_WITH_KERNELS (solid unions by Manifold, STEP by OpenCascade) and the tests' read-back of
+# STEP files (optional: STEP is written without them; with BUILD_WITH_KERNELS the run says what is missing)
+manifold3d==3.5.4
 cadquery==2.8.0
 cadquery-ocp>=7.9.3.1,<8.0

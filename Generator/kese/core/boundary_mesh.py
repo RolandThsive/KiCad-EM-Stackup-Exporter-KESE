@@ -8,7 +8,7 @@ import trimesh
 
 from kese.core import shapes2d as sh
 from kese.core.flat_triangles import twice_area
-from kese.core.triangulate import caps, cells_cut, lookup, manifold_cut, rings_of
+from kese.core.triangulate import caps, cells_cut, lookup, geos_cut, rings_of
 from kese.core.vertices import grid_keys, vertices_in_order
 
 
@@ -66,7 +66,7 @@ def polygon_triangles(polys):
     gets wrong, and constrained Delaunay triangles for what neither closes (rings that touch)."""
     xys, tris, n = [], [], 0
     left = polys
-    for cut in (cells_cut, manifold_cut):
+    for cut in (cells_cut, geos_cut):
         if len(left):
             xy, _, poly, tri, bad = caps(left, cut)
             xys.append(xy)

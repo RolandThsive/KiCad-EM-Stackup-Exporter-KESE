@@ -10,11 +10,11 @@ requires-python = ">=3.11"
 license = {text = "GPL-3.0-or-later"}
 dynamic = ["version"]
 dependencies = [
-    "numpy", "scipy", "shapely>=2.0", "trimesh>=4.0", "manifold3d", "mapbox_earcut",
+    "numpy", "scipy", "shapely>=2.0", "trimesh>=4.0", "mapbox_earcut",
 ]
 
 [project.optional-dependencies]
-step = ["cadquery>=2.5"]
+step = ["cadquery>=2.5", "manifold3d"]          # Run.BUILD_WITH_KERNELS
 
 [project.scripts]
 kese = "kese.cli:main"

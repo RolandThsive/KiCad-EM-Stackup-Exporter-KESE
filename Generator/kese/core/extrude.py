@@ -1,12 +1,11 @@
 """Extrusion: a 2D region between two heights as a closed triangle mesh (trimesh), and the
 union of such meshes into one solid."""
-import manifold3d as mf
 import numpy as np
 import shapely
 import trimesh
 
 from kese.core.shapes2d import polygons, polys_only
-from kese.core.triangulate import caps, cells_cut, manifold_cut
+from kese.core.triangulate import caps, cells_cut, geos_cut
 from parameters import P
 
 
@@ -25,7 +24,7 @@ def extrude(geom, z0, z1, _retry=True):
     if not len(left):
         return None
     meshes = []
-    for cut in (cells_cut, manifold_cut):
+    for cut in (cells_cut, geos_cut):
         if len(left):
             m, bad = prism_mesh(left, z0, z1, cut)
             meshes.append(m)
@@ -104,6 +103,7 @@ def solid_union(meshes, log=None):
     if len(meshes) == 1:
         return meshes[0]
     try:
+        import manifold3d as mf                     # only Run.BUILD_WITH_KERNELS reaches here
         solids = [mf.Manifold(mesh=mf.Mesh64(vert_properties=np.asarray(m.vertices, dtype=np.float64),
                                              tri_verts=np.asarray(m.faces, dtype=np.uint32))) for m in meshes]
         bad = [s.status() for s in solids if s.status() != mf.Error.NoError]

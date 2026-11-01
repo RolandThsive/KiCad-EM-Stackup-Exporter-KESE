@@ -23,13 +23,15 @@ from pathlib import Path
 from kese import __version__
 from parameters import P
 
-REQUIRED = ["numpy", "scipy", "shapely", "trimesh", "manifold3d", "mapbox_earcut"]
+REQUIRED = ["numpy", "scipy", "shapely", "trimesh", "mapbox_earcut"]
+KERNELS = ["manifold3d"]                # Run.BUILD_WITH_KERNELS: solid unions, and STEP by cadquery
 OPTIONAL = {"step": "cadquery"}
 
 
 def missing_packages(formats):
     """Names of packages that are not installed, so the run can say so instead of a traceback."""
-    needed = REQUIRED + [pkg for fmt, pkg in OPTIONAL.items() if fmt in formats and P.Run.BUILD_WITH_KERNELS]
+    kernels = P.Run.BUILD_WITH_KERNELS
+    needed = REQUIRED + KERNELS * kernels + [pkg for fmt, pkg in OPTIONAL.items() if fmt in formats and kernels]
     return [pkg for pkg in needed if importlib.util.find_spec(pkg) is None]
 
 
