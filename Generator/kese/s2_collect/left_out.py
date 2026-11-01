@@ -1,9 +1,5 @@
-"""What KESE reads past, counted under "skipped" in report.txt and summed up in a warning: items of
-a kind it does not know (such as KiCad 10's ellipses), and what a pad or via says that is not
-modelled.  That is a padstack, another shape on the inner layers or on the back (KiCad 9 and later),
-for which the front shape is used on every layer; and KiCad 10's drilling and protection of holes:
-backdrills and tertiary drills (the hole stays plated through its whole span), counterbores and
-countersinks (not cut), and vias that are covered, plugged, capped or filled (the hole stays open)."""
+"""What KESE reads past, counted under "skipped" in report.txt: unknown items, and KiCad 10's hole
+options (backdrills, counterbores, countersinks, covered, plugged, capped or filled vias)."""
 from kese.core.sexp import child, yes
 
 UNKNOWN = "items (unknown to KESE)"
@@ -15,8 +11,7 @@ PROTECTION = {"covering": "covered vias (the covering is not modelled)",
 
 def _features(what):
     plated = "(the hole is plated through its whole span)"
-    return {"padstack": f"{what} with a padstack (the front shape is used on every layer)",
-            "backdrill": f"backdrills of {what} {plated}", "tertiary_drill": f"tertiary drills of {what} {plated}",
+    return {"backdrill": f"backdrills of {what} {plated}", "tertiary_drill": f"tertiary drills of {what} {plated}",
             "counterbore": f"counterbores of {what} (not cut)", "countersink": f"countersinks of {what} (not cut)"}
 
 
@@ -42,10 +37,12 @@ def protection_defaults(setup):
 
 
 def count(items, node, what):
-    """The padstack, drills and post machining of a pad or via (`what`: "pads" or "vias"), and the
-    protection of a via, under items.skipped."""
+    """The drills and post machining of a pad or via (`what`: "pads" or "vias"), and the protection of
+    a via, under items.skipped; a padstack (modelled) under items.found."""
     names = FEATURES[what]
-    for key in ("padstack", "backdrill", "tertiary_drill"):
+    if child(node, "padstack") is not None:          # modelled: each layer gets its own shape
+        items.found[f"{what} with a padstack (a shape per layer)"] += 1
+    for key in ("backdrill", "tertiary_drill"):
         if child(node, key) is not None:
             items.skipped[names[key]] += 1
     for key in ("front_post_machining", "back_post_machining"):

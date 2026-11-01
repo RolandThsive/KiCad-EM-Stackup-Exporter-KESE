@@ -38,8 +38,11 @@ BASELINE = ROOT / "tests" / "baseline.json"
 OUT = ROOT / "tests" / "out"
 VOLUME_TOLERANCE = 1e-3          # relative, per part
 AUDITORS = 2                     # background processes reading STEP files back (plain python entry)
-BOARDS = (sorted((ROOT / "tests" / "boards").glob("*.kicad_pcb")) + sorted((ROOT.parent / "featureTest").glob("*.kicad_pcb"))
-          + sorted((ROOT / "Input").glob("*.kicad_pcb")))
+FEATURES = sorted((ROOT.parent / "featureTest").glob("*.kicad_pcb"))
+# the boards of Input/ that featureTest/ holds too, byte for byte (21_rf_module is rf_module), run once
+COPIES = {p.read_bytes() for p in FEATURES}
+BOARDS = (sorted((ROOT / "tests" / "boards").glob("*.kicad_pcb")) + FEATURES
+          + [p for p in sorted((ROOT / "Input").glob("*.kicad_pcb")) if p.read_bytes() not in COPIES])
 MODES = ("simulation", "visual")
 FORMATS = {"simulation": ["glb", "step"], "visual": ["glb"]}
 # Boards run with other values than parameters/ has: the finish boards with the finish on, which is

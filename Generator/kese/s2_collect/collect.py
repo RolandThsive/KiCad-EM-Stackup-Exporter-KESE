@@ -3,6 +3,7 @@ in KiCad's frame (mm, Y down).  This file walks the tree; there is one file per 
 from kese.core import font
 from kese.core.sexp import child
 from kese.model.items import Items
+from kese.s1_read.parse_kicad_version import is_footprint
 from kese.s2_collect.context import Context
 from kese.s2_collect.drawings import GRAPHICS, add_drawing
 from kese.s2_collect.footprints import add_footprint
@@ -18,7 +19,7 @@ from kese.s2_collect.zones import UNFILLED, add_zone
 # items that are not part of the physical board, counted under skipped
 NOT_PHYSICAL = ("image", "target", "group", "generated", "table", "barcode", "point", "grid_item", "drill_chart",
                 "drill_map")
-# the rest of a board file: settings, not items (KiCad 4 to KiCad's development version)
+# the rest of a board file: settings, not items (every KiCad version)
 SETTINGS = {"version", "host", "generator", "generator_version", "general", "page", "paper", "title_block", "layers",
             "setup", "property", "net", "net_class", "net_chains", "variants", "constraint", "embedded_fonts",
             "embedded_files"}
@@ -51,7 +52,7 @@ def collect(raw, log):
             add_zone(ctx, node)
         elif k in GRAPHICS:
             add_drawing(ctx, node, lambda p: p)
-        elif k in ("footprint", "module"):
+        elif is_footprint(node):
             add_footprint(ctx, node)
         elif k in TEXT:
             add_text(ctx, node)

@@ -1,20 +1,19 @@
-"""The checks of stage 8 (verify): the Model proves itself.
-
-simulation : every part is a closed, consistently wound solid; no two parts overlap (overlap.py)
-visual     : along every vertical ray the skin's faces take turns, into the material and out of it
-both   : the glTF file passes the Khronos validator, if the `gltf_validator` CLI is on PATH"""
+"""The checks of stage 8 (verify).  simulation: every part closed and consistently wound, no two
+parts overlapping (overlap.py); visual: faces take turns in and out along vertical rays; both: the
+Khronos gltf_validator, when on PATH."""
 import shutil
 import subprocess
 
 import numpy as np
-import trimesh
 
 from kese.s8_verify.overlap import overlaps
+from kese.s8_verify.vertical_rays import vertical_hits
 from parameters import P
 
 
-def verify(model, glb_path=None, rays=3000):
+def verify(model, glb_path=None, rays=None):
     """(ok, report lines) of the checks below."""
+    rays = rays or P.Run.VERIFY_RAYS
     lines = []
     meshes = model.meshes
     scale = 1000.0 if model.units == "m" else 1.0      # report in mm
@@ -54,21 +53,25 @@ def _rays(meshes, n):
     b = np.array([corners[:, 0].min(axis=0), corners[:, 1].max(axis=0)])
     rng = np.random.default_rng(1)
     pts = rng.uniform(b[0][:2], b[1][:2], size=(n, 2))
-    zs = b[1][2] + (b[1][2] - b[0][2]) + 1e-6
-    return np.c_[pts, np.full(n, zs)], np.tile([0, 0, -1.0], (n, 1))
+    return pts
 
 
 def _skin_surfaces(meshes, n):
     """({faces met: rays}, rays whose faces, from the top down, do not take turns into the material
-    and out of it).  A closed outer surface gives in, out on every ray, or in, out, in, out where
-    the ray crosses a hollow open to the air (the bore of a buried via under stacked micro vias); a
-    face left inside the material or a doubled one gives two of a kind in a row."""
-    O, D = _rays(meshes, n)
-    allm = trimesh.util.concatenate(list(meshes.values()))
-    locs, ri, ti = allm.ray.intersects_location(O, D, multiple_hits=True)
-    nz = allm.face_normals[ti][:, 2]
-    flat = np.abs(nz) > 0.5
-    ri, z, into = ri[flat], np.asarray(locs).reshape(-1, 3)[flat, 2], nz[flat] > 0
+    and out of it, as a closed outer surface does)."""
+    xy = _rays(meshes, n)
+    vs, fs, at = [], [], 0
+    for m in meshes.values():
+        vs.append(np.asarray(m.vertices, dtype=float))
+        fs.append(np.asarray(m.faces) + at)
+        at += len(vs[-1])
+    V, F = np.concatenate(vs), np.concatenate(fs)
+    t = V[F]
+    normal = np.cross(t[:, 1] - t[:, 0], t[:, 2] - t[:, 0])
+    nz = normal[:, 2] / np.maximum(np.linalg.norm(normal, axis=1), 1e-300)
+    flat = np.flatnonzero(np.abs(nz) > 0.5)                 # only the faces a vertical ray meets square on
+    ri, z, ti = vertical_hits(V, F[flat], xy)
+    into = nz[flat][ti] > 0
     order = np.lexsort((-z, ri))
     ri, into = ri[order], into[order]
     count = np.bincount(ri, minlength=n)

@@ -1,28 +1,25 @@
-"""The visible faces of every part (kese/s6_assemble/skin_faces.py) as meshes: flat faces cut
-into triangles and walls into two triangles each, with the vertices shared across every part, as
-for a solid (kese/core/boundary_mesh.py).  Then two kinds of triangles go: those that look at
-other material across less than Geometry.SKIN_BURIED_TEST_OFFSET_MM (two parts that meet but for
-rounding, or a slit narrower than that), and those on a closed surface that faces inward, the
-wall of a hollow sealed inside the board, which no one can see."""
+"""The visible faces of every part as meshes, vertices shared across parts; then the triangles that
+look at material within Geometry.SKIN_BURIED_TEST_OFFSET_MM, and those of hollows sealed inside
+the board, go."""
 from concurrent.futures import ThreadPoolExecutor
 from functools import partial
 
 import numpy as np
 import shapely
-import trimesh
 
 from kese.core.boundary_mesh import (
     flat_face_triangles,
     mesh_with_shared_vertices,
     wall_triangles,
 )
+from kese.core.graph import connected_components
+from kese.core.mesh import Mesh
 from kese.s6_assemble.boundaries import workers_wanted
-from kese.s6_assemble.skin import sealed
 from parameters import P
 
 
 def skin_meshes_from_faces(levels, pieces, faces):
-    """-> {part: trimesh of its visible faces} (mm, board frame)."""
+    """-> {part: mesh of its visible faces} (mm, board frame)."""
     at = {z: k for k, z in enumerate(levels)}
     made, owners, parts = [], [], []
     for part, (flats, walls) in faces.items():
@@ -43,7 +40,7 @@ def skin_meshes_from_faces(levels, pieces, faces):
 
 
 def meshes_per_part(v, f, owner, parts):
-    """{part: a trimesh of the triangles it owns}: the triangles sorted by owner once, in their
+    """{part: a mesh of the triangles it owns}: the triangles sorted by owner once, in their
     order, not searched through once per part."""
     order = np.argsort(owner, kind="stable")
     first = np.searchsorted(owner[order], np.arange(len(parts) + 1))
@@ -52,7 +49,7 @@ def meshes_per_part(v, f, owner, parts):
         mine = f[order[first[k]:first[k + 1]]]
         if len(mine):
             used, faces_of = np.unique(mine, return_inverse=True)
-            out[part] = trimesh.Trimesh(v[used], faces_of.reshape(-1, 3), process=False)
+            out[part] = Mesh(v[used], faces_of.reshape(-1, 3))
     return out
 
 
@@ -60,11 +57,8 @@ PROBES_AT_A_TIME = 2_000_000     # triangles: their probe points and normals tak
 
 
 def looks_at_material(v, f, levels, pieces):
-    """Which triangles have material just in front of them: a point SKIN_BURIED_TEST_OFFSET_MM
-    out from the triangle's centre, along its normal, lies in some part's material.  The material
-    of a slice, all of it joined as one region and prepared (indexed) once, places every probe
-    point in the slice at once; the slices are taken Run.WORKERS at a time, each by one thread,
-    and the triangles PROBES_AT_A_TIME at a time, for the memory."""
+    """Which triangles have material just in front of them: a point SKIN_BURIED_TEST_OFFSET_MM out along
+    the normal lies in some part's material.  Slices Run.WORKERS at a time, PROBES_AT_A_TIME probes."""
     inside = np.zeros(len(f), dtype=bool)
     with ThreadPoolExecutor(workers_wanted()) as pool:
         for start in range(0, len(f), PROBES_AT_A_TIME):
@@ -90,3 +84,17 @@ def place_in_slice(pieces, at, probe, inside, k):
     shapely.prepare(joined)
     rows = np.flatnonzero(at == k)
     inside[rows] = shapely.contains_xy(joined, probe[rows, 0], probe[rows, 1])
+
+
+def sealed(v, f):
+    """Which faces belong to a closed shell that faces inward: the wall of a hollow inside the
+    material, out of sight from every side."""
+    if not len(f):
+        return np.zeros(0, dtype=bool)
+    edges = np.concatenate([f[:, :2], f[:, 1:]])
+    _, shell = connected_components(len(v), edges[:, 0], edges[:, 1])
+    shell = shell[f[:, 0]]
+    o = (v.min(axis=0) + v.max(axis=0)) / 2
+    a, b, c = v[f[:, 0]] - o, v[f[:, 1]] - o, v[f[:, 2]] - o
+    volume = np.bincount(shell, weights=np.einsum("ij,ij->i", a, np.cross(b, c)))
+    return volume[shell] < 0

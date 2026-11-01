@@ -1,4 +1,4 @@
-"""The STEP writer without a kernel (kese/s7_write/step.py): a part built from its Boundary, a
+"""The STEP writer (kese/s7_write/step.py): a part built from its Boundary, a
 box with a through hole beside a second, separate box, written and read back by OpenCascade as
 two valid solids with no free edge, the right faces and the right volume; names with a quote
 and letters outside ASCII come back as they went in.  Needs OCP (cadquery's OpenCascade);

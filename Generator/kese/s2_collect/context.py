@@ -8,7 +8,8 @@ class Context:
     def __init__(self, items):
         self.items = items
         self.layers = items.layers
-        self.conditional_pads = []      # (layer, via ring, net): kept only where other copper meets them
+        self.conditional_pads = []      # (layer, ring, net, zones count): kept only where copper of its net meets them
+        self.zone_fills = set()         # id() of every zone fill shape, which KiCad 7+ does not count as meeting a ring
 
     def expand(self, layers):
         """Layer names with wildcards (*.Cu, F&B.Cu, *.Mask, ...) -> plain layer names."""
@@ -32,8 +33,7 @@ class Context:
 
     def bare_margin(self, node, w, solid=False):
         """How far the mask opening of a bare track or drawing (KiCad 9+) reaches past its copper: its own
-        solder_mask_margin, else the board's pad-to-mask clearance.  As in KiCad, a negative margin
-        narrows a stroke at most to nothing (-w/2); a filled shape's opening keeps at least its inside."""
+        solder_mask_margin, else the board's; a negative one narrows a stroke at most to nothing."""
         m = num(node, "solder_mask_margin")
         m = self.items.mask_clearance if m is None else m
         return m if solid or m >= 0 else max(m, -w / 2)

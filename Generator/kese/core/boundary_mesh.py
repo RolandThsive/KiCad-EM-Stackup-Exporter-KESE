@@ -1,30 +1,22 @@
-"""A Boundary as a closed triangle mesh: every flat face cut into triangles, every wall segment
-two triangles, and every vertex once.  The faces are cut one after another, each on its own
-points; then the points are numbered by (height, grid point), so that the faces that share a
-vertex in the Boundary share it in the mesh too, and the mesh closes as the Boundary does."""
+"""A Boundary as a closed triangle mesh: every flat face cut into triangles, every wall segment two
+triangles, and every vertex once, numbered by (height, grid point) so the faces share it."""
 import numpy as np
 import shapely
-import trimesh
 
 from kese.core import shapes2d as sh
-from kese.core.triangulate import (
-    caps,
-    cells_cut,
-    lookup,
-    manifold_cut,
-    rings_of,
-    twice_area,
-)
+from kese.core.flat_triangles import twice_area
+from kese.core.mesh import Mesh
+from kese.core.triangulate import caps, cells_cut, lookup, geos_cut, rings_of
 from kese.core.vertices import grid_keys, vertices_in_order
 
 
 def mesh_of_boundary(boundary):
-    """Boundary -> trimesh (mm, board frame), or None when it has no faces."""
+    """Boundary -> Mesh (mm, board frame), or None when it has no faces."""
     at = {z: k for k, z in enumerate(boundary.levels)}
     pieces = [flat_face_triangles(region, at[z], up) for z, region, up in boundary.flats]
     pieces += [wall_triangles(segments, at[z0], at[z1]) for z0, z1, segments in boundary.walls()]
     xyz, tri = mesh_with_shared_vertices(pieces, boundary.levels)
-    return trimesh.Trimesh(xyz, tri, process=False) if len(tri) else None
+    return Mesh(xyz, tri) if len(tri) else None
 
 
 def mesh_with_shared_vertices(pieces, heights):
@@ -45,7 +37,7 @@ def mesh_with_shared_vertices(pieces, heights):
 def flat_face_triangles(region, level, up):
     """A flat face at the height of index `level` as (xy (n, 2), level (n,), triangles (m, 3)
     into xy), wound to look up or down."""
-    polys = np.array([p for p in shapely.get_parts(sh.polys_only(region)) if p.area > 1e-10], dtype=object)
+    polys = np.array([p for p in shapely.get_parts(sh.polys_only(region)) if p.area > sh.G().SLIVER_AREA_MM2], dtype=object)
     xy, tri = polygon_triangles(polys)
     if not up:
         tri = tri[:, ::-1]
@@ -53,10 +45,8 @@ def flat_face_triangles(region, level, up):
 
 
 def wall_triangles(segments, lower, upper):
-    """The wall on every segment (a, b), the material on its left, between the heights of index
-    `lower` and `upper`: (xy (4n, 2), level (4n,), triangles (2n, 3) into xy).  The corners are
-    a, b at the lower height and b, a at the upper; the triangles a0 b0 b1 and a0 b1 a1 face away
-    from the material."""
+    """The wall on every segment (a, b), material on its left, between heights `lower` and `upper`:
+    (xy (4n, 2), level (4n,), triangles (2n, 3) into xy), facing away from the material."""
     a, b = segments[:, 0], segments[:, 1]
     n = len(a)
     xy = np.concatenate([a, b, b, a])
@@ -68,11 +58,11 @@ def wall_triangles(segments, lower, upper):
 
 def polygon_triangles(polys):
     """The polygons cut into counter-clockwise triangles on their own vertices: (xy, triangles into
-    xy).  Earcut first (kese/core/triangulate.py), Manifold's triangulator for the polygons it
-    gets wrong, and constrained Delaunay triangles for what neither closes (rings that touch)."""
+    xy).  Earcut first, strip by strip on a big polygon (kese/core/triangulate.py), and GEOS's
+    constrained Delaunay triangles for what earcut gets wrong (rings that touch)."""
     xys, tris, n = [], [], 0
     left = polys
-    for cut in (cells_cut, manifold_cut):
+    for cut in (cells_cut, geos_cut):
         if len(left):
             xy, _, poly, tri, bad = caps(left, cut)
             xys.append(xy)

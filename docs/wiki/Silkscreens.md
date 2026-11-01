@@ -130,16 +130,40 @@ T = \begin{cases} T_{\mathrm{file}} & \text{if the file gives one} \\ \rho_b H &
 | $`n_\ell`$ | number of lines (`\n` breaks) | |
 | $`\hat{H}`$ | block height | |
 | $`o_x`$, $`o_y`$ | KiCad's stroke-font offsets | |
-| $`T`$ | stroke width | the file's `(thickness ...)`, else `Silkscreen.BOLD_THICKNESS_RATIO` $`\rho_b`$ (0.2) or `Silkscreen.NORMAL_THICKNESS_RATIO` $`\rho_n`$ (0.15) |
+| $`T`$ | stroke width | the file's `(thickness ...)`, else $`\rho_b W`$ for bold text or $`\rho_n W`$ otherwise, with `Silkscreen.BOLD_THICKNESS_RATIO` $`\rho_b`$ (0.2) and `Silkscreen.NORMAL_THICKNESS_RATIO` $`\rho_n`$ (0.125); either way at most $`0.25 \min(W, H)`$ (`Silkscreen.MAX_PEN_RATIO`), as KiCad clamps it (`ClampTextPenSize`) |
 | $`\theta`$, $`(X_0, Y_0)`$ | text angle and anchor | the file's `(at x y angle)` |
 
-Stroke ends are round with `TEXT_STROKE_QUAD_SEGS` segments per quarter circle. The file's text
-is read with KiCad's escapes (`\n` starts a new line, `\"` and `\\` stand for a quote and a
-backslash; a tab is written as it is), and `${REFERENCE}`, `${VALUE}` and the other footprint
-fields are substituted before layout.
+Stroke ends are round with `TEXT_STROKE_QUAD_SEGS` segments per quarter circle.
 
-Text in a TrueType face (KiCad 7+ `(font (face "..."))`) is drawn with the stroke font when
-`DRAW_TRUETYPE_TEXT_WITH_STROKE_FONT = True` (the default) and counted in `report.txt`; with
+KiCad's markup is drawn, not printed (`kese/core/markup.py`, after KiCad's `markup_parser.h`):
+`~{...}` draws a bar over its text, $`1.23 H`$ above the line's baseline ($`v = 0`$ in (14.3)) and
+trimmed by $`0.1 W`$ at each end; `^{...}` and `_{...}` draw their text at 0.8 of the size, raised
+by 0.35 or lowered by 0.15 of that smaller height (a subscript wins where the two are nested). A marker whose closing `}` never comes is
+plain text, as in KiCad. Files older than format 20210606 (KiCad 5 and early 6) wrote an overbar
+as text between two `~`; it is read as `~{...}`, as KiCad reads it. A KiCad 4 text that gives no
+size is 1.524 mm (60 mils). The file's text
+is read with KiCad's escapes (`\n` starts a new line, `\"` and `\\` stand for a quote and a
+backslash; a tab is written as it is). Text variables are resolved before layout, in the order
+KiCad's `PCB_TEXT::GetShownText` uses:
+
+| Variable | Value |
+|---|---|
+| `${LAYER}` | the text's layer, by the name the board shows (`F.Silkscreen` in KiCad 7+) |
+| `${REFERENCE}`, `${VALUE}`, any other field, `${FOOTPRINT_LIBRARY}`, `${FOOTPRINT_NAME}` | in a footprint, that footprint's |
+| `${TITLE}`, `${REVISION}`, `${ISSUE_DATE}`, `${COMPANY}`, `${COMMENT1}` ... `${COMMENT9}` | the board's title block |
+| `${FILENAME}`, `${FILEPATH}`, `${CURRENT_DATE}` | the board file's name and path, today's date |
+| any name in the board's own `(property "name" "value")` | that value |
+| `${R1:VALUE}` (saved by KiCad as `${<uuid>:VALUE}`) | that field of the other footprint, or `<Unresolved: R1:VALUE>` as KiCad shows it |
+
+A variable only the project file defines (`.kicad_pro` text variables, `${PROJECTNAME}`) is
+left as written, as KiCad shows an unknown one.
+
+Text in a TrueType face (KiCad 7+ `(font (face "..."))`) is drawn from the glyphs KiCad saves
+with it, `(render_cache "text" angle (polygon (pts ...) ...))`: the filled outlines exactly as
+KiCad draws them in that face (`PCB_TEXT::TransformTextToPolySet`), with no font needed. A cache
+made for another text or angle is stale, as KiCad would draw the text anew; such text, and text
+with no cache, is drawn with the stroke font when
+`DRAW_TRUETYPE_TEXT_WITH_STROKE_FONT = True` (the default). Both are counted in `report.txt`; with
 `False` it is skipped. Text the file marks hidden (`(hide yes)`) is skipped unless
 `DRAW_HIDDEN_TEXT = True`.
 
@@ -210,7 +234,8 @@ in `materials.json`.
 | `DRAW_TRUETYPE_TEXT_WITH_STROKE_FONT` | `True` | bool | Draw TrueType-face text with the stroke font |
 | `INTERLINE_PITCH`, `INTERLINE_LEGACY_FACTOR` | `1.68`, `0.9583` | > 0 | KiCad's line pitch and stroke-font correction |
 | `ITALIC_TILT` | `0.125` | ≥ 0 | x shift per unit of y for italic text |
-| `BOLD_THICKNESS_RATIO`, `NORMAL_THICKNESS_RATIO` | `0.2`, `0.15` | > 0 | Stroke = ratio × text height when the file gives none |
+| `BOLD_THICKNESS_RATIO`, `NORMAL_THICKNESS_RATIO` | `0.2`, `0.125` | > 0 | Stroke = ratio × text width when the file gives none |
+| `MAX_PEN_RATIO` | `0.25` | > 0 | A stroke is at most this × the smaller of the text's width and height |
 | `TEXT_STROKE_QUAD_SEGS` | `4` | int ≥ 1 | Roundness of stroke ends |
 | `DRAW_HIDDEN_TEXT` | `False` | bool | Draw text marked hidden |
 | `SILK_LAYERS` | `["F.SilkS", "B.SilkS"]` | list of `F.*` / `B.*` layer names | Layers drawn as silkscreen, on the side their first letter names; any other name stops the run with a `KeyError` when the board has graphics on that layer |

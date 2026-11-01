@@ -23,20 +23,18 @@ from pathlib import Path
 from kese import __version__
 from parameters import P
 
-REQUIRED = ["numpy", "scipy", "networkx", "shapely", "trimesh", "manifold3d", "mapbox_earcut", "rtree"]
-OPTIONAL = {"step": "cadquery"}
+REQUIRED = ["numpy", "shapely", "mapbox_earcut"]
 
 
-def missing_packages(formats):
+def missing_packages():
     """Names of packages that are not installed, so the run can say so instead of a traceback."""
-    needed = REQUIRED + [pkg for fmt, pkg in OPTIONAL.items() if fmt in formats and P.Run.BUILD_WITH_KERNELS]
-    return [pkg for pkg in needed if importlib.util.find_spec(pkg) is None]
+    return [pkg for pkg in REQUIRED if importlib.util.find_spec(pkg) is None]
 
 
 def main():
     ap = argparse.ArgumentParser(prog="kese", description="KiCad EM Stackup Exporter: .kicad_pcb -> solids for EM simulation, or a visual surface")
     ap.add_argument("boards", nargs="*", help=".kicad_pcb files (default: all in Input/)")
-    ap.add_argument("--mode", choices=["simulation", "visual", "real", "pretty"], help="real / pretty are the old names")
+    ap.add_argument("--mode", choices=["simulation", "visual"])
     ap.add_argument("--format", nargs="+", metavar="FMT", help="glb stl obj step")
     ap.add_argument("--for", dest="preset", choices=sorted(P.Run.PRESETS), help="apply a preset from Run.PRESETS")
     ap.add_argument("--verify", action="store_true", help="run the Verifier (opt-in)")
@@ -65,12 +63,11 @@ def main():
         if value is not None:                             # command-line choices are overrides too
             P.override(key, value)
             overrides.append((key, value))
-    formats = P.Run.FILE_FORMAT
-    missing = missing_packages(formats)
+    missing = missing_packages()
     if missing:
         sys.exit(f"missing Python package(s): {', '.join(missing)}\n"
                  f"install them with:  python -m pip install {' '.join(missing)}\n"
-                 "(or everything at once:  python -m pip install -r requirements.txt)")
+                 "(or the tested versions:  python -m pip install -r requirements.txt)")
 
     from kese.pipeline import generate  # after the overrides, so the modules see them
 

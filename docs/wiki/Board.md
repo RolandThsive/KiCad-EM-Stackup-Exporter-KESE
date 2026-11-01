@@ -145,8 +145,9 @@ copper barrel fills the ring between the drill and the drill minus the wall. See
 ## 10.5 Board Thickness
 
 `Board.BOARD_THICKNESS_MM = None` (the default) takes the laminate from the stack-up, or from the
-file's `(general (thickness ...))` when there is no usable stack-up (1.6 mm when the file gives no
-thickness either). A number forces the laminate
+file's `(general (thickness ...))` less the outer copper and the two masks when there is no usable
+stack-up (from 1.6 mm when the file gives no thickness either), so the finished board is KiCad's
+board thickness. A number forces the laminate
 thickness; see [Stack-Up Model](Stack-Up-Model.md) for how the dielectrics are scaled.
 
 ## 10.6 Settings

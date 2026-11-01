@@ -3,10 +3,8 @@
 properties.  Stage 7 writes every file format from this Model; nothing is rebuilt per format."""
 from kese.model.output_model import Model
 from kese.s6_assemble.boundaries import boundaries_and_meshes
-from kese.s6_assemble.skin import skin_meshes
 from kese.s6_assemble.skin_faces import skin_faces
 from kese.s6_assemble.skin_mesh import skin_meshes_from_faces
-from kese.s6_assemble.solids import solid_meshes
 from kese.s6_assemble.transform import finish_mesh, output_transform
 from parameters import P
 
@@ -29,15 +27,12 @@ def rank(name):
 
 def finished_meshes(ps, mode, log, finish, boundaries):
     """(part, finished mesh) one after another: the skin is made in one go, the solids one part at
-    a time.  Without a kernel (Run.BUILD_WITH_KERNELS off) a solid's Boundary is kept for the STEP
-    writer, and its mesh is finished by the worker that built it."""
+    a time.  A solid's Boundary is kept for the STEP writer, and its mesh is finished by the worker
+    that built it."""
     if mode == "visual":
-        skin = skin_meshes(ps) if P.Run.BUILD_WITH_KERNELS else skin_meshes_from_faces(*skin_faces(ps, log))
+        skin = skin_meshes_from_faces(*skin_faces(ps, log))
         while skin:
             part, m = skin.popitem()
-            yield part, finish(m)
-    elif P.Run.BUILD_WITH_KERNELS:
-        for part, m in solid_meshes(ps, log):
             yield part, finish(m)
     else:
         for part, boundary, m in boundaries_and_meshes(ps, log, finish):
@@ -47,10 +42,9 @@ def finished_meshes(ps, mode, log, finish, boundaries):
 
 def assemble(ps, mode, log):
     mat = output_transform()
-    merged = not P.Run.BUILD_WITH_KERNELS           # a mesh built from faces has every vertex once already
 
     def finish(m):
-        return finish_mesh(m, mat, merged) if m is not None else None
+        return finish_mesh(m, mat) if m is not None else None
 
     done, boundaries = {}, {}
     for part, m in finished_meshes(ps, mode, log, finish, boundaries):   # one raw mesh at a time
@@ -67,4 +61,4 @@ def assemble(ps, mode, log):
         props[part] = pr
     r = ps.regions
     return Model(name=r.items.name, mode=mode, prismset=ps, meshes=meshes, materials=ps.materials, props=props,
-                 transform=mat, units=P.Run.UNITS, report=[], circles=r.circles, boundaries=boundaries)
+                 transform=mat, units=P.Run.UNITS, report=[], boundaries=boundaries)

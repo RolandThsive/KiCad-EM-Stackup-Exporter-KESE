@@ -16,7 +16,9 @@ sys.path.insert(0, str(ROOT))
 
 from kese.job import start  # noqa: E402
 from kese.pipeline import STAGES  # noqa: E402
-from kese.s2_collect.text import kept_upright, unescape, upright  # noqa: E402
+from kese.core.sexp import parse, unescape  # noqa: E402
+from kese.s1_read.parse_kicad_version import kept_upright  # noqa: E402
+from kese.s2_collect.text import upright  # noqa: E402
 from parameters import P  # noqa: E402
 
 TOLERANCE_MM = 0.005
@@ -100,6 +102,7 @@ def test_upright_and_escapes():
     assert not kept_upright(["property", "Reference", "U1", ["at", "0", "0", "135"], ["unlocked", "yes"]])
     assert kept_upright(["property", "Reference", "U1", ["at", "0", "0", "135"], ["unlocked", "no"]])
     assert unescape('A\\"B\\\\C\\nD\\tE') == 'A"B\\C\nD\tE'
+    assert parse('(net 1 "A\\"B\\\\C")') == ["net", "1", 'A"B\\C']      # every quoted string, once
 
 
 if __name__ == "__main__":

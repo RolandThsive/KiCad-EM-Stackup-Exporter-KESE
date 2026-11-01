@@ -2,6 +2,16 @@
 import re
 
 
+ESCAPES = {"n": "\n", "r": "\r", "t": "\t"}
+
+
+def unescape(text):
+    """A quoted string of the file as KiCad reads it: \\n a new line, \\t a tab, \\" and \\\\ the
+    character itself (KiCad writes \\n, \\r, \\" and \\\\, and a tab as it is).  Done once, here, for
+    every quoted string: net names, text and properties alike."""
+    return re.sub(r"\\(.)", lambda m: ESCAPES.get(m.group(1), m.group(1)), text, flags=re.DOTALL)
+
+
 def _tokenize(text):
     i, n = 0, len(text)
     while i < n:
@@ -15,7 +25,8 @@ def _tokenize(text):
             j = i + 1
             while j < n and text[j] != '"':
                 j += 2 if text[j] == "\\" else 1
-            yield ("str", text[i + 1:j])
+            raw = text[i + 1:j]
+            yield ("str", unescape(raw) if "\\" in raw else raw)
             i = j + 1
         else:
             j = i
@@ -39,6 +50,9 @@ def parse(text):
                 stack.pop()
         else:
             stack[-1].append(tok[1] if isinstance(tok, tuple) else tok)
+    if len(stack) > 1:      # KiCad refuses such a file too
+        raise ValueError(f"the file ends with {len(stack) - 1} parenthes{'es' if len(stack) > 2 else 'is'} "
+                         "still open: it is cut short (an incomplete download or copy?)")
     return root[0] if root else []
 
 
@@ -76,24 +90,5 @@ def layer_of(node):
     return c[1] if c else None
 
 
-def layer_and_mask(node):
-    """A track's or drawing's layer, and the side ("F" / "B") whose solder mask leaves it bare, or None.
-    KiCad 9+ writes such an item with both layers, (layers "F.Cu" "F.Mask"); as in KiCad, only F.Cu
-    is bared by F.Mask and only B.Cu by B.Mask."""
-    c = child(node, "layers")
-    if c is None:
-        return layer_of(node), None
-    names = [str(l) for l in c[1:]]
-    layer = next((l for l in names if l.endswith(".Cu")), names[0] if names else None)
-    masked = any(l in ("F.Mask", "B.Mask") for l in names)
-    return layer, (layer[0] if masked and layer in ("F.Cu", "B.Cu") else None)
-
-
 def yes(value):
     return str(value).lower() in ("yes", "true", "solid")
-
-
-def flag(node, name):
-    """KiCad <= 8: bare keyword or (name); KiCad 9+: (name yes|no)."""
-    c = child(node, name)
-    return name in atoms(node) or (c is not None and (len(c) < 2 or yes(c[1])))

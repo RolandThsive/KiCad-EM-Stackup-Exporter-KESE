@@ -1,15 +1,6 @@
-"""Pinch points: where two pieces of a region, or two rings of one piece, touch at a single
-point, the solid built on it is pinched to a line there and could not close on its own; and
-where a vertex of one ring lies within a grid step of another ring's edge, the vertex sharing
-(kese/core/vertices.py) would bend the edge onto it and make such a pinch.  So a disc around
-every such point is cut out of the smaller piece, and the cut is tried again with twice the
-radius until the pieces are clear of each other: two tangent circles leave each other so slowly
-that a cut of a grid step can end on the other's edge again.
-
-The same happens between two heights: where a piece of the material below a height and a piece
-of the material above it meet along an edge with the material on opposite sides, the solid is
-pinched to that edge, with four faces on it (the two walls, a face looking up, one looking down).
-A strip along the edge is cut out of the smaller piece then (open_pinches_between)."""
+"""Pinch points: where two pieces or rings touch at a point, or a vertex lies within a grid step
+of another ring, a disc is cut out of the smaller piece (doubled until clear); where pieces below
+and above a height meet along an edge, a strip is cut (open_pinches_between)."""
 import numpy as np
 import shapely
 
@@ -17,7 +8,6 @@ from kese.core import shapes2d as sh
 from kese.core.vertices import grid_keys, near_edge, noded, pairs_in, vertex_keys
 from parameters import P
 
-CUT_ROUNDS = 10          # the radius doubles each round: up to 512 times Geometry.PINCH_POINT_OPENING_MM
 
 
 def open_pinches(region, log=None):
@@ -28,7 +18,7 @@ def open_pinches(region, log=None):
     parts = list(shapely.get_parts(region))
     check = range(len(parts))                              # the parts whose rings are checked this round
     cut_any = False
-    for round_ in range(CUT_ROUNDS):
+    for round_ in range(sh.G().PINCH_CUT_ROUNDS):
         cuts = pieces_too_close(parts)
         for k in check:
             for p in repeated_vertices(parts[k]):
@@ -37,15 +27,22 @@ def open_pinches(region, log=None):
             break
         r = P.Geometry.PINCH_POINT_OPENING_MM * 2 ** round_
         for k, pts in cuts.items():
-            discs = shapely.union_all([shapely.Point(p).buffer(r, quad_segs=2) for p in pts])
+            discs = shapely.union_all([cut_disc(p, r) for p in pts])
             parts[k] = noded(parts[k].difference(discs, grid_size=sh.grid()))
         check, cut_any = sorted(cuts), True
     else:
         if log:
-            log(f"pinch points left after {CUT_ROUNDS} rounds of cutting")
+            log(f"pinch points left after {sh.G().PINCH_CUT_ROUNDS} rounds of cutting")
     if not cut_any:
         return region
-    return sh.as_region([q for p in parts for q in shapely.get_parts(p) if q.area > 1e-10])
+    return sh.as_region([q for p in parts for q in shapely.get_parts(p) if q.area > sh.G().SLIVER_AREA_MM2])
+
+
+def cut_disc(p, r):
+    """The disc cut out around a pinch point: an octagon turned by Geometry.PINCH_DISC_TURN_DEG, so no
+    corner lies on KiCad's horizontal, vertical or 45-degree lines through the point."""
+    a = np.radians(sh.G().PINCH_DISC_TURN_DEG + 45.0 * np.arange(8))
+    return shapely.Polygon(np.c_[p[0] + r * np.cos(a), p[1] + r * np.sin(a)])
 
 
 def pieces_too_close(parts):
@@ -73,21 +70,24 @@ def points_of(g):
 
 def repeated_vertices(polygon):
     """The vertices a polygon has twice (where its rings touch each other or themselves), as xy."""
+    if polygon is None or polygon.is_empty:          # a piece the cuts took away entirely
+        return []
     keys, ring, xy = vertex_keys(polygon)
+    if len(keys) == 0:
+        return []
     ring_end = np.flatnonzero(np.r_[ring[1:] != ring[:-1], True])    # a ring's closing point repeats its first
     keys, xy = np.delete(keys, ring_end), np.delete(xy, ring_end, axis=0)
     _, idx, count = np.unique(keys, return_index=True, return_counts=True)
     return [tuple(p) for p in xy[idx[count > 1]]]
 
 
-def open_pinches_between(below, above, log=None):
-    """The material below a height and the material above it, with a gap cut wherever a piece of
-    one meets a piece of the other along an edge with the material on opposite sides (see
-    above): a strip along the edge, out of the smaller piece, twice as wide each round as for
-    open_pinches().  -> (below, above, whether anything was cut)."""
+def open_pinches_between(below, above, log=None, first=0):
+    """The material below and above a height, with a strip cut out of the smaller piece wherever
+    two meet along an edge with the material on opposite sides, wider from round `first` on.
+    -> (below, above, whether anything was cut)."""
     parts = [list(shapely.get_parts(sh.polys_only(below))), list(shapely.get_parts(sh.polys_only(above)))]
     cut_any = False
-    for round_ in range(CUT_ROUNDS):
+    for round_ in range(first, first + sh.G().PINCH_CUT_ROUNDS):
         cuts = edges_against_each_other(*parts)
         if not cuts:
             break
@@ -98,10 +98,10 @@ def open_pinches_between(below, above, log=None):
         cut_any = True
     else:
         if log:
-            log(f"pinch edges between two heights left after {CUT_ROUNDS} rounds of cutting")
+            log(f"pinch edges between two heights left after {sh.G().PINCH_CUT_ROUNDS} rounds of cutting")
     if not cut_any:
         return below, above, False
-    below, above = (sh.as_region([q for p in side for q in shapely.get_parts(p) if q.area > 1e-10]) for side in parts)
+    below, above = (sh.as_region([q for p in side for q in shapely.get_parts(p) if q.area > sh.G().SLIVER_AREA_MM2]) for side in parts)
     return below, above, True
 
 

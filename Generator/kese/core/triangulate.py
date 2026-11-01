@@ -1,26 +1,22 @@
-"""The tops and bottoms of prisms: polygons cut into triangles.  As in KiCad's 3D viewer, earcut cuts
-them, and a big polygon strip by strip, as KiCad cuts big polygons into 1 cm cells first: earcut's
-time grows with the points times the holes.  Earcut is not always right (it runs two holes whose
-edges lie on one line into one, through a slit of no width), so every cut is checked, and a
-polygon or a strip whose triangles do not close exactly on its edges is cut again by Manifold's
-triangulator."""
+"""The tops and bottoms of prisms cut into triangles: by earcut, as KiCad's 3D viewer does (a big
+polygon strip by strip), and every cut checked; what earcut gets wrong is cut again by GEOS's
+constrained Delaunay triangulation."""
 from collections import defaultdict
 
-import manifold3d as mf
 import mapbox_earcut
 import numpy as np
 import shapely
 
 from kese.core.cells import cell_lines, crossed
+from kese.core.flat_triangles import flip_flat, twice_area
 from kese.core.shapes2d import polys_only
 from parameters import P
 
 
 def caps(polys, cut):
-    """The polygons' tops cut into triangles by cut(points, ring ends): (xy, nxt, poly, tri, bad),
-    with xy, nxt and poly as rings_of() gives them, tri counter-clockwise, and bad marking the
-    polygons whose triangles fold over or do not close exactly on their edges, and those with a
-    point twice (rings that touch there: the slow way, extrude_cdt(), takes them)."""
+    """The polygons' tops cut by cut(points, ring ends): (xy, nxt, poly, tri, bad), as rings_of() gives
+    them, tri counter-clockwise, bad marking polygons whose triangles fold over or do not close, or
+    that have a point twice."""
     xy, nxt, poly, spans, bad = rings_of(polys)
     tri = [cut(xy[a:b], ends) + a for (a, b, ends), skip in zip(spans, bad.tolist()) if not skip]
     tri = np.concatenate(tri).astype(np.int64) if tri else np.empty((0, 3), dtype=np.int64)
@@ -29,16 +25,15 @@ def caps(polys, cut):
     turn = (np.bincount(of, weights=twice, minlength=len(polys)) < 0)[of]
     tri[turn], twice[turn] = tri[turn][:, ::-1], -twice[turn]
     size = (np.diff(xy[tri], axis=1) ** 2).sum(axis=(1, 2))
+    tri, twice = flip_flat(xy, tri, twice, size)
     bad[of[twice < -1e-9 * size]] = True                 # a triangle folded over
     bad[open_edges(tri, nxt, poly)] = True
     return xy, nxt, poly, tri, bad
 
 
 def rings_of(polys):
-    """The points of the polygons' rings, outer rings counter-clockwise and holes clockwise, without
-    the closing points: (xy, the next point along the ring of every point, the polygon of every
-    point, [(first point, end, ring ends from the first point)] of every polygon, polygons with a
-    point twice)."""
+    """The points of the polygons' rings (outer counter-clockwise, holes clockwise): (xy, next point,
+    polygon of each point, [(first point, end, ring ends)] per polygon, polygons with a point twice)."""
     rings, ring_poly = shapely.get_rings(polys, return_index=True)
     xy, ring = shapely.get_coordinates(rings, return_index=True)
     keep = np.r_[ring[1:] == ring[:-1], False]           # every ring ends on its first point again
@@ -65,12 +60,6 @@ def rings_of(polys):
     return xy, nxt, poly, [(a, b, end[r0:r1] - a) for a, b, r0, r1 in span], repeated
 
 
-def twice_area(xy, tri):
-    """Twice the signed area of every triangle, positive when it runs counter-clockwise."""
-    a, b, c = xy[tri[:, 0]], xy[tri[:, 1]], xy[tri[:, 2]]
-    return (b[:, 0] - a[:, 0]) * (c[:, 1] - a[:, 1]) - (b[:, 1] - a[:, 1]) * (c[:, 0] - a[:, 0])
-
-
 def open_edges(tri, nxt, poly):
     """The polygons whose triangles (counter-clockwise) do not close exactly on their rings: with
     every ring edge taken backwards (as its wall meets it), every edge must be met once each way."""
@@ -90,20 +79,29 @@ def earcut_cut(xy, ends):
         return np.empty((0, 3), dtype=np.int64)       # no triangles: the polygon fails the check
 
 
-def manifold_cut(xy, ends):
-    """earcut_cut by Manifold's triangulator: slower, but it keeps to the edges it is given."""
+def geos_cut(xy, ends):
+    """earcut_cut by GEOS's constrained Delaunay triangulation (through shapely, already loaded):
+    slower, but it keeps to the edges it is given and adds no point.  No triangles when it adds one
+    or fails."""
+    nothing = np.empty((0, 3), dtype=np.int64)
     try:
-        return np.asarray(mf.triangulate(np.split(xy, ends[:-1]))).reshape(-1, 3)
+        rings = np.split(xy, ends[:-1])
+        tris = shapely.get_parts(shapely.constrained_delaunay_triangles(shapely.Polygon(rings[0], rings[1:])))
+        pts = shapely.get_coordinates(shapely.get_exterior_ring(tris)).reshape(len(tris), 4, 2)[:, :3]
     except Exception:
-        return np.empty((0, 3), dtype=np.int64)
+        return nothing
+    at = lookup(xy, pts.reshape(-1, 2)) if len(tris) else None
+    if at is None:
+        return nothing
+    tri = at.reshape(-1, 3)
+    turn = twice_area(xy, tri) < 0                       # every triangle counter-clockwise
+    tri[turn] = tri[turn][:, ::-1]
+    return tri
 
 
 def cells_cut(xy, ends):
-    """earcut_cut, and a polygon of more than Geometry.TRIANGULATE_CELL_POINTS points strip by strip:
-    the polygon gets a point wherever an edge crosses a strip edge (kese/core/cells.py), every strip
-    is cut on its own (a strip earcut gets wrong by Manifold's triangulator), and the points the
-    strips added are taken out again (without()), so the walls keep exactly the polygon's own
-    edges.  No triangles when that fails: the polygon is then cut whole."""
+    """earcut_cut, and a polygon of more than Geometry.TRIANGULATE_CELL_POINTS points strip by strip,
+    the strips' extra points taken out again (without()).  No triangles when that fails."""
     xs = cell_lines(xy[:, 0].min(), xy[:, 0].max()) if len(xy) > P.Geometry.TRIANGULATE_CELL_POINTS else []
     if not len(xs):
         return earcut_cut(xy, ends)
@@ -117,7 +115,7 @@ def cells_cut(xy, ends):
     strips = np.array([p for a, b in zip(np.r_[xy[:, 0].min() - 1, xs], np.r_[xs, xy[:, 0].max() + 1])
                        for p in shapely.get_parts(polys_only(shapely.clip_by_rect(whole[0], a, y0, b, y1)))], dtype=object)
     out = []
-    for cut in (earcut_cut, manifold_cut):
+    for cut in (earcut_cut, geos_cut):
         if len(strips):
             sxy, _, poly, tri, bad = caps(strips, cut)
             at = lookup(wxy, sxy)
@@ -143,10 +141,8 @@ def lookup(xy, pts, missing=False):
 
 
 def without(tri, xy, nxt, extra):
-    """The triangles (counter-clockwise, of a polygon whose rings run along nxt) with the points extra
-    taken out: every such point lies on an edge of the polygon, between its ring neighbours a and b,
-    so the fan of triangles around it is the polygon a, b and the points around it, cut anew.  None
-    when a fan is not whole."""
+    """The triangles with the extra points taken out: each lies on a polygon edge, so the fan around it
+    is cut anew without it.  None when a fan is not whole."""
     prv = np.empty_like(nxt)
     prv[nxt] = np.arange(len(nxt))
     nxt = nxt.copy()

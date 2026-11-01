@@ -15,7 +15,7 @@ for stage in STAGES:
 
 | # | Stage | Gets | Gives | What it does |
 |---|---|---|---|---|
-| 1 | `s1_read` | `.kicad_pcb` file | `RawBoard` | Parses the file and lists the copper layers, the board thickness and the file format. Warns outside KiCad 6 to 10 and above eight copper layers; stops if `F.Cu` or `B.Cu` is missing |
+| 1 | `s1_read` | `.kicad_pcb` file | `RawBoard` | Parses the file and lists the copper layers, the board thickness and the file format; every rule that depends on the KiCad version is in `parse_kicad_version.py`. Warns outside KiCad 4 to 10 and above eight copper layers; stops if `F.Cu` or `B.Cu` is missing |
 | 2 | `s2_collect` | `RawBoard` | `Items` | Every track, pad, zone fill, graphic, text and via as a flat shape on its layer, with its net, in KiCad's frame; the stack-up from Board Setup; counts of what was read and what was skipped |
 | 3 | `s3_resolve` | `Items` | `Regions` | The outline; the copper joined per layer and net, clipped and drilled; barrels, edge plating, mask openings and silkscreen; everything moved to the board frame and snapped to the grid |
 | 4 | `s4_geometry` | `Regions` | `PrismSet` | The heights from the stack-up, once; every part as prisms, each a flat region between two heights |
@@ -55,8 +55,7 @@ parts[off] = shapely.set_precision(parts[off], grid())      # Geometry.SNAP_GRID
   (`kese/core/pinches.py`). Those vertices sit just off the grid.
 - One known exception, where parts can overlap or leave a gap: the wedge beside a sloped copper
   wall (`Copper.ETCH_FACTOR > 0`, see [Copper And Traces](Copper-And-Traces.md#115-etch-factor)).
-- The price: curves are polygons, in the meshes and in the STEP file alike. Only the older
-  OpenCascade path (`Run.BUILD_WITH_KERNELS = True`) writes true circles back into STEP.
+- The price: curves are polygons, in the meshes and in the STEP file alike.
 
 ## 6.2 How A Part Becomes A Closed Solid
 
@@ -86,16 +85,18 @@ mesh = mesh_of_boundary(boundary)                  # faces cut into triangles, t
   (`kese/core/vertices.py`). Then the mesh closes by construction.
 - The faces are cut by earcut, as in KiCad's 3D viewer; a polygon of more than
   `Geometry.TRIANGULATE_CELL_POINTS` points strip by strip, as KiCad cuts big polygons into cells.
-  A cut that does not close exactly on the polygon's edges is done again by Manifold's
-  triangulator (`kese/core/triangulate.py`).
+  A cut that does not close exactly on the polygon's edges is done again by GEOS's constrained
+  Delaunay triangulation, through `shapely` (`kese/core/triangulate.py`). Earcut makes a flat triangle (three points on one
+  line, area zero) where a ring has a point on a straight run, the vertex another face shares; such
+  a triangle is flipped away with its neighbour across its long edge, so no mesh holds a triangle
+  of zero area, which some meshers and STL importers reject.
 - `Run.WORKERS` parts are built at once, the biggest first. Every part keeps its faces (its
   `Boundary`), and the STEP writer writes those same faces as a closed solid.
 - Visual mode does the same for all parts at once and keeps only the faces between material and
   air (`skin_faces.py`, `skin_mesh.py`, see [Output Modes](Output-Modes.md)).
 - Last, every mesh is scaled to the output units, turned to the output orientation and shaded
-  smooth across edges flatter than `Run.SMOOTH_SHADE_ANGLE_DEG` (`transform.py`).
-- With `Run.BUILD_WITH_KERNELS = True` the older path runs instead: every prism is extruded and the
-  pieces of a part are joined by Manifold's boolean union (`solids.py`, `skin.py`).
+  smooth across edges flatter than `Run.SMOOTH_SHADE_ANGLE_DEG` (`transform.py`). The meshes are
+  KESE's own (`kese/core/mesh.py`), and so are the GLB, STL, OBJ and STEP writers (`kese/s7_write/`).
 
 ## 6.3 Coordinate Frames
 

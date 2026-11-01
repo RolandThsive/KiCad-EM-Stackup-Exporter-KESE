@@ -28,6 +28,7 @@ python tests/test_boards.py                     # the regression suite over ever
 |---|---|
 | `<file> is not a KiCad board file (expected (kicad_pcb ...))` | Not a `.kicad_pcb`. Export the board from pcbnew. |
 | `<file>: no (layers ...) block` | A damaged or very old file. |
+| `<file>: the file ends with N parentheses still open: it is cut short (an incomplete download or copy?)` | The file stops in the middle; KiCad refuses it too. Save or download it again. |
 | `<file>: copper layers ['F.Cu', 'B.Cu'] are not declared` | Both outer copper layers must exist. |
 | `MODE must be 'simulation' or 'visual', not ...` | A typo in `Run.MODE` (or `--set Run.MODE=...`). A typo in `--mode` is caught earlier by the command line: `argument --mode: invalid choice`, exit code 2. |
 | `unknown FILE_FORMAT entries [...]` | Only `glb`, `stl`, `obj`, `step`. |
@@ -41,15 +42,16 @@ python tests/test_boards.py                     # the regression suite over ever
 
 | Message | Meaning |
 |---|---|
-| `file has no (version ...): treated as legacy KiCad 5` | Best-effort read. |
-| `file format N is outside the tested range 20211014-20260206; proceeding best-effort` | Older than KiCad 6 or newer than KiCad 10. |
+| `file has no (version ...): read as format 20201115, as KiCad does` | Best-effort read, by KiCad's own rule for such files. |
+| `file format N is outside the tested range 3-20260206; proceeding best-effort` | Older than the 2013 builds before KiCad 4 or newer than KiCad 10 (`Run.KICAD_VERSION_MIN`, `Run.KICAD_VERSION_MAX`). |
 | `N copper layers: more than the 8 this project has been tested with` | The layers are still modelled. |
+| `layers named by the user or in an old language, read as KiCad reads them: TOP = F.Cu, ...` | Copper layers with names other than `F.Cu`, `B.Cu` and `In<n>.Cu` (KiCad 3 to 5 let the user rename them; KiCad 3 also wrote Italian, Polish and French names such as `Contorno.scheda`). Each is read as KiCad reads it: copper layers by their place in the list (first = `F.Cu`, last = `B.Cu`, the ones between `In1.Cu`, `In2.Cu`, ...), the old names by KiCad's own table. |
 | `N copper zone(s) have no fill stored in the file and are ignored` | Fill the zones in KiCad (press **B**) and save. Until then those zones produce no copper. |
 | `Edge.Cuts lines/arcs do not form a closed outline` | The outline could not be polygonized; closed shapes on `Edge.Cuts` are still used. |
 | `no Edge.Cuts outline; using the copper's convex hull + 1.0 mm` | The fallback outline. |
 | `DIELECTRIC_SPLIT=... unknown, using 'even'` | Only `"even"` is implemented. |
-| `not modelled, see 'skipped' in report.txt: backdrills of vias, filled vias, ...` | The board has padstacks, or holes that KiCad 10 backdrills, post-machines, covers, plugs, caps or fills. KESE models the front shape on every layer and the hole plated through its whole span and open; `skipped` gives the counts. |
-| `left out, of a kind KESE does not know: gr_ellipse (2), ...` | Items of a kind KESE does not read, such as the ellipses of KiCad's development version. They are missing from the model. |
+| `not modelled, see 'skipped' in report.txt: backdrills of vias, filled vias, ...` | The board has holes that KiCad 10 backdrills, post-machines, covers, plugs, caps or fills. KESE models the hole plated through its whole span and open; `skipped` gives the counts. |
+| `left out, of a kind KESE does not know: fp_foo (2), ...` | Items of a kind KESE does not read, such as a drawing kind newer than this version of KESE. They are missing from the model. |
 | `the stack-up colour '<value>' of <layer> is neither a colour name of parameters/color.py nor #RRGGBBAA; its parts keep their MATERIALS colour` | A mask or silkscreen colour KESE cannot read keeps KESE's colour. Add the name to the tables in `parameters/color.py` ([Colorizing](Colorizing.md#122-colours-from-the-stack-up)). |
 
 ### 17.1.3 Notes Worth Knowing
@@ -62,15 +64,6 @@ python tests/test_boards.py                     # the regression suite over ever
 | `step: <part>: N edges are not shared by two faces (the solid is open there)` | The STEP writer found the part open. It is still written, and a CAD tool will report free edges on it. |
 | `step: no part to write; STEP skipped` | No part has its role in `Run.STEP_WRITE_ROLES`, or none of those parts has a solid, so no `<board>.step` is written. |
 
-Only with `Run.BUILD_WITH_KERNELS = True`, the older path that builds the solids with Manifold and
-the STEP file with OpenCascade:
-
-| Message in `notes` | Meaning |
-|---|---|
-| `<part>: note: boolean union unavailable (...); pieces left touching` | A part could not be unioned; its pieces are concatenated. The Verifier may then report it as not closed. |
-| `step: fuse failed for <part> (...); written as a compound` | In the STEP file that part is touching solids instead of one body. |
-| `step: cadquery is not installed (pip install cadquery); STEP skipped` | Only when `kese.pipeline.generate` is called directly (as the regression suite does). From `run_KESE.py`, asking for STEP without `cadquery` stops before anything runs with `missing Python package(s): cadquery`. |
-
 ## 17.2 What `report.txt` Counts
 
 ### 17.2.1 Read
@@ -79,7 +72,7 @@ Tracks and arc tracks per layer, zone fills per layer, graphics and footprint gr
 text per layer, pads, pad mask openings per side, the mask openings of tracks, arc tracks and
 drawings the mask leaves bare (KiCad 9 and later) per side, non-plated holes, through vias, blind/buried
 vias, footprints, outline shapes on `Edge.Cuts`, via rings removed on unconnected layers,
-castellated holes, the edge plating band and its net, text in a TrueType face drawn with the
+castellated holes, the edge plating band and its net, text in a TrueType face from its render cache or drawn with the
 stroke font.
 
 ### 17.2.2 Skipped
@@ -95,7 +88,7 @@ stroke font.
 | `barcode items` | KiCad 10 barcodes (QR codes and others), on the board or in a footprint. The file holds only the barcode's text and size, which KiCad turns into a pattern when it plots, so KESE leaves them out, even on copper or silkscreen. |
 | `pads of shape <shape>` | A pad shape KESE does not know. |
 | `<kind> items (unknown to KESE)` | An item at the top level of the file, or a footprint drawing (`fp_...`), of a kind KESE does not read; also a warning. |
-| `pads with a padstack` / `vias with a padstack (the front shape is used on every layer)` | KiCad 9 and later: another shape on the inner layers or on the back, not modelled; also a warning. |
+| `pads with a padstack (a shape per layer)` / `vias with a padstack (a shape per layer)` (under found) | KiCad 9 and later: another shape on the inner layers or on the back; each copper layer gets its own shape, and the back mask opening follows the back shape. |
 | `backdrills` / `tertiary drills of pads` / `of vias (the hole is plated through its whole span)` | KiCad 10: the drill that removes the plating from part of the hole, not modelled; also a warning. |
 | `counterbores` / `countersinks of pads` / `of vias (not cut)` | KiCad 10's post-machining of a hole's end, not modelled; also a warning. |
 | `covered` / `plugged` / `capped` / `filled vias (the ... is not modelled)` | KiCad 10's via protection, set on the via or, when it does not say, in the board setup; the hole stays open. Also a warning. |
@@ -112,8 +105,8 @@ suite reads it back with OCP).
 | Mode | Check | Pass condition |
 |---|---|---|
 | simulation | every part is a closed, consistently wound solid; its volume is printed in mm³ | `closed=True winding=True` for every part |
-| simulation | no two parts share material: every slice of every part (a flat region between two heights, what the faces are cut from; with `Run.BUILD_WITH_KERNELS = True` every prism) against every slice of every other part | `none`: no two slices of different parts overlap in height while their regions share an area wider than two grid steps, 0.2 µm (`none` on every board of the regression suite) |
-| simulation | every part's volume found four ways (`volumes.py`): from its flat faces, from its slices, from its mesh and from the prisms it was built from. Not with `Run.BUILD_WITH_KERNELS = True` | `closed=True whole=True` for every part: the faces and the mesh within 1 part in 10⁷ of the slices, the prisms within that plus 0.001 mm³ (what opening pinch points may take) |
+| simulation | no two parts share material: every slice of every part (a flat region between two heights, what the faces are cut from) against every slice of every other part | `none`: no two slices of different parts overlap in height while their regions share an area wider than two grid steps, 0.2 µm (`none` on every board of the regression suite) |
+| simulation | every part's volume found four ways (`volumes.py`): from its flat faces, from its slices, from its mesh and from the prisms it was built from | `closed=True whole=True` for every part: the faces and the mesh within 1 part in 10⁷ of the slices, the prisms within that plus 0.001 mm³ (what opening pinch points may take) |
 | visual | the skin is one outer surface: along every ray that hits the model the faces take turns, one going into the material and the next out of it (two faces on most rays; four where a ray crosses a hollow open to the air, such as the bore of a buried via under stacked micro vias) | the line `visible surfaces per vertical ray: faces met {2: ...}; rays where in and out do not alternate: 0` ends in 0 |
 | both, when a GLB was written | the GLB through the Khronos glTF validator, when the `gltf_validator` command-line tool is on the PATH | not a pass condition: the validator's last line is only reported; otherwise `gltf_validator not on PATH: glTF validation skipped`; with no GLB in the run the line is absent |
 
@@ -191,7 +184,7 @@ lies; 3,000 random vertical rays, the test this one replaced, found 6 of 20 such
 
 A `closed=False`, `winding=False` or `whole=False` line names the part. An open solid means its
 faces and walls do not meet on the same edges (see the `faces and walls still changing` and
-`pinch points left` notes, or with kernels the `boolean union unavailable` note); `whole=False`
+`pinch points left` notes); `whole=False`
 means the solid holds more or less material than the prisms it was built from. An overlap line
 other than `none` means two parts share material; it names the two parts and the heights of the
 biggest overlap, and how many places there are. All of these are bugs worth reporting with the
@@ -199,8 +192,8 @@ board file.
 
 ## 17.4 The Regression Suite
 
-`tests/test_boards.py` runs every board in `tests/boards/`, `featureTest/` and `Input/` through
-every output, with the Verifier: simulation mode written as GLB and STEP, visual mode as GLB. It
+`tests/test_boards.py` runs every board in `tests/boards/`, `featureTest/` and `Input/` (a board of
+`Input/` that `featureTest/` holds too, byte for byte, only once) through every output, with the Verifier: simulation mode written as GLB and STEP, visual mode as GLB. It
 compares every part's volume with `tests/baseline.json`:
 
 ```bash
@@ -218,7 +211,7 @@ baseline by more than
 ```
 
 where $`V`$ is the part's volume now and $`V_0`$ the baseline, both in mm³, when a part disappeared
-or a new one appeared, or (when `cadquery` is installed) when the STEP file has an invalid solid or
+or a new one appeared, or (when OCP, `cadquery-ocp`, is installed) when the STEP file has an invalid solid or
 a free edge, checked by reading it back with OCP. In visual mode the "volume" is the signed volume
 of an open surface: it means nothing on its own, but it moves when the skin does.
 
@@ -242,8 +235,9 @@ The test boards in `tests/boards/` cover:
   and items skipped on purpose (a 3D model, an `F.Fab` line).
 
 `python -m pytest tests` also runs `tests/test_layout.py`, which checks the code rather than the
-boards: which folders of `kese/` may import which, one `run()` per stage, no file over 200 lines,
-lowercase names, and no code outside `Generator/`.
+boards: which folders of `kese/` may import which, one `run()` per stage, no file over 200 lines
+(`parse_kicad_version.py` 500), lowercase names, no KiCad version test outside
+`kese/s1_read/parse_kicad_version.py`, and no code outside `Generator/`.
 [`CONTRIBUTING.md`](https://github.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/blob/main/CONTRIBUTING.md)
 explains these rules. It only reads the source, so it takes about a second
 (`python tests/test_layout.py`). The same command runs `tests/test_colors.py`, which reads named,
@@ -252,15 +246,15 @@ describes, in a moment (`python tests/test_colors.py`); `tests/test_text_layout.
 sixteen texts (each justification, two lines, two lines with a line spacing KiCad does not plot, tabs,
 an angle, italic, bold, a wide font, an escaped quote, mirrored text on the back and the reference of
 a turned footprint) and finds each where KiCad 7.0.11 plots it, to 5 µm, in about three seconds
-(`python tests/test_text_layout.py`); and four STEP tests, each also on its own
-(`python tests/<name>.py`):
+(`python tests/test_text_layout.py`); `tests/test_kicad_version.py`, which checks the rules of each
+KiCad version (release of each format number, copper layers by their place, the zero mask margin,
+KiCad 4's text size, the text pen, segment-filled zones, the old overbar, markup) against what
+KiCad's own parser does, without a board, in under a second; and a STEP test, also on its own
+(`python tests/test_step_native.py`):
 
 | Test | Path | What it checks |
 |---|---|---|
-| `test_step_native.py` | the default writer (`kese/s7_write/step.py`) | a box with a through hole beside a second box, written from their faces and read back by OpenCascade as two valid solids with no free edge, the right faces and the right volume; names with a quote and letters outside ASCII come back as they went in. Needs OCP, which `cadquery` installs; takes a second |
-| `test_step_file.py` | `Run.BUILD_WITH_KERNELS = True` (`step_file.py`) | four small parts, with a `#`, a `;`, a quote and letters outside ASCII in their names, written part by part and read back against the file OpenCascade writes for the same parts at once: the same names, placements, colours, solids and volumes. Needs `cadquery`; takes a second |
-| `test_step_kernel.py` | `Run.BUILD_WITH_KERNELS = True` (`step_cadquery.py`) | `tests/boards/one_layer` written in metres and in millimetres: each file declares the units it is written in, so OpenCascade reads both at the same size, and a STEP file read afterwards in the same process still comes in millimetres. Needs `cadquery`; takes ten seconds |
-| `test_step_arcs.py` | `Run.BUILD_WITH_KERNELS = True` (`step_arcs.py`, the true circles written back into STEP) | outlines where the arc of a faceted circle would cross an edge of its own ring, a hole, another polygon or another arc keep those vertices straight, while the same arcs a little further away are kept, and so are an arc that the outline doubles back along or leaves along its tangent and the arc of a half round; with `cadquery`, OpenCascade finds the faces and solids made from them valid, and those with the crossing arcs invalid. Takes a few seconds |
+| `test_step_native.py` | the STEP writer (`kese/s7_write/step.py`) | a box with a through hole beside a second box, written from their faces and read back by OpenCascade as two valid solids with no free edge, the right faces and the right volume; names with a quote and letters outside ASCII come back as they went in. Needs OCP (`python -m pip install cadquery-ocp`); takes a second |
 
 ## 17.5 Inputs KESE Refuses Or Changes
 

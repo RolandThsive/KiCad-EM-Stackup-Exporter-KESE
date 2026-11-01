@@ -17,11 +17,20 @@ from pathlib import Path
 
 import shapely
 
+from kese.core import markup
 from kese.core.shapes2d import EMPTY
 from parameters import P
 
 FONTS_DIR = Path(__file__).resolve().parents[1] / "assets" / "fonts"
 DEFAULT_FONT = "kicad_newstroke.json.gz"
+# KiCad's markup layout (stroke_font.h, font_metrics.h, font.cpp drawMarkup): a superscript or
+# subscript at 0.8 of the size, its baseline 0.35 of its height up or 0.15 down; an overbar 1.23
+# text heights over the baseline, a tenth of the width shorter at each end
+SUPER_SUB_SIZE, SUPER_OFFSET, SUB_OFFSET = 0.8, -0.35, 0.15
+OVERBAR_HEIGHT, BAR_TRIM = 1.23, 0.1
+# KiCad's stroke-font block: a line's box is 1.17 heights tall, a left-justified line starts pen / 1.52
+# in, and the first baseline sits a height less 0.052 pens below the top (font.cpp, getLinePositions)
+BLOCK_HEIGHT, LEFT_OFFSET_DIV, TOP_OFFSET = 1.17, 1.52, 0.052
 
 _font = None
 _font_note = ""
@@ -88,13 +97,8 @@ def _glyph(f, ch):
 
 def render(text, anchor, angle_deg, size_h, size_w, thickness, justify=(), mirror=False,
            italic=False):
-    """Text as a shapely polygon in board coordinates (mm, Y down).
-
-    Follows KiCad's STROKE_FONT / FONT::getLinePositions layout: glyph advance from the glyph
-    width, interline pitch, H/V justification with KiCad's offsets.  A line is as wide as its pen's
-    advance, the spacing after the last glyph included (FONT::getLinePositions measures it so; only
-    the bounding box leaves that spacing out), and a centred or right-justified line does not get
-    the left offset T / 1.52."""
+    """Text as a shapely polygon in board coordinates (mm, Y down), laid out as KiCad's STROKE_FONT /
+    FONT::getLinePositions lays it out: advance, interline pitch and justification offsets."""
     S = P.Silkscreen
     f, _ = load()
     if not text.strip():
@@ -107,29 +111,41 @@ def render(text, anchor, angle_deg, size_h, size_w, thickness, justify=(), mirro
     # layout each line in local coordinates (x right, y down), origin = line start on the baseline
     laid, widths = [], []
     for line in lines:
-        cursor, strokes, count = 0.0, [], 0
-        for ch in line:
-            if ch == " ":
-                cursor += size_w * space_w
-            elif ch == "\t":                 # to KiCad's next tab stop: every fourth column of width W
-                count = (count // 4 + 1) * 4 - 1
-                stop = size_w * (count + space_w)
-                while stop <= cursor:
-                    count += 4
-                    stop += size_w * 4
-                cursor = stop
-            else:
-                g = _glyph(f, ch)
-                for st in g["s"]:
-                    strokes.append([(cursor + (x - y * tilt) * size_w, y * size_h) for x, y in st])
-                cursor += g["w"] * size_w
-            count += 1
+        cursor, strokes = 0.0, []
+        runs, bars = markup.parse(line)
+        starts = []
+        for run, styles in runs:
+            starts.append(cursor)
+            small = "^" in styles or "_" in styles          # nested, still 0.8 once; subscript wins
+            k = SUPER_SUB_SIZE if small else 1.0
+            dy = size_h * k * (SUB_OFFSET if "_" in styles else SUPER_OFFSET if small else 0.0)
+            run_x, count = cursor, 0
+            for ch in run:
+                if ch == " ":
+                    cursor += size_w * k * space_w
+                elif ch == "\t":             # to KiCad's next tab stop: every fourth column of width W
+                    count = (count // 4 + 1) * 4 - 1
+                    stop = run_x + size_w * (count + space_w)
+                    while size_w > 0 and stop <= cursor:
+                        count += 4
+                        stop += size_w * 4
+                    cursor = stop
+                else:
+                    g = _glyph(f, ch)
+                    for st in g["s"]:
+                        strokes.append([(cursor + (x - y * tilt) * size_w * k, y * size_h * k + dy) for x, y in st])
+                    cursor += g["w"] * size_w * k
+                count += 1
+        starts.append(cursor)
+        for a, b in bars:                    # an overbar: a stroke over its run, a tenth of W in at each end
+            y = -size_h * OVERBAR_HEIGHT
+            strokes.append([(starts[a] + size_w * BAR_TRIM, y), (starts[b] - size_w * BAR_TRIM, y)])
         widths.append(cursor)
         laid.append(strokes)
 
     n = len(lines)
-    height = size_h * 1.17 + (n - 1) * interline          # KiCad's block height
-    off_x, off_y = thickness / 1.52, size_h - thickness * 0.052   # KiCad stroke-font offsets
+    height = size_h * BLOCK_HEIGHT + (n - 1) * interline
+    off_x, off_y = thickness / LEFT_OFFSET_DIV, size_h - thickness * TOP_OFFSET
     if "top" in justify:
         pass
     elif "bottom" in justify:

@@ -1,12 +1,6 @@
-"""The overlap check of stage 8 in simulation mode: no two parts share material.  Every part is
-built from flat regions between two heights: its slices (kese/core/boundary.py), or its prisms
-when the solids were built with a kernel (Run.BUILD_WITH_KERNELS).  So two parts overlap exactly
-where a slice of one and a slice of the other overlap in height and their regions share an area,
-and every pair of them is looked at.  Each polygon is shrunk by a grid step first
-(Geometry.SNAP_GRID_MM): parts that only touch, along an edge or across the grid step that sharing
-vertices may bend an edge by, then no longer meet.  An R-tree gives the polygons whose boxes
-meet; of those from different parts at overlapping heights, the shrunk polygons are tested, the
-one with more vertices prepared (a laminate full of holes is tested once against an index)."""
+"""The overlap check of stage 8 in simulation mode: every slice of a part against every slice of
+another that overlaps it in height, each polygon shrunk by a grid step (parts that only touch do
+not meet), the candidates found by an R-tree."""
 import numpy as np
 import shapely
 
@@ -18,9 +12,7 @@ HEIGHT_TOLERANCE_MM = 1e-9       # heights are told apart to 1e-9 mm, a picometr
 
 def slices_of(model):
     """[(part, z0, z1, region)] in mm and board coordinates."""
-    if model.boundaries:
-        return [(part, z0, z1, region) for part, b in model.boundaries.items() for z0, z1, region in b.slices]
-    return [(p.part, p.z0, p.z1, p.region) for p in model.prismset.prisms]
+    return [(part, z0, z1, region) for part, b in model.boundaries.items() for z0, z1, region in b.slices]
 
 
 def overlaps(model):

@@ -71,12 +71,12 @@ Run every command from `Generator/`, which holds the program, its settings, `Inp
 files in `Generator/parameters/`, or override one value for a single run with `--set`. Each run writes a new folder,
 `Output/<board>/<mode>_<FORMATS>/`, with the model files, `materials.json` (role, layer, net, z range, εr, tanδ and
 conductivity of every part), `parameters.txt` and `report.txt`, and never overwrites an earlier one. The pinned
-packages need Python 3.12 or later; `cadquery` is optional. `python -m pip install .` gives a `kese` command that works
+packages need Python 3.12 or later. `python -m pip install .` gives a `kese` command that works
 from any folder. Full walk-through: [Getting Started](https://github.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/wiki/Getting-Started).
 
 ## What Works
 
-- **Input:** `.kicad_pcb` files from KiCad 6 to 10, 1 to 8 copper layers, stack-up read from Board Setup (thickness,
+- **Input:** `.kicad_pcb` files from KiCad 4 to 10, 1 to 8 copper layers, stack-up read from Board Setup (thickness,
   εr and tanδ of every core and prepreg, copper and mask thickness, colours, finish). Footprints are read from the
   board file, so no libraries are needed.
 - **Copper:** tracks, arcs, pads of every shape, zone fills, copper graphics and text; one solid per net (default),
@@ -89,11 +89,12 @@ from any folder. Full walk-through: [Getting Started](https://github.com/RolandT
   HASL, OSP, immersion silver and tin, and hard gold, each metal its own layer (off by default).
 - **Two modes:** `simulation` writes closed solids that touch exactly and never overlap, as GLB, STEP, STL and OBJ;
   `visual` writes only the surface you can see, as GLB and OBJ, so nothing z-fights in a viewer.
-- **STEP without a CAD kernel:** KESE writes STEP AP214 itself, every part under its own name.
+- **STEP without a CAD kernel, meshes without a mesh library:** KESE builds its own meshes and writes STEP AP214,
+  GLB, STL and OBJ itself, every part under its own name; it needs only `numpy`, `shapely` and `mapbox_earcut`.
 - **Presets:** `--for hfss`, `cst`, `openems` or `viewer` set mode, formats, units, origin and grouping in one go.
 - **Checks:** an opt-in Verifier (closed solids, the same volume found four ways, no overlaps, one visible surface)
   and a regression suite that runs 40 boards through every output before a pull request.
-- **Not modelled yet:** component 3D models, text boxes, dimensions, images, padstacks, rigid-flex.
+- **Not modelled yet:** component 3D models, text boxes, dimensions, images, rigid-flex.
 
 Every feature and every parameter is in the wiki:
 [Project Capabilities](https://github.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/wiki/Project-Capabilities),

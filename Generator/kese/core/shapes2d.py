@@ -7,6 +7,7 @@ import shapely
 from shapely.geometry import GeometryCollection, LineString, Point, box
 
 from kese.core import math2d as geo
+from kese.core.graph import connected_components
 from parameters import P
 
 EMPTY = GeometryCollection()
@@ -116,20 +117,12 @@ def side_by_side(regions):
 
 def meeting(parts):
     """The parts in groups (lists of indices): parts within a grid step of each other share a group."""
+    if not len(parts):
+        return []
     a, b = shapely.STRtree(parts).query(parts, predicate="dwithin", distance=grid())
-    group = list(range(len(parts)))
-
-    def root(i):
-        while group[i] != i:
-            group[i] = group[group[i]]
-            i = group[i]
-        return i
-    for i, j in zip(a.tolist(), b.tolist()):
-        group[root(i)] = root(j)
-    members = {}
-    for i in range(len(parts)):
-        members.setdefault(root(i), []).append(i)
-    return list(members.values())
+    label = connected_components(len(parts), a, b)[1]
+    order = np.argsort(label, kind="stable")
+    return [g.tolist() for g in np.split(order, np.flatnonzero(np.diff(label[order])) + 1)]
 
 
 def joined(parts):
@@ -163,18 +156,28 @@ def part_touching(g):
     for i, p in enumerate(parts):
         if i in touching:
             q = shapely.set_precision(p, 0).buffer(-eps, join_style="mitre")
-            out += [x for x in polygons(q) if x.area > 1e-10]
+            out += [x for x in polygons(q) if x.area > G().SLIVER_AREA_MM2]
         else:
             out.append(p)
     return shapely.MultiPolygon(out) if len(out) > 1 else shapely.MultiPolygon([out[0]]) if out else EMPTY
 
 
 def diff(a, b):
-    return polys_only(polys_only(a).difference(polys_only(b), grid_size=grid()))
+    return _overlay(shapely.difference, a, b)
 
 
 def inter(a, b):
-    return polys_only(polys_only(a).intersection(polys_only(b), grid_size=grid()))
+    return _overlay(shapely.intersection, a, b)
+
+
+def _overlay(op, a, b):
+    """op(a, b) on the grid.  Where GEOS refuses (an input whose part crosses itself, as snap rounding
+    once left one on a KiCad 8 board), it is made valid and the op tried again."""
+    a, b = polys_only(a), polys_only(b)
+    try:
+        return polys_only(op(a, b, grid_size=grid()))
+    except shapely.errors.GEOSException:
+        return polys_only(op(polys_only(shapely.make_valid(a)), polys_only(shapely.make_valid(b)), grid_size=grid()))
 
 
 def polygons(g, part=True):

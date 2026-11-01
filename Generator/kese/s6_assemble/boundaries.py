@@ -1,8 +1,5 @@
-"""The "simulation" mode without a geometry kernel: every part as one closed solid, its boundary
-found in 2D from its prisms (kese/core/boundary.py) and then cut into triangles
-(kese/core/boundary_mesh.py).  The Boundary itself is kept on the Model, so that the STEP writer
-can write the same faces as exact solids.  Run.WORKERS parts are built at once, in threads: the 2D
-work is done by GEOS, outside Python's lock."""
+"""The "simulation" mode: every part as one closed solid, its boundary found in 2D
+(kese/core/boundary.py) and cut into triangles; Run.WORKERS parts at once, in threads."""
 import os
 from concurrent.futures import FIRST_COMPLETED, ThreadPoolExecutor, wait
 from itertools import islice
@@ -20,11 +17,8 @@ def workers_wanted():
 
 
 def boundaries_and_meshes(ps, log, finish):
-    """PrismSet -> (part name, Boundary, trimesh or None) for one part after another, the mesh
-    finished by `finish` (output units, vertices merged) by the worker that built it, so that the
-    raw mesh of a part, several times the size of the finished one, is gone before the next part
-    is begun.  The biggest parts go first, so the one that needs the most memory runs while
-    little else is held."""
+    """PrismSet -> (part name, Boundary, mesh or None) one part after another, biggest first, each mesh
+    finished by `finish` in the worker that built it, so a raw mesh never outlives its part."""
     parts = ps.by_part()
     size = {part: sum(shapely.get_num_coordinates(p.region) for p in prisms) for part, prisms in parts.items()}
     order = sorted(parts, key=lambda k: -size[k])

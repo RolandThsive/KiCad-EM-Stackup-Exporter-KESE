@@ -1,7 +1,5 @@
 """The split of a coating laid over raised copper: flat on the base, on top of the copper, and the
-wall beside it.  As KiCad builds every piece of copper on its own, each piece is grown and cut on
-its own against only the coating near it; one boolean operation over the whole board gives the
-same regions, to a fraction of a micron, in many times the time."""
+wall beside it.  Each piece of copper is grown and cut on its own, as KiCad builds it."""
 import numpy as np
 import shapely
 from shapely.geometry import Polygon
@@ -9,10 +7,19 @@ from shapely.geometry import Polygon
 from kese.core.shapes2d import EMPTY, as_region, diff, grid, inter, joined, meeting, polys_only, snap
 
 
+def grown_parts(parts, t, quad_segs):
+    """Every part grown by t, on the grid.  GEOS's buffer has returned a part that crosses itself
+    (once, on a KiCad 8 board, and only in some runs); such a part is made valid, and joined with
+    the part it grew from, which making it valid can cut into, before it is put on the grid."""
+    grown = shapely.buffer(parts, t, quad_segs=quad_segs)
+    for k in np.flatnonzero(~shapely.is_valid(grown)):
+        grown[k] = polys_only(shapely.union(polys_only(shapely.make_valid(grown[k])), parts[k]))
+    return shapely.set_precision(grown, grid())
+
+
 def grow(g, t, quad_segs):
     """The region grown by t, every part on its own, on the grid."""
-    parts = shapely.get_parts(polys_only(g))
-    grown = shapely.set_precision(shapely.buffer(parts, t, quad_segs=quad_segs), grid())
+    grown = grown_parts(shapely.get_parts(polys_only(g)), t, quad_segs)
     return joined([p for q in grown for p in shapely.get_parts(polys_only(q)) if not p.is_empty])
 
 
@@ -67,7 +74,7 @@ def around_raised(region, raised, t, quad_segs):
     """Every group of copper that meets once grown is grown, and cut by the coating near it, on its
     own; the flat coating is the region less all the grown copper."""
     parts = shapely.get_parts(raised)
-    grown = shapely.set_precision(shapely.buffer(parts, t, quad_segs=quad_segs), grid())
+    grown = grown_parts(parts, t, quad_segs)
     cut = cutter(region)
     rings, tops, walls = [], [], []
     for idx in meeting(list(grown)):

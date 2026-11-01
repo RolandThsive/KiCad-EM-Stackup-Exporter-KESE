@@ -1,19 +1,13 @@
-"""The topology of a Boundary for STEP: every vertex, every edge and every face once, so that the
-faces that meet share their edges and the edges their vertices (what makes a B-rep closed), and
-the faces grouped into shells.  Everything is in board mm; nothing is written here.
-
-A loop is a ring of a face: a run of "uses", each a step along one edge, forwards (from the
-edge's start vertex to its end) or backwards.  The vertices of a flat face are those of its rings
-at the face's height; a wall on the segment a -> b of a slice has the loop a, b at the lower
-height, then b, a at the upper one."""
+"""The topology of a Boundary for STEP: every vertex, edge and face once, faces grouped into shells
+(board mm).  A loop is a ring of a face, a run of uses of edges forwards or backwards; a wall on
+a -> b has the loop a, b low, then b, a high."""
 from dataclasses import dataclass
 
 import numpy as np
 import shapely
-from scipy.sparse import coo_matrix
-from scipy.sparse.csgraph import connected_components
 
 from kese.core import shapes2d as sh
+from kese.core.graph import connected_components
 from kese.core.triangulate import rings_of
 from kese.core.vertices import grid_keys, vertices_in_order
 
@@ -50,7 +44,7 @@ def topology_of(boundary):
     plane_origin, plane_axis, plane_ref, plane_origin_use = [], [], [], []   # per plane; the origin as a use, or -1
     uses = planes = 0
     for z, region, up in boundary.flats:
-        polys = np.array([p for p in shapely.get_parts(sh.polys_only(region)) if p.area > 1e-10], dtype=object)
+        polys = np.array([p for p in shapely.get_parts(sh.polys_only(region)) if p.area > sh.G().SLIVER_AREA_MM2], dtype=object)
         if not len(polys):
             continue
         ring_xy, _, _, spans, _ = rings_of(polys)
@@ -121,6 +115,5 @@ def shells_of(use_edge, use_loop, loop_face):
     first = np.r_[0, np.cumsum(count)[:-1]][count == 2]                # where the uses of every edge used twice start
     f1, f2 = use_face[order[first]], use_face[order[first + 1]]
     faces = int(loop_face.max()) + 1 if len(loop_face) else 0
-    graph = coo_matrix((np.ones(len(f1), dtype=bool), (f1, f2)), shape=(faces, faces))
-    shells, face_shell = connected_components(graph, directed=False)
+    shells, face_shell = connected_components(faces, f1, f2)
     return face_shell, shells, int((count != 2).sum())

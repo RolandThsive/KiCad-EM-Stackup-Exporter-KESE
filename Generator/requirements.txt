@@ -1,20 +1,13 @@
-# KiCad EM Stackup Exporter (KESE) - tested versions, everything including STEP output
+# KiCad EM Stackup Exporter (KESE) - tested versions of the packages every run needs (STEP included)
 #   python -m pip install -r requirements.txt
 #
 # Tested with Python 3.13 (Linux) on these exact versions.  These pins need Python 3.12 or newer
-# (numpy 2.5 and scipy 1.18 require >= 3.12); binary wheels for Windows (win_amd64), Linux and
+# (numpy 2.5 requires >= 3.12); binary wheels for Windows (win_amd64), Linux and
 # macOS exist on PyPI for Python 3.12, 3.13 and 3.14 for every package below (checked 2026-10-18).
-# On Python 3.11 install without the pins (python -m pip install numpy scipy ...): pip picks the
-# last versions built for it.
+# On Python 3.11 install without the pins (python -m pip install numpy shapely mapbox_earcut): pip picks
+# the last versions built for it.
+# The tests that read STEP files back also use OpenCascade (python -m pip install cadquery-ocp); they
+# skip that check without it, and KESE itself never needs it.
 numpy==2.5.3
-scipy==1.18.1
-networkx==3.6.1
 shapely==2.2.0
-trimesh==5.1.1
-manifold3d==3.5.4
 mapbox_earcut==2.1.0
-rtree==1.4.1
-# STEP by OpenCascade (Run.BUILD_WITH_KERNELS) and the tests' read-back of STEP files (optional: STEP is
-# written without it; with BUILD_WITH_KERNELS the run says cadquery is missing)
-cadquery==2.8.0
-cadquery-ocp>=7.9.3.1,<8.0

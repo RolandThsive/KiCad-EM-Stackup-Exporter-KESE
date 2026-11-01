@@ -8,8 +8,10 @@ fabricator's datasheet numbers for lab work.
 # Laminate thickness in mm, or None to take it from the board file:
 #   with a stackup   -> sum of the stackup's dielectric layers (+ inner copper), so the finished
 #                       board (laminate + outer copper + mask) equals KiCad's board thickness
-#   without stackup  -> KiCad's (general (thickness ...)) value
+#   without stackup  -> KiCad's (general (thickness ...)) value less the outer copper and the two
+#                       masks, so the finished board again equals KiCad's board thickness
 BOARD_THICKNESS_MM = None
+DEFAULT_BOARD_THICKNESS_MM = 1.6        # finished board thickness when the file gives none (KiCad's default)
 
 # When the file has no stackup, how the laminate is divided between copper layers:
 #   "even" - equal dielectric thickness between every pair of copper layers
@@ -34,3 +36,4 @@ INCLUDE_NON_PLATED_HOLES = True         # NPTH pads become holes through the boa
 OUTLINE_LINE_SNAP_MM = 0.01             # loose Edge.Cuts line/arc ends closer than this are joined (KiCad: 0.01 mm)
 OUTLINE_FALLBACK = "copper_hull"        # when there is no Edge.Cuts: "copper_hull" (convex hull of the copper + margin) or "error"
 OUTLINE_FALLBACK_MARGIN_MM = 1.0
+OUTLINE_DUPLICATE_AREA_MM2 = 1e-6       # two closed Edge.Cuts outlines differing by less than this area are one

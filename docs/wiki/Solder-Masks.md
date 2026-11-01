@@ -28,9 +28,9 @@ The openings are:
 
 | Opening | Size |
 |---|---|
-| every pad that lists the mask layer (`F.Mask`, `B.Mask`, `*.Mask`) | the pad shape grown by its mask margin: the pad's own `solder_mask_margin`, else the footprint's, else the board's pad-to-mask clearance, or `SolderMask.PAD_TO_MASK_CLEARANCE_MM` when set |
+| every pad that lists the mask layer (`F.Mask`, `B.Mask`, `*.Mask`) | the pad shape grown by its mask margin: the pad's own `solder_mask_margin`, else the footprint's, else the board's pad-to-mask clearance, or `SolderMask.PAD_TO_MASK_CLEARANCE_MM` when set; a negative margin shrinks it at most to nothing (half its smaller side); a pad on no copper layer (a mask-only opening) is used as drawn, with no margin, as KiCad's `PAD::GetSolderMaskExpansion` does |
 | every untented via (see [via tenting](Copper-And-Traces.md#1132-via-tenting)) | the via pad grown by the same clearance: the board's, or `SolderMask.PAD_TO_MASK_CLEARANCE_MM` when set |
-| every track, arc track and copper drawing that the mask leaves bare (KiCad 9 and later: it lists both layers, `(layers "F.Cu" "F.Mask")`; only `F.Cu` is bared by `F.Mask` and `B.Cu` by `B.Mask`) | its copper shape grown by its mask margin: its own `solder_mask_margin`, else the board's pad-to-mask clearance, or `SolderMask.PAD_TO_MASK_CLEARANCE_MM` when set. As in KiCad, a negative margin narrows a stroke at most to nothing; the opening of a filled drawing is never smaller than its inside |
+| every track, arc track and copper drawing that the mask leaves bare (KiCad 9 and later: it lists both layers, `(layers "F.Cu" "F.Mask")`; only `F.Cu` is bared by `F.Mask` and `B.Cu` by `B.Mask`) | its copper shape grown by its mask margin: its own `solder_mask_margin`, else the board's pad-to-mask clearance, or `SolderMask.PAD_TO_MASK_CLEARANCE_MM` when set. As in KiCad, a negative margin narrows a stroke at most to nothing; the opening of a filled polygon or square-cornered rectangle is never smaller than its inside, while a filled circle or rounded rectangle shrinks by the part of the margin past half its stroke (KiCad's `EDA_SHAPE::TransformShapeToPolygon`) |
 | graphics, text and zone fills drawn on the mask layer | as drawn |
 
 Together:
@@ -54,6 +54,20 @@ m_P = \begin{cases} m_{\mathrm{pad}} & \text{if the pad gives one} \\ m_{\mathrm
 Openings are clipped to the outline. `report.txt` counts `pad mask openings on F.Mask`, the bare
 copper's openings (`track mask openings on F.Mask`, `arc track ...`, `graphic ...`, `footprint graphic ...`)
 and the clearance used on its `vias:` line.
+
+When the board sets a solder mask minimum width (Board Setup, `(setup (solder_mask_min_width w))`,
+or `SolderMask.MASK_MIN_WIDTH_MM`), no web of mask narrower than $`w`$ stays between two
+openings, as KiCad plots the mask for the fab (`plot_board_layers.cpp`, `GenerateLayerPoly`): the
+openings are grown by $`w/2`$ (less 1 nm), joined, shrunk back with chamfered corners, and the
+exact openings added back:
+
+```math
+Q'_\sigma = Q_\sigma \cup \left( \left( Q_\sigma \oplus \tfrac{w}{2} \right) \ominus \tfrac{w}{2} \right) \qquad (15.2b)
+```
+
+Only the webs this fills are added; the hairlines where the grown and shrunk curves miss the exact
+ones (narrower than 2 µm) are left out, so the openings keep their exact outlines. `report.txt`
+counts them as `mask webs under the min width (w mm) removed on F.Mask`.
 
 ## 15.2 Conformal Mask
 
@@ -137,6 +151,7 @@ mask over the annular ring; its bore is still open.
 | `USE_STACKUP_MASK_THICKNESS` | `True` | bool | The first mask thickness found in the stack-up (normally `F.Mask`'s) wins, for both values on both faces |
 | `MASK_EDGE_PULLBACK_MM` | `0.005` | mm ≥ 0 | Mask and silk stop this far from the edge |
 | `PAD_TO_MASK_CLEARANCE_MM` | `None` | None or mm ≥ 0 | Board-wide clearance around pads; `None` follows Board Setup. A pad's or footprint's own `solder_mask_margin` still wins |
+| `MASK_MIN_WIDTH_MM` | `None` | None or mm ≥ 0 | Narrowest web of mask kept between two openings, equation (15.2b); `None` follows Board Setup (`solder_mask_min_width`), 0 keeps every web |
 | `MASK_WALL_QUAD_SEGS` | `4` | int ≥ 1 | Curve quality of the walls beside traces |
 
 | Previous | Next |

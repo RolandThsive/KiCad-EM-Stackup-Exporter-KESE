@@ -24,7 +24,7 @@ def outline_from(items, log):
             log("warning: Edge.Cuts lines/arcs do not form a closed outline")
     uniq = []
     for r in rings:
-        if r.is_valid and r.area > 1e-9 and not any(r.symmetric_difference(u).area < 1e-6 for u in uniq):
+        if r.is_valid and r.area > 1e-9 and not any(r.symmetric_difference(u).area < B.OUTLINE_DUPLICATE_AREA_MM2 for u in uniq):
             uniq.append(r)
     if not uniq:
         if B.OUTLINE_FALLBACK == "error":
@@ -40,10 +40,8 @@ def outline_from(items, log):
 
 
 def joined_ends(lines, d):
-    """The open lines (rounded to KiCad's 1 nm), with every loose end moved onto the nearest other
-    loose end within d, the closest pairs first, as KiCad chains the Edge.Cuts shapes of an outline.
-    Ends that already meet are left as they are, so a run of tiny segments never folds up.  Returns
-    the lines and the widest gap joined (0 if none)."""
+    """The open lines (rounded to 1 nm), every loose end moved onto the nearest other loose end within
+    d, closest pairs first, as KiCad chains Edge.Cuts.  -> (lines, the widest gap joined)."""
     coords = [np.round(np.asarray(g.coords, dtype=float), 6) for g in lines]
     ends = np.array([c[k] for c in coords for k in (0, -1)])
     pts, count = np.unique(ends, axis=0, return_counts=True)
