@@ -197,6 +197,8 @@ Details in [Top And Bottom Copper Finishings](Copper-Finishings.md).
 | `FINISH_TYPE` | `"file"` | `"file"` or a key of `FINISH_TYPES` | Take the type from the stack-up's `(copper_finish ...)` (KiCad's `None` builds no finish), or name it |
 | `FINISH_DEFAULT_TYPE` | `"ENIG"` | a key of `FINISH_TYPES` | Type when the file gives none, or gives a name that matches no key of `FINISH_TYPES` and no alias |
 | `FINISH_GROUPING` | `"metal"` | `"metal"` / `"net"` | One part per side and metal, or per side, metal and net |
+| `FINISH_ON_EDGE_PLATING` | `True` | bool | Also build the finish on the plated board edge (`Copper.EDGE_PLATING`), as a shell round the edge copper |
+| `FINISH_ON_CASTELLATIONS` | `True` | bool | Also build the finish inside the part-barrels of the castellated holes |
 | `FINISH_TYPES` | ENIG, ENEPIG, HASL, HASL_LF, OSP, ImmersionSilver, ImmersionTin, HardGold | `{key: [(metal, mm), ...]}` bottom to top | Layers of each finish |
 | `FINISH_NAME_ALIASES` | 6 KiCad names (`HAL SnPb` → `HASL`, `HAL lead-free` → `HASL_LF`, `Hard gold`, `Immersion tin`, `Immersion silver`, `HT_OSP` → `OSP`) | `{KiCad name: key of FINISH_TYPES}` | KiCad finish names that differ from a key; matching ignores case, spaces, `-` and `_` |
 | `FINISH_CONDUCTIVITY_S_PER_M` | Nickel `1.4e7`, Gold `4.1e7`, Palladium `9.5e6`, Tin `9.1e6`, Silver `6.3e7`, OSP `0.0` | `{metal: S/m}` | Written to `materials.json` |

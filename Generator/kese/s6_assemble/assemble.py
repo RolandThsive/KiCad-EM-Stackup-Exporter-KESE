@@ -9,7 +9,8 @@ from kese.s6_assemble.transform import finish_mesh, output_transform
 from parameters import P
 
 PART_ORDER = ["Board", "Copper", "Plating", "Top Solder Mask", "Top Mask over Copper", "Bottom Solder Mask",
-              "Bottom Mask over Copper", "Top Silkscreen", "Bottom Silkscreen", "Top Finish", "Bottom Finish"]
+              "Bottom Mask over Copper", "Top Silkscreen", "Bottom Silkscreen", "Top Finish", "Bottom Finish",
+              "Edge Finish"]
 
 
 def run(ps, job):

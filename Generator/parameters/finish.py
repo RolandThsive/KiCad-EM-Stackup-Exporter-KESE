@@ -17,6 +17,17 @@ FINISH_DEFAULT_TYPE = "ENIG"
 #             and gold can be picked together in the solver (Copper_GND, Top Finish Nickel_GND, ...)
 FINISH_GROUPING = "metal"
 
+# The finish on the plated board edge (Copper.EDGE_PLATING) and inside the plated castellations.
+# Plated edges are routed and plated before the finish goes on, so the finish covers the edge wall
+# as it covers the top and bottom copper (ENIG is the usual finish there).  Each metal is a shell
+# round the edge copper, in the air beside it, from the bottom of B.Cu to the top of F.Cu; where the
+# top or bottom copper at the edge is bare (no mask), the shell wraps over the corner and meets the
+# Top / Bottom Finish, so the edge copper is covered without a gap.  Part "Edge Finish <metal>".
+#   FINISH_ON_EDGE_PLATING - the plated board edge
+#   FINISH_ON_CASTELLATIONS - the part-barrels of the castellated holes (and their cut ends)
+FINISH_ON_EDGE_PLATING = True
+FINISH_ON_CASTELLATIONS = True
+
 # Layers of each finish, bottom to top, in mm.  Each becomes its own solid on the exposed copper.
 FINISH_TYPES = {
     "ENIG": [("Nickel", 0.005), ("Gold", 0.00008)],
