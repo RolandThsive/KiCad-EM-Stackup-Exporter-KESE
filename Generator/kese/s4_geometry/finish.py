@@ -2,6 +2,7 @@
 copper, and the plated board edge and castellations."""
 from kese.core import shapes2d as sh
 from kese.core.shapes2d import EMPTY, union
+from kese.s3_resolve.holes import drilled
 from parameters import P
 
 
@@ -64,20 +65,21 @@ def build(r, ps):
     edge(r, ps, layers)
 
 
-def _castellations(r):
-    """[(plating ring, net)] of the plated holes the board edge cuts, board frame: the part-barrel
-    inside the outline, as stage 3 plates it (Copper.CASTELLATION)."""
-    T, out = r.to_board_T, []
-    for h in r.items.holes:
-        if not (h.plated and h.wall > 0):
-            continue
-        d = T(h.drill)
-        if d.within(r.outline) or not d.intersects(r.outline):
-            continue
-        ring = sh.inter(sh.diff(d, T(h.drill.buffer(-h.wall))), r.outline)
-        if not ring.is_empty:
-            out.append((ring, h.net))
-    return out
+def _edge_copper(r):
+    """[(region, net)] of the edge copper that takes the finish, board frame: the plated edge band
+    (FINISH_ON_EDGE_PLATING) and the castellations' part-barrels inside the outline
+    (FINISH_ON_CASTELLATIONS); -> (that list, what it holds in words)."""
+    F, T = P.Finish, r.to_board_T
+    edge = [(r.edge_band, r.edge_net)] if F.FINISH_ON_EDGE_PLATING and r.edge_band is not None else []
+    cast = []
+    if F.FINISH_ON_CASTELLATIONS:
+        for h in r.items.holes:
+            if h.castellated:
+                ring = sh.inter(T(h.drill.difference(h.drill.buffer(-h.wall))), r.outline)
+                if not ring.is_empty:
+                    cast.append((ring, h.net))
+    what = " and ".join(w for w, on in (("plated edge", edge), ("castellations", cast)) if on)
+    return edge + cast, what
 
 
 def _drawn(t, g):
@@ -96,57 +98,52 @@ def edge(r, ps, layers):
     above the top copper (and below the bottom copper) it fills everything up to o_k between heights
     zt + o_(k-1) and zt + o_k, where the top finish is.  So the shells, the top and bottom finish and
     the copper tile the corner with no gap and no overlap."""
-    F, st = P.Finish, r.stackup
-    metal_at = []                                        # [(edge copper region, net)]
-    if F.FINISH_ON_EDGE_PLATING and r.edge_band is not None:
-        metal_at.append((r.edge_band, r.edge_net))
-    if F.FINISH_ON_CASTELLATIONS:
-        metal_at += _castellations(r)
-    if not metal_at:
+    F, st, g = P.Finish, r.stackup, sh.grid()
+    copper, what = _edge_copper(r)
+    if not copper:
         return
-    from kese.s3_resolve.holes import drilled
-    g = sh.grid()
-    M = sh.snap(union([m for m, _ in metal_at]))
-    zt, zb = st.band["F.Cu"][1], st.band[r.layers[-1]][0]
-    # the shell wraps over the corner only where the top / bottom copper beside it takes the finish
-    caps = {s: _exposed(r, s, r.copper_all.get(l, EMPTY)) for s, l in (("F", "F.Cu"), ("B", r.layers[-1]))}
-    # what is solid beside the edge copper: the drilled board, every plating barrel, the edge copper,
-    # every layer's copper and the top and bottom finish (on the grid they can stand a hair past the
-    # outline, and the shells must not overlap them)
+    M = sh.snap(union([m for m, _ in copper]))
+    zt, zb = st.band["F.Cu"][1], st.band["B.Cu"][0]
+    # the top / bottom finish: the shell wraps over the corner only next to it
+    caps = {s: _exposed(r, s, r.copper_all.get(l, EMPTY)) for s, l in (("F", "F.Cu"), ("B", "B.Cu"))}
+    # what is solid beside the edge copper: the drilled board, the barrels, the edge copper, every
+    # layer's copper and the top / bottom finish (on the grid these can stand a hair past the outline)
     solid = sh.snap(union([drilled(r, lambda h: True), M] + [ring for ring, *_ in r.barrels]
                           + list(r.copper_all.values()) + list(caps.values())))
-    total = sum(_drawn(t, g) for _, t in layers)
-    near = {s: e.buffer(total + 2 * g, join_style="mitre") if not e.is_empty else EMPTY for s, e in caps.items()}
-    nets = {}                                            # net -> its edge copper, for FINISH_GROUPING = "net"
-    for m, net in metal_at:
-        nets[net] = union([nets.get(net, EMPTY), m])
-    grow = lambda o: sh.snap(M.buffer(o, join_style="mitre", mitre_limit=2.0)) if o > 0 else M
-    drawn_note, o_prev = [], 0.0
+    reach = sum(_drawn(t, g) for _, t in layers) + 2 * g          # beyond the outermost shell
+    near = {s: e.buffer(reach, join_style="mitre") for s, e in caps.items() if not e.is_empty}
+    # one part per metal, or per metal and net: each net's shells lie round its own edge copper, and
+    # where two nets' shells meet the first net keeps the shared area
+    if F.FINISH_GROUPING == "net":
+        nets = {}
+        for m, net in copper:
+            nets[net] = union([nets.get(net, EMPTY), m])
+        groups = [(net, m.buffer(reach, join_style="mitre")) for net, m in nets.items()]
+    else:
+        groups = [(None, None)]
+    drawn_note, o_prev, inner = [], 0.0, M
     for metal, t in layers:
         o = o_prev + _drawn(t, g)
         if abs(o - o_prev - t) > 1e-12:
             drawn_note.append(f"{metal} {t} mm drawn {o - o_prev:.6g} mm thick across the edge")
-        ring = sh.diff(sh.diff(grow(o), grow(o_prev)), solid)          # beside the copper, k-th shell
-        cover = sh.diff(grow(o), solid)                                  # over the copper and the shells below
+        outer = sh.snap(M.buffer(o, join_style="mitre", mitre_limit=2.0))
+        ring = sh.diff(sh.diff(outer, inner), solid)                 # beside the copper: this metal's shell
+        cover = sh.diff(outer, solid)                                # over the copper and the shells below
         pieces = [(ring, zb, zt)]
         for s, sign, z0 in (("F", 1, zt), ("B", -1, zb)):
-            if near[s].is_empty:
-                continue
-            pieces.append((sh.inter(ring, near[s]), z0, z0 + sign * o_prev))
-            pieces.append((sh.inter(cover, near[s]), z0 + sign * o_prev, z0 + sign * o))
-        groups = [(None, None)] if F.FINISH_GROUPING != "net" else list(nets.items())
+            if s in near:
+                pieces += [(sh.inter(ring, near[s]), z0, z0 + sign * o_prev),
+                           (sh.inter(cover, near[s]), z0 + sign * o_prev, z0 + sign * o)]
+        props = _props("Edge", metal, t, drawn_thickness_mm=round(o - o_prev, 9))
         taken = EMPTY
         for net, own in groups:
+            part = f"Edge Finish {metal}" + (f"_{net}" if net is not None else "")
             for region, z0, z1 in pieces:
-                if own is not None:      # each net's shells round its own copper; the first net keeps a meeting
-                    region = sh.diff(sh.inter(region, own.buffer(o + 2 * g, join_style="mitre")), taken)
-                part = f"Edge Finish {metal}" + (f"_{net}" if net is not None else "")
-                ps.add(part, "finish", region, z0, z1, layer="Edge.Finish", net=net,
-                       props=_props("Edge", metal, t, drawn_thickness_mm=round(o - o_prev, 9)))
+                if own is not None:
+                    region = sh.diff(sh.inter(region, own), taken)
+                ps.add(part, "finish", region, z0, z1, layer="Edge.Finish", net=net, props=dict(props))
             if own is not None:
-                taken = union([taken, own.buffer(o + 2 * g, join_style="mitre")])
-        o_prev = o
-    on_edge = F.FINISH_ON_EDGE_PLATING and r.edge_band is not None
-    what = " and ".join(w for w, on in (("plated edge", on_edge), ("castellations", len(metal_at) > on_edge)) if on)
-    ps.notes.append(f"finish: also on the {what}" + (" (" + "; ".join(drawn_note) + ", the snapping grid)"
-                                                       if drawn_note else ""))
+                taken = union([taken, own])
+        o_prev, inner = o, outer
+    ps.notes.append(f"finish: also on the {what}"
+                    + (f" ({'; '.join(drawn_note)}, the snapping grid)" if drawn_note else ""))
