@@ -47,7 +47,7 @@ def castellate(items, outline_k):
         if h.plated and not outline_k.contains(h.drill) and h.drill.intersects(outline_k):
             items.found["castellated holes (plated holes cut by the board edge)"] += 1
             if plate:
-                h.wall = C.CASTELLATION_WALL_MM
+                h.wall, h.castellated = C.CASTELLATION_WALL_MM, True
             else:
                 h.plated, h.wall = False, 0.0
                 items.skipped["castellation plating (CASTELLATION is 'off')"] += 1

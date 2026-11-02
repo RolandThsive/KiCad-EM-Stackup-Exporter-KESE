@@ -29,7 +29,7 @@ Part names in simulation mode, with the default grouping:
 | `plating` | its own `Plating` part only with `"layer"` grouping; otherwise the barrels belong to the copper parts | `Plating` |
 | `mask` | `Top Solder Mask`, `Bottom Solder Mask`, each including the mask on top of copper | |
 | `silk` | `Top Silkscreen`, `Bottom Silkscreen` | |
-| `finish` | per side and metal, or per side, metal and net | `Top Finish Gold`, `Top Finish Nickel_GND` |
+| `finish` | per side (top, bottom, plated edge) and metal, or per side, metal and net | `Top Finish Gold`, `Top Finish Nickel_GND`, `Edge Finish Gold` |
 
 ## 8.2 Visual Mode
 
