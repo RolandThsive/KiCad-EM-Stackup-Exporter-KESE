@@ -24,10 +24,13 @@ const METAL_ROLES = /^(copper|plating|finish|via|pad)/i;
 /* Simulation models are solids that touch: the mask lies on the copper, the copper on the laminate, so two parts
    share the same faces and the GPU cannot tell which is in front (z-fighting, a flickering pattern).  Each part is
    pulled toward the camera by a depth offset that grows with how much it should win where faces meet: silkscreen
-   over mask, mask over finish, finish over copper, copper over laminate.  Only the depth test changes, not the
-   geometry.  The rank is read from the part's role (materials.json) or, without one, its name. */
-const DEPTH_RANKS = [[/silk/, 5], [/mask.?over.?copper/, 4], [/mask/, 3], [/finish|nickel|gold|palladium|silver|tin|osp/, 2],
-  [/copper|plating|via|pad/, 1]];
+   over mask, mask over finish, finish over copper, copper over laminate.  A finish is a stack of its own (nickel,
+   then palladium, then gold, bottom to top; ENIG's gold is only 80 nm thick, so its faces sit on the nickel's), so
+   its metals are ranked in that order too.  Only the depth test changes, not the geometry.  The rank is read from
+   the part's role (materials.json) and its name ("Top Finish Gold"). */
+const FINISH = /finish|nickel|gold|palladium|silver|tin|osp/;
+const FINISH_METALS = [[/gold/, 4], [/palladium/, 3], [/nickel/, 2]];      // others (tin, silver, OSP) are one layer: 3
+const DEPTH_RANKS = [[/silk/, 7], [/mask.?over.?copper/, 6], [/mask/, 5]];
 // a copy of a position attribute as x, y, z floats (a glTF file may interleave them with other attributes)
 function plainPositions(attr) {
   if (!attr.isInterleavedBufferAttribute && attr.array instanceof Float32Array && attr.itemSize === 3) return new Float32Array(attr.array);
@@ -39,7 +42,8 @@ function plainPositions(attr) {
 function depthRank(text) {
   const t = text.toLowerCase();
   for (const [re, rank] of DEPTH_RANKS) if (re.test(t)) return rank;
-  return 0;
+  if (FINISH.test(t)) { for (const [re, rank] of FINISH_METALS) if (re.test(t)) return rank; return 3; }
+  return /copper|plating|via|pad/.test(t) ? 1 : 0;
 }
 
 export class Viewer {
