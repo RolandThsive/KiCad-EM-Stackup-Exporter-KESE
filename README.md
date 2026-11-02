@@ -13,15 +13,10 @@ Give it a `.kicad_pcb` file, get every dielectric, every net's copper and every 
 [![Examples](https://img.shields.io/badge/Examples-Pictures-E95420?style=for-the-badge&logo=data%3Aimage%2Fsvg%2Bxml%3Bbase64%2CPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSJ3aGl0ZSIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiPjxwYXRoIGQ9Ik0yIDEyYzIuNTAwLTggNS41MDAtOCA4IDBzNS41MDAgOCA4IDAgMi41MDAtNCA0LTQiLz48L3N2Zz4K)](https://github.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/wiki/Examples)
 
 
-[![License](https://img.shields.io/badge/License-GPL--3.0--or--later-F28C28?style=for-the-badge&logo=data%3Aimage%2Fsvg%2Bxml%3Bbase64%2CPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSJ3aGl0ZSIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiPjxwYXRoIGQ9Ik02IDNoOWw0IDR2MTRINnoiLz48cGF0aCBkPSJNMTUgM3Y0aDQiLz48cGF0aCBkPSJNOSAxMmg3Ii8%2BPHBhdGggZD0iTTkgMTZoNyIvPjwvc3ZnPgo%3D)](LICENSE)
-
-![Version](https://img.shields.io/badge/Version-2.2.0-555555)
 ![Python](https://img.shields.io/badge/Python-3.12%2B-555555)
 ![KiCad](https://img.shields.io/badge/KiCad-6%20to%2010-555555)
 ![Copper layers](https://img.shields.io/badge/Copper_layers-1_to_8-blueviolet)
 ![Formats](https://img.shields.io/badge/Formats-GLB%20%C2%B7%20STEP%20%C2%B7%20STL%20%C2%B7%20OBJ-blueviolet)
-![Stars](https://img.shields.io/github/stars/RolandThsive/KiCad-EM-Stackup-Exporter-KESE?style=flat)
-![Last commit](https://img.shields.io/github/last-commit/RolandThsive/KiCad-EM-Stackup-Exporter-KESE)
 
 KiCad's 3D export is made for mechanical fit. An EM solver needs every core and prepreg as its own body with its εr
 and tanδ, copper at its real thickness, and one closed solid per net for ports. KESE reads the `.kicad_pcb` directly
