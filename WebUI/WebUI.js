@@ -294,7 +294,10 @@ function widget(p) {
       t.addEventListener("change", () => set(t.value));
       return t;
     }
-    default: {                                                       // lists and tables: edited as JSON text
+    default: {
+      const table = tableWidget(p, v, set);
+      if (table) return table;
+                                                                     // any other shape: edited as JSON text
       const t = el("textarea", { class: "text-input literal", rows: Math.min(8, JSON.stringify(v, null, 1).split("\n").length), spellcheck: "false" });
       t.value = JSON.stringify(v, null, 1);
       t.addEventListener("change", () => {
@@ -303,6 +306,106 @@ function widget(p) {
       return t;
     }
   }
+}
+
+/* ---- tables (the dict parameters: Finish.FINISH_TYPES, Color.MATERIALS, ...) ------------------------------
+   A dropdown picks one entry; under it, that entry's value with the widget its shape needs: a colour, a number,
+   a name (a dropdown when the names come from another table), a few named values (a material), or a list of
+   (metal, mm) layers.  Entries can be added (a copy of the one shown, under a new name) and removed. */
+const HEX = /^#[0-9a-f]{6}$/i;
+// a table whose values name entries of another table: its value is picked from that table's names
+const NAMES_FROM = { "Finish.FINISH_NAME_ALIASES": "Finish.FINISH_TYPES" };
+// a table whose (name, number) layers name entries of another table
+const LAYER_NAMES_FROM = { "Finish.FINISH_TYPES": "Finish.FINISH_CONDUCTIVITY_S_PER_M" };
+const isLayers = (x) => Array.isArray(x) && x.every((r) => Array.isArray(r) && r.length === 2 && typeof r[0] === "string" && typeof r[1] === "number");
+const isScalar = (x) => typeof x === "number" || typeof x === "string" || typeof x === "boolean";
+function tableShape(v) {
+  if (!v || typeof v !== "object" || Array.isArray(v)) return null;
+  const vals = Object.values(v);
+  if (!vals.length) return null;
+  if (vals.every((x) => typeof x === "string" && HEX.test(x))) return "color";
+  if (vals.every((x) => typeof x === "number")) return "number";
+  if (vals.every((x) => typeof x === "string")) return "name";
+  if (vals.every(isLayers)) return "layers";
+  if (vals.every((x) => x && typeof x === "object" && !Array.isArray(x) && Object.values(x).every(isScalar))) return "record";
+  return null;
+}
+function numStep(x) {
+  if (typeof x !== "number" || x === 0) return 0.001;
+  const a = Math.abs(x);
+  return a >= 1e4 ? Math.pow(10, Math.floor(Math.log10(a)) - 1) : a >= 10 ? 1 : a >= 1 ? 0.1 : Math.pow(10, Math.floor(Math.log10(a)) - 1);
+}
+function colorPicker(value, onPick) {
+  const c = el("input", { type: "color", value: HEX.test(value) ? value.toLowerCase() : "#000000" });
+  const hex = el("span", { class: "mono-name" }, value);
+  c.addEventListener("input", () => { hex.textContent = c.value.toUpperCase(); });
+  c.addEventListener("change", () => onPick(c.value.toUpperCase()));
+  return el("label", { class: "color-row" }, c, hex);
+}
+function valueWidget(x, onSet, names) {
+  if (typeof x === "boolean") return switchRow(x, x ? "On" : "Off", onSet);
+  if (typeof x === "number") return stepper(x, onSet, { step: numStep(x) });
+  if (typeof x === "string" && HEX.test(x)) return colorPicker(x, onSet);
+  if (typeof x === "string" && names && names.length) return dropdown(names.includes(x) ? names : [x, ...names], x, onSet);
+  const t = el("input", { class: "text-input", value: x ?? "" });
+  t.addEventListener("change", () => onSet(t.value));
+  return t;
+}
+function tableWidget(p, v, set) {
+  const shape = tableShape(v);
+  if (!shape) return null;
+  const keys = Object.keys(v);
+  state.tableSel = state.tableSel || {};
+  let sel = keys.includes(state.tableSel[p.key]) ? state.tableSel[p.key] : keys[0];
+  const pick = (k) => { state.tableSel[p.key] = k; renderSections(); };
+  const put = (val) => set({ ...state.values[p.key], [sel]: val });
+  const namesOf = (k) => (state.values[k] && typeof state.values[k] === "object" ? Object.keys(state.values[k]) : null);
+
+  // the entry row: dropdown, add, remove
+  const add = el("button", { type: "button", class: "table-btn", "data-tip": `Add an entry: a copy of ${sel}, under a new name` }, "+ Add");
+  const remove = el("button", { type: "button", class: "table-btn", disabled: keys.length < 2, "data-tip": `Remove ${sel}` }, "Remove");
+  const head = el("div", { class: "table-head" }, dropdown(keys, sel, pick), add, remove);
+  remove.addEventListener("click", () => {
+    const next = { ...state.values[p.key] }; delete next[sel];
+    state.tableSel[p.key] = Object.keys(next)[0]; set(next);
+  });
+  add.addEventListener("click", () => {
+    const name = el("input", { class: "text-input", placeholder: "new name" });
+    const ok = () => {
+      const n = name.value.trim();
+      if (!n) { renderSections(); return; }
+      if (n in state.values[p.key]) { toast(`${n} is already in ${p.name}`, 4000); return; }
+      state.tableSel[p.key] = n;
+      set({ ...state.values[p.key], [n]: clone(state.values[p.key][sel]) });
+    };
+    name.addEventListener("keydown", (e) => { if (e.key === "Enter") ok(); if (e.key === "Escape") renderSections(); });
+    head.replaceChildren(name, el("button", { type: "button", class: "table-btn", onclick: ok }, "Add"),
+      el("button", { type: "button", class: "table-btn", onclick: () => renderSections() }, "Cancel"));
+    name.focus();
+  });
+
+  // the entry's value
+  const x = v[sel], body = el("div", { class: "table-body" });
+  if (shape === "record") {
+    for (const [k, y] of Object.entries(x))
+      body.append(el("div", { class: "table-row" }, el("span", { class: "table-label" }, choiceText(k)),
+        valueWidget(y, (z) => put({ ...state.values[p.key][sel], [k]: z }))));
+  } else if (shape === "layers") {
+    const names = namesOf(LAYER_NAMES_FROM[p.key]);
+    body.append(el("div", { class: "table-row table-cols" }, el("span", {}, "Layer, bottom to top"), el("span", {}, "mm")));
+    x.forEach(([name, mm], i) => {
+      const rowSet = (j, z) => { const rows = clone(state.values[p.key][sel]); rows[i][j] = z; put(rows); };
+      body.append(el("div", { class: "table-row layer-row" }, valueWidget(name, (z) => rowSet(0, z), names),
+        stepper(mm, (z) => rowSet(1, z), { step: numStep(mm) }),
+        el("button", { type: "button", class: "table-x", disabled: x.length < 2, "aria-label": "Remove layer", "data-tip": "Remove this layer",
+          onclick: () => { const rows = clone(state.values[p.key][sel]); rows.splice(i, 1); put(rows); } }, "×")));
+    });
+    body.append(el("button", { type: "button", class: "table-btn", "data-tip": "Add a layer on top",
+      onclick: () => { const rows = clone(state.values[p.key][sel]); rows.push(clone(rows[rows.length - 1])); put(rows); } }, "+ Layer"));
+  } else {
+    body.append(el("div", { class: "table-row" }, valueWidget(x, put, shape === "name" ? namesOf(NAMES_FROM[p.key]) : null)));
+  }
+  return el("div", { class: "table-edit" }, head, body);
 }
 
 function field(p) {
