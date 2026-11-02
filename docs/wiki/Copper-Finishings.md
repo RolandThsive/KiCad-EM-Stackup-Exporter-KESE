@@ -46,6 +46,41 @@ $`L = 1.6 - 2 \times 0.035 - 2 \times 0.010 = 1.51`$ mm, and 35 µm copper: nick
 0.795 mm, gold from 0.795 to 0.79508 mm. With a stack-up the laminate is the stack-up's dielectrics
 and the heights follow them: on board 18b below, a 1.51 mm core, the nickel also starts at 0.790 mm.
 
+### 13.2.1 The Plated Edge And Castellations
+
+A plated board edge ([`Copper.EDGE_PLATING`](Copper-And-Traces.md)) is routed and plated before the
+finish goes on, so the fabricator's finish covers the edge wall as it covers the pads; ENIG is the
+usual finish there, and an edge left under closed solder mask is plated but never finished
+([JLCPCB, PCB edge plating guide](https://jlcpcb.com/blog/pcb-edge-plating-guide);
+[Sierra Circuits, side plating](https://www.protoexpress.com/kb/side-plating/)). With
+`FINISH_ON_EDGE_PLATING = True` (the default) KESE builds that finish too, and with
+`FINISH_ON_CASTELLATIONS = True` (the default) also inside the part-barrels of the castellated
+holes and on their cut ends.
+
+Each finish metal is a shell in the air beside the edge copper $`E`$ (the edge plating band and the
+castellations' part-barrels), from the bottom of `B.Cu` to the top of `F.Cu`. The metals are laid
+outward from the copper in the order the finish type lists them, as they are laid upward on the
+pads: with $`o_j = \sum_{i \le j} \tau_i`$,
+
+```math
+R_j = \left( E \oplus o_j \right) \setminus \left( E \oplus o_{j-1} \right) \setminus B \qquad (13.3)
+```
+
+where $`\oplus`$ grows a region by a distance and $`B`$ is everything solid beside the edge (the
+drilled board, the barrels, the copper and the top and bottom finish). Where the top copper next to
+the edge is bare, the shell wraps over the corner: metal $`j`$ also fills $`R_j`$ between heights
+$`z_t`$ and $`z_t + o_{j-1}`$, and everything within $`o_j`$ of the edge copper between
+$`z_t + o_{j-1}`$ and $`z_t + o_j`$, where $`z_t`$ is the top of `F.Cu`; the bottom is the mirror
+image. So the copper, the pad finish and the edge shells meet with no gap and no overlap, and the
+edge finish ends at the copper top where the mask covers the copper next to the edge.
+
+Across the edge the shells are 2D shapes, so each metal is drawn a whole number of grid steps
+(`Geometry.SNAP_GRID_MM`, 0.1 µm) thick, at least one: ENIG's 0.08 µm gold is drawn 0.1 µm thick
+across the edge (its height on the pads stays 0.08 µm). `report.txt` says so, for example
+`finish: also on the plated edge (Gold 8e-05 mm drawn 0.0001 mm thick across the edge, the snapping
+grid)`, and `materials.json` gives each edge part both `thickness_mm` and `drawn_thickness_mm`.
+Boards 16 and 16b (`featureTest/`) run with the finish on in the regression suite for this.
+
 ## 13.3 Finish Types
 
 `Finish.FINISH_TYPE`: `"file"` (the default) takes the type from the stack-up's
@@ -206,11 +241,12 @@ board 18b the gold's top is 41 µm above the laminate.
 
 | Value | Parts | Example |
 |---|---|---|
-| `"metal"` (default) | one per side and metal | `Top Finish Nickel`, `Top Finish Gold`, `Bottom Finish Nickel`, ... |
-| `"net"` | one per side, metal and net | `Top Finish Gold_GND`, so a net's copper, nickel and gold can be picked together in the solver (`Copper_GND`, `Top Finish Nickel_GND`, `Top Finish Gold_GND`) |
+| `"metal"` (default) | one per side and metal | `Top Finish Nickel`, `Top Finish Gold`, `Bottom Finish Nickel`, `Edge Finish Nickel`, ... |
+| `"net"` | one per side, metal and net | `Top Finish Gold_GND`, so a net's copper, nickel and gold can be picked together in the solver (`Copper_GND`, `Top Finish Nickel_GND`, `Top Finish Gold_GND`, `Edge Finish Gold_GND`) |
 
-In `materials.json` each finish part has the layer `F.Finish` or `B.Finish`, its `z_range_mm`, and
-the properties `side`, `metal`, `thickness_mm` and `conductivity_S_per_m`; the conductivities come
+In `materials.json` each finish part has the layer `F.Finish`, `B.Finish` or `Edge.Finish`, its
+`z_range_mm`, and the properties `side` (`F`, `B` or `Edge`), `metal`, `thickness_mm` and
+`conductivity_S_per_m`, and on the edge parts `drawn_thickness_mm` (section 13.2.1); the conductivities come
 from `Finish.FINISH_CONDUCTIVITY_S_PER_M` (Nickel 1.4 × 10⁷, Gold 4.1 × 10⁷, Palladium 9.5 × 10⁶,
 Tin 9.1 × 10⁶, Silver 6.3 × 10⁷ S/m, OSP 0 since it is organic). Colours come from the metal's entry
 in `Color.MATERIALS` ([Colorizing](Colorizing.md)).
@@ -235,6 +271,8 @@ as the closed solids stage 6 built, one per connected piece.
 | `FINISH_TYPE` | `"file"` | `"file"` or a key of `FINISH_TYPES` | Where the type comes from |
 | `FINISH_DEFAULT_TYPE` | `"ENIG"` | a key of `FINISH_TYPES` | Type when the file gives none, or a name that matches no key |
 | `FINISH_GROUPING` | `"metal"` | `"metal"` / `"net"` | Part per metal, or per metal and net |
+| `FINISH_ON_EDGE_PLATING` | `True` | bool | Finish on the plated board edge (section 13.2.1) |
+| `FINISH_ON_CASTELLATIONS` | `True` | bool | Finish inside the castellations' part-barrels (section 13.2.1) |
 | `FINISH_TYPES` | table above | `{key: [(metal, mm), ...]}` | Layers of each finish |
 | `FINISH_NAME_ALIASES` | `HAL SnPb` → `HASL`, `HAL lead-free` → `HASL_LF`, `Hard gold` → `HardGold`, `Immersion tin` → `ImmersionTin`, `Immersion silver` → `ImmersionSilver`, `HT_OSP` → `OSP` | `{KiCad name: key}` | KiCad's finish names that differ from a key |
 | `FINISH_CONDUCTIVITY_S_PER_M` | table above | `{metal: S/m}` | Written to `materials.json` |

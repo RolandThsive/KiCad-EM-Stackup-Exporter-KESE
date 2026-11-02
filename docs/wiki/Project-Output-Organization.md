@@ -183,7 +183,7 @@ file name and the OBJ object and material names carry it sanitised (the rule in 
 | copper | `Copper_<net>` (`Copper_GND`, `Copper_no_net`, `Copper_~{RESET}`), or `Copper_F.Cu` ... and `Plating`, or `Copper` |
 | mask | `Top Solder Mask`, `Bottom Solder Mask`; visual mode also `Top Mask over Copper`, `Bottom Mask over Copper` |
 | silk | `Top Silkscreen`, `Bottom Silkscreen` |
-| finish | `Top Finish Nickel`, `Bottom Finish Gold`, or `Top Finish Gold_<net>` |
+| finish | `Top Finish Nickel`, `Bottom Finish Gold`, `Edge Finish Nickel` (plated edge and castellations), or `Top Finish Gold_<net>` |
 
 Net names are used as KiCad shows them: the escapes KiCad stores for characters a net name cannot
 hold (`{slash}`, `{colon}`, `{dblquote}` and the rest of KiCad's `UnescapeString`) are turned back
