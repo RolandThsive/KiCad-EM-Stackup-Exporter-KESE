@@ -14,6 +14,7 @@ class Hole:
     wall: float            # plating wall thickness (0 for NPTH)
     centre: tuple = None   # centre of a round hole (None for slots); with the drill radius it is the exact circle
     radius: float = 0.0
+    castellated: bool = False   # plated and cut by the board edge (Copper.CASTELLATION)
 
 
 @dataclass

@@ -47,9 +47,12 @@ BOARDS = (sorted((ROOT / "tests" / "boards").glob("*.kicad_pcb")) + FEATURES
 MODES = ("simulation", "visual")
 FORMATS = {"simulation": ["glb", "step"], "visual": ["glb"]}
 # Boards run with other values than parameters/ has: the finish boards with the finish on, which is
-# off by default (Finish.FINISH_ENABLED), so that the finish parts are built and checked too
+# off by default (Finish.FINISH_ENABLED), so that the finish parts are built and checked too, and the
+# plated-edge boards with it on, for the finish on the plated edge and in the castellations
 SETTINGS = {"18_finishes": {"Finish.FINISH_ENABLED": True},
-            "18b_finish_pads": {"Finish.FINISH_ENABLED": True}}
+            "18b_finish_pads": {"Finish.FINISH_ENABLED": True},
+            "16_edge_plating_castellation": {"Finish.FINISH_ENABLED": True},
+            "16b_edge_plating_border": {"Finish.FINISH_ENABLED": True}}
 
 
 @contextmanager
