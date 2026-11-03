@@ -16,7 +16,7 @@ from kese.core.vertices import (
     same_vertices,
     walls_split_at_vertices,
 )
-from kese.core.parallel import workers_wanted
+from kese.core.parallel import in_processes, workers_wanted, worth_processes
 
 FEW_PIECES = 200         # of material reaching a face: up to this many are cut away piece by piece (cut_away)
 BIG_PIECE = 10_000       # coordinates: a piece this big (a dielectric, with every via hole in it) is cut away on its own
@@ -27,9 +27,9 @@ def skin_faces(ps, log):
     (z, region, looks up), walls as (z0, z1, segments), mm, board frame; Run.WORKERS at a time."""
     levels = heights_of(ps.prisms)
     by_part = {part: [p for p in prisms if not p.region.is_empty] for part, prisms in ps.by_part().items()}
-    order = biggest_first(by_part)
+    slices = slices_of_parts(by_part, levels, log)
+    order = list(slices)
     with ThreadPoolExecutor(workers_wanted()) as pool:
-        slices = dict(zip(order, pool.map(lambda part: slices_of_part(by_part[part], levels, log, pinches_opened=False), order)))
         pieces = material_of_every_slice(slices, pool)
         flats = dict(zip(order, pool.map(lambda part: visible_flats(slices[part], levels, pieces), order)))
         for *_, copies in pieces:
@@ -38,10 +38,28 @@ def skin_faces(ps, log):
     return levels, pieces, {part: (flats[part], walls[part]) for part in by_part}
 
 
-def biggest_first(by_part):
-    """The parts, the one with the most coordinates first: the dielectrics and the masks take the
-    longest to slice and to cut, and started first no thread is left alone with one at the end."""
-    return sorted(by_part, key=lambda part: -sum(shapely.get_num_coordinates(p.region) for p in by_part[part]))
+def slices_of_parts(by_part, levels, log):
+    """{part: its slices}, the part with the most coordinates first: the dielectrics and the masks
+    take the longest to slice and to cut, and started first no worker is left alone with one at the
+    end.  In processes of their own on all but a small board (the work is much of it Python's,
+    which threads would take in turn), the notes logged in that order."""
+    size = {part: sum(shapely.get_num_coordinates(p.region) for p in prisms) for part, prisms in by_part.items()}
+    order = sorted(by_part, key=lambda part: -size[part])
+    jobs = [(part, (by_part[part], levels)) for part in order]
+    if worth_processes(len(jobs), sum(size.values())):
+        done = dict(in_processes(slices_and_notes, jobs, log))
+    else:
+        done = {part: slices_and_notes(*args) for part, args in jobs}
+    for part in order:
+        for s in done[part][1]:
+            log(s)
+    return {part: done[part][0] for part in order}
+
+
+def slices_and_notes(prisms, levels):
+    """One part's slices, as a skin needs them (pinches left), and the notes made on the way."""
+    notes = []
+    return slices_of_part(prisms, levels, notes.append, pinches_opened=False), notes
 
 
 def material_of_every_slice(slices, pool):

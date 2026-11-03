@@ -90,8 +90,11 @@ mesh = mesh_of_boundary(boundary)                  # faces cut into triangles, t
   line, area zero) where a ring has a point on a straight run, the vertex another face shares; such
   a triangle is flipped away with its neighbour across its long edge, so no mesh holds a triangle
   of zero area, which some meshers and STL importers reject.
-- `Run.WORKERS` parts are built at once, the biggest first. Every part keeps its faces (its
-  `Boundary`), and the STEP writer writes those same faces as a closed solid.
+- `Run.WORKERS` parts are built at once, the biggest first, each in a process of its own (much of
+  the work is Python's, which threads would take in turn; a board of under 20,000 coordinates is
+  built part after part, as starting the processes would take longer). The files come out the same,
+  byte for byte, however many processes ran. Every part keeps its faces (its `Boundary`), and the
+  STEP writer writes those same faces as a closed solid.
 - Visual mode does the same for all parts at once and keeps only the faces between material and
   air (`skin_faces.py`, `skin_mesh.py`, see [Output Modes](Output-Modes.md)).
 - Last, every mesh is scaled to the output units, turned to the output orientation and shaded

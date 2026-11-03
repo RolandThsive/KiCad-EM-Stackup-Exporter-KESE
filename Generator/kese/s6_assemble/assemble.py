@@ -1,6 +1,8 @@
 """Stage 6 - assemble: the PrismSet -> one in-memory Model: meshes per part (closed solids in
 "simulation" mode, the visible skin in "visual" mode), output units and orientation, materials and
 properties.  Stage 7 writes every file format from this Model; nothing is rebuilt per format."""
+from functools import partial
+
 from kese.model.output_model import Model
 from kese.s6_assemble.boundaries import boundaries_and_meshes
 from kese.s6_assemble.skin_faces import skin_faces
@@ -43,10 +45,7 @@ def finished_meshes(ps, mode, log, finish, boundaries):
 
 def assemble(ps, mode, log):
     mat = output_transform()
-
-    def finish(m):
-        return finish_mesh(m, mat) if m is not None else None
-
+    finish = partial(finish_mesh, mat=mat)           # a module's function, for the worker processes
     done, boundaries = {}, {}
     for part, m in finished_meshes(ps, mode, log, finish, boundaries):   # one raw mesh at a time
         if m is not None:
