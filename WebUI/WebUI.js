@@ -375,9 +375,9 @@ function layerRows(rows, putRows, names) {
     onclick: () => { const r = clone(rows); r.push(clone(r[r.length - 1])); putRows(r); } }, "+ Layer"));
   return out;
 }
-/* Finish Type and Finish Default Type pick a key of Finish.FINISH_TYPES; under the pick, that finish's layers are
-   edited in place, so FINISH_TYPES needs no field of its own. */
-const PICKS_FINISH = new Set(["Finish.FINISH_TYPE", "Finish.FINISH_DEFAULT_TYPE"]);
+/* Finish Type picks a key of Finish.FINISH_TYPES (or "file"); under the pick, that finish's layers are edited in
+   place, so FINISH_TYPES needs no field of its own. */
+const PICKS_FINISH = new Set(["Finish.FINISH_TYPE"]);
 const FOLDED = new Set(["Finish.FINISH_TYPES"]);                   // edited inside another field, not on its own
 function finishPick(p, v, pickWidget) {
   const types = state.values["Finish.FINISH_TYPES"] || {}, rows = types[v];
@@ -386,7 +386,7 @@ function finishPick(p, v, pickWidget) {
     const put = (r) => setValues({ "Finish.FINISH_TYPES": { ...state.values["Finish.FINISH_TYPES"], [v]: r } }, "field");
     box.append(el("div", { class: "table-body" }, ...layerRows(rows, put, Object.keys(state.values["Finish.FINISH_CONDUCTIVITY_S_PER_M"] || {}))));
   } else if (v === "file") {
-    box.append(el("p", { class: "hint table-note" }, `The board's stack-up names the finish; when it names none, Finish Default Type (${state.values["Finish.FINISH_DEFAULT_TYPE"]}) is used.`));
+    box.append(el("p", { class: "hint table-note" }, "The board's stack-up names the finish (Board Setup > Physical Stackup > Copper finish). The run stops with an error if the board names none or one KESE does not know; a stack-up finish of \"None\" gives no finish."));
   }
   return box;
 }
@@ -446,7 +446,8 @@ function field(p) {
    color.py keeps every look in one MATERIALS table and the stack-up's colour names in three more.  Here they are
    sorted by what they colour (board, copper, finish, solder mask, silkscreen), and only what this run would use is
    offered: the mode (visual has exposed copper and mask over copper; simulation has core / prepreg and plating),
-   the dielectric grouping, the finish switch and the stack-up colour switch.  Each group is one dropdown; its
+   the dielectric grouping, the part switches (Board / Copper / Finish / Solder Mask / Silkscreen Enabled) and the
+   stack-up colour switch.  Each group is one dropdown; its
    entries are the parts' materials and, with stack-up colours on, the colour names the board's stack-up can use. */
 function colorGroups(keys) {
   const V = state.values, mats = V["Color.MATERIALS"] || {}, visual = V[CFG.mode] === "visual";
@@ -454,24 +455,24 @@ function colorGroups(keys) {
   const mat = (k, label = k) => (has(k) ? { param: "Color.MATERIALS", key: k, label } : null);
   const names = (param, suffix = "") => Object.keys(V[param] || {}).map((k) => ({ param, key: k, label: `${k.replace(/\b\w/g, (c) => c.toUpperCase())}${suffix}` }));
   const fallback = (parts) => parts.map((k) => mat(k, stackup ? `${k} (if the board names no colour)` : k));
-  const layered = !visual && V["Run.DIELECTRIC_GROUPING"] === "layer" && has("Board_core");
-  const finishOn = !!V["Finish.FINISH_ENABLED"];
+  const layered = !visual && V["Board.DIELECTRIC_GROUPING"] === "layer" && has("Board_core");
+  const on = (k) => V[k] !== false;                               // the part switches: a group shows only while its parts are built
   const metals = Object.keys(V["Finish.FINISH_CONDUCTIVITY_S_PER_M"] || {});
   const groups = [
-    { title: "Board Colors", tip: "The laminate", items: layered ? [mat("Board_core", "Core"), mat("Board_prepreg", "Prepreg")] : [mat("Board", "Laminate")] },
-    { title: "Copper Colors", tip: "Traces, pads, zones and the plating of holes",
+    on("Board.BOARD_ENABLED") && { title: "Board Colors", tip: "The laminate", items: layered ? [mat("Board_core", "Core"), mat("Board_prepreg", "Prepreg")] : [mat("Board", "Laminate")] },
+    on("Copper.COPPER_ENABLED") && { title: "Copper Colors", tip: "Traces, pads, zones and the plating of holes",
       items: visual ? [mat("Copper_exposed", "Copper")] : [mat("Copper", "Copper"), mat("Plating", "Hole plating")] },
-    finishOn && { title: "Finish Colors", tip: "The finish metals on the exposed copper (Finish Enabled is on)",
+    on("Finish.FINISH_ENABLED") && { title: "Finish Colors", tip: "The finish metals on the exposed copper (Finish Enabled is on)",
       items: metals.length ? metals.map((m) => mat(m)) : ["Nickel", "Gold", "Palladium", "Tin", "Silver", "OSP"].map((m) => mat(m)) },
     // With stack-up colours on, the colour comes from the stack-up's name, so its names come first; the Top /
     // Bottom entries still give the colour when the board names none (or a name the table lacks), and always
     // give alpha, metallic and roughness.  With them off, the names are never used and only Top / Bottom show.
-    { title: "Solder Mask Colors", tip: "The solder mask: with Use Stackup Colors on, the colour of each name the board's stack-up can use",
+    on("SolderMask.SOLDER_MASK_ENABLED") && { title: "Solder Mask Colors", tip: "The solder mask: with Use Stackup Colors on, the colour of each name the board's stack-up can use",
       items: [...(stackup ? names("Color.STACKUP_MASK_COLORS") : []),
         ...(stackup && visual ? names("Color.STACKUP_MASK_OVER_COPPER_COLORS", " over copper") : []),
         ...fallback(["Top Solder Mask", "Bottom Solder Mask", ...(visual ? ["Top Mask over Copper", "Bottom Mask over Copper"] : [])])],
       extra: [visual && "Color.VISUAL_MASK_OPAQUE", visual && stackup && "Color.USER_MASK_OVER_COPPER_LIGHTEN"] },
-    { title: "Silkscreen Colors", tip: "The silkscreen: with Use Stackup Colors on, the colour of each name the board's stack-up can use",
+    on("Silkscreen.SILKSCREEN_ENABLED") && { title: "Silkscreen Colors", tip: "The silkscreen: with Use Stackup Colors on, the colour of each name the board's stack-up can use",
       items: [...(stackup ? names("Color.STACKUP_SILK_COLORS") : []), ...fallback(["Top Silkscreen", "Bottom Silkscreen"])] },
   ].filter(Boolean);
   const out = [];
