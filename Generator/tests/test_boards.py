@@ -164,6 +164,10 @@ def report(queue, wait):
 
 
 def main(args):
+    flags = {"--accept", "--add", "--faceted", "--healed"}
+    wrong = sorted(a for a in args if a.startswith("--") and a not in flags)
+    if wrong:
+        sys.exit(f"unknown option: {', '.join(wrong)} (the options are {', '.join(sorted(flags))})")
     accept, add = "--accept" in args, "--add" in args
     if "--faceted" in args:
         P.override("Run.STEP_EXACT_ARCS", False)

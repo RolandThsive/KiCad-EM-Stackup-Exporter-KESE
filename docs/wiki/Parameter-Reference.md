@@ -9,10 +9,12 @@ the run: `--for`, `--set`, `--mode`, `--format` and `--verify` are all applied a
 and listed on its first line.
 
 > [!NOTE]
-> Defaults are those of the parameter files on `main`. Only a few values are checked by name:
-> `MODE`, `FILE_FORMAT`, `FINISH_TYPE` and `DIELECTRIC_SPLIT` (an error or a warning), and
-> `FONT_FILE` (a note in `report.txt`). For the rest, a value outside
-> the range below produces a wrong model or a plain Python error, not a named check.
+> Defaults are those of the parameter files on `main`. Before the board is read, the run checks
+> `MODE`, `FILE_FORMAT`, `WORKERS` and every setting whose range below is a few words with `/`
+> between them (such as `"mm"` / `"m"`), and stops with an error that names the setting.
+> `FINISH_TYPE` and `DIELECTRIC_SPLIT` are checked where they are used (an error or a warning), and
+> `FONT_FILE` gives a note in `report.txt`. For the rest, a value outside the range below produces
+> a wrong model or a plain Python error, not a named check.
 
 ## 16.1 Run (`parameters/run.py`)
 

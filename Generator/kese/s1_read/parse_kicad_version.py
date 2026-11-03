@@ -213,7 +213,8 @@ def zone_layer_connections(node):
 
 def via_tenting(node, default):
     """{"F": tented?, "B": tented?} of a via: KiCad 10 (tenting (front yes) (back no)), KiCad 9
-    (tenting front back) / (tenting none), the complete list; a via that does not say keeps `default`."""
+    (tenting front back) / (tenting none), the complete list; a via that does not say keeps `default`,
+    as does a side with no value, (front), as in a damaged file."""
     tent = dict(default)
     vt = child(node, "tenting")
     if vt is not None:
@@ -221,7 +222,8 @@ def via_tenting(node, default):
         for side, key in (("F", "front"), ("B", "back")):
             c = child(vt, key)
             if c is not None:
-                tent[side] = yes(c[1])
+                if len(c) > 1:
+                    tent[side] = yes(c[1])
             elif words:
                 tent[side] = key in words
     return tent

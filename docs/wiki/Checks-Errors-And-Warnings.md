@@ -31,7 +31,9 @@ python tests/test_boards.py                     # the regression suite over ever
 | `<file>: the file ends with N parentheses still open: it is cut short (an incomplete download or copy?)` | The file stops in the middle; KiCad refuses it too. Save or download it again. |
 | `<file>: copper layers ['F.Cu', 'B.Cu'] are not declared` | Both outer copper layers must exist. |
 | `MODE must be 'simulation' or 'visual', not ...` | A typo in `Run.MODE` (or `--set Run.MODE=...`). A typo in `--mode` is caught earlier by the command line: `argument --mode: invalid choice`, exit code 2. |
-| `unknown FILE_FORMAT entries [...]` | Only `glb`, `stl`, `obj`, `step`. |
+| `unknown FILE_FORMAT entries [...]` | Only `glb`, `stl`, `obj`, `step`. One format may be given as a list or as a single word (`--set Run.FILE_FORMAT=step`). |
+| `<Module>.<NAME> must be '...' or '...', not ...` | A setting that takes one of a few words (those whose range [Parameter Reference](Parameter-Reference.md) gives as words with `/` between them, such as `Run.UNITS` or `Copper.COPPER_GROUPING`) has another value. The run stops before reading the board. |
+| `Run.WORKERS must be a whole number, 0 or more (0: one per processor thread), not ...` | `0` uses every processor thread; a negative or fractional value means nothing. |
 | `visual mode is a surface, not solids: FILE_FORMAT may only contain glb / obj` | STL and STEP need closed solids; use simulation mode. |
 | `no Edge.Cuts outline and OUTLINE_FALLBACK is 'error'` | Draw a closed outline, or set `Board.OUTLINE_FALLBACK = "copper_hull"`. |
 | `missing Python package(s): ...` | Printed before anything runs, with the `pip install` line to use. |
@@ -47,6 +49,7 @@ python tests/test_boards.py                     # the regression suite over ever
 | `N copper layers: more than the 8 this project has been tested with` | The layers are still modelled. |
 | `layers named by the user or in an old language, read as KiCad reads them: TOP = F.Cu, ...` | Copper layers with names other than `F.Cu`, `B.Cu` and `In<n>.Cu` (KiCad 3 to 5 let the user rename them; KiCad 3 also wrote Italian, Polish and French names such as `Contorno.scheda`). Each is read as KiCad reads it: copper layers by their place in the list (first = `F.Cu`, last = `B.Cu`, the ones between `In1.Cu`, `In2.Cu`, ...), the old names by KiCad's own table. |
 | `N copper zone(s) have no fill stored in the file and are ignored` | Fill the zones in KiCad (press **B**) and save. Until then those zones produce no copper. |
+| `N via(s) name a copper layer the board does not have and are left out` | A damaged file: a via ends on a copper layer that the board's `(layers ...)` list does not have. The via is missing from the model and counted under `skipped` in `report.txt`; check it in KiCad. |
 | `Edge.Cuts lines/arcs do not form a closed outline` | The outline could not be polygonized; closed shapes on `Edge.Cuts` are still used. |
 | `no Edge.Cuts outline; using the copper's convex hull + 1.0 mm` | The fallback outline. |
 | `DIELECTRIC_SPLIT=... unknown, using 'even'` | Only `"even"` is implemented. |
@@ -206,6 +209,9 @@ python tests/test_boards.py --add      # record only the boards the baseline doe
 python tests/test_boards.py --faceted  # the STEP files with flat faces only (Run.STEP_EXACT_ARCS = False)
 python tests/test_boards.py --healed   # read the STEP files back with OpenCascade's healing (slower)
 ```
+
+Any other option stops the suite with `unknown option: ...`, so a misspelt `--heald` does not run
+the plain suite instead. `pytest` itself is installed with `python -m pip install pytest`.
 
 A board fails when the Verifier fails (an open or wrongly wound part or an overlap in simulation
 mode, faces that do not take turns in visual mode), when a part's volume moved from the recorded

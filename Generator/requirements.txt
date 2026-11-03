@@ -8,6 +8,7 @@
 # the last versions built for it.
 # The tests that read STEP files back also use OpenCascade (python -m pip install cadquery-ocp); they
 # skip that check without it, and KESE itself never needs it.
+# The tests run under pytest (python -m pip install pytest), which KESE itself does not need either.
 numpy==2.5.3
 shapely==2.2.0
 mapbox_earcut==2.1.0

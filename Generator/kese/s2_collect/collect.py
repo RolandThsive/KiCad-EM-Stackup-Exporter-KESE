@@ -13,7 +13,7 @@ from kese.s2_collect.setup import read_setup
 from kese.s2_collect.stackup import read_stackup
 from kese.s2_collect.text import TEXT, add_text
 from kese.s2_collect.tracks import add_track
-from kese.s2_collect.vias import add_via, drop_unconnected_rings
+from kese.s2_collect.vias import OFF_BOARD, add_via, drop_unconnected_rings
 from kese.s2_collect.zones import UNFILLED, add_zone
 
 # items that are not part of the physical board, counted under skipped
@@ -67,6 +67,8 @@ def collect(raw, log):
     if unfilled:
         log(f"warning: {unfilled} copper zone(s) have no fill stored in the file and are ignored "
             "(fill the zones in KiCad, press B, and save; see parameters/copper.py)")
+    if items.skipped.get(OFF_BOARD):
+        log(f"warning: {items.skipped[OFF_BOARD]} via(s) name a copper layer the board does not have and are left out")
     warn(items, log)
     _, note = font.load()
     items.notes.append(note)
