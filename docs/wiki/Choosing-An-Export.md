@@ -41,8 +41,6 @@ or the files in `parameters/` change any single value.
 | `viewer` | visual | glb | m | center | (unchanged) | (unchanged) | (unchanged) |
 
 `openems` also sets `Finish.FINISH_ENABLED = False`: 80 nm of gold is far below any FDTD mesh cell.
-`viewer` also switches the solder mask and silkscreen on (`SOLDER_MASK_ENABLED`, `SILKSCREEN_ENABLED`),
-so the board looks as made.
 
 A preset is only a set of overrides: `--for hfss --format step glb` writes both.
 

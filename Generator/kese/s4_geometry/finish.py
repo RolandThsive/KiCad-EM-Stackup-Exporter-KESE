@@ -51,11 +51,14 @@ def under_mask_mm(st):
     return sum(t for _, t in layers) if layers and P.Finish.FINISH_BEFORE_SOLDER_MASK else 0.0
 
 
-def wall_mm(st):
-    """How far the finish on the copper's side walls reaches out from the copper, on the snapping
-    grid, or 0 with no finish.  With the finish before the mask, the mask wraps round it."""
+def under_mask_copper(st, cu):
+    """The copper the mask lies on, board frame: `cu` itself, or, with the finish applied before the
+    mask, `cu` grown by the finish on its side walls (on the snapping grid), which the mask wraps."""
     layers, _ = finish_layers(st)
-    return sum(drawn(t, sh.grid()) for _, t in layers) if layers else 0.0
+    if not (under_mask_mm(st) and layers) or cu.is_empty:
+        return cu
+    reach = sum(on_grid(t, sh.grid()) for _, t in layers)
+    return sh.snap(cu.buffer(reach, join_style="mitre", mitre_limit=2.0))
 
 
 def exposed(r, side, cu):
@@ -74,11 +77,14 @@ def exposed(r, side, cu):
 
 
 def props(side, metal, t, **kw):
+    """The finish part's properties for materials.json."""
     return {"side": side, "metal": metal, "thickness_mm": t,
             "conductivity_S_per_m": P.Finish.FINISH_CONDUCTIVITY_S_PER_M.get(metal, 0.0), **kw}
 
 
 def build(r, ps):
+    """The finish on the faces of the top and bottom copper, stacked upward from the copper.  The
+    walls, the holes, the plated edge and the castellations are finish_shells.build."""
     F, st = P.Finish, r.stackup
     if not F.FINISH_ENABLED:
         return
@@ -102,10 +108,9 @@ def build(r, ps):
                 ps.add(part, "finish", bare, sign * z, sign * (z + t), layer=f"{side}.Finish", net=net,
                        props=props(side, metal, t))
                 z += t
-    # the walls, the holes, the plated edge and the castellations: finish_shells.build
 
 
-def drawn(t, g):
-    """A finish metal's thickness across the edge, on the snapping grid: the nearest whole number of
-    grid steps, at least one (a film thinner than the grid is drawn one step thick)."""
+def on_grid(t, g):
+    """A finish metal's thickness as drawn across a wall, where it is a 2D shape on the snapping grid
+    g: the nearest whole number of grid steps, at least one (a thinner film is drawn one step thick)."""
     return max(1, round(t / g)) * g

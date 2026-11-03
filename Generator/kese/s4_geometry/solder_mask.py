@@ -4,7 +4,7 @@ before the mask), with a wall where it climbs over a trace.  Where the mask is c
 (Regions.mask)."""
 from kese.core import shapes2d as sh
 from kese.core.conformal import conformal_regions
-from kese.s4_geometry.finish import under_mask_mm, wall_mm
+from kese.s4_geometry.finish import under_mask_copper, under_mask_mm
 from kese.s4_geometry.heights import mask_thicknesses
 from parameters import P
 
@@ -20,8 +20,7 @@ def build(r, ps, mode):
         if region.is_empty:
             continue
         cu = r.copper_all.get(layer, sh.EMPTY)
-        if lift:                               # the finish on the copper's walls is under the mask too
-            cu = sh.snap(cu.buffer(wall_mm(st), join_style="mitre", mitre_limit=2.0))
+        cu = under_mask_copper(st, cu)
         cu_lo, cu_hi = st.band[layer]
         cu_t = cu_hi - cu_lo + lift
         base = st.half                         # laminate face

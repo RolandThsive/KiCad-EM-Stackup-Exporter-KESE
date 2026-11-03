@@ -4,7 +4,7 @@ parts out and every other part exactly as it is with all of them on.  Takes a mo
 
     python -m pytest tests/test_enabled.py           (or:  python tests/test_enabled.py)"""
 import sys
-from contextlib import contextmanager
+from contextlib import ExitStack, contextmanager
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -15,19 +15,19 @@ from kese.s1_read import read  # noqa: E402
 from kese.s2_collect import collect  # noqa: E402
 from kese.s3_resolve import resolve  # noqa: E402
 from kese.s4_geometry import geometry  # noqa: E402
+from kese.s4_geometry.switches import SWITCHES, is_on  # noqa: E402
 from parameters import P  # noqa: E402
 
 PCB = ROOT.parent / "featureTest" / "17_mask_silk.kicad_pcb"      # has every role but plating
-SWITCHES = {"Board.BOARD_ENABLED": {"board"}, "Copper.COPPER_ENABLED": {"copper", "plating"},
-            "Finish.FINISH_ENABLED": {"finish"}, "SolderMask.SOLDER_MASK_ENABLED": {"mask", "mask_over_copper"},
-            "Silkscreen.SILKSCREEN_ENABLED": {"silk"}}
+# {switch: the roles it leaves out}, from the table geometry.py goes by
+ROLES = {key: {role for role, k in SWITCHES.items() if k == key} for key in set(SWITCHES.values())}
 
 
 @contextmanager
 def all_on():
     """Every switch on for the block (mask and silk are off by default), put back after it."""
-    saved = {key: getattr(getattr(P, key.split(".")[0]), key.split(".")[1]) for key in SWITCHES}
-    for key in SWITCHES:
+    saved = {key: is_on(key) for key in ROLES}
+    for key in ROLES:
         P.override(key, True)
     try:
         yield
@@ -38,8 +38,7 @@ def all_on():
 
 @contextmanager
 def switched_off(key):
-    module, name = key.split(".")
-    saved = getattr(getattr(P, module), name)
+    saved = is_on(key)
     P.override(key, False)
     try:
         yield
@@ -63,7 +62,7 @@ def test_each_switch_leaves_out_only_its_parts():
 
 def check_mode(mode):
     every = prisms(mode)
-    for key, roles in SWITCHES.items():
+    for key, roles in sorted(ROLES.items()):
         assert any(r in roles for _, r, *_ in every), f"{PCB.stem} has no {roles} parts to leave out"
         with switched_off(key):
             got = prisms(mode)
@@ -71,9 +70,9 @@ def check_mode(mode):
 
 
 def test_all_off_is_refused():
-    with switched_off("Board.BOARD_ENABLED"), switched_off("Copper.COPPER_ENABLED"), \
-            switched_off("Finish.FINISH_ENABLED"), switched_off("SolderMask.SOLDER_MASK_ENABLED"), \
-            switched_off("Silkscreen.SILKSCREEN_ENABLED"):
+    with ExitStack() as stack:
+        for key in ROLES:
+            stack.enter_context(switched_off(key))
         try:
             start("simulation", ["glb"], "/tmp/kese_test_enabled", (), False, lambda s: None)
         except ValueError as e:

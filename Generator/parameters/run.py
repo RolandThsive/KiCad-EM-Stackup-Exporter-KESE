@@ -98,7 +98,5 @@ PRESETS = {
                 "Copper.COPPER_GROUPING": "net", "Board.DIELECTRIC_GROUPING": "layer", "Run.WRITE_MATERIALS_JSON": True,
                 "Finish.FINISH_ENABLED": False},
     # web viewers (<model-viewer>, three.js): metres, centred, the visible surface only
-    # (with the solder mask and silkscreen, which are off by default, so the board looks as made)
-    "viewer": {"Run.MODE": "visual", "Run.FILE_FORMAT": ["glb"], "Run.UNITS": "m", "Run.ORIGIN": "center",
-               "SolderMask.SOLDER_MASK_ENABLED": True, "Silkscreen.SILKSCREEN_ENABLED": True},
+    "viewer": {"Run.MODE": "visual", "Run.FILE_FORMAT": ["glb"], "Run.UNITS": "m", "Run.ORIGIN": "center"},
 }
