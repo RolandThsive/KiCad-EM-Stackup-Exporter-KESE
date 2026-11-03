@@ -263,7 +263,8 @@ function widget(p) {
         for (const c of p.choices) seg.append(el("button", { type: "button", class: same(v, c) ? "on" : "", onclick: () => set(c) }, choiceText(c)));
         return seg;
       }
-      return dropdown(p.choices, v, set);
+      const dd = dropdown(p.choices, v, set);
+      return PICKS_FINISH.has(key) ? finishPick(p, v, dd) : dd;
     }
     case "multi": {
       const box = el("div", { class: "multi-row" });
@@ -360,6 +361,35 @@ function valueWidget(x, onSet, names) {
   t.addEventListener("change", () => onSet(t.value));
   return t;
 }
+// (metal, mm) layers, bottom to top: a metal dropdown and a thickness each, a layer added on top or removed
+function layerRows(rows, putRows, names) {
+  const out = [el("div", { class: "table-row table-cols" }, el("span", {}, "Layer, bottom to top"), el("span", {}, "mm"))];
+  rows.forEach(([name, mm], i) => {
+    const rowSet = (j, z) => { const r = clone(rows); r[i][j] = z; putRows(r); };
+    out.push(el("div", { class: "table-row layer-row" }, valueWidget(name, (z) => rowSet(0, z), names),
+      stepper(mm, (z) => rowSet(1, z), { step: numStep(mm) }),
+      el("button", { type: "button", class: "table-x", disabled: rows.length < 2, "aria-label": "Remove layer", "data-tip": "Remove this layer",
+        onclick: () => { const r = clone(rows); r.splice(i, 1); putRows(r); } }, "×")));
+  });
+  out.push(el("button", { type: "button", class: "table-btn", "data-tip": "Add a layer on top",
+    onclick: () => { const r = clone(rows); r.push(clone(r[r.length - 1])); putRows(r); } }, "+ Layer"));
+  return out;
+}
+/* Finish Type and Finish Default Type pick a key of Finish.FINISH_TYPES; under the pick, that finish's layers are
+   edited in place, so FINISH_TYPES needs no field of its own. */
+const PICKS_FINISH = new Set(["Finish.FINISH_TYPE", "Finish.FINISH_DEFAULT_TYPE"]);
+const FOLDED = new Set(["Finish.FINISH_TYPES"]);                   // edited inside another field, not on its own
+function finishPick(p, v, pickWidget) {
+  const types = state.values["Finish.FINISH_TYPES"] || {}, rows = types[v];
+  const box = el("div", { class: "table-edit" }, pickWidget);
+  if (Array.isArray(rows) && rows.length) {
+    const put = (r) => setValues({ "Finish.FINISH_TYPES": { ...state.values["Finish.FINISH_TYPES"], [v]: r } }, "field");
+    box.append(el("div", { class: "table-body" }, ...layerRows(rows, put, Object.keys(state.values["Finish.FINISH_CONDUCTIVITY_S_PER_M"] || {}))));
+  } else if (v === "file") {
+    box.append(el("p", { class: "hint table-note" }, `The board's stack-up names the finish; when it names none, Finish Default Type (${state.values["Finish.FINISH_DEFAULT_TYPE"]}) is used.`));
+  }
+  return box;
+}
 function tableWidget(p, v, set) {
   const shape = tableShape(v);
   if (!shape) return null;
@@ -380,17 +410,7 @@ function tableWidget(p, v, set) {
       body.append(el("div", { class: "table-row" }, k === "color" ? null : el("span", { class: "table-label" }, choiceText(k)),
         valueWidget(y, (z) => put({ ...state.values[p.key][sel], [k]: z }))));
   } else if (shape === "layers") {
-    const names = namesOf(LAYER_NAMES_FROM[p.key]);
-    body.append(el("div", { class: "table-row table-cols" }, el("span", {}, "Layer, bottom to top"), el("span", {}, "mm")));
-    x.forEach(([name, mm], i) => {
-      const rowSet = (j, z) => { const rows = clone(state.values[p.key][sel]); rows[i][j] = z; put(rows); };
-      body.append(el("div", { class: "table-row layer-row" }, valueWidget(name, (z) => rowSet(0, z), names),
-        stepper(mm, (z) => rowSet(1, z), { step: numStep(mm) }),
-        el("button", { type: "button", class: "table-x", disabled: x.length < 2, "aria-label": "Remove layer", "data-tip": "Remove this layer",
-          onclick: () => { const rows = clone(state.values[p.key][sel]); rows.splice(i, 1); put(rows); } }, "×")));
-    });
-    body.append(el("button", { type: "button", class: "table-btn", "data-tip": "Add a layer on top",
-      onclick: () => { const rows = clone(state.values[p.key][sel]); rows.push(clone(rows[rows.length - 1])); put(rows); } }, "+ Layer"));
+    body.append(...layerRows(x, put, namesOf(LAYER_NAMES_FROM[p.key])));
   } else {
     body.append(el("div", { class: "table-row" }, valueWidget(x, put, shape === "name" ? namesOf(NAMES_FROM[p.key]) : null)));
   }
@@ -399,12 +419,21 @@ function tableWidget(p, v, set) {
 
 function field(p) {
   const { text, unit } = labelOf(p.name);
-  const changed = !same(state.values[p.key], p.default);
+  // a finish pick also counts as changed when the layers of the finish it shows were edited
+  const T = "Finish.FINISH_TYPES", pickedType = state.values[p.key];
+  const layersChanged = PICKS_FINISH.has(p.key) && T in state.byKey
+    && !same((state.values[T] || {})[pickedType], (state.byKey[T].default || {})[pickedType]);
+  const changed = !same(state.values[p.key], p.default) || layersChanged;
   const head = el("div", { class: "field-head" }, el("span", { class: "field-label" }, text, unit ? el("span", { class: "unit" }, ` (${unit})`) : null));
   attachHelp(head, p.key);
   if (state.ui === "advanced") {
     if (changed) head.append(el("button", { type: "button", class: "reset-one", "data-tip": `Back to the file's value: ${showValue(p.default)}`,
-      onclick: () => { state.noneEditing.delete(p.key); setValues({ [p.key]: clone(p.default) }, "field"); } }, "↺"));
+      onclick: () => {
+        state.noneEditing.delete(p.key);
+        const back = { [p.key]: clone(p.default) };
+        if (layersChanged) back[T] = { ...state.values[T], [pickedType]: clone(state.byKey[T].default[pickedType]) };
+        setValues(back, "field");
+      } }, "↺"));
   }
   // Advanced: the parameter's name sits beside its control, so the title keeps the whole width for one line
   const control = state.ui === "advanced"
@@ -488,7 +517,7 @@ const OUTSIDE = () => new Set([CFG.mode, CFG.formats, CFG.verify]);
 function sectionKeys(module) {
   const outside = OUTSIDE();
   if (state.ui === "basic") return (CFG.basic[module] || []).filter((k) => k in state.byKey && !outside.has(k));
-  return state.params.filter((p) => p.module === module && !outside.has(p.key)).map((p) => p.key);
+  return state.params.filter((p) => p.module === module && !outside.has(p.key) && !FOLDED.has(p.key)).map((p) => p.key);
 }
 function presetRow() {
   const presets = state.desc.presets || {};
