@@ -437,7 +437,7 @@ dialog pre { font-family: var(--mono); font-size: 12px; white-space: pre-wrap; m
 .drop-text b { overflow-wrap: anywhere; }
 .drop-text .hint { font-size: 12px; }
 .examples { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; margin: 8px 0 0; }
-.examples .hint { margin-right: 2px; }
+.examples .hint { flex-basis: 100%; }                      /* the words on their own line, the examples under them */
 .examples .glass-btn { padding: 3px 10px; font-size: 12px; }
 /* Mode: the big switch everything in KESE depends on (the segmented control, larger) */
 .mode-seg { margin: 12px 0 6px; }
