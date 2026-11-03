@@ -58,7 +58,7 @@ def under_mask_copper(st, cu):
     layers, _ = finish_layers(st)
     if not (under_mask_mm(st) and layers) or cu.is_empty:
         return cu
-    reach = sum(on_grid(t, sh.grid()) for _, t in layers)
+    reach = sum(drawn_thickness(t) for _, t in layers)
     return grow(cu, reach, join_style="mitre", mitre_limit=2.0)
 
 
@@ -111,7 +111,8 @@ def build(r, ps):
                 z += t
 
 
-def on_grid(t, g):
-    """A finish metal's thickness as drawn across a wall, where it is a 2D shape on the snapping grid
-    g: the nearest whole number of grid steps, at least one (a thinner film is drawn one step thick)."""
+def drawn_thickness(t):
+    """A finish metal's thickness as drawn across a wall, where it is a 2D shape on the snapping grid:
+    the nearest whole number of grid steps, at least one (a thinner film is drawn one step thick)."""
+    g = sh.grid()
     return max(1, round(t / g)) * g

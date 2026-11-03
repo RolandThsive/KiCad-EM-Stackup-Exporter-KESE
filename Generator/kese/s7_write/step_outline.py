@@ -49,7 +49,8 @@ def outline_of(topo):
 def chains(o):
     """The chains of segments through the points an arc can pass: [(points, segments, closed)],
     an open chain from one other point to another, a closed one (all its points passable) from one
-    of its points around to it again (the point repeated at the end).  Chains of fewer points than an arc needs are left out."""
+    of its points around to it again (the point repeated at the end).  Chains of fewer points than
+    an arc needs are left out."""
     n, seg_a, seg_b = len(o.xy), o.seg_a.tolist(), o.seg_b.tolist()
     ends = np.concatenate([o.seg_a, o.seg_b])
     order = np.argsort(ends, kind="stable")
@@ -104,17 +105,17 @@ def arcs_of(o):
         if s:                                                   # a closed chain restarted at another point
             pts, segs = pts[s:-1] + pts[:s + 1], segs[s:] + segs[:s]
             o.chains[k] = (pts, segs, closed)
-        q2 = o.xy[pts]
+        q = o.xy[pts]
         if whole:
             i, j, c, r, ccw = arcs[0]
-            circle = sa.written_circle(q2[i], q2[j], c, r, ccw)
+            circle = sa.written_circle(q[i], q[j], c, r, ccw)
             if circle is None:
                 continue
             o.circles.append(circle)
             pieces += [(k, i, j, len(o.circles) - 1, ccw), (k, j, arcs[1][1], len(o.circles) - 1, ccw)]
             continue
         for i, j, c, r, ccw in arcs:
-            circle = sa.written_circle(q2[i], q2[j], c, r, ccw)
+            circle = sa.written_circle(q[i], q[j], c, r, ccw)
             if circle is not None:
                 o.circles.append(circle)
                 pieces.append((k, i, j, len(o.circles) - 1, ccw))

@@ -1,12 +1,14 @@
 """How a finish shell is laid in the air beside a copper region, metal by metal (finish_shells.py
 says where the shells go), and the helpers the edge, the holes and the walls share."""
+from itertools import accumulate
+
 import shapely
 
 from kese.core import shapes2d as sh
 from kese.core.conformal import grow
 from kese.core.shapes2d import EMPTY, union
 from kese.core.vertices import noded
-from kese.s4_geometry.finish import exposed, on_grid, props
+from kese.s4_geometry.finish import drawn_thickness, exposed, props
 from parameters import P
 
 MITRE = {"join_style": "mitre", "mitre_limit": 2.0}   # how a shell's outer side follows the copper's corners
@@ -14,7 +16,7 @@ MITRE = {"join_style": "mitre", "mitre_limit": 2.0}   # how a shell's outer side
 
 def reach(layers):
     """How far the shells reach out from the copper, with two grid steps to spare."""
-    return sum(on_grid(t, sh.grid()) for _, t in layers) + 2 * sh.grid()
+    return sum(drawn_thickness(t) for _, t in layers) + 2 * sh.grid()
 
 
 def named(prefix):
@@ -32,7 +34,11 @@ def near_faces(face, d):
     return grow(face, d, join_style="mitre")
 
 
-def note(ps, what, drawn, across):
+def note(ps, what, layers, across):
+    """report.txt's line on where the shells went, naming the metals drawn thicker than they are
+    across a wall (`layers`: the finish's, or [] when no shell was made)."""
+    drawn = [f"{metal} {t} mm drawn {drawn_thickness(t):.6g} mm thick" for metal, t in layers
+             if abs(drawn_thickness(t) - t) > 1e-12]
     grid = f" ({'; '.join(drawn)} across the {across}, the snapping grid)" if drawn else ""
     ps.notes.append(f"finish: also {what}{grid}")
 
@@ -48,11 +54,11 @@ def groups(pairs, d):
 
 
 def exactly(g):
-    """g, a set operation done in floating point on regions on the grid, back on the grid with as
-    little change as possible: where two outlines cross, the new vertex is rounded onto the grid, and
-    nothing else moves (a part that this leaves invalid is snapped as a whole).  A neighbour that the
-    same outline bounds keeps the same vertices, so the two still meet with no gap and no overlap;
-    snapping every region on its own would round their shared edges each its own way."""
+    """g, the result of a set operation done in floating point on regions on the grid, back on the
+    grid with as little change as possible: only the new vertices, where two outlines cross, are
+    rounded onto it (a part this leaves invalid is snapped as a whole).  So two regions cut along the
+    same outline keep the same vertices there and still meet with no gap and no overlap, where
+    snapping each on its own could round their shared edge two ways."""
     parts = shapely.get_parts(sh.polys_only(g))
     if not len(parts):
         return EMPTY
@@ -92,21 +98,15 @@ def shells(layers, M, nets, solid, body, caps, part, layer, side):
     on its own) in floating point: two metals side by side share the same edges, vertex for vertex.
 
     nets: [(net, the area its shells may take)], the first net keeping an area two nets share, or
-    [(None, None)] for one part per metal.  -> ([(part, region, z0, z1, layer, net, props)] to add
-    in this order, notes on the metals drawn thicker than they are)."""
-    g, adds, notes = sh.grid(), [], []
-    outers, drawn, o = [], [], 0.0
-    for metal, t in layers:
-        drawn.append(on_grid(t, g))
-        if abs(drawn[-1] - t) > 1e-12:
-            notes.append(f"{metal} {t} mm drawn {drawn[-1]:.6g} mm thick")
-        o += drawn[-1]
-        outers.append(grow(M, o, **MITRE))
+    [(None, None)] for one part per metal.  -> [(part, region, z0, z1, layer, net, props)], to add
+    in this order (add_all)."""
+    drawn = [drawn_thickness(t) for _, t in layers]
+    outers = [grow(M, o, **MITRE) for o in accumulate(drawn)]
     # each metal's own area: inside its outer side, outside the one below (the first: inside its own)
     bands = [outers[0]] + [exactly(shapely.difference(outer, inner)) for inner, outer in zip(outers, outers[1:])]
     air = sh.diff(outers[-1], solid)
     near = [sh.polys_only(shapely.intersection(air, sh.polys_only(n))) for n, _, _ in caps]
-    h_prev = 0.0
+    adds, h_prev = [], 0.0
     for (metal, t), d, band, outer in zip(layers, drawn, bands, outers):
         h = h_prev + t
         pieces = [(within(air, band), *body)]
@@ -122,7 +122,7 @@ def shells(layers, M, nets, solid, body, caps, part, layer, side):
             if own is not None:
                 taken = union([taken, own])
         h_prev = h
-    return adds, notes
+    return adds
 
 
 def add_all(ps, adds):

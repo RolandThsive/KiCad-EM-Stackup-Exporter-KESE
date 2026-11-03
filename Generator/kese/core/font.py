@@ -88,11 +88,10 @@ def load():
 
 
 def _glyph(f, ch):
-    idx = ord(ch) - f.get("first_codepoint", 32)
-    g = f["glyphs"]
-    if 0 <= idx < len(g):
-        return g[idx]
-    return g[ord("?") - f.get("first_codepoint", 32)]
+    """The glyph of a character, or of ? when the font has none."""
+    first, g = f.get("first_codepoint", 32), f["glyphs"]
+    idx = ord(ch) - first
+    return g[idx] if 0 <= idx < len(g) else g[ord("?") - first]
 
 
 def render(text, anchor, angle_deg, size_h, size_w, thickness, justify=(), mirror=False,
@@ -146,12 +145,8 @@ def render(text, anchor, angle_deg, size_h, size_w, thickness, justify=(), mirro
     n = len(lines)
     height = size_h * BLOCK_HEIGHT + (n - 1) * interline
     off_x, off_y = thickness / LEFT_OFFSET_DIV, size_h - thickness * TOP_OFFSET
-    if "top" in justify:
-        pass
-    elif "bottom" in justify:
-        off_y -= height
-    else:
-        off_y -= height / 2
+    if "top" not in justify:
+        off_y -= height if "bottom" in justify else height / 2
     a = math.radians(angle_deg)
     c, s = math.cos(a), math.sin(a)
     segs = []

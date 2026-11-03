@@ -1,7 +1,8 @@
 """Which runs of an outline's vertices a STEP file writes as true circular arcs (Run.STEP_EXACT_ARCS):
 those that lie on one circle within STEP_ARC_FIT_TOLERANCE_MM, turning the same way by the same
-angle at every vertex as a faceted circle does (find_arcs).  Every arc is written on the circle through its two end vertices and the fitted
-circle's point halfway between them, so that its ends lie on it exactly.  In board mm."""
+angle at every vertex as a faceted circle does (find_arcs).  Every arc is written on the circle
+through its two end vertices and the fitted circle's point halfway between them, so that its ends
+lie on it exactly.  In board mm."""
 import math
 from typing import NamedTuple
 
@@ -127,7 +128,7 @@ def _runs(q, fit):
 
 def _pieces(q, i, j, c, r, ccw):
     """An arc cut into pieces that turn at most MAX_SWEEP, at vertices spread evenly."""
-    a0, sweep = sweep_of(c, q[i], q[j], ccw)
+    _, sweep = sweep_of(c, q[i], q[j], ccw)
     k = max(1, math.ceil(abs(sweep) / MAX_SWEEP - 1e-9))
     cuts = [i + round(m * (j - i) / k) for m in range(k + 1)]
     return [(s, e, c, r, ccw) for s, e in zip(cuts[:-1], cuts[1:]) if e - s >= 2]

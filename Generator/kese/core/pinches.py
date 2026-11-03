@@ -9,7 +9,6 @@ from kese.core.vertices import grid_keys, near_edge, noded, pairs_in, vertex_key
 from parameters import P
 
 
-
 def open_pinches(region, log=None):
     """The region with a gap at every pinch point (see above); the region itself when it has none."""
     region = sh.polys_only(region)
@@ -70,7 +69,7 @@ def points_of(g):
 
 def repeated_vertices(polygon):
     """The vertices a polygon has twice (where its rings touch each other or themselves), as xy."""
-    if polygon is None or polygon.is_empty:          # a piece the cuts took away entirely
+    if polygon.is_empty:                             # a piece the cuts took away entirely
         return []
     keys, ring, xy = vertex_keys(polygon)
     if len(keys) == 0:
@@ -81,7 +80,7 @@ def repeated_vertices(polygon):
     return [tuple(p) for p in xy[idx[count > 1]]]
 
 
-def open_pinches_between(below, above, log=None, first=0):
+def open_pinches_between(below, above, log, first):
     """The material below and above a height, with a strip cut out of the smaller piece wherever
     two meet along an edge with the material on opposite sides, wider from round `first` on.
     -> (below, above, whether anything was cut)."""

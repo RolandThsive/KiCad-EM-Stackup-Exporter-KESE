@@ -19,10 +19,8 @@ def build(r, ps, mode):
         region = r.mask[side]
         if region.is_empty:
             continue
-        cu = r.copper_all.get(layer, sh.EMPTY)
-        cu = under_mask_copper(st, cu)
-        cu_lo, cu_hi = st.band[layer]
-        cu_t = cu_hi - cu_lo + lift
+        cu = under_mask_copper(st, r.copper_all.get(layer, sh.EMPTY))
+        cu_t = st.band[layer][1] - st.band[layer][0] + lift
         base = st.half                         # laminate face
         flat, top, wall = conformal_regions(region, cu, t_lam, M.MASK_WALL_QUAD_SEGS)
         part = f"{tb} Solder Mask"

@@ -50,9 +50,8 @@ def edge(r, ps, layers):
                           + list(r.copper_all.values()) + list(faces.values())))
     caps = [(near_faces(faces[s], d), z, sign)
             for s, z, sign in (("F", top, 1), ("B", bottom, -1)) if not faces[s].is_empty]
-    adds, drawn = shells(layers, M, groups(copper, d), solid, (bottom, top), caps, named("Edge"), "Edge.Finish", "Edge")
-    add_all(ps, adds)
-    note(ps, f"on the {what}", drawn, "edge")
+    add_all(ps, shells(layers, M, groups(copper, d), solid, (bottom, top), caps, named("Edge"), "Edge.Finish", "Edge"))
+    note(ps, f"on the {what}", layers, "edge")
     return near_faces(M, d)
 
 
@@ -92,14 +91,12 @@ def bores(r, ps, layers, edge_zone):
         caps = [(near_faces(faces[s], d), z, sign)
                 for s, z, sign, is_open in (("F", top, 1, open_f), ("B", bottom, -1, open_b))
                 if is_open and not faces[s].is_empty]
-        adds, drawn = shells(layers, M, groups(spans[key], d), solid, (bottom, top), caps, named("Hole"), "Hole.Finish", "Hole")
-        return adds, drawn, near_faces(M, d)
+        return shells(layers, M, groups(spans[key], d), solid, (bottom, top), caps, named("Hole"), "Hole.Finish", "Hole")
 
-    done = in_parallel(span, list(spans))
-    for adds, _, _ in done:
+    for adds in in_parallel(span, spans):
         add_all(ps, adds)
-    note(ps, "inside the plated holes", next((drawn for _, drawn, _ in reversed(done) if drawn), []), "wall")
-    return union([zone for *_, zone in done])
+    note(ps, "inside the plated holes", layers, "wall")
+    return union([near_faces(M, d) for M in copper.values()])
 
 
 def walls(r, ps, layers, zone):
@@ -116,7 +113,7 @@ def walls(r, ps, layers, zone):
         layer = r.layers[k]
         per_net = [(cu, net) for net, cu in r.copper[layer].items() if not cu.is_empty]
         if not per_net:
-            return [], []
+            return []
         C = r.copper_all[layer]
         bottom, top = st.band[layer]
         if k in (0, last):
@@ -139,6 +136,6 @@ def walls(r, ps, layers, zone):
                       named(prefix), where, side)
 
     done = in_parallel(layer_walls, range(len(r.layers)))
-    for adds, _ in done:
+    for adds in done:
         add_all(ps, adds)
-    note(ps, "on the copper's walls where they meet the air", next((drawn for _, drawn in reversed(done) if drawn), []), "wall")
+    note(ps, "on the copper's walls where they meet the air", layers if any(done) else [], "wall")

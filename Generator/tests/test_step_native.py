@@ -17,7 +17,7 @@ import shapely  # noqa: E402
 
 from kese.core.boundary import Boundary  # noqa: E402
 from kese.s7_write.step import write_part  # noqa: E402
-from kese.s7_write.step_writer import StepWriter, text  # noqa: E402
+from kese.s7_write.step_writer import StepWriter, real, text  # noqa: E402
 
 try:
     from OCP.BRepCheck import BRepCheck_Analyzer
@@ -80,7 +80,6 @@ def test_a_boundary_reads_back_as_valid_solids():
 def test_step_strings_and_reals():
     assert text("a'b") == "'a''b'"
     assert text("µ") == "'\\X2\\00B5\\X0\\'"
-    from kese.s7_write.step_writer import real
     assert real(1) == "1.0" and real(1e-5) == "1.E-05" and real(0.000355) == "0.000355" and real(-2.5e-7) == "-2.5E-07"
 
 

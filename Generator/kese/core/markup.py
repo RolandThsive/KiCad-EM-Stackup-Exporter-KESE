@@ -23,7 +23,8 @@ def _braces(s, i):
 
 
 def parse(s):
-    """(runs, overbars) of one line, as the module docstring says."""
+    """(runs, overbars) of one line: runs as (text, the markers around it, outermost first), an
+    overbar as (its first run, the run after its last)."""
     runs, bars = [], []
 
     def walk(i, end, styles, inside):

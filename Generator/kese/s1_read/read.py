@@ -9,7 +9,6 @@ from kese.s1_read import parse_kicad_version as kv
 from parameters import P
 
 
-
 def run(pcb_path, job):
     with job.stage("read", "read"):
         raw = read(pcb_path)
@@ -31,7 +30,7 @@ def read(path):
     warnings = []
     d = kv.dialect(tree)
     gen = child(tree, "generator")
-    generator = f"{gen[1]}" if gen else "unknown"
+    generator = str(gen[1]) if gen else "unknown"
     gv = child(tree, "generator_version")
     if gv:
         generator += f" {gv[1]}"
@@ -63,6 +62,6 @@ def read(path):
     tb = child(tree, "title_block")
     title = str(child(tb, "title")[1]) if tb and child(tb, "title") else ""
     return RawBoard(path=path, name=path.stem, tree=tree, dialect=d, generator=generator,
-                    copper_layers=copper, all_layers=all_layers, file_thickness=file_thickness,
+                    copper_layers=copper, file_thickness=file_thickness,
                     title=title, warnings=warnings)
 

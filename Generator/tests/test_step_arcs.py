@@ -114,6 +114,14 @@ def pad(c, r=0.3):
     return shapely.Polygon(facets(c, r, 0.0, 360.0)[:-1])
 
 
+def pad_and_block():
+    """A pad (r 0.3) and a block whose edge passes ERR / 2 (2.5 µm) outside one of its chords; and
+    k, the number of the pad's chords."""
+    k = math.ceil(math.pi / math.acos(1 - ERR / 0.3))
+    x = 0.3 * math.cos(math.pi / k) + ERR / 2
+    return pad((0.0, 0.0)), affinity.rotate(shapely.box(x, -0.02, x + 0.5, 0.02), 180.0 / k, origin=(0, 0)), k
+
+
 def test_circles_and_round_ends_become_arcs():
     ring = pad((0.0, 0.0), 1.0).difference(pad((0.0, 0.0), 0.4))
     assert arcs(ring) == [180, 180, 180, 180]                       # two whole circles, in halves
@@ -142,16 +150,13 @@ def test_an_outline_may_touch_an_arc_where_it_joins_it_but_not_cross_it():
 
 
 def test_arcs_of_two_polygons_that_would_overlap_stay_straight():
-    k = math.ceil(math.pi / math.acos(1 - ERR / 0.3))                 # the pad's chords turn 360 / k degrees
+    a, block, k = pad_and_block()                                     # the pad's chords turn 360 / k degrees
     # circles 1 µm apart, or 1 µm into each other: then only the far halves are arcs
     for d, expect in ((0.6 + 0.001, [180] * 4), (0.6 - 0.001, [180, 180])):
-        a = affinity.rotate(pad((0.0, 0.0)), 180.0 / k, origin=(0, 0))
-        b = affinity.translate(a, d)
-        assert a.distance(b) > 0.008
-        assert arcs(shapely.MultiPolygon([a, b])) == expect, d
-    a = pad((0.0, 0.0))                           # a block whose edge passes 2.5 µm outside one of the pad's chords
-    x = 0.3 * math.cos(math.pi / k) + ERR / 2
-    block = affinity.rotate(shapely.box(x, -0.02, x + 0.5, 0.02), 180.0 / k, origin=(0, 0))
+        turned = affinity.rotate(a, 180.0 / k, origin=(0, 0))
+        b = affinity.translate(turned, d)
+        assert turned.distance(b) > 0.008
+        assert arcs(shapely.MultiPolygon([turned, b])) == expect, d
     assert not a.intersects(block)
     assert arcs(shapely.MultiPolygon([a, block])) == [180]          # the half away from the block
 
@@ -159,11 +164,8 @@ def test_arcs_of_two_polygons_that_would_overlap_stay_straight():
 def test_an_arc_is_kept_where_the_edge_near_it_is_at_another_height():
     """A pad on the lower slice and a block on the upper one, 2.5 µm off the pad's chord: in plan
     they come closer than the bulge, but they never share a height."""
-    k = math.ceil(math.pi / math.acos(1 - ERR / 0.3))
-    a = pad((0.0, 0.0))
-    x = 0.3 * math.cos(math.pi / k) + ERR / 2
-    block = snapped(affinity.rotate(shapely.box(x, -0.02, x + 0.5, 0.02), 180.0 / k, origin=(0, 0)))
-    lower, upper = snapped(a), block
+    a, block, _ = pad_and_block()
+    lower, upper = snapped(a), snapped(block)
     b = Boundary("part", [0.0, 0.1, 0.2, 0.3], [(0.0, 0.1, lower), (0.2, 0.3, upper)],
                  [(0.0, lower, False), (0.1, lower, True), (0.2, upper, False), (0.3, upper, True)])
     topo = with_arcs(topology_of(b))

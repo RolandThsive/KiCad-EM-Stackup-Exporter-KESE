@@ -4,7 +4,7 @@ from datetime import UTC, datetime
 from pathlib import Path
 
 # the assembly's own entities, #1 to #24
-ORIGIN, CONTEXT, PRODUCT, DEFINITION, REPRESENTATION = 11, 19, 7, 5, 10
+ORIGIN, CONTEXT, DEFINITION, REPRESENTATION = 11, 19, 5, 10
 FIRST_FREE = 25
 PER_LINE = 8                      # references per line in a long list
 
@@ -19,8 +19,8 @@ def real(x):
 
 
 def reals(a):
-    """Every number of an array as STEP writes reals (as real() does), a flat list: one repr per
-    number, which is the cost of a big file's points."""
+    """Every number of an array as real() writes it, as a flat list (one repr per number: the cost
+    of a big file's points)."""
     return [s if "e" not in s else real(float(s)) for s in map(repr, map(float, a.ravel().tolist()))]
 
 

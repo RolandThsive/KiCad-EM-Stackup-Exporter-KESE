@@ -7,8 +7,6 @@ from kese.core.shapes2d import union
 from parameters import P
 
 
-
-
 def via_openings(items):
     """Mask openings over the vias that are not tented, KiCad frame."""
     C = P.Copper
@@ -36,7 +34,7 @@ def min_width_joined(items, openings, side):
     as KiCad plots the mask (plot_board_layers.cpp, GenerateLayerPoly): every opening grown by half
     the width less 1 nm, joined, shrunk back (corners chamfered), and the exact openings added back."""
     w = items.mask_min_width
-    if not w or w <= 0 or openings.is_empty:
+    if w <= 0 or openings.is_empty:
         return openings
     grow = w / 2 - 1e-6
     joined = openings.buffer(grow, join_style="bevel").buffer(-grow, join_style="bevel")
@@ -57,6 +55,11 @@ def mask_regions(r):
     for side in ("F", "B"):
         region = sh.diff(sh.diff(r.outline, r.bores_side[side]), r.mask_open[side])
         if M.MASK_EDGE_PULLBACK_MM > 0:
-            inset = sh.snap(r.outline.buffer(-M.MASK_EDGE_PULLBACK_MM, quad_segs=M.MASK_WALL_QUAD_SEGS * 2))
-            region = sh.inter(region, inset)
+            region = sh.inter(region, pulled_back(r))
         r.mask[side] = region
+
+
+def pulled_back(r):
+    """The outline shrunk by MASK_EDGE_PULLBACK_MM: how close mask and silk come to the edge."""
+    M = P.SolderMask
+    return sh.snap(r.outline.buffer(-M.MASK_EDGE_PULLBACK_MM, quad_segs=M.MASK_WALL_QUAD_SEGS * 2))

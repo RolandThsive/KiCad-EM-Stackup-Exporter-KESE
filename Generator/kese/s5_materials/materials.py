@@ -77,7 +77,7 @@ def material_for(part, role, props, stackup, mode):
     return m
 
 
-def color(ps, stackup, mode, log=lambda s: None):
+def color(ps, stackup, mode, log):
     """-> {part: material dict}; also writes prism.material."""
     if P.Color.USE_STACKUP_COLORS and stackup is not None:
         for layer, value in unknown_colors(stackup):

@@ -4,7 +4,7 @@ import numpy as np
 import shapely
 from shapely.geometry import Polygon
 
-from kese.core.shapes2d import EMPTY, as_region, diff, grid, inter, joined, meeting, polys_only, snap
+from kese.core.shapes2d import EMPTY, as_region, diff, grid, inter, meeting, polys_only, side_by_side, snap
 
 
 def grown_parts(parts, t, **style):
@@ -22,8 +22,7 @@ def grow(g, t, **style):
     """The region grown by t, every part on its own, on the grid, and only the parts that then meet
     joined (as snap(g.buffer(t, **style)), but without one buffer of the whole region, which costs
     seconds on a big layer)."""
-    grown = grown_parts(shapely.get_parts(polys_only(g)), t, **style)
-    return joined([p for q in grown for p in shapely.get_parts(polys_only(q)) if not p.is_empty])
+    return side_by_side(grown_parts(shapely.get_parts(polys_only(g)), t, **style))
 
 
 def near(g, other, d):

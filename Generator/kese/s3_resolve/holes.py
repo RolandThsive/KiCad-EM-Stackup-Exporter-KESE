@@ -1,6 +1,6 @@
-"""Holes: plated holes cut by the board edge, the laminate drilled where holes pass, the plating
-barrels, and the exact circle of every round hole.  As in KiCad, every distinct set of holes is
-joined only once (Regions.holes_made) and reused wherever the same holes pass."""
+"""Holes: plated holes cut by the board edge, the laminate drilled where holes pass, and the
+plating barrels.  Every distinct set of holes is joined only once (Regions.holes_made) and reused
+wherever the same holes pass."""
 from collections import defaultdict
 
 from kese.core import shapes2d as sh

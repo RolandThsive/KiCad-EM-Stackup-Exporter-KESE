@@ -1,15 +1,10 @@
-"""The plain mathematics every other module builds on: distances, circles through points, arcs,
+"""The plain mathematics every other module builds on: circles through points, arcs,
 Bezier curves and rotations.  Nothing here reads parameters or knows about boards."""
 import math
 
 import numpy as np
 
 TAU = 2 * math.pi
-
-
-def distance(a, b):
-    """Euclidean distance between two points."""
-    return math.hypot(a[0] - b[0], a[1] - b[1])
 
 
 def rotation(origin, angle_deg):

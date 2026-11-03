@@ -22,15 +22,9 @@ def with_arcs(topo):
     if topo.edges_not_used_twice or not len(topo.edge_start):
         return topo
     o = outline_of(topo)
-    if o is None:
-        return topo
-    pieces = arcs_of(o)
-    if not pieces:
-        return topo
-    pieces = clear(o, pieces, P.Geometry.SNAP_GRID_MM)
-    if not pieces:
-        return topo
-    return rebuilt(topo, o, pieces)
+    pieces = arcs_of(o) if o is not None else []
+    pieces = clear(o, pieces, P.Geometry.SNAP_GRID_MM) if pieces else []
+    return rebuilt(topo, o, pieces) if pieces else topo
 
 
 def rebuilt(topo, o, pieces):
@@ -103,9 +97,10 @@ def rebuilt(topo, o, pieces):
     loop_count = np.bincount(use_loop[keep_use], minlength=L)[kept_loops]
 
     mw = np.flatnonzero(merged)
-    bottom, up_end, top, down_start = (topo.use_edge[first_use[mw] + k] for k in range(4))
+    fu_mw = first_use[mw]
+    bottom, up_end, top, down_start = (topo.use_edge[fu_mw + k] for k in range(4))
     group_key, group = np.unique(emap[bottom], return_inverse=True)
-    go = topo.use_forward[first_use[mw]] == along[bottom]        # the wall runs along its arc
+    go = topo.use_forward[fu_mw] == along[bottom]                # the wall runs along its arc
     mp = seg_piece[eseg[bottom]]
     pos = seg_pos[eseg[bottom]]
     is_end = np.where(go, pos == piece_len[mp] - 1, pos == 0)
@@ -124,7 +119,6 @@ def rebuilt(topo, o, pieces):
     ggo[group] = go
     gtop = np.zeros(G, dtype=np.int64)
     gtop[group] = emap[top]
-    fu_mw = first_use[mw]
     # a cylinder's loop: along its bottom arc, up at the arc's end, back along its top arc, down at its start
     cyl_use_edge = np.stack([group_key, emap[up_end[end_wall]], gtop, emap[down_start[start_wall]]], axis=1)
     cyl_use_fwd = np.stack([ggo, topo.use_forward[fu_mw[end_wall] + 1], ~ggo,
@@ -141,7 +135,6 @@ def rebuilt(topo, o, pieces):
     if removed[o.pt[origin_vertex[origin_vertex >= 0]]].any():
         raise AssertionError("a plane starts at a vertex that went")
     origin_vertex = np.where(origin_vertex >= 0, vmap[np.maximum(origin_vertex, 0)], -1)
-    nk = len(kept_f)
     return replace(
         topo, xyz=topo.xyz[keep_v], edge_start=edge_start, edge_end=edge_end, vertical=vertical,
         use_edge=np.r_[new_edge[keep_use], cyl_use_edge.ravel()],
@@ -156,6 +149,6 @@ def rebuilt(topo, o, pieces):
         plane_ref=topo.plane_ref[used_plane], plane_origin_vertex=origin_vertex,
         face_shell=np.r_[topo.face_shell[kept_f], gshell],
         edge_circle=edge_circle, edge_ccw=edge_ccw,
-        face_cylinder=np.r_[np.full(nk, -1), cyl_of_group],
+        face_cylinder=np.r_[np.full(len(kept_f), -1), cyl_of_group],
         circle_xy=np.array([c for c, _ in o.circles]), circle_r=np.array([r for _, r in o.circles]),
         cylinder_circle=cyl_keys // nlev, cylinder_z=o.levels[cyl_keys % nlev])

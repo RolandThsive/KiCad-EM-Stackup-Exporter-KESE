@@ -6,6 +6,8 @@ import shapely
 
 from kese.core import shapes2d as sh
 
+NODING_ROUNDS = 8        # of a set operation on the grid, until it changes nothing (one or two, in practice)
+
 
 def near_edge():
     """How far from an edge a vertex may lie and still count as on it: half a grid diagonal (GEOS
@@ -48,7 +50,7 @@ def pairs_in(a, b, c, d):
     return np.isin(key[:len(a)], key[len(a):])
 
 
-def share_vertices(regions, sources=()):
+def share_vertices(regions, sources):
     """The regions, every ring with every vertex of the other regions and the sources that lies on one
     of its edges, and the indices of the regions that changed."""
     pieces, owner = [], []
@@ -92,7 +94,7 @@ def share_vertices(regions, sources=()):
     return out, changed
 
 
-def walls_split_at_vertices(walls, sources=()):
+def walls_split_at_vertices(walls, sources):
     """The wall segments of several regions, each split at every vertex of the other regions and the
     sources that lies on it (near_edge()), nothing moved.  -> the segments per region, (n, 2, 2)."""
     segments = np.concatenate(walls)
@@ -121,9 +123,6 @@ def walls_split_at_vertices(walls, sources=()):
     of = np.concatenate([region[whole], region[ed], region[ed[last]]])
     order = np.argsort(of, kind="stable")
     return np.split(out[order], np.cumsum(np.bincount(of, minlength=len(walls)))[:-1])
-
-
-NODING_ROUNDS = 8        # of a set operation on the grid, until it changes nothing (one or two, in practice)
 
 
 def noded(g):

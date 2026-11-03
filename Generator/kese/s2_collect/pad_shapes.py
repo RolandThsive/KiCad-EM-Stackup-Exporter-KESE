@@ -15,10 +15,7 @@ def pad_shape(items, pad, w, h):
     if shape == "rect":
         return box(-w / 2, -h / 2, w / 2, h / 2)
     if shape == "oval":
-        if abs(w - h) < 1e-9:
-            return disk((0, 0), w / 2)
-        d = abs(w - h) / 2
-        return thicken(LineString([(-d, 0), (d, 0)] if w > h else [(0, -d), (0, d)]), min(w, h))
+        return oval(w, h)
     if shape == "roundrect":
         rounded = sh.rounded_rect(-w / 2, -h / 2, w / 2, h / 2, roundrect_ratio(pad) * min(w, h))
         return chamfered(pad, rounded, w, h)
@@ -38,6 +35,14 @@ def pad_shape(items, pad, w, h):
         return union(parts)
     items.skipped[f"pads of shape {shape}"] += 1
     return EMPTY
+
+
+def oval(w, h):
+    """A w x h stadium centred on the origin (a circle when w == h): an oval pad or drill."""
+    if abs(w - h) < 1e-9:
+        return disk((0, 0), w / 2)
+    d = abs(w - h) / 2
+    return thicken(LineString([(-d, 0), (d, 0)] if w > h else [(0, -d), (0, d)]), min(w, h))
 
 
 CORNERS = {"top_left": (-1, -1), "top_right": (1, -1), "bottom_right": (1, 1), "bottom_left": (-1, 1)}
