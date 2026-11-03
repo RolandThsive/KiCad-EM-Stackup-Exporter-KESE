@@ -8,7 +8,7 @@
   "fontLastCodepoint": 11903,
 
   "_hidden": "Not shown and not imported: folders of a desktop run, how many threads, the terminal status line, the custom font file (the web has only KiCad's font), and the preset table (offered as the Preset buttons).",
-  "hidden": ["Run.INPUT_DIR", "Run.OUTPUT_DIR", "Run.WORKERS", "Run.SHOW_PROGRESS", "Silkscreen.FONT_FILE", "Run.PRESETS"],
+  "hidden": ["Run.INPUT_DIR", "Run.OUTPUT_DIR", "Run.WORKERS", "Run.SHOW_PROGRESS", "Silkscreen.FONT_FILE", "Run.PRESETS", "Finish.FINISH_NAME_ALIASES"],
 
   "_forced": "How the browser runs KESE: one worker (there are no threads), no status line.",
   "forced": {"Run.WORKERS": 1, "Run.SHOW_PROGRESS": false},
