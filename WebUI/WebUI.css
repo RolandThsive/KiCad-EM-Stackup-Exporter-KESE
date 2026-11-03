@@ -481,6 +481,14 @@ dialog pre { font-family: var(--mono); font-size: 12px; white-space: pre-wrap; m
 .swatch-hex { font-family: var(--mono); font-size: 12px; font-weight: 600; letter-spacing: 0.04em; pointer-events: none; }
 .table-body > .table-row > .swatch { max-width: none; }
 .field-head .mono-name.field-note { margin-left: auto; }
+/* Advanced: the control, then the parameter's name at the right of the same row */
+.field-body { display: flex; align-items: center; gap: 10px; }
+.field-body > :first-child { min-width: 0; }
+.field-body > .dropdown, .field-body > .table-edit, .field-body > .dropdown .dropdown-btn, .field-body > .text-input, .field-body > .multi-row { flex: 1; }
+.field-name { margin-left: auto; flex: 0 1 auto; max-width: 48%; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; text-align: right; }
+.field-body:has(> .table-edit, > .multi-row) { align-items: flex-start; }
+.field-body:has(> .table-edit) .field-name, .field-body:has(> .multi-row) .field-name { padding-top: 9px; }
+.field.inactive .field-name::after { content: " (not used now)"; }
 #sections-note { margin: 8px 0 4px; }
 #run-note { margin: 6px 0 0; font-size: 12px; }
 #run-note:empty { display: none; }

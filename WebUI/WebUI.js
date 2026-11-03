@@ -377,7 +377,7 @@ function tableWidget(p, v, set) {
   const x = v[sel], body = el("div", { class: "table-body" });
   if (shape === "record") {
     for (const [k, y] of Object.entries(x))
-      body.append(el("div", { class: "table-row" }, el("span", { class: "table-label" }, choiceText(k)),
+      body.append(el("div", { class: "table-row" }, k === "color" ? null : el("span", { class: "table-label" }, choiceText(k)),
         valueWidget(y, (z) => put({ ...state.values[p.key][sel], [k]: z }))));
   } else if (shape === "layers") {
     const names = namesOf(LAYER_NAMES_FROM[p.key]);
@@ -403,11 +403,14 @@ function field(p) {
   const head = el("div", { class: "field-head" }, el("span", { class: "field-label" }, text, unit ? el("span", { class: "unit" }, ` (${unit})`) : null));
   attachHelp(head, p.key);
   if (state.ui === "advanced") {
-    head.append(el("span", { class: "mono-name field-note" }, p.module === p.key.split(".")[0] ? p.name : p.key));
     if (changed) head.append(el("button", { type: "button", class: "reset-one", "data-tip": `Back to the file's value: ${showValue(p.default)}`,
       onclick: () => { state.noneEditing.delete(p.key); setValues({ [p.key]: clone(p.default) }, "field"); } }, "↺"));
   }
-  return el("div", { class: "field" + (changed ? " changed" : ""), "data-key": p.key }, head, widget(p));
+  // Advanced: the parameter's name sits beside its control, so the title keeps the whole width for one line
+  const control = state.ui === "advanced"
+    ? el("div", { class: "field-body" }, widget(p), el("span", { class: "mono-name field-name", title: p.key }, p.module === p.key.split(".")[0] ? p.name : p.key))
+    : widget(p);
+  return el("div", { class: "field" + (changed ? " changed" : ""), "data-key": p.key }, head, control);
 }
 
 /* ---- Colorization: one dropdown per kind of part -----------------------------------------------------
@@ -473,8 +476,8 @@ function colorGroup(g, items) {
   const x = valueOf(sel), body = el("div", { class: "table-body" });
   if (x && typeof x === "object") {
     for (const [k, y] of Object.entries(x))
-      body.append(el("div", { class: "table-row" }, el("span", { class: "table-label" }, choiceText(k)),
-        valueWidget(y, (z) => put({ ...state.values[sel.param][sel.key], [k]: z }))));
+      body.append(el("div", { class: "table-row" }, k === "color" ? null : el("span", { class: "table-label" }, choiceText(k)),
+        valueWidget(y, (z) => put({ ...state.values[sel.param][sel.key], [k]: z }))));      // the swatch says what it is
   } else body.append(el("div", { class: "table-row" }, valueWidget(x, put)));
   return el("div", { class: "field" + (changed.length ? " changed" : ""), "data-group": g.title }, head,
     el("div", { class: "table-edit" }, el("div", { class: "table-head" }, pick), body));
