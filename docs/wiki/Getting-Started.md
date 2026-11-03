@@ -30,8 +30,12 @@ packages are:
 
 KESE writes every format itself, STEP included, with no CAD kernel. The program checks the
 packages before it starts and prints the `pip install` line to run, instead of a traceback. Only
-the tests that read STEP files back use OpenCascade (`python -m pip install cadquery-ocp`), and
-they skip that check without it.
+the tests that read STEP files back use OpenCascade, 7.8 by preference
+([Compatibility](Compatibility.md#204-python-and-packages)), and they skip that check without it:
+
+```bash
+python -m pip install "cadquery-ocp==7.8.1.1.post1"
+```
 
 Or install the project itself through `pyproject.toml`, with the packages unpinned (it also
 accepts Python 3.11, which is not tested):

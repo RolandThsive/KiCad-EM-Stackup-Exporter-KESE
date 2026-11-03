@@ -243,8 +243,12 @@ square of the face's edges: one face of `22_hdi_module` with 8,270 edges takes 1
 the suite reads a file back one part at a time (`tests/step_audit.py`). In a file KESE wrote, each
 part's entities stand on their own; only the assembly's, `#1` to `#24` at the end, are shared. Each
 part is copied into a small STEP file of its own, with the assembly cut down to that part, and read
-back in a process of its own, the biggest parts first. A solid is checked on its own either way, so
-the counts are those of reading the whole file: on every test board the invalid solids, free edges,
+back in a process of its own, the biggest parts first. A part's file that does not read is an
+error, and a solid that does not come back as a solid counts as invalid (OCP 7.9 makes a shell with
+a face left out a shell, where 7.8 makes it an invalid solid), so a part cut in the wrong place
+cannot pass as clean. A file laid out otherwise, written by another program or with its line ends
+changed, is read whole. A solid is checked on its own either way, so the counts are those of
+reading the whole file: on every test board the invalid solids, free edges,
 number of solids and their volume come out the same both ways, and so does a file with a fault in
 it. On a 4-core machine:
 
@@ -266,9 +270,13 @@ run.
 `python tests/test_boards.py` hands the parts to background processes, one per processor thread
 and at least two (`AUDITORS` in `tests/test_boards.py`), while it exports the next boards, and
 prints a board's line once every part of its file is checked, in the order the boards ran, with
-the time the parts took added up (`STEP read back in 3.4 s`; they ran side by side, so it passed
-sooner). Under `pytest` every board is checked in turn, the parts of a file of 20 MB or more in
-processes of their own, one per processor thread, and those of a smaller file one after another.
+the number of parts and the time they took added up (`STEP read back: 19 parts, 2.3 s`; they ran
+side by side, so it passed sooner). A part that does not read fails the board (`STEP read-back
+failed: ...`). Without OCP, or with one that lacks what the check uses (8.0), the line says so
+(`STEP not read back: ...`) and the board is not failed for it. Under `pytest` every board is
+checked in turn, the parts of a file of 20 MB or more in processes of their own, one per processor
+thread, and those of a smaller file one after another; without a usable OCP it warns, and the STEP
+tests show as skipped, not as passed.
 
 The test boards in `tests/boards/` cover:
 
@@ -308,7 +316,7 @@ finds an error before any work or a warning, not a Python error, in about two se
 
 | Test | Path | What it checks |
 |---|---|---|
-| `test_step_native.py` | the STEP writer (`kese/s7_write/step.py`) and the suite's read-back (`tests/step_audit.py`) | a box with a through hole beside a second box, written from their faces and read back by OpenCascade as two valid solids with no free edge, the right faces and the right volume; names with a quote and letters outside ASCII come back as they went in. A file of three such parts, read back part by part, gives what the whole file gives, also with a face left out of one part. Needs OCP (`python -m pip install cadquery-ocp`); takes a few seconds |
+| `test_step_native.py` | the STEP writer (`kese/s7_write/step.py`) and the suite's read-back (`tests/step_audit.py`) | a box with a through hole beside a second box, written from their faces and read back by OpenCascade as two valid solids with no free edge, the right faces and the right volume; names with a quote and letters outside ASCII come back as they went in. A file of three such parts, read back part by part, gives what the whole file gives, also with a face left out of the first part and of the last; a part cut in the wrong place does not pass as clean, and a file another program wrote, or one with other line ends, is read whole. Needs OCP (`python -m pip install "cadquery-ocp==7.8.1.1.post1"`), and is skipped without it; takes a few seconds |
 
 ## 17.5 Inputs KESE Refuses Or Changes
 

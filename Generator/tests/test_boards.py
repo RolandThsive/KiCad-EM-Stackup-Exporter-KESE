@@ -24,6 +24,7 @@ import os
 import shutil
 import sys
 import time
+import warnings
 from concurrent.futures import ProcessPoolExecutor
 from contextlib import contextmanager
 from pathlib import Path
@@ -96,8 +97,8 @@ def run_board(pcb, mode, audit=step_audit):
     if "step" in formats:
         try:
             step = audit(out_dir / f"{pcb.stem}.step")
-        except ImportError:                     # OCP is not installed: the STEP file is not checked
-            step = None
+        except ImportError as e:                # OCP is not installed, or lacks what the check uses
+            warnings.warn(f"STEP file not read back: {e}", stacklevel=1)
     return ok, lines, volumes, step
 
 
@@ -152,11 +153,13 @@ def report(queue, wait):
         read_back = ""
         if step is not None:
             try:
-                step = total([f.result() for f in step])
+                parts_read, step = len(step), total([f.result() for f in step])
                 problems += step_problems(step)
-                read_back = f"   STEP read back in {step[2]:.1f} s"
-            except ImportError:                 # OCP is not installed: the STEP file is not checked
-                pass
+                read_back = f"   STEP read back: {parts_read} parts, {step[2]:.1f} s"
+            except ImportError as e:            # OCP is not installed, or lacks what the check uses
+                read_back = f"   STEP not read back: {e}"
+            except Exception as e:              # a part that did not read back, or a process that died
+                problems.append(f"STEP read-back failed: {e}")
         failed += bool(problems)
         print(f"{key:56s} {'FAIL' if problems else 'ok':4s} {seconds:7.1f} s{read_back}", flush=True)
         for p in problems:

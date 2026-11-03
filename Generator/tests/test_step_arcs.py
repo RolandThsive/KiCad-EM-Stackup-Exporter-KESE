@@ -27,7 +27,7 @@ from kese.s7_write.step_curved import with_arcs  # noqa: E402
 from kese.s7_write.step_topology import topology_of  # noqa: E402
 from kese.s7_write.step_writer import StepWriter  # noqa: E402
 from parameters import P  # noqa: E402
-from test_step_native import STEPControl_Reader, read_back  # noqa: E402
+from test_step_native import STEPControl_Reader, read_back, without_ocp  # noqa: E402
 
 ERR = 0.005                                       # mm: the chords' largest distance from the circle
 
@@ -191,8 +191,8 @@ def test_an_arc_is_kept_where_the_edge_near_it_is_at_another_height():
 
 
 def test_written_files_read_back_as_valid_solids():
-    if STEPControl_Reader is None:
-        return                                    # OCP is not installed
+    if without_ocp():
+        return
     cases = [pad((0.0, 0.0), 1.0).difference(pad((0.0, 0.0), 0.4)),
              shapely.LineString([(0, 0), (3, 0), (3, 2)]).buffer(0.25, 32),
              bite(ERR / 2, True), bite(4 * ERR, False), notch(0.0), notch(0.003),
