@@ -296,7 +296,14 @@ a turned footprint) and finds each where KiCad 7.0.11 plots it, to 5 µm, in abo
 (`python tests/test_text_layout.py`); `tests/test_kicad_version.py`, which checks the rules of each
 KiCad version (release of each format number, copper layers by their place, the zero mask margin,
 KiCad 4's text size, the text pen, segment-filled zones, the old overbar, markup) against what
-KiCad's own parser does, without a board, in under a second; and a STEP test, also on its own
+KiCad's own parser does, without a board, in under a second; `tests/test_enabled.py`, which turns
+each part switch off in turn (`BOARD_ENABLED`, `COPPER_ENABLED`, `FINISH_ENABLED`,
+`SOLDER_MASK_ENABLED`, `SILKSCREEN_ENABLED`) and finds only that switch's parts gone and every other
+part as it is with all of them on, and a run with all of them off refused, in about five seconds
+(`python tests/test_enabled.py`);
+`tests/test_bad_input.py`, which gives settings outside their values and a damaged board file and
+finds an error before any work or a warning, not a Python error, in about two seconds
+(`python tests/test_bad_input.py`); and a STEP test, also on its own
 (`python tests/test_step_native.py`):
 
 | Test | Path | What it checks |
