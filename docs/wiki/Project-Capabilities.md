@@ -46,7 +46,7 @@ More in [Output Modes](Output-Modes.md).
 | File | What it holds |
 |---|---|
 | GLB | One mesh per part with its colour; metres by default (`Run.UNITS`) |
-| STEP | Written by KESE itself, no CAD kernel needed: every part under its own name, as closed solids of flat faces, curves as polygons, or with `Run.STEP_EXACT_ARCS` true circular arcs and cylinders (4 to 9 times smaller files); the same parts as every other format, as the part switches set them |
+| STEP | Written by KESE itself, no CAD kernel needed: every part under its own name, as closed solids with true circular arcs and cylinders (`Run.STEP_EXACT_ARCS`, the default; 4 to 9 times smaller files than flat faces with curves as polygons); the same parts as every other format, as the part switches set them |
 | STL | One closed file per part, in `stl/` |
 | OBJ | One object per part, colours in an `.mtl` |
 | `materials.json` | Per part: role, layer, net, z range, εr, tanδ, conductivity, colour, file names |

@@ -26,10 +26,10 @@ mask colour of its own, saved by KiCad 7. Between them they use most of what KES
 | Visual GLB with `--verify` | 20 s, 17.1 MB | 15 s, 8.8 MB | 21 s, 18.3 MB |
 
 The times are the ones the run prints, with the default parameters on one Linux machine with 4
-cores. The numbers were measured with the finish off (`--set Finish.FINISH_ENABLED=False`). The STEP
-files were made with `--for hfss --verify`: millimetres and KiCad's origin, and with the solder mask
-and silkscreen switched off as well (`--set SolderMask.SOLDER_MASK_ENABLED=False --set
-Silkscreen.SILKSCREEN_ENABLED=False`), so they have four parts fewer than the GLB files ([Project Capabilities](Project-Capabilities.md#45-tested-sizes) gives
+cores. The numbers were measured with the earlier defaults: the finish off, the GLB files with the
+solder mask and silkscreen, and the STEP files with flat faces (`Run.STEP_EXACT_ARCS = False`). The
+STEP files were made with `--for hfss --verify`: millimetres and KiCad's origin, without the mask
+and silkscreen (the default now), so they have four parts fewer than the GLB files ([Project Capabilities](Project-Capabilities.md#45-tested-sizes) gives
 them with both). Read back with OpenCascade, every solid in them is valid and closed, and their
 volume is the one the Verifier finds. The same three files are in `featureTest/` as
 `21_rf_module`, `22_hdi_module` and `23_pcie_card`, so the regression suite checks every part of

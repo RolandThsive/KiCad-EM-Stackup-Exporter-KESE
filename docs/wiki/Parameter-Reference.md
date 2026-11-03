@@ -51,7 +51,7 @@ What to make, where, and in which formats.
 
 | Name | Default | Range | Meaning |
 |---|---|---|---|
-| `STEP_EXACT_ARCS` | `False` | bool | Write circles and arcs as true curves: where a part's outline runs through vertices on one circle (holes, vias, round pads, track ends, arc tracks, round outlines), their chords become one `CIRCLE` edge and the walls on them one `CYLINDRICAL_SURFACE` face, at every height alike; every other edge stays a line and every other face a plane. Left straight where another edge at that height passes closer to the vertices than the arc bulges out from them, which the arc would cross. Written by KESE's own writer; files are about 4 to 9 times smaller (the RF module in `Input/`, in m: 30 MB instead of 230 MB, written in 2.6 s instead of 4.2 s). Meshes are unchanged |
+| `STEP_EXACT_ARCS` | `True` | bool | Write circles and arcs as true curves: where a part's outline runs through vertices on one circle (holes, vias, round pads, track ends, arc tracks, round outlines), their chords become one `CIRCLE` edge and the walls on them one `CYLINDRICAL_SURFACE` face, at every height alike; every other edge stays a line and every other face a plane. Left straight where another edge at that height passes closer to the vertices than the arc bulges out from them, which the arc would cross. Written by KESE's own writer; files are about 4 to 9 times smaller (the RF module in `Input/`, in m: 30 MB instead of 230 MB, written in 2.6 s instead of 4.2 s). Meshes are unchanged |
 | `STEP_ARC_FIT_TOLERANCE_MM` | `0.0002` | mm > 0 | Vertices within this of one circle form an arc (2 x the snap grid) |
 | `STEP_ARC_MIN_POINTS` | `5` | int >= 3 | An arc runs through at least this many vertices |
 | `STEP_ARC_MIN_SWEEP_DEG` | `10.0` | degrees | and turns at least this far |
@@ -59,7 +59,7 @@ What to make, where, and in which formats.
 
 Every format holds the same parts: the ones switched on with the `..._ENABLED` switch of their module
 (`Board.BOARD_ENABLED`, `Copper.COPPER_ENABLED`, `Finish.FINISH_ENABLED`, `SolderMask.SOLDER_MASK_ENABLED`,
-`Silkscreen.SILKSCREEN_ENABLED`). A STEP file with the mask and silkscreen is 1.5 to 1.6 times as big
+`Silkscreen.SILKSCREEN_ENABLED`; mask and silkscreen are off by default). A STEP file with the mask and silkscreen is 1.5 to 1.6 times as big
 (the PCIe card in `Input/`, in mm: 348 MB and 320 solids written in 8.8 s, against 215 MB and 84 solids
 in 5.6 s without them).
 
@@ -157,7 +157,7 @@ Short name `SolderMask`. Details in [Solder Masks](Solder-Masks.md).
 
 | Name | Default | Range | Meaning |
 |---|---|---|---|
-| `SOLDER_MASK_ENABLED` | `True` | bool | Build the solder mask and write it to every file |
+| `SOLDER_MASK_ENABLED` | `False` | bool | Build the solder mask and write it to every file (off by default: many more solids, much bigger STEP files) |
 | `MASK_OVER_LAMINATE_MM` | `0.010` | mm > 0 | Mask thickness over bare laminate (typical 0.020 to 0.030) |
 | `MASK_OVER_COPPER_MM` | `0.010` | mm > 0 | Mask thickness on top of copper (typical 0.010 to 0.015) |
 | `USE_STACKUP_MASK_THICKNESS` | `True` | bool | The first mask thickness found in the stack-up (normally `F.Mask`'s) is used for both values on both faces |
@@ -173,7 +173,7 @@ Details in [Silkscreens](Silkscreens.md).
 
 | Name | Default | Range | Meaning |
 |---|---|---|---|
-| `SILKSCREEN_ENABLED` | `True` | bool | Build the silkscreen and write it to every file |
+| `SILKSCREEN_ENABLED` | `False` | bool | Build the silkscreen and write it to every file (off by default) |
 | `SILK_THICKNESS_MM` | `0.010` | mm > 0 | Ink thickness (typical 0.010 to 0.020) |
 | `SILKSCREEN_OVER_COPPER` | `False` | bool | Keep ink where the mask is open; `False` clips it off the pads as fabricators do. With `True` the ink lies on the copper and the finish is left out under it |
 | `FONT_FILE` | `None` | None or a file in `kese/assets/fonts/` | Custom stroke-font JSON or Hershey `.jhf`; `None` = KiCad newstroke |

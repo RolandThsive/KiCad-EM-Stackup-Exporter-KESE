@@ -59,7 +59,7 @@ KiCad itself is not needed, only the `.kicad_pcb` file. Footprints are read from
 | Format | What is in it | Units | Written by |
 |---|---|---|---|
 | GLB (binary glTF 2.0) | one mesh per part, PBR materials, vertex normals, bufferView targets | `Run.UNITS` (viewers expect m) | KESE (`kese/s7_write/glb.py`) |
-| STEP AP214 | one named shape per part (every part switched on: board, copper, finish, mask, silk): the part's closed solids from stage 6, one per separate body, with planar faces (curves are polygons, as in the meshes), or with `Run.STEP_EXACT_ARCS` circular arcs (`CIRCLE`) and cylindrical walls (`CYLINDRICAL_SURFACE`) where the outline is round | `Run.UNITS`: the file declares millimetres or metres | KESE (`kese/s7_write/step.py`) |
+| STEP AP214 | one named shape per part (every part switched on: by default board, copper and finish): the part's closed solids from stage 6, one per separate body, with circular arcs (`Run.STEP_EXACT_ARCS`, the default) (`CIRCLE`) and cylindrical walls (`CYLINDRICAL_SURFACE`) where the outline is round and planar faces elsewhere, or planar faces only (curves as polygons, as in the meshes) with `STEP_EXACT_ARCS = False` | `Run.UNITS`: the file declares millimetres or metres | KESE (`kese/s7_write/step.py`) |
 | STL (binary) | one file per part | `Run.UNITS` | KESE (`kese/s7_write/stl.py`) |
 | OBJ + MTL | one object per part, normals, colours | `Run.UNITS` | KESE |
 

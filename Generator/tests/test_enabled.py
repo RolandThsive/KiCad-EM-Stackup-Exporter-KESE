@@ -24,6 +24,19 @@ SWITCHES = {"Board.BOARD_ENABLED": {"board"}, "Copper.COPPER_ENABLED": {"copper"
 
 
 @contextmanager
+def all_on():
+    """Every switch on for the block (mask and silk are off by default), put back after it."""
+    saved = {key: getattr(getattr(P, key.split(".")[0]), key.split(".")[1]) for key in SWITCHES}
+    for key in SWITCHES:
+        P.override(key, True)
+    try:
+        yield
+    finally:
+        for key, value in saved.items():
+            P.override(key, value)
+
+
+@contextmanager
 def switched_off(key):
     module, name = key.split(".")
     saved = getattr(getattr(P, module), name)
@@ -43,13 +56,18 @@ def prisms(mode="simulation"):
 
 
 def test_each_switch_leaves_out_only_its_parts():
-    for mode in ("simulation", "visual"):
-        every = prisms(mode)
-        for key, roles in SWITCHES.items():
-            assert any(r in roles for _, r, *_ in every), f"{PCB.stem} has no {roles} parts to leave out"
-            with switched_off(key):
-                got = prisms(mode)
-            assert got == {p for p in every if p[1] not in roles}, f"{key} = False in {mode} mode"
+    with all_on():
+        for mode in ("simulation", "visual"):
+            check_mode(mode)
+
+
+def check_mode(mode):
+    every = prisms(mode)
+    for key, roles in SWITCHES.items():
+        assert any(r in roles for _, r, *_ in every), f"{PCB.stem} has no {roles} parts to leave out"
+        with switched_off(key):
+            got = prisms(mode)
+        assert got == {p for p in every if p[1] not in roles}, f"{key} = False in {mode} mode"
 
 
 def test_all_off_is_refused():

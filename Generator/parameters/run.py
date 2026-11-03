@@ -65,7 +65,7 @@ SMOOTH_SHADE_ANGLE_DEG = 25.0          # edges sharper than this stay crisp; cyl
 #   height passes closer to the vertices than the arc bulges out from them (a sliver of a few µm),
 #   which the arc would cross.  Smaller files and true cylinders for CAD and EM solvers; every
 #   other edge stays a line and every other face a plane.  Meshes (GLB / STL / OBJ) are unchanged.
-STEP_EXACT_ARCS = False
+STEP_EXACT_ARCS = True
 STEP_ARC_FIT_TOLERANCE_MM = 0.0002     # vertices within this of one circle form an arc (2 x the snap grid)
 STEP_ARC_MIN_POINTS = 5                # at least this many vertices in a run
 STEP_ARC_MIN_SWEEP_DEG = 10.0          # and turning at least this far
@@ -74,7 +74,7 @@ STEP_ARC_MAX_TURN_DEG = 30.0           # but at most this far at one vertex: a p
 #
 # Which parts are made, in every format and mode alike, is set by one switch per kind of part:
 #   Board.BOARD_ENABLED, Copper.COPPER_ENABLED (copper and plated barrels), Finish.FINISH_ENABLED,
-#   SolderMask.SOLDER_MASK_ENABLED, Silkscreen.SILKSCREEN_ENABLED, all True by default.
+#   SolderMask.SOLDER_MASK_ENABLED, Silkscreen.SILKSCREEN_ENABLED; mask and silk are off by default.
 #   STEP with mask and silk is bigger (the PCIe card in Input/, in mm: 348 MB and 320 solids written
 #   in 8.8 s, against 215 MB and 84 solids without them).
 
@@ -98,5 +98,7 @@ PRESETS = {
                 "Copper.COPPER_GROUPING": "net", "Board.DIELECTRIC_GROUPING": "layer", "Run.WRITE_MATERIALS_JSON": True,
                 "Finish.FINISH_ENABLED": False},
     # web viewers (<model-viewer>, three.js): metres, centred, the visible surface only
-    "viewer": {"Run.MODE": "visual", "Run.FILE_FORMAT": ["glb"], "Run.UNITS": "m", "Run.ORIGIN": "center"},
+    # (with the solder mask and silkscreen, which are off by default, so the board looks as made)
+    "viewer": {"Run.MODE": "visual", "Run.FILE_FORMAT": ["glb"], "Run.UNITS": "m", "Run.ORIGIN": "center",
+               "SolderMask.SOLDER_MASK_ENABLED": True, "Silkscreen.SILKSCREEN_ENABLED": True},
 }

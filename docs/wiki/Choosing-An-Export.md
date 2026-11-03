@@ -22,10 +22,11 @@ or the files in `parameters/` change any single value.
 > Every format and both modes hold the same parts: the ones switched on with
 > `Board.BOARD_ENABLED`, `Copper.COPPER_ENABLED` (copper and plated barrels),
 > `Finish.FINISH_ENABLED`, `SolderMask.SOLDER_MASK_ENABLED` and `Silkscreen.SILKSCREEN_ENABLED`,
-> all `True` by default. Switch the mask and silkscreen off when the solver need not see them:
-> a STEP file with them is 1.5 to 1.6 times as big (the PCIe card in `Input/`, in mm: 348 MB and
-> 320 solids against 215 MB and 84 solids), for example
-> `--set SolderMask.SOLDER_MASK_ENABLED=False --set Silkscreen.SILKSCREEN_ENABLED=False`.
+> the board, copper and finish on by default, the solder mask and silkscreen off. Switch the mask
+> and silkscreen on when the solver or the render must see them:
+> `--set SolderMask.SOLDER_MASK_ENABLED=True --set Silkscreen.SILKSCREEN_ENABLED=True`. A STEP file
+> with them is 1.5 to 1.6 times as big (the PCIe card in `Input/`, in mm, with flat faces: 348 MB
+> and 320 solids against 215 MB and 84 solids).
 
 ## 9.2 The Presets
 
@@ -40,6 +41,8 @@ or the files in `parameters/` change any single value.
 | `viewer` | visual | glb | m | center | (unchanged) | (unchanged) | (unchanged) |
 
 `openems` also sets `Finish.FINISH_ENABLED = False`: 80 nm of gold is far below any FDTD mesh cell.
+`viewer` also switches the solder mask and silkscreen on (`SOLDER_MASK_ENABLED`, `SILKSCREEN_ENABLED`),
+so the board looks as made.
 
 A preset is only a set of overrides: `--for hfss --format step glb` writes both.
 
