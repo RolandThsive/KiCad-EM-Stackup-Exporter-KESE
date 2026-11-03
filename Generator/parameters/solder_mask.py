@@ -5,6 +5,10 @@ KiCad's mask layers are NEGATIVE: whatever is drawn on F.Mask / B.Mask, plus eve
 every untented via, is an OPENING.  The mask solid is  outline - openings - holes.
 """
 
+# Build the solder mask and write it to every output file.  Off by default: the mask is many more
+# solids, which make STEP files much bigger and slower to open, and most EM work leaves it out.
+SOLDER_MASK_ENABLED = False
+
 # Thickness in mm.  LPI mask is thinner on top of copper than over bare laminate.
 # Typical production: 0.010-0.015 over copper, 0.020-0.030 over laminate.
 # KiCad's stackup gives one value; it is used for both unless USE_STACKUP_MASK_THICKNESS is False.

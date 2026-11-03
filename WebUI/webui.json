@@ -22,12 +22,12 @@
 
   "_basic": "Basic: one section per parameter file, in KESE's order. Geometry and Colorization are in Advanced only. Advanced shows every parameter, these included.",
   "basic": {
-    "Run": ["Run.UNITS", "Run.ORIGIN", "Run.COPPER_GROUPING", "Run.DIELECTRIC_GROUPING", "Run.STEP_EXACT_ARCS", "Run.STEP_WRITE_ROLES"],
-    "Board": ["Board.BOARD_THICKNESS_MM", "Board.DEFAULT_EPSILON_R", "Board.DEFAULT_LOSS_TANGENT", "Board.RESIN_FILL_BETWEEN_INNER_COPPER", "Board.INCLUDE_NON_PLATED_HOLES"],
-    "Copper": ["Copper.VIA_WALL_MM", "Copper.PTH_WALL_MM", "Copper.ETCH_FACTOR", "Copper.EDGE_PLATING", "Copper.CASTELLATION"],
-    "SolderMask": ["SolderMask.MASK_OVER_COPPER_MM", "SolderMask.MASK_OVER_LAMINATE_MM", "SolderMask.PAD_TO_MASK_CLEARANCE_MM", "Copper.VIA_TENTING"],
-    "Silkscreen": ["Silkscreen.SILK_THICKNESS_MM", "Silkscreen.SILKSCREEN_OVER_COPPER", "Silkscreen.SILK_LAYERS"],
-    "Finish": ["Finish.FINISH_ENABLED", "Finish.FINISH_TYPE", "Finish.FINISH_GROUPING", "Finish.FINISH_ON_EDGE_PLATING", "Finish.FINISH_ON_CASTELLATIONS"]
+    "Run": ["Run.UNITS", "Run.ORIGIN", "Run.STEP_EXACT_ARCS"],
+    "Board": ["Board.BOARD_ENABLED", "Board.DIELECTRIC_GROUPING", "Board.BOARD_THICKNESS_MM", "Board.DEFAULT_EPSILON_R", "Board.DEFAULT_LOSS_TANGENT", "Board.RESIN_FILL_BETWEEN_INNER_COPPER", "Board.INCLUDE_NON_PLATED_HOLES"],
+    "Copper": ["Copper.COPPER_ENABLED", "Copper.COPPER_GROUPING", "Copper.VIA_WALL_MM", "Copper.PTH_WALL_MM", "Copper.ETCH_FACTOR", "Copper.EDGE_PLATING", "Copper.CASTELLATION"],
+    "SolderMask": ["SolderMask.SOLDER_MASK_ENABLED", "SolderMask.MASK_OVER_COPPER_MM", "SolderMask.MASK_OVER_LAMINATE_MM", "SolderMask.PAD_TO_MASK_CLEARANCE_MM", "Copper.VIA_TENTING"],
+    "Silkscreen": ["Silkscreen.SILKSCREEN_ENABLED", "Silkscreen.SILK_THICKNESS_MM", "Silkscreen.SILKSCREEN_OVER_COPPER", "Silkscreen.SILK_LAYERS"],
+    "Finish": ["Finish.FINISH_ENABLED", "Finish.FINISH_TYPE", "Finish.FINISH_GROUPING", "Finish.FINISH_BEFORE_SOLDER_MASK"]
   },
   "_crossSection": "How the cross-section draws the cut faces: \"stencil\" (SectionStencil.js, drawn by the GPU in every frame), \"geometry\" (SectionGeometry.js, the exact section worked out on the CPU, a step behind the slider) or null (the cut without faces).",
   "crossSection": "stencil",

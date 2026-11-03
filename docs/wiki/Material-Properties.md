@@ -46,12 +46,12 @@ Per part:
 | Key | Meaning |
 |---|---|
 | `role` | `board`, `copper`, `plating`, `finish`, `mask`, `mask_over_copper`, `silk` |
-| `layer` | the KiCad layer or dielectric name of the part's first prism (for a per-net copper part, the first layer it was built on; its `z_range_mm` shows the full span); for plating, the span of copper layers (`F.Cu-B.Cu`); for finish, `F.Finish` or `B.Finish` |
-| `net` | the part's net with `Run.COPPER_GROUPING = "net"` (and for per-net finish); with `"layer"` or `"merged"` grouping, only the net of the part's first prism; `null` for parts without a net |
+| `layer` | the KiCad layer or dielectric name of the part's first prism (for a per-net copper part, the first layer it was built on; its `z_range_mm` shows the full span); for plating, the span of copper layers (`F.Cu-B.Cu`); for finish, `F.Finish`, `B.Finish`, `Edge.Finish` or `Hole.Finish` |
+| `net` | the part's net with `Copper.COPPER_GROUPING = "net"` (and for per-net finish); with `"layer"` or `"merged"` grouping, only the net of the part's first prism; `null` for parts without a net |
 | `z_range_mm` | lowest and highest z of the part in KESE's board frame, in mm from the laminate mid-plane, whatever `units_of_files` is (with `Run.ORIENTATION = "flat"` this is the files' Y axis) |
 | `properties` | the physical values below |
 | `look` | colour and alpha, as in the GLB |
-| `file_names` | the STL file name (the part name sanitised by the STL writer's own rule, see [Project Output Organization](Project-Output-Organization.md)), the GLB node name and the STEP solid name, so a script can match files to properties. All three are listed whatever formats were written (mask and silk are not in the STEP file by default) |
+| `file_names` | the STL file name (the part name sanitised by the STL writer's own rule, see [Project Output Organization](Project-Output-Organization.md)), the GLB node name and the STEP solid name, so a script can match files to properties. All three are listed whatever formats were written |
 
 `z_range_mm` is always in mm; the geometry files are in `units_of_files`.
 
@@ -62,7 +62,7 @@ Per part:
 | `board` | `kind` (core / prepreg), `material`, `thickness_mm`, `epsilon_r`, `loss_tangent`, `between` (the two copper layers) | the stack-up's `(material)`, `(epsilon_r)`, `(loss_tangent)`, `(type)`; else `Board.DEFAULT_*` |
 | `copper` | `thickness_mm`, `conductivity_S_per_m`, `surface_roughness_um`, `foil_mm`, `plating_added_mm` | stack-up or `Copper.DEFAULT_*_FOIL_MM`; `Copper.OUTER_PLATING_ADDED_MM`; `Copper.COPPER_CONDUCTIVITY_S_PER_M`; `Copper.COPPER_SURFACE_ROUGHNESS_UM` |
 | `plating` | `conductivity_S_per_m` | `Copper.COPPER_CONDUCTIVITY_S_PER_M` |
-| `finish` | `side`, `metal`, `thickness_mm`, `conductivity_S_per_m` | `Finish.FINISH_TYPES`, `Finish.FINISH_CONDUCTIVITY_S_PER_M` |
+| `finish` | `side`, `metal`, `thickness_mm`, `conductivity_S_per_m`, and on the shells round walls, holes and edges `drawn_thickness_mm` | `Finish.FINISH_TYPES`, `Finish.FINISH_CONDUCTIVITY_S_PER_M` |
 | `mask`, `mask_over_copper` | `side`, `thickness_over_laminate_mm`, `thickness_over_copper_mm` | stack-up or `SolderMask.MASK_OVER_*_MM` |
 | `silk` | `side`, `thickness_mm` | `Silkscreen.SILK_THICKNESS_MM` |
 
@@ -70,7 +70,7 @@ Properties come from the part's **first** prism. For a copper part with `"net"` 
 the first layer of that net, and its `thickness_mm` is that layer's finished thickness: outer
 layers add `Copper.OUTER_PLATING_ADDED_MM`, and the stack-up or the separate outer and inner foil
 defaults can make layers differ. The per-layer bands are in `report.txt`. With
-`Run.DIELECTRIC_GROUPING = "merged"`, the single `Board` part carries the values of the first
+`Board.DIELECTRIC_GROUPING = "merged"`, the single `Board` part carries the values of the first
 dielectric only.
 
 ## 18.3 The Default Numbers

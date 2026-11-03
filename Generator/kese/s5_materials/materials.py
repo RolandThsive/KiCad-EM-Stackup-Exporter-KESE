@@ -43,7 +43,7 @@ def _key(part, role, props, mode):
     mats = P.Color.MATERIALS
     if role == "board":
         kind = props.get("kind", "")
-        return f"Board_{kind}" if P.Run.DIELECTRIC_GROUPING == "layer" and f"Board_{kind}" in mats else "Board"
+        return f"Board_{kind}" if P.Board.DIELECTRIC_GROUPING == "layer" and f"Board_{kind}" in mats else "Board"
     if role in ("copper", "plating"):
         if mode == "visual":
             return "Copper_exposed"

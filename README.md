@@ -43,7 +43,7 @@ surface model for web viewers and renders.
 | Start | [Getting Started](https://github.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/wiki/Getting-Started), [Project Capabilities](https://github.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/wiki/Project-Capabilities), [Examples](https://github.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/wiki/Examples) |
 | Understand it | [Working Principle](https://github.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/wiki/Working-Principle), [Stack-Up Model](https://github.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/wiki/Stack-Up-Model), [Output Modes](https://github.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/wiki/Output-Modes) |
 | Export for my tool | [Choosing An Export](https://github.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/wiki/Choosing-An-Export), [KiCad And Solver Compatibility](https://github.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/wiki/Compatibility), [openEMS Workflow](https://github.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/wiki/OpenEMS-Workflow) |
-| Know what gets modelled | [Board](https://github.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/wiki/Board), [Copper And Traces](https://github.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/wiki/Copper-And-Traces), [Solder Masks](https://github.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/wiki/Solder-Masks), [Silkscreens](https://github.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/wiki/Silkscreens), [Copper Finishings](https://github.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/wiki/Copper-Finishings), [Colorizing](https://github.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/wiki/Colorizing) |
+| Know what gets modelled | [Board](https://github.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/wiki/Board), [Copper And Traces](https://github.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/wiki/Copper-And-Traces), [Solder Masks](https://github.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/wiki/Solder-Masks), [Silkscreens](https://github.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/wiki/Silkscreens), [Finish](https://github.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/wiki/Finish), [Colorizing](https://github.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/wiki/Colorizing) |
 | Look something up | [Parameter Reference](https://github.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/wiki/Parameter-Reference), [Checks, Errors And Warnings](https://github.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/wiki/Checks-Errors-And-Warnings), [Material Properties](https://github.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/wiki/Material-Properties), [Project Output Organization](https://github.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/wiki/Project-Output-Organization), [Glossary](https://github.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/wiki/Glossary) |
 | See what is next | [Immediate Next Steps](https://github.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/wiki/Immediate-Next-Steps), [Future Upgrades And Planning](https://github.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/wiki/Future-Upgrades-And-Planning) |
 
@@ -80,13 +80,13 @@ from any folder. Full walk-through: [Getting Started](https://github.com/RolandT
   outline from `Edge.Cuts` with cut-outs and boards inside them, plated and non-plated round and slotted holes.
 - **Mask, silk and finish:** solder mask conformal over every trace, pulled back from the edge and open over every
   bore; silkscreen in KiCad's own stroke font and text layout, clipped off the pads; ENIG, ENEPIG, HASL, lead-free
-  HASL, OSP, immersion silver and tin, and hard gold, each metal its own layer (off by default).
+  HASL, OSP, immersion silver and tin, and hard gold, each metal its own layer (on by default; `Finish.FINISH_ENABLED`).
 - **Two modes:** `simulation` writes closed solids that touch exactly and never overlap, as GLB, STEP, STL and OBJ;
   `visual` writes only the surface you can see, as GLB and OBJ, so nothing z-fights in a viewer.
 - **STEP without a CAD kernel, meshes without a mesh library:** KESE builds its own meshes and writes STEP AP214,
   GLB, STL and OBJ itself, every part under its own name; it needs only `numpy`, `shapely` and `mapbox_earcut`.
-  With `Run.STEP_EXACT_ARCS` holes, vias, round pads and arcs go into STEP as true circles and cylinders, in files
-  4 to 9 times smaller.
+  Holes, vias, round pads and arcs go into STEP as true circles and cylinders (`Run.STEP_EXACT_ARCS`, on by
+  default), in files 4 to 9 times smaller than flat facets.
 - **Presets:** `--for hfss`, `cst`, `openems` or `viewer` set mode, formats, units, origin and grouping in one go.
 - **Checks:** an opt-in Verifier (closed solids, the same volume found four ways, no overlaps, one visible surface)
   and a regression suite that runs 40 boards through every output before a pull request.

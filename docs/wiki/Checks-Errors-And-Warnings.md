@@ -63,7 +63,9 @@ python tests/test_boards.py                     # the regression suite over ever
 | `<part>: pinch points left after 10 rounds of cutting` (or `pinch edges between two heights left ...`) | Two pieces of the part still touch at a point or along an edge after the cut-out disc grew to 512 times `Geometry.PINCH_POINT_OPENING_MM`. The part may be open there. |
 | `step: <part>: N edges are not shared by two faces (the solid is open there)` | The STEP writer found the part open. It is still written, and a CAD tool will report free edges on it. |
 | `step: <part>: written without arcs (...)` | With `Run.STEP_EXACT_ARCS`, finding the part's arcs failed (a bug: please report it with the board). The part is written with flat faces only, as with the parameter off; the rest of the file keeps its arcs. |
-| `step: no part to write; STEP skipped` | No part has its role in `Run.STEP_WRITE_ROLES`, or none of those parts has a solid, so no `<board>.step` is written. |
+| `step: no part has a solid; STEP skipped` | None of the parts has a solid, so no `<board>.step` is written. |
+| `FINISH ERROR: Finish.FINISH_TYPE = "file" but no finish was found in the KiCad file ...` | `FINISH_TYPE = "file"` and the board has no stack-up or its Copper finish is empty; also `FINISH ERROR: the KiCad file's finish '...' is not one KESE knows` and `FINISH ERROR: Finish.FINISH_TYPE = '...' is not a finish KESE knows`. Change `Finish.FINISH_TYPE`, or set the finish in KiCad (Board Setup > Physical Stackup > Copper finish). |
+| `nothing to build: Board.BOARD_ENABLED, Copper.COPPER_ENABLED, ... are all False` | Every part switch is off, so there is nothing to write; the run stops before reading the board. |
 
 ## 17.2 What `report.txt` Counts
 

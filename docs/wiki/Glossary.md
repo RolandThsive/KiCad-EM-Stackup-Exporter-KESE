@@ -14,14 +14,14 @@
 | Edge plating | Copper on the routed edge of the board. |
 | Etch factor | How much a trace's side walls lean in because etching undercuts the resist; a trapezoid instead of a rectangle. |
 | εr (epsilon_r) | Relative permittivity of a dielectric. |
-| Finish | The metal deposited on bare copper after the mask: ENIG (nickel + gold), ENEPIG (nickel + palladium + gold), HASL (tin), OSP, immersion silver or tin, hard gold. |
+| Finish | The metal deposited on every bare copper face after the mask (faces, walls, plated holes, plated edges): ENIG (nickel + gold), ENEPIG (nickel + palladium + gold), HASL (tin), OSP, immersion silver or tin, hard gold. |
 | Foil | The base copper thickness of a layer, before plating (1 oz = 35 µm). |
 | GLB | Binary glTF 2.0, the web and real-time 3D format. |
 | Laminate | The stack of dielectrics and inner copper between the two outer copper layers. |
 | LPI | Liquid photo-imageable solder mask, the common mask process. |
 | Mask opening | A place where the solder mask is absent: pads, untented vias, drawn openings. KiCad's mask layers draw openings, not mask. |
 | Mid-plane | The height half-way through the laminate; z = 0 in KESE. |
-| Net | A set of electrically connected copper items; with the default `Run.COPPER_GROUPING = "net"`, KESE makes one solid per net. |
+| Net | A set of electrically connected copper items; with the default `Copper.COPPER_GROUPING = "net"`, KESE makes one solid per net. |
 | NPTH | Non-plated through hole: a hole with no copper in it. |
 | Part | One named solid (or skin piece) in the output: `Copper_GND`, `Board_dielectric 1`, `Top Solder Mask`. |
 | Prepreg | A resin-impregnated glass sheet that bonds cores together under heat; its resin flows into the gaps between inner traces. |
