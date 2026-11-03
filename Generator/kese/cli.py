@@ -4,7 +4,7 @@
     kese Input/board.kicad_pcb                   one board
     kese board.kicad_pcb --mode visual           simulation (solids) or visual (surface for viewers)
     kese board.kicad_pcb --format glb step stl
-    kese board.kicad_pcb --for hfss              a preset: units, origin, grouping, formats (Run.PRESETS)
+    kese board.kicad_pcb --for freecad           a preset: units, origin, grouping, formats (Run.PRESETS)
     kese board.kicad_pcb --verify
     kese board.kicad_pcb --set Copper.VIA_WALL_MM=0.02 --set Board.BOARD_THICKNESS_MM=0.8
     kese --version

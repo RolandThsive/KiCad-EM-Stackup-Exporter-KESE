@@ -27,7 +27,7 @@ mask colour of its own, saved by KiCad 7. Between them they use most of what KES
 
 The times are the ones the run prints, with the default parameters (the finish on, the solder
 mask and silkscreen off, true arcs in the STEP files) on one Linux machine with 4 cores. The STEP
-files were made with `--for hfss --verify`: millimetres and KiCad's origin
+files were made with `--for freecad --verify`: millimetres and KiCad's origin
 ([Project Capabilities](Project-Capabilities.md#45-tested-sizes) gives them with the mask and
 silkscreen too). The finish makes most of the solids: each pad's and each hole's finish is a solid
 of its own. Read back with OpenCascade, every solid in them is valid and closed, and their
@@ -218,7 +218,7 @@ What this board shows:
 ```bash
 cd Generator
 python run_KESE.py                                                             # all three: simulation, GLB in metres, centred
-python run_KESE.py Input/rf_module.kicad_pcb --for hfss                        # STEP in mm with KiCad's origin
+python run_KESE.py Input/rf_module.kicad_pcb --for freecad                     # STEP in mm with KiCad's origin
 python run_KESE.py Input/hdi_module.kicad_pcb --for viewer                     # visual mode for <model-viewer>
 python run_KESE.py Input/pcie_card.kicad_pcb --set Finish.FINISH_TYPE=file      # the stack-up's hard gold
 python run_KESE.py Input/rf_module.kicad_pcb --set Copper.COPPER_GROUPING=layer # a copper part per layer

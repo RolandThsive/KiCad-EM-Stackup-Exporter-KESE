@@ -78,7 +78,7 @@ seam edges and every edge has two vertices and two faces.
 |---|---|---|---|
 | `KICAD_VERSION_MIN`, `KICAD_VERSION_MAX` | `3`, `20260206` | KiCad file format numbers | Tested range, from the 2013 builds before KiCad 4 (format 3) to KiCad 10 (KiCad 4 files say `(version 4)`, KiCad 5 files `20171130`); a file outside it is read with a warning ([Compatibility](Compatibility.md#201-kicad-files)) |
 | `TESTED_COPPER_LAYERS` | `8` | int > 0 | Stage 1 warns above this many copper layers (the most among the test boards); they are still modelled |
-| `PRESETS` | `hfss`, `cst`, `openems`, `viewer` | `{name: {"Module.NAME": value}}` | Sets of overrides applied with `--for <name>` ([Choosing An Export](Choosing-An-Export.md)) |
+| `PRESETS` | `freecad`, `openems`, `viewer` | `{name: {"Module.NAME": value}}` | Sets of overrides applied with `--for <name>` ([Choosing An Export](Choosing-An-Export.md)) |
 
 ## 16.2 Board (`parameters/board.py`)
 

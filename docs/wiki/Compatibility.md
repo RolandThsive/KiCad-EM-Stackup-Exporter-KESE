@@ -73,11 +73,9 @@ Research underway.
 
 | Tool | Route | Notes |
 |---|---|---|
-| Ansys HFSS | STEP, mm, KiCad origin (`--for hfss`) | one solid per net and dielectric to assign materials and ports |
-| CST Studio Suite | STEP, plus STL per part (`--for cst`) | |
 | openEMS / CSXCAD | STL per part, mm (`--for openems`) with `materials.json` | [openEMS Workflow](OpenEMS-Workflow.md) |
-| COMSOL, FEKO | STEP, mm | |
-| FreeCAD, Fusion, SolidWorks, Onshape | STEP | vias and round pads are faceted, as in the meshes |
+| FreeCAD | STEP, mm, KiCad origin (`--for freecad`) | one solid per net and dielectric, each under its own name, to assign materials; holes and round edges as true circles and cylinders. Its FEM workbench meshes the solids and runs Elmer or CalculiX |
+| gmsh | STEP, mm | meshes the solids for a solver |
 | Blender | GLB or OBJ (visual mode for renders) | |
 | `<model-viewer>`, three.js | GLB, m, centred (`--for viewer`) | the visual-mode skin is made to avoid z-fighting ([Output Modes](Output-Modes.md)) |
 | Thermal / FEA tools reading STL (CalculiX, Elmer with a mesher) | STL per part, mm | closed solids per part (a part can hold several separate bodies); mesh them with the tool's own mesher |

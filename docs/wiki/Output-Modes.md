@@ -97,7 +97,7 @@ Differences from simulation mode:
 
 | Need | Mode |
 |---|---|
-| HFSS, CST, openEMS, FEKO, COMSOL, any FEA or thermal solver | simulation |
+| openEMS, Elmer, CalculiX, any FEA or thermal solver | simulation |
 | Mechanical CAD, checking the stack-up in a CAD viewer | simulation (STEP) |
 | A web page, a product render, a Blender scene | visual |
 | Smallest GLB of a dense board | visual (9.1 MB against 30.1 MB in simulation mode for the PCIe card example) |

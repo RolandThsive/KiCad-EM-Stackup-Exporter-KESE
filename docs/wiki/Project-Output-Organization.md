@@ -58,7 +58,7 @@ Every run writes to:
 - `<mode>` is `simulation` or `visual`.
 - `<FORMATS>` are the requested formats, in upper case, joined by `_`, in the order given by
   `--format` or `Run.FILE_FORMAT` (not sorted; a format given twice appears twice):
-  `--format glb stl obj` gives `simulation_GLB_STL_OBJ`, `--for cst` gives `simulation_STEP_STL`.
+  `--format glb stl obj` gives `simulation_GLB_STL_OBJ`, `--format step stl` gives `simulation_STEP_STL`.
 
 **No run overwrites another.** When the folder already exists, the new one gets a suffix:
 `simulation_GLB__1`, `simulation_GLB__2`, ... The terminal line at the end of every board names

@@ -37,7 +37,7 @@ solvers and CAD, and a **visual model** of the visible surface for viewers.
 | What-if | Change plating, via wall, mask thickness or etch factor in `parameters/` and export again | |
 | Verifier (`--verify`) | Every part closed and consistently wound; its volume the same from its faces, slices, mesh and prisms; no two parts sharing material, every slice against every other | Along 3,000 vertical rays the faces take turns, into the material and out of it |
 | 4-layer PCIe card example | GLB 30.1 MB, 879,986 triangles | GLB 9.1 MB, 290,834 triangles |
-| Presets | `--for hfss`, `--for cst`, `--for openems` | `--for viewer` |
+| Presets | `--for freecad`, `--for openems` | `--for viewer` |
 
 More in [Output Modes](Output-Modes.md).
 
