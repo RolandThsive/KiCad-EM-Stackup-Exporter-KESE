@@ -1,0 +1,50 @@
+{
+  "_about": "The web tool's own settings: the only list of parameters written by hand. Everything else (names, defaults, help, choices, presets, modes, formats) is read from Generator/parameters/*.py and kese/job.py when the page starts.",
+
+  "pyodide": "https://cdn.jsdelivr.net/pyodide/v314.0.7/full/",
+  "three": "https://cdn.jsdelivr.net/npm/three@0.183.2/",
+  "pyodidePackages": ["numpy", "shapely"],
+
+  "fontLastCodepoint": 11903,
+
+  "_hidden": "Not shown and not imported: folders of a desktop run, how many threads, the terminal status line, the custom font file (the web has only KiCad's font), and the preset table (offered as the Preset buttons).",
+  "hidden": ["Run.INPUT_DIR", "Run.OUTPUT_DIR", "Run.WORKERS", "Run.SHOW_PROGRESS", "Silkscreen.FONT_FILE", "Run.PRESETS", "Finish.FINISH_NAME_ALIASES"],
+
+  "_forced": "How the browser runs KESE: one worker (there are no threads), no status line.",
+  "forced": {"Run.WORKERS": 1, "Run.SHOW_PROGRESS": false},
+
+  "_outside": "Shown outside the sections: Mode is the big switch, the file formats are the Download switches, Verify sits beside Generate.",
+  "mode": "Run.MODE",
+  "formats": "Run.FILE_FORMAT",
+  "verify": "Run.VERIFY",
+  "_units": "The run's length unit, for the board size under the preview.",
+  "units": "Run.UNITS",
+
+  "_basic": "Basic: one section per parameter file, in KESE's order. Geometry and Colorization are in Advanced only. Advanced shows every parameter, these included.",
+  "basic": {
+    "Run": ["Run.UNITS", "Run.ORIGIN", "Run.STEP_EXACT_ARCS"],
+    "Board": ["Board.BOARD_ENABLED", "Board.DIELECTRIC_GROUPING", "Board.BOARD_THICKNESS_MM", "Board.DEFAULT_EPSILON_R", "Board.DEFAULT_LOSS_TANGENT", "Board.RESIN_FILL_BETWEEN_INNER_COPPER", "Board.INCLUDE_NON_PLATED_HOLES"],
+    "Copper": ["Copper.COPPER_ENABLED", "Copper.COPPER_GROUPING", "Copper.VIA_WALL_MM", "Copper.PTH_WALL_MM", "Copper.ETCH_FACTOR", "Copper.EDGE_PLATING", "Copper.CASTELLATION"],
+    "SolderMask": ["SolderMask.SOLDER_MASK_ENABLED", "SolderMask.MASK_OVER_COPPER_MM", "SolderMask.MASK_OVER_LAMINATE_MM", "SolderMask.PAD_TO_MASK_CLEARANCE_MM", "Copper.VIA_TENTING"],
+    "Silkscreen": ["Silkscreen.SILKSCREEN_ENABLED", "Silkscreen.SILK_THICKNESS_MM", "Silkscreen.SILKSCREEN_OVER_COPPER", "Silkscreen.SILK_LAYERS"],
+    "Finish": ["Finish.FINISH_ENABLED", "Finish.FINISH_TYPE", "Finish.FINISH_GROUPING", "Finish.FINISH_BEFORE_SOLDER_MASK"]
+  },
+  "_crossSection": "How the cross-section draws the cut faces: \"stencil\" (SectionStencil.js, drawn by the GPU in every frame), \"geometry\" (SectionGeometry.js, the exact section worked out on the CPU, a step behind the slider) or null (the cut without faces).",
+  "crossSection": "stencil",
+
+  "_basicOpen": "Sections open when the page starts. None: every section shows closed, so all are in view and the visitor opens what they need.",
+  "basicOpen": [],
+
+  "_titles": "Section titles. Run is called Output on the page.",
+  "sectionTitles": {"Run": "Output", "Board": "Board", "Copper": "Copper", "SolderMask": "Solder Mask", "Silkscreen": "Silkscreen", "Finish": "Finish", "Geometry": "Geometry", "Color": "Colorization"},
+  "presetTitles": {"hfss": "HFSS", "cst": "CST", "openems": "openEMS", "viewer": "Viewer"},
+
+  "_preview": "Which generated file the preview opens first in each mode, when several were made.",
+  "previewOrder": {"simulation": ["step", "stl", "glb", "obj"], "visual": ["glb", "obj"]},
+
+  "links": {
+    "help": "https://github.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/wiki",
+    "repository": "https://github.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE",
+    "blogHome": "https://ro-h-bots.blogspot.com/"
+  }
+}

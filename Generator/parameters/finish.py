@@ -1,21 +1,38 @@
 """
 parameters/finish.py - the surface finish on copper left bare by the solder mask.
-
-Off by default so the geometry matches KiCad; turn on for an as-fabricated model.
 """
 
-FINISH_ENABLED = False
+# Build the surface finish and write it to every output file.  False leaves the bare copper as
+# KiCad draws it.
+FINISH_ENABLED = True
 
-# "file" - take the type from the stackup's (copper_finish "...") field, else FINISH_DEFAULT_TYPE
-# or one of the keys of FINISH_TYPES
-FINISH_TYPE = "file"
-FINISH_DEFAULT_TYPE = "ENIG"
+# A key of FINISH_TYPES, or "file" to take the type from the board's stack-up (Board Setup >
+# Physical Stackup > Copper finish).  With "file" the run stops with an error when the board names
+# no finish (no stack-up, or the field left empty) or one KESE does not know: change FINISH_TYPE
+# or set the finish in KiCad.  A stack-up whose finish is "None" gets no finish.
+FINISH_TYPE = "ENIG"
 
 # Finish parts:
 #   "metal" - one part per side and metal: "Top Finish Nickel", "Top Finish Gold", ...
 #   "net"   - one part per side, metal and net: "Top Finish Gold_GND", so a net's copper, nickel
 #             and gold can be picked together in the solver (Copper_GND, Top Finish Nickel_GND, ...)
 FINISH_GROUPING = "metal"
+
+# When the finish goes on, against the solder mask:
+#   False - after the mask (the usual flow, solder mask over bare copper): only the copper in the
+#           mask openings takes the finish, and ink kept in an opening keeps it off
+#   True  - before the mask (e.g. full-body electroplated hard gold): all the outer copper takes the
+#           finish, and the mask and the silkscreen lie on it, raised by its thickness over copper
+FINISH_BEFORE_SOLDER_MASK = False
+
+# The finish coats every bare copper face, as the baths do: the tops of the copper in the mask
+# openings ("Top / Bottom Finish <metal>"), and also, built in:
+#   - the copper's side walls where they meet the air: pads and traces in the openings, and copper
+#     the board edge cuts on any layer (part of the side's finish on F.Cu / B.Cu, "Edge Finish
+#     <metal>" on the inner layers)
+#   - the plated board edge and the castellations, wrapping over onto the top and bottom finish
+#     ("Edge Finish <metal>")
+#   - inside the bore of every plated hole open at a face ("Hole Finish <metal>")
 
 # Layers of each finish, bottom to top, in mm.  Each becomes its own solid on the exposed copper.
 FINISH_TYPES = {

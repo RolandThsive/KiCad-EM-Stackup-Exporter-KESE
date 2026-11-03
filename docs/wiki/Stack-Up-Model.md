@@ -124,8 +124,8 @@ three example boards have one, `featureTest/15_stackup_none` has none). KESE rea
 | `(thickness ...)` of each `*.Cu` layer | the foil thickness of that layer | `Copper.USE_STACKUP_COPPER_THICKNESS` |
 | `(thickness ...)`, `(type "core" / "prepreg")`, `(material ...)`, `(epsilon_r ...)`, `(loss_tangent ...)` of each `dielectric N` layer | one `Dielectric` per gap between copper layers | `Board.USE_STACKUP_EPSILON_R`, `Board.USE_STACKUP_LOSS_TANGENT` |
 | `(thickness ...)` of the first `*.Mask` layer that has one | the mask thickness, over laminate and over copper | `SolderMask.USE_STACKUP_MASK_THICKNESS` |
-| `(color ...)` of `F.Mask`, `B.Mask`, `F.SilkS`, `B.SilkS` | the colours in GLB, OBJ and the `look` of `materials.json`, and in STEP when `"mask"` / `"silk"` are added to `Run.STEP_WRITE_ROLES` | `Color.USE_STACKUP_COLORS` |
-| `(copper_finish "...")` | the finish type, when `Finish.FINISH_ENABLED = True` (off by default) | `Finish.FINISH_TYPE = "file"` |
+| `(color ...)` of `F.Mask`, `B.Mask`, `F.SilkS`, `B.SilkS` | the colours in GLB, OBJ and the `look` of `materials.json`, and in STEP | `Color.USE_STACKUP_COLORS` |
+| `(copper_finish "...")` | the finish type, with `Finish.FINISH_TYPE = "file"` (the default is `"ENIG"`; with `"file"` a board that names no finish is an error) | `Finish.FINISH_TYPE` |
 | `(edge_plating yes)`, `(castellated_pads yes)` | edge plating and castellations | `Copper.EDGE_PLATING = "file"`, `Copper.CASTELLATION = "file"` |
 
 A stack-up is **usable** when it has exactly one group of dielectric layers between every pair of
@@ -237,7 +237,7 @@ h_i^{*} = s \cdot h_i \qquad (7.13)
 | Via barrel from layer $`l_i`$ to $`l_j`$ | between the copper layers it joins; outer copper caps it, inner copper is drilled through, so the barrel passes through inner bands ([Copper And Traces](Copper-And-Traces.md)) |
 | Solder mask | from the laminate face: mask thickness over laminate, copper + mask thickness over copper ([Solder Masks](Solder-Masks.md)) |
 | Silkscreen | on top of the mask surface ([Silkscreens](Silkscreens.md)) |
-| Surface finish | stacked on top of the outer copper where the mask is open (boxes 4 and 5 of the picture; [Top And Bottom Copper Finishings](Copper-Finishings.md)) |
+| Surface finish | on every copper face the air reaches: stacked on the outer copper where the mask is open, and a thin shell on the copper's walls, in the plated holes and on the plated edge (boxes 4 and 5 of the picture; [Finish](Finish.md)) |
 
 | Previous | Next |
 |:---|---:|

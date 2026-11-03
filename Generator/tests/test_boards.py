@@ -6,7 +6,7 @@ the parameters in parameters/, but for the changes SETTINGS lists for it.
     python tests/test_boards.py --accept   re-record tests/baseline.json after an intended geometry change
     python tests/test_boards.py --add      record only the boards the baseline does not have yet
     python tests/test_boards.py --accept 18_finishes 18b_finish_pads   only the boards named (by file name)
-    python tests/test_boards.py --arcs     the STEP files with true arcs and cylinders (Run.STEP_EXACT_ARCS)
+    python tests/test_boards.py --faceted  the STEP files with flat faces only (Run.STEP_EXACT_ARCS = False)
 
 A board fails when the Verifier fails (open solid, overlap, broken skin), when a STEP solid is
 invalid or has a free edge, or when a part's volume moved by more than VOLUME_TOLERANCE from the
@@ -46,16 +46,24 @@ BOARDS = (sorted((ROOT / "tests" / "boards").glob("*.kicad_pcb")) + FEATURES
           + [p for p in sorted((ROOT / "Input").glob("*.kicad_pcb")) if p.read_bytes() not in COPIES])
 MODES = ("simulation", "visual")
 FORMATS = {"simulation": ["glb", "step"], "visual": ["glb"]}
-# Boards run with other values than parameters/ has: the finish boards with the finish on, which is
-# off by default (Finish.FINISH_ENABLED), so that the finish parts are built and checked too
-SETTINGS = {"18_finishes": {"Finish.FINISH_ENABLED": True},
-            "18b_finish_pads": {"Finish.FINISH_ENABLED": True}}
+# Boards run with other values than parameters/ has, as {board stem: {"Module.NAME": value}}: the
+# boards made for a setting that is off by default.  Every board also runs with ALL_PARTS: the solder
+# mask and silkscreen are off by default, but the suite checks every part.
+# The boards whose stack-up names a finish other than ENIG (Finish.FINISH_TYPE's default) run with
+# FINISH_TYPE = "file", so that their own finish is built and the names are read from the file.
+FILE_FINISH = {"Finish.FINISH_TYPE": "file"}
+ALL_PARTS = {"SolderMask.SOLDER_MASK_ENABLED": True, "Silkscreen.SILKSCREEN_ENABLED": True}
+SETTINGS = {"16_edge_plating_castellation": FILE_FINISH, "17_mask_silk": FILE_FINISH, "18_finishes": FILE_FINISH,
+            "22_hdi_module": FILE_FINISH, "23_pcie_card": FILE_FINISH,
+            "17b_silk_over_copper": {"Silkscreen.SILKSCREEN_OVER_COPPER": True},
+            "18c_finish_before_mask": {"Finish.FINISH_BEFORE_SOLDER_MASK": True, **FILE_FINISH}}
 
 
 @contextmanager
 def settings_for(pcb):
-    """The board's SETTINGS, applied for one run and put back after it; -> the (key, value) pairs."""
-    changes = SETTINGS.get(pcb.stem, {})
+    """ALL_PARTS and the board's SETTINGS, applied for one run and put back after it; -> the (key,
+    value) pairs."""
+    changes = {**ALL_PARTS, **SETTINGS.get(pcb.stem, {})}
     saved = {key: getattr(getattr(P, key.split(".")[0]), key.split(".")[1]) for key in changes}
     for key, value in changes.items():
         P.override(key, value)
@@ -151,8 +159,8 @@ def report(queue, wait):
 
 def main(args):
     accept, add = "--accept" in args, "--add" in args
-    if "--arcs" in args:
-        P.override("Run.STEP_EXACT_ARCS", True)
+    if "--faceted" in args:
+        P.override("Run.STEP_EXACT_ARCS", False)
     named = [a for a in args if not a.startswith("--")]
     unknown = sorted(set(named) - {p.stem for p in BOARDS})
     if unknown:

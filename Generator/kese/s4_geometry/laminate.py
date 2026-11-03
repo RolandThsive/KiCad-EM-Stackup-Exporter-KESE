@@ -6,8 +6,8 @@ from parameters import P
 
 def build(r, ps):
     """r: Regions.  ps: PrismSet to add to."""
-    st, R, B = r.stackup, P.Run, P.Board
-    merged = R.DIELECTRIC_GROUPING == "merged"
+    st, B = r.stackup, P.Board
+    merged = B.DIELECTRIC_GROUPING == "merged"
     for i, d in enumerate(st.dielectrics):
         lo, hi = dielectric_z(st, i)
         part = "Board" if merged else f"Board_{d.name}"

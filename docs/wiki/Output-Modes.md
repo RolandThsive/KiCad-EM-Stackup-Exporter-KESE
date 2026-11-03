@@ -24,12 +24,12 @@ Part names in simulation mode, with the default grouping:
 
 | Role | Parts | Example |
 |---|---|---|
-| `board` | one per dielectric (`Run.DIELECTRIC_GROUPING = "layer"`) or one `Board` (`"merged"`) | `Board_dielectric 1` |
-| `copper` | one per net (`Run.COPPER_GROUPING = "net"`), per layer (`"layer"`), or one `Copper` (`"merged"`) | `Copper_GND`, `Copper_no_net` |
+| `board` | one per dielectric (`Board.DIELECTRIC_GROUPING = "layer"`) or one `Board` (`"merged"`) | `Board_dielectric 1` |
+| `copper` | one per net (`Copper.COPPER_GROUPING = "net"`), per layer (`"layer"`), or one `Copper` (`"merged"`) | `Copper_GND`, `Copper_no_net` |
 | `plating` | its own `Plating` part only with `"layer"` grouping; otherwise the barrels belong to the copper parts | `Plating` |
 | `mask` | `Top Solder Mask`, `Bottom Solder Mask`, each including the mask on top of copper | |
 | `silk` | `Top Silkscreen`, `Bottom Silkscreen` | |
-| `finish` | per side and metal, or per side, metal and net | `Top Finish Gold`, `Top Finish Nickel_GND` |
+| `finish` | per side (top, bottom, edge, holes) and metal, or per side, metal and net | `Top Finish Gold`, `Top Finish Nickel_GND`, `Edge Finish Gold`, `Hole Finish Gold` |
 
 ## 8.2 Visual Mode
 
