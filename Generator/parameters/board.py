@@ -5,6 +5,14 @@ Values marked "typical" are common rigid-FR4 production values; replace them wit
 fabricator's datasheet numbers for lab work.
 """
 
+# Dielectric grouping in "simulation" mode:
+#   "layer"  - one solid per stackup dielectric (core / prepreg), each with its own material
+#   "merged" - the whole laminate as one solid
+DIELECTRIC_GROUPING = "layer"
+
+# Build the laminate (the "board" parts, one per dielectric) and write it to every output file.
+BOARD_ENABLED = True
+
 # Laminate thickness in mm, or None to take it from the board file:
 #   with a stackup   -> sum of the stackup's dielectric layers (+ inner copper), so the finished
 #                       board (laminate + outer copper + mask) equals KiCad's board thickness

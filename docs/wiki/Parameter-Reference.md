@@ -10,8 +10,8 @@ and listed on its first line.
 
 > [!NOTE]
 > Defaults are those of the parameter files on `main`. Only a few values are checked by name:
-> `MODE`, `FILE_FORMAT` and `DIELECTRIC_SPLIT` (an error or a warning), and `FINISH_TYPE`,
-> `FINISH_DEFAULT_TYPE` and `FONT_FILE` (a note in `report.txt`). For the rest, a value outside
+> `MODE`, `FILE_FORMAT`, `FINISH_TYPE` and `DIELECTRIC_SPLIT` (an error or a warning), and
+> `FONT_FILE` (a note in `report.txt`). For the rest, a value outside
 > the range below produces a wrong model or a plain Python error, not a named check.
 
 ## 16.1 Run (`parameters/run.py`)
@@ -29,14 +29,7 @@ What to make, where, and in which formats.
 | `ORIGIN` | `"center"` | `"center"` / `"kicad"` | Outline centre at (0, 0), or KiCad's page origin kept |
 | `ORIENTATION` | `"upright"` | `"upright"` / `"flat"` | Board in XY with `F.Cu` toward +Z, or in XZ with `F.Cu` toward +Y |
 
-### 16.1.2 Grouping
-
-| Name | Default | Range | Meaning |
-|---|---|---|---|
-| `COPPER_GROUPING` | `"net"` | `"net"` / `"layer"` / `"merged"` | One copper solid per net, per layer (plating separate), or one in all |
-| `DIELECTRIC_GROUPING` | `"layer"` | `"layer"` / `"merged"` | One solid per core / prepreg, or the whole laminate as one |
-
-### 16.1.3 Run Behaviour
+### 16.1.2 Run Behaviour
 
 | Name | Default | Range | Meaning |
 |---|---|---|---|
@@ -46,7 +39,7 @@ What to make, where, and in which formats.
 | `VERIFY_RAYS` | `3000` | int > 0 | Vertical rays the Verifier casts through a visual model to test its surfaces |
 | `WRITE_MATERIALS_JSON` | `True` | bool | Write `materials.json` next to the outputs |
 
-### 16.1.4 Mesh Export (GLB, STL, OBJ)
+### 16.1.3 Mesh Export (GLB, STL, OBJ)
 
 | Name | Default | Range | Meaning |
 |---|---|---|---|
@@ -54,7 +47,7 @@ What to make, where, and in which formats.
 | `EXPORT_SET_BUFFERVIEW_TARGETS` | `True` | bool | Set glTF bufferView targets, which keeps the Khronos validator report free of hints |
 | `SMOOTH_SHADE_ANGLE_DEG` | `25.0` | degrees | Edges sharper than this stay crisp; flatter ones (cylinders) shade smooth |
 
-### 16.1.5 STEP Export
+### 16.1.4 STEP Export
 
 | Name | Default | Range | Meaning |
 |---|---|---|---|
@@ -63,11 +56,12 @@ What to make, where, and in which formats.
 | `STEP_ARC_MIN_POINTS` | `5` | int >= 3 | An arc runs through at least this many vertices |
 | `STEP_ARC_MIN_SWEEP_DEG` | `10.0` | degrees | and turns at least this far |
 | `STEP_ARC_MAX_TURN_DEG` | `30.0` | degrees | but at most this far at one vertex, so that a polygon of fewer than 12 sides (an octagonal pad, a square) stays a polygon |
-| `STEP_WRITE_ROLES` | `["board", "copper", "plating", "finish"]` | subset of the roles below | Roles written to the STEP file; mask and silk are left out by default since they are many more solids, which make the file 1.5 to 1.6 times as big (the PCIe card in `Input/`, in mm: 348 MB and 320 solids written in 8.8 s instead of 215 MB and 84 solids in 5.6 s) |
 
-The roles are `board`, `copper`, `plating`, `finish`, `mask`, `mask_over_copper`, `silk`. A part's role
-in STEP is that of its first prism, so in simulation mode the mask on copper belongs to the `mask`
-part and `mask_over_copper` selects nothing (STEP is not written in visual mode).
+Every format holds the same parts: the ones switched on with the `..._ENABLED` switch of their module
+(`Board.BOARD_ENABLED`, `Copper.COPPER_ENABLED`, `Finish.FINISH_ENABLED`, `SolderMask.SOLDER_MASK_ENABLED`,
+`Silkscreen.SILKSCREEN_ENABLED`). A STEP file with the mask and silkscreen is 1.5 to 1.6 times as big
+(the PCIe card in `Input/`, in mm: 348 MB and 320 solids written in 8.8 s, against 215 MB and 84 solids
+in 5.6 s without them).
 
 With `STEP_EXACT_ARCS` the file uses these entities beside the planar ones: `CIRCLE` (on an
 `AXIS2_PLACEMENT_3D` at the centre, its axis the board's normal), referenced by the `EDGE_CURVE` of
@@ -76,7 +70,7 @@ at the wall's lower height) under the `ADVANCED_FACE` of a curved wall. An arc t
 half a circle: a whole circle is two arcs between two vertices, on one `CIRCLE`, so there are no
 seam edges and every edge has two vertices and two faces.
 
-### 16.1.6 KiCad Versions And Presets
+### 16.1.5 KiCad Versions And Presets
 
 | Name | Default | Range | Meaning |
 |---|---|---|---|
@@ -90,6 +84,8 @@ The laminate: thickness, dielectrics, outline and holes. Details in [Board](Boar
 
 | Name | Default | Range | Meaning |
 |---|---|---|---|
+| `DIELECTRIC_GROUPING` | `"layer"` | `"layer"` / `"merged"` | One solid per core / prepreg, or the whole laminate as one |
+| `BOARD_ENABLED` | `True` | bool | Build the laminate (the `Board` parts) and write it to every file |
 | `BOARD_THICKNESS_MM` | `None` | None or mm > 0 | Laminate thickness; `None` takes it from the file (a usable stack-up, else `(general (thickness))` less the outer copper and the masks, else 1.6 mm less the same) |
 | `DEFAULT_BOARD_THICKNESS_MM` | `1.6` | mm > 0 | Finished board thickness when the file gives none (KiCad's default) |
 | `DIELECTRIC_SPLIT` | `"even"` | `"even"` | How the laminate is divided between copper layers when the file has no usable stack-up |
@@ -112,6 +108,8 @@ Copper foils, plating, vias and the finished copper geometry. Details in
 
 | Name | Default | Range | Meaning |
 |---|---|---|---|
+| `COPPER_GROUPING` | `"net"` | `"net"` / `"layer"` / `"merged"` | One copper solid per net, per layer (plating separate), or one in all |
+| `COPPER_ENABLED` | `True` | bool | Build the copper (layers and the plated barrels of holes and vias) and write it to every file |
 | `DEFAULT_OUTER_FOIL_MM`, `DEFAULT_INNER_FOIL_MM` | `0.035`, `0.035` | mm > 0 | Foil when the stack-up gives none (1 oz = 0.035, 0.5 oz = 0.0175) |
 | `USE_STACKUP_COPPER_THICKNESS` | `True` | bool | Stack-up `(layer "F.Cu" (thickness ...))` wins when present |
 | `OUTER_PLATING_ADDED_MM` | `0.0` | mm ≥ 0 | Electroplated copper added to the outer layers; typical 0.020; 0 = foil only, as KiCad models |
@@ -159,6 +157,7 @@ Short name `SolderMask`. Details in [Solder Masks](Solder-Masks.md).
 
 | Name | Default | Range | Meaning |
 |---|---|---|---|
+| `SOLDER_MASK_ENABLED` | `True` | bool | Build the solder mask and write it to every file |
 | `MASK_OVER_LAMINATE_MM` | `0.010` | mm > 0 | Mask thickness over bare laminate (typical 0.020 to 0.030) |
 | `MASK_OVER_COPPER_MM` | `0.010` | mm > 0 | Mask thickness on top of copper (typical 0.010 to 0.015) |
 | `USE_STACKUP_MASK_THICKNESS` | `True` | bool | The first mask thickness found in the stack-up (normally `F.Mask`'s) is used for both values on both faces |
@@ -174,6 +173,7 @@ Details in [Silkscreens](Silkscreens.md).
 
 | Name | Default | Range | Meaning |
 |---|---|---|---|
+| `SILKSCREEN_ENABLED` | `True` | bool | Build the silkscreen and write it to every file |
 | `SILK_THICKNESS_MM` | `0.010` | mm > 0 | Ink thickness (typical 0.010 to 0.020) |
 | `SILKSCREEN_OVER_COPPER` | `False` | bool | Keep ink where the mask is open; `False` clips it off the pads as fabricators do. With `True` the ink lies on the copper and the finish is left out under it |
 | `FONT_FILE` | `None` | None or a file in `kese/assets/fonts/` | Custom stroke-font JSON or Hershey `.jhf`; `None` = KiCad newstroke |
@@ -189,16 +189,14 @@ Details in [Silkscreens](Silkscreens.md).
 
 ## 16.6 Finish (`parameters/finish.py`)
 
-Details in [Top And Bottom Copper Finishings](Copper-Finishings.md).
+Details in [Finish](Finish.md).
 
 | Name | Default | Range | Meaning |
 |---|---|---|---|
-| `FINISH_ENABLED` | `False` | bool | Build the surface finish on bare copper |
-| `FINISH_TYPE` | `"file"` | `"file"` or a key of `FINISH_TYPES` | Take the type from the stack-up's `(copper_finish ...)` (KiCad's `None` builds no finish), or name it |
-| `FINISH_DEFAULT_TYPE` | `"ENIG"` | a key of `FINISH_TYPES` | Type when the file gives none, or gives a name that matches no key of `FINISH_TYPES` and no alias |
+| `FINISH_ENABLED` | `True` | bool | Build the surface finish and write it to every file, on every bare copper face: tops and walls in the mask openings, plated holes, the plated edge and castellations, copper cut by the edge |
+| `FINISH_TYPE` | `"ENIG"` | `"file"` or a key of `FINISH_TYPES` | The finish type, or `"file"` to take it from the stack-up's `(copper_finish ...)` (KiCad's `None` builds no finish; no finish in the file, or a name that matches no key and no alias, stops the run with an error) |
 | `FINISH_GROUPING` | `"metal"` | `"metal"` / `"net"` | One part per side and metal, or per side, metal and net |
-| `FINISH_ON_EDGE_PLATING` | `True` | bool | Also build the finish on the plated board edge (`Copper.EDGE_PLATING`), as a shell round the edge copper |
-| `FINISH_ON_CASTELLATIONS` | `True` | bool | Also build the finish inside the part-barrels of the castellated holes |
+| `FINISH_BEFORE_SOLDER_MASK` | `False` | bool | The finish goes on before the mask: on all the outer copper, with the mask and silkscreen on top of it; `False` puts it only in the mask openings |
 | `FINISH_TYPES` | ENIG, ENEPIG, HASL, HASL_LF, OSP, ImmersionSilver, ImmersionTin, HardGold | `{key: [(metal, mm), ...]}` bottom to top | Layers of each finish |
 | `FINISH_NAME_ALIASES` | 6 KiCad names (`HAL SnPb` → `HASL`, `HAL lead-free` → `HASL_LF`, `Hard gold`, `Immersion tin`, `Immersion silver`, `HT_OSP` → `OSP`) | `{KiCad name: key of FINISH_TYPES}` | KiCad finish names that differ from a key; matching ignores case, spaces, `-` and `_` |
 | `FINISH_CONDUCTIVITY_S_PER_M` | Nickel `1.4e7`, Gold `4.1e7`, Palladium `9.5e6`, Tin `9.1e6`, Silver `6.3e7`, OSP `0.0` | `{metal: S/m}` | Written to `materials.json` |

@@ -95,7 +95,7 @@ appears only on vias comes after every net with a track, zone or pad on that lay
 
 ## 11.2 Grouping And Part Names
 
-| `Run.COPPER_GROUPING` | Part per | Name | Plating |
+| `Copper.COPPER_GROUPING` | Part per | Name | Plating |
 |---|---|---|---|
 | `"net"` (default) | net | `Copper_<net>` | inside the net's part |
 | `"layer"` | layer | `Copper_F.Cu`, `Copper_In1.Cu`, ... | separate `Plating` part |
@@ -338,7 +338,7 @@ n^{*} = \arg\max_{n \in S} \sum_{k=0}^{N-1} \mathrm{area}\left( C_{k,n} \cap E \
 Every copper part carries `conductivity_S_per_m` (`Copper.COPPER_CONDUCTIVITY_S_PER_M`,
 5.8 × 10⁷ S/m) and `surface_roughness_um` (`Copper.COPPER_SURFACE_ROUGHNESS_UM`, 0 = ignore; a
 solver setting, not geometry) in `materials.json`. A separate `Plating` part (with
-`Run.COPPER_GROUPING = "layer"`) carries only `conductivity_S_per_m`. `thickness_mm`, `foil_mm`
+`Copper.COPPER_GROUPING = "layer"`) carries only `conductivity_S_per_m`. `thickness_mm`, `foil_mm`
 and `plating_added_mm` are those of the part's first layer. See
 [Material Properties](Material-Properties.md).
 

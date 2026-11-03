@@ -42,7 +42,7 @@ def _unetched(r, k):
 
 
 def build(r, ps):
-    st, R, C = r.stackup, P.Run, P.Copper
+    st, C = r.stackup, P.Copper
     last = len(r.layers) - 1
     for k, l in enumerate(r.layers):
         lo, hi = st.band[l]
@@ -58,4 +58,4 @@ def build(r, ps):
                      "plating_added_mm": C.OUTER_PLATING_ADDED_MM if outer else 0.0}
             pieces = _slices(region, lo, hi, foot_at_bottom, unetched) if etched else [(region, lo, hi)]
             for g, z0, z1 in pieces:
-                ps.add(part_name(R.COPPER_GROUPING, net, l), "copper", g, z0, z1, layer=l, net=net, props=props)
+                ps.add(part_name(C.COPPER_GROUPING, net, l), "copper", g, z0, z1, layer=l, net=net, props=props)

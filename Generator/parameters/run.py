@@ -32,17 +32,6 @@ ORIGIN = "center"
 # "flat"   : board in the XZ plane, F.Cu facing +Y
 ORIENTATION = "upright"
 
-# Copper grouping in "simulation" mode:
-#   "net"    - one solid per net (all its layers and vias joined)  <- what EM ports need
-#   "layer"  - one solid per copper layer, plating separate
-#   "merged" - all copper in one solid
-COPPER_GROUPING = "net"
-
-# Dielectric grouping in "simulation" mode:
-#   "layer"  - one solid per stackup dielectric (core / prepreg), each with its own material
-#   "merged" - the whole laminate as one solid
-DIELECTRIC_GROUPING = "layer"
-
 # How many threads stage 6 works with (the 2D geometry library runs outside
 # Python's lock): parts built at once in "simulation" mode, slices in "visual" mode.  0 = one per
 # processor core
@@ -83,24 +72,11 @@ STEP_ARC_MIN_SWEEP_DEG = 10.0          # and turning at least this far
 STEP_ARC_MAX_TURN_DEG = 30.0           # but at most this far at one vertex: a polygon with fewer than 12
                                        # sides (an octagonal pad, a square) is a polygon, not a circle
 #
-# Every part has a "role".  The roles are:
-#   "board"            the laminate: one part per dielectric (core / prepreg), e.g. "Board_dielectric 1"
-#   "copper"           copper of the layers, grouped per COPPER_GROUPING, e.g. "Copper_GND"
-#   "plating"          via / plated-hole barrels (its own part only when COPPER_GROUPING = "layer";
-#                      with "net" or "merged" the barrels belong to the copper parts)
-#   "finish"           surface finish metals on bare copper, e.g. "Top Finish Gold" (if FINISH_ENABLED)
-#   "mask"             solder mask on laminate and the walls beside traces: "Top Solder Mask", "Bottom Solder Mask"
-#   "mask_over_copper" the mask lying on top of copper (a separate part only in "visual" mode; in
-#                      "simulation" mode these prisms are part of the "Top/Bottom Solder Mask" parts)
-#   "silk"             silkscreen ink: "Top Silkscreen", "Bottom Silkscreen"
-#
-# STEP_WRITE_ROLES - which roles are written to the STEP file at all.
-#   Each written part is made of closed solids.  Mask and silk are left out by default: they are
-#   many more solids, which make the file 1.5 to 1.6 times as big (the PCIe card in Input/, in mm:
-#   348 MB and 320 solids written in 8.8 s instead of 215 MB and 84 solids in 5.6 s).  GLB / STL /
-#   OBJ always contain them.  To write everything:
-#   STEP_WRITE_ROLES = ["board", "copper", "plating", "finish", "mask", "mask_over_copper", "silk"]
-STEP_WRITE_ROLES = ["board", "copper", "plating", "finish"]
+# Which parts are made, in every format and mode alike, is set by one switch per kind of part:
+#   Board.BOARD_ENABLED, Copper.COPPER_ENABLED (copper and plated barrels), Finish.FINISH_ENABLED,
+#   SolderMask.SOLDER_MASK_ENABLED, Silkscreen.SILKSCREEN_ENABLED, all True by default.
+#   STEP with mask and silk is bigger (the PCIe card in Input/, in mm: 348 MB and 320 solids written
+#   in 8.8 s, against 215 MB and 84 solids without them).
 
 # KiCad file-format versions this project has been tested with (stage 1, read, warns outside this range)
 KICAD_VERSION_MIN = 3                  # the BZR builds of 2013-2014 before KiCad 4 (KiCad 4 files say (version 4), KiCad 5 20171130)
@@ -112,13 +88,15 @@ TESTED_COPPER_LAYERS = 8               # stage 1 warns above this many copper la
 PRESETS = {
     # STEP in mm with KiCad's origin: port and probe positions read off the layout match the model
     "hfss": {"Run.MODE": "simulation", "Run.FILE_FORMAT": ["step"], "Run.UNITS": "mm", "Run.ORIGIN": "kicad",
-             "Run.COPPER_GROUPING": "net", "Run.DIELECTRIC_GROUPING": "layer", "Run.WRITE_MATERIALS_JSON": True},
+             "Copper.COPPER_GROUPING": "net", "Board.DIELECTRIC_GROUPING": "layer", "Run.WRITE_MATERIALS_JSON": True},
     # as hfss, plus one STL per part for the import route CST falls back to
     "cst": {"Run.MODE": "simulation", "Run.FILE_FORMAT": ["step", "stl"], "Run.UNITS": "mm", "Run.ORIGIN": "kicad",
-            "Run.COPPER_GROUPING": "net", "Run.DIELECTRIC_GROUPING": "layer", "Run.WRITE_MATERIALS_JSON": True},
+            "Copper.COPPER_GROUPING": "net", "Board.DIELECTRIC_GROUPING": "layer", "Run.WRITE_MATERIALS_JSON": True},
     # openEMS has no STEP reader: one STL per net / dielectric, properties from materials.json
+    # (no finish: 80 nm of gold is far below any FDTD mesh cell)
     "openems": {"Run.MODE": "simulation", "Run.FILE_FORMAT": ["stl"], "Run.UNITS": "mm", "Run.ORIGIN": "kicad",
-                "Run.COPPER_GROUPING": "net", "Run.DIELECTRIC_GROUPING": "layer", "Run.WRITE_MATERIALS_JSON": True},
+                "Copper.COPPER_GROUPING": "net", "Board.DIELECTRIC_GROUPING": "layer", "Run.WRITE_MATERIALS_JSON": True,
+                "Finish.FINISH_ENABLED": False},
     # web viewers (<model-viewer>, three.js): metres, centred, the visible surface only
     "viewer": {"Run.MODE": "visual", "Run.FILE_FORMAT": ["glb"], "Run.UNITS": "m", "Run.ORIGIN": "center"},
 }

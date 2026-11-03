@@ -242,4 +242,4 @@ in `materials.json`.
 
 | Previous | Next |
 |:---|---:|
-| [Top And Bottom Copper Finishings](Copper-Finishings.md) | [Solder Masks](Solder-Masks.md) |
+| [Finish](Finish.md) | [Solder Masks](Solder-Masks.md) |

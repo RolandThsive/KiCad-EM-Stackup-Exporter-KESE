@@ -15,14 +15,17 @@ or the files in `parameters/` change any single value.
 | Web viewer, three.js, `<model-viewer>` | `--for viewer`: visual, GLB, metres, centred | glTF viewers expect metres and a model around the origin; the skin does not z-fight |
 | Blender, renders | `--mode visual --format glb obj` | OBJ carries an `.mtl` with the colours; GLB carries PBR materials |
 | Thermal or FEA tool that reads STL | `--format stl --set Run.UNITS=mm` | one closed STL per part |
-| DC-IR / PDN with one solid per copper layer | `--set Run.COPPER_GROUPING=layer` | copper per layer, plating as its own `Plating` part |
-| A single body for the whole laminate | `--set Run.DIELECTRIC_GROUPING=merged` | one `Board` solid instead of one per dielectric |
+| DC-IR / PDN with one solid per copper layer | `--set Copper.COPPER_GROUPING=layer` | copper per layer, plating as its own `Plating` part |
+| A single body for the whole laminate | `--set Board.DIELECTRIC_GROUPING=merged` | one `Board` solid instead of one per dielectric |
 
 > [!NOTE]
-> By default the STEP file holds only the board, copper, plating and finish parts
-> (`Run.STEP_WRITE_ROLES`). Add `"mask"` (the whole mask, including the mask on copper) and
-> `"silk"` there when the solver must see the solder mask or silkscreen; GLB, STL and OBJ always
-> contain them.
+> Every format and both modes hold the same parts: the ones switched on with
+> `Board.BOARD_ENABLED`, `Copper.COPPER_ENABLED` (copper and plated barrels),
+> `Finish.FINISH_ENABLED`, `SolderMask.SOLDER_MASK_ENABLED` and `Silkscreen.SILKSCREEN_ENABLED`,
+> all `True` by default. Switch the mask and silkscreen off when the solver need not see them:
+> a STEP file with them is 1.5 to 1.6 times as big (the PCIe card in `Input/`, in mm: 348 MB and
+> 320 solids against 215 MB and 84 solids), for example
+> `--set SolderMask.SOLDER_MASK_ENABLED=False --set Silkscreen.SILKSCREEN_ENABLED=False`.
 
 ## 9.2 The Presets
 
@@ -35,6 +38,8 @@ or the files in `parameters/` change any single value.
 | `cst` | simulation | step, stl | mm | kicad | net | layer | True |
 | `openems` | simulation | stl | mm | kicad | net | layer | True |
 | `viewer` | visual | glb | m | center | (unchanged) | (unchanged) | (unchanged) |
+
+`openems` also sets `Finish.FINISH_ENABLED = False`: 80 nm of gold is far below any FDTD mesh cell.
 
 A preset is only a set of overrides: `--for hfss --format step glb` writes both.
 
@@ -54,13 +59,13 @@ checks assume `upright`; run `--verify` without `flat`.
 
 ## 9.4 Grouping
 
-| `Run.COPPER_GROUPING` | Parts | Use |
+| `Copper.COPPER_GROUPING` | Parts | Use |
 |---|---|---|
 | `net` | `Copper_<net>`: all layers and vias of a net in one solid | EM ports, parasitic extraction, per-net anything |
 | `layer` | `Copper_F.Cu`, `Copper_In1.Cu`, ... plus `Plating` | layer-by-layer DC or thermal studies |
 | `merged` | one `Copper` | a single conductor body |
 
-| `Run.DIELECTRIC_GROUPING` | Parts |
+| `Board.DIELECTRIC_GROUPING` | Parts |
 |---|---|
 | `layer` | `Board_dielectric 1`, `Board_dielectric 2`, ... each with its own εr and tanδ |
 | `merged` | one `Board` (the first dielectric's material) |
@@ -75,8 +80,8 @@ For an EM simulation of a board in the solver's own units:
 | `Run.FILE_FORMAT` | `["step"]` (or `["stl"]` for openEMS) |
 | `Run.UNITS` | `mm` |
 | `Run.ORIGIN` | `kicad` |
-| `Run.COPPER_GROUPING` | `net` |
-| `Run.DIELECTRIC_GROUPING` | `layer` |
+| `Copper.COPPER_GROUPING` | `net` |
+| `Board.DIELECTRIC_GROUPING` | `layer` |
 | `Run.WRITE_MATERIALS_JSON` | `True` |
 | `Run.VERIFY` or `--verify` | on, for the first export of a new board |
 

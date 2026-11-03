@@ -57,5 +57,9 @@ def start(mode=None, formats=None, out_root=None, overrides=(), verify=None, log
     if mode == "visual" and set(formats) - VISUAL_FORMATS:
         raise ValueError("visual mode is a surface, not solids: FILE_FORMAT may only contain glb / obj "
                          f"(asked for {sorted(set(formats) - VISUAL_FORMATS)})")
+    if not (P.Board.BOARD_ENABLED or P.Copper.COPPER_ENABLED or P.Finish.FINISH_ENABLED
+            or P.SolderMask.SOLDER_MASK_ENABLED or P.Silkscreen.SILKSCREEN_ENABLED):
+        raise ValueError("nothing to build: Board.BOARD_ENABLED, Copper.COPPER_ENABLED, Finish.FINISH_ENABLED, "
+                         "SolderMask.SOLDER_MASK_ENABLED and Silkscreen.SILKSCREEN_ENABLED are all False")
     return Job(mode=mode, formats=formats, out_root=out_root, overrides=tuple(overrides),
                verify=R.VERIFY if verify is None else verify, log=log, status=Status(R.SHOW_PROGRESS))

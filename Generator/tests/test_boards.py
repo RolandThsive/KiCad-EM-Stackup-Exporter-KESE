@@ -46,13 +46,16 @@ BOARDS = (sorted((ROOT / "tests" / "boards").glob("*.kicad_pcb")) + FEATURES
           + [p for p in sorted((ROOT / "Input").glob("*.kicad_pcb")) if p.read_bytes() not in COPIES])
 MODES = ("simulation", "visual")
 FORMATS = {"simulation": ["glb", "step"], "visual": ["glb"]}
-# Boards run with other values than parameters/ has: the finish boards with the finish on, which is
-# off by default (Finish.FINISH_ENABLED), so that the finish parts are built and checked too, and the
-# plated-edge boards with it on, for the finish on the plated edge and in the castellations
-SETTINGS = {"18_finishes": {"Finish.FINISH_ENABLED": True},
-            "18b_finish_pads": {"Finish.FINISH_ENABLED": True},
-            "16_edge_plating_castellation": {"Finish.FINISH_ENABLED": True},
-            "16b_edge_plating_border": {"Finish.FINISH_ENABLED": True}}
+# Boards run with other values than parameters/ has, as {board stem: {"Module.NAME": value}}: the
+# boards made for a setting that is off by default.  Every part (board, copper, finish, mask, silk)
+# is on by default, so every board checks them all.
+# The boards whose stack-up names a finish other than ENIG (Finish.FINISH_TYPE's default) run with
+# FINISH_TYPE = "file", so that their own finish is built and the names are read from the file.
+FILE_FINISH = {"Finish.FINISH_TYPE": "file"}
+SETTINGS = {"16_edge_plating_castellation": FILE_FINISH, "17_mask_silk": FILE_FINISH, "18_finishes": FILE_FINISH,
+            "22_hdi_module": FILE_FINISH, "23_pcie_card": FILE_FINISH,
+            "17b_silk_over_copper": {"Silkscreen.SILKSCREEN_OVER_COPPER": True},
+            "18c_finish_before_mask": {"Finish.FINISH_BEFORE_SOLDER_MASK": True, **FILE_FINISH}}
 
 
 @contextmanager

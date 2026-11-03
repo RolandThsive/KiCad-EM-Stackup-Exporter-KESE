@@ -20,7 +20,7 @@ All pages of this wiki, in reading order.
 - [Board](Board.md)
 - [Copper And Traces](Copper-And-Traces.md)
 - [Colorizing](Colorizing.md)
-- [Top And Bottom Copper Finishings](Copper-Finishings.md)
+- [Finish](Finish.md)
 - [Silkscreens](Silkscreens.md)
 - [Solder Masks](Solder-Masks.md)
 
