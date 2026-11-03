@@ -748,20 +748,40 @@ function partInfo(name) {
   for (const [n, p] of Object.entries(parts)) if (p.file_names && stem(p.file_names.stl || "") === name) return { ...p, name: n };
   return null;
 }
+// one line per fact: the title in bold, a colon, the value ("Layer: F.Cu")
+const PROP_UNITS = [[/_mm2$/i, "mm²"], [/_mm$/i, "mm"], [/_um$/i, "µm"], [/_deg$/i, "°"], [/_s_per_m$/i, "S/m"], [/_pct$/i, "%"]];
+function propLine(key, value) {
+  let name = key, unit = "";
+  for (const [re, u] of PROP_UNITS) if (re.test(name)) { name = name.replace(re, ""); unit = u; break; }
+  name = name.replace(/_/g, " ").replace(/\bz\b/, "Z").replace(/^./, (c) => c.toUpperCase());
+  if (key === "side") value = { F: "Top", B: "Bottom" }[value] || value;
+  const v = typeof value === "number" ? fmt(Number(value.toPrecision(4))) : String(value);
+  return [name, unit ? `${v} ${unit}` : v];
+}
 function showHover(part) {
   const card = $("hover-card");
   if (!part) { card.hidden = true; return; }
   const info = partInfo(part.name);
-  card.replaceChildren(el("b", {}, part.name), ` · ${countText(part.triangles)} triangles`);
-  card.style.borderLeftColor = part.color;
+  const lines = [];
   if (info) {
-    const bits = [info.role, info.layer, info.net && `net ${info.net}`].filter(Boolean);
-    if (bits.length) card.append(el("br"), bits.join(" · "));
+    // the layer, with what the part is on it: "Layer: F.Mask (Role: Mask, Side: Top)", "Layer: F.Cu (Role: Copper, Net: GND)",
+    // "Layer: dielectric 1 (Role: Board, Kind: Core, Material: FR4)"
+    const props = { ...(info.properties || {}) };
+    const about = [];
+    if (info.role) about.push(`Role: ${choiceText(info.role.replace(/_/g, " "))}`);
+    for (const k of ["side", "kind", "material", "metal"])            // what the part is, beside its layer
+      if (typeof props[k] === "string") { const [t, v] = propLine(k, props[k]); about.push(`${t}: ${choiceText(v)}`); delete props[k]; }
+    if (info.net) about.push(`Net: ${info.net}`);
+    if (info.layer) lines.push(["Layer", info.layer + (about.length ? ` (${about.join(", ")})` : "")]);
+    else if (about.length) for (const a of about) lines.push(a.split(": "));
     const z = info.z_range_mm;
-    if (z && z[0] != null) card.append(el("br"), `z ${fmt(Number(z[0].toFixed(4)))} … ${fmt(Number(z[1].toFixed(4)))} mm`);
-    const props = Object.entries(info.properties || {}).filter(([, v]) => typeof v === "number" || typeof v === "string").slice(0, 4);
-    if (props.length) card.append(el("br"), props.map(([k, v]) => `${k} ${typeof v === "number" ? fmt(Number(v.toPrecision(4))) : v}`).join(" · "));
+    if (z && z[0] != null) lines.push(["Z height", `${fmt(Number(z[0].toFixed(4)))} to ${fmt(Number(z[1].toFixed(4)))} mm`]);
+    for (const [k, v] of Object.entries(props))
+      if (typeof v === "number" || typeof v === "string") lines.push(propLine(k, v));
   }
+  card.replaceChildren(el("div", { class: "hover-title" }, el("b", {}, part.name), ` · ${countText(part.triangles)} triangles`),
+    ...lines.map(([t, v]) => el("div", { class: "hover-line" }, el("b", {}, `${t}:`), ` ${v}`)));
+  card.style.borderLeftColor = part.color;
   card.hidden = false;
 }
 

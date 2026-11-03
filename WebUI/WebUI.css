@@ -436,8 +436,8 @@ dialog pre { font-family: var(--mono); font-size: 12px; white-space: pre-wrap; m
 .drop-text { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
 .drop-text b { overflow-wrap: anywhere; }
 .drop-text .hint { font-size: 12px; }
-.examples { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; margin: 8px 0 0; }
-.examples .hint { flex-basis: 100%; }                      /* the words on their own line, the examples under them */
+.examples { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 6px; margin: 8px 0 0; }
+.examples .hint { flex-basis: 100%; text-align: center; }                      /* the words on their own line, the examples under them */
 .examples .glass-btn { padding: 3px 10px; font-size: 12px; }
 /* Mode: the big switch everything in KESE depends on (the segmented control, larger) */
 .mode-seg { margin: 12px 0 6px; }
@@ -508,9 +508,12 @@ dialog pre { font-family: var(--mono); font-size: 12px; white-space: pre-wrap; m
 .views { background: rgba(255, 255, 255, 0.6); }
 .empty-note { position: absolute; inset: 0; display: grid; place-content: center; text-align: center; font-size: 15px; color: var(--text-2); pointer-events: none; line-height: 1.6; }
 .readout { left: 12px; bottom: 16px; max-width: calc(100% - 24px); }
-.hover-card { position: absolute; right: 12px; bottom: 16px; max-width: 360px; z-index: 4; background: rgba(255, 255, 255, 0.94); border-radius: 10px;
+.hover-card { position: absolute; right: 12px; bottom: 48px; max-width: 360px; z-index: 4; background: rgba(255, 255, 255, 0.94); border-radius: 10px;
   padding: 7px 10px; box-shadow: var(--shadow-card); font-size: 12px; line-height: 1.5; border-left: 4px solid var(--accent); pointer-events: none; }
-.hover-card b { font-family: var(--mono); }
+.hover-title { margin-bottom: 3px; overflow-wrap: anywhere; }
+.hover-title b { font-family: var(--mono); }
+.hover-line { line-height: 1.55; }
+.hover-line b { font-weight: 600; color: var(--text); }
 .sliders { flex: 1; min-width: 0; display: flex; gap: 12px; }
 .view-slider { flex: 1; display: flex; align-items: center; gap: 10px; font-size: 12.5px; background: rgba(255, 255, 255, 0.8);
   padding: 4px 12px; border-radius: 10px; box-shadow: var(--shadow-btn); }
