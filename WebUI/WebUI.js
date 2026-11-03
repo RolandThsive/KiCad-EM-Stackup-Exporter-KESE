@@ -420,7 +420,8 @@ function colorGroups(keys) {
   const V = state.values, mats = V["Color.MATERIALS"] || {}, visual = V[CFG.mode] === "visual";
   const stackup = !!V["Color.USE_STACKUP_COLORS"], has = (k) => k in mats;
   const mat = (k, label = k) => (has(k) ? { param: "Color.MATERIALS", key: k, label } : null);
-  const names = (param, suffix = "") => Object.keys(V[param] || {}).map((k) => ({ param, key: k, label: `Stack-up ${k.replace(/\b\w/g, (c) => c.toUpperCase())}${suffix}` }));
+  const names = (param, suffix = "") => Object.keys(V[param] || {}).map((k) => ({ param, key: k, label: `${k.replace(/\b\w/g, (c) => c.toUpperCase())}${suffix}` }));
+  const fallback = (parts) => parts.map((k) => mat(k, stackup ? `${k} (if the board names no colour)` : k));
   const layered = !visual && V["Run.DIELECTRIC_GROUPING"] === "layer" && has("Board_core");
   const finishOn = !!V["Finish.FINISH_ENABLED"];
   const metals = Object.keys(V["Finish.FINISH_CONDUCTIVITY_S_PER_M"] || {});
@@ -430,14 +431,16 @@ function colorGroups(keys) {
       items: visual ? [mat("Copper_exposed", "Copper")] : [mat("Copper", "Copper"), mat("Plating", "Hole plating")] },
     finishOn && { title: "Finish Colors", tip: "The finish metals on the exposed copper (Finish Enabled is on)",
       items: metals.length ? metals.map((m) => mat(m)) : ["Nickel", "Gold", "Palladium", "Tin", "Silver", "OSP"].map((m) => mat(m)) },
-    { title: "Solder Mask Colors", tip: "The solder mask; with Use Stackup Colors on, the colour names the board's stack-up can use",
-      items: [mat("Top Solder Mask"), mat("Bottom Solder Mask"),
-        ...(visual ? [mat("Top Mask over Copper"), mat("Bottom Mask over Copper")] : []),
-        ...(stackup ? names("Color.STACKUP_MASK_COLORS") : []),
-        ...(stackup && visual ? names("Color.STACKUP_MASK_OVER_COPPER_COLORS", " over copper") : [])],
+    // With stack-up colours on, the colour comes from the stack-up's name, so its names come first; the Top /
+    // Bottom entries still give the colour when the board names none (or a name the table lacks), and always
+    // give alpha, metallic and roughness.  With them off, the names are never used and only Top / Bottom show.
+    { title: "Solder Mask Colors", tip: "The solder mask: with Use Stackup Colors on, the colour of each name the board's stack-up can use",
+      items: [...(stackup ? names("Color.STACKUP_MASK_COLORS") : []),
+        ...(stackup && visual ? names("Color.STACKUP_MASK_OVER_COPPER_COLORS", " over copper") : []),
+        ...fallback(["Top Solder Mask", "Bottom Solder Mask", ...(visual ? ["Top Mask over Copper", "Bottom Mask over Copper"] : [])])],
       extra: [visual && "Color.VISUAL_MASK_OPAQUE", visual && stackup && "Color.USER_MASK_OVER_COPPER_LIGHTEN"] },
-    { title: "Silkscreen Colors", tip: "The silkscreen; with Use Stackup Colors on, the colour names the board's stack-up can use",
-      items: [mat("Top Silkscreen"), mat("Bottom Silkscreen"), ...(stackup ? names("Color.STACKUP_SILK_COLORS") : [])] },
+    { title: "Silkscreen Colors", tip: "The silkscreen: with Use Stackup Colors on, the colour of each name the board's stack-up can use",
+      items: [...(stackup ? names("Color.STACKUP_SILK_COLORS") : []), ...fallback(["Top Silkscreen", "Bottom Silkscreen"])] },
   ].filter(Boolean);
   const out = [];
   if (keys.includes("Color.USE_STACKUP_COLORS")) out.push(field(state.byKey["Color.USE_STACKUP_COLORS"]));
