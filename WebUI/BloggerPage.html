@@ -6,7 +6,7 @@
   the GitHub repository (GitHub Pages, the WebUI branch) and runs in the visitor's browser; phones get a short
   message instead.
 
-  Change APP_URL below if the GitHub Pages address changes (it follows the repository name, trailing dash included).
+  Change APP_URL below if the GitHub Pages address changes (it follows the repository name).
 -->
 <style>
   html, body { overflow: hidden !important; height: 100% !important; }
@@ -47,12 +47,19 @@
 
 <script>
 (function () {
-  var APP_URL = "https://rolandthsive.github.io/KiCad-EM-Stackup-Exporter-KESE-/WebUI/";
+  var APP_URL = "https://rolandthsive.github.io/KiCad-EM-Stackup-Exporter-KESE/WebUI/";
   var HOME = location.origin + "/";
 
   var shell = document.getElementById("kese-shell");
   var frame = document.getElementById("kese-frame");
   document.body.appendChild(shell);           // out of the theme's wrappers, so nothing can clip or shift it
+
+  // The tab shows the KESE logo, not the blog's icon (the tool's own favicon cannot reach the tab from inside a frame).
+  var icons = document.querySelectorAll('link[rel~="icon"]');
+  for (var i = 0; i < icons.length; i++) icons[i].parentNode.removeChild(icons[i]);
+  var icon = document.createElement("link");
+  icon.rel = "icon"; icon.href = APP_URL + "favicon.ico";
+  document.head.appendChild(icon);
 
   // Home: the blog's front page.  Back: the page the visitor came from on this blog, else the front page.
   document.getElementById("kese-home").href = HOME;
