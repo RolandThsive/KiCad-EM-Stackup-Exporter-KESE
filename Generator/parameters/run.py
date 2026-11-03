@@ -32,9 +32,13 @@ ORIGIN = "center"
 # "flat"   : board in the XZ plane, F.Cu facing +Y
 ORIENTATION = "upright"
 
-# How many threads work at once (the 2D geometry library runs outside Python's lock): the copper
-# layers and hole spans of the finish in stage 4, and in stage 6 the parts built at once in
-# "simulation" mode, the slices in "visual" mode.  0 = one per processor thread (os.cpu_count())
+# How many threads or processes work at once.  Threads where the 2D geometry library does the work
+# (it runs outside Python's lock): the copper layers in stage 3; both sides of the solder mask and
+# the silkscreen, and the finish's copper layers and hole spans, in stage 4; the faces of the
+# visual-mode skin.  Processes of their own where much of the work is Python's: in stage 6 the
+# parts built at once in "simulation" mode and the parts sliced for the "visual" skin (on boards of
+# 20,000 coordinates or more; a smaller board is built in turn, faster than starting processes).
+# 0 = one per processor thread (os.cpu_count()); 1 = everything in turn, in one process
 WORKERS = 0
 
 # Live "running <stage> ... 1m 23s" line in the terminal while a board is generated

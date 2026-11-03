@@ -35,7 +35,7 @@ What to make, where, and in which formats.
 
 | Name | Default | Range | Meaning |
 |---|---|---|---|
-| `WORKERS` | `0` | int ≥ 0 | Threads that work at once (the 2D geometry library runs outside Python's lock): in stage 4 the finish's copper layers and hole spans, in stage 6 the parts built at once in simulation mode, the slices in visual mode. `0` = one per processor thread (`os.cpu_count()`) |
+| `WORKERS` | `0` | int ≥ 0 | Threads or processes that work at once. Threads where the 2D geometry library does the work (it runs outside Python's lock): the copper layers in stage 3; both sides of the solder mask and the silkscreen, and the finish's copper layers and hole spans, in stage 4; the faces of the visual-mode skin. Processes of their own, each started afresh, where much of the work is Python's: in stage 6 the parts built at once in simulation mode and the parts sliced for the visual skin, on boards of 20,000 coordinates or more (a smaller board is built in turn). `0` = one per processor thread (`os.cpu_count()`); `1` = everything in turn, in one process |
 | `SHOW_PROGRESS` | `True` | bool | Live `running <stage> ... 1m 23s` line on a terminal |
 | `VERIFY` | `False` | bool | Run the Verifier after generation (2 to 4 s on the example boards; longer on dense boards) |
 | `VERIFY_RAYS` | `3000` | int > 0 | Vertical rays the Verifier casts through a visual model to test its surfaces |

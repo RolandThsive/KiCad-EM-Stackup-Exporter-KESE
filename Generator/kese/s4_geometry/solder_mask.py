@@ -1,9 +1,10 @@
 """Solder mask, top and bottom, conformal over the copper: MASK_OVER_LAMINATE_MM thick on bare
 laminate and MASK_OVER_COPPER_MM on top of copper (on top of the finish, when the finish goes on
 before the mask), with a wall where it climbs over a trace.  Where the mask is comes from stage 3
-(Regions.mask)."""
+(Regions.mask).  The two sides are built at once, in threads."""
 from kese.core import shapes2d as sh
 from kese.core.conformal import conformal_regions
+from kese.core.parallel import in_parallel
 from kese.s4_geometry.finish import under_mask_copper, under_mask_mm
 from kese.s4_geometry.heights import mask_thicknesses
 from parameters import P
@@ -15,14 +16,20 @@ def build(r, ps, mode):
     lift = under_mask_mm(st)                   # finish applied before the mask lies under it, on the copper
     ps.notes.append(f"solder mask: {t_lam} mm over laminate, {t_cu} mm over copper ({src})"
                     + (f", on the finish ({lift:.6g} mm) over copper" if lift else ""))
-    for side, layer, sign, tb in (("F", "F.Cu", 1, "Top"), ("B", "B.Cu", -1, "Bottom")):
-        region = r.mask[side]
+    sides = (("F", "F.Cu", 1, "Top"), ("B", "B.Cu", -1, "Bottom"))
+
+    def split(side):                           # (flat, top, wall) of one side, or None
+        region = r.mask[side[0]]
         if region.is_empty:
+            return None
+        cu = under_mask_copper(st, r.copper_all.get(side[1], sh.EMPTY))
+        return conformal_regions(region, cu, t_lam, M.MASK_WALL_QUAD_SEGS)
+    for (side, layer, sign, tb), pieces in zip(sides, in_parallel(split, sides)):   # both sides at once
+        if pieces is None:
             continue
-        cu = under_mask_copper(st, r.copper_all.get(layer, sh.EMPTY))
+        flat, top, wall = pieces
         cu_t = st.band[layer][1] - st.band[layer][0] + lift
         base = st.half                         # laminate face
-        flat, top, wall = conformal_regions(region, cu, t_lam, M.MASK_WALL_QUAD_SEGS)
         part = f"{tb} Solder Mask"
         over = f"{tb} Mask over Copper" if mode == "visual" else part
         props = {"side": side, "thickness_over_laminate_mm": t_lam, "thickness_over_copper_mm": t_cu}
