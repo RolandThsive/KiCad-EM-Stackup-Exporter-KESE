@@ -57,6 +57,8 @@
       <button role="tab" data-ui="basic" class="on" data-tip="The main settings of each parameter file">Basic</button>
       <button role="tab" data-ui="advanced" data-tip="Every parameter of every parameter file, Geometry included, with its name as in the file">Advanced</button>
     </div>
+    <!-- between Basic/Advanced and the buttons: the note that the settings changed since the model was made -->
+    <div class="top-mid"><div class="stale-badge" id="stale-badge" hidden>Settings changed: press Generate to update the model</div></div>
     <div class="top-actions">
       <a class="glass-btn small" id="btn-help" href="#" target="_blank" rel="noopener" data-tip="Opens the project wiki: what each setting does and how to choose it">Help / Wiki</a>
       <button class="glass-btn small" id="btn-import" data-tip="Load settings: a parameters.txt from any run (web or desktop) or your own parameter .py files. Every control takes those values.">Import Parameters</button>
@@ -124,7 +126,6 @@
               <select id="showing" disabled></select></label>
           </div>
         </div>
-        <div class="stale-badge" id="stale-badge" hidden>Settings changed: press Generate to update the model</div>
         <div class="empty-note" id="empty-note">Choose a board, then press Generate.<br><span class="hint">The model is made in your browser.</span></div>
         <div class="run-card" id="run-card" hidden aria-live="polite">
           <div class="spinner" aria-hidden="true"></div>
