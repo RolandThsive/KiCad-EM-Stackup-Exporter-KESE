@@ -236,11 +236,39 @@ than reading with the healing (`python tests/test_boards.py --healed`, the check
 54 MB file of `16b_edge_plating_border`, 68 s against 169 s on a 4-core machine. On every test
 board the two give the same verdict; on files broken on purpose (a face left out, a vertex moved, a
 face turned over, a circle's radius changed), only the read without the healing finds every fault.
-So `python tests/test_boards.py` reads the STEP files back in background processes, a quarter of
-the processor threads and at least two (`AUDITORS` in `tests/test_boards.py`), while it exports the
-next boards, and prints a board's line once its file is checked, in the order the boards ran, with
-the time the read-back took (`STEP read back in 3.4 s`). Under `pytest` every board is checked in
-turn.
+
+OpenCascade reads a file in one thread and holds about ten times its size in memory, and its check
+of a face compares the face's edges and vertices with one another, so its time grows with the
+square of the face's edges: one face of `22_hdi_module` with 8,270 edges takes 18 s on its own. So
+the suite reads a file back one part at a time (`tests/step_audit.py`). In a file KESE wrote, each
+part's entities stand on their own; only the assembly's, `#1` to `#24` at the end, are shared. Each
+part is copied into a small STEP file of its own, with the assembly cut down to that part, and read
+back in a process of its own, the biggest parts first. A solid is checked on its own either way, so
+the counts are those of reading the whole file: on every test board the invalid solids, free edges,
+number of solids and their volume come out the same both ways, and so does a file with a fault in
+it. On a 4-core machine:
+
+| STEP file (simulation, as the suite writes it) | Size | Read whole | Part by part, 4 processes |
+|---|---|---|---|
+| `16b_edge_plating_border` | 54 MB | 66 s | 18 s |
+| `22_hdi_module` | 71 MB | 132 s | 67 s |
+| `23_pcie_card` | 131 MB | 286 s | 162 s |
+| `21_rf_module` | 174 MB | 310 s | 97 s |
+
+A part is read in one piece, so the slowest part sets the shortest time however many processes
+run: on `22_hdi_module` and `23_pcie_card`, the top solder mask, one solid with a face of 8,270 and
+of 13,736 edges (54 s and 140 s of checking). Memory follows the parts being read rather than the
+whole file: a 12-layer board's 1.25 GB file read with four processes takes 18 minutes and peaks at
+7.7 GB, where read whole it held 13.4 GB and had not finished after 77 minutes. The Verifier, for
+comparison, takes 1 to 4 s on the four boards above: the read-back is a test, not a step of the
+run.
+
+`python tests/test_boards.py` hands the parts to background processes, one per processor thread
+and at least two (`AUDITORS` in `tests/test_boards.py`), while it exports the next boards, and
+prints a board's line once every part of its file is checked, in the order the boards ran, with
+the time the parts took added up (`STEP read back in 3.4 s`; they ran side by side, so it passed
+sooner). Under `pytest` every board is checked in turn, the parts of a file of 20 MB or more in
+processes of their own, one per processor thread, and those of a smaller file one after another.
 
 The test boards in `tests/boards/` cover:
 
@@ -273,7 +301,7 @@ KiCad's own parser does, without a board, in under a second; and a STEP test, al
 
 | Test | Path | What it checks |
 |---|---|---|
-| `test_step_native.py` | the STEP writer (`kese/s7_write/step.py`) | a box with a through hole beside a second box, written from their faces and read back by OpenCascade as two valid solids with no free edge, the right faces and the right volume; names with a quote and letters outside ASCII come back as they went in. Needs OCP (`python -m pip install cadquery-ocp`); takes a second |
+| `test_step_native.py` | the STEP writer (`kese/s7_write/step.py`) and the suite's read-back (`tests/step_audit.py`) | a box with a through hole beside a second box, written from their faces and read back by OpenCascade as two valid solids with no free edge, the right faces and the right volume; names with a quote and letters outside ASCII come back as they went in. A file of three such parts, read back part by part, gives what the whole file gives, also with a face left out of one part. Needs OCP (`python -m pip install cadquery-ocp`); takes a few seconds |
 
 ## 17.5 Inputs KESE Refuses Or Changes
 

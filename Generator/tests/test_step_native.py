@@ -1,8 +1,9 @@
 """The STEP writer (kese/s7_write/step.py): a part built from its Boundary, a
 box with a through hole beside a second, separate box, written and read back by OpenCascade as
 two valid solids with no free edge, the right faces and the right volume; names with a quote
-and letters outside ASCII come back as they went in.  Needs OCP (cadquery's OpenCascade);
-takes a second.
+and letters outside ASCII come back as they went in.  The suite's read-back (tests/step_audit.py),
+which reads a file one part at a time, finds what reading the whole file finds, a fault included.
+Needs OCP (cadquery's OpenCascade); takes a few seconds.
 
     python -m pytest tests/test_step_native.py     (or:  python tests/test_step_native.py)"""
 import sys
@@ -11,9 +12,11 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
+sys.path.insert(0, str(Path(__file__).resolve().parent))
 
 import numpy as np  # noqa: E402
 import shapely  # noqa: E402
+from step_audit import audit_part, parts, step_audit, total  # noqa: E402
 
 from kese.core.boundary import Boundary  # noqa: E402
 from kese.s7_write.step import write_part  # noqa: E402
@@ -77,6 +80,28 @@ def test_a_boundary_reads_back_as_valid_solids():
         assert name == "'\\X2\\00DC\\X0\\n\\X2\\00EF\\X0\\code ''board'''" and name in data
 
 
+def test_a_file_read_back_part_by_part_gives_what_the_whole_file_gives():
+    if STEPControl_Reader is None:
+        return                                    # OCP is not installed
+    with tempfile.TemporaryDirectory() as tmp:
+        path = Path(tmp) / "three.step"
+        w = StepWriter(path, "three", "mm")
+        for name in ("A", "B", "C"):
+            w.add_part(name, (205, 128, 62), write_part(w, name, boundary(), np.eye(4), lambda s: None))
+        w.close()
+        assert step_audit(path, workers=2)[:2] == (0, 0)
+        # a fault in part B: the first face of its first shell left out, so that shell is open
+        data = path.read_text(encoding="latin-1")
+        b = data.index("CLOSED_SHELL", data.index("COLOUR_RGB"))
+        first = data.index("#", b)
+        path.write_text(data[:first] + data[data.index(",", first) + 1:], encoding="latin-1")
+        jobs = parts(path)
+        assert len(jobs) == 3 and all(start is not None for _, start, _, _ in jobs)
+        whole = audit_part((str(path), None, None, None))[:2]
+        assert whole[0] == 1 and whole[1] > 0     # one open solid, the edges of the face left out free
+        assert total([audit_part(job) for job in jobs])[:2] == step_audit(path, workers=2)[:2] == whole
+
+
 def test_step_strings_and_reals():
     assert text("a'b") == "'a''b'"
     assert text("µ") == "'\\X2\\00B5\\X0\\'"
@@ -85,5 +110,6 @@ def test_step_strings_and_reals():
 
 if __name__ == "__main__":
     test_a_boundary_reads_back_as_valid_solids()
+    test_a_file_read_back_part_by_part_gives_what_the_whole_file_gives()
     test_step_strings_and_reals()
     print("ok")
