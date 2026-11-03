@@ -311,7 +311,7 @@ function widget(p) {
 /* ---- tables (the dict parameters: Finish.FINISH_TYPES, Color.MATERIALS, ...) ------------------------------
    A dropdown picks one entry; under it, that entry's value with the widget its shape needs: a colour, a number,
    a name (a dropdown when the names come from another table), a few named values (a material), or a list of
-   (metal, mm) layers.  Entries can be added (a copy of the one shown, under a new name) and removed. */
+   (metal, mm) layers. */
 const HEX = /^#[0-9a-f]{6}$/i;
 // a table whose values name entries of another table: its value is picked from that table's names
 const NAMES_FROM = { "Finish.FINISH_NAME_ALIASES": "Finish.FINISH_TYPES" };
@@ -335,12 +335,21 @@ function numStep(x) {
   const a = Math.abs(x);
   return a >= 1e4 ? Math.pow(10, Math.floor(Math.log10(a)) - 1) : a >= 10 ? 1 : a >= 1 ? 0.1 : Math.pow(10, Math.floor(Math.log10(a)) - 1);
 }
+// the colour as a whole swatch with its hex code on it; clicking it opens the system's colour picker
+function inkOn(hex) {                                              // dark or light text, whichever reads on the colour
+  const n = parseInt(hex.slice(1), 16), r = n >> 16, g = (n >> 8) & 255, b = n & 255;
+  return 0.299 * r + 0.587 * g + 0.114 * b > 150 ? "#1d1d1f" : "#ffffff";
+}
 function colorPicker(value, onPick) {
-  const c = el("input", { type: "color", value: HEX.test(value) ? value.toLowerCase() : "#000000" });
-  const hex = el("span", { class: "mono-name" }, value);
-  c.addEventListener("input", () => { hex.textContent = c.value.toUpperCase(); });
+  const start = HEX.test(value) ? value.toUpperCase() : "#000000";
+  const c = el("input", { type: "color", value: start.toLowerCase(), "aria-label": "Colour" });
+  const hex = el("span", { class: "swatch-hex" }, start);
+  const box = el("label", { class: "swatch", "data-tip": "Click to choose the colour" }, c, hex);
+  const paint = (h) => { box.style.background = h; box.style.color = inkOn(h); hex.textContent = h; };
+  paint(start);
+  c.addEventListener("input", () => paint(c.value.toUpperCase()));
   c.addEventListener("change", () => onPick(c.value.toUpperCase()));
-  return el("label", { class: "color-row" }, c, hex);
+  return box;
 }
 function valueWidget(x, onSet, names) {
   if (typeof x === "boolean") return switchRow(x, x ? "On" : "Off", onSet);
@@ -361,28 +370,8 @@ function tableWidget(p, v, set) {
   const put = (val) => set({ ...state.values[p.key], [sel]: val });
   const namesOf = (k) => (state.values[k] && typeof state.values[k] === "object" ? Object.keys(state.values[k]) : null);
 
-  // the entry row: dropdown, add, remove
-  const add = el("button", { type: "button", class: "table-btn", "data-tip": `Add an entry: a copy of ${sel}, under a new name` }, "+ Add");
-  const remove = el("button", { type: "button", class: "table-btn", disabled: keys.length < 2, "data-tip": `Remove ${sel}` }, "Remove");
-  const head = el("div", { class: "table-head" }, dropdown(keys, sel, pick), add, remove);
-  remove.addEventListener("click", () => {
-    const next = { ...state.values[p.key] }; delete next[sel];
-    state.tableSel[p.key] = Object.keys(next)[0]; set(next);
-  });
-  add.addEventListener("click", () => {
-    const name = el("input", { class: "text-input", placeholder: "new name" });
-    const ok = () => {
-      const n = name.value.trim();
-      if (!n) { renderSections(); return; }
-      if (n in state.values[p.key]) { toast(`${n} is already in ${p.name}`, 4000); return; }
-      state.tableSel[p.key] = n;
-      set({ ...state.values[p.key], [n]: clone(state.values[p.key][sel]) });
-    };
-    name.addEventListener("keydown", (e) => { if (e.key === "Enter") ok(); if (e.key === "Escape") renderSections(); });
-    head.replaceChildren(name, el("button", { type: "button", class: "table-btn", onclick: ok }, "Add"),
-      el("button", { type: "button", class: "table-btn", onclick: () => renderSections() }, "Cancel"));
-    name.focus();
-  });
+  // the entry row: a dropdown of the table's entries
+  const head = el("div", { class: "table-head" }, dropdown(keys, sel, pick));
 
   // the entry's value
   const x = v[sel], body = el("div", { class: "table-body" });
@@ -421,6 +410,73 @@ function field(p) {
   return el("div", { class: "field" + (changed ? " changed" : ""), "data-key": p.key }, head, widget(p));
 }
 
+/* ---- Colorization: one dropdown per kind of part -----------------------------------------------------
+   color.py keeps every look in one MATERIALS table and the stack-up's colour names in three more.  Here they are
+   sorted by what they colour (board, copper, finish, solder mask, silkscreen), and only what this run would use is
+   offered: the mode (visual has exposed copper and mask over copper; simulation has core / prepreg and plating),
+   the dielectric grouping, the finish switch and the stack-up colour switch.  Each group is one dropdown; its
+   entries are the parts' materials and, with stack-up colours on, the colour names the board's stack-up can use. */
+function colorGroups(keys) {
+  const V = state.values, mats = V["Color.MATERIALS"] || {}, visual = V[CFG.mode] === "visual";
+  const stackup = !!V["Color.USE_STACKUP_COLORS"], has = (k) => k in mats;
+  const mat = (k, label = k) => (has(k) ? { param: "Color.MATERIALS", key: k, label } : null);
+  const names = (param, suffix = "") => Object.keys(V[param] || {}).map((k) => ({ param, key: k, label: `Stack-up ${k.replace(/\b\w/g, (c) => c.toUpperCase())}${suffix}` }));
+  const layered = !visual && V["Run.DIELECTRIC_GROUPING"] === "layer" && has("Board_core");
+  const finishOn = !!V["Finish.FINISH_ENABLED"];
+  const metals = Object.keys(V["Finish.FINISH_CONDUCTIVITY_S_PER_M"] || {});
+  const groups = [
+    { title: "Board Colors", tip: "The laminate", items: layered ? [mat("Board_core", "Core"), mat("Board_prepreg", "Prepreg")] : [mat("Board", "Laminate")] },
+    { title: "Copper Colors", tip: "Traces, pads, zones and the plating of holes",
+      items: visual ? [mat("Copper_exposed", "Copper")] : [mat("Copper", "Copper"), mat("Plating", "Hole plating")] },
+    finishOn && { title: "Finish Colors", tip: "The finish metals on the exposed copper (Finish Enabled is on)",
+      items: metals.length ? metals.map((m) => mat(m)) : ["Nickel", "Gold", "Palladium", "Tin", "Silver", "OSP"].map((m) => mat(m)) },
+    { title: "Solder Mask Colors", tip: "The solder mask; with Use Stackup Colors on, the colour names the board's stack-up can use",
+      items: [mat("Top Solder Mask"), mat("Bottom Solder Mask"),
+        ...(visual ? [mat("Top Mask over Copper"), mat("Bottom Mask over Copper")] : []),
+        ...(stackup ? names("Color.STACKUP_MASK_COLORS") : []),
+        ...(stackup && visual ? names("Color.STACKUP_MASK_OVER_COPPER_COLORS", " over copper") : [])],
+      extra: [visual && "Color.VISUAL_MASK_OPAQUE", visual && stackup && "Color.USER_MASK_OVER_COPPER_LIGHTEN"] },
+    { title: "Silkscreen Colors", tip: "The silkscreen; with Use Stackup Colors on, the colour names the board's stack-up can use",
+      items: [mat("Top Silkscreen"), mat("Bottom Silkscreen"), ...(stackup ? names("Color.STACKUP_SILK_COLORS") : [])] },
+  ].filter(Boolean);
+  const out = [];
+  if (keys.includes("Color.USE_STACKUP_COLORS")) out.push(field(state.byKey["Color.USE_STACKUP_COLORS"]));
+  for (const g of groups) {
+    const items = g.items.filter(Boolean);
+    if (!items.length) continue;
+    out.push(colorGroup(g, items));
+    for (const k of g.extra || []) if (k && keys.includes(k)) out.push(field(state.byKey[k]));
+  }
+  return out;
+}
+function colorGroup(g, items) {
+  const id = "color:" + g.title;
+  state.tableSel = state.tableSel || {};
+  const labelOfItem = (it) => it.label;
+  const sel = items.find((it) => labelOfItem(it) === state.tableSel[id]) || items[0];
+  const valueOf = (it) => (state.values[it.param] || {})[it.key];
+  const defaultOf = (it) => (state.byKey[it.param].default || {})[it.key];
+  const changed = items.filter((it) => !same(valueOf(it), defaultOf(it)));
+  const put = (val) => setValues({ [sel.param]: { ...state.values[sel.param], [sel.key]: val } }, "field");
+
+  const head = el("div", { class: "field-head" }, el("span", { class: "field-label", "data-tip": g.tip }, g.title));
+  if (changed.length) head.append(el("button", { type: "button", class: "reset-one", "data-tip": "Back to the file's colours for this group",
+    onclick: () => {
+      const next = {};
+      for (const it of changed) (next[it.param] = next[it.param] || { ...state.values[it.param] })[it.key] = clone(defaultOf(it));
+      setValues(next, "field");
+    } }, "↺"));
+  const pick = dropdown(items.map(labelOfItem), sel.label, (label) => { state.tableSel[id] = label; renderSections(); });
+  const x = valueOf(sel), body = el("div", { class: "table-body" });
+  if (x && typeof x === "object") {
+    for (const [k, y] of Object.entries(x))
+      body.append(el("div", { class: "table-row" }, el("span", { class: "table-label" }, choiceText(k)),
+        valueWidget(y, (z) => put({ ...state.values[sel.param][sel.key], [k]: z }))));
+  } else body.append(el("div", { class: "table-row" }, valueWidget(x, put)));
+  return el("div", { class: "field" + (changed.length ? " changed" : ""), "data-group": g.title }, head,
+    el("div", { class: "table-edit" }, el("div", { class: "table-head" }, pick), body));
+}
+
 /* ---- sections: one per parameter file ---------------------------------------------------------- */
 const OUTSIDE = () => new Set([CFG.mode, CFG.formats, CFG.verify]);
 function sectionKeys(module) {
@@ -457,7 +513,8 @@ function renderSections() {
       el("span", { class: "ps-n" + (nChanged ? " changed" : "") }, nChanged ? `${nChanged} changed` : String(keys.length))));
     const inner = el("div", { class: "psec-body" });
     if (isRun) { const pr = presetRow(); if (pr) inner.append(pr); }
-    for (const k of keys) inner.append(field(state.byKey[k]));
+    if (f.module === "Color" && "Color.MATERIALS" in state.byKey) inner.append(...colorGroups(keys));
+    else for (const k of keys) inner.append(field(state.byKey[k]));
     det.append(inner);
     box.append(det);
   }
