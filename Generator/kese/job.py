@@ -5,6 +5,7 @@ from contextlib import contextmanager
 from dataclasses import dataclass, field
 
 from kese.progress import Status
+from kese.s4_geometry.switches import SWITCHES, is_on
 from parameters import P
 
 MODES = ("simulation", "visual")
@@ -57,5 +58,7 @@ def start(mode=None, formats=None, out_root=None, overrides=(), verify=None, log
     if mode == "visual" and set(formats) - VISUAL_FORMATS:
         raise ValueError("visual mode is a surface, not solids: FILE_FORMAT may only contain glb / obj "
                          f"(asked for {sorted(set(formats) - VISUAL_FORMATS)})")
+    if not any(is_on(key) for key in SWITCHES.values()):
+        raise ValueError(f"nothing to build: {', '.join(sorted(set(SWITCHES.values())))} are all False")
     return Job(mode=mode, formats=formats, out_root=out_root, overrides=tuple(overrides),
                verify=R.VERIFY if verify is None else verify, log=log, status=Status(R.SHOW_PROGRESS))

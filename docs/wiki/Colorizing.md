@@ -11,11 +11,11 @@ Alpha below 1 writes a glTF `BLEND` material.
 
 | Key | Colour | Alpha | Metallic | Roughness | Used for |
 |---|---|---|---|---|---|
-| `Board` | <img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/ColorSwatches/968A58.webp" width="12" height="12" align="absmiddle" alt=""> `#968A58` | 1.0 | 0.0 | 0.80 | the laminate with `Run.DIELECTRIC_GROUPING = "merged"` |
+| `Board` | <img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/ColorSwatches/968A58.webp" width="12" height="12" align="absmiddle" alt=""> `#968A58` | 1.0 | 0.0 | 0.80 | the laminate with `Board.DIELECTRIC_GROUPING = "merged"` |
 | `Board_core` | <img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/ColorSwatches/968A58.webp" width="12" height="12" align="absmiddle" alt=""> `#968A58` | 1.0 | 0.0 | 0.80 | cores, with `"layer"` grouping |
 | `Board_prepreg` | <img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/ColorSwatches/A89C66.webp" width="12" height="12" align="absmiddle" alt=""> `#A89C66` | 1.0 | 0.0 | 0.80 | prepregs, with `"layer"` grouping |
 | `Copper` | <img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/ColorSwatches/CD803E.webp" width="12" height="12" align="absmiddle" alt=""> `#CD803E` | 1.0 | 0.9 | 0.35 | copper, simulation mode |
-| `Plating` | <img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/ColorSwatches/CD803E.webp" width="12" height="12" align="absmiddle" alt=""> `#CD803E` | 1.0 | 0.9 | 0.35 | the `Plating` part (`Run.COPPER_GROUPING = "layer"`) |
+| `Plating` | <img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/ColorSwatches/CD803E.webp" width="12" height="12" align="absmiddle" alt=""> `#CD803E` | 1.0 | 0.9 | 0.35 | the `Plating` part (`Copper.COPPER_GROUPING = "layer"`) |
 | `Copper_exposed` | <img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/ColorSwatches/DEBA60.webp" width="12" height="12" align="absmiddle" alt=""> `#DEBA60` | 1.0 | 1.0 | 0.25 | all copper and plating, visual mode |
 | `Top Solder Mask`, `Bottom Solder Mask` | <img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/ColorSwatches/EBEBE6.webp" width="12" height="12" align="absmiddle" alt=""> `#EBEBE6` white | 0.80 | 0.0 | 0.30 | the mask parts |
 | `Top Mask over Copper`, `Bottom Mask over Copper` | <img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/ColorSwatches/F2EFD8.webp" width="12" height="12" align="absmiddle" alt=""> `#F2EFD8` | 1.0 | 0.0 | 0.30 | the mask on copper, visual mode only |
@@ -139,4 +139,4 @@ carries the sRGB values as they are, `s` above.
 
 | Previous | Next |
 |:---|---:|
-| [Copper And Traces](Copper-And-Traces.md) | [Top And Bottom Copper Finishings](Copper-Finishings.md) |
+| [Copper And Traces](Copper-And-Traces.md) | [Finish](Finish.md) |

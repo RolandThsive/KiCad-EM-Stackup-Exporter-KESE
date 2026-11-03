@@ -1,6 +1,7 @@
 """Silkscreen: legend ink printed on the solder mask surface."""
 from kese.core import shapes2d as sh
 from kese.core.conformal import conformal_regions, grow, near
+from kese.s4_geometry.finish import under_mask_copper, under_mask_mm
 from kese.s4_geometry.heights import mask_thicknesses
 from parameters import P
 
@@ -9,13 +10,15 @@ def build(r, ps):
     st, S, M = r.stackup, P.Silkscreen, P.SolderMask
     t_silk = S.SILK_THICKNESS_MM
     t_lam, t_cu, _ = mask_thicknesses(st)
+    lift = under_mask_mm(st)                    # finish applied before the mask: on the copper, under the mask
     for side, layer, sign, tb in (("F", "F.Cu", 1, "Top"), ("B", "B.Cu", -1, "Bottom")):
         silk = r.silk.get(side, sh.EMPTY)
         if silk.is_empty:
             continue
         # only the copper the ink can reach matters: what lies farther than t_lam + t_silk is left out
         cu = near(r.copper_all.get(layer, sh.EMPTY), silk, t_lam + t_silk + 8 * sh.grid())
-        cu_t = st.band[layer][1] - st.band[layer][0]
+        cu = under_mask_copper(st, cu)
+        cu_t = st.band[layer][1] - st.band[layer][0] + lift
         base = st.half
         part = f"{tb} Silkscreen"
         props = {"side": side, "thickness_mm": t_silk}

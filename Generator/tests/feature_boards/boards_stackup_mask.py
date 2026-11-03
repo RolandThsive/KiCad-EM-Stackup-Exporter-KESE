@@ -277,5 +277,33 @@ def finish_pads():
     return b
 
 
+def finish_before_mask():
+    """Surface finish applied before the solder mask (run with Finish.FINISH_BEFORE_SOLDER_MASK =
+    True): SMD pads with the board's clearance and one with a negative mask margin, a track under
+    the mask with silkscreen printed across it, a tented via to a round pad on the bottom, a
+    through-hole header, and a GND zone on B.Cu with a thermal pad in it, so the finish lies on all the copper and the mask and ink
+    lie on the finish.  Blue mask, white silk, ENEPIG."""
+    b = new_board("finish_before_mask", 2, (30, 20), stack=False)
+    stackup(b, PLAIN[2], OUTER, mask_color="Blue", silk_color="White", finish="ENEPIG")
+    b.setup.append("(pad_to_mask_clearance 0.05)")
+    smd = lambda n, x, net, **o: pad(n, "smd", "rect", (x, 0), (1.5, 1.5), SMD, net=net, **o)
+    b.add(footprint(b, "Feature:BeforeMaskPads", at(5, 5), children=[
+        ref("U1"), smd("1", 0, "A"), smd("2", 3, "B"), smd("3", 6, "C", mask_margin=-0.2)]))
+    b.add(segment(b, at(5, 5), at(5, 12), 0.5, "F.Cu", "A"),
+          segment(b, at(5, 12), at(20, 12), 0.5, "F.Cu", "A"),
+          via(b, at(20, 12), 0.8, 0.4, "A"),
+          gr_line(b, at(12, 9.5), at(12, 14.5), "F.SilkS", 0.2),
+          gr_text(b, "UNDER MASK", at(12, 16), "F.SilkS", size=1.2, thickness=0.2))
+    b.add(footprint(b, "Feature:BeforeMaskHeader", at(20, 5), children=[
+        ref("J1", -1.9), pad("1", "thru_hole", "rect", (0, 0), (1.7, 1.7), THT, drill=1.0, net="GND"),
+        pad("2", "thru_hole", "circle", (2.54, 0), (1.7, 1.7), THT, drill=1.0, net="J2")]))
+    b.add(segment(b, at(20, 12), at(25, 12), 0.5, "B.Cu", "A"))
+    b.add(footprint(b, "Feature:BeforeMaskBack", at(25, 12), side="B", children=[
+        ref("TP1", -2.2, "B.SilkS"),
+        pad("1", "smd", "circle", (0, 0), (2, 2), ("B.Cu", "B.Paste", "B.Mask"), net="A")]))
+    b.add(zone(b, "GND", ["B.Cu"], [at(1, 1), at(29, 1), at(29, 19), at(1, 19)]))
+    return b
+
+
 BOARDS = [stackup_full, stackup_none, edge_plating_castellation, edge_plating_border, mask_silk, silk_over_copper,
-          finishes, finish_pads]
+          finishes, finish_pads, finish_before_mask]
