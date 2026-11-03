@@ -354,7 +354,7 @@ button.group-title.collapsed .chevron { transform: rotate(-90deg); }
 .canvas-tools .icon-btn { display: inline-flex; align-items: center; justify-content: center; width: 36px; height: 32px; padding: 0; }
 .canvas-tools .icon-btn svg { width: 18px; height: 18px; flex: none; fill: none; stroke: currentColor; stroke-width: 1.8;
   stroke-linecap: round; stroke-linejoin: round; }
-.canvas-tools { position: absolute; top: 10px; left: 10px; z-index: 10; display: flex; flex-direction: column;
+.canvas-tools { display: flex; flex-direction: column;
   align-items: flex-start; gap: 8px; }
 .tool-pair { display: flex; gap: 6px; }
 #origin-slot { display: flex; }
@@ -494,18 +494,24 @@ dialog pre { font-family: var(--mono); font-size: 12px; white-space: pre-wrap; m
 #run-note { margin: 6px 0 0; font-size: 12px; }
 #run-note:empty { display: none; }
 /* preview */
-/* Showing: top centre of the preview, between the tool buttons and the views */
-.showing { position: absolute; top: 10px; left: 50%; transform: translateX(-50%); z-index: 10; display: flex; align-items: center; gap: 8px;
+/* the top row of the preview: tools at the left, the cross-section slider filling the space, the views at the right
+   with Showing under them */
+.view-top { position: absolute; top: 10px; left: 10px; right: 10px; z-index: 10; display: flex; align-items: flex-start; gap: 10px; pointer-events: none; }
+.view-top > * { pointer-events: auto; }
+.view-top .view-slider { height: 32px; box-sizing: border-box; }
+.view-right { display: flex; flex-direction: column; align-items: flex-end; gap: 8px; }
+/* Showing: under the views */
+.showing { display: flex; align-items: center; gap: 8px;
   font-size: 13px; background: rgba(255, 255, 255, 0.6); padding: 3px 4px 3px 10px; border-radius: var(--radius); }
 .showing select { font: inherit; font-size: 13px; padding: 4px 8px; border-radius: 8px; border: 1px solid rgba(0, 0, 0, 0.12); background: #fff; max-width: 260px; }
 .canvas-wrap { background: radial-gradient(ellipse at 50% 40%, #fbfaf6 0%, #ebe6da 100%); }
-.views { position: absolute; top: 10px; right: 10px; z-index: 10; background: rgba(255, 255, 255, 0.6); }
+.views { background: rgba(255, 255, 255, 0.6); }
 .empty-note { position: absolute; inset: 0; display: grid; place-content: center; text-align: center; font-size: 15px; color: var(--text-2); pointer-events: none; line-height: 1.6; }
-.readout { left: 12px; bottom: 16px; max-width: calc(100% - 460px); }
-.hover-card { position: absolute; right: 12px; bottom: 58px; max-width: 360px; z-index: 4; background: rgba(255, 255, 255, 0.94); border-radius: 10px;
+.readout { left: 12px; bottom: 16px; max-width: calc(100% - 24px); }
+.hover-card { position: absolute; right: 12px; bottom: 16px; max-width: 360px; z-index: 4; background: rgba(255, 255, 255, 0.94); border-radius: 10px;
   padding: 7px 10px; box-shadow: var(--shadow-card); font-size: 12px; line-height: 1.5; border-left: 4px solid var(--accent); pointer-events: none; }
 .hover-card b { font-family: var(--mono); }
-.sliders { position: absolute; right: 12px; width: min(420px, calc(100% - 24px)); bottom: 10px; display: flex; gap: 12px; z-index: 4; }
+.sliders { flex: 1; min-width: 0; display: flex; gap: 12px; }
 .view-slider { flex: 1; display: flex; align-items: center; gap: 10px; font-size: 12.5px; background: rgba(255, 255, 255, 0.8);
   padding: 4px 12px; border-radius: 10px; box-shadow: var(--shadow-btn); }
 .view-slider output { width: 44px; text-align: right; font-variant-numeric: tabular-nums; }
