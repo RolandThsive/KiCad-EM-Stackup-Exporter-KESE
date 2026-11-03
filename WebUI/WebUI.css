@@ -499,6 +499,9 @@ dialog pre { font-family: var(--mono); font-size: 12px; white-space: pre-wrap; m
 .view-top { position: absolute; top: 10px; left: 10px; right: 10px; z-index: 10; display: flex; align-items: flex-start; gap: 10px; pointer-events: none; }
 .view-top > * { pointer-events: auto; }
 .view-top .view-slider { height: 32px; box-sizing: border-box; }
+/* the views exactly as tall as the tools and the slider, whatever the font, so the row lines up */
+.view-top .views { height: 32px; box-sizing: border-box; align-items: stretch; }
+.view-top .views button { display: flex; align-items: center; padding-top: 0; padding-bottom: 0; line-height: 1; }
 .view-right { display: flex; flex-direction: column; align-items: flex-end; gap: 8px; }
 /* Showing: under the views */
 .showing { display: flex; align-items: center; gap: 8px;
@@ -508,7 +511,7 @@ dialog pre { font-family: var(--mono); font-size: 12px; white-space: pre-wrap; m
 .views { background: rgba(255, 255, 255, 0.6); }
 .empty-note { position: absolute; inset: 0; display: grid; place-content: center; text-align: center; font-size: 15px; color: var(--text-2); pointer-events: none; line-height: 1.6; }
 .readout { left: 12px; bottom: 16px; max-width: calc(100% - 24px); }
-.hover-card { position: absolute; right: 12px; bottom: 48px; max-width: 360px; z-index: 4; background: rgba(255, 255, 255, 0.94); border-radius: 10px;
+.hover-card { position: absolute; right: 12px; bottom: 16px; max-width: 360px; z-index: 4; background: rgba(255, 255, 255, 0.94); border-radius: 10px;
   padding: 7px 10px; box-shadow: var(--shadow-card); font-size: 12px; line-height: 1.5; border-left: 4px solid var(--accent); pointer-events: none; }
 .hover-title { margin-bottom: 3px; overflow-wrap: anywhere; }
 .hover-title b { font-family: var(--mono); }

@@ -29,6 +29,9 @@
     "Silkscreen": ["Silkscreen.SILK_THICKNESS_MM", "Silkscreen.SILKSCREEN_OVER_COPPER", "Silkscreen.SILK_LAYERS"],
     "Finish": ["Finish.FINISH_ENABLED", "Finish.FINISH_TYPE", "Finish.FINISH_GROUPING", "Finish.FINISH_ON_EDGE_PLATING", "Finish.FINISH_ON_CASTELLATIONS"]
   },
+  "_crossSection": "How the cross-section draws the cut faces: \"stencil\" (SectionStencil.js, drawn by the GPU in every frame), \"geometry\" (SectionGeometry.js, the exact section worked out on the CPU, a step behind the slider) or null (the cut without faces).",
+  "crossSection": "stencil",
+
   "_basicOpen": "Sections open when the page starts. None: every section shows closed, so all are in view and the visitor opens what they need.",
   "basicOpen": [],
 
