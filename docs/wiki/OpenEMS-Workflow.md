@@ -39,11 +39,11 @@ line).
 
 Consider before exporting:
 
-- `--set Run.DIELECTRIC_GROUPING=merged` if all dielectrics share one material: one STL instead of
+- `--set Board.DIELECTRIC_GROUPING=merged` if all dielectrics share one material: one STL instead of
   several.
 - The mask and silk STL files exist too; leave them out of the simulation unless their εr matters
   to you, since `materials.json` carries no εr for them.
-- `Finish.FINISH_ENABLED` stays off: 80 nm gold cannot be resolved by an FDTD mesh.
+- `Finish.FINISH_ENABLED` is off in the preset: 80 nm gold cannot be resolved by an FDTD mesh.
 
 ## 21.2 Building The CSXCAD Model
 

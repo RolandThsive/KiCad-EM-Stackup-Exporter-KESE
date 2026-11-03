@@ -11,7 +11,7 @@ def write(model, path, log):
     w = StepWriter(path, model.name, model.units)
     try:
         for part in model.meshes:                         # in the order the parts are listed everywhere
-            if part in model.boundaries and model.props[part]["role"] in P.Run.STEP_WRITE_ROLES:
+            if part in model.boundaries:
                 solids = write_part(w, part, model.boundaries[part], model.transform, log)
                 if solids:
                     w.add_part(part, model.materials[part]["rgb"], solids)
@@ -20,7 +20,7 @@ def write(model, path, log):
         raise
     written = w.close()
     if written is None:
-        log("step: no part to write; STEP skipped")
+        log("step: no part has a solid; STEP skipped")
     return written
 
 

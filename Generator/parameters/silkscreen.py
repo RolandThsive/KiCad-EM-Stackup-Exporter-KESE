@@ -2,6 +2,9 @@
 parameters/silkscreen.py - legend ink and text rendering.
 """
 
+# Build the silkscreen and write it to every output file.  Off by default, like the solder mask.
+SILKSCREEN_ENABLED = False
+
 # Ink thickness in mm (typical 0.010-0.020)
 SILK_THICKNESS_MM = 0.010
 

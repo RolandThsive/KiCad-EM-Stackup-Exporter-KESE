@@ -5,6 +5,15 @@ Values marked "typical" are common rigid-FR4 production values; replace them wit
 fabricator's datasheet numbers for lab work.
 """
 
+# Copper grouping in "simulation" mode:
+#   "net"    - one solid per net (all its layers and vias joined)  <- what EM ports need
+#   "layer"  - one solid per copper layer, plating separate
+#   "merged" - all copper in one solid
+COPPER_GROUPING = "net"
+
+# Build the copper (layers and the plated barrels of holes and vias) and write it to every output file.
+COPPER_ENABLED = True
+
 # WARNING - copper zones (ground planes, fills): KESE takes the fill polygons that KiCad stores in
 # the board file. KiCad only writes them after the zones have been filled (press B) and the file
 # saved. A zone with no stored fill is IGNORED entirely - no copper is made for it and report.txt

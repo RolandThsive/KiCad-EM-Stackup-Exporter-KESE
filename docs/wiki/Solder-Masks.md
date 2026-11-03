@@ -2,7 +2,8 @@
 
 The solder mask is the lacquer (LPI) over both faces of the board. `kese/s4_geometry/solder_mask.py`
 builds it around the openings that `kese/s3_resolve/mask.py` works out; the settings are in
-`parameters/solder_mask.py`.
+`parameters/solder_mask.py`. It is off by default (`SolderMask.SOLDER_MASK_ENABLED = False`): turn
+it on to have it in the files. The openings still decide where the finish goes either way.
 
 ![The board featureTest/17_mask_silk from the top in a simulation-mode GLB, once in each solder mask colour KESE knows and once with none set, each labelled with its name and hex value](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/mask_1_colors_simulation.webp)
 

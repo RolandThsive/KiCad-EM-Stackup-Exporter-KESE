@@ -26,16 +26,17 @@ mask colour of its own, saved by KiCad 7. Between them they use most of what KES
 | Visual GLB with `--verify` | 20 s, 17.1 MB | 15 s, 8.8 MB | 21 s, 18.3 MB |
 
 The times are the ones the run prints, with the default parameters on one Linux machine with 4
-cores. The STEP files were made with `--for hfss --verify`: millimetres and KiCad's origin, and,
-as `Run.STEP_WRITE_ROLES` has it by default, no solder mask or silkscreen, so they have four parts
-fewer than the GLB files ([Project Capabilities](Project-Capabilities.md#45-tested-sizes) gives
+cores. The numbers were measured with the earlier defaults: the finish off, the GLB files with the
+solder mask and silkscreen, and the STEP files with flat faces (`Run.STEP_EXACT_ARCS = False`). The
+STEP files were made with `--for hfss --verify`: millimetres and KiCad's origin, without the mask
+and silkscreen (the default now), so they have four parts fewer than the GLB files ([Project Capabilities](Project-Capabilities.md#45-tested-sizes) gives
 them with both). Read back with OpenCascade, every solid in them is valid and closed, and their
 volume is the one the Verifier finds. The same three files are in `featureTest/` as
 `21_rf_module`, `22_hdi_module` and `23_pcie_card`, so the regression suite checks every part of
 each in both modes (once: it skips the copies in `Input/`).
 
 The pictures on this page are the boards' GLB files drawn with three.js. They were exported with
-`--set Run.COPPER_GROUPING=layer`, so that the copper of each layer is one part and the layers
+`--set Copper.COPPER_GROUPING=layer`, so that the copper of each layer is one part and the layers
 can be drawn apart; with the default grouping, one part per net, the boards look the same.
 
 ## 5.1 RF Sensor Module
@@ -92,9 +93,9 @@ What this board shows:
   copper under the mask, and silkscreen. In visual mode the bare copper takes the exposed copper
   colour and the copper under the mask reads through it in the lighter blue.
 - **Keep-outs and finish.** Three rule areas are counted under `skipped` and make no copper, as
-  intended. The stack-up's finish is ENIG; the finish is off by default, and
-  `--set Finish.FINISH_ENABLED=True` adds the nickel and the gold on the bare copper
-  ([ENIG](Copper-Finishings.md#1331-enig)).
+  intended. The stack-up's finish is ENIG: the nickel and the gold go on the bare copper
+  (`--set Finish.FINISH_ENABLED=False` leaves them out)
+  ([ENIG](Finish.md#1331-enig)).
 
 
 <p align="center">
@@ -156,8 +157,8 @@ What this board shows:
   <img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/ColorSwatches/121214.webp" width="12" height="12" align="absmiddle" alt=""> `#121214`,
   and over copper in visual mode
   <img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/ColorSwatches/2E2E30.webp" width="12" height="12" align="absmiddle" alt=""> `#2E2E30`.
-  The finish is immersion silver, built only with `Finish.FINISH_ENABLED = True`
-  ([ImmersionSilver](Copper-Finishings.md#1336-immersionsilver)).
+  The finish is immersion silver (built with `--set Finish.FINISH_TYPE=file`; ENIG by default)
+  ([ImmersionSilver](Finish.md#1336-immersionsilver)).
 
 <p align="center">
 <img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/example_images/hdi_module/layers_apart_simulation.webp" width="49%" alt="The module in simulation mode with its layers drawn apart: the masks, the six copper layers and the five dielectrics, each one closed solid, the via barrels between the layers they join">
@@ -191,9 +192,9 @@ What this board shows:
   and joined by a single trace, no plane runs under the fingers, and the mask is open over all of
   them. Each finger is a pad of its net, so the lane pairs, `+12V`, `+3V3` and GND end in the
   fingers.
-- **Hard gold.** The stack-up's finish is hard gold. With `--set Finish.FINISH_ENABLED=True` it
+- **Hard gold.** The stack-up's finish is hard gold. With `--set Finish.FINISH_TYPE=file` it
   covers all the exposed copper, fingers and pads alike, since KiCad gives a board one finish
-  ([HardGold](Copper-Finishings.md#1338-hardgold)).
+  ([HardGold](Finish.md#1338-hardgold)).
 - **The bevel is not modelled.** Board Setup's `(edge_connector bevelled)` asks the fabricator to
   bevel the fingers' edge. KESE does not read it, so the card's edge stays square.
 - **An isolation barrier.** A rule area 2 mm wide keeps every copper layer clear between the logic
@@ -218,8 +219,8 @@ cd Generator
 python run_KESE.py                                                             # all three: simulation, GLB in metres, centred
 python run_KESE.py Input/rf_module.kicad_pcb --for hfss                        # STEP in mm with KiCad's origin
 python run_KESE.py Input/hdi_module.kicad_pcb --for viewer                     # visual mode for <model-viewer>
-python run_KESE.py Input/pcie_card.kicad_pcb --set Finish.FINISH_ENABLED=True  # with the hard gold
-python run_KESE.py Input/rf_module.kicad_pcb --set Run.COPPER_GROUPING=layer   # a copper part per layer
+python run_KESE.py Input/pcie_card.kicad_pcb --set Finish.FINISH_TYPE=file      # the stack-up's hard gold
+python run_KESE.py Input/rf_module.kicad_pcb --set Copper.COPPER_GROUPING=layer # a copper part per layer
 ```
 
 STEP files of these boards are large, 125 to 225 MB in mm, since every curve is written as flat

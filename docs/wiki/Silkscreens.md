@@ -3,7 +3,8 @@
 The silkscreen is the legend ink printed on top of the solder mask: reference designators,
 values, logos and outlines. `kese/s4_geometry/silkscreen.py` builds it from the ink that
 `kese/s3_resolve/silk.py` clips off the pads, and `kese/core/font.py` renders the text; the
-settings are in `parameters/silkscreen.py`.
+settings are in `parameters/silkscreen.py`. It is off by default (`Silkscreen.SILKSCREEN_ENABLED =
+False`): turn it on to have it in the files.
 
 ![The same board eight times from the top in a simulation-mode GLB, once in each silkscreen colour: white and yellow silk on black mask, and black, not set, green, red, blue and purple silk on white mask, each labelled with its colour and hex value](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/silk_1_colors_simulation.webp)
 
@@ -242,4 +243,4 @@ in `materials.json`.
 
 | Previous | Next |
 |:---|---:|
-| [Top And Bottom Copper Finishings](Copper-Finishings.md) | [Solder Masks](Solder-Masks.md) |
+| [Finish](Finish.md) | [Solder Masks](Solder-Masks.md) |

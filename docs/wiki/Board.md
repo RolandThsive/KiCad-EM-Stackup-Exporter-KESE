@@ -8,7 +8,7 @@ outline and stack-up; the settings are in `parameters/board.py`.
 
 Each gap between two consecutive copper layers is one dielectric from the
 [Stack-Up Model](Stack-Up-Model.md): a core or a prepreg with its own thickness, material, εr
-and tanδ. With `Run.DIELECTRIC_GROUPING = "layer"` (the default) each becomes its own part,
+and tanδ. With `Board.DIELECTRIC_GROUPING = "layer"` (the default) each becomes its own part,
 named `Board_` plus the stack-up's name for that dielectric (`Board_dielectric 1`,
 `Board_dielectric 2`, ... from the `F.Cu` side). A gap holds one part however many plies it has:
 plies written as sub-layers of one stack-up dielectric keep that dielectric's name, and separate
@@ -74,7 +74,7 @@ So both common 4-layer builds, prepreg-core-prepreg (as in the picture) and core
 get their inner pockets filled from a prepreg, as in the factory. Inside KESE these prisms are tagged `resin_fill_beside: <layer>`; `materials.json` takes
 a part's properties from its first prism, the dielectric slab itself, so the tag does not appear
 there. With the setting
-`False`, the pockets stay empty and `report.txt` notes it. With `Run.DIELECTRIC_GROUPING =
+`False`, the pockets stay empty and `report.txt` notes it. With `Board.DIELECTRIC_GROUPING =
 "merged"` the fill goes into the single `Board` part.
 
 > [!NOTE]
