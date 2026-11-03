@@ -225,14 +225,16 @@ OpenCascade's shape healing, which takes most of the reading time and would mend
 than report it. Before the check it works out only what any reader must work out for itself: the
 curve of each edge in the parameters of each of its faces (KESE writes none, as KiCad does not),
 and on a cylinder an edge's curve moved by a whole turn where it came out a turn off; the points
-and curves in the file stay as written (`tests/step_audit.py`). That takes about 45 s for the
-54 MB file of `16b_edge_plating_border`, against about two minutes with the healing
-(`python tests/test_boards.py --healed`, the check before), and on every test board the two give
-the same verdict. So `python tests/test_boards.py` reads the STEP files back in background
-processes, a quarter of the processor threads and at least two (`AUDITORS` in
-`tests/test_boards.py`), while it exports the next boards, and prints a board's line once its file
-is checked, in the order the boards ran, with the time the read-back took
-(`STEP read back in 3.4 s`). Under `pytest` every board is checked in turn.
+and curves in the file stay as written (`tests/step_audit.py`). That is about 2.5 times quicker
+than reading with the healing (`python tests/test_boards.py --healed`, the check before): for the
+54 MB file of `16b_edge_plating_border`, 68 s against 169 s on a 4-core machine. On every test
+board the two give the same verdict; on files broken on purpose (a face left out, a vertex moved, a
+face turned over, a circle's radius changed), only the read without the healing finds every fault.
+So `python tests/test_boards.py` reads the STEP files back in background processes, a quarter of
+the processor threads and at least two (`AUDITORS` in `tests/test_boards.py`), while it exports the
+next boards, and prints a board's line once its file is checked, in the order the boards ran, with
+the time the read-back took (`STEP read back in 3.4 s`). Under `pytest` every board is checked in
+turn.
 
 The test boards in `tests/boards/` cover:
 

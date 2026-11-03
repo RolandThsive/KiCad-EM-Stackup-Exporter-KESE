@@ -51,7 +51,7 @@ What to make, where, and in which formats.
 
 | Name | Default | Range | Meaning |
 |---|---|---|---|
-| `STEP_EXACT_ARCS` | `True` | bool | Write circles and arcs as true curves: where a part's outline runs through vertices on one circle (holes, vias, round pads, track ends, arc tracks, round outlines), their chords become one `CIRCLE` edge and the walls on them one `CYLINDRICAL_SURFACE` face, at every height alike; every other edge stays a line and every other face a plane. Left straight where another edge at that height passes closer to the vertices than the arc bulges out from them, which the arc would cross. Written by KESE's own writer; files are about 4 to 9 times smaller (the RF module in `Input/`, in m: 30 MB instead of 230 MB, written in 2.6 s instead of 4.2 s). Meshes are unchanged |
+| `STEP_EXACT_ARCS` | `True` | bool | Write circles and arcs as true curves: where a part's outline runs through vertices on one circle (holes, vias, round pads, track ends, arc tracks, round outlines), their chords become one `CIRCLE` edge and the walls on them one `CYLINDRICAL_SURFACE` face, at every height alike; every other edge stays a line and every other face a plane. Left straight where another edge at that height passes closer to the vertices than the arc bulges out from them, which the arc would cross. Written by KESE's own writer; files are about 2.5 to 3 times smaller (the RF module in `Input/`, in m: 116 MB instead of 334 MB, written in 10.1 s against 10.4 s). Meshes are unchanged |
 | `STEP_ARC_FIT_TOLERANCE_MM` | `0.0002` | mm > 0 | Vertices within this of one circle form an arc (2 x the snap grid) |
 | `STEP_ARC_MIN_POINTS` | `5` | int >= 3 | An arc runs through at least this many vertices |
 | `STEP_ARC_MIN_SWEEP_DEG` | `10.0` | degrees | and turns at least this far |
@@ -59,9 +59,9 @@ What to make, where, and in which formats.
 
 Every format holds the same parts: the ones switched on with the `..._ENABLED` switch of their module
 (`Board.BOARD_ENABLED`, `Copper.COPPER_ENABLED`, `Finish.FINISH_ENABLED`, `SolderMask.SOLDER_MASK_ENABLED`,
-`Silkscreen.SILKSCREEN_ENABLED`; mask and silkscreen are off by default). A STEP file with the mask and silkscreen is 1.5 to 1.6 times as big
-(the PCIe card in `Input/`, in mm: 348 MB and 320 solids written in 8.8 s, against 215 MB and 84 solids
-in 5.6 s without them).
+`Silkscreen.SILKSCREEN_ENABLED`; mask and silkscreen are off by default). A STEP file with the mask and silkscreen is 1.4 to 1.9 times as big
+(the PCIe card in `Input/`, in mm: 150 MB and 1,024 solids written in 10.5 s, against 80 MB and 788 solids
+in 8.0 s without them).
 
 With `STEP_EXACT_ARCS` the file uses these entities beside the planar ones: `CIRCLE` (on an
 `AXIS2_PLACEMENT_3D` at the centre, its axis the board's normal), referenced by the `EDGE_CURVE` of

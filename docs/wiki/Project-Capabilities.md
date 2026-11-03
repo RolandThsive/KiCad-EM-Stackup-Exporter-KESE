@@ -36,7 +36,7 @@ solvers and CAD, and a **visual model** of the visible surface for viewers.
 | Physical data | εr, tanδ, conductivity, thickness and z range per part in `materials.json` | The same file |
 | What-if | Change plating, via wall, mask thickness or etch factor in `parameters/` and export again | |
 | Verifier (`--verify`) | Every part closed and consistently wound; its volume the same from its faces, slices, mesh and prisms; no two parts sharing material, every slice against every other | Along 3,000 vertical rays the faces take turns, into the material and out of it |
-| 4-layer PCIe card example | GLB 32.1 MB, 942,340 triangles | GLB 18.3 MB, 591,381 triangles |
+| 4-layer PCIe card example | GLB 30.1 MB, 879,986 triangles | GLB 9.1 MB, 290,834 triangles |
 | Presets | `--for hfss`, `--for cst`, `--for openems` | `--for viewer` |
 
 More in [Output Modes](Output-Modes.md).
@@ -73,10 +73,10 @@ The full list is in [Checks, Errors And Warnings](Checks-Errors-And-Warnings.md)
 
 | Board | Layers | Items | Simulation GLB | STEP in mm | Visual GLB |
 |---|---|---|---|---|---|
-| `rf_module` | 4 | 190 tracks, 33 arcs, 307 vias, 7 zone fills | 21 s, 29.9 MB | 26 s, 225.0 MB; with mask and silk 31 s, 331.4 MB | 20 s, 17.1 MB |
-| `hdi_module` | 6 | 199 tracks, 150 vias, 34 zone fills | 14 s, 17.0 MB | 15 s, 125.9 MB; with mask and silk 18 s, 184.0 MB | 15 s, 8.8 MB |
-| `pcie_card` | 4 | 226 tracks, 239 vias, 19 zone fills | 19 s, 32.1 MB | 23 s, 215.3 MB; with mask and silk 28 s, 349.0 MB | 21 s, 18.3 MB |
-| `six_layer` | 6 | 6 tracks, 6 vias, 2 zone fills | 1 s, 0.9 MB | 1 s, 6.2 MB | 1 s, 0.45 MB |
+| `rf_module` | 4 | 190 tracks, 33 arcs, 307 vias, 7 zone fills | 46 s, 38.0 MB | 51 s, 113.7 MB; with mask and silk 58 s, 169.6 MB | 31 s, 10.5 MB |
+| `hdi_module` | 6 | 199 tracks, 150 vias, 34 zone fills | 24 s, 20.4 MB | 29 s, 70.9 MB; with mask and silk 31 s, 102.4 MB | 15 s, 5.6 MB |
+| `pcie_card` | 4 | 226 tracks, 239 vias, 19 zone fills | 28 s, 30.1 MB | 35 s, 80.2 MB; with mask and silk 40 s, 150.0 MB | 22 s, 9.1 MB |
+| `six_layer` | 6 | 6 tracks, 6 vias, 2 zone fills | 1 s, 0.76 MB | 1 s, 0.94 MB; with mask and silk 2 s, 2.4 MB | 1 s, 0.21 MB |
 
 Default parameters, GLB and STEP runs with the Verifier, on one Linux machine with 4 cores: what
 to expect, not a limit. The times are the ones the run prints (`in 0m 21s`); starting Python and
