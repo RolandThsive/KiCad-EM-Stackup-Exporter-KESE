@@ -96,7 +96,7 @@ def _runs(q, fit):
         if sign[a] == 0 or b - a + 2 < fit.points:
             continue
         lo, hi = a, b + 1                                     # vertices lo .. hi
-        i = lo
+        i = max(lo, arcs[-1][1]) if arcs else lo              # not back into the arc before (an S-bend)
         while hi - i + 1 >= fit.points:
             j = i + fit.points - 1
             got = on_one_circle(q[i:j + 1], fit)

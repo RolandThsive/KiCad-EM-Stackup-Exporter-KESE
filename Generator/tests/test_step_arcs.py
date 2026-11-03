@@ -110,6 +110,12 @@ def notch(bend):
     return shapely.Polygon([(0.5, 0.0), (1.5, 0.0), (1.5 - bend, 0.9), *arc])
 
 
+def s_bend():
+    """Two arcs of 60 degrees that bend opposite ways, joined by one grid step of straight line, as
+    in a zone outline: an S, from (-0.87, 0.5) through (0, 0) to (0.87, -0.5)."""
+    return facets((0.0, 1.0), 1.0, -150.0, -90.0) + facets((0.0001, -1.0), 1.0, 90.0, 30.0)
+
+
 def pad(c, r=0.3):
     return shapely.Polygon(facets(c, r, 0.0, 360.0)[:-1])
 
@@ -133,6 +139,18 @@ def test_circles_and_round_ends_become_arcs():
     assert arcs(octagon) == [] and arcs(octagon.buffer(-0.1, join_style="mitre")) == []   # an octagonal pad stays one
     big = pad((0.0, 0.0), 1.0).union(shapely.box(0.0, -0.2, 3.0, 0.2))   # a round pad with a track out of it
     assert sum(arcs(big)) == 326 and max(arcs(big)) <= 181          # 326 degrees, in pieces of half a turn at most
+
+
+def test_the_two_arcs_of_an_s_bend_share_only_the_vertex_between_them():
+    """Each arc may take one vertex past the run that turns its way: both arcs of an S could take
+    the straight step in its middle, and each removed the other's end vertex, so that the arc edges
+    ran to the wrong vertices (NE_Delta's Copper_D5 came out invalid)."""
+    R = P.Run
+    fit = sa.Fit(R.STEP_ARC_FIT_TOLERANCE_MM, R.STEP_ARC_MIN_POINTS, math.radians(R.STEP_ARC_MIN_SWEEP_DEG),
+                 math.radians(R.STEP_ARC_MAX_TURN_DEG))
+    _, found, _ = sa.find_arcs(np.array(s_bend()), False, fit)
+    assert len(found) == 2 and found[0][4] != found[1][4], found     # one arc each way
+    assert found[0][1] <= found[1][0], found
 
 
 def test_an_arc_that_would_cross_its_own_ring_stays_straight():
