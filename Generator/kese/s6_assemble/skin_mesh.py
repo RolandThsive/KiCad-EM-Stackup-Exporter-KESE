@@ -14,7 +14,7 @@ from kese.core.boundary_mesh import (
 )
 from kese.core.graph import connected_components
 from kese.core.mesh import Mesh
-from kese.s6_assemble.boundaries import workers_wanted
+from kese.core.parallel import workers_wanted
 from parameters import P
 
 

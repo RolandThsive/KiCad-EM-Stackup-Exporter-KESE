@@ -16,7 +16,7 @@ from kese.core.vertices import (
     same_vertices,
     walls_split_at_vertices,
 )
-from kese.s6_assemble.boundaries import workers_wanted
+from kese.core.parallel import workers_wanted
 
 FEW_PIECES = 200         # of material reaching a face: up to this many are cut away piece by piece (cut_away)
 BIG_PIECE = 10_000       # coordinates: a piece this big (a dielectric, with every via hole in it) is cut away on its own

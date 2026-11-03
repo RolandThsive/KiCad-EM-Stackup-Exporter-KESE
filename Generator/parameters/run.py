@@ -32,9 +32,9 @@ ORIGIN = "center"
 # "flat"   : board in the XZ plane, F.Cu facing +Y
 ORIENTATION = "upright"
 
-# How many threads stage 6 works with (the 2D geometry library runs outside
-# Python's lock): parts built at once in "simulation" mode, slices in "visual" mode.  0 = one per
-# processor core
+# How many threads work at once (the 2D geometry library runs outside Python's lock): the copper
+# layers and hole spans of the finish in stage 4, and in stage 6 the parts built at once in
+# "simulation" mode, the slices in "visual" mode.  0 = one per processor thread (os.cpu_count())
 WORKERS = 0
 
 # Live "running <stage> ... 1m 23s" line in the terminal while a board is generated

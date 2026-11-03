@@ -7,6 +7,7 @@ the parameters in parameters/, but for the changes SETTINGS lists for it.
     python tests/test_boards.py --add      record only the boards the baseline does not have yet
     python tests/test_boards.py --accept 18_finishes 18b_finish_pads   only the boards named (by file name)
     python tests/test_boards.py --faceted  the STEP files with flat faces only (Run.STEP_EXACT_ARCS = False)
+    python tests/test_boards.py --healed   read the STEP files back with OpenCascade's healing (slower)
 
 A board fails when the Verifier fails (open solid, overlap, broken skin), when a STEP solid is
 invalid or has a free edge, or when a part's volume moved by more than VOLUME_TOLERANCE from the
@@ -14,14 +15,17 @@ recorded baseline (so a fix for one board cannot silently change another).
 
 Run on its own (python tests/test_boards.py), the suite reads the STEP files back in AUDITORS
 background processes while it exports the next boards, and prints a board's line once its STEP file
-is checked, in the order the boards ran."""
+is checked, in the order the boards ran.  The STEP files are read as written, without OpenCascade's
+healing (tests/step_audit.py says what is still added before the check)."""
 import json
 import multiprocessing
+import os
 import shutil
 import sys
 import time
 from concurrent.futures import ProcessPoolExecutor
 from contextlib import contextmanager
+from functools import partial
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -38,7 +42,9 @@ from step_audit import step_audit  # noqa: E402
 BASELINE = ROOT / "tests" / "baseline.json"
 OUT = ROOT / "tests" / "out"
 VOLUME_TOLERANCE = 1e-3          # relative, per part
-AUDITORS = 2                     # background processes reading STEP files back (plain python entry)
+# background processes reading STEP files back (plain python entry): a quarter of the processor
+# threads, as each holds a whole file in OpenCascade (gigabytes for the biggest boards)
+AUDITORS = max(2, (os.cpu_count() or 1) // 4)
 FEATURES = sorted((ROOT.parent / "featureTest").glob("*.kicad_pcb"))
 # the boards of Input/ that featureTest/ holds too, byte for byte (21_rf_module is rf_module), run once
 COPIES = {p.read_bytes() for p in FEATURES}
@@ -161,6 +167,7 @@ def main(args):
     accept, add = "--accept" in args, "--add" in args
     if "--faceted" in args:
         P.override("Run.STEP_EXACT_ARCS", False)
+    audit = partial(step_audit, healed=True) if "--healed" in args else step_audit
     named = [a for a in args if not a.startswith("--")]
     unknown = sorted(set(named) - {p.stem for p in BOARDS})
     if unknown:
@@ -174,7 +181,7 @@ def main(args):
                 record = accept or (add and key not in baseline)
                 t0 = time.perf_counter()
                 problems, volumes, step = check(pcb, mode, {} if record else baseline,
-                                                lambda path: pool.submit(step_audit, path))
+                                                lambda path: pool.submit(audit, path))
                 if record:
                     baseline[key] = {k: round(v, 9) for k, v in sorted(volumes.items())}
                 queue.append((key, problems, time.perf_counter() - t0, step))

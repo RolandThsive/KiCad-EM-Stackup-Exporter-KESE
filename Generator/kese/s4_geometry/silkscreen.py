@@ -25,7 +25,7 @@ def build(r, ps):
         z = lambda v: sign * v
         masked = r.mask[side]
         # the mask's surface is flat on laminate and raised over copper and the mask's own wall beside it
-        raised = grow(cu, t_lam, M.MASK_WALL_QUAD_SEGS) if not cu.is_empty else cu
+        raised = grow(cu, t_lam, quad_segs=M.MASK_WALL_QUAD_SEGS) if not cu.is_empty else cu
         # where the ink leaves the mask (openings that keep their silk) it steps down the mask edge,
         # from the mask's surface beside it down to the copper or the laminate under it
         off_mask, on_mask, step = conformal_regions(silk, masked, t_silk, M.MASK_WALL_QUAD_SEGS, around="region")

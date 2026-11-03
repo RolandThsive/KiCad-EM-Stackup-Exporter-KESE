@@ -18,6 +18,12 @@ def real(x):
     return s
 
 
+def reals(a):
+    """Every number of an array as STEP writes reals (as real() does), a flat list: one repr per
+    number, which is the cost of a big file's points."""
+    return [s if "e" not in s else real(float(s)) for s in map(repr, map(float, a.ravel().tolist()))]
+
+
 def text(s):
     """A string as STEP writes it: quotes doubled, what is not ASCII as \\X2\\...\\X0\\."""
     out, k = [], 0

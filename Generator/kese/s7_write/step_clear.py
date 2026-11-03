@@ -32,20 +32,22 @@ def clear(o, pieces, margin):
     for m, (k, i, j, ci, ccw) in enumerate(pieces):
         pts, segs, _ = o.chains[k]
         c, r = o.circles[ci]
-        q = o.xy[pts[i:j + 1]]
-        a0, sweep = sa.sweep_of(c, q[0], q[-1], ccw)
-        rows.append((c[0], c[1], r, a0, sweep))
-        strips.append(strip(q, c, r, a0, sweep, margin))
+        q = o.xy[pts[i:j + 1]].tolist()            # (plain floats: an arc has a few vertices, and there are many arcs)
+        cx, cy = float(c[0]), float(c[1])
+        a0, sweep = sa.sweep_of((cx, cy), q[0], q[-1], ccw)
+        d = [math.hypot(x - cx, y - cy) for x, y in q]
+        rows.append((cx, cy, r, a0, sweep))
+        strips.append(strip(q, d, (cx, cy), r, a0, sweep, margin))
         u.append(pts[i])
         w.append(pts[j])
         chords = segs[i:j]
         seg_piece[chords] = m
         mask.append(o.mask[chords[0]])
         # the vertices follow the written circle, in order along the arc, at the same heights all along
-        t = (np.arctan2(q[1:-1, 1] - c[1], q[1:-1, 0] - c[0]) - a0) * math.copysign(1, sweep) % TAU
-        ok.append(bool((o.mask[chords] == o.mask[chords[0]]).all()
-                       and np.abs(np.hypot(*(q - c).T) - r).max() <= near
-                       and (np.diff(np.r_[0.0, t, abs(sweep)]) > 0).all()))
+        sign = math.copysign(1, sweep)
+        t = [0.0] + [(math.atan2(y - cy, x - cx) - a0) * sign % TAU for x, y in q[1:-1]] + [abs(sweep)]
+        ok.append(bool((o.mask[chords] == o.mask[chords[0]]).all())
+                  and max(abs(di - r) for di in d) <= near and all(t1 > t0 for t0, t1 in zip(t, t[1:])))
     rows, strips, u, w = np.array(rows), np.array(strips, dtype=object), np.array(u), np.array(w)
     mask = np.array(mask)
     bad = ~shapely.is_valid(strips) | ~np.array(ok)
@@ -74,19 +76,19 @@ def clear(o, pieces, margin):
     return [p for p, x in zip(pieces, bad.tolist()) if not x]
 
 
-def strip(q, c, r, a0, sweep, margin):
-    """What an arc through the vertices q adds to its face or cuts off it, between their chords and
-    the curve, and `margin` on both sides of the curve: a shapely polygon.  From the inner vertices,
-    those closer than `margin` inside the curve moved there, out to `margin` outside the curve or to
-    the furthest vertex, closed at the end vertices."""
-    d = np.hypot(*(q - c).T)
+def strip(q, d, c, r, a0, sweep, margin):
+    """What an arc through the vertices q (a list of (x, y), d their distances from the centre c)
+    adds to its face or cuts off it, between their chords and the curve, and `margin` on both sides
+    of the curve: a shapely polygon.  From the inner vertices, those closer than `margin` inside the
+    curve moved there, out to `margin` outside the curve or to the furthest vertex, closed at the end
+    vertices."""
+    cx, cy = c
     k = math.ceil(abs(sweep) / min(math.pi / 4, math.sqrt(margin / r)))
     step = sweep / k
-    ang = a0 + step * (np.arange(k) + 0.5)
-    ro = max(r + margin, d.max()) / math.cos(step / 2)          # the corners of a polyline outside the curve
-    outer = np.c_[c[0] + ro * np.cos(ang), c[1] + ro * np.sin(ang)]
-    inner = c + (q[1:-1] - c) * (np.minimum(d[1:-1], r - margin) / d[1:-1])[:, None]
-    return shapely.Polygon(np.concatenate([q[:1], outer, q[-1:], inner[::-1]]))
+    ro = max(r + margin, max(d)) / math.cos(step / 2)            # the corners of a polyline outside the curve
+    outer = [(cx + ro * math.cos(a), cy + ro * math.sin(a)) for a in (a0 + step * (n + 0.5) for n in range(k))]
+    inner = [(cx + (x - cx) * f, cy + (y - cy) * f) for (x, y), di in zip(q[1:-1], d[1:-1]) for f in (min(di, r - margin) / di,)]
+    return shapely.Polygon([q[0], *outer, q[-1], *inner[::-1]])
 
 
 def meets(arc, v, o, tangent=TANGENT_MM):

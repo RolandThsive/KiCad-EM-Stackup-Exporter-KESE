@@ -1,7 +1,8 @@
 """Surface finish (ENIG, HASL, ...) on the copper the solder mask leaves bare: the type and its
 layers, and the finish on the faces of the top and bottom copper.  The finish on the walls, in the
-holes, on the plated edge and in the castellations is finish_shells.py."""
+holes, on the plated edge and in the castellations is finish_shells.py (shells.py lays them)."""
 from kese.core import shapes2d as sh
+from kese.core.conformal import grow
 from kese.core.shapes2d import EMPTY
 from parameters import P
 
@@ -58,7 +59,7 @@ def under_mask_copper(st, cu):
     if not (under_mask_mm(st) and layers) or cu.is_empty:
         return cu
     reach = sum(on_grid(t, sh.grid()) for _, t in layers)
-    return sh.snap(cu.buffer(reach, join_style="mitre", mitre_limit=2.0))
+    return grow(cu, reach, join_style="mitre", mitre_limit=2.0)
 
 
 def exposed(r, side, cu):

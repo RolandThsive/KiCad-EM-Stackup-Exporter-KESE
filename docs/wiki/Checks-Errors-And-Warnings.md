@@ -203,6 +203,8 @@ compares every part's volume with `tests/baseline.json`:
 python -m pytest tests                 # or:  python tests/test_boards.py
 python tests/test_boards.py --accept   # re-record the baseline after an intended geometry change
 python tests/test_boards.py --add      # record only the boards the baseline does not have yet
+python tests/test_boards.py --faceted  # the STEP files with flat faces only (Run.STEP_EXACT_ARCS = False)
+python tests/test_boards.py --healed   # read the STEP files back with OpenCascade's healing (slower)
 ```
 
 A board fails when the Verifier fails (an open or wrongly wound part or an overlap in simulation
@@ -218,13 +220,19 @@ or a new one appeared, or (when OCP, `cadquery-ocp`, is installed) when the STEP
 a free edge, checked by reading it back with OCP. In visual mode the "volume" is the signed volume
 of an open surface: it means nothing on its own, but it moves when the skin does.
 
-Reading a STEP file back takes longer than writing it: about 3.5 minutes for the 65 MB file of
-`16b_edge_plating_border`, over a minute to turn the file into shapes and two more to check the
-solids. So
-`python tests/test_boards.py` reads the STEP files back in two background processes
-(`AUDITORS` in `tests/test_boards.py`, `tests/step_audit.py`) while it exports the next boards,
-and prints a board's line once its file is checked, in the order the boards ran, with the time the
-read-back took (`STEP read back in 3.4 s`). Under `pytest` every board is checked in turn.
+Reading a STEP file back takes longer than writing it. The suite reads it as written, without
+OpenCascade's shape healing, which takes most of the reading time and would mend a fault rather
+than report it. Before the check it works out only what any reader must work out for itself: the
+curve of each edge in the parameters of each of its faces (KESE writes none, as KiCad does not),
+and on a cylinder an edge's curve moved by a whole turn where it came out a turn off; the points
+and curves in the file stay as written (`tests/step_audit.py`). That takes about 45 s for the
+54 MB file of `16b_edge_plating_border`, against about two minutes with the healing
+(`python tests/test_boards.py --healed`, the check before), and on every test board the two give
+the same verdict. So `python tests/test_boards.py` reads the STEP files back in background
+processes, a quarter of the processor threads and at least two (`AUDITORS` in
+`tests/test_boards.py`), while it exports the next boards, and prints a board's line once its file
+is checked, in the order the boards ran, with the time the read-back took
+(`STEP read back in 3.4 s`). Under `pytest` every board is checked in turn.
 
 The test boards in `tests/boards/` cover:
 
