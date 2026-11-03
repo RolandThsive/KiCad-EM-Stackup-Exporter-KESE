@@ -94,7 +94,8 @@ html.phone .desktop-only { display: none !important; }
 html.embedded #topbar { padding-right: 112px; }
 #topbar h1 { font-size: 26px; white-space: nowrap; transition: opacity var(--ease);
   position: relative; top: -0.08em; }   /* Permanent Marker draws its letters low in the line box: lift them to the switch's centre (2 px at 26 px) */
-.top-actions { display: flex; gap: 8px; margin-left: auto; }
+.top-actions { display: flex; gap: 8px; }
+.top-mid { flex: 1; min-width: 0; display: flex; justify-content: center; }
 .top-actions .glass-btn { white-space: nowrap; }
 .standalone-nav { display: flex; gap: 8px; }
 html.embedded .standalone-nav { display: none; }
@@ -363,7 +364,7 @@ button.group-title.collapsed .chevron { transform: rotate(-90deg); }
 .readout { position: absolute; left: 12px; bottom: 10px; font-size: 12px; color: var(--text-2); font-variant-numeric: tabular-nums;
   background: rgba(255, 255, 255, 0.7); padding: 2px 8px; border-radius: 6px; pointer-events: none; }
 .readout:empty { display: none; }
-.stale-badge { position: absolute; top: 66px; left: 50%; transform: translate(-50%, -50%); white-space: nowrap; z-index: 3;
+.stale-badge { white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
   background: rgba(255, 255, 255, 0.92);
   border: 1px solid var(--accent); color: var(--accent); font-size: 12.5px; padding: 4px 12px; border-radius: 14px; box-shadow: var(--shadow-btn); }
 .stale-badge.two-line { white-space: normal; width: max-content; max-width: 150px; text-align: center; line-height: 1.25; padding: 4px 10px; }
