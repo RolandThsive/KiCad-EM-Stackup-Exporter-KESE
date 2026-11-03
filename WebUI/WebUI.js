@@ -713,6 +713,7 @@ async function showPreview() {
   const ro = $("readout");
   ro.textContent = `Reading ${c.label}…`;
   const size = c.files.reduce((s, f) => s + f.size, 0);
+  viewer.closedSolids = state.runValues[CFG.mode] !== "visual";     // a visual model is a skin: its cut has no faces
   try {
     let parts;
     if (c.format === "glb") parts = await viewer.loadGLB(await store.bytes(c.key));
@@ -952,7 +953,7 @@ async function main() {
   const links = CFG.links || {};
   $("foot").replaceChildren("Generator: ", el("a", { href: links.repository, target: "_blank", rel: "noopener" }, "KiCad EM Stackup Exporter"),
     " · GPL-3.0-or-later · runs in your browser, nothing is uploaded");
-  viewer = new Viewer($("view"), { roleOf: (name) => (partInfo(name) || {}).role, onHover: showHover, onProgress: (f) => { $("readout").textContent = `Reading the STEP… ${Math.round(f * 100)} %`; } });
+  viewer = new Viewer($("view"), { section: CFG.crossSection === undefined ? "stencil" : CFG.crossSection, roleOf: (name) => (partInfo(name) || {}).role, onHover: showHover, onProgress: (f) => { $("readout").textContent = `Reading the STEP… ${Math.round(f * 100)} %`; } });
   wire();
   store.start();
   startWorker();
