@@ -65,11 +65,11 @@ the command is run from.
 
    ```text
    hdi_module: KiCad format 20221018 (KiCad 7), 6 copper layers, mode simulation
-     -> Output/hdi_module/simulation_GLB  (hdi_module.glb, materials.json)  in 0m 08s
+     -> Output/hdi_module/simulation_GLB  (hdi_module.glb, materials.json)  in 0m 09s
    pcie_card: KiCad format 20221018 (KiCad 7), 4 copper layers, mode simulation
-     -> Output/pcie_card/simulation_GLB  (pcie_card.glb, materials.json)  in 0m 10s
+     -> Output/pcie_card/simulation_GLB  (pcie_card.glb, materials.json)  in 0m 11s
    rf_module: KiCad format 20221018 (KiCad 7), 4 copper layers, mode simulation
-     -> Output/rf_module/simulation_GLB__1  (rf_module.glb, materials.json)  in 0m 17s
+     -> Output/rf_module/simulation_GLB__1  (rf_module.glb, materials.json)  in 0m 21s
    ```
 
    The repository already holds example runs of `rf_module` in `Output/rf_module/`, and a run
@@ -118,6 +118,10 @@ in its values. Only `--out` is not recorded there; the run folder's path shows i
 > `Run.OUTPUT_DIR`) are relative to the folder the command is run from. The
 > exit code is 0 when every board succeeded and 1 when any board failed; with a single board the
 > full traceback is shown, with several the failing board is reported and the run continues.
+> A run works on every processor thread it may use (`Run.WORKERS`, see
+> [Working Principle](Working-Principle.md#64-work-done-in-parallel)); on a machine short of memory,
+> `--set Run.WORKERS=1` builds everything in one process. Ctrl-C stops the run and its worker
+> processes with one traceback.
 
 ## 3.4 Next
 

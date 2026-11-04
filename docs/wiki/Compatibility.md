@@ -85,11 +85,12 @@ Research underway.
 | | Version |
 |---|---|
 | Python | 3.12 or later with the pinned versions (`numpy` 2.5.3 requires it); 3.11 with the packages installed unpinned, as `requirements.txt` describes, or through `pyproject.toml` (`requires-python >= 3.11`, not tested); tested on 3.13 |
-| `numpy` 2.5.3, `shapely` 2.2.0, `mapbox_earcut` 2.1.0 | the versions in `requirements.txt` |
+| `numpy` 2.5.3, `shapely` 2.2.0, `mapbox_earcut` 2.1.0 | the versions in `requirements.txt`. shapely 2.2.0 brings GEOS 3.14.1, whose shapes may not be shared between threads that make shapes from them; KESE's threads each work on their own copies ([Working Principle](Working-Principle.md#64-work-done-in-parallel)) |
 | `cadquery-ocp` 7.8.1.1.post1 | optional, for the tests only: they read STEP files back with OpenCascade, and skip that check without it. 7.8 has no wheel for Python 3.14; there use 7.9.3.1.1, with which the STEP tests pass, though it read the file of `16b_edge_plating_border` in about twice the time (125 s against 60 s, the parts added up). 8.0 lacks two classes the check uses (`TopTools_IndexedMapOfShape`, `TopTools_IndexedDataMapOfShapeListOfShape`), so the check is skipped |
 | `gltf_validator` (Khronos, command line) | optional; used by the Verifier when on the PATH |
 
-Operating systems: anything the packages above run on. Tested on Linux.
+Operating systems: anything the packages above run on. Tested on Linux. The worker processes start
+afresh on every system, as Windows and macOS start them; Windows holds at most 61 at once.
 
 | Previous | Next |
 |:---|---:|

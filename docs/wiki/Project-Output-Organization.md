@@ -16,8 +16,8 @@ KiCad-EM-Stackup-Exporter-KESE/
 │   │   ├── cli.py, job.py, progress.py   command-line options, one run's request, the live status line
 │   │   ├── core/                shared tools: s-expression parser, 2D maths and shapes, the
 │   │   │                        boundary of a stack of prisms and its mesh, triangulation,
-│   │   │                        shared vertices, extrusion, work in threads and processes,
-│   │   │                        stroke font, safe file names
+│   │   │                        shared vertices, extrusion, work in threads and processes
+│   │   │                        and the copies of shapes they use, stroke font, safe file names
 │   │   ├── model/               the data handed from stage to stage: RawBoard, Items, Stackup,
 │   │   │                        Regions, PrismSet, Model, Files
 │   │   ├── s1_read/             the file, parsed and checked
@@ -169,7 +169,7 @@ Verifier: PASS
 | `stack-up` | laminate thickness and its source, the z band and foil of every copper layer, every dielectric with type, material, thickness, εr, tanδ and z range, the via tenting source, the pad-to-mask clearance, the silk-over-copper setting, the origin used |
 | `read` | a count of every kind of item read from the file (non-plated holes are counted here even when `Board.INCLUDE_NON_PLATED_HOLES = False` leaves them out) |
 | `skipped` | a count of the items left out, with the reason (hidden text and text on layers that are not drawn are left out without a count) |
-| `notes` | the font, the mask thickness and its source, finish, resin fill, castellation and edge plating notes, warnings raised while building |
+| `notes` | the font, the mask thickness and its source, finish, resin fill, castellation and edge plating notes, warnings raised while building (in the parts' order, however many worker processes ran), and the note when the worker processes failed and the main process built the parts left |
 | `parts` | every part with its triangle count, material key, colour and alpha |
 | `timing` | seconds per stage (verify only when the Verifier ran) |
 | Verifier | only with `--verify` or `Run.VERIFY = True`; see [Checks, Errors And Warnings](Checks-Errors-And-Warnings.md) |
@@ -203,9 +203,11 @@ case as Windows and macOS file systems do, so no file replaces another.
 ## 19.4 Tests Output
 
 `tests/test_boards.py` writes its runs to `tests/out/`, which is deleted at the start of every
-test run and ignored by git. `tests/test_layout.py`, `tests/test_colors.py` and
-`tests/test_kicad_version.py` write nothing, and `tests/test_step_native.py` and
-`tests/test_text_layout.py` write only in a temporary folder that they remove.
+test run and ignored by git. `tests/test_layout.py`, `tests/test_colors.py`,
+`tests/test_kicad_version.py` and `tests/test_enabled.py` write nothing, and
+`tests/test_step_native.py`, `tests/test_step_arcs.py`, `tests/test_text_layout.py`,
+`tests/test_bad_input.py` and `tests/test_parallel.py` write only in a temporary folder that they
+remove.
 
 | Previous | Next |
 |:---|---:|

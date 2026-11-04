@@ -68,7 +68,7 @@ python tests/test_boards.py                     # the regression suite over ever
 | `<part>: slices still sharing new vertices after 20 rounds` | Stage 6 gave the slices that meet at a height each other's vertices 20 times and they still changed. The part may be open; the Verifier then says so. |
 | `plated holes cross the board edge but the stackup has no (castellated_pads yes); set Copper.CASTELLATION = 'auto' to plate them` | With `Copper.CASTELLATION = "file"`, plated holes cut by the edge are left bare because the stack-up does not say they are castellated. |
 | `edge plating: copper of net '<net>' inside the edge band moved to net '<edge net>' on N layer(s)` | Copper of another net reached into the plated edge band; it now belongs to the edge's net (see 17.5). |
-| `worker processes failed (...); the N parts left are built in this process, one after another` (in visual mode `sliced`) | Stage 6 could not start its worker processes (`Run.WORKERS`), or lost one: the system stopped it, most often for lack of memory, or it ran out of memory (`MemoryError`). The parts the workers did not build (in visual mode, slice) are built in the main process instead, so the files are the same, only slower. An error in a part itself is not caught here: it stops the run at once, with its traceback. With little memory, `--set Run.WORKERS=1` builds everything in one process from the start. |
+| `worker processes failed (...); the N parts left are built in this process, one after another` (in visual mode `sliced`; after a lost worker, ending `(most often a lack of memory: Run.WORKERS = 1 uses less)`) | Stage 6 could not start its worker processes (`Run.WORKERS`), or lost one: the system stopped it, most often for lack of memory, or it ran out of memory (`MemoryError`). The parts the workers did not build (in visual mode, slice) are built in the main process instead, so the files are the same, only slower. An error in a part itself is not caught here: it stops the run at once, with its traceback. With little memory, `--set Run.WORKERS=1` builds everything in one process from the start. |
 | `step: <part>: N edges are not shared by two faces (the solid is open there)` | The STEP writer found the part open. It is still written, and a CAD tool will report free edges on it. |
 | `step: <part>: written without arcs (...)` | With `Run.STEP_EXACT_ARCS`, finding the part's arcs failed (a bug: please report it with the board). The part is written with flat faces only, as with the parameter off; the rest of the file keeps its arcs. |
 | `step: no part has a solid; STEP skipped` | None of the parts has a solid, so no `<board>.step` is written. |
@@ -198,7 +198,8 @@ faces and walls do not meet on the same edges (see the `faces and walls still ch
 `pinch points left` notes); `whole=False`
 means the solid holds more or less material than the prisms it was built from. An overlap line
 other than `none` means two parts share material; it names the two parts and the heights of the
-biggest overlap, and how many places there are. All of these are bugs worth reporting with the
+biggest overlap (of overlaps as big, the first by part name, so the line is the same however many
+worker processes ran), and how many places there are. All of these are bugs worth reporting with the
 board file.
 
 ## 17.4 The Regression Suite
@@ -283,8 +284,8 @@ boards ran, with the number of parts and the time they took added up
 not read fails the board (`STEP read-back failed: ...`). Without OCP, or with one that lacks what
 the check uses (8.0), the line says so (`STEP not read back: ...`) and the board is not failed for
 it. Under `pytest` every board is checked in turn, the parts of a file of 20 MB or more in processes
-of their own, one per processor thread, and those of a smaller file one after another; without a
-usable OCP it warns, and the STEP tests show as skipped, not as passed.
+of their own, one per processor thread (at most 61 on Windows), and those of a smaller file one
+after another; without a usable OCP it warns, and the STEP tests show as skipped, not as passed.
 
 The test boards in `tests/boards/` cover:
 
@@ -319,17 +320,22 @@ part as it is with all of them on, and a run with all of them off refused, in ab
 (`python tests/test_enabled.py`);
 `tests/test_bad_input.py`, which gives settings outside their values and a damaged board file and
 finds an error before any work or a warning, not a Python error, in about two seconds
-(`python tests/test_bad_input.py`); `tests/test_parallel.py`, which sends shapes through stage 6's
-worker processes and finds them back on their grid, of their type and with their SRID, finds the
-run's settings in the workers, the parts of a lost worker and of one out of memory built in the
-main process with the note, an error in a part raised at once with the other workers stopped, a
-script without `if __name__ == "__main__":` not run again in each worker, and the workers gone
-when the main process is killed, in about three seconds (`python tests/test_parallel.py`); and a
-STEP test, also on its own (`python tests/test_step_native.py`):
+(`python tests/test_bad_input.py`); `tests/test_parallel.py`, which finds a thread's own copies
+of shapes to be the same shapes, each part on its grid, and threads working on their own copies of
+one shape not crashing; sends shapes through stage 6's worker processes and finds them back on
+their grid (each part's too), of their type and with their SRID; and finds the run's settings in the
+workers, the parts of a lost worker and of one out of memory built in the main process with the
+note, an error in a part raised at once with the other workers stopped, a caller that stops early
+not kept waiting, the workers first in line for Linux's out-of-memory killer, KESE run inside a
+`multiprocessing.Pool`, a script without `if __name__ == "__main__":` not run again in each
+worker, Ctrl-C ending the workers with one traceback, and the workers gone when the main process is
+killed, in about ten seconds (`python tests/test_parallel.py`); and two STEP tests, also on their
+own (`python tests/test_step_native.py`, `python tests/test_step_arcs.py`):
 
 | Test | Path | What it checks |
 |---|---|---|
 | `test_step_native.py` | the STEP writer (`kese/s7_write/step.py`) and the suite's read-back (`tests/step_audit.py`) | a box with a through hole beside a second box, written from their faces and read back by OpenCascade as two valid solids with no free edge, the right faces and the right volume; names with a quote and letters outside ASCII come back as they went in. A file of three such parts, read back part by part, gives what the whole file gives, also with a face left out of the first part and of the last; a part cut in the wrong place does not pass as clean, and a file another program wrote, or one with other line ends, is read whole. Needs OCP (`python -m pip install "cadquery-ocp==7.8.1.1.post1"`), and is skipped without it; takes a few seconds |
+| `test_step_arcs.py` | the true arcs of STEP files (`Run.STEP_EXACT_ARCS`; `kese/s7_write/step_arcs.py`, `step_curved.py`) | a run of vertices on one circle is written as an arc edge, and the walls on it as a cylinder, only where the arc cannot cross anything: circles and round ends become arcs, and the two arcs of an S-bend share only the vertex between them; an arc that would cross its own ring, or overlap another polygon's arc, stays straight, an outline may touch an arc where it joins it but not cross it, and an edge near the arc at another height leaves it be; a failure in the arcs writes the part with flat faces. With OCP every file is also read back: valid solids, no free edge, the volume of the true shape. Takes a few seconds |
 
 ## 17.5 Inputs KESE Refuses Or Changes
 

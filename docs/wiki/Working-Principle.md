@@ -31,9 +31,10 @@ so that it carries the Verifier's result.
 
 Two shared folders sit below the stages: `kese/core/` holds the tools that know nothing about
 stages (the s-expression parser, 2D shapes, the boundary of a stack of prisms, triangulation, the
-stroke font), and `kese/model/` the classes handed from one stage to the next. A stage uses only
-those, `parameters/` and the stages before it; `tests/test_layout.py` checks this
-([Project Output Organization](Project-Output-Organization.md) shows the whole tree).
+stroke font, work in threads and processes), and `kese/model/` the classes handed from one stage
+to the next. A stage uses only those, `parameters/` and the stages before it;
+`tests/test_layout.py` checks this ([Project Output Organization](Project-Output-Organization.md)
+shows the whole tree).
 
 ## 6.1 The Design Choice That Matters Most
 
@@ -127,6 +128,43 @@ if R.ORIENTATION == "flat":      # board in XZ, F.Cu toward +Y
 `report.txt` names the origin used, for example
 `origin: outline centre (112.0000, 108.0000) in KiCad coordinates`, so a position in the model can
 be mapped back to the layout.
+
+## 6.4 Work Done In Parallel
+
+`Run.WORKERS` threads or processes work at once (`0`: one per processor thread the run may use;
+`1`: everything in turn, in one process). `kese/core/parallel.py` holds both kinds:
+
+| Stage | What runs at once | In |
+|---|---|---|
+| 3 resolve | the copper layers | threads |
+| 4 geometry | the top and bottom solder mask, then the top and bottom silkscreen; the finish's hole spans and copper layers | threads |
+| 6 assemble, simulation mode | the parts' solids, the biggest part first | processes |
+| 6 assemble, visual mode | each part sliced | processes |
+| 6 assemble, visual mode | the faces, the walls and the test for hidden triangles | threads |
+
+- Threads where the 2D geometry library, GEOS, does the work: it runs outside Python's lock.
+  Processes where much of the work is Python's own, which threads would take in turn. Parts that
+  hold under 20,000 coordinates in all are built in the main process, as starting the processes
+  would take longer.
+- The results are put back in the layers', sides' and parts' order, so the files are the same,
+  byte for byte, however many threads or processes ran (but for the times, as in 6.2).
+- A thread makes shapes only from its own copies of the shapes other threads use
+  (`kese/core/shape_copies.py`). GEOS 3.14 counts the shapes of each of its factories without a
+  lock, and a shape on the grid shares its factory with every shape made from it: two threads
+  making shapes from one shared shape could crash the run. The copies keep the grid of the shape
+  and of each of its parts.
+- The processes start afresh, as Windows and macOS start them, on every system, and are given the
+  run's settings, `--for` and `--set` included. Shapes sent to and from them keep their grid, which
+  shapely's own pickling would drop.
+- Where the processes cannot start, or the system stops one, or one runs out of memory, the main
+  process builds the parts left, one after another, and `report.txt` says so
+  ([Checks, Errors And Warnings](Checks-Errors-And-Warnings.md#1713-notes-worth-knowing)). An
+  error in a part's own work stops the run at once and ends the other workers.
+- Ctrl-C, or the end of the main process however it ends, ends the workers too. On Linux the
+  system's out-of-memory killer takes a worker before the main process. Inside a
+  `multiprocessing.Pool`'s worker, which may not start processes, every part is built in that
+  process. A script that calls KESE without `if __name__ == "__main__":` is not run again in each
+  worker.
 
 | Previous | Next |
 |:---|---:|
