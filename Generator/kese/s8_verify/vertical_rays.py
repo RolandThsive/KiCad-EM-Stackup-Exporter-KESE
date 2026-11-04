@@ -3,7 +3,7 @@ at what height.  The Verifier's visual check casts only vertical rays, so a poin
 in the plane does it; the rays are binned on a grid so each triangle meets only the rays near it."""
 import numpy as np
 
-TRIANGLES_AT_A_TIME = 200_000
+from parameters import P
 
 
 def vertical_hits(vertices, faces, xy):
@@ -19,9 +19,9 @@ def vertical_hits(vertices, faces, xy):
     key = cell[:, 0] * cells + cell[:, 1]
     order = np.argsort(key, kind="stable")
     start = np.searchsorted(key[order], np.arange(cells * cells + 1))
-    out = [], [], []
-    for a in range(0, len(tri), TRIANGLES_AT_A_TIME):
-        t = tri[a:a + TRIANGLES_AT_A_TIME]
+    out, step = ([], [], []), P.Parallel.VERIFY_TRIANGLES_AT_A_TIME
+    for a in range(0, len(tri), step):
+        t = tri[a:a + step]
         c0 = np.clip(((t[:, :, :2].min(axis=1) - lo) / size).astype(np.int64), 0, cells - 1)
         c1 = np.clip(((t[:, :, :2].max(axis=1) - lo) / size).astype(np.int64), 0, cells - 1)
         ok = (t[:, :, :2].max(axis=1) >= lo).all(axis=1) & (t[:, :, :2].min(axis=1) <= hi).all(axis=1)

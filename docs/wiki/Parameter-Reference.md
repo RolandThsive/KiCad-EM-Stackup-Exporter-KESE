@@ -10,8 +10,10 @@ and listed on its first line.
 
 > [!NOTE]
 > Defaults are those of the parameter files on `main`. Before the board is read, the run checks
-> `MODE`, `FILE_FORMAT`, the settings of `parameters/parallel.py` and every setting whose range below is a few words with `/`
-> between them (such as `"mm"` / `"m"`), and stops with an error that names the setting.
+> `MODE`, `FILE_FORMAT`, the settings of `parameters/parallel.py`, the rounds of
+> `parameters/geometry.py`, the Verifier's tolerances and every setting whose range below is a few
+> words with `/` between them (such as `"mm"` / `"m"`), and stops with an error that names the
+> setting.
 > `FINISH_TYPE` and `DIELECTRIC_SPLIT` are checked where they are used (an error or a warning), and
 > `FONT_FILE` gives a note in `report.txt`. For the rest, a value outside the range below produces
 > a wrong model or a plain Python error, not a named check.
@@ -40,6 +42,8 @@ How many threads and processes work at once is set in [16.9 Parallel](#169-paral
 | `SHOW_PROGRESS` | `True` | bool | Live `running <stage> ... 1m 23s` line on a terminal |
 | `VERIFY` | `False` | bool | Run the Verifier after generation (1 to 3 s on the example boards in simulation mode, under 1 s in visual mode; longer on dense boards) |
 | `VERIFY_RAYS` | `3000` | int > 0 | Vertical rays the Verifier casts through a visual model to test its surfaces |
+| `VERIFY_VOLUME_TOLERANCE` | `1e-7` | ≥ 0 | How far a part's volumes from its faces, its slices and its mesh may differ, as a share of its volume (the numerical noise of areas and meshes), and still pass ([Checks, Errors And Warnings](Checks-Errors-And-Warnings.md#173-the-verifier)) |
+| `VERIFY_OPENED_VOLUME_MM3` | `1e-3` | mm³ ≥ 0 | How much volume the opened pinch points may take from a part's prisms, and the part still pass |
 | `WRITE_MATERIALS_JSON` | `True` | bool | Write `materials.json` next to the outputs |
 
 ### 16.1.3 Mesh Export (GLB, STL, OBJ)
@@ -221,6 +225,8 @@ These do not change dimensions.
 | `PINCH_POINT_OPENING_MM` | `1e-4` | mm > 0 | Polygons whose rings touch at a single point are opened by this much so they can be meshed |
 | `PINCH_CUT_ROUNDS` | `10` | int ≥ 1 | Tries at opening one, the cut's radius doubling each time |
 | `PINCH_DISC_TURN_DEG` | `17.0` | degrees | Turn of the octagon cut at a pinch, off the axes a board's edges follow |
+| `VERTEX_SHARING_ROUNDS` | `20` | int ≥ 1 | Stage 6: rounds of cutting a part's faces and giving its slices each other's vertices, until nothing changes (one to three in practice). A part still changing after this many is noted in `report.txt` and may be open ([Working Principle](Working-Principle.md#62-how-a-part-becomes-a-closed-solid)) |
+| `NODING_ROUNDS` | `8` | int ≥ 1 | Rounds of noding a region on the snapping grid again (GEOS's hot pixels) until it changes nothing (one or two in practice) |
 | `SLIVER_AREA_MM2` | `1e-10` | mm² > 0 | A polygon of less area is a sliver left by the set operations, and is dropped |
 | `TRIANGULATE_CELL_POINTS` | `5000` | > 0 | A polygon with more points than this has its top and bottom cut into triangles strip by strip, much faster when it has many holes (earcut's time grows with the points times the holes). The points the strips add are taken out again, so the solid keeps exactly the polygon's own vertices |
 | `TRIANGULATE_CELL_MM` | `10.0` | mm > 0 | Width of those strips, as KiCad cuts big polygons into 1 cm cells before it triangulates them |
@@ -285,9 +291,9 @@ The look of every part: the GLB and OBJ materials, the part colours in STEP and 
 
 ## 16.9 Parallel (`parameters/parallel.py`)
 
-How many processor cores work at once, and how ([Working Principle](Working-Principle.md#64-work-done-in-parallel)).
-None of these changes the model: the files are the same, byte for byte, however the work is
-shared out.
+How many processor cores work at once, and how much the work holds in memory at once
+([Working Principle](Working-Principle.md#64-work-done-in-parallel)). None of these changes the
+model: the files are the same, byte for byte, however the work is shared out.
 
 | Name | Default | Range | Meaning |
 |---|---|---|---|
@@ -295,6 +301,9 @@ shared out.
 | `PROCESS_WORKERS` | `0` | int ≥ 0 | At most this many worker processes at once, in stage 6; `0` = as many as `WORKERS` (a higher value is the same as `WORKERS`). Each process holds its own Python, numpy and shapely (about 36 MB) and the part it builds: NE_Delta, one of the biggest boards tried, peaks at 2.82 GB in all with 4 workers and 4.48 GB with 32 in simulation mode. A thread costs little memory, so a machine with many threads and little memory can keep `WORKERS` and lower this; `1` builds stage 6 in the main process and keeps the threads. If the processes cannot start, or one is stopped or runs out of memory, the main process builds the parts left, with a note ([Checks, Errors And Warnings](Checks-Errors-And-Warnings.md#1713-notes-worth-knowing)). Windows holds at most 61 processes at once. |
 | `PROCESS_MIN_COORDINATES` | `20000` | int ≥ 0 | Stage 6 starts worker processes only when the parts hold this many coordinates or more in all their prisms; smaller boards are built part after part in the main process, which is faster than starting the processes (about 0.3 s for 4): one of the test boards takes 0.10 s that way, and 0.35 s in processes. `0` = processes for every board of more than one part. |
 | `GIVE_BACK_MEMORY` | `True` | bool | Hand the memory that threads freed back to the system after each step done in threads, and in each worker process after each part (glibc's `malloc_trim`, on Linux; elsewhere nothing is done). glibc keeps a pool for each thread and holds on to what is freed in it: NE_Delta in visual mode peaks at 2.67 GB with 4 workers and 3.46 GB with 32 with this, and 3.45 GB and 4.86 GB without. Tens of milliseconds per run. |
+| `SKIN_PROBES_AT_A_TIME` | `2000000` | int ≥ 1 | Visual skin, the test for hidden triangles: triangles probed at once. Their probe points and normals take about a quarter of a gigabyte; fewer take less memory and a little more time |
+| `VERIFY_TRIANGLES_AT_A_TIME` | `200000` | int ≥ 1 | The Verifier's vertical rays: triangles tested at once |
+| `STEP_ROWS_AT_A_TIME` | `100000` | int ≥ 1 | The STEP writer: points, edges or faces turned into text at once. The file is the same, byte for byte, whatever the size |
 
 > [!NOTE]
 > `WORKERS` was `Run.WORKERS` before. `--set Run.WORKERS=N` still works: it sets

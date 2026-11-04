@@ -18,7 +18,6 @@ from kese.core.memory import give_back_memory
 from kese.core.parallel import workers_wanted
 from parameters import P
 
-PROBES_AT_A_TIME = 2_000_000     # triangles: their probe points and normals take a quarter of a gigabyte
 
 
 def skin_meshes_from_faces(levels, pieces, faces):
@@ -58,11 +57,13 @@ def meshes_per_part(v, f, owner, parts):
 
 def looks_at_material(v, f, levels, pieces):
     """Which triangles have material just in front of them: a point SKIN_BURIED_TEST_OFFSET_MM out along
-    the normal lies in some part's material.  Slices Parallel.WORKERS at a time, PROBES_AT_A_TIME probes."""
+    the normal lies in some part's material.  Slices Parallel.WORKERS at a time, Parallel.SKIN_PROBES_AT_A_TIME
+    probes."""
     inside = np.zeros(len(f), dtype=bool)
     with ThreadPoolExecutor(workers_wanted()) as pool:
-        for start in range(0, len(f), PROBES_AT_A_TIME):
-            these = slice(start, start + PROBES_AT_A_TIME)
+        step = P.Parallel.SKIN_PROBES_AT_A_TIME
+        for start in range(0, len(f), step):
+            these = slice(start, start + step)
             probe = probes_of(v, f[these])
             at = np.searchsorted(levels, probe[:, 2], "right") - 1        # the slice each probe's height falls in
             with_material = [k for k in np.unique(at).tolist() if 0 <= k < len(pieces) and not pieces[k][3].is_empty]

@@ -8,10 +8,8 @@ from kese.core import shapes2d as sh
 from kese.core.conformal import grow
 from kese.core.shapes2d import EMPTY, union
 from kese.core.vertices import noded
-from kese.s4_geometry.finish import drawn_thickness, exposed, props
+from kese.s4_geometry.finish import MITRE, drawn_thickness, exposed, props
 from parameters import P
-
-MITRE = {"join_style": "mitre", "mitre_limit": 2.0}   # how a shell's outer side follows the copper's corners
 
 
 def reach(layers):

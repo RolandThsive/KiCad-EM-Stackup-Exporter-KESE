@@ -14,7 +14,7 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 
 from kese.core.sexp import parse  # noqa: E402
-from kese.job import CHOICES, WHOLE_NUMBERS, start  # noqa: E402
+from kese.job import CHOICES, ONE_OR_MORE, WHOLE_NUMBERS, ZERO_OR_MORE, start  # noqa: E402
 from kese.s1_read import parse_kicad_version as kv  # noqa: E402
 from kese.s1_read import read  # noqa: E402
 from kese.s2_collect import collect  # noqa: E402
@@ -86,12 +86,22 @@ def test_the_old_name_of_workers_still_works():
                        "set it there"), refused
 
 
-def test_pinch_cut_rounds_must_be_one_or_more():
-    for n in (1, 10):
-        assert not isinstance(started({"Geometry.PINCH_CUT_ROUNDS": n}), str), n
-    for n in (0, -1, 2.5, "10"):          # at 0 every region checked would be noted as pinched
-        refused = started({"Geometry.PINCH_CUT_ROUNDS": n})
-        assert isinstance(refused, str) and "Geometry.PINCH_CUT_ROUNDS" in refused, (n, refused)
+def test_rounds_and_batches_must_be_one_or_more():
+    for key in ONE_OR_MORE:                # at 0 a pinch would be noted as left, a batch would hold nothing
+        for n in (1, 10):
+            assert not isinstance(started({key: n}), str), (key, n)
+        for n in (0, -1, 2.5, "10", True):
+            refused = started({key: n})
+            assert refused == f"{key} must be a whole number, 1 or more, not {n!r}", (key, n, refused)
+
+
+def test_the_verifier_s_tolerances_must_be_zero_or_more():
+    for key in ZERO_OR_MORE:
+        for x in (0, 0.0, 1e-7, 2):
+            assert not isinstance(started({key: x}), str), (key, x)
+        for x in (-1e-9, float("nan"), "1e-7", None, False):
+            refused = started({key: x})
+            assert refused == f"{key} must be a number, 0 or more, not {x!r}", (key, x, refused)
 
 
 def test_an_old_shapely_is_named_before_the_run():
@@ -156,7 +166,8 @@ if __name__ == "__main__":
     test_every_setting_with_a_few_values_is_checked()
     test_the_parallel_settings_are_checked()
     test_the_old_name_of_workers_still_works()
-    test_pinch_cut_rounds_must_be_one_or_more()
+    test_rounds_and_batches_must_be_one_or_more()
+    test_the_verifier_s_tolerances_must_be_zero_or_more()
     test_an_old_shapely_is_named_before_the_run()
     test_a_misspelt_set_is_named_before_the_run()
     test_a_tenting_side_with_no_value_keeps_the_default()

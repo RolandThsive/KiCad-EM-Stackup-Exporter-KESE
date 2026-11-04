@@ -25,6 +25,9 @@ CHOICES = {
     "Copper.VIA_TENTING": ("file", "tented", "open"),
     "Finish.FINISH_GROUPING": ("metal", "net"),
 }
+ONE_OR_MORE = ("Geometry.PINCH_CUT_ROUNDS", "Geometry.VERTEX_SHARING_ROUNDS", "Geometry.NODING_ROUNDS",   # at 0 nothing
+               "Parallel.SKIN_PROBES_AT_A_TIME", "Parallel.VERIFY_TRIANGLES_AT_A_TIME", "Parallel.STEP_ROWS_AT_A_TIME")
+ZERO_OR_MORE = ("Run.VERIFY_VOLUME_TOLERANCE", "Run.VERIFY_OPENED_VOLUME_MM3")
 WHOLE_NUMBERS = {                 # the settings of parameters/parallel.py that count, and what their 0 means
     "WORKERS": "one per processor thread",
     "PROCESS_WORKERS": "as many as WORKERS",
@@ -94,9 +97,14 @@ def start(mode=None, formats=None, out_root=None, overrides=(), verify=None, log
             raise ValueError(f"Parallel.{name} must be a whole number, 0 or more (0: {zero}), not {value!r}")
     if type(P.Parallel.GIVE_BACK_MEMORY) is not bool:
         raise ValueError(f"Parallel.GIVE_BACK_MEMORY must be True or False, not {P.Parallel.GIVE_BACK_MEMORY!r}")
-    rounds = P.Geometry.PINCH_CUT_ROUNDS
-    if type(rounds) is not int or rounds < 1:
-        raise ValueError(f"Geometry.PINCH_CUT_ROUNDS must be a whole number, 1 or more, not {rounds!r}")
+    for key in ONE_OR_MORE:
+        value = getattr(getattr(P, key.split(".")[0]), key.split(".")[1])
+        if type(value) is not int or value < 1:
+            raise ValueError(f"{key} must be a whole number, 1 or more, not {value!r}")
+    for key in ZERO_OR_MORE:
+        value = getattr(getattr(P, key.split(".")[0]), key.split(".")[1])
+        if type(value) not in (int, float) or not value >= 0:
+            raise ValueError(f"{key} must be a number, 0 or more, not {value!r}")
     if not any(is_on(key) for key in SWITCHES.values()):
         raise ValueError(f"nothing to build: {', '.join(sorted(set(SWITCHES.values())))} are all False")
     job = Job(mode=mode, formats=formats, out_root=out_root, overrides=tuple(overrides),

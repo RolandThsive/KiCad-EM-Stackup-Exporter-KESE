@@ -70,7 +70,7 @@ def boundary_of(part, prisms, log=None):
     """The prisms of one part -> its Boundary, closed by construction."""
     levels = heights_of(prisms)                    # every height where a prism starts or ends
     slices = slices_of_part(prisms, levels, log)   # the material between two neighbouring heights
-    for _ in range(ROUNDS):
+    for _ in range(sh.G().VERTEX_SHARING_ROUNDS):   # Geometry.VERTEX_SHARING_ROUNDS, 20
         flats = flat_faces(slices, levels)         # below minus above looks up, above minus below down
         slices, changed = slices_sharing_vertices(slices, flats, levels, log)
         if not changed:

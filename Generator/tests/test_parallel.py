@@ -1,7 +1,8 @@
 """The worker processes and threads of kese/core/parallel.py: a thread's own copies of shapes
 (kese/core/shape_copies.py) are the same shapes, made only where GEOS needs them (and on no grid
 where the grid is not used: a join of shared regions is the same join), threads share one prepared
-copy of a slice's material and one set of joined holes and hand back the memory they freed (unless
+copy of a slice's material and one set of joined holes, work in batches of any size with the same
+result (the STEP writer's slices too, to the byte), and hand back the memory they freed (unless
 Parallel.GIVE_BACK_MEMORY is off), Parallel.PROCESS_WORKERS caps the worker processes and boards under
 Parallel.PROCESS_MIN_COORDINATES stay in one process, shapes keep their grid (and type and SRID) on the way to and from the workers, the run's settings reach
 the workers, a lost worker or one out of memory leaves its jobs to the main process, an error in the
@@ -16,6 +17,7 @@ import platform
 import signal
 import subprocess
 import sys
+import tempfile
 import textwrap
 import threading
 import time
@@ -29,11 +31,15 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 
 from kese.core import memory, shape_copies  # noqa: E402
+from kese.core.boundary import Boundary  # noqa: E402
 from kese.core.parallel import in_parallel, in_processes, processes_wanted, workers_wanted, worth_processes  # noqa: E402
 from kese.core.shape_copies import _owned, own  # noqa: E402
 from kese.s3_resolve.holes import made_once  # noqa: E402
 from kese.s6_assemble.skin_faces import lies_against_material  # noqa: E402
 from kese.s6_assemble.skin_mesh import looks_at_material  # noqa: E402
+from kese.s7_write.step import write_part  # noqa: E402
+from kese.s7_write.step_writer import StepWriter  # noqa: E402
+from kese.s8_verify.vertical_rays import vertical_hits  # noqa: E402
 from parameters import P  # noqa: E402
 
 
@@ -239,6 +245,54 @@ def test_the_probe_test_lets_go_of_its_prepared_slices():
     pieces = [(None, None, None, material, {})]
     assert looks_at_material(v, np.array([[0, 1, 2]]), np.array([0.0, 1.0]), pieces).tolist() == [True]
     assert not shapely.is_prepared(material)
+
+
+def test_batches_of_any_size_give_the_same_result():
+    # the batch sizes of parameters/parallel.py set how much is held at once, not what comes out
+    rng = np.random.default_rng(1)
+    v, f = rng.random((60, 3)), rng.integers(0, 60, (40, 3))
+    material = shapely.box(0.2, 0.2, 0.7, 0.9)
+    levels, xy = np.array([0.0, 0.5, 1.0]), rng.random((50, 2))
+    def pieces():
+        return [(None, None, None, material, {}), (None, None, None, material, {})]
+    whole = (looks_at_material(v, f, levels, pieces()), vertical_hits(v, f, xy))
+    saved = with_workers(2, ("Parallel.SKIN_PROBES_AT_A_TIME", 7), ("Parallel.VERIFY_TRIANGLES_AT_A_TIME", 3))
+    try:
+        batched = (looks_at_material(v, f, levels, pieces()), vertical_hits(v, f, xy))
+    finally:
+        put_back(saved)
+    assert whole[0].tolist() == batched[0].tolist() and whole[0].any() and not whole[0].all()
+    assert all(np.array_equal(a, b) for a, b in zip(whole[1], batched[1])) and len(whole[1][0])
+
+
+def step_data(tmp, rows, arcs):
+    """The DATA section of a STEP file of one part (a seven-pointed star with a round hole) written
+    Parallel.STEP_ROWS_AT_A_TIME = rows at a time, with or without its arcs."""
+    t = np.arange(14) * np.pi / 7
+    star = shapely.Polygon(np.c_[np.cos(t), np.sin(t)] * np.where(np.arange(14) % 2, 4.0, 10.0)[:, None],
+                           [shapely.Point(0.3, 0.2).buffer(1.5, quad_segs=16).exterior.coords])
+    region = shapely.MultiPolygon([star, shapely.box(12, 0, 15, 3)])
+    part = Boundary("star", [0.0, 1.6], [(0.0, 1.6, region)], [(0.0, region, False), (1.6, region, True)])
+    saved = with_workers(1, ("Parallel.STEP_ROWS_AT_A_TIME", rows), ("Run.STEP_EXACT_ARCS", arcs))
+    try:
+        path = Path(tmp) / f"{rows}_{arcs}.step"
+        w = StepWriter(path, "star", "mm")
+        w.add_part("star", (205, 128, 62), write_part(w, "star", part, np.diag([0.001, 0.001, 0.001, 1.0]), print))
+        text = w.close().read_text(encoding="latin-1")
+    finally:
+        put_back(saved)
+    return text[text.index("\nDATA;"):]
+
+
+def test_a_step_part_is_written_the_same_in_slices_of_any_size():
+    # the STEP writer's slices (Parallel.STEP_ROWS_AT_A_TIME) bound what it holds at once: the
+    # entities, their numbers and their order are the same whatever their size
+    with tempfile.TemporaryDirectory() as tmp:
+        for arcs in (True, False):
+            whole = step_data(tmp, 100_000, arcs)
+            assert whole.count("DIRECTION(") > 10 and ("CIRCLE(" in whole) == arcs
+            for rows in (1, 4, 7):
+                assert step_data(tmp, rows, arcs) == whole, (rows, arcs)
 
 
 def test_joined_holes_are_made_once_when_threads_ask_at_once():
@@ -509,7 +563,6 @@ def test_the_workers_end_with_the_main_process(tmp_path):
 
 
 if __name__ == "__main__":
-    import tempfile
     import test_parallel as t        # the workers find the jobs' functions in a module, not in __main__
     t.test_shapes_keep_their_grid_in_worker_processes()
     t.test_a_thread_s_own_copies_are_the_same_shapes_on_factories_of_their_own()
@@ -519,6 +572,7 @@ if __name__ == "__main__":
     t.test_threads_on_their_own_copies_of_one_shape()
     t.test_threads_share_one_prepared_copy_of_a_slice()
     t.test_the_probe_test_lets_go_of_its_prepared_slices()
+    t.test_batches_of_any_size_give_the_same_result()
     t.test_joined_holes_are_made_once_when_threads_ask_at_once()
     t.test_memory_freed_by_threads_is_handed_back()
     t.test_memory_is_kept_with_give_back_memory_off()

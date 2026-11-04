@@ -6,6 +6,9 @@ from kese.core.conformal import grow
 from kese.core.shapes2d import EMPTY
 from parameters import P
 
+MITRE = {"join_style": "mitre", "mitre_limit": 2.0}   # how the finish follows the copper's corners: a shell's
+                                                      # outer side (shells.py) and the copper the mask wraps
+
 
 def finish_type(st):
     """The key of FINISH_TYPES the board gets, or None when its stack-up says "None".  Raises
@@ -59,7 +62,7 @@ def under_mask_copper(st, cu):
     if not (under_mask_mm(st) and layers) or cu.is_empty:
         return cu
     reach = sum(drawn_thickness(t) for _, t in layers)
-    return grow(cu, reach, join_style="mitre", mitre_limit=2.0)
+    return grow(cu, reach, **MITRE)
 
 
 def exposed(r, side, cu, take=lambda g: g):

@@ -39,6 +39,9 @@ SHOW_PROGRESS = True
 # dense boards). Results go in report.txt.
 VERIFY = False
 VERIFY_RAYS = 3000                     # vertical rays the Verifier casts through a visual model to test its surfaces
+VERIFY_VOLUME_TOLERANCE = 1e-7         # a part's volumes from its faces, slices and mesh may differ by this share
+                                       # of its volume (the numerical noise of areas and meshes) and still pass
+VERIFY_OPENED_VOLUME_MM3 = 1e-3        # mm3 the opened pinch points may take from a part's prisms and still pass
 
 # Write materials.json next to the outputs (per solid: material, thickness, er, tan d, conductivity, net, layer)
 WRITE_MATERIALS_JSON = True

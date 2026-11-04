@@ -1,12 +1,12 @@
 """The B-rep of one part as STEP entities from its Topology, in output units, numbered in blocks
-(so many per vertex, edge, loop), written a slice of rows at a time to bound the memory.  Lines and
-planes share one DIRECTION per distinct direction (Directions): a board's edges run in few."""
+(so many per vertex, edge, loop), written a slice of rows at a time to bound the memory: the file is
+the same whatever the size of the slices.  Lines and planes share one DIRECTION per distinct
+direction (kese/s7_write/step_directions.py): a board's edges run in few."""
 import numpy as np
 
+from kese.s7_write.step_directions import Directions
 from kese.s7_write.step_writer import real, reals, refs
-
-ROWS_AT_A_TIME = 100_000
-DIRECTION_DIGITS = 12             # directions closer than this are one DIRECTION (a 1e-12 turn)
+from parameters import P
 
 
 def write_brep(w, topo, M):
@@ -37,26 +37,34 @@ def write_brep(w, topo, M):
     if curves:
         curves.write(w, up)
 
+    sloped = ~arc & ~topo.vertical                                   # a line that does not run up a wall
+
+    def along(rows):
+        """The direction of each sloped edge of the rows."""
+        a, b = topo.edge_start[rows][sloped[rows]], topo.edge_end[rows][sloped[rows]]
+        return unit(xyz[b] - xyz[a])
+    directions.write((along(rows) for rows in slices(len(edge))), vectors=True)
     for rows in slices(len(edge)):
         a, b = topo.edge_start[rows], topo.edge_end[rows]
-        sloped = ~arc[rows] & ~topo.vertical[rows]
         vector = np.full(len(a), up + 1)                             # a wall's vertical edge runs up
-        vector[sloped] = directions.vectors(unit(xyz[b[sloped]] - xyz[a[sloped]]))
+        vector[sloped[rows]] = directions.vectors(along(rows))
         circle = curves.edge_circle(rows) if curves else [None] * len(a)
         w.write([f"#{e} = EDGE_CURVE('',#{pa + 1},#{pb + 1},#{c[0]},{c[1]});" if c is not None else
                  f"#{e} = LINE('',#{pa},#{v});\n#{e + 1} = EDGE_CURVE('',#{pa + 1},#{pb + 1},#{e},.T.);"
                  for e, pa, pb, v, c in zip(edge[rows].tolist(), point[a].tolist(), point[b].tolist(), vector.tolist(), circle)])
 
+    directions.write(direction(topo.plane_axis[rows], M) for rows in slices(len(plane)))
+    directions.write(direction(topo.plane_ref[rows], M) for rows in slices(len(plane)))
+    own = topo.plane_origin_vertex < 0                               # a plane through no vertex has its own origin
+    origin_id = np.where(own, plane + 2, point[np.maximum(topo.plane_origin_vertex, 0)])
+    for rows in slices(len(plane)):                                  # those origins first, then the planes
+        x = iter(reals(topo.plane_origin[rows][own[rows]] @ M[:3, :3].T + M[:3, 3]))
+        w.write([f"#{o} = CARTESIAN_POINT('',({a},{b},{c}));" for o, a, b, c in zip(origin_id[rows][own[rows]].tolist(), x, x, x)])
     for rows in slices(len(plane)):
-        at = topo.plane_origin_vertex[rows]
-        own = at < 0                                                 # a plane through no vertex has its own origin
-        origin_id = np.where(own, plane[rows] + 2, point[np.maximum(at, 0)])
         axis = directions.ids(direction(topo.plane_axis[rows], M))
         ref = directions.ids(direction(topo.plane_ref[rows], M))
-        x = iter(reals(topo.plane_origin[rows][own] @ M[:3, :3].T + M[:3, 3]))
-        w.write([f"#{o} = CARTESIAN_POINT('',({a},{b},{c}));" for o, a, b, c in zip(origin_id[own].tolist(), x, x, x)]
-                + [f"#{p} = PLANE('',#{p + 1});\n#{p + 1} = AXIS2_PLACEMENT_3D('',#{o},#{d},#{r});"
-                   for p, o, d, r in zip(plane[rows].tolist(), origin_id.tolist(), axis.tolist(), ref.tolist())])
+        w.write([f"#{p} = PLANE('',#{p + 1});\n#{p + 1} = AXIS2_PLACEMENT_3D('',#{o},#{d},#{r});"
+                 for p, o, d, r in zip(plane[rows].tolist(), origin_id[rows].tolist(), axis.tolist(), ref.tolist())])
 
     oriented = np.repeat(loop + 2, topo.loop_count) + (np.arange(len(topo.use_edge)) - np.repeat(topo.loop_start, topo.loop_count))
     for rows in slices(len(oriented)):
@@ -81,43 +89,6 @@ def write_brep(w, topo, M):
         w.write([f"#{s} = CLOSED_SHELL('',{refs(face[order[cut[k]:cut[k + 1]]])});",
                  f"#{s + 1} = MANIFOLD_SOLID_BREP('',#{s});"])
     return (shell + 1).tolist()
-
-
-class Directions:
-    """One DIRECTION per distinct direction of a part (rounded to DIRECTION_DIGITS), and one VECTOR
-    of length one along it for the lines that need it, written the first time they are asked for."""
-
-    def __init__(self, w):
-        self.w, self.direction, self.vector = w, {}, {}
-
-    def ids(self, d):
-        """The DIRECTION of every row of d (unit vectors, output frame)."""
-        return self._ids(d, False)
-
-    def vectors(self, d):
-        """The VECTOR (length one) along every row of d."""
-        return self._ids(d, True)
-
-    def _ids(self, d, vector):
-        if not len(d):
-            return np.empty(0, dtype=np.int64)
-        uniq, back = np.unique(np.round(d, DIRECTION_DIGITS) + 0.0, axis=0, return_inverse=True)   # (+ 0.0: no -0.)
-        out, lines = [], []
-        for key in map(tuple, uniq.tolist()):
-            i = self.direction.get(key)
-            if i is None:
-                i = self.direction[key] = self.w.reserve(1)
-                lines.append(f"#{i} = DIRECTION('',({','.join(real(v) for v in key)}));")
-            if vector:
-                v = self.vector.get(key)
-                if v is None:
-                    v = self.vector[key] = self.w.reserve(1)
-                    lines.append(f"#{v} = VECTOR('',#{i},1.);")
-                i = v
-            out.append(i)
-        if lines:
-            self.w.write(lines)
-        return np.asarray(out, dtype=np.int64)[back.ravel()]
 
 
 class Curves:
@@ -177,8 +148,9 @@ class Curves:
 
 
 def slices(n):
-    """The rows 0 to n, ROWS_AT_A_TIME at a time."""
-    return (slice(k, k + ROWS_AT_A_TIME) for k in range(0, n, ROWS_AT_A_TIME))
+    """The rows 0 to n, Parallel.STEP_ROWS_AT_A_TIME at a time."""
+    step = P.Parallel.STEP_ROWS_AT_A_TIME
+    return (slice(k, k + step) for k in range(0, n, step))
 
 
 def unit(v):

@@ -64,7 +64,9 @@ class StepWriter:
         return first
 
     def write(self, lines):
-        self.file.write("\n".join(lines) + "\n")
+        """Lines of entities (none: nothing, not an empty line)."""
+        if lines:
+            self.file.write("\n".join(lines) + "\n")
 
     def add_part(self, name, rgb, solids):
         """The product that holds a part's solids (written already), its placement in the

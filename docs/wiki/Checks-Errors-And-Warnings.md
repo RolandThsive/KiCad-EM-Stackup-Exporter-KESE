@@ -36,7 +36,8 @@ python tests/test_boards.py                     # the regression suite over ever
 | `Parallel.WORKERS must be a whole number, 0 or more (0: one per processor thread), not ...` (or `Parallel.PROCESS_WORKERS`, `Parallel.PROCESS_MIN_COORDINATES`, with what their `0` means) | A count in [`parameters/parallel.py`](Parameter-Reference.md#169-parallel-parametersparallelpy) is negative, fractional or not a number. |
 | `Parallel.GIVE_BACK_MEMORY must be True or False, not ...` | Most often `--set Parallel.GIVE_BACK_MEMORY=false`, which gives the word `false`: write `False`. |
 | `parameters/run.py sets WORKERS, which is now Parallel.WORKERS in parameters/parallel.py: set it there` | An older `parameters/run.py`, kept through an update, still sets `WORKERS`; the run stops rather than leave the value unused. |
-| `Geometry.PINCH_CUT_ROUNDS must be a whole number, 1 or more, not ...` | At least one try at opening a pinch point is needed: with none, every region checked would be noted as still pinched. |
+| `Geometry.PINCH_CUT_ROUNDS must be a whole number, 1 or more, not ...` (or `Geometry.VERTEX_SHARING_ROUNDS`, `Geometry.NODING_ROUNDS`, or a batch size of `parameters/parallel.py`) | At least one round, or one item in a batch, is needed: with no round of opening, every region checked would be noted as still pinched. |
+| `Run.VERIFY_VOLUME_TOLERANCE must be a number, 0 or more, not ...` (or `Run.VERIFY_OPENED_VOLUME_MM3`) | A Verifier tolerance is negative or not a number. |
 | `visual mode is a surface, not solids: FILE_FORMAT may only contain glb / obj` | STL and STEP need closed solids; use simulation mode. |
 | `no Edge.Cuts outline and OUTLINE_FALLBACK is 'error'` | Draw a closed outline, or set `Board.OUTLINE_FALLBACK = "copper_hull"`. |
 | `missing Python package(s): ...` | Printed before anything runs, with the `pip install` line to use. |
@@ -69,9 +70,9 @@ python tests/test_boards.py                     # the regression suite over ever
 | Message in `notes` | Meaning |
 |---|---|
 | `note: Edge.Cuts line ends up to D mm apart joined (Board.OUTLINE_LINE_SNAP_MM = S mm)` | The outline's lines had small gaps between their ends; they were closed as KiCad closes them (KiCad joins ends up to 0.01 mm apart, the default of `Board.OUTLINE_LINE_SNAP_MM`), so the board shape is the one KiCad shows. |
-| `<part>: faces and walls still changing after 20 rounds` | Stage 6 could not give the part's faces and walls the same vertices ([Working Principle](Working-Principle.md#62-how-a-part-becomes-a-closed-solid)). The part may be open; the Verifier then says so. |
+| `<part>: faces and walls still changing after 20 rounds` (`Geometry.VERTEX_SHARING_ROUNDS`) | Stage 6 could not give the part's faces and walls the same vertices ([Working Principle](Working-Principle.md#62-how-a-part-becomes-a-closed-solid)). The part may be open; the Verifier then says so. |
 | `<part>: pinch points left after 10 rounds of cutting` (or `pinch edges between two heights left ...`) | Two pieces of the part still touch at a point or along an edge after the cut-out disc grew to 512 times `Geometry.PINCH_POINT_OPENING_MM`. The part may be open there. |
-| `<part>: slices still sharing new vertices after 20 rounds` | Stage 6 gave the slices that meet at a height each other's vertices 20 times and they still changed. The part may be open; the Verifier then says so. |
+| `<part>: slices still sharing new vertices after 20 rounds` (`Geometry.VERTEX_SHARING_ROUNDS`) | Stage 6 gave the slices that meet at a height each other's vertices 20 times and they still changed. The part may be open; the Verifier then says so. |
 | `plated holes cross the board edge but the stackup has no (castellated_pads yes); set Copper.CASTELLATION = 'auto' to plate them` | With `Copper.CASTELLATION = "file"`, plated holes cut by the edge are left bare because the stack-up does not say they are castellated. |
 | `edge plating: copper of net '<net>' inside the edge band moved to net '<edge net>' on N layer(s)` | Copper of another net reached into the plated edge band; it now belongs to the edge's net (see 17.5). |
 | `worker processes failed (...); the N parts left are built in this process, one after another` (in visual mode `sliced`; after a lost worker, ending `(most often a lack of memory: fewer processes, Parallel.PROCESS_WORKERS, use less)`) | Stage 6 could not start its worker processes (`Parallel.WORKERS`, at most `Parallel.PROCESS_WORKERS`), or lost one: the system stopped it, most often for lack of memory, or it ran out of memory (`MemoryError`). The parts the workers did not build (in visual mode, slice) are built in the main process instead, so the files are the same, only slower. An error in a part itself is not caught here: it stops the run at once, with its traceback. With little memory, `--set Parallel.PROCESS_WORKERS=1` builds stage 6 in the main process from the start, and `--set Parallel.WORKERS=1` everything, in turn. |
@@ -124,7 +125,7 @@ suite reads it back with OCP).
 |---|---|---|
 | simulation | every part is a closed, consistently wound solid; its volume is printed in mm³ | `closed=True winding=True` for every part |
 | simulation | no two parts share material: every slice of every part (a flat region between two heights, what the faces are cut from) against every slice of every other part | `none`: no two slices of different parts overlap in height while their regions share an area wider than two grid steps, 0.2 µm (`none` on every board of the regression suite) |
-| simulation | every part's volume found four ways (`volumes.py`): from its flat faces, from its slices, from its mesh and from the prisms it was built from | `closed=True whole=True` for every part: the faces and the mesh within 1 part in 10⁷ of the slices, the prisms within that plus 0.001 mm³ (what opening pinch points may take) |
+| simulation | every part's volume found four ways (`volumes.py`): from its flat faces, from its slices, from its mesh and from the prisms it was built from | `closed=True whole=True` for every part: the faces and the mesh within 1 part in 10⁷ of the slices (`Run.VERIFY_VOLUME_TOLERANCE`), the prisms within that plus 0.001 mm³ (`Run.VERIFY_OPENED_VOLUME_MM3`, what opening pinch points may take) |
 | visual | the skin is one outer surface: along every ray that hits the model the faces take turns, one going into the material and the next out of it (two faces on most rays; four where a ray crosses a hollow open to the air, such as the bore of a buried via under stacked micro vias) | the line `visible surfaces per vertical ray: faces met {2: ...}; rays where in and out do not alternate: 0` ends in 0 |
 | both, when a GLB was written | the GLB through the Khronos glTF validator, when the `gltf_validator` command-line tool is on the PATH | not a pass condition: the validator's last line is only reported; otherwise `gltf_validator not on PATH: glTF validation skipped`; with no GLB in the run the line is absent |
 
@@ -333,7 +334,8 @@ own copies of shapes to be the same shapes, each part on its grid, made only whe
 and threads working on their own copies of one shape not crashing; finds threads taking turns with
 one prepared copy of a slice's material, the test for hidden triangles letting go of its prepared
 slices, a set of holes joined once when threads ask for it at once, and the memory threads freed
-handed back (and kept with `Parallel.GIVE_BACK_MEMORY` off); finds `Parallel.PROCESS_WORKERS`
+handed back (and kept with `Parallel.GIVE_BACK_MEMORY` off), and batches of any size giving the
+same result (a STEP part written in slices of any size the same to the byte); finds `Parallel.PROCESS_WORKERS`
 capping the worker processes and boards under `Parallel.PROCESS_MIN_COORDINATES` kept in one
 process; sends shapes through stage 6's worker processes and finds them back on
 their grid (each part's too), of their type and with their SRID; and finds the run's settings in the

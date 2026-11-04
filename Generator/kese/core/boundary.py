@@ -15,7 +15,6 @@ from kese.core.triangulate import rings_of
 from kese.core.vertices import noded, share_vertices
 
 HEIGHT_DIGITS = 9                # heights are told apart to 1e-9 mm, a picometre
-ROUNDS = 20                      # of cutting the faces and sharing their vertices, see above
 
 
 @dataclass
@@ -45,14 +44,14 @@ def boundary_of(part, prisms, log=None):
     """The prisms of one part -> its Boundary, closed by construction."""
     levels = heights_of(prisms)
     slices = slices_of_part(prisms, levels, log)
-    for _ in range(ROUNDS):
+    for _ in range(sh.G().VERTEX_SHARING_ROUNDS):
         flats = flat_faces(slices, levels)
         slices, changed = slices_sharing_vertices(slices, flats, levels, log)
         if not changed:
             break
     else:
         if log:
-            log(f"faces and walls still changing after {ROUNDS} rounds")
+            log(f"faces and walls still changing after {sh.G().VERTEX_SHARING_ROUNDS} rounds")
     return Boundary(part, levels, [(z0, z1, s) for (z0, z1), s in zip(pairwise(levels), slices)], flats)
 
 
@@ -113,10 +112,11 @@ def flat_faces(slices, levels):
 
 def slices_sharing_vertices(slices, flats, levels, log, pinches_opened=True):
     """The slices, each with the vertices of the faces and the slice it meets that lie on its edges,
-    repeated until no slice changes (at most ROUNDS times; a height cut again is cut wider).
+    repeated until no slice changes (at most Geometry.VERTEX_SHARING_ROUNDS times; a height cut again is
+    cut wider).
     -> (slices, the indices of the slices that changed)."""
     slices, changed, cuts = list(slices), set(), [0] * len(levels)
-    for _ in range(ROUNDS):
+    for _ in range(sh.G().VERTEX_SHARING_ROUNDS):
         moved_now = set()
         for k, z in enumerate(levels):
             at = [i for i in (k - 1, k) if 0 <= i < len(slices)]
@@ -136,7 +136,7 @@ def slices_sharing_vertices(slices, flats, levels, log, pinches_opened=True):
         if not moved_now:
             return slices, changed
     if log:
-        log(f"slices still sharing new vertices after {ROUNDS} rounds")
+        log(f"slices still sharing new vertices after {sh.G().VERTEX_SHARING_ROUNDS} rounds")
     return slices, changed
 
 

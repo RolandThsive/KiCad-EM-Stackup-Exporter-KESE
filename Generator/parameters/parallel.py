@@ -1,5 +1,6 @@
 """
-parameters/parallel.py - how many processor cores work at once, and how.
+parameters/parallel.py - how many processor cores work at once, and how much the work holds in
+memory at once.
 
 Every value here is recorded in parameters.txt next to each output.  None of them changes the
 model: the files come out the same, byte for byte, however the work is shared out.
@@ -34,3 +35,10 @@ PROCESS_MIN_COORDINATES = 20_000
 # keeps a pool for each thread and holds on to what is freed in it: NE_Delta in visual mode peaks at
 # 3.46 GB with 32 workers with this, and 4.86 GB without.  Tens of milliseconds per run.
 GIVE_BACK_MEMORY = True
+
+# Work done in batches, so that a big board does not hold all of it in memory at once: bigger batches
+# are a little faster and take more memory.
+SKIN_PROBES_AT_A_TIME = 2_000_000       # visual skin, the test for hidden triangles: triangles probed at once
+                                        # (their probe points and normals take about a quarter of a gigabyte)
+VERIFY_TRIANGLES_AT_A_TIME = 200_000    # the Verifier's vertical rays: triangles tested at once
+STEP_ROWS_AT_A_TIME = 100_000           # the STEP writer: points, edges or faces turned into text at once
