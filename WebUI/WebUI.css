@@ -91,14 +91,12 @@ html.phone .desktop-only { display: none !important; }
 #topbar { position: relative; display: flex; align-items: center; gap: 18px; padding: 12px 0 0; min-height: 56px; }
 /* room for the blog's Home / Back buttons: BloggerPage.html's #coilgen-nav is 16 px from the right edge and holds two
    38 px buttons with an 8 px gap (100 px), plus 12 px of space */
-html.embedded #topbar { padding-right: 112px; }
 #topbar h1 { font-size: 26px; white-space: nowrap; transition: opacity var(--ease);
   position: relative; top: -0.08em; }   /* Permanent Marker draws its letters low in the line box: lift them to the switch's centre (2 px at 26 px) */
 .top-actions { display: flex; gap: 8px; }
 .top-mid { flex: 1; min-width: 0; display: flex; justify-content: center; }
 .top-actions .glass-btn { white-space: nowrap; }
 .standalone-nav { display: flex; gap: 8px; }
-html.embedded .standalone-nav { display: none; }
 #foot { font-size: 11.5px; color: var(--text-3); text-align: center; }
 #foot a { color: var(--text-2); }
 
@@ -608,10 +606,19 @@ dialog pre { font-family: var(--mono); font-size: 12px; white-space: pre-wrap; m
 @media (max-width: 1180px) {
   .stale-badge { white-space: nowrap; max-width: none; padding: 3px 8px; font-size: 11.5px; }
   .stale-badge .sb-more { display: none; }
-  .top-mid { flex: none; min-width: max-content; }
+  .top-mid { flex: 1 0 auto; min-width: max-content; }        /* still takes the free room, so the buttons stay at the right edge */
 }
 /* the narrowest layout also has the page's own scrollbar: the top bar's buttons slim down to keep it on one line */
 @media (max-width: 1080px) {
   #topbar { gap: 6px; }
   .top-actions .glass-btn { padding-left: 6px; padding-right: 6px; font-size: 12px; }
+}
+/* narrow portrait windows: the top bar takes two rows: the title, Basic / Advanced and Back / Home first,
+   then the "Settings changed" note at the left and the buttons at the right edge */
+@media (max-width: 900px) {
+  #topbar { flex-wrap: wrap; row-gap: 4px; padding-bottom: 2px; }
+  #topbar::after { content: ""; order: 1; flex: 0 0 100%; height: 0; }   /* the row break */
+  .standalone-nav { order: 0; margin-left: auto; }
+  .top-mid { order: 2; flex: 1 0 auto; justify-content: flex-start; }
+  .top-actions { order: 3; margin-left: auto; }
 }

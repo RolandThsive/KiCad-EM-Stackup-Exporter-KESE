@@ -2,7 +2,7 @@
   BloggerPage.html - paste this whole file into a Blogger page (Pages > New Page > the pencil's "HTML view").
 
   It hides everything else on the page (header, sidebar, title, comments, footer), fills the window with the
-  KiCad EM Stackup Exporter, and puts a Back and a Home button at the top right.  The tool itself is served from
+  KiCad EM Stackup Exporter (which has its own Back and Home buttons), with a Back and a Home button for phones.  The tool itself is served from
   the GitHub repository (GitHub Pages, the WebUI branch) and runs in the visitor's browser; phones get a short
   message instead.
 
@@ -15,6 +15,8 @@
   #kese-shell { position: fixed; inset: 0; z-index: 2147483000; margin: 0; padding: 0; }
   #kese-frame { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; background: transparent; }
   #kese-nav { position: absolute; top: 12px; right: 16px; display: flex; gap: 8px; z-index: 2; }
+  /* with the tool shown, its own Back and Home sit in its top bar and scroll with it; these are for phones only */
+  #kese-shell:not(.phone) #kese-nav { display: none; }
   #kese-nav a {
     width: 38px; height: 38px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center;
     background: rgba(255, 255, 255, 0.3); border: 1px solid rgba(255, 255, 255, 0.2); box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
