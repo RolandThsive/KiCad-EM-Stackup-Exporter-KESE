@@ -445,12 +445,12 @@ dialog pre { font-family: var(--mono); font-size: 12px; white-space: pre-wrap; m
 .mode-seg button { font-size: 17px; padding: 10px 8px; }
 /* one section per parameter file */
 .psec { border-bottom: 1px solid rgba(0, 0, 0, 0.07); }
-.psec summary { list-style: none; cursor: pointer; display: flex; align-items: center; gap: 8px; padding: 10px 2px; font-weight: 600; font-size: 15px; }
-.psec summary::-webkit-details-marker { display: none; }
-.psec summary::before { content: ""; width: 7px; height: 7px; border-right: 2px solid var(--accent); border-bottom: 2px solid var(--accent);
+.psec > summary { list-style: none; cursor: pointer; display: flex; align-items: center; gap: 8px; padding: 10px 2px; font-weight: 600; font-size: 15px; }
+.psec > summary::-webkit-details-marker { display: none; }
+.psec > summary::before { content: ""; width: 7px; height: 7px; border-right: 2px solid var(--accent); border-bottom: 2px solid var(--accent);
   transform: rotate(-45deg); margin: 0 4px 0 2px; transition: transform 0.15s; flex: none; }
-.psec[open] summary::before { transform: rotate(45deg); }
-.psec summary:hover .ps-name { color: var(--accent); }
+.psec[open] > summary::before { transform: rotate(45deg); }
+.psec > summary:hover .ps-name { color: var(--accent); }
 .ps-file { font-family: var(--mono); font-size: 11px; color: var(--text-3); font-weight: 400; }
 .ps-n { margin-left: auto; font-size: 11px; font-weight: 500; color: var(--text-3); background: rgba(0, 0, 0, 0.05); border-radius: 999px; padding: 1px 8px; }
 .ps-n.changed { color: var(--accent); background: var(--error-bg); }
@@ -466,9 +466,24 @@ dialog pre { font-family: var(--mono); font-size: 12px; white-space: pre-wrap; m
   background: rgba(255, 255, 255, 0.7); color: var(--text); cursor: pointer; white-space: nowrap; align-self: flex-start; }
 .table-btn:hover:not(:disabled) { background: var(--cream); color: var(--accent); border-color: var(--accent); }
 .table-btn:disabled { opacity: 0.4; cursor: default; }
-.table-body { display: flex; flex-direction: column; gap: 6px; padding-left: 10px; border-left: 2px solid rgba(169, 62, 51, 0.18); }
+.table-body { display: flex; flex-direction: column; gap: 6px; }
 .table-row { display: flex; align-items: center; gap: 8px; justify-content: space-between; }
 .table-label { font-size: 13px; color: var(--text-2); }
+/* Colorization: each colour group folds like a section, under a small chevron; the section's content is centred */
+[data-module="Color"] .psec-body { padding: 0 8px 8px; }
+.cgroup > summary { list-style: none; cursor: pointer; display: flex; align-items: center; gap: 8px; margin-bottom: 0; }
+.cgroup > summary::-webkit-details-marker { display: none; }
+.cgroup > summary::before { content: ""; width: 6px; height: 6px; border-right: 2px solid var(--accent); border-bottom: 2px solid var(--accent);
+  transform: rotate(-45deg); transition: transform 0.15s; flex: none; }
+.cgroup[open] > summary::before { transform: rotate(45deg); }
+.cgroup > summary:hover .field-label { color: var(--accent); }
+.cgroup > .table-edit { margin-top: 8px; }
+.board-colors-list { display: grid; gap: 6px; }
+.board-color { display: flex; align-items: center; gap: 8px; font-size: 13px; }
+.board-color-dot { width: 14px; height: 14px; border-radius: 4px; border: 1px solid var(--border, rgba(0,0,0,.15)); flex: none; }
+.board-color-dot.none { background: repeating-linear-gradient(45deg, transparent 0 3px, rgba(0,0,0,.15) 3px 4px); }
+.board-color-name { color: var(--text-2); min-width: 130px; }
+.board-color-value { font-weight: 600; }
 .table-sub { font-size: 12px; font-weight: 600; color: var(--text-2); margin-top: 4px; }
 .table-cols { font-size: 11.5px; color: var(--text-3); }
 .layer-row .dropdown, .layer-row .text-input { flex: 1; min-width: 0; }
