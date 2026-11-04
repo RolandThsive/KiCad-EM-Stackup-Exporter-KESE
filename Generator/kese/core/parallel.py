@@ -13,6 +13,7 @@ from concurrent.futures.process import BrokenProcessPool
 from contextlib import contextmanager
 
 from kese.core import shape_copies
+from kese.core.memory import done_then_given_back, give_back_memory
 from parameters import P
 
 FEW_COORDINATES = 20_000      # in all the shapes of a job list: below this the jobs are done here, one after
@@ -54,7 +55,9 @@ def in_parallel(work, items):
     if workers <= 1:
         return [work(item) for item in items]
     with ThreadPoolExecutor(workers) as pool:
-        return list(pool.map(work, items))
+        done = list(pool.map(work, items))
+    give_back_memory()
+    return done
 
 
 def worth_processes(jobs, coordinates):
@@ -89,7 +92,7 @@ def in_processes(work, jobs, log=None, done="built"):
         try:
             try:
                 with main_left_out():                 # the processes start in the first submits
-                    running = {pool.submit(work, *args): key for key, args in left.items()}
+                    running = {pool.submit(done_then_given_back, work, *args): key for key, args in left.items()}
             except NOT_STARTED as e:
                 failed = e
             else:

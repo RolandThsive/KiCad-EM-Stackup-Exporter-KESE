@@ -2,10 +2,13 @@
 plating barrels.  Every distinct set of holes is joined only once (Regions.holes_made) and reused
 wherever the same holes pass."""
 from collections import defaultdict
+from threading import RLock
 
 from kese.core import shapes2d as sh
 from kese.core.shapes2d import union
 from parameters import P
+
+_MAKING = RLock()        # made_once(): reentrant, as drilled() makes drills() inside it
 
 
 def hole_shapes(items, pred, bore=False, take=lambda g: g):
@@ -16,14 +19,16 @@ def hole_shapes(items, pred, bore=False, take=lambda g: g):
 
 
 def made_once(r, kind, pred, make):
-    """make(), or what it made before for the same kind and the same holes.  Not from threads: two at
-    once could both make it (harmless, but twice the work), as nothing locks the check and the set."""
+    """make(), or what it made before for the same kind and the same holes: made once even when
+    threads ask at the same time (one makes it, the others wait for it).  A thread that makes new
+    shapes from what it returns takes an own() copy of it (kese/core/shape_copies.py)."""
     holes = r.items.holes
     picked = tuple(i for i, h in enumerate(holes) if pred(h))
     key = (kind, picked, tuple(holes[i].wall for i in picked))
-    if key not in r.holes_made:
-        r.holes_made[key] = make()
-    return r.holes_made[key]
+    with _MAKING:
+        if key not in r.holes_made:
+            r.holes_made[key] = make()
+        return r.holes_made[key]
 
 
 def drills(r, pred):

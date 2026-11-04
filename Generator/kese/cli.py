@@ -57,12 +57,17 @@ def main():
             P.override(key, value)
             overrides.append((key, value))
     for item in args.set:
-        key, _, val = item.partition("=")
+        key, is_, val = item.partition("=")
+        if not is_:
+            ap.error(f"--set {item}: give it a value, as in {item}=value")
         try:
             value = ast.literal_eval(val)
         except Exception:
             value = val
-        P.override(key.strip(), value)
+        try:
+            P.override(key.strip(), value)
+        except ValueError as e:                           # a misspelt name: said before any work
+            ap.error(f"--set {item}: {e}")
         overrides.append((key.strip(), value))
 
     for key, value in (("Run.MODE", args.mode), ("Run.FILE_FORMAT", args.format), ("Run.VERIFY", True if args.verify else None)):

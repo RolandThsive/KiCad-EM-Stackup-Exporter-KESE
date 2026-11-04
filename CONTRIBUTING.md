@@ -61,7 +61,10 @@ These rules keep each piece small and the flow one way:
     `ThreadPoolExecutor`) takes `own()` copies (`kese/core/shape_copies.py`) of every shape another
     thread may use at the same time, before it makes anything from it. GEOS 3.14 counts the shapes
     of each of its factories without a lock, and a shape on the grid shares its factory with every
-    shape made from it: two threads making shapes from one shared shape can crash the run.
+    shape made from it: two threads making shapes from one shared shape can crash the run. Where
+    the grid is not used (coordinates read, a coverage union), `floating()` copies are cheaper and
+    may be shared. On GEOS 3.15 or newer both return the shapes themselves. A prepared shape is
+    used by one thread at a time.
 
 `tests/test_layout.py` checks every rule except the sixth and the tenth, which need a person's
 judgement.

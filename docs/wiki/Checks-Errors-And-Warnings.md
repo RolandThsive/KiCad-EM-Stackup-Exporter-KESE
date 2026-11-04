@@ -39,7 +39,10 @@ python tests/test_boards.py                     # the regression suite over ever
 | `no Edge.Cuts outline and OUTLINE_FALLBACK is 'error'` | Draw a closed outline, or set `Board.OUTLINE_FALLBACK = "copper_hull"`. |
 | `missing Python package(s): ...` | Printed before anything runs, with the `pip install` line to use. |
 | `Python package(s) too old: shapely 2.0.7 (2.1 or newer)` | shapely 2.0 lacks the constrained Delaunay triangulation the faces are cut with; printed before anything runs, with the `pip install --upgrade` line to use. |
-| `parameters/<module>.py has no parameter <NAME>` | A `--set` with a misspelt name. A misspelt module gives a Python `AttributeError`, and a `--set` without a `.` a `ValueError`. |
+| `--set <item>: parameters/<module>.py has no parameter <NAME> (did you mean <NAME>?)` | A `--set` with a misspelt name, or one in small letters; the closest name is given where there is one. Like every `--set` mistake below, it is printed by the command line before anything runs, exit code 2. |
+| `--set <item>: there is no parameter module <Module> (did you mean <Module>?); the modules are Run, Board, ...` | A misspelt module, or one in small letters (`copper` for `Copper`). |
+| `--set <item>: <item> is not Module.NAME (did you mean Run.WORKERS?)` | A name without its module, or without a name after the `.`. Where the name is in one module only, that module is given. |
+| `--set <item>: give it a value, as in <item>=value` | A `--set` without `=`. |
 | `no boards given and none found in Input/` | Put a board in `Input/` or give a path. |
 
 ### 17.1.2 Warnings
@@ -319,11 +322,14 @@ each part switch off in turn (`BOARD_ENABLED`, `COPPER_ENABLED`, `FINISH_ENABLED
 `SOLDER_MASK_ENABLED`, `SILKSCREEN_ENABLED`) and finds only that switch's parts gone and every other
 part as it is with all of them on, and a run with all of them off refused, in about five seconds
 (`python tests/test_enabled.py`);
-`tests/test_bad_input.py`, which gives settings outside their values and a damaged board file and
-finds an error before any work or a warning, not a Python error, in about two seconds
-(`python tests/test_bad_input.py`); `tests/test_parallel.py`, which finds a thread's own copies
-of shapes to be the same shapes, each part on its grid, and threads working on their own copies of
-one shape not crashing; sends shapes through stage 6's worker processes and finds them back on
+`tests/test_bad_input.py`, which gives settings outside their values, misspelt `--set` items and a
+damaged board file and finds an error before any work or a warning, not a Python error, in about
+two seconds (`python tests/test_bad_input.py`); `tests/test_parallel.py`, which finds a thread's
+own copies of shapes to be the same shapes, each part on its grid, made only where GEOS needs them,
+and threads working on their own copies of one shape not crashing; finds threads taking turns with
+one prepared copy of a slice's material, the test for hidden triangles letting go of its prepared
+slices, a set of holes joined once when threads ask for it at once, and the memory threads freed
+handed back; sends shapes through stage 6's worker processes and finds them back on
 their grid (each part's too), of their type and with their SRID; and finds the run's settings in the
 workers, the parts of a lost worker and of one out of memory built in the main process with the
 note, an error in a part raised at once with the other workers stopped, a caller that stops early

@@ -1,8 +1,10 @@
-"""Wrong settings and damaged board files: a setting that is not one of its values, or a shapely
-too old, stops the run with a message before any work, and a damaged item is left out with a
-warning, not a Python error.
+"""Wrong settings and damaged board files: a setting that is not one of its values, a misspelt
+--set, or a shapely too old, stops the run with a message before any work, and a damaged item is
+left out with a warning, not a Python error.
 
     python -m pytest tests/test_bad_input.py        (or:  python tests/test_bad_input.py)"""
+import contextlib
+import io
 import sys
 import tempfile
 from pathlib import Path
@@ -76,6 +78,30 @@ def test_an_old_shapely_is_named_before_the_run():
         shapely.constrained_delaunay_triangles = triangles
 
 
+def test_a_misspelt_set_is_named_before_the_run():
+    from kese.cli import main
+    for item, said in (("Coper.VIA_WALL_MM=0.02", "no parameter module Coper (did you mean Copper?)"),
+                       ("copper.VIA_WALL_MM=0.02", "(did you mean Copper?)"),
+                       ("Copper.VIA_WAL_MM=0.02", "copper.py has no parameter VIA_WAL_MM (did you mean VIA_WALL_MM?)"),
+                       ("Copper.via_wall_mm=0.02", "(did you mean VIA_WALL_MM?)"),
+                       ("WORKERS=2", "WORKERS is not Module.NAME (did you mean Run.WORKERS?)"),
+                       ("Run.WORKERS", "give it a value, as in Run.WORKERS=value"),
+                       ("snapshot.X=1", "no parameter module snapshot")):
+        err, argv = io.StringIO(), sys.argv
+        sys.argv = ["kese", "--set", item]
+        try:
+            with contextlib.redirect_stderr(err):
+                main()
+        except SystemExit as e:
+            assert e.code == 2, (item, e.code)
+        else:
+            raise AssertionError(f"--set {item} was taken")
+        finally:
+            sys.argv = argv
+        assert f"--set {item}: " in err.getvalue() and said in err.getvalue(), (item, err.getvalue())
+        assert "Traceback" not in err.getvalue()
+
+
 def test_a_tenting_side_with_no_value_keeps_the_default():
     via = parse("(via (tenting (front) (back yes)))")
     assert kv.via_tenting(via, {"F": True, "B": False}) == {"F": True, "B": True}
@@ -101,6 +127,7 @@ if __name__ == "__main__":
     test_workers_must_be_zero_or_more()
     test_pinch_cut_rounds_must_be_one_or_more()
     test_an_old_shapely_is_named_before_the_run()
+    test_a_misspelt_set_is_named_before_the_run()
     test_a_tenting_side_with_no_value_keeps_the_default()
     test_a_via_on_a_layer_the_board_does_not_have_is_left_out()
     print("ok")

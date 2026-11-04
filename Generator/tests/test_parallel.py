@@ -1,19 +1,25 @@
 """The worker processes and threads of kese/core/parallel.py: a thread's own copies of shapes
-(kese/core/shape_copies.py) are the same shapes, shapes keep their grid (and type and SRID) on the
-way to and from the workers, the run's settings reach the workers, a lost worker or one out of
-memory leaves its jobs to the main process, an error in the work is raised at once and the other
-workers are stopped, a caller that stops early does not wait, the OOM killer takes a worker first,
-KESE runs inside a multiprocessing.Pool, a script without a main guard is not run again in the
-workers, and the workers end with Ctrl-C (one traceback) and with the main process.
+(kese/core/shape_copies.py) are the same shapes, made only where GEOS needs them (and on no grid
+where the grid is not used: a join of shared regions is the same join), threads share one prepared
+copy of a slice's material and one set of joined holes and hand back the memory they freed, shapes
+keep their grid (and type and SRID) on the way to and from the workers, the run's settings reach
+the workers, a lost worker or one out of memory leaves its jobs to the main process, an error in the
+work is raised at once and the other workers are stopped, a caller that stops early does not wait,
+the OOM killer takes a worker first, KESE runs inside a multiprocessing.Pool, a script without a
+main guard is not run again in the workers, and the workers end with Ctrl-C (one traceback) and
+with the main process.
 
     python -m pytest tests/test_parallel.py          (or:  python tests/test_parallel.py)"""
 import os
+import platform
 import signal
 import subprocess
 import sys
 import textwrap
+import threading
 import time
 from pathlib import Path
+from types import SimpleNamespace
 
 import numpy as np
 import shapely
@@ -21,8 +27,12 @@ import shapely
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 
+from kese.core import memory, shape_copies  # noqa: E402
 from kese.core.parallel import in_parallel, in_processes  # noqa: E402
-from kese.core.shape_copies import own  # noqa: E402
+from kese.core.shape_copies import _owned, own  # noqa: E402
+from kese.s3_resolve.holes import made_once  # noqa: E402
+from kese.s6_assemble.skin_faces import lies_against_material  # noqa: E402
+from kese.s6_assemble.skin_mesh import looks_at_material  # noqa: E402
 from parameters import P  # noqa: E402
 
 
@@ -126,13 +136,56 @@ def test_a_thread_s_own_copies_are_the_same_shapes_on_factories_of_their_own():
     shapes = [square, shapely.box(0, 0, 1, 1), shapely.set_precision(shapely.Polygon(), 1e-4),
               shapely.set_precision(shapely.LinearRing([(0, 0), (1, 0), (1, 1)]), 1e-4),
               shapely.set_srid(shapely.set_precision(shapely.Point(1, 2), 1e-4), 4326), *collections_of_grids()]
-    copies = own({"list": shapes, "tuple": (shapes[0], "net"), "array": np.array(shapes, dtype=object), "n": 3})
+    copies = _owned({"list": shapes, "tuple": (shapes[0], "net"), "array": np.array(shapes, dtype=object), "n": 3})
     assert copies["n"] == 3 and copies["tuple"][1] == "net" and isinstance(copies["tuple"], tuple)
     for got in (copies["list"], list(copies["array"]), [copies["tuple"][0]]):
         for a, b in zip(shapes, got):
             assert a is not b and type(a) is type(b) and shapely.to_wkb(a) == shapely.to_wkb(b)
             assert grids(a) == grids(b) and shapely.get_srid(a) == shapely.get_srid(b)
             assert shapely.to_wkb(a.buffer(0.01)) == shapely.to_wkb(b.buffer(0.01))     # on the same grids
+
+
+def test_copies_only_where_geos_needs_them():
+    # GEOS 3.15 counts a factory's shapes atomically: there threads may share shapes, and own() is x itself
+    assert shape_copies.SHARED_SAFELY == (shapely.geos_version >= (3, 15, 0))
+    shapes = [shapely.set_precision(shapely.box(0, 0, 1, 1), 1e-4)]
+    saved = shape_copies.SHARED_SAFELY
+    try:
+        shape_copies.SHARED_SAFELY = True
+        assert own(shapes) is shapes
+        shape_copies.SHARED_SAFELY = False
+        assert own(shapes)[0] is not shapes[0]
+    finally:
+        shape_copies.SHARED_SAFELY = saved
+
+
+def test_floating_copies_keep_the_coordinates_on_no_grid():
+    # where the grid is not used: polygons through WKB alone (GEOS's default factory, shared safely),
+    # anything else an own() copy, each part on its grid
+    square = shapely.set_precision(shapely.box(0, 0, 1, 1).difference(shapely.box(0.25, 0.25, 0.5, 0.5)), 1e-4)
+    shapes = [square, shapely.MultiPolygon([square, shapely.set_precision(shapely.box(2, 0, 3, 1), 1e-4)]),
+              shapely.Polygon(), *collections_of_grids()]
+    saved = shape_copies.SHARED_SAFELY
+    try:
+        shape_copies.SHARED_SAFELY = False
+        got = shape_copies.floating(shapes)
+    finally:
+        shape_copies.SHARED_SAFELY = saved
+    for a, b in zip(shapes, got):
+        assert a is not b and type(a) is type(b) and shapely.to_wkb(a) == shapely.to_wkb(b)
+        if shapely.get_type_id(a) in shape_copies.POLYGONAL:
+            assert not shapely.get_precision([b, *shapely.get_parts(b)]).any(), a.geom_type
+        else:
+            assert grids(b) == grids(a), a.geom_type
+
+
+def test_a_join_of_shared_regions_is_the_same_join():
+    from kese.core.boundary import joined_regions
+    on_grid = [shapely.set_precision(shapely.box(*b), 1e-4) for b in ((0, 0, 1, 1), (1, 0, 2, 1), (0.5, 0.5, 1.5, 2))]
+    for regions in (on_grid[:2], on_grid):              # a coverage union, and a union of overlapping ones
+        for exact in (True, False):
+            a, b = joined_regions(regions, exact, shared=True), joined_regions(_owned(regions), exact)
+            assert shapely.to_wkb(a) == shapely.to_wkb(b) and grids(a) == grids(b), (len(regions), exact)
 
 
 def make_and_drop(square, n=3000):
@@ -154,6 +207,62 @@ def test_threads_on_their_own_copies_of_one_shape():
         assert in_parallel(lambda k: make_and_drop(own((shared, parts)[k % 2])), range(4)) == [True] * 4
     finally:
         put_back(saved)
+
+
+def test_threads_share_one_prepared_copy_of_a_slice():
+    # a prepared copy for each thread would grow with the number of threads: one per slice, in turns
+    material = shapely.set_precision(shapely.box(0, 0, 10, 10).difference(shapely.box(2, 2, 3, 3)), 1e-4)
+    slice_ = (None, None, None, material, {"turn": threading.Lock()})
+    regions = [shapely.box(k % 9, 4, k % 9 + 1, 5) for k in range(8)] + [shapely.box(1, 1, 4, 4)]
+    saved = with_workers(8)
+    try:
+        got = in_parallel(lambda r: lies_against_material(r, slice_), regions)
+    finally:
+        put_back(saved)
+    assert got == [True] * 8 + [False]
+    assert set(slice_[4]) == {"turn", "copy"} and shapely.is_prepared(slice_[4]["copy"])
+    assert not shapely.is_prepared(material)
+
+
+def test_the_probe_test_lets_go_of_its_prepared_slices():
+    # one triangle standing in the material: the point just in front of it is inside; then the
+    # slice's prepared index is freed, not kept for as long as the slices are
+    material = shapely.box(0, 0, 1, 1)
+    v = np.array([[0.5, 0.2, 0.4], [0.5, 0.8, 0.4], [0.5, 0.5, 0.6]])
+    pieces = [(None, None, None, material, {})]
+    assert looks_at_material(v, np.array([[0, 1, 2]]), np.array([0.0, 1.0]), pieces).tolist() == [True]
+    assert not shapely.is_prepared(material)
+
+
+def test_joined_holes_are_made_once_when_threads_ask_at_once():
+    made = []
+
+    def make():
+        time.sleep(0.05)                    # long enough for every thread to ask before it is made
+        made.append(1)
+        return shapely.box(0, 0, 1, 1)
+    r = SimpleNamespace(items=SimpleNamespace(holes=[SimpleNamespace(wall=0.02)] * 3), holes_made={})
+    saved = with_workers(8)
+    try:
+        got = in_parallel(lambda _: made_once(r, "drills", lambda h: True, make), range(8))
+    finally:
+        put_back(saved)
+    assert len(made) == 1 and all(g is got[0] for g in got)
+
+
+def test_memory_freed_by_threads_is_handed_back():
+    # glibc keeps what threads free in a pool per thread: on NE_Delta a gigabyte more at 16 threads
+    if sys.platform.startswith("linux") and platform.libc_ver()[0] == "glibc":
+        assert memory._MALLOC_TRIM is not None
+    calls, saved = [], (memory._MALLOC_TRIM, with_workers(3))
+    memory._MALLOC_TRIM = calls.append
+    try:
+        assert in_parallel(lambda k: k * k, range(4)) == [0, 1, 4, 9]
+    finally:
+        memory._MALLOC_TRIM = saved[0]
+        put_back(saved[1])
+    assert calls == [0]
+    memory.give_back_memory()                           # and on this system, it runs
 
 
 def test_the_run_s_settings_reach_the_workers():
@@ -356,7 +465,14 @@ if __name__ == "__main__":
     import test_parallel as t        # the workers find the jobs' functions in a module, not in __main__
     t.test_shapes_keep_their_grid_in_worker_processes()
     t.test_a_thread_s_own_copies_are_the_same_shapes_on_factories_of_their_own()
+    t.test_copies_only_where_geos_needs_them()
+    t.test_floating_copies_keep_the_coordinates_on_no_grid()
+    t.test_a_join_of_shared_regions_is_the_same_join()
     t.test_threads_on_their_own_copies_of_one_shape()
+    t.test_threads_share_one_prepared_copy_of_a_slice()
+    t.test_the_probe_test_lets_go_of_its_prepared_slices()
+    t.test_joined_holes_are_made_once_when_threads_ask_at_once()
+    t.test_memory_freed_by_threads_is_handed_back()
     t.test_the_run_s_settings_reach_the_workers()
     t.test_a_lost_worker_leaves_its_jobs_to_this_process()
     t.test_out_of_memory_in_a_worker_leaves_its_job_to_this_process()

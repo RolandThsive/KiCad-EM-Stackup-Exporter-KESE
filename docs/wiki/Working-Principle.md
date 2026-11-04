@@ -152,7 +152,16 @@ be mapped back to the layout.
   (`kese/core/shape_copies.py`). GEOS 3.14 counts the shapes of each of its factories without a
   lock, and a shape on the grid shares its factory with every shape made from it: two threads
   making shapes from one shared shape could crash the run. The copies keep the grid of the shape
-  and of each of its parts.
+  and of each of its parts. Where only the coordinates count (the walls, a coverage union), a
+  cheaper copy on no grid does: it is on GEOS's default factory, which is never freed, so threads
+  may share it. GEOS 3.15 counts atomically, and with it nothing is copied.
+- A prepared shape, whose search indexes GEOS builds on first use, serves one thread at a time:
+  the threads take turns with one prepared copy of each slice's material, so memory does not grow
+  with the number of threads, and the test for hidden triangles frees its indexes when it is done.
+- After each step done in threads, and in each worker after each part, the memory freed is handed
+  back to the system. On Linux, glibc keeps a pool of memory for each thread and holds on to what
+  is freed in it, where the steps that follow cannot use it. With these, NE_Delta's visual model
+  peaks at 2.67 GB with 4 workers and 3.46 GB with 32, where it took 3.51 GB and 5.13 GB.
 - The processes start afresh, as Windows and macOS start them, on every system, and are given the
   run's settings, `--for` and `--set` included. Shapes sent to and from them keep their grid, which
   shapely's own pickling would drop.

@@ -39,7 +39,8 @@ ORIENTATION = "upright"
 # much of the work is Python's: in stage 6 the parts built at once in "simulation" mode and the
 # parts sliced for the "visual" skin (when the parts hold 20,000 coordinates or more in all; fewer
 # are built in turn, faster than starting processes).  Each process holds its own Python, numpy and
-# shapely: 4 of them add about 0.3 to 0.5 GB.  If they cannot start, or one is stopped or runs out of
+# shapely (about 36 MB) and the part it builds: NE_Delta in simulation mode peaks at 2.8 GB in all
+# with 4 workers and 4.5 GB with 32.  If they cannot start, or one is stopped or runs out of
 # memory, the main process builds the parts left, with a note in report.txt.
 # 0 = one per processor thread this process may use (all of the machine's, unless a job scheduler,
 # taskset or a container limits it); 1 = everything in turn, in one process.  Windows holds at most 61

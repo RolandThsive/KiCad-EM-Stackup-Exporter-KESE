@@ -10,6 +10,7 @@ import shapely.errors
 
 from kese.core import shapes2d as sh
 from kese.core.pinches import open_pinches, open_pinches_between
+from kese.core.shape_copies import floating, own
 from kese.core.triangulate import rings_of
 from kese.core.vertices import noded, share_vertices
 
@@ -80,16 +81,20 @@ def slices_of(prisms, levels):
     return out
 
 
-def joined_regions(regions, exact=True):
+def joined_regions(regions, exact=True, shared=False):
     """The union of regions that touch but never overlap: GEOS's coverage union, or, where the shared
-    edges do not match, a union (on the grid when exact, else in floating point)."""
-    pieces = [piece for r in regions for piece in shapely.get_parts(sh.polys_only(r))]
+    edges do not match, a union (on the grid when exact, else in floating point).  shared: regions
+    other threads use too, so made of copies (kese/core/shape_copies.py): floating() ones for the
+    coverage union, which uses no grid, and own() ones, each part on its grid, for a union."""
+    readable = floating(regions) if shared else regions
+    pieces = [piece for r in readable for piece in shapely.get_parts(sh.polys_only(r))]
     try:
         joined = sh.polys_only(shapely.coverage_union_all(pieces))
     except shapely.errors.GEOSException:                       # "cannot process incorrectly noded inputs"
         joined = sh.EMPTY
     if shapely.is_valid(joined) and abs(joined.area - sum(shapely.area(pieces))) <= 1e-9 * joined.area:
         return joined
+    regions = own(regions) if shared else regions
     return shapely.union_all(regions, grid_size=sh.grid()) if exact else sh.polys_only(shapely.union_all(regions))
 
 

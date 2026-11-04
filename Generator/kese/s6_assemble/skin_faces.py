@@ -4,7 +4,7 @@ part stands against.  Faces keep their part; hidden triangles go in skin_mesh.py
 shapes only from their own copies of the slices (kese/core/shape_copies.py)."""
 from concurrent.futures import ThreadPoolExecutor
 from itertools import pairwise
-from threading import get_ident
+from threading import Lock
 
 import numpy as np
 import shapely
@@ -17,8 +17,9 @@ from kese.core.vertices import (
     same_vertices,
     walls_split_at_vertices,
 )
+from kese.core.memory import give_back_memory
 from kese.core.parallel import in_processes, workers_wanted, worth_processes
-from kese.core.shape_copies import own
+from kese.core.shape_copies import floating, own
 
 FEW_PIECES = 200         # of material reaching a face: up to this many are cut away piece by piece (cut_away)
 BIG_PIECE = 10_000       # coordinates: a piece this big (a dielectric, with every via hole in it) is cut away on its own
@@ -34,9 +35,11 @@ def skin_faces(ps, log):
     with ThreadPoolExecutor(workers_wanted()) as pool:
         pieces = material_of_every_slice(slices, pool)
         flats = dict(zip(order, pool.map(lambda part: visible_flats(own(slices[part]), levels, pieces), order)))
-        for *_, copies in pieces:
-            copies.clear()                   # the threads' prepared copies: gigabytes on a dense board
+        for *_, prepared in pieces:
+            prepared.pop("copy", None)       # the prepared copies of the material, one per slice
+        give_back_memory()
         walls = visible_walls(slices, levels, flats, pool)
+    give_back_memory()
     return levels, pieces, {part: (flats[part], walls[part]) for part in by_part}
 
 
@@ -66,8 +69,8 @@ def slices_and_notes(prisms, levels):
 
 def material_of_every_slice(slices, pool):
     """Per slice: (every part's polygons in it, the part of each, an index of the polygons, all of
-    them joined as one region, and a place for each thread's prepared copy of that region, see
-    lies_against_material()), for lookups by place and for cutting the faces."""
+    them joined as one region, and a place for a prepared copy of that region that the threads take
+    turns with, see lies_against_material()), for lookups by place and for cutting the faces."""
     gathered = []
     for k in range(len(next(iter(slices.values()), []))):
         polys, parts = [], []
@@ -77,8 +80,8 @@ def material_of_every_slice(slices, pool):
                 parts.append(part)
         polys = np.array(polys, dtype=object)
         gathered.append((polys, np.array(parts, dtype=object), shapely.STRtree(polys)))
-    joined = pool.map(lambda polys_parts_tree: joined_regions(list(own(polys_parts_tree[0])), exact=False), gathered)
-    return [(*material, region, {}) for material, region in zip(gathered, joined)]
+    joined = pool.map(lambda material: joined_regions(list(material[0]), exact=False, shared=True), gathered)
+    return [(*material, region, {"turn": Lock()}) for material, region in zip(gathered, joined)]
 
 
 def visible_flats(part_slices, levels, pieces):
@@ -115,18 +118,21 @@ def cut_away(region, material):
         return sh.diff(region, joined)
     for piece in cutters[big]:
         region = sh.diff(region, piece)
-    return sh.diff(region, joined_regions(list(own(cutters[~big])), exact=False)) if (~big).any() else region
+    return sh.diff(region, joined_regions(list(cutters[~big]), exact=False, shared=True)) if (~big).any() else region
 
 
 def lies_against_material(region, material):
-    """Whether the slice's material covers the region wholly, asked of a prepared copy of the material
-    that each thread makes for itself (prepared geometries cannot be shared between threads)."""
-    *_, joined, copies = material
-    mine = copies.get(get_ident())
-    if mine is None:
-        mine = copies[get_ident()] = shapely.from_wkb(shapely.to_wkb(joined))
-        shapely.prepare(mine)
-    return shapely.covers(mine, region)
+    """Whether the slice's material covers the region wholly, asked of a prepared copy of the material.
+    A prepared shape is not for two threads at once (GEOS builds its indexes on first use), so the
+    threads take turns with one copy per slice, made by the first to ask: a copy for each thread
+    would grow with the number of threads, and the turns cost nothing to speak of (on the suite's
+    biggest boards, a few hundred calls taking a hundredth of the flat faces' time)."""
+    *_, joined, prepared = material
+    with prepared["turn"]:
+        if "copy" not in prepared:
+            prepared["copy"] = shapely.from_wkb(shapely.to_wkb(joined))
+            shapely.prepare(prepared["copy"])
+        return shapely.covers(prepared["copy"], region)
 
 
 def visible_walls(slices, levels, flats, pool):
@@ -139,7 +145,7 @@ def visible_walls(slices, levels, flats, pool):
     out = {part: [] for part in slices}
 
     def walls(k):
-        return walls_of_slice(dict(zip(slices, own([s[k] for s in slices.values()]))),
+        return walls_of_slice(dict(zip(slices, floating([s[k] for s in slices.values()]))),     # coordinates read
                               faces_at.get(levels[k], []) + faces_at.get(levels[k + 1], []))
     for (z0, z1), segments in zip(pairwise(levels), pool.map(walls, range(len(levels) - 1))):
         if not segments:

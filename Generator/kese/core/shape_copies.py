@@ -6,14 +6,19 @@ a shape on the grid it carries.  A collection made of parts on a grid (as_region
 is itself on none, so each of its parts keeps its own.  Only multiprocessing's pickling is changed,
 for every shape it sends once register() has run (kese/core/parallel.py runs it when imported).
 
-Threads.  GEOS (3.14 and before) counts the shapes made on each of its factories in a plain
-integer, and a shape on a grid shares its factory with every shape made from it: the result of an
-operation (on the first operand's factory), its parts, the members of a union.  Two threads that
-make or drop shapes from one shared shape at once can lose a count, and GEOS then frees the factory
-while shapes still use it (a segmentation fault).  A thread therefore works on own() copies of the
-shapes other threads may use: each copy is on a factory of its own.  Making it reads the original
-(its WKB, which no count records) and the parts of a collection, which shapely hands out as copies
-on the original's factories: that is done by one thread at a time (_READING)."""
+Threads.  GEOS 3.14 and before counts the shapes made on each of its factories in a plain integer,
+and a shape on a grid shares its factory with every shape made from it: the result of an operation
+(on the first operand's factory), its parts, the members of a union.  Two threads that make or drop
+shapes from one shared shape at once can lose a count, and GEOS then frees the factory while shapes
+still use it (a segmentation fault).  A thread therefore works on own() copies of the shapes other
+threads may use: each copy is on a factory of its own.  Making it reads the original (its WKB, which
+no count records) and the parts of a collection, which shapely hands out as copies on the original's
+factories: that is done by one thread at a time (_READING).  GEOS 3.15 counts atomically (its
+GeometryFactory::_refCount is a std::atomic<int>), so there own() copies nothing (SHARED_SAFELY).
+
+Where the grid does not matter (coordinates read, a coverage union, which uses none), floating()
+copies are cheaper: through WKB alone, onto GEOS's default factory, which is static and never freed,
+so a lost count there harms nothing and threads may share them."""
 import threading
 from multiprocessing.reduction import ForkingPickler
 
@@ -23,6 +28,8 @@ from shapely.geometry.base import BaseGeometry
 
 _READING = threading.Lock()
 RING, COLLECTION = 2, 4  # shapely.get_type_id of a LinearRing, and of a MultiPoint (the collections follow it)
+POLYGONAL = (3, 6)       # shapely.get_type_id of a Polygon and of a MultiPolygon
+SHARED_SAFELY = shapely.geos_version >= (3, 15, 0)   # threads may share shapes: GEOS counts atomically
 
 
 def _shape(rebuild, args, grid):
@@ -81,19 +88,42 @@ def register():
 
 def own(x):
     """x with every shape in it copied for this thread (see above): a shape, or a list, tuple or dict
-    of them (nested), or a numpy array of shapes; anything else is kept as it is."""
+    of them (nested), or a numpy array of shapes; anything else is kept as it is.  x itself on GEOS
+    3.15 or newer, where threads may share shapes."""
+    if SHARED_SAFELY:
+        return x
+    return _owned(x)
+
+
+def floating(shapes):
+    """Copies of a list of shapes for work that does not use the grid (see above): the polygons and
+    multipolygons on no grid, through WKB, which threads may share; any other shape an own() copy,
+    as polys_only() unions the parts of a collection, which uses their grid."""
+    if SHARED_SAFELY or not len(shapes):
+        return list(shapes)
+    every = np.empty(len(shapes), dtype=object)
+    every[:] = shapes
+    plain = np.isin(shapely.get_type_id(every), POLYGONAL)
+    out = np.empty(len(shapes), dtype=object)
+    out[plain] = shapely.from_wkb(shapely.to_wkb(every[plain], include_srid=True))
+    if not plain.all():
+        out[~plain] = _copies(list(every[~plain]))
+    return list(out)
+
+
+def _owned(x):
     if isinstance(x, BaseGeometry):
         return _copies([x])[0]
     if isinstance(x, np.ndarray) and x.dtype == object:
         out = np.empty(x.shape, dtype=object)
-        out.flat[:] = own(list(x.flat))
+        out.flat[:] = _owned(list(x.flat))
         return out
     if isinstance(x, (list, tuple)):
         if x and all(isinstance(v, BaseGeometry) for v in x):
             return type(x)(_copies(list(x)))
-        return type(x)(own(v) for v in x)
+        return type(x)(_owned(v) for v in x)
     if isinstance(x, dict):
-        return {k: own(v) for k, v in x.items()}
+        return {k: _owned(v) for k, v in x.items()}
     return x
 
 

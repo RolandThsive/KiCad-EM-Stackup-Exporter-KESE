@@ -14,6 +14,7 @@ from kese.core.boundary_mesh import (
 )
 from kese.core.graph import connected_components
 from kese.core.mesh import Mesh
+from kese.core.memory import give_back_memory
 from kese.core.parallel import workers_wanted
 from parameters import P
 
@@ -66,6 +67,9 @@ def looks_at_material(v, f, levels, pieces):
             at = np.searchsorted(levels, probe[:, 2], "right") - 1        # the slice each probe's height falls in
             with_material = [k for k in np.unique(at).tolist() if 0 <= k < len(pieces) and not pieces[k][3].is_empty]
             list(pool.map(partial(place_in_slice, pieces, at, probe, inside[these]), with_material))
+    for *_, joined, _ in pieces:
+        shapely.destroy_prepared(joined)        # the indexes place_in_slice built: not needed after this
+    give_back_memory()
     return inside
 
 
@@ -78,7 +82,8 @@ def probes_of(v, f):
 
 
 def place_in_slice(pieces, at, probe, inside, k):
-    """inside[...] = whether each probe that falls in slice k lies in the slice's material."""
+    """inside[...] = whether each probe that falls in slice k lies in the slice's material.  Each
+    thread prepares a slice no other thread is given, kept prepared for the next batch of probes."""
     joined = pieces[k][3]
     shapely.prepare(joined)
     rows = np.flatnonzero(at == k)

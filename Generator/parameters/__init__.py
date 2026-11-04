@@ -6,6 +6,7 @@ parameters package - loads every settings file and can write them all out.
 
     P.snapshot()  -> the text written to parameters.txt next to every output
 """
+import difflib
 import importlib
 import types
 
@@ -37,16 +38,31 @@ class _Params(types.SimpleNamespace):
         return "\n".join(lines)
 
     def override(self, dotted, value):
-        """P.override('Copper.VIA_WALL_MM', 0.02)  - used by kese --set and by tests."""
-        short, name = dotted.split(".", 1)
-        mod = getattr(self, short)
-        if not hasattr(mod, name):
-            raise KeyError(f"parameters/{modname_of(short)}.py has no parameter {name}")
-        setattr(mod, name, value)
+        """P.override('Copper.VIA_WALL_MM', 0.02)  - used by kese --set and by tests.  A name that is
+        not a parameter raises a ValueError that says so and names the closest one."""
+        short, dot, name = dotted.partition(".")
+        if not (dot and short and name):
+            where = [f"{s}.{dotted}" for s in _MODULES if dotted in self.names(s)]
+            raise ValueError(f"{dotted} is not Module.NAME" + (f" (did you mean {where[0]}?)" if len(where) == 1 else
+                             f"; the modules are {', '.join(_MODULES)}"))
+        if short not in _MODULES:
+            raise ValueError(f"there is no parameter module {short}{closest(short, _MODULES)}; "
+                             f"the modules are {', '.join(_MODULES)}")
+        if name not in self.names(short):
+            near = closest(name, self.names(short))
+            raise ValueError(f"parameters/{_MODULES[short]}.py has no parameter {name}{near}")
+        setattr(getattr(self, short), name, value)
+
+    def names(self, short):
+        """The parameters of one module: its names in capitals."""
+        return [name for name in dir(getattr(self, short)) if name.isupper()]
 
 
-def modname_of(short):
-    return _MODULES[short]
+def closest(word, words):
+    """' (did you mean X?)' for the one of `words` closest to `word`, case aside, or ''."""
+    by_case = {w.upper(): w for w in words}
+    near = difflib.get_close_matches(word.upper(), list(by_case), n=1, cutoff=0.6)
+    return f" (did you mean {by_case[near[0]]}?)" if near else ""
 
 
 def load():

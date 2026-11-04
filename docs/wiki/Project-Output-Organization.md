@@ -16,8 +16,9 @@ KiCad-EM-Stackup-Exporter-KESE/
 │   │   ├── cli.py, job.py, progress.py   command-line options, one run's request, the live status line
 │   │   ├── core/                shared tools: s-expression parser, 2D maths and shapes, the
 │   │   │                        boundary of a stack of prisms and its mesh, triangulation,
-│   │   │                        shared vertices, extrusion, work in threads and processes
-│   │   │                        and the copies of shapes they use, stroke font, safe file names
+│   │   │                        shared vertices, extrusion, work in threads and processes,
+│   │   │                        the copies of shapes they use and the memory they hand back,
+│   │   │                        stroke font, safe file names
 │   │   ├── model/               the data handed from stage to stage: RawBoard, Items, Stackup,
 │   │   │                        Regions, PrismSet, Model, Files
 │   │   ├── s1_read/             the file, parsed and checked
