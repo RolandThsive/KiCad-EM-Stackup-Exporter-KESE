@@ -32,7 +32,9 @@ ONE_OR_MORE = ("Geometry.PINCH_CUT_ROUNDS", "Geometry.VERTEX_SHARING_ROUNDS", "G
 AT_LEAST = {**dict.fromkeys(ONE_OR_MORE, 1), "Step.STEP_ARC_MIN_POINTS": 3}     # three points make a circle
 KIND_WORDS = {bool: "True or False", int: "a number", float: "a number", str: "text, in quotes",
               list: "a list", dict: "a dict"}
-ZERO_OR_MORE = ("Verifier.VERIFY_VOLUME_TOLERANCE", "Verifier.VERIFY_OPENED_VOLUME_MM3")
+NUMBER_AT_LEAST = {"Verifier.VERIFY_VOLUME_TOLERANCE": 0, "Verifier.VERIFY_OPENED_VOLUME_MM3": 0,
+                   "Finish.FINISH_MITRE_LIMIT": 1}     # a corner cut nearer than its thickness would thin the finish
+MORE_THAN_ZERO = ("Step.STEP_ARC_MAX_SWEEP_DEG",)      # arcs are cut in pieces of at most this
 WHOLE_NUMBERS = {                 # the settings of parameters/parallel.py that count, and what their 0 means
     "WORKERS": "one per processor thread",
     "PROCESS_WORKERS": "as many as WORKERS",
@@ -113,10 +115,14 @@ def start(mode=None, formats=None, out_root=None, overrides=(), verify=None, log
         value = getattr(getattr(P, key.split(".")[0]), key.split(".")[1])
         if type(value) is not int or value < least:
             raise ValueError(f"{key} must be a whole number, {least} or more, not {value!r}")
-    for key in ZERO_OR_MORE:
+    for key, least in NUMBER_AT_LEAST.items():
         value = getattr(getattr(P, key.split(".")[0]), key.split(".")[1])
-        if type(value) not in (int, float) or not value >= 0:
-            raise ValueError(f"{key} must be a number, 0 or more, not {value!r}")
+        if type(value) not in (int, float) or not value >= least:
+            raise ValueError(f"{key} must be a number, {least} or more, not {value!r}")
+    for key in MORE_THAN_ZERO:
+        value = getattr(getattr(P, key.split(".")[0]), key.split(".")[1])
+        if type(value) not in (int, float) or not value > 0:
+            raise ValueError(f"{key} must be a number more than 0, not {value!r}")
     for key, kind in KINDS.items():                       # every other setting: of the kind its file gives it
         value = getattr(getattr(P, key.split(".")[0]), key.split(".")[1], None)
         if kind in KIND_WORDS and key != "Run.FILE_FORMAT" and not of_kind(value, kind):

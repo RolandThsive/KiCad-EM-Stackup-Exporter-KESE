@@ -22,6 +22,12 @@ STEP_ARC_MIN_POINTS = 5                # at least this many vertices in a run
 STEP_ARC_MIN_SWEEP_DEG = 10.0          # and turning at least this far
 STEP_ARC_MAX_TURN_DEG = 30.0           # but at most this far at one vertex: a polygon with fewer than 12
                                        # sides (an octagonal pad, a square) is a polygon, not a circle
+STEP_ARC_TURN_RATIO_MAX = 1.3          # and evenly: no chord spans more than this many times the median
+STEP_ARC_TURN_RATIO_MIN = 0.7          # chord's angle about the centre, and none but the first and last
+                                       # less than this many times (those two may be shorter, where a
+                                       # boolean cut the arc)
+STEP_ARC_MAX_SWEEP_DEG = 181.0         # a longer arc is cut in pieces at vertices spread evenly; a whole
+                                       # circle is two arcs on one circle, or more below 180
 #
 # Which parts are made, in every format and mode alike, is set by one switch per kind of part:
 #   Board.BOARD_ENABLED, Copper.COPPER_ENABLED (copper and plated barrels), Finish.FINISH_ENABLED,

@@ -94,10 +94,12 @@ The outline comes from `Edge.Cuts`:
    pairs first; ends that already meet stay where they are. The lines are then polygonized into
    faces. When a gap was closed this way, `report.txt` notes the widest one. If the lines form no
    face at all, the run warns `Edge.Cuts lines/arcs do not form a closed outline`.
-3. Rings nested at an **even** depth are boards, rings at an **odd** depth are cut-outs. As in
-   KiCad, each cut-out is taken out of the ring one level up that holds it. A circle drawn inside
-   the outer outline is a hole through the whole board, and a ring drawn inside such a cut-out is a
-   board again, like a small board inside a panel frame (`featureTest/13b_outline_two`):
+3. A ring of `Board.OUTLINE_MIN_AREA_MM2` (1e-9 mm²) or less, such as a line drawn there and back,
+   is left out, and two rings that differ by less than `Board.OUTLINE_DUPLICATE_AREA_MM2` (1e-6 mm²),
+   a ring drawn twice, are one. Rings nested at an **even** depth are boards, rings at an **odd**
+   depth are cut-outs. As in KiCad, each cut-out is taken out of the ring one level up that holds
+   it. A circle drawn inside the outer outline is a hole through the whole board, and a ring drawn
+   inside such a cut-out is a board again, like a small board inside a panel frame (`featureTest/13b_outline_two`):
 
 ```math
 O = \bigcup_{r : n_r \text{ even}} \Big( r \ \setminus \bigcup_{h \subset r,\ n_h = n_r + 1} h \Big) \qquad (10.3)

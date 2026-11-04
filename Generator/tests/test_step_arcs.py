@@ -141,13 +141,46 @@ def test_circles_and_round_ends_become_arcs():
     assert sum(arcs(big)) == 326 and max(arcs(big)) <= 181          # 326 degrees, in pieces of half a turn at most
 
 
+def test_the_longest_arc_and_how_evenly_its_chords_turn_are_settings():
+    """Step.STEP_ARC_MAX_SWEEP_DEG cuts longer arcs, whole circles too; Step.STEP_ARC_TURN_RATIO_MAX
+    and _MIN say how unevenly the chords of an arc may span."""
+    ring = pad((0.0, 0.0), 1.0).difference(pad((0.0, 0.0), 0.4))
+    big = pad((0.0, 0.0), 1.0).union(shapely.box(0.0, -0.2, 3.0, 0.2))
+    saved = P.Step.STEP_ARC_MAX_SWEEP_DEG
+    P.override("Step.STEP_ARC_MAX_SWEEP_DEG", 90.0)
+    try:
+        assert arcs(ring) == [90] * 8, arcs(ring)                   # two whole circles, in quarters
+        assert abs(sum(arcs(big)) - 326) <= 2 and max(arcs(big)) <= 90, arcs(big)   # (each rounded)
+        if not without_ocp():
+            for region in (ring, big):
+                for levels in ((0.0, 0.1), (0.0, 0.035, 0.1)):
+                    solids, _ = written(region, levels)
+                    assert all(v and free == 0 for v, _, free, _ in solids), solids
+    finally:
+        P.override("Step.STEP_ARC_MAX_SWEEP_DEG", saved)
+    assert arcs(ring) == [180, 180, 180, 180]                       # and back in halves
+
+    def on_circle(spans):
+        """Vertices on the unit circle whose chords span these angles (degrees), in turn."""
+        a = np.radians(np.cumsum([0.0] + list(spans)))
+        return np.c_[np.cos(a), np.sin(a)]
+
+    for spans, name, loose in (([8, 12] * 5, "Step.STEP_ARC_TURN_RATIO_MIN", 0.6),    # 8 < 0.7 x 12
+                               ([10] * 4 + [14] + [10] * 4, "Step.STEP_ARC_TURN_RATIO_MAX", 1.5)):  # 14 > 1.3 x 10
+        assert sa.on_one_circle(on_circle(spans), sa.fit_of(P.Step)) is None, name
+        saved = getattr(P.Step, name.split(".")[1])
+        P.override(name, loose)
+        try:
+            assert sa.on_one_circle(on_circle(spans), sa.fit_of(P.Step)) is not None, name
+        finally:
+            P.override(name, saved)
+
+
 def test_the_two_arcs_of_an_s_bend_share_only_the_vertex_between_them():
     """Each arc may take one vertex past the run that turns its way: both arcs of an S could take
     the straight step in its middle, and each removed the other's end vertex, so that the arc edges
     ran to the wrong vertices (NE_Delta's Copper_D5 came out invalid)."""
-    S = P.Step
-    fit = sa.Fit(S.STEP_ARC_FIT_TOLERANCE_MM, S.STEP_ARC_MIN_POINTS, math.radians(S.STEP_ARC_MIN_SWEEP_DEG),
-                 math.radians(S.STEP_ARC_MAX_TURN_DEG))
+    fit = sa.fit_of(P.Step)
     _, found, _ = sa.find_arcs(np.array(s_bend()), False, fit)
     assert len(found) == 2 and found[0][4] != found[1][4], found     # one arc each way
     assert found[0][1] <= found[1][0], found
@@ -234,6 +267,8 @@ def test_a_failure_in_the_arcs_writes_the_part_faceted():
 
 if __name__ == "__main__":
     test_circles_and_round_ends_become_arcs()
+    test_the_longest_arc_and_how_evenly_its_chords_turn_are_settings()
+    test_the_two_arcs_of_an_s_bend_share_only_the_vertex_between_them()
     test_an_arc_that_would_cross_its_own_ring_stays_straight()
     test_an_outline_may_touch_an_arc_where_it_joins_it_but_not_cross_it()
     test_arcs_of_two_polygons_that_would_overlap_stay_straight()

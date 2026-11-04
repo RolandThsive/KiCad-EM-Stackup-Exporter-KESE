@@ -16,7 +16,8 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 
 from kese.core.sexp import parse  # noqa: E402
-from kese.job import AT_LEAST, CHOICES, KIND_WORDS, ONE_OR_MORE, WHOLE_NUMBERS, ZERO_OR_MORE, start  # noqa: E402
+from kese.job import (AT_LEAST, CHOICES, KIND_WORDS, MORE_THAN_ZERO, NUMBER_AT_LEAST, ONE_OR_MORE,  # noqa: E402
+                      WHOLE_NUMBERS, start)
 from kese.s1_read import parse_kicad_version as kv  # noqa: E402
 from kese.s1_read import read  # noqa: E402
 from kese.s2_collect import collect  # noqa: E402
@@ -171,13 +172,42 @@ def test_every_setting_must_be_of_the_kind_its_file_gives_it():
         assert not isinstance(started({key: value}), str), (key, value)     # a whole number, None's setting, a tuple
 
 
-def test_the_verifier_s_tolerances_must_be_zero_or_more():
-    for key in ZERO_OR_MORE:
-        for x in (0, 0.0, 1e-7, 2):
+def test_tolerances_and_limits_must_be_in_their_range():
+    for key, least in NUMBER_AT_LEAST.items():                      # the Verifier's tolerances, the mitre limit
+        for x in (least, float(least), least + 1e-7, least + 2):
             assert not isinstance(started({key: x}), str), (key, x)
-        for x in (-1e-9, float("nan"), "1e-7", None, False):
+        for x in (least - 1e-9, float("nan"), "1e-7", None, False):
             refused = started({key: x})
-            assert refused == f"{key} must be a number, 0 or more, not {x!r}", (key, x, refused)
+            assert refused == f"{key} must be a number, {least} or more, not {x!r}", (key, x, refused)
+    for key in MORE_THAN_ZERO:                                      # the longest arc
+        for x in (1e-3, 90, 181.0, 400):
+            assert not isinstance(started({key: x}), str), (key, x)
+        for x in (0, 0.0, -90, float("nan"), "90", None, True):
+            refused = started({key: x})
+            assert refused == f"{key} must be a number more than 0, not {x!r}", (key, x, refused)
+    from kese.s4_geometry.finish import mitre                       # the finish's corners take the limit
+    saved = P.Finish.FINISH_MITRE_LIMIT
+    P.override("Finish.FINISH_MITRE_LIMIT", 3.0)
+    try:
+        assert mitre() == {"join_style": "mitre", "mitre_limit": 3.0}
+    finally:
+        P.override("Finish.FINISH_MITRE_LIMIT", saved)
+
+
+def test_an_outline_of_no_size_is_left_out():
+    """A closed Edge.Cuts outline of Board.OUTLINE_MIN_AREA_MM2 or less is left out, not made a board."""
+    import shapely
+    from types import SimpleNamespace
+    from kese.s3_resolve.outline import outline_from
+    board, speck = shapely.box(0, 0, 10, 5), shapely.box(20, 0, 20.0001, 0.0001)      # 1e-8 mm²
+    items = SimpleNamespace(edge_closed=[board, speck], edge_open=[], copper_items={})
+    saved = P.Board.OUTLINE_MIN_AREA_MM2
+    try:
+        for least, parts in ((saved, 2), (1e-6, 1)):
+            P.override("Board.OUTLINE_MIN_AREA_MM2", least)
+            assert shapely.get_num_geometries(outline_from(items, print)) == parts, least
+    finally:
+        P.override("Board.OUTLINE_MIN_AREA_MM2", saved)
 
 
 def test_an_old_shapely_is_named_before_the_run():
@@ -247,7 +277,8 @@ if __name__ == "__main__":
     test_a_misspelt_preset_is_named_before_the_run()
     test_rounds_and_batches_must_be_one_or_more()
     test_every_setting_must_be_of_the_kind_its_file_gives_it()
-    test_the_verifier_s_tolerances_must_be_zero_or_more()
+    test_tolerances_and_limits_must_be_in_their_range()
+    test_an_outline_of_no_size_is_left_out()
     test_an_old_shapely_is_named_before_the_run()
     test_a_misspelt_set_is_named_before_the_run()
     test_a_tenting_side_with_no_value_keeps_the_default()

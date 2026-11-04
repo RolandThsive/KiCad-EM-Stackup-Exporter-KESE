@@ -103,7 +103,9 @@ The finish is on by default, so every board of `featureTest/` runs with it in th
 
 The air the shells fill, $`(E \oplus o_J) \setminus B`$ for the outermost metal $`J`$, is cut on the
 grid once, and then split between the metals along their outer sides $`E \oplus o_j`$, each put on
-the grid on its own (`kese/s4_geometry/shells.py`). The split is done in floating point, which keeps
+the grid on its own (`kese/s4_geometry/shells.py`). The outer sides keep the copper's corners
+mitred, out to `Finish.FINISH_MITRE_LIMIT` (2) times the thickness from the corner: a corner of 60°
+or more keeps its point, and a sharper tip is cut straight across there. The split is done in floating point, which keeps
 every vertex, so two metals side by side share their edge vertex for vertex; only where two outlines
 cross is the new vertex rounded onto the grid. Each piece is then noded on the grid as stage 6 nodes
 every slice: where a metal one grid step thick comes out thinner than that between two slanted

@@ -11,7 +11,8 @@ and listed on its first line.
 > [!NOTE]
 > Defaults are those of the parameter files on `main`. Before the board is read, the run checks
 > `MODE`, `FILE_FORMAT`, the settings of `parameters/parallel.py`, the rounds of
-> `parameters/geometry.py`, the Verifier's tolerances and rays, the names in the preset of `--for`,
+> `parameters/geometry.py`, the Verifier's tolerances and rays, the finish's mitre limit, the
+> longest STEP arc and its fewest points, the names in the preset of `--for`,
 > every setting whose range below is a few words with `/` between them (such as `"mm"` / `"m"`), and
 > the kind of every value: `True` or `False` where the file has one of them, a number where it has a
 > number, text, a list or a dict likewise (a setting that is `None` in its file takes any value). It
@@ -81,6 +82,7 @@ The laminate: thickness, dielectrics, outline and holes. Details in [Board](Boar
 | `OUTLINE_FALLBACK` | `"copper_hull"` | `"copper_hull"` / `"error"` | When `Edge.Cuts` gives no closed ring at all: convex hull of the copper plus a margin, or stop |
 | `OUTLINE_FALLBACK_MARGIN_MM` | `1.0` | mm ≥ 0 | Margin of the fallback hull |
 | `OUTLINE_DUPLICATE_AREA_MM2` | `1e-6` | mm² > 0 | Two closed `Edge.Cuts` outlines that differ by less than this area are one (a ring drawn twice) |
+| `OUTLINE_MIN_AREA_MM2` | `1e-9` | mm² ≥ 0 | A closed `Edge.Cuts` outline of this area or less is left out (a line drawn there and back, a circle of no size) |
 
 ## 16.3 Copper (`parameters/copper.py`)
 
@@ -180,6 +182,7 @@ Details in [Finish](Finish.md).
 | `FINISH_TYPE` | `"ENIG"` | `"file"` or a key of `FINISH_TYPES` | The finish type, or `"file"` to take it from the stack-up's `(copper_finish ...)` (KiCad's `None` builds no finish; no finish in the file, or a name that matches no key and no alias, stops the run with an error) |
 | `FINISH_GROUPING` | `"metal"` | `"metal"` / `"net"` | One part per side and metal, or per side, metal and net |
 | `FINISH_BEFORE_SOLDER_MASK` | `False` | bool | The finish goes on before the mask: on all the outer copper, with the mask and silkscreen on top of it; `False` puts it only in the mask openings |
+| `FINISH_MITRE_LIMIT` | `2.0` | ≥ 1 | How the finish follows the copper's sharp corners: the outer side of each finish layer (and of the copper the mask wraps, with `FINISH_BEFORE_SOLDER_MASK`) keeps a corner's point out to this many times the finish's thickness from the copper's corner, and is cut straight across there. At `2.0` a corner of 60° or more keeps its point (a square pad's corners stay square) and a sharper tip is cut; `1.0` cuts every corner at the finish's thickness; below 1 the finish would be thinner at a corner than its thickness, so the run stops |
 | `FINISH_TYPES` | ENIG, ENEPIG, HASL, HASL_LF, OSP, ImmersionSilver, ImmersionTin, HardGold | `{key: [(metal, mm), ...]}` bottom to top | Layers of each finish |
 | `FINISH_NAME_ALIASES` | 6 KiCad names (`HAL SnPb` → `HASL`, `HAL lead-free` → `HASL_LF`, `Hard gold`, `Immersion tin`, `Immersion silver`, `HT_OSP` → `OSP`) | `{KiCad name: key of FINISH_TYPES}` | KiCad finish names that differ from a key; matching ignores case, spaces, `-` and `_` |
 | `FINISH_CONDUCTIVITY_S_PER_M` | Nickel `1.4e7`, Gold `4.1e7`, Palladium `9.5e6`, Tin `9.1e6`, Silver `6.3e7`, OSP `0.0` | `{metal: S/m}` | Written to `materials.json` |
@@ -298,6 +301,9 @@ how many rows the writer turns into text at once is `Parallel.STEP_ROWS_AT_A_TIM
 | `STEP_ARC_MIN_POINTS` | `5` | int ≥ 3 | An arc runs through at least this many vertices |
 | `STEP_ARC_MIN_SWEEP_DEG` | `10.0` | degrees | and turns at least this far |
 | `STEP_ARC_MAX_TURN_DEG` | `30.0` | degrees | but at most this far at one vertex, so that a polygon of fewer than 12 sides (an octagonal pad, a square) stays a polygon |
+| `STEP_ARC_TURN_RATIO_MAX` | `1.3` | ≥ 1 | and evenly, as a faceted circle does: no chord of the arc spans more than this many times the median chord's angle about the centre |
+| `STEP_ARC_TURN_RATIO_MIN` | `0.7` | 0 to 1 | and none but the first and last less than this many times (those two may be shorter, where a boolean cut the arc) |
+| `STEP_ARC_MAX_SWEEP_DEG` | `181.0` | degrees > 0 | A longer arc is cut into the fewest pieces that keep each about this long, at vertices spread evenly (a piece can run up to one chord over). A whole circle is two arcs on one `CIRCLE`; below 180 it is cut into more, each on a circle of its own |
 
 Every format holds the same parts: the ones switched on with the `..._ENABLED` switch of their module
 (`Board.BOARD_ENABLED`, `Copper.COPPER_ENABLED`, `Finish.FINISH_ENABLED`, `SolderMask.SOLDER_MASK_ENABLED`,
@@ -309,8 +315,8 @@ With `STEP_EXACT_ARCS` the file uses these entities beside the planar ones: `CIR
 `AXIS2_PLACEMENT_3D` at the centre, its axis the board's normal), referenced by the `EDGE_CURVE` of
 an arc edge whose sense says which way it runs, and `CYLINDRICAL_SURFACE` (on the circle's placement
 at the wall's lower height) under the `ADVANCED_FACE` of a curved wall. An arc turns at most about
-half a circle: a whole circle is two arcs between two vertices, on one `CIRCLE`, so there are no
-seam edges and every edge has two vertices and two faces.
+half a circle (`STEP_ARC_MAX_SWEEP_DEG`): a whole circle is two arcs between two vertices, on one
+`CIRCLE`, so there are no seam edges and every edge has two vertices and two faces.
 
 ## 16.11 Verifier (`parameters/verifier.py`)
 

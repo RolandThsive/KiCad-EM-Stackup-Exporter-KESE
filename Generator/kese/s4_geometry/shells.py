@@ -8,7 +8,7 @@ from kese.core import shapes2d as sh
 from kese.core.conformal import grow
 from kese.core.shapes2d import EMPTY, union
 from kese.core.vertices import noded
-from kese.s4_geometry.finish import MITRE, drawn_thickness, exposed, props
+from kese.s4_geometry.finish import drawn_thickness, exposed, mitre, props
 from parameters import P
 
 
@@ -99,7 +99,8 @@ def shells(layers, M, nets, solid, body, caps, part, layer, side):
     [(None, None)] for one part per metal.  -> [(part, region, z0, z1, layer, net, props)], to add
     in this order (add_all)."""
     drawn = [drawn_thickness(t) for _, t in layers]
-    outers = [grow(M, o, **MITRE) for o in accumulate(drawn)]
+    joins = mitre()
+    outers = [grow(M, o, **joins) for o in accumulate(drawn)]
     # each metal's own area: inside its outer side, outside the one below (the first: inside its own)
     bands = [outers[0]] + [exactly(shapely.difference(outer, inner)) for inner, outer in zip(outers, outers[1:])]
     air = sh.diff(outers[-1], solid)
