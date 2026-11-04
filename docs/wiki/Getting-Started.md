@@ -73,9 +73,11 @@ the command is run from.
    ```
 
    The repository already holds example runs of `rf_module` in `Output/rf_module/`, and a run
-   never overwrites a folder, so this board's first run goes to `simulation_GLB__1`.  The examples
-   use the default settings with the finish turned off (`--set Finish.FINISH_ENABLED=False`):
-   with the finish, this board's STEP file is over 100 MB, more than GitHub takes in one file.
+   never overwrites a folder, so this board's first run goes to `simulation_GLB__1`.  The three
+   simulation examples use the default settings with the finish turned off
+   (`--set Finish.FINISH_ENABLED=False`): with the finish, this board's STEP file is over 100 MB,
+   more than GitHub takes in one file.  The visual example has the finish, the solder mask and
+   the silkscreen on.
 
 4. Open `Output/<board>/simulation_GLB/report.txt`. It lists the stack-up heights, every item that
    was read, every item that was skipped and why (hidden text and text on layers that are not drawn

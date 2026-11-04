@@ -1,4 +1,4 @@
-# command-line overrides applied: Finish.FINISH_ENABLED=False, Run.MODE='visual', Run.FILE_FORMAT=['glb']
+# command-line overrides applied: Finish.FINISH_ENABLED=True, SolderMask.SOLDER_MASK_ENABLED=True, Silkscreen.SILKSCREEN_ENABLED=True, Run.MODE='visual', Run.FILE_FORMAT=['glb']
 
 [parameters/run.py]
 EXPORT_INCLUDE_NORMALS = True
@@ -70,7 +70,7 @@ MASK_OVER_LAMINATE_MM = 0.01
 MASK_WALL_QUAD_SEGS = 4
 MASK_WEB_HAIRLINE_MM = 0.001
 PAD_TO_MASK_CLEARANCE_MM = None
-SOLDER_MASK_ENABLED = False
+SOLDER_MASK_ENABLED = True
 USE_STACKUP_MASK_THICKNESS = True
 
 [parameters/silkscreen.py]
@@ -83,7 +83,7 @@ INTERLINE_PITCH = 1.68
 ITALIC_TILT = 0.125
 MAX_PEN_RATIO = 0.25
 NORMAL_THICKNESS_RATIO = 0.125
-SILKSCREEN_ENABLED = False
+SILKSCREEN_ENABLED = True
 SILKSCREEN_OVER_COPPER = False
 SILK_LAYERS = ['F.SilkS', 'B.SilkS']
 SILK_THICKNESS_MM = 0.01
@@ -92,7 +92,7 @@ TEXT_STROKE_QUAD_SEGS = 4
 [parameters/finish.py]
 FINISH_BEFORE_SOLDER_MASK = False
 FINISH_CONDUCTIVITY_S_PER_M = {'Nickel': 14000000.0, 'Gold': 41000000.0, 'Palladium': 9500000.0, 'Tin': 9100000.0, 'Silver': 63000000.0, 'OSP': 0.0}
-FINISH_ENABLED = False
+FINISH_ENABLED = True
 FINISH_GROUPING = 'metal'
 FINISH_MITRE_LIMIT = 2.0
 FINISH_NAME_ALIASES = {'HAL SnPb': 'HASL', 'HAL lead-free': 'HASL_LF', 'Hard gold': 'HardGold', 'Immersion tin': 'ImmersionTin', 'Immersion silver': 'ImmersionSilver', 'HT_OSP': 'OSP'}

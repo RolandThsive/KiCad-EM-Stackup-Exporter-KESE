@@ -965,6 +965,338 @@
         "glb_node": "Copper_VBAT",
         "step_solid": "Copper_VBAT"
       }
+    },
+    "Top Solder Mask": {
+      "role": "mask",
+      "layer": "F.Mask",
+      "net": null,
+      "z_range_mm": [
+        0.765,
+        0.81
+      ],
+      "properties": {
+        "side": "F",
+        "thickness_over_laminate_mm": 0.01,
+        "thickness_over_copper_mm": 0.01
+      },
+      "look": {
+        "color": "#14328C",
+        "alpha": 1.0
+      },
+      "file_names": {
+        "stl": "Top_Solder_Mask.stl",
+        "glb_node": "Top Solder Mask",
+        "step_solid": "Top Solder Mask"
+      }
+    },
+    "Top Mask over Copper": {
+      "role": "mask_over_copper",
+      "layer": "F.Mask",
+      "net": null,
+      "z_range_mm": [
+        0.8,
+        0.81
+      ],
+      "properties": {
+        "side": "F",
+        "thickness_over_laminate_mm": 0.01,
+        "thickness_over_copper_mm": 0.01
+      },
+      "look": {
+        "color": "#3C5AB4",
+        "alpha": 1.0
+      },
+      "file_names": {
+        "stl": "Top_Mask_over_Copper.stl",
+        "glb_node": "Top Mask over Copper",
+        "step_solid": "Top Mask over Copper"
+      }
+    },
+    "Bottom Solder Mask": {
+      "role": "mask",
+      "layer": "B.Mask",
+      "net": null,
+      "z_range_mm": [
+        -0.81,
+        -0.765
+      ],
+      "properties": {
+        "side": "B",
+        "thickness_over_laminate_mm": 0.01,
+        "thickness_over_copper_mm": 0.01
+      },
+      "look": {
+        "color": "#14328C",
+        "alpha": 1.0
+      },
+      "file_names": {
+        "stl": "Bottom_Solder_Mask.stl",
+        "glb_node": "Bottom Solder Mask",
+        "step_solid": "Bottom Solder Mask"
+      }
+    },
+    "Bottom Mask over Copper": {
+      "role": "mask_over_copper",
+      "layer": "B.Mask",
+      "net": null,
+      "z_range_mm": [
+        -0.81,
+        -0.8
+      ],
+      "properties": {
+        "side": "B",
+        "thickness_over_laminate_mm": 0.01,
+        "thickness_over_copper_mm": 0.01
+      },
+      "look": {
+        "color": "#3C5AB4",
+        "alpha": 1.0
+      },
+      "file_names": {
+        "stl": "Bottom_Mask_over_Copper.stl",
+        "glb_node": "Bottom Mask over Copper",
+        "step_solid": "Bottom Mask over Copper"
+      }
+    },
+    "Top Silkscreen": {
+      "role": "silk",
+      "layer": "F.SilkS",
+      "net": null,
+      "z_range_mm": [
+        0.775,
+        0.82
+      ],
+      "properties": {
+        "side": "F",
+        "thickness_mm": 0.01
+      },
+      "look": {
+        "color": "#F0F0EC",
+        "alpha": 1.0
+      },
+      "file_names": {
+        "stl": "Top_Silkscreen.stl",
+        "glb_node": "Top Silkscreen",
+        "step_solid": "Top Silkscreen"
+      }
+    },
+    "Bottom Silkscreen": {
+      "role": "silk",
+      "layer": "B.SilkS",
+      "net": null,
+      "z_range_mm": [
+        -0.82,
+        -0.765
+      ],
+      "properties": {
+        "side": "B",
+        "thickness_mm": 0.01
+      },
+      "look": {
+        "color": "#F0F0EC",
+        "alpha": 1.0
+      },
+      "file_names": {
+        "stl": "Bottom_Silkscreen.stl",
+        "glb_node": "Bottom Silkscreen",
+        "step_solid": "Bottom Silkscreen"
+      }
+    },
+    "Top Finish Nickel": {
+      "role": "finish",
+      "layer": "F.Finish",
+      "net": null,
+      "z_range_mm": [
+        0.765,
+        0.805
+      ],
+      "properties": {
+        "side": "F",
+        "metal": "Nickel",
+        "thickness_mm": 0.005,
+        "conductivity_S_per_m": 14000000.0
+      },
+      "look": {
+        "color": "#B8B8B0",
+        "alpha": 1.0
+      },
+      "file_names": {
+        "stl": "Top_Finish_Nickel.stl",
+        "glb_node": "Top Finish Nickel",
+        "step_solid": "Top Finish Nickel"
+      }
+    },
+    "Top Finish Gold": {
+      "role": "finish",
+      "layer": "F.Finish",
+      "net": null,
+      "z_range_mm": [
+        0.765,
+        0.80508
+      ],
+      "properties": {
+        "side": "F",
+        "metal": "Gold",
+        "thickness_mm": 8e-05,
+        "conductivity_S_per_m": 41000000.0
+      },
+      "look": {
+        "color": "#E6C15A",
+        "alpha": 1.0
+      },
+      "file_names": {
+        "stl": "Top_Finish_Gold.stl",
+        "glb_node": "Top Finish Gold",
+        "step_solid": "Top Finish Gold"
+      }
+    },
+    "Bottom Finish Nickel": {
+      "role": "finish",
+      "layer": "B.Finish",
+      "net": null,
+      "z_range_mm": [
+        -0.805,
+        -0.765
+      ],
+      "properties": {
+        "side": "B",
+        "metal": "Nickel",
+        "thickness_mm": 0.005,
+        "conductivity_S_per_m": 14000000.0
+      },
+      "look": {
+        "color": "#B8B8B0",
+        "alpha": 1.0
+      },
+      "file_names": {
+        "stl": "Bottom_Finish_Nickel.stl",
+        "glb_node": "Bottom Finish Nickel",
+        "step_solid": "Bottom Finish Nickel"
+      }
+    },
+    "Bottom Finish Gold": {
+      "role": "finish",
+      "layer": "B.Finish",
+      "net": null,
+      "z_range_mm": [
+        -0.80508,
+        -0.765
+      ],
+      "properties": {
+        "side": "B",
+        "metal": "Gold",
+        "thickness_mm": 8e-05,
+        "conductivity_S_per_m": 41000000.0
+      },
+      "look": {
+        "color": "#E6C15A",
+        "alpha": 1.0
+      },
+      "file_names": {
+        "stl": "Bottom_Finish_Gold.stl",
+        "glb_node": "Bottom Finish Gold",
+        "step_solid": "Bottom Finish Gold"
+      }
+    },
+    "Edge Finish Nickel": {
+      "role": "finish",
+      "layer": "Edge.Finish",
+      "net": null,
+      "z_range_mm": [
+        -0.805,
+        0.805
+      ],
+      "properties": {
+        "side": "Edge",
+        "metal": "Nickel",
+        "thickness_mm": 0.005,
+        "conductivity_S_per_m": 14000000.0,
+        "drawn_thickness_mm": 0.005
+      },
+      "look": {
+        "color": "#B8B8B0",
+        "alpha": 1.0
+      },
+      "file_names": {
+        "stl": "Edge_Finish_Nickel.stl",
+        "glb_node": "Edge Finish Nickel",
+        "step_solid": "Edge Finish Nickel"
+      }
+    },
+    "Edge Finish Gold": {
+      "role": "finish",
+      "layer": "Edge.Finish",
+      "net": null,
+      "z_range_mm": [
+        -0.80508,
+        0.80508
+      ],
+      "properties": {
+        "side": "Edge",
+        "metal": "Gold",
+        "thickness_mm": 8e-05,
+        "conductivity_S_per_m": 41000000.0,
+        "drawn_thickness_mm": 0.0001
+      },
+      "look": {
+        "color": "#E6C15A",
+        "alpha": 1.0
+      },
+      "file_names": {
+        "stl": "Edge_Finish_Gold.stl",
+        "glb_node": "Edge Finish Gold",
+        "step_solid": "Edge Finish Gold"
+      }
+    },
+    "Hole Finish Nickel": {
+      "role": "finish",
+      "layer": "Hole.Finish",
+      "net": null,
+      "z_range_mm": [
+        -0.805,
+        0.805
+      ],
+      "properties": {
+        "side": "Hole",
+        "metal": "Nickel",
+        "thickness_mm": 0.005,
+        "conductivity_S_per_m": 14000000.0,
+        "drawn_thickness_mm": 0.005
+      },
+      "look": {
+        "color": "#B8B8B0",
+        "alpha": 1.0
+      },
+      "file_names": {
+        "stl": "Hole_Finish_Nickel.stl",
+        "glb_node": "Hole Finish Nickel",
+        "step_solid": "Hole Finish Nickel"
+      }
+    },
+    "Hole Finish Gold": {
+      "role": "finish",
+      "layer": "Hole.Finish",
+      "net": null,
+      "z_range_mm": [
+        -0.80508,
+        0.80508
+      ],
+      "properties": {
+        "side": "Hole",
+        "metal": "Gold",
+        "thickness_mm": 8e-05,
+        "conductivity_S_per_m": 41000000.0,
+        "drawn_thickness_mm": 0.0001
+      },
+      "look": {
+        "color": "#E6C15A",
+        "alpha": 1.0
+      },
+      "file_names": {
+        "stl": "Hole_Finish_Gold.stl",
+        "glb_node": "Hole Finish Gold",
+        "step_solid": "Hole Finish Gold"
+      }
     }
   }
 }
