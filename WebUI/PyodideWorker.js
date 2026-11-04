@@ -8,6 +8,7 @@
                                                       storage: "disk" | "memory", memory?: {path: ArrayBuffer}}
      exportZip  {values}                         ->  {zipBytes}
      readValues {text, fileName}                 ->  {values, ignored}
+     readZip    {bytes}                          ->  {values, ignored}   (the parameter files or parameters.txt inside)
 
    On start it loads Pyodide with numpy and shapely, fetches generator.zip (Generator/kese and Generator/parameters
    of this branch, packed by build_site.py) and unpacks it into the in-memory file system.  version.json carries a
@@ -159,6 +160,11 @@ onmessage = async (ev) => {
       pyodide.FS.unlink(path);
       transfer = [result.zipBytes];
     } else if (cmd === "readValues") result = JSON.parse(WG.read_values(args.text, args.fileName || ""));
+    else if (cmd === "readZip") {                                    // an Export zip (parameters/*.py) or a run's zip
+      const path = `${ROOT}/import.zip`;
+      pyodide.FS.writeFile(path, new Uint8Array(args.bytes));
+      try { result = JSON.parse(WG.read_zip(path)); } finally { pyodide.FS.unlink(path); }
+    }
     else throw new Error("unknown command " + cmd);
     postMessage({ id, ok: true, result }, transfer);
   } catch (e) {

@@ -52,7 +52,12 @@ function startWorker() {
     pending.delete(m.id);
     if (m.ok) p.resolve(m.result); else p.reject(new Error(m.error));
   };
-  worker.onerror = (e) => fatal("The Python worker stopped: " + (e.message || e));
+  worker.onerror = (e) => {
+    const msg = "The Python worker stopped: " + (e.message || e);
+    for (const p of pending.values()) p.reject(new Error(msg));   // a run waiting on it ends, instead of spinning for ever
+    pending.clear();
+    fatal(msg);
+  };
 }
 
 /* ---- small helpers ------------------------------------------------------------------------------- */
@@ -67,6 +72,8 @@ function el(tag, attrs = {}, ...kids) {
   for (const k of kids.flat()) if (k != null) e.append(k.nodeType ? k : document.createTextNode(k));
   return e;
 }
+// a long NAME_LIKE_THIS may wrap after its underscores and dots, never inside a word
+const breakable = (t) => String(t).split(/(?<=[_.])/).flatMap((part, i) => (i ? [document.createElement("wbr"), part] : [part]));
 const same = (a, b) => JSON.stringify(a) === JSON.stringify(b);
 const clone = (x) => JSON.parse(JSON.stringify(x));
 function fmt(x) { return typeof x === "number" ? String(Number(x.toPrecision(10))) : String(x); }
@@ -134,12 +141,13 @@ function hideTip() { clearTimeout(tipTimer); tipFor = null; $("popover").hidden 
 function showTip(node) {
   const pop = $("popover");
   pop.replaceChildren();
-  if (node.dataset.help) {
-    const p = state.byKey[node.dataset.help];
+  const p = node.dataset.help && state.byKey[node.dataset.help];  // the parameters are known once Python has read them
+  if (p) {
     pop.append(el("span", { class: "mono-name" }, `${p.file} · ${p.name}`));
     pop.append(p.help || "No notes in the parameter file.");
     pop.append(el("span", { class: "tip-foot" }, `In the file: ${showValue(p.default)}`));
-  } else pop.append(node.dataset.tip);
+  } else if (node.dataset.tip) pop.append(node.dataset.tip);
+  else { hideTip(); return; }
   pop.hidden = false;
   const r = node.getBoundingClientRect();
   const below = r.bottom + 8, above = r.top - pop.offsetHeight - 8;
@@ -202,7 +210,8 @@ function updateStale() {
   const ok = state.result && state.result.ok;
   $("stale-badge").hidden = !(ok && state.stale);
   $("btn-download").disabled = !ok || state.stale || state.busy;
-  $("btn-download").dataset.tip = state.stale ? "The settings changed: press Generate first" : "Download this run as one zip";
+  $("btn-download").dataset.tip = state.stale ? "The settings changed: press Generate first"
+    : ok ? `Download this run as one zip: ${zipName()}` : "Download this run as one zip";
   for (const b of $("download-files").querySelectorAll("button")) b.disabled = !ok || state.stale || state.busy;
 }
 
@@ -437,7 +446,7 @@ function field(p) {
   }
   // Advanced: the parameter's name sits beside its control, so the title keeps the whole width for one line
   const control = state.ui === "advanced"
-    ? el("div", { class: "field-body" }, widget(p), el("span", { class: "mono-name field-name", title: p.key }, p.module === p.key.split(".")[0] ? p.name : p.key))
+    ? el("div", { class: "field-body" }, widget(p), el("span", { class: "mono-name field-name", title: p.key }, breakable(p.module === p.key.split(".")[0] ? p.name : p.key)))
     : widget(p);
   return el("div", { class: "field" + (changed ? " changed" : ""), "data-key": p.key }, head, control);
 }
@@ -592,12 +601,22 @@ function presetRow() {
     const match = Object.entries(presets[n]).every(([k, x]) => same(state.values[k], x));
     const tip = `Preset ${n} (Run.PRESETS): ` + Object.entries(presets[n]).map(([k, x]) => `${k.split(".")[1]} = ${showValue(x)}`).join(", ");
     seg.append(el("button", { type: "button", class: match ? "on" : "", "data-tip": tip,
-      onclick: () => { setValues(presets[n], "preset"); toast(`Preset ${(CFG.presetTitles || {})[n] || n}`); } }, (CFG.presetTitles || {})[n] || n));
+      onclick: () => {
+        state.formatsByMode[state.values[CFG.mode]] = clone(state.values[CFG.formats]);   // as a switch of mode would
+        setValues(presets[n], "preset"); toast(`Preset ${(CFG.presetTitles || {})[n] || n}`); } }, (CFG.presetTitles || {})[n] || n));
   }
   return el("div", { class: "field" }, el("div", { class: "field-head" }, el("span", { class: "field-label" }, "Preset")), seg);
 }
 function renderSections() {
   const box = $("sections"), scroller = $("controls-scroll"), top = scroller.scrollTop;
+  // every saved value rebuilds the sections: remember which control had the focus, to give it back after
+  const focusBack = (() => {
+    const a = document.activeElement, f = a && box.contains(a) && a.closest("[data-key], [data-group]");
+    if (!f) return null;
+    const sel = f.dataset.key ? `[data-key="${f.dataset.key}"]` : `[data-group="${f.dataset.group}"]`;
+    const all = [...f.querySelectorAll("input, button, select, textarea")];
+    return { sel, i: all.indexOf(a), caret: typeof a.selectionStart === "number" ? [a.selectionStart, a.selectionEnd] : null };
+  })();
   box.replaceChildren();
   for (const f of state.desc.files) {
     const keys = sectionKeys(f.module);
@@ -622,6 +641,13 @@ function renderSections() {
     ? `Advanced shows all ${state.params.length} parameters${hiddenFiles.length ? `, ${hiddenFiles.join(" and ")} included` : ""}.`
     : "Mode, the file formats and Verify are the switches outside the sections. A dot marks a value that differs from the file.";
   scroller.scrollTop = top;
+  if (focusBack) {
+    const f = box.querySelector(focusBack.sel), t = f && [...f.querySelectorAll("input, button, select, textarea")][focusBack.i];
+    if (t) {
+      t.focus({ preventScroll: true });
+      if (focusBack.caret && typeof t.setSelectionRange === "function") try { t.setSelectionRange(...focusBack.caret); } catch { /* not a text field */ }
+    }
+  }
 }
 function setUI(ui) {
   if (ui === state.ui) return;
@@ -713,7 +739,7 @@ async function setBoard(name, bytes) {
   const text = new TextDecoder().decode(bytes);
   if (!/^\s*\(kicad_pcb/.test(text)) { toast(`${name} does not look like a KiCad board`, 5000); return; }
   state.board = { name, bytes, meta: boardMeta(text), colors: stackupColors(text) };
-  renderSections();                                                 // Colorization shows the board's own colours
+  if (state.desc) renderSections();                                 // Colorization shows the board's own colours (once Python is up)
   $("board-name").textContent = name;
   $("board-meta").textContent = `${bytesText(bytes.byteLength)} · ${state.board.meta}`;
   $("drop").classList.add("has-board");
@@ -738,12 +764,13 @@ async function generate() {
   btn.disabled = true; btn.textContent = "Generating…";
   runStart();
   updateStale();
-  const sent = clone(state.values);
+  const sent = clone(state.values), sentBoard = state.board;
   try {
     const r = await ask("generate", { board: { name: state.board.name, bytes: state.board.bytes }, values: sent, tabId: store.tabId });
     state.result = r;
     state.runValues = sent;
-    state.stale = false;
+    state.runBoard = sentBoard;
+    state.stale = !same(state.values, sent) || state.board !== sentBoard;                   // a setting changed while it ran: the result is already old
     if (r.ok) {
       store.setRun(r);
       state.materials = store.has("materials.json") ? JSON.parse(await store.text("materials.json")) : null;
@@ -753,17 +780,22 @@ async function generate() {
     renderChecks();
     renderDownloads();
     renderPreviewTabs();
-    if (r.ok) await showPreview();
+    await showPreview();                                       // a failed run clears the old model, so nothing stale is shown
   } catch (e) {
     runStop();
     state.result = { ok: false, checks: [{ level: "error", stage: "python", msg: String(e.message || e) }] };
+    $("run-note").textContent = "Not generated: see Checks.";
     renderChecks();
+    renderDownloads();
+    renderPreviewTabs();
+    await showPreview();
   } finally {
     setBusy(false);
     updateGenerate();
     $("btn-report").disabled = !state.result;
     updateStale();
   }
+  if (state.board !== sentBoard && state.ready) generate();     // another board came while it ran: make that one now
 }
 
 /* ---- preview ----------------------------------------------------------------------------------- */
@@ -790,7 +822,9 @@ function renderPreviewTabs() {
   sel.parentElement.hidden = choices.length < 2;          // one file: nothing to choose, no menu
   state.preview.key = choices.length ? choices[0].key : null;
 }
+let previewSeq = 0;
 async function showPreview() {
+  const seq = ++previewSeq;                                   // a newer pick (or run) wins over a slow load still going
   const c = previewChoices().find((x) => x.key === state.preview.key);
   $("empty-note").hidden = !!c;
   if (!c) { viewer.clear(); renderParts(); return; }
@@ -814,12 +848,14 @@ async function showPreview() {
       for (const f of c.files) files.push({ name: stem(f.path.split("/").pop()), buffer: await store.bytes(f.path) });
       parts = viewer.loadSTL(files, looks);
     } else if (c.format === "step") parts = await viewer.loadSTEP(await store.bytes(c.key));
+    if (seq !== previewSeq) return;
     const tris = parts.reduce((s, p) => s + p.triangles, 0);
     const units = state.runValues[CFG.units], perMm = units === "m" ? 0.001 : 1;
     const dims = viewer.boardSize(perMm);
     ro.textContent = `${c.label} · ${bytesText(size)} · ${parts.length} parts · ${countText(tris)} triangles` +
       (dims ? ` · ${dims[0].toFixed(1)} × ${dims[1].toFixed(1)} × ${dims[2].toFixed(2)} mm` : "");
   } catch (e) {
+    if (seq !== previewSeq) return;
     viewer.clear();
     ro.textContent = `${c.label} could not be shown: ${e.message}`;
   }
@@ -845,7 +881,7 @@ function propLine(key, value) {
 }
 function showHover(part) {
   const card = $("hover-card");
-  if (!part) { card.hidden = true; return; }
+  if (!part) { card.hidden = true; $("readout").style.maxWidth = ""; return; }
   const info = partInfo(part.name);
   const lines = [];
   if (info) {
@@ -868,6 +904,9 @@ function showHover(part) {
     ...lines.map(([t, v]) => el("div", { class: "hover-line" }, el("b", {}, `${t}:`), ` ${v}`)));
   card.style.borderLeftColor = part.color;
   card.hidden = false;
+  // the card and the readout share the bottom edge: the readout stops short of the card instead of running under it
+  const ro = $("readout"), gap = card.getBoundingClientRect().left - ro.getBoundingClientRect().left - 12;
+  ro.style.maxWidth = gap > 80 ? `${gap}px` : "";
 }
 
 /* ---- checks ------------------------------------------------------------------------------------ */
@@ -903,7 +942,7 @@ function renderParts() {
 }
 
 /* ---- downloads --------------------------------------------------------------------------------- */
-function zipName(suffix = "") { return `${stem(state.board.name)}_${state.result.name}${suffix}.zip`; }
+function zipName(suffix = "") { return `${stem((state.runBoard || state.board).name)}_${state.result.name}${suffix}.zip`; }   // the board the run was made from
 function renderDownloads() {
   const box = $("download-files"), r = state.result;
   box.replaceChildren();
@@ -940,9 +979,14 @@ async function exportFiles() {
   } catch (e) { toast("Export failed: " + e.message, 5000); }
 }
 async function importFiles(files) {
+  if (!state.ready) { toast("Python is still loading: import the settings in a moment", 4000); return; }
   const found = {}, ignored = [];
   for (const f of files) {
-    const r = await ask("readValues", { text: await f.text(), fileName: f.name });
+    let r;
+    try {
+      r = /\.zip$/i.test(f.name) ? await ask("readZip", { bytes: await f.arrayBuffer() })
+        : await ask("readValues", { text: await f.text(), fileName: f.name });
+    } catch (e) { toast(`${f.name} could not be read: ${e.message}`, 6000); continue; }
     Object.assign(found, r.values);
     for (const n of r.ignored) if (!ignored.includes(n)) ignored.push(n);
   }
@@ -966,6 +1010,7 @@ function wire() {
   $("btn-reset").addEventListener("click", async () => {
     if (!(await confirmBox("Are you sure to reset every setting?"))) return;
     state.noneEditing.clear();
+    state.formatsByMode = {};                                  // the formats remembered per mode go back too
     setValues(clone(state.start), "reset"); toast("Back to the values in the parameter files");
   });
   $("btn-export").addEventListener("click", exportFiles);
@@ -1013,7 +1058,12 @@ function wire() {
     viewer.view(b.dataset.view);
   }));
   $("cut").addEventListener("input", (e) => { const v = +e.target.value; viewer.setCut(v / 100); $("cut-out").textContent = v >= 100 ? "Off" : `${v} %`; });
-  document.addEventListener("keydown", (e) => { if ((e.ctrlKey || e.metaKey) && e.key === "Enter") generate(); });
+  document.addEventListener("keydown", (e) => {
+    if (!((e.ctrlKey || e.metaKey) && e.key === "Enter")) return;
+    const a = document.activeElement;                          // a value still being typed is saved on blur ("change") first
+    if (a && a !== document.body && /^(INPUT|TEXTAREA)$/.test(a.tagName)) a.blur();
+    generate();
+  });
 }
 
 async function examples() {
@@ -1067,7 +1117,7 @@ async function main() {
   if (b && (state.version.examples || []).includes(b)) {
     const r = await fetch(new URL(`examples/${b}`, import.meta.url));
     if (r.ok) setBoard(b, await r.arrayBuffer());
-  }
+  } else if (state.board) generate();                         // a board chosen while Python was still loading
 }
 
 if (!window.KESE_PHONE) main();
