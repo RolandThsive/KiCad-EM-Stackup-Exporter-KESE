@@ -30,12 +30,6 @@ def vertices_in_order(level, key):
     return vertex, order[new]
 
 
-def vertex_keys(region):
-    """The vertices of a region as grid keys, the ring each lies on, and the xy."""
-    xy, ring = shapely.get_coordinates(shapely.get_rings(shapely.get_parts(region)), return_index=True)
-    return grid_keys(xy), ring, xy
-
-
 def pairs_in(a, b, c, d):
     """Whether each pair (a[i], b[i]) is among the pairs (c[j], d[j]).  Each column is numbered
     through its distinct values, so that a pair is one integer and np.isin sorts plain integers

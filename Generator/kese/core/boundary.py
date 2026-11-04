@@ -44,11 +44,13 @@ def boundary_of(part, prisms, log=None):
     """The prisms of one part -> its Boundary, closed by construction."""
     levels = heights_of(prisms)
     slices = slices_of_part(prisms, levels, log)
+    flats, again = [], range(len(levels))
     for _ in range(sh.G().VERTEX_SHARING_ROUNDS):
-        flats = flat_faces(slices, levels)
+        flats = flat_faces(slices, levels, flats, again)
         slices, changed = slices_sharing_vertices(slices, flats, levels, log)
         if not changed:
             break
+        again = {k for i in changed for k in (i, i + 1)}      # the heights at a changed slice's ends
     else:
         if log:
             log(f"faces and walls still changing after {sh.G().VERTEX_SHARING_ROUNDS} rounds")
@@ -97,11 +99,18 @@ def joined_regions(regions, exact=True, shared=False):
     return shapely.union_all(regions, grid_size=sh.grid()) if exact else sh.polys_only(shapely.union_all(regions))
 
 
-def flat_faces(slices, levels):
+def flat_faces(slices, levels, before=(), heights=None):
     """At every height, what looks up (the material below minus the material above) and what
-    looks down: [(z, region, looks up)]."""
+    looks down: [(z, region, looks up)].  Only at the indices `heights` (every height when None);
+    at the others the faces of `before`, those faces before the slices next to them changed."""
+    kept = {}
+    for face in before:
+        kept.setdefault(face[0], []).append(face)
     out = []
     for k, z in enumerate(levels):
+        if heights is not None and k not in heights:
+            out += kept.get(z, [])
+            continue
         below = slices[k - 1] if k else sh.EMPTY
         above = slices[k] if k < len(slices) else sh.EMPTY
         for region, up in ((sh.diff(below, above), True), (sh.diff(above, below), False)):
