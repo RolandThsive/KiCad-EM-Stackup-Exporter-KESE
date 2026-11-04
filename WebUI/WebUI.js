@@ -464,14 +464,16 @@ function colorGroups(keys) {
       items: visual ? [mat("Copper_exposed", "Copper")] : [mat("Copper", "Copper"), mat("Plating", "Hole plating")] },
     on("Finish.FINISH_ENABLED") && { title: "Finish Colors", tip: "The finish metals on the exposed copper (Finish Enabled is on)",
       items: metals.length ? metals.map((m) => mat(m)) : ["Nickel", "Gold", "Palladium", "Tin", "Silver", "OSP"].map((m) => mat(m)) },
-    // With stack-up colours on, the colour comes from the stack-up's name, so its names come first; the Top /
-    // Bottom entries still give the colour when the board names none (or a name the table lacks), and always
-    // give alpha, metallic and roughness.  With them off, the names are never used and only Top / Bottom show.
-    on("SolderMask.SOLDER_MASK_ENABLED") && { title: "Solder Mask Colors", tip: "The solder mask: with Use Stackup Colors on, the colour of each name the board's stack-up can use",
-      items: [...(stackup ? names("Color.STACKUP_MASK_COLORS") : []),
-        ...(stackup && visual ? names("Color.STACKUP_MASK_OVER_COPPER_COLORS", " over copper") : []),
-        ...fallback(["Top Solder Mask", "Bottom Solder Mask", ...(visual ? ["Top Mask over Copper", "Bottom Mask over Copper"] : [])])],
-      extra: [visual && "Color.VISUAL_MASK_OPAQUE", visual && stackup && "Color.USER_MASK_OVER_COPPER_LIGHTEN"] },
+    // One group per side, for MATERIALS' "<side> Solder Mask" (and, in visual mode, "<side> Mask over Copper").
+    // Its dropdown picks a colour by name from STACKUP_MASK_COLORS; the over-copper shade of the same name
+    // (STACKUP_MASK_OVER_COPPER_COLORS) is set with it.
+    ...["Top", "Bottom"].map((side) => on("SolderMask.SOLDER_MASK_ENABLED") && has(`${side} Solder Mask`) && {
+      title: `${side} Solder Mask Colors`,
+      tip: `The ${side.toLowerCase()} solder mask (Color.MATERIALS "${side} Solder Mask"${visual ? `, and "${side} Mask over Copper"` : ""})` +
+        (stackup ? ": used when the board's stack-up names no colour" : ""),
+      items: [{ ...mat(`${side} Solder Mask`), pair: visual && has(`${side} Mask over Copper`) ? { param: "Color.MATERIALS", key: `${side} Mask over Copper` } : null }],
+      presets: { names: V["Color.STACKUP_MASK_COLORS"] || {}, pairNames: V["Color.STACKUP_MASK_OVER_COPPER_COLORS"] || {} },
+      extra: side === "Bottom" ? [visual && "Color.VISUAL_MASK_OPAQUE", visual && stackup && "Color.USER_MASK_OVER_COPPER_LIGHTEN"] : [] }),
     on("Silkscreen.SILKSCREEN_ENABLED") && { title: "Silkscreen Colors", tip: "The silkscreen: with Use Stackup Colors on, the colour of each name the board's stack-up can use",
       items: [...(stackup ? names("Color.STACKUP_SILK_COLORS") : []), ...fallback(["Top Silkscreen", "Bottom Silkscreen"])] },
   ].filter(Boolean);
@@ -492,8 +494,9 @@ function colorGroup(g, items) {
   const sel = items.find((it) => labelOfItem(it) === state.tableSel[id]) || items[0];
   const valueOf = (it) => (state.values[it.param] || {})[it.key];
   const defaultOf = (it) => (state.byKey[it.param].default || {})[it.key];
-  const changed = items.filter((it) => !same(valueOf(it), defaultOf(it)));
-  const put = (val) => setValues({ [sel.param]: { ...state.values[sel.param], [sel.key]: val } }, "field");
+  const entries = items.flatMap((it) => (it.pair ? [it, it.pair] : [it]));             // an entry and its over-copper shade
+  const changed = entries.filter((it) => !same(valueOf(it), defaultOf(it)));
+  const putOf = (it) => (val) => setValues({ [it.param]: { ...state.values[it.param], [it.key]: val } }, "field");
 
   const head = el("div", { class: "field-head" }, el("span", { class: "field-label", "data-tip": g.tip }, g.title));
   if (changed.length) head.append(el("button", { type: "button", class: "reset-one", "data-tip": "Back to the file's colours for this group",
@@ -502,13 +505,38 @@ function colorGroup(g, items) {
       for (const it of changed) (next[it.param] = next[it.param] || { ...state.values[it.param] })[it.key] = clone(defaultOf(it));
       setValues(next, "field");
     } }, "↺"));
-  const pick = dropdown(items.map(labelOfItem), sel.label, (label) => { state.tableSel[id] = label; renderSections(); });
-  const x = valueOf(sel), body = el("div", { class: "table-body" });
-  if (x && typeof x === "object") {
-    for (const [k, y] of Object.entries(x))
-      body.append(el("div", { class: "table-row" }, k === "color" ? null : el("span", { class: "table-label" }, choiceText(k)),
-        valueWidget(y, (z) => put({ ...state.values[sel.param][sel.key], [k]: z }))));      // the swatch says what it is
-  } else body.append(el("div", { class: "table-row" }, valueWidget(x, put)));
+  let pick;
+  if (g.presets) {
+    // a colour picked by name: the entry's colour and its pair's colour come from the two name tables
+    const { names, pairNames } = g.presets, title = (k) => k.replace(/\b\w/g, (c) => c.toUpperCase());
+    const colorOf = (it) => String((valueOf(it) || {}).color || valueOf(it) || "").toLowerCase();
+    const now = Object.keys(names).find((k) => String(names[k]).toLowerCase() === colorOf(sel)
+      && (!sel.pair || !(k in pairNames) || String(pairNames[k]).toLowerCase() === colorOf(sel.pair)));
+    const labels = Object.keys(names).map(title);
+    pick = dropdown(now ? labels : ["Custom", ...labels], now ? title(now) : "Custom", (label) => {
+      const k = Object.keys(names).find((n) => title(n) === label);
+      if (!k) return;
+      const next = { [sel.param]: { ...state.values[sel.param] } };
+      next[sel.param][sel.key] = { ...next[sel.param][sel.key], color: names[k] };
+      if (sel.pair && k in pairNames) {
+        next[sel.pair.param] = next[sel.pair.param] || { ...state.values[sel.pair.param] };
+        next[sel.pair.param][sel.pair.key] = { ...next[sel.pair.param][sel.pair.key], color: pairNames[k] };
+      }
+      setValues(next, "field");
+    });
+  } else pick = dropdown(items.map(labelOfItem), sel.label, (label) => { state.tableSel[id] = label; renderSections(); });
+  const body = el("div", { class: "table-body" });
+  const rows = (it, title) => {
+    const x = valueOf(it), put = putOf(it);
+    if (title) body.append(el("div", { class: "table-sub" }, title));
+    if (x && typeof x === "object") {
+      for (const [k, y] of Object.entries(x))
+        body.append(el("div", { class: "table-row" }, k === "color" ? null : el("span", { class: "table-label" }, choiceText(k)),
+          valueWidget(y, (z) => put({ ...state.values[it.param][it.key], [k]: z }))));    // the swatch says what it is
+    } else body.append(el("div", { class: "table-row" }, valueWidget(x, put)));
+  };
+  rows(sel, sel.pair ? "Mask" : null);
+  if (sel.pair) rows(sel.pair, "Over copper");
   return el("div", { class: "field" + (changed.length ? " changed" : ""), "data-group": g.title }, head,
     el("div", { class: "table-edit" }, el("div", { class: "table-head" }, pick), body));
 }
