@@ -115,6 +115,7 @@ def test_a_misspelt_set_is_named_before_the_run():
                        ("WORKERS=2", "WORKERS is not Module.NAME (did you mean Parallel.WORKERS?)"),
                        ("Parallel.WORKERS", "give it a value, as in Parallel.WORKERS=value"),
                        ("Parallel.PROCESS_WORKER=2", "parallel.py has no parameter PROCESS_WORKER (did you mean PROCESS_WORKERS?)"),
+                       ("Run.WORKER=2", "run.py has no parameter WORKER (did you mean Parallel.WORKERS?)"),
                        ("snapshot.X=1", "no parameter module snapshot")):
         err, argv = io.StringIO(), sys.argv
         sys.argv = ["kese", "--set", item]

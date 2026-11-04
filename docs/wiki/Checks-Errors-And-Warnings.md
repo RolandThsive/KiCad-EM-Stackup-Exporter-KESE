@@ -41,7 +41,7 @@ python tests/test_boards.py                     # the regression suite over ever
 | `no Edge.Cuts outline and OUTLINE_FALLBACK is 'error'` | Draw a closed outline, or set `Board.OUTLINE_FALLBACK = "copper_hull"`. |
 | `missing Python package(s): ...` | Printed before anything runs, with the `pip install` line to use. |
 | `Python package(s) too old: shapely 2.0.7 (2.1 or newer)` | shapely 2.0 lacks the constrained Delaunay triangulation the faces are cut with; printed before anything runs, with the `pip install --upgrade` line to use. |
-| `--set <item>: parameters/<module>.py has no parameter <NAME> (did you mean <NAME>?)` | A `--set` with a misspelt name, or one in small letters; the closest name is given where there is one. Like every `--set` mistake below, it is printed by the command line before anything runs, exit code 2. |
+| `--set <item>: parameters/<module>.py has no parameter <NAME> (did you mean <NAME>?)` | A `--set` with a misspelt name, or one in small letters; the closest name is given where there is one, from another module as `Module.NAME` when this module has none close (`--set Run.WORKER=4` names `Parallel.WORKERS`). Like every `--set` mistake below, it is printed by the command line before anything runs, exit code 2. |
 | `--set <item>: there is no parameter module <Module> (did you mean <Module>?); the modules are Run, Board, ...` | A misspelt module, or one in small letters (`copper` for `Copper`). |
 | `--set <item>: <item> is not Module.NAME (did you mean Parallel.WORKERS?)` | A name without its module, or without a name after the `.`. Where the name is in one module only, that module is given. |
 | `--set <item>: give it a value, as in <item>=value` | A `--set` without `=`. |

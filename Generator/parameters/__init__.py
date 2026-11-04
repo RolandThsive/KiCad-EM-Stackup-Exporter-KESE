@@ -54,9 +54,16 @@ class _Params(types.SimpleNamespace):
             raise ValueError(f"there is no parameter module {short}{closest(short, _MODULES)}; "
                              f"the modules are {', '.join(_MODULES)}")
         if name not in self.names(short):
-            near = closest(name, self.names(short))
+            near = closest(name, self.names(short)) or self.elsewhere(name, short)
             raise ValueError(f"{file_of(short)} has no parameter {name}{near}")
         setattr(getattr(self, short), name, value)
+
+    def elsewhere(self, name, short):
+        """' (did you mean Module.NAME?)' for the name closest to `name` in the other modules, or ''
+        (Run.WORKER finds Parallel.WORKERS)."""
+        others = {n.upper(): f"{s}.{n}" for s in reversed(list(_MODULES)) if s != short for n in self.names(s)}
+        near = difflib.get_close_matches(name.upper(), list(others), n=1, cutoff=0.6)
+        return f" (did you mean {others[near[0]]}?)" if near else ""
 
     def names(self, short):
         """The parameters of one module: its names in capitals."""
