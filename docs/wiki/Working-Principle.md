@@ -15,7 +15,7 @@ for stage in STAGES:
 
 | # | Stage | Gets | Gives | What it does |
 |---|---|---|---|---|
-| 1 | `s1_read` | `.kicad_pcb` file | `RawBoard` | Parses the file and lists the copper layers, the board thickness and the file format; every rule that depends on the KiCad version is in `parse_kicad_version.py`. Warns outside KiCad 4 to 10 and above eight copper layers; stops if `F.Cu` or `B.Cu` is missing |
+| 1 | `s1_read` | `.kicad_pcb` file | `RawBoard` | Parses the file and lists the copper layers, the board thickness and the file format; every rule that depends on the KiCad version is in `parse_kicad_version.py`. Warns outside the tested file formats (the 2013 builds before KiCad 4 to KiCad 10) and above eight copper layers; stops if `F.Cu` or `B.Cu` is missing |
 | 2 | `s2_collect` | `RawBoard` | `Items` | Every track, pad, zone fill, graphic, text and via as a flat shape on its layer, with its net, in KiCad's frame; the stack-up from Board Setup; counts of what was read and what was skipped |
 | 3 | `s3_resolve` | `Items` | `Regions` | The outline; the copper joined per layer and net, clipped and drilled; barrels, edge plating, mask openings and silkscreen; everything moved to the board frame and snapped to the grid |
 | 4 | `s4_geometry` | `Regions` | `PrismSet` | The heights from the stack-up, once; every part as prisms, each a flat region between two heights |
@@ -93,10 +93,13 @@ mesh = mesh_of_boundary(boundary)                  # faces cut into triangles, t
 - `Run.WORKERS` parts are built at once, the biggest first, each in a process of its own (much of
   the work is Python's, which threads would take in turn; a board of under 20,000 coordinates is
   built part after part, as starting the processes would take longer). The files come out the same,
-  byte for byte, however many processes ran. Every part keeps its faces (its `Boundary`), and the
+  byte for byte, however many processes ran, but for the time in the STEP file's header, and the
+  times in `report.txt` and `parameters.txt`. Every part keeps its faces (its `Boundary`), and the
   STEP writer writes those same faces as a closed solid.
 - Visual mode does the same for all parts at once and keeps only the faces between material and
-  air (`skin_faces.py`, `skin_mesh.py`, see [Output Modes](Output-Modes.md)).
+  air (`skin_faces.py`, `skin_mesh.py`, see [Output Modes](Output-Modes.md)). There each part is
+  sliced in a process of its own, as above; the faces are then found, and the hidden triangles
+  dropped, in `Run.WORKERS` threads.
 - Last, every mesh is scaled to the output units, turned to the output orientation and shaded
   smooth across edges flatter than `Run.SMOOTH_SHADE_ANGLE_DEG` (`transform.py`). The meshes are
   KESE's own (`kese/core/mesh.py`), and so are the GLB, STL, OBJ and STEP writers (`kese/s7_write/`).

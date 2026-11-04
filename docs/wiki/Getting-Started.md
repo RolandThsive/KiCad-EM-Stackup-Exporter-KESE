@@ -64,13 +64,16 @@ the command is run from.
    layers, the mode, any warnings, and the output folder:
 
    ```text
-   hdi_module: KiCad format 20221018, 6 copper layers, mode simulation
-     -> Output/hdi_module/simulation_GLB  (hdi_module.glb, materials.json)  in 0m 12s
-   pcie_card: KiCad format 20221018, 4 copper layers, mode simulation
-     -> Output/pcie_card/simulation_GLB  (pcie_card.glb, materials.json)  in 0m 14s
-   rf_module: KiCad format 20221018, 4 copper layers, mode simulation
-     -> Output/rf_module/simulation_GLB  (rf_module.glb, materials.json)  in 0m 16s
+   hdi_module: KiCad format 20221018 (KiCad 7), 6 copper layers, mode simulation
+     -> Output/hdi_module/simulation_GLB  (hdi_module.glb, materials.json)  in 0m 08s
+   pcie_card: KiCad format 20221018 (KiCad 7), 4 copper layers, mode simulation
+     -> Output/pcie_card/simulation_GLB  (pcie_card.glb, materials.json)  in 0m 10s
+   rf_module: KiCad format 20221018 (KiCad 7), 4 copper layers, mode simulation
+     -> Output/rf_module/simulation_GLB__1  (rf_module.glb, materials.json)  in 0m 17s
    ```
+
+   The repository already holds example runs of `rf_module` in `Output/rf_module/`, and a run
+   never overwrites a folder, so this board's first run goes to `simulation_GLB__1`.
 
 4. Open `Output/<board>/simulation_GLB/report.txt`. It lists the stack-up heights, every item that
    was read, every item that was skipped and why (hidden text and text on layers that are not drawn
@@ -100,7 +103,7 @@ python run_KESE.py --version
 | `--mode` | `simulation` or `visual`. Default: `Run.MODE`. |
 | `--format` | Any of `glb`, `stl`, `obj`, `step`, several at once. Default: `Run.FILE_FORMAT` (`["glb"]`). Visual mode allows only `glb` and `obj`. |
 | `--for` | Applies a preset from `Run.PRESETS` before any `--set`: `freecad`, `openems`, `viewer`. See [Choosing An Export](Choosing-An-Export.md). |
-| `--verify` | Runs the Verifier after the model files are written (2 to 4 s on the example boards). See [Checks, Errors And Warnings](Checks-Errors-And-Warnings.md). |
+| `--verify` | Runs the Verifier after the model files are written (1 to 3 s on the example boards). See [Checks, Errors And Warnings](Checks-Errors-And-Warnings.md). |
 | `--out` | Output root. Default: `Run.OUTPUT_DIR` (`Output/`). |
 | `--set Module.NAME=value` | Overrides one parameter for this run. `Module` is the short name of the parameter file (`Run`, `Board`, `Copper`, `SolderMask`, `Silkscreen`, `Finish`, `Geometry`, `Color`). The value is parsed as a Python literal (`0.02`, `True`); anything that does not parse, such as `net`, is kept as a string. Quote a list for the shell, as in `--set 'Run.FILE_FORMAT=["glb","stl"]'`: unquoted, the shell strips its inner quotes and the run stops. An unknown name stops the run. |
 | `--version` | Prints `kese 2.2.0`. |

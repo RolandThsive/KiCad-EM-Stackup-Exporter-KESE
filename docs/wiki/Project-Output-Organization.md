@@ -31,7 +31,8 @@ KiCad-EM-Stackup-Exporter-KESE/
 │   │   ├── s9_report/           report.txt and parameters.txt
 │   │   └── assets/fonts/        kicad_newstroke.json.gz and its notice; custom fonts go here
 │   ├── Input/                   boards to export (three examples included)
-│   ├── Output/                  one folder per board and run (ignored by git except .gitkeep)
+│   ├── Output/                  one folder per board and run (ignored by git, except .gitkeep and
+│   │                            four example runs of rf_module in Output/rf_module/)
 │   ├── tests/                   regression suite, layout rules, test boards, baseline.json
 │   └── tools/                   make_swatches.py: the colour boxes of docs/ColorSwatches/
 ├── docs/wiki/, docs/images/     this wiki, and its pictures

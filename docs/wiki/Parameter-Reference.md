@@ -35,9 +35,9 @@ What to make, where, and in which formats.
 
 | Name | Default | Range | Meaning |
 |---|---|---|---|
-| `WORKERS` | `0` | int ≥ 0 | Threads or processes that work at once. Threads where the 2D geometry library does the work (it runs outside Python's lock): the copper layers in stage 3; both sides of the solder mask and the silkscreen, and the finish's copper layers and hole spans, in stage 4; the faces of the visual-mode skin. Processes of their own, each started afresh, where much of the work is Python's: in stage 6 the parts built at once in simulation mode and the parts sliced for the visual skin, on boards of 20,000 coordinates or more (a smaller board is built in turn). `0` = one per processor thread (`os.cpu_count()`); `1` = everything in turn, in one process |
+| `WORKERS` | `0` | int ≥ 0 | Threads or processes that work at once. Threads where the 2D geometry library does the work (it runs outside Python's lock): the copper layers in stage 3; both sides of the solder mask and the silkscreen, and the finish's copper layers and hole spans, in stage 4; the faces of the visual-mode skin and the test for its hidden triangles, in stage 6. Processes of their own, each started afresh, where much of the work is Python's: in stage 6 the parts built at once in simulation mode and the parts sliced for the visual skin, when the parts hold 20,000 coordinates or more in all (fewer are built in turn, in the main process). Each process holds its own Python, numpy and shapely and the part it builds: on the three biggest boards tried, 4 processes raised the peak memory by 0.3 to 0.5 GB in simulation mode. If the processes cannot start, or one is stopped or runs out of memory, the main process builds the parts left, with a note ([Checks, Errors And Warnings](Checks-Errors-And-Warnings.md#1713-notes-worth-knowing)). `0` = one per processor thread the run may use (all of the machine's, unless a job scheduler, `taskset` or a container limits it); `1` = everything in turn, in one process. Windows holds at most 61 processes at once. |
 | `SHOW_PROGRESS` | `True` | bool | Live `running <stage> ... 1m 23s` line on a terminal |
-| `VERIFY` | `False` | bool | Run the Verifier after generation (2 to 4 s on the example boards; longer on dense boards) |
+| `VERIFY` | `False` | bool | Run the Verifier after generation (1 to 3 s on the example boards in simulation mode, under 1 s in visual mode; longer on dense boards) |
 | `VERIFY_RAYS` | `3000` | int > 0 | Vertical rays the Verifier casts through a visual model to test its surfaces |
 | `WRITE_MATERIALS_JSON` | `True` | bool | Write `materials.json` next to the outputs |
 
@@ -53,17 +53,17 @@ What to make, where, and in which formats.
 
 | Name | Default | Range | Meaning |
 |---|---|---|---|
-| `STEP_EXACT_ARCS` | `True` | bool | Write circles and arcs as true curves: where a part's outline runs through vertices on one circle (holes, vias, round pads, track ends, arc tracks, round outlines), their chords become one `CIRCLE` edge and the walls on them one `CYLINDRICAL_SURFACE` face, at every height alike; every other edge stays a line and every other face a plane. Left straight where another edge at that height passes closer to the vertices than the arc bulges out from them, which the arc would cross. Written by KESE's own writer; files are about 2.5 to 3 times smaller (the RF module in `Input/`, in m: 116 MB instead of 334 MB, written in 10.1 s against 10.4 s). Meshes are unchanged |
+| `STEP_EXACT_ARCS` | `True` | bool | Write circles and arcs as true curves: where a part's outline runs through vertices on one circle (holes, vias, round pads, track ends, arc tracks, round outlines), their chords become one `CIRCLE` edge and the walls on them one `CYLINDRICAL_SURFACE` face, at every height alike; every other edge stays a line and every other face a plane. Left straight where another edge at that height passes closer to the vertices than the arc bulges out from them, which the arc would cross. Written by KESE's own writer; files are about 2.5 to 3 times smaller (the RF module in `Input/`, in m: 116 MB instead of 334 MB, written in 8.2 s against 7.4 s). Meshes are unchanged |
 | `STEP_ARC_FIT_TOLERANCE_MM` | `0.0002` | mm > 0 | Vertices within this of one circle form an arc (2 x the snap grid) |
-| `STEP_ARC_MIN_POINTS` | `5` | int >= 3 | An arc runs through at least this many vertices |
+| `STEP_ARC_MIN_POINTS` | `5` | int ≥ 3 | An arc runs through at least this many vertices |
 | `STEP_ARC_MIN_SWEEP_DEG` | `10.0` | degrees | and turns at least this far |
 | `STEP_ARC_MAX_TURN_DEG` | `30.0` | degrees | but at most this far at one vertex, so that a polygon of fewer than 12 sides (an octagonal pad, a square) stays a polygon |
 
 Every format holds the same parts: the ones switched on with the `..._ENABLED` switch of their module
 (`Board.BOARD_ENABLED`, `Copper.COPPER_ENABLED`, `Finish.FINISH_ENABLED`, `SolderMask.SOLDER_MASK_ENABLED`,
 `Silkscreen.SILKSCREEN_ENABLED`; mask and silkscreen are off by default). A STEP file with the mask and silkscreen is 1.4 to 1.9 times as big
-(the PCIe card in `Input/`, in mm: 150 MB and 1,024 solids written in 10.5 s, against 80 MB and 788 solids
-in 8.0 s without them).
+(the PCIe card in `Input/`, in mm: 150 MB and 1,024 solids written in 7.1 s, against 80 MB and 788 solids
+in 4.9 s without them).
 
 With `STEP_EXACT_ARCS` the file uses these entities beside the planar ones: `CIRCLE` (on an
 `AXIS2_PLACEMENT_3D` at the centre, its axis the board's normal), referenced by the `EDGE_CURVE` of
@@ -224,7 +224,7 @@ These do not change dimensions.
 | `TRIANGULATE_CELL_POINTS` | `5000` | > 0 | A polygon with more points than this has its top and bottom cut into triangles strip by strip, much faster when it has many holes (earcut's time grows with the points times the holes). The points the strips add are taken out again, so the solid keeps exactly the polygon's own vertices |
 | `TRIANGULATE_CELL_MM` | `10.0` | mm > 0 | Width of those strips, as KiCad cuts big polygons into 1 cm cells before it triangulates them |
 | `SKIN_BURIED_TEST_OFFSET_MM` | `0.0005` | mm > 0 | Visual mode: a face is dropped if a point this far outside it lies inside another solid ([Output Modes](Output-Modes.md), equation (8.1)) |
-| `MESH_MERGE_DIGITS` | `8` | int | Mesh vertices that round to the same point at 10^-8 (in mm or m) are one; angles under 1e-8 rad are none |
+| `MESH_MERGE_DIGITS` | `8` | int | 10^-8: a triangle's corner angle under 10^-8 rad counts as none (it gives no weight to smooth shading), and normals whose values spread less than that are not kept. No vertices are merged |
 | `FLAT_FACET_THRESHOLD` | `5000` | > 0 | Smooth shading: two faces are one flat facet where (edge radius / edge span)² exceeds this |
 
 ### 16.7.1 How The Curve Settings Are Used
