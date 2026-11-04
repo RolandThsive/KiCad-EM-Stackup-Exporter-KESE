@@ -171,7 +171,7 @@ def _choices(help_text, module, value):
 
     def tables():
         out = []
-        for table in re.findall(r"keys of ([A-Z][A-Z0-9_]+)", help_text):
+        for table in re.findall(r"\bkeys? of ([A-Z][A-Z0-9_]+)", help_text):   # "the keys of X" or "a key of X"
             t = getattr(module, table, None)
             if isinstance(t, dict):
                 out += [k for k in t if isinstance(k, str)]
@@ -183,8 +183,16 @@ def _choices(help_text, module, value):
         wanted = value
     else:
         return []                                     # only words and lists of words have choices
+    keys = tables()
+    if keys:
+        # a table's keys, plus the other words its first sentence offers ('A key of FINISH_TYPES, or "file" ...');
+        # later sentences may quote values of something else (a stack-up's "None")
+        first = re.split(r"\.\s", help_text, maxsplit=1)[0]
+        words = list(dict.fromkeys(keys + [m.group(1) for m in _QUOTED.finditer(first) if re.fullmatch(r"[\w.+-]+", m.group(1))]))
+        if set(wanted) <= set(words):
+            return words
     for words in (list(dict.fromkeys(_LISTED.findall(help_text))), quoted()):
-        words = list(dict.fromkeys(words + tables()))
+        words = list(dict.fromkeys(words + keys))
         if len(words) >= 2 and set(wanted) <= set(words):
             return words
     if isinstance(value, list) and value and all(isinstance(x, str) for x in value):
@@ -259,6 +267,11 @@ def _reset_parameters():
         importlib.reload(mod)
 
 
+def _jsonish(x):
+    """x as it comes back from the page: tuples become lists (FINISH_TYPES' layers are tuples in finish.py)."""
+    return json.loads(json.dumps(x))
+
+
 def _apply(values):
     """values {"Module.NAME": value}: the ones that differ from the files are applied with P.override, as
     `kese --set` does, and returned as the run's overrides (they head its parameters.txt)."""
@@ -270,7 +283,7 @@ def _apply(values):
         mod = getattr(P, short, None)
         if mod is None or not hasattr(mod, name):
             continue
-        if getattr(mod, name) != value:
+        if _jsonish(getattr(mod, name)) != value:
             P.override(key, value)
             overrides.append((key, value))
     for key, value in WEB_ONLY.get("forced", {}).items():   # how the browser runs it (no threads, no status line)
@@ -387,7 +400,7 @@ def export_files(values_json):
             old = "\n".join([lines[ln - 1][col:]] + lines[ln:end_ln - 1] + [lines[end_ln - 1][:end_col]]) if ln != end_ln \
                 else lines[ln - 1][col:end_col]
             try:
-                if ast.literal_eval(old) == new_value:
+                if _jsonish(ast.literal_eval(old)) == new_value:
                     continue
             except Exception:                                    # noqa: BLE001
                 pass
@@ -408,6 +421,20 @@ def export_zip(values_json, zip_path):
     return json.dumps({"zip": zip_path})
 
 
+def read_zip(zip_path):
+    """Values in a zip: the Export zip (parameters/*.py) or a run's download (its parameters.txt)."""
+    found, ignored = {}, []
+    with zipfile.ZipFile(zip_path) as z:
+        for info in z.infolist():
+            base = os.path.basename(info.filename)
+            if info.is_dir() or not (base.endswith(".py") or base == "parameters.txt"):
+                continue
+            r = json.loads(read_values(z.read(info).decode("utf-8", "replace"), base))
+            found.update(r["values"])
+            ignored += [k for k in r["ignored"] if k not in ignored]
+    return json.dumps({"values": found, "ignored": ignored})
+
+
 def read_values(text, file_name=""):
     """Values in an imported parameters.txt (any run, web or desktop) or a parameters/*.py file:
     {"values": {"Module.NAME": value}, "ignored": [names this version does not have]}."""
@@ -426,7 +453,7 @@ def read_values(text, file_name=""):
             elif key not in set(WEB_ONLY.get("hidden", [])):
                 try:
                     found[key] = ast.literal_eval(node)
-                except ValueError:
+                except (ValueError, TypeError, SyntaxError):       # an expression, not a plain value: left as it is
                     pass
         return json.dumps({"values": found, "ignored": ignored})
     for line in text.split("\n"):

@@ -87,7 +87,7 @@ html.phone .desktop-only { display: none !important; }
 #phone-message h1 { font-size: 30px; margin-bottom: 18px; }
 
 /* ---- page frame -------------------------------------------------------- */
-#app { display: grid; grid-template-rows: auto 1fr auto; height: 100vh; padding: 0 16px 6px; gap: 10px; }
+#app { display: grid; grid-template-columns: minmax(0, 1fr); grid-template-rows: auto 1fr auto; height: 100vh; padding: 0 16px 6px; gap: 10px; }
 #topbar { position: relative; display: flex; align-items: center; gap: 18px; padding: 12px 0 0; min-height: 56px; }
 /* room for the blog's Home / Back buttons: BloggerPage.html's #coilgen-nav is 16 px from the right edge and holds two
    38 px buttons with an 8 px gap (100 px), plus 12 px of space */
@@ -324,7 +324,8 @@ button.group-title.collapsed .chevron { transform: rotate(-90deg); }
 .results b { color: var(--text); font-weight: 600; }
 /* Verify, Reset and Generate on one row (Reset and Generate the same height; Generate takes the rest) */
 .generate-row { display: flex; align-items: center; gap: 10px; padding-top: 8px; border-top: 1px dashed var(--divider); }
-.generate-row .primary-btn { flex: 1; }
+.generate-row .primary-btn { flex: 1; min-width: 0; padding-inline: 10px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }   /* "Loading Python…" stays on one line */
+.generate-row .reset-btn { flex: none; }
 .reset-btn {                                     /* the blog's yellow: --warning-edge border, cream fill */
   font: inherit; font-size: 15px; font-weight: 600; color: var(--text);
   background: var(--glass); border: 2px solid var(--warning-edge); border-radius: var(--radius);
@@ -372,8 +373,11 @@ button.group-title.collapsed .chevron { transform: rotate(-90deg); }
 
 /* ---- checks (the right column: checks, parts, download) ------------------------------- */
 #side { display: flex; flex-direction: column; gap: 8px; padding: 12px 14px; overflow-y: auto; }
+#side > * { flex-shrink: 0; }                    /* a short window scrolls the column, it does not squash Checks or Parts */
 #side > h2 { margin-top: 6px; }
-.checks-head { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+.checks-head { display: flex; align-items: center; gap: 8px; }           /* one row: the counts give way, Info stays at the right */
+.checks-head .counts { flex: 1 1 auto; min-width: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.checks-head > .switch-row { flex: none; margin-left: auto; }
 .counts { font-size: 12.5px; color: var(--text-2); margin-right: auto; }
 .counts .e { color: var(--error); font-weight: 600; }
 .counts .w { color: var(--warning); font-weight: 600; }
@@ -500,10 +504,11 @@ dialog pre { font-family: var(--mono); font-size: 12px; white-space: pre-wrap; m
 .table-body > .table-row > .swatch { max-width: none; }
 .field-head .mono-name.field-note { margin-left: auto; }
 /* Advanced: the control, then the parameter's name at the right of the same row */
-.field-body { display: flex; align-items: center; gap: 10px; }
+.field-body { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 10px; }   /* no room beside a wide control: the name goes under it, at the right */
 .field-body > :first-child { min-width: 0; }
+.field-body > .auto-row, .field-body > .stepper, .field-body > .segmented, .field-body > .switch-row, .field-body > .num-row { flex: none; }   /* a control keeps its size; the name beside it wraps */
 .field-body > .dropdown, .field-body > .table-edit, .field-body > .dropdown .dropdown-btn, .field-body > .text-input, .field-body > .multi-row { flex: 1; }
-.field-name { margin-left: auto; flex: 0 1 auto; max-width: 48%; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; text-align: right; }
+.field-name { margin-left: auto; flex: 0 1 auto; max-width: 48%; text-align: right; line-height: 1.3; overflow-wrap: normal; }   /* wraps at the underscores (<wbr>), never cut */
 .field-body:has(> .table-edit, > .multi-row) { align-items: flex-start; }
 .field-body:has(> .table-edit) .field-name, .field-body:has(> .multi-row) .field-name { padding-top: 9px; }
 .field.inactive .field-name::after { content: " (not used now)"; }
@@ -513,7 +518,11 @@ dialog pre { font-family: var(--mono); font-size: 12px; white-space: pre-wrap; m
 /* preview */
 /* the top row of the preview: tools at the left, the cross-section slider filling the space, the views at the right
    with Showing under them */
-.view-top { position: absolute; top: 10px; left: 10px; right: 10px; z-index: 10; display: flex; align-items: flex-start; gap: 10px; pointer-events: none; }
+.view-top { position: absolute; top: 10px; left: 10px; right: 10px; z-index: 10; display: flex; flex-wrap: wrap; align-items: flex-start; gap: 10px; pointer-events: none; }
+/* a narrow preview: the views go to a second row, at the right, rather than over the slider */
+.view-top .sliders { flex: 1 1 200px; container-type: inline-size; }
+.view-top .view-right { margin-left: auto; }
+@container (max-width: 230px) { .view-slider .vs-label { display: none; } }
 .view-top > * { pointer-events: auto; }
 .view-top .view-slider { height: 32px; box-sizing: border-box; }
 /* the views exactly as tall as the tools and the slider, whatever the font, so the row lines up */
@@ -527,7 +536,7 @@ dialog pre { font-family: var(--mono); font-size: 12px; white-space: pre-wrap; m
 .canvas-wrap { background: radial-gradient(ellipse at 50% 40%, #fbfaf6 0%, #ebe6da 100%); }
 .views { background: rgba(255, 255, 255, 0.6); }
 .empty-note { position: absolute; inset: 0; display: grid; place-content: center; text-align: center; font-size: 15px; color: var(--text-2); pointer-events: none; line-height: 1.6; }
-.readout { left: 12px; bottom: 16px; max-width: calc(100% - 24px); }
+.readout { left: 12px; bottom: 16px; max-width: calc(100% - 24px); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .hover-card { position: absolute; right: 12px; bottom: 16px; max-width: 360px; z-index: 4; background: rgba(255, 255, 255, 0.94); border-radius: 10px;
   padding: 7px 10px; box-shadow: var(--shadow-card); font-size: 12px; line-height: 1.5; border-left: 4px solid var(--accent); pointer-events: none; }
 .hover-title { margin-bottom: 3px; overflow-wrap: anywhere; }
@@ -535,9 +544,9 @@ dialog pre { font-family: var(--mono); font-size: 12px; white-space: pre-wrap; m
 .hover-line { line-height: 1.55; }
 .hover-line b { font-weight: 600; color: var(--text); }
 .sliders { flex: 1; min-width: 0; display: flex; gap: 12px; }
-.view-slider { flex: 1; display: flex; align-items: center; gap: 10px; font-size: 12.5px; background: rgba(255, 255, 255, 0.8);
+.view-slider { flex: 1; min-width: 0; display: flex; align-items: center; gap: 10px; font-size: 12.5px; background: rgba(255, 255, 255, 0.8);
   padding: 4px 12px; border-radius: 10px; box-shadow: var(--shadow-btn); }
-.view-slider output { width: 44px; text-align: right; font-variant-numeric: tabular-nums; }
+.view-slider output { flex: none; width: 44px; text-align: right; font-variant-numeric: tabular-nums; }
 /* parts */
 .parts { display: flex; flex-direction: column; max-height: 30vh; overflow-y: auto; scrollbar-width: thin; }
 .part { display: grid; grid-template-columns: 14px 1fr auto; gap: 8px; align-items: center; padding: 3px 4px; border: 0; background: none;
@@ -588,4 +597,21 @@ dialog pre { font-family: var(--mono); font-size: 12px; white-space: pre-wrap; m
 /* people who ask for less motion get none: this wins over every transition and animation above */
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { transition: none !important; animation: none !important; }
+}
+
+/* narrow laptops: Reset a little slimmer, so Verify, Reset and Generate keep the panel's inset */
+@media (max-width: 1360px) {
+  .generate-row .reset-btn { padding: 8px 14px; }
+  .stale-badge { white-space: normal; width: max-content; max-width: 170px; text-align: center; line-height: 1.25; padding: 3px 10px; }   /* two short lines, never cut */
+}
+/* small windows: "Settings changed" alone, on one line (its tip says the rest) */
+@media (max-width: 1180px) {
+  .stale-badge { white-space: nowrap; max-width: none; padding: 3px 8px; font-size: 11.5px; }
+  .stale-badge .sb-more { display: none; }
+  .top-mid { flex: none; min-width: max-content; }
+}
+/* the narrowest layout also has the page's own scrollbar: the top bar's buttons slim down to keep it on one line */
+@media (max-width: 1080px) {
+  #topbar { gap: 6px; }
+  .top-actions .glass-btn { padding-left: 6px; padding-right: 6px; font-size: 12px; }
 }

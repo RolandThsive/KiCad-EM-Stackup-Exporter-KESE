@@ -253,10 +253,10 @@ export class Viewer {
   view(name) {
     this.lastView = name;
     const deg = THREE.MathUtils.degToRad;
-    // Top and Bottom look straight down or up, the board's top edge up on screen.  OrbitControls keeps camera.up as
+    // Top and Bottom look straight down or up, the board's top edge up on screen (Bottom mirrored, as KiCad's flipped view).  OrbitControls keeps camera.up as
     // it was when it started (+Y), so the views go near the poles instead of changing up (which made turning wild);
     // turning is off there, zoom and pan stay.  3D View (iso) turns freely again.
-    const [theta, phi] = { iso: [-25, 60], top: [0, 0.001], bottom: [0, 179.999] }[name] || [-25, 60];
+    const [theta, phi] = { iso: [-25, 60], top: [0, 0.001], bottom: [180, 179.999] }[name] || [-25, 60];
     const fit = 0.5 * this.size / Math.sin(deg(this.camera.fov / 2)) * 0.8 / Math.min(1, this.camera.aspect);
     let d = Math.max(fit, 1e-6);
     if ((name === "top" || name === "bottom") && this.root) {     // straight on: the whole board fits, with a margin
