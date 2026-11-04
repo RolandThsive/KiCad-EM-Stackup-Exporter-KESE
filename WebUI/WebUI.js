@@ -456,7 +456,19 @@ function colorGroups(keys) {
   const names = (param, suffix = "") => Object.keys(V[param] || {}).map((k) => ({ param, key: k, label: `${k.replace(/\b\w/g, (c) => c.toUpperCase())}${suffix}` }));
   const fallback = (parts) => parts.map((k) => mat(k, stackup ? `${k} (if the board names no colour)` : k));
   const layered = !visual && V["Board.DIELECTRIC_GROUPING"] === "layer" && has("Board_core");
-  const on = (k) => V[k] !== false;                               // the part switches: a group shows only while its parts are built
+  const on = (k) => V[k] !== false;
+  // With Use Stackup Colors on, the colour of a side's mask / silk comes from the board's stack-up when it names one
+  // the tables know (or a #RRGGBB "User defined" colour), as kese/s5_materials/materials.py picks it.
+  const boardColors = state.board ? state.board.colors || {} : null;
+  const fromBoard = (side, kind) => {
+    const v = boardColors && boardColors[`${side === "Top" ? "F" : "B"}.${kind}`];
+    if (!v) return null;
+    if (/^#[0-9a-f]{6}([0-9a-f]{2})?$/i.test(v)) return { name: v, color: v.slice(0, 7) };
+    const t = V[kind === "Mask" ? "Color.STACKUP_MASK_COLORS" : "Color.STACKUP_SILK_COLORS"] || {}, c = t[v.toLowerCase()];
+    return c ? { name: v, color: c } : { name: v, color: null };
+  };
+  const own = (side, kind) => !stackup || (boardColors && !(fromBoard(side, kind) || {}).color);
+                               // the part switches: a group shows only while its parts are built
   const metals = Object.keys(V["Finish.FINISH_CONDUCTIVITY_S_PER_M"] || {});
   const groups = [
     on("Board.BOARD_ENABLED") && { title: "Board Colors", tip: "The laminate", items: layered ? [mat("Board_core", "Core"), mat("Board_prepreg", "Prepreg")] : [mat("Board", "Laminate")] },
@@ -466,26 +478,43 @@ function colorGroups(keys) {
       items: metals.length ? metals.map((m) => mat(m)) : ["Nickel", "Gold", "Palladium", "Tin", "Silver", "OSP"].map((m) => mat(m)) },
     // One group per side, for MATERIALS' "<side> Solder Mask" (and, in visual mode, "<side> Mask over Copper").
     // Its dropdown picks a colour by name from STACKUP_MASK_COLORS; the over-copper shade of the same name
-    // (STACKUP_MASK_OVER_COPPER_COLORS) is set with it.
-    ...["Top", "Bottom"].map((side) => on("SolderMask.SOLDER_MASK_ENABLED") && has(`${side} Solder Mask`) && {
-      title: `${side} Solder Mask Colors`,
-      tip: `The ${side.toLowerCase()} solder mask (Color.MATERIALS "${side} Solder Mask"${visual ? `, and "${side} Mask over Copper"` : ""})` +
-        (stackup ? ": used when the board's stack-up names no colour" : ""),
+    // (STACKUP_MASK_OVER_COPPER_COLORS) is set with it.  With Use Stackup Colors on, a side shows only when the
+    // board's stack-up names no colour for it (the board's own colours are listed above instead).
+    ...["Top", "Bottom"].map((side) => on("SolderMask.SOLDER_MASK_ENABLED") && has(`${side} Solder Mask`) && own(side, "Mask") && {
+      title: `${side} Solder Mask Colors` + (stackup ? " (the board names none)" : ""),
+      tip: `The ${side.toLowerCase()} solder mask (Color.MATERIALS "${side} Solder Mask"${visual ? `, and "${side} Mask over Copper"` : ""})`,
       items: [{ ...mat(`${side} Solder Mask`), pair: visual && has(`${side} Mask over Copper`) ? { param: "Color.MATERIALS", key: `${side} Mask over Copper` } : null }],
-      presets: { names: V["Color.STACKUP_MASK_COLORS"] || {}, pairNames: V["Color.STACKUP_MASK_OVER_COPPER_COLORS"] || {} },
-      extra: side === "Bottom" ? [visual && "Color.VISUAL_MASK_OPAQUE", visual && stackup && "Color.USER_MASK_OVER_COPPER_LIGHTEN"] : [] }),
-    on("Silkscreen.SILKSCREEN_ENABLED") && { title: "Silkscreen Colors", tip: "The silkscreen: with Use Stackup Colors on, the colour of each name the board's stack-up can use",
-      items: [...(stackup ? names("Color.STACKUP_SILK_COLORS") : []), ...fallback(["Top Silkscreen", "Bottom Silkscreen"])] },
+      presets: { names: V["Color.STACKUP_MASK_COLORS"] || {}, pairNames: V["Color.STACKUP_MASK_OVER_COPPER_COLORS"] || {} } }),
+    on("SolderMask.SOLDER_MASK_ENABLED") && { title: "", items: [], extra: [visual && "Color.VISUAL_MASK_OPAQUE", visual && stackup && "Color.USER_MASK_OVER_COPPER_LIGHTEN"] },
+    on("Silkscreen.SILKSCREEN_ENABLED") && { title: "Silkscreen Colors" + (stackup ? " (the board names none)" : ""), tip: "The silkscreen (Color.MATERIALS)",
+      items: ["Top", "Bottom"].filter((side) => own(side, "SilkS")).map((side) => mat(`${side} Silkscreen`)) },
   ].filter(Boolean);
   const out = [];
   if (keys.includes("Color.USE_STACKUP_COLORS")) out.push(field(state.byKey["Color.USE_STACKUP_COLORS"]));
+  if (stackup && (on("SolderMask.SOLDER_MASK_ENABLED") || on("Silkscreen.SILKSCREEN_ENABLED"))) out.push(boardColorNote(fromBoard, on));
   for (const g of groups) {
     const items = g.items.filter(Boolean);
-    if (!items.length) continue;
-    out.push(colorGroup(g, items));
+    if (items.length) out.push(colorGroup(g, items));
     for (const k of g.extra || []) if (k && keys.includes(k)) out.push(field(state.byKey[k]));
   }
   return out;
+}
+/* What the board's stack-up names for each side's mask and silk, with Use Stackup Colors on. */
+function boardColorNote(fromBoard, on) {
+  const box = el("div", { class: "field board-colors" }, el("div", { class: "field-head" },
+    el("span", { class: "field-label", "data-tip": "The colours set in KiCad (Board Setup > Physical Stackup), used because Use Stackup Colors is on" }, "Board's Stack-up Colors")));
+  if (!state.board) { box.append(el("p", { class: "hint" }, "Upload a board to see the colours its stack-up names.")); return box; }
+  const kinds = [on("SolderMask.SOLDER_MASK_ENABLED") && ["Mask", "Solder Mask"], on("Silkscreen.SILKSCREEN_ENABLED") && ["SilkS", "Silkscreen"]].filter(Boolean);
+  const list = el("div", { class: "board-colors-list" });
+  for (const [kind, label] of kinds) for (const side of ["Top", "Bottom"]) {
+    const c = fromBoard(side, kind);
+    list.append(el("div", { class: "board-color" },
+      el("span", { class: "board-color-dot" + (c && c.color ? "" : " none"), style: c && c.color ? `background:${c.color}` : "" }),
+      el("span", { class: "board-color-name" }, `${side} ${label}`),
+      el("span", { class: "board-color-value" }, !c ? "none named, set below" : c.color ? c.name : `${c.name} (unknown name, set below)`)));
+  }
+  box.append(list);
+  return box;
 }
 function colorGroup(g, items) {
   const id = "color:" + g.title;
@@ -498,9 +527,10 @@ function colorGroup(g, items) {
   const changed = entries.filter((it) => !same(valueOf(it), defaultOf(it)));
   const putOf = (it) => (val) => setValues({ [it.param]: { ...state.values[it.param], [it.key]: val } }, "field");
 
-  const head = el("div", { class: "field-head" }, el("span", { class: "field-label", "data-tip": g.tip }, g.title));
+  const head = el("summary", { class: "field-head" }, el("span", { class: "field-label", "data-tip": g.tip }, g.title));
   if (changed.length) head.append(el("button", { type: "button", class: "reset-one", "data-tip": "Back to the file's colours for this group",
-    onclick: () => {
+    onclick: (e) => {
+      e.preventDefault(); e.stopPropagation();                      // in the summary: reset, do not open / close
       const next = {};
       for (const it of changed) (next[it.param] = next[it.param] || { ...state.values[it.param] })[it.key] = clone(defaultOf(it));
       setValues(next, "field");
@@ -524,7 +554,8 @@ function colorGroup(g, items) {
       }
       setValues(next, "field");
     });
-  } else pick = dropdown(items.map(labelOfItem), sel.label, (label) => { state.tableSel[id] = label; renderSections(); });
+  } else if (items.length > 1) pick = dropdown(items.map(labelOfItem), sel.label, (label) => { state.tableSel[id] = label; renderSections(); });
+  // one entry only: no dropdown, the swatch sits right under the title
   const body = el("div", { class: "table-body" });
   const rows = (it, title) => {
     const x = valueOf(it), put = putOf(it);
@@ -537,8 +568,12 @@ function colorGroup(g, items) {
   };
   rows(sel, sel.pair ? "Mask" : null);
   if (sel.pair) rows(sel.pair, "Over copper");
-  return el("div", { class: "field" + (changed.length ? " changed" : ""), "data-group": g.title }, head,
-    el("div", { class: "table-edit" }, el("div", { class: "table-head" }, pick), body));
+  // each group folds (closed when the page starts), so Colorization opens as a short list of what can be coloured
+  const det = el("details", { class: "field cgroup" + (changed.length ? " changed" : ""), "data-group": g.title }, head,
+    el("div", { class: "table-edit" }, pick ? el("div", { class: "table-head" }, pick) : null, body));
+  det.open = state.open.has(id);
+  det.addEventListener("toggle", () => { if (det.open) state.open.add(id); else state.open.delete(id); });
+  return det;
 }
 
 /* ---- sections: one per parameter file ---------------------------------------------------------- */
@@ -654,11 +689,31 @@ function boardMeta(text) {
   if (zones) out.push(`${zones} zones`);
   return out.join(" · ");
 }
+/* The colours the board's stack-up names (Board Setup > Physical Stackup): {"F.Mask": "Green", "B.SilkS": "White", ...},
+   read as kese/s2_collect/stackup.py reads them (the (color ...) of each (layer ...) in (setup (stackup ...))). */
+function stackupColors(text) {
+  const at = text.search(/\(stackup[\s)]/);
+  if (at < 0) return {};
+  let depth = 0, end = at;
+  for (; end < text.length; end++) {
+    const c = text[end];
+    if (c === '"') { end = text.indexOf('"', end + 1); if (end < 0) break; }
+    else if (c === "(") depth++;
+    else if (c === ")" && --depth === 0) break;
+  }
+  const block = text.slice(at, end + 1), out = {};
+  for (const m of block.matchAll(/\(layer\s+"([^"]+)"([^()]*(?:\((?:[^()"]|"[^"]*")*\)[^()]*)*)\)/g)) {
+    const col = /\(color\s+"([^"]*)"/.exec(m[2]);
+    if (col) out[m[1]] = col[1];
+  }
+  return out;
+}
 async function setBoard(name, bytes) {
   if (!/\.kicad_pcb$/i.test(name)) { toast("That is not a .kicad_pcb file", 4000); return; }
   const text = new TextDecoder().decode(bytes);
   if (!/^\s*\(kicad_pcb/.test(text)) { toast(`${name} does not look like a KiCad board`, 5000); return; }
-  state.board = { name, bytes, meta: boardMeta(text) };
+  state.board = { name, bytes, meta: boardMeta(text), colors: stackupColors(text) };
+  renderSections();                                                 // Colorization shows the board's own colours
   $("board-name").textContent = name;
   $("board-meta").textContent = `${bytesText(bytes.byteLength)} · ${state.board.meta}`;
   $("drop").classList.add("has-board");
