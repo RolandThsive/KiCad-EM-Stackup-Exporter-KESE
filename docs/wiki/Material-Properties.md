@@ -101,8 +101,8 @@ them must be given them by hand.
 
 - **openEMS**: read `parts`, create one material per part from `properties`, and import the file
   named in `file_names.stl`. See [openEMS Workflow](OpenEMS-Workflow.md).
-- **HFSS / CST / COMSOL / FEKO**: the STEP solids carry the part names; assign the material of
-  each name by hand or by script from `properties`.
+- **FreeCAD, and Elmer or CalculiX through its FEM workbench**: the STEP solids carry the part
+  names; assign the material of each name by hand or by script from `properties`.
 - **Any script**: `file_names` ties every entry to the STL file, GLB node and STEP solid of the
   same part; the OBJ object and material names are the STL name without `.stl`.
 

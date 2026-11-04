@@ -11,9 +11,8 @@ from kese.s8_verify.vertical_rays import vertical_hits
 from parameters import P
 
 
-def verify(model, glb_path=None, rays=None):
+def check_meshes(model, glb_path):
     """(ok, report lines) of the checks below."""
-    rays = rays or P.Run.VERIFY_RAYS
     lines = []
     meshes = model.meshes
     scale = 1000.0 if model.units == "m" else 1.0      # report in mm
@@ -34,7 +33,7 @@ def verify(model, glb_path=None, rays=None):
             f"{found[0][4]:+.4f} mm ({len(found)} place{'s' * (len(found) > 1)})" if found else "none"))
         ok &= not found
     else:
-        met, wrong = _skin_surfaces(meshes, rays)
+        met, wrong = _skin_surfaces(meshes, P.Run.VERIFY_RAYS)
         lines.append(f"  visible surfaces per vertical ray: faces met {met}; rays where in and out do not alternate: {wrong}")
         ok &= wrong == 0
     if glb_path is not None:
@@ -48,18 +47,13 @@ def verify(model, glb_path=None, rays=None):
     return ok, lines
 
 
-def _rays(meshes, n):
-    corners = np.array([m.bounds for m in meshes.values()])
-    b = np.array([corners[:, 0].min(axis=0), corners[:, 1].max(axis=0)])
-    rng = np.random.default_rng(1)
-    pts = rng.uniform(b[0][:2], b[1][:2], size=(n, 2))
-    return pts
-
-
 def _skin_surfaces(meshes, n):
     """({faces met: rays}, rays whose faces, from the top down, do not take turns into the material
-    and out of it, as a closed outer surface does)."""
-    xy = _rays(meshes, n)
+    and out of it, as a closed outer surface does).  The n rays start at random points (fixed seed)
+    over the bounding box of every mesh."""
+    corners = np.array([m.bounds for m in meshes.values()])
+    lo, hi = corners[:, 0].min(axis=0), corners[:, 1].max(axis=0)
+    xy = np.random.default_rng(1).uniform(lo[:2], hi[:2], size=(n, 2))
     vs, fs, at = [], [], 0
     for m in meshes.values():
         vs.append(np.asarray(m.vertices, dtype=float))

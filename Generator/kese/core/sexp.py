@@ -38,8 +38,8 @@ def _tokenize(text):
 
 def parse(text):
     """Nested lists; quoted strings and bare atoms both become str."""
-    root, stack = [], []
-    stack.append(root)
+    root = []
+    stack = [root]
     for tok in _tokenize(text):
         if tok == "(":
             node = []

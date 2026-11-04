@@ -31,7 +31,9 @@ python tests/test_boards.py                     # the regression suite over ever
 | `<file>: the file ends with N parentheses still open: it is cut short (an incomplete download or copy?)` | The file stops in the middle; KiCad refuses it too. Save or download it again. |
 | `<file>: copper layers ['F.Cu', 'B.Cu'] are not declared` | Both outer copper layers must exist. |
 | `MODE must be 'simulation' or 'visual', not ...` | A typo in `Run.MODE` (or `--set Run.MODE=...`). A typo in `--mode` is caught earlier by the command line: `argument --mode: invalid choice`, exit code 2. |
-| `unknown FILE_FORMAT entries [...]` | Only `glb`, `stl`, `obj`, `step`. |
+| `unknown FILE_FORMAT entries [...]` | Only `glb`, `stl`, `obj`, `step`. One format may be given as a list or as a single word (`--set Run.FILE_FORMAT=step`). |
+| `<Module>.<NAME> must be '...' or '...', not ...` | A setting that takes one of a few words (those whose range [Parameter Reference](Parameter-Reference.md) gives as words with `/` between them, such as `Run.UNITS` or `Copper.COPPER_GROUPING`) has another value. The run stops before reading the board. |
+| `Run.WORKERS must be a whole number, 0 or more (0: one per processor thread), not ...` | `0` uses every processor thread; a negative or fractional value means nothing. |
 | `visual mode is a surface, not solids: FILE_FORMAT may only contain glb / obj` | STL and STEP need closed solids; use simulation mode. |
 | `no Edge.Cuts outline and OUTLINE_FALLBACK is 'error'` | Draw a closed outline, or set `Board.OUTLINE_FALLBACK = "copper_hull"`. |
 | `missing Python package(s): ...` | Printed before anything runs, with the `pip install` line to use. |
@@ -47,6 +49,7 @@ python tests/test_boards.py                     # the regression suite over ever
 | `N copper layers: more than the 8 this project has been tested with` | The layers are still modelled. |
 | `layers named by the user or in an old language, read as KiCad reads them: TOP = F.Cu, ...` | Copper layers with names other than `F.Cu`, `B.Cu` and `In<n>.Cu` (KiCad 3 to 5 let the user rename them; KiCad 3 also wrote Italian, Polish and French names such as `Contorno.scheda`). Each is read as KiCad reads it: copper layers by their place in the list (first = `F.Cu`, last = `B.Cu`, the ones between `In1.Cu`, `In2.Cu`, ...), the old names by KiCad's own table. |
 | `N copper zone(s) have no fill stored in the file and are ignored` | Fill the zones in KiCad (press **B**) and save. Until then those zones produce no copper. |
+| `N via(s) name a copper layer the board does not have and are left out` | A damaged file: a via ends on a copper layer that the board's `(layers ...)` list does not have. The via is missing from the model and counted under `skipped` in `report.txt`; check it in KiCad. |
 | `Edge.Cuts lines/arcs do not form a closed outline` | The outline could not be polygonized; closed shapes on `Edge.Cuts` are still used. |
 | `no Edge.Cuts outline; using the copper's convex hull + 1.0 mm` | The fallback outline. |
 | `DIELECTRIC_SPLIT=... unknown, using 'even'` | Only `"even"` is implemented. |
@@ -203,7 +206,12 @@ compares every part's volume with `tests/baseline.json`:
 python -m pytest tests                 # or:  python tests/test_boards.py
 python tests/test_boards.py --accept   # re-record the baseline after an intended geometry change
 python tests/test_boards.py --add      # record only the boards the baseline does not have yet
+python tests/test_boards.py --faceted  # the STEP files with flat faces only (Run.STEP_EXACT_ARCS = False)
+python tests/test_boards.py --healed   # read the STEP files back with OpenCascade's healing (slower)
 ```
+
+Any other option stops the suite with `unknown option: ...`, so a misspelt `--heald` does not run
+the plain suite instead. `pytest` itself is installed with `python -m pip install pytest`.
 
 A board fails when the Verifier fails (an open or wrongly wound part or an overlap in simulation
 mode, faces that do not take turns in visual mode), when a part's volume moved from the recorded
@@ -218,13 +226,57 @@ or a new one appeared, or (when OCP, `cadquery-ocp`, is installed) when the STEP
 a free edge, checked by reading it back with OCP. In visual mode the "volume" is the signed volume
 of an open surface: it means nothing on its own, but it moves when the skin does.
 
-Reading a STEP file back takes longer than writing it: about 3.5 minutes for the 65 MB file of
-`16b_edge_plating_border`, over a minute to turn the file into shapes and two more to check the
-solids. So
-`python tests/test_boards.py` reads the STEP files back in two background processes
-(`AUDITORS` in `tests/test_boards.py`, `tests/step_audit.py`) while it exports the next boards,
-and prints a board's line once its file is checked, in the order the boards ran, with the time the
-read-back took (`STEP read back in 3.4 s`). Under `pytest` every board is checked in turn.
+Reading a STEP file back takes longer than writing it. The suite reads it as written, without
+OpenCascade's shape healing, which takes most of the reading time and would mend a fault rather
+than report it. Before the check it works out only what any reader must work out for itself: the
+curve of each edge in the parameters of each of its faces (KESE writes none, as KiCad does not),
+and on a cylinder an edge's curve moved by a whole turn where it came out a turn off; the points
+and curves in the file stay as written (`tests/step_audit.py`). That is about 2.5 times quicker
+than reading with the healing (`python tests/test_boards.py --healed`, the check before): for the
+54 MB file of `16b_edge_plating_border`, 68 s against 169 s on a 4-core machine. On every test
+board the two give the same verdict; on files broken on purpose (a face left out, a vertex moved, a
+face turned over, a circle's radius changed), only the read without the healing finds every fault.
+
+OpenCascade reads a file in one thread and holds about ten times its size in memory, and its check
+of a face compares the face's edges and vertices with one another, so its time grows with the
+square of the face's edges: one face of `22_hdi_module` with 8,270 edges takes 18 s on its own. So
+the suite reads a file back one part at a time (`tests/step_audit.py`). In a file KESE wrote, each
+part's entities stand on their own; only the assembly's, `#1` to `#24` at the end, are shared. Each
+part is copied into a small STEP file of its own, with the assembly cut down to that part, and read
+back in a process of its own, the biggest parts first. A part's file that does not read is an
+error, and a solid that does not come back as a solid counts as invalid (OCP 7.9 makes a shell with
+a face left out a shell, where 7.8 makes it an invalid solid), so a part cut in the wrong place
+cannot pass as clean. A file laid out otherwise, written by another program or with its line ends
+changed, is read whole. A solid is checked on its own either way, so the counts are those of
+reading the whole file: on every test board the invalid solids, free edges,
+number of solids and their volume come out the same both ways, and so does a file with a fault in
+it. On a 4-core machine:
+
+| STEP file (simulation, as the suite writes it) | Size | Read whole | Part by part, 4 processes |
+|---|---|---|---|
+| `16b_edge_plating_border` | 54 MB | 66 s | 18 s |
+| `22_hdi_module` | 71 MB | 132 s | 67 s |
+| `23_pcie_card` | 131 MB | 286 s | 162 s |
+| `21_rf_module` | 174 MB | 310 s | 97 s |
+
+A part is read in one piece, so the slowest part sets the shortest time however many processes
+run: on `22_hdi_module` and `23_pcie_card`, the top solder mask, one solid with a face of 8,270 and
+of 13,736 edges (54 s and 140 s of checking). Memory follows the parts being read rather than the
+whole file: a 12-layer board's 1.25 GB file read with four processes takes 18 minutes and peaks at
+7.7 GB, where read whole it held 13.4 GB and had not finished after 77 minutes. The Verifier, for
+comparison, takes 1 to 4 s on the four boards above: the read-back is a test, not a step of the
+run.
+
+`python tests/test_boards.py` hands the parts to background processes, one per processor thread
+and at least two (`AUDITORS` in `tests/test_boards.py`), while it exports the next boards, and
+prints a board's line once every part of its file is checked, in the order the boards ran, with
+the number of parts and the time they took added up (`STEP read back: 19 parts, 2.3 s`; they ran
+side by side, so it passed sooner). A part that does not read fails the board (`STEP read-back
+failed: ...`). Without OCP, or with one that lacks what the check uses (8.0), the line says so
+(`STEP not read back: ...`) and the board is not failed for it. Under `pytest` every board is
+checked in turn, the parts of a file of 20 MB or more in processes of their own, one per processor
+thread, and those of a smaller file one after another; without a usable OCP it warns, and the STEP
+tests show as skipped, not as passed.
 
 The test boards in `tests/boards/` cover:
 
@@ -252,12 +304,19 @@ a turned footprint) and finds each where KiCad 7.0.11 plots it, to 5 µm, in abo
 (`python tests/test_text_layout.py`); `tests/test_kicad_version.py`, which checks the rules of each
 KiCad version (release of each format number, copper layers by their place, the zero mask margin,
 KiCad 4's text size, the text pen, segment-filled zones, the old overbar, markup) against what
-KiCad's own parser does, without a board, in under a second; and a STEP test, also on its own
+KiCad's own parser does, without a board, in under a second; `tests/test_enabled.py`, which turns
+each part switch off in turn (`BOARD_ENABLED`, `COPPER_ENABLED`, `FINISH_ENABLED`,
+`SOLDER_MASK_ENABLED`, `SILKSCREEN_ENABLED`) and finds only that switch's parts gone and every other
+part as it is with all of them on, and a run with all of them off refused, in about five seconds
+(`python tests/test_enabled.py`);
+`tests/test_bad_input.py`, which gives settings outside their values and a damaged board file and
+finds an error before any work or a warning, not a Python error, in about two seconds
+(`python tests/test_bad_input.py`); and a STEP test, also on its own
 (`python tests/test_step_native.py`):
 
 | Test | Path | What it checks |
 |---|---|---|
-| `test_step_native.py` | the STEP writer (`kese/s7_write/step.py`) | a box with a through hole beside a second box, written from their faces and read back by OpenCascade as two valid solids with no free edge, the right faces and the right volume; names with a quote and letters outside ASCII come back as they went in. Needs OCP (`python -m pip install cadquery-ocp`); takes a second |
+| `test_step_native.py` | the STEP writer (`kese/s7_write/step.py`) and the suite's read-back (`tests/step_audit.py`) | a box with a through hole beside a second box, written from their faces and read back by OpenCascade as two valid solids with no free edge, the right faces and the right volume; names with a quote and letters outside ASCII come back as they went in. A file of three such parts, read back part by part, gives what the whole file gives, also with a face left out of the first part and of the last; a part cut in the wrong place does not pass as clean, and a file another program wrote, or one with other line ends, is read whole. Needs OCP (`python -m pip install "cadquery-ocp==7.8.1.1.post1"`), and is skipped without it; takes a few seconds |
 
 ## 17.5 Inputs KESE Refuses Or Changes
 

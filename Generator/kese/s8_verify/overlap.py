@@ -10,15 +10,10 @@ from parameters import P
 HEIGHT_TOLERANCE_MM = 1e-9       # heights are told apart to 1e-9 mm, a picometre (kese/core/boundary.py)
 
 
-def slices_of(model):
-    """[(part, z0, z1, region)] in mm and board coordinates."""
-    return [(part, z0, z1, region) for part, b in model.boundaries.items() for z0, z1, region in b.slices]
-
-
 def overlaps(model):
     """[(volume mm3, part, other part, z0, z1)] of every two slices of different parts that share
     material, the biggest first."""
-    rows = slices_of(model)
+    rows = [(part, z0, z1, region) for part, b in model.boundaries.items() for z0, z1, region in b.slices]
     owner, polys = [], []
     for k, (_, _, _, region) in enumerate(rows):
         for poly in sh.polygons(region):

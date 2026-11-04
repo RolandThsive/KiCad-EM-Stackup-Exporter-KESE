@@ -16,7 +16,7 @@ from kese.core.vertices import (
     same_vertices,
     walls_split_at_vertices,
 )
-from kese.s6_assemble.boundaries import workers_wanted
+from kese.core.parallel import workers_wanted
 
 FEW_PIECES = 200         # of material reaching a face: up to this many are cut away piece by piece (cut_away)
 BIG_PIECE = 10_000       # coordinates: a piece this big (a dielectric, with every via hole in it) is cut away on its own
@@ -117,8 +117,10 @@ def visible_walls(slices, levels, flats, pool):
         for z, region, _ in part_flats:
             faces_at.setdefault(z, []).append(region)
     out = {part: [] for part in slices}
-    for (z0, z1), segments in zip(pairwise(levels), pool.map(lambda k: walls_of_slice(slices, k, faces_at.get(levels[k], []) + faces_at.get(levels[k + 1], [])),
-                                                              range(len(levels) - 1))):
+
+    def walls(k):
+        return walls_of_slice(slices, k, faces_at.get(levels[k], []) + faces_at.get(levels[k + 1], []))
+    for (z0, z1), segments in zip(pairwise(levels), pool.map(walls, range(len(levels) - 1))):
         if not segments:
             continue
         every = np.concatenate(list(segments.values()))

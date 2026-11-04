@@ -1,5 +1,6 @@
-"""GLB: one mesh per part, PBR materials from stage 5, laid out as trimesh 4/5 laid out a glTF 2.0
-binary: indices, positions and normals in one buffer, each array stored once, one node per part."""
+"""GLB: one mesh per part, PBR materials from stage 5, laid out byte for byte as trimesh 4/5 lays out
+a glTF 2.0 binary: indices, positions and normals in one buffer, each array stored once, one node
+per part."""
 import json
 import struct
 

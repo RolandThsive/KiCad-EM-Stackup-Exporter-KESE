@@ -120,12 +120,12 @@ Points that matter:
 - **Ports.** Place them in the layout's coordinates: with `ORIGIN = "kicad"` the x of a pad is the
   same as in KiCad, and y is KiCad's y negated.
 
-## 21.3 Octave / MATLAB
+## 21.3 Octave
 
 The same route exists with the Octave interface. Each call returns the updated `CSX`, which
 must be assigned:
 
-```matlab
+```octave
 CSX = AddMetal(CSX, 'Copper_GND');
 CSX = ImportSTL(CSX, 'Copper_GND', 20, 'stl/Copper_GND.stl');
 CSX = AddMaterial(CSX, 'Board_dielectric_1');

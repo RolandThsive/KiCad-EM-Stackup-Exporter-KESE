@@ -11,13 +11,13 @@ def part_name(grouping, net, layer, plating=False):
     return "Copper"
 
 
-def _slices(region, z0, z1, foot_at_bottom, unetched=None):
+def _slices(region, z0, z1, foot_at_bottom, unetched):
     """Etch-factor trapezoid as stacked slices: inset grows from the foot toward the free face.
     Copper edges on `unetched` (the hole walls and the board edge, board frame) are plated or cut,
     not etched: there the copper keeps its full outline, so it still meets the barrel."""
     C = P.Copper
     t = z1 - z0
-    n = max(1, int(C.ETCH_STEPS)) if C.ETCH_FACTOR > 0 else 1
+    n = max(1, int(C.ETCH_STEPS))
     out = []
     for s in range(n):
         f = (s + 0.5) / n if foot_at_bottom else 1 - (s + 0.5) / n
@@ -25,7 +25,7 @@ def _slices(region, z0, z1, foot_at_bottom, unetched=None):
         g = region
         if inset > 0:
             g = region.buffer(-inset, join_style="mitre")
-            if unetched is not None and not unetched.is_empty:
+            if not unetched.is_empty:
                 near = sh.inter(region, unetched.buffer(inset * C.ETCH_UNETCHED_REACH, join_style="mitre"))
                 g = sh.union([g, near])
             g = sh.snap(g)

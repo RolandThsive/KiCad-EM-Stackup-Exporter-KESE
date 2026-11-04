@@ -73,11 +73,9 @@ Research underway.
 
 | Tool | Route | Notes |
 |---|---|---|
-| Ansys HFSS | STEP, mm, KiCad origin (`--for hfss`) | one solid per net and dielectric to assign materials and ports |
-| CST Studio Suite | STEP, plus STL per part (`--for cst`) | |
 | openEMS / CSXCAD | STL per part, mm (`--for openems`) with `materials.json` | [openEMS Workflow](OpenEMS-Workflow.md) |
-| COMSOL, FEKO | STEP, mm | |
-| FreeCAD, Fusion, SolidWorks, Onshape | STEP | vias and round pads are faceted, as in the meshes |
+| FreeCAD | STEP, mm, KiCad origin (`--for freecad`) | one solid per net and dielectric, each under its own name, to assign materials; holes and round edges as true circles and cylinders. Its FEM workbench meshes the solids and runs Elmer or CalculiX |
+| gmsh | STEP, mm | meshes the solids for a solver |
 | Blender | GLB or OBJ (visual mode for renders) | |
 | `<model-viewer>`, three.js | GLB, m, centred (`--for viewer`) | the visual-mode skin is made to avoid z-fighting ([Output Modes](Output-Modes.md)) |
 | Thermal / FEA tools reading STL (CalculiX, Elmer with a mesher) | STL per part, mm | closed solids per part (a part can hold several separate bodies); mesh them with the tool's own mesher |
@@ -88,7 +86,7 @@ Research underway.
 |---|---|
 | Python | 3.12 or later with the pinned versions (`numpy` 2.5.3 requires it); 3.11 with the packages installed unpinned, as `requirements.txt` describes, or through `pyproject.toml` (`requires-python >= 3.11`, not tested); tested on 3.13 |
 | `numpy` 2.5.3, `shapely` 2.2.0, `mapbox_earcut` 2.1.0 | the versions in `requirements.txt` |
-| `cadquery-ocp` 7.9.3.1 or later below 8.0 | optional, for the tests only: they read STEP files back with OpenCascade, and skip that check without it |
+| `cadquery-ocp` 7.8.1.1.post1 | optional, for the tests only: they read STEP files back with OpenCascade, and skip that check without it. 7.8 has no wheel for Python 3.14; there use 7.9.3.1.1, with which the STEP tests pass, though it read the file of `16b_edge_plating_border` in about twice the time (125 s against 60 s, the parts added up). 8.0 lacks two classes the check uses (`TopTools_IndexedMapOfShape`, `TopTools_IndexedDataMapOfShapeListOfShape`), so the check is skipped |
 | `gltf_validator` (Khronos, command line) | optional; used by the Verifier when on the PATH |
 
 Operating systems: anything the packages above run on. Tested on Linux.

@@ -8,10 +8,9 @@ or the files in `parameters/` change any single value.
 
 | Need | Choice | Reason |
 |---|---|---|
-| HFSS | `--for hfss`: simulation, STEP, mm, KiCad origin, copper per net, dielectrics per layer | HFSS imports STEP with every part under its own name; with mm and KiCad's origin a port position read off the layout is the same x and the negated y in the model (KiCad's Y points down, KESE's up) |
-| CST | `--for cst`: as hfss plus one STL per part | CST imports STEP; the STL files serve the import route CST falls back to |
+| FreeCAD, and Elmer or CalculiX through its FEM workbench | `--for freecad`: simulation, STEP, mm, KiCad origin, copper per net, dielectrics per layer | FreeCAD imports STEP with every part under its own name, and its FEM workbench meshes the solids and runs Elmer or CalculiX; with mm and KiCad's origin a position read off the layout is the same x and the negated y in the model (KiCad's Y points down, KESE's up) |
 | openEMS / CSXCAD | `--for openems`: simulation, STL, mm, KiCad origin, per net, per layer | openEMS has no STEP reader; it imports STL files, each into one material, and `materials.json` carries the properties. See [openEMS Workflow](OpenEMS-Workflow.md) |
-| FEKO, COMSOL, mechanical CAD | `--format step --set Run.UNITS=mm` | STEP with every part as closed solids of flat faces; curves stay faceted, as in the meshes |
+| gmsh, other CAD | `--format step --set Run.UNITS=mm` | STEP with every part as closed solids, holes and round edges as true circles and cylinders (`Run.STEP_EXACT_ARCS`) |
 | Web viewer, three.js, `<model-viewer>` | `--for viewer`: visual, GLB, metres, centred | glTF viewers expect metres and a model around the origin; the skin does not z-fight |
 | Blender, renders | `--mode visual --format glb obj` | OBJ carries an `.mtl` with the colours; GLB carries PBR materials |
 | Thermal or FEA tool that reads STL | `--format stl --set Run.UNITS=mm` | one closed STL per part |
@@ -25,8 +24,8 @@ or the files in `parameters/` change any single value.
 > the board, copper and finish on by default, the solder mask and silkscreen off. Switch the mask
 > and silkscreen on when the solver or the render must see them:
 > `--set SolderMask.SOLDER_MASK_ENABLED=True --set Silkscreen.SILKSCREEN_ENABLED=True`. A STEP file
-> with them is 1.5 to 1.6 times as big (the PCIe card in `Input/`, in mm, with flat faces: 348 MB
-> and 320 solids against 215 MB and 84 solids).
+> with them is 1.4 to 1.9 times as big (the PCIe card in `Input/`, in mm: 150 MB and 1,024 solids
+> against 80 MB and 788 solids).
 
 ## 9.2 The Presets
 
@@ -35,14 +34,13 @@ or the files in `parameters/` change any single value.
 
 | Preset | `MODE` | `FILE_FORMAT` | `UNITS` | `ORIGIN` | `COPPER_GROUPING` | `DIELECTRIC_GROUPING` | `WRITE_MATERIALS_JSON` |
 |---|---|---|---|---|---|---|---|
-| `hfss` | simulation | step | mm | kicad | net | layer | True |
-| `cst` | simulation | step, stl | mm | kicad | net | layer | True |
+| `freecad` | simulation | step | mm | kicad | net | layer | True |
 | `openems` | simulation | stl | mm | kicad | net | layer | True |
 | `viewer` | visual | glb | m | center | (unchanged) | (unchanged) | (unchanged) |
 
 `openems` also sets `Finish.FINISH_ENABLED = False`: 80 nm of gold is far below any FDTD mesh cell.
 
-A preset is only a set of overrides: `--for hfss --format step glb` writes both.
+A preset is only a set of overrides: `--for freecad --format step glb` writes both.
 
 ## 9.3 Units And Origin
 
@@ -86,7 +84,7 @@ For an EM simulation of a board in the solver's own units:
 | `Run.WRITE_MATERIALS_JSON` | `True` |
 | `Run.VERIFY` or `--verify` | on, for the first export of a new board |
 
-That is the `hfss` preset with `--verify`. Then set the fabricator's values in
+That is the `freecad` preset with `--verify`. Then set the fabricator's values in
 `parameters/copper.py`, `parameters/solder_mask.py` and `parameters/board.py` before trusting the
 results; see [Parameter Reference](Parameter-Reference.md).
 

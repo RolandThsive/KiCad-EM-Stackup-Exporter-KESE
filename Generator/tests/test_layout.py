@@ -109,7 +109,7 @@ def test_stages_are_numbered_one_after_another():
 
 def test_one_run_per_stage_and_the_pipeline_runs_them_in_order():
     entry = []
-    for n, folder in sorted(stages().items()):
+    for _, folder in sorted(stages().items()):
         runs = [p for p in sorted(folder.glob("*.py"))
                 if any(isinstance(f, ast.FunctionDef) and f.name == "run" for f in tree(p).body)]
         assert len(runs) == 1, f"{rel(folder)}: run() in {[rel(p) for p in runs] or 'no file'}"
@@ -123,7 +123,7 @@ def test_one_run_per_stage_and_the_pipeline_runs_them_in_order():
 
 def test_no_import_cycles_inside_a_stage():
     mods = modules()
-    for n, folder in sorted(stages().items()):
+    for _, folder in sorted(stages().items()):
         own = {m: p for m, p in mods.items() if m.startswith(f"kese.{folder.name}.")}
         graph = {m: imports(p, mods) & own.keys() for m, p in own.items()}
         done, path = set(), []

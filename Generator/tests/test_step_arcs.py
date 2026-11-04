@@ -27,7 +27,7 @@ from kese.s7_write.step_curved import with_arcs  # noqa: E402
 from kese.s7_write.step_topology import topology_of  # noqa: E402
 from kese.s7_write.step_writer import StepWriter  # noqa: E402
 from parameters import P  # noqa: E402
-from test_step_native import STEPControl_Reader, read_back  # noqa: E402
+from test_step_native import STEPControl_Reader, read_back, without_ocp  # noqa: E402
 
 ERR = 0.005                                       # mm: the chords' largest distance from the circle
 
@@ -110,8 +110,22 @@ def notch(bend):
     return shapely.Polygon([(0.5, 0.0), (1.5, 0.0), (1.5 - bend, 0.9), *arc])
 
 
+def s_bend():
+    """Two arcs of 60 degrees that bend opposite ways, joined by one grid step of straight line, as
+    in a zone outline: an S, from (-0.87, 0.5) through (0, 0) to (0.87, -0.5)."""
+    return facets((0.0, 1.0), 1.0, -150.0, -90.0) + facets((0.0001, -1.0), 1.0, 90.0, 30.0)
+
+
 def pad(c, r=0.3):
     return shapely.Polygon(facets(c, r, 0.0, 360.0)[:-1])
+
+
+def pad_and_block():
+    """A pad (r 0.3) and a block whose edge passes ERR / 2 (2.5 µm) outside one of its chords; and
+    k, the number of the pad's chords."""
+    k = math.ceil(math.pi / math.acos(1 - ERR / 0.3))
+    x = 0.3 * math.cos(math.pi / k) + ERR / 2
+    return pad((0.0, 0.0)), affinity.rotate(shapely.box(x, -0.02, x + 0.5, 0.02), 180.0 / k, origin=(0, 0)), k
 
 
 def test_circles_and_round_ends_become_arcs():
@@ -125,6 +139,18 @@ def test_circles_and_round_ends_become_arcs():
     assert arcs(octagon) == [] and arcs(octagon.buffer(-0.1, join_style="mitre")) == []   # an octagonal pad stays one
     big = pad((0.0, 0.0), 1.0).union(shapely.box(0.0, -0.2, 3.0, 0.2))   # a round pad with a track out of it
     assert sum(arcs(big)) == 326 and max(arcs(big)) <= 181          # 326 degrees, in pieces of half a turn at most
+
+
+def test_the_two_arcs_of_an_s_bend_share_only_the_vertex_between_them():
+    """Each arc may take one vertex past the run that turns its way: both arcs of an S could take
+    the straight step in its middle, and each removed the other's end vertex, so that the arc edges
+    ran to the wrong vertices (NE_Delta's Copper_D5 came out invalid)."""
+    R = P.Run
+    fit = sa.Fit(R.STEP_ARC_FIT_TOLERANCE_MM, R.STEP_ARC_MIN_POINTS, math.radians(R.STEP_ARC_MIN_SWEEP_DEG),
+                 math.radians(R.STEP_ARC_MAX_TURN_DEG))
+    _, found, _ = sa.find_arcs(np.array(s_bend()), False, fit)
+    assert len(found) == 2 and found[0][4] != found[1][4], found     # one arc each way
+    assert found[0][1] <= found[1][0], found
 
 
 def test_an_arc_that_would_cross_its_own_ring_stays_straight():
@@ -142,16 +168,13 @@ def test_an_outline_may_touch_an_arc_where_it_joins_it_but_not_cross_it():
 
 
 def test_arcs_of_two_polygons_that_would_overlap_stay_straight():
-    k = math.ceil(math.pi / math.acos(1 - ERR / 0.3))                 # the pad's chords turn 360 / k degrees
+    a, block, k = pad_and_block()                                     # the pad's chords turn 360 / k degrees
     # circles 1 µm apart, or 1 µm into each other: then only the far halves are arcs
     for d, expect in ((0.6 + 0.001, [180] * 4), (0.6 - 0.001, [180, 180])):
-        a = affinity.rotate(pad((0.0, 0.0)), 180.0 / k, origin=(0, 0))
-        b = affinity.translate(a, d)
-        assert a.distance(b) > 0.008
-        assert arcs(shapely.MultiPolygon([a, b])) == expect, d
-    a = pad((0.0, 0.0))                           # a block whose edge passes 2.5 µm outside one of the pad's chords
-    x = 0.3 * math.cos(math.pi / k) + ERR / 2
-    block = affinity.rotate(shapely.box(x, -0.02, x + 0.5, 0.02), 180.0 / k, origin=(0, 0))
+        turned = affinity.rotate(a, 180.0 / k, origin=(0, 0))
+        b = affinity.translate(turned, d)
+        assert turned.distance(b) > 0.008
+        assert arcs(shapely.MultiPolygon([turned, b])) == expect, d
     assert not a.intersects(block)
     assert arcs(shapely.MultiPolygon([a, block])) == [180]          # the half away from the block
 
@@ -159,11 +182,8 @@ def test_arcs_of_two_polygons_that_would_overlap_stay_straight():
 def test_an_arc_is_kept_where_the_edge_near_it_is_at_another_height():
     """A pad on the lower slice and a block on the upper one, 2.5 µm off the pad's chord: in plan
     they come closer than the bulge, but they never share a height."""
-    k = math.ceil(math.pi / math.acos(1 - ERR / 0.3))
-    a = pad((0.0, 0.0))
-    x = 0.3 * math.cos(math.pi / k) + ERR / 2
-    block = snapped(affinity.rotate(shapely.box(x, -0.02, x + 0.5, 0.02), 180.0 / k, origin=(0, 0)))
-    lower, upper = snapped(a), block
+    a, block, _ = pad_and_block()
+    lower, upper = snapped(a), snapped(block)
     b = Boundary("part", [0.0, 0.1, 0.2, 0.3], [(0.0, 0.1, lower), (0.2, 0.3, upper)],
                  [(0.0, lower, False), (0.1, lower, True), (0.2, upper, False), (0.3, upper, True)])
     topo = with_arcs(topology_of(b))
@@ -171,8 +191,8 @@ def test_an_arc_is_kept_where_the_edge_near_it_is_at_another_height():
 
 
 def test_written_files_read_back_as_valid_solids():
-    if STEPControl_Reader is None:
-        return                                    # OCP is not installed
+    if without_ocp():
+        return
     cases = [pad((0.0, 0.0), 1.0).difference(pad((0.0, 0.0), 0.4)),
              shapely.LineString([(0, 0), (3, 0), (3, 2)]).buffer(0.25, 32),
              bite(ERR / 2, True), bite(4 * ERR, False), notch(0.0), notch(0.003),

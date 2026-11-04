@@ -25,7 +25,7 @@
 | NPTH | Non-plated through hole: a hole with no copper in it. |
 | Part | One named solid (or skin piece) in the output: `Copper_GND`, `Board_dielectric 1`, `Top Solder Mask`. |
 | Prepreg | A resin-impregnated glass sheet that bonds cores together under heat; its resin flows into the gaps between inner traces. |
-| Preset | A named set of parameter overrides applied with `--for` (`hfss`, `cst`, `openems`, `viewer`). |
+| Preset | A named set of parameter overrides applied with `--for` (`freecad`, `openems`, `viewer`). |
 | Prism | A flat 2D region between two heights: the building block of every KESE part. |
 | PTH | Plated through hole. |
 | Pull-back | The distance the mask and silk stop short of the board edge. |

@@ -60,6 +60,5 @@ def assemble(ps, mode, log):
                    "z_min_mm": round(min(p.z0 for p in prisms), 6), "z_max_mm": round(max(p.z1 for p in prisms), 6),
                    "prisms": len(prisms)})
         props[part] = pr
-    r = ps.regions
-    return Model(name=r.items.name, mode=mode, prismset=ps, meshes=meshes, materials=ps.materials, props=props,
-                 transform=mat, units=P.Run.UNITS, report=[], boundaries=boundaries)
+    return Model(name=ps.regions.items.name, mode=mode, prismset=ps, meshes=meshes, materials=ps.materials, props=props,
+                 transform=mat, units=P.Run.UNITS, boundaries=boundaries)

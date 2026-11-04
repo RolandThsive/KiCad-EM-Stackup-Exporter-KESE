@@ -14,8 +14,10 @@ from kese.core.boundary_mesh import (
 )
 from kese.core.graph import connected_components
 from kese.core.mesh import Mesh
-from kese.s6_assemble.boundaries import workers_wanted
+from kese.core.parallel import workers_wanted
 from parameters import P
+
+PROBES_AT_A_TIME = 2_000_000     # triangles: their probe points and normals take a quarter of a gigabyte
 
 
 def skin_meshes_from_faces(levels, pieces, faces):
@@ -51,9 +53,6 @@ def meshes_per_part(v, f, owner, parts):
             used, faces_of = np.unique(mine, return_inverse=True)
             out[part] = Mesh(v[used], faces_of.reshape(-1, 3))
     return out
-
-
-PROBES_AT_A_TIME = 2_000_000     # triangles: their probe points and normals take a quarter of a gigabyte
 
 
 def looks_at_material(v, f, levels, pieces):

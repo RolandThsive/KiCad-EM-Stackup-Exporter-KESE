@@ -27,7 +27,7 @@ def circle_quads(r):
     g = G()
     if r <= 0:
         return g.CIRCLE_MIN_QUAD_SEGS
-    n = math.pi / math.acos(max(-1.0, 1 - min(g.CIRCLE_CHORD_TOLERANCE_MM / r, 1.0)))
+    n = math.pi / math.acos(1 - min(g.CIRCLE_CHORD_TOLERANCE_MM / r, 1.0))
     return int(min(g.CIRCLE_MAX_QUAD_SEGS, max(g.CIRCLE_MIN_QUAD_SEGS, math.ceil(n / 4))))
 
 
@@ -99,7 +99,7 @@ def snap(g):
         return EMPTY
     off = ~on_grid(parts)
     parts[off] = shapely.set_precision(parts[off], grid())
-    return joined([p for q in parts for p in shapely.get_parts(polys_only(q)) if not p.is_empty])
+    return side_by_side(parts)
 
 
 def on_grid(parts):
@@ -159,7 +159,7 @@ def part_touching(g):
             out += [x for x in polygons(q) if x.area > G().SLIVER_AREA_MM2]
         else:
             out.append(p)
-    return shapely.MultiPolygon(out) if len(out) > 1 else shapely.MultiPolygon([out[0]]) if out else EMPTY
+    return shapely.MultiPolygon(out) if out else EMPTY
 
 
 def diff(a, b):
@@ -180,7 +180,7 @@ def _overlay(op, a, b):
         return polys_only(op(polys_only(shapely.make_valid(a)), polys_only(shapely.make_valid(b)), grid_size=grid()))
 
 
-def polygons(g, part=True):
+def polygons(g):
     """The polygons of a region, as built into 3D.  Parts that touch at a point or along a line
     are pulled apart by PINCH_POINT_OPENING_MM here, at the last step before extrusion (any
     earlier grid operation would snap them back together)."""
@@ -189,7 +189,7 @@ def polygons(g, part=True):
         return []
     if g.geom_type != "MultiPolygon":
         return [g]
-    return list(part_touching(g).geoms) if part else list(g.geoms)
+    return list(part_touching(g).geoms)
 
 
 # ---- footprint placement -------------------------------------------------------------------------

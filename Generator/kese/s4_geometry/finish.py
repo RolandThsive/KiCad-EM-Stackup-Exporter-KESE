@@ -1,7 +1,8 @@
 """Surface finish (ENIG, HASL, ...) on the copper the solder mask leaves bare: the type and its
 layers, and the finish on the faces of the top and bottom copper.  The finish on the walls, in the
-holes, on the plated edge and in the castellations is finish_shells.py."""
+holes, on the plated edge and in the castellations is finish_shells.py (shells.py lays them)."""
 from kese.core import shapes2d as sh
+from kese.core.conformal import grow
 from kese.core.shapes2d import EMPTY
 from parameters import P
 
@@ -57,8 +58,8 @@ def under_mask_copper(st, cu):
     layers, _ = finish_layers(st)
     if not (under_mask_mm(st) and layers) or cu.is_empty:
         return cu
-    reach = sum(on_grid(t, sh.grid()) for _, t in layers)
-    return sh.snap(cu.buffer(reach, join_style="mitre", mitre_limit=2.0))
+    reach = sum(drawn_thickness(t) for _, t in layers)
+    return grow(cu, reach, join_style="mitre", mitre_limit=2.0)
 
 
 def exposed(r, side, cu):
@@ -110,7 +111,8 @@ def build(r, ps):
                 z += t
 
 
-def on_grid(t, g):
-    """A finish metal's thickness as drawn across a wall, where it is a 2D shape on the snapping grid
-    g: the nearest whole number of grid steps, at least one (a thinner film is drawn one step thick)."""
+def drawn_thickness(t):
+    """A finish metal's thickness as drawn across a wall, where it is a 2D shape on the snapping grid:
+    the nearest whole number of grid steps, at least one (a thinner film is drawn one step thick)."""
+    g = sh.grid()
     return max(1, round(t / g)) * g

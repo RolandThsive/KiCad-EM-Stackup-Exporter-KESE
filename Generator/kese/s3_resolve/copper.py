@@ -54,8 +54,6 @@ def close_hairline_gaps(cu):
     return sh.snap(union([joined] + [p for k, p in enumerate(parts) if k not in keep]))
 
 
-
-
 def fill_hairline_holes(cu):
     """A net's copper with its hairline holes filled: a hole whose mean width (twice its area over its
     perimeter) is under Copper.HAIRLINE_HOLE_MM, as KiCad's zone fill leaves round its own pads."""

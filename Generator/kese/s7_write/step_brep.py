@@ -1,10 +1,12 @@
 """The B-rep of one part as STEP entities from its Topology, in output units, numbered in blocks
-(so many per vertex, edge, loop), written a slice of rows at a time to bound the memory."""
+(so many per vertex, edge, loop), written a slice of rows at a time to bound the memory.  Lines and
+planes share one DIRECTION per distinct direction (Directions): a board's edges run in few."""
 import numpy as np
 
-from kese.s7_write.step_writer import real, refs
+from kese.s7_write.step_writer import real, reals, refs
 
 ROWS_AT_A_TIME = 100_000
+DIRECTION_DIGITS = 12             # directions closer than this are one DIRECTION (a 1e-12 turn)
 
 
 def write_brep(w, topo, M):
@@ -14,62 +16,47 @@ def write_brep(w, topo, M):
     point = w.reserve(2 * len(xyz)) + 2 * np.arange(len(xyz))      # CARTESIAN_POINT, then VERTEX_POINT
     up = w.reserve(2)                                                # DIRECTION and VECTOR, up along the walls
     arc = np.zeros(len(topo.edge_start), dtype=bool) if topo.edge_circle is None else topo.edge_circle >= 0
-    edge_size = np.where(arc, 1, np.where(topo.vertical, 2, 4))      # (DIRECTION, VECTOR,) LINE, EDGE_CURVE
+    edge_size = np.where(arc, 1, 2)                                  # (LINE,) EDGE_CURVE
     edge = w.reserve(int(edge_size.sum())) + np.cumsum(np.r_[0, edge_size[:-1]])
     edge_curve = edge + edge_size - 1
-    plane_size = np.where(topo.plane_origin_vertex >= 0, 4, 5)       # PLANE, AXIS2_PLACEMENT_3D, 2 DIRECTION, (CARTESIAN_POINT)
+    plane_size = np.where(topo.plane_origin_vertex >= 0, 2, 3)       # PLANE, AXIS2_PLACEMENT_3D, (CARTESIAN_POINT)
     plane = w.reserve(int(plane_size.sum())) + np.cumsum(np.r_[0, plane_size[:-1]])
     loop_size = 2 + topo.loop_count                                  # FACE_BOUND, EDGE_LOOP, the ORIENTED_EDGEs
     loop = w.reserve(int(loop_size.sum())) + np.cumsum(np.r_[0, loop_size[:-1]])
     face = w.reserve(len(topo.face_plane)) + np.arange(len(topo.face_plane))
     shell = w.reserve(2 * topo.shells) + 2 * np.arange(topo.shells)  # CLOSED_SHELL, MANIFOLD_SOLID_BREP
-    curves = None if topo.edge_circle is None else Curves(w, topo, M)   # (reserved last: a file without arcs is as before)
+    curves = None if topo.edge_circle is None else Curves(w, topo, M)
+    directions = Directions(w)
 
     for rows in slices(len(xyz)):
-        lines = []
-        for i, (x, y, z) in zip(point[rows].tolist(), xyz[rows].tolist()):
-            lines.append(f"#{i} = CARTESIAN_POINT('',({real(x)},{real(y)},{real(z)}));")
-            lines.append(f"#{i + 1} = VERTEX_POINT('',#{i});")
-        w.write(lines)
+        x = iter(reals(xyz[rows]))
+        w.write([f"#{i} = CARTESIAN_POINT('',({a},{b},{c}));\n#{i + 1} = VERTEX_POINT('',#{i});"
+                 for i, a, b, c in zip(point[rows].tolist(), x, x, x)])
     ux, uy, uz = map(real, direction([0.0, 0.0, 1.0], M)[0])
     w.write([f"#{up} = DIRECTION('',({ux},{uy},{uz}));", f"#{up + 1} = VECTOR('',#{up},1.);"])
     if curves:
         curves.write(w, up)
 
     for rows in slices(len(edge)):
-        lines = []
         a, b = topo.edge_start[rows], topo.edge_end[rows]
-        along = unit(xyz[b] - xyz[a])
-        circle = curves.edge_circle(rows) if curves else [None] * len(along)
-        for e, vertical, pa, pb, (dx, dy, dz), c in zip(edge[rows].tolist(), topo.vertical[rows].tolist(),
-                                                        point[a].tolist(), point[b].tolist(), along.tolist(), circle):
-            if c is not None:
-                lines.append(f"#{e} = EDGE_CURVE('',#{pa + 1},#{pb + 1},#{c[0]},{c[1]});")
-            elif vertical:
-                lines.append(f"#{e} = LINE('',#{pa},#{up + 1});")
-                lines.append(f"#{e + 1} = EDGE_CURVE('',#{pa + 1},#{pb + 1},#{e},.T.);")
-            else:
-                lines.append(f"#{e} = DIRECTION('',({real(dx)},{real(dy)},{real(dz)}));")
-                lines.append(f"#{e + 1} = VECTOR('',#{e},1.);")
-                lines.append(f"#{e + 2} = LINE('',#{pa},#{e + 1});")
-                lines.append(f"#{e + 3} = EDGE_CURVE('',#{pa + 1},#{pb + 1},#{e + 2},.T.);")
-        w.write(lines)
+        sloped = ~arc[rows] & ~topo.vertical[rows]
+        vector = np.full(len(a), up + 1)                             # a wall's vertical edge runs up
+        vector[sloped] = directions.vectors(unit(xyz[b[sloped]] - xyz[a[sloped]]))
+        circle = curves.edge_circle(rows) if curves else [None] * len(a)
+        w.write([f"#{e} = EDGE_CURVE('',#{pa + 1},#{pb + 1},#{c[0]},{c[1]});" if c is not None else
+                 f"#{e} = LINE('',#{pa},#{v});\n#{e + 1} = EDGE_CURVE('',#{pa + 1},#{pb + 1},#{e},.T.);"
+                 for e, pa, pb, v, c in zip(edge[rows].tolist(), point[a].tolist(), point[b].tolist(), vector.tolist(), circle)])
 
     for rows in slices(len(plane)):
-        lines = []
-        origin = topo.plane_origin[rows] @ M[:3, :3].T + M[:3, 3]
-        axis, ref = direction(topo.plane_axis[rows], M), direction(topo.plane_ref[rows], M)
         at = topo.plane_origin_vertex[rows]
-        origin_id = np.where(at >= 0, point[np.maximum(at, 0)], plane[rows] + 4)
-        for p, o, own, (ox, oy, oz), (ax, ay, az), (rx, ry, rz) in zip(
-                plane[rows].tolist(), origin_id.tolist(), (at < 0).tolist(), origin.tolist(), axis.tolist(), ref.tolist()):
-            if own:
-                lines.append(f"#{o} = CARTESIAN_POINT('',({real(ox)},{real(oy)},{real(oz)}));")
-            lines.append(f"#{p} = PLANE('',#{p + 1});")
-            lines.append(f"#{p + 1} = AXIS2_PLACEMENT_3D('',#{o},#{p + 2},#{p + 3});")
-            lines.append(f"#{p + 2} = DIRECTION('',({real(ax)},{real(ay)},{real(az)}));")
-            lines.append(f"#{p + 3} = DIRECTION('',({real(rx)},{real(ry)},{real(rz)}));")
-        w.write(lines)
+        own = at < 0                                                 # a plane through no vertex has its own origin
+        origin_id = np.where(own, plane[rows] + 2, point[np.maximum(at, 0)])
+        axis = directions.ids(direction(topo.plane_axis[rows], M))
+        ref = directions.ids(direction(topo.plane_ref[rows], M))
+        x = iter(reals(topo.plane_origin[rows][own] @ M[:3, :3].T + M[:3, 3]))
+        w.write([f"#{o} = CARTESIAN_POINT('',({a},{b},{c}));" for o, a, b, c in zip(origin_id[own].tolist(), x, x, x)]
+                + [f"#{p} = PLANE('',#{p + 1});\n#{p + 1} = AXIS2_PLACEMENT_3D('',#{o},#{d},#{r});"
+                   for p, o, d, r in zip(plane[rows].tolist(), origin_id.tolist(), axis.tolist(), ref.tolist())])
 
     oriented = np.repeat(loop + 2, topo.loop_count) + (np.arange(len(topo.use_edge)) - np.repeat(topo.loop_start, topo.loop_count))
     for rows in slices(len(oriented)):
@@ -79,11 +66,9 @@ def write_brep(w, topo, M):
     outer = np.zeros(len(loop), dtype=bool)
     outer[topo.face_loop_start] = True
     for rows in slices(len(loop)):
-        lines = []
-        for i, n, is_outer in zip(loop[rows].tolist(), topo.loop_count[rows].tolist(), outer[rows].tolist()):
-            lines.append(f"#{i} = {'FACE_OUTER_BOUND' if is_outer else 'FACE_BOUND'}('',#{i + 1},.T.);")
-            lines.append(f"#{i + 1} = EDGE_LOOP('',{refs(range(i + 2, i + 2 + n))});")
-        w.write(lines)
+        w.write([f"#{i} = {'FACE_OUTER_BOUND' if is_outer else 'FACE_BOUND'}('',#{i + 1},.T.);\n"
+                 f"#{i + 1} = EDGE_LOOP('',{refs(range(i + 2, i + 2 + n))});"
+                 for i, n, is_outer in zip(loop[rows].tolist(), topo.loop_count[rows].tolist(), outer[rows].tolist())])
     for rows in slices(len(face)):
         surface = plane[topo.face_plane[rows]] if curves is None else curves.surface(rows, plane)
         w.write([f"#{f} = ADVANCED_FACE('',{refs(loop[first:first + n])},#{p},{'.T.' if same else '.F.'});"
@@ -96,6 +81,43 @@ def write_brep(w, topo, M):
         w.write([f"#{s} = CLOSED_SHELL('',{refs(face[order[cut[k]:cut[k + 1]]])});",
                  f"#{s + 1} = MANIFOLD_SOLID_BREP('',#{s});"])
     return (shell + 1).tolist()
+
+
+class Directions:
+    """One DIRECTION per distinct direction of a part (rounded to DIRECTION_DIGITS), and one VECTOR
+    of length one along it for the lines that need it, written the first time they are asked for."""
+
+    def __init__(self, w):
+        self.w, self.direction, self.vector = w, {}, {}
+
+    def ids(self, d):
+        """The DIRECTION of every row of d (unit vectors, output frame)."""
+        return self._ids(d, False)
+
+    def vectors(self, d):
+        """The VECTOR (length one) along every row of d."""
+        return self._ids(d, True)
+
+    def _ids(self, d, vector):
+        if not len(d):
+            return np.empty(0, dtype=np.int64)
+        uniq, back = np.unique(np.round(d, DIRECTION_DIGITS) + 0.0, axis=0, return_inverse=True)   # (+ 0.0: no -0.)
+        out, lines = [], []
+        for key in map(tuple, uniq.tolist()):
+            i = self.direction.get(key)
+            if i is None:
+                i = self.direction[key] = self.w.reserve(1)
+                lines.append(f"#{i} = DIRECTION('',({','.join(real(v) for v in key)}));")
+            if vector:
+                v = self.vector.get(key)
+                if v is None:
+                    v = self.vector[key] = self.w.reserve(1)
+                    lines.append(f"#{v} = VECTOR('',#{i},1.);")
+                i = v
+            out.append(i)
+        if lines:
+            self.w.write(lines)
+        return np.asarray(out, dtype=np.int64)[back.ravel()]
 
 
 class Curves:

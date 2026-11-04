@@ -19,7 +19,6 @@ class Regions:
     mask: dict = field(default_factory=dict)           # "F"/"B" -> where the mask is (outline - bores - openings, pulled back)
     silk: dict = field(default_factory=dict)           # "F"/"B" -> silk
     transform_note: str = ""
-    to_board: object = None                            # (cx, cy): the KiCad point that becomes the origin
     to_board_T: object = None                          # KiCad-frame shape -> board-frame shape
     edge_band: object = None
     edge_net: object = None

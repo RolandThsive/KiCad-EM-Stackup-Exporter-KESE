@@ -21,17 +21,18 @@ mask colour of its own, saved by KiCad 7. Between them they use most of what KES
 | Vias | 307 through | 71 micro, 34 blind and buried, 45 through | 239 through |
 | Board edge | plated all round and in the cut-out | 43 castellated pads | 36 gold fingers |
 | Mask, silkscreen, finish | blue, white, ENIG | black, white, immersion silver | green, white, hard gold |
-| Simulation GLB with `--verify` | 42 parts, 887,012 triangles; 21 s, 29.9 MB | 60 parts, 499,544 triangles; 14 s, 17.0 MB | 59 parts, 942,340 triangles; 19 s, 32.1 MB |
-| Simulation STEP with `--verify` | 38 parts, 49 solids; 26 s, 225.0 MB | 56 parts, 58 solids; 15 s, 125.9 MB | 55 parts, 84 solids; 23 s, 215.3 MB |
-| Visual GLB with `--verify` | 20 s, 17.1 MB | 15 s, 8.8 MB | 21 s, 18.3 MB |
+| Simulation GLB with `--verify` | 46 parts, 1,127,702 triangles; 46 s, 38.0 MB | 62 parts, 596,674 triangles; 24 s, 20.4 MB | 61 parts, 879,986 triangles; 28 s, 30.1 MB |
+| Simulation STEP with `--verify` | 46 parts, 745 solids; 51 s, 113.7 MB | 62 parts, 1,240 solids; 29 s, 70.9 MB | 61 parts, 788 solids; 35 s, 80.2 MB |
+| Visual GLB with `--verify` | 31 s, 10.5 MB | 15 s, 5.6 MB | 22 s, 9.1 MB |
 
-The times are the ones the run prints, with the default parameters on one Linux machine with 4
-cores. The numbers were measured with the earlier defaults: the finish off, the GLB files with the
-solder mask and silkscreen, and the STEP files with flat faces (`Run.STEP_EXACT_ARCS = False`). The
-STEP files were made with `--for hfss --verify`: millimetres and KiCad's origin, without the mask
-and silkscreen (the default now), so they have four parts fewer than the GLB files ([Project Capabilities](Project-Capabilities.md#45-tested-sizes) gives
-them with both). Read back with OpenCascade, every solid in them is valid and closed, and their
-volume is the one the Verifier finds. The same three files are in `featureTest/` as
+The times are the ones the run prints, with the default parameters (the finish on, the solder
+mask and silkscreen off, true arcs in the STEP files) on one Linux machine with 4 cores. The STEP
+files were made with `--for freecad --verify`: millimetres and KiCad's origin
+([Project Capabilities](Project-Capabilities.md#45-tested-sizes) gives them with the mask and
+silkscreen too). The finish makes most of the solids: each pad's and each hole's finish is a solid
+of its own. Read back with OpenCascade, every solid in them is valid and closed, and their
+volume is the Verifier's within 0.01 % (a true arc bulges out a little from the chords the
+Verifier measures). The same three files are in `featureTest/` as
 `21_rf_module`, `22_hdi_module` and `23_pcie_card`, so the regression suite checks every part of
 each in both modes (once: it skips the copies in `Input/`).
 
@@ -217,14 +218,15 @@ What this board shows:
 ```bash
 cd Generator
 python run_KESE.py                                                             # all three: simulation, GLB in metres, centred
-python run_KESE.py Input/rf_module.kicad_pcb --for hfss                        # STEP in mm with KiCad's origin
+python run_KESE.py Input/rf_module.kicad_pcb --for freecad                     # STEP in mm with KiCad's origin
 python run_KESE.py Input/hdi_module.kicad_pcb --for viewer                     # visual mode for <model-viewer>
 python run_KESE.py Input/pcie_card.kicad_pcb --set Finish.FINISH_TYPE=file      # the stack-up's hard gold
 python run_KESE.py Input/rf_module.kicad_pcb --set Copper.COPPER_GROUPING=layer # a copper part per layer
 ```
 
-STEP files of these boards are large, 125 to 225 MB in mm, since every curve is written as flat
-faces: see [Project Capabilities](Project-Capabilities.md#45-tested-sizes).
+STEP files of these boards are 70 to 115 MB in mm, with the holes, vias and round pads as true
+arcs; with flat faces only (`Run.STEP_EXACT_ARCS = False`) they are 2.5 to 3 times as big. See
+[Project Capabilities](Project-Capabilities.md#45-tested-sizes).
 
 | Previous | Next |
 |:---|---:|

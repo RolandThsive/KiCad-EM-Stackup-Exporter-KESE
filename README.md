@@ -20,7 +20,7 @@ Give it a `.kicad_pcb` file, get every dielectric, every net's copper and every 
 
 KiCad's 3D export is made for mechanical fit. An EM solver needs every core and prepreg as its own body with its εr
 and tanδ, copper at its real thickness, and one closed solid per net for ports. KESE reads the `.kicad_pcb` directly
-(no KiCad install needed) and writes exactly that for HFSS, CST, openEMS, FEKO or COMSOL, with each copper solid named
+(no KiCad install needed) and writes exactly that for openEMS, or for Elmer and CalculiX through FreeCAD, with each copper solid named
 after its net (`Copper_GND`) and the material values in `materials.json`. The same board also comes out as a light
 surface model for web viewers and renders.
 
@@ -53,11 +53,11 @@ surface model for web viewers and renders.
 cd Generator
 python -m pip install -r requirements.txt
 
-python run_KESE.py                                       # Every board in Input/: simulation mode, GLB in metres, centred
-python run_KESE.py Input/rf_module.kicad_pcb --for hfss  # STEP in mm at KiCad's origin, one solid per net and dielectric
-python run_KESE.py board.kicad_pcb --for openems         # One STL per part in mm, with materials.json
-python run_KESE.py board.kicad_pcb --for viewer          # The visible surface only, GLB for web viewers
-python run_KESE.py board.kicad_pcb --verify              # Check every solid is closed and no two parts overlap
+python run_KESE.py                                          # Every board in Input/: simulation mode, GLB in metres, centred
+python run_KESE.py Input/rf_module.kicad_pcb --for freecad  # STEP in mm at KiCad's origin, one solid per net and dielectric
+python run_KESE.py board.kicad_pcb --for openems            # One STL per part in mm, with materials.json
+python run_KESE.py board.kicad_pcb --for viewer             # The visible surface only, GLB for web viewers
+python run_KESE.py board.kicad_pcb --verify                 # Check every solid is closed and no two parts overlap
 python run_KESE.py board.kicad_pcb --set Copper.VIA_WALL_MM=0.02
 ```
 
@@ -86,10 +86,10 @@ from any folder. Full walk-through: [Getting Started](https://github.com/RolandT
 - **STEP without a CAD kernel, meshes without a mesh library:** KESE builds its own meshes and writes STEP AP214,
   GLB, STL and OBJ itself, every part under its own name; it needs only `numpy`, `shapely` and `mapbox_earcut`.
   Holes, vias, round pads and arcs go into STEP as true circles and cylinders (`Run.STEP_EXACT_ARCS`, on by
-  default), in files 4 to 9 times smaller than flat facets.
-- **Presets:** `--for hfss`, `cst`, `openems` or `viewer` set mode, formats, units, origin and grouping in one go.
+  default), in files 2.5 to 3 times smaller than flat facets.
+- **Presets:** `--for freecad`, `openems` or `viewer` set mode, formats, units, origin and grouping in one go.
 - **Checks:** an opt-in Verifier (closed solids, the same volume found four ways, no overlaps, one visible surface)
-  and a regression suite that runs 40 boards through every output before a pull request.
+  and a regression suite that runs 38 boards through every output before a pull request.
 - **Not modelled yet:** component 3D models, text boxes, dimensions, images, rigid-flex.
 
 Every feature and every parameter is in the wiki:
@@ -111,8 +111,8 @@ for this picture. Left out are the boards of items KESE skips (19 and 19b), the 
 
 - **Validation.** The models will be compared with measured boards and with reference solver results, and corrected
   wherever they disagree.
-- **Solver imports.** The routes into HFSS, CST, openEMS, COMSOL and FEKO follow each tool's documented import formats
-  and still have to be confirmed on each tool.
+- **Solver imports.** The routes into openEMS, and into Elmer and CalculiX through FreeCAD, follow each tool's
+  documented import formats and still have to be confirmed on each tool.
 - **Planned:** a web application, a desktop application, maybe a KiCad add-on, and tighter integration with openEMS or
   other solvers.
 

@@ -14,9 +14,9 @@ OUTPUT_DIR = "Output"
 
 # Output file formats, any combination of:
 #   "glb"  - binary glTF, one mesh per solid, materials from parameters/color.py (viewing)
-#   "stl"  - one STL file per solid in an stl/ folder                           (openEMS, CST)
+#   "stl"  - one STL file per solid in an stl/ folder                           (openEMS, CalculiX, Elmer)
 #   "obj"  - Wavefront OBJ, one object per solid                                (viewing, Blender)
-#   "step" - STEP AP214 with one named exact solid per part                     (HFSS, CST, FEKO, COMSOL)
+#   "step" - STEP AP214 with one named exact solid per part                     (FreeCAD, gmsh)
 # "visual" mode can only produce "glb" and "obj" (its skin is a surface, not solids).
 FILE_FORMAT = ["glb"]
 
@@ -32,9 +32,9 @@ ORIGIN = "center"
 # "flat"   : board in the XZ plane, F.Cu facing +Y
 ORIENTATION = "upright"
 
-# How many threads stage 6 works with (the 2D geometry library runs outside
-# Python's lock): parts built at once in "simulation" mode, slices in "visual" mode.  0 = one per
-# processor core
+# How many threads work at once (the 2D geometry library runs outside Python's lock): the copper
+# layers and hole spans of the finish in stage 4, and in stage 6 the parts built at once in
+# "simulation" mode, the slices in "visual" mode.  0 = one per processor thread (os.cpu_count())
 WORKERS = 0
 
 # Live "running <stage> ... 1m 23s" line in the terminal while a board is generated
@@ -86,12 +86,10 @@ TESTED_COPPER_LAYERS = 8               # stage 1 warns above this many copper la
 # Presets: `kese --for <name>` applies these overrides before any --set on the command line, and
 # parameters.txt records the preset and every value it changed.  Each entry is Module.NAME: value.
 PRESETS = {
-    # STEP in mm with KiCad's origin: port and probe positions read off the layout match the model
-    "hfss": {"Run.MODE": "simulation", "Run.FILE_FORMAT": ["step"], "Run.UNITS": "mm", "Run.ORIGIN": "kicad",
-             "Copper.COPPER_GROUPING": "net", "Board.DIELECTRIC_GROUPING": "layer", "Run.WRITE_MATERIALS_JSON": True},
-    # as hfss, plus one STL per part for the import route CST falls back to
-    "cst": {"Run.MODE": "simulation", "Run.FILE_FORMAT": ["step", "stl"], "Run.UNITS": "mm", "Run.ORIGIN": "kicad",
-            "Copper.COPPER_GROUPING": "net", "Board.DIELECTRIC_GROUPING": "layer", "Run.WRITE_MATERIALS_JSON": True},
+    # STEP in mm with KiCad's origin, for FreeCAD (and its FEM workbench: Elmer, CalculiX): positions
+    # read off the layout match the model
+    "freecad": {"Run.MODE": "simulation", "Run.FILE_FORMAT": ["step"], "Run.UNITS": "mm", "Run.ORIGIN": "kicad",
+                "Copper.COPPER_GROUPING": "net", "Board.DIELECTRIC_GROUPING": "layer", "Run.WRITE_MATERIALS_JSON": True},
     # openEMS has no STEP reader: one STL per net / dielectric, properties from materials.json
     # (no finish: 80 nm of gold is far below any FDTD mesh cell)
     "openems": {"Run.MODE": "simulation", "Run.FILE_FORMAT": ["stl"], "Run.UNITS": "mm", "Run.ORIGIN": "kicad",

@@ -1,6 +1,5 @@
 """The "simulation" mode: every part as one closed solid, its boundary found in 2D
 (kese/core/boundary.py) and cut into triangles; Run.WORKERS parts at once, in threads."""
-import os
 from concurrent.futures import FIRST_COMPLETED, ThreadPoolExecutor, wait
 from itertools import islice
 
@@ -8,12 +7,7 @@ import shapely
 
 from kese.core.boundary import boundary_of
 from kese.core.boundary_mesh import mesh_of_boundary
-from parameters import P
-
-
-def workers_wanted():
-    """How many parts are worked on at once: Run.WORKERS, or one per processor."""
-    return P.Run.WORKERS or os.cpu_count() or 1
+from kese.core.parallel import workers_wanted
 
 
 def boundaries_and_meshes(ps, log, finish):

@@ -9,10 +9,12 @@ the run: `--for`, `--set`, `--mode`, `--format` and `--verify` are all applied a
 and listed on its first line.
 
 > [!NOTE]
-> Defaults are those of the parameter files on `main`. Only a few values are checked by name:
-> `MODE`, `FILE_FORMAT`, `FINISH_TYPE` and `DIELECTRIC_SPLIT` (an error or a warning), and
-> `FONT_FILE` (a note in `report.txt`). For the rest, a value outside
-> the range below produces a wrong model or a plain Python error, not a named check.
+> Defaults are those of the parameter files on `main`. Before the board is read, the run checks
+> `MODE`, `FILE_FORMAT`, `WORKERS` and every setting whose range below is a few words with `/`
+> between them (such as `"mm"` / `"m"`), and stops with an error that names the setting.
+> `FINISH_TYPE` and `DIELECTRIC_SPLIT` are checked where they are used (an error or a warning), and
+> `FONT_FILE` gives a note in `report.txt`. For the rest, a value outside the range below produces
+> a wrong model or a plain Python error, not a named check.
 
 ## 16.1 Run (`parameters/run.py`)
 
@@ -33,7 +35,7 @@ What to make, where, and in which formats.
 
 | Name | Default | Range | Meaning |
 |---|---|---|---|
-| `WORKERS` | `0` | int ≥ 0 | Threads stage 6 works with: parts built at once in simulation mode, slices in visual mode. `0` = one per processor core |
+| `WORKERS` | `0` | int ≥ 0 | Threads that work at once (the 2D geometry library runs outside Python's lock): in stage 4 the finish's copper layers and hole spans, in stage 6 the parts built at once in simulation mode, the slices in visual mode. `0` = one per processor thread (`os.cpu_count()`) |
 | `SHOW_PROGRESS` | `True` | bool | Live `running <stage> ... 1m 23s` line on a terminal |
 | `VERIFY` | `False` | bool | Run the Verifier after generation (2 to 4 s on the example boards; longer on dense boards) |
 | `VERIFY_RAYS` | `3000` | int > 0 | Vertical rays the Verifier casts through a visual model to test its surfaces |
@@ -51,7 +53,7 @@ What to make, where, and in which formats.
 
 | Name | Default | Range | Meaning |
 |---|---|---|---|
-| `STEP_EXACT_ARCS` | `True` | bool | Write circles and arcs as true curves: where a part's outline runs through vertices on one circle (holes, vias, round pads, track ends, arc tracks, round outlines), their chords become one `CIRCLE` edge and the walls on them one `CYLINDRICAL_SURFACE` face, at every height alike; every other edge stays a line and every other face a plane. Left straight where another edge at that height passes closer to the vertices than the arc bulges out from them, which the arc would cross. Written by KESE's own writer; files are about 4 to 9 times smaller (the RF module in `Input/`, in m: 30 MB instead of 230 MB, written in 2.6 s instead of 4.2 s). Meshes are unchanged |
+| `STEP_EXACT_ARCS` | `True` | bool | Write circles and arcs as true curves: where a part's outline runs through vertices on one circle (holes, vias, round pads, track ends, arc tracks, round outlines), their chords become one `CIRCLE` edge and the walls on them one `CYLINDRICAL_SURFACE` face, at every height alike; every other edge stays a line and every other face a plane. Left straight where another edge at that height passes closer to the vertices than the arc bulges out from them, which the arc would cross. Written by KESE's own writer; files are about 2.5 to 3 times smaller (the RF module in `Input/`, in m: 116 MB instead of 334 MB, written in 10.1 s against 10.4 s). Meshes are unchanged |
 | `STEP_ARC_FIT_TOLERANCE_MM` | `0.0002` | mm > 0 | Vertices within this of one circle form an arc (2 x the snap grid) |
 | `STEP_ARC_MIN_POINTS` | `5` | int >= 3 | An arc runs through at least this many vertices |
 | `STEP_ARC_MIN_SWEEP_DEG` | `10.0` | degrees | and turns at least this far |
@@ -59,9 +61,9 @@ What to make, where, and in which formats.
 
 Every format holds the same parts: the ones switched on with the `..._ENABLED` switch of their module
 (`Board.BOARD_ENABLED`, `Copper.COPPER_ENABLED`, `Finish.FINISH_ENABLED`, `SolderMask.SOLDER_MASK_ENABLED`,
-`Silkscreen.SILKSCREEN_ENABLED`; mask and silkscreen are off by default). A STEP file with the mask and silkscreen is 1.5 to 1.6 times as big
-(the PCIe card in `Input/`, in mm: 348 MB and 320 solids written in 8.8 s, against 215 MB and 84 solids
-in 5.6 s without them).
+`Silkscreen.SILKSCREEN_ENABLED`; mask and silkscreen are off by default). A STEP file with the mask and silkscreen is 1.4 to 1.9 times as big
+(the PCIe card in `Input/`, in mm: 150 MB and 1,024 solids written in 10.5 s, against 80 MB and 788 solids
+in 8.0 s without them).
 
 With `STEP_EXACT_ARCS` the file uses these entities beside the planar ones: `CIRCLE` (on an
 `AXIS2_PLACEMENT_3D` at the centre, its axis the board's normal), referenced by the `EDGE_CURVE` of
@@ -76,7 +78,7 @@ seam edges and every edge has two vertices and two faces.
 |---|---|---|---|
 | `KICAD_VERSION_MIN`, `KICAD_VERSION_MAX` | `3`, `20260206` | KiCad file format numbers | Tested range, from the 2013 builds before KiCad 4 (format 3) to KiCad 10 (KiCad 4 files say `(version 4)`, KiCad 5 files `20171130`); a file outside it is read with a warning ([Compatibility](Compatibility.md#201-kicad-files)) |
 | `TESTED_COPPER_LAYERS` | `8` | int > 0 | Stage 1 warns above this many copper layers (the most among the test boards); they are still modelled |
-| `PRESETS` | `hfss`, `cst`, `openems`, `viewer` | `{name: {"Module.NAME": value}}` | Sets of overrides applied with `--for <name>` ([Choosing An Export](Choosing-An-Export.md)) |
+| `PRESETS` | `freecad`, `openems`, `viewer` | `{name: {"Module.NAME": value}}` | Sets of overrides applied with `--for <name>` ([Choosing An Export](Choosing-An-Export.md)) |
 
 ## 16.2 Board (`parameters/board.py`)
 
