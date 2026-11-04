@@ -56,21 +56,21 @@ def topology_of(boundary):
         if not len(polys):
             continue
         ring_xy, _, _, spans, _ = rings_of(polys)
-        for a, b, ends in spans:                                # one polygon: its rings, outer first
+        for a, _, ends in spans:                                # one polygon: its rings, outer first
             e0 = 0
             for e in ends.tolist():
                 xy.append(ring_xy[a + e0:a + e] if up else ring_xy[a + e0:a + e][::-1])
                 e0 = e
             loop_count.append(np.diff(np.r_[0, ends]))
             face_loop_count.append([len(ends)])
-        level.append(np.full(b, at[z]))
+        level.append(np.full(len(ring_xy), at[z]))                  # one use per point of the rings
         face_plane.append(np.full(len(spans), planes))
         same_sense.append(np.full(len(spans), up))
         plane_origin.append([[0.0, 0.0, z]])
         plane_axis.append([[0.0, 0.0, 1.0]])
         plane_ref.append([[1.0, 0.0, 0.0]])
         plane_origin_use.append([-1])
-        uses += b
+        uses += len(ring_xy)
         planes += 1
     for z0, z1, segments in boundary.walls():
         a, b = segments[:, 0], segments[:, 1]

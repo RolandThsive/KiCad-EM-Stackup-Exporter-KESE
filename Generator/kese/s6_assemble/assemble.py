@@ -23,7 +23,7 @@ def run(ps, job):
 
 def rank(name):
     for i, prefix in enumerate(PART_ORDER):
-        if name == prefix or name.startswith(prefix + "_") or name.startswith(prefix + " "):
+        if name == prefix or name.startswith((prefix + "_", prefix + " ")):
             return (i, name)
     return (len(PART_ORDER), name)
 

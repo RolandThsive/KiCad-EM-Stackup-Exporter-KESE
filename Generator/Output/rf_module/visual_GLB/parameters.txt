@@ -1,8 +1,6 @@
-# command-line overrides applied: Run.MODE='visual', Run.FILE_FORMAT=['glb']
+# command-line overrides applied: Finish.FINISH_ENABLED=True, SolderMask.SOLDER_MASK_ENABLED=True, Silkscreen.SILKSCREEN_ENABLED=True, Run.MODE='visual', Run.FILE_FORMAT=['glb']
 
 [parameters/run.py]
-COPPER_GROUPING = 'net'
-DIELECTRIC_GROUPING = 'layer'
 EXPORT_INCLUDE_NORMALS = True
 EXPORT_SET_BUFFERVIEW_TARGETS = True
 FILE_FORMAT = ['glb']
@@ -13,35 +11,28 @@ MODE = 'visual'
 ORIENTATION = 'upright'
 ORIGIN = 'center'
 OUTPUT_DIR = 'Output'
-PRESETS = {'freecad': {'Run.MODE': 'simulation', 'Run.FILE_FORMAT': ['step'], 'Run.UNITS': 'mm', 'Run.ORIGIN': 'kicad', 'Run.COPPER_GROUPING': 'net', 'Run.DIELECTRIC_GROUPING': 'layer', 'Run.WRITE_MATERIALS_JSON': True}, 'openems': {'Run.MODE': 'simulation', 'Run.FILE_FORMAT': ['stl'], 'Run.UNITS': 'mm', 'Run.ORIGIN': 'kicad', 'Run.COPPER_GROUPING': 'net', 'Run.DIELECTRIC_GROUPING': 'layer', 'Run.WRITE_MATERIALS_JSON': True}, 'viewer': {'Run.MODE': 'visual', 'Run.FILE_FORMAT': ['glb'], 'Run.UNITS': 'm', 'Run.ORIGIN': 'center'}}
 SHOW_PROGRESS = True
 SMOOTH_SHADE_ANGLE_DEG = 25.0
-STEP_ARC_FIT_TOLERANCE_MM = 0.0002
-STEP_ARC_MAX_TURN_DEG = 30.0
-STEP_ARC_MIN_POINTS = 5
-STEP_ARC_MIN_SWEEP_DEG = 10.0
-STEP_EXACT_ARCS = False
-STEP_WRITE_ROLES = ['board', 'copper', 'plating', 'finish']
 TESTED_COPPER_LAYERS = 8
 UNITS = 'm'
-VERIFY = False
-VERIFY_RAYS = 3000
-WORKERS = 0
 WRITE_MATERIALS_JSON = True
 
 [parameters/board.py]
+BOARD_ENABLED = True
 BOARD_THICKNESS_MM = None
 DEFAULT_BOARD_THICKNESS_MM = 1.6
 DEFAULT_DIELECTRIC_MATERIAL = 'FR4'
 DEFAULT_DIELECTRIC_TYPE = 'core'
 DEFAULT_EPSILON_R = 4.5
 DEFAULT_LOSS_TANGENT = 0.02
+DIELECTRIC_GROUPING = 'layer'
 DIELECTRIC_SPLIT = 'even'
 INCLUDE_NON_PLATED_HOLES = True
 OUTLINE_DUPLICATE_AREA_MM2 = 1e-06
 OUTLINE_FALLBACK = 'copper_hull'
 OUTLINE_FALLBACK_MARGIN_MM = 1.0
 OUTLINE_LINE_SNAP_MM = 0.01
+OUTLINE_MIN_AREA_MM2 = 1e-09
 RESIN_FILL_BETWEEN_INNER_COPPER = True
 USE_STACKUP_EPSILON_R = True
 USE_STACKUP_LOSS_TANGENT = True
@@ -50,6 +41,8 @@ USE_STACKUP_LOSS_TANGENT = True
 CASTELLATION = 'auto'
 CASTELLATION_WALL_MM = 0.025
 COPPER_CONDUCTIVITY_S_PER_M = 58000000.0
+COPPER_ENABLED = True
+COPPER_GROUPING = 'net'
 COPPER_SURFACE_ROUGHNESS_UM = 0.0
 DEFAULT_INNER_FOIL_MM = 0.035
 DEFAULT_OUTER_FOIL_MM = 0.035
@@ -77,6 +70,7 @@ MASK_OVER_LAMINATE_MM = 0.01
 MASK_WALL_QUAD_SEGS = 4
 MASK_WEB_HAIRLINE_MM = 0.001
 PAD_TO_MASK_CLEARANCE_MM = None
+SOLDER_MASK_ENABLED = True
 USE_STACKUP_MASK_THICKNESS = True
 
 [parameters/silkscreen.py]
@@ -89,18 +83,20 @@ INTERLINE_PITCH = 1.68
 ITALIC_TILT = 0.125
 MAX_PEN_RATIO = 0.25
 NORMAL_THICKNESS_RATIO = 0.125
+SILKSCREEN_ENABLED = True
 SILKSCREEN_OVER_COPPER = False
 SILK_LAYERS = ['F.SilkS', 'B.SilkS']
 SILK_THICKNESS_MM = 0.01
 TEXT_STROKE_QUAD_SEGS = 4
 
 [parameters/finish.py]
+FINISH_BEFORE_SOLDER_MASK = False
 FINISH_CONDUCTIVITY_S_PER_M = {'Nickel': 14000000.0, 'Gold': 41000000.0, 'Palladium': 9500000.0, 'Tin': 9100000.0, 'Silver': 63000000.0, 'OSP': 0.0}
-FINISH_DEFAULT_TYPE = 'ENIG'
-FINISH_ENABLED = False
+FINISH_ENABLED = True
 FINISH_GROUPING = 'metal'
+FINISH_MITRE_LIMIT = 2.0
 FINISH_NAME_ALIASES = {'HAL SnPb': 'HASL', 'HAL lead-free': 'HASL_LF', 'Hard gold': 'HardGold', 'Immersion tin': 'ImmersionTin', 'Immersion silver': 'ImmersionSilver', 'HT_OSP': 'OSP'}
-FINISH_TYPE = 'file'
+FINISH_TYPE = 'ENIG'
 FINISH_TYPES = {'ENIG': [('Nickel', 0.005), ('Gold', 8e-05)], 'ENEPIG': [('Nickel', 0.005), ('Palladium', 0.0001), ('Gold', 5e-05)], 'HASL': [('Tin', 0.01)], 'HASL_LF': [('Tin', 0.01)], 'OSP': [('OSP', 0.0003)], 'ImmersionSilver': [('Silver', 0.0002)], 'ImmersionTin': [('Tin', 0.001)], 'HardGold': [('Nickel', 0.005), ('Gold', 0.001)]}
 
 [parameters/geometry.py]
@@ -111,6 +107,7 @@ CIRCLE_MAX_QUAD_SEGS = 128
 CIRCLE_MIN_QUAD_SEGS = 8
 FLAT_FACET_THRESHOLD = 5000
 MESH_MERGE_DIGITS = 8
+NODING_ROUNDS = 8
 PINCH_CUT_ROUNDS = 10
 PINCH_DISC_TURN_DEG = 17.0
 PINCH_POINT_OPENING_MM = 0.0001
@@ -121,6 +118,7 @@ SNAP_GRID_MM = 0.0001
 TRACK_END_MIN_QUAD_SEGS = 4
 TRIANGULATE_CELL_MM = 10.0
 TRIANGULATE_CELL_POINTS = 5000
+VERTEX_SHARING_ROUNDS = 20
 
 [parameters/color.py]
 MATERIALS = {'Board': {'color': '#968A58', 'alpha': 1.0, 'metallic': 0.0, 'roughness': 0.8}, 'Board_core': {'color': '#968A58', 'alpha': 1.0, 'metallic': 0.0, 'roughness': 0.8}, 'Board_prepreg': {'color': '#A89C66', 'alpha': 1.0, 'metallic': 0.0, 'roughness': 0.8}, 'Copper': {'color': '#CD803E', 'alpha': 1.0, 'metallic': 0.9, 'roughness': 0.35}, 'Copper_exposed': {'color': '#DEBA60', 'alpha': 1.0, 'metallic': 1.0, 'roughness': 0.25}, 'Plating': {'color': '#CD803E', 'alpha': 1.0, 'metallic': 0.9, 'roughness': 0.35}, 'Top Solder Mask': {'color': '#EBEBE6', 'alpha': 0.8, 'metallic': 0.0, 'roughness': 0.3}, 'Bottom Solder Mask': {'color': '#EBEBE6', 'alpha': 0.8, 'metallic': 0.0, 'roughness': 0.3}, 'Top Mask over Copper': {'color': '#F2EFD8', 'alpha': 1.0, 'metallic': 0.0, 'roughness': 0.3}, 'Bottom Mask over Copper': {'color': '#F2EFD8', 'alpha': 1.0, 'metallic': 0.0, 'roughness': 0.3}, 'Top Silkscreen': {'color': '#141414', 'alpha': 1.0, 'metallic': 0.0, 'roughness': 0.75}, 'Bottom Silkscreen': {'color': '#141414', 'alpha': 1.0, 'metallic': 0.0, 'roughness': 0.75}, 'Nickel': {'color': '#B8B8B0', 'alpha': 1.0, 'metallic': 1.0, 'roughness': 0.4}, 'Gold': {'color': '#E6C15A', 'alpha': 1.0, 'metallic': 1.0, 'roughness': 0.2}, 'Tin': {'color': '#C9C9C9', 'alpha': 1.0, 'metallic': 1.0, 'roughness': 0.45}, 'Silver': {'color': '#E4E4E0', 'alpha': 1.0, 'metallic': 1.0, 'roughness': 0.25}, 'Palladium': {'color': '#DFDAD4', 'alpha': 1.0, 'metallic': 1.0, 'roughness': 0.3}, 'OSP': {'color': '#D9955A', 'alpha': 1.0, 'metallic': 0.8, 'roughness': 0.35}}
@@ -130,3 +128,31 @@ STACKUP_SILK_COLORS = {'white': '#F0F0EC', 'black': '#141414', 'yellow': '#E6C82
 USER_MASK_OVER_COPPER_LIGHTEN = 0.15
 USE_STACKUP_COLORS = True
 VISUAL_MASK_OPAQUE = True
+
+[parameters/parallel.py]
+GIVE_BACK_MEMORY = True
+PROCESS_MIN_COORDINATES = 20000
+PROCESS_WORKERS = 0
+SKIN_PROBES_AT_A_TIME = 2000000
+STEP_ROWS_AT_A_TIME = 100000
+VERIFY_TRIANGLES_AT_A_TIME = 200000
+WORKERS = 0
+
+[parameters/step.py]
+STEP_ARC_FIT_TOLERANCE_MM = 0.0002
+STEP_ARC_MAX_SWEEP_DEG = 181.0
+STEP_ARC_MAX_TURN_DEG = 30.0
+STEP_ARC_MIN_POINTS = 5
+STEP_ARC_MIN_SWEEP_DEG = 10.0
+STEP_ARC_TURN_RATIO_MAX = 1.3
+STEP_ARC_TURN_RATIO_MIN = 0.7
+STEP_EXACT_ARCS = True
+
+[parameters/verifier.py]
+VERIFY = False
+VERIFY_OPENED_VOLUME_MM3 = 0.001
+VERIFY_RAYS = 3000
+VERIFY_VOLUME_TOLERANCE = 1e-07
+
+[parameters/presets.py]
+PRESETS = {'freecad': {'Run.MODE': 'simulation', 'Run.FILE_FORMAT': ['step'], 'Run.UNITS': 'mm', 'Run.ORIGIN': 'kicad', 'Copper.COPPER_GROUPING': 'net', 'Board.DIELECTRIC_GROUPING': 'layer', 'Run.WRITE_MATERIALS_JSON': True}, 'elmer': {'Run.MODE': 'simulation', 'Run.FILE_FORMAT': ['step'], 'Run.UNITS': 'mm', 'Run.ORIGIN': 'kicad', 'Copper.COPPER_GROUPING': 'net', 'Board.DIELECTRIC_GROUPING': 'layer', 'Run.WRITE_MATERIALS_JSON': True, 'Finish.FINISH_ENABLED': False}, 'calculix': {'Run.MODE': 'simulation', 'Run.FILE_FORMAT': ['step'], 'Run.UNITS': 'mm', 'Run.ORIGIN': 'kicad', 'Copper.COPPER_GROUPING': 'layer', 'Board.DIELECTRIC_GROUPING': 'layer', 'Run.WRITE_MATERIALS_JSON': True, 'Finish.FINISH_ENABLED': False}, 'openems': {'Run.MODE': 'simulation', 'Run.FILE_FORMAT': ['stl'], 'Run.UNITS': 'mm', 'Run.ORIGIN': 'kicad', 'Copper.COPPER_GROUPING': 'net', 'Board.DIELECTRIC_GROUPING': 'layer', 'Run.WRITE_MATERIALS_JSON': True, 'Finish.FINISH_ENABLED': False}, 'viewer': {'Run.MODE': 'visual', 'Run.FILE_FORMAT': ['glb'], 'Run.UNITS': 'm', 'Run.ORIGIN': 'center'}, 'blender_glb': {'Run.MODE': 'visual', 'Run.FILE_FORMAT': ['glb'], 'Run.UNITS': 'm', 'Run.ORIGIN': 'center', 'Run.ORIENTATION': 'flat', 'SolderMask.SOLDER_MASK_ENABLED': True, 'Silkscreen.SILKSCREEN_ENABLED': True}, 'blender_obj': {'Run.MODE': 'visual', 'Run.FILE_FORMAT': ['obj'], 'Run.UNITS': 'm', 'Run.ORIGIN': 'center', 'Run.ORIENTATION': 'flat', 'SolderMask.SOLDER_MASK_ENABLED': True, 'Silkscreen.SILKSCREEN_ENABLED': True}}
