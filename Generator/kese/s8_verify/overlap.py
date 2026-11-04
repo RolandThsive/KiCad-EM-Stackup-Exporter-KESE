@@ -38,4 +38,4 @@ def overlaps(model):
     found = [(polys[p].intersection(polys[q]).area * h, rows[owner[p]][0], rows[owner[q]][0],
               max(z0[owner[p]], z0[owner[q]]), min(z1[owner[p]], z1[owner[q]]))
              for p, q, h in zip(i[meet], j[meet], dz[meet])]
-    return sorted(found, key=lambda f: -f[0])
+    return sorted(found, key=lambda f: (-f[0], *f[1:]))

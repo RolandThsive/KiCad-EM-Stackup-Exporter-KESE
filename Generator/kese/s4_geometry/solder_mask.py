@@ -5,6 +5,7 @@ before the mask), with a wall where it climbs over a trace.  Where the mask is c
 from kese.core import shapes2d as sh
 from kese.core.conformal import conformal_regions
 from kese.core.parallel import in_parallel
+from kese.core.shape_copies import own
 from kese.s4_geometry.finish import under_mask_copper, under_mask_mm
 from kese.s4_geometry.heights import mask_thicknesses
 from parameters import P
@@ -18,11 +19,11 @@ def build(r, ps, mode):
                     + (f", on the finish ({lift:.6g} mm) over copper" if lift else ""))
     sides = (("F", "F.Cu", 1, "Top"), ("B", "B.Cu", -1, "Bottom"))
 
-    def split(side):                           # (flat, top, wall) of one side, or None
-        region = r.mask[side[0]]
+    def split(side):                           # (flat, top, wall) of one side, or None; in a thread, on its
+        region = own(r.mask[side[0]])          # own copies (the two sides' shapes come from the same ones)
         if region.is_empty:
             return None
-        cu = under_mask_copper(st, r.copper_all.get(side[1], sh.EMPTY))
+        cu = under_mask_copper(st, own(r.copper_all.get(side[1], sh.EMPTY)))
         return conformal_regions(region, cu, t_lam, M.MASK_WALL_QUAD_SEGS)
     for (side, layer, sign, tb), pieces in zip(sides, in_parallel(split, sides)):   # both sides at once
         if pieces is None:

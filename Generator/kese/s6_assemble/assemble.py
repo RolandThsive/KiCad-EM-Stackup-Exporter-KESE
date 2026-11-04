@@ -51,6 +51,7 @@ def assemble(ps, mode, log):
         if m is not None:
             done[part] = m
     meshes = {part: done[part] for part in sorted(done, key=rank)}
+    boundaries = {part: boundaries[part] for part in sorted(boundaries, key=rank)}   # not in the order built
     props = {}
     for part, prisms in ps.by_part().items():
         p0 = prisms[0]

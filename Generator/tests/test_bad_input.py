@@ -55,6 +55,14 @@ def test_workers_must_be_zero_or_more():
         assert isinstance(refused, str) and "Run.WORKERS" in refused, (n, refused)
 
 
+def test_pinch_cut_rounds_must_be_one_or_more():
+    for n in (1, 10):
+        assert not isinstance(started({"Geometry.PINCH_CUT_ROUNDS": n}), str), n
+    for n in (0, -1, 2.5, "10"):          # at 0 every region checked would be noted as pinched
+        refused = started({"Geometry.PINCH_CUT_ROUNDS": n})
+        assert isinstance(refused, str) and "Geometry.PINCH_CUT_ROUNDS" in refused, (n, refused)
+
+
 def test_a_tenting_side_with_no_value_keeps_the_default():
     via = parse("(via (tenting (front) (back yes)))")
     assert kv.via_tenting(via, {"F": True, "B": False}) == {"F": True, "B": True}

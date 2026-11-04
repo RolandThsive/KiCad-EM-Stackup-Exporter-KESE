@@ -80,6 +80,9 @@ def start(mode=None, formats=None, out_root=None, overrides=(), verify=None, log
             raise ValueError(f"{key} must be {' or '.join(map(repr, words))}, not {value!r}")
     if type(R.WORKERS) is not int or R.WORKERS < 0:
         raise ValueError(f"Run.WORKERS must be a whole number, 0 or more (0: one per processor thread), not {R.WORKERS!r}")
+    rounds = P.Geometry.PINCH_CUT_ROUNDS
+    if type(rounds) is not int or rounds < 1:
+        raise ValueError(f"Geometry.PINCH_CUT_ROUNDS must be a whole number, 1 or more, not {rounds!r}")
     if not any(is_on(key) for key in SWITCHES.values()):
         raise ValueError(f"nothing to build: {', '.join(sorted(set(SWITCHES.values())))} are all False")
     return Job(mode=mode, formats=formats, out_root=out_root, overrides=tuple(overrides),

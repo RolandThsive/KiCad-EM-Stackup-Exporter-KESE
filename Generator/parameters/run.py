@@ -35,16 +35,21 @@ ORIENTATION = "upright"
 # How many threads or processes work at once.  Threads where the 2D geometry library does the work
 # (it runs outside Python's lock): the copper layers in stage 3; both sides of the solder mask and
 # the silkscreen, and the finish's copper layers and hole spans, in stage 4; the faces of the
-# visual-mode skin.  Processes of their own where much of the work is Python's: in stage 6 the
-# parts built at once in "simulation" mode and the parts sliced for the "visual" skin (on boards of
-# 20,000 coordinates or more; a smaller board is built in turn, faster than starting processes).
-# 0 = one per processor thread (os.cpu_count()); 1 = everything in turn, in one process
+# visual-mode skin and the test for its hidden triangles, in stage 6.  Processes of their own where
+# much of the work is Python's: in stage 6 the parts built at once in "simulation" mode and the
+# parts sliced for the "visual" skin (when the parts hold 20,000 coordinates or more in all; fewer
+# are built in turn, faster than starting processes).  Each process holds its own Python, numpy and
+# shapely: 4 of them add about 0.3 to 0.5 GB.  If they cannot start, or one is stopped or runs out of
+# memory, the main process builds the parts left, with a note in report.txt.
+# 0 = one per processor thread this process may use (all of the machine's, unless a job scheduler,
+# taskset or a container limits it); 1 = everything in turn, in one process.  Windows holds at most 61
+# processes at once.
 WORKERS = 0
 
 # Live "running <stage> ... 1m 23s" line in the terminal while a board is generated
 SHOW_PROGRESS = True
 
-# Run the Verifier after generation (adds about 2-4 s per board on the example boards, more on
+# Run the Verifier after generation (adds about 1-3 s per board on the example boards, more on
 # dense boards). Results go in report.txt.
 VERIFY = False
 VERIFY_RAYS = 3000                     # vertical rays the Verifier casts through a visual model to test its surfaces
@@ -79,8 +84,8 @@ STEP_ARC_MAX_TURN_DEG = 30.0           # but at most this far at one vertex: a p
 # Which parts are made, in every format and mode alike, is set by one switch per kind of part:
 #   Board.BOARD_ENABLED, Copper.COPPER_ENABLED (copper and plated barrels), Finish.FINISH_ENABLED,
 #   SolderMask.SOLDER_MASK_ENABLED, Silkscreen.SILKSCREEN_ENABLED; mask and silk are off by default.
-#   STEP with mask and silk is bigger (the PCIe card in Input/, in mm: 348 MB and 320 solids written
-#   in 8.8 s, against 215 MB and 84 solids without them).
+#   STEP with mask and silk is bigger (the PCIe card in Input/, in mm: 150 MB and 1,024 solids written
+#   in 7.1 s, against 80 MB and 788 solids in 4.9 s without them).
 
 # KiCad file-format versions this project has been tested with (stage 1, read, warns outside this range)
 KICAD_VERSION_MIN = 3                  # the BZR builds of 2013-2014 before KiCad 4 (KiCad 4 files say (version 4), KiCad 5 20171130)

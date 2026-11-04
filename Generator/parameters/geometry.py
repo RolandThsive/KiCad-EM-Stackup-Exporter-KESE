@@ -36,5 +36,6 @@ TRIANGULATE_CELL_MM = 10.0              # width of those strips (KiCad cuts big 
 SKIN_BURIED_TEST_OFFSET_MM = 0.0005     # a face is dropped if a point this far outside it lies inside another solid
 
 # Triangle meshes (kese/core/mesh.py)
-MESH_MERGE_DIGITS = 8                   # vertices that round to the same point at 10^-8 (mm or m) are one; angles under 1e-8 rad are none
+MESH_MERGE_DIGITS = 8                   # 10^-8: a corner angle under 1e-8 rad is none (no weight in smooth shading), and
+                                        # normals whose values spread less are not kept; no vertices are merged
 FLAT_FACET_THRESHOLD = 5000             # smooth shading: two faces are one flat facet where (edge radius / edge span)^2 exceeds this

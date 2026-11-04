@@ -20,7 +20,6 @@ written, without OpenCascade's healing (tests/step_audit.py says what is still a
 check)."""
 import json
 import multiprocessing
-import os
 import shutil
 import sys
 import time
@@ -35,6 +34,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 
 import numpy as np  # noqa: E402
 
+from kese.core.parallel import process_limit, processor_threads  # noqa: E402
 from kese.pipeline import generate  # noqa: E402
 from kese.s8_verify.verify import every_check  # noqa: E402
 from parameters import P  # noqa: E402
@@ -45,7 +45,7 @@ OUT = ROOT / "tests" / "out"
 VOLUME_TOLERANCE = 1e-3          # relative, per part
 # background processes reading STEP files back (plain python entry): one per processor thread, as
 # each holds one part of a file in OpenCascade, not the whole file (gigabytes for the biggest boards)
-AUDITORS = max(2, os.cpu_count() or 1)
+AUDITORS = process_limit(max(2, processor_threads()))
 FEATURES = sorted((ROOT.parent / "featureTest").glob("*.kicad_pcb"))
 # the boards of Input/ that featureTest/ holds too, byte for byte (21_rf_module is rf_module), run once
 COPIES = {p.read_bytes() for p in FEATURES}

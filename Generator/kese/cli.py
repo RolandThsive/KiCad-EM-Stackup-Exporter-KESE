@@ -80,10 +80,10 @@ def main():
         try:
             generate(pcb, out_root=out_root, overrides=overrides)
         except Exception as exc:
+            if len(boards) == 1:
+                raise                                     # the traceback, which ends with the reason
             failures += 1
             print(f"{pcb.name}: FAILED - {exc}")
-            if len(boards) == 1:
-                raise
     sys.exit(1 if failures else 0)
 
 

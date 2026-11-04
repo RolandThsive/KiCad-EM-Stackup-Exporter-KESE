@@ -6,6 +6,7 @@ import shapely
 
 from kese.core import shapes2d as sh
 from kese.core.parallel import in_parallel
+from kese.core.shape_copies import own
 from kese.core.shapes2d import side_by_side, union
 from kese.s3_resolve.holes import hole_shapes
 from parameters import P
@@ -22,13 +23,16 @@ def copper_layers(r, items, outline_k):
 
 def copper_of_layer(r, items, outline_k, k):
     """{net: region} of copper layer k: each net's items joined, cut by the holes it touches, clipped
-    to the outline, board frame."""
+    to the outline, board frame.  In a thread: the outline, the holes and the items (a pad or a via
+    is on several layers) are this thread's own copies (kese/core/shape_copies.py)."""
     T, last, l = r.to_board_T, len(items.layers) - 1, items.layers[k]
+    outline_k = own(outline_k)
     # outer copper caps the barrel (cut by the open bore); inner copper stops at the drill wall
-    holes = [g for g in hole_shapes(items, lambda h: h.i <= k <= h.j, bore=k in (0, last)) if not g.is_empty]
+    holes = [g for g in hole_shapes(items, lambda h: h.i <= k <= h.j, bore=k in (0, last), take=own) if not g.is_empty]
     tree = shapely.STRtree(holes)
     per_net = defaultdict(list)
-    for g, net in items.copper_items.get(l, []):
+    mine = items.copper_items.get(l, [])
+    for (_, net), g in zip(mine, own([g for g, _ in mine])):
         per_net[net].append(g)
     regions = {}
     for net, gs in per_net.items():

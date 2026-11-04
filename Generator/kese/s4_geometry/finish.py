@@ -62,16 +62,16 @@ def under_mask_copper(st, cu):
     return grow(cu, reach, join_style="mitre", mitre_limit=2.0)
 
 
-def exposed(r, side, cu):
+def exposed(r, side, cu, take=lambda g: g):
     """The part of `cu` (copper on side's outer layer) the finish lands on.  Applied before the
     mask (FINISH_BEFORE_SOLDER_MASK) that is all of it; after the mask, only what is in a mask
     opening and not under ink kept in the opening (SILKSCREEN_OVER_COPPER: printed before the
-    finish)."""
+    finish).  take(shape): the board's shapes as used (own, in a thread)."""
     if P.Finish.FINISH_BEFORE_SOLDER_MASK:
         return cu
-    bare = sh.inter(cu, r.mask_open[side])
+    bare = sh.inter(cu, take(r.mask_open[side]))
     if P.Silkscreen.SILKSCREEN_OVER_COPPER:
-        inked = r.silk.get(side, EMPTY)
+        inked = take(r.silk.get(side, EMPTY))
         if not inked.is_empty:
             bare = sh.diff(bare, inked)
     return bare

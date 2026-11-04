@@ -40,10 +40,11 @@ CHUNK = 64 * 2**20                # bytes copied at a time into a part's own fil
 def step_audit(path, healed=False, workers=None):
     """(invalid solids, free edges, seconds of reading summed over the parts) of a STEP file, via OCP;
     its parts read in `workers` processes (None: one per processor thread, none for a SMALL file)."""
+    from kese.core.parallel import process_limit, processor_threads     # here: not in every reading process
     jobs = parts(path)
     if workers is None:
-        workers = 1 if os.path.getsize(path) < SMALL else os.cpu_count() or 1
-    workers = max(1, min(workers, len(jobs)))
+        workers = 1 if os.path.getsize(path) < SMALL else processor_threads()
+    workers = process_limit(max(1, min(workers, len(jobs))))
     if workers == 1:
         return total([audit_part(job, healed) for job in jobs])
     with ProcessPoolExecutor(workers, mp_context=multiprocessing.get_context("spawn")) as pool:

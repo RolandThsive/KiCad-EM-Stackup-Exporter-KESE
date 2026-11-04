@@ -8,10 +8,11 @@ from kese.core.shapes2d import union
 from parameters import P
 
 
-def hole_shapes(items, pred, bore=False):
+def hole_shapes(items, pred, bore=False, take=lambda g: g):
     """The holes for which pred(hole) holds, one shape each, KiCad frame: the drilled outline, or
-    with bore=True the open bore inside the plating."""
-    return [h.drill.buffer(-h.wall) if bore and h.wall > 0 else h.drill for h in items.holes if pred(h)]
+    with bore=True the open bore inside the plating.  take(drills): the drills as used (own, in a thread)."""
+    picked = [h for h in items.holes if pred(h)]
+    return [d.buffer(-h.wall) if bore and h.wall > 0 else d for h, d in zip(picked, take([h.drill for h in picked]))]
 
 
 def made_once(r, kind, pred, make):
