@@ -37,7 +37,7 @@ solvers and CAD, and a **visual model** of the visible surface for viewers.
 | What-if | Change plating, via wall, mask thickness or etch factor in `parameters/` and export again | |
 | Verifier (`--verify`) | Every part closed and consistently wound; its volume the same from its faces, slices, mesh and prisms; no two parts sharing material, every slice against every other | Along 3,000 vertical rays the faces take turns, into the material and out of it |
 | 4-layer PCIe card example | GLB 30.1 MB, 879,986 triangles | GLB 9.1 MB, 290,834 triangles |
-| Presets | `--for freecad`, `--for openems` | `--for viewer` |
+| Presets | `--for freecad`, `elmer`, `calculix`, `openems` | `--for viewer`, `blender_glb`, `blender_obj` |
 
 More in [Output Modes](Output-Modes.md).
 
@@ -46,7 +46,7 @@ More in [Output Modes](Output-Modes.md).
 | File | What it holds |
 |---|---|
 | GLB | One mesh per part with its colour; metres by default (`Run.UNITS`) |
-| STEP | Written by KESE itself, no CAD kernel needed: every part under its own name, as closed solids with true circular arcs and cylinders (`Run.STEP_EXACT_ARCS`, the default; 4 to 9 times smaller files than flat faces with curves as polygons); the same parts as every other format, as the part switches set them |
+| STEP | Written by KESE itself, no CAD kernel needed: every part under its own name, as closed solids with true circular arcs and cylinders (`Step.STEP_EXACT_ARCS`, the default; 4 to 9 times smaller files than flat faces with curves as polygons); the same parts as every other format, as the part switches set them |
 | STL | One closed file per part, in `stl/` |
 | OBJ | One object per part, colours in an `.mtl` |
 | `materials.json` | Per part: role, layer, net, z range, εr, tanδ, conductivity, colour, file names |

@@ -7,7 +7,6 @@ import shapely
 from kese.core import shapes2d as sh
 
 
-
 def near_edge():
     """How far from an edge a vertex may lie and still count as on it: half a grid diagonal (GEOS
     rounds crossings to the grid), less than the full step between two grid points."""

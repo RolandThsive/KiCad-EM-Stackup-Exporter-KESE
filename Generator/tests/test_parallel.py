@@ -273,7 +273,7 @@ def step_data(tmp, rows, arcs):
                            [shapely.Point(0.3, 0.2).buffer(1.5, quad_segs=16).exterior.coords])
     region = shapely.MultiPolygon([star, shapely.box(12, 0, 15, 3)])
     part = Boundary("star", [0.0, 1.6], [(0.0, 1.6, region)], [(0.0, region, False), (1.6, region, True)])
-    saved = with_workers(1, ("Parallel.STEP_ROWS_AT_A_TIME", rows), ("Run.STEP_EXACT_ARCS", arcs))
+    saved = with_workers(1, ("Parallel.STEP_ROWS_AT_A_TIME", rows), ("Step.STEP_EXACT_ARCS", arcs))
     try:
         path = Path(tmp) / f"{rows}_{arcs}.step"
         w = StepWriter(path, "star", "mm")

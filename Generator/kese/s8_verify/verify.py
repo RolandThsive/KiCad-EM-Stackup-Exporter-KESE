@@ -1,4 +1,4 @@
-"""Stage 8 - verify (opt-in: Run.VERIFY or --verify): the Model has to prove itself with the
+"""Stage 8 - verify (opt-in: Verifier.VERIFY or --verify): the Model has to prove itself with the
 checks in meshes.py and volumes.py; the verdict goes on screen and into report.txt."""
 from kese.s8_verify.meshes import check_meshes
 from kese.s8_verify.volumes import volumes_agree

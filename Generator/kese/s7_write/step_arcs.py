@@ -1,4 +1,4 @@
-"""Which runs of an outline's vertices a STEP file writes as true circular arcs (Run.STEP_EXACT_ARCS):
+"""Which runs of an outline's vertices a STEP file writes as true circular arcs (Step.STEP_EXACT_ARCS):
 those that lie on one circle within STEP_ARC_FIT_TOLERANCE_MM, turning the same way by the same
 angle at every vertex as a faceted circle does (find_arcs).  Every arc is written on the circle
 through its two end vertices and the fitted circle's point halfway between them, so that its ends
@@ -13,7 +13,7 @@ MAX_SWEEP = math.radians(181)     # an arc turns about half a circle at most: a 
 
 
 class Fit(NamedTuple):
-    """What a run of vertices must do to be an arc (from Run.STEP_ARC_*)."""
+    """What a run of vertices must do to be an arc (from Step.STEP_ARC_*)."""
     tol: float            # mm: every vertex this close to one circle
     points: int           # at least this many vertices
     sweep: float          # radians: turning at least this far in all

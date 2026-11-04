@@ -1,4 +1,4 @@
-"""A part's Topology with true circles (Run.STEP_EXACT_ARCS): where the outline runs through points
+"""A part's Topology with true circles (Step.STEP_EXACT_ARCS): where the outline runs through points
 that lie on one circle, at every height it is at, the chords become one arc edge per height and the
 walls standing on them one cylindrical face per slice; the vertices inside the arc go.
 

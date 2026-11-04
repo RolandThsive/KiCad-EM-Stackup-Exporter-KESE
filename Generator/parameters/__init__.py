@@ -20,8 +20,17 @@ _MODULES = {
     "Geometry": "geometry",
     "Color": "color",
     "Parallel": "parallel",
+    "Step": "step",
+    "Verifier": "verifier",
+    "Presets": "presets",
 }
-MOVED = {"Run.WORKERS": "Parallel.WORKERS"}        # a setting's old name (it still works): its name now
+# a setting's old name (it still works): its name now
+MOVED = {"Run.WORKERS": "Parallel.WORKERS",
+         **{f"Run.{name}": f"Step.{name}" for name in ("STEP_EXACT_ARCS", "STEP_ARC_FIT_TOLERANCE_MM", "STEP_ARC_MIN_POINTS",
+                                                       "STEP_ARC_MIN_SWEEP_DEG", "STEP_ARC_MAX_TURN_DEG")},
+         **{f"Run.{name}": f"Verifier.{name}" for name in ("VERIFY", "VERIFY_RAYS", "VERIFY_VOLUME_TOLERANCE",
+                                                           "VERIFY_OPENED_VOLUME_MM3")},
+         "Run.PRESETS": "Presets.PRESETS"}
 
 
 class _Params(types.SimpleNamespace):
@@ -90,3 +99,6 @@ def load():
 
 
 P = load()
+# the kind of value each setting has in its file, before any --set: a new value must be of the same
+# kind (job.start checks it), so that --set X=false, which gives the word "false", is not taken as true
+KINDS = {f"{s}.{n}": type(getattr(getattr(P, s), n)) for s in _MODULES for n in P.names(s)}

@@ -1,6 +1,6 @@
 # 16. Parameter Reference
 
-Every setting lives in one of nine files in `parameters/`. These are the only files you edit.
+Every setting lives in one of twelve files in `parameters/`. These are the only files you edit.
 Units are mm unless a name says otherwise. The **Range** column is what the program uses
 sensibly; "None" means the program works the value out itself. Any value can be overridden for
 one run with `--set Module.NAME=value`, where `Module` is the short name in the heading of each
@@ -11,9 +11,11 @@ and listed on its first line.
 > [!NOTE]
 > Defaults are those of the parameter files on `main`. Before the board is read, the run checks
 > `MODE`, `FILE_FORMAT`, the settings of `parameters/parallel.py`, the rounds of
-> `parameters/geometry.py`, the Verifier's tolerances and every setting whose range below is a few
-> words with `/` between them (such as `"mm"` / `"m"`), and stops with an error that names the
-> setting.
+> `parameters/geometry.py`, the Verifier's tolerances and rays, the names in the preset of `--for`,
+> every setting whose range below is a few words with `/` between them (such as `"mm"` / `"m"`), and
+> the kind of every value: `True` or `False` where the file has one of them, a number where it has a
+> number, text, a list or a dict likewise (a setting that is `None` in its file takes any value). It
+> stops with an error that names the setting.
 > `FINISH_TYPE` and `DIELECTRIC_SPLIT` are checked where they are used (an error or a warning), and
 > `FONT_FILE` gives a note in `report.txt`. For the rest, a value outside the range below produces
 > a wrong model or a plain Python error, not a named check.
@@ -35,15 +37,13 @@ What to make, where, and in which formats.
 
 ### 16.1.2 Run Behaviour
 
-How many threads and processes work at once is set in [16.9 Parallel](#169-parallel-parametersparallelpy).
+How many threads and processes work at once is set in [16.9 Parallel](#169-parallel-parametersparallelpy), the
+STEP files' own settings in [16.10 Step](#1610-step-parameterssteppy), the Verifier's in
+[16.11 Verifier](#1611-verifier-parametersverifierpy) and the presets in [16.12 Presets](#1612-presets-parameterspresetspy).
 
 | Name | Default | Range | Meaning |
 |---|---|---|---|
 | `SHOW_PROGRESS` | `True` | bool | Live `running <stage> ... 1m 23s` line on a terminal |
-| `VERIFY` | `False` | bool | Run the Verifier after generation (1 to 3 s on the example boards in simulation mode, under 1 s in visual mode; longer on dense boards) |
-| `VERIFY_RAYS` | `3000` | int > 0 | Vertical rays the Verifier casts through a visual model to test its surfaces |
-| `VERIFY_VOLUME_TOLERANCE` | `1e-7` | ≥ 0 | How far a part's volumes from its faces, its slices and its mesh may differ, as a share of its volume (the numerical noise of areas and meshes), and still pass ([Checks, Errors And Warnings](Checks-Errors-And-Warnings.md#173-the-verifier)) |
-| `VERIFY_OPENED_VOLUME_MM3` | `1e-3` | mm³ ≥ 0 | How much volume the opened pinch points may take from a part's prisms, and the part still pass |
 | `WRITE_MATERIALS_JSON` | `True` | bool | Write `materials.json` next to the outputs |
 
 ### 16.1.3 Mesh Export (GLB, STL, OBJ)
@@ -54,36 +54,12 @@ How many threads and processes work at once is set in [16.9 Parallel](#169-paral
 | `EXPORT_SET_BUFFERVIEW_TARGETS` | `True` | bool | Set glTF bufferView targets, which keeps the Khronos validator report free of hints |
 | `SMOOTH_SHADE_ANGLE_DEG` | `25.0` | degrees | Edges sharper than this stay crisp; flatter ones (cylinders) shade smooth |
 
-### 16.1.4 STEP Export
-
-| Name | Default | Range | Meaning |
-|---|---|---|---|
-| `STEP_EXACT_ARCS` | `True` | bool | Write circles and arcs as true curves: where a part's outline runs through vertices on one circle (holes, vias, round pads, track ends, arc tracks, round outlines), their chords become one `CIRCLE` edge and the walls on them one `CYLINDRICAL_SURFACE` face, at every height alike; every other edge stays a line and every other face a plane. Left straight where another edge at that height passes closer to the vertices than the arc bulges out from them, which the arc would cross. Written by KESE's own writer; files are about 2.5 to 3 times smaller (the RF module in `Input/`, in m: 116 MB instead of 334 MB, written in 8.2 s against 7.4 s). Meshes are unchanged |
-| `STEP_ARC_FIT_TOLERANCE_MM` | `0.0002` | mm > 0 | Vertices within this of one circle form an arc (2 x the snap grid) |
-| `STEP_ARC_MIN_POINTS` | `5` | int ≥ 3 | An arc runs through at least this many vertices |
-| `STEP_ARC_MIN_SWEEP_DEG` | `10.0` | degrees | and turns at least this far |
-| `STEP_ARC_MAX_TURN_DEG` | `30.0` | degrees | but at most this far at one vertex, so that a polygon of fewer than 12 sides (an octagonal pad, a square) stays a polygon |
-
-Every format holds the same parts: the ones switched on with the `..._ENABLED` switch of their module
-(`Board.BOARD_ENABLED`, `Copper.COPPER_ENABLED`, `Finish.FINISH_ENABLED`, `SolderMask.SOLDER_MASK_ENABLED`,
-`Silkscreen.SILKSCREEN_ENABLED`; mask and silkscreen are off by default). A STEP file with the mask and silkscreen is 1.4 to 1.9 times as big
-(the PCIe card in `Input/`, in mm: 150 MB and 1,024 solids written in 7.1 s, against 80 MB and 788 solids
-in 4.9 s without them).
-
-With `STEP_EXACT_ARCS` the file uses these entities beside the planar ones: `CIRCLE` (on an
-`AXIS2_PLACEMENT_3D` at the centre, its axis the board's normal), referenced by the `EDGE_CURVE` of
-an arc edge whose sense says which way it runs, and `CYLINDRICAL_SURFACE` (on the circle's placement
-at the wall's lower height) under the `ADVANCED_FACE` of a curved wall. An arc turns at most about
-half a circle: a whole circle is two arcs between two vertices, on one `CIRCLE`, so there are no
-seam edges and every edge has two vertices and two faces.
-
-### 16.1.5 KiCad Versions And Presets
+### 16.1.4 KiCad Versions
 
 | Name | Default | Range | Meaning |
 |---|---|---|---|
 | `KICAD_VERSION_MIN`, `KICAD_VERSION_MAX` | `3`, `20260206` | KiCad file format numbers | Tested range, from the 2013 builds before KiCad 4 (format 3) to KiCad 10 (KiCad 4 files say `(version 4)`, KiCad 5 files `20171130`); a file outside it is read with a warning ([Compatibility](Compatibility.md#201-kicad-files)) |
 | `TESTED_COPPER_LAYERS` | `8` | int > 0 | Stage 1 warns above this many copper layers (the most among the test boards); they are still modelled |
-| `PRESETS` | `freecad`, `openems`, `viewer` | `{name: {"Module.NAME": value}}` | Sets of overrides applied with `--for <name>` ([Choosing An Export](Choosing-An-Export.md)) |
 
 ## 16.2 Board (`parameters/board.py`)
 
@@ -309,6 +285,56 @@ model: the files are the same, byte for byte, however the work is shared out.
 > `WORKERS` was `Run.WORKERS` before. `--set Run.WORKERS=N` still works: it sets
 > `Parallel.WORKERS`, and `report.txt` notes that. A `parameters/run.py` that still sets `WORKERS`
 > stops the run with a message that names `parameters/parallel.py`, so the value is not lost.
+
+## 16.10 Step (`parameters/step.py`)
+
+The STEP files: true arcs and cylinders, and what counts as an arc. The file's units are `Run.UNITS`;
+how many rows the writer turns into text at once is `Parallel.STEP_ROWS_AT_A_TIME`.
+
+| Name | Default | Range | Meaning |
+|---|---|---|---|
+| `STEP_EXACT_ARCS` | `True` | bool | Write circles and arcs as true curves: where a part's outline runs through vertices on one circle (holes, vias, round pads, track ends, arc tracks, round outlines), their chords become one `CIRCLE` edge and the walls on them one `CYLINDRICAL_SURFACE` face, at every height alike; every other edge stays a line and every other face a plane. Left straight where another edge at that height passes closer to the vertices than the arc bulges out from them, which the arc would cross. Written by KESE's own writer; files are about 2.5 to 3 times smaller (the RF module in `Input/`, in m: 116 MB instead of 334 MB, written in 8.2 s against 7.4 s). Meshes are unchanged |
+| `STEP_ARC_FIT_TOLERANCE_MM` | `0.0002` | mm > 0 | Vertices within this of one circle form an arc (2 x the snap grid) |
+| `STEP_ARC_MIN_POINTS` | `5` | int ≥ 3 | An arc runs through at least this many vertices |
+| `STEP_ARC_MIN_SWEEP_DEG` | `10.0` | degrees | and turns at least this far |
+| `STEP_ARC_MAX_TURN_DEG` | `30.0` | degrees | but at most this far at one vertex, so that a polygon of fewer than 12 sides (an octagonal pad, a square) stays a polygon |
+
+Every format holds the same parts: the ones switched on with the `..._ENABLED` switch of their module
+(`Board.BOARD_ENABLED`, `Copper.COPPER_ENABLED`, `Finish.FINISH_ENABLED`, `SolderMask.SOLDER_MASK_ENABLED`,
+`Silkscreen.SILKSCREEN_ENABLED`; mask and silkscreen are off by default). A STEP file with the mask and silkscreen is 1.4 to 1.9 times as big
+(the PCIe card in `Input/`, in mm: 150 MB and 1,024 solids written in 7.1 s, against 80 MB and 788 solids
+in 4.9 s without them).
+
+With `STEP_EXACT_ARCS` the file uses these entities beside the planar ones: `CIRCLE` (on an
+`AXIS2_PLACEMENT_3D` at the centre, its axis the board's normal), referenced by the `EDGE_CURVE` of
+an arc edge whose sense says which way it runs, and `CYLINDRICAL_SURFACE` (on the circle's placement
+at the wall's lower height) under the `ADVANCED_FACE` of a curved wall. An arc turns at most about
+half a circle: a whole circle is two arcs between two vertices, on one `CIRCLE`, so there are no
+seam edges and every edge has two vertices and two faces.
+
+## 16.11 Verifier (`parameters/verifier.py`)
+
+Whether the Verifier runs, and what it lets pass ([Checks, Errors And Warnings](Checks-Errors-And-Warnings.md#173-the-verifier)).
+How many triangles its rays test at once is `Parallel.VERIFY_TRIANGLES_AT_A_TIME`.
+
+| Name | Default | Range | Meaning |
+|---|---|---|---|
+| `VERIFY` | `False` | bool | Run the Verifier after generation, as `--verify` does (1 to 3 s on the example boards in simulation mode, under 1 s in visual mode; longer on dense boards) |
+| `VERIFY_RAYS` | `3000` | int ≥ 1 | Rays the Verifier casts through a visual model, along the board's normal, to test its surfaces |
+| `VERIFY_VOLUME_TOLERANCE` | `1e-7` | ≥ 0 | How far a part's volumes from its faces, its slices and its mesh may differ, as a share of its volume (the numerical noise of areas and meshes), and still pass |
+| `VERIFY_OPENED_VOLUME_MM3` | `1e-3` | mm³ ≥ 0 | How much volume the opened pinch points may take from a part's prisms, and the part still pass |
+
+## 16.12 Presets (`parameters/presets.py`)
+
+| Name | Default | Range | Meaning |
+|---|---|---|---|
+| `PRESETS` | `freecad`, `elmer`, `calculix`, `openems`, `viewer`, `blender_glb`, `blender_obj` | `{name: {"Module.NAME": value}}` | Sets of overrides applied with `--for <name>`, before any `--set`; each name is checked as a `--set` is, and a new entry is a new preset ([Choosing An Export](Choosing-An-Export.md#92-the-presets)) |
+
+> [!NOTE]
+> The settings of `parameters/step.py`, `parameters/verifier.py` and `parameters/presets.py` were in
+> `parameters/run.py` before, as `Run.STEP_EXACT_ARCS`, `Run.VERIFY`, `Run.PRESETS` and so on. Their
+> old names still work in `--set`, with a note in `report.txt`; a `parameters/run.py` that still sets
+> one of them stops the run with a message that names its new file.
 
 | Previous | Next |
 |:---|---:|

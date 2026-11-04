@@ -59,7 +59,7 @@ KiCad itself is not needed, only the `.kicad_pcb` file. Footprints are read from
 | Format | What is in it | Units | Written by |
 |---|---|---|---|
 | GLB (binary glTF 2.0) | one mesh per part, PBR materials, vertex normals, bufferView targets | `Run.UNITS` (viewers expect m) | KESE (`kese/s7_write/glb.py`) |
-| STEP AP214 | one named shape per part (every part switched on: by default board, copper and finish): the part's closed solids from stage 6, one per separate body, with circular arcs (`Run.STEP_EXACT_ARCS`, the default) (`CIRCLE`) and cylindrical walls (`CYLINDRICAL_SURFACE`) where the outline is round and planar faces elsewhere, or planar faces only (curves as polygons, as in the meshes) with `STEP_EXACT_ARCS = False` | `Run.UNITS`: the file declares millimetres or metres | KESE (`kese/s7_write/step.py`) |
+| STEP AP214 | one named shape per part (every part switched on: by default board, copper and finish): the part's closed solids from stage 6, one per separate body, with circular arcs (`Step.STEP_EXACT_ARCS`, the default) (`CIRCLE`) and cylindrical walls (`CYLINDRICAL_SURFACE`) where the outline is round and planar faces elsewhere, or planar faces only (curves as polygons, as in the meshes) with `STEP_EXACT_ARCS = False` | `Run.UNITS`: the file declares millimetres or metres | KESE (`kese/s7_write/step.py`) |
 | STL (binary) | one file per part | `Run.UNITS` | KESE (`kese/s7_write/stl.py`) |
 | OBJ + MTL | one object per part, normals, colours | `Run.UNITS` | KESE |
 
@@ -68,17 +68,19 @@ Visual mode writes GLB and OBJ only.
 ## 20.3 Tools
 
 None of these imports has been tried with KESE output yet: the routes follow each tool's
-documented import formats and the presets in `parameters/run.py`, and are to be confirmed.
+documented import formats and the presets in `parameters/presets.py`, and are to be confirmed.
 Research underway.
 
 | Tool | Route | Notes |
 |---|---|---|
 | openEMS / CSXCAD | STL per part, mm (`--for openems`) with `materials.json` | [openEMS Workflow](OpenEMS-Workflow.md) |
 | FreeCAD | STEP, mm, KiCad origin (`--for freecad`) | one solid per net and dielectric, each under its own name, to assign materials; holes and round edges as true circles and cylinders. Its FEM workbench meshes the solids and runs Elmer or CalculiX |
+| Elmer (ElmerFEM) | STEP, mm, KiCad origin, no finish (`--for elmer`), meshed by gmsh | neither ElmerGrid nor ElmerSolver reads STEP or STL: gmsh meshes the solids (`BooleanFragments` for shared faces), `ElmerGrid 14 2` converts the mesh, and `Coordinate Scaling = 0.001` makes mm SI ([Choosing An Export](Choosing-An-Export.md#92-the-presets)) |
+| CalculiX | STEP, mm, KiCad origin, no finish, copper per layer (`--for calculix`) | heat and stress, no electromagnetics; gmsh meshes the solids into an Abaqus `.inp`, or cgx imports the STEP file |
 | gmsh | STEP, mm | meshes the solids for a solver |
-| Blender | GLB or OBJ (visual mode for renders) | |
+| Blender | GLB (`--for blender_glb`) or OBJ with its `.mtl` (`--for blender_obj`): visual mode, metres, centred, `flat`, solder mask and silkscreen on | the importers turn Y-up into Z-up, so the board lies with `F.Cu` up |
 | `<model-viewer>`, three.js | GLB, m, centred (`--for viewer`) | the visual-mode skin is made to avoid z-fighting ([Output Modes](Output-Modes.md)) |
-| Thermal / FEA tools reading STL (CalculiX, Elmer with a mesher) | STL per part, mm | closed solids per part (a part can hold several separate bodies); mesh them with the tool's own mesher |
+| Other thermal / FEA tools reading STL | STL per part, mm | closed solids per part (a part can hold several separate bodies); mesh them with the tool's own mesher |
 
 ## 20.4 Python And Packages
 

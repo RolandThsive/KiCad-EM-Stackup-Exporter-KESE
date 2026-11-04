@@ -34,10 +34,10 @@ python tests/test_boards.py                     # the regression suite over ever
 | `unknown FILE_FORMAT entries [...]` | Only `glb`, `stl`, `obj`, `step`. One format may be given as a list or as a single word (`--set Run.FILE_FORMAT=step`). |
 | `<Module>.<NAME> must be '...' or '...', not ...` | A setting that takes one of a few words (those whose range [Parameter Reference](Parameter-Reference.md) gives as words with `/` between them, such as `Run.UNITS` or `Copper.COPPER_GROUPING`) has another value. The run stops before reading the board. |
 | `Parallel.WORKERS must be a whole number, 0 or more (0: one per processor thread), not ...` (or `Parallel.PROCESS_WORKERS`, `Parallel.PROCESS_MIN_COORDINATES`, with what their `0` means) | A count in [`parameters/parallel.py`](Parameter-Reference.md#169-parallel-parametersparallelpy) is negative, fractional or not a number. |
-| `Parallel.GIVE_BACK_MEMORY must be True or False, not ...` | Most often `--set Parallel.GIVE_BACK_MEMORY=false`, which gives the word `false`: write `False`. |
-| `parameters/run.py sets WORKERS, which is now Parallel.WORKERS in parameters/parallel.py: set it there` | An older `parameters/run.py`, kept through an update, still sets `WORKERS`; the run stops rather than leave the value unused. |
-| `Geometry.PINCH_CUT_ROUNDS must be a whole number, 1 or more, not ...` (or `Geometry.VERTEX_SHARING_ROUNDS`, `Geometry.NODING_ROUNDS`, or a batch size of `parameters/parallel.py`) | At least one round, or one item in a batch, is needed: with no round of opening, every region checked would be noted as still pinched. |
-| `Run.VERIFY_VOLUME_TOLERANCE must be a number, 0 or more, not ...` (or `Run.VERIFY_OPENED_VOLUME_MM3`) | A Verifier tolerance is negative or not a number. |
+| `Board.BOARD_ENABLED must be True or False, not 'false'` (or `must be a number`, `must be text, in quotes`, `must be a list`, `must be a dict`, for any setting) | A setting given a value of another kind than its parameter file gives it: most often `--set Board.BOARD_ENABLED=false`, which gives the word `false`, which Python would take as true (write `False`), or a number with its unit (`0.02mm`). A setting that is `None` in its file takes any value. |
+| `parameters/run.py sets WORKERS, which is now Parallel.WORKERS in parameters/parallel.py: set it there` (or another moved setting: `STEP_EXACT_ARCS` and the `STEP_ARC_*` settings, now in `parameters/step.py`; `VERIFY` and the `VERIFY_*` settings, now in `parameters/verifier.py`; `PRESETS`, now in `parameters/presets.py`; several are named together, ending `set them there`) | An older `parameters/run.py`, kept through an update, still sets a setting that moved; the run stops rather than leave the value unused. |
+| `Geometry.PINCH_CUT_ROUNDS must be a whole number, 1 or more, not ...` (or `Geometry.VERTEX_SHARING_ROUNDS`, `Geometry.NODING_ROUNDS`, a batch size of `parameters/parallel.py`, `Verifier.VERIFY_RAYS`; `Step.STEP_ARC_MIN_POINTS`, 3 or more) | At least one round, one item in a batch or one ray is needed: with no round of opening, every region checked would be noted as still pinched, and with no ray the visual check would pass on nothing. An arc needs three points to make a circle. |
+| `Verifier.VERIFY_VOLUME_TOLERANCE must be a number, 0 or more, not ...` (or `Verifier.VERIFY_OPENED_VOLUME_MM3`) | A Verifier tolerance is negative or not a number. |
 | `visual mode is a surface, not solids: FILE_FORMAT may only contain glb / obj` | STL and STEP need closed solids; use simulation mode. |
 | `no Edge.Cuts outline and OUTLINE_FALLBACK is 'error'` | Draw a closed outline, or set `Board.OUTLINE_FALLBACK = "copper_hull"`. |
 | `missing Python package(s): ...` | Printed before anything runs, with the `pip install` line to use. |
@@ -46,6 +46,7 @@ python tests/test_boards.py                     # the regression suite over ever
 | `--set <item>: there is no parameter module <Module> (did you mean <Module>?); the modules are Run, Board, ...` | A misspelt module, or one in small letters (`copper` for `Copper`). |
 | `--set <item>: <item> is not Module.NAME (did you mean Parallel.WORKERS?)` | A name without its module, or without a name after the `.`. Where the name is in one module only, that module is given. |
 | `--set <item>: give it a value, as in <item>=value` | A `--set` without `=`. |
+| `--for <name>: parameters/<module>.py has no parameter <NAME> (did you mean <NAME>?)` | A preset in `parameters/presets.py` names a setting that does not exist; its names are checked as a `--set` is, before anything runs, exit code 2. |
 | `no boards given and none found in Input/` | Put a board in `Input/` or give a path. |
 
 ### 17.1.2 Warnings
@@ -76,9 +77,9 @@ python tests/test_boards.py                     # the regression suite over ever
 | `plated holes cross the board edge but the stackup has no (castellated_pads yes); set Copper.CASTELLATION = 'auto' to plate them` | With `Copper.CASTELLATION = "file"`, plated holes cut by the edge are left bare because the stack-up does not say they are castellated. |
 | `edge plating: copper of net '<net>' inside the edge band moved to net '<edge net>' on N layer(s)` | Copper of another net reached into the plated edge band; it now belongs to the edge's net (see 17.5). |
 | `worker processes failed (...); the N parts left are built in this process, one after another` (in visual mode `sliced`; after a lost worker, ending `(most often a lack of memory: fewer processes, Parallel.PROCESS_WORKERS, use less)`) | Stage 6 could not start its worker processes (`Parallel.WORKERS`, at most `Parallel.PROCESS_WORKERS`), or lost one: the system stopped it, most often for lack of memory, or it ran out of memory (`MemoryError`). The parts the workers did not build (in visual mode, slice) are built in the main process instead, so the files are the same, only slower. An error in a part itself is not caught here: it stops the run at once, with its traceback. With little memory, `--set Parallel.PROCESS_WORKERS=1` builds stage 6 in the main process from the start, and `--set Parallel.WORKERS=1` everything, in turn. |
-| `Run.WORKERS is now Parallel.WORKERS (parameters/parallel.py): the value given for Run.WORKERS is used as Parallel.WORKERS` | A `--set Run.WORKERS=N` (the setting's old name) was taken as `Parallel.WORKERS=N`. |
+| `Run.WORKERS is now Parallel.WORKERS (parameters/parallel.py): the value given for Run.WORKERS is used as Parallel.WORKERS` (or another moved setting, such as `Run.VERIFY`, now `Verifier.VERIFY`) | A `--set` with a setting's old name was taken under its new name. |
 | `step: <part>: N edges are not shared by two faces (the solid is open there)` | The STEP writer found the part open. It is still written, and a CAD tool will report free edges on it. |
-| `step: <part>: written without arcs (...)` | With `Run.STEP_EXACT_ARCS`, finding the part's arcs failed (a bug: please report it with the board). The part is written with flat faces only, as with the parameter off; the rest of the file keeps its arcs. |
+| `step: <part>: written without arcs (...)` | With `Step.STEP_EXACT_ARCS`, finding the part's arcs failed (a bug: please report it with the board). The part is written with flat faces only, as with the parameter off; the rest of the file keeps its arcs. |
 | `step: no part has a solid; STEP skipped` | None of the parts has a solid, so no `<board>.step` is written. |
 | `FINISH ERROR: Finish.FINISH_TYPE = "file" but no finish was found in the KiCad file ...` | `FINISH_TYPE = "file"` and the board has no stack-up or its Copper finish is empty; also `FINISH ERROR: the KiCad file's finish '...' is not one KESE knows` and `FINISH ERROR: Finish.FINISH_TYPE = '...' is not a finish KESE knows`. Change `Finish.FINISH_TYPE`, or set the finish in KiCad (Board Setup > Physical Stackup > Copper finish). |
 | `nothing to build: Board.BOARD_ENABLED, Copper.COPPER_ENABLED, ... are all False` | Every part switch is off, so there is nothing to write; the run stops before reading the board. |
@@ -116,7 +117,7 @@ stroke font.
 
 ## 17.3 The Verifier
 
-`kese/s8_verify/`, run with `--verify` or `Run.VERIFY = True`. It checks the meshes that
+`kese/s8_verify/`, run with `--verify` or `Verifier.VERIFY = True`. It checks the meshes that
 GLB, STL and OBJ are written from and, in simulation mode, the faces that the STEP file is
 written from, not the input. The STEP file itself is not read back at run time (the regression
 suite reads it back with OCP).
@@ -125,14 +126,14 @@ suite reads it back with OCP).
 |---|---|---|
 | simulation | every part is a closed, consistently wound solid; its volume is printed in mm³ | `closed=True winding=True` for every part |
 | simulation | no two parts share material: every slice of every part (a flat region between two heights, what the faces are cut from) against every slice of every other part | `none`: no two slices of different parts overlap in height while their regions share an area wider than two grid steps, 0.2 µm (`none` on every board of the regression suite) |
-| simulation | every part's volume found four ways (`volumes.py`): from its flat faces, from its slices, from its mesh and from the prisms it was built from | `closed=True whole=True` for every part: the faces and the mesh within 1 part in 10⁷ of the slices (`Run.VERIFY_VOLUME_TOLERANCE`), the prisms within that plus 0.001 mm³ (`Run.VERIFY_OPENED_VOLUME_MM3`, what opening pinch points may take) |
+| simulation | every part's volume found four ways (`volumes.py`): from its flat faces, from its slices, from its mesh and from the prisms it was built from | `closed=True whole=True` for every part: the faces and the mesh within 1 part in 10⁷ of the slices (`Verifier.VERIFY_VOLUME_TOLERANCE`), the prisms within that plus 0.001 mm³ (`Verifier.VERIFY_OPENED_VOLUME_MM3`, what opening pinch points may take) |
 | visual | the skin is one outer surface: along every ray that hits the model the faces take turns, one going into the material and the next out of it (two faces on most rays; four where a ray crosses a hollow open to the air, such as the bore of a buried via under stacked micro vias) | the line `visible surfaces per vertical ray: faces met {2: ...}; rays where in and out do not alternate: 0` ends in 0 |
 | both, when a GLB was written | the GLB through the Khronos glTF validator, when the `gltf_validator` command-line tool is on the PATH | not a pass condition: the validator's last line is only reported; otherwise `gltf_validator not on PATH: glTF validation skipped`; with no GLB in the run the line is absent |
 
 > [!NOTE]
-> The visual check casts its rays along the output's −Z axis, so it assumes `Run.ORIENTATION = "upright"`.
-> With `"flat"` the rays run along the board plane, and the visual check reports FAIL on a
-> correct skin.
+> The visual check casts its rays along the board's normal in either `Run.ORIENTATION`: the meshes
+> are turned back from `"flat"` by the output's quarter turns, exactly, so a skin gives the same
+> count of faces on every ray in both orientations.
 
 Example tail of a `report.txt` (`Input/rf_module.kicad_pcb` in simulation mode, `...` where
 lines are left out):
@@ -221,7 +222,7 @@ python -m pytest tests                 # or:  python tests/test_boards.py
 python tests/test_boards.py --accept   # re-record the baseline after an intended geometry change
 python tests/test_boards.py --add      # record only the boards the baseline does not have yet
 python tests/test_boards.py 21_rf_module six_layer   # only these boards (file names, no .kicad_pcb)
-python tests/test_boards.py --faceted  # the STEP files with flat faces only (Run.STEP_EXACT_ARCS = False)
+python tests/test_boards.py --faceted  # the STEP files with flat faces only (Step.STEP_EXACT_ARCS = False)
 python tests/test_boards.py --healed   # read the STEP files back with OpenCascade's healing (slower)
 ```
 
@@ -326,10 +327,13 @@ each part switch off in turn (`BOARD_ENABLED`, `COPPER_ENABLED`, `FINISH_ENABLED
 `SOLDER_MASK_ENABLED`, `SILKSCREEN_ENABLED`) and finds only that switch's parts gone and every other
 part as it is with all of them on, and a run with all of them off refused, in about five seconds
 (`python tests/test_enabled.py`);
-`tests/test_bad_input.py`, which gives settings outside their values, misspelt `--set` items, a
-setting by its old name (`Run.WORKERS`) and a damaged board file and finds an error before any work,
-a note or a warning, not a Python error, in about
-two seconds (`python tests/test_bad_input.py`); `tests/test_parallel.py`, which finds a thread's
+`tests/test_bad_input.py`, which gives settings outside their values or of another kind than their
+file gives them (`"false"` for `False`), misspelt `--set` items and a misspelt preset, every setting by its old name (`Run.WORKERS`, `Run.VERIFY`, ...) and a damaged board
+file and finds an error before any work, a note or a warning, not a Python error, and finds every
+preset naming real settings that pass the checks, in about two seconds
+(`python tests/test_bad_input.py`); `tests/test_verifier.py`, which finds the Verifier's visual check
+meeting the same faces on every ray with the board `upright` and `flat`, in under a second
+(`python tests/test_verifier.py`); `tests/test_parallel.py`, which finds a thread's
 own copies of shapes to be the same shapes, each part on its grid, made only where GEOS needs them,
 and threads working on their own copies of one shape not crashing; finds threads taking turns with
 one prepared copy of a slice's material, the test for hidden triangles letting go of its prepared
@@ -350,7 +354,7 @@ own (`python tests/test_step_native.py`, `python tests/test_step_arcs.py`):
 | Test | Path | What it checks |
 |---|---|---|
 | `test_step_native.py` | the STEP writer (`kese/s7_write/step.py`) and the suite's read-back (`tests/step_audit.py`) | a box with a through hole beside a second box, written from their faces and read back by OpenCascade as two valid solids with no free edge, the right faces and the right volume; names with a quote and letters outside ASCII come back as they went in. A file of three such parts, read back part by part, gives what the whole file gives, also with a face left out of the first part and of the last; a part cut in the wrong place does not pass as clean, and a file another program wrote, or one with other line ends, is read whole. Needs OCP (`python -m pip install "cadquery-ocp==7.8.1.1.post1"`), and is skipped without it; takes a few seconds |
-| `test_step_arcs.py` | the true arcs of STEP files (`Run.STEP_EXACT_ARCS`; `kese/s7_write/step_arcs.py`, `step_curved.py`) | a run of vertices on one circle is written as an arc edge, and the walls on it as a cylinder, only where the arc cannot cross anything: circles and round ends become arcs, and the two arcs of an S-bend share only the vertex between them; an arc that would cross its own ring, or overlap another polygon's arc, stays straight, an outline may touch an arc where it joins it but not cross it, and an edge near the arc at another height leaves it be; a failure in the arcs writes the part with flat faces. With OCP every file is also read back: valid solids, no free edge, the volume of the true shape. Takes a few seconds |
+| `test_step_arcs.py` | the true arcs of STEP files (`Step.STEP_EXACT_ARCS`; `kese/s7_write/step_arcs.py`, `step_curved.py`) | a run of vertices on one circle is written as an arc edge, and the walls on it as a cylinder, only where the arc cannot cross anything: circles and round ends become arcs, and the two arcs of an S-bend share only the vertex between them; an arc that would cross its own ring, or overlap another polygon's arc, stays straight, an outline may touch an arc where it joins it but not cross it, and an edge near the arc at another height leaves it be; a failure in the arcs writes the part with flat faces. With OCP every file is also read back: valid solids, no free edge, the volume of the true shape. Takes a few seconds |
 
 ## 17.5 Inputs KESE Refuses Or Changes
 

@@ -88,8 +88,9 @@ python tests/test_kicad_version.py # the rules of each KiCad version, against Ki
 python tests/test_enabled.py     # each part switch leaves out its own parts and nothing else
 python tests/test_bad_input.py   # wrong settings and damaged files: an error or a warning, not a crash
 python tests/test_parallel.py    # worker processes and threads: shapes and copies, settings, caps, fallback, ending
+python tests/test_verifier.py    # the Verifier's visual check, the board upright and flat
 python tests/test_step_native.py # a solid written from its faces, read back by OpenCascade
-python tests/test_step_arcs.py   # true arcs and cylinders in STEP (Run.STEP_EXACT_ARCS), read back too
+python tests/test_step_arcs.py   # true arcs and cylinders in STEP (Step.STEP_EXACT_ARCS), read back too
 python tests/test_boards.py      # every test board through both modes, against tests/baseline.json
 ```
 

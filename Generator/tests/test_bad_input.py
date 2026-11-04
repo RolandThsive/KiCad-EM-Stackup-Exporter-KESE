@@ -1,7 +1,9 @@
 """Wrong settings and damaged board files: a setting that is not one of its values, a misspelt
---set, a setting left under its old name in a parameter file, or a shapely too old, stops the run
-with a message before any work (a setting's old name in --set still works, with a note), and a
-damaged item is left out with a warning, not a Python error.
+--set or preset, a setting of another kind than its file gives it (the word "false" for False), a
+setting left under its old name in a parameter file, or a shapely too old, stops the run with a
+message before any work (a setting's old name in --set still works, with a note; every preset
+names real settings and passes the checks), and a damaged item is left out with a warning, not a
+Python error.
 
     python -m pytest tests/test_bad_input.py        (or:  python tests/test_bad_input.py)"""
 import contextlib
@@ -14,12 +16,12 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 
 from kese.core.sexp import parse  # noqa: E402
-from kese.job import CHOICES, ONE_OR_MORE, WHOLE_NUMBERS, ZERO_OR_MORE, start  # noqa: E402
+from kese.job import AT_LEAST, CHOICES, KIND_WORDS, ONE_OR_MORE, WHOLE_NUMBERS, ZERO_OR_MORE, start  # noqa: E402
 from kese.s1_read import parse_kicad_version as kv  # noqa: E402
 from kese.s1_read import read  # noqa: E402
 from kese.s2_collect import collect  # noqa: E402
 from kese.s2_collect.vias import OFF_BOARD  # noqa: E402
-from parameters import P  # noqa: E402
+from parameters import KINDS, MOVED, P  # noqa: E402
 
 VIAS = ROOT.parent / "featureTest" / "03b_vias_k10.kicad_pcb"      # two copper layers
 
@@ -86,13 +88,87 @@ def test_the_old_name_of_workers_still_works():
                        "set it there"), refused
 
 
+
+def test_every_moved_setting_still_works_by_its_old_name():
+    # run.py's STEP, Verifier and preset settings moved to step.py, verifier.py and presets.py
+    for old, new in MOVED.items():
+        (old_module, name), (new_module, new_name) = old.split("."), new.split(".")
+        value = getattr(getattr(P, new_module), new_name)
+        P.override(old, value)                                          # as --set Run.VERIFY=... does
+        assert getattr(getattr(P, new_module), new_name) is value and not hasattr(getattr(P, old_module), name), old
+    P.Run.VERIFY, P.Run.STEP_EXACT_ARCS = True, False                   # left in an old parameters/run.py
+    try:
+        refused = started({})
+    finally:
+        del P.Run.VERIFY, P.Run.STEP_EXACT_ARCS
+    assert refused == ("parameters/run.py sets STEP_EXACT_ARCS, which is now Step.STEP_EXACT_ARCS in parameters/step.py; "
+                       "parameters/run.py sets VERIFY, which is now Verifier.VERIFY in parameters/verifier.py: "
+                       "set them there"), refused
+
+
+def test_every_preset_names_real_settings_and_passes_the_checks():
+    assert {"freecad", "elmer", "calculix", "openems", "viewer", "blender_glb", "blender_obj"} <= set(P.Presets.PRESETS)
+    for name, preset in P.Presets.PRESETS.items():
+        saved = {key: getattr(getattr(P, key.split(".")[0]), key.split(".")[1]) for key in preset}
+        try:
+            for key, value in preset.items():
+                P.override(key, value)                                  # a name that is not a setting raises
+            job = start(None, None, None, (("PRESET", name), *preset.items()), False, lambda s: None)
+        finally:
+            for key, value in saved.items():
+                P.override(key, value)
+        assert (job.mode, job.formats) == (preset["Run.MODE"], preset["Run.FILE_FORMAT"]), name
+
+
+def test_a_misspelt_preset_is_named_before_the_run():
+    from kese.cli import main
+    units = P.Run.UNITS
+    for preset, said in (({"Run.UNITS": "mm", "Copper.VIA_WAL_MM": 0.02},
+                          "--for misspelt: parameters/copper.py has no parameter VIA_WAL_MM (did you mean VIA_WALL_MM?)"),
+                         (["Run.UNITS", "mm"], "--for misspelt: parameters/presets.py gives it ['Run.UNITS', 'mm'], not")):
+        err, argv = io.StringIO(), sys.argv
+        P.Presets.PRESETS["misspelt"] = preset
+        sys.argv = ["kese", "--for", "misspelt"]
+        try:
+            with contextlib.redirect_stderr(err):
+                main()
+        except SystemExit as e:
+            assert e.code == 2, e.code
+        else:
+            raise AssertionError("the misspelt preset was taken")
+        finally:
+            sys.argv = argv
+            del P.Presets.PRESETS["misspelt"]
+            P.override("Run.UNITS", units)
+        assert said in err.getvalue(), err.getvalue()
+        assert "Traceback" not in err.getvalue()
+
 def test_rounds_and_batches_must_be_one_or_more():
-    for key in ONE_OR_MORE:                # at 0 a pinch would be noted as left, a batch would hold nothing
-        for n in (1, 10):
+    assert set(ONE_OR_MORE) <= set(AT_LEAST) and AT_LEAST["Step.STEP_ARC_MIN_POINTS"] == 3
+    for key, least in AT_LEAST.items():    # at 0 a pinch would be noted as left, a batch would hold nothing
+        for n in (least, 10):
             assert not isinstance(started({key: n}), str), (key, n)
-        for n in (0, -1, 2.5, "10", True):
+        for n in (least - 1, -1, 2.5, "10", True):
             refused = started({key: n})
-            assert refused == f"{key} must be a whole number, 1 or more, not {n!r}", (key, n, refused)
+            assert refused == f"{key} must be a whole number, {least} or more, not {n!r}", (key, n, refused)
+
+
+def test_every_setting_must_be_of_the_kind_its_file_gives_it():
+    # --set Board.BOARD_ENABLED=false gives the word "false", which Python takes as true
+    wrong = {bool: "false", int: "10", float: "0.02mm", str: 5, list: "F.SilkS", dict: "freecad"}
+    said = {"Board.BOARD_ENABLED": "Board.BOARD_ENABLED must be True or False, not 'false'",
+            "Copper.VIA_WALL_MM": "Copper.VIA_WALL_MM must be a number, not '0.02mm'",
+            "Copper.NO_NET_NAME": "Copper.NO_NET_NAME must be text, in quotes, not 5",
+            "Silkscreen.SILK_LAYERS": "Silkscreen.SILK_LAYERS must be a list, not 'F.SilkS'"}
+    for key, kind in KINDS.items():
+        if kind not in KIND_WORDS or key == "Run.FILE_FORMAT":
+            continue
+        refused = started({key: wrong[kind]})
+        assert isinstance(refused, str) and refused.startswith(f"{key} must be"), (key, refused)
+        if key in said:
+            assert refused == said[key], (key, refused)
+    for key, value in (("Copper.VIA_WALL_MM", 1), ("Board.BOARD_THICKNESS_MM", 1.2), ("Silkscreen.SILK_LAYERS", ("F.SilkS",))):
+        assert not isinstance(started({key: value}), str), (key, value)     # a whole number, None's setting, a tuple
 
 
 def test_the_verifier_s_tolerances_must_be_zero_or_more():
@@ -166,7 +242,11 @@ if __name__ == "__main__":
     test_every_setting_with_a_few_values_is_checked()
     test_the_parallel_settings_are_checked()
     test_the_old_name_of_workers_still_works()
+    test_every_moved_setting_still_works_by_its_old_name()
+    test_every_preset_names_real_settings_and_passes_the_checks()
+    test_a_misspelt_preset_is_named_before_the_run()
     test_rounds_and_batches_must_be_one_or_more()
+    test_every_setting_must_be_of_the_kind_its_file_gives_it()
     test_the_verifier_s_tolerances_must_be_zero_or_more()
     test_an_old_shapely_is_named_before_the_run()
     test_a_misspelt_set_is_named_before_the_run()

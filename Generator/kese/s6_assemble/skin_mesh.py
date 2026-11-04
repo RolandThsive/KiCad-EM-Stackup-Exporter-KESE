@@ -19,7 +19,6 @@ from kese.core.parallel import workers_wanted
 from parameters import P
 
 
-
 def skin_meshes_from_faces(levels, pieces, faces):
     """-> {part: mesh of its visible faces} (mm, board frame)."""
     at = {z: k for k, z in enumerate(levels)}

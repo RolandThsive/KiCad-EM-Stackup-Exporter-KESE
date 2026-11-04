@@ -10,7 +10,7 @@ KiCad-EM-Stackup-Exporter-KESE/
 │   ├── pyproject.toml           for pip install -e . (the kese command), unpinned
 │   ├── README.md                what is in this folder, and the first commands
 │   ├── parameters/              every setting, one file per subject (the only files you edit)
-│   │   └── run.py, board.py, copper.py, solder_mask.py, silkscreen.py, finish.py, geometry.py, color.py, parallel.py
+│   │   └── run.py, board.py, copper.py, solder_mask.py, silkscreen.py, finish.py, geometry.py, color.py, parallel.py, step.py, verifier.py, presets.py
 │   ├── kese/                    the program
 │   │   ├── pipeline.py          runs the nine stages in order
 │   │   ├── cli.py, job.py, progress.py   command-line options, one run's request, the live status line
@@ -173,7 +173,7 @@ Verifier: PASS
 | `notes` | the font, the mask thickness and its source, finish, resin fill, castellation and edge plating notes, warnings raised while building (in the parts' order, however many worker processes ran), and the note when the worker processes failed and the main process built the parts left |
 | `parts` | every part with its triangle count, material key, colour and alpha |
 | `timing` | seconds per stage (verify only when the Verifier ran) |
-| Verifier | only with `--verify` or `Run.VERIFY = True`; see [Checks, Errors And Warnings](Checks-Errors-And-Warnings.md) |
+| Verifier | only with `--verify` or `Verifier.VERIFY = True`; see [Checks, Errors And Warnings](Checks-Errors-And-Warnings.md) |
 
 ## 19.3 Part Names
 
@@ -205,7 +205,7 @@ case as Windows and macOS file systems do, so no file replaces another.
 
 `tests/test_boards.py` writes its runs to `tests/out/`, which is deleted at the start of every
 test run and ignored by git. `tests/test_layout.py`, `tests/test_colors.py`,
-`tests/test_kicad_version.py` and `tests/test_enabled.py` write nothing, and
+`tests/test_kicad_version.py`, `tests/test_enabled.py` and `tests/test_verifier.py` write nothing, and
 `tests/test_step_native.py`, `tests/test_step_arcs.py`, `tests/test_text_layout.py`,
 `tests/test_bad_input.py` and `tests/test_parallel.py` write only in a temporary folder that they
 remove.

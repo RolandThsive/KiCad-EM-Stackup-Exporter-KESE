@@ -1,12 +1,13 @@
 """One run of one board: what was asked (mode, formats, output root, verify), the live status
 line, and the notes and timings every stage adds for report.txt."""
+import numbers
 import time
 from contextlib import contextmanager
 from dataclasses import dataclass, field
 
 from kese.progress import Status
 from kese.s4_geometry.switches import SWITCHES, is_on
-from parameters import MOVED, P, file_of
+from parameters import KINDS, MOVED, P, file_of
 
 MODES = ("simulation", "visual")
 VISUAL_FORMATS = {"glb", "obj"}
@@ -26,13 +27,25 @@ CHOICES = {
     "Finish.FINISH_GROUPING": ("metal", "net"),
 }
 ONE_OR_MORE = ("Geometry.PINCH_CUT_ROUNDS", "Geometry.VERTEX_SHARING_ROUNDS", "Geometry.NODING_ROUNDS",   # at 0 nothing
-               "Parallel.SKIN_PROBES_AT_A_TIME", "Parallel.VERIFY_TRIANGLES_AT_A_TIME", "Parallel.STEP_ROWS_AT_A_TIME")
-ZERO_OR_MORE = ("Run.VERIFY_VOLUME_TOLERANCE", "Run.VERIFY_OPENED_VOLUME_MM3")
+               "Parallel.SKIN_PROBES_AT_A_TIME", "Parallel.VERIFY_TRIANGLES_AT_A_TIME", "Parallel.STEP_ROWS_AT_A_TIME",
+               "Verifier.VERIFY_RAYS")                                                                 # (or no test)
+AT_LEAST = {**dict.fromkeys(ONE_OR_MORE, 1), "Step.STEP_ARC_MIN_POINTS": 3}     # three points make a circle
+KIND_WORDS = {bool: "True or False", int: "a number", float: "a number", str: "text, in quotes",
+              list: "a list", dict: "a dict"}
+ZERO_OR_MORE = ("Verifier.VERIFY_VOLUME_TOLERANCE", "Verifier.VERIFY_OPENED_VOLUME_MM3")
 WHOLE_NUMBERS = {                 # the settings of parameters/parallel.py that count, and what their 0 means
     "WORKERS": "one per processor thread",
     "PROCESS_WORKERS": "as many as WORKERS",
     "PROCESS_MIN_COORDINATES": "processes for every board of more than one part",
 }
+
+
+def of_kind(value, kind):
+    """Whether a setting's value is of the kind its file gives it: a number for a number (a whole one
+    or not, never True or False), a list or tuple for a list."""
+    if kind in (int, float):
+        return isinstance(value, numbers.Real) and not isinstance(value, bool)
+    return isinstance(value, (list, tuple)) if kind is list else type(value) is kind
 
 
 @dataclass
@@ -68,7 +81,8 @@ class Job:
 
 
 def start(mode=None, formats=None, out_root=None, overrides=(), verify=None, log=print):
-    """The request, checked; None takes the value from parameters/run.py.  Raises ValueError."""
+    """The request, checked; None takes the value from parameters/run.py (verify: from
+    parameters/verifier.py).  Raises ValueError."""
     R = P.Run
     mode = mode or R.MODE
     formats = formats or R.FILE_FORMAT
@@ -86,29 +100,31 @@ def start(mode=None, formats=None, out_root=None, overrides=(), verify=None, log
         value = getattr(getattr(P, module), name)
         if value not in words:
             raise ValueError(f"{key} must be {' or '.join(map(repr, words))}, not {value!r}")
-    for old, new in MOVED.items():                                          # left in a parameter file
-        module, name = old.split(".")
-        if hasattr(getattr(P, module), name):
-            raise ValueError(f"{file_of(module)} sets {name}, which is now {new} in "
-                             f"{file_of(new.split('.')[0])}: set it there")
+    left = [(old, new) for old, new in MOVED.items() if hasattr(getattr(P, old.split(".")[0]), old.split(".")[1])]
+    if left:                                                                # in a parameter file kept through an update
+        raise ValueError("; ".join(f"{file_of(old.split('.')[0])} sets {old.split('.')[1]}, which is now {new} in "
+                                   f"{file_of(new.split('.')[0])}" for old, new in left)
+                         + (": set it there" if len(left) == 1 else ": set them there"))
     for name, zero in WHOLE_NUMBERS.items():
         value = getattr(P.Parallel, name)
         if type(value) is not int or value < 0:
             raise ValueError(f"Parallel.{name} must be a whole number, 0 or more (0: {zero}), not {value!r}")
-    if type(P.Parallel.GIVE_BACK_MEMORY) is not bool:
-        raise ValueError(f"Parallel.GIVE_BACK_MEMORY must be True or False, not {P.Parallel.GIVE_BACK_MEMORY!r}")
-    for key in ONE_OR_MORE:
+    for key, least in AT_LEAST.items():
         value = getattr(getattr(P, key.split(".")[0]), key.split(".")[1])
-        if type(value) is not int or value < 1:
-            raise ValueError(f"{key} must be a whole number, 1 or more, not {value!r}")
+        if type(value) is not int or value < least:
+            raise ValueError(f"{key} must be a whole number, {least} or more, not {value!r}")
     for key in ZERO_OR_MORE:
         value = getattr(getattr(P, key.split(".")[0]), key.split(".")[1])
         if type(value) not in (int, float) or not value >= 0:
             raise ValueError(f"{key} must be a number, 0 or more, not {value!r}")
+    for key, kind in KINDS.items():                       # every other setting: of the kind its file gives it
+        value = getattr(getattr(P, key.split(".")[0]), key.split(".")[1], None)
+        if kind in KIND_WORDS and key != "Run.FILE_FORMAT" and not of_kind(value, kind):
+            raise ValueError(f"{key} must be {KIND_WORDS[kind]}, not {value!r}")
     if not any(is_on(key) for key in SWITCHES.values()):
         raise ValueError(f"nothing to build: {', '.join(sorted(set(SWITCHES.values())))} are all False")
     job = Job(mode=mode, formats=formats, out_root=out_root, overrides=tuple(overrides),
-              verify=R.VERIFY if verify is None else verify, log=log, status=Status(R.SHOW_PROGRESS))
+              verify=P.Verifier.VERIFY if verify is None else verify, log=log, status=Status(R.SHOW_PROGRESS))
     for old in sorted({key for key, _ in overrides} & MOVED.keys()):
         job.note(f"{old} is now {MOVED[old]} ({file_of(MOVED[old].split('.')[0])}): the value given "
                  f"for {old} is used as {MOVED[old]}")

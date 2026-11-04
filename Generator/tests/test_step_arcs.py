@@ -1,4 +1,4 @@
-"""The true arcs of STEP files (Run.STEP_EXACT_ARCS; kese/s7_write/step_arcs.py, step_curved.py): a
+"""The true arcs of STEP files (Step.STEP_EXACT_ARCS; kese/s7_write/step_arcs.py, step_curved.py): a
 run of vertices on one circle is written as an arc edge, and the walls on it as a cylinder, only
 where the arc cannot cross anything.  The arc bulges out from its vertices' chords, up to 5 µm on
 the circles below; an edge closer to the chords than that, of the same ring, of a hole or of another
@@ -69,8 +69,8 @@ def arcs(region, levels=(0.0, 0.1)):
 def written(region, levels=(0.0, 0.1), arcs_on=True, M=None):
     """The region written as a STEP part and read back: [(valid, faces, free edges, volume)] per
     solid, and the file's size; None for the read-back without OCP."""
-    saved = P.Run.STEP_EXACT_ARCS
-    P.override("Run.STEP_EXACT_ARCS", arcs_on)
+    saved = P.Step.STEP_EXACT_ARCS
+    P.override("Step.STEP_EXACT_ARCS", arcs_on)
     try:
         with tempfile.TemporaryDirectory() as tmp:
             path = Path(tmp) / "part.step"
@@ -80,7 +80,7 @@ def written(region, levels=(0.0, 0.1), arcs_on=True, M=None):
             w.close()
             return (read_back(path) if STEPControl_Reader else None), path.stat().st_size
     finally:
-        P.override("Run.STEP_EXACT_ARCS", saved)
+        P.override("Step.STEP_EXACT_ARCS", saved)
 
 
 def bite(gap, through):
@@ -145,9 +145,9 @@ def test_the_two_arcs_of_an_s_bend_share_only_the_vertex_between_them():
     """Each arc may take one vertex past the run that turns its way: both arcs of an S could take
     the straight step in its middle, and each removed the other's end vertex, so that the arc edges
     ran to the wrong vertices (NE_Delta's Copper_D5 came out invalid)."""
-    R = P.Run
-    fit = sa.Fit(R.STEP_ARC_FIT_TOLERANCE_MM, R.STEP_ARC_MIN_POINTS, math.radians(R.STEP_ARC_MIN_SWEEP_DEG),
-                 math.radians(R.STEP_ARC_MAX_TURN_DEG))
+    S = P.Step
+    fit = sa.Fit(S.STEP_ARC_FIT_TOLERANCE_MM, S.STEP_ARC_MIN_POINTS, math.radians(S.STEP_ARC_MIN_SWEEP_DEG),
+                 math.radians(S.STEP_ARC_MAX_TURN_DEG))
     _, found, _ = sa.find_arcs(np.array(s_bend()), False, fit)
     assert len(found) == 2 and found[0][4] != found[1][4], found     # one arc each way
     assert found[0][1] <= found[1][0], found
@@ -220,7 +220,7 @@ def test_a_failure_in_the_arcs_writes_the_part_faceted():
         raise AssertionError("broken on purpose")
     saved, notes = step.with_arcs, []
     step.with_arcs = broken
-    P.override("Run.STEP_EXACT_ARCS", True)
+    P.override("Step.STEP_EXACT_ARCS", True)
     try:
         with tempfile.TemporaryDirectory() as tmp:
             w = StepWriter(Path(tmp) / "part.step", "part", "mm")
@@ -228,7 +228,7 @@ def test_a_failure_in_the_arcs_writes_the_part_faceted():
             w.discard()
     finally:
         step.with_arcs = saved
-        P.override("Run.STEP_EXACT_ARCS", False)
+        P.override("Step.STEP_EXACT_ARCS", False)
     assert notes == ["step: Copper_X: written without arcs (AssertionError: broken on purpose)"]
 
 

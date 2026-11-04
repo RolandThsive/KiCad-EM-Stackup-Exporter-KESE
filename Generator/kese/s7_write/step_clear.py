@@ -25,7 +25,7 @@ def clear(o, pieces, margin):
     follow its written circle in order, or that is not at the same heights all along, is dropped."""
     rows, strips, u, w, ok, mask = [], [], [], [], [], []
     seg_piece = np.full(len(o.seg_a), -1)
-    near = 3 * P.Run.STEP_ARC_FIT_TOLERANCE_MM
+    near = 3 * P.Step.STEP_ARC_FIT_TOLERANCE_MM
     for m, (k, i, j, ci, ccw) in enumerate(pieces):
         pts, segs, _ = o.chains[k]
         c, r = o.circles[ci]

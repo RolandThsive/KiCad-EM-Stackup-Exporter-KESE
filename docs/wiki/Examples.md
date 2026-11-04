@@ -225,7 +225,7 @@ python run_KESE.py Input/rf_module.kicad_pcb --set Copper.COPPER_GROUPING=layer 
 ```
 
 STEP files of these boards are 70 to 115 MB in mm, with the holes, vias and round pads as true
-arcs; with flat faces only (`Run.STEP_EXACT_ARCS = False`) they are 2.5 to 3 times as big. See
+arcs; with flat faces only (`Step.STEP_EXACT_ARCS = False`) they are 2.5 to 3 times as big. See
 [Project Capabilities](Project-Capabilities.md#45-tested-sizes).
 
 | Previous | Next |

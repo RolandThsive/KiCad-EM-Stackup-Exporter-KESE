@@ -6,7 +6,7 @@ the parameters in parameters/, but for the changes SETTINGS lists for it.
     python tests/test_boards.py --accept   re-record tests/baseline.json after an intended geometry change
     python tests/test_boards.py --add      record only the boards the baseline does not have yet
     python tests/test_boards.py --accept 18_finishes 18b_finish_pads   only the boards named (by file name)
-    python tests/test_boards.py --faceted  the STEP files with flat faces only (Run.STEP_EXACT_ARCS = False)
+    python tests/test_boards.py --faceted  the STEP files with flat faces only (Step.STEP_EXACT_ARCS = False)
     python tests/test_boards.py --healed   read the STEP files back with OpenCascade's healing (slower)
 
 A board fails when the Verifier fails (open solid, overlap, broken skin), when a STEP solid is
@@ -174,7 +174,7 @@ def main(args):
         sys.exit(f"unknown option: {', '.join(wrong)} (the options are {', '.join(sorted(flags))})")
     accept, add = "--accept" in args, "--add" in args
     if "--faceted" in args:
-        P.override("Run.STEP_EXACT_ARCS", False)
+        P.override("Step.STEP_EXACT_ARCS", False)
     healed = "--healed" in args
     named = [a for a in args if not a.startswith("--")]
     unknown = sorted(set(named) - {p.stem for p in BOARDS})
