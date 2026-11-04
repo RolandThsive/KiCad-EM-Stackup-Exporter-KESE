@@ -1,9 +1,10 @@
 """The "visual" mode: the board's visible surface, found in 2D as a part's boundary is but for all
 parts at once: one part's faces less every part's material across them, walls less those another
-part stands against.  Faces keep their part; hidden triangles go in skin_mesh.py."""
+part stands against.  Faces keep their part; hidden triangles go in skin_mesh.py.  The threads make
+shapes only from their own copies of the slices (kese/core/shape_copies.py)."""
 from concurrent.futures import ThreadPoolExecutor
 from itertools import pairwise
-from threading import get_ident
+from threading import Lock
 
 import numpy as np
 import shapely
@@ -16,7 +17,9 @@ from kese.core.vertices import (
     same_vertices,
     walls_split_at_vertices,
 )
-from kese.core.parallel import workers_wanted
+from kese.core.memory import give_back_memory
+from kese.core.parallel import in_processes, workers_wanted, worth_processes
+from kese.core.shape_copies import floating, own
 
 FEW_PIECES = 200         # of material reaching a face: up to this many are cut away piece by piece (cut_away)
 BIG_PIECE = 10_000       # coordinates: a piece this big (a dielectric, with every via hole in it) is cut away on its own
@@ -24,30 +27,50 @@ BIG_PIECE = 10_000       # coordinates: a piece this big (a dielectric, with eve
 
 def skin_faces(ps, log):
     """PrismSet -> (levels, the material of every slice, {part: (flats, walls)}): flats as
-    (z, region, looks up), walls as (z0, z1, segments), mm, board frame; Run.WORKERS at a time."""
+    (z, region, looks up), walls as (z0, z1, segments), mm, board frame; Parallel.WORKERS at a time."""
     levels = heights_of(ps.prisms)
     by_part = {part: [p for p in prisms if not p.region.is_empty] for part, prisms in ps.by_part().items()}
-    order = biggest_first(by_part)
+    slices = slices_of_parts(by_part, levels, log)
+    order = list(slices)
     with ThreadPoolExecutor(workers_wanted()) as pool:
-        slices = dict(zip(order, pool.map(lambda part: slices_of_part(by_part[part], levels, log, pinches_opened=False), order)))
         pieces = material_of_every_slice(slices, pool)
-        flats = dict(zip(order, pool.map(lambda part: visible_flats(slices[part], levels, pieces), order)))
-        for *_, copies in pieces:
-            copies.clear()                   # the threads' prepared copies: gigabytes on a dense board
+        flats = dict(zip(order, pool.map(lambda part: visible_flats(own(slices[part]), levels, pieces), order)))
+        for *_, prepared in pieces:
+            prepared.pop("copy", None)       # the prepared copies of the material, one per slice
+        give_back_memory()
         walls = visible_walls(slices, levels, flats, pool)
+    give_back_memory()
     return levels, pieces, {part: (flats[part], walls[part]) for part in by_part}
 
 
-def biggest_first(by_part):
-    """The parts, the one with the most coordinates first: the dielectrics and the masks take the
-    longest to slice and to cut, and started first no thread is left alone with one at the end."""
-    return sorted(by_part, key=lambda part: -sum(shapely.get_num_coordinates(p.region) for p in by_part[part]))
+def slices_of_parts(by_part, levels, log):
+    """{part: its slices}, the part with the most coordinates first: the dielectrics and the masks
+    take the longest to slice and to cut, and started first no worker is left alone with one at the
+    end.  In processes of their own on all but a small board (the work is much of it Python's,
+    which threads would take in turn), the notes logged in that order."""
+    size = {part: sum(shapely.get_num_coordinates(p.region) for p in prisms) for part, prisms in by_part.items()}
+    order = sorted(by_part, key=lambda part: -size[part])
+    jobs = [(part, (by_part[part], levels)) for part in order]
+    if worth_processes(len(jobs), sum(size.values())):
+        done = dict(in_processes(slices_and_notes, jobs, log, "sliced"))
+    else:
+        done = {part: slices_and_notes(*args) for part, args in jobs}
+    for part in order:
+        for s in done[part][1]:
+            log(f"{part}: {s}")
+    return {part: done[part][0] for part in order}
+
+
+def slices_and_notes(prisms, levels):
+    """One part's slices, as a skin needs them (pinches left), and the notes made on the way."""
+    notes = []
+    return slices_of_part(prisms, levels, notes.append, pinches_opened=False), notes
 
 
 def material_of_every_slice(slices, pool):
     """Per slice: (every part's polygons in it, the part of each, an index of the polygons, all of
-    them joined as one region, and a place for each thread's prepared copy of that region, see
-    lies_against_material()), for lookups by place and for cutting the faces."""
+    them joined as one region, and a place for a prepared copy of that region that the threads take
+    turns with, see lies_against_material()), for lookups by place and for cutting the faces."""
     gathered = []
     for k in range(len(next(iter(slices.values()), []))):
         polys, parts = [], []
@@ -57,8 +80,8 @@ def material_of_every_slice(slices, pool):
                 parts.append(part)
         polys = np.array(polys, dtype=object)
         gathered.append((polys, np.array(parts, dtype=object), shapely.STRtree(polys)))
-    joined = pool.map(lambda polys_parts_tree: joined_regions(list(polys_parts_tree[0]), exact=False), gathered)
-    return [(*material, region, {}) for material, region in zip(gathered, joined)]
+    joined = pool.map(lambda material: joined_regions(list(material[0]), exact=False, shared=True), gathered)
+    return [(*material, region, {"turn": Lock()}) for material, region in zip(gathered, joined)]
 
 
 def visible_flats(part_slices, levels, pieces):
@@ -95,18 +118,21 @@ def cut_away(region, material):
         return sh.diff(region, joined)
     for piece in cutters[big]:
         region = sh.diff(region, piece)
-    return sh.diff(region, joined_regions(list(cutters[~big]), exact=False)) if (~big).any() else region
+    return sh.diff(region, joined_regions(list(cutters[~big]), exact=False, shared=True)) if (~big).any() else region
 
 
 def lies_against_material(region, material):
-    """Whether the slice's material covers the region wholly, asked of a prepared copy of the material
-    that each thread makes for itself (prepared geometries cannot be shared between threads)."""
-    *_, joined, copies = material
-    mine = copies.get(get_ident())
-    if mine is None:
-        mine = copies[get_ident()] = shapely.from_wkb(shapely.to_wkb(joined))
-        shapely.prepare(mine)
-    return shapely.covers(mine, region)
+    """Whether the slice's material covers the region wholly, asked of a prepared copy of the material.
+    A prepared shape is not for two threads at once (GEOS builds its indexes on first use), so the
+    threads take turns with one copy per slice, made by the first to ask: a copy for each thread
+    would grow with the number of threads, and the turns cost nothing to speak of (on the suite's
+    biggest boards, a few hundred calls taking a hundredth of the flat faces' time)."""
+    *_, joined, prepared = material
+    with prepared["turn"]:
+        if "copy" not in prepared:
+            prepared["copy"] = shapely.from_wkb(shapely.to_wkb(joined))
+            shapely.prepare(prepared["copy"])
+        return shapely.covers(prepared["copy"], region)
 
 
 def visible_walls(slices, levels, flats, pool):
@@ -119,7 +145,8 @@ def visible_walls(slices, levels, flats, pool):
     out = {part: [] for part in slices}
 
     def walls(k):
-        return walls_of_slice(slices, k, faces_at.get(levels[k], []) + faces_at.get(levels[k + 1], []))
+        return walls_of_slice(dict(zip(slices, floating([s[k] for s in slices.values()]))),     # coordinates read
+                              faces_at.get(levels[k], []) + faces_at.get(levels[k + 1], []))
     for (z0, z1), segments in zip(pairwise(levels), pool.map(walls, range(len(levels) - 1))):
         if not segments:
             continue
@@ -135,10 +162,10 @@ def visible_walls(slices, levels, flats, pool):
     return out
 
 
-def walls_of_slice(slices, k, faces):
-    """{part: the wall segments of its material in slice k}, each split where a vertex of the
-    faces at the slice's heights or of another part's walls lies on it."""
-    walls = {part: wall_segments(s[k]) for part, s in slices.items() if not s[k].is_empty}
+def walls_of_slice(slice_of, faces):
+    """{part: the wall segments of its material in one slice ({part: its region there})}, each split
+    where a vertex of the faces at the slice's heights or of another part's walls lies on it."""
+    walls = {part: wall_segments(s) for part, s in slice_of.items() if not s.is_empty}
     walls = {part: w for part, w in walls.items() if len(w)}
     if not walls:
         return {}

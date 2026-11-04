@@ -7,6 +7,12 @@ from kese.core.shapes2d import EMPTY
 from parameters import P
 
 
+def mitre():
+    """How the finish follows the copper's corners (Finish.FINISH_MITRE_LIMIT): a shell's outer side
+    (shells.py) and the copper the mask wraps."""
+    return {"join_style": "mitre", "mitre_limit": P.Finish.FINISH_MITRE_LIMIT}
+
+
 def finish_type(st):
     """The key of FINISH_TYPES the board gets, or None when its stack-up says "None".  Raises
     ValueError for an unknown FINISH_TYPE, and with "file" for a board that names no finish or one
@@ -59,19 +65,19 @@ def under_mask_copper(st, cu):
     if not (under_mask_mm(st) and layers) or cu.is_empty:
         return cu
     reach = sum(drawn_thickness(t) for _, t in layers)
-    return grow(cu, reach, join_style="mitre", mitre_limit=2.0)
+    return grow(cu, reach, **mitre())
 
 
-def exposed(r, side, cu):
+def exposed(r, side, cu, take=lambda g: g):
     """The part of `cu` (copper on side's outer layer) the finish lands on.  Applied before the
     mask (FINISH_BEFORE_SOLDER_MASK) that is all of it; after the mask, only what is in a mask
     opening and not under ink kept in the opening (SILKSCREEN_OVER_COPPER: printed before the
-    finish)."""
+    finish).  take(shape): the board's shapes as used (own, in a thread)."""
     if P.Finish.FINISH_BEFORE_SOLDER_MASK:
         return cu
-    bare = sh.inter(cu, r.mask_open[side])
+    bare = sh.inter(cu, take(r.mask_open[side]))
     if P.Silkscreen.SILKSCREEN_OVER_COPPER:
-        inked = r.silk.get(side, EMPTY)
+        inked = take(r.silk.get(side, EMPTY))
         if not inked.is_empty:
             bare = sh.diff(bare, inked)
     return bare

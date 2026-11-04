@@ -15,7 +15,7 @@ for stage in STAGES:
 
 | # | Stage | Gets | Gives | What it does |
 |---|---|---|---|---|
-| 1 | `s1_read` | `.kicad_pcb` file | `RawBoard` | Parses the file and lists the copper layers, the board thickness and the file format; every rule that depends on the KiCad version is in `parse_kicad_version.py`. Warns outside KiCad 4 to 10 and above eight copper layers; stops if `F.Cu` or `B.Cu` is missing |
+| 1 | `s1_read` | `.kicad_pcb` file | `RawBoard` | Parses the file and lists the copper layers, the board thickness and the file format; every rule that depends on the KiCad version is in `parse_kicad_version.py`. Warns outside the tested file formats (the 2013 builds before KiCad 4 to KiCad 10) and above eight copper layers; stops if `F.Cu` or `B.Cu` is missing |
 | 2 | `s2_collect` | `RawBoard` | `Items` | Every track, pad, zone fill, graphic, text and via as a flat shape on its layer, with its net, in KiCad's frame; the stack-up from Board Setup; counts of what was read and what was skipped |
 | 3 | `s3_resolve` | `Items` | `Regions` | The outline; the copper joined per layer and net, clipped and drilled; barrels, edge plating, mask openings and silkscreen; everything moved to the board frame and snapped to the grid |
 | 4 | `s4_geometry` | `Regions` | `PrismSet` | The heights from the stack-up, once; every part as prisms, each a flat region between two heights |
@@ -31,9 +31,10 @@ so that it carries the Verifier's result.
 
 Two shared folders sit below the stages: `kese/core/` holds the tools that know nothing about
 stages (the s-expression parser, 2D shapes, the boundary of a stack of prisms, triangulation, the
-stroke font), and `kese/model/` the classes handed from one stage to the next. A stage uses only
-those, `parameters/` and the stages before it; `tests/test_layout.py` checks this
-([Project Output Organization](Project-Output-Organization.md) shows the whole tree).
+stroke font, work in threads and processes), and `kese/model/` the classes handed from one stage
+to the next. A stage uses only those, `parameters/` and the stages before it;
+`tests/test_layout.py` checks this ([Project Output Organization](Project-Output-Organization.md)
+shows the whole tree).
 
 ## 6.1 The Design Choice That Matters Most
 
@@ -69,7 +70,7 @@ def boundary_of(part, prisms, log=None):
     """The prisms of one part -> its Boundary, closed by construction."""
     levels = heights_of(prisms)                    # every height where a prism starts or ends
     slices = slices_of_part(prisms, levels, log)   # the material between two neighbouring heights
-    for _ in range(ROUNDS):
+    for _ in range(sh.G().VERTEX_SHARING_ROUNDS):   # Geometry.VERTEX_SHARING_ROUNDS, 20
         flats = flat_faces(slices, levels)         # below minus above looks up, above minus below down
         slices, changed = slices_sharing_vertices(slices, flats, levels, log)
         if not changed:
@@ -90,10 +91,17 @@ mesh = mesh_of_boundary(boundary)                  # faces cut into triangles, t
   line, area zero) where a ring has a point on a straight run, the vertex another face shares; such
   a triangle is flipped away with its neighbour across its long edge, so no mesh holds a triangle
   of zero area, which some meshers and STL importers reject.
-- `Run.WORKERS` parts are built at once, the biggest first. Every part keeps its faces (its
-  `Boundary`), and the STEP writer writes those same faces as a closed solid.
+- `Parallel.WORKERS` parts are built at once (at most `Parallel.PROCESS_WORKERS`), the biggest
+  first, each in a process of its own (much of the work is Python's, which threads would take in
+  turn; a board of under `Parallel.PROCESS_MIN_COORDINATES` coordinates, 20,000, is built part
+  after part, as starting the processes would take longer). The files come out the same,
+  byte for byte, however many processes ran, but for the time in the STEP file's header, and the
+  times in `report.txt` and `parameters.txt`. Every part keeps its faces (its `Boundary`), and the
+  STEP writer writes those same faces as a closed solid.
 - Visual mode does the same for all parts at once and keeps only the faces between material and
-  air (`skin_faces.py`, `skin_mesh.py`, see [Output Modes](Output-Modes.md)).
+  air (`skin_faces.py`, `skin_mesh.py`, see [Output Modes](Output-Modes.md)). There each part is
+  sliced in a process of its own, as above; the faces are then found, and the hidden triangles
+  dropped, in `Parallel.WORKERS` threads.
 - Last, every mesh is scaled to the output units, turned to the output orientation and shaded
   smooth across edges flatter than `Run.SMOOTH_SHADE_ANGLE_DEG` (`transform.py`). The meshes are
   KESE's own (`kese/core/mesh.py`), and so are the GLB, STL, OBJ and STEP writers (`kese/s7_write/`).
@@ -121,6 +129,54 @@ if R.ORIENTATION == "flat":      # board in XZ, F.Cu toward +Y
 `report.txt` names the origin used, for example
 `origin: outline centre (112.0000, 108.0000) in KiCad coordinates`, so a position in the model can
 be mapped back to the layout.
+
+## 6.4 Work Done In Parallel
+
+`Parallel.WORKERS` threads or processes work at once (`0`: one per processor thread the run may
+use; `1`: everything in turn, in one process), and at most `Parallel.PROCESS_WORKERS` processes
+([Parameter Reference](Parameter-Reference.md#169-parallel-parametersparallelpy)).
+`kese/core/parallel.py` holds both kinds:
+
+| Stage | What runs at once | In |
+|---|---|---|
+| 3 resolve | the copper layers | threads |
+| 4 geometry | the top and bottom solder mask, then the top and bottom silkscreen; the finish's hole spans and copper layers | threads |
+| 6 assemble, simulation mode | the parts' solids, the biggest part first | processes |
+| 6 assemble, visual mode | each part sliced | processes |
+| 6 assemble, visual mode | the faces, the walls and the test for hidden triangles | threads |
+
+- Threads where the 2D geometry library, GEOS, does the work: it runs outside Python's lock.
+  Processes where much of the work is Python's own, which threads would take in turn. Parts that
+  hold under `Parallel.PROCESS_MIN_COORDINATES` coordinates in all (20,000) are built in the main
+  process, as starting the processes would take longer.
+- The results are put back in the layers', sides' and parts' order, so the files are the same,
+  byte for byte, however many threads or processes ran (but for the times, as in 6.2).
+- A thread makes shapes only from its own copies of the shapes other threads use
+  (`kese/core/shape_copies.py`). GEOS 3.14 counts the shapes of each of its factories without a
+  lock, and a shape on the grid shares its factory with every shape made from it: two threads
+  making shapes from one shared shape could crash the run. The copies keep the grid of the shape
+  and of each of its parts. Where only the coordinates count (the walls, a coverage union), a
+  cheaper copy on no grid does: it is on GEOS's default factory, which is never freed, so threads
+  may share it. GEOS 3.15 counts atomically, and with it nothing is copied.
+- A prepared shape, whose search indexes GEOS builds on first use, serves one thread at a time:
+  the threads take turns with one prepared copy of each slice's material, so memory does not grow
+  with the number of threads, and the test for hidden triangles frees its indexes when it is done.
+- After each step done in threads, and in each worker after each part, the memory freed is handed
+  back to the system (`Parallel.GIVE_BACK_MEMORY`). On Linux, glibc keeps a pool of memory for each thread and holds on to what
+  is freed in it, where the steps that follow cannot use it. With these, NE_Delta's visual model
+  peaks at 2.67 GB with 4 workers and 3.46 GB with 32, where it took 3.51 GB and 5.13 GB.
+- The processes start afresh, as Windows and macOS start them, on every system, and are given the
+  run's settings, `--for` and `--set` included. Shapes sent to and from them keep their grid, which
+  shapely's own pickling would drop.
+- Where the processes cannot start, or the system stops one, or one runs out of memory, the main
+  process builds the parts left, one after another, and `report.txt` says so
+  ([Checks, Errors And Warnings](Checks-Errors-And-Warnings.md#1713-notes-worth-knowing)). An
+  error in a part's own work stops the run at once and ends the other workers.
+- Ctrl-C, or the end of the main process however it ends, ends the workers too. On Linux the
+  system's out-of-memory killer takes a worker before the main process. Inside a
+  `multiprocessing.Pool`'s worker, which may not start processes, every part is built in that
+  process. A script that calls KESE without `if __name__ == "__main__":` is not run again in each
+  worker.
 
 | Previous | Next |
 |:---|---:|

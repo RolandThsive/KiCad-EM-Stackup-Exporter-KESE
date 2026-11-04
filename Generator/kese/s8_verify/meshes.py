@@ -33,7 +33,7 @@ def check_meshes(model, glb_path):
             f"{found[0][4]:+.4f} mm ({len(found)} place{'s' * (len(found) > 1)})" if found else "none"))
         ok &= not found
     else:
-        met, wrong = _skin_surfaces(meshes, P.Run.VERIFY_RAYS)
+        met, wrong = _skin_surfaces(meshes, P.Verifier.VERIFY_RAYS, model.transform)
         lines.append(f"  visible surfaces per vertical ray: faces met {met}; rays where in and out do not alternate: {wrong}")
         ok &= wrong == 0
     if glb_path is not None:
@@ -47,19 +47,22 @@ def check_meshes(model, glb_path):
     return ok, lines
 
 
-def _skin_surfaces(meshes, n):
+def _skin_surfaces(meshes, n, transform):
     """({faces met: rays}, rays whose faces, from the top down, do not take turns into the material
     and out of it, as a closed outer surface does).  The n rays start at random points (fixed seed)
-    over the bounding box of every mesh."""
-    corners = np.array([m.bounds for m in meshes.values()])
-    lo, hi = corners[:, 0].min(axis=0), corners[:, 1].max(axis=0)
-    xy = np.random.default_rng(1).uniform(lo[:2], hi[:2], size=(n, 2))
+    over the bounding box of every mesh and run along the board's normal, in either orientation: the
+    meshes are turned back by the quarter turns of `transform` (the output transform), exactly."""
     vs, fs, at = [], [], 0
     for m in meshes.values():
         vs.append(np.asarray(m.vertices, dtype=float))
         fs.append(np.asarray(m.faces) + at)
         at += len(vs[-1])
-    V, F = np.concatenate(vs), np.concatenate(fs)
+    M = np.asarray(transform, dtype=float)[:3, :3]
+    turn = np.round(M / np.abs(M).max())                    # the orientation alone, without the units
+    V, F = np.concatenate(vs) @ turn, np.concatenate(fs)
+    used = V[np.unique(F)]
+    lo, hi = used.min(axis=0), used.max(axis=0)
+    xy = np.random.default_rng(1).uniform(lo[:2], hi[:2], size=(n, 2))
     t = V[F]
     normal = np.cross(t[:, 1] - t[:, 0], t[:, 2] - t[:, 0])
     nz = normal[:, 2] / np.maximum(np.linalg.norm(normal, axis=1), 1e-300)

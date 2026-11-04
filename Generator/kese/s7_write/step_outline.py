@@ -1,8 +1,6 @@
 """The plan view of a part's Topology for its arcs (step_curved): its points, the segments between
 them, the heights of each, the chains of points an arc can run through, and the arcs found on them.
 In board mm."""
-import math
-
 import numpy as np
 
 from kese.core.vertices import grid_keys
@@ -57,7 +55,7 @@ def chains(o):
     seg_at = (order % len(seg_a)).tolist()
     start = np.r_[0, np.cumsum(np.bincount(ends, minlength=n))].tolist()
     through = o.through.tolist()
-    shortest = P.Run.STEP_ARC_MIN_POINTS
+    shortest = P.Step.STEP_ARC_MIN_POINTS
     seen = bytearray(len(seg_a))
     chains = []
 
@@ -96,9 +94,7 @@ def chains(o):
 def arcs_of(o):
     """The arcs of every chain: [(chain, i, j, circle, ccw)], circles in o.circles as (centre,
     radius); the two halves of a whole circle share one."""
-    R = P.Run
-    fit = sa.Fit(R.STEP_ARC_FIT_TOLERANCE_MM, R.STEP_ARC_MIN_POINTS, math.radians(R.STEP_ARC_MIN_SWEEP_DEG),
-                 math.radians(R.STEP_ARC_MAX_TURN_DEG))
+    fit = sa.fit_of(P.Step)
     o.circles, pieces = [], []
     for k, (pts, segs, closed) in enumerate(o.chains):
         s, arcs, whole = sa.find_arcs(o.xy[pts], closed, fit)

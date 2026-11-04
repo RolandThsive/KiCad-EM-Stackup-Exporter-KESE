@@ -8,6 +8,7 @@ from shapely.geometry import GeometryCollection, LineString, Point, box
 
 from kese.core import math2d as geo
 from kese.core.graph import connected_components
+from kese.core.shape_copies import own
 from parameters import P
 
 EMPTY = GeometryCollection()
@@ -176,14 +177,13 @@ def _overlay(op, a, b):
     a, b = polys_only(a), polys_only(b)
     try:
         return polys_only(op(a, b, grid_size=grid()))
-    except shapely.errors.GEOSException:
-        return polys_only(op(polys_only(shapely.make_valid(a)), polys_only(shapely.make_valid(b)), grid_size=grid()))
+    except shapely.errors.GEOSException:          # copies made valid: b may be shared by threads (shape_copies.py)
+        return polys_only(op(*(polys_only(shapely.make_valid(own(g))) for g in (a, b)), grid_size=grid()))
 
 
 def polygons(g):
-    """The polygons of a region, as built into 3D.  Parts that touch at a point or along a line
-    are pulled apart by PINCH_POINT_OPENING_MM here, at the last step before extrusion (any
-    earlier grid operation would snap them back together)."""
+    """The polygons of a region, as built into 3D, those that touch at a point or along a line pulled
+    apart by PINCH_POINT_OPENING_MM (the last step before extrusion: a grid operation would rejoin them)."""
     g = polys_only(g)
     if g.is_empty:
         return []

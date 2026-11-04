@@ -103,14 +103,16 @@ The finish is on by default, so every board of `featureTest/` runs with it in th
 
 The air the shells fill, $`(E \oplus o_J) \setminus B`$ for the outermost metal $`J`$, is cut on the
 grid once, and then split between the metals along their outer sides $`E \oplus o_j`$, each put on
-the grid on its own (`kese/s4_geometry/shells.py`). The split is done in floating point, which keeps
+the grid on its own (`kese/s4_geometry/shells.py`). The outer sides keep the copper's corners
+mitred, out to `Finish.FINISH_MITRE_LIMIT` (2) times the thickness from the corner: a corner of 60°
+or more keeps its point, and a sharper tip is cut straight across there. The split is done in floating point, which keeps
 every vertex, so two metals side by side share their edge vertex for vertex; only where two outlines
 cross is the new vertex rounded onto the grid. Each piece is then noded on the grid as stage 6 nodes
 every slice: where a metal one grid step thick comes out thinner than that between two slanted
 edges (on a 45° wall a 0.1 µm band can come out 0.07 µm across, the spacing of 45° lines through
 the grid points), noding closes it and leaves a hairline of air, so the prisms hold the volume the
 solids will. Cutting the solid once, not once per metal, is what keeps the shells quick on a big
-board; the copper layers and the hole spans are worked on `Run.WORKERS` at a time.
+board; the copper layers and the hole spans are worked on `Parallel.WORKERS` at a time, in threads.
 
 ### 13.2.2 Finish Before The Mask
 

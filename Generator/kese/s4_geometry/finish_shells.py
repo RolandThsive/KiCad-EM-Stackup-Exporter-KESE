@@ -1,9 +1,11 @@
 """The finish everywhere but the faces of the outer copper (those are finish.py): a shell per metal
 in the air beside the copper's walls, inside the open plated holes, on the plated board edge and in
 the castellations, wrapping over the corner onto the finish on the face.  How a shell is laid is in
-shells.py; the hole spans and the copper layers are worked on Run.WORKERS at a time."""
+shells.py; the hole spans and the copper layers are worked on Parallel.WORKERS at a time, in threads, each
+on its own copies of the shapes it uses (kese/core/shape_copies.py)."""
 from kese.core import shapes2d as sh
 from kese.core.parallel import in_parallel
+from kese.core.shape_copies import own
 from kese.core.shapes2d import EMPTY, union
 from kese.s3_resolve.holes import drilled, drills
 from kese.s4_geometry.finish import exposed, finish_layers
@@ -84,14 +86,16 @@ def bores(r, ps, layers, edge_zone):
                           + ([edge_zone] if edge_zone is not None else [])))
 
     def span(key):
-        (i, j, (open_f, open_b)), M = key, copper[key]
+        (i, j, (open_f, open_b)), M = key, own(copper[key])
+        mine, solid_k = own(faces), own(solid)
         # from an open end at a face, or from the inner copper that closes the bore
         bottom = st.band["B.Cu"][0] if j == last else st.band[r.layers[j]][1]
         top = st.band["F.Cu"][1] if i == 0 else st.band[r.layers[i]][0]
-        caps = [(near_faces(faces[s], d), z, sign)
+        caps = [(near_faces(mine[s], d), z, sign)
                 for s, z, sign, is_open in (("F", top, 1, open_f), ("B", bottom, -1, open_b))
-                if is_open and not faces[s].is_empty]
-        return shells(layers, M, groups(spans[key], d), solid, (bottom, top), caps, named("Hole"), "Hole.Finish", "Hole")
+                if is_open and not mine[s].is_empty]
+        return shells(layers, M, groups(own(spans[key]), d), solid_k, (bottom, top), caps, named("Hole"),
+                      "Hole.Finish", "Hole")
 
     for adds in in_parallel(span, spans):
         add_all(ps, adds)
@@ -111,27 +115,28 @@ def walls(r, ps, layers, zone):
 
     def layer_walls(k):
         layer = r.layers[k]
-        per_net = [(cu, net) for net, cu in r.copper[layer].items() if not cu.is_empty]
+        nets = [(net, cu) for net, cu in r.copper[layer].items() if not cu.is_empty]
+        per_net = list(zip(own([cu for _, cu in nets]), [net for net, _ in nets]))
         if not per_net:
             return []
-        C = r.copper_all[layer]
+        C = own(r.copper_all[layer])
         bottom, top = st.band[layer]
         if k in (0, last):
             side, sign, prefix = ("F", 1, "Top") if k == 0 else ("B", -1, "Bottom")
             # solid beside the copper: the ink, and the mask unless the finish went on before it
-            solid = [C, r.silk.get(side, EMPTY)]
+            solid = [C, own(r.silk.get(side, EMPTY))]
             if not P.Finish.FINISH_BEFORE_SOLDER_MASK:
-                solid.append(r.mask[side])
-            face = exposed(r, side, C)
+                solid.append(own(r.mask[side]))
+            face = exposed(r, side, C, take=own)
             caps = [(near_faces(face, d), top if sign > 0 else bottom, sign)] if not face.is_empty else []
             where = f"{side}.Finish"
         else:
             # inside the board the copper lies in the laminate: only the board edge leaves it bare
-            side, prefix, solid, caps, where = "Edge", "Edge", [C, r.outline], [], "Edge.Finish"
+            side, prefix, solid, caps, where = "Edge", "Edge", [C, own(r.outline)], [], "Edge.Finish"
         # an open bore has its own finish (in `zone`), a closed one (a tented via) none
-        solid.append(plated_bores)
+        solid.append(own(plated_bores))
         if zone is not None and not zone.is_empty:
-            solid.append(zone)
+            solid.append(own(zone))
         return shells(layers, C, groups(per_net, d), sh.snap(union(solid)), (bottom, top), caps,
                       named(prefix), where, side)
 

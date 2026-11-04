@@ -21,9 +21,9 @@ mask colour of its own, saved by KiCad 7. Between them they use most of what KES
 | Vias | 307 through | 71 micro, 34 blind and buried, 45 through | 239 through |
 | Board edge | plated all round and in the cut-out | 43 castellated pads | 36 gold fingers |
 | Mask, silkscreen, finish | blue, white, ENIG | black, white, immersion silver | green, white, hard gold |
-| Simulation GLB with `--verify` | 46 parts, 1,127,702 triangles; 46 s, 38.0 MB | 62 parts, 596,674 triangles; 24 s, 20.4 MB | 61 parts, 879,986 triangles; 28 s, 30.1 MB |
-| Simulation STEP with `--verify` | 46 parts, 745 solids; 51 s, 113.7 MB | 62 parts, 1,240 solids; 29 s, 70.9 MB | 61 parts, 788 solids; 35 s, 80.2 MB |
-| Visual GLB with `--verify` | 31 s, 10.5 MB | 15 s, 5.6 MB | 22 s, 9.1 MB |
+| Simulation GLB with `--verify` | 46 parts, 1,127,702 triangles; 24 s, 38.0 MB | 62 parts, 596,674 triangles; 10 s, 20.4 MB | 61 parts, 879,986 triangles; 13 s, 30.1 MB |
+| Simulation STEP with `--verify` | 46 parts, 745 solids; 30 s, 113.7 MB | 62 parts, 1,240 solids; 13 s, 70.9 MB | 61 parts, 788 solids; 18 s, 80.2 MB |
+| Visual GLB with `--verify` | 20 s, 10.5 MB | 12 s, 5.6 MB | 15 s, 9.1 MB |
 
 The times are the ones the run prints, with the default parameters (the finish on, the solder
 mask and silkscreen off, true arcs in the STEP files) on one Linux machine with 4 cores. The STEP
@@ -225,7 +225,7 @@ python run_KESE.py Input/rf_module.kicad_pcb --set Copper.COPPER_GROUPING=layer 
 ```
 
 STEP files of these boards are 70 to 115 MB in mm, with the holes, vias and round pads as true
-arcs; with flat faces only (`Run.STEP_EXACT_ARCS = False`) they are 2.5 to 3 times as big. See
+arcs; with flat faces only (`Step.STEP_EXACT_ARCS = False`) they are 2.5 to 3 times as big. See
 [Project Capabilities](Project-Capabilities.md#45-tested-sizes).
 
 | Previous | Next |

@@ -1,6 +1,6 @@
 # 16. Parameter Reference
 
-Every setting lives in one of eight files in `parameters/`. These are the only files you edit.
+Every setting lives in one of twelve files in `parameters/`. These are the only files you edit.
 Units are mm unless a name says otherwise. The **Range** column is what the program uses
 sensibly; "None" means the program works the value out itself. Any value can be overridden for
 one run with `--set Module.NAME=value`, where `Module` is the short name in the heading of each
@@ -10,8 +10,13 @@ and listed on its first line.
 
 > [!NOTE]
 > Defaults are those of the parameter files on `main`. Before the board is read, the run checks
-> `MODE`, `FILE_FORMAT`, `WORKERS` and every setting whose range below is a few words with `/`
-> between them (such as `"mm"` / `"m"`), and stops with an error that names the setting.
+> `MODE`, `FILE_FORMAT`, the settings of `parameters/parallel.py`, the rounds of
+> `parameters/geometry.py`, the Verifier's tolerances and rays, the finish's mitre limit, the
+> longest STEP arc and its fewest points, the names in the preset of `--for`,
+> every setting whose range below is a few words with `/` between them (such as `"mm"` / `"m"`), and
+> the kind of every value: `True` or `False` where the file has one of them, a number where it has a
+> number, text, a list or a dict likewise (a setting that is `None` in its file takes any value). It
+> stops with an error that names the setting.
 > `FINISH_TYPE` and `DIELECTRIC_SPLIT` are checked where they are used (an error or a warning), and
 > `FONT_FILE` gives a note in `report.txt`. For the rest, a value outside the range below produces
 > a wrong model or a plain Python error, not a named check.
@@ -33,12 +38,13 @@ What to make, where, and in which formats.
 
 ### 16.1.2 Run Behaviour
 
+How many threads and processes work at once is set in [16.9 Parallel](#169-parallel-parametersparallelpy), the
+STEP files' own settings in [16.10 Step](#1610-step-parameterssteppy), the Verifier's in
+[16.11 Verifier](#1611-verifier-parametersverifierpy) and the presets in [16.12 Presets](#1612-presets-parameterspresetspy).
+
 | Name | Default | Range | Meaning |
 |---|---|---|---|
-| `WORKERS` | `0` | int ≥ 0 | Threads that work at once (the 2D geometry library runs outside Python's lock): in stage 4 the finish's copper layers and hole spans, in stage 6 the parts built at once in simulation mode, the slices in visual mode. `0` = one per processor thread (`os.cpu_count()`) |
 | `SHOW_PROGRESS` | `True` | bool | Live `running <stage> ... 1m 23s` line on a terminal |
-| `VERIFY` | `False` | bool | Run the Verifier after generation (2 to 4 s on the example boards; longer on dense boards) |
-| `VERIFY_RAYS` | `3000` | int > 0 | Vertical rays the Verifier casts through a visual model to test its surfaces |
 | `WRITE_MATERIALS_JSON` | `True` | bool | Write `materials.json` next to the outputs |
 
 ### 16.1.3 Mesh Export (GLB, STL, OBJ)
@@ -49,36 +55,12 @@ What to make, where, and in which formats.
 | `EXPORT_SET_BUFFERVIEW_TARGETS` | `True` | bool | Set glTF bufferView targets, which keeps the Khronos validator report free of hints |
 | `SMOOTH_SHADE_ANGLE_DEG` | `25.0` | degrees | Edges sharper than this stay crisp; flatter ones (cylinders) shade smooth |
 
-### 16.1.4 STEP Export
-
-| Name | Default | Range | Meaning |
-|---|---|---|---|
-| `STEP_EXACT_ARCS` | `True` | bool | Write circles and arcs as true curves: where a part's outline runs through vertices on one circle (holes, vias, round pads, track ends, arc tracks, round outlines), their chords become one `CIRCLE` edge and the walls on them one `CYLINDRICAL_SURFACE` face, at every height alike; every other edge stays a line and every other face a plane. Left straight where another edge at that height passes closer to the vertices than the arc bulges out from them, which the arc would cross. Written by KESE's own writer; files are about 2.5 to 3 times smaller (the RF module in `Input/`, in m: 116 MB instead of 334 MB, written in 10.1 s against 10.4 s). Meshes are unchanged |
-| `STEP_ARC_FIT_TOLERANCE_MM` | `0.0002` | mm > 0 | Vertices within this of one circle form an arc (2 x the snap grid) |
-| `STEP_ARC_MIN_POINTS` | `5` | int >= 3 | An arc runs through at least this many vertices |
-| `STEP_ARC_MIN_SWEEP_DEG` | `10.0` | degrees | and turns at least this far |
-| `STEP_ARC_MAX_TURN_DEG` | `30.0` | degrees | but at most this far at one vertex, so that a polygon of fewer than 12 sides (an octagonal pad, a square) stays a polygon |
-
-Every format holds the same parts: the ones switched on with the `..._ENABLED` switch of their module
-(`Board.BOARD_ENABLED`, `Copper.COPPER_ENABLED`, `Finish.FINISH_ENABLED`, `SolderMask.SOLDER_MASK_ENABLED`,
-`Silkscreen.SILKSCREEN_ENABLED`; mask and silkscreen are off by default). A STEP file with the mask and silkscreen is 1.4 to 1.9 times as big
-(the PCIe card in `Input/`, in mm: 150 MB and 1,024 solids written in 10.5 s, against 80 MB and 788 solids
-in 8.0 s without them).
-
-With `STEP_EXACT_ARCS` the file uses these entities beside the planar ones: `CIRCLE` (on an
-`AXIS2_PLACEMENT_3D` at the centre, its axis the board's normal), referenced by the `EDGE_CURVE` of
-an arc edge whose sense says which way it runs, and `CYLINDRICAL_SURFACE` (on the circle's placement
-at the wall's lower height) under the `ADVANCED_FACE` of a curved wall. An arc turns at most about
-half a circle: a whole circle is two arcs between two vertices, on one `CIRCLE`, so there are no
-seam edges and every edge has two vertices and two faces.
-
-### 16.1.5 KiCad Versions And Presets
+### 16.1.4 KiCad Versions
 
 | Name | Default | Range | Meaning |
 |---|---|---|---|
 | `KICAD_VERSION_MIN`, `KICAD_VERSION_MAX` | `3`, `20260206` | KiCad file format numbers | Tested range, from the 2013 builds before KiCad 4 (format 3) to KiCad 10 (KiCad 4 files say `(version 4)`, KiCad 5 files `20171130`); a file outside it is read with a warning ([Compatibility](Compatibility.md#201-kicad-files)) |
 | `TESTED_COPPER_LAYERS` | `8` | int > 0 | Stage 1 warns above this many copper layers (the most among the test boards); they are still modelled |
-| `PRESETS` | `freecad`, `openems`, `viewer` | `{name: {"Module.NAME": value}}` | Sets of overrides applied with `--for <name>` ([Choosing An Export](Choosing-An-Export.md)) |
 
 ## 16.2 Board (`parameters/board.py`)
 
@@ -100,6 +82,7 @@ The laminate: thickness, dielectrics, outline and holes. Details in [Board](Boar
 | `OUTLINE_FALLBACK` | `"copper_hull"` | `"copper_hull"` / `"error"` | When `Edge.Cuts` gives no closed ring at all: convex hull of the copper plus a margin, or stop |
 | `OUTLINE_FALLBACK_MARGIN_MM` | `1.0` | mm ≥ 0 | Margin of the fallback hull |
 | `OUTLINE_DUPLICATE_AREA_MM2` | `1e-6` | mm² > 0 | Two closed `Edge.Cuts` outlines that differ by less than this area are one (a ring drawn twice) |
+| `OUTLINE_MIN_AREA_MM2` | `1e-9` | mm² ≥ 0 | A closed `Edge.Cuts` outline of this area or less is left out (a line drawn there and back, a circle of no size) |
 
 ## 16.3 Copper (`parameters/copper.py`)
 
@@ -199,6 +182,7 @@ Details in [Finish](Finish.md).
 | `FINISH_TYPE` | `"ENIG"` | `"file"` or a key of `FINISH_TYPES` | The finish type, or `"file"` to take it from the stack-up's `(copper_finish ...)` (KiCad's `None` builds no finish; no finish in the file, or a name that matches no key and no alias, stops the run with an error) |
 | `FINISH_GROUPING` | `"metal"` | `"metal"` / `"net"` | One part per side and metal, or per side, metal and net |
 | `FINISH_BEFORE_SOLDER_MASK` | `False` | bool | The finish goes on before the mask: on all the outer copper, with the mask and silkscreen on top of it; `False` puts it only in the mask openings |
+| `FINISH_MITRE_LIMIT` | `2.0` | ≥ 1 | How the finish follows the copper's sharp corners: the outer side of each finish layer (and of the copper the mask wraps, with `FINISH_BEFORE_SOLDER_MASK`) keeps a corner's point out to this many times the finish's thickness from the copper's corner, and is cut straight across there. At `2.0` a corner of 60° or more keeps its point (a square pad's corners stay square) and a sharper tip is cut; `1.0` cuts every corner at the finish's thickness; below 1 the finish would be thinner at a corner than its thickness, so the run stops |
 | `FINISH_TYPES` | ENIG, ENEPIG, HASL, HASL_LF, OSP, ImmersionSilver, ImmersionTin, HardGold | `{key: [(metal, mm), ...]}` bottom to top | Layers of each finish |
 | `FINISH_NAME_ALIASES` | 6 KiCad names (`HAL SnPb` → `HASL`, `HAL lead-free` → `HASL_LF`, `Hard gold`, `Immersion tin`, `Immersion silver`, `HT_OSP` → `OSP`) | `{KiCad name: key of FINISH_TYPES}` | KiCad finish names that differ from a key; matching ignores case, spaces, `-` and `_` |
 | `FINISH_CONDUCTIVITY_S_PER_M` | Nickel `1.4e7`, Gold `4.1e7`, Palladium `9.5e6`, Tin `9.1e6`, Silver `6.3e7`, OSP `0.0` | `{metal: S/m}` | Written to `materials.json` |
@@ -220,11 +204,13 @@ These do not change dimensions.
 | `PINCH_POINT_OPENING_MM` | `1e-4` | mm > 0 | Polygons whose rings touch at a single point are opened by this much so they can be meshed |
 | `PINCH_CUT_ROUNDS` | `10` | int ≥ 1 | Tries at opening one, the cut's radius doubling each time |
 | `PINCH_DISC_TURN_DEG` | `17.0` | degrees | Turn of the octagon cut at a pinch, off the axes a board's edges follow |
+| `VERTEX_SHARING_ROUNDS` | `20` | int ≥ 1 | Stage 6: rounds of cutting a part's faces and giving its slices each other's vertices, until nothing changes (one to three in practice). A part still changing after this many is noted in `report.txt` and may be open ([Working Principle](Working-Principle.md#62-how-a-part-becomes-a-closed-solid)) |
+| `NODING_ROUNDS` | `8` | int ≥ 1 | Rounds of noding a region on the snapping grid again (GEOS's hot pixels) until it changes nothing (one or two in practice) |
 | `SLIVER_AREA_MM2` | `1e-10` | mm² > 0 | A polygon of less area is a sliver left by the set operations, and is dropped |
 | `TRIANGULATE_CELL_POINTS` | `5000` | > 0 | A polygon with more points than this has its top and bottom cut into triangles strip by strip, much faster when it has many holes (earcut's time grows with the points times the holes). The points the strips add are taken out again, so the solid keeps exactly the polygon's own vertices |
 | `TRIANGULATE_CELL_MM` | `10.0` | mm > 0 | Width of those strips, as KiCad cuts big polygons into 1 cm cells before it triangulates them |
 | `SKIN_BURIED_TEST_OFFSET_MM` | `0.0005` | mm > 0 | Visual mode: a face is dropped if a point this far outside it lies inside another solid ([Output Modes](Output-Modes.md), equation (8.1)) |
-| `MESH_MERGE_DIGITS` | `8` | int | Mesh vertices that round to the same point at 10^-8 (in mm or m) are one; angles under 1e-8 rad are none |
+| `MESH_MERGE_DIGITS` | `8` | int | 10^-8: a triangle's corner angle under 10^-8 rad counts as none (it gives no weight to smooth shading), and normals whose values spread less than that are not kept. No vertices are merged |
 | `FLAT_FACET_THRESHOLD` | `5000` | > 0 | Smooth shading: two faces are one flat facet where (edge radius / edge span)² exceeds this |
 
 ### 16.7.1 How The Curve Settings Are Used
@@ -281,6 +267,80 @@ The look of every part: the GLB and OBJ materials, the part colours in STEP and 
 | `STACKUP_SILK_COLORS` | white, black, yellow, green, red, blue, purple | `{name: hex}` | Silkscreen colour names |
 | `STACKUP_MASK_OVER_COPPER_COLORS` | 11 names | `{name: hex or None}` | Visual-mode colour of the mask over copper per stack-up colour; an entry set to `None` (or left out) keeps the `MATERIALS` colour |
 | `USER_MASK_OVER_COPPER_LIGHTEN` | `0.15` | 0-1 | With a user-defined (`#RRGGBBAA`) mask colour in the stack-up, how far the visual-mode mask over copper is mixed toward white |
+
+## 16.9 Parallel (`parameters/parallel.py`)
+
+How many processor cores work at once, and how much the work holds in memory at once
+([Working Principle](Working-Principle.md#64-work-done-in-parallel)). None of these changes the
+model: the files are the same, byte for byte, however the work is shared out.
+
+| Name | Default | Range | Meaning |
+|---|---|---|---|
+| `WORKERS` | `0` | int ≥ 0 | Threads or processes that work at once. Threads where the 2D geometry library does the work (it runs outside Python's lock): the copper layers in stage 3; both sides of the solder mask and the silkscreen, and the finish's copper layers and hole spans, in stage 4; the faces of the visual-mode skin and the test for its hidden triangles, in stage 6. Processes of their own, each started afresh, where much of the work is Python's: in stage 6 the parts built at once in simulation mode and the parts sliced for the visual skin (`PROCESS_WORKERS` and `PROCESS_MIN_COORDINATES` below). `0` = one per processor thread the run may use (all of the machine's, unless a job scheduler, `taskset` or a container limits it); `1` = everything in turn, in one process. |
+| `PROCESS_WORKERS` | `0` | int ≥ 0 | At most this many worker processes at once, in stage 6; `0` = as many as `WORKERS` (a higher value is the same as `WORKERS`). Each process holds its own Python, numpy and shapely (about 36 MB) and the part it builds: NE_Delta, one of the biggest boards tried, peaks at 2.82 GB in all with 4 workers and 4.48 GB with 32 in simulation mode. A thread costs little memory, so a machine with many threads and little memory can keep `WORKERS` and lower this; `1` builds stage 6 in the main process and keeps the threads. If the processes cannot start, or one is stopped or runs out of memory, the main process builds the parts left, with a note ([Checks, Errors And Warnings](Checks-Errors-And-Warnings.md#1713-notes-worth-knowing)). Windows holds at most 61 processes at once. |
+| `PROCESS_MIN_COORDINATES` | `20000` | int ≥ 0 | Stage 6 starts worker processes only when the parts hold this many coordinates or more in all their prisms; smaller boards are built part after part in the main process, which is faster than starting the processes (about 0.3 s for 4): one of the test boards takes 0.10 s that way, and 0.35 s in processes. `0` = processes for every board of more than one part. |
+| `GIVE_BACK_MEMORY` | `True` | bool | Hand the memory that threads freed back to the system after each step done in threads, and in each worker process after each part (glibc's `malloc_trim`, on Linux; elsewhere nothing is done). glibc keeps a pool for each thread and holds on to what is freed in it: NE_Delta in visual mode peaks at 2.67 GB with 4 workers and 3.46 GB with 32 with this, and 3.45 GB and 4.86 GB without. Tens of milliseconds per run. |
+| `SKIN_PROBES_AT_A_TIME` | `2000000` | int ≥ 1 | Visual skin, the test for hidden triangles: triangles probed at once. Their probe points and normals take about a quarter of a gigabyte; fewer take less memory and a little more time |
+| `VERIFY_TRIANGLES_AT_A_TIME` | `200000` | int ≥ 1 | The Verifier's vertical rays: triangles tested at once |
+| `STEP_ROWS_AT_A_TIME` | `100000` | int ≥ 1 | The STEP writer: points, edges or faces turned into text at once. The file is the same, byte for byte, whatever the size |
+
+> [!NOTE]
+> `WORKERS` was `Run.WORKERS` before. `--set Run.WORKERS=N` still works: it sets
+> `Parallel.WORKERS`, and `report.txt` notes that. A `parameters/run.py` that still sets `WORKERS`
+> stops the run with a message that names `parameters/parallel.py`, so the value is not lost.
+
+## 16.10 Step (`parameters/step.py`)
+
+The STEP files: true arcs and cylinders, and what counts as an arc. The file's units are `Run.UNITS`;
+how many rows the writer turns into text at once is `Parallel.STEP_ROWS_AT_A_TIME`.
+
+| Name | Default | Range | Meaning |
+|---|---|---|---|
+| `STEP_EXACT_ARCS` | `True` | bool | Write circles and arcs as true curves: where a part's outline runs through vertices on one circle (holes, vias, round pads, track ends, arc tracks, round outlines), their chords become one `CIRCLE` edge and the walls on them one `CYLINDRICAL_SURFACE` face, at every height alike; every other edge stays a line and every other face a plane. Left straight where another edge at that height passes closer to the vertices than the arc bulges out from them, which the arc would cross. Written by KESE's own writer; files are about 2.5 to 3 times smaller (the RF module in `Input/`, in m: 116 MB instead of 334 MB, written in 8.2 s against 7.4 s). Meshes are unchanged |
+| `STEP_ARC_FIT_TOLERANCE_MM` | `0.0002` | mm > 0 | Vertices within this of one circle form an arc (2 x the snap grid) |
+| `STEP_ARC_MIN_POINTS` | `5` | int ≥ 3 | An arc runs through at least this many vertices |
+| `STEP_ARC_MIN_SWEEP_DEG` | `10.0` | degrees | and turns at least this far |
+| `STEP_ARC_MAX_TURN_DEG` | `30.0` | degrees | but at most this far at one vertex, so that a polygon of fewer than 12 sides (an octagonal pad, a square) stays a polygon |
+| `STEP_ARC_TURN_RATIO_MAX` | `1.3` | ≥ 1 | and evenly, as a faceted circle does: no chord of the arc spans more than this many times the median chord's angle about the centre |
+| `STEP_ARC_TURN_RATIO_MIN` | `0.7` | 0 to 1 | and none but the first and last less than this many times (those two may be shorter, where a boolean cut the arc) |
+| `STEP_ARC_MAX_SWEEP_DEG` | `181.0` | degrees > 0 | A longer arc is cut into the fewest pieces that keep each about this long, at vertices spread evenly (a piece can run up to one chord over). A whole circle is two arcs on one `CIRCLE`; below 180 it is cut into more, each on a circle of its own |
+
+Every format holds the same parts: the ones switched on with the `..._ENABLED` switch of their module
+(`Board.BOARD_ENABLED`, `Copper.COPPER_ENABLED`, `Finish.FINISH_ENABLED`, `SolderMask.SOLDER_MASK_ENABLED`,
+`Silkscreen.SILKSCREEN_ENABLED`; mask and silkscreen are off by default). A STEP file with the mask and silkscreen is 1.4 to 1.9 times as big
+(the PCIe card in `Input/`, in mm: 150 MB and 1,024 solids written in 7.1 s, against 80 MB and 788 solids
+in 4.9 s without them).
+
+With `STEP_EXACT_ARCS` the file uses these entities beside the planar ones: `CIRCLE` (on an
+`AXIS2_PLACEMENT_3D` at the centre, its axis the board's normal), referenced by the `EDGE_CURVE` of
+an arc edge whose sense says which way it runs, and `CYLINDRICAL_SURFACE` (on the circle's placement
+at the wall's lower height) under the `ADVANCED_FACE` of a curved wall. An arc turns at most about
+half a circle (`STEP_ARC_MAX_SWEEP_DEG`): a whole circle is two arcs between two vertices, on one
+`CIRCLE`, so there are no seam edges and every edge has two vertices and two faces.
+
+## 16.11 Verifier (`parameters/verifier.py`)
+
+Whether the Verifier runs, and what it lets pass ([Checks, Errors And Warnings](Checks-Errors-And-Warnings.md#173-the-verifier)).
+How many triangles its rays test at once is `Parallel.VERIFY_TRIANGLES_AT_A_TIME`.
+
+| Name | Default | Range | Meaning |
+|---|---|---|---|
+| `VERIFY` | `False` | bool | Run the Verifier after generation, as `--verify` does (1 to 3 s on the example boards in simulation mode, under 1 s in visual mode; longer on dense boards) |
+| `VERIFY_RAYS` | `3000` | int ≥ 1 | Rays the Verifier casts through a visual model, along the board's normal, to test its surfaces |
+| `VERIFY_VOLUME_TOLERANCE` | `1e-7` | ≥ 0 | How far a part's volumes from its faces, its slices and its mesh may differ, as a share of its volume (the numerical noise of areas and meshes), and still pass |
+| `VERIFY_OPENED_VOLUME_MM3` | `1e-3` | mm³ ≥ 0 | How much volume the opened pinch points may take from a part's prisms, and the part still pass |
+
+## 16.12 Presets (`parameters/presets.py`)
+
+| Name | Default | Range | Meaning |
+|---|---|---|---|
+| `PRESETS` | `freecad`, `elmer`, `calculix`, `openems`, `viewer`, `blender_glb`, `blender_obj` | `{name: {"Module.NAME": value}}` | Sets of overrides applied with `--for <name>`, before any `--set`; each name is checked as a `--set` is, and a new entry is a new preset ([Choosing An Export](Choosing-An-Export.md#92-the-presets)) |
+
+> [!NOTE]
+> The settings of `parameters/step.py`, `parameters/verifier.py` and `parameters/presets.py` were in
+> `parameters/run.py` before, as `Run.STEP_EXACT_ARCS`, `Run.VERIFY`, `Run.PRESETS` and so on. Their
+> old names still work in `--set`, with a note in `report.txt`; a `parameters/run.py` that still sets
+> one of them stops the run with a message that names its new file.
 
 | Previous | Next |
 |:---|---:|

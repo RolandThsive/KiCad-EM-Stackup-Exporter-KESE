@@ -5,9 +5,10 @@ import numpy as np
 import shapely
 
 from kese.core import shapes2d as sh
+from kese.core.boundary import HEIGHT_DIGITS
 from parameters import P
 
-HEIGHT_TOLERANCE_MM = 1e-9       # heights are told apart to 1e-9 mm, a picometre (kese/core/boundary.py)
+HEIGHT_TOLERANCE_MM = 10 ** -HEIGHT_DIGITS      # heights are told apart to this, as the slices are cut
 
 
 def overlaps(model):
@@ -38,4 +39,4 @@ def overlaps(model):
     found = [(polys[p].intersection(polys[q]).area * h, rows[owner[p]][0], rows[owner[q]][0],
               max(z0[owner[p]], z0[owner[q]]), min(z1[owner[p]], z1[owner[q]]))
              for p, q, h in zip(i[meet], j[meet], dz[meet])]
-    return sorted(found, key=lambda f: -f[0])
+    return sorted(found, key=lambda f: (-f[0], *f[1:]))

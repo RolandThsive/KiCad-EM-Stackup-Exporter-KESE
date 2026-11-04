@@ -19,7 +19,9 @@ def output_transform():
 
 def finish_mesh(mesh, mat):
     """The mesh in output units and orientation, shaded smooth; the faces that collapsed onto a
-    repeated vertex go (zero-area triangles with three distinct vertices stay)."""
+    repeated vertex go (zero-area triangles with three distinct vertices stay).  None for no mesh."""
+    if mesh is None:
+        return None
     f = mesh.faces
     mesh.update_faces((f[:, 0] != f[:, 1]) & (f[:, 1] != f[:, 2]) & (f[:, 0] != f[:, 2]))
     mesh.remove_unreferenced_vertices()

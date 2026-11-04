@@ -64,13 +64,16 @@ the command is run from.
    layers, the mode, any warnings, and the output folder:
 
    ```text
-   hdi_module: KiCad format 20221018, 6 copper layers, mode simulation
-     -> Output/hdi_module/simulation_GLB  (hdi_module.glb, materials.json)  in 0m 12s
-   pcie_card: KiCad format 20221018, 4 copper layers, mode simulation
-     -> Output/pcie_card/simulation_GLB  (pcie_card.glb, materials.json)  in 0m 14s
-   rf_module: KiCad format 20221018, 4 copper layers, mode simulation
-     -> Output/rf_module/simulation_GLB  (rf_module.glb, materials.json)  in 0m 16s
+   hdi_module: KiCad format 20221018 (KiCad 7), 6 copper layers, mode simulation
+     -> Output/hdi_module/simulation_GLB  (hdi_module.glb, materials.json)  in 0m 09s
+   pcie_card: KiCad format 20221018 (KiCad 7), 4 copper layers, mode simulation
+     -> Output/pcie_card/simulation_GLB  (pcie_card.glb, materials.json)  in 0m 11s
+   rf_module: KiCad format 20221018 (KiCad 7), 4 copper layers, mode simulation
+     -> Output/rf_module/simulation_GLB__1  (rf_module.glb, materials.json)  in 0m 21s
    ```
+
+   The repository already holds example runs of `rf_module` in `Output/rf_module/`, and a run
+   never overwrites a folder, so this board's first run goes to `simulation_GLB__1`.
 
 4. Open `Output/<board>/simulation_GLB/report.txt`. It lists the stack-up heights, every item that
    was read, every item that was skipped and why (hidden text and text on layers that are not drawn
@@ -87,7 +90,7 @@ python run_KESE.py                                   # every .kicad_pcb in Input
 python run_KESE.py Input/board.kicad_pcb             # one board (several paths are allowed)
 python run_KESE.py board.kicad_pcb --mode visual     # simulation (solids) or visual (surface for viewers)
 python run_KESE.py board.kicad_pcb --format glb step stl obj --set Run.UNITS=mm   # mm for CAD and solvers
-python run_KESE.py board.kicad_pcb --for freecad     # a preset: freecad, openems or viewer
+python run_KESE.py board.kicad_pcb --for freecad     # a preset: freecad, elmer, calculix, openems, viewer, blender_glb, blender_obj
 python run_KESE.py board.kicad_pcb --verify          # run the Verifier; results in report.txt
 python run_KESE.py board.kicad_pcb --out /some/dir   # output root other than Output/
 python run_KESE.py board.kicad_pcb --set Copper.VIA_WALL_MM=0.02 --set Board.BOARD_THICKNESS_MM=0.8
@@ -99,15 +102,15 @@ python run_KESE.py --version
 | `boards` | One or more `.kicad_pcb` paths. With none, every board in `Run.INPUT_DIR` (`Input/`) is exported. |
 | `--mode` | `simulation` or `visual`. Default: `Run.MODE`. |
 | `--format` | Any of `glb`, `stl`, `obj`, `step`, several at once. Default: `Run.FILE_FORMAT` (`["glb"]`). Visual mode allows only `glb` and `obj`. |
-| `--for` | Applies a preset from `Run.PRESETS` before any `--set`: `freecad`, `openems`, `viewer`. See [Choosing An Export](Choosing-An-Export.md). |
-| `--verify` | Runs the Verifier after the model files are written (2 to 4 s on the example boards). See [Checks, Errors And Warnings](Checks-Errors-And-Warnings.md). |
+| `--for` | Applies a preset from `parameters/presets.py` before any `--set`: `freecad`, `elmer`, `calculix`, `openems`, `viewer`, `blender_glb`, `blender_obj`. See [Choosing An Export](Choosing-An-Export.md). |
+| `--verify` | Runs the Verifier after the model files are written (1 to 3 s on the example boards). See [Checks, Errors And Warnings](Checks-Errors-And-Warnings.md). |
 | `--out` | Output root. Default: `Run.OUTPUT_DIR` (`Output/`). |
-| `--set Module.NAME=value` | Overrides one parameter for this run. `Module` is the short name of the parameter file (`Run`, `Board`, `Copper`, `SolderMask`, `Silkscreen`, `Finish`, `Geometry`, `Color`). The value is parsed as a Python literal (`0.02`, `True`); anything that does not parse, such as `net`, is kept as a string. Quote a list for the shell, as in `--set 'Run.FILE_FORMAT=["glb","stl"]'`: unquoted, the shell strips its inner quotes and the run stops. An unknown name stops the run. |
+| `--set Module.NAME=value` | Overrides one parameter for this run. `Module` is the short name of the parameter file (`Run`, `Board`, `Copper`, `SolderMask`, `Silkscreen`, `Finish`, `Geometry`, `Color`, `Parallel`, `Step`, `Verifier`, `Presets`). The value is parsed as a Python literal (`0.02`, `True`); anything that does not parse, such as `net`, is kept as a string (so `false` is the word, and stops the run where the setting takes `True` or `False`). Quote a list for the shell, as in `--set 'Run.FILE_FORMAT=["glb","stl"]'`: unquoted, the shell strips its inner quotes and the run stops. An unknown module or name, or a `--set` without `=`, stops the run before it starts, naming the closest setting ([Checks, Errors And Warnings](Checks-Errors-And-Warnings.md#1711-errors)). |
 | `--version` | Prints `kese 2.2.0`. |
 
 Every preset, `--set`, `--mode`, `--format` and `--verify` is applied as an override of the
 parameters (`--mode` sets `Run.MODE`, `--format` sets `Run.FILE_FORMAT`, `--verify` sets
-`Run.VERIFY`), so all of them are listed on the first line of the run's `parameters.txt` and show
+`Verifier.VERIFY`), so all of them are listed on the first line of the run's `parameters.txt` and show
 in its values. Only `--out` is not recorded there; the run folder's path shows it.
 
 > [!NOTE]
@@ -115,6 +118,11 @@ in its values. Only `--out` is not recorded there; the run folder's path shows i
 > `Run.OUTPUT_DIR`) are relative to the folder the command is run from. The
 > exit code is 0 when every board succeeded and 1 when any board failed; with a single board the
 > full traceback is shown, with several the failing board is reported and the run continues.
+> A run works on every processor thread it may use (`Parallel.WORKERS`, see
+> [Working Principle](Working-Principle.md#64-work-done-in-parallel)); on a machine short of memory,
+> `--set Parallel.PROCESS_WORKERS=1` keeps stage 6 in one process, and `--set Parallel.WORKERS=1`
+> builds everything in one process, in turn. Ctrl-C stops the run and its worker
+> processes with one traceback.
 
 ## 3.4 Next
 

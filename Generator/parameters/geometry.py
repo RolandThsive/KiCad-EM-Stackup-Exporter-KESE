@@ -28,6 +28,11 @@ PINCH_POINT_OPENING_MM = 1e-4
 PINCH_CUT_ROUNDS = 10                   # tries at opening one, the cut's radius doubling each time
 PINCH_DISC_TURN_DEG = 17.0              # turn of the octagon cut at a pinch, off the axes a board's edges follow
 
+# Rounds that go on until nothing changes, and stop at this many (they end after one to three)
+VERTEX_SHARING_ROUNDS = 20              # stage 6: a part's faces cut and its slices given each other's vertices;
+                                        # a part still changing then is noted in report.txt and may be open
+NODING_ROUNDS = 8                       # a region noded on the grid again (GEOS's hot pixels) until unchanged
+
 # The tops and bottoms of prisms are cut into triangles by earcut, as in KiCad's 3D viewer
 TRIANGULATE_CELL_POINTS = 5000          # a polygon with more points than this is cut strip by strip
 TRIANGULATE_CELL_MM = 10.0              # width of those strips (KiCad cuts big polygons into 1 cm cells)
@@ -36,5 +41,6 @@ TRIANGULATE_CELL_MM = 10.0              # width of those strips (KiCad cuts big 
 SKIN_BURIED_TEST_OFFSET_MM = 0.0005     # a face is dropped if a point this far outside it lies inside another solid
 
 # Triangle meshes (kese/core/mesh.py)
-MESH_MERGE_DIGITS = 8                   # vertices that round to the same point at 10^-8 (mm or m) are one; angles under 1e-8 rad are none
+MESH_MERGE_DIGITS = 8                   # 10^-8: a corner angle under 1e-8 rad is none (no weight in smooth shading), and
+                                        # normals whose values spread less are not kept; no vertices are merged
 FLAT_FACET_THRESHOLD = 5000             # smooth shading: two faces are one flat facet where (edge radius / edge span)^2 exceeds this

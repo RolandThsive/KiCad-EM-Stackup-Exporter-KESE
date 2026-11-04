@@ -31,7 +31,7 @@ def write_part(w, part, boundary, transform, log):
     topo = topology_of(boundary)
     if topo.edges_not_used_twice:
         log(f"step: {part}: {topo.edges_not_used_twice} edges are not shared by two faces (the solid is open there)")
-    if P.Run.STEP_EXACT_ARCS:
+    if P.Step.STEP_EXACT_ARCS:
         try:
             topo = with_arcs(topo)
         except Exception as e:                            # a bug in the arcs must not cost the file: faceted instead

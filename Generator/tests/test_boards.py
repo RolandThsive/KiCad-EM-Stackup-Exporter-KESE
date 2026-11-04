@@ -6,7 +6,7 @@ the parameters in parameters/, but for the changes SETTINGS lists for it.
     python tests/test_boards.py --accept   re-record tests/baseline.json after an intended geometry change
     python tests/test_boards.py --add      record only the boards the baseline does not have yet
     python tests/test_boards.py --accept 18_finishes 18b_finish_pads   only the boards named (by file name)
-    python tests/test_boards.py --faceted  the STEP files with flat faces only (Run.STEP_EXACT_ARCS = False)
+    python tests/test_boards.py --faceted  the STEP files with flat faces only (Step.STEP_EXACT_ARCS = False)
     python tests/test_boards.py --healed   read the STEP files back with OpenCascade's healing (slower)
 
 A board fails when the Verifier fails (open solid, overlap, broken skin), when a STEP solid is
@@ -20,7 +20,6 @@ written, without OpenCascade's healing (tests/step_audit.py says what is still a
 check)."""
 import json
 import multiprocessing
-import os
 import shutil
 import sys
 import time
@@ -35,6 +34,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 
 import numpy as np  # noqa: E402
 
+from kese.core.parallel import process_limit, processor_threads  # noqa: E402
 from kese.pipeline import generate  # noqa: E402
 from kese.s8_verify.verify import every_check  # noqa: E402
 from parameters import P  # noqa: E402
@@ -45,7 +45,7 @@ OUT = ROOT / "tests" / "out"
 VOLUME_TOLERANCE = 1e-3          # relative, per part
 # background processes reading STEP files back (plain python entry): one per processor thread, as
 # each holds one part of a file in OpenCascade, not the whole file (gigabytes for the biggest boards)
-AUDITORS = max(2, os.cpu_count() or 1)
+AUDITORS = process_limit(max(2, processor_threads()))
 FEATURES = sorted((ROOT.parent / "featureTest").glob("*.kicad_pcb"))
 # the boards of Input/ that featureTest/ holds too, byte for byte (21_rf_module is rf_module), run once
 COPIES = {p.read_bytes() for p in FEATURES}
@@ -174,7 +174,7 @@ def main(args):
         sys.exit(f"unknown option: {', '.join(wrong)} (the options are {', '.join(sorted(flags))})")
     accept, add = "--accept" in args, "--add" in args
     if "--faceted" in args:
-        P.override("Run.STEP_EXACT_ARCS", False)
+        P.override("Step.STEP_EXACT_ARCS", False)
     healed = "--healed" in args
     named = [a for a in args if not a.startswith("--")]
     unknown = sorted(set(named) - {p.stem for p in BOARDS})

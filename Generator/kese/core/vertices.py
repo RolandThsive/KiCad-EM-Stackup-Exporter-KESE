@@ -6,8 +6,6 @@ import shapely
 
 from kese.core import shapes2d as sh
 
-NODING_ROUNDS = 8        # of a set operation on the grid, until it changes nothing (one or two, in practice)
-
 
 def near_edge():
     """How far from an edge a vertex may lie and still count as on it: half a grid diagonal (GEOS
@@ -129,7 +127,7 @@ def noded(g):
     """The region as a set operation on the grid leaves it: noded (GEOS's hot pixels) again until it
     changes nothing, so every later set operation meets it on identical edges."""
     g = sh.polys_only(g)
-    for _ in range(NODING_ROUNDS):
+    for _ in range(sh.G().NODING_ROUNDS):
         try:
             again = sh.polys_only(g.difference(sh.EMPTY, grid_size=sh.grid()))
         except shapely.errors.GEOSException:      # a ring that crosses itself (a KiCad 4 board): made valid

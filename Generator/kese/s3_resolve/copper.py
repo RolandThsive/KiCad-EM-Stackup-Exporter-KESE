@@ -5,37 +5,50 @@ from collections import defaultdict
 import shapely
 
 from kese.core import shapes2d as sh
+from kese.core.parallel import in_parallel
+from kese.core.shape_copies import own
 from kese.core.shapes2d import side_by_side, union
 from kese.s3_resolve.holes import hole_shapes
 from parameters import P
 
 
 def copper_layers(r, items, outline_k):
-    """r.copper {layer: {net: region}} and r.copper_all {layer: region}."""
-    T, last = r.to_board_T, len(items.layers) - 1
-    for k, l in enumerate(items.layers):
-        # outer copper caps the barrel (cut by the open bore); inner copper stops at the drill wall
-        holes = [g for g in hole_shapes(items, lambda h, k=k: h.i <= k <= h.j, bore=k in (0, last)) if not g.is_empty]
-        tree = shapely.STRtree(holes)
-        per_net = defaultdict(list)
-        for g, net in items.copper_items.get(l, []):
-            per_net[net].append(g)
-        regions = {}
-        for net, gs in per_net.items():
-            # joined on the grid: two shapes whose edges run along the same line only to within
-            # floating point (two zone fills, a fill and a pad) join cleanly instead of leaving a crack
-            cu = shapely.union_all(gs, grid_size=sh.grid()) if len(gs) > 1 else gs[0]
-            if P.Geometry.SIMPLIFY_TOLERANCE_MM > 0:   # before the cuts: the board edge and the holes stay exact
-                cu = cu.simplify(P.Geometry.SIMPLIFY_TOLERANCE_MM)
-            cu = cu.intersection(outline_k)
-            near = tree.query(cu, predicate="intersects") if not cu.is_empty else []
-            if len(near):                          # only the holes this net touches, as KiCad cuts
-                cu = cu.difference(union([holes[i] for i in near]))
-            cu = close_hairline_gaps(fill_hairline_holes(T(cu)))     # on the grid, where the hairlines show
-            if not cu.is_empty:
-                regions[net] = cu
-        r.copper[l] = first_net_keeps(regions)
-        r.copper_all[l] = side_by_side(list(r.copper[l].values()))
+    """r.copper {layer: {net: region}} and r.copper_all {layer: region}; Parallel.WORKERS layers at a time,
+    in threads (the work is GEOS's, which runs outside Python's lock), kept in the layers' order."""
+    done = in_parallel(lambda k: copper_of_layer(r, items, outline_k, k), range(len(items.layers)))
+    for l, nets in zip(items.layers, done):
+        r.copper[l] = nets
+        r.copper_all[l] = side_by_side(list(nets.values()))
+
+
+def copper_of_layer(r, items, outline_k, k):
+    """{net: region} of copper layer k: each net's items joined, cut by the holes it touches, clipped
+    to the outline, board frame.  In a thread: the outline, the holes and the items (a pad or a via
+    is on several layers) are this thread's own copies (kese/core/shape_copies.py)."""
+    T, last, l = r.to_board_T, len(items.layers) - 1, items.layers[k]
+    outline_k = own(outline_k)
+    # outer copper caps the barrel (cut by the open bore); inner copper stops at the drill wall
+    holes = [g for g in hole_shapes(items, lambda h: h.i <= k <= h.j, bore=k in (0, last), take=own) if not g.is_empty]
+    tree = shapely.STRtree(holes)
+    per_net = defaultdict(list)
+    mine = items.copper_items.get(l, [])
+    for (_, net), g in zip(mine, own([g for g, _ in mine])):
+        per_net[net].append(g)
+    regions = {}
+    for net, gs in per_net.items():
+        # joined on the grid: two shapes whose edges run along the same line only to within
+        # floating point (two zone fills, a fill and a pad) join cleanly instead of leaving a crack
+        cu = shapely.union_all(gs, grid_size=sh.grid()) if len(gs) > 1 else gs[0]
+        if P.Geometry.SIMPLIFY_TOLERANCE_MM > 0:   # before the cuts: the board edge and the holes stay exact
+            cu = cu.simplify(P.Geometry.SIMPLIFY_TOLERANCE_MM)
+        cu = cu.intersection(outline_k)
+        near = tree.query(cu, predicate="intersects") if not cu.is_empty else []
+        if len(near):                          # only the holes this net touches, as KiCad cuts
+            cu = cu.difference(union([holes[i] for i in near]))
+        cu = close_hairline_gaps(fill_hairline_holes(T(cu)))     # on the grid, where the hairlines show
+        if not cu.is_empty:
+            regions[net] = cu
+    return first_net_keeps(regions)
 
 
 def close_hairline_gaps(cu):

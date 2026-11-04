@@ -34,6 +34,14 @@ FINISH_BEFORE_SOLDER_MASK = False
 #     ("Edge Finish <metal>")
 #   - inside the bore of every plated hole open at a face ("Hole Finish <metal>")
 
+# How the finish follows the copper's sharp corners: the outer side of each finish layer (and of the
+# copper the mask wraps, with FINISH_BEFORE_SOLDER_MASK) keeps the corner's point out to this many
+# times the finish's thickness from the copper's corner, and is cut straight across there.  At 2.0 a
+# corner of 60 degrees or more keeps its point (a square pad's corners stay square); a sharper one,
+# such as the tip of a zone's spike, is cut.  1.0 cuts every corner at the finish's thickness;
+# higher values let sharp tips reach further out.
+FINISH_MITRE_LIMIT = 2.0
+
 # Layers of each finish, bottom to top, in mm.  Each becomes its own solid on the exposed copper.
 FINISH_TYPES = {
     "ENIG": [("Nickel", 0.005), ("Gold", 0.00008)],

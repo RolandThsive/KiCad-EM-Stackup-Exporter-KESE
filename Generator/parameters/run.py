@@ -1,7 +1,9 @@
 """
 parameters/run.py - what to make, where, and in which formats.
 
-Every value here is recorded in parameters.txt next to each output.
+Every value here is recorded in parameters.txt next to each output.  The STEP files' own settings
+are in parameters/step.py, the Verifier's in parameters/verifier.py, the presets (kese --for) in
+parameters/presets.py, and how many cores work at once in parameters/parallel.py.
 """
 
 # "simulation" : the physical stack-up, every layer a closed solid at its true height (EM solvers, CAD)
@@ -13,11 +15,13 @@ INPUT_DIR = "Input"
 OUTPUT_DIR = "Output"
 
 # Output file formats, any combination of:
-#   "glb"  - binary glTF, one mesh per solid, materials from parameters/color.py (viewing)
-#   "stl"  - one STL file per solid in an stl/ folder                           (openEMS, CalculiX, Elmer)
-#   "obj"  - Wavefront OBJ, one object per solid                                (viewing, Blender)
-#   "step" - STEP AP214 with one named exact solid per part                     (FreeCAD, gmsh)
+#   "glb"  - binary glTF, one mesh per solid, materials from parameters/color.py (viewers, Blender)
+#   "stl"  - one STL file per solid in an stl/ folder                           (openEMS)
+#   "obj"  - Wavefront OBJ, one object per solid, colours in an .mtl            (Blender)
+#   "step" - STEP AP214 with one named exact solid per part                     (FreeCAD, gmsh, and
+#            through gmsh Elmer and CalculiX)
 # "visual" mode can only produce "glb" and "obj" (its skin is a surface, not solids).
+# `kese --for <tool>` sets the mode, formats, units and origin for one of these tools (parameters/presets.py).
 FILE_FORMAT = ["glb"]
 
 # Units of the written files: "mm" (EM solvers, CAD) or "m" (glTF viewers expect metres)
@@ -32,18 +36,8 @@ ORIGIN = "center"
 # "flat"   : board in the XZ plane, F.Cu facing +Y
 ORIENTATION = "upright"
 
-# How many threads work at once (the 2D geometry library runs outside Python's lock): the copper
-# layers and hole spans of the finish in stage 4, and in stage 6 the parts built at once in
-# "simulation" mode, the slices in "visual" mode.  0 = one per processor thread (os.cpu_count())
-WORKERS = 0
-
 # Live "running <stage> ... 1m 23s" line in the terminal while a board is generated
 SHOW_PROGRESS = True
-
-# Run the Verifier after generation (adds about 2-4 s per board on the example boards, more on
-# dense boards). Results go in report.txt.
-VERIFY = False
-VERIFY_RAYS = 3000                     # vertical rays the Verifier casts through a visual model to test its surfaces
 
 # Write materials.json next to the outputs (per solid: material, thickness, er, tan d, conductivity, net, layer)
 WRITE_MATERIALS_JSON = True
@@ -53,48 +47,7 @@ EXPORT_INCLUDE_NORMALS = True
 EXPORT_SET_BUFFERVIEW_TARGETS = True   # keeps the Khronos glTF validator report free of hints
 SMOOTH_SHADE_ANGLE_DEG = 25.0          # edges sharper than this stay crisp; cylinders shade smooth
 
-# STEP export
-#
-# Every part is written as the closed solid stage 6 built, one body per connected piece, with its
-# flat faces and walls as they are (curves are polygons, as in the meshes), unless STEP_EXACT_ARCS.
-#
-# STEP_EXACT_ARCS - write circles and arcs as true curves (KESE's own STEP writer, no CAD kernel).
-#   Where the outline of a part runs through vertices that lie on one circle (holes, vias, round
-#   pads, track ends, arc tracks, round outlines), their chords become one CIRCLE edge and the walls
-#   on them one CYLINDRICAL_SURFACE face, at every height alike, except where another edge at that
-#   height passes closer to the vertices than the arc bulges out from them (a sliver of a few µm),
-#   which the arc would cross.  Smaller files and true cylinders for CAD and EM solvers; every
-#   other edge stays a line and every other face a plane.  Meshes (GLB / STL / OBJ) are unchanged.
-STEP_EXACT_ARCS = True
-STEP_ARC_FIT_TOLERANCE_MM = 0.0002     # vertices within this of one circle form an arc (2 x the snap grid)
-STEP_ARC_MIN_POINTS = 5                # at least this many vertices in a run
-STEP_ARC_MIN_SWEEP_DEG = 10.0          # and turning at least this far
-STEP_ARC_MAX_TURN_DEG = 30.0           # but at most this far at one vertex: a polygon with fewer than 12
-                                       # sides (an octagonal pad, a square) is a polygon, not a circle
-#
-# Which parts are made, in every format and mode alike, is set by one switch per kind of part:
-#   Board.BOARD_ENABLED, Copper.COPPER_ENABLED (copper and plated barrels), Finish.FINISH_ENABLED,
-#   SolderMask.SOLDER_MASK_ENABLED, Silkscreen.SILKSCREEN_ENABLED; mask and silk are off by default.
-#   STEP with mask and silk is bigger (the PCIe card in Input/, in mm: 348 MB and 320 solids written
-#   in 8.8 s, against 215 MB and 84 solids without them).
-
 # KiCad file-format versions this project has been tested with (stage 1, read, warns outside this range)
 KICAD_VERSION_MIN = 3                  # the BZR builds of 2013-2014 before KiCad 4 (KiCad 4 files say (version 4), KiCad 5 20171130)
 KICAD_VERSION_MAX = 20260206           # KiCad 10
 TESTED_COPPER_LAYERS = 8               # stage 1 warns above this many copper layers (the most among the test boards)
-
-# Presets: `kese --for <name>` applies these overrides before any --set on the command line, and
-# parameters.txt records the preset and every value it changed.  Each entry is Module.NAME: value.
-PRESETS = {
-    # STEP in mm with KiCad's origin, for FreeCAD (and its FEM workbench: Elmer, CalculiX): positions
-    # read off the layout match the model
-    "freecad": {"Run.MODE": "simulation", "Run.FILE_FORMAT": ["step"], "Run.UNITS": "mm", "Run.ORIGIN": "kicad",
-                "Copper.COPPER_GROUPING": "net", "Board.DIELECTRIC_GROUPING": "layer", "Run.WRITE_MATERIALS_JSON": True},
-    # openEMS has no STEP reader: one STL per net / dielectric, properties from materials.json
-    # (no finish: 80 nm of gold is far below any FDTD mesh cell)
-    "openems": {"Run.MODE": "simulation", "Run.FILE_FORMAT": ["stl"], "Run.UNITS": "mm", "Run.ORIGIN": "kicad",
-                "Copper.COPPER_GROUPING": "net", "Board.DIELECTRIC_GROUPING": "layer", "Run.WRITE_MATERIALS_JSON": True,
-                "Finish.FINISH_ENABLED": False},
-    # web viewers (<model-viewer>, three.js): metres, centred, the visible surface only
-    "viewer": {"Run.MODE": "visual", "Run.FILE_FORMAT": ["glb"], "Run.UNITS": "m", "Run.ORIGIN": "center"},
-}
