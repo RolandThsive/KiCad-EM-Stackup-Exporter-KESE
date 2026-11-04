@@ -1,4 +1,4 @@
-rf_module  (rf_module.kicad_pcb)   generated 2026-11-01 21:33
+rf_module  (rf_module.kicad_pcb)   generated 2026-11-04 22:18
 mode: visual   formats: glb   units: m
 KiCad format 20221018 (KiCad 7), generator pcbnew
 
@@ -54,57 +54,52 @@ skipped
 notes
   font: KiCad newstroke (kicad_newstroke.json.gz)
   solder mask: 0.01 mm over laminate, 0.01 mm over copper (stackup)
+  left out of every file: Finish.FINISH_ENABLED, Silkscreen.SILKSCREEN_ENABLED, SolderMask.SOLDER_MASK_ENABLED = False
 
 parts
-  Board_dielectric 1                      17574 triangles  material Board_prepreg #A89C66 alpha 1.0
-  Board_dielectric 3                       2730 triangles  material Board_prepreg #A89C66 alpha 1.0
-  Copper_+3V3                             15737 triangles  material Copper_exposed #DEBA60 alpha 1.0
-  Copper_+5V                               5855 triangles  material Copper_exposed #DEBA60 alpha 1.0
-  Copper_CS                                 452 triangles  material Copper_exposed #DEBA60 alpha 1.0
-  Copper_FCS                                498 triangles  material Copper_exposed #DEBA60 alpha 1.0
-  Copper_FMISO                              498 triangles  material Copper_exposed #DEBA60 alpha 1.0
-  Copper_FMOSI                              498 triangles  material Copper_exposed #DEBA60 alpha 1.0
-  Copper_FSCK                               498 triangles  material Copper_exposed #DEBA60 alpha 1.0
-  Copper_GND                             249228 triangles  material Copper_exposed #DEBA60 alpha 1.0
-  Copper_INT2                               488 triangles  material Copper_exposed #DEBA60 alpha 1.0
-  Copper_IRQ                                452 triangles  material Copper_exposed #DEBA60 alpha 1.0
-  Copper_LED1                               498 triangles  material Copper_exposed #DEBA60 alpha 1.0
-  Copper_LED2                               498 triangles  material Copper_exposed #DEBA60 alpha 1.0
-  Copper_LED3                               498 triangles  material Copper_exposed #DEBA60 alpha 1.0
-  Copper_LEDA1                              544 triangles  material Copper_exposed #DEBA60 alpha 1.0
-  Copper_LEDA2                              544 triangles  material Copper_exposed #DEBA60 alpha 1.0
-  Copper_LEDA3                              544 triangles  material Copper_exposed #DEBA60 alpha 1.0
-  Copper_MISO                               452 triangles  material Copper_exposed #DEBA60 alpha 1.0
-  Copper_MOSI                               452 triangles  material Copper_exposed #DEBA60 alpha 1.0
-  Copper_NRST                              1362 triangles  material Copper_exposed #DEBA60 alpha 1.0
-  Copper_PWRLED                             544 triangles  material Copper_exposed #DEBA60 alpha 1.0
-  Copper_RF                                 475 triangles  material Copper_exposed #DEBA60 alpha 1.0
-  Copper_RF2                                373 triangles  material Copper_exposed #DEBA60 alpha 1.0
-  Copper_RX                                2767 triangles  material Copper_exposed #DEBA60 alpha 1.0
-  Copper_SCK                                452 triangles  material Copper_exposed #DEBA60 alpha 1.0
-  Copper_SCL                               2770 triangles  material Copper_exposed #DEBA60 alpha 1.0
-  Copper_SCL2                              2168 triangles  material Copper_exposed #DEBA60 alpha 1.0
-  Copper_SDA                               2767 triangles  material Copper_exposed #DEBA60 alpha 1.0
-  Copper_SDA2                              2168 triangles  material Copper_exposed #DEBA60 alpha 1.0
-  Copper_SWCLK                              458 triangles  material Copper_exposed #DEBA60 alpha 1.0
-  Copper_SWDIO                              458 triangles  material Copper_exposed #DEBA60 alpha 1.0
-  Copper_TX                                2767 triangles  material Copper_exposed #DEBA60 alpha 1.0
-  Copper_VBAT                               302 triangles  material Copper_exposed #DEBA60 alpha 1.0
-  Copper_XIN                                513 triangles  material Copper_exposed #DEBA60 alpha 1.0
-  Copper_XOUT                               546 triangles  material Copper_exposed #DEBA60 alpha 1.0
-  Copper_no_net                            2502 triangles  material Copper_exposed #DEBA60 alpha 1.0
-  Top Solder Mask                        100315 triangles  material Top Solder Mask #14328C alpha 1.0
-  Top Mask over Copper                    35520 triangles  material Top Mask over Copper #3C5AB4 alpha 1.0
-  Bottom Solder Mask                      41363 triangles  material Bottom Solder Mask #14328C alpha 1.0
-  Bottom Mask over Copper                 26115 triangles  material Bottom Mask over Copper #3C5AB4 alpha 1.0
-  Top Silkscreen                          32718 triangles  material Top Silkscreen #F0F0EC alpha 1.0
-  Bottom Silkscreen                       11970 triangles  material Bottom Silkscreen #F0F0EC alpha 1.0
+  Board_dielectric 1                       8799 triangles  material Board_prepreg #A89C66 alpha 1.0
+  Board_dielectric 3                       3437 triangles  material Board_prepreg #A89C66 alpha 1.0
+  Copper_+3V3                             12543 triangles  material Copper_exposed #DEBA60 alpha 1.0
+  Copper_+5V                               4803 triangles  material Copper_exposed #DEBA60 alpha 1.0
+  Copper_CS                                 202 triangles  material Copper_exposed #DEBA60 alpha 1.0
+  Copper_FCS                                274 triangles  material Copper_exposed #DEBA60 alpha 1.0
+  Copper_FMISO                              274 triangles  material Copper_exposed #DEBA60 alpha 1.0
+  Copper_FMOSI                              238 triangles  material Copper_exposed #DEBA60 alpha 1.0
+  Copper_FSCK                               238 triangles  material Copper_exposed #DEBA60 alpha 1.0
+  Copper_GND                             181862 triangles  material Copper_exposed #DEBA60 alpha 1.0
+  Copper_INT2                               214 triangles  material Copper_exposed #DEBA60 alpha 1.0
+  Copper_IRQ                                202 triangles  material Copper_exposed #DEBA60 alpha 1.0
+  Copper_LED1                               238 triangles  material Copper_exposed #DEBA60 alpha 1.0
+  Copper_LED2                               238 triangles  material Copper_exposed #DEBA60 alpha 1.0
+  Copper_LED3                               238 triangles  material Copper_exposed #DEBA60 alpha 1.0
+  Copper_LEDA1                              226 triangles  material Copper_exposed #DEBA60 alpha 1.0
+  Copper_LEDA2                              226 triangles  material Copper_exposed #DEBA60 alpha 1.0
+  Copper_LEDA3                              226 triangles  material Copper_exposed #DEBA60 alpha 1.0
+  Copper_MISO                               202 triangles  material Copper_exposed #DEBA60 alpha 1.0
+  Copper_MOSI                               202 triangles  material Copper_exposed #DEBA60 alpha 1.0
+  Copper_NRST                               583 triangles  material Copper_exposed #DEBA60 alpha 1.0
+  Copper_PWRLED                             226 triangles  material Copper_exposed #DEBA60 alpha 1.0
+  Copper_RF                                 163 triangles  material Copper_exposed #DEBA60 alpha 1.0
+  Copper_RF2                                103 triangles  material Copper_exposed #DEBA60 alpha 1.0
+  Copper_RX                                1819 triangles  material Copper_exposed #DEBA60 alpha 1.0
+  Copper_SCK                                202 triangles  material Copper_exposed #DEBA60 alpha 1.0
+  Copper_SCL                               1807 triangles  material Copper_exposed #DEBA60 alpha 1.0
+  Copper_SCL2                              1761 triangles  material Copper_exposed #DEBA60 alpha 1.0
+  Copper_SDA                               1792 triangles  material Copper_exposed #DEBA60 alpha 1.0
+  Copper_SDA2                              1761 triangles  material Copper_exposed #DEBA60 alpha 1.0
+  Copper_SWCLK                              205 triangles  material Copper_exposed #DEBA60 alpha 1.0
+  Copper_SWDIO                              205 triangles  material Copper_exposed #DEBA60 alpha 1.0
+  Copper_TX                                1804 triangles  material Copper_exposed #DEBA60 alpha 1.0
+  Copper_VBAT                               118 triangles  material Copper_exposed #DEBA60 alpha 1.0
+  Copper_XIN                                244 triangles  material Copper_exposed #DEBA60 alpha 1.0
+  Copper_XOUT                               259 triangles  material Copper_exposed #DEBA60 alpha 1.0
+  Copper_no_net                            1670 triangles  material Copper_exposed #DEBA60 alpha 1.0
 
 timing
   read               0.1 s
-  collect            0.7 s
-  resolve            2.4 s
-  geometry           1.7 s
+  collect            0.8 s
+  resolve            1.9 s
+  geometry           1.3 s
   materials          0.0 s
-  assemble           8.8 s
-  write              0.1 s
+  assemble           5.6 s
+  write              0.0 s

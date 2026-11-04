@@ -82,7 +82,7 @@ def strip(q, d, c, r, a0, sweep, margin):
     cx, cy = c
     k = math.ceil(abs(sweep) / min(math.pi / 4, math.sqrt(margin / r)))
     step = sweep / k
-    ro = max(r + margin, max(d)) / math.cos(step / 2)            # the corners of a polyline outside the curve
+    ro = max(r + margin, *d) / math.cos(step / 2)            # the corners of a polyline outside the curve
     outer = [(cx + ro * math.cos(a), cy + ro * math.sin(a)) for a in (a0 + step * (n + 0.5) for n in range(k))]
     inner = [(cx + (x - cx) * f, cy + (y - cy) * f) for (x, y), di in zip(q[1:-1], d[1:-1]) for f in (min(di, r - margin) / di,)]
     return shapely.Polygon([q[0], *outer, q[-1], *inner[::-1]])

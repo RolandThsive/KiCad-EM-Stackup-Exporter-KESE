@@ -73,7 +73,9 @@ the command is run from.
    ```
 
    The repository already holds example runs of `rf_module` in `Output/rf_module/`, and a run
-   never overwrites a folder, so this board's first run goes to `simulation_GLB__1`.
+   never overwrites a folder, so this board's first run goes to `simulation_GLB__1`.  The examples
+   use the default settings with the finish turned off (`--set Finish.FINISH_ENABLED=False`):
+   with the finish, this board's STEP file is over 100 MB, more than GitHub takes in one file.
 
 4. Open `Output/<board>/simulation_GLB/report.txt`. It lists the stack-up heights, every item that
    was read, every item that was skipped and why (hidden text and text on layers that are not drawn
@@ -106,7 +108,7 @@ python run_KESE.py --version
 | `--verify` | Runs the Verifier after the model files are written (1 to 3 s on the example boards). See [Checks, Errors And Warnings](Checks-Errors-And-Warnings.md). |
 | `--out` | Output root. Default: `Run.OUTPUT_DIR` (`Output/`). |
 | `--set Module.NAME=value` | Overrides one parameter for this run. `Module` is the short name of the parameter file (`Run`, `Board`, `Copper`, `SolderMask`, `Silkscreen`, `Finish`, `Geometry`, `Color`, `Parallel`, `Step`, `Verifier`, `Presets`). The value is parsed as a Python literal (`0.02`, `True`); anything that does not parse, such as `net`, is kept as a string (so `false` is the word, and stops the run where the setting takes `True` or `False`). Quote a list for the shell, as in `--set 'Run.FILE_FORMAT=["glb","stl"]'`: unquoted, the shell strips its inner quotes and the run stops. An unknown module or name, or a `--set` without `=`, stops the run before it starts, naming the closest setting ([Checks, Errors And Warnings](Checks-Errors-And-Warnings.md#1711-errors)). |
-| `--version` | Prints `kese 2.2.0`. |
+| `--version` | Prints `kese 2.3.0`. |
 
 Every preset, `--set`, `--mode`, `--format` and `--verify` is applied as an override of the
 parameters (`--mode` sets `Run.MODE`, `--format` sets `Run.FILE_FORMAT`, `--verify` sets
