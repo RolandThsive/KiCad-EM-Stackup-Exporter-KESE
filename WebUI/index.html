@@ -58,12 +58,12 @@
       <button role="tab" data-ui="advanced" data-tip="Every parameter of every parameter file, Geometry included, with its name as in the file">Advanced</button>
     </div>
     <!-- between Basic/Advanced and the buttons: the note that the settings changed since the model was made -->
-    <div class="top-mid"><div class="stale-badge" id="stale-badge" hidden>Settings changed: press Generate to update the model</div></div>
+    <div class="top-mid"><div class="stale-badge" id="stale-badge" hidden data-tip="Settings changed: press Generate to update the model">Settings changed<span class="sb-more">: press Generate to update the model</span></div></div>
     <div class="top-actions">
       <a class="glass-btn small" id="btn-help" href="#" target="_blank" rel="noopener" data-tip="Opens the project wiki: what each setting does and how to choose it">Help / Wiki</a>
       <button class="glass-btn small" id="btn-import" data-tip="Load settings: a parameters.txt from any run (web or desktop) or your own parameter .py files. Every control takes those values.">Import Parameters</button>
       <button class="glass-btn small" id="btn-export" data-tip="Download the parameter files with these values, ready for the desktop KESE">Export Parameters</button>
-      <input type="file" id="import-file" accept=".txt,.py" multiple hidden>
+      <input type="file" id="import-file" accept=".txt,.py,.zip" multiple hidden>
     </div>
     <nav class="standalone-nav">
       <a class="round-btn" id="nav-back" href="#" data-tip="Back to the previous page" aria-label="Back">
@@ -114,7 +114,7 @@
             </span>
           </div>
           <div class="sliders">
-            <label class="view-slider" data-tip="Cut the model across, to see its cross-section">Cross-Section <input type="range" id="cut" min="0" max="100" value="100"><output id="cut-out">Off</output></label>
+            <label class="view-slider" data-tip="Cut the model across, to see its cross-section"><span class="vs-label">Cross-Section</span> <input type="range" id="cut" min="0" max="100" value="100"><output id="cut-out">Off</output></label>
           </div>
           <div class="view-right">
             <div class="segmented views" id="views">
