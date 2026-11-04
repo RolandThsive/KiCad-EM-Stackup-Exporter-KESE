@@ -1,6 +1,7 @@
 """The "simulation" mode: every part as one closed solid, its boundary found in 2D
-(kese/core/boundary.py) and cut into triangles; Run.WORKERS parts at once, in processes of their
-own (much of the work is Python's, which threads would take in turn)."""
+(kese/core/boundary.py) and cut into triangles; Parallel.WORKERS parts at once (at most
+Parallel.PROCESS_WORKERS), in processes of their own (much of the work is Python's, which threads
+would take in turn)."""
 import shapely
 
 from kese.core.boundary import boundary_of

@@ -1,8 +1,9 @@
 """The worker processes and threads of kese/core/parallel.py: a thread's own copies of shapes
 (kese/core/shape_copies.py) are the same shapes, made only where GEOS needs them (and on no grid
 where the grid is not used: a join of shared regions is the same join), threads share one prepared
-copy of a slice's material and one set of joined holes and hand back the memory they freed, shapes
-keep their grid (and type and SRID) on the way to and from the workers, the run's settings reach
+copy of a slice's material and one set of joined holes and hand back the memory they freed (unless
+Parallel.GIVE_BACK_MEMORY is off), Parallel.PROCESS_WORKERS caps the worker processes and boards under
+Parallel.PROCESS_MIN_COORDINATES stay in one process, shapes keep their grid (and type and SRID) on the way to and from the workers, the run's settings reach
 the workers, a lost worker or one out of memory leaves its jobs to the main process, an error in the
 work is raised at once and the other workers are stopped, a caller that stops early does not wait,
 the OOM killer takes a worker first, KESE runs inside a multiprocessing.Pool, a script without a
@@ -28,7 +29,7 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 
 from kese.core import memory, shape_copies  # noqa: E402
-from kese.core.parallel import in_parallel, in_processes  # noqa: E402
+from kese.core.parallel import in_parallel, in_processes, processes_wanted, workers_wanted, worth_processes  # noqa: E402
 from kese.core.shape_copies import _owned, own  # noqa: E402
 from kese.s3_resolve.holes import made_once  # noqa: E402
 from kese.s6_assemble.skin_faces import lies_against_material  # noqa: E402
@@ -37,9 +38,9 @@ from parameters import P  # noqa: E402
 
 
 def with_workers(n, *more):
-    """Run.WORKERS = n (and more (key, value) settings) for a block; -> the values to put back."""
-    saved = [("Run.WORKERS", P.Run.WORKERS)] + [(k, getattr(getattr(P, k.split(".")[0]), k.split(".")[1])) for k, _ in more]
-    for k, v in [("Run.WORKERS", n), *more]:
+    """Parallel.WORKERS = n (and more (key, value) settings) for a block; -> the values to put back."""
+    saved = [("Parallel.WORKERS", P.Parallel.WORKERS)] + [(k, getattr(getattr(P, k.split(".")[0]), k.split(".")[1])) for k, _ in more]
+    for k, v in [("Parallel.WORKERS", n), *more]:
         P.override(k, v)
     return saved
 
@@ -88,8 +89,14 @@ def oom_score_adj():
 
 def inside_a_pool(n):
     """In a multiprocessing.Pool's worker (a daemon, which may not start processes): in_processes."""
-    P.override("Run.WORKERS", 2)
+    P.override("Parallel.WORKERS", 2)
     return sorted(in_processes(abs, [(k, (-k,)) for k in range(n)]))
+
+
+def pid_after_a_while(n):
+    """In a worker: its process id, once the other workers have had time to start."""
+    time.sleep(0.3)
+    return os.getpid()
 
 
 def quick_or_sleep(n):
@@ -265,6 +272,47 @@ def test_memory_freed_by_threads_is_handed_back():
     memory.give_back_memory()                           # and on this system, it runs
 
 
+def test_memory_is_kept_with_give_back_memory_off():
+    calls, saved = [], (memory._MALLOC_TRIM, with_workers(3, ("Parallel.GIVE_BACK_MEMORY", False)))
+    memory._MALLOC_TRIM = calls.append
+    try:
+        assert in_parallel(lambda k: k * k, range(4)) == [0, 1, 4, 9]
+        memory.done_then_given_back(abs, -1)
+    finally:
+        memory._MALLOC_TRIM = saved[0]
+        put_back(saved[1])
+    assert calls == []
+
+
+def test_process_workers_caps_the_worker_processes():
+    saved = with_workers(4, ("Parallel.PROCESS_WORKERS", 2))
+    try:
+        assert (workers_wanted(), processes_wanted()) == (4, 2)
+        pids = {pid for _, pid in in_processes(pid_after_a_while, [(n, (n,)) for n in range(6)])}
+        P.override("Parallel.PROCESS_WORKERS", 8)                      # a cap: never more than WORKERS
+        assert processes_wanted() == 4
+        P.override("Parallel.PROCESS_WORKERS", 1)                      # stage 6 in this process, threads kept
+        assert (workers_wanted(), processes_wanted()) == (4, 1) and not worth_processes(4, 10 ** 6)
+    finally:
+        put_back(saved)
+    assert 0 < len(pids) <= 2 and os.getpid() not in pids, pids
+
+
+def test_small_boards_stay_in_one_process():
+    assert P.Parallel.PROCESS_MIN_COORDINATES == 20_000                  # the default
+    saved = with_workers(2, ("Parallel.PROCESS_MIN_COORDINATES", 20_000))
+    try:
+        assert not worth_processes(4, 19_999) and worth_processes(4, 20_000) and not worth_processes(1, 10 ** 6)
+        P.override("Parallel.PROCESS_MIN_COORDINATES", 100)
+        assert not worth_processes(4, 99) and worth_processes(4, 100)
+        P.override("Parallel.PROCESS_MIN_COORDINATES", 0)              # processes for every board of 2 parts or more
+        assert worth_processes(2, 0) and not worth_processes(1, 0)
+        P.override("Parallel.WORKERS", 1)                              # 1: everything in this process
+        assert not worth_processes(4, 10 ** 6)
+    finally:
+        put_back(saved)
+
+
 def test_the_run_s_settings_reach_the_workers():
     saved = with_workers(2, ("Geometry.SNAP_GRID_MM", 0.0002))
     try:
@@ -294,8 +342,8 @@ def test_out_of_memory_in_a_worker_leaves_its_job_to_this_process():
         put_back(saved)
     assert got == {n: n * n for n in range(6)}
     assert notes == ["worker processes failed (MemoryError: no memory in a worker); the 1 part left is built "
-                     "in this process, one after another (most often a lack of memory: Run.WORKERS = 1 uses "
-                     "less)"], notes
+                     "in this process, one after another (most often a lack of memory: fewer processes, "
+                     "Parallel.PROCESS_WORKERS, use less)"], notes
 
 
 def spawned():
@@ -368,7 +416,7 @@ def run_script(tmp_path, body, stderr=subprocess.STDOUT):
         sys.path.insert(0, {str(ROOT)!r})
         from kese.core.parallel import in_processes
         from parameters import P
-        P.override("Run.WORKERS", 2)
+        P.override("Parallel.WORKERS", 2)
         print("top-level code", flush=True)
         """) + textwrap.dedent(body))
     return subprocess.Popen([sys.executable, str(script)], stdout=subprocess.PIPE, stderr=stderr, text=True,
@@ -414,7 +462,7 @@ def test_ctrl_c_stops_the_workers_with_one_traceback(tmp_path):
         from kese.core.parallel import in_processes
         from parameters import P
         if __name__ == "__main__":
-            P.override("Run.WORKERS", 3)                     # the first worker done waits for work
+            P.override("Parallel.WORKERS", 3)                # the first worker done waits for work
             list(in_processes(time.sleep, [(0, (0,)), (1, (60,)), (2, (60,))]))
         """))
     p = subprocess.Popen([sys.executable, str(script)], stdout=subprocess.PIPE, stderr=subprocess.STDOUT, text=True,
@@ -473,6 +521,9 @@ if __name__ == "__main__":
     t.test_the_probe_test_lets_go_of_its_prepared_slices()
     t.test_joined_holes_are_made_once_when_threads_ask_at_once()
     t.test_memory_freed_by_threads_is_handed_back()
+    t.test_memory_is_kept_with_give_back_memory_off()
+    t.test_process_workers_caps_the_worker_processes()
+    t.test_small_boards_stay_in_one_process()
     t.test_the_run_s_settings_reach_the_workers()
     t.test_a_lost_worker_leaves_its_jobs_to_this_process()
     t.test_out_of_memory_in_a_worker_leaves_its_job_to_this_process()

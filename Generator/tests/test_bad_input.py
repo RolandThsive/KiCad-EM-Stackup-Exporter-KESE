@@ -1,6 +1,7 @@
 """Wrong settings and damaged board files: a setting that is not one of its values, a misspelt
---set, or a shapely too old, stops the run with a message before any work, and a damaged item is
-left out with a warning, not a Python error.
+--set, a setting left under its old name in a parameter file, or a shapely too old, stops the run
+with a message before any work (a setting's old name in --set still works, with a note), and a
+damaged item is left out with a warning, not a Python error.
 
     python -m pytest tests/test_bad_input.py        (or:  python tests/test_bad_input.py)"""
 import contextlib
@@ -13,7 +14,7 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 
 from kese.core.sexp import parse  # noqa: E402
-from kese.job import CHOICES, start  # noqa: E402
+from kese.job import CHOICES, WHOLE_NUMBERS, start  # noqa: E402
 from kese.s1_read import parse_kicad_version as kv  # noqa: E402
 from kese.s1_read import read  # noqa: E402
 from kese.s2_collect import collect  # noqa: E402
@@ -50,12 +51,39 @@ def test_every_setting_with_a_few_values_is_checked():
         assert isinstance(refused, str) and key in refused, (key, refused)
 
 
-def test_workers_must_be_zero_or_more():
-    for n in (0, 1, 3):
-        assert not isinstance(started({"Run.WORKERS": n}), str), n
-    for n in (-1, 1.5, "4", None):
-        refused = started({"Run.WORKERS": n})
-        assert isinstance(refused, str) and "Run.WORKERS" in refused, (n, refused)
+def test_the_parallel_settings_are_checked():
+    for key in WHOLE_NUMBERS:
+        key = f"Parallel.{key}"
+        for n in (0, 1, 3, 20_000):
+            assert not isinstance(started({key: n}), str), (key, n)
+        for n in (-1, 1.5, "4", None, True):
+            refused = started({key: n})
+            assert isinstance(refused, str) and f"{key} must be a whole number" in refused, (key, n, refused)
+    for value in (True, False):
+        assert not isinstance(started({"Parallel.GIVE_BACK_MEMORY": value}), str), value
+    for value in ("false", 0, None):        # --set Parallel.GIVE_BACK_MEMORY=false is the word, which is true
+        refused = started({"Parallel.GIVE_BACK_MEMORY": value})
+        assert refused == f"Parallel.GIVE_BACK_MEMORY must be True or False, not {value!r}", (value, refused)
+
+
+def test_the_old_name_of_workers_still_works():
+    saved = P.Parallel.WORKERS
+    lines = []
+    try:
+        P.override("Run.WORKERS", 3)                                    # as --set Run.WORKERS=3 does
+        assert P.Parallel.WORKERS == 3 and not hasattr(P.Run, "WORKERS")
+        start("simulation", None, None, (("Run.WORKERS", 3),), False, lines.append)
+    finally:
+        P.override("Parallel.WORKERS", saved)
+    assert lines == ["  Run.WORKERS is now Parallel.WORKERS (parameters/parallel.py): the value given for "
+                     "Run.WORKERS is used as Parallel.WORKERS"], lines
+    P.Run.WORKERS = 2                                                   # left in an old parameters/run.py
+    try:
+        refused = started({})
+    finally:
+        del P.Run.WORKERS
+    assert refused == ("parameters/run.py sets WORKERS, which is now Parallel.WORKERS in parameters/parallel.py: "
+                       "set it there"), refused
 
 
 def test_pinch_cut_rounds_must_be_one_or_more():
@@ -84,8 +112,9 @@ def test_a_misspelt_set_is_named_before_the_run():
                        ("copper.VIA_WALL_MM=0.02", "(did you mean Copper?)"),
                        ("Copper.VIA_WAL_MM=0.02", "copper.py has no parameter VIA_WAL_MM (did you mean VIA_WALL_MM?)"),
                        ("Copper.via_wall_mm=0.02", "(did you mean VIA_WALL_MM?)"),
-                       ("WORKERS=2", "WORKERS is not Module.NAME (did you mean Run.WORKERS?)"),
-                       ("Run.WORKERS", "give it a value, as in Run.WORKERS=value"),
+                       ("WORKERS=2", "WORKERS is not Module.NAME (did you mean Parallel.WORKERS?)"),
+                       ("Parallel.WORKERS", "give it a value, as in Parallel.WORKERS=value"),
+                       ("Parallel.PROCESS_WORKER=2", "parallel.py has no parameter PROCESS_WORKER (did you mean PROCESS_WORKERS?)"),
                        ("snapshot.X=1", "no parameter module snapshot")):
         err, argv = io.StringIO(), sys.argv
         sys.argv = ["kese", "--set", item]
@@ -124,7 +153,8 @@ def test_a_via_on_a_layer_the_board_does_not_have_is_left_out():
 if __name__ == "__main__":
     test_a_single_format_may_be_a_string()
     test_every_setting_with_a_few_values_is_checked()
-    test_workers_must_be_zero_or_more()
+    test_the_parallel_settings_are_checked()
+    test_the_old_name_of_workers_still_works()
     test_pinch_cut_rounds_must_be_one_or_more()
     test_an_old_shapely_is_named_before_the_run()
     test_a_misspelt_set_is_named_before_the_run()

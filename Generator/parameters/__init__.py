@@ -19,7 +19,9 @@ _MODULES = {
     "Finish": "finish",
     "Geometry": "geometry",
     "Color": "color",
+    "Parallel": "parallel",
 }
+MOVED = {"Run.WORKERS": "Parallel.WORKERS"}        # a setting's old name (it still works): its name now
 
 
 class _Params(types.SimpleNamespace):
@@ -39,8 +41,11 @@ class _Params(types.SimpleNamespace):
 
     def override(self, dotted, value):
         """P.override('Copper.VIA_WALL_MM', 0.02)  - used by kese --set and by tests.  A name that is
-        not a parameter raises a ValueError that says so and names the closest one."""
+        not a parameter raises a ValueError that says so and names the closest one.  A moved setting
+        may still be given by its old name (MOVED)."""
         short, dot, name = dotted.partition(".")
+        if dotted in MOVED and not (short in _MODULES and name in self.names(short)):
+            short, _, name = MOVED[dotted].partition(".")
         if not (dot and short and name):
             where = [f"{s}.{dotted}" for s in _MODULES if dotted in self.names(s)]
             raise ValueError(f"{dotted} is not Module.NAME" + (f" (did you mean {where[0]}?)" if len(where) == 1 else
@@ -50,12 +55,17 @@ class _Params(types.SimpleNamespace):
                              f"the modules are {', '.join(_MODULES)}")
         if name not in self.names(short):
             near = closest(name, self.names(short))
-            raise ValueError(f"parameters/{_MODULES[short]}.py has no parameter {name}{near}")
+            raise ValueError(f"{file_of(short)} has no parameter {name}{near}")
         setattr(getattr(self, short), name, value)
 
     def names(self, short):
         """The parameters of one module: its names in capitals."""
         return [name for name in dir(getattr(self, short)) if name.isupper()]
+
+
+def file_of(short):
+    """'parameters/run.py' for 'Run'."""
+    return f"parameters/{_MODULES[short]}.py"
 
 
 def closest(word, words):

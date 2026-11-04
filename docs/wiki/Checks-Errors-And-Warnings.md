@@ -33,7 +33,9 @@ python tests/test_boards.py                     # the regression suite over ever
 | `MODE must be 'simulation' or 'visual', not ...` | A typo in `Run.MODE` (or `--set Run.MODE=...`). A typo in `--mode` is caught earlier by the command line: `argument --mode: invalid choice`, exit code 2. |
 | `unknown FILE_FORMAT entries [...]` | Only `glb`, `stl`, `obj`, `step`. One format may be given as a list or as a single word (`--set Run.FILE_FORMAT=step`). |
 | `<Module>.<NAME> must be '...' or '...', not ...` | A setting that takes one of a few words (those whose range [Parameter Reference](Parameter-Reference.md) gives as words with `/` between them, such as `Run.UNITS` or `Copper.COPPER_GROUPING`) has another value. The run stops before reading the board. |
-| `Run.WORKERS must be a whole number, 0 or more (0: one per processor thread), not ...` | `0` uses every processor thread the run may use; a negative or fractional value means nothing. |
+| `Parallel.WORKERS must be a whole number, 0 or more (0: one per processor thread), not ...` (or `Parallel.PROCESS_WORKERS`, `Parallel.PROCESS_MIN_COORDINATES`, with what their `0` means) | A count in [`parameters/parallel.py`](Parameter-Reference.md#169-parallel-parametersparallelpy) is negative, fractional or not a number. |
+| `Parallel.GIVE_BACK_MEMORY must be True or False, not ...` | Most often `--set Parallel.GIVE_BACK_MEMORY=false`, which gives the word `false`: write `False`. |
+| `parameters/run.py sets WORKERS, which is now Parallel.WORKERS in parameters/parallel.py: set it there` | An older `parameters/run.py`, kept through an update, still sets `WORKERS`; the run stops rather than leave the value unused. |
 | `Geometry.PINCH_CUT_ROUNDS must be a whole number, 1 or more, not ...` | At least one try at opening a pinch point is needed: with none, every region checked would be noted as still pinched. |
 | `visual mode is a surface, not solids: FILE_FORMAT may only contain glb / obj` | STL and STEP need closed solids; use simulation mode. |
 | `no Edge.Cuts outline and OUTLINE_FALLBACK is 'error'` | Draw a closed outline, or set `Board.OUTLINE_FALLBACK = "copper_hull"`. |
@@ -41,7 +43,7 @@ python tests/test_boards.py                     # the regression suite over ever
 | `Python package(s) too old: shapely 2.0.7 (2.1 or newer)` | shapely 2.0 lacks the constrained Delaunay triangulation the faces are cut with; printed before anything runs, with the `pip install --upgrade` line to use. |
 | `--set <item>: parameters/<module>.py has no parameter <NAME> (did you mean <NAME>?)` | A `--set` with a misspelt name, or one in small letters; the closest name is given where there is one. Like every `--set` mistake below, it is printed by the command line before anything runs, exit code 2. |
 | `--set <item>: there is no parameter module <Module> (did you mean <Module>?); the modules are Run, Board, ...` | A misspelt module, or one in small letters (`copper` for `Copper`). |
-| `--set <item>: <item> is not Module.NAME (did you mean Run.WORKERS?)` | A name without its module, or without a name after the `.`. Where the name is in one module only, that module is given. |
+| `--set <item>: <item> is not Module.NAME (did you mean Parallel.WORKERS?)` | A name without its module, or without a name after the `.`. Where the name is in one module only, that module is given. |
 | `--set <item>: give it a value, as in <item>=value` | A `--set` without `=`. |
 | `no boards given and none found in Input/` | Put a board in `Input/` or give a path. |
 
@@ -72,7 +74,8 @@ python tests/test_boards.py                     # the regression suite over ever
 | `<part>: slices still sharing new vertices after 20 rounds` | Stage 6 gave the slices that meet at a height each other's vertices 20 times and they still changed. The part may be open; the Verifier then says so. |
 | `plated holes cross the board edge but the stackup has no (castellated_pads yes); set Copper.CASTELLATION = 'auto' to plate them` | With `Copper.CASTELLATION = "file"`, plated holes cut by the edge are left bare because the stack-up does not say they are castellated. |
 | `edge plating: copper of net '<net>' inside the edge band moved to net '<edge net>' on N layer(s)` | Copper of another net reached into the plated edge band; it now belongs to the edge's net (see 17.5). |
-| `worker processes failed (...); the N parts left are built in this process, one after another` (in visual mode `sliced`; after a lost worker, ending `(most often a lack of memory: Run.WORKERS = 1 uses less)`) | Stage 6 could not start its worker processes (`Run.WORKERS`), or lost one: the system stopped it, most often for lack of memory, or it ran out of memory (`MemoryError`). The parts the workers did not build (in visual mode, slice) are built in the main process instead, so the files are the same, only slower. An error in a part itself is not caught here: it stops the run at once, with its traceback. With little memory, `--set Run.WORKERS=1` builds everything in one process from the start. |
+| `worker processes failed (...); the N parts left are built in this process, one after another` (in visual mode `sliced`; after a lost worker, ending `(most often a lack of memory: fewer processes, Parallel.PROCESS_WORKERS, use less)`) | Stage 6 could not start its worker processes (`Parallel.WORKERS`, at most `Parallel.PROCESS_WORKERS`), or lost one: the system stopped it, most often for lack of memory, or it ran out of memory (`MemoryError`). The parts the workers did not build (in visual mode, slice) are built in the main process instead, so the files are the same, only slower. An error in a part itself is not caught here: it stops the run at once, with its traceback. With little memory, `--set Parallel.PROCESS_WORKERS=1` builds stage 6 in the main process from the start, and `--set Parallel.WORKERS=1` everything, in turn. |
+| `Run.WORKERS is now Parallel.WORKERS (parameters/parallel.py): the value given for Run.WORKERS is used as Parallel.WORKERS` | A `--set Run.WORKERS=N` (the setting's old name) was taken as `Parallel.WORKERS=N`. |
 | `step: <part>: N edges are not shared by two faces (the solid is open there)` | The STEP writer found the part open. It is still written, and a CAD tool will report free edges on it. |
 | `step: <part>: written without arcs (...)` | With `Run.STEP_EXACT_ARCS`, finding the part's arcs failed (a bug: please report it with the board). The part is written with flat faces only, as with the parameter off; the rest of the file keeps its arcs. |
 | `step: no part has a solid; STEP skipped` | None of the parts has a solid, so no `<board>.step` is written. |
@@ -322,14 +325,17 @@ each part switch off in turn (`BOARD_ENABLED`, `COPPER_ENABLED`, `FINISH_ENABLED
 `SOLDER_MASK_ENABLED`, `SILKSCREEN_ENABLED`) and finds only that switch's parts gone and every other
 part as it is with all of them on, and a run with all of them off refused, in about five seconds
 (`python tests/test_enabled.py`);
-`tests/test_bad_input.py`, which gives settings outside their values, misspelt `--set` items and a
-damaged board file and finds an error before any work or a warning, not a Python error, in about
+`tests/test_bad_input.py`, which gives settings outside their values, misspelt `--set` items, a
+setting by its old name (`Run.WORKERS`) and a damaged board file and finds an error before any work,
+a note or a warning, not a Python error, in about
 two seconds (`python tests/test_bad_input.py`); `tests/test_parallel.py`, which finds a thread's
 own copies of shapes to be the same shapes, each part on its grid, made only where GEOS needs them,
 and threads working on their own copies of one shape not crashing; finds threads taking turns with
 one prepared copy of a slice's material, the test for hidden triangles letting go of its prepared
 slices, a set of holes joined once when threads ask for it at once, and the memory threads freed
-handed back; sends shapes through stage 6's worker processes and finds them back on
+handed back (and kept with `Parallel.GIVE_BACK_MEMORY` off); finds `Parallel.PROCESS_WORKERS`
+capping the worker processes and boards under `Parallel.PROCESS_MIN_COORDINATES` kept in one
+process; sends shapes through stage 6's worker processes and finds them back on
 their grid (each part's too), of their type and with their SRID; and finds the run's settings in the
 workers, the parts of a lost worker and of one out of memory built in the main process with the
 note, an error in a part raised at once with the other workers stopped, a caller that stops early

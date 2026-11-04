@@ -91,16 +91,17 @@ mesh = mesh_of_boundary(boundary)                  # faces cut into triangles, t
   line, area zero) where a ring has a point on a straight run, the vertex another face shares; such
   a triangle is flipped away with its neighbour across its long edge, so no mesh holds a triangle
   of zero area, which some meshers and STL importers reject.
-- `Run.WORKERS` parts are built at once, the biggest first, each in a process of its own (much of
-  the work is Python's, which threads would take in turn; a board of under 20,000 coordinates is
-  built part after part, as starting the processes would take longer). The files come out the same,
+- `Parallel.WORKERS` parts are built at once (at most `Parallel.PROCESS_WORKERS`), the biggest
+  first, each in a process of its own (much of the work is Python's, which threads would take in
+  turn; a board of under `Parallel.PROCESS_MIN_COORDINATES` coordinates, 20,000, is built part
+  after part, as starting the processes would take longer). The files come out the same,
   byte for byte, however many processes ran, but for the time in the STEP file's header, and the
   times in `report.txt` and `parameters.txt`. Every part keeps its faces (its `Boundary`), and the
   STEP writer writes those same faces as a closed solid.
 - Visual mode does the same for all parts at once and keeps only the faces between material and
   air (`skin_faces.py`, `skin_mesh.py`, see [Output Modes](Output-Modes.md)). There each part is
   sliced in a process of its own, as above; the faces are then found, and the hidden triangles
-  dropped, in `Run.WORKERS` threads.
+  dropped, in `Parallel.WORKERS` threads.
 - Last, every mesh is scaled to the output units, turned to the output orientation and shaded
   smooth across edges flatter than `Run.SMOOTH_SHADE_ANGLE_DEG` (`transform.py`). The meshes are
   KESE's own (`kese/core/mesh.py`), and so are the GLB, STL, OBJ and STEP writers (`kese/s7_write/`).
@@ -131,8 +132,10 @@ be mapped back to the layout.
 
 ## 6.4 Work Done In Parallel
 
-`Run.WORKERS` threads or processes work at once (`0`: one per processor thread the run may use;
-`1`: everything in turn, in one process). `kese/core/parallel.py` holds both kinds:
+`Parallel.WORKERS` threads or processes work at once (`0`: one per processor thread the run may
+use; `1`: everything in turn, in one process), and at most `Parallel.PROCESS_WORKERS` processes
+([Parameter Reference](Parameter-Reference.md#169-parallel-parametersparallelpy)).
+`kese/core/parallel.py` holds both kinds:
 
 | Stage | What runs at once | In |
 |---|---|---|
@@ -144,8 +147,8 @@ be mapped back to the layout.
 
 - Threads where the 2D geometry library, GEOS, does the work: it runs outside Python's lock.
   Processes where much of the work is Python's own, which threads would take in turn. Parts that
-  hold under 20,000 coordinates in all are built in the main process, as starting the processes
-  would take longer.
+  hold under `Parallel.PROCESS_MIN_COORDINATES` coordinates in all (20,000) are built in the main
+  process, as starting the processes would take longer.
 - The results are put back in the layers', sides' and parts' order, so the files are the same,
   byte for byte, however many threads or processes ran (but for the times, as in 6.2).
 - A thread makes shapes only from its own copies of the shapes other threads use
@@ -159,7 +162,7 @@ be mapped back to the layout.
   the threads take turns with one prepared copy of each slice's material, so memory does not grow
   with the number of threads, and the test for hidden triangles frees its indexes when it is done.
 - After each step done in threads, and in each worker after each part, the memory freed is handed
-  back to the system. On Linux, glibc keeps a pool of memory for each thread and holds on to what
+  back to the system (`Parallel.GIVE_BACK_MEMORY`). On Linux, glibc keeps a pool of memory for each thread and holds on to what
   is freed in it, where the steps that follow cannot use it. With these, NE_Delta's visual model
   peaks at 2.67 GB with 4 workers and 3.46 GB with 32, where it took 3.51 GB and 5.13 GB.
 - The processes start afresh, as Windows and macOS start them, on every system, and are given the

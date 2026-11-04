@@ -27,7 +27,7 @@ BIG_PIECE = 10_000       # coordinates: a piece this big (a dielectric, with eve
 
 def skin_faces(ps, log):
     """PrismSet -> (levels, the material of every slice, {part: (flats, walls)}): flats as
-    (z, region, looks up), walls as (z0, z1, segments), mm, board frame; Run.WORKERS at a time."""
+    (z, region, looks up), walls as (z0, z1, segments), mm, board frame; Parallel.WORKERS at a time."""
     levels = heights_of(ps.prisms)
     by_part = {part: [p for p in prisms if not p.region.is_empty] for part, prisms in ps.by_part().items()}
     slices = slices_of_parts(by_part, levels, log)

@@ -110,7 +110,7 @@ every slice: where a metal one grid step thick comes out thinner than that betwe
 edges (on a 45° wall a 0.1 µm band can come out 0.07 µm across, the spacing of 45° lines through
 the grid points), noding closes it and leaves a hairline of air, so the prisms hold the volume the
 solids will. Cutting the solid once, not once per metal, is what keeps the shells quick on a big
-board; the copper layers and the hole spans are worked on `Run.WORKERS` at a time, in threads.
+board; the copper layers and the hole spans are worked on `Parallel.WORKERS` at a time, in threads.
 
 ### 13.2.2 Finish Before The Mask
 

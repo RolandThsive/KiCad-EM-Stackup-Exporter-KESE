@@ -1,7 +1,7 @@
 """The finish everywhere but the faces of the outer copper (those are finish.py): a shell per metal
 in the air beside the copper's walls, inside the open plated holes, on the plated board edge and in
 the castellations, wrapping over the corner onto the finish on the face.  How a shell is laid is in
-shells.py; the hole spans and the copper layers are worked on Run.WORKERS at a time, in threads, each
+shells.py; the hole spans and the copper layers are worked on Parallel.WORKERS at a time, in threads, each
 on its own copies of the shapes it uses (kese/core/shape_copies.py)."""
 from kese.core import shapes2d as sh
 from kese.core.parallel import in_parallel

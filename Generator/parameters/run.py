@@ -32,21 +32,6 @@ ORIGIN = "center"
 # "flat"   : board in the XZ plane, F.Cu facing +Y
 ORIENTATION = "upright"
 
-# How many threads or processes work at once.  Threads where the 2D geometry library does the work
-# (it runs outside Python's lock): the copper layers in stage 3; both sides of the solder mask and
-# the silkscreen, and the finish's copper layers and hole spans, in stage 4; the faces of the
-# visual-mode skin and the test for its hidden triangles, in stage 6.  Processes of their own where
-# much of the work is Python's: in stage 6 the parts built at once in "simulation" mode and the
-# parts sliced for the "visual" skin (when the parts hold 20,000 coordinates or more in all; fewer
-# are built in turn, faster than starting processes).  Each process holds its own Python, numpy and
-# shapely (about 36 MB) and the part it builds: NE_Delta in simulation mode peaks at 2.8 GB in all
-# with 4 workers and 4.5 GB with 32.  If they cannot start, or one is stopped or runs out of
-# memory, the main process builds the parts left, with a note in report.txt.
-# 0 = one per processor thread this process may use (all of the machine's, unless a job scheduler,
-# taskset or a container limits it); 1 = everything in turn, in one process.  Windows holds at most 61
-# processes at once.
-WORKERS = 0
-
 # Live "running <stage> ... 1m 23s" line in the terminal while a board is generated
 SHOW_PROGRESS = True
 

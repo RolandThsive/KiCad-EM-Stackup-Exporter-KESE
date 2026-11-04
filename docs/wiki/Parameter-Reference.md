@@ -1,6 +1,6 @@
 # 16. Parameter Reference
 
-Every setting lives in one of eight files in `parameters/`. These are the only files you edit.
+Every setting lives in one of nine files in `parameters/`. These are the only files you edit.
 Units are mm unless a name says otherwise. The **Range** column is what the program uses
 sensibly; "None" means the program works the value out itself. Any value can be overridden for
 one run with `--set Module.NAME=value`, where `Module` is the short name in the heading of each
@@ -10,7 +10,7 @@ and listed on its first line.
 
 > [!NOTE]
 > Defaults are those of the parameter files on `main`. Before the board is read, the run checks
-> `MODE`, `FILE_FORMAT`, `WORKERS` and every setting whose range below is a few words with `/`
+> `MODE`, `FILE_FORMAT`, the settings of `parameters/parallel.py` and every setting whose range below is a few words with `/`
 > between them (such as `"mm"` / `"m"`), and stops with an error that names the setting.
 > `FINISH_TYPE` and `DIELECTRIC_SPLIT` are checked where they are used (an error or a warning), and
 > `FONT_FILE` gives a note in `report.txt`. For the rest, a value outside the range below produces
@@ -33,9 +33,10 @@ What to make, where, and in which formats.
 
 ### 16.1.2 Run Behaviour
 
+How many threads and processes work at once is set in [16.9 Parallel](#169-parallel-parametersparallelpy).
+
 | Name | Default | Range | Meaning |
 |---|---|---|---|
-| `WORKERS` | `0` | int ≥ 0 | Threads or processes that work at once. Threads where the 2D geometry library does the work (it runs outside Python's lock): the copper layers in stage 3; both sides of the solder mask and the silkscreen, and the finish's copper layers and hole spans, in stage 4; the faces of the visual-mode skin and the test for its hidden triangles, in stage 6. Processes of their own, each started afresh, where much of the work is Python's: in stage 6 the parts built at once in simulation mode and the parts sliced for the visual skin, when the parts hold 20,000 coordinates or more in all (fewer are built in turn, in the main process). Each process holds its own Python, numpy and shapely (about 36 MB) and the part it builds, and the memory a step's threads or a worker's part freed is handed back to the system after it: NE_Delta, one of the biggest boards tried, peaks at 2.82 GB in all with 4 workers and 4.48 GB with 32 in simulation mode, and at 2.67 GB and 3.46 GB in visual mode. If the processes cannot start, or one is stopped or runs out of memory, the main process builds the parts left, with a note ([Checks, Errors And Warnings](Checks-Errors-And-Warnings.md#1713-notes-worth-knowing)). `0` = one per processor thread the run may use (all of the machine's, unless a job scheduler, `taskset` or a container limits it); `1` = everything in turn, in one process. Windows holds at most 61 processes at once. |
 | `SHOW_PROGRESS` | `True` | bool | Live `running <stage> ... 1m 23s` line on a terminal |
 | `VERIFY` | `False` | bool | Run the Verifier after generation (1 to 3 s on the example boards in simulation mode, under 1 s in visual mode; longer on dense boards) |
 | `VERIFY_RAYS` | `3000` | int > 0 | Vertical rays the Verifier casts through a visual model to test its surfaces |
@@ -281,6 +282,24 @@ The look of every part: the GLB and OBJ materials, the part colours in STEP and 
 | `STACKUP_SILK_COLORS` | white, black, yellow, green, red, blue, purple | `{name: hex}` | Silkscreen colour names |
 | `STACKUP_MASK_OVER_COPPER_COLORS` | 11 names | `{name: hex or None}` | Visual-mode colour of the mask over copper per stack-up colour; an entry set to `None` (or left out) keeps the `MATERIALS` colour |
 | `USER_MASK_OVER_COPPER_LIGHTEN` | `0.15` | 0-1 | With a user-defined (`#RRGGBBAA`) mask colour in the stack-up, how far the visual-mode mask over copper is mixed toward white |
+
+## 16.9 Parallel (`parameters/parallel.py`)
+
+How many processor cores work at once, and how ([Working Principle](Working-Principle.md#64-work-done-in-parallel)).
+None of these changes the model: the files are the same, byte for byte, however the work is
+shared out.
+
+| Name | Default | Range | Meaning |
+|---|---|---|---|
+| `WORKERS` | `0` | int ≥ 0 | Threads or processes that work at once. Threads where the 2D geometry library does the work (it runs outside Python's lock): the copper layers in stage 3; both sides of the solder mask and the silkscreen, and the finish's copper layers and hole spans, in stage 4; the faces of the visual-mode skin and the test for its hidden triangles, in stage 6. Processes of their own, each started afresh, where much of the work is Python's: in stage 6 the parts built at once in simulation mode and the parts sliced for the visual skin (`PROCESS_WORKERS` and `PROCESS_MIN_COORDINATES` below). `0` = one per processor thread the run may use (all of the machine's, unless a job scheduler, `taskset` or a container limits it); `1` = everything in turn, in one process. |
+| `PROCESS_WORKERS` | `0` | int ≥ 0 | At most this many worker processes at once, in stage 6; `0` = as many as `WORKERS` (a higher value is the same as `WORKERS`). Each process holds its own Python, numpy and shapely (about 36 MB) and the part it builds: NE_Delta, one of the biggest boards tried, peaks at 2.82 GB in all with 4 workers and 4.48 GB with 32 in simulation mode. A thread costs little memory, so a machine with many threads and little memory can keep `WORKERS` and lower this; `1` builds stage 6 in the main process and keeps the threads. If the processes cannot start, or one is stopped or runs out of memory, the main process builds the parts left, with a note ([Checks, Errors And Warnings](Checks-Errors-And-Warnings.md#1713-notes-worth-knowing)). Windows holds at most 61 processes at once. |
+| `PROCESS_MIN_COORDINATES` | `20000` | int ≥ 0 | Stage 6 starts worker processes only when the parts hold this many coordinates or more in all their prisms; smaller boards are built part after part in the main process, which is faster than starting the processes (about 0.3 s for 4): one of the test boards takes 0.10 s that way, and 0.35 s in processes. `0` = processes for every board of more than one part. |
+| `GIVE_BACK_MEMORY` | `True` | bool | Hand the memory that threads freed back to the system after each step done in threads, and in each worker process after each part (glibc's `malloc_trim`, on Linux; elsewhere nothing is done). glibc keeps a pool for each thread and holds on to what is freed in it: NE_Delta in visual mode peaks at 2.67 GB with 4 workers and 3.46 GB with 32 with this, and 3.45 GB and 4.86 GB without. Tens of milliseconds per run. |
+
+> [!NOTE]
+> `WORKERS` was `Run.WORKERS` before. `--set Run.WORKERS=N` still works: it sets
+> `Parallel.WORKERS`, and `report.txt` notes that. A `parameters/run.py` that still sets `WORKERS`
+> stops the run with a message that names `parameters/parallel.py`, so the value is not lost.
 
 | Previous | Next |
 |:---|---:|

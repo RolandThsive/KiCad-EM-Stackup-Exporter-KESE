@@ -58,7 +58,7 @@ def meshes_per_part(v, f, owner, parts):
 
 def looks_at_material(v, f, levels, pieces):
     """Which triangles have material just in front of them: a point SKIN_BURIED_TEST_OFFSET_MM out along
-    the normal lies in some part's material.  Slices Run.WORKERS at a time, PROBES_AT_A_TIME probes."""
+    the normal lies in some part's material.  Slices Parallel.WORKERS at a time, PROBES_AT_A_TIME probes."""
     inside = np.zeros(len(f), dtype=bool)
     with ThreadPoolExecutor(workers_wanted()) as pool:
         for start in range(0, len(f), PROBES_AT_A_TIME):

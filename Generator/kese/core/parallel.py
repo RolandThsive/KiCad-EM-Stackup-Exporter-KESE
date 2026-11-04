@@ -16,8 +16,6 @@ from kese.core import shape_copies
 from kese.core.memory import done_then_given_back, give_back_memory
 from parameters import P
 
-FEW_COORDINATES = 20_000      # in all the shapes of a job list: below this the jobs are done here, one after
-                              # another (well under a second), as starting the processes would take longer
 WINDOWS_MOST = 61             # processes: ProcessPoolExecutor's limit on Windows (64 wait handles, less its own)
 NOT_STARTED = (OSError, NotImplementedError, BrokenProcessPool)    # no processes here (some sandboxes)
 LOST = (BrokenProcessPool, MemoryError)     # a worker stopped by the system, or out of memory
@@ -37,8 +35,14 @@ def processor_threads():
 
 
 def workers_wanted():
-    """How many threads or processes work at once: Run.WORKERS, or one per processor thread."""
-    return P.Run.WORKERS or processor_threads()
+    """How many threads or processes work at once: Parallel.WORKERS, or one per processor thread."""
+    return P.Parallel.WORKERS or processor_threads()
+
+
+def processes_wanted():
+    """How many worker processes work at once: as many as workers_wanted(), at most
+    Parallel.PROCESS_WORKERS (each holds its own Python and the part it builds)."""
+    return min(workers_wanted(), P.Parallel.PROCESS_WORKERS or workers_wanted())
 
 
 def process_limit(n):
@@ -47,7 +51,7 @@ def process_limit(n):
 
 
 def in_parallel(work, items):
-    """[work(item) for item in items], Run.WORKERS items at a time, the results in the items' order
+    """[work(item) for item in items], Parallel.WORKERS items at a time, the results in the items' order
     (so that what is built from them comes out the same however many threads ran).  `work` must take
     own() copies of the shapes it shares with the other items' work (kese/core/shape_copies.py)."""
     items = list(items)
@@ -62,15 +66,17 @@ def in_parallel(work, items):
 
 def worth_processes(jobs, coordinates):
     """Whether `jobs` jobs on shapes of `coordinates` coordinates in all are worth processes of their
-    own (and may have them: a multiprocessing.Pool's worker, a daemon, may start no process)."""
-    return (workers_wanted() > 1 and jobs > 1 and coordinates >= FEW_COORDINATES
+    own: at least Parallel.PROCESS_MIN_COORDINATES, below which the jobs are done here, one after
+    another, faster than starting processes (and a multiprocessing.Pool's worker, a daemon, may start
+    no process)."""
+    return (processes_wanted() > 1 and jobs > 1 and coordinates >= P.Parallel.PROCESS_MIN_COORDINATES
             and not multiprocessing.current_process().daemon)
 
 
 def in_processes(work, jobs, log=None, done="built"):
-    """(key, work(*args)) for every (key, args) of jobs, each as it is done, Run.WORKERS at a time in
-    processes started afresh (as Windows and macOS start them), with this run's settings.  `work`
-    must be a module's function.  Where processes cannot be started, or one is lost (stopped by the
+    """(key, work(*args)) for every (key, args) of jobs, each as it is done, processes_wanted() at a
+    time in processes started afresh (as Windows and macOS start them), with this run's settings.
+    `work` must be a module's function.  Where processes cannot be started, or one is lost (stopped by the
     system for lack of memory, or out of memory), the jobs not done run here, one after another,
     with a note (log) that says what is done to the parts (`done`: "built", "sliced").  An error
     raised by the work itself is raised here at once: the other workers are stopped, not waited for."""
@@ -82,7 +88,7 @@ def in_processes(work, jobs, log=None, done="built"):
         return
     failed = None
     try:
-        pool = ProcessPoolExecutor(process_limit(min(workers_wanted(), len(left))),
+        pool = ProcessPoolExecutor(process_limit(min(processes_wanted(), len(left))),
                                    mp_context=multiprocessing.get_context("spawn"),
                                    initializer=use_settings, initargs=(settings(),))
     except NOT_STARTED as e:
@@ -114,7 +120,8 @@ def in_processes(work, jobs, log=None, done="built"):
         n = len(left)
         log(f"worker processes failed ({type(failed).__name__}: {failed}); the {n} part{'s' * (n != 1)} left "
             f"{'are' if n != 1 else 'is'} {done} in this process, one after another"
-            + (" (most often a lack of memory: Run.WORKERS = 1 uses less)" if isinstance(failed, LOST) else ""))
+            + (" (most often a lack of memory: fewer processes, Parallel.PROCESS_WORKERS, use less)"
+               if isinstance(failed, LOST) else ""))
     for key, args in left.items():
         yield key, work(*args)
 

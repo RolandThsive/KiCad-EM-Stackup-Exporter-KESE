@@ -10,7 +10,7 @@ KiCad-EM-Stackup-Exporter-KESE/
 │   ├── pyproject.toml           for pip install -e . (the kese command), unpinned
 │   ├── README.md                what is in this folder, and the first commands
 │   ├── parameters/              every setting, one file per subject (the only files you edit)
-│   │   └── run.py, board.py, copper.py, solder_mask.py, silkscreen.py, finish.py, geometry.py, color.py
+│   │   └── run.py, board.py, copper.py, solder_mask.py, silkscreen.py, finish.py, geometry.py, color.py, parallel.py
 │   ├── kese/                    the program
 │   │   ├── pipeline.py          runs the nine stages in order
 │   │   ├── cli.py, job.py, progress.py   command-line options, one run's request, the live status line

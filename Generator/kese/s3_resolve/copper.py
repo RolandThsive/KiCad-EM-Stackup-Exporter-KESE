@@ -13,7 +13,7 @@ from parameters import P
 
 
 def copper_layers(r, items, outline_k):
-    """r.copper {layer: {net: region}} and r.copper_all {layer: region}; Run.WORKERS layers at a time,
+    """r.copper {layer: {net: region}} and r.copper_all {layer: region}; Parallel.WORKERS layers at a time,
     in threads (the work is GEOS's, which runs outside Python's lock), kept in the layers' order."""
     done = in_parallel(lambda k: copper_of_layer(r, items, outline_k, k), range(len(items.layers)))
     for l, nets in zip(items.layers, done):

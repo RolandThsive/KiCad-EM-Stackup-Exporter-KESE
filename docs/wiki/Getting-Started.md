@@ -118,9 +118,10 @@ in its values. Only `--out` is not recorded there; the run folder's path shows i
 > `Run.OUTPUT_DIR`) are relative to the folder the command is run from. The
 > exit code is 0 when every board succeeded and 1 when any board failed; with a single board the
 > full traceback is shown, with several the failing board is reported and the run continues.
-> A run works on every processor thread it may use (`Run.WORKERS`, see
+> A run works on every processor thread it may use (`Parallel.WORKERS`, see
 > [Working Principle](Working-Principle.md#64-work-done-in-parallel)); on a machine short of memory,
-> `--set Run.WORKERS=1` builds everything in one process. Ctrl-C stops the run and its worker
+> `--set Parallel.PROCESS_WORKERS=1` keeps stage 6 in one process, and `--set Parallel.WORKERS=1`
+> builds everything in one process, in turn. Ctrl-C stops the run and its worker
 > processes with one traceback.
 
 ## 3.4 Next

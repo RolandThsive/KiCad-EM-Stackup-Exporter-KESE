@@ -2,9 +2,11 @@
 systems, gives each thread that allocates alongside another a pool (arena) of its own and keeps what
 is freed there for that pool: after the visual skin's threads, the main process held a gigabyte more
 with 16 threads than with 4 (NE_Delta), which the single-threaded steps that follow could not use.
-Elsewhere (Windows, macOS, musl) nothing is done."""
+Elsewhere (Windows, macOS, musl) nothing is done, and nowhere with Parallel.GIVE_BACK_MEMORY False."""
 import ctypes
 import sys
+
+from parameters import P
 
 
 def _malloc_trim():
@@ -23,7 +25,7 @@ _MALLOC_TRIM = _malloc_trim()
 def give_back_memory():
     """Hand back to the system the memory freed so far, in every thread's pool: tens of milliseconds.
     Called after each step done in threads (kese/core/parallel.py, the visual skin)."""
-    if _MALLOC_TRIM is not None:
+    if _MALLOC_TRIM is not None and P.Parallel.GIVE_BACK_MEMORY:
         _MALLOC_TRIM(0)
 
 

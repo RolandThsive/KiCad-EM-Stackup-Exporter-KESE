@@ -6,7 +6,7 @@ from dataclasses import dataclass, field
 
 from kese.progress import Status
 from kese.s4_geometry.switches import SWITCHES, is_on
-from parameters import P
+from parameters import MOVED, P, file_of
 
 MODES = ("simulation", "visual")
 VISUAL_FORMATS = {"glb", "obj"}
@@ -24,6 +24,11 @@ CHOICES = {
     "Copper.EDGE_PLATING": ("file", "yes", "no"),
     "Copper.VIA_TENTING": ("file", "tented", "open"),
     "Finish.FINISH_GROUPING": ("metal", "net"),
+}
+WHOLE_NUMBERS = {                 # the settings of parameters/parallel.py that count, and what their 0 means
+    "WORKERS": "one per processor thread",
+    "PROCESS_WORKERS": "as many as WORKERS",
+    "PROCESS_MIN_COORDINATES": "processes for every board of more than one part",
 }
 
 
@@ -78,12 +83,25 @@ def start(mode=None, formats=None, out_root=None, overrides=(), verify=None, log
         value = getattr(getattr(P, module), name)
         if value not in words:
             raise ValueError(f"{key} must be {' or '.join(map(repr, words))}, not {value!r}")
-    if type(R.WORKERS) is not int or R.WORKERS < 0:
-        raise ValueError(f"Run.WORKERS must be a whole number, 0 or more (0: one per processor thread), not {R.WORKERS!r}")
+    for old, new in MOVED.items():                                          # left in a parameter file
+        module, name = old.split(".")
+        if hasattr(getattr(P, module), name):
+            raise ValueError(f"{file_of(module)} sets {name}, which is now {new} in "
+                             f"{file_of(new.split('.')[0])}: set it there")
+    for name, zero in WHOLE_NUMBERS.items():
+        value = getattr(P.Parallel, name)
+        if type(value) is not int or value < 0:
+            raise ValueError(f"Parallel.{name} must be a whole number, 0 or more (0: {zero}), not {value!r}")
+    if type(P.Parallel.GIVE_BACK_MEMORY) is not bool:
+        raise ValueError(f"Parallel.GIVE_BACK_MEMORY must be True or False, not {P.Parallel.GIVE_BACK_MEMORY!r}")
     rounds = P.Geometry.PINCH_CUT_ROUNDS
     if type(rounds) is not int or rounds < 1:
         raise ValueError(f"Geometry.PINCH_CUT_ROUNDS must be a whole number, 1 or more, not {rounds!r}")
     if not any(is_on(key) for key in SWITCHES.values()):
         raise ValueError(f"nothing to build: {', '.join(sorted(set(SWITCHES.values())))} are all False")
-    return Job(mode=mode, formats=formats, out_root=out_root, overrides=tuple(overrides),
-               verify=R.VERIFY if verify is None else verify, log=log, status=Status(R.SHOW_PROGRESS))
+    job = Job(mode=mode, formats=formats, out_root=out_root, overrides=tuple(overrides),
+              verify=R.VERIFY if verify is None else verify, log=log, status=Status(R.SHOW_PROGRESS))
+    for old in sorted({key for key, _ in overrides} & MOVED.keys()):
+        job.note(f"{old} is now {MOVED[old]} ({file_of(MOVED[old].split('.')[0])}): the value given "
+                 f"for {old} is used as {MOVED[old]}")
+    return job
