@@ -38,6 +38,7 @@ python tests/test_boards.py                     # the regression suite over ever
 | `visual mode is a surface, not solids: FILE_FORMAT may only contain glb / obj` | STL and STEP need closed solids; use simulation mode. |
 | `no Edge.Cuts outline and OUTLINE_FALLBACK is 'error'` | Draw a closed outline, or set `Board.OUTLINE_FALLBACK = "copper_hull"`. |
 | `missing Python package(s): ...` | Printed before anything runs, with the `pip install` line to use. |
+| `Python package(s) too old: shapely 2.0.7 (2.1 or newer)` | shapely 2.0 lacks the constrained Delaunay triangulation the faces are cut with; printed before anything runs, with the `pip install --upgrade` line to use. |
 | `parameters/<module>.py has no parameter <NAME>` | A `--set` with a misspelt name. A misspelt module gives a Python `AttributeError`, and a `--set` without a `.` a `ValueError`. |
 | `no boards given and none found in Input/` | Put a board in `Input/` or give a path. |
 

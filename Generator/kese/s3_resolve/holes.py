@@ -16,7 +16,8 @@ def hole_shapes(items, pred, bore=False, take=lambda g: g):
 
 
 def made_once(r, kind, pred, make):
-    """make(), or what it made before for the same kind and the same holes."""
+    """make(), or what it made before for the same kind and the same holes.  Not from threads: two at
+    once could both make it (harmless, but twice the work), as nothing locks the check and the set."""
     holes = r.items.holes
     picked = tuple(i for i, h in enumerate(holes) if pred(h))
     key = (kind, picked, tuple(holes[i].wall for i in picked))

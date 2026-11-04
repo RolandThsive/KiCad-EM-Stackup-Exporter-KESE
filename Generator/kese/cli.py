@@ -31,6 +31,12 @@ def missing_packages():
     return [pkg for pkg in REQUIRED if importlib.util.find_spec(pkg) is None]
 
 
+def old_packages():
+    """Packages installed but too old: shapely before 2.1 has no constrained Delaunay triangulation."""
+    import shapely
+    return [] if hasattr(shapely, "constrained_delaunay_triangles") else [f"shapely {shapely.__version__} (2.1 or newer)"]
+
+
 def main():
     ap = argparse.ArgumentParser(prog="kese", description="KiCad EM Stackup Exporter: .kicad_pcb -> solids for EM simulation, or a visual surface")
     ap.add_argument("boards", nargs="*", help=".kicad_pcb files (default: all in Input/)")
@@ -67,6 +73,11 @@ def main():
     if missing:
         sys.exit(f"missing Python package(s): {', '.join(missing)}\n"
                  f"install them with:  python -m pip install {' '.join(missing)}\n"
+                 "(or the tested versions:  python -m pip install -r requirements.txt)")
+    old = old_packages()
+    if old:
+        sys.exit(f"Python package(s) too old: {', '.join(old)}\n"
+                 "upgrade with:  python -m pip install --upgrade shapely\n"
                  "(or the tested versions:  python -m pip install -r requirements.txt)")
 
     from kese.pipeline import generate  # after the overrides, so the modules see them

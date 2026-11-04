@@ -1,5 +1,6 @@
-"""Wrong settings and damaged board files: a setting that is not one of its values stops the run
-with a message before any work, and a damaged item is left out with a warning, not a Python error.
+"""Wrong settings and damaged board files: a setting that is not one of its values, or a shapely
+too old, stops the run with a message before any work, and a damaged item is left out with a
+warning, not a Python error.
 
     python -m pytest tests/test_bad_input.py        (or:  python tests/test_bad_input.py)"""
 import sys
@@ -63,6 +64,18 @@ def test_pinch_cut_rounds_must_be_one_or_more():
         assert isinstance(refused, str) and "Geometry.PINCH_CUT_ROUNDS" in refused, (n, refused)
 
 
+def test_an_old_shapely_is_named_before_the_run():
+    import shapely
+    from kese.cli import old_packages
+    assert old_packages() == []
+    triangles = shapely.constrained_delaunay_triangles          # what shapely 2.0 lacks
+    del shapely.constrained_delaunay_triangles
+    try:
+        assert old_packages() == [f"shapely {shapely.__version__} (2.1 or newer)"]
+    finally:
+        shapely.constrained_delaunay_triangles = triangles
+
+
 def test_a_tenting_side_with_no_value_keeps_the_default():
     via = parse("(via (tenting (front) (back yes)))")
     assert kv.via_tenting(via, {"F": True, "B": False}) == {"F": True, "B": True}
@@ -86,6 +99,8 @@ if __name__ == "__main__":
     test_a_single_format_may_be_a_string()
     test_every_setting_with_a_few_values_is_checked()
     test_workers_must_be_zero_or_more()
+    test_pinch_cut_rounds_must_be_one_or_more()
+    test_an_old_shapely_is_named_before_the_run()
     test_a_tenting_side_with_no_value_keeps_the_default()
     test_a_via_on_a_layer_the_board_does_not_have_is_left_out()
     print("ok")
