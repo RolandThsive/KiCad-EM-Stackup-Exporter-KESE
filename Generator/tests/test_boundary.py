@@ -1,9 +1,12 @@
-"""Stage 6's boundary of a part (kese/core/boundary.py, pinches.py): the vertices a part has twice
-are found for many parts at once, the same as part by part; the flat faces are found again only
-at the heights next to a slice that changed, the same as all of them again; and a part whose
-slices meet at T-junctions comes out with every vertex shared (no vertex of one face or slice lies
-on the edge of another at its height without being one of its vertices too) and a closed,
-consistently wound mesh.
+"""Stage 6's boundary of a part (kese/core/boundary.py, flat_faces.py, pinches.py, vertices.py): the
+vertices a part has twice are found for many parts at once, the same as part by part; the flat
+faces are found again only at the heights next to a slice that changed, the same as all of them
+again; faces are cut only where two slices differ, group by group, and come out as a cut of the
+whole slices does (no face where the rings are the same, whatever point they start at); slices
+spanned by the same regions are made once; two regions have the same vertices whatever point
+their rings start at; and a part whose slices meet at T-junctions comes out with every vertex
+shared (no vertex of one face or slice lies on the edge of another at its height without being
+one of its vertices too) and a closed, consistently wound mesh.
 
     python -m pytest tests/test_boundary.py        (or:  python tests/test_boundary.py)"""
 import sys
@@ -16,10 +19,12 @@ import numpy as np  # noqa: E402
 import shapely  # noqa: E402
 from shapely.geometry import MultiPolygon, Point, Polygon, box  # noqa: E402
 
-from kese.core.boundary import boundary_of, flat_faces, wall_segments  # noqa: E402
+from kese.core import shapes2d as sh  # noqa: E402
+from kese.core.boundary import boundary_of, heights_of, slices_of, wall_segments  # noqa: E402
 from kese.core.boundary_mesh import mesh_of_boundary  # noqa: E402
+from kese.core.flat_faces import faces_between, flat_faces  # noqa: E402
 from kese.core.pinches import repeated_vertices  # noqa: E402
-from kese.core.vertices import grid_keys, near_edge  # noqa: E402
+from kese.core.vertices import grid_keys, near_edge, noded, ring_points, same_vertices  # noqa: E402
 from kese.model.prisms import Prism  # noqa: E402
 
 
@@ -118,8 +123,52 @@ def test_a_part_meeting_at_t_junctions_shares_its_vertices_and_closes():
     assert abs(b.volume() - b.volume_of_slices()) <= 1e-9 * b.volume_of_slices()
 
 
+def vertex_set(g):
+    return set(map(tuple, np.round(ring_points(g) / sh.grid()).astype(np.int64).tolist()))
+
+
+def test_faces_are_cut_only_where_the_slices_differ_and_come_out_as_a_whole_cut_does():
+    holes = [Point(x, y).buffer(0.3, quad_segs=8) for x in range(1, 10, 2) for y in range(1, 10, 2)]
+    walls = [h.buffer(0.05, quad_segs=8).difference(h) for h in holes]               # a hole finish: one ring per hole
+    same = noded(sh.as_region(walls))                                                 # slices are noded
+    turned = sh.as_region([Polygon(np.roll(np.asarray(w.exterior.coords)[:-1], 7, axis=0)[::-1],
+                                   [np.asarray(w.interiors[0].coords)[::-1]]) for w in shapely.get_parts(same)])  # other start, other way round
+    assert faces_between(same, turned) == (sh.EMPTY, sh.EMPTY)                        # the same rings: no face at all
+    caps = noded(sh.as_region([h.buffer(0.2, quad_segs=8).difference(h) for h in holes[:7]]))   # caps on seven of the holes
+    up, down = faces_between(caps, same)
+    whole_up, whole_down = sh.diff(caps, same), sh.diff(same, caps)
+    for got, want in ((up, whole_up), (down, whole_down)):
+        assert got.is_valid and abs(got.area - want.area) < 1e-12 and vertex_set(got) == vertex_set(want)
+    assert len(shapely.get_parts(down)) == len(shapely.get_parts(whole_down)) == len(walls) - 7   # (the capped walls face nothing)
+    alone = box(50, 50, 51, 51)                                                       # nothing above it: a face as it is
+    up, down = faces_between(sh.as_region([alone, *shapely.get_parts(caps)]), same)
+    assert same_vertices(alone, noded(alone))                                         # (it is noded)
+    assert any(p.equals_exact(alone, 0) for p in shapely.get_parts(up))
+    assert faces_between(sh.EMPTY, same) == (sh.EMPTY, same) and faces_between(same, sh.EMPTY) == (same, sh.EMPTY)
+
+
+def test_slices_spanned_by_the_same_regions_are_made_once():
+    ring = Point(0, 0).buffer(1.0, quad_segs=8).difference(Point(0, 0).buffer(0.9, quad_segs=8))
+    copy = shapely.from_wkb(shapely.to_wkb(ring))                                    # the same shape, another object
+    prisms = [Prism("Hole Finish Gold", "finish", ring, 0.0, 1.0), Prism("Hole Finish Gold", "finish", copy, 1.0, 2.0),
+              Prism("Hole Finish Gold", "finish", box(-2, -2, 2, 2).difference(Point(0, 0).buffer(0.9)), 2.0, 2.1)]
+    slices = slices_of(prisms, heights_of(prisms))
+    assert slices[0] is slices[1] and slices[2] is not slices[0]
+    assert shapely.to_wkb(slices[0]) == shapely.to_wkb(noded(ring))
+
+
+def test_two_regions_have_the_same_vertices_whatever_point_their_rings_start_at():
+    a = Polygon([(0, 0), (4, 0), (4, 3), (0, 3)], [[(1, 1), (2, 1), (2, 2)]])
+    b = Polygon([(4, 3), (0, 3), (0, 0), (4, 0)], [[(2, 2), (1, 1), (2, 1)]])
+    assert same_vertices(a, b) and same_vertices(sh.EMPTY, sh.EMPTY)
+    assert not same_vertices(a, Polygon([(0, 0), (4, 0), (4, 3.0001), (0, 3)], [[(1, 1), (2, 1), (2, 2)]]))
+    assert not same_vertices(a, box(0, 0, 4, 3)) and not same_vertices(a, sh.EMPTY)
+
 if __name__ == "__main__":
     test_the_vertices_parts_have_twice_are_found_for_all_parts_at_once()
     test_flat_faces_found_again_only_next_to_a_changed_slice_are_all_of_them_found_again()
     test_a_part_meeting_at_t_junctions_shares_its_vertices_and_closes()
+    test_faces_are_cut_only_where_the_slices_differ_and_come_out_as_a_whole_cut_does()
+    test_slices_spanned_by_the_same_regions_are_made_once()
+    test_two_regions_have_the_same_vertices_whatever_point_their_rings_start_at()
     print("ok")
