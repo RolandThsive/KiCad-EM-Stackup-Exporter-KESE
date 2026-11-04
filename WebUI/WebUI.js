@@ -86,6 +86,7 @@ function toast(text, ms = 2600) {
 }
 function setProgressText(text) {
   if (!state.ready) $("btn-generate").textContent = text.replace("…", "") + "…";
+  state.checksNote = text;
   $("checks-list").replaceChildren(el("p", { class: "hint" }, text));
 }
 function checkRow(level, stage, msg) {
@@ -118,6 +119,7 @@ function setBusy(on) { state.busy = on; $("progress").classList.toggle("busy", o
 function fatal(text) {
   setBusy(false);
   $("btn-generate").textContent = "Python Did Not Start";
+  state.checksFatal = text;
   $("checks-list").replaceChildren(checkRow("error", "start", text));
 }
 function download(blob, name) {
@@ -913,7 +915,11 @@ function showHover(part) {
 function renderChecks() {
   const r = state.result, list = $("checks-list"), counts = $("counts");
   list.replaceChildren(); counts.replaceChildren();
-  if (!r) return;
+  if (!r) {
+    if (state.checksFatal) list.append(checkRow("error", "start", state.checksFatal));
+    else if (state.checksNote) list.append(el("p", { class: "hint" }, state.checksNote));
+    return;
+  }   // before a run: keep the note
   const items = r.checks || [];
   const n = (l) => items.filter((i) => i.level === l).length;
   const ne = n("error"), nw = n("warning"), ni = n("info");
@@ -1002,7 +1008,11 @@ function wire() {
   const links = CFG.links || {};
   $("btn-help").href = links.help || links.repository || "#";
   $("nav-home").href = links.blogHome || "#";
-  $("nav-back").addEventListener("click", (e) => { e.preventDefault(); if (history.length > 1) history.back(); else location.href = links.blogHome; });
+  $("nav-back").addEventListener("click", (e) => {
+    e.preventDefault();
+    if (history.length > 1) history.back();                    // in the blog's frame this is the blog's own history
+    else window.open(links.blogHome || "/", "_top");            // the whole tab, not just the frame
+  });
   document.querySelectorAll("#ui-switch button").forEach((b) => b.addEventListener("click", () => setUI(b.dataset.ui)));
   $("btn-generate").addEventListener("click", generate);
   $("verify").addEventListener("change", () => setValues({ [CFG.verify]: $("verify").checked }, "verify"));
@@ -1111,7 +1121,8 @@ async function main() {
   refresh();
   renderPreviewTabs();
   examples();
-  $("checks-list").replaceChildren(el("p", { class: "hint" }, `Python is ready (${init.seconds.toFixed(1)} s). Choose a board: it is read here and never uploaded.`));
+  state.checksNote = `Python is ready (${init.seconds.toFixed(1)} s). Choose a board: it is read here and never uploaded.`;
+  $("checks-list").replaceChildren(el("p", { class: "hint" }, state.checksNote));
   // ?board=<example name> loads one of the examples (local testing, links from the blog)
   const b = QUERY.get("board");
   if (b && (state.version.examples || []).includes(b)) {
