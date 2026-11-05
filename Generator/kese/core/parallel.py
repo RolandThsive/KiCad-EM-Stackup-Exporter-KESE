@@ -77,12 +77,12 @@ def worth_processes(jobs, coordinates):
             and not multiprocessing.current_process().daemon)
 
 
-def in_processes(work, jobs, log=None, done="built"):
+def in_processes(work, jobs, log=None, done="built", what="part"):
     """(key, work(*args)) for every (key, args) of jobs, each as it is done, processes_wanted() at a
     time in processes started afresh (as Windows and macOS start them), with this run's settings.
     `work` must be a module's function.  Where processes cannot be started, or one is lost (stopped
     by the system for lack of memory, or out of memory), the jobs not done run here, one after
-    another, with a note (log) saying what is done to them (`done`: "built", "joined", ...).  An
+    another, with a note (log): "the 3 parts left are built here" (`what`, `done`) and why.  An
     error in the work itself is raised here at once: the other workers are stopped, not waited for."""
     left = dict(jobs)
     if not left:
@@ -122,7 +122,7 @@ def in_processes(work, jobs, log=None, done="built"):
                 stop(pool)
     if failed is not None and log:
         n = len(left)
-        log(f"worker processes failed ({type(failed).__name__}: {failed}); the {n} part{'s' * (n != 1)} left "
+        log(f"worker processes failed ({type(failed).__name__}: {failed}); the {n} {what}{'s' * (n != 1)} left "
             f"{'are' if n != 1 else 'is'} {done} in this process, one after another"
             + (" (most often a lack of memory: fewer processes, Parallel.PROCESS_WORKERS, use less)"
                if isinstance(failed, LOST) else ""))

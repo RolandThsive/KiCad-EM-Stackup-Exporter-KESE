@@ -34,7 +34,7 @@ def copper_layers(r, items, outline_k, log):
     order = sorted(jobs, key=lambda k: -size[k])
     nets = sum(len({net for _, net in job[1]}) for job in jobs.values())
     if nets >= PROCESS_MIN_NETS and worth_processes(len(jobs), sum(size.values())):
-        done = dict(in_processes(copper_of_layer, [(k, jobs[k]) for k in order], log, "joined"))
+        done = dict(in_processes(copper_of_layer, [(k, jobs[k]) for k in order], log, "joined", "copper layer"))
     else:
         done = dict(zip(order, in_parallel(lambda k: copper_of_layer(*jobs[k], take=own), order)))
     for k, l in enumerate(items.layers):
