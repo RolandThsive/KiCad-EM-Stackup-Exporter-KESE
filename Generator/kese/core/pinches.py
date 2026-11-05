@@ -1,11 +1,12 @@
 """Pinch points: where two pieces or rings touch at a point, or a vertex lies within a grid step
 of another ring, a disc is cut out of the smaller piece (doubled until clear); where pieces below
-and above a height meet along an edge, a strip is cut (open_pinches_between)."""
+and above a height meet along an edge, a strip is cut (open_pinches_between).  And a region's
+polygons with those that touch pulled apart (polygons), as the overlap check takes them."""
 import numpy as np
 import shapely
 
 from kese.core import shapes2d as sh
-from kese.core.vertices import grid_keys, near_edge, noded, pairs_in, vertex_keys
+from kese.core.vertices import grid_keys, near_edge, noded, pairs_in
 from parameters import P
 
 
@@ -19,9 +20,8 @@ def open_pinches(region, log=None):
     cut_any = False
     for round_ in range(sh.G().PINCH_CUT_ROUNDS):
         cuts = pieces_too_close(parts)
-        for k in check:
-            for p in repeated_vertices(parts[k]):
-                cuts.setdefault(k, []).append(p)
+        for k, pts in repeated_vertices(parts, check).items():
+            cuts.setdefault(k, []).extend(pts)
         if not cuts:
             break
         r = P.Geometry.PINCH_POINT_OPENING_MM * 2 ** round_
@@ -67,17 +67,27 @@ def points_of(g):
     return [tuple(p.coords[0]) for p in shapely.get_parts(g) if p.geom_type == "Point"]
 
 
-def repeated_vertices(polygon):
-    """The vertices a polygon has twice (where its rings touch each other or themselves), as xy."""
-    if polygon.is_empty:                             # a piece the cuts took away entirely
-        return []
-    keys, ring, xy = vertex_keys(polygon)
-    if len(keys) == 0:
-        return []
-    ring_end = np.flatnonzero(np.r_[ring[1:] != ring[:-1], True])    # a ring's closing point repeats its first
-    keys, xy = np.delete(keys, ring_end), np.delete(xy, ring_end, axis=0)
-    _, idx, count = np.unique(keys, return_index=True, return_counts=True)
-    return [tuple(p) for p in xy[idx[count > 1]]]
+def repeated_vertices(parts, check):
+    """{k: the vertices part k has twice (where its rings touch each other or themselves), as xy}
+    for the parts k in `check` that have any, in check's order and each part's in the order of
+    their grid keys.  All the parts at once: there can be thousands, most with none."""
+    check = [k for k in check if not parts[k].is_empty]       # (a piece the cuts took away entirely)
+    if not check:
+        return {}
+    pieces, of = shapely.get_parts(np.array([parts[k] for k in check], dtype=object), return_index=True)
+    rings, of_piece = shapely.get_rings(pieces, return_index=True)
+    xy, ring = shapely.get_coordinates(rings, return_index=True)
+    keep = np.r_[ring[1:] == ring[:-1], False]                 # a ring's closing point repeats its first
+    xy, owner = xy[keep], of[of_piece[ring[keep]]]
+    key = grid_keys(xy)
+    order = np.lexsort((key, owner))                            # stable: the first of equal points first
+    start = np.r_[True, (owner[order][1:] != owner[order][:-1]) | (key[order][1:] != key[order][:-1])]
+    first, count = order[start], np.diff(np.r_[np.flatnonzero(start), len(order)])
+    twice = first[count > 1]
+    out = {}
+    for i, p in zip(owner[twice].tolist(), xy[twice]):
+        out.setdefault(check[i], []).append(tuple(p))
+    return out
 
 
 def open_pinches_between(below, above, log, first):
@@ -128,3 +138,34 @@ def ring_edges(parts):
     key = grid_keys(xy)
     e = np.flatnonzero(ring[1:] == ring[:-1])                          # the edge from point e to e + 1
     return key[e], key[e + 1], of_part[ring[e]], xy[e], xy[e + 1]
+
+
+def polygons(g):
+    """The polygons of a region, as built into 3D, those that touch at a point or along a line pulled
+    apart by PINCH_POINT_OPENING_MM (the last step before extrusion: a grid operation would rejoin them)."""
+    g = sh.polys_only(g)
+    if g.is_empty:
+        return []
+    if g.geom_type != "MultiPolygon":
+        return [g]
+    return list(part_touching(g).geoms)
+
+
+def part_touching(g):
+    """Parts of a multipolygon that touch each other at a point (or along a line) are pulled
+    apart by Geometry.PINCH_POINT_OPENING_MM so every solid is manifold on its own."""
+    parts = list(g.geoms)
+    tree = shapely.STRtree(parts)
+    pairs = tree.query(parts, predicate="touches")
+    touching = set(pairs[0].tolist()) | set(pairs[1].tolist())
+    if not touching:
+        return g
+    eps = sh.G().PINCH_POINT_OPENING_MM / 2
+    out = []
+    for i, p in enumerate(parts):
+        if i in touching:
+            q = shapely.set_precision(p, 0).buffer(-eps, join_style="mitre")
+            out += [x for x in polygons(q) if x.area > sh.G().SLIVER_AREA_MM2]
+        else:
+            out.append(p)
+    return shapely.MultiPolygon(out) if out else sh.EMPTY

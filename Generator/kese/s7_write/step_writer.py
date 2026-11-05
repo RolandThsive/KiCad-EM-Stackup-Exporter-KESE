@@ -1,5 +1,6 @@
 """A STEP file (AP214, as OpenCascade writes it) put together from text: the header, one product
 per part with its solids and colour, and the assembly that holds the parts last."""
+import contextlib
 from datetime import UTC, datetime
 from pathlib import Path
 
@@ -168,6 +169,10 @@ class StepWriter:
         return self.path
 
     def discard(self):
-        """Close and remove the file: nothing in it, or an error on the way."""
-        self.file.close()
-        self.path.unlink(missing_ok=True)
+        """Close and remove the file: nothing in it, or an error on the way.  Closing writes what is
+        left in the buffer, which fails again on a full disk; the file goes all the same, and the
+        error that called for this goes on, not one of the clean-up's."""
+        with contextlib.suppress(OSError):
+            self.file.close()
+        with contextlib.suppress(OSError):
+            self.path.unlink(missing_ok=True)

@@ -9,6 +9,7 @@ import shapely
 import shapely.errors
 
 from kese.core import shapes2d as sh
+from kese.core.flat_faces import flat_faces
 from kese.core.pinches import open_pinches, open_pinches_between
 from kese.core.shape_copies import floating, own
 from kese.core.triangulate import rings_of
@@ -44,11 +45,13 @@ def boundary_of(part, prisms, log=None):
     """The prisms of one part -> its Boundary, closed by construction."""
     levels = heights_of(prisms)
     slices = slices_of_part(prisms, levels, log)
+    flats, again = [], range(len(levels))
     for _ in range(sh.G().VERTEX_SHARING_ROUNDS):
-        flats = flat_faces(slices, levels)
+        flats = flat_faces(slices, levels, flats, again)
         slices, changed = slices_sharing_vertices(slices, flats, levels, log)
         if not changed:
             break
+        again = {k for i in changed for k in (i, i + 1)}      # the heights at a changed slice's ends
     else:
         if log:
             log(f"faces and walls still changing after {sh.G().VERTEX_SHARING_ROUNDS} rounds")
@@ -71,12 +74,20 @@ def slices_of_part(prisms, levels, log=None, pinches_opened=True):
 
 def slices_of(prisms, levels):
     """The material between each pair of neighbouring heights: the union of the prisms that span
-    the slice, noded on the grid."""
-    out = []
+    the slice, noded on the grid.  Slices spanned by the same regions (the same shapes, in the same
+    order: a hole's finish in three prisms, one per stretch of the wall) are made once."""
+    out, made = [], {}
+    shapes = shapely.to_wkb([p.region for p in prisms]).tolist() if prisms else []
     for z0, z1 in pairwise(levels):
-        spanning = [p.region for p in prisms if round(p.z0, HEIGHT_DIGITS) <= z0 and round(p.z1, HEIGHT_DIGITS) >= z1]
-        region = spanning[0] if len(spanning) == 1 else joined_regions(spanning)
-        out.append(noded(region) if spanning else sh.EMPTY)
+        spanning = [i for i, p in enumerate(prisms) if round(p.z0, HEIGHT_DIGITS) <= z0 and round(p.z1, HEIGHT_DIGITS) >= z1]
+        if not spanning:
+            out.append(sh.EMPTY)
+            continue
+        key = tuple(shapes[i] for i in spanning)
+        if key not in made:
+            regions = [prisms[i].region for i in spanning]
+            made[key] = noded(regions[0] if len(regions) == 1 else joined_regions(regions))
+        out.append(made[key])
     return out
 
 
@@ -95,19 +106,6 @@ def joined_regions(regions, exact=True, shared=False):
         return joined
     regions = own(regions) if shared else regions
     return shapely.union_all(regions, grid_size=sh.grid()) if exact else sh.polys_only(shapely.union_all(regions))
-
-
-def flat_faces(slices, levels):
-    """At every height, what looks up (the material below minus the material above) and what
-    looks down: [(z, region, looks up)]."""
-    out = []
-    for k, z in enumerate(levels):
-        below = slices[k - 1] if k else sh.EMPTY
-        above = slices[k] if k < len(slices) else sh.EMPTY
-        for region, up in ((sh.diff(below, above), True), (sh.diff(above, below), False)):
-            if not region.is_empty:
-                out.append((z, region, up))
-    return out
 
 
 def slices_sharing_vertices(slices, flats, levels, log, pinches_opened=True):

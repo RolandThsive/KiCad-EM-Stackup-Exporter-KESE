@@ -73,9 +73,9 @@ The full list is in [Checks, Errors And Warnings](Checks-Errors-And-Warnings.md)
 
 | Board | Layers | Items | Simulation GLB | STEP in mm | Visual GLB |
 |---|---|---|---|---|---|
-| `rf_module` | 4 | 190 tracks, 33 arcs, 307 vias, 7 zone fills | 24 s, 38.0 MB | 30 s, 113.7 MB; with mask and silk 33 s, 169.6 MB | 20 s, 10.5 MB |
-| `hdi_module` | 6 | 199 tracks, 150 vias, 34 zone fills | 10 s, 20.4 MB | 13 s, 70.9 MB; with mask and silk 15 s, 102.4 MB | 12 s, 5.6 MB |
-| `pcie_card` | 4 | 226 tracks, 239 vias, 19 zone fills | 13 s, 30.1 MB | 18 s, 80.2 MB; with mask and silk 22 s, 150.0 MB | 15 s, 9.1 MB |
+| `rf_module` | 4 | 190 tracks, 33 arcs, 307 vias, 7 zone fills | 20 s, 37.9 MB | 27 s, 113.1 MB; with mask and silk 30 s, 169.0 MB | 20 s, 10.5 MB |
+| `hdi_module` | 6 | 199 tracks, 150 vias, 34 zone fills | 10 s, 20.4 MB | 14 s, 70.9 MB; with mask and silk 16 s, 102.4 MB | 12 s, 5.6 MB |
+| `pcie_card` | 4 | 226 tracks, 239 vias, 19 zone fills | 13 s, 30.2 MB | 19 s, 80.9 MB; with mask and silk 23 s, 150.5 MB | 16 s, 9.1 MB |
 | `six_layer` | 6 | 6 tracks, 6 vias, 2 zone fills | 1 s, 0.76 MB | 1 s, 0.94 MB; with mask and silk 1 s, 2.4 MB | 1 s, 0.21 MB |
 
 Default parameters, GLB and STEP runs with the Verifier, on one Linux machine with 4 cores: what

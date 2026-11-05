@@ -26,8 +26,8 @@ or the files in `parameters/` change any single value.
 > the board, copper and finish on by default, the solder mask and silkscreen off. Switch the mask
 > and silkscreen on when the solver or the render must see them:
 > `--set SolderMask.SOLDER_MASK_ENABLED=True --set Silkscreen.SILKSCREEN_ENABLED=True`. A STEP file
-> with them is 1.4 to 1.9 times as big (the PCIe card in `Input/`, in mm: 150 MB and 1,024 solids
-> against 80 MB and 788 solids).
+> with them is 1.4 to 1.9 times as big (the PCIe card in `Input/`, in mm: 151 MB and 1,024 solids
+> against 81 MB and 788 solids).
 
 ## 9.2 The Presets
 

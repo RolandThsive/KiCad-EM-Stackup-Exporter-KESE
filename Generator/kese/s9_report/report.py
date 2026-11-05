@@ -2,6 +2,7 @@
 and parameters.txt (every setting of the run) next to every output."""
 from datetime import datetime
 
+from kese.core.whole_files import whole
 from kese.s4_geometry.heights import dielectric_z
 from parameters import P
 
@@ -17,7 +18,8 @@ def write_parameters(path, overrides):
     text = P.snapshot()
     if overrides:
         text = "# command-line overrides applied: " + ", ".join(f"{k}={v!r}" for k, v in overrides) + "\n\n" + text
-    path.write_text(text, encoding="utf-8")
+    with whole(path):
+        path.write_text(text, encoding="utf-8")
 
 
 def write_report(path, files, job):
@@ -67,4 +69,5 @@ def write_report(path, files, job):
     if files.verify_lines:
         L.append("")
         L.extend(files.verify_lines)
-    path.write_text("\n".join(L) + "\n", encoding="utf-8")
+    with whole(path):
+        path.write_text("\n".join(L) + "\n", encoding="utf-8")

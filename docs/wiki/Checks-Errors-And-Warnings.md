@@ -29,6 +29,9 @@ python tests/test_boards.py                     # the regression suite over ever
 | `<file> is not a KiCad board file (expected (kicad_pcb ...))` | Not a `.kicad_pcb`. Export the board from pcbnew. |
 | `<file>: no (layers ...) block` | A damaged or very old file. |
 | `<file>: the file ends with N parentheses still open: it is cut short (an incomplete download or copy?)` | The file stops in the middle; KiCad refuses it too. Save or download it again. |
+| `<file> is not a KiCad board file: it is not UTF-8 text, as KiCad writes (byte 0x.. at N)` | A binary file, or a board saved again in another encoding (UTF-16, for one); KiCad refuses it too. A byte order mark that an editor put in front of a UTF-8 board is passed over. |
+| `<file>: 'nan' where a number belongs, in (at nan 104 ...): KiCad refuses such a file too (a damaged file?)` | A number that is not one (`nan`, `inf`, a word, or a number too big for a computer's floating point) where the file needs a number; the item it stands in is quoted. KiCad does not open such a file either. |
+| `the dielectric between F.Cu and In1.Cu comes out -0.0100 mm thick (laminate ... from ...): the board is too thin for its copper; set Board.BOARD_THICKNESS_MM (parameters/board.py)` | The board's thickness, less its copper and masks, leaves no room for a dielectric: every part would be turned inside out. Give the board's real thickness in `Board.BOARD_THICKNESS_MM` or a stack-up in KiCad. |
 | `<file>: copper layers ['F.Cu', 'B.Cu'] are not declared` | Both outer copper layers must exist. |
 | `MODE must be 'simulation' or 'visual', not ...` | A typo in `Run.MODE` (or `--set Run.MODE=...`). A typo in `--mode` is caught earlier by the command line: `argument --mode: invalid choice`, exit code 2. |
 | `unknown FILE_FORMAT entries [...]` | Only `glb`, `stl`, `obj`, `step`. One format may be given as a list or as a single word (`--set Run.FILE_FORMAT=step`). |
@@ -49,6 +52,7 @@ python tests/test_boards.py                     # the regression suite over ever
 | `--set <item>: give it a value, as in <item>=value` | A `--set` without `=`. |
 | `--for <name>: parameters/<module>.py has no parameter <NAME> (did you mean <NAME>?)` | A preset in `parameters/presets.py` names a setting that does not exist; its names are checked as a `--set` is, before anything runs, exit code 2. |
 | `no boards given and none found in Input/` | Put a board in `Input/` or give a path. |
+| `OSError: [Errno 28] No space left on device` (the last line of the traceback; or another error writing a file, such as `PermissionError`) | The disk filled while the files were written. The file being written is removed (an OBJ with its MTL), so no half-written file is left to be opened; the files written whole before it stay, and the run folder is removed when nothing in it was written whole. Free some space and run again. |
 
 ### 17.1.2 Warnings
 
@@ -57,6 +61,8 @@ python tests/test_boards.py                     # the regression suite over ever
 | `file has no (version ...): read as format 20201115, as KiCad does` | Best-effort read, by KiCad's own rule for such files. |
 | `file format N is outside the tested range 3-20260206; proceeding best-effort` | Older than the 2013 builds before KiCad 4 or newer than KiCad 10 (`Run.KICAD_VERSION_MIN`, `Run.KICAD_VERSION_MAX`). |
 | `N copper layers: more than the 8 this project has been tested with` | The layers are still modelled. |
+| `stackup layer <layer>: thickness -0.2 mm is less than 0: read as not given` | A damaged or hand-edited stack-up. The layer takes the thickness it takes when the stack-up gives none (the copper `Copper.DEFAULT_OUTER_FOIL_MM` or `DEFAULT_INNER_FOIL_MM`, the mask `SolderMask.MASK_OVER_COPPER_MM`; a dielectric left with no thickness makes the stack-up unusable, and the board's thickness is shared evenly). |
+| `board thickness in the file is -1.6 mm: read as not given` | `(general (thickness ...))` of 0 or less; `Board.DEFAULT_BOARD_THICKNESS_MM` is used where the stack-up does not give the thickness. |
 | `layers named by the user or in an old language, read as KiCad reads them: TOP = F.Cu, ...` | Copper layers with names other than `F.Cu`, `B.Cu` and `In<n>.Cu` (KiCad 3 to 5 let the user rename them; KiCad 3 also wrote Italian, Polish and French names such as `Contorno.scheda`). Each is read as KiCad reads it: copper layers by their place in the list (first = `F.Cu`, last = `B.Cu`, the ones between `In1.Cu`, `In2.Cu`, ...), the old names by KiCad's own table. |
 | `N copper zone(s) have no fill stored in the file and are ignored (fill the zones in KiCad, press B, and save; see parameters/copper.py)` | Fill the zones in KiCad (press **B**) and save. Until then those zones produce no copper. |
 | `N via(s) name a copper layer the board does not have and are left out` | A damaged file: a via ends on a copper layer that the board's `(layers ...)` list does not have. The via is missing from the model and counted under `skipped` in `report.txt`; check it in KiCad. |
@@ -322,7 +328,8 @@ an angle, italic, bold, a wide font, an escaped quote, mirrored text on the back
 a turned footprint) and finds each where KiCad 7.0.11 plots it, to 5 µm, in about three seconds
 (`python tests/test_text_layout.py`); `tests/test_kicad_version.py`, which checks the rules of each
 KiCad version (release of each format number, copper layers by their place, the zero mask margin,
-KiCad 4's text size, the text pen, segment-filled zones, the old overbar, markup) against what
+KiCad 4's text size, the text pen, segment-filled zones, the old overbar, markup, the net class
+a KiCad 4/5 via takes its size and drill from) against what
 KiCad's own parser does, without a board, in under a second; `tests/test_enabled.py`, which turns
 each part switch off in turn (`BOARD_ENABLED`, `COPPER_ENABLED`, `FINISH_ENABLED`,
 `SOLDER_MASK_ENABLED`, `SILKSCREEN_ENABLED`) and finds only that switch's parts gone and every other
@@ -331,7 +338,10 @@ part as it is with all of them on, and a run with all of them off refused, in ab
 `tests/test_bad_input.py`, which gives settings outside their values or of another kind than their
 file gives them (`"false"` for `False`), misspelt `--set` items and a misspelt preset, every setting by its old name (`Run.WORKERS`, `Run.VERIFY`, ...) and a damaged board
 file and finds an error before any work, a note or a warning, not a Python error, and finds every
-preset naming real settings that pass the checks, in about two seconds
+preset naming real settings that pass the checks; board files KiCad refuses (`nan`, `inf`, `1e999` or a word
+where a number belongs, a binary or UTF-16 file) stop with the file named and the reason, a thickness below
+zero is read as not given with a warning, a board too thin for its copper stops with the setting to change,
+and a byte order mark is passed over, in about two seconds
 (`python tests/test_bad_input.py`); `tests/test_verifier.py`, which finds the Verifier's visual check
 meeting the same faces on every ray with the board `upright` and `flat`, in under a second
 (`python tests/test_verifier.py`); `tests/test_parallel.py`, which finds a thread's
@@ -349,8 +359,33 @@ note, an error in a part raised at once with the other workers stopped, a caller
 not kept waiting, the workers first in line for Linux's out-of-memory killer, KESE run inside a
 `multiprocessing.Pool`, a script without `if __name__ == "__main__":` not run again in each
 worker, Ctrl-C ending the workers with one traceback, and the workers gone when the main process is
-killed, in about ten seconds (`python tests/test_parallel.py`); and two STEP tests, also on their
-own (`python tests/test_step_native.py`, `python tests/test_step_arcs.py`):
+killed, in about ten seconds (`python tests/test_parallel.py`); `tests/test_boundary.py`, which
+finds stage 6's shortcuts giving what the long way gives: the vertices that parts have twice found
+for all parts of a slice at once as part by part (on hand-made and 300 random parts), the flat
+faces found again only next to a slice that changed as found again at every height, faces cut only
+where two slices differ, group by group, as a cut of the whole slices (and no face where two rings
+are the same from another start), slices spanned by the same prisms made once, and a part whose
+slices meet at T-junctions with every vertex shared and a closed, consistently wound mesh (which
+it is not without the sharing), a band one grid step wide ending in two needle tips a hair
+apart closed too (which it is not with faces cut on the grid), and a skin face whose cut GEOS
+refuses on the grid cut with both regions put on the grid first, valid and within a grid step of
+the cut in floating point, in under a second (`python tests/test_boundary.py`);
+`tests/test_copper_union.py`, which joins a net's items as stage 3 does and finds two fills that
+meet only to within floating point joined with no crack, a crack narrower than the grid closed,
+items apart kept apart, the area within a grid step of the exact union and nearer it than a union
+on the grid, no burr past the board edge once clipped to the outline, and the union on the grid
+used where GEOS refuses, in under a second (`python tests/test_copper_union.py`);
+`tests/test_pairs.py`, which finds the pieces within a distance of each other that an STRtree's
+search finds, among a zone fill of many points and small pads, pieces exactly the distance apart
+and a hair further, with no piece left prepared, in under a second (`python tests/test_pairs.py`);
+`tests/test_full_disk.py`, which fills the disk half-way through each file a run writes, and at its
+last byte (where a STEP file's assembly is written as it closes), and finds the file being written
+gone, the files written before it as they are with room on the disk, the system's own error (also
+when the clean-up after it is refused), a run folder that nothing was written whole into removed, a
+half `parameters.txt` removed, and runs started together each in a folder of their own, in a few
+seconds (`python tests/test_full_disk.py`);
+and two STEP tests, also on their own (`python tests/test_step_native.py`,
+`python tests/test_step_arcs.py`):
 
 | Test | Path | What it checks |
 |---|---|---|
@@ -366,6 +401,9 @@ own (`python tests/test_step_native.py`, `python tests/test_step_arcs.py`):
 | Visual mode with `stl` or `step` | Error. |
 | A `--set` name that does not exist | Error before the run. |
 | Zones without stored fills | Ignored with a warning. |
+| A number that is not one, or a file that is not UTF-8 text | Error, as in KiCad. |
+| A thickness below zero in the stack-up or `(general (thickness ...))` | Read as not given, with a warning. |
+| A board too thin for its copper and masks | Error, naming `Board.BOARD_THICKNESS_MM`. |
 
 | Previous | Next |
 |:---|---:|

@@ -6,7 +6,7 @@ import shapely
 
 from kese.core import shapes2d as sh
 from kese.core.conformal import grow
-from kese.core.shapes2d import EMPTY, union
+from kese.core.shapes2d import EMPTY, exactly, union
 from kese.core.vertices import noded
 from kese.s4_geometry.finish import drawn_thickness, exposed, mitre, props
 from parameters import P
@@ -49,27 +49,6 @@ def groups(pairs, d):
     for m, net in pairs:
         nets[net] = union([nets.get(net, EMPTY), m])
     return [(net, m.buffer(d, join_style="mitre")) for net, m in nets.items()]
-
-
-def exactly(g):
-    """g, the result of a set operation done in floating point on regions on the grid, back on the
-    grid with as little change as possible: only the new vertices, where two outlines cross, are
-    rounded onto it (a part this leaves invalid is snapped as a whole).  So two regions cut along the
-    same outline keep the same vertices there and still meet with no gap and no overlap, where
-    snapping each on its own could round their shared edge two ways."""
-    parts = shapely.get_parts(sh.polys_only(g))
-    if not len(parts):
-        return EMPTY
-    off = ~sh.on_grid(parts)
-    if not off.any():
-        return sh.polys_only(g)
-    rounded = shapely.set_precision(parts[off], sh.grid(), mode="pointwise")
-    bad = ~shapely.is_valid(rounded) | shapely.is_empty(rounded)
-    rounded[bad] = shapely.set_precision(parts[off][bad], sh.grid())
-    parts[off] = rounded
-    pieces = [p for q in parts for p in shapely.get_parts(sh.polys_only(q)) if not p.is_empty]
-    out = shapely.MultiPolygon(pieces)
-    return out if out.is_valid else sh.joined(pieces)
 
 
 def within(region, area):

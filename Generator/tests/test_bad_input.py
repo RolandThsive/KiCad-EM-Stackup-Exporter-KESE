@@ -3,7 +3,9 @@
 setting left under its old name in a parameter file, or a shapely too old, stops the run with a
 message before any work (a setting's old name in --set still works, with a note; every preset
 names real settings and passes the checks), and a damaged item is left out with a warning, not a
-Python error.
+Python error.  A board file KiCad itself refuses (a number that is not one, not UTF-8 text) stops
+with its name and the reason; a thickness below zero is read as not given, with a warning, and a
+board too thin for its copper stops with the setting to change; a byte order mark is passed over.
 
     python -m pytest tests/test_bad_input.py        (or:  python tests/test_bad_input.py)"""
 import contextlib
@@ -267,6 +269,68 @@ def test_a_via_on_a_layer_the_board_does_not_have_is_left_out():
     assert any("copper layer the board does not have" in line for line in lines), lines
 
 
+def board_variant(name, text_of):
+    """03b_vias_k10 changed by text_of(text) -> text (or bytes), read and collected: (Items, warnings),
+    or the ValueError's text."""
+    lines = []
+    job = started({}, lines.append)
+    with tempfile.TemporaryDirectory() as tmp:
+        board = Path(tmp) / name
+        changed = text_of(VIAS.read_text(encoding="utf-8"))
+        (board.write_bytes if isinstance(changed, bytes) else board.write_text)(changed)
+        try:
+            return collect.run(read.run(str(board), job), job), lines
+        except ValueError as e:
+            return str(e), lines
+
+
+def test_a_number_that_is_not_one_is_refused_with_the_file_named():
+    # a via at nan vanished without a word, a pad of size abc stopped with Python's own words; KiCad
+    # refuses both ("Expecting ...", "Invalid floating point number")
+    for bad in ("nan", "inf", "-Infinity", "1e999", "abc"):
+        said, _ = board_variant("damaged.kicad_pcb", lambda t: t.replace("(at 104 104)", f"(at {bad} 104)", 1))
+        assert said == (f"damaged.kicad_pcb: {bad!r} where a number belongs, in (at {bad} 104 ...): "
+                        "KiCad refuses such a file too (a damaged file?)"), (bad, said)
+    said, _ = board_variant("damaged.kicad_pcb", lambda t: t.replace("(thickness 1.6)", "(thickness nan)", 1))
+    assert said.startswith("damaged.kicad_pcb: 'nan' where a number belongs, in (thickness nan ...)"), said
+    from kese.core.sexp import numbers
+    assert numbers(parse("(at 1 2 90 unlocked)")) == [1.0, 2.0, 90.0]          # a word is still passed over
+
+
+def test_a_file_that_is_not_utf8_text_is_named():
+    for name, data in (("binary.kicad_pcb", bytes(range(256)) * 4),
+                       ("utf16.kicad_pcb", VIAS.read_text(encoding="utf-8").encode("utf-16"))):
+        said, _ = board_variant(name, lambda t: data)
+        assert said.startswith(f"{name} is not a KiCad board file: it is not UTF-8 text, as KiCad writes"), said
+
+
+def test_a_byte_order_mark_is_passed_over():
+    plain, _ = board_variant("plain.kicad_pcb", lambda t: t)
+    marked, _ = board_variant("marked.kicad_pcb", lambda t: "\ufeff" + t)
+    assert not isinstance(marked, str), marked
+    assert marked.found == plain.found and marked.stackup.laminate_thickness == plain.stackup.laminate_thickness
+
+
+def test_a_thickness_below_zero_is_read_as_not_given():
+    # the copper came out -0.2 mm thick, every part turned inside out, with no word but the Verifier's FAIL
+    items, lines = board_variant("negative.kicad_pcb", lambda t: t.replace("(thickness 0.035)", "(thickness -0.2)"))
+    assert not isinstance(items, str), items
+    assert items.stackup.copper_thickness["F.Cu"] == items.stackup.copper_thickness["B.Cu"] == P.Copper.DEFAULT_OUTER_FOIL_MM
+    assert all(d.thickness > 0 for d in items.stackup.dielectrics)
+    assert sum("thickness -0.2 mm is less than 0: read as not given" in line for line in lines) == 2, lines
+    items, lines = board_variant("negative.kicad_pcb", lambda t: t.replace("(thickness 1.6)", "(thickness -1.6)", 1))
+    assert not isinstance(items, str) and "board thickness in the file is -1.6 mm: read as not given" in "\n".join(lines)
+
+
+def test_a_board_too_thin_for_its_copper_is_refused():
+    # no stackup and 0.05 mm in the file: less than the outer copper and the masks
+    import re
+    no_stackup = lambda t: re.sub(r"\(stackup\b.*?\n\t\t\)", "", t, count=1, flags=re.S).replace("(thickness 1.6)", "(thickness 0.05)", 1)
+    said, _ = board_variant("thin.kicad_pcb", no_stackup)
+    assert isinstance(said, str) and said.startswith("the dielectric between F.Cu and In1.Cu comes out -") \
+        and said.endswith("the board is too thin for its copper; set Board.BOARD_THICKNESS_MM (parameters/board.py)"), said
+
+
 if __name__ == "__main__":
     test_a_single_format_may_be_a_string()
     test_every_setting_with_a_few_values_is_checked()
@@ -283,4 +347,9 @@ if __name__ == "__main__":
     test_a_misspelt_set_is_named_before_the_run()
     test_a_tenting_side_with_no_value_keeps_the_default()
     test_a_via_on_a_layer_the_board_does_not_have_is_left_out()
+    test_a_number_that_is_not_one_is_refused_with_the_file_named()
+    test_a_file_that_is_not_utf8_text_is_named()
+    test_a_byte_order_mark_is_passed_over()
+    test_a_thickness_below_zero_is_read_as_not_given()
+    test_a_board_too_thin_for_its_copper_is_refused()
     print("ok")

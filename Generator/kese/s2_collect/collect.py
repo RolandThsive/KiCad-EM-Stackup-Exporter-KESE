@@ -1,7 +1,7 @@
 """Stage 2 - collect: every item of the parsed board as a flat shape on its layer, with its net,
 in KiCad's frame (mm, Y down).  This file walks the tree; there is one file per kind of item."""
 from kese.core import font
-from kese.core.sexp import child
+from kese.core.sexp import NotANumber, child
 from kese.model.items import Items
 from kese.s1_read.parse_kicad_version import is_footprint
 from kese.s2_collect.context import Context
@@ -27,7 +27,10 @@ SETTINGS = {"version", "host", "generator", "generator_version", "general", "pag
 
 def run(raw, job):
     with job.stage("collect", "collect (tracks, pads, zones, vias, drawings, text)"):
-        return collect(raw, job.note)
+        try:
+            return collect(raw, job.note)
+        except NotANumber as exc:
+            raise NotANumber(f"{raw.path.name}: {exc}") from None
 
 
 def collect(raw, log):

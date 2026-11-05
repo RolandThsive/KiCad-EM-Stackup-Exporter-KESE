@@ -1,5 +1,5 @@
 """Stack-up: read from (setup (stackup ...)), or made from the parameters when the board has none."""
-from kese.core.sexp import child, children, num
+from kese.core.sexp import child, children, num, number
 from kese.model.stackup import Dielectric, Stackup
 from parameters import P
 
@@ -16,7 +16,10 @@ def read_stackup(tree, copper_layers, file_thickness, log):
         acc, seen_cu = [], False
         for l in children(st, "layer"):
             name = str(l[1])
-            t = sum(float(c[1]) for c in children(l, "thickness")) or None
+            t = sum(number(c[1], c) for c in children(l, "thickness")) or None
+            if t is not None and t < 0:
+                log(f"warning: stackup layer {name}: thickness {t} mm is less than 0: read as not given")
+                t = None
             typ = (child(l, "type") or [None, ""])[1].lower()
             col = child(l, "color")
             if col:
@@ -83,6 +86,10 @@ def read_stackup(tree, copper_layers, file_thickness, log):
             d = Dielectric(" + ".join(x.name for x in g), g[0].kind, g[0].material, sum(x.thickness for x in g),
                            g[0].epsilon_r, g[0].loss_tangent)
         d.above, d.below = copper_layers[k], copper_layers[k + 1]
+        if d.thickness <= 0:             # a board too thin for its copper: every part would be turned inside out
+            raise ValueError(f"the dielectric between {d.above} and {d.below} comes out {d.thickness:.4f} mm thick "
+                             f"(laminate {laminate:.4f} mm from {source}, {inner_cu:.4f} mm of it inner copper): "
+                             "the board is too thin for its copper; set Board.BOARD_THICKNESS_MM (parameters/board.py)")
         dielectrics.append(d)
     return Stackup(copper_layers=copper_layers, copper_thickness=cu_t, dielectrics=dielectrics,
                    laminate_thickness=laminate, thickness_source=source, mask_thickness=mask_t,

@@ -15,10 +15,10 @@ def write(model, path, log):
                 solids = write_part(w, part, model.boundaries[part], model.transform, log)
                 if solids:
                     w.add_part(part, model.materials[part]["rgb"], solids)
+        written = w.close()                               # the assembly and the end: a full disk can stop it too
     except BaseException:
         w.discard()
         raise
-    written = w.close()
     if written is None:
         log("step: no part has a solid; STEP skipped")
     return written
