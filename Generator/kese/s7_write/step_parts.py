@@ -65,7 +65,7 @@ def written(kept, transform, first, path):
 def write_in_processes(w, model, parts, log):
     """The parts (their names, in the order they are listed) into the StepWriter w, each with its
     product, through the two rounds above."""
-    folder = w.path.with_name(f".{w.path.name}.parts")
+    folder = w.path.with_name(f".{w.path.name[:40]}.parts")     # a long name cut: Windows' 260-character paths
     folder.mkdir(exist_ok=True)
     try:
         at = {part: folder / str(k) for k, part in enumerate(parts)}

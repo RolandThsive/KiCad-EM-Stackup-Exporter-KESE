@@ -450,6 +450,8 @@ def test_the_mask_webs_found_group_by_group_are_the_whole_layer_s():
         assert list(items.found.values()) == [len(whole)]
     assert shapely.to_wkb(done[1]) == shapely.to_wkb(done[3])
     assert shapely.symmetric_difference(done[1], sh.union([openings] + whole)).area == 0
+    stray = shapely.GeometryCollection([*shapely.get_parts(openings), shapely.LineString([(20, 0), (21, 1)])])
+    assert len(mask.web_groups(stray, w)) == 4                                # a stray line is no opening
     found = [p for g in mask.web_groups(openings, w) for p in mask.webs_of(g, grow)]
     assert sorted(shapely.to_wkb(shapely.normalize(np.array(found, dtype=object)))) == \
         sorted(shapely.to_wkb(shapely.normalize(np.array(whole, dtype=object))))

@@ -55,7 +55,7 @@ def web_groups(openings, w):
     """The openings in groups, each opening with every other within w of it: a web narrower than w
     closes only between openings of one group (or in one opening's own notch), since two openings
     grown by less than w/2 meet only when they are less than w apart."""
-    parts = shapely.get_parts(openings)
+    parts = shapely.get_parts(sh.polys_only(openings))
     a, b = pairs_within(parts, w)
     label = connected_components(len(parts), a, b)[1]
     order = np.argsort(label, kind="stable")
