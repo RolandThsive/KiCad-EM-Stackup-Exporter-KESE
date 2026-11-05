@@ -124,9 +124,9 @@ in its values. Only `--out` is not recorded there; the run folder's path shows i
 > full traceback is shown, with several the failing board is reported and the run continues.
 > A run works on every processor thread it may use (`Parallel.WORKERS`, see
 > [Working Principle](Working-Principle.md#64-work-done-in-parallel)); on a machine short of memory,
-> `--set Parallel.PROCESS_WORKERS=1` keeps stage 6 in one process, and `--set Parallel.WORKERS=1`
-> builds everything in one process, in turn. Ctrl-C stops the run and its worker
-> processes with one traceback.
+> `--set Parallel.PROCESS_WORKERS=1` starts no worker process and keeps the threads, and
+> `--set Parallel.WORKERS=1` builds everything in one process, in turn. Ctrl-C stops the run and
+> its worker processes with one traceback.
 
 ## 3.4 Next
 

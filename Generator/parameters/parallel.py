@@ -10,10 +10,10 @@ model: the files come out the same, byte for byte, however the work is shared ou
 # (it runs outside Python's lock): the copper layers and the solder mask's minimum web width, group
 # by group, in stage 3; both sides of the solder mask and the silkscreen, and the finish's copper
 # layers and groups of bores, in stage 4; the faces of the visual-mode skin and the test for its
-# hidden triangles, in stage 6; the Verifier's overlap check in stage 8.  Processes of their own where much of the work is Python's: in stage 3 the copper layers
-# of a board of 1,000 nets or more, in stage 6 the parts built at once in "simulation" mode and the
-# parts sliced for the "visual" skin, in stage 7 the parts of a STEP file (PROCESS_WORKERS and
-# PROCESS_MIN_COORDINATES below).
+# hidden triangles, in stage 6; the Verifier's overlap check in stage 8.  Processes of their own
+# where much of the work is Python's: in stage 3 the copper layers of a board of 1,000 nets or more,
+# in stage 6 the parts built at once in "simulation" mode and the parts sliced for the "visual"
+# skin, in stage 7 the parts of a STEP file (PROCESS_WORKERS and PROCESS_MIN_COORDINATES below).
 # 0 = one per processor thread this process may use (all of the machine's, unless a job scheduler,
 # taskset or a container limits it); 1 = everything in turn, in one process.
 WORKERS = 0
