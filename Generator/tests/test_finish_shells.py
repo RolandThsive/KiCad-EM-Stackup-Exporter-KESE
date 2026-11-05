@@ -12,7 +12,7 @@ from pathlib import Path
 
 import numpy as np
 import shapely
-from shapely.geometry import Point, box
+from shapely.geometry import Point, Polygon, box
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
@@ -50,6 +50,8 @@ def test_bores_whose_shells_could_meet_share_a_group():
         found = finish_shells.bore_groups(rings, 0.01)
         assert sorted(k for g in found for k in g) == list(range(len(rings))) and all(g == sorted(g) for g in found)
         assert len(found) >= 4 and any(0 in g and 24 in g for g in found)
+        with_empty = finish_shells.bore_groups(rings + [Polygon()], 0.01)     # a hole with no drill: no ring
+        assert sorted(k for g in with_empty for k in g) == list(range(len(rings) + 1))
     finally:
         finish_shells.BORES_AT_A_TIME = saved
     assert finish_shells.bore_groups(rings[:3], 0.01) == [[0, 1, 2]]
@@ -67,6 +69,13 @@ def test_an_inner_band_inside_the_outline_has_no_air_and_joins_nothing():
     assert abs(edge.area - 2) < 1e-9
     outer = finish_shells.air_beside([copper], True)(box(0.5, 0.5, 3, 3))           # an outer layer
     assert abs(outer.area - (2.5 ** 2 - 1)) < 1e-9
+
+
+def test_the_air_near_no_solid_is_the_band_and_an_empty_band_has_none():
+    band = box(0, 0, 2, 1)
+    assert shells.air_near([None, sh.EMPTY])(band).equals(band)
+    assert shells.air_near([box(0, 0, 1, 1)])(sh.EMPTY).is_empty
+    assert abs(shells.air_near([box(0, 0, 1, 1)])(band).area - 1) < 1e-9
 
 
 def finish_prisms(r, near):
@@ -115,5 +124,6 @@ if __name__ == "__main__":
     test_a_big_part_is_cut_into_tiles_that_fill_it_and_do_not_overlap()
     test_bores_whose_shells_could_meet_share_a_group()
     test_an_inner_band_inside_the_outline_has_no_air_and_joins_nothing()
+    test_the_air_near_no_solid_is_the_band_and_an_empty_band_has_none()
     test_the_air_cut_bore_by_bore_is_the_whole_union_s_but_for_slivers()
     print("ok")

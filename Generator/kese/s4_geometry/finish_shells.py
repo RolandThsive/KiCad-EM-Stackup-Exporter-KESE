@@ -124,7 +124,9 @@ def bore_groups(rings, d):
         return [list(range(len(rings)))]
     a, b = pairs_within(rings, 2 * d + MARGIN * sh.grid())
     _, label = connected_components(len(rings), a, b)
-    xy = shapely.get_coordinates(shapely.centroid(np.asarray(rings, dtype=object)))
+    centre = shapely.centroid(np.asarray(rings, dtype=object))
+    xy, there = np.zeros((len(rings), 2)), ~shapely.is_empty(centre)        # an empty ring (no drill): at 0, 0
+    xy[there] = shapely.get_coordinates(centre[there])
     cell = np.floor((xy - xy.min(axis=0)) / max(float(np.ptp(xy, axis=0).max()), 1e-9) * 1023.999).astype(np.int64)
     z = sum(((cell[:, 0] >> bit & 1) << 2 * bit) | ((cell[:, 1] >> bit & 1) << 2 * bit + 1) for bit in range(10))
     order = np.argsort(label, kind="stable")

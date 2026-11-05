@@ -83,7 +83,8 @@ def air_near(regions):
         pieces = shapely.get_parts(sh.polys_only(band))
         m = MARGIN * sh.grid()
         boxes = shapely.bounds(pieces) + (-m, -m, m, m)
-        at, near = tree.query(shapely.box(*boxes.T), predicate="intersects") if tree is not None else ([], [])
+        at, near = tree.query(shapely.box(*boxes.T), predicate="intersects") if tree is not None else \
+            np.zeros((2, 0), dtype=np.int64)
         which, k = np.unique(near, return_inverse=True)
         mine = own(parts[which])
         found = [[] for _ in pieces]
