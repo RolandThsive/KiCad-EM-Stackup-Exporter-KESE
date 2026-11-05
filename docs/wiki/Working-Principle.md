@@ -90,7 +90,15 @@ mesh = mesh_of_boundary(boundary)                  # faces cut into triangles, t
 - The walls are the rings of every slice, stood up between the slice's two heights
   (`Boundary.walls()`). Faces and walls must meet on identical edges, so the slices that meet at a
   height are given each other's vertices, and their faces' vertices, until nothing changes
-  (`kese/core/vertices.py`). Then the mesh closes by construction.
+  (`kese/core/vertices.py`). Then the mesh closes by construction. Where needle tips of two
+  slices lie a grid step or two apart, giving one the other's vertex and putting both back on the
+  grid can move them for ever: slices still changing after `Geometry.VERTEX_SHARING_ROUNDS`
+  rounds (20; most settle in one to three, a hole's finish in visual mode has taken twelve) are
+  cut open at each point a further round adds, every slice by a disc of
+  `Geometry.PINCH_POINT_OPENING_MM`, doubling each round, for at most `Geometry.PINCH_CUT_ROUNDS`
+  rounds, and `report.txt` notes it. On one board's solder mask the slices still traded vertices
+  after an hour; a 20 µm piece of it ends some 400 rounds with three T-junctions, and cut open so
+  settles, closed.
 - A slice is made once for all the heights the same prisms span (a hole's finish is three prisms,
   one per stretch of the wall, and the same between every two of its layers). The faces at a height
   are cut only where the slices below and above differ (`kese/core/flat_faces.py`): the pieces both

@@ -28,9 +28,12 @@ PINCH_POINT_OPENING_MM = 1e-4
 PINCH_CUT_ROUNDS = 10                   # tries at opening one, the cut's radius doubling each time
 PINCH_DISC_TURN_DEG = 17.0              # turn of the octagon cut at a pinch, off the axes a board's edges follow
 
-# Rounds that go on until nothing changes, and stop at this many (they end after one to three)
+# Rounds that go on until nothing changes, and stop at this many (most end after one to three; a hole's
+# finish in visual mode has taken twelve)
 VERTEX_SHARING_ROUNDS = 20              # stage 6: a part's faces cut and its slices given each other's vertices;
-                                        # a part still changing then is noted in report.txt and may be open
+                                        # slices still changing are then cut open where a round still moves them,
+                                        # as at a pinch point (PINCH_CUT_ROUNDS more rounds at most); a part still
+                                        # changing after that is noted in report.txt and may be open
 NODING_ROUNDS = 8                       # a region noded on the grid again (GEOS's hot pixels) until unchanged
 
 # The tops and bottoms of prisms are cut into triangles by earcut, as in KiCad's 3D viewer

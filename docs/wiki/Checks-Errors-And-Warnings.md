@@ -80,7 +80,8 @@ python tests/test_boards.py                     # the regression suite over ever
 | `note: Edge.Cuts line ends up to D mm apart joined (Board.OUTLINE_LINE_SNAP_MM = S mm)` | The outline's lines had small gaps between their ends; they were closed as KiCad closes them (KiCad joins ends up to 0.01 mm apart, the default of `Board.OUTLINE_LINE_SNAP_MM`), so the board shape is the one KiCad shows. |
 | `<part>: faces and walls still changing after 20 rounds` (`Geometry.VERTEX_SHARING_ROUNDS`) | Stage 6 could not give the part's faces and walls the same vertices ([Working Principle](Working-Principle.md#62-how-a-part-becomes-a-closed-solid)). The part may be open; the Verifier then says so. |
 | `<part>: pinch points left after 10 rounds of cutting` (or `pinch edges between two heights left ...`) | Two pieces of the part still touch at a point or along an edge after the cut-out disc grew to 512 times `Geometry.PINCH_POINT_OPENING_MM`. The part may be open there. |
-| `<part>: slices still sharing new vertices after 20 rounds` (`Geometry.VERTEX_SHARING_ROUNDS`) | Stage 6 gave the slices that meet at a height each other's vertices 20 times and they still changed. The part may be open; the Verifier then says so. |
+| `<part>: slices still sharing new vertices after 20 rounds` (`Geometry.VERTEX_SHARING_ROUNDS`) | Stage 6 gave the slices that meet at a height each other's vertices 20 times, then cut them open where they still changed for `Geometry.PINCH_CUT_ROUNDS` more rounds (see the next line), and they still changed. The part may be open; the Verifier then says so. |
+| `<part>: slices still sharing new vertices after 20 rounds: cut open at N points, by discs of up to D mm radius` (`Geometry.VERTEX_SHARING_ROUNDS`, `Geometry.PINCH_CUT_ROUNDS`) | Needle tips of two slices a grid step or two apart kept trading vertices; from the 21st round on, each point a round still added was cut out of every slice by a small disc (as at a pinch point), twice as wide each round, until the slices settled. The part is closed, with a hole at most 2D mm across at each point ([Working Principle](Working-Principle.md#62-how-a-part-becomes-a-closed-solid)). |
 | `solder mask: N slivers on the copper narrower than 0.002 mm left out (F.Mask)` (`SolderMask.MASK_OVER_COPPER_HAIRLINE_MM`) | Where a mask opening's outline follows the copper's with other points, the mask on the copper kept slivers between the two; they are left out ([Solder Masks](Solder-Masks.md#152-conformal-mask)). |
 | `plated holes cross the board edge but the stackup has no (castellated_pads yes); set Copper.CASTELLATION = 'auto' to plate them` | With `Copper.CASTELLATION = "file"`, plated holes cut by the edge are left bare because the stack-up does not say they are castellated. |
 | `edge plating: copper of net '<net>' inside the edge band moved to net '<edge net>' on N layer(s)` | Copper of another net reached into the plated edge band; it now belongs to the edge's net (see 17.5). |
@@ -378,9 +379,11 @@ where two slices differ, group by group, as a cut of the whole slices (and no fa
 are the same from another start), slices spanned by the same prisms made once, and a part whose
 slices meet at T-junctions with every vertex shared and a closed, consistently wound mesh (which
 it is not without the sharing), a band one grid step wide ending in two needle tips a hair
-apart closed too (which it is not with faces cut on the grid), and a skin face whose cut GEOS
+apart closed too (which it is not with faces cut on the grid), a piece of a board's solder mask
+whose needle tips trade vertices for ever cut open there and closed, with one note (and still
+changing after 20 rounds, with T-junctions, when never cut), and a skin face whose cut GEOS
 refuses on the grid cut with both regions put on the grid first, valid and within a grid step of
-the cut in floating point, in under a second (`python tests/test_boundary.py`);
+the cut in floating point, in about two seconds (`python tests/test_boundary.py`);
 `tests/test_copper_union.py`, which joins a net's items as stage 3 does and finds two fills that
 meet only to within floating point joined with no crack, a crack narrower than the grid closed,
 items apart kept apart, the area within a grid step of the exact union and nearer it than a union

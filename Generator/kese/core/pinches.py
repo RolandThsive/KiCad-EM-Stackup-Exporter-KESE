@@ -38,6 +38,24 @@ def open_pinches(region, log=None):
     return sh.as_region([q for p in parts for q in shapely.get_parts(p) if q.area > sh.G().SLIVER_AREA_MM2])
 
 
+def cut_open_at(slices, pts, n):
+    """Every slice that comes within reach of the points with a disc cut out at each: of radius
+    PINCH_POINT_OPENING_MM, doubled n times (at most PINCH_CUT_ROUNDS - 1).  The slices are changed in
+    place.  -> (the indices of the slices cut, the radius)."""
+    r = P.Geometry.PINCH_POINT_OPENING_MM * 2 ** min(n, sh.G().PINCH_CUT_ROUNDS - 1)
+    discs = shapely.union_all([cut_disc(p, r) for p in pts])
+    cut = set()
+    for i, s in enumerate(slices):
+        parts = list(shapely.get_parts(sh.polys_only(s)))
+        hit = np.flatnonzero(shapely.intersects(parts, discs)) if parts else []
+        for k in hit:
+            parts[k] = noded(parts[k].difference(discs, grid_size=sh.grid()))
+        if len(hit):
+            slices[i] = sh.as_region([q for p in parts for q in shapely.get_parts(p) if q.area > sh.G().SLIVER_AREA_MM2])
+            cut.add(i)
+    return cut, r
+
+
 def cut_disc(p, r):
     """The disc cut out around a pinch point: an octagon turned by Geometry.PINCH_DISC_TURN_DEG, so no
     corner lies on KiCad's horizontal, vertical or 45-degree lines through the point."""
