@@ -104,10 +104,12 @@ def visible_flats(part_slices, levels, pieces):
 
 def cut_away(region, material):
     """The region less the material of a slice: a few pieces joined, a big piece on its own, more as
-    one overlay; a region wholly against material (most faces of a board) is gone at once."""
+    one overlay; a region wholly against material (most faces of a board) is gone at once.  The
+    index finds the pieces that meet the region with the region prepared once (its edges indexed):
+    tested against each piece on its own, the region's rings are walked again for every piece, which
+    on NE_Delta's skin took 251 s of thread time where the index takes 43 s."""
     polys, _, tree, joined, _ = material
-    near = tree.query(region)                                  # by box; the exact test below costs a tenth of the
-    near = near[shapely.intersects(polys[near], region)]       # index's own, which would try every ring of a big piece
+    near = tree.query(region, predicate="intersects")
     if not len(near):
         return region
     cutters = polys[near]

@@ -1,7 +1,8 @@
 """The worker processes and threads of kese/core/parallel.py: a thread's own copies of shapes
 (kese/core/shape_copies.py) are the same shapes, made only where GEOS needs them (and on no grid
 where the grid is not used: a join of shared regions is the same join), threads share one prepared
-copy of a slice's material and one set of joined holes, work in batches of any size with the same
+copy of a slice's material and one set of joined holes, cut faces only by the pieces of material
+that meet them, work in batches of any size with the same
 result (the STEP writer's slices too, to the byte), and hand back the memory they freed (unless
 Parallel.GIVE_BACK_MEMORY is off), Parallel.PROCESS_WORKERS caps the worker processes and boards under
 Parallel.PROCESS_MIN_COORDINATES stay in one process, shapes keep their grid (and type and SRID) on the way to and from the workers, the run's settings reach
@@ -35,7 +36,7 @@ from kese.core.boundary import Boundary  # noqa: E402
 from kese.core.parallel import in_parallel, in_processes, processes_wanted, workers_wanted, worth_processes  # noqa: E402
 from kese.core.shape_copies import _owned, own  # noqa: E402
 from kese.s3_resolve.holes import made_once  # noqa: E402
-from kese.s6_assemble.skin_faces import lies_against_material  # noqa: E402
+from kese.s6_assemble.skin_faces import cut_away, lies_against_material  # noqa: E402
 from kese.s6_assemble.skin_mesh import looks_at_material  # noqa: E402
 from kese.s7_write.step import write_part  # noqa: E402
 from kese.s7_write.step_writer import StepWriter  # noqa: E402
@@ -235,6 +236,25 @@ def test_threads_share_one_prepared_copy_of_a_slice():
     assert got == [True] * 8 + [False]
     assert set(slice_[4]) == {"turn", "copy"} and shapely.is_prepared(slice_[4]["copy"])
     assert not shapely.is_prepared(material)
+
+
+def test_threads_cut_faces_by_the_pieces_that_meet_them_alone():
+    # a ring round the face meets its box but not the face, a square over its corner meets both: in
+    # every thread the face loses that corner alone, and no shape is left prepared
+    grid = 1e-4
+    ring = shapely.set_precision(shapely.box(-5, -5, 15, 15).difference(shapely.box(-1, -1, 11, 11)), grid)
+    polys = np.array([ring, shapely.set_precision(shapely.box(8, 8, 12, 12), grid)], dtype=object)
+    material = (polys, np.array(["a", "b"], dtype=object), shapely.STRtree(polys), shapely.union_all(polys, grid_size=grid),
+                {"turn": threading.Lock()})
+    faces = [shapely.set_precision(shapely.box(0, 0, 10, 10), grid) for _ in range(16)]
+    saved = with_workers(8)
+    try:
+        got = in_parallel(lambda face: cut_away(face, material), faces)
+    finally:
+        put_back(saved)
+    want = shapely.box(0, 0, 10, 10).difference(shapely.box(8, 8, 10, 10))
+    assert all(g.equals(want) for g in got)
+    assert not shapely.is_prepared(faces).any() and not shapely.is_prepared(polys).any()
 
 
 def test_the_probe_test_lets_go_of_its_prepared_slices():
@@ -571,6 +591,7 @@ if __name__ == "__main__":
     t.test_a_join_of_shared_regions_is_the_same_join()
     t.test_threads_on_their_own_copies_of_one_shape()
     t.test_threads_share_one_prepared_copy_of_a_slice()
+    t.test_threads_cut_faces_by_the_pieces_that_meet_them_alone()
     t.test_the_probe_test_lets_go_of_its_prepared_slices()
     t.test_batches_of_any_size_give_the_same_result()
     t.test_joined_holes_are_made_once_when_threads_ask_at_once()

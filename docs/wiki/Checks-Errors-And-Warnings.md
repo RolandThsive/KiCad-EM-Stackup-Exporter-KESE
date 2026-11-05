@@ -347,8 +347,8 @@ meeting the same faces on every ray with the board `upright` and `flat`, in unde
 (`python tests/test_verifier.py`); `tests/test_parallel.py`, which finds a thread's
 own copies of shapes to be the same shapes, each part on its grid, made only where GEOS needs them,
 and threads working on their own copies of one shape not crashing; finds threads taking turns with
-one prepared copy of a slice's material, the test for hidden triangles letting go of its prepared
-slices, a set of holes joined once when threads ask for it at once, and the memory threads freed
+one prepared copy of a slice's material, threads cutting faces only by the pieces of material that
+meet them, the test for hidden triangles letting go of its prepared slices, a set of holes joined once when threads ask for it at once, and the memory threads freed
 handed back (and kept with `Parallel.GIVE_BACK_MEMORY` off), and batches of any size giving the
 same result (a STEP part written in slices of any size the same to the byte); finds `Parallel.PROCESS_WORKERS`
 capping the worker processes and boards under `Parallel.PROCESS_MIN_COORDINATES` kept in one
