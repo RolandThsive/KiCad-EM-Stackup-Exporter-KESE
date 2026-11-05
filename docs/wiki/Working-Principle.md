@@ -90,8 +90,12 @@ mesh = mesh_of_boundary(boundary)                  # faces cut into triangles, t
   one per stretch of the wall, and the same between every two of its layers). The faces at a height
   are cut only where the slices below and above differ (`kese/core/flat_faces.py`): the pieces both
   have, ring for ring, face nothing, and the rest is cut group by group, the pieces within a grid
-  step of each other, the most a cut on the grid reaches. After the first round, the faces are cut
-  again only at the heights next to a slice that changed.
+  step of each other, the most a cut on the grid reaches. Each cut is taken in floating point and
+  only its new vertices, where two outlines cross, are rounded onto the grid
+  (`shapes2d.exact_diff`): where two slices differ by less than a grid step, as where a band one
+  step wide ends in two needle tips a hair apart, a cut on the grid would drop that sliver from the
+  faces while the walls of both slices keep their tips, and leave the part open. After the first
+  round, the faces are cut again only at the heights next to a slice that changed.
 - The faces are cut by earcut, as in KiCad's 3D viewer; a polygon of more than
   `Geometry.TRIANGULATE_CELL_POINTS` points strip by strip, as KiCad cuts big polygons into cells.
   A cut that does not close exactly on the polygon's edges is done again by GEOS's constrained

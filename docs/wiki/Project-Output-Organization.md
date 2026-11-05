@@ -63,8 +63,10 @@ Every run writes to:
   `--format glb stl obj` gives `simulation_GLB_STL_OBJ`, `--format step stl` gives `simulation_STEP_STL`.
 
 **No run overwrites another.** When the folder already exists, the new one gets a suffix:
-`simulation_GLB__1`, `simulation_GLB__2`, ... The terminal line at the end of every board names
-the folder that was written.
+`simulation_GLB__1`, `simulation_GLB__2`, ... Runs started together (a batch of boards in
+parallel, into the same output root) each get a folder of their own: a name is taken by making the
+folder, so the second run moves on to the next name. The terminal line at the end of every board
+names the folder that was written.
 
 ### 19.2.1 Files In A Run Folder
 
@@ -80,7 +82,9 @@ the folder that was written.
 
 A file is written whole or not at all: when writing fails on the way (a full disk, or a part that
 cannot be written), the file being written is removed, an OBJ with its MTL, and the run folder too
-when nothing in it was written whole (and the board's folder, when it holds no other run)
+when nothing in it was written whole (and the board's folder, when it holds no other run). The
+error that comes out is the one that stopped the write, even when a file or folder cannot be
+removed after it (that one is left)
 ([Checks, Errors And Warnings](Checks-Errors-And-Warnings.md#1711-errors)).
 
 ### 19.2.2 `report.txt`
