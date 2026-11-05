@@ -11,6 +11,7 @@ import shapely
 
 from kese.core import shapes2d as sh
 from kese.core.boundary import heights_of, joined_regions, slices_of_part, wall_segments
+from kese.core.graph import shared_tree
 from kese.core.vertices import (
     grid_keys,
     pairs_in,
@@ -79,7 +80,7 @@ def material_of_every_slice(slices, pool):
                 polys.append(p)
                 parts.append(part)
         polys = np.array(polys, dtype=object)
-        gathered.append((polys, np.array(parts, dtype=object), shapely.STRtree(polys)))
+        gathered.append((polys, np.array(parts, dtype=object), shared_tree(polys)))
     joined = pool.map(lambda material: joined_regions(list(material[0]), exact=False, shared=True), gathered)
     return [(*material, region, {"turn": Lock()}) for material, region in zip(gathered, joined)]
 

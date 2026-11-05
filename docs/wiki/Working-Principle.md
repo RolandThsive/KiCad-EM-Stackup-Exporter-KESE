@@ -192,6 +192,10 @@ use; `1`: everything in turn, in one process), and at most `Parallel.PROCESS_WOR
 - A prepared shape, whose search indexes GEOS builds on first use, serves one thread at a time:
   the threads take turns with one prepared copy of each slice's material, so memory does not grow
   with the number of threads, and the test for hidden triangles frees its indexes when it is done.
+  An R-tree that threads share (of each slice's material, of the solid beside the finish's bores)
+  is built before they share it (`kese/core/graph.py`, `shared_tree`): GEOS builds one on its first
+  query, under a lock, but a thread that finds it built reads it with none, and on a processor that
+  may reorder writes (ARM) could read it half written.
 - After each step done in threads, and in each worker after each part, the memory freed is handed
   back to the system (`Parallel.GIVE_BACK_MEMORY`). On Linux, glibc keeps a pool of memory for each thread and holds on to what
   is freed in it, where the steps that follow cannot use it. With these, NE_Delta's visual model

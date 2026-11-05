@@ -7,6 +7,7 @@ import shapely
 
 from kese.core import shapes2d as sh
 from kese.core.conformal import grow
+from kese.core.graph import shared_tree
 from kese.core.shape_copies import own
 from kese.core.shapes2d import EMPTY, exactly, union
 from kese.core.vertices import noded
@@ -77,7 +78,7 @@ def air_near(regions):
     parts = [t for g in regions if g is not None for p in shapely.get_parts(sh.polys_only(g)) if not p.is_empty
              for t in tiles(p)]
     parts = np.array(parts, dtype=object)
-    tree = shapely.STRtree(parts) if len(parts) else None
+    tree = shared_tree(parts) if len(parts) else None
 
     def air(band):
         pieces = shapely.get_parts(sh.polys_only(band))

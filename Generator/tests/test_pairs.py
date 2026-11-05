@@ -2,7 +2,8 @@
 shapes2d.meeting and the copper's hairline gaps group by: the very pairs an STRtree's dwithin query of
 the shapes against themselves finds, with a zone fill of many points among small pads, pieces exactly
 the distance apart and pieces a hair further; no shape is left prepared, and a shape prepared before
-stays prepared.
+stays prepared.  And an index built before threads share it (shared_tree) finds what an STRtree
+finds, from eight threads at once.
 
     python -m pytest tests/test_pairs.py     (or:  python tests/test_pairs.py)"""
 import sys
@@ -16,7 +17,9 @@ import shapely  # noqa: E402
 from shapely.geometry import Point, box  # noqa: E402
 
 from kese.core import shapes2d as sh  # noqa: E402
-from kese.core.graph import pairs_within  # noqa: E402
+from kese.core.graph import pairs_within, shared_tree  # noqa: E402
+from kese.core.parallel import in_parallel  # noqa: E402
+from parameters import P  # noqa: E402
 
 
 def by_query(parts, d):
@@ -55,7 +58,23 @@ def test_no_shape_is_left_prepared_and_one_prepared_before_stays_so():
     assert not shapely.is_prepared(parts).any()
 
 
+def test_a_shared_tree_finds_what_an_strtree_finds_from_many_threads():
+    parts = shapes()
+    probes = [shapely.box(x, y, x + 1.5, y + 1.5) for x in range(0, 20, 2) for y in range(0, 20, 2)]
+    want = [shapely.STRtree(parts).query(p, predicate="intersects").tolist() for p in probes]
+    workers = P.Parallel.WORKERS
+    P.override("Parallel.WORKERS", 8)
+    try:
+        for _ in range(5):          # a fresh tree each time, queried first from the threads
+            tree = shared_tree(parts)
+            assert in_parallel(lambda p: tree.query(p, predicate="intersects").tolist(), probes) == want
+    finally:
+        P.override("Parallel.WORKERS", workers)
+    assert len(shared_tree([]).query(probes[0])) == 0
+
+
 if __name__ == "__main__":
     test_the_pairs_are_those_the_query_finds()
     test_no_shape_is_left_prepared_and_one_prepared_before_stays_so()
+    test_a_shared_tree_finds_what_an_strtree_finds_from_many_threads()
     print("ok")
