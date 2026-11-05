@@ -2,7 +2,7 @@
 from shapely.geometry import LineString, Polygon, box
 
 from kese.core import shapes2d as sh
-from kese.core.sexp import child, num
+from kese.core.sexp import child, num, number
 from kese.core.shapes2d import EMPTY, disk, thicken, union
 from kese.s1_read.parse_kicad_version import roundrect_ratio
 from kese.s2_collect.drawings import GRAPHICS, graphic, painted
@@ -21,7 +21,7 @@ def pad_shape(items, pad, w, h):
         return chamfered(pad, rounded, w, h)
     if shape == "trapezoid":
         rd = child(pad, "rect_delta")
-        dx, dy = (float(rd[1]) / 2, float(rd[2]) / 2) if rd else (0.0, 0.0)
+        dx, dy = (number(rd[1], rd) / 2, number(rd[2], rd) / 2) if rd else (0.0, 0.0)
         return Polygon([(-w / 2 - dy, h / 2 + dx), (w / 2 + dy, h / 2 - dx),
                         (w / 2 - dy, -h / 2 + dx), (-w / 2 + dy, -h / 2 - dx)])
     if shape == "custom":

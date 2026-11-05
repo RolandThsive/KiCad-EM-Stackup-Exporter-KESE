@@ -5,7 +5,7 @@ import math
 import re
 from dataclasses import dataclass
 
-from kese.core.sexp import atoms, child, children, layer_of, num, pt, yes
+from kese.core.sexp import atoms, child, children, layer_of, num, number, pt, yes
 
 # (KiCad release, first format number it writes).  A development build (x.99) writes the numbers
 # between two releases and counts as the next release.
@@ -382,7 +382,7 @@ LEGACY_TEXT_SIZE_MM = 1.524     # KiCad 4 leaves out a text size of 60 mils (par
 def text_size(font_node):
     """(height, width) of a text's font; KiCad 4 wrote none for the 60 mil default."""
     size = child(font_node, "size")
-    return (float(size[1]), float(size[2])) if size else (LEGACY_TEXT_SIZE_MM, LEGACY_TEXT_SIZE_MM)
+    return (number(size[1], size), number(size[2], size)) if size else (LEGACY_TEXT_SIZE_MM, LEGACY_TEXT_SIZE_MM)
 
 
 def text_pen(font_node, d):
@@ -434,14 +434,14 @@ def render_cache_rings(node, text, angle):
     if rc is None or len(rc) < 3 or isinstance(rc[1], list) or str(rc[1]) != text:
         return None
     try:
-        turned = (float(rc[2]) - angle + 180.0) % 360.0 - 180.0
+        turned = (number(rc[2], rc) - angle + 180.0) % 360.0 - 180.0
     except (TypeError, ValueError):
         return None
     if abs(turned) > 1e-6:
         return None
     out = []
     for poly in children(rc, "polygon"):
-        rings = [[(float(p[1]), float(p[2])) for p in pts[1:] if isinstance(p, list) and p[0] == "xy"]
+        rings = [[pt(p) for p in pts[1:] if isinstance(p, list) and p[0] == "xy"]
                  for pts in children(poly, "pts")]
         out.append([r for r in rings if len(r) >= 3])
     return out
