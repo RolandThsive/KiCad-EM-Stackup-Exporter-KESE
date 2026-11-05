@@ -5,6 +5,7 @@ from collections import defaultdict
 import shapely
 
 from kese.core import shapes2d as sh
+from kese.core.graph import pairs_within
 from kese.core.parallel import in_parallel
 from kese.core.shape_copies import own
 from kese.core.shapes2d import side_by_side, union
@@ -58,8 +59,8 @@ def close_hairline_gaps(cu):
     if len(parts) < 2:
         return cu
     g = sh.grid()
-    i, j = shapely.STRtree(parts).query(parts, predicate="dwithin", distance=2 * g)
-    near = sorted(set(i[i < j].tolist()) | set(j[i < j].tolist()))
+    i, j = pairs_within(parts, 2 * g)
+    near = sorted(set(i.tolist()) | set(j.tolist()))
     if not near:
         return cu
     joined = union([parts[k].buffer(g, join_style="mitre") for k in near]).buffer(-g, join_style="mitre")

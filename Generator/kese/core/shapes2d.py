@@ -7,7 +7,7 @@ import shapely
 from shapely.geometry import GeometryCollection, LineString, Point, box
 
 from kese.core import math2d as geo
-from kese.core.graph import connected_components
+from kese.core.graph import connected_components, pairs_within
 from kese.core.shape_copies import own
 from parameters import P
 
@@ -120,7 +120,7 @@ def meeting(parts):
     """The parts in groups (lists of indices): parts within a grid step of each other share a group."""
     if not len(parts):
         return []
-    a, b = shapely.STRtree(parts).query(parts, predicate="dwithin", distance=grid())
+    a, b = pairs_within(parts, grid())
     label = connected_components(len(parts), a, b)[1]
     order = np.argsort(label, kind="stable")
     return [g.tolist() for g in np.split(order, np.flatnonzero(np.diff(label[order])) + 1)]
