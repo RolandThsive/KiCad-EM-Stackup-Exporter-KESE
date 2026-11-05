@@ -7,10 +7,10 @@ model: the files come out the same, byte for byte, however the work is shared ou
 """
 
 # How many threads or processes work at once.  Threads where the 2D geometry library does the work
-# (it runs outside Python's lock): the copper layers in stage 3; both sides of the solder mask and
-# the silkscreen, and the finish's copper layers and hole spans, in stage 4; the faces of the
-# visual-mode skin and the test for its hidden triangles, in stage 6; the Verifier's overlap check in
-# stage 8.  Processes of their own where much of the work is Python's: in stage 3 the copper layers
+# (it runs outside Python's lock): the copper layers and the solder mask's minimum web width, group
+# by group, in stage 3; both sides of the solder mask and the silkscreen, and the finish's copper
+# layers and groups of bores, in stage 4; the faces of the visual-mode skin and the test for its
+# hidden triangles, in stage 6; the Verifier's overlap check in stage 8.  Processes of their own where much of the work is Python's: in stage 3 the copper layers
 # of a board of 1,000 nets or more, in stage 6 the parts built at once in "simulation" mode and the
 # parts sliced for the "visual" skin, in stage 7 the parts of a STEP file (PROCESS_WORKERS and
 # PROCESS_MIN_COORDINATES below).

@@ -356,7 +356,8 @@ meet them, the test for hidden triangles letting go of its prepared slices, a se
 handed back (and kept with `Parallel.GIVE_BACK_MEMORY` off), and batches of any size giving the
 same result (a STEP part written in slices of any size the same to the byte, a STEP file written
 part by part in worker processes the same as one written in one process, with no file left behind,
-and the copper layers joined in worker processes the same to the byte as in threads); finds `Parallel.PROCESS_WORKERS`
+and the copper layers joined in worker processes the same to the byte as in threads, and the
+solder mask's webs found group by group in threads the same as the whole layer's); finds `Parallel.PROCESS_WORKERS`
 capping the worker processes and boards under `Parallel.PROCESS_MIN_COORDINATES` kept in one
 process; sends shapes through stage 6's worker processes and finds them back on
 their grid (each part's too), of their type and with their SRID; and finds the run's settings in the

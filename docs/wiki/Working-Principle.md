@@ -157,7 +157,8 @@ use; `1`: everything in turn, in one process), and at most `Parallel.PROCESS_WOR
 | Stage | What runs at once | In |
 |---|---|---|
 | 3 resolve | the copper layers, the biggest first | processes on a board of 1,000 nets or more, else threads |
-| 4 geometry | the top and bottom solder mask, then the top and bottom silkscreen; the finish's hole spans and copper layers | threads |
+| 3 resolve | the solder mask's minimum web width, group by group of openings | threads |
+| 4 geometry | the top and bottom solder mask, then the top and bottom silkscreen; the finish's bores, in groups near each other, and copper layers | threads |
 | 6 assemble, simulation mode | the parts' solids, the biggest part first, and with the Verifier on their checks | processes |
 | 6 assemble, visual mode | each part sliced | processes |
 | 6 assemble, visual mode | the faces, the walls and the test for hidden triangles | threads |

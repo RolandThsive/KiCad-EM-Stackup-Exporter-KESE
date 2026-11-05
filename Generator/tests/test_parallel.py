@@ -1,17 +1,18 @@
 """The worker processes and threads of kese/core/parallel.py: a thread's own copies of shapes
 (kese/core/shape_copies.py) are the same shapes, made only where GEOS needs them (and on no grid
-where the grid is not used: a join of shared regions is the same join), threads share one prepared
+where the grid is not used: a join of shared regions is the same join); threads share one prepared
 copy of a slice's material and one set of joined holes, cut faces only by the pieces of material
-that meet them, work in batches of any size with the same
-result (the STEP writer's slices too, to the byte, and a STEP file written part by part in worker
-processes), and hand back the memory they freed (unless
-Parallel.GIVE_BACK_MEMORY is off), Parallel.PROCESS_WORKERS caps the worker processes and boards under
-Parallel.PROCESS_MIN_COORDINATES stay in one process, shapes keep their grid (and type and SRID) on the way to and from the workers, the run's settings reach
-the workers, a lost worker or one out of memory leaves its jobs to the main process, an error in the
-work is raised at once and the other workers are stopped, a caller that stops early does not wait,
-the OOM killer takes a worker first, KESE runs inside a multiprocessing.Pool, a script without a
-main guard is not run again in the workers, and the workers end with Ctrl-C (one traceback) and
-with the main process.
+that meet them, and work in batches of any size with the same result (the STEP writer's slices
+too, to the byte; a STEP file written part by part in worker processes; the copper layers joined in
+worker processes; the solder mask's webs found group by group); they hand back the memory they
+freed (unless Parallel.GIVE_BACK_MEMORY is off).  Parallel.PROCESS_WORKERS caps the worker
+processes and boards under Parallel.PROCESS_MIN_COORDINATES stay in one process; shapes keep their
+grid (and type and SRID) on the way to and from the workers; the run's settings reach the workers;
+a lost worker or one out of memory leaves its jobs to the main process; an error in the work is
+raised at once and the other workers are stopped; a caller that stops early does not wait; the OOM
+killer takes a worker first; KESE runs inside a multiprocessing.Pool; a script without a main guard
+is not run again in the workers; and the workers end with Ctrl-C (one traceback) and with the main
+process.
 
     python -m pytest tests/test_parallel.py          (or:  python tests/test_parallel.py)"""
 import os
@@ -388,6 +389,40 @@ def test_the_copper_layers_joined_in_processes_are_the_same_to_the_byte():
     first = keys[1, 10 ** 12]
     assert len(first[0]) == 6 and all(k == first for k in keys.values())
 
+
+def test_the_mask_webs_found_group_by_group_are_the_whole_layer_s():
+    # openings near each other (webs between them), far apart (none between them) and one with a
+    # narrow notch (a web in itself): the webs found group by group, in threads, close the same
+    # region as the whole layer at once, with the same vertices, however many threads
+    from collections import Counter
+
+    from kese.core import shapes2d as sh
+    from kese.s3_resolve import mask
+    pads = [shapely.box(x, y, x + 0.5, y + 0.3) for x in (0, 0.6, 1.2) for y in (0, 0.4)]   # 0.1 mm apart
+    far = [shapely.box(5, 5, 5.5, 5.3), shapely.box(6, 5, 6.5, 5.3)]                          # 0.5 mm apart
+    notched = shapely.box(10, 0, 11, 1).difference(shapely.box(10.45, 0.2, 10.55, 1))          # a 0.1 mm notch
+    openings, w = sh.union(pads + far + [notched]), 0.25
+    grow = w / 2 - 1e-6
+    joined = openings.buffer(grow, join_style="bevel").buffer(-grow, join_style="bevel")
+    whole = [p for p in shapely.get_parts(sh.diff(joined, openings))
+             if not p.buffer(-P.SolderMask.MASK_WEB_HAIRLINE_MM).is_empty]
+    assert len(whole) == 2 and len(mask.web_groups(openings, w)) == 4      # one among the pads, one in the notch
+    done = {}
+    for workers in (1, 3):
+        saved = with_workers(workers)
+        try:
+            items = SimpleNamespace(mask_min_width=w, found=Counter())
+            done[workers] = mask.min_width_joined(items, openings, "F")
+        finally:
+            put_back(saved)
+        assert list(items.found.values()) == [len(whole)]
+    assert shapely.to_wkb(done[1]) == shapely.to_wkb(done[3])
+    assert shapely.symmetric_difference(done[1], sh.union([openings] + whole)).area == 0
+    found = [p for g in mask.web_groups(openings, w) for p in mask.webs_of(g, grow)]
+    assert sorted(shapely.to_wkb(shapely.normalize(np.array(found, dtype=object)))) == \
+        sorted(shapely.to_wkb(shapely.normalize(np.array(whole, dtype=object))))
+
+
 def test_joined_holes_are_made_once_when_threads_ask_at_once():
     made = []
 
@@ -671,6 +706,7 @@ if __name__ == "__main__":
     t.test_a_step_part_is_written_the_same_in_slices_of_any_size()
     t.test_a_step_file_written_in_processes_is_the_same_to_the_byte()
     t.test_the_copper_layers_joined_in_processes_are_the_same_to_the_byte()
+    t.test_the_mask_webs_found_group_by_group_are_the_whole_layer_s()
     t.test_joined_holes_are_made_once_when_threads_ask_at_once()
     t.test_memory_freed_by_threads_is_handed_back()
     t.test_memory_is_kept_with_give_back_memory_off()

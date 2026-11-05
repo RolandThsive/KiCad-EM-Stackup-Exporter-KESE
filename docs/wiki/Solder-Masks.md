@@ -70,6 +70,12 @@ Only the webs this fills are added; the hairlines where the grown and shrunk cur
 ones (narrower than 2 µm) are left out, so the openings keep their exact outlines. `report.txt`
 counts them as `mask webs under the min width (w mm) removed on F.Mask`.
 
+The openings are worked on in groups, each opening with every other that comes within $`w`$ of it
+(two openings grown by less than $`w/2`$ meet only when they are less than $`w`$ apart, so no web
+closes between two groups), `Parallel.WORKERS` groups at a time in threads. The webs are the ones
+the whole layer at once gives, with the same vertices, and the openings close the same region; on
+CIAA ACC the front takes 4.3 s where the whole layer took 9.8 s.
+
 ## 15.2 Conformal Mask
 
 ![Board 17_mask_silk from the top with a dashed box over a trace, and the boxed region cut across the trace: the mask flat on the laminate, climbing the trace's side and lying on its top](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/mask_3_conformal.webp)
