@@ -70,9 +70,10 @@ Only the webs this fills are added; the hairlines where the grown and shrunk cur
 ones (narrower than 2 µm) are left out, so the openings keep their exact outlines. `report.txt`
 counts them as `mask webs under the min width (w mm) removed on F.Mask`.
 
-The openings are worked on in groups, each opening with every other that comes within $`w`$ of it
-(two openings grown by less than $`w/2`$ meet only when they are less than $`w`$ apart, so no web
-closes between two groups), `Parallel.WORKERS` groups at a time in threads. The webs are the ones
+The openings are worked on in groups: two openings within $`w`$ of each other are in one group,
+and so is every opening linked to them by a chain of such neighbours (two openings grown by less
+than $`w/2`$ meet only when they are less than $`w`$ apart, so no web closes between two groups),
+`Parallel.WORKERS` groups at a time in threads. The webs are the ones
 the whole layer at once gives, with the same vertices, and the openings close the same region; on
 CIAA ACC the front takes 4.3 s where the whole layer took 9.8 s.
 
