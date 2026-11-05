@@ -7,6 +7,7 @@ import struct
 import numpy as np
 
 from kese.core.mesh_math import unitize
+from kese.core.whole_files import whole
 from parameters import P
 
 ARRAY_BUFFER, ELEMENT_ARRAY_BUFFER = 34962, 34963       # buffer view targets
@@ -102,7 +103,7 @@ def glb_bytes(model, normals=True, targets=True):
 
 
 def write(model, path):
-    with open(path, "wb") as f:
+    with whole(path), open(path, "wb") as f:
         for piece in glb_bytes(model, P.Run.EXPORT_INCLUDE_NORMALS, P.Run.EXPORT_SET_BUFFERVIEW_TARGETS):
             f.write(piece)
     return path
