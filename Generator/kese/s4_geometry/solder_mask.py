@@ -11,6 +11,7 @@ from kese.core.parallel import in_parallel
 from kese.core.shape_copies import own
 from kese.s4_geometry.finish import under_mask_copper, under_mask_mm
 from kese.s4_geometry.heights import mask_thicknesses
+from kese.s4_geometry.switches import enabled
 from parameters import P
 
 
@@ -33,7 +34,7 @@ def build(r, ps, mode):
         if pieces is None:
             continue
         flat, top, slivers, wall = pieces
-        if slivers:
+        if slivers and enabled("mask"):            # (with the mask off, it is built but left out of the files)
             ps.notes.append(f"solder mask: {slivers} slivers on the copper narrower than "
                             f"{2 * M.MASK_OVER_COPPER_HAIRLINE_MM:g} mm left out ({side}.Mask)")
         cu_t = st.band[layer][1] - st.band[layer][0] + lift
