@@ -250,9 +250,9 @@ def net_class_vias(tree, d):
     """What a via that gives no size or drill takes (KiCad 4/5): (the Default class's, {net: its
     class's}), each (size, drill, micro size, micro drill), falling back to setup and KiCad's defaults."""
     setup = child(tree, "setup") or []
-    d = KICAD_DEFAULT_VIA
-    board = (num(setup, "via_size", d[0]), num(setup, "via_drill", d[1]),
-             num(setup, "uvia_size", d[2]), num(setup, "uvia_drill", d[3]))
+    kd = KICAD_DEFAULT_VIA                            # (d is the dialect: the class's net names need it)
+    board = (num(setup, "via_size", kd[0]), num(setup, "via_drill", kd[1]),
+             num(setup, "uvia_size", kd[2]), num(setup, "uvia_drill", kd[3]))
     classes, default = {}, board
     for nc in children(tree, "net_class"):
         vals = (num(nc, "via_dia", board[0]), num(nc, "via_drill", board[1]),
