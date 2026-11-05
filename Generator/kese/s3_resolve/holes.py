@@ -11,10 +11,10 @@ from parameters import P
 _MAKING = RLock()        # made_once(): reentrant, as drilled() makes drills() inside it
 
 
-def hole_shapes(items, pred, bore=False, take=lambda g: g):
+def hole_shapes(holes, pred, bore=False, take=lambda g: g):
     """The holes for which pred(hole) holds, one shape each, KiCad frame: the drilled outline, or
     with bore=True the open bore inside the plating.  take(drills): the drills as used (own, in a thread)."""
-    picked = [h for h in items.holes if pred(h)]
+    picked = [h for h in holes if pred(h)]
     return [d.buffer(-h.wall) if bore and h.wall > 0 else d for h, d in zip(picked, take([h.drill for h in picked]))]
 
 
@@ -33,12 +33,12 @@ def made_once(r, kind, pred, make):
 
 def drills(r, pred):
     """The drilled outlines of the holes for which pred(hole) holds, joined, KiCad frame."""
-    return made_once(r, "drills", pred, lambda: union(hole_shapes(r.items, pred)))
+    return made_once(r, "drills", pred, lambda: union(hole_shapes(r.items.holes, pred)))
 
 
 def bores(r, pred):
     """The open bores (inside the plating) of the holes for which pred(hole) holds, joined, KiCad frame."""
-    return made_once(r, "bores", pred, lambda: union(hole_shapes(r.items, pred, bore=True)))
+    return made_once(r, "bores", pred, lambda: union(hole_shapes(r.items.holes, pred, bore=True)))
 
 
 def drilled(r, pred):

@@ -354,6 +354,40 @@ def test_a_step_file_written_in_processes_is_the_same_to_the_byte():
         assert sorted(p.name for p in Path(tmp).iterdir()) == sorted(f"{w}_{a}.step" for w in (1, 2, 3) for a in (True, False))
 
 
+def copper_keys(pcb):
+    """Stage 3's copper of a board, per layer and net and per layer, and its mask, as bytes and the
+    grid of every part."""
+    from kese.job import start
+    from kese.s1_read import read
+    from kese.s2_collect import collect
+    from kese.s3_resolve import resolve
+
+    def key(g):
+        return shapely.to_wkb(g, include_srid=True), tuple(shapely.get_precision(shapely.get_parts(g)).tolist())
+    job = start("simulation", ["glb"], None, (), False, lambda s: None)
+    r = resolve.run(collect.run(read.run(str(pcb), job), job), job)
+    job.status.stop()
+    return ({l: {n: key(g) for n, g in nets.items()} for l, nets in r.copper.items()},
+            {l: key(g) for l, g in r.copper_all.items()}, {s: key(g) for s, g in r.mask.items()})
+
+
+def test_the_copper_layers_joined_in_processes_are_the_same_to_the_byte():
+    # each layer's nets joined, clipped and cut by the holes in a worker of its own, the biggest
+    # layer first: the same regions, on the same grid, as in threads, whatever the number of workers
+    from kese.s3_resolve import copper
+    pcb = ROOT / "tests" / "boards" / "six_layer.kicad_pcb"
+    keys, nets = {}, copper.PROCESS_MIN_NETS
+    for workers, least in ((1, 10 ** 12), (3, 10 ** 12), (2, 0), (3, 0)):
+        saved = with_workers(workers, ("Parallel.PROCESS_MIN_COORDINATES", least))
+        copper.PROCESS_MIN_NETS = 0 if least == 0 else nets
+        try:
+            keys[workers, least] = copper_keys(pcb)
+        finally:
+            put_back(saved)
+            copper.PROCESS_MIN_NETS = nets
+    first = keys[1, 10 ** 12]
+    assert len(first[0]) == 6 and all(k == first for k in keys.values())
+
 def test_joined_holes_are_made_once_when_threads_ask_at_once():
     made = []
 
@@ -636,6 +670,7 @@ if __name__ == "__main__":
     t.test_batches_of_any_size_give_the_same_result()
     t.test_a_step_part_is_written_the_same_in_slices_of_any_size()
     t.test_a_step_file_written_in_processes_is_the_same_to_the_byte()
+    t.test_the_copper_layers_joined_in_processes_are_the_same_to_the_byte()
     t.test_joined_holes_are_made_once_when_threads_ask_at_once()
     t.test_memory_freed_by_threads_is_handed_back()
     t.test_memory_is_kept_with_give_back_memory_off()

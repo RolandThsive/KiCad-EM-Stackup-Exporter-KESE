@@ -1,5 +1,7 @@
 """The board frame: KiCad's (x, y down) becomes (x - cx, -(y - cy)), Y up with F.Cu toward +Z,
 with the origin per Run.ORIGIN.  Every shape that passes through it is snapped to the grid."""
+from functools import partial
+
 from shapely import affinity
 
 from kese.core import shapes2d as sh
@@ -17,8 +19,12 @@ def place(r, outline_k):
     else:
         cx, cy = 0.0, 0.0
         r.transform_note = "origin: KiCad page origin"
-    # KiCad (x, y down) -> board (x - cx, -(y - cy)): Y up, F.Cu toward +Z
-    T = lambda g: sh.snap(affinity.affine_transform(sh.polys_only(g), [1, 0, 0, -1, -cx, cy])) \
+    r.to_board_T = partial(to_board, cx=cx, cy=cy)      # a module's function: worker processes take it
+    r.outline = r.to_board_T(outline_k)
+
+
+def to_board(g, cx, cy):
+    """A KiCad-frame shape in the board frame, snapped to the grid: KiCad (x, y down) -> board
+    (x - cx, -(y - cy)), Y up, F.Cu toward +Z."""
+    return sh.snap(affinity.affine_transform(sh.polys_only(g), [1, 0, 0, -1, -cx, cy])) \
         if g is not None and not g.is_empty else EMPTY
-    r.to_board_T = T
-    r.outline = T(outline_k)

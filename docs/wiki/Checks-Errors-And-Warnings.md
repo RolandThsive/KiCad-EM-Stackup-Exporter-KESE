@@ -354,8 +354,9 @@ and threads working on their own copies of one shape not crashing; finds threads
 one prepared copy of a slice's material, threads cutting faces only by the pieces of material that
 meet them, the test for hidden triangles letting go of its prepared slices, a set of holes joined once when threads ask for it at once, and the memory threads freed
 handed back (and kept with `Parallel.GIVE_BACK_MEMORY` off), and batches of any size giving the
-same result (a STEP part written in slices of any size the same to the byte, and a STEP file written
-part by part in worker processes the same as one written in one process, with no file left behind); finds `Parallel.PROCESS_WORKERS`
+same result (a STEP part written in slices of any size the same to the byte, a STEP file written
+part by part in worker processes the same as one written in one process, with no file left behind,
+and the copper layers joined in worker processes the same to the byte as in threads); finds `Parallel.PROCESS_WORKERS`
 capping the worker processes and boards under `Parallel.PROCESS_MIN_COORDINATES` kept in one
 process; sends shapes through stage 6's worker processes and finds them back on
 their grid (each part's too), of their type and with their SRID; and finds the run's settings in the

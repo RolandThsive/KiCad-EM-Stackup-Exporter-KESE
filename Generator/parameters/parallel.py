@@ -10,14 +10,15 @@ model: the files come out the same, byte for byte, however the work is shared ou
 # (it runs outside Python's lock): the copper layers in stage 3; both sides of the solder mask and
 # the silkscreen, and the finish's copper layers and hole spans, in stage 4; the faces of the
 # visual-mode skin and the test for its hidden triangles, in stage 6; the Verifier's overlap check in
-# stage 8.  Processes of their own where much of the work is Python's: in stage 6 the parts built at
-# once in "simulation" mode and the parts sliced for the "visual" skin, in stage 7 the parts of a STEP
-# file (PROCESS_WORKERS and PROCESS_MIN_COORDINATES below).
+# stage 8.  Processes of their own where much of the work is Python's: in stage 3 the copper layers
+# of a board of 1,000 nets or more, in stage 6 the parts built at once in "simulation" mode and the
+# parts sliced for the "visual" skin, in stage 7 the parts of a STEP file (PROCESS_WORKERS and
+# PROCESS_MIN_COORDINATES below).
 # 0 = one per processor thread this process may use (all of the machine's, unless a job scheduler,
 # taskset or a container limits it); 1 = everything in turn, in one process.
 WORKERS = 0
 
-# At most this many worker processes at once, in stages 6 and 7; 0 = as many as WORKERS.  Each holds
+# At most this many worker processes at once, in stages 3, 6 and 7; 0 = as many as WORKERS.  Each holds
 # its own Python, numpy and shapely (about 36 MB) and the part it builds: NE_Delta in simulation mode
 # peaks at 2.8 GB in all with 4 workers and 4.5 GB with 32.  A thread costs little memory, so a
 # machine with many threads and little memory can keep WORKERS and lower this.  If the processes
@@ -26,7 +27,8 @@ WORKERS = 0
 PROCESS_WORKERS = 0
 
 # Stage 6 starts worker processes only when the parts hold this many coordinates or more in all
-# their prisms, and the STEP writer only when their faces do; smaller boards are built part after
+# their prisms, the STEP writer only when their faces do, and stage 3 only when the copper items do
+# (on a board of 1,000 nets or more: kese/s3_resolve/copper.py); smaller boards are built part after
 # part in the main process, which is faster than starting the processes (about 0.3 s for 4): one of
 # the test boards takes 0.10 s that way, and 0.35 s in processes.  0 = processes for every board of
 # more than one part.

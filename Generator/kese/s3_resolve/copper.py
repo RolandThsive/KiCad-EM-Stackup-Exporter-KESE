@@ -7,34 +7,52 @@ import shapely.errors
 
 from kese.core import shapes2d as sh
 from kese.core.graph import pairs_within
-from kese.core.parallel import in_parallel
+from kese.core.parallel import in_parallel, in_processes, worth_processes
 from kese.core.shape_copies import own
 from kese.core.shapes2d import side_by_side, union
 from kese.s3_resolve.holes import hole_shapes
 from parameters import P
 
+# nets, counted layer by layer: from this many the layers are joined in processes of their own (if
+# worth_processes agrees).  Much of a net's work is then Python's (the loop over the nets, the copies
+# of the shapes), which threads take in turn: CIAA ACC (6,200) takes 24.3 s in four threads and 13.2 s
+# in four processes, ULX4M (5,526) 17.9 s and 8.7 s, a 4-layer board of 1,720 3.7 s and 2.1 s.  With
+# fewer nets most of the work is GEOS's, which threads run as fast without sending the shapes to the
+# processes and back: NE_Delta (804 nets on 2 layers, 1.6 million coordinates) 8.0 s and 9.3 s.
+PROCESS_MIN_NETS = 1000
 
-def copper_layers(r, items, outline_k):
-    """r.copper {layer: {net: region}} and r.copper_all {layer: region}; Parallel.WORKERS layers at a time,
-    in threads (the work is GEOS's, which runs outside Python's lock), kept in the layers' order."""
-    done = in_parallel(lambda k: copper_of_layer(r, items, outline_k, k), range(len(items.layers)))
-    for l, nets in zip(items.layers, done):
-        r.copper[l] = nets
-        r.copper_all[l] = side_by_side(list(nets.values()))
+
+def copper_layers(r, items, outline_k, log):
+    """r.copper {layer: {net: region}} and r.copper_all {layer: region}; Parallel.WORKERS layers at a
+    time, the biggest first, kept in the layers' order: in processes of their own on a board of many
+    nets (PROCESS_MIN_NETS), else in threads (copper_of_layer takes its own copies of the shapes
+    there)."""
+    last = len(items.layers) - 1
+    jobs = {k: (k == 0 or k == last, items.copper_items.get(l, []), [h for h in items.holes if h.i <= k <= h.j],
+                outline_k, r.to_board_T) for k, l in enumerate(items.layers)}
+    size = {k: sum(int(shapely.get_num_coordinates(g)) for g, _ in job[1]) for k, job in jobs.items()}
+    order = sorted(jobs, key=lambda k: -size[k])
+    nets = sum(len({net for _, net in job[1]}) for job in jobs.values())
+    if nets >= PROCESS_MIN_NETS and worth_processes(len(jobs), sum(size.values())):
+        done = dict(in_processes(copper_of_layer, [(k, jobs[k]) for k in order], log, "joined"))
+    else:
+        done = dict(zip(order, in_parallel(lambda k: copper_of_layer(*jobs[k], take=own), order)))
+    for k, l in enumerate(items.layers):
+        r.copper[l] = done[k]
+        r.copper_all[l] = side_by_side(list(done[k].values()))
 
 
-def copper_of_layer(r, items, outline_k, k):
-    """{net: region} of copper layer k: each net's items joined, cut by the holes it touches, clipped
-    to the outline, board frame.  In a thread: the outline, the holes and the items (a pad or a via
-    is on several layers) are this thread's own copies (kese/core/shape_copies.py)."""
-    T, last, l = r.to_board_T, len(items.layers) - 1, items.layers[k]
-    outline_k = own(outline_k)
+def copper_of_layer(outer, mine, holes, outline_k, T, take=lambda g: g):
+    """{net: region} of one copper layer: each net's items `mine` [(shape, net)] joined, cut by the
+    holes it touches, clipped to the outline, board frame (by T).  `outer`: a face's layer.  In a
+    thread, take=own: the outline, the holes and the items (a pad or a via is on several layers) are
+    this thread's own copies (kese/core/shape_copies.py)."""
+    outline_k = take(outline_k)
     # outer copper caps the barrel (cut by the open bore); inner copper stops at the drill wall
-    holes = [g for g in hole_shapes(items, lambda h: h.i <= k <= h.j, bore=k in (0, last), take=own) if not g.is_empty]
+    holes = [g for g in hole_shapes(holes, lambda h: True, bore=outer, take=take) if not g.is_empty]
     tree = shapely.STRtree(holes)
     per_net = defaultdict(list)
-    mine = items.copper_items.get(l, [])
-    for (_, net), g in zip(mine, own([g for g, _ in mine])):
+    for (_, net), g in zip(mine, take([g for g, _ in mine])):
         per_net[net].append(g)
     regions = {}
     for net, gs in per_net.items():

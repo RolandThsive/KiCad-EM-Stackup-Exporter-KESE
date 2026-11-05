@@ -156,7 +156,7 @@ use; `1`: everything in turn, in one process), and at most `Parallel.PROCESS_WOR
 
 | Stage | What runs at once | In |
 |---|---|---|
-| 3 resolve | the copper layers | threads |
+| 3 resolve | the copper layers, the biggest first | processes on a board of 1,000 nets or more, else threads |
 | 4 geometry | the top and bottom solder mask, then the top and bottom silkscreen; the finish's hole spans and copper layers | threads |
 | 6 assemble, simulation mode | the parts' solids, the biggest part first, and with the Verifier on their checks | processes |
 | 6 assemble, visual mode | each part sliced | processes |
@@ -167,7 +167,12 @@ use; `1`: everything in turn, in one process), and at most `Parallel.PROCESS_WOR
 - Threads where the 2D geometry library, GEOS, does the work: it runs outside Python's lock.
   Processes where much of the work is Python's own, which threads would take in turn. Parts that
   hold under `Parallel.PROCESS_MIN_COORDINATES` coordinates in all (20,000) are built, and written
-  to STEP, in the main process, as starting the processes would take longer.
+  to STEP, in the main process, as starting the processes would take longer. The copper layers go
+  to processes only on a board of 1,000 nets or more, counted layer by layer
+  (`kese/s3_resolve/copper.py`): much of a net's work is then Python's, and CIAA ACC's copper takes
+  13 s in four processes against 24 s in four threads; with fewer nets most of the work is GEOS's,
+  which threads run as fast without sending the shapes to and fro (NE_Delta, 804 nets on 2 layers:
+  8.0 s in threads, 9.3 s in processes).
 - A STEP file's parts are worked on in two rounds (`kese/s7_write/step_parts.py`). First each
   part's topology and arcs, which give the exact number of entities the part takes, so that the
   number its entities start from is known; then each part's entities, numbered from there, are
