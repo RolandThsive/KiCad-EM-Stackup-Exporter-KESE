@@ -181,6 +181,38 @@ def _overlay(op, a, b):
         return polys_only(op(*(polys_only(shapely.make_valid(own(g))) for g in (a, b)), grid_size=grid()))
 
 
+def exactly(g):
+    """g, the result of a set operation done in floating point on regions on the grid, back on the
+    grid with as little change as possible: only the new vertices, where two outlines cross, are
+    rounded onto it (a part this leaves invalid is snapped as a whole).  So two regions cut along the
+    same outline keep the same vertices there and still meet with no gap and no overlap, where
+    snapping each on its own could round their shared edge two ways."""
+    parts = shapely.get_parts(polys_only(g))
+    if not len(parts):
+        return EMPTY
+    off = ~on_grid(parts)
+    if not off.any():
+        return polys_only(g)
+    rounded = shapely.set_precision(parts[off], grid(), mode="pointwise")
+    bad = ~shapely.is_valid(rounded) | shapely.is_empty(rounded)
+    rounded[bad] = shapely.set_precision(parts[off][bad], grid())
+    parts[off] = rounded
+    pieces = [p for q in parts for p in shapely.get_parts(polys_only(q)) if not p.is_empty]
+    out = shapely.MultiPolygon(pieces)
+    return out if out.is_valid else joined(pieces)
+
+
+def exact_diff(a, b):
+    """a less b for regions on the grid: cut in floating point, then only the new vertices rounded
+    onto the grid (exactly()).  Where a cut on the grid would drop a sliver thinner than a grid step
+    (two needle tips a hair apart), this keeps it whenever its corners on the grid still make a
+    polygon.  Where GEOS refuses, the cut on the grid (diff)."""
+    try:
+        return exactly(shapely.difference(polys_only(a), polys_only(b)))
+    except shapely.errors.GEOSException:
+        return diff(a, b)
+
+
 def polygons(g):
     """The polygons of a region, as built into 3D, those that touch at a point or along a line pulled
     apart by PINCH_POINT_OPENING_MM (the last step before extrusion: a grid operation would rejoin them)."""

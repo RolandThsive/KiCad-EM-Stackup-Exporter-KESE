@@ -1,6 +1,7 @@
 """A part's flat faces, found in 2D (kese/core/boundary.py): at every height, the material of the
 slice below less that of the slice above looks up, and the other way round looks down.  Only what
-differs is cut: the pieces both slices have are left out, and the rest is cut group by group."""
+differs is cut: the pieces both slices have are left out, and the rest is cut group by group, in
+floating point with only the new vertices rounded onto the grid (shapes2d.exact_diff)."""
 import numpy as np
 import shapely
 
@@ -31,7 +32,11 @@ def faces_between(below, above):
     prisms ends at: the hole finish of every plated hole, between its layers).  The rest is cut
     group by group (shapes2d.meeting: pieces within a grid step of each other, the most a cut on
     the grid reaches), and a piece with nothing of the other side in its group is a face as it
-    is: the slices are noded, so on the grid it would come out the same."""
+    is: the slices are noded, so on the grid it would come out the same.  Each cut is taken in
+    floating point and only its new vertices are rounded (shapes2d.exact_diff): where the two
+    slices' outlines differ by less than a grid step (a band one step wide ending in two needle
+    tips a hair apart, one cut short by the face's edge), a cut on the grid drops that sliver from
+    both faces while the walls of both slices keep their tips, and the part is open there."""
     below, above = sh.polys_only(below), sh.polys_only(above)
     if not below.is_empty and not above.is_empty:
         below, above = without_common_pieces(below, above)
@@ -39,7 +44,7 @@ def faces_between(below, above):
         return below, above
     pa, pb = list(shapely.get_parts(below)), list(shapely.get_parts(above))
     if len(pa) == 1 and len(pb) == 1:
-        return sh.diff(below, above), sh.diff(above, below)
+        return sh.exact_diff(below, above), sh.exact_diff(above, below)
     pieces, up, down = pa + pb, [], []
     for group in sh.meeting(np.array(pieces, dtype=object)):
         a = [pieces[i] for i in group if i < len(pa)]
@@ -48,8 +53,8 @@ def faces_between(below, above):
             up, down = up + a, down + b
             continue
         ga, gb = sh.as_region(a), sh.as_region(b)
-        up += list(shapely.get_parts(sh.diff(ga, gb)))
-        down += list(shapely.get_parts(sh.diff(gb, ga)))
+        up += list(shapely.get_parts(sh.exact_diff(ga, gb)))
+        down += list(shapely.get_parts(sh.exact_diff(gb, ga)))
     return sh.as_region(up), sh.as_region(down)
 
 

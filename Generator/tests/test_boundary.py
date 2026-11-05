@@ -6,7 +6,8 @@ whole slices does (no face where the rings are the same, whatever point they sta
 spanned by the same regions are made once; two regions have the same vertices whatever point
 their rings start at; and a part whose slices meet at T-junctions comes out with every vertex
 shared (no vertex of one face or slice lies on the edge of another at its height without being
-one of its vertices too) and a closed, consistently wound mesh.
+one of its vertices too) and a closed, consistently wound mesh, as does a band one grid step wide
+that ends in two needle tips a hair apart (a board's gold, where faces cut on the grid left it open).
 
     python -m pytest tests/test_boundary.py        (or:  python tests/test_boundary.py)"""
 import sys
@@ -123,6 +124,22 @@ def test_a_part_meeting_at_t_junctions_shares_its_vertices_and_closes():
     assert abs(b.volume() - b.volume_of_slices()) <= 1e-9 * b.volume_of_slices()
 
 
+def test_a_band_ending_in_two_needle_tips_a_hair_apart_closes():
+    """The gold on a slanted copper edge of a KiCad 4 board (r0891 of the corpus): its band one grid
+    step wide along the wall ends in a needle, and above it the band on the face, cut short by the
+    face's edge, in a needle whose tip lies 0.8 and 0.9 grid steps off the first one's edges (just
+    past what counts as on an edge).  Cut on the grid, the faces between them lost the sliver between
+    the two tips while both slices' walls kept their tips: four edges used once.  Cut exactly, the
+    part closes and holds the volume of its slices."""
+    band = shapely.from_wkt("POLYGON ((12.1925 40.556, 12.2696 40.5705, 12.2789 40.5765, 12.3364 40.6135, 12.2789 40.5764, "
+                            "12.2696 40.5704, 12.193 40.556, 12.1925 40.556))")
+    tip = shapely.from_wkt("POLYGON ((12.2789 40.5764, 12.2789 40.5765, 12.3305 40.6098, 12.2789 40.5764))")
+    b = boundary_of("Top Finish Gold", [Prism("Top Finish Gold", "finish", band, 0.755, 0.79),
+                                        Prism("Top Finish Gold", "finish", tip, 0.79, 0.795)])
+    assert closed_and_wound(mesh_of_boundary(b)) and no_vertex_on_another_edge(b) == []
+    assert abs(b.volume() - b.volume_of_slices()) <= 1e-9 * b.volume_of_slices()
+
+
 def vertex_set(g):
     return set(map(tuple, np.round(ring_points(g) / sh.grid()).astype(np.int64).tolist()))
 
@@ -136,7 +153,7 @@ def test_faces_are_cut_only_where_the_slices_differ_and_come_out_as_a_whole_cut_
     assert faces_between(same, turned) == (sh.EMPTY, sh.EMPTY)                        # the same rings: no face at all
     caps = noded(sh.as_region([h.buffer(0.2, quad_segs=8).difference(h) for h in holes[:7]]))   # caps on seven of the holes
     up, down = faces_between(caps, same)
-    whole_up, whole_down = sh.diff(caps, same), sh.diff(same, caps)
+    whole_up, whole_down = sh.exact_diff(caps, same), sh.exact_diff(same, caps)
     for got, want in ((up, whole_up), (down, whole_down)):
         assert got.is_valid and abs(got.area - want.area) < 1e-12 and vertex_set(got) == vertex_set(want)
     assert len(shapely.get_parts(down)) == len(shapely.get_parts(whole_down)) == len(walls) - 7   # (the capped walls face nothing)
@@ -168,6 +185,7 @@ if __name__ == "__main__":
     test_the_vertices_parts_have_twice_are_found_for_all_parts_at_once()
     test_flat_faces_found_again_only_next_to_a_changed_slice_are_all_of_them_found_again()
     test_a_part_meeting_at_t_junctions_shares_its_vertices_and_closes()
+    test_a_band_ending_in_two_needle_tips_a_hair_apart_closes()
     test_faces_are_cut_only_where_the_slices_differ_and_come_out_as_a_whole_cut_does()
     test_slices_spanned_by_the_same_regions_are_made_once()
     test_two_regions_have_the_same_vertices_whatever_point_their_rings_start_at()
