@@ -114,6 +114,20 @@ the grid points), noding closes it and leaves a hairline of air, so the prisms h
 solids will. Cutting the solid once, not once per metal, is what keeps the shells quick on a big
 board; the copper layers and the hole spans are worked on `Parallel.WORKERS` at a time, in threads.
 
+Nor is the solid $`B`$ joined over the whole board where it need not be. In the holes and on the
+plated edge each part of the air's band is cut on its own, by the solid within four grid steps of
+its box alone (`air_near` in `shells.py`): a bore by the board, the copper and the rings round it.
+A big part of the solid, such as the drilled board or a plane, is first cut into tiles of about
+2,000 vertices along halvings of its box, so that a bore clips only the tiles near it. A span's
+bores are laid in groups of about 200 near each other (`bore_groups` in `finish_shells.py`), bores
+whose shells could meet always in one group, and the groups are worked on in threads. On NE_Delta
+the board's union took 31 s, where its 1,911 bores' air takes about 7 s this way. An inner layer's band
+that lies inside the outline, as on most boards, where no copper comes within the shells' reach of
+the board edge, has no air, and is done at once. The air comes out as the cut by the whole union
+makes it, but where two edges cross and the new vertex rounds onto the grid another way: a sliver
+thinner than a grid step. The outer layers' walls still cut the band by the whole layer's solid
+(the copper, the mask, the ink), as a plane's band reaches across the whole board.
+
 ### 13.2.2 Finish Before The Mask
 
 `Finish.FINISH_BEFORE_SOLDER_MASK = False` is the usual order above: mask first, finish after it.

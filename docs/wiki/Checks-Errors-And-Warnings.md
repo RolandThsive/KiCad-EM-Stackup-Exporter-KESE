@@ -381,6 +381,12 @@ meet only to within floating point joined with no crack, a crack narrower than t
 items apart kept apart, the area within a grid step of the exact union and nearer it than a union
 on the grid, no burr past the board edge once clipped to the outline, and the union on the grid
 used where GEOS refuses, in under a second (`python tests/test_copper_union.py`);
+`tests/test_finish_shells.py`, which cuts the finish shells' air bore by bore, each by the solid
+near it alone, and leaves an inner layer whose copper comes nowhere near the board edge without
+air, joining nothing; finds every finish prism of seven test boards as the cut by the whole board's
+union makes it, but for slivers thinner than a grid step; and finds a big part of the solid cut into
+tiles that fill it and do not overlap, and bores whose shells could meet put in one group, in about
+half a minute (`python tests/test_finish_shells.py`);
 `tests/test_pairs.py`, which finds the pieces within a distance of each other that an STRtree's
 search finds, among a zone fill of many points and small pads, pieces exactly the distance apart
 and a hair further, with no piece left prepared, in under a second (`python tests/test_pairs.py`);

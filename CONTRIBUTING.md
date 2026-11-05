@@ -91,6 +91,7 @@ python tests/test_parallel.py    # worker processes and threads: shapes and copi
 python tests/test_verifier.py    # the Verifier: the visual check upright and flat; checks in the workers; overlaps in threads
 python tests/test_boundary.py    # stage 6's shortcuts give what the long way gives, and parts close
 python tests/test_copper_union.py # a net's copper joined with no crack and no burr past the edge
+python tests/test_finish_shells.py # the finish's air cut bore by bore, as the whole board's union cuts it
 python tests/test_pairs.py       # pieces within a distance of each other, as an STRtree finds them
 python tests/test_full_disk.py   # a full disk leaves no half-written file; runs at once, a folder each
 python tests/test_step_native.py # a solid written from its faces, read back by OpenCascade
