@@ -70,11 +70,13 @@ def boundary_of(part, prisms, log=None):
     """The prisms of one part -> its Boundary, closed by construction."""
     levels = heights_of(prisms)                    # every height where a prism starts or ends
     slices = slices_of_part(prisms, levels, log)   # the material between two neighbouring heights
+    flats, again = [], range(len(levels))
     for _ in range(sh.G().VERTEX_SHARING_ROUNDS):   # Geometry.VERTEX_SHARING_ROUNDS, 20
-        flats = flat_faces(slices, levels)         # below minus above looks up, above minus below down
+        flats = flat_faces(slices, levels, flats, again)   # below minus above looks up, above minus below down
         slices, changed = slices_sharing_vertices(slices, flats, levels, log)
         if not changed:
             break
+        again = {k for i in changed for k in (i, i + 1)}      # the heights at a changed slice's ends
     ...
 
 mesh = mesh_of_boundary(boundary)                  # faces cut into triangles, two per wall edge
@@ -84,6 +86,12 @@ mesh = mesh_of_boundary(boundary)                  # faces cut into triangles, t
   (`Boundary.walls()`). Faces and walls must meet on identical edges, so the slices that meet at a
   height are given each other's vertices, and their faces' vertices, until nothing changes
   (`kese/core/vertices.py`). Then the mesh closes by construction.
+- A slice is made once for all the heights the same prisms span (a hole's finish is three prisms,
+  one per stretch of the wall, and the same between every two of its layers). The faces at a height
+  are cut only where the slices below and above differ (`kese/core/flat_faces.py`): the pieces both
+  have, ring for ring, face nothing, and the rest is cut group by group, the pieces within a grid
+  step of each other, the most a cut on the grid reaches. After the first round, the faces are cut
+  again only at the heights next to a slice that changed.
 - The faces are cut by earcut, as in KiCad's 3D viewer; a polygon of more than
   `Geometry.TRIANGULATE_CELL_POINTS` points strip by strip, as KiCad cuts big polygons into cells.
   A cut that does not close exactly on the polygon's edges is done again by GEOS's constrained

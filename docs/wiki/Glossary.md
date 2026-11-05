@@ -32,9 +32,10 @@
 | Role | The kind of a part: `board`, `copper`, `plating`, `finish`, `mask`, `mask_over_copper`, `silk`. |
 | Simulation mode | Output as closed solids, for solvers and CAD. |
 | Skin | The visible outer surface of the board; what visual mode writes. |
+| Slice | The material of one part between two neighbouring heights where its prisms start or end; stage 6 builds a part's surface from its slices. |
 | Snap grid | The 0.1 µm grid every 2D shape is rounded to, so neighbouring layers share exact vertices. |
 | Stack-up | The ordered list of copper and dielectric layers with their thicknesses and materials; KiCad stores it in Board Setup. |
-| STEP | The CAD exchange format (ISO 10303); KESE writes AP214, every part as closed solids of flat faces. |
+| STEP | The CAD exchange format (ISO 10303); KESE writes AP214, every part as closed solids, with round outlines as true arcs and cylinders (`Step.STEP_EXACT_ARCS`) and planar faces elsewhere. |
 | tanδ (loss tangent) | Dielectric loss of a material. |
 | Tenting | Covering a via with solder mask instead of leaving it open. |
 | Through via | A via from `F.Cu` to `B.Cu`. |

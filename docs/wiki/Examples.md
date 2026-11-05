@@ -21,9 +21,9 @@ mask colour of its own, saved by KiCad 7. Between them they use most of what KES
 | Vias | 307 through | 71 micro, 34 blind and buried, 45 through | 239 through |
 | Board edge | plated all round and in the cut-out | 43 castellated pads | 36 gold fingers |
 | Mask, silkscreen, finish | blue, white, ENIG | black, white, immersion silver | green, white, hard gold |
-| Simulation GLB with `--verify` | 46 parts, 1,127,702 triangles; 24 s, 38.0 MB | 62 parts, 596,674 triangles; 10 s, 20.4 MB | 61 parts, 879,986 triangles; 13 s, 30.1 MB |
-| Simulation STEP with `--verify` | 46 parts, 745 solids; 30 s, 113.7 MB | 62 parts, 1,240 solids; 13 s, 70.9 MB | 61 parts, 788 solids; 18 s, 80.2 MB |
-| Visual GLB with `--verify` | 20 s, 10.5 MB | 12 s, 5.6 MB | 15 s, 9.1 MB |
+| Simulation GLB with `--verify` | 46 parts, 1,126,376 triangles; 20 s, 37.9 MB | 62 parts, 596,558 triangles; 10 s, 20.4 MB | 61 parts, 881,450 triangles; 13 s, 30.2 MB |
+| Simulation STEP with `--verify` | 46 parts, 745 solids; 27 s, 113.1 MB | 62 parts, 1,240 solids; 14 s, 70.9 MB | 61 parts, 788 solids; 19 s, 80.9 MB |
+| Visual GLB with `--verify` | 20 s, 10.5 MB | 12 s, 5.6 MB | 16 s, 9.1 MB |
 
 The times are the ones the run prints, with the default parameters (the finish on, the solder
 mask and silkscreen off, true arcs in the STEP files) on one Linux machine with 4 cores. The STEP
@@ -108,12 +108,13 @@ What this board shows:
 
 | Part (simulation mode) | Triangles |
 |---|---|
-| `Copper_GND`: the planes, the border, the via fence, the plated edge | 333,000 |
-| `Copper_+3V3` and `Copper_+5V`: the two halves of In2.Cu, with their tracks and pads | 50,596 |
-| the other 33 copper parts | 30,872 |
-| `Board_dielectric 1` to `3` | 186,452 |
-| `Top Solder Mask`, `Bottom Solder Mask` | 229,814 |
-| `Top Silkscreen`, `Bottom Silkscreen` | 56,278 |
+| `Copper_GND`: the planes, the border, the via fence, the plated edge | 334,380 |
+| `Copper_+3V3` and `Copper_+5V`: the two halves of In2.Cu, with their tracks and pads | 50,592 |
+| the other 32 copper parts | 30,872 |
+| `Board_dielectric 1` to `3` | 186,240 |
+| `Top Solder Mask`, `Bottom Solder Mask` | 230,006 |
+| `Top Silkscreen`, `Bottom Silkscreen` | 56,290 |
+| the ENIG finish: nickel and gold on the top, the bottom, the plated edge and in the holes (8 parts) | 524,244 |
 
 ## 5.2 HDI Radio Module
 
@@ -201,8 +202,8 @@ What this board shows:
 - **An isolation barrier.** A rule area 2 mm wide keeps every copper layer clear between the logic
   side and the PoE side, and an 18 × 1.2 mm slot is milled through under it. The slot cuts every
   layer, so `Copper_PGND` and `Copper_+48V` stay apart from the logic side's parts.
-- **Planes per net.** `Copper_GND` (187,288 triangles), `Copper_PGND` (71,564), `Copper_+3V3`
-  (37,072) and `Copper_+48V` (17,888) are the biggest of the 52 copper parts.
+- **Planes per net.** `Copper_GND` (187,420 triangles), `Copper_PGND` (71,640), `Copper_+3V3`
+  (37,324) and `Copper_+48V` (18,128) are the biggest of the 52 copper parts.
 - **Non-plated holes.** The bracket's two screw holes and the jack's two pegs are non-plated: their
   walls are bare laminate, with no plating and no ring.
 

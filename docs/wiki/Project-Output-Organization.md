@@ -73,17 +73,22 @@ the folder that was written.
 | `<board>.glb` | `glb` requested | binary glTF 2.0; one node and one mesh per part, named after the part; PBR materials; no glTF extensions |
 | `<board>.obj` + `<board>.mtl` | `obj` requested | one `o <name>` object per part with vertices, normals and faces; the `.mtl` has one material per part (`Kd`, `d`); object and material names are sanitised as for STL (`Top_Solder_Mask`) |
 | `stl/<name>.stl` | `stl` requested | one binary STL per part, in a `stl/` sub-folder; the name is the part name with every run of characters other than `A-Z a-z 0-9 _ . + -` replaced by `_`, and leading or trailing `_` removed (`Top_Solder_Mask.stl`, `Board_dielectric_1.stl`, `Copper__RESET.stl` for net `~{RESET}`) |
-| `<board>.step` | `step` requested (simulation mode) | STEP AP214 assembly named after the board, one named shape per part, with colours: the part's closed solids, one per separate body, in `Run.UNITS`. The parts are the ones switched on (`BOARD_ENABLED`, `COPPER_ENABLED`, `FINISH_ENABLED`, `SOLDER_MASK_ENABLED`, `SILKSCREEN_ENABLED`), as in every other file. It is written straight into the file one part at a time and removed when the export fails |
+| `<board>.step` | `step` requested (simulation mode) | STEP AP214 assembly named after the board, one named shape per part, with colours: the part's closed solids, one per separate body, in `Run.UNITS`. The parts are the ones switched on (`BOARD_ENABLED`, `COPPER_ENABLED`, `FINISH_ENABLED`, `SOLDER_MASK_ENABLED`, `SILKSCREEN_ENABLED`), as in every other file. It is written straight into the file one part at a time |
 | `materials.json` | `Run.WRITE_MATERIALS_JSON` | per part: role, layer, net, z range, properties, look, file names ([Material Properties](Material-Properties.md)) |
 | `parameters.txt` | always | every parameter of every `parameters/` file as it stood for the run; when `--for`, `--set`, `--mode`, `--format` or `--verify` was used, the first line lists those overrides (`--out` is not recorded) |
 | `report.txt` | always | see below |
 
+A file is written whole or not at all: when writing fails on the way (a full disk, or a part that
+cannot be written), the file being written is removed, an OBJ with its MTL, and the run folder too
+when nothing in it was written whole (and the board's folder, when it holds no other run)
+([Checks, Errors And Warnings](Checks-Errors-And-Warnings.md#1711-errors)).
+
 ### 19.2.2 `report.txt`
 
 ```text
-rf_module  (rf_module.kicad_pcb)   generated 2026-10-29 00:19
+rf_module  (rf_module.kicad_pcb)   generated 2026-11-05 04:23
 mode: simulation   formats: glb, stl, obj   units: m
-KiCad format 20221018, generator pcbnew
+KiCad format 20221018 (KiCad 7), generator pcbnew
 
 stack-up
   copper layers: F.Cu, In1.Cu, In2.Cu, B.Cu
@@ -137,27 +142,32 @@ skipped
 notes
   font: KiCad newstroke (kicad_newstroke.json.gz)
   solder mask: 0.01 mm over laminate, 0.01 mm over copper (stackup)
+  finish: ENIG Nickel 0.005 mm + Gold 8e-05 mm
+  finish: also on the plated edge (Gold 8e-05 mm drawn 0.0001 mm thick across the edge, the snapping grid)
+  ...
 
 parts
-  Board_dielectric 1                      53968 triangles  material Board_prepreg #A89C66 alpha 1.0
+  Board_dielectric 1                      53960 triangles  material Board_prepreg #A89C66 alpha 1.0
   Board_dielectric 2                      43812 triangles  material Board_core #968A58 alpha 1.0
-  Board_dielectric 3                      88672 triangles  material Board_prepreg #A89C66 alpha 1.0
-  Copper_+3V3                             40404 triangles  material Copper #CD803E alpha 1.0
+  Board_dielectric 3                      88468 triangles  material Board_prepreg #A89C66 alpha 1.0
+  Copper_+3V3                             40400 triangles  material Copper #CD803E alpha 1.0
   ...
-  Top Solder Mask                        154878 triangles  material Top Solder Mask #14328C alpha 0.8
-  Bottom Solder Mask                      74936 triangles  material Bottom Solder Mask #14328C alpha 0.8
-  Top Silkscreen                          40454 triangles  material Top Silkscreen #F0F0EC alpha 1.0
+  Top Solder Mask                        154968 triangles  material Top Solder Mask #14328C alpha 0.8
+  Bottom Solder Mask                      75038 triangles  material Bottom Solder Mask #14328C alpha 0.8
+  Top Silkscreen                          40466 triangles  material Top Silkscreen #F0F0EC alpha 1.0
   Bottom Silkscreen                       15824 triangles  material Bottom Silkscreen #F0F0EC alpha 1.0
+  Top Finish Gold                        111594 triangles  material Gold #E6C15A alpha 1.0
+  ...
 
 timing
   read               0.1 s
   collect            1.0 s
-  resolve            2.4 s
-  geometry           1.9 s
+  resolve            2.3 s
+  geometry           9.2 s
   materials          0.0 s
-  assemble          11.9 s
-  write              9.0 s
-  verify             3.7 s
+  assemble           6.8 s
+  write             10.9 s
+  verify             3.5 s
 
 Verifier: PASS
   ...
@@ -205,10 +215,11 @@ case as Windows and macOS file systems do, so no file replaces another.
 
 `tests/test_boards.py` writes its runs to `tests/out/`, which is deleted at the start of every
 test run and ignored by git. `tests/test_layout.py`, `tests/test_colors.py`,
-`tests/test_kicad_version.py`, `tests/test_enabled.py` and `tests/test_verifier.py` write nothing, and
+`tests/test_kicad_version.py`, `tests/test_enabled.py`, `tests/test_verifier.py`,
+`tests/test_boundary.py`, `tests/test_copper_union.py` and `tests/test_pairs.py` write nothing, and
 `tests/test_step_native.py`, `tests/test_step_arcs.py`, `tests/test_text_layout.py`,
-`tests/test_bad_input.py` and `tests/test_parallel.py` write only in a temporary folder that they
-remove.
+`tests/test_bad_input.py`, `tests/test_parallel.py` and `tests/test_full_disk.py` write only in a
+temporary folder that they remove.
 
 | Previous | Next |
 |:---|---:|

@@ -57,10 +57,14 @@ X_k = \begin{cases} \bigcup_{h : a_h \le k \le b_h} \left( H_h \ominus w_h \righ
 | $`\ominus w`$ | shrinks a region inward by $`w`$ (a negative buffer) | |
 | $`\varepsilon`$ | simplification tolerance (0.5 µm) | `Geometry.SIMPLIFY_TOLERANCE_MM` |
 
-Three clean-ups follow, both for shapes of one net that only just meet:
+Three clean-ups follow, all for shapes of one net that only just meet:
 
-- The union is taken on the grid, so two edges that run along one line only to within floating
-  point (two zone fills, a fill and a pad) join without a crack.
+- The union is taken in floating point and then rounded to the grid as a whole, so two edges that
+  run along one line only to within floating point (two zone fills, a fill and a pad) meet on the
+  grid and join without a crack, and a crack narrower than the grid closes
+  (`kese/s3_resolve/copper.py`, `net_union`). Each edge moves by less than a grid step. A union on
+  the grid, which rounds every item first, costs about three times as much on a big board; it is
+  still used where GEOS cannot join the items in floating point.
 - A hole in $`C_{k,n}`$ whose mean width, twice its area over its perimeter, is under 1 µm is
   filled. Such needle holes are left where a zone fill runs round a pad or via of its own net
   with other arcs than the pad's own polygon (on one KiCad 10 board 193 of them, and no hole

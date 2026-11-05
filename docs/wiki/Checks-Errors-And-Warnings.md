@@ -49,6 +49,7 @@ python tests/test_boards.py                     # the regression suite over ever
 | `--set <item>: give it a value, as in <item>=value` | A `--set` without `=`. |
 | `--for <name>: parameters/<module>.py has no parameter <NAME> (did you mean <NAME>?)` | A preset in `parameters/presets.py` names a setting that does not exist; its names are checked as a `--set` is, before anything runs, exit code 2. |
 | `no boards given and none found in Input/` | Put a board in `Input/` or give a path. |
+| `OSError: [Errno 28] No space left on device` (the last line of the traceback; or another error writing a file, such as `PermissionError`) | The disk filled while the files were written. The file being written is removed (an OBJ with its MTL), so no half-written file is left to be opened; the files written whole before it stay, and the run folder is removed when nothing in it was written whole. Free some space and run again. |
 
 ### 17.1.2 Warnings
 
@@ -349,8 +350,29 @@ note, an error in a part raised at once with the other workers stopped, a caller
 not kept waiting, the workers first in line for Linux's out-of-memory killer, KESE run inside a
 `multiprocessing.Pool`, a script without `if __name__ == "__main__":` not run again in each
 worker, Ctrl-C ending the workers with one traceback, and the workers gone when the main process is
-killed, in about ten seconds (`python tests/test_parallel.py`); and two STEP tests, also on their
-own (`python tests/test_step_native.py`, `python tests/test_step_arcs.py`):
+killed, in about ten seconds (`python tests/test_parallel.py`); `tests/test_boundary.py`, which
+finds stage 6's shortcuts giving what the long way gives: the vertices that parts have twice found
+for all parts of a slice at once as part by part (on hand-made and 300 random parts), the flat
+faces found again only next to a slice that changed as found again at every height, faces cut only
+where two slices differ, group by group, as a cut of the whole slices (and no face where two rings
+are the same from another start), slices spanned by the same prisms made once, and a part whose
+slices meet at T-junctions with every vertex shared and a closed, consistently wound mesh (which
+it is not without the sharing), in under a second (`python tests/test_boundary.py`);
+`tests/test_copper_union.py`, which joins a net's items as stage 3 does and finds two fills that
+meet only to within floating point joined with no crack, a crack narrower than the grid closed,
+items apart kept apart, the area within a grid step of the exact union and nearer it than a union
+on the grid, no burr past the board edge once clipped to the outline, and the union on the grid
+used where GEOS refuses, in under a second (`python tests/test_copper_union.py`);
+`tests/test_pairs.py`, which finds the pieces within a distance of each other that an STRtree's
+search finds, among a zone fill of many points and small pads, pieces exactly the distance apart
+and a hair further, with no piece left prepared, in under a second (`python tests/test_pairs.py`);
+`tests/test_full_disk.py`, which fills the disk half-way through each file a run writes, and at its
+last byte (where a STEP file's assembly is written as it closes), and finds the file being written
+gone, the files written before it as they are with room on the disk, the system's own error, a run
+folder that nothing was written whole into removed, and a half `parameters.txt` removed, in a few
+seconds (`python tests/test_full_disk.py`);
+and two STEP tests, also on their own (`python tests/test_step_native.py`,
+`python tests/test_step_arcs.py`):
 
 | Test | Path | What it checks |
 |---|---|---|
