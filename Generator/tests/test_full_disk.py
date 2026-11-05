@@ -1,6 +1,7 @@
 """A disk that fills up while the files are written: no half-written file is left behind, the
-files written whole before it stay as they are, the error is the system's own, and a run folder
-left empty is removed.  The disk is made full by letting the files opened for writing in a
+files written whole before it stay as they are, the error is the system's own (a clean-up that
+fails too does not hide it), and a run folder left empty is removed; and two runs started together
+each get a folder of their own.  The disk is made full by letting the files opened for writing in a
 temporary folder take only so many bytes in all.  Takes a few seconds.
 
     python -m pytest tests/test_full_disk.py           (or:  python tests/test_full_disk.py)"""
@@ -10,13 +11,14 @@ import io
 import re
 import sys
 import tempfile
+from concurrent.futures import ThreadPoolExecutor
 from contextlib import contextmanager
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 
-from kese.core.whole_files import remove_if_empty  # noqa: E402
+from kese.core.whole_files import remove_if_empty, whole  # noqa: E402
 from kese.job import start  # noqa: E402
 from kese.s1_read import read  # noqa: E402
 from kese.s2_collect import collect  # noqa: E402
@@ -25,6 +27,7 @@ from kese.s4_geometry import geometry  # noqa: E402
 from kese.s5_materials import materials  # noqa: E402
 from kese.s6_assemble import assemble  # noqa: E402
 from kese.s7_write import write  # noqa: E402
+from kese.s7_write.output_folder import new_folder  # noqa: E402
 from kese.s9_report.report import write_parameters  # noqa: E402
 
 PCB = ROOT / "tests" / "boards" / "six_layer.kicad_pcb"
@@ -181,9 +184,53 @@ def test_only_empty_folders_are_removed():
         assert (run / "stl" / "a.stl").is_file()
 
 
+def test_a_clean_up_that_fails_does_not_hide_the_error():
+    """The full disk is the error that comes out, even when the half-written file cannot be removed
+    (a folder made read-only meanwhile) and the folders cannot be either."""
+    with tempfile.TemporaryDirectory() as tmp:
+        path = Path(tmp) / "board" / "simulation_GLB" / "board.glb"
+        path.parent.mkdir(parents=True)
+        unlink, rmdir = Path.unlink, Path.rmdir
+
+        def refused(self, *args, **kwargs):
+            raise PermissionError(errno.EACCES, "Permission denied", str(self))
+        Path.unlink = Path.rmdir = refused
+        try:
+            with whole(path), open(path, "wb") as f:
+                f.write(b"half")
+                raise OSError(errno.ENOSPC, "No space left on device")
+        except OSError as e:
+            assert e.errno == errno.ENOSPC, e
+        else:
+            raise AssertionError("the error did not come out")
+        finally:
+            remove_if_empty(path.parent)                       # refused too: no error of its own
+            Path.unlink, Path.rmdir = unlink, rmdir
+
+
+def test_two_runs_started_together_get_a_folder_each():
+    """Another run makes the folder between this run's look and its making of it: this run takes the
+    next name instead of stopping (looked at as if the folder were free, then made); and sixteen at
+    once, in threads, get sixteen folders."""
+    with tempfile.TemporaryDirectory() as tmp:
+        first = new_folder(tmp, "board", "simulation", ["glb"])
+        exists = Path.exists
+        Path.exists = lambda self, *args, **kwargs: False      # every look says free
+        try:
+            second = new_folder(tmp, "board", "simulation", ["glb"])
+        finally:
+            Path.exists = exists
+        assert (first.name, second.name) == ("simulation_GLB", "simulation_GLB__1"), (first, second)
+        with ThreadPoolExecutor(16) as pool:
+            made = list(pool.map(lambda _: new_folder(tmp, "board", "visual", ["glb", "obj"]), range(16)))
+        assert len(set(made)) == 16 and all(p.is_dir() for p in made), sorted(p.name for p in made)
+
+
 if __name__ == "__main__":
     test_a_full_disk_leaves_only_whole_files()
     test_a_run_whose_first_file_does_not_fit_leaves_no_folder()
     test_the_settings_file_that_does_not_fit_is_not_left_half_written()
     test_only_empty_folders_are_removed()
+    test_a_clean_up_that_fails_does_not_hide_the_error()
+    test_two_runs_started_together_get_a_folder_each()
     print("ok")

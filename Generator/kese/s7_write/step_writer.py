@@ -170,7 +170,9 @@ class StepWriter:
 
     def discard(self):
         """Close and remove the file: nothing in it, or an error on the way.  Closing writes what is
-        left in the buffer, which fails again on a full disk; the file goes all the same."""
+        left in the buffer, which fails again on a full disk; the file goes all the same, and the
+        error that called for this goes on, not one of the clean-up's."""
         with contextlib.suppress(OSError):
             self.file.close()
-        self.path.unlink(missing_ok=True)
+        with contextlib.suppress(OSError):
+            self.path.unlink(missing_ok=True)
