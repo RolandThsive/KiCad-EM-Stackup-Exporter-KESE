@@ -189,7 +189,8 @@ height and their regions share an area. Every polygon of every slice is shrunk b
 first: parts that only touch, along an edge or across the grid step that sharing vertices may
 bend an edge by, then no longer meet. An R-tree finds the polygons whose boxes meet; of those
 from different parts that overlap in height, the shrunk polygons are tested, and every pair that
-still meets is reported with the volume the two parts share:
+still meets is reported with the volume the two parts share. The slices are split into polygons,
+and the polygons shrunk and tested, `Parallel.WORKERS` at a time in threads:
 
 ```math
 V_{AB} = \operatorname{area}\left( R_A \cap R_B \right) \cdot h_{AB}, \qquad h_{AB} = \min\left( z^{A}_{1}, z^{B}_{1} \right) - \max\left( z^{A}_{0}, z^{B}_{0} \right) \qquad (17.1)
@@ -217,7 +218,7 @@ faces and walls do not meet on the same edges (see the `faces and walls still ch
 means the solid holds more or less material than the prisms it was built from. An overlap line
 other than `none` means two parts share material; it names the two parts and the heights of the
 biggest overlap (of overlaps as big, the first by part name, so the line is the same however many
-worker processes ran), and how many places there are. All of these are bugs worth reporting with the
+worker processes and threads ran), and how many places there are. All of these are bugs worth reporting with the
 board file.
 
 ## 17.4 The Regression Suite
