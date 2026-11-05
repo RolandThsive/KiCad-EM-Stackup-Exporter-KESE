@@ -51,6 +51,11 @@ parts[off] = shapely.set_precision(parts[off], grid())      # Geometry.SNAP_GRID
   have the very same edges and heights: no gap and no overlap between them, and every part's
   surface closes. The Verifier's overlap test finds no shared material on any board of the
   regression suite.
+- Cuts are taken on the grid (`shapes2d.diff` and `inter`). Where GEOS refuses one, the regions
+  are made valid and the cut tried again; where it still refuses, both are put on the grid first
+  (`snap`) and the cut made again. That last step is for a slice joined in floating point whose
+  sliver holes, thinner than a grid step, snap rounding cannot place (the visual skin of a KiCad 4
+  board stopped there).
 - Where a region would pinch to a point (two pieces touching at one vertex), a disc of
   `Geometry.PINCH_POINT_OPENING_MM` is cut out of the smaller piece so that the solid can close
   (`kese/core/pinches.py`). Those vertices sit just off the grid.

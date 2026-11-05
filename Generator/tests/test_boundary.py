@@ -7,7 +7,8 @@ spanned by the same regions are made once; two regions have the same vertices wh
 their rings start at; and a part whose slices meet at T-junctions comes out with every vertex
 shared (no vertex of one face or slice lies on the edge of another at its height without being
 one of its vertices too) and a closed, consistently wound mesh, as does a band one grid step wide
-that ends in two needle tips a hair apart (a board's gold, where faces cut on the grid left it open).
+that ends in two needle tips a hair apart (a board's gold, where faces cut on the grid left it open);
+and a cut that snap rounding refuses on the grid is made with both regions put on the grid first.
 
     python -m pytest tests/test_boundary.py        (or:  python tests/test_boundary.py)"""
 import sys
@@ -140,6 +141,26 @@ def test_a_band_ending_in_two_needle_tips_a_hair_apart_closes():
     assert abs(b.volume() - b.volume_of_slices()) <= 1e-9 * b.volume_of_slices()
 
 
+def test_a_cut_snap_rounding_refuses_is_made_with_both_regions_on_the_grid():
+    """A face of the visual skin of the same board (r0891 of the corpus) less the slice above it,
+    joined in floating point: a sliver hole of the slice, thinner than a grid step, ends on the face's
+    corner, and GEOS refuses the cut on the grid ("Ring edge missing"), the regions made valid or not;
+    the run stopped there.  With both put on the grid first, the cut comes out on the grid, valid,
+    and within a grid step of the cut in floating point."""
+    face = shapely.from_wkt("POLYGON ((12.6735 26.6841, 12.6735 26.6842, 12.6771 26.6985, 12.6811 26.7097, 12.6837 26.7091, "
+                            "12.6714 26.6485, 12.6689 26.649, 12.6695 26.66, 12.6717 26.6754, 12.6718 26.6758, "
+                            "12.6723 26.6794, 12.6735 26.6841))")
+    above = Polygon([(12.676618497109827, 26.6738), (12.671471428571428, 26.6738), (12.67165, 26.67505),
+                     (12.671396640537514, 26.6738), (12.663400000000001, 26.6738), (12.663400000000001, 26.693800000000003),
+                     (12.67545039193729, 26.693800000000003), (12.673523559457298, 26.68429358339982),
+                     (12.675916783216783, 26.693800000000003), (12.680664739884394, 26.693800000000003)],
+                    [[(12.6735, 26.6841), (12.6735, 26.684177348066303), (12.671993670886065, 26.676745569620206)]])
+    cut = sh.diff(face, above)
+    assert cut.is_valid and sh.on_grid(shapely.get_parts(cut)).all()
+    exact = shapely.difference(face, above)
+    assert shapely.symmetric_difference(cut, exact).area <= sh.grid() * exact.length
+
+
 def vertex_set(g):
     return set(map(tuple, np.round(ring_points(g) / sh.grid()).astype(np.int64).tolist()))
 
@@ -186,6 +207,7 @@ if __name__ == "__main__":
     test_flat_faces_found_again_only_next_to_a_changed_slice_are_all_of_them_found_again()
     test_a_part_meeting_at_t_junctions_shares_its_vertices_and_closes()
     test_a_band_ending_in_two_needle_tips_a_hair_apart_closes()
+    test_a_cut_snap_rounding_refuses_is_made_with_both_regions_on_the_grid()
     test_faces_are_cut_only_where_the_slices_differ_and_come_out_as_a_whole_cut_does()
     test_slices_spanned_by_the_same_regions_are_made_once()
     test_two_regions_have_the_same_vertices_whatever_point_their_rings_start_at()

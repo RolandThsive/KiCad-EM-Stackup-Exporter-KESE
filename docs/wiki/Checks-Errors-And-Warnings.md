@@ -366,9 +366,10 @@ faces found again only next to a slice that changed as found again at every heig
 where two slices differ, group by group, as a cut of the whole slices (and no face where two rings
 are the same from another start), slices spanned by the same prisms made once, and a part whose
 slices meet at T-junctions with every vertex shared and a closed, consistently wound mesh (which
-it is not without the sharing), and a band one grid step wide ending in two needle tips a hair
-apart closed too (which it is not with faces cut on the grid), in under a second
-(`python tests/test_boundary.py`);
+it is not without the sharing), a band one grid step wide ending in two needle tips a hair
+apart closed too (which it is not with faces cut on the grid), and a skin face whose cut GEOS
+refuses on the grid cut with both regions put on the grid first, valid and within a grid step of
+the cut in floating point, in under a second (`python tests/test_boundary.py`);
 `tests/test_copper_union.py`, which joins a net's items as stage 3 does and finds two fills that
 meet only to within floating point joined with no crack, a crack narrower than the grid closed,
 items apart kept apart, the area within a grid step of the exact union and nearer it than a union
