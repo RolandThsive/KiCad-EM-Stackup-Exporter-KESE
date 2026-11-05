@@ -143,26 +143,6 @@ def as_region(polys):
     return shapely.MultiPolygon(polys) if len(polys) > 1 else polys[0] if polys else EMPTY
 
 
-def part_touching(g):
-    """Parts of a multipolygon that touch each other at a point (or along a line) are pulled
-    apart by Geometry.PINCH_POINT_OPENING_MM so every solid is manifold on its own."""
-    parts = list(g.geoms)
-    tree = shapely.STRtree(parts)
-    pairs = tree.query(parts, predicate="touches")
-    touching = set(pairs[0].tolist()) | set(pairs[1].tolist())
-    if not touching:
-        return g
-    eps = G().PINCH_POINT_OPENING_MM / 2
-    out = []
-    for i, p in enumerate(parts):
-        if i in touching:
-            q = shapely.set_precision(p, 0).buffer(-eps, join_style="mitre")
-            out += [x for x in polygons(q) if x.area > G().SLIVER_AREA_MM2]
-        else:
-            out.append(p)
-    return shapely.MultiPolygon(out) if out else EMPTY
-
-
 def diff(a, b):
     return _overlay(shapely.difference, a, b)
 
@@ -211,22 +191,3 @@ def exact_diff(a, b):
         return exactly(shapely.difference(polys_only(a), polys_only(b)))
     except shapely.errors.GEOSException:
         return diff(a, b)
-
-
-def polygons(g):
-    """The polygons of a region, as built into 3D, those that touch at a point or along a line pulled
-    apart by PINCH_POINT_OPENING_MM (the last step before extrusion: a grid operation would rejoin them)."""
-    g = polys_only(g)
-    if g.is_empty:
-        return []
-    if g.geom_type != "MultiPolygon":
-        return [g]
-    return list(part_touching(g).geoms)
-
-
-# ---- footprint placement -------------------------------------------------------------------------
-def make_transform(at_numbers):
-    """Footprint local -> board coordinates."""
-    if not at_numbers:
-        return lambda p: p
-    return geo.rotation((at_numbers[0], at_numbers[1]), at_numbers[2] if len(at_numbers) > 2 else 0.0)

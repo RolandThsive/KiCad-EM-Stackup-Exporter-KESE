@@ -1,6 +1,7 @@
 """Pinch points: where two pieces or rings touch at a point, or a vertex lies within a grid step
 of another ring, a disc is cut out of the smaller piece (doubled until clear); where pieces below
-and above a height meet along an edge, a strip is cut (open_pinches_between)."""
+and above a height meet along an edge, a strip is cut (open_pinches_between).  And a region's
+polygons with those that touch pulled apart (polygons), as the overlap check takes them."""
 import numpy as np
 import shapely
 
@@ -137,3 +138,34 @@ def ring_edges(parts):
     key = grid_keys(xy)
     e = np.flatnonzero(ring[1:] == ring[:-1])                          # the edge from point e to e + 1
     return key[e], key[e + 1], of_part[ring[e]], xy[e], xy[e + 1]
+
+
+def polygons(g):
+    """The polygons of a region, as built into 3D, those that touch at a point or along a line pulled
+    apart by PINCH_POINT_OPENING_MM (the last step before extrusion: a grid operation would rejoin them)."""
+    g = sh.polys_only(g)
+    if g.is_empty:
+        return []
+    if g.geom_type != "MultiPolygon":
+        return [g]
+    return list(part_touching(g).geoms)
+
+
+def part_touching(g):
+    """Parts of a multipolygon that touch each other at a point (or along a line) are pulled
+    apart by Geometry.PINCH_POINT_OPENING_MM so every solid is manifold on its own."""
+    parts = list(g.geoms)
+    tree = shapely.STRtree(parts)
+    pairs = tree.query(parts, predicate="touches")
+    touching = set(pairs[0].tolist()) | set(pairs[1].tolist())
+    if not touching:
+        return g
+    eps = sh.G().PINCH_POINT_OPENING_MM / 2
+    out = []
+    for i, p in enumerate(parts):
+        if i in touching:
+            q = shapely.set_precision(p, 0).buffer(-eps, join_style="mitre")
+            out += [x for x in polygons(q) if x.area > sh.G().SLIVER_AREA_MM2]
+        else:
+            out.append(p)
+    return shapely.MultiPolygon(out) if out else sh.EMPTY

@@ -4,8 +4,8 @@ not meet), the candidates found by an R-tree."""
 import numpy as np
 import shapely
 
-from kese.core import shapes2d as sh
 from kese.core.boundary import HEIGHT_DIGITS
+from kese.core.pinches import polygons
 from parameters import P
 
 HEIGHT_TOLERANCE_MM = 10 ** -HEIGHT_DIGITS      # heights are told apart to this, as the slices are cut
@@ -17,7 +17,7 @@ def overlaps(model):
     rows = [(part, z0, z1, region) for part, b in model.boundaries.items() for z0, z1, region in b.slices]
     owner, polys = [], []
     for k, (_, _, _, region) in enumerate(rows):
-        for poly in sh.polygons(region):
+        for poly in polygons(region):
             owner.append(k)
             polys.append(poly)
     if not polys:
