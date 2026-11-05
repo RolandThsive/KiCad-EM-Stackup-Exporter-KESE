@@ -158,10 +158,11 @@ use; `1`: everything in turn, in one process), and at most `Parallel.PROCESS_WOR
 |---|---|---|
 | 3 resolve | the copper layers | threads |
 | 4 geometry | the top and bottom solder mask, then the top and bottom silkscreen; the finish's hole spans and copper layers | threads |
-| 6 assemble, simulation mode | the parts' solids, the biggest part first | processes |
+| 6 assemble, simulation mode | the parts' solids, the biggest part first, and with the Verifier on their checks | processes |
 | 6 assemble, visual mode | each part sliced | processes |
 | 6 assemble, visual mode | the faces, the walls and the test for hidden triangles | threads |
 | 7 write, STEP | each part's topology and arcs, then its entities' text | processes |
+| 8 verify, simulation mode | the overlap check: the slices split into polygons, then shrunk and tested | threads |
 
 - Threads where the 2D geometry library, GEOS, does the work: it runs outside Python's lock.
   Processes where much of the work is Python's own, which threads would take in turn. Parts that

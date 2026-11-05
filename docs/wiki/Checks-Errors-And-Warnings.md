@@ -127,7 +127,9 @@ stroke font.
 `kese/s8_verify/`, run with `--verify` or `Verifier.VERIFY = True`. It checks the meshes that
 GLB, STL and OBJ are written from and, in simulation mode, the faces that the STEP file is
 written from, not the input. The STEP file itself is not read back at run time (the regression
-suite reads it back with OCP).
+suite reads it back with OCP). In simulation mode each part's own checks (closed, wound, its
+volumes) are made where the part is built, in its stage 6 worker, while it is at hand
+(`kese/core/part_checks.py`); stage 8 reads them and writes the same lines it would make itself.
 
 | Mode | Check | Pass condition |
 |---|---|---|
@@ -343,7 +345,9 @@ where a number belongs, a binary or UTF-16 file) stop with the file named and th
 zero is read as not given with a warning, a board too thin for its copper stops with the setting to change,
 and a byte order mark is passed over, in about two seconds
 (`python tests/test_bad_input.py`); `tests/test_verifier.py`, which finds the Verifier's visual check
-meeting the same faces on every ray with the board `upright` and `flat`, in under a second
+meeting the same faces on every ray with the board `upright` and `flat`, the checks made where each
+part is built giving the report stage 8 gives on its own, an open part they found failing the
+run, and the overlap check finding the same overlaps in threads as in one, in a few seconds
 (`python tests/test_verifier.py`); `tests/test_parallel.py`, which finds a thread's
 own copies of shapes to be the same shapes, each part on its grid, made only where GEOS needs them,
 and threads working on their own copies of one shape not crashing; finds threads taking turns with

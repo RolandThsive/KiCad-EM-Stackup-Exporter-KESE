@@ -1,19 +1,34 @@
 """The Verifier's visual check (kese/s8_verify/meshes.py): its rays run along the board's normal in
 either orientation (Run.ORIENTATION), so a correct skin passes "flat" as it passes "upright", with
-the same faces met on every ray.  Takes a moment.
+the same faces met on every ray.  In simulation mode, the checks made where each part is built
+(kese/core/part_checks.py) give the report stage 8 gives on its own, an open part they found
+fails the run, and the overlap check finds the same overlaps in threads as in one.  Takes a few
+seconds.
 
     python -m pytest tests/test_verifier.py         (or:  python tests/test_verifier.py)"""
 import sys
 from pathlib import Path
+from types import SimpleNamespace
 
 import numpy as np
+from shapely.affinity import translate
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 
 from kese.core.mesh import Mesh  # noqa: E402
+from kese.core.part_checks import mesh_check  # noqa: E402
+from kese.job import start  # noqa: E402
+from kese.s1_read import read  # noqa: E402
+from kese.s2_collect import collect  # noqa: E402
+from kese.s3_resolve import resolve  # noqa: E402
+from kese.s4_geometry import geometry  # noqa: E402
+from kese.s5_materials import materials  # noqa: E402
+from kese.s6_assemble import assemble  # noqa: E402
 from kese.s6_assemble.transform import output_transform  # noqa: E402
+from kese.s8_verify import overlap  # noqa: E402
 from kese.s8_verify.meshes import _skin_surfaces  # noqa: E402
+from kese.s8_verify.verify import every_check  # noqa: E402
 from parameters import P  # noqa: E402
 
 CORNERS = np.array([(x, y, z) for z in (0, 1) for y in (0, 1) for x in (0, 1)], dtype=float)
@@ -42,6 +57,64 @@ def test_the_visual_check_runs_along_the_board_normal_in_either_orientation():
     assert set(met["upright"]) == {2, 4} and met["flat"] == met["upright"], met
 
 
+def checked_model(pcb):
+    """A board's Model in simulation mode with the Verifier on, its parts built (and checked) in
+    two worker processes."""
+    saved = {k: getattr(P.Parallel, k) for k in ("WORKERS", "PROCESS_MIN_COORDINATES")}
+    P.override("Parallel.WORKERS", 2)
+    P.override("Parallel.PROCESS_MIN_COORDINATES", 0)
+    try:
+        job = start("simulation", ["glb"], None, (), True, lambda s: None)
+        out = str(pcb)
+        for stage in (read, collect, resolve, geometry, materials, assemble):
+            out = stage.run(out, job)
+        job.status.stop()
+    finally:
+        for k, v in saved.items():
+            P.override(f"Parallel.{k}", v)
+    return out
+
+
+def test_the_checks_made_where_the_parts_are_built_give_the_same_report():
+    model = checked_model(ROOT / "tests" / "boards" / "six_layer.kicad_pcb")
+    assert set(model.checks) == set(model.boundaries) and set(model.meshes) <= set(model.checks)
+    ok, lines = every_check(model)
+    model.checks.clear()                               # stage 8 checks every part itself
+    assert every_check(model) == (ok, lines) and ok, lines
+
+
+def test_an_open_part_found_where_it_was_built_fails_the_run():
+    model = checked_model(ROOT / "tests" / "boards" / "six_layer.kicad_pcb")
+    part = next(iter(model.meshes))
+    m = model.meshes[part]
+    _, volumes = model.checks[part]
+    model.checks[part] = (mesh_check(Mesh(m.vertices, m.faces[1:]), model.units), volumes)     # a face missing
+    ok, lines = every_check(model)
+    assert not ok and lines[0] == "Verifier: FAIL" and any(l.startswith(f"  {part} ") and "closed=False" in l for l in lines)
+
+
+def test_the_overlap_check_finds_the_same_overlaps_in_threads_as_in_one():
+    model = checked_model(ROOT / "tests" / "boards" / "six_layer.kicad_pcb")
+    assert overlap.overlaps(model) == []
+    for part in list(model.boundaries)[:6]:           # each a copy of its own, shifted a little
+        slices = [(z0, z1, translate(g, 0.05, 0.03)) for z0, z1, g in model.boundaries[part].slices]
+        model.boundaries[f"{part} copy"] = SimpleNamespace(slices=slices)
+    saved = P.Parallel.WORKERS, overlap.LEAST_PER_THREAD
+    try:
+        P.override("Parallel.WORKERS", 1)
+        alone = overlap.overlaps(model)
+        P.override("Parallel.WORKERS", 3)
+        overlap.LEAST_PER_THREAD = 1                  # every group a thread's
+        assert len(overlap.dealt(np.arange(50), np.ones(50), 50)) == 12
+        assert len(alone) > 100 and overlap.overlaps(model) == alone
+    finally:
+        P.override("Parallel.WORKERS", saved[0])
+        overlap.LEAST_PER_THREAD = saved[1]
+
+
 if __name__ == "__main__":
     test_the_visual_check_runs_along_the_board_normal_in_either_orientation()
+    test_the_checks_made_where_the_parts_are_built_give_the_same_report()
+    test_an_open_part_found_where_it_was_built_fails_the_run()
+    test_the_overlap_check_finds_the_same_overlaps_in_threads_as_in_one()
     print("ok")

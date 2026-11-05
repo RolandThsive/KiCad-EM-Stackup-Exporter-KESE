@@ -6,6 +6,7 @@ import subprocess
 
 import numpy as np
 
+from kese.core.part_checks import mesh_check
 from kese.s8_verify.overlap import overlaps
 from kese.s8_verify.vertical_rays import vertical_hits
 from parameters import P
@@ -16,17 +17,12 @@ def check_meshes(model, glb_path):
     lines = []
     meshes = model.meshes
     scale = 1000.0 if model.units == "m" else 1.0      # report in mm
-    # merge vertices at the geometry snap grid (Geometry.SNAP_GRID_MM), whatever the units
-    digits = int(round(-np.log10(P.Geometry.SNAP_GRID_MM / scale))) + 2
     ok = True
     if model.mode == "simulation":
-        for part, g in meshes.items():
-            m = g.copy()
-            m.merge_vertices(digits_vertex=digits)
-            closed, consistent = m.is_watertight, m.is_winding_consistent
-            vol = m.volume * scale ** 3
-            lines.append(f"  {part:36s} closed={closed} winding={consistent} volume={vol:.4f} mm3")
-            ok &= closed and consistent
+        for part, g in meshes.items():                  # checked where the part was built, or here
+            c = (model.checks.get(part) or (None,))[0] or mesh_check(g, model.units)
+            lines.append(f"  {part:36s} closed={c.closed} winding={c.consistent} volume={c.merged_volume * scale ** 3:.4f} mm3")
+            ok &= c.closed and c.consistent
         found = overlaps(model)
         lines.append("  overlap between different parts, every slice against the others: " + (
             f"worst {found[0][0]:.3e} mm3, {found[0][1]} and {found[0][2]} at z {found[0][3]:+.4f} .. "
