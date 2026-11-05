@@ -394,7 +394,9 @@ no drill too), and the band given back where there is no solid, in about half a 
 (`python tests/test_finish_shells.py`);
 `tests/test_pairs.py`, which finds the pieces within a distance of each other that an STRtree's
 search finds, among a zone fill of many points and small pads, pieces exactly the distance apart
-and a hair further, with no piece left prepared, in under a second (`python tests/test_pairs.py`);
+and a hair further, with no piece left prepared, and an index built before threads share it
+finding what an STRtree finds from eight threads at once, in under a second
+(`python tests/test_pairs.py`);
 `tests/test_full_disk.py`, which fills the disk half-way through each file a run writes, and at its
 last byte (where a STEP file's assembly is written as it closes), and finds the file being written
 gone, the files written before it as they are with room on the disk, the system's own error (also
