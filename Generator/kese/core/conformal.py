@@ -88,6 +88,18 @@ def around_raised(region, raised, t, quad_segs):
     return diff(region, as_region(rings)), as_region(tops), as_region(walls)
 
 
+def without_hairlines(region, h):
+    """The region without its pieces narrower than 2 h everywhere (those a buffer of -h empties), and
+    how many it left out.  Every point of such a piece lies within h of its edge, so its area is at
+    most h times its perimeter: only those pieces are buffered."""
+    parts = shapely.get_parts(polys_only(region))
+    if h <= 0 or not len(parts):
+        return region, 0
+    maybe = np.flatnonzero(shapely.area(parts) <= h * shapely.length(parts))
+    thin = maybe[shapely.is_empty(shapely.buffer(parts[maybe], -h))]
+    return (as_region(list(np.delete(parts, thin))), len(thin)) if len(thin) else (region, 0)
+
+
 def around_region(region, raised, t, quad_segs):
     """Every piece of the coating split on its own, against the raised copper inside a box around
     it wide enough that what the box cuts off cannot reach the piece once grown."""

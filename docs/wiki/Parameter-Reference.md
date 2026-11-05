@@ -150,6 +150,7 @@ Short name `SolderMask`. Details in [Solder Masks](Solder-Masks.md).
 | `PAD_TO_MASK_CLEARANCE_MM` | `None` | None or mm ≥ 0 | Clearance around pads and untented vias; `None` takes the board setup's value from the file. A number replaces only the board setup's value: a pad's or footprint's own `solder_mask_margin` in the file still wins |
 | `MASK_MIN_WIDTH_MM` | `None` | None or mm ≥ 0 | Narrowest web of mask kept between two openings; `None` follows Board Setup (`solder_mask_min_width`), 0 keeps every web |
 | `MASK_WEB_HAIRLINE_MM` | `1e-3` | mm ≥ 0 | A web the minimum width adds that is narrower than twice this is dropped |
+| `MASK_OVER_COPPER_HAIRLINE_MM` | `1e-3` | mm ≥ 0 | A piece of mask on top of copper narrower than twice this is left out: the slivers left where an opening's outline follows the copper's with other points ([Solder Masks](Solder-Masks.md#152-conformal-mask)); 0 keeps them |
 | `MASK_WALL_QUAD_SEGS` | `4` | int ≥ 1 | Segments per quarter circle on the walls where the mask climbs a trace |
 
 ## 16.5 Silkscreen (`parameters/silkscreen.py`)

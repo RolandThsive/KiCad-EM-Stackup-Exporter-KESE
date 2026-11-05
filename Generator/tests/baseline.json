@@ -609,17 +609,18 @@
   "Top Finish Gold": 0.005178873,
   "Top Finish Nickel": 0.323700627,
   "Top Silkscreen": 0.014102981,
-  "Top Solder Mask": 12.582531117
+  "Top Solder Mask": 12.582530817
  },
  "07_pad_shapes/visual": {
   "Board_dielectric 1": 1993.2,
   "Bottom Finish Gold": 0.0,
   "Bottom Silkscreen": 0.007558631,
   "Bottom Solder Mask": 13.614985114,
+  "Copper_P_CUSTOM_ARC": 0.0,
+  "Copper_P_CUSTOM_R": 0.0,
   "Top Finish Gold": 0.0,
-  "Top Mask over Copper": -3.2497e-05,
   "Top Silkscreen": 0.014102981,
-  "Top Solder Mask": 15.177179882
+  "Top Solder Mask": 15.177147238
  },
  "08_copper_graphics/simulation": {
   "Board_dielectric 1": 1087.2,

@@ -116,8 +116,21 @@ On the `B` side every z is mirrored ($`z \to -z`$).
 | $`t_{\mathrm{out}}`$ | finished outer copper thickness, equation (7.3) | |
 | $`L`$ | laminate thickness, equation (7.1) | |
 
-The wall's outer edge is rounded with `MASK_WALL_QUAD_SEGS` segments per quarter circle. In
-simulation mode all three go into one part per side, `Top Solder Mask` / `Bottom Solder Mask`.
+The wall's outer edge is rounded with `MASK_WALL_QUAD_SEGS` segments per quarter circle.
+
+Where an opening's outline follows the copper's, as for a pad with no mask margin, the two seldom
+match point for point: the opening's arc has other points than the pad's, or an edge rounds onto
+the grid a step off. $`M^{\mathrm{top}}`$ then holds slivers between the two outlines, most of
+them under a tenth of a micrometre wide (NE_Delta's front had 8,895 of its 9,775 pieces), which no
+fab makes and which stage 6 could not always close: one, a needle beside the wall's tip, traded
+vertices with the wall round after round. A piece of $`M^{\mathrm{top}}`$ narrower than twice
+`MASK_OVER_COPPER_HAIRLINE_MM` (1 µm) everywhere is left out, and `report.txt` counts them:
+`solder mask: 8895 slivers on the copper narrower than 0.002 mm left out (F.Mask)`. The copper
+there is left bare, as it is with the mask off: the finish covers the copper inside the opening,
+so the strip between the opening's outline and the copper's edge has neither; a visual-mode file
+may show it as a few triangles of copper.
+
+In simulation mode all three go into one part per side, `Top Solder Mask` / `Bottom Solder Mask`.
 In visual mode the **top** region becomes its own part,
 `Top Mask over Copper` / `Bottom Mask over Copper`, with its own colour
 ([Output Modes](Output-Modes.md)).
@@ -161,6 +174,7 @@ mask over the annular ring; its bore is still open.
 | `PAD_TO_MASK_CLEARANCE_MM` | `None` | None or mm ≥ 0 | Board-wide clearance around pads; `None` follows Board Setup. A pad's or footprint's own `solder_mask_margin` still wins |
 | `MASK_MIN_WIDTH_MM` | `None` | None or mm ≥ 0 | Narrowest web of mask kept between two openings, equation (15.2b); `None` follows Board Setup (`solder_mask_min_width`), 0 keeps every web |
 | `MASK_WALL_QUAD_SEGS` | `4` | int ≥ 1 | Curve quality of the walls beside traces |
+| `MASK_OVER_COPPER_HAIRLINE_MM` | `1e-3` | mm ≥ 0 | A piece of mask on top of copper narrower than twice this is left out (15.2); 0 keeps every one |
 
 | Previous | Next |
 |:---|---:|
