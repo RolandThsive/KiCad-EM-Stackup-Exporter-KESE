@@ -1,12 +1,14 @@
 """Work done on several processor cores at once.  In threads where the 2D geometry library (GEOS,
 under shapely) does the work, as it runs outside Python's lock; in processes of their own where
 Python's own steps are much of it (stage 6, which builds each part's solid)."""
+import contextlib
 import multiprocessing
 import multiprocessing.connection
 import os
 import signal
 import sys
 import threading
+import time
 import types
 from concurrent.futures import ProcessPoolExecutor, ThreadPoolExecutor, as_completed
 from concurrent.futures.process import BrokenProcessPool
@@ -19,6 +21,7 @@ from parameters import P
 WINDOWS_MOST = 61             # processes: ProcessPoolExecutor's limit on Windows (64 wait handles, less its own)
 NOT_STARTED = (OSError, NotImplementedError, BrokenProcessPool)    # no processes here (some sandboxes)
 LOST = (BrokenProcessPool, MemoryError)     # a worker stopped by the system, or out of memory
+STOP_WAIT_S = 10              # seconds stop() waits at most for the workers it ended to be gone
 
 shape_copies.register()                   # shapes keep their grid on the way to and from the workers
 
@@ -127,18 +130,25 @@ def in_processes(work, jobs, log=None, done="built"):
 
 
 def stop(pool):
-    """End a pool's workers now, with the parts they are building, and let the pool go."""
+    """End a pool's workers now, with the parts they are building, let the pool go, and wait until
+    they are gone (STOP_WAIT_S at most): then no worker writes a file any more (step_parts.py)."""
+    processes = list((getattr(pool, "_processes", None) or {}).values())    # shutdown() forgets them
     if hasattr(pool, "terminate_workers"):            # Python 3.14
         pool.terminate_workers()
-        return
-    processes = list((getattr(pool, "_processes", None) or {}).values())    # shutdown() forgets them
-    pool.shutdown(wait=False, cancel_futures=True)
+    else:
+        pool.shutdown(wait=False, cancel_futures=True)
+        for process in processes:
+            with contextlib.suppress(ValueError, ProcessLookupError):     # already ended and closed
+                if process.is_alive():
+                    process.terminate()
+    running = []
     for process in processes:
-        try:
-            if process.is_alive():
-                process.terminate()
-        except (ValueError, ProcessLookupError):      # already ended and closed
-            pass
+        with contextlib.suppress(ValueError):         # closed: ended already
+            running.append(process.sentinel)
+    end = time.monotonic() + STOP_WAIT_S
+    while running and time.monotonic() < end:
+        for ended in multiprocessing.connection.wait(running, timeout=end - time.monotonic()):
+            running.remove(ended)
 
 
 @contextmanager

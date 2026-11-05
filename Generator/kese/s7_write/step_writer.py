@@ -1,6 +1,7 @@
 """A STEP file (AP214, as OpenCascade writes it) put together from text: the header, one product
 per part with its solids and colour, and the assembly that holds the parts last."""
 import contextlib
+import shutil
 from datetime import UTC, datetime
 from pathlib import Path
 
@@ -8,6 +9,8 @@ from pathlib import Path
 ORIGIN, CONTEXT, DEFINITION, REPRESENTATION = 11, 19, 5, 10
 FIRST_FREE = 25
 PER_LINE = 8                      # references per line in a long list
+PRODUCT = 26                      # numbers add_part takes, and one per solid: 19 for the product, 7 for the colour
+COPY_CHUNK = 1 << 20              # bytes: a part's text is copied in this much at a time
 
 
 def real(x):
@@ -48,15 +51,13 @@ def refs(ids):
     return "(" + ",\n    ".join(",".join(ids[k:k + PER_LINE]) for k in range(0, len(ids), PER_LINE)) + ")"
 
 
-class StepWriter:
-    """reserve() ids, write() lines of entities, add_part() when a part's solids are written, then
-    close(), which writes the assembly (entities #1 to #24) at the end of the data section."""
+class Entities:
+    """Entities written into a file as text: reserve() numbers, from `first` on, and write() lines.
+    One part's alone in a worker (step_parts.py), or a whole file (StepWriter)."""
 
-    def __init__(self, path, name, units):
-        self.path, self.name, self.units = Path(path), name, units
-        self.file = open(self.path, "w", encoding="latin-1", newline="\n")   # noqa: SIM115  (open until close())
-        self.file.write(self.header())
-        self.next, self.placements, self.parts = FIRST_FREE, [], 0
+    def __init__(self, path, first):
+        self.path, self.next = Path(path), first
+        self.file = open(self.path, "w", encoding="latin-1", newline="\n")   # noqa: SIM115  (open until closed)
 
     def reserve(self, count):
         """The first of `count` fresh entity numbers."""
@@ -69,11 +70,30 @@ class StepWriter:
         if lines:
             self.file.write("\n".join(lines) + "\n")
 
+
+class StepWriter(Entities):
+    """reserve() ids, write() lines of entities (or add_text() a part's), add_part() when a part's
+    solids are written, then close(): the assembly (entities #1 to #24) ends the data section."""
+
+    def __init__(self, path, name, units):
+        super().__init__(path, FIRST_FREE)
+        self.name, self.units = name, units
+        self.file.write(self.header())
+        self.placements, self.parts = [], 0
+
+    def add_text(self, path, count):
+        """A part's entities, written on their own into the file at `path` with the `count` numbers
+        from this file's next one (Entities): copied in as they are."""
+        self.file.flush()
+        with open(path, "rb") as f:
+            shutil.copyfileobj(f, self.file.buffer, COPY_CHUNK)
+        self.next += count
+
     def add_part(self, name, rgb, solids):
         """The product that holds a part's solids (written already), its placement in the
         assembly, and its colour."""
         self.parts += 1
-        p = self.reserve(26 + len(solids))                 # 19 for the product, a STYLED_ITEM per solid, 7 for the colour
+        p = self.reserve(PRODUCT + len(solids))            # a STYLED_ITEM per solid
         placement = p + 8
         self.placements.append(placement)
         colour = p + 19 + len(solids)

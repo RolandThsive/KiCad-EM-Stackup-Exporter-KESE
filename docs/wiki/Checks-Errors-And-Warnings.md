@@ -350,12 +350,13 @@ and threads working on their own copies of one shape not crashing; finds threads
 one prepared copy of a slice's material, threads cutting faces only by the pieces of material that
 meet them, the test for hidden triangles letting go of its prepared slices, a set of holes joined once when threads ask for it at once, and the memory threads freed
 handed back (and kept with `Parallel.GIVE_BACK_MEMORY` off), and batches of any size giving the
-same result (a STEP part written in slices of any size the same to the byte); finds `Parallel.PROCESS_WORKERS`
+same result (a STEP part written in slices of any size the same to the byte, and a STEP file written
+part by part in worker processes the same as one written in one process, with no file left behind); finds `Parallel.PROCESS_WORKERS`
 capping the worker processes and boards under `Parallel.PROCESS_MIN_COORDINATES` kept in one
 process; sends shapes through stage 6's worker processes and finds them back on
 their grid (each part's too), of their type and with their SRID; and finds the run's settings in the
 workers, the parts of a lost worker and of one out of memory built in the main process with the
-note, an error in a part raised at once with the other workers stopped, a caller that stops early
+note, an error in a part raised at once with the other workers stopped and gone, a caller that stops early
 not kept waiting, the workers first in line for Linux's out-of-memory killer, KESE run inside a
 `multiprocessing.Pool`, a script without `if __name__ == "__main__":` not run again in each
 worker, Ctrl-C ending the workers with one traceback, and the workers gone when the main process is
@@ -382,8 +383,9 @@ and a hair further, with no piece left prepared, in under a second (`python test
 last byte (where a STEP file's assembly is written as it closes), and finds the file being written
 gone, the files written before it as they are with room on the disk, the system's own error (also
 when the clean-up after it is refused), a run folder that nothing was written whole into removed, a
-half `parameters.txt` removed, and runs started together each in a folder of their own, in a few
-seconds (`python tests/test_full_disk.py`);
+half `parameters.txt` removed, and runs started together each in a folder of their own; and the
+same with a big board's STEP parts written into files of their own and joined, none of them left
+behind, in about fifteen seconds (`python tests/test_full_disk.py`);
 and two STEP tests, also on their own (`python tests/test_step_native.py`,
 `python tests/test_step_arcs.py`):
 

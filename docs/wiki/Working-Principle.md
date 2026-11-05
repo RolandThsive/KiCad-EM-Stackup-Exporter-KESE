@@ -161,11 +161,18 @@ use; `1`: everything in turn, in one process), and at most `Parallel.PROCESS_WOR
 | 6 assemble, simulation mode | the parts' solids, the biggest part first | processes |
 | 6 assemble, visual mode | each part sliced | processes |
 | 6 assemble, visual mode | the faces, the walls and the test for hidden triangles | threads |
+| 7 write, STEP | each part's topology and arcs, then its entities' text | processes |
 
 - Threads where the 2D geometry library, GEOS, does the work: it runs outside Python's lock.
   Processes where much of the work is Python's own, which threads would take in turn. Parts that
-  hold under `Parallel.PROCESS_MIN_COORDINATES` coordinates in all (20,000) are built in the main
-  process, as starting the processes would take longer.
+  hold under `Parallel.PROCESS_MIN_COORDINATES` coordinates in all (20,000) are built, and written
+  to STEP, in the main process, as starting the processes would take longer.
+- A STEP file's parts are worked on in two rounds (`kese/s7_write/step_parts.py`). First each
+  part's topology and arcs, which give the exact number of entities the part takes, so that the
+  number its entities start from is known; then each part's entities, numbered from there, are
+  written into a file of their own, in a hidden folder beside the STEP file. The files are copied
+  into the STEP file in the parts' order and removed, and so is the folder, also when the write
+  fails (a full disk, Ctrl-C).
 - The results are put back in the layers', sides' and parts' order, so the files are the same,
   byte for byte, however many threads or processes ran (but for the times, as in 6.2).
 - A thread makes shapes only from its own copies of the shapes other threads use

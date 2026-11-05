@@ -3,7 +3,8 @@
 where the grid is not used: a join of shared regions is the same join), threads share one prepared
 copy of a slice's material and one set of joined holes, cut faces only by the pieces of material
 that meet them, work in batches of any size with the same
-result (the STEP writer's slices too, to the byte), and hand back the memory they freed (unless
+result (the STEP writer's slices too, to the byte, and a STEP file written part by part in worker
+processes), and hand back the memory they freed (unless
 Parallel.GIVE_BACK_MEMORY is off), Parallel.PROCESS_WORKERS caps the worker processes and boards under
 Parallel.PROCESS_MIN_COORDINATES stay in one process, shapes keep their grid (and type and SRID) on the way to and from the workers, the run's settings reach
 the workers, a lost worker or one out of memory leaves its jobs to the main process, an error in the
@@ -38,6 +39,7 @@ from kese.core.shape_copies import _owned, own  # noqa: E402
 from kese.s3_resolve.holes import made_once  # noqa: E402
 from kese.s6_assemble.skin_faces import cut_away, lies_against_material  # noqa: E402
 from kese.s6_assemble.skin_mesh import looks_at_material  # noqa: E402
+from kese.s7_write import step  # noqa: E402
 from kese.s7_write.step import write_part  # noqa: E402
 from kese.s7_write.step_writer import StepWriter  # noqa: E402
 from kese.s8_verify.vertical_rays import vertical_hits  # noqa: E402
@@ -315,6 +317,43 @@ def test_a_step_part_is_written_the_same_in_slices_of_any_size():
                 assert step_data(tmp, rows, arcs) == whole, (rows, arcs)
 
 
+def board_model(pcb):
+    """A board's Model in simulation mode (stages 1 to 6), built in this process."""
+    from kese.job import start
+    from kese.s1_read import read
+    from kese.s2_collect import collect
+    from kese.s3_resolve import resolve
+    from kese.s4_geometry import geometry
+    from kese.s5_materials import materials
+    from kese.s6_assemble import assemble
+    job = start("simulation", ["step"], None, (), False, lambda s: None)
+    out = str(pcb)
+    for stage in (read, collect, resolve, geometry, materials, assemble):
+        out = stage.run(out, job)
+    job.status.stop()
+    return out
+
+
+def test_a_step_file_written_in_processes_is_the_same_to_the_byte():
+    # each part's entities counted first, then written in a worker into a file of their own, and
+    # the files joined in order: the same file as one written part after part in this process,
+    # whatever the number of workers, with arcs and without, and no temporary file left behind
+    model = board_model(ROOT / "tests" / "boards" / "six_layer.kicad_pcb")
+    with tempfile.TemporaryDirectory() as tmp:
+        for arcs in (True, False):
+            files = {}
+            for workers, least in ((1, 10 ** 12), (2, 0), (3, 0)):
+                saved = with_workers(workers, ("Parallel.PROCESS_MIN_COORDINATES", least), ("Step.STEP_EXACT_ARCS", arcs))
+                try:
+                    path = step.write(model, Path(tmp) / f"{workers}_{arcs}.step", print)
+                finally:
+                    put_back(saved)
+                text = path.read_text(encoding="latin-1")
+                files[workers] = text[text.index("\nDATA;"):]
+            assert files[1] == files[2] == files[3] and ("CIRCLE(" in files[1]) == arcs, arcs
+        assert sorted(p.name for p in Path(tmp).iterdir()) == sorted(f"{w}_{a}.step" for w in (1, 2, 3) for a in (True, False))
+
+
 def test_joined_holes_are_made_once_when_threads_ask_at_once():
     made = []
 
@@ -445,7 +484,8 @@ def test_an_error_in_the_work_is_raised_at_once_and_not_taken_for_lost_processes
             put_back(saved)
         assert str(raised) == str(error) and time.time() - t0 < 15, (raised, time.time() - t0)
         assert notes == [], notes                    # not built again here
-        assert gone(before), "the workers building the other parts were not stopped"
+        # ended before the error is raised: a worker writing a file writes no more (step_parts.py)
+        assert not any(alive(w) for w in spawned() - before), "the workers building the other parts were not stopped"
 
 
 def test_a_caller_that_stops_early_does_not_wait():
@@ -594,6 +634,8 @@ if __name__ == "__main__":
     t.test_threads_cut_faces_by_the_pieces_that_meet_them_alone()
     t.test_the_probe_test_lets_go_of_its_prepared_slices()
     t.test_batches_of_any_size_give_the_same_result()
+    t.test_a_step_part_is_written_the_same_in_slices_of_any_size()
+    t.test_a_step_file_written_in_processes_is_the_same_to_the_byte()
     t.test_joined_holes_are_made_once_when_threads_ask_at_once()
     t.test_memory_freed_by_threads_is_handed_back()
     t.test_memory_is_kept_with_give_back_memory_off()
