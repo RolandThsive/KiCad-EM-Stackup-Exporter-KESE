@@ -356,8 +356,10 @@ meet them, the test for hidden triangles letting go of its prepared slices, a se
 handed back (and kept with `Parallel.GIVE_BACK_MEMORY` off), and batches of any size giving the
 same result (a STEP part written in slices of any size the same to the byte, a STEP file written
 part by part in worker processes the same as one written in one process, with no file left behind,
-and the copper layers joined in worker processes the same to the byte as in threads, and the
-solder mask's webs found group by group in threads the same as the whole layer's); finds `Parallel.PROCESS_WORKERS`
+and a part whose worker is lost half way written again in the main process to the same text; the
+copper layers joined in worker processes the same to the byte as in threads; the solder mask's webs
+found group by group in threads the same as the whole layer's, a stray line among the openings
+left out); finds `Parallel.PROCESS_WORKERS`
 capping the worker processes and boards under `Parallel.PROCESS_MIN_COORDINATES` kept in one
 process; sends shapes through stage 6's worker processes and finds them back on
 their grid (each part's too), of their type and with their SRID; and finds the run's settings in the
@@ -386,8 +388,9 @@ used where GEOS refuses, in under a second (`python tests/test_copper_union.py`)
 near it alone, and leaves an inner layer whose copper comes nowhere near the board edge without
 air, joining nothing; finds every finish prism of seven test boards as the cut by the whole board's
 union makes it, but for slivers thinner than a grid step; and finds a big part of the solid cut into
-tiles that fill it and do not overlap, and bores whose shells could meet put in one group, in about
-half a minute (`python tests/test_finish_shells.py`);
+tiles that fill it and do not overlap, bores whose shells could meet put in one group (a hole with
+no drill too), and the band given back where there is no solid, in about half a minute
+(`python tests/test_finish_shells.py`);
 `tests/test_pairs.py`, which finds the pieces within a distance of each other that an STRtree's
 search finds, among a zone fill of many points and small pads, pieces exactly the distance apart
 and a hair further, with no piece left prepared, in under a second (`python tests/test_pairs.py`);

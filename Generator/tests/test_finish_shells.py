@@ -3,8 +3,9 @@ the solid near it alone (air_near), a span's bores worked on in groups, and an i
 copper comes nowhere near the board edge left without air at once: every part's finish comes out,
 height by height, as the cut by the whole board's union makes it, but for slivers thinner than a
 grid step where an edge crossing rounds onto the grid another way.  A big part of the solid is cut
-into tiles that fill it and do not overlap, and bores whose shells could meet are put in one group.
-Takes about half a minute.
+into tiles that fill it and do not overlap, bores whose shells could meet are put in one group (a
+hole with no drill too), and where there is no solid the band is all air.  Takes about half a
+minute.
 
     python -m pytest tests/test_finish_shells.py    (or:  python tests/test_finish_shells.py)"""
 import sys
