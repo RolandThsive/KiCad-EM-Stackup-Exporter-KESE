@@ -355,6 +355,38 @@ def test_a_step_file_written_in_processes_is_the_same_to_the_byte():
         assert sorted(p.name for p in Path(tmp).iterdir()) == sorted(f"{w}_{a}.step" for w in (1, 2, 3) for a in (True, False))
 
 
+def test_a_step_part_whose_worker_is_lost_in_the_second_round_is_written_again_here():
+    # a worker lost while it writes a part's entities (out of memory) leaves the part's topology
+    # behind, so the main process writes the part again from it, to the same text
+    from kese.s7_write import step_parts
+    model = board_model(ROOT / "tests" / "boards" / "six_layer.kicad_pcb")
+    part = max(model.boundaries, key=lambda p: step_parts.size(model.boundaries[p]))
+    real = step_parts.write_brep
+
+    def lost(w, topo, transform):
+        w.write(["#100 = HALF_WRITTEN();"])
+        raise MemoryError
+
+    with tempfile.TemporaryDirectory() as tmp:
+        tmp = Path(tmp)
+        texts = []
+        for name, dies in (("clean", False), ("lost", True)):
+            kept, out = tmp / f"{name}.topology", tmp / f"{name}.step"
+            count = step_parts.found(part, model.boundaries[part], model.transform, kept)[0]
+            if dies:
+                step_parts.write_brep = lost
+                try:
+                    step_parts.written(kept, model.transform, 100, out)
+                    raise AssertionError("the lost write did not fail")
+                except MemoryError:
+                    assert kept.exists()
+                finally:
+                    step_parts.write_brep = real
+            assert step_parts.written(kept, model.transform, 100, out)[1] == count and not kept.exists()
+            texts.append(out.read_text(encoding="latin-1"))
+        assert texts[0] == texts[1] and "HALF_WRITTEN" not in texts[1]
+
+
 def copper_keys(pcb):
     """Stage 3's copper of a board, per layer and net and per layer, and its mask, as bytes and the
     grid of every part."""
@@ -705,6 +737,7 @@ if __name__ == "__main__":
     t.test_batches_of_any_size_give_the_same_result()
     t.test_a_step_part_is_written_the_same_in_slices_of_any_size()
     t.test_a_step_file_written_in_processes_is_the_same_to_the_byte()
+    t.test_a_step_part_whose_worker_is_lost_in_the_second_round_is_written_again_here()
     t.test_the_copper_layers_joined_in_processes_are_the_same_to_the_byte()
     t.test_the_mask_webs_found_group_by_group_are_the_whole_layer_s()
     t.test_joined_holes_are_made_once_when_threads_ask_at_once()

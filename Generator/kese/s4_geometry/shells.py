@@ -69,11 +69,11 @@ def air_near(regions):
     """band -> the band less the union of `regions`, on the grid, worked out for each of the band's
     parts on its own: the solid within MARGIN grid steps of the part's box, joined and put on the
     grid, is cut from it.  So no union of the whole board is made (on a big board that took most of
-    the holes' finish: 31 s of NE_Delta's, where its 1,911 bores take 6 s this way).  A big part of
-    the solid (the drilled board, a plane) is cut into tiles first, so that each bore clips only the
-    tiles near it.  The air comes out as the whole union's but where an edge crossing rounds onto the
-    grid another way: a sliver thinner than a grid step.  Called from threads: what it cuts is this
-    thread's own copies (kese/core/shape_copies.py)."""
+    the holes' finish: 31 s of NE_Delta's, where its 1,911 bores take about 7 s this way).  A big
+    part of the solid (the drilled board, a plane) is cut into tiles first, so that each bore clips
+    only the tiles near it.  The air comes out as the whole union's but where an edge crossing rounds
+    onto the grid another way: a sliver thinner than a grid step.  Called from threads: what it cuts
+    is this thread's own copies (kese/core/shape_copies.py)."""
     parts = [t for g in regions if g is not None for p in shapely.get_parts(sh.polys_only(g)) if not p.is_empty
              for t in tiles(p)]
     parts = np.array(parts, dtype=object)

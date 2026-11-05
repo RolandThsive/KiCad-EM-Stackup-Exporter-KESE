@@ -31,7 +31,7 @@ PROCESS_WORKERS = 0
 # (on a board of 1,000 nets or more: kese/s3_resolve/copper.py); smaller boards are built part after
 # part in the main process, which is faster than starting the processes (about 0.3 s for 4): one of
 # the test boards takes 0.10 s that way, and 0.35 s in processes.  0 = processes for every board of
-# more than one part.
+# more than one part (in stage 3, of 1,000 nets or more).
 PROCESS_MIN_COORDINATES = 20_000
 
 # Hand the memory that threads freed back to the system after each step done in threads, and in each

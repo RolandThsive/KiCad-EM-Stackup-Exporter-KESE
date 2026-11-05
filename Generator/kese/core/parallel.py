@@ -1,6 +1,7 @@
 """Work done on several processor cores at once.  In threads where the 2D geometry library (GEOS,
 under shapely) does the work, as it runs outside Python's lock; in processes of their own where
-Python's own steps are much of it (stage 6, which builds each part's solid)."""
+Python's own steps are much of it (stage 6, which builds each part's solid; a big board's copper
+layers in stage 3 and its STEP parts in stage 7)."""
 import contextlib
 import multiprocessing
 import multiprocessing.connection
@@ -79,10 +80,10 @@ def worth_processes(jobs, coordinates):
 def in_processes(work, jobs, log=None, done="built"):
     """(key, work(*args)) for every (key, args) of jobs, each as it is done, processes_wanted() at a
     time in processes started afresh (as Windows and macOS start them), with this run's settings.
-    `work` must be a module's function.  Where processes cannot be started, or one is lost (stopped by the
-    system for lack of memory, or out of memory), the jobs not done run here, one after another,
-    with a note (log) that says what is done to the parts (`done`: "built", "sliced").  An error
-    raised by the work itself is raised here at once: the other workers are stopped, not waited for."""
+    `work` must be a module's function.  Where processes cannot be started, or one is lost (stopped
+    by the system for lack of memory, or out of memory), the jobs not done run here, one after
+    another, with a note (log) saying what is done to them (`done`: "built", "joined", ...).  An
+    error in the work itself is raised here at once: the other workers are stopped, not waited for."""
     left = dict(jobs)
     if not left:
         return

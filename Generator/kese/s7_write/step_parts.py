@@ -48,15 +48,18 @@ def found(part, boundary, transform, kept):
 
 def written(kept, transform, first, path):
     """Second round, in a worker: the part's entities, numbered from `first`, into file `path` ->
-    (the ids of its solids, the entity numbers it took)."""
+    (the ids of its solids, the entity numbers it took).  The topology's file goes only once the
+    part is written: a worker lost on the way (out of memory) leaves it to the main process, which
+    writes the part again from it."""
     with open(kept, "rb") as f:
         topo = pickle.load(f)
-    Path(kept).unlink()
     w = Entities(path, first)
     try:
-        return write_brep(w, topo, transform), w.next - first
+        done = write_brep(w, topo, transform), w.next - first
     finally:
         w.file.close()
+    Path(kept).unlink()
+    return done
 
 
 def write_in_processes(w, model, parts, log):
