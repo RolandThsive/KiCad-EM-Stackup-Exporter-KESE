@@ -6,6 +6,7 @@ import numpy as np
 import shapely
 
 from kese.core import shapes2d as sh
+from kese.core.graph import pairs_within
 from kese.core.vertices import grid_keys, near_edge, noded, pairs_in
 from parameters import P
 
@@ -47,18 +48,17 @@ def cut_disc(p, r):
 def pieces_too_close(parts):
     """{index of the smaller piece: [points]} for every two pieces that touch at a point or come
     within near_edge() of each other: the touching points, or the middle of the shortest line
-    between them."""
+    between them.  Each pair is measured once (pairs_within)."""
     cuts = {}
     if len(parts) < 2:
         return cuts
-    i, j = shapely.STRtree(parts).query(parts, predicate="dwithin", distance=near_edge())
+    i, j = pairs_within(parts, near_edge())
     for a, b in zip(i.tolist(), j.tolist()):
-        if a < b:
-            k = b if parts[b].area <= parts[a].area else a
-            pts = points_of(parts[a].intersection(parts[b]))
-            if not pts:
-                pts = [tuple(np.asarray(shapely.shortest_line(parts[a], parts[b]).coords).mean(axis=0))]
-            cuts.setdefault(k, []).extend(pts)
+        k = b if parts[b].area <= parts[a].area else a
+        pts = points_of(parts[a].intersection(parts[b]))
+        if not pts:
+            pts = [tuple(np.asarray(shapely.shortest_line(parts[a], parts[b]).coords).mean(axis=0))]
+        cuts.setdefault(k, []).extend(pts)
     return cuts
 
 
