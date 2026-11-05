@@ -3,6 +3,7 @@ to the outline.  Where two nets overlap, the first keeps the shared area."""
 from collections import defaultdict
 
 import shapely
+import shapely.errors
 
 from kese.core import shapes2d as sh
 from kese.core.graph import pairs_within
@@ -37,9 +38,7 @@ def copper_of_layer(r, items, outline_k, k):
         per_net[net].append(g)
     regions = {}
     for net, gs in per_net.items():
-        # joined on the grid: two shapes whose edges run along the same line only to within
-        # floating point (two zone fills, a fill and a pad) join cleanly instead of leaving a crack
-        cu = shapely.union_all(gs, grid_size=sh.grid()) if len(gs) > 1 else gs[0]
+        cu = net_union(gs) if len(gs) > 1 else gs[0]
         if P.Geometry.SIMPLIFY_TOLERANCE_MM > 0:   # before the cuts: the board edge and the holes stay exact
             cu = cu.simplify(P.Geometry.SIMPLIFY_TOLERANCE_MM)
         cu = cu.intersection(outline_k)
@@ -50,6 +49,26 @@ def copper_of_layer(r, items, outline_k, k):
         if not cu.is_empty:
             regions[net] = cu
     return first_net_keeps(regions)
+
+
+def net_union(gs):
+    """A net's items on one layer joined: in floating point, then the union rounded to the grid as a
+    whole (set_precision), so two shapes whose edges run along the same line only to within floating
+    point (two zone fills, a fill and a pad) meet on the grid and join cleanly instead of leaving a
+    crack.  A union on the grid rounds every item first and costs about three times as much on a big
+    board; it is still the way when GEOS cannot join the items in floating point.  The whole union in
+    one call, not part by part (shapes2d.snap): the work stays GEOS's, which runs outside Python's
+    lock, so the layers' threads keep working at once.  The result is copied through WKB onto no grid,
+    as a union on the grid comes out: a shape rounded by set_precision carries the grid, and GEOS
+    would then clip it to the outline on the grid, bending the outline's edge through every copper
+    vertex within a grid step of it (a burr past the board edge where a zone fill follows its own
+    chords of an arc)."""
+    try:
+        g = shapely.set_precision(shapely.union_all(gs), sh.grid())
+    except shapely.errors.GEOSException:
+        return shapely.union_all(gs, grid_size=sh.grid())
+    g = shapely.from_wkb(shapely.to_wkb(g))
+    return g.geoms[0] if g.geom_type == "MultiPolygon" and len(g.geoms) == 1 else g     # as a union gives it
 
 
 def close_hairline_gaps(cu):
