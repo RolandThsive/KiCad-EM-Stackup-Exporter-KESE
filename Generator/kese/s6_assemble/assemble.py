@@ -18,7 +18,7 @@ PART_ORDER = ["Board", "Copper", "Plating", "Top Solder Mask", "Top Mask over Co
 def run(ps, job):
     what = "visible skin" if job.mode == "visual" else "joining the solids of every part"
     with job.stage("assemble", f"assemble ({what})"):
-        return assemble(ps, job.mode, job.note)
+        return assemble(ps, job.mode, job.note, check=job.verify)
 
 
 def rank(name):
@@ -28,26 +28,29 @@ def rank(name):
     return (len(PART_ORDER), name)
 
 
-def finished_meshes(ps, mode, log, finish, boundaries):
+def finished_meshes(ps, mode, log, finish, boundaries, checks, check):
     """(part, finished mesh) one after another: the skin is made in one go, the solids one part at
-    a time.  A solid's Boundary is kept for the STEP writer, and its mesh is finished by the worker
-    that built it."""
+    a time.  A solid's Boundary is kept for the STEP writer, and its mesh is finished (and with
+    `check` checked for the Verifier, into `checks`) by the worker that built it."""
     if mode == "visual":
         skin = skin_meshes_from_faces(*skin_faces(ps, log))
         while skin:
             part, m = skin.popitem()
             yield part, finish(m)
     else:
-        for part, boundary, m in boundaries_and_meshes(ps, log, finish):
+        for part, boundary, m, checked in boundaries_and_meshes(ps, log, finish, check):
             boundaries[part] = boundary
+            if checked is not None:
+                checks[part] = checked
             yield part, m
 
 
-def assemble(ps, mode, log):
+def assemble(ps, mode, log, check=False):
+    """PrismSet -> Model; `check`: the Verifier will run, so each solid is checked as it is built."""
     mat = output_transform()
     finish = partial(finish_mesh, mat=mat)           # a module's function, for the worker processes
-    done, boundaries = {}, {}
-    for part, m in finished_meshes(ps, mode, log, finish, boundaries):   # one raw mesh at a time
+    done, boundaries, checks = {}, {}, {}
+    for part, m in finished_meshes(ps, mode, log, finish, boundaries, checks, check):   # one raw mesh at a time
         if m is not None:
             done[part] = m
     meshes = {part: done[part] for part in sorted(done, key=rank)}
@@ -61,4 +64,4 @@ def assemble(ps, mode, log):
                    "prisms": len(prisms)})
         props[part] = pr
     return Model(name=ps.regions.items.name, mode=mode, prismset=ps, meshes=meshes, materials=ps.materials, props=props,
-                 transform=mat, units=P.Run.UNITS, boundaries=boundaries)
+                 transform=mat, units=P.Run.UNITS, boundaries=boundaries, checks=checks)

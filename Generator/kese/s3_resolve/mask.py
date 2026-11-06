@@ -1,8 +1,12 @@
 """Solder mask: the openings (the pads' openings from the file, plus the vias that are not
 tented, Copper.VIA_TENTING), and the region the mask covers."""
+import numpy as np
 import shapely
 
 from kese.core import shapes2d as sh
+from kese.core.graph import connected_components, pairs_within
+from kese.core.parallel import in_parallel
+from kese.core.shape_copies import own
 from kese.core.shapes2d import union
 from parameters import P
 
@@ -32,20 +36,41 @@ def mask_openings(r, items, outline_k):
 def min_width_joined(items, openings, side):
     """The openings with every mask web narrower than the board's solder_mask_min_width taken out,
     as KiCad plots the mask (plot_board_layers.cpp, GenerateLayerPoly): every opening grown by half
-    the width less 1 nm, joined, shrunk back (corners chamfered), and the exact openings added back."""
+    the width less 1 nm, joined, shrunk back (corners chamfered), and the exact openings added back.
+    Done group by group (web_groups), Parallel.WORKERS groups at a time in threads: the same webs
+    as the whole layer at once, with the same vertices, in about half the time on CIAA ACC."""
     w = items.mask_min_width
     if w <= 0 or openings.is_empty:
         return openings
     grow = w / 2 - 1e-6
-    joined = openings.buffer(grow, join_style="bevel").buffer(-grow, join_style="bevel")
-    # only the webs: the hairlines where the grown and shrunk curves miss the exact ones are not
-    # openings KiCad makes (it adds the exact shapes back for that), and would only add slivers
-    webs = [p for p in shapely.get_parts(sh.diff(joined, openings))
-            if p.geom_type == "Polygon" and not p.buffer(-P.SolderMask.MASK_WEB_HAIRLINE_MM).is_empty]
+    webs = [p for found in in_parallel(lambda group: webs_of(own(group), grow), web_groups(openings, w))
+            for p in found]
     if not webs:
         return openings
     items.found[f"mask webs under the min width ({w} mm) removed on {side}.Mask"] += len(webs)
     return union([openings] + webs)
+
+
+def web_groups(openings, w):
+    """The openings in groups: two openings within w of each other are in one group, and so are
+    chains of them.  A web narrower than w closes only between openings of one group (or in one
+    opening's own notch), since two openings grown by less than w/2 meet only when they are less
+    than w apart."""
+    parts = shapely.get_parts(sh.polys_only(openings))
+    a, b = pairs_within(parts, w)
+    label = connected_components(len(parts), a, b)[1]
+    order = np.argsort(label, kind="stable")
+    return [sh.as_region(list(parts[g])) for g in np.split(order, np.flatnonzero(np.diff(label[order])) + 1)]
+
+
+def webs_of(openings, grow):
+    """The webs the min width fills among a group of openings: grown by `grow`, joined, shrunk back,
+    less the openings.  Only the webs: the hairlines where the grown and shrunk curves miss the exact
+    ones are not openings KiCad makes (it adds the exact shapes back for that), and would only add
+    slivers."""
+    joined = openings.buffer(grow, join_style="bevel").buffer(-grow, join_style="bevel")
+    return [p for p in shapely.get_parts(sh.diff(joined, openings))
+            if p.geom_type == "Polygon" and not p.buffer(-P.SolderMask.MASK_WEB_HAIRLINE_MM).is_empty]
 
 
 def mask_regions(r):

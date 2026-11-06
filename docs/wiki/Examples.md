@@ -21,9 +21,9 @@ mask colour of its own, saved by KiCad 7. Between them they use most of what KES
 | Vias | 307 through | 71 micro, 34 blind and buried, 45 through | 239 through |
 | Board edge | plated all round and in the cut-out | 43 castellated pads | 36 gold fingers |
 | Mask, silkscreen, finish | blue, white, ENIG | black, white, immersion silver | green, white, hard gold |
-| Simulation GLB with `--verify` | 46 parts, 1,126,376 triangles; 20 s, 37.9 MB | 62 parts, 596,558 triangles; 10 s, 20.4 MB | 61 parts, 881,450 triangles; 13 s, 30.2 MB |
-| Simulation STEP with `--verify` | 46 parts, 745 solids; 27 s, 113.1 MB | 62 parts, 1,240 solids; 14 s, 70.9 MB | 61 parts, 788 solids; 19 s, 80.9 MB |
-| Visual GLB with `--verify` | 20 s, 10.5 MB | 12 s, 5.6 MB | 16 s, 9.1 MB |
+| Simulation GLB with `--verify` | 46 parts, 1,130,024 triangles; 14 s, 38.1 MB | 62 parts, 596,558 triangles; 7 s, 20.4 MB | 61 parts, 881,514 triangles; 9 s, 30.2 MB |
+| Simulation STEP with `--verify` | 46 parts, 745 solids; 16 s, 113.8 MB | 62 parts, 1,240 solids; 9 s, 70.9 MB | 61 parts, 788 solids; 11 s, 80.9 MB |
+| Visual GLB with `--verify` | 15 s, 10.5 MB | 9 s, 5.6 MB | 13 s, 9.1 MB |
 
 The times are the ones the run prints, with the default parameters (the finish on, the solder
 mask and silkscreen off, true arcs in the STEP files) on one Linux machine with 4 cores. The STEP
@@ -108,13 +108,13 @@ What this board shows:
 
 | Part (simulation mode) | Triangles |
 |---|---|
-| `Copper_GND`: the planes, the border, the via fence, the plated edge | 334,380 |
+| `Copper_GND`: the planes, the border, the via fence, the plated edge | 334,284 |
 | `Copper_+3V3` and `Copper_+5V`: the two halves of In2.Cu, with their tracks and pads | 50,592 |
 | the other 32 copper parts | 30,872 |
 | `Board_dielectric 1` to `3` | 186,240 |
 | `Top Solder Mask`, `Bottom Solder Mask` | 230,006 |
 | `Top Silkscreen`, `Bottom Silkscreen` | 56,290 |
-| the ENIG finish: nickel and gold on the top, the bottom, the plated edge and in the holes (8 parts) | 524,244 |
+| the ENIG finish: nickel and gold on the top, the bottom, the plated edge and in the holes (8 parts) | 528,036 |
 
 ## 5.2 HDI Radio Module
 

@@ -48,7 +48,8 @@ def smooth_shaded(mesh, angle):
         # faces of no area as flat, but they never make a facet big)
         flat = (turn <= np.radians(0.01)) | (2 * np.abs(np.sin(turn)) < 1 / np.sqrt(P.Geometry.FLAT_FACET_THRESHOLD))
         facet = connected_components(len(faces), *pairs[flat].T)[1]
-        big = ((np.bincount(facet) > 1) & (np.bincount(facet, weights=mesh.area_faces) > mesh.area / 10))[facet]
+        least = mesh.area / P.Geometry.SMOOTH_FACET_AREA_DIVISOR
+        big = ((np.bincount(facet) > 1) & (np.bincount(facet, weights=mesh.area_faces) > least))[facet]
         smooth = smooth[~big[smooth].any(axis=1)]
     group = connected_components(len(faces), *smooth.T)[1].astype(np.int64)
     if big.any():

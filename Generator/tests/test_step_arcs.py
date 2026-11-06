@@ -247,7 +247,7 @@ def test_written_files_read_back_as_valid_solids():
 
 
 def test_a_failure_in_the_arcs_writes_the_part_faceted():
-    import kese.s7_write.step as step
+    import kese.s7_write.step_parts as step
 
     def broken(topo):
         raise AssertionError("broken on purpose")

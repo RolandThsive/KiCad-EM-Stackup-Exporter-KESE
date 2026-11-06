@@ -20,6 +20,7 @@
 | Laminate | The stack of dielectrics and inner copper between the two outer copper layers. |
 | LPI | Liquid photo-imageable solder mask, the common mask process. |
 | Mask opening | A place where the solder mask is absent: pads, untented vias, drawn openings. KiCad's mask layers draw openings, not mask. |
+| Mask web | A strip of solder mask between two mask openings; KESE removes one narrower than the solder mask minimum width (the board's, or `SolderMask.MASK_MIN_WIDTH_MM`), joining the two openings, as KiCad does when it plots the mask. |
 | Mid-plane | The height half-way through the laminate; z = 0 in KESE. |
 | Net | A set of electrically connected copper items; with the default `Copper.COPPER_GROUPING = "net"`, KESE makes one solid per net. |
 | NPTH | Non-plated through hole: a hole with no copper in it. |

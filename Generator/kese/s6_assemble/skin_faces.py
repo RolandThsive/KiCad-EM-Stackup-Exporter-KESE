@@ -11,6 +11,7 @@ import shapely
 
 from kese.core import shapes2d as sh
 from kese.core.boundary import heights_of, joined_regions, slices_of_part, wall_segments
+from kese.core.graph import shared_tree
 from kese.core.vertices import (
     grid_keys,
     pairs_in,
@@ -20,9 +21,6 @@ from kese.core.vertices import (
 from kese.core.memory import give_back_memory
 from kese.core.parallel import in_processes, workers_wanted, worth_processes
 from kese.core.shape_copies import floating, own
-
-FEW_PIECES = 200         # of material reaching a face: up to this many are cut away piece by piece (cut_away)
-BIG_PIECE = 10_000       # coordinates: a piece this big (a dielectric, with every via hole in it) is cut away on its own
 
 
 def skin_faces(ps, log):
@@ -79,7 +77,7 @@ def material_of_every_slice(slices, pool):
                 polys.append(p)
                 parts.append(part)
         polys = np.array(polys, dtype=object)
-        gathered.append((polys, np.array(parts, dtype=object), shapely.STRtree(polys)))
+        gathered.append((polys, np.array(parts, dtype=object), shared_tree(polys)))
     joined = pool.map(lambda material: joined_regions(list(material[0]), exact=False, shared=True), gathered)
     return [(*material, region, {"turn": Lock()}) for material, region in zip(gathered, joined)]
 
@@ -104,17 +102,19 @@ def visible_flats(part_slices, levels, pieces):
 
 def cut_away(region, material):
     """The region less the material of a slice: a few pieces joined, a big piece on its own, more as
-    one overlay; a region wholly against material (most faces of a board) is gone at once."""
+    one overlay; a region wholly against material (most faces of a board) is gone at once.  The
+    index finds the pieces that meet the region with the region prepared once (its edges indexed):
+    tested against each piece on its own, the region's rings are walked again for every piece, which
+    on NE_Delta's skin took 251 s of thread time where the index takes 43 s."""
     polys, _, tree, joined, _ = material
-    near = tree.query(region)                                  # by box; the exact test below costs a tenth of the
-    near = near[shapely.intersects(polys[near], region)]       # index's own, which would try every ring of a big piece
+    near = tree.query(region, predicate="intersects")
     if not len(near):
         return region
     cutters = polys[near]
-    big = shapely.get_num_coordinates(cutters) > BIG_PIECE
-    if (big.any() or len(near) > FEW_PIECES) and lies_against_material(region, material):
+    few, big = sh.G().SKIN_FEW_PIECES, shapely.get_num_coordinates(cutters) > sh.G().SKIN_BIG_PIECE_COORDINATES
+    if (big.any() or len(near) > few) and lies_against_material(region, material):
         return sh.EMPTY
-    if len(near) > FEW_PIECES:
+    if len(near) > few:
         return sh.diff(region, joined)
     for piece in cutters[big]:
         region = sh.diff(region, piece)

@@ -39,9 +39,9 @@ python tests/test_boards.py                     # the regression suite over ever
 | `Parallel.WORKERS must be a whole number, 0 or more (0: one per processor thread), not ...` (or `Parallel.PROCESS_WORKERS`, `Parallel.PROCESS_MIN_COORDINATES`, with what their `0` means) | A count in [`parameters/parallel.py`](Parameter-Reference.md#169-parallel-parametersparallelpy) is negative, fractional or not a number. |
 | `Board.BOARD_ENABLED must be True or False, not 'false'` (or `must be a number`, `must be text, in quotes`, `must be a list`, `must be a dict`, for any setting) | A setting given a value of another kind than its parameter file gives it: most often `--set Board.BOARD_ENABLED=false`, which gives the word `false`, which Python would take as true (write `False`), or a number with its unit (`0.02mm`). A setting that is `None` in its file takes any value. |
 | `parameters/run.py sets WORKERS, which is now Parallel.WORKERS in parameters/parallel.py: set it there` (or another moved setting: `STEP_EXACT_ARCS` and the `STEP_ARC_*` settings, now in `parameters/step.py`; `VERIFY` and the `VERIFY_*` settings, now in `parameters/verifier.py`; `PRESETS`, now in `parameters/presets.py`; several are named together, ending `set them there`) | An older `parameters/run.py`, kept through an update, still sets a setting that moved; the run stops rather than leave the value unused. |
-| `Geometry.PINCH_CUT_ROUNDS must be a whole number, 1 or more, not ...` (or `Geometry.VERTEX_SHARING_ROUNDS`, `Geometry.NODING_ROUNDS`, a batch size of `parameters/parallel.py`, `Verifier.VERIFY_RAYS`; `Step.STEP_ARC_MIN_POINTS`, 3 or more) | At least one round, one item in a batch or one ray is needed: with no round of opening, every region checked would be noted as still pinched, and with no ray the visual check would pass on nothing. An arc needs three points to make a circle. |
-| `Verifier.VERIFY_VOLUME_TOLERANCE must be a number, 0 or more, not ...` (or `Verifier.VERIFY_OPENED_VOLUME_MM3`; `Finish.FINISH_MITRE_LIMIT`, 1 or more) | A Verifier tolerance is negative or not a number, or the finish's mitre limit is below 1, where the finish would be thinner at a sharp corner than its thickness. |
-| `Step.STEP_ARC_MAX_SWEEP_DEG must be a number more than 0, not ...` | The longest arc a STEP file may hold; arcs are cut in pieces no longer than this. |
+| `Geometry.PINCH_CUT_ROUNDS must be a whole number, 1 or more, not ...` (or `Geometry.VERTEX_SHARING_ROUNDS`, `Geometry.NODING_ROUNDS`, a batch or group size of `parameters/parallel.py` or `parameters/geometry.py`, `Verifier.VERIFY_RAYS`; `Step.STEP_ARC_MIN_POINTS`, `Geometry.PINCH_DISC_SIDES`, `Geometry.ELLIPSE_MIN_SEGMENTS`, 3 or more; the digits, margins and other counts of `parameters/geometry.py`, `Parallel.PROCESS_MIN_NETS` and `Verifier.VERIFY_MERGE_EXTRA_DIGITS`, 0 or more) | At least one round, one item in a batch or one ray is needed: with no round of opening, every region checked would be noted as still pinched, and with no ray the visual check would pass on nothing. An arc needs three points to make a circle, and a disc or an ellipse three sides. A count, a number of digits or a margin cannot be negative or fractional. |
+| `Verifier.VERIFY_VOLUME_TOLERANCE must be a number, 0 or more, not ...` (or `Verifier.VERIFY_OPENED_VOLUME_MM3`, `Verifier.VERIFY_VOLUME_NOISE_MM3`, `Step.STEP_TANGENT_MM`, `Step.STEP_ARC_CHECK_FACTOR`, `Parallel.WORKER_STOP_WAIT_S`; `Finish.FINISH_MITRE_LIMIT`, 1 or more) | A tolerance or a wait is negative or not a number, or the finish's mitre limit is below 1, where the finish would be thinner at a sharp corner than its thickness. |
+| `Step.STEP_ARC_MAX_SWEEP_DEG must be a number more than 0, not ...` (or `Step.STEP_STRIP_MAX_TURN_DEG`, `Geometry.SMOOTH_FACET_AREA_DIVISOR`) | The longest arc a STEP file may hold (arcs are cut in pieces no longer than this), the widest step of the strip kept clear around an arc, and what a part's area is divided by: each is divided by, or cut into pieces of. |
 | `visual mode is a surface, not solids: FILE_FORMAT may only contain glb / obj` | STL and STEP need closed solids; use simulation mode. |
 | `no Edge.Cuts outline and OUTLINE_FALLBACK is 'error'` | Draw a closed outline, or set `Board.OUTLINE_FALLBACK = "copper_hull"`. |
 | `missing Python package(s): ...` | Printed before anything runs, with the `pip install` line to use. |
@@ -80,10 +80,12 @@ python tests/test_boards.py                     # the regression suite over ever
 | `note: Edge.Cuts line ends up to D mm apart joined (Board.OUTLINE_LINE_SNAP_MM = S mm)` | The outline's lines had small gaps between their ends; they were closed as KiCad closes them (KiCad joins ends up to 0.01 mm apart, the default of `Board.OUTLINE_LINE_SNAP_MM`), so the board shape is the one KiCad shows. |
 | `<part>: faces and walls still changing after 20 rounds` (`Geometry.VERTEX_SHARING_ROUNDS`) | Stage 6 could not give the part's faces and walls the same vertices ([Working Principle](Working-Principle.md#62-how-a-part-becomes-a-closed-solid)). The part may be open; the Verifier then says so. |
 | `<part>: pinch points left after 10 rounds of cutting` (or `pinch edges between two heights left ...`) | Two pieces of the part still touch at a point or along an edge after the cut-out disc grew to 512 times `Geometry.PINCH_POINT_OPENING_MM`. The part may be open there. |
-| `<part>: slices still sharing new vertices after 20 rounds` (`Geometry.VERTEX_SHARING_ROUNDS`) | Stage 6 gave the slices that meet at a height each other's vertices 20 times and they still changed. The part may be open; the Verifier then says so. |
+| `<part>: slices still sharing new vertices after 20 rounds` (`Geometry.VERTEX_SHARING_ROUNDS`) | Stage 6 gave the slices that meet at a height each other's vertices 20 times, then cut them open where they still changed for `Geometry.PINCH_CUT_ROUNDS` more rounds (see the next line), and they still changed. The part may be open; the Verifier then says so. |
+| `<part>: slices still sharing new vertices after 20 rounds: cut open at N points, by discs of up to D mm radius` (`Geometry.VERTEX_SHARING_ROUNDS`, `Geometry.PINCH_CUT_ROUNDS`) | Needle tips of two slices a grid step or two apart kept trading vertices; from the 21st round on, each point a round still added was cut out of every slice by a small disc (as at a pinch point), twice as wide each round, until the slices settled. The part is closed, with a hole at most 2D mm across at each point ([Working Principle](Working-Principle.md#62-how-a-part-becomes-a-closed-solid)). |
+| `solder mask: N slivers on the copper narrower than 0.002 mm left out (F.Mask)` (`SolderMask.MASK_OVER_COPPER_HAIRLINE_MM`) | With the solder mask on: where a mask opening's outline follows the copper's with other points, the mask on the copper kept slivers between the two; they are left out, and the finish covers them instead ([Solder Masks](Solder-Masks.md#152-conformal-mask)). |
 | `plated holes cross the board edge but the stackup has no (castellated_pads yes); set Copper.CASTELLATION = 'auto' to plate them` | With `Copper.CASTELLATION = "file"`, plated holes cut by the edge are left bare because the stack-up does not say they are castellated. |
 | `edge plating: copper of net '<net>' inside the edge band moved to net '<edge net>' on N layer(s)` | Copper of another net reached into the plated edge band; it now belongs to the edge's net (see 17.5). |
-| `worker processes failed (...); the N parts left are built in this process, one after another` (in visual mode `sliced`; after a lost worker, ending `(most often a lack of memory: fewer processes, Parallel.PROCESS_WORKERS, use less)`) | Stage 6 could not start its worker processes (`Parallel.WORKERS`, at most `Parallel.PROCESS_WORKERS`), or lost one: the system stopped it, most often for lack of memory, or it ran out of memory (`MemoryError`). The parts the workers did not build (in visual mode, slice) are built in the main process instead, so the files are the same, only slower. An error in a part itself is not caught here: it stops the run at once, with its traceback. With little memory, `--set Parallel.PROCESS_WORKERS=1` builds stage 6 in the main process from the start, and `--set Parallel.WORKERS=1` everything, in turn. |
+| `worker processes failed (...); the N parts left are built in this process, one after another`, or `... are built in 2 processes` (in visual mode `sliced`; a big board's copper `the N copper layers left are joined`; its STEP file `made ready for STEP`, then `written to STEP`; after a lost worker, ending `(most often a lack of memory: fewer processes, Parallel.PROCESS_WORKERS, use less)`) | Stage 3, 6 or 7 could not start its worker processes (`Parallel.WORKERS`, at most `Parallel.PROCESS_WORKERS`), or lost one: the system stopped it, most often for lack of memory, or it ran out of memory (`MemoryError`). After a lost worker, what the workers did not do goes to half as many processes (a note each time), and to the main process once that would be one; where the processes cannot start, the main process does it. The files are the same, only slower. An error in a part itself is not caught here: it stops the run at once, with its traceback. With little memory, `--set Parallel.PROCESS_WORKERS=1` starts no worker process (stages 6 and 7 work in the main process, stage 3 in threads), and `--set Parallel.WORKERS=1` does everything in turn. |
 | `Run.WORKERS is now Parallel.WORKERS (parameters/parallel.py): the value given for Run.WORKERS is used as Parallel.WORKERS` (or another moved setting, such as `Run.VERIFY`, now `Verifier.VERIFY`) | A `--set` with a setting's old name was taken under its new name. |
 | `step: <part>: N edges are not shared by two faces (the solid is open there)` | The STEP writer found the part open. It is still written, and a CAD tool will report free edges on it. |
 | `step: <part>: written without arcs (...)` | With `Step.STEP_EXACT_ARCS`, finding the part's arcs failed (a bug: please report it with the board). The part is written with flat faces only, as with the parameter off; the rest of the file keeps its arcs. |
@@ -127,13 +129,15 @@ stroke font.
 `kese/s8_verify/`, run with `--verify` or `Verifier.VERIFY = True`. It checks the meshes that
 GLB, STL and OBJ are written from and, in simulation mode, the faces that the STEP file is
 written from, not the input. The STEP file itself is not read back at run time (the regression
-suite reads it back with OCP).
+suite reads it back with OCP). In simulation mode each part's own checks (closed, wound, its
+volumes) are made where the part is built, in its stage 6 worker, while it is at hand
+(`kese/core/part_checks.py`); stage 8 reads them and writes the same lines it would make itself.
 
 | Mode | Check | Pass condition |
 |---|---|---|
 | simulation | every part is a closed, consistently wound solid; its volume is printed in mm³ | `closed=True winding=True` for every part |
 | simulation | no two parts share material: every slice of every part (a flat region between two heights, what the faces are cut from) against every slice of every other part | `none`: no two slices of different parts overlap in height while their regions share an area wider than two grid steps, 0.2 µm (`none` on every board of the regression suite) |
-| simulation | every part's volume found four ways (`volumes.py`): from its flat faces, from its slices, from its mesh and from the prisms it was built from | `closed=True whole=True` for every part: the faces and the mesh within 1 part in 10⁷ of the slices (`Verifier.VERIFY_VOLUME_TOLERANCE`), the prisms within that plus 0.001 mm³ (`Verifier.VERIFY_OPENED_VOLUME_MM3`, what opening pinch points may take) |
+| simulation | every part's volume found four ways (`volumes.py`): from its flat faces, from its slices, from its mesh and from the prisms it was built from | `closed=True whole=True` for every part: the faces and the mesh within 1 part in 10⁷ of the slices (`Verifier.VERIFY_VOLUME_TOLERANCE`), the prisms within that plus 0.001 mm³ (`Verifier.VERIFY_OPENED_VOLUME_MM3`, what opening pinch points and sharing vertices may move), in all or else in every piece, with no piece gone (below) |
 | visual | the skin is one outer surface: along every ray that hits the model the faces take turns, one going into the material and the next out of it (two faces on most rays; four where a ray crosses a hollow open to the air, such as the bore of a buried via under stacked micro vias) | the line `visible surfaces per vertical ray: faces met {2: ...}; rays where in and out do not alternate: 0` ends in 0 |
 | both, when a GLB was written | the GLB through the Khronos glTF validator, when the `gltf_validator` command-line tool is on the PATH | not a pass condition: the validator's last line is only reported; otherwise `gltf_validator not on PATH: glTF validation skipped`; with no GLB in the run the line is absent |
 
@@ -170,6 +174,21 @@ Verifier: PASS
 The prisms of `Copper_GND` hold 0.00013 mm³ more than its faces, within the 0.001 mm³ the
 check allows them.
 
+Stage 6 moves each piece's edges by a grid step here and there as it shares vertices, and cuts its
+pinch points open, so on a board of thousands of holes a part's prisms and slices can differ by
+more than 0.001 mm³ in all while no piece differs by more than a little. A part past the limit in
+all is then compared piece by piece: per slice, the pieces of its prisms that span the slice and
+the slice's own pieces, joined where they touch (a hole's finish as built and as sliced is one
+piece). It is whole when no piece is gone (prisms with no slice left on them, or a slice with no
+prism under it) and none differs by more than the same limit, and a second line gives the count
+and the worst piece. On a board of 14,454 vias, whose gold finish (drawn 0.1 µm thick across the
+wall, one grid step) is 0.0025 mm³ off in all:
+
+```text
+  Hole Finish Gold                     volume from faces 0.674595 mesh 0.674595 slices 0.674595 prisms 0.677080 mm3 closed=True whole=True
+                                       piece by piece: 15102 pieces, 0 gone, worst +5.293e-06 of 1.181e-04 mm3 at x 80.785 y 67.725 z -0.7900 .. +0.7900 mm
+```
+
 The volume from the faces needs nothing but the faces: walls are vertical and add nothing, so a
 closed surface holds the sum of height times signed area over its flat faces
 (`Boundary.volume()`):
@@ -187,7 +206,8 @@ height and their regions share an area. Every polygon of every slice is shrunk b
 first: parts that only touch, along an edge or across the grid step that sharing vertices may
 bend an edge by, then no longer meet. An R-tree finds the polygons whose boxes meet; of those
 from different parts that overlap in height, the shrunk polygons are tested, and every pair that
-still meets is reported with the volume the two parts share:
+still meets is reported with the volume the two parts share. The slices are split into polygons,
+and the polygons shrunk and tested, `Parallel.WORKERS` at a time in threads:
 
 ```math
 V_{AB} = \operatorname{area}\left( R_A \cap R_B \right) \cdot h_{AB}, \qquad h_{AB} = \min\left( z^{A}_{1}, z^{B}_{1} \right) - \max\left( z^{A}_{0}, z^{B}_{0} \right) \qquad (17.1)
@@ -212,10 +232,11 @@ lies; 3,000 random vertical rays, the test this one replaced, found 6 of 20 such
 A `closed=False`, `winding=False` or `whole=False` line names the part. An open solid means its
 faces and walls do not meet on the same edges (see the `faces and walls still changing` and
 `pinch points left` notes); `whole=False`
-means the solid holds more or less material than the prisms it was built from. An overlap line
+means the solid holds more or less material than the prisms it was built from, in all and, by the
+`piece by piece` line, in a piece gone or in its worst piece. An overlap line
 other than `none` means two parts share material; it names the two parts and the heights of the
 biggest overlap (of overlaps as big, the first by part name, so the line is the same however many
-worker processes ran), and how many places there are. All of these are bugs worth reporting with the
+worker processes and threads ran), and how many places there are. All of these are bugs worth reporting with the
 board file.
 
 ## 17.4 The Regression Suite
@@ -343,19 +364,26 @@ where a number belongs, a binary or UTF-16 file) stop with the file named and th
 zero is read as not given with a warning, a board too thin for its copper stops with the setting to change,
 and a byte order mark is passed over, in about two seconds
 (`python tests/test_bad_input.py`); `tests/test_verifier.py`, which finds the Verifier's visual check
-meeting the same faces on every ray with the board `upright` and `flat`, in under a second
+meeting the same faces on every ray with the board `upright` and `flat`, the checks made where each
+part is built giving the report stage 8 gives on its own, an open part they found failing the
+run, and the overlap check finding the same overlaps in threads as in one, in a few seconds
 (`python tests/test_verifier.py`); `tests/test_parallel.py`, which finds a thread's
 own copies of shapes to be the same shapes, each part on its grid, made only where GEOS needs them,
 and threads working on their own copies of one shape not crashing; finds threads taking turns with
-one prepared copy of a slice's material, the test for hidden triangles letting go of its prepared
-slices, a set of holes joined once when threads ask for it at once, and the memory threads freed
+one prepared copy of a slice's material, threads cutting faces only by the pieces of material that
+meet them, the test for hidden triangles letting go of its prepared slices, a set of holes joined once when threads ask for it at once, and the memory threads freed
 handed back (and kept with `Parallel.GIVE_BACK_MEMORY` off), and batches of any size giving the
-same result (a STEP part written in slices of any size the same to the byte); finds `Parallel.PROCESS_WORKERS`
+same result (a STEP part written in slices of any size the same to the byte, a STEP file written
+part by part in worker processes the same as one written in one process, with no file left behind,
+and a part whose worker is lost half way written again in the main process to the same text; the
+copper layers joined in worker processes the same to the byte as in threads; the solder mask's webs
+found group by group in threads the same as the whole layer's, a stray line among the openings
+left out); finds `Parallel.PROCESS_WORKERS`
 capping the worker processes and boards under `Parallel.PROCESS_MIN_COORDINATES` kept in one
 process; sends shapes through stage 6's worker processes and finds them back on
 their grid (each part's too), of their type and with their SRID; and finds the run's settings in the
-workers, the parts of a lost worker and of one out of memory built in the main process with the
-note, an error in a part raised at once with the other workers stopped, a caller that stops early
+workers, the parts left by a lost worker done in half as many processes, then in the main process,
+and those of one out of memory in the main process, with a note each time, an error in a part raised at once with the other workers stopped and gone, a caller that stops early
 not kept waiting, the workers first in line for Linux's out-of-memory killer, KESE run inside a
 `multiprocessing.Pool`, a script without `if __name__ == "__main__":` not run again in each
 worker, Ctrl-C ending the workers with one traceback, and the workers gone when the main process is
@@ -367,23 +395,42 @@ where two slices differ, group by group, as a cut of the whole slices (and no fa
 are the same from another start), slices spanned by the same prisms made once, and a part whose
 slices meet at T-junctions with every vertex shared and a closed, consistently wound mesh (which
 it is not without the sharing), a band one grid step wide ending in two needle tips a hair
-apart closed too (which it is not with faces cut on the grid), and a skin face whose cut GEOS
+apart closed too (which it is not with faces cut on the grid), a piece of a board's solder mask
+whose needle tips trade vertices for ever cut open there and closed, with one note (and still
+changing after 20 rounds, with T-junctions, when never cut), and a skin face whose cut GEOS
 refuses on the grid cut with both regions put on the grid first, valid and within a grid step of
-the cut in floating point, in under a second (`python tests/test_boundary.py`);
+the cut in floating point, in about two seconds (`python tests/test_boundary.py`);
 `tests/test_copper_union.py`, which joins a net's items as stage 3 does and finds two fills that
 meet only to within floating point joined with no crack, a crack narrower than the grid closed,
 items apart kept apart, the area within a grid step of the exact union and nearer it than a union
 on the grid, no burr past the board edge once clipped to the outline, and the union on the grid
 used where GEOS refuses, in under a second (`python tests/test_copper_union.py`);
+`tests/test_finish_shells.py`, which cuts the finish shells' air bore by bore, each by the solid
+near it alone, and leaves an inner layer whose copper comes nowhere near the board edge without
+air, joining nothing; finds every finish prism of seven test boards as the cut by the whole board's
+union makes it, but for slivers thinner than a grid step; and finds a big part of the solid cut into
+tiles that fill it and do not overlap, bores whose shells could meet put in one group (a hole with
+no drill too), and the band given back where there is no solid, in about half a minute
+(`python tests/test_finish_shells.py`);
+`tests/test_mask.py`, which splits the solder mask over two pads whose openings follow their edges,
+one with other points along its curve and one a grid step off, and finds only slivers of mask on
+the copper, every one left out, the finish then reaching the pads' edges (each net's its own),
+while mask on the copper wider than twice `SolderMask.MASK_OVER_COPPER_HAIRLINE_MM` stays, a
+sliver that ends in a wide piece too; on 07_pad_shapes, the mask on, the finish and the mask leave
+no copper face bare but where the grid rounds two crossing outlines apart, in about a second
+(`python tests/test_mask.py`);
 `tests/test_pairs.py`, which finds the pieces within a distance of each other that an STRtree's
 search finds, among a zone fill of many points and small pads, pieces exactly the distance apart
-and a hair further, with no piece left prepared, in under a second (`python tests/test_pairs.py`);
+and a hair further, with no piece left prepared, and an index built before threads share it
+finding what an STRtree finds from eight threads at once, in under a second
+(`python tests/test_pairs.py`);
 `tests/test_full_disk.py`, which fills the disk half-way through each file a run writes, and at its
 last byte (where a STEP file's assembly is written as it closes), and finds the file being written
 gone, the files written before it as they are with room on the disk, the system's own error (also
 when the clean-up after it is refused), a run folder that nothing was written whole into removed, a
-half `parameters.txt` removed, and runs started together each in a folder of their own, in a few
-seconds (`python tests/test_full_disk.py`);
+half `parameters.txt` removed, and runs started together each in a folder of their own; and the
+same with a big board's STEP parts written into files of their own and joined, none of them left
+behind, in about fifteen seconds (`python tests/test_full_disk.py`);
 and two STEP tests, also on their own (`python tests/test_step_native.py`,
 `python tests/test_step_arcs.py`):
 

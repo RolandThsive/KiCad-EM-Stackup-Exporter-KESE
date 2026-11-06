@@ -6,6 +6,7 @@ import numpy as np
 import shapely
 
 from kese.core import shapes2d as sh
+from kese.core.graph import pairs_within
 from kese.core.vertices import grid_keys, near_edge, noded, pairs_in
 from parameters import P
 
@@ -37,28 +38,47 @@ def open_pinches(region, log=None):
     return sh.as_region([q for p in parts for q in shapely.get_parts(p) if q.area > sh.G().SLIVER_AREA_MM2])
 
 
+def cut_open_at(slices, pts, n):
+    """Every slice that comes within reach of the points with a disc cut out at each: of radius
+    PINCH_POINT_OPENING_MM, doubled n times (at most PINCH_CUT_ROUNDS - 1).  The slices are changed in
+    place.  -> (the indices of the slices cut, the radius)."""
+    r = P.Geometry.PINCH_POINT_OPENING_MM * 2 ** min(n, sh.G().PINCH_CUT_ROUNDS - 1)
+    discs = shapely.union_all([cut_disc(p, r) for p in pts])
+    cut = set()
+    for i, s in enumerate(slices):
+        parts = list(shapely.get_parts(sh.polys_only(s)))
+        hit = np.flatnonzero(shapely.intersects(parts, discs)) if parts else []
+        for k in hit:
+            parts[k] = noded(parts[k].difference(discs, grid_size=sh.grid()))
+        if len(hit):
+            slices[i] = sh.as_region([q for p in parts for q in shapely.get_parts(p) if q.area > sh.G().SLIVER_AREA_MM2])
+            cut.add(i)
+    return cut, r
+
+
 def cut_disc(p, r):
     """The disc cut out around a pinch point: an octagon turned by Geometry.PINCH_DISC_TURN_DEG, so no
-    corner lies on KiCad's horizontal, vertical or 45-degree lines through the point."""
-    a = np.radians(sh.G().PINCH_DISC_TURN_DEG + 45.0 * np.arange(8))
+    corner lies on KiCad's horizontal, vertical or 45-degree lines through the point (Geometry.PINCH_DISC_SIDES
+    sides)."""
+    n = sh.G().PINCH_DISC_SIDES
+    a = np.radians(sh.G().PINCH_DISC_TURN_DEG + 360.0 / n * np.arange(n))
     return shapely.Polygon(np.c_[p[0] + r * np.cos(a), p[1] + r * np.sin(a)])
 
 
 def pieces_too_close(parts):
     """{index of the smaller piece: [points]} for every two pieces that touch at a point or come
     within near_edge() of each other: the touching points, or the middle of the shortest line
-    between them."""
+    between them.  Each pair is measured once (pairs_within)."""
     cuts = {}
     if len(parts) < 2:
         return cuts
-    i, j = shapely.STRtree(parts).query(parts, predicate="dwithin", distance=near_edge())
+    i, j = pairs_within(parts, near_edge())
     for a, b in zip(i.tolist(), j.tolist()):
-        if a < b:
-            k = b if parts[b].area <= parts[a].area else a
-            pts = points_of(parts[a].intersection(parts[b]))
-            if not pts:
-                pts = [tuple(np.asarray(shapely.shortest_line(parts[a], parts[b]).coords).mean(axis=0))]
-            cuts.setdefault(k, []).extend(pts)
+        k = b if parts[b].area <= parts[a].area else a
+        pts = points_of(parts[a].intersection(parts[b]))
+        if not pts:
+            pts = [tuple(np.asarray(shapely.shortest_line(parts[a], parts[b]).coords).mean(axis=0))]
+        cuts.setdefault(k, []).extend(pts)
     return cuts
 
 

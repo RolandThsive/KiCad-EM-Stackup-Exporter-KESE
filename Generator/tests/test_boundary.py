@@ -7,7 +7,8 @@ spanned by the same regions are made once; two regions have the same vertices wh
 their rings start at; and a part whose slices meet at T-junctions comes out with every vertex
 shared (no vertex of one face or slice lies on the edge of another at its height without being
 one of its vertices too) and a closed, consistently wound mesh, as does a band one grid step wide
-that ends in two needle tips a hair apart (a board's gold, where faces cut on the grid left it open);
+that ends in two needle tips a hair apart (a board's gold, where faces cut on the grid left it open),
+and a piece of a board's mask whose needle tips traded vertices for ever, once cut open there;
 and a cut that snap rounding refuses on the grid is made with both regions put on the grid first.
 
     python -m pytest tests/test_boundary.py        (or:  python tests/test_boundary.py)"""
@@ -21,13 +22,15 @@ import numpy as np  # noqa: E402
 import shapely  # noqa: E402
 from shapely.geometry import MultiPolygon, Point, Polygon, box  # noqa: E402
 
+from kese.core import boundary  # noqa: E402
 from kese.core import shapes2d as sh  # noqa: E402
 from kese.core.boundary import boundary_of, heights_of, slices_of, wall_segments  # noqa: E402
 from kese.core.boundary_mesh import mesh_of_boundary  # noqa: E402
 from kese.core.flat_faces import faces_between, flat_faces  # noqa: E402
-from kese.core.pinches import repeated_vertices  # noqa: E402
+from kese.core.pinches import cut_open_at, repeated_vertices  # noqa: E402
 from kese.core.vertices import grid_keys, near_edge, noded, ring_points, same_vertices  # noqa: E402
 from kese.model.prisms import Prism  # noqa: E402
+from parameters import P  # noqa: E402
 
 
 def repeated_one_by_one(parts, check):
@@ -141,6 +144,40 @@ def test_a_band_ending_in_two_needle_tips_a_hair_apart_closes():
     assert abs(b.volume() - b.volume_of_slices()) <= 1e-9 * b.volume_of_slices()
 
 
+def needle_tips_of_a_mask():
+    """A 20 by 20 um piece of a board's solder mask (NE_Delta, KiCad 10) where an opening's edge runs a
+    grid step or two from a pad's: the flat mask, the mask on the copper (a needle 0.2 um wide at
+    most) and the wall beside it (its tip on the needle's), in grid steps from (10, 10).  The
+    slices traded vertices round after round, some 400 rounds, and the part kept three T-junctions."""
+    flat = [[(164, 179), (129, 198), (103, 200), (200, 200), (200, 149)],
+            [(52, 190), (22, 164), (4, 129), (1, 89), (13, 52), (43, 0), (0, 0), (0, 200), (87, 200)]]
+    top = [(100, 102), (200, 19), (200, 17), (183, 31), (101, 100)]
+    wall = [(100, 102), (99, 102), (158, 0), (43, 0), (13, 52), (1, 89), (4, 129), (22, 164), (52, 190), (87, 200),
+            (103, 200), (129, 198), (164, 179), (200, 149), (200, 19)]
+    at = lambda ring: Polygon([(round(10 + x * 1e-4, 4), round(10 + y * 1e-4, 4)) for x, y in ring])
+    return [Prism("Top Solder Mask", "mask", MultiPolygon([at(r) for r in flat]), 0.755, 0.765),
+            Prism("Top Solder Mask", "mask_over_copper", at(top), 0.79, 0.8),
+            Prism("Top Solder Mask", "mask", at(wall), 0.755, 0.8)]
+
+
+def test_slices_whose_needle_tips_trade_vertices_for_ever_are_cut_open_there_and_close():
+    prisms, notes = needle_tips_of_a_mask(), []
+    b = boundary_of("Top Solder Mask", prisms, notes.append)
+    rounds = P.Geometry.VERTEX_SHARING_ROUNDS
+    assert len(notes) == 1 and notes[0].startswith(f"slices still sharing new vertices after {rounds} rounds: cut open at")
+    assert closed_and_wound(mesh_of_boundary(b)) and no_vertex_on_another_edge(b) == []
+    whole = sum((p.z1 - p.z0) * p.region.area for p in prisms)
+    assert abs(b.volume() - b.volume_of_slices()) <= 1e-9 * whole and 0.99 * whole < b.volume() < whole
+    boundary.cut_open_at = lambda slices, pts, n: (set(), 0.0)                       # never cut open
+    try:
+        notes = []
+        b = boundary_of("Top Solder Mask", prisms, notes.append)
+    finally:
+        boundary.cut_open_at = cut_open_at
+    assert notes[-1] == f"faces and walls still changing after {rounds} rounds"
+    assert no_vertex_on_another_edge(b) != []
+
+
 def test_a_cut_snap_rounding_refuses_is_made_with_both_regions_on_the_grid():
     """A face of the visual skin of the same board (r0891 of the corpus) less the slice above it,
     joined in floating point: a sliver hole of the slice, thinner than a grid step, ends on the face's
@@ -207,6 +244,7 @@ if __name__ == "__main__":
     test_flat_faces_found_again_only_next_to_a_changed_slice_are_all_of_them_found_again()
     test_a_part_meeting_at_t_junctions_shares_its_vertices_and_closes()
     test_a_band_ending_in_two_needle_tips_a_hair_apart_closes()
+    test_slices_whose_needle_tips_trade_vertices_for_ever_are_cut_open_there_and_close()
     test_a_cut_snap_rounding_refuses_is_made_with_both_regions_on_the_grid()
     test_faces_are_cut_only_where_the_slices_differ_and_come_out_as_a_whole_cut_does()
     test_slices_spanned_by_the_same_regions_are_made_once()

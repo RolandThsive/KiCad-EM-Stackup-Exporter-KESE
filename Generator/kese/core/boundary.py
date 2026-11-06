@@ -10,12 +10,10 @@ import shapely.errors
 
 from kese.core import shapes2d as sh
 from kese.core.flat_faces import flat_faces
-from kese.core.pinches import open_pinches, open_pinches_between
+from kese.core.pinches import cut_open_at, open_pinches, open_pinches_between
 from kese.core.shape_copies import floating, own
 from kese.core.triangulate import rings_of
-from kese.core.vertices import noded, share_vertices
-
-HEIGHT_DIGITS = 9                # heights are told apart to 1e-9 mm, a picometre
+from kese.core.vertices import grid_keys, noded, ring_points, share_vertices
 
 
 @dataclass
@@ -60,7 +58,7 @@ def boundary_of(part, prisms, log=None):
 
 def heights_of(prisms):
     """Every distinct height of the prisms, low to high."""
-    return sorted({round(z, HEIGHT_DIGITS) for p in prisms for z in (p.z0, p.z1)})
+    return sorted({round(z, sh.G().HEIGHT_DIGITS) for p in prisms for z in (p.z0, p.z1)})
 
 
 def slices_of_part(prisms, levels, log=None, pinches_opened=True):
@@ -79,7 +77,7 @@ def slices_of(prisms, levels):
     out, made = [], {}
     shapes = shapely.to_wkb([p.region for p in prisms]).tolist() if prisms else []
     for z0, z1 in pairwise(levels):
-        spanning = [i for i, p in enumerate(prisms) if round(p.z0, HEIGHT_DIGITS) <= z0 and round(p.z1, HEIGHT_DIGITS) >= z1]
+        spanning = spanning_prisms(prisms, z0, z1)
         if not spanning:
             out.append(sh.EMPTY)
             continue
@@ -89,6 +87,12 @@ def slices_of(prisms, levels):
             made[key] = noded(regions[0] if len(regions) == 1 else joined_regions(regions))
         out.append(made[key])
     return out
+
+
+def spanning_prisms(prisms, z0, z1):
+    """The indices of the prisms that span the slice from z0 to z1 (heights of heights_of)."""
+    d = sh.G().HEIGHT_DIGITS
+    return [i for i, p in enumerate(prisms) if round(p.z0, d) <= z0 and round(p.z1, d) >= z1]
 
 
 def joined_regions(regions, exact=True, shared=False):
@@ -111,11 +115,15 @@ def joined_regions(regions, exact=True, shared=False):
 def slices_sharing_vertices(slices, flats, levels, log, pinches_opened=True):
     """The slices, each with the vertices of the faces and the slice it meets that lie on its edges,
     repeated until no slice changes (at most Geometry.VERTEX_SHARING_ROUNDS times; a height cut again is
-    cut wider).
+    cut wider).  Needle tips of two slices a grid step or two apart can trade vertices round after
+    round for ever: slices still changing then are cut open at the points each further round adds
+    (pinches.cut_open_at), the disc doubling, for at most Geometry.PINCH_CUT_ROUNDS more rounds.
     -> (slices, the indices of the slices that changed)."""
     slices, changed, cuts = list(slices), set(), [0] * len(levels)
-    for _ in range(sh.G().VERTEX_SHARING_ROUNDS):
-        moved_now = set()
+    rounds, opened, widest = sh.G().VERTEX_SHARING_ROUNDS, 0, 0.0   # points cut open, the widest disc
+    for round_ in range(rounds + sh.G().PINCH_CUT_ROUNDS):
+        moved_now, added = set(), []
+        late = round_ >= rounds
         for k, z in enumerate(levels):
             at = [i for i in (k - 1, k) if 0 <= i < len(slices)]
             if len(at) == 2 and pinches_opened:
@@ -125,17 +133,35 @@ def slices_sharing_vertices(slices, flats, levels, log, pinches_opened=True):
                     cuts[k] += 1
             new, moved = share_vertices([slices[i] for i in at], [region for height, region, _ in flats if height == z])
             for j, i in enumerate(at):
+                if late and j in moved:
+                    added.append(points_added(slices[i], new[j]))
                 slices[i] = new[j]
                 if j in moved:
                     moved_now.add(i)
+        if added:
+            pts = np.concatenate(added)
+            pts = pts[np.unique(grid_keys(pts), return_index=True)[1]]       # one per grid point
+            cut, r = cut_open_at(slices, pts, round_ - rounds)
+            moved_now |= cut
+            opened, widest = opened + len(pts), max(widest, r)
         for i in moved_now:
             slices[i] = open_pinches(noded(slices[i]), log) if pinches_opened else noded(slices[i])
         changed |= moved_now
         if not moved_now:
-            return slices, changed
-    if log:
-        log(f"slices still sharing new vertices after {sh.G().VERTEX_SHARING_ROUNDS} rounds")
+            break
+    else:
+        if log:
+            log(f"slices still sharing new vertices after {rounds} rounds")
+    if opened and log:
+        log(f"slices still sharing new vertices after {rounds} rounds: cut open at {opened} points, "
+            f"by discs of up to {widest:.6g} mm radius")
     return slices, changed
+
+
+def points_added(old, new):
+    """The vertices of `new` at grid points where `old` has none."""
+    a, b = ring_points(old), ring_points(new)
+    return b[~np.isin(grid_keys(b), grid_keys(a))]
 
 
 def wall_segments(region):

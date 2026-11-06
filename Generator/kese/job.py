@@ -29,12 +29,22 @@ CHOICES = {
 ONE_OR_MORE = ("Geometry.PINCH_CUT_ROUNDS", "Geometry.VERTEX_SHARING_ROUNDS", "Geometry.NODING_ROUNDS",   # at 0 nothing
                "Parallel.SKIN_PROBES_AT_A_TIME", "Parallel.VERIFY_TRIANGLES_AT_A_TIME", "Parallel.STEP_ROWS_AT_A_TIME",
                "Verifier.VERIFY_RAYS")                                                                 # (or no test)
-AT_LEAST = {**dict.fromkeys(ONE_OR_MORE, 1), "Step.STEP_ARC_MIN_POINTS": 3}     # three points make a circle
+ONE_OR_MORE += ("Geometry.AIR_TILE_VERTICES", "Geometry.FINISH_BORES_AT_A_TIME", "Parallel.VERIFY_POLYGONS_PER_THREAD",
+                "Parallel.VERIFY_GROUPS_PER_WORKER")
+ZERO_OR_MORE = ("Geometry.HEIGHT_DIGITS", "Geometry.REACH_MARGIN_STEPS", "Geometry.AIR_NEAR_MARGIN_STEPS",
+                "Geometry.AIR_TILE_DEPTH", "Geometry.SKIN_FEW_PIECES", "Geometry.SKIN_BIG_PIECE_COORDINATES",
+                "Parallel.PROCESS_MIN_NETS", "Verifier.VERIFY_MERGE_EXTRA_DIGITS")
+AT_LEAST = {**dict.fromkeys(ZERO_OR_MORE, 0), **dict.fromkeys(ONE_OR_MORE, 1),
+            "Step.STEP_ARC_MIN_POINTS": 3,                        # three points make a circle
+            "Geometry.PINCH_DISC_SIDES": 3, "Geometry.ELLIPSE_MIN_SEGMENTS": 3}
 KIND_WORDS = {bool: "True or False", int: "a number", float: "a number", str: "text, in quotes",
               list: "a list", dict: "a dict"}
 NUMBER_AT_LEAST = {"Verifier.VERIFY_VOLUME_TOLERANCE": 0, "Verifier.VERIFY_OPENED_VOLUME_MM3": 0,
+                   "Verifier.VERIFY_VOLUME_NOISE_MM3": 0, "Step.STEP_TANGENT_MM": 0, "Step.STEP_ARC_CHECK_FACTOR": 0,
+                   "Parallel.WORKER_STOP_WAIT_S": 0,
                    "Finish.FINISH_MITRE_LIMIT": 1}     # a corner cut nearer than its thickness would thin the finish
-MORE_THAN_ZERO = ("Step.STEP_ARC_MAX_SWEEP_DEG",)      # arcs are cut in pieces of at most this
+MORE_THAN_ZERO = ("Step.STEP_ARC_MAX_SWEEP_DEG", "Step.STEP_STRIP_MAX_TURN_DEG",   # arcs are cut in pieces of at most this
+                  "Geometry.SMOOTH_FACET_AREA_DIVISOR")
 WHOLE_NUMBERS = {                 # the settings of parameters/parallel.py that count, and what their 0 means
     "WORKERS": "one per processor thread",
     "PROCESS_WORKERS": "as many as WORKERS",

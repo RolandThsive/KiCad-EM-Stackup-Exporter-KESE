@@ -107,7 +107,7 @@ python run_KESE.py --version
 | `--mode` | `simulation` or `visual`. Default: `Run.MODE`. |
 | `--format` | Any of `glb`, `stl`, `obj`, `step`, several at once. Default: `Run.FILE_FORMAT` (`["glb"]`). Visual mode allows only `glb` and `obj`. |
 | `--for` | Applies a preset from `parameters/presets.py` before any `--set`: `freecad`, `elmer`, `calculix`, `openems`, `viewer`, `blender_glb`, `blender_obj`. See [Choosing An Export](Choosing-An-Export.md). |
-| `--verify` | Runs the Verifier after the model files are written (1 to 3 s on the example boards). See [Checks, Errors And Warnings](Checks-Errors-And-Warnings.md). |
+| `--verify` | Runs the Verifier after the model files are written (at most about 1.5 s more on the example boards). See [Checks, Errors And Warnings](Checks-Errors-And-Warnings.md). |
 | `--out` | Output root. Default: `Run.OUTPUT_DIR` (`Output/`). |
 | `--set Module.NAME=value` | Overrides one parameter for this run. `Module` is the short name of the parameter file (`Run`, `Board`, `Copper`, `SolderMask`, `Silkscreen`, `Finish`, `Geometry`, `Color`, `Parallel`, `Step`, `Verifier`, `Presets`). The value is parsed as a Python literal (`0.02`, `True`); anything that does not parse, such as `net`, is kept as a string (so `false` is the word, and stops the run where the setting takes `True` or `False`). Quote a list for the shell, as in `--set 'Run.FILE_FORMAT=["glb","stl"]'`: unquoted, the shell strips its inner quotes and the run stops. An unknown module or name, or a `--set` without `=`, stops the run before it starts, naming the closest setting ([Checks, Errors And Warnings](Checks-Errors-And-Warnings.md#1711-errors)). |
 | `--version` | Prints `kese 2.3.0`. |
@@ -124,9 +124,9 @@ in its values. Only `--out` is not recorded there; the run folder's path shows i
 > full traceback is shown, with several the failing board is reported and the run continues.
 > A run works on every processor thread it may use (`Parallel.WORKERS`, see
 > [Working Principle](Working-Principle.md#64-work-done-in-parallel)); on a machine short of memory,
-> `--set Parallel.PROCESS_WORKERS=1` keeps stage 6 in one process, and `--set Parallel.WORKERS=1`
-> builds everything in one process, in turn. Ctrl-C stops the run and its worker
-> processes with one traceback.
+> `--set Parallel.PROCESS_WORKERS=1` starts no worker process and keeps the threads, and
+> `--set Parallel.WORKERS=1` builds everything in one process, in turn. Ctrl-C stops the run and
+> its worker processes with one traceback.
 
 ## 3.4 Next
 

@@ -70,6 +70,13 @@ Only the webs this fills are added; the hairlines where the grown and shrunk cur
 ones (narrower than 2 µm) are left out, so the openings keep their exact outlines. `report.txt`
 counts them as `mask webs under the min width (w mm) removed on F.Mask`.
 
+The openings are worked on in groups: two openings within $`w`$ of each other are in one group,
+and so is every opening linked to them by a chain of such neighbours (two openings grown by less
+than $`w/2`$ meet only when they are less than $`w`$ apart, so no web closes between two groups),
+`Parallel.WORKERS` groups at a time in threads. The webs are the ones
+the whole layer at once gives, with the same vertices, and the openings close the same region; on
+CIAA ACC the front takes 4.3 s where the whole layer took 9.8 s.
+
 ## 15.2 Conformal Mask
 
 ![Board 17_mask_silk from the top with a dashed box over a trace, and the boxed region cut across the trace: the mask flat on the laminate, climbing the trace's side and lying on its top](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/mask_3_conformal.webp)
@@ -109,8 +116,22 @@ On the `B` side every z is mirrored ($`z \to -z`$).
 | $`t_{\mathrm{out}}`$ | finished outer copper thickness, equation (7.3) | |
 | $`L`$ | laminate thickness, equation (7.1) | |
 
-The wall's outer edge is rounded with `MASK_WALL_QUAD_SEGS` segments per quarter circle. In
-simulation mode all three go into one part per side, `Top Solder Mask` / `Bottom Solder Mask`.
+The wall's outer edge is rounded with `MASK_WALL_QUAD_SEGS` segments per quarter circle.
+
+Where an opening's outline follows the copper's, as for a pad with no mask margin, the two seldom
+match point for point: the opening's arc has other points than the pad's, or an edge rounds onto
+the grid a step off. $`M^{\mathrm{top}}`$ then holds slivers between the two outlines, most of
+them under a tenth of a micrometre wide (NE_Delta's front had 8,895 of its 9,775 pieces), which no
+fab makes and which stage 6 could not always close: one, a needle beside the wall's tip, traded
+vertices with the wall round after round. A piece of $`M^{\mathrm{top}}`$ narrower than twice
+`MASK_OVER_COPPER_HAIRLINE_MM` (1 µm) everywhere is left out, and `report.txt` counts them:
+`solder mask: 8895 slivers on the copper narrower than 0.002 mm left out (F.Mask)`. Each is added
+to the opening beside it, so the finish covers it as it covers the rest of the pad
+([Finish](Finish.md#132-where-the-finish-goes)), and no ink is printed on it
+([Silkscreens](Silkscreens.md#141-what-is-drawn)), which would stand on mask that is not there.
+The mask is worked out with its switch off too, so the finish reaches those pads' edges either way.
+
+In simulation mode all three go into one part per side, `Top Solder Mask` / `Bottom Solder Mask`.
 In visual mode the **top** region becomes its own part,
 `Top Mask over Copper` / `Bottom Mask over Copper`, with its own colour
 ([Output Modes](Output-Modes.md)).
@@ -154,6 +175,7 @@ mask over the annular ring; its bore is still open.
 | `PAD_TO_MASK_CLEARANCE_MM` | `None` | None or mm ≥ 0 | Board-wide clearance around pads; `None` follows Board Setup. A pad's or footprint's own `solder_mask_margin` still wins |
 | `MASK_MIN_WIDTH_MM` | `None` | None or mm ≥ 0 | Narrowest web of mask kept between two openings, equation (15.2b); `None` follows Board Setup (`solder_mask_min_width`), 0 keeps every web |
 | `MASK_WALL_QUAD_SEGS` | `4` | int ≥ 1 | Curve quality of the walls beside traces |
+| `MASK_OVER_COPPER_HAIRLINE_MM` | `1e-3` | mm ≥ 0 | A piece of mask on top of copper narrower than twice this is left out, and the finish covers it instead (15.2); 0 keeps every one |
 
 | Previous | Next |
 |:---|---:|

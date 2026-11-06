@@ -1,15 +1,18 @@
 """The worker processes and threads of kese/core/parallel.py: a thread's own copies of shapes
 (kese/core/shape_copies.py) are the same shapes, made only where GEOS needs them (and on no grid
-where the grid is not used: a join of shared regions is the same join), threads share one prepared
-copy of a slice's material and one set of joined holes, work in batches of any size with the same
-result (the STEP writer's slices too, to the byte), and hand back the memory they freed (unless
-Parallel.GIVE_BACK_MEMORY is off), Parallel.PROCESS_WORKERS caps the worker processes and boards under
-Parallel.PROCESS_MIN_COORDINATES stay in one process, shapes keep their grid (and type and SRID) on the way to and from the workers, the run's settings reach
-the workers, a lost worker or one out of memory leaves its jobs to the main process, an error in the
-work is raised at once and the other workers are stopped, a caller that stops early does not wait,
-the OOM killer takes a worker first, KESE runs inside a multiprocessing.Pool, a script without a
-main guard is not run again in the workers, and the workers end with Ctrl-C (one traceback) and
-with the main process.
+where the grid is not used: a join of shared regions is the same join); threads share one prepared
+copy of a slice's material and one set of joined holes, cut faces only by the pieces of material
+that meet them, and work in batches of any size with the same result (the STEP writer's slices
+too, to the byte; a STEP file written part by part in worker processes; the copper layers joined in
+worker processes; the solder mask's webs found group by group); they hand back the memory they
+freed (unless Parallel.GIVE_BACK_MEMORY is off).  Parallel.PROCESS_WORKERS caps the worker
+processes and boards under Parallel.PROCESS_MIN_COORDINATES stay in one process; shapes keep their
+grid (and type and SRID) on the way to and from the workers; the run's settings reach the workers;
+a lost worker or one out of memory leaves its jobs to half as many processes, then to the main
+process; an error in the work is raised at once and the other workers are stopped; a caller that
+stops early does not wait; the OOM killer takes a worker first; KESE runs inside a
+multiprocessing.Pool; a script without a main guard is not run again in the workers; and the
+workers end with Ctrl-C (one traceback) and with the main process.
 
     python -m pytest tests/test_parallel.py          (or:  python tests/test_parallel.py)"""
 import os
@@ -35,8 +38,9 @@ from kese.core.boundary import Boundary  # noqa: E402
 from kese.core.parallel import in_parallel, in_processes, processes_wanted, workers_wanted, worth_processes  # noqa: E402
 from kese.core.shape_copies import _owned, own  # noqa: E402
 from kese.s3_resolve.holes import made_once  # noqa: E402
-from kese.s6_assemble.skin_faces import lies_against_material  # noqa: E402
+from kese.s6_assemble.skin_faces import cut_away, lies_against_material  # noqa: E402
 from kese.s6_assemble.skin_mesh import looks_at_material  # noqa: E402
+from kese.s7_write import step  # noqa: E402
 from kese.s7_write.step import write_part  # noqa: E402
 from kese.s7_write.step_writer import StepWriter  # noqa: E402
 from kese.s8_verify.vertical_rays import vertical_hits  # noqa: E402
@@ -70,6 +74,17 @@ def lost_on_3(n, parent):
     """In a worker, job 3 stops its process, as the system does when memory runs out."""
     if n == 3 and os.getpid() != parent:
         os._exit(9)
+    return n * n
+
+
+def lost_on_3_slowly(n, parent, marker=None):
+    """In a worker, job 3 stops its process (with a `marker`, only the first time: it leaves that
+    file); the other jobs take 0.3 s, so that most are still left when it does."""
+    if n == 3 and os.getpid() != parent and not (marker and Path(marker).exists()):
+        if marker:
+            Path(marker).touch()
+        os._exit(9)
+    time.sleep(0.3)
     return n * n
 
 
@@ -237,6 +252,25 @@ def test_threads_share_one_prepared_copy_of_a_slice():
     assert not shapely.is_prepared(material)
 
 
+def test_threads_cut_faces_by_the_pieces_that_meet_them_alone():
+    # a ring round the face meets its box but not the face, a square over its corner meets both: in
+    # every thread the face loses that corner alone, and no shape is left prepared
+    grid = 1e-4
+    ring = shapely.set_precision(shapely.box(-5, -5, 15, 15).difference(shapely.box(-1, -1, 11, 11)), grid)
+    polys = np.array([ring, shapely.set_precision(shapely.box(8, 8, 12, 12), grid)], dtype=object)
+    material = (polys, np.array(["a", "b"], dtype=object), shapely.STRtree(polys), shapely.union_all(polys, grid_size=grid),
+                {"turn": threading.Lock()})
+    faces = [shapely.set_precision(shapely.box(0, 0, 10, 10), grid) for _ in range(16)]
+    saved = with_workers(8)
+    try:
+        got = in_parallel(lambda face: cut_away(face, material), faces)
+    finally:
+        put_back(saved)
+    want = shapely.box(0, 0, 10, 10).difference(shapely.box(8, 8, 10, 10))
+    assert all(g.equals(want) for g in got)
+    assert not shapely.is_prepared(faces).any() and not shapely.is_prepared(polys).any()
+
+
 def test_the_probe_test_lets_go_of_its_prepared_slices():
     # one triangle standing in the material: the point just in front of it is inside; then the
     # slice's prepared index is freed, not kept for as long as the slices are
@@ -293,6 +327,147 @@ def test_a_step_part_is_written_the_same_in_slices_of_any_size():
             assert whole.count("DIRECTION(") > 10 and ("CIRCLE(" in whole) == arcs
             for rows in (1, 4, 7):
                 assert step_data(tmp, rows, arcs) == whole, (rows, arcs)
+
+
+def board_model(pcb):
+    """A board's Model in simulation mode (stages 1 to 6), built in this process."""
+    from kese.job import start
+    from kese.s1_read import read
+    from kese.s2_collect import collect
+    from kese.s3_resolve import resolve
+    from kese.s4_geometry import geometry
+    from kese.s5_materials import materials
+    from kese.s6_assemble import assemble
+    job = start("simulation", ["step"], None, (), False, lambda s: None)
+    out = str(pcb)
+    for stage in (read, collect, resolve, geometry, materials, assemble):
+        out = stage.run(out, job)
+    job.status.stop()
+    return out
+
+
+def test_a_step_file_written_in_processes_is_the_same_to_the_byte():
+    # each part's entities counted first, then written in a worker into a file of their own, and
+    # the files joined in order: the same file, and the same notes, as one written part after part
+    # in this process, whatever the number of workers, with arcs and without, and no temporary file
+    # left behind
+    model = board_model(ROOT / "tests" / "boards" / "six_layer.kicad_pcb")
+    with tempfile.TemporaryDirectory() as tmp:
+        for arcs in (True, False):
+            files, notes = {}, {}
+            for workers, least in ((1, 10 ** 12), (2, 0), (3, 0)):
+                saved = with_workers(workers, ("Parallel.PROCESS_MIN_COORDINATES", least), ("Step.STEP_EXACT_ARCS", arcs))
+                notes[workers] = []
+                try:
+                    path = step.write(model, Path(tmp) / f"{workers}_{arcs}.step", notes[workers].append)
+                finally:
+                    put_back(saved)
+                text = path.read_text(encoding="latin-1")
+                files[workers] = text[text.index("\nDATA;"):]
+            assert files[1] == files[2] == files[3] and ("CIRCLE(" in files[1]) == arcs, arcs
+            assert notes[1] == notes[2] == notes[3], notes
+        assert sorted(p.name for p in Path(tmp).iterdir()) == sorted(f"{w}_{a}.step" for w in (1, 2, 3) for a in (True, False))
+
+
+def test_a_step_part_whose_worker_is_lost_in_the_second_round_is_written_again_here():
+    # a worker lost while it writes a part's entities (out of memory) leaves the part's topology
+    # behind, so the main process writes the part again from it, to the same text
+    from kese.s7_write import step_parts
+    model = board_model(ROOT / "tests" / "boards" / "six_layer.kicad_pcb")
+    part = max(model.boundaries, key=lambda p: step_parts.size(model.boundaries[p]))
+    real = step_parts.write_brep
+
+    def lost(w, topo, transform):
+        w.write(["#100 = HALF_WRITTEN();"])
+        raise MemoryError
+
+    with tempfile.TemporaryDirectory() as tmp:
+        tmp = Path(tmp)
+        texts = []
+        for name, dies in (("clean", False), ("lost", True)):
+            kept, out = tmp / f"{name}.topology", tmp / f"{name}.step"
+            count = step_parts.found(part, model.boundaries[part], model.transform, kept)[0]
+            if dies:
+                step_parts.write_brep = lost
+                try:
+                    step_parts.written(kept, model.transform, 100, out)
+                    raise AssertionError("the lost write did not fail")
+                except MemoryError:
+                    assert kept.exists()
+                finally:
+                    step_parts.write_brep = real
+            assert step_parts.written(kept, model.transform, 100, out)[1] == count and not kept.exists()
+            texts.append(out.read_text(encoding="latin-1"))
+        assert texts[0] == texts[1] and "HALF_WRITTEN" not in texts[1]
+
+
+def copper_keys(pcb):
+    """Stage 3's copper of a board, per layer and net and per layer, and its mask, as bytes and the
+    grid of every part."""
+    from kese.job import start
+    from kese.s1_read import read
+    from kese.s2_collect import collect
+    from kese.s3_resolve import resolve
+
+    def key(g):
+        return shapely.to_wkb(g, include_srid=True), tuple(shapely.get_precision(shapely.get_parts(g)).tolist())
+    job = start("simulation", ["glb"], None, (), False, lambda s: None)
+    r = resolve.run(collect.run(read.run(str(pcb), job), job), job)
+    job.status.stop()
+    return ({l: {n: key(g) for n, g in nets.items()} for l, nets in r.copper.items()},
+            {l: key(g) for l, g in r.copper_all.items()}, {s: key(g) for s, g in r.mask.items()})
+
+
+def test_the_copper_layers_joined_in_processes_are_the_same_to_the_byte():
+    # each layer's nets joined, clipped and cut by the holes in a worker of its own, the biggest
+    # layer first: the same regions, on the same grid, as in threads, whatever the number of workers
+    pcb = ROOT / "tests" / "boards" / "six_layer.kicad_pcb"
+    keys, nets = {}, P.Parallel.PROCESS_MIN_NETS
+    for workers, least in ((1, 10 ** 12), (3, 10 ** 12), (2, 0), (3, 0)):
+        saved = with_workers(workers, ("Parallel.PROCESS_MIN_COORDINATES", least))
+        P.override("Parallel.PROCESS_MIN_NETS", 0 if least == 0 else nets)
+        try:
+            keys[workers, least] = copper_keys(pcb)
+        finally:
+            put_back(saved)
+            P.override("Parallel.PROCESS_MIN_NETS", nets)
+    first = keys[1, 10 ** 12]
+    assert len(first[0]) == 6 and all(k == first for k in keys.values())
+
+
+def test_the_mask_webs_found_group_by_group_are_the_whole_layer_s():
+    # openings near each other (webs between them), far apart (none between them) and one with a
+    # narrow notch (a web in itself): the webs found group by group, in threads, close the same
+    # region as the whole layer at once, with the same vertices, however many threads
+    from collections import Counter
+
+    from kese.core import shapes2d as sh
+    from kese.s3_resolve import mask
+    pads = [shapely.box(x, y, x + 0.5, y + 0.3) for x in (0, 0.6, 1.2) for y in (0, 0.4)]   # 0.1 mm apart
+    far = [shapely.box(5, 5, 5.5, 5.3), shapely.box(6, 5, 6.5, 5.3)]                          # 0.5 mm apart
+    notched = shapely.box(10, 0, 11, 1).difference(shapely.box(10.45, 0.2, 10.55, 1))          # a 0.1 mm notch
+    openings, w = sh.union(pads + far + [notched]), 0.25
+    grow = w / 2 - 1e-6
+    joined = openings.buffer(grow, join_style="bevel").buffer(-grow, join_style="bevel")
+    whole = [p for p in shapely.get_parts(sh.diff(joined, openings))
+             if not p.buffer(-P.SolderMask.MASK_WEB_HAIRLINE_MM).is_empty]
+    assert len(whole) == 2 and len(mask.web_groups(openings, w)) == 4      # one among the pads, one in the notch
+    done = {}
+    for workers in (1, 3):
+        saved = with_workers(workers)
+        try:
+            items = SimpleNamespace(mask_min_width=w, found=Counter())
+            done[workers] = mask.min_width_joined(items, openings, "F")
+        finally:
+            put_back(saved)
+        assert list(items.found.values()) == [len(whole)]
+    assert shapely.to_wkb(done[1]) == shapely.to_wkb(done[3])
+    assert shapely.symmetric_difference(done[1], sh.union([openings] + whole)).area == 0
+    stray = shapely.GeometryCollection([*shapely.get_parts(openings), shapely.LineString([(20, 0), (21, 1)])])
+    assert len(mask.web_groups(stray, w)) == 4                                # a stray line is no opening
+    found = [p for g in mask.web_groups(openings, w) for p in mask.webs_of(g, grow)]
+    assert sorted(shapely.to_wkb(shapely.normalize(np.array(found, dtype=object)))) == \
+        sorted(shapely.to_wkb(shapely.normalize(np.array(whole, dtype=object))))
 
 
 def test_joined_holes_are_made_once_when_threads_ask_at_once():
@@ -387,6 +562,28 @@ def test_a_lost_worker_leaves_its_jobs_to_this_process():
     assert len(notes) == 1 and notes[0].startswith("worker processes failed (BrokenProcessPool"), notes
 
 
+def test_a_lost_worker_leaves_the_jobs_left_to_half_as_many_processes_then_to_this_one():
+    # four workers: job 3 stops its worker each time, so the jobs left go to two, then here; lost
+    # once, they are all done in the two
+    lack = " (most often a lack of memory: fewer processes, Parallel.PROCESS_WORKERS, use less)"
+    saved = with_workers(4)
+    try:
+        notes = []
+        got = dict(in_processes(lost_on_3_slowly, [(n, (n, os.getpid())) for n in range(12)], notes.append))
+        assert got == {n: n * n for n in range(12)}
+        assert len(notes) == 2 and all(s.startswith("worker processes failed (BrokenProcessPool") for s in notes), notes
+        assert notes[0].endswith(" left are built in 2 processes" + lack), notes
+        assert notes[1].endswith(" in this process, one after another" + lack), notes
+        with tempfile.TemporaryDirectory() as tmp:
+            notes = []
+            marker = str(Path(tmp) / "lost")
+            got = dict(in_processes(lost_on_3_slowly, [(n, (n, os.getpid(), marker)) for n in range(12)], notes.append))
+        assert got == {n: n * n for n in range(12)}
+        assert len(notes) == 1 and notes[0].endswith(" left are built in 2 processes" + lack), notes
+    finally:
+        put_back(saved)
+
+
 def test_out_of_memory_in_a_worker_leaves_its_job_to_this_process():
     notes = []
     saved = with_workers(2)
@@ -425,7 +622,8 @@ def test_an_error_in_the_work_is_raised_at_once_and_not_taken_for_lost_processes
             put_back(saved)
         assert str(raised) == str(error) and time.time() - t0 < 15, (raised, time.time() - t0)
         assert notes == [], notes                    # not built again here
-        assert gone(before), "the workers building the other parts were not stopped"
+        # ended before the error is raised: a worker writing a file writes no more (step_parts.py)
+        assert not any(alive(w) for w in spawned() - before), "the workers building the other parts were not stopped"
 
 
 def test_a_caller_that_stops_early_does_not_wait():
@@ -571,8 +769,14 @@ if __name__ == "__main__":
     t.test_a_join_of_shared_regions_is_the_same_join()
     t.test_threads_on_their_own_copies_of_one_shape()
     t.test_threads_share_one_prepared_copy_of_a_slice()
+    t.test_threads_cut_faces_by_the_pieces_that_meet_them_alone()
     t.test_the_probe_test_lets_go_of_its_prepared_slices()
     t.test_batches_of_any_size_give_the_same_result()
+    t.test_a_step_part_is_written_the_same_in_slices_of_any_size()
+    t.test_a_step_file_written_in_processes_is_the_same_to_the_byte()
+    t.test_a_step_part_whose_worker_is_lost_in_the_second_round_is_written_again_here()
+    t.test_the_copper_layers_joined_in_processes_are_the_same_to_the_byte()
+    t.test_the_mask_webs_found_group_by_group_are_the_whole_layer_s()
     t.test_joined_holes_are_made_once_when_threads_ask_at_once()
     t.test_memory_freed_by_threads_is_handed_back()
     t.test_memory_is_kept_with_give_back_memory_off()
@@ -580,6 +784,7 @@ if __name__ == "__main__":
     t.test_small_boards_stay_in_one_process()
     t.test_the_run_s_settings_reach_the_workers()
     t.test_a_lost_worker_leaves_its_jobs_to_this_process()
+    t.test_a_lost_worker_leaves_the_jobs_left_to_half_as_many_processes_then_to_this_one()
     t.test_out_of_memory_in_a_worker_leaves_its_job_to_this_process()
     t.test_an_error_in_the_work_is_raised_at_once_and_not_taken_for_lost_processes()
     t.test_a_caller_that_stops_early_does_not_wait()

@@ -85,7 +85,11 @@ cannot be written), the file being written is removed, an OBJ with its MTL, and 
 when nothing in it was written whole (and the board's folder, when it holds no other run). The
 error that comes out is the one that stopped the write, even when a file or folder cannot be
 removed after it (that one is left)
-([Checks, Errors And Warnings](Checks-Errors-And-Warnings.md#1711-errors)).
+([Checks, Errors And Warnings](Checks-Errors-And-Warnings.md#1711-errors)). While a big board's
+STEP file is written in worker processes, its parts are first written into a hidden folder beside
+it, `.<board>.step.parts` (`<board>.step` cut to its first 40 characters), which is removed once
+the file is done or the write fails
+([Working Principle](Working-Principle.md#64-work-done-in-parallel)).
 
 ### 19.2.2 `report.txt`
 
@@ -184,7 +188,7 @@ Verifier: PASS
 | `stack-up` | laminate thickness and its source, the z band and foil of every copper layer, every dielectric with type, material, thickness, εr, tanδ and z range, the via tenting source, the pad-to-mask clearance, the silk-over-copper setting, the origin used |
 | `read` | a count of every kind of item read from the file (non-plated holes are counted here even when `Board.INCLUDE_NON_PLATED_HOLES = False` leaves them out) |
 | `skipped` | a count of the items left out, with the reason (hidden text and text on layers that are not drawn are left out without a count) |
-| `notes` | the font, the mask thickness and its source, finish, resin fill, castellation and edge plating notes, warnings raised while building (in the parts' order, however many worker processes ran), and the note when the worker processes failed and the main process built the parts left |
+| `notes` | the font, the mask thickness and its source, finish, resin fill, castellation and edge plating notes, warnings raised while building (in the parts' order, however many worker processes ran), and the notes when worker processes failed and fewer processes, or the main process, did the parts left |
 | `parts` | every part with its triangle count, material key, colour and alpha |
 | `timing` | seconds per stage (verify only when the Verifier ran) |
 | Verifier | only with `--verify` or `Verifier.VERIFY = True`; see [Checks, Errors And Warnings](Checks-Errors-And-Warnings.md) |
@@ -220,7 +224,8 @@ case as Windows and macOS file systems do, so no file replaces another.
 `tests/test_boards.py` writes its runs to `tests/out/`, which is deleted at the start of every
 test run and ignored by git. `tests/test_layout.py`, `tests/test_colors.py`,
 `tests/test_kicad_version.py`, `tests/test_enabled.py`, `tests/test_verifier.py`,
-`tests/test_boundary.py`, `tests/test_copper_union.py` and `tests/test_pairs.py` write nothing, and
+`tests/test_boundary.py`, `tests/test_copper_union.py`, `tests/test_finish_shells.py`,
+`tests/test_mask.py` and `tests/test_pairs.py` write nothing, and
 `tests/test_step_native.py`, `tests/test_step_arcs.py`, `tests/test_text_layout.py`,
 `tests/test_bad_input.py`, `tests/test_parallel.py` and `tests/test_full_disk.py` write only in a
 temporary folder that they remove.

@@ -4,7 +4,7 @@ import numpy as np
 import shapely
 from shapely.geometry import Polygon
 
-from kese.core.shapes2d import EMPTY, as_region, diff, grid, inter, meeting, polys_only, side_by_side, snap
+from kese.core.shapes2d import EMPTY, G, as_region, diff, grid, inter, meeting, polys_only, side_by_side, snap
 
 
 def grown_parts(parts, t, **style):
@@ -88,11 +88,23 @@ def around_raised(region, raised, t, quad_segs):
     return diff(region, as_region(rings)), as_region(tops), as_region(walls)
 
 
+def without_hairlines(region, h):
+    """The region without its pieces narrower than 2 h everywhere (those a buffer of -h empties), and
+    those pieces (a list).  Every point of such a piece lies within h of its edge, so its area is at
+    most h times its perimeter: only those pieces are buffered."""
+    parts = shapely.get_parts(polys_only(region))
+    if h <= 0 or not len(parts):
+        return region, []
+    maybe = np.flatnonzero(shapely.area(parts) <= h * shapely.length(parts))
+    thin = maybe[shapely.is_empty(shapely.buffer(parts[maybe], -h))]
+    return (as_region(list(np.delete(parts, thin))), list(parts[thin])) if len(thin) else (region, [])
+
+
 def around_region(region, raised, t, quad_segs):
     """Every piece of the coating split on its own, against the raised copper inside a box around
     it wide enough that what the box cuts off cannot reach the piece once grown."""
     cut = cutter(raised)
-    m = 2 * t + 8 * grid()
+    m = 2 * t + G().REACH_MARGIN_STEPS * grid()
     flats, tops, walls = [], [], []
     for s in shapely.get_parts(region):
         x0, y0, x1, y1 = s.bounds

@@ -30,5 +30,11 @@ PAD_TO_MASK_CLEARANCE_MM = None
 MASK_MIN_WIDTH_MM = None
 MASK_WEB_HAIRLINE_MM = 1e-3             # a web the minimum width adds that is narrower than twice this is dropped
 
+# A piece of mask on top of copper narrower than twice this is left out: where an opening's outline
+# follows the copper's (a pad with no mask margin) with other points along its curves, or a grid step
+# off, the mask on the copper keeps slivers far thinner than a micrometre that no fab makes.  The finish
+# covers them instead.
+MASK_OVER_COPPER_HAIRLINE_MM = 1e-3
+
 # Curve quality of the little walls where the mask climbs over a trace (segments per quarter circle)
 MASK_WALL_QUAD_SEGS = 4

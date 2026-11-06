@@ -1,6 +1,6 @@
 """Graphs of shapes: which shapes lie within a distance of each other (pairs_within), and the
 connected components of an undirected graph, in numpy.  Every component is numbered in the order of
-its smallest node, as scipy and trimesh number them."""
+its smallest node, as scipy and trimesh number them.  And an index that threads share (shared_tree)."""
 import numpy as np
 import shapely
 
@@ -48,3 +48,13 @@ def pairs_within(parts, d):
     finally:
         shapely.destroy_prepared(parts[fresh])
     return i[near], j[near]
+
+
+def shared_tree(geoms):
+    """An STRtree that several threads will query, built here, before they share it.  GEOS builds a
+    tree on its first query, under a lock, but a thread that finds it built reads it with no lock: on
+    a processor that may reorder writes (ARM, as in Apple's), it could find it built and read nodes
+    not yet written.  Built first, it is only read."""
+    tree = shapely.STRtree(geoms)
+    tree.query(shapely.Point(0.0, 0.0))        # any query builds it
+    return tree

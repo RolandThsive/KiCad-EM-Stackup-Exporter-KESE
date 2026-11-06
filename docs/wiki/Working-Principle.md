@@ -90,7 +90,15 @@ mesh = mesh_of_boundary(boundary)                  # faces cut into triangles, t
 - The walls are the rings of every slice, stood up between the slice's two heights
   (`Boundary.walls()`). Faces and walls must meet on identical edges, so the slices that meet at a
   height are given each other's vertices, and their faces' vertices, until nothing changes
-  (`kese/core/vertices.py`). Then the mesh closes by construction.
+  (`kese/core/vertices.py`). Then the mesh closes by construction. Where needle tips of two
+  slices lie a grid step or two apart, giving one the other's vertex and putting both back on the
+  grid can move them for ever: slices still changing after `Geometry.VERTEX_SHARING_ROUNDS`
+  rounds (20; most settle in one to three, a hole's finish in visual mode has taken twelve) are
+  cut open at each point a further round adds, every slice by a disc of
+  `Geometry.PINCH_POINT_OPENING_MM`, doubling each round, for at most `Geometry.PINCH_CUT_ROUNDS`
+  rounds, and `report.txt` notes it. On one board's solder mask the slices still traded vertices
+  after an hour; a 20 µm piece of it ends some 400 rounds with three T-junctions, and cut open so
+  settles, closed.
 - A slice is made once for all the heights the same prisms span (a hole's finish is three prisms,
   one per stretch of the wall, and the same between every two of its layers). The faces at a height
   are cut only where the slices below and above differ (`kese/core/flat_faces.py`): the pieces both
@@ -156,16 +164,30 @@ use; `1`: everything in turn, in one process), and at most `Parallel.PROCESS_WOR
 
 | Stage | What runs at once | In |
 |---|---|---|
-| 3 resolve | the copper layers | threads |
-| 4 geometry | the top and bottom solder mask, then the top and bottom silkscreen; the finish's hole spans and copper layers | threads |
-| 6 assemble, simulation mode | the parts' solids, the biggest part first | processes |
+| 3 resolve | the copper layers, the biggest first | processes on a board of `Parallel.PROCESS_MIN_NETS` nets or more (1,000), else threads |
+| 3 resolve | the solder mask's minimum web width, group by group of openings | threads |
+| 4 geometry | the top and bottom solder mask, then the top and bottom silkscreen; the finish's bores, in groups near each other, and copper layers | threads |
+| 6 assemble, simulation mode | the parts' solids, the biggest part first, and with the Verifier on their checks | processes |
 | 6 assemble, visual mode | each part sliced | processes |
 | 6 assemble, visual mode | the faces, the walls and the test for hidden triangles | threads |
+| 7 write, STEP | each part's topology and arcs, then its entities' text | processes |
+| 8 verify, simulation mode | the overlap check: the slices split into polygons, then shrunk and tested | threads |
 
 - Threads where the 2D geometry library, GEOS, does the work: it runs outside Python's lock.
   Processes where much of the work is Python's own, which threads would take in turn. Parts that
-  hold under `Parallel.PROCESS_MIN_COORDINATES` coordinates in all (20,000) are built in the main
-  process, as starting the processes would take longer.
+  hold under `Parallel.PROCESS_MIN_COORDINATES` coordinates in all (20,000) are built, and written
+  to STEP, in the main process, as starting the processes would take longer. The copper layers go
+  to processes only on a board of `Parallel.PROCESS_MIN_NETS` nets or more (1,000), counted layer
+  by layer (`kese/s3_resolve/copper.py`): much of a net's work is then Python's, and CIAA ACC's copper takes
+  13 s in four processes against 24 s in four threads; with fewer nets most of the work is GEOS's,
+  which threads run as fast without sending the shapes to and fro (NE_Delta, 804 nets on 2 layers:
+  8.0 s in threads, 9.3 s in processes).
+- A STEP file's parts are worked on in two rounds (`kese/s7_write/step_parts.py`). First each
+  part's topology and arcs, which give the exact number of entities the part takes, so that the
+  number its entities start from is known; then each part's entities, numbered from there, are
+  written into a file of their own, in a hidden folder beside the STEP file. The files are copied
+  into the STEP file in the parts' order and removed, and so is the folder, also when the write
+  fails (a full disk, Ctrl-C).
 - The results are put back in the layers', sides' and parts' order, so the files are the same,
   byte for byte, however many threads or processes ran (but for the times, as in 6.2).
 - A thread makes shapes only from its own copies of the shapes other threads use
@@ -178,15 +200,20 @@ use; `1`: everything in turn, in one process), and at most `Parallel.PROCESS_WOR
 - A prepared shape, whose search indexes GEOS builds on first use, serves one thread at a time:
   the threads take turns with one prepared copy of each slice's material, so memory does not grow
   with the number of threads, and the test for hidden triangles frees its indexes when it is done.
+  An R-tree that threads share (of each slice's material, of the solid beside the finish's bores)
+  is built before they share it (`kese/core/graph.py`, `shared_tree`): GEOS builds one on its first
+  query, under a lock, but a thread that finds it built reads it with none, and on a processor that
+  may reorder writes (ARM) could read it half written.
 - After each step done in threads, and in each worker after each part, the memory freed is handed
   back to the system (`Parallel.GIVE_BACK_MEMORY`). On Linux, glibc keeps a pool of memory for each thread and holds on to what
   is freed in it, where the steps that follow cannot use it. With these, NE_Delta's visual model
-  peaks at 2.67 GB with 4 workers and 3.46 GB with 32, where it took 3.51 GB and 5.13 GB.
+  peaks at 2.65 GB with 4 workers and 3.57 GB with 32, where it took 3.45 GB and 4.76 GB.
 - The processes start afresh, as Windows and macOS start them, on every system, and are given the
   run's settings, `--for` and `--set` included. Shapes sent to and from them keep their grid, which
   shapely's own pickling would drop.
-- Where the processes cannot start, or the system stops one, or one runs out of memory, the main
-  process builds the parts left, one after another, and `report.txt` says so
+- Where the system stops a worker, or one runs out of memory, the parts left go to half as many
+  processes, and to the main process, one after another, once that would be one; where the
+  processes cannot start, the main process builds the parts. `report.txt` says so each time
   ([Checks, Errors And Warnings](Checks-Errors-And-Warnings.md#1713-notes-worth-knowing)). An
   error in a part's own work stops the run at once and ends the other workers.
 - Ctrl-C, or the end of the main process however it ends, ends the workers too. On Linux the

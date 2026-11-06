@@ -72,6 +72,12 @@ Three clean-ups follow, all for shapes of one net that only just meet:
 - Pieces of one net that come within two grid steps of each other are joined (grown and shrunk
   back by a grid step, mitred), so their walls cannot leave the solid open on the grid.
 
+The layers are worked on `Parallel.WORKERS` at a time, the biggest first: in worker processes on a
+board of `Parallel.PROCESS_MIN_NETS` nets or more (1,000, counted layer by layer) whose copper holds at least
+`Parallel.PROCESS_MIN_COORDINATES` coordinates, else in threads
+([Working Principle](Working-Principle.md#64-work-done-in-parallel)). Either way each net's region
+comes out the same, byte for byte.
+
 ### 11.1.1 Nets
 
 In KiCad 4 to 9 an item carries a net **number** that is looked up in the file's net table; KiCad 10

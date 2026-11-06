@@ -1,8 +1,9 @@
 """A disk that fills up while the files are written: no half-written file is left behind, the
-files written whole before it stay as they are, the error is the system's own (a clean-up that
-fails too does not hide it), and a run folder left empty is removed; and two runs started together
+files written whole before it stay as they are (nor are the files a big board's STEP parts are
+written into on the way), the error is the system's own (a clean-up that fails too does not hide
+it), and a run folder left empty is removed; and two runs started together
 each get a folder of their own.  The disk is made full by letting the files opened for writing in a
-temporary folder take only so many bytes in all.  Takes a few seconds.
+temporary folder take only so many bytes in all.  Takes about fifteen seconds.
 
     python -m pytest tests/test_full_disk.py           (or:  python tests/test_full_disk.py)"""
 import builtins
@@ -18,6 +19,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 
+from kese.core import parallel  # noqa: E402
 from kese.core.whole_files import remove_if_empty, whole  # noqa: E402
 from kese.job import start  # noqa: E402
 from kese.s1_read import read  # noqa: E402
@@ -29,9 +31,13 @@ from kese.s6_assemble import assemble  # noqa: E402
 from kese.s7_write import write  # noqa: E402
 from kese.s7_write.output_folder import new_folder  # noqa: E402
 from kese.s9_report.report import write_parameters  # noqa: E402
+from parameters import P  # noqa: E402
 
 PCB = ROOT / "tests" / "boards" / "six_layer.kicad_pcb"
 FORMATS = ["glb", "obj", "stl", "step"]
+PARTS = ".six_layer.step.parts/"            # where a big board's STEP parts are written on their own
+# the disk full in the first round (the topologies kept), the second (the parts' text) and the join
+FILLED = {PARTS + "0.topology", PARTS + "1.topology", PARTS + "0.step", PARTS + "1.step", "six_layer.step"}
 
 
 class Full:
@@ -111,6 +117,32 @@ def written(model, folder):
 
 
 def test_a_full_disk_leaves_only_whole_files():
+    full_disk_leaves_only_whole_files(lambda name: True)
+
+
+def test_a_full_disk_while_the_step_parts_are_written_leaves_only_whole_files():
+    # a big board's STEP parts are written each into a file of its own, then joined (step_parts.py):
+    # here in this process, where the disk is made full (the worker processes are kept from starting)
+    real = parallel.ProcessPoolExecutor
+    parallel.ProcessPoolExecutor = no_processes
+    saved = [(k, getattr(P.Parallel, k)) for k in ("WORKERS", "PROCESS_MIN_COORDINATES")]
+    P.override("Parallel.WORKERS", 2)
+    P.override("Parallel.PROCESS_MIN_COORDINATES", 0)
+    try:
+        full_disk_leaves_only_whole_files(lambda name: name in FILLED, PARTS)
+    finally:
+        parallel.ProcessPoolExecutor = real
+        for k, v in saved:
+            P.override(f"Parallel.{k}", v)
+
+
+def no_processes(*args, **kwargs):
+    raise OSError("no processes here")
+
+
+def full_disk_leaves_only_whole_files(filled, passing=None):
+    """The disk full in each file `filled` takes in turn; `passing`: the folder of the files that are
+    written and removed again on the way."""
     with tempfile.TemporaryDirectory() as tmp:
         tmp = Path(tmp)
         model, job = model_and_job(tmp)
@@ -120,9 +152,13 @@ def test_a_full_disk_leaves_only_whole_files():
             written(model, tmp / "whole")
         whole = files_in(tmp / "whole")
         order = list(taken)                                    # every file, in the order it was written
-        assert set(order) == set(whole) and {"six_layer.glb", "six_layer.obj", "six_layer.mtl", "six_layer.step",
-                                             "materials.json"} <= set(order) and len(order) > 6, order
+        gone = {name for name in order if passing and name.startswith(passing)}
+        assert set(order) - gone == set(whole) and {"six_layer.glb", "six_layer.obj", "six_layer.mtl", "six_layer.step",
+                                                    "materials.json"} <= set(order) and len(order) > 6, order
+        assert bool(gone) == bool(passing), gone
         for k, name in enumerate(order):     # the disk full half-way through each file in turn, and at its last byte
+            if not filled(name):
+                continue
             for room in (taken[name] // 2, taken[name] - 1):  # (a STEP file's assembly and end, written as it closes)
                 folder = tmp / f"full_{k}_{room}"
                 folder.mkdir()
@@ -134,7 +170,8 @@ def test_a_full_disk_leaves_only_whole_files():
                 else:
                     raise AssertionError(f"{name}: the write did not fail with the disk full")
                 left = files_in(folder)
-                before = set(order[:k]) - ({"six_layer.obj"} if name == "six_layer.mtl" else set())  # an OBJ goes with its MTL
+                before = (set(order[:k]) - gone - ({"six_layer.obj"} if name == "six_layer.mtl" else set())   # an OBJ goes with
+                          - ({"six_layer.step"} if name in gone else set()))      # its MTL, the STEP file with its parts
                 assert set(left) == before, (name, room, sorted(set(left) ^ before))
                 for n, data in left.items():
                     assert data == whole[n], f"{n}: not as it is when the disk has room"
@@ -228,6 +265,7 @@ def test_two_runs_started_together_get_a_folder_each():
 
 if __name__ == "__main__":
     test_a_full_disk_leaves_only_whole_files()
+    test_a_full_disk_while_the_step_parts_are_written_leaves_only_whole_files()
     test_a_run_whose_first_file_does_not_fit_leaves_no_folder()
     test_the_settings_file_that_does_not_fit_is_not_left_half_written()
     test_only_empty_folders_are_removed()
