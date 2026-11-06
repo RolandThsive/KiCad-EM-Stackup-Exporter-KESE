@@ -1,6 +1,7 @@
 """The Verifier's visual check (kese/s8_verify/meshes.py): its rays run along the board's normal in
 either orientation (Run.ORIENTATION), so a correct skin passes "flat" as it passes "upright", with
-the same faces met on every ray.  In simulation mode, the checks made where each part is built
+the same faces met on every ray, and it runs on a 32-bit Python (Pyodide), whose numpy index type is
+32 bits.  In simulation mode, the checks made where each part is built
 (kese/core/part_checks.py) give the report stage 8 gives on its own, an open part they found
 fails the run, a part whose slices lack a little of its prisms in each of thousands of pieces is
 whole (but not with a piece gone, or one lacking much), and the overlap check finds the same
@@ -29,7 +30,7 @@ from kese.s4_geometry import geometry  # noqa: E402
 from kese.s5_materials import materials  # noqa: E402
 from kese.s6_assemble import assemble  # noqa: E402
 from kese.s6_assemble.transform import output_transform  # noqa: E402
-from kese.s8_verify import overlap  # noqa: E402
+from kese.s8_verify import overlap, vertical_rays  # noqa: E402
 from kese.s8_verify.meshes import _skin_surfaces  # noqa: E402
 from kese.s8_verify.verify import every_check  # noqa: E402
 from parameters import P  # noqa: E402
@@ -58,6 +59,33 @@ def test_the_visual_check_runs_along_the_board_normal_in_either_orientation():
     finally:
         P.override("Run.ORIENTATION", saved)
     assert set(met["upright"]) == {2, 4} and met["flat"] == met["upright"], met
+
+
+def test_the_visual_check_runs_on_a_32_bit_python():
+    # On a 32-bit Python (Pyodide in the browser) numpy's index type np.intp is 32 bits, np.repeat
+    # takes its counts only if they cast to it safely, and searchsorted and argsort return it.  The
+    # rays are cast here with that numpy, so counts of np.int64 fail as they did in the browser.
+    def repeat(a, repeats, axis=None):
+        if not np.can_cast(np.asarray(repeats).dtype, np.int32, "safe"):
+            raise TypeError("Cannot cast array data from dtype('int64') to dtype('int32') according to the rule 'safe'")
+        return np.repeat(a, repeats, axis)
+
+    numpy_32 = SimpleNamespace(**{k: getattr(np, k) for k in dir(np) if not k.startswith("__")})
+    numpy_32.intp, numpy_32.repeat = np.int32, repeat
+    numpy_32.searchsorted = lambda *a, **k: np.searchsorted(*a, **k).astype(np.int32)
+    numpy_32.argsort = lambda *a, **k: np.argsort(*a, **k).astype(np.int32)
+    v = np.concatenate([box((0, 0, 0), (10, 6, 1.6)), box((3, 2, 2.0), (5, 4, 2.035))])
+    f = np.concatenate([SIDES[:4], SIDES[:4] + 8])                 # the flat faces, as the check casts them
+    xy = np.random.default_rng(1).uniform((-1, -1), (11, 7), (500, 2))
+    expected = vertical_rays.vertical_hits(v, f, xy)
+    saved = vertical_rays.np
+    try:
+        vertical_rays.np = numpy_32
+        found = vertical_rays.vertical_hits(v, f, xy)
+    finally:
+        vertical_rays.np = saved
+    assert len(expected[0]) > 100
+    assert all(np.array_equal(a, b) for a, b in zip(found, expected))
 
 
 def checked_model(pcb):
@@ -135,6 +163,7 @@ def test_the_overlap_check_finds_the_same_overlaps_in_threads_as_in_one():
 
 if __name__ == "__main__":
     test_the_visual_check_runs_along_the_board_normal_in_either_orientation()
+    test_the_visual_check_runs_on_a_32_bit_python()
     test_the_checks_made_where_the_parts_are_built_give_the_same_report()
     test_an_open_part_found_where_it_was_built_fails_the_run()
     test_a_part_lacking_a_little_in_each_of_thousands_of_pieces_is_whole()
