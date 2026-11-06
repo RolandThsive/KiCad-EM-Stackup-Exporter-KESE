@@ -7,6 +7,7 @@ All pages of this wiki, in reading order.
 - [Getting Started](Getting-Started.md)
 - [Project Capabilities](Project-Capabilities.md)
 - [Examples](Examples.md)
+- [Time Distribution](Time-Distribution.md)
 
 ## 2.2 Working Principle
 

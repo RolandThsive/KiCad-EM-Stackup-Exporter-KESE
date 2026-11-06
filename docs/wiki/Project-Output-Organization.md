@@ -1,6 +1,6 @@
-# 19. Project Output Organization
+# 20. Project Output Organization
 
-## 19.1 The Repository
+## 20.1 The Repository
 
 ```text
 KiCad-EM-Stackup-Exporter-KESE/
@@ -49,7 +49,7 @@ Everything KESE is made of is in `Generator/`; the root holds what belongs to th
 The paths on every other page of this wiki, such as `parameters/` or `kese/s2_collect/`, are
 inside `Generator/`.
 
-## 19.2 Run Folders
+## 20.2 Run Folders
 
 Every run writes to:
 
@@ -68,7 +68,7 @@ parallel, into the same output root) each get a folder of their own: a name is t
 folder, so the second run moves on to the next name. The terminal line at the end of every board
 names the folder that was written.
 
-### 19.2.1 Files In A Run Folder
+### 20.2.1 Files In A Run Folder
 
 | File | Written when | Content |
 |---|---|---|
@@ -85,16 +85,16 @@ cannot be written), the file being written is removed, an OBJ with its MTL, and 
 when nothing in it was written whole (and the board's folder, when it holds no other run). The
 error that comes out is the one that stopped the write, even when a file or folder cannot be
 removed after it (that one is left)
-([Checks, Errors And Warnings](Checks-Errors-And-Warnings.md#1711-errors)). While a big board's
+([Checks, Errors And Warnings](Checks-Errors-And-Warnings.md#1811-errors)). While a big board's
 STEP file is written in worker processes, its parts are first written into a hidden folder beside
 it, `.<board>.step.parts` (`<board>.step` cut to its first 40 characters), which is removed once
 the file is done or the write fails
-([Working Principle](Working-Principle.md#64-work-done-in-parallel)).
+([Working Principle](Working-Principle.md#74-work-done-in-parallel)).
 
-### 19.2.2 `report.txt`
+### 20.2.2 `report.txt`
 
 ```text
-rf_module  (rf_module.kicad_pcb)   generated 2026-11-05 04:23
+rf_module  (rf_module.kicad_pcb)   generated 2026-11-06 09:17
 mode: simulation   formats: glb, stl, obj   units: m
 KiCad format 20221018 (KiCad 7), generator pcbnew
 
@@ -168,14 +168,14 @@ parts
   ...
 
 timing
-  read               0.1 s
-  collect            1.0 s
-  resolve            2.3 s
-  geometry           9.2 s
-  materials          0.0 s
-  assemble           6.8 s
-  write             10.9 s
-  verify             3.5 s
+  read              0.0650 s
+  collect           0.7394 s
+  resolve           1.5491 s
+  geometry          6.9034 s
+  materials         0.0003 s
+  assemble          5.4478 s
+  write            10.0859 s
+  verify            0.5105 s
 
 Verifier: PASS
   ...
@@ -190,13 +190,13 @@ Verifier: PASS
 | `skipped` | a count of the items left out, with the reason (hidden text and text on layers that are not drawn are left out without a count) |
 | `notes` | the font, the mask thickness and its source, finish, resin fill, castellation and edge plating notes, warnings raised while building (in the parts' order, however many worker processes ran), and the notes when worker processes failed and fewer processes, or the main process, did the parts left |
 | `parts` | every part with its triangle count, material key, colour and alpha |
-| `timing` | seconds per stage (verify only when the Verifier ran) |
+| `timing` | seconds per stage, to 0.1 ms (verify only when the Verifier ran) |
 | Verifier | only with `--verify` or `Verifier.VERIFY = True`; see [Checks, Errors And Warnings](Checks-Errors-And-Warnings.md) |
 
-## 19.3 Part Names
+## 20.3 Part Names
 
 The GLB node, the STEP solid and the `materials.json` key carry the part name exactly. The STL
-file name and the OBJ object and material names carry it sanitised (the rule in section 19.2.1).
+file name and the OBJ object and material names carry it sanitised (the rule in section 20.2.1).
 
 | Role | Names |
 |---|---|
@@ -219,7 +219,7 @@ Two part names that sanitise to the same string (for example nets `/SDA` and `~{
 `VCC(3V3)` and `VCC_3V3`) get a counter on the second, `Copper__SDA_2`, compared without regard to
 case as Windows and macOS file systems do, so no file replaces another.
 
-## 19.4 Tests Output
+## 20.4 Tests Output
 
 `tests/test_boards.py` writes its runs to `tests/out/`, which is deleted at the start of every
 test run and ignored by git. `tests/test_layout.py`, `tests/test_colors.py`,

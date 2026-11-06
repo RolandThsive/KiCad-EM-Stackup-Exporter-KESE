@@ -1,10 +1,10 @@
-# 8. Output Modes
+# 9. Output Modes
 
 KESE writes the same geometry in two modes, chosen with `Run.MODE` or `--mode`.
 
 ![Board tests/boards/six_layer in simulation mode (left) and in visual mode (right): as a web viewer draws them, the translucent mask against the opaque one, the track under the mask and the two colours of bare copper; and cut open along the via row, where the closed solids of simulation mode fill the cut and the skin of visual mode is empty inside, without the buried via and the inner zone fills](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/modes_1_simulation_visual.webp)
 
-## 8.1 Simulation Mode
+## 9.1 Simulation Mode
 
 `--mode simulation`: the physical board as it leaves the factory. **Every part is a closed solid**:
 each dielectric between two copper layers (core or prepreg), each net's copper with all of its
@@ -15,7 +15,7 @@ silkscreen and, if enabled, the surface finish.
 
 - Parts touch exactly (shared vertices, exact z values) and do not overlap, apart from the known
   exception listed in
-  [Working Principle](Working-Principle.md#61-the-design-choice-that-matters-most); the Verifier
+  [Working Principle](Working-Principle.md#71-the-design-choice-that-matters-most); the Verifier
   checks that every part is closed, that its volume adds up and that no two parts overlap.
 - All four formats are allowed: GLB, STEP, STL, OBJ.
 - This is the mode for EM, SI / PI, thermal and mechanical solvers and for CAD.
@@ -31,7 +31,7 @@ Part names in simulation mode, with the default grouping:
 | `silk` | `Top Silkscreen`, `Bottom Silkscreen` | |
 | `finish` | per side (top, bottom, edge, holes) and metal, or per side, metal and net | `Top Finish Gold`, `Top Finish Nickel_GND`, `Edge Finish Gold`, `Hole Finish Gold` |
 
-## 8.2 Visual Mode
+## 9.2 Visual Mode
 
 `--mode visual`: **only the visible surface** of the same geometry, for web viewers such as
 `<model-viewer>` and three.js, and for renders. It is found in 2D, as the solids of simulation
@@ -48,7 +48,7 @@ then dropped:
   for rounding, or a slit narrower than that:
 
 ```math
-\text{keep face } f \iff \left(p_x,\ p_y\right) \notin M_k, \qquad \mathbf{p} = \mathbf{c}_f + \varepsilon \hat{\mathbf{n}}_f, \qquad z_k \le p_z < z_{k+1} \qquad (8.1)
+\text{keep face } f \iff \left(p_x,\ p_y\right) \notin M_k, \qquad \mathbf{p} = \mathbf{c}_f + \varepsilon \hat{\mathbf{n}}_f, \qquad z_k \le p_z < z_{k+1} \qquad (9.1)
 ```
 
 | Symbol | Meaning | Parameter |
@@ -63,7 +63,7 @@ then dropped:
   nothing stacked on it: a closed shell that faces inward, which no one can see.
 
 What remains is one outer surface, still split into named parts, closed but for the mouth of a
-slit whose walls (8.1) took out (a crack well under a micron wide). A part with no face in
+slit whose walls (9.1) took out (a crack well under a micron wide). A part with no face in
 sight, such as the copper of a net that runs only on inner layers and through buried vias, has no
 surface left and is not in the file. A finish thinner than $`\varepsilon`$ (the 80 nm gold of
 ENIG) leaves one surface too: the nickel's and the copper's faces under it are covered by the
@@ -93,7 +93,7 @@ Differences from simulation mode:
   via under stacked micro vias. A face left inside the material, or two faces in one place, gives
   two of a kind in a row.
 
-## 8.3 Which Mode For What
+## 9.3 Which Mode For What
 
 | Need | Mode |
 |---|---|

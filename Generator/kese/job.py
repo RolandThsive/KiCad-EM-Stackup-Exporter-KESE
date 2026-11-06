@@ -87,9 +87,9 @@ class Job:
         """Time the block as stage `name`, showing `status` on the status line."""
         if status:
             self.status.set(status)
-        t = time.time()
+        t = time.perf_counter()
         yield
-        self.timings.append((name, time.time() - t))
+        self.timings.append((name, time.perf_counter() - t))
 
 
 def start(mode=None, formats=None, out_root=None, overrides=(), verify=None, log=print):

@@ -1,4 +1,4 @@
-# 6. Working Principle
+# 7. Working Principle
 
 ![The nine stages of KESE as cards, read to report, each with its folder, a picture of what it made for board 20b_format_kicad7, and the object it hands to the next stage: RawBoard, Items, Regions, PrismSet, PrismSet, Model, Files, Files, Files. Card 1 shows the board file as KiCad draws it, card 8 one net's volume found four ways, and card 9 what report.txt lists](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/wp_1_pipeline.webp)
 
@@ -20,7 +20,7 @@ for stage in STAGES:
 | 3 | `s3_resolve` | `Items` | `Regions` | The outline; the copper joined per layer and net, clipped and drilled; barrels, edge plating, mask openings and silkscreen; everything moved to the board frame and snapped to the grid |
 | 4 | `s4_geometry` | `Regions` | `PrismSet` | The heights from the stack-up, once; every part as prisms, each a flat region between two heights |
 | 5 | `s5_materials` | `PrismSet` | `PrismSet` | A material for every part ([Colorizing](Colorizing.md)) |
-| 6 | `s6_assemble` | `PrismSet` | `Model` | Closed solids (simulation mode) or the visible surface (visual mode), in the output units and orientation (6.2) |
+| 6 | `s6_assemble` | `PrismSet` | `Model` | Closed solids (simulation mode) or the visible surface (visual mode), in the output units and orientation (7.2) |
 | 7 | `s7_write` | `Model` | `Files` | GLB, STEP, STL, OBJ and `materials.json` in a new run folder |
 | 8 | `s8_verify` | `Files` | `Files` | Only with `--verify`: every part closed and consistently wound, its volume the same four ways, no two parts overlapping ([Checks, Errors And Warnings](Checks-Errors-And-Warnings.md)) |
 | 9 | `s9_report` | `Files` | `Files` | `report.txt` and `parameters.txt` |
@@ -36,7 +36,7 @@ to the next. A stage uses only those, `parameters/` and the stages before it;
 `tests/test_layout.py` checks this ([Project Output Organization](Project-Output-Organization.md)
 shows the whole tree).
 
-## 6.1 The Design Choice That Matters Most
+## 7.1 The Design Choice That Matters Most
 
 Everything is built from **2D regions snapped to one grid**, between **heights worked out once**
 from the stack-up:
@@ -60,10 +60,10 @@ parts[off] = shapely.set_precision(parts[off], grid())      # Geometry.SNAP_GRID
   `Geometry.PINCH_POINT_OPENING_MM` is cut out of the smaller piece so that the solid can close
   (`kese/core/pinches.py`). Those vertices sit just off the grid.
 - One known exception, where parts can overlap or leave a gap: the wedge beside a sloped copper
-  wall (`Copper.ETCH_FACTOR > 0`, see [Copper And Traces](Copper-And-Traces.md#115-etch-factor)).
+  wall (`Copper.ETCH_FACTOR > 0`, see [Copper And Traces](Copper-And-Traces.md#125-etch-factor)).
 - The price: curves are polygons, in the meshes and in the STEP file alike.
 
-## 6.2 How A Part Becomes A Closed Solid
+## 7.2 How A Part Becomes A Closed Solid
 
 ![Stage 6 on one net of board 04_vias_blind_buried, a through via with a track on In3.Cu: its four prisms, its five slices between six heights, its six flat faces looking up or down, its walls, its 1,048 triangles, and the same volume found four ways, from the prisms, the slices, the faces and the triangles, as four equal bars](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/wp_2_solid.webp)
 
@@ -131,7 +131,7 @@ mesh = mesh_of_boundary(boundary)                  # faces cut into triangles, t
   smooth across edges flatter than `Run.SMOOTH_SHADE_ANGLE_DEG` (`transform.py`). The meshes are
   KESE's own (`kese/core/mesh.py`), and so are the GLB, STL, OBJ and STEP writers (`kese/s7_write/`).
 
-## 6.3 Coordinate Frames
+## 7.3 Coordinate Frames
 
 ![The outline of board 20c_format_kicad8 and its top left corner P in three frames: KiCad's, in mm with Y down from the page's corner; the board frame, in mm with Y up from the outline's centre and z from the laminate's mid-plane; and the output, in metres, upright or flat](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/wp_3_frames.webp)
 
@@ -155,11 +155,11 @@ if R.ORIENTATION == "flat":      # board in XZ, F.Cu toward +Y
 `origin: outline centre (112.0000, 108.0000) in KiCad coordinates`, so a position in the model can
 be mapped back to the layout.
 
-## 6.4 Work Done In Parallel
+## 7.4 Work Done In Parallel
 
 `Parallel.WORKERS` threads or processes work at once (`0`: one per processor thread the run may
 use; `1`: everything in turn, in one process), and at most `Parallel.PROCESS_WORKERS` processes
-([Parameter Reference](Parameter-Reference.md#169-parallel-parametersparallelpy)).
+([Parameter Reference](Parameter-Reference.md#179-parallel-parametersparallelpy)).
 `kese/core/parallel.py` holds both kinds:
 
 | Stage | What runs at once | In |
@@ -189,7 +189,7 @@ use; `1`: everything in turn, in one process), and at most `Parallel.PROCESS_WOR
   into the STEP file in the parts' order and removed, and so is the folder, also when the write
   fails (a full disk, Ctrl-C).
 - The results are put back in the layers', sides' and parts' order, so the files are the same,
-  byte for byte, however many threads or processes ran (but for the times, as in 6.2).
+  byte for byte, however many threads or processes ran (but for the times, as in 7.2).
 - A thread makes shapes only from its own copies of the shapes other threads use
   (`kese/core/shape_copies.py`). GEOS 3.14 counts the shapes of each of its factories without a
   lock, and a shape on the grid shares its factory with every shape made from it: two threads
@@ -214,7 +214,7 @@ use; `1`: everything in turn, in one process), and at most `Parallel.PROCESS_WOR
 - Where the system stops a worker, or one runs out of memory, the parts left go to half as many
   processes, and to the main process, one after another, once that would be one; where the
   processes cannot start, the main process builds the parts. `report.txt` says so each time
-  ([Checks, Errors And Warnings](Checks-Errors-And-Warnings.md#1713-notes-worth-knowing)). An
+  ([Checks, Errors And Warnings](Checks-Errors-And-Warnings.md#1813-notes-worth-knowing)). An
   error in a part's own work stops the run at once and ends the other workers.
 - Ctrl-C, or the end of the main process however it ends, ends the workers too. On Linux the
   system's out-of-memory killer takes a worker before the main process. Inside a
@@ -224,4 +224,4 @@ use; `1`: everything in turn, in one process), and at most `Parallel.PROCESS_WOR
 
 | Previous | Next |
 |:---|---:|
-| [Examples](Examples.md) | [Stack-Up Model](Stack-Up-Model.md) |
+| [Time Distribution](Time-Distribution.md) | [Stack-Up Model](Stack-Up-Model.md) |

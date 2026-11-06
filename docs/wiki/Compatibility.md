@@ -1,6 +1,6 @@
-# 20. KiCad And Solver Compatibility
+# 21. KiCad And Solver Compatibility
 
-## 20.1 KiCad Files
+## 21.1 KiCad Files
 
 | KiCad | File format number of the release | Status |
 |---|---|---|
@@ -54,7 +54,7 @@ KiCad itself is not needed, only the `.kicad_pcb` file. Footprints are read from
 | Edge connector flag of Board Setup (`(edge_connector yes)` or `bevelled`) | not read: the fingers are the pads they are, and a bevelled edge stays square |
 | Rigid-flex, multiple stack-up regions | not modelled |
 
-## 20.2 Output Formats
+## 21.2 Output Formats
 
 | Format | What is in it | Units | Written by |
 |---|---|---|---|
@@ -65,7 +65,7 @@ KiCad itself is not needed, only the `.kicad_pcb` file. Footprints are read from
 
 Visual mode writes GLB and OBJ only.
 
-## 20.3 Tools
+## 21.3 Tools
 
 None of these imports has been tried with KESE output yet: the routes follow each tool's
 documented import formats and the presets in `parameters/presets.py`, and are to be confirmed.
@@ -75,19 +75,19 @@ Research underway.
 |---|---|---|
 | openEMS / CSXCAD | STL per part, mm (`--for openems`) with `materials.json` | [openEMS Workflow](OpenEMS-Workflow.md) |
 | FreeCAD | STEP, mm, KiCad origin (`--for freecad`) | one solid per net and dielectric, each under its own name, to assign materials; holes and round edges as true circles and cylinders. Its FEM workbench meshes the solids and runs Elmer or CalculiX |
-| Elmer (ElmerFEM) | STEP, mm, KiCad origin, no finish (`--for elmer`), meshed by gmsh | neither ElmerGrid nor ElmerSolver reads STEP or STL: gmsh meshes the solids (`BooleanFragments` for shared faces), `ElmerGrid 14 2` converts the mesh, and `Coordinate Scaling = 0.001` makes mm SI ([Choosing An Export](Choosing-An-Export.md#92-the-presets)) |
+| Elmer (ElmerFEM) | STEP, mm, KiCad origin, no finish (`--for elmer`), meshed by gmsh | neither ElmerGrid nor ElmerSolver reads STEP or STL: gmsh meshes the solids (`BooleanFragments` for shared faces), `ElmerGrid 14 2` converts the mesh, and `Coordinate Scaling = 0.001` makes mm SI ([Choosing An Export](Choosing-An-Export.md#102-the-presets)) |
 | CalculiX | STEP, mm, KiCad origin, no finish, copper per layer (`--for calculix`) | heat and stress, no electromagnetics; gmsh meshes the solids into an Abaqus `.inp`, or cgx imports the STEP file |
 | gmsh | STEP, mm | meshes the solids for a solver |
 | Blender | GLB (`--for blender_glb`) or OBJ with its `.mtl` (`--for blender_obj`): visual mode, metres, centred, `flat`, solder mask and silkscreen on | the importers turn Y-up into Z-up, so the board lies with `F.Cu` up |
 | `<model-viewer>`, three.js | GLB, m, centred (`--for viewer`) | the visual-mode skin is made to avoid z-fighting ([Output Modes](Output-Modes.md)) |
 | Other thermal / FEA tools reading STL | STL per part, mm | closed solids per part (a part can hold several separate bodies); mesh them with the tool's own mesher |
 
-## 20.4 Python And Packages
+## 21.4 Python And Packages
 
 | | Version |
 |---|---|
 | Python | 3.12 or later with the pinned versions (`numpy` 2.5.3 requires it); 3.11 with the packages installed unpinned, as `requirements.txt` describes, or through `pyproject.toml` (`requires-python >= 3.11`, not tested); tested on 3.12, 3.13 and 3.14 |
-| `numpy` 2.5.3, `shapely` 2.2.0, `mapbox_earcut` 2.1.0 | the versions in `requirements.txt`; shapely 2.1.2 works too, and 2.0 does not (it lacks the constrained Delaunay triangulation; the run says so before it starts). shapely 2.2.0 brings GEOS 3.14.1, whose shapes may not be shared between threads that make shapes from them; KESE's threads each work on their own copies ([Working Principle](Working-Principle.md#64-work-done-in-parallel)). A shapely built on GEOS 3.15 or newer, which counts the shapes atomically, lets the threads share them, and KESE then copies nothing. Tried with shapely 2.2.0 built on GEOS 3.15.0: the suite passes, the files are the same whatever `Parallel.WORKERS`, and threads that crashed GEOS 3.14.1 without copies run without fault. The files are not byte for byte those of GEOS 3.14.1: its overlays no longer turn rings by a vertex, so some faces are cut into other triangles; the solids are the same within the files' single precision |
+| `numpy` 2.5.3, `shapely` 2.2.0, `mapbox_earcut` 2.1.0 | the versions in `requirements.txt`; shapely 2.1.2 works too, and 2.0 does not (it lacks the constrained Delaunay triangulation; the run says so before it starts). shapely 2.2.0 brings GEOS 3.14.1, whose shapes may not be shared between threads that make shapes from them; KESE's threads each work on their own copies ([Working Principle](Working-Principle.md#74-work-done-in-parallel)). A shapely built on GEOS 3.15 or newer, which counts the shapes atomically, lets the threads share them, and KESE then copies nothing. Tried with shapely 2.2.0 built on GEOS 3.15.0: the suite passes, the files are the same whatever `Parallel.WORKERS`, and threads that crashed GEOS 3.14.1 without copies run without fault. The files are not byte for byte those of GEOS 3.14.1: its overlays no longer turn rings by a vertex, so some faces are cut into other triangles; the solids are the same within the files' single precision |
 | `cadquery-ocp` 7.8.1.1.post1 | optional, for the tests only: they read STEP files back with OpenCascade, and skip that check without it. 7.8 has no wheel for Python 3.14; there use 7.9.3.1.1, with which the STEP tests pass, though it read the file of `16b_edge_plating_border` in about twice the time (125 s against 60 s, the parts added up). 8.0 lacks two classes the check uses (`TopTools_IndexedMapOfShape`, `TopTools_IndexedDataMapOfShapeListOfShape`), so the check is skipped |
 | `gltf_validator` (Khronos, command line) | optional; used by the Verifier when on the PATH |
 

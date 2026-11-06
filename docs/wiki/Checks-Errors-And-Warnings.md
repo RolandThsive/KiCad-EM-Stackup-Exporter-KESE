@@ -1,4 +1,4 @@
-# 17. Checks, Errors And Warnings
+# 18. Checks, Errors And Warnings
 
 KESE reports in three places: the terminal while it runs, `report.txt` next to every output,
 and the opt-in Verifier whose lines are appended to `report.txt`. Most items the model leaves
@@ -12,7 +12,7 @@ python run_KESE.py board.kicad_pcb --verify     # generate, then run the Verifie
 python tests/test_boards.py                     # the regression suite over every board
 ```
 
-## 17.1 Levels
+## 18.1 Levels
 
 | Level | Meaning | What happens |
 |---|---|---|
@@ -22,7 +22,7 @@ python tests/test_boards.py                     # the regression suite over ever
 | Note | A fact about the run. | In `report.txt` under `notes`. |
 | Verifier | The model's own proof. | `Verifier: PASS` or `FAIL` plus one line per check, at the end of `report.txt`. The run does not fail on a Verifier FAIL. |
 
-### 17.1.1 Errors
+### 18.1.1 Errors
 
 | Message | Cause and way out |
 |---|---|
@@ -36,7 +36,7 @@ python tests/test_boards.py                     # the regression suite over ever
 | `MODE must be 'simulation' or 'visual', not ...` | A typo in `Run.MODE` (or `--set Run.MODE=...`). A typo in `--mode` is caught earlier by the command line: `argument --mode: invalid choice`, exit code 2. |
 | `unknown FILE_FORMAT entries [...]` | Only `glb`, `stl`, `obj`, `step`. One format may be given as a list or as a single word (`--set Run.FILE_FORMAT=step`). |
 | `<Module>.<NAME> must be '...' or '...', not ...` | A setting that takes one of a few words (those whose range [Parameter Reference](Parameter-Reference.md) gives as words with `/` between them, such as `Run.UNITS` or `Copper.COPPER_GROUPING`) has another value. The run stops before reading the board. |
-| `Parallel.WORKERS must be a whole number, 0 or more (0: one per processor thread), not ...` (or `Parallel.PROCESS_WORKERS`, `Parallel.PROCESS_MIN_COORDINATES`, with what their `0` means) | A count in [`parameters/parallel.py`](Parameter-Reference.md#169-parallel-parametersparallelpy) is negative, fractional or not a number. |
+| `Parallel.WORKERS must be a whole number, 0 or more (0: one per processor thread), not ...` (or `Parallel.PROCESS_WORKERS`, `Parallel.PROCESS_MIN_COORDINATES`, with what their `0` means) | A count in [`parameters/parallel.py`](Parameter-Reference.md#179-parallel-parametersparallelpy) is negative, fractional or not a number. |
 | `Board.BOARD_ENABLED must be True or False, not 'false'` (or `must be a number`, `must be text, in quotes`, `must be a list`, `must be a dict`, for any setting) | A setting given a value of another kind than its parameter file gives it: most often `--set Board.BOARD_ENABLED=false`, which gives the word `false`, which Python would take as true (write `False`), or a number with its unit (`0.02mm`). A setting that is `None` in its file takes any value. |
 | `parameters/run.py sets WORKERS, which is now Parallel.WORKERS in parameters/parallel.py: set it there` (or another moved setting: `STEP_EXACT_ARCS` and the `STEP_ARC_*` settings, now in `parameters/step.py`; `VERIFY` and the `VERIFY_*` settings, now in `parameters/verifier.py`; `PRESETS`, now in `parameters/presets.py`; several are named together, ending `set them there`) | An older `parameters/run.py`, kept through an update, still sets a setting that moved; the run stops rather than leave the value unused. |
 | `Geometry.PINCH_CUT_ROUNDS must be a whole number, 1 or more, not ...` (or `Geometry.VERTEX_SHARING_ROUNDS`, `Geometry.NODING_ROUNDS`, a batch or group size of `parameters/parallel.py` or `parameters/geometry.py`, `Verifier.VERIFY_RAYS`; `Step.STEP_ARC_MIN_POINTS`, `Geometry.PINCH_DISC_SIDES`, `Geometry.ELLIPSE_MIN_SEGMENTS`, 3 or more; the digits, margins and other counts of `parameters/geometry.py`, `Parallel.PROCESS_MIN_NETS` and `Verifier.VERIFY_MERGE_EXTRA_DIGITS`, 0 or more) | At least one round, one item in a batch or one ray is needed: with no round of opening, every region checked would be noted as still pinched, and with no ray the visual check would pass on nothing. An arc needs three points to make a circle, and a disc or an ellipse three sides. A count, a number of digits or a margin cannot be negative or fractional. |
@@ -54,7 +54,7 @@ python tests/test_boards.py                     # the regression suite over ever
 | `no boards given and none found in Input/` | Put a board in `Input/` or give a path. |
 | `OSError: [Errno 28] No space left on device` (the last line of the traceback; or another error writing a file, such as `PermissionError`) | The disk filled while the files were written. The file being written is removed (an OBJ with its MTL), so no half-written file is left to be opened; the files written whole before it stay, and the run folder is removed when nothing in it was written whole. Free some space and run again. |
 
-### 17.1.2 Warnings
+### 18.1.2 Warnings
 
 | Message | Meaning |
 |---|---|
@@ -71,20 +71,20 @@ python tests/test_boards.py                     # the regression suite over ever
 | `DIELECTRIC_SPLIT=... unknown, using 'even'` | Only `"even"` is implemented. |
 | `not modelled, see 'skipped' in report.txt: backdrills of vias, filled vias, ...` | The board has holes that KiCad 10 backdrills, post-machines, covers, plugs, caps or fills. KESE models the hole plated through its whole span and open; `skipped` gives the counts. |
 | `left out, of a kind KESE does not know: fp_foo (2), ...` | Items of a kind KESE does not read, such as a drawing kind newer than this version of KESE. They are missing from the model. |
-| `the stack-up colour '<value>' of <layer> is neither a colour name of parameters/color.py nor #RRGGBBAA; its parts keep their MATERIALS colour` | A mask or silkscreen colour KESE cannot read keeps KESE's colour. Add the name to the tables in `parameters/color.py` ([Colorizing](Colorizing.md#122-colours-from-the-stack-up)). |
+| `the stack-up colour '<value>' of <layer> is neither a colour name of parameters/color.py nor #RRGGBBAA; its parts keep their MATERIALS colour` | A mask or silkscreen colour KESE cannot read keeps KESE's colour. Add the name to the tables in `parameters/color.py` ([Colorizing](Colorizing.md#132-colours-from-the-stack-up)). |
 
-### 17.1.3 Notes Worth Knowing
+### 18.1.3 Notes Worth Knowing
 
 | Message in `notes` | Meaning |
 |---|---|
 | `note: Edge.Cuts line ends up to D mm apart joined (Board.OUTLINE_LINE_SNAP_MM = S mm)` | The outline's lines had small gaps between their ends; they were closed as KiCad closes them (KiCad joins ends up to 0.01 mm apart, the default of `Board.OUTLINE_LINE_SNAP_MM`), so the board shape is the one KiCad shows. |
-| `<part>: faces and walls still changing after 20 rounds` (`Geometry.VERTEX_SHARING_ROUNDS`) | Stage 6 could not give the part's faces and walls the same vertices ([Working Principle](Working-Principle.md#62-how-a-part-becomes-a-closed-solid)). The part may be open; the Verifier then says so. |
+| `<part>: faces and walls still changing after 20 rounds` (`Geometry.VERTEX_SHARING_ROUNDS`) | Stage 6 could not give the part's faces and walls the same vertices ([Working Principle](Working-Principle.md#72-how-a-part-becomes-a-closed-solid)). The part may be open; the Verifier then says so. |
 | `<part>: pinch points left after 10 rounds of cutting` (or `pinch edges between two heights left ...`) | Two pieces of the part still touch at a point or along an edge after the cut-out disc grew to 512 times `Geometry.PINCH_POINT_OPENING_MM`. The part may be open there. |
 | `<part>: slices still sharing new vertices after 20 rounds` (`Geometry.VERTEX_SHARING_ROUNDS`) | Stage 6 gave the slices that meet at a height each other's vertices 20 times, then cut them open where they still changed for `Geometry.PINCH_CUT_ROUNDS` more rounds (see the next line), and they still changed. The part may be open; the Verifier then says so. |
-| `<part>: slices still sharing new vertices after 20 rounds: cut open at N points, by discs of up to D mm radius` (`Geometry.VERTEX_SHARING_ROUNDS`, `Geometry.PINCH_CUT_ROUNDS`) | Needle tips of two slices a grid step or two apart kept trading vertices; from the 21st round on, each point a round still added was cut out of every slice by a small disc (as at a pinch point), twice as wide each round, until the slices settled. The part is closed, with a hole at most 2D mm across at each point ([Working Principle](Working-Principle.md#62-how-a-part-becomes-a-closed-solid)). |
-| `solder mask: N slivers on the copper narrower than 0.002 mm left out (F.Mask)` (`SolderMask.MASK_OVER_COPPER_HAIRLINE_MM`) | With the solder mask on: where a mask opening's outline follows the copper's with other points, the mask on the copper kept slivers between the two; they are left out, and the finish covers them instead ([Solder Masks](Solder-Masks.md#152-conformal-mask)). |
+| `<part>: slices still sharing new vertices after 20 rounds: cut open at N points, by discs of up to D mm radius` (`Geometry.VERTEX_SHARING_ROUNDS`, `Geometry.PINCH_CUT_ROUNDS`) | Needle tips of two slices a grid step or two apart kept trading vertices; from the 21st round on, each point a round still added was cut out of every slice by a small disc (as at a pinch point), twice as wide each round, until the slices settled. The part is closed, with a hole at most 2D mm across at each point ([Working Principle](Working-Principle.md#72-how-a-part-becomes-a-closed-solid)). |
+| `solder mask: N slivers on the copper narrower than 0.002 mm left out (F.Mask)` (`SolderMask.MASK_OVER_COPPER_HAIRLINE_MM`) | With the solder mask on: where a mask opening's outline follows the copper's with other points, the mask on the copper kept slivers between the two; they are left out, and the finish covers them instead ([Solder Masks](Solder-Masks.md#162-conformal-mask)). |
 | `plated holes cross the board edge but the stackup has no (castellated_pads yes); set Copper.CASTELLATION = 'auto' to plate them` | With `Copper.CASTELLATION = "file"`, plated holes cut by the edge are left bare because the stack-up does not say they are castellated. |
-| `edge plating: copper of net '<net>' inside the edge band moved to net '<edge net>' on N layer(s)` | Copper of another net reached into the plated edge band; it now belongs to the edge's net (see 17.5). |
+| `edge plating: copper of net '<net>' inside the edge band moved to net '<edge net>' on N layer(s)` | Copper of another net reached into the plated edge band; it now belongs to the edge's net (see 18.5). |
 | `worker processes failed (...); the N parts left are built in this process, one after another`, or `... are built in 2 processes` (in visual mode `sliced`; a big board's copper `the N copper layers left are joined`; its STEP file `made ready for STEP`, then `written to STEP`; after a lost worker, ending `(most often a lack of memory: fewer processes, Parallel.PROCESS_WORKERS, use less)`) | Stage 3, 6 or 7 could not start its worker processes (`Parallel.WORKERS`, at most `Parallel.PROCESS_WORKERS`), or lost one: the system stopped it, most often for lack of memory, or it ran out of memory (`MemoryError`). After a lost worker, what the workers did not do goes to half as many processes (a note each time), and to the main process once that would be one; where the processes cannot start, the main process does it. The files are the same, only slower. An error in a part itself is not caught here: it stops the run at once, with its traceback. With little memory, `--set Parallel.PROCESS_WORKERS=1` starts no worker process (stages 6 and 7 work in the main process, stage 3 in threads), and `--set Parallel.WORKERS=1` does everything in turn. |
 | `Run.WORKERS is now Parallel.WORKERS (parameters/parallel.py): the value given for Run.WORKERS is used as Parallel.WORKERS` (or another moved setting, such as `Run.VERIFY`, now `Verifier.VERIFY`) | A `--set` with a setting's old name was taken under its new name. |
 | `step: <part>: N edges are not shared by two faces (the solid is open there)` | The STEP writer found the part open. It is still written, and a CAD tool will report free edges on it. |
@@ -93,9 +93,9 @@ python tests/test_boards.py                     # the regression suite over ever
 | `FINISH ERROR: Finish.FINISH_TYPE = "file" but no finish was found in the KiCad file ...` | `FINISH_TYPE = "file"` and the board has no stack-up or its Copper finish is empty; also `FINISH ERROR: the KiCad file's finish '...' is not one KESE knows` and `FINISH ERROR: Finish.FINISH_TYPE = '...' is not a finish KESE knows`. Change `Finish.FINISH_TYPE`, or set the finish in KiCad (Board Setup > Physical Stackup > Copper finish). |
 | `nothing to build: Board.BOARD_ENABLED, Copper.COPPER_ENABLED, ... are all False` | Every part switch is off, so there is nothing to write; the run stops before reading the board. |
 
-## 17.2 What `report.txt` Counts
+## 18.2 What `report.txt` Counts
 
-### 17.2.1 Read
+### 18.2.1 Read
 
 Tracks and arc tracks per layer, zone fills per layer, graphics and footprint graphics per layer,
 text per layer, pads, pad mask openings per side, the mask openings of tracks, arc tracks and
@@ -104,7 +104,7 @@ vias, footprints, outline shapes on `Edge.Cuts`, via rings removed on unconnecte
 castellated holes, the edge plating band and its net, text in a TrueType face from its render cache or drawn with the
 stroke font.
 
-### 17.2.2 Skipped
+### 18.2.2 Skipped
 
 | Entry | Why |
 |---|---|
@@ -124,7 +124,7 @@ stroke font.
 | `TrueType text on <layer> (DRAW_TRUETYPE_TEXT_WITH_STROKE_FONT is False)` | Skipped by the setting. |
 | `castellation plating (CASTELLATION is 'off')` | The holes stay bare. The same line appears with `CASTELLATION = "file"` when the stack-up lacks `(castellated_pads yes)`. |
 
-## 17.3 The Verifier
+## 18.3 The Verifier
 
 `kese/s8_verify/`, run with `--verify` or `Verifier.VERIFY = True`. It checks the meshes that
 GLB, STL and OBJ are written from and, in simulation mode, the faces that the STEP file is
@@ -200,7 +200,7 @@ for z, region, up in boundary.flats:
 ```
 
 The overlap test (`overlap.py`) works on what the solids are made of. Between two neighbouring
-heights a part is one flat region, a slice ([Working Principle](Working-Principle.md#62-how-a-part-becomes-a-closed-solid)),
+heights a part is one flat region, a slice ([Working Principle](Working-Principle.md#72-how-a-part-becomes-a-closed-solid)),
 so two parts share material exactly where a slice of one and a slice of the other overlap in
 height and their regions share an area. Every polygon of every slice is shrunk by one grid step
 first: parts that only touch, along an edge or across the grid step that sharing vertices may
@@ -210,11 +210,11 @@ still meets is reported with the volume the two parts share. The slices are spli
 and the polygons shrunk and tested, `Parallel.WORKERS` at a time in threads:
 
 ```math
-V_{AB} = \operatorname{area}\left( R_A \cap R_B \right) \cdot h_{AB}, \qquad h_{AB} = \min\left( z^{A}_{1}, z^{B}_{1} \right) - \max\left( z^{A}_{0}, z^{B}_{0} \right) \qquad (17.1)
+V_{AB} = \operatorname{area}\left( R_A \cap R_B \right) \cdot h_{AB}, \qquad h_{AB} = \min\left( z^{A}_{1}, z^{B}_{1} \right) - \max\left( z^{A}_{0}, z^{B}_{0} \right) \qquad (18.1)
 ```
 
 ```math
-\text{PASS} \iff \text{every part closed, consistently wound and whole, and no pair with } \ h_{AB} > 10^{-9} \text{ mm and } \left( R_A \ominus g \right) \cap \left( R_B \ominus g \right) \neq \varnothing \qquad (17.2)
+\text{PASS} \iff \text{every part closed, consistently wound and whole, and no pair with } \ h_{AB} > 10^{-9} \text{ mm and } \left( R_A \ominus g \right) \cap \left( R_B \ominus g \right) \neq \varnothing \qquad (18.2)
 ```
 
 | Symbol | Meaning |
@@ -239,7 +239,7 @@ biggest overlap (of overlaps as big, the first by part name, so the line is the 
 worker processes and threads ran), and how many places there are. All of these are bugs worth reporting with the
 board file.
 
-## 17.4 The Regression Suite
+## 18.4 The Regression Suite
 
 `tests/test_boards.py` runs every board in `tests/boards/`, `featureTest/` and `Input/` (a board of
 `Input/` that `featureTest/` holds too, byte for byte, only once) through every output, with the Verifier: simulation mode written as GLB and STEP, visual mode as GLB. It
@@ -264,7 +264,7 @@ mode, faces that do not take turns in visual mode), when a part's volume moved f
 baseline by more than
 
 ```math
-\left| V - V_0 \right| > 10^{-3} \cdot \max\left( |V_0|,\ 10^{-9} \right) \qquad (17.3)
+\left| V - V_0 \right| > 10^{-3} \cdot \max\left( |V_0|,\ 10^{-9} \right) \qquad (18.3)
 ```
 
 where $`V`$ is the part's volume now and $`V_0`$ the baseline, both in mm³, when a part disappeared
@@ -342,7 +342,7 @@ boards: which folders of `kese/` may import which, one `run()` per stage, no fil
 [`CONTRIBUTING.md`](https://github.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/blob/main/CONTRIBUTING.md)
 explains these rules. It only reads the source, so it takes about a second
 (`python tests/test_layout.py`). The same command runs `tests/test_colors.py`, which reads named,
-user-defined and unknown stack-up colours as [Colorizing](Colorizing.md#122-colours-from-the-stack-up)
+user-defined and unknown stack-up colours as [Colorizing](Colorizing.md#132-colours-from-the-stack-up)
 describes, in a moment (`python tests/test_colors.py`); `tests/test_text_layout.py`, which lays out
 sixteen texts (each justification, two lines, two lines with a line spacing KiCad does not plot, tabs,
 an angle, italic, bold, a wide font, an escaped quote, mirrored text on the back and the reference of
@@ -439,7 +439,7 @@ and two STEP tests, also on their own (`python tests/test_step_native.py`,
 | `test_step_native.py` | the STEP writer (`kese/s7_write/step.py`) and the suite's read-back (`tests/step_audit.py`) | a box with a through hole beside a second box, written from their faces and read back by OpenCascade as two valid solids with no free edge, the right faces and the right volume; names with a quote and letters outside ASCII come back as they went in. A file of three such parts, read back part by part, gives what the whole file gives, also with a face left out of the first part and of the last; a part cut in the wrong place does not pass as clean, and a file another program wrote, or one with other line ends, is read whole. Needs OCP (`python -m pip install "cadquery-ocp==7.8.1.1.post1"`), and is skipped without it; takes a few seconds |
 | `test_step_arcs.py` | the true arcs of STEP files (`Step.STEP_EXACT_ARCS`; `kese/s7_write/step_arcs.py`, `step_curved.py`) | a run of vertices on one circle is written as an arc edge, and the walls on it as a cylinder, only where the arc cannot cross anything: circles and round ends become arcs, and the two arcs of an S-bend share only the vertex between them; an arc that would cross its own ring, or overlap another polygon's arc, stays straight, an outline may touch an arc where it joins it but not cross it, and an edge near the arc at another height leaves it be; a failure in the arcs writes the part with flat faces; with `Step.STEP_ARC_MAX_SWEEP_DEG` at 90 a whole circle comes out in quarters, and the turn ratios decide whether unevenly spaced vertices make an arc. With OCP every file is also read back: valid solids, no free edge, the volume of the true shape. Takes a few seconds |
 
-## 17.5 Inputs KESE Refuses Or Changes
+## 18.5 Inputs KESE Refuses Or Changes
 
 | Situation | What happens |
 |---|---|
