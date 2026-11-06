@@ -8,5 +8,4 @@ class Files:
     out_dir: object                                 # the output folder (Path)
     written: list = field(default_factory=list)     # Paths, in the order written
     glb_path: object = None
-    verify_ok: object = None                        # None when the Verifier did not run
-    verify_lines: list = field(default_factory=list)
+    verify_lines: list = field(default_factory=list)   # the Verifier's report lines, empty when it did not run

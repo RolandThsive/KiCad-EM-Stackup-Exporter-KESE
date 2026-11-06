@@ -168,13 +168,13 @@ document.addEventListener("mousedown", hideTip);
 document.addEventListener("scroll", hideTip, true);
 
 /* ---- labels: made from the parameter's name ---------------------------------------------------- */
-const UNITS = { MM: "mm", UM: "µm", DEG: "deg", HZ: "Hz", S_PER_M: "S/m", PCT: "%" };
+const UNITS = { MM: "mm", MM2: "mm²", MM3: "mm³", UM: "µm", DEG: "deg", HZ: "Hz", S_PER_M: "S/m", PCT: "%", S: "s" };
 function labelOf(name) {
   let rest = name, unit = "";
   for (const [suffix, u] of Object.entries(UNITS)) {
     if (rest.endsWith("_" + suffix)) { rest = rest.slice(0, -suffix.length - 1); unit = u; break; }
   }
-  const words = rest.split("_").map((w) => (w.length <= 3 && !/^(ON|OF|TO|IN|AND|OR|PER|THE|FOR|MAX|MIN|USE|ARC|AUTO|PAD|VIA|PTH|NET)$/.test(w) ? w : w[0] + w.slice(1).toLowerCase()));
+  const words = rest.split("_").map((w) => (w.length <= 3 && !/^(ON|OF|TO|IN|AND|OR|PER|THE|FOR|MAX|MIN|USE|ARC|AUTO|PAD|VIA|PTH|NET|A|AT|AIR|BIG|CUT|END|FEW|FIT|NO|NON|PEN|SET|WEB|DIR)$/.test(w) ? w : w[0] + w.slice(1).toLowerCase()));
   return { text: words.join(" "), unit };
 }
 // a choice as words: "copper_hull" -> "Copper hull"; names with capitals (ENIG, F.SilkS) stay as they are
@@ -226,13 +226,18 @@ function stepOf(p) {
   if (!dec) return Math.abs(d) >= 10 ? 1 : 0.1;
   return Math.pow(10, -Math.min(dec, 6));
 }
-function stepper(value, onCommit, { step = 0.001, integer = false, disabled = false, placeholder = "" } = {}) {
+function stepper(value, onCommit, { step = 0.001, integer = false, disabled = false, placeholder = "", limit = null } = {}) {
   const input = el("input", { type: "text", inputmode: "decimal", value: value == null ? "" : fmt(value), disabled, placeholder });
   const len = (value == null ? "" : fmt(value)).length;
   if (len > 6) input.style.width = `${len + 2}ch`;
   const commit = (x) => {
     if (!Number.isFinite(x)) { input.value = value == null ? "" : fmt(value); return; }
     if (integer) x = Math.round(x);
+    if (limit && (x < limit.min || (limit.above && x <= limit.min))) {     // below what KESE takes (kese/job.py)
+      toast(`${limit.above ? "More than" : "At least"} ${limit.min}${limit.integer ? ", a whole number" : ""}`);
+      x = limit.above ? (value ?? step) : limit.min;
+      if (limit.above && x <= limit.min) { input.value = value == null ? "" : fmt(value); return; }
+    }
     onCommit(Number(x.toPrecision(10)));
   };
   input.addEventListener("change", () => commit(parseFloat(input.value)));
@@ -288,8 +293,10 @@ function widget(p) {
       }
       return box;
     }
-    case "int": case "num":
-      return stepper(v, set, { step: stepOf(p), integer: p.kind === "int" });
+    case "int": case "num": {
+      const lim = (state.desc.limits || {})[key];
+      return stepper(v, set, { step: stepOf(p), integer: p.kind === "int" || !!(lim && lim.integer), limit: lim });
+    }
     case "num_or_none": {
       const isNone = v === null && !state.noneEditing.has(key);
       const row = el("div", { class: "auto-row" });
@@ -450,8 +457,14 @@ function field(p) {
   const control = state.ui === "advanced"
     ? el("div", { class: "field-body" }, widget(p), el("span", { class: "mono-name field-name", title: p.key }, breakable(p.module === p.key.split(".")[0] ? p.name : p.key)))
     : widget(p);
+  if (DESKTOP_ONLY().has(p.key)) {          // threads and worker processes: greyed, the value kept as in the file
+    control.setAttribute("inert", "");
+    return el("div", { class: "field desktop-only", "data-key": p.key }, head, control,
+      el("p", { class: "desktop-note" }, "Desktop only for now: support in the browser is in the works."));
+  }
   return el("div", { class: "field" + (changed ? " changed" : ""), "data-key": p.key }, head, control);
 }
+const DESKTOP_ONLY = () => new Set(CFG.desktopOnly || []);
 
 /* ---- Colorization: one dropdown per kind of part -----------------------------------------------------
    color.py keeps every look in one MATERIALS table and the stack-up's colour names in three more.  Here they are
@@ -589,7 +602,12 @@ function colorGroup(g, items) {
 
 /* ---- sections: one per parameter file ---------------------------------------------------------- */
 const OUTSIDE = () => new Set([CFG.mode, CFG.formats, CFG.verify]);
+function sectionShown(module) {           // a format's own section (STEP) only while that format is ticked
+  const f = (CFG.whenFormat || {})[module];
+  return !f || (state.values[CFG.formats] || []).includes(f);
+}
 function sectionKeys(module) {
+  if (!sectionShown(module)) return [];
   const outside = OUTSIDE();
   if (state.ui === "basic") return (CFG.basic[module] || []).filter((k) => k in state.byKey && !outside.has(k));
   return state.params.filter((p) => p.module === module && !outside.has(p.key) && !FOLDED.has(p.key)).map((p) => p.key);
@@ -598,10 +616,13 @@ function presetRow() {
   const presets = state.desc.presets || {};
   const names = Object.keys(presets);
   if (!names.length) return null;
-  const seg = el("div", { class: "segmented wide" });
+  const seg = el("div", { class: "segmented wide" + (names.length > 4 ? " presets-wrap" : "") });
+  // the preset these values match; where several do (Elmer is FreeCAD with no finish), the one that sets the most
+  const fits = names.filter((n) => Object.entries(presets[n]).every(([k, x]) => same(state.values[k], x)));
+  const most = Math.max(0, ...fits.map((n) => Object.keys(presets[n]).length));
   for (const n of names) {
-    const match = Object.entries(presets[n]).every(([k, x]) => same(state.values[k], x));
-    const tip = `Preset ${n} (Run.PRESETS): ` + Object.entries(presets[n]).map(([k, x]) => `${k.split(".")[1]} = ${showValue(x)}`).join(", ");
+    const match = fits.includes(n) && Object.keys(presets[n]).length === most;
+    const tip = `Preset ${n} (parameters/presets.py): ` + Object.entries(presets[n]).map(([k, x]) => `${k.split(".")[1]} = ${showValue(x)}`).join(", ");
     seg.append(el("button", { type: "button", class: match ? "on" : "", "data-tip": tip,
       onclick: () => {
         state.formatsByMode[state.values[CFG.mode]] = clone(state.values[CFG.formats]);   // as a switch of mode would
@@ -633,14 +654,17 @@ function renderSections() {
       el("span", { class: "ps-n" + (nChanged ? " changed" : "") }, nChanged ? `${nChanged} changed` : String(keys.length))));
     const inner = el("div", { class: "psec-body" });
     if (isRun) { const pr = presetRow(); if (pr) inner.append(pr); }
+    if (keys.some((k) => DESKTOP_ONLY().has(k)) && CFG.desktopOnlyNote) inner.append(el("p", { class: "section-note" }, CFG.desktopOnlyNote));
     if (f.module === "Color" && "Color.MATERIALS" in state.byKey) inner.append(...colorGroups(keys));
     else for (const k of keys) inner.append(field(state.byKey[k]));
     det.append(inner);
     box.append(det);
   }
-  const hiddenFiles = state.desc.files.filter((f) => !sectionKeys(f.module).length && f.module !== CFG.mode.split(".")[0]).map((f) => (CFG.sectionTitles || {})[f.module] || f.module);
+  const hiddenFiles = state.desc.files.filter((f) => sectionShown(f.module) && !sectionKeys(f.module).length && f.module !== CFG.mode.split(".")[0]
+    && state.params.some((p) => p.module === f.module)).map((f) => (CFG.sectionTitles || {})[f.module] || f.module);
+  const listed = hiddenFiles.length > 1 ? `${hiddenFiles.slice(0, -1).join(", ")} and ${hiddenFiles.at(-1)}` : hiddenFiles.join("");
   $("sections-note").textContent = state.ui === "basic"
-    ? `Advanced shows all ${state.params.length} parameters${hiddenFiles.length ? `, ${hiddenFiles.join(" and ")} included` : ""}.`
+    ? `Advanced shows all ${state.params.length} parameters${hiddenFiles.length ? `, with the ${listed} sections` : ""}.`
     : "Mode, the file formats and Verify are the switches outside the sections. A dot marks a value that differs from the file.";
   scroller.scrollTop = top;
   if (focusBack) {

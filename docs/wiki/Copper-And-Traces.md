@@ -1,4 +1,4 @@
-# 11. Copper And Traces
+# 12. Copper And Traces
 
 > [!WARNING]
 > **Zones must be filled in KiCad.** KESE takes the fill polygons KiCad stores in the file,
@@ -12,37 +12,37 @@ zone fills joined to its vias and plated holes. `kese/s2_collect/` collects the 
 and net and `kese/s3_resolve/` resolves it; `kese/s4_geometry/copper.py` and `plating.py` turn it
 into prisms; the settings are in `parameters/copper.py`.
 
-## 11.1 What Makes Copper
+## 12.1 What Makes Copper
 
 ![Net GND on board 03_vias_through: the board from the top, the net's copper on each layer pulled apart, the closed solid Copper_GND, and a cut through one of its vias](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/copper_1_one_net_one_solid.webp)
 
 ![Net STAGGER on board 05_vias_micro: the copper of each of its layers in its own colour, the pieces in 3D at their heights, and a true-scale cut through its five vias](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/copper_2_net_eight_layers.webp)
 
-Per copper layer, these items are collected with their net (text always as no net, see 11.1.1):
+Per copper layer, these items are collected with their net (text always as no net, see 12.1.1):
 
 | Item | Shape |
 |---|---|
-| `segment` (track) | the centre line thickened by the track width, round ends; a track left bare by the solder mask (KiCad 9 and later) also opens the mask, see [Solder Masks](Solder-Masks.md#151-kicads-mask-layers-are-negative) |
+| `segment` (track) | the centre line thickened by the track width, round ends; a track left bare by the solder mask (KiCad 9 and later) also opens the mask, see [Solder Masks](Solder-Masks.md#161-kicads-mask-layers-are-negative) |
 | `arc` (arc track) | the arc flattened to `Geometry.ARC_STEP_DEG` steps, thickened; left bare by the solder mask, it opens the mask as a track does |
-| `via` | a disc of the via's size on every layer it spans, except rings dropped by KiCad's "remove unused layers" (see 11.3) |
-| `pad` | the pad shape (circle, rect, oval, roundrect, trapezoid, custom with anchor and primitives; a chamfered rectangle has the corners its `chamfer` lists cut straight, legs `chamfer_ratio` x the shorter side, and those corners not rounded) at its position and angle, with the drill offset, on each copper layer the pad lists (`*.Cu`, `F&B.Cu` expanded), except inner rings of a through-hole pad dropped by "remove unused layers" (see 11.3.1); an NPTH pad gives its hole, and a copper ring only where KiCad flashes it (`PAD::FlashLayer`): not for a round (or oval) pad no bigger than its round (or oval) drill and not offset |
+| `via` | a disc of the via's size on every layer it spans, except rings dropped by KiCad's "remove unused layers" (see 12.3) |
+| `pad` | the pad shape (circle, rect, oval, roundrect, trapezoid, custom with anchor and primitives; a chamfered rectangle has the corners its `chamfer` lists cut straight, legs `chamfer_ratio` x the shorter side, and those corners not rounded) at its position and angle, with the drill offset, on each copper layer the pad lists (`*.Cu`, `F&B.Cu` expanded), except inner rings of a through-hole pad dropped by "remove unused layers" (see 12.3.1); an NPTH pad gives its hole, and a copper ring only where KiCad flashes it (`PAD::FlashLayer`): not for a round (or oval) pad no bigger than its round (or oval) drill and not offset |
 | `zone` fill | the `filled_polygon` polygons stored in the file; a fill KiCad 5 drew with a pen (a file older than format 20250210 without `(filled_areas_thickness no)`) grows by half the zone's `min_thickness`, round at the corners, as KiCad does when it opens such a file; a KiCad 4 or 5 zone stored only as `fill_segments` is those segments, each drawn with a pen of `min_thickness` |
 | `gr_*` / `fp_*` graphics on a copper layer | lines and arcs thickened by their stroke width; filled shapes filled (with no `fill` in the file, as KiCad reads it: a circle or rectangle of width 0, and a polygon off Edge.Cuts); a self-crossing polygon keeps every lobe; unfilled closed shapes as their outline stroke; rectangles with their rounded corners (KiCad 10); a drawing left bare by the solder mask (KiCad 9 and later) also opens the mask, as a track does |
 | text on a copper layer | the stroke-font glyphs, as on silkscreen; knockout text (`(layer "F.Cu" knockout)`) is the text's box, square to the text and grown by max(pen / 2, height / 9), with the letters cut out |
 
 Then, per layer and per net: union, simplify, clip to the outline, subtract the holes, move to
-the board frame ([6.3](Working-Principle.md#63-coordinate-frames)) and snap to the grid
-([6.1](Working-Principle.md#61-the-design-choice-that-matters-most)). The union is simplified
+the board frame ([7.3](Working-Principle.md#73-coordinate-frames)) and snap to the grid
+([7.1](Working-Principle.md#71-the-design-choice-that-matters-most)). The union is simplified
 before the outline and the holes cut it, so the copper's edge at the board edge and in every hole
 is the very polygon of the laminate and of the barrel (a 0.05 mm via bore simplified after the
 cut kept every other vertex, and the copper stood up to half a micron into the bore):
 
 ```math
-C_{k,n} = \left( \mathrm{simplify}_{\varepsilon}\left( \bigcup_{j \in I_{k,n}} G_j \right) \cap O \right) \setminus X_k \qquad (11.1)
+C_{k,n} = \left( \mathrm{simplify}_{\varepsilon}\left( \bigcup_{j \in I_{k,n}} G_j \right) \cap O \right) \setminus X_k \qquad (12.1)
 ```
 
 ```math
-X_k = \begin{cases} \bigcup_{h : a_h \le k \le b_h} \left( H_h \ominus w_h \right) & k = 0 \text{ or } k = N-1 \ \ \text{(outer: the bores)} \\ \bigcup_{h : a_h \le k \le b_h} H_h & 0 < k < N-1 \ \ \text{(inner: the drills)} \end{cases} \qquad (11.2)
+X_k = \begin{cases} \bigcup_{h : a_h \le k \le b_h} \left( H_h \ominus w_h \right) & k = 0 \text{ or } k = N-1 \ \ \text{(outer: the bores)} \\ \bigcup_{h : a_h \le k \le b_h} H_h & 0 < k < N-1 \ \ \text{(inner: the drills)} \end{cases} \qquad (12.2)
 ```
 
 | Symbol | Meaning | Parameter |
@@ -50,17 +50,21 @@ X_k = \begin{cases} \bigcup_{h : a_h \le k \le b_h} \left( H_h \ominus w_h \righ
 | $`C_{k,n}`$ | copper region of net $`n`$ on layer $`l_k`$ | |
 | $`I_{k,n}`$ | the items of net $`n`$ on layer $`l_k`$ (tracks, pads, via rings, zone fills, graphics assigned to the net; text only in `no_net`) | |
 | $`G_j`$ | the 2D shape of item $`j`$ | |
-| $`O`$ | the board outline, equation (10.3) | |
+| $`O`$ | the board outline, equation (11.3) | |
 | $`X_k`$ | the holes cut out of layer $`l_k`$ | |
 | $`H_h`$, $`w_h`$ | drill region and plating wall of hole $`h`$ ($`w_h = 0`$ for an NPTH) | `Copper.VIA_WALL_MM`, `Copper.PTH_WALL_MM` |
 | $`a_h, b_h`$ | first and last copper layer index hole $`h`$ spans | |
 | $`\ominus w`$ | shrinks a region inward by $`w`$ (a negative buffer) | |
 | $`\varepsilon`$ | simplification tolerance (0.5 µm) | `Geometry.SIMPLIFY_TOLERANCE_MM` |
 
-Three clean-ups follow, both for shapes of one net that only just meet:
+Three clean-ups follow, all for shapes of one net that only just meet:
 
-- The union is taken on the grid, so two edges that run along one line only to within floating
-  point (two zone fills, a fill and a pad) join without a crack.
+- The union is taken in floating point and then rounded to the grid as a whole, so two edges that
+  run along one line only to within floating point (two zone fills, a fill and a pad) meet on the
+  grid and join without a crack, and a crack narrower than the grid closes
+  (`kese/s3_resolve/copper.py`, `net_union`). Each edge moves by less than a grid step. A union on
+  the grid, which rounds every item first, costs about three times as much on a big board; it is
+  still used where GEOS cannot join the items in floating point.
 - A hole in $`C_{k,n}`$ whose mean width, twice its area over its perimeter, is under 1 µm is
   filled. Such needle holes are left where a zone fill runs round a pad or via of its own net
   with other arcs than the pad's own polygon (on one KiCad 10 board 193 of them, and no hole
@@ -68,7 +72,13 @@ Three clean-ups follow, both for shapes of one net that only just meet:
 - Pieces of one net that come within two grid steps of each other are joined (grown and shrunk
   back by a grid step, mitred), so their walls cannot leave the solid open on the grid.
 
-### 11.1.1 Nets
+The layers are worked on `Parallel.WORKERS` at a time, the biggest first: in worker processes on a
+board of `Parallel.PROCESS_MIN_NETS` nets or more (1,000, counted layer by layer) whose copper holds at least
+`Parallel.PROCESS_MIN_COORDINATES` coordinates, else in threads
+([Working Principle](Working-Principle.md#74-work-done-in-parallel)). Either way each net's region
+comes out the same, byte for byte.
+
+### 12.1.1 Nets
 
 In KiCad 4 to 9 an item carries a net **number** that is looked up in the file's net table; KiCad 10
 writes the net **name** directly, and KESE reads both. Net names in files older than format 20210606
@@ -85,15 +95,15 @@ shapes drawn on top of each other), the net that was resolved first keeps the sh
 solids stay disjoint:
 
 ```math
-C_{k,n_j} \leftarrow C_{k,n_j} \setminus \bigcup_{i < j} C_{k,n_i} \qquad (11.3)
+C_{k,n_j} \leftarrow C_{k,n_j} \setminus \bigcup_{i < j} C_{k,n_i} \qquad (12.3)
 ```
 
 where $`n_1, n_2, \dots`$ are the nets of layer $`l_k`$ in the order of their first copper item
 on that layer. Items are collected in file order (tracks, arcs, zones, graphics, footprints and
-text as they come), then all vias, then the via rings kept by equation (11.8), so a net that
+text as they come), then all vias, then the via rings kept by equation (12.8), so a net that
 appears only on vias comes after every net with a track, zone or pad on that layer.
 
-## 11.2 Grouping And Part Names
+## 12.2 Grouping And Part Names
 
 | `Copper.COPPER_GROUPING` | Part per | Name | Plating |
 |---|---|---|---|
@@ -106,7 +116,7 @@ barrel, joined into one closed body where the copper connects in the file (`Copp
 holds many separate bodies). That is what a solver needs to assign one port or one conductor to a
 net.
 
-## 11.3 Vias And Plated Holes
+## 12.3 Vias And Plated Holes
 
 A via contributes:
 
@@ -115,7 +125,7 @@ A via contributes:
   span);
 - a **hole** of the via's drill through the same span;
 - a plated **barrel**: the ring between the drill and the drill shrunk by the plating wall,
-  running between the copper layers it joins, equations (11.4) to (11.6).
+  running between the copper layers it joins, equations (12.4) to (12.6).
 
 ![A through via on board 04_vias_blind_buried cut through its centre with its drill, bore and 25 µm wall, close-ups of the top and of an inner layer, and a through, a blind and a buried via side by side](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/copper_3_via_section.webp)
 
@@ -127,17 +137,17 @@ A through-hole pad contributes its pad shape on the listed layers and a barrel w
 The bore (the open hole left inside the plating) and the barrel of hole $`h`$ are:
 
 ```math
-B_h = H_h \ominus w_h \qquad (11.4)
+B_h = H_h \ominus w_h \qquad (12.4)
 ```
 
 ```math
-A_h = \left( H_h \setminus B_h \right) \cap O \qquad (11.5)
+A_h = \left( H_h \setminus B_h \right) \cap O \qquad (12.5)
 ```
 
 For a round drill of diameter $`D`$ this is an annulus between the radii
 
 ```math
-r_{\mathrm{bore}} = \frac{D}{2} - w_h, \qquad r_{\mathrm{drill}} = \frac{D}{2} \qquad (11.6)
+r_{\mathrm{bore}} = \frac{D}{2} - w_h, \qquad r_{\mathrm{drill}} = \frac{D}{2} \qquad (12.6)
 ```
 
 | Symbol | Meaning | Parameter |
@@ -159,14 +169,14 @@ How the barrel meets the layers (so that the solids only touch):
 So the barrel of a hole spanning layers $`l_a`$ to $`l_b`$ is extruded over
 
 ```math
-z_{\mathrm{top}}(A_h) = \begin{cases} z_{\mathrm{bot}}(l_0) = L/2 & a = 0 \\ z_{\mathrm{top}}(l_a) & a > 0 \end{cases}, \qquad z_{\mathrm{bot}}(A_h) = \begin{cases} z_{\mathrm{top}}(l_{N-1}) = -L/2 & b = N-1 \\ z_{\mathrm{bot}}(l_b) & b < N-1 \end{cases} \qquad (11.7)
+z_{\mathrm{top}}(A_h) = \begin{cases} z_{\mathrm{bot}}(l_0) = L/2 & a = 0 \\ z_{\mathrm{top}}(l_a) & a > 0 \end{cases}, \qquad z_{\mathrm{bot}}(A_h) = \begin{cases} z_{\mathrm{top}}(l_{N-1}) = -L/2 & b = N-1 \\ z_{\mathrm{bot}}(l_b) & b < N-1 \end{cases} \qquad (12.7)
 ```
 
-with the copper bands of equations (7.4) to (7.7). Barrels of the same span and net are one
+with the copper bands of equations (8.4) to (8.7). Barrels of the same span and net are one
 region; with `"net"` grouping they go into the net's part, with `"layer"` grouping into
 `Plating`.
 
-### 11.3.1 Remove Unused Layers
+### 12.3.1 Remove Unused Layers
 
 KiCad's via and through-hole pad option "remove unused layers" drops the annular rings on layers
 where nothing connects. With `Copper.HONOUR_REMOVE_UNUSED_LAYERS = True` (the default), KESE keeps
@@ -174,7 +184,7 @@ a via's (or pad's) ring on such a layer only when copper of its net already touc
 KiCad's `FlashLayer` (pad.cpp, pcb_track.cpp) decides:
 
 ```math
-\text{keep } P_v \text{ on } l_k \iff l_k \in Z_v \;\lor\; P_v \cap \bigcup_{j \in I_k(n_v)} G_j \neq \varnothing \qquad (11.8)
+\text{keep } P_v \text{ on } l_k \iff l_k \in Z_v \;\lor\; P_v \cap \bigcup_{j \in I_k(n_v)} G_j \neq \varnothing \qquad (12.8)
 ```
 
 where $`P_v`$ is the via's round pad (or the pad's shape on that layer), $`n_v`$ its net and
@@ -190,7 +200,7 @@ via with `(start_end_only yes)` keeps its rings on its start and end layers only
 it. `report.txt` counts the rings removed under `via rings removed on unconnected layers` (pad
 rings included).
 
-### 11.3.2 Via Tenting
+### 12.3.2 Via Tenting
 
 Tenting decides whether the solder mask covers the via's annular ring or leaves it open; the
 bore (the drill minus the plating wall) is always left open through the mask, see
@@ -206,14 +216,14 @@ bore (the drill minus the plating wall) is always left open through the mask, se
 `plot setting viasonmask`, `KiCad default (vias tented)`). That line does not change when
 `VIA_TENTING` is `"tented"` or `"open"`; the override shows only in `parameters.txt`.
 
-## 11.4 Copper Thickness And Plating
+## 12.4 Copper Thickness And Plating
 
 ![Board 14_stackup_full cut across its four traces at true scale, with close-ups of F.Cu 35 µm, In1.Cu 17.5 µm, In2.Cu 17.5 µm and B.Cu 70 µm](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/copper_5_thickness.webp)
 
 ![The plated hole of board 14_stackup_full at the top and bottom faces, without outer plating and with 20 µm of it, the foil, the outer plating and the hole's wall plating each in its own shade](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/copper_6_plating.webp)
 
 ```math
-t_k = \begin{cases} t_{\mathrm{foil},k} + t_{\mathrm{plate}} & k = 0 \text{ or } k = N-1 \ \ \text{(outer)} \\ t_{\mathrm{foil},k} & 0 < k < N-1 \ \ \text{(inner)} \end{cases} \qquad (11.9)
+t_k = \begin{cases} t_{\mathrm{foil},k} + t_{\mathrm{plate}} & k = 0 \text{ or } k = N-1 \ \ \text{(outer)} \\ t_{\mathrm{foil},k} & 0 < k < N-1 \ \ \text{(inner)} \end{cases} \qquad (12.9)
 ```
 
 | Symbol | Meaning | Parameter |
@@ -227,7 +237,7 @@ plating ("finished copper"), typically 20 µm. It is 0 by default so that the ge
 KiCad; set it for an as-fabricated model. Each copper part records `foil_mm` and
 `plating_added_mm` in `materials.json`.
 
-## 11.5 Etch Factor
+## 12.5 Etch Factor
 
 ![Board 10_tracks_arcs cut across its 0.25 mm track at true scale with ETCH_FACTOR 0 and 0.5 (four slices), and close-ups of an etched wall on F.Cu and on B.Cu with the inset of every slice](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/copper_10_etch_factor.webp)
 
@@ -238,22 +248,22 @@ slices, each inset a little more than the one nearer the foot. Slice $`s`$ of $`
 ($`s = 0 \dots m-1`$, counted from the bottom of the copper band) is:
 
 ```math
-z_s \in \left[ z_0 + \frac{s}{m} t,\ z_0 + \frac{s+1}{m} t \right] \qquad (11.10)
+z_s \in \left[ z_0 + \frac{s}{m} t,\ z_0 + \frac{s+1}{m} t \right] \qquad (12.10)
 ```
 
 ```math
-f_s = \begin{cases} \frac{s + 0.5}{m} & \text{foot at the bottom} \\ 1 - \frac{s + 0.5}{m} & \text{foot at the top} \end{cases} \qquad (11.11)
+f_s = \begin{cases} \frac{s + 0.5}{m} & \text{foot at the bottom} \\ 1 - \frac{s + 0.5}{m} & \text{foot at the top} \end{cases} \qquad (12.11)
 ```
 
 ```math
-\delta_s = e \cdot t \cdot f_s, \qquad R_s = C_{k,n} \ominus \delta_s \qquad (11.12)
+\delta_s = e \cdot t \cdot f_s, \qquad R_s = C_{k,n} \ominus \delta_s \qquad (12.12)
 ```
 
 | Symbol | Meaning | Parameter |
 |---|---|---|
 | $`m`$ | number of slices | `Copper.ETCH_STEPS` (4) |
-| $`C_{k,n}`$ | copper of net $`n`$ on layer $`l_k`$, equation (11.1) | |
-| $`z_0`$, $`t`$ | bottom and thickness of the copper band | equations (7.4) to (7.7), (11.9) |
+| $`C_{k,n}`$ | copper of net $`n`$ on layer $`l_k`$, equation (12.1) | |
+| $`z_0`$, $`t`$ | bottom and thickness of the copper band | equations (8.4) to (8.7), (12.9) |
 | $`f_s`$ | height fraction of the middle of slice $`s`$, measured from the foot | |
 | $`e`$ | etch factor | `Copper.ETCH_FACTOR` |
 | $`\delta_s`$ | inward offset of slice $`s`$ on every side | |
@@ -272,7 +282,7 @@ the free face is inset by $`e \cdot t \cdot (m - 0.5)/m`$.
 Example: $`e = 0.5`$, $`t = 35`$ µm, $`m = 4`$ gives offsets of 2.19, 6.56, 10.94 and 15.31 µm
 from the foot to the free face.
 
-## 11.6 Castellated Holes
+## 12.6 Castellated Holes
 
 ![The right edge of board 16_edge_plating_castellation with edge plating off: from the top, from outside, cut through castellation C3 at true scale, and its half-barrel at mid-height](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/copper_7_castellation.webp)
 
@@ -281,7 +291,7 @@ does not read KiCad's "Castellated pad" fabrication property of a pad; it finds 
 the geometry, as plated holes whose drill crosses `Edge.Cuts`:
 
 ```math
-h \text{ is a castellation} \iff h \text{ plated},\ H_h \not\subseteq O,\ H_h \cap O \neq \varnothing \qquad (11.13)
+h \text{ is a castellation} \iff h \text{ plated},\ H_h \not\subseteq O,\ H_h \cap O \neq \varnothing \qquad (12.13)
 ```
 
 Then `Copper.CASTELLATION`:
@@ -294,7 +304,7 @@ Then `Copper.CASTELLATION`:
 
 `report.txt` counts them under `castellated holes (plated holes cut by the board edge)`.
 
-## 11.7 Edge Plating
+## 12.7 Edge Plating
 
 ![Board 16_edge_plating_castellation with its edge plated: the plated corner from outside, the left edge at true scale, and F.Cu at castellation C3 with and without the plated edge; GND in copper, C1 to C4 each in its own colour, with a colour key](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/copper_8_edge_plating.webp)
 
@@ -305,7 +315,7 @@ Edge plating is copper on the routed board edge (edge-card connectors, RF shield
 `"no"` force it. When on:
 
 - a band just inside the outline becomes copper, interrupted by every hole and castellation
-  that crosses the edge, equation (11.14); it runs through the laminate from $`-L/2`$ to $`+L/2`$
+  that crosses the edge, equation (12.14); it runs through the laminate from $`-L/2`$ to $`+L/2`$
   and is part of the edge net's copper on the two outer layers, so it reaches from the bottom of
   `B.Cu` to the top of `F.Cu`;
 - the band takes the laminate's place at the edge, like a barrel in its drill;
@@ -318,11 +328,11 @@ Edge plating is copper on the routed board edge (edge-card connectors, RF shield
   resin fill beside the inner copper stops there too.
 
 ```math
-E = \left( O \setminus \left( O \ominus w_e \right) \right) \setminus \bigcup_h H_h \qquad (11.14)
+E = \left( O \setminus \left( O \ominus w_e \right) \right) \setminus \bigcup_h H_h \qquad (12.14)
 ```
 
 ```math
-n^{*} = \arg\max_{n \in S} \sum_{k=0}^{N-1} \mathrm{area}\left( C_{k,n} \cap E \right) \qquad (11.15)
+n^{*} = \arg\max_{n \in S} \sum_{k=0}^{N-1} \mathrm{area}\left( C_{k,n} \cap E \right) \qquad (12.15)
 ```
 
 | Symbol | Meaning | Parameter |
@@ -330,10 +340,10 @@ n^{*} = \arg\max_{n \in S} \sum_{k=0}^{N-1} \mathrm{area}\left( C_{k,n} \cap E \
 | $`E`$ | the edge plating band | |
 | $`w_e`$ | width of the band | `Copper.EDGE_PLATING_WALL_MM` |
 | $`S`$ | the named nets (every net except `no_net`) | |
-| $`C_{k,n}`$, $`N`$ | copper of net $`n`$ on layer $`l_k`$, equation (11.1), and the number of copper layers | |
+| $`C_{k,n}`$, $`N`$ | copper of net $`n`$ on layer $`l_k`$, equation (12.1), and the number of copper layers | |
 | $`n^{*}`$ | the edge net when `EDGE_PLATING_NET = "auto"` (`no_net` when no named net touches the band) | `Copper.EDGE_PLATING_NET` |
 
-## 11.8 Electrical Properties
+## 12.8 Electrical Properties
 
 Every copper part carries `conductivity_S_per_m` (`Copper.COPPER_CONDUCTIVITY_S_PER_M`,
 5.8 × 10⁷ S/m) and `surface_roughness_um` (`Copper.COPPER_SURFACE_ROUGHNESS_UM`, 0 = ignore; a
@@ -342,7 +352,7 @@ solver setting, not geometry) in `materials.json`. A separate `Plating` part (wi
 and `plating_added_mm` are those of the part's first layer. See
 [Material Properties](Material-Properties.md).
 
-## 11.9 Settings
+## 12.9 Settings
 
 | Name | Default | Range | Meaning |
 |---|---|---|---|

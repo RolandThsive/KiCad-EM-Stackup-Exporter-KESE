@@ -28,15 +28,6 @@ class PrismSet:
             return
         self.prisms.append(Prism(part, role, region, min(z0, z1), max(z0, z1), **kw))
 
-    def parts(self):
-        """Ordered unique part names."""
-        seen, out = set(), []
-        for p in self.prisms:
-            if p.part not in seen:
-                seen.add(p.part)
-                out.append(p.part)
-        return out
-
     def by_part(self):
         out = {}
         for p in self.prisms:

@@ -1,5 +1,5 @@
 """Stack-up: read from (setup (stackup ...)), or made from the parameters when the board has none."""
-from kese.core.sexp import child, children, num
+from kese.core.sexp import child, children, num, number
 from kese.model.stackup import Dielectric, Stackup
 from parameters import P
 
@@ -12,13 +12,14 @@ def read_stackup(tree, copper_layers, file_thickness, log):
     cu_t, colors, mask_t, finish = {}, {}, None, None
     flags = {"edge_plating": False, "castellated_pads": False}
     gaps = []                          # dielectric layers between consecutive copper layers
-    found = False
     if st:
-        found = True
         acc, seen_cu = [], False
         for l in children(st, "layer"):
             name = str(l[1])
-            t = sum(float(c[1]) for c in children(l, "thickness")) or None
+            t = sum(number(c[1], c) for c in children(l, "thickness")) or None
+            if t is not None and t < 0:
+                log(f"warning: stackup layer {name}: thickness {t} mm is less than 0: read as not given")
+                t = None
             typ = (child(l, "type") or [None, ""])[1].lower()
             col = child(l, "color")
             if col:
@@ -38,8 +39,7 @@ def read_stackup(tree, copper_layers, file_thickness, log):
                     material=(child(l, "material") or [None, B.DEFAULT_DIELECTRIC_MATERIAL])[1],
                     thickness=t or 0.0,
                     epsilon_r=num(l, "epsilon_r", B.DEFAULT_EPSILON_R) if B.USE_STACKUP_EPSILON_R else B.DEFAULT_EPSILON_R,
-                    loss_tangent=num(l, "loss_tangent", B.DEFAULT_LOSS_TANGENT) if B.USE_STACKUP_LOSS_TANGENT else B.DEFAULT_LOSS_TANGENT,
-                    above="", below=""))
+                    loss_tangent=num(l, "loss_tangent", B.DEFAULT_LOSS_TANGENT) if B.USE_STACKUP_LOSS_TANGENT else B.DEFAULT_LOSS_TANGENT))
         cf = child(st, "copper_finish")
         if cf:
             finish = str(cf[1])
@@ -49,7 +49,7 @@ def read_stackup(tree, copper_layers, file_thickness, log):
         if l not in cu_t:
             cu_t[l] = C.DEFAULT_OUTER_FOIL_MM if l in ("F.Cu", "B.Cu") else C.DEFAULT_INNER_FOIL_MM
 
-    usable = found and len(gaps) == n - 1 and all(sum(d.thickness for d in g) > 0 for g in gaps)
+    usable = bool(st) and len(gaps) == n - 1 and all(sum(d.thickness for d in g) > 0 for g in gaps)
     inner_cu = sum(cu_t[l] for l in copper_layers[1:-1])
     if B.BOARD_THICKNESS_MM:
         laminate = B.BOARD_THICKNESS_MM
@@ -68,7 +68,7 @@ def read_stackup(tree, copper_layers, file_thickness, log):
         # KiCad's (general (thickness)) is the finished board: as KiCad's default stack-up does
         # (BOARD_STACKUP::BuildDefaultStackupList), the outer copper and the two masks come off it
         total = file_thickness or B.DEFAULT_BOARD_THICKNESS_MM
-        mask = mask_t if M.USE_STACKUP_MASK_THICKNESS and mask_t else M.MASK_OVER_COPPER_MM
+        mask = mask_t or M.MASK_OVER_COPPER_MM          # mask_t is only read when USE_STACKUP_MASK_THICKNESS
         laminate = total - cu_t[copper_layers[0]] - cu_t[copper_layers[-1]] - 2 * mask
         source = (f"file (general (thickness {total})) less the outer copper and the masks - no usable stackup"
                   if file_thickness else f"default {total} mm (Board.DEFAULT_BOARD_THICKNESS_MM) less the outer copper and the masks (no thickness in file)")
@@ -77,17 +77,21 @@ def read_stackup(tree, copper_layers, file_thickness, log):
             log(f"warning: DIELECTRIC_SPLIT={B.DIELECTRIC_SPLIT!r} unknown, using 'even'")
         each = (laminate - inner_cu) / (n - 1)
         gaps = [[Dielectric(f"dielectric {k + 1}", B.DEFAULT_DIELECTRIC_TYPE, B.DEFAULT_DIELECTRIC_MATERIAL, each,
-                            B.DEFAULT_EPSILON_R, B.DEFAULT_LOSS_TANGENT, "", "")] for k in range(n - 1)]
+                            B.DEFAULT_EPSILON_R, B.DEFAULT_LOSS_TANGENT)] for k in range(n - 1)]
     # one Dielectric object per gap (a gap made of several prepreg plies is one solid of the summed thickness)
     dielectrics = []
     for k, g in enumerate(gaps):
         d = g[0]
         if len(g) > 1:
             d = Dielectric(" + ".join(x.name for x in g), g[0].kind, g[0].material, sum(x.thickness for x in g),
-                           g[0].epsilon_r, g[0].loss_tangent, "", "")
+                           g[0].epsilon_r, g[0].loss_tangent)
         d.above, d.below = copper_layers[k], copper_layers[k + 1]
+        if d.thickness <= 0:             # a board too thin for its copper: every part would be turned inside out
+            raise ValueError(f"the dielectric between {d.above} and {d.below} comes out {d.thickness:.4f} mm thick "
+                             f"(laminate {laminate:.4f} mm from {source}, {inner_cu:.4f} mm of it inner copper): "
+                             "the board is too thin for its copper; set Board.BOARD_THICKNESS_MM (parameters/board.py)")
         dielectrics.append(d)
     return Stackup(copper_layers=copper_layers, copper_thickness=cu_t, dielectrics=dielectrics,
                    laminate_thickness=laminate, thickness_source=source, mask_thickness=mask_t,
-                   colors=colors, copper_finish=finish, file_board_thickness=file_thickness,
+                   colors=colors, copper_finish=finish,
                    edge_plating=flags["edge_plating"], castellated_pads=flags["castellated_pads"])

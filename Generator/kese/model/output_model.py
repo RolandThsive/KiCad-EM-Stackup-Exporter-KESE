@@ -18,5 +18,5 @@ class Model:
     props: dict                  # part name -> physical/EM properties
     transform: object            # 4x4 numpy matrix mm-board -> output
     units: str
-    report: list                 # lines
     boundaries: dict = field(default_factory=dict)  # part name -> Boundary (mm, board frame), the faces STEP writes
+    checks: dict = field(default_factory=dict)      # part name -> the Verifier's checks, made in stage 6 (kese/core/part_checks.py)

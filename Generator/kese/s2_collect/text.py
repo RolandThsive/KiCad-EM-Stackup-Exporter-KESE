@@ -11,8 +11,7 @@ from kese.core import font
 from kese.core.shapes2d import polys_only
 from kese.core.sexp import atoms, child, children, layer_of, numbers
 from kese.s1_read.parse_kicad_version import (flag, footprint_text_fields, is_footprint, is_hidden, is_knockout,
-                                              overbar_markup, text_pen,
-                                              kept_upright, render_cache_rings, text_size)
+                                              kept_upright, overbar_markup, render_cache_rings, text_pen, text_size)
 from parameters import P
 
 TEXT = {"gr_text", "fp_text", "gr_text_box", "fp_text_box", "dimension", "gr_dimension"}

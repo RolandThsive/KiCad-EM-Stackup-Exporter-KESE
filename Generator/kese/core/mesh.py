@@ -7,7 +7,7 @@ from parameters import P
 
 
 class Mesh:
-    def __init__(self, vertices, faces, vertex_normals=None, face_normals=None):
+    def __init__(self, vertices, faces, vertex_normals=None):
         self.vertices = np.asarray(vertices, dtype=np.float64, order="C").reshape((-1, 3))
         self.faces = np.asarray(faces, dtype=np.int64, order="C").reshape((-1, 3))
         self.vertex_normals = None
@@ -15,8 +15,6 @@ class Mesh:
             vn = np.asarray(vertex_normals, dtype=np.float64)
             self.vertex_normals = np.ascontiguousarray(vn) if vn.shape == self.vertices.shape else None
         self._normals, self._key = None, None
-        if face_normals is not None:
-            self._keep_normals(face_normals)
 
     # ---- the face normals, kept while the mesh stays the same ----------------------------------
     def _content(self):
@@ -134,18 +132,17 @@ class Mesh:
         inverse[referenced] = np.arange(referenced.sum())
         self._update_vertices(referenced, inverse)
 
-    def merge_vertices(self, digits_vertex=None):
-        """Vertices that round to the same point at 10^-digits made one, the first of them kept
-        where it was in the order (vertex normals are not compared)."""
+    def merge_vertices(self, digits_vertex):
+        """Vertices that round to the same point at 10^-digits_vertex made one, the first of them
+        kept where it was in the order (vertex normals are not compared)."""
         if not len(self.vertices):
             return
-        digits = P.Geometry.MESH_MERGE_DIGITS if digits_vertex is None else digits_vertex
         if len(self.faces):
             referenced = np.zeros(len(self.vertices), dtype=bool)
             referenced[self.faces] = True
         else:
             referenced = np.ones(len(self.vertices), dtype=bool)
-        rows = np.ascontiguousarray((self.vertices * (10 ** digits)).round().astype(np.int64)[referenced])
+        rows = np.ascontiguousarray((self.vertices * (10 ** digits_vertex)).round().astype(np.int64)[referenced])
         _, index, inverse = np.unique(rows.view(np.dtype((np.void, 24))).reshape(-1),
                                       return_index=True, return_inverse=True)
         order = index.argsort()

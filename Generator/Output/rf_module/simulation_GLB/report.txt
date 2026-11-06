@@ -1,4 +1,4 @@
-rf_module  (rf_module.kicad_pcb)   generated 2026-11-01 21:33
+rf_module  (rf_module.kicad_pcb)   generated 2026-11-04 22:18
 mode: simulation   formats: glb   units: m
 KiCad format 20221018 (KiCad 7), generator pcbnew
 
@@ -54,6 +54,7 @@ skipped
 notes
   font: KiCad newstroke (kicad_newstroke.json.gz)
   solder mask: 0.01 mm over laminate, 0.01 mm over copper (stackup)
+  left out of every file: Finish.FINISH_ENABLED, Silkscreen.SILKSCREEN_ENABLED, SolderMask.SOLDER_MASK_ENABLED = False
 
 parts
   Board_dielectric 1                      53980 triangles  material Board_prepreg #A89C66 alpha 1.0
@@ -94,16 +95,12 @@ parts
   Copper_XIN                                324 triangles  material Copper #CD803E alpha 1.0
   Copper_XOUT                               344 triangles  material Copper #CD803E alpha 1.0
   Copper_no_net                            2660 triangles  material Copper #CD803E alpha 1.0
-  Top Solder Mask                        154868 triangles  material Top Solder Mask #14328C alpha 0.8
-  Bottom Solder Mask                      75122 triangles  material Bottom Solder Mask #14328C alpha 0.8
-  Top Silkscreen                          40466 triangles  material Top Silkscreen #F0F0EC alpha 1.0
-  Bottom Silkscreen                       15824 triangles  material Bottom Silkscreen #F0F0EC alpha 1.0
 
 timing
   read               0.1 s
-  collect            0.7 s
-  resolve            2.6 s
-  geometry           1.7 s
+  collect            0.9 s
+  resolve            2.1 s
+  geometry           1.4 s
   materials          0.0 s
-  assemble           8.8 s
+  assemble           7.5 s
   write              0.1 s

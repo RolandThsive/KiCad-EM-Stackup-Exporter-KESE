@@ -4,23 +4,25 @@ import numpy as np
 import shapely
 from shapely.geometry import Polygon
 
-from kese.core.shapes2d import EMPTY, as_region, diff, grid, inter, joined, meeting, polys_only, snap
+from kese.core.shapes2d import EMPTY, G, as_region, diff, grid, inter, meeting, polys_only, side_by_side, snap
 
 
-def grown_parts(parts, t, quad_segs):
-    """Every part grown by t, on the grid.  GEOS's buffer has returned a part that crosses itself
-    (once, on a KiCad 8 board, and only in some runs); such a part is made valid, and joined with
-    the part it grew from, which making it valid can cut into, before it is put on the grid."""
-    grown = shapely.buffer(parts, t, quad_segs=quad_segs)
+def grown_parts(parts, t, **style):
+    """Every part grown by t, on the grid; `style`: shapely's buffer settings (quad_segs, join_style,
+    mitre_limit).  GEOS's buffer has returned a part that crosses itself (once, on a KiCad 8 board,
+    and only in some runs); such a part is made valid, and joined with the part it grew from, which
+    making it valid can cut into, before it is put on the grid."""
+    grown = shapely.buffer(parts, t, **style)
     for k in np.flatnonzero(~shapely.is_valid(grown)):
         grown[k] = polys_only(shapely.union(polys_only(shapely.make_valid(grown[k])), parts[k]))
     return shapely.set_precision(grown, grid())
 
 
-def grow(g, t, quad_segs):
-    """The region grown by t, every part on its own, on the grid."""
-    grown = grown_parts(shapely.get_parts(polys_only(g)), t, quad_segs)
-    return joined([p for q in grown for p in shapely.get_parts(polys_only(q)) if not p.is_empty])
+def grow(g, t, **style):
+    """The region grown by t, every part on its own, on the grid, and only the parts that then meet
+    joined (as snap(g.buffer(t, **style)), but without one buffer of the whole region, which costs
+    seconds on a big layer)."""
+    return side_by_side(grown_parts(shapely.get_parts(polys_only(g)), t, **style))
 
 
 def near(g, other, d):
@@ -74,7 +76,7 @@ def around_raised(region, raised, t, quad_segs):
     """Every group of copper that meets once grown is grown, and cut by the coating near it, on its
     own; the flat coating is the region less all the grown copper."""
     parts = shapely.get_parts(raised)
-    grown = grown_parts(parts, t, quad_segs)
+    grown = grown_parts(parts, t, quad_segs=quad_segs)
     cut = cutter(region)
     rings, tops, walls = [], [], []
     for idx in meeting(list(grown)):
@@ -86,11 +88,23 @@ def around_raised(region, raised, t, quad_segs):
     return diff(region, as_region(rings)), as_region(tops), as_region(walls)
 
 
+def without_hairlines(region, h):
+    """The region without its pieces narrower than 2 h everywhere (those a buffer of -h empties), and
+    those pieces (a list).  Every point of such a piece lies within h of its edge, so its area is at
+    most h times its perimeter: only those pieces are buffered."""
+    parts = shapely.get_parts(polys_only(region))
+    if h <= 0 or not len(parts):
+        return region, []
+    maybe = np.flatnonzero(shapely.area(parts) <= h * shapely.length(parts))
+    thin = maybe[shapely.is_empty(shapely.buffer(parts[maybe], -h))]
+    return (as_region(list(np.delete(parts, thin))), list(parts[thin])) if len(thin) else (region, [])
+
+
 def around_region(region, raised, t, quad_segs):
     """Every piece of the coating split on its own, against the raised copper inside a box around
     it wide enough that what the box cuts off cannot reach the piece once grown."""
     cut = cutter(raised)
-    m = 2 * t + 8 * grid()
+    m = 2 * t + G().REACH_MARGIN_STEPS * grid()
     flats, tops, walls = [], [], []
     for s in shapely.get_parts(region):
         x0, y0, x1, y1 = s.bounds
@@ -98,7 +112,7 @@ def around_region(region, raised, t, quad_segs):
         if local.is_empty:
             flats.append(s)
             continue
-        g = grow(local, t, quad_segs)
+        g = grow(local, t, quad_segs=quad_segs)
         for out, piece in ((flats, diff(s, g)), (tops, inter(s, local)), (walls, inter(s, diff(g, local)))):
             out += [p for p in shapely.get_parts(piece) if not p.is_empty]
     return as_region(flats), as_region(tops), as_region(walls)

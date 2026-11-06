@@ -6,20 +6,24 @@ the parameters in parameters/, but for the changes SETTINGS lists for it.
     python tests/test_boards.py --accept   re-record tests/baseline.json after an intended geometry change
     python tests/test_boards.py --add      record only the boards the baseline does not have yet
     python tests/test_boards.py --accept 18_finishes 18b_finish_pads   only the boards named (by file name)
-    python tests/test_boards.py --faceted  the STEP files with flat faces only (Run.STEP_EXACT_ARCS = False)
+    python tests/test_boards.py --faceted  the STEP files with flat faces only (Step.STEP_EXACT_ARCS = False)
+    python tests/test_boards.py --healed   read the STEP files back with OpenCascade's healing (slower)
 
 A board fails when the Verifier fails (open solid, overlap, broken skin), when a STEP solid is
 invalid or has a free edge, or when a part's volume moved by more than VOLUME_TOLERANCE from the
 recorded baseline (so a fix for one board cannot silently change another).
 
-Run on its own (python tests/test_boards.py), the suite reads the STEP files back in AUDITORS
-background processes while it exports the next boards, and prints a board's line once its STEP file
-is checked, in the order the boards ran."""
+Run on its own (python tests/test_boards.py), the suite reads the STEP files back part by part in
+AUDITORS background processes while it exports the next boards, and prints a board's line once
+every part of its STEP file is checked, in the order the boards ran.  The STEP files are read as
+written, without OpenCascade's healing (tests/step_audit.py says what is still added before the
+check)."""
 import json
 import multiprocessing
 import shutil
 import sys
 import time
+import warnings
 from concurrent.futures import ProcessPoolExecutor
 from contextlib import contextmanager
 from pathlib import Path
@@ -30,15 +34,18 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 
 import numpy as np  # noqa: E402
 
+from kese.core.parallel import process_limit, processor_threads  # noqa: E402
 from kese.pipeline import generate  # noqa: E402
 from kese.s8_verify.verify import every_check  # noqa: E402
 from parameters import P  # noqa: E402
-from step_audit import step_audit  # noqa: E402
+from step_audit import audit_part, parts, step_audit, total  # noqa: E402
 
 BASELINE = ROOT / "tests" / "baseline.json"
 OUT = ROOT / "tests" / "out"
 VOLUME_TOLERANCE = 1e-3          # relative, per part
-AUDITORS = 2                     # background processes reading STEP files back (plain python entry)
+# background processes reading STEP files back (plain python entry): one per processor thread, as
+# each holds one part of a file in OpenCascade, not the whole file (gigabytes for the biggest boards)
+AUDITORS = process_limit(max(2, processor_threads()))
 FEATURES = sorted((ROOT.parent / "featureTest").glob("*.kicad_pcb"))
 # the boards of Input/ that featureTest/ holds too, byte for byte (21_rf_module is rf_module), run once
 COPIES = {p.read_bytes() for p in FEATURES}
@@ -76,7 +83,8 @@ def settings_for(pcb):
 
 def run_board(pcb, mode, audit=step_audit):
     """-> (verifier ok, verifier lines, {part: volume mm3}, what `audit` gave for the STEP file or
-    None).  The suite's own loop passes an `audit` that hands the file to a background process."""
+    None).  The suite's own loop passes an `audit` that hands the file's parts to background
+    processes."""
     formats = FORMATS[mode]
     with settings_for(pcb) as overrides:
         out_dir, model = generate(pcb, mode=mode, formats=formats, out_root=OUT, overrides=overrides, verify=False,
@@ -89,8 +97,8 @@ def run_board(pcb, mode, audit=step_audit):
     if "step" in formats:
         try:
             step = audit(out_dir / f"{pcb.stem}.step")
-        except ImportError:                     # OCP is not installed: the STEP file is not checked
-            step = None
+        except ImportError as e:                # OCP is not installed, or lacks what the check uses
+            warnings.warn(f"STEP file not read back: {e}", stacklevel=1)
     return ok, lines, volumes, step
 
 
@@ -140,16 +148,18 @@ def report(queue, wait):
     """Print the boards at the head of the queue whose STEP file is checked (all of them when
     `wait`), in the order they ran; -> how many of them failed."""
     failed = 0
-    while queue and (wait or queue[0][3] is None or queue[0][3].done()):
+    while queue and (wait or queue[0][3] is None or all(f.done() for f in queue[0][3])):
         key, problems, seconds, step = queue.pop(0)
         read_back = ""
         if step is not None:
             try:
-                step = step.result()
+                parts_read, step = len(step), total([f.result() for f in step])
                 problems += step_problems(step)
-                read_back = f"   STEP read back in {step[2]:.1f} s"
-            except ImportError:                 # OCP is not installed: the STEP file is not checked
-                pass
+                read_back = f"   STEP read back: {parts_read} parts, {step[2]:.1f} s"
+            except ImportError as e:            # OCP is not installed, or lacks what the check uses
+                read_back = f"   STEP not read back: {e}"
+            except Exception as e:              # a part that did not read back, or a process that died
+                problems.append(f"STEP read-back failed: {e}")
         failed += bool(problems)
         print(f"{key:56s} {'FAIL' if problems else 'ok':4s} {seconds:7.1f} s{read_back}", flush=True)
         for p in problems:
@@ -158,9 +168,14 @@ def report(queue, wait):
 
 
 def main(args):
+    flags = {"--accept", "--add", "--faceted", "--healed"}
+    wrong = sorted(a for a in args if a.startswith("--") and a not in flags)
+    if wrong:
+        sys.exit(f"unknown option: {', '.join(wrong)} (the options are {', '.join(sorted(flags))})")
     accept, add = "--accept" in args, "--add" in args
     if "--faceted" in args:
-        P.override("Run.STEP_EXACT_ARCS", False)
+        P.override("Step.STEP_EXACT_ARCS", False)
+    healed = "--healed" in args
     named = [a for a in args if not a.startswith("--")]
     unknown = sorted(set(named) - {p.stem for p in BOARDS})
     if unknown:
@@ -173,8 +188,8 @@ def main(args):
                 key = f"{pcb.stem}/{mode}"
                 record = accept or (add and key not in baseline)
                 t0 = time.perf_counter()
-                problems, volumes, step = check(pcb, mode, {} if record else baseline,
-                                                lambda path: pool.submit(step_audit, path))
+                problems, volumes, step = check(pcb, mode, {} if record else baseline, lambda path: [
+                    pool.submit(audit_part, job, healed) for job in parts(path)])
                 if record:
                     baseline[key] = {k: round(v, 9) for k, v in sorted(volumes.items())}
                 queue.append((key, problems, time.perf_counter() - t0, step))

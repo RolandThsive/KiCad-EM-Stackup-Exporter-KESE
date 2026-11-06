@@ -4,7 +4,7 @@
     kese Input/board.kicad_pcb                   one board
     kese board.kicad_pcb --mode visual           simulation (solids) or visual (surface for viewers)
     kese board.kicad_pcb --format glb step stl
-    kese board.kicad_pcb --for hfss              a preset: units, origin, grouping, formats (Run.PRESETS)
+    kese board.kicad_pcb --for freecad           a preset: units, origin, grouping, formats (parameters/presets.py)
     kese board.kicad_pcb --verify
     kese board.kicad_pcb --set Copper.VIA_WALL_MM=0.02 --set Board.BOARD_THICKNESS_MM=0.8
     kese --version
@@ -31,12 +31,18 @@ def missing_packages():
     return [pkg for pkg in REQUIRED if importlib.util.find_spec(pkg) is None]
 
 
+def old_packages():
+    """Packages installed but too old: shapely before 2.1 has no constrained Delaunay triangulation."""
+    import shapely
+    return [] if hasattr(shapely, "constrained_delaunay_triangles") else [f"shapely {shapely.__version__} (2.1 or newer)"]
+
+
 def main():
     ap = argparse.ArgumentParser(prog="kese", description="KiCad EM Stackup Exporter: .kicad_pcb -> solids for EM simulation, or a visual surface")
     ap.add_argument("boards", nargs="*", help=".kicad_pcb files (default: all in Input/)")
     ap.add_argument("--mode", choices=["simulation", "visual"])
     ap.add_argument("--format", nargs="+", metavar="FMT", help="glb stl obj step")
-    ap.add_argument("--for", dest="preset", choices=sorted(P.Run.PRESETS), help="apply a preset from Run.PRESETS")
+    ap.add_argument("--for", dest="preset", choices=sorted(P.Presets.PRESETS), help="apply a preset from parameters/presets.py")
     ap.add_argument("--verify", action="store_true", help="run the Verifier (opt-in)")
     ap.add_argument("--out", help="output root (default Run.OUTPUT_DIR)")
     ap.add_argument("--set", action="append", default=[], metavar="Module.NAME=value",
@@ -47,19 +53,30 @@ def main():
     overrides = []
     if args.preset:
         overrides.append(("PRESET", args.preset))
-        for key, value in P.Run.PRESETS[args.preset].items():
-            P.override(key, value)
+        preset = P.Presets.PRESETS[args.preset]
+        if not isinstance(preset, dict):
+            ap.error(f"--for {args.preset}: parameters/presets.py gives it {preset!r}, not {{\"Module.NAME\": value}}")
+        for key, value in preset.items():
+            try:
+                P.override(key, value)
+            except ValueError as e:                       # a misspelt name in parameters/presets.py
+                ap.error(f"--for {args.preset}: {e}")
             overrides.append((key, value))
     for item in args.set:
-        key, _, val = item.partition("=")
+        key, is_, val = item.partition("=")
+        if not is_:
+            ap.error(f"--set {item}: give it a value, as in {item}=value")
         try:
             value = ast.literal_eval(val)
         except Exception:
             value = val
-        P.override(key.strip(), value)
+        try:
+            P.override(key.strip(), value)
+        except ValueError as e:                           # a misspelt name: said before any work
+            ap.error(f"--set {item}: {e}")
         overrides.append((key.strip(), value))
 
-    for key, value in (("Run.MODE", args.mode), ("Run.FILE_FORMAT", args.format), ("Run.VERIFY", True if args.verify else None)):
+    for key, value in (("Run.MODE", args.mode), ("Run.FILE_FORMAT", args.format), ("Verifier.VERIFY", True if args.verify else None)):
         if value is not None:                             # command-line choices are overrides too
             P.override(key, value)
             overrides.append((key, value))
@@ -67,6 +84,11 @@ def main():
     if missing:
         sys.exit(f"missing Python package(s): {', '.join(missing)}\n"
                  f"install them with:  python -m pip install {' '.join(missing)}\n"
+                 "(or the tested versions:  python -m pip install -r requirements.txt)")
+    old = old_packages()
+    if old:
+        sys.exit(f"Python package(s) too old: {', '.join(old)}\n"
+                 "upgrade with:  python -m pip install --upgrade shapely\n"
                  "(or the tested versions:  python -m pip install -r requirements.txt)")
 
     from kese.pipeline import generate  # after the overrides, so the modules see them
@@ -80,10 +102,10 @@ def main():
         try:
             generate(pcb, out_root=out_root, overrides=overrides)
         except Exception as exc:
+            if len(boards) == 1:
+                raise                                     # the traceback, which ends with the reason
             failures += 1
             print(f"{pcb.name}: FAILED - {exc}")
-            if len(boards) == 1:
-                raise
     sys.exit(1 if failures else 0)
 
 

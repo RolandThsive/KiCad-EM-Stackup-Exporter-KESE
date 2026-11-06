@@ -36,8 +36,8 @@ solvers and CAD, and a **visual model** of the visible surface for viewers.
 | Physical data | εr, tanδ, conductivity, thickness and z range per part in `materials.json` | The same file |
 | What-if | Change plating, via wall, mask thickness or etch factor in `parameters/` and export again | |
 | Verifier (`--verify`) | Every part closed and consistently wound; its volume the same from its faces, slices, mesh and prisms; no two parts sharing material, every slice against every other | Along 3,000 vertical rays the faces take turns, into the material and out of it |
-| 4-layer PCIe card example | GLB 32.1 MB, 942,340 triangles | GLB 18.3 MB, 591,381 triangles |
-| Presets | `--for hfss`, `--for cst`, `--for openems` | `--for viewer` |
+| 4-layer PCIe card example | GLB 30.1 MB, 879,986 triangles | GLB 9.1 MB, 290,834 triangles |
+| Presets | `--for freecad`, `elmer`, `calculix`, `openems` | `--for viewer`, `blender_glb`, `blender_obj` |
 
 More in [Output Modes](Output-Modes.md).
 
@@ -46,7 +46,7 @@ More in [Output Modes](Output-Modes.md).
 | File | What it holds |
 |---|---|
 | GLB | One mesh per part with its colour; metres by default (`Run.UNITS`) |
-| STEP | Written by KESE itself, no CAD kernel needed: every part under its own name, as closed solids with true circular arcs and cylinders (`Run.STEP_EXACT_ARCS`, the default; 4 to 9 times smaller files than flat faces with curves as polygons); the same parts as every other format, as the part switches set them |
+| STEP | Written by KESE itself, no CAD kernel needed: every part under its own name, as closed solids with true circular arcs and cylinders (`Step.STEP_EXACT_ARCS`, the default; 4 to 9 times smaller files than flat faces with curves as polygons); the same parts as every other format, as the part switches set them |
 | STL | One closed file per part, in `stl/` |
 | OBJ | One object per part, colours in an `.mtl` |
 | `materials.json` | Per part: role, layer, net, z range, εr, tanδ, conductivity, colour, file names |
@@ -73,14 +73,19 @@ The full list is in [Checks, Errors And Warnings](Checks-Errors-And-Warnings.md)
 
 | Board | Layers | Items | Simulation GLB | STEP in mm | Visual GLB |
 |---|---|---|---|---|---|
-| `rf_module` | 4 | 190 tracks, 33 arcs, 307 vias, 7 zone fills | 21 s, 29.9 MB | 26 s, 225.0 MB; with mask and silk 31 s, 331.4 MB | 20 s, 17.1 MB |
-| `hdi_module` | 6 | 199 tracks, 150 vias, 34 zone fills | 14 s, 17.0 MB | 15 s, 125.9 MB; with mask and silk 18 s, 184.0 MB | 15 s, 8.8 MB |
-| `pcie_card` | 4 | 226 tracks, 239 vias, 19 zone fills | 19 s, 32.1 MB | 23 s, 215.3 MB; with mask and silk 28 s, 349.0 MB | 21 s, 18.3 MB |
-| `six_layer` | 6 | 6 tracks, 6 vias, 2 zone fills | 1 s, 0.9 MB | 1 s, 6.2 MB | 1 s, 0.45 MB |
+| `rf_module` | 4 | 190 tracks, 33 arcs, 307 vias, 7 zone fills | 14 s, 38.1 MB | 16 s, 113.8 MB; with mask and silk 17 s, 169.7 MB | 15 s, 10.5 MB |
+| `hdi_module` | 6 | 199 tracks, 150 vias, 34 zone fills | 7 s, 20.4 MB | 9 s, 70.9 MB; with mask and silk 10 s, 102.4 MB | 9 s, 5.6 MB |
+| `pcie_card` | 4 | 226 tracks, 239 vias, 19 zone fills | 9 s, 30.2 MB | 11 s, 80.9 MB; with mask and silk 14 s, 150.6 MB | 13 s, 9.1 MB |
+| `six_layer` | 6 | 6 tracks, 6 vias, 2 zone fills | 1 s, 0.76 MB | 1 s, 0.94 MB; with mask and silk 1 s, 2.4 MB | 1 s, 0.21 MB |
 
 Default parameters, GLB and STEP runs with the Verifier, on one Linux machine with 4 cores: what
 to expect, not a limit. The times are the ones the run prints (`in 0m 21s`); starting Python and
-loading its packages adds about 2.5 s to each command.
+loading its packages adds about 1.5 s to each command.
+
+Three of the biggest public boards tried, on the same machine: NE_Delta (2 layers, 804 nets, 1.6
+million coordinates of copper), a panel of ULX4M boards and CIAA ACC (6,200 nets). Simulation mode
+with GLB, STEP and the Verifier takes 194 s, 186 s and 197 s, at most 3.7, 4.2 and 5.0 GB in all
+with 4 workers; visual mode with the Verifier 219 s, 209 s and 187 s, about 3 GB.
 
 > [!NOTE]
 > Every dimension in the model is a model value until it is measured. Validation against

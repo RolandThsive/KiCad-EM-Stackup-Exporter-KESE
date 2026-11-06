@@ -12,8 +12,8 @@ def hms(seconds):
 
 
 class Status:
-    def __init__(self, enabled, stream=None):
-        self.stream = stream or sys.stderr
+    def __init__(self, enabled):
+        self.stream = sys.stderr
         self.enabled = bool(enabled) and hasattr(self.stream, "isatty") and self.stream.isatty()
         self.stage, self.t0, self.width = "", time.time(), 0
         self._lock = threading.Lock()

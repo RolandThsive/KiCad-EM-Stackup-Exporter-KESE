@@ -23,7 +23,7 @@ def resolve(items, log):
     place(r, outline_k)
     castellate(items, outline_k)
     slabs(r, items)
-    copper_layers(r, items, outline_k)
+    copper_layers(r, items, outline_k, log)
     edge_plating(r, items, log)
     join_nets(r)
     band_laminate(r, items)

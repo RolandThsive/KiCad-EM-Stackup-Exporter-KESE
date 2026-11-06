@@ -1,8 +1,6 @@
 """The plan view of a part's Topology for its arcs (step_curved): its points, the segments between
 them, the heights of each, the chains of points an arc can run through, and the arcs found on them.
 In board mm."""
-import math
-
 import numpy as np
 
 from kese.core.vertices import grid_keys
@@ -49,14 +47,15 @@ def outline_of(topo):
 def chains(o):
     """The chains of segments through the points an arc can pass: [(points, segments, closed)],
     an open chain from one other point to another, a closed one (all its points passable) from one
-    of its points around to it again (the point repeated at the end).  Chains of fewer points than an arc needs are left out."""
+    of its points around to it again (the point repeated at the end).  Chains of fewer points than
+    an arc needs are left out."""
     n, seg_a, seg_b = len(o.xy), o.seg_a.tolist(), o.seg_b.tolist()
     ends = np.concatenate([o.seg_a, o.seg_b])
     order = np.argsort(ends, kind="stable")
     seg_at = (order % len(seg_a)).tolist()
     start = np.r_[0, np.cumsum(np.bincount(ends, minlength=n))].tolist()
     through = o.through.tolist()
-    shortest = P.Run.STEP_ARC_MIN_POINTS
+    shortest = P.Step.STEP_ARC_MIN_POINTS
     seen = bytearray(len(seg_a))
     chains = []
 
@@ -95,26 +94,24 @@ def chains(o):
 def arcs_of(o):
     """The arcs of every chain: [(chain, i, j, circle, ccw)], circles in o.circles as (centre,
     radius); the two halves of a whole circle share one."""
-    R = P.Run
-    fit = sa.Fit(R.STEP_ARC_FIT_TOLERANCE_MM, R.STEP_ARC_MIN_POINTS, math.radians(R.STEP_ARC_MIN_SWEEP_DEG),
-                 math.radians(R.STEP_ARC_MAX_TURN_DEG))
+    fit = sa.fit_of(P.Step)
     o.circles, pieces = [], []
     for k, (pts, segs, closed) in enumerate(o.chains):
         s, arcs, whole = sa.find_arcs(o.xy[pts], closed, fit)
         if s:                                                   # a closed chain restarted at another point
             pts, segs = pts[s:-1] + pts[:s + 1], segs[s:] + segs[:s]
             o.chains[k] = (pts, segs, closed)
-        q2 = o.xy[pts]
+        q = o.xy[pts]
         if whole:
             i, j, c, r, ccw = arcs[0]
-            circle = sa.written_circle(q2[i], q2[j], c, r, ccw)
+            circle = sa.written_circle(q[i], q[j], c, r, ccw)
             if circle is None:
                 continue
             o.circles.append(circle)
             pieces += [(k, i, j, len(o.circles) - 1, ccw), (k, j, arcs[1][1], len(o.circles) - 1, ccw)]
             continue
         for i, j, c, r, ccw in arcs:
-            circle = sa.written_circle(q2[i], q2[j], c, r, ccw)
+            circle = sa.written_circle(q[i], q[j], c, r, ccw)
             if circle is not None:
                 o.circles.append(circle)
                 pieces.append((k, i, j, len(o.circles) - 1, ccw))

@@ -65,6 +65,7 @@ class _SerialPool:
 concurrent.futures.ThreadPoolExecutor = _SerialPool
 
 
+
 def configure(config_json):
     """The web settings from webui.json that the Python side needs (hidden parameters, forced values)."""
     WEB_ONLY.clear()
@@ -216,6 +217,22 @@ def _kind(value, choices):
     return "literal"                                  # lists and tables: edited as Python text in Advanced
 
 
+def _limits():
+    """{"Module.NAME": {"min": n, "integer": bool, "above": bool}}: the lower limits kese/job.py checks before a run,
+    so the page can hold a field to them ("above": the value must be more than min, not equal to it)."""
+    from kese import job
+    out = {}
+    for key, least in job.AT_LEAST.items():
+        out[key] = {"min": least, "integer": True}
+    for name in job.WHOLE_NUMBERS:
+        out[f"Parallel.{name}"] = {"min": 0, "integer": True}
+    for key, least in job.NUMBER_AT_LEAST.items():
+        out[key] = {"min": least, "integer": False}
+    for key in job.MORE_THAN_ZERO:
+        out[key] = {"min": 0, "integer": False, "above": True}
+    return out
+
+
 def describe():
     """Every parameter of every parameter file, in file order, plus what the page needs to know about KESE."""
     _forget_kese()
@@ -246,7 +263,7 @@ def describe():
                         "choices": choices, "default": value, "help": help_text})
     return json.dumps({"version": kese.__version__, "files": files, "parameters": out,
                        "modes": list(job.MODES), "formats": list(job.FORMATS),
-                       "visualFormats": sorted(job.VISUAL_FORMATS), "presets": P.Run.PRESETS})
+                       "visualFormats": sorted(job.VISUAL_FORMATS), "presets": P.Presets.PRESETS, "limits": _limits(), "moved": dict(parameters.MOVED)})
 
 
 # =============================================================================
@@ -272,6 +289,13 @@ def _jsonish(x):
     return json.loads(json.dumps(x))
 
 
+def _moved(key):
+    """A setting's name now: an old name that main moved to another file (Run.VERIFY: Verifier.VERIFY), or the
+    name itself (parameters/__init__.py, MOVED)."""
+    import parameters
+    return getattr(parameters, "MOVED", {}).get(key, key)
+
+
 def _apply(values):
     """values {"Module.NAME": value}: the ones that differ from the files are applied with P.override, as
     `kese --set` does, and returned as the run's overrides (they head its parameters.txt)."""
@@ -279,6 +303,7 @@ def _apply(values):
     P = parameters.P
     overrides = []
     for key, value in values.items():
+        key = _moved(key)
         short, name = key.split(".", 1)
         mod = getattr(P, short, None)
         if mod is None or not hasattr(mod, name):
@@ -291,6 +316,20 @@ def _apply(values):
     return overrides
 
 
+def _verify_row(line):
+    """One of the Verifier's lines under "Verifier: PASS / FAIL" as a Checks row, or None: a part that passes every
+    check is left out (there is one such line per part), as is the note that gltf_validator is not installed (the
+    browser never has it).  Every other line is a finding: an error where a check failed."""
+    s = line.strip()
+    if not s or s.startswith("gltf_validator not on PATH"):
+        return None
+    failed = "=False" in s or ("overlap between" in s and not s.endswith(": none")) \
+        or ("do not alternate" in s and not s.endswith(": 0")) or "piece by piece" in s
+    if not failed and ("closed=True" in s or "visible surfaces" not in s and "overlap between" not in s):
+        return None
+    return {"level": "error" if failed else "info", "stage": "verify", "msg": re.sub(r"\s{2,}", " ", s)}
+
+
 def _checks(report_text, error=None):
     """Error / warning / info rows for the Checks panel, from report.txt (KESE's own record of the run)."""
     rows, section = [], None
@@ -298,15 +337,19 @@ def _checks(report_text, error=None):
         s = line.strip()
         if line.startswith("warning: "):
             rows.append({"level": "warning", "stage": "read", "msg": line[len("warning: "):]})
+        elif line.startswith("Verifier:"):                       # "Verifier: PASS" or "Verifier: FAIL" heads its lines
+            section = "verify"
+            rows.append({"level": "error" if "FAIL" in s else "info", "stage": "verify", "msg": s})
         elif line and not line.startswith(" "):
             section = s
         elif section == "skipped" and s and s != "nothing":
             rows.append({"level": "info", "stage": "skipped", "msg": re.sub(r"^\d+\s+", lambda m: m.group(0).strip() + " ", s)})
         elif section == "notes" and s:
             rows.append({"level": "info", "stage": "notes", "msg": s})
-        elif section and section.startswith("verify") and s:
-            level = "error" if "FAIL" in s.upper() else "info"
-            rows.append({"level": level, "stage": "verify", "msg": s})
+        elif section == "verify":
+            row = _verify_row(line)
+            if row:
+                rows.append(row)
     if error:
         rows.insert(0, {"level": "error", "stage": "run", "msg": error})
     return rows
@@ -445,9 +488,9 @@ def read_values(text, file_name=""):
     current = by_file.get(os.path.basename(file_name))       # a .py file: its own module
     found, ignored = {}, []
     if file_name.endswith(".py") and current:                # a parameter file: read with Python's own parser
-        mod = getattr(P, current)
         for name, node in _assignments(text):
-            key = f"{current}.{name}"
+            key = _moved(f"{current}.{name}")              # a setting this file had before it moved: its new name
+            mod, name = getattr(P, key.split(".")[0]), key.split(".")[1]
             if not hasattr(mod, name):
                 ignored.append(key)
             elif key not in set(WEB_ONLY.get("hidden", [])):
@@ -468,8 +511,8 @@ def read_values(text, file_name=""):
         name = name.strip()
         if not re.fullmatch(r"[A-Z][A-Z0-9_]*", name):
             continue
-        key = f"{current}.{name}"
-        if not hasattr(getattr(P, current), name):
+        key = _moved(f"{current}.{name}")                     # an older run's name for a setting that moved
+        if not hasattr(getattr(P, key.split(".")[0]), key.split(".")[1]):
             if key not in ignored:
                 ignored.append(key)
             continue
