@@ -3,10 +3,9 @@
 Every feature test board of `featureTest/` ([its
 README](https://github.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/blob/main/featureTest/README.md)
 says what each one holds), section by section, with its top and bottom and where the time of a run
-goes, read the same way as on [Time Distribution](Time-Distribution.md). Each board was exported
-three times in each mode, with the Verifier, the solder mask and the silkscreen on, as the
-regression suite (`Generator/tests/test_boards.py`) runs them, and each bar is the median of the
-three runs for that stage, from the stage timers of the `timing` block of
+goes. Each board was exported three times in each mode, with the Verifier, the solder mask and the
+silkscreen on, as the regression suite (`Generator/tests/test_boards.py`) runs them, and each bar is
+the median of the three runs for that stage, from the stage timers of the `timing` block of
 [`report.txt`](Project-Output-Organization.md#2022-reporttxt):
 
 ```text
@@ -16,29 +15,9 @@ python run_KESE.py ../featureTest/11_zones.kicad_pcb --mode visual --format glb 
     --set SolderMask.SOLDER_MASK_ENABLED=True --set Silkscreen.SILKSCREEN_ENABLED=True
 ```
 
-Seven boards also take the settings the regression suite gives them: `Finish.FINISH_TYPE="file"` for
-16, 17, 18, 22 and 23, `Silkscreen.SILKSCREEN_OVER_COPPER=True` for 17b, and
-`Finish.FINISH_BEFORE_SOLDER_MASK=True` with the file's finish for 18c. All 210 runs passed the
-Verifier.
-
 **The runs used the default parameters otherwise, on one Linux machine with 4 cores (an Intel Xeon
 at 2.1 GHz) and 16 GB of RAM, so `Parallel.WORKERS = 0` gave four workers ([Work Done In
 Parallel](Working-Principle.md#74-work-done-in-parallel)). On another machine the seconds differ.**
-
-| Bar | Stages | What runs in it |
-|---|---|---|
-| 1–2 read | 1 read, 2 collect | The file parsed; every track, pad, zone, graphic and text as a flat shape; the stroke font loaded |
-| 3 resolve | 3 | The copper joined per layer and net, clipped and drilled; barrels, edge plating, mask openings and silkscreen |
-| 4 geometry | 4 | Every part as prisms, between the heights of the stack-up |
-| 5 materials | 5 | A material for every part, from `parameters/color.py` and the stack-up's colours |
-| 6 assemble | 6 | Closed solids in simulation mode, the visible skin in visual mode; with `--verify`, each solid is also checked here by the worker that built it |
-| 7 write | 7 | The files. In simulation mode nearly all of it is the STEP file |
-| 8 verify | 8 | The Verifier's checks of the written files ([Checks, Errors And Warnings](Checks-Errors-And-Warnings.md)) |
-| start-up and exit | none | The wall-clock time less the stages: Python starting, stage 9 writing `report.txt` and `parameters.txt`, and Python freeing the run's memory as it ends |
-
-Under each chart a table gives the same numbers, in seconds unless marked ms. A stage too thin to
-see at its board's scale is marked with a line and a label. Boards whose stack-up names no mask
-colour are drawn with a green mask and white silkscreen.
 
 ## 23.1 Every Board At A Glance
 
