@@ -73,14 +73,19 @@ The full list is in [Checks, Errors And Warnings](Checks-Errors-And-Warnings.md)
 
 | Board | Layers | Items | Simulation GLB | STEP in mm | Visual GLB |
 |---|---|---|---|---|---|
-| `rf_module` | 4 | 190 tracks, 33 arcs, 307 vias, 7 zone fills | 20 s, 37.9 MB | 27 s, 113.1 MB; with mask and silk 30 s, 169.0 MB | 20 s, 10.5 MB |
-| `hdi_module` | 6 | 199 tracks, 150 vias, 34 zone fills | 10 s, 20.4 MB | 14 s, 70.9 MB; with mask and silk 16 s, 102.4 MB | 12 s, 5.6 MB |
-| `pcie_card` | 4 | 226 tracks, 239 vias, 19 zone fills | 13 s, 30.2 MB | 19 s, 80.9 MB; with mask and silk 23 s, 150.5 MB | 16 s, 9.1 MB |
+| `rf_module` | 4 | 190 tracks, 33 arcs, 307 vias, 7 zone fills | 14 s, 38.1 MB | 16 s, 113.8 MB; with mask and silk 17 s, 169.7 MB | 15 s, 10.5 MB |
+| `hdi_module` | 6 | 199 tracks, 150 vias, 34 zone fills | 7 s, 20.4 MB | 9 s, 70.9 MB; with mask and silk 10 s, 102.4 MB | 9 s, 5.6 MB |
+| `pcie_card` | 4 | 226 tracks, 239 vias, 19 zone fills | 9 s, 30.2 MB | 11 s, 80.9 MB; with mask and silk 14 s, 150.6 MB | 13 s, 9.1 MB |
 | `six_layer` | 6 | 6 tracks, 6 vias, 2 zone fills | 1 s, 0.76 MB | 1 s, 0.94 MB; with mask and silk 1 s, 2.4 MB | 1 s, 0.21 MB |
 
 Default parameters, GLB and STEP runs with the Verifier, on one Linux machine with 4 cores: what
 to expect, not a limit. The times are the ones the run prints (`in 0m 21s`); starting Python and
 loading its packages adds about 1.5 s to each command.
+
+Three of the biggest public boards tried, on the same machine: NE_Delta (2 layers, 804 nets, 1.6
+million coordinates of copper), a panel of ULX4M boards and CIAA ACC (6,200 nets). Simulation mode
+with GLB, STEP and the Verifier takes 194 s, 186 s and 197 s, at most 3.7, 4.2 and 5.0 GB in all
+with 4 workers; visual mode with the Verifier 219 s, 209 s and 187 s, about 3 GB.
 
 > [!NOTE]
 > Every dimension in the model is a model value until it is measured. Validation against

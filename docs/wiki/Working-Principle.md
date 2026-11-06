@@ -207,7 +207,7 @@ use; `1`: everything in turn, in one process), and at most `Parallel.PROCESS_WOR
 - After each step done in threads, and in each worker after each part, the memory freed is handed
   back to the system (`Parallel.GIVE_BACK_MEMORY`). On Linux, glibc keeps a pool of memory for each thread and holds on to what
   is freed in it, where the steps that follow cannot use it. With these, NE_Delta's visual model
-  peaks at 2.67 GB with 4 workers and 3.46 GB with 32, where it took 3.51 GB and 5.13 GB.
+  peaks at 2.65 GB with 4 workers and 3.57 GB with 32, where it took 3.45 GB and 4.76 GB.
 - The processes start afresh, as Windows and macOS start them, on every system, and are given the
   run's settings, `--for` and `--set` included. Shapes sent to and from them keep their grid, which
   shapely's own pickling would drop.
