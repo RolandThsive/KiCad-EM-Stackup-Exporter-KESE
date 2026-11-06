@@ -1,5 +1,6 @@
 """OBJ: one .obj with one object per part and an .mtl with the colours."""
 from kese.core.names import model_file_names
+from kese.core.whole_files import whole
 
 
 def write(model, path):
@@ -18,6 +19,7 @@ def write(model, path):
         obj += [f"f {a + offset}//{a + offset} {b + offset}//{b + offset} {c + offset}//{c + offset}"
                 for a, b, c in mesh.faces]
         offset += len(mesh.vertices)
-    path.write_text("\n".join(obj) + "\n", encoding="utf-8")
-    mtl_path.write_text("\n".join(mtl) + "\n", encoding="utf-8")
+    with whole(path, mtl_path):
+        path.write_text("\n".join(obj) + "\n", encoding="utf-8")
+        mtl_path.write_text("\n".join(mtl) + "\n", encoding="utf-8")
     return path

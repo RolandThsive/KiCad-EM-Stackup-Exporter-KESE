@@ -29,7 +29,7 @@ MATERIALS = {
     "Gold":               {"color": "#E6C15A", "alpha": 1.0,  "metallic": 1.0, "roughness": 0.20},
     "Tin":                {"color": "#C9C9C9", "alpha": 1.0,  "metallic": 1.0, "roughness": 0.45},
     "Silver":             {"color": "#E4E4E0", "alpha": 1.0,  "metallic": 1.0, "roughness": 0.25},
-    # ENEPIG's palladium: sRGB (223, 218, 212), the base colour in Adobe's Substance metal references
+    # ENEPIG's palladium: sRGB (223, 218, 212), the base colour that published PBR tables of measured metals give it
     "Palladium":          {"color": "#DFDAD4", "alpha": 1.0,  "metallic": 1.0, "roughness": 0.30},
     "OSP":                {"color": "#D9955A", "alpha": 1.0,  "metallic": 0.8, "roughness": 0.35},
 }

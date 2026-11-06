@@ -19,7 +19,9 @@ def output_transform():
 
 def finish_mesh(mesh, mat):
     """The mesh in output units and orientation, shaded smooth; the faces that collapsed onto a
-    repeated vertex go (zero-area triangles with three distinct vertices stay)."""
+    repeated vertex go (zero-area triangles with three distinct vertices stay).  None for no mesh."""
+    if mesh is None:
+        return None
     f = mesh.faces
     mesh.update_faces((f[:, 0] != f[:, 1]) & (f[:, 1] != f[:, 2]) & (f[:, 0] != f[:, 2]))
     mesh.remove_unreferenced_vertices()
@@ -44,9 +46,10 @@ def smooth_shaded(mesh, angle):
         # flat as trimesh.graph.facets() has it: (radius / span) ** 2 > Geometry.FLAT_FACET_THRESHOLD, with
         # radius = span / (2 sin(turn)) and infinite below a turn of 0.01 degrees (it also takes two
         # faces of no area as flat, but they never make a facet big)
-        flat =(turn <= np.radians(0.01)) | (2 * np.abs(np.sin(turn)) < 1 / np.sqrt(P.Geometry.FLAT_FACET_THRESHOLD))
+        flat = (turn <= np.radians(0.01)) | (2 * np.abs(np.sin(turn)) < 1 / np.sqrt(P.Geometry.FLAT_FACET_THRESHOLD))
         facet = connected_components(len(faces), *pairs[flat].T)[1]
-        big = ((np.bincount(facet) > 1) & (np.bincount(facet, weights=mesh.area_faces) > mesh.area / 10))[facet]
+        least = mesh.area / P.Geometry.SMOOTH_FACET_AREA_DIVISOR
+        big = ((np.bincount(facet) > 1) & (np.bincount(facet, weights=mesh.area_faces) > least))[facet]
         smooth = smooth[~big[smooth].any(axis=1)]
     group = connected_components(len(faces), *smooth.T)[1].astype(np.int64)
     if big.any():

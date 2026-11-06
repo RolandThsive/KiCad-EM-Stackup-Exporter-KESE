@@ -21,17 +21,18 @@ mask colour of its own, saved by KiCad 7. Between them they use most of what KES
 | Vias | 307 through | 71 micro, 34 blind and buried, 45 through | 239 through |
 | Board edge | plated all round and in the cut-out | 43 castellated pads | 36 gold fingers |
 | Mask, silkscreen, finish | blue, white, ENIG | black, white, immersion silver | green, white, hard gold |
-| Simulation GLB with `--verify` | 42 parts, 887,012 triangles; 21 s, 29.9 MB | 60 parts, 499,544 triangles; 14 s, 17.0 MB | 59 parts, 942,340 triangles; 19 s, 32.1 MB |
-| Simulation STEP with `--verify` | 38 parts, 49 solids; 26 s, 225.0 MB | 56 parts, 58 solids; 15 s, 125.9 MB | 55 parts, 84 solids; 23 s, 215.3 MB |
-| Visual GLB with `--verify` | 20 s, 17.1 MB | 15 s, 8.8 MB | 21 s, 18.3 MB |
+| Simulation GLB with `--verify` | 46 parts, 1,130,024 triangles; 14 s, 38.1 MB | 62 parts, 596,558 triangles; 7 s, 20.4 MB | 61 parts, 881,514 triangles; 9 s, 30.2 MB |
+| Simulation STEP with `--verify` | 46 parts, 745 solids; 16 s, 113.8 MB | 62 parts, 1,240 solids; 9 s, 70.9 MB | 61 parts, 788 solids; 11 s, 80.9 MB |
+| Visual GLB with `--verify` | 15 s, 10.5 MB | 9 s, 5.6 MB | 13 s, 9.1 MB |
 
-The times are the ones the run prints, with the default parameters on one Linux machine with 4
-cores. The numbers were measured with the earlier defaults: the finish off, the GLB files with the
-solder mask and silkscreen, and the STEP files with flat faces (`Run.STEP_EXACT_ARCS = False`). The
-STEP files were made with `--for hfss --verify`: millimetres and KiCad's origin, without the mask
-and silkscreen (the default now), so they have four parts fewer than the GLB files ([Project Capabilities](Project-Capabilities.md#45-tested-sizes) gives
-them with both). Read back with OpenCascade, every solid in them is valid and closed, and their
-volume is the one the Verifier finds. The same three files are in `featureTest/` as
+The times are the ones the run prints, with the default parameters (the finish on, the solder
+mask and silkscreen off, true arcs in the STEP files) on one Linux machine with 4 cores. The STEP
+files were made with `--for freecad --verify`: millimetres and KiCad's origin
+([Project Capabilities](Project-Capabilities.md#45-tested-sizes) gives them with the mask and
+silkscreen too). The finish makes most of the solids: each pad's and each hole's finish is a solid
+of its own. Read back with OpenCascade, every solid in them is valid and closed, and their
+volume is the Verifier's within 0.01 % (a true arc bulges out a little from the chords the
+Verifier measures). The same three files are in `featureTest/` as
 `21_rf_module`, `22_hdi_module` and `23_pcie_card`, so the regression suite checks every part of
 each in both modes (once: it skips the copies in `Input/`).
 
@@ -60,7 +61,7 @@ What this board shows:
   cut-out. The edge copper belongs to GND, the net with the most copper at the edge, and meets
   the GND border on every copper layer: 1.2 mm wide along the outline and 1.0 mm around the
   cut-out, the mask open over it, with a fence of GND vias in it. See
-  [Edge Plating](Copper-And-Traces.md#117-edge-plating).
+  [Edge Plating](Copper-And-Traces.md#127-edge-plating).
 - **Its own stack-up.** Every height comes from Board Setup: 35 µm outer and 17.5 µm inner
   copper, two FR4 prepregs and a core, a 1.6 mm board and a 10 µm mask. From `report.txt`:
 
@@ -84,7 +85,7 @@ What this board shows:
   <img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/ColorSwatches/3C5AB4.webp" width="12" height="12" align="absmiddle" alt=""> `#3C5AB4`,
   and the silkscreen
   <img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/ColorSwatches/F0F0EC.webp" width="12" height="12" align="absmiddle" alt=""> `#F0F0EC`
-  ([Colorizing](Colorizing.md#122-colours-from-the-stack-up)).
+  ([Colorizing](Colorizing.md#132-colours-from-the-stack-up)).
 - **One part per net.** 35 copper parts. `Copper_GND` is one closed solid made of the three
   planes, the border, the via fence, the plated edge and the barrels of its vias. The 50 Ω line is
   `Copper_RF` from the radio to L1 and `Copper_RF2` from L1 to the coax connector, each joined to
@@ -95,7 +96,7 @@ What this board shows:
 - **Keep-outs and finish.** Three rule areas are counted under `skipped` and make no copper, as
   intended. The stack-up's finish is ENIG: the nickel and the gold go on the bare copper
   (`--set Finish.FINISH_ENABLED=False` leaves them out)
-  ([ENIG](Finish.md#1331-enig)).
+  ([ENIG](Finish.md#1431-enig)).
 
 
 <p align="center">
@@ -107,12 +108,13 @@ What this board shows:
 
 | Part (simulation mode) | Triangles |
 |---|---|
-| `Copper_GND`: the planes, the border, the via fence, the plated edge | 333,000 |
-| `Copper_+3V3` and `Copper_+5V`: the two halves of In2.Cu, with their tracks and pads | 50,596 |
-| the other 33 copper parts | 30,872 |
-| `Board_dielectric 1` to `3` | 186,452 |
-| `Top Solder Mask`, `Bottom Solder Mask` | 229,814 |
-| `Top Silkscreen`, `Bottom Silkscreen` | 56,278 |
+| `Copper_GND`: the planes, the border, the via fence, the plated edge | 334,284 |
+| `Copper_+3V3` and `Copper_+5V`: the two halves of In2.Cu, with their tracks and pads | 50,592 |
+| the other 32 copper parts | 30,872 |
+| `Board_dielectric 1` to `3` | 186,240 |
+| `Top Solder Mask`, `Bottom Solder Mask` | 230,006 |
+| `Top Silkscreen`, `Bottom Silkscreen` | 56,290 |
+| the ENIG finish: nickel and gold on the top, the bottom, the plated edge and in the holes (8 parts) | 528,036 |
 
 ## 5.2 HDI Radio Module
 
@@ -134,7 +136,7 @@ What this board shows:
 - **Four kinds of via.** 71 microvias, from each outer layer to the layer under it; 34 blind and
   buried vias, buried from In1.Cu to In4.Cu and blind from an outer layer to In2.Cu or In3.Cu; and
   45 through vias. A via has its ring on the layers it spans and its barrel only between them
-  ([Vias And Plated Holes](Copper-And-Traces.md#113-vias-and-plated-holes)).
+  ([Vias And Plated Holes](Copper-And-Traces.md#123-vias-and-plated-holes)).
 - **Named laminates.** The dielectrics carry the glass styles and materials of the stack-up, each
   with its own εr and tanδ, and each becomes its own part, `Board_dielectric 1` to `5`, with those
   values in `materials.json` ([Material Properties](Material-Properties.md)):
@@ -150,7 +152,7 @@ What this board shows:
 - **Castellated pads.** The 43 plated holes that the board edge cuts through are castellations:
   each drill notches the edge, and its plating is a part-barrel on the notch wall, joined to the
   pad's net (`Copper.CASTELLATION = "auto"`; the file also says `(castellated_pads yes)`). See
-  [Castellated Holes](Copper-And-Traces.md#116-castellated-holes).
+  [Castellated Holes](Copper-And-Traces.md#126-castellated-holes).
 - **Keep-outs.** The antenna's keep-out on every layer and the cut in In1.Cu under its line are
   rule areas: six of them, counted under `skipped`, and no copper inside them.
 - **Black mask.** The stack-up's "Black" gives
@@ -158,7 +160,7 @@ What this board shows:
   and over copper in visual mode
   <img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/ColorSwatches/2E2E30.webp" width="12" height="12" align="absmiddle" alt=""> `#2E2E30`.
   The finish is immersion silver (built with `--set Finish.FINISH_TYPE=file`; ENIG by default)
-  ([ImmersionSilver](Finish.md#1336-immersionsilver)).
+  ([ImmersionSilver](Finish.md#1436-immersionsilver)).
 
 <p align="center">
 <img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/example_images/hdi_module/layers_apart_simulation.webp" width="49%" alt="The module in simulation mode with its layers drawn apart: the masks, the six copper layers and the five dielectrics, each one closed solid, the via barrels between the layers they join">
@@ -194,14 +196,14 @@ What this board shows:
   fingers.
 - **Hard gold.** The stack-up's finish is hard gold. With `--set Finish.FINISH_TYPE=file` it
   covers all the exposed copper, fingers and pads alike, since KiCad gives a board one finish
-  ([HardGold](Finish.md#1338-hardgold)).
+  ([HardGold](Finish.md#1438-hardgold)).
 - **The bevel is not modelled.** Board Setup's `(edge_connector bevelled)` asks the fabricator to
   bevel the fingers' edge. KESE does not read it, so the card's edge stays square.
 - **An isolation barrier.** A rule area 2 mm wide keeps every copper layer clear between the logic
   side and the PoE side, and an 18 × 1.2 mm slot is milled through under it. The slot cuts every
   layer, so `Copper_PGND` and `Copper_+48V` stay apart from the logic side's parts.
-- **Planes per net.** `Copper_GND` (187,288 triangles), `Copper_PGND` (71,564), `Copper_+3V3`
-  (37,072) and `Copper_+48V` (17,888) are the biggest of the 52 copper parts.
+- **Planes per net.** `Copper_GND` (187,420 triangles), `Copper_PGND` (71,640), `Copper_+3V3`
+  (37,324) and `Copper_+48V` (18,128) are the biggest of the 52 copper parts.
 - **Non-plated holes.** The bracket's two screw holes and the jack's two pegs are non-plated: their
   walls are bare laminate, with no plating and no ring.
 
@@ -217,15 +219,16 @@ What this board shows:
 ```bash
 cd Generator
 python run_KESE.py                                                             # all three: simulation, GLB in metres, centred
-python run_KESE.py Input/rf_module.kicad_pcb --for hfss                        # STEP in mm with KiCad's origin
+python run_KESE.py Input/rf_module.kicad_pcb --for freecad                     # STEP in mm with KiCad's origin
 python run_KESE.py Input/hdi_module.kicad_pcb --for viewer                     # visual mode for <model-viewer>
 python run_KESE.py Input/pcie_card.kicad_pcb --set Finish.FINISH_TYPE=file      # the stack-up's hard gold
 python run_KESE.py Input/rf_module.kicad_pcb --set Copper.COPPER_GROUPING=layer # a copper part per layer
 ```
 
-STEP files of these boards are large, 125 to 225 MB in mm, since every curve is written as flat
-faces: see [Project Capabilities](Project-Capabilities.md#45-tested-sizes).
+STEP files of these boards are 70 to 115 MB in mm, with the holes, vias and round pads as true
+arcs; with flat faces only (`Step.STEP_EXACT_ARCS = False`) they are 2.5 to 3 times as big. See
+[Project Capabilities](Project-Capabilities.md#45-tested-sizes).
 
 | Previous | Next |
 |:---|---:|
-| [Project Capabilities](Project-Capabilities.md) | [Working Principle](Working-Principle.md) |
+| [Project Capabilities](Project-Capabilities.md) | [Time Distribution](Time-Distribution.md) |

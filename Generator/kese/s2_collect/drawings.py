@@ -71,7 +71,7 @@ def ellipse_pts(node, arc):
         else (0.0, 2 * math.pi)
     while t1 <= t0:
         t1 += 2 * math.pi
-    n = max(8, math.ceil(math.degrees(t1 - t0) / G().ARC_STEP_DEG))
+    n = max(G().ELLIPSE_MIN_SEGMENTS, math.ceil(math.degrees(t1 - t0) / G().ARC_STEP_DEG))
     cr, sr = math.cos(rot), math.sin(rot)
     out = []
     for k in range(n + (1 if arc else 0)):

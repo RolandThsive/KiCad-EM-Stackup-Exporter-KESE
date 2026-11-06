@@ -1,5 +1,6 @@
 """Stage 7 - write: the Model -> files in a new output folder: the formats asked for (GLB, OBJ,
 STL, STEP), then materials.json."""
+from kese.core.whole_files import remove_if_empty
 from kese.model.files import Files
 from kese.s7_write import glb, materials_json, obj, step, stl
 from kese.s7_write.output_folder import new_folder
@@ -9,7 +10,11 @@ from parameters import P
 def run(model, job):
     with job.stage("write"):
         out_dir = new_folder(job.out_root or P.Run.OUTPUT_DIR, model.name, job.mode, job.formats)
-        return write(model, out_dir, job.formats, job.status.set, job.note)
+        try:
+            return write(model, out_dir, job.formats, job.status.set, job.note)
+        except BaseException:                         # each file not written whole is gone already
+            remove_if_empty(out_dir)
+            raise
 
 
 def write(model, out_dir, formats, status, log):

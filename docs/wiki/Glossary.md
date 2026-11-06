@@ -1,4 +1,4 @@
-# 22. Glossary
+# 24. Glossary
 
 | Term | Meaning |
 |---|---|
@@ -20,21 +20,23 @@
 | Laminate | The stack of dielectrics and inner copper between the two outer copper layers. |
 | LPI | Liquid photo-imageable solder mask, the common mask process. |
 | Mask opening | A place where the solder mask is absent: pads, untented vias, drawn openings. KiCad's mask layers draw openings, not mask. |
+| Mask web | A strip of solder mask between two mask openings; KESE removes one narrower than the solder mask minimum width (the board's, or `SolderMask.MASK_MIN_WIDTH_MM`), joining the two openings, as KiCad does when it plots the mask. |
 | Mid-plane | The height half-way through the laminate; z = 0 in KESE. |
 | Net | A set of electrically connected copper items; with the default `Copper.COPPER_GROUPING = "net"`, KESE makes one solid per net. |
 | NPTH | Non-plated through hole: a hole with no copper in it. |
 | Part | One named solid (or skin piece) in the output: `Copper_GND`, `Board_dielectric 1`, `Top Solder Mask`. |
 | Prepreg | A resin-impregnated glass sheet that bonds cores together under heat; its resin flows into the gaps between inner traces. |
-| Preset | A named set of parameter overrides applied with `--for` (`hfss`, `cst`, `openems`, `viewer`). |
+| Preset | A named set of parameter overrides applied with `--for` (`freecad`, `elmer`, `calculix`, `openems`, `viewer`, `blender_glb`, `blender_obj`), from `parameters/presets.py`. |
 | Prism | A flat 2D region between two heights: the building block of every KESE part. |
 | PTH | Plated through hole. |
 | Pull-back | The distance the mask and silk stop short of the board edge. |
 | Role | The kind of a part: `board`, `copper`, `plating`, `finish`, `mask`, `mask_over_copper`, `silk`. |
 | Simulation mode | Output as closed solids, for solvers and CAD. |
 | Skin | The visible outer surface of the board; what visual mode writes. |
+| Slice | The material of one part between two neighbouring heights where its prisms start or end; stage 6 builds a part's surface from its slices. |
 | Snap grid | The 0.1 µm grid every 2D shape is rounded to, so neighbouring layers share exact vertices. |
 | Stack-up | The ordered list of copper and dielectric layers with their thicknesses and materials; KiCad stores it in Board Setup. |
-| STEP | The CAD exchange format (ISO 10303); KESE writes AP214, every part as closed solids of flat faces. |
+| STEP | The CAD exchange format (ISO 10303); KESE writes AP214, every part as closed solids, with round outlines as true arcs and cylinders (`Step.STEP_EXACT_ARCS`) and planar faces elsewhere. |
 | tanδ (loss tangent) | Dielectric loss of a material. |
 | Tenting | Covering a via with solder mask instead of leaving it open. |
 | Through via | A via from `F.Cu` to `B.Cu`. |
@@ -44,4 +46,4 @@
 
 | Previous | Next |
 |:---|---:|
-| [openEMS Workflow](OpenEMS-Workflow.md) | [Immediate Next Steps](Immediate-Next-Steps.md) |
+| [Feature Test Collection](Feature-Test-Collection.md) | [Immediate Next Steps](Immediate-Next-Steps.md) |

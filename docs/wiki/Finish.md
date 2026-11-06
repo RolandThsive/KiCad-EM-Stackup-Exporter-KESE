@@ -1,17 +1,18 @@
-# 13. Finish
+# 14. Finish
 
 The surface finish is the metal a fabricator deposits on the bare copper of a board: pads,
 exposed traces, test points, the walls of the plated holes, the plated board edge and the
 castellations. `kese/s4_geometry/finish.py` builds it on the faces and `finish_shells.py` on the
-walls, in the holes and on the edge; the settings are in `parameters/finish.py`.
+walls, in the holes and on the edge (`shells.py` lays each shell); the settings are in
+`parameters/finish.py`.
 
-## 13.1 On By Default
+## 14.1 On By Default
 
 `Finish.FINISH_ENABLED = True`: the finish adds its own thin solids on the copper, in every format
 and both modes; it never changes the copper itself. `False` builds none, so the copper is bare as
 KiCad draws it.
 
-## 13.2 Where The Finish Goes
+## 14.2 Where The Finish Goes
 
 ![Board 18b with ENIG from above and from below with a numbered key of the copper that gets finish, and J1's round pad cut through its hole at true scale, with the finish on the ring and down the hole's plated wall](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/finish_1_where.webp)
 
@@ -23,10 +24,10 @@ mask over bare copper"; no finish deposits through the cured mask). So KESE puts
 
 | Copper | Finish | Part |
 |---|---|---|
-| the top face of the outer copper in the mask openings (pads with their pad-to-mask clearance, drawn openings, untented vias) | stacked upward on the face, equation (13.2) | `Top Finish <metal>`, `Bottom Finish <metal>` |
-| the side walls of that copper, where they meet the air: pads and traces in the openings, and the outer copper the board edge cuts | a shell beside the wall, equation (13.3), joined to the face's finish over the top corner | the same part as the face |
+| the top face of the outer copper in the mask openings (pads with their pad-to-mask clearance, drawn openings, untented vias) | stacked upward on the face, equation (14.2) | `Top Finish <metal>`, `Bottom Finish <metal>` |
+| the side walls of that copper, where they meet the air: pads and traces in the openings, and the outer copper the board edge cuts | a shell beside the wall, equation (14.3), joined to the face's finish over the top corner | the same part as the face |
 | the inner copper the board edge cuts (beside a castellation, say) | a shell beside the cut face, over the copper's height | `Edge Finish <metal>` |
-| the plated board edge and the castellations' part-barrels (section 13.2.1) | a shell from the bottom of `B.Cu` to the top of `F.Cu` | `Edge Finish <metal>` |
+| the plated board edge and the castellations' part-barrels (section 14.2.1) | a shell from the bottom of `B.Cu` to the top of `F.Cu` | `Edge Finish <metal>` |
 | inside the bore of every plated hole open at a face | a shell over the barrel's whole length | `Hole Finish <metal>` |
 
 Copper under the mask gets no finish, and a wall the mask touches none either. Neither does copper
@@ -37,11 +38,11 @@ face is finished from the other. On the face the finish layers are stacked from 
 outer copper outward, in the order the finish type lists them, each one its own solid:
 
 ```math
-X_\sigma = \left( C_\sigma \cap Q_\sigma \right) \setminus S_\sigma \qquad (13.1)
+X_\sigma = \left( C_\sigma \cap Q_\sigma \right) \setminus S_\sigma \qquad (14.1)
 ```
 
 ```math
-z_j \in \left[ \frac{L}{2} + t_{\mathrm{out}} + \sum_{i<j} \tau_i,\ \ \frac{L}{2} + t_{\mathrm{out}} + \sum_{i \le j} \tau_i \right] \qquad (13.2)
+z_j \in \left[ \frac{L}{2} + t_{\mathrm{out}} + \sum_{i<j} \tau_i,\ \ \frac{L}{2} + t_{\mathrm{out}} + \sum_{i \le j} \tau_i \right] \qquad (14.2)
 ```
 
 On the `B` side every z is mirrored.
@@ -50,18 +51,18 @@ On the `B` side every z is mirrored.
 |---|---|---|
 | $`X_\sigma`$ | finished face of side $`\sigma`$ (per net with `FINISH_GROUPING = "net"`) | |
 | $`C_\sigma`$ | outer copper of side $`\sigma`$ | |
-| $`Q_\sigma`$ | mask openings of side $`\sigma`$, equation (15.2) | |
+| $`Q_\sigma`$ | mask openings of side $`\sigma`$, equation (16.2), with the slivers of mask on the copper the mask leaves out ([Solder Masks](Solder-Masks.md#162-conformal-mask)) | `SolderMask.MASK_OVER_COPPER_HAIRLINE_MM` |
 | $`S_\sigma`$ | silkscreen ink of side $`\sigma`$ kept in the openings; empty unless `SILKSCREEN_OVER_COPPER = True` | `Silkscreen.SILKSCREEN_OVER_COPPER` |
 | $`z_j`$ | z range of finish layer $`j`$ ($`j = 1`$ is the layer on the copper) | |
 | $`\tau_i`$ | thickness of finish layer $`i`$ | `Finish.FINISH_TYPES` |
-| $`L`$, $`t_{\mathrm{out}}`$ | laminate thickness and finished outer copper, equations (7.1) and (7.3) | |
+| $`L`$, $`t_{\mathrm{out}}`$ | laminate thickness and finished outer copper, equations (8.1) and (8.3) | |
 
 For ENIG on `F.Cu` of a board with no stack-up and `(general (thickness 1.6))`, so
 $`L = 1.6 - 2 \times 0.035 - 2 \times 0.010 = 1.51`$ mm, and 35 µm copper: nickel from 0.790 to
 0.795 mm, gold from 0.795 to 0.79508 mm. With a stack-up the laminate is the stack-up's dielectrics
 and the heights follow them: on board 18b below, a 1.51 mm core, the nickel also starts at 0.790 mm.
 
-### 13.2.1 Walls, Holes, The Plated Edge And Castellations
+### 14.2.1 Walls, Holes, The Plated Edge And Castellations
 
 Everywhere but the face, each finish metal is a shell in the air beside the copper $`E`$ it
 covers: the walls of the outer or inner copper, a plated hole's barrel, the edge plating band
@@ -71,7 +72,7 @@ the face: with $`o_j = \sum_{i \le j} \hat\tau_i`$, where $`\hat\tau_i`$ is $`\t
 grid (see below),
 
 ```math
-R_j = \left( E \oplus o_j \right) \setminus \left( E \oplus o_{j-1} \right) \setminus B \qquad (13.3)
+R_j = \left( E \oplus o_j \right) \setminus \left( E \oplus o_{j-1} \right) \setminus B \qquad (14.3)
 ```
 
 where $`\oplus`$ grows a region by a distance and $`B`$ is everything solid beside the copper (the
@@ -100,17 +101,45 @@ across a wall (its height on the face stays 0.08 µm). `report.txt` says so, for
 grid)`, and `materials.json` gives each shell part both `thickness_mm` and `drawn_thickness_mm`.
 The finish is on by default, so every board of `featureTest/` runs with it in the regression suite.
 
-### 13.2.2 Finish Before The Mask
+The air the shells fill, $`(E \oplus o_J) \setminus B`$ for the outermost metal $`J`$, is cut on the
+grid once, and then split between the metals along their outer sides $`E \oplus o_j`$, each put on
+the grid on its own (`kese/s4_geometry/shells.py`). The outer sides keep the copper's corners
+mitred, out to `Finish.FINISH_MITRE_LIMIT` (2) times the thickness from the corner: a corner of 60°
+or more keeps its point, and a sharper tip is cut straight across there. The split is done in floating point, which keeps
+every vertex, so two metals side by side share their edge vertex for vertex; only where two outlines
+cross is the new vertex rounded onto the grid. Each piece is then noded on the grid as stage 6 nodes
+every slice: where a metal one grid step thick comes out thinner than that between two slanted
+edges (on a 45° wall a 0.1 µm band can come out 0.07 µm across, the spacing of 45° lines through
+the grid points), noding closes it and leaves a hairline of air, so the prisms hold the volume the
+solids will. Cutting the solid once, not once per metal, is what keeps the shells quick on a big
+board; the copper layers and the hole spans' bores, in groups, are worked on `Parallel.WORKERS` at
+a time, in threads.
+
+Nor is the solid $`B`$ joined over the whole board where it need not be. In the holes and on the
+plated edge each part of the air's band is cut on its own, by the solid within four grid steps of
+its box alone (`air_near` in `shells.py`): a bore by the board, the copper and the rings round it.
+A big part of the solid, such as the drilled board or a plane, is first cut into tiles of about
+2,000 vertices along halvings of its box, so that a bore clips only the tiles near it. A span's
+bores are laid in groups of about 200 near each other (`bore_groups` in `finish_shells.py`), bores
+whose shells could meet always in one group, and the groups are worked on in threads. On NE_Delta
+the board's union took 31 s, where its 1,911 bores' air takes about 7 s this way. An inner layer's band
+that lies inside the outline, as on most boards, where no copper comes within the shells' reach of
+the board edge, has no air, and is done at once. The air comes out as the cut by the whole union
+makes it, but where two edges cross and the new vertex rounds onto the grid another way: a sliver
+thinner than a grid step. The outer layers' walls still cut the band by the whole layer's solid
+(the copper, the mask, the ink), as a plane's band reaches across the whole board.
+
+### 14.2.2 Finish Before The Mask
 
 `Finish.FINISH_BEFORE_SOLDER_MASK = False` is the usual order above: mask first, finish after it.
 With `True` the finish goes on first, as on a board electroplated with hard gold all over: all the
-outer copper takes the finish, its faces ($`X_\sigma = C_\sigma`$ in equation 13.1) and its walls,
+outer copper takes the finish, its faces ($`X_\sigma = C_\sigma`$ in equation 14.1) and its walls,
 every plated hole is finished inside, and the solder mask and the silkscreen on it lie on the
 finish, raised over copper by its whole thickness $`\sum_i \tau_i`$ and wrapping round the finish on
 the walls. `report.txt` notes it on the `finish:` and `solder mask:` lines. Board 18c
 (`featureTest/18c_finish_before_mask.kicad_pcb`, ENEPIG) runs with it on in the regression suite.
 
-## 13.3 Finish Types
+## 14.3 Finish Types
 
 `Finish.FINISH_TYPE` is a key of the table below, `"ENIG"` by default, or `"file"` to take the type
 from the stack-up's `(copper_finish "...")`. With `"file"` the name is compared, ignoring case,
@@ -159,7 +188,7 @@ the laminate, and 4 the thin layers enlarged (HASL and HASL_LF need no part 4). 
 copper on a 1.51 mm core, so its laminate face is at z = 0.755 mm and its copper top at 0.790 mm.
 The bottom face is the mirror image, with the parts named `Bottom Finish ...`.
 
-### 13.3.1 ENIG
+### 14.3.1 ENIG
 
 ![ENIG on board 18b: how it looks, a cut-away of a pad's edge with the finish on its wall, the side profile at true scale with heights, the corner and the thin layers enlarged](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/finish_2_enig.webp)
 
@@ -173,7 +202,7 @@ Electroless nickel, immersion gold; KiCad's `ENIG`.
 The pads take the gold's colour, `#E6C15A`. On board 18b the gold's top is 40.08 µm above the
 laminate, at z = 0.79508 mm; at true scale the gold is under a pixel, so part 4 enlarges it.
 
-### 13.3.2 ENEPIG
+### 14.3.2 ENEPIG
 
 ![ENEPIG on board 18b: how it looks, a cut-away of a pad's edge with the finish on its wall, the side profile at true scale with heights, the corner and the thin layers enlarged](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/finish_3_enepig.webp)
 
@@ -188,7 +217,7 @@ Electroless nickel, electroless palladium, immersion gold; KiCad's `ENEPIG`.
 From the top it looks like ENIG (`#E6C15A`); the palladium shows only in a cut. On board 18b the
 gold's top is 40.15 µm above the laminate.
 
-### 13.3.3 HASL
+### 14.3.3 HASL
 
 ![HASL on board 18b: how it looks, a cut-away of a pad's edge with the finish on its wall, the side profile at true scale with heights, and the corner enlarged](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/finish_4_hasl.webp)
 
@@ -202,7 +231,7 @@ KESE models the solder as one flat layer of tin, coloured `#C9C9C9`. With `HASL_
 thickest finish, and the only one with no layer thin enough to need part 4; on board 18b its top is
 45 µm above the laminate.
 
-### 13.3.4 HASL_LF
+### 14.3.4 HASL_LF
 
 ![HASL_LF on board 18b: how it looks, a cut-away of a pad's edge with the finish on its wall, the side profile at true scale with heights, and the corner enlarged](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/finish_5_hasl_lf.webp)
 
@@ -214,7 +243,7 @@ Lead-free hot air solder levelling; KiCad's `HAL lead-free`.
 
 KESE builds it exactly as `HASL`: the same layer of tin, the same part and the same colour.
 
-### 13.3.5 OSP
+### 14.3.5 OSP
 
 ![OSP on board 18b: how it looks, a cut-away of a pad's edge with the finish on its wall, the side profile at true scale with heights, and the corner enlarged](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/finish_6_osp.webp)
 
@@ -227,7 +256,7 @@ Organic solderability preservative; KiCad's `OSP` and `HT_OSP`.
 Coloured `#D9955A`, close to the copper under it. On board 18b its top is 35.3 µm above the
 laminate.
 
-### 13.3.6 ImmersionSilver
+### 14.3.6 ImmersionSilver
 
 ![ImmersionSilver on board 18b: how it looks, a cut-away of a pad's edge with the finish on its wall, the side profile at true scale with heights, and the corner enlarged](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/finish_7_immersion_silver.webp)
 
@@ -239,7 +268,7 @@ Immersion silver; KiCad's `Immersion silver`.
 
 Coloured `#E4E4E0`. On board 18b its top is 35.2 µm above the laminate.
 
-### 13.3.7 ImmersionTin
+### 14.3.7 ImmersionTin
 
 ![ImmersionTin on board 18b: how it looks, a cut-away of a pad's edge with the finish on its wall, the side profile at true scale with heights, and the corner enlarged](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/finish_8_immersion_tin.webp)
 
@@ -252,7 +281,7 @@ Immersion tin; KiCad's `Immersion tin`.
 The metal of `HASL`, a tenth as thick, with the same part name and colour (`#C9C9C9`). On board 18b
 its top is 36 µm above the laminate.
 
-### 13.3.8 HardGold
+### 14.3.8 HardGold
 
 ![HardGold on board 18b: how it looks, a cut-away of a pad's edge with the finish on its wall, the side profile at true scale with heights, and the corner enlarged](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/finish_9_hard_gold.webp)
 
@@ -266,7 +295,7 @@ Electroplated hard gold, the finish of edge-connector fingers; KiCad's `Hard gol
 The thickest gold of the eight finishes, 12.5 times ENIG's; the pads look gold (`#E6C15A`). On
 board 18b the gold's top is 41 µm above the laminate.
 
-## 13.4 Parts And Grouping
+## 14.4 Parts And Grouping
 
 `Finish.FINISH_GROUPING`:
 
@@ -277,7 +306,7 @@ board 18b the gold's top is 41 µm above the laminate.
 
 In `materials.json` each finish part has the layer `F.Finish`, `B.Finish`, `Edge.Finish` or
 `Hole.Finish`, its `z_range_mm`, and the properties `side` (`F`, `B`, `Edge` or `Hole`), `metal`,
-`thickness_mm` and `conductivity_S_per_m`, and on the shells `drawn_thickness_mm` (section 13.2.1); the conductivities come
+`thickness_mm` and `conductivity_S_per_m`, and on the shells `drawn_thickness_mm` (section 14.2.1); the conductivities come
 from `Finish.FINISH_CONDUCTIVITY_S_PER_M` (Nickel 1.4 × 10⁷, Gold 4.1 × 10⁷, Palladium 9.5 × 10⁶,
 Tin 9.1 × 10⁶, Silver 6.3 × 10⁷ S/m, OSP 0 since it is organic). Colours come from the metal's entry
 in `Color.MATERIALS` ([Colorizing](Colorizing.md)).
@@ -294,14 +323,14 @@ one per connected piece.
 > touch are dropped, so a pad's top and walls show the outermost layer alone, and the layers under
 > it show only where a cut opens them.
 
-## 13.5 Settings
+## 14.5 Settings
 
 | Name | Default | Range | Meaning |
 |---|---|---|---|
 | `FINISH_ENABLED` | `True` | bool | Build the finish and write it to every file |
 | `FINISH_TYPE` | `"ENIG"` | `"file"` or a key of `FINISH_TYPES` | The type, or `"file"` for the stack-up's (an error when the file names none) |
 | `FINISH_GROUPING` | `"metal"` | `"metal"` / `"net"` | Part per metal, or per metal and net |
-| `FINISH_BEFORE_SOLDER_MASK` | `False` | bool | Finish on all the outer copper, under the mask (section 13.2.2), instead of only where the mask leaves it bare |
+| `FINISH_BEFORE_SOLDER_MASK` | `False` | bool | Finish on all the outer copper, under the mask (section 14.2.2), instead of only where the mask leaves it bare |
 | `FINISH_TYPES` | table above | `{key: [(metal, mm), ...]}` | Layers of each finish |
 | `FINISH_NAME_ALIASES` | `HAL SnPb` → `HASL`, `HAL lead-free` → `HASL_LF`, `Hard gold` → `HardGold`, `Immersion tin` → `ImmersionTin`, `Immersion silver` → `ImmersionSilver`, `HT_OSP` → `OSP` | `{KiCad name: key}` | KiCad's finish names that differ from a key |
 | `FINISH_CONDUCTIVITY_S_PER_M` | table above | `{metal: S/m}` | Written to `materials.json` |
