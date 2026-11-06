@@ -34,8 +34,8 @@ see at this scale is marked with a line and a label.
 ## 6.1 RF Sensor Module
 
 <p align="center">
-<img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/example_images/rf_module/top_straight_visual.webp" width="49%" alt="The RF sensor module straight from above in visual mode: the blue mask, the white silkscreen, the gold of the ENIG pads, the plated edge and cut-out, and the fence of vias in the GND border">
-<img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/example_images/rf_module/bottom_straight_visual.webp" width="49%" alt="The RF sensor module straight from below: the KESE logo, the outline of the CR1220 coin cell BT1, the pads of the I2C and UART lines, and the plated edge and cut-out">
+<img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/example_images/rf_module/top_straight_visual.webp" width="49.5%" alt="The RF sensor module straight from above in visual mode: the blue mask, the white silkscreen, the gold of the ENIG pads, the plated edge and cut-out, and the fence of vias in the GND border">
+<img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/example_images/rf_module/bottom_straight_visual.webp" width="49.5%" alt="The RF sensor module straight from below: the KESE logo, the outline of the CR1220 coin cell BT1, the pads of the I2C and UART lines, and the plated edge and cut-out">
 </p>
 
 ![RF sensor module: stacked bars of seconds per stage. Simulation with GLB and STEP takes 18.5 s: read 0.9, resolve 1.5, geometry 6.5, materials 0.3 ms, assemble 5.3, write 2.7, verify 0.5, start-up and exit 1.1. Visual with GLB takes 16.4 s: read 0.8, resolve 1.5, geometry 6.2, materials 0.3 ms, assemble 6.4, write 44 ms, verify 0.3, start-up and exit 1.0](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/time_1_rf_module.webp)
@@ -45,6 +45,8 @@ see at this scale is marked with a line and a label.
 | Simulation, GLB + STEP | 0.9 | 1.5 | 6.5 | 0.3 ms | 5.3 | 2.7 | 0.5 | 1.1 | 18.5 |
 | Visual, GLB | 0.8 | 1.5 | 6.2 | 0.3 ms | 6.4 | 44 ms | 0.3 | 1.0 | 16.4 |
 
+<div align="center">
+
 | Board | `Input/rf_module.kicad_pcb` ([5.1](Examples.md#51-rf-sensor-module)) |
 |---|---|
 | Outline | 64 × 44 mm, a cut-out |
@@ -53,6 +55,8 @@ see at this scale is marked with a line and a label.
 | Vias | 307 through |
 | Board edge | Plated all round and in the cut-out |
 | Mask, silkscreen, finish | Blue, white, ENIG |
+
+</div>
 
 ## 6.2 HDI Radio Module
 
@@ -68,6 +72,8 @@ see at this scale is marked with a line and a label.
 | Simulation, GLB + STEP | 0.8 | 0.9 | 2.7 | 0.2 ms | 2.1 | 1.6 | 0.3 | 1.1 | 9.5 |
 | Visual, GLB | 0.8 | 1.0 | 2.9 | 0.2 ms | 4.5 | 25 ms | 0.2 | 1.1 | 10.4 |
 
+<div align="center">
+
 | Board | `Input/hdi_module.kicad_pcb` ([5.2](Examples.md#52-hdi-radio-module)) |
 |---|---|
 | Outline | 22 × 30 mm |
@@ -77,11 +83,13 @@ see at this scale is marked with a line and a label.
 | Board edge | 43 castellated pads |
 | Mask, silkscreen, finish | Black, white, immersion silver |
 
+</div>
+
 ## 6.3 PCIe x1 Card
 
 <p align="center">
-<img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/example_images/pcie_card/top_straight_visual.webp" width="49%" alt="The PCIe x1 card straight from above in visual mode: the green mask, the controller, the RJ45 footprint, the PoE side behind its dashed isolation line and slot, the logo and the gold fingers">
-<img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/example_images/pcie_card/bottom_straight_visual.webp" width="49%" alt="The PCIe x1 card straight from below: the A side of the fingers, the tracks reading through the mask and the name in silkscreen">
+<img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/example_images/pcie_card/top_straight_visual.webp" width="49.5%" alt="The PCIe x1 card straight from above in visual mode: the green mask, the controller, the RJ45 footprint, the PoE side behind its dashed isolation line and slot, the logo and the gold fingers">
+<img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/example_images/pcie_card/bottom_straight_visual.webp" width="49.5%" alt="The PCIe x1 card straight from below: the A side of the fingers, the tracks reading through the mask and the name in silkscreen">
 </p>
 
 ![PCIe x1 card: stacked bars of seconds per stage. Simulation with GLB and STEP takes 12.2 s: read 0.8, resolve 1.1, geometry 4.0, materials 0.2 ms, assemble 2.7, write 2.2, verify 0.3, start-up and exit 1.1. Visual with GLB takes 13.1 s: read 0.9, resolve 1.1, geometry 4.1, materials 0.2 ms, assemble 5.4, write 42 ms, verify 0.3, start-up and exit 1.1](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/time_3_pcie_card.webp)
@@ -91,6 +99,8 @@ see at this scale is marked with a line and a label.
 | Simulation, GLB + STEP | 0.8 | 1.1 | 4.0 | 0.2 ms | 2.7 | 2.2 | 0.3 | 1.1 | 12.2 |
 | Visual, GLB | 0.9 | 1.1 | 4.1 | 0.2 ms | 5.4 | 42 ms | 0.3 | 1.1 | 13.1 |
 
+<div align="center">
+
 | Board | `Input/pcie_card.kicad_pcb` ([5.3](Examples.md#53-pcie-x1-card)) |
 |---|---|
 | Outline | 80 × 64.4 mm with the fingers' tongue, a slot |
@@ -99,6 +109,8 @@ see at this scale is marked with a line and a label.
 | Vias | 239 through |
 | Board edge | 36 gold fingers |
 | Mask, silkscreen, finish | Green, white, hard gold |
+
+</div>
 
 ## 6.4 Timing Your Own Board
 
