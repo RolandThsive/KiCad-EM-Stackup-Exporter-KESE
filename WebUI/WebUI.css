@@ -183,6 +183,7 @@ html.phone .desktop-only { display: none !important; }
 }
 .switch input:checked + .knob { background: var(--silver-on); background-origin: border-box; box-shadow: none; }
 .switch input:checked + .knob::after { transform: translateX(18px); }
+.switch input:focus-visible + .knob { outline: 2px solid var(--accent); outline-offset: 2px; }   /* the input is see-through: the track shows the focus */
 .switch-row { display: inline-flex; align-items: center; gap: 8px; cursor: pointer; font-size: 13.5px; }
 .switch-row.small { font-size: 12.5px; }
 
@@ -219,7 +220,7 @@ html.phone .desktop-only { display: none !important; }
 .field { padding: 9px 0; border-bottom: 1px dashed var(--divider); }
 .field:last-child { border-bottom: 0; }
 .field-head { display: flex; align-items: baseline; gap: 6px; margin-bottom: 6px; }
-.field-label { font-weight: 600; font-size: 13.5px; }
+.field-label { font-weight: 600; font-size: 13.5px; text-wrap: balance; }   /* a long name on two even lines, no word alone */
 .field-label .unit { font-weight: normal; color: var(--text-3); }
 /* a field with help text shows the help cursor on its label */
 .field-head[data-help] .field-label { cursor: help; }
@@ -274,12 +275,19 @@ input[type=range]:focus-visible::-moz-range-thumb { box-shadow: var(--metal-shad
 .dropdown.open .dropdown-btn .arrow { transform: rotate(180deg); }
 .dropdown-content {
   position: absolute; left: 0; right: 0; top: calc(100% + 6px); z-index: 50;
-  background: rgba(255, 255, 255, 0.85); border: 1px solid var(--glass-edge); border-radius: var(--radius);
+  background: rgba(255, 255, 255, 0.96);   /* inside a blurred panel the menu's own blur cannot reach what is behind it: nearly opaque */
+  border: 1px solid var(--glass-edge); border-radius: var(--radius);
   box-shadow: var(--shadow-menu); backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px);
-  opacity: 0; transform: translateY(-10px); pointer-events: none; transition: all var(--ease); overflow: hidden;
+  opacity: 0; transform: translateY(-10px); pointer-events: none; transition: all var(--ease); visibility: hidden;   /* closed: no Tab stops */
+  overflow-x: hidden; overflow-y: auto; scrollbar-width: thin;   /* a menu taller than the room scrolls (placeMenu) */
 }
-.dropdown.open .dropdown-content { opacity: 1; transform: translateY(0); pointer-events: auto; }
-.dropdown-content a { display: block; padding: 7px 14px; font-size: 14px; color: black; text-decoration: none; cursor: pointer; transition: all var(--ease); }
+.dropdown.open .dropdown-content { opacity: 1; transform: translateY(0); pointer-events: auto; visibility: visible;
+  transition: all var(--ease), visibility 0s; }   /* shown at once (so a key can move into it), hidden only once faded */
+.dropdown-content a:focus-visible { outline: 2px solid var(--accent); outline-offset: -2px; }
+.dropdown.up .dropdown-content { top: auto; bottom: calc(100% + 6px); transform: translateY(10px); }   /* opened upwards (placeMenu) */
+.dropdown.up.open .dropdown-content { transform: translateY(0); }
+.dropdown-content a { display: block; padding: 7px 14px; font-size: 14px; color: black; text-decoration: none; cursor: pointer;
+  transition: background var(--ease), color var(--ease); }   /* not visibility: an option must be focusable as soon as its menu opens */
 .dropdown-content a:hover, .dropdown-content a.on { background: var(--cream); color: var(--accent); }
 .dropdown-content a.on { font-weight: 600; }
 
@@ -342,8 +350,9 @@ input[type=range]:focus-visible::-moz-range-thumb { box-shadow: var(--metal-shad
 #side { display: flex; flex-direction: column; gap: 8px; padding: 12px 14px; overflow-y: auto; }
 #side > * { flex-shrink: 0; }                    /* a short window scrolls the column, it does not squash Checks or Parts */
 #side > h2 { margin-top: 6px; }
-.checks-head { display: flex; align-items: center; gap: 8px; }           /* one row: the counts give way, Info stays at the right */
-.checks-head .counts { flex: 1 1 auto; min-width: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.checks-head { display: flex; align-items: center; gap: 8px; }           /* one row: Info stays at the right */
+.checks-head .counts { flex: 1 1 auto; min-width: 0; line-height: 1.25; }   /* a narrow column: the counts take two lines, never cut */
+.counts > span { white-space: nowrap; }
 .checks-head > .switch-row { flex: none; margin-left: auto; }
 .counts { font-size: 12.5px; color: var(--text-2); margin-right: auto; }
 .counts .e { color: var(--error); font-weight: 600; }
@@ -387,7 +396,8 @@ dialog.confirm p { margin: 0 0 16px; font-size: 16px; font-weight: 600; color: v
 dialog::backdrop { background: rgba(0, 0, 0, 0.18); }
 dialog pre { font-family: var(--mono); font-size: 12px; white-space: pre-wrap; margin: 0 0 12px; max-height: 65vh; overflow: auto; }
 .toast { position: fixed; bottom: 26px; left: 50%; transform: translateX(-50%); z-index: 200; background: rgba(0, 0, 0, 0.78); color: #fff;
-  padding: 8px 16px; border-radius: 10px; font-size: 13.5px; }
+  padding: 8px 16px; border-radius: 10px; font-size: 13.5px;
+  width: max-content; max-width: min(640px, calc(100vw - 32px)); text-wrap: pretty; }   /* as wide as its words, up to 640 px (not half the window) */
 
 /* ---- KESE ---------------------------------------------------------------------------------- */
 #topbar h1 { display: flex; align-items: center; gap: 10px; }
@@ -401,7 +411,7 @@ dialog pre { font-family: var(--mono); font-size: 12px; white-space: pre-wrap; m
 .drop.has-board { border-style: solid; border-color: rgba(0, 0, 0, 0.1); }
 .drop svg { width: 32px; height: 32px; flex: none; fill: none; stroke: var(--accent); stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
 .drop-text { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
-.drop-text b { overflow-wrap: anywhere; }
+.drop-text b { overflow-wrap: break-word; }                   /* a long name breaks after _ - . (<wbr>), inside a word only when it must */
 .drop-text .hint { font-size: 12px; }
 .examples { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 6px; margin: 8px 0 0; }
 .examples .hint { flex-basis: 100%; text-align: center; }                      /* the words on their own line, the examples under them */
@@ -434,7 +444,7 @@ dialog pre { font-family: var(--mono); font-size: 12px; white-space: pre-wrap; m
 .table-btn:disabled { opacity: 0.4; cursor: default; }
 .table-body { display: flex; flex-direction: column; gap: 6px; }
 .table-row { display: flex; align-items: center; gap: 8px; justify-content: space-between; }
-.table-body .stepper input, .table-edit .stepper input { width: 92px !important; }   /* every row's number the same width, so the rows line up */
+.table-body .stepper input, .table-edit .stepper input { width: 80px !important; }   /* every row's number the same width, so the rows line up; 0.00008 fits */
 .table-label { font-size: 13px; color: var(--text-2); }
 /* Colorization: each colour group folds like a section; the section's content is centred */
 [data-module="Color"] .psec-body { padding: 0 8px 8px; }
@@ -453,7 +463,7 @@ dialog pre { font-family: var(--mono); font-size: 12px; white-space: pre-wrap; m
 .board-color-value { font-weight: 600; }
 .table-sub { font-size: 12px; font-weight: 600; color: var(--text-2); margin-top: 4px; }
 .table-cols { font-size: 11.5px; color: var(--text-3); }
-.layer-row .dropdown, .layer-row .text-input { flex: 1; min-width: 96px; }
+.layer-row .dropdown, .layer-row .text-input { flex: 1; min-width: 84px; }   /* name, number and × fit the 1280 px column */
 .layer-row .dropdown-btn { padding: 6px 10px; }
 .table-note { margin: 0; }
 .table-x { border: none; background: none; font-size: 17px; line-height: 1; color: var(--text-3); cursor: pointer; padding: 0 2px; }
@@ -500,6 +510,9 @@ dialog pre { font-family: var(--mono); font-size: 12px; white-space: pre-wrap; m
 .views { background: rgba(255, 255, 255, 0.6); }
 .empty-note { position: absolute; inset: 0; display: grid; place-content: center; text-align: center; font-size: 15px; color: var(--text-2); pointer-events: none; line-height: 1.6; }
 .readout { left: 12px; bottom: 16px; max-width: calc(100% - 24px); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.readout:has(.ro-name) { display: flex; }
+.ro-name { min-width: 0; overflow: hidden; text-overflow: ellipsis; }   /* a long file name gives way, */
+.ro-rest { flex: none; }                                                 /* the numbers after it always show */
 .hover-card { position: absolute; right: 12px; bottom: 16px; max-width: 360px; z-index: 4; background: rgba(255, 255, 255, 0.94); border-radius: 10px;
   padding: 7px 10px; box-shadow: var(--shadow-card); font-size: 12px; line-height: 1.5; border-left: 4px solid var(--accent); pointer-events: none; }
 .hover-title { margin-bottom: 3px; overflow-wrap: anywhere; }
@@ -533,7 +546,8 @@ dialog pre { font-family: var(--mono); font-size: 12px; white-space: pre-wrap; m
 .download-box .primary-btn { width: 100%; }
 #btn-download { color: #000; border: 2px solid var(--accent); }
 .download-row { display: flex; flex-wrap: wrap; gap: 6px; }
-.download-row .glass-btn { padding: 4px 10px; font-size: 12px; color: #000; border: 2px solid var(--accent); font-weight: 600; }
+.download-row .glass-btn { padding: 4px 10px; font-size: 12px; color: #000; border: 2px solid var(--accent); font-weight: 600;
+  max-width: 100%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }   /* a long file name gives way; its tip has it whole */
 #btn-download:hover:not(:disabled), .download-row .glass-btn:hover:not(:disabled) { color: var(--accent); background: var(--cream); }
 #btn-report { width: 100%; font-weight: 600; }
 #report-dialog { width: min(1000px, 94vw); max-width: none; }
@@ -555,8 +569,7 @@ dialog pre { font-family: var(--mono); font-size: 12px; white-space: pre-wrap; m
   #app { height: auto; min-height: 100vh; }
   #workspace { grid-template-columns: 1fr 1fr; grid-template-rows: 62vh auto;
     grid-template-areas: "preview preview" "controls side"; }
-  #controls { max-height: 90vh; }
-  #side > .parts { max-height: 40vh; }                       /* the column grows with its content here: the list scrolls */
+  #controls, #side { height: 90vh; }                        /* one height for both: the Parts list fills the side's free room */
   #topbar h1 { font-size: 16px; }
 }
 
@@ -568,7 +581,10 @@ dialog pre { font-family: var(--mono); font-size: 12px; white-space: pre-wrap; m
 /* narrow laptops: Reset a little slimmer, so Verify, Reset and Generate keep the panel's inset */
 @media (max-width: 1360px) {
   .generate-row .reset-btn { padding: 8px 14px; }
-  .stale-badge { white-space: normal; width: max-content; max-width: 170px; text-align: center; line-height: 1.25; padding: 3px 10px; }   /* two short lines, never cut */
+}
+/* up to 1520 px the long note does not fit on one line beside the title and the buttons: two short lines, never cut */
+@media (max-width: 1520px) {
+  .stale-badge { white-space: normal; width: max-content; max-width: 170px; text-align: center; line-height: 1.25; padding: 3px 10px; }
 }
 /* small windows: "Settings changed" alone, on one line (its tip says the rest) */
 @media (max-width: 1180px) {

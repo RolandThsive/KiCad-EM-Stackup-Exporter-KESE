@@ -90,6 +90,8 @@ export class Viewer {
   resize() {
     const r = this.canvas.parentElement.getBoundingClientRect();
     if (!r.width || !r.height) return;
+    const ratio = Math.min(2, window.devicePixelRatio || 1);       // browser zoom changes it: keep the canvas sharp
+    if (ratio !== this.renderer.getPixelRatio()) this.renderer.setPixelRatio(ratio);
     this.renderer.setSize(r.width, r.height, false);
     this.camera.aspect = r.width / r.height;
     this.camera.updateProjectionMatrix();

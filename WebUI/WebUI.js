@@ -151,10 +151,15 @@ function showTip(node) {
   } else if (node.dataset.tip) pop.append(node.dataset.tip);
   else { hideTip(); return; }
   pop.hidden = false;
-  const r = node.getBoundingClientRect();
-  const below = r.bottom + 8, above = r.top - pop.offsetHeight - 8;
-  pop.style.top = (below + pop.offsetHeight < innerHeight - 6 || above < 6 ? Math.max(6, Math.min(below, innerHeight - pop.offsetHeight - 6)) : above) + "px";
-  pop.style.left = Math.max(6, Math.min(innerWidth - pop.offsetWidth - 6, r.left)) + "px";
+  const r = node.getBoundingClientRect(), W = document.documentElement.clientWidth, H = document.documentElement.clientHeight;   // the window less its scrollbars
+  const h = pop.offsetHeight, w = pop.offsetWidth, below = r.bottom + 8, above = r.top - h - 8;
+  if (below + h <= H - 6 || above >= 6) {                         // under the target, else above it
+    pop.style.top = (below + h <= H - 6 ? below : above) + "px";
+    pop.style.left = Math.max(6, Math.min(W - w - 6, r.left)) + "px";
+  } else {                                                        // too tall for either: beside it, never over it
+    pop.style.top = Math.max(6, Math.min(H - h - 6, r.top + r.height / 2 - h / 2)) + "px";
+    pop.style.left = (r.right + 8 + w <= W - 6 ? r.right + 8 : Math.max(6, r.left - w - 8)) + "px";
+  }
 }
 document.addEventListener("mouseover", (e) => {
   const node = e.target.closest("[data-tip], [data-help]");
@@ -198,7 +203,8 @@ function setValues(changes, from) {
     if (!same(state.values[k], v)) { state.values[k] = clone(v); any = true; }
   }
   if (!any) return;
-  if (state.result) state.stale = true;
+  // stale while the settings differ from the run's: changing a value back makes the result current again
+  if (state.result) state.stale = !same(state.values, state.runValues) || state.board !== state.runBoard;
   refresh(from);
 }
 function refresh() {
@@ -238,11 +244,19 @@ function stepper(value, onCommit, { step = 0.001, integer = false, disabled = fa
       x = limit.above ? (value ?? step) : limit.min;
       if (limit.above && x <= limit.min) { input.value = value == null ? "" : fmt(value); return; }
     }
-    onCommit(Number(x.toPrecision(10)));
+    x = Number(x.toPrecision(10));
+    input.value = fmt(x);                                   // shown as stored, also when the value did not change ("0.0350")
+    onCommit(x);
   };
-  input.addEventListener("change", () => commit(parseFloat(input.value)));
+  // what was typed: a decimal comma reads as a point ("1,5"); a number with anything else in it ("12abc") is refused
+  const typed = () => { const t = input.value.trim().replace(",", "."); return t === "" ? NaN : Number(t); };
+  input.addEventListener("change", () => {
+    const x = typed();
+    if (!Number.isFinite(x) && input.value.trim() !== "") toast(`"${input.value.trim()}" is not a number`);
+    commit(x);
+  });
   input.addEventListener("keydown", (e) => {
-    if (e.key === "ArrowUp" || e.key === "ArrowDown") { e.preventDefault(); commit((parseFloat(input.value) || 0) + (e.key === "ArrowUp" ? step : -step)); }
+    if (e.key === "ArrowUp" || e.key === "ArrowDown") { e.preventDefault(); commit((Number.isFinite(typed()) ? typed() : value ?? 0) + (e.key === "ArrowUp" ? step : -step)); }
   });
   return el("span", { class: "stepper" },
     el("button", { type: "button", disabled, "aria-label": "Less", onclick: () => commit((value ?? 0) - step) }, "−"), input,
@@ -255,16 +269,50 @@ function switchRow(checked, text, onChange, attrs = {}) {
 }
 function dropdown(options, value, onPick) {
   const dd = el("div", { class: "dropdown" });
+  const menu = el("div", { class: "dropdown-content", role: "listbox" });
   const btn = el("button", { type: "button", class: "dropdown-btn" }, el("span", {}, choiceText(value)), el("span", { class: "arrow" }, "▾"));
-  const menu = el("div", { class: "dropdown-content" });
-  for (const o of options) menu.append(el("a", { class: same(o, value) ? "on" : "", onclick: () => { dd.classList.remove("open"); onPick(o); } }, choiceText(o)));
+  for (const o of options) menu.append(el("a", { class: same(o, value) ? "on" : "", role: "option", tabindex: "0",
+    onclick: () => { dd.classList.remove("open"); btn.focus(); onPick(o); } }, choiceText(o)));   // the focus goes back to the button (kept through the re-render)
+  const items = () => [...menu.children];
+  let fromKey = false;
+  btn.addEventListener("keydown", (e) => { fromKey = e.key === "Enter" || e.key === " "; });
+  btn.addEventListener("pointerdown", () => { fromKey = false; });
   btn.addEventListener("click", (e) => {
     e.stopPropagation();
     document.querySelectorAll(".dropdown.open").forEach((d) => d !== dd && d.classList.remove("open"));
-    dd.classList.toggle("open");
+    if (dd.classList.toggle("open")) {
+      placeMenu(dd, menu);
+      if (fromKey) (menu.querySelector(".on") || menu.firstChild)?.focus();   // opened from the keyboard: into the list
+    }
+  });
+  // keys: Enter / Space pick, the arrows, Home and End move, Escape and Tab close (Escape gives the focus back to the button)
+  dd.addEventListener("keydown", (e) => {
+    const list = items(), at = list.indexOf(document.activeElement);
+    if (e.key === "Escape" && dd.classList.contains("open")) { e.preventDefault(); e.stopPropagation(); dd.classList.remove("open"); btn.focus(); }
+    else if ((e.key === "Enter" || e.key === " ") && at >= 0) { e.preventDefault(); list[at].click(); }
+    else if (e.key === "ArrowDown" || e.key === "ArrowUp") {
+      e.preventDefault();
+      if (!dd.classList.contains("open")) { fromKey = true; btn.click(); return; }   // opens on the picked option
+      const next = at < 0 ? 0 : Math.max(0, Math.min(list.length - 1, at + (e.key === "ArrowDown" ? 1 : -1)));
+      list[next].focus();
+    } else if ((e.key === "Home" || e.key === "End") && at >= 0) { e.preventDefault(); list[e.key === "Home" ? 0 : list.length - 1].focus(); }
+    else if (e.key === "Tab" && dd.classList.contains("open")) dd.classList.remove("open");
   });
   dd.append(btn, menu);
   return dd;
+}
+// a menu opens below its button, or above it when the room below (in its scrolling panel and the window) is too
+// short and there is more above; a menu taller than both scrolls
+function placeMenu(dd, menu) {
+  let box = dd.parentElement;
+  while (box && box !== document.body && !/auto|scroll|hidden/.test(getComputedStyle(box).overflowY)) box = box.parentElement;
+  const c = box && box !== document.body ? box.getBoundingClientRect() : { top: 0, bottom: innerHeight };
+  const r = dd.getBoundingClientRect(), gap = 12;
+  const below = Math.min(c.bottom, document.documentElement.clientHeight) - r.bottom - gap, above = r.top - Math.max(c.top, 0) - gap;
+  menu.style.maxHeight = "";
+  const up = menu.scrollHeight > below && above > below;
+  dd.classList.toggle("up", up);
+  menu.style.maxHeight = menu.scrollHeight > (up ? above : below) ? `${Math.max(up ? above : below, 120)}px` : "";
 }
 document.addEventListener("click", () => document.querySelectorAll(".dropdown.open").forEach((d) => d.classList.remove("open")));
 
@@ -765,7 +813,8 @@ async function setBoard(name, bytes) {
   if (!/^\s*\(kicad_pcb/.test(text)) { toast(`${name} does not look like a KiCad board`, 5000); return; }
   state.board = { name, bytes, meta: boardMeta(text), colors: stackupColors(text) };
   if (state.desc) renderSections();                                 // Colorization shows the board's own colours (once Python is up)
-  $("board-name").textContent = name;
+  // a file name too long for one line breaks after a _ - or . (never in the middle of a word)
+  $("board-name").replaceChildren(...name.split(/(?<=[_.-])/).flatMap((part, i) => (i ? [document.createElement("wbr"), part] : [part])));
   // each item whole, a line breaking only after its " ·"
   const items = [bytesText(bytes.byteLength), ...state.board.meta.split(" · ")];
   $("board-meta").replaceChildren(...items.flatMap((t, i) => [i ? " " : "", el("span", { class: "meta-item" }, i < items.length - 1 ? `${t} ·` : t)]));
@@ -879,8 +928,10 @@ async function showPreview() {
     const tris = parts.reduce((s, p) => s + p.triangles, 0);
     const units = state.runValues[CFG.units], perMm = units === "m" ? 0.001 : 1;
     const dims = viewer.boardSize(perMm);
-    ro.textContent = `${c.label} · ${bytesText(size)} · ${parts.length} parts · ${countText(tris)} triangles` +
-      (dims ? ` · ${dims[0].toFixed(1)} × ${dims[1].toFixed(1)} × ${dims[2].toFixed(2)} mm` : "");
+    // a long file name gives way (…), the numbers after it always show
+    ro.replaceChildren(el("span", { class: "ro-name" }, c.label), el("span", { class: "ro-rest" },
+      `\u00a0· ${bytesText(size)} · ${parts.length} parts · ${countText(tris)} triangles` +
+      (dims ? ` · ${dims[0].toFixed(1)} × ${dims[1].toFixed(1)} × ${dims[2].toFixed(2)} mm` : "")));
   } catch (e) {
     if (seq !== previewSeq) return;
     viewer.clear();
@@ -948,8 +999,8 @@ function renderChecks() {
   const items = r.checks || [];
   const n = (l) => items.filter((i) => i.level === l).length;
   const ne = n("error"), nw = n("warning"), ni = n("info");
-  if (r.ok) counts.append(el("span", { class: nw ? "w" : "ok" }, nw ? `${nw} Warning${nw > 1 ? "s" : ""}` : "No Warnings"), ` · ${ni} Info`);
-  else counts.append(el("span", { class: "e" }, "Not Generated"), ne ? ` · ${ne} Error${ne > 1 ? "s" : ""}` : "");
+  if (r.ok) counts.append(el("span", { class: nw ? "w" : "ok" }, nw ? `${nw} Warning${nw > 1 ? "s" : ""}` : "No Warnings"), " ", el("span", {}, `· ${ni} Info`));
+  else counts.append(el("span", { class: "e" }, "Not Generated"), " ", ne ? el("span", {}, `· ${ne} Error${ne > 1 ? "s" : ""}`) : "");
   const order = { error: 0, warning: 1, info: 2 };
   const shown = items.filter((i) => state.showInfo || i.level !== "info").sort((a, b) => order[a.level] - order[b.level]);
   for (const i of shown) list.append(checkRow(i.level, i.stage, i.msg));
@@ -1000,6 +1051,7 @@ function confirmBox(text) {
   $("confirm-text").textContent = text;
   d.returnValue = "";
   d.showModal();
+  d.querySelector("button[value=no]").focus();   // No has the focus (in JS: autofocus is refused in the blog's cross-origin frame)
   return new Promise((resolve) => d.addEventListener("close", () => resolve(d.returnValue === "yes"), { once: true }));
 }
 
@@ -1013,25 +1065,30 @@ async function exportFiles() {
 }
 async function importFiles(files) {
   if (!state.ready) { toast("Python is still loading: import the settings in a moment", 4000); return; }
-  const found = {}, ignored = [];
+  const found = {}, ignored = [], failed = [];
   for (const f of files) {
     let r;
     try {
       r = /\.zip$/i.test(f.name) ? await ask("readZip", { bytes: await f.arrayBuffer() })
         : await ask("readValues", { text: await f.text(), fileName: f.name });
-    } catch (e) { toast(`${f.name} could not be read: ${e.message}`, 6000); continue; }
+    } catch (e) {                                              // a Python error: its last line says what was wrong
+      failed.push(`${f.name} could not be read (${String(e.message).trim().split("\n").pop()})`); continue;
+    }
     Object.assign(found, r.values);
     for (const n of r.ignored) if (!ignored.includes(n)) ignored.push(n);
   }
   const n = Object.keys(found).length;
-  if (!n) { toast(ignored.length ? `No settings of this version found (ignored: ${ignored.join(", ")})` : "No parameter values found in that file", 6000); return; }
+  // a long list of names: the first few, then how many more
+  const names = (list) => list.length > 6 ? `${list.slice(0, 6).join(", ")} and ${list.length - 6} more` : list.join(", ");
+  const also = failed.length ? `. ${failed.join(". ")}` : "";
+  if (!n) { toast((ignored.length ? `No settings of this version found (ignored: ${names(ignored)})` : failed.length ? failed.join(". ") : "No parameter values found in that file") + (ignored.length ? also : ""), 6000); return; }
   state.noneEditing.clear();
   if (CFG.formats in found || CFG.mode in found) {         // formats this mode can write, at least one
     const mode = found[CFG.mode] ?? state.values[CFG.mode];
     found[CFG.formats] = formatsFor(mode, found[CFG.formats] ?? state.values[CFG.formats] ?? []);
   }
   setValues(found, "import");
-  toast(`Loaded ${n} value${n > 1 ? "s" : ""}` + (ignored.length ? `. Ignored (not settings of this version): ${ignored.join(", ")}` : ""), ignored.length ? 7000 : 2600);
+  toast(`Loaded ${n} value${n > 1 ? "s" : ""}` + (ignored.length ? `. Ignored (not settings of this version): ${names(ignored)}` : "") + also, ignored.length || failed.length ? 7000 : 2600);
 }
 
 /* ---- start -------------------------------------------------------------------------------------- */
