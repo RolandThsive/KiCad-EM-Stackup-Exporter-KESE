@@ -22,9 +22,10 @@ WORKERS = 0
 # its own Python, numpy and shapely (about 36 MB) and the part it builds: NE_Delta in simulation mode
 # peaks at 2.80 GB in all with 4 workers and 4.37 GB with 32, and at 3.65 GB with 4 when it writes the
 # STEP file too.  A thread costs little memory, so a machine with many threads and little memory can
-# keep WORKERS and lower this.  If the processes
-# cannot start, or one is stopped or runs out of memory, the main process builds the parts left,
-# with a note in report.txt.  Windows holds at most 61 processes at once.
+# keep WORKERS and lower this.  If one is stopped or runs out of memory, the parts left go to half as
+# many processes, and to the main process once that would be one; if the processes cannot start,
+# the main process builds them; each time with a note in report.txt.  Windows holds at most 61
+# processes at once.
 PROCESS_WORKERS = 0
 
 # Stage 6 starts worker processes only when the parts hold this many coordinates or more in all

@@ -8,11 +8,11 @@ worker processes; the solder mask's webs found group by group); they hand back t
 freed (unless Parallel.GIVE_BACK_MEMORY is off).  Parallel.PROCESS_WORKERS caps the worker
 processes and boards under Parallel.PROCESS_MIN_COORDINATES stay in one process; shapes keep their
 grid (and type and SRID) on the way to and from the workers; the run's settings reach the workers;
-a lost worker or one out of memory leaves its jobs to the main process; an error in the work is
-raised at once and the other workers are stopped; a caller that stops early does not wait; the OOM
-killer takes a worker first; KESE runs inside a multiprocessing.Pool; a script without a main guard
-is not run again in the workers; and the workers end with Ctrl-C (one traceback) and with the main
-process.
+a lost worker or one out of memory leaves its jobs to half as many processes, then to the main
+process; an error in the work is raised at once and the other workers are stopped; a caller that
+stops early does not wait; the OOM killer takes a worker first; KESE runs inside a
+multiprocessing.Pool; a script without a main guard is not run again in the workers; and the
+workers end with Ctrl-C (one traceback) and with the main process.
 
     python -m pytest tests/test_parallel.py          (or:  python tests/test_parallel.py)"""
 import os
@@ -74,6 +74,17 @@ def lost_on_3(n, parent):
     """In a worker, job 3 stops its process, as the system does when memory runs out."""
     if n == 3 and os.getpid() != parent:
         os._exit(9)
+    return n * n
+
+
+def lost_on_3_slowly(n, parent, marker=None):
+    """In a worker, job 3 stops its process (with a `marker`, only the first time: it leaves that
+    file); the other jobs take 0.3 s, so that most are still left when it does."""
+    if n == 3 and os.getpid() != parent and not (marker and Path(marker).exists()):
+        if marker:
+            Path(marker).touch()
+        os._exit(9)
+    time.sleep(0.3)
     return n * n
 
 
@@ -552,6 +563,28 @@ def test_a_lost_worker_leaves_its_jobs_to_this_process():
     assert len(notes) == 1 and notes[0].startswith("worker processes failed (BrokenProcessPool"), notes
 
 
+def test_a_lost_worker_leaves_the_jobs_left_to_half_as_many_processes_then_to_this_one():
+    # four workers: job 3 stops its worker each time, so the jobs left go to two, then here; lost
+    # once, they are all done in the two
+    lack = " (most often a lack of memory: fewer processes, Parallel.PROCESS_WORKERS, use less)"
+    saved = with_workers(4)
+    try:
+        notes = []
+        got = dict(in_processes(lost_on_3_slowly, [(n, (n, os.getpid())) for n in range(12)], notes.append))
+        assert got == {n: n * n for n in range(12)}
+        assert len(notes) == 2 and all(s.startswith("worker processes failed (BrokenProcessPool") for s in notes), notes
+        assert notes[0].endswith(" left are built in 2 processes" + lack), notes
+        assert notes[1].endswith(" in this process, one after another" + lack), notes
+        with tempfile.TemporaryDirectory() as tmp:
+            notes = []
+            marker = str(Path(tmp) / "lost")
+            got = dict(in_processes(lost_on_3_slowly, [(n, (n, os.getpid(), marker)) for n in range(12)], notes.append))
+        assert got == {n: n * n for n in range(12)}
+        assert len(notes) == 1 and notes[0].endswith(" left are built in 2 processes" + lack), notes
+    finally:
+        put_back(saved)
+
+
 def test_out_of_memory_in_a_worker_leaves_its_job_to_this_process():
     notes = []
     saved = with_workers(2)
@@ -752,6 +785,7 @@ if __name__ == "__main__":
     t.test_small_boards_stay_in_one_process()
     t.test_the_run_s_settings_reach_the_workers()
     t.test_a_lost_worker_leaves_its_jobs_to_this_process()
+    t.test_a_lost_worker_leaves_the_jobs_left_to_half_as_many_processes_then_to_this_one()
     t.test_out_of_memory_in_a_worker_leaves_its_job_to_this_process()
     t.test_an_error_in_the_work_is_raised_at_once_and_not_taken_for_lost_processes()
     t.test_a_caller_that_stops_early_does_not_wait()

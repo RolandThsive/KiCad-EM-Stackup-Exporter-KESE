@@ -211,8 +211,9 @@ use; `1`: everything in turn, in one process), and at most `Parallel.PROCESS_WOR
 - The processes start afresh, as Windows and macOS start them, on every system, and are given the
   run's settings, `--for` and `--set` included. Shapes sent to and from them keep their grid, which
   shapely's own pickling would drop.
-- Where the processes cannot start, or the system stops one, or one runs out of memory, the main
-  process builds the parts left, one after another, and `report.txt` says so
+- Where the system stops a worker, or one runs out of memory, the parts left go to half as many
+  processes, and to the main process, one after another, once that would be one; where the
+  processes cannot start, the main process builds the parts. `report.txt` says so each time
   ([Checks, Errors And Warnings](Checks-Errors-And-Warnings.md#1713-notes-worth-knowing)). An
   error in a part's own work stops the run at once and ends the other workers.
 - Ctrl-C, or the end of the main process however it ends, ends the workers too. On Linux the
