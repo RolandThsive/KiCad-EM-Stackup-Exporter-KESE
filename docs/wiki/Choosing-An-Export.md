@@ -1,15 +1,15 @@
-# 9. Choosing An Export
+# 10. Choosing An Export
 
 The choices to make before a run are the mode, the file formats, the units, the origin and how
 copper and dielectrics are grouped. The presets bundle the right combination per tool; `--set`
 or the files in `parameters/` change any single value.
 
-## 9.1 Decision Table
+## 10.1 Decision Table
 
 | Need | Choice | Reason |
 |---|---|---|
 | FreeCAD, and Elmer or CalculiX through its FEM workbench | `--for freecad`: simulation, STEP, mm, KiCad origin, copper per net, dielectrics per layer | FreeCAD imports STEP with every part under its own name, and its FEM workbench meshes the solids and runs Elmer or CalculiX; with mm and KiCad's origin a position read off the layout is the same x and the negated y in the model (KiCad's Y points down, KESE's up) |
-| Elmer (ElmerFEM) | `--for elmer`: simulation, STEP, mm, KiCad origin, copper per net, dielectrics per layer, no finish | Elmer reads neither STEP nor STL: gmsh meshes the STEP file and `ElmerGrid 14 2 board.msh` turns the mesh into Elmer's; set `Coordinate Scaling = 0.001`, the mesh being in mm. See [9.2](#92-the-presets) |
+| Elmer (ElmerFEM) | `--for elmer`: simulation, STEP, mm, KiCad origin, copper per net, dielectrics per layer, no finish | Elmer reads neither STEP nor STL: gmsh meshes the STEP file and `ElmerGrid 14 2 board.msh` turns the mesh into Elmer's; set `Coordinate Scaling = 0.001`, the mesh being in mm. See [10.2](#102-the-presets) |
 | CalculiX (heat and stress) | `--for calculix`: as `elmer`, copper per layer | CalculiX has no electromagnetics; gmsh meshes the STEP file into an Abaqus `.inp`, or CalculiX's own cgx reads the STEP file |
 | openEMS / CSXCAD | `--for openems`: simulation, STL, mm, KiCad origin, per net, per layer | openEMS has no STEP reader; it imports STL files, each into one material, and `materials.json` carries the properties. See [openEMS Workflow](OpenEMS-Workflow.md) |
 | gmsh, other CAD | `--format step --set Run.UNITS=mm` | STEP with every part as closed solids, holes and round edges as true circles and cylinders (`Step.STEP_EXACT_ARCS`) |
@@ -29,7 +29,7 @@ or the files in `parameters/` change any single value.
 > with them is 1.4 to 1.9 times as big (the PCIe card in `Input/`, in mm: 151 MB and 1,024 solids
 > against 81 MB and 788 solids).
 
-## 9.2 The Presets
+## 10.2 The Presets
 
 `Presets.PRESETS` (in `parameters/presets.py`); `--for <name>` applies these overrides before any `--set`, and
 `parameters.txt` records the preset and every value it changed. Each name in a preset is checked as a
@@ -65,7 +65,7 @@ FDTD cell of openEMS, and would force the volume mesh of Elmer or CalculiX down 
 
 A preset is only a set of overrides: `--for freecad --format step glb` writes both.
 
-## 9.3 Units And Origin
+## 10.3 Units And Origin
 
 | | `mm` | `m` |
 |---|---|---|
@@ -79,7 +79,7 @@ A preset is only a set of overrides: `--for freecad --format step glb` writes bo
 mirrored) or `flat` (board in XZ, `F.Cu` toward +Y, the convention of some viewers, and what Blender's
 importers turn into `F.Cu` up). The Verifier's checks work in either.
 
-## 9.4 Grouping
+## 10.4 Grouping
 
 | `Copper.COPPER_GROUPING` | Parts | Use |
 |---|---|---|
@@ -92,7 +92,7 @@ importers turn into `F.Cu` up). The Verifier's checks work in either.
 | `layer` | `Board_dielectric 1`, `Board_dielectric 2`, ... each with its own εr and tanδ |
 | `merged` | one `Board` (the first dielectric's material) |
 
-## 9.5 Recommended Combination
+## 10.5 Recommended Combination
 
 For an EM simulation of a board in the solver's own units:
 

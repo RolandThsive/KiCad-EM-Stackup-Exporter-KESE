@@ -1,4 +1,4 @@
-# 15. Solder Masks
+# 16. Solder Masks
 
 The solder mask is the lacquer (LPI) over both faces of the board. `kese/s4_geometry/solder_mask.py`
 builds it around the openings that `kese/s3_resolve/mask.py` works out; the settings are in
@@ -9,20 +9,20 @@ it on to have it in the files. The openings still decide where the finish goes e
 
 ![The same twelve boards in a visual-mode GLB](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/mask_2_colors_visual.webp)
 
-## 15.1 KiCad's Mask Layers Are Negative
+## 16.1 KiCad's Mask Layers Are Negative
 
 Whatever is drawn on `F.Mask` / `B.Mask` is an **opening**, not mask. KESE builds, per side:
 
 ```math
-M_\sigma = \left( \left( O \setminus B_\sigma \right) \setminus Q_\sigma \right) \cap \left( O \ominus p \right) \qquad (15.1)
+M_\sigma = \left( \left( O \setminus B_\sigma \right) \setminus Q_\sigma \right) \cap \left( O \ominus p \right) \qquad (16.1)
 ```
 
 | Symbol | Meaning | Parameter |
 |---|---|---|
 | $`M_\sigma`$ | mask region on side $`\sigma`$ (`F` or `B`) | |
-| $`O`$ | board outline, equation (10.3) | |
-| $`B_\sigma`$ | bores of every hole that reaches side $`\sigma`$, equation (11.4) | |
-| $`Q_\sigma`$ | the mask openings on side $`\sigma`$, equation (15.2) | |
+| $`O`$ | board outline, equation (11.3) | |
+| $`B_\sigma`$ | bores of every hole that reaches side $`\sigma`$, equation (12.4) | |
+| $`Q_\sigma`$ | the mask openings on side $`\sigma`$, equation (16.2) | |
 | $`p`$ | edge pull-back | `SolderMask.MASK_EDGE_PULLBACK_MM` |
 
 The openings are:
@@ -30,18 +30,18 @@ The openings are:
 | Opening | Size |
 |---|---|
 | every pad that lists the mask layer (`F.Mask`, `B.Mask`, `*.Mask`) | the pad shape grown by its mask margin: the pad's own `solder_mask_margin`, else the footprint's, else the board's pad-to-mask clearance, or `SolderMask.PAD_TO_MASK_CLEARANCE_MM` when set; a negative margin shrinks it at most to nothing (half its smaller side); a pad on no copper layer (a mask-only opening) is used as drawn, with no margin, as KiCad's `PAD::GetSolderMaskExpansion` does |
-| every untented via (see [via tenting](Copper-And-Traces.md#1132-via-tenting)) | the via pad grown by the same clearance: the board's, or `SolderMask.PAD_TO_MASK_CLEARANCE_MM` when set |
+| every untented via (see [via tenting](Copper-And-Traces.md#1232-via-tenting)) | the via pad grown by the same clearance: the board's, or `SolderMask.PAD_TO_MASK_CLEARANCE_MM` when set |
 | every track, arc track and copper drawing that the mask leaves bare (KiCad 9 and later: it lists both layers, `(layers "F.Cu" "F.Mask")`; only `F.Cu` is bared by `F.Mask` and `B.Cu` by `B.Mask`) | its copper shape grown by its mask margin: its own `solder_mask_margin`, else the board's pad-to-mask clearance, or `SolderMask.PAD_TO_MASK_CLEARANCE_MM` when set. As in KiCad, a negative margin narrows a stroke at most to nothing; the opening of a filled polygon or square-cornered rectangle is never smaller than its inside, while a filled circle or rounded rectangle shrinks by the part of the margin past half its stroke (KiCad's `EDA_SHAPE::TransformShapeToPolygon`) |
 | graphics, text and zone fills drawn on the mask layer | as drawn |
 
 Together:
 
 ```math
-Q_\sigma = \left( \bigcup_{\text{pads}} \left( P \oplus m_P \right) \cup \bigcup_{\text{open vias}} \left( V \oplus c \right) \cup \bigcup_{\text{bare}} \left( T \oplus m_T \right) \cup \bigcup_{\text{drawn}} G \right) \cap O \qquad (15.2)
+Q_\sigma = \left( \bigcup_{\text{pads}} \left( P \oplus m_P \right) \cup \bigcup_{\text{open vias}} \left( V \oplus c \right) \cup \bigcup_{\text{bare}} \left( T \oplus m_T \right) \cup \bigcup_{\text{drawn}} G \right) \cap O \qquad (16.2)
 ```
 
 ```math
-m_P = \begin{cases} m_{\mathrm{pad}} & \text{if the pad gives one} \\ m_{\mathrm{fp}} & \text{else if the footprint gives one} \\ c & \text{otherwise} \end{cases} \qquad (15.3)
+m_P = \begin{cases} m_{\mathrm{pad}} & \text{if the pad gives one} \\ m_{\mathrm{fp}} & \text{else if the footprint gives one} \\ c & \text{otherwise} \end{cases} \qquad (16.3)
 ```
 
 | Symbol | Meaning | Parameter |
@@ -63,7 +63,7 @@ openings are grown by $`w/2`$ (less 1 nm), joined, shrunk back with chamfered co
 exact openings added back:
 
 ```math
-Q'_\sigma = Q_\sigma \cup \left( \left( Q_\sigma \oplus \tfrac{w}{2} \right) \ominus \tfrac{w}{2} \right) \qquad (15.2b)
+Q'_\sigma = Q_\sigma \cup \left( \left( Q_\sigma \oplus \tfrac{w}{2} \right) \ominus \tfrac{w}{2} \right) \qquad (16.2b)
 ```
 
 Only the webs this fills are added; the hairlines where the grown and shrunk curves miss the exact
@@ -77,30 +77,30 @@ than $`w/2`$ meet only when they are less than $`w`$ apart, so no web closes bet
 the whole layer at once gives, with the same vertices, and the openings close the same region; on
 CIAA ACC the front takes 4.3 s where the whole layer took 9.8 s.
 
-## 15.2 Conformal Mask
+## 16.2 Conformal Mask
 
 ![Board 17_mask_silk from the top with a dashed box over a trace, and the boxed region cut across the trace: the mask flat on the laminate, climbing the trace's side and lying on its top](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/mask_3_conformal.webp)
 
 LPI mask follows the copper: it is thin on top of a trace and thicker on the bare laminate
-beside it, and it climbs the side of every trace. KESE splits the mask region of equation (15.1)
+beside it, and it climbs the side of every trace. KESE splits the mask region of equation (16.1)
 into three regions with the outer copper $`C_\sigma`$ of that side:
 
 ```math
-M^{\mathrm{flat}} = M_\sigma \setminus \left( C_\sigma \oplus m_L \right) \qquad (15.4)
+M^{\mathrm{flat}} = M_\sigma \setminus \left( C_\sigma \oplus m_L \right) \qquad (16.4)
 ```
 
 ```math
-M^{\mathrm{top}} = M_\sigma \cap C_\sigma \qquad (15.5)
+M^{\mathrm{top}} = M_\sigma \cap C_\sigma \qquad (16.5)
 ```
 
 ```math
-M^{\mathrm{wall}} = M_\sigma \cap \left( \left( C_\sigma \oplus m_L \right) \setminus C_\sigma \right) \qquad (15.6)
+M^{\mathrm{wall}} = M_\sigma \cap \left( \left( C_\sigma \oplus m_L \right) \setminus C_\sigma \right) \qquad (16.6)
 ```
 
 and extrudes them, on the `F` side, over
 
 ```math
-z^{\mathrm{flat}} \in \left[ \frac{L}{2},\ \frac{L}{2} + m_L \right], \qquad z^{\mathrm{top}} \in \left[ \frac{L}{2} + t_{\mathrm{out}},\ \frac{L}{2} + t_{\mathrm{out}} + m_C \right], \qquad z^{\mathrm{wall}} \in \left[ \frac{L}{2},\ \frac{L}{2} + t_{\mathrm{out}} + m_C \right] \qquad (15.7)
+z^{\mathrm{flat}} \in \left[ \frac{L}{2},\ \frac{L}{2} + m_L \right], \qquad z^{\mathrm{top}} \in \left[ \frac{L}{2} + t_{\mathrm{out}},\ \frac{L}{2} + t_{\mathrm{out}} + m_C \right], \qquad z^{\mathrm{wall}} \in \left[ \frac{L}{2},\ \frac{L}{2} + t_{\mathrm{out}} + m_C \right] \qquad (16.7)
 ```
 
 On the `B` side every z is mirrored ($`z \to -z`$).
@@ -113,8 +113,8 @@ On the `B` side every z is mirrored ($`z \to -z`$).
 | $`C_\sigma`$ | all outer copper of side $`\sigma`$, every net | |
 | $`m_L`$ | mask thickness over laminate | `SolderMask.MASK_OVER_LAMINATE_MM` |
 | $`m_C`$ | mask thickness over copper | `SolderMask.MASK_OVER_COPPER_MM` |
-| $`t_{\mathrm{out}}`$ | finished outer copper thickness, equation (7.3) | |
-| $`L`$ | laminate thickness, equation (7.1) | |
+| $`t_{\mathrm{out}}`$ | finished outer copper thickness, equation (8.3) | |
+| $`L`$ | laminate thickness, equation (8.1) | |
 
 The wall's outer edge is rounded with `MASK_WALL_QUAD_SEGS` segments per quarter circle.
 
@@ -127,8 +127,8 @@ vertices with the wall round after round. A piece of $`M^{\mathrm{top}}`$ narrow
 `MASK_OVER_COPPER_HAIRLINE_MM` (1 µm) everywhere is left out, and `report.txt` counts them:
 `solder mask: 8895 slivers on the copper narrower than 0.002 mm left out (F.Mask)`. Each is added
 to the opening beside it, so the finish covers it as it covers the rest of the pad
-([Finish](Finish.md#132-where-the-finish-goes)), and no ink is printed on it
-([Silkscreens](Silkscreens.md#141-what-is-drawn)), which would stand on mask that is not there.
+([Finish](Finish.md#142-where-the-finish-goes)), and no ink is printed on it
+([Silkscreens](Silkscreens.md#151-what-is-drawn)), which would stand on mask that is not there.
 The mask is worked out with its switch off too, so the finish reaches those pads' edges either way.
 
 In simulation mode all three go into one part per side, `Top Solder Mask` / `Bottom Solder Mask`.
@@ -136,7 +136,7 @@ In visual mode the **top** region becomes its own part,
 `Top Mask over Copper` / `Bottom Mask over Copper`, with its own colour
 ([Output Modes](Output-Modes.md)).
 
-### 15.2.1 Thickness
+### 16.2.1 Thickness
 
 ![Board 14_stackup_full cut through a via at true scale with every layer labelled, and the top and bottom faces enlarged with rulers on the mask, the copper and the dielectrics](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/mask_4_thickness.webp)
 
@@ -147,16 +147,16 @@ stack-up (normally `F.Mask`) is used for both values on both faces; a different 
 thickness is ignored. `report.txt` notes the values and their source:
 `solder mask: 0.01 mm over laminate, 0.01 mm over copper (stackup)`.
 
-## 15.3 Edge Pull-Back
+## 16.3 Edge Pull-Back
 
 ![Board 17_mask_silk from the top with a dashed box on its right edge, the edge seen from outside, and its top corner close up: the mask ends 5 µm before the edge over a strip of bare laminate](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/mask_5_edge_pullback.webp)
 
 The mask, and the silkscreen on it, stop `MASK_EDGE_PULLBACK_MM` (5 µm) short of the board edge:
-the $`\cap (O \ominus p)`$ term of equation (15.1).
+the $`\cap (O \ominus p)`$ term of equation (16.1).
 Fabricators pull both back from routed edges, and the small step also keeps `<model-viewer>`
 from treating a translucent mask flush with the board edge as a baked shadow.
 
-## 15.4 Over Holes
+## 16.4 Over Holes
 
 ![Board 17_mask_silk from the top with a dashed box on its tented via, the via cut through its centre, and the top of the hole close up: the mask covers the via pad and stops at the edge of the open bore](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/mask_6_over_holes.webp)
 
@@ -164,7 +164,7 @@ The mask is removed over the open bore of every hole that reaches that side (the
 plated wall, or the whole drill of an NPTH), so no mask floats over a hole. A tented via keeps its
 mask over the annular ring; its bore is still open.
 
-## 15.5 Settings
+## 16.5 Settings
 
 | Name | Default | Range | Meaning |
 |---|---|---|---|
@@ -173,9 +173,9 @@ mask over the annular ring; its bore is still open.
 | `USE_STACKUP_MASK_THICKNESS` | `True` | bool | The first mask thickness found in the stack-up (normally `F.Mask`'s) wins, for both values on both faces |
 | `MASK_EDGE_PULLBACK_MM` | `0.005` | mm ≥ 0 | Mask and silk stop this far from the edge |
 | `PAD_TO_MASK_CLEARANCE_MM` | `None` | None or mm ≥ 0 | Board-wide clearance around pads; `None` follows Board Setup. A pad's or footprint's own `solder_mask_margin` still wins |
-| `MASK_MIN_WIDTH_MM` | `None` | None or mm ≥ 0 | Narrowest web of mask kept between two openings, equation (15.2b); `None` follows Board Setup (`solder_mask_min_width`), 0 keeps every web |
+| `MASK_MIN_WIDTH_MM` | `None` | None or mm ≥ 0 | Narrowest web of mask kept between two openings, equation (16.2b); `None` follows Board Setup (`solder_mask_min_width`), 0 keeps every web |
 | `MASK_WALL_QUAD_SEGS` | `4` | int ≥ 1 | Curve quality of the walls beside traces |
-| `MASK_OVER_COPPER_HAIRLINE_MM` | `1e-3` | mm ≥ 0 | A piece of mask on top of copper narrower than twice this is left out, and the finish covers it instead (15.2); 0 keeps every one |
+| `MASK_OVER_COPPER_HAIRLINE_MM` | `1e-3` | mm ≥ 0 | A piece of mask on top of copper narrower than twice this is left out, and the finish covers it instead (16.2); 0 keeps every one |
 
 | Previous | Next |
 |:---|---:|

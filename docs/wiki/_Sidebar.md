@@ -4,6 +4,7 @@
 - [Getting Started](Getting-Started.md)
 - [Project Capabilities](Project-Capabilities.md)
 - [Examples](Examples.md)
+- [Time Distribution](Time-Distribution.md)
 
 **Working Principle**
 - [Working Principle](Working-Principle.md)
