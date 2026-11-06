@@ -7,28 +7,35 @@
 
   "fontLastCodepoint": 11903,
 
-  "_hidden": "Not shown and not imported: folders of a desktop run, how many threads, the terminal status line, the custom font file (the web has only KiCad's font), and the preset table (offered as the Preset buttons).",
-  "hidden": ["Run.INPUT_DIR", "Run.OUTPUT_DIR", "Run.WORKERS", "Run.SHOW_PROGRESS", "Silkscreen.FONT_FILE", "Run.PRESETS", "Finish.FINISH_NAME_ALIASES"],
+  "_hidden": "Not shown and not imported: folders of a desktop run, the terminal status line, the custom font file (the web has only KiCad's font), and the preset table (offered as the Preset buttons).",
+  "hidden": ["Run.INPUT_DIR", "Run.OUTPUT_DIR", "Run.SHOW_PROGRESS", "Silkscreen.FONT_FILE", "Presets.PRESETS", "Finish.FINISH_NAME_ALIASES"],
 
   "_forced": "How the browser runs KESE: one worker (there are no threads), no status line.",
-  "forced": {"Run.WORKERS": 1, "Run.SHOW_PROGRESS": false},
+  "forced": {"Parallel.WORKERS": 1, "Run.SHOW_PROGRESS": false},
+
+  "_desktopOnly": "Shown greyed out with a note: the settings of threads and worker processes, which the browser's single-core Python cannot use yet. Their values stay as in the files, also in Export.",
+  "desktopOnly": ["Parallel.WORKERS", "Parallel.PROCESS_WORKERS", "Parallel.PROCESS_MIN_COORDINATES", "Parallel.PROCESS_MIN_NETS", "Parallel.GIVE_BACK_MEMORY", "Parallel.VERIFY_POLYGONS_PER_THREAD", "Parallel.VERIFY_GROUPS_PER_WORKER", "Parallel.WORKER_STOP_WAIT_S"],
+  "desktopOnlyNote": "Uses threads and worker processes: support in the browser is in the works. The browser runs KESE on one core; the desktop program is roughly 6 to 10 times faster on the example boards.",
 
   "_outside": "Shown outside the sections: Mode is the big switch, the file formats are the Download switches, Verify sits beside Generate.",
   "mode": "Run.MODE",
   "formats": "Run.FILE_FORMAT",
-  "verify": "Run.VERIFY",
+  "verify": "Verifier.VERIFY",
   "_units": "The run's length unit, for the board size under the preview.",
   "units": "Run.UNITS",
 
-  "_basic": "Basic: one section per parameter file, in KESE's order. Geometry and Colorization are in Advanced only. Advanced shows every parameter, these included.",
+  "_basic": "Basic: one section per parameter file, in KESE's order. Geometry, Colorization, Parallel and Verifier are in Advanced only. Advanced shows every parameter, these included.",
   "basic": {
-    "Run": ["Run.UNITS", "Run.ORIGIN", "Run.STEP_EXACT_ARCS"],
+    "Run": ["Run.UNITS", "Run.ORIGIN"],
     "Board": ["Board.BOARD_ENABLED", "Board.DIELECTRIC_GROUPING", "Board.BOARD_THICKNESS_MM", "Board.DEFAULT_EPSILON_R", "Board.DEFAULT_LOSS_TANGENT", "Board.RESIN_FILL_BETWEEN_INNER_COPPER", "Board.INCLUDE_NON_PLATED_HOLES"],
     "Copper": ["Copper.COPPER_ENABLED", "Copper.COPPER_GROUPING", "Copper.VIA_WALL_MM", "Copper.PTH_WALL_MM", "Copper.ETCH_FACTOR", "Copper.EDGE_PLATING", "Copper.CASTELLATION"],
     "SolderMask": ["SolderMask.SOLDER_MASK_ENABLED", "SolderMask.MASK_OVER_COPPER_MM", "SolderMask.MASK_OVER_LAMINATE_MM", "SolderMask.PAD_TO_MASK_CLEARANCE_MM", "Copper.VIA_TENTING"],
     "Silkscreen": ["Silkscreen.SILKSCREEN_ENABLED", "Silkscreen.SILK_THICKNESS_MM", "Silkscreen.SILKSCREEN_OVER_COPPER", "Silkscreen.SILK_LAYERS"],
-    "Finish": ["Finish.FINISH_ENABLED", "Finish.FINISH_TYPE", "Finish.FINISH_GROUPING", "Finish.FINISH_BEFORE_SOLDER_MASK"]
+    "Finish": ["Finish.FINISH_ENABLED", "Finish.FINISH_TYPE", "Finish.FINISH_GROUPING", "Finish.FINISH_BEFORE_SOLDER_MASK"],
+    "Step": ["Step.STEP_EXACT_ARCS"]
   },
+  "_whenFormat": "A section shown only while its file format is ticked under Download, in Basic and Advanced alike (its values are kept while hidden).",
+  "whenFormat": {"Step": "step"},
   "_crossSection": "How the cross-section draws the cut faces: \"stencil\" (SectionStencil.js, drawn by the GPU in every frame), \"geometry\" (SectionGeometry.js, the exact section worked out on the CPU, a step behind the slider) or null (the cut without faces).",
   "crossSection": "stencil",
 
@@ -36,8 +43,8 @@
   "basicOpen": [],
 
   "_titles": "Section titles. Run is called Output on the page.",
-  "sectionTitles": {"Run": "Output", "Board": "Board", "Copper": "Copper", "SolderMask": "Solder Mask", "Silkscreen": "Silkscreen", "Finish": "Finish", "Geometry": "Geometry", "Color": "Colorization"},
-  "presetTitles": {"hfss": "HFSS", "cst": "CST", "openems": "openEMS", "viewer": "Viewer"},
+  "sectionTitles": {"Run": "Output", "Board": "Board", "Copper": "Copper", "SolderMask": "Solder Mask", "Silkscreen": "Silkscreen", "Finish": "Finish", "Geometry": "Geometry", "Color": "Colorization", "Parallel": "Parallel", "Step": "STEP", "Verifier": "Verifier", "Presets": "Presets"},
+  "presetTitles": {"freecad": "FreeCAD", "elmer": "Elmer", "calculix": "CalculiX", "openems": "openEMS", "viewer": "Viewer", "blender_glb": "Blender GLB", "blender_obj": "Blender OBJ"},
 
   "_preview": "Which generated file the preview opens first in each mode, when several were made.",
   "previewOrder": {"simulation": ["step", "stl", "glb", "obj"], "visual": ["glb", "obj"]},

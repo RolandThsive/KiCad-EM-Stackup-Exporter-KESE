@@ -1,5 +1,5 @@
 /* stepReader.js - reads the STEP files KESE writes (AP214: faces on PLANE or CYLINDRICAL_SURFACE, edges on
-   LINE or CIRCLE, as Run.STEP_EXACT_ARCS writes them) into triangle meshes: one {name, color, positions} per
+   LINE or CIRCLE, as Step.STEP_EXACT_ARCS writes them) into triangle meshes: one {name, color, positions} per
    solid.  Not a general STEP reader. */
 import earcut from './earcut.js';
 
