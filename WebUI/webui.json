@@ -7,8 +7,8 @@
 
   "fontLastCodepoint": 11903,
 
-  "_hidden": "Not shown and not imported: folders of a desktop run, the terminal status line, the custom font file (the web has only KiCad's font), and the preset table (offered as the Preset buttons).",
-  "hidden": ["Run.INPUT_DIR", "Run.OUTPUT_DIR", "Run.SHOW_PROGRESS", "Silkscreen.FONT_FILE", "Presets.PRESETS", "Finish.FINISH_NAME_ALIASES"],
+  "_hidden": "Not shown and not imported: folders of a desktop run, the terminal status line, the custom font file (the web has only KiCad's font), the preset table (offered as the Preset buttons), and the tested KiCad file-format range (it only adds a warning).",
+  "hidden": ["Run.INPUT_DIR", "Run.OUTPUT_DIR", "Run.SHOW_PROGRESS", "Silkscreen.FONT_FILE", "Presets.PRESETS", "Finish.FINISH_NAME_ALIASES", "Run.KICAD_VERSION_MIN", "Run.KICAD_VERSION_MAX"],
 
   "_forced": "How the browser runs KESE: one worker (there are no threads), no status line.",
   "forced": {"Parallel.WORKERS": 1, "Run.SHOW_PROGRESS": false},
@@ -36,6 +36,9 @@
   },
   "_whenFormat": "A section shown only while its file format is ticked under Download, in Basic and Advanced alike (its values are kept while hidden).",
   "whenFormat": {"Step": "step"},
+  "_namesFrom": "A table whose values name entries of another table: each value is picked from that table's names. layerNamesFrom: the same for a table of (name, mm) layers.",
+  "namesFrom": {"Finish.FINISH_NAME_ALIASES": "Finish.FINISH_TYPES"},
+  "layerNamesFrom": {"Finish.FINISH_TYPES": "Finish.FINISH_CONDUCTIVITY_S_PER_M"},
   "_crossSection": "How the cross-section draws the cut faces: \"stencil\" (SectionStencil.js, drawn by the GPU in every frame), \"geometry\" (SectionGeometry.js, the exact section worked out on the CPU, a step behind the slider) or null (the cut without faces).",
   "crossSection": "stencil",
 
