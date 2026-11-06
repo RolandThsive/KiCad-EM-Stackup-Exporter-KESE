@@ -15,15 +15,17 @@ def vertical_hits(vertices, faces, xy):
     lo, hi = xy.min(axis=0), xy.max(axis=0)
     cells = max(1, int(np.sqrt(len(xy))))
     size = np.maximum((hi - lo) / cells, 1e-12)
-    cell = np.minimum(((xy - lo) / size).astype(np.int64), cells - 1)
+    # cell numbers in np.intp, numpy's index type: np.repeat takes its counts only in that type, which
+    # is 32 bits on a 32-bit Python (Pyodide in the browser), so counts of np.int64 fail there
+    cell = np.minimum(((xy - lo) / size).astype(np.intp), cells - 1)
     key = cell[:, 0] * cells + cell[:, 1]
     order = np.argsort(key, kind="stable")
     start = np.searchsorted(key[order], np.arange(cells * cells + 1))
     out, step = ([], [], []), P.Parallel.VERIFY_TRIANGLES_AT_A_TIME
     for a in range(0, len(tri), step):
         t = tri[a:a + step]
-        c0 = np.clip(((t[:, :, :2].min(axis=1) - lo) / size).astype(np.int64), 0, cells - 1)
-        c1 = np.clip(((t[:, :, :2].max(axis=1) - lo) / size).astype(np.int64), 0, cells - 1)
+        c0 = np.clip(((t[:, :, :2].min(axis=1) - lo) / size).astype(np.intp), 0, cells - 1)
+        c1 = np.clip(((t[:, :, :2].max(axis=1) - lo) / size).astype(np.intp), 0, cells - 1)
         ok = (t[:, :, :2].max(axis=1) >= lo).all(axis=1) & (t[:, :, :2].min(axis=1) <= hi).all(axis=1)
         nx, ny = c1[:, 0] - c0[:, 0] + 1, c1[:, 1] - c0[:, 1] + 1
         n = np.where(ok, nx * ny, 0)
