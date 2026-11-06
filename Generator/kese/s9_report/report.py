@@ -64,8 +64,8 @@ def write_report(path, files, job):
         L.append(f"  {part:36s} {len(mesh.faces):8d} triangles  material {m['name']} {m['color']} alpha {m['alpha']}")
     L.append("")
     L.append("timing")
-    for k, v in job.timings:
-        L.append(f"  {k:14s} {v:7.1f} s")
+    for k, v in job.timings:      # to 0.1 ms: a short stage shows its time
+        L.append(f"  {k:14s} {v:9.4f} s")
     if files.verify_lines:
         L.append("")
         L.extend(files.verify_lines)
