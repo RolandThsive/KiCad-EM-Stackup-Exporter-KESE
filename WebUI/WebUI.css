@@ -29,16 +29,6 @@
   --ease: 0.3s ease;
   --ui-font: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   --mono: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
-  /* copper layers (approved by Roland). The layer colours, --rotor, --via, --via-rim and --edge are also read by
-     BoardPreview.js and WebGUI.js through cssVar(), so keep the names */
-  --top: #D03B2F;
-  --in1: #2E9E4F;
-  --in2: #B8930A;
-  --bottom: #2F6FD0;
-  --rotor: rgba(184, 115, 51, 0.35);
-  --via: #FFC400;                          /* vias: super bright gold */
-  --via-rim: #A87A00;
-  --edge: #333;
   /* classic silver switch track; the knobs (switches and slider thumbs) are brushed aluminium, like old Apple knobs:
      fine concentric grooves over a conic sheen with two bright streaks, a bevelled rim, and a soft shadow */
   --metal-grooves-a: repeating-radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0) 0 0.35px, rgba(255, 255, 255, 0.18) 0.55px, rgba(0, 0, 0, 0) 0.8px);
@@ -89,7 +79,7 @@ html.phone .desktop-only { display: none !important; }
 /* ---- page frame -------------------------------------------------------- */
 #app { display: grid; grid-template-columns: minmax(0, 1fr); grid-template-rows: auto 1fr auto; height: 100vh; padding: 0 16px 6px; gap: 10px; }
 #topbar { position: relative; display: flex; align-items: center; gap: 18px; padding: 12px 0 0; min-height: 56px; }
-/* room for the blog's Home / Back buttons: BloggerPage.html's #coilgen-nav is 16 px from the right edge and holds two
+/* room for the blog's Home / Back buttons: BloggerPage.html's #kese-nav is 16 px from the right edge and holds two
    38 px buttons with an 8 px gap (100 px), plus 12 px of space */
 #topbar h1 { font-size: 26px; white-space: nowrap; transition: opacity var(--ease);
   position: relative; top: -0.08em; }   /* Permanent Marker draws its letters low in the line box: lift them to the switch's centre (2 px at 26 px) */
@@ -231,10 +221,6 @@ html.phone .desktop-only { display: none !important; }
 .field-label .unit { font-weight: normal; color: var(--text-3); }
 /* a field with help text shows the help cursor on its label */
 .field-head[data-help] .field-label { cursor: help; }
-.field-note { color: var(--text-3); font-size: 12px; margin-left: auto; text-align: right; }
-.none-switch { margin-left: auto; }                         /* the None switch of a Basic number field, at the right of its name */
-.group-title.with-note { display: flex; align-items: baseline; }
-.group-title .field-note { text-transform: none; letter-spacing: 0; font-weight: normal; }   /* a note beside a heading reads as normal text */
 .info-dot {
   width: 16px; height: 16px; border-radius: 50%; border: 1px solid var(--text-3); color: var(--text-3);
   font-size: 10.5px; line-height: 14px; text-align: center; cursor: help; flex: none; font-style: normal;
@@ -242,7 +228,6 @@ html.phone .desktop-only { display: none !important; }
 .info-dot:hover { border-color: var(--accent); color: var(--accent); }
 
 /* stepper + slider */
-.num-row { display: flex; align-items: center; gap: 8px; }
 .stepper { display: inline-flex; align-items: stretch; border-radius: 8px; overflow: hidden;
   border: 1px solid rgba(0, 0, 0, 0.12); background: #fff; box-shadow: var(--shadow-btn); flex: none; }
 .stepper button { width: 26px; border: 0; background: transparent; font-size: 16px; color: var(--text-2); cursor: pointer; transition: all var(--ease); }
@@ -264,10 +249,6 @@ input[type=range]:disabled { opacity: 0.4; }
 input[type=range]:disabled::-webkit-slider-thumb, input[type=range]:disabled::-moz-range-thumb { cursor: default; }
 input[type=range]:focus-visible::-webkit-slider-thumb { box-shadow: var(--metal-shadow), 0 0 0 2px var(--accent); }
 input[type=range]:focus-visible::-moz-range-thumb { box-shadow: var(--metal-shadow), 0 0 0 2px var(--accent); }
-.range-wrap { position: relative; flex: 1; display: flex; min-width: 60px; }
-.ticks { position: absolute; left: 0; right: 0; top: 100%; height: 14px; margin-top: -3px; font-size: 10.5px; color: var(--text-3); pointer-events: none; }
-.ticks span { position: absolute; transform: translateX(-50%); line-height: 14px; }
-.field.has-ticks { padding-bottom: 12px; }
 
 /* text input (Advanced) */
 .text-input { font: inherit; border: 1px solid rgba(0, 0, 0, 0.12); border-radius: 8px; padding: 5px 8px;
@@ -286,7 +267,8 @@ input[type=range]:focus-visible::-moz-range-thumb { box-shadow: var(--metal-shad
   backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); transition: all var(--ease);
 }
 .dropdown-btn:hover { background: var(--cream); color: var(--accent); font-weight: 600; }
-.dropdown-btn .arrow { font-size: 18px; line-height: 1; transition: transform var(--ease); margin-left: 8px; }
+.dropdown-btn .arrow { font-size: 18px; line-height: 1; transition: transform var(--ease); margin-left: 8px; flex: none; }
+.dropdown-btn > span:first-child { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }   /* a long name gives way; the arrow stays inside */
 .dropdown.open .dropdown-btn .arrow { transform: rotate(180deg); }
 .dropdown-content {
   position: absolute; left: 0; right: 0; top: calc(100% + 6px); z-index: 50;
@@ -299,34 +281,16 @@ input[type=range]:focus-visible::-moz-range-thumb { box-shadow: var(--metal-shad
 .dropdown-content a:hover, .dropdown-content a.on { background: var(--cream); color: var(--accent); }
 .dropdown-content a.on { font-weight: 600; }
 
-/* Advanced groups (Settings-style cards) */
-/* the rotor-mode blocks fold up (grid rows 1fr -> 0fr animates to the content's real height) */
-.group-card { background: rgba(255, 255, 255, 0.7); border-radius: var(--radius); padding: 2px 12px; margin: 10px 0; box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
-  display: grid; grid-template-rows: 1fr; transition: grid-template-rows 0.35s cubic-bezier(0.32, 0.72, 0, 1), padding 0.35s, opacity 0.35s; }
-.group-inner { min-height: 0; }
-.group-card.collapsed { grid-template-rows: 0fr; padding-top: 0; padding-bottom: 0; opacity: 0.6; }
-.group-card.collapsed .group-inner { overflow: hidden; visibility: hidden; transition: visibility 0s 0.35s; }
-.group-title { font-size: 11px; letter-spacing: 0.5px; text-transform: uppercase; color: var(--text-3); font-weight: 600; margin: 14px 4px -4px; }
-button.group-title { display: flex; align-items: center; gap: 6px; background: none; border: 0; padding: 0; cursor: pointer; font-family: inherit; }
-button.group-title:hover { color: var(--accent); }
-.chevron { width: 0; height: 0; border-left: 4px solid transparent; border-right: 4px solid transparent; border-top: 5px solid currentColor;
-  transition: transform 0.25s ease; }
-button.group-title.collapsed .chevron { transform: rotate(-90deg); }
-.field.inactive { opacity: 0.45; }
 .field.desktop-only > .field-head, .field.desktop-only > .field-body, .field.desktop-only > :not(.desktop-note) { opacity: 0.45; }
 .field.desktop-only [inert] { user-select: none; }
 .desktop-note { margin: 4px 0 0; font-size: 11.5px; color: var(--text-3); font-style: italic; }
 .section-note { margin: 6px 0 4px; padding: 8px 10px; font-size: 12px; line-height: 1.4; color: var(--text-2);
   background: var(--cream); border-radius: 8px; }
-.field.inactive .field-note::after { content: " (not used now)"; }
 .field.changed .field-label::before { content: "●"; color: var(--accent); font-size: 9px; margin-right: 5px; vertical-align: 2px; }
 .reset-one { border: 0; background: none; color: var(--text-3); cursor: pointer; font-size: 12px; padding: 0 2px; }
 .reset-one:hover { color: var(--accent); }
 .mono-name { font-family: var(--mono); font-size: 10.5px; color: var(--text-3); }
 
-/* results under the controls */
-.results { font-size: 12.5px; color: var(--text-2); border-top: 1px dashed var(--divider); padding: 8px 2px 4px; margin-top: 6px; line-height: 1.6; }
-.results b { color: var(--text); font-weight: 600; }
 /* Verify, Reset and Generate on one row (Reset and Generate the same height; Generate takes the rest) */
 .generate-row { display: flex; align-items: center; gap: 10px; padding-top: 8px; border-top: 1px dashed var(--divider); }
 .generate-row .primary-btn { flex: 1; min-width: 0; padding-inline: 10px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }   /* "Loading Python…" stays on one line */
@@ -350,8 +314,6 @@ button.group-title.collapsed .chevron { transform: rotate(-90deg); }
 .canvas-wrap { position: relative; flex: 1; min-height: 0; border-radius: 8px; overflow: hidden;
   background: rgba(255, 255, 255, 0.5); }
 .canvas-wrap canvas { width: 100%; height: 100%; display: block; cursor: grab; }
-.canvas-wrap canvas.dragging { cursor: grabbing; }
-.canvas-wrap canvas.measuring { cursor: crosshair; }
 .canvas-wrap:fullscreen { background: #fff; border-radius: 0; }
 /* the Fullscreen button: icon only, so its size and padding come from .canvas-tools .icon-btn below */
 .fs-btn { border: 0; border-radius: 6px;
@@ -364,7 +326,6 @@ button.group-title.collapsed .chevron { transform: rotate(-90deg); }
 .canvas-tools { display: flex; flex-direction: column;
   align-items: flex-start; gap: 8px; }
 .tool-pair { display: flex; gap: 6px; }
-#origin-slot { display: flex; }
 .canvas-tools .icon-btn:hover { color: var(--accent); }
 .canvas-tools .on { border-color: var(--accent); color: var(--accent); background: var(--cream); }
 .readout { position: absolute; left: 12px; bottom: 10px; font-size: 12px; color: var(--text-2); font-variant-numeric: tabular-nums;
@@ -373,7 +334,6 @@ button.group-title.collapsed .chevron { transform: rotate(-90deg); }
 .stale-badge { white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
   background: rgba(255, 255, 255, 0.92);
   border: 1px solid var(--accent); color: var(--accent); font-size: 12.5px; padding: 4px 12px; border-radius: 14px; box-shadow: var(--shadow-btn); }
-.stale-badge.two-line { white-space: normal; width: max-content; max-width: 150px; text-align: center; line-height: 1.25; padding: 4px 10px; }
 
 
 /* ---- checks (the right column: checks, parts, download) ------------------------------- */
@@ -423,11 +383,6 @@ dialog.confirm p { margin: 0 0 16px; font-size: 16px; font-weight: 600; color: v
 .confirm-buttons { display: flex; gap: 10px; justify-content: center; }
 .confirm-buttons button { min-width: 90px; }
 dialog::backdrop { background: rgba(0, 0, 0, 0.18); }
-#summary-dialog { width: min(1100px, 94vw); max-width: none; }
-#summary-dialog form > .glass-btn { display: block; width: calc(100% - 24px); margin: 4px 12px 0;   /* Close: full width, 12 px in, */
-  font-weight: 600; background: rgba(0, 0, 0, 0.07); border: 2px solid rgba(0, 0, 0, 0.3);   /* bold, a darker grey at rest, */
-  box-shadow: none; }                                                                        /* a 2 px outline and no shadow */
-#summary-dialog form > .glass-btn:hover { background: var(--cream); }
 dialog pre { font-family: var(--mono); font-size: 12px; white-space: pre-wrap; margin: 0 0 12px; max-height: 65vh; overflow: auto; }
 .toast { position: fixed; bottom: 26px; left: 50%; transform: translateX(-50%); z-index: 200; background: rgba(0, 0, 0, 0.78); color: #fff;
   padding: 8px 16px; border-radius: 10px; font-size: 13.5px; }
@@ -477,8 +432,9 @@ dialog pre { font-family: var(--mono); font-size: 12px; white-space: pre-wrap; m
 .table-btn:disabled { opacity: 0.4; cursor: default; }
 .table-body { display: flex; flex-direction: column; gap: 6px; }
 .table-row { display: flex; align-items: center; gap: 8px; justify-content: space-between; }
+.table-body .stepper input, .table-edit .stepper input { width: 92px !important; }   /* every row's number the same width, so the rows line up */
 .table-label { font-size: 13px; color: var(--text-2); }
-/* Colorization: each colour group folds like a section, under a small chevron; the section's content is centred */
+/* Colorization: each colour group folds like a section; the section's content is centred */
 [data-module="Color"] .psec-body { padding: 0 8px 8px; }
 .cgroup > summary { list-style: none; cursor: pointer; display: flex; align-items: center; gap: 8px; margin-bottom: 0; }
 .cgroup > summary::-webkit-details-marker { display: none; }
@@ -495,7 +451,8 @@ dialog pre { font-family: var(--mono); font-size: 12px; white-space: pre-wrap; m
 .board-color-value { font-weight: 600; }
 .table-sub { font-size: 12px; font-weight: 600; color: var(--text-2); margin-top: 4px; }
 .table-cols { font-size: 11.5px; color: var(--text-3); }
-.layer-row .dropdown, .layer-row .text-input { flex: 1; min-width: 0; }
+.layer-row .dropdown, .layer-row .text-input { flex: 1; min-width: 96px; }
+.layer-row .dropdown-btn { padding: 6px 10px; }
 .table-note { margin: 0; }
 .table-x { border: none; background: none; font-size: 17px; line-height: 1; color: var(--text-3); cursor: pointer; padding: 0 2px; }
 .table-x:hover:not(:disabled) { color: var(--accent); }
@@ -507,16 +464,14 @@ dialog pre { font-family: var(--mono); font-size: 12px; white-space: pre-wrap; m
 .swatch input[type=color] { position: absolute; inset: 0; width: 100%; height: 100%; opacity: 0; cursor: pointer; border: none; padding: 0; }
 .swatch-hex { font-family: var(--mono); font-size: 12px; font-weight: 600; letter-spacing: 0.04em; pointer-events: none; }
 .table-body > .table-row > .swatch { max-width: none; }
-.field-head .mono-name.field-note { margin-left: auto; }
 /* Advanced: the control, then the parameter's name at the right of the same row */
 .field-body { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 10px; }   /* no room beside a wide control: the name goes under it, at the right */
 .field-body > :first-child { min-width: 0; }
-.field-body > .auto-row, .field-body > .stepper, .field-body > .segmented, .field-body > .switch-row, .field-body > .num-row { flex: none; }   /* a control keeps its size; the name beside it wraps */
+.field-body > .auto-row, .field-body > .stepper, .field-body > .segmented, .field-body > .switch-row { flex: none; }   /* a control keeps its size; the name beside it wraps */
 .field-body > .dropdown, .field-body > .table-edit, .field-body > .dropdown .dropdown-btn, .field-body > .text-input, .field-body > .multi-row { flex: 1; }
 .field-name { margin-left: auto; flex: 0 1 auto; max-width: 48%; text-align: right; line-height: 1.3; overflow-wrap: normal; }   /* wraps at the underscores (<wbr>), never cut */
 .field-body:has(> .table-edit, > .multi-row) { align-items: flex-start; }
 .field-body:has(> .table-edit) .field-name, .field-body:has(> .multi-row) .field-name { padding-top: 9px; }
-.field.inactive .field-name::after { content: " (not used now)"; }
 #sections-note { margin: 8px 0 4px; }
 #run-note { margin: 6px 0 0; font-size: 12px; }
 #run-note:empty { display: none; }

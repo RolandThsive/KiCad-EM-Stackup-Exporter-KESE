@@ -25,7 +25,7 @@ export function readKeseStep(text, onProgress = () => {}) {
   // 2. names: PRODUCT <- FORMATION <- PRODUCT_DEFINITION <- PRODUCT_DEFINITION_SHAPE <- SHAPE_DEFINITION_REPRESENTATION -> ADVANCED_BREP_SHAPE_REPRESENTATION -> solid
   //    colours: STYLED_ITEM -> ... -> COLOUR_RGB, keyed by the solid
   const nameOfSolid = new Map(), colorOfSolid = new Map();
-  for (const [id, [type, a]] of ent) {
+  for (const [, [type, a]] of ent) {
     if (type === 'SHAPE_DEFINITION_REPRESENTATION') {
       const [pds, rep] = refs(a);
       const pd = refs(ent.get(pds)[1])[0], form = refs(ent.get(pd)[1])[0], prod = refs(ent.get(form)[1])[0];

@@ -24,6 +24,7 @@ const state = {
   desc: null, params: [], byKey: {}, values: {}, start: {},
   ui: "basic", open: new Set(CFG.basicOpen || []), lastNumbers: {}, noneEditing: new Set(),
   formatsByMode: {},                      // the formats last ticked in each mode
+  preset: null,                           // the preset last clicked, lit while its values hold
   board: null,                            // {name, bytes, meta}
   result: null, runValues: null, stale: false, showInfo: false, busy: false, ready: false,
   preview: { key: null }, materials: null, version: null,
@@ -332,10 +333,7 @@ function widget(p) {
    a name (a dropdown when the names come from another table), a few named values (a material), or a list of
    (metal, mm) layers. */
 const HEX = /^#[0-9a-f]{6}$/i;
-// a table whose values name entries of another table: its value is picked from that table's names
-const NAMES_FROM = { "Finish.FINISH_NAME_ALIASES": "Finish.FINISH_TYPES" };
-// a table whose (name, number) layers name entries of another table
-const LAYER_NAMES_FROM = { "Finish.FINISH_TYPES": "Finish.FINISH_CONDUCTIVITY_S_PER_M" };
+const NAMES_FROM = CFG.namesFrom || {}, LAYER_NAMES_FROM = CFG.layerNamesFrom || {};   // see webui.json
 const isLayers = (x) => Array.isArray(x) && x.every((r) => Array.isArray(r) && r.length === 2 && typeof r[0] === "string" && typeof r[1] === "number");
 const isScalar = (x) => typeof x === "number" || typeof x === "string" || typeof x === "boolean";
 function tableShape(v) {
@@ -474,11 +472,9 @@ const DESKTOP_ONLY = () => new Set(CFG.desktopOnly || []);
    stack-up colour switch.  Each group is one dropdown; its
    entries are the parts' materials and, with stack-up colours on, the colour names the board's stack-up can use. */
 function colorGroups(keys) {
-  const V = state.values, mats = V["Color.MATERIALS"] || {}, visual = V[CFG.mode] === "visual";
+  const V = state.values, mats = V["Color.MATERIALS"] || {}, visual = V[CFG.mode] === VISUAL;
   const stackup = !!V["Color.USE_STACKUP_COLORS"], has = (k) => k in mats;
   const mat = (k, label = k) => (has(k) ? { param: "Color.MATERIALS", key: k, label } : null);
-  const names = (param, suffix = "") => Object.keys(V[param] || {}).map((k) => ({ param, key: k, label: `${k.replace(/\b\w/g, (c) => c.toUpperCase())}${suffix}` }));
-  const fallback = (parts) => parts.map((k) => mat(k, stackup ? `${k} (if the board names no colour)` : k));
   const layered = !visual && V["Board.DIELECTRIC_GROUPING"] === "layer" && has("Board_core");
   const on = (k) => V[k] !== false;
   // With Use Stackup Colors on, the colour of a side's mask / silk comes from the board's stack-up when it names one
@@ -499,7 +495,7 @@ function colorGroups(keys) {
     on("Copper.COPPER_ENABLED") && { title: "Copper Colors", tip: "Traces, pads, zones and the plating of holes",
       items: visual ? [mat("Copper_exposed", "Copper")] : [mat("Copper", "Copper"), mat("Plating", "Hole plating")] },
     on("Finish.FINISH_ENABLED") && { title: "Finish Colors", tip: "The finish metals on the exposed copper (Finish Enabled is on)",
-      items: metals.length ? metals.map((m) => mat(m)) : ["Nickel", "Gold", "Palladium", "Tin", "Silver", "OSP"].map((m) => mat(m)) },
+      items: metals.map((m) => mat(m)) },
     // One group per side, for MATERIALS' "<side> Solder Mask" (and, in visual mode, "<side> Mask over Copper").
     // Its dropdown picks a colour by name from STACKUP_MASK_COLORS; the over-copper shade of the same name
     // (STACKUP_MASK_OVER_COPPER_COLORS) is set with it.  With Use Stackup Colors on, a side shows only when the
@@ -617,16 +613,19 @@ function presetRow() {
   const names = Object.keys(presets);
   if (!names.length) return null;
   const seg = el("div", { class: "segmented wide" + (names.length > 4 ? " presets-wrap" : "") });
-  // the preset these values match; where several do (Elmer is FreeCAD with no finish), the one that sets the most
+  // the preset these values match: the one last clicked while it still does, else (Elmer is FreeCAD with no
+  // finish, so both can) the one that sets the most
   const fits = names.filter((n) => Object.entries(presets[n]).every(([k, x]) => same(state.values[k], x)));
   const most = Math.max(0, ...fits.map((n) => Object.keys(presets[n]).length));
+  const lit = fits.includes(state.preset) ? state.preset : fits.find((n) => Object.keys(presets[n]).length === most);
   for (const n of names) {
-    const match = fits.includes(n) && Object.keys(presets[n]).length === most;
+    const match = n === lit;
     const tip = `Preset ${n} (parameters/presets.py): ` + Object.entries(presets[n]).map(([k, x]) => `${k.split(".")[1]} = ${showValue(x)}`).join(", ");
     seg.append(el("button", { type: "button", class: match ? "on" : "", "data-tip": tip,
       onclick: () => {
         state.formatsByMode[state.values[CFG.mode]] = clone(state.values[CFG.formats]);   // as a switch of mode would
-        setValues(presets[n], "preset"); toast(`Preset ${(CFG.presetTitles || {})[n] || n}`); } }, (CFG.presetTitles || {})[n] || n));
+        state.preset = n;
+        setValues(presets[n], "preset"); renderSections(); toast(`Preset ${(CFG.presetTitles || {})[n] || n}`); } }, (CFG.presetTitles || {})[n] || n));
   }
   return el("div", { class: "field" }, el("div", { class: "field-head" }, el("span", { class: "field-label" }, "Preset")), seg);
 }
@@ -684,7 +683,13 @@ function setUI(ui) {
 }
 
 /* ---- mode and formats ------------------------------------------------------------------------- */
-const visualOnly = () => new Set(state.desc.visualFormats);
+const VISUAL = "visual";                // kese/job.py MODES: the mode that writes a skin, in VISUAL_FORMATS only
+const writable = (mode, f) => mode !== VISUAL || state.desc.visualFormats.includes(f);
+// the formats `mode` can write out of `formats`, in KESE's order; never none: else the first one it can write
+function formatsFor(mode, formats) {
+  const ok = state.desc.formats.filter((f) => formats.includes(f) && writable(mode, f));
+  return ok.length ? ok : [state.desc.formats.find((f) => writable(mode, f))];
+}
 function renderMode() {
   const box = $("mode-switch"), mode = state.values[CFG.mode];
   box.replaceChildren();
@@ -696,18 +701,13 @@ function pickMode(m) {
   const now = state.values[CFG.mode];
   if (m === now) return;
   state.formatsByMode[now] = clone(state.values[CFG.formats]);
-  let formats = state.formatsByMode[m] || clone(state.values[CFG.formats]);
-  if (m === "visual") {                                          // KESE writes only these formats in visual mode
-    formats = formats.filter((f) => visualOnly().has(f));
-    if (!formats.length) formats = [state.desc.visualFormats[0]];
-  }
-  setValues({ [CFG.mode]: m, [CFG.formats]: formats }, "mode");
+  setValues({ [CFG.mode]: m, [CFG.formats]: formatsFor(m, state.formatsByMode[m] || state.values[CFG.formats]) }, "mode");
 }
 function renderFormats() {
   const box = $("formats"), mode = state.values[CFG.mode], on = new Set(state.values[CFG.formats] || []);
   box.replaceChildren();
   for (const f of state.desc.formats) {
-    const allowed = mode !== "visual" || visualOnly().has(f);
+    const allowed = writable(mode, f);
     const cb = el("input", { type: "checkbox", disabled: !allowed }); cb.checked = on.has(f) && allowed;
     cb.addEventListener("change", () => {
       const now = new Set(state.values[CFG.formats] || []);
@@ -857,7 +857,7 @@ async function showPreview() {
   const ro = $("readout");
   ro.textContent = `Reading ${c.label}…`;
   const size = c.files.reduce((s, f) => s + f.size, 0);
-  viewer.closedSolids = state.runValues[CFG.mode] !== "visual";     // a visual model is a skin: its cut has no faces
+  viewer.closedSolids = state.runValues[CFG.mode] !== VISUAL;     // a visual model is a skin: its cut has no faces
   try {
     let parts;
     if (c.format === "glb") parts = await viewer.loadGLB(await store.bytes(c.key));
@@ -1023,6 +1023,10 @@ async function importFiles(files) {
   const n = Object.keys(found).length;
   if (!n) { toast(ignored.length ? `No settings of this version found (ignored: ${ignored.join(", ")})` : "No parameter values found in that file", 6000); return; }
   state.noneEditing.clear();
+  if (CFG.formats in found || CFG.mode in found) {         // formats this mode can write, at least one
+    const mode = found[CFG.mode] ?? state.values[CFG.mode];
+    found[CFG.formats] = formatsFor(mode, found[CFG.formats] ?? state.values[CFG.formats] ?? []);
+  }
   setValues(found, "import");
   toast(`Loaded ${n} value${n > 1 ? "s" : ""}` + (ignored.length ? `. Ignored (not settings of this version): ${ignored.join(", ")}` : ""), ignored.length ? 7000 : 2600);
 }
@@ -1045,6 +1049,7 @@ function wire() {
     if (!(await confirmBox("Are you sure to reset every setting?"))) return;
     state.noneEditing.clear();
     state.formatsByMode = {};                                  // the formats remembered per mode go back too
+    state.preset = null;
     setValues(clone(state.start), "reset"); toast("Back to the values in the parameter files");
   });
   $("btn-export").addEventListener("click", exportFiles);

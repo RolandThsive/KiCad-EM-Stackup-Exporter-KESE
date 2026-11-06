@@ -100,11 +100,6 @@ def _assignments(source):
     return out
 
 
-def _comment(line):
-    s = line.strip()
-    return s[1:].strip() if s.startswith("#") else None
-
-
 def _help_texts(source):
     """{NAME: help}: the comment block above the assignment (or above the run of assignments it belongs to), its
     trailing comment, and comment lines right below that continue the trailing comment."""
@@ -478,6 +473,12 @@ def read_zip(zip_path):
     return json.dumps({"values": found, "ignored": ignored})
 
 
+def _not_imported():
+    """Settings an import leaves alone: the hidden ones, and the ones the browser forces (Parallel.WORKERS = 1),
+    whose value in a web run's parameters.txt says how the browser ran, not what the desktop should use."""
+    return set(WEB_ONLY.get("hidden", [])) | set(WEB_ONLY.get("forced", {}))
+
+
 def read_values(text, file_name=""):
     """Values in an imported parameters.txt (any run, web or desktop) or a parameters/*.py file:
     {"values": {"Module.NAME": value}, "ignored": [names this version does not have]}."""
@@ -493,7 +494,7 @@ def read_values(text, file_name=""):
             mod, name = getattr(P, key.split(".")[0]), key.split(".")[1]
             if not hasattr(mod, name):
                 ignored.append(key)
-            elif key not in set(WEB_ONLY.get("hidden", [])):
+            elif key not in _not_imported():
                 try:
                     found[key] = ast.literal_eval(node)
                 except (ValueError, TypeError, SyntaxError):       # an expression, not a plain value: left as it is
@@ -516,7 +517,7 @@ def read_values(text, file_name=""):
             if key not in ignored:
                 ignored.append(key)
             continue
-        if key in set(WEB_ONLY.get("hidden", [])):
+        if key in _not_imported():
             continue
         expr = rest.split("#")[0].strip() if not rest.strip().startswith(("{", "[", "(")) else rest.strip()
         for cut in range(len(expr), 0, -1):                   # the longest start that is a Python literal
