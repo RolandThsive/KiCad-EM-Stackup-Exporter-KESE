@@ -74,7 +74,6 @@ function el(tag, attrs = {}, ...kids) {
   return e;
 }
 // a long NAME_LIKE_THIS may wrap after its underscores and dots, never inside a word
-const breakable = (t) => String(t).split(/(?<=[_.])/).flatMap((part, i) => (i ? [document.createElement("wbr"), part] : [part]));
 const same = (a, b) => JSON.stringify(a) === JSON.stringify(b);
 const clone = (x) => JSON.parse(JSON.stringify(x));
 function fmt(x) { return typeof x === "number" ? String(Number(x.toPrecision(10))) : String(x); }
@@ -453,7 +452,7 @@ function field(p) {
   }
   // Advanced: the parameter's name sits beside its control, so the title keeps the whole width for one line
   const control = state.ui === "advanced"
-    ? el("div", { class: "field-body" }, widget(p), el("span", { class: "mono-name field-name", title: p.key }, breakable(p.module === p.key.split(".")[0] ? p.name : p.key)))
+    ? el("div", { class: "field-body" }, widget(p), el("span", { class: "mono-name field-name", title: p.key }, p.module === p.key.split(".")[0] ? p.name : p.key))
     : widget(p);
   if (DESKTOP_ONLY().has(p.key)) {          // threads and worker processes: greyed, the value kept as in the file
     control.setAttribute("inert", "");
@@ -767,7 +766,9 @@ async function setBoard(name, bytes) {
   state.board = { name, bytes, meta: boardMeta(text), colors: stackupColors(text) };
   if (state.desc) renderSections();                                 // Colorization shows the board's own colours (once Python is up)
   $("board-name").textContent = name;
-  $("board-meta").textContent = `${bytesText(bytes.byteLength)} · ${state.board.meta}`;
+  // each item whole, a line breaking only after its " ·"
+  const items = [bytesText(bytes.byteLength), ...state.board.meta.split(" · ")];
+  $("board-meta").replaceChildren(...items.flatMap((t, i) => [i ? " " : "", el("span", { class: "meta-item" }, i < items.length - 1 ? `${t} ·` : t)]));
   $("drop").classList.add("has-board");
   if (state.result) state.stale = true;
   updateGenerate();
@@ -959,7 +960,7 @@ function renderChecks() {
 /* ---- parts ------------------------------------------------------------------------------------- */
 function renderParts() {
   const box = $("parts");
-  box.replaceChildren();
+  box.replaceChildren(); box.style.removeProperty("--parts-min");
   const parts = viewer ? viewer.parts : [];
   if (!parts.length) { box.append(el("p", { class: "hint" }, "The solids of the model, once it is made. Click one to hide it.")); return; }
   const sorted = [...parts].sort((a, b) => b.triangles - a.triangles);
@@ -969,6 +970,8 @@ function renderParts() {
       el("i", { style: `background:${p.color}` }), el("span", { class: "part-name" }, p.name), el("small", {}, `${countText(p.triangles)} tris`));
     box.append(row);
   }
+  const PARTS_MIN_ROWS = 6;                                 // a short window: this many rows show before the column scrolls
+  box.style.setProperty("--parts-min", `${Math.min(sorted.length, PARTS_MIN_ROWS) * box.firstChild.offsetHeight}px`);
 }
 
 /* ---- downloads --------------------------------------------------------------------------------- */
