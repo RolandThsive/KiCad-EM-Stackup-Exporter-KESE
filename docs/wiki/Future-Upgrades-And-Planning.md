@@ -13,6 +13,11 @@ Planned directions, in no fixed order:
 - **A fast view mode.** A third mode, for GLB and OBJ only, that draws each item's faces on its
   own, overlaps and all, as KiCad's 3D viewer does: a big board in seconds instead of minutes, at
   the cost of faces that flicker where they overlap and parts not split per net.
+- **Clipper2 for the grid operations that are still slow.** The solder mask's minimum web width,
+  the solid beside the outer copper's walls and each net's union in stage 3 could be done by
+  Clipper2, on whole numbers of grid steps: measured on the big boards, from 1.4 to about 20 times
+  faster at each, but together about 1% of a big board's run. It is a new dependency, and its
+  output needs repair where it leaves invalid slivers, spikes or a hole with no outer ring.
 
 | Previous | Next |
 |:---|---:|
