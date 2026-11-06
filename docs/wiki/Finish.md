@@ -51,7 +51,7 @@ On the `B` side every z is mirrored.
 |---|---|---|
 | $`X_\sigma`$ | finished face of side $`\sigma`$ (per net with `FINISH_GROUPING = "net"`) | |
 | $`C_\sigma`$ | outer copper of side $`\sigma`$ | |
-| $`Q_\sigma`$ | mask openings of side $`\sigma`$, equation (15.2) | |
+| $`Q_\sigma`$ | mask openings of side $`\sigma`$, equation (15.2), with the slivers of mask on the copper the mask leaves out ([Solder Masks](Solder-Masks.md#152-conformal-mask)) | `SolderMask.MASK_OVER_COPPER_HAIRLINE_MM` |
 | $`S_\sigma`$ | silkscreen ink of side $`\sigma`$ kept in the openings; empty unless `SILKSCREEN_OVER_COPPER = True` | `Silkscreen.SILKSCREEN_OVER_COPPER` |
 | $`z_j`$ | z range of finish layer $`j`$ ($`j = 1`$ is the layer on the copper) | |
 | $`\tau_i`$ | thickness of finish layer $`i`$ | `Finish.FINISH_TYPES` |

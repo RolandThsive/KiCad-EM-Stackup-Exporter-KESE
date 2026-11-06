@@ -82,7 +82,7 @@ python tests/test_boards.py                     # the regression suite over ever
 | `<part>: pinch points left after 10 rounds of cutting` (or `pinch edges between two heights left ...`) | Two pieces of the part still touch at a point or along an edge after the cut-out disc grew to 512 times `Geometry.PINCH_POINT_OPENING_MM`. The part may be open there. |
 | `<part>: slices still sharing new vertices after 20 rounds` (`Geometry.VERTEX_SHARING_ROUNDS`) | Stage 6 gave the slices that meet at a height each other's vertices 20 times, then cut them open where they still changed for `Geometry.PINCH_CUT_ROUNDS` more rounds (see the next line), and they still changed. The part may be open; the Verifier then says so. |
 | `<part>: slices still sharing new vertices after 20 rounds: cut open at N points, by discs of up to D mm radius` (`Geometry.VERTEX_SHARING_ROUNDS`, `Geometry.PINCH_CUT_ROUNDS`) | Needle tips of two slices a grid step or two apart kept trading vertices; from the 21st round on, each point a round still added was cut out of every slice by a small disc (as at a pinch point), twice as wide each round, until the slices settled. The part is closed, with a hole at most 2D mm across at each point ([Working Principle](Working-Principle.md#62-how-a-part-becomes-a-closed-solid)). |
-| `solder mask: N slivers on the copper narrower than 0.002 mm left out (F.Mask)` (`SolderMask.MASK_OVER_COPPER_HAIRLINE_MM`) | With the solder mask on: where a mask opening's outline follows the copper's with other points, the mask on the copper kept slivers between the two; they are left out ([Solder Masks](Solder-Masks.md#152-conformal-mask)). |
+| `solder mask: N slivers on the copper narrower than 0.002 mm left out (F.Mask)` (`SolderMask.MASK_OVER_COPPER_HAIRLINE_MM`) | With the solder mask on: where a mask opening's outline follows the copper's with other points, the mask on the copper kept slivers between the two; they are left out, and the finish covers them instead ([Solder Masks](Solder-Masks.md#152-conformal-mask)). |
 | `plated holes cross the board edge but the stackup has no (castellated_pads yes); set Copper.CASTELLATION = 'auto' to plate them` | With `Copper.CASTELLATION = "file"`, plated holes cut by the edge are left bare because the stack-up does not say they are castellated. |
 | `edge plating: copper of net '<net>' inside the edge band moved to net '<edge net>' on N layer(s)` | Copper of another net reached into the plated edge band; it now belongs to the edge's net (see 17.5). |
 | `worker processes failed (...); the N parts left are built in this process, one after another` (in visual mode `sliced`; a big board's copper `the N copper layers left are joined`; its STEP file `made ready for STEP`, then `written to STEP`; after a lost worker, ending `(most often a lack of memory: fewer processes, Parallel.PROCESS_WORKERS, use less)`) | Stage 3, 6 or 7 could not start its worker processes (`Parallel.WORKERS`, at most `Parallel.PROCESS_WORKERS`), or lost one: the system stopped it, most often for lack of memory, or it ran out of memory (`MemoryError`). What the workers did not do is done in the main process instead, so the files are the same, only slower. An error in a part itself is not caught here: it stops the run at once, with its traceback. With little memory, `--set Parallel.PROCESS_WORKERS=1` starts no worker process (stages 6 and 7 work in the main process, stage 3 in threads), and `--set Parallel.WORKERS=1` does everything in turn. |
@@ -398,9 +398,11 @@ no drill too), and the band given back where there is no solid, in about half a 
 (`python tests/test_finish_shells.py`);
 `tests/test_mask.py`, which splits the solder mask over two pads whose openings follow their edges,
 one with other points along its curve and one a grid step off, and finds only slivers of mask on
-the copper, every one left out, while mask on the copper wider than twice
-`SolderMask.MASK_OVER_COPPER_HAIRLINE_MM` stays, a sliver that ends in a wide piece too, in under
-a second (`python tests/test_mask.py`);
+the copper, every one left out, the finish then reaching the pads' edges (each net's its own),
+while mask on the copper wider than twice `SolderMask.MASK_OVER_COPPER_HAIRLINE_MM` stays, a
+sliver that ends in a wide piece too; on 07_pad_shapes, the mask on, the finish and the mask leave
+no copper face bare but where the grid rounds two crossing outlines apart, in about a second
+(`python tests/test_mask.py`);
 `tests/test_pairs.py`, which finds the pieces within a distance of each other that an STRtree's
 search finds, among a zone fill of many points and small pads, pieces exactly the distance apart
 and a hair further, with no piece left prepared, and an index built before threads share it

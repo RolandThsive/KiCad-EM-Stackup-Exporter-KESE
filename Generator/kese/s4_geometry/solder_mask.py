@@ -4,7 +4,12 @@ before the mask), with a wall where it climbs over a trace.  Where the mask is c
 (Regions.mask).  The two sides are built at once, in threads.  Where an opening's outline follows the
 copper's (a pad with no mask margin) with other points along its curves, or a grid step off, the
 mask on the copper keeps slivers far thinner than a micrometre between the two: those narrower
-than twice MASK_OVER_COPPER_HAIRLINE_MM are left out."""
+than twice MASK_OVER_COPPER_HAIRLINE_MM are left out, and added to the openings (Regions.mask_open),
+so that the finish covers them instead (finish.py), with no ink on them (Regions.silk: the ink would
+stand on mask that is not there)."""
+import numpy as np
+import shapely
+
 from kese.core import shapes2d as sh
 from kese.core.conformal import conformal_regions, without_hairlines
 from kese.core.parallel import in_parallel
@@ -34,8 +39,11 @@ def build(r, ps, mode):
         if pieces is None:
             continue
         flat, top, slivers, wall = pieces
+        if slivers:                                # each joined to the opening beside it, for the finish
+            r.mask_open[side] = sh.joined(list(shapely.get_parts(r.mask_open[side])) + slivers)
+            r.silk[side] = without(r.silk.get(side, sh.EMPTY), slivers)
         if slivers and enabled("mask"):            # (with the mask off, it is built but left out of the files)
-            ps.notes.append(f"solder mask: {slivers} slivers on the copper narrower than "
+            ps.notes.append(f"solder mask: {len(slivers)} slivers on the copper narrower than "
                             f"{2 * M.MASK_OVER_COPPER_HAIRLINE_MM:g} mm left out ({side}.Mask)")
         cu_t = st.band[layer][1] - st.band[layer][0] + lift
         base = st.half                         # laminate face
@@ -46,3 +54,15 @@ def build(r, ps, mode):
         ps.add(part, "mask", flat, z(base), z(base + t_lam), layer=f"{side}.Mask", props=props)
         ps.add(over, "mask_over_copper", top, z(base + cu_t), z(base + cu_t + t_cu), layer=f"{side}.Mask", props=props)
         ps.add(part, "mask", wall, z(base), z(base + cu_t + t_cu), layer=f"{side}.Mask", props=props)
+
+
+def without(region, pieces):
+    """The region less the pieces: only its parts that meet one are cut."""
+    parts = shapely.get_parts(sh.polys_only(region))
+    pieces = np.asarray(pieces, dtype=object)
+    at, k = shapely.STRtree(pieces).query(parts, predicate="intersects") if len(parts) else ([], [])
+    if not len(at):
+        return region
+    hit = np.unique(at)
+    cut = sh.diff(sh.as_region(list(parts[hit])), sh.as_region(list(pieces[np.unique(k)])))
+    return sh.as_region(list(np.delete(parts, hit)) + list(shapely.get_parts(cut)))

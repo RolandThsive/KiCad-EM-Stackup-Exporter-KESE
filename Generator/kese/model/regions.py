@@ -15,7 +15,7 @@ class Regions:
     band_laminate: dict = field(default_factory=dict)  # inner layer -> laminate beside its copper
     bores_side: dict = field(default_factory=dict)     # "F"/"B" -> open bores on that face
     barrels: list = field(default_factory=list)        # (ring region, i, j, net)
-    mask_open: dict = field(default_factory=dict)      # "F"/"B" -> openings
+    mask_open: dict = field(default_factory=dict)      # "F"/"B" -> openings (with the slivers of mask on the copper stage 4 leaves out)
     mask: dict = field(default_factory=dict)           # "F"/"B" -> where the mask is (outline - bores - openings, pulled back)
     silk: dict = field(default_factory=dict)           # "F"/"B" -> silk
     transform_note: str = ""

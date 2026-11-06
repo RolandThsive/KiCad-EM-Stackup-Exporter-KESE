@@ -30,7 +30,10 @@ Everything is clipped to the outline, pulled back from the edge by the same
 `SolderMask.MASK_EDGE_PULLBACK_MM` as the mask, and cut away over open hole bores. Then, with
 `Silkscreen.SILKSCREEN_OVER_COPPER = False` (the default), the ink is removed wherever the mask
 is open (pads, exposed copper, bare laminate in openings), which is what fabricators do: silk is
-clipped off the pads. With `True` the ink is kept there as drawn in KiCad.
+clipped off the pads. With `True` the ink is kept there as drawn in KiCad. Either way no ink is
+left on the slivers of mask on the copper the mask leaves out, where an opening's outline follows a
+pad's edge with other points ([Solder Masks](Solder-Masks.md#152-conformal-mask)): it would stand on
+mask that is not there.
 
 ![U1, J1 and the text OPEN on board 17b_silk_over_copper with SILKSCREEN_OVER_COPPER False and True: from the top with a numbered key, U1 at an angle, and a true-scale cut along U1's outline across pad 2](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/silk_4_mask_subtract.webp)
 
