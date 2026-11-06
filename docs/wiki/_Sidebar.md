@@ -27,6 +27,7 @@
 - [Project Output Organization](Project-Output-Organization.md)
 - [KiCad And Solver Compatibility](Compatibility.md)
 - [openEMS Workflow](OpenEMS-Workflow.md)
+- [Feature Test Collection](Feature-Test-Collection.md)
 
 **Research And Community**
 - [Glossary](Glossary.md)
