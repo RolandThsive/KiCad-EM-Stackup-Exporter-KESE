@@ -20,8 +20,9 @@ WORKERS = 0
 
 # At most this many worker processes at once, in stages 3, 6 and 7; 0 = as many as WORKERS.  Each holds
 # its own Python, numpy and shapely (about 36 MB) and the part it builds: NE_Delta in simulation mode
-# peaks at 2.8 GB in all with 4 workers and 4.5 GB with 32.  A thread costs little memory, so a
-# machine with many threads and little memory can keep WORKERS and lower this.  If the processes
+# peaks at 2.80 GB in all with 4 workers and 4.37 GB with 32, and at 3.65 GB with 4 when it writes the
+# STEP file too.  A thread costs little memory, so a machine with many threads and little memory can
+# keep WORKERS and lower this.  If the processes
 # cannot start, or one is stopped or runs out of memory, the main process builds the parts left,
 # with a note in report.txt.  Windows holds at most 61 processes at once.
 PROCESS_WORKERS = 0
@@ -37,7 +38,8 @@ PROCESS_MIN_COORDINATES = 20_000
 # Hand the memory that threads freed back to the system after each step done in threads, and in each
 # worker process after each part (glibc's malloc_trim, on Linux; elsewhere nothing is done).  glibc
 # keeps a pool for each thread and holds on to what is freed in it: NE_Delta in visual mode peaks at
-# 3.46 GB with 32 workers with this, and 4.86 GB without.  Tens of milliseconds per run.
+# 2.65 GB with 4 workers and 3.57 GB with 32 with this, and 3.45 GB and 4.76 GB without.  Tens of
+# milliseconds per run.
 GIVE_BACK_MEMORY = True
 
 # Work done in batches, so that a big board does not hold all of it in memory at once: bigger batches

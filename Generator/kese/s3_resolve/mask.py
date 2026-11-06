@@ -52,9 +52,10 @@ def min_width_joined(items, openings, side):
 
 
 def web_groups(openings, w):
-    """The openings in groups, each opening with every other within w of it: a web narrower than w
-    closes only between openings of one group (or in one opening's own notch), since two openings
-    grown by less than w/2 meet only when they are less than w apart."""
+    """The openings in groups: two openings within w of each other are in one group, and so are
+    chains of them.  A web narrower than w closes only between openings of one group (or in one
+    opening's own notch), since two openings grown by less than w/2 meet only when they are less
+    than w apart."""
     parts = shapely.get_parts(sh.polys_only(openings))
     a, b = pairs_within(parts, w)
     label = connected_components(len(parts), a, b)[1]

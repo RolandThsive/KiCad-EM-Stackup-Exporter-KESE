@@ -337,21 +337,24 @@ def board_model(pcb):
 
 def test_a_step_file_written_in_processes_is_the_same_to_the_byte():
     # each part's entities counted first, then written in a worker into a file of their own, and
-    # the files joined in order: the same file as one written part after part in this process,
-    # whatever the number of workers, with arcs and without, and no temporary file left behind
+    # the files joined in order: the same file, and the same notes, as one written part after part
+    # in this process, whatever the number of workers, with arcs and without, and no temporary file
+    # left behind
     model = board_model(ROOT / "tests" / "boards" / "six_layer.kicad_pcb")
     with tempfile.TemporaryDirectory() as tmp:
         for arcs in (True, False):
-            files = {}
+            files, notes = {}, {}
             for workers, least in ((1, 10 ** 12), (2, 0), (3, 0)):
                 saved = with_workers(workers, ("Parallel.PROCESS_MIN_COORDINATES", least), ("Step.STEP_EXACT_ARCS", arcs))
+                notes[workers] = []
                 try:
-                    path = step.write(model, Path(tmp) / f"{workers}_{arcs}.step", print)
+                    path = step.write(model, Path(tmp) / f"{workers}_{arcs}.step", notes[workers].append)
                 finally:
                     put_back(saved)
                 text = path.read_text(encoding="latin-1")
                 files[workers] = text[text.index("\nDATA;"):]
             assert files[1] == files[2] == files[3] and ("CIRCLE(" in files[1]) == arcs, arcs
+            assert notes[1] == notes[2] == notes[3], notes
         assert sorted(p.name for p in Path(tmp).iterdir()) == sorted(f"{w}_{a}.step" for w in (1, 2, 3) for a in (True, False))
 
 

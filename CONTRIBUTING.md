@@ -100,5 +100,5 @@ python tests/test_step_arcs.py   # true arcs and cylinders in STEP (Step.STEP_EX
 python tests/test_boards.py      # every test board through both modes, against tests/baseline.json
 ```
 
-`python -m pytest tests` runs all sixteen. When a change is meant to move the geometry, re-record the
+`python -m pytest tests` runs all seventeen. When a change is meant to move the geometry, re-record the
 baseline with `python tests/test_boards.py --accept` and say why in the pull request.

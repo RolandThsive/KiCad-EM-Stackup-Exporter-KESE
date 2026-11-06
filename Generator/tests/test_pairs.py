@@ -67,7 +67,7 @@ def test_a_shared_tree_finds_what_an_strtree_finds_from_many_threads():
     try:
         for _ in range(5):          # a fresh tree each time, queried first from the threads
             tree = shared_tree(parts)
-            assert in_parallel(lambda p: tree.query(p, predicate="intersects").tolist(), probes) == want
+            assert in_parallel(lambda p, tree=tree: tree.query(p, predicate="intersects").tolist(), probes) == want
     finally:
         P.override("Parallel.WORKERS", workers)
     assert len(shared_tree([]).query(probes[0])) == 0
