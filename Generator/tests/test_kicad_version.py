@@ -78,6 +78,19 @@ def test_old_overbar_notation():
     assert kv.overbar_markup("~RESET~", k6) == "~RESET~"
 
 
+def test_text_words_past_a_bare_locked():
+    """KiCad 7 and before write a locked text's bare locked before its words, and KiCad 5's %V and %R
+    stand for ${VALUE} and ${REFERENCE} (parsePCB_TEXT)."""
+    assert kv.text_value(parse('(gr_text locked "PWR" (at 1 2) (layer "B.SilkS"))')) == "PWR"
+    assert kv.text_value(parse('(gr_text "locked" (at 1 2) (layer "B.SilkS"))')) == "locked"
+    assert kv.text_value(parse('(gr_text locked "locked" (at 1 2))')) == "locked"
+    assert kv.text_value(parse('(fp_text reference locked "R1" (at 0 0))')) == "R1"
+    assert kv.text_value(parse('(fp_text user %R (at 0 0))')) == "${REFERENCE}"
+    assert kv.text_value(parse('(fp_text value "%V, 1%" (at 0 0))')) == "${VALUE}, 1%"
+    fp = parse('(footprint "R" (fp_text reference locked "R7" (at 0 0)) (fp_text value %V (at 0 1)))')
+    assert kv.footprint_text_fields(fp) == {"REFERENCE": "R7", "VALUE": "${VALUE}"}
+
+
 def test_net_class_vias_of_kicad_4_and_5():
     """A KiCad 4/5 via that gives no drill (or size) takes its net's class's: the classes' net names
     read as KiCad shows them (the old overbar notation turned into the new), the setup's sizes for a

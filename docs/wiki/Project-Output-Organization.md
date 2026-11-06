@@ -35,7 +35,8 @@ KiCad-EM-Stackup-Exporter-KESE/
 │   ├── Output/                  one folder per board and run (ignored by git, except .gitkeep and
 │   │                            four example runs of rf_module in Output/rf_module/)
 │   ├── tests/                   regression suite, layout rules, test boards, baseline.json
-│   └── tools/                   make_swatches.py: the colour boxes of docs/ColorSwatches/
+│   └── tools/                   make_swatches.py: the colour boxes of docs/ColorSwatches/;
+│                                font_lines.py: a stroke font rewritten as JSON Lines
 ├── docs/wiki/, docs/images/     this wiki, and its pictures
 ├── docs/example_images/        pictures and animations of the three example boards
 ├── docs/ColorSwatches/          the colour squares in the wiki's colour tables
@@ -168,14 +169,14 @@ parts
   ...
 
 timing
-  read              0.0650 s
-  collect           0.7394 s
-  resolve           1.5491 s
-  geometry          6.9034 s
-  materials         0.0003 s
-  assemble          5.4478 s
-  write            10.0859 s
-  verify            0.5105 s
+  read              0.0667 s
+  collect           0.1691 s
+  resolve           1.5408 s
+  geometry          6.0711 s
+  materials         0.0004 s
+  assemble          5.3236 s
+  write             7.5092 s
+  verify            0.5813 s
 
 Verifier: PASS
   ...
@@ -226,7 +227,7 @@ test run and ignored by git. `tests/test_layout.py`, `tests/test_colors.py`,
 `tests/test_kicad_version.py`, `tests/test_enabled.py`, `tests/test_verifier.py`,
 `tests/test_boundary.py`, `tests/test_copper_union.py`, `tests/test_finish_shells.py`,
 `tests/test_mask.py` and `tests/test_pairs.py` write nothing, and
-`tests/test_step_native.py`, `tests/test_step_arcs.py`, `tests/test_text_layout.py`,
+`tests/test_step_native.py`, `tests/test_step_arcs.py`, `tests/test_text_layout.py`, `tests/test_font.py`,
 `tests/test_bad_input.py`, `tests/test_parallel.py` and `tests/test_full_disk.py` write only in a
 temporary folder that they remove.
 

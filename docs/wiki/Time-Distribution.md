@@ -19,14 +19,14 @@ seconds differ.**
 
 | Bar | Stages | What runs in it |
 |---|---|---|
-| 1–2 read | 1 read, 2 collect | The file parsed; every track, pad, zone, graphic and text as a flat shape; the stroke font loaded (about 0.5 s of it) |
+| 1–2 read | 1 read, 2 collect | The file parsed; every track, pad, zone, graphic and text as a flat shape; the stroke font unpacked and split into lines (about 0.05 s), and the glyphs the text uses parsed |
 | 3 resolve | 3 | The copper joined per layer and net, clipped and drilled; barrels, edge plating, mask openings and silkscreen |
 | 4 geometry | 4 | Every part as prisms, between the heights of the stack-up |
 | 5 materials | 5 | A material for every part, from `parameters/color.py` and the stack-up's colours: 0.2 to 0.3 ms |
 | 6 assemble | 6 | Closed solids in simulation mode, the visible skin in visual mode; with `--verify`, each solid is also checked here by the worker that built it |
-| 7 write | 7 | The files. In simulation mode nearly all of it is the STEP file: the HDI module takes 1.6 s with STEP alone and 0.1 s with GLB alone. The visual GLB takes 25 to 44 ms |
+| 7 write | 7 | The files. In simulation mode nearly all of it is the STEP file: the HDI module takes 1.6 s with STEP alone and 0.1 s with GLB alone. The visual GLB takes 29 to 45 ms |
 | 8 verify | 8 | The Verifier's checks of the written files ([Checks, Errors And Warnings](Checks-Errors-And-Warnings.md)) |
-| start-up and exit | none | The wall-clock time less the stages: Python starting, stage 9 writing `report.txt` and `parameters.txt`, and Python freeing the run's memory as it ends. Most of it is the stroke font's 1.2 million glyph lists, which take about 0.8 s to free |
+| start-up and exit | none | The wall-clock time less the stages, about 0.2 s: Python starting (12 ms), KESE and the libraries it uses imported (0.13 s), the run set up and closed around the stages (16 ms), stage 9 writing `report.txt` and `parameters.txt` (1 to 2 ms), and Python freeing the run's memory as it ends (0.06 s) |
 
 Under each chart a table gives the same numbers, in seconds unless marked ms. A stage too thin to
 see at this scale is marked with a line and a label.
@@ -38,12 +38,12 @@ see at this scale is marked with a line and a label.
 <img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/example_images/rf_module/bottom_straight_visual.webp" width="49.5%" alt="The RF sensor module straight from below: the KESE logo, the outline of the CR1220 coin cell BT1, the pads of the I2C and UART lines, and the plated edge and cut-out">
 </p>
 
-![RF sensor module: stacked bars of seconds per stage. Simulation with GLB and STEP takes 18.5 s: read 0.9, resolve 1.5, geometry 6.5, materials 0.3 ms, assemble 5.3, write 2.7, verify 0.5, start-up and exit 1.1. Visual with GLB takes 16.4 s: read 0.8, resolve 1.5, geometry 6.2, materials 0.3 ms, assemble 6.4, write 44 ms, verify 0.3, start-up and exit 1.0](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/time_1_rf_module.webp)
+![RF sensor module: stacked bars of seconds per stage. Simulation with GLB and STEP takes 16.3 s: read 0.2, resolve 1.6, geometry 6.2, materials 0.3 ms, assemble 5.2, write 2.4, verify 0.4, start-up and exit 0.2. Visual with GLB takes 14.7 s: read 0.3, resolve 1.4, geometry 6.3, materials 0.3 ms, assemble 6.2, write 45 ms, verify 0.4, start-up and exit 0.2](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/time_1_rf_module.webp)
 
 | Mode | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-| Simulation, GLB + STEP | 0.9 | 1.5 | 6.5 | 0.3 ms | 5.3 | 2.7 | 0.5 | 1.1 | 18.5 |
-| Visual, GLB | 0.8 | 1.5 | 6.2 | 0.3 ms | 6.4 | 44 ms | 0.3 | 1.0 | 16.4 |
+| Simulation, GLB + STEP | 0.2 | 1.6 | 6.2 | 0.3 ms | 5.2 | 2.4 | 0.4 | 0.2 | 16.3 |
+| Visual, GLB | 0.3 | 1.4 | 6.3 | 0.3 ms | 6.2 | 45 ms | 0.4 | 0.2 | 14.7 |
 
 <div align="center">
 
@@ -65,12 +65,12 @@ see at this scale is marked with a line and a label.
 <img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/example_images/hdi_module/bottom_straight_visual.webp" width="36%" alt="The HDI radio module straight from below: the exposed GND pad, the logo, the pin numbers 1 to 43 beside the castellated pads, and the test pads TX, RX, BOOT, 3V3, EN and GND">
 </p>
 
-![HDI radio module: stacked bars of seconds per stage. Simulation with GLB and STEP takes 9.5 s: read 0.8, resolve 0.9, geometry 2.7, materials 0.2 ms, assemble 2.1, write 1.6, verify 0.3, start-up and exit 1.1. Visual with GLB takes 10.4 s: read 0.8, resolve 1.0, geometry 2.9, materials 0.2 ms, assemble 4.5, write 25 ms, verify 0.2, start-up and exit 1.1](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/time_2_hdi_module.webp)
+![HDI radio module: stacked bars of seconds per stage. Simulation with GLB and STEP takes 8.5 s: read 0.2, resolve 0.9, geometry 3.0, materials 0.2 ms, assemble 2.2, write 1.7, verify 0.4, start-up and exit 0.2. Visual with GLB takes 9.2 s: read 0.2, resolve 1.0, geometry 2.7, materials 0.2 ms, assemble 4.8, write 29 ms, verify 0.2, start-up and exit 0.2](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/time_2_hdi_module.webp)
 
 | Mode | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-| Simulation, GLB + STEP | 0.8 | 0.9 | 2.7 | 0.2 ms | 2.1 | 1.6 | 0.3 | 1.1 | 9.5 |
-| Visual, GLB | 0.8 | 1.0 | 2.9 | 0.2 ms | 4.5 | 25 ms | 0.2 | 1.1 | 10.4 |
+| Simulation, GLB + STEP | 0.2 | 0.9 | 3.0 | 0.2 ms | 2.2 | 1.7 | 0.4 | 0.2 | 8.5 |
+| Visual, GLB | 0.2 | 1.0 | 2.7 | 0.2 ms | 4.8 | 29 ms | 0.2 | 0.2 | 9.2 |
 
 <div align="center">
 
@@ -92,12 +92,12 @@ see at this scale is marked with a line and a label.
 <img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/example_images/pcie_card/bottom_straight_visual.webp" width="49.5%" alt="The PCIe x1 card straight from below: the A side of the fingers, the tracks reading through the mask and the name in silkscreen">
 </p>
 
-![PCIe x1 card: stacked bars of seconds per stage. Simulation with GLB and STEP takes 12.2 s: read 0.8, resolve 1.1, geometry 4.0, materials 0.2 ms, assemble 2.7, write 2.2, verify 0.3, start-up and exit 1.1. Visual with GLB takes 13.1 s: read 0.9, resolve 1.1, geometry 4.1, materials 0.2 ms, assemble 5.4, write 42 ms, verify 0.3, start-up and exit 1.1](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/time_3_pcie_card.webp)
+![PCIe x1 card: stacked bars of seconds per stage. Simulation with GLB and STEP takes 10.8 s: read 0.3, resolve 1.1, geometry 3.9, materials 0.2 ms, assemble 2.7, write 2.1, verify 0.3, start-up and exit 0.3. Visual with GLB takes 11.3 s: read 0.3, resolve 1.1, geometry 4.1, materials 0.2 ms, assemble 5.1, write 41 ms, verify 0.4, start-up and exit 0.2](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/time_3_pcie_card.webp)
 
 | Mode | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-| Simulation, GLB + STEP | 0.8 | 1.1 | 4.0 | 0.2 ms | 2.7 | 2.2 | 0.3 | 1.1 | 12.2 |
-| Visual, GLB | 0.9 | 1.1 | 4.1 | 0.2 ms | 5.4 | 42 ms | 0.3 | 1.1 | 13.1 |
+| Simulation, GLB + STEP | 0.3 | 1.1 | 3.9 | 0.2 ms | 2.7 | 2.1 | 0.3 | 0.3 | 10.8 |
+| Visual, GLB | 0.3 | 1.1 | 4.1 | 0.2 ms | 5.1 | 41 ms | 0.4 | 0.2 | 11.3 |
 
 <div align="center">
 
@@ -119,14 +119,14 @@ read the same way. The HDI module's third simulation run:
 
 ```text
 timing
-  read              0.0432 s
-  collect           0.7148 s
-  resolve           0.9935 s
-  geometry          2.6695 s
-  materials         0.0002 s
-  assemble          2.0979 s
-  write             1.5353 s
-  verify            0.3166 s
+  read              0.0343 s
+  collect           0.1381 s
+  resolve           0.8515 s
+  geometry          2.7272 s
+  materials         0.0003 s
+  assemble          2.1252 s
+  write             1.7215 s
+  verify            0.3686 s
 ```
 
 `verify` is there only when the Verifier ran. Each value is in seconds, to 0.1 ms.

@@ -162,8 +162,8 @@ Details in [Silkscreens](Silkscreens.md).
 | `SILKSCREEN_ENABLED` | `False` | bool | Build the silkscreen and write it to every file (off by default) |
 | `SILK_THICKNESS_MM` | `0.010` | mm > 0 | Ink thickness (typical 0.010 to 0.020) |
 | `SILKSCREEN_OVER_COPPER` | `False` | bool | Keep ink where the mask is open; `False` clips it off the pads as fabricators do. With `True` the ink lies on the copper and the finish is left out under it |
-| `FONT_FILE` | `None` | None or a file in `kese/assets/fonts/` | Custom stroke-font JSON or Hershey `.jhf`; `None` = KiCad newstroke |
-| `DRAW_TRUETYPE_TEXT_WITH_STROKE_FONT` | `True` | bool | Text in a TrueType face with no usable `render_cache` is drawn with the stroke font |
+| `FONT_FILE` | `None` | None or a file in `kese/assets/fonts/` | Custom stroke font: this project's JSON, as one document or JSON Lines, or Hershey `.jhf`; `None` = KiCad newstroke |
+| `DRAW_TRUETYPE_TEXT_WITH_STROKE_FONT` | `True` | bool | Text in a TrueType face with no usable `render_cache` is drawn with the stroke font, with a warning; `False` leaves it out |
 | `INTERLINE_PITCH` | `1.68` | > 0 | Line pitch as a multiple of the text height (KiCad's value) |
 | `INTERLINE_LEGACY_FACTOR` | `0.9583` | > 0 | KiCad's correction for stroke fonts |
 | `ITALIC_TILT` | `0.125` | ≥ 0 | x shift per unit of y for italic text |

@@ -39,8 +39,10 @@ mask that is not there.
 
 ## 15.2 Text Rendering
 
-KESE ships KiCad's own stroke font, **newstroke**, converted to a JSON file
-(`kese/assets/fonts/kicad_newstroke.json.gz`, with its notice in `LICENSE_fonts.txt`). Text is laid
+KESE ships KiCad's own stroke font, **newstroke**, converted to JSON Lines, one glyph per line
+(`kese/assets/fonts/kicad_newstroke.json.gz`, with its notice in `LICENSE_fonts.txt`), and parses
+each glyph the first time a text needs it (`kese/core/font_file.py`): a board draws a few dozen of
+its 65,487 glyphs, and a board without text never reads the font. Text is laid
 out following KiCad's `STROKE_FONT` and `FONT::getLinePositions` code (`kese/core/font.py`), which
 KiCad 7, 8 and 9 share, so it lands where KiCad plots it: `tests/test_text_layout.py` checks
 sixteen texts against KiCad 7.0.11's plot to 5 µm, and the two references below agree with it to
@@ -145,7 +147,11 @@ trimmed by $`0.1 W`$ at each end; `^{...}` and `_{...}` draw their text at 0.8 o
 by 0.35 or lowered by 0.15 of that smaller height (a subscript wins where the two are nested). A marker whose closing `}` never comes is
 plain text, as in KiCad. Files older than format 20210606 (KiCad 5 and early 6) wrote an overbar
 as text between two `~`; it is read as `~{...}`, as KiCad reads it. A KiCad 4 text that gives no
-size is 1.524 mm (60 mils). The file's text
+size is 1.524 mm (60 mils). KiCad 7 wrote a locked text as `(gr_text locked "PWR" ...)` or
+`(fp_text reference locked "R1" ...)`: the bare `locked` is a flag, not the words, and is passed
+over as KiCad's parser passes it (`PCB_IO_KICAD_SEXPR_PARSER::parsePCB_TEXT`). Older files wrote a
+footprint's value and reference as `%V` and `%R`; they are read as `${VALUE}` and `${REFERENCE}`,
+as KiCad reads them. The file's text
 is read with KiCad's escapes (`\n` starts a new line, `\"` and `\\` stand for a quote and a
 backslash; a tab is written as it is). Text variables are resolved before layout, in the order
 KiCad's `PCB_TEXT::GetShownText` uses:
@@ -162,18 +168,37 @@ KiCad's `PCB_TEXT::GetShownText` uses:
 A variable only the project file defines (`.kicad_pro` text variables, `${PROJECTNAME}`) is
 left as written, as KiCad shows an unknown one.
 
-Text in a TrueType face (KiCad 7+ `(font (face "..."))`) is drawn from the glyphs KiCad saves
-with it, `(render_cache "text" angle (polygon (pts ...) ...))`: the filled outlines exactly as
-KiCad draws them in that face (`PCB_TEXT::TransformTextToPolySet`), with no font needed. A cache
-made for another text or angle is stale, as KiCad would draw the text anew; such text, and text
-with no cache, is drawn with the stroke font when
-`DRAW_TRUETYPE_TEXT_WITH_STROKE_FONT = True` (the default). Both are counted in `report.txt`; with
-`False` it is skipped. Text the file marks hidden (`(hide yes)`) is skipped unless
-`DRAW_HIDDEN_TEXT = True`.
+Text the file marks hidden (`(hide yes)`) is skipped unless `DRAW_HIDDEN_TEXT = True`.
 
-A custom font can replace newstroke: set `FONT_FILE` to a file in `kese/assets/fonts/`, either in
-this project's stroke-font JSON format or a Hershey `.jhf` file. If the file is missing, newstroke
-is used and `report.txt` says so on its `font:` note.
+### 15.2.4 Fonts And Faces
+
+A board's text is in one of three kinds of font, and for none of them does KESE need a font file
+from the user:
+
+| Text | How KESE draws it | What it needs |
+|---|---|---|
+| KiCad's stroke font: no face, or `(face "KiCad Font")` as KiCad 10 can write it | with newstroke, laid out as above | nothing: KESE ships the font |
+| a TrueType or OpenType face, `(font (face "..."))`, KiCad 7 and later | from the letters KiCad saves with it, `(render_cache "text" angle (polygon (pts ...) ...))`: the filled outlines exactly as KiCad draws them in that face (`PCB_TEXT::TransformTextToPolySet`) | nothing: the board file holds the letters, so any face works, even one only the designer has installed |
+| the same, with no render cache, or one made for other words or another angle | with the stroke font when `DRAW_TRUETYPE_TEXT_WITH_STROKE_FONT = True` (the default), in its place and size but in other letter shapes, with a warning; left out when `False` | open the board in KiCad 7 or later and save it, which stores the cache |
+
+KiCad gives the stroke font for a face whose name is empty or starts with `KiCad Font`
+(`FONT::GetFont` in `common/font/font.cpp`), and saves a render cache only for an outline font
+(`PCB_IO_KICAD_SEXPR::formatRenderCache`); KESE does the same. A cache made for another text or
+angle is stale, as KiCad would draw the text anew, with one exception: where the text uses a
+variable whose value when KiCad saved the board KESE cannot know (one only the project file defines,
+a value that holds variables of its own, `${CURRENT_DATE}`), a cache whose words differ only there
+is drawn, since its words are the ones KiCad showed then, and `report.txt` counts that text apart. A
+cache with no polygons, as KiCad saves for an empty text or for letters the face lacks, draws
+nothing, as KiCad draws nothing. KiCad 9's embedded fonts (`embedded_fonts`, `embedded_files`) are
+not read, since the render cache already holds every letter. `report.txt` counts the text of each
+kind.
+
+A different stroke font can replace newstroke for the first kind: copy it into
+`kese/assets/fonts/` and set `FONT_FILE` to its name. It can be this project's stroke-font JSON,
+either one document or JSON Lines (a header line, then one glyph per line from `first_codepoint`
+on, read glyph by glyph; `python tools/font_lines.py` turns the first into the second), or a
+Hershey `.jhf` file. If the file is missing, newstroke is used and `report.txt` says so on its
+`font:` note.
 
 ## 15.3 Ink Geometry
 
@@ -234,8 +259,8 @@ in `materials.json`.
 |---|---|---|---|
 | `SILK_THICKNESS_MM` | `0.010` | mm > 0 | Ink thickness (typical 0.010 to 0.020) |
 | `SILKSCREEN_OVER_COPPER` | `False` | bool | Keep ink where the mask is open, on the pads and the bare laminate (the finish is left out under it); `False` clips it off as fabricators do |
-| `FONT_FILE` | `None` | None or a file name in `kese/assets/fonts/` | Custom font; `None` = KiCad newstroke |
-| `DRAW_TRUETYPE_TEXT_WITH_STROKE_FONT` | `True` | bool | Draw TrueType-face text with the stroke font |
+| `FONT_FILE` | `None` | None or a file name in `kese/assets/fonts/` | Custom stroke font ([15.2.4](#1524-fonts-and-faces)); `None` = KiCad newstroke |
+| `DRAW_TRUETYPE_TEXT_WITH_STROKE_FONT` | `True` | bool | Draw TrueType-face text that has no usable render cache with the stroke font, with a warning; `False` leaves it out |
 | `INTERLINE_PITCH`, `INTERLINE_LEGACY_FACTOR` | `1.68`, `0.9583` | > 0 | KiCad's line pitch and stroke-font correction |
 | `ITALIC_TILT` | `0.125` | ≥ 0 | x shift per unit of y for italic text |
 | `BOLD_THICKNESS_RATIO`, `NORMAL_THICKNESS_RATIO` | `0.2`, `0.125` | > 0 | Stroke = ratio × text width when the file gives none |

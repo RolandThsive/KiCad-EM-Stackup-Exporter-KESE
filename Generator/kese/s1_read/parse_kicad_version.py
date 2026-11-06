@@ -414,6 +414,20 @@ def is_knockout(node):
     return "knockout" in [str(a) for a in atoms(child(node, "layer"))]
 
 
+def text_value(node):
+    """The words of a (gr_text ...) or (fp_text kind ...) as parsePCB_TEXT reads them: past a bare
+    locked, which KiCad 7 and before write first ((gr_text locked "PWR" ...)), and with KiCad 5's %V
+    and %R read as ${VALUE} and ${REFERENCE}."""
+    words = []
+    for a in node[2 if node[0] == "fp_text" else 1:]:
+        if isinstance(a, list):
+            break
+        words.append(str(a))
+    if len(words) > 1 and words[0] == "locked":
+        words = words[1:]
+    return (words[0] if words else "").replace("%V", "${VALUE}").replace("%R", "${REFERENCE}")
+
+
 def footprint_text_fields(fp):
     """{FIELD: value} of a footprint's own fields: its (property "Name" "value") entries (KiCad 8+
     keeps reference and value there too) and, before KiCad 8, (fp_text reference|value "...")."""
@@ -423,15 +437,18 @@ def footprint_text_fields(fp):
             out[str(prop[1]).upper()] = str(prop[2])
     for t in children(fp, "fp_text"):
         if len(t) > 2 and t[1] in ("reference", "value"):
-            out[t[1].upper()] = str(t[2])
+            out[t[1].upper()] = text_value(t)
     return out
 
 
 def render_cache_rings(node, text, angle):
     """The glyph polygons KiCad 7+ stores with a TrueType text, [[outline, hole, ...] per polygon] in
-    board coordinates; None when there is none or it is stale (EDA_TEXT::GetRenderCache)."""
+    board coordinates; None when there is none or it is stale (EDA_TEXT::GetRenderCache): made for
+    other words than text (a string, or a compiled pattern the words must match whole) or another angle."""
     rc = child(node, "render_cache")
-    if rc is None or len(rc) < 3 or isinstance(rc[1], list) or str(rc[1]) != text:
+    if rc is None or len(rc) < 3 or isinstance(rc[1], list):
+        return None
+    if not (text.fullmatch(str(rc[1])) if hasattr(text, "fullmatch") else str(rc[1]) == text):
         return None
     try:
         turned = (number(rc[2], rc) - angle + 180.0) % 360.0 - 180.0
