@@ -137,7 +137,7 @@ volumes) are made where the part is built, in its stage 6 worker, while it is at
 |---|---|---|
 | simulation | every part is a closed, consistently wound solid; its volume is printed in mm³ | `closed=True winding=True` for every part |
 | simulation | no two parts share material: every slice of every part (a flat region between two heights, what the faces are cut from) against every slice of every other part | `none`: no two slices of different parts overlap in height while their regions share an area wider than two grid steps, 0.2 µm (`none` on every board of the regression suite) |
-| simulation | every part's volume found four ways (`volumes.py`): from its flat faces, from its slices, from its mesh and from the prisms it was built from | `closed=True whole=True` for every part: the faces and the mesh within 1 part in 10⁷ of the slices (`Verifier.VERIFY_VOLUME_TOLERANCE`), the prisms within that plus 0.001 mm³ (`Verifier.VERIFY_OPENED_VOLUME_MM3`, what opening pinch points may take) |
+| simulation | every part's volume found four ways (`volumes.py`): from its flat faces, from its slices, from its mesh and from the prisms it was built from | `closed=True whole=True` for every part: the faces and the mesh within 1 part in 10⁷ of the slices (`Verifier.VERIFY_VOLUME_TOLERANCE`), the prisms within that plus 0.001 mm³ (`Verifier.VERIFY_OPENED_VOLUME_MM3`, what opening pinch points and sharing vertices may move), in all or else in every piece, with no piece gone (below) |
 | visual | the skin is one outer surface: along every ray that hits the model the faces take turns, one going into the material and the next out of it (two faces on most rays; four where a ray crosses a hollow open to the air, such as the bore of a buried via under stacked micro vias) | the line `visible surfaces per vertical ray: faces met {2: ...}; rays where in and out do not alternate: 0` ends in 0 |
 | both, when a GLB was written | the GLB through the Khronos glTF validator, when the `gltf_validator` command-line tool is on the PATH | not a pass condition: the validator's last line is only reported; otherwise `gltf_validator not on PATH: glTF validation skipped`; with no GLB in the run the line is absent |
 
@@ -173,6 +173,21 @@ Verifier: PASS
 
 The prisms of `Copper_GND` hold 0.00013 mm³ more than its faces, within the 0.001 mm³ the
 check allows them.
+
+Stage 6 moves each piece's edges by a grid step here and there as it shares vertices, and cuts its
+pinch points open, so on a board of thousands of holes a part's prisms and slices can differ by
+more than 0.001 mm³ in all while no piece differs by more than a little. A part past the limit in
+all is then compared piece by piece: per slice, the pieces of its prisms that span the slice and
+the slice's own pieces, joined where they touch (a hole's finish as built and as sliced is one
+piece). It is whole when no piece is gone (prisms with no slice left on them, or a slice with no
+prism under it) and none differs by more than the same limit, and a second line gives the count
+and the worst piece. On a board of 14,454 vias, whose gold finish (drawn 0.1 µm thick across the
+wall, one grid step) is 0.0025 mm³ off in all:
+
+```text
+  Hole Finish Gold                     volume from faces 0.674595 mesh 0.674595 slices 0.674595 prisms 0.677080 mm3 closed=True whole=True
+                                       piece by piece: 15102 pieces, 0 gone, worst +5.293e-06 of 1.181e-04 mm3 at x 80.785 y 67.725 z -0.7900 .. +0.7900 mm
+```
 
 The volume from the faces needs nothing but the faces: walls are vertical and add nothing, so a
 closed surface holds the sum of height times signed area over its flat faces
@@ -217,7 +232,8 @@ lies; 3,000 random vertical rays, the test this one replaced, found 6 of 20 such
 A `closed=False`, `winding=False` or `whole=False` line names the part. An open solid means its
 faces and walls do not meet on the same edges (see the `faces and walls still changing` and
 `pinch points left` notes); `whole=False`
-means the solid holds more or less material than the prisms it was built from. An overlap line
+means the solid holds more or less material than the prisms it was built from, in all and, by the
+`piece by piece` line, in a piece gone or in its worst piece. An overlap line
 other than `none` means two parts share material; it names the two parts and the heights of the
 biggest overlap (of overlaps as big, the first by part name, so the line is the same however many
 worker processes and threads ran), and how many places there are. All of these are bugs worth reporting with the

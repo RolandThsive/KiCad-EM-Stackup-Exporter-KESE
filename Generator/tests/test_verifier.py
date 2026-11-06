@@ -2,8 +2,9 @@
 either orientation (Run.ORIENTATION), so a correct skin passes "flat" as it passes "upright", with
 the same faces met on every ray.  In simulation mode, the checks made where each part is built
 (kese/core/part_checks.py) give the report stage 8 gives on its own, an open part they found
-fails the run, and the overlap check finds the same overlaps in threads as in one.  Takes a few
-seconds.
+fails the run, a part whose slices lack a little of its prisms in each of thousands of pieces is
+whole (but not with a piece gone, or one lacking much), and the overlap check finds the same
+overlaps in threads as in one.  Takes a few seconds.
 
     python -m pytest tests/test_verifier.py         (or:  python tests/test_verifier.py)"""
 import sys
@@ -11,13 +12,15 @@ from pathlib import Path
 from types import SimpleNamespace
 
 import numpy as np
+import shapely
 from shapely.affinity import translate
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 
+from kese.core.boundary import Boundary  # noqa: E402
 from kese.core.mesh import Mesh  # noqa: E402
-from kese.core.part_checks import mesh_check  # noqa: E402
+from kese.core.part_checks import mesh_check, volume_check, whole  # noqa: E402
 from kese.job import start  # noqa: E402
 from kese.s1_read import read  # noqa: E402
 from kese.s2_collect import collect  # noqa: E402
@@ -93,6 +96,24 @@ def test_an_open_part_found_where_it_was_built_fails_the_run():
     assert not ok and lines[0] == "Verifier: FAIL" and any(l.startswith(f"  {part} ") and "closed=False" in l for l in lines)
 
 
+def test_a_part_lacking_a_little_in_each_of_thousands_of_pieces_is_whole():
+    # 2000 holes' finish, 0.1 mm squares 1 mm apart; each sliced a grid step narrower (1e-5 mm3 less):
+    # 0.02 mm3 in all, past what a part may lack (Verifier.VERIFY_OPENED_VOLUME_MM3), but no piece is
+    squares = [shapely.box(x, y, x + 0.1, y + 0.1) for x in range(50) for y in range(40)]
+    prisms = [SimpleNamespace(region=s, z0=-0.8, z1=0.2) for s in squares]
+
+    def checked(regions):
+        return volume_check(Boundary("Hole Finish", [-0.8, 0.2], [(-0.8, 0.2, shapely.union_all(regions))]), prisms)
+    narrower = [shapely.box(x0, y0, x1 - 1e-4, y1) for x0, y0, x1, y1 in shapely.bounds(squares)]
+    c = checked(narrower)
+    assert abs(c.prisms - c.slices - 0.02) < 1e-9 and c.pieces.pieces == 2000 and c.pieces.gone == 0
+    assert abs(c.pieces.worst - 1e-5) < 1e-12 and whole(c)
+    assert not whole(checked(narrower[1:])) and checked(narrower[1:]).pieces.gone == 1       # a piece gone
+    halved = checked([shapely.box(10, 10, 10.05, 10.1)] + [r for r, s in zip(narrower, squares) if s.bounds[:2] != (10, 10)])
+    assert not whole(halved) and abs(halved.pieces.worst - 0.005) < 1e-12 and halved.pieces.at == (10.05, 10.05, -0.8, 0.2)
+    assert checked(squares).pieces is None                                    # pieces compared only where needed
+
+
 def test_the_overlap_check_finds_the_same_overlaps_in_threads_as_in_one():
     model = checked_model(ROOT / "tests" / "boards" / "six_layer.kicad_pcb")
     assert overlap.overlaps(model) == []
@@ -116,5 +137,6 @@ if __name__ == "__main__":
     test_the_visual_check_runs_along_the_board_normal_in_either_orientation()
     test_the_checks_made_where_the_parts_are_built_give_the_same_report()
     test_an_open_part_found_where_it_was_built_fails_the_run()
+    test_a_part_lacking_a_little_in_each_of_thousands_of_pieces_is_whole()
     test_the_overlap_check_finds_the_same_overlaps_in_threads_as_in_one()
     print("ok")
