@@ -364,7 +364,8 @@ where a number belongs, a binary or UTF-16 file) stop with the file named and th
 zero is read as not given with a warning, a board too thin for its copper stops with the setting to change,
 and a byte order mark is passed over, in about two seconds
 (`python tests/test_bad_input.py`); `tests/test_verifier.py`, which finds the Verifier's visual check
-meeting the same faces on every ray with the board `upright` and `flat`, the checks made where each
+meeting the same faces on every ray with the board `upright` and `flat`, and casting its rays on a
+32-bit Python (Pyodide, in the browser) as it does on 64 bits, the checks made where each
 part is built giving the report stage 8 gives on its own, an open part they found failing the
 run, and the overlap check finding the same overlaps in threads as in one, in a few seconds
 (`python tests/test_verifier.py`); `tests/test_parallel.py`, which finds a thread's

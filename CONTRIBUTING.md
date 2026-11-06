@@ -88,7 +88,7 @@ python tests/test_kicad_version.py # the rules of each KiCad version, against Ki
 python tests/test_enabled.py     # each part switch leaves out its own parts and nothing else
 python tests/test_bad_input.py   # wrong settings and damaged files: an error or a warning, not a crash
 python tests/test_parallel.py    # worker processes and threads: shapes and copies, settings, caps, fallback, ending
-python tests/test_verifier.py    # the Verifier: the visual check upright and flat; checks in the workers; overlaps in threads
+python tests/test_verifier.py    # the Verifier: the visual check upright and flat, and on 32-bit Python; checks in the workers; overlaps in threads
 python tests/test_boundary.py    # stage 6's shortcuts give what the long way gives, and parts close
 python tests/test_copper_union.py # a net's copper joined with no crack and no burr past the edge
 python tests/test_finish_shells.py # the finish's air cut bore by bore, as the whole board's union cuts it
