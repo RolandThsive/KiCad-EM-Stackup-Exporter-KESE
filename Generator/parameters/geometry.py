@@ -22,11 +22,17 @@ CIRCLE_MIN_QUAD_SEGS = 8                # at least this many segments per quarte
 CIRCLE_MAX_QUAD_SEGS = 128
 TRACK_END_MIN_QUAD_SEGS = 4             # roundness of track ends
 BEZIER_SEGMENTS = 32                    # straight pieces per Bezier curve
+ELLIPSE_MIN_SEGMENTS = 8                # an ellipse or elliptical arc has at least this many straight pieces
 
 # Polygons whose rings touch at a single point are opened by this much so they can be meshed
 PINCH_POINT_OPENING_MM = 1e-4
 PINCH_CUT_ROUNDS = 10                   # tries at opening one, the cut's radius doubling each time
 PINCH_DISC_TURN_DEG = 17.0              # turn of the octagon cut at a pinch, off the axes a board's edges follow
+PINCH_DISC_SIDES = 8                    # sides of that disc (an octagon)
+
+# Heights are told apart to 10^-HEIGHT_DIGITS mm (1e-9 mm, a picometre): two closer are one height, in
+# stage 6's slices and the Verifier's checks
+HEIGHT_DIGITS = 9
 
 # Rounds that go on until nothing changes, and stop at this many (most end after one to three; a hole's
 # finish in visual mode has taken twelve)
@@ -47,3 +53,22 @@ SKIN_BURIED_TEST_OFFSET_MM = 0.0005     # a face is dropped if a point this far 
 MESH_MERGE_DIGITS = 8                   # 10^-8: a corner angle under 1e-8 rad is none (no weight in smooth shading), and
                                         # normals whose values spread less are not kept; no vertices are merged
 FLAT_FACET_THRESHOLD = 5000             # smooth shading: two faces are one flat facet where (edge radius / edge span)^2 exceeds this
+SMOOTH_FACET_AREA_DIVISOR = 10          # and a flat facet of more than a part's area / this keeps flat normals
+                                        # (trimesh's facet_minarea)
+
+# Margins, in grid steps, past how far a coating, the ink or the holes' finish can reach, where the
+# shapes near them are picked out first (bigger margins pick out more, and change nothing else)
+REACH_MARGIN_STEPS = 8                  # the conformal coating and the silkscreen: the copper near them
+AIR_NEAR_MARGIN_STEPS = 4               # the holes' finish: the solid beside a band's part (shells.air_near), and
+                                        # bores this much further apart than their shells' reach are not grouped
+
+# How the work is cut up.  Smaller or bigger pieces make the same model, but where an edge crossing rounds
+# onto the grid another way: a sliver thinner than a grid step
+AIR_TILE_VERTICES = 2000                # the holes' finish: a bigger part of the solid beside the bores is cut into
+AIR_TILE_DEPTH = 16                     # tiles of about this many vertices first, by at most this many halvings of
+                                        # its box (64k tiles a side)
+FINISH_BORES_AT_A_TIME = 200            # the holes' finish: a span's bores are worked on in groups of about this many
+SKIN_FEW_PIECES = 200                   # visual skin: up to this many pieces of material reaching a face are cut away
+                                        # from it piece by piece, more at once
+SKIN_BIG_PIECE_COORDINATES = 10_000     # and a piece of this many coordinates (a dielectric, with every via hole in it)
+                                        # on its own

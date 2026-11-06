@@ -14,12 +14,10 @@ from contextlib import contextmanager
 
 from parameters import P
 
-STOP_WAIT_S = 10              # seconds stop() waits at most for the workers it ended to be gone
-
 
 def stop(pool):
     """End a pool's workers now, with the parts they are building, let the pool go, and wait until
-    they are gone (STOP_WAIT_S at most): then no worker writes a file any more (step_parts.py)."""
+    they are gone (Parallel.WORKER_STOP_WAIT_S at most): then no worker writes a file any more (step_parts.py)."""
     processes = list((getattr(pool, "_processes", None) or {}).values())    # shutdown() forgets them
     if hasattr(pool, "terminate_workers"):            # Python 3.14
         pool.terminate_workers()
@@ -33,7 +31,7 @@ def stop(pool):
     for process in processes:
         with contextlib.suppress(ValueError):         # closed: ended already
             running.append(process.sentinel)
-    end = time.monotonic() + STOP_WAIT_S
+    end = time.monotonic() + P.Parallel.WORKER_STOP_WAIT_S
     while running and time.monotonic() < end:
         for ended in multiprocessing.connection.wait(running, timeout=end - time.monotonic()):
             running.remove(ended)

@@ -13,4 +13,8 @@ VERIFY_RAYS = 3000                     # rays the Verifier casts through a visua
                                        # (vertical when upright), to test its surfaces
 VERIFY_VOLUME_TOLERANCE = 1e-7         # a part's volumes from its faces, slices and mesh may differ by this share
                                        # of its volume (the numerical noise of areas and meshes) and still pass
-VERIFY_OPENED_VOLUME_MM3 = 1e-3        # mm3 the opened pinch points may take from a part's prisms and still pass
+VERIFY_VOLUME_NOISE_MM3 = 1e-9         # and by this many mm3 more, whatever its volume
+VERIFY_OPENED_VOLUME_MM3 = 1e-3        # mm3 opening pinch points and sharing vertices may take from a part's prisms
+                                       # (or add) and still pass: in all, or else in every piece, none gone
+VERIFY_MERGE_EXTRA_DIGITS = 2          # the closed-mesh check merges vertices this many decimal digits finer than
+                                       # the snapping grid (1e-6 mm)

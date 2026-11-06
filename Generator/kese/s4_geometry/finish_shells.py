@@ -13,10 +13,8 @@ from kese.core.shape_copies import own
 from kese.core.shapes2d import EMPTY, union
 from kese.s3_resolve.holes import drilled, drills
 from kese.s4_geometry.finish import exposed, finish_layers
-from kese.s4_geometry.shells import MARGIN, add_all, air_near, bare_faces, groups, named, near_faces, note, reach, shells
+from kese.s4_geometry.shells import add_all, air_near, bare_faces, groups, named, near_faces, note, reach, shells
 from parameters import P
-
-BORES_AT_A_TIME = 200       # a span's bores are worked on in groups of about this many (bore_groups)
 
 
 def build(r, ps):
@@ -115,14 +113,15 @@ def bores(r, ps, layers, edge_zone):
 
 
 def bore_groups(rings, d):
-    """A span's rings (their indices, in order) in groups of about BORES_AT_A_TIME, worked on each in
-    a thread of its own: rings within 2 d (and MARGIN grid steps) of each other, whose shells could
-    meet, in one group, and the groups' rings near each other (Z order of the board), so that each
-    group cuts and clips a small corner of the board.  The groups do not depend on the number of
-    threads, so neither do the files."""
-    if len(rings) <= BORES_AT_A_TIME:
+    """A span's rings (their indices, in order) in groups of about Geometry.FINISH_BORES_AT_A_TIME, worked
+    on each in a thread of its own: rings within 2 d (and Geometry.AIR_NEAR_MARGIN_STEPS grid steps) of
+    each other, whose shells could meet, in one group, and the groups' rings near each other (Z order of
+    the board), so that each group cuts and clips a small corner of the board.  The groups do not
+    depend on the number of threads, so neither do the files."""
+    most = sh.G().FINISH_BORES_AT_A_TIME
+    if len(rings) <= most:
         return [list(range(len(rings)))]
-    a, b = pairs_within(rings, 2 * d + MARGIN * sh.grid())
+    a, b = pairs_within(rings, 2 * d + sh.G().AIR_NEAR_MARGIN_STEPS * sh.grid())
     _, label = connected_components(len(rings), a, b)
     centre = shapely.centroid(np.asarray(rings, dtype=object))
     xy, there = np.zeros((len(rings), 2)), ~shapely.is_empty(centre)        # an empty ring (no drill): at 0, 0
@@ -134,7 +133,7 @@ def bore_groups(rings, d):
     out, group = [], []
     for c in sorted(range(len(members)), key=lambda c: (z[members[c][0]], members[c][0])):   # at its first ring
         group += members[c].tolist()
-        if len(group) >= BORES_AT_A_TIME:
+        if len(group) >= most:
             out.append(sorted(group))
             group = []
     return out + ([sorted(group)] if group else [])

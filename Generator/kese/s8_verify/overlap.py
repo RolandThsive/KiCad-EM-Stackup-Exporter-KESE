@@ -6,14 +6,10 @@ uses (kese/core/shape_copies.py): GEOS does that work outside Python's lock."""
 import numpy as np
 import shapely
 
-from kese.core.boundary import HEIGHT_DIGITS
 from kese.core.parallel import in_parallel, workers_wanted
 from kese.core.pinches import polygons
 from kese.core.shape_copies import own
 from parameters import P
-
-HEIGHT_TOLERANCE_MM = 10 ** -HEIGHT_DIGITS      # heights are told apart to this, as the slices are cut
-LEAST_PER_THREAD = 2000                         # polygons: fewer are shrunk and tested in this thread
 
 
 def overlaps(model):
@@ -31,7 +27,7 @@ def overlaps(model):
     part = np.unique([r[0] for r in rows], return_inverse=True)[1]
     z0, z1 = np.array([r[1] for r in rows]), np.array([r[2] for r in rows])
     dz = np.minimum(z1[owner[i]], z1[owner[j]]) - np.maximum(z0[owner[i]], z0[owner[j]])
-    keep = (i < j) & (part[owner[i]] != part[owner[j]]) & (dz > HEIGHT_TOLERANCE_MM)
+    keep = (i < j) & (part[owner[i]] != part[owner[j]]) & (dz > 10.0 ** -P.Geometry.HEIGHT_DIGITS)
     i, j, dz = i[keep], j[keep], dz[keep]
     size = shapely.get_num_coordinates(polys)
     first = size[i] >= size[j]
@@ -65,9 +61,11 @@ def meeting(polys, i, j, size):
 
 def dealt(items, weight, polygons_in_all):
     """items in groups, dealt in turn from the heaviest: one group where there are fewer than
-    2 * LEAST_PER_THREAD polygons in all, else up to four for each worker (a slow group is then
-    made up for by the others), each of LEAST_PER_THREAD polygons or more."""
-    n = max(1, min(4 * workers_wanted(), polygons_in_all // LEAST_PER_THREAD))
+    2 * Parallel.VERIFY_POLYGONS_PER_THREAD polygons in all, else up to Parallel.VERIFY_GROUPS_PER_WORKER
+    for each worker (a slow group is then made up for by the others), each of
+    VERIFY_POLYGONS_PER_THREAD polygons or more."""
+    least, groups = P.Parallel.VERIFY_POLYGONS_PER_THREAD, P.Parallel.VERIFY_GROUPS_PER_WORKER
+    n = max(1, min(groups * workers_wanted(), polygons_in_all // least))
     if n == 1 or len(items) < 2:
         return [items]
     order = items[np.argsort(-weight, kind="stable")]

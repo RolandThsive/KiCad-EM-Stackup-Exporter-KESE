@@ -4,7 +4,7 @@ import numpy as np
 import shapely
 from shapely.geometry import Polygon
 
-from kese.core.shapes2d import EMPTY, as_region, diff, grid, inter, meeting, polys_only, side_by_side, snap
+from kese.core.shapes2d import EMPTY, G, as_region, diff, grid, inter, meeting, polys_only, side_by_side, snap
 
 
 def grown_parts(parts, t, **style):
@@ -104,7 +104,7 @@ def around_region(region, raised, t, quad_segs):
     """Every piece of the coating split on its own, against the raised copper inside a box around
     it wide enough that what the box cuts off cannot reach the piece once grown."""
     cut = cutter(raised)
-    m = 2 * t + 8 * grid()
+    m = 2 * t + G().REACH_MARGIN_STEPS * grid()
     flats, tops, walls = [], [], []
     for s in shapely.get_parts(region):
         x0, y0, x1, y1 = s.bounds

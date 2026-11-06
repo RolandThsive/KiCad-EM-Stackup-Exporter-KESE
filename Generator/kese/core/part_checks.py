@@ -9,7 +9,7 @@ import numpy as np
 import shapely
 
 from kese.core import shapes2d as sh
-from kese.core.boundary import HEIGHT_DIGITS
+from kese.core.boundary import spanning_prisms
 from kese.core.graph import connected_components
 from parameters import P
 
@@ -39,17 +39,18 @@ class VolumeCheck(NamedTuple):
 
 def mesh_check(mesh, units):
     """A finished mesh (in `units`) checked, its vertices merged at the snapping grid
-    (Geometry.SNAP_GRID_MM) whatever the units."""
+    (Geometry.SNAP_GRID_MM, Verifier.VERIFY_MERGE_EXTRA_DIGITS finer) whatever the units."""
     scale = 1000.0 if units == "m" else 1.0
     m = mesh.copy()
-    m.merge_vertices(digits_vertex=int(round(-np.log10(P.Geometry.SNAP_GRID_MM / scale))) + 2)
+    m.merge_vertices(digits_vertex=int(round(-np.log10(P.Geometry.SNAP_GRID_MM / scale))) + P.Verifier.VERIFY_MERGE_EXTRA_DIGITS)
     return MeshCheck(m.is_watertight, m.is_winding_consistent, m.volume, mesh.volume)
 
 
 def allowed(volume):
     """mm3 two of the volumes of a part, or of a piece, may differ by, as the numerical noise of areas
-    and meshes: Verifier.VERIFY_VOLUME_TOLERANCE of it (volumes: a number, or an array of them)."""
-    return P.Verifier.VERIFY_VOLUME_TOLERANCE * np.maximum(volume, 1e-9) + 1e-9
+    and meshes: Verifier.VERIFY_VOLUME_TOLERANCE of it, and Verifier.VERIFY_VOLUME_NOISE_MM3 (volumes: a
+    number, or an array of them)."""
+    return P.Verifier.VERIFY_VOLUME_TOLERANCE * np.abs(volume) + P.Verifier.VERIFY_VOLUME_NOISE_MM3
 
 
 def opened_allowed(volume):
@@ -84,8 +85,7 @@ def pieces_compared(slices, prisms):
     the slice's own pieces, joined where they touch (a hole's finish, say, as built and as sliced)."""
     count, gone, worst = 0, 0, (-np.inf, 0.0, 0.0, (0.0, 0.0, 0.0, 0.0))
     for z0, z1, region in slices:
-        given = [g for p in prisms if round(p.z0, HEIGHT_DIGITS) <= z0 and round(p.z1, HEIGHT_DIGITS) >= z1
-                 for g in shapely.get_parts(sh.polys_only(p.region))]
+        given = [g for i in spanning_prisms(prisms, z0, z1) for g in shapely.get_parts(sh.polys_only(prisms[i].region))]
         both = np.array(given + list(shapely.get_parts(sh.polys_only(region))), dtype=object)
         if not len(both):
             continue

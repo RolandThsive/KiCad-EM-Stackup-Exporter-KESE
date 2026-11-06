@@ -22,9 +22,6 @@ from kese.core.memory import give_back_memory
 from kese.core.parallel import in_processes, workers_wanted, worth_processes
 from kese.core.shape_copies import floating, own
 
-FEW_PIECES = 200         # of material reaching a face: up to this many are cut away piece by piece (cut_away)
-BIG_PIECE = 10_000       # coordinates: a piece this big (a dielectric, with every via hole in it) is cut away on its own
-
 
 def skin_faces(ps, log):
     """PrismSet -> (levels, the material of every slice, {part: (flats, walls)}): flats as
@@ -114,10 +111,10 @@ def cut_away(region, material):
     if not len(near):
         return region
     cutters = polys[near]
-    big = shapely.get_num_coordinates(cutters) > BIG_PIECE
-    if (big.any() or len(near) > FEW_PIECES) and lies_against_material(region, material):
+    few, big = sh.G().SKIN_FEW_PIECES, shapely.get_num_coordinates(cutters) > sh.G().SKIN_BIG_PIECE_COORDINATES
+    if (big.any() or len(near) > few) and lies_against_material(region, material):
         return sh.EMPTY
-    if len(near) > FEW_PIECES:
+    if len(near) > few:
         return sh.diff(region, joined)
     for piece in cutters[big]:
         region = sh.diff(region, piece)

@@ -49,3 +49,15 @@ SKIN_PROBES_AT_A_TIME = 2_000_000       # visual skin, the test for hidden trian
                                         # (their probe points and normals take about a quarter of a gigabyte)
 VERIFY_TRIANGLES_AT_A_TIME = 200_000    # the Verifier's vertical rays: triangles tested at once
 STEP_ROWS_AT_A_TIME = 100_000           # the STEP writer: points, edges or faces turned into text at once
+
+# Nets, counted layer by layer: from this many, stage 3 joins the copper layers in processes of their own (if
+# PROCESS_MIN_COORDINATES agrees).  Much of a net's work is then Python's (the loop over the nets, the copies
+# of the shapes), which threads take in turn: CIAA ACC (6,200) takes 24.3 s in four threads and 13.2 s
+# in four processes, ULX4M (5,526) 17.9 s and 8.7 s, a 4-layer board of 1,720 3.7 s and 2.1 s.  With
+# fewer nets most of the work is GEOS's, which threads run as fast without sending the shapes to the
+# processes and back: NE_Delta (804 nets on 2 layers, 1.6 million coordinates) 8.0 s and 9.3 s.
+PROCESS_MIN_NETS = 1000
+
+VERIFY_POLYGONS_PER_THREAD = 2000       # the Verifier's overlap check: fewer polygons are tested in one thread,
+VERIFY_GROUPS_PER_WORKER = 4            # more in up to this many groups per worker (a slow group made up for by the others)
+WORKER_STOP_WAIT_S = 10                 # seconds a run waits at most for worker processes it stopped to be gone

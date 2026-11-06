@@ -44,18 +44,14 @@ def note(ps, what, layers, across):
     ps.notes.append(f"finish: also {what}{grid}")
 
 
-MARGIN = 4          # grid steps: how far past a band's part the solid beside it is taken (air_near)
-TILE = 2000         # vertices: a bigger part of the solid is cut into tiles of about this many first
-TILE_DEPTH = 16     # at most this many halvings of a part's box (64k tiles a side)
-
-
 def tiles(part):
-    """A polygon cut along halvings of its box into pieces of about TILE vertices or fewer, which
-    fill it and do not overlap."""
+    """A polygon cut along halvings of its box into pieces of about Geometry.AIR_TILE_VERTICES vertices or
+    fewer (by at most Geometry.AIR_TILE_DEPTH halvings), which fill it and do not overlap."""
+    most, deepest = sh.G().AIR_TILE_VERTICES, sh.G().AIR_TILE_DEPTH
     out, todo = [], [(part, 0)]
     while todo:
         p, depth = todo.pop()
-        if shapely.get_num_coordinates(p) <= TILE or depth == TILE_DEPTH:
+        if shapely.get_num_coordinates(p) <= most or depth >= deepest:
             out.append(p)
             continue
         x0, y0, x1, y1 = p.bounds
@@ -68,8 +64,8 @@ def tiles(part):
 
 def air_near(regions):
     """band -> the band less the union of `regions`, on the grid, worked out for each of the band's
-    parts on its own: the solid within MARGIN grid steps of the part's box, joined and put on the
-    grid, is cut from it.  So no union of the whole board is made (on a big board that took most of
+    parts on its own: the solid within Geometry.AIR_NEAR_MARGIN_STEPS grid steps of the part's box,
+    joined and put on the grid, is cut from it.  So no union of the whole board is made (on a big board that took most of
     the holes' finish: 31 s of NE_Delta's, where its 1,911 bores take about 7 s this way).  A big
     part of the solid (the drilled board, a plane) is cut into tiles first, so that each bore clips
     only the tiles near it.  The air comes out as the whole union's but where an edge crossing rounds
@@ -82,7 +78,7 @@ def air_near(regions):
 
     def air(band):
         pieces = shapely.get_parts(sh.polys_only(band))
-        m = MARGIN * sh.grid()
+        m = sh.G().AIR_NEAR_MARGIN_STEPS * sh.grid()
         boxes = shapely.bounds(pieces) + (-m, -m, m, m)
         at, near = tree.query(shapely.box(*boxes.T), predicate="intersects") if tree is not None else \
             np.zeros((2, 0), dtype=np.int64)

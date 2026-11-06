@@ -73,7 +73,7 @@ Three clean-ups follow, all for shapes of one net that only just meet:
   back by a grid step, mitred), so their walls cannot leave the solid open on the grid.
 
 The layers are worked on `Parallel.WORKERS` at a time, the biggest first: in worker processes on a
-board of 1,000 nets or more (counted layer by layer) whose copper holds at least
+board of `Parallel.PROCESS_MIN_NETS` nets or more (1,000, counted layer by layer) whose copper holds at least
 `Parallel.PROCESS_MIN_COORDINATES` coordinates, else in threads
 ([Working Principle](Working-Principle.md#64-work-done-in-parallel)). Either way each net's region
 comes out the same, byte for byte.

@@ -120,17 +120,17 @@ def test_the_overlap_check_finds_the_same_overlaps_in_threads_as_in_one():
     for part in list(model.boundaries)[:6]:           # each a copy of its own, shifted a little
         slices = [(z0, z1, translate(g, 0.05, 0.03)) for z0, z1, g in model.boundaries[part].slices]
         model.boundaries[f"{part} copy"] = SimpleNamespace(slices=slices)
-    saved = P.Parallel.WORKERS, overlap.LEAST_PER_THREAD
+    saved = P.Parallel.WORKERS, P.Parallel.VERIFY_POLYGONS_PER_THREAD
     try:
         P.override("Parallel.WORKERS", 1)
         alone = overlap.overlaps(model)
         P.override("Parallel.WORKERS", 3)
-        overlap.LEAST_PER_THREAD = 1                  # every group a thread's
+        P.override("Parallel.VERIFY_POLYGONS_PER_THREAD", 1)        # every group a thread's
         assert len(overlap.dealt(np.arange(50), np.ones(50), 50)) == 12
         assert len(alone) > 100 and overlap.overlaps(model) == alone
     finally:
         P.override("Parallel.WORKERS", saved[0])
-        overlap.LEAST_PER_THREAD = saved[1]
+        P.override("Parallel.VERIFY_POLYGONS_PER_THREAD", saved[1])
 
 
 if __name__ == "__main__":

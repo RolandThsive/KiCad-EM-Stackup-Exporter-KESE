@@ -28,6 +28,13 @@ STEP_ARC_TURN_RATIO_MIN = 0.7          # chord's angle about the centre, and non
                                        # boolean cut the arc)
 STEP_ARC_MAX_SWEEP_DEG = 181.0         # a longer arc is cut in pieces at vertices spread evenly; a whole
                                        # circle is two arcs on one circle, or more below 180
+STEP_ARC_CHECK_FACTOR = 3.0            # an arc is dropped where a vertex lies further from its written circle
+                                       # than this many times STEP_ARC_FIT_TOLERANCE_MM
+STEP_STRIP_MAX_TURN_DEG = 45.0         # the strip kept clear around an arc is drawn with corners at most this
+                                       # far apart about its centre (closer where its margin needs)
+STEP_TANGENT_MM = 5e-8                 # an edge that leaves an arc's end and cuts into its circle by less only
+                                       # touches the arc, as a line along its tangent does (OpenCascade takes two
+                                       # curves within about 2e-7 of the file's unit for touching: in mm, 2e-7 mm)
 #
 # Which parts are made, in every format and mode alike, is set by one switch per kind of part:
 #   Board.BOARD_ENABLED, Copper.COPPER_ENABLED (copper and plated barrels), Finish.FINISH_ENABLED,

@@ -26,6 +26,7 @@ from kese.s1_read import read  # noqa: E402
 from kese.s2_collect import collect  # noqa: E402
 from kese.s3_resolve import resolve  # noqa: E402
 from kese.s4_geometry import finish_shells, geometry, shells  # noqa: E402
+from parameters import P  # noqa: E402
 
 FEATURES = ROOT.parent / "featureTest"
 BOARDS = ["03_vias_through", "04_vias_blind_buried", "11_zones", "16_edge_plating_castellation",
@@ -36,15 +37,15 @@ def test_a_big_part_is_cut_into_tiles_that_fill_it_and_do_not_overlap():
     plane = box(0, 0, 40, 30).difference(union([Point(x, y).buffer(0.3, quad_segs=16)
                                                 for x in np.arange(1, 40, 1.5) for y in np.arange(1, 30, 1.5)]))
     parts = shells.tiles(plane)
-    assert len(parts) > 4 and all(shapely.get_num_coordinates(p) <= shells.TILE for p in parts)
+    assert len(parts) > 4 and all(shapely.get_num_coordinates(p) <= P.Geometry.AIR_TILE_VERTICES for p in parts)
     assert abs(sum(p.area for p in parts) - plane.area) < 1e-9
     assert shapely.symmetric_difference(union(parts), plane).area < 1e-9
     assert shells.tiles(box(0, 0, 1, 1)) == [box(0, 0, 1, 1)]
 
 
 def test_bores_whose_shells_could_meet_share_a_group():
-    saved = finish_shells.BORES_AT_A_TIME
-    finish_shells.BORES_AT_A_TIME = 5
+    saved = P.Geometry.FINISH_BORES_AT_A_TIME
+    P.override("Geometry.FINISH_BORES_AT_A_TIME", 5)
     try:
         rings = [Point(x, y).buffer(0.3).difference(Point(x, y).buffer(0.2)) for x in range(6) for y in range(4)]
         rings.append(Point(0.62, 0).buffer(0.3).difference(Point(0.62, 0).buffer(0.2)))   # 0.02 mm from the first
@@ -54,7 +55,7 @@ def test_bores_whose_shells_could_meet_share_a_group():
         with_empty = finish_shells.bore_groups(rings + [Polygon()], 0.01)     # a hole with no drill: no ring
         assert sorted(k for g in with_empty for k in g) == list(range(len(rings) + 1))
     finally:
-        finish_shells.BORES_AT_A_TIME = saved
+        P.override("Geometry.FINISH_BORES_AT_A_TIME", saved)
     assert finish_shells.bore_groups(rings[:3], 0.01) == [[0, 1, 2]]
 
 
@@ -82,8 +83,8 @@ def test_the_air_near_no_solid_is_the_band_and_an_empty_band_has_none():
 def finish_prisms(r, near):
     """The finish prisms of a resolved board: the air cut bore by bore, the bores in groups of seven
     (near), or by the whole union, each span at once (as before)."""
-    saved = finish_shells.air_near, finish_shells.air_beside, finish_shells.BORES_AT_A_TIME
-    finish_shells.BORES_AT_A_TIME = 7 if near else 10 ** 9
+    saved = finish_shells.air_near, finish_shells.air_beside, P.Geometry.FINISH_BORES_AT_A_TIME
+    P.override("Geometry.FINISH_BORES_AT_A_TIME", 7 if near else 10 ** 9)
     if not near:
         def whole(regions):
             joined = sh.snap(union(list(regions)))
@@ -94,7 +95,8 @@ def finish_prisms(r, near):
         ps = PrismSet(regions=r)
         finish_shells.build(r, ps)
     finally:
-        finish_shells.air_near, finish_shells.air_beside, finish_shells.BORES_AT_A_TIME = saved
+        finish_shells.air_near, finish_shells.air_beside = saved[:2]
+        P.override("Geometry.FINISH_BORES_AT_A_TIME", saved[2])
     return [p for p in ps.prisms if p.role == "finish"]
 
 

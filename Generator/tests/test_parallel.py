@@ -421,17 +421,16 @@ def copper_keys(pcb):
 def test_the_copper_layers_joined_in_processes_are_the_same_to_the_byte():
     # each layer's nets joined, clipped and cut by the holes in a worker of its own, the biggest
     # layer first: the same regions, on the same grid, as in threads, whatever the number of workers
-    from kese.s3_resolve import copper
     pcb = ROOT / "tests" / "boards" / "six_layer.kicad_pcb"
-    keys, nets = {}, copper.PROCESS_MIN_NETS
+    keys, nets = {}, P.Parallel.PROCESS_MIN_NETS
     for workers, least in ((1, 10 ** 12), (3, 10 ** 12), (2, 0), (3, 0)):
         saved = with_workers(workers, ("Parallel.PROCESS_MIN_COORDINATES", least))
-        copper.PROCESS_MIN_NETS = 0 if least == 0 else nets
+        P.override("Parallel.PROCESS_MIN_NETS", 0 if least == 0 else nets)
         try:
             keys[workers, least] = copper_keys(pcb)
         finally:
             put_back(saved)
-            copper.PROCESS_MIN_NETS = nets
+            P.override("Parallel.PROCESS_MIN_NETS", nets)
     first = keys[1, 10 ** 12]
     assert len(first[0]) == 6 and all(k == first for k in keys.values())
 

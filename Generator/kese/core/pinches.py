@@ -58,8 +58,10 @@ def cut_open_at(slices, pts, n):
 
 def cut_disc(p, r):
     """The disc cut out around a pinch point: an octagon turned by Geometry.PINCH_DISC_TURN_DEG, so no
-    corner lies on KiCad's horizontal, vertical or 45-degree lines through the point."""
-    a = np.radians(sh.G().PINCH_DISC_TURN_DEG + 45.0 * np.arange(8))
+    corner lies on KiCad's horizontal, vertical or 45-degree lines through the point (Geometry.PINCH_DISC_SIDES
+    sides)."""
+    n = sh.G().PINCH_DISC_SIDES
+    a = np.radians(sh.G().PINCH_DISC_TURN_DEG + 360.0 / n * np.arange(n))
     return shapely.Polygon(np.c_[p[0] + r * np.cos(a), p[1] + r * np.sin(a)])
 
 

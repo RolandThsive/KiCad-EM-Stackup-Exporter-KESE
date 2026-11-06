@@ -15,8 +15,6 @@ from kese.core.shape_copies import floating, own
 from kese.core.triangulate import rings_of
 from kese.core.vertices import grid_keys, noded, ring_points, share_vertices
 
-HEIGHT_DIGITS = 9                # heights are told apart to 1e-9 mm, a picometre
-
 
 @dataclass
 class Boundary:
@@ -60,7 +58,7 @@ def boundary_of(part, prisms, log=None):
 
 def heights_of(prisms):
     """Every distinct height of the prisms, low to high."""
-    return sorted({round(z, HEIGHT_DIGITS) for p in prisms for z in (p.z0, p.z1)})
+    return sorted({round(z, sh.G().HEIGHT_DIGITS) for p in prisms for z in (p.z0, p.z1)})
 
 
 def slices_of_part(prisms, levels, log=None, pinches_opened=True):
@@ -79,7 +77,7 @@ def slices_of(prisms, levels):
     out, made = [], {}
     shapes = shapely.to_wkb([p.region for p in prisms]).tolist() if prisms else []
     for z0, z1 in pairwise(levels):
-        spanning = [i for i, p in enumerate(prisms) if round(p.z0, HEIGHT_DIGITS) <= z0 and round(p.z1, HEIGHT_DIGITS) >= z1]
+        spanning = spanning_prisms(prisms, z0, z1)
         if not spanning:
             out.append(sh.EMPTY)
             continue
@@ -89,6 +87,12 @@ def slices_of(prisms, levels):
             made[key] = noded(regions[0] if len(regions) == 1 else joined_regions(regions))
         out.append(made[key])
     return out
+
+
+def spanning_prisms(prisms, z0, z1):
+    """The indices of the prisms that span the slice from z0 to z1 (heights of heights_of)."""
+    d = sh.G().HEIGHT_DIGITS
+    return [i for i, p in enumerate(prisms) if round(p.z0, d) <= z0 and round(p.z1, d) >= z1]
 
 
 def joined_regions(regions, exact=True, shared=False):

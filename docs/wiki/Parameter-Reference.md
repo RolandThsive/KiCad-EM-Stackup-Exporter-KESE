@@ -10,9 +10,9 @@ and listed on its first line.
 
 > [!NOTE]
 > Defaults are those of the parameter files on `main`. Before the board is read, the run checks
-> `MODE`, `FILE_FORMAT`, the settings of `parameters/parallel.py`, the rounds of
-> `parameters/geometry.py`, the Verifier's tolerances and rays, the finish's mitre limit, the
-> longest STEP arc and its fewest points, the names in the preset of `--for`,
+> `MODE`, `FILE_FORMAT`, the settings of `parameters/parallel.py`, the rounds, counts, digits and
+> margins of `parameters/geometry.py`, the Verifier's tolerances, rays and merge digits, the finish's
+> mitre limit, the STEP arcs' settings that count or divide, the names in the preset of `--for`,
 > every setting whose range below is a few words with `/` between them (such as `"mm"` / `"m"`), and
 > the kind of every value: `True` or `False` where the file has one of them, a number where it has a
 > number, text, a list or a dict likewise (a setting that is `None` in its file takes any value). It
@@ -202,9 +202,12 @@ These do not change dimensions.
 | `CIRCLE_MIN_QUAD_SEGS`, `CIRCLE_MAX_QUAD_SEGS` | `8`, `128` | int | Bounds on segments per quarter circle |
 | `TRACK_END_MIN_QUAD_SEGS` | `4` | int ≥ 1 | Roundness of track ends |
 | `BEZIER_SEGMENTS` | `32` | int ≥ 1 | Straight pieces per Bézier curve |
+| `ELLIPSE_MIN_SEGMENTS` | `8` | int ≥ 3 | An ellipse or elliptical arc has at least this many straight pieces (else one per `ARC_STEP_DEG`) |
 | `PINCH_POINT_OPENING_MM` | `1e-4` | mm > 0 | Polygons whose rings touch at a single point are opened by this much so they can be meshed |
 | `PINCH_CUT_ROUNDS` | `10` | int ≥ 1 | Tries at opening one, the cut's radius doubling each time |
 | `PINCH_DISC_TURN_DEG` | `17.0` | degrees | Turn of the octagon cut at a pinch, off the axes a board's edges follow |
+| `PINCH_DISC_SIDES` | `8` | int ≥ 3 | Sides of that disc (an octagon) |
+| `HEIGHT_DIGITS` | `9` | int ≥ 0 | Heights are told apart to 10^-9 mm (a picometre): two closer are one height, in stage 6's slices and the Verifier's checks |
 | `VERTEX_SHARING_ROUNDS` | `20` | int ≥ 1 | Stage 6: rounds of cutting a part's faces and giving its slices each other's vertices, until nothing changes (mostly one to three; a hole's finish in visual mode has taken twelve). Slices still changing then are cut open where a round still moves them, as at a pinch point, for at most `PINCH_CUT_ROUNDS` more rounds; a part still changing after that is noted in `report.txt` and may be open ([Working Principle](Working-Principle.md#62-how-a-part-becomes-a-closed-solid)) |
 | `NODING_ROUNDS` | `8` | int ≥ 1 | Rounds of noding a region on the snapping grid again (GEOS's hot pixels) until it changes nothing (one or two in practice) |
 | `SLIVER_AREA_MM2` | `1e-10` | mm² > 0 | A polygon of less area is a sliver left by the set operations, and is dropped |
@@ -213,6 +216,15 @@ These do not change dimensions.
 | `SKIN_BURIED_TEST_OFFSET_MM` | `0.0005` | mm > 0 | Visual mode: a face is dropped if a point this far outside it lies inside another solid ([Output Modes](Output-Modes.md), equation (8.1)) |
 | `MESH_MERGE_DIGITS` | `8` | int | 10^-8: a triangle's corner angle under 10^-8 rad counts as none (it gives no weight to smooth shading), and normals whose values spread less than that are not kept. No vertices are merged |
 | `FLAT_FACET_THRESHOLD` | `5000` | > 0 | Smooth shading: two faces are one flat facet where (edge radius / edge span)² exceeds this |
+| `SMOOTH_FACET_AREA_DIVISOR` | `10` | > 0 | Smooth shading: a flat facet of more than the part's area divided by this keeps flat normals (trimesh's `facet_minarea`) |
+| `REACH_MARGIN_STEPS` | `8` | int ≥ 0 | Grid steps added to how far the conformal coating or the silkscreen ink can reach, where the copper near it is picked out first; a bigger margin picks out more and changes nothing else |
+| `AIR_NEAR_MARGIN_STEPS` | `4` | int ≥ 0 | The holes' finish: grid steps past a band's part within which the solid beside it is taken, and further apart than their shells' reach by which bores are not grouped |
+| `AIR_TILE_VERTICES`, `AIR_TILE_DEPTH` | `2000`, `16` | int ≥ 1, int ≥ 0 | The holes' finish: a bigger part of the solid beside the bores is cut first into tiles of about this many vertices, by at most this many halvings of its box (64k tiles a side), so that each bore clips only the tiles near it |
+| `FINISH_BORES_AT_A_TIME` | `200` | int ≥ 1 | The holes' finish: a span's bores are worked on in groups of about this many, each group in a thread |
+| `SKIN_FEW_PIECES`, `SKIN_BIG_PIECE_COORDINATES` | `200`, `10000` | int ≥ 0 | Visual skin: up to this many pieces of material reaching a face are cut away from it piece by piece, more at once, and a piece of this many coordinates (a dielectric, with every via hole in it) on its own |
+
+The last four rows say how the work is cut up: other values make the same model, but where an edge
+crossing rounds onto the grid another way, a sliver thinner than a grid step.
 
 ### 16.7.1 How The Curve Settings Are Used
 
@@ -277,13 +289,17 @@ model: the files are the same, byte for byte, however the work is shared out.
 
 | Name | Default | Range | Meaning |
 |---|---|---|---|
-| `WORKERS` | `0` | int ≥ 0 | Threads or processes that work at once. Threads where the 2D geometry library does the work (it runs outside Python's lock): the copper layers and the solder mask's minimum web width, group by group, in stage 3; both sides of the solder mask and the silkscreen, and the finish's copper layers and groups of bores, in stage 4; the faces of the visual-mode skin and the test for its hidden triangles, in stage 6; the Verifier's overlap check in stage 8. Processes of their own, each started afresh, where much of the work is Python's: in stage 3 the copper layers of a board of 1,000 nets or more, in stage 6 the parts built at once in simulation mode and the parts sliced for the visual skin, in stage 7 the parts of a STEP file (`PROCESS_WORKERS` and `PROCESS_MIN_COORDINATES` below). `0` = one per processor thread the run may use (all of the machine's, unless a job scheduler, `taskset` or a container limits it); `1` = everything in turn, in one process. |
+| `WORKERS` | `0` | int ≥ 0 | Threads or processes that work at once. Threads where the 2D geometry library does the work (it runs outside Python's lock): the copper layers and the solder mask's minimum web width, group by group, in stage 3; both sides of the solder mask and the silkscreen, and the finish's copper layers and groups of bores, in stage 4; the faces of the visual-mode skin and the test for its hidden triangles, in stage 6; the Verifier's overlap check in stage 8. Processes of their own, each started afresh, where much of the work is Python's: in stage 3 the copper layers of a board of `PROCESS_MIN_NETS` nets or more (1,000), in stage 6 the parts built at once in simulation mode and the parts sliced for the visual skin, in stage 7 the parts of a STEP file (`PROCESS_WORKERS` and `PROCESS_MIN_COORDINATES` below). `0` = one per processor thread the run may use (all of the machine's, unless a job scheduler, `taskset` or a container limits it); `1` = everything in turn, in one process. |
 | `PROCESS_WORKERS` | `0` | int ≥ 0 | At most this many worker processes at once, in stages 3, 6 and 7; `0` = as many as `WORKERS` (a higher value is the same as `WORKERS`). Each process holds its own Python, numpy and shapely (about 36 MB) and the part it builds: NE_Delta, one of the biggest boards tried, peaks at 2.80 GB in all with 4 workers and 4.37 GB with 32 in simulation mode, and at 3.65 GB with 4 when it writes the STEP file too, whose parts the processes also work on. A thread costs little memory, so a machine with many threads and little memory can keep `WORKERS` and lower this; `1` starts no process: stages 6 and 7 build their parts in the main process, stage 3 joins the copper layers in threads, and the threads are kept. If one is stopped or runs out of memory, the parts left go to half as many processes, and to the main process once that would be one; if the processes cannot start, the main process builds them; each time with a note ([Checks, Errors And Warnings](Checks-Errors-And-Warnings.md#1713-notes-worth-knowing)). Windows holds at most 61 processes at once. |
-| `PROCESS_MIN_COORDINATES` | `20000` | int ≥ 0 | Stage 6 starts worker processes only when the parts hold this many coordinates or more in all their prisms, the STEP writer only when their faces do, and stage 3 only when the copper items do, on a board of 1,000 nets or more ([Working Principle](Working-Principle.md#64-work-done-in-parallel)); smaller boards are built part after part in the main process, which is faster than starting the processes (about 0.3 s for 4): one of the test boards takes 0.10 s that way, and 0.35 s in processes. `0` = processes for every board of more than one part (in stage 3, of 1,000 nets or more). |
+| `PROCESS_MIN_COORDINATES` | `20000` | int ≥ 0 | Stage 6 starts worker processes only when the parts hold this many coordinates or more in all their prisms, the STEP writer only when their faces do, and stage 3 only when the copper items do, on a board of `PROCESS_MIN_NETS` nets or more ([Working Principle](Working-Principle.md#64-work-done-in-parallel)); smaller boards are built part after part in the main process, which is faster than starting the processes (about 0.3 s for 4): one of the test boards takes 0.10 s that way, and 0.35 s in processes. `0` = processes for every board of more than one part (in stage 3, of `PROCESS_MIN_NETS` nets or more). |
 | `GIVE_BACK_MEMORY` | `True` | bool | Hand the memory that threads freed back to the system after each step done in threads, and in each worker process after each part (glibc's `malloc_trim`, on Linux; elsewhere nothing is done). glibc keeps a pool for each thread and holds on to what is freed in it: NE_Delta in visual mode peaks at 2.65 GB with 4 workers and 3.57 GB with 32 with this, and 3.45 GB and 4.76 GB without. Tens of milliseconds per run. |
 | `SKIN_PROBES_AT_A_TIME` | `2000000` | int ≥ 1 | Visual skin, the test for hidden triangles: triangles probed at once. Their probe points and normals take about a quarter of a gigabyte; fewer take less memory and a little more time |
 | `VERIFY_TRIANGLES_AT_A_TIME` | `200000` | int ≥ 1 | The Verifier's vertical rays: triangles tested at once |
 | `STEP_ROWS_AT_A_TIME` | `100000` | int ≥ 1 | The STEP writer: points, edges or faces turned into text at once. The file is the same, byte for byte, whatever the size |
+| `PROCESS_MIN_NETS` | `1000` | int ≥ 0 | Stage 3 joins the copper layers in processes of their own only on a board of this many nets or more, counted layer by layer (and `PROCESS_MIN_COORDINATES`), else in threads: with many nets much of the work is Python's (CIAA ACC, 6,200 nets: 13.2 s in four processes, 24.3 s in four threads); with fewer most of it is GEOS's, which threads run as fast without sending the shapes to the processes and back (NE_Delta, 804 nets: 8.0 s in threads, 9.3 s in processes) |
+| `VERIFY_POLYGONS_PER_THREAD` | `2000` | int ≥ 1 | The Verifier's overlap check: fewer polygons in all are tested in one thread; more in groups of at least this many |
+| `VERIFY_GROUPS_PER_WORKER` | `4` | int ≥ 1 | and up to this many groups per worker, so that a slow group is made up for by the others |
+| `WORKER_STOP_WAIT_S` | `10` | s ≥ 0 | When a run stops its worker processes (an error, Ctrl+C), how long it waits at most for them to be gone, so that none writes a file after |
 
 > [!NOTE]
 > `WORKERS` was `Run.WORKERS` before. `--set Run.WORKERS=N` still works: it sets
@@ -319,6 +335,15 @@ at the wall's lower height) under the `ADVANCED_FACE` of a curved wall. An arc t
 half a circle (`STEP_ARC_MAX_SWEEP_DEG`): a whole circle is two arcs between two vertices, on one
 `CIRCLE`, so there are no seam edges and every edge has two vertices and two faces.
 
+An arc is written only where nothing can cross it, since its bulge is up to
+`Geometry.CIRCLE_CHORD_TOLERANCE_MM` off its chords; these three settings say when:
+
+| Name | Default | Range | Meaning |
+|---|---|---|---|
+| `STEP_ARC_CHECK_FACTOR` | `3.0` | ≥ 0 | An arc is dropped where a vertex lies further from its written circle than this many times `STEP_ARC_FIT_TOLERANCE_MM` |
+| `STEP_STRIP_MAX_TURN_DEG` | `45.0` | degrees > 0 | The strip kept clear around an arc is drawn with corners at most this far apart about its centre (closer where its margin needs) |
+| `STEP_TANGENT_MM` | `5e-8` | mm ≥ 0 | An edge that leaves an arc's end and cuts into its circle by less than this only touches the arc, as a line along its tangent does (OpenCascade takes two curves within about 2e-7 of the file's unit for touching: in mm, the stricter unit, 2e-7 mm) |
+
 ## 16.11 Verifier (`parameters/verifier.py`)
 
 Whether the Verifier runs, and what it lets pass ([Checks, Errors And Warnings](Checks-Errors-And-Warnings.md#173-the-verifier)).
@@ -329,7 +354,9 @@ How many triangles its rays test at once is `Parallel.VERIFY_TRIANGLES_AT_A_TIME
 | `VERIFY` | `False` | bool | Run the Verifier after generation, as `--verify` does (at most about 1.5 s more on the example boards, the checks stage 6 makes of each part included; longer on dense boards) |
 | `VERIFY_RAYS` | `3000` | int ≥ 1 | Rays the Verifier casts through a visual model, along the board's normal, to test its surfaces |
 | `VERIFY_VOLUME_TOLERANCE` | `1e-7` | ≥ 0 | How far a part's volumes from its faces, its slices and its mesh may differ, as a share of its volume (the numerical noise of areas and meshes), and still pass |
+| `VERIFY_VOLUME_NOISE_MM3` | `1e-9` | mm³ ≥ 0 | and by this many mm³ more, whatever the volume |
 | `VERIFY_OPENED_VOLUME_MM3` | `1e-3` | mm³ ≥ 0 | How much volume opening pinch points and sharing vertices may take from a part's prisms (or add), and the part still pass: in all, or else in every piece of every slice, with no piece gone |
+| `VERIFY_MERGE_EXTRA_DIGITS` | `2` | int ≥ 0 | The closed-mesh check merges a mesh's vertices this many decimal digits finer than the snapping grid (1e-6 mm), whatever `Run.UNITS` |
 
 ## 16.12 Presets (`parameters/presets.py`)
 

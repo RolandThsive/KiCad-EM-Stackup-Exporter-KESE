@@ -13,19 +13,11 @@ from kese.core.shapes2d import side_by_side, union
 from kese.s3_resolve.holes import hole_shapes
 from parameters import P
 
-# nets, counted layer by layer: from this many the layers are joined in processes of their own (if
-# worth_processes agrees).  Much of a net's work is then Python's (the loop over the nets, the copies
-# of the shapes), which threads take in turn: CIAA ACC (6,200) takes 24.3 s in four threads and 13.2 s
-# in four processes, ULX4M (5,526) 17.9 s and 8.7 s, a 4-layer board of 1,720 3.7 s and 2.1 s.  With
-# fewer nets most of the work is GEOS's, which threads run as fast without sending the shapes to the
-# processes and back: NE_Delta (804 nets on 2 layers, 1.6 million coordinates) 8.0 s and 9.3 s.
-PROCESS_MIN_NETS = 1000
-
 
 def copper_layers(r, items, outline_k, log):
     """r.copper {layer: {net: region}} and r.copper_all {layer: region}; Parallel.WORKERS layers at a
     time, the biggest first, kept in the layers' order: in processes of their own on a board of many
-    nets (PROCESS_MIN_NETS), else in threads (copper_of_layer takes its own copies of the shapes
+    nets (Parallel.PROCESS_MIN_NETS), else in threads (copper_of_layer takes its own copies of the shapes
     there)."""
     last = len(items.layers) - 1
     jobs = {k: (k == 0 or k == last, items.copper_items.get(l, []), [h for h in items.holes if h.i <= k <= h.j],
@@ -33,7 +25,7 @@ def copper_layers(r, items, outline_k, log):
     size = {k: sum(int(shapely.get_num_coordinates(g)) for g, _ in job[1]) for k, job in jobs.items()}
     order = sorted(jobs, key=lambda k: -size[k])
     nets = sum(len({net for _, net in job[1]}) for job in jobs.values())
-    if nets >= PROCESS_MIN_NETS and worth_processes(len(jobs), sum(size.values())):
+    if nets >= P.Parallel.PROCESS_MIN_NETS and worth_processes(len(jobs), sum(size.values())):
         done = dict(in_processes(copper_of_layer, [(k, jobs[k]) for k in order], log, "joined", "copper layer"))
     else:
         done = dict(zip(order, in_parallel(lambda k: copper_of_layer(*jobs[k], take=own), order)))

@@ -28,7 +28,8 @@ def ink(r, side, layer):
         return []
     mask = own(r.mask[side])
     # only the copper the ink can reach matters: what lies farther than t_lam + t_silk is left out
-    cu = under_mask_copper(st, near(own(r.copper_all.get(layer, sh.EMPTY)), silk, t_lam + t_silk + 8 * sh.grid()))
+    reach = t_lam + t_silk + sh.G().REACH_MARGIN_STEPS * sh.grid()
+    cu = under_mask_copper(st, near(own(r.copper_all.get(layer, sh.EMPTY)), silk, reach))
     cu_t = st.band[layer][1] - st.band[layer][0] + lift
     base = st.half
     out = []
