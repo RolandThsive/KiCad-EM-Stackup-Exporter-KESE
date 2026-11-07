@@ -80,7 +80,7 @@ fail the comparison; a small tolerance (`playwright.config.mjs`) absorbs anti-al
 
 ## In CI
 
-`.github/workflows/WebUI-Tests.yml` runs on every pull request into `WebUI`:
+`.github/workflows/WebUI-Tests.yml` runs on every pull request into `WebUI` or `WebUI_modifs` (where Dependabot's go):
 
 1. **generator:** the generator's own pytest suite.
 2. **build:** `build_site.py`, kept as the artifact `site` (the exact site the pull request would publish).

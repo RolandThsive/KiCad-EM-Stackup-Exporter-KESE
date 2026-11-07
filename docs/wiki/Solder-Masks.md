@@ -67,8 +67,9 @@ Q'_\sigma = Q_\sigma \cup \left( \left( Q_\sigma \oplus \tfrac{w}{2} \right) \om
 ```
 
 Only the webs this fills are added; the hairlines where the grown and shrunk curves miss the exact
-ones (narrower than 2 µm) are left out, so the openings keep their exact outlines. `report.txt`
-counts them as `mask webs under the min width (w mm) removed on F.Mask`.
+ones (narrower than 2 µm, twice `SolderMask.MASK_WEB_HAIRLINE_MM`) are left out, so the openings
+keep their exact outlines. `report.txt` counts them as
+`mask webs under the min width (w mm) removed on F.Mask`.
 
 The openings are worked on in groups: two openings within $`w`$ of each other are in one group,
 and so is every opening linked to them by a chain of such neighbours (two openings grown by less
@@ -174,6 +175,7 @@ mask over the annular ring; its bore is still open.
 | `MASK_EDGE_PULLBACK_MM` | `0.005` | mm ≥ 0 | Mask and silk stop this far from the edge |
 | `PAD_TO_MASK_CLEARANCE_MM` | `None` | None or mm ≥ 0 | Board-wide clearance around pads; `None` follows Board Setup. A pad's or footprint's own `solder_mask_margin` still wins |
 | `MASK_MIN_WIDTH_MM` | `None` | None or mm ≥ 0 | Narrowest web of mask kept between two openings, equation (16.2b); `None` follows Board Setup (`solder_mask_min_width`), 0 keeps every web |
+| `MASK_WEB_HAIRLINE_MM` | `1e-3` | mm ≥ 0 | A web the minimum width adds that is narrower than twice this is dropped (16.2b) |
 | `MASK_WALL_QUAD_SEGS` | `4` | int ≥ 1 | Curve quality of the walls beside traces |
 | `MASK_OVER_COPPER_HAIRLINE_MM` | `1e-3` | mm ≥ 0 | A piece of mask on top of copper narrower than twice this is left out, and the finish covers it instead (16.2); 0 keeps every one |
 

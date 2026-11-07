@@ -5,7 +5,7 @@ Each one is a single panel cut from a wiki picture in docs/images, at most 680 p
 tip's width), saved as WebP at quality 82.  The box is in the source picture's pixels (left, top, right, bottom).
 A remade picture keeps its file name, so tips.json needs no change; update its w and h there if its size changes.
 
-Nineteen are drawn for the tip instead ("drawn" below), where the wiki picture's text or colours were too small to read
+Twenty are drawn for the tip instead ("drawn" below), where the wiki picture's text or colours were too small to read
 at tip size: text 20 to 24 px (10 to 12 px in the tip), KESE's own colours (parameters/color.py), silkscreen in
 KiCad's stroke font.
 Their SVG sources are in drawn/; each is rendered at its own size (684 px wide) and saved as WebP at quality 82.
@@ -31,7 +31,7 @@ edge.webp  684x296     8 KB  drawn for the tip: drawn/edge.svg (a plated and a b
 edge_wall.webp  585x680    14 KB  from copper_8_edge_plating.webp, box (1379, 119, 2054, 904)
 edge_net.webp  684x306    11 KB  drawn for the tip: drawn/edge_net.svg (the band's net)
 tenting.webp  680x465    16 KB  from mask_6_over_holes.webp, box (968, 95, 2116, 880)
-mask.webp  680x432    19 KB  from mask_3_conformal.webp, box (968, 95, 2116, 825)
+mask.webp  684x330    11 KB  drawn for the tip: drawn/mask.svg (a cut across a trace: the mask on the laminate, up the wall, on top, and the opening)
 mask_thick.webp  680x414    11 KB  from mask_4_thickness.webp, box (24, 1087, 1060, 1717)
 pullback.webp  680x386    10 KB  from mask_5_edge_pullback.webp, box (968, 927, 2116, 1579)
 mask_colors.webp  684x366    17 KB  drawn for the tip: drawn/mask_colors.svg (KESE's mask colours, a trace and gold pads)
@@ -42,5 +42,4 @@ silk_text.webp  684x284     8 KB  drawn for the tip: drawn/silk_text.svg (the li
 silk_join.webp  684x270     9 KB  drawn for the tip: drawn/silk_join.svg (1, 2 and 4 segments per quarter circle)
 finish_where.webp  684x278     9 KB  drawn for the tip: drawn/finish_where.svg (the finish on and off)
 finish_enig.webp  680x379    16 KB  from finish_2_enig.webp, box (26, 200, 1063, 778)
-stage6.webp  680x205    14 KB  from wp_2_solid.webp, box (26, 162, 2116, 792)
 checked.webp  675x632    30 KB  from wp_2_solid.webp, box (1441, 837, 2116, 1469)

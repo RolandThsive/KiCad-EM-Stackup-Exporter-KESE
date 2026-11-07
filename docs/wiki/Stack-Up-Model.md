@@ -219,7 +219,7 @@ h_i^{*} = s \cdot h_i \qquad (8.13)
 |---|---|
 | `stackup dielectrics (+ inner copper); board total in file X mm` | summed from the stack-up |
 | `file (general (thickness T)) less the outer copper and the masks - no usable stackup` | the file's board thickness less outer copper and masks, split evenly |
-| `default 1.6 mm less the outer copper and the masks (no thickness in file)` | neither was available |
+| `default 1.6 mm (Board.DEFAULT_BOARD_THICKNESS_MM) less the outer copper and the masks (no thickness in file)` | neither was available |
 | `Board.BOARD_THICKNESS_MM` (`... (stackup dielectric proportions kept)`) | forced by the parameter |
 
 > [!IMPORTANT]

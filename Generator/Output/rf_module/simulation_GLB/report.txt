@@ -1,4 +1,4 @@
-rf_module  (rf_module.kicad_pcb)   generated 2026-11-04 22:18
+rf_module  (rf_module.kicad_pcb)   generated 2026-11-07 11:08
 mode: simulation   formats: glb   units: m
 KiCad format 20221018 (KiCad 7), generator pcbnew
 
@@ -57,17 +57,17 @@ notes
   left out of every file: Finish.FINISH_ENABLED, Silkscreen.SILKSCREEN_ENABLED, SolderMask.SOLDER_MASK_ENABLED = False
 
 parts
-  Board_dielectric 1                      53980 triangles  material Board_prepreg #A89C66 alpha 1.0
+  Board_dielectric 1                      53960 triangles  material Board_prepreg #A89C66 alpha 1.0
   Board_dielectric 2                      43812 triangles  material Board_core #968A58 alpha 1.0
-  Board_dielectric 3                      88464 triangles  material Board_prepreg #A89C66 alpha 1.0
-  Copper_+3V3                             40396 triangles  material Copper #CD803E alpha 1.0
+  Board_dielectric 3                      88468 triangles  material Board_prepreg #A89C66 alpha 1.0
+  Copper_+3V3                             40400 triangles  material Copper #CD803E alpha 1.0
   Copper_+5V                              10192 triangles  material Copper #CD803E alpha 1.0
   Copper_CS                                 268 triangles  material Copper #CD803E alpha 1.0
   Copper_FCS                                364 triangles  material Copper #CD803E alpha 1.0
   Copper_FMISO                              364 triangles  material Copper #CD803E alpha 1.0
   Copper_FMOSI                              316 triangles  material Copper #CD803E alpha 1.0
   Copper_FSCK                               316 triangles  material Copper #CD803E alpha 1.0
-  Copper_GND                             334352 triangles  material Copper #CD803E alpha 1.0
+  Copper_GND                             334284 triangles  material Copper #CD803E alpha 1.0
   Copper_INT2                               284 triangles  material Copper #CD803E alpha 1.0
   Copper_IRQ                                268 triangles  material Copper #CD803E alpha 1.0
   Copper_LED1                               316 triangles  material Copper #CD803E alpha 1.0
@@ -97,10 +97,10 @@ parts
   Copper_no_net                            2660 triangles  material Copper #CD803E alpha 1.0
 
 timing
-  read               0.1 s
-  collect            0.9 s
-  resolve            2.1 s
-  geometry           1.4 s
-  materials          0.0 s
-  assemble           7.5 s
-  write              0.1 s
+  read              0.0985 s
+  collect           0.2128 s
+  resolve           1.6251 s
+  geometry          1.2031 s
+  materials         0.0003 s
+  assemble          4.4314 s
+  write             0.0902 s

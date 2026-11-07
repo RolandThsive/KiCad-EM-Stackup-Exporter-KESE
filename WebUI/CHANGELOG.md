@@ -2,6 +2,25 @@
 
 The newest first. Each entry is one pull request into `WebUI`; the footer's build stamp names the commit that is live.
 
+## Main merged again (November 2026)
+
+- Main up to PR #40 is merged: the stroke font read glyph by glyph, text variables expanded in values, a pad's drill
+  with no size read as KiCad does, and the wiki brought up to date.
+- Main now stores KiCad's stroke font as JSON Lines (a header, then one glyph per line). `build_site.py` cut the font
+  for the browser by reading it as one JSON document, so the build stopped. It now keeps the glyphs up to
+  `fontLastCodepoint` in the same layout, and the browser parses only the glyphs a board draws.
+- Tip pictures: the Geometry section and Vertex Sharing Rounds lose theirs (three small panels, too small to read);
+  the Output section loses the Simulation / Visual drawing, which stays on Mode; the solder mask's picture (the
+  Solder Mask section and Solder Mask Enabled) is drawn again as one large cross-section with big labels. 33
+  pictures: 20 drawn, 13 cut from the wiki.
+- Lighthouse's Total Blocking Time budget is 400 ms (was 300). The page's code did not change, but on GitHub's machines
+  the 3D view's WebGL setup at load now measures 310 to 480 ms (median 319 and 331 in two runs), while a local run
+  measures 200 to 410 ms.
+- The tests also run on pull requests into `WebUI_modifs`, so Dependabot's pull requests are tested before they merge.
+- The smoke test after a deploy runs only its own spec. It loaded every spec, and the tips spec read `tips.json` from a
+  local build the smoke job does not have, so the first deploy with the tips failed its smoke test (the site itself
+  deployed fine). The tips spec now reads the source's `tips.json` after a deploy.
+
 ## Hardening: backup copy, security, privacy, accessibility, tests, tips (November 2026)
 
 **Where Python and three.js come from**

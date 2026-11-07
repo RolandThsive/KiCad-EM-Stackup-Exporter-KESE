@@ -5,7 +5,8 @@ from kese.s1_read.parse_kicad_version import mask_margin
 from kese.s2_collect.drawings import GRAPHICS, add_drawing
 from kese.s2_collect.left_out import UNKNOWN
 from kese.s2_collect.pads import add_pad
-from kese.s2_collect.text import TEXT, add_text, footprint_fields
+from kese.s2_collect.text import TEXT, add_text
+from kese.s2_collect.text_vars import footprint_fields
 from kese.s2_collect.zones import add_zone
 
 

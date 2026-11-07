@@ -35,11 +35,15 @@ KiCad-EM-Stackup-Exporter-KESE/
 │   ├── Output/                  one folder per board and run (ignored by git, except .gitkeep and
 │   │                            four example runs of rf_module in Output/rf_module/)
 │   ├── tests/                   regression suite, layout rules, test boards, baseline.json
-│   └── tools/                   make_swatches.py: the colour boxes of docs/ColorSwatches/
+│   └── tools/                   make_swatches.py: the colour boxes of docs/ColorSwatches/;
+│                                font_lines.py: a stroke font rewritten as JSON Lines
+├── featureTest/                 the feature test boards, one feature each
 ├── docs/wiki/, docs/images/     this wiki, and its pictures
-├── docs/example_images/        pictures and animations of the three example boards
+├── docs/example_images/         pictures and animations of the three example boards
+├── docs/feature_test_images/    the top and bottom of every feature test board
 ├── docs/ColorSwatches/          the colour squares in the wiki's colour tables
 ├── docs/logo/                   the KESE logo as SVG and WebP, and favicon.ico
+├── .github/                     the workflow that copies docs/wiki/ to the wiki
 ├── licenses/                    KiCad copyright headers and AUTHORS.txt
 ├── LICENSE, NOTICE.md, CONTRIBUTING.md
 └── README.md
@@ -92,6 +96,10 @@ the file is done or the write fails
 ([Working Principle](Working-Principle.md#74-work-done-in-parallel)).
 
 ### 20.2.2 `report.txt`
+
+`Input/rf_module.kicad_pcb` in simulation mode with the solder mask and silkscreen turned on
+(`--set SolderMask.SOLDER_MASK_ENABLED=True --set Silkscreen.SILKSCREEN_ENABLED=True`), `...` where
+lines are left out:
 
 ```text
 rf_module  (rf_module.kicad_pcb)   generated 2026-11-06 09:17
@@ -168,14 +176,14 @@ parts
   ...
 
 timing
-  read              0.0650 s
-  collect           0.7394 s
-  resolve           1.5491 s
-  geometry          6.9034 s
-  materials         0.0003 s
-  assemble          5.4478 s
-  write            10.0859 s
-  verify            0.5105 s
+  read              0.0667 s
+  collect           0.1691 s
+  resolve           1.5408 s
+  geometry          6.0711 s
+  materials         0.0004 s
+  assemble          5.3236 s
+  write             7.5092 s
+  verify            0.5813 s
 
 Verifier: PASS
   ...
@@ -226,9 +234,9 @@ test run and ignored by git. `tests/test_layout.py`, `tests/test_colors.py`,
 `tests/test_kicad_version.py`, `tests/test_enabled.py`, `tests/test_verifier.py`,
 `tests/test_boundary.py`, `tests/test_copper_union.py`, `tests/test_finish_shells.py`,
 `tests/test_mask.py` and `tests/test_pairs.py` write nothing, and
-`tests/test_step_native.py`, `tests/test_step_arcs.py`, `tests/test_text_layout.py`,
-`tests/test_bad_input.py`, `tests/test_parallel.py` and `tests/test_full_disk.py` write only in a
-temporary folder that they remove.
+`tests/test_step_native.py`, `tests/test_step_arcs.py`, `tests/test_text_layout.py`, `tests/test_font.py`,
+`tests/test_text_vars.py`, `tests/test_bad_input.py`, `tests/test_parallel.py` and
+`tests/test_full_disk.py` write only in a temporary folder that they remove.
 
 | Previous | Next |
 |:---|---:|

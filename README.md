@@ -14,7 +14,7 @@ Give it a `.kicad_pcb` file, get every dielectric, every net's copper and every 
 
 
 ![Python](https://img.shields.io/badge/Python-3.12%2B-555555)
-![KiCad](https://img.shields.io/badge/KiCad-6%20to%2010-555555)
+![KiCad](https://img.shields.io/badge/KiCad-4%20to%2010-555555)
 ![Copper layers](https://img.shields.io/badge/Copper_layers-1_to_8-blueviolet)
 ![Formats](https://img.shields.io/badge/Formats-GLB%20%C2%B7%20STEP%20%C2%B7%20STL%20%C2%B7%20OBJ-blueviolet)
 
