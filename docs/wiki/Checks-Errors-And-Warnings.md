@@ -371,7 +371,8 @@ file and finds an error before any work, a note or a warning, not a Python error
 preset naming real settings that pass the checks; board files KiCad refuses (`nan`, `inf`, `1e999` or a word
 where a number belongs, a binary or UTF-16 file) stop with the file named and the reason, a thickness below
 zero is read as not given with a warning, a board too thin for its copper stops with the setting to change,
-and a byte order mark is passed over, in about two seconds
+a byte order mark is passed over, and a pad drill that gives no size takes KiCad's default, in about
+two seconds
 (`python tests/test_bad_input.py`); `tests/test_verifier.py`, which finds the Verifier's visual check
 meeting the same faces on every ray with the board `upright` and `flat`, and casting its rays on a
 32-bit Python (Pyodide, in the browser) as it does on 64 bits, the checks made where each
