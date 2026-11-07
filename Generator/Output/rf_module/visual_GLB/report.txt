@@ -1,4 +1,4 @@
-rf_module  (rf_module.kicad_pcb)   generated 2026-11-04 22:25
+rf_module  (rf_module.kicad_pcb)   generated 2026-11-07 11:09
 mode: visual   formats: glb   units: m
 KiCad format 20221018 (KiCad 7), generator pcbnew
 
@@ -60,36 +60,36 @@ notes
   finish: also on the copper's walls where they meet the air (Gold 8e-05 mm drawn 0.0001 mm thick across the wall, the snapping grid)
 
 parts
-  Board_dielectric 1                      17458 triangles  material Board_prepreg #A89C66 alpha 1.0
-  Board_dielectric 3                       2759 triangles  material Board_prepreg #A89C66 alpha 1.0
+  Board_dielectric 1                      17447 triangles  material Board_prepreg #A89C66 alpha 1.0
+  Board_dielectric 3                       2755 triangles  material Board_prepreg #A89C66 alpha 1.0
   Copper_+3V3                             10560 triangles  material Copper_exposed #DEBA60 alpha 1.0
   Copper_+5V                               3520 triangles  material Copper_exposed #DEBA60 alpha 1.0
-  Copper_GND                              87360 triangles  material Copper_exposed #DEBA60 alpha 1.0
+  Copper_GND                              87344 triangles  material Copper_exposed #DEBA60 alpha 1.0
   Copper_RX                                 704 triangles  material Copper_exposed #DEBA60 alpha 1.0
   Copper_SCL                                704 triangles  material Copper_exposed #DEBA60 alpha 1.0
   Copper_SCL2                              1408 triangles  material Copper_exposed #DEBA60 alpha 1.0
   Copper_SDA                                704 triangles  material Copper_exposed #DEBA60 alpha 1.0
   Copper_SDA2                              1408 triangles  material Copper_exposed #DEBA60 alpha 1.0
   Copper_TX                                 704 triangles  material Copper_exposed #DEBA60 alpha 1.0
-  Top Solder Mask                        128359 triangles  material Top Solder Mask #14328C alpha 1.0
-  Top Mask over Copper                    54976 triangles  material Top Mask over Copper #3C5AB4 alpha 1.0
-  Bottom Solder Mask                      57593 triangles  material Bottom Solder Mask #14328C alpha 1.0
-  Bottom Mask over Copper                 49803 triangles  material Bottom Mask over Copper #3C5AB4 alpha 1.0
-  Top Silkscreen                          37354 triangles  material Top Silkscreen #F0F0EC alpha 1.0
+  Top Solder Mask                        128454 triangles  material Top Solder Mask #14328C alpha 1.0
+  Top Mask over Copper                    54975 triangles  material Top Mask over Copper #3C5AB4 alpha 1.0
+  Bottom Solder Mask                      57564 triangles  material Bottom Solder Mask #14328C alpha 1.0
+  Bottom Mask over Copper                 49796 triangles  material Bottom Mask over Copper #3C5AB4 alpha 1.0
+  Top Silkscreen                          37358 triangles  material Top Silkscreen #F0F0EC alpha 1.0
   Bottom Silkscreen                       12122 triangles  material Bottom Silkscreen #F0F0EC alpha 1.0
-  Top Finish Gold                         62877 triangles  material Gold #E6C15A alpha 1.0
-  Top Finish Nickel                        1472 triangles  material Nickel #B8B8B0 alpha 1.0
-  Bottom Finish Gold                      16004 triangles  material Gold #E6C15A alpha 1.0
-  Bottom Finish Nickel                      832 triangles  material Nickel #B8B8B0 alpha 1.0
-  Edge Finish Gold                        10094 triangles  material Gold #E6C15A alpha 1.0
+  Top Finish Gold                         62817 triangles  material Gold #E6C15A alpha 1.0
+  Top Finish Nickel                        1560 triangles  material Nickel #B8B8B0 alpha 1.0
+  Bottom Finish Gold                      16023 triangles  material Gold #E6C15A alpha 1.0
+  Bottom Finish Nickel                      824 triangles  material Nickel #B8B8B0 alpha 1.0
+  Edge Finish Gold                        10372 triangles  material Gold #E6C15A alpha 1.0
   Hole Finish Gold                       179112 triangles  material Gold #E6C15A alpha 1.0
   Hole Finish Nickel                       2112 triangles  material Nickel #B8B8B0 alpha 1.0
 
 timing
-  read               0.1 s
-  collect            0.9 s
-  resolve            2.0 s
-  geometry           7.6 s
-  materials          0.0 s
-  assemble          14.0 s
-  write              0.1 s
+  read              0.0669 s
+  collect           0.1666 s
+  resolve           1.6388 s
+  geometry          6.5901 s
+  materials         0.0004 s
+  assemble          9.9479 s
+  write             0.0864 s

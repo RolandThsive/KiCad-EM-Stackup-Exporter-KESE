@@ -155,25 +155,25 @@ lines are left out):
 Verifier: PASS
   Board_dielectric 1                   closed=True winding=True volume=537.9918 mm3
   Board_dielectric 2                   closed=True winding=True volume=2939.6554 mm3
-  Board_dielectric 3                   closed=True winding=True volume=545.0504 mm3
+  Board_dielectric 3                   closed=True winding=True volume=545.0505 mm3
   Copper_+3V3                          closed=True winding=True volume=30.0643 mm3
   ...
-  Copper_GND                           closed=True winding=True volume=233.5935 mm3
+  Copper_GND                           closed=True winding=True volume=233.5938 mm3
   ...
-  Top Solder Mask                      closed=True winding=True volume=22.5245 mm3
-  Bottom Solder Mask                   closed=True winding=True volume=23.5600 mm3
-  Top Silkscreen                       closed=True winding=True volume=1.2008 mm3
-  Bottom Silkscreen                    closed=True winding=True volume=0.5142 mm3
+  Top Finish Gold                      closed=True winding=True volume=0.0398 mm3
+  Top Finish Nickel                    closed=True winding=True volume=2.4622 mm3
+  ...
+  Hole Finish Nickel                   closed=True winding=True volume=1.3148 mm3
   overlap between different parts, every slice against the others: none
   gltf_validator not on PATH: glTF validation skipped
-  Board_dielectric 1                   volume from faces 537.991825 mesh 537.991825 slices 537.991825 prisms 537.991825 mm3 closed=True whole=True
+  Board_dielectric 1                   volume from faces 537.991826 mesh 537.991826 slices 537.991826 prisms 537.991826 mm3 closed=True whole=True
   ...
-  Copper_GND                           volume from faces 233.593533 mesh 233.593533 slices 233.593533 prisms 233.593666 mm3 closed=True whole=True
+  Copper_GND                           volume from faces 233.593831 mesh 233.593831 slices 233.593831 prisms 233.593560 mm3 closed=True whole=True
   ...
-  Bottom Silkscreen                    volume from faces 0.514160 mesh 0.514160 slices 0.514160 prisms 0.514160 mm3 closed=True whole=True
+  Hole Finish Nickel                   volume from faces 1.314751 mesh 1.314751 slices 1.314751 prisms 1.314751 mm3 closed=True whole=True
 ```
 
-The prisms of `Copper_GND` hold 0.00013 mm³ more than its faces, within the 0.001 mm³ the
+The prisms of `Copper_GND` hold 0.00027 mm³ less than its faces, within the 0.001 mm³ the
 check allows them.
 
 Stage 6 moves each piece's edges by a grid step here and there as it shares vertices, and cuts its

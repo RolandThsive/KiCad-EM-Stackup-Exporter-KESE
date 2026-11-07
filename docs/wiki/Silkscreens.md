@@ -119,7 +119,7 @@ turned by half turns into $`-90° < \theta \le 90°`$, so that the text never re
 The strokes are then thickened to the stroke width:
 
 ```math
-T = \begin{cases} T_{\mathrm{file}} & \text{if the file gives one} \\ \rho_b H & \text{bold} \\ \rho_n H & \text{normal} \end{cases}, \qquad \text{glyph region} = \bigcup \text{strokes} \oplus \frac{T}{2} \qquad (15.9)
+T = \min\left( \begin{cases} T_{\mathrm{file}} & \text{if the file gives one} \\ \rho_b W & \text{bold} \\ \rho_n W & \text{normal} \end{cases},\ 0.25 \min(W, H) \right), \qquad \text{glyph region} = \bigcup \text{strokes} \oplus \frac{T}{2} \qquad (15.9)
 ```
 
 | Symbol | Meaning | Parameter |

@@ -13,7 +13,7 @@
 | 8 | 20240108 | 25 public boards; `tests/boards/one_layer` and `featureTest/20c_format_kicad8`, small hand-written files in KiCad 8's format |
 | 9 | 20241229 | 25 public boards; `tests/boards/six_layer` and `featureTest/20d_format_kicad9`, likewise hand-written; per-via `(tenting front back)` is parsed; tracks and drawings left bare by the solder mask, `(layers "F.Cu" "F.Mask")` with an optional `(solder_mask_margin ...)`, are read (in `featureTest/08b_copper_graphics_nets`) |
 | 10 | 20260206 | the upper end of the tested range (`Run.KICAD_VERSION_MAX`); five hand-written feature boards (`03b_vias_k10`, `06_padstacks`, `08b_copper_graphics_nets`, `19b_skipped_items_k10`, `20e_format_kicad10`); net names stored directly on items and per-via `(tenting (front yes) (back no))` are read |
-| newer | above 20260206 | read best-effort with a warning; raise `Run.KICAD_VERSION_MAX` once checked. A bold text's thickness after format 20260826 is read as its base pen, drawn 1.6 times as wide, as KiCad's development version does |
+| newer | above 20260206 | read best-effort with a warning; raise `Run.KICAD_VERSION_MAX` once checked. A bold text's thickness from format 20260826 on is read as its base pen, drawn 1.6 times as wide, as KiCad's development version does |
 
 The 150 public boards (25 for each release from 4 to 9, six of the "KiCad 4" ones saved by the builds before it) were downloaded for testing and are not kept
 in the repository; every complete one of them runs, and the Verifier passes on all but one, whose file
@@ -29,8 +29,9 @@ is in one file, `kese/s1_read/parse_kicad_version.py`, and follows KiCad's own b
 | an overbar is text between two `~`, converted to `~{...}` | before format 20210606 (KiCad 5 and early 6) |
 | a zone fill is drawn with a pen of `min_thickness` | before format 20250210, unless the zone says `(filled_areas_thickness no)` |
 | a zone with only `fill_segments` is filled with those segments | KiCad 4 and 5 |
-| via tenting and protection off unless stated | before format 20250228 |
-| a bold text's thickness is its base pen | after format 20260826 |
+| a via that does not say is tented as the plot setting `viasonmask` says (open when `yes`), else tented | files whose board setup has no `(tenting ...)` (KiCad 8 and older) |
+| a via is not covered, plugged, filled or capped unless it says so: files that old have no board-wide setting for these (KESE counts them in `report.txt` and does not model them) | before format 20250228 |
+| a bold text's thickness is its base pen | from format 20260826 |
 
 What is read from the file is listed in [Checks, Errors And Warnings](Checks-Errors-And-Warnings.md);
 KiCad itself is not needed, only the `.kicad_pcb` file. Footprints are read from the board file
