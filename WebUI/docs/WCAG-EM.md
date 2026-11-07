@@ -59,7 +59,7 @@ partly works, with the reason given.
 | 1.4.3 Contrast (minimum) | Met | axe in every state. The fade-in of enabled buttons is waited for. `--text-3` was darkened to #6b6b6b for this. |
 | 1.4.4 Resize text | Met | Browser zoom to 200 % keeps everything. a11y.spec "reflow". |
 | 1.4.5 Images of text | Met | The title is text in a web font. |
-| 1.4.10 Reflow | Met | At 320 CSS px wide (400 % zoom) the page becomes one column: preview, controls, side. Nothing scrolls sideways or is cut off; long file and part names end in "…" and show in full in a tip. The 3D preview itself needs two dimensions (an exception the rule allows). a11y.spec "reflow". |
+| 1.4.10 Reflow | Met | At 320 CSS px wide (400 % zoom) the page becomes one column: preview, controls, side. Nothing scrolls sideways or is cut off; long file and part names end in "…" and show in full in a tip. A tip taller than the window stays inside it and scrolls inside. The 3D preview itself needs two dimensions (an exception the rule allows). a11y.spec "reflow", keyboard.spec "tall tip". |
 | 1.4.11 Non-text contrast | Met | Focus rings, switch tracks and field borders are visible against their background. axe and by eye. |
 | 1.4.12 Text spacing | Met | With line height 1.5, letter spacing 0.12 em, word spacing 0.16 em and 2 em after paragraphs, nothing is cut off at 1440 or 1024 px. The top bar wraps when it must. a11y.spec "text spacing". |
 | 1.4.13 Content on hover or focus | Met | Tips come with the keyboard focus as well as the pointer. Escape closes them. The pointer can move onto a tip (300 ms grace on the way), and a tip stays until the pointer or focus leaves. keyboard.spec "tips". |
@@ -75,7 +75,7 @@ partly works, with the reason given.
 | 2.4.5 Multiple ways | N/A | A single page (plus two linked from every footer). |
 | 2.4.6 Headings and labels | Met | Each panel has a heading; labels are the parameter names in words. |
 | 2.4.7 Focus visible | Met | A ring on every Tab stop: on the track of a switch, round the whole stepper of a number. keyboard.spec checks every stop. |
-| 2.4.11 Focus not obscured | Met | Nothing sticky covers the focus. Tips open beside their control, never over it. |
+| 2.4.11 Focus not obscured | Met | Nothing sticky covers the focus. Tips open below, above or beside their control; zoomed to 200 % a tall tip shrinks into the larger side and scrolls. Only at 400 % zoom, with no room on any side, a tip opens over its control: Escape closes it without moving the focus, and the Understanding document counts tips as non-persistent content that does not fail this criterion. keyboard.spec "tall tip". |
 | 2.5.1 Pointer gestures | Met | Turning and zooming the model also have single-click buttons. |
 | 2.5.2 Pointer cancellation | Met | Buttons act on click (the up event). |
 | 2.5.3 Label in name | Met | Visible text is the start of each name. |

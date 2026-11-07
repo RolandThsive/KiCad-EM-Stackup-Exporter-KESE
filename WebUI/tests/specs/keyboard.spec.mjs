@@ -112,3 +112,34 @@ test("tips come with the focus, close with Escape and stay while the pointer is 
   await page.mouse.move(700, 600, { steps: 4 });                // the preview: no tip there
   await expect(pop).toBeHidden();
 });
+
+// WCAG 1.4.10 (reflow): zoomed to 200 % and 400 % (640 x 512 and 320 x 256 here), a tip taller than the window stays
+// inside it and scrolls inside; at 200 % it takes the larger side of its control and leaves the control in view
+test("a tall tip stays inside a zoomed window, scrolls inside, and leaves its control in view at 200 %", async ({ page, problems }) => {
+  await open(page);
+  await openAll(page);
+  const pop = page.locator("#popover"), dot = '[data-help="Copper.CASTELLATION"] .info-dot';
+  for (const [w, h] of [[640, 512], [320, 256]]) {
+    await page.setViewportSize({ width: w, height: h });
+    await page.mouse.move(0, 0);
+    await expect(pop).toBeHidden();
+    await page.locator(dot).evaluate((e) => e.scrollIntoView({ block: "center" }));
+    await page.waitForTimeout(200);                             // a scroll closes tips: let it settle first
+    await page.hover(dot);
+    await expect(pop).toBeVisible();
+    const m = await page.evaluate((sel) => {
+      const p = document.getElementById("popover"), a = p.getBoundingClientRect(), t = document.querySelector(sel).getBoundingClientRect();
+      return { a: { l: a.left, t: a.top, r: a.right, b: a.bottom }, W: document.documentElement.clientWidth, H: document.documentElement.clientHeight,
+        scrolls: p.scrollHeight > p.clientHeight + 1, clear: a.bottom <= t.top || a.top >= t.bottom || a.right <= t.left || a.left >= t.right };
+    }, dot);
+    expect(m.a.l, `left at ${w} x ${h}`).toBeGreaterThanOrEqual(0);
+    expect(m.a.t, `top at ${w} x ${h}`).toBeGreaterThanOrEqual(0);
+    expect(m.a.r, `right at ${w} x ${h}`).toBeLessThanOrEqual(m.W + 0.5);
+    expect(m.a.b, `bottom at ${w} x ${h}`).toBeLessThanOrEqual(m.H + 0.5);
+    expect(m.scrolls, `the tip scrolls inside at ${w} x ${h}`).toBe(true);
+    if (w === 640) expect(m.clear, "the control stays in view at 200 %").toBe(true);
+    await pop.evaluate((p) => p.scrollBy(0, 80));               // scrolling the tip itself leaves it open
+    await page.waitForTimeout(200);
+    await expect(pop).toBeVisible();
+  }
+});

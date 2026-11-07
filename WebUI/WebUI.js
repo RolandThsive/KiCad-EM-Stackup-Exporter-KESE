@@ -308,15 +308,27 @@ function showTip(node) {
     pop.append(el("span", { class: "tip-foot" }, `In the file: ${showValue(p.default)}`));
   } else if (node.dataset.tip) pop.append(node.dataset.tip);
   else { hideTip(); return; }
+  pop.style.maxHeight = "";
   pop.hidden = false;
+  pop.scrollTop = 0;
   const r = node.getBoundingClientRect(), W = document.documentElement.clientWidth, H = document.documentElement.clientHeight;   // the window less its scrollbars
-  const h = pop.offsetHeight, w = pop.offsetWidth, below = r.bottom + 8, above = r.top - h - 8;
-  if (below + h <= H - 6 || above >= 6) {                         // under the target, else above it
-    pop.style.top = (below + h <= H - 6 ? below : above) + "px";
+  const h = pop.offsetHeight, w = pop.offsetWidth, roomBelow = H - 6 - (r.bottom + 8), roomAbove = r.top - 8 - 6;
+  const under = (down, height) => {                               // under the target, else above it
+    pop.style.top = (down ? r.bottom + 8 : r.top - 8 - height) + "px";
     pop.style.left = Math.max(6, Math.min(W - w - 6, r.left)) + "px";
-  } else {                                                        // too tall for either: beside it, never over it
+  };
+  const beside = r.right + 8 + w <= W - 6 ? r.right + 8 : r.left - w - 8 >= 6 ? r.left - w - 8 : null;
+  if (h <= roomBelow || h <= roomAbove) under(h <= roomBelow, h);
+  else if (beside !== null) {                                     // too tall for either: beside it, never over it
     pop.style.top = Math.max(6, Math.min(H - h - 6, r.top + r.height / 2 - h / 2)) + "px";
-    pop.style.left = (r.right + 8 + w <= W - 6 ? r.right + 8 : Math.max(6, r.left - w - 8)) + "px";
+    pop.style.left = beside + "px";
+  } else if (Math.max(roomBelow, roomAbove) >= 120) {             // a zoomed window: the larger side, scrolling inside
+    const room = Math.max(roomBelow, roomAbove);
+    pop.style.maxHeight = room + "px";
+    under(roomBelow >= roomAbove, room);
+  } else {                                                        // no room anywhere (400 % zoom): over it; Escape reveals it
+    pop.style.top = Math.max(6, Math.min(H - h - 6, r.top + r.height / 2 - h / 2)) + "px";
+    pop.style.left = Math.max(6, Math.min(W - w - 6, r.left)) + "px";
   }
 }
 const tipOf = (node) => (node && !(node.dataset.tip !== undefined && !node.dataset.tip) ? node : null);
