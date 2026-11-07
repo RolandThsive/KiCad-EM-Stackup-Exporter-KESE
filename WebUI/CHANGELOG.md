@@ -2,7 +2,7 @@
 
 The newest first. Each entry is one pull request into `WebUI`; the footer's build stamp names the commit that is live.
 
-## Hardening: backup copy, security, privacy, accessibility, tests (November 2026)
+## Hardening: backup copy, security, privacy, accessibility, tests, tips (November 2026)
 
 **Where Python and three.js come from**
 - Still jsDelivr first, pinned to exact versions. If jsDelivr refuses, says nothing for 15 s, or serves a three.js
@@ -47,6 +47,19 @@ The newest first. Each entry is one pull request into `WebUI`; the footer's buil
 - Tips open on keyboard focus, close with Escape, and the pointer can move onto them.
 - Status messages reach screen readers.
 
+**Tips**
+- Every tip has one layout: a title, one plain line, then only what helps: the choices, a few facts, a note, a picture.
+- The words are in `tips.json`, no longer the parameter files' comments. A setting it does not have still shows its
+  comment, so a new parameter is never without a tip.
+- A setting's tip shows its unit, its choices with the file's value marked, the file's value, and a link to its
+  section of the Parameter Reference. A desktop-only setting says so.
+- The 46 settings that showed the comment of the setting above them now have their own words.
+- A preset's tip says what it is for and lists what it sets. A section's tip says what is inside and how many settings
+  Basic shows.
+- 34 tips show a picture: one panel cut from a wiki picture (`docs/tooltipsPictures`, about 12 KB each), loaded only
+  when the tip opens. `build_site.py` copies them to `tooltips/` and stops if one is missing.
+- Finish Type's layer table says what its rows are: the finish's layers, bottom to top, in mm.
+
 **Tests and documents**
 - Browser tests in Chromium, Firefox and WebKit on every pull request (`tests/`):
   - every feature board;
@@ -55,6 +68,7 @@ The newest first. Each entry is one pull request into `WebUI`; the footer's buil
   - the CDN refused, silent or tampered;
   - the CSP;
   - accessibility scans, screenshots;
+  - every setting and button has its tip in `tips.json`, with its picture;
   - speed budgets and Lighthouse.
 - After each deploy, a smoke test makes a board on the published page.
 - New documents:

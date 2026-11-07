@@ -10,7 +10,7 @@ const port = Number(process.argv[3] || process.env.PORT || 8811);
 const TYPES = {
   ".html": "text/html; charset=utf-8", ".js": "text/javascript; charset=utf-8", ".mjs": "text/javascript; charset=utf-8",
   ".css": "text/css; charset=utf-8", ".json": "application/json", ".svg": "image/svg+xml", ".ico": "image/x-icon",
-  ".png": "image/png", ".wasm": "application/wasm", ".zip": "application/zip", ".whl": "application/zip",
+  ".png": "image/png", ".webp": "image/webp", ".wasm": "application/wasm", ".zip": "application/zip", ".whl": "application/zip",
   ".woff2": "font/woff2", ".txt": "text/plain; charset=utf-8", ".md": "text/markdown; charset=utf-8", ".py": "text/plain; charset=utf-8",
   ".kicad_pcb": "text/plain; charset=utf-8",
 };

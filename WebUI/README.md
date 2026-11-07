@@ -36,6 +36,7 @@ What the page needs, and what happens without it:
 | `Viewer.js`, `Section*.js`, `Step*.js` | the 3D preview (three.js), the cross-section, the STEP reader |
 | `OutputStore.js` | the run's files on the visitor's disk (OPFS), deleted when the tab closes |
 | `webui.json` | the page's own settings (which parameters Basic shows, CDN addresses, the 15 s wait) |
+| `tips.json` | the words of every tip: buttons by `data-tip-id`, settings by key (see its `_about`); the pictures are in `../docs/tooltipsPictures` |
 | `vendor.json` | the exact Pyodide and three.js files of the backup copy, with their SHA-256 (`tools/vendor_lock.py`) |
 | `privacy.html`, `licenses.html`, `licenses/` | the privacy note and the third-party licences, linked from the footer |
 | `fonts/` | the three fonts, served from the site (no Google request) |

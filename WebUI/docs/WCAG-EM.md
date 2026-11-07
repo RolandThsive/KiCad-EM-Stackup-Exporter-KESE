@@ -100,6 +100,8 @@ partly works, with the reason given.
   model freely needs a mouse; the view buttons cover the fixed views.
 - **Parameter notes for screen readers:** a setting's notes are in its tip, which now opens on focus. The tip is not
   yet tied to the field with `aria-describedby`, so a screen reader reads it only when asked to read the tip.
+- **Links inside a tip** (the picture's wiki page, the Parameter Reference) are for the pointer, which can move onto the
+  tip. The keyboard cannot reach them; the same pages open from Help / Wiki. A tip's picture has its caption as `alt`.
 - **No screen reader run yet** (section 4). Do one before calling the tool fully checked.
 
 ## 7. Fixed in this review

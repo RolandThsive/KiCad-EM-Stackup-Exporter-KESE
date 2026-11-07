@@ -183,6 +183,103 @@ function download(blob, name) {
 const stem = (name) => name.replace(/\.[^.]+$/, "");
 
 /* ---- tooltips: every parameter (data-help = its key) and every button (data-tip = the text) ------ */
+// The tips' words are in tips.json: a title, one plain line, then the choices, facts, a note and a picture where they
+// help.  A button names its tip with data-tip-id (data-tip-args fills its {values}); a setting's tip is found by its
+// key, with its title, unit, file value and wiki link taken from the parameter.  data-tip keeps one plain line, shown
+// while tips.json loads, if it fails, or for a tip it does not have; a setting it does not have shows its comment.
+let TIPS = {};
+fetch(new URL("tips.json", import.meta.url)).then((r) => (r.ok ? r.json() : {})).then((j) => { TIPS = j || {}; }).catch(() => {});
+const tipAttrs = (id, text, args) => ({ "data-tip": text, "data-tip-id": id, "data-tip-args": args ? JSON.stringify(args) : null });
+function setTip(node, id, text, args) {
+  node.dataset.tip = text; node.dataset.tipId = id;
+  if (args) node.dataset.tipArgs = JSON.stringify(args); else delete node.dataset.tipArgs;
+}
+const SUPERSCRIPT = { "-": "⁻", 0: "⁰", 1: "¹", 2: "²", 3: "³", 4: "⁴", 5: "⁵", 6: "⁶", 7: "⁷", 8: "⁸", 9: "⁹" };
+function sciText(x) {                                             // 41000000 -> "4.1 × 10⁷"
+  if (!x || typeof x !== "number") return String(x);
+  const e = Math.floor(Math.log10(Math.abs(x)));
+  return `${+(x / 10 ** e).toPrecision(3)} × 10${String(e).replace(/./g, (c) => SUPERSCRIPT[c])}`;
+}
+// a setting's choices, [value, what it does], with the file's value marked
+function markFile(options, v) {
+  const words = (x) => String(x).toLowerCase().replace(/_/g, " ");
+  const is = (chip) => (v === null || v === undefined ? chip === "None"
+    : typeof v === "boolean" ? chip === (v ? "On" : "Off")
+    : typeof v === "number" ? chip.trim() !== "" && Number(chip) === v
+    : typeof v === "string" && words(chip) === words(v));
+  const marks = options.map(([chip]) => is(chip));
+  if (!marks.some(Boolean)) {      // "a number", "ENIG … HardGold", "GND" (any net name): the file's value is one of those
+    const i = options.findIndex(([chip]) => (chip === "a number" && typeof v === "number") || (chip.includes("…") && typeof v === "string")
+      || (chip === "GND" && typeof v === "string" && v !== "auto"));
+    if (i >= 0) marks[i] = true;
+  }
+  return options.map(([chip, text], i) => [chip, text, marks[i]]);
+}
+const reference = (file) => {                                     // the parameter file's section of the Parameter Reference
+  const r = TIPS.reference || {}, a = (r.anchors || {})[String(file).replace(/^parameters\//, "")];
+  return r.page ? (a ? `${r.page}#${a}` : r.page) : null;
+};
+const wikiLink = (page, text) => el("a", { href: `${(CFG.links || {}).help}/${page}`, target: "_blank", rel: "noopener" }, `${text} ↗`);
+const tipTable = (rows) => el("table", { class: "tp-table" }, el("tbody", {}, rows.map(([a, b]) => el("tr", {}, el("td", {}, a), el("td", {}, b)))));
+function settingTip(p) {
+  const s = (TIPS.settings || {})[p.key];
+  if (!s) return null;
+  const { text, unit } = labelOf(p.name), group = (TIPS.groups || {})[p.key];
+  const c = { ...s, eyebrow: ((CFG.sectionTitles || {})[p.module] || p.module) + (group ? ` · ${group}` : ""), title: text, unit,
+    badge: DESKTOP_ONLY().has(p.key) ? "Desktop only" : null, key: `${p.file} · ${p.name}`, o: s.o && markFile(s.o, p.default), wiki: reference(p.file) };
+  if (s.table && p.default && typeof p.default === "object") c.footRows = Object.entries(p.default).map(([k, v]) => [k, `${sciText(v)} ${unit}`.trim()]);
+  else c.foot = showValue(p.default);
+  return c;
+}
+function sectionTip(mod) {
+  const s = (TIPS.sections || {})[mod], f = state.desc && state.desc.files.find((x) => x.module === mod);
+  if (!s || !f) return null;
+  const n = state.params.filter((p) => p.module === mod).length, basic = ((CFG.basic || {})[mod] || []).length;
+  return { ...s, eyebrow: "Section", title: (CFG.sectionTitles || {})[mod] || mod, key: `parameters/${f.file.replace(/^parameters\//, "")}`,
+    f: [["Settings", String(n)], ["Basic shows", basic ? String(basic) : "none: Advanced only"]], wiki: reference(f.file) };
+}
+function presetTip(name) {
+  const pr = ((state.desc || {}).presets || {})[name], words = (TIPS.presets || {})[name];
+  if (!pr || !words) return null;
+  const L = TIPS.presetLabels || {}, V = TIPS.presetValues || {};
+  const value = (k, x) => (Array.isArray(x) ? x.map((y) => String(y).toUpperCase()).join(", ")
+    : (V[k] || {})[String(x)] ?? (typeof x === "boolean" ? (x ? "on" : "off") : String(x)));
+  return { eyebrow: "Preset", title: (CFG.presetTitles || {})[name] || name, t: words,
+    rows: Object.entries(pr).map(([key, x]) => { const k = key.split(".").pop(); return [L[k] || k, value(k, x)]; }),
+    n: "Only these change. Every other setting keeps its value.", wiki: reference("presets.py") };
+}
+function pageTip(id) {
+  if (id.startsWith("section.")) return sectionTip(id.slice(8));
+  if (id.startsWith("preset.")) return presetTip(id.slice(7));
+  return (TIPS.page || {})[id] || null;
+}
+// one tip, in tips.json's shape, as the popover's children; {name} in its words is filled from args
+function tipCard(c, args) {
+  const fill = (x) => String(x).replace(/\{(\w+)\}/g, (_, k) => (args[k] ?? ""));
+  const out = [];
+  if (c.eyebrow) out.push(el("span", { class: "tp-eyebrow" }, c.eyebrow));
+  if (c.title) out.push(el("span", { class: "tp-head" }, el("span", { class: "tp-title" }, fill(c.title)),
+    c.unit ? el("span", { class: "tp-unit" }, c.unit) : null, c.badge ? el("span", { class: "tp-badge" }, c.badge) : null));
+  if (c.key) out.push(el("span", { class: "mono-name tp-key" }, c.key));
+  if (c.t) out.push(el("p", { class: "tp-lead" }, fill(c.t)));
+  if (c.o) out.push(el("div", { class: "tp-opts" }, c.o.flatMap(([v, text, file]) => [
+    el("span", { class: "tp-chip" + (file ? " file" : ""), title: file ? "The value in the parameter file" : null }, v), el("span", {}, text)])));
+  const facts = (c.f || []).map(([k, v]) => [k, fill(v)]).filter(([, v]) => v.trim() !== "");
+  if (facts.length) out.push(el("dl", { class: "tp-facts" }, facts.flatMap(([k, v]) => [el("dt", {}, k), el("dd", {}, v)])));
+  if (c.rows) out.push(tipTable(c.rows));
+  if (c.n) out.push(el("p", { class: "tp-note" }, fill(c.n)));
+  if (c.kbd) out.push(el("span", { class: "tp-keys" }, c.kbd.flatMap((k, i) => [i ? "+" : null, el("kbd", {}, k)]), c.kbdText ? ` ${c.kbdText}` : null));
+  const pic = c.img && (TIPS.pictures || {})[c.img];
+  if (pic) out.push(el("figure", { class: "tp-fig" },      // width and height keep its place while it loads
+    el("img", { src: new URL(`tooltips/${pic.file}`, import.meta.url).href, width: pic.w, height: pic.h, alt: pic.caption, decoding: "async" }),
+    el("figcaption", {}, `${pic.caption} · `, wikiLink(pic.page, "Wiki"))));
+  if (c.foot !== undefined || c.footRows || c.wiki) {
+    const left = c.footRows ? el("span", {}, "In the file", tipTable(c.footRows))
+      : c.foot !== undefined ? el("span", {}, "In the file: ", el("code", {}, c.foot)) : el("span");
+    out.push(el("span", { class: "tp-foot" }, left, c.wiki ? wikiLink(c.wiki, "Parameter Reference") : null));
+  }
+  return out;
+}
 function showValue(v) {
   if (v === null || v === undefined) return "None";
   if (typeof v === "boolean") return v ? "True" : "False";
@@ -195,8 +292,16 @@ function hideTip() { clearTimeout(tipTimer); clearTimeout(hideTimer); tipFor = n
 function showTip(node) {
   const pop = $("popover");
   pop.replaceChildren();
+  pop.classList.remove("rich", "wide");
   const p = node.dataset.help && state.byKey[node.dataset.help];  // the parameters are known once Python has read them
-  if (p) {
+  const c = p ? settingTip(p) : node.dataset.tipId ? pageTip(node.dataset.tipId) : null;
+  if (c) {
+    let args = {};
+    try { args = JSON.parse(node.dataset.tipArgs || "{}"); } catch (e) { /* no values */ }
+    pop.classList.add("rich");
+    if (c.img || c.o || c.rows || c.footRows) pop.classList.add("wide");
+    pop.append(...tipCard(c, args));
+  } else if (p) {
     pop.append(el("span", { class: "mono-name" }, `${p.file} · ${p.name}`));
     pop.append(p.help || "No notes in the parameter file.");
     pop.append(el("span", { class: "tip-foot" }, `In the file: ${showValue(p.default)}`));
@@ -286,8 +391,8 @@ function updateStale() {
   const ok = state.result && state.result.ok;
   $("stale-badge").hidden = !(ok && state.stale);
   $("btn-download").disabled = !ok || state.stale || state.busy;
-  $("btn-download").dataset.tip = state.stale ? "The settings changed: press Generate first"
-    : ok ? `Download this run as one zip: ${zipName()}` : "Download this run as one zip";
+  setTip($("btn-download"), state.stale ? "downloadStale" : "downloadZip", state.stale ? "The settings changed: press Generate first"
+    : ok ? `Download this run as one zip: ${zipName()}` : "Download this run as one zip", ok && !state.stale ? { file: zipName() } : null);
   for (const b of $("download-files").querySelectorAll("button")) b.disabled = !ok || state.stale || state.busy;
 }
 
@@ -420,7 +525,7 @@ function widget(p) {
         if (on) { if (typeof state.values[key] === "number") state.lastNumbers[key] = state.values[key]; state.noneEditing.delete(key); set(null); renderSections(); }
         else if (typeof state.lastNumbers[key] === "number") set(state.lastNumbers[key]);
         else { state.noneEditing.add(key); renderSections(); const i = document.querySelector(`[data-key="${key}"] .stepper input`); if (i) i.focus(); }
-      }, { "data-tip": "None: KESE takes the value from the board file or works it out (see the help)" }));
+      }, tipAttrs("none", "None: KESE takes the value from the board file or works it out (see the help)")));
       row.append(stepper(v, (x) => { state.noneEditing.delete(key); set(x); }, { step: stepOf(p), disabled: isNone, placeholder: "number" }));
       return row;
     }
@@ -502,7 +607,7 @@ function layerRows(rows, putRows, names) {
       el("button", { type: "button", class: "table-x", disabled: rows.length < 2, "aria-label": "Remove layer", "data-tip": "Remove this layer",
         onclick: () => { const r = clone(rows); r.splice(i, 1); putRows(r); } }, "×")));
   });
-  out.push(el("button", { type: "button", class: "table-btn", "data-tip": "Add a layer on top",
+  out.push(el("button", { type: "button", class: "table-btn", ...tipAttrs("addLayer", "Add a layer on top"),
     onclick: () => { const r = clone(rows); r.push(clone(r[r.length - 1])); putRows(r); } }, "+ Layer"));
   return out;
 }
@@ -515,7 +620,8 @@ function finishPick(p, v, pickWidget) {
   const box = el("div", { class: "table-edit" }, pickWidget);
   if (Array.isArray(rows) && rows.length) {
     const put = (r) => setValues({ "Finish.FINISH_TYPES": { ...state.values["Finish.FINISH_TYPES"], [v]: r } }, "field");
-    box.append(el("div", { class: "table-body" }, ...layerRows(rows, put, Object.keys(state.values["Finish.FINISH_CONDUCTIVITY_S_PER_M"] || {}))));
+    box.append(el("p", { class: "hint table-note" }, `Layers of ${v}, bottom to top, in mm. Each becomes its own part.`),
+      el("div", { class: "table-body" }, ...layerRows(rows, put, Object.keys(state.values["Finish.FINISH_CONDUCTIVITY_S_PER_M"] || {}))));
   } else if (v === "file") {
     box.append(el("p", { class: "hint table-note" }, "The board's stack-up names the finish (Board Setup > Physical Stackup > Copper finish). The run stops with an error if the board names none or one KESE does not know; a stack-up finish of \"None\" gives no finish."));
   }
@@ -568,7 +674,7 @@ function field(p) {
   const head = el("div", { class: "field-head" }, el("span", { class: "field-label", id: labelId }, text, unit ? el("span", { class: "unit" }, ` (${unit})`) : null));
   attachHelp(head, p.key);
   if (state.ui === "advanced") {
-    if (changed) head.append(el("button", { type: "button", class: "reset-one", "data-tip": `Back to the file's value: ${showValue(p.default)}`,
+    if (changed) head.append(el("button", { type: "button", class: "reset-one", ...tipAttrs("resetOne", `Back to the file's value: ${showValue(p.default)}`, { value: showValue(p.default) }),
       onclick: () => {
         state.noneEditing.delete(p.key);
         const back = { [p.key]: clone(p.default) };
@@ -619,10 +725,10 @@ function colorGroups(keys) {
                                // the part switches: a group shows only while its parts are built
   const metals = Object.keys(V["Finish.FINISH_CONDUCTIVITY_S_PER_M"] || {});
   const groups = [
-    on("Board.BOARD_ENABLED") && { title: "Board Colors", tip: "The laminate", items: layered ? [mat("Board_core", "Core"), mat("Board_prepreg", "Prepreg")] : [mat("Board", "Laminate")] },
-    on("Copper.COPPER_ENABLED") && { title: "Copper Colors", tip: "Traces, pads, zones and the plating of holes",
+    on("Board.BOARD_ENABLED") && { title: "Board Colors", tip: "The laminate", tipId: "colorBoard", items: layered ? [mat("Board_core", "Core"), mat("Board_prepreg", "Prepreg")] : [mat("Board", "Laminate")] },
+    on("Copper.COPPER_ENABLED") && { title: "Copper Colors", tip: "Traces, pads, zones and the plating of holes", tipId: "colorCopper",
       items: visual ? [mat("Copper_exposed", "Copper")] : [mat("Copper", "Copper"), mat("Plating", "Hole plating")] },
-    on("Finish.FINISH_ENABLED") && { title: "Finish Colors", tip: "The finish metals on the exposed copper (Finish Enabled is on)",
+    on("Finish.FINISH_ENABLED") && { title: "Finish Colors", tip: "The finish metals on the exposed copper (Finish Enabled is on)", tipId: "colorFinish",
       items: metals.map((m) => mat(m)) },
     // One group per side, for MATERIALS' "<side> Solder Mask" (and, in visual mode, "<side> Mask over Copper").
     // Its dropdown picks a colour by name from STACKUP_MASK_COLORS; the over-copper shade of the same name
@@ -631,10 +737,12 @@ function colorGroups(keys) {
     ...["Top", "Bottom"].map((side) => on("SolderMask.SOLDER_MASK_ENABLED") && has(`${side} Solder Mask`) && own(side, "Mask") && {
       title: `${side} Solder Mask Colors` + (stackup ? " (the board names none)" : ""),
       tip: `The ${side.toLowerCase()} solder mask (Color.MATERIALS "${side} Solder Mask"${visual ? `, and "${side} Mask over Copper"` : ""})`,
+      tipId: "colorMask", tipArgs: { title: `${side} Solder Mask Colors` + (stackup ? " (the board names none)" : ""), side: side.toLowerCase() },
       items: [{ ...mat(`${side} Solder Mask`), pair: visual && has(`${side} Mask over Copper`) ? { param: "Color.MATERIALS", key: `${side} Mask over Copper` } : null }],
       presets: { names: V["Color.STACKUP_MASK_COLORS"] || {}, pairNames: V["Color.STACKUP_MASK_OVER_COPPER_COLORS"] || {} } }),
     on("SolderMask.SOLDER_MASK_ENABLED") && { title: "", items: [], extra: [visual && "Color.VISUAL_MASK_OPAQUE", visual && stackup && "Color.USER_MASK_OVER_COPPER_LIGHTEN"] },
     on("Silkscreen.SILKSCREEN_ENABLED") && { title: "Silkscreen Colors" + (stackup ? " (the board names none)" : ""), tip: "The silkscreen (Color.MATERIALS)",
+      tipId: "colorSilk", tipArgs: { title: "Silkscreen Colors" + (stackup ? " (the board names none)" : "") },
       items: ["Top", "Bottom"].filter((side) => own(side, "SilkS")).map((side) => mat(`${side} Silkscreen`)) },
   ].filter(Boolean);
   const out = [];
@@ -650,7 +758,7 @@ function colorGroups(keys) {
 /* What the board's stack-up names for each side's mask and silk, with Use Stackup Colors on. */
 function boardColorNote(fromBoard, on) {
   const box = el("div", { class: "field board-colors" }, el("div", { class: "field-head" },
-    el("span", { class: "field-label", "data-tip": "The colours set in KiCad (Board Setup > Physical Stackup), used because Use Stackup Colors is on" }, "Board's Stack-up Colors")));
+    el("span", { class: "field-label", ...tipAttrs("boardColors", "The colours set in KiCad (Board Setup > Physical Stackup), used because Use Stackup Colors is on") }, "Board's Stack-up Colors")));
   if (!state.board) { box.append(el("p", { class: "hint" }, "Upload a board to see the colours its stack-up names.")); return box; }
   const kinds = [on("SolderMask.SOLDER_MASK_ENABLED") && ["Mask", "Solder Mask"], on("Silkscreen.SILKSCREEN_ENABLED") && ["SilkS", "Silkscreen"]].filter(Boolean);
   const list = el("div", { class: "board-colors-list" });
@@ -675,8 +783,8 @@ function colorGroup(g, items) {
   const changed = entries.filter((it) => !same(valueOf(it), defaultOf(it)));
   const putOf = (it) => (val) => setValues({ [it.param]: { ...state.values[it.param], [it.key]: val } }, "field");
 
-  const head = el("summary", { class: "field-head" }, el("span", { class: "field-label", "data-tip": g.tip }, g.title));
-  if (changed.length) head.append(el("button", { type: "button", class: "reset-one", "data-tip": "Back to the file's colours for this group",
+  const head = el("summary", { class: "field-head" }, el("span", { class: "field-label", ...tipAttrs(g.tipId, g.tip, g.tipArgs) }, g.title));
+  if (changed.length) head.append(el("button", { type: "button", class: "reset-one", ...tipAttrs("resetColors", "Back to the file's colours for this group"),
     onclick: (e) => {
       e.preventDefault(); e.stopPropagation();                      // in the summary: reset, do not open / close
       const next = {};
@@ -750,7 +858,7 @@ function presetRow() {
   for (const n of names) {
     const match = n === lit;
     const tip = `Preset ${n} (parameters/presets.py): ` + Object.entries(presets[n]).map(([k, x]) => `${k.split(".")[1]} = ${showValue(x)}`).join(", ");
-    seg.append(el("button", { type: "button", class: match ? "on" : "", "data-tip": tip,
+    seg.append(el("button", { type: "button", class: match ? "on" : "", ...tipAttrs(`preset.${n}`, tip),
       onclick: () => {
         state.formatsByMode[state.values[CFG.mode]] = clone(state.values[CFG.formats]);   // as a switch of mode would
         state.preset = n;
@@ -777,7 +885,7 @@ function renderSections() {
     det.open = state.open.has(f.module);
     det.addEventListener("toggle", () => { if (det.open) state.open.add(f.module); else state.open.delete(f.module); });
     const nChanged = keys.filter((k) => !same(state.values[k], state.byKey[k].default)).length;
-    det.append(el("summary", { "data-tip": f.doc || "" }, el("span", { class: "ps-name" }, (CFG.sectionTitles || {})[f.module] || f.module),
+    det.append(el("summary", tipAttrs(`section.${f.module}`, f.doc || (CFG.sectionTitles || {})[f.module] || f.module), el("span", { class: "ps-name" }, (CFG.sectionTitles || {})[f.module] || f.module),
       el("span", { class: "ps-file" }, f.file.replace(/^parameters\//, "")),
       el("span", { class: "ps-n" + (nChanged ? " changed" : "") }, nChanged ? `${nChanged} changed` : String(keys.length))));
     const inner = el("div", { class: "psec-body" });
@@ -845,7 +953,8 @@ function renderFormats() {
       setValues({ [CFG.formats]: state.desc.formats.filter((x) => now.has(x)) }, "formats");
     });
     box.append(el("label", { class: "format" + (cb.checked ? " on" : "") + (allowed ? "" : " dis"),
-      "data-tip": allowed ? `Write ${f.toUpperCase()} (${CFG.formats})` : `${f.toUpperCase()} is written in Simulation mode only` },
+      ...(allowed ? tipAttrs(`format.${f}`, `Write ${f.toUpperCase()} (${CFG.formats})`)
+        : tipAttrs("format.simOnly", `${f.toUpperCase()} is written in Simulation mode only`, { F: f.toUpperCase() })) },
       el("span", { class: "switch" }, cb, el("span", { class: "knob" })), f.toUpperCase()));
   }
   const order = (CFG.previewOrder[mode] || []).map((x) => x.toUpperCase()).join(", then ");
@@ -921,7 +1030,7 @@ function updateGenerate() {
   if (!state.ready) return;
   b.disabled = state.busy || !state.board;
   if (!state.busy) b.textContent = "Generate";
-  b.dataset.tip = state.board ? "Make the model with these settings (Ctrl+Enter)" : "Choose a board first";
+  setTip(b, state.board ? "generate" : "generateNoBoard", state.board ? "Make the model with these settings (Ctrl+Enter)" : "Choose a board first");
 }
 
 /* ---- generate ------------------------------------------------------------------------------------ */
@@ -1109,7 +1218,7 @@ function renderParts() {
   if (!parts.length) { box.append(el("p", { class: "hint" }, viewer ? "The solids of the model, once it is made. Click one to hide it." : "The parts list comes with the 3D preview, which needs WebGL.")); return; }
   const sorted = [...parts].sort((a, b) => b.triangles - a.triangles);
   for (const p of sorted) {
-    const row = el("button", { type: "button", class: "part" + (p.visible ? "" : " off"), "data-tip": `${p.name}: click to hide or show it`, "aria-pressed": String(p.visible),
+    const row = el("button", { type: "button", class: "part" + (p.visible ? "" : " off"), ...tipAttrs("part", `${p.name}: click to hide or show it`, { name: p.name, tris: countText(p.triangles) }), "aria-pressed": String(p.visible),
       onclick: () => { viewer.setVisible(p.name, !p.visible); row.classList.toggle("off", !p.visible); row.setAttribute("aria-pressed", String(p.visible)); } },
       el("i", { style: `background:${p.color}` }), el("span", { class: "part-name" }, p.name), el("small", {}, `${countText(p.triangles)} tris`));
     box.append(row);
@@ -1127,15 +1236,15 @@ function renderDownloads() {
   const top = r.files.filter((f) => !f.path.includes("/"));
   const folders = [...new Set(r.files.filter((f) => f.path.includes("/")).map((f) => f.path.split("/")[0]))];
   for (const f of top) {
-    box.append(el("button", { type: "button", class: "glass-btn small", "data-tip": `Download ${f.path} (${bytesText(f.size)})`,
+    box.append(el("button", { type: "button", class: "glass-btn small", ...tipAttrs("file", `Download ${f.path} (${bytesText(f.size)})`, { name: f.path, size: bytesText(f.size) }),
       onclick: async () => download(await store.file(f.path), f.path) }, f.path));
   }
   for (const d of folders) {
     const inside = r.files.filter((f) => f.path.startsWith(d + "/"));
-    box.append(el("button", { type: "button", class: "glass-btn small", "data-tip": `Download the ${d}/ folder as a zip (${inside.length} files)`,
+    box.append(el("button", { type: "button", class: "glass-btn small", ...tipAttrs("folder", `Download the ${d}/ folder as a zip (${inside.length} files)`, { name: `${d}/`, n: String(inside.length) }),
       onclick: async () => { toast(`Zipping ${d}/…`); download(await store.zip(`${stem(state.board.name)}_${d}`, (p) => p.startsWith(d + "/")), zipName(`_${d}`)); } }, `${d}/`));
   }
-  $("btn-download").dataset.tip = `Download this run as one zip: ${zipName()}`;
+  setTip($("btn-download"), "downloadZip", `Download this run as one zip: ${zipName()}`, { file: zipName() });
 }
 
 /* ---- dialogs ------------------------------------------------------------------------------------ */
@@ -1189,6 +1298,7 @@ async function importFiles(files) {
 function wire() {
   const links = CFG.links || {};
   $("btn-help").href = links.help || links.repository || "#";
+  $("drop").dataset.tipArgs = JSON.stringify({ max: `${MAX_BOARD / 1048576} MB` });
   $("nav-home").href = links.blogHome || "#";
   $("nav-back").addEventListener("click", (e) => {
     e.preventDefault();
@@ -1244,7 +1354,7 @@ function wire() {
   document.addEventListener("fullscreenchange", () => {
     const on = !!document.fullscreenElement, b = $("btn-fullscreen");
     b.querySelector("path").setAttribute("d", on ? "M8 3v5H3M16 3v5h5M21 16h-5v5M3 16h5v5" : "M3 8V3h5M16 3h5v5M21 16v5h-5M8 21H3v-5");
-    b.dataset.tip = on ? "Leave full screen (Esc)" : "Show the preview full screen (Esc to leave)";
+    setTip(b, on ? "fullscreenLeave" : "fullscreen", on ? "Leave full screen (Esc)" : "Show the preview full screen (Esc to leave)");
   });
   document.querySelectorAll("#views button").forEach((b) => b.addEventListener("click", () => {
     document.querySelectorAll("#views button").forEach((x) => x.classList.toggle("on", x === b));
@@ -1264,7 +1374,7 @@ async function examples() {
   if (!list.length) return;
   const box = $("examples");
   for (const name of list) {
-    box.append(el("button", { type: "button", class: "glass-btn small", "data-tip": `Load ${name}, one of the boards in Generator/Input`,
+    box.append(el("button", { type: "button", class: "glass-btn small", ...tipAttrs("example", `Load ${name}, one of the boards in Generator/Input`, { name: stem(name) }),
       onclick: async () => {
         try {
           const r = await fetch(new URL(`examples/${name}`, import.meta.url));
@@ -1306,11 +1416,13 @@ function renderFooter() {
   const stamp = build.commit ? `build ${build.commit}${build.built ? ` · ${build.built}` : ""}` : "";
   $("foot").replaceChildren("Generator: ", a(links.repository, "KiCad EM Stackup Exporter", "The project on GitHub"),
     build.kese ? ` ${build.kese}` : "", stamp ? " · " : "",
-    stamp ? el("span", { class: "build", "data-tip": `Python from ${state.python || "(loading)"} · three.js from ${threeSource()}` }, stamp) : "",
+    stamp ? el("span", { class: "build", ...tipAttrs("build", `Python from ${state.python || "(loading)"} · three.js from ${threeSource()}`,
+      { commit: build.commit, python: state.python || "(loading)", three: threeSource() }) }, stamp) : "",
     " · GPL-3.0-or-later · runs in your browser, nothing is uploaded · ",
     a("privacy.html", "Privacy", "What this page does with your data: it stays in your browser"), " · ",
     a("licenses.html", "Licences", "The open-source parts this page is made of, and their licences"), " · ",
-    el("a", { href: "#", id: "report-link", target: "_blank", rel: "noopener", "data-tip": "Open a GitHub issue filled in with this page's build, browser and changed settings (never the board). You see it before it is sent.",
+    el("a", { href: "#", id: "report-link", target: "_blank", rel: "noopener",
+      ...tipAttrs("reportProblem", "Open a GitHub issue filled in with this page's build, browser and changed settings (never the board). You see it before it is sent."),
       onclick: (e) => { e.currentTarget.href = issueUrl(); } }, "Report a Problem"));
 }
 function problemDetails(extra) {

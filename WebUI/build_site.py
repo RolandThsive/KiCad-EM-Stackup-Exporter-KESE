@@ -12,6 +12,7 @@ The folder gets:
   WebUI/version.json      the generator's version, a hash of the zip (so a browser fetches the zip again only
                           when it changed) and the example boards
   WebUI/logo.svg, favicon.ico   the KESE logo (docs/logo/Kese_Square.svg) and favicon (docs/logo/favicon.ico)
+  WebUI/tooltips/         the pictures of the tips (docs/tooltipsPictures/*.webp, named in tips.json "pictures")
   WebUI/examples/         the example boards of Generator/Input
   WebUI/vendor/           the backup copy of Pyodide and three.js the page falls back on when jsDelivr fails: the files
                           vendor.json lists, downloaded from jsDelivr (or copied from --vendor-from / KESE_VENDOR_FROM)
@@ -179,6 +180,13 @@ def build(site, vendor_from=None, vendor_cache=None):
     config = json.loads((HERE / "webui.json").read_text(encoding="utf-8"))
     shutil.copy2(REPO / "docs" / "logo" / "Kese_Square.svg", site / "WebUI" / "logo.svg")
     shutil.copy2(REPO / "docs" / "logo" / "favicon.ico", site / "WebUI" / "favicon.ico")
+    tips = json.loads((HERE / "tips.json").read_text(encoding="utf-8"))
+    pictures = REPO / "docs" / "tooltipsPictures"
+    (site / "WebUI" / "tooltips").mkdir()
+    for name, pic in tips.get("pictures", {}).items():               # a tip names a picture that is not there: stop
+        if not (pictures / pic["file"]).is_file():
+            raise SystemExit(f"build_site: tips.json picture {name} needs docs/tooltipsPictures/{pic['file']}")
+        shutil.copy2(pictures / pic["file"], site / "WebUI" / "tooltips" / pic["file"])
     boards = sorted((GENERATOR / "Input").glob("*.kicad_pcb"))
     if boards:
         (site / "WebUI" / "examples").mkdir()
