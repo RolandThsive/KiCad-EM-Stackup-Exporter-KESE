@@ -13,6 +13,9 @@ The newest first. Each entry is one pull request into `WebUI`; the footer's buil
   the Output section loses the Simulation / Visual drawing, which stays on Mode; the solder mask's picture (the
   Solder Mask section and Solder Mask Enabled) is drawn again as one large cross-section with big labels. 33
   pictures: 20 drawn, 13 cut from the wiki.
+- Lighthouse's Total Blocking Time budget is 400 ms (was 300). The page's code did not change, but on GitHub's machines
+  the 3D view's WebGL setup at load now measures 310 to 480 ms (median 319 and 331 in two runs), while a local run
+  measures 200 to 410 ms.
 - The tests also run on pull requests into `WebUI_modifs`, so Dependabot's pull requests are tested before they merge.
 - The smoke test after a deploy runs only its own spec. It loaded every spec, and the tips spec read `tips.json` from a
   local build the smoke job does not have, so the first deploy with the tips failed its smoke test (the site itself
