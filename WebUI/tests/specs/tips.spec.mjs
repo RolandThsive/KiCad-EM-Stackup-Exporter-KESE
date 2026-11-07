@@ -1,11 +1,12 @@
 // tips.spec.mjs - the tips' words come from tips.json: every setting and button the page shows has its tip there, a
 // setting's tip marks the file's value and shows its picture, a preset's tip lists what it sets, and a tip with
 // values fills them in.
-import { test, expect, open, runBoard, QUICK, SITE } from "../helpers.mjs";
+import { test, expect, open, runBoard, QUICK, SITE, LIVE } from "../helpers.mjs";
 import { readFileSync } from "node:fs";
 import { join } from "node:path";
 
-const TIPS = JSON.parse(readFileSync(join(SITE, "tips.json"), "utf8"));
+// after a deploy (KESE_LIVE_URL) nothing is built here, so the words come from the source, as helpers.mjs does for webui.json
+const TIPS = JSON.parse(readFileSync(LIVE ? new URL("../../tips.json", import.meta.url) : join(SITE, "tips.json"), "utf8"));
 test.skip(({ browserName }) => browserName !== "chromium", "the words are the same in every browser; the tips' behaviour is in keyboard.spec");
 
 // Advanced, STEP ticked and every part switched on, so every section and field shows; then every section opened
