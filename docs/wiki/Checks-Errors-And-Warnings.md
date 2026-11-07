@@ -354,7 +354,11 @@ glyph and finds it the font it was, the same glyphs from every font layout, a br
 file and line, no font read for a board without text, custom JSON and Hershey fonts picked by
 `Silkscreen.FONT_FILE`, and TrueType text drawn from its render cache, with the stroke font and a
 warning, or left out, an empty render cache drawing nothing, a cache whose words differ only in
-variables KESE cannot know drawn, while the face `KiCad Font` is the stroke font, in a few seconds (`python tests/test_font.py`); `tests/test_kicad_version.py`, which
+variables KESE cannot know drawn, while the face `KiCad Font` is the stroke font, in a few seconds (`python tests/test_font.py`);
+`tests/test_text_vars.py`, which expands values holding variables of their own as each KiCad
+version does (a title block value by the board's properties, the properties before or after the
+title block, `${CURRENT_DATE}` in the title block, KiCad 10's passes, a footprint's reference and
+value), in a moment (`python tests/test_text_vars.py`); `tests/test_kicad_version.py`, which
 checks the rules of each
 KiCad version (release of each format number, copper layers by their place, the zero mask margin,
 KiCad 4's text size, the text pen, segment-filled zones, the old overbar, a text's words past

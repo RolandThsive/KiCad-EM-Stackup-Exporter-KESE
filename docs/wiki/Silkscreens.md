@@ -166,7 +166,19 @@ KiCad's `PCB_TEXT::GetShownText` uses:
 | `${R1:VALUE}` (saved by KiCad as `${<uuid>:VALUE}`) | that field of the other footprint, or `<Unresolved: R1:VALUE>` as KiCad shows it |
 
 A variable only the project file defines (`.kicad_pro` text variables, `${PROJECTNAME}`) is
-left as written, as KiCad shows an unknown one.
+left as written, as KiCad shows an unknown one. KiCad 8 and 9 look a name up in the board's
+properties before its title block, the others after it, and KESE follows the KiCad that saved the
+board (`BOARD::ResolveTextVar`).
+
+A value can hold variables of its own, as on boards whose title block says `(date "${DATE}")` and
+whose project defines `DATE`. KESE expands it as the KiCad that saved the board expands it:
+
+| Value | Its own variables |
+|---|---|
+| a title block value | expanded once by the project's variables, for which KESE reads the board's properties, since KiCad keeps them as its copy of the project's (`BOARD::SynchronizeProperties`); `${CURRENT_DATE}` in it from KiCad 9 (`TITLE_BLOCK::TextVarResolver`) |
+| a footprint's reference or value, before KiCad 10 | expanded in that footprint while the depth stays under KiCad's limit: one level in KiCad 8 and 9 for the footprint's own text and none for another text's `${R1:VALUE}`, up to four in KiCad 6 and 7 (`FOOTPRINT::ResolveTextVar`) |
+| any other value, before KiCad 10: a board property, another field | left as written, as KiCad shows it |
+| any value, KiCad 10 | expanded again, as KiCad 10 expands a text up to six times while it holds a variable (`ResolveTextVars`); a field in its own footprint |
 
 Text the file marks hidden (`(hide yes)`) is skipped unless `DRAW_HIDDEN_TEXT = True`.
 
@@ -186,12 +198,12 @@ KiCad gives the stroke font for a face whose name is empty or starts with `KiCad
 (`PCB_IO_KICAD_SEXPR::formatRenderCache`); KESE does the same. A cache made for another text or
 angle is stale, as KiCad would draw the text anew, with one exception: where the text uses a
 variable whose value when KiCad saved the board KESE cannot know (one only the project file defines,
-a value that holds variables of its own, `${CURRENT_DATE}`), a cache whose words differ only there
-is drawn, since its words are the ones KiCad showed then, and `report.txt` counts that text apart. A
-cache with no polygons, as KiCad saves for an empty text or for letters the face lacks, draws
-nothing, as KiCad draws nothing. KiCad 9's embedded fonts (`embedded_fonts`, `embedded_files`) are
-not read, since the render cache already holds every letter. `report.txt` counts the text of each
-kind.
+or `${CURRENT_DATE}`, also where a value's own variables bring it in), a cache whose words differ
+only there is drawn, since its words are the ones KiCad showed then, and `report.txt` counts that
+text apart. A cache with no polygons, as KiCad saves for an empty text or for letters the face
+lacks, draws nothing, as KiCad draws nothing. KiCad 9's embedded fonts (`embedded_fonts`,
+`embedded_files`) are not read, since the render cache already holds every letter. `report.txt`
+counts the text of each kind.
 
 A different stroke font can replace newstroke for the first kind: copy it into
 `kese/assets/fonts/` and set `FONT_FILE` to its name. It can be this project's stroke-font JSON,
