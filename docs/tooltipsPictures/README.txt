@@ -1,0 +1,41 @@
+The pictures in the web tool's tips (WebUI/tips.json "pictures").  build_site.py copies them to the site's
+WebUI/tooltips/ folder; a tip loads its picture only when it opens.
+
+Each one is a single panel cut from a wiki picture in docs/images, at most 680 px on its longer side (twice the
+tip's width), saved as WebP at quality 82.  The box is in the source picture's pixels (left, top, right, bottom).
+A remade picture keeps its file name, so tips.json needs no change; update its w and h there if its size changes.
+
+modes.webp  680x230    11 KB  from modes_1_simulation_visual.webp, box (24, 178, 2116, 885)
+modes_visual.webp  680x463    15 KB  from modes_1_simulation_visual.webp, box (1077, 178, 2116, 885)
+frames.webp  680x366    17 KB  from wp_3_frames.webp, box (29, 138, 1398, 875)
+orient.webp  623x680    24 KB  from wp_3_frames.webp, box (1441, 138, 2116, 875)
+stackup.webp  680x382    13 KB  from stackup_1_cross_section.webp, box (29, 166, 1469, 975)
+dielectrics.webp  680x320    15 KB  from board_2_resin_fill.webp, box (24, 209, 2116, 1194)
+resin.webp  680x195     6 KB  from copper_5_thickness.webp, box (1101, 725, 2114, 1015)
+npth.webp  680x456    14 KB  from board_1_outline.webp, box (1080, 1771, 2116, 2466)
+outline.webp  680x416     7 KB  from board_1_outline.webp, box (29, 155, 2116, 1431)
+net_solid.webp  680x281    10 KB  from copper_1_one_net_one_solid.webp, box (24, 889, 1075, 1324)
+foil.webp  680x195     4 KB  from copper_5_thickness.webp, box (26, 725, 1039, 1015)
+plating.webp  680x166    12 KB  from copper_6_plating.webp, box (26, 162, 2114, 671)
+pth_wall.webp  680x253     6 KB  from copper_6_plating.webp, box (26, 209, 1060, 594)
+via.webp  680x602    15 KB  from copper_3_via_section.webp, box (143, 114, 1336, 1170)
+etch.webp  680x152     5 KB  from copper_10_etch_factor.webp, box (24, 761, 2116, 1229)
+castell.webp  680x312     9 KB  from copper_7_castellation.webp, box (613, 166, 2116, 856)
+castell_wall.webp  680x432     9 KB  from copper_7_castellation.webp, box (0, 1127, 1265, 1931)
+edge.webp  680x316    15 KB  from copper_8_edge_plating.webp, box (26, 162, 1332, 768)
+edge_wall.webp  585x680    14 KB  from copper_8_edge_plating.webp, box (1379, 119, 2054, 904)
+edge_net.webp  680x266    10 KB  from copper_8_edge_plating.webp, box (304, 1006, 2002, 1669)
+tenting.webp  680x465    16 KB  from mask_6_over_holes.webp, box (968, 95, 2116, 880)
+mask.webp  680x432    19 KB  from mask_3_conformal.webp, box (968, 95, 2116, 825)
+mask_thick.webp  680x414    11 KB  from mask_4_thickness.webp, box (24, 1087, 1060, 1717)
+pullback.webp  680x386    10 KB  from mask_5_edge_pullback.webp, box (968, 927, 2116, 1579)
+mask_colors.webp  680x159    11 KB  from mask_1_colors_simulation.webp, box (24, 86, 2116, 575)
+silk_colors.webp  680x159    11 KB  from silk_1_colors_simulation.webp, box (24, 86, 2116, 575)
+silk_height.webp  680x201    10 KB  from silk_3_height.webp, box (257, 1422, 2097, 1966)
+silk_copper.webp  680x483    14 KB  from silk_4_mask_subtract.webp, box (24, 143, 1141, 937)
+silk_text.webp  680x151     8 KB  from silk_5_kicad_text.webp, box (24, 162, 2116, 628)
+silk_join.webp  680x283    12 KB  from silk_5_kicad_text.webp, box (24, 1362, 1277, 1883)
+finish_where.webp  680x252     6 KB  from finish_1_where.webp, box (26, 152, 2116, 927)
+finish_enig.webp  680x379    16 KB  from finish_2_enig.webp, box (26, 200, 1063, 778)
+stage6.webp  680x205    14 KB  from wp_2_solid.webp, box (26, 162, 2116, 792)
+checked.webp  675x632    30 KB  from wp_2_solid.webp, box (1441, 837, 2116, 1469)

@@ -51,6 +51,7 @@ fixture in `helpers.mjs`). A test that causes an error on purpose says so with a
 | `keyboard` | all | every Tab stop has a visible focus ring (not WebKit, whose Tab skips buttons); menus by keys; dialogs; Ctrl+Enter; tips on focus, closed by Escape, reachable by the pointer |
 | `inputs` | all | wrong files, a half board, broken, oversized and zip-bomb parameter files, numbers typed and stepped |
 | `behaviour` | all | presets, Mode and formats, stale results, export and import round trip, the report, downloads, views, cross-section, fit, screenshot, parts |
+| `tips` | Chromium | every setting and button shown has its tip in `tips.json`; a setting's tip marks the file's value, loads its picture and links the Parameter Reference; a preset's and a section's tip; values filled in |
 | `pages` | all | footer links, every licence text exists, versions match what is loaded, the privacy page names every server |
 | `a11y` | Chromium | axe (WCAG 2.0 to 2.2, A and AA) in every state; reflow at 200 to 400 % zoom; wider text spacing; status messages |
 | `perf` | Chromium | LCP, CLS, input delay, time to Python, time to make the quick and the HDI board, against budgets |

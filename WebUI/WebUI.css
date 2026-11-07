@@ -410,6 +410,44 @@ input[type=range]:focus-visible::-moz-range-thumb { box-shadow: var(--metal-shad
   box-shadow: var(--shadow-card); padding: 10px 12px; font-size: 12.5px; line-height: 1.45; color: var(--text); white-space: pre-wrap; }
 .popover .mono-name { display: block; margin-bottom: 4px; }
 .popover .tip-foot { display: block; margin-top: 6px; padding-top: 6px; border-top: 1px solid #eee; color: var(--text-2); }
+/* a tip from tips.json: title, one plain line, then the choices, facts, a note and a picture where they help */
+.popover.rich { white-space: normal; border-radius: 10px; padding: 12px 14px 11px; line-height: 1.5; max-width: min(360px, calc(100vw - 12px)); }
+.popover.rich.wide { width: min(360px, calc(100vw - 12px)); }
+.popover.rich > * + * { margin-top: 8px; }
+.popover.rich p { margin: 0; }
+.tp-eyebrow { display: block; font-size: 10.5px; line-height: 1.3; letter-spacing: 0.07em; text-transform: uppercase; color: var(--accent); font-weight: 650; }
+.popover.rich .tp-eyebrow + .tp-head { margin-top: 3px; }
+.tp-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 7px; }
+.tp-title { font-size: 14px; font-weight: 650; line-height: 1.3; color: #222; }
+.tp-unit { font-size: 11px; font-weight: 600; line-height: 1.6; color: var(--text-2); background: #f1eee9; border-radius: 4px; padding: 0 5px; }
+.tp-badge { font-size: 10.5px; font-weight: 650; line-height: 1.6; color: #7a4b00; background: #fbf0d9; border: 1px solid #efd9a8; border-radius: 999px; padding: 0 7px; }
+.popover .tp-key { margin-bottom: 0; line-height: 1.3; }
+.popover.rich .tp-head + .tp-key { margin-top: 2px; }
+.tp-opts { display: grid; grid-template-columns: fit-content(46%) 1fr; gap: 5px 9px; align-items: baseline; }
+.tp-chip { justify-self: start; font-size: 11px; font-weight: 600; line-height: 1.55; color: var(--text); background: #f3f0eb;
+  border: 1px solid #e2ddd4; border-radius: 5px; padding: 0 6px; white-space: nowrap; }
+.tp-chip.file { background: var(--accent); border-color: var(--accent); color: #fff; }
+.tp-facts { display: grid; grid-template-columns: max-content 1fr; gap: 2px 10px; margin: 0; font-size: 12px; }
+.tp-facts dt { color: var(--text-3); }
+.tp-facts dd { margin: 0; font-variant-numeric: tabular-nums; }
+.tp-table { border-collapse: collapse; width: 100%; font-size: 12px; }
+.tp-table td { padding: 3px 0; border-top: 1px solid #f0ece6; vertical-align: top; }
+.tp-table tr:first-child td { border-top: 0; }
+.tp-table td:first-child { color: var(--text-3); padding-right: 12px; white-space: nowrap; }
+.tp-table td:last-child { font-weight: 500; }
+.tp-note { color: var(--text-2); font-size: 12px; padding-left: 9px; border-left: 2px solid #e6e1d9; }
+.tp-keys { display: flex; flex-wrap: wrap; align-items: center; gap: 4px; color: var(--text-2); font-size: 12px; }
+.tp-keys kbd { font: 600 10.5px/1 var(--ui-font); color: var(--text); background: #fbfaf8; border: 1px solid #d6d0c6; border-bottom-width: 2px;
+  border-radius: 4px; padding: 3px 5px; }
+.popover.rich .tp-fig { margin: 10px 0 0; }
+.tp-fig img { display: block; width: 100%; height: auto; border-radius: 6px; border: 1px solid #ebe7e0; background: #fff; }
+.tp-fig figcaption { margin-top: 5px; font-size: 11px; line-height: 1.4; color: var(--text-3); }
+.popover.rich a { color: var(--accent); text-decoration: underline; text-underline-offset: 2px; white-space: nowrap; }   /* WCAG 1.4.1 */
+.popover.rich .tp-foot { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 4px 12px; margin-top: 10px; padding-top: 7px;
+  border-top: 1px solid #eee; font-size: 11.5px; color: var(--text-2); }
+.tp-foot > span { min-width: 0; }
+.tp-foot code { font: 11px var(--mono); color: var(--text); overflow-wrap: anywhere; }
+.tp-foot .tp-table { margin-top: 4px; }
 dialog { border: 1px solid #ddd; border-radius: var(--radius); box-shadow: var(--shadow-card); max-width: min(900px, 90vw); max-height: 80vh; padding: 16px; }
 dialog.confirm { padding: 22px 26px 18px; text-align: center; min-width: 260px; }
 dialog.confirm p { margin: 0 0 16px; font-size: 16px; font-weight: 600; color: var(--text); }

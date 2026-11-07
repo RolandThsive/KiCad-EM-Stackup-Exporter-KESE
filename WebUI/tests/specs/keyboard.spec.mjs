@@ -90,10 +90,11 @@ test("tips come with the focus, close with Escape and stay while the pointer is 
   if (browserName !== "webkit") {                               // Safari's Tab skips buttons unless the visitor turns that on
     await page.mouse.click(5, 5);
     await page.keyboard.press("Tab");
-    const tip = await page.evaluate(() => document.activeElement.closest("[data-tip]")?.dataset.tip);
+    const { tip, id } = await page.evaluate(() => { const n = document.activeElement.closest("[data-tip]"); return { tip: n?.dataset.tip, id: n?.dataset.tipId }; });
     expect(tip).toBeTruthy();
     await expect(pop).toBeVisible();
-    await expect(pop).toHaveText(tip);
+    if (id) await expect(pop.locator(".tp-lead")).not.toBeEmpty();   // its words from tips.json
+    else await expect(pop).toHaveText(tip);
     await page.keyboard.press("Escape");
     await expect(pop).toBeHidden();
   }
