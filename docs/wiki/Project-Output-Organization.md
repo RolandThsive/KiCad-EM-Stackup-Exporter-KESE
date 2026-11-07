@@ -98,8 +98,8 @@ the file is done or the write fails
 ### 20.2.2 `report.txt`
 
 `Input/rf_module.kicad_pcb` in simulation mode with the solder mask and silkscreen turned on
-(`--set SolderMask.SOLDER_MASK_ENABLED=True --set Silkscreen.SILKSCREEN_ENABLED=True`), `...` where
-lines are left out:
+(`--set SolderMask.SOLDER_MASK_ENABLED=True --set Silkscreen.SILKSCREEN_ENABLED=True`) and
+`Geometry.CIRCLE_CHORD_TOLERANCE_MM = 0.002`, the default until 0.005, `...` where lines are left out:
 
 ```text
 rf_module  (rf_module.kicad_pcb)   generated 2026-11-06 09:17

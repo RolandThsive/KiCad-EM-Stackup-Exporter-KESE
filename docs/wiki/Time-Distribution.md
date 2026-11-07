@@ -1,5 +1,11 @@
 # 6. Time Distribution
 
+> [!NOTE]
+> These runs were made with `Geometry.CIRCLE_CHORD_TOLERANCE_MM = 0.002`, the default until it
+> became 0.005 mm, KiCad's own accuracy. Timed the same way, three runs each, the default 0.005
+> makes the three boards 1 to 8% faster (4.6% in all in simulation mode, 2.9% in visual mode) and
+> their files up to 4% smaller (2.1% and 2.3% in all).
+
 Where the time of a run goes, stage by stage, for the three example boards of `Generator/Input/`
 ([Examples](Examples.md)). Each board was exported three times in each mode, with the Verifier
 on, and each bar is the median of the three runs for that stage, read from the `timing` block of
