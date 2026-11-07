@@ -1,6 +1,8 @@
 kicad_newstroke.json.gz is KiCad's "newstroke" stroke font, converted to JSON from
 common/newstroke_font.cpp of KiCad (https://gitlab.com/kicad/code/kicad, master branch,
-19 October 2026). The copyright and license notice of that file follows, word for word.
+19 October 2026), and stored as JSON Lines since 6 November 2026: a header line, then one glyph
+per line (Generator/tools/font_lines.py), the glyphs unchanged. The copyright and license notice
+of that file follows, word for word.
 The same text is in licenses/KiCad-newstroke_font.cpp-header.txt, and NOTICE.md lists
 everything KESE takes from KiCad.
 

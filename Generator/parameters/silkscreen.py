@@ -18,7 +18,9 @@ SILKSCREEN_OVER_COPPER = False
 # or a Hershey .jhf file.  If the file is missing the default is used and the report says so.
 FONT_FILE = None
 
-# Text in a TrueType face (KiCad 7+ (font (face "...")) is drawn with the stroke font above.
+# Text in a TrueType face (KiCad 7+ (font (face "..."))) is drawn from the letters KiCad saves with it
+# (its render cache), so no font file is needed.  Text with no cache, or one made for other words or
+# another angle, is drawn with the stroke font above when True (with a warning), and left out when False.
 DRAW_TRUETYPE_TEXT_WITH_STROKE_FONT = True
 
 # KiCad text metrics (from KiCad's font code; change only to match a different font)
