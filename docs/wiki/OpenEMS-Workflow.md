@@ -23,9 +23,6 @@ stl/Board_dielectric_1.stl
 stl/Copper_GND.stl
 stl/Copper_RF_IN.stl
 stl/Copper_no_net.stl
-stl/Top_Solder_Mask.stl
-stl/Bottom_Solder_Mask.stl
-stl/Top_Silkscreen.stl
 ...
 materials.json
 parameters.txt
@@ -41,8 +38,9 @@ Consider before exporting:
 
 - `--set Board.DIELECTRIC_GROUPING=merged` if all dielectrics share one material: one STL instead of
   several.
-- The mask and silk STL files exist too; leave them out of the simulation unless their εr matters
-  to you, since `materials.json` carries no εr for them.
+- The solder mask and silkscreen are off, as by default. Turn them on
+  (`--set SolderMask.SOLDER_MASK_ENABLED=True --set Silkscreen.SILKSCREEN_ENABLED=True`) only if
+  their εr matters to you, and give them one yourself: `materials.json` carries no εr for them.
 - `Finish.FINISH_ENABLED` is off in the preset: 80 nm gold cannot be resolved by an FDTD mesh.
 
 ## 22.2 Building The CSXCAD Model

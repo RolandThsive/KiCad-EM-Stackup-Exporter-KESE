@@ -71,6 +71,7 @@ python tests/test_boards.py                     # the regression suite over ever
 | `DIELECTRIC_SPLIT=... unknown, using 'even'` | Only `"even"` is implemented. |
 | `not modelled, see 'skipped' in report.txt: backdrills of vias, filled vias, ...` | The board has holes that KiCad 10 backdrills, post-machines, covers, plugs, caps or fills. KESE models the hole plated through its whole span and open; `skipped` gives the counts. |
 | `left out, of a kind KESE does not know: fp_foo (2), ...` | Items of a kind KESE does not read, such as a drawing kind newer than this version of KESE. They are missing from the model. |
+| `N text(s) in a TrueType face drawn with KiCad's stroke font, in other letter shapes: the file has no render cache for them, or one made for other words or another angle (open the board in KiCad and save it)` | KiCad saves the letters of TrueType text with it, and KESE draws those; these texts have none that fit, as when a script wrote the board or it was edited by hand. They are drawn in the stroke font, in their place and size. With `Silkscreen.DRAW_TRUETYPE_TEXT_WITH_STROKE_FONT = False` they are left out instead ([Silkscreens](Silkscreens.md#1524-fonts-and-faces)). |
 | `the stack-up colour '<value>' of <layer> is neither a colour name of parameters/color.py nor #RRGGBBAA; its parts keep their MATERIALS colour` | A mask or silkscreen colour KESE cannot read keeps KESE's colour. Add the name to the tables in `parameters/color.py` ([Colorizing](Colorizing.md#132-colours-from-the-stack-up)). |
 
 ### 18.1.3 Notes Worth Knowing
@@ -99,10 +100,11 @@ python tests/test_boards.py                     # the regression suite over ever
 
 Tracks and arc tracks per layer, zone fills per layer, graphics and footprint graphics per layer,
 text per layer, pads, pad mask openings per side, the mask openings of tracks, arc tracks and
-drawings the mask leaves bare (KiCad 9 and later) per side, non-plated holes, through vias, blind/buried
-vias, footprints, outline shapes on `Edge.Cuts`, via rings removed on unconnected layers,
-castellated holes, the edge plating band and its net, text in a TrueType face from its render cache or drawn with the
-stroke font.
+drawings the mask leaves bare (KiCad 9 and later) per side, non-plated holes, through vias,
+blind/buried vias, footprints, outline shapes on `Edge.Cuts`, via rings removed on unconnected
+layers, castellated holes, the edge plating band and its net, text in a TrueType face from its
+render cache or drawn with the stroke font (also a warning). A face named `KiCad Font`, as KiCad 10
+can write it, is KiCad's stroke font, and its text counts as text.
 
 ### 18.2.2 Skipped
 
@@ -153,25 +155,25 @@ lines are left out):
 Verifier: PASS
   Board_dielectric 1                   closed=True winding=True volume=537.9918 mm3
   Board_dielectric 2                   closed=True winding=True volume=2939.6554 mm3
-  Board_dielectric 3                   closed=True winding=True volume=545.0504 mm3
+  Board_dielectric 3                   closed=True winding=True volume=545.0505 mm3
   Copper_+3V3                          closed=True winding=True volume=30.0643 mm3
   ...
-  Copper_GND                           closed=True winding=True volume=233.5935 mm3
+  Copper_GND                           closed=True winding=True volume=233.5938 mm3
   ...
-  Top Solder Mask                      closed=True winding=True volume=22.5245 mm3
-  Bottom Solder Mask                   closed=True winding=True volume=23.5600 mm3
-  Top Silkscreen                       closed=True winding=True volume=1.2008 mm3
-  Bottom Silkscreen                    closed=True winding=True volume=0.5142 mm3
+  Top Finish Gold                      closed=True winding=True volume=0.0398 mm3
+  Top Finish Nickel                    closed=True winding=True volume=2.4622 mm3
+  ...
+  Hole Finish Nickel                   closed=True winding=True volume=1.3148 mm3
   overlap between different parts, every slice against the others: none
   gltf_validator not on PATH: glTF validation skipped
-  Board_dielectric 1                   volume from faces 537.991825 mesh 537.991825 slices 537.991825 prisms 537.991825 mm3 closed=True whole=True
+  Board_dielectric 1                   volume from faces 537.991826 mesh 537.991826 slices 537.991826 prisms 537.991826 mm3 closed=True whole=True
   ...
-  Copper_GND                           volume from faces 233.593533 mesh 233.593533 slices 233.593533 prisms 233.593666 mm3 closed=True whole=True
+  Copper_GND                           volume from faces 233.593831 mesh 233.593831 slices 233.593831 prisms 233.593560 mm3 closed=True whole=True
   ...
-  Bottom Silkscreen                    volume from faces 0.514160 mesh 0.514160 slices 0.514160 prisms 0.514160 mm3 closed=True whole=True
+  Hole Finish Nickel                   volume from faces 1.314751 mesh 1.314751 slices 1.314751 prisms 1.314751 mm3 closed=True whole=True
 ```
 
-The prisms of `Copper_GND` hold 0.00013 mm³ more than its faces, within the 0.001 mm³ the
+The prisms of `Copper_GND` hold 0.00027 mm³ less than its faces, within the 0.001 mm³ the
 check allows them.
 
 Stage 6 moves each piece's edges by a grid step here and there as it shares vertices, and cuts its
@@ -347,9 +349,20 @@ describes, in a moment (`python tests/test_colors.py`); `tests/test_text_layout.
 sixteen texts (each justification, two lines, two lines with a line spacing KiCad does not plot, tabs,
 an angle, italic, bold, a wide font, an escaped quote, mirrored text on the back and the reference of
 a turned footprint) and finds each where KiCad 7.0.11 plots it, to 5 µm, in about three seconds
-(`python tests/test_text_layout.py`); `tests/test_kicad_version.py`, which checks the rules of each
+(`python tests/test_text_layout.py`); `tests/test_font.py`, which reads KiCad's stroke font glyph by
+glyph and finds it the font it was, the same glyphs from every font layout, a broken line named by
+file and line, no font read for a board without text, custom JSON and Hershey fonts picked by
+`Silkscreen.FONT_FILE`, and TrueType text drawn from its render cache, with the stroke font and a
+warning, or left out, an empty render cache drawing nothing, a cache whose words differ only in
+variables KESE cannot know drawn, while the face `KiCad Font` is the stroke font, in a few seconds (`python tests/test_font.py`);
+`tests/test_text_vars.py`, which expands values holding variables of their own as each KiCad
+version does (a title block value by the board's properties, the properties before or after the
+title block, `${CURRENT_DATE}` in the title block, KiCad 10's passes, a footprint's reference and
+value), in a moment (`python tests/test_text_vars.py`); `tests/test_kicad_version.py`, which
+checks the rules of each
 KiCad version (release of each format number, copper layers by their place, the zero mask margin,
-KiCad 4's text size, the text pen, segment-filled zones, the old overbar, markup, the net class
+KiCad 4's text size, the text pen, segment-filled zones, the old overbar, a text's words past
+KiCad 7's bare `locked` and the old `%V` and `%R`, markup, the net class
 a KiCad 4/5 via takes its size and drill from) against what
 KiCad's own parser does, without a board, in under a second; `tests/test_enabled.py`, which turns
 each part switch off in turn (`BOARD_ENABLED`, `COPPER_ENABLED`, `FINISH_ENABLED`,
@@ -362,7 +375,8 @@ file and finds an error before any work, a note or a warning, not a Python error
 preset naming real settings that pass the checks; board files KiCad refuses (`nan`, `inf`, `1e999` or a word
 where a number belongs, a binary or UTF-16 file) stop with the file named and the reason, a thickness below
 zero is read as not given with a warning, a board too thin for its copper stops with the setting to change,
-and a byte order mark is passed over, in about two seconds
+a byte order mark is passed over, and a pad drill that gives no size takes KiCad's default, in about
+two seconds
 (`python tests/test_bad_input.py`); `tests/test_verifier.py`, which finds the Verifier's visual check
 meeting the same faces on every ray with the board `upright` and `flat`, and casting its rays on a
 32-bit Python (Pyodide, in the browser) as it does on 64 bits, the checks made where each

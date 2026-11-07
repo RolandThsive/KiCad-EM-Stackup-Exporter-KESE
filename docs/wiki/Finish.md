@@ -331,6 +331,7 @@ one per connected piece.
 | `FINISH_TYPE` | `"ENIG"` | `"file"` or a key of `FINISH_TYPES` | The type, or `"file"` for the stack-up's (an error when the file names none) |
 | `FINISH_GROUPING` | `"metal"` | `"metal"` / `"net"` | Part per metal, or per metal and net |
 | `FINISH_BEFORE_SOLDER_MASK` | `False` | bool | Finish on all the outer copper, under the mask (section 14.2.2), instead of only where the mask leaves it bare |
+| `FINISH_MITRE_LIMIT` | `2.0` | ≥ 1 | How far the finish's outer side keeps the copper's sharp corners: out to this many times its thickness from the corner, then cut straight across (section 14.2.1) |
 | `FINISH_TYPES` | table above | `{key: [(metal, mm), ...]}` | Layers of each finish |
 | `FINISH_NAME_ALIASES` | `HAL SnPb` → `HASL`, `HAL lead-free` → `HASL_LF`, `Hard gold` → `HardGold`, `Immersion tin` → `ImmersionTin`, `Immersion silver` → `ImmersionSilver`, `HT_OSP` → `OSP` | `{KiCad name: key}` | KiCad's finish names that differ from a key |
 | `FINISH_CONDUCTIVITY_S_PER_M` | table above | `{metal: S/m}` | Written to `materials.json` |

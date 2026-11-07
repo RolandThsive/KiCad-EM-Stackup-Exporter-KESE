@@ -1,7 +1,8 @@
 """Stroke-font text, laid out the way KiCad lays it out.
 
 Default font: KiCad's own "newstroke" (kese/assets/fonts/kicad_newstroke.json.gz).  Custom fonts:
-this JSON format or a Hershey .jhf file, named in Silkscreen.FONT_FILE.
+this project's JSON or a Hershey .jhf file, named in Silkscreen.FONT_FILE (kese/core/font_file.py
+reads them).
 
 Glyph coordinates are fractions of the text height, y DOWN (KiCad's convention), baseline near 0.
 
@@ -10,19 +11,15 @@ Copyright (C) 2021 Ola Rinta-Koski; Copyright (C) 2012 Torsten Hueter; Copyright
 Copyright The KiCad Developers, see AUTHORS.txt for contributors.  GPL-2.0-or-later; KESE as a
 whole is GPL-3.0-or-later.  The original headers are in licenses/ at the top of the repository;
 see NOTICE.md."""
-import gzip
-import json
 import math
-from pathlib import Path
 
 import shapely
 
 from kese.core import markup
+from kese.core.font_file import load
 from kese.core.shapes2d import EMPTY
 from parameters import P
 
-FONTS_DIR = Path(__file__).resolve().parents[1] / "assets" / "fonts"
-DEFAULT_FONT = "kicad_newstroke.json.gz"
 # KiCad's markup layout (stroke_font.h, font_metrics.h, font.cpp drawMarkup): a superscript or
 # subscript at 0.8 of the size, its baseline 0.35 of its height up or 0.15 down; an overbar 1.23
 # text heights over the baseline, a tenth of the width shorter at each end
@@ -31,60 +28,6 @@ OVERBAR_HEIGHT, BAR_TRIM = 1.23, 0.1
 # KiCad's stroke-font block: a line's box is 1.17 heights tall, a left-justified line starts pen / 1.52
 # in, and the first baseline sits a height less 0.052 pens below the top (font.cpp, getLinePositions)
 BLOCK_HEIGHT, LEFT_OFFSET_DIV, TOP_OFFSET = 1.17, 1.52, 0.052
-
-_font = None
-_font_note = ""
-
-
-def _load_json(path):
-    opener = gzip.open if str(path).endswith(".gz") else open
-    with opener(path, "rt", encoding="utf-8") as f:
-        return json.load(f)
-
-
-def _load_jhf(path):
-    """Hershey .jhf: 5-char id, 3-char vertex count, then coordinate pairs; ' R' = pen up."""
-    glyphs = []
-    text = Path(path).read_text(encoding="latin-1")
-    SCALE, BASE = 1 / 21.0, 9           # Hershey units: ~21 per text height, baseline at +9
-    for line in text.splitlines():
-        if len(line) < 10:
-            continue
-        n = int(line[5:8])
-        data = line[8:8 + 2 * n]
-        x0, x1 = (ord(data[0]) - ord("R")) * SCALE, (ord(data[1]) - ord("R")) * SCALE
-        strokes, pen = [], []
-        for i in range(2, len(data) - 1, 2):
-            a, b = data[i], data[i + 1]
-            if a == " " and b == "R":
-                if pen:
-                    strokes.append(pen)
-                pen = []
-            else:
-                pen.append([(ord(a) - ord("R")) * SCALE - x0, (ord(b) - ord("R") - BASE) * SCALE])
-        if pen:
-            strokes.append(pen)
-        glyphs.append({"w": x1 - x0, "s": strokes})
-    return {"name": Path(path).name, "first_codepoint": 32, "glyphs": glyphs}
-
-
-def load():
-    """Load the font once; returns (font dict, note for the report)."""
-    global _font, _font_note
-    if _font is not None:
-        return _font, _font_note
-    S = P.Silkscreen
-    chosen = FONTS_DIR / DEFAULT_FONT
-    note = f"font: KiCad newstroke ({DEFAULT_FONT})"
-    if S.FONT_FILE:
-        custom = FONTS_DIR / S.FONT_FILE
-        if custom.exists():
-            chosen, note = custom, f"font: custom {S.FONT_FILE}"
-        else:
-            note = f"font: {S.FONT_FILE} not found in kese/assets/fonts, using KiCad newstroke"
-    _font = _load_jhf(chosen) if chosen.suffix.lower() == ".jhf" else _load_json(chosen)
-    _font_note = note
-    return _font, _font_note
 
 
 def _glyph(f, ch):
@@ -99,9 +42,9 @@ def render(text, anchor, angle_deg, size_h, size_w, thickness, justify=(), mirro
     """Text as a shapely polygon in board coordinates (mm, Y down), laid out as KiCad's STROKE_FONT /
     FONT::getLinePositions lays it out: advance, interline pitch and justification offsets."""
     S = P.Silkscreen
-    f, _ = load()
     if not text.strip():
         return EMPTY
+    f, _ = load()
     space_w = f["glyphs"][0]["w"]
     interline = size_h * S.INTERLINE_PITCH * S.INTERLINE_LEGACY_FACTOR      # KiCad 7 to 10 plot no (line_spacing)
     tilt = S.ITALIC_TILT if italic else 0.0

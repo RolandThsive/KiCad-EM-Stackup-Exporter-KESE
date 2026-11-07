@@ -71,13 +71,23 @@ FONT = Path("kese/assets/fonts/kicad_newstroke.json.gz")
 
 
 def _font_subset(last_codepoint):
-    """KiCad's newstroke font with the glyphs up to last_codepoint (the font is a list from first_codepoint on;
-    KESE draws '?' for a character past the end of the list)."""
-    with gzip.open(GENERATOR / FONT, "rt", encoding="utf-8") as fh:
-        font = json.load(fh)
-    keep = last_codepoint - font.get("first_codepoint", 32) + 1
-    font["glyphs"] = font["glyphs"][:keep]
-    raw = json.dumps(font, separators=(",", ":")).encode("utf-8")
+    """KiCad's newstroke font with the glyphs up to last_codepoint (the glyphs run from first_codepoint on;
+    KESE draws '?' for a character past the end of them).  The font is JSON Lines, as kese/core/font_file.py
+    reads it: the header on the first line, then one glyph per line, and the subset keeps that layout, so the
+    browser parses only the glyphs a board draws.  A font that is one JSON document is still read."""
+    lines = gzip.decompress((GENERATOR / FONT).read_bytes()).rstrip(b"\n").split(b"\n")
+    try:
+        head = json.loads(lines[0])
+    except ValueError:
+        head = None
+    if isinstance(head, dict) and "glyphs" not in head:          # JSON Lines
+        keep = last_codepoint - head.get("first_codepoint", 32) + 1
+        raw = b"\n".join(lines[:1 + keep]) + b"\n"
+    else:                                                         # one document
+        font = json.loads(b"\n".join(lines))
+        keep = last_codepoint - font.get("first_codepoint", 32) + 1
+        font["glyphs"] = font["glyphs"][:keep]
+        raw = json.dumps(font, separators=(",", ":")).encode("utf-8")
     out = io.BytesIO()
     with gzip.GzipFile(fileobj=out, mode="wb", compresslevel=9, mtime=0) as gz:
         gz.write(raw)
