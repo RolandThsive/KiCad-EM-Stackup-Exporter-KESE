@@ -70,7 +70,7 @@ repository's root, after `npm run build`:
 
 ```sh
 docker run --rm --ipc=host --init -v "$PWD":/repo -w /repo/WebUI/tests -e CI=1 \
-  mcr.microsoft.com/playwright:v1.63.0-noble \
+  mcr.microsoft.com/playwright:v1.64.1-noble \
   npx playwright test --project=chromium specs/visual.spec.mjs --update-snapshots
 ```
 
