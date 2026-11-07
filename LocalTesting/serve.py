@@ -55,7 +55,8 @@ class NoCache(http.server.SimpleHTTPRequestHandler):
     # module scripts and WebAssembly need their exact types (older Pythons do not know .mjs)
     extensions_map = {**http.server.SimpleHTTPRequestHandler.extensions_map,
                       ".mjs": "text/javascript", ".js": "text/javascript", ".wasm": "application/wasm",
-                      ".json": "application/json", ".whl": "application/zip", ".woff2": "font/woff2"}
+                      ".json": "application/json", ".whl": "application/zip", ".woff2": "font/woff2",
+                      ".webp": "image/webp"}                     # the tips' pictures
 
     def do_GET(self):
         path = self.path.split("?", 1)[0]
