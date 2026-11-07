@@ -1,0 +1,29 @@
+{
+ "_about": "Written by tools/vendor_lock.py: the Pyodide and three.js files of the backup copy, with the SHA-256 build_site.py checks each download against.  Do not edit by hand.",
+ "pyodide": {
+  "base": "https://cdn.jsdelivr.net/pyodide/v314.0.7/full/",
+  "files": {
+   "pyodide.mjs": "6f1d60f7bf529beb300f0f47983c921d3982363640ba20af0e38efdddbc66109",
+   "pyodide.asm.mjs": "f7cdc8ece80678ceb712f8e65ebe6d3a83203a180c399865f49612a051693635",
+   "pyodide.asm.wasm": "cc36e3cab04fdfc9a63ff13eb52eae2b911bf46c025cc7b281f394bd3de1d5e6",
+   "python_stdlib.zip": "fa1957e5777068fc4f7437f96d860ae2fbe9c19732ba06c84e004ec16dd7dd7a",
+   "pyodide-lock.json": "5dc2fc119108bc148c7457dc86e7675b5c87e1cafd420b9c34c1eaef7b36c010",
+   "numpy-2.4.6-cp314-cp314-pyemscripten_2026_0_wasm32.whl": "a292c1f5d7d8a2208cd5e94fc467604c131cabcd2fc14fed6eefde121e7fabdf",
+   "shapely-2.1.2-cp314-cp314-pyemscripten_2026_0_wasm32.whl": "0c2dec4d6d251e53007db02416d0163e272a161dbb9248d31a841032098e75a3"
+  }
+ },
+ "three": {
+  "base": "https://cdn.jsdelivr.net/npm/three@0.183.2/",
+  "files": {
+   "build/three.core.js": "6a7fc83437818534d5e30ce8c8e0ce76230ca2245446ea24744bb3d88c436583",
+   "build/three.module.js": "e8ac51bc2f6b7eb17bc88c6540eb0a1fee872f848949373de39d55f34b5c5a8f",
+   "examples/jsm/controls/OrbitControls.js": "09673b997864b8091943d2673637c0f31f7cf67daeddd0902fce9bf098a8d093",
+   "examples/jsm/loaders/GLTFLoader.js": "e4e692923224a10bbc00be04365d6356b5e8c48b2bbd1f22a7fe929591646fb8",
+   "examples/jsm/loaders/MTLLoader.js": "f1f8f0c6fcfa09671cb609954ea436521d835606853c110c5aff2dc8188f5e61",
+   "examples/jsm/loaders/OBJLoader.js": "86c8384e269b75a21d502d438e3f0dc2e09dc61b6e6da6b81947f5b119112bf8",
+   "examples/jsm/loaders/STLLoader.js": "023ed97f848b633d8bcd53d4db3b996d29d0c644088700691297c552257d480b",
+   "examples/jsm/utils/BufferGeometryUtils.js": "fda7e946b8e0b5ab39b779206589e7a1079a22eb24efb89d7223e03fdfb1f751",
+   "examples/jsm/utils/SkeletonUtils.js": "0761b1e003917b215d25dd81439d854b36034b5a57ce84c2cfe3b02428d7b253"
+  }
+ }
+}

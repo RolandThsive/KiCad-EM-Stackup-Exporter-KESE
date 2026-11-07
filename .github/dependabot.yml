@@ -1,0 +1,21 @@
+# Dependabot: proposes updates of the pinned GitHub Actions (workflows) and of the web tool's test tools.
+# GitHub reads this file only from the repository's default branch (main): it takes effect once it is there too.
+# Its pull requests go to WebUI_modifs, the web tool's working branch.
+version: 2
+updates:
+  - package-ecosystem: github-actions
+    directory: /
+    target-branch: WebUI_modifs
+    schedule:
+      interval: monthly
+    groups:
+      actions:
+        patterns: ["*"]
+  - package-ecosystem: npm
+    directory: /WebUI/tests
+    target-branch: WebUI_modifs
+    schedule:
+      interval: monthly
+    groups:
+      test-tools:
+        patterns: ["*"]

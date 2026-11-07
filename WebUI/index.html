@@ -2,44 +2,21 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
+<!-- The page's security rules.  build_site.py writes the policy: scripts from this site, the pinned three.js
+     folder on jsDelivr and the two import maps (by their SHA-256), nothing inline, no plug-ins. -->
+<meta http-equiv="Content-Security-Policy" content="(written by build_site.py)">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>KiCad EM Stackup Exporter</title>
 <meta name="description" content="Turn a KiCad board into a 3D model of its real stack-up, for EM solvers (STEP, STL) or for viewing (GLB, OBJ). Runs in your browser; the board is never uploaded.">
 <link rel="icon" href="favicon.ico">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Permanent+Marker&family=Shadows+Into+Light&display=swap" rel="stylesheet">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<link rel="preload" href="fonts/permanent-marker-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/pacifico-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="WebUI.css">
-<script>
-  // Computers only: decide before anything heavy loads, so phones never download Python.  A phone or tablet is a
-  // device with no mouse or trackpad; the window width does not decide it, since a computer window can be narrow too.
-  (function () {
-    var touchOnly = window.matchMedia("(pointer: coarse)").matches && !window.matchMedia("(any-pointer: fine)").matches;
-    window.KESE_PHONE = touchOnly;
-    if (touchOnly) document.documentElement.className += " phone";
-    if (window.self !== window.top) document.documentElement.className += " embedded";
-    if (touchOnly) return;
-    // The page's settings (webui.json) name where three.js comes from; ?three=<url> overrides it (local testing).
-    // The import map has to exist before the first module loads, so WebUI.js is added only after it.
-    fetch("webui.json", { cache: "no-cache" }).then(function (r) { return r.json(); }).then(function (cfg) {
-      var q = new URLSearchParams(location.search), three = q.get("three") || cfg.three;
-      window.KESE_CONFIG = cfg;
-      var map = document.createElement("script");
-      map.type = "importmap";
-      map.textContent = JSON.stringify({ imports: { "three": three + "build/three.module.js", "three/addons/": three + "examples/jsm/" } });
-      document.head.appendChild(map);
-      var main = document.createElement("script");
-      main.type = "module"; main.src = "WebUI.js";
-      document.body.appendChild(main);
-    }).catch(function (e) {
-      document.addEventListener("DOMContentLoaded", function () {
-        document.getElementById("checks-list").textContent = "The page's settings (webui.json) could not be loaded: " + e;
-      });
-    });
-  })();
-</script>
+<script src="boot.js"></script>
 </head>
 <body>
+<noscript><p class="noscript">The KiCad EM Stackup Exporter runs in your browser and needs JavaScript. Turn it on for this page and reload.</p></noscript>
 
 <!-- Phones and small tablets: a message instead of the tool -->
 <section id="phone-message" class="phone-only">
@@ -58,7 +35,7 @@
       <button role="tab" data-ui="advanced" data-tip="Every parameter of every parameter file, Geometry included, with its name as in the file">Advanced</button>
     </div>
     <!-- between Basic/Advanced and the buttons: the note that the settings changed since the model was made -->
-    <div class="top-mid"><div class="stale-badge" id="stale-badge" hidden data-tip="Settings changed: press Generate to update the model">Settings changed<span class="sb-more">: press Generate to update the model</span></div></div>
+    <div class="top-mid" role="status"><div class="stale-badge" id="stale-badge" hidden data-tip="Settings changed: press Generate to update the model">Settings changed<span class="sb-more">: press Generate to update the model</span></div></div>
     <div class="top-actions">
       <a class="glass-btn small" id="btn-help" href="#" target="_blank" rel="noopener" data-tip="Opens the project wiki: what each setting does and how to choose it">Help / Wiki</a>
       <button class="glass-btn small" id="btn-import" data-tip="Load settings: a parameters.txt from any run (web or desktop) or your own parameter .py files. Every control takes those values.">Import Parameters</button>
@@ -97,13 +74,13 @@
         <button id="btn-generate" class="primary-btn" disabled data-tip="Make the model with these settings (Ctrl+Enter)">Loading Python…</button>
       </div>
       <div id="progress"><div class="bar"></div></div>
-      <p class="hint" id="run-note"></p>
+      <p class="hint" id="run-note" role="status"></p>
     </aside>
 
     <!-- Preview -->
     <section id="preview" class="panel">
       <div class="canvas-wrap" id="canvas-wrap">
-        <canvas id="view"></canvas>
+        <canvas id="view" role="img" aria-label="3D preview of the model (drag to turn it, scroll to zoom); the readout under it and the Parts list describe it"></canvas>
         <!-- the top row: tools, the cross-section slider in the space between, the views with Showing under them -->
         <div class="view-top">
           <div class="canvas-tools">
@@ -140,13 +117,13 @@
     <aside id="side" class="panel">
       <div class="checks-head">
         <h2 class="pacifico">Checks</h2>
-        <div class="counts" id="counts"></div>
+        <div class="counts" id="counts" role="status"></div>
         <label class="switch-row small" data-tip="Also list the generator's notes, not only warnings and errors">
           <span>Info</span>
           <span class="switch"><input type="checkbox" id="show-info"><span class="knob"></span></span>
         </label>
       </div>
-      <div class="checks-list" id="checks-list"><p class="hint">Starting Python in your browser. The first visit downloads about 30 MB; later visits are cached.</p></div>
+      <div class="checks-list" id="checks-list" tabindex="0" role="region" aria-label="Checks"><p class="hint">Starting Python in your browser. The first visit downloads about 30 MB; later visits are cached.</p></div>
       <button class="glass-btn" id="btn-report" disabled data-tip="Opens the run's report.txt: what was read, skipped, noted and written, and how long each stage took">Show Report</button>
 
       <h2 class="pacifico">Parts</h2>
@@ -162,15 +139,27 @@
     </aside>
   </main>
 
-  <footer id="foot"></footer>
+  <!-- the footer before the script fills it in (version, build, Report a Problem): the links work without it -->
+  <footer id="foot">KiCad EM Stackup Exporter · GPL-3.0-or-later · runs in your browser, nothing is uploaded ·
+    <a href="privacy.html" target="_blank" rel="noopener">Privacy</a> · <a href="licenses.html" target="_blank" rel="noopener">Licences</a></footer>
 </div>
 
-<div class="popover" id="popover" hidden></div>
+<div class="popover" id="popover" role="tooltip" hidden></div>
 <dialog id="confirm-dialog" class="confirm"><form method="dialog">
   <p id="confirm-text">Are you sure?</p>
   <div class="confirm-buttons"><button class="reset-btn" value="yes">Sure</button><button class="glass-btn" value="no">No</button></div>
 </form></dialog>
-<dialog id="report-dialog"><form method="dialog"><pre id="report-text"></pre><button class="glass-btn">Close</button></form></dialog>
+<dialog id="crash-dialog" class="crash" aria-labelledby="crash-title"><form method="dialog">
+  <h2 class="pacifico" id="crash-title">Something Went Wrong</h2>
+  <p>The page hit an error it did not expect. The model and settings may be fine, but if something looks wrong, reload the page.
+    Reporting it helps: Report a Problem opens a GitHub issue with these details (never your board), which you see before sending.</p>
+  <pre id="crash-details" tabindex="0"></pre>
+  <div class="confirm-buttons"><button type="button" class="glass-btn" id="crash-copy">Copy Details</button>
+    <a class="glass-btn" id="crash-report" href="#" target="_blank" rel="noopener">Report a Problem</a>
+    <button class="primary-btn" value="close">Close</button></div>
+</form></dialog>
+<dialog id="report-dialog"><form method="dialog"><pre id="report-text" tabindex="0"></pre><button class="glass-btn">Close</button></form></dialog>
 <div class="toast" id="toast" hidden></div>
+<div class="sr-only" id="sr-status" role="status"></div>   <!-- what the toast says, for screen readers (the toast itself appears and goes) -->
 </body>
 </html>

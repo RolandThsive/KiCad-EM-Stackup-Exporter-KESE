@@ -17,7 +17,26 @@ import { Viewer } from "./Viewer.js";
 
 const QUERY = new URLSearchParams(location.search);
 const CFG = window.KESE_CONFIG;
-const PYODIDE = QUERY.get("pyodide") || CFG.pyodide;           // ?pyodide=<url> for local testing
+
+/* Where Python (Pyodide) comes from: jsDelivr first; if it gives no answer within webui.json "cdnWaitSeconds"
+   (15 s) or fails while Python loads, the copy on this site (vendor/pyodide/, checked against vendor.json when the site
+   was built).  ?pyodide=<url> replaces jsDelivr for local testing, and is taken only from this site, so a link
+   cannot make the page run Python from someone else's server.  three.js has the same backup; boot.js chooses it. */
+function pyodideOverride() {
+  const q = QUERY.get("pyodide");
+  if (!q) return null;
+  try { const u = new URL(q, location.href); if (u.origin === location.origin) return u.href; } catch (e) { /* not a URL */ }
+  console.warn(`?pyodide=${q} ignored: only a folder of this site may be named`);
+  return null;
+}
+// When boot.js already had to take three.js from the backup (jsDelivr silent, refused or a changed file), Python
+// skips jsDelivr too if it is the same server: no second 15 s wait.
+const sameCdnDown = window.KESE_THREE === "backup" && new URL(CFG.pyodide).host === new URL(CFG.three).host;
+const PYTHON_SOURCES = [
+  pyodideOverride() ? { name: "the ?pyodide= folder", base: pyodideOverride() } : sameCdnDown ? null : { name: "jsDelivr", base: CFG.pyodide },
+  { name: "this site's backup copy", base: new URL("vendor/pyodide/", import.meta.url).href },
+].filter(Boolean);
+const CDN_WAIT_MS = (CFG.cdnWaitSeconds || 15) * 1000;
 
 /* ---- state --------------------------------------------------------------------------------------- */
 const state = {
@@ -34,7 +53,7 @@ let viewer = null;
 const $ = (id) => document.getElementById(id);
 
 /* ---- worker ---------------------------------------------------------------------------------------- */
-let worker, nextId = 1;
+let worker, nextId = 1, onStage = () => {};
 const pending = new Map();
 function ask(cmd, args) {
   return new Promise((resolve, reject) => {
@@ -49,9 +68,10 @@ function startWorker() {
     const m = ev.data;
     if (m.type === "progress") { setProgressText(m.text); return; }
     if (m.type === "line") { runLine(m); return; }
+    if (m.type === "stage") { onStage(m.stage); return; }
     const p = pending.get(m.id); if (!p) return;
     pending.delete(m.id);
-    if (m.ok) p.resolve(m.result); else p.reject(new Error(m.error));
+    if (m.ok) p.resolve(m.result); else p.reject(Object.assign(new Error(m.error), { phase: m.phase }));
   };
   worker.onerror = (e) => {
     const msg = "The Python worker stopped: " + (e.message || e);
@@ -61,11 +81,41 @@ function startWorker() {
   };
 }
 
+function stopWorker() {
+  worker.onmessage = worker.onerror = null;
+  worker.terminate();
+  pending.clear();
+}
+// init on each source in turn: the next one when this one stays silent CDN_WAIT_MS before Pyodide's first file has
+// arrived, or fails while the runtime and packages load ("runtime" errors).  Errors after that are not the CDN's.
+async function startPython() {
+  for (let i = 0; i < PYTHON_SOURCES.length; i++) {
+    const src = PYTHON_SOURCES[i], last = i === PYTHON_SOURCES.length - 1;
+    startWorker();
+    try {
+      const init = await new Promise((resolve, reject) => {
+        const timer = last ? 0 : setTimeout(() => reject(Object.assign(new Error(`no answer from ${src.name} in ${CDN_WAIT_MS / 1000} s`), { phase: "runtime" })), CDN_WAIT_MS);
+        onStage = (stage) => { if (stage === "runtime-js") clearTimeout(timer); };
+        ask("init", { pyodideBase: src.base, packages: CFG.pyodidePackages, config: CFG })
+          .then((r) => { clearTimeout(timer); resolve(r); }, (e) => { clearTimeout(timer); reject(e); });
+      });
+      state.python = src.name;
+      return init;
+    } catch (e) {
+      if (last || e.phase !== "runtime") throw e;
+      console.warn(`Python from ${src.name} failed (${e.message}): trying ${PYTHON_SOURCES[i + 1].name}`);
+      stopWorker();
+      setProgressText(`Loading Python from ${PYTHON_SOURCES[i + 1].name}…`);
+    }
+  }
+}
+
 /* ---- small helpers ------------------------------------------------------------------------------- */
 function el(tag, attrs = {}, ...kids) {
   const e = document.createElement(tag);
   for (const [k, v] of Object.entries(attrs)) {
     if (k === "class") e.className = v;
+    else if (k === "style") e.style.cssText = v;               // through the CSSOM: the page's CSP allows no style attributes
     else if (k.startsWith("on")) e.addEventListener(k.slice(2), v);
     else if (v === true) e.setAttribute(k, "");
     else if (v !== false && v != null) e.setAttribute(k, v);
@@ -83,6 +133,8 @@ let toastTimer;
 function toast(text, ms = 2600) {
   const t = $("toast"); t.textContent = text; t.hidden = false;
   clearTimeout(toastTimer); toastTimer = setTimeout(() => (t.hidden = true), ms);
+  const sr = $("sr-status"); sr.textContent = "";                 // emptied first, so the same message twice is read twice
+  setTimeout(() => (sr.textContent = text), 50);
 }
 function setProgressText(text) {
   if (!state.ready) $("btn-generate").textContent = text.replace("…", "") + "…";
@@ -138,8 +190,8 @@ function showValue(v) {
   if (typeof v === "object") return JSON.stringify(v);
   return fmt(v);
 }
-let tipTimer = null, tipFor = null;
-function hideTip() { clearTimeout(tipTimer); tipFor = null; $("popover").hidden = true; }
+let tipTimer = null, tipFor = null, hideTimer = null;
+function hideTip() { clearTimeout(tipTimer); clearTimeout(hideTimer); tipFor = null; $("popover").hidden = true; }
 function showTip(node) {
   const pop = $("popover");
   pop.replaceChildren();
@@ -161,16 +213,32 @@ function showTip(node) {
     pop.style.left = (r.right + 8 + w <= W - 6 ? r.right + 8 : Math.max(6, r.left - w - 8)) + "px";
   }
 }
+const tipOf = (node) => (node && !(node.dataset.tip !== undefined && !node.dataset.tip) ? node : null);
+// WCAG 1.4.13: the pointer may move onto a tip to read it (a short grace on the way), Escape closes it, and the
+// keyboard gets the same tips as the mouse: the focused control's, or that of the field whose label names it
 document.addEventListener("mouseover", (e) => {
-  const node = e.target.closest("[data-tip], [data-help]");
-  if (node === tipFor) return;
+  if (e.target.closest("#popover")) { clearTimeout(hideTimer); return; }
+  const node = tipOf(e.target.closest("[data-tip], [data-help]"));
+  if (node && node === tipFor) { clearTimeout(hideTimer); return; }
+  if (!node && !$("popover").hidden) { clearTimeout(hideTimer); hideTimer = setTimeout(hideTip, 300); return; }
   hideTip();
-  if (!node || (node.dataset.tip !== undefined && !node.dataset.tip)) return;
+  if (!node) return;
   tipFor = node;
   tipTimer = setTimeout(() => showTip(node), e.target.closest(".info-dot") ? 0 : 450);
 });
-document.addEventListener("mousedown", hideTip);
-document.addEventListener("scroll", hideTip, true);
+document.addEventListener("focusin", (e) => {
+  if (!(e.target instanceof Element) || !e.target.matches(":focus-visible") || e.target.closest("#popover")) return;
+  const label = document.getElementById((e.target.getAttribute("aria-labelledby") || "").split(" ")[0]);
+  const node = tipOf(e.target.closest("[data-tip], [data-help]") || label?.closest("[data-tip], [data-help]"));
+  hideTip();
+  if (!node) return;
+  tipFor = node;
+  tipTimer = setTimeout(() => showTip(node), 450);
+});
+document.addEventListener("focusout", () => { if (tipFor && !tipFor.matches(":hover")) hideTip(); });
+document.addEventListener("keydown", (e) => { if (e.key === "Escape" && tipFor) hideTip(); });
+document.addEventListener("mousedown", (e) => { if (!e.target.closest("#popover")) hideTip(); });
+document.addEventListener("scroll", (e) => { if (!(e.target instanceof Element && e.target.closest("#popover"))) hideTip(); }, true);
 
 /* ---- labels: made from the parameter's name ---------------------------------------------------- */
 const UNITS = { MM: "mm", MM2: "mm²", MM3: "mm³", UM: "µm", DEG: "deg", HZ: "Hz", S_PER_M: "S/m", PCT: "%", S: "s" };
@@ -480,6 +548,15 @@ function tableWidget(p, v, set) {
   return el("div", { class: "table-edit" }, head, body);
 }
 
+// the inputs of a table (a record's rows, a finish's layers): "Finish Type, layer 2, mm", "Copper, alpha"
+function labelCells(box, title) {
+  let layer = 0;
+  for (const row of box.querySelectorAll(".table-row:not(.table-cols)")) {
+    const what = row.classList.contains("layer-row") ? `layer ${++layer}, mm` : (row.querySelector(".table-label") || {}).textContent || "";
+    for (const i of row.querySelectorAll("input:not([aria-label]):not([aria-labelledby])"))
+      i.setAttribute("aria-label", [title, what, i.type === "color" ? "colour" : ""].filter(Boolean).join(", "));
+  }
+}
 function field(p) {
   const { text, unit } = labelOf(p.name);
   // a finish pick also counts as changed when the layers of the finish it shows were edited
@@ -487,7 +564,8 @@ function field(p) {
   const layersChanged = PICKS_FINISH.has(p.key) && T in state.byKey
     && !same((state.values[T] || {})[pickedType], (state.byKey[T].default || {})[pickedType]);
   const changed = !same(state.values[p.key], p.default) || layersChanged;
-  const head = el("div", { class: "field-head" }, el("span", { class: "field-label" }, text, unit ? el("span", { class: "unit" }, ` (${unit})`) : null));
+  const labelId = "label-" + p.key.replace(/\W/g, "-");
+  const head = el("div", { class: "field-head" }, el("span", { class: "field-label", id: labelId }, text, unit ? el("span", { class: "unit" }, ` (${unit})`) : null));
   attachHelp(head, p.key);
   if (state.ui === "advanced") {
     if (changed) head.append(el("button", { type: "button", class: "reset-one", "data-tip": `Back to the file's value: ${showValue(p.default)}`,
@@ -502,6 +580,9 @@ function field(p) {
   const control = state.ui === "advanced"
     ? el("div", { class: "field-body" }, widget(p), el("span", { class: "mono-name field-name", title: p.key }, p.module === p.key.split(".")[0] ? p.name : p.key))
     : widget(p);
+  // screen readers name each input by the field's title, a table's cells by the title and their row
+  labelCells(control, text);
+  for (const i of control.querySelectorAll("input:not([aria-label]):not([aria-labelledby]), select, textarea")) i.setAttribute("aria-labelledby", labelId);
   if (DESKTOP_ONLY().has(p.key)) {          // threads and worker processes: greyed, the value kept as in the file
     control.setAttribute("inert", "");
     return el("div", { class: "field desktop-only", "data-key": p.key }, head, control,
@@ -636,6 +717,7 @@ function colorGroup(g, items) {
   rows(sel, sel.pair ? "Mask" : null);
   if (sel.pair) rows(sel.pair, "Over copper");
   // each group folds (closed when the page starts), so Colorization opens as a short list of what can be coloured
+  labelCells(body, g.title);
   const det = el("details", { class: "field cgroup" + (changed.length ? " changed" : ""), "data-group": g.title }, head,
     el("div", { class: "table-edit" }, pick ? el("div", { class: "table-head" }, pick) : null, body));
   det.open = state.open.has(id);
@@ -807,8 +889,18 @@ function stackupColors(text) {
   }
   return out;
 }
+// Bigger files are refused before they are read: the browser's Python has a few GB at most, and a parameter file is a
+// few KB (a bigger one is a mistake, or a zip bomb).
+const MAX_BOARD = 500 * 1048576, MAX_IMPORT = 20 * 1048576;
+const tooBig = (name, size) => toast(`${name} is ${bytesText(size)}: boards up to ${bytesText(MAX_BOARD)} fit in the browser. Use the desktop KESE for this one.`, 7000);
+// a file the visitor chose or dropped: its size is checked before it is read into memory
+async function chooseBoard(f) {
+  if (f.size > MAX_BOARD && /\.kicad_pcb$/i.test(f.name)) { tooBig(f.name, f.size); return; }
+  setBoard(f.name, await f.arrayBuffer());
+}
 async function setBoard(name, bytes) {
   if (!/\.kicad_pcb$/i.test(name)) { toast("That is not a .kicad_pcb file", 4000); return; }
+  if (bytes.byteLength > MAX_BOARD) { tooBig(name, bytes.byteLength); return; }
   const text = new TextDecoder().decode(bytes);
   if (!/^\s*\(kicad_pcb/.test(text)) { toast(`${name} does not look like a KiCad board`, 5000); return; }
   state.board = { name, bytes, meta: boardMeta(text), colors: stackupColors(text) };
@@ -902,9 +994,10 @@ let previewSeq = 0;
 async function showPreview() {
   const seq = ++previewSeq;                                   // a newer pick (or run) wins over a slow load still going
   const c = previewChoices().find((x) => x.key === state.preview.key);
+  const ro = $("readout");
+  if (!viewer) { ro.textContent = c ? `${c.label} is made: download it on the right.` : ""; renderParts(); return; }   // no WebGL: no preview
   $("empty-note").hidden = !!c;
   if (!c) { viewer.clear(); renderParts(); return; }
-  const ro = $("readout");
   ro.textContent = `Reading ${c.label}…`;
   const size = c.files.reduce((s, f) => s + f.size, 0);
   viewer.closedSolids = state.runValues[CFG.mode] !== VISUAL;     // a visual model is a skin: its cut has no faces
@@ -929,7 +1022,7 @@ async function showPreview() {
     const units = state.runValues[CFG.units], perMm = units === "m" ? 0.001 : 1;
     const dims = viewer.boardSize(perMm);
     // a long file name gives way (…), the numbers after it always show
-    ro.replaceChildren(el("span", { class: "ro-name" }, c.label), el("span", { class: "ro-rest" },
+    ro.replaceChildren(el("span", { class: "ro-name", title: c.label }, c.label), el("span", { class: "ro-rest" },
       `\u00a0· ${bytesText(size)} · ${parts.length} parts · ${countText(tris)} triangles` +
       (dims ? ` · ${dims[0].toFixed(1)} × ${dims[1].toFixed(1)} × ${dims[2].toFixed(2)} mm` : "")));
   } catch (e) {
@@ -1013,11 +1106,11 @@ function renderParts() {
   const box = $("parts");
   box.replaceChildren(); box.style.removeProperty("--parts-min");
   const parts = viewer ? viewer.parts : [];
-  if (!parts.length) { box.append(el("p", { class: "hint" }, "The solids of the model, once it is made. Click one to hide it.")); return; }
+  if (!parts.length) { box.append(el("p", { class: "hint" }, viewer ? "The solids of the model, once it is made. Click one to hide it." : "The parts list comes with the 3D preview, which needs WebGL.")); return; }
   const sorted = [...parts].sort((a, b) => b.triangles - a.triangles);
   for (const p of sorted) {
-    const row = el("button", { type: "button", class: "part" + (p.visible ? "" : " off"), "data-tip": "Click to hide or show this part",
-      onclick: () => { viewer.setVisible(p.name, !p.visible); row.classList.toggle("off", !p.visible); } },
+    const row = el("button", { type: "button", class: "part" + (p.visible ? "" : " off"), "data-tip": `${p.name}: click to hide or show it`, "aria-pressed": String(p.visible),
+      onclick: () => { viewer.setVisible(p.name, !p.visible); row.classList.toggle("off", !p.visible); row.setAttribute("aria-pressed", String(p.visible)); } },
       el("i", { style: `background:${p.color}` }), el("span", { class: "part-name" }, p.name), el("small", {}, `${countText(p.triangles)} tris`));
     box.append(row);
   }
@@ -1067,6 +1160,7 @@ async function importFiles(files) {
   if (!state.ready) { toast("Python is still loading: import the settings in a moment", 4000); return; }
   const found = {}, ignored = [], failed = [];
   for (const f of files) {
+    if (f.size > MAX_IMPORT) { failed.push(`${f.name} is ${bytesText(f.size)}, too big for a parameter file`); continue; }
     let r;
     try {
       r = /\.zip$/i.test(f.name) ? await ask("readZip", { bytes: await f.arrayBuffer() })
@@ -1116,13 +1210,13 @@ function wire() {
   $("btn-import").addEventListener("click", () => $("import-file").click());
   $("import-file").addEventListener("change", (e) => { importFiles([...e.target.files]); e.target.value = ""; });
   // the board: click to choose, or drop it on the card or anywhere on the page
-  $("board-file").addEventListener("change", async (e) => { const f = e.target.files[0]; if (f) setBoard(f.name, await f.arrayBuffer()); e.target.value = ""; });
+  $("board-file").addEventListener("change", (e) => { const f = e.target.files[0]; if (f) chooseBoard(f); e.target.value = ""; });
   addEventListener("dragover", (e) => { e.preventDefault(); $("drop").classList.add("over"); });
   addEventListener("dragleave", (e) => { if (!e.relatedTarget) $("drop").classList.remove("over"); });
   addEventListener("drop", async (e) => {
     e.preventDefault(); $("drop").classList.remove("over");
     const f = [...e.dataTransfer.files].find((x) => /\.kicad_pcb$/i.test(x.name)) || e.dataTransfer.files[0];
-    if (f) setBoard(f.name, await f.arrayBuffer());
+    if (f) chooseBoard(f);
   });
   $("show-info").addEventListener("change", (e) => { state.showInfo = e.target.checked; renderChecks(); });
   $("btn-report").addEventListener("click", async () => {
@@ -1141,8 +1235,8 @@ function wire() {
   });
   $("showing").addEventListener("change", (e) => { state.preview.key = e.target.value; showPreview(); });
   // preview tools
-  $("btn-fit").addEventListener("click", () => viewer.fit());
-  $("btn-shot").addEventListener("click", async () => download(await viewer.screenshot(), `${state.board ? stem(state.board.name) : "KESE"}_preview.png`));
+  $("btn-fit").addEventListener("click", () => viewer && viewer.fit());
+  $("btn-shot").addEventListener("click", async () => viewer && download(await viewer.screenshot(), `${state.board ? stem(state.board.name) : "KESE"}_preview.png`));
   $("btn-fullscreen").addEventListener("click", () => {
     const w = $("canvas-wrap");
     if (document.fullscreenElement) document.exitFullscreen(); else (w.requestFullscreen || w.webkitRequestFullscreen).call(w);
@@ -1154,9 +1248,9 @@ function wire() {
   });
   document.querySelectorAll("#views button").forEach((b) => b.addEventListener("click", () => {
     document.querySelectorAll("#views button").forEach((x) => x.classList.toggle("on", x === b));
-    viewer.view(b.dataset.view);
+    if (viewer) viewer.view(b.dataset.view);
   }));
-  $("cut").addEventListener("input", (e) => { const v = +e.target.value; viewer.setCut(v / 100); $("cut-out").textContent = v >= 100 ? "Off" : `${v} %`; });
+  $("cut").addEventListener("input", (e) => { const v = +e.target.value; if (viewer) viewer.setCut(v / 100); $("cut-out").textContent = v >= 100 ? "Off" : `${v} %`; });
   document.addEventListener("keydown", (e) => {
     if (!((e.ctrlKey || e.metaKey) && e.key === "Enter")) return;
     const a = document.activeElement;                          // a value still being typed is saved on blur ("change") first
@@ -1182,18 +1276,124 @@ async function examples() {
   box.hidden = false;
 }
 
+// The 3D preview needs WebGL 2.  A browser without it (turned off, blocked graphics driver, remote desktop) still
+// generates and downloads: only the preview, its tools and the parts list are off, and the empty preview says why.
+function hasWebGL2() {
+  try {
+    const gl = document.createElement("canvas").getContext("webgl2");
+    if (gl) { const lose = gl.getExtension("WEBGL_lose_context"); if (lose) lose.loseContext(); }
+    return !!gl;
+  } catch (e) { return false; }
+}
+function startViewer() {
+  try {
+    if (hasWebGL2()) return new Viewer($("view"), { section: CFG.crossSection === undefined ? "stencil" : CFG.crossSection, roleOf: (name) => (partInfo(name) || {}).role, onHover: showHover, onProgress: (f) => { $("readout").textContent = `Reading the STEP… ${Math.round(f * 100)} %`; } });
+  } catch (e) { console.warn("3D preview off:", e && e.message); }
+  $("canvas-wrap").classList.add("no-webgl");
+  $("empty-note").replaceChildren("The 3D preview is off: this browser does not give the page WebGL.", el("br"),
+    el("span", { class: "hint" }, "Generate, the checks and the downloads still work. Turning on hardware acceleration in the browser's settings brings the preview back."));
+  for (const b of document.querySelectorAll("#btn-fit, #btn-shot, #views button, #cut")) b.disabled = true;
+  return null;
+}
+
+/* ---- footer, Report a Problem, crash details ------------------------------------------------------------------- */
+// The footer names the build (version.json: the commit and date build_site.py stamped), so a report can say exactly
+// which page it is about.  Report a Problem opens a GitHub issue filled in with what the page knows (never the board).
+let build = {};
+const threeSource = () => (window.KESE_THREE === "backup" ? "this site's backup copy" : "jsDelivr");
+function renderFooter() {
+  const links = CFG.links || {}, a = (href, text, tip) => el("a", { href, target: "_blank", rel: "noopener", "data-tip": tip }, text);
+  const stamp = build.commit ? `build ${build.commit}${build.built ? ` · ${build.built}` : ""}` : "";
+  $("foot").replaceChildren("Generator: ", a(links.repository, "KiCad EM Stackup Exporter", "The project on GitHub"),
+    build.kese ? ` ${build.kese}` : "", stamp ? " · " : "",
+    stamp ? el("span", { class: "build", "data-tip": `Python from ${state.python || "(loading)"} · three.js from ${threeSource()}` }, stamp) : "",
+    " · GPL-3.0-or-later · runs in your browser, nothing is uploaded · ",
+    a("privacy.html", "Privacy", "What this page does with your data: it stays in your browser"), " · ",
+    a("licenses.html", "Licences", "The open-source parts this page is made of, and their licences"), " · ",
+    el("a", { href: "#", id: "report-link", target: "_blank", rel: "noopener", "data-tip": "Open a GitHub issue filled in with this page's build, browser and changed settings (never the board). You see it before it is sent.",
+      onclick: (e) => { e.currentTarget.href = issueUrl(); } }, "Report a Problem"));
+}
+function problemDetails(extra) {
+  const lines = [
+    `KESE web tool ${build.kese || "?"}, build ${build.commit || "?"} (${build.built || "?"})`,
+    `Browser: ${navigator.userAgent}`,
+    `Window: ${innerWidth} x ${innerHeight} at ${devicePixelRatio}x · 3D preview ${viewer ? "on" : "off (no WebGL)"} · ${document.documentElement.classList.contains("embedded") ? "in the blog's frame" : "own tab"}`,
+    `Python from: ${state.python || "not loaded yet"} · three.js from: ${threeSource()}`,
+  ];
+  const changed = Object.keys(state.values).filter((k) => !same(state.values[k], state.start[k]));
+  lines.push(changed.length ? "Settings changed from the defaults:" : "Settings: all defaults");
+  for (const k of changed) lines.push(`  ${k}=${showValue(state.values[k])}`);
+  const r = state.result;
+  if (r) {
+    const n = (l) => (r.checks || []).filter((i) => i.level === l).length;
+    lines.push(`Last run: ${r.ok ? "made" : "not made"} in ${seconds(r.seconds || 0)}, ${n("error")} errors, ${n("warning")} warnings`);
+    if (!r.ok) for (const i of (r.checks || []).filter((c) => c.level === "error")) lines.push(`  ${i.stage}: ${i.msg}`);
+  }
+  if (state.checksFatal) lines.push(`Start: ${state.checksFatal}`);
+  if (extra) lines.push("", extra);
+  return lines.join("\n");
+}
+function issueUrl(extra) {
+  const repo = (CFG.links || {}).repository;
+  let details = problemDetails(extra);
+  if (details.length > 5000) details = details.slice(0, 5000) + "\n(cut)";       // GitHub refuses very long links
+  const body = `**What happened, and what did you expect?**\n\n\n\n**Details** (filled in by the page; it never includes your board):\n\n\`\`\`\n${details}\n\`\`\`\n`;
+  return `${repo}/issues/new?title=${encodeURIComponent("Web tool: ")}&body=${encodeURIComponent(body)}`;
+}
+
+// An error nothing else caught: a dialog with the details, a Copy button and Report a Problem.  Only the first one
+// opens the dialog (later ones are added to its details); errors from browser extensions and other sites are left out,
+// and so is the harmless "ResizeObserver loop" notice.
+const crashes = [];
+function crashText(err, where) {
+  const msg = err.message || String(err);
+  let stack = err.stack ? String(err.stack) : "";
+  if (msg && stack.includes(msg) && stack.indexOf(msg) < 40) stack = stack.split("\n").slice(1).join("\n");   // Chrome repeats the message first
+  return `${where}: ${msg}${stack ? "\n" + stack.split("\n").slice(0, 8).join("\n") : ""}`;
+}
+function foreign(file) {
+  if (!file) return false;
+  try { const u = new URL(file); return u.origin !== location.origin && !file.startsWith(CFG.three); } catch (e) { return true; }
+}
+function showCrash(text) {
+  crashes.push(text);
+  const details = crashes.join("\n\n");
+  $("crash-details").textContent = details;
+  $("crash-report").href = issueUrl(details);
+  const d = $("crash-dialog");
+  if (crashes.length === 1 && !d.open) { d.showModal(); d.querySelector("button[value=close]").focus(); }
+}
+function catchCrashes() {
+  addEventListener("error", (e) => {
+    const msg = String(e.message || "");
+    if (/ResizeObserver loop/.test(msg) || foreign(e.filename) || (msg === "Script error." && !e.filename)) return;
+    if (!(e.error || msg)) return;                                  // a resource that failed to load, not a script error
+    showCrash(crashText(e.error || { message: msg }, `Error${e.filename ? ` in ${e.filename.split("/").pop()}:${e.lineno}` : ""}`));
+  });
+  addEventListener("unhandledrejection", (e) => {
+    const r = e.reason;
+    if (r && r.name === "AbortError") return;
+    const stack = r && r.stack ? String(r.stack) : "";
+    if (/(chrome|moz|safari)-extension:/.test(stack)) return;
+    showCrash(crashText(r instanceof Error ? r : { message: String(r) }, "Unhandled promise rejection"));
+  });
+  $("crash-copy").addEventListener("click", async () => {
+    try { await navigator.clipboard.writeText($("crash-details").textContent); toast("Details copied"); }
+    catch (e) { getSelection().selectAllChildren($("crash-details")); toast("Copy did not work: the details are selected, press Ctrl+C"); }
+  });
+}
+
 async function main() {
-  const links = CFG.links || {};
-  $("foot").replaceChildren("Generator: ", el("a", { href: links.repository, target: "_blank", rel: "noopener" }, "KiCad EM Stackup Exporter"),
-    " · GPL-3.0-or-later · runs in your browser, nothing is uploaded");
-  viewer = new Viewer($("view"), { section: CFG.crossSection === undefined ? "stencil" : CFG.crossSection, roleOf: (name) => (partInfo(name) || {}).role, onHover: showHover, onProgress: (f) => { $("readout").textContent = `Reading the STEP… ${Math.round(f * 100)} %`; } });
+  catchCrashes();
+  try { build = await (await fetch(new URL("version.json", import.meta.url), { cache: "no-cache" })).json(); } catch (e) { build = {}; }
+  renderFooter();
+  viewer = startViewer();
   wire();
   store.start();
-  startWorker();
   setBusy(true);
   let init;
   try {
-    init = await ask("init", { pyodideBase: PYODIDE, packages: CFG.pyodidePackages, config: CFG });
+    init = await startPython();
   } catch (e) {
     fatal(`Python could not be loaded: ${e.message}. Check the internet connection and reload the page.`);
     return;
@@ -1203,7 +1403,8 @@ async function main() {
   state.params = state.desc.parameters;
   for (const p of state.params) { state.byKey[p.key] = p; state.start[p.key] = clone(p.default); }
   state.values = clone(state.start);
-  $("foot").firstElementChild.after(` ${state.desc.version}`);
+  if (!build.kese) build.kese = state.desc.version;
+  renderFooter();                                              // now with where Python came from
   state.ready = true;
   setBusy(false);
   updateGenerate();

@@ -9,13 +9,21 @@
    preview, checks, pop-ups, responsive rules. The responsive rules (media and container queries) come
    last on purpose: they override the rules above them. */
 
+/* ---- fonts: served from this site (no request to Google; licences in licenses/) ---------------------- */
+/* The woff2 files are Google Fonts' own subsets (via fontsource): latin, and latin-ext where the font has it. */
+@font-face { font-family: "Pacifico"; font-style: normal; font-weight: 400; font-display: swap; src: url("fonts/pacifico-latin-ext-400-normal.woff2") format("woff2"); unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF; }
+@font-face { font-family: "Pacifico"; font-style: normal; font-weight: 400; font-display: swap; src: url("fonts/pacifico-latin-400-normal.woff2") format("woff2"); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+@font-face { font-family: "Permanent Marker"; font-style: normal; font-weight: 400; font-display: swap; src: url("fonts/permanent-marker-latin-400-normal.woff2") format("woff2"); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+@font-face { font-family: "Shadows Into Light"; font-style: normal; font-weight: 400; font-display: swap; src: url("fonts/shadows-into-light-latin-ext-400-normal.woff2") format("woff2"); unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF; }
+@font-face { font-family: "Shadows Into Light"; font-style: normal; font-weight: 400; font-display: swap; src: url("fonts/shadows-into-light-latin-400-normal.woff2") format("woff2"); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+
 /* ---- tokens ------------------------------------------------------------ */
 :root {
   --accent: #a93e33;                       /* model-viewer progress bar, slide borders, dropdown hover */
   --cream: rgba(248, 236, 198, 0.4);       /* dropdown hover background (#f8ecc6); --warning-bg and the Reset hover use the same cream at 0.6 and 0.75 */
   --text: #333;
   --text-2: #555555;
-  --text-3: #888;
+  --text-3: #6b6b6b;                       /* the lightest text: 4.7:1 on the paper colour (WCAG AA needs 4.5:1) */
   --selected: #000000;                     /* selected slide */
   --glass: rgba(255, 255, 255, 0.3);       /* dropdown button background */
   --glass-edge: rgba(255, 255, 255, 0.2);
@@ -70,6 +78,18 @@ h1, h2 { margin: 0; font-weight: normal; }
 .meta-item { white-space: nowrap; }                          /* the board line: each item whole */
 a { color: var(--accent); }
 [hidden] { display: none !important; }
+
+/* ---- privacy.html, licenses.html: a plain document page ------------------ */
+.doc { max-width: 780px; margin: 0 auto; padding: 28px 20px 64px; font-size: 15px; line-height: 1.6; }
+.doc h1 { font-size: 32px; margin: 4px 0 14px; }
+.doc h2 { font-size: 22px; margin: 28px 0 6px; }
+.doc ul { padding-left: 22px; }
+.doc li { margin: 4px 0; }
+.doc code { font-family: var(--mono); font-size: 13px; }
+.doc-back { margin: 0; font-size: 13.5px; }
+.doc-table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 14px; }
+.doc-table th, .doc-table td { text-align: left; vertical-align: top; padding: 7px 8px; border-bottom: 1px solid var(--divider); }
+.doc-table th { font-weight: 600; }
 
 /* ---- computers only ---------------------------------------------------- */
 .phone-only { display: none; }
@@ -240,6 +260,8 @@ html.phone .desktop-only { display: none !important; }
 .stepper input { width: 64px; border: 0; border-left: 1px solid var(--divider); border-right: 1px solid var(--divider);
   text-align: center; font: inherit; font-variant-numeric: tabular-nums; color: var(--text); padding: 4px 2px; outline: none; }
 .stepper input:focus { background: var(--cream); }
+.stepper:has(input:focus-visible) { outline: 2px solid var(--accent); outline-offset: 1px; }   /* the keyboard's focus: a ring round the whole stepper */
+.text-input:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
 input[type=range] { -webkit-appearance: none; appearance: none; flex: 1; height: 22px; margin: 0; background: transparent; min-width: 60px; }
 input[type=range]::-webkit-slider-runnable-track { height: 4px; border-radius: 2px; background: rgba(0, 0, 0, 0.14); }
 input[type=range]::-moz-range-track { height: 4px; border-radius: 2px; background: rgba(0, 0, 0, 0.14); }
@@ -385,7 +407,7 @@ input[type=range]:focus-visible::-moz-range-thumb { box-shadow: var(--metal-shad
 
 /* ---- pop-ups ------------------------------------------------------------------ */
 .popover { position: fixed; z-index: 100; max-width: 380px; background: #ffffff; border: 1px solid #ddd; border-radius: 8px;
-  box-shadow: var(--shadow-card); padding: 10px 12px; font-size: 12.5px; line-height: 1.45; color: var(--text); white-space: pre-wrap; pointer-events: none; }
+  box-shadow: var(--shadow-card); padding: 10px 12px; font-size: 12.5px; line-height: 1.45; color: var(--text); white-space: pre-wrap; }
 .popover .mono-name { display: block; margin-bottom: 4px; }
 .popover .tip-foot { display: block; margin-top: 6px; padding-top: 6px; border-top: 1px solid #eee; color: var(--text-2); }
 dialog { border: 1px solid #ddd; border-radius: var(--radius); box-shadow: var(--shadow-card); max-width: min(900px, 90vw); max-height: 80vh; padding: 16px; }
@@ -509,6 +531,7 @@ dialog pre { font-family: var(--mono); font-size: 12px; white-space: pre-wrap; m
 .canvas-wrap { background: radial-gradient(ellipse at 50% 40%, #fbfaf6 0%, #ebe6da 100%); }
 .views { background: rgba(255, 255, 255, 0.6); }
 .empty-note { position: absolute; inset: 0; display: grid; place-content: center; text-align: center; font-size: 15px; color: var(--text-2); pointer-events: none; line-height: 1.6; }
+.no-webgl .empty-note { padding: 0 12%; }                               /* no WebGL: the note says why the preview is off */
 .readout { left: 12px; bottom: 16px; max-width: calc(100% - 24px); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .readout:has(.ro-name) { display: flex; }
 .ro-name { min-width: 0; overflow: hidden; text-overflow: ellipsis; }   /* a long file name gives way, */
@@ -527,13 +550,15 @@ dialog pre { font-family: var(--mono); font-size: 12px; white-space: pre-wrap; m
 /* the list takes the column's free room: all its parts when they fit, else it scrolls, keeping at least a few rows
    (--parts-min, set in renderParts) before the column itself scrolls */
 #side > .parts { display: flex; flex-direction: column; flex: 0 1 auto; min-height: var(--parts-min, 0px); overflow-y: auto; scrollbar-width: thin; }
-.part { display: grid; grid-template-columns: 14px 1fr auto; gap: 8px; align-items: center; padding: 3px 4px; border: 0; background: none;
+.part { display: grid; grid-template-columns: 14px 1fr auto; gap: 8px; align-items: center; padding: 3px 4px; min-height: 24px;   /* WCAG 2.2 target size */
+  border: 0; background: none;
   font: inherit; font-size: 12.5px; color: var(--text); text-align: left; cursor: pointer; border-radius: 6px; }
 .part:hover { background: var(--cream); }
 .part i { width: 12px; height: 12px; border-radius: 3px; box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.12); }
 .part .part-name { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .part small { color: var(--text-3); font-family: var(--mono); font-size: 11px; }
 .part.off { opacity: 0.4; }
+.part.off .part-name { text-decoration: line-through; }   /* hidden: struck through as well as faded */
 .parts .hint { margin: 0; }
 /* download */
 .formats { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
@@ -551,6 +576,15 @@ dialog pre { font-family: var(--mono); font-size: 12px; white-space: pre-wrap; m
 #btn-download:hover:not(:disabled), .download-row .glass-btn:hover:not(:disabled) { color: var(--accent); background: var(--cream); }
 #btn-report { width: 100%; font-weight: 600; }
 #report-dialog { width: min(1000px, 94vw); max-width: none; }
+/* an error nothing else caught (WebUI.js catchCrashes): what happened, Copy Details, Report a Problem */
+#crash-dialog { width: min(720px, 92vw); }
+#crash-dialog h2 { margin: 0 0 8px; }
+#crash-dialog p { margin: 0 0 12px; line-height: 1.5; }
+#crash-dialog pre { max-height: 40vh; background: rgba(0, 0, 0, 0.04); border-radius: 8px; padding: 10px; }
+#crash-dialog .confirm-buttons { justify-content: flex-end; }
+.noscript { margin: 40px auto; max-width: 560px; text-align: center; font-size: 16px; }
+#foot .build { white-space: nowrap; }
+.sr-only { position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0; overflow: hidden; clip-path: inset(50%); white-space: nowrap; border: 0; }
 #report-dialog form > .glass-btn { display: block; width: 100%; font-weight: 600; }
 
 /* ---- responsive rules ---------------------------------------------------- */
@@ -605,4 +639,20 @@ dialog pre { font-family: var(--mono); font-size: 12px; white-space: pre-wrap; m
   .standalone-nav { order: 0; margin-left: auto; }
   .top-mid { order: 2; flex: 1 0 auto; justify-content: flex-start; }
   .top-actions { order: 3; margin-left: auto; }
+}
+/* a computer zoomed to 300-400 % (WCAG 1.4.10 reflow: 320 CSS px wide): one column, the preview, then the controls,
+   then the side column; the top bar's buttons wrap instead of running off the right edge */
+@media (max-width: 700px) {
+  #workspace { grid-template-columns: minmax(0, 1fr); grid-template-rows: max(62vh, 340px) auto auto;   /* room for the view's tools */
+    grid-template-areas: "preview" "controls" "side"; }
+  #controls, #side { height: auto; min-height: 90vh; }
+  .top-actions { flex-wrap: wrap; justify-content: flex-end; }
+  .generate-row { flex-wrap: wrap; }
+  .generate-row .primary-btn { flex-basis: 120px; }          /* Generate takes its own line rather than "Gene…" */
+  .readout:has(.ro-name) { flex-wrap: wrap; white-space: normal; }   /* the file name, then the numbers, on two lines */
+  .ro-rest { flex: 1 1 auto; }
+}
+/* wider letter and word spacing (WCAG 1.4.12) in a narrow window: the top bar may take a second row */
+@media (max-width: 1180px) {
+  #topbar { flex-wrap: wrap; row-gap: 4px; }
 }
