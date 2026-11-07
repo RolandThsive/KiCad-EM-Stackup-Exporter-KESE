@@ -8,9 +8,9 @@ Last review: November 2026.
 
 - **The pages:** the tool (`index.html`) on its own and inside the blog's frame, `privacy.html`, `licenses.html`.
 - **Target:** WCAG 2.2 level AA.
-- **Browsers and devices:** computers with a mouse or trackpad, in the current and the previous major version of
-  Chrome, Edge, Firefox and Safari (README: supported browsers). A phone or tablet gets a short page that says the
-  tool needs a computer, and that page is checked too.
+- **Browsers and devices:** computers with a mouse or trackpad, in the latest Chrome, Edge and Firefox on Windows
+  and Linux, and the latest Safari and Chrome on macOS (README: supported browsers). A phone or tablet gets a short
+  page that says the tool needs a computer, and that page is checked too.
 - **Left out:** the files the tool makes (GLB, STEP, STL, OBJ). They are for CAD and simulation programs, not for
   reading.
 

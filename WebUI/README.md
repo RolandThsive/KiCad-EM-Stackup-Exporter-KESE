@@ -10,9 +10,9 @@ Branches: `WebUI` is what GitHub Pages publishes (a push deploys it); work happe
 
 ## Supported browsers
 
-The tool is for computers (a phone or tablet gets a short message instead). Supported: the current and the previous
-major version of **Chrome, Edge and Firefox** on Windows, macOS and Linux, and of **Safari** on macOS. Every pull
-request is tested in Chromium, Firefox and WebKit (the engine of Safari); see [tests/README.md](tests/README.md).
+The tool is for computers (a phone or tablet gets a short message instead). Supported: the latest version of
+**Chrome, Edge and Firefox** on Windows and Linux, and of **Safari and Chrome** on macOS. Every pull request is
+tested in Chromium, Firefox and WebKit (the engine of Safari); see [tests/README.md](tests/README.md).
 Window sizes from 1024 × 768 up, landscape or portrait, and browser zoom up to 400 % (docs/WCAG-EM.md).
 
 What the page needs, and what happens without it:
