@@ -441,6 +441,29 @@ def footprint_text_fields(fp):
     return out
 
 
+TEXT_VAR_PASSES = 6             # advanced_config.cpp m_ResolveTextRecursionDepth, KiCad 10's default
+
+
+@dataclass(frozen=True)
+class TextVarRules:
+    passes: int                 # how often a text is expanded: a value's own ${...} wait for the next pass
+    properties_first: bool      # the board's (property ...) before its title block
+    date_in_title_block: bool   # a title block value's own ${CURRENT_DATE} expanded with the value
+    field_levels: tuple         # how deep a footprint's reference / value is expanded: (own text, ${REF:FIELD})
+
+
+def text_var_rules(d):
+    """How the KiCad that writes the file resolves a text's ${...}: PCB_TEXT::GetShownText expands it
+    in up to TEXT_VAR_PASSES passes from KiCad 10 (ResolveTextVars), once before; BOARD::ResolveTextVar
+    looks at the board's properties before the title block in KiCad 8 and 9, after it before and since;
+    the project resolver that expands a title block value knows ${CURRENT_DATE} from KiCad 9
+    (title_block.cpp, project.cpp); and before KiCad 10 FOOTPRINT::ResolveTextVar gives a reference or
+    value expanded (GetShownText) while the depth stays under 10 (KiCad 6 and 7) or 3 (8 and 9,
+    m_ResolveTextRecursionDepth), which a ${REF:VALUE} reaches one step later; its other fields as written."""
+    levels = (0, 0) if d.release >= 10 else (1, 0) if d.release >= 8 else (4, 4)
+    return TextVarRules(TEXT_VAR_PASSES if d.release >= 10 else 1, d.release in (8, 9), d.release >= 9, levels)
+
+
 def render_cache_rings(node, text, angle):
     """The glyph polygons KiCad 7+ stores with a TrueType text, [[outline, hole, ...] per polygon] in
     board coordinates; None when there is none or it is stale (EDA_TEXT::GetRenderCache): made for

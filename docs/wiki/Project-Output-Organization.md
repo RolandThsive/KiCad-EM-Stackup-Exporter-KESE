@@ -228,8 +228,8 @@ test run and ignored by git. `tests/test_layout.py`, `tests/test_colors.py`,
 `tests/test_boundary.py`, `tests/test_copper_union.py`, `tests/test_finish_shells.py`,
 `tests/test_mask.py` and `tests/test_pairs.py` write nothing, and
 `tests/test_step_native.py`, `tests/test_step_arcs.py`, `tests/test_text_layout.py`, `tests/test_font.py`,
-`tests/test_bad_input.py`, `tests/test_parallel.py` and `tests/test_full_disk.py` write only in a
-temporary folder that they remove.
+`tests/test_text_vars.py`, `tests/test_bad_input.py`, `tests/test_parallel.py` and
+`tests/test_full_disk.py` write only in a temporary folder that they remove.
 
 | Previous | Next |
 |:---|---:|
