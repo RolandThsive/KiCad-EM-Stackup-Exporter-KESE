@@ -56,8 +56,15 @@ The newest first. Each entry is one pull request into `WebUI`; the footer's buil
 - The 46 settings that showed the comment of the setting above them now have their own words.
 - A preset's tip says what it is for and lists what it sets. A section's tip says what is inside and how many settings
   Basic shows.
-- 34 tips show a picture: one panel cut from a wiki picture (`docs/tooltipsPictures`, about 12 KB each), loaded only
-  when the tip opens. `build_site.py` copies them to `tooltips/` and stops if one is missing.
+- 34 pictures in the tips (`docs/tooltipsPictures`, about 12 KB each), each loaded only when its tip opens.
+  `build_site.py` copies them to `tooltips/` and stops if one is missing.
+  - 15 are one panel cut from a wiki picture.
+  - 19 are drawn for the tip, where the wiki picture's labels or colours were too small to read at tip size, each
+    showing the setting's choices side by side where it has them: the silkscreen and mask colours, the stack-up,
+    Etch Factor, Orientation, Origin, the two modes, Copper and Dielectric Grouping, Outer Plating Added, Via Wall,
+    Castellation, Edge Plating and its net, Finish Enabled, Silk Thickness, Interline Pitch, Text Stroke Quad Segs
+    and Outline Line Snap. Their SVG sources are in `drawn/`.
+- Long board and file names wrap inside a tip instead of sticking out of it.
 - Finish Type's layer table says what its rows are: the finish's layers, bottom to top, in mm.
 
 **Tests and documents**
@@ -68,7 +75,7 @@ The newest first. Each entry is one pull request into `WebUI`; the footer's buil
   - the CDN refused, silent or tampered;
   - the CSP;
   - accessibility scans, screenshots;
-  - every setting and button has its tip in `tips.json`, with its picture;
+  - every setting and button has its tip in `tips.json`, with its picture, and every tip falls back to plain words without it;
   - speed budgets and Lighthouse.
 - After each deploy, a smoke test makes a board on the published page.
 - New documents:

@@ -188,7 +188,7 @@ const stem = (name) => name.replace(/\.[^.]+$/, "");
 // key, with its title, unit, file value and wiki link taken from the parameter.  data-tip keeps one plain line, shown
 // while tips.json loads, if it fails, or for a tip it does not have; a setting it does not have shows its comment.
 let TIPS = {};
-fetch(new URL("tips.json", import.meta.url)).then((r) => (r.ok ? r.json() : {})).then((j) => { TIPS = j || {}; }).catch(() => {});
+fetch(new URL("tips.json", import.meta.url), { cache: "no-cache" }).then((r) => (r.ok ? r.json() : {})).then((j) => { TIPS = j || {}; }).catch(() => {});
 const tipAttrs = (id, text, args) => ({ "data-tip": text, "data-tip-id": id, "data-tip-args": args ? JSON.stringify(args) : null });
 function setTip(node, id, text, args) {
   node.dataset.tip = text; node.dataset.tipId = id;
@@ -280,6 +280,7 @@ function tipCard(c, args) {
   }
   return out;
 }
+const isTable = (v) => !!v && typeof v === "object" && !Array.isArray(v);   // a table has no one-line value: its tip leaves the line out
 function showValue(v) {
   if (v === null || v === undefined) return "None";
   if (typeof v === "boolean") return v ? "True" : "False";
@@ -674,7 +675,7 @@ function field(p) {
   const head = el("div", { class: "field-head" }, el("span", { class: "field-label", id: labelId }, text, unit ? el("span", { class: "unit" }, ` (${unit})`) : null));
   attachHelp(head, p.key);
   if (state.ui === "advanced") {
-    if (changed) head.append(el("button", { type: "button", class: "reset-one", ...tipAttrs("resetOne", `Back to the file's value: ${showValue(p.default)}`, { value: showValue(p.default) }),
+    if (changed) head.append(el("button", { type: "button", class: "reset-one", ...tipAttrs("resetOne", `Back to the file's value: ${showValue(p.default)}`, { value: isTable(p.default) ? "" : showValue(p.default) }),
       onclick: () => {
         state.noneEditing.delete(p.key);
         const back = { [p.key]: clone(p.default) };

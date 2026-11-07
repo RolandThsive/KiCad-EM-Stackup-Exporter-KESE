@@ -1,7 +1,7 @@
 // tips.spec.mjs - the tips' words come from tips.json: every setting and button the page shows has its tip there, a
 // setting's tip marks the file's value and shows its picture, a preset's tip lists what it sets, and a tip with
 // values fills them in.
-import { test, expect, open, SITE } from "../helpers.mjs";
+import { test, expect, open, runBoard, QUICK, SITE } from "../helpers.mjs";
 import { readFileSync } from "node:fs";
 import { join } from "node:path";
 
@@ -93,4 +93,42 @@ test("a section's and a preset's tip; a tip with values fills them in", async ({
   await hover(page, "#examples button >> nth=0");
   await expect(pop.locator(".tp-title")).not.toHaveText("");
   await expect(pop).not.toContainText("{");
+});
+
+test("after a run, the tips of a part, a file and Download Zip name them", async ({ page, problems }) => {
+  await open(page);
+  await runBoard(page, QUICK);
+  const pop = tipOf(page);
+  const part = page.locator("#parts button.part").first();
+  const name = (await part.locator(".part-name").textContent()).trim();
+  await hover(page, "#parts button.part >> nth=0");
+  await expect(pop.locator(".tp-title")).toHaveText(name);
+  await expect(pop.locator(".tp-facts")).toContainText("Triangles");
+  await page.mouse.move(0, 0); await expect(pop).toBeHidden();
+  const chip = (await page.locator("#download-files button").first().textContent()).trim();
+  await hover(page, "#download-files button >> nth=0");
+  await expect(pop.locator(".tp-title")).toHaveText(chip);
+  await expect(pop.locator(".tp-facts")).toContainText(/\d/);
+  await page.mouse.move(0, 0); await expect(pop).toBeHidden();
+  await hover(page, "#btn-download");
+  await expect(pop.locator(".tp-facts")).toContainText(".zip");
+  await expect(pop).not.toContainText("{");
+});
+
+test("without tips.json, every tip falls back to its plain words", async ({ page, problems }) => {
+  test.info().annotations.push({ type: "allow", description: "Failed to load resource" });
+  await page.route("**/tips.json", (route) => route.fulfill({ status: 404, body: "" }));
+  await open(page);
+  const pop = tipOf(page);
+  await hover(page, "#drop");
+  await expect(pop).toBeVisible();
+  await expect(pop).not.toHaveClass(/rich/);
+  await expect(pop).toHaveText(await page.locator("#drop").getAttribute("data-tip"));
+  await page.mouse.move(0, 0); await expect(pop).toBeHidden();
+  await page.click("#ui-switch [data-ui=advanced]");
+  await page.$eval("#sections details[data-module=Copper]", (d) => (d.open = true));
+  await hover(page, '[data-help="Copper.ETCH_FACTOR"] .info-dot');
+  await expect(pop).not.toHaveClass(/rich/);
+  await expect(pop.locator(".mono-name")).toHaveText("copper.py · ETCH_FACTOR");
+  await expect(pop.locator(".tip-foot")).toContainText("In the file:");
 });
