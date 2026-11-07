@@ -18,7 +18,8 @@ make sure its license is compatible with GPL-3.0-or-later.
 All of KESE lives in `Generator/`: the `kese/` package, the settings in `parameters/`, the
 tests in `tests/`, `run_KESE.py`, `pyproject.toml` and `requirements.txt`, and the `Input/` and
 `Output/` folders. The repository root keeps only what belongs to the repository: the README,
-the licence files, `docs/` and `.github/`. The paths below are inside `Generator/`.
+the licence files, `docs/`, `.github/` and the feature test boards in `featureTest/`. The paths
+below are inside `Generator/`.
 
 `kese/pipeline.py` runs nine stages in order, one folder each in `kese/`. Each stage takes what
 the stage before it made and hands its own result to the next:
@@ -84,6 +85,8 @@ cd Generator
 python tests/test_layout.py      # the layout rules, about a second
 python tests/test_colors.py      # stack-up colours: named, user-defined and unknown
 python tests/test_text_layout.py # text laid out where KiCad 7.0.11 plots it
+python tests/test_font.py        # the stroke font glyph by glyph, custom fonts, TrueType faces
+python tests/test_text_vars.py   # variables inside variables, as each KiCad version expands them
 python tests/test_kicad_version.py # the rules of each KiCad version, against KiCad's own parser
 python tests/test_enabled.py     # each part switch leaves out its own parts and nothing else
 python tests/test_bad_input.py   # wrong settings and damaged files: an error or a warning, not a crash
@@ -100,5 +103,5 @@ python tests/test_step_arcs.py   # true arcs and cylinders in STEP (Step.STEP_EX
 python tests/test_boards.py      # every test board through both modes, against tests/baseline.json
 ```
 
-`python -m pytest tests` runs all seventeen. When a change is meant to move the geometry, re-record the
+`python -m pytest tests` runs all nineteen. When a change is meant to move the geometry, re-record the
 baseline with `python tests/test_boards.py --accept` and say why in the pull request.

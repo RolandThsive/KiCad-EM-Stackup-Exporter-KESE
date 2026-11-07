@@ -414,6 +414,20 @@ def is_knockout(node):
     return "knockout" in [str(a) for a in atoms(child(node, "layer"))]
 
 
+def text_value(node):
+    """The words of a (gr_text ...) or (fp_text kind ...) as parsePCB_TEXT reads them: past a bare
+    locked, which KiCad 7 and before write first ((gr_text locked "PWR" ...)), and with KiCad 5's %V
+    and %R read as ${VALUE} and ${REFERENCE}."""
+    words = []
+    for a in node[2 if node[0] == "fp_text" else 1:]:
+        if isinstance(a, list):
+            break
+        words.append(str(a))
+    if len(words) > 1 and words[0] == "locked":
+        words = words[1:]
+    return (words[0] if words else "").replace("%V", "${VALUE}").replace("%R", "${REFERENCE}")
+
+
 def footprint_text_fields(fp):
     """{FIELD: value} of a footprint's own fields: its (property "Name" "value") entries (KiCad 8+
     keeps reference and value there too) and, before KiCad 8, (fp_text reference|value "...")."""
@@ -423,15 +437,41 @@ def footprint_text_fields(fp):
             out[str(prop[1]).upper()] = str(prop[2])
     for t in children(fp, "fp_text"):
         if len(t) > 2 and t[1] in ("reference", "value"):
-            out[t[1].upper()] = str(t[2])
+            out[t[1].upper()] = text_value(t)
     return out
+
+
+TEXT_VAR_PASSES = 6             # advanced_config.cpp m_ResolveTextRecursionDepth, KiCad 10's default
+
+
+@dataclass(frozen=True)
+class TextVarRules:
+    passes: int                 # how often a text is expanded: a value's own ${...} wait for the next pass
+    properties_first: bool      # the board's (property ...) before its title block
+    date_in_title_block: bool   # a title block value's own ${CURRENT_DATE} expanded with the value
+    field_levels: tuple         # how deep a footprint's reference / value is expanded: (own text, ${REF:FIELD})
+
+
+def text_var_rules(d):
+    """How the KiCad that writes the file resolves a text's ${...}: PCB_TEXT::GetShownText expands it
+    in up to TEXT_VAR_PASSES passes from KiCad 10 (ResolveTextVars), once before; BOARD::ResolveTextVar
+    looks at the board's properties before the title block in KiCad 8 and 9, after it before and since;
+    the project resolver that expands a title block value knows ${CURRENT_DATE} from KiCad 9
+    (title_block.cpp, project.cpp); and before KiCad 10 FOOTPRINT::ResolveTextVar gives a reference or
+    value expanded (GetShownText) while the depth stays under 10 (KiCad 6 and 7) or 3 (8 and 9,
+    m_ResolveTextRecursionDepth), which a ${REF:VALUE} reaches one step later; its other fields as written."""
+    levels = (0, 0) if d.release >= 10 else (1, 0) if d.release >= 8 else (4, 4)
+    return TextVarRules(TEXT_VAR_PASSES if d.release >= 10 else 1, d.release in (8, 9), d.release >= 9, levels)
 
 
 def render_cache_rings(node, text, angle):
     """The glyph polygons KiCad 7+ stores with a TrueType text, [[outline, hole, ...] per polygon] in
-    board coordinates; None when there is none or it is stale (EDA_TEXT::GetRenderCache)."""
+    board coordinates; None when there is none or it is stale (EDA_TEXT::GetRenderCache): made for
+    other words than text (a string, or a compiled pattern the words must match whole) or another angle."""
     rc = child(node, "render_cache")
-    if rc is None or len(rc) < 3 or isinstance(rc[1], list) or str(rc[1]) != text:
+    if rc is None or len(rc) < 3 or isinstance(rc[1], list):
+        return None
+    if not (text.fullmatch(str(rc[1])) if hasattr(text, "fullmatch") else str(rc[1]) == text):
         return None
     try:
         turned = (number(rc[2], rc) - angle + 180.0) % 360.0 - 180.0

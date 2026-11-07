@@ -1,6 +1,6 @@
 """Stage 2 - collect: every item of the parsed board as a flat shape on its layer, with its net,
 in KiCad's frame (mm, Y down).  This file walks the tree; there is one file per kind of item."""
-from kese.core import font
+from kese.core import font_file
 from kese.core.sexp import NotANumber, child
 from kese.model.items import Items
 from kese.s1_read.parse_kicad_version import is_footprint
@@ -11,7 +11,7 @@ from kese.s2_collect.left_out import UNKNOWN, warn
 from kese.s2_collect.nets import read_nets
 from kese.s2_collect.setup import read_setup
 from kese.s2_collect.stackup import read_stackup
-from kese.s2_collect.text import TEXT, add_text
+from kese.s2_collect.text import TEXT, add_text, warn_stroked
 from kese.s2_collect.tracks import add_track
 from kese.s2_collect.vias import OFF_BOARD, add_via, drop_unconnected_rings
 from kese.s2_collect.zones import UNFILLED, add_zone
@@ -73,6 +73,6 @@ def collect(raw, log):
     if items.skipped.get(OFF_BOARD):
         log(f"warning: {items.skipped[OFF_BOARD]} via(s) name a copper layer the board does not have and are left out")
     warn(items, log)
-    _, note = font.load()
-    items.notes.append(note)
+    warn_stroked(items, log)
+    items.notes.append(font_file.note())
     return items

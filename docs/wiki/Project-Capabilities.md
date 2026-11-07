@@ -17,9 +17,9 @@ solvers and CAD, and a **visual model** of the visible surface for viewers.
 | Holes | Plated and non-plated, round and slotted; plated walls on the plated ones |
 | Board edge | Castellated holes and edge plating |
 | Dielectrics | One solid per gap between copper layers with its own εr and tanδ; resin fills the space beside inner copper |
-| Solder mask | Openings as KiCad draws them (pads, drawn openings, untented vias, and tracks and copper drawings the mask leaves bare); conformal over every trace; pulled back from the board edge; open over every bore, so on a tented via it covers only the ring |
-| Silkscreen | KiCad's stroke font and text layout (TrueType text from the glyphs KiCad saves with it, else in the stroke font; a custom stroke or Hershey font is optional); removed inside mask openings, as fabricators do |
-| Surface finish | ENIG, ENEPIG, HASL, lead-free HASL, OSP, immersion silver, immersion tin, hard gold: each metal its own layer on the bare copper, taken from KiCad's finish name. Off by default. |
+| Solder mask | Openings as KiCad draws them (pads, drawn openings, untented vias, and tracks and copper drawings the mask leaves bare); conformal over every trace; pulled back from the board edge; open over every bore, so on a tented via it covers only the ring. Off by default (`SolderMask.SOLDER_MASK_ENABLED`). |
+| Silkscreen | KiCad's stroke font and text layout (TrueType text from the glyphs KiCad saves with it, else in the stroke font; a custom stroke or Hershey font is optional); removed inside mask openings, as fabricators do. Off by default (`Silkscreen.SILKSCREEN_ENABLED`). |
+| Surface finish | ENIG, ENEPIG, HASL, lead-free HASL, OSP, immersion silver, immersion tin, hard gold: each metal its own layer on the bare copper, taken from KiCad's finish name. On by default (`Finish.FINISH_ENABLED`). |
 | Etching | Optional sloped copper walls (`Copper.ETCH_FACTOR`) |
 | Colours | One material per part; KiCad's mask and silk colour names honoured |
 
@@ -36,7 +36,7 @@ solvers and CAD, and a **visual model** of the visible surface for viewers.
 | Physical data | εr, tanδ, conductivity, thickness and z range per part in `materials.json` | The same file |
 | What-if | Change plating, via wall, mask thickness or etch factor in `parameters/` and export again | |
 | Verifier (`--verify`) | Every part closed and consistently wound; its volume the same from its faces, slices, mesh and prisms; no two parts sharing material, every slice against every other | Along 3,000 vertical rays the faces take turns, into the material and out of it |
-| 4-layer PCIe card example | GLB 30.1 MB, 879,986 triangles | GLB 9.1 MB, 290,834 triangles |
+| 4-layer PCIe card example | GLB 30.2 MB, 881,514 triangles | GLB 9.1 MB, 290,836 triangles |
 | Presets | `--for freecad`, `elmer`, `calculix`, `openems` | `--for viewer`, `blender_glb`, `blender_obj` |
 
 More in [Output Modes](Output-Modes.md).
@@ -46,7 +46,7 @@ More in [Output Modes](Output-Modes.md).
 | File | What it holds |
 |---|---|
 | GLB | One mesh per part with its colour; metres by default (`Run.UNITS`) |
-| STEP | Written by KESE itself, no CAD kernel needed: every part under its own name, as closed solids with true circular arcs and cylinders (`Step.STEP_EXACT_ARCS`, the default; 4 to 9 times smaller files than flat faces with curves as polygons); the same parts as every other format, as the part switches set them |
+| STEP | Written by KESE itself, no CAD kernel needed: every part under its own name, as closed solids with true circular arcs and cylinders (`Step.STEP_EXACT_ARCS`, the default; files 2.5 to 3 times smaller than flat faces with curves as polygons); the same parts as every other format, as the part switches set them |
 | STL | One closed file per part, in `stl/` |
 | OBJ | One object per part, colours in an `.mtl` |
 | `materials.json` | Per part: role, layer, net, z range, εr, tanδ, conductivity, colour, file names |

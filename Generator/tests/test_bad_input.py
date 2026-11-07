@@ -331,6 +331,21 @@ def test_a_board_too_thin_for_its_copper_is_refused():
         and said.endswith("the board is too thin for its copper; set Board.BOARD_THICKNESS_MM (parameters/board.py)"), said
 
 
+def test_a_drill_that_gives_no_size_takes_kicads_default():
+    # (drill oval (offset -0.1075 0)) with no size, on SMD pads of a KiCad 6 board, stopped the run with
+    # an IndexError; KiCad's parser keeps the pad's default drill, 30 mils, and an SMD pad has no hole
+    fp = ('(footprint "T:T" (layer "F.Cu") (at 110 128)'
+          ' (pad "1" smd rect (at 0 0) (size 1 1.6) (drill oval (offset -0.1075 0)) (layers "F.Cu" "F.Mask"))'
+          ' (pad "2" thru_hole circle (at 4 0) (size 1.5 1.5) (drill oval) (layers "*.Cu" "*.Mask"))'
+          ' (pad "3" np_thru_hole circle (at 8 0) (size 0.762 0.762) (drill (offset 0 0)) (layers "*.Cu"))))')
+    items, _ = board_variant("drills.kicad_pcb", lambda t: t.rstrip()[:-1] + fp + "\n")
+    holes = [h for h in items.holes if abs(h.drill.centroid.y - 128) < 1e-6]
+    assert [(round(h.drill.centroid.x, 6), h.plated) for h in holes] == [(114.0, True), (118.0, False)]
+    disk = 3.141592653589793 * (0.762 / 2) ** 2                          # round, 30 mils across
+    assert all(abs(h.drill.area / disk - 1) < 0.02 for h in holes), [h.drill.area for h in holes]
+    assert items.found["copper rings on non-plated holes"] == 0        # a round pad no bigger than its drill
+
+
 if __name__ == "__main__":
     test_a_single_format_may_be_a_string()
     test_every_setting_with_a_few_values_is_checked()
@@ -352,4 +367,5 @@ if __name__ == "__main__":
     test_a_byte_order_mark_is_passed_over()
     test_a_thickness_below_zero_is_read_as_not_given()
     test_a_board_too_thin_for_its_copper_is_refused()
+    test_a_drill_that_gives_no_size_takes_kicads_default()
     print("ok")

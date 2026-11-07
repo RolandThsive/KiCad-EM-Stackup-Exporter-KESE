@@ -10,6 +10,18 @@ from kese.s2_collect.nets import net_name
 from kese.s2_collect.pad_shapes import oval, pad_shape
 from parameters import P
 
+KICAD_DEFAULT_DRILL = 0.762            # pad.cpp PAD::PAD: a pad's drill is 30 mils until the file says
+
+
+def drill_size(drill):
+    """A pad's (drill ...) as parsePAD reads it: (oval, width, height), KiCad's default width where the
+    file gives none, as in (drill oval (offset -0.1075 0)), and the height the width where it gives one."""
+    a = atoms(drill)
+    oval_drill = bool(a) and a[0] == "oval"
+    sizes = [number(x, drill) for x in a[1 if oval_drill else 0:]]
+    w = sizes[0] if sizes else KICAD_DEFAULT_DRILL
+    return oval_drill, w, sizes[1] if len(sizes) > 1 else w
+
 
 def add_pad(ctx, pad, T, fp_margin):
     items, C = ctx.items, P.Copper
@@ -31,12 +43,8 @@ def add_pad(ctx, pad, T, fp_margin):
     if drill is not None:
         off = child(drill, "offset")
         offset = pt(off) if off else (0.0, 0.0)
-        a = atoms(drill)
-        if a and a[0] == "oval":
-            hole = oval(number(a[1], drill), number(a[2] if len(a) > 2 else a[1], drill))
-        elif a:
-            hole = disk((0, 0), number(a[0], drill) / 2)
-        hole = place(hole)
+        oval_drill, dw, dh = drill_size(drill)
+        hole = place(oval(dw, dh) if oval_drill else disk((0, 0), dw / 2))
     shape = place(pad_shape(items, pad, w, h), offset if drill is not None else (0.0, 0.0))
     stack, made = padstack_layers(pad, ctx.layers), {}
 
@@ -95,15 +103,13 @@ def npth_has_copper(pad, w, h, offset, drill):
     """Whether a non-plated hole's pad puts copper on its copper layers, as KiCad decides
     (pad.cpp, PAD::FlashLayer): not when a round pad on a round drill, or an oval pad on an oval
     drill, is no bigger than the drill and not offset; any other pad shape does."""
-    shape, a = str(pad[3]), atoms(drill) if drill is not None else []
-    if not a or offset != (0.0, 0.0):
-        return bool(a)
-    oval = a[0] == "oval"
-    dw = number(a[1] if oval else a[0], drill)
-    dh = number(a[2], drill) if oval and len(a) > 2 else dw
-    if shape == "circle" and not oval:
+    shape = str(pad[3])
+    if drill is None or offset != (0.0, 0.0):
+        return drill is not None
+    oval_drill, dw, dh = drill_size(drill)
+    if shape == "circle" and not oval_drill:
         return dw < w
-    if shape == "oval" and oval:
+    if shape == "oval" and oval_drill:
         return dw < w or dh < h
     return True
 

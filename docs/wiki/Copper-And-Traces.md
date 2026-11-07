@@ -65,10 +65,11 @@ Three clean-ups follow, all for shapes of one net that only just meet:
   (`kese/s3_resolve/copper.py`, `net_union`). Each edge moves by less than a grid step. A union on
   the grid, which rounds every item first, costs about three times as much on a big board; it is
   still used where GEOS cannot join the items in floating point.
-- A hole in $`C_{k,n}`$ whose mean width, twice its area over its perimeter, is under 1 µm is
-  filled. Such needle holes are left where a zone fill runs round a pad or via of its own net
-  with other arcs than the pad's own polygon (on one KiCad 10 board 193 of them, and no hole
-  between 1 and 3 µm); they pinch the solid where they touch. Drills and clearances are far wider.
+- A hole in $`C_{k,n}`$ whose mean width, twice its area over its perimeter, is under 1 µm
+  (`Copper.HAIRLINE_HOLE_MM`) is filled. Such needle holes are left where a zone fill runs round a
+  pad or via of its own net with other arcs than the pad's own polygon (on one KiCad 10 board 193
+  of them, and no hole between 1 and 3 µm); they pinch the solid where they touch. Drills and
+  clearances are far wider.
 - Pieces of one net that come within two grid steps of each other are joined (grown and shrunk
   back by a grid step, mitred), so their walls cannot leave the solid open on the grid.
 
@@ -256,7 +257,7 @@ f_s = \begin{cases} \frac{s + 0.5}{m} & \text{foot at the bottom} \\ 1 - \frac{s
 ```
 
 ```math
-\delta_s = e \cdot t \cdot f_s, \qquad R_s = C_{k,n} \ominus \delta_s \qquad (12.12)
+\delta_s = e \cdot t \cdot f_s, \qquad R_s = \left( C_{k,n} \ominus \delta_s \right) \cup \left( C_{k,n} \cap \left( U_k \oplus \rho \, \delta_s \right) \right) \qquad (12.12)
 ```
 
 | Symbol | Meaning | Parameter |
@@ -267,6 +268,8 @@ f_s = \begin{cases} \frac{s + 0.5}{m} & \text{foot at the bottom} \\ 1 - \frac{s
 | $`f_s`$ | height fraction of the middle of slice $`s`$, measured from the foot | |
 | $`e`$ | etch factor | `Copper.ETCH_FACTOR` |
 | $`\delta_s`$ | inward offset of slice $`s`$ on every side | |
+| $`U_k`$ | the edges layer $`l_k`$ is not etched along: the drill walls of the holes through it and the board outline | |
+| $`\rho`$ | how far from those edges, in insets, the copper keeps its drawn outline | `Copper.ETCH_UNETCHED_REACH` (1.5) |
 | $`R_s`$ | region of slice $`s`$ (mitred corners) | |
 
 The wall therefore leans in by close to $`e \cdot t`$ across the copper height: the slice at
@@ -276,6 +279,10 @@ the free face is inset by $`e \cdot t \cdot (m - 0.5)/m`$.
 - Inner layers are etched only with `Copper.ETCH_APPLY_TO_INNER_LAYERS = True`; their foot faces
   the board centre (layers in the upper half have it at the bottom, layers in the lower half at
   the top), whichever dielectric is on that side.
+- Copper is not etched along a hole wall or the board edge, where it is plated or cut: there it
+  keeps its drawn outline out to $`\rho \, \delta_s`$ from the edge
+  (`Copper.ETCH_UNETCHED_REACH`), so a via or pad ring still meets its barrel, and the edge
+  plating and castellations still meet the copper.
 - Only the copper is etched: the solder mask, the resin fill beside inner copper and the finish
   still follow the drawn outline, so the wedge between them and the sloped wall stays empty (air).
 
@@ -363,6 +370,7 @@ and `plating_added_mm` are those of the part's first layer. See
 | `ETCH_FACTOR` | `0.0` | ≥ 0 | Side-wall lean per unit of copper thickness; 0 = rectangular |
 | `ETCH_STEPS` | `4` | int ≥ 1 | Slices per trapezoid |
 | `ETCH_APPLY_TO_INNER_LAYERS` | `False` | bool | Etch the inner layers too |
+| `ETCH_UNETCHED_REACH` | `1.5` | ≥ 0 | Copper within this × the etch inset of a hole wall or the board edge keeps its outline (12.5) |
 | `CASTELLATION` | `"auto"` | `"auto"` / `"file"` / `"off"` | How plated holes crossing the edge are treated |
 | `CASTELLATION_WALL_MM` | `0.025` | mm > 0 | Plated wall of a castellation |
 | `EDGE_PLATING` | `"file"` | `"file"` / `"yes"` / `"no"` | Copper on the board edge |
@@ -373,6 +381,7 @@ and `plating_added_mm` are those of the part's first layer. See
 | `COPPER_CONDUCTIVITY_S_PER_M` | `5.8e7` | S/m | Written to `materials.json` |
 | `COPPER_SURFACE_ROUGHNESS_UM` | `0.0` | µm ≥ 0 | Written to `materials.json`; 0 = ignore |
 | `NO_NET_NAME` | `"no_net"` | text | Name of copper that belongs to no net |
+| `HAIRLINE_HOLE_MM` | `1e-3` | mm ≥ 0 | A hole in one net's copper narrower than this on average (2 × area / perimeter) is filled (12.1) |
 
 | Previous | Next |
 |:---|---:|
