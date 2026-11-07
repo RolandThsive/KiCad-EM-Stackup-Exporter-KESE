@@ -198,7 +198,7 @@ These do not change dimensions.
 | `SNAP_GRID_MM` | `0.0001` | mm > 0 | All 2D shapes are snapped to this grid (0.1 µm) so touching layers share identical vertices: no hairline gaps, no T-junctions |
 | `SIMPLIFY_TOLERANCE_MM` | `0.0005` | mm ≥ 0 | Simplification of copper outlines after union; 0 = none |
 | `ARC_STEP_DEG` | `3.0` | degrees > 0 | Maximum angle per segment when flattening arcs |
-| `CIRCLE_CHORD_TOLERANCE_MM` | `0.002` | mm > 0 | Maximum deviation of a flattened circle from the true one |
+| `CIRCLE_CHORD_TOLERANCE_MM` | `0.005` | mm > 0 | Maximum deviation of a flattened circle from the true one: 5 µm, KiCad's own default (`ARC_HIGH_DEF_MM`, the board's maximum error) |
 | `CIRCLE_MIN_QUAD_SEGS`, `CIRCLE_MAX_QUAD_SEGS` | `8`, `128` | int | Bounds on segments per quarter circle |
 | `TRACK_END_MIN_QUAD_SEGS` | `4` | int ≥ 1 | Roundness of track ends |
 | `BEZIER_SEGMENTS` | `32` | int ≥ 1 | Straight pieces per Bézier curve |
@@ -256,15 +256,16 @@ segments per quarter circle.
 
 | Symbol | Meaning | Parameter |
 |---|---|---|
-| $`\varepsilon_c`$ | chord tolerance (2 µm) | `CIRCLE_CHORD_TOLERANCE_MM` |
+| $`\varepsilon_c`$ | chord tolerance (5 µm) | `CIRCLE_CHORD_TOLERANCE_MM` |
 | $`n_c`$ | segments a full circle needs for that tolerance | |
 | $`q`$, $`q_{\min}`$, $`q_{\max}`$ | segments per quarter circle and its bounds (8, 128) | `CIRCLE_MIN_QUAD_SEGS`, `CIRCLE_MAX_QUAD_SEGS` |
 | $`\varphi`$, $`\Delta\varphi`$ | arc sweep and maximum step (3°) | `ARC_STEP_DEG` |
 | $`q_{\mathrm{track}}`$ | minimum roundness of track ends (4) | `TRACK_END_MIN_QUAD_SEGS` |
 | $`q(w/2)`$ | equation (17.2) for radius $`w/2`$ | |
 
-Example: a 0.3 mm via ($`r = 0.15`$ mm) gives $`n_c = 19.2`$, so $`q = \max(8, \lceil 4.8 \rceil) = 8`$, 32
-segments around the via; the floor $`q_{\min}`$ decides for every circle below about 0.4 mm radius.
+Example: a 0.3 mm via ($`r = 0.15`$ mm) gives $`n_c = 12.1`$, so $`q = \max(8, \lceil 3.03 \rceil) = 8`$, 32
+segments around the via; the floor $`q_{\min}`$ decides for every circle below about 1 mm radius. A 3.2 mm
+mounting hole ($`r = 1.6`$ mm) gives $`n_c = 39.7`$ and $`q = 10`$, 40 segments around it.
 
 ## 17.8 Color (`parameters/color.py`)
 
@@ -313,7 +314,7 @@ how many rows the writer turns into text at once is `Parallel.STEP_ROWS_AT_A_TIM
 
 | Name | Default | Range | Meaning |
 |---|---|---|---|
-| `STEP_EXACT_ARCS` | `True` | bool | Write circles and arcs as true curves: where a part's outline runs through vertices on one circle (holes, vias, round pads, track ends, arc tracks, round outlines), their chords become one `CIRCLE` edge and the walls on them one `CYLINDRICAL_SURFACE` face, at every height alike; every other edge stays a line and every other face a plane. Left straight where another edge at that height passes closer to the vertices than the arc bulges out from them, which the arc would cross. Written by KESE's own writer; files are about 2.5 to 3 times smaller (the RF module in `Input/`, in m: 117 MB instead of 335 MB, written in 2.2 s against 3.2 s). Meshes are unchanged |
+| `STEP_EXACT_ARCS` | `True` | bool | Write circles and arcs as true curves: where a part's outline runs through vertices on one circle (holes, vias, round pads, track ends, arc tracks, round outlines), their chords become one `CIRCLE` edge and the walls on them one `CYLINDRICAL_SURFACE` face, at every height alike; every other edge stays a line and every other face a plane. Left straight where another edge at that height passes closer to the vertices than the arc bulges out from them, which the arc would cross. Written by KESE's own writer; files are about 2.5 to 3 times smaller (the RF module in `Input/`, in m: 117 MB instead of 335 MB, written in 2.2 s against 3.2 s, measured with `CIRCLE_CHORD_TOLERANCE_MM = 0.002`). Meshes are unchanged |
 | `STEP_ARC_FIT_TOLERANCE_MM` | `0.0002` | mm > 0 | Vertices within this of one circle form an arc (2 x the snap grid) |
 | `STEP_ARC_MIN_POINTS` | `5` | int ≥ 3 | An arc runs through at least this many vertices |
 | `STEP_ARC_MIN_SWEEP_DEG` | `10.0` | degrees | and turns at least this far |
@@ -326,7 +327,7 @@ Every format holds the same parts: the ones switched on with the `..._ENABLED` s
 (`Board.BOARD_ENABLED`, `Copper.COPPER_ENABLED`, `Finish.FINISH_ENABLED`, `SolderMask.SOLDER_MASK_ENABLED`,
 `Silkscreen.SILKSCREEN_ENABLED`; mask and silkscreen are off by default). A STEP file with the mask and silkscreen is 1.4 to 1.9 times as big
 (the PCIe card in `Input/`, in mm: 151 MB and 1,024 solids written in 2.9 s, against 81 MB and 788 solids
-in 1.9 s without them).
+in 1.9 s without them, measured with `Geometry.CIRCLE_CHORD_TOLERANCE_MM = 0.002`).
 
 With `STEP_EXACT_ARCS` the file uses these entities beside the planar ones: `CIRCLE` (on an
 `AXIS2_PLACEMENT_3D` at the centre, its axis the board's normal), referenced by the `EDGE_CURVE` of

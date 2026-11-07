@@ -79,7 +79,8 @@ The full list is in [Checks, Errors And Warnings](Checks-Errors-And-Warnings.md)
 | `six_layer` | 6 | 6 tracks, 6 vias, 2 zone fills | 1 s, 0.76 MB | 1 s, 0.94 MB; with mask and silk 1 s, 2.4 MB | 1 s, 0.21 MB |
 
 Default parameters, GLB and STEP runs with the Verifier, on one Linux machine with 4 cores: what
-to expect, not a limit. The times are the ones the run prints (`in 0m 21s`); starting Python and
+to expect, not a limit. These numbers, and the PCIe card's in section 4.2, were measured with
+`Geometry.CIRCLE_CHORD_TOLERANCE_MM = 0.002`, the default until 0.005. The times are the ones the run prints (`in 0m 21s`); starting Python and
 loading its packages adds about 1.5 s to each command.
 
 Three of the biggest public boards tried, on the same machine: NE_Delta (2 layers, 804 nets, 1.6

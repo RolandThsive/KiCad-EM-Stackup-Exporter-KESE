@@ -1,5 +1,17 @@
 # 23. Feature Test Collection
 
+> [!NOTE]
+> These runs were made with `Geometry.CIRCLE_CHORD_TOLERANCE_MM = 0.002`, the default until it
+> became 0.005 mm, KiCad's own accuracy. Timed the same way, three runs each, the default 0.005
+> makes the files 1.9% smaller in all in simulation mode and 3.1% in visual mode (up to 15% and 27%,
+> on board 02), and the runs about as fast: 1.4% and 0.1% faster in all. A run of under three
+> seconds can move by as much as 16% either way between the two settings from noise alone: boards
+> 20a to 20e, one design saved by five KiCad versions, move by −15% to +7% in visual mode, and boards 05,
+> 09, 18 and 19, whose files do not change at all, by up to 12%. Two boards cross
+> `Parallel.PROCESS_MIN_COORDINATES` (20,000 coordinates): board 12's STEP writer no longer starts
+> worker processes, and its simulation run is 33% faster; board 03b's stage 6 no longer does
+> either, and its simulation run is 21% slower.
+
 Every board of `featureTest/`, section by section, with its top and bottom and where the time of a
 run goes:
 

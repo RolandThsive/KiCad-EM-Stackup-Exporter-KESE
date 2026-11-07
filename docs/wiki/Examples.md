@@ -25,8 +25,10 @@ mask colour of its own, saved by KiCad 7. Between them they use most of what KES
 | Simulation STEP with `--verify` | 46 parts, 745 solids; 16 s, 113.8 MB | 62 parts, 1,240 solids; 9 s, 70.9 MB | 61 parts, 788 solids; 11 s, 80.9 MB |
 | Visual GLB with `--verify` | 15 s, 10.5 MB | 9 s, 5.6 MB | 13 s, 9.1 MB |
 
-The times are the ones the run prints, with the default parameters (the finish on, the solder
-mask and silkscreen off, true arcs in the STEP files) on one Linux machine with 4 cores. The STEP
+The numbers on this page were measured with `Geometry.CIRCLE_CHORD_TOLERANCE_MM = 0.002`, the default
+until 0.005. The times are the ones the run prints, with the default parameters otherwise (the
+finish on, the solder mask and silkscreen off, true arcs in the STEP files) on one Linux machine
+with 4 cores. The STEP
 files were made with `--for freecad --verify`: millimetres and KiCad's origin
 ([Project Capabilities](Project-Capabilities.md#45-tested-sizes) gives them with the mask and
 silkscreen too). The finish makes most of the solids: each pad's and each hole's finish is a solid

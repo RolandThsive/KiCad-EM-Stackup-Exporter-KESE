@@ -148,8 +148,9 @@ volumes) are made where the part is built, in its stage 6 worker, while it is at
 > are turned back from `"flat"` by the output's quarter turns, exactly, so a skin gives the same
 > count of faces on every ray in both orientations.
 
-Example tail of a `report.txt` (`Input/rf_module.kicad_pcb` in simulation mode, `...` where
-lines are left out):
+Example tail of a `report.txt` (`Input/rf_module.kicad_pcb` in simulation mode, with
+`Geometry.CIRCLE_CHORD_TOLERANCE_MM = 0.002`, the default until 0.005, as for the other example below;
+`...` where lines are left out):
 
 ```text
 Verifier: PASS
@@ -274,7 +275,9 @@ or a new one appeared, or (when OCP, `cadquery-ocp`, is installed) when the STEP
 a free edge, checked by reading it back with OCP. In visual mode the "volume" is the signed volume
 of an open surface: it means nothing on its own, but it moves when the skin does.
 
-Reading a STEP file back takes longer than writing it. The suite reads it as written, without
+Reading a STEP file back takes longer than writing it (the sizes and times in this section were
+measured with `Geometry.CIRCLE_CHORD_TOLERANCE_MM = 0.002`, the default until 0.005).
+The suite reads it as written, without
 OpenCascade's shape healing, which takes most of the reading time and would mend a fault rather than
 report it. Before the check it works out only what any reader must work out for itself: the curve of
 each edge in the parameters of each of its faces (KESE writes none, as KiCad does not), and on a

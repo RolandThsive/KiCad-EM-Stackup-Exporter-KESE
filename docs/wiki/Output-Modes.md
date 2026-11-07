@@ -100,7 +100,7 @@ Differences from simulation mode:
 | openEMS, Elmer, CalculiX, any FEA or thermal solver | simulation |
 | Mechanical CAD, checking the stack-up in a CAD viewer | simulation (STEP) |
 | A web page, a product render, a Blender scene | visual |
-| Smallest GLB of a dense board | visual (9.1 MB against 30.2 MB in simulation mode for the PCIe card example) |
+| Smallest GLB of a dense board | visual (9.1 MB against 30.2 MB in simulation mode for the PCIe card example, measured with `Geometry.CIRCLE_CHORD_TOLERANCE_MM = 0.002`) |
 
 The `viewer` preset (`--for viewer`) selects visual mode, GLB, metres and a centred origin in one
 go. See [Choosing An Export](Choosing-An-Export.md).

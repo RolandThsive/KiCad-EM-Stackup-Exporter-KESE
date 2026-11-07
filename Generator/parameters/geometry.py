@@ -17,7 +17,7 @@ SLIVER_AREA_MM2 = 1e-10
 
 # Circles and arcs
 ARC_STEP_DEG = 3.0                      # max angle per segment when flattening arcs
-CIRCLE_CHORD_TOLERANCE_MM = 0.002       # max deviation of a flattened circle from the true one
+CIRCLE_CHORD_TOLERANCE_MM = 0.005       # max deviation of a flattened circle from the true one (KiCad: ARC_HIGH_DEF_MM)
 CIRCLE_MIN_QUAD_SEGS = 8                # at least this many segments per quarter circle
 CIRCLE_MAX_QUAD_SEGS = 128
 TRACK_END_MIN_QUAD_SEGS = 4             # roundness of track ends
