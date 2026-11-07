@@ -1,0 +1,64 @@
+# Changes to the web tool
+
+The newest first. Each entry is one pull request into `WebUI`; the footer's build stamp names the commit that is live.
+
+## Hardening: backup copy, security, privacy, accessibility, tests (November 2026)
+
+**Where Python and three.js come from**
+- Still jsDelivr first, pinned to exact versions. If jsDelivr refuses, says nothing for 15 s, or serves a three.js
+  file that differs from the build's, the page uses a backup copy on this site (`vendor/`). `build_site.py`
+  downloads it and checks every file against the SHA-256 in `vendor.json`; one changed file stops the build.
+- The browser checks every three.js file against the import map's `integrity` hash.
+- The footer's build stamp says which source served Python and three.js.
+
+**Security**
+- Content-Security-Policy:
+  - Scripts only from this site, the pinned three.js folder and the two import maps (by hash).
+  - No inline script, no `eval`, no plug-ins; `<base>` and forms only to this site.
+  - The privacy and licences pages allow even less.
+- Referrer policy `strict-origin-when-cross-origin`.
+- `?pyodide=` is only taken from this site.
+- Size limits, checked before a file is read:
+  - boards up to 500 MB;
+  - parameter files up to 20 MB;
+  - a zip member up to 5 MB unpacked, so a zip bomb is refused.
+- Every action in the workflows is pinned to a commit; the web tool's workflows keep no token after checkout.
+- Dependabot proposes updates for the actions and the test tools.
+
+**Privacy**
+- The fonts are served from this site, so the page makes no request to Google Fonts.
+- A privacy page and a licences page (with the licence texts) are linked from the footer.
+
+**When something goes wrong**
+- Without WebGL (some Firefox set-ups) the page used to stop at "Loading Python". Now Generate and the downloads work,
+  and the preview says why it is off.
+- An unexpected error opens a dialog with the details to copy or report. Errors from browser extensions and other
+  sites are ignored.
+- **Report a Problem** in the footer opens a GitHub issue filled in with the build, the browser and the changed
+  settings. The board and its name are never included.
+
+**Accessibility (WCAG 2.2 AA, see docs/WCAG-EM.md)**
+- Contrast of the grey text.
+- Names for every input, table cell and the 3D canvas.
+- Scrollable boxes take the focus.
+- Parts rows are 24 px high, and their buttons say whether the part shows.
+- One column at 400 % zoom (320 px).
+- The layout holds with wider text spacing.
+- Tips open on keyboard focus, close with Escape, and the pointer can move onto them.
+- Status messages reach screen readers.
+
+**Tests and documents**
+- Browser tests in Chromium, Firefox and WebKit on every pull request (`tests/`):
+  - every feature board;
+  - 13 window sizes and the blog's frame;
+  - keyboard, wrong and oversized files;
+  - the CDN refused, silent or tampered;
+  - the CSP;
+  - accessibility scans, screenshots;
+  - speed budgets and Lighthouse.
+- After each deploy, a smoke test makes a board on the published page.
+- New documents:
+  - `README.md`: supported browsers, how the page is put together, releasing and rolling back.
+  - `docs/ASVS-L1.md`: the OWASP ASVS level 1 checklist.
+  - `docs/WCAG-EM.md`: the accessibility review.
+  - `tests/README.md`: how to run the tests.

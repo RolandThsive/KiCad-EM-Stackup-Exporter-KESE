@@ -4,6 +4,8 @@
   "pyodide": "https://cdn.jsdelivr.net/pyodide/v314.0.7/full/",
   "three": "https://cdn.jsdelivr.net/npm/three@0.183.2/",
   "pyodidePackages": ["numpy", "shapely"],
+  "_cdnWait": "How long the page waits for jsDelivr (Pyodide, three.js) before it uses the copy on this site (WebUI/vendor/, made by build_site.py from vendor.json). After changing pyodide, three or pyodidePackages, run tools/vendor_lock.py.",
+  "cdnWaitSeconds": 15,
 
   "fontLastCodepoint": 11903,
 

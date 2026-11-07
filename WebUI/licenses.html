@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'self'; font-src 'self'; img-src 'self'; base-uri 'none'; form-action 'none'">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="The open-source parts the KiCad EM Stackup Exporter web tool is made of (Pyodide, NumPy, Shapely, three.js, fonts) and their licences.">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<title>Licences · KiCad EM Stackup Exporter</title>
+<link rel="icon" href="favicon.ico">
+<link rel="stylesheet" href="WebUI.css">
+</head>
+<body>
+<main class="doc">
+  <p class="doc-back"><a href="./">Back to the exporter</a></p>
+  <h1 class="marker">Licences</h1>
+  <p>The KiCad EM Stackup Exporter web tool is free software under the
+    <a href="https://github.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/blob/main/LICENSE">GNU General Public License, version 3 or later</a>.
+    Its source, this page included, is on <a href="https://github.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE">GitHub</a>; the
+    generator contains material derived from KiCad, listed in
+    <a href="https://github.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/blob/main/NOTICE.md">NOTICE.md</a>.</p>
+  <p>It is built on these open-source parts. Each licence text is linked; the copies below are the ones shipped with the
+    exact versions the page uses (the same files are on jsDelivr and in this site's backup copy).</p>
+
+  <table class="doc-table">
+    <thead><tr><th>Part</th><th>Version</th><th>What it does here</th><th>Licence</th></tr></thead>
+    <tbody>
+      <tr><td><a href="https://pyodide.org">Pyodide</a></td><td>314.0.7</td><td>Runs Python, and so the generator, in your browser</td><td><a href="licenses/Pyodide-MPL-2.0.txt">MPL-2.0</a></td></tr>
+      <tr><td><a href="https://www.python.org">CPython</a> (inside Pyodide)</td><td>3.14</td><td>The Python language and standard library</td><td><a href="licenses/CPython-PSF-2.0.txt">PSF-2.0</a></td></tr>
+      <tr><td><a href="https://numpy.org">NumPy</a></td><td>2.4.6</td><td>Numbers and arrays for the generator</td><td><a href="licenses/numpy-BSD-3-Clause.txt">BSD-3-Clause</a></td></tr>
+      <tr><td><a href="https://github.com/shapely/shapely">Shapely</a></td><td>2.1.2</td><td>Polygon geometry for the generator</td><td><a href="licenses/shapely-BSD-3-Clause.txt">BSD-3-Clause</a></td></tr>
+      <tr><td><a href="https://libgeos.org">GEOS</a> (inside the Shapely package)</td><td>as built by Pyodide</td><td>The geometry engine under Shapely; its source is at <a href="https://github.com/libgeos/geos">github.com/libgeos/geos</a></td><td><a href="licenses/GEOS-LGPL-2.1.txt">LGPL-2.1</a></td></tr>
+      <tr><td><a href="https://threejs.org">three.js</a></td><td>0.183.2</td><td>The 3D preview and its file loaders</td><td><a href="licenses/three.js-MIT.txt">MIT</a></td></tr>
+      <tr><td><a href="https://github.com/mapbox/earcut">earcut</a></td><td>3.0.1</td><td>Triangulation (STEP preview, cross-section, generator)</td><td><a href="licenses/earcut-ISC.txt">ISC</a></td></tr>
+      <tr><td><a href="https://github.com/google/model-viewer">model-viewer</a> (its lighting, in mvEnvironment.js and NeutralEnvironment.js)</td><td>4.4.0</td><td>The preview's light, the same as the project's model pages</td><td><a href="licenses/Apache-2.0.txt">Apache-2.0</a></td></tr>
+      <tr><td>Permanent Marker font (Font Diner)</td><td>Google Fonts</td><td>The title</td><td><a href="licenses/Apache-2.0.txt">Apache-2.0</a></td></tr>
+      <tr><td>Pacifico font (The Pacifico Project Authors)</td><td>Google Fonts</td><td>Headings</td><td><a href="licenses/font-Pacifico-OFL-1.1.txt">OFL-1.1</a></td></tr>
+      <tr><td>Shadows Into Light font (Kimberly Geswein)</td><td>Google Fonts</td><td>Captions</td><td><a href="licenses/font-ShadowsIntoLight-OFL-1.1.txt">OFL-1.1</a></td></tr>
+    </tbody>
+  </table>
+  <p class="hint">The fonts are served from this site, not from Google. NumPy also carries the licences of the code it
+    bundles, inside its package (numpy-2.4.6.dist-info/licenses/); all are permissive.</p>
+</main>
+</body>
+</html>

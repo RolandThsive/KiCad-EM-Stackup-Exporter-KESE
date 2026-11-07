@@ -459,6 +459,9 @@ def export_zip(values_json, zip_path):
     return json.dumps({"zip": zip_path})
 
 
+MAX_PARAMETER_FILE = 5 * 1024 * 1024
+
+
 def read_zip(zip_path):
     """Values in a zip: the Export zip (parameters/*.py) or a run's download (its parameters.txt)."""
     found, ignored = {}, []
@@ -467,6 +470,8 @@ def read_zip(zip_path):
             base = os.path.basename(info.filename)
             if info.is_dir() or not (base.endswith(".py") or base == "parameters.txt"):
                 continue
+            if info.file_size > MAX_PARAMETER_FILE:            # a parameter file is a few KB: not a zip bomb's member
+                raise ValueError(f"{info.filename} is {info.file_size / 1048576:.0f} MB unpacked, too big for a parameter file")
             r = json.loads(read_values(z.read(info).decode("utf-8", "replace"), base))
             found.update(r["values"])
             ignored += [k for k in r["ignored"] if k not in ignored]

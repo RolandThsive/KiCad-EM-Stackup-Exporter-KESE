@@ -10,6 +10,11 @@
      readValues {text, fileName}                 ->  {values, ignored}
      readZip    {bytes}                          ->  {values, ignored}   (the parameter files or parameters.txt inside)
 
+   While init loads, it also sends {type: "stage", stage: "runtime-js"} once Pyodide's first file (pyodide.mjs) has
+   arrived: the page waits that long (15 s) for jsDelivr before it starts a new worker on the site's backup copy.  An
+   init error carries phase "runtime" when it happened while Pyodide or its packages loaded (the CDN's part), so the
+   page knows the backup copy may help.
+
    On start it loads Pyodide with numpy and shapely, fetches generator.zip (Generator/kese and Generator/parameters
    of this branch, packed by build_site.py) and unpacks it into the in-memory file system.  version.json carries a
    hash of the zip, so the browser downloads the zip again only when it changed.
@@ -49,9 +54,13 @@ async function init({ pyodideBase, packages, config }) {
   try {
     progress("Loading Python (Pyodide)…");
     const { loadPyodide } = await import(pyodideBase + "pyodide.mjs");   // Pyodide 314 runs in module workers only
+    postMessage({ type: "stage", stage: "runtime-js" });
     pyodide = await loadPyodide({ indexURL: pyodideBase });
     progress(`Loading ${packages.join(" and ")}…`);
-    await pyodide.loadPackage(packages);
+    const failed = [];                     // loadPackage reports a missing or altered wheel here instead of throwing
+    await pyodide.loadPackage(packages, { messageCallback: () => {}, errorCallback: (m) => failed.push(m) });
+    const missing = packages.filter((p) => !(p in pyodide.loadedPackages));
+    if (missing.length) throw new Error(`${missing.join(" and ")} did not load${failed.length ? ": " + failed.join("; ") : ""}`);
     progress("Fetching the generator…");
     const version = JSON.parse(new TextDecoder().decode(await fetchBytes(here("version.json"), "no-cache")));
     const [zip, wg, shim] = await Promise.all([
@@ -70,8 +79,10 @@ async function init({ pyodideBase, packages, config }) {
     const description = JSON.parse(WG.describe());
     return { description, version, seconds: (performance.now() - t0) / 1000 };
   } catch (e) {
-    const early = /^Loading/.test(step) ? ` from ${pyodideBase}` : "";
-    throw new Error(`${e && e.message || e} [${step.replace("…", "")}${early}]`);
+    const early = /^Loading/.test(step);
+    const err = new Error(`${e && e.message || e} [${step.replace("…", "")}${early ? ` from ${pyodideBase}` : ""}]`);
+    err.phase = early ? "runtime" : "generator";
+    throw err;
   }
 }
 
@@ -168,6 +179,6 @@ onmessage = async (ev) => {
     else throw new Error("unknown command " + cmd);
     postMessage({ id, ok: true, result }, transfer);
   } catch (e) {
-    postMessage({ id, ok: false, error: String(e && e.message || e) });
+    postMessage({ id, ok: false, error: String(e && e.message || e), phase: e && e.phase });
   }
 };
