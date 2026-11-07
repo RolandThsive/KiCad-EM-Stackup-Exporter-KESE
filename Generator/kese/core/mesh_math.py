@@ -3,7 +3,6 @@ transforms and shared edges, written in trimesh 4/5's order of operations, bit f
 import numpy as np
 
 ZERO = float(np.finfo(np.float64).resolution * 100)    # a length below this is no length
-ONES = [1.0, 1.0, 1.0]
 
 
 def unitize(vectors, check_valid=False):

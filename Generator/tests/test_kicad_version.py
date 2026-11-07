@@ -78,6 +78,19 @@ def test_old_overbar_notation():
     assert kv.overbar_markup("~RESET~", k6) == "~RESET~"
 
 
+def test_net_class_vias_of_kicad_4_and_5():
+    """A KiCad 4/5 via that gives no drill (or size) takes its net's class's: the classes' net names
+    read as KiCad shows them (the old overbar notation turned into the new), the setup's sizes for a
+    class that gives none, and Default for a net in no class."""
+    k4 = board('(version 4) (setup (via_size 0.8) (via_drill 0.4)) '
+               '(net_class Default "" (via_dia 0.9652) (via_drill 0.6096) (add_net GND) (add_net "Net-(U1-Pad2)")) '
+               '(net_class Power "" (via_drill 0.5) (add_net ~RESET~) (add_net +5V))')
+    default, classes = kv.net_class_vias(k4, kv.dialect(k4))
+    assert default == (0.9652, 0.6096, kv.KICAD_DEFAULT_VIA[2], kv.KICAD_DEFAULT_VIA[3])
+    assert classes["GND"] == classes["Net-(U1-Pad2)"] == default
+    assert classes["~{RESET}"] == classes["+5V"] == (0.8, 0.5, kv.KICAD_DEFAULT_VIA[2], kv.KICAD_DEFAULT_VIA[3])
+
+
 def test_markup_runs():
     assert markup.parse("RESET") == ([("RESET", ())], [])
     assert markup.parse("A~{B}C") == ([("A", ()), ("B", ("~",)), ("C", ())], [(1, 2)])

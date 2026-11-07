@@ -6,35 +6,30 @@ import subprocess
 
 import numpy as np
 
+from kese.core.part_checks import mesh_check
 from kese.s8_verify.overlap import overlaps
 from kese.s8_verify.vertical_rays import vertical_hits
 from parameters import P
 
 
-def verify(model, glb_path=None, rays=None):
+def check_meshes(model, glb_path):
     """(ok, report lines) of the checks below."""
-    rays = rays or P.Run.VERIFY_RAYS
     lines = []
     meshes = model.meshes
     scale = 1000.0 if model.units == "m" else 1.0      # report in mm
-    # merge vertices at the geometry snap grid (Geometry.SNAP_GRID_MM), whatever the units
-    digits = int(round(-np.log10(P.Geometry.SNAP_GRID_MM / scale))) + 2
     ok = True
     if model.mode == "simulation":
-        for part, g in meshes.items():
-            m = g.copy()
-            m.merge_vertices(digits_vertex=digits)
-            closed, consistent = m.is_watertight, m.is_winding_consistent
-            vol = m.volume * scale ** 3
-            lines.append(f"  {part:36s} closed={closed} winding={consistent} volume={vol:.4f} mm3")
-            ok &= closed and consistent
+        for part, g in meshes.items():                  # checked where the part was built, or here
+            c = (model.checks.get(part) or (None,))[0] or mesh_check(g, model.units)
+            lines.append(f"  {part:36s} closed={c.closed} winding={c.consistent} volume={c.merged_volume * scale ** 3:.4f} mm3")
+            ok &= c.closed and c.consistent
         found = overlaps(model)
         lines.append("  overlap between different parts, every slice against the others: " + (
             f"worst {found[0][0]:.3e} mm3, {found[0][1]} and {found[0][2]} at z {found[0][3]:+.4f} .. "
             f"{found[0][4]:+.4f} mm ({len(found)} place{'s' * (len(found) > 1)})" if found else "none"))
         ok &= not found
     else:
-        met, wrong = _skin_surfaces(meshes, rays)
+        met, wrong = _skin_surfaces(meshes, P.Verifier.VERIFY_RAYS, model.transform)
         lines.append(f"  visible surfaces per vertical ray: faces met {met}; rays where in and out do not alternate: {wrong}")
         ok &= wrong == 0
     if glb_path is not None:
@@ -48,24 +43,22 @@ def verify(model, glb_path=None, rays=None):
     return ok, lines
 
 
-def _rays(meshes, n):
-    corners = np.array([m.bounds for m in meshes.values()])
-    b = np.array([corners[:, 0].min(axis=0), corners[:, 1].max(axis=0)])
-    rng = np.random.default_rng(1)
-    pts = rng.uniform(b[0][:2], b[1][:2], size=(n, 2))
-    return pts
-
-
-def _skin_surfaces(meshes, n):
+def _skin_surfaces(meshes, n, transform):
     """({faces met: rays}, rays whose faces, from the top down, do not take turns into the material
-    and out of it, as a closed outer surface does)."""
-    xy = _rays(meshes, n)
+    and out of it, as a closed outer surface does).  The n rays start at random points (fixed seed)
+    over the bounding box of every mesh and run along the board's normal, in either orientation: the
+    meshes are turned back by the quarter turns of `transform` (the output transform), exactly."""
     vs, fs, at = [], [], 0
     for m in meshes.values():
         vs.append(np.asarray(m.vertices, dtype=float))
         fs.append(np.asarray(m.faces) + at)
         at += len(vs[-1])
-    V, F = np.concatenate(vs), np.concatenate(fs)
+    M = np.asarray(transform, dtype=float)[:3, :3]
+    turn = np.round(M / np.abs(M).max())                    # the orientation alone, without the units
+    V, F = np.concatenate(vs) @ turn, np.concatenate(fs)
+    used = V[np.unique(F)]
+    lo, hi = used.min(axis=0), used.max(axis=0)
+    xy = np.random.default_rng(1).uniform(lo[:2], hi[:2], size=(n, 2))
     t = V[F]
     normal = np.cross(t[:, 1] - t[:, 0], t[:, 2] - t[:, 0])
     nz = normal[:, 2] / np.maximum(np.linalg.norm(normal, axis=1), 1e-300)

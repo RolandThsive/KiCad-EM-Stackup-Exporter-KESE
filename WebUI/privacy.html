@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'self'; font-src 'self'; img-src 'self'; base-uri 'none'; form-action 'none'">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="What the KiCad EM Stackup Exporter web tool does with your data: your board stays in your browser; which servers the page talks to and why.">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<title>Privacy · KiCad EM Stackup Exporter</title>
+<link rel="icon" href="favicon.ico">
+<link rel="stylesheet" href="WebUI.css">
+</head>
+<body>
+<main class="doc">
+  <p class="doc-back"><a href="./">Back to the exporter</a></p>
+  <h1 class="marker">Privacy</h1>
+  <p><b>In short: your board never leaves your computer.</b> The exporter runs entirely in your browser. There are no
+    accounts, no cookies, no analytics and no tracking, and nothing you load or make is sent to the project.</p>
+
+  <h2 class="pacifico">Your Board and Your Files</h2>
+  <ul>
+    <li>The <code>.kicad_pcb</code> you choose is read by your browser and processed there, by Python running inside the
+      page. It is not uploaded anywhere.</li>
+    <li>While the tab is open, the files of the last run are kept in your browser's private storage on your own disk
+      (the Origin Private File System), so big models do not fill the memory. They are deleted when you close or reload
+      the tab (after a browser crash, on your next visit), and whenever you start a new run.</li>
+    <li>Parameter files you import are read in the browser the same way.</li>
+  </ul>
+
+  <h2 class="pacifico">What the Browser Downloads, and From Whom</h2>
+  <p>Like any website, the servers that deliver the page receive your IP address and the usual request details
+    (browser, time, the file asked for). The page itself sends them nothing else.</p>
+  <ul>
+    <li><b>GitHub Pages</b> hosts the page. GitHub says that when a Pages site is visited, the visitor's IP address is
+      logged and stored for security purposes. See
+      <a href="https://docs.github.com/en/pages/getting-started-with-github-pages/about-github-pages#data-collection">GitHub Pages: data collection</a>
+      and the <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement">GitHub General Privacy Statement</a>.</li>
+    <li><b>jsDelivr</b> (cdn.jsdelivr.net), a public open-source CDN, delivers Python (Pyodide) and the 3D viewer
+      (three.js), pinned to exact versions. If jsDelivr does not answer, the page uses an identical copy on GitHub Pages
+      instead. See <a href="https://www.jsdelivr.com/terms/privacy-policy-jsdelivr-net">jsDelivr's privacy policy</a>.</li>
+    <li>The fonts are served from this site: no request goes to Google Fonts.</li>
+  </ul>
+
+  <h2 class="pacifico">Storage in Your Browser</h2>
+  <p>Besides the run's files above, the page may set one session flag (<code>kese-three-backup</code>) when it had to
+    switch to the backup copy, so a reload does not try jsDelivr again; it is gone when the tab closes. Your browser's
+    normal cache keeps the downloaded files, so the next visit is faster. None of this is used to identify or follow you,
+    and all of it is needed for the page to work.</p>
+
+  <h2 class="pacifico">Report a Problem</h2>
+  <p>The page's <em>Report a Problem</em> link opens a new GitHub issue filled in with the page's build, your browser,
+    the window size and the settings you changed. It never includes your board or its name. Nothing is sent until you
+    read it and press GitHub's own submit button, and you can edit or delete any of it first. Issues on GitHub are
+    public and follow GitHub's privacy statement.</p>
+
+  <h2 class="pacifico">In the Blog</h2>
+  <p>When you use the exporter inside the blog (ro-h-bots.blogspot.com), the blog page around it is served by Blogger,
+    a Google service, under the <a href="https://policies.google.com/privacy">Google Privacy Policy</a>. The exporter in
+    its frame works exactly as described here.</p>
+
+  <h2 class="pacifico">Questions</h2>
+  <p>Open an issue on the project's <a href="https://github.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/issues">GitHub page</a>.</p>
+</main>
+</body>
+</html>

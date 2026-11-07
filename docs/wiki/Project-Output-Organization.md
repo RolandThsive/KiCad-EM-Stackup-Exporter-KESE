@@ -1,6 +1,6 @@
-# 19. Project Output Organization
+# 20. Project Output Organization
 
-## 19.1 The Repository
+## 20.1 The Repository
 
 ```text
 KiCad-EM-Stackup-Exporter-KESE/
@@ -10,13 +10,15 @@ KiCad-EM-Stackup-Exporter-KESE/
 │   ├── pyproject.toml           for pip install -e . (the kese command), unpinned
 │   ├── README.md                what is in this folder, and the first commands
 │   ├── parameters/              every setting, one file per subject (the only files you edit)
-│   │   └── run.py, board.py, copper.py, solder_mask.py, silkscreen.py, finish.py, geometry.py, color.py
+│   │   └── run.py, board.py, copper.py, solder_mask.py, silkscreen.py, finish.py, geometry.py, color.py, parallel.py, step.py, verifier.py, presets.py
 │   ├── kese/                    the program
 │   │   ├── pipeline.py          runs the nine stages in order
 │   │   ├── cli.py, job.py, progress.py   command-line options, one run's request, the live status line
 │   │   ├── core/                shared tools: s-expression parser, 2D maths and shapes, the
 │   │   │                        boundary of a stack of prisms and its mesh, triangulation,
-│   │   │                        shared vertices, extrusion, stroke font, safe file names
+│   │   │                        shared vertices, extrusion, work in threads and processes,
+│   │   │                        the copies of shapes they use and the memory they hand back,
+│   │   │                        stroke font, safe file names
 │   │   ├── model/               the data handed from stage to stage: RawBoard, Items, Stackup,
 │   │   │                        Regions, PrismSet, Model, Files
 │   │   ├── s1_read/             the file, parsed and checked
@@ -30,7 +32,8 @@ KiCad-EM-Stackup-Exporter-KESE/
 │   │   ├── s9_report/           report.txt and parameters.txt
 │   │   └── assets/fonts/        kicad_newstroke.json.gz and its notice; custom fonts go here
 │   ├── Input/                   boards to export (three examples included)
-│   ├── Output/                  one folder per board and run (ignored by git except .gitkeep)
+│   ├── Output/                  one folder per board and run (ignored by git, except .gitkeep and
+│   │                            four example runs of rf_module in Output/rf_module/)
 │   ├── tests/                   regression suite, layout rules, test boards, baseline.json
 │   └── tools/                   make_swatches.py: the colour boxes of docs/ColorSwatches/
 ├── docs/wiki/, docs/images/     this wiki, and its pictures
@@ -46,7 +49,7 @@ Everything KESE is made of is in `Generator/`; the root holds what belongs to th
 The paths on every other page of this wiki, such as `parameters/` or `kese/s2_collect/`, are
 inside `Generator/`.
 
-## 19.2 Run Folders
+## 20.2 Run Folders
 
 Every run writes to:
 
@@ -57,30 +60,43 @@ Every run writes to:
 - `<mode>` is `simulation` or `visual`.
 - `<FORMATS>` are the requested formats, in upper case, joined by `_`, in the order given by
   `--format` or `Run.FILE_FORMAT` (not sorted; a format given twice appears twice):
-  `--format glb stl obj` gives `simulation_GLB_STL_OBJ`, `--for cst` gives `simulation_STEP_STL`.
+  `--format glb stl obj` gives `simulation_GLB_STL_OBJ`, `--format step stl` gives `simulation_STEP_STL`.
 
 **No run overwrites another.** When the folder already exists, the new one gets a suffix:
-`simulation_GLB__1`, `simulation_GLB__2`, ... The terminal line at the end of every board names
-the folder that was written.
+`simulation_GLB__1`, `simulation_GLB__2`, ... Runs started together (a batch of boards in
+parallel, into the same output root) each get a folder of their own: a name is taken by making the
+folder, so the second run moves on to the next name. The terminal line at the end of every board
+names the folder that was written.
 
-### 19.2.1 Files In A Run Folder
+### 20.2.1 Files In A Run Folder
 
 | File | Written when | Content |
 |---|---|---|
 | `<board>.glb` | `glb` requested | binary glTF 2.0; one node and one mesh per part, named after the part; PBR materials; no glTF extensions |
 | `<board>.obj` + `<board>.mtl` | `obj` requested | one `o <name>` object per part with vertices, normals and faces; the `.mtl` has one material per part (`Kd`, `d`); object and material names are sanitised as for STL (`Top_Solder_Mask`) |
 | `stl/<name>.stl` | `stl` requested | one binary STL per part, in a `stl/` sub-folder; the name is the part name with every run of characters other than `A-Z a-z 0-9 _ . + -` replaced by `_`, and leading or trailing `_` removed (`Top_Solder_Mask.stl`, `Board_dielectric_1.stl`, `Copper__RESET.stl` for net `~{RESET}`) |
-| `<board>.step` | `step` requested (simulation mode) | STEP AP214 assembly named after the board, one named shape per part, with colours: the part's closed solids, one per separate body, in `Run.UNITS`. The parts are the ones switched on (`BOARD_ENABLED`, `COPPER_ENABLED`, `FINISH_ENABLED`, `SOLDER_MASK_ENABLED`, `SILKSCREEN_ENABLED`), as in every other file. It is written straight into the file one part at a time and removed when the export fails |
+| `<board>.step` | `step` requested (simulation mode) | STEP AP214 assembly named after the board, one named shape per part, with colours: the part's closed solids, one per separate body, in `Run.UNITS`. The parts are the ones switched on (`BOARD_ENABLED`, `COPPER_ENABLED`, `FINISH_ENABLED`, `SOLDER_MASK_ENABLED`, `SILKSCREEN_ENABLED`), as in every other file. It is written straight into the file one part at a time |
 | `materials.json` | `Run.WRITE_MATERIALS_JSON` | per part: role, layer, net, z range, properties, look, file names ([Material Properties](Material-Properties.md)) |
 | `parameters.txt` | always | every parameter of every `parameters/` file as it stood for the run; when `--for`, `--set`, `--mode`, `--format` or `--verify` was used, the first line lists those overrides (`--out` is not recorded) |
 | `report.txt` | always | see below |
 
-### 19.2.2 `report.txt`
+A file is written whole or not at all: when writing fails on the way (a full disk, or a part that
+cannot be written), the file being written is removed, an OBJ with its MTL, and the run folder too
+when nothing in it was written whole (and the board's folder, when it holds no other run). The
+error that comes out is the one that stopped the write, even when a file or folder cannot be
+removed after it (that one is left)
+([Checks, Errors And Warnings](Checks-Errors-And-Warnings.md#1811-errors)). While a big board's
+STEP file is written in worker processes, its parts are first written into a hidden folder beside
+it, `.<board>.step.parts` (`<board>.step` cut to its first 40 characters), which is removed once
+the file is done or the write fails
+([Working Principle](Working-Principle.md#74-work-done-in-parallel)).
+
+### 20.2.2 `report.txt`
 
 ```text
-rf_module  (rf_module.kicad_pcb)   generated 2026-10-29 00:19
+rf_module  (rf_module.kicad_pcb)   generated 2026-11-06 09:17
 mode: simulation   formats: glb, stl, obj   units: m
-KiCad format 20221018, generator pcbnew
+KiCad format 20221018 (KiCad 7), generator pcbnew
 
 stack-up
   copper layers: F.Cu, In1.Cu, In2.Cu, B.Cu
@@ -134,27 +150,32 @@ skipped
 notes
   font: KiCad newstroke (kicad_newstroke.json.gz)
   solder mask: 0.01 mm over laminate, 0.01 mm over copper (stackup)
+  finish: ENIG Nickel 0.005 mm + Gold 8e-05 mm
+  finish: also on the plated edge (Gold 8e-05 mm drawn 0.0001 mm thick across the edge, the snapping grid)
+  ...
 
 parts
-  Board_dielectric 1                      53968 triangles  material Board_prepreg #A89C66 alpha 1.0
+  Board_dielectric 1                      53960 triangles  material Board_prepreg #A89C66 alpha 1.0
   Board_dielectric 2                      43812 triangles  material Board_core #968A58 alpha 1.0
-  Board_dielectric 3                      88672 triangles  material Board_prepreg #A89C66 alpha 1.0
-  Copper_+3V3                             40404 triangles  material Copper #CD803E alpha 1.0
+  Board_dielectric 3                      88468 triangles  material Board_prepreg #A89C66 alpha 1.0
+  Copper_+3V3                             40400 triangles  material Copper #CD803E alpha 1.0
   ...
-  Top Solder Mask                        154878 triangles  material Top Solder Mask #14328C alpha 0.8
-  Bottom Solder Mask                      74936 triangles  material Bottom Solder Mask #14328C alpha 0.8
-  Top Silkscreen                          40454 triangles  material Top Silkscreen #F0F0EC alpha 1.0
+  Top Solder Mask                        154968 triangles  material Top Solder Mask #14328C alpha 0.8
+  Bottom Solder Mask                      75038 triangles  material Bottom Solder Mask #14328C alpha 0.8
+  Top Silkscreen                          40466 triangles  material Top Silkscreen #F0F0EC alpha 1.0
   Bottom Silkscreen                       15824 triangles  material Bottom Silkscreen #F0F0EC alpha 1.0
+  Top Finish Gold                        111594 triangles  material Gold #E6C15A alpha 1.0
+  ...
 
 timing
-  read               0.1 s
-  collect            1.0 s
-  resolve            2.4 s
-  geometry           1.9 s
-  materials          0.0 s
-  assemble          11.9 s
-  write              9.0 s
-  verify             3.7 s
+  read              0.0650 s
+  collect           0.7394 s
+  resolve           1.5491 s
+  geometry          6.9034 s
+  materials         0.0003 s
+  assemble          5.4478 s
+  write            10.0859 s
+  verify            0.5105 s
 
 Verifier: PASS
   ...
@@ -167,15 +188,15 @@ Verifier: PASS
 | `stack-up` | laminate thickness and its source, the z band and foil of every copper layer, every dielectric with type, material, thickness, εr, tanδ and z range, the via tenting source, the pad-to-mask clearance, the silk-over-copper setting, the origin used |
 | `read` | a count of every kind of item read from the file (non-plated holes are counted here even when `Board.INCLUDE_NON_PLATED_HOLES = False` leaves them out) |
 | `skipped` | a count of the items left out, with the reason (hidden text and text on layers that are not drawn are left out without a count) |
-| `notes` | the font, the mask thickness and its source, finish, resin fill, castellation and edge plating notes, warnings raised while building |
+| `notes` | the font, the mask thickness and its source, finish, resin fill, castellation and edge plating notes, warnings raised while building (in the parts' order, however many worker processes ran), and the notes when worker processes failed and fewer processes, or the main process, did the parts left |
 | `parts` | every part with its triangle count, material key, colour and alpha |
-| `timing` | seconds per stage (verify only when the Verifier ran) |
-| Verifier | only with `--verify` or `Run.VERIFY = True`; see [Checks, Errors And Warnings](Checks-Errors-And-Warnings.md) |
+| `timing` | seconds per stage, to 0.1 ms (verify only when the Verifier ran) |
+| Verifier | only with `--verify` or `Verifier.VERIFY = True`; see [Checks, Errors And Warnings](Checks-Errors-And-Warnings.md) |
 
-## 19.3 Part Names
+## 20.3 Part Names
 
 The GLB node, the STEP solid and the `materials.json` key carry the part name exactly. The STL
-file name and the OBJ object and material names carry it sanitised (the rule in section 19.2.1).
+file name and the OBJ object and material names carry it sanitised (the rule in section 20.2.1).
 
 | Role | Names |
 |---|---|
@@ -198,12 +219,16 @@ Two part names that sanitise to the same string (for example nets `/SDA` and `~{
 `VCC(3V3)` and `VCC_3V3`) get a counter on the second, `Copper__SDA_2`, compared without regard to
 case as Windows and macOS file systems do, so no file replaces another.
 
-## 19.4 Tests Output
+## 20.4 Tests Output
 
 `tests/test_boards.py` writes its runs to `tests/out/`, which is deleted at the start of every
-test run and ignored by git. `tests/test_layout.py`, `tests/test_colors.py` and
-`tests/test_kicad_version.py` write nothing, and `tests/test_step_native.py` and
-`tests/test_text_layout.py` write only in a temporary folder that they remove.
+test run and ignored by git. `tests/test_layout.py`, `tests/test_colors.py`,
+`tests/test_kicad_version.py`, `tests/test_enabled.py`, `tests/test_verifier.py`,
+`tests/test_boundary.py`, `tests/test_copper_union.py`, `tests/test_finish_shells.py`,
+`tests/test_mask.py` and `tests/test_pairs.py` write nothing, and
+`tests/test_step_native.py`, `tests/test_step_arcs.py`, `tests/test_text_layout.py`,
+`tests/test_bad_input.py`, `tests/test_parallel.py` and `tests/test_full_disk.py` write only in a
+temporary folder that they remove.
 
 | Previous | Next |
 |:---|---:|

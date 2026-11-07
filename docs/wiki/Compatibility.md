@@ -1,6 +1,6 @@
-# 20. KiCad And Solver Compatibility
+# 21. KiCad And Solver Compatibility
 
-## 20.1 KiCad Files
+## 21.1 KiCad Files
 
 | KiCad | File format number of the release | Status |
 |---|---|---|
@@ -38,7 +38,7 @@ KiCad itself is not needed, only the `.kicad_pcb` file. Footprints are read from
 
 | Board feature | Support |
 |---|---|
-| Copper layers | boards with 2, 4, 6 and 8 declared copper layers are in the repository (one of them single-sided: tracks only on `F.Cu`, and on `B.Cu` only its two through-hole pads); more than 8 are modelled with a warning; `F.Cu` and `B.Cu` must be declared. copper layers are read as KiCad reads them, by their place in the list: the first is `F.Cu`, the last `B.Cu`, and the ones between `In1.Cu`, `In2.Cu`, ... unless already named so; a file whose copper layers the user renamed (`(0 TOP_L1.Sig mixed)`, `(1 GND.Cu power)`) gets a warning that lists the names; a signal-typed `User.n` layer after the copper is not copper |
+| Copper layers | boards with 2, 4, 6 and 8 declared copper layers are in the repository (one of them single-sided: tracks only on `F.Cu`, and on `B.Cu` only its two through-hole pads); more than 8 are modelled with a warning; `F.Cu` and `B.Cu` must be declared. Copper layers are read as KiCad reads them, by their place in the list: the first is `F.Cu`, the last `B.Cu`, and the ones between `In1.Cu`, `In2.Cu`, ... unless already named so; a file whose copper layers the user renamed (`(0 TOP_L1.Sig mixed)`, `(1 GND.Cu power)`) gets a warning that lists the names; a signal-typed `User.n` layer after the copper is not copper |
 | Stack-up from Board Setup | thickness, type, material, εr, tanδ per dielectric; copper thickness per layer; mask thickness; mask and silk colours; copper finish; edge plating and castellated pads flags |
 | Tracks, arc tracks, vias (through, blind, buried, micro) | yes; "remove unused layers" with KiCad 7+'s `zone_layer_connections`, and KiCad 10's `start_end_only`; a track the solder mask leaves bare (KiCad 9 and later) opens the mask over itself, grown by its own mask margin or the board's pad-to-mask clearance |
 | Pads: circle, rect, oval, roundrect, trapezoid, custom | yes; round and oval drills, drill offsets (which move the copper, not the hole), per-pad mask margins; chamfered corners; copper rings on non-plated holes where KiCad flashes them; "remove unused layers" on through-hole pads |
@@ -54,44 +54,45 @@ KiCad itself is not needed, only the `.kicad_pcb` file. Footprints are read from
 | Edge connector flag of Board Setup (`(edge_connector yes)` or `bevelled`) | not read: the fingers are the pads they are, and a bevelled edge stays square |
 | Rigid-flex, multiple stack-up regions | not modelled |
 
-## 20.2 Output Formats
+## 21.2 Output Formats
 
 | Format | What is in it | Units | Written by |
 |---|---|---|---|
 | GLB (binary glTF 2.0) | one mesh per part, PBR materials, vertex normals, bufferView targets | `Run.UNITS` (viewers expect m) | KESE (`kese/s7_write/glb.py`) |
-| STEP AP214 | one named shape per part (every part switched on: by default board, copper and finish): the part's closed solids from stage 6, one per separate body, with circular arcs (`Run.STEP_EXACT_ARCS`, the default) (`CIRCLE`) and cylindrical walls (`CYLINDRICAL_SURFACE`) where the outline is round and planar faces elsewhere, or planar faces only (curves as polygons, as in the meshes) with `STEP_EXACT_ARCS = False` | `Run.UNITS`: the file declares millimetres or metres | KESE (`kese/s7_write/step.py`) |
+| STEP AP214 | one named shape per part (every part switched on: by default board, copper and finish): the part's closed solids from stage 6, one per separate body, with circular arcs (`Step.STEP_EXACT_ARCS`, the default) (`CIRCLE`) and cylindrical walls (`CYLINDRICAL_SURFACE`) where the outline is round and planar faces elsewhere, or planar faces only (curves as polygons, as in the meshes) with `STEP_EXACT_ARCS = False` | `Run.UNITS`: the file declares millimetres or metres | KESE (`kese/s7_write/step.py`) |
 | STL (binary) | one file per part | `Run.UNITS` | KESE (`kese/s7_write/stl.py`) |
 | OBJ + MTL | one object per part, normals, colours | `Run.UNITS` | KESE |
 
 Visual mode writes GLB and OBJ only.
 
-## 20.3 Tools
+## 21.3 Tools
 
 None of these imports has been tried with KESE output yet: the routes follow each tool's
-documented import formats and the presets in `parameters/run.py`, and are to be confirmed.
+documented import formats and the presets in `parameters/presets.py`, and are to be confirmed.
 Research underway.
 
 | Tool | Route | Notes |
 |---|---|---|
-| Ansys HFSS | STEP, mm, KiCad origin (`--for hfss`) | one solid per net and dielectric to assign materials and ports |
-| CST Studio Suite | STEP, plus STL per part (`--for cst`) | |
 | openEMS / CSXCAD | STL per part, mm (`--for openems`) with `materials.json` | [openEMS Workflow](OpenEMS-Workflow.md) |
-| COMSOL, FEKO | STEP, mm | |
-| FreeCAD, Fusion, SolidWorks, Onshape | STEP | vias and round pads are faceted, as in the meshes |
-| Blender | GLB or OBJ (visual mode for renders) | |
+| FreeCAD | STEP, mm, KiCad origin (`--for freecad`) | one solid per net and dielectric, each under its own name, to assign materials; holes and round edges as true circles and cylinders. Its FEM workbench meshes the solids and runs Elmer or CalculiX |
+| Elmer (ElmerFEM) | STEP, mm, KiCad origin, no finish (`--for elmer`), meshed by gmsh | neither ElmerGrid nor ElmerSolver reads STEP or STL: gmsh meshes the solids (`BooleanFragments` for shared faces), `ElmerGrid 14 2` converts the mesh, and `Coordinate Scaling = 0.001` makes mm SI ([Choosing An Export](Choosing-An-Export.md#102-the-presets)) |
+| CalculiX | STEP, mm, KiCad origin, no finish, copper per layer (`--for calculix`) | heat and stress, no electromagnetics; gmsh meshes the solids into an Abaqus `.inp`, or cgx imports the STEP file |
+| gmsh | STEP, mm | meshes the solids for a solver |
+| Blender | GLB (`--for blender_glb`) or OBJ with its `.mtl` (`--for blender_obj`): visual mode, metres, centred, `flat`, solder mask and silkscreen on | the importers turn Y-up into Z-up, so the board lies with `F.Cu` up |
 | `<model-viewer>`, three.js | GLB, m, centred (`--for viewer`) | the visual-mode skin is made to avoid z-fighting ([Output Modes](Output-Modes.md)) |
-| Thermal / FEA tools reading STL (CalculiX, Elmer with a mesher) | STL per part, mm | closed solids per part (a part can hold several separate bodies); mesh them with the tool's own mesher |
+| Other thermal / FEA tools reading STL | STL per part, mm | closed solids per part (a part can hold several separate bodies); mesh them with the tool's own mesher |
 
-## 20.4 Python And Packages
+## 21.4 Python And Packages
 
 | | Version |
 |---|---|
-| Python | 3.12 or later with the pinned versions (`numpy` 2.5.3 requires it); 3.11 with the packages installed unpinned, as `requirements.txt` describes, or through `pyproject.toml` (`requires-python >= 3.11`, not tested); tested on 3.13 |
-| `numpy` 2.5.3, `shapely` 2.2.0, `mapbox_earcut` 2.1.0 | the versions in `requirements.txt` |
-| `cadquery-ocp` 7.9.3.1 or later below 8.0 | optional, for the tests only: they read STEP files back with OpenCascade, and skip that check without it |
+| Python | 3.12 or later with the pinned versions (`numpy` 2.5.3 requires it); 3.11 with the packages installed unpinned, as `requirements.txt` describes, or through `pyproject.toml` (`requires-python >= 3.11`, not tested); tested on 3.12, 3.13 and 3.14 |
+| `numpy` 2.5.3, `shapely` 2.2.0, `mapbox_earcut` 2.1.0 | the versions in `requirements.txt`; shapely 2.1.2 works too, and 2.0 does not (it lacks the constrained Delaunay triangulation; the run says so before it starts). shapely 2.2.0 brings GEOS 3.14.1, whose shapes may not be shared between threads that make shapes from them; KESE's threads each work on their own copies ([Working Principle](Working-Principle.md#74-work-done-in-parallel)). A shapely built on GEOS 3.15 or newer, which counts the shapes atomically, lets the threads share them, and KESE then copies nothing. Tried with shapely 2.2.0 built on GEOS 3.15.0: the suite passes, the files are the same whatever `Parallel.WORKERS`, and threads that crashed GEOS 3.14.1 without copies run without fault. The files are not byte for byte those of GEOS 3.14.1: its overlays no longer turn rings by a vertex, so some faces are cut into other triangles; the solids are the same within the files' single precision |
+| `cadquery-ocp` 7.8.1.1.post1 | optional, for the tests only: they read STEP files back with OpenCascade, and skip that check without it. 7.8 has no wheel for Python 3.14; there use 7.9.3.1.1, with which the STEP tests pass, though it read the file of `16b_edge_plating_border` in about twice the time (125 s against 60 s, the parts added up). 8.0 lacks two classes the check uses (`TopTools_IndexedMapOfShape`, `TopTools_IndexedDataMapOfShapeListOfShape`), so the check is skipped |
 | `gltf_validator` (Khronos, command line) | optional; used by the Verifier when on the PATH |
 
-Operating systems: anything the packages above run on. Tested on Linux.
+Operating systems: anything the packages above run on. Tested on Linux. The worker processes start
+afresh on every system, as Windows and macOS start them; Windows holds at most 61 at once.
 
 | Previous | Next |
 |:---|---:|

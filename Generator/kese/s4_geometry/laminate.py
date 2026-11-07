@@ -21,7 +21,7 @@ def build(r, ps):
     # laminate beside each inner copper layer: resin from the adjacent prepreg (else the dielectric above)
     for k, l in enumerate(st.copper_layers[1:-1], start=1):
         above, below = st.dielectrics[k - 1], st.dielectrics[k]
-        d, i = (below, k) if below.kind == "prepreg" and above.kind != "prepreg" else (above, k - 1)
+        d = below if below.kind == "prepreg" and above.kind != "prepreg" else above
         part = "Board" if merged else f"Board_{d.name}"
         lo, hi = st.band[l]
         props = {"kind": d.kind, "material": d.material, "thickness_mm": round(hi - lo, 6),

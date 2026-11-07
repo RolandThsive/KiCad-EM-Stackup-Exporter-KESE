@@ -1,5 +1,5 @@
 /* stepReader.js - reads the STEP files KESE writes (AP214: faces on PLANE or CYLINDRICAL_SURFACE, edges on
-   LINE or CIRCLE, as Run.STEP_EXACT_ARCS writes them) into triangle meshes: one {name, color, positions} per
+   LINE or CIRCLE, as Step.STEP_EXACT_ARCS writes them) into triangle meshes: one {name, color, positions} per
    solid.  Not a general STEP reader. */
 import earcut from './earcut.js';
 
@@ -25,7 +25,7 @@ export function readKeseStep(text, onProgress = () => {}) {
   // 2. names: PRODUCT <- FORMATION <- PRODUCT_DEFINITION <- PRODUCT_DEFINITION_SHAPE <- SHAPE_DEFINITION_REPRESENTATION -> ADVANCED_BREP_SHAPE_REPRESENTATION -> solid
   //    colours: STYLED_ITEM -> ... -> COLOUR_RGB, keyed by the solid
   const nameOfSolid = new Map(), colorOfSolid = new Map();
-  for (const [id, [type, a]] of ent) {
+  for (const [, [type, a]] of ent) {
     if (type === 'SHAPE_DEFINITION_REPRESENTATION') {
       const [pds, rep] = refs(a);
       const pd = refs(ent.get(pds)[1])[0], form = refs(ent.get(pd)[1])[0], prod = refs(ent.get(form)[1])[0];

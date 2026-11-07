@@ -1,0 +1,126 @@
+# Tests of the web tool on every pull request into WebUI (and by hand: Actions > Run workflow).
+#   generator   the generator's own tests (pytest), the same Python code the browser runs
+#   build       build_site.py: downloads Pyodide and three.js from jsDelivr for the backup copy and checks every file
+#               against WebUI/vendor.json (a changed file fails here).  The built site is kept as the artifact
+#               "site" for 14 days: download it to look at exactly what this pull request would publish.
+#   browsers    the Playwright tests (WebUI/tests) in Chromium, Firefox and WebKit (the engine of Safari), in the
+#               Playwright container whose version matches WebUI/tests/package.json
+#   lighthouse  Lighthouse on the built page: Core Web Vitals and accessibility budgets (WebUI/tests/lighthouserc.json)
+# Every action is pinned to a commit (the tag it was in the comment); Dependabot proposes updates.
+name: Web UI Tests
+
+on:
+  pull_request:
+    branches: [WebUI]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: webui-tests-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  generator:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1   # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0   # v7.1.0
+        with:
+          python-version: "3.13"
+      - name: Install the generator's packages
+        run: python -m pip install -r Generator/requirements.txt pytest
+      # test_kese_stays_in_generator is the main branch's rule that every Python file lives in Generator/; the web
+      # tool's branches carry WebUI/*.py on purpose (the build script, the browser's wrapper and its tools).
+      - name: Run the generator's tests
+        working-directory: Generator
+        run: python -m pytest -q -p no:cacheprovider --deselect tests/test_layout.py::test_kese_stays_in_generator
+
+  build:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1   # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0   # v7.1.0
+        with:
+          python-version: "3.12"
+      - name: Build the site (backup copy from jsDelivr, checked against vendor.json)
+        run: python WebUI/build_site.py _site
+      - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9   # v7.0.2
+        with:
+          name: site
+          path: _site
+          retention-days: 14
+          if-no-files-found: error
+
+  browsers:
+    needs: build
+    runs-on: ubuntu-24.04
+    timeout-minutes: 60
+    container:
+      image: mcr.microsoft.com/playwright:v1.63.0-noble
+      options: --user 1001
+    strategy:
+      fail-fast: false
+      matrix:
+        project: [chromium, firefox, webkit]
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1   # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333   # v8.0.2
+        with:
+          name: site
+          path: WebUI/tests/.site
+      - name: Install the test tools
+        working-directory: WebUI/tests
+        run: npm ci --no-audit --no-fund
+      - name: Run the browser tests (${{ matrix.project }})
+        working-directory: WebUI/tests
+        env:
+          KESE_NETWORK: "1"          # also the tests against the real jsDelivr
+        run: npx playwright test --project=${{ matrix.project }}
+      - if: ${{ !cancelled() }}
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9   # v7.0.2
+        with:
+          name: playwright-report-${{ matrix.project }}
+          path: |
+            WebUI/tests/playwright-report
+            WebUI/tests/test-results
+          retention-days: 14
+          if-no-files-found: ignore
+
+  lighthouse:
+    needs: build
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1   # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333   # v8.0.2
+        with:
+          name: site
+          path: WebUI/tests/.site
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1   # v7.1.0
+        with:
+          node-version: "22"
+      - name: Install the test tools
+        working-directory: WebUI/tests
+        run: npm ci --no-audit --no-fund
+      - name: Lighthouse (desktop) with the budgets of lighthouserc.json
+        working-directory: WebUI/tests
+        run: npx lhci autorun
+      - if: ${{ !cancelled() }}
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9   # v7.0.2
+        with:
+          name: lighthouse
+          path: WebUI/tests/.lighthouseci
+          retention-days: 14
+          if-no-files-found: ignore

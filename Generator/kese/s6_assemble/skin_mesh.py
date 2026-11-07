@@ -14,7 +14,8 @@ from kese.core.boundary_mesh import (
 )
 from kese.core.graph import connected_components
 from kese.core.mesh import Mesh
-from kese.s6_assemble.boundaries import workers_wanted
+from kese.core.memory import give_back_memory
+from kese.core.parallel import workers_wanted
 from parameters import P
 
 
@@ -53,20 +54,22 @@ def meshes_per_part(v, f, owner, parts):
     return out
 
 
-PROBES_AT_A_TIME = 2_000_000     # triangles: their probe points and normals take a quarter of a gigabyte
-
-
 def looks_at_material(v, f, levels, pieces):
     """Which triangles have material just in front of them: a point SKIN_BURIED_TEST_OFFSET_MM out along
-    the normal lies in some part's material.  Slices Run.WORKERS at a time, PROBES_AT_A_TIME probes."""
+    the normal lies in some part's material.  Slices Parallel.WORKERS at a time, Parallel.SKIN_PROBES_AT_A_TIME
+    probes."""
     inside = np.zeros(len(f), dtype=bool)
     with ThreadPoolExecutor(workers_wanted()) as pool:
-        for start in range(0, len(f), PROBES_AT_A_TIME):
-            these = slice(start, start + PROBES_AT_A_TIME)
+        step = P.Parallel.SKIN_PROBES_AT_A_TIME
+        for start in range(0, len(f), step):
+            these = slice(start, start + step)
             probe = probes_of(v, f[these])
             at = np.searchsorted(levels, probe[:, 2], "right") - 1        # the slice each probe's height falls in
             with_material = [k for k in np.unique(at).tolist() if 0 <= k < len(pieces) and not pieces[k][3].is_empty]
             list(pool.map(partial(place_in_slice, pieces, at, probe, inside[these]), with_material))
+    for *_, joined, _ in pieces:
+        shapely.destroy_prepared(joined)        # the indexes place_in_slice built: not needed after this
+    give_back_memory()
     return inside
 
 
@@ -79,7 +82,8 @@ def probes_of(v, f):
 
 
 def place_in_slice(pieces, at, probe, inside, k):
-    """inside[...] = whether each probe that falls in slice k lies in the slice's material."""
+    """inside[...] = whether each probe that falls in slice k lies in the slice's material.  Each
+    thread prepares a slice no other thread is given, kept prepared for the next batch of probes."""
     joined = pieces[k][3]
     shapely.prepare(joined)
     rows = np.flatnonzero(at == k)

@@ -1,4 +1,4 @@
-# 21. openEMS Workflow
+# 22. openEMS Workflow
 
 openEMS is a free FDTD solver; its geometry front end CSXCAD has no STEP reader but imports STL
 files, each into one material. KESE's `openems` preset writes one closed STL per net and per
@@ -9,7 +9,7 @@ dielectric, in mm, on KiCad's origin, with `materials.json` carrying εr, tanδ 
 > API. A full openEMS simulation of a KESE export, compared against a measurement, is planned
 > but has not been done yet. Research underway.
 
-## 21.1 Export
+## 22.1 Export
 
 ```bash
 cd Generator
@@ -45,7 +45,7 @@ Consider before exporting:
   to you, since `materials.json` carries no εr for them.
 - `Finish.FINISH_ENABLED` is off in the preset: 80 nm gold cannot be resolved by an FDTD mesh.
 
-## 21.2 Building The CSXCAD Model
+## 22.2 Building The CSXCAD Model
 
 For each part in `materials.json`, create one property from its `properties` and import the
 STL named in `file_names.stl`. Metals become `AddMetal` (PEC) or a lossy material with
@@ -54,7 +54,7 @@ STL named in `file_names.stl`. Metals become `AddMetal` (PEC) or a lossy materia
 conductivity, which equals the loss tangent at one frequency:
 
 ```math
-\kappa = 2 \pi f_0 \varepsilon_0 \varepsilon_r \tan\delta \qquad (21.1)
+\kappa = 2 \pi f_0 \varepsilon_0 \varepsilon_r \tan\delta \qquad (22.1)
 ```
 
 | Symbol | Meaning | Source |
@@ -120,12 +120,12 @@ Points that matter:
 - **Ports.** Place them in the layout's coordinates: with `ORIGIN = "kicad"` the x of a pad is the
   same as in KiCad, and y is KiCad's y negated.
 
-## 21.3 Octave / MATLAB
+## 22.3 Octave
 
 The same route exists with the Octave interface. Each call returns the updated `CSX`, which
 must be assigned:
 
-```matlab
+```octave
 CSX = AddMetal(CSX, 'Copper_GND');
 CSX = ImportSTL(CSX, 'Copper_GND', 20, 'stl/Copper_GND.stl');
 CSX = AddMaterial(CSX, 'Board_dielectric_1');
@@ -137,7 +137,7 @@ In Octave the STL is read only when openEMS runs, from inside the simulation fol
 `fullfile(pwd, 'Output/board/simulation_STL/stl/Copper_GND.stl')`. Read the property values from
 `materials.json` with `jsondecode`.
 
-## 21.4 Checking The Import
+## 22.4 Checking The Import
 
 - The number of imported STL files should equal the number of parts you kept from
   `materials.json` (a part whose mesh came out empty has an entry but no file).
@@ -148,4 +148,4 @@ In Octave the STL is read only when openEMS runs, from inside the simulation fol
 
 | Previous | Next |
 |:---|---:|
-| [KiCad And Solver Compatibility](Compatibility.md) | [Glossary](Glossary.md) |
+| [KiCad And Solver Compatibility](Compatibility.md) | [Feature Test Collection](Feature-Test-Collection.md) |

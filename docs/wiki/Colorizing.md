@@ -1,10 +1,10 @@
-# 12. Colorizing
+# 13. Colorizing
 
 Colours decide only the look of the GLB and OBJ files (and the colour tag of each STEP solid).
 They never change geometry or the physical properties in `materials.json`. Stage 5, materials
 (`kese/s5_materials/materials.py`), gives every part one material from `parameters/color.py`.
 
-## 12.1 Materials
+## 13.1 Materials
 
 `Color.MATERIALS`: one entry per key, a colour as an sRGB hex string and the glTF PBR values.
 Alpha below 1 writes a glTF `BLEND` material.
@@ -38,7 +38,7 @@ How a part finds its key (`_key()` in `kese/s5_materials/materials.py`):
 
 A key with no entry in `MATERIALS` takes the `Board` entry.
 
-## 12.2 Colours From The Stack-Up
+## 13.2 Colours From The Stack-Up
 
 KiCad's Board Setup gives the mask and silkscreen layers a colour: one of its names (Green, Red,
 Blue, Purple, Black, White, Yellow), written as the name (`(layer "F.Mask" ... (color "Green"))`),
@@ -72,7 +72,7 @@ a named colour. In visual mode the mask over copper takes the colour mixed part 
 white, each channel
 
 ```math
-c' = c + L \cdot (255 - c) \qquad (12.1)
+c' = c + L \cdot (255 - c) \qquad (13.1)
 ```
 
 | Symbol | Meaning |
@@ -87,7 +87,7 @@ With $`L = 0.15`$, `#1B5E20D4` gives <img src="https://raw.githubusercontent.com
 
 ![The same board once for every silkscreen colour: white and yellow silk on black mask, and black, not set, green, red, blue and purple silk on white mask](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/silk_1_colors_simulation.webp)
 
-## 12.3 Mode Differences
+## 13.3 Mode Differences
 
 - **Simulation mode**: the mask is translucent (alpha 0.80) so the copper under it can be seen in
   a viewer. The mask on top of copper is part of the same mask solid and has the same colour.
@@ -98,7 +98,7 @@ With $`L = 0.15`$, `#1B5E20D4` gives <img src="https://raw.githubusercontent.com
 
 ![The mask colour gallery again in a visual-mode GLB: the mask opaque, and the mask on the copper in its lighter colour, so the tracks read through it](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/mask_2_colors_visual.webp)
 
-## 12.4 Where The Colours Go
+## 13.4 Where The Colours Go
 
 | File | How the colour is written |
 |---|---|
@@ -126,7 +126,7 @@ is written as 0.30588, 0.25490, 0.09804 rather than 0.30499, 0.25415, 0.09759. T
 stored in the same 1/255 steps (0.80 stays 0.80; 0.85 would become 0.85098). The OBJ `Kd` line
 carries the sRGB values as they are, `s` above.
 
-## 12.5 Settings
+## 13.5 Settings
 
 | Name | Default | Range | Meaning |
 |---|---|---|---|

@@ -1,0 +1,17 @@
+{
+  "name": "kese-webui-tests",
+  "private": true,
+  "description": "Browser tests of the KESE web tool (Playwright: Chromium, Firefox, WebKit), accessibility scans (axe) and Lighthouse budgets. See README.md.",
+  "type": "module",
+  "scripts": {
+    "build": "python3 ../build_site.py .site",
+    "test": "playwright test",
+    "test:chromium": "playwright test --project=chromium",
+    "lighthouse": "lhci autorun"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "4.14.0",
+    "@lhci/cli": "0.16.0",
+    "@playwright/test": "1.63.0"
+  }
+}

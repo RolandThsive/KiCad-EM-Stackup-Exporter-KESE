@@ -4,6 +4,7 @@
 - [Getting Started](Getting-Started.md)
 - [Project Capabilities](Project-Capabilities.md)
 - [Examples](Examples.md)
+- [Time Distribution](Time-Distribution.md)
 
 **Working Principle**
 - [Working Principle](Working-Principle.md)
@@ -26,6 +27,7 @@
 - [Project Output Organization](Project-Output-Organization.md)
 - [KiCad And Solver Compatibility](Compatibility.md)
 - [openEMS Workflow](OpenEMS-Workflow.md)
+- [Feature Test Collection](Feature-Test-Collection.md)
 
 **Research And Community**
 - [Glossary](Glossary.md)

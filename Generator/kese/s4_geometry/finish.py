@@ -1,9 +1,16 @@
 """Surface finish (ENIG, HASL, ...) on the copper the solder mask leaves bare: the type and its
 layers, and the finish on the faces of the top and bottom copper.  The finish on the walls, in the
-holes, on the plated edge and in the castellations is finish_shells.py."""
+holes, on the plated edge and in the castellations is finish_shells.py (shells.py lays them)."""
 from kese.core import shapes2d as sh
+from kese.core.conformal import grow
 from kese.core.shapes2d import EMPTY
 from parameters import P
+
+
+def mitre():
+    """How the finish follows the copper's corners (Finish.FINISH_MITRE_LIMIT): a shell's outer side
+    (shells.py) and the copper the mask wraps."""
+    return {"join_style": "mitre", "mitre_limit": P.Finish.FINISH_MITRE_LIMIT}
 
 
 def finish_type(st):
@@ -57,20 +64,20 @@ def under_mask_copper(st, cu):
     layers, _ = finish_layers(st)
     if not (under_mask_mm(st) and layers) or cu.is_empty:
         return cu
-    reach = sum(on_grid(t, sh.grid()) for _, t in layers)
-    return sh.snap(cu.buffer(reach, join_style="mitre", mitre_limit=2.0))
+    reach = sum(drawn_thickness(t) for _, t in layers)
+    return grow(cu, reach, **mitre())
 
 
-def exposed(r, side, cu):
+def exposed(r, side, cu, take=lambda g: g):
     """The part of `cu` (copper on side's outer layer) the finish lands on.  Applied before the
     mask (FINISH_BEFORE_SOLDER_MASK) that is all of it; after the mask, only what is in a mask
     opening and not under ink kept in the opening (SILKSCREEN_OVER_COPPER: printed before the
-    finish)."""
+    finish).  take(shape): the board's shapes as used (own, in a thread)."""
     if P.Finish.FINISH_BEFORE_SOLDER_MASK:
         return cu
-    bare = sh.inter(cu, r.mask_open[side])
+    bare = sh.inter(cu, take(r.mask_open[side]))
     if P.Silkscreen.SILKSCREEN_OVER_COPPER:
-        inked = r.silk.get(side, EMPTY)
+        inked = take(r.silk.get(side, EMPTY))
         if not inked.is_empty:
             bare = sh.diff(bare, inked)
     return bare
@@ -110,7 +117,8 @@ def build(r, ps):
                 z += t
 
 
-def on_grid(t, g):
-    """A finish metal's thickness as drawn across a wall, where it is a 2D shape on the snapping grid
-    g: the nearest whole number of grid steps, at least one (a thinner film is drawn one step thick)."""
+def drawn_thickness(t):
+    """A finish metal's thickness as drawn across a wall, where it is a 2D shape on the snapping grid:
+    the nearest whole number of grid steps, at least one (a thinner film is drawn one step thick)."""
+    g = sh.grid()
     return max(1, round(t / g)) * g

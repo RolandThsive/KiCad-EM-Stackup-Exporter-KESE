@@ -2,21 +2,26 @@
 from kese.core.sexp import atoms, child, num, pt
 from kese.core.shapes2d import disk, union
 from kese.model.items import Hole
-from kese.s1_read.parse_kicad_version import (flag, kicad_unescape, net_class_vias, overbar_markup, padstack_entries,
-                                              via_size, via_tenting, zone_layer_connections)
+from kese.s1_read.parse_kicad_version import (flag, net_class_vias, padstack_entries, via_size, via_tenting,
+                                              zone_layer_connections)
 from kese.s2_collect.left_out import count
 from kese.s2_collect.nets import net_name
 from parameters import P
 
+OFF_BOARD = "vias on a copper layer the board does not have"     # a damaged file
+
 
 def add_via(ctx, node):
     items, C = ctx.items, P.Copper
+    ends = [str(l) for l in child(node, "layers")[1:]]
+    if len(ends) >= 2 and not {ends[0], ends[-1]} <= set(ctx.layers):
+        items.skipped[OFF_BOARD] += 1
+        return
     x, y = pt(child(node, "at"))
     size, drill = via_size(node)
     if size is None or drill is None:      # left at its net class's
         dsize, ddrill = net_class_via(items, net_name(items, node), "micro" in atoms(node))
         size, drill = size if size is not None else dsize, drill if drill is not None else ddrill
-    ends = [str(l) for l in child(node, "layers")[1:]]
     span = ctx.span(ends[0], ends[-1]) if len(ends) >= 2 else ctx.layers
     net = net_name(items, node)
     pad = disk((x, y), size / 2)
@@ -34,7 +39,7 @@ def add_via(ctx, node):
         else:
             items.copper_items[l].append((ring, net))
     i, j = ctx.layers.index(span[0]), ctx.layers.index(span[-1])
-    items.holes.append(Hole(disk((x, y), drill / 2), i, j, True, net, C.VIA_WALL_MM, (x, y), drill / 2))
+    items.holes.append(Hole(disk((x, y), drill / 2), i, j, True, net, C.VIA_WALL_MM))
     through = i == 0 and j == len(ctx.layers) - 1
     items.found["through vias" if through else "blind/buried vias"] += 1
     items.via_tenting.append((pad, span, via_tenting(node, items.tent_default)))
@@ -65,8 +70,7 @@ def drop_unconnected_rings(ctx):
 def net_class_via(items, net, micro):
     """The size and drill of a via that gives none, from its net's class."""
     if not hasattr(items, "_via_classes"):
-        d = items.raw.dialect
-        items._via_classes = net_class_vias(items.raw.tree, lambda s: kicad_unescape(overbar_markup(s, d)))
+        items._via_classes = net_class_vias(items.raw.tree, items.raw.dialect)
     default, classes = items._via_classes
     v = classes.get(net, default)
     return (v[2], v[3]) if micro else (v[0], v[1])

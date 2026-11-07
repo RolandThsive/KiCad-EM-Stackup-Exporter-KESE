@@ -17,7 +17,6 @@ def copper_bands(st, outer_copper_t):
             band[l] = (z - st.copper_thickness[l], z)
             z -= st.copper_thickness[l]
     st.band = band
-    return band
 
 
 def dielectric_z(st, i):

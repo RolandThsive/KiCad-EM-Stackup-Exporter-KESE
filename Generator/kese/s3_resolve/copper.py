@@ -3,39 +3,82 @@ to the outline.  Where two nets overlap, the first keeps the shared area."""
 from collections import defaultdict
 
 import shapely
+import shapely.errors
 
 from kese.core import shapes2d as sh
+from kese.core.graph import pairs_within
+from kese.core.parallel import in_parallel, in_processes, worth_processes
+from kese.core.shape_copies import own
 from kese.core.shapes2d import side_by_side, union
 from kese.s3_resolve.holes import hole_shapes
 from parameters import P
 
 
-def copper_layers(r, items, outline_k):
-    """r.copper {layer: {net: region}} and r.copper_all {layer: region}."""
-    T, last = r.to_board_T, len(items.layers) - 1
+def copper_layers(r, items, outline_k, log):
+    """r.copper {layer: {net: region}} and r.copper_all {layer: region}; Parallel.WORKERS layers at a
+    time, the biggest first, kept in the layers' order: in processes of their own on a board of many
+    nets (Parallel.PROCESS_MIN_NETS), else in threads (copper_of_layer takes its own copies of the shapes
+    there)."""
+    last = len(items.layers) - 1
+    jobs = {k: (k == 0 or k == last, items.copper_items.get(l, []), [h for h in items.holes if h.i <= k <= h.j],
+                outline_k, r.to_board_T) for k, l in enumerate(items.layers)}
+    size = {k: sum(int(shapely.get_num_coordinates(g)) for g, _ in job[1]) for k, job in jobs.items()}
+    order = sorted(jobs, key=lambda k: -size[k])
+    nets = sum(len({net for _, net in job[1]}) for job in jobs.values())
+    if nets >= P.Parallel.PROCESS_MIN_NETS and worth_processes(len(jobs), sum(size.values())):
+        done = dict(in_processes(copper_of_layer, [(k, jobs[k]) for k in order], log, "joined", "copper layer"))
+    else:
+        done = dict(zip(order, in_parallel(lambda k: copper_of_layer(*jobs[k], take=own), order)))
     for k, l in enumerate(items.layers):
-        # outer copper caps the barrel (cut by the open bore); inner copper stops at the drill wall
-        holes = [g for g in hole_shapes(items, lambda h, k=k: h.i <= k <= h.j, bore=k in (0, last)) if not g.is_empty]
-        tree = shapely.STRtree(holes)
-        per_net = defaultdict(list)
-        for g, net in items.copper_items.get(l, []):
-            per_net[net].append(g)
-        regions = {}
-        for net, gs in per_net.items():
-            # joined on the grid: two shapes whose edges run along the same line only to within
-            # floating point (two zone fills, a fill and a pad) join cleanly instead of leaving a crack
-            cu = shapely.union_all(gs, grid_size=sh.grid()) if len(gs) > 1 else gs[0]
-            if P.Geometry.SIMPLIFY_TOLERANCE_MM > 0:   # before the cuts: the board edge and the holes stay exact
-                cu = cu.simplify(P.Geometry.SIMPLIFY_TOLERANCE_MM)
-            cu = cu.intersection(outline_k)
-            near = tree.query(cu, predicate="intersects") if not cu.is_empty else []
-            if len(near):                          # only the holes this net touches, as KiCad cuts
-                cu = cu.difference(union([holes[i] for i in near]))
-            cu = close_hairline_gaps(fill_hairline_holes(T(cu)))     # on the grid, where the hairlines show
-            if not cu.is_empty:
-                regions[net] = cu
-        r.copper[l] = first_net_keeps(regions)
-        r.copper_all[l] = side_by_side(list(r.copper[l].values()))
+        r.copper[l] = done[k]
+        r.copper_all[l] = side_by_side(list(done[k].values()))
+
+
+def copper_of_layer(outer, mine, holes, outline_k, T, take=lambda g: g):
+    """{net: region} of one copper layer: each net's items `mine` [(shape, net)] joined, cut by the
+    holes it touches, clipped to the outline, board frame (by T).  `outer`: a face's layer.  In a
+    thread, take=own: the outline, the holes and the items (a pad or a via is on several layers) are
+    this thread's own copies (kese/core/shape_copies.py)."""
+    outline_k = take(outline_k)
+    # outer copper caps the barrel (cut by the open bore); inner copper stops at the drill wall
+    holes = [g for g in hole_shapes(holes, lambda h: True, bore=outer, take=take) if not g.is_empty]
+    tree = shapely.STRtree(holes)
+    per_net = defaultdict(list)
+    for (_, net), g in zip(mine, take([g for g, _ in mine])):
+        per_net[net].append(g)
+    regions = {}
+    for net, gs in per_net.items():
+        cu = net_union(gs) if len(gs) > 1 else gs[0]
+        if P.Geometry.SIMPLIFY_TOLERANCE_MM > 0:   # before the cuts: the board edge and the holes stay exact
+            cu = cu.simplify(P.Geometry.SIMPLIFY_TOLERANCE_MM)
+        cu = cu.intersection(outline_k)
+        near = tree.query(cu, predicate="intersects") if not cu.is_empty else []
+        if len(near):                          # only the holes this net touches, as KiCad cuts
+            cu = cu.difference(union([holes[i] for i in near]))
+        cu = close_hairline_gaps(fill_hairline_holes(T(cu)))     # on the grid, where the hairlines show
+        if not cu.is_empty:
+            regions[net] = cu
+    return first_net_keeps(regions)
+
+
+def net_union(gs):
+    """A net's items on one layer joined: in floating point, then the union rounded to the grid as a
+    whole (set_precision), so two shapes whose edges run along the same line only to within floating
+    point (two zone fills, a fill and a pad) meet on the grid and join cleanly instead of leaving a
+    crack.  A union on the grid rounds every item first and costs about three times as much on a big
+    board; it is still the way when GEOS cannot join the items in floating point.  The whole union in
+    one call, not part by part (shapes2d.snap): the work stays GEOS's, which runs outside Python's
+    lock, so the layers' threads keep working at once.  The result is copied through WKB onto no grid,
+    as a union on the grid comes out: a shape rounded by set_precision carries the grid, and GEOS
+    would then clip it to the outline on the grid, bending the outline's edge through every copper
+    vertex within a grid step of it (a burr past the board edge where a zone fill follows its own
+    chords of an arc)."""
+    try:
+        g = shapely.set_precision(shapely.union_all(gs), sh.grid())
+    except shapely.errors.GEOSException:
+        return shapely.union_all(gs, grid_size=sh.grid())
+    g = shapely.from_wkb(shapely.to_wkb(g))
+    return g.geoms[0] if g.geom_type == "MultiPolygon" and len(g.geoms) == 1 else g     # as a union gives it
 
 
 def close_hairline_gaps(cu):
@@ -45,15 +88,13 @@ def close_hairline_gaps(cu):
     if len(parts) < 2:
         return cu
     g = sh.grid()
-    i, j = shapely.STRtree(parts).query(parts, predicate="dwithin", distance=2 * g)
-    near = sorted(set(i[i < j].tolist()) | set(j[i < j].tolist()))
+    i, j = pairs_within(parts, 2 * g)
+    near = sorted(set(i.tolist()) | set(j.tolist()))
     if not near:
         return cu
     joined = union([parts[k].buffer(g, join_style="mitre") for k in near]).buffer(-g, join_style="mitre")
     keep = set(near)
     return sh.snap(union([joined] + [p for k, p in enumerate(parts) if k not in keep]))
-
-
 
 
 def fill_hairline_holes(cu):

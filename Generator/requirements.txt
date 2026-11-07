@@ -6,8 +6,10 @@
 # macOS exist on PyPI for Python 3.12, 3.13 and 3.14 for every package below (checked 2026-10-18).
 # On Python 3.11 install without the pins (python -m pip install numpy shapely mapbox_earcut): pip picks
 # the last versions built for it.
-# The tests that read STEP files back also use OpenCascade (python -m pip install cadquery-ocp); they
-# skip that check without it, and KESE itself never needs it.
+# The tests that read STEP files back also use OpenCascade: python -m pip install "cadquery-ocp==7.8.1.1.post1"
+# (it has no wheel for Python 3.14; there 7.9.3.1.1 passes the STEP tests, about half as fast; 8.0 lacks two classes
+# the tests use).  They skip that check without it, and KESE itself never needs it.
+# The tests run under pytest (python -m pip install pytest), which KESE itself does not need either.
 numpy==2.5.3
 shapely==2.2.0
 mapbox_earcut==2.1.0
