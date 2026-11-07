@@ -9,6 +9,10 @@ The newest first. Each entry is one pull request into `WebUI`; the footer's buil
 - Main now stores KiCad's stroke font as JSON Lines (a header, then one glyph per line). `build_site.py` cut the font
   for the browser by reading it as one JSON document, so the build stopped. It now keeps the glyphs up to
   `fontLastCodepoint` in the same layout, and the browser parses only the glyphs a board draws.
+- Tip pictures: the Geometry section and Vertex Sharing Rounds lose theirs (three small panels, too small to read);
+  the Output section loses the Simulation / Visual drawing, which stays on Mode; the solder mask's picture (the
+  Solder Mask section and Solder Mask Enabled) is drawn again as one large cross-section with big labels. 33
+  pictures: 20 drawn, 13 cut from the wiki.
 - The tests also run on pull requests into `WebUI_modifs`, so Dependabot's pull requests are tested before they merge.
 - The smoke test after a deploy runs only its own spec. It loaded every spec, and the tips spec read `tips.json` from a
   local build the smoke job does not have, so the first deploy with the tips failed its smoke test (the site itself

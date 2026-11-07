@@ -23,7 +23,7 @@
   "edge_wall": {"file": "edge_wall.webp", "w": 585, "h": 680, "caption": "The edge band, 25 µm, true scale", "page": "Copper-And-Traces"},
   "edge_net": {"file": "edge_net.webp", "w": 684, "h": 306, "caption": "The band takes one net; C3's copper inside it joins GND", "page": "Copper-And-Traces"},
   "tenting": {"file": "tenting.webp", "w": 680, "h": 465, "caption": "A tented via: mask on the pads, the bore left open", "page": "Solder-Masks"},
-  "mask": {"file": "mask.webp", "w": 680, "h": 432, "caption": "The mask follows the copper: on the laminate, up the wall, on top", "page": "Solder-Masks"},
+  "mask": {"file": "mask.webp", "w": 684, "h": 330, "caption": "The mask follows the copper: on the laminate, up the wall, on top, and none in the opening", "page": "Solder-Masks"},
   "mask_thick": {"file": "mask_thick.webp", "w": 680, "h": 414, "caption": "Mask on the pad and on the laminate, 10 µm each", "page": "Solder-Masks"},
   "pullback": {"file": "pullback.webp", "w": 680, "h": 386, "caption": "The mask stops 5 µm short of the edge", "page": "Solder-Masks"},
   "mask_colors": {"file": "mask_colors.webp", "w": 684, "h": 366, "caption": "Mask colours by name, over a trace and gold pads", "page": "Colorizing"},
@@ -34,7 +34,6 @@
   "silk_join": {"file": "silk_join.webp", "w": 684, "h": 270, "caption": "A round stroke end with 1, 2 and 4 segments per quarter circle", "page": "Silkscreens"},
   "finish_where": {"file": "finish_where.webp", "w": 684, "h": 278, "caption": "The finish on every bare copper face, or bare copper", "page": "Finish"},
   "finish_enig": {"file": "finish_enig.webp", "w": 680, "h": 379, "caption": "ENIG on bare pads (the picture follows the finish chosen)", "page": "Finish"},
-  "stage6": {"file": "stage6.webp", "w": 680, "h": 205, "caption": "Stage 6: prisms, slices and faces become one closed solid", "page": "Working-Principle"},
   "checked": {"file": "checked.webp", "w": 675, "h": 632, "caption": "The Verifier's volume check: four ways, one answer", "page": "Checks-Errors-And-Warnings"}
  },
  "page": {
@@ -84,13 +83,13 @@
   "colorSilk": {"title": "{title}", "t": "The silkscreen ink on each side.", "img": "silk_colors"}
  },
  "sections": {
-  "Run": {"t": "Units, origin and the extra files a run writes.", "n": "Mode and the file formats have switches of their own.", "img": "modes"},
+  "Run": {"t": "Units, origin and the extra files a run writes.", "n": "Mode and the file formats have switches of their own."},
   "Board": {"t": "The laminate: its thickness, dielectrics, outline and holes.", "img": "stackup"},
   "Copper": {"t": "Copper thickness, plating, vias, castellations and edge plating, and how copper is split into parts.", "img": "net_solid"},
   "SolderMask": {"t": "The solder mask on both faces: its thickness, openings and edges.", "img": "mask"},
   "Silkscreen": {"t": "The legend ink, and how its text is drawn.", "img": "silk_height"},
   "Finish": {"t": "The surface finish on the copper the mask leaves bare.", "img": "finish_where"},
-  "Geometry": {"t": "Numerical quality: how finely curves are drawn and how layers share exact edges.", "n": "None of these change any size.", "img": "stage6"},
+  "Geometry": {"t": "Numerical quality: how finely curves are drawn and how layers share exact edges.", "n": "None of these change any size."},
   "Color": {"t": "The colour of every part in GLB and OBJ files, and of the parts in STEP.", "img": "mask_colors"},
   "Parallel": {"t": "How many processor cores work at once, and how much the work holds in memory.", "n": "None of these change the model.", "badge": "Desktop only, most of them"},
   "Step": {"t": "The STEP files: true arcs and cylinders, and what counts as an arc.", "n": "Shown while STEP is ticked."},
@@ -307,7 +306,7 @@
   "Geometry.PINCH_DISC_TURN_DEG": {"t": "The shape that cuts a pinch point is turned this far, away from the directions board edges usually run."},
   "Geometry.PINCH_DISC_SIDES": {"t": "Sides of the shape that cuts a pinch point: 8 makes an octagon."},
   "Geometry.HEIGHT_DIGITS": {"t": "Heights closer than 10⁻ⁿ mm count as one height.", "f": [["9", "1 picometre"]]},
-  "Geometry.VERTEX_SHARING_ROUNDS": {"t": "Stage 6 shares corners between a part's slices until nothing changes, at most this many times.", "n": "Most parts settle in one to three rounds. A part still changing is noted in report.txt.", "img": "stage6"},
+  "Geometry.VERTEX_SHARING_ROUNDS": {"t": "Stage 6 shares corners between a part's slices until nothing changes, at most this many times.", "n": "Most parts settle in one to three rounds. A part still changing is noted in report.txt."},
   "Geometry.NODING_ROUNDS": {"t": "Shapes are snapped to the grid again until they stop changing, at most this many times. One or two in practice."},
   "Geometry.TRIANGULATE_CELL_POINTS": {"t": "A polygon with more points than this is cut into triangles strip by strip, which is much faster when it has many holes."},
   "Geometry.TRIANGULATE_CELL_MM": {"t": "Width of the strips a big polygon is cut into before it is made into triangles. KiCad cuts big polygons into 1 cm cells the same way."},
