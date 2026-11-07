@@ -18,7 +18,8 @@ make sure its license is compatible with GPL-3.0-or-later.
 All of KESE lives in `Generator/`: the `kese/` package, the settings in `parameters/`, the
 tests in `tests/`, `run_KESE.py`, `pyproject.toml` and `requirements.txt`, and the `Input/` and
 `Output/` folders. The repository root keeps only what belongs to the repository: the README,
-the licence files, `docs/` and `.github/`. The paths below are inside `Generator/`.
+the licence files, `docs/`, `.github/` and the feature test boards in `featureTest/`. The paths
+below are inside `Generator/`.
 
 `kese/pipeline.py` runs nine stages in order, one folder each in `kese/`. Each stage takes what
 the stage before it made and hands its own result to the next:

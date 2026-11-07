@@ -61,7 +61,9 @@ parts[off] = shapely.set_precision(parts[off], grid())      # Geometry.SNAP_GRID
   (`kese/core/pinches.py`). Those vertices sit just off the grid.
 - One known exception, where parts can overlap or leave a gap: the wedge beside a sloped copper
   wall (`Copper.ETCH_FACTOR > 0`, see [Copper And Traces](Copper-And-Traces.md#125-etch-factor)).
-- The price: curves are polygons, in the meshes and in the STEP file alike.
+- The price: curves are polygons in the meshes. The STEP file turns them back into true arcs and
+  cylinders where a run of vertices lies on one circle (`Step.STEP_EXACT_ARCS`, the default; see
+  [Parameter Reference](Parameter-Reference.md#1710-step-parameterssteppy)).
 
 ## 7.2 How A Part Becomes A Closed Solid
 

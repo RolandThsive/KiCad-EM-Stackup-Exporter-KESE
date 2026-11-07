@@ -148,8 +148,8 @@ copper barrel fills the ring between the drill and the drill minus the wall. See
 
 `Board.BOARD_THICKNESS_MM = None` (the default) takes the laminate from the stack-up, or from the
 file's `(general (thickness ...))` less the outer copper and the two masks when there is no usable
-stack-up (from 1.6 mm when the file gives no thickness either), so the finished board is KiCad's
-board thickness. A number forces the laminate
+stack-up (from `Board.DEFAULT_BOARD_THICKNESS_MM`, 1.6 mm as in KiCad, when the file gives no
+thickness either), so the finished board is KiCad's board thickness. A number forces the laminate
 thickness; see [Stack-Up Model](Stack-Up-Model.md) for how the dielectrics are scaled.
 
 ## 11.6 Settings
@@ -157,6 +157,7 @@ thickness; see [Stack-Up Model](Stack-Up-Model.md) for how the dielectrics are s
 | Name | Default | Range | Meaning |
 |---|---|---|---|
 | `BOARD_THICKNESS_MM` | `None` | None or mm > 0 | Laminate thickness; `None` takes it from the file |
+| `DEFAULT_BOARD_THICKNESS_MM` | `1.6` | mm > 0 | Finished board thickness when the file gives none (KiCad's default) |
 | `DIELECTRIC_SPLIT` | `"even"` | `"even"` | How the laminate is divided when the file has no usable stack-up |
 | `DEFAULT_DIELECTRIC_MATERIAL`, `DEFAULT_DIELECTRIC_TYPE` | `"FR4"`, `"core"` | text; `"core"` / `"prepreg"` | Material and type when the stack-up gives none |
 | `DEFAULT_EPSILON_R`, `DEFAULT_LOSS_TANGENT` | `4.5`, `0.02` | > 0 | Typical FR4 at 1 GHz, used when the stack-up gives none |
@@ -166,6 +167,8 @@ thickness; see [Stack-Up Model](Stack-Up-Model.md) for how the dielectrics are s
 | `OUTLINE_LINE_SNAP_MM` | `0.01` | mm > 0 | Open `Edge.Cuts` line and arc ends closer than this are joined, as KiCad joins them (its chaining distance is 0.01 mm) |
 | `OUTLINE_FALLBACK` | `"copper_hull"` | `"copper_hull"` / `"error"` | What to do when `Edge.Cuts` gives no closed ring at all |
 | `OUTLINE_FALLBACK_MARGIN_MM` | `1.0` | mm ≥ 0 | Margin around the copper hull in the fallback |
+| `OUTLINE_DUPLICATE_AREA_MM2` | `1e-6` | mm² > 0 | Two closed `Edge.Cuts` outlines that differ by less than this area are one (a ring drawn twice; section 11.3) |
+| `OUTLINE_MIN_AREA_MM2` | `1e-9` | mm² ≥ 0 | A closed `Edge.Cuts` outline of this area or less is left out (a line drawn there and back, a circle of no size) |
 
 | Previous | Next |
 |:---|---:|

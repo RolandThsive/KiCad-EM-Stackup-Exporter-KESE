@@ -37,10 +37,13 @@ KiCad-EM-Stackup-Exporter-KESE/
 │   ├── tests/                   regression suite, layout rules, test boards, baseline.json
 │   └── tools/                   make_swatches.py: the colour boxes of docs/ColorSwatches/;
 │                                font_lines.py: a stroke font rewritten as JSON Lines
+├── featureTest/                 the feature test boards, one feature each
 ├── docs/wiki/, docs/images/     this wiki, and its pictures
-├── docs/example_images/        pictures and animations of the three example boards
+├── docs/example_images/         pictures and animations of the three example boards
+├── docs/feature_test_images/    the top and bottom of every feature test board
 ├── docs/ColorSwatches/          the colour squares in the wiki's colour tables
 ├── docs/logo/                   the KESE logo as SVG and WebP, and favicon.ico
+├── .github/                     the workflow that copies docs/wiki/ to the wiki
 ├── licenses/                    KiCad copyright headers and AUTHORS.txt
 ├── LICENSE, NOTICE.md, CONTRIBUTING.md
 └── README.md
@@ -93,6 +96,10 @@ the file is done or the write fails
 ([Working Principle](Working-Principle.md#74-work-done-in-parallel)).
 
 ### 20.2.2 `report.txt`
+
+`Input/rf_module.kicad_pcb` in simulation mode with the solder mask and silkscreen turned on
+(`--set SolderMask.SOLDER_MASK_ENABLED=True --set Silkscreen.SILKSCREEN_ENABLED=True`), `...` where
+lines are left out:
 
 ```text
 rf_module  (rf_module.kicad_pcb)   generated 2026-11-06 09:17

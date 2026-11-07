@@ -8,8 +8,8 @@ KESE writes the same geometry in two modes, chosen with `Run.MODE` or `--mode`.
 
 `--mode simulation`: the physical board as it leaves the factory. **Every part is a closed solid**:
 each dielectric between two copper layers (core or prepreg), each net's copper with all of its
-layers and vias joined into one body, via and hole plating, solder mask conformal over the copper,
-silkscreen and, if enabled, the surface finish.
+layers and vias joined into one body, via and hole plating, the surface finish and, if enabled
+(they are off by default), solder mask conformal over the copper and silkscreen.
 
 ![Side profile of the 4-layer board featureTest/14_stackup_full in simulation mode, cut through its plated pad J1 at true scale: the three dielectrics, the mask on both faces and the pad's copper fill the cut, the pad's ring on each of the four copper layers joined by the 25 µm plated barrel into the one part Copper_GND; a table gives each layer's thickness and the part it is in](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/modes_2_simulation_side.webp)
 
