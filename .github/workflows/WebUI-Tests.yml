@@ -1,4 +1,5 @@
-# Tests of the web tool on every pull request into WebUI (and by hand: Actions > Run workflow).
+# Tests of the web tool on every pull request into WebUI or WebUI_modifs (Dependabot's go there), and by hand
+# (Actions > Run workflow).
 #   generator   the generator's own tests (pytest), the same Python code the browser runs
 #   build       build_site.py: downloads Pyodide and three.js from jsDelivr for the backup copy and checks every file
 #               against WebUI/vendor.json (a changed file fails here).  The built site is kept as the artifact
@@ -11,7 +12,7 @@ name: Web UI Tests
 
 on:
   pull_request:
-    branches: [WebUI]
+    branches: [WebUI, WebUI_modifs]
   workflow_dispatch:
 
 permissions:

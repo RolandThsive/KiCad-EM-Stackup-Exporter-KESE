@@ -2,6 +2,15 @@
 
 The newest first. Each entry is one pull request into `WebUI`; the footer's build stamp names the commit that is live.
 
+## Main merged again (November 2026)
+
+- Main up to PR #40 is merged: the stroke font read glyph by glyph, text variables expanded in values, a pad's drill
+  with no size read as KiCad does, and the wiki brought up to date.
+- Main now stores KiCad's stroke font as JSON Lines (a header, then one glyph per line). `build_site.py` cut the font
+  for the browser by reading it as one JSON document, so the build stopped. It now keeps the glyphs up to
+  `fontLastCodepoint` in the same layout, and the browser parses only the glyphs a board draws.
+- The tests also run on pull requests into `WebUI_modifs`, so Dependabot's pull requests are tested before they merge.
+
 ## Hardening: backup copy, security, privacy, accessibility, tests, tips (November 2026)
 
 **Where Python and three.js come from**
