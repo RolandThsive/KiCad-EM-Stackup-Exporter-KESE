@@ -1,11 +1,13 @@
 // visual.spec.mjs - screenshots compared with the ones in __screenshots__/ (Chromium, Linux): a change of the look
 // that nobody meant shows up as a failed test, with the difference in the report.  What changes by itself is masked:
 // the build stamp and the run's time; the 3D view is compared only in its own shot, more loosely (GPU drawing).
-// After a deliberate change of the look: npx playwright test specs/visual.spec.mjs --update-snapshots, check the
-// new pictures, commit them.
+// The pictures are made in CI's Playwright image (another machine's default fonts wrap text differently), so they are
+// compared only there (CI=1, also in that image under Docker: README "Updating the screenshots").  After a deliberate
+// change of the look, remake them with --update-snapshots in that image, check them, commit them.
 import { test, expect, open, runBoard, QUICK } from "../helpers.mjs";
 
 test.skip(({ browserName }) => browserName !== "chromium", "Chromium only: the pictures are per browser and system");
+test.skip(!process.env.CI, "compared in CI's image only (README: Updating the screenshots)");
 const masks = (page) => [page.locator("#foot .build"), page.locator("#run-note"), page.locator("#view")];
 
 test("ready, before a board", async ({ page, problems }) => {

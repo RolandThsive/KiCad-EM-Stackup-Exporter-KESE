@@ -54,7 +54,7 @@ fixture in `helpers.mjs`). A test that causes an error on purpose says so with a
 | `pages` | all | footer links, every licence text exists, versions match what is loaded, the privacy page names every server |
 | `a11y` | Chromium | axe (WCAG 2.0 to 2.2, A and AA) in every state; reflow at 200 to 400 % zoom; wider text spacing; status messages |
 | `perf` | Chromium | LCP, CLS, input delay, time to Python, time to make the quick and the HDI board, against budgets |
-| `visual` | Chromium | screenshots of the main states against `specs/__screenshots__/chromium/` |
+| `visual` | Chromium, CI only | screenshots of the main states against `specs/__screenshots__/chromium/` (made in CI's image) |
 | `live` | Chromium | `@live`: the published page after a deploy (see below) |
 
 Headless Firefox on some Linux machines has no WebGL. The tests then check the page without the preview (Generate and
@@ -63,15 +63,19 @@ downloads still work) instead of failing.
 ## Updating the screenshots
 
 A change to the look fails `visual.spec.mjs`. When the change is meant, look at the diff in the HTML report
-(`npx playwright show-report`) and then write new baselines:
+(`npx playwright show-report`) and then write new baselines **in CI's image**, never on your own machine: another
+machine has other default fonts, so text wraps differently and every comparison fails in CI. With Docker, from the
+repository's root, after `npm run build`:
 
 ```sh
-npx playwright test --project=chromium specs/visual.spec.mjs --update-snapshots
+docker run --rm --ipc=host --init -v "$PWD":/repo -w /repo/WebUI/tests -e CI=1 \
+  mcr.microsoft.com/playwright:v1.63.0-noble \
+  npx playwright test --project=chromium specs/visual.spec.mjs --update-snapshots
 ```
 
+The image's version must match `@playwright/test` in `package.json` (and the workflow's `container: image:`).
 Commit the new PNG files with the change. The build stamp, the run's time and the 3D canvas are masked, so they never
-fail the comparison. Fonts are drawn a little differently on each machine, which is why CI compares with a small
-tolerance (`playwright.config.mjs`).
+fail the comparison; a small tolerance (`playwright.config.mjs`) absorbs anti-aliasing.
 
 ## In CI
 
