@@ -2,44 +2,21 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
+<!-- The page's security rules.  build_site.py writes the policy: scripts from this site, the pinned three.js
+     folder on jsDelivr and the two import maps (by their SHA-256), nothing inline, no plug-ins. -->
+<meta http-equiv="Content-Security-Policy" content="(written by build_site.py)">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>KiCad EM Stackup Exporter</title>
 <meta name="description" content="Turn a KiCad board into a 3D model of its real stack-up, for EM solvers (STEP, STL) or for viewing (GLB, OBJ). Runs in your browser; the board is never uploaded.">
 <link rel="icon" href="favicon.ico">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Permanent+Marker&family=Shadows+Into+Light&display=swap" rel="stylesheet">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<link rel="preload" href="fonts/permanent-marker-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/pacifico-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="WebUI.css">
-<script>
-  // Computers only: decide before anything heavy loads, so phones never download Python.  A phone or tablet is a
-  // device with no mouse or trackpad; the window width does not decide it, since a computer window can be narrow too.
-  (function () {
-    var touchOnly = window.matchMedia("(pointer: coarse)").matches && !window.matchMedia("(any-pointer: fine)").matches;
-    window.KESE_PHONE = touchOnly;
-    if (touchOnly) document.documentElement.className += " phone";
-    if (window.self !== window.top) document.documentElement.className += " embedded";
-    if (touchOnly) return;
-    // The page's settings (webui.json) name where three.js comes from; ?three=<url> overrides it (local testing).
-    // The import map has to exist before the first module loads, so WebUI.js is added only after it.
-    fetch("webui.json", { cache: "no-cache" }).then(function (r) { return r.json(); }).then(function (cfg) {
-      var q = new URLSearchParams(location.search), three = q.get("three") || cfg.three;
-      window.KESE_CONFIG = cfg;
-      var map = document.createElement("script");
-      map.type = "importmap";
-      map.textContent = JSON.stringify({ imports: { "three": three + "build/three.module.js", "three/addons/": three + "examples/jsm/" } });
-      document.head.appendChild(map);
-      var main = document.createElement("script");
-      main.type = "module"; main.src = "WebUI.js";
-      document.body.appendChild(main);
-    }).catch(function (e) {
-      document.addEventListener("DOMContentLoaded", function () {
-        document.getElementById("checks-list").textContent = "The page's settings (webui.json) could not be loaded: " + e;
-      });
-    });
-  })();
-</script>
+<script src="boot.js"></script>
 </head>
 <body>
+<noscript><p class="noscript">The KiCad EM Stackup Exporter runs in your browser and needs JavaScript. Turn it on for this page and reload.</p></noscript>
 
 <!-- Phones and small tablets: a message instead of the tool -->
 <section id="phone-message" class="phone-only">
@@ -54,15 +31,15 @@
   <header id="topbar">
     <h1 class="marker"><img class="logo" src="logo.svg" alt="KESE logo">KiCad EM Stackup Exporter</h1>
     <div class="segmented" id="ui-switch" role="tablist" aria-label="Basic or Advanced">
-      <button role="tab" data-ui="basic" class="on" data-tip="The main settings of each parameter file">Basic</button>
-      <button role="tab" data-ui="advanced" data-tip="Every parameter of every parameter file, Geometry included, with its name as in the file">Advanced</button>
+      <button role="tab" data-ui="basic" class="on" data-tip-id="basic" data-tip="The main settings of each parameter file">Basic</button>
+      <button role="tab" data-ui="advanced" data-tip-id="advanced" data-tip="Every parameter of every parameter file, Geometry included, with its name as in the file">Advanced</button>
     </div>
     <!-- between Basic/Advanced and the buttons: the note that the settings changed since the model was made -->
-    <div class="top-mid"><div class="stale-badge" id="stale-badge" hidden data-tip="Settings changed: press Generate to update the model">Settings changed<span class="sb-more">: press Generate to update the model</span></div></div>
+    <div class="top-mid" role="status"><div class="stale-badge" id="stale-badge" hidden data-tip-id="stale" data-tip="Settings changed: press Generate to update the model">Settings changed<span class="sb-more">: press Generate to update the model</span></div></div>
     <div class="top-actions">
-      <a class="glass-btn small" id="btn-help" href="#" target="_blank" rel="noopener" data-tip="Opens the project wiki: what each setting does and how to choose it">Help / Wiki</a>
-      <button class="glass-btn small" id="btn-import" data-tip="Load settings: a parameters.txt from any run (web or desktop) or your own parameter .py files. Every control takes those values.">Import Parameters</button>
-      <button class="glass-btn small" id="btn-export" data-tip="Download the parameter files with these values, ready for the desktop KESE">Export Parameters</button>
+      <a class="glass-btn small" id="btn-help" href="#" target="_blank" rel="noopener" data-tip-id="help" data-tip="Opens the project wiki: what each setting does and how to choose it">Help / Wiki</a>
+      <button class="glass-btn small" id="btn-import" data-tip-id="import" data-tip="Load settings: a parameters.txt from any run (web or desktop) or your own parameter .py files. Every control takes those values.">Import Parameters</button>
+      <button class="glass-btn small" id="btn-export" data-tip-id="export" data-tip="Download the parameter files with these values, ready for the desktop KESE">Export Parameters</button>
       <input type="file" id="import-file" accept=".txt,.py,.zip" multiple hidden>
     </div>
     <nav class="standalone-nav">
@@ -78,7 +55,7 @@
     <aside id="controls" class="panel">
       <div id="controls-scroll">
         <h2 class="pacifico">Upload a Board</h2>
-        <label class="drop" id="drop" data-tip="Drop a .kicad_pcb here, or click to choose one. It is read in your browser and never uploaded.">
+        <label class="drop" id="drop" data-tip-id="drop" data-tip="Drop a .kicad_pcb here, or click to choose one. It is read in your browser and never uploaded.">
           <svg viewBox="0 0 24 24"><path d="M12 15V4M7.5 8.5 12 4l4.5 4.5"/><path d="M4 15v4a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-4"/></svg>
           <span class="drop-text"><b id="board-name">Choose a .kicad_pcb</b><span id="board-meta" class="hint">or drop it here</span></span>
           <input type="file" id="board-file" accept=".kicad_pcb" hidden>
@@ -93,36 +70,36 @@
           <span>Verify</span>
           <span class="switch"><input type="checkbox" id="verify"><span class="knob"></span></span>
         </label>
-        <button id="btn-reset" class="reset-btn" data-tip="Every setting back to the values in the parameter files">Reset</button>
-        <button id="btn-generate" class="primary-btn" disabled data-tip="Make the model with these settings (Ctrl+Enter)">Loading Python…</button>
+        <button id="btn-reset" class="reset-btn" data-tip-id="reset" data-tip="Every setting back to the values in the parameter files">Reset</button>
+        <button id="btn-generate" class="primary-btn" disabled data-tip-id="generate" data-tip="Make the model with these settings (Ctrl+Enter)">Loading Python…</button>
       </div>
       <div id="progress"><div class="bar"></div></div>
-      <p class="hint" id="run-note"></p>
+      <p class="hint" id="run-note" role="status"></p>
     </aside>
 
     <!-- Preview -->
     <section id="preview" class="panel">
       <div class="canvas-wrap" id="canvas-wrap">
-        <canvas id="view"></canvas>
+        <canvas id="view" role="img" aria-label="3D preview of the model (drag to turn it, scroll to zoom); the readout under it and the Parts list describe it"></canvas>
         <!-- the top row: tools, the cross-section slider in the space between, the views with Showing under them -->
         <div class="view-top">
           <div class="canvas-tools">
             <span class="tool-pair">
-              <button class="fs-btn icon-btn" id="btn-fullscreen" aria-label="Fullscreen" data-tip="Show the preview full screen (Esc to leave)"><svg viewBox="0 0 24 24"><path d="M3 8V3h5M16 3h5v5M21 16v5h-5M8 21H3v-5"/></svg></button>
-              <button class="glass-btn small icon-btn" id="btn-fit" aria-label="Fit" data-tip="Fit the model to the view"><svg viewBox="0 0 24 24"><path d="M8 8h8v8H8zM3 3l4 4M7 4v3H4M21 3l-4 4M17 4v3h3M3 21l4-4M4 17h3v3M21 21l-4-4M20 17h-3v3"/></svg></button>
-              <button class="glass-btn small icon-btn" id="btn-shot" aria-label="Screenshot" data-tip="Save the view as a PNG"><svg viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="13" rx="2"/><circle cx="12" cy="13.5" r="3.5"/><path d="M8 7l1.5-3h5L16 7"/></svg></button>
+              <button class="fs-btn icon-btn" id="btn-fullscreen" aria-label="Fullscreen" data-tip-id="fullscreen" data-tip="Show the preview full screen (Esc to leave)"><svg viewBox="0 0 24 24"><path d="M3 8V3h5M16 3h5v5M21 16v5h-5M8 21H3v-5"/></svg></button>
+              <button class="glass-btn small icon-btn" id="btn-fit" aria-label="Fit" data-tip-id="fit" data-tip="Fit the model to the view"><svg viewBox="0 0 24 24"><path d="M8 8h8v8H8zM3 3l4 4M7 4v3H4M21 3l-4 4M17 4v3h3M3 21l4-4M4 17h3v3M21 21l-4-4M20 17h-3v3"/></svg></button>
+              <button class="glass-btn small icon-btn" id="btn-shot" aria-label="Screenshot" data-tip-id="shot" data-tip="Save the view as a PNG"><svg viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="13" rx="2"/><circle cx="12" cy="13.5" r="3.5"/><path d="M8 7l1.5-3h5L16 7"/></svg></button>
             </span>
           </div>
           <div class="sliders">
-            <label class="view-slider" data-tip="Cut the model across, to see its cross-section"><span class="vs-label">Cross-Section</span> <input type="range" id="cut" min="0" max="100" value="100"><output id="cut-out">Off</output></label>
+            <label class="view-slider" data-tip-id="cut" data-tip="Cut the model across, to see its cross-section"><span class="vs-label">Cross-Section</span> <input type="range" id="cut" min="0" max="100" value="100"><output id="cut-out">Off</output></label>
           </div>
           <div class="view-right">
             <div class="segmented views" id="views">
-              <button data-view="top" data-tip="Look straight down on the top of the board. Turning is off; zoom and pan still work">Top</button>
-              <button data-view="bottom" data-tip="Look straight up at the bottom of the board. Turning is off; zoom and pan still work">Bottom</button>
-              <button data-view="iso" class="on" data-tip="Turn the model freely; starts 25° from the left and 30° above (the view of the project's model pages)">3D View</button>
+              <button data-view="top" data-tip-id="top" data-tip="Look straight down on the top of the board. Turning is off; zoom and pan still work">Top</button>
+              <button data-view="bottom" data-tip-id="bottom" data-tip="Look straight up at the bottom of the board. Turning is off; zoom and pan still work">Bottom</button>
+              <button data-view="iso" class="on" data-tip-id="iso" data-tip="Turn the model freely; starts 25° from the left and 30° above (the view of the project's model pages)">3D View</button>
             </div>
-            <label class="showing" data-tip="Which of this run's files the preview shows" hidden>Showing
+            <label class="showing" data-tip-id="showing" data-tip="Which of this run's files the preview shows" hidden>Showing
               <select id="showing" disabled></select></label>
           </div>
         </div>
@@ -140,14 +117,14 @@
     <aside id="side" class="panel">
       <div class="checks-head">
         <h2 class="pacifico">Checks</h2>
-        <div class="counts" id="counts"></div>
-        <label class="switch-row small" data-tip="Also list the generator's notes, not only warnings and errors">
+        <div class="counts" id="counts" role="status"></div>
+        <label class="switch-row small" data-tip-id="notes" data-tip="Also list the generator's notes, not only warnings and errors">
           <span>Info</span>
           <span class="switch"><input type="checkbox" id="show-info"><span class="knob"></span></span>
         </label>
       </div>
-      <div class="checks-list" id="checks-list"><p class="hint">Starting Python in your browser. The first visit downloads about 30 MB; later visits are cached.</p></div>
-      <button class="glass-btn" id="btn-report" disabled data-tip="Opens the run's report.txt: what was read, skipped, noted and written, and how long each stage took">Show Report</button>
+      <div class="checks-list" id="checks-list" tabindex="0" role="region" aria-label="Checks"><p class="hint">Starting Python in your browser. The first visit downloads about 30 MB; later visits are cached.</p></div>
+      <button class="glass-btn" id="btn-report" disabled data-tip-id="report" data-tip="Opens the run's report.txt: what was read, skipped, noted and written, and how long each stage took">Show Report</button>
 
       <h2 class="pacifico">Parts</h2>
       <div class="parts" id="parts"><p class="hint">The solids of the model, once it is made. Click one to hide it.</p></div>
@@ -156,21 +133,33 @@
       <div class="formats" id="formats"></div>
       <p class="hint" id="formats-note"></p>
       <div class="download-box">
-        <button class="primary-btn" id="btn-download" disabled data-tip="Download this run as one zip">Download Zip</button>
+        <button class="primary-btn" id="btn-download" disabled data-tip-id="downloadZip" data-tip="Download this run as one zip">Download Zip</button>
         <div class="download-row" id="download-files"></div>
       </div>
     </aside>
   </main>
 
-  <footer id="foot"></footer>
+  <!-- the footer before the script fills it in (version, build, Report a Problem): the links work without it -->
+  <footer id="foot">KiCad EM Stackup Exporter · GPL-3.0-or-later · runs in your browser, nothing is uploaded ·
+    <a href="privacy.html" target="_blank" rel="noopener">Privacy</a> · <a href="licenses.html" target="_blank" rel="noopener">Licences</a></footer>
 </div>
 
-<div class="popover" id="popover" hidden></div>
+<div class="popover" id="popover" role="tooltip" hidden></div>
 <dialog id="confirm-dialog" class="confirm"><form method="dialog">
   <p id="confirm-text">Are you sure?</p>
-  <div class="confirm-buttons"><button class="reset-btn" value="yes">Sure</button><button class="glass-btn" value="no" autofocus>No</button></div>
+  <div class="confirm-buttons"><button class="reset-btn" value="yes">Sure</button><button class="glass-btn" value="no">No</button></div>
 </form></dialog>
-<dialog id="report-dialog"><form method="dialog"><pre id="report-text"></pre><button class="glass-btn">Close</button></form></dialog>
+<dialog id="crash-dialog" class="crash" aria-labelledby="crash-title"><form method="dialog">
+  <h2 class="pacifico" id="crash-title">Something Went Wrong</h2>
+  <p>The page hit an error it did not expect. The model and settings may be fine, but if something looks wrong, reload the page.
+    Reporting it helps: Report a Problem opens a GitHub issue with these details (never your board), which you see before sending.</p>
+  <pre id="crash-details" tabindex="0"></pre>
+  <div class="confirm-buttons"><button type="button" class="glass-btn" id="crash-copy">Copy Details</button>
+    <a class="glass-btn" id="crash-report" href="#" target="_blank" rel="noopener">Report a Problem</a>
+    <button class="primary-btn" value="close">Close</button></div>
+</form></dialog>
+<dialog id="report-dialog"><form method="dialog"><pre id="report-text" tabindex="0"></pre><button class="glass-btn">Close</button></form></dialog>
 <div class="toast" id="toast" hidden></div>
+<div class="sr-only" id="sr-status" role="status"></div>   <!-- what the toast says, for screen readers (the toast itself appears and goes) -->
 </body>
 </html>

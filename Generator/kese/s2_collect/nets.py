@@ -1,8 +1,6 @@
 """Nets: the board's net table, and the net an item belongs to."""
-from kese.s1_read.parse_kicad_version import kicad_unescape, net_of, net_table
+from kese.s1_read.parse_kicad_version import net_of, net_table
 from parameters import P
-
-__all__ = ["kicad_unescape", "net_name", "read_nets"]
 
 
 def read_nets(items, tree):

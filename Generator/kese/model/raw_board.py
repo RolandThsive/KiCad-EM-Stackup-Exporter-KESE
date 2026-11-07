@@ -11,7 +11,6 @@ class RawBoard:
     dialect: object                # s1_read/parse_kicad_version.py KicadDialect: everything that differs by version
     generator: str
     copper_layers: list            # outermost first
-    all_layers: list
     file_thickness: float | None
     title: str
     warnings: list = field(default_factory=list)

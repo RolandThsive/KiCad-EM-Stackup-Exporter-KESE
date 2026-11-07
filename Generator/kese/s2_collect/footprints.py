@@ -1,5 +1,5 @@
 """Footprints: their drawings, pads, zones and text, placed by the footprint's position and angle."""
-from kese.core import shapes2d as sh
+from kese.core import math2d as geo
 from kese.core.sexp import child, children, layer_of, numbers
 from kese.s1_read.parse_kicad_version import mask_margin
 from kese.s2_collect.drawings import GRAPHICS, add_drawing
@@ -11,7 +11,7 @@ from kese.s2_collect.zones import add_zone
 
 def add_footprint(ctx, fp):
     items = ctx.items
-    T = sh.make_transform(numbers(child(fp, "at")))
+    T = placement(numbers(child(fp, "at")))
     fp_margin = mask_margin(fp, items.raw.dialect)
     subst = footprint_fields(fp)
     items.found["footprints"] += 1
@@ -32,3 +32,10 @@ def add_footprint(ctx, fp):
             items.skipped["barcode items"] += 1
         elif str(node[0]).startswith("fp_"):          # a drawing of a kind KESE does not know
             items.skipped[f"{node[0]} {UNKNOWN}"] += 1
+
+
+def placement(at_numbers):
+    """Footprint local -> board coordinates, from the numbers of the footprint's (at x y angle)."""
+    if not at_numbers:
+        return lambda p: p
+    return geo.rotation((at_numbers[0], at_numbers[1]), at_numbers[2] if len(at_numbers) > 2 else 0.0)

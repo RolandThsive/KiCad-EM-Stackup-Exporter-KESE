@@ -2,7 +2,7 @@
 from shapely.geometry import LineString, Polygon, box
 
 from kese.core import shapes2d as sh
-from kese.core.sexp import child, num
+from kese.core.sexp import child, num, number
 from kese.core.shapes2d import EMPTY, disk, thicken, union
 from kese.s1_read.parse_kicad_version import roundrect_ratio
 from kese.s2_collect.drawings import GRAPHICS, graphic, painted
@@ -15,16 +15,13 @@ def pad_shape(items, pad, w, h):
     if shape == "rect":
         return box(-w / 2, -h / 2, w / 2, h / 2)
     if shape == "oval":
-        if abs(w - h) < 1e-9:
-            return disk((0, 0), w / 2)
-        d = abs(w - h) / 2
-        return thicken(LineString([(-d, 0), (d, 0)] if w > h else [(0, -d), (0, d)]), min(w, h))
+        return oval(w, h)
     if shape == "roundrect":
         rounded = sh.rounded_rect(-w / 2, -h / 2, w / 2, h / 2, roundrect_ratio(pad) * min(w, h))
         return chamfered(pad, rounded, w, h)
     if shape == "trapezoid":
         rd = child(pad, "rect_delta")
-        dx, dy = (float(rd[1]) / 2, float(rd[2]) / 2) if rd else (0.0, 0.0)
+        dx, dy = (number(rd[1], rd) / 2, number(rd[2], rd) / 2) if rd else (0.0, 0.0)
         return Polygon([(-w / 2 - dy, h / 2 + dx), (w / 2 + dy, h / 2 - dx),
                         (w / 2 - dy, -h / 2 + dx), (-w / 2 + dy, -h / 2 - dx)])
     if shape == "custom":
@@ -38,6 +35,14 @@ def pad_shape(items, pad, w, h):
         return union(parts)
     items.skipped[f"pads of shape {shape}"] += 1
     return EMPTY
+
+
+def oval(w, h):
+    """A w x h stadium centred on the origin (a circle when w == h): an oval pad or drill."""
+    if abs(w - h) < 1e-9:
+        return disk((0, 0), w / 2)
+    d = abs(w - h) / 2
+    return thicken(LineString([(-d, 0), (d, 0)] if w > h else [(0, -d), (0, d)]), min(w, h))
 
 
 CORNERS = {"top_left": (-1, -1), "top_right": (1, -1), "bottom_right": (1, 1), "bottom_left": (-1, 1)}

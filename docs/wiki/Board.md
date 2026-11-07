@@ -1,10 +1,10 @@
-# 10. Board
+# 11. Board
 
 The board is the laminate: the dielectric layers between and around the copper, with the
 outline, the cut-outs and the holes. `kese/s4_geometry/laminate.py` builds it from the resolved
 outline and stack-up; the settings are in `parameters/board.py`.
 
-## 10.1 Dielectric Solids
+## 11.1 Dielectric Solids
 
 Each gap between two consecutive copper layers is one dielectric from the
 [Stack-Up Model](Stack-Up-Model.md): a core or a prepreg with its own thickness, material, εr
@@ -21,21 +21,21 @@ copper layer $`l_a`$ to $`l_b`$ drills the dielectrics between them, and a throu
 through-hole pad drills them all.
 
 ```math
-D_i = O \setminus \bigcup_{h : a_h \le i-1,\ b_h \ge i} H_h \qquad (10.1)
+D_i = O \setminus \bigcup_{h : a_h \le i-1,\ b_h \ge i} H_h \qquad (11.1)
 ```
 
-With edge plating on (section 11.7 of [Copper And Traces](Copper-And-Traces.md)), the edge band
+With edge plating on (section 12.7 of [Copper And Traces](Copper-And-Traces.md)), the edge band
 is also removed from every $`D_i`$, since the plating takes the laminate's place at the edge.
 
 | Symbol | Meaning |
 |---|---|
 | $`D_i`$ | 2D region of dielectric $`d_i`$ (between copper layers $`l_{i-1}`$ and $`l_i`$) |
-| $`O`$ | the board outline region (section 10.3) |
+| $`O`$ | the board outline region (section 11.3) |
 | $`H_h`$ | the drill of hole $`h`$ (round or slot) |
 | $`a_h, b_h`$ | index of the first and last copper layer hole $`h`$ spans ($`0`$ to $`N-1`$ for a through hole) |
 | $`\setminus`$, $`\cup`$, $`\cap`$ | region difference, union and intersection |
 
-The prism is extruded over the z range of equations (7.8) and (7.9) in
+The prism is extruded over the z range of equations (8.8) and (8.9) in
 [Stack-Up Model](Stack-Up-Model.md).
 
 In `materials.json`, with `"layer"` grouping, every dielectric part carries `kind` (core /
@@ -43,7 +43,7 @@ prepreg), `material`, `thickness_mm`, `epsilon_r`, `loss_tangent` and `between` 
 layers it separates). With `"merged"` the single `Board` part carries only the first dielectric's
 values (its kind, thickness, εr, tanδ and `between`).
 
-## 10.2 Resin Fill Beside Inner Copper
+## 11.2 Resin Fill Beside Inner Copper
 
 In a pressed laminate the resin of the prepreg flows into the spaces between the inner-layer
 traces, so there is no air inside the board. KESE models this with
@@ -52,14 +52,14 @@ area of the outline that carries **no** copper on that layer, minus the holes th
 layer, is filled over the copper's own z band:
 
 ```math
-F_k = \left( O \setminus \bigcup_{h : a_h \le k \le b_h} H_h \right) \setminus C_k, \qquad z \in \left[ z_{\mathrm{bot}}(l_k),\ z_{\mathrm{top}}(l_k) \right] \qquad (10.2)
+F_k = \left( O \setminus \bigcup_{h : a_h \le k \le b_h} H_h \right) \setminus C_k, \qquad z \in \left[ z_{\mathrm{bot}}(l_k),\ z_{\mathrm{top}}(l_k) \right] \qquad (11.2)
 ```
 
 | Symbol | Meaning |
 |---|---|
 | $`F_k`$ | resin-fill region beside inner copper layer $`l_k`$ |
 | $`C_k`$ | all copper of layer $`l_k`$, every net |
-| $`z_{\mathrm{bot}}(l_k)`$, $`z_{\mathrm{top}}(l_k)`$ | the copper band of $`l_k`$, equations (7.6) and (7.7) |
+| $`z_{\mathrm{bot}}(l_k)`$, $`z_{\mathrm{top}}(l_k)`$ | the copper band of $`l_k`$, equations (8.6) and (8.7) |
 
 With edge plating on, the edge band is also removed from $`F_k`$. The fill is added to a
 dielectric part:
@@ -82,7 +82,7 @@ there. With the setting
 > band; the resin fill is what joins the laminate through the copper-free area of that band.
 > Without it the laminate would be two separate solids touching only through copper.
 
-## 10.3 Outline And Cut-Outs
+## 11.3 Outline And Cut-Outs
 
 The outline comes from `Edge.Cuts`:
 
@@ -94,13 +94,15 @@ The outline comes from `Edge.Cuts`:
    pairs first; ends that already meet stay where they are. The lines are then polygonized into
    faces. When a gap was closed this way, `report.txt` notes the widest one. If the lines form no
    face at all, the run warns `Edge.Cuts lines/arcs do not form a closed outline`.
-3. Rings nested at an **even** depth are boards, rings at an **odd** depth are cut-outs. As in
-   KiCad, each cut-out is taken out of the ring one level up that holds it. A circle drawn inside
-   the outer outline is a hole through the whole board, and a ring drawn inside such a cut-out is a
-   board again, like a small board inside a panel frame (`featureTest/13b_outline_two`):
+3. A ring of `Board.OUTLINE_MIN_AREA_MM2` (1e-9 mm²) or less, such as a line drawn there and back,
+   is left out, and two rings that differ by less than `Board.OUTLINE_DUPLICATE_AREA_MM2` (1e-6 mm²),
+   a ring drawn twice, are one. Rings nested at an **even** depth are boards, rings at an **odd**
+   depth are cut-outs. As in KiCad, each cut-out is taken out of the ring one level up that holds
+   it. A circle drawn inside the outer outline is a hole through the whole board, and a ring drawn
+   inside such a cut-out is a board again, like a small board inside a panel frame (`featureTest/13b_outline_two`):
 
 ```math
-O = \bigcup_{r : n_r \text{ even}} \Big( r \ \setminus \bigcup_{h \subset r,\ n_h = n_r + 1} h \Big) \qquad (10.3)
+O = \bigcup_{r : n_r \text{ even}} \Big( r \ \setminus \bigcup_{h \subset r,\ n_h = n_r + 1} h \Big) \qquad (11.3)
 ```
 
 | Symbol | Meaning |
@@ -116,21 +118,21 @@ When `Edge.Cuts` gives no closed ring at all (nothing drawn, or only lines that 
 the fallback outline is
 
 ```math
-O = \mathrm{hull}\left( \bigcup C \right) \oplus m \qquad (10.4)
+O = \mathrm{hull}\left( \bigcup C \right) \oplus m \qquad (11.4)
 ```
 
 where $`\mathrm{hull}`$ is the convex hull of all copper, $`\oplus m`$ grows a region
 outward by $`m`$ (a buffer), and $`m`$ is `Board.OUTLINE_FALLBACK_MARGIN_MM`.
 
 `Board.OUTLINE_FALLBACK` decides whether the fallback is used: `"copper_hull"` (the default)
-uses equation (10.4) with $`m = 1`$ mm and warns; `"error"` stops the run. When the lines do not
+uses equation (11.4) with $`m = 1`$ mm and warns; `"error"` stops the run. When the lines do not
 close but a closed shape (a circle, rectangle or polygon) is drawn on `Edge.Cuts`, there is no
 fallback: that shape alone becomes the outline, even if it was meant as a cut-out.
 
 Everything on every layer is clipped to the outline: copper, mask openings and silkscreen never
 reach past the board edge.
 
-## 10.4 Holes
+## 11.4 Holes
 
 | Source | Hole | Setting |
 |---|---|---|
@@ -142,7 +144,7 @@ A plated hole leaves its barrel in the laminate: the dielectric is cut by the fu
 copper barrel fills the ring between the drill and the drill minus the wall. See
 [Copper And Traces](Copper-And-Traces.md) for the plating.
 
-## 10.5 Board Thickness
+## 11.5 Board Thickness
 
 `Board.BOARD_THICKNESS_MM = None` (the default) takes the laminate from the stack-up, or from the
 file's `(general (thickness ...))` less the outer copper and the two masks when there is no usable
@@ -150,7 +152,7 @@ stack-up (from 1.6 mm when the file gives no thickness either), so the finished 
 board thickness. A number forces the laminate
 thickness; see [Stack-Up Model](Stack-Up-Model.md) for how the dielectrics are scaled.
 
-## 10.6 Settings
+## 11.6 Settings
 
 | Name | Default | Range | Meaning |
 |---|---|---|---|
@@ -159,7 +161,7 @@ thickness; see [Stack-Up Model](Stack-Up-Model.md) for how the dielectrics are s
 | `DEFAULT_DIELECTRIC_MATERIAL`, `DEFAULT_DIELECTRIC_TYPE` | `"FR4"`, `"core"` | text; `"core"` / `"prepreg"` | Material and type when the stack-up gives none |
 | `DEFAULT_EPSILON_R`, `DEFAULT_LOSS_TANGENT` | `4.5`, `0.02` | > 0 | Typical FR4 at 1 GHz, used when the stack-up gives none |
 | `USE_STACKUP_EPSILON_R`, `USE_STACKUP_LOSS_TANGENT` | `True`, `True` | bool | Stack-up values win over the defaults when present |
-| `RESIN_FILL_BETWEEN_INNER_COPPER` | `True` | bool | `True`: fill the space beside inner copper from the adjacent prepreg (otherwise from the dielectric above); `False`: those pockets stay empty and `report.txt` notes it (section 10.2) |
+| `RESIN_FILL_BETWEEN_INNER_COPPER` | `True` | bool | `True`: fill the space beside inner copper from the adjacent prepreg (otherwise from the dielectric above); `False`: those pockets stay empty and `report.txt` notes it (section 11.2) |
 | `INCLUDE_NON_PLATED_HOLES` | `True` | bool | NPTH pads become holes through the board |
 | `OUTLINE_LINE_SNAP_MM` | `0.01` | mm > 0 | Open `Edge.Cuts` line and arc ends closer than this are joined, as KiCad joins them (its chaining distance is 0.01 mm) |
 | `OUTLINE_FALLBACK` | `"copper_hull"` | `"copper_hull"` / `"error"` | What to do when `Edge.Cuts` gives no closed ring at all |

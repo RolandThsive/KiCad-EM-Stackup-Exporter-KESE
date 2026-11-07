@@ -5,14 +5,13 @@ import math
 import re
 from dataclasses import dataclass
 
-from kese.core.sexp import atoms, child, children, layer_of, num, pt, yes
+from kese.core.sexp import atoms, child, children, layer_of, num, number, pt, yes
 
 # (KiCad release, first format number it writes).  A development build (x.99) writes the numbers
 # between two releases and counts as the next release.
 RELEASES = ((3, 3), (4, 4), (5, 20171130), (6, 20211014), (7, 20221018), (8, 20240108), (9, 20241229),
             (10, 20260206))
 NO_VERSION = 20201115           # parseHeader: a file without (version) is read as this format
-LEGACY_ARC_FORMATTING = 20210925       # up to here an arc is (start centre) (end first point) (angle)
 LEGACY_ZERO_MARGIN = 20240201          # up to here a solder_mask_margin of 0 means "inherit"
 NEW_OVERBAR = 20210606                 # from here an overbar is ~{text}; before, text between two ~
 BOLD_MULTIPLIER_FROM = 20260826       # from here a bold text's thickness is its base pen, drawn x 1.6
@@ -152,9 +151,9 @@ def is_filled(node, kind, w):
 
 
 def legacy_arc(node, T):
-    """An arc of KiCad 5 and older, (start centre) (end first point) (angle deg), as (centre, radius,
-    start angle, sweep, first point), or None for an arc with (mid ...) (parsePCB_SHAPE,
-    LEGACY_ARC_FORMATTING)."""
+    """An arc of KiCad 5 and older (format 20210925 and before), (start centre) (end first point)
+    (angle deg), as (centre, radius, start angle, sweep, first point), or None for an arc with
+    (mid ...).  As KiCad's parsePCB_SHAPE, this goes by what the arc holds, not by the format."""
     if child(node, "mid"):
         return None
     c, p0 = T(pt(child(node, "start"))), T(pt(child(node, "end")))
@@ -214,7 +213,8 @@ def zone_layer_connections(node):
 
 def via_tenting(node, default):
     """{"F": tented?, "B": tented?} of a via: KiCad 10 (tenting (front yes) (back no)), KiCad 9
-    (tenting front back) / (tenting none), the complete list; a via that does not say keeps `default`."""
+    (tenting front back) / (tenting none), the complete list; a via that does not say keeps `default`,
+    as does a side with no value, (front), as in a damaged file."""
     tent = dict(default)
     vt = child(node, "tenting")
     if vt is not None:
@@ -222,7 +222,8 @@ def via_tenting(node, default):
         for side, key in (("F", "front"), ("B", "back")):
             c = child(vt, key)
             if c is not None:
-                tent[side] = yes(c[1])
+                if len(c) > 1:
+                    tent[side] = yes(c[1])
             elif words:
                 tent[side] = key in words
     return tent
@@ -245,19 +246,19 @@ def board_tenting(setup):
     return {"F": not open_, "B": not open_}, "plot setting viasonmask" if vom else "KiCad default (vias tented)"
 
 
-def net_class_vias(tree, unescape):
+def net_class_vias(tree, d):
     """What a via that gives no size or drill takes (KiCad 4/5): (the Default class's, {net: its
     class's}), each (size, drill, micro size, micro drill), falling back to setup and KiCad's defaults."""
     setup = child(tree, "setup") or []
-    d = KICAD_DEFAULT_VIA
-    board = (num(setup, "via_size", d[0]), num(setup, "via_drill", d[1]),
-             num(setup, "uvia_size", d[2]), num(setup, "uvia_drill", d[3]))
+    kd = KICAD_DEFAULT_VIA                            # (d is the dialect: the class's net names need it)
+    board = (num(setup, "via_size", kd[0]), num(setup, "via_drill", kd[1]),
+             num(setup, "uvia_size", kd[2]), num(setup, "uvia_drill", kd[3]))
     classes, default = {}, board
     for nc in children(tree, "net_class"):
         vals = (num(nc, "via_dia", board[0]), num(nc, "via_drill", board[1]),
                 num(nc, "uvia_dia", board[2]), num(nc, "uvia_drill", board[3]))
         for a in children(nc, "add_net"):
-            classes[unescape(str(a[1]))] = vals
+            classes[shown_net(str(a[1]), d)] = vals
         if len(nc) > 1 and str(nc[1]) == "Default":     # a net in no class is in Default
             default = vals
     return default, classes
@@ -351,10 +352,15 @@ def overbar_markup(text, d):
     return "".join(out) + ("}" if inside else "")
 
 
+def shown_net(name, d):
+    """A net name as written in the file -> as KiCad shows it."""
+    return kicad_unescape(overbar_markup(name, d))
+
+
 def net_table(tree, d):
     """{"3": "GND"} from the board's (net 3 "GND") entries (KiCad 9 and older; KiCad 10 writes none),
     with "" for a net with no name."""
-    return {str(n[1]): kicad_unescape(overbar_markup(str(n[2]), d)) if len(n) > 2 else "" for n in children(tree, "net")}
+    return {str(n[1]): shown_net(str(n[2]), d) if len(n) > 2 else "" for n in children(tree, "net")}
 
 
 def net_of(nets, node, d):
@@ -366,7 +372,7 @@ def net_of(nets, node, d):
     key = str(n[1])
     if key in nets:
         return nets[key]
-    return kicad_unescape(overbar_markup(key, d)) if key != "0" else ""
+    return shown_net(key, d) if key != "0" else ""
 
 
 # ---- text --------------------------------------------------------------------------------------
@@ -376,7 +382,7 @@ LEGACY_TEXT_SIZE_MM = 1.524     # KiCad 4 leaves out a text size of 60 mils (par
 def text_size(font_node):
     """(height, width) of a text's font; KiCad 4 wrote none for the 60 mil default."""
     size = child(font_node, "size")
-    return (float(size[1]), float(size[2])) if size else (LEGACY_TEXT_SIZE_MM, LEGACY_TEXT_SIZE_MM)
+    return (number(size[1], size), number(size[2], size)) if size else (LEGACY_TEXT_SIZE_MM, LEGACY_TEXT_SIZE_MM)
 
 
 def text_pen(font_node, d):
@@ -391,11 +397,7 @@ def text_pen(font_node, d):
 def is_hidden(node):
     """A text's hide flag: (hide yes) from KiCad 8, a bare hide in the node or its (effects ...)
     before."""
-    h_ = child(node, "hide")
-    effects = child(node, "effects") or []
-    return (yes(h_[1]) if h_ is not None and len(h_) > 1 else h_ is not None) \
-        or "hide" in atoms(node) or "hide" in atoms(effects) \
-        or (child(effects, "hide") is not None and yes((child(effects, "hide") + ["yes"])[1]))
+    return flag(node, "hide") or flag(child(node, "effects") or [], "hide")
 
 
 def kept_upright(node):
@@ -432,14 +434,14 @@ def render_cache_rings(node, text, angle):
     if rc is None or len(rc) < 3 or isinstance(rc[1], list) or str(rc[1]) != text:
         return None
     try:
-        turned = (float(rc[2]) - angle + 180.0) % 360.0 - 180.0
+        turned = (number(rc[2], rc) - angle + 180.0) % 360.0 - 180.0
     except (TypeError, ValueError):
         return None
     if abs(turned) > 1e-6:
         return None
     out = []
     for poly in children(rc, "polygon"):
-        rings = [[(float(p[1]), float(p[2])) for p in pts[1:] if isinstance(p, list) and p[0] == "xy"]
+        rings = [[pt(p) for p in pts[1:] if isinstance(p, list) and p[0] == "xy"]
                  for pts in children(poly, "pts")]
         out.append([r for r in rings if len(r) >= 3])
     return out

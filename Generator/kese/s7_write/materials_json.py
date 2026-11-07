@@ -2,6 +2,7 @@
 import json
 
 from kese.core.names import model_file_names
+from kese.core.whole_files import whole
 
 
 def write(model, path):
@@ -20,5 +21,6 @@ def write(model, path):
     doc = {"board": model.name, "mode": model.mode, "units_of_files": model.units,
            "orientation": "board in XY, F.Cu toward +Z, Y up" if model.transform[1][1] == model.transform[0][0] else "board in XZ, F.Cu toward +Y",
            "parts": parts}
-    path.write_text(json.dumps(doc, indent=2), encoding="utf-8")
+    with whole(path):
+        path.write_text(json.dumps(doc, indent=2), encoding="utf-8")
     return path

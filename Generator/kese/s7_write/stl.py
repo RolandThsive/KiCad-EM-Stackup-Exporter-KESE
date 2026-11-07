@@ -3,6 +3,7 @@ header, the triangle count, per triangle its unit normal, three float32 corners 
 import numpy as np
 
 from kese.core.names import model_file_names
+from kese.core.whole_files import whole
 
 HEADER = np.dtype([("header", np.void, 80), ("face_count", "<u4")])
 TRIANGLE = np.dtype([("normals", "<f4", (3,)), ("vertices", "<f4", (3, 3)), ("attributes", "<u2")])
@@ -22,6 +23,7 @@ def write(model, folder):
     names, written = model_file_names(model), []
     for part, mesh in model.meshes.items():
         p = folder / f"{names[part]}.stl"
-        p.write_bytes(stl_bytes(mesh))
+        with whole(p):
+            p.write_bytes(stl_bytes(mesh))
         written.append(p)
     return written

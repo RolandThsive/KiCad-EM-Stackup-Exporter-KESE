@@ -3,16 +3,18 @@ after checking it is a board KESE can handle."""
 import re
 from pathlib import Path
 
-from kese.core.sexp import child, num, parse
+from kese.core.sexp import NotANumber, child, num, parse
 from kese.model.raw_board import RawBoard
 from kese.s1_read import parse_kicad_version as kv
 from parameters import P
 
 
-
 def run(pcb_path, job):
     with job.stage("read", "read"):
-        raw = read(pcb_path)
+        try:
+            raw = read(pcb_path)
+        except NotANumber as exc:
+            raise NotANumber(f"{Path(pcb_path).name}: {exc}") from None
         job.say(f"{raw.name}: {raw.dialect.describe()}, {len(raw.copper_layers)} copper layers, mode {job.mode}")
         for w in raw.warnings:
             job.note(f"warning: {w}")
@@ -21,7 +23,11 @@ def run(pcb_path, job):
 
 def read(path):
     path = Path(path)
-    text = path.read_text(encoding="utf-8")
+    try:                        # utf-8-sig: a byte order mark an editor put in front is passed over
+        text = path.read_text(encoding="utf-8-sig")
+    except UnicodeDecodeError as exc:
+        raise ValueError(f"{path.name} is not a KiCad board file: it is not UTF-8 text, as KiCad writes "
+                         f"(byte 0x{exc.object[exc.start]:02x} at {exc.start})") from None
     try:
         tree = parse(text)
     except ValueError as exc:
@@ -31,7 +37,7 @@ def read(path):
     warnings = []
     d = kv.dialect(tree)
     gen = child(tree, "generator")
-    generator = f"{gen[1]}" if gen else "unknown"
+    generator = str(gen[1]) if gen else "unknown"
     gv = child(tree, "generator_version")
     if gv:
         generator += f" {gv[1]}"
@@ -60,9 +66,12 @@ def read(path):
 
     general = child(tree, "general")
     file_thickness = num(general, "thickness") if general else None
+    if file_thickness is not None and file_thickness <= 0:
+        warnings.append(f"board thickness in the file is {file_thickness} mm: read as not given")
+        file_thickness = None
     tb = child(tree, "title_block")
     title = str(child(tb, "title")[1]) if tb and child(tb, "title") else ""
     return RawBoard(path=path, name=path.stem, tree=tree, dialect=d, generator=generator,
-                    copper_layers=copper, all_layers=all_layers, file_thickness=file_thickness,
+                    copper_layers=copper, file_thickness=file_thickness,
                     title=title, warnings=warnings)
 

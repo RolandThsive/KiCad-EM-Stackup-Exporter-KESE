@@ -45,3 +45,5 @@ OUTLINE_LINE_SNAP_MM = 0.01             # loose Edge.Cuts line/arc ends closer t
 OUTLINE_FALLBACK = "copper_hull"        # when there is no Edge.Cuts: "copper_hull" (convex hull of the copper + margin) or "error"
 OUTLINE_FALLBACK_MARGIN_MM = 1.0
 OUTLINE_DUPLICATE_AREA_MM2 = 1e-6       # two closed Edge.Cuts outlines differing by less than this area are one
+OUTLINE_MIN_AREA_MM2 = 1e-9             # a closed Edge.Cuts outline of this area or less is left out (a line drawn
+                                        # there and back, or a circle of no size)
