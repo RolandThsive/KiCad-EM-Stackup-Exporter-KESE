@@ -10,8 +10,10 @@ It always holds the latest web tool work (`WebUI_modifs`) plus this folder.
    Mac / Linux: run `LocalTesting/Start-Mac-Linux.command` (double-click, or in a terminal).
 3. A small local web server starts (needs Python 3, nothing to install) and the page opens in your browser at
    `http://localhost:8000/WebUI/`. If port 8000 is busy it uses the next free one; the window shows the address.
-4. The first start downloads Python for the browser (Pyodide, about 30 MB with numpy and shapely) and three.js from
-   the internet; later starts are cached.
+4. The first start downloads the backup copy of Python for the browser (Pyodide with numpy and shapely) and three.js,
+   about 19 MB, into `LocalTesting/_vendor` (ignored by git), checked file by file against `WebUI/vendor.json`.
+   Later starts reuse it. The page itself loads them from jsDelivr, as on the live site, and uses this copy when
+   jsDelivr does not answer within 15 s.
 
 Caching is switched off in the test server, and every reload of the page builds the site again, so the browser
 always shows the files of this branch: edit `WebUI/` or `Generator/`, then reload.
@@ -25,9 +27,10 @@ module scripts and the browser storage on `file://` pages, so the page has to co
   (ignored by git), and serves that folder. So the test page is exactly what Pages would publish: `WebUI/`, the
   generator packed into `generator.zip`, `version.json`, the logo and the example boards.
 - The Start scripts only run `serve.py`.
-- Python for the browser (Pyodide) and three.js come from their CDNs, as on the live site. To test without the
-  internet, serve local copies and open the page with `?pyodide=<url of the pyodide folder>/` and
-  `?three=<url of the three package>/`.
+- Python for the browser (Pyodide) and three.js come from jsDelivr, as on the live site, with the site's backup
+  copy when jsDelivr fails. To use only the backup copy (no internet once `_vendor` is filled), open the page with
+  `?pyodide=vendor/pyodide/&threeBackup=1`. `?pyodide=` takes only a folder of this site.
+- The browser tests (`WebUI/tests`, see its README) run the same build in Chromium, Firefox and WebKit.
 - `?board=rf_module.kicad_pcb` (or another board of `Generator/Input`) loads that example and generates it at once.
 
 ## Keeping it current
