@@ -65,6 +65,8 @@ The newest first. Each entry is one pull request into `WebUI`; the footer's buil
     Castellation, Edge Plating and its net, Finish Enabled, Silk Thickness, Interline Pitch, Text Stroke Quad Segs
     and Outline Line Snap. Their SVG sources are in `drawn/`.
 - Long board and file names wrap inside a tip instead of sticking out of it.
+- Zoomed in (200 to 400 %), a tip taller than the window stays inside it and scrolls inside. Where there is room,
+  it takes the larger side of its control and leaves the control in view.
 - Finish Type's layer table says what its rows are: the finish's layers, bottom to top, in mm.
 
 **Tests and documents**
@@ -76,6 +78,7 @@ The newest first. Each entry is one pull request into `WebUI`; the footer's buil
   - the CSP;
   - accessibility scans, screenshots;
   - every setting and button has its tip in `tips.json`, with its picture, and every tip falls back to plain words without it;
+  - a tall tip stays inside a window zoomed to 200 and 400 %;
   - speed budgets and Lighthouse.
 - After each deploy, a smoke test makes a board on the published page.
 - New documents:

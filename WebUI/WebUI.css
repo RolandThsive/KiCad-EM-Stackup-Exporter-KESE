@@ -406,13 +406,14 @@ input[type=range]:focus-visible::-moz-range-thumb { box-shadow: var(--metal-shad
   overflow-wrap: anywhere; font-variant-numeric: tabular-nums; }
 
 /* ---- pop-ups ------------------------------------------------------------------ */
-.popover { position: fixed; z-index: 100; max-width: 380px; background: #ffffff; border: 1px solid #ddd; border-radius: 8px;
-  box-shadow: var(--shadow-card); padding: 10px 12px; font-size: 12.5px; line-height: 1.45; color: var(--text); white-space: pre-wrap; }
+.popover { position: fixed; z-index: 100; max-width: min(380px, calc(100% - 12px)); background: #ffffff; border: 1px solid #ddd; border-radius: 8px;
+  box-shadow: var(--shadow-card); padding: 10px 12px; font-size: 12.5px; line-height: 1.45; color: var(--text); white-space: pre-wrap;
+  max-height: calc(100% - 12px); overflow-y: auto; overscroll-behavior: contain; }   /* % = the window less its scrollbars: zoomed to 400 % it scrolls inside, never off screen */
 .popover .mono-name { display: block; margin-bottom: 4px; }
 .popover .tip-foot { display: block; margin-top: 6px; padding-top: 6px; border-top: 1px solid #eee; color: var(--text-2); }
 /* a tip from tips.json: title, one plain line, then the choices, facts, a note and a picture where they help */
-.popover.rich { white-space: normal; border-radius: 10px; padding: 12px 14px 11px; line-height: 1.5; max-width: min(360px, calc(100vw - 12px)); }
-.popover.rich.wide { width: min(360px, calc(100vw - 12px)); }
+.popover.rich { white-space: normal; border-radius: 10px; padding: 12px 14px 11px; line-height: 1.5; max-width: min(360px, calc(100% - 12px)); }
+.popover.rich.wide { width: min(360px, calc(100% - 12px)); }
 .popover.rich > * + * { margin-top: 8px; }
 .popover.rich p { margin: 0; }
 .tp-eyebrow { display: block; font-size: 10.5px; line-height: 1.3; letter-spacing: 0.07em; text-transform: uppercase; color: var(--accent); font-weight: 650; }
