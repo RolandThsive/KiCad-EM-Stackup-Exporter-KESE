@@ -31,9 +31,10 @@ def caps(polys, cut):
     return xy, nxt, poly, tri, bad
 
 
-def rings_of(polys):
-    """The points of the polygons' rings (outer counter-clockwise, holes clockwise): (xy, next point,
-    polygon of each point, [(first point, end, ring ends)] per polygon, polygons with a point twice)."""
+def oriented_rings(polys):
+    """The points of the polygons' rings, outer rings counter-clockwise and holes clockwise: (xy, next
+    point, ring of each point, first point of each ring, end of each ring, polygon of each ring,
+    whether each ring is an outer one)."""
     rings, ring_poly = shapely.get_rings(polys, return_index=True)
     xy, ring = shapely.get_coordinates(rings, return_index=True)
     keep = np.r_[ring[1:] == ring[:-1], False]           # every ring ends on its first point again
@@ -48,7 +49,14 @@ def rings_of(polys):
     turn = ((twice > 0) != outer)[ring]
     idx = np.arange(n)
     idx[turn] = (start + end - 1)[ring[turn]] - idx[turn]
-    xy = xy[idx]
+    return xy[idx], nxt, ring, start, end, ring_poly, outer
+
+
+def rings_of(polys):
+    """The points of the polygons' rings (outer counter-clockwise, holes clockwise): (xy, next point,
+    polygon of each point, [(first point, end, ring ends)] per polygon, polygons with a point twice)."""
+    xy, nxt, ring, start, end, ring_poly, outer = oriented_rings(polys)
+    n = len(xy)
     poly = ring_poly[ring]
     order = np.lexsort((xy[:, 1], xy[:, 0], poly))
     same = (np.diff(xy[order], axis=0) == 0).all(axis=1) & (np.diff(poly[order]) == 0)

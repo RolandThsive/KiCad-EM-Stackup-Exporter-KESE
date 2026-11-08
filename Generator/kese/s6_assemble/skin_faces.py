@@ -19,8 +19,10 @@ from kese.core.vertices import (
     walls_split_at_vertices,
 )
 from kese.core.memory import give_back_memory
-from kese.core.parallel import in_processes, workers_wanted, worth_processes
+from kese.core.parallel import biggest_first, in_processes, workers_wanted, worth_processes
 from kese.core.shape_copies import floating, own
+
+COVERS_BY_PATTERN = shapely.geos_version >= (3, 13, 0)    # a prepared shape answers a pattern with RelateNG
 
 
 def skin_faces(ps, log):
@@ -78,7 +80,8 @@ def material_of_every_slice(slices, pool):
                 parts.append(part)
         polys = np.array(polys, dtype=object)
         gathered.append((polys, np.array(parts, dtype=object), shared_tree(polys)))
-    joined = pool.map(lambda material: joined_regions(list(material[0]), exact=False, shared=True), gathered)
+    joined = biggest_first(pool, lambda material: joined_regions(list(material[0]), exact=False, shared=True), gathered,
+                           [shapely.get_num_coordinates(material[0]).sum() for material in gathered])
     return [(*material, region, {"turn": Lock()}) for material, region in zip(gathered, joined)]
 
 
@@ -101,38 +104,49 @@ def visible_flats(part_slices, levels, pieces):
 
 
 def cut_away(region, material):
-    """The region less the material of a slice: a few pieces joined, a big piece on its own, more as
-    one overlay; a region wholly against material (most faces of a board) is gone at once.  The
-    index finds the pieces that meet the region with the region prepared once (its edges indexed):
-    tested against each piece on its own, the region's rings are walked again for every piece, which
-    on NE_Delta's skin took 251 s of thread time where the index takes 43 s."""
+    """The region less the material of a slice.  Most faces of a board lie wholly against material
+    (inner copper between the dielectrics, copper under the mask, the laminate under the copper) and
+    are gone after one covers test.  Otherwise the index finds the pieces that meet the region, with
+    the region prepared once (its edges indexed: tested against each piece on its own, its rings were
+    walked again for every piece), and the region is cut by a few of them joined, by a big piece on
+    its own, or by more as the whole slice.  CIAA ACC's 23,290 cuts, 22,197 of them faces wholly
+    against material, take 41 s of thread time so (93 s with the index first and shapely.covers)."""
     polys, _, tree, joined, _ = material
+    if lies_against_material(region, material):
+        return sh.EMPTY
     near = tree.query(region, predicate="intersects")
     if not len(near):
         return region
-    cutters = polys[near]
-    few, big = sh.G().SKIN_FEW_PIECES, shapely.get_num_coordinates(cutters) > sh.G().SKIN_BIG_PIECE_COORDINATES
-    if (big.any() or len(near) > few) and lies_against_material(region, material):
-        return sh.EMPTY
-    if len(near) > few:
+    if len(near) > sh.G().SKIN_FEW_PIECES:
         return sh.diff(region, joined)
+    cutters = polys[near]
+    big = shapely.get_num_coordinates(cutters) > sh.G().SKIN_BIG_PIECE_COORDINATES
     for piece in cutters[big]:
         region = sh.diff(region, piece)
     return sh.diff(region, joined_regions(list(cutters[~big]), exact=False, shared=True)) if (~big).any() else region
 
 
 def lies_against_material(region, material):
-    """Whether the slice's material covers the region wholly, asked of a prepared copy of the material.
-    A prepared shape is not for two threads at once (GEOS builds its indexes on first use), so the
-    threads take turns with one copy per slice, made by the first to ask: a copy for each thread
-    would grow with the number of threads, and the turns cost nothing to speak of (on the suite's
-    biggest boards, a few hundred calls taking a hundredth of the flat faces' time)."""
+    """Whether the slice's material covers the region wholly: nothing of the region outside it, the
+    DE-9IM pattern ******FF*, asked of a prepared copy of the material.  GEOS answers a pattern with
+    its newer relate engine (RelateNG), which keeps the material's index from one region to the
+    next: the very answers of shapely.covers, in about half the time (CIAA ACC's 23,290 tests take
+    12.4 s in one thread, 23.8 s with covers).  Before GEOS 3.13, which has no RelateNG, covers is
+    asked: a pattern there would go to the old relate, without the index.  A prepared shape is not
+    for two threads at once (GEOS builds its indexes on first use), so the threads take turns with
+    one copy per slice, made by the first to ask: a copy for each thread would grow with the number
+    of threads, and the turns cost little (on CIAA ACC, 1.7 s of waiting in all, beside 20 s of
+    tests)."""
     *_, joined, prepared = material
+    if region.is_empty:
+        return False
     with prepared["turn"]:
         if "copy" not in prepared:
             prepared["copy"] = shapely.from_wkb(shapely.to_wkb(joined))
             shapely.prepare(prepared["copy"])
-        return shapely.covers(prepared["copy"], region)
+        if COVERS_BY_PATTERN:
+            return bool(shapely.relate_pattern(prepared["copy"], region, "******FF*"))
+        return bool(shapely.covers(prepared["copy"], region))
 
 
 def visible_walls(slices, levels, flats, pool):
@@ -145,20 +159,30 @@ def visible_walls(slices, levels, flats, pool):
     out = {part: [] for part in slices}
 
     def walls(k):
-        return walls_of_slice(dict(zip(slices, floating([s[k] for s in slices.values()]))),     # coordinates read
-                              faces_at.get(levels[k], []) + faces_at.get(levels[k + 1], []))
-    for (z0, z1), segments in zip(pairwise(levels), pool.map(walls, range(len(levels) - 1))):
-        if not segments:
-            continue
-        every = np.concatenate(list(segments.values()))
-        start, end = grid_keys(every[:, 0]), grid_keys(every[:, 1])
-        hidden = pairs_in(end, start, start, end)                       # b -> a among the a -> b
-        first = 0
-        for part, mine in segments.items():
-            kept = mine[~hidden[first:first + len(mine)]]
-            first += len(mine)
-            if len(kept):
-                out[part].append((z0, z1, kept))
+        return unhidden(walls_of_slice(dict(zip(slices, floating([s[k] for s in slices.values()]))),   # coordinates read
+                                       faces_at.get(levels[k], []) + faces_at.get(levels[k + 1], [])))
+    heights = range(len(levels) - 1)
+    size = [sum(shapely.get_num_coordinates(s[k]) for s in slices.values()) for k in heights]
+    for (z0, z1), segments in zip(pairwise(levels), biggest_first(pool, walls, list(heights), size)):
+        for part, kept in segments.items():
+            out[part].append((z0, z1, kept))
+    return out
+
+
+def unhidden(segments):
+    """{part: its wall segments in one slice} less the segments a -> b that another part's segment
+    b -> a hides, the parts left with none dropped."""
+    if not segments:
+        return {}
+    every = np.concatenate(list(segments.values()))
+    start, end = grid_keys(every[:, 0]), grid_keys(every[:, 1])
+    hidden = pairs_in(end, start, start, end)                           # b -> a among the a -> b
+    out, first = {}, 0
+    for part, mine in segments.items():
+        kept = mine[~hidden[first:first + len(mine)]]
+        first += len(mine)
+        if len(kept):
+            out[part] = kept
     return out
 
 

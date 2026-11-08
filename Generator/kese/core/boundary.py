@@ -13,7 +13,7 @@ from kese.core.flat_faces import flat_faces
 from kese.core.pinches import cut_open_at, open_pinches, open_pinches_between
 from kese.core.shape_copies import floating, own
 from kese.core.tall_walls import tall_walls
-from kese.core.triangulate import rings_of
+from kese.core.triangulate import oriented_rings
 from kese.core.vertices import grid_keys, noded, ring_points, share_vertices
 
 
@@ -176,8 +176,9 @@ def points_added(old, new):
 def wall_segments(region):
     """Every edge of the region's rings as (a, b), the material on the left: outer rings run
     counter-clockwise, holes clockwise.  An (n, 2, 2) array."""
-    polys = np.array([p for p in shapely.get_parts(sh.polys_only(region)) if p.area > sh.G().SLIVER_AREA_MM2], dtype=object)
+    parts = shapely.get_parts(sh.polys_only(region))
+    polys = parts[shapely.area(parts) > sh.G().SLIVER_AREA_MM2]
     if not len(polys):
         return np.empty((0, 2, 2))
-    xy, nxt, _, _, _ = rings_of(polys)
+    xy, nxt = oriented_rings(polys)[:2]
     return np.stack([xy, xy[nxt]], axis=1)

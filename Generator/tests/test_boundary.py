@@ -4,7 +4,9 @@ faces are found again only at the heights next to a slice that changed, the same
 again; faces are cut only where two slices differ, group by group, and come out as a cut of the
 whole slices does (no face where the rings are the same, whatever point they start at); slices
 spanned by the same regions are made once; two regions have the same vertices whatever point
-their rings start at; and a part whose slices meet at T-junctions comes out with every vertex
+their rings start at; the pairs of integers found by their hash are those a search of every pair
+finds (and where two pairs hash alike, those found by numbering the columns); a wall segment a -> b
+that a segment b -> a hides is left out of the skin; and a part whose slices meet at T-junctions comes out with every vertex
 shared (no vertex of one face or slice lies on the edge of another at its height without being
 one of its vertices too) and a closed, consistently wound mesh, as does a band one grid step wide
 that ends in two needle tips a hair apart (a board's gold, where faces cut on the grid left it open),
@@ -28,8 +30,10 @@ from kese.core.boundary import boundary_of, heights_of, slices_of, wall_segments
 from kese.core.boundary_mesh import mesh_of_boundary  # noqa: E402
 from kese.core.flat_faces import faces_between, flat_faces  # noqa: E402
 from kese.core.pinches import cut_open_at, repeated_vertices  # noqa: E402
-from kese.core.vertices import grid_keys, near_edge, noded, ring_points, same_vertices  # noqa: E402
+from kese.core import vertices  # noqa: E402
+from kese.core.vertices import grid_keys, near_edge, noded, pairs_in, ring_points, same_vertices  # noqa: E402
 from kese.model.prisms import Prism  # noqa: E402
+from kese.s6_assemble.skin_faces import unhidden  # noqa: E402
 from parameters import P  # noqa: E402
 
 
@@ -239,6 +243,41 @@ def test_two_regions_have_the_same_vertices_whatever_point_their_rings_start_at(
     assert not same_vertices(a, Polygon([(0, 0), (4, 0), (4, 3.0001), (0, 3)], [[(1, 1), (2, 1), (2, 2)]]))
     assert not same_vertices(a, box(0, 0, 4, 3)) and not same_vertices(a, sh.EMPTY)
 
+
+def every_pair_in(a, b, c, d):
+    pairs = set(zip(c.tolist(), d.tolist()))
+    return [(x, y) in pairs for x, y in zip(a.tolist(), b.tolist())]
+
+
+def test_pairs_found_by_their_hash_are_those_a_search_of_every_pair_finds():
+    rng = np.random.default_rng(5)
+    for n, m, top in ((0, 4, 9), (4, 0, 9), (60, 50, 4), (3000, 2000, 40), (500, 800, 2**62)):
+        a, b = rng.integers(-top, top, (2, n))
+        c, d = rng.integers(-top, top, (2, m))
+        some = min(n, m) // 3
+        c[:some], d[:some] = a[:some], b[:some]                                  # some of them there
+        assert pairs_in(a, b, c, d).tolist() == every_pair_in(a, b, c, d)
+    hashed = vertices.pair_hash
+    vertices.pair_hash = lambda x, y: (x % 2).view(np.uint64)                  # different pairs hash alike
+    try:
+        a, b, c, d = rng.integers(-9, 9, (4, 300))
+        assert pairs_in(a, b, c, d).tolist() == every_pair_in(a, b, c, d)
+    finally:
+        vertices.pair_hash = hashed
+
+
+def test_a_wall_segment_another_hides_is_left_out():
+    # a -> b of one part and b -> a of another stand back to back, inside the material: both go, and
+    # a part left with none is dropped
+    p, q, r, s, t, u = [0.0, 0.0], [1.0, 0.0], [1.0, 1.0], [0.0, 1.0], [2.0, 0.0], [3.0, 0.0]
+    walls = {"A": np.array([[p, q], [q, r]]), "B": np.array([[q, p], [r, s]]), "C": np.array([[s, p]]),
+             "D": np.array([[t, u]]), "E": np.array([[u, t]])}
+    kept = unhidden(walls)
+    assert list(kept) == ["A", "B", "C"]
+    assert kept["A"].tolist() == [[q, r]] and kept["B"].tolist() == [[r, s]] and kept["C"].tolist() == [[s, p]]
+    assert unhidden({}) == {}
+
+
 if __name__ == "__main__":
     test_the_vertices_parts_have_twice_are_found_for_all_parts_at_once()
     test_flat_faces_found_again_only_next_to_a_changed_slice_are_all_of_them_found_again()
@@ -249,4 +288,6 @@ if __name__ == "__main__":
     test_faces_are_cut_only_where_the_slices_differ_and_come_out_as_a_whole_cut_does()
     test_slices_spanned_by_the_same_regions_are_made_once()
     test_two_regions_have_the_same_vertices_whatever_point_their_rings_start_at()
+    test_pairs_found_by_their_hash_are_those_a_search_of_every_pair_finds()
+    test_a_wall_segment_another_hides_is_left_out()
     print("ok")

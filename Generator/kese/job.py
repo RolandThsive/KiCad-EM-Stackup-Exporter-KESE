@@ -29,7 +29,8 @@ CHOICES = {
     "Finish.FINISH_GROUPING": ("metal", "net"),
 }
 ONE_OR_MORE = ("Geometry.PINCH_CUT_ROUNDS", "Geometry.VERTEX_SHARING_ROUNDS", "Geometry.NODING_ROUNDS",   # at 0 nothing
-               "Parallel.SKIN_PROBES_AT_A_TIME", "Parallel.VERIFY_TRIANGLES_AT_A_TIME", "Parallel.STEP_ROWS_AT_A_TIME",
+               "Parallel.SKIN_PROBES_AT_A_TIME", "Parallel.SKIN_PROBES_PER_SHARE", "Parallel.VERIFY_TRIANGLES_AT_A_TIME",
+               "Parallel.STEP_ROWS_AT_A_TIME",
                "Verifier.VERIFY_RAYS")                                                                 # (or no test)
 ONE_OR_MORE += ("Geometry.AIR_TILE_VERTICES", "Geometry.FINISH_BORES_AT_A_TIME", "Parallel.VERIFY_POLYGONS_PER_THREAD",
                 "Parallel.VERIFY_GROUPS_PER_WORKER")

@@ -1,8 +1,12 @@
 """Stage 6 - assemble: the PrismSet -> one in-memory Model: meshes per part (closed solids in
 "simulation" mode, the visible skin in "visual" mode), output units and orientation, materials and
 properties.  Stage 7 writes every file format from this Model; nothing is rebuilt per format."""
+from concurrent.futures import ThreadPoolExecutor
 from functools import partial
+from threading import Condition
 
+from kese.core.memory import give_back_memory
+from kese.core.parallel import workers_wanted
 from kese.model.output_model import Model
 from kese.s6_assemble.boundaries import boundaries_and_meshes
 from kese.s6_assemble.skin_faces import skin_faces
@@ -33,16 +37,40 @@ def finished_meshes(ps, mode, log, finish, boundaries, checks, check):
     a time.  A solid's Boundary is kept for the STEP writer, and its mesh is finished (and with
     `check` checked for the Verifier, into `checks`) by the worker that built it."""
     if mode == "visual":
-        skin = skin_meshes_from_faces(*skin_faces(ps, log), free=ps.free_levels)
-        while skin:
-            part, m = skin.popitem()
-            yield part, finish(m)
+        yield from finished_skin(skin_meshes_from_faces(*skin_faces(ps, log), free=ps.free_levels), finish)
     else:
         for part, boundary, m, checked in boundaries_and_meshes(ps, log, finish, check):
             boundaries[part] = boundary
             if checked is not None:
                 checks[part] = checked
             yield part, m
+
+
+def finished_skin(skin, finish):
+    """(part, finished mesh) for every mesh of the skin, in threads (the work is numpy's), the biggest
+    first.  A finish holds several times its mesh in memory for a while, so the meshes finished at
+    once hold no more faces in all than the biggest one: the peak stays that of finishing one mesh
+    after another (on NE_Delta with mask and silkscreen, 5.9 GB; 6.3 GB with no such bound), while the
+    many small meshes go side by side.  Each raw mesh is let go as soon as it is finished."""
+    size = {part: len(mesh.faces) for part, mesh in skin.items()}
+    order = sorted(skin, key=lambda part: -size[part])
+    most = size[order[0]] if order else 0
+    room, held = Condition(), [0]
+
+    def done(part):
+        with room:
+            room.wait_for(lambda: not held[0] or held[0] + size[part] <= most)
+            held[0] += size[part]
+        try:
+            return part, finish(skin.pop(part))
+        finally:
+            with room:
+                held[0] -= size[part]
+                room.notify_all()
+    with ThreadPoolExecutor(workers_wanted()) as pool:
+        yield from pool.map(done, order)
+    give_back_memory()      # what the threads freed, before the Verifier: NE_Delta with mask and silkscreen
+                            # peaks at 5.9 GB with --verify so, 7.1 GB with it kept
 
 
 def assemble(ps, mode, log, check=False):

@@ -61,6 +61,14 @@ def in_parallel(work, items):
     return done
 
 
+def biggest_first(pool, work, items, size):
+    """[work(item) for item in items] in the pool's threads, the item of the greatest size started
+    first, so that no thread is left alone with a big one at the end."""
+    order = sorted(range(len(items)), key=lambda i: -size[i])
+    done = dict(zip(order, pool.map(work, [items[i] for i in order])))
+    return [done[i] for i in range(len(items))]
+
+
 def worth_processes(jobs, coordinates):
     """Whether `jobs` jobs on shapes of `coordinates` coordinates in all are worth processes of their
     own: at least Parallel.PROCESS_MIN_COORDINATES, below which the jobs are done here, one after

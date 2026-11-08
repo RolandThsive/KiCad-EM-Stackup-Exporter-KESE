@@ -11,6 +11,12 @@
 > - **Noise:** a run under 3 s can move up to 17% either way from noise alone.
 > - **Board 12** crosses `Parallel.PROCESS_MIN_COORDINATES`: its simulation run is 24% faster.
 
+> [!NOTE]
+> The visual skin (stage 6 in visual mode) was made faster after these runs, its files the same to
+> the byte. One run of every board each way, with the solder mask and the silkscreen, both runs of
+> a board on the same machine: stage 6 of the visual runs takes 47.8 s in all, 55.3 s before (13.5%
+> less), and the whole runs 8.4% less; board 22 31% less in stage 6, board 23 25%, board 21 4%.
+
 Every board of `featureTest/`, section by section, with its top and bottom and where the time of a
 run goes:
 

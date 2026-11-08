@@ -2,17 +2,19 @@
 (kese/core/shape_copies.py) are the same shapes, made only where GEOS needs them (and on no grid
 where the grid is not used: a join of shared regions is the same join); threads share one prepared
 copy of a slice's material and one set of joined holes, cut faces only by the pieces of material
-that meet them, and work in batches of any size with the same result (the STEP writer's slices
-too, to the byte; a STEP file written part by part in worker processes; the copper layers joined in
-worker processes; the solder mask's webs found group by group); they hand back the memory they
-freed (unless Parallel.GIVE_BACK_MEMORY is off).  Parallel.PROCESS_WORKERS caps the worker
+that meet them (a face wholly against material at once, the covers test answering as shapely.covers
+does), share a slow slice's probes, finish the skin's meshes the biggest first and no more faces at
+once than the biggest holds, and work in batches of any size with the same result (the STEP writer's
+slices too, to the byte; a STEP file written part by part in worker processes; the copper layers
+joined in worker processes; the solder mask's webs found group by group); they hand back the memory
+they freed (unless Parallel.GIVE_BACK_MEMORY is off).  Parallel.PROCESS_WORKERS caps the worker
 processes and boards under Parallel.PROCESS_MIN_COORDINATES stay in one process; shapes keep their
-grid (and type and SRID) on the way to and from the workers; the run's settings reach the workers;
-a lost worker or one out of memory leaves its jobs to half as many processes, then to the main
+grid (and type and SRID) on the way to and from the workers; the run's settings reach the workers; a
+lost worker or one out of memory leaves its jobs to half as many processes, then to the main
 process; an error in the work is raised at once and the other workers are stopped; a caller that
 stops early does not wait; the OOM killer takes a worker first; KESE runs inside a
-multiprocessing.Pool; a script without a main guard is not run again in the workers; and the
-workers end with Ctrl-C (one traceback) and with the main process.
+multiprocessing.Pool; a script without a main guard is not run again in the workers; and the workers
+end with Ctrl-C (one traceback) and with the main process.
 
     python -m pytest tests/test_parallel.py          (or:  python tests/test_parallel.py)"""
 import os
@@ -38,8 +40,10 @@ from kese.core.boundary import Boundary  # noqa: E402
 from kese.core.parallel import in_parallel, in_processes, processes_wanted, workers_wanted, worth_processes  # noqa: E402
 from kese.core.shape_copies import _owned, own  # noqa: E402
 from kese.s3_resolve.holes import made_once  # noqa: E402
+from kese.s6_assemble.assemble import finished_skin  # noqa: E402
+from kese.s6_assemble import skin_faces  # noqa: E402
 from kese.s6_assemble.skin_faces import cut_away, lies_against_material  # noqa: E402
-from kese.s6_assemble.skin_mesh import looks_at_material  # noqa: E402
+from kese.s6_assemble.skin_mesh import looks_at_material, probe_shares  # noqa: E402
 from kese.s7_write import step  # noqa: E402
 from kese.s7_write.step import write_part  # noqa: E402
 from kese.s7_write.step_writer import StepWriter  # noqa: E402
@@ -252,6 +256,27 @@ def test_threads_share_one_prepared_copy_of_a_slice():
     assert not shapely.is_prepared(material)
 
 
+def test_the_covers_test_answers_as_shapely_covers_does():
+    # the pattern ******FF* asked of RelateNG, and covers where GEOS has no RelateNG: the same answers
+    # on regions that share edges with the material's outline and its hole, or touch it at a point
+    material = shapely.box(0, 0, 10, 10).difference(shapely.box(4, 4, 6, 6))
+    regions = [shapely.box(1, 1, 2, 2), shapely.box(3, 4, 4, 6), shapely.box(0, 0, 10, 4), material,
+               shapely.box(3, 3, 7, 7).difference(shapely.box(4, 4, 6, 6)), shapely.box(4, 4, 6, 6),
+               shapely.box(3, 3, 5, 5), shapely.box(9, 9, 11, 11), shapely.box(10, 10, 11, 11),
+               shapely.MultiPolygon([shapely.box(1, 1, 2, 2), shapely.box(12, 1, 13, 2)]),
+               shapely.Polygon([(4, 4), (4, 6), (3, 5)]), shapely.box(5, 5, 6, 6)]
+    want = [True, True, True, True, True, False, False, False, False, False, True, False]
+    assert [bool(shapely.covers(material, r)) for r in regions] == want
+    for by_pattern in (True, False):
+        flag, skin_faces.COVERS_BY_PATTERN = skin_faces.COVERS_BY_PATTERN, by_pattern
+        try:
+            slice_ = (None, None, None, material, {"turn": threading.Lock()})
+            assert [lies_against_material(r, slice_) for r in regions] == want
+            assert not lies_against_material(shapely.Polygon(), slice_)
+        finally:
+            skin_faces.COVERS_BY_PATTERN = flag
+
+
 def test_threads_cut_faces_by_the_pieces_that_meet_them_alone():
     # a ring round the face meets its box but not the face, a square over its corner meets both: in
     # every thread the face loses that corner alone, and no shape is left prepared
@@ -269,6 +294,8 @@ def test_threads_cut_faces_by_the_pieces_that_meet_them_alone():
     want = shapely.box(0, 0, 10, 10).difference(shapely.box(8, 8, 10, 10))
     assert all(g.equals(want) for g in got)
     assert not shapely.is_prepared(faces).any() and not shapely.is_prepared(polys).any()
+    inside = shapely.set_precision(shapely.box(9, 9, 11, 11), grid)                 # wholly against material
+    assert cut_away(inside, material).is_empty and cut_away(shapely.box(20, 20, 21, 21), material).equals(shapely.box(20, 20, 21, 21))
 
 
 def test_the_probe_test_lets_go_of_its_prepared_slices():
@@ -295,8 +322,55 @@ def test_batches_of_any_size_give_the_same_result():
         batched = (looks_at_material(v, f, levels, pieces()), vertical_hits(v, f, xy))
     finally:
         put_back(saved)
-    assert whole[0].tolist() == batched[0].tolist() and whole[0].any() and not whole[0].all()
+    saved = with_workers(4, ("Parallel.SKIN_PROBES_PER_SHARE", 2))         # each slice's probes shared
+    try:
+        shared = looks_at_material(v, f, levels, pieces())
+    finally:
+        put_back(saved)
+    assert whole[0].tolist() == batched[0].tolist() == shared.tolist() and whole[0].any() and not whole[0].all()
     assert all(np.array_equal(a, b) for a, b in zip(whole[1], batched[1])) and len(whole[1][0])
+
+
+def test_a_slow_slice_s_probes_are_shared_among_the_threads():
+    # a slice of many probes is shared among up to Parallel.WORKERS threads, each share of at least
+    # Parallel.SKIN_PROBES_PER_SHARE, the slice itself prepared by one share alone (the others take
+    # copies), the biggest shares first; a slice without material, or none, is not probed
+    full, empty = (None, None, None, shapely.box(0, 0, 1, 1), {}), (None, None, None, shapely.Polygon(), {})
+    at = np.array([0] * 9 + [1] * 25 + [2] * 3 + [-1, 3])
+    saved = with_workers(4, ("Parallel.SKIN_PROBES_PER_SHARE", 5))
+    try:
+        shares = probe_shares([full, full, empty], at, 4)
+    finally:
+        put_back(saved)
+    assert [(k, len(rows), first) for k, rows, first in shares] == [
+        (0, 9, True), (1, 7, True), (1, 6, False), (1, 6, False), (1, 6, False)]
+    assert sorted(np.concatenate([rows for _, rows, _ in shares]).tolist()) == list(range(34))
+
+
+def test_the_skin_s_meshes_are_finished_in_threads_the_biggest_first_and_no_more_at_once():
+    # the meshes finished at once never hold more faces in all than the biggest one, and each raw
+    # mesh is let go as soon as it is finished
+    sizes = [50, 7, 30, 20, 5, 5, 5, 40, 1, 25]
+    skin = {f"part {k}": SimpleNamespace(faces=range(n)) for k, n in enumerate(sizes)}
+    held, most, lock = [0], [0], threading.Lock()
+
+    def finish(mesh):
+        with lock:
+            held[0] += len(mesh.faces)
+            most[0] = max(most[0], held[0])
+        time.sleep(0.01)
+        with lock:
+            held[0] -= len(mesh.faces)
+        return len(mesh.faces) * 10
+    saved = with_workers(4)
+    try:
+        got = list(finished_skin(skin, finish))
+    finally:
+        put_back(saved)
+    order = sorted(range(len(sizes)), key=lambda k: -sizes[k])
+    assert got == [(f"part {k}", sizes[k] * 10) for k in order] and not skin
+    assert most[0] == max(sizes)
+    assert list(finished_skin({}, finish)) == []
 
 
 def step_data(tmp, rows, arcs):
@@ -769,9 +843,12 @@ if __name__ == "__main__":
     t.test_a_join_of_shared_regions_is_the_same_join()
     t.test_threads_on_their_own_copies_of_one_shape()
     t.test_threads_share_one_prepared_copy_of_a_slice()
+    t.test_the_covers_test_answers_as_shapely_covers_does()
     t.test_threads_cut_faces_by_the_pieces_that_meet_them_alone()
     t.test_the_probe_test_lets_go_of_its_prepared_slices()
     t.test_batches_of_any_size_give_the_same_result()
+    t.test_a_slow_slice_s_probes_are_shared_among_the_threads()
+    t.test_the_skin_s_meshes_are_finished_in_threads_the_biggest_first_and_no_more_at_once()
     t.test_a_step_part_is_written_the_same_in_slices_of_any_size()
     t.test_a_step_file_written_in_processes_is_the_same_to_the_byte()
     t.test_a_step_part_whose_worker_is_lost_in_the_second_round_is_written_again_here()

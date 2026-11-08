@@ -6,7 +6,7 @@ import shapely
 from kese.core import shapes2d as sh
 from kese.core.flat_triangles import twice_area
 from kese.core.mesh import Mesh
-from kese.core.triangulate import caps, cells_cut, lookup, geos_cut, rings_of
+from kese.core.triangulate import caps, cells_cut, geos_cut, lookup, oriented_rings
 from kese.core.vertices import grid_keys, vertices_in_order
 
 
@@ -82,7 +82,7 @@ def polygon_triangles(polys):
 def delaunay_triangles(polygon):
     """One polygon cut by GEOS's constrained Delaunay triangulation, which keeps to the polygon's
     own vertices and copes with rings that touch: (xy, counter-clockwise triangles into xy)."""
-    xy, _, _, _, _ = rings_of(np.array([polygon], dtype=object))
+    xy = oriented_rings(np.array([polygon], dtype=object))[0]
     corners = np.array([np.asarray(t.exterior.coords)[:3] for t in shapely.constrained_delaunay_triangles(polygon).geoms])
     if not len(corners):
         return xy, np.empty((0, 3), dtype=np.int64)
