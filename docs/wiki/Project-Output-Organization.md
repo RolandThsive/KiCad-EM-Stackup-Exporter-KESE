@@ -46,6 +46,7 @@ KiCad-EM-Stackup-Exporter-KESE/
 ├── docs/logo/                   the KESE logo as SVG and WebP, and favicon.ico
 ├── .github/                     the workflow that copies docs/wiki/ to the wiki, and Dependabot's settings
 ├── licenses/                    KiCad copyright headers and AUTHORS.txt
+├── credits.txt                  the projects whose boards KESE was checked on, with their licenses
 ├── LICENSE, NOTICE.md, CONTRIBUTING.md
 └── README.md
 ```
