@@ -4,6 +4,7 @@ are those of KiCad's pcb_io_kicad_sexpr_parser.cpp (cited by function below)."""
 import math
 import re
 from dataclasses import dataclass
+from itertools import takewhile
 
 from kese.core.sexp import atoms, child, children, layer_of, num, number, pt, yes
 
@@ -71,16 +72,16 @@ OLD_LAYER_NAMES = {
     "Dessin.User": "Dwgs.User", "Contours.Ci": "Edge.Cuts"}
 
 
+def copper_run(layers_node):
+    """The copper layers that open a (layers ...) block: KiCad's parseLayers stops at the first other one."""
+    return list(takewhile(lambda l: isinstance(l, list) and len(l) > 2 and str(l[2]) in COPPER_TYPES, layers_node[1:]))
+
+
 def copper_layer_names(layers_node):
     """{name in the file: name KESE uses}, or {}: the run of copper layers that opens the list is
     F.Cu .. In<n>.Cu .. B.Cu by place, as KiCad's parseLayers reads it (KiCad 4/5 renamed layers,
     KiCad 3's reversed numbers); KiCad 3's non-English layer names take their English names."""
-    cu = []
-    for l in layers_node[1:]:          # the copper layers come first; KiCad stops at the first other one
-        if not (isinstance(l, list) and len(l) > 2 and str(l[2]) in COPPER_TYPES):
-            break
-        cu.append(l)
-    renamed = {}
+    cu, renamed = copper_run(layers_node), {}
     for i, l in enumerate(cu):
         name = str(l[1])
         place = "F.Cu" if i == 0 else "B.Cu" if i == len(cu) - 1 else f"In{i}.Cu"

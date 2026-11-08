@@ -153,7 +153,10 @@ over as KiCad's parser passes it (`PCB_IO_KICAD_SEXPR_PARSER::parsePCB_TEXT`). O
 footprint's value and reference as `%V` and `%R`; they are read as `${VALUE}` and `${REFERENCE}`,
 as KiCad reads them. The file's text
 is read with KiCad's escapes (`\n` starts a new line, `\"` and `\\` stand for a quote and a
-backslash; a tab is written as it is). Text variables are resolved before layout, in the order
+backslash; a tab is written as it is; the escapes KiCad reads but does not write, `\t`, `\x41` and
+the like, are read too, and a backslash before any other character stays). Words an old file
+wrote without quotes may hold a double quote, such as the inch mark in `(gr_text 0.062" ...)`;
+it is a character of the text, as in KiCad. Text variables are resolved before layout, in the order
 KiCad's `PCB_TEXT::GetShownText` uses:
 
 | Variable | Value |

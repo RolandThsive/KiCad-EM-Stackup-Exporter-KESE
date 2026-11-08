@@ -44,11 +44,12 @@ def check_meshes(model, glb_path):
     return ok, lines
 
 
-def _skin_surfaces(meshes, n, transform):
+def _skin_surfaces(meshes, n, transform, points=None):
     """({faces met: rays}, rays whose faces, from the top down, do not take turns into the material
     and out of it, as a closed outer surface does).  The n rays start at random points (fixed seed)
-    over the bounding box of every mesh and run along the board's normal, in either orientation: the
-    meshes are turned back by the quarter turns of `transform` (the output transform), exactly."""
+    over the bounding box of every mesh, or at `points` (board frame, output units), and run
+    along the board's normal, in either orientation: the meshes are turned back by the quarter turns
+    of `transform` (the output transform), exactly."""
     vs, fs, at = [], [], 0
     for m in meshes.values():
         vs.append(np.asarray(m.vertices, dtype=float))
@@ -59,7 +60,10 @@ def _skin_surfaces(meshes, n, transform):
     V, F = np.concatenate(vs) @ turn, np.concatenate(fs)
     used = V[np.unique(F)]
     lo, hi = used.min(axis=0), used.max(axis=0)
-    xy = np.random.default_rng(1).uniform(lo[:2], hi[:2], size=(n, 2))
+    if points is None:
+        xy = np.random.default_rng(1).uniform(lo[:2], hi[:2], size=(n, 2))
+    else:
+        xy, n = np.asarray(points, dtype=float), len(points)
     t = V[F]
     normal = np.cross(t[:, 1] - t[:, 0], t[:, 2] - t[:, 0])
     nz = normal[:, 2] / np.maximum(np.linalg.norm(normal, axis=1), 1e-300)

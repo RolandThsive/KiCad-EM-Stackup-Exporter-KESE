@@ -1,4 +1,4 @@
-rf_module  (rf_module.kicad_pcb)   generated 2026-11-08 12:55
+rf_module  (rf_module.kicad_pcb)   generated 2026-11-08 15:51
 mode: visual   formats: glb   units: m
 KiCad format 20221018 (KiCad 7), generator pcbnew
 
@@ -64,7 +64,7 @@ parts
   Board_dielectric 3                       2250 triangles  material Board_prepreg #A89C66 alpha 1.0
   Copper_+3V3                             10560 triangles  material Copper_exposed #DEBA60 alpha 1.0
   Copper_+5V                               3520 triangles  material Copper_exposed #DEBA60 alpha 1.0
-  Copper_GND                              87344 triangles  material Copper_exposed #DEBA60 alpha 1.0
+  Copper_GND                              87312 triangles  material Copper_exposed #DEBA60 alpha 1.0
   Copper_RX                                 704 triangles  material Copper_exposed #DEBA60 alpha 1.0
   Copper_SCL                                704 triangles  material Copper_exposed #DEBA60 alpha 1.0
   Copper_SCL2                              1408 triangles  material Copper_exposed #DEBA60 alpha 1.0
@@ -86,10 +86,10 @@ parts
   Hole Finish Nickel                       2112 triangles  material Nickel #B8B8B0 alpha 1.0
 
 timing
-  read              0.0735 s
-  collect           0.1868 s
-  resolve           2.1479 s
-  geometry          7.7314 s
-  materials         0.0004 s
-  assemble         15.7217 s
-  write             0.1332 s
+  read              0.0749 s
+  collect           0.2000 s
+  resolve           1.8032 s
+  geometry          7.3010 s
+  materials         0.0003 s
+  assemble          9.9981 s
+  write             0.1017 s

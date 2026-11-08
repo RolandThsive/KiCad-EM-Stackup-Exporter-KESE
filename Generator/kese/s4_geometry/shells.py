@@ -52,9 +52,16 @@ def tiles(part):
         x0, y0, x1, y1 = p.bounds
         xm, ym = (x0 + x1) / 2, (y0 + y1) / 2
         for box in ((x0, y0, xm, ym), (xm, y0, x1, ym), (x0, ym, xm, y1), (xm, ym, x1, y1)):
-            todo += [(q, depth + 1) for q in shapely.get_parts(sh.polys_only(shapely.clip_by_rect(p, *box)))
-                     if not q.is_empty]
+            todo += [(q, depth + 1) for q in shapely.get_parts(sh.polys_only(clipped(p, box))) if not q.is_empty]
     return out
+
+
+def clipped(g, box):
+    """g cut to the box: GEOS's quick clip, or the exact intersection where the quick clip comes out
+    invalid (where a hole of g touches a corner of the box, it can keep only the hole's corner piece,
+    with g's other holes outside it, which a union then refuses: a tile of one corpus board)."""
+    c = shapely.clip_by_rect(g, *box)
+    return c if shapely.is_valid(c) else shapely.intersection(g, shapely.box(*box))
 
 
 def air_near(regions):
@@ -84,7 +91,7 @@ def air_near(regions):
             found[i].append(j)
         out = []
         for piece, box, js in zip(pieces, boxes, found):
-            solid = union([sh.polys_only(shapely.clip_by_rect(mine[j], *box)) for j in js])
+            solid = union([sh.polys_only(clipped(mine[j], box)) for j in js])
             out += [q for q in shapely.get_parts(sh.diff(piece, sh.snap(solid))) if not q.is_empty]
         return sh.as_region(out)
     return air

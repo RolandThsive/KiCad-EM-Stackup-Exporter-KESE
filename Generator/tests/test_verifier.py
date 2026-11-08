@@ -1,11 +1,12 @@
 """The Verifier's visual check (kese/s8_verify/meshes.py): its rays run along the board's normal in
 either orientation (Run.ORIENTATION), so a correct skin passes "flat" as it passes "upright", with
 the same faces met on every ray, and it runs on a 32-bit Python (Pyodide), whose numpy index type is
-32 bits.  In simulation mode, the checks made where each part is built
+32 bits; and on a board's skin, rays through the faces left flat on their own take turns in and out
+(those faces go).  In simulation mode, the checks made where each part is built
 (kese/core/part_checks.py) give the report stage 8 gives on its own, an open part they found
 fails the run, a part whose slices lack a little of its prisms in each of thousands of pieces is
 whole (but not with a piece gone, or one lacking much), and the overlap check finds the same
-overlaps in threads as in one.  Takes a few seconds.
+overlaps in threads as in one.  Takes about half a minute.
 
     python -m pytest tests/test_verifier.py         (or:  python tests/test_verifier.py)"""
 from types import SimpleNamespace
@@ -14,11 +15,12 @@ import numpy as np
 import shapely
 from shapely.affinity import translate
 
-from helpers import BOARDS, run_stages, run_tests, settings
+from helpers import BOARDS, FEATURES, run_stages, run_tests, settings
 from kese.core.boundary import Boundary
+from kese.core.graph import connected_components
 from kese.core.mesh import Mesh
 from kese.core.part_checks import mesh_check, volume_check, whole
-from kese.s6_assemble import assemble
+from kese.s6_assemble import assemble, skin_mesh
 from kese.s6_assemble.transform import output_transform
 from kese.s8_verify import overlap, vertical_rays
 from kese.s8_verify.meshes import _skin_surfaces
@@ -72,6 +74,34 @@ def test_the_visual_check_runs_on_a_32_bit_python():
         vertical_rays.np = saved
     assert len(expected[0]) > 100
     assert all(np.array_equal(a, b) for a, b in zip(found, expected))
+
+
+def test_rays_through_the_faces_a_board_s_skin_left_flat_on_their_own_take_turns_in_and_out():
+    # featureTest/21's finish: where stage 6 moved the edge of a slice a fraction of a grid step onto a
+    # vertex of the slice above, it left a gap that thin under the nickel, its walls hidden; its top and
+    # bottom were faces left on their own, and the skin kept one of each two.  A ray through any of
+    # them met an odd number of faces (64 of the 90 rays here); the Verifier's random rays seldom do
+    flat, kept = [], skin_mesh.sealed
+
+    def spy(v, f):                      # the middle of every face of a piece of the skin flat at one height
+        edges = np.concatenate([f[:, :2], f[:, 1:]])
+        shell = connected_components(len(v), edges[:, 0], edges[:, 1])[1][f[:, 0]]
+        z = v[f, 2]
+        low, high = np.full(shell.max() + 1, np.inf), np.full(shell.max() + 1, -np.inf)
+        np.minimum.at(low, shell, z.min(axis=1))
+        np.maximum.at(high, shell, z.max(axis=1))
+        flat.append(v[f[(low == high)[shell]]].mean(axis=1)[:, :2])
+        return kept(v, f)
+    parts = {"Finish.FINISH_ENABLED": True, "SolderMask.SOLDER_MASK_ENABLED": True, "Silkscreen.SILKSCREEN_ENABLED": True}
+    skin_mesh.sealed = spy
+    try:
+        with settings(parts):
+            model = run_stages(FEATURES / "21_rf_module.kicad_pcb", assemble, mode="visual")[0]
+    finally:
+        skin_mesh.sealed = kept
+    at = np.concatenate(flat) * (0.001 if model.units == "m" else 1.0)
+    met, wrong = _skin_surfaces(model.meshes, 0, model.transform, points=at)
+    assert len(at) > 50 and wrong == 0, (len(at), met, wrong)
 
 
 def checked_model(pcb):

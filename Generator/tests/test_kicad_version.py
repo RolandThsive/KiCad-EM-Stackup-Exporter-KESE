@@ -1,11 +1,13 @@
-"""KiCad version rules (kese/s1_read/parse_kicad_version.py) and the text markup every version shares
-(kese/core/markup.py), each checked against what KiCad's own parser does.  No board is run.
+"""KiCad version rules (kese/s1_read/parse_kicad_version.py), the text markup every version shares
+(kese/core/markup.py) and the tokens of the file (kese/core/sexp.py), each checked against what
+KiCad's own parser does.  No board is run.
 
     python -m pytest tests/test_kicad_version.py        (or:  python tests/test_kicad_version.py)"""
 from helpers import run_tests
 from kese.core import font, markup
-from kese.core.sexp import parse
+from kese.core.sexp import child, parse
 from kese.s1_read import parse_kicad_version as kv
+from kese.s1_read.read import copper_layers
 
 
 def board(text):
@@ -32,6 +34,16 @@ def test_copper_layers_read_by_place():
     assert kv.copper_layer_names(v9) == {}
     user = parse('(layers (0 "F.Cu" signal) (2 "B.Cu" signal) (25 "Edge.Cuts" user) (39 "User.1" signal))')
     assert kv.copper_layer_names(user) == {}           # a signal-typed User layer after the copper is not copper
+
+
+def test_only_the_leading_run_is_copper():
+    """A layer named like copper after the run of copper layers is not copper, as in KiCad's
+    parseLayers: it neither stops the run with a Python error (no number in its name) nor adds a layer."""
+    tree = board('(layers (0 "F.Cu" signal) (1 "GND" power) (31 "B.Cu" signal) (44 "Edge.Cuts" user) '
+                 '(45 "In.Cu" user) (46 "In7.Cu" user))')
+    warnings = []
+    assert copper_layers(tree, "t.kicad_pcb", warnings) == ["F.Cu", "In1.Cu", "B.Cu"]
+    assert [l[1] for l in kv.copper_run(child(tree, "layers"))] == ["F.Cu", "In1.Cu", "B.Cu"]
 
 
 def test_zero_mask_margin_inherits_before_kicad_9():
@@ -118,6 +130,22 @@ def test_markup_is_drawn_not_printed():
     assert barred.bounds[1] < plain.bounds[1] - 0.15              # the bar sits above the letters
     sub = font.render("K_{0}", (0, 0), 0, 1.0, 1.0, 0.1, ["left"])
     assert sub.bounds[2] < font.render("K0", (0, 0), 0, 1.0, 1.0, 0.1, ["left"]).bounds[2]
+
+
+def test_the_tokens_of_the_file_as_kicad_reads_them():
+    """KiCad's DSNLEXER ends a bare atom only at whitespace (a NUL byte among it) or a parenthesis:
+    the inch mark in an old board's text (porcupine, KiCad 4) is a character of the atom, not the
+    start of a string that runs on to the next double quote and leaves parentheses open.  A line
+    whose first character other than whitespace is # is a comment (Sparky2, brought over from
+    another tool, has thousands, some with parentheses); # anywhere else is a character.  In a
+    quoted string a backslash escapes as in KiCad, and before any other character it stays."""
+    tree = board('(gr_text 0.062" (at 360.68 102.87) (layer Dwgs.User)) (gr_text "B" (at 1 2) (layer F.SilkS))')
+    assert [t[1] for t in tree[1:]] == ['0.062"', "B"]
+    assert child(tree[1], "at") == ["at", "360.68", "102.87"] and child(tree[2], "layer") == ["layer", "F.SilkS"]
+    assert board('(net 1 "a\0b")\0(net 2 c)') == ["kicad_pcb", ["net", "1", "a\0b"], ["net", "2", "c"]]
+    commented = board('(net 1 a)\n  #1309 pos:46284(0xB4CC) "x\n\t#(\n(net 2 "#b") # c\n#\n')
+    assert commented == ["kicad_pcb", ["net", "1", "a"], ["net", "2", "#b"], "#", "c"]
+    assert parse(r'(t "\x41\101\a\v\x\q\8 C:\Users \xc3\xa9")') == ["t", "AA\a\vx\\q\\8 C:\\Users \u00e9"]
 
 
 if __name__ == "__main__":

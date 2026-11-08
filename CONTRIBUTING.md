@@ -87,13 +87,13 @@ python tests/test_colors.py      # stack-up colours: named, user-defined and unk
 python tests/test_text_layout.py # text laid out where KiCad 7.0.11 plots it
 python tests/test_font.py        # the stroke font glyph by glyph, custom fonts, TrueType faces
 python tests/test_text_vars.py   # variables inside variables, as each KiCad version expands them
-python tests/test_kicad_version.py # the rules of each KiCad version, against KiCad's own parser
+python tests/test_kicad_version.py # the rules of each KiCad version and the file's tokens, against KiCad's own parser
 python tests/test_enabled.py     # each part switch leaves out its own parts and nothing else
 python tests/test_bad_input.py   # wrong settings and damaged files: an error or a warning, not a crash
 python tests/test_threads.py     # threads: their own copies of shapes, one prepared slice, the skin's probes and meshes, memory
 python tests/test_workers.py     # worker processes: shapes and settings reach them, caps, lost workers, errors, ending
 python tests/test_same_result.py # the work in batches or processes of any size gives the same result, to the byte
-python tests/test_verifier.py    # the Verifier: the visual check upright and flat, and on 32-bit Python; checks in the workers; overlaps in threads
+python tests/test_verifier.py    # the Verifier: the visual check upright and flat, on 32-bit Python, at loose faces; checks in the workers; overlaps in threads
 python tests/test_boundary.py    # stage 6's shortcuts give what the long way gives, and parts close
 python tests/test_tall_walls.py  # walls joined across the heights only a counterbore, a countersink or a plug brings
 python tests/test_copper_union.py # a net's copper joined with no crack and no burr past the edge

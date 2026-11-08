@@ -3,9 +3,9 @@ the solid near it alone (air_near), a span's bores worked on in groups, and an i
 copper comes nowhere near the board edge left without air at once: every part's finish comes out,
 height by height, as the cut by the whole board's union makes it, but for slivers thinner than a
 grid step where an edge crossing rounds onto the grid another way.  A big part of the solid is cut
-into tiles that fill it and do not overlap, bores whose shells could meet are put in one group (a
-hole with no drill too), and where there is no solid the band is all air.  Takes about half a
-minute.
+into tiles that fill it and do not overlap, a tile whose corner a hole touches is cut exactly, bores
+whose shells could meet are put in one group (a hole with no drill too), and where there is no solid
+the band is all air.  Takes about half a minute.
 
     python -m pytest tests/test_finish_shells.py    (or:  python tests/test_finish_shells.py)"""
 import numpy as np
@@ -32,6 +32,18 @@ def test_a_big_part_is_cut_into_tiles_that_fill_it_and_do_not_overlap():
     assert abs(sum(p.area for p in parts) - plane.area) < 1e-9
     assert shapely.symmetric_difference(union(parts), plane).area < 1e-9
     assert shells.tiles(box(0, 0, 1, 1)) == [box(0, 0, 1, 1)]
+
+
+def test_a_tile_whose_corner_a_hole_touches_is_cut_exactly():
+    """GEOS's quick clip of a board whose hole touches a corner of the tile comes out as the hole's
+    corner piece alone, with the board's other hole outside it (a corpus board's drilled board, where
+    the finish's union then refused it): the tile is cut exactly instead."""
+    board = Polygon([(-17, 15), (17, 15), (17, -15), (-17, -15)],
+                    [[(0, 0), (0.4, -0.8), (-0.4, -0.8)], [(1, -2), (2, -2), (2, -1), (1, -1)]])
+    tile = (0.0, -15.0, 17.0, 0.0)
+    cut = shells.clipped(board, tile)
+    assert cut.is_valid and shapely.equals(cut, board.intersection(box(*tile)))
+    assert abs(cut.area - (17 * 15 - 0.16 - 1)) < 1e-9
 
 
 def test_bores_whose_shells_could_meet_share_a_group():

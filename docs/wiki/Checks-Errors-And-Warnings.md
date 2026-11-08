@@ -365,10 +365,12 @@ version does (a title block value by the board's properties, the properties befo
 title block, `${CURRENT_DATE}` in the title block, KiCad 10's passes, a footprint's reference and
 value), in a moment (`python tests/test_text_vars.py`); `tests/test_kicad_version.py`, which
 checks the rules of each
-KiCad version (release of each format number, copper layers by their place, the zero mask margin,
+KiCad version (release of each format number, copper layers by their place and only the run of
+them that opens the layer list, the zero mask margin,
 KiCad 4's text size, the text pen, segment-filled zones, the old overbar, a text's words past
 KiCad 7's bare `locked` and the old `%V` and `%R`, markup, the net class
-a KiCad 4/5 via takes its size and drill from) against what
+a KiCad 4/5 via takes its size and drill from, and the file's tokens as KiCad reads them: an old
+board's inch mark inside a bare atom, comment lines, and escapes in quoted strings) against what
 KiCad's own parser does, without a board, in under a second; `tests/test_enabled.py`, which turns
 each part switch off in turn (`BOARD_ENABLED`, `COPPER_ENABLED`, `FINISH_ENABLED`,
 `SOLDER_MASK_ENABLED`, `SILKSCREEN_ENABLED`) and finds only that switch's parts gone and every other
@@ -386,8 +388,9 @@ two seconds
 meeting the same faces on every ray with the board `upright` and `flat`, and casting its rays on a
 32-bit Python (Pyodide, in the browser) as it does on 64 bits, the checks made where each
 part is built giving the report stage 8 gives on its own, an open part they found failing the
-run, and the overlap check finding the same overlaps in threads as in one, in a few seconds
-(`python tests/test_verifier.py`); `tests/test_threads.py`, which finds a thread's
+run, the overlap check finding the same overlaps in threads as in one, and rays through the faces
+featureTest/21's skin left flat on their own taking turns in and out (those faces left out), in
+about half a minute (`python tests/test_verifier.py`); `tests/test_threads.py`, which finds a thread's
 own copies of shapes to be the same shapes, each part on its grid, made only where GEOS needs them,
 and threads working on their own copies of one shape not crashing; finds threads taking turns with
 one prepared copy of a slice's material, threads cutting faces only by the pieces of material that
@@ -419,14 +422,17 @@ faces found again only next to a slice that changed as found again at every heig
 where two slices differ, group by group, as a cut of the whole slices (and no face where two rings
 are the same from another start), slices spanned by the same prisms made once, and a part whose
 slices meet at T-junctions with every vertex shared and a closed, consistently wound mesh (which
-it is not without the sharing), a band one grid step wide ending in two needle tips a hair
+it is not without the sharing), fifty slices the vertices of the top one go down through without a
+cut, a band one grid step wide ending in two needle tips a hair
 apart closed too (which it is not with faces cut on the grid), a piece of a board's solder mask
 whose needle tips trade vertices for ever cut open there and closed, with one note (and still
 changing after 20 rounds, with T-junctions, when never cut), a skin face whose cut GEOS
 refuses on the grid cut with both regions put on the grid first, valid and within a grid step of
 the cut in floating point, the pairs of integers found by their hash those a search of every pair
-finds (and, where two pairs hash alike, those found by numbering the columns), and a wall segment
-that another stands back to back with left out of the skin, in about two seconds
+finds (and, where two pairs hash alike, those found by numbering the columns), a ring and the same
+ring cut open from its outside to its hole with the same vertices but not the same edges, and a
+wall segment that another stands back to back with left out of the skin, as are a hollow inside
+the material and a face left flat on its own, in about two seconds
 (`python tests/test_boundary.py`);
 `tests/test_copper_union.py`, which joins a net's items as stage 3 does and finds two fills that
 meet only to within floating point joined with no crack, a crack narrower than the grid closed,
@@ -437,7 +443,8 @@ used where GEOS refuses, in under a second (`python tests/test_copper_union.py`)
 near it alone, and leaves an inner layer whose copper comes nowhere near the board edge without
 air, joining nothing; finds every finish prism of seven test boards as the cut by the whole board's
 union makes it, but for slivers thinner than a grid step; and finds a big part of the solid cut into
-tiles that fill it and do not overlap, bores whose shells could meet put in one group (a hole with
+tiles that fill it and do not overlap, a tile whose corner a hole touches cut exactly (GEOS's quick
+clip keeps only the hole's corner piece there), bores whose shells could meet put in one group (a hole with
 no drill too), and the band given back where there is no solid, in about half a minute
 (`python tests/test_finish_shells.py`);
 `tests/test_mask.py`, which splits the solder mask over two pads whose openings follow their edges,

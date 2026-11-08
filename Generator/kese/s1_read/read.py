@@ -74,7 +74,7 @@ def copper_layers(tree, file_name, warnings):
         kv.rename_layers(tree, renamed)
         warnings.append("layers named by the user or in an old language, read as KiCad reads them: "
                         + ", ".join(f"{a} = {b}" for a, b in renamed.items()))
-    names = [str(l[1]) for l in layers_node[1:] if isinstance(l, list) and len(l) > 1 and str(l[1]).endswith(".Cu")]
+    names = [str(l[1]) for l in kv.copper_run(layers_node)]     # renamed: F.Cu, B.Cu and In<n>.Cu only
     inner = sorted((n for n in names if n.startswith("In")), key=lambda n: int(re.sub(r"\D", "", n)))
     copper = ["F.Cu"] + inner + ["B.Cu"]
     missing = [l for l in ("F.Cu", "B.Cu") if l not in names]

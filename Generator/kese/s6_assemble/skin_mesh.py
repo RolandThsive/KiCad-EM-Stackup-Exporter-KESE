@@ -118,8 +118,12 @@ def place_in_slice(pieces, probe, inside, share):
 
 
 def sealed(v, f):
-    """Which faces belong to a closed shell that faces inward: the wall of a hollow inside the
-    material, out of sight from every side."""
+    """Which faces are out of sight from every side: those of a closed shell that faces inward (the
+    wall of a hollow inside the material), and those of a piece that lies flat at one height, with no
+    wall.  Such a piece is the top or the bottom of a gap thinner than vertices.near_edge() inside the
+    material: where stage 6 moved a slice's edge onto a vertex of the slice above or below (the
+    vertex lay that near it), the walls of the gap are hidden (walls_split_at_vertices takes the
+    vertex as on the edge beside it), and its faces were left on their own."""
     if not len(f):
         return np.zeros(0, dtype=bool)
     edges = np.concatenate([f[:, :2], f[:, 1:]])
@@ -128,4 +132,8 @@ def sealed(v, f):
     o = (v.min(axis=0) + v.max(axis=0)) / 2
     a, b, c = v[f[:, 0]] - o, v[f[:, 1]] - o, v[f[:, 2]] - o
     volume = np.bincount(shell, weights=np.einsum("ij,ij->i", a, np.cross(b, c)))
-    return volume[shell] < 0
+    z = v[f, 2]
+    low, high = np.full(len(volume), np.inf), np.full(len(volume), -np.inf)
+    np.minimum.at(low, shell, z.min(axis=1))
+    np.maximum.at(high, shell, z.max(axis=1))
+    return (volume[shell] < 0) | (low[shell] == high[shell])
