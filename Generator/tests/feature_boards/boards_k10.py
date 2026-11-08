@@ -1,10 +1,10 @@
 """Boards for the KiCad 10 features that cut or fill holes, and for hatched drawings: backdrills,
 counterbores and countersinks, the protection of vias (IPC-4761) and hatched fills."""
 from boards_later import SMD, THT, new_board, ref, stub
-from common import X0, Y0, at
+from common import OUTER, PLAIN, X0, Y0, at
 from footprints7 import pad, shape, text
 from footprints_later import footprint
-from kicad7 import copper_names, f, q, xy
+from kicad7 import copper_names, f, q, stackup, xy
 from kicad_later import K10, gr_circle, gr_line, gr_poly, gr_rect, gr_text, segment, via
 
 NPTH = ("*.Cu", "*.Mask")
@@ -191,4 +191,33 @@ def hatched_fills():
     return b
 
 
-BOARDS = [backdrills, post_machining, via_protection, hatched_fills]
+def plated_edge_machining():
+    """KiCad 10's post machining, backdrills and blind vias at a plated board edge (edge_plating
+    yes) on four layers: a counterbore from the front and a countersink from the back that cross the
+    edge while their holes stay inside, a via backdrilled from the back and a plated pad drilled from
+    the front (a tertiary drill) wider than their rings, both crossing the edge, and blind vias from
+    the front that reach into the plating; GND tracks along the left edge give the plating its net.
+    Each cuts the plating only between its own heights."""
+    b = new_board("plated_edge_machining", K10, 4, (40, 24))
+    stackup(b, PLAIN[4], [OUTER, 0.0175, 0.0175, OUTER], extra=("(edge_plating yes)",))
+    F, I1, I2, B = copper_names(4)
+    b.add(*[segment(b, at(0.25, 0.5), at(0.25, 23.5), 0.5, layer, "GND") for layer in (F, B)])
+    b.add(footprint(b, "Feature:CounterboreAtEdge", at(8, 2), children=[
+        ref("H1", 4.2), pad("", "np_thru_hole", "circle", (0, 0), (3.2, 3.2), NPTH, drill=3.2,
+                          front_pm=("counterbore", 6.0, 0.5, None))]))
+    b.add(footprint(b, "Feature:CountersinkAtEdge", at(8, 22.2), children=[
+        ref("H2", -3.5), pad("", "np_thru_hole", "circle", (0, 0), (3.2, 3.2), NPTH, drill=3.2,
+                             back_pm=("countersink", 5.0, None, 90))]))
+    p = at(20, 0.5)
+    b.add(via(b, p, 0.8, 0.4, "BD_EDGE", backdrill=(1.2, B, I2)), segment(b, p, at(20, 4), 0.25, F, "BD_EDGE"))
+    b.add(footprint(b, "Feature:TertiaryAtEdge", at(30, 1), children=[
+        ref("J1", 2.5), pad("1", "thru_hole", "circle", (0, 0), (1.7, 1.7), THT, drill=1.0, net="P_EDGE",
+                            tertiary=(2.4, F, I1))]))
+    b.add(segment(b, at(30, 1), at(30, 5), 0.3, I2, "P_EDGE"))
+    for x in (16, 22):
+        p = at(x, 23.84)
+        b.add(via(b, p, 0.6, 0.3, "GND", (F, I1), "blind"), segment(b, p, at(x, 20), 0.25, I1, "GND"))
+    return b
+
+
+BOARDS = [backdrills, post_machining, via_protection, hatched_fills, plated_edge_machining]

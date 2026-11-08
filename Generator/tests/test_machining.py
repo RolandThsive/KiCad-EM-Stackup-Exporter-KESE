@@ -11,7 +11,7 @@ geometry of a cone:
     cuts every backdrill and post machining 1 um further (a margin "to ensure clean cuts"), which
     KESE does not copy; the bands still agree to 0.1 %;
   - the laminate near a cut is cut in stretches that fill it without overlapping, and a barrel is
-    cut back only where a cut takes it.
+    cut back only where a cut takes it, the plated board edge too (featureTest/28).
 Takes a few seconds.
 
     python -m pytest tests/test_machining.py        (or:  python tests/test_machining.py)"""
@@ -222,6 +222,29 @@ def test_backdrills_cut_the_barrel_from_the_face_through_their_last_layer():
             assert (z0, z1, h.drill) in cuts
             seen += 1
     assert seen >= 12
+
+
+def test_a_cut_at_a_plated_edge_takes_the_plating_only_between_its_heights():
+    r, _ = resolved("28_plated_edge_machining")
+    band, cuts = r.edge_band, r.edge_cuts
+    assert r.edge_net == "GND" and not any(g is band for g, *_ in r.barrels)
+    spans = sorted({(z0, z1) for z0, z1, _ in cuts})
+    top, bottom = BAND["F.Cu"][1], BAND["B.Cu"][0]
+    assert any(math.isclose(z0, top - 0.5) for z0, _ in spans)             # the counterbore, 0.5 mm deep
+    assert (bottom, BAND["B.Cu"][1]) in spans                                # the countersink, from the back
+    assert (-math.inf, BAND["In2.Cu"][1]) in spans                           # the backdrill, up to In2.Cu
+    assert (BAND["In1.Cu"][0], math.inf) in spans                            # the tertiary drill and blind vias
+    pieces = [(g, z0, z1) for g, z0, z1, i, j, net in r.barrel_pieces if net == r.edge_net and (i, j) == (0, 3)]
+    for z in np.linspace(BAND["B.Cu"][1] + 1e-4, BAND["F.Cu"][0] - 1e-4, 300):       # the plating's whole height
+        here = [g for g, z0, z1 in pieces if z0 < z < z1]
+        cut = shapely.union_all([d for z0, z1, d in cuts if z0 < z < z1])
+        assert len(here) == 1 and here[0].symmetric_difference(band.difference(cut)).area < 1e-5, z    # the grid
+        if -0.09 < z < 0.29:                                  # under the counterbore's floor, over the countersink
+            assert here[0].symmetric_difference(band).area < 1e-9
+    on_top = r.copper["F.Cu"]["GND"]                         # the band is F.Cu's copper but where a cut takes F.Cu
+    face, front = (shapely.union_all([d for z0, z1, d in cuts if z1 >= z]) for z in (top, math.inf))
+    assert on_top.intersection(face.difference(front)).intersection(band).area < 1e-6
+    assert band.difference(face).difference(on_top).area < 1e-6
 
 
 def test_drills_and_cuts_kicad_would_not_make_are_left_out_and_named():

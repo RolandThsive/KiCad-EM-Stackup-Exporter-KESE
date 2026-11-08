@@ -1815,5 +1815,40 @@
   "Top Mask over Copper": 0.0,
   "Top Silkscreen": 0.339917044,
   "Top Solder Mask": 33.995159384
+ },
+ "28_plated_edge_machining/simulation": {
+  "Board_dielectric 1": 199.886130248,
+  "Board_dielectric 2": 1022.728394182,
+  "Board_dielectric 3": 202.399896414,
+  "Bottom Finish Gold": 0.000124103,
+  "Bottom Finish Nickel": 0.007756437,
+  "Bottom Solder Mask": 9.346566856,
+  "Copper_BD_EDGE": 0.087298045,
+  "Copper_GND": 5.843002819,
+  "Copper_P_EDGE": 0.197613747,
+  "Edge Finish Gold": 0.020063785,
+  "Edge Finish Nickel": 1.002878454,
+  "Hole Finish Gold": 0.000489397,
+  "Hole Finish Nickel": 0.027289442,
+  "Top Silkscreen": 0.019656679,
+  "Top Solder Mask": 9.263907342
+ },
+ "28_plated_edge_machining/visual": {
+  "Board_dielectric 1": -8.117570209,
+  "Board_dielectric 2": -23.979154443,
+  "Board_dielectric 3": -5.491937012,
+  "Bottom Finish Gold": 0.0,
+  "Bottom Mask over Copper": 9.592763232,
+  "Bottom Solder Mask": -33.254928736,
+  "Copper_BD_EDGE": 0.0,
+  "Copper_GND": -0.133348153,
+  "Copper_P_EDGE": 0.0,
+  "Edge Finish Gold": 1537.02344533,
+  "Edge Finish Nickel": -0.000503008,
+  "Hole Finish Gold": -1.05294069,
+  "Hole Finish Nickel": 0.0,
+  "Top Mask over Copper": 9.590504258,
+  "Top Silkscreen": 0.019656679,
+  "Top Solder Mask": -33.364919162
  }
 }

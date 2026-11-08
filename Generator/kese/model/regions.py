@@ -27,5 +27,6 @@ class Regions:
     transform_note: str = ""
     to_board_T: object = None                          # KiCad-frame shape -> board-frame shape
     edge_band: object = None
+    edge_cuts: list = field(default_factory=list)      # [(z0, z1, disk)]: what cuts the plated edge between two heights only
     edge_net: object = None
     holes_made: dict = field(default_factory=dict)     # (kind, hole indices, walls) -> shape; each set of holes joined once

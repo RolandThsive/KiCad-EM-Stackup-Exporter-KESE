@@ -396,10 +396,14 @@ Edge plating is copper on the routed board edge (edge-card connectors, RF shield
 `Copper.EDGE_PLATING`: `"file"` (default) follows the stack-up's `(edge_plating yes)`, `"yes"` and
 `"no"` force it. When on:
 
-- a band just inside the outline becomes copper, interrupted by every hole and castellation
-  that crosses the edge, equation (12.14); it runs through the laminate from $`-L/2`$ to $`+L/2`$
-  and is part of the edge net's copper on the two outer layers, so it reaches from the bottom of
-  `B.Cu` to the top of `F.Cu`;
+- a band just inside the outline becomes copper, interrupted by every hole through the whole board
+  and every castellation that crosses the edge, equation (12.14); it runs through the laminate from
+  $`-L/2`$ to $`+L/2`$ and is part of the edge net's copper on the two outer layers, so it reaches
+  from the bottom of `B.Cu` to the top of `F.Cu`;
+- a hole that crosses the band but not the whole board (a blind or buried via, a backdrill or
+  tertiary drill, a counterbore or countersink) cuts it only between its own heights, as it cuts a
+  barrel: the band is kept above and below the cut, and the outer layers' copper loses it only where
+  the hole takes that layer (board `28_plated_edge_machining`);
 - the band takes the laminate's place at the edge, like a barrel in its drill;
 - the band belongs to one net, `Copper.EDGE_PLATING_NET`: `"auto"` picks the named net with the
   most copper touching the band (or `no_net`), or give a net name such as `"GND"`;
@@ -410,7 +414,7 @@ Edge plating is copper on the routed board edge (edge-card connectors, RF shield
   resin fill beside the inner copper stops there too.
 
 ```math
-E = \left( O \setminus \left( O \ominus w_e \right) \right) \setminus \bigcup_h H_h \qquad (12.14)
+E = \left( O \setminus \left( O \ominus w_e \right) \right) \setminus \bigcup_{h \in T} H_h \qquad (12.14)
 ```
 
 ```math
@@ -421,6 +425,7 @@ n^{*} = \arg\max_{n \in S} \sum_{k=0}^{N-1} \mathrm{area}\left( C_{k,n} \cap E \
 |---|---|---|
 | $`E`$ | the edge plating band | |
 | $`w_e`$ | width of the band | `Copper.EDGE_PLATING_WALL_MM` |
+| $`T`$ | the holes through the whole board, castellations among them ($`H_h`$: equation (12.2)) | |
 | $`S`$ | the named nets (every net except `no_net`) | |
 | $`C_{k,n}`$, $`N`$ | copper of net $`n`$ on layer $`l_k`$, equation (12.1), and the number of copper layers | |
 | $`n^{*}`$ | the edge net when `EDGE_PLATING_NET = "auto"` (`no_net` when no named net touches the band) | `Copper.EDGE_PLATING_NET` |

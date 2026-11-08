@@ -78,7 +78,11 @@ R_j = \left( E \oplus o_j \right) \setminus \left( E \oplus o_{j-1} \right) \set
 where $`\oplus`$ grows a region by a distance and $`B`$ is everything solid beside the copper (the
 copper itself, the laminate, the mask, the ink, and for the edge and the holes the barrels and the
 finish on the faces). The shell runs over the copper's height (a pad's wall: the outer copper; a
-barrel or the plated edge: from the bottom of `B.Cu` to the top of `F.Cu`). Where the face next to
+barrel or the plated edge: from the bottom of `B.Cu` to the top of `F.Cu`). Where post machining or
+a backdrill cuts a barrel back, or one of them or a blind or buried via cuts the plated edge, the
+shell covers what is left, stretch by stretch between the heights where the cuts change; the cavity
+a backdrill or post machining leaves counts as solid (both come after the finish), so its walls get
+none. Where the face next to
 it takes the finish, it wraps over the corner: metal $`j`$ also fills $`R_j`$ between heights
 $`z_t`$ and $`z_t + h_{j-1}`$, and everything within $`o_j`$ of the copper between $`z_t + h_{j-1}`$
 and $`z_t + h_j`$, where $`z_t`$ is the top of the copper and $`h_j = \sum_{i \le j} \tau_i`$ the

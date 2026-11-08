@@ -16,6 +16,7 @@
 > the byte. One run of every board each way, with the solder mask and the silkscreen, both runs of
 > a board on the same machine: stage 6 of the visual runs takes 47.8 s in all, 55.3 s before (13.5%
 > less), and the whole runs 8.4% less; board 22 31% less in stage 6, board 23 25%, board 21 4%.
+> Board 28 was timed after it, with the final code of this version.
 
 Every board of `featureTest/`, section by section, with its top and bottom and where the time of a
 run goes:
@@ -710,6 +711,33 @@ and 91 vias on four layers, takes 6.4 to 7.0 s; board 25, whose countersinks are
 
 </div>
 
+### 23.8.3 28 Machining At A Plated Edge
+
+<p align="center">
+<img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/feature_test_images/28_plated_edge_machining/top_straight_visual.webp" width="49.5%" alt="28 Machining at a plated edge straight from above in visual mode">
+<img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/feature_test_images/28_plated_edge_machining/bottom_straight_visual.webp" width="49.5%" alt="28 Machining at a plated edge straight from below in visual mode, mirrored as KiCad flips the board">
+</p>
+
+![28 Machining at a plated edge: stacked bars of seconds per stage; stages 4 and 6 take 58% to 76% of a run. Simulation with GLB and STEP takes 1.5 s: read 71 ms, resolve 77 ms, geometry 0.3, materials 0.1 ms, assemble 0.6, write 0.3, verify 42 ms, start-up and exit 0.2. Visual with GLB takes 1.6 s: read 68 ms, resolve 78 ms, geometry 0.3, materials 0.1 ms, assemble 0.9, write 5 ms, verify 56 ms, start-up and exit 0.2](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/feature_28_plated_edge_machining.webp)
+
+| Mode | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
+|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
+| Simulation, GLB + STEP | 71 ms | 77 ms | 0.3 | 0.1 ms | 0.6 | 0.3 | 42 ms | 0.2 | 1.5 |
+| Visual, GLB | 68 ms | 78 ms | 0.3 | 0.1 ms | 0.9 | 5 ms | 56 ms | 0.2 | 1.6 |
+
+<div align="center">
+
+| Board | `featureTest/28_plated_edge_machining.kicad_pcb` |
+|---|---|
+| Outline | 40 × 24 mm |
+| Thickness | 1.6 mm |
+| Copper layers | 4 |
+| Vias | 3: 2 blind and buried, 1 through |
+| Board edge | Plated all round, cut by machining between two heights |
+| Mask, silkscreen, finish | Not set (drawn green and white), ENIG |
+
+</div>
+
 ## 23.9 Solder Mask And Silkscreen
 
 ### 23.9.1 17 Solder Mask And Silkscreen
@@ -1209,6 +1237,8 @@ Seconds, the median of three runs for each stage, unless marked ms; the total is
 | 26 Via protection | visual, GLB | 5 ms | 0.1 | 0.2 | 0.2 ms | 1.2 | 7 ms | 74 ms | 0.2 | 1.7 |
 | 27 Hatched fills | simulation, GLB + STEP | 0.1 | 85 ms | 0.2 | 0.1 ms | 1.0 | 0.8 | 54 ms | 0.2 | 2.5 |
 | 27 Hatched fills | visual, GLB | 0.1 | 90 ms | 0.2 | 0.1 ms | 0.9 | 10 ms | 62 ms | 0.2 | 1.6 |
+| 28 Machining at a plated edge | simulation, GLB + STEP | 71 ms | 77 ms | 0.3 | 0.1 ms | 0.6 | 0.3 | 42 ms | 0.2 | 1.5 |
+| 28 Machining at a plated edge | visual, GLB | 68 ms | 78 ms | 0.3 | 0.1 ms | 0.9 | 5 ms | 56 ms | 0.2 | 1.6 |
 
 | Previous | Next |
 |:---|---:|

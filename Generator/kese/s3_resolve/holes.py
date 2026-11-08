@@ -126,7 +126,8 @@ def barrel_span(st, layers, i, j):
 def barrels(r, items, outline_k):
     """r.barrels: the plating ring of the plated holes, one region per (top layer, bottom layer,
     net), plus the plated board edge; r.barrel_pieces: the rings that post machining or a backdrill
-    cuts back, hole by hole, between the heights where the cuts change."""
+    cuts back, hole by hole, between the heights where the cuts change (and so the plated edge,
+    where r.edge_cuts cut it)."""
     spans = defaultdict(list)
     for n, h in enumerate(items.holes):
         if not h.plated:
@@ -139,8 +140,13 @@ def barrels(r, items, outline_k):
         else:
             spans[(h.i, h.j, h.net)].append(ring)
     r.barrels = [(r.to_board_T(union(rings)), i, j, net) for (i, j, net), rings in spans.items()]
-    if r.edge_band is not None:
-        r.barrels.append((r.edge_band, 0, len(items.layers) - 1, r.edge_net))
+    last = len(items.layers) - 1
+    if r.edge_band is not None and r.edge_cuts:
+        lo, hi = barrel_span(r.stackup, items.layers, 0, last)
+        r.barrel_pieces += [(g, z0, z1, 0, last, r.edge_net)
+                            for g, z0, z1 in cut_back(r.edge_band, lo, hi, r.edge_cuts)]
+    elif r.edge_band is not None:
+        r.barrels.append((r.edge_band, 0, last, r.edge_net))
 
 
 def cut_back(ring, lo, hi, cuts):

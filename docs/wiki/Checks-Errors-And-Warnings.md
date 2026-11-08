@@ -476,7 +476,8 @@ counterbore to its depth from the copper face (a floor inside an inner copper la
 countersink within its tolerance of the cone and with the cone's volume, the copper knocked out
 layer by layer as KiCad 10 gives it on featureTest/25, the laminate band by band as KiCad 10's STEP
 export cuts it on featureTest/24, 25 and 26 (to 0.1 %), the laminate near a cut in stretches that
-fill it, a barrel cut back only where a cut takes it, and drills and cuts KiCad would not make, or
+fill it, a barrel cut back only where a cut takes it, a plated board edge cut at over 300 heights
+by exactly the cuts there, and drills and cuts KiCad would not make, or
 that a setting switches off, left out and named, in about three seconds
 (`python tests/test_machining.py`);
 `tests/test_tall_walls.py`, which joins a wall across the heights only a counterbore, a countersink
