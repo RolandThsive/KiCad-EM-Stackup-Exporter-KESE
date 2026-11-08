@@ -5,8 +5,10 @@ from kese.s3_resolve.copper import copper_layers, join_nets
 from kese.s3_resolve.edge_plating import edge_plating
 from kese.s3_resolve.frame import place
 from kese.s3_resolve.holes import band_laminate, barrels, castellate, slabs
+from kese.s3_resolve.machining import machine
 from kese.s3_resolve.mask import mask_openings, mask_regions
 from kese.s3_resolve.outline import outline_from
+from kese.s3_resolve.heights import finished_bands
 from kese.s3_resolve.silk import clip_silk
 
 
@@ -22,6 +24,8 @@ def resolve(items, log):
     r = Regions(items=items, layers=items.layers, stackup=items.stackup)
     place(r, outline_k)
     castellate(items, outline_k)
+    finished_bands(items.stackup)
+    machine(r, items)
     slabs(r, items)
     copper_layers(r, items, outline_k, log)
     edge_plating(r, items, log)

@@ -22,6 +22,7 @@ class PrismSet:
     prisms: list = field(default_factory=list)
     notes: list = field(default_factory=list)   # free text for the report
     materials: dict = field(default_factory=dict)   # part name -> material dict (set by stage 5)
+    free_levels: frozenset = frozenset()        # heights only post machining and via plugs bring: walls run on across them
 
     def add(self, part, role, region, z0, z1, **kw):
         if region is None or region.is_empty or abs(z1 - z0) < 1e-12:

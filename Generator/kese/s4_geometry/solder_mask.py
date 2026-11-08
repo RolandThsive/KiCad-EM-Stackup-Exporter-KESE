@@ -32,7 +32,11 @@ def build(r, ps, mode):
         region = own(r.mask[side[0]])          # thread, on its own copies (the two sides' shapes come from the same ones)
         if region.is_empty:
             return None
-        cu = under_mask_copper(st, own(r.copper_all.get(side[1], sh.EMPTY)))
+        cu = own(r.copper_all.get(side[1], sh.EMPTY))
+        shut = own(r.closed_bores.get(side[0], sh.EMPTY))    # bores a via's protection shuts: the mask
+        if not shut.is_empty:                                # spans them at its height over the copper
+            cu = sh.snap(sh.union([cu, shut]))
+        cu = under_mask_copper(st, cu)
         flat, top, wall = conformal_regions(region, cu, t_lam, M.MASK_WALL_QUAD_SEGS)
         return flat, *without_hairlines(top, M.MASK_OVER_COPPER_HAIRLINE_MM), wall
     for (side, layer, sign, tb), pieces in zip(sides, in_parallel(split, sides)):   # both sides at once

@@ -13,6 +13,42 @@ class Hole:
     net: str
     wall: float            # plating wall thickness (0 for NPTH)
     castellated: bool = False   # plated and cut by the board edge (Copper.CASTELLATION)
+    kind: str = "drill"         # "drill"; "backdrill" (KiCad 10, drills a plated hole out from layer i through j);
+                                # "knockout" (a counterbore or countersink where it crosses copper layer i = j)
+    protect: object = None      # a via's Protection (KiCad 10), or None
+    of: int = -1                # a backdrill or knockout: the index in Items.holes of the hole it machines
+
+
+@dataclass
+class Protection:
+    """A via's protection (KiCad 10, IPC-4761), as stage 2 resolves it from the via and the board."""
+    filled: bool = False
+    capped: bool = False
+    plugged: dict = field(default_factory=lambda: {"F": False, "B": False})
+    covered: dict = field(default_factory=lambda: {"F": False, "B": False})
+    opened: dict = field(default_factory=lambda: {"F": False, "B": False})   # an end a backdrill or post machining opens
+
+    def copper_shut(self, side, fill):
+        """Whether copper shuts the hole at its end on `side` (the outer copper is then not cut by it):
+        a cap, or a copper fill (fill: Copper.VIA_FILL)."""
+        return not self.opened[side] and (self.capped or (self.filled and fill == "copper"))
+
+    def shut(self, side):
+        """Whether anything shuts the hole at its end on `side`, so that the solder mask can span it:
+        a cap, a fill, or a plug or covering on that side."""
+        return not self.opened[side] and (self.capped or self.filled or self.plugged[side] or self.covered[side])
+
+
+@dataclass
+class PostMachining:
+    """A counterbore or countersink (KiCad 10) of a pad or via, KiCad frame."""
+    center: tuple
+    side: str                   # "F" or "B": the face it is cut from
+    mode: str                   # "counterbore" or "countersink"
+    size: float                 # diameter at the face
+    depth: float                # from the face, copper included (a countersink of depth 0: the whole cone)
+    angle: float = 0.0          # a countersink's included angle, degrees
+    of: int = -1                # index in Items.holes of the hole it machines (-1: none)
 
 
 @dataclass
@@ -35,5 +71,6 @@ class Items:
     tent_default: dict = field(default_factory=dict)
     tent_source: str = ""
     via_protection: dict = field(default_factory=dict)  # KiCad 10: covering, plugging, ... when a via does not say
+    post_machining: list = field(default_factory=list)  # PostMachining of pads and vias (KiCad 10)
     mask_clearance: float = 0.0
     mask_min_width: float = 0.0          # setup (solder_mask_min_width): narrower mask webs are not made

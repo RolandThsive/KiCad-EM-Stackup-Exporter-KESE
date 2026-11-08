@@ -12,6 +12,7 @@ from kese.core import shapes2d as sh
 from kese.core.flat_faces import flat_faces
 from kese.core.pinches import cut_open_at, open_pinches, open_pinches_between
 from kese.core.shape_copies import floating, own
+from kese.core.tall_walls import tall_walls
 from kese.core.triangulate import rings_of
 from kese.core.vertices import grid_keys, noded, ring_points, share_vertices
 
@@ -23,11 +24,17 @@ class Boundary:
     levels: list = field(default_factory=list)   # every distinct height, low to high
     slices: list = field(default_factory=list)   # (z0, z1, region): the material between two neighbouring heights
     flats: list = field(default_factory=list)    # (z, region, looks up): a flat face with its holes
+    free: frozenset = frozenset()                # heights the walls may run on across (PrismSet.free_levels)
+    _walls: list = field(default=None, repr=False)
 
     def walls(self):
-        """(z0, z1, segments) per slice: every ring edge of the slice as (a, b) with the material
-        on its left, stood up between the slice's heights.  An (n, 2, 2) array of segments."""
-        return [(z0, z1, wall_segments(region)) for z0, z1, region in self.slices if not region.is_empty]
+        """(z0, z1, segments): every ring edge of every slice as (a, b) with the material on its left,
+        stood up between the slice's heights, an (n, 2, 2) array of segments; across the heights in
+        `free`, the segments that go on unchanged as one taller wall (kese/core/tall_walls.py)."""
+        if self._walls is None:
+            walls = [(z0, z1, wall_segments(region)) for z0, z1, region in self.slices if not region.is_empty]
+            self._walls = tall_walls(walls, self.flats, self.levels, self.free) if self.free else walls
+        return self._walls
 
     def volume(self):
         """The volume between the faces, from the flat faces alone: for a closed surface the
@@ -39,8 +46,9 @@ class Boundary:
         return sum((z1 - z0) * region.area for z0, z1, region in self.slices)
 
 
-def boundary_of(part, prisms, log=None):
-    """The prisms of one part -> its Boundary, closed by construction."""
+def boundary_of(part, prisms, log=None, free=frozenset()):
+    """The prisms of one part -> its Boundary, closed by construction; `free`: heights its walls may
+    run on across (PrismSet.free_levels)."""
     levels = heights_of(prisms)
     slices = slices_of_part(prisms, levels, log)
     flats, again = [], range(len(levels))
@@ -53,7 +61,8 @@ def boundary_of(part, prisms, log=None):
     else:
         if log:
             log(f"faces and walls still changing after {sh.G().VERTEX_SHARING_ROUNDS} rounds")
-    return Boundary(part, levels, [(z0, z1, s) for (z0, z1), s in zip(pairwise(levels), slices)], flats)
+    return Boundary(part, levels, [(z0, z1, s) for (z0, z1), s in zip(pairwise(levels), slices)], flats,
+                    frozenset(free) & frozenset(levels))
 
 
 def heights_of(prisms):

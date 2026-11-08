@@ -28,5 +28,5 @@ class Stackup:
     copper_finish: str | None = None
     edge_plating: bool = False                # (edge_plating yes) in the stackup
     castellated_pads: bool = False            # (castellated_pads yes) in the stackup
-    band: dict = field(default_factory=dict)  # copper layer -> (z_lo, z_hi), set by stage 4 (heights.py)
+    band: dict = field(default_factory=dict)  # copper layer -> (z_lo, z_hi), set by stage 3 (s3_resolve/heights.py)
     half: float = 0.0                         # half the laminate thickness, set with band

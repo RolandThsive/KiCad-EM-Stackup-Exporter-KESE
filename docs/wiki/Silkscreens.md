@@ -14,7 +14,7 @@ Items on the layers in `Silkscreen.SILK_LAYERS` (`F.SilkS` and `B.SilkS` by defa
 
 | Item | Shape |
 |---|---|
-| graphics (`gr_line`, `gr_arc`, `gr_circle`, `gr_rect`, `gr_poly`, `gr_curve`, and the `fp_*` versions inside footprints) | the stroke thickened by its width; filled shapes filled |
+| graphics (`gr_line`, `gr_arc`, `gr_circle`, `gr_rect`, `gr_poly`, `gr_curve`, and the `fp_*` versions inside footprints) | the stroke thickened by its width; filled shapes filled; hatched ones (KiCad 10) hatched as on copper ([Copper And Traces](Copper-And-Traces.md#1212-hatched-fills)) |
 | text (`gr_text`, `fp_text`, footprint `property` fields such as Reference and Value) | glyphs of the stroke font, laid out as KiCad lays them out |
 | zone fills on a silk layer | the stored polygons |
 

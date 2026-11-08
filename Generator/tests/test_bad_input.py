@@ -18,7 +18,7 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 
 from kese.core.sexp import parse  # noqa: E402
-from kese.job import (AT_LEAST, CHOICES, KIND_WORDS, MORE_THAN_ZERO, NUMBER_AT_LEAST, ONE_OR_MORE,  # noqa: E402
+from kese.job import (AT_LEAST, CHOICES, KIND_WORDS, MORE_THAN_ZERO, NUMBER_AT_LEAST, ONE_OR_MORE, SHARES,  # noqa: E402
                       WHOLE_NUMBERS, start)
 from kese.s1_read import parse_kicad_version as kv  # noqa: E402
 from kese.s1_read import read  # noqa: E402
@@ -187,7 +187,13 @@ def test_tolerances_and_limits_must_be_in_their_range():
         for x in (0, 0.0, -90, float("nan"), "90", None, True):
             refused = started({key: x})
             assert refused == f"{key} must be a number more than 0, not {x!r}", (key, x, refused)
-    from kese.s4_geometry.finish import mitre                       # the finish's corners take the limit
+    for key in SHARES:                                              # how far a via's plug reaches
+        for x in (1e-3, 0.5, 1, 1.0):
+            assert not isinstance(started({key: x}), str), (key, x)
+        for x in (0, 0.0, -0.5, 1.0001, 2, float("nan"), "0.5", None, True):
+            refused = started({key: x})
+            assert refused == f"{key} must be a number more than 0 and at most 1, not {x!r}", (key, x, refused)
+    from kese.s4_geometry.finish import mitre                      # the finish's corners take the limit
     saved = P.Finish.FINISH_MITRE_LIMIT
     P.override("Finish.FINISH_MITRE_LIMIT", 3.0)
     try:

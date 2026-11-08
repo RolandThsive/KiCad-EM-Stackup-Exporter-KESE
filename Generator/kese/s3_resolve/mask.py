@@ -75,10 +75,15 @@ def webs_of(openings, grow):
 
 def mask_regions(r):
     """r.mask per side, board frame: KiCad's mask layers are negative, so the mask is the outline
-    minus the open bores and the openings, pulled back from the edge by MASK_EDGE_PULLBACK_MM."""
+    minus the open bores and the openings, pulled back from the edge by MASK_EDGE_PULLBACK_MM.  A
+    covered via (KiCad 10) has mask over its bore even in an opening, which the opening then leaves."""
     M = P.SolderMask
     for side in ("F", "B"):
         region = sh.diff(sh.diff(r.outline, r.bores_side[side]), r.mask_open[side])
+        cover = r.covered.get(side, sh.EMPTY)
+        if not cover.is_empty:
+            region = sh.polys_only(shapely.union_all([region, sh.snap(cover)], grid_size=sh.grid()))
+            r.mask_open[side] = sh.diff(r.mask_open[side], cover)
         if M.MASK_EDGE_PULLBACK_MM > 0:
             region = sh.inter(region, pulled_back(r))
         r.mask[side] = region

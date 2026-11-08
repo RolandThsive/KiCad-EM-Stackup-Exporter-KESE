@@ -18,6 +18,7 @@ sys.path.insert(0, str(HERE))
 OUT = HERE.parents[2] / "featureTest"
 
 import boards_holes_vias as hv  # noqa: E402
+import boards_k10 as k10  # noqa: E402
 import boards_later as later  # noqa: E402
 import boards_pads_copper as pc  # noqa: E402
 import boards_skipped as sk  # noqa: E402
@@ -34,7 +35,8 @@ ORDER = [("01", hv.holes_slotted), ("02", hv.holes_round), ("03", hv.vias_throug
          ("16b", sm.edge_plating_border),
          ("17", sm.mask_silk), ("17b", sm.silk_over_copper),
          ("18", sm.finishes), ("18b", sm.finish_pads), ("18c", sm.finish_before_mask), ("19", sk.skipped_items),
-         ("19b", sk.skipped_items_k10), *[(f"20{c}", fn) for c, fn in later.VERSIONS]]
+         ("19b", sk.skipped_items_k10), *[(f"20{c}", fn) for c, fn in later.VERSIONS],
+         ("24", k10.backdrills), ("25", k10.post_machining), ("26", k10.via_protection), ("27", k10.hatched_fills)]
 FORMATS = {20211014: "KiCad 6", 20221018: "KiCad 7", 20240108: "KiCad 8", 20241229: "KiCad 9",
            20260206: "KiCad 10"}
 
@@ -99,9 +101,12 @@ The regression suite (`Generator/tests/test_boards.py`) runs every board here th
 output; after changing a board, run `python tests/test_boards.py --accept` to record it again.
 
 Boards in KiCad 7's format were read back, zone-filled and saved by KiCad 7 itself, so they are
-exactly what KiCad writes, including the outlines of TrueType text. Features that only KiCad 8, 9
-or 10 have are on hand-written boards in that version's format, written from KiCad's own file
-writer source; open those once in that KiCad to confirm they load.
+exactly what KiCad writes, including the outlines of TrueType text. That needs KiCad 7's Python
+module (`pcbnew`): without it, `make.py` writes the boards as built, with unfilled zones, over the
+saved ones (on a machine without KiCad, 29 files change). Run it where KiCad 7 is installed, or
+put the saved boards back with `git checkout featureTest`. Features that only KiCad 8, 9 or 10
+have are on hand-written boards in that version's format, written from KiCad's own file writer
+source; open those once in that KiCad to confirm they load.
 
 | File | Format | What it covers |
 |---|---|---|

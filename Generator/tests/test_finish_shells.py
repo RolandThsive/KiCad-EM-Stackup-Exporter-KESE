@@ -1,4 +1,4 @@
-"""The finish shells' air (kese/s4_geometry/shells.py, finish_shells.py) cut bore by bore, each by
+"""The finish shells' air (kese/s4_geometry/shells.py, finish_shells.py, finish_bores.py) cut bore by bore, each by
 the solid near it alone (air_near), a span's bores worked on in groups, and an inner layer whose
 copper comes nowhere near the board edge left without air at once: every part's finish comes out,
 height by height, as the cut by the whole board's union makes it, but for slivers thinner than a
@@ -25,7 +25,7 @@ from kese.model.prisms import PrismSet  # noqa: E402
 from kese.s1_read import read  # noqa: E402
 from kese.s2_collect import collect  # noqa: E402
 from kese.s3_resolve import resolve  # noqa: E402
-from kese.s4_geometry import finish_shells, geometry, shells  # noqa: E402
+from kese.s4_geometry import finish_bores, finish_shells, geometry, shells  # noqa: E402
 from parameters import P  # noqa: E402
 
 FEATURES = ROOT.parent / "featureTest"
@@ -49,14 +49,14 @@ def test_bores_whose_shells_could_meet_share_a_group():
     try:
         rings = [Point(x, y).buffer(0.3).difference(Point(x, y).buffer(0.2)) for x in range(6) for y in range(4)]
         rings.append(Point(0.62, 0).buffer(0.3).difference(Point(0.62, 0).buffer(0.2)))   # 0.02 mm from the first
-        found = finish_shells.bore_groups(rings, 0.01)
+        found = finish_bores.bore_groups(rings, 0.01)
         assert sorted(k for g in found for k in g) == list(range(len(rings))) and all(g == sorted(g) for g in found)
         assert len(found) >= 4 and any(0 in g and 24 in g for g in found)
-        with_empty = finish_shells.bore_groups(rings + [Polygon()], 0.01)     # a hole with no drill: no ring
+        with_empty = finish_bores.bore_groups(rings + [Polygon()], 0.01)     # a hole with no drill: no ring
         assert sorted(k for g in with_empty for k in g) == list(range(len(rings) + 1))
     finally:
         P.override("Geometry.FINISH_BORES_AT_A_TIME", saved)
-    assert finish_shells.bore_groups(rings[:3], 0.01) == [[0, 1, 2]]
+    assert finish_bores.bore_groups(rings[:3], 0.01) == [[0, 1, 2]]
 
 
 def test_an_inner_band_inside_the_outline_has_no_air_and_joins_nothing():

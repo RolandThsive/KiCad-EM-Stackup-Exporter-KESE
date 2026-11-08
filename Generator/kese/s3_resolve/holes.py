@@ -64,30 +64,90 @@ def castellate(items, outline_k):
                            "set Copper.CASTELLATION = 'auto' to plate them")
 
 
+def full_height(h):
+    """Whether hole h is drilled the board's whole height where it passes: not a backdrill, nor a
+    counterbore's or countersink's knockout, which leave the laminate between their heights."""
+    return h.kind == "drill"
+
+
+def at_face(h, side, last):
+    """Whether hole h ends at the face `side`."""
+    return h.i == 0 if side == "F" else h.j == last
+
+
+def shut(h, side):
+    """Whether a via's protection shuts its end on `side` (filled, capped, plugged or covered there)."""
+    return h.protect is not None and h.protect.shut(side)
+
+
+def covered(h, side):
+    """Whether a via's end on `side` is covered: the solder mask spans its bore."""
+    return h.protect is not None and h.protect.covered[side] and not h.protect.opened[side]
+
+
 def slabs(r, items):
     """r.slab: the laminate between copper k and k+1, drilled by every hole through it;
-    r.bores_side: the open bores on each face."""
+    r.bores_side: the open bores on each face; r.closed_bores and r.covered: the bores a via's
+    protection shuts on each face, and those of them covered."""
     T, last = r.to_board_T, len(items.layers) - 1
     r.slab = [drilled(r, lambda h, k=k: h.i <= k and h.j >= k + 1) for k in range(last)]
-    r.bores_side = {"F": T(bores(r, lambda h: h.i == 0)), "B": T(bores(r, lambda h: h.j == last))}
+    for s in ("F", "B"):
+        r.bores_side[s] = T(bores(r, lambda h, s=s: at_face(h, s, last) and not shut(h, s)))
+        r.closed_bores[s] = T(bores(r, lambda h, s=s: at_face(h, s, last) and shut(h, s)))
+        r.covered[s] = T(bores(r, lambda h, s=s: at_face(h, s, last) and covered(h, s)))
 
 
 def band_laminate(r, items):
-    """r.band_laminate: on each inner copper layer, the laminate beside the copper, drilled."""
+    """r.band_laminate: on each inner copper layer, the laminate beside the copper, drilled (a
+    counterbore's or countersink's knockout takes the copper only: the laminate is cut back between
+    its heights, r.band_cuts)."""
     last = len(items.layers) - 1
     for k, l in enumerate(items.layers):
         if 0 < k < last:
-            lam = sh.diff(drilled(r, lambda h, k=k: h.i <= k <= h.j), r.copper_all[l])
+            lam = sh.diff(drilled(r, lambda h, k=k: h.i <= k <= h.j and h.kind != "knockout"), r.copper_all[l])
             r.band_laminate[l] = sh.diff(lam, r.edge_band) if r.edge_band is not None else lam
+
+
+def barrel_span(st, layers, i, j):
+    """(lo, hi): the heights of the barrel of a hole from copper i to j.  Outer layers cap the barrel
+    (their copper covers the ring area), so it stops at their face; inner layers are drilled through,
+    so it goes on through their band."""
+    last = len(layers) - 1
+    hi = st.band[layers[i]][0] if i == 0 else st.band[layers[i]][1]
+    lo = st.band[layers[j]][1] if j == last else st.band[layers[j]][0]
+    return lo, hi
 
 
 def barrels(r, items, outline_k):
     """r.barrels: the plating ring of the plated holes, one region per (top layer, bottom layer,
-    net), plus the plated board edge."""
+    net), plus the plated board edge; r.barrel_pieces: the rings that post machining or a backdrill
+    cuts back, hole by hole, between the heights where the cuts change."""
     spans = defaultdict(list)
-    for h in items.holes:
-        if h.plated:
-            spans[(h.i, h.j, h.net)].append(h.drill.difference(h.drill.buffer(-h.wall)).intersection(outline_k))
+    for n, h in enumerate(items.holes):
+        if not h.plated:
+            continue
+        ring = h.drill.difference(h.drill.buffer(-h.wall)).intersection(outline_k)
+        if n in r.barrel_cuts:
+            lo, hi = barrel_span(r.stackup, items.layers, h.i, h.j)
+            for g, z0, z1 in cut_back(ring, lo, hi, r.barrel_cuts[n]):
+                r.barrel_pieces.append((r.to_board_T(g), z0, z1, h.i, h.j, h.net))
+        else:
+            spans[(h.i, h.j, h.net)].append(ring)
     r.barrels = [(r.to_board_T(union(rings)), i, j, net) for (i, j, net), rings in spans.items()]
     if r.edge_band is not None:
         r.barrels.append((r.edge_band, 0, len(items.layers) - 1, r.edge_net))
+
+
+def cut_back(ring, lo, hi, cuts):
+    """[(what is left of `ring`, z0, z1)] between lo and hi, where cuts [(z0, z1, disk)] take the
+    disk out between their heights; neighbouring stretches cut alike are one."""
+    levels = sorted({lo, hi} | {z for c in cuts for z in c[:2] if lo < z < hi})
+    out, last_key = [], None
+    for a, b in zip(levels, levels[1:]):
+        active = tuple(k for k, (z0, z1, _) in enumerate(cuts) if z0 <= a + 1e-9 and z1 >= b - 1e-9)
+        if out and active == last_key:
+            out[-1] = (out[-1][0], out[-1][1], b)
+            continue
+        out.append(((sh.diff(ring, union([cuts[k][2] for k in active])) if active else ring), a, b))
+        last_key = active
+    return [(g, a, b) for g, a, b in out if not g.is_empty]

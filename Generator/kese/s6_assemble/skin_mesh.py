@@ -13,19 +13,32 @@ from kese.core.boundary_mesh import (
     wall_triangles,
 )
 from kese.core.graph import connected_components
+from kese.core.tall_walls import tall_walls
 from kese.core.mesh import Mesh
 from kese.core.memory import give_back_memory
 from kese.core.parallel import workers_wanted
 from parameters import P
 
 
-def skin_meshes_from_faces(levels, pieces, faces):
-    """-> {part: mesh of its visible faces} (mm, board frame)."""
+def skin_meshes_from_faces(levels, pieces, faces, free=frozenset()):
+    """-> {part: mesh of its visible faces} (mm, board frame); across the heights in `free`
+    (PrismSet.free_levels) a wall that goes on unchanged is one taller wall (kese/core/tall_walls.py)."""
     at = {z: k for k, z in enumerate(levels)}
+    names = list(faces)
+    walls_of = {part: faces[part][1] for part in names}
+    if free:
+        every = [(z0, z1, s) for part in names for z0, z1, s in faces[part][1]]
+        owner = [np.full(len(s), n) for n, part in enumerate(names) for *_, s in faces[part][1]]
+        flats = [f for part in names for f in faces[part][0]]
+        walls_of = {part: [] for part in names}
+        for z0, z1, s, o in tall_walls(every, flats, levels, free, owner):
+            for n in np.unique(o):
+                walls_of[names[n]].append((z0, z1, s[o == n]))
     made, owners, parts = [], [], []
-    for part, (flats, walls) in faces.items():
+    for part in names:
+        flats = faces[part][0]
         mine = [flat_face_triangles(region, at[z], up) for z, region, up in flats]
-        mine += [wall_triangles(segments, at[z0], at[z1]) for z0, z1, segments in walls]
+        mine += [wall_triangles(segments, at[z0], at[z1]) for z0, z1, segments in walls_of[part]]
         mine = [piece for piece in mine if len(piece[2])]
         made += mine
         owners += [np.full(len(tri), len(parts)) for _, _, tri in mine]

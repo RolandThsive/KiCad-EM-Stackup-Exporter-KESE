@@ -17,6 +17,7 @@ Alpha below 1 writes a glTF `BLEND` material.
 | `Copper` | <img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/ColorSwatches/CD803E.webp" width="12" height="12" align="absmiddle" alt=""> `#CD803E` | 1.0 | 0.9 | 0.35 | copper, simulation mode |
 | `Plating` | <img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/ColorSwatches/CD803E.webp" width="12" height="12" align="absmiddle" alt=""> `#CD803E` | 1.0 | 0.9 | 0.35 | the `Plating` part (`Copper.COPPER_GROUPING = "layer"`) |
 | `Copper_exposed` | <img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/ColorSwatches/DEBA60.webp" width="12" height="12" align="absmiddle" alt=""> `#DEBA60` | 1.0 | 1.0 | 0.25 | all copper and plating, visual mode |
+| `Via Resin` | <img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/ColorSwatches/D8CFA0.webp" width="12" height="12" align="absmiddle" alt=""> `#D8CFA0` | 1.0 | 0.0 | 0.60 | the resin of plugged and resin-filled vias (KiCad 10), both modes |
 | `Top Solder Mask`, `Bottom Solder Mask` | <img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/ColorSwatches/EBEBE6.webp" width="12" height="12" align="absmiddle" alt=""> `#EBEBE6` white | 0.80 | 0.0 | 0.30 | the mask parts |
 | `Top Mask over Copper`, `Bottom Mask over Copper` | <img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/ColorSwatches/F2EFD8.webp" width="12" height="12" align="absmiddle" alt=""> `#F2EFD8` | 1.0 | 0.0 | 0.30 | the mask on copper, visual mode only |
 | `Top Silkscreen`, `Bottom Silkscreen` | <img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/ColorSwatches/141414.webp" width="12" height="12" align="absmiddle" alt=""> `#141414` black | 1.0 | 0.0 | 0.75 | silkscreen |
@@ -33,6 +34,7 @@ How a part finds its key (`_key()` in `kese/s5_materials/materials.py`):
 |---|---|
 | `board` | `Board_<kind>` (`Board_core`, `Board_prepreg`) with `"layer"` grouping, else `Board` |
 | `copper`, `plating` | `Copper_exposed` in visual mode, else `Copper` / `Plating` |
+| `via_resin` | `Via Resin` |
 | `mask`, `mask_over_copper`, `silk` | the part's own name, e.g. `Top Solder Mask` |
 | `finish` | its metal, e.g. `Gold` |
 

@@ -139,10 +139,54 @@ reach past the board edge.
 | Via | drill of the via's `(drill ...)`, spanning the via's layers | plated, wall `Copper.VIA_WALL_MM` |
 | Through-hole pad (`thru_hole`) | the pad's drill, round or oval (slot), at the pad position; the drill's `(offset ...)` moves the copper pad, not the hole, as in KiCad | plated, wall `Copper.PTH_WALL_MM` |
 | Non-plated pad (`np_thru_hole`) | the pad's drill | not plated; included when `Board.INCLUDE_NON_PLATED_HOLES` (default `True`) |
+| Backdrill, tertiary drill (KiCad 10) | a wider drill into a plated hole from a face, through the layer it must cut | drills out the laminate, plating and copper there; `Board.BACKDRILLS` ([Copper And Traces](Copper-And-Traces.md#1233-backdrills)) |
+| Counterbore, countersink (KiCad 10) | a step or a cone cut into a hole's end from a face | `Board.POST_MACHINING`, section 11.4.1 |
 
 A plated hole leaves its barrel in the laminate: the dielectric is cut by the full drill and the
 copper barrel fills the ring between the drill and the drill minus the wall. See
 [Copper And Traces](Copper-And-Traces.md) for the plating.
+
+### 11.4.1 Counterbores And Countersinks
+
+![Board 25_post_machining cut through its holes at true scale: a plated pad counterbored from F.Cu and countersunk from B.Cu, with the copper each cut knocks out, and six more cuts in unplated holes: two counterbores, countersinks of 82 and 120 degrees, one with a depth and one from B.Cu](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/board_3_post_machining.webp)
+
+KiCad 10 can machine the end of a pad's or via's hole from either face:
+`(front_post_machining counterbore (size 2.2) (depth 0.5))` cuts a flat-bottomed step,
+`(back_post_machining countersink (size 2.4) (angle 90))` a cone of that included angle with its
+tip on the hole's axis. With `Board.POST_MACHINING = True` (the default) KESE cuts them as KiCad's
+3D board does (`exporter_step.cpp`):
+
+- the depth counts from the copper's outer face; a countersink with no depth, or one deeper than
+  its cone, goes down to the tip;
+- the laminate is cut down to the floor, even a floor inside an inner copper layer's band, and so
+  is the hole's barrel where the cut is wider than the hole;
+- the copper of every layer the cut reaches is knocked out, by KiCad's own rule
+  (`GetPostMachiningKnockout`): layer $`l_k`$ is reached when $`d_k`$ is less than the depth, and
+  loses the disc of radius $`r(d_k)`$ when that is more than 0, equation (11.5); the mask,
+  silkscreen and finish leave the knocked-out copper as they leave any hole;
+- the solids have upright walls, so a countersink is a stack of cylinders, each at the cone's
+  radius halfway up it, short enough to stray from the cone by at most $`\tau`$, equation (11.6),
+  with a step at every copper face.
+
+```math
+r(d) = \frac{s}{2} - d \tan\frac{\alpha}{2}, \qquad d_k = \begin{cases} 0 & l_k \text{ the outer layer on the machined face} \\ \text{to the middle of } l_k & l_k \text{ an inner layer} \\ \text{through the whole board} & l_k \text{ the outer layer on the far face} \end{cases} \qquad (11.5)
+```
+
+```math
+h_{\mathrm{step}} \le \frac{2 \tau}{\tan(\alpha / 2)} \qquad (11.6)
+```
+
+| Symbol | Meaning | Parameter |
+|---|---|---|
+| $`s`$ | size (diameter) of the cut at the face | the file's `size` |
+| $`\alpha`$ | a countersink's included angle; a counterbore has $`\tan(\alpha/2) = 0`$ and knocks out its whole size | the file's `angle` |
+| $`d_k`$ | distance of copper layer $`l_k`$ from the machined face, from the copper's outer face | |
+| $`h_{\mathrm{step}}`$ | height of one step of a countersink | |
+| $`\tau`$ | how far a step may stray from the cone | `Board.COUNTERSINK_STEP_TOLERANCE_MM` |
+
+KiCad's STEP export cuts each one 1 µm deeper and takes the whole pad off the layers it reaches;
+KESE keeps the copper outside the cut, as KiCad's Gerber files have it. `report.txt` counts
+`counterbores of pads`, `countersinks of vias` and so on.
 
 ## 11.5 Board Thickness
 
@@ -164,6 +208,9 @@ thickness; see [Stack-Up Model](Stack-Up-Model.md) for how the dielectrics are s
 | `USE_STACKUP_EPSILON_R`, `USE_STACKUP_LOSS_TANGENT` | `True`, `True` | bool | Stack-up values win over the defaults when present |
 | `RESIN_FILL_BETWEEN_INNER_COPPER` | `True` | bool | `True`: fill the space beside inner copper from the adjacent prepreg (otherwise from the dielectric above); `False`: those pockets stay empty and `report.txt` notes it (section 11.2) |
 | `INCLUDE_NON_PLATED_HOLES` | `True` | bool | NPTH pads become holes through the board |
+| `BACKDRILLS` | `True` | bool | Drill out KiCad 10's backdrills and tertiary drills ([Copper And Traces](Copper-And-Traces.md#1233-backdrills)) |
+| `POST_MACHINING` | `True` | bool | Cut KiCad 10's counterbores and countersinks (section 11.4.1) |
+| `COUNTERSINK_STEP_TOLERANCE_MM` | `0.025` | mm > 0 | How far a countersink's steps may stray from its cone, equation (11.6) |
 | `OUTLINE_LINE_SNAP_MM` | `0.01` | mm > 0 | Open `Edge.Cuts` line and arc ends closer than this are joined, as KiCad joins them (its chaining distance is 0.01 mm) |
 | `OUTLINE_FALLBACK` | `"copper_hull"` | `"copper_hull"` / `"error"` | What to do when `Edge.Cuts` gives no closed ring at all |
 | `OUTLINE_FALLBACK_MARGIN_MM` | `1.0` | mm ≥ 0 | Margin around the copper hull in the fallback |

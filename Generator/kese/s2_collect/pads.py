@@ -5,7 +5,8 @@ from kese.core.sexp import atoms, child, number, numbers, pt
 from kese.core.shapes2d import EMPTY, disk
 from kese.model.items import Hole
 from kese.s1_read.parse_kicad_version import flag, mask_margin, padstack_entries, zone_layer_connections
-from kese.s2_collect.left_out import count
+from kese.s2_collect.left_out import count_padstack
+from kese.s2_collect.machining import machine
 from kese.s2_collect.nets import net_name
 from kese.s2_collect.pad_shapes import oval, pad_shape
 from parameters import P
@@ -26,7 +27,7 @@ def drill_size(drill):
 def add_pad(ctx, pad, T, fp_margin):
     items, C = ctx.items, P.Copper
     ptype = pad[2]
-    count(items, pad, "pads")
+    count_padstack(items, pad, "pads")
     vals = numbers(child(pad, "at"))
     pos = T((vals[0], vals[1]))
     ang = vals[2] if len(vals) > 2 else 0.0            # pad angles are stored absolute
@@ -68,6 +69,7 @@ def add_pad(ctx, pad, T, fp_margin):
     elif margin < 0:        # a negative margin shrinks the opening at most to nothing, as KiCad keeps it
         margin = max(margin, -min(w, h) / 2)
     last = len(ctx.layers) - 1
+    held = len(items.holes)
     if ptype == "np_thru_hole":
         if not hole.is_empty and P.Board.INCLUDE_NON_PLATED_HOLES:
             items.holes.append(Hole(hole, 0, last, False, "", 0.0))
@@ -92,6 +94,8 @@ def add_pad(ctx, pad, T, fp_margin):
         if ptype == "thru_hole" and not hole.is_empty:
             items.holes.append(Hole(hole, 0, last, True, net, C.PTH_WALL_MM))
         items.found["pads"] += 1
+    # KiCad 10's drills and post machining, round the pad's position (its hole's centre)
+    machine(ctx, pad, held if len(items.holes) > held else -1, pos, "pads")
     for side in ("F", "B"):
         if f"{side}.Mask" in layers:
             opening = shape_on(f"{side}.Cu")              # the back opening follows the back shape

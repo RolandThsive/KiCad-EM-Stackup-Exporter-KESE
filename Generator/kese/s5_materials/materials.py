@@ -52,6 +52,8 @@ def _key(part, role, props, mode):
         return part                                   # "Top Solder Mask", "Top Mask over Copper", ...
     if role == "finish":
         return props["metal"]                         # "Gold", "Nickel", ...
+    if role == "via_resin":
+        return "Via Resin"
     return "Board"
 
 
