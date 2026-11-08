@@ -31,11 +31,39 @@ def vertices_in_order(level, key):
 
 
 def pairs_in(a, b, c, d):
-    """Whether each pair (a[i], b[i]) is among the pairs (c[j], d[j]).  Each column is numbered
-    through its distinct values, so that a pair is one integer and np.isin sorts plain integers
-    (a record of two integers it sorts twenty times slower, holding the whole program up)."""
-    if not len(a):
-        return np.zeros(0, dtype=bool)
+    """Whether each pair of integers (a[i], b[i]) is among the pairs (c[j], d[j]).  Each pair is
+    hashed to one integer, the pairs (c, d) sorted by it once and every (a, b) found by binary search
+    and then compared in full.  Where two different pairs (c, d) hash alike, which a 64-bit hash all
+    but never does, each column is numbered through its distinct values instead (pairs_numbered)."""
+    if not len(a) or not len(c):
+        return np.zeros(len(a), dtype=bool)
+    a, b, c, d = (np.asarray(x, dtype=np.int64) for x in (a, b, c, d))
+    hc = pair_hash(c, d)
+    order = np.argsort(hc)
+    hc = hc[order]
+    run = np.flatnonzero(hc[1:] == hc[:-1])              # sorted next to a pair of the same hash
+    if ((c[order[run]] != c[order[run + 1]]) | (d[order[run]] != d[order[run + 1]])).any():
+        return pairs_numbered(a, b, c, d)
+    ha = pair_hash(a, b)
+    at = np.minimum(np.searchsorted(hc, ha), len(hc) - 1)
+    j = order[at]
+    return (hc[at] == ha) & (c[j] == a) & (d[j] == b)
+
+
+def pair_hash(x, y):
+    """One 64-bit integer for each pair (x[i], y[i]): SplitMix64's mixing of x, plus y, mixed again."""
+    return _mixed(_mixed(x.view(np.uint64)) + y.view(np.uint64))
+
+
+def _mixed(z):
+    z = (z ^ (z >> np.uint64(30))) * np.uint64(0xBF58476D1CE4E5B9)
+    z = (z ^ (z >> np.uint64(27))) * np.uint64(0x94D049BB133111EB)
+    return z ^ (z >> np.uint64(31))
+
+
+def pairs_numbered(a, b, c, d):
+    """pairs_in() by numbering each column through its distinct values, so that a pair is one integer
+    np.isin can sort (a record of two integers it sorts twenty times slower)."""
     first = np.unique(np.concatenate([a, c]), return_inverse=True)[1]
     second = np.unique(np.concatenate([b, d]), return_inverse=True)[1]
     key = first.astype(np.int64) * (second.max() + 1) + second

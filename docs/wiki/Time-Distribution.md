@@ -6,6 +6,18 @@
 > makes the three boards 1 to 8% faster (4.6% in all in simulation mode, 2.9% in visual mode) and
 > their files up to 4% smaller (2.1% and 2.3% in all).
 
+> [!NOTE]
+> The visual skin (stage 6 in visual mode) was made faster after these runs, its files the same to
+> the byte. Timed again the same way at the default 0.005 mm, three runs each, stage 6 takes:
+>
+> | Board | Before | Now | Less |
+> |---|---|---|---|
+> | RF sensor module | 6.32 s | 6.00 s | 5% |
+> | HDI radio module | 5.08 s | 3.08 s | 39% |
+> | PCIe x1 card | 5.00 s | 3.64 s | 27% |
+>
+> A whole visual run then takes 15.4, 7.9 and 9.8 s (15.7, 10.1 and 11.2 s before).
+
 Where the time of a run goes, stage by stage, for the three example boards of `Generator/Input/`
 ([Examples](Examples.md)). Each board was exported three times in each mode, with the Verifier
 on, and each bar is the median of the three runs for that stage, read from the `timing` block of

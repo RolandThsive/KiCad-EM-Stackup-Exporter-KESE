@@ -68,7 +68,7 @@ AIR_TILE_VERTICES = 2000                # the holes' finish: a bigger part of th
 AIR_TILE_DEPTH = 16                     # tiles of about this many vertices first, by at most this many halvings of
                                         # its box (64k tiles a side)
 FINISH_BORES_AT_A_TIME = 200            # the holes' finish: a span's bores are worked on in groups of about this many
-SKIN_FEW_PIECES = 200                   # visual skin: up to this many pieces of material reaching a face are cut away
-                                        # from it piece by piece, more at once
+SKIN_FEW_PIECES = 200                   # visual skin: up to this many pieces of material reaching a face are joined and
+                                        # cut away from it, more as the whole slice's material
 SKIN_BIG_PIECE_COORDINATES = 10_000     # and a piece of this many coordinates (a dielectric, with every via hole in it)
                                         # on its own

@@ -132,8 +132,16 @@ mesh = mesh_of_boundary(boundary)                  # faces cut into triangles, t
   STEP writer writes those same faces as a closed solid.
 - Visual mode does the same for all parts at once and keeps only the faces between material and
   air (`skin_faces.py`, `skin_mesh.py`, see [Output Modes](Output-Modes.md)). There each part is
-  sliced in a process of its own, as above; the faces are then found, and the hidden triangles
-  dropped, in `Parallel.WORKERS` threads.
+  sliced in a process of its own, as above; the faces are then found, the hidden triangles
+  dropped and the meshes finished (next point) in `Parallel.WORKERS` threads. Most faces of a
+  board lie wholly against material (the inner copper between the dielectrics, the copper under
+  the mask), and one test of the slice beside them (does its material cover the face?) takes each
+  of them out before anything is cut: on CIAA ACC, 22,197 of the 23,290 faces to be cut. A finish
+  holds several times its mesh in memory for a while, so the meshes finished at once, the biggest
+  first, hold no more faces in all than the biggest one: memory peaks as it did when they were
+  finished one by one (NE_Delta with mask and silkscreen, 5.9 GB; 6.3 GB without that bound), and
+  what the threads freed is handed back before the Verifier runs (5.9 GB with `--verify` too, 7.1 GB
+  with it kept).
 - Last, every mesh is scaled to the output units, turned to the output orientation and shaded
   smooth across edges flatter than `Run.SMOOTH_SHADE_ANGLE_DEG` (`transform.py`). The meshes are
   KESE's own (`kese/core/mesh.py`), and so are the GLB, STL, OBJ and STEP writers (`kese/s7_write/`).
@@ -176,7 +184,7 @@ use; `1`: everything in turn, in one process), and at most `Parallel.PROCESS_WOR
 | 4 geometry | the top and bottom solder mask, then the top and bottom silkscreen; the finish's bores, in groups near each other, and copper layers | threads |
 | 6 assemble, simulation mode | the parts' solids, the biggest part first, and with the Verifier on their checks | processes |
 | 6 assemble, visual mode | each part sliced | processes |
-| 6 assemble, visual mode | the faces, the walls and the test for hidden triangles | threads |
+| 6 assemble, visual mode | the faces, part by part; the walls, the biggest slices first; the test for hidden triangles, a slow slice in shares; each mesh finished | threads |
 | 7 write, STEP | each part's topology and arcs, then its entities' text | processes |
 | 8 verify, simulation mode | the overlap check: the slices split into polygons, then shrunk and tested | threads |
 
@@ -207,6 +215,10 @@ use; `1`: everything in turn, in one process), and at most `Parallel.PROCESS_WOR
 - A prepared shape, whose search indexes GEOS builds on first use, serves one thread at a time:
   the threads take turns with one prepared copy of each slice's material, so memory does not grow
   with the number of threads, and the test for hidden triangles frees its indexes when it is done.
+  That test shares a slice of more than `Parallel.SKIN_PROBES_PER_SHARE` probes (100,000) among
+  the threads, each share with a copy of the slice of its own: one slice can take far longer a
+  probe than the others (NE_Delta's core, with every via hole in it, 20 times as long), and took
+  11 of the test's 13 s on one thread.
   An R-tree that threads share (of each slice's material, of the solid beside the finish's bores)
   is built before they share it (`kese/core/graph.py`, `shared_tree`): GEOS builds one on its first
   query, under a lock, but a thread that finds it built reads it with none, and on a processor that

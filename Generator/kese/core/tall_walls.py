@@ -11,7 +11,7 @@ import shapely
 
 from kese.core import shapes2d as sh
 from kese.core.graph import connected_components
-from kese.core.triangulate import rings_of
+from kese.core.triangulate import oriented_rings
 from kese.core.vertices import grid_keys
 
 
@@ -22,7 +22,7 @@ def flat_points(flats, at):
         polys = np.array([p for p in shapely.get_parts(sh.polys_only(region)) if not p.is_empty], dtype=object)
         if not len(polys):
             continue
-        xy = rings_of(polys)[0]
+        xy = oriented_rings(polys)[0]
         levels.append(np.full(len(xy), at[z]))
         keys.append(grid_keys(xy))
     if not levels:

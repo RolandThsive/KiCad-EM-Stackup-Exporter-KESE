@@ -58,6 +58,9 @@ STEP_ROWS_AT_A_TIME = 100_000           # the STEP writer: points, edges or face
 # processes and back: NE_Delta (804 nets on 2 layers, 1.6 million coordinates) 8.0 s and 9.3 s.
 PROCESS_MIN_NETS = 1000
 
+SKIN_PROBES_PER_SHARE = 100_000         # visual skin, the test for hidden triangles: a slice's probes are shared among
+                                        # the threads in shares of at least this many, each share on a copy of the slice
+                                        # of its own (a copy and its index take about as long as 30,000 probes)
 VERIFY_POLYGONS_PER_THREAD = 2000       # the Verifier's overlap check: fewer polygons are tested in one thread,
 VERIFY_GROUPS_PER_WORKER = 4            # more in up to this many groups per worker (a slow group made up for by the others)
 WORKER_STOP_WAIT_S = 10                 # seconds a run waits at most for worker processes it stopped to be gone

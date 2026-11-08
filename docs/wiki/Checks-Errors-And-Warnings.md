@@ -391,7 +391,10 @@ run, and the overlap check finding the same overlaps in threads as in one, in a 
 own copies of shapes to be the same shapes, each part on its grid, made only where GEOS needs them,
 and threads working on their own copies of one shape not crashing; finds threads taking turns with
 one prepared copy of a slice's material, threads cutting faces only by the pieces of material that
-meet them, the test for hidden triangles letting go of its prepared slices, a set of holes joined once when threads ask for it at once, and the memory threads freed
+meet them and a face wholly against material taken out at once, the test of whether a slice covers
+a face answering as GEOS's covers does on faces that share edges with the material's outline and
+holes, the test for hidden triangles letting go of its prepared slices and sharing a slow slice's
+probes among the threads, the skin's meshes finished in threads, the biggest first and never more faces at once than the biggest holds, a set of holes joined once when threads ask for it at once, and the memory threads freed
 handed back (and kept with `Parallel.GIVE_BACK_MEMORY` off), and batches of any size giving the
 same result (a STEP part written in slices of any size the same to the byte, a STEP file written
 part by part in worker processes the same as one written in one process, with no file left behind,
@@ -417,9 +420,12 @@ slices meet at T-junctions with every vertex shared and a closed, consistently w
 it is not without the sharing), a band one grid step wide ending in two needle tips a hair
 apart closed too (which it is not with faces cut on the grid), a piece of a board's solder mask
 whose needle tips trade vertices for ever cut open there and closed, with one note (and still
-changing after 20 rounds, with T-junctions, when never cut), and a skin face whose cut GEOS
+changing after 20 rounds, with T-junctions, when never cut), a skin face whose cut GEOS
 refuses on the grid cut with both regions put on the grid first, valid and within a grid step of
-the cut in floating point, in about two seconds (`python tests/test_boundary.py`);
+the cut in floating point, the pairs of integers found by their hash those a search of every pair
+finds (and, where two pairs hash alike, those found by numbering the columns), and a wall segment
+that another stands back to back with left out of the skin, in about two seconds
+(`python tests/test_boundary.py`);
 `tests/test_copper_union.py`, which joins a net's items as stage 3 does and finds two fills that
 meet only to within floating point joined with no crack, a crack narrower than the grid closed,
 items apart kept apart, the area within a grid step of the exact union and nearer it than a union

@@ -17,6 +17,7 @@ from kese.core.tall_walls import tall_walls
 from kese.core.mesh import Mesh
 from kese.core.memory import give_back_memory
 from kese.core.parallel import workers_wanted
+from kese.core.shape_copies import floating
 from parameters import P
 
 
@@ -69,21 +70,35 @@ def meshes_per_part(v, f, owner, parts):
 
 def looks_at_material(v, f, levels, pieces):
     """Which triangles have material just in front of them: a point SKIN_BURIED_TEST_OFFSET_MM out along
-    the normal lies in some part's material.  Slices Parallel.WORKERS at a time, Parallel.SKIN_PROBES_AT_A_TIME
-    probes."""
+    the normal lies in some part's material.  Parallel.SKIN_PROBES_AT_A_TIME probes at a time, each
+    slice's in shares of at least Parallel.SKIN_PROBES_PER_SHARE, Parallel.WORKERS shares at a time."""
     inside = np.zeros(len(f), dtype=bool)
-    with ThreadPoolExecutor(workers_wanted()) as pool:
+    workers = workers_wanted()
+    with ThreadPoolExecutor(workers) as pool:
         step = P.Parallel.SKIN_PROBES_AT_A_TIME
         for start in range(0, len(f), step):
             these = slice(start, start + step)
             probe = probes_of(v, f[these])
             at = np.searchsorted(levels, probe[:, 2], "right") - 1        # the slice each probe's height falls in
-            with_material = [k for k in np.unique(at).tolist() if 0 <= k < len(pieces) and not pieces[k][3].is_empty]
-            list(pool.map(partial(place_in_slice, pieces, at, probe, inside[these]), with_material))
+            list(pool.map(partial(place_in_slice, pieces, probe, inside[these]), probe_shares(pieces, at, workers)))
     for *_, joined, _ in pieces:
         shapely.destroy_prepared(joined)        # the indexes place_in_slice built: not needed after this
     give_back_memory()
     return inside
+
+
+def probe_shares(pieces, at, workers):
+    """(slice, rows, whether the slice's first share) for the probes that fall in a slice with material:
+    each slice's rows in up to `workers` shares of at least Parallel.SKIN_PROBES_PER_SHARE, the biggest
+    shares first.  A slice can take far longer a probe than the others (on NE_Delta, the core with
+    every via hole in it: 20 times as long, 11 of the 13 s on one thread while the rest were done)."""
+    shares = []
+    for k in np.unique(at).tolist():
+        if 0 <= k < len(pieces) and not pieces[k][3].is_empty:
+            rows = np.flatnonzero(at == k)
+            n = max(1, min(workers, len(rows) // P.Parallel.SKIN_PROBES_PER_SHARE))
+            shares += [(k, part, i == 0) for i, part in enumerate(np.array_split(rows, n))]
+    return sorted(shares, key=lambda share: -len(share[1]))
 
 
 def probes_of(v, f):
@@ -94,12 +109,13 @@ def probes_of(v, f):
     return (a + b + c) / 3 + normal * P.Geometry.SKIN_BURIED_TEST_OFFSET_MM
 
 
-def place_in_slice(pieces, at, probe, inside, k):
-    """inside[...] = whether each probe that falls in slice k lies in the slice's material.  Each
-    thread prepares a slice no other thread is given, kept prepared for the next batch of probes."""
-    joined = pieces[k][3]
+def place_in_slice(pieces, probe, inside, share):
+    """inside[rows] = whether each probe of a share (slice k, rows, first) lies in the slice's material.
+    A prepared shape serves one thread at a time: the slice's first share prepares the slice itself,
+    kept prepared for the next batch of probes, and every other share a copy of its own."""
+    k, rows, first = share
+    joined = pieces[k][3] if first else floating([pieces[k][3]])[0]
     shapely.prepare(joined)
-    rows = np.flatnonzero(at == k)
     inside[rows] = shapely.contains_xy(joined, probe[rows, 0], probe[rows, 1])
 
 
