@@ -4,9 +4,9 @@ import numpy as np
 import shapely
 
 from kese.core import shapes2d as sh
-from kese.core.flat_triangles import twice_area
+from kese.core.flat_triangles import on_points
 from kese.core.mesh import Mesh
-from kese.core.triangulate import caps, cells_cut, geos_cut, lookup, oriented_rings
+from kese.core.triangulate import caps, cells_cut, geos_cut, oriented_rings
 from kese.core.vertices import grid_keys, vertices_in_order
 
 
@@ -84,12 +84,4 @@ def delaunay_triangles(polygon):
     own vertices and copes with rings that touch: (xy, counter-clockwise triangles into xy)."""
     xy = oriented_rings(np.array([polygon], dtype=object))[0]
     corners = np.array([np.asarray(t.exterior.coords)[:3] for t in shapely.constrained_delaunay_triangles(polygon).geoms])
-    if not len(corners):
-        return xy, np.empty((0, 3), dtype=np.int64)
-    tri = lookup(xy, corners.reshape(-1, 2))
-    if tri is None:
-        return xy, np.empty((0, 3), dtype=np.int64)
-    tri = tri.reshape(-1, 3)
-    turn = twice_area(xy, tri) < 0
-    tri[turn] = tri[turn][:, ::-1]
-    return xy, tri
+    return xy, on_points(xy, corners)

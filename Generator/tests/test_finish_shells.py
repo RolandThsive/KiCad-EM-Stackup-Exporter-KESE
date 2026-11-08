@@ -8,27 +8,18 @@ hole with no drill too), and where there is no solid the band is all air.  Takes
 minute.
 
     python -m pytest tests/test_finish_shells.py    (or:  python tests/test_finish_shells.py)"""
-import sys
-from pathlib import Path
-
 import numpy as np
 import shapely
 from shapely.geometry import Point, Polygon, box
 
-ROOT = Path(__file__).resolve().parents[1]
-sys.path.insert(0, str(ROOT))
+from helpers import FEATURES, run_stages, run_tests, settings
+from kese.core import shapes2d as sh
+from kese.core.shapes2d import union
+from kese.model.prisms import PrismSet
+from kese.s3_resolve import resolve
+from kese.s4_geometry import finish_bores, finish_shells, geometry, shells
+from parameters import P
 
-from kese.core import shapes2d as sh  # noqa: E402
-from kese.core.shapes2d import union  # noqa: E402
-from kese.job import start  # noqa: E402
-from kese.model.prisms import PrismSet  # noqa: E402
-from kese.s1_read import read  # noqa: E402
-from kese.s2_collect import collect  # noqa: E402
-from kese.s3_resolve import resolve  # noqa: E402
-from kese.s4_geometry import finish_bores, finish_shells, geometry, shells  # noqa: E402
-from parameters import P  # noqa: E402
-
-FEATURES = ROOT.parent / "featureTest"
 BOARDS = ["03_vias_through", "04_vias_blind_buried", "11_zones", "16_edge_plating_castellation",
           "16b_edge_plating_border", "18c_finish_before_mask", "22_hdi_module"]
 
@@ -44,9 +35,7 @@ def test_a_big_part_is_cut_into_tiles_that_fill_it_and_do_not_overlap():
 
 
 def test_bores_whose_shells_could_meet_share_a_group():
-    saved = P.Geometry.FINISH_BORES_AT_A_TIME
-    P.override("Geometry.FINISH_BORES_AT_A_TIME", 5)
-    try:
+    with settings({"Geometry.FINISH_BORES_AT_A_TIME": 5}):
         rings = [Point(x, y).buffer(0.3).difference(Point(x, y).buffer(0.2)) for x in range(6) for y in range(4)]
         rings.append(Point(0.62, 0).buffer(0.3).difference(Point(0.62, 0).buffer(0.2)))   # 0.02 mm from the first
         found = finish_bores.bore_groups(rings, 0.01)
@@ -54,8 +43,6 @@ def test_bores_whose_shells_could_meet_share_a_group():
         assert len(found) >= 4 and any(0 in g and 24 in g for g in found)
         with_empty = finish_bores.bore_groups(rings + [Polygon()], 0.01)     # a hole with no drill: no ring
         assert sorted(k for g in with_empty for k in g) == list(range(len(rings) + 1))
-    finally:
-        P.override("Geometry.FINISH_BORES_AT_A_TIME", saved)
     assert finish_bores.bore_groups(rings[:3], 0.01) == [[0, 1, 2]]
 
 
@@ -83,28 +70,25 @@ def test_the_air_near_no_solid_is_the_band_and_an_empty_band_has_none():
 def finish_prisms(r, near):
     """The finish prisms of a resolved board: the air cut bore by bore, the bores in groups of seven
     (near), or by the whole union, each span at once (as before)."""
-    saved = finish_shells.air_near, finish_shells.air_beside, P.Geometry.FINISH_BORES_AT_A_TIME
-    P.override("Geometry.FINISH_BORES_AT_A_TIME", 7 if near else 10 ** 9)
+    saved = finish_shells.air_near, finish_shells.air_beside, finish_bores.air_near
     if not near:
         def whole(regions):
             joined = sh.snap(union(list(regions)))
             return lambda band: sh.diff(band, joined)
-        finish_shells.air_near = whole
+        finish_shells.air_near = finish_bores.air_near = whole
         finish_shells.air_beside = lambda solid, outer: lambda band: sh.diff(band, sh.snap(union(solid)))
     try:
-        ps = PrismSet(regions=r)
-        finish_shells.build(r, ps)
+        with settings({"Geometry.FINISH_BORES_AT_A_TIME": 7 if near else 10 ** 9}):
+            ps = PrismSet(regions=r)
+            finish_shells.build(r, ps)
     finally:
-        finish_shells.air_near, finish_shells.air_beside = saved[:2]
-        P.override("Geometry.FINISH_BORES_AT_A_TIME", saved[2])
+        finish_shells.air_near, finish_shells.air_beside, finish_bores.air_near = saved
     return [p for p in ps.prisms if p.role == "finish"]
 
 
 def test_the_air_cut_bore_by_bore_is_the_whole_union_s_but_for_slivers():
     for name in BOARDS:
-        job = start("simulation", ["glb"], None, (), False, lambda s: None)
-        r = resolve.run(collect.run(read.run(str(FEATURES / f"{name}.kicad_pcb"), job), job), job)
-        job.status.stop()
+        r, _ = run_stages(FEATURES / f"{name}.kicad_pcb", resolve)
         geometry.geometry(r, "simulation")            # the copper bands the shells stand on
         a, b = by_place(finish_prisms(r, near=False)), by_place(finish_prisms(r, near=True))
         assert a and a.keys() == b.keys(), name
@@ -124,9 +108,4 @@ def by_place(prisms):
 
 
 if __name__ == "__main__":
-    test_a_big_part_is_cut_into_tiles_that_fill_it_and_do_not_overlap()
-    test_bores_whose_shells_could_meet_share_a_group()
-    test_an_inner_band_inside_the_outline_has_no_air_and_joins_nothing()
-    test_the_air_near_no_solid_is_the_band_and_an_empty_band_has_none()
-    test_the_air_cut_bore_by_bore_is_the_whole_union_s_but_for_slivers()
-    print("ok")
+    run_tests(__file__)

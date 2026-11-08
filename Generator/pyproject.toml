@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "kese"
-description = "KiCad EM Stackup Exporter: .kicad_pcb boards to exact stack-up solids (STEP, STL, GLB) for EM simulation"
+description = "KiCad EM Stackup Exporter: .kicad_pcb boards to exact stack-up solids (STEP, STL, OBJ, GLB) for EM simulation"
 readme = "README.md"
 requires-python = ">=3.11"
 license = {text = "GPL-3.0-or-later"}

@@ -7,10 +7,10 @@ from kese.core import shapes2d as sh
 from kese.core.parallel import in_parallel
 from kese.core.shape_copies import own
 from kese.core.shapes2d import EMPTY, union
-from kese.s3_resolve.holes import drilled, drills, full_height
-from kese.s4_geometry.finish import exposed, finish_layers
+from kese.s3_resolve.holes import drilled, drills, full_height, ring_of
+from kese.s4_geometry.finish import exposed, finish_layers, named
 from kese.s4_geometry.finish_bores import bores
-from kese.s4_geometry.shells import add_all, air_near, bare_faces, groups, named, near_faces, note, reach, shells
+from kese.s4_geometry.shells import add_all, air_near, bare_faces, groups, near_faces, note, reach, shells
 from parameters import P
 
 
@@ -31,7 +31,7 @@ def _edge_copper(r):
     cast = []
     for h in r.items.holes:
         if h.castellated:
-            ring = sh.inter(r.to_board_T(h.drill.difference(h.drill.buffer(-h.wall))), r.outline)
+            ring = sh.inter(r.to_board_T(ring_of(h)), r.outline)
             if not ring.is_empty:
                 cast.append((ring, h.net))
     what = " and ".join(w for w, on in (("plated edge", edge), ("castellations", cast)) if on)

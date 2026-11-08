@@ -63,7 +63,7 @@ def on_one_circle(q, fit):
     turn = [(a1 - a0 + math.pi) % TAU - math.pi for a0, a1 in zip(a, a[1:])]
     size = [abs(t) for t in turn]
     med, biggest = sorted(size)[len(size) // 2], max(size)          # (the upper median)
-    if med <= 0 or biggest > fit.turn or (max(turn) > 0 and min(turn) < 0) or biggest > fit.uneven_max * med \
+    if med <= 0 or biggest > fit.turn or min(turn) < 0 < max(turn) or biggest > fit.uneven_max * med \
             or (len(size) > 2 and min(size[1:-1]) < fit.uneven_min * med):
         return None
     return c, r, turn[0] > 0, float(sum(size))

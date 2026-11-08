@@ -6,35 +6,31 @@ whole slices does (no face where the rings are the same, whatever point they sta
 spanned by the same regions are made once; two regions have the same vertices whatever point
 their rings start at; the pairs of integers found by their hash are those a search of every pair
 finds (and where two pairs hash alike, those found by numbering the columns); a wall segment a -> b
-that a segment b -> a hides is left out of the skin; and a part whose slices meet at T-junctions comes out with every vertex
-shared (no vertex of one face or slice lies on the edge of another at its height without being
-one of its vertices too) and a closed, consistently wound mesh, as does a band one grid step wide
-that ends in two needle tips a hair apart (a board's gold, where faces cut on the grid left it open),
-and a piece of a board's mask whose needle tips traded vertices for ever, once cut open there;
-and a cut that snap rounding refuses on the grid is made with both regions put on the grid first.
+that a segment b -> a hides is left out of the skin; and a part whose slices meet at T-junctions
+comes out with every vertex shared (no vertex of one face or slice lies on the edge of another at
+its height without being one of its vertices too) and a closed, consistently wound mesh, as does a
+band one grid step wide that ends in two needle tips a hair apart (a board's gold, where faces cut
+on the grid left it open), and a piece of a board's mask whose needle tips traded vertices for
+ever, once cut open there; and a cut that snap rounding refuses on the grid is made with both
+regions put on the grid first.
 
     python -m pytest tests/test_boundary.py        (or:  python tests/test_boundary.py)"""
-import sys
-from pathlib import Path
+import numpy as np
+import shapely
+from shapely.geometry import MultiPolygon, Point, Polygon, box
 
-ROOT = Path(__file__).resolve().parents[1]
-sys.path.insert(0, str(ROOT))
-
-import numpy as np  # noqa: E402
-import shapely  # noqa: E402
-from shapely.geometry import MultiPolygon, Point, Polygon, box  # noqa: E402
-
-from kese.core import boundary  # noqa: E402
-from kese.core import shapes2d as sh  # noqa: E402
-from kese.core.boundary import boundary_of, heights_of, slices_of, wall_segments  # noqa: E402
-from kese.core.boundary_mesh import mesh_of_boundary  # noqa: E402
-from kese.core.flat_faces import faces_between, flat_faces  # noqa: E402
-from kese.core.pinches import cut_open_at, repeated_vertices  # noqa: E402
-from kese.core import vertices  # noqa: E402
-from kese.core.vertices import grid_keys, near_edge, noded, pairs_in, ring_points, same_vertices  # noqa: E402
-from kese.model.prisms import Prism  # noqa: E402
-from kese.s6_assemble.skin_faces import unhidden  # noqa: E402
-from parameters import P  # noqa: E402
+from helpers import run_tests
+from kese.core import boundary
+from kese.core import shapes2d as sh
+from kese.core import vertices
+from kese.core.boundary import boundary_of, heights_of, slices_of, wall_segments
+from kese.core.boundary_mesh import mesh_of_boundary
+from kese.core.flat_faces import faces_between, flat_faces
+from kese.core.pinches import cut_open_at, repeated_vertices
+from kese.core.vertices import grid_keys, near_edge, noded, pairs_in, ring_points, same_vertices
+from kese.model.prisms import Prism
+from kese.s6_assemble.skin_faces import unhidden
+from parameters import P
 
 
 def repeated_one_by_one(parts, check):
@@ -101,7 +97,7 @@ def no_vertex_on_another_edge(boundary):
     """[(z, the vertex)] of every vertex at a height that lies on an edge of a face or slice there
     without being one of its vertices."""
     bad = []
-    for k, z in enumerate(boundary.levels):
+    for z in boundary.levels:
         regions = [s for (z0, z1, s) in boundary.slices if z in (z0, z1) and not s.is_empty]
         regions += [r for h, r, _ in boundary.flats if h == z]
         points = np.unique(np.concatenate([shapely.get_coordinates(r) for r in regions]), axis=0)
@@ -109,9 +105,7 @@ def no_vertex_on_another_edge(boundary):
             seg = wall_segments(r)
             own = set(grid_keys(seg[:, 0]).tolist())
             near, _ = shapely.STRtree(shapely.linestrings(seg)).query(shapely.points(points), predicate="dwithin", distance=near_edge())
-            for i in set(near.tolist()):
-                if grid_keys(points[i:i + 1])[0] not in own:
-                    bad.append((z, tuple(points[i])))
+            bad += [(z, tuple(points[i])) for i in set(near.tolist()) if grid_keys(points[i:i + 1])[0] not in own]
     return bad
 
 
@@ -279,15 +273,4 @@ def test_a_wall_segment_another_hides_is_left_out():
 
 
 if __name__ == "__main__":
-    test_the_vertices_parts_have_twice_are_found_for_all_parts_at_once()
-    test_flat_faces_found_again_only_next_to_a_changed_slice_are_all_of_them_found_again()
-    test_a_part_meeting_at_t_junctions_shares_its_vertices_and_closes()
-    test_a_band_ending_in_two_needle_tips_a_hair_apart_closes()
-    test_slices_whose_needle_tips_trade_vertices_for_ever_are_cut_open_there_and_close()
-    test_a_cut_snap_rounding_refuses_is_made_with_both_regions_on_the_grid()
-    test_faces_are_cut_only_where_the_slices_differ_and_come_out_as_a_whole_cut_does()
-    test_slices_spanned_by_the_same_regions_are_made_once()
-    test_two_regions_have_the_same_vertices_whatever_point_their_rings_start_at()
-    test_pairs_found_by_their_hash_are_those_a_search_of_every_pair_finds()
-    test_a_wall_segment_another_hides_is_left_out()
-    print("ok")
+    run_tests(__file__)

@@ -171,7 +171,8 @@ def mask_silk():
     """Solder mask openings from the board's pad-to-mask clearance, a footprint's margin, a pad's own
     margin and a negative one; plated pads; openings drawn on F.Mask and B.Mask (a rectangle over
     a track, a circle, a polygon, text); a tented via; silkscreen lines, shapes and text on both
-    sides, TrueType silk text, and a silk outline drawn across pads.  Red mask, black silk, HASL."""
+    sides, TrueType silk text, and a silk outline drawn across pads.  Red mask, black silk,
+    lead-free HASL."""
     b = new_board("mask_silk", 2, (40, 30), stack=False)
     stackup(b, PLAIN[2], OUTER, mask_color="Red", silk_color="Black", finish="HAL lead-free")
     b.setup.append("(pad_to_mask_clearance 0.05) (solder_mask_min_width 0.1)")

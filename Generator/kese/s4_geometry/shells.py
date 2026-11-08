@@ -11,7 +11,7 @@ from kese.core.graph import shared_tree
 from kese.core.shape_copies import own
 from kese.core.shapes2d import EMPTY, exactly, union
 from kese.core.vertices import noded
-from kese.s4_geometry.finish import drawn_thickness, exposed, mitre, props
+from kese.s4_geometry.finish import SIDES, drawn_thickness, exposed, mitre, props
 from parameters import P
 
 
@@ -20,14 +20,9 @@ def reach(layers):
     return sum(drawn_thickness(t) for _, t in layers) + 2 * sh.grid()
 
 
-def named(prefix):
-    """The part name for a metal (and a net, with FINISH_GROUPING = "net"): "<prefix> Finish Gold_GND"."""
-    return lambda metal, net: f"{prefix} Finish {metal}" + (f"_{net}" if net is not None else "")
-
-
 def bare_faces(r):
     """{"F": ..., "B": ...}: the outer copper that takes the finish on its face."""
-    return {s: exposed(r, s, r.copper_all.get(l, EMPTY)) for s, l in (("F", "F.Cu"), ("B", "B.Cu"))}
+    return {s: exposed(r, s, r.copper_all.get(l, EMPTY)) for s, l, *_ in SIDES}
 
 
 def near_faces(face, d):

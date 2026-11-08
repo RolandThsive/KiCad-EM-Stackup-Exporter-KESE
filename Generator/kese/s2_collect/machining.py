@@ -9,6 +9,7 @@ from kese.model.items import Hole, PostMachining, Protection
 from parameters import P
 
 PROTECTION = ("covering", "plugging", "capping", "filling")
+WORDS = {"covering": "covered", "plugging": "plugged", "capping": "capped", "filling": "filled"}
 DRILLS = {"backdrill": "backdrills", "tertiary_drill": "tertiary drills"}
 POST = {"front_post_machining": "F", "back_post_machining": "B"}
 MODES = ("counterbore", "countersink")
@@ -23,10 +24,12 @@ def sides(node, default):
     """(key (front yes) (back no)), or (key yes) for both sides -> {"F": bool, "B": bool}; a side
     the node leaves out, or says "none" for, keeps `default`, as KiCad's parseOptBool leaves it unset."""
     out = dict(default)
-    if node is not None and len(node) > 1 and not isinstance(node[1], list):
+    if node is None:
+        return out
+    if len(node) > 1 and not isinstance(node[1], list):
         return out if str(node[1]) == "none" else {"F": yes(node[1]), "B": yes(node[1])}
     for side, key in (("F", "front"), ("B", "back")):
-        c = child(node, key) if node is not None else None
+        c = child(node, key)
         if c is not None and len(c) > 1 and str(c[1]) != "none":
             out[side] = yes(c[1])
     return out
@@ -136,15 +139,12 @@ def protection_of(ctx, node, i, j, opened):
     return p
 
 
-WORDS = {"covering": "covered", "plugging": "plugged", "capping": "capped", "filling": "filled"}
-
-
 def machine(ctx, node, of, center, what):
     """Everything KiCad 10 adds to a pad's or via's hole: its drills and post machining, and a via's
     protection on its Hole.  `of`: the hole's index in Items.holes, or -1 for a pad with none."""
     opened = drills_of(ctx, node, center, what, of)
     machined = post_machining_of(ctx, node, center, what, of)
-    opened = {s: opened[s] or machined[s] for s in opened}
+    opened = {s: o or machined[s] for s, o in opened.items()}
     if what == "vias" and of >= 0:
         hole = ctx.items.holes[of]
         hole.protect = protection_of(ctx, node, hole.i, hole.j, opened)

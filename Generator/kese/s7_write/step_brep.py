@@ -12,16 +12,14 @@ from parameters import P
 def write_brep(w, topo, M):
     """-> the ids of the MANIFOLD_SOLID_BREP entities written, one per shell."""
     M = np.asarray(M, dtype=float)
-    xyz = topo.xyz @ M[:3, :3].T + M[:3, 3]
+    xyz = placed(topo.xyz, M)
     point = w.reserve(2 * len(xyz)) + 2 * np.arange(len(xyz))      # CARTESIAN_POINT, then VERTEX_POINT
     up = w.reserve(2)                                                # DIRECTION and VECTOR, up along the walls
     arc = arcs_of(topo)
-    edge_size = np.where(arc, 1, 2)                                  # (LINE,) EDGE_CURVE
+    edge_size, plane_size, loop_size = block_sizes(topo, arc)
     edge = w.reserve(int(edge_size.sum())) + np.cumsum(np.r_[0, edge_size[:-1]])
     edge_curve = edge + edge_size - 1
-    plane_size = np.where(topo.plane_origin_vertex >= 0, 2, 3)       # PLANE, AXIS2_PLACEMENT_3D, (CARTESIAN_POINT)
     plane = w.reserve(int(plane_size.sum())) + np.cumsum(np.r_[0, plane_size[:-1]])
-    loop_size = 2 + topo.loop_count                                  # FACE_BOUND, EDGE_LOOP, the ORIENTED_EDGEs
     loop = w.reserve(int(loop_size.sum())) + np.cumsum(np.r_[0, loop_size[:-1]])
     face = w.reserve(len(topo.face_plane)) + np.arange(len(topo.face_plane))
     shell = w.reserve(2 * topo.shells) + 2 * np.arange(topo.shells)  # CLOSED_SHELL, MANIFOLD_SOLID_BREP
@@ -53,7 +51,7 @@ def write_brep(w, topo, M):
     own = topo.plane_origin_vertex < 0                               # a plane through no vertex has its own origin
     origin_id = np.where(own, plane + 2, point[np.maximum(topo.plane_origin_vertex, 0)])
     for rows in slices(len(plane)):                                  # those origins first, then the planes
-        x = iter(reals(topo.plane_origin[rows][own[rows]] @ M[:3, :3].T + M[:3, 3]))
+        x = iter(reals(placed(topo.plane_origin[rows][own[rows]], M)))
         w.write([f"#{o} = CARTESIAN_POINT('',({a},{b},{c}));" for o, a, b, c in zip(origin_id[rows][own[rows]].tolist(), x, x, x)])
     for rows in slices(len(plane)):
         axis = directions.ids(direction(topo.plane_axis[rows], M))
@@ -90,17 +88,22 @@ def entity_count(topo, M):
     """How many entity numbers write_brep(w, topo, M) takes, found without writing them: so a big
     board's parts get their first numbers before their text is written (step_parts.py)."""
     M = np.asarray(M, dtype=float)
-    xyz = topo.xyz @ M[:3, :3].T + M[:3, 3]
+    xyz = placed(topo.xyz, M)
     arc = arcs_of(topo)
-    count = (2 * len(xyz) + 2 + int(np.where(arc, 1, 2).sum()) + int(np.where(topo.plane_origin_vertex >= 0, 2, 3).sum())
-             + int((2 + topo.loop_count).sum()) + len(topo.face_plane) + 2 * topo.shells)
+    count = 2 * len(xyz) + 2 + sum(int(size.sum()) for size in block_sizes(topo, arc)) + len(topo.face_plane) + 2 * topo.shells
     if topo.edge_circle is not None:
         count += 1 + 4 * len(circle_places(topo)[1])                  # Curves: the x DIRECTION, 4 per placement
     sloped = ~arc & ~topo.vertical
     lines = keys_of(along(topo, xyz, sloped, rows) for rows in slices(len(arc)))     # a DIRECTION and a VECTOR each
     axes = keys_of(direction(topo.plane_axis[rows], M) for rows in slices(len(topo.plane_axis)))
-    refs = keys_of(direction(topo.plane_ref[rows], M) for rows in slices(len(topo.plane_ref)))
-    return count + 2 * len(lines) + len(axes - lines) + len(refs - lines - axes)
+    plane_refs = keys_of(direction(topo.plane_ref[rows], M) for rows in slices(len(topo.plane_ref)))
+    return count + 2 * len(lines) + len(axes - lines) + len(plane_refs - lines - axes)
+
+
+def block_sizes(topo, arc):
+    """The entity numbers each edge, plane and loop takes: (LINE,) EDGE_CURVE; PLANE,
+    AXIS2_PLACEMENT_3D, (CARTESIAN_POINT); FACE_BOUND, EDGE_LOOP, the ORIENTED_EDGEs."""
+    return np.where(arc, 1, 2), np.where(topo.plane_origin_vertex >= 0, 2, 3), 2 + topo.loop_count
 
 
 def arcs_of(topo):
@@ -150,7 +153,7 @@ class Curves:
         lines = [f"#{self.xref} = DIRECTION('',({rx},{ry},{rz}));"]
         scale = float(np.linalg.norm(M[:3, :3] @ [0.0, 0.0, 1.0]))
         c = self.topo.circle_xy[self.place_circle]
-        centre = np.c_[c, self.place_z] @ M[:3, :3].T + M[:3, 3]
+        centre = placed(np.c_[c, self.place_z], M)
         radius = self.topo.circle_r[self.place_circle] * scale
         for p, (x, y, z), r, circle, cylinder in zip(self.place.tolist(), centre.tolist(), radius.tolist(),
                                                     self.has_circle.tolist(), self.has_cylinder.tolist()):
@@ -180,6 +183,11 @@ def slices(n):
     """The rows 0 to n, Parallel.STEP_ROWS_AT_A_TIME at a time."""
     step = P.Parallel.STEP_ROWS_AT_A_TIME
     return (slice(k, k + step) for k in range(0, n, step))
+
+
+def placed(p, M):
+    """Points (rows) in board coordinates -> in the output units and orientation of M."""
+    return p @ M[:3, :3].T + M[:3, 3]
 
 
 def unit(v):

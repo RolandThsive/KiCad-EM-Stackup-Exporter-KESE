@@ -1,8 +1,7 @@
 """Text on copper, mask and silkscreen layers (gr_text, fp_text, footprint properties), drawn with
 the stroke font."""
 import shapely
-from shapely import affinity
-from shapely.geometry import Polygon, box
+from shapely.geometry import Polygon
 
 from kese.core import font
 from kese.core.shapes2d import EMPTY, polys_only
@@ -73,31 +72,20 @@ def add_text(ctx, node, T=lambda p: p, subst=None, in_footprint=False, fp=None):
         angle = upright(angle)
     fnt = child(effects, "font") or []
     h, w = text_size(fnt)
-    bold = flag(fnt, "bold")
-    italic = flag(fnt, "italic")
-    # KiCad's pen (EDA_TEXT::GetEffectiveTextPenWidth): the file's, else a fifth (bold) or an eighth of
-    # the text width, and at most a quarter of its smaller size (ClampTextPenSize)
-    thick = text_pen(fnt, items.raw.dialect)
-    thick = (S.BOLD_THICKNESS_RATIO if bold else S.NORMAL_THICKNESS_RATIO) * abs(w) if thick is None else thick
-    thick = min(thick, S.MAX_PEN_RATIO * min(abs(h), abs(w)))
+    thick = pen_width(fnt, h, w, items.raw.dialect)
     just = child(effects, "justify")
     just = [str(j) for j in atoms(just)] if just else []
-    geom = None
-    if truetype_face(fnt):
-        geom, how = cached_glyphs(node, text, angle), FROM_CACHE
-        saved = saved_words(items, words, layer, subst) if geom is None else None
-        if saved is not None:                       # KiCad's words when it saved, where KESE cannot know them
-            geom, how = cached_glyphs(node, saved, angle), f"{FROM_CACHE} as KiCad last showed its variables"
-        if geom is not None:
-            items.found[f"{how}, on {layer}"] += 1
-        elif not S.DRAW_TRUETYPE_TEXT_WITH_STROKE_FONT:
+    truetype = truetype_face(fnt) is not None
+    geom = cached_text(items, node, text, words, layer, subst, angle) if truetype else None
+    if truetype and geom is None:
+        if not S.DRAW_TRUETYPE_TEXT_WITH_STROKE_FONT:
             items.skipped[f"TrueType text on {layer} (DRAW_TRUETYPE_TEXT_WITH_STROKE_FONT is False)"] += 1
             return
-        else:
-            items.found[f"{STROKED}, on {layer}"] += 1
-    grow = 0.0 if geom is not None else pen_growth(thick)       # cached glyphs are filled, with no pen
+        items.found[f"{STROKED}, on {layer}"] += 1
+    grow = 0.0                                      # cached glyphs are filled, with no pen
     if geom is None:
-        geom = font.render(text, pos, angle, h, w, thick, just, "mirror" in just, italic)
+        grow = pen_growth(thick)
+        geom = font.render(text, pos, angle, h, w, thick, just, "mirror" in just, flag(fnt, "italic"))
     if is_knockout(node) and not geom.is_empty:
         geom = knocked_out(geom, pos, angle, h, thick)
         if drawn:
@@ -108,6 +96,16 @@ def add_text(ctx, node, T=lambda p: p, subst=None, in_footprint=False, fp=None):
                                       lambda m: text_hull(geom, pos, angle, m + grow)))
     if drawn:
         ctx.add(layer, geom, "text")
+
+
+def pen_width(fnt, h, w, d):
+    """KiCad's pen for a stroke-font text (EDA_TEXT::GetEffectiveTextPenWidth): the file's, else a fifth
+    (bold) or an eighth of the text width, and at most a quarter of its smaller size (ClampTextPenSize)."""
+    S = P.Silkscreen
+    thick = text_pen(fnt, d)
+    if thick is None:
+        thick = (S.BOLD_THICKNESS_RATIO if flag(fnt, "bold") else S.NORMAL_THICKNESS_RATIO) * abs(w)
+    return min(thick, S.MAX_PEN_RATIO * min(abs(h), abs(w)))
 
 
 def textbox_knockout(ctx, node, layer):
@@ -147,6 +145,19 @@ def warn_stroked(items, log):
             "KiCad and save it)")
 
 
+def cached_text(items, node, text, words, layer, subst, angle):
+    """A TrueType text's glyphs from the file's render cache, made for the shown text or, where KESE
+    cannot know some of its variables, for the words KiCad showed when it saved (saved_words); counted
+    under found.  None when the cache has neither."""
+    geom, how = cached_glyphs(node, text, angle), FROM_CACHE
+    saved = saved_words(items, words, layer, subst) if geom is None else None
+    if saved is not None:
+        geom, how = cached_glyphs(node, saved, angle), f"{FROM_CACHE} as KiCad last showed its variables"
+    if geom is not None:
+        items.found[f"{how}, on {layer}"] += 1
+    return geom
+
+
 def cached_glyphs(node, text, angle):
     """The filled glyphs the file stores with a TrueType text, in board coordinates: the text exactly
     as KiCad draws it in its face (PCB_TEXT::TransformTextToPolySet fills the glyphs, no pen), so the
@@ -161,11 +172,7 @@ def cached_glyphs(node, text, angle):
 
 
 def knocked_out(geom, pos, angle, h, thick):
-    """Knockout text: the text's box, square to the text and grown
-    by max(pen / 2, height / 9), with the letters cut out of it (PCB_TEXT::TransformTextToPolySet,
+    """Knockout text: the text's box, square to the text and grown by max(pen / 2, height / 9)
+    (text_hull), with the letters cut out of it (PCB_TEXT::TransformTextToPolySet,
     buildBoundingHull and GetKnockoutTextMargin in KiCad's gr_text.h)."""
-    margin = max(thick / 2, h * KNOCKOUT_MARGIN_RATIO)
-    upright = affinity.rotate(geom, angle, origin=pos)          # font.render turned it by -angle
-    x0, y0, x1, y1 = upright.bounds
-    hull = affinity.rotate(box(x0 - margin, y0 - margin, x1 + margin, y1 + margin), -angle, origin=pos)
-    return hull.difference(geom)
+    return text_hull(geom, pos, angle, max(thick / 2, h * KNOCKOUT_MARGIN_RATIO)).difference(geom)

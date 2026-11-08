@@ -32,15 +32,16 @@ def edge_plating(r, items, log):
         net = C.EDGE_PLATING_NET
     moved = Counter()
     for l in r.layers:
-        for other in list(r.copper[l]):
-            if other != net and r.copper[l][other].intersects(band):
-                inside = sh.inter(r.copper[l][other], band)
+        cu = r.copper[l]
+        for other, g in list(cu.items()):
+            if other != net and g.intersects(band):
+                inside = sh.inter(g, band)
                 if inside.area > 0:
                     moved[other] += 1
-                    r.copper[l][other] = sh.diff(r.copper[l][other], band)
-                    if r.copper[l][other].is_empty:
-                        del r.copper[l][other]
-                    r.copper[l][net] = sh.snap(union([r.copper[l].get(net, EMPTY), inside]))
+                    cu[other] = sh.diff(g, band)
+                    if cu[other].is_empty:
+                        del cu[other]
+                    cu[net] = sh.snap(union([cu.get(net, EMPTY), inside]))
     for other, n in moved.items():
         log(f"edge plating: copper of net {other!r} inside the edge band moved to net {net!r} on {n} layer(s)")
     r.edge_band, r.edge_net = band, net

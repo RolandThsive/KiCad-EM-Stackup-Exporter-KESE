@@ -45,61 +45,25 @@ def render(text, anchor, angle_deg, size_h, size_w, thickness, justify=(), mirro
     if not text.strip():
         return EMPTY
     f, _ = load()
-    space_w = f["glyphs"][0]["w"]
     interline = size_h * S.INTERLINE_PITCH * S.INTERLINE_LEGACY_FACTOR      # KiCad 7 to 10 plot no (line_spacing)
     tilt = S.ITALIC_TILT if italic else 0.0
     lines = text.split("\n")
+    laid = [_line(f, line, size_h, size_w, tilt) for line in lines]
 
-    # layout each line in local coordinates (x right, y down), origin = line start on the baseline
-    laid, widths = [], []
-    for line in lines:
-        cursor, strokes = 0.0, []
-        runs, bars = markup.parse(line)
-        starts = []
-        for run, styles in runs:
-            starts.append(cursor)
-            small = "^" in styles or "_" in styles          # nested, still 0.8 once; subscript wins
-            k = SUPER_SUB_SIZE if small else 1.0
-            dy = size_h * k * (SUB_OFFSET if "_" in styles else SUPER_OFFSET if small else 0.0)
-            run_x, count = cursor, 0
-            for ch in run:
-                if ch == " ":
-                    cursor += size_w * k * space_w
-                elif ch == "\t":             # to KiCad's next tab stop: every fourth column of width W
-                    count = (count // 4 + 1) * 4 - 1
-                    stop = run_x + size_w * (count + space_w)
-                    while size_w > 0 and stop <= cursor:
-                        count += 4
-                        stop += size_w * 4
-                    cursor = stop
-                else:
-                    g = _glyph(f, ch)
-                    for st in g["s"]:
-                        strokes.append([(cursor + (x - y * tilt) * size_w * k, y * size_h * k + dy) for x, y in st])
-                    cursor += g["w"] * size_w * k
-                count += 1
-        starts.append(cursor)
-        for a, b in bars:                    # an overbar: a stroke over its run, a tenth of W in at each end
-            y = -size_h * OVERBAR_HEIGHT
-            strokes.append([(starts[a] + size_w * BAR_TRIM, y), (starts[b] - size_w * BAR_TRIM, y)])
-        widths.append(cursor)
-        laid.append(strokes)
-
-    n = len(lines)
-    height = size_h * BLOCK_HEIGHT + (n - 1) * interline
+    height = size_h * BLOCK_HEIGHT + (len(lines) - 1) * interline
     off_x, off_y = thickness / LEFT_OFFSET_DIV, size_h - thickness * TOP_OFFSET
     if "top" not in justify:
         off_y -= height if "bottom" in justify else height / 2
     a = math.radians(angle_deg)
     c, s = math.cos(a), math.sin(a)
     segs = []
-    for i, strokes in enumerate(laid):
+    for i, (strokes, width) in enumerate(laid):
         if "left" in justify:
             lx = off_x
         elif "right" in justify:
-            lx = -(widths[i] + off_x)
+            lx = -(width + off_x)
         else:
-            lx = -widths[i] / 2
+            lx = -width / 2
         ly = off_y + i * interline
         for st in strokes:
             pts = []
@@ -113,3 +77,38 @@ def render(text, anchor, angle_deg, size_h, size_w, thickness, justify=(), mirro
     if not segs:
         return EMPTY
     return shapely.MultiLineString(segs).buffer(thickness / 2, quad_segs=S.TEXT_STROKE_QUAD_SEGS)
+
+
+def _line(f, line, size_h, size_w, tilt):
+    """One line laid out in its own coordinates (x right, y down, the origin at its start on the
+    baseline): (its strokes, its width)."""
+    space_w = f["glyphs"][0]["w"]
+    cursor, strokes = 0.0, []
+    runs, bars = markup.parse(line)
+    starts = []
+    for run, styles in runs:
+        starts.append(cursor)
+        small = "^" in styles or "_" in styles          # nested, still 0.8 once; subscript wins
+        k = SUPER_SUB_SIZE if small else 1.0
+        dy = size_h * k * (SUB_OFFSET if "_" in styles else SUPER_OFFSET if small else 0.0)
+        run_x, count = cursor, 0
+        for ch in run:
+            if ch == " ":
+                cursor += size_w * k * space_w
+            elif ch == "\t":             # to KiCad's next tab stop: every fourth column of width W
+                count = (count // 4 + 1) * 4 - 1
+                stop = run_x + size_w * (count + space_w)
+                while size_w > 0 and stop <= cursor:
+                    count += 4
+                    stop += size_w * 4
+                cursor = stop
+            else:
+                g = _glyph(f, ch)
+                strokes += [[(cursor + (x - y * tilt) * size_w * k, y * size_h * k + dy) for x, y in st] for st in g["s"]]
+                cursor += g["w"] * size_w * k
+            count += 1
+    starts.append(cursor)
+    for a, b in bars:                    # an overbar: a stroke over its run, a tenth of W in at each end
+        y = -size_h * OVERBAR_HEIGHT
+        strokes.append([(starts[a] + size_w * BAR_TRIM, y), (starts[b] - size_w * BAR_TRIM, y)])
+    return strokes, cursor

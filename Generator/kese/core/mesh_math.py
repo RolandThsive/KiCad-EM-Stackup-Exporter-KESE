@@ -51,18 +51,16 @@ def angles(triangles, zero_angle):
     return result
 
 
-def transform_points(points, matrix, translate=True):
-    """Points (n, 3) through a 4x4 matrix (only its rotation and scale without translate)."""
+def transform_points(points, matrix):
+    """Points (n, 3) through a 4x4 matrix."""
     points = np.asanyarray(points, dtype=np.float64)
     if len(points) == 0:
         return points.copy()
     matrix = np.asanyarray(matrix, dtype=np.float64)
     if np.abs(matrix - np.eye(4)).max() < 1e-8:
         return np.ascontiguousarray(points.copy())
-    if translate:
-        stack = np.column_stack((points, np.ones(len(points))))
-        return np.dot(matrix, stack.T).T[:, :3]
-    return np.dot(matrix[:3, :3], points.T).T
+    stack = np.column_stack((points, np.ones(len(points))))
+    return np.dot(matrix, stack.T).T[:, :3]
 
 
 def nearly_equal(a, b, atol):

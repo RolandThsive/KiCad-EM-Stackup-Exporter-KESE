@@ -28,14 +28,14 @@ def open_pinches(region, log=None):
         r = P.Geometry.PINCH_POINT_OPENING_MM * 2 ** round_
         for k, pts in cuts.items():
             discs = shapely.union_all([cut_disc(p, r) for p in pts])
-            parts[k] = noded(parts[k].difference(discs, grid_size=sh.grid()))
+            parts[k] = cut_out(parts[k], discs)
         check, cut_any = sorted(cuts), True
     else:
         if log:
             log(f"pinch points left after {sh.G().PINCH_CUT_ROUNDS} rounds of cutting")
     if not cut_any:
         return region
-    return sh.as_region([q for p in parts for q in shapely.get_parts(p) if q.area > sh.G().SLIVER_AREA_MM2])
+    return without_slivers(parts)
 
 
 def cut_open_at(slices, pts, n):
@@ -49,11 +49,21 @@ def cut_open_at(slices, pts, n):
         parts = list(shapely.get_parts(sh.polys_only(s)))
         hit = np.flatnonzero(shapely.intersects(parts, discs)) if parts else []
         for k in hit:
-            parts[k] = noded(parts[k].difference(discs, grid_size=sh.grid()))
+            parts[k] = cut_out(parts[k], discs)
         if len(hit):
-            slices[i] = sh.as_region([q for p in parts for q in shapely.get_parts(p) if q.area > sh.G().SLIVER_AREA_MM2])
+            slices[i] = without_slivers(parts)
             cut.add(i)
     return cut, r
+
+
+def cut_out(part, shape):
+    """A piece with a shape cut out of it, on the grid, and noded."""
+    return noded(part.difference(shape, grid_size=sh.grid()))
+
+
+def without_slivers(parts):
+    """The pieces of the parts bigger than a sliver (Geometry.SLIVER_AREA_MM2), as one region."""
+    return sh.as_region([q for p in parts for q in shapely.get_parts(p) if q.area > sh.G().SLIVER_AREA_MM2])
 
 
 def cut_disc(p, r):
@@ -123,15 +133,14 @@ def open_pinches_between(below, above, log, first):
         r = P.Geometry.PINCH_POINT_OPENING_MM * 2 ** round_
         for (side, k), edges in cuts.items():
             strips = shapely.union_all([shapely.LineString(e).buffer(r, quad_segs=2) for e in edges])
-            parts[side][k] = noded(parts[side][k].difference(strips, grid_size=sh.grid()))
+            parts[side][k] = cut_out(parts[side][k], strips)
         cut_any = True
     else:
         if log:
             log(f"pinch edges between two heights left after {sh.G().PINCH_CUT_ROUNDS} rounds of cutting")
     if not cut_any:
         return below, above, False
-    below, above = (sh.as_region([q for p in side for q in shapely.get_parts(p) if q.area > sh.G().SLIVER_AREA_MM2]) for side in parts)
-    return below, above, True
+    return without_slivers(parts[0]), without_slivers(parts[1]), True
 
 
 def edges_against_each_other(below, above):

@@ -34,6 +34,7 @@ def swatch(hexcode, path):
 
 
 if __name__ == "__main__":
-    for h in colours():
+    found = colours()
+    for h in found:
         swatch(h, OUT / f"{h[1:]}.webp")
-    print(len(colours()), "colour boxes in", OUT)
+    print(len(found), "colour boxes in", OUT)

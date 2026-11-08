@@ -21,7 +21,7 @@ from kese.core.shape_copies import floating
 from parameters import P
 
 
-def skin_meshes_from_faces(levels, pieces, faces, free=frozenset()):
+def skin_meshes_from_faces(levels, pieces, faces, free):
     """-> {part: mesh of its visible faces} (mm, board frame); across the heights in `free`
     (PrismSet.free_levels) a wall that goes on unchanged is one taller wall (kese/core/tall_walls.py)."""
     at = {z: k for k, z in enumerate(levels)}
@@ -35,15 +35,13 @@ def skin_meshes_from_faces(levels, pieces, faces, free=frozenset()):
         for z0, z1, s, o in tall_walls(every, flats, levels, free, owner):
             for n in np.unique(o):
                 walls_of[names[n]].append((z0, z1, s[o == n]))
-    made, owners, parts = [], [], []
-    for part in names:
-        flats = faces[part][0]
-        mine = [flat_face_triangles(region, at[z], up) for z, region, up in flats]
+    made, owners = [], []
+    for n, part in enumerate(names):
+        mine = [flat_face_triangles(region, at[z], up) for z, region, up in faces[part][0]]
         mine += [wall_triangles(segments, at[z0], at[z1]) for z0, z1, segments in walls_of[part]]
         mine = [piece for piece in mine if len(piece[2])]
         made += mine
-        owners += [np.full(len(tri), len(parts)) for _, _, tri in mine]
-        parts.append(part)
+        owners += [np.full(len(tri), n) for _, _, tri in mine]
     if not made:
         return {}
     v, f = mesh_with_shared_vertices(made, levels)
@@ -51,7 +49,7 @@ def skin_meshes_from_faces(levels, pieces, faces, free=frozenset()):
     keep = ~looks_at_material(v, f, levels, pieces)
     f, owner = f[keep], owner[keep]
     keep = ~sealed(v, f)
-    return meshes_per_part(v, f[keep], owner[keep], parts)
+    return meshes_per_part(v, f[keep], owner[keep], names)
 
 
 def meshes_per_part(v, f, owner, parts):

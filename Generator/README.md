@@ -11,8 +11,8 @@ What KESE does, its examples and its licence are in the [main README](../README.
 | `parameters/` | Every setting, one file per subject (the only files you edit) |
 | `Input/` | Boards to export (three examples included) |
 | `Output/` | One folder per board and run |
-| `tests/` | The layout rules, the regression suite, its test boards and their baseline |
-| `tools/` | Scripts for the repository itself: `make_swatches.py` makes the wiki's colour boxes |
+| `tests/` | The layout rules, the regression suite with its test boards and baseline, the other tests, and `feature_boards/`, which makes the boards in `featureTest/` |
+| `tools/` | Scripts for the repository itself: `make_swatches.py` makes the wiki's colour boxes, `font_lines.py` rewrites a stroke font as JSON Lines, a glyph per line |
 | `pyproject.toml`, `requirements.txt` | The package, and the Python packages it was tested with |
 
 ## Quick Start

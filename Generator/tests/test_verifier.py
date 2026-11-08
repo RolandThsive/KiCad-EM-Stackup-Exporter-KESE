@@ -8,32 +8,21 @@ whole (but not with a piece gone, or one lacking much), and the overlap check fi
 overlaps in threads as in one.  Takes a few seconds.
 
     python -m pytest tests/test_verifier.py         (or:  python tests/test_verifier.py)"""
-import sys
-from pathlib import Path
 from types import SimpleNamespace
 
 import numpy as np
 import shapely
 from shapely.affinity import translate
 
-ROOT = Path(__file__).resolve().parents[1]
-sys.path.insert(0, str(ROOT))
-
-from kese.core.boundary import Boundary  # noqa: E402
-from kese.core.mesh import Mesh  # noqa: E402
-from kese.core.part_checks import mesh_check, volume_check, whole  # noqa: E402
-from kese.job import start  # noqa: E402
-from kese.s1_read import read  # noqa: E402
-from kese.s2_collect import collect  # noqa: E402
-from kese.s3_resolve import resolve  # noqa: E402
-from kese.s4_geometry import geometry  # noqa: E402
-from kese.s5_materials import materials  # noqa: E402
-from kese.s6_assemble import assemble  # noqa: E402
-from kese.s6_assemble.transform import output_transform  # noqa: E402
-from kese.s8_verify import overlap, vertical_rays  # noqa: E402
-from kese.s8_verify.meshes import _skin_surfaces  # noqa: E402
-from kese.s8_verify.verify import every_check  # noqa: E402
-from parameters import P  # noqa: E402
+from helpers import BOARDS, run_stages, run_tests, settings
+from kese.core.boundary import Boundary
+from kese.core.mesh import Mesh
+from kese.core.part_checks import mesh_check, volume_check, whole
+from kese.s6_assemble import assemble
+from kese.s6_assemble.transform import output_transform
+from kese.s8_verify import overlap, vertical_rays
+from kese.s8_verify.meshes import _skin_surfaces
+from kese.s8_verify.verify import every_check
 
 CORNERS = np.array([(x, y, z) for z in (0, 1) for y in (0, 1) for x in (0, 1)], dtype=float)
 SIDES = np.array([(0, 2, 3), (0, 3, 1), (4, 5, 7), (4, 7, 6), (0, 1, 5), (0, 5, 4),     # wound outward
@@ -48,16 +37,13 @@ def box(lo, hi):
 def test_the_visual_check_runs_along_the_board_normal_in_either_orientation():
     # a laminate and a pad above it, apart: 2 faces on a ray through the laminate, 4 through both
     boxes = {"board": box((0, 0, 0), (10, 6, 1.6)), "pad": box((3, 2, 2.0), (5, 4, 2.035))}
-    met, saved = {}, P.Run.ORIENTATION
-    try:
-        for orientation in ("upright", "flat"):
-            P.override("Run.ORIENTATION", orientation)
+    met = {}
+    for orientation in ("upright", "flat"):
+        with settings({"Run.ORIENTATION": orientation}):
             M = output_transform()
             meshes = {name: Mesh(v @ M[:3, :3].T, SIDES) for name, v in boxes.items()}
             met[orientation], wrong = _skin_surfaces(meshes, 500, M)
-            assert wrong == 0, orientation
-    finally:
-        P.override("Run.ORIENTATION", saved)
+        assert wrong == 0, orientation
     assert set(met["upright"]) == {2, 4} and met["flat"] == met["upright"], met
 
 
@@ -91,23 +77,12 @@ def test_the_visual_check_runs_on_a_32_bit_python():
 def checked_model(pcb):
     """A board's Model in simulation mode with the Verifier on, its parts built (and checked) in
     two worker processes."""
-    saved = {k: getattr(P.Parallel, k) for k in ("WORKERS", "PROCESS_MIN_COORDINATES")}
-    P.override("Parallel.WORKERS", 2)
-    P.override("Parallel.PROCESS_MIN_COORDINATES", 0)
-    try:
-        job = start("simulation", ["glb"], None, (), True, lambda s: None)
-        out = str(pcb)
-        for stage in (read, collect, resolve, geometry, materials, assemble):
-            out = stage.run(out, job)
-        job.status.stop()
-    finally:
-        for k, v in saved.items():
-            P.override(f"Parallel.{k}", v)
-    return out
+    with settings({"Parallel.WORKERS": 2, "Parallel.PROCESS_MIN_COORDINATES": 0}):
+        return run_stages(pcb, assemble, verify=True)[0]
 
 
 def test_the_checks_made_where_the_parts_are_built_give_the_same_report():
-    model = checked_model(ROOT / "tests" / "boards" / "six_layer.kicad_pcb")
+    model = checked_model(BOARDS / "six_layer.kicad_pcb")
     assert set(model.checks) == set(model.boundaries) and set(model.meshes) <= set(model.checks)
     ok, lines = every_check(model)
     model.checks.clear()                               # stage 8 checks every part itself
@@ -115,7 +90,7 @@ def test_the_checks_made_where_the_parts_are_built_give_the_same_report():
 
 
 def test_an_open_part_found_where_it_was_built_fails_the_run():
-    model = checked_model(ROOT / "tests" / "boards" / "six_layer.kicad_pcb")
+    model = checked_model(BOARDS / "six_layer.kicad_pcb")
     part = next(iter(model.meshes))
     m = model.meshes[part]
     _, volumes = model.checks[part]
@@ -143,29 +118,17 @@ def test_a_part_lacking_a_little_in_each_of_thousands_of_pieces_is_whole():
 
 
 def test_the_overlap_check_finds_the_same_overlaps_in_threads_as_in_one():
-    model = checked_model(ROOT / "tests" / "boards" / "six_layer.kicad_pcb")
+    model = checked_model(BOARDS / "six_layer.kicad_pcb")
     assert overlap.overlaps(model) == []
     for part in list(model.boundaries)[:6]:           # each a copy of its own, shifted a little
         slices = [(z0, z1, translate(g, 0.05, 0.03)) for z0, z1, g in model.boundaries[part].slices]
         model.boundaries[f"{part} copy"] = SimpleNamespace(slices=slices)
-    saved = P.Parallel.WORKERS, P.Parallel.VERIFY_POLYGONS_PER_THREAD
-    try:
-        P.override("Parallel.WORKERS", 1)
+    with settings({"Parallel.WORKERS": 1}):
         alone = overlap.overlaps(model)
-        P.override("Parallel.WORKERS", 3)
-        P.override("Parallel.VERIFY_POLYGONS_PER_THREAD", 1)        # every group a thread's
+    with settings({"Parallel.WORKERS": 3, "Parallel.VERIFY_POLYGONS_PER_THREAD": 1}):      # every group a thread's
         assert len(overlap.dealt(np.arange(50), np.ones(50), 50)) == 12
         assert len(alone) > 100 and overlap.overlaps(model) == alone
-    finally:
-        P.override("Parallel.WORKERS", saved[0])
-        P.override("Parallel.VERIFY_POLYGONS_PER_THREAD", saved[1])
 
 
 if __name__ == "__main__":
-    test_the_visual_check_runs_along_the_board_normal_in_either_orientation()
-    test_the_visual_check_runs_on_a_32_bit_python()
-    test_the_checks_made_where_the_parts_are_built_give_the_same_report()
-    test_an_open_part_found_where_it_was_built_fails_the_run()
-    test_a_part_lacking_a_little_in_each_of_thousands_of_pieces_is_whole()
-    test_the_overlap_check_finds_the_same_overlaps_in_threads_as_in_one()
-    print("ok")
+    run_tests(__file__)

@@ -14,33 +14,27 @@ import sys
 import tempfile
 from pathlib import Path
 
-ROOT = Path(__file__).resolve().parents[1]
-sys.path.insert(0, str(ROOT))
-
-from kese.core.sexp import parse  # noqa: E402
-from kese.job import (AT_LEAST, CHOICES, KIND_WORDS, MORE_THAN_ZERO, NUMBER_AT_LEAST, ONE_OR_MORE, SHARES,  # noqa: E402
+from helpers import FEATURES, run_tests, settings
+from kese.core.sexp import parse
+from kese.job import (AT_LEAST, CHOICES, KIND_WORDS, MORE_THAN_ZERO, NUMBER_AT_LEAST, ONE_OR_MORE, SHARES,
                       WHOLE_NUMBERS, start)
-from kese.s1_read import parse_kicad_version as kv  # noqa: E402
-from kese.s1_read import read  # noqa: E402
-from kese.s2_collect import collect  # noqa: E402
-from kese.s2_collect.vias import OFF_BOARD  # noqa: E402
-from parameters import KINDS, MOVED, P  # noqa: E402
+from kese.s1_read import parse_kicad_version as kv
+from kese.s1_read import read
+from kese.s2_collect import collect
+from kese.s2_collect.vias import OFF_BOARD
+from parameters import KINDS, MOVED, P
 
-VIAS = ROOT.parent / "featureTest" / "03b_vias_k10.kicad_pcb"      # two copper layers
+VIAS = FEATURES / "03b_vias_k10.kicad_pcb"      # two copper layers
 
 
-def started(settings, log=lambda s: None):
-    """start() with `settings` ({"Module.NAME": value}), put back after: the Job, or the error's text."""
-    saved = {key: getattr(getattr(P, key.split(".")[0]), key.split(".")[1]) for key in settings}
-    try:
-        for key, value in settings.items():
-            P.override(key, value)
-        return start("simulation", None, None, (), False, log)
-    except ValueError as e:
-        return str(e)
-    finally:
-        for key, value in saved.items():
-            P.override(key, value)
+def started(changes, log=lambda s: None):
+    """start() with the settings `changes` ({"Module.NAME": value}), put back after: the Job, or the
+    error's text."""
+    with settings(changes):
+        try:
+            return start("simulation", None, None, (), False, log)
+        except ValueError as e:
+            return str(e)
 
 
 def test_a_single_format_may_be_a_string():
@@ -91,7 +85,6 @@ def test_the_old_name_of_workers_still_works():
                        "set it there"), refused
 
 
-
 def test_every_moved_setting_still_works_by_its_old_name():
     # run.py's STEP, Verifier and preset settings moved to step.py, verifier.py and presets.py
     for old, new in MOVED.items():
@@ -112,14 +105,8 @@ def test_every_moved_setting_still_works_by_its_old_name():
 def test_every_preset_names_real_settings_and_passes_the_checks():
     assert {"freecad", "elmer", "calculix", "openems", "viewer", "blender_glb", "blender_obj"} <= set(P.Presets.PRESETS)
     for name, preset in P.Presets.PRESETS.items():
-        saved = {key: getattr(getattr(P, key.split(".")[0]), key.split(".")[1]) for key in preset}
-        try:
-            for key, value in preset.items():
-                P.override(key, value)                                  # a name that is not a setting raises
+        with settings(preset):                                          # a name that is not a setting raises
             job = start(None, None, None, (("PRESET", name), *preset.items()), False, lambda s: None)
-        finally:
-            for key, value in saved.items():
-                P.override(key, value)
         assert (job.mode, job.formats) == (preset["Run.MODE"], preset["Run.FILE_FORMAT"]), name
 
 
@@ -145,6 +132,7 @@ def test_a_misspelt_preset_is_named_before_the_run():
             P.override("Run.UNITS", units)
         assert said in err.getvalue(), err.getvalue()
         assert "Traceback" not in err.getvalue()
+
 
 def test_rounds_and_batches_must_be_one_or_more():
     assert set(ONE_OR_MORE) <= set(AT_LEAST) and AT_LEAST["Step.STEP_ARC_MIN_POINTS"] == 3
@@ -194,12 +182,8 @@ def test_tolerances_and_limits_must_be_in_their_range():
             refused = started({key: x})
             assert refused == f"{key} must be a number more than 0 and at most 1, not {x!r}", (key, x, refused)
     from kese.s4_geometry.finish import mitre                      # the finish's corners take the limit
-    saved = P.Finish.FINISH_MITRE_LIMIT
-    P.override("Finish.FINISH_MITRE_LIMIT", 3.0)
-    try:
+    with settings({"Finish.FINISH_MITRE_LIMIT": 3.0}):
         assert mitre() == {"join_style": "mitre", "mitre_limit": 3.0}
-    finally:
-        P.override("Finish.FINISH_MITRE_LIMIT", saved)
 
 
 def test_an_outline_of_no_size_is_left_out():
@@ -209,13 +193,9 @@ def test_an_outline_of_no_size_is_left_out():
     from kese.s3_resolve.outline import outline_from
     board, speck = shapely.box(0, 0, 10, 5), shapely.box(20, 0, 20.0001, 0.0001)      # 1e-8 mm²
     items = SimpleNamespace(edge_closed=[board, speck], edge_open=[], copper_items={})
-    saved = P.Board.OUTLINE_MIN_AREA_MM2
-    try:
-        for least, parts in ((saved, 2), (1e-6, 1)):
-            P.override("Board.OUTLINE_MIN_AREA_MM2", least)
+    for least, parts in ((P.Board.OUTLINE_MIN_AREA_MM2, 2), (1e-6, 1)):
+        with settings({"Board.OUTLINE_MIN_AREA_MM2": least}):
             assert shapely.get_num_geometries(outline_from(items, print)) == parts, least
-    finally:
-        P.override("Board.OUTLINE_MIN_AREA_MM2", saved)
 
 
 def test_an_old_shapely_is_named_before_the_run():
@@ -353,25 +333,4 @@ def test_a_drill_that_gives_no_size_takes_kicads_default():
 
 
 if __name__ == "__main__":
-    test_a_single_format_may_be_a_string()
-    test_every_setting_with_a_few_values_is_checked()
-    test_the_parallel_settings_are_checked()
-    test_the_old_name_of_workers_still_works()
-    test_every_moved_setting_still_works_by_its_old_name()
-    test_every_preset_names_real_settings_and_passes_the_checks()
-    test_a_misspelt_preset_is_named_before_the_run()
-    test_rounds_and_batches_must_be_one_or_more()
-    test_every_setting_must_be_of_the_kind_its_file_gives_it()
-    test_tolerances_and_limits_must_be_in_their_range()
-    test_an_outline_of_no_size_is_left_out()
-    test_an_old_shapely_is_named_before_the_run()
-    test_a_misspelt_set_is_named_before_the_run()
-    test_a_tenting_side_with_no_value_keeps_the_default()
-    test_a_via_on_a_layer_the_board_does_not_have_is_left_out()
-    test_a_number_that_is_not_one_is_refused_with_the_file_named()
-    test_a_file_that_is_not_utf8_text_is_named()
-    test_a_byte_order_mark_is_passed_over()
-    test_a_thickness_below_zero_is_read_as_not_given()
-    test_a_board_too_thin_for_its_copper_is_refused()
-    test_a_drill_that_gives_no_size_takes_kicads_default()
-    print("ok")
+    run_tests(__file__)

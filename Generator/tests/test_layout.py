@@ -6,10 +6,10 @@ Generator/.  Reads the source; no board is run, so it takes a second.
 import ast
 import os
 import re
-import sys
 from pathlib import Path
 
-ROOT = Path(__file__).resolve().parents[1]                # Generator/
+from helpers import ROOT, run_tests
+
 KESE = ROOT / "kese"
 MAX_LINES = 200
 # every way a board file differs by KiCad version, kept in one file on purpose (its docstring says why)
@@ -35,7 +35,7 @@ def imports(path, mods):
     """The kese and parameters modules one file imports; `from package import name` counts as the
     module package.name when there is one."""
     out = set()
-    for node in ast.walk(ast.parse(path.read_text(encoding="utf-8"))):
+    for node in ast.walk(tree(path)):
         if isinstance(node, ast.Import):
             out |= {a.name for a in node.names}
         elif isinstance(node, ast.ImportFrom) and node.module and not node.level:
@@ -205,13 +205,4 @@ def test_kese_stays_in_generator():
 
 
 if __name__ == "__main__":
-    failed = 0
-    for name, fn in list(globals().items()):
-        if name.startswith("test_"):
-            try:
-                fn()
-                print(f"{name:64s} ok")
-            except AssertionError as exc:
-                failed += 1
-                print(f"{name:64s} FAIL\n    " + str(exc).replace("\n", "\n    "))
-    sys.exit(1 if failed else 0)
+    run_tests(__file__)

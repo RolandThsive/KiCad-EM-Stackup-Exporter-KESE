@@ -4,16 +4,12 @@ it is with the opacity of MATERIALS, lightened toward white for the mask over co
 and anything else keeps the MATERIALS colour with a warning.  Takes a moment.
 
     python -m pytest tests/test_colors.py           (or:  python tests/test_colors.py)"""
-import sys
 from contextlib import contextmanager
-from pathlib import Path
 from types import SimpleNamespace
 
-ROOT = Path(__file__).resolve().parents[1]
-sys.path.insert(0, str(ROOT))
-
-from kese.s5_materials.materials import material_for, unknown_colors  # noqa: E402
-from parameters import P  # noqa: E402
+from helpers import run_tests, settings
+from kese.s5_materials.materials import material_for, unknown_colors
+from parameters import P
 
 STACKUP = SimpleNamespace(colors={"F.Mask": "#1B5E20D4", "B.Mask": "Green", "F.SilkS": "#aabbcc",
                                   "B.SilkS": "Teal", "dielectric 1": "FR4 natural"})
@@ -22,14 +18,8 @@ STACKUP = SimpleNamespace(colors={"F.Mask": "#1B5E20D4", "B.Mask": "Green", "F.S
 @contextmanager
 def color_settings(**values):
     """parameters/color.py with these values for the block, put back after it."""
-    saved = {name: getattr(P.Color, name) for name in values}
-    for name, value in values.items():
-        P.override(f"Color.{name}", value)
-    try:
+    with settings({f"Color.{name}": value for name, value in values.items()}):
         yield P.Color
-    finally:
-        for name, value in saved.items():
-            P.override(f"Color.{name}", value)
 
 
 def look(part, role, mode):
@@ -61,7 +51,4 @@ def test_stackup_colours_off():
 
 
 if __name__ == "__main__":
-    test_user_defined_colours()
-    test_colour_names_and_unknown_values()
-    test_stackup_colours_off()
-    print("ok")
+    run_tests(__file__)

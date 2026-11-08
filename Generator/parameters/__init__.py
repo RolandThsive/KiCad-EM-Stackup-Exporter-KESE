@@ -4,6 +4,7 @@ parameters package - loads every settings file and can write them all out.
     from parameters import P
     P.Run.MODE, P.Copper.VIA_WALL_MM, ...
 
+    P.value("Run.MODE")  -> a setting by its "Module.NAME"
     P.snapshot()  -> the text written to parameters.txt next to every output
 """
 import difflib
@@ -42,9 +43,7 @@ class _Params(types.SimpleNamespace):
         for short, modname in _MODULES.items():
             mod = getattr(self, short)
             lines.append(f"[parameters/{modname}.py]")
-            for name in dir(mod):
-                if name.isupper():
-                    lines.append(f"{name} = {getattr(mod, name)!r}")
+            lines += [f"{name} = {getattr(mod, name)!r}" for name in self.names(short)]
             lines.append("")
         return "\n".join(lines)
 
@@ -73,6 +72,11 @@ class _Params(types.SimpleNamespace):
         others = {n.upper(): f"{s}.{n}" for s in reversed(list(_MODULES)) if s != short for n in self.names(s)}
         near = difflib.get_close_matches(name.upper(), list(others), n=1, cutoff=0.6)
         return f" (did you mean {others[near[0]]}?)" if near else ""
+
+    def value(self, dotted, *default):
+        """The value of the setting "Module.NAME" (`default`, if given, where its module has none)."""
+        short, name = dotted.split(".")
+        return getattr(getattr(self, short), name, *default)
 
     def names(self, short):
         """The parameters of one module: its names in capitals."""

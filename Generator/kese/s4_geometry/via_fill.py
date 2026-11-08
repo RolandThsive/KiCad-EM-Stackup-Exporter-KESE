@@ -29,7 +29,8 @@ def fill_span(st, layers, h):
 def plug_ranges(st, layers, h):
     """[(z0, z1)]: the heights the plugs of hole h fill, from each face it is plugged on (an end a
     backdrill or post machining opens takes none), Copper.VIA_PLUG_DEPTH_FRACTION of the bore deep;
-    plugs that meet are one.  None when the hole is filled (a fill fills the whole bore)."""
+    plugs that meet are one.  [] when the hole has no protection or is filled (a fill fills the whole
+    bore)."""
     p = h.protect
     if p is None or p.filled:
         return []

@@ -1,18 +1,18 @@
 """Text variables whose values hold ${...} of their own, resolved as the KiCad that wrote the board
 resolves them (s2_collect/text_vars.py, s1_read/parse_kicad_version.py text_var_rules): a title block
 value expanded by the project's variables, which the board's properties copy; the properties before
-or after the title block; KiCad 10's passes; and a footprint's reference and value expanded."""
+or after the title block; KiCad 10's passes; and a footprint's reference and value expanded.
+
+    python -m pytest tests/test_text_vars.py        (or:  python tests/test_text_vars.py)"""
 import datetime
-import sys
 import tempfile
 from pathlib import Path
 from types import SimpleNamespace
 
-sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
-from kese.core.sexp import child  # noqa: E402
-from kese.job import start  # noqa: E402
-from kese.s1_read import read  # noqa: E402
-from kese.s2_collect.text_vars import footprint_fields, saved_words, shown_text  # noqa: E402
+from helpers import run_stages, run_tests
+from kese.core.sexp import child
+from kese.s1_read import read
+from kese.s2_collect.text_vars import footprint_fields, saved_words, shown_text
 
 # the first format each KiCad writes
 K7, K8, K9, K10 = 20221018, 20240108, 20241229, 20260206
@@ -28,10 +28,8 @@ def items_of(version, head):
     with tempfile.TemporaryDirectory() as tmp:
         path = Path(tmp) / "vars.kicad_pcb"
         path.write_text(text, encoding="utf-8")
-        job = start("simulation", ["glb"], None, (), False, lambda s: None)
-        raw = read.run(str(path), job)
-        job.status.stop()
-    return SimpleNamespace(raw=raw)
+        raw, _ = run_stages(path, read)
+    return SimpleNamespace(raw=raw, text_vars=None)
 
 
 def shown(version, head, words, fp=None):
@@ -110,7 +108,4 @@ def test_the_rules_follow_the_release():
 
 
 if __name__ == "__main__":
-    for name, test in list(globals().items()):
-        if name.startswith("test_"):
-            test()
-    print("text variables: all tests passed")
+    run_tests(__file__)

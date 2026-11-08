@@ -2,14 +2,10 @@
 (kese/core/markup.py), each checked against what KiCad's own parser does.  No board is run.
 
     python -m pytest tests/test_kicad_version.py        (or:  python tests/test_kicad_version.py)"""
-import sys
-from pathlib import Path
-
-sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
-
-from kese.core import font, markup  # noqa: E402
-from kese.core.sexp import parse  # noqa: E402
-from kese.s1_read import parse_kicad_version as kv  # noqa: E402
+from helpers import run_tests
+from kese.core import font, markup
+from kese.core.sexp import parse
+from kese.s1_read import parse_kicad_version as kv
 
 
 def board(text):
@@ -125,13 +121,4 @@ def test_markup_is_drawn_not_printed():
 
 
 if __name__ == "__main__":
-    failed = 0
-    for name, fn in list(globals().items()):
-        if name.startswith("test_"):
-            try:
-                fn()
-                print(f"{name:56s} ok")
-            except AssertionError as exc:
-                failed += 1
-                print(f"{name:56s} FAIL {exc}")
-    sys.exit(1 if failed else 0)
+    run_tests(__file__)

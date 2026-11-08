@@ -20,7 +20,8 @@ def check_meshes(model, glb_path):
     ok = True
     if model.mode == "simulation":
         for part, g in meshes.items():                  # checked where the part was built, or here
-            c = (model.checks.get(part) or (None,))[0] or mesh_check(g, model.units)
+            checked = model.checks.get(part)
+            c = checked[0] if checked and checked[0] else mesh_check(g, model.units)
             lines.append(f"  {part:36s} closed={c.closed} winding={c.consistent} volume={c.merged_volume * scale ** 3:.4f} mm3")
             ok &= c.closed and c.consistent
         found = overlaps(model)
@@ -35,7 +36,7 @@ def check_meshes(model, glb_path):
     if glb_path is not None:
         exe = shutil.which("gltf_validator")
         if exe:
-            r = subprocess.run([exe, "-a", str(glb_path)], capture_output=True, text=True)
+            r = subprocess.run([exe, "-a", str(glb_path)], capture_output=True, text=True, check=False)
             tail = (r.stdout or r.stderr).strip().splitlines()[-1:] or ["(no output)"]
             lines.append(f"  gltf_validator: {tail[0]}")
         else:

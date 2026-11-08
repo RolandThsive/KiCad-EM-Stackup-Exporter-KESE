@@ -23,15 +23,18 @@ is in one file, `kese/s1_read/parse_kicad_version.py`, and follows KiCad's own b
 
 | Rule | Files it applies to |
 |---|---|
-| copper layers are read by their place in the leading run of copper layers (first = `F.Cu`, last = `B.Cu`, inner ones `In1.Cu`, `In2.Cu`, ... unless already named so) | every version; KiCad 3 to 5 files whose layers the user renamed get a warning that lists them |
+| copper layers are read by their place in the leading run of copper layers (first = `F.Cu`, last = `B.Cu`, inner ones `In1.Cu`, `In2.Cu`, ... unless already named so); a layer after that run is not copper, whatever its name | every version; KiCad 3 to 5 files whose layers the user renamed get a warning that lists them |
 | a text with no size is 1.524 mm (60 mils) | KiCad 4 |
 | a `solder_mask_margin` of 0 means "use the board's value" | up to format 20240201 (KiCad 8) |
 | an overbar is text between two `~`, converted to `~{...}` | before format 20210606 (KiCad 5 and early 6) |
 | a zone fill is drawn with a pen of `min_thickness` | before format 20250210, unless the zone says `(filled_areas_thickness no)` |
 | a zone with only `fill_segments` is filled with those segments | KiCad 4 and 5 |
 | a via that does not say is tented as the plot setting `viasonmask` says (open when `yes`), else tented | files whose board setup has no `(tenting ...)` (KiCad 8 and older) |
-| a via is not covered, plugged, filled or capped unless it says so: files that old have no board-wide setting for these | before format 20250228 |
 | a bold text's thickness is its base pen | from format 20260826 |
+
+KiCad's parser also reads a via in a file older than format 20250228 as not covered, plugged, filled or
+capped unless the via says so. KESE needs no rule for this: it takes the board setup's covering, plugging,
+filling and capping where a via says nothing, and files that old have no such setting in their setup.
 
 What is read from the file is listed in [Checks, Errors And Warnings](Checks-Errors-And-Warnings.md);
 KiCad itself is not needed, only the `.kicad_pcb` file. Footprints are read from the board file

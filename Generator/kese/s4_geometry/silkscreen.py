@@ -3,14 +3,13 @@ from kese.core import shapes2d as sh
 from kese.core.conformal import conformal_regions, grow, near
 from kese.core.parallel import in_parallel
 from kese.core.shape_copies import own
-from kese.s4_geometry.finish import under_mask_copper, under_mask_mm
+from kese.s4_geometry.finish import SIDES, under_mask_copper, under_mask_mm
 from kese.s4_geometry.heights import mask_thicknesses
 from parameters import P
 
 
 def build(r, ps):
-    sides = (("F", "F.Cu", 1, "Top"), ("B", "B.Cu", -1, "Bottom"))
-    for (side, _, sign, tb), pieces in zip(sides, in_parallel(lambda s: ink(r, *s[:2]), sides)):   # both at once
+    for (side, _, sign, tb), pieces in zip(SIDES, in_parallel(lambda s: ink(r, *s[:2]), SIDES)):   # both at once
         props = {"side": side, "thickness_mm": P.Silkscreen.SILK_THICKNESS_MM}
         for region, z0, z1 in pieces:
             ps.add(f"{tb} Silkscreen", "silk", region, sign * z0, sign * z1, layer=f"{side}.SilkS", props=props)

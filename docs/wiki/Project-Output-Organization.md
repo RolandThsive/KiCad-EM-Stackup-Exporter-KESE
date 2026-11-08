@@ -16,7 +16,8 @@ KiCad-EM-Stackup-Exporter-KESE/
 │   │   ├── cli.py, job.py, progress.py   command-line options, one run's request, the live status line
 │   │   ├── core/                shared tools: s-expression parser, 2D maths and shapes, the
 │   │   │                        boundary of a stack of prisms and its mesh, triangulation,
-│   │   │                        shared vertices, extrusion, work in threads and processes,
+│   │   │                        shared vertices, the coating over raised copper, files written
+│   │   │                        whole, work in threads and processes,
 │   │   │                        the copies of shapes they use and the memory they hand back,
 │   │   │                        stroke font, safe file names
 │   │   ├── model/               the data handed from stage to stage: RawBoard, Items, Stackup,
@@ -43,7 +44,7 @@ KiCad-EM-Stackup-Exporter-KESE/
 ├── docs/feature_test_images/    the top and bottom of every feature test board
 ├── docs/ColorSwatches/          the colour squares in the wiki's colour tables
 ├── docs/logo/                   the KESE logo as SVG and WebP, and favicon.ico
-├── .github/                     the workflow that copies docs/wiki/ to the wiki
+├── .github/                     the workflow that copies docs/wiki/ to the wiki, and Dependabot's settings
 ├── licenses/                    KiCad copyright headers and AUTHORS.txt
 ├── LICENSE, NOTICE.md, CONTRIBUTING.md
 └── README.md
@@ -78,7 +79,7 @@ names the folder that was written.
 |---|---|---|
 | `<board>.glb` | `glb` requested | binary glTF 2.0; one node and one mesh per part, named after the part; PBR materials; no glTF extensions |
 | `<board>.obj` + `<board>.mtl` | `obj` requested | one `o <name>` object per part with vertices, normals and faces; the `.mtl` has one material per part (`Kd`, `d`); object and material names are sanitised as for STL (`Top_Solder_Mask`) |
-| `stl/<name>.stl` | `stl` requested | one binary STL per part, in a `stl/` sub-folder; the name is the part name with every run of characters other than `A-Z a-z 0-9 _ . + -` replaced by `_`, and leading or trailing `_` removed (`Top_Solder_Mask.stl`, `Board_dielectric_1.stl`, `Copper__RESET.stl` for net `~{RESET}`) |
+| `stl/<name>.stl` | `stl` requested | one binary STL per part, in a `stl/` sub-folder; the name is the part name with every run of characters other than letters (of any script), digits and `_ . + -` replaced by `_`, and leading or trailing `_` and `.` removed (`Top_Solder_Mask.stl`, `Board_dielectric_1.stl`, `Copper__RESET.stl` for net `~{RESET}`); a name Windows reserves, such as `CON`, gets a `_` after it |
 | `<board>.step` | `step` requested (simulation mode) | STEP AP214 assembly named after the board, one named shape per part, with colours: the part's closed solids, one per separate body, in `Run.UNITS`. The parts are the ones switched on (`BOARD_ENABLED`, `COPPER_ENABLED`, `FINISH_ENABLED`, `SOLDER_MASK_ENABLED`, `SILKSCREEN_ENABLED`), as in every other file. It is written straight into the file one part at a time |
 | `materials.json` | `Run.WRITE_MATERIALS_JSON` | per part: role, layer, net, z range, properties, look, file names ([Material Properties](Material-Properties.md)) |
 | `parameters.txt` | always | every parameter of every `parameters/` file as it stood for the run; when `--for`, `--set`, `--mode`, `--format` or `--verify` was used, the first line lists those overrides (`--out` is not recorded) |
@@ -234,10 +235,11 @@ case as Windows and macOS file systems do, so no file replaces another.
 test run and ignored by git. `tests/test_layout.py`, `tests/test_colors.py`,
 `tests/test_kicad_version.py`, `tests/test_enabled.py`, `tests/test_verifier.py`,
 `tests/test_boundary.py`, `tests/test_copper_union.py`, `tests/test_finish_shells.py`,
-`tests/test_mask.py` and `tests/test_pairs.py` write nothing, and
+`tests/test_mask.py`, `tests/test_pairs.py`, `tests/test_hatch.py`, `tests/test_machining.py`,
+`tests/test_tall_walls.py`, `tests/test_via_protection.py` and `tests/test_threads.py` write nothing, and
 `tests/test_step_native.py`, `tests/test_step_arcs.py`, `tests/test_text_layout.py`, `tests/test_font.py`,
-`tests/test_text_vars.py`, `tests/test_bad_input.py`, `tests/test_parallel.py` and
-`tests/test_full_disk.py` write only in a temporary folder that they remove.
+`tests/test_text_vars.py`, `tests/test_bad_input.py`, `tests/test_same_result.py`, `tests/test_workers.py`
+and `tests/test_full_disk.py` write only in a temporary folder that they remove.
 
 | Previous | Next |
 |:---|---:|

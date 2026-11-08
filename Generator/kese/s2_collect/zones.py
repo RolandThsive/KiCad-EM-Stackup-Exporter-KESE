@@ -14,13 +14,13 @@ def add_zone(ctx, node):
     fills = children(node, "filled_polygon")
     net = net_name(ctx.items, node)
     pen = stroked_fill_pen(node, ctx.items.raw.dialect)
-    for fp in fills:
-        pts = [pt(p) for p in child(fp, "pts")[1:] if p[0] == "xy"]
+    for poly in fills:
+        pts = [pt(p) for p in child(poly, "pts")[1:] if p[0] == "xy"]
         if len(pts) >= 3:
             fill = Polygon(pts).buffer(0)
             if pen > 0:
                 fill = fill.buffer(pen / 2, quad_segs=circle_quads(pen / 2))
-            ctx.add(layer_of(fp) or zone_layer, fill, "zone fills", net)
+            ctx.add(layer_of(poly) or zone_layer, fill, "zone fills", net)
             ctx.zone_fills.add(id(fill))
     segments = legacy_fill_segments(node)
     if segments:

@@ -1,7 +1,7 @@
 """A big board's STEP parts worked on in processes of their own (much of the work is Python's), in
 two rounds.  First each part's topology and arcs, which give the exact number of entities it takes
 (step_brep.entity_count), so that every part's first number is known; then each part's entities,
-numbered from there, written into a file of its own.  step.py copies those files into the STEP file
+numbered from there, written into a file of its own.  Those files are copied into the STEP file
 in the parts' order, which comes out the same, byte for byte, as one written part after part.  The
 files go into a hidden folder beside the STEP file, removed when it is done or fails."""
 import pickle

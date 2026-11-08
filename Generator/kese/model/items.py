@@ -74,3 +74,5 @@ class Items:
     post_machining: list = field(default_factory=list)  # PostMachining of pads and vias (KiCad 10)
     mask_clearance: float = 0.0
     mask_min_width: float = 0.0          # setup (solder_mask_min_width): narrower mask webs are not made
+    via_classes: tuple = None            # the net classes' via sizes, read at the first via that gives none
+    text_vars: object = None             # s2_collect/text_vars.py TextVars, read at the first text with ${...}

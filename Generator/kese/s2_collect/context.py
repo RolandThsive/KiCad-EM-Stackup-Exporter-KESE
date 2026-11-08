@@ -42,22 +42,17 @@ class Context:
 
     def add(self, layer, geom, what, net=None):
         """File a shape under its layer, and count it for the report as `what`."""
-        items = self.items
         if geom is None or geom.is_empty:
             return
-        if layer in self.layers:
-            items.copper_items[layer].append((geom, net or P.Copper.NO_NET_NAME))
-        elif layer in ("F.Mask", "B.Mask"):
-            items.mask_open_items[layer[0]].append(geom)
-        elif layer in P.Silkscreen.SILK_LAYERS:
-            items.silk_items[layer[0]].append(geom)
+        if self.physical(layer):
+            self.add_more(layer, geom, net)
+            self.items.found[f"{what} on {layer}"] += 1
         else:
-            items.skipped[f"{what} on {layer} (not a physical layer)"] += 1
-            return
-        items.found[f"{what} on {layer}"] += 1
+            self.items.skipped[f"{what} on {layer} (not a physical layer)"] += 1
 
     def add_more(self, layer, geom, net=None):
-        """File more of a shape already added and counted (a hatched drawing's hatch)."""
+        """File a shape under its layer without counting it: for `add`, and for more of a shape already
+        added and counted (a hatched drawing's hatch)."""
         items = self.items
         if geom is None or geom.is_empty:
             return

@@ -18,8 +18,10 @@ UNITS = 'm'
 WRITE_MATERIALS_JSON = True
 
 [parameters/board.py]
+BACKDRILLS = True
 BOARD_ENABLED = True
 BOARD_THICKNESS_MM = None
+COUNTERSINK_STEP_TOLERANCE_MM = 0.025
 DEFAULT_BOARD_THICKNESS_MM = 1.6
 DEFAULT_DIELECTRIC_MATERIAL = 'FR4'
 DEFAULT_DIELECTRIC_TYPE = 'core'
@@ -33,6 +35,7 @@ OUTLINE_FALLBACK = 'copper_hull'
 OUTLINE_FALLBACK_MARGIN_MM = 1.0
 OUTLINE_LINE_SNAP_MM = 0.01
 OUTLINE_MIN_AREA_MM2 = 1e-09
+POST_MACHINING = True
 RESIN_FILL_BETWEEN_INNER_COPPER = True
 USE_STACKUP_EPSILON_R = True
 USE_STACKUP_LOSS_TANGENT = True
@@ -59,6 +62,12 @@ NO_NET_NAME = 'no_net'
 OUTER_PLATING_ADDED_MM = 0.0
 PTH_WALL_MM = 0.025
 USE_STACKUP_COPPER_THICKNESS = True
+VIA_FILL = 'copper'
+VIA_PLUG_DEPTH_FRACTION = 0.5
+VIA_PROTECTION = 'file'
+VIA_RESIN_ENABLED = True
+VIA_RESIN_EPSILON_R = 4.4
+VIA_RESIN_LOSS_TANGENT = 0.02
 VIA_TENTING = 'file'
 VIA_WALL_MM = 0.025
 
@@ -106,7 +115,7 @@ AIR_TILE_DEPTH = 16
 AIR_TILE_VERTICES = 2000
 ARC_STEP_DEG = 3.0
 BEZIER_SEGMENTS = 32
-CIRCLE_CHORD_TOLERANCE_MM = 0.002
+CIRCLE_CHORD_TOLERANCE_MM = 0.005
 CIRCLE_MAX_QUAD_SEGS = 128
 CIRCLE_MIN_QUAD_SEGS = 8
 ELLIPSE_MIN_SEGMENTS = 8
@@ -133,7 +142,7 @@ TRIANGULATE_CELL_POINTS = 5000
 VERTEX_SHARING_ROUNDS = 20
 
 [parameters/color.py]
-MATERIALS = {'Board': {'color': '#968A58', 'alpha': 1.0, 'metallic': 0.0, 'roughness': 0.8}, 'Board_core': {'color': '#968A58', 'alpha': 1.0, 'metallic': 0.0, 'roughness': 0.8}, 'Board_prepreg': {'color': '#A89C66', 'alpha': 1.0, 'metallic': 0.0, 'roughness': 0.8}, 'Copper': {'color': '#CD803E', 'alpha': 1.0, 'metallic': 0.9, 'roughness': 0.35}, 'Copper_exposed': {'color': '#DEBA60', 'alpha': 1.0, 'metallic': 1.0, 'roughness': 0.25}, 'Plating': {'color': '#CD803E', 'alpha': 1.0, 'metallic': 0.9, 'roughness': 0.35}, 'Top Solder Mask': {'color': '#EBEBE6', 'alpha': 0.8, 'metallic': 0.0, 'roughness': 0.3}, 'Bottom Solder Mask': {'color': '#EBEBE6', 'alpha': 0.8, 'metallic': 0.0, 'roughness': 0.3}, 'Top Mask over Copper': {'color': '#F2EFD8', 'alpha': 1.0, 'metallic': 0.0, 'roughness': 0.3}, 'Bottom Mask over Copper': {'color': '#F2EFD8', 'alpha': 1.0, 'metallic': 0.0, 'roughness': 0.3}, 'Top Silkscreen': {'color': '#141414', 'alpha': 1.0, 'metallic': 0.0, 'roughness': 0.75}, 'Bottom Silkscreen': {'color': '#141414', 'alpha': 1.0, 'metallic': 0.0, 'roughness': 0.75}, 'Nickel': {'color': '#B8B8B0', 'alpha': 1.0, 'metallic': 1.0, 'roughness': 0.4}, 'Gold': {'color': '#E6C15A', 'alpha': 1.0, 'metallic': 1.0, 'roughness': 0.2}, 'Tin': {'color': '#C9C9C9', 'alpha': 1.0, 'metallic': 1.0, 'roughness': 0.45}, 'Silver': {'color': '#E4E4E0', 'alpha': 1.0, 'metallic': 1.0, 'roughness': 0.25}, 'Palladium': {'color': '#DFDAD4', 'alpha': 1.0, 'metallic': 1.0, 'roughness': 0.3}, 'OSP': {'color': '#D9955A', 'alpha': 1.0, 'metallic': 0.8, 'roughness': 0.35}}
+MATERIALS = {'Board': {'color': '#968A58', 'alpha': 1.0, 'metallic': 0.0, 'roughness': 0.8}, 'Board_core': {'color': '#968A58', 'alpha': 1.0, 'metallic': 0.0, 'roughness': 0.8}, 'Board_prepreg': {'color': '#A89C66', 'alpha': 1.0, 'metallic': 0.0, 'roughness': 0.8}, 'Copper': {'color': '#CD803E', 'alpha': 1.0, 'metallic': 0.9, 'roughness': 0.35}, 'Copper_exposed': {'color': '#DEBA60', 'alpha': 1.0, 'metallic': 1.0, 'roughness': 0.25}, 'Plating': {'color': '#CD803E', 'alpha': 1.0, 'metallic': 0.9, 'roughness': 0.35}, 'Via Resin': {'color': '#D8CFA0', 'alpha': 1.0, 'metallic': 0.0, 'roughness': 0.6}, 'Top Solder Mask': {'color': '#EBEBE6', 'alpha': 0.8, 'metallic': 0.0, 'roughness': 0.3}, 'Bottom Solder Mask': {'color': '#EBEBE6', 'alpha': 0.8, 'metallic': 0.0, 'roughness': 0.3}, 'Top Mask over Copper': {'color': '#F2EFD8', 'alpha': 1.0, 'metallic': 0.0, 'roughness': 0.3}, 'Bottom Mask over Copper': {'color': '#F2EFD8', 'alpha': 1.0, 'metallic': 0.0, 'roughness': 0.3}, 'Top Silkscreen': {'color': '#141414', 'alpha': 1.0, 'metallic': 0.0, 'roughness': 0.75}, 'Bottom Silkscreen': {'color': '#141414', 'alpha': 1.0, 'metallic': 0.0, 'roughness': 0.75}, 'Nickel': {'color': '#B8B8B0', 'alpha': 1.0, 'metallic': 1.0, 'roughness': 0.4}, 'Gold': {'color': '#E6C15A', 'alpha': 1.0, 'metallic': 1.0, 'roughness': 0.2}, 'Tin': {'color': '#C9C9C9', 'alpha': 1.0, 'metallic': 1.0, 'roughness': 0.45}, 'Silver': {'color': '#E4E4E0', 'alpha': 1.0, 'metallic': 1.0, 'roughness': 0.25}, 'Palladium': {'color': '#DFDAD4', 'alpha': 1.0, 'metallic': 1.0, 'roughness': 0.3}, 'OSP': {'color': '#D9955A', 'alpha': 1.0, 'metallic': 0.8, 'roughness': 0.35}}
 STACKUP_MASK_COLORS = {'green': '#126830', 'red': '#A01414', 'blue': '#14328C', 'black': '#121214', 'white': '#EBEBE6', 'yellow': '#D2B414', 'purple': '#501E6E', 'matte green': '#1E5A2D', 'matte black': '#191919', 'matte blue': '#19326E', 'matte red': '#8C1919'}
 STACKUP_MASK_OVER_COPPER_COLORS = {'green': '#3F8F3A', 'red': '#C8503C', 'blue': '#3C5AB4', 'black': '#2E2E30', 'white': '#F2EFD8', 'yellow': '#E6CC50', 'purple': '#7A4696', 'matte green': '#4A7D4A', 'matte black': '#343434', 'matte blue': '#3C5A96', 'matte red': '#AA4646'}
 STACKUP_SILK_COLORS = {'white': '#F0F0EC', 'black': '#141414', 'yellow': '#E6C828', 'green': '#126830', 'red': '#A01414', 'blue': '#14328C', 'purple': '#501E6E'}
@@ -147,6 +156,7 @@ PROCESS_MIN_COORDINATES = 20000
 PROCESS_MIN_NETS = 1000
 PROCESS_WORKERS = 0
 SKIN_PROBES_AT_A_TIME = 2000000
+SKIN_PROBES_PER_SHARE = 100000
 STEP_ROWS_AT_A_TIME = 100000
 VERIFY_GROUPS_PER_WORKER = 4
 VERIFY_POLYGONS_PER_THREAD = 2000

@@ -8,8 +8,9 @@ from kese.core import shapes2d as sh
 
 
 def near_edge():
-    """How far from an edge a vertex may lie and still count as on it: half a grid diagonal (GEOS
-    rounds crossings to the grid), less than the full step between two grid points."""
+    """How far from an edge a vertex may lie and still count as on it: three quarters of a grid step,
+    a little over half a grid diagonal (as far as GEOS moves a crossing it rounds to the grid), and
+    less than the full step between two grid points."""
     return sh.grid() * 0.75
 
 

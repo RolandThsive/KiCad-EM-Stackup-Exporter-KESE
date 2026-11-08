@@ -19,12 +19,12 @@ def add_via(ctx, node):
         items.skipped[OFF_BOARD] += 1
         return
     x, y = pt(child(node, "at"))
+    net = net_name(items, node)
     size, drill = via_size(node)
     if size is None or drill is None:      # left at its net class's
-        dsize, ddrill = net_class_via(items, net_name(items, node), "micro" in atoms(node))
+        dsize, ddrill = net_class_via(items, net, "micro" in atoms(node))
         size, drill = size if size is not None else dsize, drill if drill is not None else ddrill
     span = ctx.span(ends[0], ends[-1]) if len(ends) >= 2 else ctx.layers
-    net = net_name(items, node)
     pad = disk((x, y), size / 2)
     sizes = padstack_sizes(node, ctx.layers)
     prune = C.HONOUR_REMOVE_UNUSED_LAYERS and flag(node, "remove_unused_layers")
@@ -59,7 +59,7 @@ def drop_unconnected_rings(ctx):
             key = (l, net, zones)
             if key not in joined:
                 joined[key] = union([g for g, n in items.copper_items.get(l, [])
-                                     if (net == no_net or n == net) and (zones or id(g) not in ctx.zone_fills)])
+                                     if net in (no_net, n) and (zones or id(g) not in ctx.zone_fills)])
             return joined[key]
 
         # all tested before any is added, so one conditional ring does not keep another
@@ -71,9 +71,9 @@ def drop_unconnected_rings(ctx):
 
 def net_class_via(items, net, micro):
     """The size and drill of a via that gives none, from its net's class."""
-    if not hasattr(items, "_via_classes"):
-        items._via_classes = net_class_vias(items.raw.tree, items.raw.dialect)
-    default, classes = items._via_classes
+    if items.via_classes is None:
+        items.via_classes = net_class_vias(items.raw.tree, items.raw.dialect)
+    default, classes = items.via_classes
     v = classes.get(net, default)
     return (v[2], v[3]) if micro else (v[0], v[1])
 

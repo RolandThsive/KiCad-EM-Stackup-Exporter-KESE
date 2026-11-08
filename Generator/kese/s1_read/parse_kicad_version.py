@@ -321,7 +321,7 @@ def kicad_unescape(s):
         token = s[i + 1:j]
         if j >= n:                                   # not closed
             out.append("{" + kicad_unescape(token))
-        elif prev in "$~^_" and prev:
+        elif prev and prev in "$~^_":
             out.append("{" + kicad_unescape(token) + "}")
         elif token in NET_ESCAPES:
             out.append(NET_ESCAPES[token])

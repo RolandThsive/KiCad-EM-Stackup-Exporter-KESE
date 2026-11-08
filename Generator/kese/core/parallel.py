@@ -1,7 +1,7 @@
 """Work done on several processor cores at once.  In threads where the 2D geometry library (GEOS,
 under shapely) does the work, as it runs outside Python's lock; in processes of their own where
-Python's own steps are much of it (stage 6, which builds each part's solid; a big board's copper
-layers in stage 3 and its STEP parts in stage 7)."""
+Python's own steps are much of it (stage 6, which builds each part's solid or slices the parts for
+the visual skin; a big board's copper layers in stage 3 and its STEP parts in stage 7)."""
 import multiprocessing
 import os
 import sys

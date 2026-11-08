@@ -73,8 +73,9 @@ Stage 6 needs no CAD kernel. Every part's surface is worked out in 2D from its p
 (`kese/core/boundary.py`) and then cut into triangles (`kese/core/boundary_mesh.py`):
 
 ```python
-def boundary_of(part, prisms, log=None):
-    """The prisms of one part -> its Boundary, closed by construction."""
+def boundary_of(part, prisms, log=None, free=frozenset()):
+    """The prisms of one part -> its Boundary, closed by construction; `free`: heights its walls may
+    run on across (PrismSet.free_levels)."""
     levels = heights_of(prisms)                    # every height where a prism starts or ends
     slices = slices_of_part(prisms, levels, log)   # the material between two neighbouring heights
     flats, again = [], range(len(levels))

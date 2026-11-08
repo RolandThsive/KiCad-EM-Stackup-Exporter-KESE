@@ -6,7 +6,7 @@ from dataclasses import dataclass, field
 @dataclass
 class Prism:
     part: str            # name of the solid this prism belongs to ("Copper_+3V3", "Top Solder Mask", ...)
-    role: str            # "board", "copper", "plating", "mask", "mask_over_copper", "silk", "finish"
+    role: str            # "board", "copper", "plating", "mask", "mask_over_copper", "silk", "finish", "via_resin"
     region: object       # shapely (Multi)Polygon
     z0: float
     z1: float

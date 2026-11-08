@@ -2,8 +2,8 @@
 
 The surface finish is the metal a fabricator deposits on the bare copper of a board: pads,
 exposed traces, test points, the walls of the plated holes, the plated board edge and the
-castellations. `kese/s4_geometry/finish.py` builds it on the faces and `finish_shells.py` on the
-walls, in the holes and on the edge (`shells.py` lays each shell); the settings are in
+castellations. `kese/s4_geometry/finish.py` builds it on the faces, `finish_shells.py` on the
+walls and on the edge, and `finish_bores.py` in the holes (`shells.py` lays each shell); the settings are in
 `parameters/finish.py`.
 
 ## 14.1 On By Default
@@ -120,7 +120,7 @@ plated edge each part of the air's band is cut on its own, by the solid within f
 its box alone (`air_near` in `shells.py`): a bore by the board, the copper and the rings round it.
 A big part of the solid, such as the drilled board or a plane, is first cut into tiles of about
 2,000 vertices along halvings of its box, so that a bore clips only the tiles near it. A span's
-bores are laid in groups of about 200 near each other (`bore_groups` in `finish_shells.py`), bores
+bores are laid in groups of about 200 near each other (`bore_groups` in `finish_bores.py`), bores
 whose shells could meet always in one group, and the groups are worked on in threads. On NE_Delta
 the board's union took 31 s, where its 1,911 bores' air takes about 7 s this way. An inner layer's band
 that lies inside the outline, as on most boards, where no copper comes within the shells' reach of

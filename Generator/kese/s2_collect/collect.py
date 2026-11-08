@@ -37,9 +37,9 @@ def run(raw, job):
 def collect(raw, log):
     """RawBoard -> Items."""
     tree = raw.tree
-    items = Items(raw=raw, name=raw.name, layers=raw.copper_layers, stackup=None)
     setup = child(tree, "setup") or []
-    items.stackup = read_stackup(tree, raw.copper_layers, raw.file_thickness, log)
+    items = Items(raw=raw, name=raw.name, layers=raw.copper_layers,
+                  stackup=read_stackup(setup, raw.copper_layers, raw.file_thickness, log))
     read_setup(items, setup)
     read_nets(items, tree)
     ctx = Context(items)

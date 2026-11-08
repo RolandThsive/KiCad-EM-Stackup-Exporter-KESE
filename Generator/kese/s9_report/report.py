@@ -23,15 +23,14 @@ def write_parameters(path, overrides):
 
 
 def write_report(path, files, job):
+    """What was read, made and skipped, the notes, the parts, each stage's time and the Verifier's lines."""
     model = files.model
     r = model.prismset.regions
     st, items, raw = r.stackup, r.items, r.items.raw
-    L = []
-    L.append(f"{raw.name}  ({raw.path.name})   generated {datetime.now():%Y-%m-%d %H:%M}")
+    L = [f"{raw.name}  ({raw.path.name})   generated {datetime.now():%Y-%m-%d %H:%M}"]
     L.append(f"mode: {model.mode}   formats: {', '.join(job.formats)}   units: {model.units}")
     L.append(f"{raw.dialect.describe()}, generator {raw.generator}" + (f", title: {raw.title}" if raw.title else ""))
-    for w in raw.warnings:
-        L.append(f"warning: {w}")
+    L += [f"warning: {w}" for w in raw.warnings]
     L.append("")
     L.append("stack-up")
     L.append(f"  copper layers: {', '.join(r.layers)}")
@@ -46,17 +45,14 @@ def write_report(path, files, job):
     L.append(f"  {r.transform_note}")
     L.append("")
     L.append("read")
-    for what, n in sorted(items.found.items()):
-        L.append(f"  {n:6d}  {what}")
+    L += [f"  {n:6d}  {what}" for what, n in sorted(items.found.items())]
     L.append("skipped")
-    for what, n in sorted(items.skipped.items()):
-        L.append(f"  {n:6d}  {what}")
+    L += [f"  {n:6d}  {what}" for what, n in sorted(items.skipped.items())]
     if not items.skipped:
         L.append("  nothing")
     L.append("")
     L.append("notes")
-    for n in items.notes + model.prismset.notes + job.log_lines:
-        L.append(f"  {n}")
+    L += [f"  {n}" for n in items.notes + model.prismset.notes + job.log_lines]
     L.append("")
     L.append("parts")
     for part, mesh in model.meshes.items():
@@ -64,8 +60,7 @@ def write_report(path, files, job):
         L.append(f"  {part:36s} {len(mesh.faces):8d} triangles  material {m['name']} {m['color']} alpha {m['alpha']}")
     L.append("")
     L.append("timing")
-    for k, v in job.timings:      # to 0.1 ms: a short stage shows its time
-        L.append(f"  {k:14s} {v:9.4f} s")
+    L += [f"  {k:14s} {v:9.4f} s" for k, v in job.timings]      # to 0.1 ms: a short stage shows its time
     if files.verify_lines:
         L.append("")
         L.extend(files.verify_lines)

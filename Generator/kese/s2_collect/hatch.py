@@ -184,11 +184,10 @@ def pen_growth(pen):
 
 def text_hull(geom, pos, angle, margin):
     """A text's knockout (PCB_TEXT::TransformShapeToPolygon): the box of its letters, square to the
-    text, grown by `margin` (the hatch's margin and the pen's pen_growth)."""
-    upright = affinity.rotate(geom, angle, origin=pos)
+    text, grown by `margin` (for a hatch, the hatch's margin and the pen's pen_growth)."""
+    upright = affinity.rotate(geom, angle, origin=pos)          # font.render turned it by -angle
     x0, y0, x1, y1 = upright.bounds
-    m = margin
-    return affinity.rotate(box(x0 - m, y0 - m, x1 + m, y1 + m), -angle, origin=pos)
+    return affinity.rotate(box(x0 - margin, y0 - margin, x1 + margin, y1 + margin), -angle, origin=pos)
 
 
 def finish(ctx):

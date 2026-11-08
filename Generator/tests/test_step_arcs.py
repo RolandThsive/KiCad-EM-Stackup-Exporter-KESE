@@ -8,7 +8,6 @@ no free edge, the volume of the true shape.  Takes a few seconds.
 
     python -m pytest tests/test_step_arcs.py        (or:  python tests/test_step_arcs.py)"""
 import math
-import sys
 import tempfile
 from pathlib import Path
 
@@ -16,18 +15,15 @@ import numpy as np
 import shapely
 from shapely import affinity
 
-ROOT = Path(__file__).resolve().parents[1]
-sys.path.insert(0, str(ROOT))
-sys.path.insert(0, str(Path(__file__).resolve().parent))
-
-from kese.core.boundary import Boundary  # noqa: E402
-from kese.s7_write import step_arcs as sa  # noqa: E402
-from kese.s7_write.step import write_part  # noqa: E402
-from kese.s7_write.step_curved import with_arcs  # noqa: E402
-from kese.s7_write.step_topology import topology_of  # noqa: E402
-from kese.s7_write.step_writer import StepWriter  # noqa: E402
-from parameters import P  # noqa: E402
-from test_step_native import STEPControl_Reader, read_back, without_ocp  # noqa: E402
+from helpers import run_tests, settings
+from kese.core.boundary import Boundary
+from kese.s7_write import step_arcs as sa
+from kese.s7_write.step import write_part
+from kese.s7_write.step_curved import with_arcs
+from kese.s7_write.step_topology import topology_of
+from kese.s7_write.step_writer import StepWriter
+from parameters import P
+from test_step_native import STEPControl_Reader, read_back, without_ocp
 
 ERR = 0.005                                       # mm: the chords' largest distance from the circle
 
@@ -69,18 +65,13 @@ def arcs(region, levels=(0.0, 0.1)):
 def written(region, levels=(0.0, 0.1), arcs_on=True, M=None):
     """The region written as a STEP part and read back: [(valid, faces, free edges, volume)] per
     solid, and the file's size; None for the read-back without OCP."""
-    saved = P.Step.STEP_EXACT_ARCS
-    P.override("Step.STEP_EXACT_ARCS", arcs_on)
-    try:
-        with tempfile.TemporaryDirectory() as tmp:
-            path = Path(tmp) / "part.step"
-            w = StepWriter(path, "part", "mm")
-            solids = write_part(w, "part", slab(region, levels), np.eye(4) if M is None else M, lambda s: None)
-            w.add_part("part", (200, 120, 60), solids)
-            w.close()
-            return (read_back(path) if STEPControl_Reader else None), path.stat().st_size
-    finally:
-        P.override("Step.STEP_EXACT_ARCS", saved)
+    with settings({"Step.STEP_EXACT_ARCS": arcs_on}), tempfile.TemporaryDirectory() as tmp:
+        path = Path(tmp) / "part.step"
+        w = StepWriter(path, "part", "mm")
+        solids = write_part(w, "part", slab(region, levels), np.eye(4) if M is None else M, lambda s: None)
+        w.add_part("part", (200, 120, 60), solids)
+        w.close()
+        return (read_back(path) if STEPControl_Reader else None), path.stat().st_size
 
 
 def bite(gap, through):
@@ -146,9 +137,7 @@ def test_the_longest_arc_and_how_evenly_its_chords_turn_are_settings():
     and _MIN say how unevenly the chords of an arc may span."""
     ring = pad((0.0, 0.0), 1.0).difference(pad((0.0, 0.0), 0.4))
     big = pad((0.0, 0.0), 1.0).union(shapely.box(0.0, -0.2, 3.0, 0.2))
-    saved = P.Step.STEP_ARC_MAX_SWEEP_DEG
-    P.override("Step.STEP_ARC_MAX_SWEEP_DEG", 90.0)
-    try:
+    with settings({"Step.STEP_ARC_MAX_SWEEP_DEG": 90.0}):
         assert arcs(ring) == [90] * 8, arcs(ring)                   # two whole circles, in quarters
         assert abs(sum(arcs(big)) - 326) <= 2 and max(arcs(big)) <= 90, arcs(big)   # (each rounded)
         if not without_ocp():
@@ -156,8 +145,6 @@ def test_the_longest_arc_and_how_evenly_its_chords_turn_are_settings():
                 for levels in ((0.0, 0.1), (0.0, 0.035, 0.1)):
                     solids, _ = written(region, levels)
                     assert all(v and free == 0 for v, _, free, _ in solids), solids
-    finally:
-        P.override("Step.STEP_ARC_MAX_SWEEP_DEG", saved)
     assert arcs(ring) == [180, 180, 180, 180]                       # and back in halves
 
     def on_circle(spans):
@@ -168,12 +155,8 @@ def test_the_longest_arc_and_how_evenly_its_chords_turn_are_settings():
     for spans, name, loose in (([8, 12] * 5, "Step.STEP_ARC_TURN_RATIO_MIN", 0.6),    # 8 < 0.7 x 12
                                ([10] * 4 + [14] + [10] * 4, "Step.STEP_ARC_TURN_RATIO_MAX", 1.5)):  # 14 > 1.3 x 10
         assert sa.on_one_circle(on_circle(spans), sa.fit_of(P.Step)) is None, name
-        saved = getattr(P.Step, name.split(".")[1])
-        P.override(name, loose)
-        try:
+        with settings({name: loose}):
             assert sa.on_one_circle(on_circle(spans), sa.fit_of(P.Step)) is not None, name
-        finally:
-            P.override(name, saved)
 
 
 def test_the_two_arcs_of_an_s_bend_share_only_the_vertex_between_them():
@@ -253,26 +236,15 @@ def test_a_failure_in_the_arcs_writes_the_part_faceted():
         raise AssertionError("broken on purpose")
     saved, notes = step.with_arcs, []
     step.with_arcs = broken
-    P.override("Step.STEP_EXACT_ARCS", True)
     try:
-        with tempfile.TemporaryDirectory() as tmp:
+        with settings({"Step.STEP_EXACT_ARCS": True}), tempfile.TemporaryDirectory() as tmp:
             w = StepWriter(Path(tmp) / "part.step", "part", "mm")
             assert len(write_part(w, "Copper_X", slab(pad((0.0, 0.0))), np.eye(4), notes.append)) == 1
             w.discard()
     finally:
         step.with_arcs = saved
-        P.override("Step.STEP_EXACT_ARCS", False)
     assert notes == ["step: Copper_X: written without arcs (AssertionError: broken on purpose)"]
 
 
 if __name__ == "__main__":
-    test_circles_and_round_ends_become_arcs()
-    test_the_longest_arc_and_how_evenly_its_chords_turn_are_settings()
-    test_the_two_arcs_of_an_s_bend_share_only_the_vertex_between_them()
-    test_an_arc_that_would_cross_its_own_ring_stays_straight()
-    test_an_outline_may_touch_an_arc_where_it_joins_it_but_not_cross_it()
-    test_arcs_of_two_polygons_that_would_overlap_stay_straight()
-    test_an_arc_is_kept_where_the_edge_near_it_is_at_another_height()
-    test_written_files_read_back_as_valid_solids()
-    test_a_failure_in_the_arcs_writes_the_part_faceted()
-    print("ok" if STEPControl_Reader is not None else "ok (OCP not installed: the files were not read back)")
+    run_tests(__file__)

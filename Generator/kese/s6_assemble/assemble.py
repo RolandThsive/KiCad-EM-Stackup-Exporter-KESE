@@ -22,7 +22,7 @@ PART_ORDER = ["Board", "Copper", "Plating", "Via Resin", "Top Solder Mask", "Top
 def run(ps, job):
     what = "visible skin" if job.mode == "visual" else "joining the solids of every part"
     with job.stage("assemble", f"assemble ({what})"):
-        return assemble(ps, job.mode, job.note, check=job.verify)
+        return assemble(ps, job.mode, job.note, job.verify)
 
 
 def rank(name):
@@ -73,23 +73,24 @@ def finished_skin(skin, finish):
                             # peaks at 5.9 GB with --verify so, 7.1 GB with it kept
 
 
-def assemble(ps, mode, log, check=False):
+def assemble(ps, mode, log, check):
     """PrismSet -> Model; `check`: the Verifier will run, so each solid is checked as it is built."""
     mat = output_transform()
     finish = partial(finish_mesh, mat=mat)           # a module's function, for the worker processes
-    done, boundaries, checks = {}, {}, {}
-    for part, m in finished_meshes(ps, mode, log, finish, boundaries, checks, check):   # one raw mesh at a time
-        if m is not None:
-            done[part] = m
+    boundaries, checks = {}, {}
+    made = finished_meshes(ps, mode, log, finish, boundaries, checks, check)      # one raw mesh at a time
+    done = {part: m for part, m in made if m is not None}
     meshes = {part: done[part] for part in sorted(done, key=rank)}
     boundaries = {part: boundaries[part] for part in sorted(boundaries, key=rank)}   # not in the order built
-    props = {}
-    for part, prisms in ps.by_part().items():
-        p0 = prisms[0]
-        pr = dict(p0.props)
-        pr.update({"role": p0.role, "layer": p0.layer, "net": p0.net,
-                   "z_min_mm": round(min(p.z0 for p in prisms), 6), "z_max_mm": round(max(p.z1 for p in prisms), 6),
-                   "prisms": len(prisms)})
-        props[part] = pr
+    props = {part: props_of(prisms) for part, prisms in ps.by_part().items()}
     return Model(name=ps.regions.items.name, mode=mode, prismset=ps, meshes=meshes, materials=ps.materials, props=props,
                  transform=mat, units=P.Run.UNITS, boundaries=boundaries, checks=checks)
+
+
+def props_of(prisms):
+    """A part's properties: its first prism's, then its role, layer and net, its heights and how many
+    prisms it has."""
+    p0 = prisms[0]
+    return {**p0.props, "role": p0.role, "layer": p0.layer, "net": p0.net,
+            "z_min_mm": round(min(p.z0 for p in prisms), 6), "z_max_mm": round(max(p.z1 for p in prisms), 6),
+            "prisms": len(prisms)}

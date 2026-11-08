@@ -41,7 +41,7 @@ The prism is extruded over the z range of equations (8.8) and (8.9) in
 In `materials.json`, with `"layer"` grouping, every dielectric part carries `kind` (core /
 prepreg), `material`, `thickness_mm`, `epsilon_r`, `loss_tangent` and `between` (the two copper
 layers it separates). With `"merged"` the single `Board` part carries only the first dielectric's
-values (its kind, thickness, εr, tanδ and `between`).
+values (its kind, material, thickness, εr, tanδ and `between`).
 
 ## 11.2 Resin Fill Beside Inner Copper
 

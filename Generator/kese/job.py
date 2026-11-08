@@ -6,7 +6,7 @@ from contextlib import contextmanager
 from dataclasses import dataclass, field
 
 from kese.progress import Status
-from kese.s4_geometry.switches import SWITCHES, is_on
+from kese.s4_geometry.switches import SWITCHES
 from parameters import KINDS, MOVED, P, file_of
 
 MODES = ("simulation", "visual")
@@ -31,9 +31,9 @@ CHOICES = {
 ONE_OR_MORE = ("Geometry.PINCH_CUT_ROUNDS", "Geometry.VERTEX_SHARING_ROUNDS", "Geometry.NODING_ROUNDS",   # at 0 nothing
                "Parallel.SKIN_PROBES_AT_A_TIME", "Parallel.SKIN_PROBES_PER_SHARE", "Parallel.VERIFY_TRIANGLES_AT_A_TIME",
                "Parallel.STEP_ROWS_AT_A_TIME",
-               "Verifier.VERIFY_RAYS")                                                                 # (or no test)
-ONE_OR_MORE += ("Geometry.AIR_TILE_VERTICES", "Geometry.FINISH_BORES_AT_A_TIME", "Parallel.VERIFY_POLYGONS_PER_THREAD",
-                "Parallel.VERIFY_GROUPS_PER_WORKER")
+               "Verifier.VERIFY_RAYS",                                                                 # (or no test)
+               "Geometry.AIR_TILE_VERTICES", "Geometry.FINISH_BORES_AT_A_TIME", "Parallel.VERIFY_POLYGONS_PER_THREAD",
+               "Parallel.VERIFY_GROUPS_PER_WORKER")
 ZERO_OR_MORE = ("Geometry.HEIGHT_DIGITS", "Geometry.REACH_MARGIN_STEPS", "Geometry.AIR_NEAR_MARGIN_STEPS",
                 "Geometry.AIR_TILE_DEPTH", "Geometry.SKIN_FEW_PIECES", "Geometry.SKIN_BIG_PIECE_COORDINATES",
                 "Parallel.PROCESS_MIN_NETS", "Verifier.VERIFY_MERGE_EXTRA_DIGITS")
@@ -103,6 +103,18 @@ def start(mode=None, formats=None, out_root=None, overrides=(), verify=None, log
     mode = mode or R.MODE
     formats = formats or R.FILE_FORMAT
     formats = [formats] if isinstance(formats, str) else list(formats)       # "glb" is ["glb"]
+    check_request(mode, formats)
+    check_settings()
+    job = Job(mode=mode, formats=formats, out_root=out_root, overrides=tuple(overrides),
+              verify=P.Verifier.VERIFY if verify is None else verify, log=log, status=Status(R.SHOW_PROGRESS))
+    for old in sorted({key for key, _ in overrides} & MOVED.keys()):
+        job.note(f"{old} is now {MOVED[old]} ({file_of(MOVED[old].split('.')[0])}): the value given "
+                 f"for {old} is used as {MOVED[old]}")
+    return job
+
+
+def check_request(mode, formats):
+    """The mode and the formats asked for, or ValueError."""
     if mode not in MODES:
         raise ValueError(f"MODE must be 'simulation' or 'visual', not {mode!r}")
     bad = [f for f in formats if f not in FORMATS]
@@ -111,9 +123,13 @@ def start(mode=None, formats=None, out_root=None, overrides=(), verify=None, log
     if mode == "visual" and set(formats) - VISUAL_FORMATS:
         raise ValueError("visual mode is a surface, not solids: FILE_FORMAT may only contain glb / obj "
                          f"(asked for {sorted(set(formats) - VISUAL_FORMATS)})")
+
+
+def check_settings():
+    """Every setting of the kind and in the range it takes, at least one part switched on, and no
+    setting left under its old name in a parameter file; or ValueError, for the first that is not."""
     for key, words in CHOICES.items():
-        module, name = key.split(".")
-        value = getattr(getattr(P, module), name)
+        value = P.value(key)
         if value not in words:
             raise ValueError(f"{key} must be {' or '.join(map(repr, words))}, not {value!r}")
     left = [(old, new) for old, new in MOVED.items() if hasattr(getattr(P, old.split(".")[0]), old.split(".")[1])]
@@ -126,30 +142,24 @@ def start(mode=None, formats=None, out_root=None, overrides=(), verify=None, log
         if type(value) is not int or value < 0:
             raise ValueError(f"Parallel.{name} must be a whole number, 0 or more (0: {zero}), not {value!r}")
     for key, least in AT_LEAST.items():
-        value = getattr(getattr(P, key.split(".")[0]), key.split(".")[1])
+        value = P.value(key)
         if type(value) is not int or value < least:
             raise ValueError(f"{key} must be a whole number, {least} or more, not {value!r}")
     for key, least in NUMBER_AT_LEAST.items():
-        value = getattr(getattr(P, key.split(".")[0]), key.split(".")[1])
+        value = P.value(key)
         if type(value) not in (int, float) or not value >= least:
             raise ValueError(f"{key} must be a number, {least} or more, not {value!r}")
     for key in MORE_THAN_ZERO:
-        value = getattr(getattr(P, key.split(".")[0]), key.split(".")[1])
+        value = P.value(key)
         if type(value) not in (int, float) or not value > 0:
             raise ValueError(f"{key} must be a number more than 0, not {value!r}")
     for key in SHARES:
-        value = getattr(getattr(P, key.split(".")[0]), key.split(".")[1])
+        value = P.value(key)
         if type(value) not in (int, float) or not 0 < value <= 1:
             raise ValueError(f"{key} must be a number more than 0 and at most 1, not {value!r}")
     for key, kind in KINDS.items():                       # every other setting: of the kind its file gives it
-        value = getattr(getattr(P, key.split(".")[0]), key.split(".")[1], None)
+        value = P.value(key, None)
         if kind in KIND_WORDS and key != "Run.FILE_FORMAT" and not of_kind(value, kind):
             raise ValueError(f"{key} must be {KIND_WORDS[kind]}, not {value!r}")
-    if not any(is_on(key) for key in SWITCHES.values()):
+    if not any(P.value(key) for key in SWITCHES.values()):
         raise ValueError(f"nothing to build: {', '.join(sorted(set(SWITCHES.values())))} are all False")
-    job = Job(mode=mode, formats=formats, out_root=out_root, overrides=tuple(overrides),
-              verify=P.Verifier.VERIFY if verify is None else verify, log=log, status=Status(R.SHOW_PROGRESS))
-    for old in sorted({key for key, _ in overrides} & MOVED.keys()):
-        job.note(f"{old} is now {MOVED[old]} ({file_of(MOVED[old].split('.')[0])}): the value given "
-                 f"for {old} is used as {MOVED[old]}")
-    return job

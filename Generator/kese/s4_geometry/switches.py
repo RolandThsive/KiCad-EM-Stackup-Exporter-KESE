@@ -7,16 +7,10 @@ SWITCHES = {"board": "Board.BOARD_ENABLED", "copper": "Copper.COPPER_ENABLED", "
             "via_resin": "Copper.VIA_RESIN_ENABLED"}
 
 
-def is_on(key):
-    """The value of a switch, "Module.NAME"."""
-    module, name = key.split(".")
-    return getattr(getattr(P, module), name)
-
-
 def enabled(role):
-    return is_on(SWITCHES[role])
+    return P.value(SWITCHES[role])
 
 
 def switched_off():
     """The switches that are off, sorted."""
-    return sorted({key for key in SWITCHES.values() if not is_on(key)})
+    return sorted({key for key in SWITCHES.values() if not P.value(key)})

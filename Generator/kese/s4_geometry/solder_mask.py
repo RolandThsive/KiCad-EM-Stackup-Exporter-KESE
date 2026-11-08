@@ -14,7 +14,7 @@ from kese.core import shapes2d as sh
 from kese.core.conformal import conformal_regions, without_hairlines
 from kese.core.parallel import in_parallel
 from kese.core.shape_copies import own
-from kese.s4_geometry.finish import under_mask_copper, under_mask_mm
+from kese.s4_geometry.finish import SIDES, under_mask_copper, under_mask_mm
 from kese.s4_geometry.heights import mask_thicknesses
 from kese.s4_geometry.switches import enabled
 from parameters import P
@@ -26,7 +26,6 @@ def build(r, ps, mode):
     lift = under_mask_mm(st)                   # finish applied before the mask lies under it, on the copper
     ps.notes.append(f"solder mask: {t_lam} mm over laminate, {t_cu} mm over copper ({src})"
                     + (f", on the finish ({lift:.6g} mm) over copper" if lift else ""))
-    sides = (("F", "F.Cu", 1, "Top"), ("B", "B.Cu", -1, "Bottom"))
 
     def split(side):                           # (flat, top, slivers left out, wall) of one side, or None; in a
         region = own(r.mask[side[0]])          # thread, on its own copies (the two sides' shapes come from the same ones)
@@ -39,7 +38,7 @@ def build(r, ps, mode):
         cu = under_mask_copper(st, cu)
         flat, top, wall = conformal_regions(region, cu, t_lam, M.MASK_WALL_QUAD_SEGS)
         return flat, *without_hairlines(top, M.MASK_OVER_COPPER_HAIRLINE_MM), wall
-    for (side, layer, sign, tb), pieces in zip(sides, in_parallel(split, sides)):   # both sides at once
+    for (side, layer, sign, tb), pieces in zip(SIDES, in_parallel(split, SIDES)):   # both sides at once
         if pieces is None:
             continue
         flat, top, slivers, wall = pieces
