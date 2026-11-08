@@ -6,20 +6,14 @@ stays prepared.  And an index built before threads share it (shared_tree) finds 
 finds, from eight threads at once.
 
     python -m pytest tests/test_pairs.py     (or:  python tests/test_pairs.py)"""
-import sys
-from pathlib import Path
+import numpy as np
+import shapely
+from shapely.geometry import Point, box
 
-ROOT = Path(__file__).resolve().parents[1]
-sys.path.insert(0, str(ROOT))
-
-import numpy as np  # noqa: E402
-import shapely  # noqa: E402
-from shapely.geometry import Point, box  # noqa: E402
-
-from kese.core import shapes2d as sh  # noqa: E402
-from kese.core.graph import pairs_within, shared_tree  # noqa: E402
-from kese.core.parallel import in_parallel  # noqa: E402
-from parameters import P  # noqa: E402
+from helpers import run_tests, settings
+from kese.core import shapes2d as sh
+from kese.core.graph import pairs_within, shared_tree
+from kese.core.parallel import in_parallel
 
 
 def by_query(parts, d):
@@ -62,19 +56,12 @@ def test_a_shared_tree_finds_what_an_strtree_finds_from_many_threads():
     parts = shapes()
     probes = [shapely.box(x, y, x + 1.5, y + 1.5) for x in range(0, 20, 2) for y in range(0, 20, 2)]
     want = [shapely.STRtree(parts).query(p, predicate="intersects").tolist() for p in probes]
-    workers = P.Parallel.WORKERS
-    P.override("Parallel.WORKERS", 8)
-    try:
+    with settings({"Parallel.WORKERS": 8}):
         for _ in range(5):          # a fresh tree each time, queried first from the threads
             tree = shared_tree(parts)
             assert in_parallel(lambda p, tree=tree: tree.query(p, predicate="intersects").tolist(), probes) == want
-    finally:
-        P.override("Parallel.WORKERS", workers)
     assert len(shared_tree([]).query(probes[0])) == 0
 
 
 if __name__ == "__main__":
-    test_the_pairs_are_those_the_query_finds()
-    test_no_shape_is_left_prepared_and_one_prepared_before_stays_so()
-    test_a_shared_tree_finds_what_an_strtree_finds_from_many_threads()
-    print("ok")
+    run_tests(__file__)

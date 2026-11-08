@@ -119,7 +119,7 @@ def _srgb_to_linear(rgb):                    # rgb: the hex colour as three 0-25
     s = np.asarray(rgb, dtype=float) / 255
     return np.where(s <= 0.04045, s / 12.92, ((s + 0.055) / 1.055) ** 2.4)
 
-factor = [*np.round(_srgb_to_linear(mat["rgb"]), 5), round(float(mat["alpha"]), 4)]
+factor = np.array([*np.round(_srgb_to_linear(mat["rgb"]), 5), round(float(mat["alpha"]), 4)])
 ```
 
 The GLB writer then stores the factor in 8 bits, so the GLB holds the nearest step of 1/255:

@@ -9,27 +9,19 @@ of the mask does.
 
     python -m pytest tests/test_hatch.py            (or:  python tests/test_hatch.py)"""
 import math
-import sys
-from pathlib import Path
 from types import SimpleNamespace
 
 import shapely
 from shapely.geometry import Point, box
 
-ROOT = Path(__file__).resolve().parents[1]
-sys.path.insert(0, str(ROOT))
+from helpers import FEATURES, run_stages, run_tests, settings
+from kese.core.sexp import parse
+from kese.core.shapes2d import EMPTY
+from kese.s1_read.parse_kicad_version import TEXTBOX_BORDER_FROM, textbox_border
+from kese.s2_collect.hatch import Hatched, Knockout, hatch, hatch_of, hatch_segments, knocks, pen_growth, spacing_nm
+from kese.s3_resolve import resolve
 
-from kese.core.sexp import parse  # noqa: E402
-from kese.core.shapes2d import EMPTY  # noqa: E402
-from kese.job import start  # noqa: E402
-from kese.s1_read import read  # noqa: E402
-from kese.s1_read.parse_kicad_version import TEXTBOX_BORDER_FROM, textbox_border  # noqa: E402
-from kese.s2_collect import collect  # noqa: E402
-from kese.s2_collect.hatch import Hatched, Knockout, hatch, hatch_of, hatch_segments, knocks, pen_growth, spacing_nm  # noqa: E402
-from kese.s3_resolve import resolve  # noqa: E402
-from parameters import P  # noqa: E402
-
-BOARD = ROOT.parent / "featureTest" / "27_hatched_fills.kicad_pcb"
+BOARD = FEATURES / "27_hatched_fills.kicad_pcb"
 # KiCad 10.0's pcbnew, featureTest/27: the area (mm2) of each layer in a window (mm from the board's
 # corner, grown by 0.4) around each hatched drawing, as KiCad draws the layer to plot it
 KICAD = {
@@ -123,15 +115,8 @@ def test_the_fill_word_is_read_as_kicad_10_writes_it():
 
 
 def test_the_hatches_are_what_kicad_draws():
-    saved = P.SolderMask.SOLDER_MASK_ENABLED, P.Silkscreen.SILKSCREEN_ENABLED
-    P.override("SolderMask.SOLDER_MASK_ENABLED", True)
-    P.override("Silkscreen.SILKSCREEN_ENABLED", True)
-    try:
-        job = start("simulation", ["glb"], None, (), False, lambda s: None)
-        r = resolve.run(collect.run(read.run(str(BOARD), job), job), job)
-    finally:
-        P.override("SolderMask.SOLDER_MASK_ENABLED", saved[0])
-        P.override("Silkscreen.SILKSCREEN_ENABLED", saved[1])
+    with settings({"SolderMask.SOLDER_MASK_ENABLED": True, "Silkscreen.SILKSCREEN_ENABLED": True}):
+        r, _ = run_stages(BOARD, resolve)
     mine = {"F.Cu": r.copper_all["F.Cu"], "B.Cu": r.copper_all["B.Cu"], "F.SilkS": r.silk["F"],
             "F.Mask": r.mask_open["F"], "B.Mask": r.mask_open["B"]}
     for name, (layer, (x0, y0, x1, y1), kicad) in KICAD.items():
@@ -145,7 +130,4 @@ def test_the_hatches_are_what_kicad_draws():
 
 
 if __name__ == "__main__":
-    for name, fn in list(globals().items()):
-        if name.startswith("test_"):
-            fn()
-            print("ok", name)
+    run_tests(__file__)

@@ -33,4 +33,5 @@
 - [Glossary](Glossary.md)
 - [Immediate Next Steps](Immediate-Next-Steps.md)
 - [Future Upgrades And Planning](Future-Upgrades-And-Planning.md)
+- [Credits](Credits.md)
 - [License](License.md)

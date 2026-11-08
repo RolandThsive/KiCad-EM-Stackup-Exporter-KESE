@@ -5,16 +5,11 @@ otherwise), and such a stop spreads along the ring of walls it is on; walls of d
 not join.
 
     python -m pytest tests/test_tall_walls.py       (or:  python tests/test_tall_walls.py)"""
-import sys
-from pathlib import Path
-
 import numpy as np
 from shapely.geometry import box
 
-ROOT = Path(__file__).resolve().parents[1]
-sys.path.insert(0, str(ROOT))
-
-from kese.core.tall_walls import tall_walls  # noqa: E402
+from helpers import run_tests
+from kese.core.tall_walls import tall_walls
 
 LEVELS = [0.0, 1.0, 2.0, 3.0]
 SQUARE = np.array([[(0, 0), (4, 0)], [(4, 0), (4, 4)], [(4, 4), (0, 4)], [(0, 4), (0, 0)]], dtype=float)
@@ -38,7 +33,7 @@ def test_a_wall_runs_on_across_free_heights():
 def test_a_vertex_on_an_edge_stops_the_wall_and_the_stop_spreads_round_the_ring():
     flats = [(1.0, box(4, 0, 6, 2), True)]                        # a face at 1.0 with a corner at (4, 0)
     out = tall_walls(slices(), flats, LEVELS, {1.0, 2.0})
-    for z0, z1, s in out:
+    for z0, z1, _ in out:
         assert (z0, z1) in ((0.0, 1.0), (1.0, 3.0)), (z0, z1)     # every wall of the ring stops at 1.0
     assert sum(len(s) for z0, z1, s in out if (z0, z1) == (0.0, 1.0)) == 4
 
@@ -61,7 +56,4 @@ def test_no_free_heights_leaves_the_walls_as_they_are():
 
 
 if __name__ == "__main__":
-    for name, fn in list(globals().items()):
-        if name.startswith("test_"):
-            fn()
-            print("ok", name)
+    run_tests(__file__)

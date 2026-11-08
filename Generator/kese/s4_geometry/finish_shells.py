@@ -7,10 +7,10 @@ from kese.core import shapes2d as sh
 from kese.core.parallel import in_parallel
 from kese.core.shape_copies import own
 from kese.core.shapes2d import EMPTY, union
-from kese.s3_resolve.holes import drilled, drills, full_height
-from kese.s4_geometry.finish import exposed, finish_layers
+from kese.s3_resolve.holes import cut_back, drilled, drills, full_height, ring_of
+from kese.s4_geometry.finish import exposed, finish_layers, named
 from kese.s4_geometry.finish_bores import bores
-from kese.s4_geometry.shells import add_all, air_near, bare_faces, groups, named, near_faces, note, reach, shells
+from kese.s4_geometry.shells import add_all, air_near, bare_faces, groups, near_faces, note, reach, shells
 from parameters import P
 
 
@@ -31,7 +31,7 @@ def _edge_copper(r):
     cast = []
     for h in r.items.holes:
         if h.castellated:
-            ring = sh.inter(r.to_board_T(h.drill.difference(h.drill.buffer(-h.wall))), r.outline)
+            ring = sh.inter(r.to_board_T(ring_of(h)), r.outline)
             if not ring.is_empty:
                 cast.append((ring, h.net))
     what = " and ".join(w for w, on in (("plated edge", edge), ("castellations", cast)) if on)
@@ -40,7 +40,9 @@ def _edge_copper(r):
 
 def edge(r, ps, layers):
     """The finish on the plated edge and in the castellations, from B.Cu's bottom to F.Cu's top, over
-    the corner where the copper beside it is bare ("Edge Finish <metal>"); -> its zone, or None."""
+    the corner where the copper beside it is bare ("Edge Finish <metal>"); where post machining, a
+    backdrill or a blind or buried hole cuts the plated edge (r.edge_cuts), on what is left of it,
+    stretch by stretch, as on a cut barrel (finish_bores.py); -> its zone, or None."""
     copper, what = _edge_copper(r)
     if not copper:
         return None
@@ -53,7 +55,14 @@ def edge(r, ps, layers):
                    + list(r.copper_all.values()) + list(faces.values()))
     caps = [(near_faces(faces[s], d), z, sign)
             for s, z, sign in (("F", top, 1), ("B", bottom, -1)) if not faces[s].is_empty]
-    add_all(ps, shells(layers, M, groups(copper, d), air, (bottom, top), caps, named("Edge"), "Edge.Finish", "Edge"))
+    spans = [(copper, bottom, top)]
+    if r.edge_cuts:                     # copper[0] is the plated edge, the rest the castellations
+        spans = [([(g, r.edge_net)] + copper[1:], z0, z1)
+                 for g, z0, z1 in cut_back(r.edge_band, bottom, top, r.edge_cuts)]
+    for parts, z0, z1 in spans:
+        ends = [cap for cap in caps if (z1 == top if cap[2] > 0 else z0 == bottom)]
+        add_all(ps, shells(layers, sh.snap(union([m for m, _ in parts])), groups(parts, d), air, (z0, z1), ends,
+                           named("Edge"), "Edge.Finish", "Edge"))
     note(ps, f"on the {what}", layers, "edge")
     return near_faces(M, d)
 

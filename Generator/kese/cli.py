@@ -37,6 +37,55 @@ def old_packages():
     return [] if hasattr(shapely, "constrained_delaunay_triangles") else [f"shapely {shapely.__version__} (2.1 or newer)"]
 
 
+def overrides_of(ap, args):
+    """The preset's settings, then each --set, then the command-line choices, each applied to the
+    parameters: [(key, value)] in that order, for parameters.txt.  A wrong name stops the run here."""
+    overrides = []
+
+    def apply(key, value, said):
+        try:
+            P.override(key, value)
+        except ValueError as e:                           # a misspelt name, here or in a preset: said before any work
+            ap.error(f"{said}: {e}")
+        overrides.append((key, value))
+
+    if args.preset:
+        overrides.append(("PRESET", args.preset))
+        preset = P.Presets.PRESETS[args.preset]
+        if not isinstance(preset, dict):
+            ap.error(f"--for {args.preset}: parameters/presets.py gives it {preset!r}, not {{\"Module.NAME\": value}}")
+        for key, value in preset.items():
+            apply(key, value, f"--for {args.preset}")
+    for item in args.set:
+        key, is_, val = item.partition("=")
+        if not is_:
+            ap.error(f"--set {item}: give it a value, as in {item}=value")
+        try:
+            value = ast.literal_eval(val)
+        except Exception:
+            value = val
+        apply(key.strip(), value, f"--set {item}")
+    for key, value in (("Run.MODE", args.mode), ("Run.FILE_FORMAT", args.format), ("Verifier.VERIFY", True if args.verify else None)):
+        if value is not None:                             # command-line choices are overrides too
+            P.override(key, value)
+            overrides.append((key, value))
+    return overrides
+
+
+def check_packages():
+    """Stop with what to install when a package is missing or too old."""
+    missing = missing_packages()
+    if missing:
+        sys.exit(f"missing Python package(s): {', '.join(missing)}\n"
+                 f"install them with:  python -m pip install {' '.join(missing)}\n"
+                 "(or the tested versions:  python -m pip install -r requirements.txt)")
+    old = old_packages()
+    if old:
+        sys.exit(f"Python package(s) too old: {', '.join(old)}\n"
+                 "upgrade with:  python -m pip install --upgrade shapely\n"
+                 "(or the tested versions:  python -m pip install -r requirements.txt)")
+
+
 def main():
     ap = argparse.ArgumentParser(prog="kese", description="KiCad EM Stackup Exporter: .kicad_pcb -> solids for EM simulation, or a visual surface")
     ap.add_argument("boards", nargs="*", help=".kicad_pcb files (default: all in Input/)")
@@ -50,46 +99,8 @@ def main():
     ap.add_argument("--version", action="version", version=f"kese {__version__}")
     args = ap.parse_args()
 
-    overrides = []
-    if args.preset:
-        overrides.append(("PRESET", args.preset))
-        preset = P.Presets.PRESETS[args.preset]
-        if not isinstance(preset, dict):
-            ap.error(f"--for {args.preset}: parameters/presets.py gives it {preset!r}, not {{\"Module.NAME\": value}}")
-        for key, value in preset.items():
-            try:
-                P.override(key, value)
-            except ValueError as e:                       # a misspelt name in parameters/presets.py
-                ap.error(f"--for {args.preset}: {e}")
-            overrides.append((key, value))
-    for item in args.set:
-        key, is_, val = item.partition("=")
-        if not is_:
-            ap.error(f"--set {item}: give it a value, as in {item}=value")
-        try:
-            value = ast.literal_eval(val)
-        except Exception:
-            value = val
-        try:
-            P.override(key.strip(), value)
-        except ValueError as e:                           # a misspelt name: said before any work
-            ap.error(f"--set {item}: {e}")
-        overrides.append((key.strip(), value))
-
-    for key, value in (("Run.MODE", args.mode), ("Run.FILE_FORMAT", args.format), ("Verifier.VERIFY", True if args.verify else None)):
-        if value is not None:                             # command-line choices are overrides too
-            P.override(key, value)
-            overrides.append((key, value))
-    missing = missing_packages()
-    if missing:
-        sys.exit(f"missing Python package(s): {', '.join(missing)}\n"
-                 f"install them with:  python -m pip install {' '.join(missing)}\n"
-                 "(or the tested versions:  python -m pip install -r requirements.txt)")
-    old = old_packages()
-    if old:
-        sys.exit(f"Python package(s) too old: {', '.join(old)}\n"
-                 "upgrade with:  python -m pip install --upgrade shapely\n"
-                 "(or the tested versions:  python -m pip install -r requirements.txt)")
+    overrides = overrides_of(ap, args)
+    check_packages()
 
     from kese.pipeline import generate  # after the overrides, so the modules see them
 

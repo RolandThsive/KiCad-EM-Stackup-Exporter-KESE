@@ -1,10 +1,13 @@
 """Surface finish (ENIG, HASL, ...) on the copper the solder mask leaves bare: the type and its
-layers, and the finish on the faces of the top and bottom copper.  The finish on the walls, in the
-holes, on the plated edge and in the castellations is finish_shells.py (shells.py lays them)."""
+layers, and the finish on the faces of the top and bottom copper.  The finish on the walls, on the
+plated edge and in the castellations is finish_shells.py, the finish in the holes finish_bores.py
+(shells.py lays them)."""
 from kese.core import shapes2d as sh
 from kese.core.conformal import grow
 from kese.core.shapes2d import EMPTY
 from parameters import P
+
+SIDES = (("F", "F.Cu", 1, "Top"), ("B", "B.Cu", -1, "Bottom"))    # (side, its copper, z's sign, part prefix)
 
 
 def mitre():
@@ -41,8 +44,8 @@ def finish_type(st):
 
 
 def finish_layers(st):
-    """[(metal, mm)] of the finish the board gets, bottom to top, or None (off, or "None" in the
-    file); -> (layers, type)."""
+    """(layers, type): [(metal, mm)] of the finish the board gets, bottom to top, and its key of
+    FINISH_TYPES; (None, None) when the finish is off or the file says "None"."""
     F = P.Finish
     if not F.FINISH_ENABLED:
         return None, None
@@ -83,6 +86,11 @@ def exposed(r, side, cu, take=lambda g: g):
     return bare
 
 
+def named(prefix):
+    """The part name for a metal (and a net, with FINISH_GROUPING = "net"): "<prefix> Finish Gold_GND"."""
+    return lambda metal, net: f"{prefix} Finish {metal}" + (f"_{net}" if net is not None else "")
+
+
 def props(side, metal, t, **kw):
     """The finish part's properties for materials.json."""
     return {"side": side, "metal": metal, "thickness_mm": t,
@@ -102,7 +110,7 @@ def build(r, ps):
     ps.notes.append(f"finish: {kind} " + " + ".join(f"{m} {t} mm" for m, t in layers)
                     + (", before the solder mask: on all the outer copper, under the mask"
                        if F.FINISH_BEFORE_SOLDER_MASK else ""))
-    for side, layer, sign, tb in (("F", "F.Cu", 1, "Top"), ("B", "B.Cu", -1, "Bottom")):
+    for side, layer, sign, tb in SIDES:
         # one part per metal and side, or per metal and net (FINISH_GROUPING = "net")
         groups = r.copper[layer].items() if F.FINISH_GROUPING == "net" else [(None, r.copper_all.get(layer, EMPTY))]
         for net, cu in groups:
@@ -111,9 +119,8 @@ def build(r, ps):
                 continue
             z = abs(st.band[layer][1] if sign > 0 else st.band[layer][0])
             for metal, t in layers:
-                part = f"{tb} Finish {metal}" + (f"_{net}" if net is not None else "")
-                ps.add(part, "finish", bare, sign * z, sign * (z + t), layer=f"{side}.Finish", net=net,
-                       props=props(side, metal, t))
+                ps.add(named(tb)(metal, net), "finish", bare, sign * z, sign * (z + t), layer=f"{side}.Finish",
+                       net=net, props=props(side, metal, t))
                 z += t
 
 

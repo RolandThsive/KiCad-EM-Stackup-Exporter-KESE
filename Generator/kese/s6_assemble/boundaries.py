@@ -12,7 +12,7 @@ from kese.core.part_checks import part_check
 from parameters import P
 
 
-def boundaries_and_meshes(ps, log, finish, check=False):
+def boundaries_and_meshes(ps, log, finish, check):
     """PrismSet -> (part name, Boundary, mesh or None, its checks or None) one part after another,
     the biggest started first, each mesh finished by `finish` (a module's function) and, with
     `check`, checked for the Verifier, in the process that built it.  The notes made on the way are
@@ -33,7 +33,7 @@ def boundaries_and_meshes(ps, log, finish, check=False):
             log(f"{part}: {s}")
 
 
-def build(part, prisms, finish, check=False, free=frozenset()):
+def build(part, prisms, finish, check, free):
     """One part's Boundary, its finished mesh, the notes made on the way, and with `check` what the
     Verifier asks of it (else None); `free`: PrismSet.free_levels."""
     notes = []

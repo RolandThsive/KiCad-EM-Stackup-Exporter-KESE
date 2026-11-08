@@ -1,5 +1,5 @@
 """Stage 7 - write: the Model -> files in a new output folder: the formats asked for (GLB, OBJ,
-STL, STEP), then materials.json."""
+STL, STEP), then materials.json (Run.WRITE_MATERIALS_JSON)."""
 from kese.core.whole_files import remove_if_empty
 from kese.model.files import Files
 from kese.s7_write import glb, materials_json, obj, step, stl

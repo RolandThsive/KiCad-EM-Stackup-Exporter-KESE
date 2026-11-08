@@ -20,7 +20,7 @@ HATCHABLE = ("circle", "rect", "poly")       # the drawings KiCad 10 can hatch
 
 
 def graphic(node, T):
-    """A gr_*/fp_* drawing -> (centre-line geometry, closed?, stroke width, filled?)."""
+    """A gr_*/fp_* drawing of a kind in GRAPHICS -> (centre-line geometry, closed?, stroke width, filled?)."""
     kind = node[0].split("_", 1)[1]
     w = stroke_width(node)
     filled = is_filled(node, kind, w)
@@ -57,10 +57,8 @@ def graphic(node, T):
         if kind == "ellipse":
             return Polygon(pts), True, w, filled
         return LineString(pts), False, w, False
-    if kind in ("curve", "bezier"):
-        pts = [T(pt(p)) for p in child(node, "pts")[1:] if p[0] == "xy"]
-        return LineString(bezier(pts)), False, w, False
-    return None, False, 0.0, False
+    pts = [T(pt(p)) for p in child(node, "pts")[1:] if p[0] == "xy"]          # curve, bezier
+    return LineString(bezier(pts)), False, w, False
 
 
 def ellipse_pts(node, arc):
@@ -85,7 +83,7 @@ def ellipse_pts(node, arc):
 
 def painted(geom, closed, w, filled):
     """What a drawing covers on a non-outline layer."""
-    if geom is None or geom.is_empty:
+    if geom.is_empty:
         return EMPTY
     parts = [geom] if closed and filled else []
     parts.append(thicken(geom.boundary if closed else geom, w))   # boundary: a self-crossing poly is a MultiPolygon
@@ -96,7 +94,7 @@ def add_drawing(ctx, node, T, in_footprint=False, fp=None):
     """A drawing on its layer; `fp`: the footprint it belongs to (an id), for hatch knockouts."""
     layer, bare = layer_and_mask(node)
     geom, closed, w, filled = graphic(node, T)
-    if geom is None or geom.is_empty:
+    if geom.is_empty:
         return
     if layer == "Edge.Cuts":
         if closed:      # a self-crossing poly is a MultiPolygon: one outline per face

@@ -35,7 +35,7 @@ def at(x, y):
     return (X0 + x, Y0 + y)
 
 
-@functools.lru_cache(maxsize=None)
+@functools.cache
 def kicad7():
     """KiCad 7's Python module (pcbnew), or None when it is not installed.  wxWidgets' image
     handlers are registered first, as KiCad does when it starts: without them it saves pictures

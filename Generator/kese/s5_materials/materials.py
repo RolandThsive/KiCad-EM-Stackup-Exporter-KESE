@@ -62,7 +62,7 @@ def material_for(part, role, props, stackup, mode):
     key = _key(part, role, props, mode)
     m = dict(C.MATERIALS.get(key) or C.MATERIALS["Board"])
     m["name"] = key
-    if C.USE_STACKUP_COLORS and stackup is not None:
+    if C.USE_STACKUP_COLORS:
         side, picked = "F" if part.startswith("Top") else "B", None
         if role in ("mask", "mask_over_copper"):
             over = role == "mask_over_copper" and mode == "visual"
@@ -81,7 +81,7 @@ def material_for(part, role, props, stackup, mode):
 
 def color(ps, stackup, mode, log):
     """-> {part: material dict}; also writes prism.material."""
-    if P.Color.USE_STACKUP_COLORS and stackup is not None:
+    if P.Color.USE_STACKUP_COLORS:
         for layer, value in unknown_colors(stackup):
             log(f"warning: the stack-up colour {value!r} of {layer} is neither a colour name of "
                 f"parameters/color.py nor #RRGGBBAA; its parts keep their MATERIALS colour")

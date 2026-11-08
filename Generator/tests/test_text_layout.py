@@ -7,19 +7,14 @@ stroked text thickened as the SVG draws it), to 5 µm: KESE draws round ends wit
 Silkscreen.TEXT_STROKE_QUAD_SEGS segments per quarter circle.  Takes a moment.
 
     python -m pytest tests/test_text_layout.py           (or:  python tests/test_text_layout.py)"""
-import sys
 import tempfile
 from pathlib import Path
 
-ROOT = Path(__file__).resolve().parents[1]
-sys.path.insert(0, str(ROOT))
-
-from kese.job import start  # noqa: E402
-from kese.pipeline import STAGES  # noqa: E402
-from kese.core.sexp import parse, unescape  # noqa: E402
-from kese.s1_read.parse_kicad_version import kept_upright  # noqa: E402
-from kese.s2_collect.text import upright  # noqa: E402
-from parameters import P  # noqa: E402
+from helpers import run_stages, run_tests
+from kese.core.sexp import parse, unescape
+from kese.s1_read.parse_kicad_version import kept_upright
+from kese.s2_collect import collect
+from kese.s2_collect.text import upright
 
 TOLERANCE_MM = 0.005
 ONE = "(font (size 1 1) (thickness 0.15))"
@@ -67,16 +62,12 @@ def board():
 '''
 
 
-def collect(text):
+def collected(text):
     """Items of a board file, from stages 1 and 2."""
     with tempfile.TemporaryDirectory() as tmp:
         pcb = Path(tmp) / "texts.kicad_pcb"
         pcb.write_text(text)
-        job = start("simulation", ["glb"], Path(tmp) / "out", (), True, lambda s: None)
-        try:
-            return STAGES[1].run(STAGES[0].run(pcb, job), job)
-        finally:
-            job.status.stop()
+        return run_stages(pcb, collect)[0]
 
 
 def overlap(a, b):
@@ -85,8 +76,7 @@ def overlap(a, b):
 
 
 def test_texts_where_kicad_plots_them():
-    P.Run.SHOW_PROGRESS = False
-    items = collect(board())
+    items = collected(board())
     expected = [(t, layer[0], b) for t, _, layer, _, b in TEXTS] + [("U12", "F", U12)]
     for text, side, want in expected:
         got = max(items.silk_items[side], key=lambda g: overlap(g.bounds, want)).bounds
@@ -106,6 +96,4 @@ def test_upright_and_escapes():
 
 
 if __name__ == "__main__":
-    test_upright_and_escapes()
-    test_texts_where_kicad_plots_them()
-    print("ok")
+    run_tests(__file__)

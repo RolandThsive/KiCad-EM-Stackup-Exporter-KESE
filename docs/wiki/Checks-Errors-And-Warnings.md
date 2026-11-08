@@ -365,10 +365,12 @@ version does (a title block value by the board's properties, the properties befo
 title block, `${CURRENT_DATE}` in the title block, KiCad 10's passes, a footprint's reference and
 value), in a moment (`python tests/test_text_vars.py`); `tests/test_kicad_version.py`, which
 checks the rules of each
-KiCad version (release of each format number, copper layers by their place, the zero mask margin,
+KiCad version (release of each format number, copper layers by their place and only the run of
+them that opens the layer list, the zero mask margin,
 KiCad 4's text size, the text pen, segment-filled zones, the old overbar, a text's words past
 KiCad 7's bare `locked` and the old `%V` and `%R`, markup, the net class
-a KiCad 4/5 via takes its size and drill from) against what
+a KiCad 4/5 via takes its size and drill from, and the file's tokens as KiCad reads them: an old
+board's inch mark inside a bare atom, comment lines, and escapes in quoted strings) against what
 KiCad's own parser does, without a board, in under a second; `tests/test_enabled.py`, which turns
 each part switch off in turn (`BOARD_ENABLED`, `COPPER_ENABLED`, `FINISH_ENABLED`,
 `SOLDER_MASK_ENABLED`, `SILKSCREEN_ENABLED`) and finds only that switch's parts gone and every other
@@ -386,22 +388,25 @@ two seconds
 meeting the same faces on every ray with the board `upright` and `flat`, and casting its rays on a
 32-bit Python (Pyodide, in the browser) as it does on 64 bits, the checks made where each
 part is built giving the report stage 8 gives on its own, an open part they found failing the
-run, and the overlap check finding the same overlaps in threads as in one, in a few seconds
-(`python tests/test_verifier.py`); `tests/test_parallel.py`, which finds a thread's
+run, the overlap check finding the same overlaps in threads as in one, and rays through the faces
+featureTest/21's skin left flat on their own taking turns in and out (those faces left out), in
+about half a minute (`python tests/test_verifier.py`); `tests/test_threads.py`, which finds a thread's
 own copies of shapes to be the same shapes, each part on its grid, made only where GEOS needs them,
 and threads working on their own copies of one shape not crashing; finds threads taking turns with
 one prepared copy of a slice's material, threads cutting faces only by the pieces of material that
 meet them and a face wholly against material taken out at once, the test of whether a slice covers
 a face answering as GEOS's covers does on faces that share edges with the material's outline and
 holes, the test for hidden triangles letting go of its prepared slices and sharing a slow slice's
-probes among the threads, the skin's meshes finished in threads, the biggest first and never more faces at once than the biggest holds, a set of holes joined once when threads ask for it at once, and the memory threads freed
-handed back (and kept with `Parallel.GIVE_BACK_MEMORY` off), and batches of any size giving the
-same result (a STEP part written in slices of any size the same to the byte, a STEP file written
+probes among the threads, the skin's meshes finished in threads, the biggest first and never more faces at once than the biggest holds, the solder mask's webs
+found group by group in threads the same as the whole layer's (a stray line among the openings
+left out), a set of holes joined once when threads ask for it at once, and the memory threads freed
+handed back (and kept with `Parallel.GIVE_BACK_MEMORY` off), in about three seconds
+(`python tests/test_threads.py`); `tests/test_same_result.py`, which finds batches of any size giving the
+same result: a STEP part written in slices of any size the same to the byte, a STEP file written
 part by part in worker processes the same as one written in one process, with no file left behind,
-and a part whose worker is lost half way written again in the main process to the same text; the
-copper layers joined in worker processes the same to the byte as in threads; the solder mask's webs
-found group by group in threads the same as the whole layer's, a stray line among the openings
-left out); finds `Parallel.PROCESS_WORKERS`
+a part whose worker is lost half way written again in the main process to the same text, and the
+copper layers joined in worker processes the same to the byte as in threads, in about five seconds
+(`python tests/test_same_result.py`); `tests/test_workers.py`, which finds `Parallel.PROCESS_WORKERS`
 capping the worker processes and boards under `Parallel.PROCESS_MIN_COORDINATES` kept in one
 process; sends shapes through stage 6's worker processes and finds them back on
 their grid (each part's too), of their type and with their SRID; and finds the run's settings in the
@@ -410,21 +415,24 @@ and those of one out of memory in the main process, with a note each time, an er
 not kept waiting, the workers first in line for Linux's out-of-memory killer, KESE run inside a
 `multiprocessing.Pool`, a script without `if __name__ == "__main__":` not run again in each
 worker, Ctrl-C ending the workers with one traceback, and the workers gone when the main process is
-killed, in about ten seconds (`python tests/test_parallel.py`); `tests/test_boundary.py`, which
+killed, in about twelve seconds (`python tests/test_workers.py`); `tests/test_boundary.py`, which
 finds stage 6's shortcuts giving what the long way gives: the vertices that parts have twice found
 for all parts of a slice at once as part by part (on hand-made and 300 random parts), the flat
 faces found again only next to a slice that changed as found again at every height, faces cut only
 where two slices differ, group by group, as a cut of the whole slices (and no face where two rings
 are the same from another start), slices spanned by the same prisms made once, and a part whose
 slices meet at T-junctions with every vertex shared and a closed, consistently wound mesh (which
-it is not without the sharing), a band one grid step wide ending in two needle tips a hair
+it is not without the sharing), fifty slices the vertices of the top one go down through without a
+cut, a band one grid step wide ending in two needle tips a hair
 apart closed too (which it is not with faces cut on the grid), a piece of a board's solder mask
 whose needle tips trade vertices for ever cut open there and closed, with one note (and still
 changing after 20 rounds, with T-junctions, when never cut), a skin face whose cut GEOS
 refuses on the grid cut with both regions put on the grid first, valid and within a grid step of
 the cut in floating point, the pairs of integers found by their hash those a search of every pair
-finds (and, where two pairs hash alike, those found by numbering the columns), and a wall segment
-that another stands back to back with left out of the skin, in about two seconds
+finds (and, where two pairs hash alike, those found by numbering the columns), a ring and the same
+ring cut open from its outside to its hole with the same vertices but not the same edges, and a
+wall segment that another stands back to back with left out of the skin, as are a hollow inside
+the material and a face left flat on its own, in about two seconds
 (`python tests/test_boundary.py`);
 `tests/test_copper_union.py`, which joins a net's items as stage 3 does and finds two fills that
 meet only to within floating point joined with no crack, a crack narrower than the grid closed,
@@ -435,7 +443,8 @@ used where GEOS refuses, in under a second (`python tests/test_copper_union.py`)
 near it alone, and leaves an inner layer whose copper comes nowhere near the board edge without
 air, joining nothing; finds every finish prism of seven test boards as the cut by the whole board's
 union makes it, but for slivers thinner than a grid step; and finds a big part of the solid cut into
-tiles that fill it and do not overlap, bores whose shells could meet put in one group (a hole with
+tiles that fill it and do not overlap, a tile whose corner a hole touches cut exactly (GEOS's quick
+clip keeps only the hole's corner piece there), bores whose shells could meet put in one group (a hole with
 no drill too), and the band given back where there is no solid, in about half a minute
 (`python tests/test_finish_shells.py`);
 `tests/test_mask.py`, which splits the solder mask over two pads whose openings follow their edges,
@@ -457,6 +466,29 @@ when the clean-up after it is refused), a run folder that nothing was written wh
 half `parameters.txt` removed, and runs started together each in a folder of their own; and the
 same with a big board's STEP parts written into files of their own and joined, none of them left
 behind, in about fifteen seconds (`python tests/test_full_disk.py`);
+`tests/test_hatch.py`, which draws KiCad 10's hatched fills as KiCad does: lines ten pens apart, or
+the larger side over 100, at 45 degrees, a cross hatch's grid of square holes, the knockouts and
+their margins and which items knock out which hatch, the fill word as KiCad 10 writes it, and the
+copper, silkscreen and mask of featureTest/27 round each hatched drawing as KiCad 10 draws them, to
+0.3 %, in under a second (`python tests/test_hatch.py`);
+`tests/test_machining.py`, which cuts KiCad 10's backdrills, counterbores and countersinks: a
+counterbore to its depth from the copper face (a floor inside an inner copper layer too), a
+countersink within its tolerance of the cone and with the cone's volume, the copper knocked out
+layer by layer as KiCad 10 gives it on featureTest/25, the laminate band by band as KiCad 10's STEP
+export cuts it on featureTest/24, 25 and 26 (to 0.1 %), the laminate near a cut in stretches that
+fill it, a barrel cut back only where a cut takes it, a plated board edge cut at over 300 heights
+by exactly the cuts there, and drills and cuts KiCad would not make, or
+that a setting switches off, left out and named, in about three seconds
+(`python tests/test_machining.py`);
+`tests/test_tall_walls.py`, which joins a wall across the heights only a counterbore, a countersink
+or a plug brings, stops it where a vertex sits on its edge (the stop spreading round its ring) and
+keeps walls of different parts apart, in under a second (`python tests/test_tall_walls.py`);
+`tests/test_via_protection.py`, which finds every via of featureTest/26 covered, plugged, capped and
+filled as the file and the board's setting say, its fill and plugs as long as the rules give them,
+a cap or a copper fill closing the outer copper and a covering the mask, a resin fill flush with
+the copper face unless capped, an end a backdrill or counterbore opens left open, every fill inside
+the outline, and protection switched off and the resin left out of the files, in about two seconds
+(`python tests/test_via_protection.py`);
 and two STEP tests, also on their own (`python tests/test_step_native.py`,
 `python tests/test_step_arcs.py`):
 

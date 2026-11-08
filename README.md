@@ -91,7 +91,7 @@ from any folder. Full walk-through: [Getting Started](https://github.com/RolandT
   default), in files 2.5 to 3 times smaller than flat facets.
 - **Presets:** `--for freecad`, `elmer`, `calculix`, `openems`, `viewer`, `blender_glb` or `blender_obj` set mode, formats, units, origin and grouping in one go (`parameters/presets.py`).
 - **Checks:** an opt-in Verifier (closed solids, the same volume found four ways, no overlaps, one visible surface)
-  and a regression suite that runs 42 boards through every output before a pull request.
+  and a regression suite that runs 43 boards through every output before a pull request.
 - **Not modelled yet:** component 3D models, text boxes, dimensions, images, rigid-flex.
 
 Every feature and every parameter is in the wiki:
@@ -106,7 +106,7 @@ Every feature and every parameter is in the wiki:
 
 <p align="center"><sub>24 of the feature test boards of <code>featureTest/</code>, each labelled with the KiCad features it
 tests and exported in visual mode. Boards whose stack-up sets no colours are given a green mask and white silkscreen
-for this picture. Left out are the boards of items KESE skips (19 and 19b), the same board in five KiCad formats (20a to 20e), and the example boards of the
+for this picture. Left out are the boards of items KESE skips (19 and 19b), the same board in five KiCad formats (20a to 20e), the boards added after the picture was made (18c and 24 to 28), and the example boards of the
 <a href="https://github.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/wiki/Examples">Examples</a> page.</sub></p>
 
 ## Status And Next Steps
@@ -136,6 +136,10 @@ covered by the GPL, in the same way a document printed by a GPL program is not.
 KESE includes material derived from KiCad, which is GPL-licensed: KiCad's "newstroke" stroke font and its text layout.
 KiCad's original copyright headers are kept word for word in [`licenses/`](licenses) and listed in
 [NOTICE.md](NOTICE.md). Contributions are accepted under the same license; see [CONTRIBUTING.md](CONTRIBUTING.md).
+
+KESE was checked on 3,146 KiCad boards from 819 open hardware projects; no board is part of KESE. [credits.txt](credits.txt)
+thanks their authors and names each project's license, as does the wiki's
+[Credits](https://github.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/wiki/Credits) page.
 
 **Contact (only through these channels):**
 [Email](mailto:rolandthsive@yahoo.com) ·

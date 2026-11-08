@@ -7,29 +7,21 @@ so the finish covers them (kese/s4_geometry/finish.py), each net's finish only i
 board the finish and the mask leave no copper face bare.
 
     python -m pytest tests/test_mask.py        (or:  python tests/test_mask.py)"""
-import sys
-from pathlib import Path
 from types import SimpleNamespace
 
-ROOT = Path(__file__).resolve().parents[1]
-sys.path.insert(0, str(ROOT))
+import shapely
+from shapely import affinity
+from shapely.geometry import Point, box
 
-import shapely  # noqa: E402
-from shapely import affinity  # noqa: E402
-from shapely.geometry import Point, box  # noqa: E402
-
-from kese.core import shapes2d as sh  # noqa: E402
-from kese.core.conformal import conformal_regions, without_hairlines  # noqa: E402
-from kese.job import start  # noqa: E402
-from kese.s1_read import read  # noqa: E402
-from kese.s2_collect import collect  # noqa: E402
-from kese.s3_resolve import resolve  # noqa: E402
-from kese.s4_geometry import geometry  # noqa: E402
-from kese.s4_geometry.finish import exposed  # noqa: E402
-from parameters import P  # noqa: E402
+from helpers import FEATURES, run_stages, run_tests, settings
+from kese.core import shapes2d as sh
+from kese.core.conformal import conformal_regions, without_hairlines
+from kese.s3_resolve import resolve
+from kese.s4_geometry import geometry
+from kese.s4_geometry.finish import exposed
+from parameters import P
 
 H = P.SolderMask.MASK_OVER_COPPER_HAIRLINE_MM
-FEATURES = ROOT.parent / "featureTest"
 
 
 def mask_over(pads, openings):
@@ -80,15 +72,9 @@ def bare_only_where_rounded(cu, finish):
 
 def test_on_a_board_the_finish_and_the_mask_leave_no_copper_face_bare():
     """07_pad_shapes, the mask on: three of its pads' openings follow their edges with other points."""
-    saved = P.SolderMask.SOLDER_MASK_ENABLED
-    P.override("SolderMask.SOLDER_MASK_ENABLED", True)
-    try:
-        job = start("simulation", ["glb"], None, (), False, lambda s: None)
-        r = resolve.run(collect.run(read.run(str(FEATURES / "07_pad_shapes.kicad_pcb"), job), job), job)
-        job.status.stop()
+    with settings({"SolderMask.SOLDER_MASK_ENABLED": True}):
+        r, _ = run_stages(FEATURES / "07_pad_shapes.kicad_pcb", resolve)
         ps = geometry.geometry(r, "simulation")
-    finally:
-        P.override("SolderMask.SOLDER_MASK_ENABLED", saved)
     assert "solder mask: 3 slivers on the copper narrower than 0.002 mm left out (F.Mask)" in ps.notes
     for layer, up in (("F.Cu", True), ("B.Cu", False)):
         face = max(abs(z) for z in r.stackup.band[layer])             # the copper's outer face
@@ -110,8 +96,4 @@ def test_mask_on_copper_wider_than_twice_the_hairline_is_kept():
 
 
 if __name__ == "__main__":
-    test_a_pad_whose_opening_follows_its_edge_keeps_no_mask_on_its_copper()
-    test_the_finish_covers_the_slivers_the_mask_leaves_out_each_net_its_own()
-    test_on_a_board_the_finish_and_the_mask_leave_no_copper_face_bare()
-    test_mask_on_copper_wider_than_twice_the_hairline_is_kept()
-    print("ok")
+    run_tests(__file__)

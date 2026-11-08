@@ -31,8 +31,7 @@ def add_pad(ctx, pad, T, fp_margin):
     vals = numbers(child(pad, "at"))
     pos = T((vals[0], vals[1]))
     ang = vals[2] if len(vals) > 2 else 0.0            # pad angles are stored absolute
-    size = child(pad, "size")
-    w, h = pt(size)
+    w, h = pt(child(pad, "size"))
     drill = child(pad, "drill")
     net = net_name(items, pad)
 
@@ -46,7 +45,7 @@ def add_pad(ctx, pad, T, fp_margin):
         offset = pt(off) if off else (0.0, 0.0)
         oval_drill, dw, dh = drill_size(drill)
         hole = place(oval(dw, dh) if oval_drill else disk((0, 0), dw / 2))
-    shape = place(pad_shape(items, pad, w, h), offset if drill is not None else (0.0, 0.0))
+    shape = place(pad_shape(items, pad, w, h), offset)
     stack, made = padstack_layers(pad, ctx.layers), {}
 
     def shape_on(l):
@@ -58,16 +57,11 @@ def add_pad(ctx, pad, T, fp_margin):
             sz = child(node, "size")
             off = child(node, "offset")
             made[id(node)] = place(pad_shape(items, node, number(sz[1], sz), number(sz[2] if len(sz) > 2 else sz[1], sz)),
-                                   pt(off) if off else offset if drill is not None else (0.0, 0.0))
+                                   pt(off) if off else offset)
         return made[id(node)]
 
     layers = ctx.expand(child(pad, "layers")[1:])
-    margin = mask_margin(pad, items.raw.dialect)
-    margin = margin if margin is not None else (fp_margin if fp_margin is not None else items.mask_clearance)
-    if not any(l in ctx.layers for l in layers):
-        margin = 0.0        # a pad on no copper layer opens the mask as drawn (PAD::GetSolderMaskExpansion)
-    elif margin < 0:        # a negative margin shrinks the opening at most to nothing, as KiCad keeps it
-        margin = max(margin, -min(w, h) / 2)
+    margin = pad_mask_margin(ctx, pad, fp_margin, layers, min(w, h))
     last = len(ctx.layers) - 1
     held = len(items.holes)
     if ptype == "np_thru_hole":
@@ -101,6 +95,17 @@ def add_pad(ctx, pad, T, fp_margin):
             opening = shape_on(f"{side}.Cu")              # the back opening follows the back shape
             items.mask_open_items[side].append(opening.buffer(margin) if margin else opening)
             items.found[f"pad mask openings on {side}.Mask"] += 1
+
+
+def pad_mask_margin(ctx, pad, fp_margin, layers, smaller):
+    """How far a pad's mask openings reach past its copper: its own solder_mask_margin, else its
+    footprint's, else the board's; `smaller`: the pad's smaller side."""
+    margin = mask_margin(pad, ctx.items.raw.dialect)
+    margin = margin if margin is not None else (fp_margin if fp_margin is not None else ctx.items.mask_clearance)
+    if not any(l in ctx.layers for l in layers):
+        return 0.0          # a pad on no copper layer opens the mask as drawn (PAD::GetSolderMaskExpansion)
+    # a negative margin shrinks the opening at most to nothing, as KiCad keeps it
+    return margin if margin >= 0 else max(margin, -smaller / 2)
 
 
 def npth_has_copper(pad, w, h, offset, drill):

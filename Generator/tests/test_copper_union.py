@@ -7,20 +7,15 @@ follows leaves no burr past the board edge, and when GEOS cannot join the items 
 union on the grid is used.
 
     python -m pytest tests/test_copper_union.py     (or:  python tests/test_copper_union.py)"""
-import sys
-from pathlib import Path
+import numpy as np
+import shapely
+import shapely.errors
+from shapely.geometry import LineString, Point, Polygon, box
 
-ROOT = Path(__file__).resolve().parents[1]
-sys.path.insert(0, str(ROOT))
-
-import numpy as np  # noqa: E402
-import shapely  # noqa: E402
-import shapely.errors  # noqa: E402
-from shapely.geometry import LineString, Point, Polygon, box  # noqa: E402
-
-import kese.s3_resolve.copper as copper  # noqa: E402
-from kese.core import shapes2d as sh  # noqa: E402
-from kese.s3_resolve.copper import net_union  # noqa: E402
+import kese.s3_resolve.copper as copper
+from helpers import run_tests
+from kese.core import shapes2d as sh
+from kese.s3_resolve.copper import net_union
 
 
 def on_grid(g):
@@ -84,8 +79,4 @@ def test_a_union_geos_cannot_do_in_floating_point_is_done_on_the_grid():
 
 
 if __name__ == "__main__":
-    test_fills_that_meet_only_to_within_floating_point_join_with_no_crack()
-    test_items_that_do_not_meet_stay_apart_and_the_area_is_within_a_grid_step_of_the_exact_union()
-    test_the_union_is_on_no_grid_so_the_clip_to_the_outline_leaves_no_burr_past_the_edge()
-    test_a_union_geos_cannot_do_in_floating_point_is_done_on_the_grid()
-    print("ok")
+    run_tests(__file__)

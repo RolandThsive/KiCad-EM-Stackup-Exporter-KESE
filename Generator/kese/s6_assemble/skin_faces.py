@@ -15,7 +15,7 @@ from kese.core.graph import shared_tree
 from kese.core.vertices import (
     grid_keys,
     pairs_in,
-    same_vertices,
+    same_edges,
     walls_split_at_vertices,
 )
 from kese.core.memory import give_back_memory
@@ -92,7 +92,7 @@ def visible_flats(part_slices, levels, pieces):
     for k, z in enumerate(levels):
         below = part_slices[k - 1] if k else sh.EMPTY
         above = part_slices[k] if k < len(part_slices) else sh.EMPTY
-        if same_vertices(below, above):
+        if same_edges(below, above):
             continue
         for mine, cutter, up in ((below, k, True), (above, k - 1, False)):
             if mine.is_empty:

@@ -42,7 +42,7 @@ looks down one part's material above minus every part's material below; a wall o
 where no other part's material stands against it. Where two parts meet, their touching faces are
 never made, so what is left is the surface between material and air, every face still in the
 part it came from. The faces are cut into triangles with their vertices shared across all parts
-(`skin_mesh.py`), a big face strip by strip as in simulation mode, and two kinds of triangles are
+(`skin_mesh.py`), a big face strip by strip as in simulation mode, and three kinds of triangles are
 then dropped:
 
 - a triangle that looks at material across less than $`\varepsilon`$, two pieces that meet but
@@ -62,6 +62,12 @@ then dropped:
 
 - the walls of a hollow sealed inside the board, such as the open bore of a buried via with
   nothing stacked on it: a closed shell that faces inward, which no one can see.
+- a face that lies flat on its own, with no wall at its edges: the top or the bottom of a gap
+  thinner than a grid step inside the material. Stage 6 leaves such a gap where it moves the edge
+  of a slice onto a vertex of the slice above or below (where a pad's outline and its mask opening
+  are drawn a grid step apart, under the finish's nickel); the walls of the gap count as hidden,
+  as a vertex that near an edge counts as on it, so only its faces were left, and a ray through
+  one met two faces of a kind in a row.
 
 What remains is one outer surface, still split into named parts, closed but for the mouth of a
 slit whose walls (9.1) took out (a crack well under a micron wide). A part with no face in

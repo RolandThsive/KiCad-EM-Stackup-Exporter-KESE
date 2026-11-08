@@ -124,8 +124,11 @@ def joined_regions(regions, exact=True, shared=False):
 def slices_sharing_vertices(slices, flats, levels, log, pinches_opened=True):
     """The slices, each with the vertices of the faces and the slice it meets that lie on its edges,
     repeated until no slice changes (at most Geometry.VERTEX_SHARING_ROUNDS times; a height cut again is
-    cut wider).  Needle tips of two slices a grid step or two apart can trade vertices round after
-    round for ever: slices still changing then are cut open at the points each further round adds
+    cut wider).  A round goes through the heights upwards, the next downwards: a vertex goes on through
+    every slice in the way a round goes, but only one slice the other way (fifty heights of a part,
+    each with the vertex where a backdrill meets the plated edge, took fifty rounds upwards only).
+    Needle tips of two slices a grid step or two apart can trade vertices round after round for ever:
+    slices still changing then are cut open at the points each further round adds
     (pinches.cut_open_at), the disc doubling, for at most Geometry.PINCH_CUT_ROUNDS more rounds.
     -> (slices, the indices of the slices that changed)."""
     slices, changed, cuts = list(slices), set(), [0] * len(levels)
@@ -133,8 +136,8 @@ def slices_sharing_vertices(slices, flats, levels, log, pinches_opened=True):
     for round_ in range(rounds + sh.G().PINCH_CUT_ROUNDS):
         moved_now, added = set(), []
         late = round_ >= rounds
-        for k, z in enumerate(levels):
-            at = [i for i in (k - 1, k) if 0 <= i < len(slices)]
+        for k in range(len(levels)) if round_ % 2 == 0 else reversed(range(len(levels))):
+            z, at = levels[k], [i for i in (k - 1, k) if 0 <= i < len(slices)]
             if len(at) == 2 and pinches_opened:
                 slices[k - 1], slices[k], cut = open_pinches_between(slices[k - 1], slices[k], log, cuts[k])
                 if cut:

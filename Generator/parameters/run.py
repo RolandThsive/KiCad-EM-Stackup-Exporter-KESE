@@ -21,7 +21,7 @@ OUTPUT_DIR = "Output"
 #   "step" - STEP AP214 with one named exact solid per part                     (FreeCAD, gmsh, and
 #            through gmsh Elmer and CalculiX)
 # "visual" mode can only produce "glb" and "obj" (its skin is a surface, not solids).
-# `kese --for <tool>` sets the mode, formats, units and origin for one of these tools (parameters/presets.py).
+# `kese --for <tool>` sets the mode, formats, units, origin and more for one of these tools (parameters/presets.py).
 FILE_FORMAT = ["glb"]
 
 # Units of the written files: "mm" (EM solvers, CAD) or "m" (glTF viewers expect metres)

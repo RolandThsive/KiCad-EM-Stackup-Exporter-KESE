@@ -3,21 +3,42 @@ import math
 import re
 
 
-ESCAPES = {"n": "\n", "r": "\r", "t": "\t"}
+ESCAPES = {b"a": b"\a", b"b": b"\b", b"f": b"\f", b"n": b"\n", b"r": b"\r", b"t": b"\t", b"v": b"\v",
+           b'"': b'"', b"\\": b"\\", b"x": b"x"}
+ESCAPE = re.compile(rb"\\(x[0-9A-Fa-f]{1,2}|[0-7]{1,3}|.)", re.DOTALL)
+
+
+def _escaped(m):
+    e = m.group(1)
+    if e[:1] == b"x" and len(e) > 1:
+        return bytes([int(e[1:], 16)])
+    if e[:1] in b"01234567":
+        return bytes([int(e, 8) & 0xFF])
+    return ESCAPES.get(e, b"\\" + e)       # not an escape: the backslash stays, as in KiCad
 
 
 def unescape(text):
-    """A quoted string of the file as KiCad reads it: \\n a new line, \\t a tab, \\" and \\\\ the
-    character itself (KiCad writes \\n, \\r, \\" and \\\\, and a tab as it is).  Done once, here, for
-    every quoted string: net names, text and properties alike."""
-    return re.sub(r"\\(.)", lambda m: ESCAPES.get(m.group(1), m.group(1)), text, flags=re.DOTALL)
+    """A quoted string of the file as KiCad reads it (DSNLEXER::NextTok): \\n a new line, \\t a tab,
+    \\a \\b \\f \\r \\v the other control characters, \\" and \\\\ the character itself, \\x and one or
+    two hex digits or a backslash and one to three octal ones a byte of the UTF-8 text; before any
+    other character the backslash is kept.  KiCad itself writes only \\n, \\r, \\" and \\\\, and a tab as
+    it is.  Done once, here, for every quoted string: net names, text and properties alike."""
+    return ESCAPE.sub(_escaped, text.encode("utf-8")).decode("utf-8", "replace")
+
+
+SPACE = " \t\r\n\0"           # KiCad's whitespace (DSNLEXER's isSpace): a NUL byte is one too
+ATOM_ENDS = SPACE + "()"
+COMMENT_LINE = re.compile(r"^[ \t\r\0]*#[^\n]*", re.MULTILINE)
 
 
 def _tokenize(text):
+    """KiCad's tokens (DSNLEXER::NextTok): a parenthesis, a string in double quotes, or a bare atom.
+    A bare atom runs to whitespace or a parenthesis: a double quote inside it is a character of it, as
+    in the inch mark of an old board's (gr_text 0.062" ...), not the start of a string."""
     i, n = 0, len(text)
     while i < n:
         c = text[i]
-        if c in " \t\r\n":
+        if c in SPACE:
             i += 1
         elif c in "()":
             yield c
@@ -31,14 +52,18 @@ def _tokenize(text):
             i = j + 1
         else:
             j = i
-            while j < n and text[j] not in ' \t\r\n()"':
+            while j < n and text[j] not in ATOM_ENDS:
                 j += 1
             yield text[i:j]
             i = j
 
 
 def parse(text):
-    """Nested lists; quoted strings and bare atoms both become str."""
+    """Nested lists; quoted strings and bare atoms both become str.  A line whose first character other
+    than whitespace is # is a comment, and is passed over as DSNLEXER does (boards brought over from
+    other tools have such lines between the items)."""
+    if "#" in text:
+        text = COMMENT_LINE.sub("", text)
     root = []
     stack = [root]
     for tok in _tokenize(text):

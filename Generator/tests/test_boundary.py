@@ -6,35 +6,33 @@ whole slices does (no face where the rings are the same, whatever point they sta
 spanned by the same regions are made once; two regions have the same vertices whatever point
 their rings start at; the pairs of integers found by their hash are those a search of every pair
 finds (and where two pairs hash alike, those found by numbering the columns); a wall segment a -> b
-that a segment b -> a hides is left out of the skin; and a part whose slices meet at T-junctions comes out with every vertex
-shared (no vertex of one face or slice lies on the edge of another at its height without being
-one of its vertices too) and a closed, consistently wound mesh, as does a band one grid step wide
-that ends in two needle tips a hair apart (a board's gold, where faces cut on the grid left it open),
-and a piece of a board's mask whose needle tips traded vertices for ever, once cut open there;
-and a cut that snap rounding refuses on the grid is made with both regions put on the grid first.
+that a segment b -> a hides is left out of the skin; and a part whose slices meet at T-junctions
+comes out with every vertex shared (no vertex of one face or slice lies on the edge of another at
+its height without being one of its vertices too) and a closed, consistently wound mesh, as does a
+band one grid step wide that ends in two needle tips a hair apart (a board's gold, where faces cut
+on the grid left it open), a piece of a board's mask whose needle tips traded vertices for ever,
+once cut open there, and fifty slices the vertices of the top one go down through without a cut;
+a cut that snap rounding refuses on the grid is made with both regions put on the grid first; and
+the skin leaves out a hollow inside the material and a face left flat on its own.
 
     python -m pytest tests/test_boundary.py        (or:  python tests/test_boundary.py)"""
-import sys
-from pathlib import Path
+import numpy as np
+import shapely
+from shapely.geometry import MultiPolygon, Point, Polygon, box
 
-ROOT = Path(__file__).resolve().parents[1]
-sys.path.insert(0, str(ROOT))
-
-import numpy as np  # noqa: E402
-import shapely  # noqa: E402
-from shapely.geometry import MultiPolygon, Point, Polygon, box  # noqa: E402
-
-from kese.core import boundary  # noqa: E402
-from kese.core import shapes2d as sh  # noqa: E402
-from kese.core.boundary import boundary_of, heights_of, slices_of, wall_segments  # noqa: E402
-from kese.core.boundary_mesh import mesh_of_boundary  # noqa: E402
-from kese.core.flat_faces import faces_between, flat_faces  # noqa: E402
-from kese.core.pinches import cut_open_at, repeated_vertices  # noqa: E402
-from kese.core import vertices  # noqa: E402
-from kese.core.vertices import grid_keys, near_edge, noded, pairs_in, ring_points, same_vertices  # noqa: E402
-from kese.model.prisms import Prism  # noqa: E402
-from kese.s6_assemble.skin_faces import unhidden  # noqa: E402
-from parameters import P  # noqa: E402
+from helpers import run_tests
+from kese.core import boundary
+from kese.core import shapes2d as sh
+from kese.core import vertices
+from kese.core.boundary import boundary_of, heights_of, slices_of, wall_segments
+from kese.core.boundary_mesh import mesh_of_boundary
+from kese.core.flat_faces import faces_between, flat_faces
+from kese.core.pinches import cut_open_at, repeated_vertices
+from kese.core.vertices import grid_keys, near_edge, noded, pairs_in, ring_points, same_edges, same_vertices
+from kese.model.prisms import Prism
+from kese.s6_assemble.skin_faces import unhidden
+from kese.s6_assemble.skin_mesh import sealed
+from parameters import P
 
 
 def repeated_one_by_one(parts, check):
@@ -101,7 +99,7 @@ def no_vertex_on_another_edge(boundary):
     """[(z, the vertex)] of every vertex at a height that lies on an edge of a face or slice there
     without being one of its vertices."""
     bad = []
-    for k, z in enumerate(boundary.levels):
+    for z in boundary.levels:
         regions = [s for (z0, z1, s) in boundary.slices if z in (z0, z1) and not s.is_empty]
         regions += [r for h, r, _ in boundary.flats if h == z]
         points = np.unique(np.concatenate([shapely.get_coordinates(r) for r in regions]), axis=0)
@@ -109,9 +107,7 @@ def no_vertex_on_another_edge(boundary):
             seg = wall_segments(r)
             own = set(grid_keys(seg[:, 0]).tolist())
             near, _ = shapely.STRtree(shapely.linestrings(seg)).query(shapely.points(points), predicate="dwithin", distance=near_edge())
-            for i in set(near.tolist()):
-                if grid_keys(points[i:i + 1])[0] not in own:
-                    bad.append((z, tuple(points[i])))
+            bad += [(z, tuple(points[i])) for i in set(near.tolist()) if grid_keys(points[i:i + 1])[0] not in own]
     return bad
 
 
@@ -148,6 +144,21 @@ def test_a_band_ending_in_two_needle_tips_a_hair_apart_closes():
     assert abs(b.volume() - b.volume_of_slices()) <= 1e-9 * b.volume_of_slices()
 
 
+def test_a_vertex_of_the_top_slice_goes_down_through_fifty_slices_without_a_cut():
+    """Fifty slices of a square, the top one notched at an edge (a backdrill where it meets a plated
+    board edge, through six layers' merged dielectrics): the notch's two vertices on that edge go down
+    through every slice below in one round downwards.  Rounds that all went upwards took them one
+    slice down each, ran out of rounds, and cut the slices open at them."""
+    square, notched = box(0, 0, 10, 10), box(0, 0, 10, 10).difference(box(4, 9, 6, 11))
+    prisms = [Prism("Board", "board", square, k, k + 1.0) for k in range(49)] + [Prism("Board", "board", notched, 49.0, 50.0)]
+    notes = []
+    b = boundary_of("Board", prisms, notes.append)
+    assert notes == [] and no_vertex_on_another_edge(b) == []
+    assert all({(4.0, 10.0), (6.0, 10.0)} <= set(map(tuple, ring_points(s))) for *_, s in b.slices)
+    assert closed_and_wound(mesh_of_boundary(b))
+    assert abs(b.volume_of_slices() - sum((p.z1 - p.z0) * p.region.area for p in prisms)) <= 1e-9
+
+
 def needle_tips_of_a_mask():
     """A 20 by 20 um piece of a board's solder mask (NE_Delta, KiCad 10) where an opening's edge runs a
     grid step or two from a pad's: the flat mask, the mask on the copper (a needle 0.2 um wide at
@@ -171,7 +182,8 @@ def test_slices_whose_needle_tips_trade_vertices_for_ever_are_cut_open_there_and
     assert len(notes) == 1 and notes[0].startswith(f"slices still sharing new vertices after {rounds} rounds: cut open at")
     assert closed_and_wound(mesh_of_boundary(b)) and no_vertex_on_another_edge(b) == []
     whole = sum((p.z1 - p.z0) * p.region.area for p in prisms)
-    assert abs(b.volume() - b.volume_of_slices()) <= 1e-9 * whole and 0.99 * whole < b.volume() < whole
+    assert abs(b.volume() - b.volume_of_slices()) <= 1e-9 * whole
+    assert 0.99 * whole < b.volume() < 1.001 * whole     # cut open, and edges moved a grid step either way
     boundary.cut_open_at = lambda slices, pts, n: (set(), 0.0)                       # never cut open
     try:
         notes = []
@@ -244,6 +256,14 @@ def test_two_regions_have_the_same_vertices_whatever_point_their_rings_start_at(
     assert not same_vertices(a, box(0, 0, 4, 3)) and not same_vertices(a, sh.EMPTY)
 
 
+def test_a_ring_cut_open_has_the_same_vertices_but_not_the_same_edges():
+    ring = Polygon([(0, 0), (4, 0), (4, 3), (0, 3)], [[(1, 1), (1, 2), (3, 2), (3, 1)]])
+    cut = Polygon([(0, 0), (4, 0), (3, 1), (1, 1), (1, 2), (3, 2), (4, 3), (0, 3)])     # cut from (4, 0) to (3, 1)
+    turned = Polygon([(4, 3), (4, 0), (0, 0), (0, 3)], [[(3, 2), (1, 2), (1, 1), (3, 1)]])   # run the other way
+    assert same_vertices(ring, cut) and not same_edges(ring, cut) and not same_edges(cut, ring)
+    assert same_edges(ring, turned) and same_edges(sh.EMPTY, sh.EMPTY) and not same_edges(ring, sh.EMPTY)
+
+
 def every_pair_in(a, b, c, d):
     pairs = set(zip(c.tolist(), d.tolist()))
     return [(x, y) in pairs for x, y in zip(a.tolist(), b.tolist())]
@@ -278,16 +298,21 @@ def test_a_wall_segment_another_hides_is_left_out():
     assert unhidden({}) == {}
 
 
+def test_a_face_of_the_skin_left_flat_on_its_own_goes_whichever_way_it_faces():
+    # a box wound outward, a hollow inside it wound inward, and two loose triangles flat at one height
+    # each (the bottom of a gap a fraction of a grid step wide, looking up, and its top, looking down,
+    # the gap's walls hidden): the hollow and both loose faces go, the box stays.  The loose face
+    # looking down lies below the middle of the mesh, so its volume there is positive, as a box's is
+    corners = np.array([(x, y, z) for z in (0, 1) for y in (0, 1) for x in (0, 1)], dtype=float)
+    sides = np.array([(0, 2, 3), (0, 3, 1), (4, 5, 7), (4, 7, 6), (0, 1, 5), (0, 5, 4),       # wound outward
+                      (2, 6, 7), (2, 7, 3), (0, 4, 6), (0, 6, 2), (1, 3, 7), (1, 7, 5)])
+    up = np.array([(1, 1, 0.2), (2, 1, 0.2), (1, 1.1, 0.2)])
+    down = np.array([(1, 1, 0.3), (1, 1.1, 0.3), (2, 1, 0.3)])
+    v = np.concatenate([corners * 10, corners * 2 + 4, up, down])
+    f = np.concatenate([sides, sides[:, ::-1] + 8, [(16, 17, 18), (19, 20, 21)]])
+    assert sealed(v, f).tolist() == [False] * 12 + [True] * 12 + [True, True]
+    assert sealed(v, f[:12]).tolist() == [False] * 12 and len(sealed(v, f[:0])) == 0
+
+
 if __name__ == "__main__":
-    test_the_vertices_parts_have_twice_are_found_for_all_parts_at_once()
-    test_flat_faces_found_again_only_next_to_a_changed_slice_are_all_of_them_found_again()
-    test_a_part_meeting_at_t_junctions_shares_its_vertices_and_closes()
-    test_a_band_ending_in_two_needle_tips_a_hair_apart_closes()
-    test_slices_whose_needle_tips_trade_vertices_for_ever_are_cut_open_there_and_close()
-    test_a_cut_snap_rounding_refuses_is_made_with_both_regions_on_the_grid()
-    test_faces_are_cut_only_where_the_slices_differ_and_come_out_as_a_whole_cut_does()
-    test_slices_spanned_by_the_same_regions_are_made_once()
-    test_two_regions_have_the_same_vertices_whatever_point_their_rings_start_at()
-    test_pairs_found_by_their_hash_are_those_a_search_of_every_pair_finds()
-    test_a_wall_segment_another_hides_is_left_out()
-    print("ok")
+    run_tests(__file__)

@@ -1,5 +1,5 @@
 """A triangle mesh: vertices (n, 3) float, faces (m, 3) int, and what the stages ask of it, done
-as trimesh did it (kese/core/mesh_math.py), face normals kept while the mesh stays the same."""
+as trimesh did it (kese/core/mesh_math.py), face normals kept until the mesh changes."""
 import numpy as np
 
 from kese.core import mesh_math as mm
@@ -10,41 +10,18 @@ class Mesh:
     def __init__(self, vertices, faces, vertex_normals=None):
         self.vertices = np.asarray(vertices, dtype=np.float64, order="C").reshape((-1, 3))
         self.faces = np.asarray(faces, dtype=np.int64, order="C").reshape((-1, 3))
-        self.vertex_normals = None
-        if vertex_normals is not None:
-            vn = np.asarray(vertex_normals, dtype=np.float64)
-            self.vertex_normals = np.ascontiguousarray(vn) if vn.shape == self.vertices.shape else None
-        self._normals, self._key = None, None
+        self.vertex_normals = None if vertex_normals is None else np.ascontiguousarray(vertex_normals, dtype=np.float64)
+        self._normals = None
 
-    # ---- the face normals, kept while the mesh stays the same ----------------------------------
-    def _content(self):
-        return (self.vertices.shape, self.faces.shape, hash(self.vertices.tobytes()), hash(self.faces.tobytes()))
-
-    def _cached_normals(self):
-        return self._normals if self._normals is not None and self._key == self._content() else None
-
-    def _keep_normals(self, values):
-        values = np.asarray(values, dtype=np.float64)
-        if not len(values) or values.shape != self.faces.shape:
-            return
-        spread = np.ptp(values)
-        if not np.isfinite(spread) or spread < 10.0 ** -P.Geometry.MESH_MERGE_DIGITS:
-            return
-        t = self.vertices[self.faces[:20]]
-        check = mm.face_normals(t, mm.crosses(t))
-        if np.allclose(check, values[:20]):
-            self._normals, self._key = np.ascontiguousarray(values), self._content()
-
+    # ---- the face normals, kept until the mesh changes -------------------------------------------
     @property
     def face_normals(self):
         if not len(self.faces):
             return np.zeros((0, 3))
-        kept = self._cached_normals()
-        if kept is None:
+        if self._normals is None:
             t = self.triangles
-            kept = mm.face_normals(t, mm.crosses(t))
-            self._normals, self._key = kept, self._content()
-        return kept
+            self._normals = mm.face_normals(t, mm.crosses(t))
+        return self._normals
 
     # ---- what is worked out of it ---------------------------------------------------------------
     @property
@@ -98,32 +75,22 @@ class Mesh:
         t = self.triangles
         return mm.volume(t, mm.crosses(t))
 
-    @property
-    def bounds(self):
-        used = self.vertices[np.unique(self.faces)] if len(self.faces) else self.vertices[:0]
-        return np.array([used.min(axis=0), used.max(axis=0)]) if len(used) else None
-
     def copy(self):
         """The vertices and faces only (as trimesh's copy() leaves its cache behind)."""
         return Mesh(self.vertices.copy(), self.faces.copy())
 
-    # ---- changes ---------------------------------------------------------------------------------
+    # ---- changes: a mesh given vertex normals is only read (kese/s6_assemble/transform.py) ----------
     def update_faces(self, mask):
         mask = np.asanyarray(mask)
         if not len(self.faces) or (mask.dtype == bool and mask.all()):
             return
-        kept = self._cached_normals()
-        self.faces = self.faces[mask]
-        if kept is not None:
-            self._keep_normals(kept[mask])
+        self.faces, self._normals = self.faces[mask], None
 
     def _update_vertices(self, mask, inverse):
         if not len(self.faces) or not len(mask) or (mask.dtype == bool and mask.all()):
             return
         self.faces = inverse[self.faces.reshape(-1)].reshape((-1, 3))
-        self.vertices = self.vertices[mask]
-        if self.vertex_normals is not None:
-            self.vertex_normals = self.vertex_normals[mask]
+        self.vertices, self._normals = self.vertices[mask], None
 
     def remove_unreferenced_vertices(self):
         referenced = np.zeros(len(self.vertices), dtype=bool)
@@ -154,16 +121,8 @@ class Mesh:
         matrix = np.asanyarray(matrix, order="C", dtype=np.float64)
         if mm.nearly_equal(matrix, np.eye(4), 1e-8):
             return self
-        new = mm.transform_points(self.vertices, matrix)
         turned = not mm.nearly_equal(matrix[:3, :3], np.eye(3), 1e-6)
-        kept = self._cached_normals()
-        if turned and kept is not None:
-            kept = mm.unitize(mm.transform_points(kept, matrix, translate=False))
-        if turned and self.vertex_normals is not None:
-            self.vertex_normals = mm.unitize(mm.transform_points(self.vertex_normals, matrix, translate=False))
         if turned and np.linalg.det(matrix[:3, :3]) < 0.0:
             self.faces = np.ascontiguousarray(np.fliplr(self.faces))
-        self.vertices = new
-        if kept is not None:
-            self._normals, self._key = kept, self._content()
+        self.vertices, self._normals = mm.transform_points(self.vertices, matrix), None
         return self

@@ -10,7 +10,7 @@ from parameters import P
 def cell_lines(lo, hi):
     """The x of the strip edges strictly between lo and hi: one every Geometry.TRIANGULATE_CELL_MM,
     a quarter of a grid step off the grid, so that no point on the grid lies on one, and no point
-    on a tile edge (those lie halfway between two grid points)."""
+    on the edge of a grid point's hot pixel (GEOS's snap rounding: halfway between two grid points)."""
     w, g = P.Geometry.TRIANGULATE_CELL_MM, grid()
     k = np.arange(np.floor(lo / w), np.ceil(hi / w) + 1)
     xs = (np.round(k * w / g) + 0.25) * g

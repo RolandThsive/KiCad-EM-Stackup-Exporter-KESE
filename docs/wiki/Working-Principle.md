@@ -73,8 +73,9 @@ Stage 6 needs no CAD kernel. Every part's surface is worked out in 2D from its p
 (`kese/core/boundary.py`) and then cut into triangles (`kese/core/boundary_mesh.py`):
 
 ```python
-def boundary_of(part, prisms, log=None):
-    """The prisms of one part -> its Boundary, closed by construction."""
+def boundary_of(part, prisms, log=None, free=frozenset()):
+    """The prisms of one part -> its Boundary, closed by construction; `free`: heights its walls may
+    run on across (PrismSet.free_levels)."""
     levels = heights_of(prisms)                    # every height where a prism starts or ends
     slices = slices_of_part(prisms, levels, log)   # the material between two neighbouring heights
     flats, again = [], range(len(levels))
@@ -92,7 +93,9 @@ mesh = mesh_of_boundary(boundary)                  # faces cut into triangles, t
 - The walls are the rings of every slice, stood up between the slice's two heights
   (`Boundary.walls()`). Faces and walls must meet on identical edges, so the slices that meet at a
   height are given each other's vertices, and their faces' vertices, until nothing changes
-  (`kese/core/vertices.py`). Then the mesh closes by construction. Where needle tips of two
+  (`kese/core/vertices.py`). A round goes through the heights upwards and the next one downwards,
+  so a vertex reaches every slice above and below it in two rounds. Then the mesh closes by
+  construction. Where needle tips of two
   slices lie a grid step or two apart, giving one the other's vertex and putting both back on the
   grid can move them for ever: slices still changing after `Geometry.VERTEX_SHARING_ROUNDS`
   rounds (20; most settle in one to three, a hole's finish in visual mode has taken twelve) are

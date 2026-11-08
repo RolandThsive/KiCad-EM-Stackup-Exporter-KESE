@@ -108,6 +108,11 @@ def band_laminate(r, items):
             r.band_laminate[l] = sh.diff(lam, r.edge_band) if r.edge_band is not None else lam
 
 
+def ring_of(h):
+    """The plating ring of hole h, KiCad frame: its drill less the open bore."""
+    return h.drill.difference(h.drill.buffer(-h.wall))
+
+
 def barrel_span(st, layers, i, j):
     """(lo, hi): the heights of the barrel of a hole from copper i to j.  Outer layers cap the barrel
     (their copper covers the ring area), so it stops at their face; inner layers are drilled through,
@@ -121,12 +126,13 @@ def barrel_span(st, layers, i, j):
 def barrels(r, items, outline_k):
     """r.barrels: the plating ring of the plated holes, one region per (top layer, bottom layer,
     net), plus the plated board edge; r.barrel_pieces: the rings that post machining or a backdrill
-    cuts back, hole by hole, between the heights where the cuts change."""
+    cuts back, hole by hole, between the heights where the cuts change (and so the plated edge,
+    where r.edge_cuts cut it)."""
     spans = defaultdict(list)
     for n, h in enumerate(items.holes):
         if not h.plated:
             continue
-        ring = h.drill.difference(h.drill.buffer(-h.wall)).intersection(outline_k)
+        ring = ring_of(h).intersection(outline_k)
         if n in r.barrel_cuts:
             lo, hi = barrel_span(r.stackup, items.layers, h.i, h.j)
             for g, z0, z1 in cut_back(ring, lo, hi, r.barrel_cuts[n]):
@@ -134,13 +140,25 @@ def barrels(r, items, outline_k):
         else:
             spans[(h.i, h.j, h.net)].append(ring)
     r.barrels = [(r.to_board_T(union(rings)), i, j, net) for (i, j, net), rings in spans.items()]
-    if r.edge_band is not None:
-        r.barrels.append((r.edge_band, 0, len(items.layers) - 1, r.edge_net))
+    last = len(items.layers) - 1
+    if r.edge_band is not None and r.edge_cuts:
+        lo, hi = barrel_span(r.stackup, items.layers, 0, last)
+        r.barrel_pieces += [(g, z0, z1, 0, last, r.edge_net)
+                            for g, z0, z1 in cut_back(r.edge_band, lo, hi, r.edge_cuts)]
+    elif r.edge_band is not None:
+        r.barrels.append((r.edge_band, 0, last, r.edge_net))
 
 
 def cut_back(ring, lo, hi, cuts):
     """[(what is left of `ring`, z0, z1)] between lo and hi, where cuts [(z0, z1, disk)] take the
     disk out between their heights; neighbouring stretches cut alike are one."""
+    return [(g, a, b) for g, a, b in stretches(ring, lo, hi, cuts) if not g.is_empty]
+
+
+def stretches(g, lo, hi, cuts):
+    """[(g less the disks that cut a stretch, z0, z1)] from lo to hi, a stretch between every two
+    heights where the cuts [(z0, z1, disk)] change; neighbouring stretches cut alike are one.  Empty
+    pieces are kept.  Also the laminate's (s4_geometry/laminate.py cut_slab)."""
     levels = sorted({lo, hi} | {z for c in cuts for z in c[:2] if lo < z < hi})
     out, last_key = [], None
     for a, b in zip(levels, levels[1:]):
@@ -148,6 +166,6 @@ def cut_back(ring, lo, hi, cuts):
         if out and active == last_key:
             out[-1] = (out[-1][0], out[-1][1], b)
             continue
-        out.append(((sh.diff(ring, union([cuts[k][2] for k in active])) if active else ring), a, b))
+        out.append(((sh.diff(g, union([cuts[k][2] for k in active])) if active else g), a, b))
         last_key = active
-    return [(g, a, b) for g, a, b in out if not g.is_empty]
+    return out

@@ -21,4 +21,4 @@ Planned directions, in no fixed order:
 
 | Previous | Next |
 |:---|---:|
-| [Immediate Next Steps](Immediate-Next-Steps.md) | [License](License.md) |
+| [Immediate Next Steps](Immediate-Next-Steps.md) | [Credits](Credits.md) |

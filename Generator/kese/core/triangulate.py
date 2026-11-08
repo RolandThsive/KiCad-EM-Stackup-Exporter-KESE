@@ -8,7 +8,7 @@ import numpy as np
 import shapely
 
 from kese.core.cells import cell_lines, crossed
-from kese.core.flat_triangles import flip_flat, twice_area
+from kese.core.flat_triangles import flip_flat, lookup, on_points, twice_area
 from kese.core.shapes2d import polys_only
 from parameters import P
 
@@ -91,20 +91,13 @@ def geos_cut(xy, ends):
     """earcut_cut by GEOS's constrained Delaunay triangulation (through shapely, already loaded):
     slower, but it keeps to the edges it is given and adds no point.  No triangles when it adds one
     or fails."""
-    nothing = np.empty((0, 3), dtype=np.int64)
     try:
         rings = np.split(xy, ends[:-1])
         tris = shapely.get_parts(shapely.constrained_delaunay_triangles(shapely.Polygon(rings[0], rings[1:])))
         pts = shapely.get_coordinates(shapely.get_exterior_ring(tris)).reshape(len(tris), 4, 2)[:, :3]
     except Exception:
-        return nothing
-    at = lookup(xy, pts.reshape(-1, 2)) if len(tris) else None
-    if at is None:
-        return nothing
-    tri = at.reshape(-1, 3)
-    turn = twice_area(xy, tri) < 0                       # every triangle counter-clockwise
-    tri[turn] = tri[turn][:, ::-1]
-    return tri
+        return np.empty((0, 3), dtype=np.int64)
+    return on_points(xy, pts)
 
 
 def cells_cut(xy, ends):
@@ -134,18 +127,6 @@ def cells_cut(xy, ends):
     at = lookup(xy, wxy, missing=True)
     tri = without(np.concatenate(out), wxy, nxt, np.flatnonzero(at < 0)) if not len(strips) else None
     return nothing if tri is None else at[tri]
-
-
-def lookup(xy, pts, missing=False):
-    """The index in xy of every point of pts; None if one is not there (or -1 with missing=True)."""
-    key = xy[:, 0] + 1j * xy[:, 1]
-    order = np.argsort(key)
-    k = pts[:, 0] + 1j * pts[:, 1]
-    at = order[np.minimum(np.searchsorted(key[order], k), len(key) - 1)]
-    found = key[at] == k
-    if missing:
-        return np.where(found, at, -1)
-    return at if found.all() else None
 
 
 def without(tri, xy, nxt, extra):

@@ -1,7 +1,6 @@
 """The volume check of stage 8 in simulation mode: by the divergence theorem every part's faces,
 its slices and its mesh hold the same volume, and its prisms that less what opening pinch points and
 sharing vertices moves: in all, or else in every piece (kese/core/part_checks.py)."""
-
 from kese.core.part_checks import allowed, volume_check, whole
 
 

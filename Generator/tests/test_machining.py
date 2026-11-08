@@ -11,34 +11,24 @@ geometry of a cone:
     cuts every backdrill and post machining 1 um further (a margin "to ensure clean cuts"), which
     KESE does not copy; the bands still agree to 0.1 %;
   - the laminate near a cut is cut in stretches that fill it without overlapping, and a barrel is
-    cut back only where a cut takes it.
-Takes about two minutes.
+    cut back only where a cut takes it, the plated board edge too (featureTest/28).
+Takes a few seconds.
 
     python -m pytest tests/test_machining.py        (or:  python tests/test_machining.py)"""
 import math
-import sys
-from pathlib import Path
 
 import numpy as np
 import shapely
 from shapely.geometry import Point, box
 
-ROOT = Path(__file__).resolve().parents[1]
-sys.path.insert(0, str(ROOT))
-
-from kese.core.shapes2d import disk  # noqa: E402
-from kese.job import start  # noqa: E402
-from kese.model.items import PostMachining  # noqa: E402
-from kese.s1_read import read  # noqa: E402
-from kese.s2_collect import collect  # noqa: E402
-from kese.s3_resolve import resolve  # noqa: E402
-from kese.s3_resolve.holes import cut_back  # noqa: E402
-from kese.s3_resolve.machining import post_machining_steps  # noqa: E402
-from kese.s4_geometry import geometry  # noqa: E402
-from kese.s4_geometry.laminate import cut_slab  # noqa: E402
-from parameters import P  # noqa: E402
-
-FEATURES = ROOT.parent / "featureTest"
+from helpers import FEATURES, run_stages, run_tests, settings
+from kese.core.shapes2d import disk
+from kese.model.items import PostMachining
+from kese.s3_resolve import resolve
+from kese.s3_resolve.holes import cut_back
+from kese.s3_resolve.machining import post_machining_steps
+from kese.s4_geometry import geometry
+from kese.s4_geometry.laminate import cut_slab
 LAYERS = ["F.Cu", "In1.Cu", "In2.Cu", "B.Cu"]
 # featureTest/25's stackup, F up: copper 35 / 17.5 / 17.5 / 35 um, dielectrics 0.2, 1.095, 0.2 mm
 BAND = {"F.Cu": (0.765, 0.8), "In1.Cu": (0.5475, 0.565), "In2.Cu": (-0.565, -0.5475), "B.Cu": (-0.8, -0.765)}
@@ -83,7 +73,7 @@ def steps_of(p, tol=TOL):
 def check_contiguous(steps, face, floor):
     zs = sorted((z0, z1) for z0, z1, _ in steps)
     assert math.isclose(zs[0][0], min(face, floor), abs_tol=1e-12) and math.isclose(zs[-1][1], max(face, floor), abs_tol=1e-12)
-    for (a0, a1), (b0, b1) in zip(zs, zs[1:]):
+    for (_, a1), (b0, _) in zip(zs, zs[1:]):
         assert math.isclose(a1, b0, abs_tol=1e-12), (a1, b0)
 
 
@@ -159,19 +149,13 @@ def test_a_countersink_keeps_within_its_tolerance_of_the_cone_and_keeps_its_volu
                     assert abs(stacked - exact) <= math.pi * tol ** 2 * (hi - lo) / 3 + 1e-6, (angle, stacked, exact)
                     expect = {k: size / 2 - kicad_distance(k, front) * t for k in range(4)}
                     expect = {k: r for k, r in expect.items() if r > 0 and kicad_distance(k, front) < reach - 1e-7}
-                    assert dict(knocked) == {k: v for k, v in expect.items()}, (angle, side, depth, knocked, expect)
+                    assert dict(knocked) == expect, (angle, side, depth, knocked, expect)
 
 
-def resolved(name, **settings):
-    saved = {k: getattr(getattr(P, k.split(".")[0]), k.split(".")[1]) for k in settings}
-    try:
-        for k, v in settings.items():
-            P.override(k, v)
-        job = start("simulation", ["glb"], None, (), False, lambda s: None)
-        return resolve.run(collect.run(read.run(str(FEATURES / f"{name}.kicad_pcb"), job), job), job), job
-    finally:
-        for k, v in saved.items():
-            P.override(k, v)
+def resolved(name, changes=None):
+    """Stage 3's Regions of a feature board, with the settings `changes`, and the Job."""
+    with settings(changes or {}):
+        return run_stages(FEATURES / f"{name}.kicad_pcb", resolve)
 
 
 def test_the_copper_knocked_out_is_what_kicad_gives_each_layer():
@@ -240,6 +224,29 @@ def test_backdrills_cut_the_barrel_from_the_face_through_their_last_layer():
     assert seen >= 12
 
 
+def test_a_cut_at_a_plated_edge_takes_the_plating_only_between_its_heights():
+    r, _ = resolved("28_plated_edge_machining")
+    band, cuts = r.edge_band, r.edge_cuts
+    assert r.edge_net == "GND" and not any(g is band for g, *_ in r.barrels)
+    spans = sorted({(z0, z1) for z0, z1, _ in cuts})
+    top, bottom = BAND["F.Cu"][1], BAND["B.Cu"][0]
+    assert any(math.isclose(z0, top - 0.5) for z0, _ in spans)             # the counterbore, 0.5 mm deep
+    assert (bottom, BAND["B.Cu"][1]) in spans                                # the countersink, from the back
+    assert (-math.inf, BAND["In2.Cu"][1]) in spans                           # the backdrill, up to In2.Cu
+    assert (BAND["In1.Cu"][0], math.inf) in spans                            # the tertiary drill and blind vias
+    pieces = [(g, z0, z1) for g, z0, z1, i, j, net in r.barrel_pieces if net == r.edge_net and (i, j) == (0, 3)]
+    for z in np.linspace(BAND["B.Cu"][1] + 1e-4, BAND["F.Cu"][0] - 1e-4, 300):       # the plating's whole height
+        here = [g for g, z0, z1 in pieces if z0 < z < z1]
+        cut = shapely.union_all([d for z0, z1, d in cuts if z0 < z < z1])
+        assert len(here) == 1 and here[0].symmetric_difference(band.difference(cut)).area < 1e-5, z    # the grid
+        if -0.09 < z < 0.29:                                  # under the counterbore's floor, over the countersink
+            assert here[0].symmetric_difference(band).area < 1e-9
+    on_top = r.copper["F.Cu"]["GND"]                         # the band is F.Cu's copper but where a cut takes F.Cu
+    face, front = (shapely.union_all([d for z0, z1, d in cuts if z1 >= z]) for z in (top, math.inf))
+    assert on_top.intersection(face.difference(front)).intersection(band).area < 1e-6
+    assert band.difference(face).difference(on_top).area < 1e-6
+
+
 def test_drills_and_cuts_kicad_would_not_make_are_left_out_and_named():
     r, _ = resolved("24_backdrills")
     assert dict(r.items.skipped) == {"backdrills of pads with no hole (left out, as KiCad does)": 1,
@@ -256,17 +263,14 @@ def test_drills_and_cuts_kicad_would_not_make_are_left_out_and_named():
 
 
 def test_switched_off_machining_is_left_out_and_named():
-    r, _ = resolved("24_backdrills", **{"Board.BACKDRILLS": False})
+    r, _ = resolved("24_backdrills", {"Board.BACKDRILLS": False})
     assert not any(h.kind == "backdrill" for h in r.items.holes) and not r.barrel_cuts
     assert r.items.skipped["backdrills of vias (Board.BACKDRILLS is False)"] > 0
-    r, _ = resolved("25_post_machining", **{"Board.POST_MACHINING": False})
+    r, _ = resolved("25_post_machining", {"Board.POST_MACHINING": False})
     assert not r.items.post_machining and not r.slab_cuts and not r.band_cuts
     assert not any(h.kind == "knockout" for h in r.items.holes)
     assert r.items.skipped["counterbores of pads (Board.POST_MACHINING is False)"] > 0
 
 
 if __name__ == "__main__":
-    for name, fn in list(globals().items()):
-        if name.startswith("test_"):
-            fn()
-            print("ok", name)
+    run_tests(__file__)

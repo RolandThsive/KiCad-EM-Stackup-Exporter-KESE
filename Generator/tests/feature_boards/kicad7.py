@@ -92,8 +92,7 @@ def stackup(b, dielectrics, copper_t=0.035, mask_t=0.01, mask_color=None, silk_c
         if i < len(cu) - 1:
             subs = dielectrics[i] if isinstance(dielectrics[i], (list, tuple)) else [dielectrics[i]]
             first, rest = subs[0], subs[1:]
-            body = " ".join(dielectric(d) for d in [first])
-            body += "".join(" addsublayer " + dielectric(d) for d in rest)
+            body = dielectric(first) + "".join(" addsublayer " + dielectric(d) for d in rest)
             out.append(f'(layer "dielectric {i + 1}" (type {q(first.get("kind", "core"))}) {body})')
     out += [f'(layer "B.Mask" (type "Bottom Solder Mask"){color(mask_color)} {mask_s})',
             '(layer "B.Paste" (type "Bottom Solder Paste"))',

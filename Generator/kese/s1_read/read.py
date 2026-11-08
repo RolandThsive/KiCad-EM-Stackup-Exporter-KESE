@@ -23,17 +23,7 @@ def run(pcb_path, job):
 
 def read(path):
     path = Path(path)
-    try:                        # utf-8-sig: a byte order mark an editor put in front is passed over
-        text = path.read_text(encoding="utf-8-sig")
-    except UnicodeDecodeError as exc:
-        raise ValueError(f"{path.name} is not a KiCad board file: it is not UTF-8 text, as KiCad writes "
-                         f"(byte 0x{exc.object[exc.start]:02x} at {exc.start})") from None
-    try:
-        tree = parse(text)
-    except ValueError as exc:
-        raise ValueError(f"{path.name}: {exc}") from None
-    if not tree or tree[0] != "kicad_pcb":
-        raise ValueError(f"{path.name} is not a KiCad board file (expected (kicad_pcb ...))")
+    tree = parsed(path)
     warnings = []
     d = kv.dialect(tree)
     gen = child(tree, "generator")
@@ -44,26 +34,7 @@ def read(path):
     w = kv.tested_range_warning(d, P.Run.KICAD_VERSION_MIN, P.Run.KICAD_VERSION_MAX)
     if w:
         warnings.append(w)
-
-    layers_node = child(tree, "layers")
-    if not layers_node:
-        raise ValueError(f"{path.name}: no (layers ...) block")
-    renamed = kv.copper_layer_names(layers_node)
-    if renamed:
-        kv.rename_layers(tree, renamed)
-        warnings.append("layers named by the user or in an old language, read as KiCad reads them: "
-                        + ", ".join(f"{a} = {b}" for a, b in renamed.items()))
-    all_layers = [str(l[1]) for l in layers_node[1:] if isinstance(l, list) and len(l) > 1]
-    names = [l for l in all_layers if l.endswith(".Cu")]
-    inner = sorted((n for n in names if n.startswith("In")), key=lambda n: int(re.sub(r"\D", "", n)))
-    copper = ["F.Cu"] + inner + ["B.Cu"]
-    missing = [l for l in ("F.Cu", "B.Cu") if l not in names]
-    if missing:
-        raise ValueError(f"{path.name}: copper layers {missing} are not declared")
-    tested = P.Run.TESTED_COPPER_LAYERS
-    if len(copper) > tested:
-        warnings.append(f"{len(copper)} copper layers: more than the {tested} this project has been tested with")
-
+    copper = copper_layers(tree, path.name, warnings)
     general = child(tree, "general")
     file_thickness = num(general, "thickness") if general else None
     if file_thickness is not None and file_thickness <= 0:
@@ -75,3 +46,41 @@ def read(path):
                     copper_layers=copper, file_thickness=file_thickness,
                     title=title, warnings=warnings)
 
+
+def parsed(path):
+    """The file's parsed tree, once it is known to be UTF-8 text that opens with (kicad_pcb ...)."""
+    try:                        # utf-8-sig: a byte order mark an editor put in front is passed over
+        text = path.read_text(encoding="utf-8-sig")
+    except UnicodeDecodeError as exc:
+        raise ValueError(f"{path.name} is not a KiCad board file: it is not UTF-8 text, as KiCad writes "
+                         f"(byte 0x{exc.object[exc.start]:02x} at {exc.start})") from None
+    try:
+        tree = parse(text)
+    except ValueError as exc:
+        raise ValueError(f"{path.name}: {exc}") from None
+    if not tree or tree[0] != "kicad_pcb":
+        raise ValueError(f"{path.name} is not a KiCad board file (expected (kicad_pcb ...))")
+    return tree
+
+
+def copper_layers(tree, file_name, warnings):
+    """The board's copper layers, outermost first, from its (layers ...) block, with the layers renamed
+    as KiCad reads them (in the tree too); a warning for each thing worth saying."""
+    layers_node = child(tree, "layers")
+    if not layers_node:
+        raise ValueError(f"{file_name}: no (layers ...) block")
+    renamed = kv.copper_layer_names(layers_node)
+    if renamed:
+        kv.rename_layers(tree, renamed)
+        warnings.append("layers named by the user or in an old language, read as KiCad reads them: "
+                        + ", ".join(f"{a} = {b}" for a, b in renamed.items()))
+    names = [str(l[1]) for l in kv.copper_run(layers_node)]     # renamed: F.Cu, B.Cu and In<n>.Cu only
+    inner = sorted((n for n in names if n.startswith("In")), key=lambda n: int(re.sub(r"\D", "", n)))
+    copper = ["F.Cu"] + inner + ["B.Cu"]
+    missing = [l for l in ("F.Cu", "B.Cu") if l not in names]
+    if missing:
+        raise ValueError(f"{file_name}: copper layers {missing} are not declared")
+    tested = P.Run.TESTED_COPPER_LAYERS
+    if len(copper) > tested:
+        warnings.append(f"{len(copper)} copper layers: more than the {tested} this project has been tested with")
+    return copper

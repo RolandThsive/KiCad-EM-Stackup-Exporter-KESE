@@ -1,39 +1,29 @@
 """A disk that fills up while the files are written: no half-written file is left behind, the
 files written whole before it stay as they are (nor are the files a big board's STEP parts are
 written into on the way), the error is the system's own (a clean-up that fails too does not hide
-it), and a run folder left empty is removed; and two runs started together
-each get a folder of their own.  The disk is made full by letting the files opened for writing in a
-temporary folder take only so many bytes in all.  Takes about fifteen seconds.
+it), and a run folder left empty is removed; and two runs started together each get a folder of
+their own.  The disk is made full by letting the files opened for writing in a temporary folder
+take only so many bytes in all.  Takes about fifteen seconds.
 
     python -m pytest tests/test_full_disk.py           (or:  python tests/test_full_disk.py)"""
 import builtins
 import errno
 import io
 import re
-import sys
 import tempfile
 from concurrent.futures import ThreadPoolExecutor
 from contextlib import contextmanager
 from pathlib import Path
 
-ROOT = Path(__file__).resolve().parents[1]
-sys.path.insert(0, str(ROOT))
+from helpers import BOARDS, run_stages, run_tests, settings
+from kese.core import parallel
+from kese.core.whole_files import remove_if_empty, whole
+from kese.s6_assemble import assemble
+from kese.s7_write import write
+from kese.s7_write.output_folder import new_folder
+from kese.s9_report.report import write_parameters
 
-from kese.core import parallel  # noqa: E402
-from kese.core.whole_files import remove_if_empty, whole  # noqa: E402
-from kese.job import start  # noqa: E402
-from kese.s1_read import read  # noqa: E402
-from kese.s2_collect import collect  # noqa: E402
-from kese.s3_resolve import resolve  # noqa: E402
-from kese.s4_geometry import geometry  # noqa: E402
-from kese.s5_materials import materials  # noqa: E402
-from kese.s6_assemble import assemble  # noqa: E402
-from kese.s7_write import write  # noqa: E402
-from kese.s7_write.output_folder import new_folder  # noqa: E402
-from kese.s9_report.report import write_parameters  # noqa: E402
-from parameters import P  # noqa: E402
-
-PCB = ROOT / "tests" / "boards" / "six_layer.kicad_pcb"
+PCB = BOARDS / "six_layer.kicad_pcb"
 FORMATS = ["glb", "obj", "stl", "step"]
 PARTS = ".six_layer.step.parts/"            # where a big board's STEP parts are written on their own
 # the disk full in the first round (the topologies kept), the second (the parts' text) and the join
@@ -97,14 +87,6 @@ def disk_with_room(folder, room=float("inf")):
         builtins.open = io.open = real
 
 
-def model_and_job(out_root):
-    job = start("simulation", FORMATS, str(out_root), (), False, lambda s: None)
-    out = str(PCB)
-    for stage in (read, collect, resolve, geometry, materials, assemble):
-        out = stage.run(out, job)
-    return out, job
-
-
 def files_in(folder):
     """{name: bytes}, the time in a STEP file's header left out (a file written a second later)."""
     return {p.relative_to(folder).as_posix(): re.sub(rb"FILE_NAME\('[^']*','[^']*'", b"FILE_NAME(", p.read_bytes(), count=1)
@@ -125,15 +107,11 @@ def test_a_full_disk_while_the_step_parts_are_written_leaves_only_whole_files():
     # here in this process, where the disk is made full (the worker processes are kept from starting)
     real = parallel.ProcessPoolExecutor
     parallel.ProcessPoolExecutor = no_processes
-    saved = [(k, getattr(P.Parallel, k)) for k in ("WORKERS", "PROCESS_MIN_COORDINATES")]
-    P.override("Parallel.WORKERS", 2)
-    P.override("Parallel.PROCESS_MIN_COORDINATES", 0)
     try:
-        full_disk_leaves_only_whole_files(lambda name: name in FILLED, PARTS)
+        with settings({"Parallel.WORKERS": 2, "Parallel.PROCESS_MIN_COORDINATES": 0}):
+            full_disk_leaves_only_whole_files(lambda name: name in FILLED, PARTS)
     finally:
         parallel.ProcessPoolExecutor = real
-        for k, v in saved:
-            P.override(f"Parallel.{k}", v)
 
 
 def no_processes(*args, **kwargs):
@@ -145,15 +123,14 @@ def full_disk_leaves_only_whole_files(filled, passing=None):
     written and removed again on the way."""
     with tempfile.TemporaryDirectory() as tmp:
         tmp = Path(tmp)
-        model, job = model_and_job(tmp)
-        job.status.stop()
+        model, _ = run_stages(PCB, assemble, formats=FORMATS, out_root=str(tmp))
         (tmp / "whole").mkdir()
         with disk_with_room(tmp / "whole") as taken:
             written(model, tmp / "whole")
-        whole = files_in(tmp / "whole")
+        complete = files_in(tmp / "whole")
         order = list(taken)                                    # every file, in the order it was written
         gone = {name for name in order if passing and name.startswith(passing)}
-        assert set(order) - gone == set(whole) and {"six_layer.glb", "six_layer.obj", "six_layer.mtl", "six_layer.step",
+        assert set(order) - gone == set(complete) and {"six_layer.glb", "six_layer.obj", "six_layer.mtl", "six_layer.step",
                                                     "materials.json"} <= set(order) and len(order) > 6, order
         assert bool(gone) == bool(passing), gone
         for k, name in enumerate(order):     # the disk full half-way through each file in turn, and at its last byte
@@ -174,13 +151,13 @@ def full_disk_leaves_only_whole_files(filled, passing=None):
                           - ({"six_layer.step"} if name in gone else set()))      # its MTL, the STEP file with its parts
                 assert set(left) == before, (name, room, sorted(set(left) ^ before))
                 for n, data in left.items():
-                    assert data == whole[n], f"{n}: not as it is when the disk has room"
+                    assert data == complete[n], f"{n}: not as it is when the disk has room"
 
 
 def test_a_run_whose_first_file_does_not_fit_leaves_no_folder():
     with tempfile.TemporaryDirectory() as tmp:
         tmp = Path(tmp)
-        model, job = model_and_job(tmp / "runs")
+        model, job = run_stages(PCB, assemble, formats=FORMATS, out_root=str(tmp / "runs"))
         try:
             with disk_with_room(tmp, 100):
                 write.run(model, job)
@@ -188,8 +165,6 @@ def test_a_run_whose_first_file_does_not_fit_leaves_no_folder():
             assert e.errno == errno.ENOSPC, e
         else:
             raise AssertionError("the write did not fail with the disk full")
-        finally:
-            job.status.stop()
         assert not (tmp / "runs" / "six_layer").exists(), sorted(p.as_posix() for p in tmp.rglob("*"))
         assert (tmp / "runs").is_dir()                         # the folder asked for is kept
 
@@ -264,11 +239,4 @@ def test_two_runs_started_together_get_a_folder_each():
 
 
 if __name__ == "__main__":
-    test_a_full_disk_leaves_only_whole_files()
-    test_a_full_disk_while_the_step_parts_are_written_leaves_only_whole_files()
-    test_a_run_whose_first_file_does_not_fit_leaves_no_folder()
-    test_the_settings_file_that_does_not_fit_is_not_left_half_written()
-    test_only_empty_folders_are_removed()
-    test_a_clean_up_that_fails_does_not_hide_the_error()
-    test_two_runs_started_together_get_a_folder_each()
-    print("ok")
+    run_tests(__file__)

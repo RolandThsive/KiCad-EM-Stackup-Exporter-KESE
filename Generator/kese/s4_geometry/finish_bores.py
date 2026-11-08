@@ -11,8 +11,9 @@ from kese.core.graph import connected_components, pairs_within
 from kese.core.parallel import in_parallel
 from kese.core.shape_copies import own
 from kese.core.shapes2d import union
-from kese.s3_resolve.holes import drilled, full_height
-from kese.s4_geometry.shells import add_all, air_near, bare_faces, groups, named, near_faces, note, reach, shells
+from kese.s3_resolve.holes import drilled, full_height, ring_of
+from kese.s4_geometry.finish import named
+from kese.s4_geometry.shells import add_all, air_near, bare_faces, groups, near_faces, note, reach, shells
 from kese.s4_geometry.via_fill import plug_ranges
 from parameters import P
 
@@ -58,7 +59,7 @@ def bores(r, ps, layers, edge_zone):
         # the mask, every end at a face is open
         ends = tuple(at_face and not closed_end(h, s, before) and (before or drill.intersects(r.mask_open[s]))
                      for s, at_face in (("F", h.i == 0), ("B", h.j == last)))
-        ring_k = h.drill.difference(h.drill.buffer(-h.wall))
+        ring_k = ring_of(h)
         cuts = [(z0, z1) for z0, z1, d in r.barrel_cuts.get(n, []) if sh.inter(ring_k, d).area > 0]
         if not any(ends) and not cuts:
             continue
@@ -85,12 +86,13 @@ def bores(r, ps, layers, edge_zone):
     near = {s: near_faces(faces[s], d) for s in ("F", "B") if not faces[s].is_empty}
 
     def bores_of(job):
-        (i, j, (open_f, open_b), bottom, top), group = job
-        rings = own([spans[job[0]][k] for k in group])
+        key, group = job
+        _, _, (open_f, open_b), bottom, top = key
+        rings = own([spans[key][k] for k in group])
         caps = [(own(near[s]), z, sign) for s, z, sign, is_open in (("F", top, 1, open_f), ("B", bottom, -1, open_b))
                 if is_open and s in near]
         first = {}                  # each net where it first comes in the span: who keeps an area two share
-        for k, (_, net) in enumerate(spans[job[0]]):
+        for k, (_, net) in enumerate(spans[key]):
             first.setdefault(net, k)
         nets = sorted(groups(rings, d), key=lambda g: first.get(g[0], -1))
         return shells(layers, sh.snap(union([m for m, _ in rings])), nets, air, (bottom, top), caps, named("Hole"),

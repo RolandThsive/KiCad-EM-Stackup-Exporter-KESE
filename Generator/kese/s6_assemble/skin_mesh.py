@@ -21,7 +21,7 @@ from kese.core.shape_copies import floating
 from parameters import P
 
 
-def skin_meshes_from_faces(levels, pieces, faces, free=frozenset()):
+def skin_meshes_from_faces(levels, pieces, faces, free):
     """-> {part: mesh of its visible faces} (mm, board frame); across the heights in `free`
     (PrismSet.free_levels) a wall that goes on unchanged is one taller wall (kese/core/tall_walls.py)."""
     at = {z: k for k, z in enumerate(levels)}
@@ -35,15 +35,13 @@ def skin_meshes_from_faces(levels, pieces, faces, free=frozenset()):
         for z0, z1, s, o in tall_walls(every, flats, levels, free, owner):
             for n in np.unique(o):
                 walls_of[names[n]].append((z0, z1, s[o == n]))
-    made, owners, parts = [], [], []
-    for part in names:
-        flats = faces[part][0]
-        mine = [flat_face_triangles(region, at[z], up) for z, region, up in flats]
+    made, owners = [], []
+    for n, part in enumerate(names):
+        mine = [flat_face_triangles(region, at[z], up) for z, region, up in faces[part][0]]
         mine += [wall_triangles(segments, at[z0], at[z1]) for z0, z1, segments in walls_of[part]]
         mine = [piece for piece in mine if len(piece[2])]
         made += mine
-        owners += [np.full(len(tri), len(parts)) for _, _, tri in mine]
-        parts.append(part)
+        owners += [np.full(len(tri), n) for _, _, tri in mine]
     if not made:
         return {}
     v, f = mesh_with_shared_vertices(made, levels)
@@ -51,7 +49,7 @@ def skin_meshes_from_faces(levels, pieces, faces, free=frozenset()):
     keep = ~looks_at_material(v, f, levels, pieces)
     f, owner = f[keep], owner[keep]
     keep = ~sealed(v, f)
-    return meshes_per_part(v, f[keep], owner[keep], parts)
+    return meshes_per_part(v, f[keep], owner[keep], names)
 
 
 def meshes_per_part(v, f, owner, parts):
@@ -120,8 +118,12 @@ def place_in_slice(pieces, probe, inside, share):
 
 
 def sealed(v, f):
-    """Which faces belong to a closed shell that faces inward: the wall of a hollow inside the
-    material, out of sight from every side."""
+    """Which faces are out of sight from every side: those of a closed shell that faces inward (the
+    wall of a hollow inside the material), and those of a piece that lies flat at one height, with no
+    wall.  Such a piece is the top or the bottom of a gap thinner than vertices.near_edge() inside the
+    material: where stage 6 moved a slice's edge onto a vertex of the slice above or below (the
+    vertex lay that near it), the walls of the gap are hidden (walls_split_at_vertices takes the
+    vertex as on the edge beside it), and its faces were left on their own."""
     if not len(f):
         return np.zeros(0, dtype=bool)
     edges = np.concatenate([f[:, :2], f[:, 1:]])
@@ -130,4 +132,8 @@ def sealed(v, f):
     o = (v.min(axis=0) + v.max(axis=0)) / 2
     a, b, c = v[f[:, 0]] - o, v[f[:, 1]] - o, v[f[:, 2]] - o
     volume = np.bincount(shell, weights=np.einsum("ij,ij->i", a, np.cross(b, c)))
-    return volume[shell] < 0
+    z = v[f, 2]
+    low, high = np.full(len(volume), np.inf), np.full(len(volume), -np.inf)
+    np.minimum.at(low, shell, z.min(axis=1))
+    np.maximum.at(high, shell, z.max(axis=1))
+    return (volume[shell] < 0) | (low[shell] == high[shell])

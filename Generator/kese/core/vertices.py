@@ -8,8 +8,9 @@ from kese.core import shapes2d as sh
 
 
 def near_edge():
-    """How far from an edge a vertex may lie and still count as on it: half a grid diagonal (GEOS
-    rounds crossings to the grid), less than the full step between two grid points."""
+    """How far from an edge a vertex may lie and still count as on it: three quarters of a grid step,
+    a little over half a grid diagonal (as far as GEOS moves a crossing it rounds to the grid), and
+    less than the full step between two grid points."""
     return sh.grid() * 0.75
 
 
@@ -167,6 +168,23 @@ def same_vertices(a, b):
     if len(xa) != len(xb):
         return False
     return np.array_equal(*(np.sort(np.ascontiguousarray(x).view(np.complex128).ravel()) for x in (xa, xb)))
+
+
+def same_edges(a, b):
+    """Whether two regions are the same: the same edges, whatever point each ring starts at and way it
+    runs.  The same vertices are not enough: a ring, and the same ring cut through from its outside to
+    its hole between two of its vertices, have the same ones (the finish on a plated edge that a
+    backdrill cuts, above and below the backdrill's end, once the slices share their vertices)."""
+    ea, eb = ring_edges(a), ring_edges(b)
+    return len(ea) == len(eb) and np.array_equal(*(e[np.lexsort((e[:, 1], e[:, 0]))] for e in (ea, eb)))
+
+
+def ring_edges(region):
+    """The edges of the region's rings, each as its two ends, sorted, as complex numbers (x, y)."""
+    xy, ring = shapely.get_coordinates(shapely.get_rings(shapely.get_parts(region)), return_index=True)
+    z = np.ascontiguousarray(xy).view(np.complex128).ravel()
+    joined = ring[1:] == ring[:-1]
+    return np.sort(np.stack([z[:-1][joined], z[1:][joined]], axis=1), axis=1)
 
 
 def ring_points(region):

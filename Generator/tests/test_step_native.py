@@ -1,7 +1,7 @@
-"""The STEP writer (kese/s7_write/step.py): a part built from its Boundary, a
-box with a through hole beside a second, separate box, written and read back by OpenCascade as
-two valid solids with no free edge, the right faces and the right volume; names with a quote
-and letters outside ASCII come back as they went in.  The suite's read-back (tests/step_audit.py),
+"""The STEP writer (kese/s7_write/step.py): a part built from its Boundary, a box with a through
+hole beside a second, separate box, written and read back by OpenCascade as two valid solids with
+no free edge, the right faces and the right volume; names with a quote and letters outside ASCII
+come back as they went in.  The suite's read-back (tests/step_audit.py),
 which reads a file one part at a time, finds what reading the whole file finds, faults included,
 does not pass a part cut in the wrong place, and reads a file laid out otherwise whole.
 Needs OCP (cadquery's OpenCascade); takes a few seconds.
@@ -11,17 +11,14 @@ import sys
 import tempfile
 from pathlib import Path
 
-ROOT = Path(__file__).resolve().parents[1]
-sys.path.insert(0, str(ROOT))
-sys.path.insert(0, str(Path(__file__).resolve().parent))
+import numpy as np
+import shapely
 
-import numpy as np  # noqa: E402
-import shapely  # noqa: E402
-from step_audit import audit_part, parts, step_audit, total  # noqa: E402
-
-from kese.core.boundary import Boundary  # noqa: E402
-from kese.s7_write.step import write_part  # noqa: E402
-from kese.s7_write.step_writer import StepWriter, real, text  # noqa: E402
+from helpers import run_tests
+from kese.core.boundary import Boundary
+from kese.s7_write.step import write_part
+from kese.s7_write.step_writer import StepWriter, real, text
+from step_audit import audit_part, parts, step_audit, total
 
 try:
     from OCP.BRepCheck import BRepCheck_Analyzer
@@ -136,7 +133,4 @@ def test_step_strings_and_reals():
 
 
 if __name__ == "__main__":
-    test_a_boundary_reads_back_as_valid_solids()
-    test_a_file_read_back_part_by_part_gives_what_the_whole_file_gives()
-    test_step_strings_and_reals()
-    print("ok")
+    run_tests(__file__)

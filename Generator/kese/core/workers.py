@@ -1,7 +1,6 @@
 """The worker processes' life (kese/core/parallel.py starts them): started without the run's main
 module, given the run's settings, ended with the main process, and stopped at once with the parts
 they are building."""
-import contextlib
 import multiprocessing
 import multiprocessing.connection
 import os
@@ -10,7 +9,7 @@ import sys
 import threading
 import time
 import types
-from contextlib import contextmanager
+from contextlib import contextmanager, suppress
 
 from parameters import P
 
@@ -24,12 +23,12 @@ def stop(pool):
     else:
         pool.shutdown(wait=False, cancel_futures=True)
         for process in processes:
-            with contextlib.suppress(ValueError, ProcessLookupError):     # already ended and closed
+            with suppress(ValueError, ProcessLookupError):     # already ended and closed
                 if process.is_alive():
                     process.terminate()
     running = []
     for process in processes:
-        with contextlib.suppress(ValueError):         # closed: ended already
+        with suppress(ValueError):                    # closed: ended already
             running.append(process.sentinel)
     end = time.monotonic() + P.Parallel.WORKER_STOP_WAIT_S
     while running and time.monotonic() < end:
@@ -66,11 +65,8 @@ def use_settings(values):
     the main process, which then hands the parts left to fewer workers, or builds them itself: the
     biggest process, the one the killer would take, is most often the main one."""
     signal.signal(signal.SIGINT, signal.SIG_DFL)
-    try:
-        with open("/proc/self/oom_score_adj", "w") as f:
-            f.write("1000")
-    except OSError:                                   # not Linux
-        pass
+    with suppress(OSError), open("/proc/self/oom_score_adj", "w", encoding="ascii") as f:   # no such file: not Linux
+        f.write("1000")
     threading.Thread(target=stop_with_parent, name="kese-parent-watch", daemon=True).start()
     for key, value in values.items():
         P.override(key, value)

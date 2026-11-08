@@ -25,20 +25,16 @@ import sys
 import time
 import warnings
 from concurrent.futures import ProcessPoolExecutor
-from contextlib import contextmanager
-from pathlib import Path
 
-ROOT = Path(__file__).resolve().parents[1]
-sys.path.insert(0, str(ROOT))
-sys.path.insert(0, str(Path(__file__).resolve().parent))
+import numpy as np
 
-import numpy as np  # noqa: E402
-
-from kese.core.parallel import process_limit, processor_threads  # noqa: E402
-from kese.pipeline import generate  # noqa: E402
-from kese.s8_verify.verify import every_check  # noqa: E402
-from parameters import P  # noqa: E402
-from step_audit import audit_part, parts, step_audit, total  # noqa: E402
+import helpers
+from helpers import ROOT, settings
+from kese.core.parallel import process_limit, processor_threads
+from kese.pipeline import generate
+from kese.s8_verify.verify import every_check
+from parameters import P
+from step_audit import audit_part, parts, step_audit, total
 
 BASELINE = ROOT / "tests" / "baseline.json"
 OUT = ROOT / "tests" / "out"
@@ -46,10 +42,10 @@ VOLUME_TOLERANCE = 1e-3          # relative, per part
 # background processes reading STEP files back (plain python entry): one per processor thread, as
 # each holds one part of a file in OpenCascade, not the whole file (gigabytes for the biggest boards)
 AUDITORS = process_limit(max(2, processor_threads()))
-FEATURES = sorted((ROOT.parent / "featureTest").glob("*.kicad_pcb"))
+FEATURES = sorted(helpers.FEATURES.glob("*.kicad_pcb"))
 # the boards of Input/ that featureTest/ holds too, byte for byte (21_rf_module is rf_module), run once
 COPIES = {p.read_bytes() for p in FEATURES}
-BOARDS = (sorted((ROOT / "tests" / "boards").glob("*.kicad_pcb")) + FEATURES
+BOARDS = (sorted(helpers.BOARDS.glob("*.kicad_pcb")) + FEATURES
           + [p for p in sorted((ROOT / "Input").glob("*.kicad_pcb")) if p.read_bytes() not in COPIES])
 MODES = ("simulation", "visual")
 FORMATS = {"simulation": ["glb", "step"], "visual": ["glb"]}
@@ -66,29 +62,15 @@ SETTINGS = {"16_edge_plating_castellation": FILE_FINISH, "17_mask_silk": FILE_FI
             "18c_finish_before_mask": {"Finish.FINISH_BEFORE_SOLDER_MASK": True, **FILE_FINISH}}
 
 
-@contextmanager
-def settings_for(pcb):
-    """ALL_PARTS and the board's SETTINGS, applied for one run and put back after it; -> the (key,
-    value) pairs."""
-    changes = {**ALL_PARTS, **SETTINGS.get(pcb.stem, {})}
-    saved = {key: getattr(getattr(P, key.split(".")[0]), key.split(".")[1]) for key in changes}
-    for key, value in changes.items():
-        P.override(key, value)
-    try:
-        yield tuple(changes.items())
-    finally:
-        for key, value in saved.items():
-            P.override(key, value)
-
-
 def run_board(pcb, mode, audit=step_audit):
     """-> (verifier ok, verifier lines, {part: volume mm3}, what `audit` gave for the STEP file or
     None).  The suite's own loop passes an `audit` that hands the file's parts to background
     processes."""
     formats = FORMATS[mode]
-    with settings_for(pcb) as overrides:
-        out_dir, model = generate(pcb, mode=mode, formats=formats, out_root=OUT, overrides=overrides, verify=False,
-                                  log=lambda s: None)
+    changes = {**ALL_PARTS, **SETTINGS.get(pcb.stem, {})}
+    with settings(changes):
+        out_dir, model = generate(pcb, mode=mode, formats=formats, out_root=OUT, overrides=tuple(changes.items()),
+                                  verify=False, log=lambda s: None)
         ok, lines = every_check(model)
     scale = 1000.0 if model.units == "m" else 1.0
     with np.errstate(divide="ignore", invalid="ignore"):     # a skin part with no volume has no centre either
@@ -119,9 +101,8 @@ def check(pcb, mode, baseline, audit=step_audit):
             problems.append(f"part {part!r} disappeared")
         elif abs(now - vol) > VOLUME_TOLERANCE * max(abs(vol), 1e-9):
             problems.append(f"{part}: volume {vol:.6f} -> {now:.6f} mm3")
-    for part in volumes:
-        if key in baseline and part not in baseline[key]:
-            problems.append(f"new part {part!r}")
+    if key in baseline:
+        problems += [f"new part {part!r}" for part in volumes if part not in baseline[key]]
     return problems, volumes, step
 
 

@@ -55,7 +55,9 @@ class _Store:
         return self._acc[key]
 
 
-def glb_bytes(model, normals=True, targets=True):
+def glb_bytes(model, normals, targets):
+    """The file in pieces of bytes: header, JSON, the binary chunk's header, the arrays.  `normals`:
+    Run.EXPORT_INCLUDE_NORMALS, `targets`: Run.EXPORT_SET_BUFFERVIEW_TARGETS."""
     store, meshes, materials, mat_index, nodes = _Store(), [], [], {}, []
     for part, mesh in model.meshes.items():
         if not len(mesh.faces) or not len(mesh.vertices):
@@ -77,9 +79,8 @@ def glb_bytes(model, normals=True, targets=True):
         meshes.append({"name": part, "extras": {}, "primitives": [prim]})
     tree = {"scene": 0, "scenes": [{"nodes": list(range(len(nodes)))}],
             "asset": {"version": "2.0", "generator": GENERATOR}}
-    for key, value in (("accessors", store.accessors), ("meshes", meshes), ("materials", materials)):
-        if value:
-            tree[key] = value
+    tree.update({key: value for key, value in (("accessors", store.accessors), ("meshes", meshes), ("materials", materials))
+                 if value})
     tree["nodes"] = nodes
     pieces, views, at = [], [], 0
     for raw in store.views:

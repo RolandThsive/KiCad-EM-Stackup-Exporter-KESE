@@ -87,15 +87,21 @@ python tests/test_colors.py      # stack-up colours: named, user-defined and unk
 python tests/test_text_layout.py # text laid out where KiCad 7.0.11 plots it
 python tests/test_font.py        # the stroke font glyph by glyph, custom fonts, TrueType faces
 python tests/test_text_vars.py   # variables inside variables, as each KiCad version expands them
-python tests/test_kicad_version.py # the rules of each KiCad version, against KiCad's own parser
+python tests/test_kicad_version.py # the rules of each KiCad version and the file's tokens, against KiCad's own parser
 python tests/test_enabled.py     # each part switch leaves out its own parts and nothing else
 python tests/test_bad_input.py   # wrong settings and damaged files: an error or a warning, not a crash
-python tests/test_parallel.py    # worker processes and threads: shapes and copies, settings, caps, fallback, ending
-python tests/test_verifier.py    # the Verifier: the visual check upright and flat, and on 32-bit Python; checks in the workers; overlaps in threads
+python tests/test_threads.py     # threads: their own copies of shapes, one prepared slice, the skin's probes and meshes, memory
+python tests/test_workers.py     # worker processes: shapes and settings reach them, caps, lost workers, errors, ending
+python tests/test_same_result.py # the work in batches or processes of any size gives the same result, to the byte
+python tests/test_verifier.py    # the Verifier: the visual check upright and flat, on 32-bit Python, at loose faces; checks in the workers; overlaps in threads
 python tests/test_boundary.py    # stage 6's shortcuts give what the long way gives, and parts close
+python tests/test_tall_walls.py  # walls joined across the heights only a counterbore, a countersink or a plug brings
 python tests/test_copper_union.py # a net's copper joined with no crack and no burr past the edge
 python tests/test_finish_shells.py # the finish's air cut bore by bore, as the whole board's union cuts it
 python tests/test_mask.py        # no slivers of mask on the copper where an opening follows a pad's edge: the finish covers them
+python tests/test_hatch.py       # KiCad 10's hatched fills, against what KiCad 10 itself draws
+python tests/test_machining.py   # KiCad 10's backdrills, counterbores and countersinks, against KiCad 10 and the cone
+python tests/test_via_protection.py # KiCad 10's via covering, plugging, capping and filling, as the file and the board say
 python tests/test_pairs.py       # pieces within a distance of each other, as an STRtree finds them; a tree threads share
 python tests/test_full_disk.py   # a full disk leaves no half-written file; runs at once, a folder each
 python tests/test_step_native.py # a solid written from its faces, read back by OpenCascade
@@ -103,5 +109,7 @@ python tests/test_step_arcs.py   # true arcs and cylinders in STEP (Step.STEP_EX
 python tests/test_boards.py      # every test board through both modes, against tests/baseline.json
 ```
 
-`python -m pytest tests` runs all nineteen. When a change is meant to move the geometry, re-record the
-baseline with `python tests/test_boards.py --accept` and say why in the pull request.
+`python -m pytest tests` runs all twenty-five. When a change is meant to move the geometry, re-record the
+baseline with `python tests/test_boards.py --accept` and say why in the pull request. What several test
+files share (the folders, settings changed for a block, a board run through the first stages, the plain
+`python tests/test_x.py` run) is in `tests/helpers.py`.

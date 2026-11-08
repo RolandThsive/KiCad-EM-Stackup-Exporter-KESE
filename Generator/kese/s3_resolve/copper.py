@@ -20,7 +20,7 @@ def copper_layers(r, items, outline_k, log):
     nets (Parallel.PROCESS_MIN_NETS), else in threads (copper_of_layer takes its own copies of the shapes
     there)."""
     last = len(items.layers) - 1
-    jobs = {k: (k == 0 or k == last, items.copper_items.get(l, []), cutting(items.holes, k, last),
+    jobs = {k: (k in (0, last), items.copper_items.get(l, []), cutting(items.holes, k, last),
                 outline_k, r.to_board_T) for k, l in enumerate(items.layers)}
     size = {k: sum(int(shapely.get_num_coordinates(g)) for g, _ in job[1]) for k, job in jobs.items()}
     order = sorted(jobs, key=lambda k: -size[k])
@@ -99,12 +99,11 @@ def close_hairline_gaps(cu):
         return cu
     g = sh.grid()
     i, j = pairs_within(parts, 2 * g)
-    near = sorted(set(i.tolist()) | set(j.tolist()))
+    near = set(i.tolist()) | set(j.tolist())
     if not near:
         return cu
-    joined = union([parts[k].buffer(g, join_style="mitre") for k in near]).buffer(-g, join_style="mitre")
-    keep = set(near)
-    return sh.snap(union([joined] + [p for k, p in enumerate(parts) if k not in keep]))
+    joined = union([parts[k].buffer(g, join_style="mitre") for k in sorted(near)]).buffer(-g, join_style="mitre")
+    return sh.snap(union([joined] + [p for k, p in enumerate(parts) if k not in near]))
 
 
 def fill_hairline_holes(cu):
@@ -115,8 +114,9 @@ def fill_hairline_holes(cu):
     parts, changed = [], False
     for p in shapely.get_parts(cu):
         keep = [r for r in p.interiors if 2 * shapely.Polygon(r).area >= P.Copper.HAIRLINE_HOLE_MM * r.length]
-        changed |= len(keep) != len(p.interiors)
-        parts.append(shapely.Polygon(p.exterior, keep) if len(keep) != len(p.interiors) else p)
+        filled = len(keep) != len(p.interiors)
+        changed |= filled
+        parts.append(shapely.Polygon(p.exterior, keep) if filled else p)
     return union(parts) if changed else cu      # union: a filled hole may hold a speck of its own
 
 

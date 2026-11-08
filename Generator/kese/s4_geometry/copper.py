@@ -1,5 +1,6 @@
 """Copper: every copper layer, per net, optionally with the etch-factor slope on its walls."""
 from kese.core import shapes2d as sh
+from kese.s3_resolve.holes import drills
 from parameters import P
 
 
@@ -36,7 +37,6 @@ def _slices(region, z0, z1, foot_at_bottom, unetched):
 def _unetched(r, k):
     """The edges copper layer k is not etched along, board frame: the drill walls of the holes
     through it and the outside of the board outline (edge plating, castellations)."""
-    from kese.s3_resolve.holes import drills
     walls = r.to_board_T(drills(r, lambda h, k=k: h.i <= k <= h.j))
     return sh.union([walls, r.outline.boundary.buffer(1e-6)])
 

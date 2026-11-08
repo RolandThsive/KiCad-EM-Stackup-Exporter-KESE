@@ -7,23 +7,16 @@ open; and the settings: a resin fill, protection switched off, the resin left ou
 
     python -m pytest tests/test_via_protection.py   (or:  python tests/test_via_protection.py)"""
 import math
-import sys
-from pathlib import Path
 
 from shapely.geometry import Point, box
 
-ROOT = Path(__file__).resolve().parents[1]
-sys.path.insert(0, str(ROOT))
+from helpers import FEATURES, run_stages, run_tests, settings
+from kese.model.items import Protection
+from kese.s3_resolve import resolve
+from kese.s4_geometry import geometry
+from parameters import P
 
-from kese.job import start  # noqa: E402
-from kese.model.items import Protection  # noqa: E402
-from kese.s1_read import read  # noqa: E402
-from kese.s2_collect import collect  # noqa: E402
-from kese.s3_resolve import resolve  # noqa: E402
-from kese.s4_geometry import geometry  # noqa: E402
-from parameters import P  # noqa: E402
-
-BOARD = ROOT.parent / "featureTest" / "26_via_protection.kicad_pcb"
+BOARD = FEATURES / "26_via_protection.kicad_pcb"
 # (filled, capped, plugged, covered, opened) as the file and the board's setting (plugged on the back) give them
 EXPECTED = {
     "T1_TENTED": None, "T1B_TENTED": None,                         # tenting is the mask's business
@@ -63,17 +56,11 @@ MASKED = {"T1_TENTED": "", "T2_TENT_COVER": "F", "T3_PLUG": "F", "T4_PLUG_COVER"
           "BLIND_FILLED": "FB", "BURIED_CAPPED": "FB", "BLIND_COVER_INNER": "FB"}
 
 
-def run(**settings):
-    saved = {k: getattr(getattr(P, k.split(".")[0]), k.split(".")[1]) for k in settings}
-    try:
-        for k, v in settings.items():
-            P.override(k, v)
-        job = start("simulation", ["glb"], None, (), False, lambda s: None)
-        r = resolve.run(collect.run(read.run(str(BOARD), job), job), job)
+def run(changes=None):
+    """The board's Regions and PrismSet, with the settings `changes`."""
+    with settings(changes or {}):
+        r, job = run_stages(BOARD, resolve)
         return r, geometry.geometry(r, job.mode)
-    finally:
-        for k, v in saved.items():
-            P.override(k, v)
 
 
 def vias(r):
@@ -116,7 +103,7 @@ def test_fills_and_plugs_are_as_long_as_the_rules_say():
 
 
 def test_a_cap_or_a_copper_fill_closes_the_outer_copper_and_a_covering_the_mask():
-    r, _ = run(**{"SolderMask.SOLDER_MASK_ENABLED": True})
+    r, _ = run({"SolderMask.SOLDER_MASK_ENABLED": True})
     found = vias(r)
     centre = {n: r.to_board_T(Point(h.drill.centroid).buffer(0.01)) for n, h in found.items()}
     for net in ("T5_FILL", "T7_FILL_CAP", "CAP_ONLY", "T5B_FILL_OPEN"):
@@ -130,7 +117,7 @@ def test_a_cap_or_a_copper_fill_closes_the_outer_copper_and_a_covering_the_mask(
 
 
 def test_a_resin_fill_is_resin_flush_with_the_copper_face_unless_capped():
-    r, ps = run(**{"Copper.VIA_FILL": "resin"})
+    r, ps = run({"Copper.VIA_FILL": "resin"})
     found = vias(r)
     for net, spans in (("T5_FILL", [(B_OUT, F_OUT)]), ("T7_FILL_CAP", [(B_IN, F_IN)]),
                        ("FILL_BACKDRILL", [(IN2_HI, F_OUT)]), ("BLIND_FILLED", [(IN1_LO, F_OUT)])):
@@ -143,7 +130,7 @@ def test_a_resin_fill_is_resin_flush_with_the_copper_face_unless_capped():
 
 
 def test_protection_switched_off_leaves_every_via_open():
-    r, ps = run(**{"Copper.VIA_PROTECTION": "off"})
+    r, ps = run({"Copper.VIA_PROTECTION": "off"})
     assert all(h.protect is None for h in r.items.holes)
     assert not any(p.role == "via_resin" for p in ps.prisms)
     found = vias(r)
@@ -153,7 +140,7 @@ def test_protection_switched_off_leaves_every_via_open():
 
 
 def test_the_resin_switch_leaves_the_resin_out_of_the_files_only():
-    _, ps = run(**{"Copper.VIA_RESIN_ENABLED": False})
+    _, ps = run({"Copper.VIA_RESIN_ENABLED": False})
     assert not any(p.role == "via_resin" for p in ps.prisms)
     assert any("Copper.VIA_RESIN_ENABLED" in n for n in ps.notes)
 
@@ -172,13 +159,10 @@ def test_the_board_outline_holds_every_fill():
     r, ps = run()
     outline = r.outline
     for p in ps.prisms:
-        if p.role in ("via_resin",):
+        if p.role == "via_resin":
             assert p.region.difference(outline.buffer(1e-6)).area < 1e-9
     assert box(*outline.bounds).area > 0
 
 
 if __name__ == "__main__":
-    for name, fn in list(globals().items()):
-        if name.startswith("test_"):
-            fn()
-            print("ok", name)
+    run_tests(__file__)

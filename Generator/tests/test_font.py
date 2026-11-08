@@ -14,14 +14,12 @@ import sys
 import tempfile
 from pathlib import Path
 
-ROOT = Path(__file__).resolve().parents[1]
-sys.path.insert(0, str(ROOT))
+from helpers import ROOT, run_stages, run_tests, settings
+
 sys.path.insert(0, str(ROOT / "tools"))
 
 from font_lines import font_lines  # noqa: E402
 from kese.core import font, font_file  # noqa: E402
-from kese.job import start  # noqa: E402
-from kese.s1_read import read  # noqa: E402
 from kese.s2_collect import collect  # noqa: E402
 from kese.s2_collect.text import STROKED  # noqa: E402
 from parameters import P  # noqa: E402
@@ -69,16 +67,12 @@ def test_every_layout_gives_the_same_glyphs():
 
 
 def test_only_the_glyphs_drawn_are_parsed():
-    saved = P.Silkscreen.FONT_FILE
-    try:
-        P.override("Silkscreen.FONT_FILE", None)
+    with settings({"Silkscreen.FONT_FILE": None}):
         font_file._fonts.clear()
         assert not font.render("   ", (0, 0), 0, 1.0, 1.0, 0.1).area and not font_file._fonts   # blank: no font read
         assert font.render("AB 12 A", (0, 0), 0, 1.0, 1.0, 0.1).area > 0
         f, _ = font_file.load()
         assert sorted(f["glyphs"]._parsed) == sorted({ord(c) - 32 for c in " AB12"})
-    finally:
-        P.override("Silkscreen.FONT_FILE", saved)
 
 
 def test_a_broken_line_names_the_file_and_the_line():
@@ -95,25 +89,14 @@ def test_a_broken_line_names_the_file_and_the_line():
             raise AssertionError("a broken glyph was read")
 
 
-def collected(board_text, **settings):
-    """Stages 1 and 2 on a board written from board_text, with settings ({"Silkscreen.X": value})
-    for the run: (Items, the run's notes and warnings)."""
-    saved = {k: getattr(getattr(P, k.split(".")[0]), k.split(".")[1]) for k in settings}
-    lines = []
-    try:
-        for k, v in settings.items():
-            P.override(k, v)
-        with tempfile.TemporaryDirectory() as tmp:
-            path = Path(tmp) / "fonts.kicad_pcb"
-            path.write_text(board_text, encoding="utf-8")
-            job = start("simulation", ["glb"], None, (), False, lambda s: None)
-            items = collect.run(read.run(str(path), job), job)
-            job.status.stop()
-            lines = list(job.log_lines)
-    finally:
-        for k, v in saved.items():
-            P.override(k, v)
-    return items, lines
+def collected(board_text, changes=None):
+    """Stages 1 and 2 on a board written from board_text, with the settings `changes`
+    ({"Silkscreen.X": value}) for the run: (Items, the run's notes and warnings)."""
+    with settings(changes or {}), tempfile.TemporaryDirectory() as tmp:
+        path = Path(tmp) / "fonts.kicad_pcb"
+        path.write_text(board_text, encoding="utf-8")
+        items, job = run_stages(path, collect)
+    return items, list(job.log_lines)
 
 
 def board(*texts):
@@ -159,7 +142,7 @@ def test_text_in_a_truetype_face_is_drawn_from_its_cache_else_with_the_stroke_fo
         "no render cache for them, or one made for other words or another angle (open the board in KiCad and "
         "save it)"]
     items, lines = collected(board(("TTF", "Some Font Nobody Has", None)),
-                             **{"Silkscreen.DRAW_TRUETYPE_TEXT_WITH_STROKE_FONT": False})
+                             {"Silkscreen.DRAW_TRUETYPE_TEXT_WITH_STROKE_FONT": False})
     assert faces(items) == {"TrueType text on F.Cu (DRAW_TRUETYPE_TEXT_WITH_STROKE_FONT is False)": 1}
     assert not copper(items) and not any("stroke font, in other" in s for s in lines)
 
@@ -190,9 +173,9 @@ def test_a_cache_differing_only_where_kese_cannot_know_the_words_is_drawn():
 
 def test_the_face_kicad_font_is_the_stroke_font():
     plain, _ = collected(board(("R12", None, None)))
-    for settings in ({}, {"Silkscreen.DRAW_TRUETYPE_TEXT_WITH_STROKE_FONT": False}):
-        items, lines = collected(board(("R12", "KiCad Font", None)), **settings)
-        assert not faces(items) and not any("TrueType" in s for s in lines), settings
+    for changes in ({}, {"Silkscreen.DRAW_TRUETYPE_TEXT_WITH_STROKE_FONT": False}):
+        items, lines = collected(board(("R12", "KiCad Font", None)), changes)
+        assert not faces(items) and not any("TrueType" in s for s in lines), changes
         assert copper(items)[0].symmetric_difference(copper(plain)[0]).area < 1e-12
 
 
@@ -207,7 +190,7 @@ def test_font_file_picks_a_custom_font_and_a_changed_one_takes_effect():
             widths = {}
             for name in (None, "small.json", "hershey.jhf", "missing.jhf"):
                 P.override("Silkscreen.FONT_FILE", name)
-                f, note = font_file.load()
+                _, note = font_file.load()
                 widths[name] = font.render("!", (0, 0), 0, 1.0, 1.0, 0.1, ["left"]).bounds
                 assert note == font_file.note()
             assert font_file.note().startswith("font: missing.jhf not found") and widths["missing.jhf"] == widths[None]
@@ -222,14 +205,4 @@ def test_font_file_picks_a_custom_font_and_a_changed_one_takes_effect():
 
 
 if __name__ == "__main__":
-    test_newstroke_is_read_glyph_by_glyph_and_is_kicads_font_unchanged()
-    test_every_layout_gives_the_same_glyphs()
-    test_only_the_glyphs_drawn_are_parsed()
-    test_a_broken_line_names_the_file_and_the_line()
-    test_a_board_with_no_text_reads_no_font()
-    test_text_in_a_truetype_face_is_drawn_from_its_cache_else_with_the_stroke_font_and_a_warning()
-    test_an_empty_render_cache_draws_nothing_as_kicad_does()
-    test_a_cache_differing_only_where_kese_cannot_know_the_words_is_drawn()
-    test_the_face_kicad_font_is_the_stroke_font()
-    test_font_file_picks_a_custom_font_and_a_changed_one_takes_effect()
-    print("ok")
+    run_tests(__file__)

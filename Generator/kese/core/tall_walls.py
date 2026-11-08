@@ -44,14 +44,14 @@ def tall_walls(walls, flats, levels, free, owners=None):
         return walls if owners is None else [(z0, z1, s, o) for (z0, z1, s), o in zip(walls, owners)]
     k = np.concatenate([np.full(len(s), at[z0]) for z0, _, s in walls])
     seg = np.concatenate([s for *_, s in walls])
-    own = np.concatenate(owners) if owners is not None else np.zeros(len(seg), np.int64)
+    whose = np.concatenate(owners) if owners is not None else np.zeros(len(seg), np.int64)
     ka, kb = grid_keys(seg[:, 0]), grid_keys(seg[:, 1])
     fl, fk = flat_points(flats, at)
-    points, inverse = np.unique(np.concatenate([ka, kb, fk]), return_inverse=True)
+    inverse = np.unique(np.concatenate([ka, kb, fk]), return_inverse=True)[1]
     pa, pb, pf = inverse[:len(ka)], inverse[len(ka):2 * len(ka)], inverse[2 * len(ka):]
     width = len(levels) + 1
     # each distinct (owner, segment) once, its slices in order
-    ident = np.unique(np.c_[own, pa, pb], axis=0, return_inverse=True)[1].ravel()
+    ident = np.unique(np.c_[whose, pa, pb], axis=0, return_inverse=True)[1].ravel()
     order = np.lexsort((k, ident))
     kk, idn, a, b = k[order], ident[order], pa[order], pb[order]
     goes_on = np.r_[False, (idn[1:] == idn[:-1]) & (kk[1:] == kk[:-1] + 1)] & np.isin(kk, free_k)
@@ -79,5 +79,5 @@ def tall_walls(walls, flats, levels, free, owners=None):
         pick = first[(z0 == lo) & (z1 == hi)]
         pick.sort()
         entry = (levels[lo], levels[hi], seg[pick])
-        out.append(entry if owners is None else (*entry, own[pick]))
+        out.append(entry if owners is None else (*entry, whose[pick]))
     return out
