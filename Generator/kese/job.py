@@ -24,6 +24,8 @@ CHOICES = {
     "Copper.CASTELLATION": ("auto", "file", "off"),
     "Copper.EDGE_PLATING": ("file", "yes", "no"),
     "Copper.VIA_TENTING": ("file", "tented", "open"),
+    "Copper.VIA_PROTECTION": ("file", "off"),
+    "Copper.VIA_FILL": ("copper", "resin"),
     "Finish.FINISH_GROUPING": ("metal", "net"),
 }
 ONE_OR_MORE = ("Geometry.PINCH_CUT_ROUNDS", "Geometry.VERTEX_SHARING_ROUNDS", "Geometry.NODING_ROUNDS",   # at 0 nothing
@@ -41,10 +43,11 @@ KIND_WORDS = {bool: "True or False", int: "a number", float: "a number", str: "t
               list: "a list", dict: "a dict"}
 NUMBER_AT_LEAST = {"Verifier.VERIFY_VOLUME_TOLERANCE": 0, "Verifier.VERIFY_OPENED_VOLUME_MM3": 0,
                    "Verifier.VERIFY_VOLUME_NOISE_MM3": 0, "Step.STEP_TANGENT_MM": 0, "Step.STEP_ARC_CHECK_FACTOR": 0,
-                   "Parallel.WORKER_STOP_WAIT_S": 0,
+                   "Parallel.WORKER_STOP_WAIT_S": 0, "Copper.VIA_RESIN_EPSILON_R": 1, "Copper.VIA_RESIN_LOSS_TANGENT": 0,
                    "Finish.FINISH_MITRE_LIMIT": 1}     # a corner cut nearer than its thickness would thin the finish
 MORE_THAN_ZERO = ("Step.STEP_ARC_MAX_SWEEP_DEG", "Step.STEP_STRIP_MAX_TURN_DEG",   # arcs are cut in pieces of at most this
-                  "Geometry.SMOOTH_FACET_AREA_DIVISOR")
+                  "Geometry.SMOOTH_FACET_AREA_DIVISOR", "Board.COUNTERSINK_STEP_TOLERANCE_MM")
+SHARES = ("Copper.VIA_PLUG_DEPTH_FRACTION",)       # a share of something: more than 0, at most 1
 WHOLE_NUMBERS = {                 # the settings of parameters/parallel.py that count, and what their 0 means
     "WORKERS": "one per processor thread",
     "PROCESS_WORKERS": "as many as WORKERS",
@@ -133,6 +136,10 @@ def start(mode=None, formats=None, out_root=None, overrides=(), verify=None, log
         value = getattr(getattr(P, key.split(".")[0]), key.split(".")[1])
         if type(value) not in (int, float) or not value > 0:
             raise ValueError(f"{key} must be a number more than 0, not {value!r}")
+    for key in SHARES:
+        value = getattr(getattr(P, key.split(".")[0]), key.split(".")[1])
+        if type(value) not in (int, float) or not 0 < value <= 1:
+            raise ValueError(f"{key} must be a number more than 0 and at most 1, not {value!r}")
     for key, kind in KINDS.items():                       # every other setting: of the kind its file gives it
         value = getattr(getattr(P, key.split(".")[0]), key.split(".")[1], None)
         if kind in KIND_WORDS and key != "Run.FILE_FORMAT" and not of_kind(value, kind):

@@ -4,7 +4,8 @@ from kese.core.shapes2d import disk, union
 from kese.model.items import Hole
 from kese.s1_read.parse_kicad_version import (flag, net_class_vias, padstack_entries, via_size, via_tenting,
                                               zone_layer_connections)
-from kese.s2_collect.left_out import count
+from kese.s2_collect.left_out import count_padstack
+from kese.s2_collect.machining import machine
 from kese.s2_collect.nets import net_name
 from parameters import P
 
@@ -43,7 +44,8 @@ def add_via(ctx, node):
     through = i == 0 and j == len(ctx.layers) - 1
     items.found["through vias" if through else "blind/buried vias"] += 1
     items.via_tenting.append((pad, span, via_tenting(node, items.tent_default)))
-    count(items, node, "vias")
+    count_padstack(items, node, "vias")
+    machine(ctx, node, len(items.holes) - 1, (x, y), "vias")
 
 
 def drop_unconnected_rings(ctx):

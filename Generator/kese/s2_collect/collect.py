@@ -4,6 +4,7 @@ from kese.core import font_file
 from kese.core.sexp import NotANumber, child
 from kese.model.items import Items
 from kese.s1_read.parse_kicad_version import is_footprint
+from kese.s2_collect import hatch
 from kese.s2_collect.context import Context
 from kese.s2_collect.drawings import GRAPHICS, add_drawing
 from kese.s2_collect.footprints import add_footprint
@@ -65,6 +66,7 @@ def collect(raw, log):
             items.skipped[f"{k} {UNKNOWN}"] += 1
     for v in vias:
         add_via(ctx, v)
+    hatch.finish(ctx)
     drop_unconnected_rings(ctx)
     unfilled = items.skipped.get(UNFILLED, 0)
     if unfilled:

@@ -10,6 +10,8 @@ class Context:
         self.layers = items.layers
         self.conditional_pads = []      # (layer, ring, net, zones count): kept only where copper of its net meets them
         self.zone_fills = set()         # id() of every zone fill shape, which KiCad 7+ does not count as meeting a ring
+        self.hatched = []               # hatched drawings (KiCad 10), hatched once every item is in (hatch.finish)
+        self.knockouts = []             # the drawings and text that cut back a hatch on their layer
 
     def expand(self, layers):
         """Layer names with wildcards (*.Cu, F&B.Cu, *.Mask, ...) -> plain layer names."""
@@ -53,3 +55,19 @@ class Context:
             items.skipped[f"{what} on {layer} (not a physical layer)"] += 1
             return
         items.found[f"{what} on {layer}"] += 1
+
+    def add_more(self, layer, geom, net=None):
+        """File more of a shape already added and counted (a hatched drawing's hatch)."""
+        items = self.items
+        if geom is None or geom.is_empty:
+            return
+        if layer in self.layers:
+            items.copper_items[layer].append((geom, net or P.Copper.NO_NET_NAME))
+        elif layer in ("F.Mask", "B.Mask"):
+            items.mask_open_items[layer[0]].append(geom)
+        elif layer in P.Silkscreen.SILK_LAYERS:
+            items.silk_items[layer[0]].append(geom)
+
+    def physical(self, layer):
+        """Whether KESE builds anything for this layer: copper, mask or silkscreen."""
+        return layer in self.layers or layer in ("F.Mask", "B.Mask") or layer in P.Silkscreen.SILK_LAYERS

@@ -12,12 +12,12 @@ solvers and CAD, and a **visual model** of the visible surface for viewers.
 | Copper layers | 1 to 8 in the test boards. Above 8, KESE warns but still models the board. `F.Cu` and `B.Cu` must be declared. |
 | Stack-up | From Board Setup: every core and prepreg with its thickness, εr and tanδ, the copper and mask thicknesses, the mask and silk colours, the finish. Defaults from `parameters/` when the file has none. |
 | Outline | `Edge.Cuts` of any shape, with cut-outs and boards inside them |
-| Copper | Tracks, arc tracks, pads (circle, rect, oval, roundrect, trapezoid, custom), zone fills, copper graphics and text |
-| Vias | Through, blind, buried and micro vias with plated barrels; rings on unconnected layers dropped as KiCad does |
-| Holes | Plated and non-plated, round and slotted; plated walls on the plated ones |
+| Copper | Tracks, arc tracks, pads (circle, rect, oval, roundrect, trapezoid, custom), zone fills, copper graphics (solid or hatched) and text |
+| Vias | Through, blind, buried and micro vias with plated barrels; rings on unconnected layers dropped as KiCad does; KiCad 10's covered, plugged, capped and filled vias, the plugs and resin fills a part of their own |
+| Holes | Plated and non-plated, round and slotted; plated walls on the plated ones; KiCad 10's backdrills, counterbores and countersinks cut into them |
 | Board edge | Castellated holes and edge plating |
 | Dielectrics | One solid per gap between copper layers with its own εr and tanδ; resin fills the space beside inner copper |
-| Solder mask | Openings as KiCad draws them (pads, drawn openings, untented vias, and tracks and copper drawings the mask leaves bare); conformal over every trace; pulled back from the board edge; open over every bore, so on a tented via it covers only the ring. Off by default (`SolderMask.SOLDER_MASK_ENABLED`). |
+| Solder mask | Openings as KiCad draws them (pads, drawn openings, untented vias, and tracks and copper drawings the mask leaves bare); conformal over every trace; pulled back from the board edge; open over every bore, so on a tented via it covers only the ring, unless the via is covered, plugged, capped or filled (KiCad 10). Off by default (`SolderMask.SOLDER_MASK_ENABLED`). |
 | Silkscreen | KiCad's stroke font and text layout (TrueType text from the glyphs KiCad saves with it, else in the stroke font; a custom stroke or Hershey font is optional); removed inside mask openings, as fabricators do. Off by default (`Silkscreen.SILKSCREEN_ENABLED`). |
 | Surface finish | ENIG, ENEPIG, HASL, lead-free HASL, OSP, immersion silver, immersion tin, hard gold: each metal its own layer on the bare copper, taken from KiCad's finish name. On by default (`Finish.FINISH_ENABLED`). |
 | Etching | Optional sloped copper walls (`Copper.ETCH_FACTOR`) |

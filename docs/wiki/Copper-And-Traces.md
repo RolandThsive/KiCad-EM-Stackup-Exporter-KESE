@@ -27,7 +27,7 @@ Per copper layer, these items are collected with their net (text always as no ne
 | `via` | a disc of the via's size on every layer it spans, except rings dropped by KiCad's "remove unused layers" (see 12.3) |
 | `pad` | the pad shape (circle, rect, oval, roundrect, trapezoid, custom with anchor and primitives; a chamfered rectangle has the corners its `chamfer` lists cut straight, legs `chamfer_ratio` x the shorter side, and those corners not rounded) at its position and angle, with the drill offset, on each copper layer the pad lists (`*.Cu`, `F&B.Cu` expanded), except inner rings of a through-hole pad dropped by "remove unused layers" (see 12.3.1); an NPTH pad gives its hole, and a copper ring only where KiCad flashes it (`PAD::FlashLayer`): not for a round (or oval) pad no bigger than its round (or oval) drill and not offset |
 | `zone` fill | the `filled_polygon` polygons stored in the file; a fill KiCad 5 drew with a pen (a file older than format 20250210 without `(filled_areas_thickness no)`) grows by half the zone's `min_thickness`, round at the corners, as KiCad does when it opens such a file; a KiCad 4 or 5 zone stored only as `fill_segments` is those segments, each drawn with a pen of `min_thickness` |
-| `gr_*` / `fp_*` graphics on a copper layer | lines and arcs thickened by their stroke width; filled shapes filled (with no `fill` in the file, as KiCad reads it: a circle or rectangle of width 0, and a polygon off Edge.Cuts); a self-crossing polygon keeps every lobe; unfilled closed shapes as their outline stroke; rectangles with their rounded corners (KiCad 10); a drawing left bare by the solder mask (KiCad 9 and later) also opens the mask, as a track does |
+| `gr_*` / `fp_*` graphics on a copper layer | lines and arcs thickened by their stroke width; filled shapes filled (with no `fill` in the file, as KiCad reads it: a circle or rectangle of width 0, and a polygon off Edge.Cuts); a self-crossing polygon keeps every lobe; unfilled closed shapes as their outline stroke; rectangles with their rounded corners (KiCad 10); a hatched circle, rectangle or polygon (KiCad 10) as its outline and the hatch inside it (12.1.2); a drawing left bare by the solder mask (KiCad 9 and later) also opens the mask, as a track does |
 | text on a copper layer | the stroke-font glyphs, as on silkscreen; knockout text (`(layer "F.Cu" knockout)`) is the text's box, square to the text and grown by max(pen / 2, height / 9), with the letters cut out |
 
 Then, per layer and per net: union, simplify, clip to the outline, subtract the holes, move to
@@ -103,6 +103,29 @@ where $`n_1, n_2, \dots`$ are the nets of layer $`l_k`$ in the order of their fi
 on that layer. Items are collected in file order (tracks, arcs, zones, graphics, footprints and
 text as they come), then all vias, then the via rings kept by equation (12.8), so a net that
 appears only on vias comes after every net with a track, zone or pad on that layer.
+
+### 12.1.2 Hatched Fills
+
+![Board 27_hatched_fills from the top in visual mode: hatched, reverse-hatched and cross-hatched copper shapes under the mask, a hatch cut back by text, a line and another shape, and hatches on the silkscreen, in a mask opening and on bare copper](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/copper_13_hatched_fills.webp)
+
+KiCad 10 can fill a circle, rectangle or polygon with lines instead of solid: `(fill hatch)`,
+`(fill reverse_hatch)` or `(fill cross_hatch)`. KESE draws the hatch as KiCad does
+(`EDA_SHAPE::UpdateHatching`, `PCB_SHAPE::getHatchingKnockouts`), on copper, silkscreen and mask
+layers alike:
+
+- the lines are one pen wide at 45 degrees (rising to the right for `hatch`, falling for
+  `reverse_hatch`), ten pens apart, or the larger side of the shape over 100 when that would give
+  more than 100 lines; they are laid from KiCad's origin, so they fall where KiCad's do;
+- a cross hatch is the shape less square holes on the same pitch, turned 45 degrees;
+- every other drawing, text and text box of the layer that meets the shape cuts the hatch back: a
+  drawing by its stroke (its whole shape when filled or hatched) grown by half the pitch, a text by
+  the box of its letters grown as much, a text box by its box; of the items in footprints only the
+  drawings and fields (reference, value, ...) do, and not those of the shape's own footprint, as in
+  KiCad;
+- on copper the hatch belongs to the shape's net; a hatched copper shape the mask leaves bare opens
+  the mask over the whole shape, as KiCad's mask Gerber does.
+
+`report.txt` counts them as `hatched graphics on <layer>` and `hatched footprint graphics on <layer>`.
 
 ## 12.2 Grouping And Part Names
 
@@ -204,8 +227,8 @@ rings included).
 ### 12.3.2 Via Tenting
 
 Tenting decides whether the solder mask covers the via's annular ring or leaves it open; the
-bore (the drill minus the plating wall) is always left open through the mask, see
-[Solder Masks](Solder-Masks.md). `Copper.VIA_TENTING`:
+bore (the drill minus the plating wall) is left open through the mask unless the via's protection
+shuts it (12.3.4), see [Solder Masks](Solder-Masks.md#164-over-holes). `Copper.VIA_TENTING`:
 
 | Value | Meaning |
 |---|---|
@@ -216,6 +239,58 @@ bore (the drill minus the plating wall) is always left open through the mask, se
 `report.txt` names the board's own tenting source on the `vias:` line (`board setup (tenting)`,
 `plot setting viasonmask`, `KiCad default (vias tented)`). That line does not change when
 `VIA_TENTING` is `"tented"` or `"open"`; the override shows only in `parameters.txt`.
+
+### 12.3.3 Backdrills
+
+![A via of board 24_backdrills cut through its centre at true scale: its stub drilled out from B.Cu through In3.Cu, the barrel stopping at In3.Cu's top face and the rings below cut back to the backdrill; then five more spans side by side, from B.Cu through In4.Cu and through In1.Cu, a tertiary drill from F.Cu, both ends, and through the whole board](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/copper_11_backdrills.webp)
+
+KiCad 10 can drill a plated hole out again from a face with a wider drill, to take off the stub of
+the barrel that no signal uses: `(backdrill (size 0.6) (layers "B.Cu" "In3.Cu"))`, and from the
+other face `(tertiary_drill ...)`. With `Board.BACKDRILLS = True` (the default) KESE drills it as
+KiCad's Gerber and drill files have it:
+
+- the backdrill is a hole of its size from its start layer through the layer it must cut: the
+  laminate there, the plating and the copper inside its size go, and the hole's barrel stops at the
+  far face of the must-cut layer (In3.Cu's top face for the backdrill above);
+- the rings on the layers it passes keep their copper outside the backdrill;
+- a through-hole pad is backdrilled the same way; a hole drilled out from both faces keeps the
+  barrel between the two, and one drilled out through the whole board is left bare.
+
+KiCad's STEP export drills each backdrill 1 µm further and takes the whole pad off the layers it
+passes; KESE follows the fabrication files instead. `report.txt` counts `backdrills of vias`,
+`tertiary drills of pads` and so on. Counterbores and countersinks, which KiCad 10 also cuts into a
+hole's end, are in [Board](Board.md#1141-counterbores-and-countersinks).
+
+### 12.3.4 Via Protection
+
+![Eight 0.4 mm vias of board 26_via_protection cut through their centres at true scale with the solder mask on: tented only, covered, plugged from the front, plugged from both faces, filled with copper, filled with resin, capped, and filled then backdrilled](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/copper_12_via_protection.webp)
+
+KiCad 10 keeps the four ways IPC-4761 protects a via: covering, plugging, capping and filling.
+Each is set on the via (`(covering (front yes) (back no))`, `(plugging ...)`, `(capping yes)`,
+`(filling yes)`) or, where the via leaves it out or says `none`, in Board Setup; covering and
+plugging are per face, capping and filling for the whole via. With `Copper.VIA_PROTECTION = "file"`
+(the default) KESE builds them:
+
+| Protection | IPC-4761 | What KESE builds |
+|---|---|---|
+| covered | Types II, IV, VI | the solder mask spans the bore on that face, also inside a mask opening |
+| plugged | Types III, IV | resin from that face into the bore, `Copper.VIA_PLUG_DEPTH_FRACTION` (0.5) of the hole's length, so plugs from both faces meet (IPC-4761 asks only for "partial penetration") |
+| filled | Types V to VII | the whole bore inside the plating: copper joined to the via's net (`Copper.VIA_FILL = "copper"`, the default; KiCad calls the fill conductive) or resin (`"resin"`), flush with the outer copper |
+| capped | Type VII | the outer copper is not cut by the bore, so the ring's copper closes the hole |
+
+- The resin is its own part, `Via Resin`, with `Copper.VIA_RESIN_EPSILON_R` (4.4) and
+  `Copper.VIA_RESIN_LOSS_TANGENT` (0.02) in `materials.json`, the values of San-Ei Kagaku's
+  PHP-900 IR-6P plugging ink; `Copper.VIA_RESIN_ENABLED = False` leaves it out of the files.
+- Only an end on a face can be covered, plugged or capped; a blind or buried via's end inside the
+  board cannot, and `report.txt` counts that under `skipped`.
+- An end that a backdrill, counterbore or countersink opens stays open, plug included, and a fill
+  stays only where the barrel is left (via 8 above).
+- The mask spans a bore where it lies over the via (tented or covered) and something shuts that
+  end; a shut end takes no finish inside the bore.
+
+`"off"` leaves every via open, as before KiCad 10, and counts the protection under `skipped` with
+a warning. `report.txt` counts `covered vias, front`, `plugged vias, back`, `filled vias`,
+`capped vias` and so on.
 
 ## 12.4 Copper Thickness And Plating
 
@@ -377,6 +452,11 @@ and `plating_added_mm` are those of the part's first layer. See
 | `EDGE_PLATING_WALL_MM` | `0.025` | mm > 0 | Width of the edge band |
 | `EDGE_PLATING_NET` | `"auto"` | `"auto"` or a net name | Which net the edge copper belongs to |
 | `VIA_TENTING` | `"file"` | `"file"` / `"tented"` / `"open"` | Mask over vias |
+| `VIA_PROTECTION` | `"file"` | `"file"` / `"off"` | KiCad 10's covered, plugged, capped and filled vias (12.3.4) |
+| `VIA_FILL` | `"copper"` | `"copper"` / `"resin"` | What a filled via is filled with |
+| `VIA_PLUG_DEPTH_FRACTION` | `0.5` | > 0, ≤ 1 | How far a plug reaches into the hole, as a share of its length |
+| `VIA_RESIN_EPSILON_R`, `VIA_RESIN_LOSS_TANGENT` | `4.4`, `0.02` | ≥ 1, ≥ 0 | The plug and fill resin, written to `materials.json` |
+| `VIA_RESIN_ENABLED` | `True` | bool | Build the `Via Resin` part and write it to the files |
 | `HONOUR_REMOVE_UNUSED_LAYERS` | `True` | bool | Drop via and through-hole pad rings on layers nothing connects to |
 | `COPPER_CONDUCTIVITY_S_PER_M` | `5.8e7` | S/m | Written to `materials.json` |
 | `COPPER_SURFACE_ROUGHNESS_UM` | `0.0` | µm ≥ 0 | Written to `materials.json`; 0 = ignore |

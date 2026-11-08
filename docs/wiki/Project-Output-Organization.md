@@ -23,8 +23,8 @@ KiCad-EM-Stackup-Exporter-KESE/
 │   │   │                        Regions, PrismSet, Model, Files
 │   │   ├── s1_read/             the file, parsed and checked
 │   │   ├── s2_collect/          every item as a flat shape on its layer, one file per kind of item
-│   │   ├── s3_resolve/          outline, holes, copper per net, edge plating, mask openings, silk clipping
-│   │   ├── s4_geometry/         prisms: laminate, copper, plating, solder mask, silkscreen, finish
+│   │   ├── s3_resolve/          outline, holes and their machining, copper per net, edge plating, mask openings, silk clipping
+│   │   ├── s4_geometry/         prisms: laminate, copper, plating, via fills, solder mask, silkscreen, finish
 │   │   ├── s5_materials/        a material (the look) per part
 │   │   ├── s6_assemble/         meshes: closed solids or the visible skin, in output units
 │   │   ├── s7_write/            glb, obj, stl, step, materials.json, and the run folder
@@ -210,6 +210,7 @@ file name and the OBJ object and material names carry it sanitised (the rule in 
 |---|---|
 | board | `Board_dielectric 1`, `Board_dielectric 2`, ... or `Board`; a gap of several stack-up dielectrics: `Board_dielectric 1 + dielectric 2` |
 | copper | `Copper_<net>` (`Copper_GND`, `Copper_no_net`, `Copper_~{RESET}`), or `Copper_F.Cu` ... and `Plating`, or `Copper` |
+| via resin | `Via Resin`: the plugs and resin fills of KiCad 10's protected vias |
 | mask | `Top Solder Mask`, `Bottom Solder Mask`; visual mode also `Top Mask over Copper`, `Bottom Mask over Copper` |
 | silk | `Top Silkscreen`, `Bottom Silkscreen` |
 | finish | `Top Finish Nickel`, `Bottom Finish Gold`, `Edge Finish Nickel` (plated edge, castellations, inner copper cut by the edge), `Hole Finish Gold` (inside the plated holes), or `Top Finish Gold_<net>` |

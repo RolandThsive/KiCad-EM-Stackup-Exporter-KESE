@@ -20,7 +20,7 @@ def boundaries_and_meshes(ps, log, finish, check=False):
     parts = ps.by_part()
     size = {part: sum(shapely.get_num_coordinates(p.region) for p in prisms) for part, prisms in parts.items()}
     order = sorted(parts, key=lambda k: -size[k])
-    jobs = [(part, (part, parts[part], finish, check)) for part in order]
+    jobs = [(part, (part, parts[part], finish, check, ps.free_levels)) for part in order]
     if worth_processes(len(jobs), sum(size.values())):
         done = in_processes(build, jobs, log)
     else:
@@ -33,10 +33,10 @@ def boundaries_and_meshes(ps, log, finish, check=False):
             log(f"{part}: {s}")
 
 
-def build(part, prisms, finish, check=False):
+def build(part, prisms, finish, check=False, free=frozenset()):
     """One part's Boundary, its finished mesh, the notes made on the way, and with `check` what the
-    Verifier asks of it (else None)."""
+    Verifier asks of it (else None); `free`: PrismSet.free_levels."""
     notes = []
-    boundary = boundary_of(part, prisms, notes.append)
+    boundary = boundary_of(part, prisms, notes.append, free)
     mesh = finish(mesh_of_boundary(boundary))
     return boundary, mesh, notes, part_check(mesh, boundary, prisms, P.Run.UNITS) if check else None

@@ -8,7 +8,10 @@ from kese.core import font
 from kese.core.shapes2d import EMPTY, polys_only
 from kese.core.sexp import atoms, child, layer_of, numbers
 from kese.s1_read.parse_kicad_version import (flag, is_hidden, is_knockout, kept_upright, overbar_markup,
-                                              render_cache_rings, text_pen, text_size, text_value)
+                                              render_cache_rings, text_pen, text_size, text_value,
+                                              textbox_border)
+from kese.s2_collect.drawings import painted
+from kese.s2_collect.hatch import Knockout, pen_growth, text_hull
 from kese.s2_collect.text_vars import saved_words, shown_text
 from parameters import P
 
@@ -31,18 +34,34 @@ def upright(angle):
     return angle
 
 
-def add_text(ctx, node, T=lambda p: p, subst=None, in_footprint=False):
+def knockout_kind(node, in_footprint):
+    """What a text is to the hatches of its layer (hatch.knocks): a footprint's visible reference,
+    value or other field is a "field", its other text "text" (which knocks out no hatch of a footprint);
+    a board text always knocks out, shown or not (PCB_SHAPE::getHatchingKnockouts).  None: no knockout."""
+    field = node[0] == "property" or (node[0] == "fp_text" and len(node) > 1 and str(node[1]) in ("reference", "value"))
+    if in_footprint and field:
+        return None if is_hidden(node) else "field"
+    return "text"
+
+
+def add_text(ctx, node, T=lambda p: p, subst=None, in_footprint=False, fp=None):
+    """A text on its layer; `fp`: the footprint it belongs to (an id), for hatch knockouts."""
     S = P.Silkscreen
     items = ctx.items
     layer = layer_of(node)
     if not (layer in ctx.layers or layer in ("F.SilkS", "B.SilkS", "F.Mask", "B.Mask")):
         return
     effects = child(node, "effects") or []
-    if is_hidden(node) and not S.DRAW_HIDDEN_TEXT:
-        return
     kind = node[0]
+    if kind in ("gr_text_box", "fp_text_box") and not in_footprint:
+        textbox_knockout(ctx, node, layer)
+    knocks = knockout_kind(node, in_footprint) if ctx.physical(layer) else None
+    drawn = not is_hidden(node) or S.DRAW_HIDDEN_TEXT
+    if not drawn and knocks is None:
+        return
     if kind in ("gr_text_box", "fp_text_box", "dimension", "gr_dimension") or child(node, "at") is None:
-        items.skipped[f"{kind} on {layer} (not modelled)"] += 1
+        if drawn:
+            items.skipped[f"{kind} on {layer} (not modelled)"] += 1
         return
     words = str(node[2]) if kind == "property" else text_value(node)       # unescaped when read (core/sexp.py)
     words = overbar_markup(words, items.raw.dialect)
@@ -76,12 +95,40 @@ def add_text(ctx, node, T=lambda p: p, subst=None, in_footprint=False):
             return
         else:
             items.found[f"{STROKED}, on {layer}"] += 1
+    grow = 0.0 if geom is not None else pen_growth(thick)       # cached glyphs are filled, with no pen
     if geom is None:
         geom = font.render(text, pos, angle, h, w, thick, just, "mirror" in just, italic)
     if is_knockout(node) and not geom.is_empty:
         geom = knocked_out(geom, pos, angle, h, thick)
-        items.found[f"knockout text on {layer}"] += 1
-    ctx.add(layer, geom, "text")
+        if drawn:
+            items.found[f"knockout text on {layer}"] += 1
+    if knocks is not None and not geom.is_empty:
+        x0, y0, x1, y1 = geom.bounds
+        ctx.knockouts.append(Knockout(layer, fp, knocks, (x0 - grow, y0 - grow, x1 + grow, y1 + grow),
+                                      lambda m: text_hull(geom, pos, angle, m + grow)))
+    if drawn:
+        ctx.add(layer, geom, "text")
+
+
+def textbox_knockout(ctx, node, layer):
+    """A board text box cuts back the hatches of its layer with its whole box and border, though KESE
+    does not draw it (PCB_TEXTBOX::TransformShapeToPolygon, no margin)."""
+    if not ctx.physical(layer):
+        return
+    start, end = child(node, "start"), child(node, "end")
+    if start is not None and end is not None:
+        (x0, y0), (x1, y1) = numbers(start)[:2], numbers(end)[:2]
+        pts = [(x0, y0), (x1, y0), (x1, y1), (x0, y1)]
+    else:
+        pts = [tuple(numbers(xy)[:2]) for xy in (child(node, "pts") or [])[1:]
+               if isinstance(xy, list) and xy and xy[0] == "xy"]
+    if len(pts) < 3:
+        return
+    w = textbox_border(node, ctx.items.raw.dialect)
+    shape = shapely.make_valid(Polygon(pts))
+    x0, y0, x1, y1 = shape.bounds
+    ctx.knockouts.append(Knockout(layer, None, "textbox", (x0 - w / 2, y0 - w / 2, x1 + w / 2, y1 + w / 2),
+                                  lambda m: painted(shape, True, w + 2 * m, True) if w + 2 * m > 0 else shape))
 
 
 def truetype_face(fnt):

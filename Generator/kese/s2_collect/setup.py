@@ -2,7 +2,7 @@
 capped, filled) when they don't say."""
 from kese.core.sexp import num
 from kese.s1_read.parse_kicad_version import board_tenting
-from kese.s2_collect.left_out import protection_defaults
+from kese.s2_collect.machining import protection_defaults
 from parameters import P
 
 

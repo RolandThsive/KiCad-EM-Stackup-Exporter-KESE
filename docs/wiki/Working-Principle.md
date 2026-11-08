@@ -101,6 +101,11 @@ mesh = mesh_of_boundary(boundary)                  # faces cut into triangles, t
   rounds, and `report.txt` notes it. On one board's solder mask the slices still traded vertices
   after an hour; a 20 µm piece of it ends some 400 rounds with three T-junctions, and cut open so
   settles, closed.
+- A counterbore, a countersink or a via's plug (KiCad 10) brings heights of its own, and every part
+  spanning them is sliced there too. Across those heights a wall that runs on unchanged is one
+  taller wall, unless a face or another wall has a vertex at that height on its edge, which must
+  then stop there (`kese/core/tall_walls.py`); so a countersink's steps do not add triangles to
+  every wall of the board.
 - A slice is made once for all the heights the same prisms span (a hole's finish is three prisms,
   one per stretch of the wall, and the same between every two of its layers). The faces at a height
   are cut only where the slices below and above differ (`kese/core/flat_faces.py`): the pieces both

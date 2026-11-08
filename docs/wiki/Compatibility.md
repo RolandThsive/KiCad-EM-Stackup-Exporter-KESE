@@ -12,7 +12,7 @@
 | 7 | 20221018 | 25 public boards; the three example boards of `Input/`, `tests/boards/synthetic` and most of `featureTest/`, saved by KiCad 7 itself |
 | 8 | 20240108 | 25 public boards; `tests/boards/one_layer` and `featureTest/20c_format_kicad8`, small hand-written files in KiCad 8's format |
 | 9 | 20241229 | 25 public boards; `tests/boards/six_layer` and `featureTest/20d_format_kicad9`, likewise hand-written; per-via `(tenting front back)` is parsed; tracks and drawings left bare by the solder mask, `(layers "F.Cu" "F.Mask")` with an optional `(solder_mask_margin ...)`, are read (in `featureTest/08b_copper_graphics_nets`) |
-| 10 | 20260206 | the upper end of the tested range (`Run.KICAD_VERSION_MAX`); five hand-written feature boards (`03b_vias_k10`, `06_padstacks`, `08b_copper_graphics_nets`, `19b_skipped_items_k10`, `20e_format_kicad10`); net names stored directly on items and per-via `(tenting (front yes) (back no))` are read |
+| 10 | 20260206 | the upper end of the tested range (`Run.KICAD_VERSION_MAX`); nine hand-written feature boards (`03b_vias_k10`, `06_padstacks`, `08b_copper_graphics_nets`, `19b_skipped_items_k10`, `20e_format_kicad10`, `24_backdrills`, `25_post_machining`, `26_via_protection`, `27_hatched_fills`); net names stored directly on items and per-via `(tenting (front yes) (back no))` are read |
 | newer | above 20260206 | read best-effort with a warning; raise `Run.KICAD_VERSION_MAX` once checked. A bold text's thickness from format 20260826 on is read as its base pen, drawn 1.6 times as wide, as KiCad's development version does |
 
 The 150 public boards (25 for each release from 4 to 9, six of the "KiCad 4" ones saved by the builds before it) were downloaded for testing and are not kept
@@ -30,7 +30,7 @@ is in one file, `kese/s1_read/parse_kicad_version.py`, and follows KiCad's own b
 | a zone fill is drawn with a pen of `min_thickness` | before format 20250210, unless the zone says `(filled_areas_thickness no)` |
 | a zone with only `fill_segments` is filled with those segments | KiCad 4 and 5 |
 | a via that does not say is tented as the plot setting `viasonmask` says (open when `yes`), else tented | files whose board setup has no `(tenting ...)` (KiCad 8 and older) |
-| a via is not covered, plugged, filled or capped unless it says so: files that old have no board-wide setting for these (KESE counts them in `report.txt` and does not model them) | before format 20250228 |
+| a via is not covered, plugged, filled or capped unless it says so: files that old have no board-wide setting for these | before format 20250228 |
 | a bold text's thickness is its base pen | from format 20260826 |
 
 What is read from the file is listed in [Checks, Errors And Warnings](Checks-Errors-And-Warnings.md);
@@ -49,9 +49,10 @@ KiCad itself is not needed, only the `.kicad_pcb` file. Footprints are read from
 | Text boxes, dimensions, images, groups, tables, generated items; grid items, drill charts and drill maps (KiCad's development version) | skipped; counted when they sit on a copper, silk or mask layer (text boxes, dimensions) or at the top level of the file (images, groups, tables, generated items, grid items, drill charts, drill maps), otherwise left out without a count. For groups and generated items (such as length-tuning patterns) only the record itself is skipped: the tracks, footprints and graphics they hold are read as usual |
 | Footprint 3D models | skipped (bare board) |
 | Padstacks (KiCad 9 and later: another pad or via shape on the inner layers or on the back) | yes: front / inner / back and custom (per layer) modes; each copper layer gets its own pad shape or via size; the back mask opening follows the back shape |
-| Backdrills, tertiary drills, counterbores and countersinks of pads and vias; covered, plugged, capped and filled vias, also when the board setup makes them so (KiCad 10) | not modelled: the hole is drilled and plated through its whole span and left open; counted under `skipped` in `report.txt`, with a warning |
+| Backdrills, tertiary drills, counterbores and countersinks of pads and vias (KiCad 10) | yes: drilled and cut as KiCad's fabrication files have them, the rings outside them kept ([Copper And Traces](Copper-And-Traces.md#1233-backdrills), [Board](Board.md#1141-counterbores-and-countersinks)) |
+| Covered, plugged, capped and filled vias (IPC-4761), also when the board setup makes them so (KiCad 10) | yes: the mask over the hole, resin plugs, copper or resin fills and caps ([Copper And Traces](Copper-And-Traces.md#1234-via-protection)) |
 | Item kinds KESE does not know | skipped; counted under `skipped` in `report.txt` as `<kind> items (unknown to KESE)`, with a warning |
-| Hatched fills of graphics (KiCad 10) | not modelled: the shape is drawn as its outline only |
+| Hatched fills of graphics (KiCad 10) | yes: the hatch KiCad draws, with its knockouts, on copper, mask and silk layers ([Copper And Traces](Copper-And-Traces.md#1212-hatched-fills)) |
 | Edge connector flag of Board Setup (`(edge_connector yes)` or `bevelled`) | not read: the fingers are the pads they are, and a bevelled edge stays square |
 | Rigid-flex, multiple stack-up regions | not modelled |
 

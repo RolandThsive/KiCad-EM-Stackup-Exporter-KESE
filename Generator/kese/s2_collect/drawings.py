@@ -10,11 +10,13 @@ from kese.core.sexp import child, num, pt
 from kese.core.shapes2d import (EMPTY, G, arc3, arc_pts, bezier, circle_quads, disk, polys_only, rounded_rect, thicken,
                                  union)
 from kese.s1_read.parse_kicad_version import is_filled, layer_and_mask, legacy_arc, stroke_width
+from kese.s2_collect.hatch import Hatched, Knockout, hatch_of
 from kese.s2_collect.nets import net_name
 
 GRAPHICS = {"gr_line", "gr_arc", "gr_circle", "gr_rect", "gr_poly", "gr_curve", "gr_bezier",
             "fp_line", "fp_arc", "fp_circle", "fp_rect", "fp_poly", "fp_curve",
             "gr_ellipse", "gr_ellipse_arc", "fp_ellipse", "fp_ellipse_arc"}     # ellipses: KiCad after 10
+HATCHABLE = ("circle", "rect", "poly")       # the drawings KiCad 10 can hatch
 
 
 def graphic(node, T):
@@ -90,7 +92,8 @@ def painted(geom, closed, w, filled):
     return union(parts)
 
 
-def add_drawing(ctx, node, T, in_footprint=False):
+def add_drawing(ctx, node, T, in_footprint=False, fp=None):
+    """A drawing on its layer; `fp`: the footprint it belongs to (an id), for hatch knockouts."""
     layer, bare = layer_and_mask(node)
     geom, closed, w, filled = graphic(node, T)
     if geom is None or geom.is_empty:
@@ -101,18 +104,31 @@ def add_drawing(ctx, node, T, in_footprint=False):
         else:
             ctx.items.edge_open.append(geom)
         ctx.items.found["outline shapes on Edge.Cuts"] += 1
-    else:
-        kind = "footprint graphic" if in_footprint else "graphic"
-        # a copper shape can carry a net; without one it stays on NO_NET_NAME
-        ctx.add(layer, painted(geom, closed, w, filled), kind + "s", net_name(ctx.items, node))
-        if bare:
-            m = ctx.bare_margin(node, w, solid=closed and filled)
-            # KiCad (EDA_SHAPE::TransformShapeToPolygon): a filled circle or rounded rectangle is grown by
-            # w/2 + margin, so a negative margin shrinks its opening; a filled polygon or square-cornered
-            # rectangle keeps its whole inside
-            curved = node[0].endswith("circle") or (node[0].endswith("rect") and num(node, "radius", 0.0) > 0)
-            if closed and filled and curved and w / 2 + m < 0:
-                opening = geom.buffer(w / 2 + m, quad_segs=circle_quads(abs(w / 2 + m)))
-            else:
-                opening = painted(geom, closed, w + 2 * m, filled)
-            ctx.add(f"{bare}.Mask", opening, kind + " mask openings")
+        return
+    kind = "footprint graphic" if in_footprint else "graphic"
+    # KiCad 10 hatches circles, rectangles and polygons (EDA_SHAPE::UpdateHatching); the hatch comes
+    # once every item is in (hatch.finish), the outline now
+    hatched = hatch_of(node) if closed and node[0].split("_", 1)[1] in HATCHABLE else None
+    solid = filled or hatched is not None          # as a knockout or a mask opening, a hatched shape is solid
+    net = net_name(ctx.items, node)                # a copper shape can carry a net; without one it stays on NO_NET_NAME
+    ctx.add(layer, painted(geom, closed, w, filled), kind + "s", net)
+    if ctx.physical(layer):
+        x0, y0, x1, y1 = geom.bounds
+        bounds = (x0 - w / 2, y0 - w / 2, x1 + w / 2, y1 + w / 2)
+        ctx.knockouts.append(Knockout(layer, fp, "shape", bounds,
+                                      lambda m: painted(geom, closed, w + 2 * m, solid), key=id(node)))
+        if hatched and w > 0:
+            ctx.hatched.append(Hatched(layer, geom, w, hatched, fp, net, bounds, id(node)))
+            ctx.items.found[f"hatched {kind}s on {layer}"] += 1
+    if bare:
+        m = ctx.bare_margin(node, w, solid=closed and solid)
+        # KiCad (EDA_SHAPE::TransformShapeToPolygon): a filled circle or rounded rectangle is grown by
+        # w/2 + margin, so a negative margin shrinks its opening; a filled polygon or square-cornered
+        # rectangle keeps its whole inside.  A hatched shape opens the mask as if filled (the plotter's
+        # PlotShape and the STEP export)
+        curved = node[0].endswith("circle") or (node[0].endswith("rect") and num(node, "radius", 0.0) > 0)
+        if closed and solid and curved and w / 2 + m < 0:
+            opening = geom.buffer(w / 2 + m, quad_segs=circle_quads(abs(w / 2 + m)))
+        else:
+            opening = painted(geom, closed, w + 2 * m, solid)
+        ctx.add(f"{bare}.Mask", opening, kind + " mask openings")

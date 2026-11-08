@@ -21,7 +21,7 @@ M_\sigma = \left( \left( O \setminus B_\sigma \right) \setminus Q_\sigma \right)
 |---|---|---|
 | $`M_\sigma`$ | mask region on side $`\sigma`$ (`F` or `B`) | |
 | $`O`$ | board outline, equation (11.3) | |
-| $`B_\sigma`$ | bores of every hole that reaches side $`\sigma`$, equation (12.4) | |
+| $`B_\sigma`$ | bores of every hole that reaches side $`\sigma`$, equation (12.4), except those a via's protection shuts there (16.4) | |
 | $`Q_\sigma`$ | the mask openings on side $`\sigma`$, equation (16.2) | |
 | $`p`$ | edge pull-back | `SolderMask.MASK_EDGE_PULLBACK_MM` |
 
@@ -164,6 +164,12 @@ from treating a translucent mask flush with the board edge as a baked shadow.
 The mask is removed over the open bore of every hole that reaches that side (the drill minus the
 plated wall, or the whole drill of an NPTH), so no mask floats over a hole. A tented via keeps its
 mask over the annular ring; its bore is still open.
+
+KiCad 10's via protection changes that ([Copper And Traces](Copper-And-Traces.md#1234-via-protection)):
+where a cap, a fill or a plug on that side shuts the bore, the mask of a tented via spans it; a
+covered via has the mask over its bore on that side even when its ring is left open, the opening
+then a ring around it. An end that a backdrill, counterbore or countersink opens stays open, and
+the copper a counterbore or countersink knocks out is a hole like any other.
 
 ## 16.5 Settings
 

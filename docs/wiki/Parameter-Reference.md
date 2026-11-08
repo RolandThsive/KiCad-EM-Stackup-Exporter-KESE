@@ -78,6 +78,9 @@ The laminate: thickness, dielectrics, outline and holes. Details in [Board](Boar
 | `USE_STACKUP_EPSILON_R`, `USE_STACKUP_LOSS_TANGENT` | `True`, `True` | bool | Stack-up values win over the defaults when present |
 | `RESIN_FILL_BETWEEN_INNER_COPPER` | `True` | bool | `True`: fill the space beside inner copper from the adjacent prepreg (otherwise from the dielectric above); `False`: those pockets stay empty and `report.txt` notes it (see [Board](Board.md#112-resin-fill-beside-inner-copper)) |
 | `INCLUDE_NON_PLATED_HOLES` | `True` | bool | NPTH pads become holes through the board |
+| `BACKDRILLS` | `True` | bool | KiCad 10's backdrills and tertiary drills: the hole is drilled out, plating and copper too, from its start layer through its must-cut layer ([Copper And Traces](Copper-And-Traces.md#1233-backdrills)) |
+| `POST_MACHINING` | `True` | bool | KiCad 10's counterbores and countersinks are cut from the board's face ([Board](Board.md#1141-counterbores-and-countersinks)) |
+| `COUNTERSINK_STEP_TOLERANCE_MM` | `0.025` | mm > 0 | A countersink's cone is built as steps that stray from it by at most this |
 | `OUTLINE_LINE_SNAP_MM` | `0.01` | mm > 0 | Open `Edge.Cuts` line and arc ends closer than this are joined, as KiCad joins them (its chaining distance is 0.01 mm) |
 | `OUTLINE_FALLBACK` | `"copper_hull"` | `"copper_hull"` / `"error"` | When `Edge.Cuts` gives no closed ring at all: convex hull of the copper plus a margin, or stop |
 | `OUTLINE_FALLBACK_MARGIN_MM` | `1.0` | mm ≥ 0 | Margin of the fallback hull |
@@ -125,6 +128,11 @@ Copper foils, plating, vias and the finished copper geometry. Details in
 | Name | Default | Range | Meaning |
 |---|---|---|---|
 | `VIA_TENTING` | `"file"` | `"file"` / `"tented"` / `"open"` | Mask over vias: follow the board, cover all, open all |
+| `VIA_PROTECTION` | `"file"` | `"file"` / `"off"` | KiCad 10's covered, plugged, capped and filled vias (IPC-4761): as the board says, or every via left open ([Copper And Traces](Copper-And-Traces.md#1234-via-protection)) |
+| `VIA_FILL` | `"copper"` | `"copper"` / `"resin"` | What a filled via is filled with: copper of the via's net, or the resin below |
+| `VIA_PLUG_DEPTH_FRACTION` | `0.5` | > 0, ≤ 1 | How far a plug reaches into the hole from its face, as a share of the hole's length |
+| `VIA_RESIN_EPSILON_R`, `VIA_RESIN_LOSS_TANGENT` | `4.4`, `0.02` | ≥ 1, ≥ 0 | The plug and fill resin (San-Ei Kagaku PHP-900 IR-6P at 1 GHz), written to `materials.json` |
+| `VIA_RESIN_ENABLED` | `True` | bool | Build the `Via Resin` part and write it to every file |
 | `HONOUR_REMOVE_UNUSED_LAYERS` | `True` | bool | Drop via and through-hole pad annular rings on layers nothing connects to, as KiCad's option does |
 | `NO_NET_NAME` | `"no_net"` | text | Name of copper that belongs to no net |
 | `HAIRLINE_HOLE_MM` | `1e-3` | mm ≥ 0 | A hole in one net's copper narrower than this on average (2 × area / perimeter) is filled: the hair-wide gap KiCad leaves between a zone fill and a pad of its own net |
@@ -274,7 +282,7 @@ The look of every part: the GLB and OBJ materials, the part colours in STEP and 
 
 | Name | Default | Range | Meaning |
 |---|---|---|---|
-| `MATERIALS` | 18 entries (Board, Board_core, Board_prepreg, Copper, Copper_exposed, Plating, the masks, mask over copper, silkscreens, Nickel, Gold, Tin, Silver, Palladium, OSP) | `{key: {color hex, alpha 0-1, metallic 0-1, roughness 0-1}}` | Material of each part kind; alpha < 1 writes a glTF BLEND material |
+| `MATERIALS` | 19 entries (Board, Board_core, Board_prepreg, Copper, Copper_exposed, Plating, Via Resin, the masks, mask over copper, silkscreens, Nickel, Gold, Tin, Silver, Palladium, OSP) | `{key: {color hex, alpha 0-1, metallic 0-1, roughness 0-1}}` | Material of each part kind; alpha < 1 writes a glTF BLEND material |
 | `VISUAL_MASK_OPAQUE` | `True` | bool | In visual mode the mask is opaque whatever its alpha |
 | `USE_STACKUP_COLORS` | `True` | bool | Honour the mask and silkscreen colours in the board's stack-up, named or user-defined (`#RRGGBBAA`, its opacity not used) |
 | `STACKUP_MASK_COLORS` | 11 names | `{name: hex}` | Mask colour names |

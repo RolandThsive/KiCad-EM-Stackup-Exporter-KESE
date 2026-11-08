@@ -6,6 +6,7 @@ from kese.core.sexp import child, num, number
 from kese.core.shapes2d import EMPTY, disk, thicken, union
 from kese.s1_read.parse_kicad_version import roundrect_ratio
 from kese.s2_collect.drawings import GRAPHICS, graphic, painted
+from kese.s2_collect.hatch import hatch_of
 
 
 def pad_shape(items, pad, w, h):
@@ -31,7 +32,9 @@ def pad_shape(items, pad, w, h):
         for prim in (child(pad, "primitives") or [])[1:]:
             if isinstance(prim, list) and prim[0] in GRAPHICS:
                 geom, closed, pw, filled = graphic(prim, lambda p: p)
-                parts.append(painted(geom, closed, pw, filled))
+                # a hatched primitive is solid in the pad (PAD::MergePrimitivesAsPolygon takes its
+                # TransformShapeToPolygon, which fills a hatched shape)
+                parts.append(painted(geom, closed, pw, filled or (closed and hatch_of(prim) is not None)))
         return union(parts)
     items.skipped[f"pads of shape {shape}"] += 1
     return EMPTY

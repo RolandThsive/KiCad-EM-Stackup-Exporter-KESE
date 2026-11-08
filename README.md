@@ -73,14 +73,16 @@ from any folder. Full walk-through: [Getting Started](https://github.com/RolandT
 - **Input:** `.kicad_pcb` files from KiCad 4 to 10, 1 to 8 copper layers, stack-up read from Board Setup (thickness,
   εr and tanδ of every core and prepreg, copper and mask thickness, colours, finish). Footprints are read from the
   board file, so no libraries are needed.
-- **Copper:** tracks, arcs, pads of every shape, zone fills, copper graphics and text; one solid per net (default),
-  per layer, or all merged; through, blind, buried and micro vias with plated barrels; castellated holes and edge
-  plating; optional etch trapezoid.
+- **Copper:** tracks, arcs, pads of every shape, zone fills, copper graphics (solid or hatched) and text; one solid per
+  net (default), per layer, or all merged; through, blind, buried and micro vias with plated barrels; KiCad 10's
+  backdrills and covered, plugged, capped and filled vias; castellated holes and edge plating; optional etch trapezoid.
 - **Board:** one solid per dielectric with its own εr and tanδ, resin filling the space beside inner copper, any
-  outline from `Edge.Cuts` with cut-outs and boards inside them, plated and non-plated round and slotted holes.
+  outline from `Edge.Cuts` with cut-outs and boards inside them, plated and non-plated round and slotted holes,
+  KiCad 10's counterbores and countersinks.
 - **Mask, silk and finish:** solder mask conformal over every trace, pulled back from the edge and open over every
-  bore; silkscreen in KiCad's own stroke font and text layout, clipped off the pads; ENIG, ENEPIG, HASL, lead-free
-  HASL, OSP, immersion silver and tin, and hard gold, each metal its own layer (on by default; `Finish.FINISH_ENABLED`).
+  bore that no via protection shuts; silkscreen in KiCad's own stroke font and text layout, clipped off the pads;
+  ENIG, ENEPIG, HASL, lead-free HASL, OSP, immersion silver and tin, and hard gold, each metal its own layer (on by
+  default; `Finish.FINISH_ENABLED`).
 - **Two modes:** `simulation` writes closed solids that touch exactly and never overlap, as GLB, STEP, STL and OBJ;
   `visual` writes only the surface you can see, as GLB and OBJ, so nothing z-fights in a viewer.
 - **STEP without a CAD kernel, meshes without a mesh library:** KESE builds its own meshes and writes STEP AP214,
@@ -89,7 +91,7 @@ from any folder. Full walk-through: [Getting Started](https://github.com/RolandT
   default), in files 2.5 to 3 times smaller than flat facets.
 - **Presets:** `--for freecad`, `elmer`, `calculix`, `openems`, `viewer`, `blender_glb` or `blender_obj` set mode, formats, units, origin and grouping in one go (`parameters/presets.py`).
 - **Checks:** an opt-in Verifier (closed solids, the same volume found four ways, no overlaps, one visible surface)
-  and a regression suite that runs 38 boards through every output before a pull request.
+  and a regression suite that runs 42 boards through every output before a pull request.
 - **Not modelled yet:** component 3D models, text boxes, dimensions, images, rigid-flex.
 
 Every feature and every parameter is in the wiki:

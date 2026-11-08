@@ -39,6 +39,14 @@ RESIN_FILL_BETWEEN_INNER_COPPER = True
 
 # Holes
 INCLUDE_NON_PLATED_HOLES = True         # NPTH pads become holes through the board
+# KiCad 10's extra drills of pads and vias
+BACKDRILLS = True                       # backdrills and tertiary drills: the hole is drilled out, plating and
+                                        # copper too, from their start layer through their must-cut layer
+POST_MACHINING = True                   # counterbores and countersinks are cut from the board's face
+# A countersink's cone is built as steps (the solids have vertical walls).  Each step's radius is the
+# cone's at the middle of the step, and the steps are short enough to stray from the cone by at most
+# this much; copper and inner layers are cut as KiCad cuts them, at the cone's radius at their face.
+COUNTERSINK_STEP_TOLERANCE_MM = 0.025
 
 # Board outline
 OUTLINE_LINE_SNAP_MM = 0.01             # loose Edge.Cuts line/arc ends closer than this are joined (KiCad: 0.01 mm)

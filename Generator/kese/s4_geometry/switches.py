@@ -3,7 +3,8 @@ from parameters import P
 
 SWITCHES = {"board": "Board.BOARD_ENABLED", "copper": "Copper.COPPER_ENABLED", "plating": "Copper.COPPER_ENABLED",
             "finish": "Finish.FINISH_ENABLED", "mask": "SolderMask.SOLDER_MASK_ENABLED",
-            "mask_over_copper": "SolderMask.SOLDER_MASK_ENABLED", "silk": "Silkscreen.SILKSCREEN_ENABLED"}
+            "mask_over_copper": "SolderMask.SOLDER_MASK_ENABLED", "silk": "Silkscreen.SILKSCREEN_ENABLED",
+            "via_resin": "Copper.VIA_RESIN_ENABLED"}
 
 
 def is_on(key):

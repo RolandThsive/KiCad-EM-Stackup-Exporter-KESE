@@ -73,6 +73,30 @@ EDGE_PLATING_NET = "auto"
 #   "open"   - open the mask over every via
 VIA_TENTING = "file"
 
+# KiCad 10's via protection (IPC-4761): covering, plugging, filling and capping, as the via says or,
+# where it leaves them to the board, as the board's setup says.
+#   "file" - as the board file says
+#   "off"  - every via stays open, as before KiCad 10 (report.txt counts them under "skipped")
+# Covering closes the hole under the solder mask on its side: the mask spans the hole.  Capping
+# plates over the filled hole: the outer copper is not cut by it.  An end that a backdrill, counterbore
+# or countersink opens stays open.
+VIA_PROTECTION = "file"
+# What a filled via (IPC-4761 Types V to VII) is filled with, the whole hole inside the plating.
+# KiCad's documentation calls the fill conductive, "typically copper or conductive paste":
+#   "copper" - copper, part of the via's net (and the outer copper is not cut by the hole)
+#   "resin"  - the resin below (a non-conductive fill), flush with the outer copper
+VIA_FILL = "copper"
+# How far the resin of a plugged via (Types III and IV) goes into the hole from its side, as a share
+# of the hole's length.  IPC-4761 says only "partial penetration", so 0.5 is KESE's choice: plugged
+# from both sides, the two plugs meet.
+VIA_PLUG_DEPTH_FRACTION = 0.5
+# The resin of plugged and resin-filled vias: San-Ei Kagaku PHP-900 IR-6P, a permanent hole plugging
+# ink, from its technical specifications (sold by Umicore): Dk 4.4 and Df 0.02 at 1 GHz (ASTM D2520).
+VIA_RESIN_EPSILON_R = 4.4
+VIA_RESIN_LOSS_TANGENT = 0.02
+# Build the resin of plugged and resin-filled vias and write it to every output file.
+VIA_RESIN_ENABLED = True
+
 # KiCad's "remove unused layers" on vias and through-hole pads: drop annular rings on layers nothing connects to
 HONOUR_REMOVE_UNUSED_LAYERS = True
 

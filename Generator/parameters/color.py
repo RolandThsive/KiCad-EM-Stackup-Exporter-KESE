@@ -15,6 +15,8 @@ MATERIALS = {
     "Copper":             {"color": "#CD803E", "alpha": 1.0,  "metallic": 0.9, "roughness": 0.35},
     "Copper_exposed":     {"color": "#DEBA60", "alpha": 1.0,  "metallic": 1.0, "roughness": 0.25},
     "Plating":            {"color": "#CD803E", "alpha": 1.0,  "metallic": 0.9, "roughness": 0.35},
+    # resin in plugged and resin-filled vias
+    "Via Resin":          {"color": "#D8CFA0", "alpha": 1.0,  "metallic": 0.0, "roughness": 0.60},
     # solder mask
     "Top Solder Mask":    {"color": "#EBEBE6", "alpha": 0.80, "metallic": 0.0, "roughness": 0.30},
     "Bottom Solder Mask": {"color": "#EBEBE6", "alpha": 0.80, "metallic": 0.0, "roughness": 0.30},

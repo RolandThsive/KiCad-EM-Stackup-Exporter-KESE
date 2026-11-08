@@ -17,6 +17,7 @@ NEW_OVERBAR = 20210606                 # from here an overbar is ~{text}; before
 BOLD_MULTIPLIER_FROM = 20260826       # from here a bold text's thickness is its base pen, drawn x 1.6
 BOLD_STROKE_MULTIPLIER = 1.6           # gr_text.h
 STROKED_FILL_UNTIL = 20250210          # before this a zone fill is stroked, unless the zone says not
+TEXTBOX_BORDER_FROM = 20230825         # from here a text box says (border yes|no)
 KICAD_DEFAULT_VIA = (0.6, 0.3, 0.3, 0.1)    # via size, drill, micro via size, drill (netclass.cpp)
 ROUNDRECT_RRATIO = 0.25                # a roundrect pad that gives no ratio (padstack.cpp, PADSTACK defaults)
 
@@ -148,6 +149,17 @@ def is_filled(node, kind, w):
     if fill and len(fill) > 1:
         return yes(fill[1])
     return (kind in ("circle", "rect") and w == 0) or (kind == "poly" and layer_of(node) != "Edge.Cuts")
+
+
+def textbox_border(node, d):
+    """A text box's border pen (mm), 0 for none: its (stroke (width w)), -1 when it gives none; from
+    TEXTBOX_BORDER_FROM its (border yes|no) says whether it has a border, before a pen of 0 or more
+    (parseTextBoxContent)."""
+    stroke = child(node, "stroke")
+    w = num(stroke, "width", -1.0) if stroke else -1.0
+    border = child(node, "border")
+    on = w >= 0 if d.format < TEXTBOX_BORDER_FROM else border is None or len(border) < 2 or yes(border[1])
+    return max(w, 0.0) if on else 0.0
 
 
 def legacy_arc(node, T):

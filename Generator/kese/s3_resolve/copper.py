@@ -20,7 +20,7 @@ def copper_layers(r, items, outline_k, log):
     nets (Parallel.PROCESS_MIN_NETS), else in threads (copper_of_layer takes its own copies of the shapes
     there)."""
     last = len(items.layers) - 1
-    jobs = {k: (k == 0 or k == last, items.copper_items.get(l, []), [h for h in items.holes if h.i <= k <= h.j],
+    jobs = {k: (k == 0 or k == last, items.copper_items.get(l, []), cutting(items.holes, k, last),
                 outline_k, r.to_board_T) for k, l in enumerate(items.layers)}
     size = {k: sum(int(shapely.get_num_coordinates(g)) for g, _ in job[1]) for k, job in jobs.items()}
     order = sorted(jobs, key=lambda k: -size[k])
@@ -32,6 +32,16 @@ def copper_layers(r, items, outline_k, log):
     for k, l in enumerate(items.layers):
         r.copper[l] = done[k]
         r.copper_all[l] = side_by_side(list(done[k].values()))
+
+
+def cutting(holes, k, last):
+    """The holes that cut copper layer k: every hole through it, but on a face's layer not a via
+    that copper shuts there (a cap, or a copper fill: KiCad 10's via protection), whose copper then
+    stays whole over the hole."""
+    fill = P.Copper.VIA_FILL
+    side = "F" if k == 0 else "B" if k == last else None
+    return [h for h in holes if h.i <= k <= h.j
+            and not (side and h.protect is not None and h.protect.copper_shut(side, fill))]
 
 
 def copper_of_layer(outer, mine, holes, outline_k, T, take=lambda g: g):

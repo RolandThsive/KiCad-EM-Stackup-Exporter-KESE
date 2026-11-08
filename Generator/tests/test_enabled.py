@@ -18,7 +18,9 @@ from kese.s4_geometry import geometry  # noqa: E402
 from kese.s4_geometry.switches import SWITCHES, is_on  # noqa: E402
 from parameters import P  # noqa: E402
 
-PCB = ROOT.parent / "featureTest" / "17_mask_silk.kicad_pcb"      # has every role but plating
+PCB = ROOT.parent / "featureTest" / "17_mask_silk.kicad_pcb"      # has every role but plating and via resin
+# the switches whose parts that board has none of, and a board that has them
+BOARD_FOR = {"Copper.VIA_RESIN_ENABLED": ROOT.parent / "featureTest" / "03b_vias_k10.kicad_pcb"}
 # {switch: the roles it leaves out}, from the table geometry.py goes by
 ROLES = {key: {role for role, k in SWITCHES.items() if k == key} for key in set(SWITCHES.values())}
 
@@ -46,9 +48,9 @@ def switched_off(key):
         P.override(key, saved)
 
 
-def prisms(mode="simulation"):
+def prisms(mode="simulation", pcb=PCB):
     job = start(mode, ["glb"], "/tmp/kese_test_enabled", (), False, lambda s: None)
-    out = str(PCB)
+    out = str(pcb)
     for stage in (read, collect, resolve, geometry):
         out = stage.run(out, job)
     return {(p.part, p.role, p.z0, p.z1, p.region.wkb) for p in out.prisms}
@@ -61,11 +63,13 @@ def test_each_switch_leaves_out_only_its_parts():
 
 
 def check_mode(mode):
-    every = prisms(mode)
+    made = {}
     for key, roles in sorted(ROLES.items()):
-        assert any(r in roles for _, r, *_ in every), f"{PCB.stem} has no {roles} parts to leave out"
+        pcb = BOARD_FOR.get(key, PCB)
+        every = made.setdefault(pcb, prisms(mode, pcb))
+        assert any(r in roles for _, r, *_ in every), f"{pcb.stem} has no {roles} parts to leave out"
         with switched_off(key):
-            got = prisms(mode)
+            got = prisms(mode, pcb)
         assert got == {p for p in every if p[1] not in roles}, f"{key} = False in {mode} mode"
 
 

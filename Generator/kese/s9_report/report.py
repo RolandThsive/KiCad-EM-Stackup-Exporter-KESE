@@ -3,7 +3,7 @@ and parameters.txt (every setting of the run) next to every output."""
 from datetime import datetime
 
 from kese.core.whole_files import whole
-from kese.s4_geometry.heights import dielectric_z
+from kese.s3_resolve.heights import dielectric_z
 from parameters import P
 
 

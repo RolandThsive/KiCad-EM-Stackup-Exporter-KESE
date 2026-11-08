@@ -10,7 +10,7 @@ from kese.s6_assemble.skin_mesh import skin_meshes_from_faces
 from kese.s6_assemble.transform import finish_mesh, output_transform
 from parameters import P
 
-PART_ORDER = ["Board", "Copper", "Plating", "Top Solder Mask", "Top Mask over Copper", "Bottom Solder Mask",
+PART_ORDER = ["Board", "Copper", "Plating", "Via Resin", "Top Solder Mask", "Top Mask over Copper", "Bottom Solder Mask",
               "Bottom Mask over Copper", "Top Silkscreen", "Bottom Silkscreen", "Top Finish", "Bottom Finish",
               "Edge Finish"]
 
@@ -33,7 +33,7 @@ def finished_meshes(ps, mode, log, finish, boundaries, checks, check):
     a time.  A solid's Boundary is kept for the STEP writer, and its mesh is finished (and with
     `check` checked for the Verifier, into `checks`) by the worker that built it."""
     if mode == "visual":
-        skin = skin_meshes_from_faces(*skin_faces(ps, log))
+        skin = skin_meshes_from_faces(*skin_faces(ps, log), free=ps.free_levels)
         while skin:
             part, m = skin.popitem()
             yield part, finish(m)

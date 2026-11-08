@@ -22,13 +22,13 @@ def add_footprint(ctx, fp):
         if not isinstance(node, list) or not node:
             continue
         if node[0] in GRAPHICS:
-            add_drawing(ctx, node, T, in_footprint=True)
+            add_drawing(ctx, node, T, in_footprint=True, fp=id(fp))
         elif node[0] == "pad":
             add_pad(ctx, node, T, fp_margin)
         elif node[0] == "zone":
             add_zone(ctx, node)
         elif node[0] in TEXT or (node[0] == "property" and layer_of(node)):
-            add_text(ctx, node, T, subst, in_footprint=True)
+            add_text(ctx, node, T, subst, in_footprint=True, fp=id(fp))
         elif node[0] == "barcode":                   # drawn from its text, no shape in the file
             items.skipped["barcode items"] += 1
         elif str(node[0]).startswith("fp_"):          # a drawing of a kind KESE does not know
