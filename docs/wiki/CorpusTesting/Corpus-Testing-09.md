@@ -3015,7 +3015,7 @@ Part 9 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 
 ## 23.9.71 vera-module-rev2
 
-![vera-module-rev2: stages 4 and 6 take 60% to 86% of a run. Simulation, GLB takes 26 s. Simulation, STEP takes 31 s. Simulation, STL takes 25 s. Simulation, OBJ takes 36 s. Visual, GLB takes 34 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-09/vera-module_vera-module-rev2.webp)
+![vera-module-rev2: stages 4 and 6 take 60% to 86% of a run. Simulation, GLB takes 26 s. Simulation, STEP takes 31 s. Simulation, STL takes 25 s. Simulation, OBJ takes 36 s. Visual, GLB takes 34 s. Visual, OBJ takes 38 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-09/vera-module_vera-module-rev2.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -3024,7 +3024,7 @@ Part 9 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 | Simulation, STL | 0.5 | 2.2 | 12.0 | 0.4&nbsp;ms | 9.1 | 0.5 | 0.8 | 0.2 | 25.4 |
 | Simulation, OBJ | 0.5 | 2.2 | 12.1 | 0.6&nbsp;ms | 9.3 | 10.4 | 0.9 | 0.3 | 35.7 |
 | Visual, GLB | 0.5 | 2.2 | 12.0 | 0.4&nbsp;ms | 16.8 | 0.2 | 1.7 | 0.2 | 33.6 |
-| Visual, OBJ |  |  |  |  |  |  |  |  | interrupted: the test machine restarted during the run (not a KESE result) |
+| Visual, OBJ | 0.4 | 1.9 | 10.4 | 0.3&nbsp;ms | 17.3 | 5.7 | 2.0 | 0.3 | 38.0 |
 
 <table align="center"><tr><td valign="top">
 
@@ -3038,7 +3038,7 @@ Part 9 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 | File&nbsp;format | KiCad 5 (20171130) |
 | Parts,&nbsp;tracks,&nbsp;vias | 111, 1,215, 256 |
 | Triangles,&nbsp;simulation | 1,904,622 in 145 parts |
-| Verifier | Visual, OBJ: interrupted: the test machine restarted during the run (not a KESE result) |
+| Verifier | PASS in all six runs |
 
 </td><td valign="top">
 
@@ -3051,7 +3051,7 @@ Part 9 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 <tr><td>OBJ</td><td align="right">201&nbsp;MB</td><td align="right">1.3&nbsp;GB</td></tr>
 <tr><th colspan="3" align="left">Visual</th></tr>
 <tr><td>GLB</td><td align="right">49&nbsp;MB</td><td align="right">953&nbsp;MB</td></tr>
-<tr><td>OBJ</td><td align="right">–</td><td align="right">–</td></tr>
+<tr><td>OBJ</td><td align="right">150&nbsp;MB</td><td align="right">1.1&nbsp;GB</td></tr>
 </table>
 
 </td></tr></table>

@@ -17,7 +17,7 @@ python run_KESE.py B --mode visual --format F --verify \
 
 **The runs used KESE version 2.4.0 (`main` at 22fd70c) with the default parameters otherwise and shapely 2.2.0 (GEOS 3.14.1), spread over several Linux machines with 4 cores each (Intel(R) Xeon(R) Processor @ 2.10GHz) and 16 GB of RAM, so `Parallel.WORKERS = 0` gave four workers ([Work Done In Parallel](Working-Principle.md#74-work-done-in-parallel)). A run was stopped after 90 minutes, or once its memory passed 11 GB: that cap is a limit of the measurement on these 15 GB machines, not of KESE, and a board stopped there needs a machine with more memory. On another machine the seconds differ.**
 
-The runs are under way: 2,476 of the 3,146 boards are done so far. A sub-page is added once all its boards are done.
+The runs are under way: 2,722 of the 3,146 boards are done so far. A sub-page is added once all its boards are done.
 
 ## Grading A Board's Complexity
 
@@ -104,27 +104,27 @@ In this corpus the grades run from 17 to 651, half the boards below 275: the top
 | [Corpus Testing 6: Board-Folk To cheyao](CorpusTesting/Corpus-Testing-06.md) | 26 | 104 | 104 | 99 |
 | [Corpus Testing 7: chipfoundry To DangerousPrototypes](CorpusTesting/Corpus-Testing-07.md) | 19 | 104 | 104 | 101 |
 | [Corpus Testing 8: DangerousPrototypes To epsilon0-dev](CorpusTesting/Corpus-Testing-08.md) | 43 | 101 | 101 | 95 |
-| [Corpus Testing 9: esden To ghent360](CorpusTesting/Corpus-Testing-09.md) | 24 | 103 | 103 | 98 |
-| [Corpus Testing 10: gitRaksha To greatscottgadgets](CorpusTesting/Corpus-Testing-10.md) | 19 | 111 | 111 | 108 |
-| Corpus Testing 11: greatscottgadgets To intergalaktik (running) | 34 | 102 | 99 | 96 |
-| Corpus Testing 12: intergalaktik To issuiuc (running) | 16 | 103 | 98 | 90 |
-| Corpus Testing 13: istedman To KiCad (running) | 36 | 105 | 92 | 89 |
-| Corpus Testing 14: kitspace-forks To loxodes (running) | 20 | 124 | 116 | 114 |
-| Corpus Testing 15: ltbrain To mwelling (running) | 42 | 100 | 88 | 87 |
-| Corpus Testing 16: mwelling To nuclearfutureslab (running) | 34 | 101 | 90 | 86 |
-| Corpus Testing 17: NUSGreyhats To OLIMEX (running) | 34 | 103 | 81 | 81 |
-| Corpus Testing 18: OLIMEX To OLIMEX (running) | 53 | 100 | 82 | 81 |
-| Corpus Testing 19: OLIMEX To open-ephys (running) | 32 | 100 | 79 | 79 |
-| Corpus Testing 20: open-ephys To oresat (running) | 22 | 104 | 76 | 75 |
-| Corpus Testing 21: oresat To pms67 (running) | 33 | 100 | 62 | 62 |
-| Corpus Testing 22: polpo To rh1tech (running) | 31 | 108 | 69 | 68 |
-| Corpus Testing 23: rhaamo To rusefi (running) | 12 | 114 | 57 | 55 |
-| Corpus Testing 24: rusefi To sparkfun (running) | 30 | 111 | 51 | 50 |
-| Corpus Testing 25: sparkfun To sufst (running) | 21 | 115 | 56 | 56 |
-| Corpus Testing 26: SukkoPera To tjeerdie (running) | 29 | 102 | 37 | 36 |
-| Corpus Testing 27: tjhorner To tzarc (running) | 13 | 105 | 35 | 34 |
-| Corpus Testing 28: ucdfs To Wren6991 (running) | 29 | 181 | 53 | 49 |
-| Corpus Testing 29: xesscorp To ZeroPhone (running) | 9 | 16 | 3 | 3 |
+| [Corpus Testing 9: esden To ghent360](CorpusTesting/Corpus-Testing-09.md) | 24 | 103 | 103 | 99 |
+| [Corpus Testing 10: gitRaksha To greatscottgadgets](CorpusTesting/Corpus-Testing-10.md) | 19 | 111 | 111 | 109 |
+| [Corpus Testing 11: greatscottgadgets To intergalaktik](CorpusTesting/Corpus-Testing-11.md) | 34 | 102 | 102 | 99 |
+| [Corpus Testing 12: intergalaktik To issuiuc](CorpusTesting/Corpus-Testing-12.md) | 16 | 103 | 103 | 95 |
+| Corpus Testing 13: istedman To KiCad (running) | 36 | 105 | 96 | 93 |
+| Corpus Testing 14: kitspace-forks To loxodes (running) | 20 | 124 | 123 | 121 |
+| Corpus Testing 15: ltbrain To mwelling (running) | 42 | 100 | 93 | 92 |
+| Corpus Testing 16: mwelling To nuclearfutureslab (running) | 34 | 101 | 99 | 94 |
+| Corpus Testing 17: NUSGreyhats To OLIMEX (running) | 34 | 103 | 95 | 95 |
+| Corpus Testing 18: OLIMEX To OLIMEX (running) | 53 | 100 | 91 | 90 |
+| Corpus Testing 19: OLIMEX To open-ephys (running) | 32 | 100 | 87 | 87 |
+| Corpus Testing 20: open-ephys To oresat (running) | 22 | 104 | 97 | 96 |
+| Corpus Testing 21: oresat To pms67 (running) | 33 | 100 | 75 | 75 |
+| Corpus Testing 22: polpo To rh1tech (running) | 31 | 108 | 84 | 83 |
+| Corpus Testing 23: rhaamo To rusefi (running) | 12 | 114 | 75 | 72 |
+| Corpus Testing 24: rusefi To sparkfun (running) | 30 | 111 | 62 | 61 |
+| Corpus Testing 25: sparkfun To sufst (running) | 21 | 115 | 77 | 77 |
+| Corpus Testing 26: SukkoPera To tjeerdie (running) | 29 | 102 | 61 | 57 |
+| Corpus Testing 27: tjhorner To tzarc (running) | 13 | 105 | 61 | 60 |
+| Corpus Testing 28: ucdfs To Wren6991 (running) | 29 | 181 | 82 | 77 |
+| Corpus Testing 29: xesscorp To ZeroPhone (running) | 9 | 16 | 7 | 7 |
 
 | Previous | Next |
 |:---|---:|

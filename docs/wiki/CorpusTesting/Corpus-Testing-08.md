@@ -2624,7 +2624,7 @@ Part 8 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 | Simulation, GLB | 5.1 | 22.7 | 66.8 | 3&nbsp;ms | 87.5 | 3.7 | 11.7 | 0.6 | 198.2 |
 | Simulation, STEP | 5.4 | 24.3 | 66.3 | 3&nbsp;ms | 89.3 | 40.8 | 11.8 | 0.6 | 238.6 |
 | Simulation, STL | 5.7 | 23.5 | 64.5 | 2&nbsp;ms | 87.3 | 8.5 | 11.6 | 0.6 | 201.6 |
-| Simulation, OBJ |  |  |  |  |  |  |  |  | interrupted: the test machine restarted during the run (not a KESE result) |
+| Simulation, OBJ |  |  |  |  |  |  |  |  | exceeded 11 GB on a 15 GB machine (stopped there, not a KESE failure) |
 | Visual, GLB | 5.4 | 23.9 | 67.1 | 3&nbsp;ms | 163.6 | 1.4 | 12.7 | 0.5 | 274.7 |
 | Visual, OBJ | 5.5 | 24.0 | 64.2 | 2&nbsp;ms | 161.7 | 55.8 | 13.4 | 0.4 | 324.9 |
 
@@ -2640,7 +2640,7 @@ Part 8 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 | File&nbsp;format | KiCad 9 (20241229) |
 | Parts,&nbsp;tracks,&nbsp;vias | 765, 8,886, 3,810 |
 | Triangles,&nbsp;simulation | 18,239,728 in 618 parts |
-| Verifier | Simulation, OBJ: interrupted: the test machine restarted during the run (not a KESE result) |
+| Verifier | Simulation, OBJ: exceeded 11 GB on a 15 GB machine (stopped there, not a KESE failure) |
 
 </td><td valign="top">
 
@@ -2650,7 +2650,7 @@ Part 8 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 <tr><td>GLB</td><td align="right">601&nbsp;MB</td><td align="right">4.8&nbsp;GB</td></tr>
 <tr><td>STEP</td><td align="right">1.7&nbsp;GB</td><td align="right">6.5&nbsp;GB</td></tr>
 <tr><td>STL</td><td align="right">912&nbsp;MB</td><td align="right">4.9&nbsp;GB</td></tr>
-<tr><td>OBJ</td><td align="right">–</td><td align="right">–</td></tr>
+<tr><td>OBJ</td><td align="right">–</td><td align="right">11&nbsp;GB</td></tr>
 <tr><th colspan="3" align="left">Visual</th></tr>
 <tr><td>GLB</td><td align="right">326&nbsp;MB</td><td align="right">5.3&nbsp;GB</td></tr>
 <tr><td>OBJ</td><td align="right">1.1&nbsp;GB</td><td align="right">6.5&nbsp;GB</td></tr>
