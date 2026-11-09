@@ -4,7 +4,7 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 
 ## 23.2.1 plusd
 
-![plusd: stages 4 and 6 take 58% to 85% of a run. Simulation, GLB takes 30 s. Simulation, STEP takes 36 s. Simulation, STL takes 31 s. Simulation, OBJ takes 43 s. Visual, GLB takes 40 s. Visual, OBJ takes 48 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/corpus_1049.webp)
+![plusd: stages 4 and 6 take 58% to 85% of a run. Simulation, GLB takes 30 s. Simulation, STEP takes 36 s. Simulation, STL takes 31 s. Simulation, OBJ takes 43 s. Visual, GLB takes 40 s. Visual, OBJ takes 48 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/plusD-clone_plusd.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -19,7 +19,9 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 
 | Board | Repo: [alvaroalea/plusD-clone](https://github.com/alvaroalea/plusD-clone)<br>Board: `plusd.kicad_pcb` |
 |---|---|
-| Complexity | 2,355, medium |
+| Complexity | 233&nbsp;/&nbsp;1000 (size&nbsp;188, features&nbsp;45) |
+| KESE&nbsp;features | through vias, rounded,<br>trapezoid or chamfered pads,<br>filled zones |
+| Tested | 9th November 2026 |
 | Copper&nbsp;layers | 2 |
 | File&nbsp;format | KiCad 6 (20211014) |
 | Parts,&nbsp;tracks,&nbsp;vias | 62, 1,967, 88 |
@@ -44,7 +46,7 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 
 ## 23.2.2 plusd_no_route
 
-![plusd_no_route: stages 4 and 6 take 56% to 85% of a run. Simulation, GLB takes 16 s. Simulation, STEP takes 20 s. Simulation, STL takes 16 s. Simulation, OBJ takes 24 s. Visual, GLB takes 17 s. Visual, OBJ takes 20 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/corpus_2726.webp)
+![plusd_no_route: stages 4 and 6 take 56% to 85% of a run. Simulation, GLB takes 16 s. Simulation, STEP takes 20 s. Simulation, STL takes 16 s. Simulation, OBJ takes 24 s. Visual, GLB takes 17 s. Visual, OBJ takes 20 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/plusD-clone_plusd-no-route.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -59,7 +61,8 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 
 | Board | Repo: [alvaroalea/plusD-clone](https://github.com/alvaroalea/plusD-clone)<br>Board: `plusd_no_route.kicad_pcb` |
 |---|---|
-| Complexity | 94, simple |
+| Complexity | 59&nbsp;/&nbsp;1000 (size&nbsp;59, features&nbsp;0) |
+| Tested | 9th November 2026 |
 | Copper&nbsp;layers | 2 |
 | File&nbsp;format | KiCad 5 (20171130) |
 | Parts,&nbsp;tracks,&nbsp;vias | 47, 0, 0 |
@@ -85,7 +88,7 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 
 ## 23.2.3 plusd
 
-![plusd: stages 4 and 6 take 58% to 87% of a run. Simulation, GLB takes 25 s. Simulation, STEP takes 31 s. Simulation, STL takes 26 s. Simulation, OBJ takes 35 s. Visual, GLB takes 34 s. Visual, OBJ takes 41 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/corpus_1344.webp)
+![plusd: stages 4 and 6 take 58% to 87% of a run. Simulation, GLB takes 25 s. Simulation, STEP takes 31 s. Simulation, STL takes 26 s. Simulation, OBJ takes 35 s. Visual, GLB takes 34 s. Visual, OBJ takes 41 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/plusD-clone_Rev-01_plusd.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -101,7 +104,9 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 | Board | Repo: [alvaroalea/plusD-clone](https://github.com/alvaroalea/plusD-clone)<br>Board: `plusd.kicad_pcb` |
 |---|---|
 | Folder | Rev_01 |
-| Complexity | 1,654, medium |
+| Complexity | 214&nbsp;/&nbsp;1000 (size&nbsp;179, features&nbsp;35) |
+| KESE&nbsp;features | through vias, filled zones |
+| Tested | 9th November 2026 |
 | Copper&nbsp;layers | 2 |
 | File&nbsp;format | KiCad 5 (20171130) |
 | Parts,&nbsp;tracks,&nbsp;vias | 47, 1,452, 36 |
@@ -126,7 +131,7 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 
 ## 23.2.4 plusd
 
-![plusd: stages 4 and 6 take 56% to 88% of a run. Simulation, GLB takes 26 s. Simulation, STEP takes 32 s. Simulation, STL takes 26 s. Simulation, OBJ takes 38 s. Visual, GLB takes 33 s. Visual, OBJ takes 40 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/corpus_1102.webp)
+![plusd: stages 4 and 6 take 56% to 88% of a run. Simulation, GLB takes 26 s. Simulation, STEP takes 32 s. Simulation, STL takes 26 s. Simulation, OBJ takes 38 s. Visual, GLB takes 33 s. Visual, OBJ takes 40 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/plusD-clone_Rev-02_plusd.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -142,7 +147,9 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 | Board | Repo: [alvaroalea/plusD-clone](https://github.com/alvaroalea/plusD-clone)<br>Board: `plusd.kicad_pcb` |
 |---|---|
 | Folder | Rev_02 |
-| Complexity | 2,210, medium |
+| Complexity | 220&nbsp;/&nbsp;1000 (size&nbsp;185, features&nbsp;35) |
+| KESE&nbsp;features | through vias, filled zones |
+| Tested | 9th November 2026 |
 | Copper&nbsp;layers | 2 |
 | File&nbsp;format | KiCad 5 (20171130) |
 | Parts,&nbsp;tracks,&nbsp;vias | 51, 1,835, 91 |
@@ -167,7 +174,7 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 
 ## 23.2.5 situacion1
 
-![situacion1: stages 4 and 6 take 57% to 84% of a run. Simulation, GLB takes 17 s. Simulation, STEP takes 21 s. Simulation, STL takes 16 s. Simulation, OBJ takes 24 s. Visual, GLB takes 17 s. Visual, OBJ takes 21 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/corpus_2732.webp)
+![situacion1: stages 4 and 6 take 57% to 84% of a run. Simulation, GLB takes 17 s. Simulation, STEP takes 21 s. Simulation, STL takes 16 s. Simulation, OBJ takes 24 s. Visual, GLB takes 17 s. Visual, OBJ takes 21 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/plusD-clone_situacion1.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -182,7 +189,8 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 
 | Board | Repo: [alvaroalea/plusD-clone](https://github.com/alvaroalea/plusD-clone)<br>Board: `situacion1.kicad_pcb` |
 |---|---|
-| Complexity | 90, simple |
+| Complexity | 58&nbsp;/&nbsp;1000 (size&nbsp;58, features&nbsp;0) |
+| Tested | 9th November 2026 |
 | Copper&nbsp;layers | 2 |
 | File&nbsp;format | KiCad 5 (20171130) |
 | Parts,&nbsp;tracks,&nbsp;vias | 45, 0, 0 |
@@ -208,7 +216,7 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 
 ## 23.2.6 SMD500
 
-![SMD500: stages 4 and 6 take 57% to 88% of a run. Simulation, GLB takes 4 min. Simulation, STEP takes 5 min. Simulation, STL takes 4 min. Simulation, OBJ takes 5 min. Visual, GLB takes 6 min. Visual, OBJ takes 7 min](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/corpus_0043.webp)
+![SMD500: stages 4 and 6 take 57% to 88% of a run. Simulation, GLB takes 4 min. Simulation, STEP takes 5 min. Simulation, STL takes 4 min. Simulation, OBJ takes 5 min. Visual, GLB takes 6 min. Visual, OBJ takes 7 min](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/Amiga-SMD-500_SMD500.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -223,7 +231,9 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 
 | Board | Repo: [amigalisa/Amiga-SMD-500](https://github.com/amigalisa/Amiga-SMD-500)<br>Board: `SMD500.kicad_pcb` |
 |---|---|
-| Complexity | 24,877, extreme |
+| Complexity | 342&nbsp;/&nbsp;1000 (size&nbsp;297, features&nbsp;45) |
+| KESE&nbsp;features | through vias, rounded,<br>trapezoid or chamfered pads,<br>filled zones |
+| Tested | 9th November 2026 |
 | Copper&nbsp;layers | 2 |
 | File&nbsp;format | KiCad 5 (20171130) |
 | Parts,&nbsp;tracks,&nbsp;vias | 582, 18,007, 1,862 |
@@ -248,7 +258,7 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 
 ## 23.2.7 AmigaPCI 68040
 
-![AmigaPCI 68040: stages 4 and 6 take 48% to 82% of a run. Simulation, GLB takes 64 s. Simulation, STEP takes 78 s. Simulation, STL takes 63 s. Simulation, OBJ takes 95 s. Visual, GLB takes 93 s. Visual, OBJ takes 2 min](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/corpus_0415.webp)
+![AmigaPCI 68040: stages 4 and 6 take 48% to 82% of a run. Simulation, GLB takes 64 s. Simulation, STEP takes 78 s. Simulation, STL takes 63 s. Simulation, OBJ takes 95 s. Visual, GLB takes 93 s. Visual, OBJ takes 2 min](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/AmigaPCI-LBC040_AmigaPCI-68040.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -264,7 +274,9 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 | Board | Repo: [AmigaPCI/AmigaPCI-LBC040](https://github.com/AmigaPCI/AmigaPCI-LBC040)<br>Board: `AmigaPCI 68040.kicad_pcb` |
 |---|---|
 | Folder | KiCAD / AmigaPCI-LBC040-REV60 |
-| Complexity | 6,581, high |
+| Complexity | 370&nbsp;/&nbsp;1000 (size&nbsp;285, features&nbsp;85) |
+| KESE&nbsp;features | through vias, rounded,<br>trapezoid or chamfered pads,<br>filled zones, curved board outline,<br>stack-up, dielectric εr and tanδ |
+| Tested | 9th November 2026 |
 | Copper&nbsp;layers | 6 |
 | File&nbsp;format | KiCad 8 (20240108) |
 | Parts,&nbsp;tracks,&nbsp;vias | 126, 4,520, 563 |
@@ -289,7 +301,7 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 
 ## 23.2.8 AmigaPCI Mainboard
 
-![AmigaPCI Mainboard: stages 4 and 6 take 66% to 87% of a run. Simulation, GLB takes 9 min. Simulation, STEP takes 12 min. Simulation, STL takes 10 min. Visual, GLB takes 16 min](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/corpus_0033.webp)
+![AmigaPCI Mainboard: stages 4 and 6 take 66% to 87% of a run. Simulation, GLB takes 9 min. Simulation, STEP takes 12 min. Simulation, STL takes 10 min. Visual, GLB takes 16 min](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/AmigaPCI-MainBoard_AmigaPCI-Mainboard.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -305,7 +317,9 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 | Board | Repo: [AmigaPCI/AmigaPCI-MainBoard](https://github.com/AmigaPCI/AmigaPCI-MainBoard)<br>Board: `AmigaPCI Mainboard.kicad_pcb` |
 |---|---|
 | Folder | KiCAD / AmigaPCI Mainboard-KiCAD REV 70 |
-| Complexity | 29,804, extreme |
+| Complexity | 493&nbsp;/&nbsp;1000 (size&nbsp;343, features&nbsp;150) |
+| KESE&nbsp;features | through vias, slotted holes,<br>custom pads, rounded,<br>trapezoid or chamfered pads,<br>arc tracks, filled zones,<br>copper drawings, copper text,<br>stack-up, dielectric εr and tanδ,<br>copper finish |
+| Tested | 9th November 2026 |
 | Copper&nbsp;layers | 6 |
 | File&nbsp;format | KiCad 8 (20240108) |
 | Parts,&nbsp;tracks,&nbsp;vias | 723, 20,477, 2,447 |
@@ -330,7 +344,7 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 
 ## 23.2.9 anavi-light-controller
 
-![anavi-light-controller: stages 4 and 6 take 52% to 82% of a run. Simulation, GLB takes 3.6 s. Simulation, STEP takes 5.1 s. Simulation, STL takes 3.8 s. Simulation, OBJ takes 5.4 s. Visual, GLB takes 5.5 s. Visual, OBJ takes 6.9 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/corpus_2509.webp)
+![anavi-light-controller: stages 4 and 6 take 52% to 82% of a run. Simulation, GLB takes 3.6 s. Simulation, STEP takes 5.1 s. Simulation, STL takes 3.8 s. Simulation, OBJ takes 5.4 s. Visual, GLB takes 5.5 s. Visual, OBJ takes 6.9 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/anavi-light-controller_anavi-light-controller.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -345,7 +359,9 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 
 | Board | Repo: [AnaviTechnology/anavi-light-controller](https://github.com/AnaviTechnology/anavi-light-controller)<br>Board: `anavi-light-controller.kicad_pcb` |
 |---|---|
-| Complexity | 244, simple |
+| Complexity | 203&nbsp;/&nbsp;1000 (size&nbsp;138, features&nbsp;65) |
+| KESE&nbsp;features | through vias, slotted holes,<br>drill offsets, filled zones,<br>curved board outline |
+| Tested | 9th November 2026 |
 | Copper&nbsp;layers | 2 |
 | File&nbsp;format | KiCad 4 (4) |
 | Parts,&nbsp;tracks,&nbsp;vias | 22, 164, 12 |
@@ -370,7 +386,7 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 
 ## 23.2.10 Board 2x06 W15.24
 
-![Board 2x06 W15.24: stages 4 and 6 take 40% to 67% of a run. Simulation, GLB takes 1.3 s. Simulation, STEP takes 1.9 s. Simulation, STL takes 1.1 s. Simulation, OBJ takes 1.5 s. Visual, GLB takes 1.2 s. Visual, OBJ takes 1.6 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/corpus_3005.webp)
+![Board 2x06 W15.24: stages 4 and 6 take 40% to 67% of a run. Simulation, GLB takes 1.3 s. Simulation, STEP takes 1.9 s. Simulation, STL takes 1.1 s. Simulation, OBJ takes 1.5 s. Visual, GLB takes 1.2 s. Visual, OBJ takes 1.6 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/658-Computer_Kicad-Boards-Blank-Board-2x06-W15-24_Board-2x06-W15-24.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -386,7 +402,9 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 | Board | Repo: [andrewpaterson/658-Computer](https://github.com/andrewpaterson/658-Computer)<br>Board: `Board 2x06 W15.24.kicad_pcb` |
 |---|---|
 | Folder | Kicad / Boards / Blank / Board 2x06 W15.24 |
-| Complexity | 3, simple |
+| Complexity | 89&nbsp;/&nbsp;1000 (size&nbsp;34, features&nbsp;55) |
+| KESE&nbsp;features | rounded,<br>trapezoid or chamfered pads,<br>knockout text, stack-up,<br>dielectric εr and tanδ |
+| Tested | 9th November 2026 |
 | Copper&nbsp;layers | 2 |
 | File&nbsp;format | KiCad 9 (20241229) |
 | Parts,&nbsp;tracks,&nbsp;vias | 4, 0, 0 |
@@ -411,7 +429,7 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 
 ## 23.2.11 Board 2x06 W22.86
 
-![Board 2x06 W22.86: stages 4 and 6 take 40% to 65% of a run. Simulation, GLB takes 1.3 s. Simulation, STEP takes 2.3 s. Simulation, STL takes 1.5 s. Simulation, OBJ takes 2.0 s. Visual, GLB takes 1.6 s. Visual, OBJ takes 1.9 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/corpus_3006.webp)
+![Board 2x06 W22.86: stages 4 and 6 take 40% to 65% of a run. Simulation, GLB takes 1.3 s. Simulation, STEP takes 2.3 s. Simulation, STL takes 1.5 s. Simulation, OBJ takes 2.0 s. Visual, GLB takes 1.6 s. Visual, OBJ takes 1.9 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/658-Computer_Kicad-Boards-Blank-Board-2x06-W22-86_Board-2x06-W22-86.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -427,7 +445,9 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 | Board | Repo: [andrewpaterson/658-Computer](https://github.com/andrewpaterson/658-Computer)<br>Board: `Board 2x06 W22.86.kicad_pcb` |
 |---|---|
 | Folder | Kicad / Boards / Blank / Board 2x06 W22.86 |
-| Complexity | 3, simple |
+| Complexity | 89&nbsp;/&nbsp;1000 (size&nbsp;34, features&nbsp;55) |
+| KESE&nbsp;features | rounded,<br>trapezoid or chamfered pads,<br>knockout text, stack-up,<br>dielectric εr and tanδ |
+| Tested | 9th November 2026 |
 | Copper&nbsp;layers | 2 |
 | File&nbsp;format | KiCad 9 (20241229) |
 | Parts,&nbsp;tracks,&nbsp;vias | 4, 0, 0 |
@@ -452,7 +472,7 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 
 ## 23.2.12 Board 2x12 W15.24
 
-![Board 2x12 W15.24: stages 4 and 6 take 44% to 76% of a run. Simulation, GLB takes 1.8 s. Simulation, STEP takes 2.6 s. Simulation, STL takes 1.7 s. Simulation, OBJ takes 2.5 s. Visual, GLB takes 2.5 s. Visual, OBJ takes 2.9 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/corpus_3007.webp)
+![Board 2x12 W15.24: stages 4 and 6 take 44% to 76% of a run. Simulation, GLB takes 1.8 s. Simulation, STEP takes 2.6 s. Simulation, STL takes 1.7 s. Simulation, OBJ takes 2.5 s. Visual, GLB takes 2.5 s. Visual, OBJ takes 2.9 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/658-Computer_Kicad-Boards-Blank-Board-2x12-W15-24_Board-2x12-W15-24.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -468,7 +488,9 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 | Board | Repo: [andrewpaterson/658-Computer](https://github.com/andrewpaterson/658-Computer)<br>Board: `Board 2x12 W15.24.kicad_pcb` |
 |---|---|
 | Folder | Kicad / Boards / Blank / Board 2x12 W15.24 |
-| Complexity | 3, simple |
+| Complexity | 89&nbsp;/&nbsp;1000 (size&nbsp;34, features&nbsp;55) |
+| KESE&nbsp;features | rounded,<br>trapezoid or chamfered pads,<br>knockout text, stack-up,<br>dielectric εr and tanδ |
+| Tested | 9th November 2026 |
 | Copper&nbsp;layers | 2 |
 | File&nbsp;format | KiCad 9 (20241229) |
 | Parts,&nbsp;tracks,&nbsp;vias | 4, 0, 0 |
@@ -493,7 +515,7 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 
 ## 23.2.13 Board 2x12 W22.86
 
-![Board 2x12 W22.86: stages 4 and 6 take 46% to 77% of a run. Simulation, GLB takes 1.9 s. Simulation, STEP takes 2.7 s. Simulation, STL takes 1.7 s. Simulation, OBJ takes 2.4 s. Visual, GLB takes 2.4 s. Visual, OBJ takes 2.7 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/corpus_3008.webp)
+![Board 2x12 W22.86: stages 4 and 6 take 46% to 77% of a run. Simulation, GLB takes 1.9 s. Simulation, STEP takes 2.7 s. Simulation, STL takes 1.7 s. Simulation, OBJ takes 2.4 s. Visual, GLB takes 2.4 s. Visual, OBJ takes 2.7 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/658-Computer_Kicad-Boards-Blank-Board-2x12-W22-86_Board-2x12-W22-86.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -509,7 +531,9 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 | Board | Repo: [andrewpaterson/658-Computer](https://github.com/andrewpaterson/658-Computer)<br>Board: `Board 2x12 W22.86.kicad_pcb` |
 |---|---|
 | Folder | Kicad / Boards / Blank / Board 2x12 W22.86 |
-| Complexity | 3, simple |
+| Complexity | 89&nbsp;/&nbsp;1000 (size&nbsp;34, features&nbsp;55) |
+| KESE&nbsp;features | rounded,<br>trapezoid or chamfered pads,<br>knockout text, stack-up,<br>dielectric εr and tanδ |
+| Tested | 9th November 2026 |
 | Copper&nbsp;layers | 2 |
 | File&nbsp;format | KiCad 9 (20241229) |
 | Parts,&nbsp;tracks,&nbsp;vias | 4, 0, 0 |
@@ -534,7 +558,7 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 
 ## 23.2.14 Board 2x16 W15.24
 
-![Board 2x16 W15.24: stages 4 and 6 take 50% to 79% of a run. Simulation, GLB takes 2.1 s. Simulation, STEP takes 2.9 s. Simulation, STL takes 2.1 s. Simulation, OBJ takes 2.6 s. Visual, GLB takes 2.7 s. Visual, OBJ takes 3.4 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/corpus_3009.webp)
+![Board 2x16 W15.24: stages 4 and 6 take 50% to 79% of a run. Simulation, GLB takes 2.1 s. Simulation, STEP takes 2.9 s. Simulation, STL takes 2.1 s. Simulation, OBJ takes 2.6 s. Visual, GLB takes 2.7 s. Visual, OBJ takes 3.4 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/658-Computer_Kicad-Boards-Blank-Board-2x16-W15-24_Board-2x16-W15-24.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -550,7 +574,9 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 | Board | Repo: [andrewpaterson/658-Computer](https://github.com/andrewpaterson/658-Computer)<br>Board: `Board 2x16 W15.24.kicad_pcb` |
 |---|---|
 | Folder | Kicad / Boards / Blank / Board 2x16 W15.24 |
-| Complexity | 3, simple |
+| Complexity | 89&nbsp;/&nbsp;1000 (size&nbsp;34, features&nbsp;55) |
+| KESE&nbsp;features | rounded,<br>trapezoid or chamfered pads,<br>knockout text, stack-up,<br>dielectric εr and tanδ |
+| Tested | 9th November 2026 |
 | Copper&nbsp;layers | 2 |
 | File&nbsp;format | KiCad 9 (20241229) |
 | Parts,&nbsp;tracks,&nbsp;vias | 4, 0, 0 |
@@ -575,7 +601,7 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 
 ## 23.2.15 Board 2x16 W22.86
 
-![Board 2x16 W22.86: stages 4 and 6 take 48% to 79% of a run. Simulation, GLB takes 1.9 s. Simulation, STEP takes 2.8 s. Simulation, STL takes 1.9 s. Simulation, OBJ takes 2.7 s. Visual, GLB takes 2.5 s. Visual, OBJ takes 2.9 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/corpus_3010.webp)
+![Board 2x16 W22.86: stages 4 and 6 take 48% to 79% of a run. Simulation, GLB takes 1.9 s. Simulation, STEP takes 2.8 s. Simulation, STL takes 1.9 s. Simulation, OBJ takes 2.7 s. Visual, GLB takes 2.5 s. Visual, OBJ takes 2.9 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/658-Computer_Kicad-Boards-Blank-Board-2x16-W22-86_Board-2x16-W22-86.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -591,7 +617,9 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 | Board | Repo: [andrewpaterson/658-Computer](https://github.com/andrewpaterson/658-Computer)<br>Board: `Board 2x16 W22.86.kicad_pcb` |
 |---|---|
 | Folder | Kicad / Boards / Blank / Board 2x16 W22.86 |
-| Complexity | 3, simple |
+| Complexity | 89&nbsp;/&nbsp;1000 (size&nbsp;34, features&nbsp;55) |
+| KESE&nbsp;features | rounded,<br>trapezoid or chamfered pads,<br>knockout text, stack-up,<br>dielectric εr and tanδ |
+| Tested | 9th November 2026 |
 | Copper&nbsp;layers | 2 |
 | File&nbsp;format | KiCad 9 (20241229) |
 | Parts,&nbsp;tracks,&nbsp;vias | 4, 0, 0 |
@@ -616,7 +644,7 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 
 ## 23.2.16 Board 2x20 W15.24
 
-![Board 2x20 W15.24: stages 4 and 6 take 50% to 81% of a run. Simulation, GLB takes 2.7 s. Simulation, STEP takes 3.7 s. Simulation, STL takes 2.4 s. Simulation, OBJ takes 3.5 s. Visual, GLB takes 3.5 s. Visual, OBJ takes 3.9 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/corpus_3011.webp)
+![Board 2x20 W15.24: stages 4 and 6 take 50% to 81% of a run. Simulation, GLB takes 2.7 s. Simulation, STEP takes 3.7 s. Simulation, STL takes 2.4 s. Simulation, OBJ takes 3.5 s. Visual, GLB takes 3.5 s. Visual, OBJ takes 3.9 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/658-Computer_Kicad-Boards-Blank-Board-2x20-W15-24_Board-2x20-W15-24.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -632,7 +660,9 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 | Board | Repo: [andrewpaterson/658-Computer](https://github.com/andrewpaterson/658-Computer)<br>Board: `Board 2x20 W15.24.kicad_pcb` |
 |---|---|
 | Folder | Kicad / Boards / Blank / Board 2x20 W15.24 |
-| Complexity | 3, simple |
+| Complexity | 89&nbsp;/&nbsp;1000 (size&nbsp;34, features&nbsp;55) |
+| KESE&nbsp;features | rounded,<br>trapezoid or chamfered pads,<br>knockout text, stack-up,<br>dielectric εr and tanδ |
+| Tested | 9th November 2026 |
 | Copper&nbsp;layers | 2 |
 | File&nbsp;format | KiCad 9 (20241229) |
 | Parts,&nbsp;tracks,&nbsp;vias | 4, 0, 0 |
@@ -657,7 +687,7 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 
 ## 23.2.17 Board 2x20 W22.86
 
-![Board 2x20 W22.86: stages 4 and 6 take 51% to 78% of a run. Simulation, GLB takes 1.9 s. Simulation, STEP takes 2.7 s. Simulation, STL takes 2.0 s. Simulation, OBJ takes 2.6 s. Visual, GLB takes 2.4 s. Visual, OBJ takes 2.8 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/corpus_3012.webp)
+![Board 2x20 W22.86: stages 4 and 6 take 51% to 78% of a run. Simulation, GLB takes 1.9 s. Simulation, STEP takes 2.7 s. Simulation, STL takes 2.0 s. Simulation, OBJ takes 2.6 s. Visual, GLB takes 2.4 s. Visual, OBJ takes 2.8 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/658-Computer_Kicad-Boards-Blank-Board-2x20-W22-86_Board-2x20-W22-86.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -673,7 +703,9 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 | Board | Repo: [andrewpaterson/658-Computer](https://github.com/andrewpaterson/658-Computer)<br>Board: `Board 2x20 W22.86.kicad_pcb` |
 |---|---|
 | Folder | Kicad / Boards / Blank / Board 2x20 W22.86 |
-| Complexity | 3, simple |
+| Complexity | 89&nbsp;/&nbsp;1000 (size&nbsp;34, features&nbsp;55) |
+| KESE&nbsp;features | rounded,<br>trapezoid or chamfered pads,<br>knockout text, stack-up,<br>dielectric εr and tanδ |
+| Tested | 9th November 2026 |
 | Copper&nbsp;layers | 2 |
 | File&nbsp;format | KiCad 9 (20241229) |
 | Parts,&nbsp;tracks,&nbsp;vias | 4, 0, 0 |
@@ -698,7 +730,7 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 
 ## 23.2.18 Board 2x22 W15.24
 
-![Board 2x22 W15.24: stages 4 and 6 take 49% to 80% of a run. Simulation, GLB takes 2.2 s. Simulation, STEP takes 3.2 s. Simulation, STL takes 2.1 s. Simulation, OBJ takes 2.8 s. Visual, GLB takes 3.1 s. Visual, OBJ takes 3.6 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/corpus_3013.webp)
+![Board 2x22 W15.24: stages 4 and 6 take 49% to 80% of a run. Simulation, GLB takes 2.2 s. Simulation, STEP takes 3.2 s. Simulation, STL takes 2.1 s. Simulation, OBJ takes 2.8 s. Visual, GLB takes 3.1 s. Visual, OBJ takes 3.6 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/658-Computer_Kicad-Boards-Blank-Board-2x22-W15-24_Board-2x22-W15-24.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -714,7 +746,9 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 | Board | Repo: [andrewpaterson/658-Computer](https://github.com/andrewpaterson/658-Computer)<br>Board: `Board 2x22 W15.24.kicad_pcb` |
 |---|---|
 | Folder | Kicad / Boards / Blank / Board 2x22 W15.24 |
-| Complexity | 3, simple |
+| Complexity | 89&nbsp;/&nbsp;1000 (size&nbsp;34, features&nbsp;55) |
+| KESE&nbsp;features | rounded,<br>trapezoid or chamfered pads,<br>knockout text, stack-up,<br>dielectric εr and tanδ |
+| Tested | 9th November 2026 |
 | Copper&nbsp;layers | 2 |
 | File&nbsp;format | KiCad 9 (20241229) |
 | Parts,&nbsp;tracks,&nbsp;vias | 4, 0, 0 |
@@ -739,7 +773,7 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 
 ## 23.2.19 Board 2x24 W15.24
 
-![Board 2x24 W15.24: stages 4 and 6 take 50% to 80% of a run. Simulation, GLB takes 2.4 s. Simulation, STEP takes 3.4 s. Simulation, STL takes 2.5 s. Simulation, OBJ takes 3.4 s. Visual, GLB takes 3.4 s. Visual, OBJ takes 3.8 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/corpus_3014.webp)
+![Board 2x24 W15.24: stages 4 and 6 take 50% to 80% of a run. Simulation, GLB takes 2.4 s. Simulation, STEP takes 3.4 s. Simulation, STL takes 2.5 s. Simulation, OBJ takes 3.4 s. Visual, GLB takes 3.4 s. Visual, OBJ takes 3.8 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/658-Computer_Kicad-Boards-Blank-Board-2x24-W15-24_Board-2x24-W15-24.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -755,7 +789,9 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 | Board | Repo: [andrewpaterson/658-Computer](https://github.com/andrewpaterson/658-Computer)<br>Board: `Board 2x24 W15.24.kicad_pcb` |
 |---|---|
 | Folder | Kicad / Boards / Blank / Board 2x24 W15.24 |
-| Complexity | 3, simple |
+| Complexity | 89&nbsp;/&nbsp;1000 (size&nbsp;34, features&nbsp;55) |
+| KESE&nbsp;features | rounded,<br>trapezoid or chamfered pads,<br>knockout text, stack-up,<br>dielectric εr and tanδ |
+| Tested | 9th November 2026 |
 | Copper&nbsp;layers | 2 |
 | File&nbsp;format | KiCad 9 (20241229) |
 | Parts,&nbsp;tracks,&nbsp;vias | 4, 0, 0 |
@@ -780,7 +816,7 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 
 ## 23.2.20 Board 2x24 W22.86
 
-![Board 2x24 W22.86: stages 4 and 6 take 50% to 81% of a run. Simulation, GLB takes 2.7 s. Simulation, STEP takes 3.3 s. Simulation, STL takes 2.5 s. Simulation, OBJ takes 3.2 s. Visual, GLB takes 3.2 s. Visual, OBJ takes 3.7 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/corpus_3015.webp)
+![Board 2x24 W22.86: stages 4 and 6 take 50% to 81% of a run. Simulation, GLB takes 2.7 s. Simulation, STEP takes 3.3 s. Simulation, STL takes 2.5 s. Simulation, OBJ takes 3.2 s. Visual, GLB takes 3.2 s. Visual, OBJ takes 3.7 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/658-Computer_Kicad-Boards-Blank-Board-2x24-W22-86_Board-2x24-W22-86.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -796,7 +832,9 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 | Board | Repo: [andrewpaterson/658-Computer](https://github.com/andrewpaterson/658-Computer)<br>Board: `Board 2x24 W22.86.kicad_pcb` |
 |---|---|
 | Folder | Kicad / Boards / Blank / Board 2x24 W22.86 |
-| Complexity | 3, simple |
+| Complexity | 89&nbsp;/&nbsp;1000 (size&nbsp;34, features&nbsp;55) |
+| KESE&nbsp;features | rounded,<br>trapezoid or chamfered pads,<br>knockout text, stack-up,<br>dielectric εr and tanδ |
+| Tested | 9th November 2026 |
 | Copper&nbsp;layers | 2 |
 | File&nbsp;format | KiCad 9 (20241229) |
 | Parts,&nbsp;tracks,&nbsp;vias | 4, 0, 0 |
@@ -821,7 +859,7 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 
 ## 23.2.21 Board 2x28 W15.24
 
-![Board 2x28 W15.24: stages 4 and 6 take 53% to 83% of a run. Simulation, GLB takes 2.8 s. Simulation, STEP takes 3.9 s. Simulation, STL takes 2.8 s. Simulation, OBJ takes 4.1 s. Visual, GLB takes 3.9 s. Visual, OBJ takes 4.5 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/corpus_3016.webp)
+![Board 2x28 W15.24: stages 4 and 6 take 53% to 83% of a run. Simulation, GLB takes 2.8 s. Simulation, STEP takes 3.9 s. Simulation, STL takes 2.8 s. Simulation, OBJ takes 4.1 s. Visual, GLB takes 3.9 s. Visual, OBJ takes 4.5 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/658-Computer_Kicad-Boards-Blank-Board-2x28-W15-24_Board-2x28-W15-24.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -837,7 +875,9 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 | Board | Repo: [andrewpaterson/658-Computer](https://github.com/andrewpaterson/658-Computer)<br>Board: `Board 2x28 W15.24.kicad_pcb` |
 |---|---|
 | Folder | Kicad / Boards / Blank / Board 2x28 W15.24 |
-| Complexity | 3, simple |
+| Complexity | 89&nbsp;/&nbsp;1000 (size&nbsp;34, features&nbsp;55) |
+| KESE&nbsp;features | rounded,<br>trapezoid or chamfered pads,<br>knockout text, stack-up,<br>dielectric εr and tanδ |
+| Tested | 9th November 2026 |
 | Copper&nbsp;layers | 2 |
 | File&nbsp;format | KiCad 9 (20241229) |
 | Parts,&nbsp;tracks,&nbsp;vias | 4, 0, 0 |
@@ -862,7 +902,7 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 
 ## 23.2.22 Board 2x28 W22.86
 
-![Board 2x28 W22.86: stages 4 and 6 take 51% to 82% of a run. Simulation, GLB takes 2.8 s. Simulation, STEP takes 3.9 s. Simulation, STL takes 2.9 s. Simulation, OBJ takes 4.3 s. Visual, GLB takes 3.6 s. Visual, OBJ takes 4.5 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/corpus_3017.webp)
+![Board 2x28 W22.86: stages 4 and 6 take 51% to 82% of a run. Simulation, GLB takes 2.8 s. Simulation, STEP takes 3.9 s. Simulation, STL takes 2.9 s. Simulation, OBJ takes 4.3 s. Visual, GLB takes 3.6 s. Visual, OBJ takes 4.5 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/658-Computer_Kicad-Boards-Blank-Board-2x28-W22-86_Board-2x28-W22-86.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -878,7 +918,9 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 | Board | Repo: [andrewpaterson/658-Computer](https://github.com/andrewpaterson/658-Computer)<br>Board: `Board 2x28 W22.86.kicad_pcb` |
 |---|---|
 | Folder | Kicad / Boards / Blank / Board 2x28 W22.86 |
-| Complexity | 3, simple |
+| Complexity | 89&nbsp;/&nbsp;1000 (size&nbsp;34, features&nbsp;55) |
+| KESE&nbsp;features | rounded,<br>trapezoid or chamfered pads,<br>knockout text, stack-up,<br>dielectric εr and tanδ |
+| Tested | 9th November 2026 |
 | Copper&nbsp;layers | 2 |
 | File&nbsp;format | KiCad 9 (20241229) |
 | Parts,&nbsp;tracks,&nbsp;vias | 4, 0, 0 |
@@ -903,7 +945,7 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 
 ## 23.2.23 Board 2x32 W15.24
 
-![Board 2x32 W15.24: stages 4 and 6 take 52% to 84% of a run. Simulation, GLB takes 3.6 s. Simulation, STEP takes 4.7 s. Simulation, STL takes 3.7 s. Simulation, OBJ takes 5.0 s. Visual, GLB takes 4.8 s. Visual, OBJ takes 5.6 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/corpus_3018.webp)
+![Board 2x32 W15.24: stages 4 and 6 take 52% to 84% of a run. Simulation, GLB takes 3.6 s. Simulation, STEP takes 4.7 s. Simulation, STL takes 3.7 s. Simulation, OBJ takes 5.0 s. Visual, GLB takes 4.8 s. Visual, OBJ takes 5.6 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/658-Computer_Kicad-Boards-Blank-Board-2x32-W15-24_Board-2x32-W15-24.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -919,7 +961,9 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 | Board | Repo: [andrewpaterson/658-Computer](https://github.com/andrewpaterson/658-Computer)<br>Board: `Board 2x32 W15.24.kicad_pcb` |
 |---|---|
 | Folder | Kicad / Boards / Blank / Board 2x32 W15.24 |
-| Complexity | 3, simple |
+| Complexity | 89&nbsp;/&nbsp;1000 (size&nbsp;34, features&nbsp;55) |
+| KESE&nbsp;features | rounded,<br>trapezoid or chamfered pads,<br>knockout text, stack-up,<br>dielectric εr and tanδ |
+| Tested | 9th November 2026 |
 | Copper&nbsp;layers | 2 |
 | File&nbsp;format | KiCad 9 (20241229) |
 | Parts,&nbsp;tracks,&nbsp;vias | 4, 0, 0 |
@@ -944,7 +988,7 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 
 ## 23.2.24 Board 2x32 W22.86
 
-![Board 2x32 W22.86: stages 4 and 6 take 56% to 81% of a run. Simulation, GLB takes 3.2 s. Simulation, STEP takes 4.4 s. Simulation, STL takes 3.3 s. Simulation, OBJ takes 4.4 s. Visual, GLB takes 4.1 s. Visual, OBJ takes 5.2 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/corpus_3019.webp)
+![Board 2x32 W22.86: stages 4 and 6 take 56% to 81% of a run. Simulation, GLB takes 3.2 s. Simulation, STEP takes 4.4 s. Simulation, STL takes 3.3 s. Simulation, OBJ takes 4.4 s. Visual, GLB takes 4.1 s. Visual, OBJ takes 5.2 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/658-Computer_Kicad-Boards-Blank-Board-2x32-W22-86_Board-2x32-W22-86.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -960,7 +1004,9 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 | Board | Repo: [andrewpaterson/658-Computer](https://github.com/andrewpaterson/658-Computer)<br>Board: `Board 2x32 W22.86.kicad_pcb` |
 |---|---|
 | Folder | Kicad / Boards / Blank / Board 2x32 W22.86 |
-| Complexity | 3, simple |
+| Complexity | 89&nbsp;/&nbsp;1000 (size&nbsp;34, features&nbsp;55) |
+| KESE&nbsp;features | rounded,<br>trapezoid or chamfered pads,<br>knockout text, stack-up,<br>dielectric εr and tanδ |
+| Tested | 9th November 2026 |
 | Copper&nbsp;layers | 2 |
 | File&nbsp;format | KiCad 9 (20241229) |
 | Parts,&nbsp;tracks,&nbsp;vias | 4, 0, 0 |
@@ -985,7 +1031,7 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 
 ## 23.2.25 Board 2x36 W22.86
 
-![Board 2x36 W22.86: stages 4 and 6 take 55% to 81% of a run. Simulation, GLB takes 4.0 s. Simulation, STEP takes 5.5 s. Simulation, STL takes 3.9 s. Simulation, OBJ takes 5.6 s. Visual, GLB takes 4.8 s. Visual, OBJ takes 5.6 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/corpus_3020.webp)
+![Board 2x36 W22.86: stages 4 and 6 take 55% to 81% of a run. Simulation, GLB takes 4.0 s. Simulation, STEP takes 5.5 s. Simulation, STL takes 3.9 s. Simulation, OBJ takes 5.6 s. Visual, GLB takes 4.8 s. Visual, OBJ takes 5.6 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/658-Computer_Kicad-Boards-Blank-Board-2x36-W22-86_Board-2x36-W22-86.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -1001,7 +1047,9 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 | Board | Repo: [andrewpaterson/658-Computer](https://github.com/andrewpaterson/658-Computer)<br>Board: `Board 2x36 W22.86.kicad_pcb` |
 |---|---|
 | Folder | Kicad / Boards / Blank / Board 2x36 W22.86 |
-| Complexity | 3, simple |
+| Complexity | 89&nbsp;/&nbsp;1000 (size&nbsp;34, features&nbsp;55) |
+| KESE&nbsp;features | rounded,<br>trapezoid or chamfered pads,<br>knockout text, stack-up,<br>dielectric εr and tanδ |
+| Tested | 9th November 2026 |
 | Copper&nbsp;layers | 2 |
 | File&nbsp;format | KiCad 9 (20241229) |
 | Parts,&nbsp;tracks,&nbsp;vias | 4, 0, 0 |
@@ -1026,7 +1074,7 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 
 ## 23.2.26 Board 2x06 W15.24
 
-![Board 2x06 W15.24: reading, start-up and exit take 77% to 89% of a run. Simulation, GLB takes 0.3 s. Simulation, STEP takes 0.3 s. Simulation, STL takes 0.2 s. Simulation, OBJ takes 0.2 s. Visual, GLB takes 0.3 s. Visual, OBJ takes 0.3 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/corpus_3076.webp)
+![Board 2x06 W15.24: reading, start-up and exit take 77% to 89% of a run. Simulation, GLB takes 0.3 s. Simulation, STEP takes 0.3 s. Simulation, STL takes 0.2 s. Simulation, OBJ takes 0.2 s. Visual, GLB takes 0.3 s. Visual, OBJ takes 0.3 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/658-Computer_Kicad-Boards-Pins-Board-2x06-W15-24_Board-2x06-W15-24.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -1042,7 +1090,9 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 | Board | Repo: [andrewpaterson/658-Computer](https://github.com/andrewpaterson/658-Computer)<br>Board: `Board 2x06 W15.24.kicad_pcb` |
 |---|---|
 | Folder | Kicad / Boards / Pins / Board 2x06 W15.24 |
-| Complexity | 0, simple |
+| Complexity | 47&nbsp;/&nbsp;1000 (size&nbsp;17, features&nbsp;30) |
+| KESE&nbsp;features | stack-up, dielectric εr and tanδ |
+| Tested | 9th November 2026 |
 | Copper&nbsp;layers | 2 |
 | File&nbsp;format | KiCad 9 (20241229) |
 | Parts,&nbsp;tracks,&nbsp;vias | 0, 0, 0 |
@@ -1068,7 +1118,7 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 
 ## 23.2.27 Board 2x06 W22.86
 
-![Board 2x06 W22.86: reading, start-up and exit take 76% to 88% of a run. Simulation, GLB takes 0.3 s. Simulation, STEP takes 0.3 s. Simulation, STL takes 0.3 s. Simulation, OBJ takes 0.3 s. Visual, GLB takes 0.3 s. Visual, OBJ takes 0.3 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/corpus_3077.webp)
+![Board 2x06 W22.86: reading, start-up and exit take 76% to 88% of a run. Simulation, GLB takes 0.3 s. Simulation, STEP takes 0.3 s. Simulation, STL takes 0.3 s. Simulation, OBJ takes 0.3 s. Visual, GLB takes 0.3 s. Visual, OBJ takes 0.3 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/658-Computer_Kicad-Boards-Pins-Board-2x06-W22-86_Board-2x06-W22-86.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -1084,7 +1134,9 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 | Board | Repo: [andrewpaterson/658-Computer](https://github.com/andrewpaterson/658-Computer)<br>Board: `Board 2x06 W22.86.kicad_pcb` |
 |---|---|
 | Folder | Kicad / Boards / Pins / Board 2x06 W22.86 |
-| Complexity | 0, simple |
+| Complexity | 47&nbsp;/&nbsp;1000 (size&nbsp;17, features&nbsp;30) |
+| KESE&nbsp;features | stack-up, dielectric εr and tanδ |
+| Tested | 9th November 2026 |
 | Copper&nbsp;layers | 2 |
 | File&nbsp;format | KiCad 9 (20241229) |
 | Parts,&nbsp;tracks,&nbsp;vias | 0, 0, 0 |
@@ -1110,7 +1162,7 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 
 ## 23.2.28 Board 2x12 W15.24
 
-![Board 2x12 W15.24: reading, start-up and exit take 79% to 89% of a run. Simulation, GLB takes 0.2 s. Simulation, STEP takes 0.2 s. Simulation, STL takes 0.3 s. Simulation, OBJ takes 0.3 s. Visual, GLB takes 0.3 s. Visual, OBJ takes 0.3 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/corpus_3078.webp)
+![Board 2x12 W15.24: reading, start-up and exit take 79% to 89% of a run. Simulation, GLB takes 0.2 s. Simulation, STEP takes 0.2 s. Simulation, STL takes 0.3 s. Simulation, OBJ takes 0.3 s. Visual, GLB takes 0.3 s. Visual, OBJ takes 0.3 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/658-Computer_Kicad-Boards-Pins-Board-2x12-W15-24_Board-2x12-W15-24.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -1126,7 +1178,9 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 | Board | Repo: [andrewpaterson/658-Computer](https://github.com/andrewpaterson/658-Computer)<br>Board: `Board 2x12 W15.24.kicad_pcb` |
 |---|---|
 | Folder | Kicad / Boards / Pins / Board 2x12 W15.24 |
-| Complexity | 0, simple |
+| Complexity | 47&nbsp;/&nbsp;1000 (size&nbsp;17, features&nbsp;30) |
+| KESE&nbsp;features | stack-up, dielectric εr and tanδ |
+| Tested | 9th November 2026 |
 | Copper&nbsp;layers | 2 |
 | File&nbsp;format | KiCad 9 (20241229) |
 | Parts,&nbsp;tracks,&nbsp;vias | 0, 0, 0 |
@@ -1152,7 +1206,7 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 
 ## 23.2.29 Board 2x12 W22.86
 
-![Board 2x12 W22.86: reading, start-up and exit take 73% to 87% of a run. Simulation, GLB takes 0.3 s. Simulation, STEP takes 0.3 s. Simulation, STL takes 0.3 s. Simulation, OBJ takes 0.2 s. Visual, GLB takes 0.3 s. Visual, OBJ takes 0.3 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/corpus_3079.webp)
+![Board 2x12 W22.86: reading, start-up and exit take 73% to 87% of a run. Simulation, GLB takes 0.3 s. Simulation, STEP takes 0.3 s. Simulation, STL takes 0.3 s. Simulation, OBJ takes 0.2 s. Visual, GLB takes 0.3 s. Visual, OBJ takes 0.3 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/658-Computer_Kicad-Boards-Pins-Board-2x12-W22-86_Board-2x12-W22-86.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -1168,7 +1222,9 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 | Board | Repo: [andrewpaterson/658-Computer](https://github.com/andrewpaterson/658-Computer)<br>Board: `Board 2x12 W22.86.kicad_pcb` |
 |---|---|
 | Folder | Kicad / Boards / Pins / Board 2x12 W22.86 |
-| Complexity | 0, simple |
+| Complexity | 47&nbsp;/&nbsp;1000 (size&nbsp;17, features&nbsp;30) |
+| KESE&nbsp;features | stack-up, dielectric εr and tanδ |
+| Tested | 9th November 2026 |
 | Copper&nbsp;layers | 2 |
 | File&nbsp;format | KiCad 9 (20241229) |
 | Parts,&nbsp;tracks,&nbsp;vias | 0, 0, 0 |
@@ -1194,7 +1250,7 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 
 ## 23.2.30 Board 2x16 W15.24
 
-![Board 2x16 W15.24: reading, start-up and exit take 76% to 89% of a run. Simulation, GLB takes 0.2 s. Simulation, STEP takes 0.2 s. Simulation, STL takes 0.3 s. Simulation, OBJ takes 0.2 s. Visual, GLB takes 0.2 s. Visual, OBJ takes 0.3 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/corpus_3080.webp)
+![Board 2x16 W15.24: reading, start-up and exit take 76% to 89% of a run. Simulation, GLB takes 0.2 s. Simulation, STEP takes 0.2 s. Simulation, STL takes 0.3 s. Simulation, OBJ takes 0.2 s. Visual, GLB takes 0.2 s. Visual, OBJ takes 0.3 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/658-Computer_Kicad-Boards-Pins-Board-2x16-W15-24_Board-2x16-W15-24.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -1210,7 +1266,9 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 | Board | Repo: [andrewpaterson/658-Computer](https://github.com/andrewpaterson/658-Computer)<br>Board: `Board 2x16 W15.24.kicad_pcb` |
 |---|---|
 | Folder | Kicad / Boards / Pins / Board 2x16 W15.24 |
-| Complexity | 0, simple |
+| Complexity | 47&nbsp;/&nbsp;1000 (size&nbsp;17, features&nbsp;30) |
+| KESE&nbsp;features | stack-up, dielectric εr and tanδ |
+| Tested | 9th November 2026 |
 | Copper&nbsp;layers | 2 |
 | File&nbsp;format | KiCad 9 (20241229) |
 | Parts,&nbsp;tracks,&nbsp;vias | 0, 0, 0 |
@@ -1236,7 +1294,7 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 
 ## 23.2.31 Board 2x16 W22.86
 
-![Board 2x16 W22.86: reading, start-up and exit take 79% to 85% of a run. Simulation, GLB takes 0.3 s. Simulation, STEP takes 0.2 s. Simulation, STL takes 0.2 s. Simulation, OBJ takes 0.2 s. Visual, GLB takes 0.3 s. Visual, OBJ takes 0.3 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/corpus_3081.webp)
+![Board 2x16 W22.86: reading, start-up and exit take 79% to 85% of a run. Simulation, GLB takes 0.3 s. Simulation, STEP takes 0.2 s. Simulation, STL takes 0.2 s. Simulation, OBJ takes 0.2 s. Visual, GLB takes 0.3 s. Visual, OBJ takes 0.3 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/658-Computer_Kicad-Boards-Pins-Board-2x16-W22-86_Board-2x16-W22-86.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -1252,7 +1310,9 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 | Board | Repo: [andrewpaterson/658-Computer](https://github.com/andrewpaterson/658-Computer)<br>Board: `Board 2x16 W22.86.kicad_pcb` |
 |---|---|
 | Folder | Kicad / Boards / Pins / Board 2x16 W22.86 |
-| Complexity | 0, simple |
+| Complexity | 47&nbsp;/&nbsp;1000 (size&nbsp;17, features&nbsp;30) |
+| KESE&nbsp;features | stack-up, dielectric εr and tanδ |
+| Tested | 9th November 2026 |
 | Copper&nbsp;layers | 2 |
 | File&nbsp;format | KiCad 9 (20241229) |
 | Parts,&nbsp;tracks,&nbsp;vias | 0, 0, 0 |
@@ -1278,7 +1338,7 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 
 ## 23.2.32 Board 2x20 W15.24
 
-![Board 2x20 W15.24: reading, start-up and exit take 76% to 87% of a run. Simulation, GLB takes 0.2 s. Simulation, STEP takes 0.2 s. Simulation, STL takes 0.2 s. Simulation, OBJ takes 0.2 s. Visual, GLB takes 0.2 s. Visual, OBJ takes 0.2 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/corpus_3082.webp)
+![Board 2x20 W15.24: reading, start-up and exit take 76% to 87% of a run. Simulation, GLB takes 0.2 s. Simulation, STEP takes 0.2 s. Simulation, STL takes 0.2 s. Simulation, OBJ takes 0.2 s. Visual, GLB takes 0.2 s. Visual, OBJ takes 0.2 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/658-Computer_Kicad-Boards-Pins-Board-2x20-W15-24_Board-2x20-W15-24.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -1294,7 +1354,9 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 | Board | Repo: [andrewpaterson/658-Computer](https://github.com/andrewpaterson/658-Computer)<br>Board: `Board 2x20 W15.24.kicad_pcb` |
 |---|---|
 | Folder | Kicad / Boards / Pins / Board 2x20 W15.24 |
-| Complexity | 0, simple |
+| Complexity | 47&nbsp;/&nbsp;1000 (size&nbsp;17, features&nbsp;30) |
+| KESE&nbsp;features | stack-up, dielectric εr and tanδ |
+| Tested | 9th November 2026 |
 | Copper&nbsp;layers | 2 |
 | File&nbsp;format | KiCad 9 (20241229) |
 | Parts,&nbsp;tracks,&nbsp;vias | 0, 0, 0 |
@@ -1320,7 +1382,7 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 
 ## 23.2.33 Board 2x20 W22.86
 
-![Board 2x20 W22.86: reading, start-up and exit take 73% to 86% of a run. Simulation, GLB takes 0.2 s. Simulation, STEP takes 0.3 s. Simulation, STL takes 0.3 s. Simulation, OBJ takes 0.2 s. Visual, GLB takes 0.3 s. Visual, OBJ takes 0.2 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/corpus_3083.webp)
+![Board 2x20 W22.86: reading, start-up and exit take 73% to 86% of a run. Simulation, GLB takes 0.2 s. Simulation, STEP takes 0.3 s. Simulation, STL takes 0.3 s. Simulation, OBJ takes 0.2 s. Visual, GLB takes 0.3 s. Visual, OBJ takes 0.2 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/658-Computer_Kicad-Boards-Pins-Board-2x20-W22-86_Board-2x20-W22-86.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -1336,7 +1398,9 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 | Board | Repo: [andrewpaterson/658-Computer](https://github.com/andrewpaterson/658-Computer)<br>Board: `Board 2x20 W22.86.kicad_pcb` |
 |---|---|
 | Folder | Kicad / Boards / Pins / Board 2x20 W22.86 |
-| Complexity | 0, simple |
+| Complexity | 47&nbsp;/&nbsp;1000 (size&nbsp;17, features&nbsp;30) |
+| KESE&nbsp;features | stack-up, dielectric εr and tanδ |
+| Tested | 9th November 2026 |
 | Copper&nbsp;layers | 2 |
 | File&nbsp;format | KiCad 9 (20241229) |
 | Parts,&nbsp;tracks,&nbsp;vias | 0, 0, 0 |
@@ -1362,7 +1426,7 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 
 ## 23.2.34 Board 2x22 W15.24
 
-![Board 2x22 W15.24: reading, start-up and exit take 78% to 88% of a run. Simulation, GLB takes 0.3 s. Simulation, STEP takes 0.3 s. Simulation, STL takes 0.3 s. Simulation, OBJ takes 0.3 s. Visual, GLB takes 0.3 s. Visual, OBJ takes 0.3 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/corpus_3084.webp)
+![Board 2x22 W15.24: reading, start-up and exit take 78% to 88% of a run. Simulation, GLB takes 0.3 s. Simulation, STEP takes 0.3 s. Simulation, STL takes 0.3 s. Simulation, OBJ takes 0.3 s. Visual, GLB takes 0.3 s. Visual, OBJ takes 0.3 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/658-Computer_Kicad-Boards-Pins-Board-2x22-W15-24_Board-2x22-W15-24.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -1378,7 +1442,9 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 | Board | Repo: [andrewpaterson/658-Computer](https://github.com/andrewpaterson/658-Computer)<br>Board: `Board 2x22 W15.24.kicad_pcb` |
 |---|---|
 | Folder | Kicad / Boards / Pins / Board 2x22 W15.24 |
-| Complexity | 0, simple |
+| Complexity | 47&nbsp;/&nbsp;1000 (size&nbsp;17, features&nbsp;30) |
+| KESE&nbsp;features | stack-up, dielectric εr and tanδ |
+| Tested | 9th November 2026 |
 | Copper&nbsp;layers | 2 |
 | File&nbsp;format | KiCad 9 (20241229) |
 | Parts,&nbsp;tracks,&nbsp;vias | 0, 0, 0 |
@@ -1404,7 +1470,7 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 
 ## 23.2.35 Board 2x24 W15.24
 
-![Board 2x24 W15.24: reading, start-up and exit take 78% to 89% of a run. Simulation, GLB takes 0.3 s. Simulation, STEP takes 0.3 s. Simulation, STL takes 0.2 s. Simulation, OBJ takes 0.3 s. Visual, GLB takes 0.3 s. Visual, OBJ takes 0.3 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/corpus_3085.webp)
+![Board 2x24 W15.24: reading, start-up and exit take 78% to 89% of a run. Simulation, GLB takes 0.3 s. Simulation, STEP takes 0.3 s. Simulation, STL takes 0.2 s. Simulation, OBJ takes 0.3 s. Visual, GLB takes 0.3 s. Visual, OBJ takes 0.3 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/658-Computer_Kicad-Boards-Pins-Board-2x24-W15-24_Board-2x24-W15-24.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -1420,7 +1486,9 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 | Board | Repo: [andrewpaterson/658-Computer](https://github.com/andrewpaterson/658-Computer)<br>Board: `Board 2x24 W15.24.kicad_pcb` |
 |---|---|
 | Folder | Kicad / Boards / Pins / Board 2x24 W15.24 |
-| Complexity | 0, simple |
+| Complexity | 47&nbsp;/&nbsp;1000 (size&nbsp;17, features&nbsp;30) |
+| KESE&nbsp;features | stack-up, dielectric εr and tanδ |
+| Tested | 9th November 2026 |
 | Copper&nbsp;layers | 2 |
 | File&nbsp;format | KiCad 9 (20241229) |
 | Parts,&nbsp;tracks,&nbsp;vias | 0, 0, 0 |
@@ -1446,7 +1514,7 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 
 ## 23.2.36 Board 2x24 W22.86
 
-![Board 2x24 W22.86: reading, start-up and exit take 78% to 88% of a run. Simulation, GLB takes 0.3 s. Simulation, STEP takes 0.3 s. Simulation, STL takes 0.3 s. Simulation, OBJ takes 0.3 s. Visual, GLB takes 0.3 s. Visual, OBJ takes 0.3 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/corpus_3086.webp)
+![Board 2x24 W22.86: reading, start-up and exit take 78% to 88% of a run. Simulation, GLB takes 0.3 s. Simulation, STEP takes 0.3 s. Simulation, STL takes 0.3 s. Simulation, OBJ takes 0.3 s. Visual, GLB takes 0.3 s. Visual, OBJ takes 0.3 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/658-Computer_Kicad-Boards-Pins-Board-2x24-W22-86_Board-2x24-W22-86.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -1462,7 +1530,9 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 | Board | Repo: [andrewpaterson/658-Computer](https://github.com/andrewpaterson/658-Computer)<br>Board: `Board 2x24 W22.86.kicad_pcb` |
 |---|---|
 | Folder | Kicad / Boards / Pins / Board 2x24 W22.86 |
-| Complexity | 0, simple |
+| Complexity | 47&nbsp;/&nbsp;1000 (size&nbsp;17, features&nbsp;30) |
+| KESE&nbsp;features | stack-up, dielectric εr and tanδ |
+| Tested | 9th November 2026 |
 | Copper&nbsp;layers | 2 |
 | File&nbsp;format | KiCad 9 (20241229) |
 | Parts,&nbsp;tracks,&nbsp;vias | 0, 0, 0 |
@@ -1488,7 +1558,7 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 
 ## 23.2.37 Board 2x28 W15.24
 
-![Board 2x28 W15.24: reading, start-up and exit take 76% to 87% of a run. Simulation, GLB takes 0.2 s. Simulation, STEP takes 0.2 s. Simulation, STL takes 0.2 s. Simulation, OBJ takes 0.2 s. Visual, GLB takes 0.2 s. Visual, OBJ takes 0.2 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/corpus_3087.webp)
+![Board 2x28 W15.24: reading, start-up and exit take 76% to 87% of a run. Simulation, GLB takes 0.2 s. Simulation, STEP takes 0.2 s. Simulation, STL takes 0.2 s. Simulation, OBJ takes 0.2 s. Visual, GLB takes 0.2 s. Visual, OBJ takes 0.2 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/658-Computer_Kicad-Boards-Pins-Board-2x28-W15-24_Board-2x28-W15-24.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -1504,7 +1574,9 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 | Board | Repo: [andrewpaterson/658-Computer](https://github.com/andrewpaterson/658-Computer)<br>Board: `Board 2x28 W15.24.kicad_pcb` |
 |---|---|
 | Folder | Kicad / Boards / Pins / Board 2x28 W15.24 |
-| Complexity | 0, simple |
+| Complexity | 47&nbsp;/&nbsp;1000 (size&nbsp;17, features&nbsp;30) |
+| KESE&nbsp;features | stack-up, dielectric εr and tanδ |
+| Tested | 9th November 2026 |
 | Copper&nbsp;layers | 2 |
 | File&nbsp;format | KiCad 9 (20241229) |
 | Parts,&nbsp;tracks,&nbsp;vias | 0, 0, 0 |
@@ -1530,7 +1602,7 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 
 ## 23.2.38 Board 2x28 W22.86
 
-![Board 2x28 W22.86: reading, start-up and exit take 78% to 88% of a run. Simulation, GLB takes 0.2 s. Simulation, STEP takes 0.3 s. Simulation, STL takes 0.2 s. Simulation, OBJ takes 0.3 s. Visual, GLB takes 0.3 s. Visual, OBJ takes 0.3 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/corpus_3088.webp)
+![Board 2x28 W22.86: reading, start-up and exit take 78% to 88% of a run. Simulation, GLB takes 0.2 s. Simulation, STEP takes 0.3 s. Simulation, STL takes 0.2 s. Simulation, OBJ takes 0.3 s. Visual, GLB takes 0.3 s. Visual, OBJ takes 0.3 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/658-Computer_Kicad-Boards-Pins-Board-2x28-W22-86_Board-2x28-W22-86.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -1546,7 +1618,9 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 | Board | Repo: [andrewpaterson/658-Computer](https://github.com/andrewpaterson/658-Computer)<br>Board: `Board 2x28 W22.86.kicad_pcb` |
 |---|---|
 | Folder | Kicad / Boards / Pins / Board 2x28 W22.86 |
-| Complexity | 0, simple |
+| Complexity | 47&nbsp;/&nbsp;1000 (size&nbsp;17, features&nbsp;30) |
+| KESE&nbsp;features | stack-up, dielectric εr and tanδ |
+| Tested | 9th November 2026 |
 | Copper&nbsp;layers | 2 |
 | File&nbsp;format | KiCad 9 (20241229) |
 | Parts,&nbsp;tracks,&nbsp;vias | 0, 0, 0 |
@@ -1572,7 +1646,7 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 
 ## 23.2.39 Board 2x32 W15.24
 
-![Board 2x32 W15.24: reading, start-up and exit take 78% to 87% of a run. Simulation, GLB takes 0.3 s. Simulation, STEP takes 0.3 s. Simulation, STL takes 0.3 s. Simulation, OBJ takes 0.3 s. Visual, GLB takes 0.3 s. Visual, OBJ takes 0.3 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/corpus_3089.webp)
+![Board 2x32 W15.24: reading, start-up and exit take 78% to 87% of a run. Simulation, GLB takes 0.3 s. Simulation, STEP takes 0.3 s. Simulation, STL takes 0.3 s. Simulation, OBJ takes 0.3 s. Visual, GLB takes 0.3 s. Visual, OBJ takes 0.3 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/658-Computer_Kicad-Boards-Pins-Board-2x32-W15-24_Board-2x32-W15-24.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -1588,7 +1662,9 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 | Board | Repo: [andrewpaterson/658-Computer](https://github.com/andrewpaterson/658-Computer)<br>Board: `Board 2x32 W15.24.kicad_pcb` |
 |---|---|
 | Folder | Kicad / Boards / Pins / Board 2x32 W15.24 |
-| Complexity | 0, simple |
+| Complexity | 47&nbsp;/&nbsp;1000 (size&nbsp;17, features&nbsp;30) |
+| KESE&nbsp;features | stack-up, dielectric εr and tanδ |
+| Tested | 9th November 2026 |
 | Copper&nbsp;layers | 2 |
 | File&nbsp;format | KiCad 9 (20241229) |
 | Parts,&nbsp;tracks,&nbsp;vias | 0, 0, 0 |
@@ -1614,7 +1690,7 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 
 ## 23.2.40 Board 2x32 W22.86
 
-![Board 2x32 W22.86: reading, start-up and exit take 79% to 87% of a run. Simulation, GLB takes 0.3 s. Simulation, STEP takes 0.3 s. Simulation, STL takes 0.3 s. Simulation, OBJ takes 0.3 s. Visual, GLB takes 0.3 s. Visual, OBJ takes 0.3 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/corpus_3090.webp)
+![Board 2x32 W22.86: reading, start-up and exit take 79% to 87% of a run. Simulation, GLB takes 0.3 s. Simulation, STEP takes 0.3 s. Simulation, STL takes 0.3 s. Simulation, OBJ takes 0.3 s. Visual, GLB takes 0.3 s. Visual, OBJ takes 0.3 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/658-Computer_Kicad-Boards-Pins-Board-2x32-W22-86_Board-2x32-W22-86.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -1630,7 +1706,9 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 | Board | Repo: [andrewpaterson/658-Computer](https://github.com/andrewpaterson/658-Computer)<br>Board: `Board 2x32 W22.86.kicad_pcb` |
 |---|---|
 | Folder | Kicad / Boards / Pins / Board 2x32 W22.86 |
-| Complexity | 0, simple |
+| Complexity | 47&nbsp;/&nbsp;1000 (size&nbsp;17, features&nbsp;30) |
+| KESE&nbsp;features | stack-up, dielectric εr and tanδ |
+| Tested | 9th November 2026 |
 | Copper&nbsp;layers | 2 |
 | File&nbsp;format | KiCad 9 (20241229) |
 | Parts,&nbsp;tracks,&nbsp;vias | 0, 0, 0 |
@@ -1656,7 +1734,7 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 
 ## 23.2.41 Board 2x36 W22.86
 
-![Board 2x36 W22.86: reading, start-up and exit take 75% to 87% of a run. Simulation, GLB takes 0.2 s. Simulation, STEP takes 0.2 s. Simulation, STL takes 0.2 s. Simulation, OBJ takes 0.2 s. Visual, GLB takes 0.2 s. Visual, OBJ takes 0.2 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/corpus_3091.webp)
+![Board 2x36 W22.86: reading, start-up and exit take 75% to 87% of a run. Simulation, GLB takes 0.2 s. Simulation, STEP takes 0.2 s. Simulation, STL takes 0.2 s. Simulation, OBJ takes 0.2 s. Visual, GLB takes 0.2 s. Visual, OBJ takes 0.2 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/658-Computer_Kicad-Boards-Pins-Board-2x36-W22-86_Board-2x36-W22-86.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -1672,7 +1750,9 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 | Board | Repo: [andrewpaterson/658-Computer](https://github.com/andrewpaterson/658-Computer)<br>Board: `Board 2x36 W22.86.kicad_pcb` |
 |---|---|
 | Folder | Kicad / Boards / Pins / Board 2x36 W22.86 |
-| Complexity | 0, simple |
+| Complexity | 47&nbsp;/&nbsp;1000 (size&nbsp;17, features&nbsp;30) |
+| KESE&nbsp;features | stack-up, dielectric εr and tanδ |
+| Tested | 9th November 2026 |
 | Copper&nbsp;layers | 2 |
 | File&nbsp;format | KiCad 9 (20241229) |
 | Parts,&nbsp;tracks,&nbsp;vias | 0, 0, 0 |
@@ -1698,7 +1778,7 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 
 ## 23.2.42 Audio Address Decode
 
-![Audio Address Decode: stages 4 and 6 take 49% to 80% of a run. Simulation, GLB takes 2.5 s. Simulation, STEP takes 3.5 s. Simulation, STL takes 2.5 s. Simulation, OBJ takes 3.7 s. Visual, GLB takes 3.5 s. Visual, OBJ takes 4.5 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/corpus_2471.webp)
+![Audio Address Decode: stages 4 and 6 take 49% to 80% of a run. Simulation, GLB takes 2.5 s. Simulation, STEP takes 3.5 s. Simulation, STL takes 2.5 s. Simulation, OBJ takes 3.7 s. Visual, GLB takes 3.5 s. Visual, OBJ takes 4.5 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/658-Computer_Audio-Address-Decode.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -1714,7 +1794,9 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 | Board | Repo: [andrewpaterson/658-Computer](https://github.com/andrewpaterson/658-Computer)<br>Board: `Audio Address Decode.kicad_pcb` |
 |---|---|
 | Folder | Kicad / Computer / Audio / Audio Address Decode |
-| Complexity | 269, low |
+| Complexity | 205&nbsp;/&nbsp;1000 (size&nbsp;135, features&nbsp;70) |
+| KESE&nbsp;features | through vias, rounded,<br>trapezoid or chamfered pads,<br>knockout text, stack-up,<br>dielectric εr and tanδ |
+| Tested | 9th November 2026 |
 | Copper&nbsp;layers | 2 |
 | File&nbsp;format | KiCad 9 (20241229) |
 | Parts,&nbsp;tracks,&nbsp;vias | 8, 237, 28 |
@@ -1739,7 +1821,7 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 
 ## 23.2.43 Audio Board
 
-![Audio Board: stages 4 and 6 take 53% to 86% of a run. Simulation, GLB takes 35 s. Simulation, STEP takes 43 s. Simulation, STL takes 35 s. Simulation, OBJ takes 53 s. Visual, GLB takes 54 s. Visual, OBJ takes 65 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/corpus_0831.webp)
+![Audio Board: stages 4 and 6 take 53% to 86% of a run. Simulation, GLB takes 35 s. Simulation, STEP takes 43 s. Simulation, STL takes 35 s. Simulation, OBJ takes 53 s. Visual, GLB takes 54 s. Visual, OBJ takes 65 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/658-Computer_Audio-Board.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -1755,7 +1837,9 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 | Board | Repo: [andrewpaterson/658-Computer](https://github.com/andrewpaterson/658-Computer)<br>Board: `Audio Board.kicad_pcb` |
 |---|---|
 | Folder | Kicad / Computer / Audio / Audio Board |
-| Complexity | 3,240, high |
+| Complexity | 263&nbsp;/&nbsp;1000 (size&nbsp;183, features&nbsp;80) |
+| KESE&nbsp;features | through vias, rounded,<br>trapezoid or chamfered pads,<br>curved board outline,<br>knockout text, stack-up,<br>dielectric εr and tanδ |
+| Tested | 9th November 2026 |
 | Copper&nbsp;layers | 2 |
 | File&nbsp;format | KiCad 9 (20241229) |
 | Parts,&nbsp;tracks,&nbsp;vias | 23, 2,507, 229 |
@@ -1780,7 +1864,7 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 
 ## 23.2.44 Audio Clock
 
-![Audio Clock: stages 4 and 6 take 49% to 78% of a run. Simulation, GLB takes 5.4 s. Simulation, STEP takes 6.1 s. Simulation, STL takes 4.4 s. Simulation, OBJ takes 6.8 s. Visual, GLB takes 7.4 s. Visual, OBJ takes 9.0 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/corpus_2018.webp)
+![Audio Clock: stages 4 and 6 take 49% to 78% of a run. Simulation, GLB takes 5.4 s. Simulation, STEP takes 6.1 s. Simulation, STL takes 4.4 s. Simulation, OBJ takes 6.8 s. Visual, GLB takes 7.4 s. Visual, OBJ takes 9.0 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/658-Computer_Audio-Clock.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -1796,7 +1880,9 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 | Board | Repo: [andrewpaterson/658-Computer](https://github.com/andrewpaterson/658-Computer)<br>Board: `Audio Clock.kicad_pcb` |
 |---|---|
 | Folder | Kicad / Computer / Audio / Audio Clock |
-| Complexity | 696, low |
+| Complexity | 227&nbsp;/&nbsp;1000 (size&nbsp;157, features&nbsp;70) |
+| KESE&nbsp;features | through vias, rounded,<br>trapezoid or chamfered pads,<br>knockout text, stack-up,<br>dielectric εr and tanδ |
+| Tested | 9th November 2026 |
 | Copper&nbsp;layers | 2 |
 | File&nbsp;format | KiCad 9 (20241229) |
 | Parts,&nbsp;tracks,&nbsp;vias | 23, 449, 67 |
@@ -1821,7 +1907,7 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 
 ## 23.2.45 Blitter Board
 
-![Blitter Board: stages 4 and 6 take 51% to 85% of a run. Simulation, GLB takes 35 s. Simulation, STEP takes 43 s. Simulation, STL takes 35 s. Simulation, OBJ takes 58 s. Visual, GLB takes 57 s. Visual, OBJ takes 72 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/corpus_0789.webp)
+![Blitter Board: stages 4 and 6 take 51% to 85% of a run. Simulation, GLB takes 35 s. Simulation, STEP takes 43 s. Simulation, STL takes 35 s. Simulation, OBJ takes 58 s. Visual, GLB takes 57 s. Visual, OBJ takes 72 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/658-Computer_Blitter-Board.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -1837,7 +1923,9 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 | Board | Repo: [andrewpaterson/658-Computer](https://github.com/andrewpaterson/658-Computer)<br>Board: `Blitter Board.kicad_pcb` |
 |---|---|
 | Folder | Kicad / Computer / Blitter / Blitter Board |
-| Complexity | 3,446, high |
+| Complexity | 264&nbsp;/&nbsp;1000 (size&nbsp;184, features&nbsp;80) |
+| KESE&nbsp;features | through vias, rounded,<br>trapezoid or chamfered pads,<br>curved board outline,<br>knockout text, stack-up,<br>dielectric εr and tanδ |
+| Tested | 9th November 2026 |
 | Copper&nbsp;layers | 2 |
 | File&nbsp;format | KiCad 9 (20241229) |
 | Parts,&nbsp;tracks,&nbsp;vias | 22, 2,712, 230 |
@@ -1862,7 +1950,7 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 
 ## 23.2.46 Added 8bit
 
-![Added 8bit: stages 4 and 6 take 48% to 81% of a run. Simulation, GLB takes 3.0 s. Simulation, STEP takes 4.3 s. Simulation, STL takes 3.3 s. Simulation, OBJ takes 4.7 s. Visual, GLB takes 4.3 s. Visual, OBJ takes 5.6 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/corpus_2478.webp)
+![Added 8bit: stages 4 and 6 take 48% to 81% of a run. Simulation, GLB takes 3.0 s. Simulation, STEP takes 4.3 s. Simulation, STL takes 3.3 s. Simulation, OBJ takes 4.7 s. Visual, GLB takes 4.3 s. Visual, OBJ takes 5.6 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/658-Computer_Added-8bit.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -1878,7 +1966,9 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 | Board | Repo: [andrewpaterson/658-Computer](https://github.com/andrewpaterson/658-Computer)<br>Board: `Added 8bit.kicad_pcb` |
 |---|---|
 | Folder | Kicad / Computer / Component Boards / Added 8bit |
-| Complexity | 266, low |
+| Complexity | 206&nbsp;/&nbsp;1000 (size&nbsp;136, features&nbsp;70) |
+| KESE&nbsp;features | through vias, rounded,<br>trapezoid or chamfered pads,<br>knockout text, stack-up,<br>dielectric εr and tanδ |
+| Tested | 9th November 2026 |
 | Copper&nbsp;layers | 2 |
 | File&nbsp;format | KiCad 9 (20241229) |
 | Parts,&nbsp;tracks,&nbsp;vias | 7, 238, 43 |
@@ -1903,7 +1993,7 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 
 ## 23.2.47 Adder 16bit
 
-![Adder 16bit: stages 4 and 6 take 50% to 83% of a run. Simulation, GLB takes 6.3 s. Simulation, STEP takes 8.6 s. Simulation, STL takes 6.9 s. Simulation, OBJ takes 8.8 s. Visual, GLB takes 10 s. Visual, OBJ takes 12 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/corpus_1833.webp)
+![Adder 16bit: stages 4 and 6 take 50% to 83% of a run. Simulation, GLB takes 6.3 s. Simulation, STEP takes 8.6 s. Simulation, STL takes 6.9 s. Simulation, OBJ takes 8.8 s. Visual, GLB takes 10 s. Visual, OBJ takes 12 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/658-Computer_Adder-16bit.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -1919,7 +2009,9 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 | Board | Repo: [andrewpaterson/658-Computer](https://github.com/andrewpaterson/658-Computer)<br>Board: `Adder 16bit.kicad_pcb` |
 |---|---|
 | Folder | Kicad / Computer / Component Boards / Adder 16bit |
-| Complexity | 898, low |
+| Complexity | 225&nbsp;/&nbsp;1000 (size&nbsp;155, features&nbsp;70) |
+| KESE&nbsp;features | through vias, rounded,<br>trapezoid or chamfered pads,<br>knockout text, stack-up,<br>dielectric εr and tanδ |
+| Tested | 9th November 2026 |
 | Copper&nbsp;layers | 2 |
 | File&nbsp;format | KiCad 9 (20241229) |
 | Parts,&nbsp;tracks,&nbsp;vias | 11, 627, 83 |
@@ -1944,7 +2036,7 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 
 ## 23.2.48 Address Buffer 16bit
 
-![Address Buffer 16bit: stages 4 and 6 take 50% to 81% of a run. Simulation, GLB takes 4.9 s. Simulation, STEP takes 6.4 s. Simulation, STL takes 4.9 s. Simulation, OBJ takes 7.3 s. Visual, GLB takes 7.7 s. Visual, OBJ takes 9.9 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/corpus_1826.webp)
+![Address Buffer 16bit: stages 4 and 6 take 50% to 81% of a run. Simulation, GLB takes 4.9 s. Simulation, STEP takes 6.4 s. Simulation, STL takes 4.9 s. Simulation, OBJ takes 7.3 s. Visual, GLB takes 7.7 s. Visual, OBJ takes 9.9 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/658-Computer_Address-Buffer-16bit.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -1960,7 +2052,9 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 | Board | Repo: [andrewpaterson/658-Computer](https://github.com/andrewpaterson/658-Computer)<br>Board: `Address Buffer 16bit.kicad_pcb` |
 |---|---|
 | Folder | Kicad / Computer / Component Boards / Address Buffer 16bit |
-| Complexity | 907, low |
+| Complexity | 231&nbsp;/&nbsp;1000 (size&nbsp;161, features&nbsp;70) |
+| KESE&nbsp;features | through vias, rounded,<br>trapezoid or chamfered pads,<br>knockout text, stack-up,<br>dielectric εr and tanδ |
+| Tested | 9th November 2026 |
 | Copper&nbsp;layers | 2 |
 | File&nbsp;format | KiCad 9 (20241229) |
 | Parts,&nbsp;tracks,&nbsp;vias | 20, 636, 77 |
@@ -1985,7 +2079,7 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 
 ## 23.2.49 Address Buffer 24bit
 
-![Address Buffer 24bit: stages 4 and 6 take 50% to 83% of a run. Simulation, GLB takes 8.4 s. Simulation, STEP takes 10 s. Simulation, STL takes 8.2 s. Simulation, OBJ takes 12 s. Visual, GLB takes 12 s. Visual, OBJ takes 15 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/corpus_1572.webp)
+![Address Buffer 24bit: stages 4 and 6 take 50% to 83% of a run. Simulation, GLB takes 8.4 s. Simulation, STEP takes 10 s. Simulation, STL takes 8.2 s. Simulation, OBJ takes 12 s. Visual, GLB takes 12 s. Visual, OBJ takes 15 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/658-Computer_Address-Buffer-24bit.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -2001,7 +2095,9 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 | Board | Repo: [andrewpaterson/658-Computer](https://github.com/andrewpaterson/658-Computer)<br>Board: `Address Buffer 24bit.kicad_pcb` |
 |---|---|
 | Folder | Kicad / Computer / Component Boards / Address Buffer 24bit |
-| Complexity | 1,255, medium |
+| Complexity | 239&nbsp;/&nbsp;1000 (size&nbsp;169, features&nbsp;70) |
+| KESE&nbsp;features | through vias, rounded,<br>trapezoid or chamfered pads,<br>knockout text, stack-up,<br>dielectric εr and tanδ |
+| Tested | 9th November 2026 |
 | Copper&nbsp;layers | 2 |
 | File&nbsp;format | KiCad 9 (20241229) |
 | Parts,&nbsp;tracks,&nbsp;vias | 28, 857, 114 |
@@ -2026,7 +2122,7 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 
 ## 23.2.50 Audio DAC
 
-![Audio DAC: stages 4 and 6 take 49% to 81% of a run. Simulation, GLB takes 4.5 s. Simulation, STEP takes 6.4 s. Simulation, STL takes 4.6 s. Simulation, OBJ takes 6.8 s. Visual, GLB takes 7.1 s. Visual, OBJ takes 8.9 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/corpus_2082.webp)
+![Audio DAC: stages 4 and 6 take 49% to 81% of a run. Simulation, GLB takes 4.5 s. Simulation, STEP takes 6.4 s. Simulation, STL takes 4.6 s. Simulation, OBJ takes 6.8 s. Visual, GLB takes 7.1 s. Visual, OBJ takes 8.9 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/658-Computer_Audio-DAC.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -2042,7 +2138,9 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 | Board | Repo: [andrewpaterson/658-Computer](https://github.com/andrewpaterson/658-Computer)<br>Board: `Audio DAC.kicad_pcb` |
 |---|---|
 | Folder | Kicad / Computer / Component Boards / Audio DAC |
-| Complexity | 618, low |
+| Complexity | 228&nbsp;/&nbsp;1000 (size&nbsp;158, features&nbsp;70) |
+| KESE&nbsp;features | through vias, rounded,<br>trapezoid or chamfered pads,<br>knockout text, stack-up,<br>dielectric εr and tanδ |
+| Tested | 9th November 2026 |
 | Copper&nbsp;layers | 2 |
 | File&nbsp;format | KiCad 9 (20241229) |
 | Parts,&nbsp;tracks,&nbsp;vias | 30, 396, 54 |
@@ -2067,7 +2165,7 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 
 ## 23.2.51 Big Board
 
-![Big Board: stages 4 and 6 take 50% to 83% of a run. Simulation, GLB takes 3.8 s. Simulation, STEP takes 5.0 s. Simulation, STL takes 3.8 s. Simulation, OBJ takes 5.8 s. Visual, GLB takes 5.4 s. Visual, OBJ takes 6.4 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/corpus_2949.webp)
+![Big Board: stages 4 and 6 take 50% to 83% of a run. Simulation, GLB takes 3.8 s. Simulation, STEP takes 5.0 s. Simulation, STL takes 3.8 s. Simulation, OBJ takes 5.8 s. Visual, GLB takes 5.4 s. Visual, OBJ takes 6.4 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/658-Computer_Big-Board.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -2083,7 +2181,9 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 | Board | Repo: [andrewpaterson/658-Computer](https://github.com/andrewpaterson/658-Computer)<br>Board: `Big Board.kicad_pcb` |
 |---|---|
 | Folder | Kicad / Computer / Component Boards / Big Board |
-| Complexity | 13, simple |
+| Complexity | 163&nbsp;/&nbsp;1000 (size&nbsp;88, features&nbsp;75) |
+| KESE&nbsp;features | through vias, rounded,<br>trapezoid or chamfered pads,<br>filled zones, stack-up,<br>dielectric εr and tanδ |
+| Tested | 9th November 2026 |
 | Copper&nbsp;layers | 2 |
 | File&nbsp;format | KiCad 9 (20241229) |
 | Parts,&nbsp;tracks,&nbsp;vias | 4, 23, 1 |
@@ -2108,7 +2208,7 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 
 ## 23.2.52 Clock Doubler
 
-![Clock Doubler: stages 4 and 6 take 51% to 80% of a run. Simulation, GLB takes 2.5 s. Simulation, STEP takes 3.5 s. Simulation, STL takes 2.4 s. Simulation, OBJ takes 3.5 s. Visual, GLB takes 3.7 s. Visual, OBJ takes 4.5 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/corpus_2460.webp)
+![Clock Doubler: stages 4 and 6 take 51% to 80% of a run. Simulation, GLB takes 2.5 s. Simulation, STEP takes 3.5 s. Simulation, STL takes 2.4 s. Simulation, OBJ takes 3.5 s. Visual, GLB takes 3.7 s. Visual, OBJ takes 4.5 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/658-Computer_Clock-Doubler.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -2124,7 +2224,9 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 | Board | Repo: [andrewpaterson/658-Computer](https://github.com/andrewpaterson/658-Computer)<br>Board: `Clock Doubler.kicad_pcb` |
 |---|---|
 | Folder | Kicad / Computer / Component Boards / Clock Doubler |
-| Complexity | 277, low |
+| Complexity | 207&nbsp;/&nbsp;1000 (size&nbsp;137, features&nbsp;70) |
+| KESE&nbsp;features | through vias, rounded,<br>trapezoid or chamfered pads,<br>knockout text, stack-up,<br>dielectric εr and tanδ |
+| Tested | 9th November 2026 |
 | Copper&nbsp;layers | 2 |
 | File&nbsp;format | KiCad 9 (20241229) |
 | Parts,&nbsp;tracks,&nbsp;vias | 15, 178, 23 |
@@ -2149,7 +2251,7 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 
 ## 23.2.53 Clock Hold Select
 
-![Clock Hold Select: stages 4 and 6 take 54% to 83% of a run. Simulation, GLB takes 6.0 s. Simulation, STEP takes 7.8 s. Simulation, STL takes 6.0 s. Simulation, OBJ takes 8.3 s. Visual, GLB takes 9.3 s. Visual, OBJ takes 12 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/corpus_1801.webp)
+![Clock Hold Select: stages 4 and 6 take 54% to 83% of a run. Simulation, GLB takes 6.0 s. Simulation, STEP takes 7.8 s. Simulation, STL takes 6.0 s. Simulation, OBJ takes 8.3 s. Visual, GLB takes 9.3 s. Visual, OBJ takes 12 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/658-Computer_Clock-Hold-Select.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -2165,7 +2267,9 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 | Board | Repo: [andrewpaterson/658-Computer](https://github.com/andrewpaterson/658-Computer)<br>Board: `Clock Hold Select.kicad_pcb` |
 |---|---|
 | Folder | Kicad / Computer / Component Boards / Clock Hold Select |
-| Complexity | 943, low |
+| Complexity | 233&nbsp;/&nbsp;1000 (size&nbsp;163, features&nbsp;70) |
+| KESE&nbsp;features | through vias, rounded,<br>trapezoid or chamfered pads,<br>knockout text, stack-up,<br>dielectric εr and tanδ |
+| Tested | 9th November 2026 |
 | Copper&nbsp;layers | 2 |
 | File&nbsp;format | KiCad 9 (20241229) |
 | Parts,&nbsp;tracks,&nbsp;vias | 23, 645, 84 |
@@ -2190,7 +2294,7 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 
 ## 23.2.54 Clock Hold Standard
 
-![Clock Hold Standard: stages 4 and 6 take 50% to 82% of a run. Simulation, GLB takes 3.7 s. Simulation, STEP takes 5.2 s. Simulation, STL takes 4.0 s. Simulation, OBJ takes 5.8 s. Visual, GLB takes 5.6 s. Visual, OBJ takes 7.3 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/corpus_2076.webp)
+![Clock Hold Standard: stages 4 and 6 take 50% to 82% of a run. Simulation, GLB takes 3.7 s. Simulation, STEP takes 5.2 s. Simulation, STL takes 4.0 s. Simulation, OBJ takes 5.8 s. Visual, GLB takes 5.6 s. Visual, OBJ takes 7.3 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/658-Computer_Clock-Hold-Standard.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -2206,7 +2310,9 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 | Board | Repo: [andrewpaterson/658-Computer](https://github.com/andrewpaterson/658-Computer)<br>Board: `Clock Hold Standard.kicad_pcb` |
 |---|---|
 | Folder | Kicad / Computer / Component Boards / Clock Hold Standard |
-| Complexity | 623, low |
+| Complexity | 219&nbsp;/&nbsp;1000 (size&nbsp;149, features&nbsp;70) |
+| KESE&nbsp;features | through vias, rounded,<br>trapezoid or chamfered pads,<br>knockout text, stack-up,<br>dielectric εr and tanδ |
+| Tested | 9th November 2026 |
 | Copper&nbsp;layers | 2 |
 | File&nbsp;format | KiCad 9 (20241229) |
 | Parts,&nbsp;tracks,&nbsp;vias | 12, 434, 55 |
@@ -2231,7 +2337,7 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 
 ## 23.2.55 Clock Transition
 
-![Clock Transition: stages 4 and 6 take 49% to 79% of a run. Simulation, GLB takes 2.6 s. Simulation, STEP takes 3.5 s. Simulation, STL takes 2.6 s. Simulation, OBJ takes 3.8 s. Visual, GLB takes 3.6 s. Visual, OBJ takes 4.8 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/corpus_2236.webp)
+![Clock Transition: stages 4 and 6 take 49% to 79% of a run. Simulation, GLB takes 2.6 s. Simulation, STEP takes 3.5 s. Simulation, STL takes 2.6 s. Simulation, OBJ takes 3.8 s. Visual, GLB takes 3.6 s. Visual, OBJ takes 4.8 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/658-Computer_Clock-Transition.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -2247,7 +2353,9 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 | Board | Repo: [andrewpaterson/658-Computer](https://github.com/andrewpaterson/658-Computer)<br>Board: `Clock Transition.kicad_pcb` |
 |---|---|
 | Folder | Kicad / Computer / Component Boards / Clock Transition |
-| Complexity | 473, low |
+| Complexity | 216&nbsp;/&nbsp;1000 (size&nbsp;146, features&nbsp;70) |
+| KESE&nbsp;features | through vias, rounded,<br>trapezoid or chamfered pads,<br>knockout text, stack-up,<br>dielectric εr and tanδ |
+| Tested | 9th November 2026 |
 | Copper&nbsp;layers | 2 |
 | File&nbsp;format | KiCad 9 (20241229) |
 | Parts,&nbsp;tracks,&nbsp;vias | 14, 298, 49 |
@@ -2272,7 +2380,7 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 
 ## 23.2.56 Comparator 10bit
 
-![Comparator 10bit: stages 4 and 6 take 51% to 81% of a run. Simulation, GLB takes 3.4 s. Simulation, STEP takes 4.7 s. Simulation, STL takes 3.6 s. Simulation, OBJ takes 5.1 s. Visual, GLB takes 5.7 s. Visual, OBJ takes 6.8 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/corpus_2014.webp)
+![Comparator 10bit: stages 4 and 6 take 51% to 81% of a run. Simulation, GLB takes 3.4 s. Simulation, STEP takes 4.7 s. Simulation, STL takes 3.6 s. Simulation, OBJ takes 5.1 s. Visual, GLB takes 5.7 s. Visual, OBJ takes 6.8 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/658-Computer_Comparator-10bit.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -2288,7 +2396,9 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 | Board | Repo: [andrewpaterson/658-Computer](https://github.com/andrewpaterson/658-Computer)<br>Board: `Comparator 10bit.kicad_pcb` |
 |---|---|
 | Folder | Kicad / Computer / Component Boards / Comparator 10bit |
-| Complexity | 699, low |
+| Complexity | 223&nbsp;/&nbsp;1000 (size&nbsp;153, features&nbsp;70) |
+| KESE&nbsp;features | through vias, rounded,<br>trapezoid or chamfered pads,<br>knockout text, stack-up,<br>dielectric εr and tanδ |
+| Tested | 9th November 2026 |
 | Copper&nbsp;layers | 2 |
 | File&nbsp;format | KiCad 9 (20241229) |
 | Parts,&nbsp;tracks,&nbsp;vias | 14, 485, 62 |
@@ -2313,7 +2423,7 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 
 ## 23.2.57 Comparator 16bit
 
-![Comparator 16bit: stages 4 and 6 take 51% to 82% of a run. Simulation, GLB takes 5.4 s. Simulation, STEP takes 7.2 s. Simulation, STL takes 5.7 s. Simulation, OBJ takes 8.5 s. Visual, GLB takes 7.9 s. Visual, OBJ takes 10 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/corpus_1683.webp)
+![Comparator 16bit: stages 4 and 6 take 51% to 82% of a run. Simulation, GLB takes 5.4 s. Simulation, STEP takes 7.2 s. Simulation, STL takes 5.7 s. Simulation, OBJ takes 8.5 s. Visual, GLB takes 7.9 s. Visual, OBJ takes 10 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/658-Computer_Comparator-16bit.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -2329,7 +2439,9 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 | Board | Repo: [andrewpaterson/658-Computer](https://github.com/andrewpaterson/658-Computer)<br>Board: `Comparator 16bit.kicad_pcb` |
 |---|---|
 | Folder | Kicad / Computer / Component Boards / Comparator 16bit |
-| Complexity | 1,094, medium |
+| Complexity | 230&nbsp;/&nbsp;1000 (size&nbsp;160, features&nbsp;70) |
+| KESE&nbsp;features | through vias, rounded,<br>trapezoid or chamfered pads,<br>knockout text, stack-up,<br>dielectric εr and tanδ |
+| Tested | 9th November 2026 |
 | Copper&nbsp;layers | 2 |
 | File&nbsp;format | KiCad 9 (20241229) |
 | Parts,&nbsp;tracks,&nbsp;vias | 13, 798, 90 |
@@ -2354,7 +2466,7 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 
 ## 23.2.58 Counter 16bit with IO
 
-![Counter 16bit with IO: stages 4 and 6 take 54% to 81% of a run. Simulation, GLB takes 7.2 s. Simulation, STEP takes 9.4 s. Simulation, STL takes 7.3 s. Simulation, OBJ takes 11 s. Visual, GLB takes 11 s. Visual, OBJ takes 14 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/corpus_1182.webp)
+![Counter 16bit with IO: stages 4 and 6 take 54% to 81% of a run. Simulation, GLB takes 7.2 s. Simulation, STEP takes 9.4 s. Simulation, STL takes 7.3 s. Simulation, OBJ takes 11 s. Visual, GLB takes 11 s. Visual, OBJ takes 14 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/658-Computer_Counter-16bit-with-IO.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -2370,7 +2482,9 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 | Board | Repo: [andrewpaterson/658-Computer](https://github.com/andrewpaterson/658-Computer)<br>Board: `Counter 16bit with IO.kicad_pcb` |
 |---|---|
 | Folder | Kicad / Computer / Component Boards / Counter 16bit with IO |
-| Complexity | 2,013, medium |
+| Complexity | 246&nbsp;/&nbsp;1000 (size&nbsp;176, features&nbsp;70) |
+| KESE&nbsp;features | through vias, rounded,<br>trapezoid or chamfered pads,<br>knockout text, stack-up,<br>dielectric εr and tanδ |
+| Tested | 9th November 2026 |
 | Copper&nbsp;layers | 2 |
 | File&nbsp;format | KiCad 9 (20241229) |
 | Parts,&nbsp;tracks,&nbsp;vias | 24, 1,368, 199 |
@@ -2395,7 +2509,7 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 
 ## 23.2.59 Counter 16bit
 
-![Counter 16bit: stages 4 and 6 take 52% to 80% of a run. Simulation, GLB takes 5.3 s. Simulation, STEP takes 6.8 s. Simulation, STL takes 5.1 s. Simulation, OBJ takes 7.3 s. Visual, GLB takes 8.3 s. Visual, OBJ takes 10 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/corpus_1942.webp)
+![Counter 16bit: stages 4 and 6 take 52% to 80% of a run. Simulation, GLB takes 5.3 s. Simulation, STEP takes 6.8 s. Simulation, STL takes 5.1 s. Simulation, OBJ takes 7.3 s. Visual, GLB takes 8.3 s. Visual, OBJ takes 10 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/658-Computer_Counter-16bit.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -2411,7 +2525,9 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 | Board | Repo: [andrewpaterson/658-Computer](https://github.com/andrewpaterson/658-Computer)<br>Board: `Counter 16bit.kicad_pcb` |
 |---|---|
 | Folder | Kicad / Computer / Component Boards / Counter 16bit |
-| Complexity | 770, low |
+| Complexity | 224&nbsp;/&nbsp;1000 (size&nbsp;154, features&nbsp;70) |
+| KESE&nbsp;features | through vias, rounded,<br>trapezoid or chamfered pads,<br>knockout text, stack-up,<br>dielectric εr and tanδ |
+| Tested | 9th November 2026 |
 | Copper&nbsp;layers | 2 |
 | File&nbsp;format | KiCad 9 (20241229) |
 | Parts,&nbsp;tracks,&nbsp;vias | 14, 508, 78 |
@@ -2436,7 +2552,7 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 
 ## 23.2.60 Counter 24bit with IO
 
-![Counter 24bit with IO: stages 4 and 6 take 56% to 83% of a run. Simulation, GLB takes 13 s. Simulation, STEP takes 15 s. Simulation, STL takes 13 s. Simulation, OBJ takes 17 s. Visual, GLB takes 19 s. Visual, OBJ takes 23 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/corpus_0860.webp)
+![Counter 24bit with IO: stages 4 and 6 take 56% to 83% of a run. Simulation, GLB takes 13 s. Simulation, STEP takes 15 s. Simulation, STL takes 13 s. Simulation, OBJ takes 17 s. Visual, GLB takes 19 s. Visual, OBJ takes 23 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/658-Computer_Counter-24bit-with-IO.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -2452,7 +2568,9 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 | Board | Repo: [andrewpaterson/658-Computer](https://github.com/andrewpaterson/658-Computer)<br>Board: `Counter 24bit with IO.kicad_pcb` |
 |---|---|
 | Folder | Kicad / Computer / Component Boards / Counter 24bit with IO |
-| Complexity | 3,089, high |
+| Complexity | 256&nbsp;/&nbsp;1000 (size&nbsp;186, features&nbsp;70) |
+| KESE&nbsp;features | through vias, rounded,<br>trapezoid or chamfered pads,<br>knockout text, stack-up,<br>dielectric εr and tanδ |
+| Tested | 9th November 2026 |
 | Copper&nbsp;layers | 2 |
 | File&nbsp;format | KiCad 9 (20241229) |
 | Parts,&nbsp;tracks,&nbsp;vias | 32, 2,287, 246 |
@@ -2477,7 +2595,7 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 
 ## 23.2.61 Counter 24bit
 
-![Counter 24bit: stages 4 and 6 take 52% to 84% of a run. Simulation, GLB takes 6.5 s. Simulation, STEP takes 8.5 s. Simulation, STL takes 6.8 s. Simulation, OBJ takes 9.6 s. Visual, GLB takes 10 s. Visual, OBJ takes 12 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/corpus_1607.webp)
+![Counter 24bit: stages 4 and 6 take 52% to 84% of a run. Simulation, GLB takes 6.5 s. Simulation, STEP takes 8.5 s. Simulation, STL takes 6.8 s. Simulation, OBJ takes 9.6 s. Visual, GLB takes 10 s. Visual, OBJ takes 12 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/658-Computer_Counter-24bit.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -2493,7 +2611,9 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 | Board | Repo: [andrewpaterson/658-Computer](https://github.com/andrewpaterson/658-Computer)<br>Board: `Counter 24bit.kicad_pcb` |
 |---|---|
 | Folder | Kicad / Computer / Component Boards / Counter 24bit |
-| Complexity | 1,194, medium |
+| Complexity | 234&nbsp;/&nbsp;1000 (size&nbsp;164, features&nbsp;70) |
+| KESE&nbsp;features | through vias, rounded,<br>trapezoid or chamfered pads,<br>knockout text, stack-up,<br>dielectric εr and tanδ |
+| Tested | 9th November 2026 |
 | Copper&nbsp;layers | 2 |
 | File&nbsp;format | KiCad 9 (20241229) |
 | Parts,&nbsp;tracks,&nbsp;vias | 18, 816, 114 |
@@ -2518,7 +2638,7 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 
 ## 23.2.62 D Flip Flop 16bit
 
-![D Flip Flop 16bit: stages 4 and 6 take 51% to 82% of a run. Simulation, GLB takes 4.9 s. Simulation, STEP takes 6.6 s. Simulation, STL takes 4.9 s. Simulation, OBJ takes 6.4 s. Visual, GLB takes 6.8 s. Visual, OBJ takes 9.2 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/corpus_2346.webp)
+![D Flip Flop 16bit: stages 4 and 6 take 51% to 82% of a run. Simulation, GLB takes 4.9 s. Simulation, STEP takes 6.6 s. Simulation, STL takes 4.9 s. Simulation, OBJ takes 6.4 s. Visual, GLB takes 6.8 s. Visual, OBJ takes 9.2 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/658-Computer_D-Flip-Flop-16bit.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -2534,7 +2654,9 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 | Board | Repo: [andrewpaterson/658-Computer](https://github.com/andrewpaterson/658-Computer)<br>Board: `D Flip Flop 16bit.kicad_pcb` |
 |---|---|
 | Folder | Kicad / Computer / Component Boards / D Flip Flop 16bit |
-| Complexity | 375, low |
+| Complexity | 211&nbsp;/&nbsp;1000 (size&nbsp;141, features&nbsp;70) |
+| KESE&nbsp;features | through vias, rounded,<br>trapezoid or chamfered pads,<br>knockout text, stack-up,<br>dielectric εr and tanδ |
+| Tested | 9th November 2026 |
 | Copper&nbsp;layers | 2 |
 | File&nbsp;format | KiCad 9 (20241229) |
 | Parts,&nbsp;tracks,&nbsp;vias | 8, 360, 31 |
@@ -2559,7 +2681,7 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 
 ## 23.2.63 D Flip Flop 24bit
 
-![D Flip Flop 24bit: stages 4 and 6 take 52% to 82% of a run. Simulation, GLB takes 4.7 s. Simulation, STEP takes 6.1 s. Simulation, STL takes 4.9 s. Simulation, OBJ takes 6.9 s. Visual, GLB takes 7.4 s. Visual, OBJ takes 8.6 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/corpus_2167.webp)
+![D Flip Flop 24bit: stages 4 and 6 take 52% to 82% of a run. Simulation, GLB takes 4.7 s. Simulation, STEP takes 6.1 s. Simulation, STL takes 4.9 s. Simulation, OBJ takes 6.9 s. Visual, GLB takes 7.4 s. Visual, OBJ takes 8.6 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/658-Computer_D-Flip-Flop-24bit.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -2575,7 +2697,9 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 | Board | Repo: [andrewpaterson/658-Computer](https://github.com/andrewpaterson/658-Computer)<br>Board: `D Flip Flop 24bit.kicad_pcb` |
 |---|---|
 | Folder | Kicad / Computer / Component Boards / D Flip Flop 24bit |
-| Complexity | 537, low |
+| Complexity | 215&nbsp;/&nbsp;1000 (size&nbsp;145, features&nbsp;70) |
+| KESE&nbsp;features | through vias, rounded,<br>trapezoid or chamfered pads,<br>knockout text, stack-up,<br>dielectric εr and tanδ |
+| Tested | 9th November 2026 |
 | Copper&nbsp;layers | 2 |
 | File&nbsp;format | KiCad 9 (20241229) |
 | Parts,&nbsp;tracks,&nbsp;vias | 10, 400, 39 |
@@ -2600,7 +2724,7 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 
 ## 23.2.64 Data and Signal Buffer
 
-![Data and Signal Buffer: stages 4 and 6 take 52% to 81% of a run. Simulation, GLB takes 5.5 s. Simulation, STEP takes 6.6 s. Simulation, STL takes 5.2 s. Simulation, OBJ takes 7.2 s. Visual, GLB takes 8.3 s. Visual, OBJ takes 9.8 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/corpus_1880.webp)
+![Data and Signal Buffer: stages 4 and 6 take 52% to 81% of a run. Simulation, GLB takes 5.5 s. Simulation, STEP takes 6.6 s. Simulation, STL takes 5.2 s. Simulation, OBJ takes 7.2 s. Visual, GLB takes 8.3 s. Visual, OBJ takes 9.8 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/658-Computer_Data-and-Signal-Buffer.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -2616,7 +2740,9 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 | Board | Repo: [andrewpaterson/658-Computer](https://github.com/andrewpaterson/658-Computer)<br>Board: `Data and Signal Buffer.kicad_pcb` |
 |---|---|
 | Folder | Kicad / Computer / Component Boards / Data and Signal Buffer |
-| Complexity | 849, low |
+| Complexity | 229&nbsp;/&nbsp;1000 (size&nbsp;159, features&nbsp;70) |
+| KESE&nbsp;features | through vias, rounded,<br>trapezoid or chamfered pads,<br>knockout text, stack-up,<br>dielectric εr and tanδ |
+| Tested | 9th November 2026 |
 | Copper&nbsp;layers | 2 |
 | File&nbsp;format | KiCad 9 (20241229) |
 | Parts,&nbsp;tracks,&nbsp;vias | 20, 584, 75 |
@@ -2641,7 +2767,7 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 
 ## 23.2.65 Device Buffer
 
-![Device Buffer: stages 4 and 6 take 52% to 83% of a run. Simulation, GLB takes 6.1 s. Simulation, STEP takes 7.9 s. Simulation, STL takes 5.9 s. Simulation, OBJ takes 9.1 s. Visual, GLB takes 9.2 s. Visual, OBJ takes 11 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/corpus_1987.webp)
+![Device Buffer: stages 4 and 6 take 52% to 83% of a run. Simulation, GLB takes 6.1 s. Simulation, STEP takes 7.9 s. Simulation, STL takes 5.9 s. Simulation, OBJ takes 9.1 s. Visual, GLB takes 9.2 s. Visual, OBJ takes 11 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/658-Computer_Device-Buffer.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -2657,7 +2783,9 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 | Board | Repo: [andrewpaterson/658-Computer](https://github.com/andrewpaterson/658-Computer)<br>Board: `Device Buffer.kicad_pcb` |
 |---|---|
 | Folder | Kicad / Computer / Component Boards / Device Buffer |
-| Complexity | 727, low |
+| Complexity | 226&nbsp;/&nbsp;1000 (size&nbsp;156, features&nbsp;70) |
+| KESE&nbsp;features | through vias, rounded,<br>trapezoid or chamfered pads,<br>knockout text, stack-up,<br>dielectric εr and tanδ |
+| Tested | 9th November 2026 |
 | Copper&nbsp;layers | 2 |
 | File&nbsp;format | KiCad 9 (20241229) |
 | Parts,&nbsp;tracks,&nbsp;vias | 18, 571, 40 |
@@ -2682,7 +2810,7 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 
 ## 23.2.66 Device Decode stage A
 
-![Device Decode stage A: stages 4 and 6 take 49% to 81% of a run. Simulation, GLB takes 4.0 s. Simulation, STEP takes 5.4 s. Simulation, STL takes 4.0 s. Simulation, OBJ takes 6.0 s. Visual, GLB takes 5.8 s. Visual, OBJ takes 7.6 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/corpus_2047.webp)
+![Device Decode stage A: stages 4 and 6 take 49% to 81% of a run. Simulation, GLB takes 4.0 s. Simulation, STEP takes 5.4 s. Simulation, STL takes 4.0 s. Simulation, OBJ takes 6.0 s. Visual, GLB takes 5.8 s. Visual, OBJ takes 7.6 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/658-Computer_Device-Decode-stage-A.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -2698,7 +2826,9 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 | Board | Repo: [andrewpaterson/658-Computer](https://github.com/andrewpaterson/658-Computer)<br>Board: `Device Decode stage A.kicad_pcb` |
 |---|---|
 | Folder | Kicad / Computer / Component Boards / Device Decode stage A |
-| Complexity | 660, low |
+| Complexity | 223&nbsp;/&nbsp;1000 (size&nbsp;153, features&nbsp;70) |
+| KESE&nbsp;features | through vias, rounded,<br>trapezoid or chamfered pads,<br>knockout text, stack-up,<br>dielectric εr and tanδ |
+| Tested | 9th November 2026 |
 | Copper&nbsp;layers | 2 |
 | File&nbsp;format | KiCad 9 (20241229) |
 | Parts,&nbsp;tracks,&nbsp;vias | 16, 442, 62 |
@@ -2723,7 +2853,7 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 
 ## 23.2.67 Device Decode stage B
 
-![Device Decode stage B: stages 4 and 6 take 50% to 82% of a run. Simulation, GLB takes 4.7 s. Simulation, STEP takes 6.1 s. Simulation, STL takes 4.6 s. Simulation, OBJ takes 7.2 s. Visual, GLB takes 6.9 s. Visual, OBJ takes 9.1 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/corpus_1890.webp)
+![Device Decode stage B: stages 4 and 6 take 50% to 82% of a run. Simulation, GLB takes 4.7 s. Simulation, STEP takes 6.1 s. Simulation, STL takes 4.6 s. Simulation, OBJ takes 7.2 s. Visual, GLB takes 6.9 s. Visual, OBJ takes 9.1 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/658-Computer_Device-Decode-stage-B.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -2739,7 +2869,9 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 | Board | Repo: [andrewpaterson/658-Computer](https://github.com/andrewpaterson/658-Computer)<br>Board: `Device Decode stage B.kicad_pcb` |
 |---|---|
 | Folder | Kicad / Computer / Component Boards / Device Decode stage B |
-| Complexity | 838, low |
+| Complexity | 227&nbsp;/&nbsp;1000 (size&nbsp;157, features&nbsp;70) |
+| KESE&nbsp;features | through vias, rounded,<br>trapezoid or chamfered pads,<br>knockout text, stack-up,<br>dielectric εr and tanδ |
+| Tested | 9th November 2026 |
 | Copper&nbsp;layers | 2 |
 | File&nbsp;format | KiCad 9 (20241229) |
 | Parts,&nbsp;tracks,&nbsp;vias | 16, 572, 78 |
@@ -2764,7 +2896,7 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 
 ## 23.2.68 Dual Comparator 8bit
 
-![Dual Comparator 8bit: stages 4 and 6 take 51% to 83% of a run. Simulation, GLB takes 5.7 s. Simulation, STEP takes 7.2 s. Simulation, STL takes 5.5 s. Simulation, OBJ takes 8.0 s. Visual, GLB takes 8.3 s. Visual, OBJ takes 11 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/corpus_1731.webp)
+![Dual Comparator 8bit: stages 4 and 6 take 51% to 83% of a run. Simulation, GLB takes 5.7 s. Simulation, STEP takes 7.2 s. Simulation, STL takes 5.5 s. Simulation, OBJ takes 8.0 s. Visual, GLB takes 8.3 s. Visual, OBJ takes 11 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/658-Computer_Dual-Comparator-8bit.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -2780,7 +2912,9 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 | Board | Repo: [andrewpaterson/658-Computer](https://github.com/andrewpaterson/658-Computer)<br>Board: `Dual Comparator 8bit.kicad_pcb` |
 |---|---|
 | Folder | Kicad / Computer / Component Boards / Dual Comparator 8bit |
-| Complexity | 1,023, medium |
+| Complexity | 227&nbsp;/&nbsp;1000 (size&nbsp;157, features&nbsp;70) |
+| KESE&nbsp;features | through vias, rounded,<br>trapezoid or chamfered pads,<br>knockout text, stack-up,<br>dielectric εr and tanδ |
+| Tested | 9th November 2026 |
 | Copper&nbsp;layers | 2 |
 | File&nbsp;format | KiCad 9 (20241229) |
 | Parts,&nbsp;tracks,&nbsp;vias | 11, 728, 91 |
@@ -2805,7 +2939,7 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 
 ## 23.2.69 Flags Enable Interrupt
 
-![Flags Enable Interrupt: stages 4 and 6 take 53% to 83% of a run. Simulation, GLB takes 5.3 s. Simulation, STEP takes 7.2 s. Simulation, STL takes 5.7 s. Simulation, OBJ takes 8.3 s. Visual, GLB takes 8.3 s. Visual, OBJ takes 9.7 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/corpus_1775.webp)
+![Flags Enable Interrupt: stages 4 and 6 take 53% to 83% of a run. Simulation, GLB takes 5.3 s. Simulation, STEP takes 7.2 s. Simulation, STL takes 5.7 s. Simulation, OBJ takes 8.3 s. Visual, GLB takes 8.3 s. Visual, OBJ takes 9.7 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/658-Computer_Flags-Enable-Interrupt.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -2821,7 +2955,9 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 | Board | Repo: [andrewpaterson/658-Computer](https://github.com/andrewpaterson/658-Computer)<br>Board: `Flags Enable Interrupt.kicad_pcb` |
 |---|---|
 | Folder | Kicad / Computer / Component Boards / Flags Enable Interrupt |
-| Complexity | 972, low |
+| Complexity | 230&nbsp;/&nbsp;1000 (size&nbsp;160, features&nbsp;70) |
+| KESE&nbsp;features | through vias, rounded,<br>trapezoid or chamfered pads,<br>knockout text, stack-up,<br>dielectric εr and tanδ |
+| Tested | 9th November 2026 |
 | Copper&nbsp;layers | 2 |
 | File&nbsp;format | KiCad 9 (20241229) |
 | Parts,&nbsp;tracks,&nbsp;vias | 17, 674, 88 |
@@ -2846,7 +2982,7 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 
 ## 23.2.70 GPIO 16bit
 
-![GPIO 16bit: stages 4 and 6 take 57% to 81% of a run. Simulation, GLB takes 12 s. Simulation, STEP takes 15 s. Simulation, STL takes 11 s. Simulation, OBJ takes 16 s. Visual, GLB takes 19 s. Visual, OBJ takes 21 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/corpus_0890.webp)
+![GPIO 16bit: stages 4 and 6 take 57% to 81% of a run. Simulation, GLB takes 12 s. Simulation, STEP takes 15 s. Simulation, STL takes 11 s. Simulation, OBJ takes 16 s. Visual, GLB takes 19 s. Visual, OBJ takes 21 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/658-Computer_GPIO-16bit.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -2862,7 +2998,9 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 | Board | Repo: [andrewpaterson/658-Computer](https://github.com/andrewpaterson/658-Computer)<br>Board: `GPIO 16bit.kicad_pcb` |
 |---|---|
 | Folder | Kicad / Computer / Component Boards / GPIO 16bit |
-| Complexity | 2,955, medium |
+| Complexity | 268&nbsp;/&nbsp;1000 (size&nbsp;188, features&nbsp;80) |
+| KESE&nbsp;features | through vias, rounded,<br>trapezoid or chamfered pads,<br>curved board outline,<br>knockout text, stack-up,<br>dielectric εr and tanδ |
+| Tested | 9th November 2026 |
 | Copper&nbsp;layers | 2 |
 | File&nbsp;format | KiCad 10 (20260206) |
 | Parts,&nbsp;tracks,&nbsp;vias | 43, 2,026, 281 |
@@ -2887,7 +3025,7 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 
 ## 23.2.71 GPIO 4bit
 
-![GPIO 4bit: stages 4 and 6 take 52% to 82% of a run. Simulation, GLB takes 4.8 s. Simulation, STEP takes 5.9 s. Simulation, STL takes 4.4 s. Simulation, OBJ takes 6.5 s. Visual, GLB takes 7.0 s. Visual, OBJ takes 8.5 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/corpus_1929.webp)
+![GPIO 4bit: stages 4 and 6 take 52% to 82% of a run. Simulation, GLB takes 4.8 s. Simulation, STEP takes 5.9 s. Simulation, STL takes 4.4 s. Simulation, OBJ takes 6.5 s. Visual, GLB takes 7.0 s. Visual, OBJ takes 8.5 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/658-Computer_GPIO-4bit.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -2903,7 +3041,9 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 | Board | Repo: [andrewpaterson/658-Computer](https://github.com/andrewpaterson/658-Computer)<br>Board: `GPIO 4bit.kicad_pcb` |
 |---|---|
 | Folder | Kicad / Computer / Component Boards / GPIO 4bit |
-| Complexity | 789, low |
+| Complexity | 225&nbsp;/&nbsp;1000 (size&nbsp;155, features&nbsp;70) |
+| KESE&nbsp;features | through vias, rounded,<br>trapezoid or chamfered pads,<br>knockout text, stack-up,<br>dielectric εr and tanδ |
+| Tested | 9th November 2026 |
 | Copper&nbsp;layers | 2 |
 | File&nbsp;format | KiCad 9 (20241229) |
 | Parts,&nbsp;tracks,&nbsp;vias | 14, 560, 67 |
@@ -2928,7 +3068,7 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 
 ## 23.2.72 Main Address Buffer
 
-![Main Address Buffer: stages 4 and 6 take 52% to 83% of a run. Simulation, GLB takes 4.5 s. Simulation, STEP takes 5.9 s. Simulation, STL takes 4.6 s. Simulation, OBJ takes 6.4 s. Visual, GLB takes 6.6 s. Visual, OBJ takes 8.8 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/corpus_2355.webp)
+![Main Address Buffer: stages 4 and 6 take 52% to 83% of a run. Simulation, GLB takes 4.5 s. Simulation, STEP takes 5.9 s. Simulation, STL takes 4.6 s. Simulation, OBJ takes 6.4 s. Visual, GLB takes 6.6 s. Visual, OBJ takes 8.8 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/658-Computer_Main-Address-Buffer.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -2944,7 +3084,9 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 | Board | Repo: [andrewpaterson/658-Computer](https://github.com/andrewpaterson/658-Computer)<br>Board: `Main Address Buffer.kicad_pcb` |
 |---|---|
 | Folder | Kicad / Computer / Component Boards / Main Address Buffer |
-| Complexity | 370, low |
+| Complexity | 209&nbsp;/&nbsp;1000 (size&nbsp;139, features&nbsp;70) |
+| KESE&nbsp;features | through vias, rounded,<br>trapezoid or chamfered pads,<br>knockout text, stack-up,<br>dielectric εr and tanδ |
+| Tested | 9th November 2026 |
 | Copper&nbsp;layers | 2 |
 | File&nbsp;format | KiCad 9 (20241229) |
 | Parts,&nbsp;tracks,&nbsp;vias | 10, 290, 20 |
@@ -2969,7 +3111,7 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 
 ## 23.2.73 Main Data Buffer
 
-![Main Data Buffer: stages 4 and 6 take 45% to 81% of a run. Simulation, GLB takes 3.0 s. Simulation, STEP takes 4.2 s. Simulation, STL takes 2.9 s. Simulation, OBJ takes 4.3 s. Visual, GLB takes 4.5 s. Visual, OBJ takes 5.5 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/corpus_2584.webp)
+![Main Data Buffer: stages 4 and 6 take 45% to 81% of a run. Simulation, GLB takes 3.0 s. Simulation, STEP takes 4.2 s. Simulation, STL takes 2.9 s. Simulation, OBJ takes 4.3 s. Visual, GLB takes 4.5 s. Visual, OBJ takes 5.5 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/658-Computer_Main-Data-Buffer.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -2985,7 +3127,9 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 | Board | Repo: [andrewpaterson/658-Computer](https://github.com/andrewpaterson/658-Computer)<br>Board: `Main Data Buffer.kicad_pcb` |
 |---|---|
 | Folder | Kicad / Computer / Component Boards / Main Data Buffer |
-| Complexity | 182, simple |
+| Complexity | 198&nbsp;/&nbsp;1000 (size&nbsp;128, features&nbsp;70) |
+| KESE&nbsp;features | through vias, rounded,<br>trapezoid or chamfered pads,<br>knockout text, stack-up,<br>dielectric εr and tanδ |
+| Tested | 9th November 2026 |
 | Copper&nbsp;layers | 2 |
 | File&nbsp;format | KiCad 9 (20241229) |
 | Parts,&nbsp;tracks,&nbsp;vias | 8, 155, 19 |
@@ -3010,7 +3154,7 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 
 ## 23.2.74 Memory 32KB with Output
 
-![Memory 32KB with Output: stages 4 and 6 take 49% to 82% of a run. Simulation, GLB takes 4.8 s. Simulation, STEP takes 6.1 s. Simulation, STL takes 4.9 s. Simulation, OBJ takes 7.1 s. Visual, GLB takes 6.9 s. Visual, OBJ takes 8.6 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/corpus_2003.webp)
+![Memory 32KB with Output: stages 4 and 6 take 49% to 82% of a run. Simulation, GLB takes 4.8 s. Simulation, STEP takes 6.1 s. Simulation, STL takes 4.9 s. Simulation, OBJ takes 7.1 s. Visual, GLB takes 6.9 s. Visual, OBJ takes 8.6 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/658-Computer_Memory-32KB-with-Output.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -3026,7 +3170,9 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 | Board | Repo: [andrewpaterson/658-Computer](https://github.com/andrewpaterson/658-Computer)<br>Board: `Memory 32KB with Output.kicad_pcb` |
 |---|---|
 | Folder | Kicad / Computer / Component Boards / Memory 32KB with Output |
-| Complexity | 708, low |
+| Complexity | 220&nbsp;/&nbsp;1000 (size&nbsp;150, features&nbsp;70) |
+| KESE&nbsp;features | through vias, rounded,<br>trapezoid or chamfered pads,<br>knockout text, stack-up,<br>dielectric εr and tanδ |
+| Tested | 9th November 2026 |
 | Copper&nbsp;layers | 2 |
 | File&nbsp;format | KiCad 9 (20241229) |
 | Parts,&nbsp;tracks,&nbsp;vias | 10, 502, 62 |
@@ -3051,7 +3197,7 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 
 ## 23.2.75 Register 24bit with IO
 
-![Register 24bit with IO: stages 4 and 6 take 51% to 84% of a run. Simulation, GLB takes 7.1 s. Simulation, STEP takes 9.8 s. Simulation, STL takes 7.4 s. Simulation, OBJ takes 10 s. Visual, GLB takes 11 s. Visual, OBJ takes 13 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/corpus_1587.webp)
+![Register 24bit with IO: stages 4 and 6 take 51% to 84% of a run. Simulation, GLB takes 7.1 s. Simulation, STEP takes 9.8 s. Simulation, STL takes 7.4 s. Simulation, OBJ takes 10 s. Visual, GLB takes 11 s. Visual, OBJ takes 13 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/658-Computer_Register-24bit-with-IO.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -3067,7 +3213,9 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 | Board | Repo: [andrewpaterson/658-Computer](https://github.com/andrewpaterson/658-Computer)<br>Board: `Register 24bit with IO.kicad_pcb` |
 |---|---|
 | Folder | Kicad / Computer / Component Boards / Register 24bit with IO |
-| Complexity | 1,236, medium |
+| Complexity | 235&nbsp;/&nbsp;1000 (size&nbsp;165, features&nbsp;70) |
+| KESE&nbsp;features | through vias, rounded,<br>trapezoid or chamfered pads,<br>knockout text, stack-up,<br>dielectric εr and tanδ |
+| Tested | 9th November 2026 |
 | Copper&nbsp;layers | 2 |
 | File&nbsp;format | KiCad 9 (20241229) |
 | Parts,&nbsp;tracks,&nbsp;vias | 18, 903, 99 |
@@ -3092,7 +3240,7 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 
 ## 23.2.76 Register 8bit with IO
 
-![Register 8bit with IO: stages 4 and 6 take 52% to 81% of a run. Simulation, GLB takes 3.5 s. Simulation, STEP takes 5.0 s. Simulation, STL takes 3.7 s. Simulation, OBJ takes 5.6 s. Visual, GLB takes 5.6 s. Visual, OBJ takes 5.8 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/corpus_2316.webp)
+![Register 8bit with IO: stages 4 and 6 take 52% to 81% of a run. Simulation, GLB takes 3.5 s. Simulation, STEP takes 5.0 s. Simulation, STL takes 3.7 s. Simulation, OBJ takes 5.6 s. Visual, GLB takes 5.6 s. Visual, OBJ takes 5.8 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/658-Computer_Register-8bit-with-IO.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -3108,7 +3256,9 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 | Board | Repo: [andrewpaterson/658-Computer](https://github.com/andrewpaterson/658-Computer)<br>Board: `Register 8bit with IO.kicad_pcb` |
 |---|---|
 | Folder | Kicad / Computer / Component Boards / Register 8bit with IO |
-| Complexity | 399, low |
+| Complexity | 210&nbsp;/&nbsp;1000 (size&nbsp;140, features&nbsp;70) |
+| KESE&nbsp;features | through vias, rounded,<br>trapezoid or chamfered pads,<br>knockout text, stack-up,<br>dielectric εr and tanδ |
+| Tested | 9th November 2026 |
 | Copper&nbsp;layers | 2 |
 | File&nbsp;format | KiCad 9 (20241229) |
 | Parts,&nbsp;tracks,&nbsp;vias | 10, 289, 30 |
@@ -3133,7 +3283,7 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 
 ## 23.2.77 Selector 1-of-4 4bit with Input
 
-![Stages 4 and 6 take 50% to 82% of a run. Simulation, GLB takes 3.6 s. Simulation, STEP takes 4.9 s. Simulation, STL takes 3.6 s. Simulation, OBJ takes 5.2 s. Visual, GLB takes 5.3 s. Visual, OBJ takes 6.4 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/corpus_2393.webp)
+![Stages 4 and 6 take 50% to 82% of a run. Simulation, GLB takes 3.6 s. Simulation, STEP takes 4.9 s. Simulation, STL takes 3.6 s. Simulation, OBJ takes 5.2 s. Visual, GLB takes 5.3 s. Visual, OBJ takes 6.4 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/658-Computer_Selector-1-of-4-4bit-with-Input.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -3149,7 +3299,9 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 | Board | Repo: [andrewpaterson/658-Computer](https://github.com/andrewpaterson/658-Computer)<br>Board: `Selector 1-of-4 4bit with Input.kicad_pcb` |
 |---|---|
 | Folder | Kicad / Computer / Component Boards / Selector 1-of-4 4bit with Input |
-| Complexity | 337, low |
+| Complexity | 210&nbsp;/&nbsp;1000 (size&nbsp;140, features&nbsp;70) |
+| KESE&nbsp;features | through vias, rounded,<br>trapezoid or chamfered pads,<br>knockout text, stack-up,<br>dielectric εr and tanδ |
+| Tested | 9th November 2026 |
 | Copper&nbsp;layers | 2 |
 | File&nbsp;format | KiCad 9 (20241229) |
 | Parts,&nbsp;tracks,&nbsp;vias | 7, 321, 49 |
@@ -3174,7 +3326,7 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 
 ## 23.2.78 Selector 1-of-4 4bit
 
-![Selector 1-of-4 4bit: stages 4 and 6 take 49% to 79% of a run. Simulation, GLB takes 3.8 s. Simulation, STEP takes 4.8 s. Simulation, STL takes 3.3 s. Simulation, OBJ takes 4.7 s. Visual, GLB takes 4.9 s. Visual, OBJ takes 6.1 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/corpus_2592.webp)
+![Selector 1-of-4 4bit: stages 4 and 6 take 49% to 79% of a run. Simulation, GLB takes 3.8 s. Simulation, STEP takes 4.8 s. Simulation, STL takes 3.3 s. Simulation, OBJ takes 4.7 s. Visual, GLB takes 4.9 s. Visual, OBJ takes 6.1 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/658-Computer_Selector-1-of-4-4bit.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -3190,7 +3342,9 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 | Board | Repo: [andrewpaterson/658-Computer](https://github.com/andrewpaterson/658-Computer)<br>Board: `Selector 1-of-4 4bit.kicad_pcb` |
 |---|---|
 | Folder | Kicad / Computer / Component Boards / Selector 1-of-4 4bit |
-| Complexity | 176, simple |
+| Complexity | 202&nbsp;/&nbsp;1000 (size&nbsp;132, features&nbsp;70) |
+| KESE&nbsp;features | through vias, rounded,<br>trapezoid or chamfered pads,<br>knockout text, stack-up,<br>dielectric εr and tanδ |
+| Tested | 9th November 2026 |
 | Copper&nbsp;layers | 2 |
 | File&nbsp;format | KiCad 9 (20241229) |
 | Parts,&nbsp;tracks,&nbsp;vias | 5, 253, 30 |
@@ -3215,7 +3369,7 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 
 ## 23.2.79 Selector 12bit
 
-![Selector 12bit: stages 4 and 6 take 50% to 83% of a run. Simulation, GLB takes 5.8 s. Simulation, STEP takes 7.2 s. Simulation, STL takes 6.2 s. Simulation, OBJ takes 8.3 s. Visual, GLB takes 8.5 s. Visual, OBJ takes 11 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/corpus_1945.webp)
+![Selector 12bit: stages 4 and 6 take 50% to 83% of a run. Simulation, GLB takes 5.8 s. Simulation, STEP takes 7.2 s. Simulation, STL takes 6.2 s. Simulation, OBJ takes 8.3 s. Visual, GLB takes 8.5 s. Visual, OBJ takes 11 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/658-Computer_Selector-12bit.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -3231,7 +3385,9 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 | Board | Repo: [andrewpaterson/658-Computer](https://github.com/andrewpaterson/658-Computer)<br>Board: `Selector 12bit.kicad_pcb` |
 |---|---|
 | Folder | Kicad / Computer / Component Boards / Selector 12bit |
-| Complexity | 768, low |
+| Complexity | 221&nbsp;/&nbsp;1000 (size&nbsp;151, features&nbsp;70) |
+| KESE&nbsp;features | through vias, rounded,<br>trapezoid or chamfered pads,<br>knockout text, stack-up,<br>dielectric εr and tanδ |
+| Tested | 9th November 2026 |
 | Copper&nbsp;layers | 2 |
 | File&nbsp;format | KiCad 9 (20241229) |
 | Parts,&nbsp;tracks,&nbsp;vias | 10, 499, 83 |
@@ -3256,7 +3412,7 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 
 ## 23.2.80 Selector 18bit
 
-![Selector 18bit: stages 4 and 6 take 52% to 84% of a run. Simulation, GLB takes 7.1 s. Simulation, STEP takes 8.5 s. Simulation, STL takes 7.0 s. Simulation, OBJ takes 10 s. Visual, GLB takes 11 s. Visual, OBJ takes 14 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/corpus_1595.webp)
+![Selector 18bit: stages 4 and 6 take 52% to 84% of a run. Simulation, GLB takes 7.1 s. Simulation, STEP takes 8.5 s. Simulation, STL takes 7.0 s. Simulation, OBJ takes 10 s. Visual, GLB takes 11 s. Visual, OBJ takes 14 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/658-Computer_Selector-18bit.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -3272,7 +3428,9 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 | Board | Repo: [andrewpaterson/658-Computer](https://github.com/andrewpaterson/658-Computer)<br>Board: `Selector 18bit.kicad_pcb` |
 |---|---|
 | Folder | Kicad / Computer / Component Boards / Selector 18bit |
-| Complexity | 1,222, medium |
+| Complexity | 232&nbsp;/&nbsp;1000 (size&nbsp;162, features&nbsp;70) |
+| KESE&nbsp;features | through vias, rounded,<br>trapezoid or chamfered pads,<br>knockout text, stack-up,<br>dielectric εr and tanδ |
+| Tested | 9th November 2026 |
 | Copper&nbsp;layers | 2 |
 | File&nbsp;format | KiCad 9 (20241229) |
 | Parts,&nbsp;tracks,&nbsp;vias | 14, 849, 115 |
@@ -3297,7 +3455,7 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 
 ## 23.2.81 State Reader 16bit
 
-![State Reader 16bit: stages 4 and 6 take 51% to 80% of a run. Simulation, GLB takes 3.6 s. Simulation, STEP takes 4.6 s. Simulation, STL takes 3.8 s. Simulation, OBJ takes 5.1 s. Visual, GLB takes 5.5 s. Visual, OBJ takes 6.7 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/corpus_2258.webp)
+![State Reader 16bit: stages 4 and 6 take 51% to 80% of a run. Simulation, GLB takes 3.6 s. Simulation, STEP takes 4.6 s. Simulation, STL takes 3.8 s. Simulation, OBJ takes 5.1 s. Visual, GLB takes 5.5 s. Visual, OBJ takes 6.7 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/658-Computer_State-Reader-16bit.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -3313,7 +3471,9 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 | Board | Repo: [andrewpaterson/658-Computer](https://github.com/andrewpaterson/658-Computer)<br>Board: `State Reader 16bit.kicad_pcb` |
 |---|---|
 | Folder | Kicad / Computer / Component Boards / State Reader 16bit |
-| Complexity | 448, low |
+| Complexity | 212&nbsp;/&nbsp;1000 (size&nbsp;142, features&nbsp;70) |
+| KESE&nbsp;features | through vias, rounded,<br>trapezoid or chamfered pads,<br>knockout text, stack-up,<br>dielectric εr and tanδ |
+| Tested | 9th November 2026 |
 | Copper&nbsp;layers | 2 |
 | File&nbsp;format | KiCad 9 (20241229) |
 | Parts,&nbsp;tracks,&nbsp;vias | 10, 350, 26 |
@@ -3338,7 +3498,7 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 
 ## 23.2.82 State Reader 8bit
 
-![State Reader 8bit: stages 4 and 6 take 50% to 77% of a run. Simulation, GLB takes 2.2 s. Simulation, STEP takes 3.0 s. Simulation, STL takes 2.2 s. Simulation, OBJ takes 2.9 s. Visual, GLB takes 3.3 s. Visual, OBJ takes 3.6 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/corpus_2615.webp)
+![State Reader 8bit: stages 4 and 6 take 50% to 77% of a run. Simulation, GLB takes 2.2 s. Simulation, STEP takes 3.0 s. Simulation, STL takes 2.2 s. Simulation, OBJ takes 2.9 s. Visual, GLB takes 3.3 s. Visual, OBJ takes 3.6 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/658-Computer_State-Reader-8bit.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -3354,7 +3514,9 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 | Board | Repo: [andrewpaterson/658-Computer](https://github.com/andrewpaterson/658-Computer)<br>Board: `State Reader 8bit.kicad_pcb` |
 |---|---|
 | Folder | Kicad / Computer / Component Boards / State Reader 8bit |
-| Complexity | 156, simple |
+| Complexity | 196&nbsp;/&nbsp;1000 (size&nbsp;126, features&nbsp;70) |
+| KESE&nbsp;features | through vias, rounded,<br>trapezoid or chamfered pads,<br>knockout text, stack-up,<br>dielectric εr and tanδ |
+| Tested | 9th November 2026 |
 | Copper&nbsp;layers | 2 |
 | File&nbsp;format | KiCad 9 (20241229) |
 | Parts,&nbsp;tracks,&nbsp;vias | 8, 147, 11 |
@@ -3379,7 +3541,7 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 
 ## 23.2.83 Coprocessor Board - Additional
 
-![Stages 4 and 6 take 52% to 86% of a run. Simulation, GLB takes 36 s. Simulation, STEP takes 45 s. Simulation, STL takes 36 s. Simulation, OBJ takes 56 s. Visual, GLB takes 53 s. Visual, OBJ takes 66 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/corpus_0865.webp)
+![Stages 4 and 6 take 52% to 86% of a run. Simulation, GLB takes 36 s. Simulation, STEP takes 45 s. Simulation, STL takes 36 s. Simulation, OBJ takes 56 s. Visual, GLB takes 53 s. Visual, OBJ takes 66 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/658-Computer_Coprocessor-Board-Additional.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -3395,7 +3557,9 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 | Board | Repo: [andrewpaterson/658-Computer](https://github.com/andrewpaterson/658-Computer)<br>Board: `Coprocessor Board - Additional.kicad_pcb` |
 |---|---|
 | Folder | Kicad / Computer / Coprocessor / Coprocessor Board - Additional |
-| Complexity | 3,056, high |
+| Complexity | 264&nbsp;/&nbsp;1000 (size&nbsp;184, features&nbsp;80) |
+| KESE&nbsp;features | through vias, rounded,<br>trapezoid or chamfered pads,<br>curved board outline,<br>knockout text, stack-up,<br>dielectric εr and tanδ |
+| Tested | 9th November 2026 |
 | Copper&nbsp;layers | 2 |
 | File&nbsp;format | KiCad 9 (20241229) |
 | Parts,&nbsp;tracks,&nbsp;vias | 27, 2,198, 268 |
@@ -3420,7 +3584,7 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 
 ## 23.2.84 Coprocessor Board - Main
 
-![Coprocessor Board - Main: stages 4 and 6 take 55% to 85% of a run. Simulation, GLB takes 51 s. Simulation, STEP takes 63 s. Simulation, STL takes 53 s. Simulation, OBJ takes 74 s. Visual, GLB takes 96 s. Visual, OBJ takes 2 min](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/corpus_0480.webp)
+![Coprocessor Board - Main: stages 4 and 6 take 55% to 85% of a run. Simulation, GLB takes 51 s. Simulation, STEP takes 63 s. Simulation, STL takes 53 s. Simulation, OBJ takes 74 s. Visual, GLB takes 96 s. Visual, OBJ takes 2 min](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/658-Computer_Coprocessor-Board-Main.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -3436,7 +3600,9 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 | Board | Repo: [andrewpaterson/658-Computer](https://github.com/andrewpaterson/658-Computer)<br>Board: `Coprocessor Board - Main.kicad_pcb` |
 |---|---|
 | Folder | Kicad / Computer / Coprocessor / Coprocessor Board - Main |
-| Complexity | 5,572, high |
+| Complexity | 279&nbsp;/&nbsp;1000 (size&nbsp;199, features&nbsp;80) |
+| KESE&nbsp;features | through vias, rounded,<br>trapezoid or chamfered pads,<br>curved board outline,<br>knockout text, stack-up,<br>dielectric εr and tanδ |
+| Tested | 9th November 2026 |
 | Copper&nbsp;layers | 2 |
 | File&nbsp;format | KiCad 9 (20241229) |
 | Parts,&nbsp;tracks,&nbsp;vias | 42, 3,940, 516 |
@@ -3461,7 +3627,7 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 
 ## 23.2.85 Coprocessor Clock
 
-![Coprocessor Clock: stages 4 and 6 take 49% to 79% of a run. Simulation, GLB takes 2.6 s. Simulation, STEP takes 3.6 s. Simulation, STL takes 2.6 s. Simulation, OBJ takes 3.5 s. Visual, GLB takes 3.6 s. Visual, OBJ takes 4.3 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/corpus_2530.webp)
+![Coprocessor Clock: stages 4 and 6 take 49% to 79% of a run. Simulation, GLB takes 2.6 s. Simulation, STEP takes 3.6 s. Simulation, STL takes 2.6 s. Simulation, OBJ takes 3.5 s. Visual, GLB takes 3.6 s. Visual, OBJ takes 4.3 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/658-Computer_Coprocessor-Clock.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -3477,7 +3643,9 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 | Board | Repo: [andrewpaterson/658-Computer](https://github.com/andrewpaterson/658-Computer)<br>Board: `Coprocessor Clock.kicad_pcb` |
 |---|---|
 | Folder | Kicad / Computer / Coprocessor / Coprocessor Clock |
-| Complexity | 230, simple |
+| Complexity | 202&nbsp;/&nbsp;1000 (size&nbsp;132, features&nbsp;70) |
+| KESE&nbsp;features | through vias, rounded,<br>trapezoid or chamfered pads,<br>knockout text, stack-up,<br>dielectric εr and tanδ |
+| Tested | 9th November 2026 |
 | Copper&nbsp;layers | 2 |
 | File&nbsp;format | KiCad 9 (20241229) |
 | Parts,&nbsp;tracks,&nbsp;vias | 12, 170, 12 |
@@ -3502,7 +3670,7 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 
 ## 23.2.86 Coprocessor Memory Select
 
-![Coprocessor Memory Select: stages 4 and 6 take 52% to 80% of a run. Simulation, GLB takes 3.2 s. Simulation, STEP takes 4.4 s. Simulation, STL takes 3.3 s. Simulation, OBJ takes 4.7 s. Visual, GLB takes 5.4 s. Visual, OBJ takes 6.5 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/corpus_2243.webp)
+![Coprocessor Memory Select: stages 4 and 6 take 52% to 80% of a run. Simulation, GLB takes 3.2 s. Simulation, STEP takes 4.4 s. Simulation, STL takes 3.3 s. Simulation, OBJ takes 4.7 s. Visual, GLB takes 5.4 s. Visual, OBJ takes 6.5 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/658-Computer_Coprocessor-Memory-Select.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -3518,7 +3686,9 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 | Board | Repo: [andrewpaterson/658-Computer](https://github.com/andrewpaterson/658-Computer)<br>Board: `Coprocessor Memory Select.kicad_pcb` |
 |---|---|
 | Folder | Kicad / Computer / Coprocessor / Coprocessor Memory Select |
-| Complexity | 468, low |
+| Complexity | 217&nbsp;/&nbsp;1000 (size&nbsp;147, features&nbsp;70) |
+| KESE&nbsp;features | through vias, rounded,<br>trapezoid or chamfered pads,<br>knockout text, stack-up,<br>dielectric εr and tanδ |
+| Tested | 9th November 2026 |
 | Copper&nbsp;layers | 2 |
 | File&nbsp;format | KiCad 9 (20241229) |
 | Parts,&nbsp;tracks,&nbsp;vias | 16, 304, 44 |
@@ -3543,7 +3713,7 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 
 ## 23.2.87 Coprocessor Support
 
-![Coprocessor Support: stages 4 and 6 take 52% to 81% of a run. Simulation, GLB takes 3.6 s. Simulation, STEP takes 4.9 s. Simulation, STL takes 3.7 s. Simulation, OBJ takes 5.4 s. Visual, GLB takes 5.6 s. Visual, OBJ takes 6.9 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/corpus_2007.webp)
+![Coprocessor Support: stages 4 and 6 take 52% to 81% of a run. Simulation, GLB takes 3.6 s. Simulation, STEP takes 4.9 s. Simulation, STL takes 3.7 s. Simulation, OBJ takes 5.4 s. Visual, GLB takes 5.6 s. Visual, OBJ takes 6.9 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/658-Computer_Coprocessor-Support.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -3559,7 +3729,9 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 | Board | Repo: [andrewpaterson/658-Computer](https://github.com/andrewpaterson/658-Computer)<br>Board: `Coprocessor Support.kicad_pcb` |
 |---|---|
 | Folder | Kicad / Computer / Coprocessor / Coprocessor Support |
-| Complexity | 705, low |
+| Complexity | 225&nbsp;/&nbsp;1000 (size&nbsp;155, features&nbsp;70) |
+| KESE&nbsp;features | through vias, rounded,<br>trapezoid or chamfered pads,<br>knockout text, stack-up,<br>dielectric εr and tanδ |
+| Tested | 9th November 2026 |
 | Copper&nbsp;layers | 2 |
 | File&nbsp;format | KiCad 9 (20241229) |
 | Parts,&nbsp;tracks,&nbsp;vias | 18, 447, 74 |
@@ -3584,7 +3756,7 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 
 ## 23.2.88 Coprocessor Transceiver
 
-![Coprocessor Transceiver: stages 4 and 6 take 50% to 83% of a run. Simulation, GLB takes 3.2 s. Simulation, STEP takes 4.1 s. Simulation, STL takes 3.2 s. Simulation, OBJ takes 4.6 s. Visual, GLB takes 4.8 s. Visual, OBJ takes 5.4 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/corpus_2468.webp)
+![Coprocessor Transceiver: stages 4 and 6 take 50% to 83% of a run. Simulation, GLB takes 3.2 s. Simulation, STEP takes 4.1 s. Simulation, STL takes 3.2 s. Simulation, OBJ takes 4.6 s. Visual, GLB takes 4.8 s. Visual, OBJ takes 5.4 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/658-Computer_Coprocessor-Transceiver.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -3600,7 +3772,9 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 | Board | Repo: [andrewpaterson/658-Computer](https://github.com/andrewpaterson/658-Computer)<br>Board: `Coprocessor Transceiver.kicad_pcb` |
 |---|---|
 | Folder | Kicad / Computer / Coprocessor / Coprocessor Transceiver |
-| Complexity | 271, low |
+| Complexity | 208&nbsp;/&nbsp;1000 (size&nbsp;138, features&nbsp;70) |
+| KESE&nbsp;features | through vias, rounded,<br>trapezoid or chamfered pads,<br>knockout text, stack-up,<br>dielectric εr and tanδ |
+| Tested | 9th November 2026 |
 | Copper&nbsp;layers | 2 |
 | File&nbsp;format | KiCad 9 (20241229) |
 | Parts,&nbsp;tracks,&nbsp;vias | 6, 284, 52 |
@@ -3625,7 +3799,7 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 
 ## 23.2.89 Graphics Board
 
-![Graphics Board: stages 4 and 6 take 55% to 85% of a run. Simulation, GLB takes 47 s. Simulation, STEP takes 58 s. Simulation, STL takes 48 s. Simulation, OBJ takes 72 s. Visual, GLB takes 76 s. Visual, OBJ takes 95 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/corpus_0479.webp)
+![Graphics Board: stages 4 and 6 take 55% to 85% of a run. Simulation, GLB takes 47 s. Simulation, STEP takes 58 s. Simulation, STL takes 48 s. Simulation, OBJ takes 72 s. Visual, GLB takes 76 s. Visual, OBJ takes 95 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/658-Computer_Graphics-Board.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -3641,7 +3815,9 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 | Board | Repo: [andrewpaterson/658-Computer](https://github.com/andrewpaterson/658-Computer)<br>Board: `Graphics Board.kicad_pcb` |
 |---|---|
 | Folder | Kicad / Computer / Graphics / Graphics Board |
-| Complexity | 5,574, high |
+| Complexity | 274&nbsp;/&nbsp;1000 (size&nbsp;194, features&nbsp;80) |
+| KESE&nbsp;features | through vias, rounded,<br>trapezoid or chamfered pads,<br>curved board outline,<br>knockout text, stack-up,<br>dielectric εr and tanδ |
+| Tested | 9th November 2026 |
 | Copper&nbsp;layers | 2 |
 | File&nbsp;format | KiCad 10 (20260206) |
 | Parts,&nbsp;tracks,&nbsp;vias | 28, 4,219, 433 |
@@ -3666,7 +3842,7 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 
 ## 23.2.90 Graphics Main Data
 
-![Graphics Main Data: stages 4 and 6 take 49% to 81% of a run. Simulation, GLB takes 2.7 s. Simulation, STEP takes 3.7 s. Simulation, STL takes 2.7 s. Simulation, OBJ takes 3.9 s. Visual, GLB takes 4.2 s. Visual, OBJ takes 4.9 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/corpus_2516.webp)
+![Graphics Main Data: stages 4 and 6 take 49% to 81% of a run. Simulation, GLB takes 2.7 s. Simulation, STEP takes 3.7 s. Simulation, STL takes 2.7 s. Simulation, OBJ takes 3.9 s. Visual, GLB takes 4.2 s. Visual, OBJ takes 4.9 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/658-Computer_Graphics-Main-Data.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -3682,7 +3858,9 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 | Board | Repo: [andrewpaterson/658-Computer](https://github.com/andrewpaterson/658-Computer)<br>Board: `Graphics Main Data.kicad_pcb` |
 |---|---|
 | Folder | Kicad / Computer / Graphics / Graphics Main Data |
-| Complexity | 242, simple |
+| Complexity | 203&nbsp;/&nbsp;1000 (size&nbsp;133, features&nbsp;70) |
+| KESE&nbsp;features | through vias, rounded,<br>trapezoid or chamfered pads,<br>knockout text, stack-up,<br>dielectric εr and tanδ |
+| Tested | 9th November 2026 |
 | Copper&nbsp;layers | 2 |
 | File&nbsp;format | KiCad 9 (20241229) |
 | Parts,&nbsp;tracks,&nbsp;vias | 8, 227, 20 |
@@ -3707,7 +3885,7 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 
 ## 23.2.91 Graphics Signals
 
-![Graphics Signals: stages 4 and 6 take 50% to 81% of a run. Simulation, GLB takes 5.3 s. Simulation, STEP takes 6.7 s. Simulation, STL takes 5.0 s. Simulation, OBJ takes 7.1 s. Visual, GLB takes 7.9 s. Visual, OBJ takes 9.6 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/corpus_1827.webp)
+![Graphics Signals: stages 4 and 6 take 50% to 81% of a run. Simulation, GLB takes 5.3 s. Simulation, STEP takes 6.7 s. Simulation, STL takes 5.0 s. Simulation, OBJ takes 7.1 s. Visual, GLB takes 7.9 s. Visual, OBJ takes 9.6 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/658-Computer_Graphics-Signals.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -3723,7 +3901,9 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 | Board | Repo: [andrewpaterson/658-Computer](https://github.com/andrewpaterson/658-Computer)<br>Board: `Graphics Signals.kicad_pcb` |
 |---|---|
 | Folder | Kicad / Computer / Graphics / Graphics Signals |
-| Complexity | 905, low |
+| Complexity | 234&nbsp;/&nbsp;1000 (size&nbsp;164, features&nbsp;70) |
+| KESE&nbsp;features | through vias, rounded,<br>trapezoid or chamfered pads,<br>knockout text, stack-up,<br>dielectric εr and tanδ |
+| Tested | 9th November 2026 |
 | Copper&nbsp;layers | 2 |
 | File&nbsp;format | KiCad 9 (20241229) |
 | Parts,&nbsp;tracks,&nbsp;vias | 28, 597, 84 |
@@ -3748,7 +3928,7 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 
 ## 23.2.92 Graphics Transparency
 
-![Graphics Transparency: stages 4 and 6 take 47% to 83% of a run. Simulation, GLB takes 5.4 s. Simulation, STEP takes 7.2 s. Simulation, STL takes 5.6 s. Simulation, OBJ takes 8.6 s. Visual, GLB takes 8.6 s. Visual, OBJ takes 11 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/corpus_1886.webp)
+![Graphics Transparency: stages 4 and 6 take 47% to 83% of a run. Simulation, GLB takes 5.4 s. Simulation, STEP takes 7.2 s. Simulation, STL takes 5.6 s. Simulation, OBJ takes 8.6 s. Visual, GLB takes 8.6 s. Visual, OBJ takes 11 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/658-Computer_Graphics-Transparency.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -3764,7 +3944,9 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 | Board | Repo: [andrewpaterson/658-Computer](https://github.com/andrewpaterson/658-Computer)<br>Board: `Graphics Transparency.kicad_pcb` |
 |---|---|
 | Folder | Kicad / Computer / Graphics / Graphics Transparency |
-| Complexity | 844, low |
+| Complexity | 227&nbsp;/&nbsp;1000 (size&nbsp;157, features&nbsp;70) |
+| KESE&nbsp;features | through vias, rounded,<br>trapezoid or chamfered pads,<br>knockout text, stack-up,<br>dielectric εr and tanδ |
+| Tested | 9th November 2026 |
 | Copper&nbsp;layers | 2 |
 | File&nbsp;format | KiCad 9 (20241229) |
 | Parts,&nbsp;tracks,&nbsp;vias | 16, 545, 89 |
@@ -3789,7 +3971,7 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 
 ## 23.2.93 LCD Board
 
-![LCD Board: stages 4 and 6 take 54% to 85% of a run. Simulation, GLB takes 17 s. Simulation, STEP takes 21 s. Simulation, STL takes 17 s. Simulation, OBJ takes 25 s. Visual, GLB takes 26 s. Visual, OBJ takes 31 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/corpus_1406.webp)
+![LCD Board: stages 4 and 6 take 54% to 85% of a run. Simulation, GLB takes 17 s. Simulation, STEP takes 21 s. Simulation, STL takes 17 s. Simulation, OBJ takes 25 s. Visual, GLB takes 26 s. Visual, OBJ takes 31 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/658-Computer_LCD-Board.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -3805,7 +3987,9 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 | Board | Repo: [andrewpaterson/658-Computer](https://github.com/andrewpaterson/658-Computer)<br>Board: `LCD Board.kicad_pcb` |
 |---|---|
 | Folder | Kicad / Computer / LCD / LCD Board |
-| Complexity | 1,536, medium |
+| Complexity | 248&nbsp;/&nbsp;1000 (size&nbsp;168, features&nbsp;80) |
+| KESE&nbsp;features | through vias, rounded,<br>trapezoid or chamfered pads,<br>curved board outline,<br>knockout text, stack-up,<br>dielectric εr and tanδ |
+| Tested | 9th November 2026 |
 | Copper&nbsp;layers | 2 |
 | File&nbsp;format | KiCad 9 (20241229) |
 | Parts,&nbsp;tracks,&nbsp;vias | 17, 1,151, 117 |
@@ -3830,7 +4014,7 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 
 ## 23.2.94 LCD Display
 
-![LCD Display: stages 4 and 6 take 53% to 82% of a run. Simulation, GLB takes 7.5 s. Simulation, STEP takes 9.2 s. Simulation, STL takes 7.4 s. Simulation, OBJ takes 11 s. Visual, GLB takes 11 s. Visual, OBJ takes 14 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/corpus_1586.webp)
+![LCD Display: stages 4 and 6 take 53% to 82% of a run. Simulation, GLB takes 7.5 s. Simulation, STEP takes 9.2 s. Simulation, STL takes 7.4 s. Simulation, OBJ takes 11 s. Visual, GLB takes 11 s. Visual, OBJ takes 14 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/658-Computer_LCD-Display.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -3846,7 +4030,9 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 | Board | Repo: [andrewpaterson/658-Computer](https://github.com/andrewpaterson/658-Computer)<br>Board: `LCD Display.kicad_pcb` |
 |---|---|
 | Folder | Kicad / Computer / LCD / LCD Display |
-| Complexity | 1,239, medium |
+| Complexity | 246&nbsp;/&nbsp;1000 (size&nbsp;166, features&nbsp;80) |
+| KESE&nbsp;features | through vias, rounded,<br>trapezoid or chamfered pads,<br>curved board outline,<br>knockout text, stack-up,<br>dielectric εr and tanδ |
+| Tested | 9th November 2026 |
 | Copper&nbsp;layers | 2 |
 | File&nbsp;format | KiCad 9 (20241229) |
 | Parts,&nbsp;tracks,&nbsp;vias | 20, 878, 107 |
@@ -3871,7 +4057,7 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 
 ## 23.2.95 Clock Device
 
-![Clock Device: stages 4 and 6 take 51% to 81% of a run. Simulation, GLB takes 4.9 s. Simulation, STEP takes 6.2 s. Simulation, STL takes 4.8 s. Simulation, OBJ takes 7.2 s. Visual, GLB takes 7.2 s. Visual, OBJ takes 9.1 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/corpus_1992.webp)
+![Clock Device: stages 4 and 6 take 51% to 81% of a run. Simulation, GLB takes 4.9 s. Simulation, STEP takes 6.2 s. Simulation, STL takes 4.8 s. Simulation, OBJ takes 7.2 s. Visual, GLB takes 7.2 s. Visual, OBJ takes 9.1 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/658-Computer_Clock-Device.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -3887,7 +4073,9 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 | Board | Repo: [andrewpaterson/658-Computer](https://github.com/andrewpaterson/658-Computer)<br>Board: `Clock Device.kicad_pcb` |
 |---|---|
 | Folder | Kicad / Computer / Main / Clock Device |
-| Complexity | 719, low |
+| Complexity | 236&nbsp;/&nbsp;1000 (size&nbsp;156, features&nbsp;80) |
+| KESE&nbsp;features | through vias, rounded,<br>trapezoid or chamfered pads,<br>curved board outline,<br>knockout text, stack-up,<br>dielectric εr and tanδ |
+| Tested | 9th November 2026 |
 | Copper&nbsp;layers | 2 |
 | File&nbsp;format | KiCad 9 (20241229) |
 | Parts,&nbsp;tracks,&nbsp;vias | 18, 446, 79 |
@@ -3912,7 +4100,7 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 
 ## 23.2.96 Clock LTC6903
 
-![Clock LTC6903: stages 4 and 6 take 40% to 69% of a run. Simulation, GLB takes 1.4 s. Simulation, STEP takes 2.2 s. Simulation, STL takes 1.5 s. Simulation, OBJ takes 1.7 s. Visual, GLB takes 1.4 s. Visual, OBJ takes 1.7 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/corpus_2937.webp)
+![Clock LTC6903: stages 4 and 6 take 40% to 69% of a run. Simulation, GLB takes 1.4 s. Simulation, STEP takes 2.2 s. Simulation, STL takes 1.5 s. Simulation, OBJ takes 1.7 s. Visual, GLB takes 1.4 s. Visual, OBJ takes 1.7 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/658-Computer_Clock-LTC6903.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -3928,7 +4116,9 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 | Board | Repo: [andrewpaterson/658-Computer](https://github.com/andrewpaterson/658-Computer)<br>Board: `Clock LTC6903.kicad_pcb` |
 |---|---|
 | Folder | Kicad / Computer / Main / Clock LTC6903 |
-| Complexity | 15, simple |
+| Complexity | 156&nbsp;/&nbsp;1000 (size&nbsp;86, features&nbsp;70) |
+| KESE&nbsp;features | rounded,<br>trapezoid or chamfered pads,<br>filled zones, curved board outline,<br>stack-up, dielectric εr and tanδ |
+| Tested | 9th November 2026 |
 | Copper&nbsp;layers | 2 |
 | File&nbsp;format | KiCad 9 (20241229) |
 | Parts,&nbsp;tracks,&nbsp;vias | 5, 20, 0 |
@@ -3953,7 +4143,7 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 
 ## 23.2.97 Clock Oscillator
 
-![Clock Oscillator: stages 4 and 6 take 48% to 62% of a run. Simulation, GLB takes 0.9 s. Simulation, STEP takes 1.4 s. Simulation, STL takes 1.0 s. Simulation, OBJ takes 1.2 s. Visual, GLB takes 1.1 s. Visual, OBJ takes 1.5 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/corpus_2987.webp)
+![Clock Oscillator: stages 4 and 6 take 48% to 62% of a run. Simulation, GLB takes 0.9 s. Simulation, STEP takes 1.4 s. Simulation, STL takes 1.0 s. Simulation, OBJ takes 1.2 s. Visual, GLB takes 1.1 s. Visual, OBJ takes 1.5 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/658-Computer_Clock-Oscillator.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -3969,7 +4159,9 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 | Board | Repo: [andrewpaterson/658-Computer](https://github.com/andrewpaterson/658-Computer)<br>Board: `Clock Oscillator.kicad_pcb` |
 |---|---|
 | Folder | Kicad / Computer / Main / Clock Oscillator |
-| Complexity | 6, simple |
+| Complexity | 122&nbsp;/&nbsp;1000 (size&nbsp;72, features&nbsp;50) |
+| KESE&nbsp;features | rounded,<br>trapezoid or chamfered pads,<br>curved board outline, stack-up,<br>dielectric εr and tanδ |
+| Tested | 9th November 2026 |
 | Copper&nbsp;layers | 2 |
 | File&nbsp;format | KiCad 9 (20241229) |
 | Parts,&nbsp;tracks,&nbsp;vias | 4, 9, 0 |
@@ -3994,7 +4186,7 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 
 ## 23.2.98 Clock Push Button
 
-![Clock Push Button: stages 4 and 6 take 39% to 71% of a run. Simulation, GLB takes 1.2 s. Simulation, STEP takes 2.0 s. Simulation, STL takes 1.2 s. Simulation, OBJ takes 1.5 s. Visual, GLB takes 1.7 s. Visual, OBJ takes 2.0 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/corpus_2792.webp)
+![Clock Push Button: stages 4 and 6 take 39% to 71% of a run. Simulation, GLB takes 1.2 s. Simulation, STEP takes 2.0 s. Simulation, STL takes 1.2 s. Simulation, OBJ takes 1.5 s. Visual, GLB takes 1.7 s. Visual, OBJ takes 2.0 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/658-Computer_Clock-Push-Button.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -4010,7 +4202,9 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 | Board | Repo: [andrewpaterson/658-Computer](https://github.com/andrewpaterson/658-Computer)<br>Board: `Clock Push Button.kicad_pcb` |
 |---|---|
 | Folder | Kicad / Computer / Main / Clock Push Button |
-| Complexity | 58, simple |
+| Complexity | 159&nbsp;/&nbsp;1000 (size&nbsp;109, features&nbsp;50) |
+| KESE&nbsp;features | rounded,<br>trapezoid or chamfered pads,<br>curved board outline, stack-up,<br>dielectric εr and tanδ |
+| Tested | 9th November 2026 |
 | Copper&nbsp;layers | 2 |
 | File&nbsp;format | KiCad 9 (20241229) |
 | Parts,&nbsp;tracks,&nbsp;vias | 7, 69, 0 |
@@ -4035,7 +4229,7 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 
 ## 23.2.99 Default Board
 
-![Default Board: stages 4 and 6 take 53% to 79% of a run. Simulation, GLB takes 7.4 s. Simulation, STEP takes 9.2 s. Simulation, STL takes 7.6 s. Simulation, OBJ takes 11 s. Visual, GLB takes 11 s. Visual, OBJ takes 13 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/corpus_2884.webp)
+![Default Board: stages 4 and 6 take 53% to 79% of a run. Simulation, GLB takes 7.4 s. Simulation, STEP takes 9.2 s. Simulation, STL takes 7.6 s. Simulation, OBJ takes 11 s. Visual, GLB takes 11 s. Visual, OBJ takes 13 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/658-Computer_Default-Board.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -4051,7 +4245,9 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 | Board | Repo: [andrewpaterson/658-Computer](https://github.com/andrewpaterson/658-Computer)<br>Board: `Default Board.kicad_pcb` |
 |---|---|
 | Folder | Kicad / Computer / Main / Default Board |
-| Complexity | 30, simple |
+| Complexity | 167&nbsp;/&nbsp;1000 (size&nbsp;82, features&nbsp;85) |
+| KESE&nbsp;features | rounded,<br>trapezoid or chamfered pads,<br>filled zones, curved board outline,<br>knockout text, stack-up,<br>dielectric εr and tanδ |
+| Tested | 9th November 2026 |
 | Copper&nbsp;layers | 2 |
 | File&nbsp;format | KiCad 9 (20241229) |
 | Parts,&nbsp;tracks,&nbsp;vias | 10, 10, 0 |
@@ -4076,7 +4272,7 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 
 ## 23.2.100 Main Memory Channel
 
-![Main Memory Channel: stages 4 and 6 take 51% to 82% of a run. Simulation, GLB takes 5.1 s. Simulation, STEP takes 6.6 s. Simulation, STL takes 5.2 s. Simulation, OBJ takes 7.3 s. Visual, GLB takes 7.4 s. Visual, OBJ takes 9.1 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/corpus_1933.webp)
+![Main Memory Channel: stages 4 and 6 take 51% to 82% of a run. Simulation, GLB takes 5.1 s. Simulation, STEP takes 6.6 s. Simulation, STL takes 5.2 s. Simulation, OBJ takes 7.3 s. Visual, GLB takes 7.4 s. Visual, OBJ takes 9.1 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/658-Computer_Main-Memory-Channel.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -4092,7 +4288,9 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 | Board | Repo: [andrewpaterson/658-Computer](https://github.com/andrewpaterson/658-Computer)<br>Board: `Main Memory Channel.kicad_pcb` |
 |---|---|
 | Folder | Kicad / Computer / Main / Main Memory Channel |
-| Complexity | 782, low |
+| Complexity | 225&nbsp;/&nbsp;1000 (size&nbsp;155, features&nbsp;70) |
+| KESE&nbsp;features | through vias, rounded,<br>trapezoid or chamfered pads,<br>knockout text, stack-up,<br>dielectric εr and tanδ |
+| Tested | 9th November 2026 |
 | Copper&nbsp;layers | 2 |
 | File&nbsp;format | KiCad 9 (20241229) |
 | Parts,&nbsp;tracks,&nbsp;vias | 14, 541, 71 |
@@ -4117,7 +4315,7 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 
 ## 23.2.101 Main Memory Full Abort
 
-![Main Memory Full Abort: stages 4 and 6 take 51% to 83% of a run. Simulation, GLB takes 7.4 s. Simulation, STEP takes 9.4 s. Simulation, STL takes 7.2 s. Simulation, OBJ takes 11 s. Visual, GLB takes 11 s. Visual, OBJ takes 14 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/corpus_1434.webp)
+![Main Memory Full Abort: stages 4 and 6 take 51% to 83% of a run. Simulation, GLB takes 7.4 s. Simulation, STEP takes 9.4 s. Simulation, STL takes 7.2 s. Simulation, OBJ takes 11 s. Visual, GLB takes 11 s. Visual, OBJ takes 14 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/658-Computer_Main-Memory-Full-Abort.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -4133,7 +4331,9 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 | Board | Repo: [andrewpaterson/658-Computer](https://github.com/andrewpaterson/658-Computer)<br>Board: `Main Memory Full Abort.kicad_pcb` |
 |---|---|
 | Folder | Kicad / Computer / Main / Main Memory Full Abort |
-| Complexity | 1,505, medium |
+| Complexity | 254&nbsp;/&nbsp;1000 (size&nbsp;174, features&nbsp;80) |
+| KESE&nbsp;features | through vias, rounded,<br>trapezoid or chamfered pads,<br>curved board outline,<br>knockout text, stack-up,<br>dielectric εr and tanδ |
+| Tested | 9th November 2026 |
 | Copper&nbsp;layers | 2 |
 | File&nbsp;format | KiCad 9 (20241229) |
 | Parts,&nbsp;tracks,&nbsp;vias | 31, 1,062, 127 |
@@ -4158,7 +4358,7 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 
 ## 23.2.102 Main Memory Full Enable
 
-![Main Memory Full Enable: stages 4 and 6 take 51% to 82% of a run. Simulation, GLB takes 4.9 s. Simulation, STEP takes 6.4 s. Simulation, STL takes 5.0 s. Simulation, OBJ takes 7.6 s. Visual, GLB takes 7.0 s. Visual, OBJ takes 9.3 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/corpus_2061.webp)
+![Main Memory Full Enable: stages 4 and 6 take 51% to 82% of a run. Simulation, GLB takes 4.9 s. Simulation, STEP takes 6.4 s. Simulation, STL takes 5.0 s. Simulation, OBJ takes 7.6 s. Visual, GLB takes 7.0 s. Visual, OBJ takes 9.3 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/658-Computer_Main-Memory-Full-Enable.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -4174,7 +4374,9 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 | Board | Repo: [andrewpaterson/658-Computer](https://github.com/andrewpaterson/658-Computer)<br>Board: `Main Memory Full Enable.kicad_pcb` |
 |---|---|
 | Folder | Kicad / Computer / Main / Main Memory Full Enable |
-| Complexity | 642, low |
+| Complexity | 224&nbsp;/&nbsp;1000 (size&nbsp;154, features&nbsp;70) |
+| KESE&nbsp;features | through vias, rounded,<br>trapezoid or chamfered pads,<br>knockout text, stack-up,<br>dielectric εr and tanδ |
+| Tested | 9th November 2026 |
 | Copper&nbsp;layers | 2 |
 | File&nbsp;format | KiCad 9 (20241229) |
 | Parts,&nbsp;tracks,&nbsp;vias | 18, 405, 67 |
@@ -4199,7 +4401,7 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 
 ## 23.2.103 Main Memory Select
 
-![Main Memory Select: stages 4 and 6 take 52% to 83% of a run. Simulation, GLB takes 7.0 s. Simulation, STEP takes 10 s. Simulation, STL takes 7.2 s. Simulation, OBJ takes 10 s. Visual, GLB takes 10 s. Visual, OBJ takes 14 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/corpus_1774.webp)
+![Main Memory Select: stages 4 and 6 take 52% to 83% of a run. Simulation, GLB takes 7.0 s. Simulation, STEP takes 10 s. Simulation, STL takes 7.2 s. Simulation, OBJ takes 10 s. Visual, GLB takes 10 s. Visual, OBJ takes 14 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/658-Computer_Main-Memory-Select.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -4215,7 +4417,9 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 | Board | Repo: [andrewpaterson/658-Computer](https://github.com/andrewpaterson/658-Computer)<br>Board: `Main Memory Select.kicad_pcb` |
 |---|---|
 | Folder | Kicad / Computer / Main / Main Memory Select |
-| Complexity | 973, low |
+| Complexity | 230&nbsp;/&nbsp;1000 (size&nbsp;160, features&nbsp;70) |
+| KESE&nbsp;features | through vias, rounded,<br>trapezoid or chamfered pads,<br>knockout text, stack-up,<br>dielectric εr and tanδ |
+| Tested | 9th November 2026 |
 | Copper&nbsp;layers | 2 |
 | File&nbsp;format | KiCad 9 (20241229) |
 | Parts,&nbsp;tracks,&nbsp;vias | 16, 668, 91 |
@@ -4240,7 +4444,7 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 
 ## 23.2.104 Main Memory Small Abort
 
-![Main Memory Small Abort: stages 4 and 6 take 50% to 81% of a run. Simulation, GLB takes 3.8 s. Simulation, STEP takes 5.0 s. Simulation, STL takes 3.7 s. Simulation, OBJ takes 5.8 s. Visual, GLB takes 5.7 s. Visual, OBJ takes 7.0 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/corpus_2196.webp)
+![Main Memory Small Abort: stages 4 and 6 take 50% to 81% of a run. Simulation, GLB takes 3.8 s. Simulation, STEP takes 5.0 s. Simulation, STL takes 3.7 s. Simulation, OBJ takes 5.8 s. Visual, GLB takes 5.7 s. Visual, OBJ takes 7.0 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/658-Computer_Main-Memory-Small-Abort.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -4256,7 +4460,9 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 | Board | Repo: [andrewpaterson/658-Computer](https://github.com/andrewpaterson/658-Computer)<br>Board: `Main Memory Small Abort.kicad_pcb` |
 |---|---|
 | Folder | Kicad / Computer / Main / Main Memory Small Abort |
-| Complexity | 518, low |
+| Complexity | 219&nbsp;/&nbsp;1000 (size&nbsp;149, features&nbsp;70) |
+| KESE&nbsp;features | through vias, rounded,<br>trapezoid or chamfered pads,<br>knockout text, stack-up,<br>dielectric εr and tanδ |
+| Tested | 9th November 2026 |
 | Copper&nbsp;layers | 2 |
 | File&nbsp;format | KiCad 9 (20241229) |
 | Parts,&nbsp;tracks,&nbsp;vias | 16, 339, 49 |
@@ -4281,7 +4487,7 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 
 ## 23.2.105 Main Memory Small Enable
 
-![Main Memory Small Enable: stages 4 and 6 take 48% to 81% of a run. Simulation, GLB takes 3.8 s. Simulation, STEP takes 5.2 s. Simulation, STL takes 3.7 s. Simulation, OBJ takes 5.4 s. Visual, GLB takes 5.5 s. Visual, OBJ takes 6.8 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/corpus_2248.webp)
+![Main Memory Small Enable: stages 4 and 6 take 48% to 81% of a run. Simulation, GLB takes 3.8 s. Simulation, STEP takes 5.2 s. Simulation, STL takes 3.7 s. Simulation, OBJ takes 5.4 s. Visual, GLB takes 5.5 s. Visual, OBJ takes 6.8 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/658-Computer_Main-Memory-Small-Enable.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -4297,7 +4503,9 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 | Board | Repo: [andrewpaterson/658-Computer](https://github.com/andrewpaterson/658-Computer)<br>Board: `Main Memory Small Enable.kicad_pcb` |
 |---|---|
 | Folder | Kicad / Computer / Main / Main Memory Small Enable |
-| Complexity | 463, low |
+| Complexity | 216&nbsp;/&nbsp;1000 (size&nbsp;146, features&nbsp;70) |
+| KESE&nbsp;features | through vias, rounded,<br>trapezoid or chamfered pads,<br>knockout text, stack-up,<br>dielectric εr and tanδ |
+| Tested | 9th November 2026 |
 | Copper&nbsp;layers | 2 |
 | File&nbsp;format | KiCad 9 (20241229) |
 | Parts,&nbsp;tracks,&nbsp;vias | 14, 330, 35 |
@@ -4322,7 +4530,7 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 
 ## 23.2.106 Mainboard Full
 
-![Mainboard Full: stages 4 and 6 take 53% to 87% of a run. Simulation, GLB takes 2 min. Simulation, STEP takes 3 min. Simulation, STL takes 3 min. Simulation, OBJ takes 4 min. Visual, GLB takes 4 min. Visual, OBJ takes 4 min](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/corpus_0221.webp)
+![Mainboard Full: stages 4 and 6 take 53% to 87% of a run. Simulation, GLB takes 2 min. Simulation, STEP takes 3 min. Simulation, STL takes 3 min. Simulation, OBJ takes 4 min. Visual, GLB takes 4 min. Visual, OBJ takes 4 min](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/658-Computer_Mainboard-Full.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -4338,7 +4546,9 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 | Board | Repo: [andrewpaterson/658-Computer](https://github.com/andrewpaterson/658-Computer)<br>Board: `Mainboard Full.kicad_pcb` |
 |---|---|
 | Folder | Kicad / Computer / Main / Mainboard Full |
-| Complexity | 11,022, very high |
+| Complexity | 298&nbsp;/&nbsp;1000 (size&nbsp;218, features&nbsp;80) |
+| KESE&nbsp;features | through vias, rounded,<br>trapezoid or chamfered pads,<br>curved board outline,<br>knockout text, stack-up,<br>dielectric εr and tanδ |
+| Tested | 9th November 2026 |
 | Copper&nbsp;layers | 2 |
 | File&nbsp;format | KiCad 9 (20241229) |
 | Parts,&nbsp;tracks,&nbsp;vias | 87, 9,120, 576 |
@@ -4363,7 +4573,7 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 
 ## 23.2.107 Mainboard Small
 
-![Mainboard Small: stages 4 and 6 take 55% to 86% of a run. Simulation, GLB takes 76 s. Simulation, STEP takes 92 s. Simulation, STL takes 77 s. Simulation, OBJ takes 2 min. Visual, GLB takes 2 min. Visual, OBJ takes 2 min](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/corpus_0478.webp)
+![Mainboard Small: stages 4 and 6 take 55% to 86% of a run. Simulation, GLB takes 76 s. Simulation, STEP takes 92 s. Simulation, STL takes 77 s. Simulation, OBJ takes 2 min. Visual, GLB takes 2 min. Visual, OBJ takes 2 min](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/658-Computer_Mainboard-Small.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -4379,7 +4589,9 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 | Board | Repo: [andrewpaterson/658-Computer](https://github.com/andrewpaterson/658-Computer)<br>Board: `Mainboard Small.kicad_pcb` |
 |---|---|
 | Folder | Kicad / Computer / Main / Mainboard Small |
-| Complexity | 5,589, high |
+| Complexity | 281&nbsp;/&nbsp;1000 (size&nbsp;201, features&nbsp;80) |
+| KESE&nbsp;features | through vias, rounded,<br>trapezoid or chamfered pads,<br>curved board outline,<br>knockout text, stack-up,<br>dielectric εr and tanδ |
+| Tested | 9th November 2026 |
 | Copper&nbsp;layers | 2 |
 | File&nbsp;format | KiCad 9 (20241229) |
 | Parts,&nbsp;tracks,&nbsp;vias | 51, 4,728, 253 |
@@ -4404,7 +4616,7 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 
 ## 23.2.108 Processor Full Device
 
-![Processor Full Device: stages 4 and 6 take 54% to 84% of a run. Simulation, GLB takes 7.2 s. Simulation, STEP takes 8.9 s. Simulation, STL takes 7.3 s. Simulation, OBJ takes 10 s. Visual, GLB takes 13 s. Visual, OBJ takes 15 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/corpus_1319.webp)
+![Processor Full Device: stages 4 and 6 take 54% to 84% of a run. Simulation, GLB takes 7.2 s. Simulation, STEP takes 8.9 s. Simulation, STL takes 7.3 s. Simulation, OBJ takes 10 s. Visual, GLB takes 13 s. Visual, OBJ takes 15 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/658-Computer_Processor-Full-Device.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -4420,7 +4632,9 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 | Board | Repo: [andrewpaterson/658-Computer](https://github.com/andrewpaterson/658-Computer)<br>Board: `Processor Full Device.kicad_pcb` |
 |---|---|
 | Folder | Kicad / Computer / Main / Processor Full Device |
-| Complexity | 1,702, medium |
+| Complexity | 247&nbsp;/&nbsp;1000 (size&nbsp;177, features&nbsp;70) |
+| KESE&nbsp;features | through vias, rounded,<br>trapezoid or chamfered pads,<br>knockout text, stack-up,<br>dielectric εr and tanδ |
+| Tested | 9th November 2026 |
 | Copper&nbsp;layers | 2 |
 | File&nbsp;format | KiCad 9 (20241229) |
 | Parts,&nbsp;tracks,&nbsp;vias | 34, 1,154, 160 |
@@ -4445,7 +4659,7 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 
 ## 23.2.109 Processor Reset Device
 
-![Processor Reset Device: stages 4 and 6 take 50% to 80% of a run. Simulation, GLB takes 2.7 s. Simulation, STEP takes 3.7 s. Simulation, STL takes 2.5 s. Simulation, OBJ takes 3.8 s. Visual, GLB takes 3.9 s. Visual, OBJ takes 4.7 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/corpus_2300.webp)
+![Processor Reset Device: stages 4 and 6 take 50% to 80% of a run. Simulation, GLB takes 2.7 s. Simulation, STEP takes 3.7 s. Simulation, STL takes 2.5 s. Simulation, OBJ takes 3.8 s. Visual, GLB takes 3.9 s. Visual, OBJ takes 4.7 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/658-Computer_Processor-Reset-Device.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -4461,7 +4675,9 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 | Board | Repo: [andrewpaterson/658-Computer](https://github.com/andrewpaterson/658-Computer)<br>Board: `Processor Reset Device.kicad_pcb` |
 |---|---|
 | Folder | Kicad / Computer / Main / Processor Reset Device |
-| Complexity | 412, low |
+| Complexity | 216&nbsp;/&nbsp;1000 (size&nbsp;146, features&nbsp;70) |
+| KESE&nbsp;features | through vias, rounded,<br>trapezoid or chamfered pads,<br>knockout text, stack-up,<br>dielectric εr and tanδ |
+| Tested | 9th November 2026 |
 | Copper&nbsp;layers | 2 |
 | File&nbsp;format | KiCad 9 (20241229) |
 | Parts,&nbsp;tracks,&nbsp;vias | 18, 265, 37 |
@@ -4486,7 +4702,7 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 
 ## 23.2.110 Processor Small Device
 
-![Processor Small Device: stages 4 and 6 take 50% to 82% of a run. Simulation, GLB takes 3.7 s. Simulation, STEP takes 4.9 s. Simulation, STL takes 3.7 s. Simulation, OBJ takes 5.5 s. Visual, GLB takes 5.6 s. Visual, OBJ takes 7.1 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/corpus_2217.webp)
+![Processor Small Device: stages 4 and 6 take 50% to 82% of a run. Simulation, GLB takes 3.7 s. Simulation, STEP takes 4.9 s. Simulation, STL takes 3.7 s. Simulation, OBJ takes 5.5 s. Visual, GLB takes 5.6 s. Visual, OBJ takes 7.1 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/658-Computer_Processor-Small-Device.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -4502,7 +4718,9 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 | Board | Repo: [andrewpaterson/658-Computer](https://github.com/andrewpaterson/658-Computer)<br>Board: `Processor Small Device.kicad_pcb` |
 |---|---|
 | Folder | Kicad / Computer / Main / Processor Small Device |
-| Complexity | 493, low |
+| Complexity | 217&nbsp;/&nbsp;1000 (size&nbsp;147, features&nbsp;70) |
+| KESE&nbsp;features | through vias, rounded,<br>trapezoid or chamfered pads,<br>knockout text, stack-up,<br>dielectric εr and tanδ |
+| Tested | 9th November 2026 |
 | Copper&nbsp;layers | 2 |
 | File&nbsp;format | KiCad 9 (20241229) |
 | Parts,&nbsp;tracks,&nbsp;vias | 14, 339, 42 |
@@ -4527,7 +4745,7 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 
 ## 23.2.111 Status Device
 
-![Status Device: stages 4 and 6 take 53% to 82% of a run. Simulation, GLB takes 8.6 s. Simulation, STEP takes 12 s. Simulation, STL takes 9.2 s. Simulation, OBJ takes 13 s. Visual, GLB takes 13 s. Visual, OBJ takes 17 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/corpus_1210.webp)
+![Status Device: stages 4 and 6 take 53% to 82% of a run. Simulation, GLB takes 8.6 s. Simulation, STEP takes 12 s. Simulation, STL takes 9.2 s. Simulation, OBJ takes 13 s. Visual, GLB takes 13 s. Visual, OBJ takes 17 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/658-Computer_Status-Device.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -4543,7 +4761,9 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 | Board | Repo: [andrewpaterson/658-Computer](https://github.com/andrewpaterson/658-Computer)<br>Board: `Status Device.kicad_pcb` |
 |---|---|
 | Folder | Kicad / Computer / Main / Status Device |
-| Complexity | 1,934, medium |
+| Complexity | 258&nbsp;/&nbsp;1000 (size&nbsp;178, features&nbsp;80) |
+| KESE&nbsp;features | through vias, rounded,<br>trapezoid or chamfered pads,<br>curved board outline,<br>knockout text, stack-up,<br>dielectric εr and tanδ |
+| Tested | 9th November 2026 |
 | Copper&nbsp;layers | 2 |
 | File&nbsp;format | KiCad 9 (20241229) |
 | Parts,&nbsp;tracks,&nbsp;vias | 33, 1,184, 228 |
@@ -4568,7 +4788,7 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 
 ## 23.2.112 Triple MPU Clock Generator
 
-![Triple MPU Clock Generator: stages 4 and 6 take 52% to 83% of a run. Simulation, GLB takes 13 s. Simulation, STEP takes 15 s. Simulation, STL takes 12 s. Simulation, OBJ takes 19 s. Visual, GLB takes 19 s. Visual, OBJ takes 24 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/corpus_1238.webp)
+![Triple MPU Clock Generator: stages 4 and 6 take 52% to 83% of a run. Simulation, GLB takes 13 s. Simulation, STEP takes 15 s. Simulation, STL takes 12 s. Simulation, OBJ takes 19 s. Visual, GLB takes 19 s. Visual, OBJ takes 24 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/658-Computer_Triple-MPU-Clock-Generator.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -4584,7 +4804,9 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 | Board | Repo: [andrewpaterson/658-Computer](https://github.com/andrewpaterson/658-Computer)<br>Board: `Triple MPU Clock Generator.kicad_pcb` |
 |---|---|
 | Folder | Kicad / Computer / Main / Triple MPU Clock Generator |
-| Complexity | 1,882, medium |
+| Complexity | 251&nbsp;/&nbsp;1000 (size&nbsp;181, features&nbsp;70) |
+| KESE&nbsp;features | through vias, rounded,<br>trapezoid or chamfered pads,<br>knockout text, stack-up,<br>dielectric εr and tanδ |
+| Tested | 9th November 2026 |
 | Copper&nbsp;layers | 2 |
 | File&nbsp;format | KiCad 9 (20241229) |
 | Parts,&nbsp;tracks,&nbsp;vias | 46, 1,232, 186 |
@@ -4609,7 +4831,7 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 
 ## 23.2.113 Memory 1MB
 
-![Memory 1MB: stages 4 and 6 take 49% to 82% of a run. Simulation, GLB takes 4.6 s. Simulation, STEP takes 6.2 s. Simulation, STL takes 4.9 s. Simulation, OBJ takes 6.9 s. Visual, GLB takes 6.8 s. Visual, OBJ takes 8.5 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/corpus_1979.webp)
+![Memory 1MB: stages 4 and 6 take 49% to 82% of a run. Simulation, GLB takes 4.6 s. Simulation, STEP takes 6.2 s. Simulation, STL takes 4.9 s. Simulation, OBJ takes 6.9 s. Visual, GLB takes 6.8 s. Visual, OBJ takes 8.5 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/658-Computer_Memory-1MB.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -4625,7 +4847,9 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 | Board | Repo: [andrewpaterson/658-Computer](https://github.com/andrewpaterson/658-Computer)<br>Board: `Memory 1MB.kicad_pcb` |
 |---|---|
 | Folder | Kicad / Computer / Memory / Memory 1MB |
-| Complexity | 735, low |
+| Complexity | 220&nbsp;/&nbsp;1000 (size&nbsp;150, features&nbsp;70) |
+| KESE&nbsp;features | through vias, rounded,<br>trapezoid or chamfered pads,<br>knockout text, stack-up,<br>dielectric εr and tanδ |
+| Tested | 9th November 2026 |
 | Copper&nbsp;layers | 2 |
 | File&nbsp;format | KiCad 9 (20241229) |
 | Parts,&nbsp;tracks,&nbsp;vias | 10, 493, 74 |
@@ -4650,7 +4874,7 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 
 ## 23.2.114 Memory 4MB
 
-![Memory 4MB: stages 4 and 6 take 50% to 81% of a run. Simulation, GLB takes 4.5 s. Simulation, STEP takes 5.9 s. Simulation, STL takes 4.5 s. Simulation, OBJ takes 6.7 s. Visual, GLB takes 6.3 s. Visual, OBJ takes 7.9 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/corpus_1931.webp)
+![Memory 4MB: stages 4 and 6 take 50% to 81% of a run. Simulation, GLB takes 4.5 s. Simulation, STEP takes 5.9 s. Simulation, STL takes 4.5 s. Simulation, OBJ takes 6.7 s. Visual, GLB takes 6.3 s. Visual, OBJ takes 7.9 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/658-Computer_Memory-4MB.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -4666,7 +4890,9 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 | Board | Repo: [andrewpaterson/658-Computer](https://github.com/andrewpaterson/658-Computer)<br>Board: `Memory 4MB.kicad_pcb` |
 |---|---|
 | Folder | Kicad / Computer / Memory / Memory 4MB |
-| Complexity | 787, low |
+| Complexity | 222&nbsp;/&nbsp;1000 (size&nbsp;152, features&nbsp;70) |
+| KESE&nbsp;features | through vias, rounded,<br>trapezoid or chamfered pads,<br>knockout text, stack-up,<br>dielectric εr and tanδ |
+| Tested | 9th November 2026 |
 | Copper&nbsp;layers | 2 |
 | File&nbsp;format | KiCad 9 (20241229) |
 | Parts,&nbsp;tracks,&nbsp;vias | 10, 536, 77 |
@@ -4691,7 +4917,7 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 
 ## 23.2.115 Memory Board
 
-![Memory Board: stages 4 and 6 take 54% to 86% of a run. Simulation, GLB takes 11 s. Simulation, STEP takes 13 s. Simulation, STL takes 11 s. Simulation, OBJ takes 16 s. Visual, GLB takes 17 s. Visual, OBJ takes 20 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/corpus_1806.webp)
+![Memory Board: stages 4 and 6 take 54% to 86% of a run. Simulation, GLB takes 11 s. Simulation, STEP takes 13 s. Simulation, STL takes 11 s. Simulation, OBJ takes 16 s. Visual, GLB takes 17 s. Visual, OBJ takes 20 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/658-Computer_Memory-Board.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -4707,7 +4933,9 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 | Board | Repo: [andrewpaterson/658-Computer](https://github.com/andrewpaterson/658-Computer)<br>Board: `Memory Board.kicad_pcb` |
 |---|---|
 | Folder | Kicad / Computer / Memory / Memory Board |
-| Complexity | 933, low |
+| Complexity | 238&nbsp;/&nbsp;1000 (size&nbsp;158, features&nbsp;80) |
+| KESE&nbsp;features | through vias, rounded,<br>trapezoid or chamfered pads,<br>curved board outline,<br>knockout text, stack-up,<br>dielectric εr and tanδ |
+| Tested | 9th November 2026 |
 | Copper&nbsp;layers | 2 |
 | File&nbsp;format | KiCad 9 (20241229) |
 | Parts,&nbsp;tracks,&nbsp;vias | 15, 699, 68 |
@@ -4732,7 +4960,7 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 
 ## 23.2.116 Power and Reset
 
-![Power and Reset: stages 4 and 6 take 51% to 83% of a run. Simulation, GLB takes 5.7 s. Simulation, STEP takes 7.2 s. Simulation, STL takes 5.5 s. Simulation, OBJ takes 8.2 s. Visual, GLB takes 8.2 s. Visual, OBJ takes 9.8 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/corpus_2289.webp)
+![Power and Reset: stages 4 and 6 take 51% to 83% of a run. Simulation, GLB takes 5.7 s. Simulation, STEP takes 7.2 s. Simulation, STL takes 5.5 s. Simulation, OBJ takes 8.2 s. Visual, GLB takes 8.2 s. Visual, OBJ takes 9.8 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/658-Computer_Power-and-Reset.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -4748,7 +4976,9 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 | Board | Repo: [andrewpaterson/658-Computer](https://github.com/andrewpaterson/658-Computer)<br>Board: `Power and Reset.kicad_pcb` |
 |---|---|
 | Folder | Kicad / Computer / Power / Power and Reset |
-| Complexity | 418, low |
+| Complexity | 233&nbsp;/&nbsp;1000 (size&nbsp;148, features&nbsp;85) |
+| KESE&nbsp;features | through vias, rounded,<br>trapezoid or chamfered pads,<br>filled zones, curved board outline,<br>stack-up, dielectric εr and tanδ |
+| Tested | 9th November 2026 |
 | Copper&nbsp;layers | 2 |
 | File&nbsp;format | KiCad 10 (20260206) |
 | Parts,&nbsp;tracks,&nbsp;vias | 23, 285, 29 |
@@ -4773,7 +5003,7 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 
 ## 23.2.117 Address Decode V2 to V3
 
-![Address Decode V2 to V3: stages 4 and 6 take 50% to 82% of a run. Simulation, GLB takes 5.6 s. Simulation, STEP takes 7.5 s. Simulation, STL takes 6.0 s. Simulation, OBJ takes 9.1 s. Visual, GLB takes 7.6 s. Visual, OBJ takes 9.7 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/corpus_2950.webp)
+![Address Decode V2 to V3: stages 4 and 6 take 50% to 82% of a run. Simulation, GLB takes 5.6 s. Simulation, STEP takes 7.5 s. Simulation, STL takes 6.0 s. Simulation, OBJ takes 9.1 s. Visual, GLB takes 7.6 s. Visual, OBJ takes 9.7 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/658-Computer_Address-Decode-V2-to-V3.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -4789,7 +5019,9 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 | Board | Repo: [andrewpaterson/658-Computer](https://github.com/andrewpaterson/658-Computer)<br>Board: `Address Decode V2 to V3.kicad_pcb` |
 |---|---|
 | Folder | Kicad / Computer / Processor / Address Decode V2 to V3 |
-| Complexity | 13, simple |
+| Complexity | 162&nbsp;/&nbsp;1000 (size&nbsp;97, features&nbsp;65) |
+| KESE&nbsp;features | rounded,<br>trapezoid or chamfered pads,<br>curved board outline,<br>knockout text, stack-up,<br>dielectric εr and tanδ |
+| Tested | 9th November 2026 |
 | Copper&nbsp;layers | 2 |
 | File&nbsp;format | KiCad 9 (20241229) |
 | Parts,&nbsp;tracks,&nbsp;vias | 2, 65, 0 |
@@ -4814,7 +5046,7 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 
 ## 23.2.118 Clock Hold V1 to V2
 
-![Clock Hold V1 to V2: stages 4 and 6 take 51% to 82% of a run. Simulation, GLB takes 4.7 s. Simulation, STEP takes 6.6 s. Simulation, STL takes 5.0 s. Simulation, OBJ takes 6.9 s. Visual, GLB takes 6.7 s. Visual, OBJ takes 8.7 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/corpus_2817.webp)
+![Clock Hold V1 to V2: stages 4 and 6 take 51% to 82% of a run. Simulation, GLB takes 4.7 s. Simulation, STEP takes 6.6 s. Simulation, STL takes 5.0 s. Simulation, OBJ takes 6.9 s. Visual, GLB takes 6.7 s. Visual, OBJ takes 8.7 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/658-Computer_Clock-Hold-V1-to-V2.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -4830,7 +5062,9 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 | Board | Repo: [andrewpaterson/658-Computer](https://github.com/andrewpaterson/658-Computer)<br>Board: `Clock Hold V1 to V2.kicad_pcb` |
 |---|---|
 | Folder | Kicad / Computer / Processor / Clock Hold V1 to V2 |
-| Complexity | 49, simple |
+| Complexity | 195&nbsp;/&nbsp;1000 (size&nbsp;115, features&nbsp;80) |
+| KESE&nbsp;features | through vias, rounded,<br>trapezoid or chamfered pads,<br>curved board outline,<br>knockout text, stack-up,<br>dielectric εr and tanδ |
+| Tested | 9th November 2026 |
 | Copper&nbsp;layers | 2 |
 | File&nbsp;format | KiCad 9 (20241229) |
 | Parts,&nbsp;tracks,&nbsp;vias | 3, 132, 9 |
@@ -4855,7 +5089,7 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 
 ## 23.2.119 HCP65 Board Presence
 
-![HCP65 Board Presence: stages 4 and 6 take 49% to 79% of a run. Simulation, GLB takes 4.2 s. Simulation, STEP takes 5.5 s. Simulation, STL takes 4.2 s. Simulation, OBJ takes 6.0 s. Visual, GLB takes 6.6 s. Visual, OBJ takes 8.3 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/corpus_1965.webp)
+![HCP65 Board Presence: stages 4 and 6 take 49% to 79% of a run. Simulation, GLB takes 4.2 s. Simulation, STEP takes 5.5 s. Simulation, STL takes 4.2 s. Simulation, OBJ takes 6.0 s. Visual, GLB takes 6.6 s. Visual, OBJ takes 8.3 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/658-Computer_HCP65-Board-Presence.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -4871,7 +5105,9 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 | Board | Repo: [andrewpaterson/658-Computer](https://github.com/andrewpaterson/658-Computer)<br>Board: `HCP65 Board Presence.kicad_pcb` |
 |---|---|
 | Folder | Kicad / Computer / Processor / HCP65 Board Presence |
-| Complexity | 743, low |
+| Complexity | 228&nbsp;/&nbsp;1000 (size&nbsp;158, features&nbsp;70) |
+| KESE&nbsp;features | through vias, rounded,<br>trapezoid or chamfered pads,<br>knockout text, stack-up,<br>dielectric εr and tanδ |
+| Tested | 9th November 2026 |
 | Copper&nbsp;layers | 2 |
 | File&nbsp;format | KiCad 9 (20241229) |
 | Parts,&nbsp;tracks,&nbsp;vias | 21, 509, 64 |
@@ -4896,7 +5132,7 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 
 ## 23.2.120 HCP65 Device Interrupts
 
-![HCP65 Device Interrupts: stages 4 and 6 take 51% to 83% of a run. Simulation, GLB takes 7.2 s. Simulation, STEP takes 9.6 s. Simulation, STL takes 7.6 s. Simulation, OBJ takes 11 s. Visual, GLB takes 12 s. Visual, OBJ takes 15 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/corpus_1450.webp)
+![HCP65 Device Interrupts: stages 4 and 6 take 51% to 83% of a run. Simulation, GLB takes 7.2 s. Simulation, STEP takes 9.6 s. Simulation, STL takes 7.6 s. Simulation, OBJ takes 11 s. Visual, GLB takes 12 s. Visual, OBJ takes 15 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/658-Computer_HCP65-Device-Interrupts.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -4912,7 +5148,9 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 | Board | Repo: [andrewpaterson/658-Computer](https://github.com/andrewpaterson/658-Computer)<br>Board: `HCP65 Device Interrupts.kicad_pcb` |
 |---|---|
 | Folder | Kicad / Computer / Processor / HCP65 Device Interrupts |
-| Complexity | 1,475, medium |
+| Complexity | 238&nbsp;/&nbsp;1000 (size&nbsp;168, features&nbsp;70) |
+| KESE&nbsp;features | through vias, rounded,<br>trapezoid or chamfered pads,<br>knockout text, stack-up,<br>dielectric εr and tanδ |
+| Tested | 9th November 2026 |
 | Copper&nbsp;layers | 2 |
 | File&nbsp;format | KiCad 9 (20241229) |
 | Parts,&nbsp;tracks,&nbsp;vias | 18, 1,070, 123 |
@@ -4937,7 +5175,7 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 
 ## 23.2.121 HCP65 Device Reset
 
-![HCP65 Device Reset: stages 4 and 6 take 51% to 81% of a run. Simulation, GLB takes 4.5 s. Simulation, STEP takes 5.7 s. Simulation, STL takes 4.5 s. Simulation, OBJ takes 6.0 s. Visual, GLB takes 7.0 s. Visual, OBJ takes 8.4 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/corpus_1813.webp)
+![HCP65 Device Reset: stages 4 and 6 take 51% to 81% of a run. Simulation, GLB takes 4.5 s. Simulation, STEP takes 5.7 s. Simulation, STL takes 4.5 s. Simulation, OBJ takes 6.0 s. Visual, GLB takes 7.0 s. Visual, OBJ takes 8.4 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/658-Computer_HCP65-Device-Reset.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -4953,7 +5191,9 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 | Board | Repo: [andrewpaterson/658-Computer](https://github.com/andrewpaterson/658-Computer)<br>Board: `HCP65 Device Reset.kicad_pcb` |
 |---|---|
 | Folder | Kicad / Computer / Processor / HCP65 Device Reset |
-| Complexity | 927, low |
+| Complexity | 228&nbsp;/&nbsp;1000 (size&nbsp;158, features&nbsp;70) |
+| KESE&nbsp;features | through vias, rounded,<br>trapezoid or chamfered pads,<br>knockout text, stack-up,<br>dielectric εr and tanδ |
+| Tested | 9th November 2026 |
 | Copper&nbsp;layers | 2 |
 | File&nbsp;format | KiCad 9 (20241229) |
 | Parts,&nbsp;tracks,&nbsp;vias | 14, 677, 74 |
@@ -4978,7 +5218,7 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 
 ## 23.2.122 HCP65 Hold Count
 
-![HCP65 Hold Count: stages 4 and 6 take 48% to 80% of a run. Simulation, GLB takes 3.6 s. Simulation, STEP takes 4.9 s. Simulation, STL takes 3.6 s. Simulation, OBJ takes 5.4 s. Visual, GLB takes 5.8 s. Visual, OBJ takes 7.6 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/corpus_2171.webp)
+![HCP65 Hold Count: stages 4 and 6 take 48% to 80% of a run. Simulation, GLB takes 3.6 s. Simulation, STEP takes 4.9 s. Simulation, STL takes 3.6 s. Simulation, OBJ takes 5.4 s. Visual, GLB takes 5.8 s. Visual, OBJ takes 7.6 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/658-Computer_HCP65-Hold-Count.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -4994,7 +5234,9 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 | Board | Repo: [andrewpaterson/658-Computer](https://github.com/andrewpaterson/658-Computer)<br>Board: `HCP65 Hold Count.kicad_pcb` |
 |---|---|
 | Folder | Kicad / Computer / Processor / HCP65 Hold Count |
-| Complexity | 536, low |
+| Complexity | 217&nbsp;/&nbsp;1000 (size&nbsp;147, features&nbsp;70) |
+| KESE&nbsp;features | through vias, rounded,<br>trapezoid or chamfered pads,<br>knockout text, stack-up,<br>dielectric εr and tanδ |
+| Tested | 9th November 2026 |
 | Copper&nbsp;layers | 2 |
 | File&nbsp;format | KiCad 9 (20241229) |
 | Parts,&nbsp;tracks,&nbsp;vias | 12, 344, 56 |
@@ -5019,7 +5261,7 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 
 ## 23.2.123 HCP65 Instruction Code
 
-![HCP65 Instruction Code: stages 4 and 6 take 51% to 85% of a run. Simulation, GLB takes 11 s. Simulation, STEP takes 14 s. Simulation, STL takes 11 s. Simulation, OBJ takes 17 s. Visual, GLB takes 19 s. Visual, OBJ takes 24 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/corpus_0933.webp)
+![HCP65 Instruction Code: stages 4 and 6 take 51% to 85% of a run. Simulation, GLB takes 11 s. Simulation, STEP takes 14 s. Simulation, STL takes 11 s. Simulation, OBJ takes 17 s. Visual, GLB takes 19 s. Visual, OBJ takes 24 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/658-Computer_HCP65-Instruction-Code.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -5035,7 +5277,9 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 | Board | Repo: [andrewpaterson/658-Computer](https://github.com/andrewpaterson/658-Computer)<br>Board: `HCP65 Instruction Code.kicad_pcb` |
 |---|---|
 | Folder | Kicad / Computer / Processor / HCP65 Instruction Code |
-| Complexity | 2,773, medium |
+| Complexity | 255&nbsp;/&nbsp;1000 (size&nbsp;185, features&nbsp;70) |
+| KESE&nbsp;features | through vias, rounded,<br>trapezoid or chamfered pads,<br>knockout text, stack-up,<br>dielectric εr and tanδ |
+| Tested | 9th November 2026 |
 | Copper&nbsp;layers | 2 |
 | File&nbsp;format | KiCad 9 (20241229) |
 | Parts,&nbsp;tracks,&nbsp;vias | 36, 2,035, 222 |
@@ -5060,7 +5304,7 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 
 ## 23.2.124 HCP65 Kernal Mode
 
-![HCP65 Kernal Mode: stages 4 and 6 take 52% to 84% of a run. Simulation, GLB takes 12 s. Simulation, STEP takes 16 s. Simulation, STL takes 12 s. Simulation, OBJ takes 19 s. Visual, GLB takes 19 s. Visual, OBJ takes 25 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/corpus_0943.webp)
+![HCP65 Kernal Mode: stages 4 and 6 take 52% to 84% of a run. Simulation, GLB takes 12 s. Simulation, STEP takes 16 s. Simulation, STL takes 12 s. Simulation, OBJ takes 19 s. Visual, GLB takes 19 s. Visual, OBJ takes 25 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/658-Computer_HCP65-Kernal-Mode.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -5076,7 +5320,9 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 | Board | Repo: [andrewpaterson/658-Computer](https://github.com/andrewpaterson/658-Computer)<br>Board: `HCP65 Kernal Mode.kicad_pcb` |
 |---|---|
 | Folder | Kicad / Computer / Processor / HCP65 Kernal Mode |
-| Complexity | 2,728, medium |
+| Complexity | 253&nbsp;/&nbsp;1000 (size&nbsp;183, features&nbsp;70) |
+| KESE&nbsp;features | through vias, rounded,<br>trapezoid or chamfered pads,<br>knockout text, stack-up,<br>dielectric εr and tanδ |
+| Tested | 9th November 2026 |
 | Copper&nbsp;layers | 2 |
 | File&nbsp;format | KiCad 9 (20241229) |
 | Parts,&nbsp;tracks,&nbsp;vias | 30, 1,942, 242 |
@@ -5101,7 +5347,7 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 
 ## 23.2.125 HCP65 Main Memory Address
 
-![HCP65 Main Memory Address: stages 4 and 6 take 51% to 84% of a run. Simulation, GLB takes 6.5 s. Simulation, STEP takes 8.2 s. Simulation, STL takes 6.3 s. Simulation, OBJ takes 9.6 s. Visual, GLB takes 9.4 s. Visual, OBJ takes 11 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/corpus_1988.webp)
+![HCP65 Main Memory Address: stages 4 and 6 take 51% to 84% of a run. Simulation, GLB takes 6.5 s. Simulation, STEP takes 8.2 s. Simulation, STL takes 6.3 s. Simulation, OBJ takes 9.6 s. Visual, GLB takes 9.4 s. Visual, OBJ takes 11 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/658-Computer_HCP65-Main-Memory-Address.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -5117,7 +5363,9 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 | Board | Repo: [andrewpaterson/658-Computer](https://github.com/andrewpaterson/658-Computer)<br>Board: `HCP65 Main Memory Address.kicad_pcb` |
 |---|---|
 | Folder | Kicad / Computer / Processor / HCP65 Main Memory Address |
-| Complexity | 727, low |
+| Complexity | 222&nbsp;/&nbsp;1000 (size&nbsp;152, features&nbsp;70) |
+| KESE&nbsp;features | through vias, rounded,<br>trapezoid or chamfered pads,<br>knockout text, stack-up,<br>dielectric εr and tanδ |
+| Tested | 9th November 2026 |
 | Copper&nbsp;layers | 2 |
 | File&nbsp;format | KiCad 9 (20241229) |
 | Parts,&nbsp;tracks,&nbsp;vias | 12, 559, 48 |
@@ -5142,7 +5390,7 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 
 ## 23.2.126 HCP65 Main Memory Data
 
-![HCP65 Main Memory Data: stages 4 and 6 take 49% to 80% of a run. Simulation, GLB takes 3.7 s. Simulation, STEP takes 5.1 s. Simulation, STL takes 3.6 s. Simulation, OBJ takes 5.6 s. Visual, GLB takes 6.1 s. Visual, OBJ takes 7.6 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/corpus_2282.webp)
+![HCP65 Main Memory Data: stages 4 and 6 take 49% to 80% of a run. Simulation, GLB takes 3.7 s. Simulation, STEP takes 5.1 s. Simulation, STL takes 3.6 s. Simulation, OBJ takes 5.6 s. Visual, GLB takes 6.1 s. Visual, OBJ takes 7.6 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/658-Computer_HCP65-Main-Memory-Data.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -5158,7 +5406,9 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 | Board | Repo: [andrewpaterson/658-Computer](https://github.com/andrewpaterson/658-Computer)<br>Board: `HCP65 Main Memory Data.kicad_pcb` |
 |---|---|
 | Folder | Kicad / Computer / Processor / HCP65 Main Memory Data |
-| Complexity | 426, low |
+| Complexity | 213&nbsp;/&nbsp;1000 (size&nbsp;143, features&nbsp;70) |
+| KESE&nbsp;features | through vias, rounded,<br>trapezoid or chamfered pads,<br>knockout text, stack-up,<br>dielectric εr and tanδ |
+| Tested | 9th November 2026 |
 | Copper&nbsp;layers | 2 |
 | File&nbsp;format | KiCad 9 (20241229) |
 | Parts,&nbsp;tracks,&nbsp;vias | 12, 312, 30 |
@@ -5183,7 +5433,7 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 
 ## 23.2.127 HCP65 MPU Address Decode
 
-![HCP65 MPU Address Decode: stages 4 and 6 take 52% to 83% of a run. Simulation, GLB takes 10 s. Simulation, STEP takes 13 s. Simulation, STL takes 10 s. Simulation, OBJ takes 14 s. Visual, GLB takes 18 s. Visual, OBJ takes 22 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/corpus_1251.webp)
+![HCP65 MPU Address Decode: stages 4 and 6 take 52% to 83% of a run. Simulation, GLB takes 10 s. Simulation, STEP takes 13 s. Simulation, STL takes 10 s. Simulation, OBJ takes 14 s. Visual, GLB takes 18 s. Visual, OBJ takes 22 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/658-Computer_HCP65-MPU-Address-Decode.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -5199,7 +5449,9 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 | Board | Repo: [andrewpaterson/658-Computer](https://github.com/andrewpaterson/658-Computer)<br>Board: `HCP65 MPU Address Decode.kicad_pcb` |
 |---|---|
 | Folder | Kicad / Computer / Processor / HCP65 MPU Address Decode |
-| Complexity | 1,865, medium |
+| Complexity | 251&nbsp;/&nbsp;1000 (size&nbsp;181, features&nbsp;70) |
+| KESE&nbsp;features | through vias, rounded,<br>trapezoid or chamfered pads,<br>knockout text, stack-up,<br>dielectric εr and tanδ |
+| Tested | 9th November 2026 |
 | Copper&nbsp;layers | 2 |
 | File&nbsp;format | KiCad 9 (20241229) |
 | Parts,&nbsp;tracks,&nbsp;vias | 44, 1,273, 168 |
@@ -5224,7 +5476,7 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 
 ## 23.2.128 HCP65 MPU Memory
 
-![HCP65 MPU Memory: stages 4 and 6 take 51% to 83% of a run. Simulation, GLB takes 5.8 s. Simulation, STEP takes 7.5 s. Simulation, STL takes 6.0 s. Simulation, OBJ takes 8.7 s. Visual, GLB takes 9.4 s. Visual, OBJ takes 12 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/corpus_1583.webp)
+![HCP65 MPU Memory: stages 4 and 6 take 51% to 83% of a run. Simulation, GLB takes 5.8 s. Simulation, STEP takes 7.5 s. Simulation, STL takes 6.0 s. Simulation, OBJ takes 8.7 s. Visual, GLB takes 9.4 s. Visual, OBJ takes 12 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/658-Computer_HCP65-MPU-Memory.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -5240,7 +5492,9 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 | Board | Repo: [andrewpaterson/658-Computer](https://github.com/andrewpaterson/658-Computer)<br>Board: `HCP65 MPU Memory.kicad_pcb` |
 |---|---|
 | Folder | Kicad / Computer / Processor / HCP65 MPU Memory |
-| Complexity | 1,245, medium |
+| Complexity | 232&nbsp;/&nbsp;1000 (size&nbsp;162, features&nbsp;70) |
+| KESE&nbsp;features | through vias, rounded,<br>trapezoid or chamfered pads,<br>knockout text, stack-up,<br>dielectric εr and tanδ |
+| Tested | 9th November 2026 |
 | Copper&nbsp;layers | 2 |
 | File&nbsp;format | KiCad 9 (20241229) |
 | Parts,&nbsp;tracks,&nbsp;vias | 13, 868, 117 |
@@ -5265,7 +5519,7 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 
 ## 23.2.129 HCP65 MPU NMI
 
-![HCP65 MPU NMI: stages 4 and 6 take 53% to 82% of a run. Simulation, GLB takes 5.2 s. Simulation, STEP takes 6.7 s. Simulation, STL takes 5.2 s. Simulation, OBJ takes 7.6 s. Visual, GLB takes 9.8 s. Visual, OBJ takes 11 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/corpus_1505.webp)
+![HCP65 MPU NMI: stages 4 and 6 take 53% to 82% of a run. Simulation, GLB takes 5.2 s. Simulation, STEP takes 6.7 s. Simulation, STL takes 5.2 s. Simulation, OBJ takes 7.6 s. Visual, GLB takes 9.8 s. Visual, OBJ takes 11 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/658-Computer_HCP65-MPU-NMI.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -5281,7 +5535,9 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 | Board | Repo: [andrewpaterson/658-Computer](https://github.com/andrewpaterson/658-Computer)<br>Board: `HCP65 MPU NMI.kicad_pcb` |
 |---|---|
 | Folder | Kicad / Computer / Processor / HCP65 MPU NMI |
-| Complexity | 1,375, medium |
+| Complexity | 239&nbsp;/&nbsp;1000 (size&nbsp;169, features&nbsp;70) |
+| KESE&nbsp;features | through vias, rounded,<br>trapezoid or chamfered pads,<br>knockout text, stack-up,<br>dielectric εr and tanδ |
+| Tested | 9th November 2026 |
 | Copper&nbsp;layers | 2 |
 | File&nbsp;format | KiCad 9 (20241229) |
 | Parts,&nbsp;tracks,&nbsp;vias | 24, 916, 137 |
@@ -5306,7 +5562,7 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 
 ## 23.2.130 HCP65 MPU Timer
 
-![HCP65 MPU Timer: stages 4 and 6 take 51% to 82% of a run. Simulation, GLB takes 4.0 s. Simulation, STEP takes 5.3 s. Simulation, STL takes 4.0 s. Simulation, OBJ takes 5.7 s. Visual, GLB takes 6.5 s. Visual, OBJ takes 8.2 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/corpus_1818.webp)
+![HCP65 MPU Timer: stages 4 and 6 take 51% to 82% of a run. Simulation, GLB takes 4.0 s. Simulation, STEP takes 5.3 s. Simulation, STL takes 4.0 s. Simulation, OBJ takes 5.7 s. Visual, GLB takes 6.5 s. Visual, OBJ takes 8.2 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/658-Computer_HCP65-MPU-Timer.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -5322,7 +5578,9 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 | Board | Repo: [andrewpaterson/658-Computer](https://github.com/andrewpaterson/658-Computer)<br>Board: `HCP65 MPU Timer.kicad_pcb` |
 |---|---|
 | Folder | Kicad / Computer / Processor / HCP65 MPU Timer |
-| Complexity | 924, low |
+| Complexity | 230&nbsp;/&nbsp;1000 (size&nbsp;160, features&nbsp;70) |
+| KESE&nbsp;features | through vias, rounded,<br>trapezoid or chamfered pads,<br>knockout text, stack-up,<br>dielectric εr and tanδ |
+| Tested | 9th November 2026 |
 | Copper&nbsp;layers | 2 |
 | File&nbsp;format | KiCad 9 (20241229) |
 | Parts,&nbsp;tracks,&nbsp;vias | 18, 645, 81 |
@@ -5347,7 +5605,7 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 
 ## 23.2.131 Processor Board
 
-![Processor Board: stages 4 and 6 take 54% to 86% of a run. Simulation, GLB takes 64 s. Simulation, STEP takes 78 s. Simulation, STL takes 63 s. Simulation, OBJ takes 94 s. Visual, GLB takes 2 min. Visual, OBJ takes 2 min](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/corpus_0348.webp)
+![Processor Board: stages 4 and 6 take 54% to 86% of a run. Simulation, GLB takes 64 s. Simulation, STEP takes 78 s. Simulation, STL takes 63 s. Simulation, OBJ takes 94 s. Visual, GLB takes 2 min. Visual, OBJ takes 2 min](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/658-Computer_Processor-Board.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -5363,7 +5621,9 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 | Board | Repo: [andrewpaterson/658-Computer](https://github.com/andrewpaterson/658-Computer)<br>Board: `Processor Board.kicad_pcb` |
 |---|---|
 | Folder | Kicad / Computer / Processor / Processor Board |
-| Complexity | 7,624, high |
+| Complexity | 283&nbsp;/&nbsp;1000 (size&nbsp;203, features&nbsp;80) |
+| KESE&nbsp;features | through vias, rounded,<br>trapezoid or chamfered pads,<br>curved board outline,<br>knockout text, stack-up,<br>dielectric εr and tanδ |
+| Tested | 9th November 2026 |
 | Copper&nbsp;layers | 2 |
 | File&nbsp;format | KiCad 9 (20241229) |
 | Parts,&nbsp;tracks,&nbsp;vias | 40, 4,940, 868 |
@@ -5388,7 +5648,7 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 
 ## 23.2.132 W65C816 Breakout
 
-![W65C816 Breakout: stages 4 and 6 take 50% to 85% of a run. Simulation, GLB takes 14 s. Simulation, STEP takes 17 s. Simulation, STL takes 14 s. Simulation, OBJ takes 21 s. Visual, GLB takes 23 s. Visual, OBJ takes 31 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/corpus_0894.webp)
+![W65C816 Breakout: stages 4 and 6 take 50% to 85% of a run. Simulation, GLB takes 14 s. Simulation, STEP takes 17 s. Simulation, STL takes 14 s. Simulation, OBJ takes 21 s. Visual, GLB takes 23 s. Visual, OBJ takes 31 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/658-Computer_W65C816-Breakout.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -5404,7 +5664,9 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 | Board | Repo: [andrewpaterson/658-Computer](https://github.com/andrewpaterson/658-Computer)<br>Board: `W65C816 Breakout.kicad_pcb` |
 |---|---|
 | Folder | Kicad / Computer / Processor / W65C816 Breakout |
-| Complexity | 2,930, medium |
+| Complexity | 260&nbsp;/&nbsp;1000 (size&nbsp;190, features&nbsp;70) |
+| KESE&nbsp;features | through vias, rounded,<br>trapezoid or chamfered pads,<br>knockout text, stack-up,<br>dielectric εr and tanδ |
+| Tested | 9th November 2026 |
 | Copper&nbsp;layers | 2 |
 | File&nbsp;format | KiCad 9 (20241229) |
 | Parts,&nbsp;tracks,&nbsp;vias | 51, 2,018, 270 |
@@ -5429,7 +5691,7 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 
 ## 23.2.133 W65C816 Clock Hold
 
-![W65C816 Clock Hold: stages 4 and 6 take 50% to 82% of a run. Simulation, GLB takes 4.1 s. Simulation, STEP takes 5.2 s. Simulation, STL takes 3.9 s. Simulation, OBJ takes 5.7 s. Visual, GLB takes 6.3 s. Visual, OBJ takes 7.6 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/corpus_2045.webp)
+![W65C816 Clock Hold: stages 4 and 6 take 50% to 82% of a run. Simulation, GLB takes 4.1 s. Simulation, STEP takes 5.2 s. Simulation, STL takes 3.9 s. Simulation, OBJ takes 5.7 s. Visual, GLB takes 6.3 s. Visual, OBJ takes 7.6 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/658-Computer_W65C816-Clock-Hold.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -5445,7 +5707,9 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 | Board | Repo: [andrewpaterson/658-Computer](https://github.com/andrewpaterson/658-Computer)<br>Board: `W65C816 Clock Hold.kicad_pcb` |
 |---|---|
 | Folder | Kicad / Computer / Processor / W65C816 Clock Hold |
-| Complexity | 663, low |
+| Complexity | 225&nbsp;/&nbsp;1000 (size&nbsp;155, features&nbsp;70) |
+| KESE&nbsp;features | through vias, rounded,<br>trapezoid or chamfered pads,<br>knockout text, stack-up,<br>dielectric εr and tanδ |
+| Tested | 9th November 2026 |
 | Copper&nbsp;layers | 2 |
 | File&nbsp;format | KiCad 9 (20241229) |
 | Parts,&nbsp;tracks,&nbsp;vias | 20, 458, 55 |
@@ -5470,7 +5734,7 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 
 ## 23.2.134 W65C816 Debug Display
 
-![W65C816 Debug Display: stages 4 and 6 take 51% to 85% of a run. Simulation, GLB takes 16 s. Simulation, STEP takes 21 s. Simulation, STL takes 15 s. Simulation, OBJ takes 23 s. Visual, GLB takes 25 s. Visual, OBJ takes 32 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/corpus_0934.webp)
+![W65C816 Debug Display: stages 4 and 6 take 51% to 85% of a run. Simulation, GLB takes 16 s. Simulation, STEP takes 21 s. Simulation, STL takes 15 s. Simulation, OBJ takes 23 s. Visual, GLB takes 25 s. Visual, OBJ takes 32 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/658-Computer_W65C816-Debug-Display.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -5486,7 +5750,9 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 | Board | Repo: [andrewpaterson/658-Computer](https://github.com/andrewpaterson/658-Computer)<br>Board: `W65C816 Debug Display.kicad_pcb` |
 |---|---|
 | Folder | Kicad / Computer / Processor / W65C816 Debug Display |
-| Complexity | 2,772, medium |
+| Complexity | 273&nbsp;/&nbsp;1000 (size&nbsp;193, features&nbsp;80) |
+| KESE&nbsp;features | through vias, rounded,<br>trapezoid or chamfered pads,<br>curved board outline,<br>knockout text, stack-up,<br>dielectric εr and tanδ |
+| Tested | 9th November 2026 |
 | Copper&nbsp;layers | 2 |
 | File&nbsp;format | KiCad 9 (20241229) |
 | Parts,&nbsp;tracks,&nbsp;vias | 81, 1,782, 276 |
@@ -5511,7 +5777,7 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 
 ## 23.2.135 W65C816 Latch
 
-![W65C816 Latch: stages 4 and 6 take 48% to 77% of a run. Simulation, GLB takes 1.8 s. Simulation, STEP takes 2.7 s. Simulation, STL takes 1.7 s. Simulation, OBJ takes 2.4 s. Visual, GLB takes 2.8 s. Visual, OBJ takes 3.2 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/corpus_2612.webp)
+![W65C816 Latch: stages 4 and 6 take 48% to 77% of a run. Simulation, GLB takes 1.8 s. Simulation, STEP takes 2.7 s. Simulation, STL takes 1.7 s. Simulation, OBJ takes 2.4 s. Visual, GLB takes 2.8 s. Visual, OBJ takes 3.2 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/658-Computer_W65C816-Latch.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -5527,7 +5793,9 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 | Board | Repo: [andrewpaterson/658-Computer](https://github.com/andrewpaterson/658-Computer)<br>Board: `W65C816 Latch.kicad_pcb` |
 |---|---|
 | Folder | Kicad / Computer / Processor / W65C816 Latch |
-| Complexity | 160, simple |
+| Complexity | 194&nbsp;/&nbsp;1000 (size&nbsp;124, features&nbsp;70) |
+| KESE&nbsp;features | through vias, rounded,<br>trapezoid or chamfered pads,<br>knockout text, stack-up,<br>dielectric εr and tanδ |
+| Tested | 9th November 2026 |
 | Copper&nbsp;layers | 2 |
 | File&nbsp;format | KiCad 9 (20241229) |
 | Parts,&nbsp;tracks,&nbsp;vias | 11, 102, 12 |
@@ -5552,7 +5820,7 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 
 ## 23.2.136 W65C816 Minimal
 
-![W65C816 Minimal: stages 4 and 6 take 54% to 83% of a run. Simulation, GLB takes 5.6 s. Simulation, STEP takes 7.5 s. Simulation, STL takes 5.9 s. Simulation, OBJ takes 8.9 s. Visual, GLB takes 9.2 s. Visual, OBJ takes 11 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/corpus_1598.webp)
+![W65C816 Minimal: stages 4 and 6 take 54% to 83% of a run. Simulation, GLB takes 5.6 s. Simulation, STEP takes 7.5 s. Simulation, STL takes 5.9 s. Simulation, OBJ takes 8.9 s. Visual, GLB takes 9.2 s. Visual, OBJ takes 11 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/658-Computer_W65C816-Minimal.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -5568,7 +5836,9 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 | Board | Repo: [andrewpaterson/658-Computer](https://github.com/andrewpaterson/658-Computer)<br>Board: `W65C816 Minimal.kicad_pcb` |
 |---|---|
 | Folder | Kicad / Computer / Processor / W65C816 Minimal |
-| Complexity | 1,216, medium |
+| Complexity | 239&nbsp;/&nbsp;1000 (size&nbsp;169, features&nbsp;70) |
+| KESE&nbsp;features | through vias, rounded,<br>trapezoid or chamfered pads,<br>knockout text, stack-up,<br>dielectric εr and tanδ |
+| Tested | 9th November 2026 |
 | Copper&nbsp;layers | 2 |
 | File&nbsp;format | KiCad 9 (20241229) |
 | Parts,&nbsp;tracks,&nbsp;vias | 27, 868, 98 |
@@ -5593,7 +5863,7 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 
 ## 23.2.137 W65C816 Opcode Display
 
-![W65C816 Opcode Display: stages 4 and 6 take 55% to 83% of a run. Simulation, GLB takes 15 s. Simulation, STEP takes 20 s. Simulation, STL takes 15 s. Simulation, OBJ takes 23 s. Visual, GLB takes 27 s. Visual, OBJ takes 33 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/corpus_0708.webp)
+![W65C816 Opcode Display: stages 4 and 6 take 55% to 83% of a run. Simulation, GLB takes 15 s. Simulation, STEP takes 20 s. Simulation, STL takes 15 s. Simulation, OBJ takes 23 s. Visual, GLB takes 27 s. Visual, OBJ takes 33 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/658-Computer_W65C816-Opcode-Display.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -5609,7 +5879,9 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 | Board | Repo: [andrewpaterson/658-Computer](https://github.com/andrewpaterson/658-Computer)<br>Board: `W65C816 Opcode Display.kicad_pcb` |
 |---|---|
 | Folder | Kicad / Computer / Processor / W65C816 Opcode Display |
-| Complexity | 3,811, high |
+| Complexity | 279&nbsp;/&nbsp;1000 (size&nbsp;199, features&nbsp;80) |
+| KESE&nbsp;features | through vias, rounded,<br>trapezoid or chamfered pads,<br>curved board outline,<br>knockout text, stack-up,<br>dielectric εr and tanδ |
+| Tested | 9th November 2026 |
 | Copper&nbsp;layers | 2 |
 | File&nbsp;format | KiCad 9 (20241229) |
 | Parts,&nbsp;tracks,&nbsp;vias | 79, 2,531, 374 |
@@ -5634,7 +5906,7 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 
 ## 23.2.138 W65C816 Power
 
-![W65C816 Power: stages 4 and 6 take 42% to 72% of a run. Simulation, GLB takes 1.3 s. Simulation, STEP takes 2.1 s. Simulation, STL takes 1.3 s. Simulation, OBJ takes 1.7 s. Visual, GLB takes 1.8 s. Visual, OBJ takes 2.1 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/corpus_2953.webp)
+![W65C816 Power: stages 4 and 6 take 42% to 72% of a run. Simulation, GLB takes 1.3 s. Simulation, STEP takes 2.1 s. Simulation, STL takes 1.3 s. Simulation, OBJ takes 1.7 s. Visual, GLB takes 1.8 s. Visual, OBJ takes 2.1 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/658-Computer_W65C816-Power.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -5650,7 +5922,9 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 | Board | Repo: [andrewpaterson/658-Computer](https://github.com/andrewpaterson/658-Computer)<br>Board: `W65C816 Power.kicad_pcb` |
 |---|---|
 | Folder | Kicad / Computer / Processor / W65C816 Power |
-| Complexity | 12, simple |
+| Complexity | 142&nbsp;/&nbsp;1000 (size&nbsp;87, features&nbsp;55) |
+| KESE&nbsp;features | rounded,<br>trapezoid or chamfered pads,<br>knockout text, stack-up,<br>dielectric εr and tanδ |
+| Tested | 9th November 2026 |
 | Copper&nbsp;layers | 2 |
 | File&nbsp;format | KiCad 9 (20241229) |
 | Parts,&nbsp;tracks,&nbsp;vias | 4, 24, 0 |
@@ -5675,7 +5949,7 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 
 ## 23.2.139 PS2 Board
 
-![PS2 Board: stages 4 and 6 take 55% to 86% of a run. Simulation, GLB takes 22 s. Simulation, STEP takes 28 s. Simulation, STL takes 24 s. Simulation, OBJ takes 35 s. Visual, GLB takes 38 s. Visual, OBJ takes 45 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/corpus_1227.webp)
+![PS2 Board: stages 4 and 6 take 55% to 86% of a run. Simulation, GLB takes 22 s. Simulation, STEP takes 28 s. Simulation, STL takes 24 s. Simulation, OBJ takes 35 s. Visual, GLB takes 38 s. Visual, OBJ takes 45 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/658-Computer_PS2-Board.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -5691,7 +5965,9 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 | Board | Repo: [andrewpaterson/658-Computer](https://github.com/andrewpaterson/658-Computer)<br>Board: `PS2 Board.kicad_pcb` |
 |---|---|
 | Folder | Kicad / Computer / PS2 / PS2 Board |
-| Complexity | 1,895, medium |
+| Complexity | 254&nbsp;/&nbsp;1000 (size&nbsp;174, features&nbsp;80) |
+| KESE&nbsp;features | through vias, rounded,<br>trapezoid or chamfered pads,<br>curved board outline,<br>knockout text, stack-up,<br>dielectric εr and tanδ |
+| Tested | 9th November 2026 |
 | Copper&nbsp;layers | 2 |
 | File&nbsp;format | KiCad 9 (20241229) |
 | Parts,&nbsp;tracks,&nbsp;vias | 23, 1,396, 151 |
@@ -5716,7 +5992,7 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 
 ## 23.2.140 PS2 FIFO
 
-![PS2 FIFO: stages 4 and 6 take 53% to 82% of a run. Simulation, GLB takes 6.1 s. Simulation, STEP takes 8.1 s. Simulation, STL takes 6.4 s. Simulation, OBJ takes 8.7 s. Visual, GLB takes 11 s. Visual, OBJ takes 12 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/corpus_1732.webp)
+![PS2 FIFO: stages 4 and 6 take 53% to 82% of a run. Simulation, GLB takes 6.1 s. Simulation, STEP takes 8.1 s. Simulation, STL takes 6.4 s. Simulation, OBJ takes 8.7 s. Visual, GLB takes 11 s. Visual, OBJ takes 12 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/658-Computer_PS2-FIFO.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -5732,7 +6008,9 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 | Board | Repo: [andrewpaterson/658-Computer](https://github.com/andrewpaterson/658-Computer)<br>Board: `PS2 FIFO.kicad_pcb` |
 |---|---|
 | Folder | Kicad / Computer / PS2 / PS2 FIFO |
-| Complexity | 1,023, medium |
+| Complexity | 233&nbsp;/&nbsp;1000 (size&nbsp;163, features&nbsp;70) |
+| KESE&nbsp;features | through vias, rounded,<br>trapezoid or chamfered pads,<br>knockout text, stack-up,<br>dielectric εr and tanδ |
+| Tested | 9th November 2026 |
 | Copper&nbsp;layers | 2 |
 | File&nbsp;format | KiCad 9 (20241229) |
 | Parts,&nbsp;tracks,&nbsp;vias | 20, 710, 91 |
@@ -5757,7 +6035,7 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 
 ## 23.2.141 PS2 Timing
 
-![PS2 Timing: stages 4 and 6 take 51% to 81% of a run. Simulation, GLB takes 4.1 s. Simulation, STEP takes 6.0 s. Simulation, STL takes 4.3 s. Simulation, OBJ takes 6.2 s. Visual, GLB takes 6.1 s. Visual, OBJ takes 7.2 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/corpus_2512.webp)
+![PS2 Timing: stages 4 and 6 take 51% to 81% of a run. Simulation, GLB takes 4.1 s. Simulation, STEP takes 6.0 s. Simulation, STL takes 4.3 s. Simulation, OBJ takes 6.2 s. Visual, GLB takes 6.1 s. Visual, OBJ takes 7.2 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/658-Computer_PS2-Timing.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -5773,7 +6051,9 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 | Board | Repo: [andrewpaterson/658-Computer](https://github.com/andrewpaterson/658-Computer)<br>Board: `PS2 Timing.kicad_pcb` |
 |---|---|
 | Folder | Kicad / Computer / PS2 / PS2 Timing |
-| Complexity | 243, simple |
+| Complexity | 205&nbsp;/&nbsp;1000 (size&nbsp;135, features&nbsp;70) |
+| KESE&nbsp;features | through vias, rounded,<br>trapezoid or chamfered pads,<br>knockout text, stack-up,<br>dielectric εr and tanδ |
+| Tested | 9th November 2026 |
 | Copper&nbsp;layers | 2 |
 | File&nbsp;format | KiCad 9 (20241229) |
 | Parts,&nbsp;tracks,&nbsp;vias | 15, 150, 21 |
@@ -5798,7 +6078,7 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 
 ## 23.2.142 SD Card Board
 
-![SD Card Board: stages 4 and 6 take 54% to 87% of a run. Simulation, GLB takes 59 s. Simulation, STEP takes 70 s. Simulation, STL takes 61 s. Simulation, OBJ takes 93 s. Visual, GLB takes 98 s. Visual, OBJ takes 2 min](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/corpus_0700.webp)
+![SD Card Board: stages 4 and 6 take 54% to 87% of a run. Simulation, GLB takes 59 s. Simulation, STEP takes 70 s. Simulation, STL takes 61 s. Simulation, OBJ takes 93 s. Visual, GLB takes 98 s. Visual, OBJ takes 2 min](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/658-Computer_SD-Card-Board.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -5814,7 +6094,9 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 | Board | Repo: [andrewpaterson/658-Computer](https://github.com/andrewpaterson/658-Computer)<br>Board: `SD Card Board.kicad_pcb` |
 |---|---|
 | Folder | Kicad / Computer / SD Card / SD Card Board |
-| Complexity | 3,900, high |
+| Complexity | 269&nbsp;/&nbsp;1000 (size&nbsp;189, features&nbsp;80) |
+| KESE&nbsp;features | through vias, rounded,<br>trapezoid or chamfered pads,<br>curved board outline,<br>knockout text, stack-up,<br>dielectric εr and tanδ |
+| Tested | 9th November 2026 |
 | Copper&nbsp;layers | 2 |
 | File&nbsp;format | KiCad 9 (20241229) |
 | Parts,&nbsp;tracks,&nbsp;vias | 30, 2,871, 323 |
@@ -5839,7 +6121,7 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 
 ## 23.2.143 SD Card Clock
 
-![SD Card Clock: stages 4 and 6 take 50% to 82% of a run. Simulation, GLB takes 3.3 s. Simulation, STEP takes 4.6 s. Simulation, STL takes 3.3 s. Simulation, OBJ takes 4.7 s. Visual, GLB takes 4.6 s. Visual, OBJ takes 6.2 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/corpus_2150.webp)
+![SD Card Clock: stages 4 and 6 take 50% to 82% of a run. Simulation, GLB takes 3.3 s. Simulation, STEP takes 4.6 s. Simulation, STL takes 3.3 s. Simulation, OBJ takes 4.7 s. Visual, GLB takes 4.6 s. Visual, OBJ takes 6.2 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/658-Computer_SD-Card-Clock.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -5855,7 +6137,9 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 | Board | Repo: [andrewpaterson/658-Computer](https://github.com/andrewpaterson/658-Computer)<br>Board: `SD Card Clock.kicad_pcb` |
 |---|---|
 | Folder | Kicad / Computer / SD Card / SD Card Clock |
-| Complexity | 554, low |
+| Complexity | 219&nbsp;/&nbsp;1000 (size&nbsp;149, features&nbsp;70) |
+| KESE&nbsp;features | through vias, rounded,<br>trapezoid or chamfered pads,<br>knockout text, stack-up,<br>dielectric εr and tanδ |
+| Tested | 9th November 2026 |
 | Copper&nbsp;layers | 2 |
 | File&nbsp;format | KiCad 9 (20241229) |
 | Parts,&nbsp;tracks,&nbsp;vias | 14, 370, 52 |
@@ -5880,7 +6164,7 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 
 ## 23.2.144 SD Card Full Socket
 
-![SD Card Full Socket: stages 4 and 6 take 51% to 81% of a run. Simulation, GLB takes 3.0 s. Simulation, STEP takes 3.9 s. Simulation, STL takes 2.9 s. Simulation, OBJ takes 4.3 s. Visual, GLB takes 4.5 s. Visual, OBJ takes 5.3 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/corpus_2297.webp)
+![SD Card Full Socket: stages 4 and 6 take 51% to 81% of a run. Simulation, GLB takes 3.0 s. Simulation, STEP takes 3.9 s. Simulation, STL takes 2.9 s. Simulation, OBJ takes 4.3 s. Visual, GLB takes 4.5 s. Visual, OBJ takes 5.3 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/658-Computer_SD-Card-Full-Socket.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -5896,7 +6180,9 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 | Board | Repo: [andrewpaterson/658-Computer](https://github.com/andrewpaterson/658-Computer)<br>Board: `SD Card Full Socket.kicad_pcb` |
 |---|---|
 | Folder | Kicad / Computer / SD Card / SD Card Full Socket |
-| Complexity | 414, low |
+| Complexity | 224&nbsp;/&nbsp;1000 (size&nbsp;144, features&nbsp;80) |
+| KESE&nbsp;features | through vias, rounded,<br>trapezoid or chamfered pads,<br>curved board outline,<br>knockout text, stack-up,<br>dielectric εr and tanδ |
+| Tested | 9th November 2026 |
 | Copper&nbsp;layers | 2 |
 | File&nbsp;format | KiCad 9 (20241229) |
 | Parts,&nbsp;tracks,&nbsp;vias | 15, 261, 41 |
@@ -5921,7 +6207,7 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 
 ## 23.2.145 SD Card Micro Socket
 
-![SD Card Micro Socket: stages 4 and 6 take 48% to 79% of a run. Simulation, GLB takes 2.8 s. Simulation, STEP takes 4.2 s. Simulation, STL takes 3.1 s. Simulation, OBJ takes 4.5 s. Visual, GLB takes 4.3 s. Visual, OBJ takes 5.9 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/corpus_2252.webp)
+![SD Card Micro Socket: stages 4 and 6 take 48% to 79% of a run. Simulation, GLB takes 2.8 s. Simulation, STEP takes 4.2 s. Simulation, STL takes 3.1 s. Simulation, OBJ takes 4.5 s. Visual, GLB takes 4.3 s. Visual, OBJ takes 5.9 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/658-Computer_SD-Card-Micro-Socket.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -5937,7 +6223,9 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 | Board | Repo: [andrewpaterson/658-Computer](https://github.com/andrewpaterson/658-Computer)<br>Board: `SD Card Micro Socket.kicad_pcb` |
 |---|---|
 | Folder | Kicad / Computer / SD Card / SD Card Micro Socket |
-| Complexity | 460, low |
+| Complexity | 216&nbsp;/&nbsp;1000 (size&nbsp;146, features&nbsp;70) |
+| KESE&nbsp;features | through vias, rounded,<br>trapezoid or chamfered pads,<br>knockout text, stack-up,<br>dielectric εr and tanδ |
+| Tested | 9th November 2026 |
 | Copper&nbsp;layers | 2 |
 | File&nbsp;format | KiCad 9 (20241229) |
 | Parts,&nbsp;tracks,&nbsp;vias | 14, 285, 49 |
@@ -5962,7 +6250,7 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 
 ## 23.2.146 SD Card Read Data
 
-![SD Card Read Data: stages 4 and 6 take 48% to 80% of a run. Simulation, GLB takes 2.9 s. Simulation, STEP takes 4.0 s. Simulation, STL takes 3.0 s. Simulation, OBJ takes 4.3 s. Visual, GLB takes 4.3 s. Visual, OBJ takes 5.3 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/corpus_2525.webp)
+![SD Card Read Data: stages 4 and 6 take 48% to 80% of a run. Simulation, GLB takes 2.9 s. Simulation, STEP takes 4.0 s. Simulation, STL takes 3.0 s. Simulation, OBJ takes 4.3 s. Visual, GLB takes 4.3 s. Visual, OBJ takes 5.3 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/658-Computer_SD-Card-Read-Data.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -5978,7 +6266,9 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 | Board | Repo: [andrewpaterson/658-Computer](https://github.com/andrewpaterson/658-Computer)<br>Board: `SD Card Read Data.kicad_pcb` |
 |---|---|
 | Folder | Kicad / Computer / SD Card / SD Card Read Data |
-| Complexity | 235, simple |
+| Complexity | 204&nbsp;/&nbsp;1000 (size&nbsp;134, features&nbsp;70) |
+| KESE&nbsp;features | through vias, rounded,<br>trapezoid or chamfered pads,<br>knockout text, stack-up,<br>dielectric εr and tanδ |
+| Tested | 9th November 2026 |
 | Copper&nbsp;layers | 2 |
 | File&nbsp;format | KiCad 9 (20241229) |
 | Parts,&nbsp;tracks,&nbsp;vias | 7, 235, 29 |
@@ -6003,7 +6293,7 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 
 ## 23.2.147 SD Card Read Function
 
-![SD Card Read Function: stages 4 and 6 take 51% to 82% of a run. Simulation, GLB takes 6.9 s. Simulation, STEP takes 9.3 s. Simulation, STL takes 7.4 s. Simulation, OBJ takes 11 s. Visual, GLB takes 11 s. Visual, OBJ takes 14 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/corpus_1360.webp)
+![SD Card Read Function: stages 4 and 6 take 51% to 82% of a run. Simulation, GLB takes 6.9 s. Simulation, STEP takes 9.3 s. Simulation, STL takes 7.4 s. Simulation, OBJ takes 11 s. Visual, GLB takes 11 s. Visual, OBJ takes 14 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/658-Computer_SD-Card-Read-Function.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -6019,7 +6309,9 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 | Board | Repo: [andrewpaterson/658-Computer](https://github.com/andrewpaterson/658-Computer)<br>Board: `SD Card Read Function.kicad_pcb` |
 |---|---|
 | Folder | Kicad / Computer / SD Card / SD Card Read Function |
-| Complexity | 1,624, medium |
+| Complexity | 238&nbsp;/&nbsp;1000 (size&nbsp;168, features&nbsp;70) |
+| KESE&nbsp;features | through vias, rounded,<br>trapezoid or chamfered pads,<br>knockout text, stack-up,<br>dielectric εr and tanδ |
+| Tested | 9th November 2026 |
 | Copper&nbsp;layers | 2 |
 | File&nbsp;format | KiCad 9 (20241229) |
 | Parts,&nbsp;tracks,&nbsp;vias | 16, 1,121, 157 |
@@ -6044,7 +6336,7 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 
 ## 23.2.148 SD Card Read Signals
 
-![SD Card Read Signals: stages 4 and 6 take 51% to 81% of a run. Simulation, GLB takes 5.9 s. Simulation, STEP takes 8.3 s. Simulation, STL takes 6.3 s. Simulation, OBJ takes 10 s. Visual, GLB takes 9.9 s. Visual, OBJ takes 14 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/corpus_1804.webp)
+![SD Card Read Signals: stages 4 and 6 take 51% to 81% of a run. Simulation, GLB takes 5.9 s. Simulation, STEP takes 8.3 s. Simulation, STL takes 6.3 s. Simulation, OBJ takes 10 s. Visual, GLB takes 9.9 s. Visual, OBJ takes 14 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/658-Computer_SD-Card-Read-Signals.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -6060,7 +6352,9 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 | Board | Repo: [andrewpaterson/658-Computer](https://github.com/andrewpaterson/658-Computer)<br>Board: `SD Card Read Signals.kicad_pcb` |
 |---|---|
 | Folder | Kicad / Computer / SD Card / SD Card Read Signals |
-| Complexity | 938, low |
+| Complexity | 230&nbsp;/&nbsp;1000 (size&nbsp;160, features&nbsp;70) |
+| KESE&nbsp;features | through vias, rounded,<br>trapezoid or chamfered pads,<br>knockout text, stack-up,<br>dielectric εr and tanδ |
+| Tested | 9th November 2026 |
 | Copper&nbsp;layers | 2 |
 | File&nbsp;format | KiCad 9 (20241229) |
 | Parts,&nbsp;tracks,&nbsp;vias | 18, 620, 94 |
@@ -6085,7 +6379,7 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 
 ## 23.2.149 SD Card Write Data
 
-![SD Card Write Data: stages 4 and 6 take 50% to 79% of a run. Simulation, GLB takes 2.1 s. Simulation, STEP takes 2.9 s. Simulation, STL takes 2.0 s. Simulation, OBJ takes 3.0 s. Visual, GLB takes 3.1 s. Visual, OBJ takes 3.8 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/corpus_2493.webp)
+![SD Card Write Data: stages 4 and 6 take 50% to 79% of a run. Simulation, GLB takes 2.1 s. Simulation, STEP takes 2.9 s. Simulation, STL takes 2.0 s. Simulation, OBJ takes 3.0 s. Visual, GLB takes 3.1 s. Visual, OBJ takes 3.8 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/658-Computer_SD-Card-Write-Data.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -6101,7 +6395,9 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 | Board | Repo: [andrewpaterson/658-Computer](https://github.com/andrewpaterson/658-Computer)<br>Board: `SD Card Write Data.kicad_pcb` |
 |---|---|
 | Folder | Kicad / Computer / SD Card / SD Card Write Data |
-| Complexity | 255, low |
+| Complexity | 205&nbsp;/&nbsp;1000 (size&nbsp;135, features&nbsp;70) |
+| KESE&nbsp;features | through vias, rounded,<br>trapezoid or chamfered pads,<br>knockout text, stack-up,<br>dielectric εr and tanδ |
+| Tested | 9th November 2026 |
 | Copper&nbsp;layers | 2 |
 | File&nbsp;format | KiCad 9 (20241229) |
 | Parts,&nbsp;tracks,&nbsp;vias | 7, 255, 32 |
@@ -6126,7 +6422,7 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 
 ## 23.2.150 SD Card Write Signals
 
-![SD Card Write Signals: stages 4 and 6 take 49% to 83% of a run. Simulation, GLB takes 3.9 s. Simulation, STEP takes 5.3 s. Simulation, STL takes 4.0 s. Simulation, OBJ takes 5.7 s. Visual, GLB takes 6.0 s. Visual, OBJ takes 7.3 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/corpus_2201.webp)
+![SD Card Write Signals: stages 4 and 6 take 49% to 83% of a run. Simulation, GLB takes 3.9 s. Simulation, STEP takes 5.3 s. Simulation, STL takes 4.0 s. Simulation, OBJ takes 5.7 s. Visual, GLB takes 6.0 s. Visual, OBJ takes 7.3 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/658-Computer_SD-Card-Write-Signals.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -6142,7 +6438,9 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 | Board | Repo: [andrewpaterson/658-Computer](https://github.com/andrewpaterson/658-Computer)<br>Board: `SD Card Write Signals.kicad_pcb` |
 |---|---|
 | Folder | Kicad / Computer / SD Card / SD Card Write Signals |
-| Complexity | 513, low |
+| Complexity | 220&nbsp;/&nbsp;1000 (size&nbsp;150, features&nbsp;70) |
+| KESE&nbsp;features | through vias, rounded,<br>trapezoid or chamfered pads,<br>knockout text, stack-up,<br>dielectric εr and tanδ |
+| Tested | 9th November 2026 |
 | Copper&nbsp;layers | 2 |
 | File&nbsp;format | KiCad 9 (20241229) |
 | Parts,&nbsp;tracks,&nbsp;vias | 18, 348, 43 |
@@ -6167,7 +6465,7 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 
 ## 23.2.151 SNES Controller Clock
 
-![SNES Controller Clock: stages 4 and 6 take 50% to 81% of a run. Simulation, GLB takes 3.6 s. Simulation, STEP takes 5.2 s. Simulation, STL takes 3.9 s. Simulation, OBJ takes 5.5 s. Visual, GLB takes 5.6 s. Visual, OBJ takes 6.6 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/corpus_2225.webp)
+![SNES Controller Clock: stages 4 and 6 take 50% to 81% of a run. Simulation, GLB takes 3.6 s. Simulation, STEP takes 5.2 s. Simulation, STL takes 3.9 s. Simulation, OBJ takes 5.5 s. Visual, GLB takes 5.6 s. Visual, OBJ takes 6.6 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/658-Computer_SNES-Controller-Clock.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -6183,7 +6481,9 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 | Board | Repo: [andrewpaterson/658-Computer](https://github.com/andrewpaterson/658-Computer)<br>Board: `SNES Controller Clock.kicad_pcb` |
 |---|---|
 | Folder | Kicad / Computer / SNES / SNES Controller Clock |
-| Complexity | 485, low |
+| Complexity | 216&nbsp;/&nbsp;1000 (size&nbsp;146, features&nbsp;70) |
+| KESE&nbsp;features | through vias, rounded,<br>trapezoid or chamfered pads,<br>knockout text, stack-up,<br>dielectric εr and tanδ |
+| Tested | 9th November 2026 |
 | Copper&nbsp;layers | 2 |
 | File&nbsp;format | KiCad 9 (20241229) |
 | Parts,&nbsp;tracks,&nbsp;vias | 14, 328, 43 |
@@ -6208,7 +6508,7 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 
 ## 23.2.152 SNES Controller Reader
 
-![SNES Controller Reader: stages 4 and 6 take 49% to 81% of a run. Simulation, GLB takes 4.0 s. Simulation, STEP takes 4.8 s. Simulation, STL takes 3.6 s. Simulation, OBJ takes 5.5 s. Visual, GLB takes 5.7 s. Visual, OBJ takes 7.0 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/corpus_2237.webp)
+![SNES Controller Reader: stages 4 and 6 take 49% to 81% of a run. Simulation, GLB takes 4.0 s. Simulation, STEP takes 4.8 s. Simulation, STL takes 3.6 s. Simulation, OBJ takes 5.5 s. Visual, GLB takes 5.7 s. Visual, OBJ takes 7.0 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/658-Computer_SNES-Controller-Reader.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -6224,7 +6524,9 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 | Board | Repo: [andrewpaterson/658-Computer](https://github.com/andrewpaterson/658-Computer)<br>Board: `SNES Controller Reader.kicad_pcb` |
 |---|---|
 | Folder | Kicad / Computer / SNES / SNES Controller Reader |
-| Complexity | 473, low |
+| Complexity | 215&nbsp;/&nbsp;1000 (size&nbsp;145, features&nbsp;70) |
+| KESE&nbsp;features | through vias, rounded,<br>trapezoid or chamfered pads,<br>knockout text, stack-up,<br>dielectric εr and tanδ |
+| Tested | 9th November 2026 |
 | Copper&nbsp;layers | 2 |
 | File&nbsp;format | KiCad 9 (20241229) |
 | Parts,&nbsp;tracks,&nbsp;vias | 12, 332, 39 |
@@ -6249,7 +6551,7 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 
 ## 23.2.153 RS232
 
-![RS232: stages 4 and 6 take 52% to 81% of a run. Simulation, GLB takes 5.3 s. Simulation, STEP takes 6.9 s. Simulation, STL takes 5.4 s. Simulation, OBJ takes 7.8 s. Visual, GLB takes 8.0 s. Visual, OBJ takes 10 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/corpus_1773.webp)
+![RS232: stages 4 and 6 take 52% to 81% of a run. Simulation, GLB takes 5.3 s. Simulation, STEP takes 6.9 s. Simulation, STL takes 5.4 s. Simulation, OBJ takes 7.8 s. Visual, GLB takes 8.0 s. Visual, OBJ takes 10 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/658-Computer_RS232.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -6265,7 +6567,9 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 | Board | Repo: [andrewpaterson/658-Computer](https://github.com/andrewpaterson/658-Computer)<br>Board: `RS232.kicad_pcb` |
 |---|---|
 | Folder | Kicad / Computer / UART / RS232 |
-| Complexity | 974, low |
+| Complexity | 281&nbsp;/&nbsp;1000 (size&nbsp;201, features&nbsp;80) |
+| KESE&nbsp;features | through vias, rounded,<br>trapezoid or chamfered pads,<br>curved board outline,<br>knockout text, stack-up,<br>dielectric εr and tanδ |
+| Tested | 9th November 2026 |
 | Copper&nbsp;layers | 2 |
 | File&nbsp;format | KiCad 9 (20241229) |
 | Parts,&nbsp;tracks,&nbsp;vias | 21, 611, 87 |
@@ -6290,7 +6594,7 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 
 ## 23.2.154 TTL5V
 
-![TTL5V: stages 4 and 6 take 50% to 81% of a run. Simulation, GLB takes 4.6 s. Simulation, STEP takes 5.7 s. Simulation, STL takes 4.5 s. Simulation, OBJ takes 6.7 s. Visual, GLB takes 6.6 s. Visual, OBJ takes 8.5 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/corpus_1872.webp)
+![TTL5V: stages 4 and 6 take 50% to 81% of a run. Simulation, GLB takes 4.6 s. Simulation, STEP takes 5.7 s. Simulation, STL takes 4.5 s. Simulation, OBJ takes 6.7 s. Visual, GLB takes 6.6 s. Visual, OBJ takes 8.5 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/658-Computer_TTL5V.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -6306,7 +6610,9 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 | Board | Repo: [andrewpaterson/658-Computer](https://github.com/andrewpaterson/658-Computer)<br>Board: `TTL5V.kicad_pcb` |
 |---|---|
 | Folder | Kicad / Computer / UART / TTL5V |
-| Complexity | 857, low |
+| Complexity | 276&nbsp;/&nbsp;1000 (size&nbsp;196, features&nbsp;80) |
+| KESE&nbsp;features | through vias, rounded,<br>trapezoid or chamfered pads,<br>curved board outline,<br>knockout text, stack-up,<br>dielectric εr and tanδ |
+| Tested | 9th November 2026 |
 | Copper&nbsp;layers | 2 |
 | File&nbsp;format | KiCad 9 (20241229) |
 | Parts,&nbsp;tracks,&nbsp;vias | 16, 558, 69 |
@@ -6331,7 +6637,7 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 
 ## 23.2.155 UART Board
 
-![UART Board: stages 4 and 6 take 55% to 86% of a run. Simulation, GLB takes 18 s. Simulation, STEP takes 23 s. Simulation, STL takes 19 s. Simulation, OBJ takes 27 s. Visual, GLB takes 28 s. Visual, OBJ takes 34 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/corpus_1561.webp)
+![UART Board: stages 4 and 6 take 55% to 86% of a run. Simulation, GLB takes 18 s. Simulation, STEP takes 23 s. Simulation, STL takes 19 s. Simulation, OBJ takes 27 s. Visual, GLB takes 28 s. Visual, OBJ takes 34 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/658-Computer_UART-Board.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -6347,7 +6653,9 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 | Board | Repo: [andrewpaterson/658-Computer](https://github.com/andrewpaterson/658-Computer)<br>Board: `UART Board.kicad_pcb` |
 |---|---|
 | Folder | Kicad / Computer / UART / UART Board |
-| Complexity | 1,270, medium |
+| Complexity | 243&nbsp;/&nbsp;1000 (size&nbsp;163, features&nbsp;80) |
+| KESE&nbsp;features | through vias, rounded,<br>trapezoid or chamfered pads,<br>curved board outline,<br>knockout text, stack-up,<br>dielectric εr and tanδ |
+| Tested | 9th November 2026 |
 | Copper&nbsp;layers | 2 |
 | File&nbsp;format | KiCad 9 (20241229) |
 | Parts,&nbsp;tracks,&nbsp;vias | 14, 873, 123 |
@@ -6372,7 +6680,7 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 
 ## 23.2.156 UART Signals
 
-![UART Signals: stages 4 and 6 take 48% to 77% of a run. Simulation, GLB takes 1.8 s. Simulation, STEP takes 2.8 s. Simulation, STL takes 2.0 s. Simulation, OBJ takes 2.7 s. Visual, GLB takes 2.9 s. Visual, OBJ takes 3.4 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/corpus_2656.webp)
+![UART Signals: stages 4 and 6 take 48% to 77% of a run. Simulation, GLB takes 1.8 s. Simulation, STEP takes 2.8 s. Simulation, STL takes 2.0 s. Simulation, OBJ takes 2.7 s. Visual, GLB takes 2.9 s. Visual, OBJ takes 3.4 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/658-Computer_UART-Signals.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -6388,7 +6696,9 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 | Board | Repo: [andrewpaterson/658-Computer](https://github.com/andrewpaterson/658-Computer)<br>Board: `UART Signals.kicad_pcb` |
 |---|---|
 | Folder | Kicad / Computer / UART / UART Signals |
-| Complexity | 135, simple |
+| Complexity | 192&nbsp;/&nbsp;1000 (size&nbsp;122, features&nbsp;70) |
+| KESE&nbsp;features | through vias, rounded,<br>trapezoid or chamfered pads,<br>knockout text, stack-up,<br>dielectric εr and tanδ |
+| Tested | 9th November 2026 |
 | Copper&nbsp;layers | 2 |
 | File&nbsp;format | KiCad 9 (20241229) |
 | Parts,&nbsp;tracks,&nbsp;vias | 9, 105, 9 |
@@ -6413,7 +6723,7 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 
 ## 23.2.157 VIA Board
 
-![VIA Board: stages 4 and 6 take 52% to 87% of a run. Simulation, GLB takes 43 s. Simulation, STEP takes 53 s. Simulation, STL takes 43 s. Simulation, OBJ takes 68 s. Visual, GLB takes 77 s. Visual, OBJ takes 93 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/corpus_0667.webp)
+![VIA Board: stages 4 and 6 take 52% to 87% of a run. Simulation, GLB takes 43 s. Simulation, STEP takes 53 s. Simulation, STL takes 43 s. Simulation, OBJ takes 68 s. Visual, GLB takes 77 s. Visual, OBJ takes 93 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/658-Computer_VIA-Board.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -6429,7 +6739,9 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 | Board | Repo: [andrewpaterson/658-Computer](https://github.com/andrewpaterson/658-Computer)<br>Board: `VIA Board.kicad_pcb` |
 |---|---|
 | Folder | Kicad / Computer / VIA / VIA Board |
-| Complexity | 4,079, high |
+| Complexity | 269&nbsp;/&nbsp;1000 (size&nbsp;189, features&nbsp;80) |
+| KESE&nbsp;features | through vias, rounded,<br>trapezoid or chamfered pads,<br>curved board outline,<br>knockout text, stack-up,<br>dielectric εr and tanδ |
+| Tested | 9th November 2026 |
 | Copper&nbsp;layers | 2 |
 | File&nbsp;format | KiCad 9 (20241229) |
 | Parts,&nbsp;tracks,&nbsp;vias | 28, 3,012, 337 |
@@ -6454,7 +6766,7 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 
 ## 23.2.158 VIA Breakout
 
-![VIA Breakout: stages 4 and 6 take 52% to 82% of a run. Simulation, GLB takes 5.8 s. Simulation, STEP takes 7.4 s. Simulation, STL takes 6.2 s. Simulation, OBJ takes 8.3 s. Visual, GLB takes 8.1 s. Visual, OBJ takes 9.8 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/corpus_2317.webp)
+![VIA Breakout: stages 4 and 6 take 52% to 82% of a run. Simulation, GLB takes 5.8 s. Simulation, STEP takes 7.4 s. Simulation, STL takes 6.2 s. Simulation, OBJ takes 8.3 s. Visual, GLB takes 8.1 s. Visual, OBJ takes 9.8 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/658-Computer_VIA-Breakout.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -6470,7 +6782,9 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 | Board | Repo: [andrewpaterson/658-Computer](https://github.com/andrewpaterson/658-Computer)<br>Board: `VIA Breakout.kicad_pcb` |
 |---|---|
 | Folder | Kicad / Computer / VIA / VIA Breakout |
-| Complexity | 399, low |
+| Complexity | 257&nbsp;/&nbsp;1000 (size&nbsp;187, features&nbsp;70) |
+| KESE&nbsp;features | through vias, rounded,<br>trapezoid or chamfered pads,<br>knockout text, stack-up,<br>dielectric εr and tanδ |
+| Tested | 9th November 2026 |
 | Copper&nbsp;layers | 2 |
 | File&nbsp;format | KiCad 9 (20241229) |
 | Parts,&nbsp;tracks,&nbsp;vias | 6, 393, 47 |
@@ -6495,7 +6809,7 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 
 ## 23.2.159 VIA Control
 
-![VIA Control: stages 4 and 6 take 53% to 82% of a run. Simulation, GLB takes 8.8 s. Simulation, STEP takes 11 s. Simulation, STL takes 8.4 s. Simulation, OBJ takes 12 s. Visual, GLB takes 13 s. Visual, OBJ takes 16 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/corpus_1404.webp)
+![VIA Control: stages 4 and 6 take 53% to 82% of a run. Simulation, GLB takes 8.8 s. Simulation, STEP takes 11 s. Simulation, STL takes 8.4 s. Simulation, OBJ takes 12 s. Visual, GLB takes 13 s. Visual, OBJ takes 16 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/658-Computer_VIA-Control.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -6511,7 +6825,9 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 | Board | Repo: [andrewpaterson/658-Computer](https://github.com/andrewpaterson/658-Computer)<br>Board: `VIA Control.kicad_pcb` |
 |---|---|
 | Folder | Kicad / Computer / VIA / VIA Control |
-| Complexity | 1,538, medium |
+| Complexity | 243&nbsp;/&nbsp;1000 (size&nbsp;173, features&nbsp;70) |
+| KESE&nbsp;features | through vias, rounded,<br>trapezoid or chamfered pads,<br>knockout text, stack-up,<br>dielectric εr and tanδ |
+| Tested | 9th November 2026 |
 | Copper&nbsp;layers | 2 |
 | File&nbsp;format | KiCad 9 (20241229) |
 | Parts,&nbsp;tracks,&nbsp;vias | 28, 1,020, 154 |
@@ -6536,7 +6852,7 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 
 ## 23.2.160 Video Address Reader
 
-![Video Address Reader: stages 4 and 6 take 51% to 80% of a run. Simulation, GLB takes 4.2 s. Simulation, STEP takes 5.5 s. Simulation, STL takes 4.1 s. Simulation, OBJ takes 6.0 s. Visual, GLB takes 6.2 s. Visual, OBJ takes 8.1 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/corpus_1828.webp)
+![Video Address Reader: stages 4 and 6 take 51% to 80% of a run. Simulation, GLB takes 4.2 s. Simulation, STEP takes 5.5 s. Simulation, STL takes 4.1 s. Simulation, OBJ takes 6.0 s. Visual, GLB takes 6.2 s. Visual, OBJ takes 8.1 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/658-Computer_Video-Address-Reader.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -6552,7 +6868,9 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 | Board | Repo: [andrewpaterson/658-Computer](https://github.com/andrewpaterson/658-Computer)<br>Board: `Video Address Reader.kicad_pcb` |
 |---|---|
 | Folder | Kicad / Computer / Video / Video Address Reader |
-| Complexity | 904, low |
+| Complexity | 227&nbsp;/&nbsp;1000 (size&nbsp;157, features&nbsp;70) |
+| KESE&nbsp;features | through vias, rounded,<br>trapezoid or chamfered pads,<br>knockout text, stack-up,<br>dielectric εr and tanδ |
+| Tested | 9th November 2026 |
 | Copper&nbsp;layers | 2 |
 | File&nbsp;format | KiCad 9 (20241229) |
 | Parts,&nbsp;tracks,&nbsp;vias | 14, 612, 88 |
@@ -6577,7 +6895,7 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 
 ## 23.2.161 Video Blank and Sync
 
-![Video Blank and Sync: stages 4 and 6 take 51% to 81% of a run. Simulation, GLB takes 3.5 s. Simulation, STEP takes 4.8 s. Simulation, STL takes 3.6 s. Simulation, OBJ takes 5.1 s. Visual, GLB takes 5.8 s. Visual, OBJ takes 7.0 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/corpus_2244.webp)
+![Video Blank and Sync: stages 4 and 6 take 51% to 81% of a run. Simulation, GLB takes 3.5 s. Simulation, STEP takes 4.8 s. Simulation, STL takes 3.6 s. Simulation, OBJ takes 5.1 s. Visual, GLB takes 5.8 s. Visual, OBJ takes 7.0 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/658-Computer_Video-Blank-and-Sync.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -6593,7 +6911,9 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 | Board | Repo: [andrewpaterson/658-Computer](https://github.com/andrewpaterson/658-Computer)<br>Board: `Video Blank and Sync.kicad_pcb` |
 |---|---|
 | Folder | Kicad / Computer / Video / Video Blank and Sync |
-| Complexity | 468, low |
+| Complexity | 213&nbsp;/&nbsp;1000 (size&nbsp;143, features&nbsp;70) |
+| KESE&nbsp;features | through vias, rounded,<br>trapezoid or chamfered pads,<br>knockout text, stack-up,<br>dielectric εr and tanδ |
+| Tested | 9th November 2026 |
 | Copper&nbsp;layers | 2 |
 | File&nbsp;format | KiCad 9 (20241229) |
 | Parts,&nbsp;tracks,&nbsp;vias | 10, 301, 49 |
@@ -6618,7 +6938,7 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 
 ## 23.2.162 Video Board - Memory
 
-![Video Board - Memory: stages 4 and 6 take 52% to 87% of a run. Simulation, GLB takes 70 s. Simulation, STEP takes 86 s. Simulation, STL takes 75 s. Simulation, OBJ takes 2 min. Visual, GLB takes 2 min. Visual, OBJ takes 3 min](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/corpus_0305.webp)
+![Video Board - Memory: stages 4 and 6 take 52% to 87% of a run. Simulation, GLB takes 70 s. Simulation, STEP takes 86 s. Simulation, STL takes 75 s. Simulation, OBJ takes 2 min. Visual, GLB takes 2 min. Visual, OBJ takes 3 min](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/658-Computer_Video-Board-Memory.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -6634,7 +6954,9 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 | Board | Repo: [andrewpaterson/658-Computer](https://github.com/andrewpaterson/658-Computer)<br>Board: `Video Board - Memory.kicad_pcb` |
 |---|---|
 | Folder | Kicad / Computer / Video / Video Board - Memory |
-| Complexity | 8,469, very high |
+| Complexity | 282&nbsp;/&nbsp;1000 (size&nbsp;202, features&nbsp;80) |
+| KESE&nbsp;features | through vias, rounded,<br>trapezoid or chamfered pads,<br>curved board outline,<br>knockout text, stack-up,<br>dielectric εr and tanδ |
+| Tested | 9th November 2026 |
 | Copper&nbsp;layers | 2 |
 | File&nbsp;format | KiCad 9 (20241229) |
 | Parts,&nbsp;tracks,&nbsp;vias | 30, 6,354, 685 |
@@ -6659,7 +6981,7 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 
 ## 23.2.163 Video Board - Signals
 
-![Video Board - Signals: stages 4 and 6 take 54% to 85% of a run. Simulation, GLB takes 60 s. Simulation, STEP takes 72 s. Simulation, STL takes 59 s. Simulation, OBJ takes 91 s. Visual, GLB takes 2 min. Visual, OBJ takes 2 min](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/corpus_0431.webp)
+![Video Board - Signals: stages 4 and 6 take 54% to 85% of a run. Simulation, GLB takes 60 s. Simulation, STEP takes 72 s. Simulation, STL takes 59 s. Simulation, OBJ takes 91 s. Visual, GLB takes 2 min. Visual, OBJ takes 2 min](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/658-Computer_Video-Board-Signals.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -6675,7 +6997,9 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 | Board | Repo: [andrewpaterson/658-Computer](https://github.com/andrewpaterson/658-Computer)<br>Board: `Video Board - Signals.kicad_pcb` |
 |---|---|
 | Folder | Kicad / Computer / Video / Video Board - Signals |
-| Complexity | 6,352, high |
+| Complexity | 280&nbsp;/&nbsp;1000 (size&nbsp;200, features&nbsp;80) |
+| KESE&nbsp;features | through vias, rounded,<br>trapezoid or chamfered pads,<br>curved board outline,<br>knockout text, stack-up,<br>dielectric εr and tanδ |
+| Tested | 9th November 2026 |
 | Copper&nbsp;layers | 2 |
 | File&nbsp;format | KiCad 9 (20241229) |
 | Parts,&nbsp;tracks,&nbsp;vias | 38, 4,452, 608 |
@@ -6700,7 +7024,7 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 
 ## 23.2.164 Video Clock
 
-![Video Clock: stages 4 and 6 take 50% to 83% of a run. Simulation, GLB takes 7.7 s. Simulation, STEP takes 9.9 s. Simulation, STL takes 7.5 s. Simulation, OBJ takes 12 s. Visual, GLB takes 12 s. Visual, OBJ takes 15 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/corpus_1611.webp)
+![Video Clock: stages 4 and 6 take 50% to 83% of a run. Simulation, GLB takes 7.7 s. Simulation, STEP takes 9.9 s. Simulation, STL takes 7.5 s. Simulation, OBJ takes 12 s. Visual, GLB takes 12 s. Visual, OBJ takes 15 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/658-Computer_Video-Clock.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -6716,7 +7040,9 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 | Board | Repo: [andrewpaterson/658-Computer](https://github.com/andrewpaterson/658-Computer)<br>Board: `Video Clock.kicad_pcb` |
 |---|---|
 | Folder | Kicad / Computer / Video / Video Clock |
-| Complexity | 1,189, medium |
+| Complexity | 242&nbsp;/&nbsp;1000 (size&nbsp;172, features&nbsp;70) |
+| KESE&nbsp;features | through vias, rounded,<br>trapezoid or chamfered pads,<br>knockout text, stack-up,<br>dielectric εr and tanδ |
+| Tested | 9th November 2026 |
 | Copper&nbsp;layers | 2 |
 | File&nbsp;format | KiCad 9 (20241229) |
 | Parts,&nbsp;tracks,&nbsp;vias | 39, 778, 111 |
@@ -6741,7 +7067,7 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 
 ## 23.2.165 Video Counter 12bit
 
-![Video Counter 12bit: stages 4 and 6 take 50% to 83% of a run. Simulation, GLB takes 6.8 s. Simulation, STEP takes 8.2 s. Simulation, STL takes 6.4 s. Simulation, OBJ takes 9.7 s. Visual, GLB takes 9.3 s. Visual, OBJ takes 12 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/corpus_1674.webp)
+![Video Counter 12bit: stages 4 and 6 take 50% to 83% of a run. Simulation, GLB takes 6.8 s. Simulation, STEP takes 8.2 s. Simulation, STL takes 6.4 s. Simulation, OBJ takes 9.7 s. Visual, GLB takes 9.3 s. Visual, OBJ takes 12 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/658-Computer_Video-Counter-12bit.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -6757,7 +7083,9 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 | Board | Repo: [andrewpaterson/658-Computer](https://github.com/andrewpaterson/658-Computer)<br>Board: `Video Counter 12bit.kicad_pcb` |
 |---|---|
 | Folder | Kicad / Computer / Video / Video Counter 12bit |
-| Complexity | 1,109, medium |
+| Complexity | 233&nbsp;/&nbsp;1000 (size&nbsp;163, features&nbsp;70) |
+| KESE&nbsp;features | through vias, rounded,<br>trapezoid or chamfered pads,<br>knockout text, stack-up,<br>dielectric εr and tanδ |
+| Tested | 9th November 2026 |
 | Copper&nbsp;layers | 2 |
 | File&nbsp;format | KiCad 9 (20241229) |
 | Parts,&nbsp;tracks,&nbsp;vias | 18, 761, 104 |
@@ -6782,7 +7110,7 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 
 ## 23.2.166 Video DAC
 
-![Video DAC: stages 4 and 6 take 55% to 83% of a run. Simulation, GLB takes 8.2 s. Simulation, STEP takes 11 s. Simulation, STL takes 8.4 s. Simulation, OBJ takes 11 s. Visual, GLB takes 11 s. Visual, OBJ takes 15 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/corpus_1691.webp)
+![Video DAC: stages 4 and 6 take 55% to 83% of a run. Simulation, GLB takes 8.2 s. Simulation, STEP takes 11 s. Simulation, STL takes 8.4 s. Simulation, OBJ takes 11 s. Visual, GLB takes 11 s. Visual, OBJ takes 15 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/658-Computer_Video-DAC.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -6798,7 +7126,9 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 | Board | Repo: [andrewpaterson/658-Computer](https://github.com/andrewpaterson/658-Computer)<br>Board: `Video DAC.kicad_pcb` |
 |---|---|
 | Folder | Kicad / Computer / Video / Video DAC |
-| Complexity | 1,078, medium |
+| Complexity | 285&nbsp;/&nbsp;1000 (size&nbsp;205, features&nbsp;80) |
+| KESE&nbsp;features | through vias, rounded,<br>trapezoid or chamfered pads,<br>curved board outline,<br>knockout text, stack-up,<br>dielectric εr and tanδ |
+| Tested | 9th November 2026 |
 | Copper&nbsp;layers | 2 |
 | File&nbsp;format | KiCad 9 (20241229) |
 | Parts,&nbsp;tracks,&nbsp;vias | 26, 714, 84 |
@@ -6823,7 +7153,7 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 
 ## 23.2.167 Video Data Select
 
-![Video Data Select: stages 4 and 6 take 50% to 84% of a run. Simulation, GLB takes 5.3 s. Simulation, STEP takes 7.0 s. Simulation, STL takes 5.3 s. Simulation, OBJ takes 8.6 s. Visual, GLB takes 8.5 s. Visual, OBJ takes 11 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/corpus_1809.webp)
+![Video Data Select: stages 4 and 6 take 50% to 84% of a run. Simulation, GLB takes 5.3 s. Simulation, STEP takes 7.0 s. Simulation, STL takes 5.3 s. Simulation, OBJ takes 8.6 s. Visual, GLB takes 8.5 s. Visual, OBJ takes 11 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/658-Computer_Video-Data-Select.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -6839,7 +7169,9 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 | Board | Repo: [andrewpaterson/658-Computer](https://github.com/andrewpaterson/658-Computer)<br>Board: `Video Data Select.kicad_pcb` |
 |---|---|
 | Folder | Kicad / Computer / Video / Video Data Select |
-| Complexity | 929, low |
+| Complexity | 230&nbsp;/&nbsp;1000 (size&nbsp;160, features&nbsp;70) |
+| KESE&nbsp;features | through vias, rounded,<br>trapezoid or chamfered pads,<br>knockout text, stack-up,<br>dielectric εr and tanδ |
+| Tested | 9th November 2026 |
 | Copper&nbsp;layers | 2 |
 | File&nbsp;format | KiCad 9 (20241229) |
 | Parts,&nbsp;tracks,&nbsp;vias | 18, 596, 99 |
@@ -6864,7 +7196,7 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 
 ## 23.2.168 Video Device RAM Select
 
-![Video Device RAM Select: stages 4 and 6 take 52% to 82% of a run. Simulation, GLB takes 4.9 s. Simulation, STEP takes 6.3 s. Simulation, STL takes 4.9 s. Simulation, OBJ takes 7.2 s. Visual, GLB takes 6.9 s. Visual, OBJ takes 8.9 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/corpus_1940.webp)
+![Video Device RAM Select: stages 4 and 6 take 52% to 82% of a run. Simulation, GLB takes 4.9 s. Simulation, STEP takes 6.3 s. Simulation, STL takes 4.9 s. Simulation, OBJ takes 7.2 s. Visual, GLB takes 6.9 s. Visual, OBJ takes 8.9 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/658-Computer_Video-Device-RAM-Select.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -6880,7 +7212,9 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 | Board | Repo: [andrewpaterson/658-Computer](https://github.com/andrewpaterson/658-Computer)<br>Board: `Video Device RAM Select.kicad_pcb` |
 |---|---|
 | Folder | Kicad / Computer / Video / Video Device RAM Select |
-| Complexity | 774, low |
+| Complexity | 227&nbsp;/&nbsp;1000 (size&nbsp;157, features&nbsp;70) |
+| KESE&nbsp;features | through vias, rounded,<br>trapezoid or chamfered pads,<br>knockout text, stack-up,<br>dielectric εr and tanδ |
+| Tested | 9th November 2026 |
 | Copper&nbsp;layers | 2 |
 | File&nbsp;format | KiCad 9 (20241229) |
 | Parts,&nbsp;tracks,&nbsp;vias | 18, 519, 73 |
@@ -6905,7 +7239,7 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 
 ## 23.2.169 Video Memory 2MB
 
-![Video Memory 2MB: stages 4 and 6 take 54% to 84% of a run. Simulation, GLB takes 15 s. Simulation, STEP takes 19 s. Simulation, STL takes 15 s. Simulation, OBJ takes 23 s. Visual, GLB takes 24 s. Visual, OBJ takes 29 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/corpus_0978.webp)
+![Video Memory 2MB: stages 4 and 6 take 54% to 84% of a run. Simulation, GLB takes 15 s. Simulation, STEP takes 19 s. Simulation, STL takes 15 s. Simulation, OBJ takes 23 s. Visual, GLB takes 24 s. Visual, OBJ takes 29 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/658-Computer_Video-Memory-2MB.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -6921,7 +7255,9 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 | Board | Repo: [andrewpaterson/658-Computer](https://github.com/andrewpaterson/658-Computer)<br>Board: `Video Memory 2MB.kicad_pcb` |
 |---|---|
 | Folder | Kicad / Computer / Video / Video Memory 2MB |
-| Complexity | 2,594, medium |
+| Complexity | 252&nbsp;/&nbsp;1000 (size&nbsp;182, features&nbsp;70) |
+| KESE&nbsp;features | through vias, rounded,<br>trapezoid or chamfered pads,<br>knockout text, stack-up,<br>dielectric εr and tanδ |
+| Tested | 9th November 2026 |
 | Copper&nbsp;layers | 2 |
 | File&nbsp;format | KiCad 9 (20241229) |
 | Parts,&nbsp;tracks,&nbsp;vias | 29, 1,720, 272 |
@@ -6946,7 +7282,7 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 
 ## 23.2.170 Video Pixel Advance
 
-![Video Pixel Advance: stages 4 and 6 take 51% to 79% of a run. Simulation, GLB takes 5.6 s. Simulation, STEP takes 7.4 s. Simulation, STL takes 5.8 s. Simulation, OBJ takes 8.9 s. Visual, GLB takes 8.2 s. Visual, OBJ takes 11 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/corpus_1717.webp)
+![Video Pixel Advance: stages 4 and 6 take 51% to 79% of a run. Simulation, GLB takes 5.6 s. Simulation, STEP takes 7.4 s. Simulation, STL takes 5.8 s. Simulation, OBJ takes 8.9 s. Visual, GLB takes 8.2 s. Visual, OBJ takes 11 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/658-Computer_Video-Pixel-Advance.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -6962,7 +7298,9 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 | Board | Repo: [andrewpaterson/658-Computer](https://github.com/andrewpaterson/658-Computer)<br>Board: `Video Pixel Advance.kicad_pcb` |
 |---|---|
 | Folder | Kicad / Computer / Video / Video Pixel Advance |
-| Complexity | 1,039, medium |
+| Complexity | 231&nbsp;/&nbsp;1000 (size&nbsp;161, features&nbsp;70) |
+| KESE&nbsp;features | through vias, rounded,<br>trapezoid or chamfered pads,<br>knockout text, stack-up,<br>dielectric εr and tanδ |
+| Tested | 9th November 2026 |
 | Copper&nbsp;layers | 2 |
 | File&nbsp;format | KiCad 9 (20241229) |
 | Parts,&nbsp;tracks,&nbsp;vias | 17, 711, 98 |
@@ -6987,7 +7325,7 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 
 ## 23.2.171 Video Row Latch
 
-![Video Row Latch: stages 4 and 6 take 49% to 80% of a run. Simulation, GLB takes 2.9 s. Simulation, STEP takes 3.9 s. Simulation, STL takes 3.0 s. Simulation, OBJ takes 4.3 s. Visual, GLB takes 4.4 s. Visual, OBJ takes 5.4 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/corpus_2234.webp)
+![Video Row Latch: stages 4 and 6 take 49% to 80% of a run. Simulation, GLB takes 2.9 s. Simulation, STEP takes 3.9 s. Simulation, STL takes 3.0 s. Simulation, OBJ takes 4.3 s. Visual, GLB takes 4.4 s. Visual, OBJ takes 5.4 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/658-Computer_Video-Row-Latch.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -7003,7 +7341,9 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 | Board | Repo: [andrewpaterson/658-Computer](https://github.com/andrewpaterson/658-Computer)<br>Board: `Video Row Latch.kicad_pcb` |
 |---|---|
 | Folder | Kicad / Computer / Video / Video Row Latch |
-| Complexity | 477, low |
+| Complexity | 215&nbsp;/&nbsp;1000 (size&nbsp;145, features&nbsp;70) |
+| KESE&nbsp;features | through vias, rounded,<br>trapezoid or chamfered pads,<br>knockout text, stack-up,<br>dielectric εr and tanδ |
+| Tested | 9th November 2026 |
 | Copper&nbsp;layers | 2 |
 | File&nbsp;format | KiCad 9 (20241229) |
 | Parts,&nbsp;tracks,&nbsp;vias | 12, 327, 42 |
@@ -7028,7 +7368,7 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 
 ## 23.2.172 Video Signal Dragger
 
-![Video Signal Dragger: stages 4 and 6 take 54% to 81% of a run. Simulation, GLB takes 4.8 s. Simulation, STEP takes 6.3 s. Simulation, STL takes 5.0 s. Simulation, OBJ takes 6.9 s. Visual, GLB takes 7.6 s. Visual, OBJ takes 9.1 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/corpus_1874.webp)
+![Video Signal Dragger: stages 4 and 6 take 54% to 81% of a run. Simulation, GLB takes 4.8 s. Simulation, STEP takes 6.3 s. Simulation, STL takes 5.0 s. Simulation, OBJ takes 6.9 s. Visual, GLB takes 7.6 s. Visual, OBJ takes 9.1 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/658-Computer_Video-Signal-Dragger.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -7044,7 +7384,9 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 | Board | Repo: [andrewpaterson/658-Computer](https://github.com/andrewpaterson/658-Computer)<br>Board: `Video Signal Dragger.kicad_pcb` |
 |---|---|
 | Folder | Kicad / Computer / Video / Video Signal Dragger |
-| Complexity | 855, low |
+| Complexity | 225&nbsp;/&nbsp;1000 (size&nbsp;155, features&nbsp;70) |
+| KESE&nbsp;features | through vias, rounded,<br>trapezoid or chamfered pads,<br>knockout text, stack-up,<br>dielectric εr and tanδ |
+| Tested | 9th November 2026 |
 | Copper&nbsp;layers | 2 |
 | File&nbsp;format | KiCad 9 (20241229) |
 | Parts,&nbsp;tracks,&nbsp;vias | 12, 612, 73 |
@@ -7069,7 +7411,7 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 
 ## 23.2.173 Video Signals Output
 
-![Video Signals Output: stages 4 and 6 take 52% to 80% of a run. Simulation, GLB takes 3.0 s. Simulation, STEP takes 4.1 s. Simulation, STL takes 3.0 s. Simulation, OBJ takes 4.2 s. Visual, GLB takes 4.8 s. Visual, OBJ takes 5.4 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/corpus_2420.webp)
+![Video Signals Output: stages 4 and 6 take 52% to 80% of a run. Simulation, GLB takes 3.0 s. Simulation, STEP takes 4.1 s. Simulation, STL takes 3.0 s. Simulation, OBJ takes 4.2 s. Visual, GLB takes 4.8 s. Visual, OBJ takes 5.4 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/658-Computer_Video-Signals-Output.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -7085,7 +7427,9 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 | Board | Repo: [andrewpaterson/658-Computer](https://github.com/andrewpaterson/658-Computer)<br>Board: `Video Signals Output.kicad_pcb` |
 |---|---|
 | Folder | Kicad / Computer / Video / Video Signals Output |
-| Complexity | 306, low |
+| Complexity | 205&nbsp;/&nbsp;1000 (size&nbsp;135, features&nbsp;70) |
+| KESE&nbsp;features | through vias, rounded,<br>trapezoid or chamfered pads,<br>knockout text, stack-up,<br>dielectric εr and tanδ |
+| Tested | 9th November 2026 |
 | Copper&nbsp;layers | 2 |
 | File&nbsp;format | KiCad 9 (20241229) |
 | Parts,&nbsp;tracks,&nbsp;vias | 10, 220, 22 |
@@ -7110,7 +7454,7 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 
 ## 23.2.174 Keypad
 
-![Keypad: stages 4 and 6 take 50% to 79% of a run. Simulation, GLB takes 3.3 s. Simulation, STEP takes 4.4 s. Simulation, STL takes 3.0 s. Simulation, OBJ takes 4.4 s. Visual, GLB takes 4.4 s. Visual, OBJ takes 5.5 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/corpus_2564.webp)
+![Keypad: stages 4 and 6 take 50% to 79% of a run. Simulation, GLB takes 3.3 s. Simulation, STEP takes 4.4 s. Simulation, STL takes 3.0 s. Simulation, OBJ takes 4.4 s. Visual, GLB takes 4.4 s. Visual, OBJ takes 5.5 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/658-Computer_Keypad.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -7126,7 +7470,9 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 | Board | Repo: [andrewpaterson/658-Computer](https://github.com/andrewpaterson/658-Computer)<br>Board: `Keypad.kicad_pcb` |
 |---|---|
 | Folder | Kicad / Keypad |
-| Complexity | 203, simple |
+| Complexity | 195&nbsp;/&nbsp;1000 (size&nbsp;130, features&nbsp;65) |
+| KESE&nbsp;features | through vias, rounded,<br>trapezoid or chamfered pads,<br>curved board outline, stack-up,<br>dielectric εr and tanδ |
+| Tested | 9th November 2026 |
 | Copper&nbsp;layers | 2 |
 | File&nbsp;format | KiCad 9 (20241229) |
 | Parts,&nbsp;tracks,&nbsp;vias | 8, 205, 11 |
@@ -7151,7 +7497,7 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 
 ## 23.2.175 GPIO 32bit Board
 
-![GPIO 32bit Board: stages 4 and 6 take 52% to 85% of a run. Simulation, GLB takes 12 s. Simulation, STEP takes 15 s. Simulation, STL takes 12 s. Simulation, OBJ takes 19 s. Visual, GLB takes 15 s. Visual, OBJ takes 19 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/corpus_1830.webp)
+![GPIO 32bit Board: stages 4 and 6 take 52% to 85% of a run. Simulation, GLB takes 12 s. Simulation, STEP takes 15 s. Simulation, STL takes 12 s. Simulation, OBJ takes 19 s. Visual, GLB takes 15 s. Visual, OBJ takes 19 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/658-Computer_GPIO-32bit-Board.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -7167,7 +7513,9 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 | Board | Repo: [andrewpaterson/658-Computer](https://github.com/andrewpaterson/658-Computer)<br>Board: `GPIO 32bit Board.kicad_pcb` |
 |---|---|
 | Folder | Kicad / Pico / GPIO 32bit Board |
-| Complexity | 900, low |
+| Complexity | 226&nbsp;/&nbsp;1000 (size&nbsp;156, features&nbsp;70) |
+| KESE&nbsp;features | through vias, curved board outline,<br>knockout text, stack-up,<br>dielectric εr and tanδ |
+| Tested | 9th November 2026 |
 | Copper&nbsp;layers | 2 |
 | File&nbsp;format | KiCad 10 (20260206) |
 | Parts,&nbsp;tracks,&nbsp;vias | 12, 771, 35 |
@@ -7192,7 +7540,7 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 
 ## 23.2.176 GPIO Address Decode
 
-![GPIO Address Decode: stages 4 and 6 take 52% to 83% of a run. Simulation, GLB takes 6.7 s. Simulation, STEP takes 8.5 s. Simulation, STL takes 6.7 s. Simulation, OBJ takes 9.5 s. Visual, GLB takes 10 s. Visual, OBJ takes 13 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/corpus_1601.webp)
+![GPIO Address Decode: stages 4 and 6 take 52% to 83% of a run. Simulation, GLB takes 6.7 s. Simulation, STEP takes 8.5 s. Simulation, STL takes 6.7 s. Simulation, OBJ takes 9.5 s. Visual, GLB takes 10 s. Visual, OBJ takes 13 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/658-Computer_GPIO-Address-Decode.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -7208,7 +7556,9 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 | Board | Repo: [andrewpaterson/658-Computer](https://github.com/andrewpaterson/658-Computer)<br>Board: `GPIO Address Decode.kicad_pcb` |
 |---|---|
 | Folder | Kicad / Pico / GPIO Address Decode |
-| Complexity | 1,209, medium |
+| Complexity | 239&nbsp;/&nbsp;1000 (size&nbsp;169, features&nbsp;70) |
+| KESE&nbsp;features | through vias, rounded,<br>trapezoid or chamfered pads,<br>knockout text, stack-up,<br>dielectric εr and tanδ |
+| Tested | 9th November 2026 |
 | Copper&nbsp;layers | 2 |
 | File&nbsp;format | KiCad 10 (20260206) |
 | Parts,&nbsp;tracks,&nbsp;vias | 30, 882, 89 |
@@ -7233,7 +7583,7 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 
 ## 23.2.177 GPIO Backplane Board
 
-![GPIO Backplane Board: stages 4 and 6 take 55% to 85% of a run. Simulation, GLB takes 13 s. Simulation, STEP takes 17 s. Simulation, STL takes 13 s. Simulation, OBJ takes 19 s. Visual, GLB takes 18 s. Visual, OBJ takes 22 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/corpus_2172.webp)
+![GPIO Backplane Board: stages 4 and 6 take 55% to 85% of a run. Simulation, GLB takes 13 s. Simulation, STEP takes 17 s. Simulation, STL takes 13 s. Simulation, OBJ takes 19 s. Visual, GLB takes 18 s. Visual, OBJ takes 22 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/658-Computer_GPIO-Backplane-Board.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -7249,7 +7599,9 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 | Board | Repo: [andrewpaterson/658-Computer](https://github.com/andrewpaterson/658-Computer)<br>Board: `GPIO Backplane Board.kicad_pcb` |
 |---|---|
 | Folder | Kicad / Pico / GPIO Backplane Board |
-| Complexity | 535, low |
+| Complexity | 229&nbsp;/&nbsp;1000 (size&nbsp;149, features&nbsp;80) |
+| KESE&nbsp;features | through vias, rounded,<br>trapezoid or chamfered pads,<br>curved board outline,<br>knockout text, stack-up,<br>dielectric εr and tanδ |
+| Tested | 9th November 2026 |
 | Copper&nbsp;layers | 2 |
 | File&nbsp;format | KiCad 9 (20241229) |
 | Parts,&nbsp;tracks,&nbsp;vias | 6, 733, 49 |
@@ -7274,7 +7626,7 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 
 ## 23.2.178 GPIO Bus
 
-![GPIO Bus: stages 4 and 6 take 50% to 81% of a run. Simulation, GLB takes 5.5 s. Simulation, STEP takes 7.5 s. Simulation, STL takes 6.1 s. Simulation, OBJ takes 9.1 s. Visual, GLB takes 8.8 s. Visual, OBJ takes 12 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/corpus_1996.webp)
+![GPIO Bus: stages 4 and 6 take 50% to 81% of a run. Simulation, GLB takes 5.5 s. Simulation, STEP takes 7.5 s. Simulation, STL takes 6.1 s. Simulation, OBJ takes 9.1 s. Visual, GLB takes 8.8 s. Visual, OBJ takes 12 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/658-Computer_GPIO-Bus.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -7290,7 +7642,9 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 | Board | Repo: [andrewpaterson/658-Computer](https://github.com/andrewpaterson/658-Computer)<br>Board: `GPIO Bus.kicad_pcb` |
 |---|---|
 | Folder | Kicad / Pico / GPIO Bus |
-| Complexity | 714, low |
+| Complexity | 226&nbsp;/&nbsp;1000 (size&nbsp;156, features&nbsp;70) |
+| KESE&nbsp;features | through vias, rounded,<br>trapezoid or chamfered pads,<br>knockout text, stack-up,<br>dielectric εr and tanδ |
+| Tested | 9th November 2026 |
 | Copper&nbsp;layers | 2 |
 | File&nbsp;format | KiCad 10 (20260206) |
 | Parts,&nbsp;tracks,&nbsp;vias | 19, 484, 64 |
@@ -7315,7 +7669,7 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 
 ## 23.2.179 GPIO Controller Board
 
-![GPIO Controller Board: stages 4 and 6 take 55% to 86% of a run. Simulation, GLB takes 17 s. Simulation, STEP takes 21 s. Simulation, STL takes 17 s. Simulation, OBJ takes 25 s. Visual, GLB takes 27 s. Visual, OBJ takes 33 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/corpus_1277.webp)
+![GPIO Controller Board: stages 4 and 6 take 55% to 86% of a run. Simulation, GLB takes 17 s. Simulation, STEP takes 21 s. Simulation, STL takes 17 s. Simulation, OBJ takes 25 s. Visual, GLB takes 27 s. Visual, OBJ takes 33 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/658-Computer_GPIO-Controller-Board.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -7331,7 +7685,9 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 | Board | Repo: [andrewpaterson/658-Computer](https://github.com/andrewpaterson/658-Computer)<br>Board: `GPIO Controller Board.kicad_pcb` |
 |---|---|
 | Folder | Kicad / Pico / GPIO Controller Board |
-| Complexity | 1,790, medium |
+| Complexity | 240&nbsp;/&nbsp;1000 (size&nbsp;170, features&nbsp;70) |
+| KESE&nbsp;features | through vias, curved board outline,<br>knockout text, stack-up,<br>dielectric εr and tanδ |
+| Tested | 9th November 2026 |
 | Copper&nbsp;layers | 2 |
 | File&nbsp;format | KiCad 10 (20260206) |
 | Parts,&nbsp;tracks,&nbsp;vias | 17, 1,375, 127 |
@@ -7356,7 +7712,7 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 
 ## 23.2.180 GPIO Power Switch
 
-![GPIO Power Switch: stages 4 and 6 take 51% to 78% of a run. Simulation, GLB takes 6.1 s. Simulation, STEP takes 8.0 s. Simulation, STL takes 6.2 s. Simulation, OBJ takes 9.7 s. Visual, GLB takes 10 s. Visual, OBJ takes 12 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/corpus_2006.webp)
+![GPIO Power Switch: stages 4 and 6 take 51% to 78% of a run. Simulation, GLB takes 6.1 s. Simulation, STEP takes 8.0 s. Simulation, STL takes 6.2 s. Simulation, OBJ takes 9.7 s. Visual, GLB takes 10 s. Visual, OBJ takes 12 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/658-Computer_GPIO-Power-Switch.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -7372,7 +7728,9 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 | Board | Repo: [andrewpaterson/658-Computer](https://github.com/andrewpaterson/658-Computer)<br>Board: `GPIO Power Switch.kicad_pcb` |
 |---|---|
 | Folder | Kicad / Pico / GPIO Power Switch |
-| Complexity | 706, low |
+| Complexity | 264&nbsp;/&nbsp;1000 (size&nbsp;164, features&nbsp;100) |
+| KESE&nbsp;features | through vias, rounded,<br>trapezoid or chamfered pads,<br>filled zones, curved board outline,<br>knockout text, stack-up,<br>dielectric εr and tanδ |
+| Tested | 9th November 2026 |
 | Copper&nbsp;layers | 2 |
 | File&nbsp;format | KiCad 9 (20241229) |
 | Parts,&nbsp;tracks,&nbsp;vias | 48, 415, 65 |
@@ -7397,7 +7755,7 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 
 ## 23.2.181 HCP65 24 Pin Tester
 
-![HCP65 24 Pin Tester: stages 4 and 6 take 53% to 82% of a run. Simulation, GLB takes 12 s. Simulation, STEP takes 15 s. Simulation, STL takes 11 s. Simulation, OBJ takes 16 s. Visual, GLB takes 17 s. Visual, OBJ takes 22 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/corpus_1309.webp)
+![HCP65 24 Pin Tester: stages 4 and 6 take 53% to 82% of a run. Simulation, GLB takes 12 s. Simulation, STEP takes 15 s. Simulation, STL takes 11 s. Simulation, OBJ takes 16 s. Visual, GLB takes 17 s. Visual, OBJ takes 22 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/658-Computer_HCP65-24-Pin-Tester.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -7413,7 +7771,9 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 | Board | Repo: [andrewpaterson/658-Computer](https://github.com/andrewpaterson/658-Computer)<br>Board: `HCP65 24 Pin Tester.kicad_pcb` |
 |---|---|
 | Folder | Kicad / Pico / HCP65 24 Pin Tester |
-| Complexity | 1,723, medium |
+| Complexity | 263&nbsp;/&nbsp;1000 (size&nbsp;183, features&nbsp;80) |
+| KESE&nbsp;features | through vias, rounded,<br>trapezoid or chamfered pads,<br>curved board outline,<br>knockout text, stack-up,<br>dielectric εr and tanδ |
+| Tested | 9th November 2026 |
 | Copper&nbsp;layers | 2 |
 | File&nbsp;format | KiCad 9 (20241229) |
 | Parts,&nbsp;tracks,&nbsp;vias | 67, 1,028, 187 |
@@ -7438,7 +7798,7 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 
 ## 23.2.182 HCP65 32 Pin Tester
 
-![HCP65 32 Pin Tester: stages 4 and 6 take 51% to 84% of a run. Simulation, GLB takes 13 s. Simulation, STEP takes 17 s. Simulation, STL takes 14 s. Simulation, OBJ takes 20 s. Visual, GLB takes 20 s. Visual, OBJ takes 25 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/corpus_1144.webp)
+![HCP65 32 Pin Tester: stages 4 and 6 take 51% to 84% of a run. Simulation, GLB takes 13 s. Simulation, STEP takes 17 s. Simulation, STL takes 14 s. Simulation, OBJ takes 20 s. Visual, GLB takes 20 s. Visual, OBJ takes 25 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/658-Computer_HCP65-32-Pin-Tester.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -7454,7 +7814,9 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 | Board | Repo: [andrewpaterson/658-Computer](https://github.com/andrewpaterson/658-Computer)<br>Board: `HCP65 32 Pin Tester.kicad_pcb` |
 |---|---|
 | Folder | Kicad / Pico / HCP65 32 Pin Tester |
-| Complexity | 2,091, medium |
+| Complexity | 268&nbsp;/&nbsp;1000 (size&nbsp;188, features&nbsp;80) |
+| KESE&nbsp;features | through vias, rounded,<br>trapezoid or chamfered pads,<br>curved board outline,<br>knockout text, stack-up,<br>dielectric εr and tanδ |
+| Tested | 9th November 2026 |
 | Copper&nbsp;layers | 2 |
 | File&nbsp;format | KiCad 9 (20241229) |
 | Parts,&nbsp;tracks,&nbsp;vias | 80, 1,295, 212 |
@@ -7479,7 +7841,7 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 
 ## 23.2.183 HCP65 40 Pin Tester
 
-![HCP65 40 Pin Tester: stages 4 and 6 take 55% to 83% of a run. Simulation, GLB takes 16 s. Simulation, STEP takes 20 s. Simulation, STL takes 15 s. Simulation, OBJ takes 23 s. Visual, GLB takes 24 s. Visual, OBJ takes 31 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/corpus_0997.webp)
+![HCP65 40 Pin Tester: stages 4 and 6 take 55% to 83% of a run. Simulation, GLB takes 16 s. Simulation, STEP takes 20 s. Simulation, STL takes 15 s. Simulation, OBJ takes 23 s. Visual, GLB takes 24 s. Visual, OBJ takes 31 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/658-Computer_HCP65-40-Pin-Tester.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -7495,7 +7857,9 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 | Board | Repo: [andrewpaterson/658-Computer](https://github.com/andrewpaterson/658-Computer)<br>Board: `HCP65 40 Pin Tester.kicad_pcb` |
 |---|---|
 | Folder | Kicad / Pico / HCP65 40 Pin Tester |
-| Complexity | 2,549, medium |
+| Complexity | 273&nbsp;/&nbsp;1000 (size&nbsp;193, features&nbsp;80) |
+| KESE&nbsp;features | through vias, rounded,<br>trapezoid or chamfered pads,<br>curved board outline,<br>knockout text, stack-up,<br>dielectric εr and tanδ |
+| Tested | 9th November 2026 |
 | Copper&nbsp;layers | 2 |
 | File&nbsp;format | KiCad 10 (20260206) |
 | Parts,&nbsp;tracks,&nbsp;vias | 92, 1,612, 251 |
@@ -7520,7 +7884,7 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 
 ## 23.2.184 HCP65 56 Pin Tester
 
-![HCP65 56 Pin Tester: stages 4 and 6 take 52% to 83% of a run. Simulation, GLB takes 19 s. Simulation, STEP takes 25 s. Simulation, STL takes 20 s. Simulation, OBJ takes 30 s. Visual, GLB takes 33 s. Visual, OBJ takes 41 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/corpus_0788.webp)
+![HCP65 56 Pin Tester: stages 4 and 6 take 52% to 83% of a run. Simulation, GLB takes 19 s. Simulation, STEP takes 25 s. Simulation, STL takes 20 s. Simulation, OBJ takes 30 s. Visual, GLB takes 33 s. Visual, OBJ takes 41 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/658-Computer_HCP65-56-Pin-Tester.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -7536,7 +7900,9 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 | Board | Repo: [andrewpaterson/658-Computer](https://github.com/andrewpaterson/658-Computer)<br>Board: `HCP65 56 Pin Tester.kicad_pcb` |
 |---|---|
 | Folder | Kicad / Pico / HCP65 56 Pin Tester |
-| Complexity | 3,474, high |
+| Complexity | 281&nbsp;/&nbsp;1000 (size&nbsp;201, features&nbsp;80) |
+| KESE&nbsp;features | through vias, rounded,<br>trapezoid or chamfered pads,<br>curved board outline,<br>knockout text, stack-up,<br>dielectric εr and tanδ |
+| Tested | 9th November 2026 |
 | Copper&nbsp;layers | 2 |
 | File&nbsp;format | KiCad 10 (20260206) |
 | Parts,&nbsp;tracks,&nbsp;vias | 116, 2,318, 308 |
@@ -7561,7 +7927,7 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 
 ## 23.2.185 HCP65 64 Pin Tester
 
-![HCP65 64 Pin Tester: stages 4 and 6 take 51% to 82% of a run. Simulation, GLB takes 26 s. Simulation, STEP takes 33 s. Simulation, STL takes 25 s. Simulation, OBJ takes 38 s. Visual, GLB takes 41 s. Visual, OBJ takes 49 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/corpus_0713.webp)
+![HCP65 64 Pin Tester: stages 4 and 6 take 51% to 82% of a run. Simulation, GLB takes 26 s. Simulation, STEP takes 33 s. Simulation, STL takes 25 s. Simulation, OBJ takes 38 s. Visual, GLB takes 41 s. Visual, OBJ takes 49 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/658-Computer_HCP65-64-Pin-Tester.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -7577,7 +7943,9 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 | Board | Repo: [andrewpaterson/658-Computer](https://github.com/andrewpaterson/658-Computer)<br>Board: `HCP65 64 Pin Tester.kicad_pcb` |
 |---|---|
 | Folder | Kicad / Pico / HCP65 64 Pin Tester |
-| Complexity | 3,790, high |
+| Complexity | 283&nbsp;/&nbsp;1000 (size&nbsp;203, features&nbsp;80) |
+| KESE&nbsp;features | through vias, rounded,<br>trapezoid or chamfered pads,<br>curved board outline,<br>knockout text, stack-up,<br>dielectric εr and tanδ |
+| Tested | 9th November 2026 |
 | Copper&nbsp;layers | 2 |
 | File&nbsp;format | KiCad 10 (20260206) |
 | Parts,&nbsp;tracks,&nbsp;vias | 129, 2,539, 331 |
@@ -7602,7 +7970,7 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 
 ## 23.2.186 HCP65 Board Tester
 
-![HCP65 Board Tester: stages 4 and 6 take 53% to 84% of a run. Simulation, GLB takes 23 s. Simulation, STEP takes 30 s. Simulation, STL takes 23 s. Simulation, OBJ takes 35 s. Visual, GLB takes 35 s. Visual, OBJ takes 41 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/corpus_1507.webp)
+![HCP65 Board Tester: stages 4 and 6 take 53% to 84% of a run. Simulation, GLB takes 23 s. Simulation, STEP takes 30 s. Simulation, STL takes 23 s. Simulation, OBJ takes 35 s. Visual, GLB takes 35 s. Visual, OBJ takes 41 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/658-Computer_HCP65-Board-Tester.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -7618,7 +7986,9 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 | Board | Repo: [andrewpaterson/658-Computer](https://github.com/andrewpaterson/658-Computer)<br>Board: `HCP65 Board Tester.kicad_pcb` |
 |---|---|
 | Folder | Kicad / Pico / HCP65 Board Tester |
-| Complexity | 1,373, medium |
+| Complexity | 242&nbsp;/&nbsp;1000 (size&nbsp;162, features&nbsp;80) |
+| KESE&nbsp;features | through vias, rounded,<br>trapezoid or chamfered pads,<br>curved board outline,<br>knockout text, stack-up,<br>dielectric εr and tanδ |
+| Tested | 9th November 2026 |
 | Copper&nbsp;layers | 2 |
 | File&nbsp;format | KiCad 9 (20241229) |
 | Parts,&nbsp;tracks,&nbsp;vias | 8, 1,437, 88 |
@@ -7643,7 +8013,7 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 
 ## 23.2.187 HCP65 Narrow Analyser
 
-![HCP65 Narrow Analyser: stages 4 and 6 take 58% to 86% of a run. Simulation, GLB takes 13 s. Simulation, STEP takes 16 s. Simulation, STL takes 13 s. Simulation, OBJ takes 18 s. Visual, GLB takes 16 s. Visual, OBJ takes 18 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/corpus_2623.webp)
+![HCP65 Narrow Analyser: stages 4 and 6 take 58% to 86% of a run. Simulation, GLB takes 13 s. Simulation, STEP takes 16 s. Simulation, STL takes 13 s. Simulation, OBJ takes 18 s. Visual, GLB takes 16 s. Visual, OBJ takes 18 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/658-Computer_HCP65-Narrow-Analyser.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -7659,7 +8029,9 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 | Board | Repo: [andrewpaterson/658-Computer](https://github.com/andrewpaterson/658-Computer)<br>Board: `HCP65 Narrow Analyser.kicad_pcb` |
 |---|---|
 | Folder | Kicad / Pico / HCP65 Narrow Analyser |
-| Complexity | 151, simple |
+| Complexity | 191&nbsp;/&nbsp;1000 (size&nbsp;126, features&nbsp;65) |
+| KESE&nbsp;features | rounded,<br>trapezoid or chamfered pads,<br>curved board outline,<br>knockout text, stack-up,<br>dielectric εr and tanδ |
+| Tested | 9th November 2026 |
 | Copper&nbsp;layers | 2 |
 | File&nbsp;format | KiCad 10 (20260206) |
 | Parts,&nbsp;tracks,&nbsp;vias | 7, 203, 0 |
@@ -7684,7 +8056,7 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 
 ## 23.2.188 HCP65 Wide Analyser
 
-![HCP65 Wide Analyser: stages 4 and 6 take 55% to 87% of a run. Simulation, GLB takes 13 s. Simulation, STEP takes 16 s. Simulation, STL takes 13 s. Simulation, OBJ takes 19 s. Visual, GLB takes 15 s. Visual, OBJ takes 18 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/corpus_2624.webp)
+![HCP65 Wide Analyser: stages 4 and 6 take 55% to 87% of a run. Simulation, GLB takes 13 s. Simulation, STEP takes 16 s. Simulation, STL takes 13 s. Simulation, OBJ takes 19 s. Visual, GLB takes 15 s. Visual, OBJ takes 18 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/658-Computer_HCP65-Wide-Analyser.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -7700,7 +8072,9 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 | Board | Repo: [andrewpaterson/658-Computer](https://github.com/andrewpaterson/658-Computer)<br>Board: `HCP65 Wide Analyser.kicad_pcb` |
 |---|---|
 | Folder | Kicad / Pico / HCP65 Wide Analyser |
-| Complexity | 151, simple |
+| Complexity | 191&nbsp;/&nbsp;1000 (size&nbsp;126, features&nbsp;65) |
+| KESE&nbsp;features | rounded,<br>trapezoid or chamfered pads,<br>curved board outline,<br>knockout text, stack-up,<br>dielectric εr and tanδ |
+| Tested | 9th November 2026 |
 | Copper&nbsp;layers | 2 |
 | File&nbsp;format | KiCad 10 (20260206) |
 | Parts,&nbsp;tracks,&nbsp;vias | 7, 203, 0 |
@@ -7725,7 +8099,7 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 
 ## 23.2.189 LED Digit Tester
 
-![LED Digit Tester: stages 4 and 6 take 49% to 83% of a run. Simulation, GLB takes 5.6 s. Simulation, STEP takes 6.9 s. Simulation, STL takes 5.6 s. Simulation, OBJ takes 8.6 s. Visual, GLB takes 9.1 s. Visual, OBJ takes 11 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/corpus_2087.webp)
+![LED Digit Tester: stages 4 and 6 take 49% to 83% of a run. Simulation, GLB takes 5.6 s. Simulation, STEP takes 6.9 s. Simulation, STL takes 5.6 s. Simulation, OBJ takes 8.6 s. Visual, GLB takes 9.1 s. Visual, OBJ takes 11 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/658-Computer_LED-Digit-Tester.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -7741,7 +8115,9 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 | Board | Repo: [andrewpaterson/658-Computer](https://github.com/andrewpaterson/658-Computer)<br>Board: `LED Digit Tester.kicad_pcb` |
 |---|---|
 | Folder | Kicad / Pico / LED Digit Tester |
-| Complexity | 614, low |
+| Complexity | 219&nbsp;/&nbsp;1000 (size&nbsp;154, features&nbsp;65) |
+| KESE&nbsp;features | through vias, rounded,<br>trapezoid or chamfered pads,<br>curved board outline, stack-up,<br>dielectric εr and tanδ |
+| Tested | 9th November 2026 |
 | Copper&nbsp;layers | 2 |
 | File&nbsp;format | KiCad 9 (20241229) |
 | Parts,&nbsp;tracks,&nbsp;vias | 21, 482, 30 |
@@ -7766,7 +8142,7 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 
 ## 23.2.190 SDRAM
 
-![SDRAM: stages 4 and 6 take 51% to 84% of a run. Simulation, GLB takes 8.0 s. Simulation, STEP takes 10 s. Simulation, STL takes 8.0 s. Simulation, OBJ takes 11 s. Visual, GLB takes 12 s. Visual, OBJ takes 15 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/corpus_1564.webp)
+![SDRAM: stages 4 and 6 take 51% to 84% of a run. Simulation, GLB takes 8.0 s. Simulation, STEP takes 10 s. Simulation, STL takes 8.0 s. Simulation, OBJ takes 11 s. Visual, GLB takes 12 s. Visual, OBJ takes 15 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/658-Computer_SDRAM.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -7782,7 +8158,9 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 | Board | Repo: [andrewpaterson/658-Computer](https://github.com/andrewpaterson/658-Computer)<br>Board: `SDRAM.kicad_pcb` |
 |---|---|
 | Folder | Kicad / Pico / SDRAM |
-| Complexity | 1,266, medium |
+| Complexity | 248&nbsp;/&nbsp;1000 (size&nbsp;168, features&nbsp;80) |
+| KESE&nbsp;features | through vias, rounded,<br>trapezoid or chamfered pads,<br>curved board outline,<br>knockout text, stack-up,<br>dielectric εr and tanδ |
+| Tested | 9th November 2026 |
 | Copper&nbsp;layers | 2 |
 | File&nbsp;format | KiCad 10 (20260206) |
 | Parts,&nbsp;tracks,&nbsp;vias | 25, 928, 96 |
@@ -7807,7 +8185,7 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 
 ## 23.2.191 Signal Protection
 
-![Signal Protection: stages 4 and 6 take 49% to 81% of a run. Simulation, GLB takes 4.8 s. Simulation, STEP takes 6.5 s. Simulation, STL takes 5.0 s. Simulation, OBJ takes 7.5 s. Visual, GLB takes 7.3 s. Visual, OBJ takes 8.8 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/corpus_2063.webp)
+![Signal Protection: stages 4 and 6 take 49% to 81% of a run. Simulation, GLB takes 4.8 s. Simulation, STEP takes 6.5 s. Simulation, STL takes 5.0 s. Simulation, OBJ takes 7.5 s. Visual, GLB takes 7.3 s. Visual, OBJ takes 8.8 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/658-Computer_Signal-Protection.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -7823,7 +8201,9 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 | Board | Repo: [andrewpaterson/658-Computer](https://github.com/andrewpaterson/658-Computer)<br>Board: `Signal Protection.kicad_pcb` |
 |---|---|
 | Folder | Kicad / Pico / Signal Protection |
-| Complexity | 637, low |
+| Complexity | 252&nbsp;/&nbsp;1000 (size&nbsp;162, features&nbsp;90) |
+| KESE&nbsp;features | through vias, rounded,<br>trapezoid or chamfered pads,<br>filled zones, knockout text,<br>stack-up, dielectric εr and tanδ |
+| Tested | 9th November 2026 |
 | Copper&nbsp;layers | 2 |
 | File&nbsp;format | KiCad 9 (20241229) |
 | Parts,&nbsp;tracks,&nbsp;vias | 49, 344, 65 |
@@ -7848,7 +8228,7 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 
 ## 23.2.192 EPM570 Programmer
 
-![EPM570 Programmer: stages 4 and 6 take 49% to 83% of a run. Simulation, GLB takes 9.2 s. Simulation, STEP takes 12 s. Simulation, STL takes 9.6 s. Simulation, OBJ takes 15 s. Visual, GLB takes 13 s. Visual, OBJ takes 16 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/corpus_2384.webp)
+![EPM570 Programmer: stages 4 and 6 take 49% to 83% of a run. Simulation, GLB takes 9.2 s. Simulation, STEP takes 12 s. Simulation, STL takes 9.6 s. Simulation, OBJ takes 15 s. Visual, GLB takes 13 s. Visual, OBJ takes 16 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/658-Computer_EPM570-Programmer.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -7864,7 +8244,9 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 | Board | Repo: [andrewpaterson/658-Computer](https://github.com/andrewpaterson/658-Computer)<br>Board: `EPM570 Programmer.kicad_pcb` |
 |---|---|
 | Folder | Kicad / Programmers / EPM570 Programmer |
-| Complexity | 342, low |
+| Complexity | 259&nbsp;/&nbsp;1000 (size&nbsp;179, features&nbsp;80) |
+| KESE&nbsp;features | through vias, rounded,<br>trapezoid or chamfered pads,<br>curved board outline,<br>knockout text, stack-up,<br>dielectric εr and tanδ |
+| Tested | 9th November 2026 |
 | Copper&nbsp;layers | 2 |
 | File&nbsp;format | KiCad 9 (20241229) |
 | Parts,&nbsp;tracks,&nbsp;vias | 19, 226, 6 |
@@ -7889,7 +8271,7 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 
 ## 23.2.193 EPM7032S Programmer
 
-![EPM7032S Programmer: stages 4 and 6 take 50% to 82% of a run. Simulation, GLB takes 4.7 s. Simulation, STEP takes 6.1 s. Simulation, STL takes 4.8 s. Simulation, OBJ takes 7.3 s. Visual, GLB takes 6.2 s. Visual, OBJ takes 7.8 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/corpus_2593.webp)
+![EPM7032S Programmer: stages 4 and 6 take 50% to 82% of a run. Simulation, GLB takes 4.7 s. Simulation, STEP takes 6.1 s. Simulation, STL takes 4.8 s. Simulation, OBJ takes 7.3 s. Visual, GLB takes 6.2 s. Visual, OBJ takes 7.8 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/658-Computer_EPM7032S-Programmer.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -7905,7 +8287,9 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 | Board | Repo: [andrewpaterson/658-Computer](https://github.com/andrewpaterson/658-Computer)<br>Board: `EPM7032S Programmer.kicad_pcb` |
 |---|---|
 | Folder | Kicad / Programmers / EPM7032S Programmer |
-| Complexity | 176, simple |
+| Complexity | 198&nbsp;/&nbsp;1000 (size&nbsp;128, features&nbsp;70) |
+| KESE&nbsp;features | through vias, curved board outline,<br>knockout text, stack-up,<br>dielectric εr and tanδ |
+| Tested | 9th November 2026 |
 | Copper&nbsp;layers | 2 |
 | File&nbsp;format | KiCad 9 (20241229) |
 | Parts,&nbsp;tracks,&nbsp;vias | 14, 130, 6 |
@@ -7930,7 +8314,7 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 
 ## 23.2.194 EPM7160S Programmer
 
-![EPM7160S Programmer: stages 4 and 6 take 52% to 85% of a run. Simulation, GLB takes 7.4 s. Simulation, STEP takes 9.3 s. Simulation, STL takes 7.2 s. Simulation, OBJ takes 11 s. Visual, GLB takes 11 s. Visual, OBJ takes 13 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/corpus_2416.webp)
+![EPM7160S Programmer: stages 4 and 6 take 52% to 85% of a run. Simulation, GLB takes 7.4 s. Simulation, STEP takes 9.3 s. Simulation, STL takes 7.2 s. Simulation, OBJ takes 11 s. Visual, GLB takes 11 s. Visual, OBJ takes 13 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/658-Computer_EPM7160S-Programmer.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -7946,7 +8330,9 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 | Board | Repo: [andrewpaterson/658-Computer](https://github.com/andrewpaterson/658-Computer)<br>Board: `EPM7160S Programmer.kicad_pcb` |
 |---|---|
 | Folder | Kicad / Programmers / EPM7160S Programmer |
-| Complexity | 310, low |
+| Complexity | 246&nbsp;/&nbsp;1000 (size&nbsp;176, features&nbsp;70) |
+| KESE&nbsp;features | through vias, curved board outline,<br>knockout text, stack-up,<br>dielectric εr and tanδ |
+| Tested | 9th November 2026 |
 | Copper&nbsp;layers | 2 |
 | File&nbsp;format | KiCad 9 (20241229) |
 | Parts,&nbsp;tracks,&nbsp;vias | 16, 197, 7 |
@@ -7971,7 +8357,7 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 
 ## 23.2.195 Speed
 
-![Speed: stages 4 and 6 take 54% to 85% of a run. Simulation, GLB takes 24 s. Simulation, STEP takes 30 s. Simulation, STL takes 24 s. Simulation, OBJ takes 35 s. Visual, GLB takes 37 s. Visual, OBJ takes 48 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/corpus_0950.webp)
+![Speed: stages 4 and 6 take 54% to 85% of a run. Simulation, GLB takes 24 s. Simulation, STEP takes 30 s. Simulation, STL takes 24 s. Simulation, OBJ takes 35 s. Visual, GLB takes 37 s. Visual, OBJ takes 48 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/658-Computer_Speed.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -7987,7 +8373,9 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 | Board | Repo: [andrewpaterson/658-Computer](https://github.com/andrewpaterson/658-Computer)<br>Board: `Speed.kicad_pcb` |
 |---|---|
 | Folder | Kicad / Speed |
-| Complexity | 2,701, medium |
+| Complexity | 268&nbsp;/&nbsp;1000 (size&nbsp;188, features&nbsp;80) |
+| KESE&nbsp;features | through vias, rounded,<br>trapezoid or chamfered pads,<br>curved board outline,<br>knockout text, stack-up,<br>dielectric εr and tanδ |
+| Tested | 9th November 2026 |
 | Copper&nbsp;layers | 2 |
 | File&nbsp;format | KiCad 9 (20241229) |
 | Parts,&nbsp;tracks,&nbsp;vias | 50, 1,767, 278 |
@@ -8012,7 +8400,7 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 
 ## 23.2.196 LCD 14 Segment Tester
 
-![LCD 14 Segment Tester: stages 4 and 6 take 52% to 84% of a run. Simulation, GLB takes 7.2 s. Simulation, STEP takes 9.3 s. Simulation, STL takes 7.3 s. Simulation, OBJ takes 11 s. Visual, GLB takes 9.7 s. Visual, OBJ takes 12 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/corpus_1788.webp)
+![LCD 14 Segment Tester: stages 4 and 6 take 52% to 84% of a run. Simulation, GLB takes 7.2 s. Simulation, STEP takes 9.3 s. Simulation, STL takes 7.3 s. Simulation, OBJ takes 11 s. Visual, GLB takes 9.7 s. Visual, OBJ takes 12 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/658-Computer_LCD-14-Segment-Tester.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -8028,7 +8416,9 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 | Board | Repo: [andrewpaterson/658-Computer](https://github.com/andrewpaterson/658-Computer)<br>Board: `LCD 14 Segment Tester.kicad_pcb` |
 |---|---|
 | Folder | Kicad / Tester / LCD 14 Segment Tester |
-| Complexity | 958, low |
+| Complexity | 273&nbsp;/&nbsp;1000 (size&nbsp;208, features&nbsp;65) |
+| KESE&nbsp;features | through vias, rounded,<br>trapezoid or chamfered pads,<br>curved board outline, stack-up,<br>dielectric εr and tanδ |
+| Tested | 9th November 2026 |
 | Copper&nbsp;layers | 2 |
 | File&nbsp;format | KiCad 9 (20241229) |
 | Parts,&nbsp;tracks,&nbsp;vias | 26, 660, 42 |
@@ -8053,7 +8443,7 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 
 ## 23.2.197 LCD Dual 7 Segment Tester
 
-![LCD Dual 7 Segment Tester: stages 4 and 6 take 52% to 81% of a run. Simulation, GLB takes 4.7 s. Simulation, STEP takes 6.4 s. Simulation, STL takes 4.9 s. Simulation, OBJ takes 7.2 s. Visual, GLB takes 7.3 s. Visual, OBJ takes 8.5 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/corpus_2188.webp)
+![LCD Dual 7 Segment Tester: stages 4 and 6 take 52% to 81% of a run. Simulation, GLB takes 4.7 s. Simulation, STEP takes 6.4 s. Simulation, STL takes 4.9 s. Simulation, OBJ takes 7.2 s. Visual, GLB takes 7.3 s. Visual, OBJ takes 8.5 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/658-Computer_LCD-Dual-7-Segment-Tester.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -8069,7 +8459,9 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 | Board | Repo: [andrewpaterson/658-Computer](https://github.com/andrewpaterson/658-Computer)<br>Board: `LCD Dual 7 Segment Tester.kicad_pcb` |
 |---|---|
 | Folder | Kicad / Tester / LCD Dual 7 Segment Tester |
-| Complexity | 522, low |
+| Complexity | 206&nbsp;/&nbsp;1000 (size&nbsp;151, features&nbsp;55) |
+| KESE&nbsp;features | through vias, curved board outline,<br>stack-up, dielectric εr and tanδ |
+| Tested | 9th November 2026 |
 | Copper&nbsp;layers | 2 |
 | File&nbsp;format | KiCad 9 (20241229) |
 | Parts,&nbsp;tracks,&nbsp;vias | 20, 386, 32 |
@@ -8094,7 +8486,7 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 
 ## 23.2.198 RAM 48K Select
 
-![RAM 48K Select: stages 4 and 6 take 42% to 73% of a run. Simulation, GLB takes 1.1 s. Simulation, STEP takes 1.8 s. Simulation, STL takes 1.1 s. Simulation, OBJ takes 1.4 s. Visual, GLB takes 1.5 s. Visual, OBJ takes 1.7 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/corpus_3032.webp)
+![RAM 48K Select: stages 4 and 6 take 42% to 73% of a run. Simulation, GLB takes 1.1 s. Simulation, STEP takes 1.8 s. Simulation, STL takes 1.1 s. Simulation, OBJ takes 1.4 s. Visual, GLB takes 1.5 s. Visual, OBJ takes 1.7 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/658-Computer_RAM-48K-Select.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -8110,7 +8502,9 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 | Board | Repo: [andrewpaterson/658-Computer](https://github.com/andrewpaterson/658-Computer)<br>Board: `RAM 48K Select.kicad_pcb` |
 |---|---|
 | Folder | Kicad / Tester / RAM 48K Select |
-| Complexity | 2, simple |
+| Complexity | 103&nbsp;/&nbsp;1000 (size&nbsp;78, features&nbsp;25) |
+| KESE&nbsp;features | through vias, rounded,<br>trapezoid or chamfered pads |
+| Tested | 9th November 2026 |
 | Copper&nbsp;layers | 2 |
 | File&nbsp;format | KiCad 9 (20241229) |
 | Parts,&nbsp;tracks,&nbsp;vias | 1, 13, 4 |
@@ -8135,7 +8529,7 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 
 ## 23.2.199 ROM 2316 to 2716
 
-![ROM 2316 to 2716: stages 4 and 6 take 50% to 80% of a run. Simulation, GLB takes 2.8 s. Simulation, STEP takes 3.9 s. Simulation, STL takes 2.7 s. Simulation, OBJ takes 3.8 s. Visual, GLB takes 3.2 s. Visual, OBJ takes 3.9 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/corpus_2835.webp)
+![ROM 2316 to 2716: stages 4 and 6 take 50% to 80% of a run. Simulation, GLB takes 2.8 s. Simulation, STEP takes 3.9 s. Simulation, STL takes 2.7 s. Simulation, OBJ takes 3.8 s. Visual, GLB takes 3.2 s. Visual, OBJ takes 3.9 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/658-Computer_ROM-2316-to-2716.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -8151,7 +8545,9 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 | Board | Repo: [andrewpaterson/658-Computer](https://github.com/andrewpaterson/658-Computer)<br>Board: `ROM 2316 to 2716.kicad_pcb` |
 |---|---|
 | Folder | Kicad / Tester / ROM 2316 to 2716 |
-| Complexity | 40, simple |
+| Complexity | 114&nbsp;/&nbsp;1000 (size&nbsp;104, features&nbsp;10) |
+| KESE&nbsp;features | rounded,<br>trapezoid or chamfered pads |
+| Tested | 9th November 2026 |
 | Copper&nbsp;layers | 2 |
 | File&nbsp;format | KiCad 9 (20241229) |
 | Parts,&nbsp;tracks,&nbsp;vias | 6, 55, 0 |
@@ -8176,7 +8572,7 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 
 ## 23.2.200 TSSOP32-14mm Adapter
 
-![TSSOP32-14mm Adapter: stages 4 and 6 take 50% to 80% of a run. Simulation, GLB takes 2.6 s. Simulation, STEP takes 3.4 s. Simulation, STL takes 2.5 s. Simulation, OBJ takes 3.4 s. Visual, GLB takes 3.5 s. Visual, OBJ takes 4.3 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/corpus_2841.webp)
+![TSSOP32-14mm Adapter: stages 4 and 6 take 50% to 80% of a run. Simulation, GLB takes 2.6 s. Simulation, STEP takes 3.4 s. Simulation, STL takes 2.5 s. Simulation, OBJ takes 3.4 s. Visual, GLB takes 3.5 s. Visual, OBJ takes 4.3 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/658-Computer_TSSOP32-14mm-Adapter.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -8192,7 +8588,9 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 | Board | Repo: [andrewpaterson/658-Computer](https://github.com/andrewpaterson/658-Computer)<br>Board: `TSSOP32-14mm Adapter.kicad_pcb` |
 |---|---|
 | Folder | Kicad / Tester / TSSOP32-14mm Adapter |
-| Complexity | 39, simple |
+| Complexity | 170&nbsp;/&nbsp;1000 (size&nbsp;115, features&nbsp;55) |
+| KESE&nbsp;features | through vias, rounded,<br>trapezoid or chamfered pads,<br>stack-up, dielectric εr and tanδ |
+| Tested | 9th November 2026 |
 | Copper&nbsp;layers | 2 |
 | File&nbsp;format | KiCad 9 (20241229) |
 | Parts,&nbsp;tracks,&nbsp;vias | 2, 146, 15 |
@@ -8217,7 +8615,7 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 
 ## 23.2.201 W65C64
 
-![W65C64: stages 4 and 6 take 53% to 84% of a run. Simulation, GLB takes 13 s. Simulation, STEP takes 17 s. Simulation, STL takes 13 s. Simulation, OBJ takes 19 s. Visual, GLB takes 22 s. Visual, OBJ takes 27 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/corpus_0895.webp)
+![W65C64: stages 4 and 6 take 53% to 84% of a run. Simulation, GLB takes 13 s. Simulation, STEP takes 17 s. Simulation, STL takes 13 s. Simulation, OBJ takes 19 s. Visual, GLB takes 22 s. Visual, OBJ takes 27 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/658-Computer_W65C64.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -8233,7 +8631,9 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 | Board | Repo: [andrewpaterson/658-Computer](https://github.com/andrewpaterson/658-Computer)<br>Board: `W65C64.kicad_pcb` |
 |---|---|
 | Folder | Kicad / W65C64 |
-| Complexity | 2,930, medium |
+| Complexity | 260&nbsp;/&nbsp;1000 (size&nbsp;190, features&nbsp;70) |
+| KESE&nbsp;features | through vias, rounded,<br>trapezoid or chamfered pads,<br>knockout text, stack-up,<br>dielectric εr and tanδ |
+| Tested | 9th November 2026 |
 | Copper&nbsp;layers | 2 |
 | File&nbsp;format | KiCad 9 (20241229) |
 | Parts,&nbsp;tracks,&nbsp;vias | 51, 2,018, 270 |
