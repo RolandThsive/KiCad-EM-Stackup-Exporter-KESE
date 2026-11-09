@@ -17,7 +17,7 @@ python run_KESE.py B --mode visual --format F --verify \
 
 **The runs used KESE version 2.4.0 (`main` at 22fd70c) with the default parameters otherwise and shapely 2.2.0 (GEOS 3.14.1), spread over several Linux machines with 4 cores each (Intel(R) Xeon(R) Processor @ 2.10GHz) and 16 GB of RAM, so `Parallel.WORKERS = 0` gave four workers ([Work Done In Parallel](Working-Principle.md#74-work-done-in-parallel)). A run was stopped after 90 minutes, or once its memory passed 11 GB: that cap is a limit of the measurement on these 15 GB machines, not of KESE, and a board stopped there needs a machine with more memory. On another machine the seconds differ.**
 
-The runs are under way: 3,018 of the 3,146 boards are done so far. A sub-page is added once all its boards are done.
+The runs are under way: 3,076 of the 3,146 boards are done so far. A sub-page is added once all its boards are done.
 
 ## Grading A Board's Complexity
 
@@ -113,18 +113,18 @@ In this corpus the grades run from 17 to 651, half the boards below 275: the top
 | [Corpus Testing 15: ltbrain To mwelling](CorpusTesting/Corpus-Testing-15.md) | 42 | 100 | 100 | 99 |
 | [Corpus Testing 16: mwelling To nuclearfutureslab](CorpusTesting/Corpus-Testing-16.md) | 34 | 101 | 101 | 95 |
 | [Corpus Testing 17: NUSGreyhats To OLIMEX](CorpusTesting/Corpus-Testing-17.md) | 34 | 103 | 103 | 103 |
-| Corpus Testing 18: OLIMEX To OLIMEX (running) | 53 | 100 | 94 | 93 |
-| Corpus Testing 19: OLIMEX To open-ephys (running) | 32 | 100 | 96 | 96 |
-| Corpus Testing 20: open-ephys To oresat (running) | 22 | 104 | 102 | 101 |
-| Corpus Testing 21: oresat To pms67 (running) | 33 | 100 | 96 | 96 |
-| Corpus Testing 22: polpo To rh1tech (running) | 31 | 108 | 103 | 102 |
-| Corpus Testing 23: rhaamo To rusefi (running) | 12 | 114 | 97 | 91 |
-| Corpus Testing 24: rusefi To sparkfun (running) | 30 | 111 | 97 | 95 |
-| Corpus Testing 25: sparkfun To sufst (running) | 21 | 115 | 100 | 99 |
-| Corpus Testing 26: SukkoPera To tjeerdie (running) | 29 | 102 | 89 | 85 |
-| Corpus Testing 27: tjhorner To tzarc (running) | 13 | 105 | 89 | 88 |
-| Corpus Testing 28: ucdfs To Wren6991 (running) | 29 | 181 | 152 | 145 |
-| Corpus Testing 29: xesscorp To ZeroPhone (running) | 9 | 16 | 13 | 13 |
+| [Corpus Testing 18: OLIMEX To OLIMEX](CorpusTesting/Corpus-Testing-18.md) | 53 | 100 | 100 | 99 |
+| [Corpus Testing 19: OLIMEX To open-ephys](CorpusTesting/Corpus-Testing-19.md) | 32 | 100 | 100 | 100 |
+| [Corpus Testing 20: open-ephys To oresat](CorpusTesting/Corpus-Testing-20.md) | 22 | 104 | 104 | 103 |
+| [Corpus Testing 21: oresat To pms67](CorpusTesting/Corpus-Testing-21.md) | 33 | 100 | 100 | 100 |
+| Corpus Testing 22: polpo To rh1tech (running) | 31 | 108 | 104 | 103 |
+| Corpus Testing 23: rhaamo To rusefi (running) | 12 | 114 | 102 | 96 |
+| Corpus Testing 24: rusefi To sparkfun (running) | 30 | 111 | 100 | 98 |
+| Corpus Testing 25: sparkfun To sufst (running) | 21 | 115 | 110 | 109 |
+| Corpus Testing 26: SukkoPera To tjeerdie (running) | 29 | 102 | 98 | 94 |
+| Corpus Testing 27: tjhorner To tzarc (running) | 13 | 105 | 94 | 93 |
+| Corpus Testing 28: ucdfs To Wren6991 (running) | 29 | 181 | 160 | 153 |
+| Corpus Testing 29: xesscorp To ZeroPhone (running) | 9 | 16 | 14 | 14 |
 
 | Previous | Next |
 |:---|---:|

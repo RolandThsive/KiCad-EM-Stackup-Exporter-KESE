@@ -4429,4 +4429,4 @@ Part 17 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pr
 
 | Previous | Next |
 |:---|---:|
-| [Corpus Testing 16: mwelling To nuclearfutureslab](Corpus-Testing-16.md) | [Corpus Testing](../Corpus-Testing.md) |
+| [Corpus Testing 16: mwelling To nuclearfutureslab](Corpus-Testing-16.md) | [Corpus Testing 18: OLIMEX To OLIMEX](Corpus-Testing-18.md) |
