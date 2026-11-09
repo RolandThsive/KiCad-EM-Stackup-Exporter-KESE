@@ -49,7 +49,8 @@ const state = {
   preview: { key: null }, materials: null, version: null,
 };
 const store = new OutputStore();
-let viewer = null;
+let viewer = null;                         // set up when the first model is shown (startViewer)
+let webgl = true;                          // false: no WebGL 2 in this browser, so no 3D preview
 const $ = (id) => document.getElementById(id);
 
 /* ---- worker ---------------------------------------------------------------------------------------- */
@@ -1117,7 +1118,8 @@ async function showPreview() {
   const seq = ++previewSeq;                                   // a newer pick (or run) wins over a slow load still going
   const c = previewChoices().find((x) => x.key === state.preview.key);
   const ro = $("readout");
-  if (!viewer) { ro.textContent = c ? `${c.label} is made: download it on the right.` : ""; renderParts(); return; }   // no WebGL: no preview
+  if (c && webgl && !viewer) viewer = startViewer();         // the first model: the 3D view is set up now
+  if (!viewer) { ro.textContent = c ? `${c.label} is made: download it on the right.` : ""; renderParts(); return; }   // no WebGL (or no model yet): no preview
   $("empty-note").hidden = !!c;
   if (!c) { viewer.clear(); renderParts(); return; }
   ro.textContent = `Reading ${c.label}…`;
@@ -1228,7 +1230,7 @@ function renderParts() {
   const box = $("parts");
   box.replaceChildren(); box.style.removeProperty("--parts-min");
   const parts = viewer ? viewer.parts : [];
-  if (!parts.length) { box.append(el("p", { class: "hint" }, viewer ? "The solids of the model, once it is made. Click one to hide it." : "The parts list comes with the 3D preview, which needs WebGL.")); return; }
+  if (!parts.length) { box.append(el("p", { class: "hint" }, webgl ? "The solids of the model, once it is made. Click one to hide it." : "The parts list comes with the 3D preview, which needs WebGL.")); return; }
   const sorted = [...parts].sort((a, b) => b.triangles - a.triangles);
   for (const p of sorted) {
     const row = el("button", { type: "button", class: "part" + (p.visible ? "" : " off"), ...tipAttrs("part", `${p.name}: click to hide or show it`, { name: p.name, tris: countText(p.triangles) }), "aria-pressed": String(p.visible),
@@ -1408,15 +1410,25 @@ function hasWebGL2() {
     return !!gl;
   } catch (e) { return false; }
 }
+// The 3D view is set up when the first model is shown, not at load: its WebGL setup (renderer, studio light, shaders)
+// held the page for about 0.3 s while it started, before there was anything to show.  At load, only WebGL 2 is checked.
 function startViewer() {
   try {
-    if (hasWebGL2()) return new Viewer($("view"), { section: CFG.crossSection === undefined ? "stencil" : CFG.crossSection, roleOf: (name) => (partInfo(name) || {}).role, onHover: showHover, onProgress: (f) => { $("readout").textContent = `Reading the STEP… ${Math.round(f * 100)} %`; } });
+    const v = new Viewer($("view"), { section: CFG.crossSection === undefined ? "stencil" : CFG.crossSection, roleOf: (name) => (partInfo(name) || {}).role, onHover: showHover, onProgress: (f) => { $("readout").textContent = `Reading the STEP… ${Math.round(f * 100)} %`; } });
+    const on = document.querySelector("#views button.on");     // the view and the cut picked before the first model
+    v.view(on ? on.dataset.view : "iso");
+    v.setCut(+$("cut").value / 100);
+    return v;
   } catch (e) { console.warn("3D preview off:", e && e.message); }
+  noWebGL();
+  return null;
+}
+function noWebGL() {
+  webgl = false;
   $("canvas-wrap").classList.add("no-webgl");
   $("empty-note").replaceChildren("The 3D preview is off: this browser does not give the page WebGL.", el("br"),
     el("span", { class: "hint" }, "Generate, the checks and the downloads still work. Turning on hardware acceleration in the browser's settings brings the preview back."));
   for (const b of document.querySelectorAll("#btn-fit, #btn-shot, #views button, #cut")) b.disabled = true;
-  return null;
 }
 
 /* ---- footer, Report a Problem, crash details ------------------------------------------------------------------- */
@@ -1442,7 +1454,7 @@ function problemDetails(extra) {
   const lines = [
     `KESE web tool ${build.kese || "?"}, build ${build.commit || "?"} (${build.built || "?"})`,
     `Browser: ${navigator.userAgent}`,
-    `Window: ${innerWidth} x ${innerHeight} at ${devicePixelRatio}x · 3D preview ${viewer ? "on" : "off (no WebGL)"} · ${document.documentElement.classList.contains("embedded") ? "in the blog's frame" : "own tab"}`,
+    `Window: ${innerWidth} x ${innerHeight} at ${devicePixelRatio}x · 3D preview ${webgl ? "on" : "off (no WebGL)"} · ${document.documentElement.classList.contains("embedded") ? "in the blog's frame" : "own tab"}`,
     `Python from: ${state.python || "not loaded yet"} · three.js from: ${threeSource()}`,
   ];
   const changed = Object.keys(state.values).filter((k) => !same(state.values[k], state.start[k]));
@@ -1512,7 +1524,7 @@ async function main() {
   catchCrashes();
   try { build = await (await fetch(new URL("version.json", import.meta.url), { cache: "no-cache" })).json(); } catch (e) { build = {}; }
   renderFooter();
-  viewer = startViewer();
+  if (!hasWebGL2()) noWebGL();
   wire();
   store.start();
   setBusy(true);
