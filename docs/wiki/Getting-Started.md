@@ -6,7 +6,7 @@ needs Python 3.12 or later: `numpy` 2.5.3 requires it. On Python 3.11, install
 the same packages without the pinned versions (`python -m pip install numpy shapely mapbox_earcut`) and pip
 picks the last versions built for 3.11, as `requirements.txt` explains.
 
-![The 4-layer RF sensor module from Input/ turning in simulation mode, so that its top and its bottom come round in turn: the blue solder mask translucent over the copper, the planes and tracks showing through it, and the plated board edge and the walls of the cut-out in copper colour](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/start_1_simulation.webp)
+![The 4-layer RF sensor module from Input/ turning in simulation mode, so that its top and its bottom come round in turn: the blue solder mask translucent over the copper, the planes and tracks showing through it, and the plated board edge and the walls of the cut-out in copper colour](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Getting-Started/start_1_simulation.webp)
 
 ## 3.1 Install
 

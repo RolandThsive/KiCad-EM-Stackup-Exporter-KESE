@@ -24,7 +24,7 @@ and tanδ, copper at its real thickness, and one closed solid per net for ports.
 after its net (`Copper_GND`) and the material values in `materials.json`. The same board also comes out as a light
 surface model for web viewers and renders.
 
-<img src="docs/example_images/rf_module/turning_visual.webp" width="640" alt="The RF sensor module example board turning, as KESE exports it in visual mode">
+<img src="docs/images/README/rf_module/turning_visual.webp" width="640" alt="The RF sensor module example board turning, as KESE exports it in visual mode">
 
 <sub>The RF sensor module of <code>Generator/Input/</code>, exported in visual mode.</sub>
 
@@ -101,7 +101,7 @@ Every feature and every parameter is in the wiki:
 [Checks, Errors And Warnings](https://github.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/wiki/Checks-Errors-And-Warnings).
 
 <p align="center">
-  <img src="docs/images/readme_1_feature_test_boards.webp" alt="24 of the feature test boards, each exported by KESE in visual mode">
+  <img src="docs/images/README/readme_1_feature_test_boards.webp" alt="24 of the feature test boards, each exported by KESE in visual mode">
 </p>
 
 <p align="center"><sub>24 of the feature test boards of <code>featureTest/</code>, each labelled with the KiCad features it
