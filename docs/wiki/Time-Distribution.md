@@ -59,7 +59,7 @@ see at this scale is marked with a line and a label.
 | Visual, GLB | 0.3 | 1.7 | 7.3 | 0.2&nbsp;ms | 6.7 | 53&nbsp;ms | 0.4 | 0.2 | 16.6 |
 | Visual, OBJ | 0.3 | 1.7 | 7.3 | 0.3&nbsp;ms | 6.6 | 1.7 | 0.4 | 0.2 | 18.2 |
 
-<table>
+<table align="center">
 <tr>
 <td valign="top">
 
@@ -67,16 +67,16 @@ see at this scale is marked with a line and a label.
 |---|---|
 | Outline | 64 × 44 mm, a cut-out |
 | Thickness | 1.6 mm |
-| Copper layers | 4 |
+| Copper&nbsp;layers | 4 |
 | Vias | 307 through |
-| Board edge | Plated all round<br>and in the cut-out |
-| Mask, silkscreen,<br>finish | Blue, white, ENIG |
+| Board&nbsp;edge | Plated all round<br>and in the cut-out |
+| Mask,&nbsp;silkscreen,&nbsp;finish | Blue, white, ENIG |
 
 </td>
 <td valign="top">
 
 <table>
-<tr><th>File type</th><th>File size</th><th>Peak memory<br>used</th></tr>
+<tr><th>File<br>type</th><th>File<br>size</th><th>Peak memory<br>used</th></tr>
 <tr><th colspan="3" align="left">Simulation</th></tr>
 <tr><td>GLB</td><td align="right">37.3 MB</td><td align="right">503 MB</td></tr>
 <tr><td>STEP</td><td align="right">114.7 MB</td><td align="right">605 MB</td></tr>
@@ -109,7 +109,7 @@ see at this scale is marked with a line and a label.
 | Visual, GLB | 0.2 | 1.1 | 3.2 | 0.3&nbsp;ms | 3.2 | 33&nbsp;ms | 0.2 | 0.2 | 8.2 |
 | Visual, OBJ | 0.2 | 1.0 | 3.2 | 0.2&nbsp;ms | 3.1 | 0.9 | 0.2 | 0.2 | 8.8 |
 
-<table>
+<table align="center">
 <tr>
 <td valign="top">
 
@@ -117,16 +117,16 @@ see at this scale is marked with a line and a label.
 |---|---|
 | Outline | 22 × 30 mm |
 | Thickness | 0.925 mm |
-| Copper layers | 6, built 1+4+1 |
+| Copper&nbsp;layers | 6, built 1+4+1 |
 | Vias | 150: 71 micro,<br>34 blind and buried, 45 through |
-| Board edge | 43 castellated pads |
-| Mask, silkscreen,<br>finish | Black, white, immersion silver |
+| Board&nbsp;edge | 43 castellated pads |
+| Mask,&nbsp;silkscreen,&nbsp;finish | Black, white, immersion silver |
 
 </td>
 <td valign="top">
 
 <table>
-<tr><th>File type</th><th>File size</th><th>Peak memory<br>used</th></tr>
+<tr><th>File<br>type</th><th>File<br>size</th><th>Peak memory<br>used</th></tr>
 <tr><th colspan="3" align="left">Simulation</th></tr>
 <tr><td>GLB</td><td align="right">20.4 MB</td><td align="right">344 MB</td></tr>
 <tr><td>STEP</td><td align="right">72.7 MB</td><td align="right">357 MB</td></tr>
@@ -159,7 +159,7 @@ see at this scale is marked with a line and a label.
 | Visual, GLB | 0.3 | 1.2 | 4.5 | 0.2&nbsp;ms | 4.0 | 46&nbsp;ms | 0.4 | 0.2 | 10.7 |
 | Visual, OBJ | 0.3 | 1.2 | 4.7 | 0.3&nbsp;ms | 4.2 | 1.6 | 0.3 | 0.2 | 12.6 |
 
-<table>
+<table align="center">
 <tr>
 <td valign="top">
 
@@ -167,16 +167,16 @@ see at this scale is marked with a line and a label.
 |---|---|
 | Outline | 80 × 64.4 mm with the fingers' tongue,<br>a slot |
 | Thickness | 1.57 mm |
-| Copper layers | 4 |
+| Copper&nbsp;layers | 4 |
 | Vias | 239 through |
-| Board edge | 36 gold fingers |
-| Mask, silkscreen,<br>finish | Green, white, hard gold |
+| Board&nbsp;edge | 36 gold fingers |
+| Mask,&nbsp;silkscreen,&nbsp;finish | Green, white, hard gold |
 
 </td>
 <td valign="top">
 
 <table>
-<tr><th>File type</th><th>File size</th><th>Peak memory<br>used</th></tr>
+<tr><th>File<br>type</th><th>File<br>size</th><th>Peak memory<br>used</th></tr>
 <tr><th colspan="3" align="left">Simulation</th></tr>
 <tr><td>GLB</td><td align="right">29.0 MB</td><td align="right">444 MB</td></tr>
 <tr><td>STEP</td><td align="right">80.1 MB</td><td align="right">482 MB</td></tr>

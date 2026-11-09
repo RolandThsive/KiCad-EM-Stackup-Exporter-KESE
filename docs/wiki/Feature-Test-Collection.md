@@ -58,7 +58,7 @@ with GLB or STL is the quickest of the six runs on every board but 09 and 27, wh
 | Visual, GLB | 83&nbsp;ms | 56&nbsp;ms | 0.2 | 0.1&nbsp;ms | 0.5 | 7&nbsp;ms | 40&nbsp;ms | 0.2 | 1.1 |
 | Visual, OBJ | 68&nbsp;ms | 53&nbsp;ms | 0.2 | 0.2&nbsp;ms | 0.5 | 0.1 | 40&nbsp;ms | 0.2 | 1.2 |
 
-<table>
+<table align="center">
 <tr>
 <td valign="top">
 
@@ -66,16 +66,16 @@ with GLB or STL is the quickest of the six runs on every board but 09 and 27, wh
 |---|---|
 | Outline | 40 × 26 mm |
 | Thickness | 1.6 mm |
-| Copper layers | 2 |
+| Copper&nbsp;layers | 2 |
 | Vias | none |
-| Board edge | Plain |
-| Mask, silkscreen,<br>finish | Not set (drawn green and white),<br>ENIG |
+| Board&nbsp;edge | Plain |
+| Mask,&nbsp;silkscreen,&nbsp;finish | Not set (drawn green and white),<br>ENIG |
 
 </td>
 <td valign="top">
 
 <table>
-<tr><th>File type</th><th>File size</th><th>Peak memory<br>used</th></tr>
+<tr><th>File<br>type</th><th>File<br>size</th><th>Peak memory<br>used</th></tr>
 <tr><th colspan="3" align="left">Simulation</th></tr>
 <tr><td>GLB</td><td align="right">1.1 MB</td><td align="right">69 MB</td></tr>
 <tr><td>STEP</td><td align="right">5.8 MB</td><td align="right">72 MB</td></tr>
@@ -108,7 +108,7 @@ with GLB or STL is the quickest of the six runs on every board but 09 and 27, wh
 | Visual, GLB | 71&nbsp;ms | 46&nbsp;ms | 0.2 | 0.1&nbsp;ms | 0.4 | 6&nbsp;ms | 42&nbsp;ms | 0.2 | 1.0 |
 | Visual, OBJ | 66&nbsp;ms | 39&nbsp;ms | 0.2 | 0.1&nbsp;ms | 0.4 | 0.1 | 43&nbsp;ms | 0.2 | 1.1 |
 
-<table>
+<table align="center">
 <tr>
 <td valign="top">
 
@@ -116,16 +116,16 @@ with GLB or STL is the quickest of the six runs on every board but 09 and 27, wh
 |---|---|
 | Outline | 34 × 20 mm |
 | Thickness | 1.6 mm |
-| Copper layers | 2 |
+| Copper&nbsp;layers | 2 |
 | Vias | none |
-| Board edge | Plain |
-| Mask, silkscreen,<br>finish | Not set (drawn green and white),<br>ENIG |
+| Board&nbsp;edge | Plain |
+| Mask,&nbsp;silkscreen,&nbsp;finish | Not set (drawn green and white),<br>ENIG |
 
 </td>
 <td valign="top">
 
 <table>
-<tr><th>File type</th><th>File size</th><th>Peak memory<br>used</th></tr>
+<tr><th>File<br>type</th><th>File<br>size</th><th>Peak memory<br>used</th></tr>
 <tr><th colspan="3" align="left">Simulation</th></tr>
 <tr><td>GLB</td><td align="right">1.3 MB</td><td align="right">68 MB</td></tr>
 <tr><td>STEP</td><td align="right">4.1 MB</td><td align="right">72 MB</td></tr>
@@ -158,7 +158,7 @@ with GLB or STL is the quickest of the six runs on every board but 09 and 27, wh
 | Visual, GLB | 67&nbsp;ms | 55&nbsp;ms | 0.2 | 0.1&nbsp;ms | 0.6 | 6&nbsp;ms | 67&nbsp;ms | 0.2 | 1.2 |
 | Visual, OBJ | 82&nbsp;ms | 60&nbsp;ms | 0.2 | 0.1&nbsp;ms | 0.6 | 0.1 | 60&nbsp;ms | 0.2 | 1.3 |
 
-<table>
+<table align="center">
 <tr>
 <td valign="top">
 
@@ -166,16 +166,16 @@ with GLB or STL is the quickest of the six runs on every board but 09 and 27, wh
 |---|---|
 | Outline | 32 × 20 mm |
 | Thickness | 1.6 mm |
-| Copper layers | 2 |
+| Copper&nbsp;layers | 2 |
 | Vias | 12 through |
-| Board edge | Plain |
-| Mask, silkscreen,<br>finish | Not set (drawn green and white),<br>ENIG |
+| Board&nbsp;edge | Plain |
+| Mask,&nbsp;silkscreen,&nbsp;finish | Not set (drawn green and white),<br>ENIG |
 
 </td>
 <td valign="top">
 
 <table>
-<tr><th>File type</th><th>File size</th><th>Peak memory<br>used</th></tr>
+<tr><th>File<br>type</th><th>File<br>size</th><th>Peak memory<br>used</th></tr>
 <tr><th colspan="3" align="left">Simulation</th></tr>
 <tr><td>GLB</td><td align="right">1.7 MB</td><td align="right">72 MB</td></tr>
 <tr><td>STEP</td><td align="right">5.7 MB</td><td align="right">77 MB</td></tr>
@@ -208,7 +208,7 @@ with GLB or STL is the quickest of the six runs on every board but 09 and 27, wh
 | Visual, GLB | 92&nbsp;ms | 0.2 | 0.3 | 0.1&nbsp;ms | 2.4 | 14&nbsp;ms | 90&nbsp;ms | 0.2 | 3.2 |
 | Visual, OBJ | 74&nbsp;ms | 0.2 | 0.3 | 0.1&nbsp;ms | 2.4 | 0.3 | 78&nbsp;ms | 0.2 | 3.5 |
 
-<table>
+<table align="center">
 <tr>
 <td valign="top">
 
@@ -216,16 +216,16 @@ with GLB or STL is the quickest of the six runs on every board but 09 and 27, wh
 |---|---|
 | Outline | 40 × 30 mm |
 | Thickness | 1.6 mm |
-| Copper layers | 4 |
+| Copper&nbsp;layers | 4 |
 | Vias | 18: 1 micro, 2 blind and buried,<br>15 through |
-| Board edge | Plain |
-| Mask, silkscreen,<br>finish | Not set (drawn green and white),<br>ENIG |
+| Board&nbsp;edge | Plain |
+| Mask,&nbsp;silkscreen,&nbsp;finish | Not set (drawn green and white),<br>ENIG |
 
 </td>
 <td valign="top">
 
 <table>
-<tr><th>File type</th><th>File size</th><th>Peak memory<br>used</th></tr>
+<tr><th>File<br>type</th><th>File<br>size</th><th>Peak memory<br>used</th></tr>
 <tr><th colspan="3" align="left">Simulation</th></tr>
 <tr><td>GLB</td><td align="right">2.6 MB</td><td align="right">171 MB</td></tr>
 <tr><td>STEP</td><td align="right">7.1 MB</td><td align="right">177 MB</td></tr>
@@ -258,7 +258,7 @@ with GLB or STL is the quickest of the six runs on every board but 09 and 27, wh
 | Visual, GLB | 70&nbsp;ms | 54&nbsp;ms | 59&nbsp;ms | 0.1&nbsp;ms | 0.4 | 5&nbsp;ms | 37&nbsp;ms | 0.2 | 0.8 |
 | Visual, OBJ | 69&nbsp;ms | 53&nbsp;ms | 63&nbsp;ms | 0.1&nbsp;ms | 0.4 | 47&nbsp;ms | 32&nbsp;ms | 0.2 | 0.8 |
 
-<table>
+<table align="center">
 <tr>
 <td valign="top">
 
@@ -266,16 +266,16 @@ with GLB or STL is the quickest of the six runs on every board but 09 and 27, wh
 |---|---|
 | Outline | 32 × 20 mm |
 | Thickness | 1.6 mm |
-| Copper layers | 6 |
+| Copper&nbsp;layers | 6 |
 | Vias | 6: 3 blind and buried, 3 through |
-| Board edge | Plain |
-| Mask, silkscreen,<br>finish | Not set (drawn green and white),<br>ENIG |
+| Board&nbsp;edge | Plain |
+| Mask,&nbsp;silkscreen,&nbsp;finish | Not set (drawn green and white),<br>ENIG |
 
 </td>
 <td valign="top">
 
 <table>
-<tr><th>File type</th><th>File size</th><th>Peak memory<br>used</th></tr>
+<tr><th>File<br>type</th><th>File<br>size</th><th>Peak memory<br>used</th></tr>
 <tr><th colspan="3" align="left">Simulation</th></tr>
 <tr><td>GLB</td><td align="right">679 kB</td><td align="right">69 MB</td></tr>
 <tr><td>STEP</td><td align="right">1.5 MB</td><td align="right">67 MB</td></tr>
@@ -308,7 +308,7 @@ with GLB or STL is the quickest of the six runs on every board but 09 and 27, wh
 | Visual, GLB | 4&nbsp;ms | 60&nbsp;ms | 52&nbsp;ms | 0.1&nbsp;ms | 0.3 | 3&nbsp;ms | 49&nbsp;ms | 0.2 | 0.7 |
 | Visual, OBJ | 3&nbsp;ms | 59&nbsp;ms | 55&nbsp;ms | 0.1&nbsp;ms | 0.3 | 30&nbsp;ms | 49&nbsp;ms | 0.2 | 0.7 |
 
-<table>
+<table align="center">
 <tr>
 <td valign="top">
 
@@ -316,16 +316,16 @@ with GLB or STL is the quickest of the six runs on every board but 09 and 27, wh
 |---|---|
 | Outline | 30 × 16 mm |
 | Thickness | 1.6 mm |
-| Copper layers | 8 |
+| Copper&nbsp;layers | 8 |
 | Vias | 12: 10 micro, 2 blind and buried |
-| Board edge | Plain |
-| Mask, silkscreen,<br>finish | Mask colour not set (drawn green),<br>no silkscreen, ENIG |
+| Board&nbsp;edge | Plain |
+| Mask,&nbsp;silkscreen,&nbsp;finish | Mask colour not set (drawn green),<br>no silkscreen, ENIG |
 
 </td>
 <td valign="top">
 
 <table>
-<tr><th>File type</th><th>File size</th><th>Peak memory<br>used</th></tr>
+<tr><th>File<br>type</th><th>File<br>size</th><th>Peak memory<br>used</th></tr>
 <tr><th colspan="3" align="left">Simulation</th></tr>
 <tr><td>GLB</td><td align="right">584 kB</td><td align="right">45 MB</td></tr>
 <tr><td>STEP</td><td align="right">1.1 MB</td><td align="right">47 MB</td></tr>
@@ -358,7 +358,7 @@ with GLB or STL is the quickest of the six runs on every board but 09 and 27, wh
 | Visual, GLB | 70&nbsp;ms | 0.2 | 0.3 | 0.2&nbsp;ms | 1.3 | 12&nbsp;ms | 75&nbsp;ms | 0.2 | 2.0 |
 | Visual, OBJ | 72&nbsp;ms | 0.2 | 0.3 | 0.1&nbsp;ms | 1.3 | 0.3 | 68&nbsp;ms | 0.2 | 2.3 |
 
-<table>
+<table align="center">
 <tr>
 <td valign="top">
 
@@ -366,16 +366,16 @@ with GLB or STL is the quickest of the six runs on every board but 09 and 27, wh
 |---|---|
 | Outline | 52 × 32 mm |
 | Thickness | 1.6 mm |
-| Copper layers | 6 |
+| Copper&nbsp;layers | 6 |
 | Vias | 15: 1 blind and buried, 14 through |
-| Board edge | Plain |
-| Mask, silkscreen,<br>finish | Not set (drawn green and white),<br>ENIG |
+| Board&nbsp;edge | Plain |
+| Mask,&nbsp;silkscreen,&nbsp;finish | Not set (drawn green and white),<br>ENIG |
 
 </td>
 <td valign="top">
 
 <table>
-<tr><th>File type</th><th>File size</th><th>Peak memory<br>used</th></tr>
+<tr><th>File<br>type</th><th>File<br>size</th><th>Peak memory<br>used</th></tr>
 <tr><th colspan="3" align="left">Simulation</th></tr>
 <tr><td>GLB</td><td align="right">3.6 MB</td><td align="right">173 MB</td></tr>
 <tr><td>STEP</td><td align="right">10.0 MB</td><td align="right">180 MB</td></tr>
@@ -408,7 +408,7 @@ with GLB or STL is the quickest of the six runs on every board but 09 and 27, wh
 | Visual, GLB | 75&nbsp;ms | 0.1 | 0.9 | 0.1&nbsp;ms | 3.5 | 14&nbsp;ms | 88&nbsp;ms | 0.2 | 4.9 |
 | Visual, OBJ | 81&nbsp;ms | 0.1 | 0.9 | 0.1&nbsp;ms | 3.6 | 0.4 | 77&nbsp;ms | 0.2 | 5.4 |
 
-<table>
+<table align="center">
 <tr>
 <td valign="top">
 
@@ -416,16 +416,16 @@ with GLB or STL is the quickest of the six runs on every board but 09 and 27, wh
 |---|---|
 | Outline | 60 × 36 mm |
 | Thickness | 1.6 mm |
-| Copper layers | 4 |
+| Copper&nbsp;layers | 4 |
 | Vias | 3 through |
-| Board edge | Plain |
-| Mask, silkscreen,<br>finish | Not set (drawn green and white),<br>ENIG |
+| Board&nbsp;edge | Plain |
+| Mask,&nbsp;silkscreen,&nbsp;finish | Not set (drawn green and white),<br>ENIG |
 
 </td>
 <td valign="top">
 
 <table>
-<tr><th>File type</th><th>File size</th><th>Peak memory<br>used</th></tr>
+<tr><th>File<br>type</th><th>File<br>size</th><th>Peak memory<br>used</th></tr>
 <tr><th colspan="3" align="left">Simulation</th></tr>
 <tr><td>GLB</td><td align="right">2.7 MB</td><td align="right">205 MB</td></tr>
 <tr><td>STEP</td><td align="right">3.6 MB</td><td align="right">204 MB</td></tr>
@@ -458,7 +458,7 @@ with GLB or STL is the quickest of the six runs on every board but 09 and 27, wh
 | Visual, GLB | 5&nbsp;ms | 0.1 | 0.2 | 0.2&nbsp;ms | 1.0 | 8&nbsp;ms | 0.1 | 0.2 | 1.6 |
 | Visual, OBJ | 5&nbsp;ms | 0.1 | 0.2 | 0.2&nbsp;ms | 1.1 | 0.2 | 73&nbsp;ms | 0.2 | 1.9 |
 
-<table>
+<table align="center">
 <tr>
 <td valign="top">
 
@@ -466,16 +466,16 @@ with GLB or STL is the quickest of the six runs on every board but 09 and 27, wh
 |---|---|
 | Outline | 60 × 24 mm |
 | Thickness | 1.6 mm |
-| Copper layers | 4 |
+| Copper&nbsp;layers | 4 |
 | Vias | 22: 3 blind and buried, 19 through |
-| Board edge | Plain |
-| Mask, silkscreen,<br>finish | Mask colour not set (drawn green),<br>no silkscreen, ENIG |
+| Board&nbsp;edge | Plain |
+| Mask,&nbsp;silkscreen,&nbsp;finish | Mask colour not set (drawn green),<br>no silkscreen, ENIG |
 
 </td>
 <td valign="top">
 
 <table>
-<tr><th>File type</th><th>File size</th><th>Peak memory<br>used</th></tr>
+<tr><th>File<br>type</th><th>File<br>size</th><th>Peak memory<br>used</th></tr>
 <tr><th colspan="3" align="left">Simulation</th></tr>
 <tr><td>GLB</td><td align="right">2.2 MB</td><td align="right">154 MB</td></tr>
 <tr><td>STEP</td><td align="right">6.7 MB</td><td align="right">155 MB</td></tr>
@@ -510,7 +510,7 @@ with GLB or STL is the quickest of the six runs on every board but 09 and 27, wh
 | Visual, GLB | 65&nbsp;ms | 47&nbsp;ms | 0.1 | 0.1&nbsp;ms | 0.5 | 4&nbsp;ms | 33&nbsp;ms | 0.2 | 0.9 |
 | Visual, OBJ | 68&nbsp;ms | 48&nbsp;ms | 93&nbsp;ms | 0.1&nbsp;ms | 0.4 | 73&nbsp;ms | 32&nbsp;ms | 0.2 | 0.9 |
 
-<table>
+<table align="center">
 <tr>
 <td valign="top">
 
@@ -518,16 +518,16 @@ with GLB or STL is the quickest of the six runs on every board but 09 and 27, wh
 |---|---|
 | Outline | 34 × 20 mm |
 | Thickness | 1.6 mm |
-| Copper layers | 4 |
+| Copper&nbsp;layers | 4 |
 | Vias | 3 through |
-| Board edge | Plain |
-| Mask, silkscreen,<br>finish | Not set (drawn green and white),<br>ENIG |
+| Board&nbsp;edge | Plain |
+| Mask,&nbsp;silkscreen,&nbsp;finish | Not set (drawn green and white),<br>ENIG |
 
 </td>
 <td valign="top">
 
 <table>
-<tr><th>File type</th><th>File size</th><th>Peak memory<br>used</th></tr>
+<tr><th>File<br>type</th><th>File<br>size</th><th>Peak memory<br>used</th></tr>
 <tr><th colspan="3" align="left">Simulation</th></tr>
 <tr><td>GLB</td><td align="right">948 kB</td><td align="right">70 MB</td></tr>
 <tr><td>STEP</td><td align="right">2.6 MB</td><td align="right">69 MB</td></tr>
@@ -560,7 +560,7 @@ with GLB or STL is the quickest of the six runs on every board but 09 and 27, wh
 | Visual, GLB | 73&nbsp;ms | 43&nbsp;ms | 0.1 | 0.2&nbsp;ms | 0.5 | 5&nbsp;ms | 41&nbsp;ms | 0.2 | 1.0 |
 | Visual, OBJ | 76&nbsp;ms | 37&nbsp;ms | 0.1 | 0.1&nbsp;ms | 0.5 | 0.1 | 50&nbsp;ms | 0.2 | 1.1 |
 
-<table>
+<table align="center">
 <tr>
 <td valign="top">
 
@@ -568,16 +568,16 @@ with GLB or STL is the quickest of the six runs on every board but 09 and 27, wh
 |---|---|
 | Outline | 44 × 30 mm |
 | Thickness | 1.6 mm |
-| Copper layers | 2 |
+| Copper&nbsp;layers | 2 |
 | Vias | none |
-| Board edge | Plain |
-| Mask, silkscreen,<br>finish | Not set (drawn green and white),<br>ENIG |
+| Board&nbsp;edge | Plain |
+| Mask,&nbsp;silkscreen,&nbsp;finish | Not set (drawn green and white),<br>ENIG |
 
 </td>
 <td valign="top">
 
 <table>
-<tr><th>File type</th><th>File size</th><th>Peak memory<br>used</th></tr>
+<tr><th>File<br>type</th><th>File<br>size</th><th>Peak memory<br>used</th></tr>
 <tr><th colspan="3" align="left">Simulation</th></tr>
 <tr><td>GLB</td><td align="right">842 kB</td><td align="right">68 MB</td></tr>
 <tr><td>STEP</td><td align="right">3.7 MB</td><td align="right">72 MB</td></tr>
@@ -612,7 +612,7 @@ with GLB or STL is the quickest of the six runs on every board but 09 and 27, wh
 | Visual, GLB | 70&nbsp;ms | 23&nbsp;ms | 39&nbsp;ms | 0.1&nbsp;ms | 0.3 | 4&nbsp;ms | 40&nbsp;ms | 0.2 | 0.7 |
 | Visual, OBJ | 69&nbsp;ms | 25&nbsp;ms | 41&nbsp;ms | 0.1&nbsp;ms | 0.3 | 96&nbsp;ms | 51&nbsp;ms | 0.2 | 0.7 |
 
-<table>
+<table align="center">
 <tr>
 <td valign="top">
 
@@ -620,16 +620,16 @@ with GLB or STL is the quickest of the six runs on every board but 09 and 27, wh
 |---|---|
 | Outline | 30 × 24 mm |
 | Thickness | 1.6 mm |
-| Copper layers | 2 |
+| Copper&nbsp;layers | 2 |
 | Vias | none |
-| Board edge | Plain |
-| Mask, silkscreen,<br>finish | Not set (drawn green and white),<br>ENIG |
+| Board&nbsp;edge | Plain |
+| Mask,&nbsp;silkscreen,&nbsp;finish | Not set (drawn green and white),<br>ENIG |
 
 </td>
 <td valign="top">
 
 <table>
-<tr><th>File type</th><th>File size</th><th>Peak memory<br>used</th></tr>
+<tr><th>File<br>type</th><th>File<br>size</th><th>Peak memory<br>used</th></tr>
 <tr><th colspan="3" align="left">Simulation</th></tr>
 <tr><td>GLB</td><td align="right">776 kB</td><td align="right">72 MB</td></tr>
 <tr><td>STEP</td><td align="right">4.4 MB</td><td align="right">74 MB</td></tr>
@@ -662,7 +662,7 @@ with GLB or STL is the quickest of the six runs on every board but 09 and 27, wh
 | Visual, GLB | 11&nbsp;ms | 32&nbsp;ms | 59&nbsp;ms | 0.1&nbsp;ms | 0.4 | 4&nbsp;ms | 42&nbsp;ms | 0.2 | 0.7 |
 | Visual, OBJ | 8&nbsp;ms | 24&nbsp;ms | 56&nbsp;ms | 0.1&nbsp;ms | 0.3 | 69&nbsp;ms | 38&nbsp;ms | 0.2 | 0.7 |
 
-<table>
+<table align="center">
 <tr>
 <td valign="top">
 
@@ -670,16 +670,16 @@ with GLB or STL is the quickest of the six runs on every board but 09 and 27, wh
 |---|---|
 | Outline | 36 × 24 mm, rounded corners |
 | Thickness | 1.6 mm |
-| Copper layers | 2 |
+| Copper&nbsp;layers | 2 |
 | Vias | none |
-| Board edge | Plain |
-| Mask, silkscreen,<br>finish | Not set (drawn green and white),<br>ENIG |
+| Board&nbsp;edge | Plain |
+| Mask,&nbsp;silkscreen,&nbsp;finish | Not set (drawn green and white),<br>ENIG |
 
 </td>
 <td valign="top">
 
 <table>
-<tr><th>File type</th><th>File size</th><th>Peak memory<br>used</th></tr>
+<tr><th>File<br>type</th><th>File<br>size</th><th>Peak memory<br>used</th></tr>
 <tr><th colspan="3" align="left">Simulation</th></tr>
 <tr><td>GLB</td><td align="right">615 kB</td><td align="right">46 MB</td></tr>
 <tr><td>STEP</td><td align="right">3.3 MB</td><td align="right">49 MB</td></tr>
@@ -712,7 +712,7 @@ with GLB or STL is the quickest of the six runs on every board but 09 and 27, wh
 | Visual, GLB | 88&nbsp;ms | 38&nbsp;ms | 0.1 | 0.1&nbsp;ms | 0.9 | 12&nbsp;ms | 86&nbsp;ms | 0.2 | 1.4 |
 | Visual, OBJ | 87&nbsp;ms | 40&nbsp;ms | 0.1 | 0.1&nbsp;ms | 0.9 | 0.4 | 98&nbsp;ms | 0.2 | 1.9 |
 
-<table>
+<table align="center">
 <tr>
 <td valign="top">
 
@@ -720,16 +720,16 @@ with GLB or STL is the quickest of the six runs on every board but 09 and 27, wh
 |---|---|
 | Outline | 44 × 40 mm |
 | Thickness | 1.6 mm |
-| Copper layers | 2 |
+| Copper&nbsp;layers | 2 |
 | Vias | none |
-| Board edge | Plain |
-| Mask, silkscreen,<br>finish | Not set (drawn green and white),<br>ENIG |
+| Board&nbsp;edge | Plain |
+| Mask,&nbsp;silkscreen,&nbsp;finish | Not set (drawn green and white),<br>ENIG |
 
 </td>
 <td valign="top">
 
 <table>
-<tr><th>File type</th><th>File size</th><th>Peak memory<br>used</th></tr>
+<tr><th>File<br>type</th><th>File<br>size</th><th>Peak memory<br>used</th></tr>
 <tr><th colspan="3" align="left">Simulation</th></tr>
 <tr><td>GLB</td><td align="right">3.2 MB</td><td align="right">203 MB</td></tr>
 <tr><td>STEP</td><td align="right">18.9 MB</td><td align="right">208 MB</td></tr>
@@ -762,7 +762,7 @@ with GLB or STL is the quickest of the six runs on every board but 09 and 27, wh
 | Visual, GLB | 86&nbsp;ms | 27&nbsp;ms | 37&nbsp;ms | 0.1&nbsp;ms | 0.4 | 4&nbsp;ms | 40&nbsp;ms | 0.2 | 0.7 |
 | Visual, OBJ | 71&nbsp;ms | 25&nbsp;ms | 38&nbsp;ms | 0.1&nbsp;ms | 0.3 | 78&nbsp;ms | 40&nbsp;ms | 0.2 | 0.8 |
 
-<table>
+<table align="center">
 <tr>
 <td valign="top">
 
@@ -770,16 +770,16 @@ with GLB or STL is the quickest of the six runs on every board but 09 and 27, wh
 |---|---|
 | Outline | 44 × 24 mm |
 | Thickness | 1.6 mm |
-| Copper layers | 2 |
+| Copper&nbsp;layers | 2 |
 | Vias | none |
-| Board edge | Plain |
-| Mask, silkscreen,<br>finish | Not set (drawn green and white),<br>ENIG |
+| Board&nbsp;edge | Plain |
+| Mask,&nbsp;silkscreen,&nbsp;finish | Not set (drawn green and white),<br>ENIG |
 
 </td>
 <td valign="top">
 
 <table>
-<tr><th>File type</th><th>File size</th><th>Peak memory<br>used</th></tr>
+<tr><th>File<br>type</th><th>File<br>size</th><th>Peak memory<br>used</th></tr>
 <tr><th colspan="3" align="left">Simulation</th></tr>
 <tr><td>GLB</td><td align="right">560 kB</td><td align="right">68 MB</td></tr>
 <tr><td>STEP</td><td align="right">2.5 MB</td><td align="right">71 MB</td></tr>
@@ -812,7 +812,7 @@ with GLB or STL is the quickest of the six runs on every board but 09 and 27, wh
 | Visual, GLB | 0.1 | 84&nbsp;ms | 0.2 | 0.1&nbsp;ms | 0.9 | 10&nbsp;ms | 67&nbsp;ms | 0.2 | 1.5 |
 | Visual, OBJ | 0.1 | 92&nbsp;ms | 0.2 | 0.1&nbsp;ms | 0.9 | 0.3 | 66&nbsp;ms | 0.2 | 1.8 |
 
-<table>
+<table align="center">
 <tr>
 <td valign="top">
 
@@ -820,16 +820,16 @@ with GLB or STL is the quickest of the six runs on every board but 09 and 27, wh
 |---|---|
 | Outline | 64 × 44 mm |
 | Thickness | 1.6 mm |
-| Copper layers | 2 |
+| Copper&nbsp;layers | 2 |
 | Vias | none |
-| Board edge | Plain |
-| Mask, silkscreen,<br>finish | Not set (drawn green and white),<br>ENIG |
+| Board&nbsp;edge | Plain |
+| Mask,&nbsp;silkscreen,&nbsp;finish | Not set (drawn green and white),<br>ENIG |
 
 </td>
 <td valign="top">
 
 <table>
-<tr><th>File type</th><th>File size</th><th>Peak memory<br>used</th></tr>
+<tr><th>File<br>type</th><th>File<br>size</th><th>Peak memory<br>used</th></tr>
 <tr><th colspan="3" align="left">Simulation</th></tr>
 <tr><td>GLB</td><td align="right">2.0 MB</td><td align="right">83 MB</td></tr>
 <tr><td>STEP</td><td align="right">13.6 MB</td><td align="right">195 MB</td></tr>
@@ -864,7 +864,7 @@ with GLB or STL is the quickest of the six runs on every board but 09 and 27, wh
 | Visual, GLB | 99&nbsp;ms | 0.1 | 0.3 | 0.1&nbsp;ms | 1.1 | 13&nbsp;ms | 72&nbsp;ms | 0.2 | 1.9 |
 | Visual, OBJ | 92&nbsp;ms | 0.1 | 0.3 | 0.1&nbsp;ms | 1.1 | 0.3 | 71&nbsp;ms | 0.2 | 2.2 |
 
-<table>
+<table align="center">
 <tr>
 <td valign="top">
 
@@ -872,16 +872,16 @@ with GLB or STL is the quickest of the six runs on every board but 09 and 27, wh
 |---|---|
 | Outline | 40 × 31 mm |
 | Thickness | 1.6 mm |
-| Copper layers | 4 |
+| Copper&nbsp;layers | 4 |
 | Vias | 1 through |
-| Board edge | Plain |
-| Mask, silkscreen,<br>finish | Not set (drawn green and white),<br>ENIG |
+| Board&nbsp;edge | Plain |
+| Mask,&nbsp;silkscreen,&nbsp;finish | Not set (drawn green and white),<br>ENIG |
 
 </td>
 <td valign="top">
 
 <table>
-<tr><th>File type</th><th>File size</th><th>Peak memory<br>used</th></tr>
+<tr><th>File<br>type</th><th>File<br>size</th><th>Peak memory<br>used</th></tr>
 <tr><th colspan="3" align="left">Simulation</th></tr>
 <tr><td>GLB</td><td align="right">3.4 MB</td><td align="right">182 MB</td></tr>
 <tr><td>STEP</td><td align="right">13.6 MB</td><td align="right">187 MB</td></tr>
@@ -916,7 +916,7 @@ with GLB or STL is the quickest of the six runs on every board but 09 and 27, wh
 | Visual, GLB | 81&nbsp;ms | 37&nbsp;ms | 76&nbsp;ms | 0.1&nbsp;ms | 0.5 | 9&nbsp;ms | 58&nbsp;ms | 0.2 | 0.9 |
 | Visual, OBJ | 80&nbsp;ms | 37&nbsp;ms | 71&nbsp;ms | 0.1&nbsp;ms | 0.5 | 0.3 | 54&nbsp;ms | 0.2 | 1.2 |
 
-<table>
+<table align="center">
 <tr>
 <td valign="top">
 
@@ -924,16 +924,16 @@ with GLB or STL is the quickest of the six runs on every board but 09 and 27, wh
 |---|---|
 | Outline | 40 × 30.9 mm, arcs, a Bezier edge,<br>a notch and cut-outs |
 | Thickness | 1.6 mm |
-| Copper layers | 2 |
+| Copper&nbsp;layers | 2 |
 | Vias | none |
-| Board edge | Plain |
-| Mask, silkscreen,<br>finish | Not set (drawn green and white),<br>ENIG |
+| Board&nbsp;edge | Plain |
+| Mask,&nbsp;silkscreen,&nbsp;finish | Not set (drawn green and white),<br>ENIG |
 
 </td>
 <td valign="top">
 
 <table>
-<tr><th>File type</th><th>File size</th><th>Peak memory<br>used</th></tr>
+<tr><th>File<br>type</th><th>File<br>size</th><th>Peak memory<br>used</th></tr>
 <tr><th colspan="3" align="left">Simulation</th></tr>
 <tr><td>GLB</td><td align="right">1.6 MB</td><td align="right">77 MB</td></tr>
 <tr><td>STEP</td><td align="right">10.8 MB</td><td align="right">83 MB</td></tr>
@@ -966,7 +966,7 @@ with GLB or STL is the quickest of the six runs on every board but 09 and 27, wh
 | Visual, GLB | 71&nbsp;ms | 24&nbsp;ms | 54&nbsp;ms | 0.1&nbsp;ms | 0.2 | 4&nbsp;ms | 64&nbsp;ms | 0.2 | 0.6 |
 | Visual, OBJ | 65&nbsp;ms | 24&nbsp;ms | 51&nbsp;ms | 0.1&nbsp;ms | 0.2 | 38&nbsp;ms | 45&nbsp;ms | 0.2 | 0.6 |
 
-<table>
+<table align="center">
 <tr>
 <td valign="top">
 
@@ -974,16 +974,16 @@ with GLB or STL is the quickest of the six runs on every board but 09 and 27, wh
 |---|---|
 | Outline | 13.7 × 7.2 mm,<br>from the copper (no Edge.Cuts) |
 | Thickness | 1.6 mm |
-| Copper layers | 2 |
+| Copper&nbsp;layers | 2 |
 | Vias | 1 through |
-| Board edge | Plain |
-| Mask, silkscreen,<br>finish | Mask colour not set (drawn green),<br>no silkscreen, ENIG |
+| Board&nbsp;edge | Plain |
+| Mask,&nbsp;silkscreen,&nbsp;finish | Mask colour not set (drawn green),<br>no silkscreen, ENIG |
 
 </td>
 <td valign="top">
 
 <table>
-<tr><th>File type</th><th>File size</th><th>Peak memory<br>used</th></tr>
+<tr><th>File<br>type</th><th>File<br>size</th><th>Peak memory<br>used</th></tr>
 <tr><th colspan="3" align="left">Simulation</th></tr>
 <tr><td>GLB</td><td align="right">411 kB</td><td align="right">68 MB</td></tr>
 <tr><td>STEP</td><td align="right">1.6 MB</td><td align="right">66 MB</td></tr>
@@ -1016,7 +1016,7 @@ with GLB or STL is the quickest of the six runs on every board but 09 and 27, wh
 | Visual, GLB | 72&nbsp;ms | 22&nbsp;ms | 51&nbsp;ms | 0.1&nbsp;ms | 0.2 | 3&nbsp;ms | 22&nbsp;ms | 0.2 | 0.6 |
 | Visual, OBJ | 68&nbsp;ms | 21&nbsp;ms | 48&nbsp;ms | 0.1&nbsp;ms | 0.2 | 30&nbsp;ms | 22&nbsp;ms | 0.2 | 0.6 |
 
-<table>
+<table align="center">
 <tr>
 <td valign="top">
 
@@ -1024,16 +1024,16 @@ with GLB or STL is the quickest of the six runs on every board but 09 and 27, wh
 |---|---|
 | Outline | 40 × 20 mm,<br>two boards and a third in a hole |
 | Thickness | 1.6 mm |
-| Copper layers | 2 |
+| Copper&nbsp;layers | 2 |
 | Vias | none |
-| Board edge | Plain |
-| Mask, silkscreen,<br>finish | Not set (drawn green and white),<br>ENIG |
+| Board&nbsp;edge | Plain |
+| Mask,&nbsp;silkscreen,&nbsp;finish | Not set (drawn green and white),<br>ENIG |
 
 </td>
 <td valign="top">
 
 <table>
-<tr><th>File type</th><th>File size</th><th>Peak memory<br>used</th></tr>
+<tr><th>File<br>type</th><th>File<br>size</th><th>Peak memory<br>used</th></tr>
 <tr><th colspan="3" align="left">Simulation</th></tr>
 <tr><td>GLB</td><td align="right">247 kB</td><td align="right">70 MB</td></tr>
 <tr><td>STEP</td><td align="right">1.0 MB</td><td align="right">66 MB</td></tr>
@@ -1068,7 +1068,7 @@ with GLB or STL is the quickest of the six runs on every board but 09 and 27, wh
 | Visual, GLB | 69&nbsp;ms | 36&nbsp;ms | 72&nbsp;ms | 0.1&nbsp;ms | 0.4 | 4&nbsp;ms | 35&nbsp;ms | 0.2 | 0.8 |
 | Visual, OBJ | 86&nbsp;ms | 37&nbsp;ms | 62&nbsp;ms | 0.1&nbsp;ms | 0.3 | 46&nbsp;ms | 31&nbsp;ms | 0.2 | 0.7 |
 
-<table>
+<table align="center">
 <tr>
 <td valign="top">
 
@@ -1076,16 +1076,16 @@ with GLB or STL is the quickest of the six runs on every board but 09 and 27, wh
 |---|---|
 | Outline | 30 × 20 mm |
 | Thickness | 1.58 mm |
-| Copper layers | 4 |
+| Copper&nbsp;layers | 4 |
 | Vias | 1 through |
-| Board edge | Plain |
-| Mask, silkscreen,<br>finish | Green, white, ENIG |
+| Board&nbsp;edge | Plain |
+| Mask,&nbsp;silkscreen,&nbsp;finish | Green, white, ENIG |
 
 </td>
 <td valign="top">
 
 <table>
-<tr><th>File type</th><th>File size</th><th>Peak memory<br>used</th></tr>
+<tr><th>File<br>type</th><th>File<br>size</th><th>Peak memory<br>used</th></tr>
 <tr><th colspan="3" align="left">Simulation</th></tr>
 <tr><td>GLB</td><td align="right">433 kB</td><td align="right">66 MB</td></tr>
 <tr><td>STEP</td><td align="right">1.4 MB</td><td align="right">67 MB</td></tr>
@@ -1118,7 +1118,7 @@ with GLB or STL is the quickest of the six runs on every board but 09 and 27, wh
 | Visual, GLB | 64&nbsp;ms | 30&nbsp;ms | 52&nbsp;ms | 0.1&nbsp;ms | 0.3 | 4&nbsp;ms | 32&nbsp;ms | 0.2 | 0.7 |
 | Visual, OBJ | 64&nbsp;ms | 27&nbsp;ms | 53&nbsp;ms | 0.1&nbsp;ms | 0.3 | 32&nbsp;ms | 27&nbsp;ms | 0.2 | 0.7 |
 
-<table>
+<table align="center">
 <tr>
 <td valign="top">
 
@@ -1126,16 +1126,16 @@ with GLB or STL is the quickest of the six runs on every board but 09 and 27, wh
 |---|---|
 | Outline | 30 × 20 mm |
 | Thickness | 1.2 mm |
-| Copper layers | 4 |
+| Copper&nbsp;layers | 4 |
 | Vias | 1 through |
-| Board edge | Plain |
-| Mask, silkscreen,<br>finish | Not set (drawn green and white),<br>ENIG |
+| Board&nbsp;edge | Plain |
+| Mask,&nbsp;silkscreen,&nbsp;finish | Not set (drawn green and white),<br>ENIG |
 
 </td>
 <td valign="top">
 
 <table>
-<tr><th>File type</th><th>File size</th><th>Peak memory<br>used</th></tr>
+<tr><th>File<br>type</th><th>File<br>size</th><th>Peak memory<br>used</th></tr>
 <tr><th colspan="3" align="left">Simulation</th></tr>
 <tr><td>GLB</td><td align="right">353 kB</td><td align="right">67 MB</td></tr>
 <tr><td>STEP</td><td align="right">1.0 MB</td><td align="right">68 MB</td></tr>
@@ -1170,7 +1170,7 @@ with GLB or STL is the quickest of the six runs on every board but 09 and 27, wh
 | Visual, GLB | 68&nbsp;ms | 71&nbsp;ms | 89&nbsp;ms | 0.1&nbsp;ms | 0.3 | 4&nbsp;ms | 34&nbsp;ms | 0.2 | 0.7 |
 | Visual, OBJ | 69&nbsp;ms | 70&nbsp;ms | 96&nbsp;ms | 0.1&nbsp;ms | 0.3 | 51&nbsp;ms | 31&nbsp;ms | 0.2 | 0.8 |
 
-<table>
+<table align="center">
 <tr>
 <td valign="top">
 
@@ -1178,16 +1178,16 @@ with GLB or STL is the quickest of the six runs on every board but 09 and 27, wh
 |---|---|
 | Outline | 30 × 20 mm |
 | Thickness | 1.6 mm |
-| Copper layers | 2 |
+| Copper&nbsp;layers | 2 |
 | Vias | none |
-| Board edge | Castellated pads on the right edge,<br>plated edge |
-| Mask, silkscreen,<br>finish | Not set (drawn green and white),<br>immersion silver |
+| Board&nbsp;edge | Castellated pads on the right edge,<br>plated edge |
+| Mask,&nbsp;silkscreen,&nbsp;finish | Not set (drawn green and white),<br>immersion silver |
 
 </td>
 <td valign="top">
 
 <table>
-<tr><th>File type</th><th>File size</th><th>Peak memory<br>used</th></tr>
+<tr><th>File<br>type</th><th>File<br>size</th><th>Peak memory<br>used</th></tr>
 <tr><th colspan="3" align="left">Simulation</th></tr>
 <tr><td>GLB</td><td align="right">500 kB</td><td align="right">65 MB</td></tr>
 <tr><td>STEP</td><td align="right">2.6 MB</td><td align="right">70 MB</td></tr>
@@ -1220,7 +1220,7 @@ with GLB or STL is the quickest of the six runs on every board but 09 and 27, wh
 | Visual, GLB | 99&nbsp;ms | 0.5 | 2.2 | 0.2&nbsp;ms | 4.5 | 23&nbsp;ms | 0.2 | 0.2 | 7.6 |
 | Visual, OBJ | 0.1 | 0.5 | 2.3 | 0.2&nbsp;ms | 4.5 | 0.9 | 0.1 | 0.2 | 8.6 |
 
-<table>
+<table align="center">
 <tr>
 <td valign="top">
 
@@ -1228,16 +1228,16 @@ with GLB or STL is the quickest of the six runs on every board but 09 and 27, wh
 |---|---|
 | Outline | 40 × 28 mm, a cut-out |
 | Thickness | 1.6 mm |
-| Copper layers | 4 |
+| Copper&nbsp;layers | 4 |
 | Vias | 91 through |
-| Board edge | Plated all round<br>and in the cut-out |
-| Mask, silkscreen,<br>finish | Green, white, ENIG |
+| Board&nbsp;edge | Plated all round<br>and in the cut-out |
+| Mask,&nbsp;silkscreen,&nbsp;finish | Green, white, ENIG |
 
 </td>
 <td valign="top">
 
 <table>
-<tr><th>File type</th><th>File size</th><th>Peak memory<br>used</th></tr>
+<tr><th>File<br>type</th><th>File<br>size</th><th>Peak memory<br>used</th></tr>
 <tr><th colspan="3" align="left">Simulation</th></tr>
 <tr><td>GLB</td><td align="right">14.8 MB</td><td align="right">287 MB</td></tr>
 <tr><td>STEP</td><td align="right">54.3 MB</td><td align="right">328 MB</td></tr>
@@ -1270,7 +1270,7 @@ with GLB or STL is the quickest of the six runs on every board but 09 and 27, wh
 | Visual, GLB | 67&nbsp;ms | 69&nbsp;ms | 0.3 | 0.1&nbsp;ms | 0.9 | 7&nbsp;ms | 38&nbsp;ms | 0.2 | 1.5 |
 | Visual, OBJ | 78&nbsp;ms | 75&nbsp;ms | 0.3 | 0.2&nbsp;ms | 0.9 | 76&nbsp;ms | 35&nbsp;ms | 0.2 | 1.6 |
 
-<table>
+<table align="center">
 <tr>
 <td valign="top">
 
@@ -1278,16 +1278,16 @@ with GLB or STL is the quickest of the six runs on every board but 09 and 27, wh
 |---|---|
 | Outline | 40 × 24 mm |
 | Thickness | 1.6 mm |
-| Copper layers | 4 |
+| Copper&nbsp;layers | 4 |
 | Vias | 3: 2 blind and buried, 1 through |
-| Board edge | Plated all round,<br>cut by machining between two heights |
-| Mask, silkscreen,<br>finish | Not set (drawn green and white),<br>ENIG |
+| Board&nbsp;edge | Plated all round,<br>cut by machining between two heights |
+| Mask,&nbsp;silkscreen,&nbsp;finish | Not set (drawn green and white),<br>ENIG |
 
 </td>
 <td valign="top">
 
 <table>
-<tr><th>File type</th><th>File size</th><th>Peak memory<br>used</th></tr>
+<tr><th>File<br>type</th><th>File<br>size</th><th>Peak memory<br>used</th></tr>
 <tr><th colspan="3" align="left">Simulation</th></tr>
 <tr><td>GLB</td><td align="right">926 kB</td><td align="right">69 MB</td></tr>
 <tr><td>STEP</td><td align="right">5.1 MB</td><td align="right">71 MB</td></tr>
@@ -1322,7 +1322,7 @@ with GLB or STL is the quickest of the six runs on every board but 09 and 27, wh
 | Visual, GLB | 98&nbsp;ms | 78&nbsp;ms | 0.1 | 0.1&nbsp;ms | 0.3 | 5&nbsp;ms | 38&nbsp;ms | 0.2 | 0.8 |
 | Visual, OBJ | 80&nbsp;ms | 65&nbsp;ms | 0.1 | 0.1&nbsp;ms | 0.3 | 0.1 | 47&nbsp;ms | 0.2 | 1.0 |
 
-<table>
+<table align="center">
 <tr>
 <td valign="top">
 
@@ -1330,16 +1330,16 @@ with GLB or STL is the quickest of the six runs on every board but 09 and 27, wh
 |---|---|
 | Outline | 40 × 30 mm |
 | Thickness | 1.6 mm |
-| Copper layers | 2 |
+| Copper&nbsp;layers | 2 |
 | Vias | 1 through |
-| Board edge | Plain |
-| Mask, silkscreen,<br>finish | Red, black, lead-free HASL |
+| Board&nbsp;edge | Plain |
+| Mask,&nbsp;silkscreen,&nbsp;finish | Red, black, lead-free HASL |
 
 </td>
 <td valign="top">
 
 <table>
-<tr><th>File type</th><th>File size</th><th>Peak memory<br>used</th></tr>
+<tr><th>File<br>type</th><th>File<br>size</th><th>Peak memory<br>used</th></tr>
 <tr><th colspan="3" align="left">Simulation</th></tr>
 <tr><td>GLB</td><td align="right">645 kB</td><td align="right">67 MB</td></tr>
 <tr><td>STEP</td><td align="right">2.0 MB</td><td align="right">68 MB</td></tr>
@@ -1372,7 +1372,7 @@ with GLB or STL is the quickest of the six runs on every board but 09 and 27, wh
 | Visual, GLB | 70&nbsp;ms | 31&nbsp;ms | 0.2 | 0.1&nbsp;ms | 0.4 | 4&nbsp;ms | 39&nbsp;ms | 0.2 | 0.9 |
 | Visual, OBJ | 71&nbsp;ms | 32&nbsp;ms | 0.2 | 0.1&nbsp;ms | 0.4 | 80&nbsp;ms | 32&nbsp;ms | 0.2 | 1.0 |
 
-<table>
+<table align="center">
 <tr>
 <td valign="top">
 
@@ -1380,16 +1380,16 @@ with GLB or STL is the quickest of the six runs on every board but 09 and 27, wh
 |---|---|
 | Outline | 30 × 20 mm |
 | Thickness | 1.6 mm |
-| Copper layers | 2 |
+| Copper&nbsp;layers | 2 |
 | Vias | none |
-| Board edge | Plain |
-| Mask, silkscreen,<br>finish | White, black, ENIG |
+| Board&nbsp;edge | Plain |
+| Mask,&nbsp;silkscreen,&nbsp;finish | White, black, ENIG |
 
 </td>
 <td valign="top">
 
 <table>
-<tr><th>File type</th><th>File size</th><th>Peak memory<br>used</th></tr>
+<tr><th>File<br>type</th><th>File<br>size</th><th>Peak memory<br>used</th></tr>
 <tr><th colspan="3" align="left">Simulation</th></tr>
 <tr><td>GLB</td><td align="right">589 kB</td><td align="right">68 MB</td></tr>
 <tr><td>STEP</td><td align="right">3.0 MB</td><td align="right">69 MB</td></tr>
@@ -1424,7 +1424,7 @@ with GLB or STL is the quickest of the six runs on every board but 09 and 27, wh
 | Visual, GLB | 70&nbsp;ms | 35&nbsp;ms | 48&nbsp;ms | 0.1&nbsp;ms | 0.3 | 5&nbsp;ms | 51&nbsp;ms | 0.2 | 0.7 |
 | Visual, OBJ | 86&nbsp;ms | 35&nbsp;ms | 46&nbsp;ms | 0.1&nbsp;ms | 0.3 | 77&nbsp;ms | 49&nbsp;ms | 0.2 | 0.8 |
 
-<table>
+<table align="center">
 <tr>
 <td valign="top">
 
@@ -1432,16 +1432,16 @@ with GLB or STL is the quickest of the six runs on every board but 09 and 27, wh
 |---|---|
 | Outline | 30 × 16 mm |
 | Thickness | 1.6 mm |
-| Copper layers | 2 |
+| Copper&nbsp;layers | 2 |
 | Vias | 6 through |
-| Board edge | Gold edge fingers<br>on a bevelled edge |
-| Mask, silkscreen,<br>finish | Not set (drawn green and white),<br>hard gold |
+| Board&nbsp;edge | Gold edge fingers<br>on a bevelled edge |
+| Mask,&nbsp;silkscreen,&nbsp;finish | Not set (drawn green and white),<br>hard gold |
 
 </td>
 <td valign="top">
 
 <table>
-<tr><th>File type</th><th>File size</th><th>Peak memory<br>used</th></tr>
+<tr><th>File<br>type</th><th>File<br>size</th><th>Peak memory<br>used</th></tr>
 <tr><th colspan="3" align="left">Simulation</th></tr>
 <tr><td>GLB</td><td align="right">500 kB</td><td align="right">69 MB</td></tr>
 <tr><td>STEP</td><td align="right">2.0 MB</td><td align="right">67 MB</td></tr>
@@ -1474,7 +1474,7 @@ with GLB or STL is the quickest of the six runs on every board but 09 and 27, wh
 | Visual, GLB | 69&nbsp;ms | 36&nbsp;ms | 0.1 | 0.2&nbsp;ms | 0.4 | 4&nbsp;ms | 40&nbsp;ms | 0.2 | 0.8 |
 | Visual, OBJ | 69&nbsp;ms | 33&nbsp;ms | 94&nbsp;ms | 0.2&nbsp;ms | 0.4 | 65&nbsp;ms | 33&nbsp;ms | 0.2 | 0.8 |
 
-<table>
+<table align="center">
 <tr>
 <td valign="top">
 
@@ -1482,16 +1482,16 @@ with GLB or STL is the quickest of the six runs on every board but 09 and 27, wh
 |---|---|
 | Outline | 30 × 20 mm |
 | Thickness | 1.6 mm |
-| Copper layers | 2 |
+| Copper&nbsp;layers | 2 |
 | Vias | 1 through |
-| Board edge | Plain |
-| Mask, silkscreen,<br>finish | Green, white, ENIG |
+| Board&nbsp;edge | Plain |
+| Mask,&nbsp;silkscreen,&nbsp;finish | Green, white, ENIG |
 
 </td>
 <td valign="top">
 
 <table>
-<tr><th>File type</th><th>File size</th><th>Peak memory<br>used</th></tr>
+<tr><th>File<br>type</th><th>File<br>size</th><th>Peak memory<br>used</th></tr>
 <tr><th colspan="3" align="left">Simulation</th></tr>
 <tr><td>GLB</td><td align="right">635 kB</td><td align="right">67 MB</td></tr>
 <tr><td>STEP</td><td align="right">2.4 MB</td><td align="right">69 MB</td></tr>
@@ -1524,7 +1524,7 @@ with GLB or STL is the quickest of the six runs on every board but 09 and 27, wh
 | Visual, GLB | 70&nbsp;ms | 34&nbsp;ms | 0.2 | 0.1&nbsp;ms | 0.6 | 6&nbsp;ms | 36&nbsp;ms | 0.2 | 1.1 |
 | Visual, OBJ | 68&nbsp;ms | 35&nbsp;ms | 0.2 | 0.2&nbsp;ms | 0.6 | 80&nbsp;ms | 37&nbsp;ms | 0.2 | 1.2 |
 
-<table>
+<table align="center">
 <tr>
 <td valign="top">
 
@@ -1532,16 +1532,16 @@ with GLB or STL is the quickest of the six runs on every board but 09 and 27, wh
 |---|---|
 | Outline | 30 × 20 mm |
 | Thickness | 1.6 mm |
-| Copper layers | 2 |
+| Copper&nbsp;layers | 2 |
 | Vias | 1 through |
-| Board edge | Plain |
-| Mask, silkscreen,<br>finish | Blue, white, ENEPIG |
+| Board&nbsp;edge | Plain |
+| Mask,&nbsp;silkscreen,&nbsp;finish | Blue, white, ENEPIG |
 
 </td>
 <td valign="top">
 
 <table>
-<tr><th>File type</th><th>File size</th><th>Peak memory<br>used</th></tr>
+<tr><th>File<br>type</th><th>File<br>size</th><th>Peak memory<br>used</th></tr>
 <tr><th colspan="3" align="left">Simulation</th></tr>
 <tr><td>GLB</td><td align="right">1.2 MB</td><td align="right">69 MB</td></tr>
 <tr><td>STEP</td><td align="right">6.5 MB</td><td align="right">71 MB</td></tr>
@@ -1576,7 +1576,7 @@ with GLB or STL is the quickest of the six runs on every board but 09 and 27, wh
 | Visual, GLB | 66&nbsp;ms | 16&nbsp;ms | 21&nbsp;ms | 0.1&nbsp;ms | 0.1 | 2&nbsp;ms | 18&nbsp;ms | 0.2 | 0.4 |
 | Visual, OBJ | 65&nbsp;ms | 17&nbsp;ms | 21&nbsp;ms | 0.1&nbsp;ms | 0.1 | 26&nbsp;ms | 19&nbsp;ms | 0.2 | 0.4 |
 
-<table>
+<table align="center">
 <tr>
 <td valign="top">
 
@@ -1584,16 +1584,16 @@ with GLB or STL is the quickest of the six runs on every board but 09 and 27, wh
 |---|---|
 | Outline | 40 × 30 mm |
 | Thickness | 1.6 mm |
-| Copper layers | 2 |
+| Copper&nbsp;layers | 2 |
 | Vias | none |
-| Board edge | Plain |
-| Mask, silkscreen,<br>finish | Not set (drawn green and white),<br>ENIG |
+| Board&nbsp;edge | Plain |
+| Mask,&nbsp;silkscreen,&nbsp;finish | Not set (drawn green and white),<br>ENIG |
 
 </td>
 <td valign="top">
 
 <table>
-<tr><th>File type</th><th>File size</th><th>Peak memory<br>used</th></tr>
+<tr><th>File<br>type</th><th>File<br>size</th><th>Peak memory<br>used</th></tr>
 <tr><th colspan="3" align="left">Simulation</th></tr>
 <tr><td>GLB</td><td align="right">104 kB</td><td align="right">67 MB</td></tr>
 <tr><td>STEP</td><td align="right">510 kB</td><td align="right">64 MB</td></tr>
@@ -1626,7 +1626,7 @@ with GLB or STL is the quickest of the six runs on every board but 09 and 27, wh
 | Visual, GLB | 0.9&nbsp;ms | 4&nbsp;ms | 15&nbsp;ms | 0.0&nbsp;ms | 26&nbsp;ms | 1&nbsp;ms | 11&nbsp;ms | 0.2 | 0.2 |
 | Visual, OBJ | 0.9&nbsp;ms | 4&nbsp;ms | 8&nbsp;ms | 0.0&nbsp;ms | 34&nbsp;ms | 1&nbsp;ms | 11&nbsp;ms | 0.2 | 0.2 |
 
-<table>
+<table align="center">
 <tr>
 <td valign="top">
 
@@ -1634,16 +1634,16 @@ with GLB or STL is the quickest of the six runs on every board but 09 and 27, wh
 |---|---|
 | Outline | 40 × 24 mm |
 | Thickness | 1.6 mm |
-| Copper layers | 2 |
+| Copper&nbsp;layers | 2 |
 | Vias | none |
-| Board edge | Plain |
-| Mask, silkscreen,<br>finish | Mask colour not set (drawn green),<br>no silkscreen, ENIG |
+| Board&nbsp;edge | Plain |
+| Mask,&nbsp;silkscreen,&nbsp;finish | Mask colour not set (drawn green),<br>no silkscreen, ENIG |
 
 </td>
 <td valign="top">
 
 <table>
-<tr><th>File type</th><th>File size</th><th>Peak memory<br>used</th></tr>
+<tr><th>File<br>type</th><th>File<br>size</th><th>Peak memory<br>used</th></tr>
 <tr><th colspan="3" align="left">Simulation</th></tr>
 <tr><td>GLB</td><td align="right">4 kB</td><td align="right">40 MB</td></tr>
 <tr><td>STEP</td><td align="right">19 kB</td><td align="right">40 MB</td></tr>
@@ -1678,7 +1678,7 @@ with GLB or STL is the quickest of the six runs on every board but 09 and 27, wh
 | Visual, GLB | 71&nbsp;ms | 27&nbsp;ms | 65&nbsp;ms | 0.1&nbsp;ms | 0.3 | 4&nbsp;ms | 35&nbsp;ms | 0.2 | 0.7 |
 | Visual, OBJ | 80&nbsp;ms | 29&nbsp;ms | 62&nbsp;ms | 0.1&nbsp;ms | 0.3 | 62&nbsp;ms | 29&nbsp;ms | 0.2 | 0.7 |
 
-<table>
+<table align="center">
 <tr>
 <td valign="top">
 
@@ -1686,16 +1686,16 @@ with GLB or STL is the quickest of the six runs on every board but 09 and 27, wh
 |---|---|
 | Outline | 24 × 16 mm |
 | Thickness | 1.6 mm |
-| Copper layers | 2 |
+| Copper&nbsp;layers | 2 |
 | Vias | 1 through |
-| Board edge | Plain |
-| Mask, silkscreen,<br>finish | Not set (drawn green and white),<br>ENIG |
+| Board&nbsp;edge | Plain |
+| Mask,&nbsp;silkscreen,&nbsp;finish | Not set (drawn green and white),<br>ENIG |
 
 </td>
 <td valign="top">
 
 <table>
-<tr><th>File type</th><th>File size</th><th>Peak memory<br>used</th></tr>
+<tr><th>File<br>type</th><th>File<br>size</th><th>Peak memory<br>used</th></tr>
 <tr><th colspan="3" align="left">Simulation</th></tr>
 <tr><td>GLB</td><td align="right">512 kB</td><td align="right">67 MB</td></tr>
 <tr><td>STEP</td><td align="right">2.3 MB</td><td align="right">68 MB</td></tr>
@@ -1728,7 +1728,7 @@ with GLB or STL is the quickest of the six runs on every board but 09 and 27, wh
 | Visual, GLB | 77&nbsp;ms | 31&nbsp;ms | 70&nbsp;ms | 0.1&nbsp;ms | 0.3 | 5&nbsp;ms | 33&nbsp;ms | 0.2 | 0.7 |
 | Visual, OBJ | 70&nbsp;ms | 28&nbsp;ms | 73&nbsp;ms | 0.1&nbsp;ms | 0.3 | 60&nbsp;ms | 29&nbsp;ms | 0.2 | 0.7 |
 
-<table>
+<table align="center">
 <tr>
 <td valign="top">
 
@@ -1736,16 +1736,16 @@ with GLB or STL is the quickest of the six runs on every board but 09 and 27, wh
 |---|---|
 | Outline | 24 × 16 mm |
 | Thickness | 1.6 mm |
-| Copper layers | 2 |
+| Copper&nbsp;layers | 2 |
 | Vias | 1 through |
-| Board edge | Plain |
-| Mask, silkscreen,<br>finish | Not set (drawn green and white),<br>ENIG |
+| Board&nbsp;edge | Plain |
+| Mask,&nbsp;silkscreen,&nbsp;finish | Not set (drawn green and white),<br>ENIG |
 
 </td>
 <td valign="top">
 
 <table>
-<tr><th>File type</th><th>File size</th><th>Peak memory<br>used</th></tr>
+<tr><th>File<br>type</th><th>File<br>size</th><th>Peak memory<br>used</th></tr>
 <tr><th colspan="3" align="left">Simulation</th></tr>
 <tr><td>GLB</td><td align="right">506 kB</td><td align="right">68 MB</td></tr>
 <tr><td>STEP</td><td align="right">2.2 MB</td><td align="right">68 MB</td></tr>
@@ -1778,7 +1778,7 @@ with GLB or STL is the quickest of the six runs on every board but 09 and 27, wh
 | Visual, GLB | 69&nbsp;ms | 28&nbsp;ms | 72&nbsp;ms | 0.1&nbsp;ms | 0.3 | 4&nbsp;ms | 35&nbsp;ms | 0.2 | 0.7 |
 | Visual, OBJ | 71&nbsp;ms | 30&nbsp;ms | 65&nbsp;ms | 0.1&nbsp;ms | 0.3 | 63&nbsp;ms | 32&nbsp;ms | 0.2 | 0.7 |
 
-<table>
+<table align="center">
 <tr>
 <td valign="top">
 
@@ -1786,16 +1786,16 @@ with GLB or STL is the quickest of the six runs on every board but 09 and 27, wh
 |---|---|
 | Outline | 24 × 16 mm |
 | Thickness | 1.6 mm |
-| Copper layers | 2 |
+| Copper&nbsp;layers | 2 |
 | Vias | 1 through |
-| Board edge | Plain |
-| Mask, silkscreen,<br>finish | Not set (drawn green and white),<br>ENIG |
+| Board&nbsp;edge | Plain |
+| Mask,&nbsp;silkscreen,&nbsp;finish | Not set (drawn green and white),<br>ENIG |
 
 </td>
 <td valign="top">
 
 <table>
-<tr><th>File type</th><th>File size</th><th>Peak memory<br>used</th></tr>
+<tr><th>File<br>type</th><th>File<br>size</th><th>Peak memory<br>used</th></tr>
 <tr><th colspan="3" align="left">Simulation</th></tr>
 <tr><td>GLB</td><td align="right">515 kB</td><td align="right">67 MB</td></tr>
 <tr><td>STEP</td><td align="right">2.3 MB</td><td align="right">67 MB</td></tr>
@@ -1828,7 +1828,7 @@ with GLB or STL is the quickest of the six runs on every board but 09 and 27, wh
 | Visual, GLB | 68&nbsp;ms | 28&nbsp;ms | 71&nbsp;ms | 0.1&nbsp;ms | 0.3 | 4&nbsp;ms | 30&nbsp;ms | 0.2 | 0.7 |
 | Visual, OBJ | 67&nbsp;ms | 27&nbsp;ms | 69&nbsp;ms | 0.1&nbsp;ms | 0.3 | 59&nbsp;ms | 31&nbsp;ms | 0.2 | 0.7 |
 
-<table>
+<table align="center">
 <tr>
 <td valign="top">
 
@@ -1836,16 +1836,16 @@ with GLB or STL is the quickest of the six runs on every board but 09 and 27, wh
 |---|---|
 | Outline | 24 × 16 mm |
 | Thickness | 1.6 mm |
-| Copper layers | 2 |
+| Copper&nbsp;layers | 2 |
 | Vias | 1 through |
-| Board edge | Plain |
-| Mask, silkscreen,<br>finish | Not set (drawn green and white),<br>ENIG |
+| Board&nbsp;edge | Plain |
+| Mask,&nbsp;silkscreen,&nbsp;finish | Not set (drawn green and white),<br>ENIG |
 
 </td>
 <td valign="top">
 
 <table>
-<tr><th>File type</th><th>File size</th><th>Peak memory<br>used</th></tr>
+<tr><th>File<br>type</th><th>File<br>size</th><th>Peak memory<br>used</th></tr>
 <tr><th colspan="3" align="left">Simulation</th></tr>
 <tr><td>GLB</td><td align="right">512 kB</td><td align="right">65 MB</td></tr>
 <tr><td>STEP</td><td align="right">2.3 MB</td><td align="right">67 MB</td></tr>
@@ -1878,7 +1878,7 @@ with GLB or STL is the quickest of the six runs on every board but 09 and 27, wh
 | Visual, GLB | 70&nbsp;ms | 27&nbsp;ms | 64&nbsp;ms | 0.1&nbsp;ms | 0.3 | 4&nbsp;ms | 32&nbsp;ms | 0.2 | 0.7 |
 | Visual, OBJ | 69&nbsp;ms | 29&nbsp;ms | 68&nbsp;ms | 0.1&nbsp;ms | 0.3 | 60&nbsp;ms | 31&nbsp;ms | 0.2 | 0.8 |
 
-<table>
+<table align="center">
 <tr>
 <td valign="top">
 
@@ -1886,16 +1886,16 @@ with GLB or STL is the quickest of the six runs on every board but 09 and 27, wh
 |---|---|
 | Outline | 24 × 16 mm |
 | Thickness | 1.6 mm |
-| Copper layers | 2 |
+| Copper&nbsp;layers | 2 |
 | Vias | 1 through |
-| Board edge | Plain |
-| Mask, silkscreen,<br>finish | Not set (drawn green and white),<br>ENIG |
+| Board&nbsp;edge | Plain |
+| Mask,&nbsp;silkscreen,&nbsp;finish | Not set (drawn green and white),<br>ENIG |
 
 </td>
 <td valign="top">
 
 <table>
-<tr><th>File type</th><th>File size</th><th>Peak memory<br>used</th></tr>
+<tr><th>File<br>type</th><th>File<br>size</th><th>Peak memory<br>used</th></tr>
 <tr><th colspan="3" align="left">Simulation</th></tr>
 <tr><td>GLB</td><td align="right">517 kB</td><td align="right">69 MB</td></tr>
 <tr><td>STEP</td><td align="right">2.3 MB</td><td align="right">68 MB</td></tr>
@@ -1930,7 +1930,7 @@ with GLB or STL is the quickest of the six runs on every board but 09 and 27, wh
 | Visual, GLB | 0.3 | 1.7 | 6.8 | 0.4&nbsp;ms | 9.5 | 94&nbsp;ms | 0.6 | 0.2 | 19.1 |
 | Visual, OBJ | 0.2 | 1.6 | 6.7 | 0.5&nbsp;ms | 9.8 | 3.8 | 0.8 | 0.2 | 23.1 |
 
-<table>
+<table align="center">
 <tr>
 <td valign="top">
 
@@ -1938,16 +1938,16 @@ with GLB or STL is the quickest of the six runs on every board but 09 and 27, wh
 |---|---|
 | Outline | 64 × 44 mm, a cut-out |
 | Thickness | 1.6 mm |
-| Copper layers | 4 |
+| Copper&nbsp;layers | 4 |
 | Vias | 307 through |
-| Board edge | Plated all round<br>and in the cut-out |
-| Mask, silkscreen,<br>finish | Blue, white, ENIG |
+| Board&nbsp;edge | Plated all round<br>and in the cut-out |
+| Mask,&nbsp;silkscreen,&nbsp;finish | Blue, white, ENIG |
 
 </td>
 <td valign="top">
 
 <table>
-<tr><th>File type</th><th>File size</th><th>Peak memory<br>used</th></tr>
+<tr><th>File<br>type</th><th>File<br>size</th><th>Peak memory<br>used</th></tr>
 <tr><th colspan="3" align="left">Simulation</th></tr>
 <tr><td>GLB</td><td align="right">47.2 MB</td><td align="right">548 MB</td></tr>
 <tr><td>STEP</td><td align="right">171.2 MB</td><td align="right">643 MB</td></tr>
@@ -1980,7 +1980,7 @@ with GLB or STL is the quickest of the six runs on every board but 09 and 27, wh
 | Visual, GLB | 0.2 | 1.0 | 2.6 | 0.4&nbsp;ms | 4.0 | 66&nbsp;ms | 0.4 | 0.2 | 8.5 |
 | Visual, OBJ | 0.2 | 1.0 | 2.7 | 0.4&nbsp;ms | 4.1 | 1.7 | 0.4 | 0.2 | 10.3 |
 
-<table>
+<table align="center">
 <tr>
 <td valign="top">
 
@@ -1988,16 +1988,16 @@ with GLB or STL is the quickest of the six runs on every board but 09 and 27, wh
 |---|---|
 | Outline | 22 × 30 mm |
 | Thickness | 0.925 mm |
-| Copper layers | 6 |
+| Copper&nbsp;layers | 6 |
 | Vias | 150: 71 micro,<br>34 blind and buried, 45 through |
-| Board edge | 43 castellated pads |
-| Mask, silkscreen,<br>finish | Black, white, immersion silver |
+| Board&nbsp;edge | 43 castellated pads |
+| Mask,&nbsp;silkscreen,&nbsp;finish | Black, white, immersion silver |
 
 </td>
 <td valign="top">
 
 <table>
-<tr><th>File type</th><th>File size</th><th>Peak memory<br>used</th></tr>
+<tr><th>File<br>type</th><th>File<br>size</th><th>Peak memory<br>used</th></tr>
 <tr><th colspan="3" align="left">Simulation</th></tr>
 <tr><td>GLB</td><td align="right">21.0 MB</td><td align="right">350 MB</td></tr>
 <tr><td>STEP</td><td align="right">70.9 MB</td><td align="right">357 MB</td></tr>
@@ -2030,7 +2030,7 @@ with GLB or STL is the quickest of the six runs on every board but 09 and 27, wh
 | Visual, GLB | 0.3 | 1.1 | 3.8 | 0.5&nbsp;ms | 7.6 | 0.1 | 0.8 | 0.2 | 13.9 |
 | Visual, OBJ | 0.3 | 1.3 | 3.8 | 0.6&nbsp;ms | 7.4 | 3.9 | 0.8 | 0.2 | 17.7 |
 
-<table>
+<table align="center">
 <tr>
 <td valign="top">
 
@@ -2038,16 +2038,16 @@ with GLB or STL is the quickest of the six runs on every board but 09 and 27, wh
 |---|---|
 | Outline | 80 × 64.4 mm with the fingers' tongue,<br>a slot |
 | Thickness | 1.57 mm |
-| Copper layers | 4 |
+| Copper&nbsp;layers | 4 |
 | Vias | 239 through |
-| Board edge | 36 gold fingers on<br>a bevelled tongue |
-| Mask, silkscreen,<br>finish | Green, white, hard gold |
+| Board&nbsp;edge | 36 gold fingers on<br>a bevelled tongue |
+| Mask,&nbsp;silkscreen,&nbsp;finish | Green, white, hard gold |
 
 </td>
 <td valign="top">
 
 <table>
-<tr><th>File type</th><th>File size</th><th>Peak memory<br>used</th></tr>
+<tr><th>File<br>type</th><th>File<br>size</th><th>Peak memory<br>used</th></tr>
 <tr><th colspan="3" align="left">Simulation</th></tr>
 <tr><td>GLB</td><td align="right">41.1 MB</td><td align="right">530 MB</td></tr>
 <tr><td>STEP</td><td align="right">130.5 MB</td><td align="right">559 MB</td></tr>
