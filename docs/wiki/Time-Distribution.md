@@ -1,23 +1,5 @@
 # 6. Time Distribution
 
-> [!NOTE]
-> These runs were made with `Geometry.CIRCLE_CHORD_TOLERANCE_MM = 0.002`, the default until it
-> became 0.005 mm, KiCad's own accuracy. Timed the same way, three runs each, the default 0.005
-> makes the three boards 1 to 8% faster (4.6% in all in simulation mode, 2.9% in visual mode) and
-> their files up to 4% smaller (2.1% and 2.3% in all).
-
-> [!NOTE]
-> The visual skin (stage 6 in visual mode) was made faster after these runs, its files the same to
-> the byte. Timed again the same way at the default 0.005 mm, three runs each, stage 6 takes:
->
-> | Board | Before | Now | Less |
-> |---|---|---|---|
-> | RF sensor module | 6.32 s | 6.00 s | 5% |
-> | HDI radio module | 5.08 s | 3.08 s | 39% |
-> | PCIe x1 card | 5.00 s | 3.64 s | 27% |
->
-> A whole visual run then takes 15.4, 7.9 and 9.8 s (15.7, 10.1 and 11.2 s before).
-
 Where the time of a run goes, stage by stage, for the three example boards of `Generator/Input/`
 ([Examples](Examples.md)). Each board was exported three times in each mode, with the Verifier
 on, and each bar is the median of the three runs for that stage, read from the `timing` block of
@@ -28,7 +10,10 @@ python run_KESE.py Input/rf_module.kicad_pcb --mode simulation --format glb step
 python run_KESE.py Input/rf_module.kicad_pcb --mode visual --format glb --verify
 ```
 
-All 18 runs passed the Verifier.
+All 18 runs passed the Verifier. Beside each board's facts, a second table gives the size of each
+model file the runs write and the most memory a run used at once: the proportional set size (PSS)
+of KESE's process and its workers, summed and sampled every 10 ms, the median of three more runs.
+MB is a million bytes.
 
 **The runs used the default parameters on one Linux machine with 4 cores (an Intel Xeon at 2.1 GHz)
 and 16 GB of RAM, so `Parallel.WORKERS = 0` gave four workers
@@ -37,14 +22,14 @@ seconds differ.**
 
 | Bar | Stages | What runs in it |
 |---|---|---|
-| 1–2 read | 1 read, 2 collect | The file parsed; every track, pad, zone, graphic and text as a flat shape; the stroke font unpacked and split into lines (about 0.05 s), and the glyphs the text uses parsed |
+| 1–2 read | 1 read, 2 collect | The file parsed; every track, pad, zone, graphic and text as a flat shape; the stroke font unpacked and split into lines (about 0.06 s), and the glyphs the text uses parsed |
 | 3 resolve | 3 | The copper joined per layer and net, clipped and drilled; barrels, edge plating, mask openings and silkscreen |
 | 4 geometry | 4 | Every part as prisms, between the heights of the stack-up |
 | 5 materials | 5 | A material for every part, from `parameters/color.py` and the stack-up's colours: 0.2 to 0.3 ms |
 | 6 assemble | 6 | Closed solids in simulation mode, the visible skin in visual mode; with `--verify`, each solid is also checked here by the worker that built it |
-| 7 write | 7 | The files. In simulation mode nearly all of it is the STEP file: the HDI module takes 1.6 s with STEP alone and 0.1 s with GLB alone. The visual GLB takes 29 to 45 ms |
+| 7 write | 7 | The files. In simulation mode nearly all of it is the STEP file: the HDI module takes 1.7 s with STEP alone and 0.1 s with GLB alone. The visual GLB takes 30 to 51 ms |
 | 8 verify | 8 | The Verifier's checks of the written files ([Checks, Errors And Warnings](Checks-Errors-And-Warnings.md)) |
-| start-up and exit | none | The wall-clock time less the stages, about 0.2 s: Python starting (12 ms), KESE and the libraries it uses imported (0.13 s), the run set up and closed around the stages (16 ms), stage 9 writing `report.txt` and `parameters.txt` (1 to 2 ms), and Python freeing the run's memory as it ends (0.06 s) |
+| start-up and exit | none | The wall-clock time less the stages, about 0.2 s: Python starting (13 ms), KESE and the libraries it uses imported (0.12 s), the run set up and closed around the stages (13 ms), stage 9 writing `report.txt` and `parameters.txt` (1 to 4 ms), and Python freeing the run's memory as it ends (0.05 s) |
 
 Under each chart a table gives the same numbers, in seconds unless marked ms. A stage too thin to
 see at this scale is marked with a line and a label.
@@ -56,25 +41,41 @@ see at this scale is marked with a line and a label.
 <img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/example_images/rf_module/bottom_straight_visual.webp" width="49.5%" alt="The RF sensor module straight from below: the KESE logo, the outline of the CR1220 coin cell BT1, the pads of the I2C and UART lines, and the plated edge and cut-out">
 </p>
 
-![RF sensor module: stacked bars of seconds per stage. Simulation with GLB and STEP takes 16.3 s: read 0.2, resolve 1.6, geometry 6.2, materials 0.3 ms, assemble 5.2, write 2.4, verify 0.4, start-up and exit 0.2. Visual with GLB takes 14.7 s: read 0.3, resolve 1.4, geometry 6.3, materials 0.3 ms, assemble 6.2, write 45 ms, verify 0.4, start-up and exit 0.2](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/time_1_rf_module.webp)
+![RF sensor module: stacked bars of seconds per stage. Simulation with GLB and STEP takes 16.8 s: read 0.3, resolve 1.6, geometry 6.7, materials 0.3 ms, assemble 5.0, write 2.6, verify 0.4, start-up and exit 0.2. Visual with GLB takes 16.2 s: read 0.3, resolve 1.6, geometry 6.8, materials 0.3 ms, assemble 6.9, write 51 ms, verify 0.4, start-up and exit 0.3](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/time_1_rf_module.webp)
 
 | Mode | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-| Simulation, GLB + STEP | 0.2 | 1.6 | 6.2 | 0.3 ms | 5.2 | 2.4 | 0.4 | 0.2 | 16.3 |
-| Visual, GLB | 0.3 | 1.4 | 6.3 | 0.3 ms | 6.2 | 45 ms | 0.4 | 0.2 | 14.7 |
+| Simulation, GLB + STEP | 0.3 | 1.6 | 6.7 | 0.3 ms | 5.0 | 2.6 | 0.4 | 0.2 | 16.8 |
+| Visual, GLB | 0.3 | 1.6 | 6.8 | 0.3 ms | 6.9 | 51 ms | 0.4 | 0.3 | 16.2 |
 
-<div align="center">
+<table>
+<tr>
+<td valign="top">
 
-| Board | `Input/rf_module.kicad_pcb` ([5.1](Examples.md#51-rf-sensor-module)) |
+| Board | `Input/rf_module.kicad_pcb`<br>([5.1](Examples.md#51-rf-sensor-module)) |
 |---|---|
 | Outline | 64 × 44 mm, a cut-out |
 | Thickness | 1.6 mm |
 | Copper layers | 4 |
 | Vias | 307 through |
-| Board edge | Plated all round and in the cut-out |
-| Mask, silkscreen, finish | Blue, white, ENIG |
+| Board edge | Plated all round<br>and in the cut-out |
+| Mask, silkscreen,<br>finish | Blue, white, ENIG |
 
-</div>
+</td>
+<td valign="top">
+
+<table>
+<tr><th>File type</th><th>File size</th><th>Peak memory used</th></tr>
+<tr><th colspan="3" align="left">Simulation</th></tr>
+<tr><td>GLB</td><td align="right">37.3 MB</td><td rowspan="2" align="right">640 MB</td></tr>
+<tr><td>STEP</td><td align="right">114.7 MB</td></tr>
+<tr><th colspan="3" align="left">Visual</th></tr>
+<tr><td>GLB</td><td align="right">10.3 MB</td><td align="right">396 MB</td></tr>
+</table>
+
+</td>
+</tr>
+</table>
 
 ## 6.2 HDI Radio Module
 
@@ -83,25 +84,41 @@ see at this scale is marked with a line and a label.
 <img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/example_images/hdi_module/bottom_straight_visual.webp" width="36%" alt="The HDI radio module straight from below: the exposed GND pad, the logo, the pin numbers 1 to 43 beside the castellated pads, and the test pads TX, RX, BOOT, 3V3, EN and GND">
 </p>
 
-![HDI radio module: stacked bars of seconds per stage. Simulation with GLB and STEP takes 8.5 s: read 0.2, resolve 0.9, geometry 3.0, materials 0.2 ms, assemble 2.2, write 1.7, verify 0.4, start-up and exit 0.2. Visual with GLB takes 9.2 s: read 0.2, resolve 1.0, geometry 2.7, materials 0.2 ms, assemble 4.8, write 29 ms, verify 0.2, start-up and exit 0.2](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/time_2_hdi_module.webp)
+![HDI radio module: stacked bars of seconds per stage. Simulation with GLB and STEP takes 9.2 s: read 0.3, resolve 1.0, geometry 3.1, materials 0.3 ms, assemble 2.3, write 1.8, verify 0.4, start-up and exit 0.2. Visual with GLB takes 8.3 s: read 0.2, resolve 1.1, geometry 3.1, materials 0.3 ms, assemble 3.4, write 30 ms, verify 0.2, start-up and exit 0.2](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/time_2_hdi_module.webp)
 
 | Mode | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-| Simulation, GLB + STEP | 0.2 | 0.9 | 3.0 | 0.2 ms | 2.2 | 1.7 | 0.4 | 0.2 | 8.5 |
-| Visual, GLB | 0.2 | 1.0 | 2.7 | 0.2 ms | 4.8 | 29 ms | 0.2 | 0.2 | 9.2 |
+| Simulation, GLB + STEP | 0.3 | 1.0 | 3.1 | 0.3 ms | 2.3 | 1.8 | 0.4 | 0.2 | 9.2 |
+| Visual, GLB | 0.2 | 1.1 | 3.1 | 0.3 ms | 3.4 | 30 ms | 0.2 | 0.2 | 8.3 |
 
-<div align="center">
+<table>
+<tr>
+<td valign="top">
 
-| Board | `Input/hdi_module.kicad_pcb` ([5.2](Examples.md#52-hdi-radio-module)) |
+| Board | `Input/hdi_module.kicad_pcb`<br>([5.2](Examples.md#52-hdi-radio-module)) |
 |---|---|
 | Outline | 22 × 30 mm |
 | Thickness | 0.925 mm |
 | Copper layers | 6, built 1+4+1 |
-| Vias | 150: 71 micro, 34 blind and buried, 45 through |
+| Vias | 150: 71 micro,<br>34 blind and buried, 45 through |
 | Board edge | 43 castellated pads |
-| Mask, silkscreen, finish | Black, white, immersion silver |
+| Mask, silkscreen,<br>finish | Black, white, immersion silver |
 
-</div>
+</td>
+<td valign="top">
+
+<table>
+<tr><th>File type</th><th>File size</th><th>Peak memory used</th></tr>
+<tr><th colspan="3" align="left">Simulation</th></tr>
+<tr><td>GLB</td><td align="right">20.4 MB</td><td rowspan="2" align="right">378 MB</td></tr>
+<tr><td>STEP</td><td align="right">72.7 MB</td></tr>
+<tr><th colspan="3" align="left">Visual</th></tr>
+<tr><td>GLB</td><td align="right">5.6 MB</td><td align="right">249 MB</td></tr>
+</table>
+
+</td>
+</tr>
+</table>
 
 ## 6.3 PCIe x1 Card
 
@@ -110,25 +127,41 @@ see at this scale is marked with a line and a label.
 <img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/example_images/pcie_card/bottom_straight_visual.webp" width="49.5%" alt="The PCIe x1 card straight from below: the A side of the fingers, the tracks reading through the mask and the name in silkscreen">
 </p>
 
-![PCIe x1 card: stacked bars of seconds per stage. Simulation with GLB and STEP takes 10.8 s: read 0.3, resolve 1.1, geometry 3.9, materials 0.2 ms, assemble 2.7, write 2.1, verify 0.3, start-up and exit 0.3. Visual with GLB takes 11.3 s: read 0.3, resolve 1.1, geometry 4.1, materials 0.2 ms, assemble 5.1, write 41 ms, verify 0.4, start-up and exit 0.2](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/time_3_pcie_card.webp)
+![PCIe x1 card: stacked bars of seconds per stage. Simulation with GLB and STEP takes 11.5 s: read 0.3, resolve 1.2, geometry 4.4, materials 0.2 ms, assemble 2.7, write 2.3, verify 0.4, start-up and exit 0.2. Visual with GLB takes 11.0 s: read 0.3, resolve 1.2, geometry 4.5, materials 0.2 ms, assemble 4.4, write 43 ms, verify 0.3, start-up and exit 0.2](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/time_3_pcie_card.webp)
 
 | Mode | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-| Simulation, GLB + STEP | 0.3 | 1.1 | 3.9 | 0.2 ms | 2.7 | 2.1 | 0.3 | 0.3 | 10.8 |
-| Visual, GLB | 0.3 | 1.1 | 4.1 | 0.2 ms | 5.1 | 41 ms | 0.4 | 0.2 | 11.3 |
+| Simulation, GLB + STEP | 0.3 | 1.2 | 4.4 | 0.2 ms | 2.7 | 2.3 | 0.4 | 0.2 | 11.5 |
+| Visual, GLB | 0.3 | 1.2 | 4.5 | 0.2 ms | 4.4 | 43 ms | 0.3 | 0.2 | 11.0 |
 
-<div align="center">
+<table>
+<tr>
+<td valign="top">
 
-| Board | `Input/pcie_card.kicad_pcb` ([5.3](Examples.md#53-pcie-x1-card)) |
+| Board | `Input/pcie_card.kicad_pcb`<br>([5.3](Examples.md#53-pcie-x1-card)) |
 |---|---|
-| Outline | 80 × 64.4 mm with the fingers' tongue, a slot |
+| Outline | 80 × 64.4 mm with the fingers' tongue,<br>a slot |
 | Thickness | 1.57 mm |
 | Copper layers | 4 |
 | Vias | 239 through |
 | Board edge | 36 gold fingers |
-| Mask, silkscreen, finish | Green, white, hard gold |
+| Mask, silkscreen,<br>finish | Green, white, hard gold |
 
-</div>
+</td>
+<td valign="top">
+
+<table>
+<tr><th>File type</th><th>File size</th><th>Peak memory used</th></tr>
+<tr><th colspan="3" align="left">Simulation</th></tr>
+<tr><td>GLB</td><td align="right">29.0 MB</td><td rowspan="2" align="right">501 MB</td></tr>
+<tr><td>STEP</td><td align="right">80.1 MB</td></tr>
+<tr><th colspan="3" align="left">Visual</th></tr>
+<tr><td>GLB</td><td align="right">8.8 MB</td><td align="right">317 MB</td></tr>
+</table>
+
+</td>
+</tr>
+</table>
 
 ## 6.4 Timing Your Own Board
 
@@ -137,14 +170,14 @@ read the same way. The HDI module's third simulation run:
 
 ```text
 timing
-  read              0.0343 s
-  collect           0.1381 s
-  resolve           0.8515 s
-  geometry          2.7272 s
+  read              0.0548 s
+  collect           0.2258 s
+  resolve           1.2156 s
+  geometry          2.9874 s
   materials         0.0003 s
-  assemble          2.1252 s
-  write             1.7215 s
-  verify            0.3686 s
+  assemble          2.2985 s
+  write             1.7396 s
+  verify            0.3867 s
 ```
 
 `verify` is there only when the Verifier ran. Each value is in seconds, to 0.1 ms.
