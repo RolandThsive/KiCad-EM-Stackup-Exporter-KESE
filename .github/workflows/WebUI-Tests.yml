@@ -123,5 +123,6 @@ jobs:
         with:
           name: lighthouse
           path: WebUI/tests/.lighthouseci
+          include-hidden-files: true       # the folder's name starts with a dot
           retention-days: 14
           if-no-files-found: ignore

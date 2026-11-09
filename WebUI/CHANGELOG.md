@@ -2,6 +2,18 @@
 
 The newest first. Each entry is one pull request into `WebUI`; the footer's build stamp names the commit that is live.
 
+## Actions updated, 3D view set up on first use (November 2026)
+
+- The deploy's GitHub Actions are updated (Dependabot): checkout, setup-python and the three Pages actions now run on
+  Node.js 24, as GitHub retires Node.js 20.
+- The 3D view is set up when the first model is shown, not when the page loads. Its WebGL setup (renderer, studio
+  light, shaders) held the page while it started, before there was anything to show: Lighthouse's Total Blocking Time
+  on GitHub's machines went from 319 ms to 470 ms in two days with the same page, over its budget. A local Lighthouse
+  run now measures 0 ms. At load, the page still checks for WebGL 2, so a browser without it says so at once; a view
+  or cut picked before the first model is kept.
+- The Lighthouse reports are kept as the run's artifact again (their folder starts with a dot, which the upload left
+  out).
+
 ## Main merged again (November 2026)
 
 - Main up to PR #40 is merged: the stroke font read glyph by glyph, text variables expanded in values, a pad's drill
