@@ -11,7 +11,7 @@ from pathlib import Path
 from PIL import Image, ImageDraw
 
 GENERATOR = Path(__file__).resolve().parents[1]
-OUT = GENERATOR.parent / "docs" / "ColorSwatches"
+OUT = GENERATOR.parent / "docs" / "images" / "Colorizing" / "ColorSwatches"
 sys.path.insert(0, str(GENERATOR))
 from parameters import color as C  # noqa: E402
 

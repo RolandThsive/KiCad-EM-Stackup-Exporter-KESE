@@ -36,13 +36,14 @@ KiCad-EM-Stackup-Exporter-KESE/
 │   ├── Output/                  one folder per board and run (ignored by git, except .gitkeep and
 │   │                            four example runs of rf_module in Output/rf_module/)
 │   ├── tests/                   regression suite, layout rules, test boards, baseline.json
-│   └── tools/                   make_swatches.py: the colour boxes of docs/ColorSwatches/;
+│   └── tools/                   make_swatches.py: the colour boxes of docs/images/Colorizing/ColorSwatches/;
 │                                font_lines.py: a stroke font rewritten as JSON Lines
 ├── featureTest/                 the feature test boards, one feature each
-├── docs/wiki/, docs/images/     this wiki, and its pictures
-├── docs/example_images/         pictures and animations of the three example boards
-├── docs/feature_test_images/    the top and bottom of every feature test board
-├── docs/ColorSwatches/          the colour squares in the wiki's colour tables
+├── docs/wiki/                   this wiki
+├── docs/images/                 its pictures, one folder for each page, named as the page: Examples/ (the
+│                                example boards), Feature-Test-Collection/ (the feature test boards),
+│                                Colorizing/ColorSwatches/ (the colour squares in the colour tables), ...;
+│                                README/ holds the main README's
 ├── docs/logo/                   the KESE logo as SVG and WebP, and favicon.ico
 ├── .github/                     the workflow that copies docs/wiki/ to the wiki, and Dependabot's settings
 ├── licenses/                    KiCad copyright headers and AUTHORS.txt

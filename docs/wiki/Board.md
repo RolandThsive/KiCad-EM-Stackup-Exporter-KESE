@@ -68,7 +68,7 @@ dielectric part:
   prepreg;
 - otherwise the dielectric **above** it.
 
-![Board 11_zones cut at true scale across the track that splits its inner zones, each dielectric part in its own colour: the resin beside In1.Cu belongs to the prepreg above it, the resin beside In2.Cu to the prepreg below it; and the bands of In1.Cu and In2.Cu from above, copper and resin](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/board_2_resin_fill.webp)
+![Board 11_zones cut at true scale across the track that splits its inner zones, each dielectric part in its own colour: the resin beside In1.Cu belongs to the prepreg above it, the resin beside In2.Cu to the prepreg below it; and the bands of In1.Cu and In2.Cu from above, copper and resin](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Board/board_2_resin_fill.webp)
 
 So both common 4-layer builds, prepreg-core-prepreg (as in the picture) and core-prepreg-core,
 get their inner pockets filled from a prepreg, as in the factory. Inside KESE these prisms are tagged `resin_fill_beside: <layer>`; `materials.json` takes
@@ -112,7 +112,7 @@ O = \bigcup_{r : n_r \text{ even}} \Big( r \ \setminus \bigcup_{h \subset r,\ n_
 | $`h`$ | a cut-out: a ring inside $`r`$, one level deeper |
 | $`n_r`$ | how many other rings contain $`r`$ |
 
-![Board 12_outline_shapes: its Edge.Cuts shapes, open ones in blue and closed ones in red, over the outline KESE resolves from them, with a numbered key; the laminate solid KESE writes for it; and board synthetic with a circular cut-out, a non-plated hole, two plated holes and a via](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/board_1_outline.webp)
+![Board 12_outline_shapes: its Edge.Cuts shapes, open ones in blue and closed ones in red, over the outline KESE resolves from them, with a numbered key; the laminate solid KESE writes for it; and board synthetic with a circular cut-out, a non-plated hole, two plated holes and a via](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Board/board_1_outline.webp)
 
 When `Edge.Cuts` gives no closed ring at all (nothing drawn, or only lines that do not close),
 the fallback outline is
@@ -148,7 +148,7 @@ copper barrel fills the ring between the drill and the drill minus the wall. See
 
 ### 11.4.1 Counterbores And Countersinks
 
-![Board 25_post_machining cut through its holes at true scale: a plated pad counterbored from F.Cu and countersunk from B.Cu, with the copper each cut knocks out, and six more cuts in unplated holes: two counterbores, countersinks of 82 and 120 degrees, one with a depth and one from B.Cu](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/board_3_post_machining.webp)
+![Board 25_post_machining cut through its holes at true scale: a plated pad counterbored from F.Cu and countersunk from B.Cu, with the copper each cut knocks out, and six more cuts in unplated holes: two counterbores, countersinks of 82 and 120 degrees, one with a depth and one from B.Cu](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Board/board_3_post_machining.webp)
 
 KiCad 10 can machine the end of a pad's or via's hole from either face:
 `(front_post_machining counterbore (size 2.2) (depth 0.5))` cuts a flat-bottomed step,
