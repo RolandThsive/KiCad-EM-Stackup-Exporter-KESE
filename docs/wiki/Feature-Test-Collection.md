@@ -58,19 +58,24 @@ with GLB or STL is the quickest of the six runs on every board but 09 and 27, wh
 | Visual, GLB | 83&nbsp;ms | 56&nbsp;ms | 0.2 | 0.1&nbsp;ms | 0.5 | 7&nbsp;ms | 40&nbsp;ms | 0.2 | 1.1 |
 | Visual, OBJ | 68&nbsp;ms | 53&nbsp;ms | 0.2 | 0.2&nbsp;ms | 0.5 | 0.1 | 40&nbsp;ms | 0.2 | 1.2 |
 
-<table align="left">
-<thead><tr><th>Board</th><th><code>featureTest/</code><br><code>01_holes_slotted.kicad_pcb</code></th></tr></thead>
-<tbody>
-<tr><td>Outline</td><td>40 × 26 mm</td></tr>
-<tr><td>Thickness</td><td>1.6 mm</td></tr>
-<tr><td>Copper layers</td><td>2</td></tr>
-<tr><td>Vias</td><td>none</td></tr>
-<tr><td>Board edge</td><td>Plain</td></tr>
-<tr><td>Mask, silkscreen,<br>finish</td><td>Not set (drawn green and white),<br>ENIG</td></tr>
-</tbody>
-</table>
-<table align="right">
-<tr><th>File type</th><th>File size</th><th>Peak memory<br>used</th></tr>
+<table align="center">
+<tr>
+<td valign="top">
+
+| Board | `featureTest/`<br>`01_holes_slotted.kicad_pcb` |
+|---|---|
+| Outline | 40 × 26 mm |
+| Thickness | 1.6 mm |
+| Copper&nbsp;layers | 2 |
+| Vias | none |
+| Board&nbsp;edge | Plain |
+| Mask,&nbsp;silkscreen,&nbsp;finish | Not set (drawn green and white),<br>ENIG |
+
+</td>
+<td valign="top">
+
+<table>
+<tr><th>File<br>type</th><th>File<br>size</th><th>Peak memory<br>used</th></tr>
 <tr><th colspan="3" align="left">Simulation</th></tr>
 <tr><td>GLB</td><td align="right">1.1 MB</td><td align="right">69 MB</td></tr>
 <tr><td>STEP</td><td align="right">5.8 MB</td><td align="right">72 MB</td></tr>
@@ -80,7 +85,10 @@ with GLB or STL is the quickest of the six runs on every board but 09 and 27, wh
 <tr><td>GLB</td><td align="right">661 kB</td><td align="right">95 MB</td></tr>
 <tr><td>OBJ</td><td align="right">1.8 MB</td><td align="right">97 MB</td></tr>
 </table>
-<br clear="all">
+
+</td>
+</tr>
+</table>
 
 ### 23.2.2 02 Round Holes
 
@@ -100,19 +108,24 @@ with GLB or STL is the quickest of the six runs on every board but 09 and 27, wh
 | Visual, GLB | 71&nbsp;ms | 46&nbsp;ms | 0.2 | 0.1&nbsp;ms | 0.4 | 6&nbsp;ms | 42&nbsp;ms | 0.2 | 1.0 |
 | Visual, OBJ | 66&nbsp;ms | 39&nbsp;ms | 0.2 | 0.1&nbsp;ms | 0.4 | 0.1 | 43&nbsp;ms | 0.2 | 1.1 |
 
-<table align="left">
-<thead><tr><th>Board</th><th><code>featureTest/</code><br><code>02_holes_round.kicad_pcb</code></th></tr></thead>
-<tbody>
-<tr><td>Outline</td><td>34 × 20 mm</td></tr>
-<tr><td>Thickness</td><td>1.6 mm</td></tr>
-<tr><td>Copper layers</td><td>2</td></tr>
-<tr><td>Vias</td><td>none</td></tr>
-<tr><td>Board edge</td><td>Plain</td></tr>
-<tr><td>Mask, silkscreen,<br>finish</td><td>Not set (drawn green and white),<br>ENIG</td></tr>
-</tbody>
-</table>
-<table align="right">
-<tr><th>File type</th><th>File size</th><th>Peak memory<br>used</th></tr>
+<table align="center">
+<tr>
+<td valign="top">
+
+| Board | `featureTest/`<br>`02_holes_round.kicad_pcb` |
+|---|---|
+| Outline | 34 × 20 mm |
+| Thickness | 1.6 mm |
+| Copper&nbsp;layers | 2 |
+| Vias | none |
+| Board&nbsp;edge | Plain |
+| Mask,&nbsp;silkscreen,&nbsp;finish | Not set (drawn green and white),<br>ENIG |
+
+</td>
+<td valign="top">
+
+<table>
+<tr><th>File<br>type</th><th>File<br>size</th><th>Peak memory<br>used</th></tr>
 <tr><th colspan="3" align="left">Simulation</th></tr>
 <tr><td>GLB</td><td align="right">1.3 MB</td><td align="right">68 MB</td></tr>
 <tr><td>STEP</td><td align="right">4.1 MB</td><td align="right">72 MB</td></tr>
@@ -122,7 +135,10 @@ with GLB or STL is the quickest of the six runs on every board but 09 and 27, wh
 <tr><td>GLB</td><td align="right">741 kB</td><td align="right">99 MB</td></tr>
 <tr><td>OBJ</td><td align="right">2.0 MB</td><td align="right">99 MB</td></tr>
 </table>
-<br clear="all">
+
+</td>
+</tr>
+</table>
 
 ### 23.2.3 03 Through Vias
 
@@ -142,19 +158,24 @@ with GLB or STL is the quickest of the six runs on every board but 09 and 27, wh
 | Visual, GLB | 67&nbsp;ms | 55&nbsp;ms | 0.2 | 0.1&nbsp;ms | 0.6 | 6&nbsp;ms | 67&nbsp;ms | 0.2 | 1.2 |
 | Visual, OBJ | 82&nbsp;ms | 60&nbsp;ms | 0.2 | 0.1&nbsp;ms | 0.6 | 0.1 | 60&nbsp;ms | 0.2 | 1.3 |
 
-<table align="left">
-<thead><tr><th>Board</th><th><code>featureTest/</code><br><code>03_vias_through.kicad_pcb</code></th></tr></thead>
-<tbody>
-<tr><td>Outline</td><td>32 × 20 mm</td></tr>
-<tr><td>Thickness</td><td>1.6 mm</td></tr>
-<tr><td>Copper layers</td><td>2</td></tr>
-<tr><td>Vias</td><td>12 through</td></tr>
-<tr><td>Board edge</td><td>Plain</td></tr>
-<tr><td>Mask, silkscreen,<br>finish</td><td>Not set (drawn green and white),<br>ENIG</td></tr>
-</tbody>
-</table>
-<table align="right">
-<tr><th>File type</th><th>File size</th><th>Peak memory<br>used</th></tr>
+<table align="center">
+<tr>
+<td valign="top">
+
+| Board | `featureTest/`<br>`03_vias_through.kicad_pcb` |
+|---|---|
+| Outline | 32 × 20 mm |
+| Thickness | 1.6 mm |
+| Copper&nbsp;layers | 2 |
+| Vias | 12 through |
+| Board&nbsp;edge | Plain |
+| Mask,&nbsp;silkscreen,&nbsp;finish | Not set (drawn green and white),<br>ENIG |
+
+</td>
+<td valign="top">
+
+<table>
+<tr><th>File<br>type</th><th>File<br>size</th><th>Peak memory<br>used</th></tr>
 <tr><th colspan="3" align="left">Simulation</th></tr>
 <tr><td>GLB</td><td align="right">1.7 MB</td><td align="right">72 MB</td></tr>
 <tr><td>STEP</td><td align="right">5.7 MB</td><td align="right">77 MB</td></tr>
@@ -164,7 +185,10 @@ with GLB or STL is the quickest of the six runs on every board but 09 and 27, wh
 <tr><td>GLB</td><td align="right">834 kB</td><td align="right">111 MB</td></tr>
 <tr><td>OBJ</td><td align="right">2.3 MB</td><td align="right">117 MB</td></tr>
 </table>
-<br clear="all">
+
+</td>
+</tr>
+</table>
 
 ### 23.2.4 03b KiCad 10 Via Options
 
@@ -184,19 +208,24 @@ with GLB or STL is the quickest of the six runs on every board but 09 and 27, wh
 | Visual, GLB | 92&nbsp;ms | 0.2 | 0.3 | 0.1&nbsp;ms | 2.4 | 14&nbsp;ms | 90&nbsp;ms | 0.2 | 3.2 |
 | Visual, OBJ | 74&nbsp;ms | 0.2 | 0.3 | 0.1&nbsp;ms | 2.4 | 0.3 | 78&nbsp;ms | 0.2 | 3.5 |
 
-<table align="left">
-<thead><tr><th>Board</th><th><code>featureTest/</code><br><code>03b_vias_k10.kicad_pcb</code></th></tr></thead>
-<tbody>
-<tr><td>Outline</td><td>40 × 30 mm</td></tr>
-<tr><td>Thickness</td><td>1.6 mm</td></tr>
-<tr><td>Copper layers</td><td>4</td></tr>
-<tr><td>Vias</td><td>18: 1 micro, 2 blind and buried,<br>15 through</td></tr>
-<tr><td>Board edge</td><td>Plain</td></tr>
-<tr><td>Mask, silkscreen,<br>finish</td><td>Not set (drawn green and white),<br>ENIG</td></tr>
-</tbody>
-</table>
-<table align="right">
-<tr><th>File type</th><th>File size</th><th>Peak memory<br>used</th></tr>
+<table align="center">
+<tr>
+<td valign="top">
+
+| Board | `featureTest/`<br>`03b_vias_k10.kicad_pcb` |
+|---|---|
+| Outline | 40 × 30 mm |
+| Thickness | 1.6 mm |
+| Copper&nbsp;layers | 4 |
+| Vias | 18: 1 micro, 2 blind and buried,<br>15 through |
+| Board&nbsp;edge | Plain |
+| Mask,&nbsp;silkscreen,&nbsp;finish | Not set (drawn green and white),<br>ENIG |
+
+</td>
+<td valign="top">
+
+<table>
+<tr><th>File<br>type</th><th>File<br>size</th><th>Peak memory<br>used</th></tr>
 <tr><th colspan="3" align="left">Simulation</th></tr>
 <tr><td>GLB</td><td align="right">2.6 MB</td><td align="right">171 MB</td></tr>
 <tr><td>STEP</td><td align="right">7.1 MB</td><td align="right">177 MB</td></tr>
@@ -206,7 +235,10 @@ with GLB or STL is the quickest of the six runs on every board but 09 and 27, wh
 <tr><td>GLB</td><td align="right">1.6 MB</td><td align="right">153 MB</td></tr>
 <tr><td>OBJ</td><td align="right">4.6 MB</td><td align="right">153 MB</td></tr>
 </table>
-<br clear="all">
+
+</td>
+</tr>
+</table>
 
 ### 23.2.5 04 Blind And Buried Vias
 
@@ -226,19 +258,24 @@ with GLB or STL is the quickest of the six runs on every board but 09 and 27, wh
 | Visual, GLB | 70&nbsp;ms | 54&nbsp;ms | 59&nbsp;ms | 0.1&nbsp;ms | 0.4 | 5&nbsp;ms | 37&nbsp;ms | 0.2 | 0.8 |
 | Visual, OBJ | 69&nbsp;ms | 53&nbsp;ms | 63&nbsp;ms | 0.1&nbsp;ms | 0.4 | 47&nbsp;ms | 32&nbsp;ms | 0.2 | 0.8 |
 
-<table align="left">
-<thead><tr><th>Board</th><th><code>featureTest/</code><br><code>04_vias_blind_buried.kicad_pcb</code></th></tr></thead>
-<tbody>
-<tr><td>Outline</td><td>32 × 20 mm</td></tr>
-<tr><td>Thickness</td><td>1.6 mm</td></tr>
-<tr><td>Copper layers</td><td>6</td></tr>
-<tr><td>Vias</td><td>6: 3 blind and buried, 3 through</td></tr>
-<tr><td>Board edge</td><td>Plain</td></tr>
-<tr><td>Mask, silkscreen,<br>finish</td><td>Not set (drawn green and white),<br>ENIG</td></tr>
-</tbody>
-</table>
-<table align="right">
-<tr><th>File type</th><th>File size</th><th>Peak memory<br>used</th></tr>
+<table align="center">
+<tr>
+<td valign="top">
+
+| Board | `featureTest/`<br>`04_vias_blind_buried.kicad_pcb` |
+|---|---|
+| Outline | 32 × 20 mm |
+| Thickness | 1.6 mm |
+| Copper&nbsp;layers | 6 |
+| Vias | 6: 3 blind and buried, 3 through |
+| Board&nbsp;edge | Plain |
+| Mask,&nbsp;silkscreen,&nbsp;finish | Not set (drawn green and white),<br>ENIG |
+
+</td>
+<td valign="top">
+
+<table>
+<tr><th>File<br>type</th><th>File<br>size</th><th>Peak memory<br>used</th></tr>
 <tr><th colspan="3" align="left">Simulation</th></tr>
 <tr><td>GLB</td><td align="right">679 kB</td><td align="right">69 MB</td></tr>
 <tr><td>STEP</td><td align="right">1.5 MB</td><td align="right">67 MB</td></tr>
@@ -248,7 +285,10 @@ with GLB or STL is the quickest of the six runs on every board but 09 and 27, wh
 <tr><td>GLB</td><td align="right">327 kB</td><td align="right">91 MB</td></tr>
 <tr><td>OBJ</td><td align="right">815 kB</td><td align="right">92 MB</td></tr>
 </table>
-<br clear="all">
+
+</td>
+</tr>
+</table>
 
 ### 23.2.6 05 Microvias
 
@@ -268,19 +308,24 @@ with GLB or STL is the quickest of the six runs on every board but 09 and 27, wh
 | Visual, GLB | 4&nbsp;ms | 60&nbsp;ms | 52&nbsp;ms | 0.1&nbsp;ms | 0.3 | 3&nbsp;ms | 49&nbsp;ms | 0.2 | 0.7 |
 | Visual, OBJ | 3&nbsp;ms | 59&nbsp;ms | 55&nbsp;ms | 0.1&nbsp;ms | 0.3 | 30&nbsp;ms | 49&nbsp;ms | 0.2 | 0.7 |
 
-<table align="left">
-<thead><tr><th>Board</th><th><code>featureTest/</code><br><code>05_vias_micro.kicad_pcb</code></th></tr></thead>
-<tbody>
-<tr><td>Outline</td><td>30 × 16 mm</td></tr>
-<tr><td>Thickness</td><td>1.6 mm</td></tr>
-<tr><td>Copper layers</td><td>8</td></tr>
-<tr><td>Vias</td><td>12: 10 micro, 2 blind and buried</td></tr>
-<tr><td>Board edge</td><td>Plain</td></tr>
-<tr><td>Mask, silkscreen,<br>finish</td><td>Mask colour not set (drawn green),<br>no silkscreen, ENIG</td></tr>
-</tbody>
-</table>
-<table align="right">
-<tr><th>File type</th><th>File size</th><th>Peak memory<br>used</th></tr>
+<table align="center">
+<tr>
+<td valign="top">
+
+| Board | `featureTest/`<br>`05_vias_micro.kicad_pcb` |
+|---|---|
+| Outline | 30 × 16 mm |
+| Thickness | 1.6 mm |
+| Copper&nbsp;layers | 8 |
+| Vias | 12: 10 micro, 2 blind and buried |
+| Board&nbsp;edge | Plain |
+| Mask,&nbsp;silkscreen,&nbsp;finish | Mask colour not set (drawn green),<br>no silkscreen, ENIG |
+
+</td>
+<td valign="top">
+
+<table>
+<tr><th>File<br>type</th><th>File<br>size</th><th>Peak memory<br>used</th></tr>
 <tr><th colspan="3" align="left">Simulation</th></tr>
 <tr><td>GLB</td><td align="right">584 kB</td><td align="right">45 MB</td></tr>
 <tr><td>STEP</td><td align="right">1.1 MB</td><td align="right">47 MB</td></tr>
@@ -290,7 +335,10 @@ with GLB or STL is the quickest of the six runs on every board but 09 and 27, wh
 <tr><td>GLB</td><td align="right">206 kB</td><td align="right">80 MB</td></tr>
 <tr><td>OBJ</td><td align="right">497 kB</td><td align="right">82 MB</td></tr>
 </table>
-<br clear="all">
+
+</td>
+</tr>
+</table>
 
 ### 23.2.7 24 Backdrills
 
@@ -310,19 +358,24 @@ with GLB or STL is the quickest of the six runs on every board but 09 and 27, wh
 | Visual, GLB | 70&nbsp;ms | 0.2 | 0.3 | 0.2&nbsp;ms | 1.3 | 12&nbsp;ms | 75&nbsp;ms | 0.2 | 2.0 |
 | Visual, OBJ | 72&nbsp;ms | 0.2 | 0.3 | 0.1&nbsp;ms | 1.3 | 0.3 | 68&nbsp;ms | 0.2 | 2.3 |
 
-<table align="left">
-<thead><tr><th>Board</th><th><code>featureTest/</code><br><code>24_backdrills.kicad_pcb</code></th></tr></thead>
-<tbody>
-<tr><td>Outline</td><td>52 × 32 mm</td></tr>
-<tr><td>Thickness</td><td>1.6 mm</td></tr>
-<tr><td>Copper layers</td><td>6</td></tr>
-<tr><td>Vias</td><td>15: 1 blind and buried, 14 through</td></tr>
-<tr><td>Board edge</td><td>Plain</td></tr>
-<tr><td>Mask, silkscreen,<br>finish</td><td>Not set (drawn green and white),<br>ENIG</td></tr>
-</tbody>
-</table>
-<table align="right">
-<tr><th>File type</th><th>File size</th><th>Peak memory<br>used</th></tr>
+<table align="center">
+<tr>
+<td valign="top">
+
+| Board | `featureTest/`<br>`24_backdrills.kicad_pcb` |
+|---|---|
+| Outline | 52 × 32 mm |
+| Thickness | 1.6 mm |
+| Copper&nbsp;layers | 6 |
+| Vias | 15: 1 blind and buried, 14 through |
+| Board&nbsp;edge | Plain |
+| Mask,&nbsp;silkscreen,&nbsp;finish | Not set (drawn green and white),<br>ENIG |
+
+</td>
+<td valign="top">
+
+<table>
+<tr><th>File<br>type</th><th>File<br>size</th><th>Peak memory<br>used</th></tr>
 <tr><th colspan="3" align="left">Simulation</th></tr>
 <tr><td>GLB</td><td align="right">3.6 MB</td><td align="right">173 MB</td></tr>
 <tr><td>STEP</td><td align="right">10.0 MB</td><td align="right">180 MB</td></tr>
@@ -332,7 +385,10 @@ with GLB or STL is the quickest of the six runs on every board but 09 and 27, wh
 <tr><td>GLB</td><td align="right">1.8 MB</td><td align="right">151 MB</td></tr>
 <tr><td>OBJ</td><td align="right">5.0 MB</td><td align="right">151 MB</td></tr>
 </table>
-<br clear="all">
+
+</td>
+</tr>
+</table>
 
 ### 23.2.8 25 Counterbores And Countersinks
 
@@ -352,19 +408,24 @@ with GLB or STL is the quickest of the six runs on every board but 09 and 27, wh
 | Visual, GLB | 75&nbsp;ms | 0.1 | 0.9 | 0.1&nbsp;ms | 3.5 | 14&nbsp;ms | 88&nbsp;ms | 0.2 | 4.9 |
 | Visual, OBJ | 81&nbsp;ms | 0.1 | 0.9 | 0.1&nbsp;ms | 3.6 | 0.4 | 77&nbsp;ms | 0.2 | 5.4 |
 
-<table align="left">
-<thead><tr><th>Board</th><th><code>featureTest/</code><br><code>25_post_machining.kicad_pcb</code></th></tr></thead>
-<tbody>
-<tr><td>Outline</td><td>60 × 36 mm</td></tr>
-<tr><td>Thickness</td><td>1.6 mm</td></tr>
-<tr><td>Copper layers</td><td>4</td></tr>
-<tr><td>Vias</td><td>3 through</td></tr>
-<tr><td>Board edge</td><td>Plain</td></tr>
-<tr><td>Mask, silkscreen,<br>finish</td><td>Not set (drawn green and white),<br>ENIG</td></tr>
-</tbody>
-</table>
-<table align="right">
-<tr><th>File type</th><th>File size</th><th>Peak memory<br>used</th></tr>
+<table align="center">
+<tr>
+<td valign="top">
+
+| Board | `featureTest/`<br>`25_post_machining.kicad_pcb` |
+|---|---|
+| Outline | 60 × 36 mm |
+| Thickness | 1.6 mm |
+| Copper&nbsp;layers | 4 |
+| Vias | 3 through |
+| Board&nbsp;edge | Plain |
+| Mask,&nbsp;silkscreen,&nbsp;finish | Not set (drawn green and white),<br>ENIG |
+
+</td>
+<td valign="top">
+
+<table>
+<tr><th>File<br>type</th><th>File<br>size</th><th>Peak memory<br>used</th></tr>
 <tr><th colspan="3" align="left">Simulation</th></tr>
 <tr><td>GLB</td><td align="right">2.7 MB</td><td align="right">205 MB</td></tr>
 <tr><td>STEP</td><td align="right">3.6 MB</td><td align="right">204 MB</td></tr>
@@ -374,7 +435,10 @@ with GLB or STL is the quickest of the six runs on every board but 09 and 27, wh
 <tr><td>GLB</td><td align="right">2.2 MB</td><td align="right">173 MB</td></tr>
 <tr><td>OBJ</td><td align="right">6.3 MB</td><td align="right">173 MB</td></tr>
 </table>
-<br clear="all">
+
+</td>
+</tr>
+</table>
 
 ### 23.2.9 26 Via Protection
 
@@ -394,19 +458,24 @@ with GLB or STL is the quickest of the six runs on every board but 09 and 27, wh
 | Visual, GLB | 5&nbsp;ms | 0.1 | 0.2 | 0.2&nbsp;ms | 1.0 | 8&nbsp;ms | 0.1 | 0.2 | 1.6 |
 | Visual, OBJ | 5&nbsp;ms | 0.1 | 0.2 | 0.2&nbsp;ms | 1.1 | 0.2 | 73&nbsp;ms | 0.2 | 1.9 |
 
-<table align="left">
-<thead><tr><th>Board</th><th><code>featureTest/</code><br><code>26_via_protection.kicad_pcb</code></th></tr></thead>
-<tbody>
-<tr><td>Outline</td><td>60 × 24 mm</td></tr>
-<tr><td>Thickness</td><td>1.6 mm</td></tr>
-<tr><td>Copper layers</td><td>4</td></tr>
-<tr><td>Vias</td><td>22: 3 blind and buried, 19 through</td></tr>
-<tr><td>Board edge</td><td>Plain</td></tr>
-<tr><td>Mask, silkscreen,<br>finish</td><td>Mask colour not set (drawn green),<br>no silkscreen, ENIG</td></tr>
-</tbody>
-</table>
-<table align="right">
-<tr><th>File type</th><th>File size</th><th>Peak memory<br>used</th></tr>
+<table align="center">
+<tr>
+<td valign="top">
+
+| Board | `featureTest/`<br>`26_via_protection.kicad_pcb` |
+|---|---|
+| Outline | 60 × 24 mm |
+| Thickness | 1.6 mm |
+| Copper&nbsp;layers | 4 |
+| Vias | 22: 3 blind and buried, 19 through |
+| Board&nbsp;edge | Plain |
+| Mask,&nbsp;silkscreen,&nbsp;finish | Mask colour not set (drawn green),<br>no silkscreen, ENIG |
+
+</td>
+<td valign="top">
+
+<table>
+<tr><th>File<br>type</th><th>File<br>size</th><th>Peak memory<br>used</th></tr>
 <tr><th colspan="3" align="left">Simulation</th></tr>
 <tr><td>GLB</td><td align="right">2.2 MB</td><td align="right">154 MB</td></tr>
 <tr><td>STEP</td><td align="right">6.7 MB</td><td align="right">155 MB</td></tr>
@@ -416,7 +485,10 @@ with GLB or STL is the quickest of the six runs on every board but 09 and 27, wh
 <tr><td>GLB</td><td align="right">1.1 MB</td><td align="right">131 MB</td></tr>
 <tr><td>OBJ</td><td align="right">3.1 MB</td><td align="right">130 MB</td></tr>
 </table>
-<br clear="all">
+
+</td>
+</tr>
+</table>
 
 ## 23.3 Pads
 
@@ -438,19 +510,24 @@ with GLB or STL is the quickest of the six runs on every board but 09 and 27, wh
 | Visual, GLB | 65&nbsp;ms | 47&nbsp;ms | 0.1 | 0.1&nbsp;ms | 0.5 | 4&nbsp;ms | 33&nbsp;ms | 0.2 | 0.9 |
 | Visual, OBJ | 68&nbsp;ms | 48&nbsp;ms | 93&nbsp;ms | 0.1&nbsp;ms | 0.4 | 73&nbsp;ms | 32&nbsp;ms | 0.2 | 0.9 |
 
-<table align="left">
-<thead><tr><th>Board</th><th><code>featureTest/</code><br><code>06_padstacks.kicad_pcb</code></th></tr></thead>
-<tbody>
-<tr><td>Outline</td><td>34 × 20 mm</td></tr>
-<tr><td>Thickness</td><td>1.6 mm</td></tr>
-<tr><td>Copper layers</td><td>4</td></tr>
-<tr><td>Vias</td><td>3 through</td></tr>
-<tr><td>Board edge</td><td>Plain</td></tr>
-<tr><td>Mask, silkscreen,<br>finish</td><td>Not set (drawn green and white),<br>ENIG</td></tr>
-</tbody>
-</table>
-<table align="right">
-<tr><th>File type</th><th>File size</th><th>Peak memory<br>used</th></tr>
+<table align="center">
+<tr>
+<td valign="top">
+
+| Board | `featureTest/`<br>`06_padstacks.kicad_pcb` |
+|---|---|
+| Outline | 34 × 20 mm |
+| Thickness | 1.6 mm |
+| Copper&nbsp;layers | 4 |
+| Vias | 3 through |
+| Board&nbsp;edge | Plain |
+| Mask,&nbsp;silkscreen,&nbsp;finish | Not set (drawn green and white),<br>ENIG |
+
+</td>
+<td valign="top">
+
+<table>
+<tr><th>File<br>type</th><th>File<br>size</th><th>Peak memory<br>used</th></tr>
 <tr><th colspan="3" align="left">Simulation</th></tr>
 <tr><td>GLB</td><td align="right">948 kB</td><td align="right">70 MB</td></tr>
 <tr><td>STEP</td><td align="right">2.6 MB</td><td align="right">69 MB</td></tr>
@@ -460,7 +537,10 @@ with GLB or STL is the quickest of the six runs on every board but 09 and 27, wh
 <tr><td>GLB</td><td align="right">481 kB</td><td align="right">92 MB</td></tr>
 <tr><td>OBJ</td><td align="right">1.3 MB</td><td align="right">93 MB</td></tr>
 </table>
-<br clear="all">
+
+</td>
+</tr>
+</table>
 
 ### 23.3.2 07 Pad Shapes
 
@@ -480,19 +560,24 @@ with GLB or STL is the quickest of the six runs on every board but 09 and 27, wh
 | Visual, GLB | 73&nbsp;ms | 43&nbsp;ms | 0.1 | 0.2&nbsp;ms | 0.5 | 5&nbsp;ms | 41&nbsp;ms | 0.2 | 1.0 |
 | Visual, OBJ | 76&nbsp;ms | 37&nbsp;ms | 0.1 | 0.1&nbsp;ms | 0.5 | 0.1 | 50&nbsp;ms | 0.2 | 1.1 |
 
-<table align="left">
-<thead><tr><th>Board</th><th><code>featureTest/</code><br><code>07_pad_shapes.kicad_pcb</code></th></tr></thead>
-<tbody>
-<tr><td>Outline</td><td>44 × 30 mm</td></tr>
-<tr><td>Thickness</td><td>1.6 mm</td></tr>
-<tr><td>Copper layers</td><td>2</td></tr>
-<tr><td>Vias</td><td>none</td></tr>
-<tr><td>Board edge</td><td>Plain</td></tr>
-<tr><td>Mask, silkscreen,<br>finish</td><td>Not set (drawn green and white),<br>ENIG</td></tr>
-</tbody>
-</table>
-<table align="right">
-<tr><th>File type</th><th>File size</th><th>Peak memory<br>used</th></tr>
+<table align="center">
+<tr>
+<td valign="top">
+
+| Board | `featureTest/`<br>`07_pad_shapes.kicad_pcb` |
+|---|---|
+| Outline | 44 × 30 mm |
+| Thickness | 1.6 mm |
+| Copper&nbsp;layers | 2 |
+| Vias | none |
+| Board&nbsp;edge | Plain |
+| Mask,&nbsp;silkscreen,&nbsp;finish | Not set (drawn green and white),<br>ENIG |
+
+</td>
+<td valign="top">
+
+<table>
+<tr><th>File<br>type</th><th>File<br>size</th><th>Peak memory<br>used</th></tr>
 <tr><th colspan="3" align="left">Simulation</th></tr>
 <tr><td>GLB</td><td align="right">842 kB</td><td align="right">68 MB</td></tr>
 <tr><td>STEP</td><td align="right">3.7 MB</td><td align="right">72 MB</td></tr>
@@ -502,7 +587,10 @@ with GLB or STL is the quickest of the six runs on every board but 09 and 27, wh
 <tr><td>GLB</td><td align="right">729 kB</td><td align="right">102 MB</td></tr>
 <tr><td>OBJ</td><td align="right">1.9 MB</td><td align="right">102 MB</td></tr>
 </table>
-<br clear="all">
+
+</td>
+</tr>
+</table>
 
 ## 23.4 Copper Drawings, Text And Tracks
 
@@ -524,19 +612,24 @@ with GLB or STL is the quickest of the six runs on every board but 09 and 27, wh
 | Visual, GLB | 70&nbsp;ms | 23&nbsp;ms | 39&nbsp;ms | 0.1&nbsp;ms | 0.3 | 4&nbsp;ms | 40&nbsp;ms | 0.2 | 0.7 |
 | Visual, OBJ | 69&nbsp;ms | 25&nbsp;ms | 41&nbsp;ms | 0.1&nbsp;ms | 0.3 | 96&nbsp;ms | 51&nbsp;ms | 0.2 | 0.7 |
 
-<table align="left">
-<thead><tr><th>Board</th><th><code>featureTest/</code><br><code>08_copper_graphics.kicad_pcb</code></th></tr></thead>
-<tbody>
-<tr><td>Outline</td><td>30 × 24 mm</td></tr>
-<tr><td>Thickness</td><td>1.6 mm</td></tr>
-<tr><td>Copper layers</td><td>2</td></tr>
-<tr><td>Vias</td><td>none</td></tr>
-<tr><td>Board edge</td><td>Plain</td></tr>
-<tr><td>Mask, silkscreen,<br>finish</td><td>Not set (drawn green and white),<br>ENIG</td></tr>
-</tbody>
-</table>
-<table align="right">
-<tr><th>File type</th><th>File size</th><th>Peak memory<br>used</th></tr>
+<table align="center">
+<tr>
+<td valign="top">
+
+| Board | `featureTest/`<br>`08_copper_graphics.kicad_pcb` |
+|---|---|
+| Outline | 30 × 24 mm |
+| Thickness | 1.6 mm |
+| Copper&nbsp;layers | 2 |
+| Vias | none |
+| Board&nbsp;edge | Plain |
+| Mask,&nbsp;silkscreen,&nbsp;finish | Not set (drawn green and white),<br>ENIG |
+
+</td>
+<td valign="top">
+
+<table>
+<tr><th>File<br>type</th><th>File<br>size</th><th>Peak memory<br>used</th></tr>
 <tr><th colspan="3" align="left">Simulation</th></tr>
 <tr><td>GLB</td><td align="right">776 kB</td><td align="right">72 MB</td></tr>
 <tr><td>STEP</td><td align="right">4.4 MB</td><td align="right">74 MB</td></tr>
@@ -546,7 +639,10 @@ with GLB or STL is the quickest of the six runs on every board but 09 and 27, wh
 <tr><td>GLB</td><td align="right">579 kB</td><td align="right">100 MB</td></tr>
 <tr><td>OBJ</td><td align="right">1.5 MB</td><td align="right">102 MB</td></tr>
 </table>
-<br clear="all">
+
+</td>
+</tr>
+</table>
 
 ### 23.4.2 08b Copper Graphics On Nets
 
@@ -566,19 +662,24 @@ with GLB or STL is the quickest of the six runs on every board but 09 and 27, wh
 | Visual, GLB | 11&nbsp;ms | 32&nbsp;ms | 59&nbsp;ms | 0.1&nbsp;ms | 0.4 | 4&nbsp;ms | 42&nbsp;ms | 0.2 | 0.7 |
 | Visual, OBJ | 8&nbsp;ms | 24&nbsp;ms | 56&nbsp;ms | 0.1&nbsp;ms | 0.3 | 69&nbsp;ms | 38&nbsp;ms | 0.2 | 0.7 |
 
-<table align="left">
-<thead><tr><th>Board</th><th><code>featureTest/</code><br><code>08b_copper_graphics_nets.kicad_pcb</code></th></tr></thead>
-<tbody>
-<tr><td>Outline</td><td>36 × 24 mm, rounded corners</td></tr>
-<tr><td>Thickness</td><td>1.6 mm</td></tr>
-<tr><td>Copper layers</td><td>2</td></tr>
-<tr><td>Vias</td><td>none</td></tr>
-<tr><td>Board edge</td><td>Plain</td></tr>
-<tr><td>Mask, silkscreen,<br>finish</td><td>Not set (drawn green and white),<br>ENIG</td></tr>
-</tbody>
-</table>
-<table align="right">
-<tr><th>File type</th><th>File size</th><th>Peak memory<br>used</th></tr>
+<table align="center">
+<tr>
+<td valign="top">
+
+| Board | `featureTest/`<br>`08b_copper_graphics_nets.kicad_pcb` |
+|---|---|
+| Outline | 36 × 24 mm, rounded corners |
+| Thickness | 1.6 mm |
+| Copper&nbsp;layers | 2 |
+| Vias | none |
+| Board&nbsp;edge | Plain |
+| Mask,&nbsp;silkscreen,&nbsp;finish | Not set (drawn green and white),<br>ENIG |
+
+</td>
+<td valign="top">
+
+<table>
+<tr><th>File<br>type</th><th>File<br>size</th><th>Peak memory<br>used</th></tr>
 <tr><th colspan="3" align="left">Simulation</th></tr>
 <tr><td>GLB</td><td align="right">615 kB</td><td align="right">46 MB</td></tr>
 <tr><td>STEP</td><td align="right">3.3 MB</td><td align="right">49 MB</td></tr>
@@ -588,7 +689,10 @@ with GLB or STL is the quickest of the six runs on every board but 09 and 27, wh
 <tr><td>GLB</td><td align="right">474 kB</td><td align="right">75 MB</td></tr>
 <tr><td>OBJ</td><td align="right">1.2 MB</td><td align="right">77 MB</td></tr>
 </table>
-<br clear="all">
+
+</td>
+</tr>
+</table>
 
 ### 23.4.3 09 Copper Text
 
@@ -608,19 +712,24 @@ with GLB or STL is the quickest of the six runs on every board but 09 and 27, wh
 | Visual, GLB | 88&nbsp;ms | 38&nbsp;ms | 0.1 | 0.1&nbsp;ms | 0.9 | 12&nbsp;ms | 86&nbsp;ms | 0.2 | 1.4 |
 | Visual, OBJ | 87&nbsp;ms | 40&nbsp;ms | 0.1 | 0.1&nbsp;ms | 0.9 | 0.4 | 98&nbsp;ms | 0.2 | 1.9 |
 
-<table align="left">
-<thead><tr><th>Board</th><th><code>featureTest/</code><br><code>09_copper_text.kicad_pcb</code></th></tr></thead>
-<tbody>
-<tr><td>Outline</td><td>44 × 40 mm</td></tr>
-<tr><td>Thickness</td><td>1.6 mm</td></tr>
-<tr><td>Copper layers</td><td>2</td></tr>
-<tr><td>Vias</td><td>none</td></tr>
-<tr><td>Board edge</td><td>Plain</td></tr>
-<tr><td>Mask, silkscreen,<br>finish</td><td>Not set (drawn green and white),<br>ENIG</td></tr>
-</tbody>
-</table>
-<table align="right">
-<tr><th>File type</th><th>File size</th><th>Peak memory<br>used</th></tr>
+<table align="center">
+<tr>
+<td valign="top">
+
+| Board | `featureTest/`<br>`09_copper_text.kicad_pcb` |
+|---|---|
+| Outline | 44 × 40 mm |
+| Thickness | 1.6 mm |
+| Copper&nbsp;layers | 2 |
+| Vias | none |
+| Board&nbsp;edge | Plain |
+| Mask,&nbsp;silkscreen,&nbsp;finish | Not set (drawn green and white),<br>ENIG |
+
+</td>
+<td valign="top">
+
+<table>
+<tr><th>File<br>type</th><th>File<br>size</th><th>Peak memory<br>used</th></tr>
 <tr><th colspan="3" align="left">Simulation</th></tr>
 <tr><td>GLB</td><td align="right">3.2 MB</td><td align="right">203 MB</td></tr>
 <tr><td>STEP</td><td align="right">18.9 MB</td><td align="right">208 MB</td></tr>
@@ -630,7 +739,10 @@ with GLB or STL is the quickest of the six runs on every board but 09 and 27, wh
 <tr><td>GLB</td><td align="right">2.2 MB</td><td align="right">159 MB</td></tr>
 <tr><td>OBJ</td><td align="right">6.1 MB</td><td align="right">158 MB</td></tr>
 </table>
-<br clear="all">
+
+</td>
+</tr>
+</table>
 
 ### 23.4.4 10 Tracks And Arcs
 
@@ -650,19 +762,24 @@ with GLB or STL is the quickest of the six runs on every board but 09 and 27, wh
 | Visual, GLB | 86&nbsp;ms | 27&nbsp;ms | 37&nbsp;ms | 0.1&nbsp;ms | 0.4 | 4&nbsp;ms | 40&nbsp;ms | 0.2 | 0.7 |
 | Visual, OBJ | 71&nbsp;ms | 25&nbsp;ms | 38&nbsp;ms | 0.1&nbsp;ms | 0.3 | 78&nbsp;ms | 40&nbsp;ms | 0.2 | 0.8 |
 
-<table align="left">
-<thead><tr><th>Board</th><th><code>featureTest/</code><br><code>10_tracks_arcs.kicad_pcb</code></th></tr></thead>
-<tbody>
-<tr><td>Outline</td><td>44 × 24 mm</td></tr>
-<tr><td>Thickness</td><td>1.6 mm</td></tr>
-<tr><td>Copper layers</td><td>2</td></tr>
-<tr><td>Vias</td><td>none</td></tr>
-<tr><td>Board edge</td><td>Plain</td></tr>
-<tr><td>Mask, silkscreen,<br>finish</td><td>Not set (drawn green and white),<br>ENIG</td></tr>
-</tbody>
-</table>
-<table align="right">
-<tr><th>File type</th><th>File size</th><th>Peak memory<br>used</th></tr>
+<table align="center">
+<tr>
+<td valign="top">
+
+| Board | `featureTest/`<br>`10_tracks_arcs.kicad_pcb` |
+|---|---|
+| Outline | 44 × 24 mm |
+| Thickness | 1.6 mm |
+| Copper&nbsp;layers | 2 |
+| Vias | none |
+| Board&nbsp;edge | Plain |
+| Mask,&nbsp;silkscreen,&nbsp;finish | Not set (drawn green and white),<br>ENIG |
+
+</td>
+<td valign="top">
+
+<table>
+<tr><th>File<br>type</th><th>File<br>size</th><th>Peak memory<br>used</th></tr>
 <tr><th colspan="3" align="left">Simulation</th></tr>
 <tr><td>GLB</td><td align="right">560 kB</td><td align="right">68 MB</td></tr>
 <tr><td>STEP</td><td align="right">2.5 MB</td><td align="right">71 MB</td></tr>
@@ -672,7 +789,10 @@ with GLB or STL is the quickest of the six runs on every board but 09 and 27, wh
 <tr><td>GLB</td><td align="right">521 kB</td><td align="right">98 MB</td></tr>
 <tr><td>OBJ</td><td align="right">1.4 MB</td><td align="right">99 MB</td></tr>
 </table>
-<br clear="all">
+
+</td>
+</tr>
+</table>
 
 ### 23.4.5 27 Hatched Fills
 
@@ -692,19 +812,24 @@ with GLB or STL is the quickest of the six runs on every board but 09 and 27, wh
 | Visual, GLB | 0.1 | 84&nbsp;ms | 0.2 | 0.1&nbsp;ms | 0.9 | 10&nbsp;ms | 67&nbsp;ms | 0.2 | 1.5 |
 | Visual, OBJ | 0.1 | 92&nbsp;ms | 0.2 | 0.1&nbsp;ms | 0.9 | 0.3 | 66&nbsp;ms | 0.2 | 1.8 |
 
-<table align="left">
-<thead><tr><th>Board</th><th><code>featureTest/</code><br><code>27_hatched_fills.kicad_pcb</code></th></tr></thead>
-<tbody>
-<tr><td>Outline</td><td>64 × 44 mm</td></tr>
-<tr><td>Thickness</td><td>1.6 mm</td></tr>
-<tr><td>Copper layers</td><td>2</td></tr>
-<tr><td>Vias</td><td>none</td></tr>
-<tr><td>Board edge</td><td>Plain</td></tr>
-<tr><td>Mask, silkscreen,<br>finish</td><td>Not set (drawn green and white),<br>ENIG</td></tr>
-</tbody>
-</table>
-<table align="right">
-<tr><th>File type</th><th>File size</th><th>Peak memory<br>used</th></tr>
+<table align="center">
+<tr>
+<td valign="top">
+
+| Board | `featureTest/`<br>`27_hatched_fills.kicad_pcb` |
+|---|---|
+| Outline | 64 × 44 mm |
+| Thickness | 1.6 mm |
+| Copper&nbsp;layers | 2 |
+| Vias | none |
+| Board&nbsp;edge | Plain |
+| Mask,&nbsp;silkscreen,&nbsp;finish | Not set (drawn green and white),<br>ENIG |
+
+</td>
+<td valign="top">
+
+<table>
+<tr><th>File<br>type</th><th>File<br>size</th><th>Peak memory<br>used</th></tr>
 <tr><th colspan="3" align="left">Simulation</th></tr>
 <tr><td>GLB</td><td align="right">2.0 MB</td><td align="right">83 MB</td></tr>
 <tr><td>STEP</td><td align="right">13.6 MB</td><td align="right">195 MB</td></tr>
@@ -714,7 +839,10 @@ with GLB or STL is the quickest of the six runs on every board but 09 and 27, wh
 <tr><td>GLB</td><td align="right">1.7 MB</td><td align="right">126 MB</td></tr>
 <tr><td>OBJ</td><td align="right">4.8 MB</td><td align="right">126 MB</td></tr>
 </table>
-<br clear="all">
+
+</td>
+</tr>
+</table>
 
 ## 23.5 Zones
 
@@ -736,19 +864,24 @@ with GLB or STL is the quickest of the six runs on every board but 09 and 27, wh
 | Visual, GLB | 99&nbsp;ms | 0.1 | 0.3 | 0.1&nbsp;ms | 1.1 | 13&nbsp;ms | 72&nbsp;ms | 0.2 | 1.9 |
 | Visual, OBJ | 92&nbsp;ms | 0.1 | 0.3 | 0.1&nbsp;ms | 1.1 | 0.3 | 71&nbsp;ms | 0.2 | 2.2 |
 
-<table align="left">
-<thead><tr><th>Board</th><th><code>featureTest/</code><br><code>11_zones.kicad_pcb</code></th></tr></thead>
-<tbody>
-<tr><td>Outline</td><td>40 × 31 mm</td></tr>
-<tr><td>Thickness</td><td>1.6 mm</td></tr>
-<tr><td>Copper layers</td><td>4</td></tr>
-<tr><td>Vias</td><td>1 through</td></tr>
-<tr><td>Board edge</td><td>Plain</td></tr>
-<tr><td>Mask, silkscreen,<br>finish</td><td>Not set (drawn green and white),<br>ENIG</td></tr>
-</tbody>
-</table>
-<table align="right">
-<tr><th>File type</th><th>File size</th><th>Peak memory<br>used</th></tr>
+<table align="center">
+<tr>
+<td valign="top">
+
+| Board | `featureTest/`<br>`11_zones.kicad_pcb` |
+|---|---|
+| Outline | 40 × 31 mm |
+| Thickness | 1.6 mm |
+| Copper&nbsp;layers | 4 |
+| Vias | 1 through |
+| Board&nbsp;edge | Plain |
+| Mask,&nbsp;silkscreen,&nbsp;finish | Not set (drawn green and white),<br>ENIG |
+
+</td>
+<td valign="top">
+
+<table>
+<tr><th>File<br>type</th><th>File<br>size</th><th>Peak memory<br>used</th></tr>
 <tr><th colspan="3" align="left">Simulation</th></tr>
 <tr><td>GLB</td><td align="right">3.4 MB</td><td align="right">182 MB</td></tr>
 <tr><td>STEP</td><td align="right">13.6 MB</td><td align="right">187 MB</td></tr>
@@ -758,7 +891,10 @@ with GLB or STL is the quickest of the six runs on every board but 09 and 27, wh
 <tr><td>GLB</td><td align="right">1.8 MB</td><td align="right">156 MB</td></tr>
 <tr><td>OBJ</td><td align="right">5.0 MB</td><td align="right">155 MB</td></tr>
 </table>
-<br clear="all">
+
+</td>
+</tr>
+</table>
 
 ## 23.6 Board Outline
 
@@ -780,19 +916,24 @@ with GLB or STL is the quickest of the six runs on every board but 09 and 27, wh
 | Visual, GLB | 81&nbsp;ms | 37&nbsp;ms | 76&nbsp;ms | 0.1&nbsp;ms | 0.5 | 9&nbsp;ms | 58&nbsp;ms | 0.2 | 0.9 |
 | Visual, OBJ | 80&nbsp;ms | 37&nbsp;ms | 71&nbsp;ms | 0.1&nbsp;ms | 0.5 | 0.3 | 54&nbsp;ms | 0.2 | 1.2 |
 
-<table align="left">
-<thead><tr><th>Board</th><th><code>featureTest/</code><br><code>12_outline_shapes.kicad_pcb</code></th></tr></thead>
-<tbody>
-<tr><td>Outline</td><td>40 × 30.9 mm, arcs, a Bezier edge,<br>a notch and cut-outs</td></tr>
-<tr><td>Thickness</td><td>1.6 mm</td></tr>
-<tr><td>Copper layers</td><td>2</td></tr>
-<tr><td>Vias</td><td>none</td></tr>
-<tr><td>Board edge</td><td>Plain</td></tr>
-<tr><td>Mask, silkscreen,<br>finish</td><td>Not set (drawn green and white),<br>ENIG</td></tr>
-</tbody>
-</table>
-<table align="right">
-<tr><th>File type</th><th>File size</th><th>Peak memory<br>used</th></tr>
+<table align="center">
+<tr>
+<td valign="top">
+
+| Board | `featureTest/`<br>`12_outline_shapes.kicad_pcb` |
+|---|---|
+| Outline | 40 × 30.9 mm, arcs, a Bezier edge,<br>a notch and cut-outs |
+| Thickness | 1.6 mm |
+| Copper&nbsp;layers | 2 |
+| Vias | none |
+| Board&nbsp;edge | Plain |
+| Mask,&nbsp;silkscreen,&nbsp;finish | Not set (drawn green and white),<br>ENIG |
+
+</td>
+<td valign="top">
+
+<table>
+<tr><th>File<br>type</th><th>File<br>size</th><th>Peak memory<br>used</th></tr>
 <tr><th colspan="3" align="left">Simulation</th></tr>
 <tr><td>GLB</td><td align="right">1.6 MB</td><td align="right">77 MB</td></tr>
 <tr><td>STEP</td><td align="right">10.8 MB</td><td align="right">83 MB</td></tr>
@@ -802,7 +943,10 @@ with GLB or STL is the quickest of the six runs on every board but 09 and 27, wh
 <tr><td>GLB</td><td align="right">1.5 MB</td><td align="right">112 MB</td></tr>
 <tr><td>OBJ</td><td align="right">4.1 MB</td><td align="right">114 MB</td></tr>
 </table>
-<br clear="all">
+
+</td>
+</tr>
+</table>
 
 ### 23.6.2 13a No Board Outline
 
@@ -822,19 +966,24 @@ with GLB or STL is the quickest of the six runs on every board but 09 and 27, wh
 | Visual, GLB | 71&nbsp;ms | 24&nbsp;ms | 54&nbsp;ms | 0.1&nbsp;ms | 0.2 | 4&nbsp;ms | 64&nbsp;ms | 0.2 | 0.6 |
 | Visual, OBJ | 65&nbsp;ms | 24&nbsp;ms | 51&nbsp;ms | 0.1&nbsp;ms | 0.2 | 38&nbsp;ms | 45&nbsp;ms | 0.2 | 0.6 |
 
-<table align="left">
-<thead><tr><th>Board</th><th><code>featureTest/</code><br><code>13a_outline_none.kicad_pcb</code></th></tr></thead>
-<tbody>
-<tr><td>Outline</td><td>13.7 × 7.2 mm,<br>from the copper (no Edge.Cuts)</td></tr>
-<tr><td>Thickness</td><td>1.6 mm</td></tr>
-<tr><td>Copper layers</td><td>2</td></tr>
-<tr><td>Vias</td><td>1 through</td></tr>
-<tr><td>Board edge</td><td>Plain</td></tr>
-<tr><td>Mask, silkscreen,<br>finish</td><td>Mask colour not set (drawn green),<br>no silkscreen, ENIG</td></tr>
-</tbody>
-</table>
-<table align="right">
-<tr><th>File type</th><th>File size</th><th>Peak memory<br>used</th></tr>
+<table align="center">
+<tr>
+<td valign="top">
+
+| Board | `featureTest/`<br>`13a_outline_none.kicad_pcb` |
+|---|---|
+| Outline | 13.7 × 7.2 mm,<br>from the copper (no Edge.Cuts) |
+| Thickness | 1.6 mm |
+| Copper&nbsp;layers | 2 |
+| Vias | 1 through |
+| Board&nbsp;edge | Plain |
+| Mask,&nbsp;silkscreen,&nbsp;finish | Mask colour not set (drawn green),<br>no silkscreen, ENIG |
+
+</td>
+<td valign="top">
+
+<table>
+<tr><th>File<br>type</th><th>File<br>size</th><th>Peak memory<br>used</th></tr>
 <tr><th colspan="3" align="left">Simulation</th></tr>
 <tr><td>GLB</td><td align="right">411 kB</td><td align="right">68 MB</td></tr>
 <tr><td>STEP</td><td align="right">1.6 MB</td><td align="right">66 MB</td></tr>
@@ -844,7 +993,10 @@ with GLB or STL is the quickest of the six runs on every board but 09 and 27, wh
 <tr><td>GLB</td><td align="right">249 kB</td><td align="right">105 MB</td></tr>
 <tr><td>OBJ</td><td align="right">630 kB</td><td align="right">107 MB</td></tr>
 </table>
-<br clear="all">
+
+</td>
+</tr>
+</table>
 
 ### 23.6.3 13b Two Board Outlines
 
@@ -864,19 +1016,24 @@ with GLB or STL is the quickest of the six runs on every board but 09 and 27, wh
 | Visual, GLB | 72&nbsp;ms | 22&nbsp;ms | 51&nbsp;ms | 0.1&nbsp;ms | 0.2 | 3&nbsp;ms | 22&nbsp;ms | 0.2 | 0.6 |
 | Visual, OBJ | 68&nbsp;ms | 21&nbsp;ms | 48&nbsp;ms | 0.1&nbsp;ms | 0.2 | 30&nbsp;ms | 22&nbsp;ms | 0.2 | 0.6 |
 
-<table align="left">
-<thead><tr><th>Board</th><th><code>featureTest/</code><br><code>13b_outline_two.kicad_pcb</code></th></tr></thead>
-<tbody>
-<tr><td>Outline</td><td>40 × 20 mm,<br>two boards and a third in a hole</td></tr>
-<tr><td>Thickness</td><td>1.6 mm</td></tr>
-<tr><td>Copper layers</td><td>2</td></tr>
-<tr><td>Vias</td><td>none</td></tr>
-<tr><td>Board edge</td><td>Plain</td></tr>
-<tr><td>Mask, silkscreen,<br>finish</td><td>Not set (drawn green and white),<br>ENIG</td></tr>
-</tbody>
-</table>
-<table align="right">
-<tr><th>File type</th><th>File size</th><th>Peak memory<br>used</th></tr>
+<table align="center">
+<tr>
+<td valign="top">
+
+| Board | `featureTest/`<br>`13b_outline_two.kicad_pcb` |
+|---|---|
+| Outline | 40 × 20 mm,<br>two boards and a third in a hole |
+| Thickness | 1.6 mm |
+| Copper&nbsp;layers | 2 |
+| Vias | none |
+| Board&nbsp;edge | Plain |
+| Mask,&nbsp;silkscreen,&nbsp;finish | Not set (drawn green and white),<br>ENIG |
+
+</td>
+<td valign="top">
+
+<table>
+<tr><th>File<br>type</th><th>File<br>size</th><th>Peak memory<br>used</th></tr>
 <tr><th colspan="3" align="left">Simulation</th></tr>
 <tr><td>GLB</td><td align="right">247 kB</td><td align="right">70 MB</td></tr>
 <tr><td>STEP</td><td align="right">1.0 MB</td><td align="right">66 MB</td></tr>
@@ -886,7 +1043,10 @@ with GLB or STL is the quickest of the six runs on every board but 09 and 27, wh
 <tr><td>GLB</td><td align="right">165 kB</td><td align="right">79 MB</td></tr>
 <tr><td>OBJ</td><td align="right">402 kB</td><td align="right">80 MB</td></tr>
 </table>
-<br clear="all">
+
+</td>
+</tr>
+</table>
 
 ## 23.7 Stack-Up
 
@@ -908,19 +1068,24 @@ with GLB or STL is the quickest of the six runs on every board but 09 and 27, wh
 | Visual, GLB | 69&nbsp;ms | 36&nbsp;ms | 72&nbsp;ms | 0.1&nbsp;ms | 0.4 | 4&nbsp;ms | 35&nbsp;ms | 0.2 | 0.8 |
 | Visual, OBJ | 86&nbsp;ms | 37&nbsp;ms | 62&nbsp;ms | 0.1&nbsp;ms | 0.3 | 46&nbsp;ms | 31&nbsp;ms | 0.2 | 0.7 |
 
-<table align="left">
-<thead><tr><th>Board</th><th><code>featureTest/</code><br><code>14_stackup_full.kicad_pcb</code></th></tr></thead>
-<tbody>
-<tr><td>Outline</td><td>30 × 20 mm</td></tr>
-<tr><td>Thickness</td><td>1.58 mm</td></tr>
-<tr><td>Copper layers</td><td>4</td></tr>
-<tr><td>Vias</td><td>1 through</td></tr>
-<tr><td>Board edge</td><td>Plain</td></tr>
-<tr><td>Mask, silkscreen,<br>finish</td><td>Green, white, ENIG</td></tr>
-</tbody>
-</table>
-<table align="right">
-<tr><th>File type</th><th>File size</th><th>Peak memory<br>used</th></tr>
+<table align="center">
+<tr>
+<td valign="top">
+
+| Board | `featureTest/`<br>`14_stackup_full.kicad_pcb` |
+|---|---|
+| Outline | 30 × 20 mm |
+| Thickness | 1.58 mm |
+| Copper&nbsp;layers | 4 |
+| Vias | 1 through |
+| Board&nbsp;edge | Plain |
+| Mask,&nbsp;silkscreen,&nbsp;finish | Green, white, ENIG |
+
+</td>
+<td valign="top">
+
+<table>
+<tr><th>File<br>type</th><th>File<br>size</th><th>Peak memory<br>used</th></tr>
 <tr><th colspan="3" align="left">Simulation</th></tr>
 <tr><td>GLB</td><td align="right">433 kB</td><td align="right">66 MB</td></tr>
 <tr><td>STEP</td><td align="right">1.4 MB</td><td align="right">67 MB</td></tr>
@@ -930,7 +1095,10 @@ with GLB or STL is the quickest of the six runs on every board but 09 and 27, wh
 <tr><td>GLB</td><td align="right">281 kB</td><td align="right">89 MB</td></tr>
 <tr><td>OBJ</td><td align="right">711 kB</td><td align="right">90 MB</td></tr>
 </table>
-<br clear="all">
+
+</td>
+</tr>
+</table>
 
 ### 23.7.2 15 No Stack-Up
 
@@ -950,19 +1118,24 @@ with GLB or STL is the quickest of the six runs on every board but 09 and 27, wh
 | Visual, GLB | 64&nbsp;ms | 30&nbsp;ms | 52&nbsp;ms | 0.1&nbsp;ms | 0.3 | 4&nbsp;ms | 32&nbsp;ms | 0.2 | 0.7 |
 | Visual, OBJ | 64&nbsp;ms | 27&nbsp;ms | 53&nbsp;ms | 0.1&nbsp;ms | 0.3 | 32&nbsp;ms | 27&nbsp;ms | 0.2 | 0.7 |
 
-<table align="left">
-<thead><tr><th>Board</th><th><code>featureTest/</code><br><code>15_stackup_none.kicad_pcb</code></th></tr></thead>
-<tbody>
-<tr><td>Outline</td><td>30 × 20 mm</td></tr>
-<tr><td>Thickness</td><td>1.2 mm</td></tr>
-<tr><td>Copper layers</td><td>4</td></tr>
-<tr><td>Vias</td><td>1 through</td></tr>
-<tr><td>Board edge</td><td>Plain</td></tr>
-<tr><td>Mask, silkscreen,<br>finish</td><td>Not set (drawn green and white),<br>ENIG</td></tr>
-</tbody>
-</table>
-<table align="right">
-<tr><th>File type</th><th>File size</th><th>Peak memory<br>used</th></tr>
+<table align="center">
+<tr>
+<td valign="top">
+
+| Board | `featureTest/`<br>`15_stackup_none.kicad_pcb` |
+|---|---|
+| Outline | 30 × 20 mm |
+| Thickness | 1.2 mm |
+| Copper&nbsp;layers | 4 |
+| Vias | 1 through |
+| Board&nbsp;edge | Plain |
+| Mask,&nbsp;silkscreen,&nbsp;finish | Not set (drawn green and white),<br>ENIG |
+
+</td>
+<td valign="top">
+
+<table>
+<tr><th>File<br>type</th><th>File<br>size</th><th>Peak memory<br>used</th></tr>
 <tr><th colspan="3" align="left">Simulation</th></tr>
 <tr><td>GLB</td><td align="right">353 kB</td><td align="right">67 MB</td></tr>
 <tr><td>STEP</td><td align="right">1.0 MB</td><td align="right">68 MB</td></tr>
@@ -972,7 +1145,10 @@ with GLB or STL is the quickest of the six runs on every board but 09 and 27, wh
 <tr><td>GLB</td><td align="right">203 kB</td><td align="right">84 MB</td></tr>
 <tr><td>OBJ</td><td align="right">501 kB</td><td align="right">85 MB</td></tr>
 </table>
-<br clear="all">
+
+</td>
+</tr>
+</table>
 
 ## 23.8 Edge Plating
 
@@ -994,19 +1170,24 @@ with GLB or STL is the quickest of the six runs on every board but 09 and 27, wh
 | Visual, GLB | 68&nbsp;ms | 71&nbsp;ms | 89&nbsp;ms | 0.1&nbsp;ms | 0.3 | 4&nbsp;ms | 34&nbsp;ms | 0.2 | 0.7 |
 | Visual, OBJ | 69&nbsp;ms | 70&nbsp;ms | 96&nbsp;ms | 0.1&nbsp;ms | 0.3 | 51&nbsp;ms | 31&nbsp;ms | 0.2 | 0.8 |
 
-<table align="left">
-<thead><tr><th>Board</th><th><code>featureTest/</code><br><code>16_edge_plating_castellation.kicad_pcb</code></th></tr></thead>
-<tbody>
-<tr><td>Outline</td><td>30 × 20 mm</td></tr>
-<tr><td>Thickness</td><td>1.6 mm</td></tr>
-<tr><td>Copper layers</td><td>2</td></tr>
-<tr><td>Vias</td><td>none</td></tr>
-<tr><td>Board edge</td><td>Castellated pads on the right edge,<br>plated edge</td></tr>
-<tr><td>Mask, silkscreen,<br>finish</td><td>Not set (drawn green and white),<br>immersion silver</td></tr>
-</tbody>
-</table>
-<table align="right">
-<tr><th>File type</th><th>File size</th><th>Peak memory<br>used</th></tr>
+<table align="center">
+<tr>
+<td valign="top">
+
+| Board | `featureTest/`<br>`16_edge_plating_castellation.kicad_pcb` |
+|---|---|
+| Outline | 30 × 20 mm |
+| Thickness | 1.6 mm |
+| Copper&nbsp;layers | 2 |
+| Vias | none |
+| Board&nbsp;edge | Castellated pads on the right edge,<br>plated edge |
+| Mask,&nbsp;silkscreen,&nbsp;finish | Not set (drawn green and white),<br>immersion silver |
+
+</td>
+<td valign="top">
+
+<table>
+<tr><th>File<br>type</th><th>File<br>size</th><th>Peak memory<br>used</th></tr>
 <tr><th colspan="3" align="left">Simulation</th></tr>
 <tr><td>GLB</td><td align="right">500 kB</td><td align="right">65 MB</td></tr>
 <tr><td>STEP</td><td align="right">2.6 MB</td><td align="right">70 MB</td></tr>
@@ -1016,7 +1197,10 @@ with GLB or STL is the quickest of the six runs on every board but 09 and 27, wh
 <tr><td>GLB</td><td align="right">337 kB</td><td align="right">91 MB</td></tr>
 <tr><td>OBJ</td><td align="right">848 kB</td><td align="right">92 MB</td></tr>
 </table>
-<br clear="all">
+
+</td>
+</tr>
+</table>
 
 ### 23.8.2 16b Plated Board Edge With A GND Border
 
@@ -1036,19 +1220,24 @@ with GLB or STL is the quickest of the six runs on every board but 09 and 27, wh
 | Visual, GLB | 99&nbsp;ms | 0.5 | 2.2 | 0.2&nbsp;ms | 4.5 | 23&nbsp;ms | 0.2 | 0.2 | 7.6 |
 | Visual, OBJ | 0.1 | 0.5 | 2.3 | 0.2&nbsp;ms | 4.5 | 0.9 | 0.1 | 0.2 | 8.6 |
 
-<table align="left">
-<thead><tr><th>Board</th><th><code>featureTest/</code><br><code>16b_edge_plating_border.kicad_pcb</code></th></tr></thead>
-<tbody>
-<tr><td>Outline</td><td>40 × 28 mm, a cut-out</td></tr>
-<tr><td>Thickness</td><td>1.6 mm</td></tr>
-<tr><td>Copper layers</td><td>4</td></tr>
-<tr><td>Vias</td><td>91 through</td></tr>
-<tr><td>Board edge</td><td>Plated all round<br>and in the cut-out</td></tr>
-<tr><td>Mask, silkscreen,<br>finish</td><td>Green, white, ENIG</td></tr>
-</tbody>
-</table>
-<table align="right">
-<tr><th>File type</th><th>File size</th><th>Peak memory<br>used</th></tr>
+<table align="center">
+<tr>
+<td valign="top">
+
+| Board | `featureTest/`<br>`16b_edge_plating_border.kicad_pcb` |
+|---|---|
+| Outline | 40 × 28 mm, a cut-out |
+| Thickness | 1.6 mm |
+| Copper&nbsp;layers | 4 |
+| Vias | 91 through |
+| Board&nbsp;edge | Plated all round<br>and in the cut-out |
+| Mask,&nbsp;silkscreen,&nbsp;finish | Green, white, ENIG |
+
+</td>
+<td valign="top">
+
+<table>
+<tr><th>File<br>type</th><th>File<br>size</th><th>Peak memory<br>used</th></tr>
 <tr><th colspan="3" align="left">Simulation</th></tr>
 <tr><td>GLB</td><td align="right">14.8 MB</td><td align="right">287 MB</td></tr>
 <tr><td>STEP</td><td align="right">54.3 MB</td><td align="right">328 MB</td></tr>
@@ -1058,7 +1247,10 @@ with GLB or STL is the quickest of the six runs on every board but 09 and 27, wh
 <tr><td>GLB</td><td align="right">4.5 MB</td><td align="right">247 MB</td></tr>
 <tr><td>OBJ</td><td align="right">13.1 MB</td><td align="right">247 MB</td></tr>
 </table>
-<br clear="all">
+
+</td>
+</tr>
+</table>
 
 ### 23.8.3 28 Machining At A Plated Edge
 
@@ -1078,19 +1270,24 @@ with GLB or STL is the quickest of the six runs on every board but 09 and 27, wh
 | Visual, GLB | 67&nbsp;ms | 69&nbsp;ms | 0.3 | 0.1&nbsp;ms | 0.9 | 7&nbsp;ms | 38&nbsp;ms | 0.2 | 1.5 |
 | Visual, OBJ | 78&nbsp;ms | 75&nbsp;ms | 0.3 | 0.2&nbsp;ms | 0.9 | 76&nbsp;ms | 35&nbsp;ms | 0.2 | 1.6 |
 
-<table align="left">
-<thead><tr><th>Board</th><th><code>featureTest/</code><br><code>28_plated_edge_machining.kicad_pcb</code></th></tr></thead>
-<tbody>
-<tr><td>Outline</td><td>40 × 24 mm</td></tr>
-<tr><td>Thickness</td><td>1.6 mm</td></tr>
-<tr><td>Copper layers</td><td>4</td></tr>
-<tr><td>Vias</td><td>3: 2 blind and buried, 1 through</td></tr>
-<tr><td>Board edge</td><td>Plated all round,<br>cut by machining between two heights</td></tr>
-<tr><td>Mask, silkscreen,<br>finish</td><td>Not set (drawn green and white),<br>ENIG</td></tr>
-</tbody>
-</table>
-<table align="right">
-<tr><th>File type</th><th>File size</th><th>Peak memory<br>used</th></tr>
+<table align="center">
+<tr>
+<td valign="top">
+
+| Board | `featureTest/`<br>`28_plated_edge_machining.kicad_pcb` |
+|---|---|
+| Outline | 40 × 24 mm |
+| Thickness | 1.6 mm |
+| Copper&nbsp;layers | 4 |
+| Vias | 3: 2 blind and buried, 1 through |
+| Board&nbsp;edge | Plated all round,<br>cut by machining between two heights |
+| Mask,&nbsp;silkscreen,&nbsp;finish | Not set (drawn green and white),<br>ENIG |
+
+</td>
+<td valign="top">
+
+<table>
+<tr><th>File<br>type</th><th>File<br>size</th><th>Peak memory<br>used</th></tr>
 <tr><th colspan="3" align="left">Simulation</th></tr>
 <tr><td>GLB</td><td align="right">926 kB</td><td align="right">69 MB</td></tr>
 <tr><td>STEP</td><td align="right">5.1 MB</td><td align="right">71 MB</td></tr>
@@ -1100,7 +1297,10 @@ with GLB or STL is the quickest of the six runs on every board but 09 and 27, wh
 <tr><td>GLB</td><td align="right">504 kB</td><td align="right">96 MB</td></tr>
 <tr><td>OBJ</td><td align="right">1.3 MB</td><td align="right">97 MB</td></tr>
 </table>
-<br clear="all">
+
+</td>
+</tr>
+</table>
 
 ## 23.9 Solder Mask And Silkscreen
 
@@ -1122,19 +1322,24 @@ with GLB or STL is the quickest of the six runs on every board but 09 and 27, wh
 | Visual, GLB | 98&nbsp;ms | 78&nbsp;ms | 0.1 | 0.1&nbsp;ms | 0.3 | 5&nbsp;ms | 38&nbsp;ms | 0.2 | 0.8 |
 | Visual, OBJ | 80&nbsp;ms | 65&nbsp;ms | 0.1 | 0.1&nbsp;ms | 0.3 | 0.1 | 47&nbsp;ms | 0.2 | 1.0 |
 
-<table align="left">
-<thead><tr><th>Board</th><th><code>featureTest/</code><br><code>17_mask_silk.kicad_pcb</code></th></tr></thead>
-<tbody>
-<tr><td>Outline</td><td>40 × 30 mm</td></tr>
-<tr><td>Thickness</td><td>1.6 mm</td></tr>
-<tr><td>Copper layers</td><td>2</td></tr>
-<tr><td>Vias</td><td>1 through</td></tr>
-<tr><td>Board edge</td><td>Plain</td></tr>
-<tr><td>Mask, silkscreen,<br>finish</td><td>Red, black, lead-free HASL</td></tr>
-</tbody>
-</table>
-<table align="right">
-<tr><th>File type</th><th>File size</th><th>Peak memory<br>used</th></tr>
+<table align="center">
+<tr>
+<td valign="top">
+
+| Board | `featureTest/`<br>`17_mask_silk.kicad_pcb` |
+|---|---|
+| Outline | 40 × 30 mm |
+| Thickness | 1.6 mm |
+| Copper&nbsp;layers | 2 |
+| Vias | 1 through |
+| Board&nbsp;edge | Plain |
+| Mask,&nbsp;silkscreen,&nbsp;finish | Red, black, lead-free HASL |
+
+</td>
+<td valign="top">
+
+<table>
+<tr><th>File<br>type</th><th>File<br>size</th><th>Peak memory<br>used</th></tr>
 <tr><th colspan="3" align="left">Simulation</th></tr>
 <tr><td>GLB</td><td align="right">645 kB</td><td align="right">67 MB</td></tr>
 <tr><td>STEP</td><td align="right">2.0 MB</td><td align="right">68 MB</td></tr>
@@ -1144,7 +1349,10 @@ with GLB or STL is the quickest of the six runs on every board but 09 and 27, wh
 <tr><td>GLB</td><td align="right">561 kB</td><td align="right">95 MB</td></tr>
 <tr><td>OBJ</td><td align="right">1.5 MB</td><td align="right">95 MB</td></tr>
 </table>
-<br clear="all">
+
+</td>
+</tr>
+</table>
 
 ### 23.9.2 17b Silkscreen Over Copper
 
@@ -1164,19 +1372,24 @@ with GLB or STL is the quickest of the six runs on every board but 09 and 27, wh
 | Visual, GLB | 70&nbsp;ms | 31&nbsp;ms | 0.2 | 0.1&nbsp;ms | 0.4 | 4&nbsp;ms | 39&nbsp;ms | 0.2 | 0.9 |
 | Visual, OBJ | 71&nbsp;ms | 32&nbsp;ms | 0.2 | 0.1&nbsp;ms | 0.4 | 80&nbsp;ms | 32&nbsp;ms | 0.2 | 1.0 |
 
-<table align="left">
-<thead><tr><th>Board</th><th><code>featureTest/</code><br><code>17b_silk_over_copper.kicad_pcb</code></th></tr></thead>
-<tbody>
-<tr><td>Outline</td><td>30 × 20 mm</td></tr>
-<tr><td>Thickness</td><td>1.6 mm</td></tr>
-<tr><td>Copper layers</td><td>2</td></tr>
-<tr><td>Vias</td><td>none</td></tr>
-<tr><td>Board edge</td><td>Plain</td></tr>
-<tr><td>Mask, silkscreen,<br>finish</td><td>White, black, ENIG</td></tr>
-</tbody>
-</table>
-<table align="right">
-<tr><th>File type</th><th>File size</th><th>Peak memory<br>used</th></tr>
+<table align="center">
+<tr>
+<td valign="top">
+
+| Board | `featureTest/`<br>`17b_silk_over_copper.kicad_pcb` |
+|---|---|
+| Outline | 30 × 20 mm |
+| Thickness | 1.6 mm |
+| Copper&nbsp;layers | 2 |
+| Vias | none |
+| Board&nbsp;edge | Plain |
+| Mask,&nbsp;silkscreen,&nbsp;finish | White, black, ENIG |
+
+</td>
+<td valign="top">
+
+<table>
+<tr><th>File<br>type</th><th>File<br>size</th><th>Peak memory<br>used</th></tr>
 <tr><th colspan="3" align="left">Simulation</th></tr>
 <tr><td>GLB</td><td align="right">589 kB</td><td align="right">68 MB</td></tr>
 <tr><td>STEP</td><td align="right">3.0 MB</td><td align="right">69 MB</td></tr>
@@ -1186,7 +1399,10 @@ with GLB or STL is the quickest of the six runs on every board but 09 and 27, wh
 <tr><td>GLB</td><td align="right">513 kB</td><td align="right">90 MB</td></tr>
 <tr><td>OBJ</td><td align="right">1.3 MB</td><td align="right">91 MB</td></tr>
 </table>
-<br clear="all">
+
+</td>
+</tr>
+</table>
 
 ## 23.10 Surface Finish
 
@@ -1208,19 +1424,24 @@ with GLB or STL is the quickest of the six runs on every board but 09 and 27, wh
 | Visual, GLB | 70&nbsp;ms | 35&nbsp;ms | 48&nbsp;ms | 0.1&nbsp;ms | 0.3 | 5&nbsp;ms | 51&nbsp;ms | 0.2 | 0.7 |
 | Visual, OBJ | 86&nbsp;ms | 35&nbsp;ms | 46&nbsp;ms | 0.1&nbsp;ms | 0.3 | 77&nbsp;ms | 49&nbsp;ms | 0.2 | 0.8 |
 
-<table align="left">
-<thead><tr><th>Board</th><th><code>featureTest/</code><br><code>18_finishes.kicad_pcb</code></th></tr></thead>
-<tbody>
-<tr><td>Outline</td><td>30 × 16 mm</td></tr>
-<tr><td>Thickness</td><td>1.6 mm</td></tr>
-<tr><td>Copper layers</td><td>2</td></tr>
-<tr><td>Vias</td><td>6 through</td></tr>
-<tr><td>Board edge</td><td>Gold edge fingers<br>on a bevelled edge</td></tr>
-<tr><td>Mask, silkscreen,<br>finish</td><td>Not set (drawn green and white),<br>hard gold</td></tr>
-</tbody>
-</table>
-<table align="right">
-<tr><th>File type</th><th>File size</th><th>Peak memory<br>used</th></tr>
+<table align="center">
+<tr>
+<td valign="top">
+
+| Board | `featureTest/`<br>`18_finishes.kicad_pcb` |
+|---|---|
+| Outline | 30 × 16 mm |
+| Thickness | 1.6 mm |
+| Copper&nbsp;layers | 2 |
+| Vias | 6 through |
+| Board&nbsp;edge | Gold edge fingers<br>on a bevelled edge |
+| Mask,&nbsp;silkscreen,&nbsp;finish | Not set (drawn green and white),<br>hard gold |
+
+</td>
+<td valign="top">
+
+<table>
+<tr><th>File<br>type</th><th>File<br>size</th><th>Peak memory<br>used</th></tr>
 <tr><th colspan="3" align="left">Simulation</th></tr>
 <tr><td>GLB</td><td align="right">500 kB</td><td align="right">69 MB</td></tr>
 <tr><td>STEP</td><td align="right">2.0 MB</td><td align="right">67 MB</td></tr>
@@ -1230,7 +1451,10 @@ with GLB or STL is the quickest of the six runs on every board but 09 and 27, wh
 <tr><td>GLB</td><td align="right">482 kB</td><td align="right">104 MB</td></tr>
 <tr><td>OBJ</td><td align="right">1.3 MB</td><td align="right">105 MB</td></tr>
 </table>
-<br clear="all">
+
+</td>
+</tr>
+</table>
 
 ### 23.10.2 18b Finish On Every Kind Of Bare Copper
 
@@ -1250,19 +1474,24 @@ with GLB or STL is the quickest of the six runs on every board but 09 and 27, wh
 | Visual, GLB | 69&nbsp;ms | 36&nbsp;ms | 0.1 | 0.2&nbsp;ms | 0.4 | 4&nbsp;ms | 40&nbsp;ms | 0.2 | 0.8 |
 | Visual, OBJ | 69&nbsp;ms | 33&nbsp;ms | 94&nbsp;ms | 0.2&nbsp;ms | 0.4 | 65&nbsp;ms | 33&nbsp;ms | 0.2 | 0.8 |
 
-<table align="left">
-<thead><tr><th>Board</th><th><code>featureTest/</code><br><code>18b_finish_pads.kicad_pcb</code></th></tr></thead>
-<tbody>
-<tr><td>Outline</td><td>30 × 20 mm</td></tr>
-<tr><td>Thickness</td><td>1.6 mm</td></tr>
-<tr><td>Copper layers</td><td>2</td></tr>
-<tr><td>Vias</td><td>1 through</td></tr>
-<tr><td>Board edge</td><td>Plain</td></tr>
-<tr><td>Mask, silkscreen,<br>finish</td><td>Green, white, ENIG</td></tr>
-</tbody>
-</table>
-<table align="right">
-<tr><th>File type</th><th>File size</th><th>Peak memory<br>used</th></tr>
+<table align="center">
+<tr>
+<td valign="top">
+
+| Board | `featureTest/`<br>`18b_finish_pads.kicad_pcb` |
+|---|---|
+| Outline | 30 × 20 mm |
+| Thickness | 1.6 mm |
+| Copper&nbsp;layers | 2 |
+| Vias | 1 through |
+| Board&nbsp;edge | Plain |
+| Mask,&nbsp;silkscreen,&nbsp;finish | Green, white, ENIG |
+
+</td>
+<td valign="top">
+
+<table>
+<tr><th>File<br>type</th><th>File<br>size</th><th>Peak memory<br>used</th></tr>
 <tr><th colspan="3" align="left">Simulation</th></tr>
 <tr><td>GLB</td><td align="right">635 kB</td><td align="right">67 MB</td></tr>
 <tr><td>STEP</td><td align="right">2.4 MB</td><td align="right">69 MB</td></tr>
@@ -1272,7 +1501,10 @@ with GLB or STL is the quickest of the six runs on every board but 09 and 27, wh
 <tr><td>GLB</td><td align="right">415 kB</td><td align="right">93 MB</td></tr>
 <tr><td>OBJ</td><td align="right">1.1 MB</td><td align="right">95 MB</td></tr>
 </table>
-<br clear="all">
+
+</td>
+</tr>
+</table>
 
 ### 23.10.3 18c Finish Before The Solder Mask
 
@@ -1292,19 +1524,24 @@ with GLB or STL is the quickest of the six runs on every board but 09 and 27, wh
 | Visual, GLB | 70&nbsp;ms | 34&nbsp;ms | 0.2 | 0.1&nbsp;ms | 0.6 | 6&nbsp;ms | 36&nbsp;ms | 0.2 | 1.1 |
 | Visual, OBJ | 68&nbsp;ms | 35&nbsp;ms | 0.2 | 0.2&nbsp;ms | 0.6 | 80&nbsp;ms | 37&nbsp;ms | 0.2 | 1.2 |
 
-<table align="left">
-<thead><tr><th>Board</th><th><code>featureTest/</code><br><code>18c_finish_before_mask.kicad_pcb</code></th></tr></thead>
-<tbody>
-<tr><td>Outline</td><td>30 × 20 mm</td></tr>
-<tr><td>Thickness</td><td>1.6 mm</td></tr>
-<tr><td>Copper layers</td><td>2</td></tr>
-<tr><td>Vias</td><td>1 through</td></tr>
-<tr><td>Board edge</td><td>Plain</td></tr>
-<tr><td>Mask, silkscreen,<br>finish</td><td>Blue, white, ENEPIG</td></tr>
-</tbody>
-</table>
-<table align="right">
-<tr><th>File type</th><th>File size</th><th>Peak memory<br>used</th></tr>
+<table align="center">
+<tr>
+<td valign="top">
+
+| Board | `featureTest/`<br>`18c_finish_before_mask.kicad_pcb` |
+|---|---|
+| Outline | 30 × 20 mm |
+| Thickness | 1.6 mm |
+| Copper&nbsp;layers | 2 |
+| Vias | 1 through |
+| Board&nbsp;edge | Plain |
+| Mask,&nbsp;silkscreen,&nbsp;finish | Blue, white, ENEPIG |
+
+</td>
+<td valign="top">
+
+<table>
+<tr><th>File<br>type</th><th>File<br>size</th><th>Peak memory<br>used</th></tr>
 <tr><th colspan="3" align="left">Simulation</th></tr>
 <tr><td>GLB</td><td align="right">1.2 MB</td><td align="right">69 MB</td></tr>
 <tr><td>STEP</td><td align="right">6.5 MB</td><td align="right">71 MB</td></tr>
@@ -1314,7 +1551,10 @@ with GLB or STL is the quickest of the six runs on every board but 09 and 27, wh
 <tr><td>GLB</td><td align="right">546 kB</td><td align="right">93 MB</td></tr>
 <tr><td>OBJ</td><td align="right">1.4 MB</td><td align="right">95 MB</td></tr>
 </table>
-<br clear="all">
+
+</td>
+</tr>
+</table>
 
 ## 23.11 Items KESE Skips
 
@@ -1336,19 +1576,24 @@ with GLB or STL is the quickest of the six runs on every board but 09 and 27, wh
 | Visual, GLB | 66&nbsp;ms | 16&nbsp;ms | 21&nbsp;ms | 0.1&nbsp;ms | 0.1 | 2&nbsp;ms | 18&nbsp;ms | 0.2 | 0.4 |
 | Visual, OBJ | 65&nbsp;ms | 17&nbsp;ms | 21&nbsp;ms | 0.1&nbsp;ms | 0.1 | 26&nbsp;ms | 19&nbsp;ms | 0.2 | 0.4 |
 
-<table align="left">
-<thead><tr><th>Board</th><th><code>featureTest/</code><br><code>19_skipped_items.kicad_pcb</code></th></tr></thead>
-<tbody>
-<tr><td>Outline</td><td>40 × 30 mm</td></tr>
-<tr><td>Thickness</td><td>1.6 mm</td></tr>
-<tr><td>Copper layers</td><td>2</td></tr>
-<tr><td>Vias</td><td>none</td></tr>
-<tr><td>Board edge</td><td>Plain</td></tr>
-<tr><td>Mask, silkscreen,<br>finish</td><td>Not set (drawn green and white),<br>ENIG</td></tr>
-</tbody>
-</table>
-<table align="right">
-<tr><th>File type</th><th>File size</th><th>Peak memory<br>used</th></tr>
+<table align="center">
+<tr>
+<td valign="top">
+
+| Board | `featureTest/`<br>`19_skipped_items.kicad_pcb` |
+|---|---|
+| Outline | 40 × 30 mm |
+| Thickness | 1.6 mm |
+| Copper&nbsp;layers | 2 |
+| Vias | none |
+| Board&nbsp;edge | Plain |
+| Mask,&nbsp;silkscreen,&nbsp;finish | Not set (drawn green and white),<br>ENIG |
+
+</td>
+<td valign="top">
+
+<table>
+<tr><th>File<br>type</th><th>File<br>size</th><th>Peak memory<br>used</th></tr>
 <tr><th colspan="3" align="left">Simulation</th></tr>
 <tr><td>GLB</td><td align="right">104 kB</td><td align="right">67 MB</td></tr>
 <tr><td>STEP</td><td align="right">510 kB</td><td align="right">64 MB</td></tr>
@@ -1358,7 +1603,10 @@ with GLB or STL is the quickest of the six runs on every board but 09 and 27, wh
 <tr><td>GLB</td><td align="right">105 kB</td><td align="right">76 MB</td></tr>
 <tr><td>OBJ</td><td align="right">249 kB</td><td align="right">77 MB</td></tr>
 </table>
-<br clear="all">
+
+</td>
+</tr>
+</table>
 
 ### 23.11.2 19b Items KESE Skips, KiCad 10
 
@@ -1378,19 +1626,24 @@ with GLB or STL is the quickest of the six runs on every board but 09 and 27, wh
 | Visual, GLB | 0.9&nbsp;ms | 4&nbsp;ms | 15&nbsp;ms | 0.0&nbsp;ms | 26&nbsp;ms | 1&nbsp;ms | 11&nbsp;ms | 0.2 | 0.2 |
 | Visual, OBJ | 0.9&nbsp;ms | 4&nbsp;ms | 8&nbsp;ms | 0.0&nbsp;ms | 34&nbsp;ms | 1&nbsp;ms | 11&nbsp;ms | 0.2 | 0.2 |
 
-<table align="left">
-<thead><tr><th>Board</th><th><code>featureTest/</code><br><code>19b_skipped_items_k10.kicad_pcb</code></th></tr></thead>
-<tbody>
-<tr><td>Outline</td><td>40 × 24 mm</td></tr>
-<tr><td>Thickness</td><td>1.6 mm</td></tr>
-<tr><td>Copper layers</td><td>2</td></tr>
-<tr><td>Vias</td><td>none</td></tr>
-<tr><td>Board edge</td><td>Plain</td></tr>
-<tr><td>Mask, silkscreen,<br>finish</td><td>Mask colour not set (drawn green),<br>no silkscreen, ENIG</td></tr>
-</tbody>
-</table>
-<table align="right">
-<tr><th>File type</th><th>File size</th><th>Peak memory<br>used</th></tr>
+<table align="center">
+<tr>
+<td valign="top">
+
+| Board | `featureTest/`<br>`19b_skipped_items_k10.kicad_pcb` |
+|---|---|
+| Outline | 40 × 24 mm |
+| Thickness | 1.6 mm |
+| Copper&nbsp;layers | 2 |
+| Vias | none |
+| Board&nbsp;edge | Plain |
+| Mask,&nbsp;silkscreen,&nbsp;finish | Mask colour not set (drawn green),<br>no silkscreen, ENIG |
+
+</td>
+<td valign="top">
+
+<table>
+<tr><th>File<br>type</th><th>File<br>size</th><th>Peak memory<br>used</th></tr>
 <tr><th colspan="3" align="left">Simulation</th></tr>
 <tr><td>GLB</td><td align="right">4 kB</td><td align="right">40 MB</td></tr>
 <tr><td>STEP</td><td align="right">19 kB</td><td align="right">40 MB</td></tr>
@@ -1400,7 +1653,10 @@ with GLB or STL is the quickest of the six runs on every board but 09 and 27, wh
 <tr><td>GLB</td><td align="right">5 kB</td><td align="right">46 MB</td></tr>
 <tr><td>OBJ</td><td align="right">5 kB</td><td align="right">45 MB</td></tr>
 </table>
-<br clear="all">
+
+</td>
+</tr>
+</table>
 
 ## 23.12 KiCad File Formats
 
@@ -1422,19 +1678,24 @@ with GLB or STL is the quickest of the six runs on every board but 09 and 27, wh
 | Visual, GLB | 71&nbsp;ms | 27&nbsp;ms | 65&nbsp;ms | 0.1&nbsp;ms | 0.3 | 4&nbsp;ms | 35&nbsp;ms | 0.2 | 0.7 |
 | Visual, OBJ | 80&nbsp;ms | 29&nbsp;ms | 62&nbsp;ms | 0.1&nbsp;ms | 0.3 | 62&nbsp;ms | 29&nbsp;ms | 0.2 | 0.7 |
 
-<table align="left">
-<thead><tr><th>Board</th><th><code>featureTest/</code><br><code>20a_format_kicad6.kicad_pcb</code></th></tr></thead>
-<tbody>
-<tr><td>Outline</td><td>24 × 16 mm</td></tr>
-<tr><td>Thickness</td><td>1.6 mm</td></tr>
-<tr><td>Copper layers</td><td>2</td></tr>
-<tr><td>Vias</td><td>1 through</td></tr>
-<tr><td>Board edge</td><td>Plain</td></tr>
-<tr><td>Mask, silkscreen,<br>finish</td><td>Not set (drawn green and white),<br>ENIG</td></tr>
-</tbody>
-</table>
-<table align="right">
-<tr><th>File type</th><th>File size</th><th>Peak memory<br>used</th></tr>
+<table align="center">
+<tr>
+<td valign="top">
+
+| Board | `featureTest/`<br>`20a_format_kicad6.kicad_pcb` |
+|---|---|
+| Outline | 24 × 16 mm |
+| Thickness | 1.6 mm |
+| Copper&nbsp;layers | 2 |
+| Vias | 1 through |
+| Board&nbsp;edge | Plain |
+| Mask,&nbsp;silkscreen,&nbsp;finish | Not set (drawn green and white),<br>ENIG |
+
+</td>
+<td valign="top">
+
+<table>
+<tr><th>File<br>type</th><th>File<br>size</th><th>Peak memory<br>used</th></tr>
 <tr><th colspan="3" align="left">Simulation</th></tr>
 <tr><td>GLB</td><td align="right">512 kB</td><td align="right">67 MB</td></tr>
 <tr><td>STEP</td><td align="right">2.3 MB</td><td align="right">68 MB</td></tr>
@@ -1444,7 +1705,10 @@ with GLB or STL is the quickest of the six runs on every board but 09 and 27, wh
 <tr><td>GLB</td><td align="right">413 kB</td><td align="right">88 MB</td></tr>
 <tr><td>OBJ</td><td align="right">1.1 MB</td><td align="right">89 MB</td></tr>
 </table>
-<br clear="all">
+
+</td>
+</tr>
+</table>
 
 ### 23.12.2 20b KiCad 7 Format
 
@@ -1464,19 +1728,24 @@ with GLB or STL is the quickest of the six runs on every board but 09 and 27, wh
 | Visual, GLB | 77&nbsp;ms | 31&nbsp;ms | 70&nbsp;ms | 0.1&nbsp;ms | 0.3 | 5&nbsp;ms | 33&nbsp;ms | 0.2 | 0.7 |
 | Visual, OBJ | 70&nbsp;ms | 28&nbsp;ms | 73&nbsp;ms | 0.1&nbsp;ms | 0.3 | 60&nbsp;ms | 29&nbsp;ms | 0.2 | 0.7 |
 
-<table align="left">
-<thead><tr><th>Board</th><th><code>featureTest/</code><br><code>20b_format_kicad7.kicad_pcb</code></th></tr></thead>
-<tbody>
-<tr><td>Outline</td><td>24 × 16 mm</td></tr>
-<tr><td>Thickness</td><td>1.6 mm</td></tr>
-<tr><td>Copper layers</td><td>2</td></tr>
-<tr><td>Vias</td><td>1 through</td></tr>
-<tr><td>Board edge</td><td>Plain</td></tr>
-<tr><td>Mask, silkscreen,<br>finish</td><td>Not set (drawn green and white),<br>ENIG</td></tr>
-</tbody>
-</table>
-<table align="right">
-<tr><th>File type</th><th>File size</th><th>Peak memory<br>used</th></tr>
+<table align="center">
+<tr>
+<td valign="top">
+
+| Board | `featureTest/`<br>`20b_format_kicad7.kicad_pcb` |
+|---|---|
+| Outline | 24 × 16 mm |
+| Thickness | 1.6 mm |
+| Copper&nbsp;layers | 2 |
+| Vias | 1 through |
+| Board&nbsp;edge | Plain |
+| Mask,&nbsp;silkscreen,&nbsp;finish | Not set (drawn green and white),<br>ENIG |
+
+</td>
+<td valign="top">
+
+<table>
+<tr><th>File<br>type</th><th>File<br>size</th><th>Peak memory<br>used</th></tr>
 <tr><th colspan="3" align="left">Simulation</th></tr>
 <tr><td>GLB</td><td align="right">506 kB</td><td align="right">68 MB</td></tr>
 <tr><td>STEP</td><td align="right">2.2 MB</td><td align="right">68 MB</td></tr>
@@ -1486,7 +1755,10 @@ with GLB or STL is the quickest of the six runs on every board but 09 and 27, wh
 <tr><td>GLB</td><td align="right">406 kB</td><td align="right">87 MB</td></tr>
 <tr><td>OBJ</td><td align="right">1.0 MB</td><td align="right">89 MB</td></tr>
 </table>
-<br clear="all">
+
+</td>
+</tr>
+</table>
 
 ### 23.12.3 20c KiCad 8 Format
 
@@ -1506,19 +1778,24 @@ with GLB or STL is the quickest of the six runs on every board but 09 and 27, wh
 | Visual, GLB | 69&nbsp;ms | 28&nbsp;ms | 72&nbsp;ms | 0.1&nbsp;ms | 0.3 | 4&nbsp;ms | 35&nbsp;ms | 0.2 | 0.7 |
 | Visual, OBJ | 71&nbsp;ms | 30&nbsp;ms | 65&nbsp;ms | 0.1&nbsp;ms | 0.3 | 63&nbsp;ms | 32&nbsp;ms | 0.2 | 0.7 |
 
-<table align="left">
-<thead><tr><th>Board</th><th><code>featureTest/</code><br><code>20c_format_kicad8.kicad_pcb</code></th></tr></thead>
-<tbody>
-<tr><td>Outline</td><td>24 × 16 mm</td></tr>
-<tr><td>Thickness</td><td>1.6 mm</td></tr>
-<tr><td>Copper layers</td><td>2</td></tr>
-<tr><td>Vias</td><td>1 through</td></tr>
-<tr><td>Board edge</td><td>Plain</td></tr>
-<tr><td>Mask, silkscreen,<br>finish</td><td>Not set (drawn green and white),<br>ENIG</td></tr>
-</tbody>
-</table>
-<table align="right">
-<tr><th>File type</th><th>File size</th><th>Peak memory<br>used</th></tr>
+<table align="center">
+<tr>
+<td valign="top">
+
+| Board | `featureTest/`<br>`20c_format_kicad8.kicad_pcb` |
+|---|---|
+| Outline | 24 × 16 mm |
+| Thickness | 1.6 mm |
+| Copper&nbsp;layers | 2 |
+| Vias | 1 through |
+| Board&nbsp;edge | Plain |
+| Mask,&nbsp;silkscreen,&nbsp;finish | Not set (drawn green and white),<br>ENIG |
+
+</td>
+<td valign="top">
+
+<table>
+<tr><th>File<br>type</th><th>File<br>size</th><th>Peak memory<br>used</th></tr>
 <tr><th colspan="3" align="left">Simulation</th></tr>
 <tr><td>GLB</td><td align="right">515 kB</td><td align="right">67 MB</td></tr>
 <tr><td>STEP</td><td align="right">2.3 MB</td><td align="right">67 MB</td></tr>
@@ -1528,7 +1805,10 @@ with GLB or STL is the quickest of the six runs on every board but 09 and 27, wh
 <tr><td>GLB</td><td align="right">415 kB</td><td align="right">87 MB</td></tr>
 <tr><td>OBJ</td><td align="right">1.1 MB</td><td align="right">89 MB</td></tr>
 </table>
-<br clear="all">
+
+</td>
+</tr>
+</table>
 
 ### 23.12.4 20d KiCad 9 Format
 
@@ -1548,19 +1828,24 @@ with GLB or STL is the quickest of the six runs on every board but 09 and 27, wh
 | Visual, GLB | 68&nbsp;ms | 28&nbsp;ms | 71&nbsp;ms | 0.1&nbsp;ms | 0.3 | 4&nbsp;ms | 30&nbsp;ms | 0.2 | 0.7 |
 | Visual, OBJ | 67&nbsp;ms | 27&nbsp;ms | 69&nbsp;ms | 0.1&nbsp;ms | 0.3 | 59&nbsp;ms | 31&nbsp;ms | 0.2 | 0.7 |
 
-<table align="left">
-<thead><tr><th>Board</th><th><code>featureTest/</code><br><code>20d_format_kicad9.kicad_pcb</code></th></tr></thead>
-<tbody>
-<tr><td>Outline</td><td>24 × 16 mm</td></tr>
-<tr><td>Thickness</td><td>1.6 mm</td></tr>
-<tr><td>Copper layers</td><td>2</td></tr>
-<tr><td>Vias</td><td>1 through</td></tr>
-<tr><td>Board edge</td><td>Plain</td></tr>
-<tr><td>Mask, silkscreen,<br>finish</td><td>Not set (drawn green and white),<br>ENIG</td></tr>
-</tbody>
-</table>
-<table align="right">
-<tr><th>File type</th><th>File size</th><th>Peak memory<br>used</th></tr>
+<table align="center">
+<tr>
+<td valign="top">
+
+| Board | `featureTest/`<br>`20d_format_kicad9.kicad_pcb` |
+|---|---|
+| Outline | 24 × 16 mm |
+| Thickness | 1.6 mm |
+| Copper&nbsp;layers | 2 |
+| Vias | 1 through |
+| Board&nbsp;edge | Plain |
+| Mask,&nbsp;silkscreen,&nbsp;finish | Not set (drawn green and white),<br>ENIG |
+
+</td>
+<td valign="top">
+
+<table>
+<tr><th>File<br>type</th><th>File<br>size</th><th>Peak memory<br>used</th></tr>
 <tr><th colspan="3" align="left">Simulation</th></tr>
 <tr><td>GLB</td><td align="right">512 kB</td><td align="right">65 MB</td></tr>
 <tr><td>STEP</td><td align="right">2.3 MB</td><td align="right">67 MB</td></tr>
@@ -1570,7 +1855,10 @@ with GLB or STL is the quickest of the six runs on every board but 09 and 27, wh
 <tr><td>GLB</td><td align="right">413 kB</td><td align="right">88 MB</td></tr>
 <tr><td>OBJ</td><td align="right">1.1 MB</td><td align="right">89 MB</td></tr>
 </table>
-<br clear="all">
+
+</td>
+</tr>
+</table>
 
 ### 23.12.5 20e KiCad 10 Format
 
@@ -1590,19 +1878,24 @@ with GLB or STL is the quickest of the six runs on every board but 09 and 27, wh
 | Visual, GLB | 70&nbsp;ms | 27&nbsp;ms | 64&nbsp;ms | 0.1&nbsp;ms | 0.3 | 4&nbsp;ms | 32&nbsp;ms | 0.2 | 0.7 |
 | Visual, OBJ | 69&nbsp;ms | 29&nbsp;ms | 68&nbsp;ms | 0.1&nbsp;ms | 0.3 | 60&nbsp;ms | 31&nbsp;ms | 0.2 | 0.8 |
 
-<table align="left">
-<thead><tr><th>Board</th><th><code>featureTest/</code><br><code>20e_format_kicad10.kicad_pcb</code></th></tr></thead>
-<tbody>
-<tr><td>Outline</td><td>24 × 16 mm</td></tr>
-<tr><td>Thickness</td><td>1.6 mm</td></tr>
-<tr><td>Copper layers</td><td>2</td></tr>
-<tr><td>Vias</td><td>1 through</td></tr>
-<tr><td>Board edge</td><td>Plain</td></tr>
-<tr><td>Mask, silkscreen,<br>finish</td><td>Not set (drawn green and white),<br>ENIG</td></tr>
-</tbody>
-</table>
-<table align="right">
-<tr><th>File type</th><th>File size</th><th>Peak memory<br>used</th></tr>
+<table align="center">
+<tr>
+<td valign="top">
+
+| Board | `featureTest/`<br>`20e_format_kicad10.kicad_pcb` |
+|---|---|
+| Outline | 24 × 16 mm |
+| Thickness | 1.6 mm |
+| Copper&nbsp;layers | 2 |
+| Vias | 1 through |
+| Board&nbsp;edge | Plain |
+| Mask,&nbsp;silkscreen,&nbsp;finish | Not set (drawn green and white),<br>ENIG |
+
+</td>
+<td valign="top">
+
+<table>
+<tr><th>File<br>type</th><th>File<br>size</th><th>Peak memory<br>used</th></tr>
 <tr><th colspan="3" align="left">Simulation</th></tr>
 <tr><td>GLB</td><td align="right">517 kB</td><td align="right">69 MB</td></tr>
 <tr><td>STEP</td><td align="right">2.3 MB</td><td align="right">68 MB</td></tr>
@@ -1612,7 +1905,10 @@ with GLB or STL is the quickest of the six runs on every board but 09 and 27, wh
 <tr><td>GLB</td><td align="right">418 kB</td><td align="right">87 MB</td></tr>
 <tr><td>OBJ</td><td align="right">1.1 MB</td><td align="right">89 MB</td></tr>
 </table>
-<br clear="all">
+
+</td>
+</tr>
+</table>
 
 ## 23.13 Example Boards
 
@@ -1634,19 +1930,24 @@ with GLB or STL is the quickest of the six runs on every board but 09 and 27, wh
 | Visual, GLB | 0.3 | 1.7 | 6.8 | 0.4&nbsp;ms | 9.5 | 94&nbsp;ms | 0.6 | 0.2 | 19.1 |
 | Visual, OBJ | 0.2 | 1.6 | 6.7 | 0.5&nbsp;ms | 9.8 | 3.8 | 0.8 | 0.2 | 23.1 |
 
-<table align="left">
-<thead><tr><th>Board</th><th><code>featureTest/</code><br><code>21_rf_module.kicad_pcb</code><br>(<a href="https://github.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/wiki/Examples#51-rf-sensor-module">5.1</a>)</th></tr></thead>
-<tbody>
-<tr><td>Outline</td><td>64 × 44 mm, a cut-out</td></tr>
-<tr><td>Thickness</td><td>1.6 mm</td></tr>
-<tr><td>Copper layers</td><td>4</td></tr>
-<tr><td>Vias</td><td>307 through</td></tr>
-<tr><td>Board edge</td><td>Plated all round<br>and in the cut-out</td></tr>
-<tr><td>Mask, silkscreen,<br>finish</td><td>Blue, white, ENIG</td></tr>
-</tbody>
-</table>
-<table align="right">
-<tr><th>File type</th><th>File size</th><th>Peak memory<br>used</th></tr>
+<table align="center">
+<tr>
+<td valign="top">
+
+| Board | `featureTest/`<br>`21_rf_module.kicad_pcb`<br>([5.1](Examples.md#51-rf-sensor-module)) |
+|---|---|
+| Outline | 64 × 44 mm, a cut-out |
+| Thickness | 1.6 mm |
+| Copper&nbsp;layers | 4 |
+| Vias | 307 through |
+| Board&nbsp;edge | Plated all round<br>and in the cut-out |
+| Mask,&nbsp;silkscreen,&nbsp;finish | Blue, white, ENIG |
+
+</td>
+<td valign="top">
+
+<table>
+<tr><th>File<br>type</th><th>File<br>size</th><th>Peak memory<br>used</th></tr>
 <tr><th colspan="3" align="left">Simulation</th></tr>
 <tr><td>GLB</td><td align="right">47.2 MB</td><td align="right">548 MB</td></tr>
 <tr><td>STEP</td><td align="right">171.2 MB</td><td align="right">643 MB</td></tr>
@@ -1656,7 +1957,10 @@ with GLB or STL is the quickest of the six runs on every board but 09 and 27, wh
 <tr><td>GLB</td><td align="right">21.6 MB</td><td align="right">592 MB</td></tr>
 <tr><td>OBJ</td><td align="right">65.1 MB</td><td align="right">579 MB</td></tr>
 </table>
-<br clear="all">
+
+</td>
+</tr>
+</table>
 
 ### 23.13.2 22 HDI Radio Module
 
@@ -1676,19 +1980,24 @@ with GLB or STL is the quickest of the six runs on every board but 09 and 27, wh
 | Visual, GLB | 0.2 | 1.0 | 2.6 | 0.4&nbsp;ms | 4.0 | 66&nbsp;ms | 0.4 | 0.2 | 8.5 |
 | Visual, OBJ | 0.2 | 1.0 | 2.7 | 0.4&nbsp;ms | 4.1 | 1.7 | 0.4 | 0.2 | 10.3 |
 
-<table align="left">
-<thead><tr><th>Board</th><th><code>featureTest/</code><br><code>22_hdi_module.kicad_pcb</code><br>(<a href="https://github.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/wiki/Examples#52-hdi-radio-module">5.2</a>)</th></tr></thead>
-<tbody>
-<tr><td>Outline</td><td>22 × 30 mm</td></tr>
-<tr><td>Thickness</td><td>0.925 mm</td></tr>
-<tr><td>Copper layers</td><td>6</td></tr>
-<tr><td>Vias</td><td>150: 71 micro,<br>34 blind and buried, 45 through</td></tr>
-<tr><td>Board edge</td><td>43 castellated pads</td></tr>
-<tr><td>Mask, silkscreen,<br>finish</td><td>Black, white, immersion silver</td></tr>
-</tbody>
-</table>
-<table align="right">
-<tr><th>File type</th><th>File size</th><th>Peak memory<br>used</th></tr>
+<table align="center">
+<tr>
+<td valign="top">
+
+| Board | `featureTest/`<br>`22_hdi_module.kicad_pcb`<br>([5.2](Examples.md#52-hdi-radio-module)) |
+|---|---|
+| Outline | 22 × 30 mm |
+| Thickness | 0.925 mm |
+| Copper&nbsp;layers | 6 |
+| Vias | 150: 71 micro,<br>34 blind and buried, 45 through |
+| Board&nbsp;edge | 43 castellated pads |
+| Mask,&nbsp;silkscreen,&nbsp;finish | Black, white, immersion silver |
+
+</td>
+<td valign="top">
+
+<table>
+<tr><th>File<br>type</th><th>File<br>size</th><th>Peak memory<br>used</th></tr>
 <tr><th colspan="3" align="left">Simulation</th></tr>
 <tr><td>GLB</td><td align="right">21.0 MB</td><td align="right">350 MB</td></tr>
 <tr><td>STEP</td><td align="right">70.9 MB</td><td align="right">357 MB</td></tr>
@@ -1698,7 +2007,10 @@ with GLB or STL is the quickest of the six runs on every board but 09 and 27, wh
 <tr><td>GLB</td><td align="right">10.6 MB</td><td align="right">303 MB</td></tr>
 <tr><td>OBJ</td><td align="right">32.1 MB</td><td align="right">319 MB</td></tr>
 </table>
-<br clear="all">
+
+</td>
+</tr>
+</table>
 
 ### 23.13.3 23 PCIe x1 Card
 
@@ -1718,19 +2030,24 @@ with GLB or STL is the quickest of the six runs on every board but 09 and 27, wh
 | Visual, GLB | 0.3 | 1.1 | 3.8 | 0.5&nbsp;ms | 7.6 | 0.1 | 0.8 | 0.2 | 13.9 |
 | Visual, OBJ | 0.3 | 1.3 | 3.8 | 0.6&nbsp;ms | 7.4 | 3.9 | 0.8 | 0.2 | 17.7 |
 
-<table align="left">
-<thead><tr><th>Board</th><th><code>featureTest/</code><br><code>23_pcie_card.kicad_pcb</code><br>(<a href="https://github.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/wiki/Examples#53-pcie-x1-card">5.3</a>)</th></tr></thead>
-<tbody>
-<tr><td>Outline</td><td>80 × 64.4 mm with the fingers' tongue,<br>a slot</td></tr>
-<tr><td>Thickness</td><td>1.57 mm</td></tr>
-<tr><td>Copper layers</td><td>4</td></tr>
-<tr><td>Vias</td><td>239 through</td></tr>
-<tr><td>Board edge</td><td>36 gold fingers on<br>a bevelled tongue</td></tr>
-<tr><td>Mask, silkscreen,<br>finish</td><td>Green, white, hard gold</td></tr>
-</tbody>
-</table>
-<table align="right">
-<tr><th>File type</th><th>File size</th><th>Peak memory<br>used</th></tr>
+<table align="center">
+<tr>
+<td valign="top">
+
+| Board | `featureTest/`<br>`23_pcie_card.kicad_pcb`<br>([5.3](Examples.md#53-pcie-x1-card)) |
+|---|---|
+| Outline | 80 × 64.4 mm with the fingers' tongue,<br>a slot |
+| Thickness | 1.57 mm |
+| Copper&nbsp;layers | 4 |
+| Vias | 239 through |
+| Board&nbsp;edge | 36 gold fingers on<br>a bevelled tongue |
+| Mask,&nbsp;silkscreen,&nbsp;finish | Green, white, hard gold |
+
+</td>
+<td valign="top">
+
+<table>
+<tr><th>File<br>type</th><th>File<br>size</th><th>Peak memory<br>used</th></tr>
 <tr><th colspan="3" align="left">Simulation</th></tr>
 <tr><td>GLB</td><td align="right">41.1 MB</td><td align="right">530 MB</td></tr>
 <tr><td>STEP</td><td align="right">130.5 MB</td><td align="right">559 MB</td></tr>
@@ -1740,7 +2057,10 @@ with GLB or STL is the quickest of the six runs on every board but 09 and 27, wh
 <tr><td>GLB</td><td align="right">22.5 MB</td><td align="right">540 MB</td></tr>
 <tr><td>OBJ</td><td align="right">67.7 MB</td><td align="right">578 MB</td></tr>
 </table>
-<br clear="all">
+
+</td>
+</tr>
+</table>
 
 ## 23.14 The Numbers
 

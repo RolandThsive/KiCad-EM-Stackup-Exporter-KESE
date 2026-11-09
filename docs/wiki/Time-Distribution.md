@@ -59,19 +59,24 @@ see at this scale is marked with a line and a label.
 | Visual, GLB | 0.3 | 1.7 | 7.3 | 0.2&nbsp;ms | 6.7 | 53&nbsp;ms | 0.4 | 0.2 | 16.6 |
 | Visual, OBJ | 0.3 | 1.7 | 7.3 | 0.3&nbsp;ms | 6.6 | 1.7 | 0.4 | 0.2 | 18.2 |
 
-<table align="left">
-<thead><tr><th>Board</th><th><code>Input/rf_module.kicad_pcb</code><br>(<a href="https://github.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/wiki/Examples#51-rf-sensor-module">5.1</a>)</th></tr></thead>
-<tbody>
-<tr><td>Outline</td><td>64 × 44 mm, a cut-out</td></tr>
-<tr><td>Thickness</td><td>1.6 mm</td></tr>
-<tr><td>Copper layers</td><td>4</td></tr>
-<tr><td>Vias</td><td>307 through</td></tr>
-<tr><td>Board edge</td><td>Plated all round<br>and in the cut-out</td></tr>
-<tr><td>Mask, silkscreen,<br>finish</td><td>Blue, white, ENIG</td></tr>
-</tbody>
-</table>
-<table align="right">
-<tr><th>File type</th><th>File size</th><th>Peak memory<br>used</th></tr>
+<table align="center">
+<tr>
+<td valign="top">
+
+| Board | `Input/rf_module.kicad_pcb`<br>([5.1](Examples.md#51-rf-sensor-module)) |
+|---|---|
+| Outline | 64 × 44 mm, a cut-out |
+| Thickness | 1.6 mm |
+| Copper&nbsp;layers | 4 |
+| Vias | 307 through |
+| Board&nbsp;edge | Plated all round<br>and in the cut-out |
+| Mask,&nbsp;silkscreen,&nbsp;finish | Blue, white, ENIG |
+
+</td>
+<td valign="top">
+
+<table>
+<tr><th>File<br>type</th><th>File<br>size</th><th>Peak memory<br>used</th></tr>
 <tr><th colspan="3" align="left">Simulation</th></tr>
 <tr><td>GLB</td><td align="right">37.3 MB</td><td align="right">503 MB</td></tr>
 <tr><td>STEP</td><td align="right">114.7 MB</td><td align="right">605 MB</td></tr>
@@ -81,7 +86,10 @@ see at this scale is marked with a line and a label.
 <tr><td>GLB</td><td align="right">10.3 MB</td><td align="right">390 MB</td></tr>
 <tr><td>OBJ</td><td align="right">30.6 MB</td><td align="right">398 MB</td></tr>
 </table>
-<br clear="all">
+
+</td>
+</tr>
+</table>
 
 ## 6.2 HDI Radio Module
 
@@ -101,19 +109,24 @@ see at this scale is marked with a line and a label.
 | Visual, GLB | 0.2 | 1.1 | 3.2 | 0.3&nbsp;ms | 3.2 | 33&nbsp;ms | 0.2 | 0.2 | 8.2 |
 | Visual, OBJ | 0.2 | 1.0 | 3.2 | 0.2&nbsp;ms | 3.1 | 0.9 | 0.2 | 0.2 | 8.8 |
 
-<table align="left">
-<thead><tr><th>Board</th><th><code>Input/hdi_module.kicad_pcb</code><br>(<a href="https://github.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/wiki/Examples#52-hdi-radio-module">5.2</a>)</th></tr></thead>
-<tbody>
-<tr><td>Outline</td><td>22 × 30 mm</td></tr>
-<tr><td>Thickness</td><td>0.925 mm</td></tr>
-<tr><td>Copper layers</td><td>6, built 1+4+1</td></tr>
-<tr><td>Vias</td><td>150: 71 micro,<br>34 blind and buried, 45 through</td></tr>
-<tr><td>Board edge</td><td>43 castellated pads</td></tr>
-<tr><td>Mask, silkscreen,<br>finish</td><td>Black, white, immersion silver</td></tr>
-</tbody>
-</table>
-<table align="right">
-<tr><th>File type</th><th>File size</th><th>Peak memory<br>used</th></tr>
+<table align="center">
+<tr>
+<td valign="top">
+
+| Board | `Input/hdi_module.kicad_pcb`<br>([5.2](Examples.md#52-hdi-radio-module)) |
+|---|---|
+| Outline | 22 × 30 mm |
+| Thickness | 0.925 mm |
+| Copper&nbsp;layers | 6, built 1+4+1 |
+| Vias | 150: 71 micro,<br>34 blind and buried, 45 through |
+| Board&nbsp;edge | 43 castellated pads |
+| Mask,&nbsp;silkscreen,&nbsp;finish | Black, white, immersion silver |
+
+</td>
+<td valign="top">
+
+<table>
+<tr><th>File<br>type</th><th>File<br>size</th><th>Peak memory<br>used</th></tr>
 <tr><th colspan="3" align="left">Simulation</th></tr>
 <tr><td>GLB</td><td align="right">20.4 MB</td><td align="right">344 MB</td></tr>
 <tr><td>STEP</td><td align="right">72.7 MB</td><td align="right">357 MB</td></tr>
@@ -123,7 +136,10 @@ see at this scale is marked with a line and a label.
 <tr><td>GLB</td><td align="right">5.6 MB</td><td align="right">232 MB</td></tr>
 <tr><td>OBJ</td><td align="right">16.6 MB</td><td align="right">234 MB</td></tr>
 </table>
-<br clear="all">
+
+</td>
+</tr>
+</table>
 
 ## 6.3 PCIe x1 Card
 
@@ -143,19 +159,24 @@ see at this scale is marked with a line and a label.
 | Visual, GLB | 0.3 | 1.2 | 4.5 | 0.2&nbsp;ms | 4.0 | 46&nbsp;ms | 0.4 | 0.2 | 10.7 |
 | Visual, OBJ | 0.3 | 1.2 | 4.7 | 0.3&nbsp;ms | 4.2 | 1.6 | 0.3 | 0.2 | 12.6 |
 
-<table align="left">
-<thead><tr><th>Board</th><th><code>Input/pcie_card.kicad_pcb</code><br>(<a href="https://github.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/wiki/Examples#53-pcie-x1-card">5.3</a>)</th></tr></thead>
-<tbody>
-<tr><td>Outline</td><td>80 × 64.4 mm with the fingers' tongue,<br>a slot</td></tr>
-<tr><td>Thickness</td><td>1.57 mm</td></tr>
-<tr><td>Copper layers</td><td>4</td></tr>
-<tr><td>Vias</td><td>239 through</td></tr>
-<tr><td>Board edge</td><td>36 gold fingers</td></tr>
-<tr><td>Mask, silkscreen,<br>finish</td><td>Green, white, hard gold</td></tr>
-</tbody>
-</table>
-<table align="right">
-<tr><th>File type</th><th>File size</th><th>Peak memory<br>used</th></tr>
+<table align="center">
+<tr>
+<td valign="top">
+
+| Board | `Input/pcie_card.kicad_pcb`<br>([5.3](Examples.md#53-pcie-x1-card)) |
+|---|---|
+| Outline | 80 × 64.4 mm with the fingers' tongue,<br>a slot |
+| Thickness | 1.57 mm |
+| Copper&nbsp;layers | 4 |
+| Vias | 239 through |
+| Board&nbsp;edge | 36 gold fingers |
+| Mask,&nbsp;silkscreen,&nbsp;finish | Green, white, hard gold |
+
+</td>
+<td valign="top">
+
+<table>
+<tr><th>File<br>type</th><th>File<br>size</th><th>Peak memory<br>used</th></tr>
 <tr><th colspan="3" align="left">Simulation</th></tr>
 <tr><td>GLB</td><td align="right">29.0 MB</td><td align="right">444 MB</td></tr>
 <tr><td>STEP</td><td align="right">80.1 MB</td><td align="right">482 MB</td></tr>
@@ -165,7 +186,10 @@ see at this scale is marked with a line and a label.
 <tr><td>GLB</td><td align="right">8.8 MB</td><td align="right">323 MB</td></tr>
 <tr><td>OBJ</td><td align="right">25.7 MB</td><td align="right">318 MB</td></tr>
 </table>
-<br clear="all">
+
+</td>
+</tr>
+</table>
 
 ## 6.4 Timing Your Own Board
 
