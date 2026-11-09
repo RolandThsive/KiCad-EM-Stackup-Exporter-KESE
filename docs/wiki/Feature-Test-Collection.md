@@ -26,7 +26,7 @@ Parallel](Working-Principle.md#74-work-done-in-parallel)). On another machine th
 
 ## 23.1 Every Board At A Glance
 
-![Every board's total time in both modes, seconds a run](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/feature_0_all_boards.webp)
+![Every board's total time in both modes, seconds a run](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Feature-Test-Collection/feature_0_all_boards.webp)
 
 All the feature boards but 16b and 25 take 0.2 to 3.5 s a run. The fixed part of a run, reading the
 file and Python starting and exiting, takes 0.18 to 0.34 s of it; a board without text never reads the
@@ -39,11 +39,11 @@ and 91 vias on four layers, takes 6.7 to 7.5 s; board 25, whose countersinks are
 ### 23.2.1 01 Slotted Holes
 
 <p align="center">
-<img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/feature_test_images/01_holes_slotted/top_straight_visual.webp" width="49.5%" alt="01 Slotted holes straight from above in visual mode">
-<img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/feature_test_images/01_holes_slotted/bottom_straight_visual.webp" width="49.5%" alt="01 Slotted holes straight from below in visual mode, mirrored as KiCad flips the board">
+<img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Feature-Test-Collection/01_holes_slotted/top_straight_visual.webp" width="49.5%" alt="01 Slotted holes straight from above in visual mode">
+<img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Feature-Test-Collection/01_holes_slotted/bottom_straight_visual.webp" width="49.5%" alt="01 Slotted holes straight from below in visual mode, mirrored as KiCad flips the board">
 </p>
 
-![01 Slotted holes: stacked bars of seconds per stage; stages 4 and 6 take 41% to 68% of a run. Simulation with GLB and STEP takes 1.2 s: read 69 ms, resolve 56 ms, geometry 0.2, materials 0.1 ms, assemble 0.3, write 0.4, verify 39 ms, start-up and exit 0.2. Visual with GLB takes 1.1 s: read 68 ms, resolve 54 ms, geometry 0.2, materials 0.1 ms, assemble 0.6, write 5 ms, verify 37 ms, start-up and exit 0.2](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/feature_01_holes_slotted.webp)
+![01 Slotted holes: stacked bars of seconds per stage; stages 4 and 6 take 41% to 68% of a run. Simulation with GLB and STEP takes 1.2 s: read 69 ms, resolve 56 ms, geometry 0.2, materials 0.1 ms, assemble 0.3, write 0.4, verify 39 ms, start-up and exit 0.2. Visual with GLB takes 1.1 s: read 68 ms, resolve 54 ms, geometry 0.2, materials 0.1 ms, assemble 0.6, write 5 ms, verify 37 ms, start-up and exit 0.2](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Feature-Test-Collection/feature_01_holes_slotted.webp)
 
 | Mode | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -82,11 +82,11 @@ and 91 vias on four layers, takes 6.7 to 7.5 s; board 25, whose countersinks are
 ### 23.2.2 02 Round Holes
 
 <p align="center">
-<img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/feature_test_images/02_holes_round/top_straight_visual.webp" width="49.5%" alt="02 Round holes straight from above in visual mode">
-<img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/feature_test_images/02_holes_round/bottom_straight_visual.webp" width="49.5%" alt="02 Round holes straight from below in visual mode, mirrored as KiCad flips the board">
+<img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Feature-Test-Collection/02_holes_round/top_straight_visual.webp" width="49.5%" alt="02 Round holes straight from above in visual mode">
+<img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Feature-Test-Collection/02_holes_round/bottom_straight_visual.webp" width="49.5%" alt="02 Round holes straight from below in visual mode, mirrored as KiCad flips the board">
 </p>
 
-![02 Round holes: stacked bars of seconds per stage; stages 4 and 6 take 43% to 67% of a run. Simulation with GLB and STEP takes 1.2 s: read 71 ms, resolve 40 ms, geometry 0.2, materials 0.1 ms, assemble 0.4, write 0.3, verify 39 ms, start-up and exit 0.2. Visual with GLB takes 1.1 s: read 68 ms, resolve 43 ms, geometry 0.2, materials 0.1 ms, assemble 0.5, write 5 ms, verify 39 ms, start-up and exit 0.2](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/feature_02_holes_round.webp)
+![02 Round holes: stacked bars of seconds per stage; stages 4 and 6 take 43% to 67% of a run. Simulation with GLB and STEP takes 1.2 s: read 71 ms, resolve 40 ms, geometry 0.2, materials 0.1 ms, assemble 0.4, write 0.3, verify 39 ms, start-up and exit 0.2. Visual with GLB takes 1.1 s: read 68 ms, resolve 43 ms, geometry 0.2, materials 0.1 ms, assemble 0.5, write 5 ms, verify 39 ms, start-up and exit 0.2](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Feature-Test-Collection/feature_02_holes_round.webp)
 
 | Mode | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -125,11 +125,11 @@ and 91 vias on four layers, takes 6.7 to 7.5 s; board 25, whose countersinks are
 ### 23.2.3 03 Through Vias
 
 <p align="center">
-<img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/feature_test_images/03_vias_through/top_straight_visual.webp" width="49.5%" alt="03 Through vias straight from above in visual mode">
-<img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/feature_test_images/03_vias_through/bottom_straight_visual.webp" width="49.5%" alt="03 Through vias straight from below in visual mode, mirrored as KiCad flips the board">
+<img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Feature-Test-Collection/03_vias_through/top_straight_visual.webp" width="49.5%" alt="03 Through vias straight from above in visual mode">
+<img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Feature-Test-Collection/03_vias_through/bottom_straight_visual.webp" width="49.5%" alt="03 Through vias straight from below in visual mode, mirrored as KiCad flips the board">
 </p>
 
-![03 Through vias: stacked bars of seconds per stage; stages 4 and 6 take 53% to 70% of a run. Simulation with GLB and STEP takes 1.4 s: read 68 ms, resolve 51 ms, geometry 0.2, materials 0.1 ms, assemble 0.6, write 0.3, verify 52 ms, start-up and exit 0.2. Visual with GLB takes 1.3 s: read 68 ms, resolve 49 ms, geometry 0.2, materials 0.1 ms, assemble 0.7, write 6 ms, verify 65 ms, start-up and exit 0.2](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/feature_03_vias_through.webp)
+![03 Through vias: stacked bars of seconds per stage; stages 4 and 6 take 53% to 70% of a run. Simulation with GLB and STEP takes 1.4 s: read 68 ms, resolve 51 ms, geometry 0.2, materials 0.1 ms, assemble 0.6, write 0.3, verify 52 ms, start-up and exit 0.2. Visual with GLB takes 1.3 s: read 68 ms, resolve 49 ms, geometry 0.2, materials 0.1 ms, assemble 0.7, write 6 ms, verify 65 ms, start-up and exit 0.2](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Feature-Test-Collection/feature_03_vias_through.webp)
 
 | Mode | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -168,11 +168,11 @@ and 91 vias on four layers, takes 6.7 to 7.5 s; board 25, whose countersinks are
 ### 23.2.4 03b KiCad 10 Via Options
 
 <p align="center">
-<img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/feature_test_images/03b_vias_k10/top_straight_visual.webp" width="49.5%" alt="03b KiCad 10 via options straight from above in visual mode">
-<img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/feature_test_images/03b_vias_k10/bottom_straight_visual.webp" width="49.5%" alt="03b KiCad 10 via options straight from below in visual mode, mirrored as KiCad flips the board">
+<img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Feature-Test-Collection/03b_vias_k10/top_straight_visual.webp" width="49.5%" alt="03b KiCad 10 via options straight from above in visual mode">
+<img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Feature-Test-Collection/03b_vias_k10/bottom_straight_visual.webp" width="49.5%" alt="03b KiCad 10 via options straight from below in visual mode, mirrored as KiCad flips the board">
 </p>
 
-![03b KiCad 10 via options: stacked bars of seconds per stage; stages 4 and 6 take 41% to 85% of a run. Simulation with GLB and STEP takes 2.2 s: read 67 ms, resolve 0.2, geometry 0.3, materials 0.1 ms, assemble 0.6, write 0.8, verify 0.1, start-up and exit 0.2. Visual with GLB takes 3.5 s: read 74 ms, resolve 0.1, geometry 0.3, materials 0.1 ms, assemble 2.7, write 14 ms, verify 88 ms, start-up and exit 0.2](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/feature_03b_vias_k10.webp)
+![03b KiCad 10 via options: stacked bars of seconds per stage; stages 4 and 6 take 41% to 85% of a run. Simulation with GLB and STEP takes 2.2 s: read 67 ms, resolve 0.2, geometry 0.3, materials 0.1 ms, assemble 0.6, write 0.8, verify 0.1, start-up and exit 0.2. Visual with GLB takes 3.5 s: read 74 ms, resolve 0.1, geometry 0.3, materials 0.1 ms, assemble 2.7, write 14 ms, verify 88 ms, start-up and exit 0.2](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Feature-Test-Collection/feature_03b_vias_k10.webp)
 
 | Mode | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -211,11 +211,11 @@ and 91 vias on four layers, takes 6.7 to 7.5 s; board 25, whose countersinks are
 ### 23.2.5 04 Blind And Buried Vias
 
 <p align="center">
-<img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/feature_test_images/04_vias_blind_buried/top_straight_visual.webp" width="49.5%" alt="04 Blind and buried vias straight from above in visual mode">
-<img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/feature_test_images/04_vias_blind_buried/bottom_straight_visual.webp" width="49.5%" alt="04 Blind and buried vias straight from below in visual mode, mirrored as KiCad flips the board">
+<img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Feature-Test-Collection/04_vias_blind_buried/top_straight_visual.webp" width="49.5%" alt="04 Blind and buried vias straight from above in visual mode">
+<img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Feature-Test-Collection/04_vias_blind_buried/bottom_straight_visual.webp" width="49.5%" alt="04 Blind and buried vias straight from below in visual mode, mirrored as KiCad flips the board">
 </p>
 
-![04 Blind and buried vias: stacked bars of seconds per stage; stages 4 and 6 take 36% to 60% of a run. Simulation with GLB and STEP takes 0.7 s: read 66 ms, resolve 54 ms, geometry 65 ms, materials 0.1 ms, assemble 0.2, write 0.1, verify 27 ms, start-up and exit 0.2. Visual with GLB takes 0.9 s: read 66 ms, resolve 53 ms, geometry 74 ms, materials 0.1 ms, assemble 0.4, write 5 ms, verify 37 ms, start-up and exit 0.2](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/feature_04_vias_blind_buried.webp)
+![04 Blind and buried vias: stacked bars of seconds per stage; stages 4 and 6 take 36% to 60% of a run. Simulation with GLB and STEP takes 0.7 s: read 66 ms, resolve 54 ms, geometry 65 ms, materials 0.1 ms, assemble 0.2, write 0.1, verify 27 ms, start-up and exit 0.2. Visual with GLB takes 0.9 s: read 66 ms, resolve 53 ms, geometry 74 ms, materials 0.1 ms, assemble 0.4, write 5 ms, verify 37 ms, start-up and exit 0.2](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Feature-Test-Collection/feature_04_vias_blind_buried.webp)
 
 | Mode | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -254,11 +254,11 @@ and 91 vias on four layers, takes 6.7 to 7.5 s; board 25, whose countersinks are
 ### 23.2.6 05 Microvias
 
 <p align="center">
-<img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/feature_test_images/05_vias_micro/top_straight_visual.webp" width="49.5%" alt="05 Microvias straight from above in visual mode">
-<img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/feature_test_images/05_vias_micro/bottom_straight_visual.webp" width="49.5%" alt="05 Microvias straight from below in visual mode, mirrored as KiCad flips the board">
+<img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Feature-Test-Collection/05_vias_micro/top_straight_visual.webp" width="49.5%" alt="05 Microvias straight from above in visual mode">
+<img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Feature-Test-Collection/05_vias_micro/bottom_straight_visual.webp" width="49.5%" alt="05 Microvias straight from below in visual mode, mirrored as KiCad flips the board">
 </p>
 
-![05 Microvias: stacked bars of seconds per stage; stages 4 and 6 take 41% to 54% of a run. Simulation with GLB and STEP takes 0.6 s: read 3 ms, resolve 64 ms, geometry 69 ms, materials 0.1 ms, assemble 0.2, write 0.1, verify 22 ms, start-up and exit 0.2. Visual with GLB takes 0.7 s: read 2 ms, resolve 61 ms, geometry 57 ms, materials 0.1 ms, assemble 0.3, write 3 ms, verify 54 ms, start-up and exit 0.2](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/feature_05_vias_micro.webp)
+![05 Microvias: stacked bars of seconds per stage; stages 4 and 6 take 41% to 54% of a run. Simulation with GLB and STEP takes 0.6 s: read 3 ms, resolve 64 ms, geometry 69 ms, materials 0.1 ms, assemble 0.2, write 0.1, verify 22 ms, start-up and exit 0.2. Visual with GLB takes 0.7 s: read 2 ms, resolve 61 ms, geometry 57 ms, materials 0.1 ms, assemble 0.3, write 3 ms, verify 54 ms, start-up and exit 0.2](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Feature-Test-Collection/feature_05_vias_micro.webp)
 
 | Mode | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -297,11 +297,11 @@ and 91 vias on four layers, takes 6.7 to 7.5 s; board 25, whose countersinks are
 ### 23.2.7 24 Backdrills
 
 <p align="center">
-<img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/feature_test_images/24_backdrills/top_straight_visual.webp" width="49.5%" alt="24 Backdrills straight from above in visual mode">
-<img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/feature_test_images/24_backdrills/bottom_straight_visual.webp" width="49.5%" alt="24 Backdrills straight from below in visual mode, mirrored as KiCad flips the board">
+<img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Feature-Test-Collection/24_backdrills/top_straight_visual.webp" width="49.5%" alt="24 Backdrills straight from above in visual mode">
+<img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Feature-Test-Collection/24_backdrills/bottom_straight_visual.webp" width="49.5%" alt="24 Backdrills straight from below in visual mode, mirrored as KiCad flips the board">
 </p>
 
-![24 Backdrills: stacked bars of seconds per stage; stages 4 and 6 take 40% to 77% of a run. Simulation with GLB and STEP takes 2.3 s: read 73 ms, resolve 0.2, geometry 0.3, materials 0.2 ms, assemble 0.6, write 0.8, verify 0.1, start-up and exit 0.2. Visual with GLB takes 2.5 s: read 82 ms, resolve 0.2, geometry 0.3, materials 0.2 ms, assemble 1.6, write 15 ms, verify 88 ms, start-up and exit 0.2](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/feature_24_backdrills.webp)
+![24 Backdrills: stacked bars of seconds per stage; stages 4 and 6 take 40% to 77% of a run. Simulation with GLB and STEP takes 2.3 s: read 73 ms, resolve 0.2, geometry 0.3, materials 0.2 ms, assemble 0.6, write 0.8, verify 0.1, start-up and exit 0.2. Visual with GLB takes 2.5 s: read 82 ms, resolve 0.2, geometry 0.3, materials 0.2 ms, assemble 1.6, write 15 ms, verify 88 ms, start-up and exit 0.2](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Feature-Test-Collection/feature_24_backdrills.webp)
 
 | Mode | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -340,11 +340,11 @@ and 91 vias on four layers, takes 6.7 to 7.5 s; board 25, whose countersinks are
 ### 23.2.8 25 Counterbores And Countersinks
 
 <p align="center">
-<img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/feature_test_images/25_post_machining/top_straight_visual.webp" width="49.5%" alt="25 Counterbores and countersinks straight from above in visual mode">
-<img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/feature_test_images/25_post_machining/bottom_straight_visual.webp" width="49.5%" alt="25 Counterbores and countersinks straight from below in visual mode, mirrored as KiCad flips the board">
+<img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Feature-Test-Collection/25_post_machining/top_straight_visual.webp" width="49.5%" alt="25 Counterbores and countersinks straight from above in visual mode">
+<img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Feature-Test-Collection/25_post_machining/bottom_straight_visual.webp" width="49.5%" alt="25 Counterbores and countersinks straight from below in visual mode, mirrored as KiCad flips the board">
 </p>
 
-![25 Counterbores and countersinks: stacked bars of seconds per stage; stages 4 and 6 take 60% to 90% of a run. Simulation with GLB and STEP takes 4.1 s: read 76 ms, resolve 0.2, geometry 0.8, materials 0.1 ms, assemble 1.6, write 1.0, verify 0.2, start-up and exit 0.2. Visual with GLB takes 5.8 s: read 78 ms, resolve 0.2, geometry 0.9, materials 0.1 ms, assemble 4.3, write 15 ms, verify 95 ms, start-up and exit 0.2](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/feature_25_post_machining.webp)
+![25 Counterbores and countersinks: stacked bars of seconds per stage; stages 4 and 6 take 60% to 90% of a run. Simulation with GLB and STEP takes 4.1 s: read 76 ms, resolve 0.2, geometry 0.8, materials 0.1 ms, assemble 1.6, write 1.0, verify 0.2, start-up and exit 0.2. Visual with GLB takes 5.8 s: read 78 ms, resolve 0.2, geometry 0.9, materials 0.1 ms, assemble 4.3, write 15 ms, verify 95 ms, start-up and exit 0.2](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Feature-Test-Collection/feature_25_post_machining.webp)
 
 | Mode | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -383,11 +383,11 @@ and 91 vias on four layers, takes 6.7 to 7.5 s; board 25, whose countersinks are
 ### 23.2.9 26 Via Protection
 
 <p align="center">
-<img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/feature_test_images/26_via_protection/top_straight_visual.webp" width="49.5%" alt="26 Via protection straight from above in visual mode">
-<img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/feature_test_images/26_via_protection/bottom_straight_visual.webp" width="49.5%" alt="26 Via protection straight from below in visual mode, mirrored as KiCad flips the board">
+<img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Feature-Test-Collection/26_via_protection/top_straight_visual.webp" width="49.5%" alt="26 Via protection straight from above in visual mode">
+<img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Feature-Test-Collection/26_via_protection/bottom_straight_visual.webp" width="49.5%" alt="26 Via protection straight from below in visual mode, mirrored as KiCad flips the board">
 </p>
 
-![26 Via protection: stacked bars of seconds per stage; stages 4 and 6 take 35% to 78% of a run. Simulation with GLB and STEP takes 2.1 s: read 5 ms, resolve 0.1, geometry 0.2, materials 0.1 ms, assemble 0.6, write 1.0, verify 73 ms, start-up and exit 0.2. Visual with GLB takes 2.0 s: read 5 ms, resolve 0.1, geometry 0.2, materials 0.2 ms, assemble 1.3, write 8 ms, verify 97 ms, start-up and exit 0.2](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/feature_26_via_protection.webp)
+![26 Via protection: stacked bars of seconds per stage; stages 4 and 6 take 35% to 78% of a run. Simulation with GLB and STEP takes 2.1 s: read 5 ms, resolve 0.1, geometry 0.2, materials 0.1 ms, assemble 0.6, write 1.0, verify 73 ms, start-up and exit 0.2. Visual with GLB takes 2.0 s: read 5 ms, resolve 0.1, geometry 0.2, materials 0.2 ms, assemble 1.3, write 8 ms, verify 97 ms, start-up and exit 0.2](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Feature-Test-Collection/feature_26_via_protection.webp)
 
 | Mode | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -428,11 +428,11 @@ and 91 vias on four layers, takes 6.7 to 7.5 s; board 25, whose countersinks are
 ### 23.3.1 06 Padstacks
 
 <p align="center">
-<img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/feature_test_images/06_padstacks/top_straight_visual.webp" width="49.5%" alt="06 Padstacks straight from above in visual mode">
-<img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/feature_test_images/06_padstacks/bottom_straight_visual.webp" width="49.5%" alt="06 Padstacks straight from below in visual mode, mirrored as KiCad flips the board">
+<img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Feature-Test-Collection/06_padstacks/top_straight_visual.webp" width="49.5%" alt="06 Padstacks straight from above in visual mode">
+<img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Feature-Test-Collection/06_padstacks/bottom_straight_visual.webp" width="49.5%" alt="06 Padstacks straight from below in visual mode, mirrored as KiCad flips the board">
 </p>
 
-![06 Padstacks: stacked bars of seconds per stage; stages 4 and 6 take 43% to 63% of a run. Simulation with GLB and STEP takes 0.9 s: read 69 ms, resolve 51 ms, geometry 98 ms, materials 0.1 ms, assemble 0.3, write 0.2, verify 31 ms, start-up and exit 0.2. Visual with GLB takes 1.0 s: read 64 ms, resolve 51 ms, geometry 98 ms, materials 0.2 ms, assemble 0.5, write 5 ms, verify 38 ms, start-up and exit 0.2](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/feature_06_padstacks.webp)
+![06 Padstacks: stacked bars of seconds per stage; stages 4 and 6 take 43% to 63% of a run. Simulation with GLB and STEP takes 0.9 s: read 69 ms, resolve 51 ms, geometry 98 ms, materials 0.1 ms, assemble 0.3, write 0.2, verify 31 ms, start-up and exit 0.2. Visual with GLB takes 1.0 s: read 64 ms, resolve 51 ms, geometry 98 ms, materials 0.2 ms, assemble 0.5, write 5 ms, verify 38 ms, start-up and exit 0.2](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Feature-Test-Collection/feature_06_padstacks.webp)
 
 | Mode | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -471,11 +471,11 @@ and 91 vias on four layers, takes 6.7 to 7.5 s; board 25, whose countersinks are
 ### 23.3.2 07 Pad Shapes
 
 <p align="center">
-<img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/feature_test_images/07_pad_shapes/top_straight_visual.webp" width="49.5%" alt="07 Pad shapes straight from above in visual mode">
-<img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/feature_test_images/07_pad_shapes/bottom_straight_visual.webp" width="49.5%" alt="07 Pad shapes straight from below in visual mode, mirrored as KiCad flips the board">
+<img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Feature-Test-Collection/07_pad_shapes/top_straight_visual.webp" width="49.5%" alt="07 Pad shapes straight from above in visual mode">
+<img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Feature-Test-Collection/07_pad_shapes/bottom_straight_visual.webp" width="49.5%" alt="07 Pad shapes straight from below in visual mode, mirrored as KiCad flips the board">
 </p>
 
-![07 Pad shapes: stacked bars of seconds per stage; stages 4 and 6 take 34% to 68% of a run. Simulation with GLB and STEP takes 1.0 s: read 75 ms, resolve 39 ms, geometry 0.1, materials 0.1 ms, assemble 0.3, write 0.3, verify 26 ms, start-up and exit 0.2. Visual with GLB takes 1.1 s: read 75 ms, resolve 37 ms, geometry 0.1, materials 0.1 ms, assemble 0.6, write 5 ms, verify 42 ms, start-up and exit 0.2](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/feature_07_pad_shapes.webp)
+![07 Pad shapes: stacked bars of seconds per stage; stages 4 and 6 take 34% to 68% of a run. Simulation with GLB and STEP takes 1.0 s: read 75 ms, resolve 39 ms, geometry 0.1, materials 0.1 ms, assemble 0.3, write 0.3, verify 26 ms, start-up and exit 0.2. Visual with GLB takes 1.1 s: read 75 ms, resolve 37 ms, geometry 0.1, materials 0.1 ms, assemble 0.6, write 5 ms, verify 42 ms, start-up and exit 0.2](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Feature-Test-Collection/feature_07_pad_shapes.webp)
 
 | Mode | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -516,11 +516,11 @@ and 91 vias on four layers, takes 6.7 to 7.5 s; board 25, whose countersinks are
 ### 23.4.1 08 Copper Graphics
 
 <p align="center">
-<img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/feature_test_images/08_copper_graphics/top_straight_visual.webp" width="49.5%" alt="08 Copper graphics straight from above in visual mode">
-<img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/feature_test_images/08_copper_graphics/bottom_straight_visual.webp" width="49.5%" alt="08 Copper graphics straight from below in visual mode, mirrored as KiCad flips the board">
+<img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Feature-Test-Collection/08_copper_graphics/top_straight_visual.webp" width="49.5%" alt="08 Copper graphics straight from above in visual mode">
+<img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Feature-Test-Collection/08_copper_graphics/bottom_straight_visual.webp" width="49.5%" alt="08 Copper graphics straight from below in visual mode, mirrored as KiCad flips the board">
 </p>
 
-![08 Copper graphics: stacked bars of seconds per stage; stages 4 and 6 take 33% to 48% of a run. Simulation with GLB and STEP takes 0.7 s: read 66 ms, resolve 23 ms, geometry 39 ms, materials 0.1 ms, assemble 0.2, write 0.2, verify 17 ms, start-up and exit 0.2. Visual with GLB takes 0.7 s: read 68 ms, resolve 27 ms, geometry 37 ms, materials 0.1 ms, assemble 0.3, write 5 ms, verify 46 ms, start-up and exit 0.2](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/feature_08_copper_graphics.webp)
+![08 Copper graphics: stacked bars of seconds per stage; stages 4 and 6 take 33% to 48% of a run. Simulation with GLB and STEP takes 0.7 s: read 66 ms, resolve 23 ms, geometry 39 ms, materials 0.1 ms, assemble 0.2, write 0.2, verify 17 ms, start-up and exit 0.2. Visual with GLB takes 0.7 s: read 68 ms, resolve 27 ms, geometry 37 ms, materials 0.1 ms, assemble 0.3, write 5 ms, verify 46 ms, start-up and exit 0.2](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Feature-Test-Collection/feature_08_copper_graphics.webp)
 
 | Mode | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -559,11 +559,11 @@ and 91 vias on four layers, takes 6.7 to 7.5 s; board 25, whose countersinks are
 ### 23.4.2 08b Copper Graphics On Nets
 
 <p align="center">
-<img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/feature_test_images/08b_copper_graphics_nets/top_straight_visual.webp" width="49.5%" alt="08b Copper graphics on nets straight from above in visual mode">
-<img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/feature_test_images/08b_copper_graphics_nets/bottom_straight_visual.webp" width="49.5%" alt="08b Copper graphics on nets straight from below in visual mode, mirrored as KiCad flips the board">
+<img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Feature-Test-Collection/08b_copper_graphics_nets/top_straight_visual.webp" width="49.5%" alt="08b Copper graphics on nets straight from above in visual mode">
+<img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Feature-Test-Collection/08b_copper_graphics_nets/bottom_straight_visual.webp" width="49.5%" alt="08b Copper graphics on nets straight from below in visual mode, mirrored as KiCad flips the board">
 </p>
 
-![08b Copper graphics on nets: stacked bars of seconds per stage; stages 4 and 6 take 41% to 63% of a run. Simulation with GLB and STEP takes 0.7 s: read 8 ms, resolve 30 ms, geometry 54 ms, materials 0.1 ms, assemble 0.2, write 0.2, verify 22 ms, start-up and exit 0.2. Visual with GLB takes 0.7 s: read 8 ms, resolve 25 ms, geometry 52 ms, materials 0.1 ms, assemble 0.4, write 4 ms, verify 41 ms, start-up and exit 0.2](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/feature_08b_copper_graphics_nets.webp)
+![08b Copper graphics on nets: stacked bars of seconds per stage; stages 4 and 6 take 41% to 63% of a run. Simulation with GLB and STEP takes 0.7 s: read 8 ms, resolve 30 ms, geometry 54 ms, materials 0.1 ms, assemble 0.2, write 0.2, verify 22 ms, start-up and exit 0.2. Visual with GLB takes 0.7 s: read 8 ms, resolve 25 ms, geometry 52 ms, materials 0.1 ms, assemble 0.4, write 4 ms, verify 41 ms, start-up and exit 0.2](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Feature-Test-Collection/feature_08b_copper_graphics_nets.webp)
 
 | Mode | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -602,11 +602,11 @@ and 91 vias on four layers, takes 6.7 to 7.5 s; board 25, whose countersinks are
 ### 23.4.3 09 Copper Text
 
 <p align="center">
-<img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/feature_test_images/09_copper_text/top_straight_visual.webp" width="49.5%" alt="09 Copper text straight from above in visual mode">
-<img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/feature_test_images/09_copper_text/bottom_straight_visual.webp" width="49.5%" alt="09 Copper text straight from below in visual mode, mirrored as KiCad flips the board">
+<img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Feature-Test-Collection/09_copper_text/top_straight_visual.webp" width="49.5%" alt="09 Copper text straight from above in visual mode">
+<img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Feature-Test-Collection/09_copper_text/bottom_straight_visual.webp" width="49.5%" alt="09 Copper text straight from below in visual mode, mirrored as KiCad flips the board">
 </p>
 
-![09 Copper text: stacked bars of seconds per stage; stages 4 and 6 take 42% to 70% of a run. Simulation with GLB and STEP takes 2.6 s: read 97 ms, resolve 47 ms, geometry 0.1, materials 0.1 ms, assemble 1.0, write 1.1, verify 46 ms, start-up and exit 0.2. Visual with GLB takes 1.6 s: read 0.1, resolve 43 ms, geometry 0.1, materials 0.1 ms, assemble 1.0, write 12 ms, verify 98 ms, start-up and exit 0.2](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/feature_09_copper_text.webp)
+![09 Copper text: stacked bars of seconds per stage; stages 4 and 6 take 42% to 70% of a run. Simulation with GLB and STEP takes 2.6 s: read 97 ms, resolve 47 ms, geometry 0.1, materials 0.1 ms, assemble 1.0, write 1.1, verify 46 ms, start-up and exit 0.2. Visual with GLB takes 1.6 s: read 0.1, resolve 43 ms, geometry 0.1, materials 0.1 ms, assemble 1.0, write 12 ms, verify 98 ms, start-up and exit 0.2](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Feature-Test-Collection/feature_09_copper_text.webp)
 
 | Mode | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -645,11 +645,11 @@ and 91 vias on four layers, takes 6.7 to 7.5 s; board 25, whose countersinks are
 ### 23.4.4 10 Tracks And Arcs
 
 <p align="center">
-<img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/feature_test_images/10_tracks_arcs/top_straight_visual.webp" width="49.5%" alt="10 Tracks and arcs straight from above in visual mode">
-<img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/feature_test_images/10_tracks_arcs/bottom_straight_visual.webp" width="49.5%" alt="10 Tracks and arcs straight from below in visual mode, mirrored as KiCad flips the board">
+<img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Feature-Test-Collection/10_tracks_arcs/top_straight_visual.webp" width="49.5%" alt="10 Tracks and arcs straight from above in visual mode">
+<img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Feature-Test-Collection/10_tracks_arcs/bottom_straight_visual.webp" width="49.5%" alt="10 Tracks and arcs straight from below in visual mode, mirrored as KiCad flips the board">
 </p>
 
-![10 Tracks and arcs: stacked bars of seconds per stage; stages 4 and 6 take 31% to 59% of a run. Simulation with GLB and STEP takes 0.8 s: read 75 ms, resolve 29 ms, geometry 37 ms, materials 0.1 ms, assemble 0.2, write 0.2, verify 20 ms, start-up and exit 0.2. Visual with GLB takes 0.8 s: read 74 ms, resolve 24 ms, geometry 42 ms, materials 0.1 ms, assemble 0.4, write 5 ms, verify 42 ms, start-up and exit 0.2](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/feature_10_tracks_arcs.webp)
+![10 Tracks and arcs: stacked bars of seconds per stage; stages 4 and 6 take 31% to 59% of a run. Simulation with GLB and STEP takes 0.8 s: read 75 ms, resolve 29 ms, geometry 37 ms, materials 0.1 ms, assemble 0.2, write 0.2, verify 20 ms, start-up and exit 0.2. Visual with GLB takes 0.8 s: read 74 ms, resolve 24 ms, geometry 42 ms, materials 0.1 ms, assemble 0.4, write 5 ms, verify 42 ms, start-up and exit 0.2](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Feature-Test-Collection/feature_10_tracks_arcs.webp)
 
 | Mode | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -688,11 +688,11 @@ and 91 vias on four layers, takes 6.7 to 7.5 s; board 25, whose countersinks are
 ### 23.4.5 27 Hatched Fills
 
 <p align="center">
-<img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/feature_test_images/27_hatched_fills/top_straight_visual.webp" width="49.5%" alt="27 Hatched fills straight from above in visual mode">
-<img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/feature_test_images/27_hatched_fills/bottom_straight_visual.webp" width="49.5%" alt="27 Hatched fills straight from below in visual mode, mirrored as KiCad flips the board">
+<img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Feature-Test-Collection/27_hatched_fills/top_straight_visual.webp" width="49.5%" alt="27 Hatched fills straight from above in visual mode">
+<img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Feature-Test-Collection/27_hatched_fills/bottom_straight_visual.webp" width="49.5%" alt="27 Hatched fills straight from below in visual mode, mirrored as KiCad flips the board">
 </p>
 
-![27 Hatched fills: stacked bars of seconds per stage; stages 4 and 6 take 47% to 68% of a run. Simulation with GLB and STEP takes 2.4 s: read 0.1, resolve 89 ms, geometry 0.2, materials 0.1 ms, assemble 1.0, write 0.8, verify 57 ms, start-up and exit 0.2. Visual with GLB takes 1.6 s: read 0.1, resolve 96 ms, geometry 0.2, materials 0.2 ms, assemble 0.9, write 12 ms, verify 82 ms, start-up and exit 0.2](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/feature_27_hatched_fills.webp)
+![27 Hatched fills: stacked bars of seconds per stage; stages 4 and 6 take 47% to 68% of a run. Simulation with GLB and STEP takes 2.4 s: read 0.1, resolve 89 ms, geometry 0.2, materials 0.1 ms, assemble 1.0, write 0.8, verify 57 ms, start-up and exit 0.2. Visual with GLB takes 1.6 s: read 0.1, resolve 96 ms, geometry 0.2, materials 0.2 ms, assemble 0.9, write 12 ms, verify 82 ms, start-up and exit 0.2](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Feature-Test-Collection/feature_27_hatched_fills.webp)
 
 | Mode | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -733,11 +733,11 @@ and 91 vias on four layers, takes 6.7 to 7.5 s; board 25, whose countersinks are
 ### 23.5.1 11 Zones
 
 <p align="center">
-<img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/feature_test_images/11_zones/top_straight_visual.webp" width="49.5%" alt="11 Zones straight from above in visual mode">
-<img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/feature_test_images/11_zones/bottom_straight_visual.webp" width="49.5%" alt="11 Zones straight from below in visual mode, mirrored as KiCad flips the board">
+<img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Feature-Test-Collection/11_zones/top_straight_visual.webp" width="49.5%" alt="11 Zones straight from above in visual mode">
+<img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Feature-Test-Collection/11_zones/bottom_straight_visual.webp" width="49.5%" alt="11 Zones straight from below in visual mode, mirrored as KiCad flips the board">
 </p>
 
-![11 Zones: stacked bars of seconds per stage; stages 4 and 6 take 42% to 78% of a run. Simulation with GLB and STEP takes 2.2 s: read 93 ms, resolve 0.1, geometry 0.3, materials 0.1 ms, assemble 0.6, write 0.8, verify 87 ms, start-up and exit 0.2. Visual with GLB takes 2.2 s: read 89 ms, resolve 0.1, geometry 0.4, materials 0.2 ms, assemble 1.3, write 11 ms, verify 62 ms, start-up and exit 0.2](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/feature_11_zones.webp)
+![11 Zones: stacked bars of seconds per stage; stages 4 and 6 take 42% to 78% of a run. Simulation with GLB and STEP takes 2.2 s: read 93 ms, resolve 0.1, geometry 0.3, materials 0.1 ms, assemble 0.6, write 0.8, verify 87 ms, start-up and exit 0.2. Visual with GLB takes 2.2 s: read 89 ms, resolve 0.1, geometry 0.4, materials 0.2 ms, assemble 1.3, write 11 ms, verify 62 ms, start-up and exit 0.2](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Feature-Test-Collection/feature_11_zones.webp)
 
 | Mode | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -778,11 +778,11 @@ and 91 vias on four layers, takes 6.7 to 7.5 s; board 25, whose countersinks are
 ### 23.6.1 12 Board Outline Shapes
 
 <p align="center">
-<img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/feature_test_images/12_outline_shapes/top_straight_visual.webp" width="49.5%" alt="12 Board outline shapes straight from above in visual mode">
-<img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/feature_test_images/12_outline_shapes/bottom_straight_visual.webp" width="49.5%" alt="12 Board outline shapes straight from below in visual mode, mirrored as KiCad flips the board">
+<img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Feature-Test-Collection/12_outline_shapes/top_straight_visual.webp" width="49.5%" alt="12 Board outline shapes straight from above in visual mode">
+<img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Feature-Test-Collection/12_outline_shapes/bottom_straight_visual.webp" width="49.5%" alt="12 Board outline shapes straight from below in visual mode, mirrored as KiCad flips the board">
 </p>
 
-![12 Board outline shapes: stacked bars of seconds per stage; stages 4 and 6 take 40% to 60% of a run. Simulation with GLB and STEP takes 1.3 s: read 82 ms, resolve 45 ms, geometry 69 ms, materials 0.1 ms, assemble 0.5, write 0.4, verify 34 ms, start-up and exit 0.2. Visual with GLB takes 1.1 s: read 89 ms, resolve 37 ms, geometry 82 ms, materials 0.1 ms, assemble 0.6, write 11 ms, verify 69 ms, start-up and exit 0.2](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/feature_12_outline_shapes.webp)
+![12 Board outline shapes: stacked bars of seconds per stage; stages 4 and 6 take 40% to 60% of a run. Simulation with GLB and STEP takes 1.3 s: read 82 ms, resolve 45 ms, geometry 69 ms, materials 0.1 ms, assemble 0.5, write 0.4, verify 34 ms, start-up and exit 0.2. Visual with GLB takes 1.1 s: read 89 ms, resolve 37 ms, geometry 82 ms, materials 0.1 ms, assemble 0.6, write 11 ms, verify 69 ms, start-up and exit 0.2](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Feature-Test-Collection/feature_12_outline_shapes.webp)
 
 | Mode | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -821,11 +821,11 @@ and 91 vias on four layers, takes 6.7 to 7.5 s; board 25, whose countersinks are
 ### 23.6.2 13a No Board Outline
 
 <p align="center">
-<img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/feature_test_images/13a_outline_none/top_straight_visual.webp" width="49.5%" alt="13a No board outline straight from above in visual mode">
-<img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/feature_test_images/13a_outline_none/bottom_straight_visual.webp" width="49.5%" alt="13a No board outline straight from below in visual mode, mirrored as KiCad flips the board">
+<img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Feature-Test-Collection/13a_outline_none/top_straight_visual.webp" width="49.5%" alt="13a No board outline straight from above in visual mode">
+<img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Feature-Test-Collection/13a_outline_none/bottom_straight_visual.webp" width="49.5%" alt="13a No board outline straight from below in visual mode, mirrored as KiCad flips the board">
 </p>
 
-![13a No board outline: stacked bars of seconds per stage; stages 4 and 6 take 33% to 48% of a run. Simulation with GLB and STEP takes 0.6 s: read 65 ms, resolve 28 ms, geometry 59 ms, materials 0.1 ms, assemble 0.1, write 0.1, verify 18 ms, start-up and exit 0.2. Visual with GLB takes 0.7 s: read 67 ms, resolve 26 ms, geometry 59 ms, materials 0.1 ms, assemble 0.3, write 4 ms, verify 61 ms, start-up and exit 0.2](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/feature_13a_outline_none.webp)
+![13a No board outline: stacked bars of seconds per stage; stages 4 and 6 take 33% to 48% of a run. Simulation with GLB and STEP takes 0.6 s: read 65 ms, resolve 28 ms, geometry 59 ms, materials 0.1 ms, assemble 0.1, write 0.1, verify 18 ms, start-up and exit 0.2. Visual with GLB takes 0.7 s: read 67 ms, resolve 26 ms, geometry 59 ms, materials 0.1 ms, assemble 0.3, write 4 ms, verify 61 ms, start-up and exit 0.2](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Feature-Test-Collection/feature_13a_outline_none.webp)
 
 | Mode | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -864,11 +864,11 @@ and 91 vias on four layers, takes 6.7 to 7.5 s; board 25, whose countersinks are
 ### 23.6.3 13b Two Board Outlines
 
 <p align="center">
-<img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/feature_test_images/13b_outline_two/top_straight_visual.webp" width="49.5%" alt="13b Two board outlines straight from above in visual mode">
-<img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/feature_test_images/13b_outline_two/bottom_straight_visual.webp" width="49.5%" alt="13b Two board outlines straight from below in visual mode, mirrored as KiCad flips the board">
+<img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Feature-Test-Collection/13b_outline_two/top_straight_visual.webp" width="49.5%" alt="13b Two board outlines straight from above in visual mode">
+<img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Feature-Test-Collection/13b_outline_two/bottom_straight_visual.webp" width="49.5%" alt="13b Two board outlines straight from below in visual mode, mirrored as KiCad flips the board">
 </p>
 
-![13b Two board outlines: stacked bars of seconds per stage; reading, start-up and exit take 48% to 50% of a run. Simulation with GLB and STEP takes 0.5 s: read 76 ms, resolve 26 ms, geometry 49 ms, materials 0.1 ms, assemble 99 ms, write 84 ms, verify 19 ms, start-up and exit 0.2. Visual with GLB takes 0.7 s: read 74 ms, resolve 24 ms, geometry 39 ms, materials 0.1 ms, assemble 0.3, write 4 ms, verify 30 ms, start-up and exit 0.2](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/feature_13b_outline_two.webp)
+![13b Two board outlines: stacked bars of seconds per stage; reading, start-up and exit take 48% to 50% of a run. Simulation with GLB and STEP takes 0.5 s: read 76 ms, resolve 26 ms, geometry 49 ms, materials 0.1 ms, assemble 99 ms, write 84 ms, verify 19 ms, start-up and exit 0.2. Visual with GLB takes 0.7 s: read 74 ms, resolve 24 ms, geometry 39 ms, materials 0.1 ms, assemble 0.3, write 4 ms, verify 30 ms, start-up and exit 0.2](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Feature-Test-Collection/feature_13b_outline_two.webp)
 
 | Mode | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -909,11 +909,11 @@ and 91 vias on four layers, takes 6.7 to 7.5 s; board 25, whose countersinks are
 ### 23.7.1 14 Full Stack-Up
 
 <p align="center">
-<img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/feature_test_images/14_stackup_full/top_straight_visual.webp" width="49.5%" alt="14 Full stack-up straight from above in visual mode">
-<img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/feature_test_images/14_stackup_full/bottom_straight_visual.webp" width="49.5%" alt="14 Full stack-up straight from below in visual mode, mirrored as KiCad flips the board">
+<img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Feature-Test-Collection/14_stackup_full/top_straight_visual.webp" width="49.5%" alt="14 Full stack-up straight from above in visual mode">
+<img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Feature-Test-Collection/14_stackup_full/bottom_straight_visual.webp" width="49.5%" alt="14 Full stack-up straight from below in visual mode, mirrored as KiCad flips the board">
 </p>
 
-![14 Full stack-up: stacked bars of seconds per stage; stages 4 and 6 take 32% to 56% of a run. Simulation with GLB and STEP takes 0.6 s: read 65 ms, resolve 35 ms, geometry 63 ms, materials 0.1 ms, assemble 0.1, write 0.1, verify 23 ms, start-up and exit 0.2. Visual with GLB takes 0.8 s: read 69 ms, resolve 39 ms, geometry 68 ms, materials 0.1 ms, assemble 0.4, write 3 ms, verify 33 ms, start-up and exit 0.2](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/feature_14_stackup_full.webp)
+![14 Full stack-up: stacked bars of seconds per stage; stages 4 and 6 take 32% to 56% of a run. Simulation with GLB and STEP takes 0.6 s: read 65 ms, resolve 35 ms, geometry 63 ms, materials 0.1 ms, assemble 0.1, write 0.1, verify 23 ms, start-up and exit 0.2. Visual with GLB takes 0.8 s: read 69 ms, resolve 39 ms, geometry 68 ms, materials 0.1 ms, assemble 0.4, write 3 ms, verify 33 ms, start-up and exit 0.2](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Feature-Test-Collection/feature_14_stackup_full.webp)
 
 | Mode | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -952,11 +952,11 @@ and 91 vias on four layers, takes 6.7 to 7.5 s; board 25, whose countersinks are
 ### 23.7.2 15 No Stack-Up
 
 <p align="center">
-<img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/feature_test_images/15_stackup_none/top_straight_visual.webp" width="49.5%" alt="15 No stack-up straight from above in visual mode">
-<img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/feature_test_images/15_stackup_none/bottom_straight_visual.webp" width="49.5%" alt="15 No stack-up straight from below in visual mode, mirrored as KiCad flips the board">
+<img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Feature-Test-Collection/15_stackup_none/top_straight_visual.webp" width="49.5%" alt="15 No stack-up straight from above in visual mode">
+<img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Feature-Test-Collection/15_stackup_none/bottom_straight_visual.webp" width="49.5%" alt="15 No stack-up straight from below in visual mode, mirrored as KiCad flips the board">
 </p>
 
-![15 No stack-up: stacked bars of seconds per stage; stages 4 and 6 take 30% to 55% of a run. Simulation with GLB and STEP takes 0.6 s: read 68 ms, resolve 36 ms, geometry 55 ms, materials 0.1 ms, assemble 0.1, write 99 ms, verify 22 ms, start-up and exit 0.2. Visual with GLB takes 0.8 s: read 69 ms, resolve 34 ms, geometry 60 ms, materials 0.1 ms, assemble 0.4, write 3 ms, verify 29 ms, start-up and exit 0.2](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/feature_15_stackup_none.webp)
+![15 No stack-up: stacked bars of seconds per stage; stages 4 and 6 take 30% to 55% of a run. Simulation with GLB and STEP takes 0.6 s: read 68 ms, resolve 36 ms, geometry 55 ms, materials 0.1 ms, assemble 0.1, write 99 ms, verify 22 ms, start-up and exit 0.2. Visual with GLB takes 0.8 s: read 69 ms, resolve 34 ms, geometry 60 ms, materials 0.1 ms, assemble 0.4, write 3 ms, verify 29 ms, start-up and exit 0.2](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Feature-Test-Collection/feature_15_stackup_none.webp)
 
 | Mode | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -997,11 +997,11 @@ and 91 vias on four layers, takes 6.7 to 7.5 s; board 25, whose countersinks are
 ### 23.8.1 16 Castellated Pads And A Plated Edge
 
 <p align="center">
-<img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/feature_test_images/16_edge_plating_castellation/top_straight_visual.webp" width="49.5%" alt="16 Castellated pads and a plated edge straight from above in visual mode">
-<img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/feature_test_images/16_edge_plating_castellation/bottom_straight_visual.webp" width="49.5%" alt="16 Castellated pads and a plated edge straight from below in visual mode, mirrored as KiCad flips the board">
+<img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Feature-Test-Collection/16_edge_plating_castellation/top_straight_visual.webp" width="49.5%" alt="16 Castellated pads and a plated edge straight from above in visual mode">
+<img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Feature-Test-Collection/16_edge_plating_castellation/bottom_straight_visual.webp" width="49.5%" alt="16 Castellated pads and a plated edge straight from below in visual mode, mirrored as KiCad flips the board">
 </p>
 
-![16 Castellated pads and a plated edge: stacked bars of seconds per stage; stages 4 and 6 take 36% to 53% of a run. Simulation with GLB and STEP takes 0.8 s: read 81 ms, resolve 77 ms, geometry 96 ms, materials 0.1 ms, assemble 0.2, write 0.1, verify 25 ms, start-up and exit 0.2. Visual with GLB takes 0.8 s: read 68 ms, resolve 70 ms, geometry 87 ms, materials 0.1 ms, assemble 0.3, write 5 ms, verify 45 ms, start-up and exit 0.2](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/feature_16_edge_plating_castellation.webp)
+![16 Castellated pads and a plated edge: stacked bars of seconds per stage; stages 4 and 6 take 36% to 53% of a run. Simulation with GLB and STEP takes 0.8 s: read 81 ms, resolve 77 ms, geometry 96 ms, materials 0.1 ms, assemble 0.2, write 0.1, verify 25 ms, start-up and exit 0.2. Visual with GLB takes 0.8 s: read 68 ms, resolve 70 ms, geometry 87 ms, materials 0.1 ms, assemble 0.3, write 5 ms, verify 45 ms, start-up and exit 0.2](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Feature-Test-Collection/feature_16_edge_plating_castellation.webp)
 
 | Mode | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -1040,11 +1040,11 @@ and 91 vias on four layers, takes 6.7 to 7.5 s; board 25, whose countersinks are
 ### 23.8.2 16b Plated Board Edge With A GND Border
 
 <p align="center">
-<img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/feature_test_images/16b_edge_plating_border/top_straight_visual.webp" width="49.5%" alt="16b Plated board edge with a GND border straight from above in visual mode">
-<img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/feature_test_images/16b_edge_plating_border/bottom_straight_visual.webp" width="49.5%" alt="16b Plated board edge with a GND border straight from below in visual mode, mirrored as KiCad flips the board">
+<img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Feature-Test-Collection/16b_edge_plating_border/top_straight_visual.webp" width="49.5%" alt="16b Plated board edge with a GND border straight from above in visual mode">
+<img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Feature-Test-Collection/16b_edge_plating_border/bottom_straight_visual.webp" width="49.5%" alt="16b Plated board edge with a GND border straight from below in visual mode, mirrored as KiCad flips the board">
 </p>
 
-![16b Plated board edge with a GND border: stacked bars of seconds per stage; stages 4 and 6 take 62% to 87% of a run. Simulation with GLB and STEP takes 6.7 s: read 0.1, resolve 0.5, geometry 2.1, materials 0.2 ms, assemble 2.1, write 1.4, verify 0.2, start-up and exit 0.2. Visual with GLB takes 7.5 s: read 0.1, resolve 0.4, geometry 2.1, materials 0.3 ms, assemble 4.4, write 30 ms, verify 0.2, start-up and exit 0.3](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/feature_16b_edge_plating_border.webp)
+![16b Plated board edge with a GND border: stacked bars of seconds per stage; stages 4 and 6 take 62% to 87% of a run. Simulation with GLB and STEP takes 6.7 s: read 0.1, resolve 0.5, geometry 2.1, materials 0.2 ms, assemble 2.1, write 1.4, verify 0.2, start-up and exit 0.2. Visual with GLB takes 7.5 s: read 0.1, resolve 0.4, geometry 2.1, materials 0.3 ms, assemble 4.4, write 30 ms, verify 0.2, start-up and exit 0.3](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Feature-Test-Collection/feature_16b_edge_plating_border.webp)
 
 | Mode | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -1083,11 +1083,11 @@ and 91 vias on four layers, takes 6.7 to 7.5 s; board 25, whose countersinks are
 ### 23.8.3 28 Machining At A Plated Edge
 
 <p align="center">
-<img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/feature_test_images/28_plated_edge_machining/top_straight_visual.webp" width="49.5%" alt="28 Machining at a plated edge straight from above in visual mode">
-<img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/feature_test_images/28_plated_edge_machining/bottom_straight_visual.webp" width="49.5%" alt="28 Machining at a plated edge straight from below in visual mode, mirrored as KiCad flips the board">
+<img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Feature-Test-Collection/28_plated_edge_machining/top_straight_visual.webp" width="49.5%" alt="28 Machining at a plated edge straight from above in visual mode">
+<img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Feature-Test-Collection/28_plated_edge_machining/bottom_straight_visual.webp" width="49.5%" alt="28 Machining at a plated edge straight from below in visual mode, mirrored as KiCad flips the board">
 </p>
 
-![28 Machining at a plated edge: stacked bars of seconds per stage; stages 4 and 6 take 58% to 79% of a run. Simulation with GLB and STEP takes 1.5 s: read 70 ms, resolve 83 ms, geometry 0.3, materials 0.1 ms, assemble 0.6, write 0.2, verify 54 ms, start-up and exit 0.2. Visual with GLB takes 1.8 s: read 71 ms, resolve 85 ms, geometry 0.3, materials 0.1 ms, assemble 1.1, write 7 ms, verify 36 ms, start-up and exit 0.2](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/feature_28_plated_edge_machining.webp)
+![28 Machining at a plated edge: stacked bars of seconds per stage; stages 4 and 6 take 58% to 79% of a run. Simulation with GLB and STEP takes 1.5 s: read 70 ms, resolve 83 ms, geometry 0.3, materials 0.1 ms, assemble 0.6, write 0.2, verify 54 ms, start-up and exit 0.2. Visual with GLB takes 1.8 s: read 71 ms, resolve 85 ms, geometry 0.3, materials 0.1 ms, assemble 1.1, write 7 ms, verify 36 ms, start-up and exit 0.2](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Feature-Test-Collection/feature_28_plated_edge_machining.webp)
 
 | Mode | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -1128,11 +1128,11 @@ and 91 vias on four layers, takes 6.7 to 7.5 s; board 25, whose countersinks are
 ### 23.9.1 17 Solder Mask And Silkscreen
 
 <p align="center">
-<img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/feature_test_images/17_mask_silk/top_straight_visual.webp" width="49.5%" alt="17 Solder mask and silkscreen straight from above in visual mode">
-<img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/feature_test_images/17_mask_silk/bottom_straight_visual.webp" width="49.5%" alt="17 Solder mask and silkscreen straight from below in visual mode, mirrored as KiCad flips the board">
+<img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Feature-Test-Collection/17_mask_silk/top_straight_visual.webp" width="49.5%" alt="17 Solder mask and silkscreen straight from above in visual mode">
+<img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Feature-Test-Collection/17_mask_silk/bottom_straight_visual.webp" width="49.5%" alt="17 Solder mask and silkscreen straight from below in visual mode, mirrored as KiCad flips the board">
 </p>
 
-![17 Solder mask and silkscreen: stacked bars of seconds per stage; stages 4 and 6 take 36% to 55% of a run. Simulation with GLB and STEP takes 0.8 s: read 77 ms, resolve 76 ms, geometry 0.1, materials 0.1 ms, assemble 0.2, write 0.2, verify 20 ms, start-up and exit 0.2. Visual with GLB takes 0.9 s: read 75 ms, resolve 66 ms, geometry 0.1, materials 0.1 ms, assemble 0.4, write 6 ms, verify 45 ms, start-up and exit 0.2](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/feature_17_mask_silk.webp)
+![17 Solder mask and silkscreen: stacked bars of seconds per stage; stages 4 and 6 take 36% to 55% of a run. Simulation with GLB and STEP takes 0.8 s: read 77 ms, resolve 76 ms, geometry 0.1, materials 0.1 ms, assemble 0.2, write 0.2, verify 20 ms, start-up and exit 0.2. Visual with GLB takes 0.9 s: read 75 ms, resolve 66 ms, geometry 0.1, materials 0.1 ms, assemble 0.4, write 6 ms, verify 45 ms, start-up and exit 0.2](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Feature-Test-Collection/feature_17_mask_silk.webp)
 
 | Mode | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -1171,11 +1171,11 @@ and 91 vias on four layers, takes 6.7 to 7.5 s; board 25, whose countersinks are
 ### 23.9.2 17b Silkscreen Over Copper
 
 <p align="center">
-<img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/feature_test_images/17b_silk_over_copper/top_straight_visual.webp" width="49.5%" alt="17b Silkscreen over copper straight from above in visual mode">
-<img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/feature_test_images/17b_silk_over_copper/bottom_straight_visual.webp" width="49.5%" alt="17b Silkscreen over copper straight from below in visual mode, mirrored as KiCad flips the board">
+<img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Feature-Test-Collection/17b_silk_over_copper/top_straight_visual.webp" width="49.5%" alt="17b Silkscreen over copper straight from above in visual mode">
+<img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Feature-Test-Collection/17b_silk_over_copper/bottom_straight_visual.webp" width="49.5%" alt="17b Silkscreen over copper straight from below in visual mode, mirrored as KiCad flips the board">
 </p>
 
-![17b Silkscreen over copper: stacked bars of seconds per stage; stages 4 and 6 take 40% to 67% of a run. Simulation with GLB and STEP takes 0.9 s: read 77 ms, resolve 36 ms, geometry 0.1, materials 0.2 ms, assemble 0.2, write 0.2, verify 28 ms, start-up and exit 0.2. Visual with GLB takes 1.0 s: read 72 ms, resolve 32 ms, geometry 0.1, materials 0.2 ms, assemble 0.5, write 5 ms, verify 36 ms, start-up and exit 0.2](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/feature_17b_silk_over_copper.webp)
+![17b Silkscreen over copper: stacked bars of seconds per stage; stages 4 and 6 take 40% to 67% of a run. Simulation with GLB and STEP takes 0.9 s: read 77 ms, resolve 36 ms, geometry 0.1, materials 0.2 ms, assemble 0.2, write 0.2, verify 28 ms, start-up and exit 0.2. Visual with GLB takes 1.0 s: read 72 ms, resolve 32 ms, geometry 0.1, materials 0.2 ms, assemble 0.5, write 5 ms, verify 36 ms, start-up and exit 0.2](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Feature-Test-Collection/feature_17b_silk_over_copper.webp)
 
 | Mode | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -1216,11 +1216,11 @@ and 91 vias on four layers, takes 6.7 to 7.5 s; board 25, whose countersinks are
 ### 23.10.1 18 Gold Edge Fingers
 
 <p align="center">
-<img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/feature_test_images/18_finishes/top_straight_visual.webp" width="49.5%" alt="18 Gold edge fingers straight from above in visual mode">
-<img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/feature_test_images/18_finishes/bottom_straight_visual.webp" width="49.5%" alt="18 Gold edge fingers straight from below in visual mode, mirrored as KiCad flips the board">
+<img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Feature-Test-Collection/18_finishes/top_straight_visual.webp" width="49.5%" alt="18 Gold edge fingers straight from above in visual mode">
+<img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Feature-Test-Collection/18_finishes/bottom_straight_visual.webp" width="49.5%" alt="18 Gold edge fingers straight from below in visual mode, mirrored as KiCad flips the board">
 </p>
 
-![18 Gold edge fingers: stacked bars of seconds per stage; stages 4 and 6 take 33% to 56% of a run. Simulation with GLB and STEP takes 0.7 s: read 69 ms, resolve 40 ms, geometry 53 ms, materials 0.1 ms, assemble 0.2, write 0.1, verify 20 ms, start-up and exit 0.2. Visual with GLB takes 0.8 s: read 68 ms, resolve 36 ms, geometry 48 ms, materials 0.1 ms, assemble 0.4, write 5 ms, verify 51 ms, start-up and exit 0.2](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/feature_18_finishes.webp)
+![18 Gold edge fingers: stacked bars of seconds per stage; stages 4 and 6 take 33% to 56% of a run. Simulation with GLB and STEP takes 0.7 s: read 69 ms, resolve 40 ms, geometry 53 ms, materials 0.1 ms, assemble 0.2, write 0.1, verify 20 ms, start-up and exit 0.2. Visual with GLB takes 0.8 s: read 68 ms, resolve 36 ms, geometry 48 ms, materials 0.1 ms, assemble 0.4, write 5 ms, verify 51 ms, start-up and exit 0.2](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Feature-Test-Collection/feature_18_finishes.webp)
 
 | Mode | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -1259,11 +1259,11 @@ and 91 vias on four layers, takes 6.7 to 7.5 s; board 25, whose countersinks are
 ### 23.10.2 18b Finish On Every Kind Of Bare Copper
 
 <p align="center">
-<img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/feature_test_images/18b_finish_pads/top_straight_visual.webp" width="49.5%" alt="18b Finish on every kind of bare copper straight from above in visual mode">
-<img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/feature_test_images/18b_finish_pads/bottom_straight_visual.webp" width="49.5%" alt="18b Finish on every kind of bare copper straight from below in visual mode, mirrored as KiCad flips the board">
+<img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Feature-Test-Collection/18b_finish_pads/top_straight_visual.webp" width="49.5%" alt="18b Finish on every kind of bare copper straight from above in visual mode">
+<img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Feature-Test-Collection/18b_finish_pads/bottom_straight_visual.webp" width="49.5%" alt="18b Finish on every kind of bare copper straight from below in visual mode, mirrored as KiCad flips the board">
 </p>
 
-![18b Finish on every kind of bare copper: stacked bars of seconds per stage; stages 4 and 6 take 41% to 63% of a run. Simulation with GLB and STEP takes 0.8 s: read 68 ms, resolve 38 ms, geometry 0.1, materials 0.1 ms, assemble 0.2, write 0.2, verify 27 ms, start-up and exit 0.2. Visual with GLB takes 1.0 s: read 69 ms, resolve 36 ms, geometry 0.1, materials 0.1 ms, assemble 0.5, write 4 ms, verify 41 ms, start-up and exit 0.2](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/feature_18b_finish_pads.webp)
+![18b Finish on every kind of bare copper: stacked bars of seconds per stage; stages 4 and 6 take 41% to 63% of a run. Simulation with GLB and STEP takes 0.8 s: read 68 ms, resolve 38 ms, geometry 0.1, materials 0.1 ms, assemble 0.2, write 0.2, verify 27 ms, start-up and exit 0.2. Visual with GLB takes 1.0 s: read 69 ms, resolve 36 ms, geometry 0.1, materials 0.1 ms, assemble 0.5, write 4 ms, verify 41 ms, start-up and exit 0.2](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Feature-Test-Collection/feature_18b_finish_pads.webp)
 
 | Mode | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -1302,11 +1302,11 @@ and 91 vias on four layers, takes 6.7 to 7.5 s; board 25, whose countersinks are
 ### 23.10.3 18c Finish Before The Solder Mask
 
 <p align="center">
-<img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/feature_test_images/18c_finish_before_mask/top_straight_visual.webp" width="49.5%" alt="18c Finish before the solder mask straight from above in visual mode">
-<img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/feature_test_images/18c_finish_before_mask/bottom_straight_visual.webp" width="49.5%" alt="18c Finish before the solder mask straight from below in visual mode, mirrored as KiCad flips the board">
+<img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Feature-Test-Collection/18c_finish_before_mask/top_straight_visual.webp" width="49.5%" alt="18c Finish before the solder mask straight from above in visual mode">
+<img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Feature-Test-Collection/18c_finish_before_mask/bottom_straight_visual.webp" width="49.5%" alt="18c Finish before the solder mask straight from below in visual mode, mirrored as KiCad flips the board">
 </p>
 
-![18c Finish before the solder mask: stacked bars of seconds per stage; stages 4 and 6 take 48% to 70% of a run. Simulation with GLB and STEP takes 1.3 s: read 76 ms, resolve 36 ms, geometry 0.2, materials 0.1 ms, assemble 0.4, write 0.3, verify 44 ms, start-up and exit 0.2. Visual with GLB takes 1.1 s: read 70 ms, resolve 36 ms, geometry 0.2, materials 0.1 ms, assemble 0.6, write 7 ms, verify 38 ms, start-up and exit 0.2](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/feature_18c_finish_before_mask.webp)
+![18c Finish before the solder mask: stacked bars of seconds per stage; stages 4 and 6 take 48% to 70% of a run. Simulation with GLB and STEP takes 1.3 s: read 76 ms, resolve 36 ms, geometry 0.2, materials 0.1 ms, assemble 0.4, write 0.3, verify 44 ms, start-up and exit 0.2. Visual with GLB takes 1.1 s: read 70 ms, resolve 36 ms, geometry 0.2, materials 0.1 ms, assemble 0.6, write 7 ms, verify 38 ms, start-up and exit 0.2](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Feature-Test-Collection/feature_18c_finish_before_mask.webp)
 
 | Mode | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -1347,11 +1347,11 @@ and 91 vias on four layers, takes 6.7 to 7.5 s; board 25, whose countersinks are
 ### 23.11.1 19 Items KESE Skips
 
 <p align="center">
-<img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/feature_test_images/19_skipped_items/top_straight_visual.webp" width="49.5%" alt="19 Items KESE skips straight from above in visual mode">
-<img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/feature_test_images/19_skipped_items/bottom_straight_visual.webp" width="49.5%" alt="19 Items KESE skips straight from below in visual mode, mirrored as KiCad flips the board">
+<img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Feature-Test-Collection/19_skipped_items/top_straight_visual.webp" width="49.5%" alt="19 Items KESE skips straight from above in visual mode">
+<img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Feature-Test-Collection/19_skipped_items/bottom_straight_visual.webp" width="49.5%" alt="19 Items KESE skips straight from below in visual mode, mirrored as KiCad flips the board">
 </p>
 
-![19 Items KESE skips: stacked bars of seconds per stage; reading, start-up and exit take 57% to 64% of a run. Simulation with GLB and STEP takes 0.4 s: read 67 ms, resolve 19 ms, geometry 21 ms, materials 0.1 ms, assemble 45 ms, write 45 ms, verify 9 ms, start-up and exit 0.2. Visual with GLB takes 0.4 s: read 61 ms, resolve 20 ms, geometry 21 ms, materials 0.1 ms, assemble 0.1, write 3 ms, verify 26 ms, start-up and exit 0.2](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/feature_19_skipped_items.webp)
+![19 Items KESE skips: stacked bars of seconds per stage; reading, start-up and exit take 57% to 64% of a run. Simulation with GLB and STEP takes 0.4 s: read 67 ms, resolve 19 ms, geometry 21 ms, materials 0.1 ms, assemble 45 ms, write 45 ms, verify 9 ms, start-up and exit 0.2. Visual with GLB takes 0.4 s: read 61 ms, resolve 20 ms, geometry 21 ms, materials 0.1 ms, assemble 0.1, write 3 ms, verify 26 ms, start-up and exit 0.2](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Feature-Test-Collection/feature_19_skipped_items.webp)
 
 | Mode | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -1390,11 +1390,11 @@ and 91 vias on four layers, takes 6.7 to 7.5 s; board 25, whose countersinks are
 ### 23.11.2 19b Items KESE Skips, KiCad 10
 
 <p align="center">
-<img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/feature_test_images/19b_skipped_items_k10/top_straight_visual.webp" width="49.5%" alt="19b Items KESE skips, KiCad 10 straight from above in visual mode">
-<img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/feature_test_images/19b_skipped_items_k10/bottom_straight_visual.webp" width="49.5%" alt="19b Items KESE skips, KiCad 10 straight from below in visual mode, mirrored as KiCad flips the board">
+<img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Feature-Test-Collection/19b_skipped_items_k10/top_straight_visual.webp" width="49.5%" alt="19b Items KESE skips, KiCad 10 straight from above in visual mode">
+<img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Feature-Test-Collection/19b_skipped_items_k10/bottom_straight_visual.webp" width="49.5%" alt="19b Items KESE skips, KiCad 10 straight from below in visual mode, mirrored as KiCad flips the board">
 </p>
 
-![19b Items KESE skips, KiCad 10: stacked bars of seconds per stage; reading, start-up and exit take 77% to 83% of a run. Simulation with GLB and STEP takes 0.2 s: read 0.9 ms, resolve 6 ms, geometry 8 ms, materials 0.0 ms, assemble 16 ms, write 7 ms, verify 2 ms, start-up and exit 0.2. Visual with GLB takes 0.3 s: read 0.9 ms, resolve 6 ms, geometry 7 ms, materials 0.0 ms, assemble 34 ms, write 1 ms, verify 12 ms, start-up and exit 0.2](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/feature_19b_skipped_items_k10.webp)
+![19b Items KESE skips, KiCad 10: stacked bars of seconds per stage; reading, start-up and exit take 77% to 83% of a run. Simulation with GLB and STEP takes 0.2 s: read 0.9 ms, resolve 6 ms, geometry 8 ms, materials 0.0 ms, assemble 16 ms, write 7 ms, verify 2 ms, start-up and exit 0.2. Visual with GLB takes 0.3 s: read 0.9 ms, resolve 6 ms, geometry 7 ms, materials 0.0 ms, assemble 34 ms, write 1 ms, verify 12 ms, start-up and exit 0.2](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Feature-Test-Collection/feature_19b_skipped_items_k10.webp)
 
 | Mode | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -1435,11 +1435,11 @@ and 91 vias on four layers, takes 6.7 to 7.5 s; board 25, whose countersinks are
 ### 23.12.1 20a KiCad 6 Format
 
 <p align="center">
-<img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/feature_test_images/20a_format_kicad6/top_straight_visual.webp" width="49.5%" alt="20a KiCad 6 format straight from above in visual mode">
-<img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/feature_test_images/20a_format_kicad6/bottom_straight_visual.webp" width="49.5%" alt="20a KiCad 6 format straight from below in visual mode, mirrored as KiCad flips the board">
+<img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Feature-Test-Collection/20a_format_kicad6/top_straight_visual.webp" width="49.5%" alt="20a KiCad 6 format straight from above in visual mode">
+<img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Feature-Test-Collection/20a_format_kicad6/bottom_straight_visual.webp" width="49.5%" alt="20a KiCad 6 format straight from below in visual mode, mirrored as KiCad flips the board">
 </p>
 
-![20a KiCad 6 format: stacked bars of seconds per stage; stages 4 and 6 take 33% to 56% of a run. Simulation with GLB and STEP takes 0.7 s: read 72 ms, resolve 32 ms, geometry 63 ms, materials 0.1 ms, assemble 0.2, write 0.1, verify 20 ms, start-up and exit 0.2. Visual with GLB takes 0.8 s: read 69 ms, resolve 34 ms, geometry 68 ms, materials 0.1 ms, assemble 0.4, write 4 ms, verify 34 ms, start-up and exit 0.2](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/feature_20a_format_kicad6.webp)
+![20a KiCad 6 format: stacked bars of seconds per stage; stages 4 and 6 take 33% to 56% of a run. Simulation with GLB and STEP takes 0.7 s: read 72 ms, resolve 32 ms, geometry 63 ms, materials 0.1 ms, assemble 0.2, write 0.1, verify 20 ms, start-up and exit 0.2. Visual with GLB takes 0.8 s: read 69 ms, resolve 34 ms, geometry 68 ms, materials 0.1 ms, assemble 0.4, write 4 ms, verify 34 ms, start-up and exit 0.2](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Feature-Test-Collection/feature_20a_format_kicad6.webp)
 
 | Mode | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -1478,11 +1478,11 @@ and 91 vias on four layers, takes 6.7 to 7.5 s; board 25, whose countersinks are
 ### 23.12.2 20b KiCad 7 Format
 
 <p align="center">
-<img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/feature_test_images/20b_format_kicad7/top_straight_visual.webp" width="49.5%" alt="20b KiCad 7 format straight from above in visual mode">
-<img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/feature_test_images/20b_format_kicad7/bottom_straight_visual.webp" width="49.5%" alt="20b KiCad 7 format straight from below in visual mode, mirrored as KiCad flips the board">
+<img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Feature-Test-Collection/20b_format_kicad7/top_straight_visual.webp" width="49.5%" alt="20b KiCad 7 format straight from above in visual mode">
+<img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Feature-Test-Collection/20b_format_kicad7/bottom_straight_visual.webp" width="49.5%" alt="20b KiCad 7 format straight from below in visual mode, mirrored as KiCad flips the board">
 </p>
 
-![20b KiCad 7 format: stacked bars of seconds per stage; stages 4 and 6 take 31% to 56% of a run. Simulation with GLB and STEP takes 0.7 s: read 71 ms, resolve 29 ms, geometry 62 ms, materials 0.1 ms, assemble 0.2, write 0.2, verify 31 ms, start-up and exit 0.2. Visual with GLB takes 0.8 s: read 72 ms, resolve 30 ms, geometry 70 ms, materials 0.1 ms, assemble 0.4, write 5 ms, verify 39 ms, start-up and exit 0.2](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/feature_20b_format_kicad7.webp)
+![20b KiCad 7 format: stacked bars of seconds per stage; stages 4 and 6 take 31% to 56% of a run. Simulation with GLB and STEP takes 0.7 s: read 71 ms, resolve 29 ms, geometry 62 ms, materials 0.1 ms, assemble 0.2, write 0.2, verify 31 ms, start-up and exit 0.2. Visual with GLB takes 0.8 s: read 72 ms, resolve 30 ms, geometry 70 ms, materials 0.1 ms, assemble 0.4, write 5 ms, verify 39 ms, start-up and exit 0.2](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Feature-Test-Collection/feature_20b_format_kicad7.webp)
 
 | Mode | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -1521,11 +1521,11 @@ and 91 vias on four layers, takes 6.7 to 7.5 s; board 25, whose countersinks are
 ### 23.12.3 20c KiCad 8 Format
 
 <p align="center">
-<img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/feature_test_images/20c_format_kicad8/top_straight_visual.webp" width="49.5%" alt="20c KiCad 8 format straight from above in visual mode">
-<img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/feature_test_images/20c_format_kicad8/bottom_straight_visual.webp" width="49.5%" alt="20c KiCad 8 format straight from below in visual mode, mirrored as KiCad flips the board">
+<img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Feature-Test-Collection/20c_format_kicad8/top_straight_visual.webp" width="49.5%" alt="20c KiCad 8 format straight from above in visual mode">
+<img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Feature-Test-Collection/20c_format_kicad8/bottom_straight_visual.webp" width="49.5%" alt="20c KiCad 8 format straight from below in visual mode, mirrored as KiCad flips the board">
 </p>
 
-![20c KiCad 8 format: stacked bars of seconds per stage; stages 4 and 6 take 31% to 56% of a run. Simulation with GLB and STEP takes 0.7 s: read 70 ms, resolve 35 ms, geometry 77 ms, materials 0.1 ms, assemble 0.1, write 0.1, verify 24 ms, start-up and exit 0.2. Visual with GLB takes 0.8 s: read 69 ms, resolve 31 ms, geometry 69 ms, materials 0.1 ms, assemble 0.4, write 4 ms, verify 38 ms, start-up and exit 0.2](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/feature_20c_format_kicad8.webp)
+![20c KiCad 8 format: stacked bars of seconds per stage; stages 4 and 6 take 31% to 56% of a run. Simulation with GLB and STEP takes 0.7 s: read 70 ms, resolve 35 ms, geometry 77 ms, materials 0.1 ms, assemble 0.1, write 0.1, verify 24 ms, start-up and exit 0.2. Visual with GLB takes 0.8 s: read 69 ms, resolve 31 ms, geometry 69 ms, materials 0.1 ms, assemble 0.4, write 4 ms, verify 38 ms, start-up and exit 0.2](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Feature-Test-Collection/feature_20c_format_kicad8.webp)
 
 | Mode | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -1564,11 +1564,11 @@ and 91 vias on four layers, takes 6.7 to 7.5 s; board 25, whose countersinks are
 ### 23.12.4 20d KiCad 9 Format
 
 <p align="center">
-<img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/feature_test_images/20d_format_kicad9/top_straight_visual.webp" width="49.5%" alt="20d KiCad 9 format straight from above in visual mode">
-<img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/feature_test_images/20d_format_kicad9/bottom_straight_visual.webp" width="49.5%" alt="20d KiCad 9 format straight from below in visual mode, mirrored as KiCad flips the board">
+<img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Feature-Test-Collection/20d_format_kicad9/top_straight_visual.webp" width="49.5%" alt="20d KiCad 9 format straight from above in visual mode">
+<img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Feature-Test-Collection/20d_format_kicad9/bottom_straight_visual.webp" width="49.5%" alt="20d KiCad 9 format straight from below in visual mode, mirrored as KiCad flips the board">
 </p>
 
-![20d KiCad 9 format: stacked bars of seconds per stage; stages 4 and 6 take 32% to 56% of a run. Simulation with GLB and STEP takes 0.7 s: read 72 ms, resolve 31 ms, geometry 65 ms, materials 0.1 ms, assemble 0.1, write 0.1, verify 23 ms, start-up and exit 0.2. Visual with GLB takes 0.8 s: read 70 ms, resolve 29 ms, geometry 67 ms, materials 0.1 ms, assemble 0.4, write 4 ms, verify 32 ms, start-up and exit 0.2](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/feature_20d_format_kicad9.webp)
+![20d KiCad 9 format: stacked bars of seconds per stage; stages 4 and 6 take 32% to 56% of a run. Simulation with GLB and STEP takes 0.7 s: read 72 ms, resolve 31 ms, geometry 65 ms, materials 0.1 ms, assemble 0.1, write 0.1, verify 23 ms, start-up and exit 0.2. Visual with GLB takes 0.8 s: read 70 ms, resolve 29 ms, geometry 67 ms, materials 0.1 ms, assemble 0.4, write 4 ms, verify 32 ms, start-up and exit 0.2](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Feature-Test-Collection/feature_20d_format_kicad9.webp)
 
 | Mode | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -1607,11 +1607,11 @@ and 91 vias on four layers, takes 6.7 to 7.5 s; board 25, whose countersinks are
 ### 23.12.5 20e KiCad 10 Format
 
 <p align="center">
-<img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/feature_test_images/20e_format_kicad10/top_straight_visual.webp" width="49.5%" alt="20e KiCad 10 format straight from above in visual mode">
-<img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/feature_test_images/20e_format_kicad10/bottom_straight_visual.webp" width="49.5%" alt="20e KiCad 10 format straight from below in visual mode, mirrored as KiCad flips the board">
+<img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Feature-Test-Collection/20e_format_kicad10/top_straight_visual.webp" width="49.5%" alt="20e KiCad 10 format straight from above in visual mode">
+<img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Feature-Test-Collection/20e_format_kicad10/bottom_straight_visual.webp" width="49.5%" alt="20e KiCad 10 format straight from below in visual mode, mirrored as KiCad flips the board">
 </p>
 
-![20e KiCad 10 format: stacked bars of seconds per stage; stages 4 and 6 take 33% to 57% of a run. Simulation with GLB and STEP takes 0.7 s: read 70 ms, resolve 31 ms, geometry 68 ms, materials 0.1 ms, assemble 0.2, write 0.1, verify 21 ms, start-up and exit 0.2. Visual with GLB takes 0.8 s: read 69 ms, resolve 30 ms, geometry 66 ms, materials 0.1 ms, assemble 0.4, write 4 ms, verify 29 ms, start-up and exit 0.2](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/feature_20e_format_kicad10.webp)
+![20e KiCad 10 format: stacked bars of seconds per stage; stages 4 and 6 take 33% to 57% of a run. Simulation with GLB and STEP takes 0.7 s: read 70 ms, resolve 31 ms, geometry 68 ms, materials 0.1 ms, assemble 0.2, write 0.1, verify 21 ms, start-up and exit 0.2. Visual with GLB takes 0.8 s: read 69 ms, resolve 30 ms, geometry 66 ms, materials 0.1 ms, assemble 0.4, write 4 ms, verify 29 ms, start-up and exit 0.2](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Feature-Test-Collection/feature_20e_format_kicad10.webp)
 
 | Mode | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -1652,11 +1652,11 @@ and 91 vias on four layers, takes 6.7 to 7.5 s; board 25, whose countersinks are
 ### 23.13.1 21 RF Sensor Module
 
 <p align="center">
-<img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/feature_test_images/21_rf_module/top_straight_visual.webp" width="49.5%" alt="21 RF sensor module straight from above in visual mode">
-<img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/feature_test_images/21_rf_module/bottom_straight_visual.webp" width="49.5%" alt="21 RF sensor module straight from below in visual mode, mirrored as KiCad flips the board">
+<img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Feature-Test-Collection/21_rf_module/top_straight_visual.webp" width="49.5%" alt="21 RF sensor module straight from above in visual mode">
+<img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Feature-Test-Collection/21_rf_module/bottom_straight_visual.webp" width="49.5%" alt="21 RF sensor module straight from below in visual mode, mirrored as KiCad flips the board">
 </p>
 
-![21 RF sensor module: stacked bars of seconds per stage; stages 4 and 6 take 67% to 85% of a run. Simulation with GLB and STEP takes 17.9 s: read 0.2, resolve 1.5, geometry 6.7, materials 0.4 ms, assemble 5.4, write 3.2, verify 0.6, start-up and exit 0.2. Visual with GLB takes 20.4 s: read 0.3, resolve 1.6, geometry 7.0, materials 0.5 ms, assemble 10.4, write 0.1, verify 0.8, start-up and exit 0.2](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/feature_21_rf_module.webp)
+![21 RF sensor module: stacked bars of seconds per stage; stages 4 and 6 take 67% to 85% of a run. Simulation with GLB and STEP takes 17.9 s: read 0.2, resolve 1.5, geometry 6.7, materials 0.4 ms, assemble 5.4, write 3.2, verify 0.6, start-up and exit 0.2. Visual with GLB takes 20.4 s: read 0.3, resolve 1.6, geometry 7.0, materials 0.5 ms, assemble 10.4, write 0.1, verify 0.8, start-up and exit 0.2](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Feature-Test-Collection/feature_21_rf_module.webp)
 
 | Mode | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -1695,11 +1695,11 @@ and 91 vias on four layers, takes 6.7 to 7.5 s; board 25, whose countersinks are
 ### 23.13.2 22 HDI Radio Module
 
 <p align="center">
-<img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/feature_test_images/22_hdi_module/top_straight_visual.webp" width="49.5%" alt="22 HDI radio module straight from above in visual mode">
-<img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/feature_test_images/22_hdi_module/bottom_straight_visual.webp" width="49.5%" alt="22 HDI radio module straight from below in visual mode, mirrored as KiCad flips the board">
+<img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Feature-Test-Collection/22_hdi_module/top_straight_visual.webp" width="49.5%" alt="22 HDI radio module straight from above in visual mode">
+<img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Feature-Test-Collection/22_hdi_module/bottom_straight_visual.webp" width="49.5%" alt="22 HDI radio module straight from below in visual mode, mirrored as KiCad flips the board">
 </p>
 
-![22 HDI radio module: stacked bars of seconds per stage; stages 4 and 6 take 55% to 80% of a run. Simulation with GLB and STEP takes 8.7 s: read 0.2, resolve 1.1, geometry 2.7, materials 0.5 ms, assemble 2.1, write 1.8, verify 0.5, start-up and exit 0.2. Visual with GLB takes 9.5 s: read 0.2, resolve 1.0, geometry 2.7, materials 0.6 ms, assemble 4.9, write 57 ms, verify 0.4, start-up and exit 0.2](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/feature_22_hdi_module.webp)
+![22 HDI radio module: stacked bars of seconds per stage; stages 4 and 6 take 55% to 80% of a run. Simulation with GLB and STEP takes 8.7 s: read 0.2, resolve 1.1, geometry 2.7, materials 0.5 ms, assemble 2.1, write 1.8, verify 0.5, start-up and exit 0.2. Visual with GLB takes 9.5 s: read 0.2, resolve 1.0, geometry 2.7, materials 0.6 ms, assemble 4.9, write 57 ms, verify 0.4, start-up and exit 0.2](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Feature-Test-Collection/feature_22_hdi_module.webp)
 
 | Mode | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -1738,11 +1738,11 @@ and 91 vias on four layers, takes 6.7 to 7.5 s; board 25, whose countersinks are
 ### 23.13.3 23 PCIe x1 Card
 
 <p align="center">
-<img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/feature_test_images/23_pcie_card/top_straight_visual.webp" width="49.5%" alt="23 PCIe x1 card straight from above in visual mode">
-<img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/feature_test_images/23_pcie_card/bottom_straight_visual.webp" width="49.5%" alt="23 PCIe x1 card straight from below in visual mode, mirrored as KiCad flips the board">
+<img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Feature-Test-Collection/23_pcie_card/top_straight_visual.webp" width="49.5%" alt="23 PCIe x1 card straight from above in visual mode">
+<img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Feature-Test-Collection/23_pcie_card/bottom_straight_visual.webp" width="49.5%" alt="23 PCIe x1 card straight from below in visual mode, mirrored as KiCad flips the board">
 </p>
 
-![23 PCIe x1 card: stacked bars of seconds per stage; stages 4 and 6 take 59% to 82% of a run. Simulation with GLB and STEP takes 13.1 s: read 0.3, resolve 1.2, geometry 4.1, materials 0.5 ms, assemble 3.7, write 2.9, verify 0.6, start-up and exit 0.2. Visual with GLB takes 14.8 s: read 0.3, resolve 1.2, geometry 4.1, materials 0.7 ms, assemble 8.0, write 0.1, verify 0.8, start-up and exit 0.3](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/feature_23_pcie_card.webp)
+![23 PCIe x1 card: stacked bars of seconds per stage; stages 4 and 6 take 59% to 82% of a run. Simulation with GLB and STEP takes 13.1 s: read 0.3, resolve 1.2, geometry 4.1, materials 0.5 ms, assemble 3.7, write 2.9, verify 0.6, start-up and exit 0.2. Visual with GLB takes 14.8 s: read 0.3, resolve 1.2, geometry 4.1, materials 0.7 ms, assemble 8.0, write 0.1, verify 0.8, start-up and exit 0.3](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Feature-Test-Collection/feature_23_pcie_card.webp)
 
 | Mode | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|

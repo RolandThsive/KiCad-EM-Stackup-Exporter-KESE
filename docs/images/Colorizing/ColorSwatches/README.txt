@@ -6,7 +6,7 @@ discussions, not on wiki pages, so each box is a small picture: a lossless WebP 
 shown at 12 x 12. In a page, by its raw URL on main (it shows in the wiki only after it is on
 main):
 
-<img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/ColorSwatches/CD803E.webp" width="12" height="12" align="absmiddle" alt=""> `#CD803E`
+<img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Colorizing/ColorSwatches/CD803E.webp" width="12" height="12" align="absmiddle" alt=""> `#CD803E`
 
 After a colour in parameters/color.py changes, make the boxes again (from Generator/):
 

@@ -37,11 +37,11 @@ see at this scale is marked with a line and a label.
 ## 6.1 RF Sensor Module
 
 <p align="center">
-<img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/example_images/rf_module/top_straight_visual.webp" width="49.5%" alt="The RF sensor module straight from above in visual mode: the blue mask, the white silkscreen, the gold of the ENIG pads, the plated edge and cut-out, and the fence of vias in the GND border">
-<img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/example_images/rf_module/bottom_straight_visual.webp" width="49.5%" alt="The RF sensor module straight from below: the KESE logo, the outline of the CR1220 coin cell BT1, the pads of the I2C and UART lines, and the plated edge and cut-out">
+<img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Time-Distribution/rf_module/top_straight_visual.webp" width="49.5%" alt="The RF sensor module straight from above in visual mode: the blue mask, the white silkscreen, the gold of the ENIG pads, the plated edge and cut-out, and the fence of vias in the GND border">
+<img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Time-Distribution/rf_module/bottom_straight_visual.webp" width="49.5%" alt="The RF sensor module straight from below: the KESE logo, the outline of the CR1220 coin cell BT1, the pads of the I2C and UART lines, and the plated edge and cut-out">
 </p>
 
-![RF sensor module: stacked bars of seconds per stage. Simulation with GLB and STEP takes 16.8 s: read 0.3, resolve 1.6, geometry 6.7, materials 0.3 ms, assemble 5.0, write 2.6, verify 0.4, start-up and exit 0.2. Visual with GLB takes 16.2 s: read 0.3, resolve 1.6, geometry 6.8, materials 0.3 ms, assemble 6.9, write 51 ms, verify 0.4, start-up and exit 0.3](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/time_1_rf_module.webp)
+![RF sensor module: stacked bars of seconds per stage. Simulation with GLB and STEP takes 16.8 s: read 0.3, resolve 1.6, geometry 6.7, materials 0.3 ms, assemble 5.0, write 2.6, verify 0.4, start-up and exit 0.2. Visual with GLB takes 16.2 s: read 0.3, resolve 1.6, geometry 6.8, materials 0.3 ms, assemble 6.9, write 51 ms, verify 0.4, start-up and exit 0.3](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Time-Distribution/time_1_rf_module.webp)
 
 | Mode | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -80,11 +80,11 @@ see at this scale is marked with a line and a label.
 ## 6.2 HDI Radio Module
 
 <p align="center">
-<img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/example_images/hdi_module/top_straight_visual.webp" width="36%" alt="The HDI radio module straight from above in visual mode: the black mask, the meander antenna reading through it, the BGA's pads, the flash U2, the crystal Y1 and the castellated pads on three sides">
-<img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/example_images/hdi_module/bottom_straight_visual.webp" width="36%" alt="The HDI radio module straight from below: the exposed GND pad, the logo, the pin numbers 1 to 43 beside the castellated pads, and the test pads TX, RX, BOOT, 3V3, EN and GND">
+<img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Time-Distribution/hdi_module/top_straight_visual.webp" width="36%" alt="The HDI radio module straight from above in visual mode: the black mask, the meander antenna reading through it, the BGA's pads, the flash U2, the crystal Y1 and the castellated pads on three sides">
+<img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Time-Distribution/hdi_module/bottom_straight_visual.webp" width="36%" alt="The HDI radio module straight from below: the exposed GND pad, the logo, the pin numbers 1 to 43 beside the castellated pads, and the test pads TX, RX, BOOT, 3V3, EN and GND">
 </p>
 
-![HDI radio module: stacked bars of seconds per stage. Simulation with GLB and STEP takes 9.2 s: read 0.3, resolve 1.0, geometry 3.1, materials 0.3 ms, assemble 2.3, write 1.8, verify 0.4, start-up and exit 0.2. Visual with GLB takes 8.3 s: read 0.2, resolve 1.1, geometry 3.1, materials 0.3 ms, assemble 3.4, write 30 ms, verify 0.2, start-up and exit 0.2](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/time_2_hdi_module.webp)
+![HDI radio module: stacked bars of seconds per stage. Simulation with GLB and STEP takes 9.2 s: read 0.3, resolve 1.0, geometry 3.1, materials 0.3 ms, assemble 2.3, write 1.8, verify 0.4, start-up and exit 0.2. Visual with GLB takes 8.3 s: read 0.2, resolve 1.1, geometry 3.1, materials 0.3 ms, assemble 3.4, write 30 ms, verify 0.2, start-up and exit 0.2](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Time-Distribution/time_2_hdi_module.webp)
 
 | Mode | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -123,11 +123,11 @@ see at this scale is marked with a line and a label.
 ## 6.3 PCIe x1 Card
 
 <p align="center">
-<img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/example_images/pcie_card/top_straight_visual.webp" width="49.5%" alt="The PCIe x1 card straight from above in visual mode: the green mask, the controller, the RJ45 footprint, the PoE side behind its dashed isolation line and slot, the logo and the gold fingers">
-<img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/example_images/pcie_card/bottom_straight_visual.webp" width="49.5%" alt="The PCIe x1 card straight from below: the A side of the fingers, the tracks reading through the mask and the name in silkscreen">
+<img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Time-Distribution/pcie_card/top_straight_visual.webp" width="49.5%" alt="The PCIe x1 card straight from above in visual mode: the green mask, the controller, the RJ45 footprint, the PoE side behind its dashed isolation line and slot, the logo and the gold fingers">
+<img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Time-Distribution/pcie_card/bottom_straight_visual.webp" width="49.5%" alt="The PCIe x1 card straight from below: the A side of the fingers, the tracks reading through the mask and the name in silkscreen">
 </p>
 
-![PCIe x1 card: stacked bars of seconds per stage. Simulation with GLB and STEP takes 11.5 s: read 0.3, resolve 1.2, geometry 4.4, materials 0.2 ms, assemble 2.7, write 2.3, verify 0.4, start-up and exit 0.2. Visual with GLB takes 11.0 s: read 0.3, resolve 1.2, geometry 4.5, materials 0.2 ms, assemble 4.4, write 43 ms, verify 0.3, start-up and exit 0.2](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/time_3_pcie_card.webp)
+![PCIe x1 card: stacked bars of seconds per stage. Simulation with GLB and STEP takes 11.5 s: read 0.3, resolve 1.2, geometry 4.4, materials 0.2 ms, assemble 2.7, write 2.3, verify 0.4, start-up and exit 0.2. Visual with GLB takes 11.0 s: read 0.3, resolve 1.2, geometry 4.5, materials 0.2 ms, assemble 4.4, write 43 ms, verify 0.3, start-up and exit 0.2](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Time-Distribution/time_3_pcie_card.webp)
 
 | Mode | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|

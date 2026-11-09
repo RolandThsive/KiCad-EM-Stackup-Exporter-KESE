@@ -14,9 +14,9 @@ into prisms; the settings are in `parameters/copper.py`.
 
 ## 12.1 What Makes Copper
 
-![Net GND on board 03_vias_through: the board from the top, the net's copper on each layer pulled apart, the closed solid Copper_GND, and a cut through one of its vias](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/copper_1_one_net_one_solid.webp)
+![Net GND on board 03_vias_through: the board from the top, the net's copper on each layer pulled apart, the closed solid Copper_GND, and a cut through one of its vias](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Copper-And-Traces/copper_1_one_net_one_solid.webp)
 
-![Net STAGGER on board 05_vias_micro: the copper of each of its layers in its own colour, the pieces in 3D at their heights, and a true-scale cut through its five vias](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/copper_2_net_eight_layers.webp)
+![Net STAGGER on board 05_vias_micro: the copper of each of its layers in its own colour, the pieces in 3D at their heights, and a true-scale cut through its five vias](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Copper-And-Traces/copper_2_net_eight_layers.webp)
 
 Per copper layer, these items are collected with their net (text always as no net, see 12.1.1):
 
@@ -106,7 +106,7 @@ appears only on vias comes after every net with a track, zone or pad on that lay
 
 ### 12.1.2 Hatched Fills
 
-![Board 27_hatched_fills from the top in visual mode: hatched, reverse-hatched and cross-hatched copper shapes under the mask, a hatch cut back by text, a line and another shape, and hatches on the silkscreen, in a mask opening and on bare copper](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/copper_13_hatched_fills.webp)
+![Board 27_hatched_fills from the top in visual mode: hatched, reverse-hatched and cross-hatched copper shapes under the mask, a hatch cut back by text, a line and another shape, and hatches on the silkscreen, in a mask opening and on bare copper](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Copper-And-Traces/copper_13_hatched_fills.webp)
 
 KiCad 10 can fill a circle, rectangle or polygon with lines instead of solid: `(fill hatch)`,
 `(fill reverse_hatch)` or `(fill cross_hatch)`. KESE draws the hatch as KiCad does
@@ -151,12 +151,12 @@ A via contributes:
 - a plated **barrel**: the ring between the drill and the drill shrunk by the plating wall,
   running between the copper layers it joins, equations (12.4) to (12.6).
 
-![A through via on board 04_vias_blind_buried cut through its centre with its drill, bore and 25 µm wall, close-ups of the top and of an inner layer, and a through, a blind and a buried via side by side](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/copper_3_via_section.webp)
+![A through via on board 04_vias_blind_buried cut through its centre with its drill, bore and 25 µm wall, close-ups of the top and of an inner layer, and a through, a blind and a buried via side by side](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Copper-And-Traces/copper_3_via_section.webp)
 
 A through-hole pad contributes its pad shape on the listed layers and a barrel with
 `Copper.PTH_WALL_MM`. Oval (slot) drills become slot-shaped barrels.
 
-![Pad 1 of SLOT_H on board 01_holes_slotted: the board from the top, the slot cut along its length in 3D and at true scale, and the slot-shaped barrel at mid-height](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/copper_4_slotted_hole.webp)
+![Pad 1 of SLOT_H on board 01_holes_slotted: the board from the top, the slot cut along its length in 3D and at true scale, and the slot-shaped barrel at mid-height](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Copper-And-Traces/copper_4_slotted_hole.webp)
 
 The bore (the open hole left inside the plating) and the barrel of hole $`h`$ are:
 
@@ -242,7 +242,7 @@ shuts it (12.3.4), see [Solder Masks](Solder-Masks.md#164-over-holes). `Copper.V
 
 ### 12.3.3 Backdrills
 
-![A via of board 24_backdrills cut through its centre at true scale: its stub drilled out from B.Cu through In3.Cu, the barrel stopping at In3.Cu's top face and the rings below cut back to the backdrill; then five more spans side by side, from B.Cu through In4.Cu and through In1.Cu, a tertiary drill from F.Cu, both ends, and through the whole board](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/copper_11_backdrills.webp)
+![A via of board 24_backdrills cut through its centre at true scale: its stub drilled out from B.Cu through In3.Cu, the barrel stopping at In3.Cu's top face and the rings below cut back to the backdrill; then five more spans side by side, from B.Cu through In4.Cu and through In1.Cu, a tertiary drill from F.Cu, both ends, and through the whole board](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Copper-And-Traces/copper_11_backdrills.webp)
 
 KiCad 10 can drill a plated hole out again from a face with a wider drill, to take off the stub of
 the barrel that no signal uses: `(backdrill (size 0.6) (layers "B.Cu" "In3.Cu"))`, and from the
@@ -263,7 +263,7 @@ hole's end, are in [Board](Board.md#1141-counterbores-and-countersinks).
 
 ### 12.3.4 Via Protection
 
-![Eight 0.4 mm vias of board 26_via_protection cut through their centres at true scale with the solder mask on: tented only, covered, plugged from the front, plugged from both faces, filled with copper, filled with resin, capped, and filled then backdrilled](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/copper_12_via_protection.webp)
+![Eight 0.4 mm vias of board 26_via_protection cut through their centres at true scale with the solder mask on: tented only, covered, plugged from the front, plugged from both faces, filled with copper, filled with resin, capped, and filled then backdrilled](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Copper-And-Traces/copper_12_via_protection.webp)
 
 KiCad 10 keeps the four ways IPC-4761 protects a via: covering, plugging, capping and filling.
 Each is set on the via (`(covering (front yes) (back no))`, `(plugging ...)`, `(capping yes)`,
@@ -294,9 +294,9 @@ a warning. `report.txt` counts `covered vias, front`, `plugged vias, back`, `fil
 
 ## 12.4 Copper Thickness And Plating
 
-![Board 14_stackup_full cut across its four traces at true scale, with close-ups of F.Cu 35 µm, In1.Cu 17.5 µm, In2.Cu 17.5 µm and B.Cu 70 µm](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/copper_5_thickness.webp)
+![Board 14_stackup_full cut across its four traces at true scale, with close-ups of F.Cu 35 µm, In1.Cu 17.5 µm, In2.Cu 17.5 µm and B.Cu 70 µm](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Copper-And-Traces/copper_5_thickness.webp)
 
-![The plated hole of board 14_stackup_full at the top and bottom faces, without outer plating and with 20 µm of it, the foil, the outer plating and the hole's wall plating each in its own shade](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/copper_6_plating.webp)
+![The plated hole of board 14_stackup_full at the top and bottom faces, without outer plating and with 20 µm of it, the foil, the outer plating and the hole's wall plating each in its own shade](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Copper-And-Traces/copper_6_plating.webp)
 
 ```math
 t_k = \begin{cases} t_{\mathrm{foil},k} + t_{\mathrm{plate}} & k = 0 \text{ or } k = N-1 \ \ \text{(outer)} \\ t_{\mathrm{foil},k} & 0 < k < N-1 \ \ \text{(inner)} \end{cases} \qquad (12.9)
@@ -315,7 +315,7 @@ KiCad; set it for an as-fabricated model. Each copper part records `foil_mm` and
 
 ## 12.5 Etch Factor
 
-![Board 10_tracks_arcs cut across its 0.25 mm track at true scale with ETCH_FACTOR 0 and 0.5 (four slices), and close-ups of an etched wall on F.Cu and on B.Cu with the inset of every slice](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/copper_10_etch_factor.webp)
+![Board 10_tracks_arcs cut across its 0.25 mm track at true scale with ETCH_FACTOR 0 and 0.5 (four slices), and close-ups of an etched wall on F.Cu and on B.Cu with the inset of every slice](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Copper-And-Traces/copper_10_etch_factor.webp)
 
 Real traces are trapezoids: etching undercuts the resist, so a trace is narrower at its free
 face than at its foot. `Copper.ETCH_FACTOR` (0 by default, a rectangle as in KiCad) leans each
@@ -366,7 +366,7 @@ from the foot to the free face.
 
 ## 12.6 Castellated Holes
 
-![The right edge of board 16_edge_plating_castellation with edge plating off: from the top, from outside, cut through castellation C3 at true scale, and its half-barrel at mid-height](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/copper_7_castellation.webp)
+![The right edge of board 16_edge_plating_castellation with edge plating off: from the top, from outside, cut through castellation C3 at true scale, and its half-barrel at mid-height](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Copper-And-Traces/copper_7_castellation.webp)
 
 A castellation is a plated hole that the board edge cuts through (module edge connectors). KESE
 does not read KiCad's "Castellated pad" fabrication property of a pad; it finds castellations from
@@ -388,9 +388,9 @@ Then `Copper.CASTELLATION`:
 
 ## 12.7 Edge Plating
 
-![Board 16_edge_plating_castellation with its edge plated: the plated corner from outside, the left edge at true scale, and F.Cu at castellation C3 with and without the plated edge; GND in copper, C1 to C4 each in its own colour, with a colour key](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/copper_8_edge_plating.webp)
+![Board 16_edge_plating_castellation with its edge plated: the plated corner from outside, the left edge at true scale, and F.Cu at castellation C3 with and without the plated edge; GND in copper, C1 to C4 each in its own colour, with a colour key](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Copper-And-Traces/copper_8_edge_plating.webp)
 
-![Board 16b_edge_plating_border: the whole board with its plated sides, cut-out, GND border and via fence; the front right corner close up; and the left edge cut at true scale with the side plating, the GND border on all four copper layers and the +3V3 plane beside it](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/copper_9_edge_side_plating.webp)
+![Board 16b_edge_plating_border: the whole board with its plated sides, cut-out, GND border and via fence; the front right corner close up; and the left edge cut at true scale with the side plating, the GND border on all four copper layers and the +3V3 plane beside it](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Copper-And-Traces/copper_9_edge_side_plating.webp)
 
 Edge plating is copper on the routed board edge (edge-card connectors, RF shielding).
 `Copper.EDGE_PLATING`: `"file"` (default) follows the stack-up's `(edge_plating yes)`, `"yes"` and
