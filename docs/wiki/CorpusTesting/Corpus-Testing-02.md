@@ -8258,4 +8258,4 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 
 | Previous | Next |
 |:---|---:|
-| [Corpus Testing 1: 01GOD To alphaonex86](Corpus-Testing-01.md) | [Corpus Testing](../Corpus-Testing.md) |
+| [Corpus Testing 1: 01GOD To alphaonex86](Corpus-Testing-01.md) | [Corpus Testing 3: antevens To antmicro](Corpus-Testing-03.md) |

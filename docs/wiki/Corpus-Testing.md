@@ -17,7 +17,7 @@ python run_KESE.py B --mode visual --format F --verify \
 
 **The runs used KESE version 2.4.0 (`main` at 22fd70c) with the default parameters otherwise and shapely 2.2.0 (GEOS 3.14.1), spread over several Linux machines with 4 cores each (Intel(R) Xeon(R) Processor @ 2.10GHz) and 16 GB of RAM, so `Parallel.WORKERS = 0` gave four workers ([Work Done In Parallel](Working-Principle.md#74-work-done-in-parallel)). A run was stopped after 90 minutes, or once its memory passed 11 GB: that cap is a limit of the measurement on these 15 GB machines, not of KESE, and a board stopped there needs a machine with more memory. On another machine the seconds differ.**
 
-The runs are under way: 984 of the 3,146 boards are done so far. A sub-page is added once all its boards are done.
+The runs are under way: 1,336 of the 3,146 boards are done so far. A sub-page is added once all its boards are done.
 
 The complexity of each board is the corpus's score: tracks, plus 3 for each via, 2 for each part with two or more pads, 60 for each chip of 32 pads or more and 150 more for each BGA, scaled down in proportion for a board of fewer than 10 parts.
 
@@ -27,24 +27,24 @@ The complexity of each board is the corpus's score: tracks, plus 3 for each via,
 |---|---|---:|---:|---:|
 | [Corpus Testing 1: 01GOD To alphaonex86](CorpusTesting/Corpus-Testing-01.md) | 14 | 104 | 104 | 99 |
 | [Corpus Testing 2: alvaroalea To andrewpaterson](CorpusTesting/Corpus-Testing-02.md) | 6 | 201 | 201 | 200 |
-| Corpus Testing 3: antevens To antmicro (running) | 81 | 100 | 99 | 91 |
-| Corpus Testing 4: antmicro To baldengineer (running) | 35 | 121 | 116 | 109 |
-| Corpus Testing 5: Bambelweeny57 To Board-Folk (running) | 22 | 103 | 91 | 89 |
-| Corpus Testing 6: Board-Folk To cheyao (running) | 26 | 104 | 88 | 84 |
-| Corpus Testing 7: chipfoundry To DangerousPrototypes (running) | 19 | 104 | 87 | 84 |
-| Corpus Testing 8: DangerousPrototypes To epsilon0-dev (running) | 43 | 101 | 65 | 61 |
-| Corpus Testing 9: esden To ghent360 (running) | 24 | 103 | 55 | 52 |
-| Corpus Testing 10: gitRaksha To greatscottgadgets (running) | 19 | 111 | 33 | 32 |
-| Corpus Testing 11: greatscottgadgets To intergalaktik (running) | 34 | 102 | 18 | 18 |
-| Corpus Testing 12: intergalaktik To issuiuc (running) | 16 | 103 | 15 | 13 |
-| Corpus Testing 13: istedman To KiCad (running) | 36 | 105 | 6 | 6 |
-| Corpus Testing 14: kitspace-forks To loxodes (running) | 20 | 124 | 2 | 2 |
-| Corpus Testing 15: ltbrain To mwelling (running) | 42 | 100 | 4 | 3 |
-| Corpus Testing 16: mwelling To nuclearfutureslab (running) | 34 | 101 | 0 | 0 |
-| Corpus Testing 17: NUSGreyhats To OLIMEX (running) | 34 | 103 | 0 | 0 |
-| Corpus Testing 18: OLIMEX To OLIMEX (running) | 53 | 100 | 0 | 0 |
-| Corpus Testing 19: OLIMEX To open-ephys (running) | 32 | 100 | 0 | 0 |
-| Corpus Testing 20: open-ephys To oresat (running) | 22 | 104 | 0 | 0 |
+| [Corpus Testing 3: antevens To antmicro](CorpusTesting/Corpus-Testing-03.md) | 81 | 100 | 100 | 92 |
+| [Corpus Testing 4: antmicro To baldengineer](CorpusTesting/Corpus-Testing-04.md) | 35 | 121 | 121 | 114 |
+| [Corpus Testing 5: Bambelweeny57 To Board-Folk](CorpusTesting/Corpus-Testing-05.md) | 22 | 103 | 103 | 99 |
+| [Corpus Testing 6: Board-Folk To cheyao](CorpusTesting/Corpus-Testing-06.md) | 26 | 104 | 104 | 99 |
+| Corpus Testing 7: chipfoundry To DangerousPrototypes (running) | 19 | 104 | 100 | 97 |
+| Corpus Testing 8: DangerousPrototypes To epsilon0-dev (running) | 43 | 101 | 88 | 83 |
+| Corpus Testing 9: esden To ghent360 (running) | 24 | 103 | 91 | 87 |
+| Corpus Testing 10: gitRaksha To greatscottgadgets (running) | 19 | 111 | 75 | 74 |
+| Corpus Testing 11: greatscottgadgets To intergalaktik (running) | 34 | 102 | 59 | 59 |
+| Corpus Testing 12: intergalaktik To issuiuc (running) | 16 | 103 | 40 | 36 |
+| Corpus Testing 13: istedman To KiCad (running) | 36 | 105 | 33 | 33 |
+| Corpus Testing 14: kitspace-forks To loxodes (running) | 20 | 124 | 37 | 36 |
+| Corpus Testing 15: ltbrain To mwelling (running) | 42 | 100 | 24 | 23 |
+| Corpus Testing 16: mwelling To nuclearfutureslab (running) | 34 | 101 | 28 | 27 |
+| Corpus Testing 17: NUSGreyhats To OLIMEX (running) | 34 | 103 | 12 | 12 |
+| Corpus Testing 18: OLIMEX To OLIMEX (running) | 53 | 100 | 6 | 6 |
+| Corpus Testing 19: OLIMEX To open-ephys (running) | 32 | 100 | 8 | 8 |
+| Corpus Testing 20: open-ephys To oresat (running) | 22 | 104 | 2 | 2 |
 | Corpus Testing 21: oresat To pms67 (running) | 33 | 100 | 0 | 0 |
 | Corpus Testing 22: polpo To rh1tech (running) | 31 | 108 | 0 | 0 |
 | Corpus Testing 23: rhaamo To rusefi (running) | 12 | 114 | 0 | 0 |
