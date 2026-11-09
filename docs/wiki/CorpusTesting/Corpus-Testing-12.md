@@ -4446,4 +4446,4 @@ Part 12 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pr
 
 | Previous | Next |
 |:---|---:|
-| [Corpus Testing 11: greatscottgadgets To intergalaktik](Corpus-Testing-11.md) | [Corpus Testing](../Corpus-Testing.md) |
+| [Corpus Testing 11: greatscottgadgets To intergalaktik](Corpus-Testing-11.md) | [Corpus Testing 13: istedman To KiCad](Corpus-Testing-13.md) |
