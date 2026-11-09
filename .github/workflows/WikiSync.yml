@@ -36,7 +36,8 @@ jobs:
           test -f docs/wiki/Home.md || { echo "::error::docs/wiki/Home.md is missing"; exit 1; }
           rsync -a --delete --exclude='.git' docs/wiki/ wiki/
           # The wiki links pages by name: [Text](Page-Name), not [Text](Page-Name.md)
-          find wiki -name '*.md' -exec sed -i -E 's/\]\(([A-Za-z0-9_-]+)\.md(#[^)]*)?\)/](\1\2)/g' {} +
+          # A page in a folder (CorpusTesting/) is still linked by its name alone in the wiki
+          find wiki -name '*.md' -exec sed -i -E 's/\]\((\.\.\/|[A-Za-z0-9_-]+\/)?([A-Za-z0-9_-]+)\.md(#[^)]*)?\)/](\2\3)/g' {} +
 
       - name: Commit and push the wiki
         working-directory: wiki

@@ -32,11 +32,15 @@ All pages of this wiki, in reading order.
 - [Material Properties](Material-Properties.md)
 - [Project Output Organization](Project-Output-Organization.md)
 - [KiCad And Solver Compatibility](Compatibility.md)
-- [openEMS Workflow](OpenEMS-Workflow.md)
+
+## 2.5 Tests
+
 - [Feature Test Collection](Feature-Test-Collection.md)
+- [Corpus Testing](Corpus-Testing.md)
 
-## 2.5 Research And Community
+## 2.6 Research And Community
 
+- [openEMS Workflow](OpenEMS-Workflow.md)
 - [Glossary](Glossary.md)
 - [Immediate Next Steps](Immediate-Next-Steps.md)
 - [Future Upgrades And Planning](Future-Upgrades-And-Planning.md)

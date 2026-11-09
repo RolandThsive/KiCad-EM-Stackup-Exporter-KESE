@@ -101,4 +101,4 @@ afresh on every system, as Windows and macOS start them; Windows holds at most 6
 
 | Previous | Next |
 |:---|---:|
-| [Project Output Organization](Project-Output-Organization.md) | [openEMS Workflow](OpenEMS-Workflow.md) |
+| [Project Output Organization](Project-Output-Organization.md) | [Feature Test Collection](Feature-Test-Collection.md) |

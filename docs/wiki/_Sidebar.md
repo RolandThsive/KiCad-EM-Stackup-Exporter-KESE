@@ -26,10 +26,13 @@
 - [Material Properties](Material-Properties.md)
 - [Project Output Organization](Project-Output-Organization.md)
 - [KiCad And Solver Compatibility](Compatibility.md)
-- [openEMS Workflow](OpenEMS-Workflow.md)
+
+**Tests**
 - [Feature Test Collection](Feature-Test-Collection.md)
+- [Corpus Testing](Corpus-Testing.md)
 
 **Research And Community**
+- [openEMS Workflow](OpenEMS-Workflow.md)
 - [Glossary](Glossary.md)
 - [Immediate Next Steps](Immediate-Next-Steps.md)
 - [Future Upgrades And Planning](Future-Upgrades-And-Planning.md)

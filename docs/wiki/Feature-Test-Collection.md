@@ -1,4 +1,4 @@
-# 23. Feature Test Collection
+# 22. Feature Test Collection
 
 > [!NOTE]
 > Measured with `Geometry.CIRCLE_CHORD_TOLERANCE_MM = 0.002`, the default before 0.005 mm (KiCad's
@@ -39,7 +39,7 @@ python run_KESE.py ../featureTest/11_zones.kicad_pcb --mode visual --format glb 
 at 2.1 GHz) and 16 GB of RAM, so `Parallel.WORKERS = 0` gave four workers ([Work Done In
 Parallel](Working-Principle.md#74-work-done-in-parallel)). On another machine the seconds differ.**
 
-## 23.1 Every Board At A Glance
+## 22.1 Every Board At A Glance
 
 ![Every board's total time in both modes, seconds a run](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/feature_0_all_boards.webp)
 
@@ -49,9 +49,9 @@ stroke font, so boards 05, 08b, 19b and 26 read and collect in under 8 ms. Board
 and 91 vias on four layers, takes 6.4 to 7.0 s; board 25, whose countersinks are built as steps,
 4.9 to 6.2 s; and the example boards 7 to 19 s.
 
-## 23.2 Holes And Vias
+## 22.2 Holes And Vias
 
-### 23.2.1 01 Slotted Holes
+### 22.2.1 01 Slotted Holes
 
 <p align="center">
 <img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/feature_test_images/01_holes_slotted/top_straight_visual.webp" width="49.5%" alt="01 Slotted holes straight from above in visual mode">
@@ -78,7 +78,7 @@ and 91 vias on four layers, takes 6.4 to 7.0 s; board 25, whose countersinks are
 
 </div>
 
-### 23.2.2 02 Round Holes
+### 22.2.2 02 Round Holes
 
 <p align="center">
 <img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/feature_test_images/02_holes_round/top_straight_visual.webp" width="49.5%" alt="02 Round holes straight from above in visual mode">
@@ -105,7 +105,7 @@ and 91 vias on four layers, takes 6.4 to 7.0 s; board 25, whose countersinks are
 
 </div>
 
-### 23.2.3 03 Through Vias
+### 22.2.3 03 Through Vias
 
 <p align="center">
 <img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/feature_test_images/03_vias_through/top_straight_visual.webp" width="49.5%" alt="03 Through vias straight from above in visual mode">
@@ -132,7 +132,7 @@ and 91 vias on four layers, takes 6.4 to 7.0 s; board 25, whose countersinks are
 
 </div>
 
-### 23.2.4 03b KiCad 10 Via Options
+### 22.2.4 03b KiCad 10 Via Options
 
 <p align="center">
 <img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/feature_test_images/03b_vias_k10/top_straight_visual.webp" width="49.5%" alt="03b KiCad 10 via options straight from above in visual mode">
@@ -159,7 +159,7 @@ and 91 vias on four layers, takes 6.4 to 7.0 s; board 25, whose countersinks are
 
 </div>
 
-### 23.2.5 04 Blind And Buried Vias
+### 22.2.5 04 Blind And Buried Vias
 
 <p align="center">
 <img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/feature_test_images/04_vias_blind_buried/top_straight_visual.webp" width="49.5%" alt="04 Blind and buried vias straight from above in visual mode">
@@ -186,7 +186,7 @@ and 91 vias on four layers, takes 6.4 to 7.0 s; board 25, whose countersinks are
 
 </div>
 
-### 23.2.6 05 Microvias
+### 22.2.6 05 Microvias
 
 <p align="center">
 <img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/feature_test_images/05_vias_micro/top_straight_visual.webp" width="49.5%" alt="05 Microvias straight from above in visual mode">
@@ -213,7 +213,7 @@ and 91 vias on four layers, takes 6.4 to 7.0 s; board 25, whose countersinks are
 
 </div>
 
-### 23.2.7 24 Backdrills
+### 22.2.7 24 Backdrills
 
 <p align="center">
 <img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/feature_test_images/24_backdrills/top_straight_visual.webp" width="49.5%" alt="24 Backdrills straight from above in visual mode">
@@ -240,7 +240,7 @@ and 91 vias on four layers, takes 6.4 to 7.0 s; board 25, whose countersinks are
 
 </div>
 
-### 23.2.8 25 Counterbores And Countersinks
+### 22.2.8 25 Counterbores And Countersinks
 
 <p align="center">
 <img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/feature_test_images/25_post_machining/top_straight_visual.webp" width="49.5%" alt="25 Counterbores and countersinks straight from above in visual mode">
@@ -267,7 +267,7 @@ and 91 vias on four layers, takes 6.4 to 7.0 s; board 25, whose countersinks are
 
 </div>
 
-### 23.2.9 26 Via Protection
+### 22.2.9 26 Via Protection
 
 <p align="center">
 <img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/feature_test_images/26_via_protection/top_straight_visual.webp" width="49.5%" alt="26 Via protection straight from above in visual mode">
@@ -294,9 +294,9 @@ and 91 vias on four layers, takes 6.4 to 7.0 s; board 25, whose countersinks are
 
 </div>
 
-## 23.3 Pads
+## 22.3 Pads
 
-### 23.3.1 06 Padstacks
+### 22.3.1 06 Padstacks
 
 <p align="center">
 <img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/feature_test_images/06_padstacks/top_straight_visual.webp" width="49.5%" alt="06 Padstacks straight from above in visual mode">
@@ -323,7 +323,7 @@ and 91 vias on four layers, takes 6.4 to 7.0 s; board 25, whose countersinks are
 
 </div>
 
-### 23.3.2 07 Pad Shapes
+### 22.3.2 07 Pad Shapes
 
 <p align="center">
 <img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/feature_test_images/07_pad_shapes/top_straight_visual.webp" width="49.5%" alt="07 Pad shapes straight from above in visual mode">
@@ -350,9 +350,9 @@ and 91 vias on four layers, takes 6.4 to 7.0 s; board 25, whose countersinks are
 
 </div>
 
-## 23.4 Copper Drawings, Text And Tracks
+## 22.4 Copper Drawings, Text And Tracks
 
-### 23.4.1 08 Copper Graphics
+### 22.4.1 08 Copper Graphics
 
 <p align="center">
 <img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/feature_test_images/08_copper_graphics/top_straight_visual.webp" width="49.5%" alt="08 Copper graphics straight from above in visual mode">
@@ -379,7 +379,7 @@ and 91 vias on four layers, takes 6.4 to 7.0 s; board 25, whose countersinks are
 
 </div>
 
-### 23.4.2 08b Copper Graphics On Nets
+### 22.4.2 08b Copper Graphics On Nets
 
 <p align="center">
 <img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/feature_test_images/08b_copper_graphics_nets/top_straight_visual.webp" width="49.5%" alt="08b Copper graphics on nets straight from above in visual mode">
@@ -406,7 +406,7 @@ and 91 vias on four layers, takes 6.4 to 7.0 s; board 25, whose countersinks are
 
 </div>
 
-### 23.4.3 09 Copper Text
+### 22.4.3 09 Copper Text
 
 <p align="center">
 <img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/feature_test_images/09_copper_text/top_straight_visual.webp" width="49.5%" alt="09 Copper text straight from above in visual mode">
@@ -433,7 +433,7 @@ and 91 vias on four layers, takes 6.4 to 7.0 s; board 25, whose countersinks are
 
 </div>
 
-### 23.4.4 10 Tracks And Arcs
+### 22.4.4 10 Tracks And Arcs
 
 <p align="center">
 <img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/feature_test_images/10_tracks_arcs/top_straight_visual.webp" width="49.5%" alt="10 Tracks and arcs straight from above in visual mode">
@@ -460,7 +460,7 @@ and 91 vias on four layers, takes 6.4 to 7.0 s; board 25, whose countersinks are
 
 </div>
 
-### 23.4.5 27 Hatched Fills
+### 22.4.5 27 Hatched Fills
 
 <p align="center">
 <img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/feature_test_images/27_hatched_fills/top_straight_visual.webp" width="49.5%" alt="27 Hatched fills straight from above in visual mode">
@@ -487,9 +487,9 @@ and 91 vias on four layers, takes 6.4 to 7.0 s; board 25, whose countersinks are
 
 </div>
 
-## 23.5 Zones
+## 22.5 Zones
 
-### 23.5.1 11 Zones
+### 22.5.1 11 Zones
 
 <p align="center">
 <img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/feature_test_images/11_zones/top_straight_visual.webp" width="49.5%" alt="11 Zones straight from above in visual mode">
@@ -516,9 +516,9 @@ and 91 vias on four layers, takes 6.4 to 7.0 s; board 25, whose countersinks are
 
 </div>
 
-## 23.6 Board Outline
+## 22.6 Board Outline
 
-### 23.6.1 12 Board Outline Shapes
+### 22.6.1 12 Board Outline Shapes
 
 <p align="center">
 <img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/feature_test_images/12_outline_shapes/top_straight_visual.webp" width="49.5%" alt="12 Board outline shapes straight from above in visual mode">
@@ -545,7 +545,7 @@ and 91 vias on four layers, takes 6.4 to 7.0 s; board 25, whose countersinks are
 
 </div>
 
-### 23.6.2 13a No Board Outline
+### 22.6.2 13a No Board Outline
 
 <p align="center">
 <img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/feature_test_images/13a_outline_none/top_straight_visual.webp" width="49.5%" alt="13a No board outline straight from above in visual mode">
@@ -572,7 +572,7 @@ and 91 vias on four layers, takes 6.4 to 7.0 s; board 25, whose countersinks are
 
 </div>
 
-### 23.6.3 13b Two Board Outlines
+### 22.6.3 13b Two Board Outlines
 
 <p align="center">
 <img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/feature_test_images/13b_outline_two/top_straight_visual.webp" width="49.5%" alt="13b Two board outlines straight from above in visual mode">
@@ -599,9 +599,9 @@ and 91 vias on four layers, takes 6.4 to 7.0 s; board 25, whose countersinks are
 
 </div>
 
-## 23.7 Stack-Up
+## 22.7 Stack-Up
 
-### 23.7.1 14 Full Stack-Up
+### 22.7.1 14 Full Stack-Up
 
 <p align="center">
 <img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/feature_test_images/14_stackup_full/top_straight_visual.webp" width="49.5%" alt="14 Full stack-up straight from above in visual mode">
@@ -628,7 +628,7 @@ and 91 vias on four layers, takes 6.4 to 7.0 s; board 25, whose countersinks are
 
 </div>
 
-### 23.7.2 15 No Stack-Up
+### 22.7.2 15 No Stack-Up
 
 <p align="center">
 <img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/feature_test_images/15_stackup_none/top_straight_visual.webp" width="49.5%" alt="15 No stack-up straight from above in visual mode">
@@ -655,9 +655,9 @@ and 91 vias on four layers, takes 6.4 to 7.0 s; board 25, whose countersinks are
 
 </div>
 
-## 23.8 Edge Plating
+## 22.8 Edge Plating
 
-### 23.8.1 16 Castellated Pads And A Plated Edge
+### 22.8.1 16 Castellated Pads And A Plated Edge
 
 <p align="center">
 <img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/feature_test_images/16_edge_plating_castellation/top_straight_visual.webp" width="49.5%" alt="16 Castellated pads and a plated edge straight from above in visual mode">
@@ -684,7 +684,7 @@ and 91 vias on four layers, takes 6.4 to 7.0 s; board 25, whose countersinks are
 
 </div>
 
-### 23.8.2 16b Plated Board Edge With A GND Border
+### 22.8.2 16b Plated Board Edge With A GND Border
 
 <p align="center">
 <img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/feature_test_images/16b_edge_plating_border/top_straight_visual.webp" width="49.5%" alt="16b Plated board edge with a GND border straight from above in visual mode">
@@ -711,7 +711,7 @@ and 91 vias on four layers, takes 6.4 to 7.0 s; board 25, whose countersinks are
 
 </div>
 
-### 23.8.3 28 Machining At A Plated Edge
+### 22.8.3 28 Machining At A Plated Edge
 
 <p align="center">
 <img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/feature_test_images/28_plated_edge_machining/top_straight_visual.webp" width="49.5%" alt="28 Machining at a plated edge straight from above in visual mode">
@@ -738,9 +738,9 @@ and 91 vias on four layers, takes 6.4 to 7.0 s; board 25, whose countersinks are
 
 </div>
 
-## 23.9 Solder Mask And Silkscreen
+## 22.9 Solder Mask And Silkscreen
 
-### 23.9.1 17 Solder Mask And Silkscreen
+### 22.9.1 17 Solder Mask And Silkscreen
 
 <p align="center">
 <img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/feature_test_images/17_mask_silk/top_straight_visual.webp" width="49.5%" alt="17 Solder mask and silkscreen straight from above in visual mode">
@@ -767,7 +767,7 @@ and 91 vias on four layers, takes 6.4 to 7.0 s; board 25, whose countersinks are
 
 </div>
 
-### 23.9.2 17b Silkscreen Over Copper
+### 22.9.2 17b Silkscreen Over Copper
 
 <p align="center">
 <img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/feature_test_images/17b_silk_over_copper/top_straight_visual.webp" width="49.5%" alt="17b Silkscreen over copper straight from above in visual mode">
@@ -794,9 +794,9 @@ and 91 vias on four layers, takes 6.4 to 7.0 s; board 25, whose countersinks are
 
 </div>
 
-## 23.10 Surface Finish
+## 22.10 Surface Finish
 
-### 23.10.1 18 Gold Edge Fingers
+### 22.10.1 18 Gold Edge Fingers
 
 <p align="center">
 <img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/feature_test_images/18_finishes/top_straight_visual.webp" width="49.5%" alt="18 Gold edge fingers straight from above in visual mode">
@@ -823,7 +823,7 @@ and 91 vias on four layers, takes 6.4 to 7.0 s; board 25, whose countersinks are
 
 </div>
 
-### 23.10.2 18b Finish On Every Kind Of Bare Copper
+### 22.10.2 18b Finish On Every Kind Of Bare Copper
 
 <p align="center">
 <img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/feature_test_images/18b_finish_pads/top_straight_visual.webp" width="49.5%" alt="18b Finish on every kind of bare copper straight from above in visual mode">
@@ -850,7 +850,7 @@ and 91 vias on four layers, takes 6.4 to 7.0 s; board 25, whose countersinks are
 
 </div>
 
-### 23.10.3 18c Finish Before The Solder Mask
+### 22.10.3 18c Finish Before The Solder Mask
 
 <p align="center">
 <img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/feature_test_images/18c_finish_before_mask/top_straight_visual.webp" width="49.5%" alt="18c Finish before the solder mask straight from above in visual mode">
@@ -877,9 +877,9 @@ and 91 vias on four layers, takes 6.4 to 7.0 s; board 25, whose countersinks are
 
 </div>
 
-## 23.11 Items KESE Skips
+## 22.11 Items KESE Skips
 
-### 23.11.1 19 Items KESE Skips
+### 22.11.1 19 Items KESE Skips
 
 <p align="center">
 <img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/feature_test_images/19_skipped_items/top_straight_visual.webp" width="49.5%" alt="19 Items KESE skips straight from above in visual mode">
@@ -906,7 +906,7 @@ and 91 vias on four layers, takes 6.4 to 7.0 s; board 25, whose countersinks are
 
 </div>
 
-### 23.11.2 19b Items KESE Skips, KiCad 10
+### 22.11.2 19b Items KESE Skips, KiCad 10
 
 <p align="center">
 <img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/feature_test_images/19b_skipped_items_k10/top_straight_visual.webp" width="49.5%" alt="19b Items KESE skips, KiCad 10 straight from above in visual mode">
@@ -933,9 +933,9 @@ and 91 vias on four layers, takes 6.4 to 7.0 s; board 25, whose countersinks are
 
 </div>
 
-## 23.12 KiCad File Formats
+## 22.12 KiCad File Formats
 
-### 23.12.1 20a KiCad 6 Format
+### 22.12.1 20a KiCad 6 Format
 
 <p align="center">
 <img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/feature_test_images/20a_format_kicad6/top_straight_visual.webp" width="49.5%" alt="20a KiCad 6 format straight from above in visual mode">
@@ -962,7 +962,7 @@ and 91 vias on four layers, takes 6.4 to 7.0 s; board 25, whose countersinks are
 
 </div>
 
-### 23.12.2 20b KiCad 7 Format
+### 22.12.2 20b KiCad 7 Format
 
 <p align="center">
 <img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/feature_test_images/20b_format_kicad7/top_straight_visual.webp" width="49.5%" alt="20b KiCad 7 format straight from above in visual mode">
@@ -989,7 +989,7 @@ and 91 vias on four layers, takes 6.4 to 7.0 s; board 25, whose countersinks are
 
 </div>
 
-### 23.12.3 20c KiCad 8 Format
+### 22.12.3 20c KiCad 8 Format
 
 <p align="center">
 <img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/feature_test_images/20c_format_kicad8/top_straight_visual.webp" width="49.5%" alt="20c KiCad 8 format straight from above in visual mode">
@@ -1016,7 +1016,7 @@ and 91 vias on four layers, takes 6.4 to 7.0 s; board 25, whose countersinks are
 
 </div>
 
-### 23.12.4 20d KiCad 9 Format
+### 22.12.4 20d KiCad 9 Format
 
 <p align="center">
 <img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/feature_test_images/20d_format_kicad9/top_straight_visual.webp" width="49.5%" alt="20d KiCad 9 format straight from above in visual mode">
@@ -1043,7 +1043,7 @@ and 91 vias on four layers, takes 6.4 to 7.0 s; board 25, whose countersinks are
 
 </div>
 
-### 23.12.5 20e KiCad 10 Format
+### 22.12.5 20e KiCad 10 Format
 
 <p align="center">
 <img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/feature_test_images/20e_format_kicad10/top_straight_visual.webp" width="49.5%" alt="20e KiCad 10 format straight from above in visual mode">
@@ -1070,9 +1070,9 @@ and 91 vias on four layers, takes 6.4 to 7.0 s; board 25, whose countersinks are
 
 </div>
 
-## 23.13 Example Boards
+## 22.13 Example Boards
 
-### 23.13.1 21 RF Sensor Module
+### 22.13.1 21 RF Sensor Module
 
 <p align="center">
 <img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/feature_test_images/21_rf_module/top_straight_visual.webp" width="49.5%" alt="21 RF sensor module straight from above in visual mode">
@@ -1099,7 +1099,7 @@ and 91 vias on four layers, takes 6.4 to 7.0 s; board 25, whose countersinks are
 
 </div>
 
-### 23.13.2 22 HDI Radio Module
+### 22.13.2 22 HDI Radio Module
 
 <p align="center">
 <img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/feature_test_images/22_hdi_module/top_straight_visual.webp" width="49.5%" alt="22 HDI radio module straight from above in visual mode">
@@ -1126,7 +1126,7 @@ and 91 vias on four layers, takes 6.4 to 7.0 s; board 25, whose countersinks are
 
 </div>
 
-### 23.13.3 23 PCIe x1 Card
+### 22.13.3 23 PCIe x1 Card
 
 <p align="center">
 <img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/feature_test_images/23_pcie_card/top_straight_visual.webp" width="49.5%" alt="23 PCIe x1 card straight from above in visual mode">
@@ -1153,7 +1153,7 @@ and 91 vias on four layers, takes 6.4 to 7.0 s; board 25, whose countersinks are
 
 </div>
 
-## 23.14 The Numbers
+## 22.14 The Numbers
 
 Seconds, the median of three runs for each stage, unless marked ms; the total is the sum of the bars.
 
@@ -1242,4 +1242,4 @@ Seconds, the median of three runs for each stage, unless marked ms; the total is
 
 | Previous | Next |
 |:---|---:|
-| [openEMS Workflow](OpenEMS-Workflow.md) | [Glossary](Glossary.md) |
+| [KiCad And Solver Compatibility](Compatibility.md) | [Corpus Testing](Corpus-Testing.md) |
