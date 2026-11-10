@@ -87,7 +87,9 @@ def material_of_every_slice(slices, pool):
 
 def visible_flats(part_slices, levels, pieces):
     """One part's flat faces: at every height its material below less everyone's above (looking up),
-    and its material above less everyone's below (looking down)."""
+    and its material above less everyone's below (looking down).  A face GEOS 3.14.1's cut on the grid
+    leaves invalid from valid shapes (D1600E PSU breakout: a hole nested in a hole, which GEOS's
+    triangulation refuses) is cut again in floating point, only new vertices on the grid (exact_diff)."""
     out = []
     for k, z in enumerate(levels):
         below = part_slices[k - 1] if k else sh.EMPTY
@@ -98,6 +100,8 @@ def visible_flats(part_slices, levels, pieces):
             if mine.is_empty:
                 continue
             region = cut_away(mine, pieces[cutter]) if 0 <= cutter < len(pieces) else mine
+            if 0 <= cutter < len(pieces) and not region.is_valid:
+                region = sh.exact_diff(mine, pieces[cutter][3])
             if not region.is_empty:
                 out.append((z, region, up))
     return out
