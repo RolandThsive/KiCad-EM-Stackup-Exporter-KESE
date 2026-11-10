@@ -366,6 +366,7 @@ How many triangles its rays test at once is `Parallel.VERIFY_TRIANGLES_AT_A_TIME
 | `VERIFY_VOLUME_TOLERANCE` | `1e-7` | ≥ 0 | How far a part's volumes from its faces, its slices and its mesh may differ, as a share of its volume (the numerical noise of areas and meshes), and still pass |
 | `VERIFY_VOLUME_NOISE_MM3` | `1e-9` | mm³ ≥ 0 | and by this many mm³ more, whatever the volume |
 | `VERIFY_OPENED_VOLUME_MM3` | `1e-3` | mm³ ≥ 0 | How much volume opening pinch points and sharing vertices may take from a part's prisms (or add), and the part still pass: in all, or else in every piece of every slice, with no piece gone |
+| `VERIFY_GONE_AREA_MM2` | `1e-4` | mm² ≥ 0 | A piece this small may be gone in the piece-by-piece comparison (prisms with no slice left on them: a speck of finish that a pinch point's cut takes whole); a bigger piece gone fails the part |
 | `VERIFY_MERGE_EXTRA_DIGITS` | `2` | int ≥ 0 | The closed-mesh check merges a mesh's vertices this many decimal digits finer than the snapping grid (1e-6 mm), whatever `Run.UNITS` |
 
 ## 17.12 Presets (`parameters/presets.py`)

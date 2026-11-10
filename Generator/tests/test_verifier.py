@@ -147,6 +147,24 @@ def test_a_part_lacking_a_little_in_each_of_thousands_of_pieces_is_whole():
     assert checked(squares).pieces is None                                    # pieces compared only where needed
 
 
+def test_prisms_of_a_part_that_overlap_are_counted_once():
+    # stacked vias: the plating of each spans the foil they share, one ring in two prisms
+    ring = shapely.Point(0, 0).buffer(0.2).difference(shapely.Point(0, 0).buffer(0.1))
+    prisms = [SimpleNamespace(region=ring, z0=-0.3, z1=0.0), SimpleNamespace(region=ring, z0=-0.1, z1=0.2)]
+    c = volume_check(Boundary("Copper", [-0.3, -0.1, 0.0, 0.2], [(-0.3, -0.1, ring), (-0.1, 0.0, ring), (0.0, 0.2, ring)]), prisms)
+    assert abs(c.prisms - c.slices) < 1e-12 and c.pieces is None and whole(c)
+
+
+def test_a_speck_a_pinch_cut_takes_whole_is_not_a_piece_gone():
+    squares = [shapely.box(x, 0, x + 0.1, 0.1) for x in range(200)] + [shapely.box(500, 0, 500.005, 0.005)]
+    prisms = [SimpleNamespace(region=s, z0=0.0, z1=1.0) for s in squares]
+    narrower = [shapely.box(x0, y0, x1 - 1e-4, y1) for x0, y0, x1, y1 in shapely.bounds(squares[:-1])]
+    c = volume_check(Boundary("Finish", [0.0, 1.0], [(0.0, 1.0, shapely.union_all(narrower))]), prisms)
+    assert c.pieces.gone == 0 and whole(c)                   # the 2.5e-5 mm2 speck: under VERIFY_GONE_AREA_MM2
+    with settings({"Verifier.VERIFY_GONE_AREA_MM2": 1e-5}):
+        assert not whole(volume_check(Boundary("Finish", [0.0, 1.0], [(0.0, 1.0, shapely.union_all(narrower))]), prisms))
+
+
 def test_the_overlap_check_finds_the_same_overlaps_in_threads_as_in_one():
     model = checked_model(BOARDS / "six_layer.kicad_pcb")
     assert overlap.overlaps(model) == []
