@@ -4950,4 +4950,4 @@ Part 25 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pr
 
 | Previous | Next |
 |:---|---:|
-| [Corpus Testing](../Corpus-Testing.md) | [Corpus Testing](../Corpus-Testing.md) |
+| [Corpus Testing 24: rusefi To sparkfun](Corpus-Testing-24.md) | [Corpus Testing 26: SukkoPera To tjeerdie](Corpus-Testing-26.md) |
