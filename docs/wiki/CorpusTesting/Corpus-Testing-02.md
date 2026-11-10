@@ -301,16 +301,16 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 
 ## 23.2.8 AmigaPCI Mainboard
 
-![AmigaPCI Mainboard: stages 4 and 6 take 66% to 87% of a run. Simulation, GLB takes 9 min. Simulation, STEP takes 12 min. Simulation, STL takes 10 min. Visual, GLB takes 16 min](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/AmigaPCI-MainBoard_AmigaPCI-Mainboard.webp)
+![AmigaPCI Mainboard: stages 4 and 6 take 66% to 87% of a run. Simulation, GLB takes 9 min. Simulation, STEP takes 12 min. Simulation, STL takes 10 min. Visual, GLB takes 16 min. Visual, OBJ takes 12 min](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-02/AmigaPCI-MainBoard_AmigaPCI-Mainboard.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
 | Simulation, GLB | 13.6 | 50.4 | 250.1 | 5&nbsp;ms | 201.3 | 9.7 | 37.5 | 1.7 | 564.2 |
 | Simulation, STEP | 14.6 | 52.2 | 249.7 | 5&nbsp;ms | 213.3 | 127.4 | 40.4 | 1.8 | 699.5 |
 | Simulation, STL | 13.7 | 49.8 | 249.5 | 8&nbsp;ms | 210.7 | 21.3 | 41.2 | 1.5 | 587.6 |
-| Simulation, OBJ |  |  |  |  |  |  |  |  | exceeded 11 GB on a 15 GB machine (stopped there, not a KESE failure) |
+| Simulation, OBJ |  |  |  |  |  |  |  |  | exceeded 11 GB on a 15 GB machine (stopped there, not a KESE failure); it will be run again on a machine with more memory |
 | Visual, GLB | 14.1 | 50.4 | 252.8 | 6&nbsp;ms | 561.1 | 4.7 | 46.5 | 1.5 | 931.2 |
-| Visual, OBJ |  |  |  |  |  |  |  |  | exceeded 11 GB on a 15 GB machine (stopped there, not a KESE failure) |
+| Visual, OBJ | 10.3 | 38.1 | 182.7 | 5&nbsp;ms | 396.4 | 83.0 | 27.4 | 0.9 | 738.8 |
 
 <table align="center"><tr><td valign="top">
 
@@ -319,12 +319,13 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 | Folder | KiCAD / AmigaPCI Mainboard-KiCAD REV 70 |
 | Complexity | 493&nbsp;/&nbsp;1000 (size&nbsp;343, features&nbsp;150) |
 | KESE&nbsp;features | through vias, slotted holes,<br>custom pads, rounded,<br>trapezoid or chamfered pads,<br>arc tracks, filled zones,<br>copper drawings, copper text,<br>stack-up, dielectric εr and tanδ,<br>copper finish |
-| Tested | 9th November 2026 |
+| Tested | 9th November 2026 to 10th November 2026 |
 | Copper&nbsp;layers | 6 |
 | File&nbsp;format | KiCad 8 (20240108) |
 | Parts,&nbsp;tracks,&nbsp;vias | 723, 20,477, 2,447 |
 | Triangles,&nbsp;simulation | 36,016,370 in 1274 parts |
-| Verifier | Simulation, OBJ: exceeded 11 GB on a 15 GB machine (stopped there, not a KESE failure)<br>Visual, OBJ: exceeded 11 GB on a 15 GB machine (stopped there, not a KESE failure) |
+| Verifier | Simulation, OBJ: exceeded 11 GB on a 15 GB machine (stopped there, not a KESE failure); it will be run again on a machine with more memory |
+| Run&nbsp;again | Visual, OBJ: failed in the corpus run, run again with the memory cap raised from 11 GB to 14.5 GB, and passed |
 
 </td><td valign="top">
 
@@ -337,7 +338,7 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 <tr><td>OBJ</td><td align="right">–</td><td align="right">11&nbsp;GB</td></tr>
 <tr><th colspan="3" align="left">Visual</th></tr>
 <tr><td>GLB</td><td align="right">644&nbsp;MB</td><td align="right">10&nbsp;GB</td></tr>
-<tr><td>OBJ</td><td align="right">–</td><td align="right">11&nbsp;GB</td></tr>
+<tr><td>OBJ</td><td align="right">2.2&nbsp;GB</td><td align="right">14&nbsp;GB</td></tr>
 </table>
 
 </td></tr></table>

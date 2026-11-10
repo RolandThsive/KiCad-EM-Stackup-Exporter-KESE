@@ -3062,16 +3062,16 @@ Part 1 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 
 ## 23.1.72 PC110
 
-![PC110: stages 4 and 6 take 60% to 83% of a run. Simulation, GLB takes 5 min. Simulation, STEP takes 6 min. Simulation, STL takes 5 min. Visual, GLB takes 9 min](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-01/Open-Source-PC110_PCB-Mainboard_PC110.webp)
+![PC110: stages 4 and 6 take 60% to 83% of a run. Simulation, GLB takes 5 min. Simulation, STEP takes 6 min. Simulation, STL takes 5 min. Visual, GLB takes 9 min. Visual, OBJ takes 10 min](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-01/Open-Source-PC110_PCB-Mainboard_PC110.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
 | Simulation, GLB | 6.1 | 46.8 | 96.2 | 5&nbsp;ms | 134.2 | 10.9 | 22.2 | 1.8 | 318.2 |
 | Simulation, STEP | 6.6 | 47.7 | 95.3 | 5&nbsp;ms | 123.2 | 72.6 | 19.5 | 1.3 | 366.2 |
 | Simulation, STL | 5.9 | 42.7 | 88.3 | 6&nbsp;ms | 122.7 | 16.6 | 21.3 | 1.2 | 298.6 |
-| Simulation, OBJ |  |  |  |  |  |  |  |  | exceeded 11 GB on a 15 GB machine (stopped there, not a KESE failure) |
+| Simulation, OBJ |  |  |  |  |  |  |  |  | exceeded 11 GB on a 15 GB machine (stopped there, not a KESE failure); it will be run again on a machine with more memory |
 | Visual, GLB | 6.1 | 46.1 | 91.7 | 6&nbsp;ms | 358.7 | 3.5 | 37.4 | 0.9 | 544.4 |
-| Visual, OBJ |  |  |  |  |  |  |  |  | exceeded 11 GB on a 15 GB machine (stopped there, not a KESE failure) |
+| Visual, OBJ | 6.3 | 45.2 | 91.6 | 5&nbsp;ms | 306.3 | 112.5 | 26.4 | 0.7 | 589.0 |
 
 <table align="center"><tr><td valign="top">
 
@@ -3080,12 +3080,13 @@ Part 1 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 | Folder | PCB / Mainboard |
 | Complexity | 563&nbsp;/&nbsp;1000 (size&nbsp;378, features&nbsp;185) |
 | KESE&nbsp;features | through vias,<br>blind and buried vias,<br>slotted holes, custom pads,<br>rounded,<br>trapezoid or chamfered pads,<br>filled zones, copper drawings,<br>copper text, curved board outline,<br>knockout text, stack-up,<br>dielectric εr and tanδ |
-| Tested | 9th November 2026 |
+| Tested | 9th November 2026 to 10th November 2026 |
 | Copper&nbsp;layers | 10 |
 | File&nbsp;format | KiCad 10 (20260206) |
 | Parts,&nbsp;tracks,&nbsp;vias | 934, 44,594, 6,088 |
 | Triangles,&nbsp;simulation | 30,743,204 in 1455 parts |
-| Verifier | Simulation, OBJ: exceeded 11 GB on a 15 GB machine (stopped there, not a KESE failure)<br>Visual, OBJ: exceeded 11 GB on a 15 GB machine (stopped there, not a KESE failure) |
+| Verifier | Simulation, OBJ: exceeded 11 GB on a 15 GB machine (stopped there, not a KESE failure); it will be run again on a machine with more memory |
+| Run&nbsp;again | Visual, OBJ: failed in the corpus run, run again with the memory cap raised from 11 GB to 14.5 GB, and passed |
 
 </td><td valign="top">
 
@@ -3098,23 +3099,23 @@ Part 1 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 <tr><td>OBJ</td><td align="right">–</td><td align="right">11&nbsp;GB</td></tr>
 <tr><th colspan="3" align="left">Visual</th></tr>
 <tr><td>GLB</td><td align="right">538&nbsp;MB</td><td align="right">8.7&nbsp;GB</td></tr>
-<tr><td>OBJ</td><td align="right">–</td><td align="right">11&nbsp;GB</td></tr>
+<tr><td>OBJ</td><td align="right">1.8&nbsp;GB</td><td align="right">12&nbsp;GB</td></tr>
 </table>
 
 </td></tr></table>
 
 ## 23.1.73 PC110
 
-![PC110: stages 4 and 6 take 62% to 84% of a run. Simulation, GLB takes 6 min. Simulation, STEP takes 6 min. Simulation, STL takes 5 min. Visual, GLB takes 9 min](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-01/Open-Source-PC110_PCB-Mainboard-Single-Sheet-Schematic_PC110.webp)
+![PC110: stages 4 and 6 take 62% to 84% of a run. Simulation, GLB takes 6 min. Simulation, STEP takes 6 min. Simulation, STL takes 5 min. Visual, GLB takes 9 min. Visual, OBJ takes 9 min](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-01/Open-Source-PC110_PCB-Mainboard-Single-Sheet-Schematic_PC110.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
 | Simulation, GLB | 6.2 | 50.4 | 104.4 | 5&nbsp;ms | 141.9 | 8.9 | 21.3 | 1.2 | 334.3 |
 | Simulation, STEP | 5.5 | 42.6 | 92.4 | 5&nbsp;ms | 126.5 | 67.0 | 18.6 | 1.2 | 353.9 |
 | Simulation, STL | 5.5 | 42.3 | 91.8 | 6&nbsp;ms | 123.4 | 14.9 | 18.8 | 1.3 | 298.1 |
-| Simulation, OBJ |  |  |  |  |  |  |  |  | exceeded 11 GB on a 15 GB machine (stopped there, not a KESE failure) |
+| Simulation, OBJ |  |  |  |  |  |  |  |  | exceeded 11 GB on a 15 GB machine (stopped there, not a KESE failure); it will be run again on a machine with more memory |
 | Visual, GLB | 5.7 | 42.9 | 91.8 | 7&nbsp;ms | 355.8 | 3.4 | 33.6 | 0.9 | 534.1 |
-| Visual, OBJ |  |  |  |  |  |  |  |  | exceeded 11 GB on a 15 GB machine (stopped there, not a KESE failure) |
+| Visual, OBJ | 5.4 | 38.6 | 83.2 | 5&nbsp;ms | 303.5 | 101.8 | 34.0 | 0.9 | 567.4 |
 
 <table align="center"><tr><td valign="top">
 
@@ -3123,12 +3124,13 @@ Part 1 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 | Folder | PCB / Mainboard / Single-Sheet-Schematic |
 | Complexity | 563&nbsp;/&nbsp;1000 (size&nbsp;378, features&nbsp;185) |
 | KESE&nbsp;features | through vias,<br>blind and buried vias,<br>slotted holes, custom pads,<br>rounded,<br>trapezoid or chamfered pads,<br>filled zones, copper drawings,<br>copper text, curved board outline,<br>knockout text, stack-up,<br>dielectric εr and tanδ |
-| Tested | 9th November 2026 |
+| Tested | 9th November 2026 to 10th November 2026 |
 | Copper&nbsp;layers | 10 |
 | File&nbsp;format | KiCad 9 (20241229) |
 | Parts,&nbsp;tracks,&nbsp;vias | 934, 44,600, 6,088 |
 | Triangles,&nbsp;simulation | 30,715,986 in 1454 parts |
-| Verifier | Simulation, OBJ: exceeded 11 GB on a 15 GB machine (stopped there, not a KESE failure)<br>Visual, OBJ: exceeded 11 GB on a 15 GB machine (stopped there, not a KESE failure) |
+| Verifier | Simulation, OBJ: exceeded 11 GB on a 15 GB machine (stopped there, not a KESE failure); it will be run again on a machine with more memory |
+| Run&nbsp;again | Visual, OBJ: failed in the corpus run, run again with the memory cap raised from 11 GB to 14.5 GB, and passed |
 
 </td><td valign="top">
 
@@ -3141,7 +3143,7 @@ Part 1 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 <tr><td>OBJ</td><td align="right">–</td><td align="right">11&nbsp;GB</td></tr>
 <tr><th colspan="3" align="left">Visual</th></tr>
 <tr><td>GLB</td><td align="right">538&nbsp;MB</td><td align="right">8.6&nbsp;GB</td></tr>
-<tr><td>OBJ</td><td align="right">–</td><td align="right">11&nbsp;GB</td></tr>
+<tr><td>OBJ</td><td align="right">1.8&nbsp;GB</td><td align="right">11&nbsp;GB</td></tr>
 </table>
 
 </td></tr></table>
@@ -4139,14 +4141,14 @@ Part 1 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 
 ## 23.1.97 socket370-ti180
 
-![socket370-ti180: stages 4 and 6 take 44% to 83% of a run. Simulation, GLB takes 2 min. Simulation, STEP takes 2 min. Simulation, STL takes 2 min. Simulation, OBJ takes 3 min. Visual, GLB takes 3 min. Visual, OBJ takes 4 min](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-01/fpgamotherboard_socket370-fpga-ti180-routed_socket370-ti180.webp)
+![socket370-ti180: stages 4 and 6 take 47% to 83% of a run. Simulation, GLB takes 2 min. Simulation, STEP takes 3 min. Simulation, STL takes 2 min. Simulation, OBJ takes 4 min. Visual, GLB takes 3 min. Visual, OBJ takes 4 min](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-01/fpgamotherboard_socket370-fpga-ti180-routed_socket370-ti180.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-| Simulation, GLB | 2.7 | 16.7 | 41.3 | 3&nbsp;ms | 47.0 | 2.6 | 7.6 | 0.5 | 118.3 |
-| Simulation, STEP | 2.8 | 15.7 | 39.6 | 2&nbsp;ms | 47.2 | 26.0 | 7.6 | 0.5 | 139.4 |
-| Simulation, STL | 2.6 | 14.7 | 39.8 | 2&nbsp;ms | 47.6 | 5.2 | 8.0 | 0.5 | 118.4 |
-| Simulation, OBJ | 2.8 | 14.8 | 39.2 | 2&nbsp;ms | 46.2 | 80.7 | 7.8 | 0.7 | 192.1 |
+| Simulation, GLB | 3.2 | 17.1 | 48.4 | 2&nbsp;ms | 53.7 | 3.1 | 9.1 | 0.5 | 135.2 |
+| Simulation, STEP | 2.9 | 16.8 | 44.3 | 2&nbsp;ms | 53.6 | 29.0 | 8.9 | 0.6 | 156.0 |
+| Simulation, STL | 3.3 | 17.4 | 45.2 | 2&nbsp;ms | 53.2 | 5.7 | 8.3 | 0.6 | 133.7 |
+| Simulation, OBJ | 3.3 | 17.8 | 48.1 | 3&nbsp;ms | 54.9 | 82.5 | 9.6 | 0.6 | 216.8 |
 | Visual, GLB | 2.4 | 15.9 | 40.7 | 2&nbsp;ms | 120.3 | 1.0 | 14.2 | 0.5 | 195.0 |
 | Visual, OBJ | 2.8 | 15.2 | 39.9 | 2&nbsp;ms | 123.0 | 38.1 | 15.0 | 0.4 | 234.4 |
 
@@ -4157,22 +4159,23 @@ Part 1 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 | Folder | socket370 / fpga-ti180 / routed |
 | Complexity | 475&nbsp;/&nbsp;1000 (size&nbsp;335, features&nbsp;140) |
 | KESE&nbsp;features | through vias, microvias,<br>slotted holes, rounded,<br>trapezoid or chamfered pads,<br>filled zones, stack-up,<br>dielectric εr and tanδ,<br>copper finish |
-| Tested | 9th November 2026 |
+| Tested | 9th November 2026 to 10th November 2026 |
 | Copper&nbsp;layers | 6 |
 | File&nbsp;format | KiCad 10 (20260206) |
 | Parts,&nbsp;tracks,&nbsp;vias | 444, 26,277, 1,932 |
 | Triangles,&nbsp;simulation | 13,745,814 in 332 parts |
-| Verifier | Simulation, GLB: Verifier FAIL<br>Simulation, STEP: Verifier FAIL<br>Simulation, STL: Verifier FAIL<br>Simulation, OBJ: Verifier FAIL |
+| Verifier | PASS in all six runs |
+| Run&nbsp;again | Simulation, GLB; Simulation, STEP; Simulation, STL; Simulation, OBJ: failed in the corpus run, run again with the [corpus fixes](Corpus-Testing-Fixes.md), and passed |
 
 </td><td valign="top">
 
 <table>
 <tr><th>File<br>type</th><th>File<br>size</th><th>Peak memory<br>used</th></tr>
 <tr><th colspan="3" align="left">Simulation</th></tr>
-<tr><td>GLB</td><td align="right">461&nbsp;MB</td><td align="right">3.2&nbsp;GB</td></tr>
-<tr><td>STEP</td><td align="right">1.7&nbsp;GB</td><td align="right">4.2&nbsp;GB</td></tr>
-<tr><td>STL</td><td align="right">687&nbsp;MB</td><td align="right">3.4&nbsp;GB</td></tr>
-<tr><td>OBJ</td><td align="right">1.5&nbsp;GB</td><td align="right">8.5&nbsp;GB</td></tr>
+<tr><td>GLB</td><td align="right">461&nbsp;MB</td><td align="right">3.1&nbsp;GB</td></tr>
+<tr><td>STEP</td><td align="right">1.7&nbsp;GB</td><td align="right">4.1&nbsp;GB</td></tr>
+<tr><td>STL</td><td align="right">687&nbsp;MB</td><td align="right">3.2&nbsp;GB</td></tr>
+<tr><td>OBJ</td><td align="right">1.5&nbsp;GB</td><td align="right">8.6&nbsp;GB</td></tr>
 <tr><th colspan="3" align="left">Visual</th></tr>
 <tr><td>GLB</td><td align="right">253&nbsp;MB</td><td align="right">4.1&nbsp;GB</td></tr>
 <tr><td>OBJ</td><td align="right">816&nbsp;MB</td><td align="right">5.3&nbsp;GB</td></tr>
@@ -4315,10 +4318,10 @@ Part 1 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-| Simulation, GLB | 2.1 | 13.9 | 35.1 | 3&nbsp;ms | 42.1 | 2.2 | 5.9 | 0.5 | 101.7 |
-| Simulation, STEP | 1.8 | 12.2 | 34.0 | 3&nbsp;ms | 40.2 | 21.4 | 5.7 | 0.5 | 115.8 |
-| Simulation, STL | 2.1 | 12.8 | 35.3 | 2&nbsp;ms | 41.7 | 4.4 | 6.0 | 0.5 | 102.7 |
-| Simulation, OBJ | 2.0 | 12.4 | 34.7 | 2&nbsp;ms | 42.0 | 64.6 | 6.6 | 0.6 | 163.0 |
+| Simulation, GLB | 2.3 | 13.6 | 37.6 | 4&nbsp;ms | 45.4 | 2.2 | 6.6 | 0.6 | 108.3 |
+| Simulation, STEP | 2.4 | 14.6 | 38.3 | 3&nbsp;ms | 45.8 | 25.0 | 7.2 | 0.5 | 133.9 |
+| Simulation, STL | 2.5 | 13.8 | 38.6 | 2&nbsp;ms | 46.3 | 5.2 | 6.4 | 0.5 | 113.2 |
+| Simulation, OBJ | 2.4 | 13.6 | 37.4 | 3&nbsp;ms | 45.8 | 70.0 | 7.7 | 0.5 | 177.5 |
 | Visual, GLB | 2.2 | 13.5 | 34.2 | 3&nbsp;ms | 95.8 | 0.9 | 12.2 | 0.4 | 159.1 |
 | Visual, OBJ | 2.2 | 12.3 | 32.9 | 2&nbsp;ms | 94.8 | 31.3 | 11.3 | 0.3 | 185.2 |
 
@@ -4329,21 +4332,22 @@ Part 1 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 | Folder | socket7 / fpga-ti180 / routed |
 | Complexity | 463&nbsp;/&nbsp;1000 (size&nbsp;323, features&nbsp;140) |
 | KESE&nbsp;features | through vias, microvias,<br>slotted holes, rounded,<br>trapezoid or chamfered pads,<br>filled zones, stack-up,<br>dielectric εr and tanδ,<br>copper finish |
-| Tested | 9th November 2026 |
+| Tested | 9th November 2026 to 10th November 2026 |
 | Copper&nbsp;layers | 6 |
 | File&nbsp;format | KiCad 10 (20260206) |
 | Parts,&nbsp;tracks,&nbsp;vias | 398, 17,224, 1,659 |
 | Triangles,&nbsp;simulation | 11,779,760 in 306 parts |
-| Verifier | Simulation, GLB: Verifier FAIL<br>Simulation, STEP: Verifier FAIL<br>Simulation, STL: Verifier FAIL<br>Simulation, OBJ: Verifier FAIL |
+| Verifier | PASS in all six runs |
+| Run&nbsp;again | Simulation, GLB; Simulation, STEP; Simulation, STL; Simulation, OBJ: failed in the corpus run, run again with the [corpus fixes](Corpus-Testing-Fixes.md), and passed |
 
 </td><td valign="top">
 
 <table>
 <tr><th>File<br>type</th><th>File<br>size</th><th>Peak memory<br>used</th></tr>
 <tr><th colspan="3" align="left">Simulation</th></tr>
-<tr><td>GLB</td><td align="right">395&nbsp;MB</td><td align="right">2.8&nbsp;GB</td></tr>
+<tr><td>GLB</td><td align="right">395&nbsp;MB</td><td align="right">2.6&nbsp;GB</td></tr>
 <tr><td>STEP</td><td align="right">1.4&nbsp;GB</td><td align="right">3.7&nbsp;GB</td></tr>
-<tr><td>STL</td><td align="right">589&nbsp;MB</td><td align="right">2.7&nbsp;GB</td></tr>
+<tr><td>STL</td><td align="right">589&nbsp;MB</td><td align="right">2.6&nbsp;GB</td></tr>
 <tr><td>OBJ</td><td align="right">1.2&nbsp;GB</td><td align="right">7.3&nbsp;GB</td></tr>
 <tr><th colspan="3" align="left">Visual</th></tr>
 <tr><td>GLB</td><td align="right">219&nbsp;MB</td><td align="right">3.5&nbsp;GB</td></tr>
