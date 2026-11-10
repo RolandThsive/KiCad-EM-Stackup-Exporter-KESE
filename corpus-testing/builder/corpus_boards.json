@@ -1,0 +1,22 @@
+{
+ "_how": "left_out: boards taken out of the corpus (rank: why); bad_design: boards whose file is a bad design according to KESE (rank: what the file has). Add or remove a rank here and run final.py: only the pages of the boards changed are rewritten, and only charts missing are drawn.",
+ "left_out": {
+  "1245": "cut off before its end (an exact multiple of 4 KB, copied while KiCad was saving it)",
+  "1250": "cut off before its end (an exact multiple of 4 KB, copied while KiCad was saving it)",
+  "1264": "cut off before its end (an exact multiple of 4 KB, copied while KiCad was saving it)",
+  "1567": "cut off before its end (an exact multiple of 4 KB, copied while KiCad was saving it)",
+  "1715": "cut off before its end (an exact multiple of 4 KB, copied while KiCad was saving it)",
+  "2123": "cut off before its end (an exact multiple of 4 KB, copied while KiCad was saving it)",
+  "2186": "cut off before its end (an exact multiple of 4 KB, copied while KiCad was saving it)",
+  "2365": "cut off before its end (an exact multiple of 4 KB, copied while KiCad was saving it)"
+ },
+ "bad_design": {
+  "20": "GND and `4G_POWER_KEY` vias about 0.01 mm apart in 238 places, the first at (149.77, 116.06) mm (left so by the conversion from PADS)",
+  "101": "a GND via and a `CM5_1V8` via 0.056 mm apart at (128.38, 64.01) mm",
+  "515": "a plated hole with no net overlaps a GND plated hole at (214.30, 108.84) mm",
+  "585": "U4 and U7 placed exactly on top of each other at (137.41, 83.21) mm: their TRIM pads, of two nets, coincide",
+  "1519": "two through-hole pads at one spot, (143.51, 102.87) mm, of nets `/UG3-7` and `/VBL.L`",
+  "1789": "terminal blocks J10 and J11 placed overlapping at (67.15, 16.50) mm: J10 pad 1 (net `N-00000409`) and J11 pad 3 (no net), plated holes 0.06 mm apart",
+  "2290": "C118 pad 2 and C82 pad 1 overlap at (100.32, 170.52) mm, plated holes 0.25 mm apart (the file also has no Edge.Cuts outline)"
+ }
+}
