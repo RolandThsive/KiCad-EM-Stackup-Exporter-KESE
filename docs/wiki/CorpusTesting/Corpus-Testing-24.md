@@ -1,4 +1,4 @@
-# 23.24 Corpus Testing 24: rusefi To sparkfun
+# 23.24 Corpus Page 24
 
 Part 24 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these projects, six runs each, one file format a run, as [Corpus Testing](../Corpus-Testing.md) describes.
 
@@ -153,6 +153,7 @@ Part 24 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pr
 | Parts,&nbsp;tracks,&nbsp;vias | 417, 8,115, 2,902 |
 | Triangles,&nbsp;simulation | 13,000,160 in 456 parts |
 | Verifier | Simulation, GLB: Verifier FAIL<br>Simulation, STEP: Verifier FAIL<br>Simulation, STL: Verifier FAIL<br>Simulation, OBJ: Verifier FAIL |
+| Bad&nbsp;design | Bad design according to KESE: copper of two nets on top of each other in the file, a short KiCad's DRC reports; a GND via and a `CM5_1V8` via 0.056 mm apart at (128.38, 64.01) mm. KESE models what the file says, so the Verifier rightly finds the two nets' solids overlapping |
 
 </td><td valign="top">
 
@@ -4779,4 +4780,4 @@ Part 24 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pr
 
 | Previous | Next |
 |:---|---:|
-| [Corpus Testing 23: rhaamo To rusefi](Corpus-Testing-23.md) | [Corpus Testing 25: sparkfun To sufst](Corpus-Testing-25.md) |
+| [Corpus Page 23](Corpus-Testing-23.md) | [Corpus Page 25](Corpus-Testing-25.md) |

@@ -1,4 +1,4 @@
-# 23.2 Corpus Testing 2: alvaroalea To andrewpaterson
+# 23.2 Corpus Page 2
 
 Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these projects, six runs each, one file format a run, as [Corpus Testing](../Corpus-Testing.md) describes.
 
@@ -8659,4 +8659,4 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 
 | Previous | Next |
 |:---|---:|
-| [Corpus Testing 1: 01GOD To alphaonex86](Corpus-Testing-01.md) | [Corpus Testing 3: antevens To antmicro](Corpus-Testing-03.md) |
+| [Corpus Page 1](Corpus-Testing-01.md) | [Corpus Page 3](Corpus-Testing-03.md) |

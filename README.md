@@ -138,7 +138,7 @@ KESE includes material derived from KiCad, which is GPL-licensed: KiCad's "newst
 KiCad's original copyright headers are kept word for word in [`licenses/`](licenses) and listed in
 [NOTICE.md](NOTICE.md). Contributions are accepted under the same license; see [CONTRIBUTING.md](CONTRIBUTING.md).
 
-KESE was checked on 3,146 KiCad boards from 819 open hardware projects; no board is part of KESE. [credits.txt](credits.txt)
+KESE was checked on 3,138 KiCad boards from 819 open hardware projects; no board is part of KESE. [credits.txt](credits.txt)
 thanks their authors and names each project's license, as does the wiki's
 [Credits](https://github.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/wiki/Credits) page.
 

@@ -1,4 +1,4 @@
-# 23.10 Corpus Testing 10: gitRaksha To greatscottgadgets
+# 23.10 Corpus Page 10
 
 Part 10 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these projects, six runs each, one file format a run, as [Corpus Testing](../Corpus-Testing.md) describes.
 
@@ -2174,6 +2174,7 @@ Part 10 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pr
 | Parts,&nbsp;tracks,&nbsp;vias | 1,161, 23,746, 5,044 |
 | Triangles,&nbsp;simulation | 42,957,272 in 866 parts |
 | Verifier | Simulation, GLB: Verifier FAIL<br>Simulation, STEP: Verifier FAIL<br>Simulation, STL: Verifier FAIL<br>Simulation, OBJ: exceeded 11 GB on a 15 GB machine (stopped there, not a KESE failure); it will be run again on a machine with more memory |
+| Bad&nbsp;design | Bad design according to KESE: copper of two nets on top of each other in the file, a short KiCad's DRC reports; GND and `4G_POWER_KEY` vias about 0.01 mm apart in 238 places, the first at (149.77, 116.06) mm (left so by the conversion from PADS). KESE models what the file says, so the Verifier rightly finds the two nets' solids overlapping |
 | Run&nbsp;again | Visual, OBJ: failed in the corpus run, run again with the memory cap raised from 11 GB to 14.5 GB, and passed |
 
 </td><td valign="top">
@@ -4768,4 +4769,4 @@ Part 10 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pr
 
 | Previous | Next |
 |:---|---:|
-| [Corpus Testing 9: esden To ghent360](Corpus-Testing-09.md) | [Corpus Testing 11: greatscottgadgets To intergalaktik](Corpus-Testing-11.md) |
+| [Corpus Page 9](Corpus-Testing-09.md) | [Corpus Page 11](Corpus-Testing-11.md) |

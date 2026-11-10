@@ -1,4 +1,4 @@
-# 23.16 Corpus Testing 16: mwelling To nuclearfutureslab
+# 23.16 Corpus Page 16
 
 Part 16 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these projects, six runs each, one file format a run, as [Corpus Testing](../Corpus-Testing.md) describes.
 
@@ -4346,4 +4346,4 @@ Part 16 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pr
 
 | Previous | Next |
 |:---|---:|
-| [Corpus Testing 15: ltbrain To mwelling](Corpus-Testing-15.md) | [Corpus Testing 17: NUSGreyhats To OLIMEX](Corpus-Testing-17.md) |
+| [Corpus Page 15](Corpus-Testing-15.md) | [Corpus Page 17](Corpus-Testing-17.md) |

@@ -1,4 +1,4 @@
-# 23.21 Corpus Testing 21: oresat To pms67
+# 23.21 Corpus Page 21
 
 Part 21 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these projects, six runs each, one file format a run, as [Corpus Testing](../Corpus-Testing.md) describes.
 
@@ -4302,4 +4302,4 @@ Part 21 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pr
 
 | Previous | Next |
 |:---|---:|
-| [Corpus Testing 20: open-ephys To oresat](Corpus-Testing-20.md) | [Corpus Testing 22: polpo To rh1tech](Corpus-Testing-22.md) |
+| [Corpus Page 20](Corpus-Testing-20.md) | [Corpus Page 22](Corpus-Testing-22.md) |

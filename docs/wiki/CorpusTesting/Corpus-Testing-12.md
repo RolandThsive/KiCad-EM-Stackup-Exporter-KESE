@@ -1,4 +1,4 @@
-# 23.12 Corpus Testing 12: intergalaktik To issuiuc
+# 23.12 Corpus Page 12
 
 Part 12 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these projects, six runs each, one file format a run, as [Corpus Testing](../Corpus-Testing.md) describes.
 
@@ -4448,4 +4448,4 @@ Part 12 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pr
 
 | Previous | Next |
 |:---|---:|
-| [Corpus Testing 11: greatscottgadgets To intergalaktik](Corpus-Testing-11.md) | [Corpus Testing 13: istedman To KiCad](Corpus-Testing-13.md) |
+| [Corpus Page 11](Corpus-Testing-11.md) | [Corpus Page 13](Corpus-Testing-13.md) |

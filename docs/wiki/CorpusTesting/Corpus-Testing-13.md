@@ -1,4 +1,4 @@
-# 23.13 Corpus Testing 13: istedman To KiCad
+# 23.13 Corpus Page 13
 
 Part 13 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these projects, six runs each, one file format a run, as [Corpus Testing](../Corpus-Testing.md) describes.
 
@@ -4505,4 +4505,4 @@ Part 13 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pr
 
 | Previous | Next |
 |:---|---:|
-| [Corpus Testing 12: intergalaktik To issuiuc](Corpus-Testing-12.md) | [Corpus Testing 14: kitspace-forks To loxodes](Corpus-Testing-14.md) |
+| [Corpus Page 12](Corpus-Testing-12.md) | [Corpus Page 14](Corpus-Testing-14.md) |

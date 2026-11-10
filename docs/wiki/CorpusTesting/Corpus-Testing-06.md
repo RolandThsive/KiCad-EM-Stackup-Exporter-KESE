@@ -1,4 +1,4 @@
-# 23.6 Corpus Testing 6: Board-Folk To cheyao
+# 23.6 Corpus Page 6
 
 Part 6 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these projects, six runs each, one file format a run, as [Corpus Testing](../Corpus-Testing.md) describes.
 
@@ -4473,4 +4473,4 @@ Part 6 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 
 | Previous | Next |
 |:---|---:|
-| [Corpus Testing 5: Bambelweeny57 To Board-Folk](Corpus-Testing-05.md) | [Corpus Testing 7: chipfoundry To DangerousPrototypes](Corpus-Testing-07.md) |
+| [Corpus Page 5](Corpus-Testing-05.md) | [Corpus Page 7](Corpus-Testing-07.md) |

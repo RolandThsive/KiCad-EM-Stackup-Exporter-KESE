@@ -1,4 +1,4 @@
-# 23.8 Corpus Testing 8: DangerousPrototypes To epsilon0-dev
+# 23.8 Corpus Page 8
 
 Part 8 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these projects, six runs each, one file format a run, as [Corpus Testing](../Corpus-Testing.md) describes.
 
@@ -4337,4 +4337,4 @@ Part 8 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 
 | Previous | Next |
 |:---|---:|
-| [Corpus Testing 7: chipfoundry To DangerousPrototypes](Corpus-Testing-07.md) | [Corpus Testing 9: esden To ghent360](Corpus-Testing-09.md) |
+| [Corpus Page 7](Corpus-Testing-07.md) | [Corpus Page 9](Corpus-Testing-09.md) |

@@ -1,4 +1,4 @@
-# 23.9 Corpus Testing 9: esden To ghent360
+# 23.9 Corpus Page 9
 
 Part 9 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these projects, six runs each, one file format a run, as [Corpus Testing](../Corpus-Testing.md) describes.
 
@@ -2093,6 +2093,7 @@ Part 9 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 | Triangles,&nbsp;simulation | 7,779,384 in 422 parts |
 | Note | mostly unrouted |
 | Verifier | Simulation, GLB: Verifier FAIL<br>Simulation, STEP: Verifier FAIL<br>Simulation, STL: Verifier FAIL<br>Simulation, OBJ: Verifier FAIL |
+| Bad&nbsp;design | Bad design according to KESE: copper of two nets on top of each other in the file, a short KiCad's DRC reports; C118 pad 2 and C82 pad 1 overlap at (100.32, 170.52) mm, plated holes 0.25 mm apart (the file also has no Edge.Cuts outline). KESE models what the file says, so the Verifier rightly finds the two nets' solids overlapping |
 
 </td><td valign="top">
 
@@ -4434,4 +4435,4 @@ Part 9 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 
 | Previous | Next |
 |:---|---:|
-| [Corpus Testing 8: DangerousPrototypes To epsilon0-dev](Corpus-Testing-08.md) | [Corpus Testing 10: gitRaksha To greatscottgadgets](Corpus-Testing-10.md) |
+| [Corpus Page 8](Corpus-Testing-08.md) | [Corpus Page 10](Corpus-Testing-10.md) |

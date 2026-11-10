@@ -1,4 +1,4 @@
-# 23.5 Corpus Testing 5: Bambelweeny57 To Board-Folk
+# 23.5 Corpus Page 5
 
 Part 5 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these projects, six runs each, one file format a run, as [Corpus Testing](../Corpus-Testing.md) describes.
 
@@ -4440,4 +4440,4 @@ Part 5 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 
 | Previous | Next |
 |:---|---:|
-| [Corpus Testing 4: antmicro To baldengineer](Corpus-Testing-04.md) | [Corpus Testing 6: Board-Folk To cheyao](Corpus-Testing-06.md) |
+| [Corpus Page 4](Corpus-Testing-04.md) | [Corpus Page 6](Corpus-Testing-06.md) |

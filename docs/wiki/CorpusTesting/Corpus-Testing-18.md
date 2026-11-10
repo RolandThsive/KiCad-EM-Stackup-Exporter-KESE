@@ -1,4 +1,4 @@
-# 23.18 Corpus Testing 18: OLIMEX To OLIMEX
+# 23.18 Corpus Page 18
 
 Part 18 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these projects, six runs each, one file format a run, as [Corpus Testing](../Corpus-Testing.md) describes.
 
@@ -4297,4 +4297,4 @@ Part 18 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pr
 
 | Previous | Next |
 |:---|---:|
-| [Corpus Testing 17: NUSGreyhats To OLIMEX](Corpus-Testing-17.md) | [Corpus Testing 19: OLIMEX To open-ephys](Corpus-Testing-19.md) |
+| [Corpus Page 17](Corpus-Testing-17.md) | [Corpus Page 19](Corpus-Testing-19.md) |

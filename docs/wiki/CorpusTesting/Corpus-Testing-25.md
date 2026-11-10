@@ -1,4 +1,4 @@
-# 23.25 Corpus Testing 25: sparkfun To sufst
+# 23.25 Corpus Page 25
 
 Part 25 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these projects, six runs each, one file format a run, as [Corpus Testing](../Corpus-Testing.md) describes.
 
@@ -4950,4 +4950,4 @@ Part 25 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pr
 
 | Previous | Next |
 |:---|---:|
-| [Corpus Testing 24: rusefi To sparkfun](Corpus-Testing-24.md) | [Corpus Testing 26: SukkoPera To tjeerdie](Corpus-Testing-26.md) |
+| [Corpus Page 24](Corpus-Testing-24.md) | [Corpus Page 26](Corpus-Testing-26.md) |

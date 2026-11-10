@@ -1,4 +1,4 @@
-# 23.7 Corpus Testing 7: chipfoundry To DangerousPrototypes
+# 23.7 Corpus Page 7
 
 Part 7 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these projects, six runs each, one file format a run, as [Corpus Testing](../Corpus-Testing.md) describes.
 
@@ -1060,6 +1060,7 @@ Part 7 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 | Triangles,&nbsp;simulation | 1,351,032 in 323 parts |
 | Note | mostly unrouted |
 | Verifier | Simulation, GLB: Verifier FAIL<br>Simulation, STEP: Verifier FAIL<br>Simulation, STL: Verifier FAIL<br>Simulation, OBJ: Verifier FAIL |
+| Bad&nbsp;design | Bad design according to KESE: copper of two nets on top of each other in the file, a short KiCad's DRC reports; terminal blocks J10 and J11 placed overlapping at (67.15, 16.50) mm: J10 pad 1 (net `N-00000409`) and J11 pad 3 (no net), plated holes 0.06 mm apart. KESE models what the file says, so the Verifier rightly finds the two nets' solids overlapping |
 
 </td><td valign="top">
 
@@ -4479,4 +4480,4 @@ Part 7 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 
 | Previous | Next |
 |:---|---:|
-| [Corpus Testing 6: Board-Folk To cheyao](Corpus-Testing-06.md) | [Corpus Testing 8: DangerousPrototypes To epsilon0-dev](Corpus-Testing-08.md) |
+| [Corpus Page 6](Corpus-Testing-06.md) | [Corpus Page 8](Corpus-Testing-08.md) |

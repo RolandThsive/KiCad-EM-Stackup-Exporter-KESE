@@ -1,4 +1,4 @@
-# 23.11 Corpus Testing 11: greatscottgadgets To intergalaktik
+# 23.11 Corpus Page 11
 
 Part 11 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these projects, six runs each, one file format a run, as [Corpus Testing](../Corpus-Testing.md) describes.
 
@@ -4380,4 +4380,4 @@ Part 11 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pr
 
 | Previous | Next |
 |:---|---:|
-| [Corpus Testing 10: gitRaksha To greatscottgadgets](Corpus-Testing-10.md) | [Corpus Testing 12: intergalaktik To issuiuc](Corpus-Testing-12.md) |
+| [Corpus Page 10](Corpus-Testing-10.md) | [Corpus Page 12](Corpus-Testing-12.md) |

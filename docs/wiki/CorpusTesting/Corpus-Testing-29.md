@@ -1,4 +1,4 @@
-# 23.29 Corpus Testing 29: xesscorp To ZeroPhone
+# 23.29 Corpus Page 29
 
 Part 29 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these projects, six runs each, one file format a run, as [Corpus Testing](../Corpus-Testing.md) describes.
 
@@ -687,4 +687,4 @@ Part 29 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pr
 
 | Previous | Next |
 |:---|---:|
-| [Corpus Testing 28: ucdfs To Wren6991](Corpus-Testing-28.md) | [Corpus Testing](../Corpus-Testing.md) |
+| [Corpus Page 28](Corpus-Testing-28.md) | [Corpus Testing](../Corpus-Testing.md) |

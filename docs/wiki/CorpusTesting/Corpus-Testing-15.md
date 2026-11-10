@@ -1,4 +1,4 @@
-# 23.15 Corpus Testing 15: ltbrain To mwelling
+# 23.15 Corpus Page 15
 
 Part 15 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these projects, six runs each, one file format a run, as [Corpus Testing](../Corpus-Testing.md) describes.
 
@@ -4297,4 +4297,4 @@ Part 15 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pr
 
 | Previous | Next |
 |:---|---:|
-| [Corpus Testing 14: kitspace-forks To loxodes](Corpus-Testing-14.md) | [Corpus Testing 16: mwelling To nuclearfutureslab](Corpus-Testing-16.md) |
+| [Corpus Page 14](Corpus-Testing-14.md) | [Corpus Page 16](Corpus-Testing-16.md) |

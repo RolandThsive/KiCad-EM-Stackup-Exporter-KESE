@@ -1,4 +1,4 @@
-# 23.1 Corpus Testing 1: 01GOD To alphaonex86
+# 23.1 Corpus Page 1
 
 Part 1 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these projects, six runs each, one file format a run, as [Corpus Testing](../Corpus-Testing.md) describes.
 
@@ -4488,4 +4488,4 @@ Part 1 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 
 | Previous | Next |
 |:---|---:|
-| [Corpus Testing](../Corpus-Testing.md) | [Corpus Testing 2: alvaroalea To andrewpaterson](Corpus-Testing-02.md) |
+| [Corpus Testing](../Corpus-Testing.md) | [Corpus Page 2](Corpus-Testing-02.md) |

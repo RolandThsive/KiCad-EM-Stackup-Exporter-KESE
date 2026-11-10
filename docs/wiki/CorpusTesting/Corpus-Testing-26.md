@@ -1,4 +1,4 @@
-# 23.26 Corpus Testing 26: SukkoPera To tjeerdie
+# 23.26 Corpus Page 26
 
 Part 26 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these projects, six runs each, one file format a run, as [Corpus Testing](../Corpus-Testing.md) describes.
 
@@ -4389,4 +4389,4 @@ Part 26 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pr
 
 | Previous | Next |
 |:---|---:|
-| [Corpus Testing 25: sparkfun To sufst](Corpus-Testing-25.md) | [Corpus Testing 27: tjhorner To tzarc](Corpus-Testing-27.md) |
+| [Corpus Page 25](Corpus-Testing-25.md) | [Corpus Page 27](Corpus-Testing-27.md) |

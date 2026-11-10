@@ -1,4 +1,4 @@
-# 23.22 Corpus Testing 22: polpo To rh1tech
+# 23.22 Corpus Page 22
 
 Part 22 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these projects, six runs each, one file format a run, as [Corpus Testing](../Corpus-Testing.md) describes.
 
@@ -4642,4 +4642,4 @@ Part 22 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pr
 
 | Previous | Next |
 |:---|---:|
-| [Corpus Testing 21: oresat To pms67](Corpus-Testing-21.md) | [Corpus Testing 23: rhaamo To rusefi](Corpus-Testing-23.md) |
+| [Corpus Page 21](Corpus-Testing-21.md) | [Corpus Page 23](Corpus-Testing-23.md) |

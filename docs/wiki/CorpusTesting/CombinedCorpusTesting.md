@@ -2,7 +2,7 @@
 
 Every board of [Corpus Testing](../Corpus-Testing.md) on one page: the same sections as its sub-pages, together.
 
-# 23.1 Corpus Testing 1: 01GOD To alphaonex86
+# 23.1 Corpus Page 1
 
 Part 1 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these projects, six runs each, one file format a run, as [Corpus Testing](../Corpus-Testing.md) describes.
 
@@ -4490,7 +4490,7 @@ Part 1 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 
 </td></tr></table>
 
-# 23.2 Corpus Testing 2: alvaroalea To andrewpaterson
+# 23.2 Corpus Page 2
 
 Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these projects, six runs each, one file format a run, as [Corpus Testing](../Corpus-Testing.md) describes.
 
@@ -13149,7 +13149,7 @@ Part 2 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 
 </td></tr></table>
 
-# 23.3 Corpus Testing 3: antevens To antmicro
+# 23.3 Corpus Page 3
 
 Part 3 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these projects, six runs each, one file format a run, as [Corpus Testing](../Corpus-Testing.md) describes.
 
@@ -17364,6 +17364,7 @@ Part 3 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 | Parts,&nbsp;tracks,&nbsp;vias | 129, 2,743, 536 |
 | Triangles,&nbsp;simulation | 2,773,950 in 292 parts |
 | Verifier | Simulation, GLB: Verifier FAIL<br>Simulation, STEP: Verifier FAIL<br>Simulation, STL: Verifier FAIL<br>Simulation, OBJ: Verifier FAIL |
+| Bad&nbsp;design | Bad design according to KESE: copper of two nets on top of each other in the file, a short KiCad's DRC reports; U4 and U7 placed exactly on top of each other at (137.41, 83.21) mm: their TRIM pads, of two nets, coincide. KESE models what the file says, so the Verifier rightly finds the two nets' solids overlapping |
 
 </td><td valign="top">
 
@@ -17381,7 +17382,7 @@ Part 3 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 
 </td></tr></table>
 
-# 23.4 Corpus Testing 4: antmicro To baldengineer
+# 23.4 Corpus Page 4
 
 Part 4 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these projects, six runs each, one file format a run, as [Corpus Testing](../Corpus-Testing.md) describes.
 
@@ -22382,6 +22383,7 @@ Part 4 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 | Parts,&nbsp;tracks,&nbsp;vias | 101, 856, 77 |
 | Triangles,&nbsp;simulation | 3,502,212 in 136 parts |
 | Verifier | Simulation, GLB: Verifier FAIL<br>Simulation, STEP: Verifier FAIL<br>Simulation, STL: Verifier FAIL<br>Simulation, OBJ: Verifier FAIL |
+| Bad&nbsp;design | Bad design according to KESE: copper of two nets on top of each other in the file, a short KiCad's DRC reports; two through-hole pads at one spot, (143.51, 102.87) mm, of nets `/UG3-7` and `/VBL.L`. KESE models what the file says, so the Verifier rightly finds the two nets' solids overlapping |
 
 </td><td valign="top">
 
@@ -22571,7 +22573,7 @@ Part 4 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 
 </td></tr></table>
 
-# 23.5 Corpus Testing 5: Bambelweeny57 To Board-Folk
+# 23.5 Corpus Page 5
 
 Part 5 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these projects, six runs each, one file format a run, as [Corpus Testing](../Corpus-Testing.md) describes.
 
@@ -27011,7 +27013,7 @@ Part 5 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 
 </td></tr></table>
 
-# 23.6 Corpus Testing 6: Board-Folk To cheyao
+# 23.6 Corpus Page 6
 
 Part 6 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these projects, six runs each, one file format a run, as [Corpus Testing](../Corpus-Testing.md) describes.
 
@@ -31484,7 +31486,7 @@ Part 6 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 
 </td></tr></table>
 
-# 23.7 Corpus Testing 7: chipfoundry To DangerousPrototypes
+# 23.7 Corpus Page 7
 
 Part 7 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these projects, six runs each, one file format a run, as [Corpus Testing](../Corpus-Testing.md) describes.
 
@@ -32546,6 +32548,7 @@ Part 7 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 | Triangles,&nbsp;simulation | 1,351,032 in 323 parts |
 | Note | mostly unrouted |
 | Verifier | Simulation, GLB: Verifier FAIL<br>Simulation, STEP: Verifier FAIL<br>Simulation, STL: Verifier FAIL<br>Simulation, OBJ: Verifier FAIL |
+| Bad&nbsp;design | Bad design according to KESE: copper of two nets on top of each other in the file, a short KiCad's DRC reports; terminal blocks J10 and J11 placed overlapping at (67.15, 16.50) mm: J10 pad 1 (net `N-00000409`) and J11 pad 3 (no net), plated holes 0.06 mm apart. KESE models what the file says, so the Verifier rightly finds the two nets' solids overlapping |
 
 </td><td valign="top">
 
@@ -35963,7 +35966,7 @@ Part 7 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 
 </td></tr></table>
 
-# 23.8 Corpus Testing 8: DangerousPrototypes To epsilon0-dev
+# 23.8 Corpus Page 8
 
 Part 8 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these projects, six runs each, one file format a run, as [Corpus Testing](../Corpus-Testing.md) describes.
 
@@ -40300,7 +40303,7 @@ Part 8 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 
 </td></tr></table>
 
-# 23.9 Corpus Testing 9: esden To ghent360
+# 23.9 Corpus Page 9
 
 Part 9 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these projects, six runs each, one file format a run, as [Corpus Testing](../Corpus-Testing.md) describes.
 
@@ -42395,6 +42398,7 @@ Part 9 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 | Triangles,&nbsp;simulation | 7,779,384 in 422 parts |
 | Note | mostly unrouted |
 | Verifier | Simulation, GLB: Verifier FAIL<br>Simulation, STEP: Verifier FAIL<br>Simulation, STL: Verifier FAIL<br>Simulation, OBJ: Verifier FAIL |
+| Bad&nbsp;design | Bad design according to KESE: copper of two nets on top of each other in the file, a short KiCad's DRC reports; C118 pad 2 and C82 pad 1 overlap at (100.32, 170.52) mm, plated holes 0.25 mm apart (the file also has no Edge.Cuts outline). KESE models what the file says, so the Verifier rightly finds the two nets' solids overlapping |
 
 </td><td valign="top">
 
@@ -44734,7 +44738,7 @@ Part 9 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 
 </td></tr></table>
 
-# 23.10 Corpus Testing 10: gitRaksha To greatscottgadgets
+# 23.10 Corpus Page 10
 
 Part 10 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these projects, six runs each, one file format a run, as [Corpus Testing](../Corpus-Testing.md) describes.
 
@@ -46910,6 +46914,7 @@ Part 10 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pr
 | Parts,&nbsp;tracks,&nbsp;vias | 1,161, 23,746, 5,044 |
 | Triangles,&nbsp;simulation | 42,957,272 in 866 parts |
 | Verifier | Simulation, GLB: Verifier FAIL<br>Simulation, STEP: Verifier FAIL<br>Simulation, STL: Verifier FAIL<br>Simulation, OBJ: exceeded 11 GB on a 15 GB machine (stopped there, not a KESE failure); it will be run again on a machine with more memory |
+| Bad&nbsp;design | Bad design according to KESE: copper of two nets on top of each other in the file, a short KiCad's DRC reports; GND and `4G_POWER_KEY` vias about 0.01 mm apart in 238 places, the first at (149.77, 116.06) mm (left so by the conversion from PADS). KESE models what the file says, so the Verifier rightly finds the two nets' solids overlapping |
 | Run&nbsp;again | Visual, OBJ: failed in the corpus run, run again with the memory cap raised from 11 GB to 14.5 GB, and passed |
 
 </td><td valign="top">
@@ -49502,7 +49507,7 @@ Part 10 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pr
 
 </td></tr></table>
 
-# 23.11 Corpus Testing 11: greatscottgadgets To intergalaktik
+# 23.11 Corpus Page 11
 
 Part 11 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these projects, six runs each, one file format a run, as [Corpus Testing](../Corpus-Testing.md) describes.
 
@@ -53882,7 +53887,7 @@ Part 11 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pr
 
 </td></tr></table>
 
-# 23.12 Corpus Testing 12: intergalaktik To issuiuc
+# 23.12 Corpus Page 12
 
 Part 12 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these projects, six runs each, one file format a run, as [Corpus Testing](../Corpus-Testing.md) describes.
 
@@ -58330,7 +58335,7 @@ Part 12 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pr
 
 </td></tr></table>
 
-# 23.13 Corpus Testing 13: istedman To KiCad
+# 23.13 Corpus Page 13
 
 Part 13 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these projects, six runs each, one file format a run, as [Corpus Testing](../Corpus-Testing.md) describes.
 
@@ -62835,7 +62840,7 @@ Part 13 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pr
 
 </td></tr></table>
 
-# 23.14 Corpus Testing 14: kitspace-forks To loxodes
+# 23.14 Corpus Page 14
 
 Part 14 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these projects, six runs each, one file format a run, as [Corpus Testing](../Corpus-Testing.md) describes.
 
@@ -68172,7 +68177,7 @@ Part 14 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pr
 
 </td></tr></table>
 
-# 23.15 Corpus Testing 15: ltbrain To mwelling
+# 23.15 Corpus Page 15
 
 Part 15 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these projects, six runs each, one file format a run, as [Corpus Testing](../Corpus-Testing.md) describes.
 
@@ -72469,7 +72474,7 @@ Part 15 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pr
 
 </td></tr></table>
 
-# 23.16 Corpus Testing 16: mwelling To nuclearfutureslab
+# 23.16 Corpus Page 16
 
 Part 16 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these projects, six runs each, one file format a run, as [Corpus Testing](../Corpus-Testing.md) describes.
 
@@ -76815,7 +76820,7 @@ Part 16 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pr
 
 </td></tr></table>
 
-# 23.17 Corpus Testing 17: NUSGreyhats To OLIMEX
+# 23.17 Corpus Page 17
 
 Part 17 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these projects, six runs each, one file format a run, as [Corpus Testing](../Corpus-Testing.md) describes.
 
@@ -81244,7 +81249,7 @@ Part 17 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pr
 
 </td></tr></table>
 
-# 23.18 Corpus Testing 18: OLIMEX To OLIMEX
+# 23.18 Corpus Page 18
 
 Part 18 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these projects, six runs each, one file format a run, as [Corpus Testing](../Corpus-Testing.md) describes.
 
@@ -85541,7 +85546,7 @@ Part 18 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pr
 
 </td></tr></table>
 
-# 23.19 Corpus Testing 19: OLIMEX To open-ephys
+# 23.19 Corpus Page 19
 
 Part 19 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these projects, six runs each, one file format a run, as [Corpus Testing](../Corpus-Testing.md) describes.
 
@@ -89845,7 +89850,7 @@ Part 19 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pr
 
 </td></tr></table>
 
-# 23.20 Corpus Testing 20: open-ephys To oresat
+# 23.20 Corpus Page 20
 
 Part 20 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these projects, six runs each, one file format a run, as [Corpus Testing](../Corpus-Testing.md) describes.
 
@@ -94324,7 +94329,7 @@ Part 20 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pr
 
 </td></tr></table>
 
-# 23.21 Corpus Testing 21: oresat To pms67
+# 23.21 Corpus Page 21
 
 Part 21 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these projects, six runs each, one file format a run, as [Corpus Testing](../Corpus-Testing.md) describes.
 
@@ -98626,7 +98631,7 @@ Part 21 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pr
 
 </td></tr></table>
 
-# 23.22 Corpus Testing 22: polpo To rh1tech
+# 23.22 Corpus Page 22
 
 Part 22 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these projects, six runs each, one file format a run, as [Corpus Testing](../Corpus-Testing.md) describes.
 
@@ -103268,7 +103273,7 @@ Part 22 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pr
 
 </td></tr></table>
 
-# 23.23 Corpus Testing 23: rhaamo To rusefi
+# 23.23 Corpus Page 23
 
 Part 23 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these projects, six runs each, one file format a run, as [Corpus Testing](../Corpus-Testing.md) describes.
 
@@ -106054,6 +106059,7 @@ Part 23 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pr
 | Parts,&nbsp;tracks,&nbsp;vias | 341, 3,172, 406 |
 | Triangles,&nbsp;simulation | 3,221,878 in 198 parts |
 | Verifier | Simulation, GLB: Verifier FAIL<br>Simulation, STEP: Verifier FAIL<br>Simulation, STL: Verifier FAIL<br>Simulation, OBJ: Verifier FAIL |
+| Bad&nbsp;design | Bad design according to KESE: copper of two nets on top of each other in the file, a short KiCad's DRC reports; a plated hole with no net overlaps a GND plated hole at (214.30, 108.84) mm. KESE models what the file says, so the Verifier rightly finds the two nets' solids overlapping |
 
 </td><td valign="top">
 
@@ -108177,7 +108183,7 @@ Part 23 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pr
 
 </td></tr></table>
 
-# 23.24 Corpus Testing 24: rusefi To sparkfun
+# 23.24 Corpus Page 24
 
 Part 24 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these projects, six runs each, one file format a run, as [Corpus Testing](../Corpus-Testing.md) describes.
 
@@ -108332,6 +108338,7 @@ Part 24 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pr
 | Parts,&nbsp;tracks,&nbsp;vias | 417, 8,115, 2,902 |
 | Triangles,&nbsp;simulation | 13,000,160 in 456 parts |
 | Verifier | Simulation, GLB: Verifier FAIL<br>Simulation, STEP: Verifier FAIL<br>Simulation, STL: Verifier FAIL<br>Simulation, OBJ: Verifier FAIL |
+| Bad&nbsp;design | Bad design according to KESE: copper of two nets on top of each other in the file, a short KiCad's DRC reports; a GND via and a `CM5_1V8` via 0.056 mm apart at (128.38, 64.01) mm. KESE models what the file says, so the Verifier rightly finds the two nets' solids overlapping |
 
 </td><td valign="top">
 
@@ -112956,7 +112963,7 @@ Part 24 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pr
 
 </td></tr></table>
 
-# 23.25 Corpus Testing 25: sparkfun To sufst
+# 23.25 Corpus Page 25
 
 Part 25 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these projects, six runs each, one file format a run, as [Corpus Testing](../Corpus-Testing.md) describes.
 
@@ -117906,7 +117913,7 @@ Part 25 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pr
 
 </td></tr></table>
 
-# 23.26 Corpus Testing 26: SukkoPera To tjeerdie
+# 23.26 Corpus Page 26
 
 Part 26 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these projects, six runs each, one file format a run, as [Corpus Testing](../Corpus-Testing.md) describes.
 
@@ -122295,7 +122302,7 @@ Part 26 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pr
 
 </td></tr></table>
 
-# 23.27 Corpus Testing 27: tjhorner To tzarc
+# 23.27 Corpus Page 27
 
 Part 27 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these projects, six runs each, one file format a run, as [Corpus Testing](../Corpus-Testing.md) describes.
 
@@ -126834,7 +126841,7 @@ Part 27 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pr
 
 </td></tr></table>
 
-# 23.28 Corpus Testing 28: ucdfs To Wren6991
+# 23.28 Corpus Page 28
 
 Part 28 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these projects, six runs each, one file format a run, as [Corpus Testing](../Corpus-Testing.md) describes.
 
@@ -131624,48 +131631,7 @@ Part 28 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pr
 
 </td></tr></table>
 
-## 23.28.112 2019-07-02_15:17:55_fpga_hat
-
-| Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
-|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-| Simulation, GLB |  |  |  |  |  |  |  |  | error: 2019-07-02_15:17:55_fpga_hat.kicad_pcb: the file ends with 5 parentheses still open: it is cut short (an incomplete download or copy?) |
-| Simulation, STEP |  |  |  |  |  |  |  |  | error: 2019-07-02_15:17:55_fpga_hat.kicad_pcb: the file ends with 5 parentheses still open: it is cut short (an incomplete download or copy?) |
-| Simulation, STL |  |  |  |  |  |  |  |  | error: 2019-07-02_15:17:55_fpga_hat.kicad_pcb: the file ends with 5 parentheses still open: it is cut short (an incomplete download or copy?) |
-| Simulation, OBJ |  |  |  |  |  |  |  |  | error: 2019-07-02_15:17:55_fpga_hat.kicad_pcb: the file ends with 5 parentheses still open: it is cut short (an incomplete download or copy?) |
-| Visual, GLB |  |  |  |  |  |  |  |  | error: 2019-07-02_15:17:55_fpga_hat.kicad_pcb: the file ends with 5 parentheses still open: it is cut short (an incomplete download or copy?) |
-| Visual, OBJ |  |  |  |  |  |  |  |  | error: 2019-07-02_15:17:55_fpga_hat.kicad_pcb: the file ends with 5 parentheses still open: it is cut short (an incomplete download or copy?) |
-
-<table align="center"><tr><td valign="top">
-
-| Board | Repo: [Wren6991/Snowflake-FPGA](https://github.com/Wren6991/Snowflake-FPGA)<br>Board: `2019-07-02_15:17:55_fpga_hat.kicad_pcb` |
-|---|---|
-| Folder | timelapse |
-| Complexity | 180&nbsp;/&nbsp;1000 (size&nbsp;140, features&nbsp;40) |
-| KESE&nbsp;features | rounded,<br>trapezoid or chamfered pads,<br>filled zones, curved board outline |
-| Tested | 9th November 2026 |
-| Copper&nbsp;layers | 4 |
-| File&nbsp;format | KiCad 5 |
-| Parts,&nbsp;tracks,&nbsp;vias | 81, 0, 0 |
-| Note | mostly unrouted |
-| Verifier | Simulation, GLB: error: 2019-07-02_15:17:55_fpga_hat.kicad_pcb: the file ends with 5 parentheses still open: it is cut short (an incomplete download or copy?)<br>Simulation, STEP: error: 2019-07-02_15:17:55_fpga_hat.kicad_pcb: the file ends with 5 parentheses still open: it is cut short (an incomplete download or copy?)<br>Simulation, STL: error: 2019-07-02_15:17:55_fpga_hat.kicad_pcb: the file ends with 5 parentheses still open: it is cut short (an incomplete download or copy?)<br>Simulation, OBJ: error: 2019-07-02_15:17:55_fpga_hat.kicad_pcb: the file ends with 5 parentheses still open: it is cut short (an incomplete download or copy?)<br>Visual, GLB: error: 2019-07-02_15:17:55_fpga_hat.kicad_pcb: the file ends with 5 parentheses still open: it is cut short (an incomplete download or copy?)<br>Visual, OBJ: error: 2019-07-02_15:17:55_fpga_hat.kicad_pcb: the file ends with 5 parentheses still open: it is cut short (an incomplete download or copy?) |
-
-</td><td valign="top">
-
-<table>
-<tr><th>File<br>type</th><th>File<br>size</th><th>Peak memory<br>used</th></tr>
-<tr><th colspan="3" align="left">Simulation</th></tr>
-<tr><td>GLB</td><td align="right">–</td><td align="right">33&nbsp;MB</td></tr>
-<tr><td>STEP</td><td align="right">–</td><td align="right">34&nbsp;MB</td></tr>
-<tr><td>STL</td><td align="right">–</td><td align="right">33&nbsp;MB</td></tr>
-<tr><td>OBJ</td><td align="right">–</td><td align="right">32&nbsp;MB</td></tr>
-<tr><th colspan="3" align="left">Visual</th></tr>
-<tr><td>GLB</td><td align="right">–</td><td align="right">33&nbsp;MB</td></tr>
-<tr><td>OBJ</td><td align="right">–</td><td align="right">33&nbsp;MB</td></tr>
-</table>
-
-</td></tr></table>
-
-## 23.28.113 2019-07-02_15:26:14_fpga_hat
+## 23.28.112 2019-07-02_15:26:14_fpga_hat
 
 ![2019-07-02_15:26:14_fpga_hat: stages 4 and 6 take 53% to 82% of a run. Simulation, GLB takes 10 s. Simulation, STEP takes 13 s. Simulation, STL takes 11 s. Simulation, OBJ takes 16 s. Visual, GLB takes 14 s. Visual, OBJ takes 16 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-28/Snowflake-FPGA_2019-07-02-15-26-14-fpga-hat.webp)
 
@@ -131708,89 +131674,7 @@ Part 28 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pr
 
 </td></tr></table>
 
-## 23.28.114 2019-07-02_15:31:39_fpga_hat
-
-| Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
-|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-| Simulation, GLB |  |  |  |  |  |  |  |  | error: 2019-07-02_15:31:39_fpga_hat.kicad_pcb: the file ends with 3 parentheses still open: it is cut short (an incomplete download or copy?) |
-| Simulation, STEP |  |  |  |  |  |  |  |  | error: 2019-07-02_15:31:39_fpga_hat.kicad_pcb: the file ends with 3 parentheses still open: it is cut short (an incomplete download or copy?) |
-| Simulation, STL |  |  |  |  |  |  |  |  | error: 2019-07-02_15:31:39_fpga_hat.kicad_pcb: the file ends with 3 parentheses still open: it is cut short (an incomplete download or copy?) |
-| Simulation, OBJ |  |  |  |  |  |  |  |  | error: 2019-07-02_15:31:39_fpga_hat.kicad_pcb: the file ends with 3 parentheses still open: it is cut short (an incomplete download or copy?) |
-| Visual, GLB |  |  |  |  |  |  |  |  | error: 2019-07-02_15:31:39_fpga_hat.kicad_pcb: the file ends with 3 parentheses still open: it is cut short (an incomplete download or copy?) |
-| Visual, OBJ |  |  |  |  |  |  |  |  | error: 2019-07-02_15:31:39_fpga_hat.kicad_pcb: the file ends with 3 parentheses still open: it is cut short (an incomplete download or copy?) |
-
-<table align="center"><tr><td valign="top">
-
-| Board | Repo: [Wren6991/Snowflake-FPGA](https://github.com/Wren6991/Snowflake-FPGA)<br>Board: `2019-07-02_15:31:39_fpga_hat.kicad_pcb` |
-|---|---|
-| Folder | timelapse |
-| Complexity | 142&nbsp;/&nbsp;1000 (size&nbsp;132, features&nbsp;10) |
-| KESE&nbsp;features | rounded,<br>trapezoid or chamfered pads |
-| Tested | 9th November 2026 |
-| Copper&nbsp;layers | 4 |
-| File&nbsp;format | KiCad 5 |
-| Parts,&nbsp;tracks,&nbsp;vias | 76, 0, 0 |
-| Note | mostly unrouted |
-| Verifier | Simulation, GLB: error: 2019-07-02_15:31:39_fpga_hat.kicad_pcb: the file ends with 3 parentheses still open: it is cut short (an incomplete download or copy?)<br>Simulation, STEP: error: 2019-07-02_15:31:39_fpga_hat.kicad_pcb: the file ends with 3 parentheses still open: it is cut short (an incomplete download or copy?)<br>Simulation, STL: error: 2019-07-02_15:31:39_fpga_hat.kicad_pcb: the file ends with 3 parentheses still open: it is cut short (an incomplete download or copy?)<br>Simulation, OBJ: error: 2019-07-02_15:31:39_fpga_hat.kicad_pcb: the file ends with 3 parentheses still open: it is cut short (an incomplete download or copy?)<br>Visual, GLB: error: 2019-07-02_15:31:39_fpga_hat.kicad_pcb: the file ends with 3 parentheses still open: it is cut short (an incomplete download or copy?)<br>Visual, OBJ: error: 2019-07-02_15:31:39_fpga_hat.kicad_pcb: the file ends with 3 parentheses still open: it is cut short (an incomplete download or copy?) |
-
-</td><td valign="top">
-
-<table>
-<tr><th>File<br>type</th><th>File<br>size</th><th>Peak memory<br>used</th></tr>
-<tr><th colspan="3" align="left">Simulation</th></tr>
-<tr><td>GLB</td><td align="right">–</td><td align="right">32&nbsp;MB</td></tr>
-<tr><td>STEP</td><td align="right">–</td><td align="right">33&nbsp;MB</td></tr>
-<tr><td>STL</td><td align="right">–</td><td align="right">32&nbsp;MB</td></tr>
-<tr><td>OBJ</td><td align="right">–</td><td align="right">32&nbsp;MB</td></tr>
-<tr><th colspan="3" align="left">Visual</th></tr>
-<tr><td>GLB</td><td align="right">–</td><td align="right">29&nbsp;MB</td></tr>
-<tr><td>OBJ</td><td align="right">–</td><td align="right">33&nbsp;MB</td></tr>
-</table>
-
-</td></tr></table>
-
-## 23.28.115 2019-07-02_15:37:40_fpga_hat
-
-| Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
-|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-| Simulation, GLB |  |  |  |  |  |  |  |  | error: 2019-07-02_15:37:40_fpga_hat.kicad_pcb: the file ends with 4 parentheses still open: it is cut short (an incomplete download or copy?) |
-| Simulation, STEP |  |  |  |  |  |  |  |  | error: 2019-07-02_15:37:40_fpga_hat.kicad_pcb: the file ends with 4 parentheses still open: it is cut short (an incomplete download or copy?) |
-| Simulation, STL |  |  |  |  |  |  |  |  | error: 2019-07-02_15:37:40_fpga_hat.kicad_pcb: the file ends with 4 parentheses still open: it is cut short (an incomplete download or copy?) |
-| Simulation, OBJ |  |  |  |  |  |  |  |  | error: 2019-07-02_15:37:40_fpga_hat.kicad_pcb: the file ends with 4 parentheses still open: it is cut short (an incomplete download or copy?) |
-| Visual, GLB |  |  |  |  |  |  |  |  | error: 2019-07-02_15:37:40_fpga_hat.kicad_pcb: the file ends with 4 parentheses still open: it is cut short (an incomplete download or copy?) |
-| Visual, OBJ |  |  |  |  |  |  |  |  | error: 2019-07-02_15:37:40_fpga_hat.kicad_pcb: the file ends with 4 parentheses still open: it is cut short (an incomplete download or copy?) |
-
-<table align="center"><tr><td valign="top">
-
-| Board | Repo: [Wren6991/Snowflake-FPGA](https://github.com/Wren6991/Snowflake-FPGA)<br>Board: `2019-07-02_15:37:40_fpga_hat.kicad_pcb` |
-|---|---|
-| Folder | timelapse |
-| Complexity | 148&nbsp;/&nbsp;1000 (size&nbsp;138, features&nbsp;10) |
-| KESE&nbsp;features | rounded,<br>trapezoid or chamfered pads |
-| Tested | 9th November 2026 |
-| Copper&nbsp;layers | 4 |
-| File&nbsp;format | KiCad 5 |
-| Parts,&nbsp;tracks,&nbsp;vias | 81, 0, 0 |
-| Note | mostly unrouted |
-| Verifier | Simulation, GLB: error: 2019-07-02_15:37:40_fpga_hat.kicad_pcb: the file ends with 4 parentheses still open: it is cut short (an incomplete download or copy?)<br>Simulation, STEP: error: 2019-07-02_15:37:40_fpga_hat.kicad_pcb: the file ends with 4 parentheses still open: it is cut short (an incomplete download or copy?)<br>Simulation, STL: error: 2019-07-02_15:37:40_fpga_hat.kicad_pcb: the file ends with 4 parentheses still open: it is cut short (an incomplete download or copy?)<br>Simulation, OBJ: error: 2019-07-02_15:37:40_fpga_hat.kicad_pcb: the file ends with 4 parentheses still open: it is cut short (an incomplete download or copy?)<br>Visual, GLB: error: 2019-07-02_15:37:40_fpga_hat.kicad_pcb: the file ends with 4 parentheses still open: it is cut short (an incomplete download or copy?)<br>Visual, OBJ: error: 2019-07-02_15:37:40_fpga_hat.kicad_pcb: the file ends with 4 parentheses still open: it is cut short (an incomplete download or copy?) |
-
-</td><td valign="top">
-
-<table>
-<tr><th>File<br>type</th><th>File<br>size</th><th>Peak memory<br>used</th></tr>
-<tr><th colspan="3" align="left">Simulation</th></tr>
-<tr><td>GLB</td><td align="right">–</td><td align="right">33&nbsp;MB</td></tr>
-<tr><td>STEP</td><td align="right">–</td><td align="right">33&nbsp;MB</td></tr>
-<tr><td>STL</td><td align="right">–</td><td align="right">33&nbsp;MB</td></tr>
-<tr><td>OBJ</td><td align="right">–</td><td align="right">33&nbsp;MB</td></tr>
-<tr><th colspan="3" align="left">Visual</th></tr>
-<tr><td>GLB</td><td align="right">–</td><td align="right">32&nbsp;MB</td></tr>
-<tr><td>OBJ</td><td align="right">–</td><td align="right">32&nbsp;MB</td></tr>
-</table>
-
-</td></tr></table>
-
-## 23.28.116 2019-07-02_15:37:58_fpga_hat
+## 23.28.113 2019-07-02_15:37:58_fpga_hat
 
 ![2019-07-02_15:37:58_fpga_hat: stages 4 and 6 take 55% to 82% of a run. Simulation, GLB takes 12 s. Simulation, STEP takes 14 s. Simulation, STL takes 11 s. Simulation, OBJ takes 16 s. Visual, GLB takes 15 s. Visual, OBJ takes 18 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-28/Snowflake-FPGA_2019-07-02-15-37-58-fpga-hat.webp)
 
@@ -131833,7 +131717,7 @@ Part 28 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pr
 
 </td></tr></table>
 
-## 23.28.117 2019-07-02_15:42:42_fpga_hat
+## 23.28.114 2019-07-02_15:42:42_fpga_hat
 
 ![2019-07-02_15:42:42_fpga_hat: stages 4 and 6 take 55% to 83% of a run. Simulation, GLB takes 10 s. Simulation, STEP takes 13 s. Simulation, STL takes 11 s. Simulation, OBJ takes 14 s. Visual, GLB takes 14 s. Visual, OBJ takes 16 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-28/Snowflake-FPGA_2019-07-02-15-42-42-fpga-hat.webp)
 
@@ -131876,7 +131760,7 @@ Part 28 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pr
 
 </td></tr></table>
 
-## 23.28.118 2019-07-02_15:44:50_fpga_hat
+## 23.28.115 2019-07-02_15:44:50_fpga_hat
 
 ![2019-07-02_15:44:50_fpga_hat: stages 4 and 6 take 53% to 82% of a run. Simulation, GLB takes 14 s. Simulation, STEP takes 17 s. Simulation, STL takes 14 s. Simulation, OBJ takes 20 s. Visual, GLB takes 17 s. Visual, OBJ takes 20 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-28/Snowflake-FPGA_2019-07-02-15-44-50-fpga-hat.webp)
 
@@ -131919,7 +131803,7 @@ Part 28 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pr
 
 </td></tr></table>
 
-## 23.28.119 2019-07-02_15:48:31_fpga_hat
+## 23.28.116 2019-07-02_15:48:31_fpga_hat
 
 ![2019-07-02_15:48:31_fpga_hat: stages 4 and 6 take 55% to 82% of a run. Simulation, GLB takes 12 s. Simulation, STEP takes 15 s. Simulation, STL takes 12 s. Simulation, OBJ takes 17 s. Visual, GLB takes 16 s. Visual, OBJ takes 19 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-28/Snowflake-FPGA_2019-07-02-15-48-31-fpga-hat.webp)
 
@@ -131962,7 +131846,7 @@ Part 28 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pr
 
 </td></tr></table>
 
-## 23.28.120 2019-07-02_17:02:16_fpga_hat
+## 23.28.117 2019-07-02_17:02:16_fpga_hat
 
 ![2019-07-02_17:02:16_fpga_hat: stages 4 and 6 take 54% to 82% of a run. Simulation, GLB takes 12 s. Simulation, STEP takes 15 s. Simulation, STL takes 12 s. Simulation, OBJ takes 17 s. Visual, GLB takes 15 s. Visual, OBJ takes 18 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-28/Snowflake-FPGA_2019-07-02-17-02-16-fpga-hat.webp)
 
@@ -132005,7 +131889,7 @@ Part 28 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pr
 
 </td></tr></table>
 
-## 23.28.121 2019-07-02_17:04:43_fpga_hat
+## 23.28.118 2019-07-02_17:04:43_fpga_hat
 
 ![2019-07-02_17:04:43_fpga_hat: stages 4 and 6 take 53% to 81% of a run. Simulation, GLB takes 13 s. Simulation, STEP takes 17 s. Simulation, STL takes 14 s. Simulation, OBJ takes 20 s. Visual, GLB takes 18 s. Visual, OBJ takes 21 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-28/Snowflake-FPGA_2019-07-02-17-04-43-fpga-hat.webp)
 
@@ -132048,7 +131932,7 @@ Part 28 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pr
 
 </td></tr></table>
 
-## 23.28.122 2019-07-02_17:57:29_fpga_hat
+## 23.28.119 2019-07-02_17:57:29_fpga_hat
 
 ![2019-07-02_17:57:29_fpga_hat: stages 4 and 6 take 54% to 84% of a run. Simulation, GLB takes 12 s. Simulation, STEP takes 15 s. Simulation, STL takes 12 s. Simulation, OBJ takes 18 s. Visual, GLB takes 15 s. Visual, OBJ takes 18 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-28/Snowflake-FPGA_2019-07-02-17-57-29-fpga-hat.webp)
 
@@ -132091,7 +131975,7 @@ Part 28 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pr
 
 </td></tr></table>
 
-## 23.28.123 2019-07-02_18:04:43_fpga_hat
+## 23.28.120 2019-07-02_18:04:43_fpga_hat
 
 ![2019-07-02_18:04:43_fpga_hat: stages 4 and 6 take 57% to 83% of a run. Simulation, GLB takes 12 s. Simulation, STEP takes 15 s. Simulation, STL takes 12 s. Simulation, OBJ takes 17 s. Visual, GLB takes 16 s. Visual, OBJ takes 19 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-28/Snowflake-FPGA_2019-07-02-18-04-43-fpga-hat.webp)
 
@@ -132134,7 +132018,7 @@ Part 28 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pr
 
 </td></tr></table>
 
-## 23.28.124 2019-07-02_18:08:42_fpga_hat
+## 23.28.121 2019-07-02_18:08:42_fpga_hat
 
 ![2019-07-02_18:08:42_fpga_hat: stages 4 and 6 take 56% to 82% of a run. Simulation, GLB takes 11 s. Simulation, STEP takes 13 s. Simulation, STL takes 11 s. Simulation, OBJ takes 16 s. Visual, GLB takes 15 s. Visual, OBJ takes 17 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-28/Snowflake-FPGA_2019-07-02-18-08-42-fpga-hat.webp)
 
@@ -132177,7 +132061,7 @@ Part 28 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pr
 
 </td></tr></table>
 
-## 23.28.125 2019-07-02_18:15:30_fpga_hat
+## 23.28.122 2019-07-02_18:15:30_fpga_hat
 
 ![2019-07-02_18:15:30_fpga_hat: stages 4 and 6 take 55% to 82% of a run. Simulation, GLB takes 12 s. Simulation, STEP takes 15 s. Simulation, STL takes 12 s. Simulation, OBJ takes 17 s. Visual, GLB takes 16 s. Visual, OBJ takes 18 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-28/Snowflake-FPGA_2019-07-02-18-15-30-fpga-hat.webp)
 
@@ -132220,7 +132104,7 @@ Part 28 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pr
 
 </td></tr></table>
 
-## 23.28.126 2019-07-02_18:19:44_fpga_hat
+## 23.28.123 2019-07-02_18:19:44_fpga_hat
 
 ![2019-07-02_18:19:44_fpga_hat: stages 4 and 6 take 55% to 84% of a run. Simulation, GLB takes 12 s. Simulation, STEP takes 15 s. Simulation, STL takes 12 s. Simulation, OBJ takes 18 s. Visual, GLB takes 16 s. Visual, OBJ takes 19 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-28/Snowflake-FPGA_2019-07-02-18-19-44-fpga-hat.webp)
 
@@ -132263,7 +132147,7 @@ Part 28 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pr
 
 </td></tr></table>
 
-## 23.28.127 2019-07-02_18:26:57_fpga_hat
+## 23.28.124 2019-07-02_18:26:57_fpga_hat
 
 ![2019-07-02_18:26:57_fpga_hat: stages 4 and 6 take 57% to 82% of a run. Simulation, GLB takes 12 s. Simulation, STEP takes 16 s. Simulation, STL takes 13 s. Simulation, OBJ takes 19 s. Visual, GLB takes 17 s. Visual, OBJ takes 20 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-28/Snowflake-FPGA_2019-07-02-18-26-57-fpga-hat.webp)
 
@@ -132306,7 +132190,7 @@ Part 28 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pr
 
 </td></tr></table>
 
-## 23.28.128 2019-07-02_18:32:13_fpga_hat
+## 23.28.125 2019-07-02_18:32:13_fpga_hat
 
 ![2019-07-02_18:32:13_fpga_hat: stages 4 and 6 take 55% to 84% of a run. Simulation, GLB takes 12 s. Simulation, STEP takes 15 s. Simulation, STL takes 12 s. Simulation, OBJ takes 17 s. Visual, GLB takes 16 s. Visual, OBJ takes 19 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-28/Snowflake-FPGA_2019-07-02-18-32-13-fpga-hat.webp)
 
@@ -132349,7 +132233,7 @@ Part 28 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pr
 
 </td></tr></table>
 
-## 23.28.129 2019-07-02_18:37:57_fpga_hat
+## 23.28.126 2019-07-02_18:37:57_fpga_hat
 
 ![2019-07-02_18:37:57_fpga_hat: stages 4 and 6 take 54% to 82% of a run. Simulation, GLB takes 12 s. Simulation, STEP takes 15 s. Simulation, STL takes 12 s. Simulation, OBJ takes 16 s. Visual, GLB takes 16 s. Visual, OBJ takes 19 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-28/Snowflake-FPGA_2019-07-02-18-37-57-fpga-hat.webp)
 
@@ -132392,7 +132276,7 @@ Part 28 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pr
 
 </td></tr></table>
 
-## 23.28.130 2019-07-02_19:05:24_fpga_hat
+## 23.28.127 2019-07-02_19:05:24_fpga_hat
 
 ![2019-07-02_19:05:24_fpga_hat: stages 4 and 6 take 54% to 84% of a run. Simulation, GLB takes 12 s. Simulation, STEP takes 15 s. Simulation, STL takes 12 s. Simulation, OBJ takes 18 s. Visual, GLB takes 17 s. Visual, OBJ takes 20 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-28/Snowflake-FPGA_2019-07-02-19-05-24-fpga-hat.webp)
 
@@ -132435,7 +132319,7 @@ Part 28 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pr
 
 </td></tr></table>
 
-## 23.28.131 2019-07-02_19:17:13_fpga_hat
+## 23.28.128 2019-07-02_19:17:13_fpga_hat
 
 ![2019-07-02_19:17:13_fpga_hat: stages 4 and 6 take 55% to 83% of a run. Simulation, GLB takes 13 s. Simulation, STEP takes 16 s. Simulation, STL takes 13 s. Simulation, OBJ takes 18 s. Visual, GLB takes 18 s. Visual, OBJ takes 21 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-28/Snowflake-FPGA_2019-07-02-19-17-13-fpga-hat.webp)
 
@@ -132478,7 +132362,7 @@ Part 28 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pr
 
 </td></tr></table>
 
-## 23.28.132 2019-07-02_19:35:16_fpga_hat
+## 23.28.129 2019-07-02_19:35:16_fpga_hat
 
 ![2019-07-02_19:35:16_fpga_hat: stages 4 and 6 take 54% to 82% of a run. Simulation, GLB takes 14 s. Simulation, STEP takes 17 s. Simulation, STL takes 14 s. Simulation, OBJ takes 20 s. Visual, GLB takes 19 s. Visual, OBJ takes 22 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-28/Snowflake-FPGA_2019-07-02-19-35-16-fpga-hat.webp)
 
@@ -132521,7 +132405,7 @@ Part 28 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pr
 
 </td></tr></table>
 
-## 23.28.133 2019-07-02_19:45:35_fpga_hat
+## 23.28.130 2019-07-02_19:45:35_fpga_hat
 
 ![2019-07-02_19:45:35_fpga_hat: stages 4 and 6 take 55% to 82% of a run. Simulation, GLB takes 12 s. Simulation, STEP takes 14 s. Simulation, STL takes 12 s. Simulation, OBJ takes 16 s. Visual, GLB takes 15 s. Visual, OBJ takes 19 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-28/Snowflake-FPGA_2019-07-02-19-45-35-fpga-hat.webp)
 
@@ -132564,7 +132448,7 @@ Part 28 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pr
 
 </td></tr></table>
 
-## 23.28.134 2019-07-02_20:01:46_fpga_hat
+## 23.28.131 2019-07-02_20:01:46_fpga_hat
 
 ![2019-07-02_20:01:46_fpga_hat: stages 4 and 6 take 54% to 84% of a run. Simulation, GLB takes 12 s. Simulation, STEP takes 16 s. Simulation, STL takes 12 s. Simulation, OBJ takes 19 s. Visual, GLB takes 17 s. Visual, OBJ takes 19 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-28/Snowflake-FPGA_2019-07-02-20-01-46-fpga-hat.webp)
 
@@ -132607,7 +132491,7 @@ Part 28 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pr
 
 </td></tr></table>
 
-## 23.28.135 2019-07-02_20:17:06_fpga_hat
+## 23.28.132 2019-07-02_20:17:06_fpga_hat
 
 ![2019-07-02_20:17:06_fpga_hat: stages 4 and 6 take 55% to 83% of a run. Simulation, GLB takes 12 s. Simulation, STEP takes 15 s. Simulation, STL takes 13 s. Simulation, OBJ takes 17 s. Visual, GLB takes 16 s. Visual, OBJ takes 19 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-28/Snowflake-FPGA_2019-07-02-20-17-06-fpga-hat.webp)
 
@@ -132650,7 +132534,7 @@ Part 28 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pr
 
 </td></tr></table>
 
-## 23.28.136 2019-07-02_20:28:54_fpga_hat
+## 23.28.133 2019-07-02_20:28:54_fpga_hat
 
 ![2019-07-02_20:28:54_fpga_hat: stages 4 and 6 take 55% to 83% of a run. Simulation, GLB takes 15 s. Simulation, STEP takes 18 s. Simulation, STL takes 15 s. Simulation, OBJ takes 22 s. Visual, GLB takes 21 s. Visual, OBJ takes 26 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-28/Snowflake-FPGA_2019-07-02-20-28-54-fpga-hat.webp)
 
@@ -132693,47 +132577,7 @@ Part 28 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pr
 
 </td></tr></table>
 
-## 23.28.137 2019-07-02_20:36:54_fpga_hat
-
-| Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
-|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-| Simulation, GLB |  |  |  |  |  |  |  |  | error: 2019-07-02_20:36:54_fpga_hat.kicad_pcb: the file ends with 3 parentheses still open: it is cut short (an incomplete download or copy?) |
-| Simulation, STEP |  |  |  |  |  |  |  |  | error: 2019-07-02_20:36:54_fpga_hat.kicad_pcb: the file ends with 3 parentheses still open: it is cut short (an incomplete download or copy?) |
-| Simulation, STL |  |  |  |  |  |  |  |  | error: 2019-07-02_20:36:54_fpga_hat.kicad_pcb: the file ends with 3 parentheses still open: it is cut short (an incomplete download or copy?) |
-| Simulation, OBJ |  |  |  |  |  |  |  |  | error: 2019-07-02_20:36:54_fpga_hat.kicad_pcb: the file ends with 3 parentheses still open: it is cut short (an incomplete download or copy?) |
-| Visual, GLB |  |  |  |  |  |  |  |  | error: 2019-07-02_20:36:54_fpga_hat.kicad_pcb: the file ends with 3 parentheses still open: it is cut short (an incomplete download or copy?) |
-| Visual, OBJ |  |  |  |  |  |  |  |  | error: 2019-07-02_20:36:54_fpga_hat.kicad_pcb: the file ends with 3 parentheses still open: it is cut short (an incomplete download or copy?) |
-
-<table align="center"><tr><td valign="top">
-
-| Board | Repo: [Wren6991/Snowflake-FPGA](https://github.com/Wren6991/Snowflake-FPGA)<br>Board: `2019-07-02_20:36:54_fpga_hat.kicad_pcb` |
-|---|---|
-| Folder | timelapse |
-| Complexity | 275&nbsp;/&nbsp;1000 (size&nbsp;240, features&nbsp;35) |
-| KESE&nbsp;features | through vias, rounded,<br>trapezoid or chamfered pads,<br>curved board outline |
-| Tested | 9th November 2026 |
-| Copper&nbsp;layers | 4 |
-| File&nbsp;format | KiCad 5 |
-| Parts,&nbsp;tracks,&nbsp;vias | 81, 375, 28 |
-| Verifier | Simulation, GLB: error: 2019-07-02_20:36:54_fpga_hat.kicad_pcb: the file ends with 3 parentheses still open: it is cut short (an incomplete download or copy?)<br>Simulation, STEP: error: 2019-07-02_20:36:54_fpga_hat.kicad_pcb: the file ends with 3 parentheses still open: it is cut short (an incomplete download or copy?)<br>Simulation, STL: error: 2019-07-02_20:36:54_fpga_hat.kicad_pcb: the file ends with 3 parentheses still open: it is cut short (an incomplete download or copy?)<br>Simulation, OBJ: error: 2019-07-02_20:36:54_fpga_hat.kicad_pcb: the file ends with 3 parentheses still open: it is cut short (an incomplete download or copy?)<br>Visual, GLB: error: 2019-07-02_20:36:54_fpga_hat.kicad_pcb: the file ends with 3 parentheses still open: it is cut short (an incomplete download or copy?)<br>Visual, OBJ: error: 2019-07-02_20:36:54_fpga_hat.kicad_pcb: the file ends with 3 parentheses still open: it is cut short (an incomplete download or copy?) |
-
-</td><td valign="top">
-
-<table>
-<tr><th>File<br>type</th><th>File<br>size</th><th>Peak memory<br>used</th></tr>
-<tr><th colspan="3" align="left">Simulation</th></tr>
-<tr><td>GLB</td><td align="right">–</td><td align="right">34&nbsp;MB</td></tr>
-<tr><td>STEP</td><td align="right">–</td><td align="right">33&nbsp;MB</td></tr>
-<tr><td>STL</td><td align="right">–</td><td align="right">34&nbsp;MB</td></tr>
-<tr><td>OBJ</td><td align="right">–</td><td align="right">31&nbsp;MB</td></tr>
-<tr><th colspan="3" align="left">Visual</th></tr>
-<tr><td>GLB</td><td align="right">–</td><td align="right">33&nbsp;MB</td></tr>
-<tr><td>OBJ</td><td align="right">–</td><td align="right">33&nbsp;MB</td></tr>
-</table>
-
-</td></tr></table>
-
-## 23.28.138 2019-07-02_20:54:50_fpga_hat
+## 23.28.134 2019-07-02_20:54:50_fpga_hat
 
 ![2019-07-02_20:54:50_fpga_hat: stages 4 and 6 take 55% to 84% of a run. Simulation, GLB takes 13 s. Simulation, STEP takes 17 s. Simulation, STL takes 14 s. Simulation, OBJ takes 20 s. Visual, GLB takes 18 s. Visual, OBJ takes 21 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-28/Snowflake-FPGA_2019-07-02-20-54-50-fpga-hat.webp)
 
@@ -132776,7 +132620,7 @@ Part 28 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pr
 
 </td></tr></table>
 
-## 23.28.139 2019-07-02_21:04:22_fpga_hat
+## 23.28.135 2019-07-02_21:04:22_fpga_hat
 
 ![2019-07-02_21:04:22_fpga_hat: stages 4 and 6 take 53% to 84% of a run. Simulation, GLB takes 15 s. Simulation, STEP takes 18 s. Simulation, STL takes 15 s. Simulation, OBJ takes 21 s. Visual, GLB takes 19 s. Visual, OBJ takes 23 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-28/Snowflake-FPGA_2019-07-02-21-04-22-fpga-hat.webp)
 
@@ -132819,7 +132663,7 @@ Part 28 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pr
 
 </td></tr></table>
 
-## 23.28.140 2019-07-02_21:45:21_fpga_hat
+## 23.28.136 2019-07-02_21:45:21_fpga_hat
 
 ![2019-07-02_21:45:21_fpga_hat: stages 4 and 6 take 56% to 83% of a run. Simulation, GLB takes 11 s. Simulation, STEP takes 13 s. Simulation, STL takes 11 s. Simulation, OBJ takes 16 s. Visual, GLB takes 15 s. Visual, OBJ takes 18 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-28/Snowflake-FPGA_2019-07-02-21-45-21-fpga-hat.webp)
 
@@ -132862,7 +132706,7 @@ Part 28 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pr
 
 </td></tr></table>
 
-## 23.28.141 2019-07-03_06:45:34_fpga_hat
+## 23.28.137 2019-07-03_06:45:34_fpga_hat
 
 ![2019-07-03_06:45:34_fpga_hat: stages 4 and 6 take 56% to 84% of a run. Simulation, GLB takes 12 s. Simulation, STEP takes 15 s. Simulation, STL takes 13 s. Simulation, OBJ takes 18 s. Visual, GLB takes 17 s. Visual, OBJ takes 19 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-28/Snowflake-FPGA_2019-07-03-06-45-34-fpga-hat.webp)
 
@@ -132905,7 +132749,7 @@ Part 28 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pr
 
 </td></tr></table>
 
-## 23.28.142 2019-07-03_06:50:23_fpga_hat
+## 23.28.138 2019-07-03_06:50:23_fpga_hat
 
 ![2019-07-03_06:50:23_fpga_hat: stages 4 and 6 take 57% to 83% of a run. Simulation, GLB takes 12 s. Simulation, STEP takes 14 s. Simulation, STL takes 11 s. Simulation, OBJ takes 16 s. Visual, GLB takes 16 s. Visual, OBJ takes 19 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-28/Snowflake-FPGA_2019-07-03-06-50-23-fpga-hat.webp)
 
@@ -132948,7 +132792,7 @@ Part 28 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pr
 
 </td></tr></table>
 
-## 23.28.143 2019-07-03_07:08:37_fpga_hat
+## 23.28.139 2019-07-03_07:08:37_fpga_hat
 
 ![2019-07-03_07:08:37_fpga_hat: stages 4 and 6 take 53% to 84% of a run. Simulation, GLB takes 15 s. Simulation, STEP takes 19 s. Simulation, STL takes 15 s. Simulation, OBJ takes 22 s. Visual, GLB takes 19 s. Visual, OBJ takes 24 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-28/Snowflake-FPGA_2019-07-03-07-08-37-fpga-hat.webp)
 
@@ -132991,7 +132835,7 @@ Part 28 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pr
 
 </td></tr></table>
 
-## 23.28.144 2019-07-03_07:15:18_fpga_hat
+## 23.28.140 2019-07-03_07:15:18_fpga_hat
 
 ![2019-07-03_07:15:18_fpga_hat: stages 4 and 6 take 54% to 85% of a run. Simulation, GLB takes 13 s. Simulation, STEP takes 16 s. Simulation, STL takes 13 s. Simulation, OBJ takes 19 s. Visual, GLB takes 17 s. Visual, OBJ takes 21 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-28/Snowflake-FPGA_2019-07-03-07-15-18-fpga-hat.webp)
 
@@ -133034,47 +132878,7 @@ Part 28 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pr
 
 </td></tr></table>
 
-## 23.28.145 2019-07-03_17:17:01_fpga_hat
-
-| Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
-|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-| Simulation, GLB |  |  |  |  |  |  |  |  | error: 2019-07-03_17:17:01_fpga_hat.kicad_pcb: the file ends with 3 parentheses still open: it is cut short (an incomplete download or copy?) |
-| Simulation, STEP |  |  |  |  |  |  |  |  | error: 2019-07-03_17:17:01_fpga_hat.kicad_pcb: the file ends with 3 parentheses still open: it is cut short (an incomplete download or copy?) |
-| Simulation, STL |  |  |  |  |  |  |  |  | error: 2019-07-03_17:17:01_fpga_hat.kicad_pcb: the file ends with 3 parentheses still open: it is cut short (an incomplete download or copy?) |
-| Simulation, OBJ |  |  |  |  |  |  |  |  | error: 2019-07-03_17:17:01_fpga_hat.kicad_pcb: the file ends with 3 parentheses still open: it is cut short (an incomplete download or copy?) |
-| Visual, GLB |  |  |  |  |  |  |  |  | error: 2019-07-03_17:17:01_fpga_hat.kicad_pcb: the file ends with 3 parentheses still open: it is cut short (an incomplete download or copy?) |
-| Visual, OBJ |  |  |  |  |  |  |  |  | error: 2019-07-03_17:17:01_fpga_hat.kicad_pcb: the file ends with 3 parentheses still open: it is cut short (an incomplete download or copy?) |
-
-<table align="center"><tr><td valign="top">
-
-| Board | Repo: [Wren6991/Snowflake-FPGA](https://github.com/Wren6991/Snowflake-FPGA)<br>Board: `2019-07-03_17:17:01_fpga_hat.kicad_pcb` |
-|---|---|
-| Folder | timelapse |
-| Complexity | 282&nbsp;/&nbsp;1000 (size&nbsp;247, features&nbsp;35) |
-| KESE&nbsp;features | through vias, rounded,<br>trapezoid or chamfered pads,<br>curved board outline |
-| Tested | 9th November 2026 |
-| Copper&nbsp;layers | 4 |
-| File&nbsp;format | KiCad 5 |
-| Parts,&nbsp;tracks,&nbsp;vias | 81, 589, 30 |
-| Verifier | Simulation, GLB: error: 2019-07-03_17:17:01_fpga_hat.kicad_pcb: the file ends with 3 parentheses still open: it is cut short (an incomplete download or copy?)<br>Simulation, STEP: error: 2019-07-03_17:17:01_fpga_hat.kicad_pcb: the file ends with 3 parentheses still open: it is cut short (an incomplete download or copy?)<br>Simulation, STL: error: 2019-07-03_17:17:01_fpga_hat.kicad_pcb: the file ends with 3 parentheses still open: it is cut short (an incomplete download or copy?)<br>Simulation, OBJ: error: 2019-07-03_17:17:01_fpga_hat.kicad_pcb: the file ends with 3 parentheses still open: it is cut short (an incomplete download or copy?)<br>Visual, GLB: error: 2019-07-03_17:17:01_fpga_hat.kicad_pcb: the file ends with 3 parentheses still open: it is cut short (an incomplete download or copy?)<br>Visual, OBJ: error: 2019-07-03_17:17:01_fpga_hat.kicad_pcb: the file ends with 3 parentheses still open: it is cut short (an incomplete download or copy?) |
-
-</td><td valign="top">
-
-<table>
-<tr><th>File<br>type</th><th>File<br>size</th><th>Peak memory<br>used</th></tr>
-<tr><th colspan="3" align="left">Simulation</th></tr>
-<tr><td>GLB</td><td align="right">–</td><td align="right">33&nbsp;MB</td></tr>
-<tr><td>STEP</td><td align="right">–</td><td align="right">34&nbsp;MB</td></tr>
-<tr><td>STL</td><td align="right">–</td><td align="right">33&nbsp;MB</td></tr>
-<tr><td>OBJ</td><td align="right">–</td><td align="right">34&nbsp;MB</td></tr>
-<tr><th colspan="3" align="left">Visual</th></tr>
-<tr><td>GLB</td><td align="right">–</td><td align="right">34&nbsp;MB</td></tr>
-<tr><td>OBJ</td><td align="right">–</td><td align="right">33&nbsp;MB</td></tr>
-</table>
-
-</td></tr></table>
-
-## 23.28.146 2019-07-03_17:28:54_fpga_hat
+## 23.28.141 2019-07-03_17:28:54_fpga_hat
 
 ![2019-07-03_17:28:54_fpga_hat: stages 4 and 6 take 58% to 84% of a run. Simulation, GLB takes 13 s. Simulation, STEP takes 16 s. Simulation, STL takes 13 s. Simulation, OBJ takes 18 s. Visual, GLB takes 17 s. Visual, OBJ takes 21 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-28/Snowflake-FPGA_2019-07-03-17-28-54-fpga-hat.webp)
 
@@ -133117,7 +132921,7 @@ Part 28 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pr
 
 </td></tr></table>
 
-## 23.28.147 2019-07-03_17:47:28_fpga_hat
+## 23.28.142 2019-07-03_17:47:28_fpga_hat
 
 ![2019-07-03_17:47:28_fpga_hat: stages 4 and 6 take 57% to 83% of a run. Simulation, GLB takes 14 s. Simulation, STEP takes 18 s. Simulation, STL takes 15 s. Simulation, OBJ takes 20 s. Visual, GLB takes 19 s. Visual, OBJ takes 22 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-28/Snowflake-FPGA_2019-07-03-17-47-28-fpga-hat.webp)
 
@@ -133160,7 +132964,7 @@ Part 28 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pr
 
 </td></tr></table>
 
-## 23.28.148 2019-07-03_17:57:53_fpga_hat
+## 23.28.143 2019-07-03_17:57:53_fpga_hat
 
 ![2019-07-03_17:57:53_fpga_hat: stages 4 and 6 take 58% to 84% of a run. Simulation, GLB takes 12 s. Simulation, STEP takes 14 s. Simulation, STL takes 12 s. Simulation, OBJ takes 16 s. Visual, GLB takes 16 s. Visual, OBJ takes 19 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-28/Snowflake-FPGA_2019-07-03-17-57-53-fpga-hat.webp)
 
@@ -133203,7 +133007,7 @@ Part 28 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pr
 
 </td></tr></table>
 
-## 23.28.149 2019-07-03_18:11:15_fpga_hat
+## 23.28.144 2019-07-03_18:11:15_fpga_hat
 
 ![2019-07-03_18:11:15_fpga_hat: stages 4 and 6 take 54% to 85% of a run. Simulation, GLB takes 13 s. Simulation, STEP takes 15 s. Simulation, STL takes 13 s. Simulation, OBJ takes 19 s. Visual, GLB takes 16 s. Visual, OBJ takes 19 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-28/Snowflake-FPGA_2019-07-03-18-11-15-fpga-hat.webp)
 
@@ -133246,7 +133050,7 @@ Part 28 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pr
 
 </td></tr></table>
 
-## 23.28.150 2019-07-03_18:30:05_fpga_hat
+## 23.28.145 2019-07-03_18:30:05_fpga_hat
 
 ![2019-07-03_18:30:05_fpga_hat: stages 4 and 6 take 54% to 84% of a run. Simulation, GLB takes 17 s. Simulation, STEP takes 20 s. Simulation, STL takes 17 s. Simulation, OBJ takes 23 s. Visual, GLB takes 21 s. Visual, OBJ takes 26 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-28/Snowflake-FPGA_2019-07-03-18-30-05-fpga-hat.webp)
 
@@ -133289,7 +133093,7 @@ Part 28 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pr
 
 </td></tr></table>
 
-## 23.28.151 2019-07-03_18:34:30_fpga_hat
+## 23.28.146 2019-07-03_18:34:30_fpga_hat
 
 ![2019-07-03_18:34:30_fpga_hat: stages 4 and 6 take 57% to 84% of a run. Simulation, GLB takes 13 s. Simulation, STEP takes 16 s. Simulation, STL takes 13 s. Simulation, OBJ takes 18 s. Visual, GLB takes 19 s. Visual, OBJ takes 21 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-28/Snowflake-FPGA_2019-07-03-18-34-30-fpga-hat.webp)
 
@@ -133332,7 +133136,7 @@ Part 28 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pr
 
 </td></tr></table>
 
-## 23.28.152 2019-07-05_20:45:15_fpga_hat
+## 23.28.147 2019-07-05_20:45:15_fpga_hat
 
 ![2019-07-05_20:45:15_fpga_hat: stages 4 and 6 take 55% to 85% of a run. Simulation, GLB takes 12 s. Simulation, STEP takes 15 s. Simulation, STL takes 13 s. Simulation, OBJ takes 18 s. Visual, GLB takes 17 s. Visual, OBJ takes 19 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-28/Snowflake-FPGA_2019-07-05-20-45-15-fpga-hat.webp)
 
@@ -133375,7 +133179,7 @@ Part 28 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pr
 
 </td></tr></table>
 
-## 23.28.153 2019-07-05_21:08:22_fpga_hat
+## 23.28.148 2019-07-05_21:08:22_fpga_hat
 
 ![2019-07-05_21:08:22_fpga_hat: stages 4 and 6 take 55% to 85% of a run. Simulation, GLB takes 13 s. Simulation, STEP takes 17 s. Simulation, STL takes 13 s. Simulation, OBJ takes 19 s. Visual, GLB takes 17 s. Visual, OBJ takes 21 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-28/Snowflake-FPGA_2019-07-05-21-08-22-fpga-hat.webp)
 
@@ -133418,7 +133222,7 @@ Part 28 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pr
 
 </td></tr></table>
 
-## 23.28.154 2019-07-05_21:29:37_fpga_hat
+## 23.28.149 2019-07-05_21:29:37_fpga_hat
 
 ![2019-07-05_21:29:37_fpga_hat: stages 4 and 6 take 55% to 85% of a run. Simulation, GLB takes 13 s. Simulation, STEP takes 16 s. Simulation, STL takes 14 s. Simulation, OBJ takes 19 s. Visual, GLB takes 17 s. Visual, OBJ takes 21 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-28/Snowflake-FPGA_2019-07-05-21-29-37-fpga-hat.webp)
 
@@ -133461,7 +133265,7 @@ Part 28 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pr
 
 </td></tr></table>
 
-## 23.28.155 2019-07-05_21:40:20_fpga_hat
+## 23.28.150 2019-07-05_21:40:20_fpga_hat
 
 ![2019-07-05_21:40:20_fpga_hat: stages 4 and 6 take 57% to 83% of a run. Simulation, GLB takes 14 s. Simulation, STEP takes 17 s. Simulation, STL takes 14 s. Simulation, OBJ takes 20 s. Visual, GLB takes 19 s. Visual, OBJ takes 23 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-28/Snowflake-FPGA_2019-07-05-21-40-20-fpga-hat.webp)
 
@@ -133504,7 +133308,7 @@ Part 28 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pr
 
 </td></tr></table>
 
-## 23.28.156 2019-07-05_22:03:31_fpga_hat
+## 23.28.151 2019-07-05_22:03:31_fpga_hat
 
 ![2019-07-05_22:03:31_fpga_hat: stages 4 and 6 take 54% to 82% of a run. Simulation, GLB takes 14 s. Simulation, STEP takes 18 s. Simulation, STL takes 14 s. Simulation, OBJ takes 21 s. Visual, GLB takes 20 s. Visual, OBJ takes 25 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-28/Snowflake-FPGA_2019-07-05-22-03-31-fpga-hat.webp)
 
@@ -133547,7 +133351,7 @@ Part 28 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pr
 
 </td></tr></table>
 
-## 23.28.157 2019-07-05_22:15:17_fpga_hat
+## 23.28.152 2019-07-05_22:15:17_fpga_hat
 
 ![2019-07-05_22:15:17_fpga_hat: stages 4 and 6 take 56% to 83% of a run. Simulation, GLB takes 15 s. Simulation, STEP takes 18 s. Simulation, STL takes 14 s. Simulation, OBJ takes 21 s. Visual, GLB takes 20 s. Visual, OBJ takes 23 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-28/Snowflake-FPGA_2019-07-05-22-15-17-fpga-hat.webp)
 
@@ -133590,7 +133394,7 @@ Part 28 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pr
 
 </td></tr></table>
 
-## 23.28.158 2019-07-05_22:26:53_fpga_hat
+## 23.28.153 2019-07-05_22:26:53_fpga_hat
 
 ![2019-07-05_22:26:53_fpga_hat: stages 4 and 6 take 57% to 83% of a run. Simulation, GLB takes 13 s. Simulation, STEP takes 16 s. Simulation, STL takes 13 s. Simulation, OBJ takes 18 s. Visual, GLB takes 18 s. Visual, OBJ takes 21 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-28/Snowflake-FPGA_2019-07-05-22-26-53-fpga-hat.webp)
 
@@ -133633,47 +133437,7 @@ Part 28 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pr
 
 </td></tr></table>
 
-## 23.28.159 2019-07-05_22:38:26_fpga_hat
-
-| Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
-|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-| Simulation, GLB |  |  |  |  |  |  |  |  | error: 2019-07-05_22:38:26_fpga_hat.kicad_pcb: the file ends with 5 parentheses still open: it is cut short (an incomplete download or copy?) |
-| Simulation, STEP |  |  |  |  |  |  |  |  | error: 2019-07-05_22:38:26_fpga_hat.kicad_pcb: the file ends with 5 parentheses still open: it is cut short (an incomplete download or copy?) |
-| Simulation, STL |  |  |  |  |  |  |  |  | error: 2019-07-05_22:38:26_fpga_hat.kicad_pcb: the file ends with 5 parentheses still open: it is cut short (an incomplete download or copy?) |
-| Simulation, OBJ |  |  |  |  |  |  |  |  | error: 2019-07-05_22:38:26_fpga_hat.kicad_pcb: the file ends with 5 parentheses still open: it is cut short (an incomplete download or copy?) |
-| Visual, GLB |  |  |  |  |  |  |  |  | error: 2019-07-05_22:38:26_fpga_hat.kicad_pcb: the file ends with 5 parentheses still open: it is cut short (an incomplete download or copy?) |
-| Visual, OBJ |  |  |  |  |  |  |  |  | error: 2019-07-05_22:38:26_fpga_hat.kicad_pcb: the file ends with 5 parentheses still open: it is cut short (an incomplete download or copy?) |
-
-<table align="center"><tr><td valign="top">
-
-| Board | Repo: [Wren6991/Snowflake-FPGA](https://github.com/Wren6991/Snowflake-FPGA)<br>Board: `2019-07-05_22:38:26_fpga_hat.kicad_pcb` |
-|---|---|
-| Folder | timelapse |
-| Complexity | 312&nbsp;/&nbsp;1000 (size&nbsp;257, features&nbsp;55) |
-| KESE&nbsp;features | through vias, rounded,<br>trapezoid or chamfered pads,<br>filled zones, curved board outline |
-| Tested | 9th November 2026 |
-| Copper&nbsp;layers | 4 |
-| File&nbsp;format | KiCad 5 |
-| Parts,&nbsp;tracks,&nbsp;vias | 82, 1,020, 89 |
-| Verifier | Simulation, GLB: error: 2019-07-05_22:38:26_fpga_hat.kicad_pcb: the file ends with 5 parentheses still open: it is cut short (an incomplete download or copy?)<br>Simulation, STEP: error: 2019-07-05_22:38:26_fpga_hat.kicad_pcb: the file ends with 5 parentheses still open: it is cut short (an incomplete download or copy?)<br>Simulation, STL: error: 2019-07-05_22:38:26_fpga_hat.kicad_pcb: the file ends with 5 parentheses still open: it is cut short (an incomplete download or copy?)<br>Simulation, OBJ: error: 2019-07-05_22:38:26_fpga_hat.kicad_pcb: the file ends with 5 parentheses still open: it is cut short (an incomplete download or copy?)<br>Visual, GLB: error: 2019-07-05_22:38:26_fpga_hat.kicad_pcb: the file ends with 5 parentheses still open: it is cut short (an incomplete download or copy?)<br>Visual, OBJ: error: 2019-07-05_22:38:26_fpga_hat.kicad_pcb: the file ends with 5 parentheses still open: it is cut short (an incomplete download or copy?) |
-
-</td><td valign="top">
-
-<table>
-<tr><th>File<br>type</th><th>File<br>size</th><th>Peak memory<br>used</th></tr>
-<tr><th colspan="3" align="left">Simulation</th></tr>
-<tr><td>GLB</td><td align="right">–</td><td align="right">41&nbsp;MB</td></tr>
-<tr><td>STEP</td><td align="right">–</td><td align="right">38&nbsp;MB</td></tr>
-<tr><td>STL</td><td align="right">–</td><td align="right">37&nbsp;MB</td></tr>
-<tr><td>OBJ</td><td align="right">–</td><td align="right">39&nbsp;MB</td></tr>
-<tr><th colspan="3" align="left">Visual</th></tr>
-<tr><td>GLB</td><td align="right">–</td><td align="right">37&nbsp;MB</td></tr>
-<tr><td>OBJ</td><td align="right">–</td><td align="right">41&nbsp;MB</td></tr>
-</table>
-
-</td></tr></table>
-
-## 23.28.160 2019-07-06_11:05:02_fpga_hat
+## 23.28.154 2019-07-06_11:05:02_fpga_hat
 
 ![2019-07-06_11:05:02_fpga_hat: stages 4 and 6 take 55% to 84% of a run. Simulation, GLB takes 20 s. Simulation, STEP takes 25 s. Simulation, STL takes 21 s. Simulation, OBJ takes 31 s. Visual, GLB takes 28 s. Visual, OBJ takes 34 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-28/Snowflake-FPGA_2019-07-06-11-05-02-fpga-hat.webp)
 
@@ -133716,7 +133480,7 @@ Part 28 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pr
 
 </td></tr></table>
 
-## 23.28.161 2019-07-06_11:24:12_fpga_hat
+## 23.28.155 2019-07-06_11:24:12_fpga_hat
 
 ![2019-07-06_11:24:12_fpga_hat: stages 4 and 6 take 55% to 84% of a run. Simulation, GLB takes 17 s. Simulation, STEP takes 22 s. Simulation, STL takes 17 s. Simulation, OBJ takes 25 s. Visual, GLB takes 24 s. Visual, OBJ takes 29 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-28/Snowflake-FPGA_2019-07-06-11-24-12-fpga-hat.webp)
 
@@ -133759,7 +133523,7 @@ Part 28 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pr
 
 </td></tr></table>
 
-## 23.28.162 2019-07-06_11:30:20_fpga_hat
+## 23.28.156 2019-07-06_11:30:20_fpga_hat
 
 ![2019-07-06_11:30:20_fpga_hat: stages 4 and 6 take 55% to 84% of a run. Simulation, GLB takes 20 s. Simulation, STEP takes 26 s. Simulation, STL takes 22 s. Simulation, OBJ takes 31 s. Visual, GLB takes 30 s. Visual, OBJ takes 35 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-28/Snowflake-FPGA_2019-07-06-11-30-20-fpga-hat.webp)
 
@@ -133802,7 +133566,7 @@ Part 28 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pr
 
 </td></tr></table>
 
-## 23.28.163 2019-07-06_11:52:16_fpga_hat
+## 23.28.157 2019-07-06_11:52:16_fpga_hat
 
 ![2019-07-06_11:52:16_fpga_hat: stages 4 and 6 take 53% to 85% of a run. Simulation, GLB takes 20 s. Simulation, STEP takes 24 s. Simulation, STL takes 20 s. Simulation, OBJ takes 28 s. Visual, GLB takes 26 s. Visual, OBJ takes 33 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-28/Snowflake-FPGA_2019-07-06-11-52-16-fpga-hat.webp)
 
@@ -133845,7 +133609,7 @@ Part 28 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pr
 
 </td></tr></table>
 
-## 23.28.164 2019-07-06_12:26:53_fpga_hat
+## 23.28.158 2019-07-06_12:26:53_fpga_hat
 
 ![2019-07-06_12:26:53_fpga_hat: stages 4 and 6 take 54% to 83% of a run. Simulation, GLB takes 19 s. Simulation, STEP takes 24 s. Simulation, STL takes 19 s. Simulation, OBJ takes 28 s. Visual, GLB takes 26 s. Visual, OBJ takes 32 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-28/Snowflake-FPGA_2019-07-06-12-26-53-fpga-hat.webp)
 
@@ -133888,7 +133652,7 @@ Part 28 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pr
 
 </td></tr></table>
 
-## 23.28.165 2019-07-06_12:29:23_fpga_hat
+## 23.28.159 2019-07-06_12:29:23_fpga_hat
 
 ![2019-07-06_12:29:23_fpga_hat: stages 4 and 6 take 55% to 84% of a run. Simulation, GLB takes 18 s. Simulation, STEP takes 21 s. Simulation, STL takes 17 s. Simulation, OBJ takes 24 s. Visual, GLB takes 23 s. Visual, OBJ takes 29 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-28/Snowflake-FPGA_2019-07-06-12-29-23-fpga-hat.webp)
 
@@ -133931,7 +133695,7 @@ Part 28 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pr
 
 </td></tr></table>
 
-## 23.28.166 2019-07-06_12:41:44_fpga_hat
+## 23.28.160 2019-07-06_12:41:44_fpga_hat
 
 ![2019-07-06_12:41:44_fpga_hat: stages 4 and 6 take 53% to 84% of a run. Simulation, GLB takes 19 s. Simulation, STEP takes 23 s. Simulation, STL takes 20 s. Simulation, OBJ takes 29 s. Visual, GLB takes 26 s. Visual, OBJ takes 32 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-28/Snowflake-FPGA_2019-07-06-12-41-44-fpga-hat.webp)
 
@@ -133974,7 +133738,7 @@ Part 28 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pr
 
 </td></tr></table>
 
-## 23.28.167 2019-07-06_12:52:32_fpga_hat
+## 23.28.161 2019-07-06_12:52:32_fpga_hat
 
 ![2019-07-06_12:52:32_fpga_hat: stages 4 and 6 take 56% to 83% of a run. Simulation, GLB takes 19 s. Simulation, STEP takes 22 s. Simulation, STL takes 18 s. Simulation, OBJ takes 26 s. Visual, GLB takes 26 s. Visual, OBJ takes 30 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-28/Snowflake-FPGA_2019-07-06-12-52-32-fpga-hat.webp)
 
@@ -134017,7 +133781,7 @@ Part 28 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pr
 
 </td></tr></table>
 
-## 23.28.168 2019-07-06_12:56:05_fpga_hat
+## 23.28.162 2019-07-06_12:56:05_fpga_hat
 
 ![2019-07-06_12:56:05_fpga_hat: stages 4 and 6 take 55% to 83% of a run. Simulation, GLB takes 17 s. Simulation, STEP takes 21 s. Simulation, STL takes 17 s. Simulation, OBJ takes 26 s. Visual, GLB takes 23 s. Visual, OBJ takes 28 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-28/Snowflake-FPGA_2019-07-06-12-56-05-fpga-hat.webp)
 
@@ -134060,47 +133824,7 @@ Part 28 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pr
 
 </td></tr></table>
 
-## 23.28.169 2019-07-06_12:59:09_fpga_hat
-
-| Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
-|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-| Simulation, GLB |  |  |  |  |  |  |  |  | error: 2019-07-06_12:59:09_fpga_hat.kicad_pcb: the file ends with 3 parentheses still open: it is cut short (an incomplete download or copy?) |
-| Simulation, STEP |  |  |  |  |  |  |  |  | error: 2019-07-06_12:59:09_fpga_hat.kicad_pcb: the file ends with 3 parentheses still open: it is cut short (an incomplete download or copy?) |
-| Simulation, STL |  |  |  |  |  |  |  |  | error: 2019-07-06_12:59:09_fpga_hat.kicad_pcb: the file ends with 3 parentheses still open: it is cut short (an incomplete download or copy?) |
-| Simulation, OBJ |  |  |  |  |  |  |  |  | error: 2019-07-06_12:59:09_fpga_hat.kicad_pcb: the file ends with 3 parentheses still open: it is cut short (an incomplete download or copy?) |
-| Visual, GLB |  |  |  |  |  |  |  |  | error: 2019-07-06_12:59:09_fpga_hat.kicad_pcb: the file ends with 3 parentheses still open: it is cut short (an incomplete download or copy?) |
-| Visual, OBJ |  |  |  |  |  |  |  |  | error: 2019-07-06_12:59:09_fpga_hat.kicad_pcb: the file ends with 3 parentheses still open: it is cut short (an incomplete download or copy?) |
-
-<table align="center"><tr><td valign="top">
-
-| Board | Repo: [Wren6991/Snowflake-FPGA](https://github.com/Wren6991/Snowflake-FPGA)<br>Board: `2019-07-06_12:59:09_fpga_hat.kicad_pcb` |
-|---|---|
-| Folder | timelapse |
-| Complexity | 292&nbsp;/&nbsp;1000 (size&nbsp;257, features&nbsp;35) |
-| KESE&nbsp;features | through vias, rounded,<br>trapezoid or chamfered pads,<br>curved board outline |
-| Tested | 10th November 2026 |
-| Copper&nbsp;layers | 4 |
-| File&nbsp;format | KiCad 5 |
-| Parts,&nbsp;tracks,&nbsp;vias | 82, 884, 122 |
-| Verifier | Simulation, GLB: error: 2019-07-06_12:59:09_fpga_hat.kicad_pcb: the file ends with 3 parentheses still open: it is cut short (an incomplete download or copy?)<br>Simulation, STEP: error: 2019-07-06_12:59:09_fpga_hat.kicad_pcb: the file ends with 3 parentheses still open: it is cut short (an incomplete download or copy?)<br>Simulation, STL: error: 2019-07-06_12:59:09_fpga_hat.kicad_pcb: the file ends with 3 parentheses still open: it is cut short (an incomplete download or copy?)<br>Simulation, OBJ: error: 2019-07-06_12:59:09_fpga_hat.kicad_pcb: the file ends with 3 parentheses still open: it is cut short (an incomplete download or copy?)<br>Visual, GLB: error: 2019-07-06_12:59:09_fpga_hat.kicad_pcb: the file ends with 3 parentheses still open: it is cut short (an incomplete download or copy?)<br>Visual, OBJ: error: 2019-07-06_12:59:09_fpga_hat.kicad_pcb: the file ends with 3 parentheses still open: it is cut short (an incomplete download or copy?) |
-
-</td><td valign="top">
-
-<table>
-<tr><th>File<br>type</th><th>File<br>size</th><th>Peak memory<br>used</th></tr>
-<tr><th colspan="3" align="left">Simulation</th></tr>
-<tr><td>GLB</td><td align="right">–</td><td align="right">32&nbsp;MB</td></tr>
-<tr><td>STEP</td><td align="right">–</td><td align="right">34&nbsp;MB</td></tr>
-<tr><td>STL</td><td align="right">–</td><td align="right">33&nbsp;MB</td></tr>
-<tr><td>OBJ</td><td align="right">–</td><td align="right">33&nbsp;MB</td></tr>
-<tr><th colspan="3" align="left">Visual</th></tr>
-<tr><td>GLB</td><td align="right">–</td><td align="right">32&nbsp;MB</td></tr>
-<tr><td>OBJ</td><td align="right">–</td><td align="right">33&nbsp;MB</td></tr>
-</table>
-
-</td></tr></table>
-
-## 23.28.170 2019-07-06_13:01:21_fpga_hat
+## 23.28.163 2019-07-06_13:01:21_fpga_hat
 
 ![2019-07-06_13:01:21_fpga_hat: stages 4 and 6 take 54% to 83% of a run. Simulation, GLB takes 15 s. Simulation, STEP takes 18 s. Simulation, STL takes 15 s. Simulation, OBJ takes 22 s. Visual, GLB takes 21 s. Visual, OBJ takes 25 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-28/Snowflake-FPGA_2019-07-06-13-01-21-fpga-hat.webp)
 
@@ -134143,7 +133867,7 @@ Part 28 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pr
 
 </td></tr></table>
 
-## 23.28.171 2019-07-06_13:25:29_fpga_hat
+## 23.28.164 2019-07-06_13:25:29_fpga_hat
 
 ![2019-07-06_13:25:29_fpga_hat: stages 4 and 6 take 54% to 83% of a run. Simulation, GLB takes 20 s. Simulation, STEP takes 25 s. Simulation, STL takes 19 s. Simulation, OBJ takes 28 s. Visual, GLB takes 28 s. Visual, OBJ takes 34 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-28/Snowflake-FPGA_2019-07-06-13-25-29-fpga-hat.webp)
 
@@ -134186,7 +133910,7 @@ Part 28 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pr
 
 </td></tr></table>
 
-## 23.28.172 2019-07-06_13:40:41_fpga_hat
+## 23.28.165 2019-07-06_13:40:41_fpga_hat
 
 ![2019-07-06_13:40:41_fpga_hat: stages 4 and 6 take 53% to 84% of a run. Simulation, GLB takes 22 s. Simulation, STEP takes 28 s. Simulation, STL takes 22 s. Simulation, OBJ takes 33 s. Visual, GLB takes 29 s. Visual, OBJ takes 37 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-28/Snowflake-FPGA_2019-07-06-13-40-41-fpga-hat.webp)
 
@@ -134229,7 +133953,7 @@ Part 28 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pr
 
 </td></tr></table>
 
-## 23.28.173 2019-07-06_13:40:48_fpga_hat
+## 23.28.166 2019-07-06_13:40:48_fpga_hat
 
 ![2019-07-06_13:40:48_fpga_hat: stages 4 and 6 take 53% to 84% of a run. Simulation, GLB takes 24 s. Simulation, STEP takes 30 s. Simulation, STL takes 25 s. Simulation, OBJ takes 36 s. Visual, GLB takes 33 s. Visual, OBJ takes 38 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-28/Snowflake-FPGA_2019-07-06-13-40-48-fpga-hat.webp)
 
@@ -134272,7 +133996,7 @@ Part 28 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pr
 
 </td></tr></table>
 
-## 23.28.174 2019-07-07_12:53:39_fpga_hat
+## 23.28.167 2019-07-07_12:53:39_fpga_hat
 
 ![2019-07-07_12:53:39_fpga_hat: stages 4 and 6 take 54% to 83% of a run. Simulation, GLB takes 17 s. Simulation, STEP takes 21 s. Simulation, STL takes 17 s. Simulation, OBJ takes 24 s. Visual, GLB takes 24 s. Visual, OBJ takes 29 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-28/Snowflake-FPGA_2019-07-07-12-53-39-fpga-hat.webp)
 
@@ -134315,7 +134039,7 @@ Part 28 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pr
 
 </td></tr></table>
 
-## 23.28.175 2019-07-07_13:11:04_fpga_hat
+## 23.28.168 2019-07-07_13:11:04_fpga_hat
 
 ![2019-07-07_13:11:04_fpga_hat: stages 4 and 6 take 54% to 84% of a run. Simulation, GLB takes 18 s. Simulation, STEP takes 23 s. Simulation, STL takes 19 s. Simulation, OBJ takes 27 s. Visual, GLB takes 24 s. Visual, OBJ takes 30 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-28/Snowflake-FPGA_2019-07-07-13-11-04-fpga-hat.webp)
 
@@ -134358,7 +134082,7 @@ Part 28 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pr
 
 </td></tr></table>
 
-## 23.28.176 2019-07-07_13:19:32_fpga_hat
+## 23.28.169 2019-07-07_13:19:32_fpga_hat
 
 ![2019-07-07_13:19:32_fpga_hat: stages 4 and 6 take 54% to 84% of a run. Simulation, GLB takes 21 s. Simulation, STEP takes 27 s. Simulation, STL takes 21 s. Simulation, OBJ takes 32 s. Visual, GLB takes 30 s. Visual, OBJ takes 37 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-28/Snowflake-FPGA_2019-07-07-13-19-32-fpga-hat.webp)
 
@@ -134401,7 +134125,7 @@ Part 28 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pr
 
 </td></tr></table>
 
-## 23.28.177 2019-07-07_13:36:48_fpga_hat
+## 23.28.170 2019-07-07_13:36:48_fpga_hat
 
 ![2019-07-07_13:36:48_fpga_hat: stages 4 and 6 take 54% to 85% of a run. Simulation, GLB takes 18 s. Simulation, STEP takes 23 s. Simulation, STL takes 18 s. Simulation, OBJ takes 27 s. Visual, GLB takes 26 s. Visual, OBJ takes 32 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-28/Snowflake-FPGA_2019-07-07-13-36-48-fpga-hat.webp)
 
@@ -134444,7 +134168,7 @@ Part 28 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pr
 
 </td></tr></table>
 
-## 23.28.178 2019-07-07_17:06:09_fpga_hat
+## 23.28.171 2019-07-07_17:06:09_fpga_hat
 
 ![2019-07-07_17:06:09_fpga_hat: stages 4 and 6 take 55% to 84% of a run. Simulation, GLB takes 18 s. Simulation, STEP takes 23 s. Simulation, STL takes 20 s. Simulation, OBJ takes 27 s. Visual, GLB takes 26 s. Visual, OBJ takes 30 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-28/Snowflake-FPGA_2019-07-07-17-06-09-fpga-hat.webp)
 
@@ -134487,47 +134211,7 @@ Part 28 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pr
 
 </td></tr></table>
 
-## 23.28.179 2019-07-07_17:15:56_fpga_hat
-
-| Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
-|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-| Simulation, GLB |  |  |  |  |  |  |  |  | error: 2019-07-07_17:15:56_fpga_hat.kicad_pcb: the file ends with 1 parenthesis still open: it is cut short (an incomplete download or copy?) |
-| Simulation, STEP |  |  |  |  |  |  |  |  | error: 2019-07-07_17:15:56_fpga_hat.kicad_pcb: the file ends with 1 parenthesis still open: it is cut short (an incomplete download or copy?) |
-| Simulation, STL |  |  |  |  |  |  |  |  | error: 2019-07-07_17:15:56_fpga_hat.kicad_pcb: the file ends with 1 parenthesis still open: it is cut short (an incomplete download or copy?) |
-| Simulation, OBJ |  |  |  |  |  |  |  |  | error: 2019-07-07_17:15:56_fpga_hat.kicad_pcb: the file ends with 1 parenthesis still open: it is cut short (an incomplete download or copy?) |
-| Visual, GLB |  |  |  |  |  |  |  |  | error: 2019-07-07_17:15:56_fpga_hat.kicad_pcb: the file ends with 1 parenthesis still open: it is cut short (an incomplete download or copy?) |
-| Visual, OBJ |  |  |  |  |  |  |  |  | error: 2019-07-07_17:15:56_fpga_hat.kicad_pcb: the file ends with 1 parenthesis still open: it is cut short (an incomplete download or copy?) |
-
-<table align="center"><tr><td valign="top">
-
-| Board | Repo: [Wren6991/Snowflake-FPGA](https://github.com/Wren6991/Snowflake-FPGA)<br>Board: `2019-07-07_17:15:56_fpga_hat.kicad_pcb` |
-|---|---|
-| Folder | timelapse |
-| Complexity | 292&nbsp;/&nbsp;1000 (size&nbsp;257, features&nbsp;35) |
-| KESE&nbsp;features | through vias, rounded,<br>trapezoid or chamfered pads,<br>curved board outline |
-| Tested | 9th November 2026 |
-| Copper&nbsp;layers | 4 |
-| File&nbsp;format | KiCad 5 |
-| Parts,&nbsp;tracks,&nbsp;vias | 82, 790, 164 |
-| Verifier | Simulation, GLB: error: 2019-07-07_17:15:56_fpga_hat.kicad_pcb: the file ends with 1 parenthesis still open: it is cut short (an incomplete download or copy?)<br>Simulation, STEP: error: 2019-07-07_17:15:56_fpga_hat.kicad_pcb: the file ends with 1 parenthesis still open: it is cut short (an incomplete download or copy?)<br>Simulation, STL: error: 2019-07-07_17:15:56_fpga_hat.kicad_pcb: the file ends with 1 parenthesis still open: it is cut short (an incomplete download or copy?)<br>Simulation, OBJ: error: 2019-07-07_17:15:56_fpga_hat.kicad_pcb: the file ends with 1 parenthesis still open: it is cut short (an incomplete download or copy?)<br>Visual, GLB: error: 2019-07-07_17:15:56_fpga_hat.kicad_pcb: the file ends with 1 parenthesis still open: it is cut short (an incomplete download or copy?)<br>Visual, OBJ: error: 2019-07-07_17:15:56_fpga_hat.kicad_pcb: the file ends with 1 parenthesis still open: it is cut short (an incomplete download or copy?) |
-
-</td><td valign="top">
-
-<table>
-<tr><th>File<br>type</th><th>File<br>size</th><th>Peak memory<br>used</th></tr>
-<tr><th colspan="3" align="left">Simulation</th></tr>
-<tr><td>GLB</td><td align="right">–</td><td align="right">32&nbsp;MB</td></tr>
-<tr><td>STEP</td><td align="right">–</td><td align="right">34&nbsp;MB</td></tr>
-<tr><td>STL</td><td align="right">–</td><td align="right">34&nbsp;MB</td></tr>
-<tr><td>OBJ</td><td align="right">–</td><td align="right">32&nbsp;MB</td></tr>
-<tr><th colspan="3" align="left">Visual</th></tr>
-<tr><td>GLB</td><td align="right">–</td><td align="right">34&nbsp;MB</td></tr>
-<tr><td>OBJ</td><td align="right">–</td><td align="right">34&nbsp;MB</td></tr>
-</table>
-
-</td></tr></table>
-
-## 23.28.180 2019-07-07_17:15:58_fpga_hat
+## 23.28.172 2019-07-07_17:15:58_fpga_hat
 
 ![2019-07-07_17:15:58_fpga_hat: stages 4 and 6 take 54% to 84% of a run. Simulation, GLB takes 21 s. Simulation, STEP takes 27 s. Simulation, STL takes 21 s. Simulation, OBJ takes 31 s. Visual, GLB takes 30 s. Visual, OBJ takes 37 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-28/Snowflake-FPGA_2019-07-07-17-15-58-fpga-hat.webp)
 
@@ -134570,7 +134254,7 @@ Part 28 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pr
 
 </td></tr></table>
 
-## 23.28.181 2019-07-07_18:08:38_fpga_hat
+## 23.28.173 2019-07-07_18:08:38_fpga_hat
 
 ![2019-07-07_18:08:38_fpga_hat: stages 4 and 6 take 53% to 84% of a run. Simulation, GLB takes 20 s. Simulation, STEP takes 26 s. Simulation, STL takes 20 s. Simulation, OBJ takes 31 s. Visual, GLB takes 28 s. Visual, OBJ takes 34 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-28/Snowflake-FPGA_2019-07-07-18-08-38-fpga-hat.webp)
 
@@ -134613,7 +134297,7 @@ Part 28 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pr
 
 </td></tr></table>
 
-# 23.29 Corpus Testing 29: xesscorp To ZeroPhone
+# 23.29 Corpus Page 29
 
 Part 29 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these projects, six runs each, one file format a run, as [Corpus Testing](../Corpus-Testing.md) describes.
 

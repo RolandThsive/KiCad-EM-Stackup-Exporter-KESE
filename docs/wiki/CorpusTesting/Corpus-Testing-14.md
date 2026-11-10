@@ -1,4 +1,4 @@
-# 23.14 Corpus Testing 14: kitspace-forks To loxodes
+# 23.14 Corpus Page 14
 
 Part 14 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these projects, six runs each, one file format a run, as [Corpus Testing](../Corpus-Testing.md) describes.
 
@@ -5337,4 +5337,4 @@ Part 14 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pr
 
 | Previous | Next |
 |:---|---:|
-| [Corpus Testing 13: istedman To KiCad](Corpus-Testing-13.md) | [Corpus Testing 15: ltbrain To mwelling](Corpus-Testing-15.md) |
+| [Corpus Page 13](Corpus-Testing-13.md) | [Corpus Page 15](Corpus-Testing-15.md) |

@@ -1,6 +1,6 @@
 # 23. Corpus Testing
 
-Every board in [Credits](Credits.md), 3,146 KiCad boards from 819 open hardware projects, exported by the current KESE once for every file format each mode writes, board by board, in the style of the [Feature Test Collection](Feature-Test-Collection.md):
+Every board in [Credits](Credits.md), 3,138 KiCad boards from 819 open hardware projects, exported by the current KESE once for every file format each mode writes, board by board, in the style of the [Feature Test Collection](Feature-Test-Collection.md):
 
 - Each board was run six times, **one file format a run**: in simulation mode with GLB, with STEP, with STL and with OBJ, and in visual mode with GLB and with OBJ (visual mode is a surface, not solids, so KESE does not write STEP or STL in it). One format a run gives each format its own time, file size and peak memory.
 - Every run had the Verifier, the solder mask and the silkscreen on. Each bar of a board's chart is one stage's seconds in that run, from the `timing` block of [`report.txt`](Project-Output-Organization.md#2022-reporttxt).
@@ -19,7 +19,7 @@ python run_KESE.py B --mode visual --format F --verify \
 
 **A run that failed was run again on 10 November 2026, with the same settings: one that KESE had got wrong, with the fixes to KESE made for it, and one stopped at the 11 GB cap, with the cap raised to 14.5 GB. A run that passed then shows the new run, and its board says so in a Run again row; a run that failed again keeps its first result.**
 
-3,092 of the 3,146 boards passed the Verifier in all six runs.
+3,092 of the 3,138 boards passed the Verifier in all six runs. The 46 others are listed by why under [What Did Not Pass](#what-did-not-pass).
 
 ## Grading A Board's Complexity
 
@@ -64,7 +64,7 @@ features = the sum of the weights of the features present
 
 | Feature | Present when the file has | Weight | Boards in this corpus |
 |---|---|---:|---:|
-| Through vias | `(via (at ...` with no type | 15 | 2,753 |
+| Through vias | `(via (at ...` with no type | 15 | 2,748 |
 | Blind and buried vias | `(via blind ...`, `(via buried ...` | 40 | 43 |
 | Microvias | `(via micro ...` | 40 | 22 |
 | Backdrills | `(backdrill ...`, `(tertiary_drill ...` | 40 | 0 |
@@ -73,13 +73,13 @@ features = the sum of the weights of the features present
 | Padstacks | `(padstack ...` | 30 | 21 |
 | Slotted holes | `(drill oval ...` | 10 | 1,041 |
 | Custom pads | a pad of shape `custom` | 15 | 627 |
-| Rounded, trapezoid or chamfered pads | a pad of shape `roundrect` or `trapezoid`, or `(chamfer ...` | 10 | 2,321 |
+| Rounded, trapezoid or chamfered pads | a pad of shape `roundrect` or `trapezoid`, or `(chamfer ...` | 10 | 2,313 |
 | Drill offsets | `(drill ... (offset ...))` | 10 | 149 |
 | Arc tracks | `(arc (start ...` (KiCad 6 and later) | 15 | 383 |
-| Filled zones | `(filled_polygon ...` or `(fill_segments ...` | 20 | 2,590 |
+| Filled zones | `(filled_polygon ...` or `(fill_segments ...` | 20 | 2,588 |
 | Copper drawings | a `gr_line`, `gr_arc`, `gr_circle`, `gr_rect`, `gr_poly` or `gr_curve` on a copper layer | 10 | 687 |
 | Copper text | a `gr_text` on a copper layer | 10 | 489 |
-| Curved board outline | an arc, circle or curve on `Edge.Cuts` | 10 | 1,676 |
+| Curved board outline | an arc, circle or curve on `Edge.Cuts` | 10 | 1,670 |
 | Knockout text | `knockout` | 15 | 459 |
 | Truetype text | `(face "...")` other than `"KiCad Font"` | 15 | 241 |
 | Hatched fills | `(fill hatch)` | 25 | 2 |
@@ -92,41 +92,50 @@ features = the sum of the weights of the features present
 | Plated board edge | `(edge_plating yes)` | 25 | 6 |
 | **All** | | **500** | |
 
-In this corpus the grades run from 17 to 651, half the boards below 275: the top of the scale is left for boards larger and richer in features than any here. Each board's section gives its grade as size plus features, and names its features.
+In this corpus the grades run from 17 to 651, half the boards below 274: the top of the scale is left for boards larger and richer in features than any here. Each board's section gives its grade as size plus features, and names its features.
 
 ## The Boards, By Project
 
 | Page | Projects | Boards | Boards run | Passed all six runs |
 |---|---|---:|---:|---:|
-| [Corpus Testing 1: 01GOD To alphaonex86](CorpusTesting/Corpus-Testing-01.md) | 14 | 104 | 104 | 102 |
-| [Corpus Testing 2: alvaroalea To andrewpaterson](CorpusTesting/Corpus-Testing-02.md) | 6 | 201 | 201 | 200 |
-| [Corpus Testing 3: antevens To antmicro](CorpusTesting/Corpus-Testing-03.md) | 81 | 100 | 100 | 95 |
-| [Corpus Testing 4: antmicro To baldengineer](CorpusTesting/Corpus-Testing-04.md) | 35 | 121 | 121 | 117 |
-| [Corpus Testing 5: Bambelweeny57 To Board-Folk](CorpusTesting/Corpus-Testing-05.md) | 22 | 103 | 103 | 102 |
-| [Corpus Testing 6: Board-Folk To cheyao](CorpusTesting/Corpus-Testing-06.md) | 26 | 104 | 104 | 102 |
-| [Corpus Testing 7: chipfoundry To DangerousPrototypes](CorpusTesting/Corpus-Testing-07.md) | 19 | 104 | 104 | 101 |
-| [Corpus Testing 8: DangerousPrototypes To epsilon0-dev](CorpusTesting/Corpus-Testing-08.md) | 43 | 101 | 101 | 99 |
-| [Corpus Testing 9: esden To ghent360](CorpusTesting/Corpus-Testing-09.md) | 24 | 103 | 103 | 101 |
-| [Corpus Testing 10: gitRaksha To greatscottgadgets](CorpusTesting/Corpus-Testing-10.md) | 19 | 111 | 111 | 109 |
-| [Corpus Testing 11: greatscottgadgets To intergalaktik](CorpusTesting/Corpus-Testing-11.md) | 34 | 102 | 102 | 99 |
-| [Corpus Testing 12: intergalaktik To issuiuc](CorpusTesting/Corpus-Testing-12.md) | 16 | 103 | 103 | 97 |
-| [Corpus Testing 13: istedman To KiCad](CorpusTesting/Corpus-Testing-13.md) | 36 | 105 | 105 | 102 |
-| [Corpus Testing 14: kitspace-forks To loxodes](CorpusTesting/Corpus-Testing-14.md) | 20 | 124 | 124 | 124 |
-| [Corpus Testing 15: ltbrain To mwelling](CorpusTesting/Corpus-Testing-15.md) | 42 | 100 | 100 | 100 |
-| [Corpus Testing 16: mwelling To nuclearfutureslab](CorpusTesting/Corpus-Testing-16.md) | 34 | 101 | 101 | 99 |
-| [Corpus Testing 17: NUSGreyhats To OLIMEX](CorpusTesting/Corpus-Testing-17.md) | 34 | 103 | 103 | 103 |
-| [Corpus Testing 18: OLIMEX To OLIMEX](CorpusTesting/Corpus-Testing-18.md) | 53 | 100 | 100 | 100 |
-| [Corpus Testing 19: OLIMEX To open-ephys](CorpusTesting/Corpus-Testing-19.md) | 32 | 100 | 100 | 100 |
-| [Corpus Testing 20: open-ephys To oresat](CorpusTesting/Corpus-Testing-20.md) | 22 | 104 | 104 | 104 |
-| [Corpus Testing 21: oresat To pms67](CorpusTesting/Corpus-Testing-21.md) | 33 | 100 | 100 | 100 |
-| [Corpus Testing 22: polpo To rh1tech](CorpusTesting/Corpus-Testing-22.md) | 31 | 108 | 108 | 108 |
-| [Corpus Testing 23: rhaamo To rusefi](CorpusTesting/Corpus-Testing-23.md) | 12 | 114 | 114 | 109 |
-| [Corpus Testing 24: rusefi To sparkfun](CorpusTesting/Corpus-Testing-24.md) | 30 | 111 | 111 | 110 |
-| [Corpus Testing 25: sparkfun To sufst](CorpusTesting/Corpus-Testing-25.md) | 21 | 115 | 115 | 114 |
-| [Corpus Testing 26: SukkoPera To tjeerdie](CorpusTesting/Corpus-Testing-26.md) | 29 | 102 | 102 | 101 |
-| [Corpus Testing 27: tjhorner To tzarc](CorpusTesting/Corpus-Testing-27.md) | 13 | 105 | 105 | 105 |
-| [Corpus Testing 28: ucdfs To Wren6991](CorpusTesting/Corpus-Testing-28.md) | 29 | 181 | 181 | 173 |
-| [Corpus Testing 29: xesscorp To ZeroPhone](CorpusTesting/Corpus-Testing-29.md) | 9 | 16 | 16 | 16 |
+| [Corpus Page 1](CorpusTesting/Corpus-Testing-01.md) | 14 | 104 | 104 | 102 |
+| [Corpus Page 2](CorpusTesting/Corpus-Testing-02.md) | 6 | 201 | 201 | 200 |
+| [Corpus Page 3](CorpusTesting/Corpus-Testing-03.md) | 81 | 100 | 100 | 95 |
+| [Corpus Page 4](CorpusTesting/Corpus-Testing-04.md) | 35 | 121 | 121 | 117 |
+| [Corpus Page 5](CorpusTesting/Corpus-Testing-05.md) | 22 | 103 | 103 | 102 |
+| [Corpus Page 6](CorpusTesting/Corpus-Testing-06.md) | 26 | 104 | 104 | 102 |
+| [Corpus Page 7](CorpusTesting/Corpus-Testing-07.md) | 19 | 104 | 104 | 101 |
+| [Corpus Page 8](CorpusTesting/Corpus-Testing-08.md) | 43 | 101 | 101 | 99 |
+| [Corpus Page 9](CorpusTesting/Corpus-Testing-09.md) | 24 | 103 | 103 | 101 |
+| [Corpus Page 10](CorpusTesting/Corpus-Testing-10.md) | 19 | 111 | 111 | 109 |
+| [Corpus Page 11](CorpusTesting/Corpus-Testing-11.md) | 34 | 102 | 102 | 99 |
+| [Corpus Page 12](CorpusTesting/Corpus-Testing-12.md) | 16 | 103 | 103 | 97 |
+| [Corpus Page 13](CorpusTesting/Corpus-Testing-13.md) | 36 | 105 | 105 | 102 |
+| [Corpus Page 14](CorpusTesting/Corpus-Testing-14.md) | 20 | 124 | 124 | 124 |
+| [Corpus Page 15](CorpusTesting/Corpus-Testing-15.md) | 42 | 100 | 100 | 100 |
+| [Corpus Page 16](CorpusTesting/Corpus-Testing-16.md) | 34 | 101 | 101 | 99 |
+| [Corpus Page 17](CorpusTesting/Corpus-Testing-17.md) | 34 | 103 | 103 | 103 |
+| [Corpus Page 18](CorpusTesting/Corpus-Testing-18.md) | 53 | 100 | 100 | 100 |
+| [Corpus Page 19](CorpusTesting/Corpus-Testing-19.md) | 32 | 100 | 100 | 100 |
+| [Corpus Page 20](CorpusTesting/Corpus-Testing-20.md) | 22 | 104 | 104 | 104 |
+| [Corpus Page 21](CorpusTesting/Corpus-Testing-21.md) | 33 | 100 | 100 | 100 |
+| [Corpus Page 22](CorpusTesting/Corpus-Testing-22.md) | 31 | 108 | 108 | 108 |
+| [Corpus Page 23](CorpusTesting/Corpus-Testing-23.md) | 12 | 114 | 114 | 109 |
+| [Corpus Page 24](CorpusTesting/Corpus-Testing-24.md) | 30 | 111 | 111 | 110 |
+| [Corpus Page 25](CorpusTesting/Corpus-Testing-25.md) | 21 | 115 | 115 | 114 |
+| [Corpus Page 26](CorpusTesting/Corpus-Testing-26.md) | 29 | 102 | 102 | 101 |
+| [Corpus Page 27](CorpusTesting/Corpus-Testing-27.md) | 13 | 105 | 105 | 105 |
+| [Corpus Page 28](CorpusTesting/Corpus-Testing-28.md) | 29 | 173 | 173 | 173 |
+| [Corpus Page 29](CorpusTesting/Corpus-Testing-29.md) | 9 | 16 | 16 | 16 |
+
+## What Did Not Pass
+
+Of the 3,138 boards, 46 did not pass in all six runs, none of them for a fault of KESE (each board's section says what stopped it):
+
+- **Bad design according to KESE (7 boards):** the file puts copper of two nets on top of each other, a short KiCad's DRC reports. KESE models what the file says, so the Verifier rightly finds the two nets' solids overlapping: [librem5_mainboard](CorpusTesting/Corpus-Testing-10.md#231051-librem5_mainboard), [CM5RevEng](CorpusTesting/Corpus-Testing-24.md#23244-cm5reveng), [denso079721_outline-append](CorpusTesting/Corpus-Testing-23.md#232365-denso079721_outline-append), [scalenode-cm4-baseboard](CorpusTesting/Corpus-Testing-03.md#233100-scalenode-cm4-baseboard), [gd VGC proto pcb](CorpusTesting/Corpus-Testing-04.md#234117-gd-vgc-proto-pcb), [.kicad_pcb](CorpusTesting/Corpus-Testing-07.md#23725-kicad_pcb), [NewBrain Original](CorpusTesting/Corpus-Testing-09.md#23949-newbrain-original).
+- **Stopped for memory (39 boards):** a run passed the 11 GB cap of the test machines, and again the 14.3 GB the 16 GB machines allow when run again; they will be run again on a machine with more memory: [board_routed_golden](CorpusTesting/Corpus-Testing-08.md#23899-board_routed_golden), [maxwell-main](CorpusTesting/Corpus-Testing-04.md#23450-maxwell-main), [ciaa_acc](CorpusTesting/Corpus-Testing-07.md#23715-ciaa_acc), [PC110](CorpusTesting/Corpus-Testing-01.md#23173-pc110), [PC110](CorpusTesting/Corpus-Testing-01.md#23172-pc110), [output.Panel_R0.5.1_300x300_2layer_step1](CorpusTesting/Corpus-Testing-23.md#232331-outputpanel_r051_300x300_2layer_step1), [output.Panel_R0.5.1_300x300_2layer_step1_Modified](CorpusTesting/Corpus-Testing-23.md#232332-outputpanel_r051_300x300_2layer_step1_modified), [Panel_R0.5.1_300x300_2layer_step1](CorpusTesting/Corpus-Testing-23.md#232334-panel_r051_300x300_2layer_step1), [ecp5_mainboard](CorpusTesting/Corpus-Testing-09.md#23980-ecp5_mainboard), [Marble](CorpusTesting/Corpus-Testing-05.md#23543-marble), [bpm_dfe](CorpusTesting/Corpus-Testing-13.md#231319-bpm_dfe), [ulx4m-panel](CorpusTesting/Corpus-Testing-12.md#231219-ulx4m-panel), [ulx4m_panel](CorpusTesting/Corpus-Testing-12.md#231224-ulx4m_panel), [ulx5m-gs_panel_checked_v002](CorpusTesting/Corpus-Testing-12.md#231227-ulx5m-gs_panel_checked_v002), [vme-wren](CorpusTesting/Corpus-Testing-07.md#23729-vme-wren), [A3000](CorpusTesting/Corpus-Testing-11.md#231176-a3000), [REAmiga3000](CorpusTesting/Corpus-Testing-11.md#231177-reamiga3000), [librem5_mainboard](CorpusTesting/Corpus-Testing-10.md#231048-librem5_mainboard), [jetson-agx-thor-baseboard](CorpusTesting/Corpus-Testing-03.md#23363-jetson-agx-thor-baseboard), [Commodore PC10 III](CorpusTesting/Corpus-Testing-06.md#2361-commodore-pc10-iii), [latentpink](CorpusTesting/Corpus-Testing-04.md#23443-latentpink), [FrontEnd_5G](CorpusTesting/Corpus-Testing-16.md#231636-frontend_5g), [k410t-devboard](CorpusTesting/Corpus-Testing-03.md#23371-k410t-devboard), [data-center-rdimm-ddr4-tester](CorpusTesting/Corpus-Testing-03.md#23335-data-center-rdimm-ddr4-tester), [AmigaPCI Mainboard](CorpusTesting/Corpus-Testing-02.md#2328-amigapci-mainboard), [motherboard-stable](CorpusTesting/Corpus-Testing-06.md#23669-motherboard-stable), [board_presignal](CorpusTesting/Corpus-Testing-08.md#23898-board_presignal), [FrontEnd_5G](CorpusTesting/Corpus-Testing-16.md#231637-frontend_5g), [Amiga 2000R6](CorpusTesting/Corpus-Testing-11.md#231174-amiga-2000r6), [sodimm-ddr5-tester](CorpusTesting/Corpus-Testing-04.md#2348-sodimm-ddr5-tester), [Main_12E1S](CorpusTesting/Corpus-Testing-12.md#231270-main_12e1s), [amiga2000](CorpusTesting/Corpus-Testing-23.md#23231-amiga2000), [Open128](CorpusTesting/Corpus-Testing-13.md#231334-open128), [motherboard](CorpusTesting/Corpus-Testing-25.md#232523-motherboard), [cpu010](CorpusTesting/Corpus-Testing-26.md#232652-cpu010), [Main_12E1S](CorpusTesting/Corpus-Testing-12.md#231269-main_12e1s), [2000ATX](CorpusTesting/Corpus-Testing-13.md#231323-2000atx), [boatcontrol](CorpusTesting/Corpus-Testing-03.md#2334-boatcontrol), [Main_12E1S](CorpusTesting/Corpus-Testing-12.md#231268-main_12e1s).
+- **Left out:** 8 more files of the collection, snapshots in Wren6991 Snowflake-FPGA's `timelapse` folder, are cut off before their end (each at an exact multiple of 4 KB: copied while KiCad was saving it). KESE stops on each, as it should ("the file ends with N parentheses still open: it is cut short"), and they are not part of this corpus.
+
 
 | Previous | Next |
 |:---|---:|

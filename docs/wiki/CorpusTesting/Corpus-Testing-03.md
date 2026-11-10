@@ -1,4 +1,4 @@
-# 23.3 Corpus Testing 3: antevens To antmicro
+# 23.3 Corpus Page 3
 
 Part 3 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these projects, six runs each, one file format a run, as [Corpus Testing](../Corpus-Testing.md) describes.
 
@@ -4213,6 +4213,7 @@ Part 3 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 | Parts,&nbsp;tracks,&nbsp;vias | 129, 2,743, 536 |
 | Triangles,&nbsp;simulation | 2,773,950 in 292 parts |
 | Verifier | Simulation, GLB: Verifier FAIL<br>Simulation, STEP: Verifier FAIL<br>Simulation, STL: Verifier FAIL<br>Simulation, OBJ: Verifier FAIL |
+| Bad&nbsp;design | Bad design according to KESE: copper of two nets on top of each other in the file, a short KiCad's DRC reports; U4 and U7 placed exactly on top of each other at (137.41, 83.21) mm: their TRIM pads, of two nets, coincide. KESE models what the file says, so the Verifier rightly finds the two nets' solids overlapping |
 
 </td><td valign="top">
 
@@ -4232,4 +4233,4 @@ Part 3 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 
 | Previous | Next |
 |:---|---:|
-| [Corpus Testing 2: alvaroalea To andrewpaterson](Corpus-Testing-02.md) | [Corpus Testing 4: antmicro To baldengineer](Corpus-Testing-04.md) |
+| [Corpus Page 2](Corpus-Testing-02.md) | [Corpus Page 4](Corpus-Testing-04.md) |
