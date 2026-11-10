@@ -1,4 +1,4 @@
-# 26. Immediate Next Steps
+# 25. Immediate Next Steps
 
 The project will be upgraded substantially with new features as they are identified along the
 way.

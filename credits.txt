@@ -1,7 +1,7 @@
 Credits: the KiCad boards KESE was checked against
 ===================================================
 
-KESE was checked on 3,138 KiCad boards from 819 open hardware projects on GitHub. Thank you to
+KESE was checked on 3,146 KiCad boards from 819 open hardware projects on GitHub. Thank you to
 the authors and contributors of every one of them.
 
 Every board belongs to its authors, and so does its license: the rights in each design, and the
@@ -7369,7 +7369,7 @@ winkleplex10-bit/the-mac-pro-project
 Wren6991/Snowflake-FPGA
   https://github.com/Wren6991/Snowflake-FPGA
   License: Apache-2.0 (Apache License 2.0), in License
-  Boards (76):
+  Boards (84):
     fpga_hat  (board/fpga_hat.kicad_pcb)
     2019-07-02_12:26:12_fpga_hat  (timelapse/2019-07-02_12:26:12_fpga_hat.kicad_pcb)
     2019-07-02_12:31:57_fpga_hat  (timelapse/2019-07-02_12:31:57_fpga_hat.kicad_pcb)
@@ -7384,7 +7384,10 @@ Wren6991/Snowflake-FPGA
     2019-07-02_14:01:06_fpga_hat  (timelapse/2019-07-02_14:01:06_fpga_hat.kicad_pcb)
     2019-07-02_14:14:35_fpga_hat  (timelapse/2019-07-02_14:14:35_fpga_hat.kicad_pcb)
     2019-07-02_15:12:10_fpga_hat  (timelapse/2019-07-02_15:12:10_fpga_hat.kicad_pcb)
+    2019-07-02_15:17:55_fpga_hat  (timelapse/2019-07-02_15:17:55_fpga_hat.kicad_pcb)
     2019-07-02_15:26:14_fpga_hat  (timelapse/2019-07-02_15:26:14_fpga_hat.kicad_pcb)
+    2019-07-02_15:31:39_fpga_hat  (timelapse/2019-07-02_15:31:39_fpga_hat.kicad_pcb)
+    2019-07-02_15:37:40_fpga_hat  (timelapse/2019-07-02_15:37:40_fpga_hat.kicad_pcb)
     2019-07-02_15:37:58_fpga_hat  (timelapse/2019-07-02_15:37:58_fpga_hat.kicad_pcb)
     2019-07-02_15:42:42_fpga_hat  (timelapse/2019-07-02_15:42:42_fpga_hat.kicad_pcb)
     2019-07-02_15:44:50_fpga_hat  (timelapse/2019-07-02_15:44:50_fpga_hat.kicad_pcb)
@@ -7406,6 +7409,7 @@ Wren6991/Snowflake-FPGA
     2019-07-02_20:01:46_fpga_hat  (timelapse/2019-07-02_20:01:46_fpga_hat.kicad_pcb)
     2019-07-02_20:17:06_fpga_hat  (timelapse/2019-07-02_20:17:06_fpga_hat.kicad_pcb)
     2019-07-02_20:28:54_fpga_hat  (timelapse/2019-07-02_20:28:54_fpga_hat.kicad_pcb)
+    2019-07-02_20:36:54_fpga_hat  (timelapse/2019-07-02_20:36:54_fpga_hat.kicad_pcb)
     2019-07-02_20:54:50_fpga_hat  (timelapse/2019-07-02_20:54:50_fpga_hat.kicad_pcb)
     2019-07-02_21:04:22_fpga_hat  (timelapse/2019-07-02_21:04:22_fpga_hat.kicad_pcb)
     2019-07-02_21:45:21_fpga_hat  (timelapse/2019-07-02_21:45:21_fpga_hat.kicad_pcb)
@@ -7413,6 +7417,7 @@ Wren6991/Snowflake-FPGA
     2019-07-03_06:50:23_fpga_hat  (timelapse/2019-07-03_06:50:23_fpga_hat.kicad_pcb)
     2019-07-03_07:08:37_fpga_hat  (timelapse/2019-07-03_07:08:37_fpga_hat.kicad_pcb)
     2019-07-03_07:15:18_fpga_hat  (timelapse/2019-07-03_07:15:18_fpga_hat.kicad_pcb)
+    2019-07-03_17:17:01_fpga_hat  (timelapse/2019-07-03_17:17:01_fpga_hat.kicad_pcb)
     2019-07-03_17:28:54_fpga_hat  (timelapse/2019-07-03_17:28:54_fpga_hat.kicad_pcb)
     2019-07-03_17:47:28_fpga_hat  (timelapse/2019-07-03_17:47:28_fpga_hat.kicad_pcb)
     2019-07-03_17:57:53_fpga_hat  (timelapse/2019-07-03_17:57:53_fpga_hat.kicad_pcb)
@@ -7426,6 +7431,7 @@ Wren6991/Snowflake-FPGA
     2019-07-05_22:03:31_fpga_hat  (timelapse/2019-07-05_22:03:31_fpga_hat.kicad_pcb)
     2019-07-05_22:15:17_fpga_hat  (timelapse/2019-07-05_22:15:17_fpga_hat.kicad_pcb)
     2019-07-05_22:26:53_fpga_hat  (timelapse/2019-07-05_22:26:53_fpga_hat.kicad_pcb)
+    2019-07-05_22:38:26_fpga_hat  (timelapse/2019-07-05_22:38:26_fpga_hat.kicad_pcb)
     2019-07-06_11:05:02_fpga_hat  (timelapse/2019-07-06_11:05:02_fpga_hat.kicad_pcb)
     2019-07-06_11:24:12_fpga_hat  (timelapse/2019-07-06_11:24:12_fpga_hat.kicad_pcb)
     2019-07-06_11:30:20_fpga_hat  (timelapse/2019-07-06_11:30:20_fpga_hat.kicad_pcb)
@@ -7435,6 +7441,7 @@ Wren6991/Snowflake-FPGA
     2019-07-06_12:41:44_fpga_hat  (timelapse/2019-07-06_12:41:44_fpga_hat.kicad_pcb)
     2019-07-06_12:52:32_fpga_hat  (timelapse/2019-07-06_12:52:32_fpga_hat.kicad_pcb)
     2019-07-06_12:56:05_fpga_hat  (timelapse/2019-07-06_12:56:05_fpga_hat.kicad_pcb)
+    2019-07-06_12:59:09_fpga_hat  (timelapse/2019-07-06_12:59:09_fpga_hat.kicad_pcb)
     2019-07-06_13:01:21_fpga_hat  (timelapse/2019-07-06_13:01:21_fpga_hat.kicad_pcb)
     2019-07-06_13:25:29_fpga_hat  (timelapse/2019-07-06_13:25:29_fpga_hat.kicad_pcb)
     2019-07-06_13:40:41_fpga_hat  (timelapse/2019-07-06_13:40:41_fpga_hat.kicad_pcb)
@@ -7444,6 +7451,7 @@ Wren6991/Snowflake-FPGA
     2019-07-07_13:19:32_fpga_hat  (timelapse/2019-07-07_13:19:32_fpga_hat.kicad_pcb)
     2019-07-07_13:36:48_fpga_hat  (timelapse/2019-07-07_13:36:48_fpga_hat.kicad_pcb)
     2019-07-07_17:06:09_fpga_hat  (timelapse/2019-07-07_17:06:09_fpga_hat.kicad_pcb)
+    2019-07-07_17:15:56_fpga_hat  (timelapse/2019-07-07_17:15:56_fpga_hat.kicad_pcb)
     2019-07-07_17:15:58_fpga_hat  (timelapse/2019-07-07_17:15:58_fpga_hat.kicad_pcb)
     2019-07-07_18:08:38_fpga_hat  (timelapse/2019-07-07_18:08:38_fpga_hat.kicad_pcb)
 

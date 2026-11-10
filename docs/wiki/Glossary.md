@@ -1,4 +1,4 @@
-# 25. Glossary
+# 24. Glossary
 
 | Term | Meaning |
 |---|---|
@@ -54,4 +54,4 @@
 
 | Previous | Next |
 |:---|---:|
-| [openEMS Workflow](OpenEMS-Workflow.md) | [Immediate Next Steps](Immediate-Next-Steps.md) |
+| [Feature Test Collection](Feature-Test-Collection.md) | [Immediate Next Steps](Immediate-Next-Steps.md) |
