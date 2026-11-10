@@ -4641,4 +4641,4 @@ Part 22 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pr
 
 | Previous | Next |
 |:---|---:|
-| [Corpus Testing 21: oresat To pms67](Corpus-Testing-21.md) | [Corpus Testing](../Corpus-Testing.md) |
+| [Corpus Testing 21: oresat To pms67](Corpus-Testing-21.md) | [Corpus Testing 23: rhaamo To rusefi](Corpus-Testing-23.md) |

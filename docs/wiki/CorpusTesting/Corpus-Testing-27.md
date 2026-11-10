@@ -4538,4 +4538,4 @@ Part 27 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pr
 
 | Previous | Next |
 |:---|---:|
-| [Corpus Testing 26: SukkoPera To tjeerdie](Corpus-Testing-26.md) | [Corpus Testing](../Corpus-Testing.md) |
+| [Corpus Testing 26: SukkoPera To tjeerdie](Corpus-Testing-26.md) | [Corpus Testing 28: ucdfs To Wren6991](Corpus-Testing-28.md) |

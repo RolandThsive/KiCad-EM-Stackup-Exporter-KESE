@@ -4778,4 +4778,4 @@ Part 24 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pr
 
 | Previous | Next |
 |:---|---:|
-| [Corpus Testing](../Corpus-Testing.md) | [Corpus Testing 25: sparkfun To sufst](Corpus-Testing-25.md) |
+| [Corpus Testing 23: rhaamo To rusefi](Corpus-Testing-23.md) | [Corpus Testing 25: sparkfun To sufst](Corpus-Testing-25.md) |
