@@ -42,7 +42,7 @@ idx = ["# Corpus Testing\n",
        "not write STEP or STL in it). One format a run gives each format its own time, file size and peak memory.",
        "- Every run had the Verifier, the solder mask and the silkscreen on. Each bar of a board's chart is one "
        "stage's seconds in that run, from the `timing` block of "
-       "[`report.txt`](Project-Output-Organization.md#2022-reporttxt).",
+       "[`report.txt`](Project-Output-Organization.md#1122-reporttxt).",
        "- Beside each board's facts, the file each run wrote (STL: all the part files of the run together) and the "
        "run's peak memory: the proportional set size (PSS) of KESE and its four workers summed, so shared memory is "
        "counted once, sampled every 0.05 s.",
@@ -118,7 +118,7 @@ idx += ["\n## What Did Not Pass\n",
         f"- **Stopped for memory ({len(memory)} boards):** a run passed the 11 GB cap of the test machines, and again "
         "the 14.3 GB the 16 GB machines allow when run again; they will be run again on a machine with more memory: "
         + ", ".join(where[r] for r in sorted(memory)) + "."]
-idx.append("\n| Previous | Next |\n|:---|---:|\n| [Feature Test Collection](Feature-Test-Collection.md) | [Glossary](Glossary.md) |")
+idx.append("\n| Previous | Next |\n|:---|---:|\n| [Feature Test Collection](Feature-Test-Collection.md) | [Parameter Reference](Parameter-Reference.md) |")
 # the pages of KESE's wiki live on the main branch, not beside this one: linked there
 WIKI_URL = "https://github.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/wiki/"
 text = re.sub(r"\]\(((?!CorpusTesting/)[A-Za-z0-9-]+)\.md(#[^)]*)?\)", lambda m: f"]({WIKI_URL}{m.group(1)}{m.group(2) or ''})", "\n".join(idx))
