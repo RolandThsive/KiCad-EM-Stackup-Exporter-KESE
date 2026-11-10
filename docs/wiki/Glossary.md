@@ -54,4 +54,4 @@
 
 | Previous | Next |
 |:---|---:|
-| [Feature Test Collection](Feature-Test-Collection.md) | [Immediate Next Steps](Immediate-Next-Steps.md) |
+| [Corpus Testing](Corpus-Testing.md) | [Immediate Next Steps](Immediate-Next-Steps.md) |
