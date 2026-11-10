@@ -2311,4 +2311,4 @@ Seconds, the median of three runs for each stage, unless marked ms; the total is
 
 | Previous | Next |
 |:---|---:|
-| [openEMS Workflow](OpenEMS-Workflow.md) | [Glossary](Glossary.md) |
+| [openEMS Workflow](OpenEMS-Workflow.md) | [Corpus Testing](Corpus-Testing.md) |

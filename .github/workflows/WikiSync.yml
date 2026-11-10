@@ -1,5 +1,7 @@
 # Keeps the GitHub Wiki tab identical to docs/wiki/: every change to those files on main is copied to the wiki.
 # docs/wiki/ is the source of truth. Edits made by hand in the Wiki tab are overwritten at the next sync.
+# The Corpus Testing pages live on the corpus-testing branch, apart from the code: each sync takes them from
+# there (only docs/wiki of that branch is fetched, not its charts), in place of the short page main keeps.
 # One-time setup: Settings > Features > Wikis, and save a first page in the Wiki tab so the wiki repository exists.
 name: Sync Wiki
 
@@ -31,12 +33,28 @@ jobs:
           repository: ${{ github.repository }}.wiki
           path: wiki
 
+      - name: Check out the Corpus Testing pages
+        uses: actions/checkout@v4
+        continue-on-error: true            # no corpus-testing branch: main's short page stays
+        with:
+          ref: corpus-testing
+          path: corpus-testing
+          sparse-checkout: docs/wiki
+          sparse-checkout-cone-mode: true
+
       - name: Copy docs/wiki into the wiki
         run: |
           test -f docs/wiki/Home.md || { echo "::error::docs/wiki/Home.md is missing"; exit 1; }
+          if [ -f corpus-testing/docs/wiki/Corpus-Testing.md ]; then
+            cp corpus-testing/docs/wiki/Corpus-Testing.md docs/wiki/
+            rm -rf docs/wiki/CorpusTesting && cp -r corpus-testing/docs/wiki/CorpusTesting docs/wiki/
+          else
+            echo "::warning::the corpus-testing branch was not found: the wiki keeps main's short Corpus Testing page"
+          fi
           rsync -a --delete --exclude='.git' docs/wiki/ wiki/
-          # The wiki links pages by name: [Text](Page-Name), not [Text](Page-Name.md)
-          find wiki -name '*.md' -exec sed -i -E 's/\]\(([A-Za-z0-9_-]+)\.md(#[^)]*)?\)/](\1\2)/g' {} +
+          # The wiki links pages by name: [Text](Page-Name), not [Text](Page-Name.md); a page in a folder
+          # (CorpusTesting/) or a link up out of one (../) is still linked by its name alone
+          find wiki -name '*.md' -exec sed -i -E 's/\]\((\.\.\/|[A-Za-z0-9_-]+\/)?([A-Za-z0-9_-]+)\.md(#[^)]*)?\)/](\2\3)/g' {} +
 
       - name: Commit and push the wiki
         working-directory: wiki
