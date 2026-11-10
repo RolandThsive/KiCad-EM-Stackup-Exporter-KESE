@@ -113,4 +113,4 @@ results; see [Parameter Reference](Parameter-Reference.md).
 
 | Previous | Next |
 |:---|---:|
-| [Output Modes](Output-Modes.md) | [Board](Board.md) |
+| [Output Modes](Output-Modes.md) | [Project Output Organization](Project-Output-Organization.md) |

@@ -5,7 +5,7 @@ Where the time of a run goes, stage by stage, for the three example boards of `G
 GLB, STEP, STL and OBJ in simulation mode, and GLB and OBJ in visual mode. Each of those six runs
 was made three times, with the Verifier on, and each bar is the median of the three runs for that
 stage, read from the `timing` block of
-[`report.txt`](Project-Output-Organization.md#2022-reporttxt):
+[`report.txt`](Project-Output-Organization.md#1122-reporttxt):
 
 ```text
 python run_KESE.py Input/rf_module.kicad_pcb --mode simulation --format glb --verify

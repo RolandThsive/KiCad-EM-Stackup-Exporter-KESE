@@ -15,6 +15,7 @@ All pages of this wiki, in reading order.
 - [Stack-Up Model](Stack-Up-Model.md)
 - [Output Modes](Output-Modes.md)
 - [Choosing An Export](Choosing-An-Export.md)
+- [Project Output Organization](Project-Output-Organization.md)
 
 ## 2.3 Features
 
@@ -25,25 +26,26 @@ All pages of this wiki, in reading order.
 - [Silkscreens](Silkscreens.md)
 - [Solder Masks](Solder-Masks.md)
 
-## 2.4 Reference
+## 2.4 Tests
+
+- [Feature Test Collection](Feature-Test-Collection.md)
+- [Corpus Testing](Corpus-Testing.md)
+
+## 2.5 References And Compatibilities
 
 - [Parameter Reference](Parameter-Reference.md)
 - [Checks, Errors And Warnings](Checks-Errors-And-Warnings.md)
 - [Material Properties](Material-Properties.md)
-- [Project Output Organization](Project-Output-Organization.md)
 - [KiCad And Solver Compatibility](Compatibility.md)
 - [openEMS Workflow](OpenEMS-Workflow.md)
-- [Feature Test Collection](Feature-Test-Collection.md)
-- [Corpus Testing](Corpus-Testing.md)
 
-## 2.5 Research And Community
+## 2.6 Research And Community
 
 - [Glossary](Glossary.md)
-- [Immediate Next Steps](Immediate-Next-Steps.md)
 - [Future Upgrades And Planning](Future-Upgrades-And-Planning.md)
 - [Credits](Credits.md)
 - [License](License.md)
 
 | Previous | Next |
 |:---|---:|
-| [KESE Wiki](Home.md) | [Getting Started](Getting-Started.md) |
+| [KiCad EM Stackup Exporter (KESE) Wiki](Home.md) | [Getting Started](Getting-Started.md) |

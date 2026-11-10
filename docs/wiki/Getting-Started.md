@@ -31,7 +31,7 @@ packages are:
 KESE writes every format itself, STEP included, with no CAD kernel. The program checks the
 packages before it starts and prints the `pip install` line to run, instead of a traceback. Only
 the tests that read STEP files back use OpenCascade, 7.8 by preference
-([Compatibility](Compatibility.md#214-python-and-packages)), and they skip that check without it:
+([Compatibility](Compatibility.md#224-python-and-packages)), and they skip that check without it:
 
 ```bash
 python -m pip install "cadquery-ocp==7.8.1.1.post1"
@@ -109,7 +109,7 @@ python run_KESE.py --version
 | `--for` | Applies a preset from `parameters/presets.py` before any `--set`: `freecad`, `elmer`, `calculix`, `openems`, `viewer`, `blender_glb`, `blender_obj`. See [Choosing An Export](Choosing-An-Export.md). |
 | `--verify` | Runs the Verifier after the model files are written (at most about 1.5 s more on the example boards). See [Checks, Errors And Warnings](Checks-Errors-And-Warnings.md). |
 | `--out` | Output root. Default: `Run.OUTPUT_DIR` (`Output/`). |
-| `--set Module.NAME=value` | Overrides one parameter for this run. `Module` is the short name of the parameter file (`Run`, `Board`, `Copper`, `SolderMask`, `Silkscreen`, `Finish`, `Geometry`, `Color`, `Parallel`, `Step`, `Verifier`, `Presets`). The value is parsed as a Python literal (`0.02`, `True`); anything that does not parse, such as `net`, is kept as a string (so `false` is the word, and stops the run where the setting takes `True` or `False`). Quote a list for the shell, as in `--set 'Run.FILE_FORMAT=["glb","stl"]'`: unquoted, the shell strips its inner quotes and the run stops. An unknown module or name, or a `--set` without `=`, stops the run before it starts, naming the closest setting ([Checks, Errors And Warnings](Checks-Errors-And-Warnings.md#1811-errors)). |
+| `--set Module.NAME=value` | Overrides one parameter for this run. `Module` is the short name of the parameter file (`Run`, `Board`, `Copper`, `SolderMask`, `Silkscreen`, `Finish`, `Geometry`, `Color`, `Parallel`, `Step`, `Verifier`, `Presets`). The value is parsed as a Python literal (`0.02`, `True`); anything that does not parse, such as `net`, is kept as a string (so `false` is the word, and stops the run where the setting takes `True` or `False`). Quote a list for the shell, as in `--set 'Run.FILE_FORMAT=["glb","stl"]'`: unquoted, the shell strips its inner quotes and the run stops. An unknown module or name, or a `--set` without `=`, stops the run before it starts, naming the closest setting ([Checks, Errors And Warnings](Checks-Errors-And-Warnings.md#2011-errors)). |
 | `--version` | Prints `kese 2.4.0`. |
 
 Every preset, `--set`, `--mode`, `--format` and `--verify` is applied as an override of the

@@ -1,6 +1,6 @@
-# 21. KiCad And Solver Compatibility
+# 22. KiCad And Solver Compatibility
 
-## 21.1 KiCad Files
+## 22.1 KiCad Files
 
 | KiCad | File format number of the release | Status |
 |---|---|---|
@@ -52,14 +52,14 @@ KiCad itself is not needed, only the `.kicad_pcb` file. Footprints are read from
 | Text boxes, dimensions, images, groups, tables, generated items; grid items, drill charts and drill maps (KiCad's development version) | skipped; counted when they sit on a copper, silk or mask layer (text boxes, dimensions) or at the top level of the file (images, groups, tables, generated items, grid items, drill charts, drill maps), otherwise left out without a count. For groups and generated items (such as length-tuning patterns) only the record itself is skipped: the tracks, footprints and graphics they hold are read as usual |
 | Footprint 3D models | skipped (bare board) |
 | Padstacks (KiCad 9 and later: another pad or via shape on the inner layers or on the back) | yes: front / inner / back and custom (per layer) modes; each copper layer gets its own pad shape or via size; the back mask opening follows the back shape |
-| Backdrills, tertiary drills, counterbores and countersinks of pads and vias (KiCad 10) | yes: drilled and cut as KiCad's fabrication files have them, the rings outside them kept ([Copper And Traces](Copper-And-Traces.md#1233-backdrills), [Board](Board.md#1141-counterbores-and-countersinks)) |
-| Covered, plugged, capped and filled vias (IPC-4761), also when the board setup makes them so (KiCad 10) | yes: the mask over the hole, resin plugs, copper or resin fills and caps ([Copper And Traces](Copper-And-Traces.md#1234-via-protection)) |
+| Backdrills, tertiary drills, counterbores and countersinks of pads and vias (KiCad 10) | yes: drilled and cut as KiCad's fabrication files have them, the rings outside them kept ([Copper And Traces](Copper-And-Traces.md#1333-backdrills), [Board](Board.md#1241-counterbores-and-countersinks)) |
+| Covered, plugged, capped and filled vias (IPC-4761), also when the board setup makes them so (KiCad 10) | yes: the mask over the hole, resin plugs, copper or resin fills and caps ([Copper And Traces](Copper-And-Traces.md#1334-via-protection)) |
 | Item kinds KESE does not know | skipped; counted under `skipped` in `report.txt` as `<kind> items (unknown to KESE)`, with a warning |
-| Hatched fills of graphics (KiCad 10) | yes: the hatch KiCad draws, with its knockouts, on copper, mask and silk layers ([Copper And Traces](Copper-And-Traces.md#1212-hatched-fills)) |
+| Hatched fills of graphics (KiCad 10) | yes: the hatch KiCad draws, with its knockouts, on copper, mask and silk layers ([Copper And Traces](Copper-And-Traces.md#1312-hatched-fills)) |
 | Edge connector flag of Board Setup (`(edge_connector yes)` or `bevelled`) | not read: the fingers are the pads they are, and a bevelled edge stays square |
 | Rigid-flex, multiple stack-up regions | not modelled |
 
-## 21.2 Output Formats
+## 22.2 Output Formats
 
 | Format | What is in it | Units | Written by |
 |---|---|---|---|
@@ -70,7 +70,7 @@ KiCad itself is not needed, only the `.kicad_pcb` file. Footprints are read from
 
 Visual mode writes GLB and OBJ only.
 
-## 21.3 Tools
+## 22.3 Tools
 
 None of these imports has been tried with KESE output yet: the routes follow each tool's
 documented import formats and the presets in `parameters/presets.py`, and are to be confirmed.
@@ -87,7 +87,7 @@ Research underway.
 | `<model-viewer>`, three.js | GLB, m, centred (`--for viewer`) | the visual-mode skin is made to avoid z-fighting ([Output Modes](Output-Modes.md)) |
 | Other thermal / FEA tools reading STL | STL per part, mm | closed solids per part (a part can hold several separate bodies); mesh them with the tool's own mesher |
 
-## 21.4 Python And Packages
+## 22.4 Python And Packages
 
 | | Version |
 |---|---|
@@ -101,4 +101,4 @@ afresh on every system, as Windows and macOS start them; Windows holds at most 6
 
 | Previous | Next |
 |:---|---:|
-| [Project Output Organization](Project-Output-Organization.md) | [openEMS Workflow](OpenEMS-Workflow.md) |
+| [Material Properties](Material-Properties.md) | [openEMS Workflow](OpenEMS-Workflow.md) |

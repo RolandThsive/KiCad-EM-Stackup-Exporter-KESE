@@ -54,4 +54,4 @@
 
 | Previous | Next |
 |:---|---:|
-| [Corpus Testing](Corpus-Testing.md) | [Immediate Next Steps](Immediate-Next-Steps.md) |
+| [openEMS Workflow](OpenEMS-Workflow.md) | [Future Upgrades And Planning](Future-Upgrades-And-Planning.md) |

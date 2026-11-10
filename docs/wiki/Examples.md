@@ -63,7 +63,7 @@ What this board shows:
   cut-out. The edge copper belongs to GND, the net with the most copper at the edge, and meets
   the GND border on every copper layer: 1.2 mm wide along the outline and 1.0 mm around the
   cut-out, the mask open over it, with a fence of GND vias in it. See
-  [Edge Plating](Copper-And-Traces.md#127-edge-plating).
+  [Edge Plating](Copper-And-Traces.md#137-edge-plating).
 - **Its own stack-up.** Every height comes from Board Setup: 35 µm outer and 17.5 µm inner
   copper, two FR4 prepregs and a core, a 1.6 mm board and a 10 µm mask. From `report.txt`:
 
@@ -87,7 +87,7 @@ What this board shows:
   <img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Colorizing/ColorSwatches/3C5AB4.webp" width="12" height="12" align="absmiddle" alt=""> `#3C5AB4`,
   and the silkscreen
   <img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Colorizing/ColorSwatches/F0F0EC.webp" width="12" height="12" align="absmiddle" alt=""> `#F0F0EC`
-  ([Colorizing](Colorizing.md#132-colours-from-the-stack-up)).
+  ([Colorizing](Colorizing.md#142-colours-from-the-stack-up)).
 - **One part per net.** 35 copper parts. `Copper_GND` is one closed solid made of the three
   planes, the border, the via fence, the plated edge and the barrels of its vias. The 50 Ω line is
   `Copper_RF` from the radio to L1 and `Copper_RF2` from L1 to the coax connector, each joined to
@@ -98,7 +98,7 @@ What this board shows:
 - **Keep-outs and finish.** Three rule areas are counted under `skipped` and make no copper, as
   intended. The stack-up's finish is ENIG: the nickel and the gold go on the bare copper
   (`--set Finish.FINISH_ENABLED=False` leaves them out)
-  ([ENIG](Finish.md#1431-enig)).
+  ([ENIG](Finish.md#1531-enig)).
 
 
 <p align="center">
@@ -138,7 +138,7 @@ What this board shows:
 - **Four kinds of via.** 71 microvias, from each outer layer to the layer under it; 34 blind and
   buried vias, buried from In1.Cu to In4.Cu and blind from an outer layer to In2.Cu or In3.Cu; and
   45 through vias. A via has its ring on the layers it spans and its barrel only between them
-  ([Vias And Plated Holes](Copper-And-Traces.md#123-vias-and-plated-holes)).
+  ([Vias And Plated Holes](Copper-And-Traces.md#133-vias-and-plated-holes)).
 - **Named laminates.** The dielectrics carry the glass styles and materials of the stack-up, each
   with its own εr and tanδ, and each becomes its own part, `Board_dielectric 1` to `5`, with those
   values in `materials.json` ([Material Properties](Material-Properties.md)):
@@ -154,7 +154,7 @@ What this board shows:
 - **Castellated pads.** The 43 plated holes that the board edge cuts through are castellations:
   each drill notches the edge, and its plating is a part-barrel on the notch wall, joined to the
   pad's net (`Copper.CASTELLATION = "auto"`; the file also says `(castellated_pads yes)`). See
-  [Castellated Holes](Copper-And-Traces.md#126-castellated-holes).
+  [Castellated Holes](Copper-And-Traces.md#136-castellated-holes).
 - **Keep-outs.** The antenna's keep-out on every layer and the cut in In1.Cu under its line are
   rule areas: six of them, counted under `skipped`, and no copper inside them.
 - **Black mask.** The stack-up's "Black" gives
@@ -162,7 +162,7 @@ What this board shows:
   and over copper in visual mode
   <img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Colorizing/ColorSwatches/2E2E30.webp" width="12" height="12" align="absmiddle" alt=""> `#2E2E30`.
   The finish is immersion silver (built with `--set Finish.FINISH_TYPE=file`; ENIG by default)
-  ([ImmersionSilver](Finish.md#1436-immersionsilver)).
+  ([ImmersionSilver](Finish.md#1536-immersionsilver)).
 
 <p align="center">
 <img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Examples/hdi_module/layers_apart_simulation.webp" width="49%" alt="The module in simulation mode with its layers drawn apart: the masks, the six copper layers and the five dielectrics, each one closed solid, the via barrels between the layers they join">
@@ -198,7 +198,7 @@ What this board shows:
   fingers.
 - **Hard gold.** The stack-up's finish is hard gold. With `--set Finish.FINISH_TYPE=file` it
   covers all the exposed copper, fingers and pads alike, since KiCad gives a board one finish
-  ([HardGold](Finish.md#1438-hardgold)).
+  ([HardGold](Finish.md#1538-hardgold)).
 - **The bevel is not modelled.** Board Setup's `(edge_connector bevelled)` asks the fabricator to
   bevel the fingers' edge. KESE does not read it, so the card's edge stays square.
 - **An isolation barrier.** A rule area 2 mm wide keeps every copper layer clear between the logic

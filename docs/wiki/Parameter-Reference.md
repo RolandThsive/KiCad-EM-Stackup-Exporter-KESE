@@ -1,4 +1,4 @@
-# 17. Parameter Reference
+# 19. Parameter Reference
 
 Every setting lives in one of twelve files in `parameters/`. These are the only files you edit.
 Units are mm unless a name says otherwise. The **Range** column is what the program uses
@@ -21,11 +21,11 @@ and listed on its first line.
 > `FONT_FILE` gives a note in `report.txt`. For the rest, a value outside the range below produces
 > a wrong model or a plain Python error, not a named check.
 
-## 17.1 Run (`parameters/run.py`)
+## 19.1 Run (`parameters/run.py`)
 
 What to make, where, and in which formats.
 
-### 17.1.1 Mode, Folders And Formats
+### 19.1.1 Mode, Folders And Formats
 
 | Name | Default | Range | Meaning |
 |---|---|---|---|
@@ -36,18 +36,18 @@ What to make, where, and in which formats.
 | `ORIGIN` | `"center"` | `"center"` / `"kicad"` | Outline centre at (0, 0), or KiCad's page origin kept |
 | `ORIENTATION` | `"upright"` | `"upright"` / `"flat"` | Board in XY with `F.Cu` toward +Z, or in XZ with `F.Cu` toward +Y |
 
-### 17.1.2 Run Behaviour
+### 19.1.2 Run Behaviour
 
-How many threads and processes work at once is set in [17.9 Parallel](#179-parallel-parametersparallelpy), the
-STEP files' own settings in [17.10 Step](#1710-step-parameterssteppy), the Verifier's in
-[17.11 Verifier](#1711-verifier-parametersverifierpy) and the presets in [17.12 Presets](#1712-presets-parameterspresetspy).
+How many threads and processes work at once is set in [19.9 Parallel](#199-parallel-parametersparallelpy), the
+STEP files' own settings in [19.10 Step](#1910-step-parameterssteppy), the Verifier's in
+[19.11 Verifier](#1911-verifier-parametersverifierpy) and the presets in [19.12 Presets](#1912-presets-parameterspresetspy).
 
 | Name | Default | Range | Meaning |
 |---|---|---|---|
 | `SHOW_PROGRESS` | `True` | bool | Live `running <stage> ... 1m 23s` line on a terminal |
 | `WRITE_MATERIALS_JSON` | `True` | bool | Write `materials.json` next to the outputs |
 
-### 17.1.3 Mesh Export (GLB, STL, OBJ)
+### 19.1.3 Mesh Export (GLB, STL, OBJ)
 
 | Name | Default | Range | Meaning |
 |---|---|---|---|
@@ -55,14 +55,14 @@ STEP files' own settings in [17.10 Step](#1710-step-parameterssteppy), the Verif
 | `EXPORT_SET_BUFFERVIEW_TARGETS` | `True` | bool | Set glTF bufferView targets, which keeps the Khronos validator report free of hints |
 | `SMOOTH_SHADE_ANGLE_DEG` | `25.0` | degrees | Edges sharper than this stay crisp; flatter ones (cylinders) shade smooth |
 
-### 17.1.4 KiCad Versions
+### 19.1.4 KiCad Versions
 
 | Name | Default | Range | Meaning |
 |---|---|---|---|
-| `KICAD_VERSION_MIN`, `KICAD_VERSION_MAX` | `3`, `20260206` | KiCad file format numbers | Tested range, from the 2013 builds before KiCad 4 (format 3) to KiCad 10 (KiCad 4 files say `(version 4)`, KiCad 5 files `20171130`); a file outside it is read with a warning ([Compatibility](Compatibility.md#211-kicad-files)) |
+| `KICAD_VERSION_MIN`, `KICAD_VERSION_MAX` | `3`, `20260206` | KiCad file format numbers | Tested range, from the 2013 builds before KiCad 4 (format 3) to KiCad 10 (KiCad 4 files say `(version 4)`, KiCad 5 files `20171130`); a file outside it is read with a warning ([Compatibility](Compatibility.md#221-kicad-files)) |
 | `TESTED_COPPER_LAYERS` | `8` | int > 0 | Stage 1 warns above this many copper layers (the most among the test boards); they are still modelled |
 
-## 17.2 Board (`parameters/board.py`)
+## 19.2 Board (`parameters/board.py`)
 
 The laminate: thickness, dielectrics, outline and holes. Details in [Board](Board.md).
 
@@ -76,10 +76,10 @@ The laminate: thickness, dielectrics, outline and holes. Details in [Board](Boar
 | `DEFAULT_DIELECTRIC_MATERIAL`, `DEFAULT_DIELECTRIC_TYPE` | `"FR4"`, `"core"` | text; `"core"` / `"prepreg"` | Used when the stack-up gives none |
 | `DEFAULT_EPSILON_R`, `DEFAULT_LOSS_TANGENT` | `4.5`, `0.02` | > 0 | Typical FR4 at 1 GHz, used when the stack-up gives none |
 | `USE_STACKUP_EPSILON_R`, `USE_STACKUP_LOSS_TANGENT` | `True`, `True` | bool | Stack-up values win over the defaults when present |
-| `RESIN_FILL_BETWEEN_INNER_COPPER` | `True` | bool | `True`: fill the space beside inner copper from the adjacent prepreg (otherwise from the dielectric above); `False`: those pockets stay empty and `report.txt` notes it (see [Board](Board.md#112-resin-fill-beside-inner-copper)) |
+| `RESIN_FILL_BETWEEN_INNER_COPPER` | `True` | bool | `True`: fill the space beside inner copper from the adjacent prepreg (otherwise from the dielectric above); `False`: those pockets stay empty and `report.txt` notes it (see [Board](Board.md#122-resin-fill-beside-inner-copper)) |
 | `INCLUDE_NON_PLATED_HOLES` | `True` | bool | NPTH pads become holes through the board |
-| `BACKDRILLS` | `True` | bool | KiCad 10's backdrills and tertiary drills: the hole is drilled out, plating and copper too, from its start layer through its must-cut layer ([Copper And Traces](Copper-And-Traces.md#1233-backdrills)) |
-| `POST_MACHINING` | `True` | bool | KiCad 10's counterbores and countersinks are cut from the board's face ([Board](Board.md#1141-counterbores-and-countersinks)) |
+| `BACKDRILLS` | `True` | bool | KiCad 10's backdrills and tertiary drills: the hole is drilled out, plating and copper too, from its start layer through its must-cut layer ([Copper And Traces](Copper-And-Traces.md#1333-backdrills)) |
+| `POST_MACHINING` | `True` | bool | KiCad 10's counterbores and countersinks are cut from the board's face ([Board](Board.md#1241-counterbores-and-countersinks)) |
 | `COUNTERSINK_STEP_TOLERANCE_MM` | `0.025` | mm > 0 | A countersink's cone is built as steps that stray from it by at most this |
 | `OUTLINE_LINE_SNAP_MM` | `0.01` | mm > 0 | Open `Edge.Cuts` line and arc ends closer than this are joined, as KiCad joins them (its chaining distance is 0.01 mm) |
 | `OUTLINE_FALLBACK` | `"copper_hull"` | `"copper_hull"` / `"error"` | When `Edge.Cuts` gives no closed ring at all: convex hull of the copper plus a margin, or stop |
@@ -87,12 +87,12 @@ The laminate: thickness, dielectrics, outline and holes. Details in [Board](Boar
 | `OUTLINE_DUPLICATE_AREA_MM2` | `1e-6` | mm² > 0 | Two closed `Edge.Cuts` outlines that differ by less than this area are one (a ring drawn twice) |
 | `OUTLINE_MIN_AREA_MM2` | `1e-9` | mm² ≥ 0 | A closed `Edge.Cuts` outline of this area or less is left out (a line drawn there and back, a circle of no size) |
 
-## 17.3 Copper (`parameters/copper.py`)
+## 19.3 Copper (`parameters/copper.py`)
 
 Copper foils, plating, vias and the finished copper geometry. Details in
 [Copper And Traces](Copper-And-Traces.md).
 
-### 17.3.1 Thickness And Plating
+### 19.3.1 Thickness And Plating
 
 | Name | Default | Range | Meaning |
 |---|---|---|---|
@@ -104,7 +104,7 @@ Copper foils, plating, vias and the finished copper geometry. Details in
 | `VIA_WALL_MM` | `0.025` | mm > 0 | Plated wall of vias (typical 0.020 to 0.025) |
 | `PTH_WALL_MM` | `0.025` | mm > 0 | Plated wall of through-hole pads |
 
-### 17.3.2 Etch Factor
+### 19.3.2 Etch Factor
 
 | Name | Default | Range | Meaning |
 |---|---|---|---|
@@ -113,7 +113,7 @@ Copper foils, plating, vias and the finished copper geometry. Details in
 | `ETCH_APPLY_TO_INNER_LAYERS` | `False` | bool | Etch inner copper too (foot toward the board centre) |
 | `ETCH_UNETCHED_REACH` | `1.5` | ≥ 0 | Copper within this × the etch inset of a hole wall or the board edge keeps its outline |
 
-### 17.3.3 Castellations And Edge Plating
+### 19.3.3 Castellations And Edge Plating
 
 | Name | Default | Range | Meaning |
 |---|---|---|---|
@@ -123,12 +123,12 @@ Copper foils, plating, vias and the finished copper geometry. Details in
 | `EDGE_PLATING_WALL_MM` | `0.025` | mm > 0 | Width of the edge band inside the outline |
 | `EDGE_PLATING_NET` | `"auto"` | `"auto"` or a net name | Net of the edge copper; `"auto"` = the named net with the most copper touching the band |
 
-### 17.3.4 Vias And Nets
+### 19.3.4 Vias And Nets
 
 | Name | Default | Range | Meaning |
 |---|---|---|---|
 | `VIA_TENTING` | `"file"` | `"file"` / `"tented"` / `"open"` | Mask over vias: follow the board, cover all, open all |
-| `VIA_PROTECTION` | `"file"` | `"file"` / `"off"` | KiCad 10's covered, plugged, capped and filled vias (IPC-4761): as the board says, or every via left open ([Copper And Traces](Copper-And-Traces.md#1234-via-protection)) |
+| `VIA_PROTECTION` | `"file"` | `"file"` / `"off"` | KiCad 10's covered, plugged, capped and filled vias (IPC-4761): as the board says, or every via left open ([Copper And Traces](Copper-And-Traces.md#1334-via-protection)) |
 | `VIA_FILL` | `"copper"` | `"copper"` / `"resin"` | What a filled via is filled with: copper of the via's net, or the resin below |
 | `VIA_PLUG_DEPTH_FRACTION` | `0.5` | > 0, ≤ 1 | How far a plug reaches into the hole from its face, as a share of the hole's length |
 | `VIA_RESIN_EPSILON_R`, `VIA_RESIN_LOSS_TANGENT` | `4.4`, `0.02` | ≥ 1, ≥ 0 | The plug and fill resin (San-Ei Kagaku PHP-900 IR-6P at 1 GHz), written to `materials.json` |
@@ -137,14 +137,14 @@ Copper foils, plating, vias and the finished copper geometry. Details in
 | `NO_NET_NAME` | `"no_net"` | text | Name of copper that belongs to no net |
 | `HAIRLINE_HOLE_MM` | `1e-3` | mm ≥ 0 | A hole in one net's copper narrower than this on average (2 × area / perimeter) is filled: the hair-wide gap KiCad leaves between a zone fill and a pad of its own net |
 
-### 17.3.5 Electrical Properties
+### 19.3.5 Electrical Properties
 
 | Name | Default | Range | Meaning |
 |---|---|---|---|
 | `COPPER_CONDUCTIVITY_S_PER_M` | `5.8e7` | S/m | Written to `materials.json` for every copper part |
 | `COPPER_SURFACE_ROUGHNESS_UM` | `0.0` | µm ≥ 0 | Written to `materials.json`; 0 = ignore; e.g. 1.5 for standard foil. A solver setting, not geometry |
 
-## 17.4 Solder Mask (`parameters/solder_mask.py`)
+## 19.4 Solder Mask (`parameters/solder_mask.py`)
 
 Short name `SolderMask`. Details in [Solder Masks](Solder-Masks.md).
 
@@ -158,11 +158,11 @@ Short name `SolderMask`. Details in [Solder Masks](Solder-Masks.md).
 | `PAD_TO_MASK_CLEARANCE_MM` | `None` | None or mm ≥ 0 | Clearance around pads and untented vias; `None` takes the board setup's value from the file. A number replaces only the board setup's value: a pad's or footprint's own `solder_mask_margin` in the file still wins |
 | `MASK_MIN_WIDTH_MM` | `None` | None or mm ≥ 0 | Narrowest web of mask kept between two openings; `None` follows Board Setup (`solder_mask_min_width`), 0 keeps every web |
 | `MASK_WEB_HAIRLINE_MM` | `1e-3` | mm ≥ 0 | A web the minimum width adds that is narrower than twice this is dropped |
-| `MASK_OVER_COPPER_HAIRLINE_MM` | `1e-3` | mm ≥ 0 | A piece of mask on top of copper narrower than twice this is left out, and the finish covers it instead: the slivers left where an opening's outline follows the copper's with other points ([Solder Masks](Solder-Masks.md#162-conformal-mask)); 0 keeps them |
-| `MASK_OPENING_HAIRLINE_MM` | `1e-3` | mm ≥ 0 | A mask opening narrower than twice this everywhere is left out, the mask kept over it: the opening of a pad a micrometre across, which no fab makes ([Solder Masks](Solder-Masks.md#162-conformal-mask)); 0 keeps every one |
+| `MASK_OVER_COPPER_HAIRLINE_MM` | `1e-3` | mm ≥ 0 | A piece of mask on top of copper narrower than twice this is left out, and the finish covers it instead: the slivers left where an opening's outline follows the copper's with other points ([Solder Masks](Solder-Masks.md#172-conformal-mask)); 0 keeps them |
+| `MASK_OPENING_HAIRLINE_MM` | `1e-3` | mm ≥ 0 | A mask opening narrower than twice this everywhere is left out, the mask kept over it: the opening of a pad a micrometre across, which no fab makes ([Solder Masks](Solder-Masks.md#172-conformal-mask)); 0 keeps every one |
 | `MASK_WALL_QUAD_SEGS` | `4` | int ≥ 1 | Segments per quarter circle on the walls where the mask climbs a trace |
 
-## 17.5 Silkscreen (`parameters/silkscreen.py`)
+## 19.5 Silkscreen (`parameters/silkscreen.py`)
 
 Details in [Silkscreens](Silkscreens.md).
 
@@ -182,7 +182,7 @@ Details in [Silkscreens](Silkscreens.md).
 | `DRAW_HIDDEN_TEXT` | `False` | bool | Draw text marked `(hide yes)` |
 | `SILK_LAYERS` | `["F.SilkS", "B.SilkS"]` | list of `F.*` / `B.*` layer names | Layers whose graphics are drawn as silkscreen, on the side their first letter names (any other name stops the run with a `KeyError` when the board has graphics on that layer); graphics on other non-physical layers are counted as skipped. Text is drawn only on `F.SilkS` / `B.SilkS`; text on other non-physical layers is ignored without a count |
 
-## 17.6 Finish (`parameters/finish.py`)
+## 19.6 Finish (`parameters/finish.py`)
 
 Details in [Finish](Finish.md).
 
@@ -197,7 +197,7 @@ Details in [Finish](Finish.md).
 | `FINISH_NAME_ALIASES` | 6 KiCad names (`HAL SnPb` → `HASL`, `HAL lead-free` → `HASL_LF`, `Hard gold`, `Immersion tin`, `Immersion silver`, `HT_OSP` → `OSP`) | `{KiCad name: key of FINISH_TYPES}` | KiCad finish names that differ from a key; matching ignores case, spaces, `-` and `_` |
 | `FINISH_CONDUCTIVITY_S_PER_M` | Nickel `1.4e7`, Gold `4.1e7`, Palladium `9.5e6`, Tin `9.1e6`, Silver `6.3e7`, OSP `0.0` | `{metal: S/m}` | Written to `materials.json` |
 
-## 17.7 Geometry (`parameters/geometry.py`)
+## 19.7 Geometry (`parameters/geometry.py`)
 
 Numerical quality: how finely curves are faceted and how neighbouring layers share exact edges.
 These do not change dimensions.
@@ -235,30 +235,30 @@ These do not change dimensions.
 The last four rows say how the work is cut up: other values make the same model, but where an edge
 crossing rounds onto the grid another way, a sliver thinner than a grid step.
 
-### 17.7.1 How The Curve Settings Are Used
+### 19.7.1 How The Curve Settings Are Used
 
 A circle of radius $`r`$ (a via, a round pad) is flattened to $`4q`$ straight
 segments, with $`q`$ segments per quarter circle chosen so that no chord strays more than
 $`\varepsilon_c`$ from the true circle:
 
 ```math
-n_c = \frac{\pi}{\arccos\left( 1 - \min\left( \frac{\varepsilon_c}{r},\ 1 \right) \right)} \qquad (17.1)
+n_c = \frac{\pi}{\arccos\left( 1 - \min\left( \frac{\varepsilon_c}{r},\ 1 \right) \right)} \qquad (19.1)
 ```
 
 ```math
-q = \min\left( q_{\max},\ \max\left( q_{\min},\ \left\lceil \frac{n_c}{4} \right\rceil \right) \right) \qquad (17.2)
+q = \min\left( q_{\max},\ \max\left( q_{\min},\ \left\lceil \frac{n_c}{4} \right\rceil \right) \right) \qquad (19.2)
 ```
 
 An arc (an arc track, an arc on a drawing layer) of sweep $`\varphi`$ is cut into
 
 ```math
-n_a = \max\left( 2,\ \left\lceil \frac{|\varphi|}{\Delta\varphi} \right\rceil \right) \qquad (17.3)
+n_a = \max\left( 2,\ \left\lceil \frac{|\varphi|}{\Delta\varphi} \right\rceil \right) \qquad (19.3)
 ```
 
 segments, and the round ends of a track of width $`w`$ use
 
 ```math
-q_{\mathrm{end}} = \max\left( q_{\mathrm{track}},\ \left\lfloor \frac{q(w/2)}{2} \right\rfloor \right) \qquad (17.4)
+q_{\mathrm{end}} = \max\left( q_{\mathrm{track}},\ \left\lfloor \frac{q(w/2)}{2} \right\rfloor \right) \qquad (19.4)
 ```
 
 segments per quarter circle.
@@ -270,13 +270,13 @@ segments per quarter circle.
 | $`q`$, $`q_{\min}`$, $`q_{\max}`$ | segments per quarter circle and its bounds (8, 128) | `CIRCLE_MIN_QUAD_SEGS`, `CIRCLE_MAX_QUAD_SEGS` |
 | $`\varphi`$, $`\Delta\varphi`$ | arc sweep and maximum step (3°) | `ARC_STEP_DEG` |
 | $`q_{\mathrm{track}}`$ | minimum roundness of track ends (4) | `TRACK_END_MIN_QUAD_SEGS` |
-| $`q(w/2)`$ | equation (17.2) for radius $`w/2`$ | |
+| $`q(w/2)`$ | equation (19.2) for radius $`w/2`$ | |
 
 Example: a 0.3 mm via ($`r = 0.15`$ mm) gives $`n_c = 12.1`$, so $`q = \max(8, \lceil 3.03 \rceil) = 8`$, 32
 segments around the via; the floor $`q_{\min}`$ decides for every circle below about 1 mm radius. A 3.2 mm
 mounting hole ($`r = 1.6`$ mm) gives $`n_c = 39.7`$ and $`q = 10`$, 40 segments around it.
 
-## 17.8 Color (`parameters/color.py`)
+## 19.8 Color (`parameters/color.py`)
 
 The look of every part: the GLB and OBJ materials, the part colours in STEP and the `look` field of
 `materials.json`. Details in [Colorizing](Colorizing.md).
@@ -291,7 +291,7 @@ The look of every part: the GLB and OBJ materials, the part colours in STEP and 
 | `STACKUP_MASK_OVER_COPPER_COLORS` | 11 names | `{name: hex or None}` | Visual-mode colour of the mask over copper per stack-up colour; an entry set to `None` (or left out) keeps the `MATERIALS` colour |
 | `USER_MASK_OVER_COPPER_LIGHTEN` | `0.15` | 0-1 | With a user-defined (`#RRGGBBAA`) mask colour in the stack-up, how far the visual-mode mask over copper is mixed toward white |
 
-## 17.9 Parallel (`parameters/parallel.py`)
+## 19.9 Parallel (`parameters/parallel.py`)
 
 How many processor cores work at once, and how much the work holds in memory at once
 ([Working Principle](Working-Principle.md#74-work-done-in-parallel)). None of these changes the
@@ -300,7 +300,7 @@ model: the files are the same, byte for byte, however the work is shared out.
 | Name | Default | Range | Meaning |
 |---|---|---|---|
 | `WORKERS` | `0` | int ≥ 0 | Threads or processes that work at once. Threads where the 2D geometry library does the work (it runs outside Python's lock): the copper layers and the solder mask's minimum web width, group by group, in stage 3; both sides of the solder mask and the silkscreen, and the finish's copper layers and groups of bores, in stage 4; the faces of the visual-mode skin and the test for its hidden triangles, in stage 6; the Verifier's overlap check in stage 8. Processes of their own, each started afresh, where much of the work is Python's: in stage 3 the copper layers of a board of `PROCESS_MIN_NETS` nets or more (1,000), in stage 6 the parts built at once in simulation mode and the parts sliced for the visual skin, in stage 7 the parts of a STEP file (`PROCESS_WORKERS` and `PROCESS_MIN_COORDINATES` below). `0` = one per processor thread the run may use (all of the machine's, unless a job scheduler, `taskset` or a container limits it); `1` = everything in turn, in one process. |
-| `PROCESS_WORKERS` | `0` | int ≥ 0 | At most this many worker processes at once, in stages 3, 6 and 7; `0` = as many as `WORKERS` (a higher value is the same as `WORKERS`). Each process holds its own Python, numpy and shapely (about 36 MB) and the part it builds: NE_Delta, one of the biggest boards tried, peaks at 2.80 GB in all with 4 workers and 4.37 GB with 32 in simulation mode, and at 3.65 GB with 4 when it writes the STEP file too, whose parts the processes also work on. A thread costs little memory, so a machine with many threads and little memory can keep `WORKERS` and lower this; `1` starts no process: stages 6 and 7 build their parts in the main process, stage 3 joins the copper layers in threads, and the threads are kept. If one is stopped or runs out of memory, the parts left go to half as many processes, and to the main process once that would be one; if the processes cannot start, the main process builds them; each time with a note ([Checks, Errors And Warnings](Checks-Errors-And-Warnings.md#1813-notes-worth-knowing)). Windows holds at most 61 processes at once. |
+| `PROCESS_WORKERS` | `0` | int ≥ 0 | At most this many worker processes at once, in stages 3, 6 and 7; `0` = as many as `WORKERS` (a higher value is the same as `WORKERS`). Each process holds its own Python, numpy and shapely (about 36 MB) and the part it builds: NE_Delta, one of the biggest boards tried, peaks at 2.80 GB in all with 4 workers and 4.37 GB with 32 in simulation mode, and at 3.65 GB with 4 when it writes the STEP file too, whose parts the processes also work on. A thread costs little memory, so a machine with many threads and little memory can keep `WORKERS` and lower this; `1` starts no process: stages 6 and 7 build their parts in the main process, stage 3 joins the copper layers in threads, and the threads are kept. If one is stopped or runs out of memory, the parts left go to half as many processes, and to the main process once that would be one; if the processes cannot start, the main process builds them; each time with a note ([Checks, Errors And Warnings](Checks-Errors-And-Warnings.md#2013-notes-worth-knowing)). Windows holds at most 61 processes at once. |
 | `PROCESS_MIN_COORDINATES` | `20000` | int ≥ 0 | Stage 6 starts worker processes only when the parts hold this many coordinates or more in all their prisms, the STEP writer only when their faces do, and stage 3 only when the copper items do, on a board of `PROCESS_MIN_NETS` nets or more ([Working Principle](Working-Principle.md#74-work-done-in-parallel)); smaller boards are built part after part in the main process, which is faster than starting the processes (about 0.3 s for 4): one of the test boards takes 0.10 s that way, and 0.35 s in processes. `0` = processes for every board of more than one part (in stage 3, of `PROCESS_MIN_NETS` nets or more). |
 | `GIVE_BACK_MEMORY` | `True` | bool | Hand the memory that threads freed back to the system after each step done in threads, and in each worker process after each part (glibc's `malloc_trim`, on Linux; elsewhere nothing is done). glibc keeps a pool for each thread and holds on to what is freed in it: NE_Delta in visual mode peaks at 2.65 GB with 4 workers and 3.57 GB with 32 with this, and 3.45 GB and 4.76 GB without. Tens of milliseconds per run. |
 | `SKIN_PROBES_AT_A_TIME` | `2000000` | int ≥ 1 | Visual skin, the test for hidden triangles: triangles probed at once. Their probe points and normals take about a quarter of a gigabyte; fewer take less memory and a little more time |
@@ -317,7 +317,7 @@ model: the files are the same, byte for byte, however the work is shared out.
 > `Parallel.WORKERS`, and `report.txt` notes that. A `parameters/run.py` that still sets `WORKERS`
 > stops the run with a message that names `parameters/parallel.py`, so the value is not lost.
 
-## 17.10 Step (`parameters/step.py`)
+## 19.10 Step (`parameters/step.py`)
 
 The STEP files: true arcs and cylinders, and what counts as an arc. The file's units are `Run.UNITS`;
 how many rows the writer turns into text at once is `Parallel.STEP_ROWS_AT_A_TIME`.
@@ -355,9 +355,9 @@ An arc is written only where nothing can cross it, since its bulge is up to
 | `STEP_STRIP_MAX_TURN_DEG` | `45.0` | degrees > 0 | The strip kept clear around an arc is drawn with corners at most this far apart about its centre (closer where its margin needs) |
 | `STEP_TANGENT_MM` | `5e-8` | mm ≥ 0 | An edge that leaves an arc's end and cuts into its circle by less than this only touches the arc, as a line along its tangent does (OpenCascade takes two curves within about 2e-7 of the file's unit for touching: in mm, the stricter unit, 2e-7 mm) |
 
-## 17.11 Verifier (`parameters/verifier.py`)
+## 19.11 Verifier (`parameters/verifier.py`)
 
-Whether the Verifier runs, and what it lets pass ([Checks, Errors And Warnings](Checks-Errors-And-Warnings.md#183-the-verifier)).
+Whether the Verifier runs, and what it lets pass ([Checks, Errors And Warnings](Checks-Errors-And-Warnings.md#203-the-verifier)).
 How many triangles its rays test at once is `Parallel.VERIFY_TRIANGLES_AT_A_TIME`.
 
 | Name | Default | Range | Meaning |
@@ -370,7 +370,7 @@ How many triangles its rays test at once is `Parallel.VERIFY_TRIANGLES_AT_A_TIME
 | `VERIFY_GONE_AREA_MM2` | `1e-4` | mm² ≥ 0 | A piece this small may be gone in the piece-by-piece comparison (prisms with no slice left on them: a speck of finish that a pinch point's cut takes whole); a bigger piece gone fails the part |
 | `VERIFY_MERGE_EXTRA_DIGITS` | `2` | int ≥ 0 | The closed-mesh check merges a mesh's vertices this many decimal digits finer than the snapping grid (1e-6 mm), whatever `Run.UNITS` |
 
-## 17.12 Presets (`parameters/presets.py`)
+## 19.12 Presets (`parameters/presets.py`)
 
 | Name | Default | Range | Meaning |
 |---|---|---|---|
@@ -384,4 +384,4 @@ How many triangles its rays test at once is `Parallel.VERIFY_TRIANGLES_AT_A_TIME
 
 | Previous | Next |
 |:---|---:|
-| [Solder Masks](Solder-Masks.md) | [Checks, Errors And Warnings](Checks-Errors-And-Warnings.md) |
+| [Corpus Testing](Corpus-Testing.md) | [Checks, Errors And Warnings](Checks-Errors-And-Warnings.md) |

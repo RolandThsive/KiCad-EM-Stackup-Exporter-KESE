@@ -1,4 +1,4 @@
-# 27. Credits
+# 26. Credits
 
 KESE was checked on 3,138 KiCad boards from 819 open hardware projects on GitHub. Thank you to
 the authors and contributors of every one of them.
@@ -8,7 +8,7 @@ terms it may be used under, are theirs alone. Their boards were used only for ch
 verifying its determinism (that the same board and settings give the same files, byte for byte).
 No board, nor any part of one, is included in KESE or distributed with it.
 
-## 27.1 The Licenses
+## 26.1 The Licenses
 
 The license is the one GitHub identifies in the repository (an SPDX identifier); where GitHub
 names none, it is what the project's own license files or README say, with the file it is in.
@@ -20,7 +20,7 @@ The repository's
 [`credits.txt`](https://github.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/blob/main/credits.txt)
 holds the same list, with the path of each board in its repository.
 
-## 27.2 The Projects
+## 26.2 The Projects
 
 The 819 projects, by name. A number in brackets after a board's name is the number of boards of
 that name in the project.
