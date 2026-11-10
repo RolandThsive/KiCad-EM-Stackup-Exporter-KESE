@@ -27,6 +27,8 @@ from kese.core import vertices
 from kese.core.boundary import boundary_of, heights_of, slices_of, wall_segments
 from kese.core.boundary_mesh import mesh_of_boundary
 from kese.core.flat_faces import faces_between, flat_faces
+from kese.core import pinches
+from kese.core.close_pieces import joined_where_close
 from kese.core.pinches import cut_open_at, repeated_vertices
 from kese.core.vertices import grid_keys, near_edge, noded, pairs_in, ring_points, same_edges, same_vertices
 from kese.model.prisms import Prism
@@ -176,7 +178,22 @@ def needle_tips_of_a_mask():
 
 
 def test_slices_whose_needle_tips_trade_vertices_for_ever_are_cut_open_there_and_close():
+    """With the needles' cracks closed first (close_pieces.py) the part closes at once; without
+    that, the slices are cut open where the needle tips trade vertices, and close."""
     prisms, notes = needle_tips_of_a_mask(), []
+    b = boundary_of("Top Solder Mask", prisms, notes.append)
+    assert notes == [] and closed_and_wound(mesh_of_boundary(b)) and no_vertex_on_another_edge(b) == []
+    whole = sum((p.z1 - p.z0) * p.region.area for p in prisms)
+    assert 0.99 * whole < b.volume() < 1.01 * whole
+    pinches.joined_where_close = lambda parts: (parts, False)                       # no crack closed
+    try:
+        cut_open_slices_close(prisms)
+    finally:
+        pinches.joined_where_close = joined_where_close
+
+
+def cut_open_slices_close(prisms):
+    notes = []
     b = boundary_of("Top Solder Mask", prisms, notes.append)
     rounds = P.Geometry.VERTEX_SHARING_ROUNDS
     assert len(notes) == 1 and notes[0].startswith(f"slices still sharing new vertices after {rounds} rounds: cut open at")
