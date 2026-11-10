@@ -1,0 +1,22 @@
+# Lives only on the corpus-testing branch. When a push here changes the Corpus Testing pages,
+# it starts main's Sync Wiki, which copies this branch's docs/wiki pages into the GitHub Wiki.
+name: Corpus Wiki Sync
+
+on:
+  push:
+    branches: [corpus-testing]
+    paths:
+      - "docs/wiki/**"
+  workflow_dispatch:
+
+permissions:
+  actions: write
+
+jobs:
+  start-sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Start Sync Wiki on main
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow run WikiSync.yml --repo "$GITHUB_REPOSITORY" --ref main
