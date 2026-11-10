@@ -33,7 +33,7 @@ cpu = machines.most_common(1)[0][0].split(",")[0] if machines else "an Intel Xeo
 ok6 = len(ok_both)
 
 gr = [grade(b)[0] for b in BOARDS.values()]
-idx = [f"# {N}. Corpus Testing\n",
+idx = ["# Corpus Testing\n",
        f"Every board in [Credits](Credits.md), {len(BOARDS):,} KiCad boards from 819 open hardware projects, exported by the "
        "current KESE once for every file format each mode writes, board by board, in the style of the "
        "[Feature Test Collection](Feature-Test-Collection.md):\n",
@@ -105,7 +105,7 @@ for k, (pg, g) in enumerate(pages, 1):
     projs = sorted({b["project"] for b in g}, key=str.lower)
     link = f"[{title(k, g)}](CorpusTesting/{pg}.md)" if pg in complete else f"{title(k, g)} (running)"
     idx.append(f"| {link} | {len(projs)} | {len(g)} | {sum(1 for b in g if b['rank'] in both)} | {sum(1 for b in g if b['rank'] in ok_both)} |")
-sect = lambda k, bi, b: "#" + re.sub(r"[^a-z0-9 _-]", "", f"{N}.{k}.{bi} {b['name']}".lower()).replace(" ", "-")   # as GitHub makes it
+sect = lambda k, bi, b: "#" + re.sub(r"[^a-z0-9 _-]", "", f"{k}.{bi} {b['name']}".lower()).replace(" ", "-")   # as GitHub makes it
 where = {b["rank"]: f"[{b['name']}](CorpusTesting/{pg}.md{sect(k, bi, b)})" for k, (pg, g) in enumerate(pages, 1) for bi, b in enumerate(g, 1)}
 not_ok = [r for r in both if r not in ok_both]
 memory = [r for r in not_ok if r not in BAD_DESIGN]
@@ -122,7 +122,7 @@ idx += ["\n## What Did Not Pass\n",
         "folder, are cut off before their end (each at an exact multiple of 4 KB: copied while KiCad was saving it). KESE "
         "stops on each, as it should (\"the file ends with N parentheses still open: it is cut short\"), and they are not "
         "part of this corpus.\n"]
-idx.append("\n| Previous | Next |\n|:---|---:|\n| [Feature Test Collection](Feature-Test-Collection.md) | [openEMS Workflow](OpenEMS-Workflow.md) |")
+idx.append("\n| Previous | Next |\n|:---|---:|\n| [Feature Test Collection](Feature-Test-Collection.md) | [Glossary](Glossary.md) |")
 # the pages of KESE's wiki live on the main branch, not beside this one: linked there
 WIKI_URL = "https://github.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/wiki/"
 text = re.sub(r"\]\(((?!CorpusTesting/)[A-Za-z0-9-]+)\.md(#[^)]*)?\)", lambda m: f"]({WIKI_URL}{m.group(1)}{m.group(2) or ''})", "\n".join(idx))
@@ -130,11 +130,11 @@ text = re.sub(r"\]\(((?!CorpusTesting/)[A-Za-z0-9-]+)\.md(#[^)]*)?\)", lambda m:
 
 for k, (pg, g) in enumerate(pages, 1):
     PAGEDIR = pg; (IMG / "Corpus-Testing" / pg).mkdir(parents=True, exist_ok=True)
-    P = [f"# {N}.{k} {title(k, g)}\n",
+    P = [f"# {title(k, g)}\n",
          f"Part {k} of {len(pages)} of [Corpus Testing](../Corpus-Testing.md): every board of these projects, six runs "
          "each, one file format a run, as [Corpus Testing](../Corpus-Testing.md) describes.\n"]
     for bi, b in enumerate(g, 1):
-        P.append(board_section(b, f"{N}.{k}.{bi}"))
+        P.append(board_section(b, f"{k}.{bi}"))
     prev = f"[{title(k - 1, pages[k - 2][1])}]({pages[k - 2][0]}.md)" if k > 1 and pages[k - 2][0] in complete else "[Corpus Testing](../Corpus-Testing.md)"
     nxt = f"[{title(k + 1, pages[k][1])}]({pages[k][0]}.md)" if k < len(pages) and pages[k][0] in complete else "[Corpus Testing](../Corpus-Testing.md)"
     P.append(f"| Previous | Next |\n|:---|---:|\n| {prev} | {nxt} |")
