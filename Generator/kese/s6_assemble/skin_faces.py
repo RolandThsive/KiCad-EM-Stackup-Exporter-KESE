@@ -12,15 +12,11 @@ import shapely
 from kese.core import shapes2d as sh
 from kese.core.boundary import heights_of, joined_regions, slices_of_part, wall_segments
 from kese.core.graph import shared_tree
-from kese.core.vertices import (
-    grid_keys,
-    pairs_in,
-    same_edges,
-    walls_split_at_vertices,
-)
+from kese.core.vertices import grid_keys, pairs_in, same_edges, walls_split_at_vertices
 from kese.core.memory import give_back_memory
 from kese.core.parallel import biggest_first, in_processes, workers_wanted, worth_processes
 from kese.core.shape_copies import floating, own
+from kese.s6_assemble.skin_vertices import flats_sharing_vertices
 
 COVERS_BY_PATTERN = shapely.geos_version >= (3, 13, 0)    # a prepared shape answers a pattern with RelateNG
 
@@ -35,6 +31,7 @@ def skin_faces(ps, log):
     with ThreadPoolExecutor(workers_wanted()) as pool:
         pieces = material_of_every_slice(slices, pool)
         flats = dict(zip(order, pool.map(lambda part: visible_flats(own(slices[part]), levels, pieces), order)))
+        flats = flats_sharing_vertices(flats, slices, levels)
         for *_, prepared in pieces:
             prepared.pop("copy", None)       # the prepared copies of the material, one per slice
         give_back_memory()
