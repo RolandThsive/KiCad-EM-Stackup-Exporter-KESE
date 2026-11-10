@@ -59,6 +59,11 @@ parts[off] = shapely.set_precision(parts[off], grid())      # Geometry.SNAP_GRID
 - Where a region would pinch to a point (two pieces touching at one vertex), a disc of
   `Geometry.PINCH_POINT_OPENING_MM` is cut out of the smaller piece so that the solid can close
   (`kese/core/pinches.py`). Those vertices sit just off the grid.
+  Before that, two pieces that lie side by side across a crack thinner than a grid step, and a needle
+  crack less than 1.5 grid steps wide inside one piece, are closed instead (`kese/core/close_pieces.py`):
+  two coatings' walls grown from two groups of copper leave such cracks, and cutting them open chopped
+  the thinner piece round after round, each cut moving its edge a little, until the mask's edge had
+  walked a few tenths of a micrometre into the copper beside it.
 - One known exception, where parts can overlap or leave a gap: the wedge beside a sloped copper
   wall (`Copper.ETCH_FACTOR > 0`, see [Copper And Traces](Copper-And-Traces.md#125-etch-factor)).
 - The price: curves are polygons in the meshes. The STEP file turns them back into true arcs and

@@ -4,7 +4,7 @@ import numpy as np
 import shapely
 
 from kese.core import shapes2d as sh
-from kese.core.flat_triangles import on_points
+from kese.core.flat_triangles import flat_any, flats_split_away, on_points
 from kese.core.mesh import Mesh
 from kese.core.triangulate import caps, cells_cut, geos_cut, oriented_rings
 from kese.core.vertices import grid_keys, vertices_in_order
@@ -81,7 +81,11 @@ def polygon_triangles(polys):
 
 def delaunay_triangles(polygon):
     """One polygon cut by GEOS's constrained Delaunay triangulation, which keeps to the polygon's
-    own vertices and copes with rings that touch: (xy, counter-clockwise triangles into xy)."""
-    xy = oriented_rings(np.array([polygon], dtype=object))[0]
+    own vertices and copes with rings that touch: (xy, counter-clockwise triangles into xy).  Where
+    points of the rings lie on one line, GEOS can give triangles of no area along it, wound either
+    way (a ground plane's holes on a 45-degree line, a KiCad 9 board): those are split away
+    (flat_triangles.py)."""
+    xy, nxt = oriented_rings(np.array([polygon], dtype=object))[:2]
     corners = np.array([np.asarray(t.exterior.coords)[:3] for t in shapely.constrained_delaunay_triangles(polygon).geoms])
-    return xy, on_points(xy, corners)
+    tri = on_points(xy, corners)
+    return xy, (flats_split_away(xy, nxt, tri) if flat_any(xy, tri) else tri)

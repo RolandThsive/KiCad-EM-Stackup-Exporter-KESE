@@ -12,15 +12,11 @@ import shapely
 from kese.core import shapes2d as sh
 from kese.core.boundary import heights_of, joined_regions, slices_of_part, wall_segments
 from kese.core.graph import shared_tree
-from kese.core.vertices import (
-    grid_keys,
-    pairs_in,
-    same_edges,
-    walls_split_at_vertices,
-)
+from kese.core.vertices import grid_keys, pairs_in, same_edges, walls_split_at_vertices
 from kese.core.memory import give_back_memory
 from kese.core.parallel import biggest_first, in_processes, workers_wanted, worth_processes
 from kese.core.shape_copies import floating, own
+from kese.s6_assemble.skin_vertices import flats_sharing_vertices
 
 COVERS_BY_PATTERN = shapely.geos_version >= (3, 13, 0)    # a prepared shape answers a pattern with RelateNG
 
@@ -35,6 +31,7 @@ def skin_faces(ps, log):
     with ThreadPoolExecutor(workers_wanted()) as pool:
         pieces = material_of_every_slice(slices, pool)
         flats = dict(zip(order, pool.map(lambda part: visible_flats(own(slices[part]), levels, pieces), order)))
+        flats = flats_sharing_vertices(flats, slices, levels)
         for *_, prepared in pieces:
             prepared.pop("copy", None)       # the prepared copies of the material, one per slice
         give_back_memory()
@@ -87,7 +84,9 @@ def material_of_every_slice(slices, pool):
 
 def visible_flats(part_slices, levels, pieces):
     """One part's flat faces: at every height its material below less everyone's above (looking up),
-    and its material above less everyone's below (looking down)."""
+    and its material above less everyone's below (looking down).  A face GEOS 3.14.1's cut on the grid
+    leaves invalid from valid shapes (D1600E PSU breakout: a hole nested in a hole, which GEOS's
+    triangulation refuses) is cut again in floating point, only new vertices on the grid (exact_diff)."""
     out = []
     for k, z in enumerate(levels):
         below = part_slices[k - 1] if k else sh.EMPTY
@@ -98,6 +97,8 @@ def visible_flats(part_slices, levels, pieces):
             if mine.is_empty:
                 continue
             region = cut_away(mine, pieces[cutter]) if 0 <= cutter < len(pieces) else mine
+            if 0 <= cutter < len(pieces) and not region.is_valid:
+                region = sh.exact_diff(mine, pieces[cutter][3])
             if not region.is_empty:
                 out.append((z, region, up))
     return out

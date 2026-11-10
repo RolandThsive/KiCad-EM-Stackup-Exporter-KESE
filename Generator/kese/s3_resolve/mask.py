@@ -28,9 +28,24 @@ def mask_openings(r, items, outline_k):
     vo = via_openings(items)
     openings = {}
     for side in ("F", "B"):
-        openings[side] = min_width_joined(items, union(items.mask_open_items[side] + vo[side]), side)
+        openings[side] = without_specks(min_width_joined(items, union(items.mask_open_items[side] + vo[side]), side),
+                                        items, side)
         r.mask_open[side] = r.to_board_T(openings[side].intersection(outline_k))
     return openings
+
+
+def without_specks(openings, items, side):
+    """The openings without those narrower than twice SolderMask.MASK_OPENING_HAIRLINE_MM everywhere."""
+    h = P.SolderMask.MASK_OPENING_HAIRLINE_MM
+    parts = shapely.get_parts(sh.polys_only(openings))
+    if h <= 0 or not len(parts):
+        return openings
+    maybe = np.flatnonzero(shapely.area(parts) <= h * shapely.length(parts))   # only those can be that thin
+    speck = maybe[shapely.is_empty(shapely.buffer(parts[maybe], -h))]
+    if not len(speck):
+        return openings
+    items.found[f"mask openings narrower than {2 * h:g} mm left out on {side}.Mask"] += len(speck)
+    return sh.as_region(list(np.delete(parts, speck)))
 
 
 def min_width_joined(items, openings, side):

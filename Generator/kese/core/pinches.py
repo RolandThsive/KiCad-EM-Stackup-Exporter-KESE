@@ -6,6 +6,7 @@ import numpy as np
 import shapely
 
 from kese.core import shapes2d as sh
+from kese.core.close_pieces import joined_where_close
 from kese.core.graph import pairs_within
 from kese.core.vertices import grid_keys, near_edge, noded, pairs_in
 from parameters import P
@@ -16,9 +17,8 @@ def open_pinches(region, log=None):
     region = sh.polys_only(region)
     if region.is_empty:
         return region
-    parts = list(shapely.get_parts(region))
+    parts, cut_any = joined_where_close(list(shapely.get_parts(region)))   # cracks closed, not cut open
     check = range(len(parts))                              # the parts whose rings are checked this round
-    cut_any = False
     for round_ in range(sh.G().PINCH_CUT_ROUNDS):
         cuts = pieces_too_close(parts)
         for k, pts in repeated_vertices(parts, check).items():

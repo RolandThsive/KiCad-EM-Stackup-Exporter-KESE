@@ -43,6 +43,7 @@ AT_LEAST = {**dict.fromkeys(ZERO_OR_MORE, 0), **dict.fromkeys(ONE_OR_MORE, 1),
 KIND_WORDS = {bool: "True or False", int: "a number", float: "a number", str: "text, in quotes",
               list: "a list", dict: "a dict"}
 NUMBER_AT_LEAST = {"Verifier.VERIFY_VOLUME_TOLERANCE": 0, "Verifier.VERIFY_OPENED_VOLUME_MM3": 0,
+                   "Verifier.VERIFY_GONE_AREA_MM2": 0,
                    "Verifier.VERIFY_VOLUME_NOISE_MM3": 0, "Step.STEP_TANGENT_MM": 0, "Step.STEP_ARC_CHECK_FACTOR": 0,
                    "Parallel.WORKER_STOP_WAIT_S": 0, "Copper.VIA_RESIN_EPSILON_R": 1, "Copper.VIA_RESIN_LOSS_TANGENT": 0,
                    "Finish.FINISH_MITRE_LIMIT": 1}     # a corner cut nearer than its thickness would thin the finish

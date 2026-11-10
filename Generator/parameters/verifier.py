@@ -16,5 +16,7 @@ VERIFY_VOLUME_TOLERANCE = 1e-7         # a part's volumes from its faces, slices
 VERIFY_VOLUME_NOISE_MM3 = 1e-9         # and by this many mm3 more, whatever its volume
 VERIFY_OPENED_VOLUME_MM3 = 1e-3        # mm3 opening pinch points and sharing vertices may take from a part's prisms
                                        # (or add) and still pass: in all, or else in every piece, none gone
+VERIFY_GONE_AREA_MM2 = 1e-4           # mm2: a piece this small may be gone, prisms with no slice left on them (a speck
+                                       # of finish a pinch point's cut takes whole); a bigger piece gone fails the part
 VERIFY_MERGE_EXTRA_DIGITS = 2          # the closed-mesh check merges vertices this many decimal digits finer than
                                        # the snapping grid (1e-6 mm)

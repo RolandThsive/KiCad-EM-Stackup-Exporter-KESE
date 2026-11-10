@@ -25,6 +25,7 @@ class PieceCheck(NamedTuple):
     """A part's prisms and slices compared piece by piece (pieces_compared)."""
     pieces: int             # the pieces compared
     gone: int               # pieces of prisms with no slice left on them, or of slices with no prism under them
+                            # (specks of Verifier.VERIFY_GONE_AREA_MM2 or less, which a pinch cut may take, left out)
     worst: float            # mm3 the prisms hold more than the slices, in the piece furthest past what it may
     volume: float           # mm3: that piece's slices
     at: tuple               # (x, y, z0, z1) mm: the middle of that piece's box, and its slice's heights
@@ -33,7 +34,7 @@ class PieceCheck(NamedTuple):
 class VolumeCheck(NamedTuple):
     faces: float            # mm3: between the part's faces (Boundary.volume)
     slices: float           # mm3: of its slices
-    prisms: float           # mm3: of its prisms, before the pinch points were opened
+    prisms: float           # mm3: of its prisms, before the pinch points were opened (where they overlap, once)
     pieces: PieceCheck | None = None    # where prisms and slices differ by more than allowed in all
 
 
@@ -74,6 +75,10 @@ def volume_check(boundary, prisms):
     faces, slices = boundary.volume(), boundary.volume_of_slices()
     built = sum(p.region.area * (p.z1 - p.z0) for p in prisms)
     far = abs(built - slices) > opened_allowed(slices)
+    if far:             # prisms of a part may overlap: stacked vias both plate the foil they share
+        built = sum(shapely.union_all([prisms[i].region for i in spanning_prisms(prisms, z0, z1)]).area * (z1 - z0)
+                    for z0, z1, _ in boundary.slices)
+        far = abs(built - slices) > opened_allowed(slices)
     return VolumeCheck(faces, slices, built, pieces_compared(boundary.slices, prisms) if far else None)
 
 
@@ -85,7 +90,7 @@ def pieces_compared(slices, prisms):
     the slice's own pieces, joined where they touch (a hole's finish, say, as built and as sliced)."""
     count, gone, worst = 0, 0, (-np.inf, 0.0, 0.0, (0.0, 0.0, 0.0, 0.0))
     for z0, z1, region in slices:
-        given = [g for i in spanning_prisms(prisms, z0, z1) for g in shapely.get_parts(sh.polys_only(prisms[i].region))]
+        given = list(shapely.get_parts(sh.polys_only(shapely.union_all([prisms[i].region for i in spanning_prisms(prisms, z0, z1)]))))
         both = np.array(given + list(shapely.get_parts(sh.polys_only(region))), dtype=object)
         if not len(both):
             continue
@@ -95,7 +100,9 @@ def pieces_compared(slices, prisms):
         lacks = np.bincount(group, weights=np.where(sliced, -area, area), minlength=n) * (z1 - z0)
         held = np.bincount(group, weights=np.where(sliced, area, 0.0), minlength=n) * (z1 - z0)
         count += n
-        gone += n - len(np.intersect1d(group[sliced], group[~sliced]))
+        alone = np.ones(n, dtype=bool)
+        alone[np.intersect1d(group[sliced], group[~sliced])] = False
+        gone += int(np.sum(alone & (np.bincount(group, weights=area, minlength=n) > P.Verifier.VERIFY_GONE_AREA_MM2)))
         past = np.abs(lacks) - opened_allowed(held)
         k = int(np.argmax(past))
         if past[k] > worst[0]:

@@ -152,19 +152,20 @@ def inter(a, b):
 
 
 def _overlay(op, a, b):
-    """op(a, b) on the grid.  Where GEOS refuses (an input whose part crosses itself, as snap rounding
-    once left one on a KiCad 8 board), it is made valid and the op tried again; where it still refuses
-    (a slice joined in floating point whose sliver holes, thinner than a grid step, snap rounding
-    cannot place: the skin of a KiCad 4 board), both are put on the grid first (snap) and tried again."""
+    """op(a, b) on the grid; where GEOS refuses, again with the inputs made valid (a part crossing itself,
+    KiCad 8), then on the grid (sliver holes snap rounding cannot place, a KiCad 4 skin), then without
+    parts smaller than a grid cell, which the grid drops anyway (a 2e-24 mm² speck: "Ring edge missing")."""
     a, b = polys_only(a), polys_only(b)
     try:
         return polys_only(op(a, b, grid_size=grid()))
     except shapely.errors.GEOSException:          # copies made valid: b may be shared by threads (shape_copies.py)
         a, b = (polys_only(shapely.make_valid(own(g))) for g in (a, b))
-    try:
-        return polys_only(op(a, b, grid_size=grid()))
-    except shapely.errors.GEOSException:
-        return polys_only(op(snap(a), snap(b), grid_size=grid()))
+    for again in (snap, lambda g: as_region([p for p in shapely.get_parts(g) if p.area >= grid() ** 2])):
+        try:
+            return polys_only(op(a, b, grid_size=grid()))
+        except shapely.errors.GEOSException:
+            a, b = again(a), again(b)
+    return polys_only(op(a, b, grid_size=grid()))
 
 
 def exactly(g):

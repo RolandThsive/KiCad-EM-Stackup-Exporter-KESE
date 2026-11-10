@@ -41,8 +41,10 @@ that looks up is one part's material below minus every part's material above, an
 looks down one part's material above minus every part's material below; a wall of a part is kept
 where no other part's material stands against it. Where two parts meet, their touching faces are
 never made, so what is left is the surface between material and air, every face still in the
-part it came from. The faces are cut into triangles with their vertices shared across all parts
-(`skin_mesh.py`), a big face strip by strip as in simulation mode, and three kinds of triangles are
+part it came from. A wall is split at every vertex of the faces at its two heights that lies on it,
+and a face takes the vertices that lie on its edges in the same way (`skin_vertices.py`), so a face
+and the wall beside it meet along the same edges. The faces are cut into triangles with their
+vertices shared across all parts (`skin_mesh.py`), a big face strip by strip as in simulation mode, and three kinds of triangles are
 then dropped:
 
 - a triangle that looks at material across less than $`\varepsilon`$, two pieces that meet but

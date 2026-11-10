@@ -1,6 +1,7 @@
 """Triangles of zero area, which earcut makes where a ring has a point on a straight run, flipped
-away (kese/core/triangulate.py); the signed area every triangle check uses; and triangles that GEOS
-gives by their corners found among a polygon's points."""
+away (kese/core/triangulate.py), and those GEOS makes split away (flats_split_away);
+the signed area every triangle check uses; and triangles that GEOS gives by their corners found
+among a polygon's points."""
 import numpy as np
 
 
@@ -61,3 +62,53 @@ def lookup(xy, pts, missing=False):
     if missing:
         return np.where(found, at, -1)
     return at if found.all() else None
+
+
+def flat_any(xy, tri):
+    """Whether any triangle has no area (three points on one line), or runs clockwise."""
+    twice = twice_area(xy, tri)
+    return bool(len(tri) and (twice <= 1e-12 * (np.diff(xy[tri], axis=1) ** 2).sum(axis=(1, 2))).any())
+
+
+
+def flats_split_away(xy, nxt, tri):
+    """The triangles (counter-clockwise, into the rings' points xy; nxt: each point's next on its
+    ring) without those of no area, the triangles beside them split at the points the flat ones
+    had on their edges, so every edge inside is met once each way again; `tri` itself if that
+    does not close (GEOS has given flat triangles on points of different rings that happen to lie
+    on one line, stacked two deep, which no edge flip undoes)."""
+    twice = twice_area(xy, tri)
+    flat = twice <= 1e-12 * (np.diff(xy[tri], axis=1) ** 2).sum(axis=(1, 2))
+    pts = np.unique(tri[flat])
+    ring = set(zip(range(len(nxt)), nxt.tolist()))
+    todo = [tuple(t) for t in tri[~flat].tolist()]
+    have = {(t[i], t[(i + 1) % 3]) for t in todo for i in range(3)}
+    out = []
+    while todo:
+        t = todo.pop()
+        for i in range(3):
+            u, v, w = t[i], t[(i + 1) % 3], t[(i + 2) % 3]
+            if (v, u) in have or (u, v) in ring:
+                continue
+            on = [p for p in pts.tolist() if p not in t and on_segment(xy[u], xy[v], xy[p])]
+            if on:
+                on.sort(key=lambda p: np.dot(xy[p] - xy[u], xy[v] - xy[u]))
+                chain = [u, *on, v]
+                fan = [(a, b, w) for a, b in zip(chain[:-1], chain[1:])]
+                have |= {(a, b) for a, b, _ in fan} | {(b, w) for _, b, _ in fan} | {(w, a) for a, _, _ in fan}
+                todo += fan
+                break
+        else:
+            out.append(t)
+    done = np.array(out, dtype=np.int64).reshape(-1, 3)
+    e = {(t[i], t[(i + 1) % 3]) for t in out for i in range(3)}
+    closes = all((v, u) in e or (u, v) in ring for u, v in e) and ring <= e
+    return done if closes and not flat_any(xy, done) else tri
+
+
+def on_segment(a, b, p):
+    """Whether p lies on the segment a b, strictly between its ends (three points on one line)."""
+    d = b - a
+    cross = d[0] * (p[1] - a[1]) - d[1] * (p[0] - a[0])
+    t = np.dot(p - a, d)
+    return abs(cross) <= 1e-12 * np.dot(d, d) and 0 < t < np.dot(d, d)
