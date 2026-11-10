@@ -4306,14 +4306,14 @@ Part 20 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pr
 
 ## 23.20.101 A3P250_Dev_Board
 
-![A3P250_Dev_Board: stages 4 and 6 take 54% to 84% of a run. Simulation, GLB takes 18 s. Simulation, STEP takes 22 s. Simulation, STL takes 18 s. Simulation, OBJ takes 26 s. Visual, GLB takes 25 s. Visual, OBJ takes 30 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-20/oresat-gps-hardware_A3P250-Dev-Board.webp)
+![A3P250_Dev_Board: stages 4 and 6 take 53% to 84% of a run. Simulation, GLB takes 19 s. Simulation, STEP takes 23 s. Simulation, STL takes 19 s. Simulation, OBJ takes 29 s. Visual, GLB takes 25 s. Visual, OBJ takes 30 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-20/oresat-gps-hardware_A3P250-Dev-Board.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-| Simulation, GLB | 0.3 | 2.2 | 6.9 | 0.6&nbsp;ms | 7.0 | 0.3 | 1.0 | 0.2 | 17.9 |
-| Simulation, STEP | 0.3 | 1.9 | 7.2 | 0.7&nbsp;ms | 6.8 | 4.0 | 1.1 | 0.2 | 21.6 |
-| Simulation, STL | 0.2 | 1.9 | 7.5 | 0.5&nbsp;ms | 6.6 | 0.7 | 1.0 | 0.3 | 18.2 |
-| Simulation, OBJ | 0.2 | 2.0 | 7.4 | 0.3&nbsp;ms | 6.7 | 8.8 | 0.9 | 0.2 | 26.2 |
+| Simulation, GLB | 0.3 | 2.2 | 8.2 | 0.6&nbsp;ms | 7.0 | 0.3 | 1.0 | 0.3 | 19.4 |
+| Simulation, STEP | 0.3 | 2.1 | 8.2 | 0.4&nbsp;ms | 6.8 | 4.5 | 1.2 | 0.2 | 23.3 |
+| Simulation, STL | 0.4 | 2.2 | 8.1 | 0.6&nbsp;ms | 6.8 | 0.7 | 1.0 | 0.3 | 19.4 |
+| Simulation, OBJ | 0.3 | 2.3 | 8.3 | 0.4&nbsp;ms | 6.9 | 9.6 | 1.0 | 0.2 | 28.6 |
 | Visual, GLB | 0.3 | 2.0 | 7.3 | 0.4&nbsp;ms | 13.9 | 0.1 | 1.4 | 0.3 | 25.2 |
 | Visual, OBJ | 0.3 | 2.0 | 7.2 | 0.6&nbsp;ms | 13.9 | 4.3 | 1.6 | 0.3 | 29.8 |
 
@@ -4324,22 +4324,23 @@ Part 20 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pr
 | Folder | MicroSemi_FPGA_Dev_Board / kicad_board_design / A3P250_Dev_Board |
 | Complexity | 282&nbsp;/&nbsp;1000 (size&nbsp;237, features&nbsp;45) |
 | KESE&nbsp;features | through vias, rounded,<br>trapezoid or chamfered pads,<br>filled zones |
-| Tested | 9th November 2026 |
+| Tested | 9th November 2026 to 10th November 2026 |
 | Copper&nbsp;layers | 4 |
 | File&nbsp;format | KiCad 5 (20171130) |
 | Parts,&nbsp;tracks,&nbsp;vias | 53, 1,191, 123 |
-| Triangles,&nbsp;simulation | 1,863,558 in 107 parts |
-| Verifier | Simulation, GLB: Verifier FAIL<br>Simulation, STEP: Verifier FAIL<br>Simulation, STL: Verifier FAIL<br>Simulation, OBJ: Verifier FAIL |
+| Triangles,&nbsp;simulation | 1,856,362 in 107 parts |
+| Verifier | PASS in all six runs |
+| Run&nbsp;again | Simulation, GLB; Simulation, STEP; Simulation, STL; Simulation, OBJ: failed in the corpus run, run again with fixes to KESE made after the corpus run, and passed |
 
 </td><td valign="top">
 
 <table>
 <tr><th>File<br>type</th><th>File<br>size</th><th>Peak memory<br>used</th></tr>
 <tr><th colspan="3" align="left">Simulation</th></tr>
-<tr><td>GLB</td><td align="right">65&nbsp;MB</td><td align="right">543&nbsp;MB</td></tr>
-<tr><td>STEP</td><td align="right">334&nbsp;MB</td><td align="right">718&nbsp;MB</td></tr>
-<tr><td>STL</td><td align="right">93&nbsp;MB</td><td align="right">570&nbsp;MB</td></tr>
-<tr><td>OBJ</td><td align="right">198&nbsp;MB</td><td align="right">1.3&nbsp;GB</td></tr>
+<tr><td>GLB</td><td align="right">65&nbsp;MB</td><td align="right">577&nbsp;MB</td></tr>
+<tr><td>STEP</td><td align="right">301&nbsp;MB</td><td align="right">698&nbsp;MB</td></tr>
+<tr><td>STL</td><td align="right">93&nbsp;MB</td><td align="right">602&nbsp;MB</td></tr>
+<tr><td>OBJ</td><td align="right">197&nbsp;MB</td><td align="right">1.3&nbsp;GB</td></tr>
 <tr><th colspan="3" align="left">Visual</th></tr>
 <tr><td>GLB</td><td align="right">34&nbsp;MB</td><td align="right">685&nbsp;MB</td></tr>
 <tr><td>OBJ</td><td align="right">103&nbsp;MB</td><td align="right">758&nbsp;MB</td></tr>

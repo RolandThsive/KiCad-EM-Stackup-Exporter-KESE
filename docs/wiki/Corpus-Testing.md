@@ -19,7 +19,7 @@ python run_KESE.py B --mode visual --format F --verify \
 
 **A run that failed was run again on 10 November 2026, with the same settings: one that KESE had got wrong, with the fixes to KESE made for it, and one stopped at the 11 GB cap, with the cap raised to 14.5 GB. A run that passed then shows the new run, and its board says so in a Run again row; a run that failed again keeps its first result.**
 
-3,087 of the 3,146 boards passed the Verifier in all six runs.
+3,092 of the 3,146 boards passed the Verifier in all six runs.
 
 ## Grading A Board's Complexity
 
@@ -98,12 +98,12 @@ In this corpus the grades run from 17 to 651, half the boards below 275: the top
 
 | Page | Projects | Boards | Boards run | Passed all six runs |
 |---|---|---:|---:|---:|
-| [Corpus Testing 1: 01GOD To alphaonex86](CorpusTesting/Corpus-Testing-01.md) | 14 | 104 | 104 | 101 |
+| [Corpus Testing 1: 01GOD To alphaonex86](CorpusTesting/Corpus-Testing-01.md) | 14 | 104 | 104 | 102 |
 | [Corpus Testing 2: alvaroalea To andrewpaterson](CorpusTesting/Corpus-Testing-02.md) | 6 | 201 | 201 | 200 |
 | [Corpus Testing 3: antevens To antmicro](CorpusTesting/Corpus-Testing-03.md) | 81 | 100 | 100 | 95 |
 | [Corpus Testing 4: antmicro To baldengineer](CorpusTesting/Corpus-Testing-04.md) | 35 | 121 | 121 | 117 |
 | [Corpus Testing 5: Bambelweeny57 To Board-Folk](CorpusTesting/Corpus-Testing-05.md) | 22 | 103 | 103 | 102 |
-| [Corpus Testing 6: Board-Folk To cheyao](CorpusTesting/Corpus-Testing-06.md) | 26 | 104 | 104 | 101 |
+| [Corpus Testing 6: Board-Folk To cheyao](CorpusTesting/Corpus-Testing-06.md) | 26 | 104 | 104 | 102 |
 | [Corpus Testing 7: chipfoundry To DangerousPrototypes](CorpusTesting/Corpus-Testing-07.md) | 19 | 104 | 104 | 101 |
 | [Corpus Testing 8: DangerousPrototypes To epsilon0-dev](CorpusTesting/Corpus-Testing-08.md) | 43 | 101 | 101 | 99 |
 | [Corpus Testing 9: esden To ghent360](CorpusTesting/Corpus-Testing-09.md) | 24 | 103 | 103 | 101 |
@@ -113,17 +113,17 @@ In this corpus the grades run from 17 to 651, half the boards below 275: the top
 | [Corpus Testing 13: istedman To KiCad](CorpusTesting/Corpus-Testing-13.md) | 36 | 105 | 105 | 102 |
 | [Corpus Testing 14: kitspace-forks To loxodes](CorpusTesting/Corpus-Testing-14.md) | 20 | 124 | 124 | 124 |
 | [Corpus Testing 15: ltbrain To mwelling](CorpusTesting/Corpus-Testing-15.md) | 42 | 100 | 100 | 100 |
-| [Corpus Testing 16: mwelling To nuclearfutureslab](CorpusTesting/Corpus-Testing-16.md) | 34 | 101 | 101 | 98 |
+| [Corpus Testing 16: mwelling To nuclearfutureslab](CorpusTesting/Corpus-Testing-16.md) | 34 | 101 | 101 | 99 |
 | [Corpus Testing 17: NUSGreyhats To OLIMEX](CorpusTesting/Corpus-Testing-17.md) | 34 | 103 | 103 | 103 |
 | [Corpus Testing 18: OLIMEX To OLIMEX](CorpusTesting/Corpus-Testing-18.md) | 53 | 100 | 100 | 100 |
 | [Corpus Testing 19: OLIMEX To open-ephys](CorpusTesting/Corpus-Testing-19.md) | 32 | 100 | 100 | 100 |
-| [Corpus Testing 20: open-ephys To oresat](CorpusTesting/Corpus-Testing-20.md) | 22 | 104 | 104 | 103 |
+| [Corpus Testing 20: open-ephys To oresat](CorpusTesting/Corpus-Testing-20.md) | 22 | 104 | 104 | 104 |
 | [Corpus Testing 21: oresat To pms67](CorpusTesting/Corpus-Testing-21.md) | 33 | 100 | 100 | 100 |
 | [Corpus Testing 22: polpo To rh1tech](CorpusTesting/Corpus-Testing-22.md) | 31 | 108 | 108 | 108 |
 | [Corpus Testing 23: rhaamo To rusefi](CorpusTesting/Corpus-Testing-23.md) | 12 | 114 | 114 | 109 |
 | [Corpus Testing 24: rusefi To sparkfun](CorpusTesting/Corpus-Testing-24.md) | 30 | 111 | 111 | 110 |
 | [Corpus Testing 25: sparkfun To sufst](CorpusTesting/Corpus-Testing-25.md) | 21 | 115 | 115 | 114 |
-| [Corpus Testing 26: SukkoPera To tjeerdie](CorpusTesting/Corpus-Testing-26.md) | 29 | 102 | 102 | 100 |
+| [Corpus Testing 26: SukkoPera To tjeerdie](CorpusTesting/Corpus-Testing-26.md) | 29 | 102 | 102 | 101 |
 | [Corpus Testing 27: tjhorner To tzarc](CorpusTesting/Corpus-Testing-27.md) | 13 | 105 | 105 | 105 |
 | [Corpus Testing 28: ucdfs To Wren6991](CorpusTesting/Corpus-Testing-28.md) | 29 | 181 | 181 | 173 |
 | [Corpus Testing 29: xesscorp To ZeroPhone](CorpusTesting/Corpus-Testing-29.md) | 9 | 16 | 16 | 16 |

@@ -2495,14 +2495,14 @@ Part 6 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 
 ## 23.6.59 C64-250469-KiCad
 
-![C64-250469-KiCad: stages 4 and 6 take 64% to 88% of a run. Simulation, GLB takes 2 min. Simulation, STEP takes 3 min. Simulation, STL takes 2 min. Simulation, OBJ takes 3 min. Visual, GLB takes 3 min. Visual, OBJ takes 3 min](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-06/C64C-250469-KiCAD-Replica_C64-250469-KiCad.webp)
+![C64-250469-KiCad: stages 4 and 6 take 58% to 87% of a run. Simulation, GLB takes 2 min. Simulation, STEP takes 2 min. Simulation, STL takes 2 min. Simulation, OBJ takes 3 min. Visual, GLB takes 3 min. Visual, OBJ takes 3 min](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Corpus-Testing/Corpus-Testing-06/C64C-250469-KiCAD-Replica_C64-250469-KiCad.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-| Simulation, GLB | 3.1 | 6.4 | 42.8 | 0.8&nbsp;ms | 78.3 | 1.4 | 5.4 | 0.4 | 137.8 |
-| Simulation, STEP | 3.1 | 6.2 | 40.1 | 0.9&nbsp;ms | 76.9 | 22.2 | 5.1 | 0.4 | 154.0 |
-| Simulation, STL | 3.1 | 6.1 | 37.8 | 0.9&nbsp;ms | 74.8 | 2.8 | 5.1 | 0.4 | 130.2 |
-| Simulation, OBJ | 3.4 | 6.3 | 39.6 | 1.0&nbsp;ms | 77.0 | 49.7 | 4.9 | 0.4 | 181.2 |
+| Simulation, GLB | 3.3 | 6.4 | 41.2 | 1&nbsp;ms | 46.5 | 1.4 | 5.7 | 0.5 | 104.9 |
+| Simulation, STEP | 3.3 | 6.3 | 41.1 | 1&nbsp;ms | 46.1 | 22.9 | 5.2 | 0.5 | 125.3 |
+| Simulation, STL | 3.4 | 6.7 | 40.7 | 1&nbsp;ms | 45.4 | 3.9 | 6.1 | 0.5 | 106.8 |
+| Simulation, OBJ | 3.3 | 6.2 | 41.9 | 1&nbsp;ms | 46.1 | 48.2 | 6.0 | 0.4 | 152.2 |
 | Visual, GLB | 3.3 | 6.0 | 37.9 | 1&nbsp;ms | 95.1 | 0.9 | 9.2 | 0.3 | 152.7 |
 | Visual, OBJ | 3.4 | 6.5 | 39.9 | 0.9&nbsp;ms | 98.6 | 32.6 | 10.5 | 0.4 | 191.9 |
 
@@ -2512,12 +2512,13 @@ Part 6 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 |---|---|
 | Complexity | 322&nbsp;/&nbsp;1000 (size&nbsp;222, features&nbsp;100) |
 | KESE&nbsp;features | through vias, slotted holes,<br>rounded,<br>trapezoid or chamfered pads,<br>arc tracks, filled zones, stack-up,<br>dielectric εr and tanδ |
-| Tested | 9th November 2026 |
+| Tested | 9th November 2026 to 10th November 2026 |
 | Copper&nbsp;layers | 2 |
 | File&nbsp;format | KiCad 7 (20221018) |
 | Parts,&nbsp;tracks,&nbsp;vias | 138, 8,544, 642 |
-| Triangles,&nbsp;simulation | 8,242,430 in 213 parts |
-| Verifier | Simulation, GLB: Verifier FAIL<br>Simulation, STEP: Verifier FAIL<br>Simulation, STL: Verifier FAIL<br>Simulation, OBJ: Verifier FAIL |
+| Triangles,&nbsp;simulation | 8,242,170 in 213 parts |
+| Verifier | PASS in all six runs |
+| Run&nbsp;again | Simulation, GLB; Simulation, STEP; Simulation, STL; Simulation, OBJ: failed in the corpus run, run again with fixes to KESE made after the corpus run, and passed |
 
 </td><td valign="top">
 
