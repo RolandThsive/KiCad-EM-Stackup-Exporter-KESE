@@ -159,6 +159,7 @@ Short name `SolderMask`. Details in [Solder Masks](Solder-Masks.md).
 | `MASK_MIN_WIDTH_MM` | `None` | None or mm ≥ 0 | Narrowest web of mask kept between two openings; `None` follows Board Setup (`solder_mask_min_width`), 0 keeps every web |
 | `MASK_WEB_HAIRLINE_MM` | `1e-3` | mm ≥ 0 | A web the minimum width adds that is narrower than twice this is dropped |
 | `MASK_OVER_COPPER_HAIRLINE_MM` | `1e-3` | mm ≥ 0 | A piece of mask on top of copper narrower than twice this is left out, and the finish covers it instead: the slivers left where an opening's outline follows the copper's with other points ([Solder Masks](Solder-Masks.md#162-conformal-mask)); 0 keeps them |
+| `MASK_OPENING_HAIRLINE_MM` | `1e-3` | mm ≥ 0 | A mask opening narrower than twice this everywhere is left out, the mask kept over it: the opening of a pad a micrometre across, which no fab makes ([Solder Masks](Solder-Masks.md#162-conformal-mask)); 0 keeps every one |
 | `MASK_WALL_QUAD_SEGS` | `4` | int ≥ 1 | Segments per quarter circle on the walls where the mask climbs a trace |
 
 ## 17.5 Silkscreen (`parameters/silkscreen.py`)

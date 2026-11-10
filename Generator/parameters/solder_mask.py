@@ -36,5 +36,10 @@ MASK_WEB_HAIRLINE_MM = 1e-3             # a web the minimum width adds that is n
 # covers them instead.
 MASK_OVER_COPPER_HAIRLINE_MM = 1e-3
 
+# A mask opening narrower than twice this everywhere is left out, the mask kept over it: an opening of a
+# pad a micrometre across (some boards place hundreds, as markers) is no opening a fab makes, and the
+# mask's edges around such a speck at a pad's corner come out a few tenths of a micrometre into the copper.
+MASK_OPENING_HAIRLINE_MM = 1e-3
+
 # Curve quality of the little walls where the mask climbs over a trace (segments per quarter circle)
 MASK_WALL_QUAD_SEGS = 4

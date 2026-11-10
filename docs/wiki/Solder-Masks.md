@@ -71,6 +71,12 @@ ones (narrower than 2 µm, twice `SolderMask.MASK_WEB_HAIRLINE_MM`) are left out
 keep their exact outlines. `report.txt` counts them as
 `mask webs under the min width (w mm) removed on F.Mask`.
 
+An opening narrower than 2 µm everywhere (twice `SolderMask.MASK_OPENING_HAIRLINE_MM`) is left out
+too, the mask kept over it: the opening of a pad a micrometre across, which some boards place by the
+hundred as markers, is no opening a fab makes, and the mask's edges around one at a pad's corner came
+out a few tenths of a micrometre into the copper. `report.txt` counts them as
+`mask openings narrower than 0.002 mm left out on F.Mask`.
+
 The openings are worked on in groups: two openings within $`w`$ of each other are in one group,
 and so is every opening linked to them by a chain of such neighbours (two openings grown by less
 than $`w/2`$ meet only when they are less than $`w`$ apart, so no web closes between two groups),
@@ -184,6 +190,7 @@ the copper a counterbore or countersink knocks out is a hole like any other.
 | `MASK_WEB_HAIRLINE_MM` | `1e-3` | mm ≥ 0 | A web the minimum width adds that is narrower than twice this is dropped (16.2b) |
 | `MASK_WALL_QUAD_SEGS` | `4` | int ≥ 1 | Curve quality of the walls beside traces |
 | `MASK_OVER_COPPER_HAIRLINE_MM` | `1e-3` | mm ≥ 0 | A piece of mask on top of copper narrower than twice this is left out, and the finish covers it instead (16.2); 0 keeps every one |
+| `MASK_OPENING_HAIRLINE_MM` | `1e-3` | mm ≥ 0 | A mask opening narrower than twice this everywhere is left out, the mask kept over it (16.2); 0 keeps every one |
 
 | Previous | Next |
 |:---|---:|
