@@ -117,11 +117,7 @@ idx += ["\n## What Did Not Pass\n",
         "finds the two nets' solids overlapping: " + ", ".join(where[r] for r in sorted(not_ok) if r in BAD_DESIGN) + ".",
         f"- **Stopped for memory ({len(memory)} boards):** a run passed the 11 GB cap of the test machines, and again "
         "the 14.3 GB the 16 GB machines allow when run again; they will be run again on a machine with more memory: "
-        + ", ".join(where[r] for r in sorted(memory)) + ".",
-        f"- **Left out:** {len(CUT_SHORT)} more files of the collection, snapshots in Wren6991 Snowflake-FPGA's `timelapse` "
-        "folder, are cut off before their end (each at an exact multiple of 4 KB: copied while KiCad was saving it). KESE "
-        "stops on each, as it should (\"the file ends with N parentheses still open: it is cut short\"), and they are not "
-        "part of this corpus.\n"]
+        + ", ".join(where[r] for r in sorted(memory)) + "."]
 idx.append("\n| Previous | Next |\n|:---|---:|\n| [Feature Test Collection](Feature-Test-Collection.md) | [Glossary](Glossary.md) |")
 # the pages of KESE's wiki live on the main branch, not beside this one: linked there
 WIKI_URL = "https://github.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/wiki/"
