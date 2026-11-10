@@ -3550,7 +3550,7 @@ Part 26 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pr
 | Parts,&nbsp;tracks,&nbsp;vias | 108, 2,040, 262 |
 | Triangles,&nbsp;simulation | 2,664,998 in 141 parts |
 | Verifier | PASS in all six runs |
-| Run&nbsp;again | Simulation, GLB; Simulation, STEP; Simulation, STL; Simulation, OBJ: failed in the corpus run, run again with the [corpus fixes](Corpus-Testing-Fixes.md), and passed |
+| Run&nbsp;again | Simulation, GLB; Simulation, STEP; Simulation, STL; Simulation, OBJ: failed in the corpus run, run again with fixes to KESE made after the corpus run, and passed |
 
 </td><td valign="top">
 

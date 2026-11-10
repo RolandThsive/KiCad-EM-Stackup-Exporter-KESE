@@ -2268,7 +2268,7 @@ Part 5 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 | Parts,&nbsp;tracks,&nbsp;vias | 18, 254, 40 |
 | Triangles,&nbsp;simulation | 305,866 in 34 parts |
 | Verifier | PASS in all six runs |
-| Run&nbsp;again | Visual, GLB; Visual, OBJ: failed in the corpus run, run again with the [corpus fixes](Corpus-Testing-Fixes.md), and passed |
+| Run&nbsp;again | Visual, GLB; Visual, OBJ: failed in the corpus run, run again with fixes to KESE made after the corpus run, and passed |
 
 </td><td valign="top">
 
@@ -2312,7 +2312,7 @@ Part 5 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pro
 | Parts,&nbsp;tracks,&nbsp;vias | 16, 242, 31 |
 | Triangles,&nbsp;simulation | 270,052 in 34 parts |
 | Verifier | PASS in all six runs |
-| Run&nbsp;again | Visual, GLB; Visual, OBJ: failed in the corpus run, run again with the [corpus fixes](Corpus-Testing-Fixes.md), and passed |
+| Run&nbsp;again | Visual, GLB; Visual, OBJ: failed in the corpus run, run again with fixes to KESE made after the corpus run, and passed |
 
 </td><td valign="top">
 

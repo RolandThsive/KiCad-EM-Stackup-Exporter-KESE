@@ -4625,7 +4625,7 @@ Part 14 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pr
 | Parts,&nbsp;tracks,&nbsp;vias | 303, 2,447, 408 |
 | Triangles,&nbsp;simulation | 4,214,150 in 243 parts |
 | Verifier | PASS in all six runs |
-| Run&nbsp;again | Simulation, GLB; Simulation, STEP; Simulation, STL; Simulation, OBJ; Visual, GLB; Visual, OBJ: failed in the corpus run, run again with the [corpus fixes](Corpus-Testing-Fixes.md), and passed |
+| Run&nbsp;again | Simulation, GLB; Simulation, STEP; Simulation, STL; Simulation, OBJ; Visual, GLB; Visual, OBJ: failed in the corpus run, run again with fixes to KESE made after the corpus run, and passed |
 
 </td><td valign="top">
 
@@ -4669,7 +4669,7 @@ Part 14 of 29 of [Corpus Testing](../Corpus-Testing.md): every board of these pr
 | Parts,&nbsp;tracks,&nbsp;vias | 130, 1,060, 171 |
 | Triangles,&nbsp;simulation | 2,515,716 in 103 parts |
 | Verifier | PASS in all six runs |
-| Run&nbsp;again | Simulation, GLB; Simulation, STEP; Simulation, STL; Simulation, OBJ; Visual, GLB; Visual, OBJ: failed in the corpus run, run again with the [corpus fixes](Corpus-Testing-Fixes.md), and passed |
+| Run&nbsp;again | Simulation, GLB; Simulation, STEP; Simulation, STL; Simulation, OBJ; Visual, GLB; Visual, OBJ: failed in the corpus run, run again with fixes to KESE made after the corpus run, and passed |
 
 </td><td valign="top">
 
