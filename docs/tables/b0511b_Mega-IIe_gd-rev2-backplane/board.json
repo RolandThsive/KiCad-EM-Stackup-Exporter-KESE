@@ -1,0 +1,47 @@
+{
+ "name": "gd rev2 backplane",
+ "project": "baldengineer/Mega-IIe",
+ "path": "baldengineer__Mega-IIe/kicad files/not_used/gd rev2 backplane/gd rev2 backplane.kicad_pcb",
+ "license": "MIT (MIT License)",
+ "license_checked": "2026-11-08",
+ "rank": 2557,
+ "score": 170,
+ "level": "SIMPLE",
+ "complexity": {
+  "grade": 141,
+  "size": 131,
+  "features": 10
+ },
+ "features": [
+  "curved_outline"
+ ],
+ "layers": 2,
+ "status": "pass",
+ "bad_design": null,
+ "chart_alt": "gd rev2 backplane: stages 4 and 6 take 55% to 85% of a run. Simulation, GLB takes 17 s. Simulation, STEP takes 21 s. Simulation, STL takes 17 s. Simulation, OBJ takes 25 s. Visual, GLB takes 19 s. Visual, OBJ takes 22 s",
+ "rerun": {},
+ "tested": [
+  "2026-11-09",
+  "2026-11-09"
+ ],
+ "kese": [
+  "22fd70c"
+ ],
+ "kese_version": [
+  "2.4.0"
+ ],
+ "runs": [
+  [
+   "corpus",
+   "2026-11-09",
+   11000000000.0,
+   5400.0
+  ]
+ ],
+ "machine": {
+  "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz, 4 cores, 15 GB",
+  "geos": "3.14.1",
+  "python": "3.13.18",
+  "shapely": "2.2.0"
+ }
+}

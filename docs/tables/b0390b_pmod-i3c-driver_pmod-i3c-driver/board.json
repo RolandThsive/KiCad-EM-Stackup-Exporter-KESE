@@ -1,0 +1,55 @@
+{
+ "name": "pmod-i3c-driver",
+ "project": "antmicro/pmod-i3c-driver",
+ "path": "antmicro__pmod-i3c-driver/pmod-i3c-driver.kicad_pcb",
+ "license": "Apache-2.0 (Apache License 2.0)",
+ "license_checked": "2026-11-08",
+ "rank": 1729,
+ "score": 983,
+ "level": "LOW",
+ "complexity": {
+  "grade": 304,
+  "size": 189,
+  "features": 115
+ },
+ "features": [
+  "through_vias",
+  "slotted_holes",
+  "shaped_pads",
+  "filled_zones",
+  "copper_text",
+  "knockout_text",
+  "stackup",
+  "dielectric_properties",
+  "mask_silk_colours"
+ ],
+ "layers": 4,
+ "status": "pass",
+ "bad_design": null,
+ "chart_alt": "pmod-i3c-driver: stages 4 and 6 take 49% to 80% of a run. Simulation, GLB takes 11 s. Simulation, STEP takes 14 s. Simulation, STL takes 11 s. Simulation, OBJ takes 15 s. Visual, GLB takes 17 s. Visual, OBJ takes 20 s",
+ "rerun": {},
+ "tested": [
+  "2026-11-09",
+  "2026-11-09"
+ ],
+ "kese": [
+  "22fd70c"
+ ],
+ "kese_version": [
+  "2.4.0"
+ ],
+ "runs": [
+  [
+   "corpus",
+   "2026-11-09",
+   11000000000.0,
+   5400.0
+  ]
+ ],
+ "machine": {
+  "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz, 4 cores, 15 GB",
+  "geos": "3.14.1",
+  "python": "3.13.18",
+  "shapely": "2.2.0"
+ }
+}

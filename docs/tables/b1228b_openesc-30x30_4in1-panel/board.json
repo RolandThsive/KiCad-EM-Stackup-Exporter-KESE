@@ -1,0 +1,59 @@
+{
+ "name": "4in1-panel",
+ "project": "incutec-hw/openesc-30x30",
+ "path": "incutec-hw__openesc-30x30/hardware/4in1-panel.kicad_pcb",
+ "license": "CERN-OHL-S-2.0 (CERN Open Hardware Licence v2, Strongly Reciprocal), in LICENSE",
+ "license_checked": "2026-11-08",
+ "rank": 176,
+ "score": 11243,
+ "level": "VERY HIGH",
+ "complexity": {
+  "grade": 464,
+  "size": 259,
+  "features": 205
+ },
+ "features": [
+  "through_vias",
+  "padstacks",
+  "custom_pads",
+  "shaped_pads",
+  "drill_offsets",
+  "filled_zones",
+  "copper_graphics",
+  "curved_outline",
+  "truetype_text",
+  "stackup",
+  "dielectric_properties",
+  "copper_finish",
+  "edge_plating"
+ ],
+ "layers": 6,
+ "status": "pass",
+ "bad_design": null,
+ "chart_alt": "4in1-panel: stages 4 and 6 take 47% to 81% of a run. Simulation, GLB takes 3 min. Simulation, STEP takes 4 min. Simulation, STL takes 3 min. Simulation, OBJ takes 5 min. Visual, GLB takes 6 min. Visual, OBJ takes 6 min",
+ "rerun": {},
+ "tested": [
+  "2026-11-09",
+  "2026-11-09"
+ ],
+ "kese": [
+  "22fd70c"
+ ],
+ "kese_version": [
+  "2.4.0"
+ ],
+ "runs": [
+  [
+   "corpus",
+   "2026-11-09",
+   11000000000.0,
+   5400.0
+  ]
+ ],
+ "machine": {
+  "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz, 4 cores, 15 GB",
+  "geos": "3.14.1",
+  "python": "3.13.18",
+  "shapely": "2.2.0"
+ }
+}

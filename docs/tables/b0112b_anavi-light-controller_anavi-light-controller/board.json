@@ -1,0 +1,51 @@
+{
+ "name": "anavi-light-controller",
+ "project": "AnaviTechnology/anavi-light-controller",
+ "path": "AnaviTechnology__anavi-light-controller/anavi-light-controller.kicad_pcb",
+ "license": "As README.md states it: \"The project is released under the Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0). Note: This is a human-readable summary of (and not a substitute for) the license. You are free to: Share — copy and redistribute the material in any medium or format Adapt — remix, transform, and build upon the material for any purpose, even commercially.\"",
+ "license_checked": "2026-11-08",
+ "rank": 2467,
+ "score": 244,
+ "level": "SIMPLE",
+ "complexity": {
+  "grade": 203,
+  "size": 138,
+  "features": 65
+ },
+ "features": [
+  "through_vias",
+  "slotted_holes",
+  "drill_offsets",
+  "filled_zones",
+  "curved_outline"
+ ],
+ "layers": 2,
+ "status": "pass",
+ "bad_design": null,
+ "chart_alt": "anavi-light-controller: stages 4 and 6 take 52% to 82% of a run. Simulation, GLB takes 3.6 s. Simulation, STEP takes 5.1 s. Simulation, STL takes 3.8 s. Simulation, OBJ takes 5.4 s. Visual, GLB takes 5.5 s. Visual, OBJ takes 6.9 s",
+ "rerun": {},
+ "tested": [
+  "2026-11-09",
+  "2026-11-09"
+ ],
+ "kese": [
+  "22fd70c"
+ ],
+ "kese_version": [
+  "2.4.0"
+ ],
+ "runs": [
+  [
+   "corpus",
+   "2026-11-09",
+   11000000000.0,
+   5400.0
+  ]
+ ],
+ "machine": {
+  "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz, 4 cores, 15 GB",
+  "geos": "3.14.1",
+  "python": "3.13.18",
+  "shapely": "2.2.0"
+ }
+}

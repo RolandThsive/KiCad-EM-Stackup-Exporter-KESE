@@ -1,0 +1,54 @@
+{
+ "name": "rpi-cm4-switch-board",
+ "project": "tlalexander/rpi-cm4-switch-board",
+ "path": "tlalexander__rpi-cm4-switch-board/hardware/rpi-cm4-switch-board/rpi-cm4-switch-board.kicad_pcb",
+ "license": "As README.md states it: \"Schematic and PCB layout files are licensed under the CC BY 4.0 license. Individual components and footprints found in the CM4IO library are licensed as per the Design Files license found here. THE DESIGN IS PROVIDED \"AS IS\" AND THE AUTHOR DISCLAIMS ALL WARRANTIES WITH REGARD TO THIS DESIGN INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS.\"",
+ "license_checked": "2026-11-08",
+ "rank": 1477,
+ "score": 1358,
+ "level": "MEDIUM",
+ "complexity": {
+  "grade": 326,
+  "size": 221,
+  "features": 105
+ },
+ "features": [
+  "through_vias",
+  "slotted_holes",
+  "shaped_pads",
+  "arc_tracks",
+  "filled_zones",
+  "stackup",
+  "dielectric_properties",
+  "mask_silk_colours"
+ ],
+ "layers": 2,
+ "status": "pass",
+ "bad_design": null,
+ "chart_alt": "rpi-cm4-switch-board: stages 4 and 6 take 60% to 82% of a run. Simulation, GLB takes 16 s. Simulation, STEP takes 21 s. Simulation, STL takes 17 s. Simulation, OBJ takes 22 s. Visual, GLB takes 23 s. Visual, OBJ takes 28 s",
+ "rerun": {},
+ "tested": [
+  "2026-11-09",
+  "2026-11-09"
+ ],
+ "kese": [
+  "22fd70c"
+ ],
+ "kese_version": [
+  "2.4.0"
+ ],
+ "runs": [
+  [
+   "corpus",
+   "2026-11-09",
+   11000000000.0,
+   5400.0
+  ]
+ ],
+ "machine": {
+  "cpu": "Intel(R) Xeon(R) Processor @ 2.30GHz, 4 cores, 15 GB",
+  "geos": "3.14.1",
+  "python": "3.13.18",
+  "shapely": "2.2.0"
+ }
+}

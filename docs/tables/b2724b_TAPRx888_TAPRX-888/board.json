@@ -1,0 +1,55 @@
+{
+ "name": "TAPRX-888",
+ "project": "TAPR/TAPRx888",
+ "path": "TAPR__TAPRx888/TAPRX-888.kicad_pcb",
+ "license": "MIT (MIT License)",
+ "license_checked": "2026-11-08",
+ "rank": 574,
+ "score": 4489,
+ "level": "HIGH",
+ "complexity": {
+  "grade": 440,
+  "size": 290,
+  "features": 150
+ },
+ "features": [
+  "through_vias",
+  "microvias",
+  "shaped_pads",
+  "filled_zones",
+  "knockout_text",
+  "stackup",
+  "dielectric_properties",
+  "copper_finish",
+  "mask_silk_colours"
+ ],
+ "layers": 6,
+ "status": "pass",
+ "bad_design": null,
+ "chart_alt": "TAPRX-888: stages 4 and 6 take 47% to 81% of a run. Simulation, GLB takes 40 s. Simulation, STEP takes 49 s. Simulation, STL takes 41 s. Simulation, OBJ takes 67 s. Visual, GLB takes 59 s. Visual, OBJ takes 73 s",
+ "rerun": {},
+ "tested": [
+  "2026-11-09",
+  "2026-11-09"
+ ],
+ "kese": [
+  "22fd70c"
+ ],
+ "kese_version": [
+  "2.4.0"
+ ],
+ "runs": [
+  [
+   "corpus",
+   "2026-11-09",
+   11000000000.0,
+   5400.0
+  ]
+ ],
+ "machine": {
+  "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz, 4 cores, 15 GB",
+  "geos": "3.14.1",
+  "python": "3.13.18",
+  "shapely": "2.2.0"
+ }
+}

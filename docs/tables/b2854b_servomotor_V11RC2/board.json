@@ -1,0 +1,55 @@
+{
+ "name": "V11RC2",
+ "project": "tomrodinger/servomotor",
+ "path": "tomrodinger__servomotor/PCB/Servomotor3/V11RC2/V11RC2.kicad_pcb",
+ "license": "MIT (MIT License)",
+ "license_checked": "2026-11-08",
+ "rank": 1394,
+ "score": 1508,
+ "level": "MEDIUM",
+ "complexity": {
+  "grade": 344,
+  "size": 219,
+  "features": 125
+ },
+ "features": [
+  "through_vias",
+  "custom_pads",
+  "shaped_pads",
+  "filled_zones",
+  "copper_graphics",
+  "curved_outline",
+  "stackup",
+  "dielectric_properties",
+  "copper_finish"
+ ],
+ "layers": 2,
+ "status": "pass",
+ "bad_design": null,
+ "chart_alt": "V11RC2: stages 4 and 6 take 51% to 80% of a run. Simulation, GLB takes 8.6 s. Simulation, STEP takes 11 s. Simulation, STL takes 9.2 s. Simulation, OBJ takes 13 s. Visual, GLB takes 13 s. Visual, OBJ takes 17 s",
+ "rerun": {},
+ "tested": [
+  "2026-11-09",
+  "2026-11-09"
+ ],
+ "kese": [
+  "22fd70c"
+ ],
+ "kese_version": [
+  "2.4.0"
+ ],
+ "runs": [
+  [
+   "corpus",
+   "2026-11-09",
+   11000000000.0,
+   5400.0
+  ]
+ ],
+ "machine": {
+  "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz, 4 cores, 15 GB",
+  "geos": "3.14.1",
+  "python": "3.13.18",
+  "shapely": "2.2.0"
+ }
+}

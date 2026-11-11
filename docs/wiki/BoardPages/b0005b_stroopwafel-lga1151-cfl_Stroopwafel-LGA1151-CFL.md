@@ -1,6 +1,6 @@
 # 5. Stroopwafel-LGA1151-CFL
 
-Board 5 of the 3,103 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 1](../CorpusTestingPages/Corpus-Testing-01.md#5-stroopwafel-lga1151-cfl).
+Board 5 of the 3,104 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 1](../CorpusTestingPages/Corpus-Testing-01.md#5-stroopwafel-lga1151-cfl).
 
 ![Stroopwafel-LGA1151-CFL: stages 4 and 6 take 61% to 86% of a run. Simulation, GLB takes 68 s. Simulation, STEP takes 81 s. Simulation, STL takes 68 s. Simulation, OBJ takes 97 s. Visual, GLB takes 87 s. Visual, OBJ takes 2 min](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b0005b_stroopwafel-lga1151-cfl_Stroopwafel-LGA1151-CFL/stages.webp)
 

@@ -1,0 +1,56 @@
+{
+ "name": "solar-module-1u-gaas",
+ "project": "oresat/oresat-solar-hardware",
+ "path": "oresat__oresat-solar-hardware/solar-module-1u-gaas-MCXN/solar-module-1u-gaas.kicad_pcb",
+ "license": "As README.md states it: \"Copyright the Portland State Aerospace Society, 2025. This source describes Open Hardware that is licensed under CERN-OHL-S v2, or any later version. You may redistribute and modify this source and make products using it under the terms of the CERN-OHL-S v2 (https://ohwr.org/cern ohl s v2.txt).\"",
+ "license_checked": "2026-11-08",
+ "rank": 459,
+ "score": 5399,
+ "level": "HIGH",
+ "complexity": {
+  "grade": 397,
+  "size": 262,
+  "features": 135
+ },
+ "features": [
+  "through_vias",
+  "custom_pads",
+  "shaped_pads",
+  "arc_tracks",
+  "filled_zones",
+  "copper_graphics",
+  "stackup",
+  "dielectric_properties",
+  "copper_finish",
+  "mask_silk_colours"
+ ],
+ "layers": 4,
+ "status": "pass",
+ "bad_design": null,
+ "chart_alt": "solar-module-1u-gaas: stages 4 and 6 take 56% to 87% of a run. Simulation, GLB takes 82 s. Simulation, STEP takes 94 s. Simulation, STL takes 83 s. Simulation, OBJ takes 2 min. Visual, GLB takes 91 s. Visual, OBJ takes 2 min",
+ "rerun": {},
+ "tested": [
+  "2026-11-09",
+  "2026-11-09"
+ ],
+ "kese": [
+  "22fd70c"
+ ],
+ "kese_version": [
+  "2.4.0"
+ ],
+ "runs": [
+  [
+   "corpus",
+   "2026-11-09",
+   11000000000.0,
+   5400.0
+  ]
+ ],
+ "machine": {
+  "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz, 4 cores, 15 GB",
+  "geos": "3.14.1",
+  "python": "3.13.18",
+  "shapely": "2.2.0"
+ }
+}
