@@ -1,6 +1,6 @@
 # 824. 7-REV1-freeze
 
-Board 824 of the 3,127 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 8](../CorpusTestingPages/Corpus-Testing-08.md#824-7-rev1-freeze).
+Board 824 of the 3,128 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 8](../CorpusTestingPages/Corpus-Testing-08.md#824-7-rev1-freeze).
 
 ![7-REV1-freeze: stages 4 and 6 take 53% to 81% of a run. Simulation, GLB takes 31 s. Simulation, STEP takes 39 s. Simulation, STL takes 31 s. Simulation, OBJ takes 44 s. Visual, GLB takes 49 s. Visual, OBJ takes 57 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b0824b_BusPirate5-hardware_7-REV1-freeze/stages.webp)
 

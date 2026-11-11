@@ -1,6 +1,6 @@
 # 2602. SparkFun_GNSS_Flex_Module_DAN-F10N_panelized
 
-Board 2,602 of the 3,127 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 25](../CorpusTestingPages/Corpus-Testing-25.md#2602-sparkfun_gnss_flex_module_dan-f10n_panelized).
+Board 2,602 of the 3,128 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 25](../CorpusTestingPages/Corpus-Testing-25.md#2602-sparkfun_gnss_flex_module_dan-f10n_panelized).
 
 ![Stages 4 and 6 take 52% to 81% of a run. Simulation, GLB takes 91 s. Simulation, STEP takes 2 min. Simulation, STL takes 93 s. Simulation, OBJ takes 2 min. Visual, GLB takes 2 min. Visual, OBJ takes 3 min](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2602b_sparkfun-gnss-flex-system_SparkFun-GNSS-Flex-Module-DAN-F10N-panelized/stages.webp)
 

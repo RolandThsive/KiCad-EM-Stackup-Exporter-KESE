@@ -1,6 +1,6 @@
 # 2417. rosco_m68k
 
-Board 2,417 of the 3,127 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 23](../CorpusTestingPages/Corpus-Testing-23.md#2417-rosco_m68k).
+Board 2,417 of the 3,128 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 23](../CorpusTestingPages/Corpus-Testing-23.md#2417-rosco_m68k).
 
 ![rosco_m68k: stages 4 and 6 take 47% to 83% of a run. Simulation, GLB takes 57 s. Simulation, STEP takes 71 s. Simulation, STL takes 59 s. Simulation, OBJ takes 93 s. Visual, GLB takes 86 s. Visual, OBJ takes 2 min](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2417b_rosco-m68k_design-r2030-kicad_rosco-m68k/stages.webp)
 

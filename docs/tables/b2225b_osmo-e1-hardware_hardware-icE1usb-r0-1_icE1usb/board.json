@@ -4,7 +4,7 @@
  "path": "osmocom__osmo-e1-hardware/hardware/icE1usb/r0.1/icE1usb.kicad_pcb",
  "license": "CERN-OHL-S-2.0 (CERN Open Hardware Licence v2, Strongly Reciprocal), in hardware/icE1usb/LICENSE",
  "license_checked": "2026-11-08",
- "rank": 1005,
+ "rank": 1006,
  "score": 2450,
  "level": "MEDIUM",
  "complexity": {

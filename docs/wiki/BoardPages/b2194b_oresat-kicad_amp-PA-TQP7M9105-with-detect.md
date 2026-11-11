@@ -1,6 +1,6 @@
 # 2194. amp-PA-TQP7M9105-with-detect
 
-Board 2,194 of the 3,127 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 21](../CorpusTestingPages/Corpus-Testing-21.md#2194-amp-pa-tqp7m9105-with-detect).
+Board 2,194 of the 3,128 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 21](../CorpusTestingPages/Corpus-Testing-21.md#2194-amp-pa-tqp7m9105-with-detect).
 
 ![amp-PA-TQP7M9105-with-detect: stages 4 and 6 take 55% to 84% of a run. Simulation, GLB takes 9.5 s. Simulation, STEP takes 11 s. Simulation, STL takes 9.6 s. Simulation, OBJ takes 13 s. Visual, GLB takes 13 s. Visual, OBJ takes 15 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2194b_oresat-kicad_amp-PA-TQP7M9105-with-detect/stages.webp)
 

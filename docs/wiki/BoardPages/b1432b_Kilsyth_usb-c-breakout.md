@@ -1,6 +1,6 @@
 # 1432. usb-c-breakout
 
-Board 1,432 of the 3,127 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 14](../CorpusTestingPages/Corpus-Testing-14.md#1432-usb-c-breakout).
+Board 1,432 of the 3,128 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 14](../CorpusTestingPages/Corpus-Testing-14.md#1432-usb-c-breakout).
 
 ![usb-c-breakout: stages 4 and 6 take 48% to 81% of a run. Simulation, GLB takes 6.9 s. Simulation, STEP takes 8.6 s. Simulation, STL takes 7.0 s. Simulation, OBJ takes 10 s. Visual, GLB takes 9.8 s. Visual, OBJ takes 12 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b1432b_Kilsyth_usb-c-breakout/stages.webp)
 

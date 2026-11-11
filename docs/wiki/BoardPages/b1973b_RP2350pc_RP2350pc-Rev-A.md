@@ -1,6 +1,6 @@
 # 1973. RP2350pc_Rev_A
 
-Board 1,973 of the 3,127 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 19](../CorpusTestingPages/Corpus-Testing-19.md#1973-rp2350pc_rev_a).
+Board 1,973 of the 3,128 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 19](../CorpusTestingPages/Corpus-Testing-19.md#1973-rp2350pc_rev_a).
 
 ![RP2350pc_Rev_A: stages 4 and 6 take 51% to 83% of a run. Simulation, GLB takes 45 s. Simulation, STEP takes 54 s. Simulation, STL takes 46 s. Simulation, OBJ takes 68 s. Visual, GLB takes 70 s. Visual, OBJ takes 86 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b1973b_RP2350pc_RP2350pc-Rev-A/stages.webp)
 

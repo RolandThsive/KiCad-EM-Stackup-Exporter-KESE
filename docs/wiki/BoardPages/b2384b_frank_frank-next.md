@@ -1,6 +1,6 @@
 # 2384. frank_next
 
-Board 2,384 of the 3,127 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 23](../CorpusTestingPages/Corpus-Testing-23.md#2384-frank_next).
+Board 2,384 of the 3,128 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 23](../CorpusTestingPages/Corpus-Testing-23.md#2384-frank_next).
 
 ![frank_next: stages 4 and 6 take 48% to 82% of a run. Simulation, GLB takes 36 s. Simulation, STEP takes 47 s. Simulation, STL takes 38 s. Simulation, OBJ takes 59 s. Visual, GLB takes 62 s. Visual, OBJ takes 77 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2384b_frank_frank-next/stages.webp)
 

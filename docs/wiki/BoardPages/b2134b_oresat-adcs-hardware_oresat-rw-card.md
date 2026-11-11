@@ -1,6 +1,6 @@
 # 2134. oresat-rw-card
 
-Board 2,134 of the 3,127 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 20](../CorpusTestingPages/Corpus-Testing-20.md#2134-oresat-rw-card).
+Board 2,134 of the 3,128 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 20](../CorpusTestingPages/Corpus-Testing-20.md#2134-oresat-rw-card).
 
 ![oresat-rw-card: stages 4 and 6 take 56% to 81% of a run. Simulation, GLB takes 47 s. Simulation, STEP takes 57 s. Simulation, STL takes 48 s. Simulation, OBJ takes 67 s. Visual, GLB takes 61 s. Visual, OBJ takes 74 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2134b_oresat-adcs-hardware_oresat-rw-card/stages.webp)
 

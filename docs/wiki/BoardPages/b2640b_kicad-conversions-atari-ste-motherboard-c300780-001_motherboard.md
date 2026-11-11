@@ -1,6 +1,6 @@
 # 2640. motherboard
 
-Board 2,640 of the 3,127 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 25](../CorpusTestingPages/Corpus-Testing-25.md#2640-motherboard).
+Board 2,640 of the 3,128 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 25](../CorpusTestingPages/Corpus-Testing-25.md#2640-motherboard).
 
 ![motherboard: stages 4 and 6 take 52% to 88% of a run. Simulation, GLB takes 7 min. Simulation, STEP takes 9 min. Simulation, STL takes 6 min. Simulation, OBJ takes 9 min. Visual, GLB takes 9 min. Visual, OBJ takes 10 min](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2640b_kicad-conversions-atari-ste-motherboard-c300780-001_motherboard/stages.webp)
 

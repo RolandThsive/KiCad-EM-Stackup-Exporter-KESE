@@ -1,6 +1,6 @@
 # 1637. ai-camera-rev3
 
-Board 1,637 of the 3,127 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 16](../CorpusTestingPages/Corpus-Testing-16.md#1637-ai-camera-rev3).
+Board 1,637 of the 3,128 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 16](../CorpusTestingPages/Corpus-Testing-16.md#1637-ai-camera-rev3).
 
 ![ai-camera-rev3: stages 4 and 6 take 47% to 84% of a run. Simulation, GLB takes 17 s. Simulation, STEP takes 22 s. Simulation, STL takes 17 s. Simulation, OBJ takes 29 s. Visual, GLB takes 27 s. Visual, OBJ takes 35 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b1637b_tokay-lite-pcb_ai-camera-rev3/stages.webp)
 

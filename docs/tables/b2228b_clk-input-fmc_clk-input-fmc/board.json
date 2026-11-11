@@ -4,7 +4,7 @@
  "path": "osprey-dcs__clk-input-fmc/clk-input-fmc.kicad_pcb",
  "license": "As README.md states it: \"This design is Open Hardware created by Osprey DCS and published under the terms of the CERN Open Hardware Licence Version 2 - Strongly Reciprocal license.\"",
  "license_checked": "2026-11-08",
- "rank": 873,
+ "rank": 874,
  "score": 2970,
  "level": "MEDIUM",
  "complexity": {

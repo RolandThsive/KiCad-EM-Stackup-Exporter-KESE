@@ -1,6 +1,6 @@
 # 2305. battery_pack_v1a
 
-Board 2,305 of the 3,127 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 22](../CorpusTestingPages/Corpus-Testing-22.md#2305-battery_pack_v1a).
+Board 2,305 of the 3,128 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 22](../CorpusTestingPages/Corpus-Testing-22.md#2305-battery_pack_v1a).
 
 ![battery_pack_v1a: stages 4 and 6 take 50% to 79% of a run. Simulation, GLB takes 6.4 s. Simulation, STEP takes 8.0 s. Simulation, STL takes 6.5 s. Simulation, OBJ takes 9.2 s. Visual, GLB takes 9.3 s. Visual, OBJ takes 11 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2305b_battery-board_battery-pack-v1a/stages.webp)
 

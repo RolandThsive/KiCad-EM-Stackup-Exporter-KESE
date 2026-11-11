@@ -1,6 +1,6 @@
 # 2054. carrier-fix
 
-Board 2,054 of the 3,127 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 20](../CorpusTestingPages/Corpus-Testing-20.md#2054-carrier-fix).
+Board 2,054 of the 3,128 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 20](../CorpusTestingPages/Corpus-Testing-20.md#2054-carrier-fix).
 
 ![carrier-fix: stages 4 and 6 take 51% to 83% of a run. Simulation, GLB takes 4.3 s. Simulation, STEP takes 5.4 s. Simulation, STL takes 4.4 s. Simulation, OBJ takes 6.2 s. Visual, GLB takes 6.0 s. Visual, OBJ takes 7.7 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2054b_olin-electric-motorsports_carrier-fix/stages.webp)
 

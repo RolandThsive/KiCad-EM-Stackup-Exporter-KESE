@@ -1,6 +1,6 @@
 # 2783. CM4_MATX
 
-Board 2,783 of the 3,127 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 26](../CorpusTestingPages/Corpus-Testing-26.md#2783-cm4_matx).
+Board 2,783 of the 3,128 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 26](../CorpusTestingPages/Corpus-Testing-26.md#2783-cm4_matx).
 
 ![CM4_MATX: stages 4 and 6 take 47% to 84% of a run. Simulation, GLB takes 46 s. Simulation, STEP takes 54 s. Simulation, STL takes 46 s. Simulation, OBJ takes 77 s. Visual, GLB takes 61 s. Visual, OBJ takes 72 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2783b_CM4-MATX_KiCad_CM4-MATX_2174/stages.webp)
 
@@ -46,4 +46,4 @@ Board 2,783 of the 3,127 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2782. Unified_Board](b2782b_srad-avionics_Unified-Board.md) | [2784. cpu030](b2784b_pg68k_cpu030.md) |
+| [2782. Unified_Board](b2782b_srad-avionics_Unified-Board.md) | [2784. cpu010](b2784b_pg68k_cpu010.md) |

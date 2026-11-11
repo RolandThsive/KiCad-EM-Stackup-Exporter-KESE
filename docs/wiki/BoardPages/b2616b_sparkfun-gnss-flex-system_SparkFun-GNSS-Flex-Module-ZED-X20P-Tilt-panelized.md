@@ -1,6 +1,6 @@
 # 2616. SparkFun_GNSS_Flex_Module_ZED-X20P_Tilt_panelized
 
-Board 2,616 of the 3,127 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 25](../CorpusTestingPages/Corpus-Testing-25.md#2616-sparkfun_gnss_flex_module_zed-x20p_tilt_panelized).
+Board 2,616 of the 3,128 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 25](../CorpusTestingPages/Corpus-Testing-25.md#2616-sparkfun_gnss_flex_module_zed-x20p_tilt_panelized).
 
 ![Stages 4 and 6 take 46% to 82% of a run. Simulation, GLB takes 2 min. Simulation, STEP takes 2 min. Simulation, STL takes 2 min. Simulation, OBJ takes 3 min. Visual, GLB takes 3 min. Visual, OBJ takes 4 min](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2616b_sparkfun-gnss-flex-system_SparkFun-GNSS-Flex-Module-ZED-X20P-Tilt-panelized/stages.webp)
 

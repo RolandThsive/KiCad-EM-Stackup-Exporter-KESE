@@ -1,6 +1,6 @@
 # 1893. FOSDEM-MUSIC-BOX_RevA
 
-Board 1,893 of the 3,127 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 18](../CorpusTestingPages/Corpus-Testing-18.md#1893-fosdem-music-box_reva).
+Board 1,893 of the 3,128 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 18](../CorpusTestingPages/Corpus-Testing-18.md#1893-fosdem-music-box_reva).
 
 ![FOSDEM-MUSIC-BOX_RevA: stages 4 and 6 take 50% to 79% of a run. Simulation, GLB takes 5.3 s. Simulation, STEP takes 7.0 s. Simulation, STL takes 5.5 s. Simulation, OBJ takes 7.7 s. Visual, GLB takes 7.8 s. Visual, OBJ takes 9.5 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b1893b_FOSDEM-MUSIC-BOX_FOSDEM-MUSIC-BOX-RevA/stages.webp)
 

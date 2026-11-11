@@ -1,6 +1,6 @@
 # 2025. sensing_module_interface
 
-Board 2,025 of the 3,127 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 19](../CorpusTestingPages/Corpus-Testing-19.md#2025-sensing_module_interface).
+Board 2,025 of the 3,128 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 19](../CorpusTestingPages/Corpus-Testing-19.md#2025-sensing_module_interface).
 
 ![sensing_module_interface: stages 4 and 6 take 52% to 83% of a run. Simulation, GLB takes 6.3 s. Simulation, STEP takes 8.3 s. Simulation, STL takes 7.0 s. Simulation, OBJ takes 9.9 s. Visual, GLB takes 9.8 s. Visual, OBJ takes 12 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2025b_olin-electric-motorsports_sensing-module-interface/stages.webp)
 

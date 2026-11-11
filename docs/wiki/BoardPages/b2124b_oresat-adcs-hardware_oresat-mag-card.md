@@ -1,6 +1,6 @@
 # 2124. oresat-mag-card
 
-Board 2,124 of the 3,127 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 20](../CorpusTestingPages/Corpus-Testing-20.md#2124-oresat-mag-card).
+Board 2,124 of the 3,128 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 20](../CorpusTestingPages/Corpus-Testing-20.md#2124-oresat-mag-card).
 
 ![oresat-mag-card: stages 4 and 6 take 53% to 81% of a run. Simulation, GLB takes 32 s. Simulation, STEP takes 38 s. Simulation, STL takes 31 s. Simulation, OBJ takes 44 s. Visual, GLB takes 44 s. Visual, OBJ takes 54 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2124b_oresat-adcs-hardware_oresat-mag-card/stages.webp)
 

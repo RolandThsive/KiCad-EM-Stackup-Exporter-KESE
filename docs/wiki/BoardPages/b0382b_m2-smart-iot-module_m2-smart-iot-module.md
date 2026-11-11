@@ -1,6 +1,6 @@
 # 382. m2-smart-iot-module
 
-Board 382 of the 3,127 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 4](../CorpusTestingPages/Corpus-Testing-04.md#382-m2-smart-iot-module).
+Board 382 of the 3,128 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 4](../CorpusTestingPages/Corpus-Testing-04.md#382-m2-smart-iot-module).
 
 ![m2-smart-iot-module: stages 4 and 6 take 47% to 83% of a run. Simulation, GLB takes 27 s. Simulation, STEP takes 37 s. Simulation, STL takes 29 s. Simulation, OBJ takes 48 s. Visual, GLB takes 47 s. Visual, OBJ takes 60 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b0382b_m2-smart-iot-module_m2-smart-iot-module/stages.webp)
 

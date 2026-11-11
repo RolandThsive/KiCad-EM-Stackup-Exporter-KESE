@@ -1,6 +1,6 @@
 # 1963. RK3328-SOM-EVB_Rev_A
 
-Board 1,963 of the 3,127 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 19](../CorpusTestingPages/Corpus-Testing-19.md#1963-rk3328-som-evb_rev_a).
+Board 1,963 of the 3,128 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 19](../CorpusTestingPages/Corpus-Testing-19.md#1963-rk3328-som-evb_rev_a).
 
 ![RK3328-SOM-EVB_Rev_A: stages 4 and 6 take 55% to 83% of a run. Simulation, GLB takes 39 s. Simulation, STEP takes 47 s. Simulation, STL takes 39 s. Simulation, OBJ takes 56 s. Visual, GLB takes 58 s. Visual, OBJ takes 71 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b1963b_RK3328-SOM-EBV_RK3328-SOM-EVB-Rev-A/stages.webp)
 

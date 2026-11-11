@@ -1,6 +1,6 @@
 # 1755. pi-trenz-stack-concept
 
-Board 1,755 of the 3,127 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 17](../CorpusTestingPages/Corpus-Testing-17.md#1755-pi-trenz-stack-concept).
+Board 1,755 of the 3,128 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 17](../CorpusTestingPages/Corpus-Testing-17.md#1755-pi-trenz-stack-concept).
 
 ![pi-trenz-stack-concept: stages 4 and 6 take 41% to 85% of a run. Simulation, GLB takes 39 s. Simulation, STEP takes 49 s. Simulation, STL takes 39 s. Simulation, OBJ takes 71 s. Visual, GLB takes 74 s. Visual, OBJ takes 85 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b1755b_groundlark_pi-trenz-stack-concept/stages.webp)
 

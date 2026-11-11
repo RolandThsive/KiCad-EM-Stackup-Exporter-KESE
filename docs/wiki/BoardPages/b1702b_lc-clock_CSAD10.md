@@ -1,6 +1,6 @@
 # 1702. CSAD10
 
-Board 1,702 of the 3,127 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 16](../CorpusTestingPages/Corpus-Testing-16.md#1702-csad10).
+Board 1,702 of the 3,128 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 16](../CorpusTestingPages/Corpus-Testing-16.md#1702-csad10).
 
 ![CSAD10: stages 4 and 6 take 52% to 81% of a run. Simulation, GLB takes 6.1 s. Simulation, STEP takes 8.9 s. Simulation, STL takes 6.6 s. Simulation, OBJ takes 9.2 s. Visual, GLB takes 9.0 s. Visual, OBJ takes 11 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b1702b_lc-clock_CSAD10/stages.webp)
 

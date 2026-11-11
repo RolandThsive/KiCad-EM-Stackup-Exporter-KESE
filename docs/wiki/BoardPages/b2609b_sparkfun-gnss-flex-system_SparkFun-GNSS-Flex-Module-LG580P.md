@@ -1,6 +1,6 @@
 # 2609. SparkFun_GNSS_Flex_Module_LG580P
 
-Board 2,609 of the 3,127 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 25](../CorpusTestingPages/Corpus-Testing-25.md#2609-sparkfun_gnss_flex_module_lg580p).
+Board 2,609 of the 3,128 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 25](../CorpusTestingPages/Corpus-Testing-25.md#2609-sparkfun_gnss_flex_module_lg580p).
 
 ![Stages 4 and 6 take 47% to 80% of a run. Simulation, GLB takes 6.4 s. Simulation, STEP takes 8.6 s. Simulation, STL takes 6.5 s. Simulation, OBJ takes 10 s. Visual, GLB takes 9.2 s. Visual, OBJ takes 12 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2609b_sparkfun-gnss-flex-system_SparkFun-GNSS-Flex-Module-LG580P/stages.webp)
 

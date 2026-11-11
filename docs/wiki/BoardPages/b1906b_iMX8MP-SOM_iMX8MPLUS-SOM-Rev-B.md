@@ -1,6 +1,6 @@
 # 1906. iMX8MPLUS-SOM_Rev_B
 
-Board 1,906 of the 3,127 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 18](../CorpusTestingPages/Corpus-Testing-18.md#1906-imx8mplus-som_rev_b).
+Board 1,906 of the 3,128 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 18](../CorpusTestingPages/Corpus-Testing-18.md#1906-imx8mplus-som_rev_b).
 
 ![iMX8MPLUS-SOM_Rev_B: stages 4 and 6 take 48% to 85% of a run. Simulation, GLB takes 86 s. Simulation, STEP takes 2 min. Simulation, STL takes 92 s. Simulation, OBJ takes 2 min. Visual, GLB takes 2 min. Visual, OBJ takes 3 min](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b1906b_iMX8MP-SOM_iMX8MPLUS-SOM-Rev-B/stages.webp)
 

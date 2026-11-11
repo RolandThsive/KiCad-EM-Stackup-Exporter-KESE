@@ -1,6 +1,6 @@
 # 1488. LibreRouter_MegaBoard
 
-Board 1,488 of the 3,127 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 14](../CorpusTestingPages/Corpus-Testing-14.md#1488-librerouter_megaboard).
+Board 1,488 of the 3,128 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 14](../CorpusTestingPages/Corpus-Testing-14.md#1488-librerouter_megaboard).
 
 ![LibreRouter_MegaBoard: stages 4 and 6 take 60% to 82% of a run. Simulation, GLB takes 69 s. Simulation, STEP takes 78 s. Simulation, STL takes 68 s. Simulation, OBJ takes 93 s. Visual, GLB takes 2 min. Visual, OBJ takes 2 min](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b1488b_librerouter_LibreRouter-MegaBoard/stages.webp)
 

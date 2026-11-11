@@ -1,6 +1,6 @@
 # 1208. stepperdriver front panel
 
-Board 1,208 of the 3,127 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 12](../CorpusTestingPages/Corpus-Testing-12.md#1208-stepperdriver-front-panel).
+Board 1,208 of the 3,128 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 12](../CorpusTestingPages/Corpus-Testing-12.md#1208-stepperdriver-front-panel).
 
 ![stepperdriver front panel: stages 4 and 6 take 49% to 77% of a run. Simulation, GLB takes 5.2 s. Simulation, STEP takes 6.1 s. Simulation, STL takes 4.7 s. Simulation, OBJ takes 6.8 s. Visual, GLB takes 7.3 s. Visual, OBJ takes 8.9 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b1208b_device-stepperdriver_stepperdriver-front-panel/stages.webp)
 

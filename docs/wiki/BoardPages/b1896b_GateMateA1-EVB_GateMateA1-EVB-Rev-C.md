@@ -1,6 +1,6 @@
 # 1896. GateMateA1-EVB_Rev_C
 
-Board 1,896 of the 3,127 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 18](../CorpusTestingPages/Corpus-Testing-18.md#1896-gatematea1-evb_rev_c).
+Board 1,896 of the 3,128 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 18](../CorpusTestingPages/Corpus-Testing-18.md#1896-gatematea1-evb_rev_c).
 
 ![GateMateA1-EVB_Rev_C: stages 4 and 6 take 52% to 85% of a run. Simulation, GLB takes 94 s. Simulation, STEP takes 2 min. Simulation, STL takes 97 s. Simulation, OBJ takes 2 min. Visual, GLB takes 2 min. Visual, OBJ takes 3 min](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b1896b_GateMateA1-EVB_GateMateA1-EVB-Rev-C/stages.webp)
 

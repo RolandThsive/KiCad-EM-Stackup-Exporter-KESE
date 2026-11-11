@@ -1,6 +1,6 @@
 # 2335. qmtech-minimig
 
-Board 2,335 of the 3,127 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 22](../CorpusTestingPages/Corpus-Testing-22.md#2335-qmtech-minimig).
+Board 2,335 of the 3,128 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 22](../CorpusTestingPages/Corpus-Testing-22.md#2335-qmtech-minimig).
 
 ![qmtech-minimig: stages 4 and 6 take 57% to 85% of a run. Simulation, GLB takes 68 s. Simulation, STEP takes 86 s. Simulation, STL takes 72 s. Simulation, OBJ takes 99 s. Visual, GLB takes 98 s. Visual, OBJ takes 2 min](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2335b_qmtech-minimig_qmtech-minimig/stages.webp)
 

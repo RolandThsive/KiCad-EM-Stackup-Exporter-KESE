@@ -1,6 +1,6 @@
 # 1658. amiga-gfxcard-before-pour
 
-Board 1,658 of the 3,127 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 16](../CorpusTestingPages/Corpus-Testing-16.md#1658-amiga-gfxcard-before-pour).
+Board 1,658 of the 3,128 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 16](../CorpusTestingPages/Corpus-Testing-16.md#1658-amiga-gfxcard-before-pour).
 
 ![amiga-gfxcard-before-pour: stages 4 and 6 take 53% to 84% of a run. Simulation, GLB takes 15 s. Simulation, STEP takes 19 s. Simulation, STL takes 16 s. Simulation, OBJ takes 24 s. Visual, GLB takes 23 s. Visual, OBJ takes 29 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b1658b_amiga2000-gfxcard_amiga-gfxcard-before-pour/stages.webp)
 

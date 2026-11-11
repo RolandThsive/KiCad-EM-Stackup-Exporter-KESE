@@ -4,7 +4,7 @@
  "path": "smoothieware__smoothieboard2/extension-boards/raspberry-pi-zero-interface/Rpi-zero.kicad_pcb",
  "license": "As README.md states it: \"Under the same license as v1 ( CERN OHL v1.2 or later and GPL v3 or later )\"",
  "license_checked": "2026-11-08",
- "rank": 2370,
+ "rank": 2371,
  "score": 341,
  "level": "LOW",
  "complexity": {

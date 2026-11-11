@@ -1,6 +1,6 @@
 # 1460. ovio_core
 
-Board 1,460 of the 3,127 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 14](../CorpusTestingPages/Corpus-Testing-14.md#1460-ovio_core).
+Board 1,460 of the 3,128 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 14](../CorpusTestingPages/Corpus-Testing-14.md#1460-ovio_core).
 
 ![ovio_core: stages 4 and 6 take 53% to 83% of a run. Simulation, GLB takes 49 s. Simulation, STEP takes 60 s. Simulation, STL takes 49 s. Simulation, OBJ takes 74 s. Visual, GLB takes 66 s. Visual, OBJ takes 79 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b1460b_ovio-core_ovio-core/stages.webp)
 

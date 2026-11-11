@@ -1,6 +1,6 @@
 # 2039. bms_core
 
-Board 2,039 of the 3,127 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 19](../CorpusTestingPages/Corpus-Testing-19.md#2039-bms_core).
+Board 2,039 of the 3,128 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 19](../CorpusTestingPages/Corpus-Testing-19.md#2039-bms_core).
 
 ![bms_core: stages 4 and 6 take 49% to 83% of a run. Simulation, GLB takes 7.7 s. Simulation, STEP takes 9.3 s. Simulation, STL takes 7.4 s. Simulation, OBJ takes 10 s. Visual, GLB takes 11 s. Visual, OBJ takes 13 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2039b_olin-electric-motorsports_vehicle-mkvi-hardware-bms-bms-core_bms-core/stages.webp)
 

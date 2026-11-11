@@ -1,6 +1,6 @@
 # 1771. nu8051-ufo-target-board
 
-Board 1,771 of the 3,127 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 17](../CorpusTestingPages/Corpus-Testing-17.md#1771-nu8051-ufo-target-board).
+Board 1,771 of the 3,128 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 17](../CorpusTestingPages/Corpus-Testing-17.md#1771-nu8051-ufo-target-board).
 
 ![nu8051-ufo-target-board: stages 4 and 6 take 54% to 84% of a run. Simulation, GLB takes 6.7 s. Simulation, STEP takes 8.1 s. Simulation, STL takes 6.4 s. Simulation, OBJ takes 9.2 s. Visual, GLB takes 10 s. Visual, OBJ takes 12 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b1771b_chipwhisperer-target-cw308t_nu8051-ufo-target-board/stages.webp)
 

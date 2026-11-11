@@ -1,6 +1,6 @@
 # 2071. acquisition-board
 
-Board 2,071 of the 3,127 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 20](../CorpusTestingPages/Corpus-Testing-20.md#2071-acquisition-board).
+Board 2,071 of the 3,128 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 20](../CorpusTestingPages/Corpus-Testing-20.md#2071-acquisition-board).
 
 ![acquisition-board: stages 4 and 6 take 53% to 86% of a run. Simulation, GLB takes 88 s. Simulation, STEP takes 2 min. Simulation, STL takes 90 s. Simulation, OBJ takes 2 min. Visual, GLB takes 2 min. Visual, OBJ takes 3 min](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2071b_oe-acquisition-board-gen3_acquisition-board/stages.webp)
 

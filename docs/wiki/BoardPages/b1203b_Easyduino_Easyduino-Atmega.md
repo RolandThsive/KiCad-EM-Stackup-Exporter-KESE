@@ -1,6 +1,6 @@
 # 1203. Easyduino_Atmega
 
-Board 1,203 of the 3,127 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 12](../CorpusTestingPages/Corpus-Testing-12.md#1203-easyduino_atmega).
+Board 1,203 of the 3,128 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 12](../CorpusTestingPages/Corpus-Testing-12.md#1203-easyduino_atmega).
 
 ![Easyduino_Atmega: stages 4 and 6 take 46% to 79% of a run. Simulation, GLB takes 7.3 s. Simulation, STEP takes 9.4 s. Simulation, STL takes 7.4 s. Simulation, OBJ takes 11 s. Visual, GLB takes 10 s. Visual, OBJ takes 12 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b1203b_Easyduino_Easyduino-Atmega/stages.webp)
 

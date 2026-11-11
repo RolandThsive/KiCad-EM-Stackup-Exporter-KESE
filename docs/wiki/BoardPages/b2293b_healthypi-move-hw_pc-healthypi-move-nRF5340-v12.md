@@ -1,6 +1,6 @@
 # 2293. pc_healthypi_move_nRF5340_v12
 
-Board 2,293 of the 3,127 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 22](../CorpusTestingPages/Corpus-Testing-22.md#2293-pc_healthypi_move_nrf5340_v12).
+Board 2,293 of the 3,128 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 22](../CorpusTestingPages/Corpus-Testing-22.md#2293-pc_healthypi_move_nrf5340_v12).
 
 ![pc_healthypi_move_nRF5340_v12: stages 4 and 6 take 46% to 79% of a run. Simulation, GLB takes 14 s. Simulation, STEP takes 18 s. Simulation, STL takes 14 s. Simulation, OBJ takes 21 s. Visual, GLB takes 20 s. Visual, OBJ takes 26 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2293b_healthypi-move-hw_pc-healthypi-move-nRF5340-v12/stages.webp)
 

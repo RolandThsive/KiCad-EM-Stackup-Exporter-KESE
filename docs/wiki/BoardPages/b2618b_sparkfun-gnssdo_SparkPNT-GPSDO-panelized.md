@@ -1,6 +1,6 @@
 # 2618. SparkPNT_GPSDO_panelized
 
-Board 2,618 of the 3,127 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 25](../CorpusTestingPages/Corpus-Testing-25.md#2618-sparkpnt_gpsdo_panelized).
+Board 2,618 of the 3,128 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 25](../CorpusTestingPages/Corpus-Testing-25.md#2618-sparkpnt_gpsdo_panelized).
 
 ![SparkPNT_GPSDO_panelized: stages 4 and 6 take 54% to 83% of a run. Simulation, GLB takes 48 s. Simulation, STEP takes 59 s. Simulation, STL takes 50 s. Simulation, OBJ takes 70 s. Visual, GLB takes 74 s. Visual, OBJ takes 87 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2618b_sparkfun-gnssdo_SparkPNT-GPSDO-panelized/stages.webp)
 

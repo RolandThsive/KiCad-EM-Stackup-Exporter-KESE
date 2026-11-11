@@ -1,6 +1,6 @@
 # 916. DIB2 USB adapter
 
-Board 916 of the 3,127 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 9](../CorpusTestingPages/Corpus-Testing-09.md#916-dib2-usb-adapter).
+Board 916 of the 3,128 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 9](../CorpusTestingPages/Corpus-Testing-09.md#916-dib2-usb-adapter).
 
 ![DIB2 USB adapter: stages 4 and 6 take 43% to 79% of a run. Simulation, GLB takes 4.8 s. Simulation, STEP takes 6.5 s. Simulation, STL takes 4.6 s. Simulation, OBJ takes 6.9 s. Visual, GLB takes 6.9 s. Visual, OBJ takes 8.3 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b0916b_eez-bb3plus_DIB2-USB-adapter/stages.webp)
 

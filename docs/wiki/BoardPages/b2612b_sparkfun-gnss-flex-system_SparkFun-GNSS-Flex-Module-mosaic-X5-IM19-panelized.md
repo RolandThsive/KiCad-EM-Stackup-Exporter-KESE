@@ -1,6 +1,6 @@
 # 2612. SparkFun_GNSS_Flex_Module_mosaic-X5_IM19_panelized
 
-Board 2,612 of the 3,127 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 25](../CorpusTestingPages/Corpus-Testing-25.md#2612-sparkfun_gnss_flex_module_mosaic-x5_im19_panelized).
+Board 2,612 of the 3,128 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 25](../CorpusTestingPages/Corpus-Testing-25.md#2612-sparkfun_gnss_flex_module_mosaic-x5_im19_panelized).
 
 ![Stages 4 and 6 take 51% to 84% of a run. Simulation, GLB takes 85 s. Simulation, STEP takes 2 min. Simulation, STL takes 86 s. Simulation, OBJ takes 2 min. Visual, GLB takes 2 min. Visual, OBJ takes 3 min](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2612b_sparkfun-gnss-flex-system_SparkFun-GNSS-Flex-Module-mosaic-X5-IM19-panelized/stages.webp)
 

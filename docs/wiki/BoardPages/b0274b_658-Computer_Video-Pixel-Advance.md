@@ -1,6 +1,6 @@
 # 274. Video Pixel Advance
 
-Board 274 of the 3,127 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 3](../CorpusTestingPages/Corpus-Testing-03.md#274-video-pixel-advance).
+Board 274 of the 3,128 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 3](../CorpusTestingPages/Corpus-Testing-03.md#274-video-pixel-advance).
 
 ![Video Pixel Advance: stages 4 and 6 take 51% to 79% of a run. Simulation, GLB takes 5.6 s. Simulation, STEP takes 7.4 s. Simulation, STL takes 5.8 s. Simulation, OBJ takes 8.9 s. Visual, GLB takes 8.2 s. Visual, OBJ takes 11 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b0274b_658-Computer_Video-Pixel-Advance/stages.webp)
 

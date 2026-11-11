@@ -1,6 +1,6 @@
 # 1760. raspberrypi_hat
 
-Board 1,760 of the 3,127 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 17](../CorpusTestingPages/Corpus-Testing-17.md#1760-raspberrypi_hat).
+Board 1,760 of the 3,128 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 17](../CorpusTestingPages/Corpus-Testing-17.md#1760-raspberrypi_hat).
 
 ![raspberrypi_hat: stages 4 and 6 take 50% to 83% of a run. Simulation, GLB takes 4.2 s. Simulation, STEP takes 5.7 s. Simulation, STL takes 4.0 s. Simulation, OBJ takes 6.4 s. Visual, GLB takes 5.3 s. Visual, OBJ takes 6.4 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b1760b_groundlark_raspberrypi-hat/stages.webp)
 

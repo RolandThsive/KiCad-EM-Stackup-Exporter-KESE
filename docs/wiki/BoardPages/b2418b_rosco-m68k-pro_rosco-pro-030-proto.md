@@ -1,6 +1,6 @@
 # 2418. rosco_pro_030_proto
 
-Board 2,418 of the 3,127 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 23](../CorpusTestingPages/Corpus-Testing-23.md#2418-rosco_pro_030_proto).
+Board 2,418 of the 3,128 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 23](../CorpusTestingPages/Corpus-Testing-23.md#2418-rosco_pro_030_proto).
 
 ![rosco_pro_030_proto: stages 4 and 6 take 50% to 85% of a run. Simulation, GLB takes 3 min. Simulation, STEP takes 4 min. Simulation, STL takes 3 min. Simulation, OBJ takes 5 min. Visual, GLB takes 5 min. Visual, OBJ takes 5 min](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2418b_rosco-m68k-pro_rosco-pro-030-proto/stages.webp)
 

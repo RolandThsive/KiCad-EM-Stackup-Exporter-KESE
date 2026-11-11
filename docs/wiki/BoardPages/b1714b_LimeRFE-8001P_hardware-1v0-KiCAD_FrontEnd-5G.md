@@ -1,6 +1,6 @@
 # 1714. FrontEnd_5G
 
-Board 1,714 of the 3,127 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 16](../CorpusTestingPages/Corpus-Testing-16.md#1714-frontend_5g).
+Board 1,714 of the 3,128 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 16](../CorpusTestingPages/Corpus-Testing-16.md#1714-frontend_5g).
 
 ![FrontEnd_5G: stages 4 and 6 take 52% to 83% of a run. Simulation, GLB takes 7 min. Simulation, STEP takes 9 min. Simulation, STL takes 8 min. Simulation, OBJ takes 12 min. Visual, GLB takes 12 min. Visual, OBJ takes 13 min](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b1714b_LimeRFE-8001P_hardware-1v0-KiCAD_FrontEnd-5G/stages.webp)
 

@@ -1,6 +1,6 @@
 # 1951. A64-OlinuXino_Rev_G1
 
-Board 1,951 of the 3,127 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 19](../CorpusTestingPages/Corpus-Testing-19.md#1951-a64-olinuxino_rev_g1).
+Board 1,951 of the 3,128 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 19](../CorpusTestingPages/Corpus-Testing-19.md#1951-a64-olinuxino_rev_g1).
 
 ![A64-OlinuXino_Rev_G1: stages 4 and 6 take 49% to 84% of a run. Simulation, GLB takes 2 min. Simulation, STEP takes 2 min. Simulation, STL takes 2 min. Simulation, OBJ takes 3 min. Visual, GLB takes 3 min. Visual, OBJ takes 3 min](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b1951b_OLINUXINO_A64-OlinuXino-Rev-G1/stages.webp)
 

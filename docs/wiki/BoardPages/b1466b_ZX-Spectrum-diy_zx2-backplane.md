@@ -1,6 +1,6 @@
 # 1466. zx2_backplane
 
-Board 1,466 of the 3,127 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 14](../CorpusTestingPages/Corpus-Testing-14.md#1466-zx2_backplane).
+Board 1,466 of the 3,128 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 14](../CorpusTestingPages/Corpus-Testing-14.md#1466-zx2_backplane).
 
 ![zx2_backplane: stages 4 and 6 take 55% to 86% of a run. Simulation, GLB takes 15 s. Simulation, STEP takes 22 s. Simulation, STL takes 17 s. Simulation, OBJ takes 25 s. Visual, GLB takes 22 s. Visual, OBJ takes 28 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b1466b_ZX-Spectrum-diy_zx2-backplane/stages.webp)
 

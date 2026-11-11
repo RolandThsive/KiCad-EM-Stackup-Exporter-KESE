@@ -1,6 +1,6 @@
 # 2095. PCIexpress_x8_half
 
-Board 2,095 of the 3,127 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 20](../CorpusTestingPages/Corpus-Testing-20.md#2095-pciexpress_x8_half).
+Board 2,095 of the 3,128 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 20](../CorpusTestingPages/Corpus-Testing-20.md#2095-pciexpress_x8_half).
 
 ![PCIexpress_x8_half: stages 4 and 6 take 45% to 81% of a run. Simulation, GLB takes 3.3 s. Simulation, STEP takes 4.4 s. Simulation, STL takes 3.4 s. Simulation, OBJ takes 4.8 s. Visual, GLB takes 5.5 s. Visual, OBJ takes 6.4 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2095b_PCIexpress-KiCad_PCIexpress-x8-half/stages.webp)
 

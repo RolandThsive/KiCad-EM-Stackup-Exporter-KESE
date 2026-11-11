@@ -1,6 +1,6 @@
 # 2173. oresat-c3-surrogate
 
-Board 2,173 of the 3,127 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 21](../CorpusTestingPages/Corpus-Testing-21.md#2173-oresat-c3-surrogate).
+Board 2,173 of the 3,128 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 21](../CorpusTestingPages/Corpus-Testing-21.md#2173-oresat-c3-surrogate).
 
 ![oresat-c3-surrogate: stages 4 and 6 take 56% to 81% of a run. Simulation, GLB takes 12 s. Simulation, STEP takes 15 s. Simulation, STL takes 12 s. Simulation, OBJ takes 17 s. Visual, GLB takes 18 s. Visual, OBJ takes 21 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2173b_oresat-flatsat_oresat-c3-surrogate/stages.webp)
 

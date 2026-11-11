@@ -1,6 +1,6 @@
 # 2139. oresat-backplane-2u
 
-Board 2,139 of the 3,127 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 20](../CorpusTestingPages/Corpus-Testing-20.md#2139-oresat-backplane-2u).
+Board 2,139 of the 3,128 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 20](../CorpusTestingPages/Corpus-Testing-20.md#2139-oresat-backplane-2u).
 
 ![oresat-backplane-2u: stages 4 and 6 take 51% to 85% of a run. Simulation, GLB takes 68 s. Simulation, STEP takes 81 s. Simulation, STL takes 72 s. Simulation, OBJ takes 2 min. Visual, GLB takes 2 min. Visual, OBJ takes 2 min](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2139b_oresat-backplane_2U-oresat1_oresat-backplane-2u/stages.webp)
 

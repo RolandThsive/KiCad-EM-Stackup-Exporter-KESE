@@ -1,6 +1,6 @@
 # 1661. adapter
 
-Board 1,661 of the 3,127 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 16](../CorpusTestingPages/Corpus-Testing-16.md#1661-adapter).
+Board 1,661 of the 3,128 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 16](../CorpusTestingPages/Corpus-Testing-16.md#1661-adapter).
 
 ![adapter: stages 4 and 6 take 47% to 70% of a run. Simulation, GLB takes 3.2 s. Simulation, STEP takes 4.5 s. Simulation, STL takes 3.3 s. Simulation, OBJ takes 4.2 s. Visual, GLB takes 4.1 s. Visual, OBJ takes 5.1 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b1661b_Glider_pcb-34p-adapter-a_adapter/stages.webp)
 

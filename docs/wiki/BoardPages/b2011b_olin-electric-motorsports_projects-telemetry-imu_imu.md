@@ -1,6 +1,6 @@
 # 2011. imu
 
-Board 2,011 of the 3,127 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 19](../CorpusTestingPages/Corpus-Testing-19.md#2011-imu).
+Board 2,011 of the 3,128 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 19](../CorpusTestingPages/Corpus-Testing-19.md#2011-imu).
 
 ![imu: stages 4 and 6 take 53% to 78% of a run. Simulation, GLB takes 4.7 s. Simulation, STEP takes 6.0 s. Simulation, STL takes 4.8 s. Simulation, OBJ takes 6.7 s. Visual, GLB takes 7.0 s. Visual, OBJ takes 8.1 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2011b_olin-electric-motorsports_projects-telemetry-imu_imu/stages.webp)
 

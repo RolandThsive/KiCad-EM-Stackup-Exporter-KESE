@@ -1,6 +1,6 @@
 # 2018. throttle
 
-Board 2,018 of the 3,127 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 19](../CorpusTestingPages/Corpus-Testing-19.md#2018-throttle).
+Board 2,018 of the 3,128 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 19](../CorpusTestingPages/Corpus-Testing-19.md#2018-throttle).
 
 ![throttle: stages 4 and 6 take 52% to 82% of a run. Simulation, GLB takes 7.3 s. Simulation, STEP takes 9.3 s. Simulation, STL takes 7.4 s. Simulation, OBJ takes 11 s. Visual, GLB takes 10 s. Visual, OBJ takes 12 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2018b_olin-electric-motorsports_vehicle-mkv-hardware-dashboard-throttle_throttle/stages.webp)
 

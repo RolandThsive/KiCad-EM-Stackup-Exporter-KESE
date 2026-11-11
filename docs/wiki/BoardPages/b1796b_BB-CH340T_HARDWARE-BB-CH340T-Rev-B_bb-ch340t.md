@@ -1,6 +1,6 @@
 # 1796. bb-ch340t
 
-Board 1,796 of the 3,127 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 17](../CorpusTestingPages/Corpus-Testing-17.md#1796-bb-ch340t).
+Board 1,796 of the 3,128 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 17](../CorpusTestingPages/Corpus-Testing-17.md#1796-bb-ch340t).
 
 ![bb-ch340t: stages 4 and 6 take 52% to 79% of a run. Simulation, GLB takes 2.8 s. Simulation, STEP takes 3.7 s. Simulation, STL takes 3.0 s. Simulation, OBJ takes 4.0 s. Visual, GLB takes 4.3 s. Visual, OBJ takes 5.4 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b1796b_BB-CH340T_HARDWARE-BB-CH340T-Rev-B_bb-ch340t/stages.webp)
 

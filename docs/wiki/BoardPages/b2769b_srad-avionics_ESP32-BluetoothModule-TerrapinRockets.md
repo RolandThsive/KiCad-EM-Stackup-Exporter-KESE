@@ -1,6 +1,6 @@
 # 2769. ESP32_BluetoothModule_TerrapinRockets
 
-Board 2,769 of the 3,127 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 26](../CorpusTestingPages/Corpus-Testing-26.md#2769-esp32_bluetoothmodule_terrapinrockets).
+Board 2,769 of the 3,128 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 26](../CorpusTestingPages/Corpus-Testing-26.md#2769-esp32_bluetoothmodule_terrapinrockets).
 
 ![Stages 4 and 6 take 49% to 77% of a run. Simulation, GLB takes 1.9 s. Simulation, STEP takes 2.8 s. Simulation, STL takes 1.9 s. Simulation, OBJ takes 2.6 s. Visual, GLB takes 2.7 s. Visual, OBJ takes 3.3 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2769b_srad-avionics_ESP32-BluetoothModule-TerrapinRockets/stages.webp)
 
