@@ -35,5 +35,4 @@
 **Research And Community**
 - [Glossary](Glossary.md)
 - [Future Upgrades And Planning](Future-Upgrades-And-Planning.md)
-- [Credits](Credits.md)
 - [License](License.md)
