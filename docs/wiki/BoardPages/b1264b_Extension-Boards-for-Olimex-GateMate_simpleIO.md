@@ -1,6 +1,6 @@
 # 1264. simpleIO
 
-Board 1,264 of the 3,125 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 12](../CorpusTestingPages/Corpus-Testing-12.md#1264-simpleio).
+Board 1,264 of the 3,126 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 12](../CorpusTestingPages/Corpus-Testing-12.md#1264-simpleio).
 
 ![simpleIO: stages 4 and 6 take 45% to 81% of a run. Simulation, GLB takes 4.4 s. Simulation, STEP takes 5.9 s. Simulation, STL takes 4.6 s. Simulation, OBJ takes 7.4 s. Visual, GLB takes 7.0 s. Visual, OBJ takes 9.0 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b1264b_Extension-Boards-for-Olimex-GateMate_simpleIO/stages.webp)
 

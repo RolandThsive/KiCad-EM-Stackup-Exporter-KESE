@@ -1,6 +1,6 @@
 # 927. EEZ PSU consolidated r5B13a
 
-Board 927 of the 3,125 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 9](../CorpusTestingPages/Corpus-Testing-09.md#927-eez-psu-consolidated-r5b13a).
+Board 927 of the 3,126 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 9](../CorpusTestingPages/Corpus-Testing-09.md#927-eez-psu-consolidated-r5b13a).
 
 ![EEZ PSU consolidated r5B13a: stages 4 and 6 take 59% to 86% of a run. Simulation, GLB takes 2 min. Simulation, STEP takes 2 min. Simulation, STL takes 2 min. Simulation, OBJ takes 3 min. Visual, GLB takes 3 min. Visual, OBJ takes 4 min](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b0927b_psu-hw_EEZ-PSU-consolidated-r5B13a/stages.webp)
 

@@ -1,6 +1,6 @@
 # 1189. obsidian-boa-r0.1
 
-Board 1,189 of the 3,125 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 12](../CorpusTestingPages/Corpus-Testing-12.md#1189-obsidian-boa-r01).
+Board 1,189 of the 3,126 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 12](../CorpusTestingPages/Corpus-Testing-12.md#1189-obsidian-boa-r01).
 
 ![obsidian-boa-r0.1: stages 4 and 6 take 47% to 82% of a run. Simulation, GLB takes 9.4 s. Simulation, STEP takes 13 s. Simulation, STL takes 9.7 s. Simulation, OBJ takes 15 s. Visual, GLB takes 15 s. Visual, OBJ takes 19 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b1189b_obsidian-boa_obsidian-boa-r0-1/stages.webp)
 

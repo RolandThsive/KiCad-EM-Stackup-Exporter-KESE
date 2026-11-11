@@ -1,6 +1,6 @@
 # 65. pcb-bga-adapter-dualcon
 
-Board 65 of the 3,125 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 1](../CorpusTestingPages/Corpus-Testing-01.md#65-pcb-bga-adapter-dualcon).
+Board 65 of the 3,126 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 1](../CorpusTestingPages/Corpus-Testing-01.md#65-pcb-bga-adapter-dualcon).
 
 ![pcb-bga-adapter-dualcon: stages 4 and 6 take 48% to 79% of a run. Simulation, GLB takes 6.5 s. Simulation, STEP takes 9.3 s. Simulation, STL takes 6.5 s. Simulation, OBJ takes 9.9 s. Visual, GLB takes 10 s. Visual, OBJ takes 13 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b0065b_Open-Source-PC110_pcb-bga-adapter-dualcon/stages.webp)
 

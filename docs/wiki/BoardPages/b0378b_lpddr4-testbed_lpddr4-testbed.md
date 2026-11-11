@@ -1,6 +1,6 @@
 # 378. lpddr4-testbed
 
-Board 378 of the 3,125 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 4](../CorpusTestingPages/Corpus-Testing-04.md#378-lpddr4-testbed).
+Board 378 of the 3,126 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 4](../CorpusTestingPages/Corpus-Testing-04.md#378-lpddr4-testbed).
 
 ![lpddr4-testbed: stages 4 and 6 take 48% to 81% of a run. Simulation, GLB takes 20 s. Simulation, STEP takes 25 s. Simulation, STL takes 20 s. Simulation, OBJ takes 31 s. Visual, GLB takes 28 s. Visual, OBJ takes 34 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b0378b_lpddr4-testbed_lpddr4-testbed/stages.webp)
 

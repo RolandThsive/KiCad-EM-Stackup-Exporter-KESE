@@ -1,6 +1,6 @@
 # 528. Spectrum 48K Video Mod
 
-Board 528 of the 3,125 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 5](../CorpusTestingPages/Corpus-Testing-05.md#528-spectrum-48k-video-mod).
+Board 528 of the 3,126 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 5](../CorpusTestingPages/Corpus-Testing-05.md#528-spectrum-48k-video-mod).
 
 ![Spectrum 48K Video Mod: stages 4 and 6 take 46% to 76% of a run. Simulation, GLB takes 1.8 s. Simulation, STEP takes 2.5 s. Simulation, STL takes 1.8 s. Simulation, OBJ takes 2.5 s. Visual, GLB takes 2.5 s. Visual, OBJ takes 3.3 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b0528b_zxspectrum-issue3b_Spectrum-48K-Video-Mod/stages.webp)
 

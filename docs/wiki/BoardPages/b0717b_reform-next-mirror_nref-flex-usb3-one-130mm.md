@@ -1,6 +1,6 @@
 # 717. nref-flex-usb3-one-130mm
 
-Board 717 of the 3,125 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 7](../CorpusTestingPages/Corpus-Testing-07.md#717-nref-flex-usb3-one-130mm).
+Board 717 of the 3,126 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 7](../CorpusTestingPages/Corpus-Testing-07.md#717-nref-flex-usb3-one-130mm).
 
 ![nref-flex-usb3-one-130mm: stages 4 and 6 take 43% to 75% of a run. Simulation, GLB takes 1.3 s. Simulation, STEP takes 2.1 s. Simulation, STL takes 1.4 s. Simulation, OBJ takes 1.8 s. Visual, GLB takes 2.0 s. Visual, OBJ takes 2.4 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b0717b_reform-next-mirror_nref-flex-usb3-one-130mm/stages.webp)
 

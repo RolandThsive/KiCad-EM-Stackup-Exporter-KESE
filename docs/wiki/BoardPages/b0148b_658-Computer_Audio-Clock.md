@@ -1,6 +1,6 @@
 # 148. Audio Clock
 
-Board 148 of the 3,125 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 2](../CorpusTestingPages/Corpus-Testing-02.md#148-audio-clock).
+Board 148 of the 3,126 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 2](../CorpusTestingPages/Corpus-Testing-02.md#148-audio-clock).
 
 ![Audio Clock: stages 4 and 6 take 49% to 78% of a run. Simulation, GLB takes 5.4 s. Simulation, STEP takes 6.1 s. Simulation, STL takes 4.4 s. Simulation, OBJ takes 6.8 s. Visual, GLB takes 7.4 s. Visual, OBJ takes 9.0 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b0148b_658-Computer_Audio-Clock/stages.webp)
 

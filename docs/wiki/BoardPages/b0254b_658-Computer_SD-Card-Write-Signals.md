@@ -1,6 +1,6 @@
 # 254. SD Card Write Signals
 
-Board 254 of the 3,125 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 3](../CorpusTestingPages/Corpus-Testing-03.md#254-sd-card-write-signals).
+Board 254 of the 3,126 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 3](../CorpusTestingPages/Corpus-Testing-03.md#254-sd-card-write-signals).
 
 ![SD Card Write Signals: stages 4 and 6 take 49% to 83% of a run. Simulation, GLB takes 3.9 s. Simulation, STEP takes 5.3 s. Simulation, STL takes 4.0 s. Simulation, OBJ takes 5.7 s. Visual, GLB takes 6.0 s. Visual, OBJ takes 7.3 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b0254b_658-Computer_SD-Card-Write-Signals/stages.webp)
 

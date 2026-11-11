@@ -1,0 +1,52 @@
+{
+ "name": "armory",
+ "project": "usbarmory/usbarmory",
+ "path": "usbarmory__usbarmory/hardware/mark-two-beta/armory.kicad_pcb",
+ "license": "CERN-OHL-1.2 (CERN Open Hardware Licence v1.2), in hardware/mark-one/LICENSE, hardware/mark-two-beta/LICENSE, hardware/mark-two-debug-accessory/LICENSE; CERN-OHL-S-2.0 (CERN Open Hardware Licence v2, Strongly Reciprocal), in hardware/mark-two-lan/LICENSE, hardware/mark-two/LICENSE",
+ "license_checked": "2026-11-08",
+ "rank": 71,
+ "score": 20335,
+ "level": "EXTREME",
+ "complexity": {
+  "grade": 400,
+  "size": 320,
+  "features": 80
+ },
+ "features": [
+  "through_vias",
+  "slotted_holes",
+  "custom_pads",
+  "shaped_pads",
+  "filled_zones",
+  "curved_outline"
+ ],
+ "layers": 6,
+ "status": "pass",
+ "bad_design": null,
+ "chart_alt": "armory: stages 4 and 6 take 48% to 80% of a run. Simulation, GLB takes 44 s. Simulation, STEP takes 56 s. Simulation, STL takes 46 s. Simulation, OBJ takes 71 s. Visual, GLB takes 70 s. Visual, OBJ takes 82 s",
+ "rerun": {},
+ "tested": [
+  "2026-11-09",
+  "2026-11-09"
+ ],
+ "kese": [
+  "22fd70c"
+ ],
+ "kese_version": [
+  "2.4.0"
+ ],
+ "runs": [
+  [
+   "corpus",
+   "2026-11-09",
+   11000000000.0,
+   5400.0
+  ]
+ ],
+ "machine": {
+  "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz, 4 cores, 15 GB",
+  "geos": "3.14.1",
+  "python": "3.13.18",
+  "shapely": "2.2.0"
+ }
+}

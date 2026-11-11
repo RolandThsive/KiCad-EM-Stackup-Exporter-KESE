@@ -1,6 +1,6 @@
 # 680. other-m68k
 
-Board 680 of the 3,125 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 7](../CorpusTestingPages/Corpus-Testing-07.md#680-other-m68k).
+Board 680 of the 3,126 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 7](../CorpusTestingPages/Corpus-Testing-07.md#680-other-m68k).
 
 ![other-m68k: stages 4 and 6 take 48% to 80% of a run. Simulation, GLB takes 52 s. Simulation, STEP takes 64 s. Simulation, STL takes 53 s. Simulation, OBJ takes 84 s. Visual, GLB takes 78 s. Visual, OBJ takes 93 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b0680b_other-m68k_other-m68k/stages.webp)
 

@@ -1,6 +1,6 @@
 # 1298. Assembly_View
 
-Board 1,298 of the 3,125 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 13](../CorpusTestingPages/Corpus-Testing-13.md#1298-assembly_view).
+Board 1,298 of the 3,126 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 13](../CorpusTestingPages/Corpus-Testing-13.md#1298-assembly_view).
 
 ![Assembly_View: stages 4 and 6 take 45% to 82% of a run. Simulation, GLB takes 8.0 s. Simulation, STEP takes 10 s. Simulation, STL takes 7.4 s. Simulation, OBJ takes 12 s. Visual, GLB takes 13 s. Visual, OBJ takes 19 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b1298b_pcie-switch-2_outputs-PCIe-3board-RevI-Assembly-View_Assembly-View/stages.webp)
 

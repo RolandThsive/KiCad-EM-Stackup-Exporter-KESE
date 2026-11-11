@@ -1,6 +1,6 @@
 # 893. Thunderscope_Rev5.3
 
-Board 893 of the 3,125 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 9](../CorpusTestingPages/Corpus-Testing-09.md#893-thunderscope_rev53).
+Board 893 of the 3,126 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 9](../CorpusTestingPages/Corpus-Testing-09.md#893-thunderscope_rev53).
 
 ![Thunderscope_Rev5.3: stages 4 and 6 take 48% to 83% of a run. Simulation, GLB takes 3 min. Simulation, STEP takes 3 min. Simulation, STL takes 3 min. Simulation, OBJ takes 5 min. Visual, GLB takes 4 min. Visual, OBJ takes 5 min](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b0893b_ThunderScope_Thunderscope-Rev5-3/stages.webp)
 

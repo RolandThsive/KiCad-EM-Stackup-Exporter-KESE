@@ -1,6 +1,6 @@
 # 1259. extension_template
 
-Board 1,259 of the 3,125 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 12](../CorpusTestingPages/Corpus-Testing-12.md#1259-extension_template).
+Board 1,259 of the 3,126 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 12](../CorpusTestingPages/Corpus-Testing-12.md#1259-extension_template).
 
 ![extension_template: stages 4 and 6 take 41% to 74% of a run. Simulation, GLB takes 1.7 s. Simulation, STEP takes 2.5 s. Simulation, STL takes 1.7 s. Simulation, OBJ takes 2.4 s. Visual, GLB takes 2.6 s. Visual, OBJ takes 3.1 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b1259b_Extension-Boards-for-Olimex-GateMate_extension-template/stages.webp)
 

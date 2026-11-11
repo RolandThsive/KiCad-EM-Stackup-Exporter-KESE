@@ -1,6 +1,6 @@
 # 871. Duet2Maestro
 
-Board 871 of the 3,125 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 9](../CorpusTestingPages/Corpus-Testing-09.md#871-duet2maestro).
+Board 871 of the 3,126 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 9](../CorpusTestingPages/Corpus-Testing-09.md#871-duet2maestro).
 
 ![Duet2Maestro: stages 4 and 6 take 54% to 85% of a run. Simulation, GLB takes 64 s. Simulation, STEP takes 78 s. Simulation, STL takes 66 s. Simulation, OBJ takes 96 s. Visual, GLB takes 92 s. Visual, OBJ takes 2 min](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b0871b_Duet-2-Hardware_Duet2Maestro/stages.webp)
 

@@ -4,7 +4,7 @@
  "path": "esphome__home-assistant-voice-pe/hardware/KiCad/Home Assistant Voice PE.kicad_pcb",
  "license": "CERN-OHL-P-2.0 (CERN Open Hardware Licence v2, Permissive) for the hardware, in hardware/LICENSE.txt; the ESPHome License (MIT and GPL-3.0) for the code, in LICENSE",
  "license_checked": "2026-11-08",
- "rank": 363,
+ "rank": 364,
  "score": 7133,
  "level": "HIGH",
  "complexity": {

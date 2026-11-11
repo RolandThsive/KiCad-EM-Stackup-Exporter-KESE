@@ -1,6 +1,6 @@
 # 1165. gpdi
 
-Board 1,165 of the 3,125 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 11](../CorpusTestingPages/Corpus-Testing-11.md#1165-gpdi).
+Board 1,165 of the 3,126 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 11](../CorpusTestingPages/Corpus-Testing-11.md#1165-gpdi).
 
 ![gpdi: stages 4 and 6 take 47% to 81% of a run. Simulation, GLB takes 5.5 s. Simulation, STEP takes 7.7 s. Simulation, STL takes 5.4 s. Simulation, OBJ takes 8.5 s. Visual, GLB takes 8.2 s. Visual, OBJ takes 10 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b1165b_advent-calendar-of-circuits-2020_gpdi/stages.webp)
 

@@ -1,6 +1,6 @@
 # 789. mackerel-10-dram
 
-Board 789 of the 3,125 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 8](../CorpusTestingPages/Corpus-Testing-08.md#789-mackerel-10-dram).
+Board 789 of the 3,126 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 8](../CorpusTestingPages/Corpus-Testing-08.md#789-mackerel-10-dram).
 
 ![mackerel-10-dram: stages 4 and 6 take 48% to 83% of a run. Simulation, GLB takes 21 s. Simulation, STEP takes 26 s. Simulation, STL takes 20 s. Simulation, OBJ takes 34 s. Visual, GLB takes 26 s. Visual, OBJ takes 30 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b0789b_mackerel-68k_mackerel-10-dram/stages.webp)
 

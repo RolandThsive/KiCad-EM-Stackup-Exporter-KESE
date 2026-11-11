@@ -1,6 +1,6 @@
 # 984. NewBrain Keyboard A
 
-Board 984 of the 3,125 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 10](../CorpusTestingPages/Corpus-Testing-10.md#984-newbrain-keyboard-a).
+Board 984 of the 3,126 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 10](../CorpusTestingPages/Corpus-Testing-10.md#984-newbrain-keyboard-a).
 
 ![NewBrain Keyboard A: stages 4 and 6 take 56% to 85% of a run. Simulation, GLB takes 19 s. Simulation, STEP takes 25 s. Simulation, STL takes 20 s. Simulation, OBJ takes 29 s. Visual, GLB takes 23 s. Visual, OBJ takes 29 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b0984b_NewBrain_NewBrain-Keyboard-A/stages.webp)
 

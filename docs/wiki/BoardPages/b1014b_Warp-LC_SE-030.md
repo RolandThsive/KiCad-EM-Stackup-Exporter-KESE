@@ -1,6 +1,6 @@
 # 1014. SE-030
 
-Board 1,014 of the 3,125 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 10](../CorpusTestingPages/Corpus-Testing-10.md#1014-se-030).
+Board 1,014 of the 3,126 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 10](../CorpusTestingPages/Corpus-Testing-10.md#1014-se-030).
 
 ![SE-030: stages 4 and 6 take 52% to 84% of a run. Simulation, GLB takes 61 s. Simulation, STEP takes 75 s. Simulation, STL takes 63 s. Simulation, OBJ takes 99 s. Visual, GLB takes 82 s. Visual, OBJ takes 97 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b1014b_Warp-LC_SE-030/stages.webp)
 

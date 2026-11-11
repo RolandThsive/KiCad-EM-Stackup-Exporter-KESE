@@ -1,6 +1,6 @@
 # 1192. kimchi_micro
 
-Board 1,192 of the 3,125 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 12](../CorpusTestingPages/Corpus-Testing-12.md#1192-kimchi_micro).
+Board 1,192 of the 3,126 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 12](../CorpusTestingPages/Corpus-Testing-12.md#1192-kimchi_micro).
 
 ![kimchi_micro: stages 4 and 6 take 47% to 80% of a run. Simulation, GLB takes 71 s. Simulation, STEP takes 86 s. Simulation, STL takes 72 s. Simulation, OBJ takes 2 min. Visual, GLB takes 95 s. Visual, OBJ takes 2 min](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b1192b_kimchi-micro_kimchi-micro/stages.webp)
 

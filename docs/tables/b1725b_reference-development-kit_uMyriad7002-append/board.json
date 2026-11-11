@@ -1,0 +1,48 @@
+{
+ "name": "uMyriad7002-append",
+ "project": "myriadrf/reference-development-kit",
+ "path": "myriadrf__reference-development-kit/umyriadrf-7002/v2/KiCAD/uMyriad7002-append.kicad_pcb",
+ "license": "CC-BY-3.0 (Creative Commons Attribution 3.0), in myriadrf-8001/COPYING, umyriadrf-6002/COPYING, umyriadrf-7002/COPYING and others",
+ "license_checked": "2026-11-08",
+ "rank": 435,
+ "score": 6127,
+ "level": "HIGH",
+ "complexity": {
+  "grade": 333,
+  "size": 298,
+  "features": 35
+ },
+ "features": [
+  "through_vias",
+  "filled_zones"
+ ],
+ "layers": 8,
+ "status": "pass",
+ "bad_design": null,
+ "chart_alt": "uMyriad7002-append: stages 4 and 6 take 24% to 30% of a run. Simulation, GLB takes 5.0 s. Simulation, STEP takes 5.4 s. Simulation, STL takes 4.6 s. Simulation, OBJ takes 4.9 s. Visual, GLB takes 5.0 s. Visual, OBJ takes 5.0 s",
+ "rerun": {},
+ "tested": [
+  "2026-11-09",
+  "2026-11-09"
+ ],
+ "kese": [
+  "22fd70c"
+ ],
+ "kese_version": [
+  "2.4.0"
+ ],
+ "runs": [
+  [
+   "corpus",
+   "2026-11-09",
+   11000000000.0,
+   5400.0
+  ]
+ ],
+ "machine": {
+  "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz, 4 cores, 15 GB",
+  "geos": "3.14.1",
+  "python": "3.13.18",
+  "shapely": "2.2.0"
+ }
+}

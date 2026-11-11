@@ -1,6 +1,6 @@
 # 531. RoboMotor-DJI-M3508
 
-Board 531 of the 3,125 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 5](../CorpusTestingPages/Corpus-Testing-05.md#531-robomotor-dji-m3508).
+Board 531 of the 3,126 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 5](../CorpusTestingPages/Corpus-Testing-05.md#531-robomotor-dji-m3508).
 
 ![RoboMotor-DJI-M3508: stages 4 and 6 take 47% to 84% of a run. Simulation, GLB takes 8.0 s. Simulation, STEP takes 9.7 s. Simulation, STL takes 7.9 s. Simulation, OBJ takes 12 s. Visual, GLB takes 14 s. Visual, OBJ takes 17 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b0531b_robomotor_RoboMotor-DJI-M3508/stages.webp)
 

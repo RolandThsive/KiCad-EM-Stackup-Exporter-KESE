@@ -1,6 +1,6 @@
 # 104. socket7-motherboard
 
-Board 104 of the 3,125 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 1](../CorpusTestingPages/Corpus-Testing-01.md#104-socket7-motherboard).
+Board 104 of the 3,126 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 1](../CorpusTestingPages/Corpus-Testing-01.md#104-socket7-motherboard).
 
 ![socket7-motherboard: stages 4 and 6 take 42% to 83% of a run. Simulation, GLB takes 2 min. Simulation, STEP takes 3 min. Simulation, STL takes 2 min. Simulation, OBJ takes 4 min. Visual, GLB takes 3 min. Visual, OBJ takes 4 min](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b0104b_fpgamotherboard_socket7-fpga-xc7a100t_socket7-motherboard/stages.webp)
 

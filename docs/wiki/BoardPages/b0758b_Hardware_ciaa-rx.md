@@ -1,6 +1,6 @@
 # 758. ciaa-rx
 
-Board 758 of the 3,125 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 8](../CorpusTestingPages/Corpus-Testing-08.md#758-ciaa-rx).
+Board 758 of the 3,126 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 8](../CorpusTestingPages/Corpus-Testing-08.md#758-ciaa-rx).
 
 ![ciaa-rx: stages 4 and 6 take 49% to 81% of a run. Simulation, GLB takes 62 s. Simulation, STEP takes 73 s. Simulation, STL takes 62 s. Simulation, OBJ takes 99 s. Visual, GLB takes 99 s. Visual, OBJ takes 2 min](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b0758b_Hardware_ciaa-rx/stages.webp)
 

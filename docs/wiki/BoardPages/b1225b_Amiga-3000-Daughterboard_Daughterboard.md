@@ -1,6 +1,6 @@
 # 1225. Daughterboard
 
-Board 1,225 of the 3,125 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 12](../CorpusTestingPages/Corpus-Testing-12.md#1225-daughterboard).
+Board 1,225 of the 3,126 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 12](../CorpusTestingPages/Corpus-Testing-12.md#1225-daughterboard).
 
 ![Daughterboard: stages 4 and 6 take 54% to 86% of a run. Simulation, GLB takes 71 s. Simulation, STEP takes 88 s. Simulation, STL takes 73 s. Simulation, OBJ takes 2 min. Visual, GLB takes 97 s. Visual, OBJ takes 2 min](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b1225b_Amiga-3000-Daughterboard_Daughterboard/stages.webp)
 

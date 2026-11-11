@@ -1,6 +1,6 @@
 # 223. HCP65 Board Presence
 
-Board 223 of the 3,125 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 3](../CorpusTestingPages/Corpus-Testing-03.md#223-hcp65-board-presence).
+Board 223 of the 3,126 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 3](../CorpusTestingPages/Corpus-Testing-03.md#223-hcp65-board-presence).
 
 ![HCP65 Board Presence: stages 4 and 6 take 49% to 79% of a run. Simulation, GLB takes 4.2 s. Simulation, STEP takes 5.5 s. Simulation, STL takes 4.2 s. Simulation, OBJ takes 6.0 s. Visual, GLB takes 6.6 s. Visual, OBJ takes 8.3 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b0223b_658-Computer_HCP65-Board-Presence/stages.webp)
 

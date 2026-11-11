@@ -1,6 +1,6 @@
 # 633. CPC464-2MINIDDI3ADAPT
 
-Board 633 of the 3,125 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 6](../CorpusTestingPages/Corpus-Testing-06.md#633-cpc464-2miniddi3adapt).
+Board 633 of the 3,126 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 6](../CorpusTestingPages/Corpus-Testing-06.md#633-cpc464-2miniddi3adapt).
 
 ![CPC464-2MINIDDI3ADAPT: stages 4 and 6 take 50% to 83% of a run. Simulation, GLB takes 3.5 s. Simulation, STEP takes 4.7 s. Simulation, STL takes 3.4 s. Simulation, OBJ takes 5.0 s. Visual, GLB takes 4.5 s. Visual, OBJ takes 5.4 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b0633b_CPC464-2MINI_CPC464-2MINIDDI3ADAPT/stages.webp)
 

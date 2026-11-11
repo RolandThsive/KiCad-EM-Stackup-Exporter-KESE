@@ -1,6 +1,6 @@
 # 1195. AnalyzerBoxPCB_fork
 
-Board 1,195 of the 3,125 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 12](../CorpusTestingPages/Corpus-Testing-12.md#1195-analyzerboxpcb_fork).
+Board 1,195 of the 3,126 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 12](../CorpusTestingPages/Corpus-Testing-12.md#1195-analyzerboxpcb_fork).
 
 ![AnalyzerBoxPCB_fork: stages 4 and 6 take 47% to 82% of a run. Simulation, GLB takes 8.3 s. Simulation, STEP takes 10 s. Simulation, STL takes 8.2 s. Simulation, OBJ takes 13 s. Visual, GLB takes 13 s. Visual, OBJ takes 17 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b1195b_logicanalyzer_AnalyzerBoxPCB-fork/stages.webp)
 

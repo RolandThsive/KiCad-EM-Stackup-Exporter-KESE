@@ -1,6 +1,6 @@
 # 500. gd io proto pcb
 
-Board 500 of the 3,125 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 5](../CorpusTestingPages/Corpus-Testing-05.md#500-gd-io-proto-pcb).
+Board 500 of the 3,126 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 5](../CorpusTestingPages/Corpus-Testing-05.md#500-gd-io-proto-pcb).
 
 ![gd io proto pcb: stages 4 and 6 take 56% to 86% of a run. Simulation, GLB takes 27 s. Simulation, STEP takes 35 s. Simulation, STL takes 27 s. Simulation, OBJ takes 40 s. Visual, GLB takes 43 s. Visual, OBJ takes 53 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b0500b_Mega-IIe_kicad-files-gd-io-proto-pcb_gd-io-proto-pcb/stages.webp)
 

@@ -1,6 +1,6 @@
 # 624. Lynx-Keyboard
 
-Board 624 of the 3,125 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 6](../CorpusTestingPages/Corpus-Testing-06.md#624-lynx-keyboard).
+Board 624 of the 3,126 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 6](../CorpusTestingPages/Corpus-Testing-06.md#624-lynx-keyboard).
 
 ![Lynx-Keyboard: stages 4 and 6 take 50% to 79% of a run. Simulation, GLB takes 10 s. Simulation, STEP takes 13 s. Simulation, STL takes 11 s. Simulation, OBJ takes 16 s. Visual, GLB takes 14 s. Visual, OBJ takes 17 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b0624b_Camputers-Lynx_Lynx-Keyboard/stages.webp)
 

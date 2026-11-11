@@ -1,6 +1,6 @@
 # 371. job-ict-support-board
 
-Board 371 of the 3,125 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 4](../CorpusTestingPages/Corpus-Testing-04.md#371-job-ict-support-board).
+Board 371 of the 3,126 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 4](../CorpusTestingPages/Corpus-Testing-04.md#371-job-ict-support-board).
 
 ![job-ict-support-board: stages 4 and 6 take 50% to 77% of a run. Simulation, GLB takes 4.1 s. Simulation, STEP takes 5.5 s. Simulation, STL takes 3.8 s. Simulation, OBJ takes 5.8 s. Visual, GLB takes 5.8 s. Visual, OBJ takes 7.0 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b0371b_job-ict-support-board_job-ict-support-board/stages.webp)
 

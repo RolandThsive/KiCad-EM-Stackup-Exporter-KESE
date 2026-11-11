@@ -1,6 +1,6 @@
 # 1378. N2360
 
-Board 1,378 of the 3,125 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 13](../CorpusTestingPages/Corpus-Testing-13.md#1378-n2360).
+Board 1,378 of the 3,126 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 13](../CorpusTestingPages/Corpus-Testing-13.md#1378-n2360).
 
 ![N2360: stages 4 and 6 take 48% to 85% of a run. Simulation, GLB takes 88 s. Simulation, STEP takes 2 min. Simulation, STL takes 91 s. Simulation, OBJ takes 2 min. Visual, GLB takes 2 min. Visual, OBJ takes 3 min](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b1378b_Amiga-N2630_KiCAD-Archive-A2630-New-KiCAD-Rev401-PGA_N2360/stages.webp)
 
