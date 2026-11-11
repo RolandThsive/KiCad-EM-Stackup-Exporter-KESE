@@ -2,7 +2,8 @@
 # docs/wiki/ is the source of truth. Edits made by hand in the Wiki tab are overwritten at the next sync.
 # The Corpus Testing pages live on the corpus-testing branch, apart from the code: each sync takes every page of
 # that branch's docs/wiki (only that folder is fetched, not its charts or tables) but its BoardPages/, which stay
-# on the branch, and puts them in place of main's copy of the master page.
+# on the branch, and puts them in place of main's Corpus Testing page. Main's page only says the branch was not found:
+# with no corpus-testing branch, that is what the wiki shows, and the Corpus Pages and Credits leave the wiki.
 # One-time setup: Settings > Features > Wikis, and save a first page in the Wiki tab so the wiki repository exists.
 name: Sync Wiki
 
@@ -36,7 +37,7 @@ jobs:
 
       - name: Check out the Corpus Testing pages
         uses: actions/checkout@v4
-        continue-on-error: true            # no corpus-testing branch: main's copy of the master page stays
+        continue-on-error: true            # no corpus-testing branch: main's page saying so stays
         with:
           ref: corpus-testing
           path: corpus-testing
@@ -49,7 +50,7 @@ jobs:
           if [ -f corpus-testing/docs/wiki/Corpus-Testing.md ]; then
             rsync -a --exclude='BoardPages/' corpus-testing/docs/wiki/ docs/wiki/
           else
-            echo "::warning::the corpus-testing branch was not found: the wiki keeps main's copy of the Corpus Testing page"
+            echo "::warning::the corpus-testing branch was not found: the wiki's Corpus Testing page says so"
           fi
           rsync -a --delete --exclude='.git' docs/wiki/ wiki/
           # The wiki links pages by name: [Text](Page-Name), not [Text](Page-Name.md); a page in a folder
