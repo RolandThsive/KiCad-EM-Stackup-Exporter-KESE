@@ -1,6 +1,6 @@
 # 889. k-1013-floppy-controller-replica
 
-Board 889 of the 3,128 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 9](../CorpusTestingPages/Corpus-Testing-09.md#889-k-1013-floppy-controller-replica).
+Board 889 of the 3,129 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 9](../CorpusTestingPages/Corpus-Testing-09.md#889-k-1013-floppy-controller-replica).
 
 ![Stages 4 and 6 take 70% to 90% of a run. Simulation, GLB takes 4 min. Simulation, STEP takes 4 min. Simulation, STL takes 4 min. Simulation, OBJ takes 5 min. Visual, GLB takes 3 min. Visual, OBJ takes 3 min](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b0889b_k-1013-floppy-disk-controller-replica_k-1013-floppy-controller-replica/stages.webp)
 

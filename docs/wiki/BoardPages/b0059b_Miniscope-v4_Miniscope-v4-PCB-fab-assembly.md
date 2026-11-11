@@ -1,6 +1,6 @@
 # 59. Miniscope-v4-PCB-fab-assembly
 
-Board 59 of the 3,128 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 1](../CorpusTestingPages/Corpus-Testing-01.md#59-miniscope-v4-pcb-fab-assembly).
+Board 59 of the 3,129 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 1](../CorpusTestingPages/Corpus-Testing-01.md#59-miniscope-v4-pcb-fab-assembly).
 
 ![Miniscope-v4-PCB-fab-assembly: stages 4 and 6 take 47% to 82% of a run. Simulation, GLB takes 9.3 s. Simulation, STEP takes 11 s. Simulation, STL takes 8.8 s. Simulation, OBJ takes 13 s. Visual, GLB takes 13 s. Visual, OBJ takes 15 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b0059b_Miniscope-v4_Miniscope-v4-PCB-fab-assembly/stages.webp)
 

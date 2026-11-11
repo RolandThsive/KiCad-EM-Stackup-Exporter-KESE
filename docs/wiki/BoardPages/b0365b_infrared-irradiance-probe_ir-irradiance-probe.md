@@ -1,6 +1,6 @@
 # 365. ir-irradiance-probe
 
-Board 365 of the 3,128 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 4](../CorpusTestingPages/Corpus-Testing-04.md#365-ir-irradiance-probe).
+Board 365 of the 3,129 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 4](../CorpusTestingPages/Corpus-Testing-04.md#365-ir-irradiance-probe).
 
 ![ir-irradiance-probe: stages 4 and 6 take 49% to 76% of a run. Simulation, GLB takes 12 s. Simulation, STEP takes 13 s. Simulation, STL takes 12 s. Simulation, OBJ takes 16 s. Visual, GLB takes 16 s. Visual, OBJ takes 19 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b0365b_infrared-irradiance-probe_ir-irradiance-probe/stages.webp)
 

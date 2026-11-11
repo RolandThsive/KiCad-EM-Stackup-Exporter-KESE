@@ -1,6 +1,6 @@
 # 92. i386sx-motherboard
 
-Board 92 of the 3,128 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 1](../CorpusTestingPages/Corpus-Testing-01.md#92-i386sx-motherboard).
+Board 92 of the 3,129 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 1](../CorpusTestingPages/Corpus-Testing-01.md#92-i386sx-motherboard).
 
 ![i386sx-motherboard: stages 4 and 6 take 47% to 84% of a run. Simulation, GLB takes 50 s. Simulation, STEP takes 63 s. Simulation, STL takes 54 s. Simulation, OBJ takes 87 s. Visual, GLB takes 99 s. Visual, OBJ takes 2 min](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b0092b_fpgamotherboard_i386sx-motherboard/stages.webp)
 

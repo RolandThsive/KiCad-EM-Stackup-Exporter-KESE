@@ -1,0 +1,54 @@
+{
+ "name": "breakout-tt04-qfn-socket",
+ "project": "TinyTapeout/breakout-pcb",
+ "path": "TinyTapeout__breakout-pcb/breakout-tt04-qfn-socket/breakout-tt04-qfn-socket.kicad_pcb",
+ "license": "Apache-2.0 (Apache License 2.0)",
+ "license_checked": "2026-11-08",
+ "rank": 1576,
+ "score": 1231,
+ "level": "MEDIUM",
+ "complexity": {
+  "grade": 316,
+  "size": 201,
+  "features": 115
+ },
+ "features": [
+  "through_vias",
+  "shaped_pads",
+  "filled_zones",
+  "curved_outline",
+  "knockout_text",
+  "truetype_text",
+  "stackup",
+  "dielectric_properties"
+ ],
+ "layers": 2,
+ "status": "pass",
+ "bad_design": null,
+ "chart_alt": "breakout-tt04-qfn-socket: stages 4 and 6 take 52% to 82% of a run. Simulation, GLB takes 10 s. Simulation, STEP takes 13 s. Simulation, STL takes 10 s. Simulation, OBJ takes 15 s. Visual, GLB takes 17 s. Visual, OBJ takes 21 s",
+ "rerun": {},
+ "tested": [
+  "2026-11-09",
+  "2026-11-09"
+ ],
+ "kese": [
+  "22fd70c"
+ ],
+ "kese_version": [
+  "2.4.0"
+ ],
+ "runs": [
+  [
+   "corpus",
+   "2026-11-09",
+   11000000000.0,
+   5400.0
+  ]
+ ],
+ "machine": {
+  "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz, 4 cores, 15 GB",
+  "geos": "3.14.1",
+  "python": "3.13.18",
+  "shapely": "2.2.0"
+ }
+}

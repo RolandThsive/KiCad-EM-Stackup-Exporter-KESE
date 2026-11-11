@@ -1,0 +1,66 @@
+{
+ "name": "Main_12E1S",
+ "project": "isarmg/pcie-switch-2",
+ "path": "isarmg__pcie-switch-2/outputs/PCIe_E1S_96x45_12VPower_RevV/Main_12E1S/Main_12E1S.kicad_pcb",
+ "license": "No license found",
+ "license_checked": "2026-11-08",
+ "rank": 88,
+ "score": 19150,
+ "level": "VERY HIGH",
+ "complexity": {
+  "grade": 447,
+  "size": 377,
+  "features": 70
+ },
+ "features": [
+  "blind_buried_vias",
+  "shaped_pads",
+  "filled_zones"
+ ],
+ "layers": 32,
+ "status": "pass",
+ "bad_design": null,
+ "chart_alt": "Main_12E1S: stages 4 and 6 take 41% to 83% of a run. Simulation, GLB takes 5 min. Simulation, STEP takes 6 min. Simulation, STL takes 5 min. Simulation, OBJ takes 10 min. Visual, GLB takes 6 min. Visual, OBJ takes 7 min",
+ "rerun": {
+  "nocap": [
+   "Simulation, OBJ"
+  ]
+ },
+ "tested": [
+  "2026-11-09",
+  "2026-11-11"
+ ],
+ "kese": [
+  "22fd70c",
+  "39950e6"
+ ],
+ "kese_version": [
+  "2.4.0"
+ ],
+ "runs": [
+  [
+   "cap",
+   "2026-11-10",
+   14500000000.0,
+   5400.0
+  ],
+  [
+   "corpus",
+   "2026-11-09",
+   11000000000.0,
+   5400.0
+  ],
+  [
+   "nocap",
+   "2026-11-11",
+   null,
+   null
+  ]
+ ],
+ "machine": {
+  "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz, 4 cores, 15 GB",
+  "geos": "3.14.1",
+  "python": "3.13.18",
+  "shapely": "2.2.0"
+ }
+}

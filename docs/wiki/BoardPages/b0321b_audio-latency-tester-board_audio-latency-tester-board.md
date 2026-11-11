@@ -1,6 +1,6 @@
 # 321. audio-latency-tester-board
 
-Board 321 of the 3,128 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 3](../CorpusTestingPages/Corpus-Testing-03.md#321-audio-latency-tester-board).
+Board 321 of the 3,129 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 3](../CorpusTestingPages/Corpus-Testing-03.md#321-audio-latency-tester-board).
 
 ![audio-latency-tester-board: stages 4 and 6 take 47% to 76% of a run. Simulation, GLB takes 29 s. Simulation, STEP takes 35 s. Simulation, STL takes 29 s. Simulation, OBJ takes 43 s. Visual, GLB takes 43 s. Visual, OBJ takes 52 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b0321b_audio-latency-tester-board_audio-latency-tester-board/stages.webp)
 

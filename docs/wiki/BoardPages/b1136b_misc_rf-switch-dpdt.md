@@ -1,6 +1,6 @@
 # 1136. rf-switch-dpdt
 
-Board 1,136 of the 3,128 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 11](../CorpusTestingPages/Corpus-Testing-11.md#1136-rf-switch-dpdt).
+Board 1,136 of the 3,129 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 11](../CorpusTestingPages/Corpus-Testing-11.md#1136-rf-switch-dpdt).
 
 ![rf-switch-dpdt: stages 4 and 6 take 50% to 83% of a run. Simulation, GLB takes 8.8 s. Simulation, STEP takes 11 s. Simulation, STL takes 8.9 s. Simulation, OBJ takes 14 s. Visual, GLB takes 11 s. Visual, OBJ takes 14 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b1136b_misc_rf-switch-dpdt/stages.webp)
 

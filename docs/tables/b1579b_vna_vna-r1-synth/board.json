@@ -1,0 +1,49 @@
+{
+ "name": "vna_r1_synth",
+ "project": "loxodes/vna",
+ "path": "loxodes__vna/hardware/vna_rev1/vna_r1_synth/vna_r1_synth.kicad_pcb",
+ "license": "As README.md states it: \"Unless otherwise noted, all work is under a MIT license.\"",
+ "license_checked": "2026-11-08",
+ "rank": 1213,
+ "score": 1907,
+ "level": "MEDIUM",
+ "complexity": {
+  "grade": 292,
+  "size": 247,
+  "features": 45
+ },
+ "features": [
+  "through_vias",
+  "filled_zones",
+  "curved_outline"
+ ],
+ "layers": 4,
+ "status": "pass",
+ "bad_design": null,
+ "chart_alt": "vna_r1_synth: stages 4 and 6 take 55% to 85% of a run. Simulation, GLB takes 27 s. Simulation, STEP takes 31 s. Simulation, STL takes 27 s. Simulation, OBJ takes 40 s. Visual, GLB takes 41 s. Visual, OBJ takes 49 s",
+ "rerun": {},
+ "tested": [
+  "2026-11-09",
+  "2026-11-09"
+ ],
+ "kese": [
+  "22fd70c"
+ ],
+ "kese_version": [
+  "2.4.0"
+ ],
+ "runs": [
+  [
+   "corpus",
+   "2026-11-09",
+   11000000000.0,
+   5400.0
+  ]
+ ],
+ "machine": {
+  "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz, 4 cores, 15 GB",
+  "geos": "3.14.1",
+  "python": "3.13.18",
+  "shapely": "2.2.0"
+ }
+}

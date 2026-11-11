@@ -1,6 +1,6 @@
 # 95. socket3-motherboard
 
-Board 95 of the 3,128 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 1](../CorpusTestingPages/Corpus-Testing-01.md#95-socket3-motherboard).
+Board 95 of the 3,129 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 1](../CorpusTestingPages/Corpus-Testing-01.md#95-socket3-motherboard).
 
 ![socket3-motherboard: stages 4 and 6 take 54% to 84% of a run. Simulation, GLB takes 36 s. Simulation, STEP takes 46 s. Simulation, STL takes 37 s. Simulation, OBJ takes 56 s. Visual, GLB takes 55 s. Visual, OBJ takes 67 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b0095b_fpgamotherboard_socket3-motherboard/stages.webp)
 

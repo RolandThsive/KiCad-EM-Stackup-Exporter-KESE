@@ -1,0 +1,51 @@
+{
+ "name": "novatel_gps_breakout",
+ "project": "waterloo-rocketry/canhw",
+ "path": "waterloo-rocketry__canhw/novatel_gps_breakout/novatel_gps_breakout.kicad_pcb",
+ "license": "GPL-3.0 (GNU GPL v3.0)",
+ "license_checked": "2026-11-08",
+ "rank": 2704,
+ "score": 97,
+ "level": "SIMPLE",
+ "complexity": {
+  "grade": 188,
+  "size": 118,
+  "features": 70
+ },
+ "features": [
+  "through_vias",
+  "slotted_holes",
+  "shaped_pads",
+  "arc_tracks",
+  "filled_zones"
+ ],
+ "layers": 2,
+ "status": "pass",
+ "bad_design": null,
+ "chart_alt": "novatel_gps_breakout: stages 4 and 6 take 49% to 80% of a run. Simulation, GLB takes 3.3 s. Simulation, STEP takes 4.5 s. Simulation, STL takes 3.4 s. Simulation, OBJ takes 5.0 s. Visual, GLB takes 4.8 s. Visual, OBJ takes 6.1 s",
+ "rerun": {},
+ "tested": [
+  "2026-11-10",
+  "2026-11-10"
+ ],
+ "kese": [
+  "22fd70c"
+ ],
+ "kese_version": [
+  "2.4.0"
+ ],
+ "runs": [
+  [
+   "corpus",
+   "2026-11-10",
+   11000000000.0,
+   5400.0
+  ]
+ ],
+ "machine": {
+  "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz, 4 cores, 15 GB",
+  "geos": "3.14.1",
+  "python": "3.13.18",
+  "shapely": "2.2.0"
+ }
+}

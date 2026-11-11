@@ -1,6 +1,6 @@
 # 687. C64-250469-KiCad
 
-Board 687 of the 3,128 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 7](../CorpusTestingPages/Corpus-Testing-07.md#687-c64-250469-kicad).
+Board 687 of the 3,129 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 7](../CorpusTestingPages/Corpus-Testing-07.md#687-c64-250469-kicad).
 
 ![C64-250469-KiCad: stages 4 and 6 take 58% to 87% of a run. Simulation, GLB takes 2 min. Simulation, STEP takes 2 min. Simulation, STL takes 2 min. Simulation, OBJ takes 3 min. Visual, GLB takes 3 min. Visual, OBJ takes 3 min](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b0687b_C64C-250469-KiCAD-Replica_C64-250469-KiCad/stages.webp)
 

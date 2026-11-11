@@ -1,6 +1,6 @@
 # 533. RoboMotor-GIM6010-V2
 
-Board 533 of the 3,128 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 5](../CorpusTestingPages/Corpus-Testing-05.md#533-robomotor-gim6010-v2).
+Board 533 of the 3,129 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 5](../CorpusTestingPages/Corpus-Testing-05.md#533-robomotor-gim6010-v2).
 
 ![RoboMotor-GIM6010-V2: stages 4 and 6 take 50% to 86% of a run. Simulation, GLB takes 10 s. Simulation, STEP takes 13 s. Simulation, STL takes 11 s. Simulation, OBJ takes 16 s. Visual, GLB takes 19 s. Visual, OBJ takes 23 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b0533b_robomotor_RoboMotor-GIM6010-V2/stages.webp)
 

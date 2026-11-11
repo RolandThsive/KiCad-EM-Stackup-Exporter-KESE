@@ -1,6 +1,6 @@
 # 367. jetson-agx-thor-baseboard
 
-Board 367 of the 3,128 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 4](../CorpusTestingPages/Corpus-Testing-04.md#367-jetson-agx-thor-baseboard).
+Board 367 of the 3,129 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 4](../CorpusTestingPages/Corpus-Testing-04.md#367-jetson-agx-thor-baseboard).
 
 ![jetson-agx-thor-baseboard: stages 4 and 6 take 35% to 81% of a run. Simulation, GLB takes 4 min. Simulation, STEP takes 5 min. Simulation, STL takes 5 min. Simulation, OBJ takes 11 min. Visual, GLB takes 9 min. Visual, OBJ takes 8 min](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b0367b_jetson-agx-thor-baseboard_jetson-agx-thor-baseboard/stages.webp)
 

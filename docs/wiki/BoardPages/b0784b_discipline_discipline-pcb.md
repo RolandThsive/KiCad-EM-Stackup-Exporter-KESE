@@ -1,6 +1,6 @@
 # 784. discipline-pcb
 
-Board 784 of the 3,128 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 8](../CorpusTestingPages/Corpus-Testing-08.md#784-discipline-pcb).
+Board 784 of the 3,129 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 8](../CorpusTestingPages/Corpus-Testing-08.md#784-discipline-pcb).
 
 ![discipline-pcb: stages 4 and 6 take 59% to 85% of a run. Simulation, GLB takes 51 s. Simulation, STEP takes 61 s. Simulation, STL takes 51 s. Simulation, OBJ takes 70 s. Visual, GLB takes 74 s. Visual, OBJ takes 87 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b0784b_discipline_discipline-pcb/stages.webp)
 

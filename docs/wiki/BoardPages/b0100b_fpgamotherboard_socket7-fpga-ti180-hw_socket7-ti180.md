@@ -1,6 +1,6 @@
 # 100. socket7-ti180
 
-Board 100 of the 3,128 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 1](../CorpusTestingPages/Corpus-Testing-01.md#100-socket7-ti180).
+Board 100 of the 3,129 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 1](../CorpusTestingPages/Corpus-Testing-01.md#100-socket7-ti180).
 
 ![socket7-ti180: stages 4 and 6 take 42% to 80% of a run. Simulation, GLB takes 2 min. Simulation, STEP takes 2 min. Simulation, STL takes 2 min. Simulation, OBJ takes 3 min. Visual, GLB takes 2 min. Visual, OBJ takes 3 min](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b0100b_fpgamotherboard_socket7-fpga-ti180-hw_socket7-ti180/stages.webp)
 

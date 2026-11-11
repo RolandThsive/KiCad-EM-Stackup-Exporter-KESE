@@ -1,6 +1,6 @@
 # 1205. Easyduino_ESP32S3
 
-Board 1,205 of the 3,128 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 12](../CorpusTestingPages/Corpus-Testing-12.md#1205-easyduino_esp32s3).
+Board 1,205 of the 3,129 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 12](../CorpusTestingPages/Corpus-Testing-12.md#1205-easyduino_esp32s3).
 
 ![Easyduino_ESP32S3: stages 4 and 6 take 47% to 78% of a run. Simulation, GLB takes 7.9 s. Simulation, STEP takes 9.6 s. Simulation, STL takes 7.5 s. Simulation, OBJ takes 12 s. Visual, GLB takes 11 s. Visual, OBJ takes 13 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b1205b_Easyduino_Easyduino-ESP32S3/stages.webp)
 
