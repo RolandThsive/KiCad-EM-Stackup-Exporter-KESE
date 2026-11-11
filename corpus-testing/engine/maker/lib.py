@@ -5,19 +5,13 @@ import collections, itertools, json, math, re, statistics, sys
 from pathlib import Path
 import matplotlib; matplotlib.use("Agg")
 import matplotlib.pyplot as plt
-from matplotlib import font_manager as fm
 from PIL import Image
 
 RES = Path(sys.argv[1]); REPO = Path(sys.argv[2]); IMG = REPO / "docs/images"; WIKI = REPO / "docs/wiki"
 RAW = "https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images"
 DATA = Path(HERE).parents[1] / "data"
 N = 23  # the page's number in the wiki's order
-_INTER = [f for f in fm.findSystemFonts() if "/inter/Inter-" in f]
-if not _INTER:                     # never a chart in another font: matplotlib would fall back to one without a word
-    sys.exit("::error::The Inter font is not installed (Debian and Ubuntu: fonts-inter), so no chart can be drawn in it. "
-             "Install it and run again.")
-for f in _INTER: fm.fontManager.addfont(f)
-plt.rcParams["font.family"] = "Inter"
+plt.rcParams["font.family"] = "DejaVu Sans"       # comes with matplotlib: the same font wherever a chart is drawn
 BG, INK, SOFT, GRID = "#fcfcfb", "#1a1a1a", "#5f5e5b", "#e4e3df"
 BARS = [("1–2 read", ("read", "collect"), "#2a78d6"), ("3 resolve", ("resolve",), "#eb6834"),
         ("4 geometry", ("geometry",), "#1baf7a"), ("5 materials", ("materials",), "#eda100"),
@@ -272,38 +266,46 @@ def stacked(rows, head, sub, png_name, label_w=0.25):
     fig = plt.figure(figsize=(10, h), dpi=200, facecolor=BG)
     top = 1 - 1.15 / h
     ax = fig.add_axes([label_w, 0.36 / h * 1.4, 0.93 - label_w, top - 0.36 / h * 1.4 - 0.32 / h], facecolor=BG)
-    fig.text(0.024, 1 - 0.32 / h, head, fontsize=15.5, fontweight="semibold", color=INK, va="center")
+    fig.text(0.024, 1 - 0.32 / h, head, fontsize=15.5, fontweight="bold", color=INK, va="center")
     fig.text(0.024, 1 - 0.6 / h, sub, fontsize=11, color=SOFT, va="center")
     x = 0.024
     for name, _, col in BARS:
         fig.patches.append(matplotlib.patches.Rectangle((x, 1 - 0.94 / h), 0.012, 0.115 / h, transform=fig.transFigure, color=col))
         t = fig.text(x + 0.019, 1 - 0.885 / h, name, fontsize=11, color=INK, va="center")
-        fig.canvas.draw(); bb = t.get_window_extent().transformed(fig.transFigure.inverted()); x = bb.x1 + 0.026
+        fig.canvas.draw(); bb = t.get_window_extent().transformed(fig.transFigure.inverted()); x = bb.x1 + 0.02
     xmax = tmax * 1.15
-    fig.canvas.draw()
-    px_per_s = ax.get_window_extent().width / xmax
     n = len(rows)
+    ax.set_xlim(0, xmax); ax.set_ylim(-0.5, n - 0.25)     # set first, so that the labels are measured where they will be
+    fig.canvas.draw()
+    rend = fig.canvas.get_renderer()
+    px_per_s = ax.get_window_extent().width / xmax
+    to_data = lambda tx: tx.get_window_extent(renderer=rend).transformed(ax.transData.inverted())
+    right = fig.transFigure.transform((0.99, 0))[0]       # no label past this, in pixels
     for i, (label, st) in enumerate(rows):
         y = n - 1 - i; left = 0; thin = []
         for name, _, col in BARS:
             v = st[name]; wpx = v * px_per_s
             if wpx < 12: thin.append((left + v / 2, name, v, col))
             ax.barh(y, v, left=left, height=0.56, color=col, edgecolor=BG, linewidth=1.2 if wpx >= 12 else 0)
-            if wpx > (75 if "ms" in fmt(v) else 46):
-                ax.text(left + v / 2, y, fmt(v), ha="center", va="center", fontsize=10.5, color="white" if col in WHITE else INK)
+            if wpx > 30:
+                tx = ax.text(left + v / 2, y, fmt(v), ha="center", va="center", fontsize=10.5, color="white" if col in WHITE else INK)
+                if tx.get_window_extent(renderer=rend).width + 10 > wpx: tx.remove()     # a number only where it fits
             left += v
         nextfree = -1e9
         for xc, name, v, col in thin:
             if v < 0.0005 and name != "5 materials": continue
             ax.plot([xc, xc], [y - 0.28, y + 0.28], color=col, linewidth=2.2, solid_capstyle="butt", zorder=5)
-            t = ax.text(max(xc, nextfree), y + 0.34, f"{name}: {fmt(v) if v < 0.0995 else fmt(v) + ' s'}",
-                        ha="left", va="bottom", fontsize=9.5, color=SOFT)
-            fig.canvas.draw()
-            nextfree = max(t.get_window_extent(renderer=fig.canvas.get_renderer()).transformed(ax.transData.inverted()).x1,
-                           max(xc, nextfree) + len(t.get_text()) * xmax * 0.0115) + xmax * 0.02
+            tx = ax.text(max(xc, nextfree), y + 0.34, f"{name}: {fmt(v) if v < 0.0995 else fmt(v) + ' s'}",
+                         ha="left", va="bottom", fontsize=9.5, color=SOFT)
+            bb = tx.get_window_extent(renderer=rend)
+            if bb.x1 > right:                                 # past the edge: moved left, or left out if that hides another
+                x0 = ax.transData.inverted().transform((bb.x0 - (bb.x1 - right), 0))[0]
+                if x0 < nextfree:
+                    tx.remove(); continue
+                tx.set_x(x0)
+            nextfree = to_data(tx).x1 + xmax * 0.02
         ax.text(left + tmax * 0.012, y, secs(left), va="center", fontsize=11.5, color=INK)
     ax.set_yticks(list(range(n - 1, -1, -1)), [r[0] for r in rows], fontsize=11, color=INK)
-    ax.set_xlim(0, xmax); ax.set_ylim(-0.5, n - 0.25)
     ax.tick_params(axis="y", length=0, pad=10); ax.tick_params(axis="x", length=0, colors=SOFT, labelsize=10.5, pad=6)
     ax.xaxis.set_major_formatter(matplotlib.ticker.FuncFormatter(lambda v, _: f"{v:g} s"))
     ax.xaxis.set_major_locator(matplotlib.ticker.MaxNLocator(5))

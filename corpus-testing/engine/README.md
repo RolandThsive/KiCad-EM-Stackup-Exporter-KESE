@@ -33,5 +33,5 @@ what changed and starts the wiki sync:
    board of a new project with none shows "Not looked up yet".
 
 The engine needs nothing but Python 3.9 or newer; the maker needs Python 3.11 or newer with matplotlib and Pillow,
-and the Inter font for the charts. `features.json` holds the features and weights of the complexity grade, which the
-master page lists.
+whose own font, DejaVu Sans, the charts are drawn in. `features.json` holds the features and weights of the
+complexity grade, which the master page lists.

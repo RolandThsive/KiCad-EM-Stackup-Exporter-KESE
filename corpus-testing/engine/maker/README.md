@@ -16,7 +16,7 @@ from the top of this branch, by hand:
     python3 corpus-testing/engine/maker/make.py Thermometer_TheMainBoard  the boards of these data folders only
     python3 corpus-testing/engine/assemble.py                             then the pages
 
-Needs Python 3.11 or newer with matplotlib and Pillow, and the Inter font.
+Needs Python 3.11 or newer with matplotlib and Pillow.
 
 A board's data folder is given by hand. It holds `board.json`, with the board's `project` (`owner/repo`), its `path`
 (`<owner>__<repo>/<path in the repo>`), its `name` (if left out, its file's name), its project's `license` and the
@@ -51,6 +51,7 @@ A data folder that can't be read is not added, and the workflow run fails with a
 - **Charts:** one is drawn only when its `stages.webp` is missing, so a run added later changes the board's tables
   but not its chart. To draw it again, take the board out (push the deletion of its data folder) and add it back
   (push the folder again): its chart is drawn from the runs it then has. Deleting its `stages.webp` does the same.
-  A chart is drawn in the Inter font only: if it is not installed, the maker stops and says so.
+  A chart is drawn in DejaVu Sans, which comes with matplotlib, so nothing else needs installing (the charts drawn
+  before 11 November 2026 are in Inter).
 
 The boards themselves belong to their authors and are not here: only the numbers of the runs.

@@ -32,14 +32,10 @@ jobs:
           python-version: "3.13"
 
       - name: Install what the charts are drawn with
-        run: |
-          sudo apt-get update -q && sudo apt-get install -y -q fonts-inter
-          python -m pip install -q matplotlib==3.11.2 pillow==12.3.0
-          # a chart is never drawn in another font: matplotlib would fall back to one without a word
-          fc-list | grep -q "/inter/Inter-" || { echo "::error::The Inter font (fonts-inter) did not install"; exit 1; }
+        run: python -m pip install -q matplotlib==3.11.2 pillow==12.3.0      # its own font, DejaVu Sans, draws them
 
       - name: Make each board's tables and chart from its data folder
-        shell: bash          # with pipefail: the maker stopping fails the step, though tee does not
+        shell: bash          # with pipefail: the maker failing fails the step, though tee does not
         run: python corpus-testing/engine/maker/make.py | tee "$RUNNER_TEMP/make.log"
 
       - name: Number the boards and build the pages
