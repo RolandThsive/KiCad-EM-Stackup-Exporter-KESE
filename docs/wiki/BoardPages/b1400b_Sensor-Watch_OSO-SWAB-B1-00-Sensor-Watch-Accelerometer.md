@@ -1,6 +1,6 @@
 # 1400. OSO-SWAB-B1-00 Sensor Watch Accelerometer
 
-Board 1,400 of the 3,126 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 13](../CorpusTestingPages/Corpus-Testing-13.md#1400-oso-swab-b1-00-sensor-watch-accelerometer).
+Board 1,400 of the 3,127 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 13](../CorpusTestingPages/Corpus-Testing-13.md#1400-oso-swab-b1-00-sensor-watch-accelerometer).
 
 ![Stages 4 and 6 take 42% to 74% of a run. Simulation, GLB takes 1.3 s. Simulation, STEP takes 2.0 s. Simulation, STL takes 1.2 s. Simulation, OBJ takes 1.6 s. Visual, GLB takes 1.9 s. Visual, OBJ takes 2.2 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b1400b_Sensor-Watch_OSO-SWAB-B1-00-Sensor-Watch-Accelerometer/stages.webp)
 

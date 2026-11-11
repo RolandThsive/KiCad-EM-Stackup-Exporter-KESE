@@ -1,6 +1,6 @@
 # 1243. 4in1
 
-Board 1,243 of the 3,126 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 12](../CorpusTestingPages/Corpus-Testing-12.md#1243-4in1).
+Board 1,243 of the 3,127 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 12](../CorpusTestingPages/Corpus-Testing-12.md#1243-4in1).
 
 ![4in1: stages 4 and 6 take 53% to 87% of a run. Simulation, GLB takes 82 s. Simulation, STEP takes 95 s. Simulation, STL takes 86 s. Simulation, OBJ takes 2 min. Visual, GLB takes 3 min. Visual, OBJ takes 3 min](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b1243b_openesc-30x30_4in1/stages.webp)
 

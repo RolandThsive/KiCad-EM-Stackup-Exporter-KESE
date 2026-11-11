@@ -1,6 +1,6 @@
 # 2600. endcap
 
-Board 2,600 of the 3,126 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 25](../CorpusTestingPages/Corpus-Testing-25.md#2600-endcap).
+Board 2,600 of the 3,127 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 25](../CorpusTestingPages/Corpus-Testing-25.md#2600-endcap).
 
 ![endcap: stages 4 and 6 take 33% to 64% of a run. Simulation, GLB takes 0.9 s. Simulation, STEP takes 1.6 s. Simulation, STL takes 0.9 s. Simulation, OBJ takes 1.1 s. Visual, GLB takes 1.1 s. Visual, OBJ takes 1.4 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2600b_Hermes-Lite2_hardware-enclosure-endcaps-kf7o-hl2-55fb_endcap/stages.webp)
 

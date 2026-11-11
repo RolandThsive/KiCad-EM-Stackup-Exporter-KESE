@@ -1,6 +1,6 @@
 # 2153. receive_Path
 
-Board 2,153 of the 3,126 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 20](../CorpusTestingPages/Corpus-Testing-20.md#2153-receive_path).
+Board 2,153 of the 3,127 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 20](../CorpusTestingPages/Corpus-Testing-20.md#2153-receive_path).
 
 ![receive_Path: stages 4 and 6 take 52% to 80% of a run. Simulation, GLB takes 6.8 s. Simulation, STEP takes 7.8 s. Simulation, STL takes 6.7 s. Simulation, OBJ takes 10 s. Visual, GLB takes 8.0 s. Visual, OBJ takes 10 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2153b_oresat-dxwifi-hardware_receive-Path/stages.webp)
 

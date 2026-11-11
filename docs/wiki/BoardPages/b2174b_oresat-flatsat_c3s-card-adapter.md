@@ -1,6 +1,6 @@
 # 2174. c3s-card-adapter
 
-Board 2,174 of the 3,126 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 21](../CorpusTestingPages/Corpus-Testing-21.md#2174-c3s-card-adapter).
+Board 2,174 of the 3,127 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 21](../CorpusTestingPages/Corpus-Testing-21.md#2174-c3s-card-adapter).
 
 ![c3s-card-adapter: stages 4 and 6 take 54% to 78% of a run. Simulation, GLB takes 4.1 s. Simulation, STEP takes 5.4 s. Simulation, STL takes 4.1 s. Simulation, OBJ takes 5.5 s. Visual, GLB takes 5.7 s. Visual, OBJ takes 6.8 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2174b_oresat-flatsat_c3s-card-adapter/stages.webp)
 

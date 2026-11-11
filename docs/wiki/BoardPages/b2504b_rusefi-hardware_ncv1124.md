@@ -1,6 +1,6 @@
 # 2504. ncv1124
 
-Board 2,504 of the 3,126 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 24](../CorpusTestingPages/Corpus-Testing-24.md#2504-ncv1124).
+Board 2,504 of the 3,127 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 24](../CorpusTestingPages/Corpus-Testing-24.md#2504-ncv1124).
 
 ![ncv1124: stages 4 and 6 take 54% to 82% of a run. Simulation, GLB takes 4.4 s. Simulation, STEP takes 6.0 s. Simulation, STL takes 4.6 s. Simulation, OBJ takes 6.6 s. Visual, GLB takes 5.8 s. Visual, OBJ takes 7.5 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2504b_rusefi-hardware_ncv1124/stages.webp)
 

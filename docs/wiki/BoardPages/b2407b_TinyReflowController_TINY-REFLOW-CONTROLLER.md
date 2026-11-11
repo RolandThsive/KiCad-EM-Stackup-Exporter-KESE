@@ -1,6 +1,6 @@
 # 2407. TINY-REFLOW-CONTROLLER
 
-Board 2,407 of the 3,126 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 23](../CorpusTestingPages/Corpus-Testing-23.md#2407-tiny-reflow-controller).
+Board 2,407 of the 3,127 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 23](../CorpusTestingPages/Corpus-Testing-23.md#2407-tiny-reflow-controller).
 
 ![TINY-REFLOW-CONTROLLER: stages 4 and 6 take 55% to 81% of a run. Simulation, GLB takes 7.1 s. Simulation, STEP takes 8.7 s. Simulation, STL takes 7.3 s. Simulation, OBJ takes 11 s. Visual, GLB takes 9.9 s. Visual, OBJ takes 13 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2407b_TinyReflowController_TINY-REFLOW-CONTROLLER/stages.webp)
 

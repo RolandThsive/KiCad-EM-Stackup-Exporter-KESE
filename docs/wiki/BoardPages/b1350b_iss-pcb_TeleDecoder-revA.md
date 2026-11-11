@@ -1,6 +1,6 @@
 # 1350. TeleDecoder-revA
 
-Board 1,350 of the 3,126 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 13](../CorpusTestingPages/Corpus-Testing-13.md#1350-teledecoder-reva).
+Board 1,350 of the 3,127 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 13](../CorpusTestingPages/Corpus-Testing-13.md#1350-teledecoder-reva).
 
 ![TeleDecoder-revA: stages 4 and 6 take 53% to 79% of a run. Simulation, GLB takes 18 s. Simulation, STEP takes 25 s. Simulation, STL takes 18 s. Simulation, OBJ takes 26 s. Visual, GLB takes 24 s. Visual, OBJ takes 32 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b1350b_iss-pcb_TeleDecoder-revA/stages.webp)
 

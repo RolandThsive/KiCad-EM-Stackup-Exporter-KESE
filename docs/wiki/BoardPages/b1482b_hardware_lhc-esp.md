@@ -1,6 +1,6 @@
 # 1482. lhc-esp
 
-Board 1,482 of the 3,126 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 14](../CorpusTestingPages/Corpus-Testing-14.md#1482-lhc-esp).
+Board 1,482 of the 3,127 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 14](../CorpusTestingPages/Corpus-Testing-14.md#1482-lhc-esp).
 
 ![lhc-esp: stages 4 and 6 take 50% to 81% of a run. Simulation, GLB takes 4.4 s. Simulation, STEP takes 5.9 s. Simulation, STL takes 4.6 s. Simulation, OBJ takes 6.6 s. Visual, GLB takes 6.8 s. Visual, OBJ takes 8.4 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b1482b_hardware_lhc-esp/stages.webp)
 

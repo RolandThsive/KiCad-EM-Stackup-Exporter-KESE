@@ -1,6 +1,6 @@
 # 1475. zx2_mem_test01
 
-Board 1,475 of the 3,126 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 14](../CorpusTestingPages/Corpus-Testing-14.md#1475-zx2_mem_test01).
+Board 1,475 of the 3,127 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 14](../CorpusTestingPages/Corpus-Testing-14.md#1475-zx2_mem_test01).
 
 ![zx2_mem_test01: stages 4 and 6 take 51% to 83% of a run. Simulation, GLB takes 7.6 s. Simulation, STEP takes 9.8 s. Simulation, STL takes 7.8 s. Simulation, OBJ takes 12 s. Visual, GLB takes 9.5 s. Visual, OBJ takes 12 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b1475b_ZX-Spectrum-diy_zx2-mem-test01/stages.webp)
 

@@ -1,6 +1,6 @@
 # 1794. BB-ADS1262-Rev.A
 
-Board 1,794 of the 3,126 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 17](../CorpusTestingPages/Corpus-Testing-17.md#1794-bb-ads1262-reva).
+Board 1,794 of the 3,127 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 17](../CorpusTestingPages/Corpus-Testing-17.md#1794-bb-ads1262-reva).
 
 ![BB-ADS1262-Rev.A: stages 4 and 6 take 52% to 80% of a run. Simulation, GLB takes 4.4 s. Simulation, STEP takes 5.8 s. Simulation, STL takes 4.2 s. Simulation, OBJ takes 6.4 s. Visual, GLB takes 6.8 s. Visual, OBJ takes 8.0 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b1794b_BB-ADS1262_BB-ADS1262-Rev-A/stages.webp)
 

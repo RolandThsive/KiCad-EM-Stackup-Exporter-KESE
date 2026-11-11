@@ -1,6 +1,6 @@
 # 2538. SFUSat-Radio
 
-Board 2,538 of the 3,126 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 24](../CorpusTestingPages/Corpus-Testing-24.md#2538-sfusat-radio).
+Board 2,538 of the 3,127 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 24](../CorpusTestingPages/Corpus-Testing-24.md#2538-sfusat-radio).
 
 ![SFUSat-Radio: stages 4 and 6 take 56% to 83% of a run. Simulation, GLB takes 50 s. Simulation, STEP takes 59 s. Simulation, STL takes 49 s. Simulation, OBJ takes 69 s. Visual, GLB takes 65 s. Visual, OBJ takes 79 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2538b_cubesat-radio_SFUSat-Radio/stages.webp)
 

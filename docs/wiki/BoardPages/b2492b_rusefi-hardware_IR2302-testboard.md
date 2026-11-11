@@ -1,6 +1,6 @@
 # 2492. IR2302-testboard
 
-Board 2,492 of the 3,126 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 24](../CorpusTestingPages/Corpus-Testing-24.md#2492-ir2302-testboard).
+Board 2,492 of the 3,127 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 24](../CorpusTestingPages/Corpus-Testing-24.md#2492-ir2302-testboard).
 
 ![IR2302-testboard: stages 4 and 6 take 55% to 82% of a run. Simulation, GLB takes 8.6 s. Simulation, STEP takes 11 s. Simulation, STL takes 8.9 s. Simulation, OBJ takes 13 s. Visual, GLB takes 11 s. Visual, OBJ takes 14 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2492b_rusefi-hardware_IR2302-testboard/stages.webp)
 

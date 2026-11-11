@@ -1,6 +1,6 @@
 # 2490. GDI-6ch
 
-Board 2,490 of the 3,126 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 24](../CorpusTestingPages/Corpus-Testing-24.md#2490-gdi-6ch).
+Board 2,490 of the 3,127 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 24](../CorpusTestingPages/Corpus-Testing-24.md#2490-gdi-6ch).
 
 ![GDI-6ch: stages 4 and 6 take 49% to 80% of a run. Simulation, GLB takes 42 s. Simulation, STEP takes 54 s. Simulation, STL takes 44 s. Simulation, OBJ takes 67 s. Visual, GLB takes 71 s. Visual, OBJ takes 84 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2490b_rusefi-hardware_GDI-6ch/stages.webp)
 

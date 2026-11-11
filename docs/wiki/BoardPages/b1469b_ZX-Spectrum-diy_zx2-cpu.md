@@ -1,6 +1,6 @@
 # 1469. zx2_cpu
 
-Board 1,469 of the 3,126 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 14](../CorpusTestingPages/Corpus-Testing-14.md#1469-zx2_cpu).
+Board 1,469 of the 3,127 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 14](../CorpusTestingPages/Corpus-Testing-14.md#1469-zx2_cpu).
 
 ![zx2_cpu: stages 4 and 6 take 54% to 85% of a run. Simulation, GLB takes 9.8 s. Simulation, STEP takes 13 s. Simulation, STL takes 10 s. Simulation, OBJ takes 15 s. Visual, GLB takes 15 s. Visual, OBJ takes 18 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b1469b_ZX-Spectrum-diy_zx2-cpu/stages.webp)
 

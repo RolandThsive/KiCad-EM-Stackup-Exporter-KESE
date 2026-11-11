@@ -1,6 +1,6 @@
 # 1366. reform2-trackball
 
-Board 1,366 of the 3,126 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 13](../CorpusTestingPages/Corpus-Testing-13.md#1366-reform2-trackball).
+Board 1,366 of the 3,127 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 13](../CorpusTestingPages/Corpus-Testing-13.md#1366-reform2-trackball).
 
 ![reform2-trackball: stages 4 and 6 take 53% to 81% of a run. Simulation, GLB takes 5.7 s. Simulation, STEP takes 8.2 s. Simulation, STL takes 5.7 s. Simulation, OBJ takes 8.6 s. Visual, GLB takes 8.3 s. Visual, OBJ takes 10 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b1366b_reform_reform2-trackball/stages.webp)
 

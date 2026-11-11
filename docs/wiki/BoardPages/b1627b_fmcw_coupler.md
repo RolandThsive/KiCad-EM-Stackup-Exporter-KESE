@@ -1,6 +1,6 @@
 # 1627. coupler
 
-Board 1,627 of the 3,126 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 16](../CorpusTestingPages/Corpus-Testing-16.md#1627-coupler).
+Board 1,627 of the 3,127 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 16](../CorpusTestingPages/Corpus-Testing-16.md#1627-coupler).
 
 ![coupler: stages 4 and 6 take 50% to 76% of a run. Simulation, GLB takes 5.9 s. Simulation, STEP takes 7.3 s. Simulation, STL takes 6.1 s. Simulation, OBJ takes 9.2 s. Visual, GLB takes 5.7 s. Visual, OBJ takes 7.6 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b1627b_fmcw_coupler/stages.webp)
 

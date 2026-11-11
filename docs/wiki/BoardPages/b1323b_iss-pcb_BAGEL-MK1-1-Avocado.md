@@ -1,6 +1,6 @@
 # 1323. BAGEL-MK1.1-Avocado
 
-Board 1,323 of the 3,126 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 13](../CorpusTestingPages/Corpus-Testing-13.md#1323-bagel-mk11-avocado).
+Board 1,323 of the 3,127 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 13](../CorpusTestingPages/Corpus-Testing-13.md#1323-bagel-mk11-avocado).
 
 ![BAGEL-MK1.1-Avocado: stages 4 and 6 take 52% to 83% of a run. Simulation, GLB takes 40 s. Simulation, STEP takes 48 s. Simulation, STL takes 41 s. Simulation, OBJ takes 61 s. Visual, GLB takes 59 s. Visual, OBJ takes 74 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b1323b_iss-pcb_BAGEL-MK1-1-Avocado/stages.webp)
 

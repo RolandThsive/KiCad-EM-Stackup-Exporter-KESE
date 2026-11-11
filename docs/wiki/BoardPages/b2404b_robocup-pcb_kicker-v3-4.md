@@ -1,6 +1,6 @@
 # 2404. kicker-v3.4
 
-Board 2,404 of the 3,126 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 23](../CorpusTestingPages/Corpus-Testing-23.md#2404-kicker-v34).
+Board 2,404 of the 3,127 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 23](../CorpusTestingPages/Corpus-Testing-23.md#2404-kicker-v34).
 
 ![kicker-v3.4: stages 4 and 6 take 46% to 80% of a run. Simulation, GLB takes 21 s. Simulation, STEP takes 26 s. Simulation, STL takes 21 s. Simulation, OBJ takes 34 s. Visual, GLB takes 31 s. Visual, OBJ takes 41 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2404b_robocup-pcb_kicker-v3-4/stages.webp)
 

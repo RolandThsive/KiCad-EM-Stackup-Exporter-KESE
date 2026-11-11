@@ -1,6 +1,6 @@
 # 1750. PQ_MagYBoard
 
-Board 1,750 of the 3,126 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 17](../CorpusTestingPages/Corpus-Testing-17.md#1750-pq_magyboard).
+Board 1,750 of the 3,127 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 17](../CorpusTestingPages/Corpus-Testing-17.md#1750-pq_magyboard).
 
 ![PQ_MagYBoard: stages 4 and 6 take 43% to 73% of a run. Simulation, GLB takes 3.7 s. Simulation, STEP takes 5.5 s. Simulation, STL takes 3.8 s. Simulation, OBJ takes 4.6 s. Visual, GLB takes 4.8 s. Visual, OBJ takes 5.8 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b1750b_pocat-hw_PQ-MagYBoard/stages.webp)
 

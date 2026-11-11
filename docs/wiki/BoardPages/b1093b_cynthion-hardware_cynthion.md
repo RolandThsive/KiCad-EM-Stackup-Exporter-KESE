@@ -1,6 +1,6 @@
 # 1093. cynthion
 
-Board 1,093 of the 3,126 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 11](../CorpusTestingPages/Corpus-Testing-11.md#1093-cynthion).
+Board 1,093 of the 3,127 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 11](../CorpusTestingPages/Corpus-Testing-11.md#1093-cynthion).
 
 ![cynthion: stages 4 and 6 take 50% to 84% of a run. Simulation, GLB takes 56 s. Simulation, STEP takes 68 s. Simulation, STL takes 57 s. Simulation, OBJ takes 90 s. Visual, GLB takes 80 s. Visual, OBJ takes 98 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b1093b_cynthion-hardware_cynthion/stages.webp)
 

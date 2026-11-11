@@ -1,6 +1,6 @@
 # 2557. Z80-SBC
 
-Board 2,557 of the 3,126 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 24](../CorpusTestingPages/Corpus-Testing-24.md#2557-z80-sbc).
+Board 2,557 of the 3,127 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 24](../CorpusTestingPages/Corpus-Testing-24.md#2557-z80-sbc).
 
 ![Z80-SBC: stages 4 and 6 take 59% to 86% of a run. Simulation, GLB takes 72 s. Simulation, STEP takes 86 s. Simulation, STL takes 71 s. Simulation, OBJ takes 96 s. Visual, GLB takes 90 s. Visual, OBJ takes 2 min](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2557b_zeta-sbc_Z80-SBC/stages.webp)
 

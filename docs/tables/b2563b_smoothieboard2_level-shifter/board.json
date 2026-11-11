@@ -4,7 +4,7 @@
  "path": "smoothieware__smoothieboard2/extension-boards/legacy-level-shifter-high-current/level-shifter.kicad_pcb",
  "license": "As README.md states it: \"Under the same license as v1 ( CERN OHL v1.2 or later and GPL v3 or later )\"",
  "license_checked": "2026-11-08",
- "rank": 1862,
+ "rank": 1863,
  "score": 850,
  "level": "LOW",
  "complexity": {

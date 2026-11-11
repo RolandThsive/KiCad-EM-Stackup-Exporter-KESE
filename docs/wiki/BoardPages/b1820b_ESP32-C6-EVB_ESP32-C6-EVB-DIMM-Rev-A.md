@@ -1,6 +1,6 @@
 # 1820. ESP32-C6-EVB_DIMM_Rev_A
 
-Board 1,820 of the 3,126 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 17](../CorpusTestingPages/Corpus-Testing-17.md#1820-esp32-c6-evb_dimm_rev_a).
+Board 1,820 of the 3,127 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 17](../CorpusTestingPages/Corpus-Testing-17.md#1820-esp32-c6-evb_dimm_rev_a).
 
 ![ESP32-C6-EVB_DIMM_Rev_A: stages 4 and 6 take 52% to 82% of a run. Simulation, GLB takes 14 s. Simulation, STEP takes 18 s. Simulation, STL takes 15 s. Simulation, OBJ takes 22 s. Visual, GLB takes 22 s. Visual, OBJ takes 28 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b1820b_ESP32-C6-EVB_ESP32-C6-EVB-DIMM-Rev-A/stages.webp)
 

@@ -1,6 +1,6 @@
 # 2320. FC_V5d_Production_Rev2
 
-Board 2,320 of the 3,126 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 22](../CorpusTestingPages/Corpus-Testing-22.md#2320-fc_v5d_production_rev2).
+Board 2,320 of the 3,127 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 22](../CorpusTestingPages/Corpus-Testing-22.md#2320-fc_v5d_production_rev2).
 
 ![FC_V5d_Production_Rev2: stages 4 and 6 take 49% to 79% of a run. Simulation, GLB takes 61 s. Simulation, STEP takes 76 s. Simulation, STL takes 65 s. Simulation, OBJ takes 94 s. Visual, GLB takes 93 s. Visual, OBJ takes 2 min](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2320b_flight-controller-board_FC-V5d-Production-Rev2/stages.webp)
 

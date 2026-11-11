@@ -1,6 +1,6 @@
 # 2606. SparkFun_GNSS_Flex_Module_LG290P_panelized
 
-Board 2,606 of the 3,126 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 25](../CorpusTestingPages/Corpus-Testing-25.md#2606-sparkfun_gnss_flex_module_lg290p_panelized).
+Board 2,606 of the 3,127 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 25](../CorpusTestingPages/Corpus-Testing-25.md#2606-sparkfun_gnss_flex_module_lg290p_panelized).
 
 ![Stages 4 and 6 take 53% to 82% of a run. Simulation, GLB takes 91 s. Simulation, STEP takes 2 min. Simulation, STL takes 95 s. Simulation, OBJ takes 2 min. Visual, GLB takes 2 min. Visual, OBJ takes 3 min](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2606b_sparkfun-gnss-flex-system_SparkFun-GNSS-Flex-Module-LG290P-panelized/stages.webp)
 

@@ -1,6 +1,6 @@
 # 1648. nubus-to-ztex
 
-Board 1,648 of the 3,126 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 16](../CorpusTestingPages/Corpus-Testing-16.md#1648-nubus-to-ztex).
+Board 1,648 of the 3,127 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 16](../CorpusTestingPages/Corpus-Testing-16.md#1648-nubus-to-ztex).
 
 ![nubus-to-ztex: stages 4 and 6 take 55% to 85% of a run. Simulation, GLB takes 51 s. Simulation, STEP takes 63 s. Simulation, STL takes 52 s. Simulation, OBJ takes 74 s. Visual, GLB takes 70 s. Visual, OBJ takes 85 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b1648b_NuBusFPGA_nubus-to-ztex/stages.webp)
 

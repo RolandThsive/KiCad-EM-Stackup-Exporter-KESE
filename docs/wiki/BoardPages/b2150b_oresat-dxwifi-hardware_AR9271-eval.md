@@ -1,6 +1,6 @@
 # 2150. AR9271_eval
 
-Board 2,150 of the 3,126 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 20](../CorpusTestingPages/Corpus-Testing-20.md#2150-ar9271_eval).
+Board 2,150 of the 3,127 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 20](../CorpusTestingPages/Corpus-Testing-20.md#2150-ar9271_eval).
 
 ![AR9271_eval: stages 4 and 6 take 56% to 83% of a run. Simulation, GLB takes 20 s. Simulation, STEP takes 24 s. Simulation, STL takes 20 s. Simulation, OBJ takes 28 s. Visual, GLB takes 26 s. Visual, OBJ takes 31 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2150b_oresat-dxwifi-hardware_AR9271-eval/stages.webp)
 

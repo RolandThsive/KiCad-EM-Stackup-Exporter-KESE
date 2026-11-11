@@ -1,6 +1,6 @@
 # 2566. Rpi-zero
 
-Board 2,566 of the 3,126 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 24](../CorpusTestingPages/Corpus-Testing-24.md#2566-rpi-zero).
+Board 2,566 of the 3,127 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 24](../CorpusTestingPages/Corpus-Testing-24.md#2566-rpi-zero).
 
 ![Rpi-zero: stages 4 and 6 take 57% to 84% of a run. Simulation, GLB takes 6.2 s. Simulation, STEP takes 7.7 s. Simulation, STL takes 6.1 s. Simulation, OBJ takes 8.8 s. Visual, GLB takes 8.2 s. Visual, OBJ takes 9.2 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2566b_smoothieboard2_Rpi-zero/stages.webp)
 

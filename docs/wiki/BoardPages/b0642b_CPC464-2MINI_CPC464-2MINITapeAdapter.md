@@ -1,6 +1,6 @@
 # 642. CPC464-2MINITapeAdapter
 
-Board 642 of the 3,126 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 6](../CorpusTestingPages/Corpus-Testing-06.md#642-cpc464-2minitapeadapter).
+Board 642 of the 3,127 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 6](../CorpusTestingPages/Corpus-Testing-06.md#642-cpc464-2minitapeadapter).
 
 ![CPC464-2MINITapeAdapter: stages 4 and 6 take 50% to 82% of a run. Simulation, GLB takes 4.1 s. Simulation, STEP takes 5.3 s. Simulation, STL takes 4.0 s. Simulation, OBJ takes 5.8 s. Visual, GLB takes 6.0 s. Visual, OBJ takes 7.3 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b0642b_CPC464-2MINI_CPC464-2MINITapeAdapter/stages.webp)
 

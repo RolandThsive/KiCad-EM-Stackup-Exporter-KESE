@@ -1,6 +1,6 @@
 # 2428. Motor_driver_A4988
 
-Board 2,428 of the 3,126 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 23](../CorpusTestingPages/Corpus-Testing-23.md#2428-motor_driver_a4988).
+Board 2,428 of the 3,127 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 23](../CorpusTestingPages/Corpus-Testing-23.md#2428-motor_driver_a4988).
 
 ![Motor_driver_A4988: stages 4 and 6 take 47% to 79% of a run. Simulation, GLB takes 2.2 s. Simulation, STEP takes 3.1 s. Simulation, STL takes 2.2 s. Simulation, OBJ takes 3.3 s. Visual, GLB takes 3.2 s. Visual, OBJ takes 4.1 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2428b_rusefi-hardware_Motor-driver-A4988/stages.webp)
 

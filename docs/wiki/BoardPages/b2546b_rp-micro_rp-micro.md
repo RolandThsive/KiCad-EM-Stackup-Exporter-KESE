@@ -1,6 +1,6 @@
 # 2546. rp-micro
 
-Board 2,546 of the 3,126 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 24](../CorpusTestingPages/Corpus-Testing-24.md#2546-rp-micro).
+Board 2,546 of the 3,127 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 24](../CorpusTestingPages/Corpus-Testing-24.md#2546-rp-micro).
 
 ![rp-micro: stages 4 and 6 take 50% to 83% of a run. Simulation, GLB takes 5.1 s. Simulation, STEP takes 6.9 s. Simulation, STL takes 5.1 s. Simulation, OBJ takes 7.7 s. Visual, GLB takes 7.1 s. Visual, OBJ takes 9.3 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2546b_rp-micro_rp-micro/stages.webp)
 

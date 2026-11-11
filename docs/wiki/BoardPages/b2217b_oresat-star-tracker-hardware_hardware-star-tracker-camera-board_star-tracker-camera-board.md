@@ -1,6 +1,6 @@
 # 2217. star-tracker-camera-board
 
-Board 2,217 of the 3,126 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 21](../CorpusTestingPages/Corpus-Testing-21.md#2217-star-tracker-camera-board).
+Board 2,217 of the 3,127 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 21](../CorpusTestingPages/Corpus-Testing-21.md#2217-star-tracker-camera-board).
 
 ![star-tracker-camera-board: stages 4 and 6 take 46% to 79% of a run. Simulation, GLB takes 5.5 s. Simulation, STEP takes 6.8 s. Simulation, STL takes 5.4 s. Simulation, OBJ takes 8.3 s. Visual, GLB takes 8.6 s. Visual, OBJ takes 11 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2217b_oresat-star-tracker-hardware_hardware-star-tracker-camera-board_star-tracker-camera-board/stages.webp)
 

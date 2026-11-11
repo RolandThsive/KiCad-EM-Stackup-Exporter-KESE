@@ -1,6 +1,6 @@
 # 2445. hi-lo
 
-Board 2,445 of the 3,126 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 23](../CorpusTestingPages/Corpus-Testing-23.md#2445-hi-lo).
+Board 2,445 of the 3,127 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 23](../CorpusTestingPages/Corpus-Testing-23.md#2445-hi-lo).
 
 ![hi-lo: stages 4 and 6 take 49% to 79% of a run. Simulation, GLB takes 2.9 s. Simulation, STEP takes 4.0 s. Simulation, STL takes 3.0 s. Simulation, OBJ takes 4.2 s. Visual, GLB takes 4.5 s. Visual, OBJ takes 5.7 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2445b_rusefi-hardware_classic-designs-hi-lo-driver_hi-lo/stages.webp)
 

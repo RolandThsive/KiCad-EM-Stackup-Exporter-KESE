@@ -1,6 +1,6 @@
 # 2179. swd-to-card-debug-3
 
-Board 2,179 of the 3,126 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 21](../CorpusTestingPages/Corpus-Testing-21.md#2179-swd-to-card-debug-3).
+Board 2,179 of the 3,127 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 21](../CorpusTestingPages/Corpus-Testing-21.md#2179-swd-to-card-debug-3).
 
 ![swd-to-card-debug-3: stages 4 and 6 take 52% to 76% of a run. Simulation, GLB takes 3.6 s. Simulation, STEP takes 4.7 s. Simulation, STL takes 3.8 s. Simulation, OBJ takes 5.3 s. Visual, GLB takes 5.3 s. Visual, OBJ takes 6.1 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2179b_oresat-flatsat_swd-to-card-debug-3/stages.webp)
 

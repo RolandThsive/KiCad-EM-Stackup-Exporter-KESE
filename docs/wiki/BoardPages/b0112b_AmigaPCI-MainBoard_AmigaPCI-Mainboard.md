@@ -1,6 +1,6 @@
 # 112. AmigaPCI Mainboard
 
-Board 112 of the 3,126 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 2](../CorpusTestingPages/Corpus-Testing-02.md#112-amigapci-mainboard).
+Board 112 of the 3,127 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 2](../CorpusTestingPages/Corpus-Testing-02.md#112-amigapci-mainboard).
 
 ![AmigaPCI Mainboard: stages 4 and 6 take 46% to 87% of a run. Simulation, GLB takes 9 min. Simulation, STEP takes 12 min. Simulation, STL takes 10 min. Simulation, OBJ takes 17 min. Visual, GLB takes 16 min. Visual, OBJ takes 12 min](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b0112b_AmigaPCI-MainBoard_AmigaPCI-Mainboard/stages.webp)
 

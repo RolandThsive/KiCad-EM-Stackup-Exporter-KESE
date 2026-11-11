@@ -1,6 +1,6 @@
 # 2112. mobo
 
-Board 2,112 of the 3,126 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 20](../CorpusTestingPages/Corpus-Testing-20.md#2112-mobo).
+Board 2,112 of the 3,127 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 20](../CorpusTestingPages/Corpus-Testing-20.md#2112-mobo).
 
 ![mobo: stages 4 and 6 take 52% to 82% of a run. Simulation, GLB takes 61 s. Simulation, STEP takes 74 s. Simulation, STL takes 62 s. Simulation, OBJ takes 93 s. Visual, GLB takes 93 s. Visual, OBJ takes 2 min](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2112b_lumenpnp_mobo/stages.webp)
 

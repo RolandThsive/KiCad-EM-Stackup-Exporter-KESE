@@ -1,6 +1,6 @@
 # 2368. pressure_XGZP6897A
 
-Board 2,368 of the 3,126 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 22](../CorpusTestingPages/Corpus-Testing-22.md#2368-pressure_xgzp6897a).
+Board 2,368 of the 3,127 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 22](../CorpusTestingPages/Corpus-Testing-22.md#2368-pressure_xgzp6897a).
 
 ![pressure_XGZP6897A: stages 4 and 6 take 50% to 77% of a run. Simulation, GLB takes 2.0 s. Simulation, STEP takes 2.8 s. Simulation, STL takes 2.0 s. Simulation, OBJ takes 2.8 s. Visual, GLB takes 2.4 s. Visual, OBJ takes 2.8 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2368b_ventilator_pressure-XGZP6897A/stages.webp)
 

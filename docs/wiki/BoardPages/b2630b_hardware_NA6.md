@@ -1,6 +1,6 @@
 # 2630. NA6
 
-Board 2,630 of the 3,126 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 25](../CorpusTestingPages/Corpus-Testing-25.md#2630-na6).
+Board 2,630 of the 3,127 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 25](../CorpusTestingPages/Corpus-Testing-25.md#2630-na6).
 
 ![NA6: stages 4 and 6 take 59% to 86% of a run. Simulation, GLB takes 44 s. Simulation, STEP takes 50 s. Simulation, STL takes 42 s. Simulation, OBJ takes 58 s. Visual, GLB takes 55 s. Visual, OBJ takes 62 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2630b_hardware_NA6/stages.webp)
 

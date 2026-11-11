@@ -1,6 +1,6 @@
 # 1388. Commodore-Vic-20
 
-Board 1,388 of the 3,126 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 13](../CorpusTestingPages/Corpus-Testing-13.md#1388-commodore-vic-20).
+Board 1,388 of the 3,127 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 13](../CorpusTestingPages/Corpus-Testing-13.md#1388-commodore-vic-20).
 
 ![Commodore-Vic-20: stages 4 and 6 take 54% to 85% of a run. Simulation, GLB takes 53 s. Simulation, STEP takes 65 s. Simulation, STL takes 53 s. Simulation, OBJ takes 80 s. Visual, GLB takes 78 s. Visual, OBJ takes 93 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b1388b_Commodore-Vic-20_Commodore-Vic-20/stages.webp)
 

@@ -1,6 +1,6 @@
 # 2537. reCamera 2002 S4 GC2053 Sensor Board_V1.0_SCH&PCB_250905
 
-Board 2,537 of the 3,126 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 24](../CorpusTestingPages/Corpus-Testing-24.md#2537-recamera-2002-s4-gc2053-sensor-board_v10_schpcb_250905).
+Board 2,537 of the 3,127 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 24](../CorpusTestingPages/Corpus-Testing-24.md#2537-recamera-2002-s4-gc2053-sensor-board_v10_schpcb_250905).
 
 ![Stages 4 and 6 take 54% to 86% of a run. Simulation, GLB takes 13 s. Simulation, STEP takes 15 s. Simulation, STL takes 12 s. Simulation, OBJ takes 18 s. Visual, GLB takes 19 s. Visual, OBJ takes 24 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2537b_OSHW-reCamera-Series_reCamera-2002-S4-GC2053-Sensor-Board-V1-0-SCH-PCB-250905/stages.webp)
 

@@ -1,6 +1,6 @@
 # 1770. tmp
 
-Board 1,770 of the 3,126 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 17](../CorpusTestingPages/Corpus-Testing-17.md#1770-tmp).
+Board 1,770 of the 3,127 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 17](../CorpusTestingPages/Corpus-Testing-17.md#1770-tmp).
 
 ![tmp: stages 4 and 6 take 58% to 86% of a run. Simulation, GLB takes 7.9 s. Simulation, STEP takes 9.9 s. Simulation, STL takes 8.1 s. Simulation, OBJ takes 11 s. Visual, GLB takes 11 s. Visual, OBJ takes 13 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b1770b_freeeeg32_tmp/stages.webp)
 

@@ -1,6 +1,6 @@
 # 2307. inhibit_diagram
 
-Board 2,307 of the 3,126 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 22](../CorpusTestingPages/Corpus-Testing-22.md#2307-inhibit_diagram).
+Board 2,307 of the 3,127 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 22](../CorpusTestingPages/Corpus-Testing-22.md#2307-inhibit_diagram).
 
 ![inhibit_diagram: stages 4 and 6 take 31% to 46% of a run. Simulation, GLB takes 0.6 s. Simulation, STEP takes 0.8 s. Simulation, STL takes 0.6 s. Simulation, OBJ takes 0.8 s. Visual, GLB takes 0.6 s. Visual, OBJ takes 0.7 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2307b_battery-board_inhibit-diagram/stages.webp)
 

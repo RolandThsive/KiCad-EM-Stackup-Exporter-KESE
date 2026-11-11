@@ -1,6 +1,6 @@
 # 1491. mppt-1210-hus
 
-Board 1,491 of the 3,126 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 14](../CorpusTestingPages/Corpus-Testing-14.md#1491-mppt-1210-hus).
+Board 1,491 of the 3,127 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 14](../CorpusTestingPages/Corpus-Testing-14.md#1491-mppt-1210-hus).
 
 ![mppt-1210-hus: stages 4 and 6 take 54% to 83% of a run. Simulation, GLB takes 16 s. Simulation, STEP takes 19 s. Simulation, STL takes 16 s. Simulation, OBJ takes 23 s. Visual, GLB takes 22 s. Visual, OBJ takes 27 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b1491b_mppt-1210-hus_mppt-1210-hus/stages.webp)
 

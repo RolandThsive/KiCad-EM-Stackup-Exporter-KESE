@@ -1,6 +1,6 @@
 # 1403. gw
 
-Board 1,403 of the 3,126 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 13](../CorpusTestingPages/Corpus-Testing-13.md#1403-gw).
+Board 1,403 of the 3,127 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 13](../CorpusTestingPages/Corpus-Testing-13.md#1403-gw).
 
 ![gw: stages 4 and 6 take 54% to 84% of a run. Simulation, GLB takes 39 s. Simulation, STEP takes 46 s. Simulation, STL takes 40 s. Simulation, OBJ takes 59 s. Visual, GLB takes 55 s. Visual, OBJ takes 69 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b1403b_blixten_gw/stages.webp)
 

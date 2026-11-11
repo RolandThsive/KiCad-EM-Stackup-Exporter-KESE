@@ -1,6 +1,6 @@
 # 1905. iCE40HX8K-EVB_Rev_B1
 
-Board 1,905 of the 3,126 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 18](../CorpusTestingPages/Corpus-Testing-18.md#1905-ice40hx8k-evb_rev_b1).
+Board 1,905 of the 3,127 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 18](../CorpusTestingPages/Corpus-Testing-18.md#1905-ice40hx8k-evb_rev_b1).
 
 ![iCE40HX8K-EVB_Rev_B1: stages 4 and 6 take 48% to 82% of a run. Simulation, GLB takes 51 s. Simulation, STEP takes 62 s. Simulation, STL takes 51 s. Simulation, OBJ takes 79 s. Visual, GLB takes 83 s. Visual, OBJ takes 2 min](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b1905b_iCE40HX8K-EVB_iCE40HX8K-EVB-Rev-B1/stages.webp)
 

@@ -1,6 +1,6 @@
 # 2505. wideband_controller
 
-Board 2,505 of the 3,126 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 24](../CorpusTestingPages/Corpus-Testing-24.md#2505-wideband_controller).
+Board 2,505 of the 3,127 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 24](../CorpusTestingPages/Corpus-Testing-24.md#2505-wideband_controller).
 
 ![wideband_controller: stages 4 and 6 take 56% to 83% of a run. Simulation, GLB takes 21 s. Simulation, STEP takes 26 s. Simulation, STL takes 22 s. Simulation, OBJ takes 30 s. Visual, GLB takes 30 s. Visual, OBJ takes 35 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2505b_rusefi-hardware_wideband-controller/stages.webp)
 

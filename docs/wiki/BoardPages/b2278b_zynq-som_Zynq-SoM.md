@@ -1,6 +1,6 @@
 # 2278. Zynq_SoM
 
-Board 2,278 of the 3,126 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 22](../CorpusTestingPages/Corpus-Testing-22.md#2278-zynq_som).
+Board 2,278 of the 3,127 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 22](../CorpusTestingPages/Corpus-Testing-22.md#2278-zynq_som).
 
 ![Zynq_SoM: stages 4 and 6 take 43% to 85% of a run. Simulation, GLB takes 67 s. Simulation, STEP takes 83 s. Simulation, STL takes 68 s. Simulation, OBJ takes 2 min. Visual, GLB takes 2 min. Visual, OBJ takes 3 min](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2278b_zynq-som_Zynq-SoM/stages.webp)
 

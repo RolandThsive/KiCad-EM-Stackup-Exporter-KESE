@@ -1,6 +1,6 @@
 # 1977. RVPC_Rev_B
 
-Board 1,977 of the 3,126 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 19](../CorpusTestingPages/Corpus-Testing-19.md#1977-rvpc_rev_b).
+Board 1,977 of the 3,127 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 19](../CorpusTestingPages/Corpus-Testing-19.md#1977-rvpc_rev_b).
 
 ![RVPC_Rev_B: stages 4 and 6 take 46% to 80% of a run. Simulation, GLB takes 6.3 s. Simulation, STEP takes 8.1 s. Simulation, STL takes 6.0 s. Simulation, OBJ takes 9.2 s. Visual, GLB takes 8.8 s. Visual, OBJ takes 11 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b1977b_RVPC_RVPC-Rev-B/stages.webp)
 

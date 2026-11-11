@@ -1,6 +1,6 @@
 # 2455. pin_board_1_x2
 
-Board 2,455 of the 3,126 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 23](../CorpusTestingPages/Corpus-Testing-23.md#2455-pin_board_1_x2).
+Board 2,455 of the 3,127 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 23](../CorpusTestingPages/Corpus-Testing-23.md#2455-pin_board_1_x2).
 
 ![pin_board_1_x2: stages 4 and 6 take 58% to 87% of a run. Simulation, GLB takes 16 s. Simulation, STEP takes 20 s. Simulation, STL takes 17 s. Simulation, OBJ takes 23 s. Visual, GLB takes 22 s. Visual, OBJ takes 27 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2455b_rusefi-hardware_pin-board-1-x2/stages.webp)
 

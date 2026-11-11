@@ -4,7 +4,7 @@
  "path": "mntmn__amiga2000-gfxcard/kicad/amiga-gfxcard-before-pour.kicad_pcb",
  "license": "As README.md states it: \"All aspects of the project (schematics, PCB, verilog, driver sources) are or will be published as open source under the MIT license, so you are free to produce your own clones of the board.\"",
  "license_checked": "2026-11-08",
- "rank": 900,
+ "rank": 901,
  "score": 2832,
  "level": "MEDIUM",
  "complexity": {

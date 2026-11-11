@@ -1,6 +1,6 @@
 # 2249. battery_contact_panel
 
-Board 2,249 of the 3,126 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 21](../CorpusTestingPages/Corpus-Testing-21.md#2249-battery_contact_panel).
+Board 2,249 of the 3,127 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 21](../CorpusTestingPages/Corpus-Testing-21.md#2249-battery_contact_panel).
 
 ![battery_contact_panel: stages 4 and 6 take 39% to 70% of a run. Simulation, GLB takes 1.6 s. Simulation, STEP takes 2.3 s. Simulation, STL takes 1.6 s. Simulation, OBJ takes 2.2 s. Visual, GLB takes 2.2 s. Visual, OBJ takes 2.9 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2249b_cubesat_battery-contact-panel/stages.webp)
 

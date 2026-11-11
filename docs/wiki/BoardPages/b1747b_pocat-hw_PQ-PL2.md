@@ -1,6 +1,6 @@
 # 1747. PQ_PL2
 
-Board 1,747 of the 3,126 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 17](../CorpusTestingPages/Corpus-Testing-17.md#1747-pq_pl2).
+Board 1,747 of the 3,127 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 17](../CorpusTestingPages/Corpus-Testing-17.md#1747-pq_pl2).
 
 ![PQ_PL2: stages 4 and 6 take 49% to 78% of a run. Simulation, GLB takes 12 s. Simulation, STEP takes 15 s. Simulation, STL takes 13 s. Simulation, OBJ takes 19 s. Visual, GLB takes 18 s. Visual, OBJ takes 23 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b1747b_pocat-hw_PQ-PL2/stages.webp)
 

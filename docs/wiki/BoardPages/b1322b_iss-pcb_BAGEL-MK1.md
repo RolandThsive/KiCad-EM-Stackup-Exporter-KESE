@@ -1,6 +1,6 @@
 # 1322. BAGEL-MK1
 
-Board 1,322 of the 3,126 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 13](../CorpusTestingPages/Corpus-Testing-13.md#1322-bagel-mk1).
+Board 1,322 of the 3,127 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 13](../CorpusTestingPages/Corpus-Testing-13.md#1322-bagel-mk1).
 
 ![BAGEL-MK1: stages 4 and 6 take 51% to 83% of a run. Simulation, GLB takes 33 s. Simulation, STEP takes 42 s. Simulation, STL takes 35 s. Simulation, OBJ takes 52 s. Visual, GLB takes 45 s. Visual, OBJ takes 56 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b1322b_iss-pcb_BAGEL-MK1/stages.webp)
 

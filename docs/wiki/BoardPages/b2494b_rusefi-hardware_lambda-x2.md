@@ -1,6 +1,6 @@
 # 2494. lambda-x2
 
-Board 2,494 of the 3,126 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 24](../CorpusTestingPages/Corpus-Testing-24.md#2494-lambda-x2).
+Board 2,494 of the 3,127 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 24](../CorpusTestingPages/Corpus-Testing-24.md#2494-lambda-x2).
 
 ![lambda-x2: stages 4 and 6 take 55% to 84% of a run. Simulation, GLB takes 49 s. Simulation, STEP takes 57 s. Simulation, STL takes 50 s. Simulation, OBJ takes 71 s. Visual, GLB takes 71 s. Visual, OBJ takes 87 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2494b_rusefi-hardware_lambda-x2/stages.webp)
 

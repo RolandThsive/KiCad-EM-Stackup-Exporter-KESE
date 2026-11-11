@@ -1,6 +1,6 @@
 # 1975. RT1010Py-DevKit_RevB
 
-Board 1,975 of the 3,126 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 19](../CorpusTestingPages/Corpus-Testing-19.md#1975-rt1010py-devkit_revb).
+Board 1,975 of the 3,127 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 19](../CorpusTestingPages/Corpus-Testing-19.md#1975-rt1010py-devkit_revb).
 
 ![RT1010Py-DevKit_RevB: stages 4 and 6 take 55% to 83% of a run. Simulation, GLB takes 13 s. Simulation, STEP takes 16 s. Simulation, STL takes 14 s. Simulation, OBJ takes 19 s. Visual, GLB takes 19 s. Visual, OBJ takes 25 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b1975b_RT1010Py-DevKit_RT1010Py-DevKit-RevB/stages.webp)
 

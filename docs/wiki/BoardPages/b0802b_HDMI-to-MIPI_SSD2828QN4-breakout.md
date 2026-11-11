@@ -1,6 +1,6 @@
 # 802. SSD2828QN4-breakout
 
-Board 802 of the 3,126 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 8](../CorpusTestingPages/Corpus-Testing-08.md#802-ssd2828qn4-breakout).
+Board 802 of the 3,127 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 8](../CorpusTestingPages/Corpus-Testing-08.md#802-ssd2828qn4-breakout).
 
 ![SSD2828QN4-breakout: stages 4 and 6 take 53% to 77% of a run. Simulation, GLB takes 5.6 s. Simulation, STEP takes 7.7 s. Simulation, STL takes 6.1 s. Simulation, OBJ takes 9.1 s. Visual, GLB takes 8.5 s. Visual, OBJ takes 10 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b0802b_HDMI-to-MIPI_SSD2828QN4-breakout/stages.webp)
 

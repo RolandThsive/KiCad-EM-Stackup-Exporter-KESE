@@ -1,6 +1,6 @@
 # 2477. NGC_38_connector
 
-Board 2,477 of the 3,126 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 23](../CorpusTestingPages/Corpus-Testing-23.md#2477-ngc_38_connector).
+Board 2,477 of the 3,127 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 23](../CorpusTestingPages/Corpus-Testing-23.md#2477-ngc_38_connector).
 
 ![NGC_38_connector: stages 4 and 6 take 53% to 83% of a run. Simulation, GLB takes 5.1 s. Simulation, STEP takes 6.4 s. Simulation, STL takes 5.3 s. Simulation, OBJ takes 7.6 s. Visual, GLB takes 6.3 s. Visual, OBJ takes 7.5 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2477b_rusefi-hardware_classic-designs-rusefi-hardware-history-NGC-38-connector-rev00-11-NGC-38-connector_NGC-38-connector/stages.webp)
 

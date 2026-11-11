@@ -1,6 +1,6 @@
 # 1151. throwing-star-pro
 
-Board 1,151 of the 3,126 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 11](../CorpusTestingPages/Corpus-Testing-11.md#1151-throwing-star-pro).
+Board 1,151 of the 3,127 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 11](../CorpusTestingPages/Corpus-Testing-11.md#1151-throwing-star-pro).
 
 ![throwing-star-pro: stages 4 and 6 take 60% to 89% of a run. Simulation, GLB takes 7.4 s. Simulation, STEP takes 9.2 s. Simulation, STL takes 7.1 s. Simulation, OBJ takes 9.5 s. Visual, GLB takes 10 s. Visual, OBJ takes 12 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b1151b_throwing-star-lan-tap_throwing-star-pro/stages.webp)
 

@@ -1,6 +1,6 @@
 # 2296. healthylink_gpio_v2
 
-Board 2,296 of the 3,126 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 22](../CorpusTestingPages/Corpus-Testing-22.md#2296-healthylink_gpio_v2).
+Board 2,296 of the 3,127 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 22](../CorpusTestingPages/Corpus-Testing-22.md#2296-healthylink_gpio_v2).
 
 ![healthylink_gpio_v2: stages 4 and 6 take 51% to 80% of a run. Simulation, GLB takes 7.0 s. Simulation, STEP takes 8.6 s. Simulation, STL takes 6.9 s. Simulation, OBJ takes 10 s. Visual, GLB takes 11 s. Visual, OBJ takes 14 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2296b_protocentral-healthypi6-hardware_healthylink-gpio-v2/stages.webp)
 

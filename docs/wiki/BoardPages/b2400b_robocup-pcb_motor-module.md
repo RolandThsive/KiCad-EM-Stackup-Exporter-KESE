@@ -1,6 +1,6 @@
 # 2400. motor-module
 
-Board 2,400 of the 3,126 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 23](../CorpusTestingPages/Corpus-Testing-23.md#2400-motor-module).
+Board 2,400 of the 3,127 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 23](../CorpusTestingPages/Corpus-Testing-23.md#2400-motor-module).
 
 ![motor-module: stages 4 and 6 take 54% to 84% of a run. Simulation, GLB takes 6.4 s. Simulation, STEP takes 8.5 s. Simulation, STL takes 6.7 s. Simulation, OBJ takes 9.5 s. Visual, GLB takes 9.9 s. Visual, OBJ takes 12 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2400b_robocup-pcb_motor-module/stages.webp)
 

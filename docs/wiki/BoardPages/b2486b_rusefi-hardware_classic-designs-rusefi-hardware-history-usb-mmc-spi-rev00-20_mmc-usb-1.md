@@ -1,6 +1,6 @@
 # 2486. mmc_usb_1
 
-Board 2,486 of the 3,126 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 24](../CorpusTestingPages/Corpus-Testing-24.md#2486-mmc_usb_1).
+Board 2,486 of the 3,127 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 24](../CorpusTestingPages/Corpus-Testing-24.md#2486-mmc_usb_1).
 
 ![mmc_usb_1: stages 4 and 6 take 50% to 85% of a run. Simulation, GLB takes 6.0 s. Simulation, STEP takes 7.8 s. Simulation, STL takes 6.4 s. Simulation, OBJ takes 9.1 s. Visual, GLB takes 10 s. Visual, OBJ takes 13 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2486b_rusefi-hardware_classic-designs-rusefi-hardware-history-usb-mmc-spi-rev00-20_mmc-usb-1/stages.webp)
 

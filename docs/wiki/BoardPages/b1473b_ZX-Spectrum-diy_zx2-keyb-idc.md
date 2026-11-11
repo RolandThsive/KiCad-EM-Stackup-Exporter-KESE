@@ -1,6 +1,6 @@
 # 1473. zx2_keyb_idc
 
-Board 1,473 of the 3,126 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 14](../CorpusTestingPages/Corpus-Testing-14.md#1473-zx2_keyb_idc).
+Board 1,473 of the 3,127 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 14](../CorpusTestingPages/Corpus-Testing-14.md#1473-zx2_keyb_idc).
 
 ![zx2_keyb_idc: stages 4 and 6 take 48% to 76% of a run. Simulation, GLB takes 1.7 s. Simulation, STEP takes 2.5 s. Simulation, STL takes 1.7 s. Simulation, OBJ takes 2.3 s. Visual, GLB takes 2.0 s. Visual, OBJ takes 2.5 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b1473b_ZX-Spectrum-diy_zx2-keyb-idc/stages.webp)
 

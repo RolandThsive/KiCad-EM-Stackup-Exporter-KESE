@@ -1,6 +1,6 @@
 # 2442. frankenso-PWR-Supply
 
-Board 2,442 of the 3,126 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 23](../CorpusTestingPages/Corpus-Testing-23.md#2442-frankenso-pwr-supply).
+Board 2,442 of the 3,127 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 23](../CorpusTestingPages/Corpus-Testing-23.md#2442-frankenso-pwr-supply).
 
 ![frankenso-PWR-Supply: stages 4 and 6 take 54% to 80% of a run. Simulation, GLB takes 3.0 s. Simulation, STEP takes 4.0 s. Simulation, STL takes 3.2 s. Simulation, OBJ takes 4.4 s. Visual, GLB takes 4.3 s. Visual, OBJ takes 5.6 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2442b_rusefi-hardware_classic-designs-frankenso-PWR-Supply_frankenso-PWR-Supply/stages.webp)
 

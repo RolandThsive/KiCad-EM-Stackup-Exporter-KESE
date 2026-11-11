@@ -1,6 +1,6 @@
 # 852. GfxV9958
 
-Board 852 of the 3,126 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 8](../CorpusTestingPages/Corpus-Testing-08.md#852-gfxv9958).
+Board 852 of the 3,127 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 8](../CorpusTestingPages/Corpus-Testing-08.md#852-gfxv9958).
 
 ![GfxV9958: stages 4 and 6 take 55% to 85% of a run. Simulation, GLB takes 32 s. Simulation, STEP takes 40 s. Simulation, STL takes 33 s. Simulation, OBJ takes 49 s. Visual, GLB takes 52 s. Visual, OBJ takes 62 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b0852b_hardware_GfxV9958/stages.webp)
 

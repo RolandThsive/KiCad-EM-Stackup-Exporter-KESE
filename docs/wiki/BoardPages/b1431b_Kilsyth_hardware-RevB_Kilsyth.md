@@ -1,6 +1,6 @@
 # 1431. Kilsyth
 
-Board 1,431 of the 3,126 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 14](../CorpusTestingPages/Corpus-Testing-14.md#1431-kilsyth).
+Board 1,431 of the 3,127 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 14](../CorpusTestingPages/Corpus-Testing-14.md#1431-kilsyth).
 
 ![Kilsyth: stages 4 and 6 take 54% to 83% of a run. Simulation, GLB takes 31 s. Simulation, STEP takes 39 s. Simulation, STL takes 32 s. Simulation, OBJ takes 47 s. Visual, GLB takes 44 s. Visual, OBJ takes 54 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b1431b_Kilsyth_hardware-RevB_Kilsyth/stages.webp)
 

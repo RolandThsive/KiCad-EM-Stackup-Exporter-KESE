@@ -1,6 +1,6 @@
 # 1708. LC-RFE-Mini-RevA2
 
-Board 1,708 of the 3,126 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 16](../CorpusTestingPages/Corpus-Testing-16.md#1708-lc-rfe-mini-reva2).
+Board 1,708 of the 3,127 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 16](../CorpusTestingPages/Corpus-Testing-16.md#1708-lc-rfe-mini-reva2).
 
 ![LC-RFE-Mini-RevA2: stages 4 and 6 take 53% to 83% of a run. Simulation, GLB takes 15 s. Simulation, STEP takes 19 s. Simulation, STL takes 15 s. Simulation, OBJ takes 22 s. Visual, GLB takes 21 s. Visual, OBJ takes 26 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b1708b_lc-rfe-mini_LC-RFE-Mini-RevA2/stages.webp)
 

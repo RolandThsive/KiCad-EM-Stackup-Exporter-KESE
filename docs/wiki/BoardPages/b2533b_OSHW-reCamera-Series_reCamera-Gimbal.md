@@ -1,6 +1,6 @@
 # 2533. reCamera Gimbal
 
-Board 2,533 of the 3,126 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 24](../CorpusTestingPages/Corpus-Testing-24.md#2533-recamera-gimbal).
+Board 2,533 of the 3,127 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 24](../CorpusTestingPages/Corpus-Testing-24.md#2533-recamera-gimbal).
 
 ![reCamera Gimbal: stages 4 and 6 take 52% to 80% of a run. Simulation, GLB takes 10 s. Simulation, STEP takes 13 s. Simulation, STL takes 9.9 s. Simulation, OBJ takes 15 s. Visual, GLB takes 16 s. Visual, OBJ takes 20 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2533b_OSHW-reCamera-Series_reCamera-Gimbal/stages.webp)
 

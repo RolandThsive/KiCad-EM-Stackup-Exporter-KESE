@@ -1,6 +1,6 @@
 # 2565. RPi zero with ethernet
 
-Board 2,565 of the 3,126 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 24](../CorpusTestingPages/Corpus-Testing-24.md#2565-rpi-zero-with-ethernet).
+Board 2,565 of the 3,127 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 24](../CorpusTestingPages/Corpus-Testing-24.md#2565-rpi-zero-with-ethernet).
 
 ![RPi zero with ethernet: stages 4 and 6 take 55% to 86% of a run. Simulation, GLB takes 8.7 s. Simulation, STEP takes 11 s. Simulation, STL takes 8.5 s. Simulation, OBJ takes 13 s. Visual, GLB takes 12 s. Visual, OBJ takes 15 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2565b_smoothieboard2_RPi-zero-with-ethernet/stages.webp)
 

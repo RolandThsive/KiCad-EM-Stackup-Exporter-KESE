@@ -1,6 +1,6 @@
 # 2471. cps_vrs_io_1
 
-Board 2,471 of the 3,126 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 23](../CorpusTestingPages/Corpus-Testing-23.md#2471-cps_vrs_io_1).
+Board 2,471 of the 3,127 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 23](../CorpusTestingPages/Corpus-Testing-23.md#2471-cps_vrs_io_1).
 
 ![cps_vrs_io_1: stages 4 and 6 take 53% to 81% of a run. Simulation, GLB takes 3.2 s. Simulation, STEP takes 4.4 s. Simulation, STL takes 3.2 s. Simulation, OBJ takes 4.6 s. Visual, GLB takes 4.9 s. Visual, OBJ takes 6.1 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2471b_rusefi-hardware_classic-designs-rusefi-hardware-history-knock-VR-Art-ELectro-rev00-10_cps-vrs-io-1/stages.webp)
 

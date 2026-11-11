@@ -1,6 +1,6 @@
 # 284. GPIO Power Switch
 
-Board 284 of the 3,126 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 3](../CorpusTestingPages/Corpus-Testing-03.md#284-gpio-power-switch).
+Board 284 of the 3,127 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 3](../CorpusTestingPages/Corpus-Testing-03.md#284-gpio-power-switch).
 
 ![GPIO Power Switch: stages 4 and 6 take 51% to 78% of a run. Simulation, GLB takes 6.1 s. Simulation, STEP takes 8.0 s. Simulation, STL takes 6.2 s. Simulation, OBJ takes 9.7 s. Visual, GLB takes 10 s. Visual, OBJ takes 12 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b0284b_658-Computer_GPIO-Power-Switch/stages.webp)
 

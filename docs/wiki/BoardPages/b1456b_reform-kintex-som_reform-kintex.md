@@ -1,6 +1,6 @@
 # 1456. reform-kintex
 
-Board 1,456 of the 3,126 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 14](../CorpusTestingPages/Corpus-Testing-14.md#1456-reform-kintex).
+Board 1,456 of the 3,127 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 14](../CorpusTestingPages/Corpus-Testing-14.md#1456-reform-kintex).
 
 ![reform-kintex: stages 4 and 6 take 43% to 81% of a run. Simulation, GLB takes 92 s. Simulation, STEP takes 2 min. Simulation, STL takes 95 s. Simulation, OBJ takes 3 min. Visual, GLB takes 2 min. Visual, OBJ takes 3 min](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b1456b_reform-kintex-som_reform-kintex/stages.webp)
 

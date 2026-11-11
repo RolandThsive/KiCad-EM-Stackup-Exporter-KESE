@@ -1,6 +1,6 @@
 # 1399. OSO-SWAT-C1
 
-Board 1,399 of the 3,126 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 13](../CorpusTestingPages/Corpus-Testing-13.md#1399-oso-swat-c1).
+Board 1,399 of the 3,127 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 13](../CorpusTestingPages/Corpus-Testing-13.md#1399-oso-swat-c1).
 
 ![OSO-SWAT-C1: stages 4 and 6 take 48% to 77% of a run. Simulation, GLB takes 7.6 s. Simulation, STEP takes 9.3 s. Simulation, STL takes 7.5 s. Simulation, OBJ takes 11 s. Visual, GLB takes 11 s. Visual, OBJ takes 14 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b1399b_Sensor-Watch_OSO-SWAT-C1/stages.webp)
 

@@ -1,6 +1,6 @@
 # 2308. FC_Board_v3
 
-Board 2,308 of the 3,126 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 22](../CorpusTestingPages/Corpus-Testing-22.md#2308-fc_board_v3).
+Board 2,308 of the 3,127 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 22](../CorpusTestingPages/Corpus-Testing-22.md#2308-fc_board_v3).
 
 ![FC_Board_v3: stages 4 and 6 take 52% to 80% of a run. Simulation, GLB takes 35 s. Simulation, STEP takes 42 s. Simulation, STL takes 36 s. Simulation, OBJ takes 53 s. Visual, GLB takes 43 s. Visual, OBJ takes 51 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2308b_flight-controller-board_FC-Board-v3/stages.webp)
 

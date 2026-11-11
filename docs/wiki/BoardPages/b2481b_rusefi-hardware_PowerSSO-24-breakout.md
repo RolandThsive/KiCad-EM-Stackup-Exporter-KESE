@@ -1,6 +1,6 @@
 # 2481. PowerSSO-24_breakout
 
-Board 2,481 of the 3,126 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 23](../CorpusTestingPages/Corpus-Testing-23.md#2481-powersso-24_breakout).
+Board 2,481 of the 3,127 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 23](../CorpusTestingPages/Corpus-Testing-23.md#2481-powersso-24_breakout).
 
 ![PowerSSO-24_breakout: stages 4 and 6 take 54% to 81% of a run. Simulation, GLB takes 3.0 s. Simulation, STEP takes 3.9 s. Simulation, STL takes 3.0 s. Simulation, OBJ takes 4.3 s. Visual, GLB takes 4.6 s. Visual, OBJ takes 5.8 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2481b_rusefi-hardware_PowerSSO-24-breakout/stages.webp)
 

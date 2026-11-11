@@ -1,0 +1,47 @@
+{
+ "name": "led_panel_2",
+ "project": "tmarhguy/alu",
+ "path": "tmarhguy__alu/schematics/kicad/boards/led_panel/led_panel_2/led_panel_2.kicad_pcb",
+ "license": "MIT (MIT License)",
+ "license_checked": "2026-11-08",
+ "rank": 2471,
+ "score": 258,
+ "level": "LOW",
+ "complexity": {
+  "grade": 80,
+  "size": 70,
+  "features": 10
+ },
+ "features": [
+  "shaped_pads"
+ ],
+ "layers": 2,
+ "status": "pass",
+ "bad_design": null,
+ "chart_alt": "led_panel_2: stages 4 and 6 take 51% to 80% of a run. Simulation, GLB takes 6.4 s. Simulation, STEP takes 8.4 s. Simulation, STL takes 6.4 s. Simulation, OBJ takes 9.2 s. Visual, GLB takes 11 s. Visual, OBJ takes 13 s",
+ "rerun": {},
+ "tested": [
+  "2026-11-09",
+  "2026-11-09"
+ ],
+ "kese": [
+  "22fd70c"
+ ],
+ "kese_version": [
+  "2.4.0"
+ ],
+ "runs": [
+  [
+   "corpus",
+   "2026-11-09",
+   11000000000.0,
+   5400.0
+  ]
+ ],
+ "machine": {
+  "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz, 4 cores, 15 GB",
+  "geos": "3.14.1",
+  "python": "3.13.18",
+  "shapely": "2.2.0"
+ }
+}

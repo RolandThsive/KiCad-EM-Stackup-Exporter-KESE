@@ -1,6 +1,6 @@
 # 1700. lc-b3-mpa
 
-Board 1,700 of the 3,126 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 16](../CorpusTestingPages/Corpus-Testing-16.md#1700-lc-b3-mpa).
+Board 1,700 of the 3,127 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 16](../CorpusTestingPages/Corpus-Testing-16.md#1700-lc-b3-mpa).
 
 ![lc-b3-mpa: stages 4 and 6 take 53% to 81% of a run. Simulation, GLB takes 2.5 s. Simulation, STEP takes 3.5 s. Simulation, STL takes 2.7 s. Simulation, OBJ takes 3.4 s. Visual, GLB takes 3.1 s. Visual, OBJ takes 3.3 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b1700b_lc-b3-mpa_hardware-0v1_lc-b3-mpa/stages.webp)
 

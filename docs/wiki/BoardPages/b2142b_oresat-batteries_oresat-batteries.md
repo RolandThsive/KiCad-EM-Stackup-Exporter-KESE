@@ -1,6 +1,6 @@
 # 2142. oresat-batteries
 
-Board 2,142 of the 3,126 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 20](../CorpusTestingPages/Corpus-Testing-20.md#2142-oresat-batteries).
+Board 2,142 of the 3,127 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 20](../CorpusTestingPages/Corpus-Testing-20.md#2142-oresat-batteries).
 
 ![oresat-batteries: stages 4 and 6 take 58% to 83% of a run. Simulation, GLB takes 49 s. Simulation, STEP takes 61 s. Simulation, STL takes 51 s. Simulation, OBJ takes 70 s. Visual, GLB takes 69 s. Visual, OBJ takes 83 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2142b_oresat-batteries_oresat-batteries/stages.webp)
 

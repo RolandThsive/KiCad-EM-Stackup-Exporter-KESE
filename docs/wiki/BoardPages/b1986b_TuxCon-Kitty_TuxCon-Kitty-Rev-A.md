@@ -1,6 +1,6 @@
 # 1986. TuxCon_Kitty_Rev_A
 
-Board 1,986 of the 3,126 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 19](../CorpusTestingPages/Corpus-Testing-19.md#1986-tuxcon_kitty_rev_a).
+Board 1,986 of the 3,127 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 19](../CorpusTestingPages/Corpus-Testing-19.md#1986-tuxcon_kitty_rev_a).
 
 ![TuxCon_Kitty_Rev_A: stages 4 and 6 take 47% to 77% of a run. Simulation, GLB takes 2.5 s. Simulation, STEP takes 3.6 s. Simulation, STL takes 2.6 s. Simulation, OBJ takes 3.6 s. Visual, GLB takes 3.6 s. Visual, OBJ takes 4.7 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b1986b_TuxCon-Kitty_TuxCon-Kitty-Rev-A/stages.webp)
 

@@ -1,6 +1,6 @@
 # 2125. control-stage
 
-Board 2,125 of the 3,126 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 20](../CorpusTestingPages/Corpus-Testing-20.md#2125-control-stage).
+Board 2,125 of the 3,127 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 20](../CorpusTestingPages/Corpus-Testing-20.md#2125-control-stage).
 
 ![control-stage: stages 4 and 6 take 44% to 78% of a run. Simulation, GLB takes 15 s. Simulation, STEP takes 19 s. Simulation, STL takes 16 s. Simulation, OBJ takes 25 s. Visual, GLB takes 20 s. Visual, OBJ takes 25 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2125b_oresat-adcs-hardware_oresat-rw-board-rev1-MCXN-control-stage_control-stage/stages.webp)
 

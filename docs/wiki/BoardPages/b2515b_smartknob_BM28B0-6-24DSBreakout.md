@@ -1,6 +1,6 @@
 # 2515. BM28B0.6-24DSBreakout
 
-Board 2,515 of the 3,126 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 24](../CorpusTestingPages/Corpus-Testing-24.md#2515-bm28b06-24dsbreakout).
+Board 2,515 of the 3,127 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 24](../CorpusTestingPages/Corpus-Testing-24.md#2515-bm28b06-24dsbreakout).
 
 ![BM28B0.6-24DSBreakout: stages 4 and 6 take 49% to 79% of a run. Simulation, GLB takes 1.9 s. Simulation, STEP takes 2.7 s. Simulation, STL takes 1.9 s. Simulation, OBJ takes 2.6 s. Visual, GLB takes 2.6 s. Visual, OBJ takes 3.2 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2515b_smartknob_BM28B0-6-24DSBreakout/stages.webp)
 

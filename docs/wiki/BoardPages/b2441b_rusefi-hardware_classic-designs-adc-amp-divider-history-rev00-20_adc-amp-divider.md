@@ -1,6 +1,6 @@
 # 2441. adc_amp_divider
 
-Board 2,441 of the 3,126 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 23](../CorpusTestingPages/Corpus-Testing-23.md#2441-adc_amp_divider).
+Board 2,441 of the 3,127 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 23](../CorpusTestingPages/Corpus-Testing-23.md#2441-adc_amp_divider).
 
 ![adc_amp_divider: stages 4 and 6 take 57% to 83% of a run. Simulation, GLB takes 13 s. Simulation, STEP takes 16 s. Simulation, STL takes 13 s. Simulation, OBJ takes 18 s. Visual, GLB takes 20 s. Visual, OBJ takes 25 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2441b_rusefi-hardware_classic-designs-adc-amp-divider-history-rev00-20_adc-amp-divider/stages.webp)
 

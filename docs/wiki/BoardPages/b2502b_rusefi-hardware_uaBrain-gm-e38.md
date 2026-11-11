@@ -1,6 +1,6 @@
 # 2502. uaBrain-gm-e38
 
-Board 2,502 of the 3,126 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 24](../CorpusTestingPages/Corpus-Testing-24.md#2502-uabrain-gm-e38).
+Board 2,502 of the 3,127 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 24](../CorpusTestingPages/Corpus-Testing-24.md#2502-uabrain-gm-e38).
 
 ![uaBrain-gm-e38: stages 4 and 6 take 55% to 85% of a run. Simulation, GLB takes 41 s. Simulation, STEP takes 52 s. Simulation, STL takes 43 s. Simulation, OBJ takes 62 s. Visual, GLB takes 80 s. Visual, OBJ takes 96 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2502b_rusefi-hardware_uaBrain-gm-e38/stages.webp)
 

@@ -1,6 +1,6 @@
 # 1952. LCD-DRIVER_Rev_B
 
-Board 1,952 of the 3,126 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 19](../CorpusTestingPages/Corpus-Testing-19.md#1952-lcd-driver_rev_b).
+Board 1,952 of the 3,127 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 19](../CorpusTestingPages/Corpus-Testing-19.md#1952-lcd-driver_rev_b).
 
 ![LCD-DRIVER_Rev_B: stages 4 and 6 take 60% to 83% of a run. Simulation, GLB takes 32 s. Simulation, STEP takes 38 s. Simulation, STL takes 32 s. Simulation, OBJ takes 43 s. Visual, GLB takes 48 s. Visual, OBJ takes 59 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b1952b_OLINUXINO_LCD-DRIVER-Rev-B/stages.webp)
 

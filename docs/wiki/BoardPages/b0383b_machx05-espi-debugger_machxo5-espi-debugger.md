@@ -1,6 +1,6 @@
 # 383. machxo5-espi-debugger
 
-Board 383 of the 3,126 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 4](../CorpusTestingPages/Corpus-Testing-04.md#383-machxo5-espi-debugger).
+Board 383 of the 3,127 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 4](../CorpusTestingPages/Corpus-Testing-04.md#383-machxo5-espi-debugger).
 
 ![machxo5-espi-debugger: stages 4 and 6 take 44% to 77% of a run. Simulation, GLB takes 41 s. Simulation, STEP takes 50 s. Simulation, STL takes 44 s. Simulation, OBJ takes 65 s. Visual, GLB takes 65 s. Visual, OBJ takes 76 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b0383b_machx05-espi-debugger_machxo5-espi-debugger/stages.webp)
 

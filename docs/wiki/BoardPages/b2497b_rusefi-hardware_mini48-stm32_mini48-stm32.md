@@ -1,6 +1,6 @@
 # 2497. mini48-stm32
 
-Board 2,497 of the 3,126 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 24](../CorpusTestingPages/Corpus-Testing-24.md#2497-mini48-stm32).
+Board 2,497 of the 3,127 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 24](../CorpusTestingPages/Corpus-Testing-24.md#2497-mini48-stm32).
 
 ![mini48-stm32: stages 4 and 6 take 56% to 84% of a run. Simulation, GLB takes 6.6 s. Simulation, STEP takes 8.7 s. Simulation, STL takes 6.4 s. Simulation, OBJ takes 9.7 s. Visual, GLB takes 9.0 s. Visual, OBJ takes 12 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2497b_rusefi-hardware_mini48-stm32_mini48-stm32/stages.webp)
 

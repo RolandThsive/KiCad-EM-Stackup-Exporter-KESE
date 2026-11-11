@@ -1,6 +1,6 @@
 # 1445. multichannel_mixer-unrouted
 
-Board 1,445 of the 3,126 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 14](../CorpusTestingPages/Corpus-Testing-14.md#1445-multichannel_mixer-unrouted).
+Board 1,445 of the 3,127 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 14](../CorpusTestingPages/Corpus-Testing-14.md#1445-multichannel_mixer-unrouted).
 
 ![multichannel_mixer-unrouted: stages 4 and 6 take 48% to 82% of a run. Simulation, GLB takes 9.8 s. Simulation, STEP takes 12 s. Simulation, STL takes 9.7 s. Simulation, OBJ takes 15 s. Visual, GLB takes 14 s. Visual, OBJ takes 19 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b1445b_kicad-source-mirror_multichannel-mixer-unrouted/stages.webp)
 

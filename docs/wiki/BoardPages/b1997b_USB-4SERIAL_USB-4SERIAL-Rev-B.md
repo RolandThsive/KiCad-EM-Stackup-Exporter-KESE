@@ -1,6 +1,6 @@
 # 1997. USB-4SERIAL_Rev_B
 
-Board 1,997 of the 3,126 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 19](../CorpusTestingPages/Corpus-Testing-19.md#1997-usb-4serial_rev_b).
+Board 1,997 of the 3,127 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 19](../CorpusTestingPages/Corpus-Testing-19.md#1997-usb-4serial_rev_b).
 
 ![USB-4SERIAL_Rev_B: stages 4 and 6 take 57% to 83% of a run. Simulation, GLB takes 23 s. Simulation, STEP takes 29 s. Simulation, STL takes 24 s. Simulation, OBJ takes 33 s. Visual, GLB takes 35 s. Visual, OBJ takes 45 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b1997b_USB-4SERIAL_USB-4SERIAL-Rev-B/stages.webp)
 

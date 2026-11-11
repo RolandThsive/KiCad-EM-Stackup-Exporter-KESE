@@ -1,6 +1,6 @@
 # 1740. EGSE
 
-Board 1,740 of the 3,126 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 17](../CorpusTestingPages/Corpus-Testing-17.md#1740-egse).
+Board 1,740 of the 3,127 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 17](../CorpusTestingPages/Corpus-Testing-17.md#1740-egse).
 
 ![EGSE: stages 4 and 6 take 47% to 80% of a run. Simulation, GLB takes 65 s. Simulation, STEP takes 79 s. Simulation, STL takes 64 s. Simulation, OBJ takes 2 min. Visual, GLB takes 85 s. Visual, OBJ takes 2 min](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b1740b_pocat-hw_EGSE/stages.webp)
 

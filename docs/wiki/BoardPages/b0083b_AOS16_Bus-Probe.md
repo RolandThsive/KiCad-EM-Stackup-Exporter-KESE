@@ -1,6 +1,6 @@
 # 83. Bus Probe
 
-Board 83 of the 3,126 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 1](../CorpusTestingPages/Corpus-Testing-01.md#83-bus-probe).
+Board 83 of the 3,127 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 1](../CorpusTestingPages/Corpus-Testing-01.md#83-bus-probe).
 
 ![Bus Probe: stages 4 and 6 take 52% to 82% of a run. Simulation, GLB takes 3.9 s. Simulation, STEP takes 5.4 s. Simulation, STL takes 4.1 s. Simulation, OBJ takes 5.2 s. Visual, GLB takes 5.1 s. Visual, OBJ takes 6.3 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b0083b_AOS16_Bus-Probe/stages.webp)
 

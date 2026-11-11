@@ -1,6 +1,6 @@
 # 2563. level-shifter
 
-Board 2,563 of the 3,126 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 24](../CorpusTestingPages/Corpus-Testing-24.md#2563-level-shifter).
+Board 2,563 of the 3,127 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 24](../CorpusTestingPages/Corpus-Testing-24.md#2563-level-shifter).
 
 ![level-shifter: stages 4 and 6 take 50% to 81% of a run. Simulation, GLB takes 5.8 s. Simulation, STEP takes 7.3 s. Simulation, STL takes 5.8 s. Simulation, OBJ takes 8.5 s. Visual, GLB takes 8.9 s. Visual, OBJ takes 12 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2563b_smoothieboard2_level-shifter/stages.webp)
 

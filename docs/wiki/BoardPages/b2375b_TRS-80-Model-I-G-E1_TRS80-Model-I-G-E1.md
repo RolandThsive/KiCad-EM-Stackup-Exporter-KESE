@@ -1,6 +1,6 @@
 # 2375. TRS80_Model_I_G_E1
 
-Board 2,375 of the 3,126 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 22](../CorpusTestingPages/Corpus-Testing-22.md#2375-trs80_model_i_g_e1).
+Board 2,375 of the 3,127 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 22](../CorpusTestingPages/Corpus-Testing-22.md#2375-trs80_model_i_g_e1).
 
 ![TRS80_Model_I_G_E1: stages 4 and 6 take 55% to 87% of a run. Simulation, GLB takes 2 min. Simulation, STEP takes 2 min. Simulation, STL takes 2 min. Simulation, OBJ takes 3 min. Visual, GLB takes 3 min. Visual, OBJ takes 3 min](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2375b_TRS-80-Model-I-G-E1_TRS80-Model-I-G-E1/stages.webp)
 

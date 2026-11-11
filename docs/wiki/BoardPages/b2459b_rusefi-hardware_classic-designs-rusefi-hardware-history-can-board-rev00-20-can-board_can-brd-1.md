@@ -1,6 +1,6 @@
 # 2459. can_brd_1
 
-Board 2,459 of the 3,126 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 23](../CorpusTestingPages/Corpus-Testing-23.md#2459-can_brd_1).
+Board 2,459 of the 3,127 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 23](../CorpusTestingPages/Corpus-Testing-23.md#2459-can_brd_1).
 
 ![can_brd_1: stages 4 and 6 take 46% to 76% of a run. Simulation, GLB takes 1.7 s. Simulation, STEP takes 2.5 s. Simulation, STL takes 1.6 s. Simulation, OBJ takes 2.4 s. Visual, GLB takes 2.4 s. Visual, OBJ takes 3.0 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2459b_rusefi-hardware_classic-designs-rusefi-hardware-history-can-board-rev00-20-can-board_can-brd-1/stages.webp)
 

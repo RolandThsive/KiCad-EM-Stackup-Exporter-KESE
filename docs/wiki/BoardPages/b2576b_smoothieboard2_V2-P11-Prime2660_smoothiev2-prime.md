@@ -1,6 +1,6 @@
 # 2576. smoothiev2-prime
 
-Board 2,576 of the 3,126 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 24](../CorpusTestingPages/Corpus-Testing-24.md#2576-smoothiev2-prime).
+Board 2,576 of the 3,127 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 24](../CorpusTestingPages/Corpus-Testing-24.md#2576-smoothiev2-prime).
 
 ![smoothiev2-prime: stages 4 and 6 take 55% to 85% of a run. Simulation, GLB takes 2 min. Simulation, STEP takes 3 min. Simulation, STL takes 2 min. Simulation, OBJ takes 3 min. Visual, GLB takes 3 min. Visual, OBJ takes 4 min](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2576b_smoothieboard2_V2-P11-Prime2660_smoothiev2-prime/stages.webp)
 

@@ -1,6 +1,6 @@
 # 1843. ESP32-GATEWAY_Rev_F
 
-Board 1,843 of the 3,126 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 18](../CorpusTestingPages/Corpus-Testing-18.md#1843-esp32-gateway_rev_f).
+Board 1,843 of the 3,127 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 18](../CorpusTestingPages/Corpus-Testing-18.md#1843-esp32-gateway_rev_f).
 
 ![ESP32-GATEWAY_Rev_F: stages 4 and 6 take 53% to 84% of a run. Simulation, GLB takes 16 s. Simulation, STEP takes 20 s. Simulation, STL takes 17 s. Simulation, OBJ takes 25 s. Visual, GLB takes 26 s. Visual, OBJ takes 33 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b1843b_ESP32-GATEWAY_ESP32-GATEWAY-Rev-F/stages.webp)
 

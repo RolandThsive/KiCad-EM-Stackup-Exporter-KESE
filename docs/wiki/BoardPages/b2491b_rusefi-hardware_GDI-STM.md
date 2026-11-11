@@ -1,6 +1,6 @@
 # 2491. GDI-STM
 
-Board 2,491 of the 3,126 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 24](../CorpusTestingPages/Corpus-Testing-24.md#2491-gdi-stm).
+Board 2,491 of the 3,127 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 24](../CorpusTestingPages/Corpus-Testing-24.md#2491-gdi-stm).
 
 ![GDI-STM: stages 4 and 6 take 53% to 80% of a run. Simulation, GLB takes 52 s. Simulation, STEP takes 64 s. Simulation, STL takes 52 s. Simulation, OBJ takes 75 s. Visual, GLB takes 81 s. Visual, OBJ takes 95 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2491b_rusefi-hardware_GDI-STM/stages.webp)
 

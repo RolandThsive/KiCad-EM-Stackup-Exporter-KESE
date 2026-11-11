@@ -1,7 +1,7 @@
 Credits: the KiCad boards KESE was checked against
 ===================================================
 
-KESE was checked on 3,126 KiCad boards from 816 open hardware projects on GitHub. Thank you to
+KESE was checked on 3,127 KiCad boards from 817 open hardware projects on GitHub. Thank you to
 the authors and contributors of every one of them.
 
 Every board belongs to its authors, and so does its license: the rights in each design, and the
@@ -6521,169 +6521,175 @@ sporniket/kicad-conversions--atari-260-520-st-motherboard--c070231
   Board (1):
     2639. motherboard  (motherboard.kicad_pcb), tested 9 November 2026
 
+sporniket/kicad-conversions--atari-ste-motherboard--c300780-001
+  https://github.com/sporniket/kicad-conversions--atari-ste-motherboard--c300780-001
+  License: CC0-1.0 (Creative Commons Zero v1.0)
+  Board (1):
+    2640. motherboard  (motherboard.kicad_pcb), tested 9 to 11 November 2026
+
 sprhawk/leaf-rv1126
   https://github.com/sprhawk/leaf-rv1126
   License: As README.md states it: "This work is licensed under a Creative Commons
            Attribution-ShareAlike 4.0 International License."
   Boards (2):
-    2640. leaf  (leaf.kicad_pcb), tested 9 November 2026
-    2641. leaf-minipcie  (minipcie/leaf-minipcie.kicad_pcb), tested 9 November 2026
+    2641. leaf  (leaf.kicad_pcb), tested 9 November 2026
+    2642. leaf-minipcie  (minipcie/leaf-minipcie.kicad_pcb), tested 9 November 2026
 
 Spritetm/hadbadge2019_pcb
   https://github.com/Spritetm/hadbadge2019_pcb
   License: CC-BY-SA-3.0 (Creative Commons Attribution-ShareAlike 3.0), in LICENSE
   Board (1):
-    2642. hadbadge2019  (hadbadge2019.kicad_pcb), tested 9 November 2026
+    2643. hadbadge2019  (hadbadge2019.kicad_pcb), tested 9 November 2026
 
 sqfmi/beepy-hardware
   https://github.com/sqfmi/beepy-hardware
   License: MIT (MIT License)
   Board (1):
-    2643. beepy  (KiCad/beepy.kicad_pcb), tested 9 November 2026
+    2644. beepy  (KiCad/beepy.kicad_pcb), tested 9 November 2026
 
 sqfmi/watchy-hardware
   https://github.com/sqfmi/watchy-hardware
   License: MIT (MIT License)
   Board (1):
-    2644. Watchy  (Watchy.kicad_pcb), tested 9 November 2026
+    2645. Watchy  (Watchy.kicad_pcb), tested 9 November 2026
 
 ssmiao/intel-i210-network-card
   https://github.com/ssmiao/intel-i210-network-card
   License: MIT (MIT License)
   Boards (7):
-    2645. inteli210AT  (PCBV3.0/inteli210AT.kicad_pcb), tested 9 November 2026
-    2646. V1  (PCBV3.0/reference/OCP2PCIe-master/OCP2PCIe-H-F-4/OCP2PCIe-H-F-4-V0.1Beta/V1.kicad_pcb), tested 9 November 2026
-    2647. V1  (PCBV3.0/reference/OCP2PCIe-master/OCP2PCIe-H-F-4/OCP2PCIe-H-F-4-V1.0Beta/V1.kicad_pcb), tested 9 November 2026
-    2648. v1-cut10x10  (PCBV3.0/reference/OCP2PCIe-master/OCP2PCIe-H-F-4/OCP2PCIe-H-F-4-V1.1Beta/v1-cut10x10.kicad_pcb), tested 9 November 2026
-    2649. V1  (PCBV3.0/reference/OCP2PCIe-master/OCP2PCIe-H-F-4/OCP2PCIe-H-F-4-V1.1Beta/V1.kicad_pcb), tested 9 November 2026
-    2650. V1-cut10x10  (PCBV3.0/reference/OCP2PCIe-master/OCP2PCIe-H-F-4/OCP2PCIe-H-F-4-V2.0Beta/V1-cut10x10.kicad_pcb), tested 9 November 2026
-    2651. V1  (PCBV3.0/reference/OCP2PCIe-master/OCP2PCIe-H-F-4/OCP2PCIe-H-F-4-V2.0Beta/V1.kicad_pcb), tested 9 November 2026
+    2646. inteli210AT  (PCBV3.0/inteli210AT.kicad_pcb), tested 9 November 2026
+    2647. V1  (PCBV3.0/reference/OCP2PCIe-master/OCP2PCIe-H-F-4/OCP2PCIe-H-F-4-V0.1Beta/V1.kicad_pcb), tested 9 November 2026
+    2648. V1  (PCBV3.0/reference/OCP2PCIe-master/OCP2PCIe-H-F-4/OCP2PCIe-H-F-4-V1.0Beta/V1.kicad_pcb), tested 9 November 2026
+    2649. v1-cut10x10  (PCBV3.0/reference/OCP2PCIe-master/OCP2PCIe-H-F-4/OCP2PCIe-H-F-4-V1.1Beta/v1-cut10x10.kicad_pcb), tested 9 November 2026
+    2650. V1  (PCBV3.0/reference/OCP2PCIe-master/OCP2PCIe-H-F-4/OCP2PCIe-H-F-4-V1.1Beta/V1.kicad_pcb), tested 9 November 2026
+    2651. V1-cut10x10  (PCBV3.0/reference/OCP2PCIe-master/OCP2PCIe-H-F-4/OCP2PCIe-H-F-4-V2.0Beta/V1-cut10x10.kicad_pcb), tested 9 November 2026
+    2652. V1  (PCBV3.0/reference/OCP2PCIe-master/OCP2PCIe-H-F-4/OCP2PCIe-H-F-4-V2.0Beta/V1.kicad_pcb), tested 9 November 2026
 
 stack-chan/stack-chan
   https://github.com/stack-chan/stack-chan
   License: Apache-2.0 (Apache License 2.0)
   Board (1):
-    2652. m5-pantilt  (schematics/m5-pantilt/m5-pantilt.kicad_pcb), tested 9 November 2026
+    2653. m5-pantilt  (schematics/m5-pantilt/m5-pantilt.kicad_pcb), tested 9 November 2026
 
 stanford-ssi/aerolotl_av
   https://github.com/stanford-ssi/aerolotl_av
   License: No license found
   Board (1):
-    2653. aerolotl_av  (aerolotl_av.kicad_pcb), tested 9 November 2026
+    2654. aerolotl_av  (aerolotl_av.kicad_pcb), tested 9 November 2026
 
 stanford-ssi/aerolotl_kicad
   https://github.com/stanford-ssi/aerolotl_kicad
   License: No license found
   Boards (4):
-    2654. aerolotl  (aerolotl.kicad_pcb), tested 9 November 2026
-    2655. battery_pcb  (BatteryPCB/battery_pcb.kicad_pcb), tested 9 November 2026
-    2656. battery_pcb_30pin  (BatteryPCB_30pin/battery_pcb_30pin.kicad_pcb), tested 9 November 2026
-    2657. seed_user_1224  (BatteryPCB_30pin/tools/layoutA/seed_user_1224.kicad_pcb), tested 9 November 2026
+    2655. aerolotl  (aerolotl.kicad_pcb), tested 9 November 2026
+    2656. battery_pcb  (BatteryPCB/battery_pcb.kicad_pcb), tested 9 November 2026
+    2657. battery_pcb_30pin  (BatteryPCB_30pin/battery_pcb_30pin.kicad_pcb), tested 9 November 2026
+    2658. seed_user_1224  (BatteryPCB_30pin/tools/layoutA/seed_user_1224.kicad_pcb), tested 9 November 2026
 
 stanford-ssi/samwise-avionics
   https://github.com/stanford-ssi/samwise-avionics
   License: No license found
   Boards (20):
-    2658. motor_board  (ADCS/ADCS-motors-v1-samwise/motor_board.kicad_pcb), tested 9 November 2026
-    2659. ADCS_board  (ADCS/ADCS-v1-samwise/ADCS_board.kicad_pcb), tested 9 November 2026
-    2660. batteryboard  (BatteryBoard/batteryboard-v02.3/batteryboard.kicad_pcb), tested 9 November 2026
-    2661. FlexDeploySidePanels  (FlexDeploySidePanels/FlexDeploySidePanels.kicad_pcb), tested 9 November 2026
-    2662. Groundstation_2400_Hat  (Groundstation_2400_Hat/Groundstation_2400_Hat.kicad_pcb), tested 9 November 2026
-    2663. Groundstation_433_Hat  (Groundstation_433_Hat/Groundstation_433_Hat.kicad_pcb), tested 9 November 2026
-    2664. LT8491-mezzanine  (LT8491-mezzanine/LT8491-mezzanine.kicad_pcb), tested 9 November 2026
-    2665. magnetometer_extern  (magnetometer_extern/magnetometer_extern/magnetometer_extern.kicad_pcb), tested 9 November 2026
-    2666. MPPT_addon_board  (PiCubed/MPPT_addon_board/MPPT_addon_board.kicad_pcb), tested 9 November 2026
-    2667. picubed_samwise  (PiCubed/picubed_samwise/picubed_samwise.kicad_pcb), tested 9 November 2026
-    2668. RPi_interface  (RPi_Interface/RPi_interface.kicad_pcb), tested 9 November 2026
-    2669. Stationary_X_Panel  (Stationary_X_Panel/Stationary_X_Panel.kicad_pcb), tested 9 November 2026
-    2670. Piramide_Del_Sol  (sun_sensor_pyramid/Piramide_Del_Sol.kicad_pcb), tested 9 November 2026
-    2671. Coil_Panel_XY  (Universal_XY_MagTorq/Coil_Panel_XY.kicad_pcb), tested 9 November 2026
-    2672. Coil_Panel_Z  (Universal_Z_MagTorq/Coil_Panel_Z_v1/Coil_Panel_Z.kicad_pcb), tested 9 November 2026
-    2673. FeatherRadioAdapter  (unused_boards/FeatherRadioAdapter/FeatherRadioAdapter.kicad_pcb), tested 9 November 2026
-    2674. Pete_2400_Mini  (unused_boards/Pete_2400_Mini/Pete_2400_Mini.kicad_pcb), tested 9 November 2026
-    2675. reaction_wheel  (unused_boards/reaction_wheel_board/reaction_wheel.kicad_pcb), tested 9 November 2026
-    2676. solar_charger  (unused_boards/solar_charger/solar_charger.kicad_pcb), tested 9 November 2026
-    2677. ZPlus_Panel  (ZPlus_Panel/ZPlus_Panel.kicad_pcb), tested 9 November 2026
+    2659. motor_board  (ADCS/ADCS-motors-v1-samwise/motor_board.kicad_pcb), tested 9 November 2026
+    2660. ADCS_board  (ADCS/ADCS-v1-samwise/ADCS_board.kicad_pcb), tested 9 November 2026
+    2661. batteryboard  (BatteryBoard/batteryboard-v02.3/batteryboard.kicad_pcb), tested 9 November 2026
+    2662. FlexDeploySidePanels  (FlexDeploySidePanels/FlexDeploySidePanels.kicad_pcb), tested 9 November 2026
+    2663. Groundstation_2400_Hat  (Groundstation_2400_Hat/Groundstation_2400_Hat.kicad_pcb), tested 9 November 2026
+    2664. Groundstation_433_Hat  (Groundstation_433_Hat/Groundstation_433_Hat.kicad_pcb), tested 9 November 2026
+    2665. LT8491-mezzanine  (LT8491-mezzanine/LT8491-mezzanine.kicad_pcb), tested 9 November 2026
+    2666. magnetometer_extern  (magnetometer_extern/magnetometer_extern/magnetometer_extern.kicad_pcb), tested 9 November 2026
+    2667. MPPT_addon_board  (PiCubed/MPPT_addon_board/MPPT_addon_board.kicad_pcb), tested 9 November 2026
+    2668. picubed_samwise  (PiCubed/picubed_samwise/picubed_samwise.kicad_pcb), tested 9 November 2026
+    2669. RPi_interface  (RPi_Interface/RPi_interface.kicad_pcb), tested 9 November 2026
+    2670. Stationary_X_Panel  (Stationary_X_Panel/Stationary_X_Panel.kicad_pcb), tested 9 November 2026
+    2671. Piramide_Del_Sol  (sun_sensor_pyramid/Piramide_Del_Sol.kicad_pcb), tested 9 November 2026
+    2672. Coil_Panel_XY  (Universal_XY_MagTorq/Coil_Panel_XY.kicad_pcb), tested 9 November 2026
+    2673. Coil_Panel_Z  (Universal_Z_MagTorq/Coil_Panel_Z_v1/Coil_Panel_Z.kicad_pcb), tested 9 November 2026
+    2674. FeatherRadioAdapter  (unused_boards/FeatherRadioAdapter/FeatherRadioAdapter.kicad_pcb), tested 9 November 2026
+    2675. Pete_2400_Mini  (unused_boards/Pete_2400_Mini/Pete_2400_Mini.kicad_pcb), tested 9 November 2026
+    2676. reaction_wheel  (unused_boards/reaction_wheel_board/reaction_wheel.kicad_pcb), tested 9 November 2026
+    2677. solar_charger  (unused_boards/solar_charger/solar_charger.kicad_pcb), tested 9 November 2026
+    2678. ZPlus_Panel  (ZPlus_Panel/ZPlus_Panel.kicad_pcb), tested 9 November 2026
 
 stonedDiscord/MegaDrive
   https://github.com/stonedDiscord/MegaDrive
   License: No license found
   Board (1):
-    2678. MegaDrive  (MegaDrive.kicad_pcb), tested 9 November 2026
+    2679. MegaDrive  (MegaDrive.kicad_pcb), tested 9 November 2026
 
 stonedDiscord/nonSNES
   https://github.com/stonedDiscord/nonSNES
   License: GPL-3.0 (GNU GPL v3.0)
   Boards (2):
-    2679. SNSP-CPU-01  (SNSP-CPU-01/SNSP-CPU-01.kicad_pcb), tested 9 November 2026
-    2680. SNSP-CPU-1CHIP  (SNSP-CPU-1CHIP/SNSP-CPU-1CHIP.kicad_pcb), tested 9 November 2026
+    2680. SNSP-CPU-01  (SNSP-CPU-01/SNSP-CPU-01.kicad_pcb), tested 9 November 2026
+    2681. SNSP-CPU-1CHIP  (SNSP-CPU-1CHIP/SNSP-CPU-1CHIP.kicad_pcb), tested 9 November 2026
 
 stuartpittaway/diybmsv4
   https://github.com/stuartpittaway/diybmsv4
   License: CC-BY-NC-SA-2.0-UK (Creative Commons Attribution-NonCommercial-ShareAlike 2.0 UK:
            England & Wales), in LICENSE
   Boards (12):
-    2681. ControllerCircuit  (ControllerCircuit/ControllerCircuit.kicad_pcb), tested 9 November 2026
-    2682. ControllerCurrentShuntAddOn  (ControllerCurrentShuntAddOn/ControllerCurrentShuntAddOn.kicad_pcb), tested 9 November 2026
-    2683. ESP8266ControllerCircuit  (ESP8266ControllerCircuit/ESP8266ControllerCircuit.kicad_pcb), tested 9 November 2026
-    2684. v4  (ModuleV400/v4.kicad_pcb), tested 9 November 2026
-    2685. ModuleV421  (ModuleV421/ModuleV421.kicad_pcb), tested 9 November 2026
-    2686. ModuleV440  (ModuleV440/ModuleV440.kicad_pcb), tested 9 November 2026
-    2687. ModuleV450  (ModuleV450/ModuleV450.kicad_pcb), tested 9 November 2026
-    2688. Module_16S  (ModuleV490-AllInOne/Module_16S.kicad_pcb), tested 9 November 2026
-    2689. Module_16S_PassiveBalanceAddOn  (ModuleV490-PassiveBal/Module_16S_PassiveBalanceAddOn.kicad_pcb), tested 9 November 2026
-    2690. ProgrammingAdapter  (ProgrammingAdapter/ProgrammingAdapter.kicad_pcb), tested 9 November 2026
-    2691. TemperaturePCB  (TemperaturePCB/TemperaturePCB.kicad_pcb), tested 9 November 2026
-    2692. TemperaturePCB_PANEL  (TemperaturePCB_PANEL/TemperaturePCB_PANEL.kicad_pcb), tested 9 November 2026
+    2682. ControllerCircuit  (ControllerCircuit/ControllerCircuit.kicad_pcb), tested 9 November 2026
+    2683. ControllerCurrentShuntAddOn  (ControllerCurrentShuntAddOn/ControllerCurrentShuntAddOn.kicad_pcb), tested 9 November 2026
+    2684. ESP8266ControllerCircuit  (ESP8266ControllerCircuit/ESP8266ControllerCircuit.kicad_pcb), tested 9 November 2026
+    2685. v4  (ModuleV400/v4.kicad_pcb), tested 9 November 2026
+    2686. ModuleV421  (ModuleV421/ModuleV421.kicad_pcb), tested 9 November 2026
+    2687. ModuleV440  (ModuleV440/ModuleV440.kicad_pcb), tested 9 November 2026
+    2688. ModuleV450  (ModuleV450/ModuleV450.kicad_pcb), tested 9 November 2026
+    2689. Module_16S  (ModuleV490-AllInOne/Module_16S.kicad_pcb), tested 9 November 2026
+    2690. Module_16S_PassiveBalanceAddOn  (ModuleV490-PassiveBal/Module_16S_PassiveBalanceAddOn.kicad_pcb), tested 9 November 2026
+    2691. ProgrammingAdapter  (ProgrammingAdapter/ProgrammingAdapter.kicad_pcb), tested 9 November 2026
+    2692. TemperaturePCB  (TemperaturePCB/TemperaturePCB.kicad_pcb), tested 9 November 2026
+    2693. TemperaturePCB_PANEL  (TemperaturePCB_PANEL/TemperaturePCB_PANEL.kicad_pcb), tested 9 November 2026
 
 StuckAtPrototype/Racer
   https://github.com/StuckAtPrototype/Racer
   License: Apache-2.0 (Apache License 2.0)
   Boards (3):
-    2693. sensors  (hardware/racer-sensors/sensors.kicad_pcb), tested 9 November 2026
-    2694. racer  (hardware/racer/racer.kicad_pcb), tested 9 November 2026
-    2695. controller  (hardware/thumbtroller/controller.kicad_pcb), tested 9 November 2026
+    2694. sensors  (hardware/racer-sensors/sensors.kicad_pcb), tested 9 November 2026
+    2695. racer  (hardware/racer/racer.kicad_pcb), tested 9 November 2026
+    2696. controller  (hardware/thumbtroller/controller.kicad_pcb), tested 9 November 2026
 
 sufst/pcb
   https://github.com/sufst/pcb
   License: GPL-3.0 (GNU GPL v3.0)
   Boards (36):
-    2696. ail-LED  (ail-LED/ail-LED.kicad_pcb), tested 9 November 2026
-    2697. ail-LED_handsolder  (ail-LED/ail-LED_handsolder.kicad_pcb), tested 9 November 2026
-    2698. ail  (ail/ail.kicad_pcb), tested 9 November 2026
-    2699. debug-board  (archive/debug-board/debug-board.kicad_pcb), tested 9 November 2026
-    2700. latching  (archive/latching/latching.kicad_pcb), tested 9 November 2026
-    2701. segment  (archive/segment/segment.kicad_pcb), tested 9 November 2026
-    2702. sensor-board  (archive/sensor-board/sensor-board.kicad_pcb), tested 9 November 2026
-    2703. strain-gauge-amp-breakout  (archive/sensor-board/strain-gauge-amp-breakout/strain-gauge-amp-breakout.kicad_pcb), tested 9 November 2026
-    2704. telemetry  (archive/telemetry/telemetry.kicad_pcb), tested 9 November 2026
-    2705. test-rig  (archive/test-rig/test-rig.kicad_pcb), tested 9 November 2026
-    2706. tsal  (archive/tsal/tsal.kicad_pcb), tested 9 November 2026
-    2707. batak  (batak/batak.kicad_pcb), tested 9 November 2026
-    2708. bms-interface  (bms-interface/bms-interface.kicad_pcb), tested 9 November 2026
-    2709. brake-light  (brake-light/brake-light.kicad_pcb), tested 9 November 2026
-    2710. BSPD  (bspd/BSPD.kicad_pcb), tested 9 November 2026
-    2711. can-repeater  (can-repeater/can-repeater.kicad_pcb), tested 9 November 2026
-    2712. curr-amp  (curr-amp/curr-amp.kicad_pcb), tested 9 November 2026
-    2713. Dash-PCB  (dash/Dash-PCB.kicad_pcb), tested 9 November 2026
-    2714. can-node  (debug-board/can-node/can-node.kicad_pcb), tested 9 November 2026
-    2715. Discharge  (discharge/Discharge.kicad_pcb), tested 9 November 2026
-    2716. hv_sense  (hv-sense/hv_sense.kicad_pcb), tested 9 November 2026
-    2717. CAN_Bridge  (isolator/CAN_Bridge.kicad_pcb), tested 9 November 2026
-    2718. lvbms-connector  (lvbms-conn/lvbms-connector.kicad_pcb), tested 9 November 2026
-    2719. PCB - VOLTAGE TAPS  (PCB - VOLTAGE TAPS/PCB - VOLTAGE TAPS.kicad_pcb), tested 9 November 2026
-    2720. precharge  (precharge/precharge.kicad_pcb), tested 9 November 2026
-    2721. right-sidepanel  (right-sidepanel/right-sidepanel.kicad_pcb), tested 9 November 2026
-    2722. rotary-switch  (rotary-switch/rotary-switch.kicad_pcb), tested 9 November 2026
-    2723. segment-switch  (segment-switch/segment-switch.kicad_pcb), tested 9 November 2026
-    2724. 16Ch-Sensor-Hub  (sensor-hub/16Ch-Sensor-Hub.kicad_pcb), tested 9 November 2026
-    2725. 8Ch-Sensor-Hub  (sensor-hub/8Ch-Sensor-Hub.kicad_pcb), tested 9 November 2026
-    2726. ss-relay  (ss-relay/ss-relay.kicad_pcb), tested 9 November 2026
-    2727. tem  (tem/tem.kicad_pcb), tested 9 November 2026
-    2728. trc  (trc/trc.kicad_pcb), tested 9 November 2026
-    2729. tsal-latching-integrated  (tsal-latching-integrated/tsal-latching-integrated.kicad_pcb), tested 9 November 2026
-    2730. tsal-led  (tsal-led/tsal-led.kicad_pcb), tested 9 November 2026
-    2731. vcu  (vcu/vcu.kicad_pcb), tested 9 November 2026
+    2697. ail-LED  (ail-LED/ail-LED.kicad_pcb), tested 9 November 2026
+    2698. ail-LED_handsolder  (ail-LED/ail-LED_handsolder.kicad_pcb), tested 9 November 2026
+    2699. ail  (ail/ail.kicad_pcb), tested 9 November 2026
+    2700. debug-board  (archive/debug-board/debug-board.kicad_pcb), tested 9 November 2026
+    2701. latching  (archive/latching/latching.kicad_pcb), tested 9 November 2026
+    2702. segment  (archive/segment/segment.kicad_pcb), tested 9 November 2026
+    2703. sensor-board  (archive/sensor-board/sensor-board.kicad_pcb), tested 9 November 2026
+    2704. strain-gauge-amp-breakout  (archive/sensor-board/strain-gauge-amp-breakout/strain-gauge-amp-breakout.kicad_pcb), tested 9 November 2026
+    2705. telemetry  (archive/telemetry/telemetry.kicad_pcb), tested 9 November 2026
+    2706. test-rig  (archive/test-rig/test-rig.kicad_pcb), tested 9 November 2026
+    2707. tsal  (archive/tsal/tsal.kicad_pcb), tested 9 November 2026
+    2708. batak  (batak/batak.kicad_pcb), tested 9 November 2026
+    2709. bms-interface  (bms-interface/bms-interface.kicad_pcb), tested 9 November 2026
+    2710. brake-light  (brake-light/brake-light.kicad_pcb), tested 9 November 2026
+    2711. BSPD  (bspd/BSPD.kicad_pcb), tested 9 November 2026
+    2712. can-repeater  (can-repeater/can-repeater.kicad_pcb), tested 9 November 2026
+    2713. curr-amp  (curr-amp/curr-amp.kicad_pcb), tested 9 November 2026
+    2714. Dash-PCB  (dash/Dash-PCB.kicad_pcb), tested 9 November 2026
+    2715. can-node  (debug-board/can-node/can-node.kicad_pcb), tested 9 November 2026
+    2716. Discharge  (discharge/Discharge.kicad_pcb), tested 9 November 2026
+    2717. hv_sense  (hv-sense/hv_sense.kicad_pcb), tested 9 November 2026
+    2718. CAN_Bridge  (isolator/CAN_Bridge.kicad_pcb), tested 9 November 2026
+    2719. lvbms-connector  (lvbms-conn/lvbms-connector.kicad_pcb), tested 9 November 2026
+    2720. PCB - VOLTAGE TAPS  (PCB - VOLTAGE TAPS/PCB - VOLTAGE TAPS.kicad_pcb), tested 9 November 2026
+    2721. precharge  (precharge/precharge.kicad_pcb), tested 9 November 2026
+    2722. right-sidepanel  (right-sidepanel/right-sidepanel.kicad_pcb), tested 9 November 2026
+    2723. rotary-switch  (rotary-switch/rotary-switch.kicad_pcb), tested 9 November 2026
+    2724. segment-switch  (segment-switch/segment-switch.kicad_pcb), tested 9 November 2026
+    2725. 16Ch-Sensor-Hub  (sensor-hub/16Ch-Sensor-Hub.kicad_pcb), tested 9 November 2026
+    2726. 8Ch-Sensor-Hub  (sensor-hub/8Ch-Sensor-Hub.kicad_pcb), tested 9 November 2026
+    2727. ss-relay  (ss-relay/ss-relay.kicad_pcb), tested 9 November 2026
+    2728. tem  (tem/tem.kicad_pcb), tested 9 November 2026
+    2729. trc  (trc/trc.kicad_pcb), tested 9 November 2026
+    2730. tsal-latching-integrated  (tsal-latching-integrated/tsal-latching-integrated.kicad_pcb), tested 9 November 2026
+    2731. tsal-led  (tsal-led/tsal-led.kicad_pcb), tested 9 November 2026
+    2732. vcu  (vcu/vcu.kicad_pcb), tested 9 November 2026
 
 SukkoPera/LittleSixteen
   https://github.com/SukkoPera/LittleSixteen
@@ -6691,7 +6697,7 @@ SukkoPera/LittleSixteen
            including the design itself, is copyright © SukkoPera 2019-2025 and is licensed under
            the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License."
   Board (1):
-    2732. LittleSixteen  (LittleSixteen.kicad_pcb), tested 9 to 10 November 2026
+    2733. LittleSixteen  (LittleSixteen.kicad_pcb), tested 9 to 10 November 2026
 
 sukkopera/raemixx500
   https://github.com/sukkopera/raemixx500
@@ -6699,32 +6705,32 @@ sukkopera/raemixx500
            copyright © SukkoPera 2019-2021 and is licensed under the Creative Commons
            Attribution-NonCommercial-ShareAlike 4.0 International License."
   Board (1):
-    2733. Raemixx500  (Raemixx500.kicad_pcb), tested 9 November 2026
+    2734. Raemixx500  (Raemixx500.kicad_pcb), tested 9 November 2026
 
 system76/launch
   https://github.com/system76/launch
   License: GPL-3.0 (GNU GPL v3.0)
   Boards (5):
-    2734. launch-heavy  (pcb-heavy/launch-heavy.kicad_pcb), tested 9 November 2026
-    2735. launch-iso  (pcb-iso/launch-iso.kicad_pcb), tested 9 November 2026
-    2736. launch-lite-iso  (pcb-lite-iso/launch-lite-iso.kicad_pcb), tested 9 November 2026
-    2737. launch-lite  (pcb-lite/launch-lite.kicad_pcb), tested 9 November 2026
-    2738. launch  (pcb/launch.kicad_pcb), tested 9 November 2026
+    2735. launch-heavy  (pcb-heavy/launch-heavy.kicad_pcb), tested 9 November 2026
+    2736. launch-iso  (pcb-iso/launch-iso.kicad_pcb), tested 9 November 2026
+    2737. launch-lite-iso  (pcb-lite-iso/launch-lite-iso.kicad_pcb), tested 9 November 2026
+    2738. launch-lite  (pcb-lite/launch-lite.kicad_pcb), tested 9 November 2026
+    2739. launch  (pcb/launch.kicad_pcb), tested 9 November 2026
 
 system76/thelio-io-hardware
   https://github.com/system76/thelio-io-hardware
   License: GPL-3.0 (GNU GPL v3.0)
   Boards (3):
-    2739. nebula-io  (pcb-nebula-io/nebula-io.kicad_pcb), tested 9 November 2026
-    2740. thelio-io-sata  (pcb-thelio-io-sata/thelio-io-sata.kicad_pcb), tested 9 November 2026
-    2741. thelio-io  (pcb-thelio-io/thelio-io.kicad_pcb), tested 9 November 2026
+    2740. nebula-io  (pcb-nebula-io/nebula-io.kicad_pcb), tested 9 November 2026
+    2741. thelio-io-sata  (pcb-thelio-io-sata/thelio-io-sata.kicad_pcb), tested 9 November 2026
+    2742. thelio-io  (pcb-thelio-io/thelio-io.kicad_pcb), tested 9 November 2026
 
 system76/virgo
   https://github.com/system76/virgo
   License: CERN-OHL-S-2.0 (CERN Open Hardware Licence v2, Strongly Reciprocal)
   Boards (2):
-    2742. virgo-keyboard-test  (pcb-keyboard/virgo-keyboard-test.kicad_pcb), tested 9 November 2026
-    2743. virgo-rpl-uph  (pcb-rpl-uph/virgo-rpl-uph.kicad_pcb), tested 9 November 2026
+    2743. virgo-keyboard-test  (pcb-keyboard/virgo-keyboard-test.kicad_pcb), tested 9 November 2026
+    2744. virgo-rpl-uph  (pcb-rpl-uph/virgo-rpl-uph.kicad_pcb), tested 9 November 2026
 
 TankedThomas/ZX80
   https://github.com/TankedThomas/ZX80
@@ -6735,217 +6741,217 @@ TankedThomas/ZX80
            really cool if you contributed to this project instead of just making your own
            version).;"
   Boards (2):
-    2744. ZX80_Board  (ZX80_Board.kicad_pcb), tested 9 November 2026
-    2745. ZX80_Board_Foil  (ZX80_Board_Foil.kicad_pcb), tested 9 November 2026
+    2745. ZX80_Board  (ZX80_Board.kicad_pcb), tested 9 November 2026
+    2746. ZX80_Board_Foil  (ZX80_Board_Foil.kicad_pcb), tested 9 November 2026
 
 TAPR/TAPRx888
   https://github.com/TAPR/TAPRx888
   License: MIT (MIT License)
   Board (1):
-    2746. TAPRX-888  (TAPRX-888.kicad_pcb), tested 9 November 2026
+    2747. TAPRX-888  (TAPRX-888.kicad_pcb), tested 9 November 2026
 
 tatakimon/lpddr4_w_allwinner_soc
   https://github.com/tatakimon/lpddr4_w_allwinner_soc
   License: No license found
   Board (1):
-    2747. DDR4_SoC  (DDR4_SoC/DDR4_SoC.kicad_pcb), tested 9 November 2026
+    2748. DDR4_SoC  (DDR4_SoC/DDR4_SoC.kicad_pcb), tested 9 November 2026
 
 teknomadix/Open_Inverter_2.0b_Kicad
   https://github.com/teknomadix/Open_Inverter_2.0b_Kicad
   License: CC-BY-SA-4.0 (Creative Commons Attribution-ShareAlike 4.0), in LICENSE.md
   Board (1):
-    2748. OpenInverter_20b  (Hardware/OpenInverter_20b.kicad_pcb), tested 10 November 2026
+    2749. OpenInverter_20b  (Hardware/OpenInverter_20b.kicad_pcb), tested 10 November 2026
 
 terrapin-rocket-team/srad-avionics
   https://github.com/terrapin-rocket-team/srad-avionics
   License: No license found
   Boards (33):
-    2749. LVPD-board  (Side_Projects/ARC/PCBs/LVPD-board.kicad_pcb), tested 9 November 2026
-    2750. LVPD-board_Payload  (Side_Projects/ARC/PCBs/LVPD-board_Payload/LVPD-board_Payload.kicad_pcb), tested 9 November 2026
-    2751. LVPD-board_v2  (Side_Projects/ARC/PCBs/LVPD-board_v2/LVPD-board_v2.kicad_pcb), tested 9 November 2026
-    2752. charge_deployment  (Side_Projects/Charge Deployment/Circuits/charge_deployment.kicad_pcb), tested 9 November 2026
-    2753. ARCH  (Spaceport/PCBs/ARCH/ARCH.kicad_pcb), tested 9 November 2026
-    2754. BatteryCharger  (Spaceport/PCBs/BatteryCharger/BatteryCharger/BatteryCharger.kicad_pcb), tested 9 November 2026
-    2755. Blue Raven Extension  (Spaceport/PCBs/Blue Raven Extension/Blue Raven Extension.kicad_pcb), tested 9 November 2026
-    2756. dipole-breakout  (Spaceport/PCBs/dipole-breakout/dipole-breakout.kicad_pcb), tested 9 November 2026
-    2757. flight-computer  (Spaceport/PCBs/flight-computer/Alternate layout-2025-2026/flight-computer.kicad_pcb), tested 9 November 2026
-    2758. flight-computer  (Spaceport/PCBs/flight-computer/flight-computer-2025-2026/flight-computer.kicad_pcb), tested 9 November 2026
-    2759. mcu-board v2  (Spaceport/PCBs/Gerbers/Teensy v3.0/mcu-board v2.kicad_pcb), tested 9 November 2026
-    2760. SensorBoardNoMCU  (Spaceport/PCBs/Gerbers/Teensy v3.0/SensorBoardNoMCU.kicad_pcb), tested 9 November 2026
-    2761. Ground Receiver v2  (Spaceport/PCBs/Ground Reciever/Ground Reciever v2/Ground Receiver v2.kicad_pcb), tested 9 November 2026
-    2762. Ground Reciever  (Spaceport/PCBs/Ground Reciever/Ground Reciever.kicad_pcb), tested 9 November 2026
-    2763. ground-receiver  (Spaceport/PCBs/ground-receiver/ground-receiver.kicad_pcb), tested 9 November 2026
-    2764. high-power-module  (Spaceport/PCBs/high-power-module/high-power-module.kicad_pcb), tested 9 November 2026
-    2765. LiBatteryCharger  (Spaceport/PCBs/LiBatteryCharger/LiBatteryCharger.kicad_pcb), tested 9 November 2026
-    2766. live-video-multi-function-board  (Spaceport/PCBs/live-video-multi-function-board/live-video-multi-function-board.kicad_pcb), tested 9 November 2026
-    2767. low_power_module  (Spaceport/PCBs/low_power_module/low_power_module.kicad_pcb), tested 9 November 2026
-    2768. ESP32_BluetoothModule_TerrapinRockets  (Spaceport/PCBs/MCU Boards/ESP32_BluetoothModule_TerrapinRockets/ESP32_BluetoothModule_TerrapinRockets.kicad_pcb), tested 9 November 2026
-    2769. Main Board  (Spaceport/PCBs/MCU Boards/STM32 MCU Large/Main Board.kicad_pcb), tested 9 November 2026
-    2770. mcu-board  (Spaceport/PCBs/MCU Boards/Teensy MCU Board/mcu-board.kicad_pcb), tested 9 November 2026
-    2771. new-pa-test-board  (Spaceport/PCBs/new-pa-test-board/new-pa-test-board.kicad_pcb), tested 9 November 2026
-    2772. pa-test-board  (Spaceport/PCBs/pa-test-board/pa-test-board.kicad_pcb), tested 9 November 2026
-    2773. power-delivery-board  (Spaceport/PCBs/power-delivery-board/power-delivery-board/power-delivery-board.kicad_pcb), tested 9 November 2026
-    2774. RF4463F30-test-board  (Spaceport/PCBs/RF4463F30-test-board/RF4463F30-test-board.kicad_pcb), tested 9 November 2026
-    2775. Screw Switch  (Spaceport/PCBs/Screw Switch/Screw Switch.kicad_pcb), tested 9 November 2026
-    2776. high-range-IMU  (Spaceport/PCBs/Sensor Boards/high-range-IMU/high-range-IMU.kicad_pcb), tested 9 November 2026
-    2777. PatchAntennaBreakout  (Spaceport/PCBs/Sensor Boards/PatchAntennaBreakout/PatchAntennaBreakout.kicad_pcb), tested 9 November 2026
-    2778. SensorBoardNoMCU  (Spaceport/PCBs/Sensor Boards/SensorBoardAirbrake/SensorBoardNoMCU.kicad_pcb), tested 9 November 2026
-    2779. SensorBoardNoMCU  (Spaceport/PCBs/Sensor Boards/SensorBoardPatch/SensorBoardNoMCU.kicad_pcb), tested 9 November 2026
-    2780. SensorBoard  (Spaceport/PCBs/Sensor Boards/SensorBoardSTM32/SensorBoard.kicad_pcb), tested 9 November 2026
-    2781. Unified_Board  (Spaceport/PCBs/Unified Board/Unified_Board/Unified_Board.kicad_pcb), tested 10 November 2026
+    2750. LVPD-board  (Side_Projects/ARC/PCBs/LVPD-board.kicad_pcb), tested 9 November 2026
+    2751. LVPD-board_Payload  (Side_Projects/ARC/PCBs/LVPD-board_Payload/LVPD-board_Payload.kicad_pcb), tested 9 November 2026
+    2752. LVPD-board_v2  (Side_Projects/ARC/PCBs/LVPD-board_v2/LVPD-board_v2.kicad_pcb), tested 9 November 2026
+    2753. charge_deployment  (Side_Projects/Charge Deployment/Circuits/charge_deployment.kicad_pcb), tested 9 November 2026
+    2754. ARCH  (Spaceport/PCBs/ARCH/ARCH.kicad_pcb), tested 9 November 2026
+    2755. BatteryCharger  (Spaceport/PCBs/BatteryCharger/BatteryCharger/BatteryCharger.kicad_pcb), tested 9 November 2026
+    2756. Blue Raven Extension  (Spaceport/PCBs/Blue Raven Extension/Blue Raven Extension.kicad_pcb), tested 9 November 2026
+    2757. dipole-breakout  (Spaceport/PCBs/dipole-breakout/dipole-breakout.kicad_pcb), tested 9 November 2026
+    2758. flight-computer  (Spaceport/PCBs/flight-computer/Alternate layout-2025-2026/flight-computer.kicad_pcb), tested 9 November 2026
+    2759. flight-computer  (Spaceport/PCBs/flight-computer/flight-computer-2025-2026/flight-computer.kicad_pcb), tested 9 November 2026
+    2760. mcu-board v2  (Spaceport/PCBs/Gerbers/Teensy v3.0/mcu-board v2.kicad_pcb), tested 9 November 2026
+    2761. SensorBoardNoMCU  (Spaceport/PCBs/Gerbers/Teensy v3.0/SensorBoardNoMCU.kicad_pcb), tested 9 November 2026
+    2762. Ground Receiver v2  (Spaceport/PCBs/Ground Reciever/Ground Reciever v2/Ground Receiver v2.kicad_pcb), tested 9 November 2026
+    2763. Ground Reciever  (Spaceport/PCBs/Ground Reciever/Ground Reciever.kicad_pcb), tested 9 November 2026
+    2764. ground-receiver  (Spaceport/PCBs/ground-receiver/ground-receiver.kicad_pcb), tested 9 November 2026
+    2765. high-power-module  (Spaceport/PCBs/high-power-module/high-power-module.kicad_pcb), tested 9 November 2026
+    2766. LiBatteryCharger  (Spaceport/PCBs/LiBatteryCharger/LiBatteryCharger.kicad_pcb), tested 9 November 2026
+    2767. live-video-multi-function-board  (Spaceport/PCBs/live-video-multi-function-board/live-video-multi-function-board.kicad_pcb), tested 9 November 2026
+    2768. low_power_module  (Spaceport/PCBs/low_power_module/low_power_module.kicad_pcb), tested 9 November 2026
+    2769. ESP32_BluetoothModule_TerrapinRockets  (Spaceport/PCBs/MCU Boards/ESP32_BluetoothModule_TerrapinRockets/ESP32_BluetoothModule_TerrapinRockets.kicad_pcb), tested 9 November 2026
+    2770. Main Board  (Spaceport/PCBs/MCU Boards/STM32 MCU Large/Main Board.kicad_pcb), tested 9 November 2026
+    2771. mcu-board  (Spaceport/PCBs/MCU Boards/Teensy MCU Board/mcu-board.kicad_pcb), tested 9 November 2026
+    2772. new-pa-test-board  (Spaceport/PCBs/new-pa-test-board/new-pa-test-board.kicad_pcb), tested 9 November 2026
+    2773. pa-test-board  (Spaceport/PCBs/pa-test-board/pa-test-board.kicad_pcb), tested 9 November 2026
+    2774. power-delivery-board  (Spaceport/PCBs/power-delivery-board/power-delivery-board/power-delivery-board.kicad_pcb), tested 9 November 2026
+    2775. RF4463F30-test-board  (Spaceport/PCBs/RF4463F30-test-board/RF4463F30-test-board.kicad_pcb), tested 9 November 2026
+    2776. Screw Switch  (Spaceport/PCBs/Screw Switch/Screw Switch.kicad_pcb), tested 9 November 2026
+    2777. high-range-IMU  (Spaceport/PCBs/Sensor Boards/high-range-IMU/high-range-IMU.kicad_pcb), tested 9 November 2026
+    2778. PatchAntennaBreakout  (Spaceport/PCBs/Sensor Boards/PatchAntennaBreakout/PatchAntennaBreakout.kicad_pcb), tested 9 November 2026
+    2779. SensorBoardNoMCU  (Spaceport/PCBs/Sensor Boards/SensorBoardAirbrake/SensorBoardNoMCU.kicad_pcb), tested 9 November 2026
+    2780. SensorBoardNoMCU  (Spaceport/PCBs/Sensor Boards/SensorBoardPatch/SensorBoardNoMCU.kicad_pcb), tested 9 November 2026
+    2781. SensorBoard  (Spaceport/PCBs/Sensor Boards/SensorBoardSTM32/SensorBoard.kicad_pcb), tested 9 November 2026
+    2782. Unified_Board  (Spaceport/PCBs/Unified Board/Unified_Board/Unified_Board.kicad_pcb), tested 10 November 2026
 
 TheGuyDanish/CM4_MATX
   https://github.com/TheGuyDanish/CM4_MATX
   License: CERN-OHL-P-2.0 (CERN Open Hardware Licence v2, Permissive), in LICENSE
   Board (1):
-    2782. CM4_MATX  (KiCad/CM4_MATX.kicad_pcb), tested 9 November 2026
+    2783. CM4_MATX  (KiCad/CM4_MATX.kicad_pcb), tested 9 November 2026
 
 thorpej/pg68k
   https://github.com/thorpej/pg68k
   License: No license found
   Boards (2):
-    2783. cpu030  (cpu030/design-files/cpu030.kicad_pcb), tested 9 to 10 November 2026
-    2784. nqvme_template  (nqvme_template/design-files/nqvme_template.kicad_pcb), tested 9 November 2026
+    2784. cpu030  (cpu030/design-files/cpu030.kicad_pcb), tested 9 to 10 November 2026
+    2785. nqvme_template  (nqvme_template/design-files/nqvme_template.kicad_pcb), tested 9 November 2026
 
 ThorstenBr/Apple2Card
   https://github.com/ThorstenBr/Apple2Card
   License: Zlib (zlib License), in README.md
   Boards (2):
-    2785. Apple2Card  (Apple2Card/Apple2Card.kicad_pcb), tested 9 November 2026
-    2786. Apple2Card  (Apple2Card_x44/Apple2Card.kicad_pcb), tested 9 November 2026
+    2786. Apple2Card  (Apple2Card/Apple2Card.kicad_pcb), tested 9 November 2026
+    2787. Apple2Card  (Apple2Card_x44/Apple2Card.kicad_pcb), tested 9 November 2026
 
 ThunderFly-aerospace/TFGPS01
   https://github.com/ThunderFly-aerospace/TFGPS01
   License: GPL-3.0 (GNU GPL v3.0)
   Board (1):
-    2787. TFGPS01  (hw/sch_pcb/TFGPS01.kicad_pcb), tested 9 November 2026
+    2788. TFGPS01  (hw/sch_pcb/TFGPS01.kicad_pcb), tested 9 November 2026
 
 tigard-tools/tigard
   https://github.com/tigard-tools/tigard
   License: CC-BY-SA-4.0 (Creative Commons Attribution-ShareAlike 4.0), in LICENSE.txt
   Board (1):
-    2788. tigard  (tigard.kicad_pcb), tested 9 November 2026
+    2789. tigard  (tigard.kicad_pcb), tested 9 November 2026
 
 timvideos/HDMI2USB-numato-opsis-hardware
   https://github.com/timvideos/HDMI2USB-numato-opsis-hardware
   License: CC-BY-SA-4.0 (Creative Commons Attribution-ShareAlike 4.0)
   Board (1):
-    2789. HDMI2USB  (board/HDMI2USB.kicad_pcb), tested 9 to 10 November 2026
+    2790. HDMI2USB  (board/HDMI2USB.kicad_pcb), tested 9 to 10 November 2026
 
 Tinkerforge/ethernet-extension
   https://github.com/Tinkerforge/ethernet-extension
   License: No license found
   Boards (2):
-    2790. ethernet-extension-poe  (hardware/poe/ethernet-extension-poe.kicad_pcb), tested 9 November 2026
-    2791. ethernet-extension-wopoe  (hardware/wo_poe/ethernet-extension-wopoe.kicad_pcb), tested 9 November 2026
+    2791. ethernet-extension-poe  (hardware/poe/ethernet-extension-poe.kicad_pcb), tested 9 November 2026
+    2792. ethernet-extension-wopoe  (hardware/wo_poe/ethernet-extension-wopoe.kicad_pcb), tested 9 November 2026
 
 tinkerforge/evse-v4-bricklet
   https://github.com/tinkerforge/evse-v4-bricklet
   License: No license found
   Boards (2):
-    2792. evse-v4  (hardware/evse-v4.kicad_pcb), tested 9 November 2026
-    2793. evse-v4b  (hardware/variant-b/evse-v4b/evse-v4b.kicad_pcb), tested 9 November 2026
+    2793. evse-v4  (hardware/evse-v4.kicad_pcb), tested 9 November 2026
+    2794. evse-v4b  (hardware/variant-b/evse-v4b/evse-v4b.kicad_pcb), tested 9 November 2026
 
 Tinkerforge/red-brick
   https://github.com/Tinkerforge/red-brick
   License: CERN-OHL-1.1 (CERN Open Hardware Licence v1.1), in hardware/LICENSE.txt
   Board (1):
-    2794. red  (hardware/red.kicad_pcb), tested 9 November 2026
+    2795. red  (hardware/red.kicad_pcb), tested 9 November 2026
 
 tinyfpga/TinyFPGA-BX
   https://github.com/tinyfpga/TinyFPGA-BX
   License: CERN-OHL-1.2 (CERN Open Hardware Licence v1.2), in LICENSE
   Board (1):
-    2795. TinyFPGA-BX  (board/TinyFPGA-BX.kicad_pcb), tested 9 November 2026
+    2796. TinyFPGA-BX  (board/TinyFPGA-BX.kicad_pcb), tested 9 November 2026
 
 TinyTapeout/breakout-pcb
   https://github.com/TinyTapeout/breakout-pcb
   License: Apache-2.0 (Apache License 2.0)
   Boards (10):
-    2796. caravel-breakout-fpga-ICE40UP5K-TT3  (ASIC-simulator/tt03-fpga-ICE40UP5k/caravel-breakout-fpga-ICE40UP5K-TT3.kicad_pcb), tested 9 November 2026
-    2797. breakout-fpga-ICE40UP5K  (ASIC-simulator/tt04-fpga-ICE40UP5k/breakout-fpga-ICE40UP5K.kicad_pcb), tested 9 November 2026
-    2798. tt06-fpga-ICE40UP5k  (ASIC-simulator/tt06-fpga-ICE40UP5k/tt06-fpga-ICE40UP5k.kicad_pcb), tested 9 November 2026
-    2799. ttdbv3-fpga-ICE40UP5k  (ASIC-simulator/ttdbv3-fpga-ICE40UP5k/ttdbv3-fpga-ICE40UP5k.kicad_pcb), tested 9 November 2026
-    2800. breakout-dip-gf  (breakout-dip-gf/breakout-dip-gf.kicad_pcb), tested 9 November 2026
-    2801. breakout-ihp-qfn  (breakout-ihp-qfn/breakout-ihp-qfn.kicad_pcb), tested 9 November 2026
-    2802. breakout-qfn  (breakout-qfn/breakout-qfn.kicad_pcb), tested 9 November 2026
-    2803. breakout-sky-qfn  (breakout-sky-qfn/breakout-sky-qfn.kicad_pcb), tested 9 November 2026
-    2804. breakout-tt04-qfn-socket  (breakout-tt04-qfn-socket/breakout-tt04-qfn-socket.kicad_pcb), tested 9 November 2026
-    2805. breakout-tt06-qfn-socket  (breakout-tt06-qfn-socket/breakout-tt06-qfn-socket.kicad_pcb), tested 9 November 2026
+    2797. caravel-breakout-fpga-ICE40UP5K-TT3  (ASIC-simulator/tt03-fpga-ICE40UP5k/caravel-breakout-fpga-ICE40UP5K-TT3.kicad_pcb), tested 9 November 2026
+    2798. breakout-fpga-ICE40UP5K  (ASIC-simulator/tt04-fpga-ICE40UP5k/breakout-fpga-ICE40UP5K.kicad_pcb), tested 9 November 2026
+    2799. tt06-fpga-ICE40UP5k  (ASIC-simulator/tt06-fpga-ICE40UP5k/tt06-fpga-ICE40UP5k.kicad_pcb), tested 9 November 2026
+    2800. ttdbv3-fpga-ICE40UP5k  (ASIC-simulator/ttdbv3-fpga-ICE40UP5k/ttdbv3-fpga-ICE40UP5k.kicad_pcb), tested 9 November 2026
+    2801. breakout-dip-gf  (breakout-dip-gf/breakout-dip-gf.kicad_pcb), tested 9 November 2026
+    2802. breakout-ihp-qfn  (breakout-ihp-qfn/breakout-ihp-qfn.kicad_pcb), tested 9 November 2026
+    2803. breakout-qfn  (breakout-qfn/breakout-qfn.kicad_pcb), tested 9 November 2026
+    2804. breakout-sky-qfn  (breakout-sky-qfn/breakout-sky-qfn.kicad_pcb), tested 9 November 2026
+    2805. breakout-tt04-qfn-socket  (breakout-tt04-qfn-socket/breakout-tt04-qfn-socket.kicad_pcb), tested 9 November 2026
+    2806. breakout-tt06-qfn-socket  (breakout-tt06-qfn-socket/breakout-tt06-qfn-socket.kicad_pcb), tested 9 November 2026
 
 TinyTapeout/tt-demo-pcb
   https://github.com/TinyTapeout/tt-demo-pcb
   License: Apache-2.0 (Apache License 2.0)
   Board (1):
-    2806. tinytapeout-demo  (tinytapeout-demo.kicad_pcb), tested 9 November 2026
+    2807. tinytapeout-demo  (tinytapeout-demo.kicad_pcb), tested 9 November 2026
 
 tinyvision-ai-inc/oshw-adapters
   https://github.com/tinyvision-ai-inc/oshw-adapters
   License: MIT (MIT License)
   Boards (2):
-    2807. syzygy-mipi-adapter  (syzygy-mipi-adapter/board/Rev0/syzygy-mipi-adapter.kicad_pcb), tested 9 November 2026
-    2808. syzygy-mipi-adapter  (syzygy-mipi-adapter/board/Rev1/syzygy-mipi-adapter.kicad_pcb), tested 9 November 2026
+    2808. syzygy-mipi-adapter  (syzygy-mipi-adapter/board/Rev0/syzygy-mipi-adapter.kicad_pcb), tested 9 November 2026
+    2809. syzygy-mipi-adapter  (syzygy-mipi-adapter/board/Rev1/syzygy-mipi-adapter.kicad_pcb), tested 9 November 2026
 
 tinyvision-ai-inc/pico-ice
   https://github.com/tinyvision-ai-inc/pico-ice
   License: MIT (MIT License)
   Boards (4):
-    2809. pico-ice  (Board/Rev0/pico-ice.kicad_pcb), tested 9 November 2026
-    2810. pico-ice  (Board/Rev1/pico-ice.kicad_pcb), tested 9 November 2026
-    2811. pico-ice  (Board/Rev2/pico-ice.kicad_pcb), tested 9 November 2026
-    2812. pico-ice  (Board/Rev3/pico-ice.kicad_pcb), tested 9 November 2026
+    2810. pico-ice  (Board/Rev0/pico-ice.kicad_pcb), tested 9 November 2026
+    2811. pico-ice  (Board/Rev1/pico-ice.kicad_pcb), tested 9 November 2026
+    2812. pico-ice  (Board/Rev2/pico-ice.kicad_pcb), tested 9 November 2026
+    2813. pico-ice  (Board/Rev3/pico-ice.kicad_pcb), tested 9 November 2026
 
 tinyvision-ai-inc/pico2-ice
   https://github.com/tinyvision-ai-inc/pico2-ice
   License: MIT (MIT License)
   Boards (3):
-    2813. pico2-ice  (Board/Rev0/pico2-ice.kicad_pcb), tested 9 to 10 November 2026
-    2814. pico2-ice  (Board/Rev1/pico2-ice.kicad_pcb), tested 9 November 2026
-    2815. pico2-ice  (Board/Rev2/pico2-ice.kicad_pcb), tested 9 November 2026
+    2814. pico2-ice  (Board/Rev0/pico2-ice.kicad_pcb), tested 9 to 10 November 2026
+    2815. pico2-ice  (Board/Rev1/pico2-ice.kicad_pcb), tested 9 November 2026
+    2816. pico2-ice  (Board/Rev2/pico2-ice.kicad_pcb), tested 9 November 2026
 
 tinyvision-ai-inc/pico2-nx
   https://github.com/tinyvision-ai-inc/pico2-nx
   License: MIT (MIT License)
   Boards (4):
-    2816. pico2-nx-module  (board/Rev0/pico2-nx-module/pico2-nx-module.kicad_pcb), tested 9 November 2026
-    2817. pico2-nx  (board/Rev0/pico2-nx/pico2-nx.kicad_pcb), tested 9 November 2026
-    2818. nx-module-breakout  (board/Rev2/nx-module-breakout/nx-module-breakout.kicad_pcb), tested 9 November 2026
-    2819. pico2-nx-module  (board/Rev2/nx-module/pico2-nx-module.kicad_pcb), tested 9 November 2026
+    2817. pico2-nx-module  (board/Rev0/pico2-nx-module/pico2-nx-module.kicad_pcb), tested 9 November 2026
+    2818. pico2-nx  (board/Rev0/pico2-nx/pico2-nx.kicad_pcb), tested 9 November 2026
+    2819. nx-module-breakout  (board/Rev2/nx-module-breakout/nx-module-breakout.kicad_pcb), tested 9 November 2026
+    2820. pico2-nx-module  (board/Rev2/nx-module/pico2-nx-module.kicad_pcb), tested 9 November 2026
 
 tinyvision-ai-inc/upduino-jtag
   https://github.com/tinyvision-ai-inc/upduino-jtag
   License: MIT (MIT License)
   Boards (2):
-    2820. pogo_adapter  (board/pogo_adapter/pogo_adapter.kicad_pcb), tested 9 November 2026
-    2821. upduino-jtag  (board/upduino_adapter/upduino-jtag.kicad_pcb), tested 9 November 2026
+    2821. pogo_adapter  (board/pogo_adapter/pogo_adapter.kicad_pcb), tested 9 November 2026
+    2822. upduino-jtag  (board/upduino_adapter/upduino-jtag.kicad_pcb), tested 9 November 2026
 
 tinyvision-ai-inc/upduino-v3.0
   https://github.com/tinyvision-ai-inc/upduino-v3.0
   License: MIT (MIT License)
   Boards (4):
-    2822. UPduino_v3.0  (Board/v1.0/UPduino_v3.0.kicad_pcb), tested 9 November 2026
-    2823. UPduino_v3.0  (Board/v2.0/UPduino_v3.0.kicad_pcb), tested 9 November 2026
-    2824. UPduino_v3.0  (Board/v3.0/UPduino_v3.0.kicad_pcb), tested 9 November 2026
-    2825. UPduino_v3.01  (Board/v3.01/UPduino_v3.01.kicad_pcb), tested 9 November 2026
+    2823. UPduino_v3.0  (Board/v1.0/UPduino_v3.0.kicad_pcb), tested 9 November 2026
+    2824. UPduino_v3.0  (Board/v2.0/UPduino_v3.0.kicad_pcb), tested 9 November 2026
+    2825. UPduino_v3.0  (Board/v3.0/UPduino_v3.0.kicad_pcb), tested 9 November 2026
+    2826. UPduino_v3.01  (Board/v3.01/UPduino_v3.01.kicad_pcb), tested 9 November 2026
 
 tjeerdie/spectre
   https://github.com/tjeerdie/spectre
   License: GPL-3.0 (GNU GPL v3.0)
   Boards (7):
-    2826. Speeduino_base  (SPECTRE_V0.3/Speeduino_base.kicad_pcb), tested 9 November 2026
-    2827. Speeduino_base  (SPECTRE_V0.4/Speeduino_base.kicad_pcb), tested 9 November 2026
-    2828. Speeduino_base  (SPECTRE_V0.5.1/Speeduino_base.kicad_pcb), tested 10 November 2026
-    2829. Speeduino_base  (SPECTRE_V0.5.2/Speeduino_base.kicad_pcb), tested 9 November 2026
-    2830. Speeduino_base  (SPECTRE_V0.5.3/Speeduino_base.kicad_pcb), tested 9 November 2026
-    2831. Speeduino_base  (SPECTRE_V0.5.4/Speeduino_base.kicad_pcb), tested 9 November 2026
-    2832. Speeduino_base  (SPECTRE_V0.5/Speeduino_base.kicad_pcb), tested 9 November 2026
+    2827. Speeduino_base  (SPECTRE_V0.3/Speeduino_base.kicad_pcb), tested 9 November 2026
+    2828. Speeduino_base  (SPECTRE_V0.4/Speeduino_base.kicad_pcb), tested 9 November 2026
+    2829. Speeduino_base  (SPECTRE_V0.5.1/Speeduino_base.kicad_pcb), tested 10 November 2026
+    2830. Speeduino_base  (SPECTRE_V0.5.2/Speeduino_base.kicad_pcb), tested 9 November 2026
+    2831. Speeduino_base  (SPECTRE_V0.5.3/Speeduino_base.kicad_pcb), tested 9 November 2026
+    2832. Speeduino_base  (SPECTRE_V0.5.4/Speeduino_base.kicad_pcb), tested 9 November 2026
+    2833. Speeduino_base  (SPECTRE_V0.5/Speeduino_base.kicad_pcb), tested 9 November 2026
 
 tjhorner/upsy-desky
   https://github.com/tjhorner/upsy-desky
   License: CC-BY-NC-SA-4.0 (Creative Commons Attribution-NonCommercial-ShareAlike 4.0), in
            LICENSE-CC
   Board (1):
-    2833. upsy-desky  (pcb/upsy-desky.kicad_pcb), tested 9 November 2026
+    2834. upsy-desky  (pcb/upsy-desky.kicad_pcb), tested 9 November 2026
 
 tlalexander/rpi-cm4-switch-board
   https://github.com/tlalexander/rpi-cm4-switch-board
@@ -6955,211 +6961,211 @@ tlalexander/rpi-cm4-switch-board
            AND THE AUTHOR DISCLAIMS ALL WARRANTIES WITH REGARD TO THIS DESIGN INCLUDING ALL
            IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS."
   Boards (2):
-    2834. CM4IOv5  (CM4IO/CM4IOv5.kicad_pcb), tested 9 November 2026
-    2835. rpi-cm4-switch-board  (hardware/rpi-cm4-switch-board/rpi-cm4-switch-board.kicad_pcb), tested 9 November 2026
+    2835. CM4IOv5  (CM4IO/CM4IOv5.kicad_pcb), tested 9 November 2026
+    2836. rpi-cm4-switch-board  (hardware/rpi-cm4-switch-board/rpi-cm4-switch-board.kicad_pcb), tested 9 November 2026
 
 tmarhguy/alu
   https://github.com/tmarhguy/alu
   License: MIT (MIT License)
   Boards (15):
-    2836. add_sub  (schematics/kicad/boards/add_sub/add_sub.kicad_pcb), tested 9 November 2026
-    2837. flags  (schematics/kicad/boards/flags/flags.kicad_pcb), tested 9 November 2026
-    2838. led_panel_1  (schematics/kicad/boards/led_panel/led_panel_1/led_panel_1.kicad_pcb), tested 9 November 2026
-    2839. led_panel_2  (schematics/kicad/boards/led_panel/led_panel_2/led_panel_2.kicad_pcb), tested 9 November 2026
-    2840. led_panel_3  (schematics/kicad/boards/led_panel/led_panel_3/led_panel_3.kicad_pcb), tested 9 November 2026
-    2841. main_control  (schematics/kicad/boards/main_control/main_control.kicad_pcb), tested 9 November 2026
-    2842. main_logic  (schematics/kicad/boards/main_logic/main_logic.kicad_pcb), tested 9 November 2026
-    2843. gate_and_2in  (schematics/kicad/modules/gates/gate_and/gate_and_2in/gate_and_2in.kicad_pcb), tested 9 November 2026
-    2844. gate_and_4in  (schematics/kicad/modules/gates/gate_and/gate_and_4in/gate_and_4in.kicad_pcb), tested 9 November 2026
-    2845. gate_inv_1bit  (schematics/kicad/modules/gates/gate_inv/gate_inv_1bit/gate_inv_1bit.kicad_pcb), tested 9 November 2026
-    2846. gate_nand_2in  (schematics/kicad/modules/gates/gate_nand/gate_nand_2in/gate_nand_2in.kicad_pcb), tested 9 November 2026
-    2847. gate_nor_2in  (schematics/kicad/modules/gates/gate_nor/gate_nor_2in_1bit/gate_nor_2in.kicad_pcb), tested 9 November 2026
-    2848. gate_or_2in  (schematics/kicad/modules/gates/gate_or/gate_or_2in/gate_or_2in.kicad_pcb), tested 9 November 2026
-    2849. gate_xnor_2in  (schematics/kicad/modules/gates/gate_xnor/gate_xnor_2in/gate_xnor_2in.kicad_pcb), tested 9 November 2026
-    2850. gate_xor_2in  (schematics/kicad/modules/gates/gate_xor/gate_xor_2in/gate_xor_2in.kicad_pcb), tested 9 November 2026
+    2837. add_sub  (schematics/kicad/boards/add_sub/add_sub.kicad_pcb), tested 9 November 2026
+    2838. flags  (schematics/kicad/boards/flags/flags.kicad_pcb), tested 9 November 2026
+    2839. led_panel_1  (schematics/kicad/boards/led_panel/led_panel_1/led_panel_1.kicad_pcb), tested 9 November 2026
+    2840. led_panel_2  (schematics/kicad/boards/led_panel/led_panel_2/led_panel_2.kicad_pcb), tested 9 November 2026
+    2841. led_panel_3  (schematics/kicad/boards/led_panel/led_panel_3/led_panel_3.kicad_pcb), tested 9 November 2026
+    2842. main_control  (schematics/kicad/boards/main_control/main_control.kicad_pcb), tested 9 November 2026
+    2843. main_logic  (schematics/kicad/boards/main_logic/main_logic.kicad_pcb), tested 9 November 2026
+    2844. gate_and_2in  (schematics/kicad/modules/gates/gate_and/gate_and_2in/gate_and_2in.kicad_pcb), tested 9 November 2026
+    2845. gate_and_4in  (schematics/kicad/modules/gates/gate_and/gate_and_4in/gate_and_4in.kicad_pcb), tested 9 November 2026
+    2846. gate_inv_1bit  (schematics/kicad/modules/gates/gate_inv/gate_inv_1bit/gate_inv_1bit.kicad_pcb), tested 9 November 2026
+    2847. gate_nand_2in  (schematics/kicad/modules/gates/gate_nand/gate_nand_2in/gate_nand_2in.kicad_pcb), tested 9 November 2026
+    2848. gate_nor_2in  (schematics/kicad/modules/gates/gate_nor/gate_nor_2in_1bit/gate_nor_2in.kicad_pcb), tested 9 November 2026
+    2849. gate_or_2in  (schematics/kicad/modules/gates/gate_or/gate_or_2in/gate_or_2in.kicad_pcb), tested 9 November 2026
+    2850. gate_xnor_2in  (schematics/kicad/modules/gates/gate_xnor/gate_xnor_2in/gate_xnor_2in.kicad_pcb), tested 9 November 2026
+    2851. gate_xor_2in  (schematics/kicad/modules/gates/gate_xor/gate_xor_2in/gate_xor_2in.kicad_pcb), tested 9 November 2026
 
 tobias-dg3yev/ra-sentinel
   https://github.com/tobias-dg3yev/ra-sentinel
   License: GPL-3.0 (GNU GPL v3.0)
   Boards (6):
-    2851. RASANT2400  (RASANT2400/Hardware/KiCad/RASANT2400.kicad_pcb), tested 9 November 2026
-    2852. RASBB  (RASBB/Hardware/Rev.A/Design/RASBB.kicad_pcb), tested 9 November 2026
-    2853. RASBB  (RASBB/Hardware/Rev.B/Design/RASBB.kicad_pcb), tested 9 November 2026
-    2854. RASBB  (RASBB/Hardware/Rev.C/Design/RASBB.kicad_pcb), tested 9 to 10 November 2026
-    2855. RASRF  (RASRF2400WB/Hardware/PCB_Design/RASRF.kicad_pcb), tested 9 November 2026
-    2856. RASRF2400WBMC  (RASRF2400WBMC/Hardware/KiCad/RASRF2400WBMC.kicad_pcb), tested 10 November 2026
+    2852. RASANT2400  (RASANT2400/Hardware/KiCad/RASANT2400.kicad_pcb), tested 9 November 2026
+    2853. RASBB  (RASBB/Hardware/Rev.A/Design/RASBB.kicad_pcb), tested 9 November 2026
+    2854. RASBB  (RASBB/Hardware/Rev.B/Design/RASBB.kicad_pcb), tested 9 November 2026
+    2855. RASBB  (RASBB/Hardware/Rev.C/Design/RASBB.kicad_pcb), tested 9 to 10 November 2026
+    2856. RASRF  (RASRF2400WB/Hardware/PCB_Design/RASRF.kicad_pcb), tested 9 November 2026
+    2857. RASRF2400WBMC  (RASRF2400WBMC/Hardware/KiCad/RASRF2400WBMC.kicad_pcb), tested 10 November 2026
 
 tomojitakasu/PocketSDR
   https://github.com/tomojitakasu/PocketSDR
   License: BSD-2-Clause (BSD 2-Clause License), in LICENSE.txt
   Boards (5):
-    2857. pocket_sdr_v2.3  (FE_2CH/HW/v2.3/pocket_sdr_v2.3.kicad_pcb), tested 9 November 2026
-    2858. v3.0  (FE_4CH/HW/v3.0/v3.0.kicad_pcb), tested 9 November 2026
-    2859. div_4px2  (FE_8CH/HW/div_4px2/div_4px2.kicad_pcb), tested 10 November 2026
-    2860. v4.0  (FE_8CH/HW/v4.0/v4.0.kicad_pcb), tested 9 November 2026
-    2861. v4.1  (FE_8CH/HW/v4.1/v4.1.kicad_pcb), tested 9 November 2026
+    2858. pocket_sdr_v2.3  (FE_2CH/HW/v2.3/pocket_sdr_v2.3.kicad_pcb), tested 9 November 2026
+    2859. v3.0  (FE_4CH/HW/v3.0/v3.0.kicad_pcb), tested 9 November 2026
+    2860. div_4px2  (FE_8CH/HW/div_4px2/div_4px2.kicad_pcb), tested 10 November 2026
+    2861. v4.0  (FE_8CH/HW/v4.0/v4.0.kicad_pcb), tested 9 November 2026
+    2862. v4.1  (FE_8CH/HW/v4.1/v4.1.kicad_pcb), tested 9 November 2026
 
 tomrodinger/servomotor
   https://github.com/tomrodinger/servomotor
   License: MIT (MIT License)
   Boards (22):
-    2862. Coin_Cell_Tester  (PCB/Coin_Cell_Tester/PCB/V1/Coin_Cell_Tester.kicad_pcb), tested 9 November 2026
-    2863. Coin_Cell_Tester  (PCB/Coin_Cell_Tester/PCB/V2/Coin_Cell_Tester.kicad_pcb), tested 9 November 2026
-    2864. servo_motor  (PCB/Servomotor1/V26/servo_motor.kicad_pcb), tested 9 November 2026
-    2865. servo_motor  (PCB/Servomotor1/V27/servo_motor.kicad_pcb), tested 9 November 2026
-    2866. servo_motor  (PCB/Servomotor2/V4/servo_motor.kicad_pcb), tested 9 November 2026
-    2867. servo_motor  (PCB/Servomotor2/V5/servo_motor.kicad_pcb), tested 9 November 2026
-    2868. servo_motor-V6  (PCB/Servomotor2/V6/servo_motor-V6.kicad_pcb), tested 9 November 2026
-    2869. 1.0  (PCB/Servomotor3/1.0/1.0.kicad_pcb), tested 9 November 2026
-    2870. 1.2  (PCB/Servomotor3/1.2/1.2.kicad_pcb), tested 9 November 2026
-    2871. 1.3  (PCB/Servomotor3/1.3/1.3.kicad_pcb), tested 9 November 2026
-    2872. 1.5  (PCB/Servomotor3/1.5/1.5.kicad_pcb), tested 9 November 2026
-    2873. V10  (PCB/Servomotor3/V10/V10.kicad_pcb), tested 9 November 2026
-    2874. V11  (PCB/Servomotor3/V11/V11.kicad_pcb), tested 9 November 2026
-    2875. V11  (PCB/Servomotor3/V11RC1/V11.kicad_pcb), tested 9 November 2026
-    2876. V11RC2  (PCB/Servomotor3/V11RC2/V11RC2.kicad_pcb), tested 9 November 2026
-    2877. V11RC3  (PCB/Servomotor3/V11RC3/V11RC3.kicad_pcb), tested 9 November 2026
-    2878. V11RC4  (PCB/Servomotor3/V11RC4/V11RC4.kicad_pcb), tested 9 November 2026
-    2879. servomotorStepper-V2I1  (PCB/Servomotor3/V2/servomotorStepper-V2I1.kicad_pcb), tested 9 November 2026
-    2880. M3-V4  (PCB/Servomotor3/V4/M3-V4.kicad_pcb), tested 9 November 2026
-    2881. M3-V5  (PCB/Servomotor3/V5/M3-V5.kicad_pcb), tested 9 November 2026
-    2882. V8  (PCB/Servomotor3/V8/V8.kicad_pcb), tested 9 November 2026
-    2883. V9  (PCB/Servomotor3/V9/V9.kicad_pcb), tested 9 November 2026
+    2863. Coin_Cell_Tester  (PCB/Coin_Cell_Tester/PCB/V1/Coin_Cell_Tester.kicad_pcb), tested 9 November 2026
+    2864. Coin_Cell_Tester  (PCB/Coin_Cell_Tester/PCB/V2/Coin_Cell_Tester.kicad_pcb), tested 9 November 2026
+    2865. servo_motor  (PCB/Servomotor1/V26/servo_motor.kicad_pcb), tested 9 November 2026
+    2866. servo_motor  (PCB/Servomotor1/V27/servo_motor.kicad_pcb), tested 9 November 2026
+    2867. servo_motor  (PCB/Servomotor2/V4/servo_motor.kicad_pcb), tested 9 November 2026
+    2868. servo_motor  (PCB/Servomotor2/V5/servo_motor.kicad_pcb), tested 9 November 2026
+    2869. servo_motor-V6  (PCB/Servomotor2/V6/servo_motor-V6.kicad_pcb), tested 9 November 2026
+    2870. 1.0  (PCB/Servomotor3/1.0/1.0.kicad_pcb), tested 9 November 2026
+    2871. 1.2  (PCB/Servomotor3/1.2/1.2.kicad_pcb), tested 9 November 2026
+    2872. 1.3  (PCB/Servomotor3/1.3/1.3.kicad_pcb), tested 9 November 2026
+    2873. 1.5  (PCB/Servomotor3/1.5/1.5.kicad_pcb), tested 9 November 2026
+    2874. V10  (PCB/Servomotor3/V10/V10.kicad_pcb), tested 9 November 2026
+    2875. V11  (PCB/Servomotor3/V11/V11.kicad_pcb), tested 9 November 2026
+    2876. V11  (PCB/Servomotor3/V11RC1/V11.kicad_pcb), tested 9 November 2026
+    2877. V11RC2  (PCB/Servomotor3/V11RC2/V11RC2.kicad_pcb), tested 9 November 2026
+    2878. V11RC3  (PCB/Servomotor3/V11RC3/V11RC3.kicad_pcb), tested 9 November 2026
+    2879. V11RC4  (PCB/Servomotor3/V11RC4/V11RC4.kicad_pcb), tested 9 November 2026
+    2880. servomotorStepper-V2I1  (PCB/Servomotor3/V2/servomotorStepper-V2I1.kicad_pcb), tested 9 November 2026
+    2881. M3-V4  (PCB/Servomotor3/V4/M3-V4.kicad_pcb), tested 9 November 2026
+    2882. M3-V5  (PCB/Servomotor3/V5/M3-V5.kicad_pcb), tested 9 November 2026
+    2883. V8  (PCB/Servomotor3/V8/V8.kicad_pcb), tested 9 November 2026
+    2884. V9  (PCB/Servomotor3/V9/V9.kicad_pcb), tested 9 November 2026
 
 torlye/pocket-reform
   https://github.com/torlye/pocket-reform
   License: CERN-OHL-S-2.0 (CERN Open Hardware Licence v2, Strongly Reciprocal), in LICENSE
   Boards (19):
-    2884. pocket-reform-keyboard  (attic/pocket-reform-keyboard/pocket-reform-keyboard.kicad_pcb), tested 9 November 2026
-    2885. pref-display-back-d5-gold  (case-plate-pcbs/pref-display-back-d5-gold.kicad_pcb), tested 9 November 2026
-    2886. pref-display-back-d5  (case-plate-pcbs/pref-display-back-d5.kicad_pcb), tested 9 November 2026
-    2887. pref-display-back-d7-gold  (case-plate-pcbs/pref-display-back-d7-gold.kicad_pcb), tested 9 November 2026
-    2888. pref-display-front-d7  (case-plate-pcbs/pref-display-front-d7.kicad_pcb), tested 9 November 2026
-    2889. pref-display-front  (case-plate-pcbs/pref-display-front.kicad_pcb), tested 9 November 2026
-    2890. pref-keyboard-back-d1-fr4  (case-plate-pcbs/pref-keyboard-back-d1-fr4.kicad_pcb), tested 9 November 2026
-    2891. pref-keyboard-bezel-d6  (case-plate-pcbs/pref-keyboard-bezel-d6.kicad_pcb), tested 9 November 2026
-    2892. pref-keyboard-bezel  (case-plate-pcbs/pref-keyboard-bezel.kicad_pcb), tested 9 November 2026
-    2893. pref-side-panel-empty  (case-plate-pcbs/pref-side-panel-empty.kicad_pcb), tested 9 November 2026
-    2894. pref-side-panel-headphones-d8  (case-plate-pcbs/pref-side-panel-headphones-d8.kicad_pcb), tested 9 November 2026
-    2895. pref-side-panel-ports-d8  (case-plate-pcbs/pref-side-panel-ports-d8.kicad_pcb), tested 9 November 2026
-    2896. pref-side-panel-ports  (case-plate-pcbs/pref-side-panel-ports.kicad_pcb), tested 9 November 2026
-    2897. pocket-reform-charger  (pocket-reform-charger/pocket-reform-charger.kicad_pcb), tested 9 November 2026
-    2898. pocket-reform-headphones  (pocket-reform-headphones/pocket-reform-headphones.kicad_pcb), tested 9 November 2026
-    2899. pocket-reform-keyboard-kailh-ortho  (pocket-reform-keyboard-kailh-ortho/pocket-reform-keyboard-kailh-ortho.kicad_pcb), tested 9 November 2026
-    2900. pocket-reform-motherboard  (pocket-reform-motherboard/pocket-reform-motherboard.kicad_pcb), tested 9 November 2026
-    2901. nref-wifi-m2  (pocket-reform-wifi/nref-wifi-m2.kicad_pcb), tested 9 November 2026
-    2902. pocket-reform-wifi  (pocket-reform-wifi/pocket-reform-wifi.kicad_pcb), tested 9 November 2026
+    2885. pocket-reform-keyboard  (attic/pocket-reform-keyboard/pocket-reform-keyboard.kicad_pcb), tested 9 November 2026
+    2886. pref-display-back-d5-gold  (case-plate-pcbs/pref-display-back-d5-gold.kicad_pcb), tested 9 November 2026
+    2887. pref-display-back-d5  (case-plate-pcbs/pref-display-back-d5.kicad_pcb), tested 9 November 2026
+    2888. pref-display-back-d7-gold  (case-plate-pcbs/pref-display-back-d7-gold.kicad_pcb), tested 9 November 2026
+    2889. pref-display-front-d7  (case-plate-pcbs/pref-display-front-d7.kicad_pcb), tested 9 November 2026
+    2890. pref-display-front  (case-plate-pcbs/pref-display-front.kicad_pcb), tested 9 November 2026
+    2891. pref-keyboard-back-d1-fr4  (case-plate-pcbs/pref-keyboard-back-d1-fr4.kicad_pcb), tested 9 November 2026
+    2892. pref-keyboard-bezel-d6  (case-plate-pcbs/pref-keyboard-bezel-d6.kicad_pcb), tested 9 November 2026
+    2893. pref-keyboard-bezel  (case-plate-pcbs/pref-keyboard-bezel.kicad_pcb), tested 9 November 2026
+    2894. pref-side-panel-empty  (case-plate-pcbs/pref-side-panel-empty.kicad_pcb), tested 9 November 2026
+    2895. pref-side-panel-headphones-d8  (case-plate-pcbs/pref-side-panel-headphones-d8.kicad_pcb), tested 9 November 2026
+    2896. pref-side-panel-ports-d8  (case-plate-pcbs/pref-side-panel-ports-d8.kicad_pcb), tested 9 November 2026
+    2897. pref-side-panel-ports  (case-plate-pcbs/pref-side-panel-ports.kicad_pcb), tested 9 November 2026
+    2898. pocket-reform-charger  (pocket-reform-charger/pocket-reform-charger.kicad_pcb), tested 9 November 2026
+    2899. pocket-reform-headphones  (pocket-reform-headphones/pocket-reform-headphones.kicad_pcb), tested 9 November 2026
+    2900. pocket-reform-keyboard-kailh-ortho  (pocket-reform-keyboard-kailh-ortho/pocket-reform-keyboard-kailh-ortho.kicad_pcb), tested 9 November 2026
+    2901. pocket-reform-motherboard  (pocket-reform-motherboard/pocket-reform-motherboard.kicad_pcb), tested 9 November 2026
+    2902. nref-wifi-m2  (pocket-reform-wifi/nref-wifi-m2.kicad_pcb), tested 9 November 2026
+    2903. pocket-reform-wifi  (pocket-reform-wifi/pocket-reform-wifi.kicad_pcb), tested 9 November 2026
 
 ToyotaInfoTech/RAMN
   https://github.com/ToyotaInfoTech/RAMN
   License: CC-BY-SA-4.0 (Creative Commons Attribution-ShareAlike 4.0), in LICENSE.md
   Boards (7):
-    2903. pods_panel  (hardware/build/pods_panel.kicad_pcb), tested 9 November 2026
-    2904. ramn  (hardware/V1_revB/0_ramn/ramn.kicad_pcb), tested 9 November 2026
-    2905. screens  (hardware/V1_revB/1_screens/screens.kicad_pcb), tested 9 November 2026
-    2906. chassis  (hardware/V1_revB/2_chassis/chassis.kicad_pcb), tested 9 November 2026
-    2907. powertrain  (hardware/V1_revB/3_powertrain/powertrain.kicad_pcb), tested 9 November 2026
-    2908. body  (hardware/V1_revB/4_body/body.kicad_pcb), tested 9 November 2026
-    2909. debugger  (hardware/V1_revB/5_debugger/debugger.kicad_pcb), tested 9 November 2026
+    2904. pods_panel  (hardware/build/pods_panel.kicad_pcb), tested 9 November 2026
+    2905. ramn  (hardware/V1_revB/0_ramn/ramn.kicad_pcb), tested 9 November 2026
+    2906. screens  (hardware/V1_revB/1_screens/screens.kicad_pcb), tested 9 November 2026
+    2907. chassis  (hardware/V1_revB/2_chassis/chassis.kicad_pcb), tested 9 November 2026
+    2908. powertrain  (hardware/V1_revB/3_powertrain/powertrain.kicad_pcb), tested 9 November 2026
+    2909. body  (hardware/V1_revB/4_body/body.kicad_pcb), tested 9 November 2026
+    2910. debugger  (hardware/V1_revB/5_debugger/debugger.kicad_pcb), tested 9 November 2026
 
 transistorfet/retroverse
   https://github.com/transistorfet/retroverse
   License: In LICENSE: CERN-OHL-P-2.0 for hardware designs and programmable logic, Apache-2.0 or
            MIT for other source code, CC-BY-SA-4.0 for artwork and documentation
   Boards (10):
-    2910. 6-Slot-Backplane  (components/backplane/6-Slot-Backplane/6-Slot-Backplane.kicad_pcb), tested 9 November 2026
-    2911. 60mm-Extender  (components/backplane/60mm-Extender/60mm-Extender.kicad_pcb), tested 9 November 2026
-    2912. BigBoy-Frontpanel  (components/bigboy/hardware/BigBoy-Frontpanel/BigBoy-Frontpanel.kicad_pcb), tested 9 November 2026
-    2913. BigBoy  (components/bigboy/hardware/BigBoy/BigBoy.kicad_pcb), tested 9 November 2026
-    2914. BigBoy.stretch_bkup  (components/bigboy/hardware/BigBoy/BigBoy.stretch_bkup.kicad_pcb), tested 9 November 2026
-    2915. k30p-VME-Frontpanel  (components/computie-vme/hardware/k30p-VME-Frontpanel/k30p-VME-Frontpanel.kicad_pcb), tested 9 November 2026
-    2916. k30p-VME  (components/computie-vme/hardware/k30p-VME/k30p-VME.kicad_pcb), tested 10 November 2026
-    2917. MemBird - Woodcock  (components/membird/hardware/MemBird - Woodcock/MemBird - Woodcock.kicad_pcb), tested 9 November 2026
-    2918. SystemBoardPLCC  (components/systemboard/hardware/SystemBoardPLCC/SystemBoardPLCC.kicad_pcb), tested 9 November 2026
-    2919. SystemBoardSMT  (components/systemboard/hardware/SystemBoardSMT/SystemBoardSMT.kicad_pcb), tested 9 November 2026
+    2911. 6-Slot-Backplane  (components/backplane/6-Slot-Backplane/6-Slot-Backplane.kicad_pcb), tested 9 November 2026
+    2912. 60mm-Extender  (components/backplane/60mm-Extender/60mm-Extender.kicad_pcb), tested 9 November 2026
+    2913. BigBoy-Frontpanel  (components/bigboy/hardware/BigBoy-Frontpanel/BigBoy-Frontpanel.kicad_pcb), tested 9 November 2026
+    2914. BigBoy  (components/bigboy/hardware/BigBoy/BigBoy.kicad_pcb), tested 9 November 2026
+    2915. BigBoy.stretch_bkup  (components/bigboy/hardware/BigBoy/BigBoy.stretch_bkup.kicad_pcb), tested 9 November 2026
+    2916. k30p-VME-Frontpanel  (components/computie-vme/hardware/k30p-VME-Frontpanel/k30p-VME-Frontpanel.kicad_pcb), tested 9 November 2026
+    2917. k30p-VME  (components/computie-vme/hardware/k30p-VME/k30p-VME.kicad_pcb), tested 10 November 2026
+    2918. MemBird - Woodcock  (components/membird/hardware/MemBird - Woodcock/MemBird - Woodcock.kicad_pcb), tested 9 November 2026
+    2919. SystemBoardPLCC  (components/systemboard/hardware/SystemBoardPLCC/SystemBoardPLCC.kicad_pcb), tested 9 November 2026
+    2920. SystemBoardSMT  (components/systemboard/hardware/SystemBoardSMT/SystemBoardSMT.kicad_pcb), tested 9 November 2026
 
 trezor/trezor-hardware
   https://github.com/trezor/trezor-hardware
   License: AGPL-3.0 (GNU AGPL v3.0), in COPYING; CERN-OHL-S-2.0 (CERN Open Hardware Licence v2,
            Strongly Reciprocal), in LICENSE
   Boards (2):
-    2920. CYM1A113  (electronics/trezor_model_t/kicad/CYM1A113.kicad_pcb), tested 10 November 2026
-    2921. trezor_v1.1  (electronics/trezor_one/kicad/trezor_v1.1.kicad_pcb), tested 9 November 2026
+    2921. CYM1A113  (electronics/trezor_model_t/kicad/CYM1A113.kicad_pcb), tested 10 November 2026
+    2922. trezor_v1.1  (electronics/trezor_one/kicad/trezor_v1.1.kicad_pcb), tested 9 November 2026
 
 ts-manuel/imx6-demo-board
   https://github.com/ts-manuel/imx6-demo-board
   License: GPL-3.0 (GNU GPL v3.0)
   Boards (2):
-    2922. iMX6 Demo Board  (kicad/iMX6 Demo Board.kicad_pcb), tested 9 November 2026
-    2923. iMX6 Demo Board_from_REF  (kicad/iMX6 Demo Board_from_REF.kicad_pcb), tested 9 November 2026
+    2923. iMX6 Demo Board  (kicad/iMX6 Demo Board.kicad_pcb), tested 9 November 2026
+    2924. iMX6 Demo Board_from_REF  (kicad/iMX6 Demo Board_from_REF.kicad_pcb), tested 9 November 2026
 
 twisted-fields/rp2040-motor-controller
   https://github.com/twisted-fields/rp2040-motor-controller
   License: CERN-OHL-P-2.0 (CERN Open Hardware Licence v2, Permissive), in LICENSE,
            debugger/LICENSE
   Boards (5):
-    2924. RP2040_debugger  (debugger/RP2040_debugger.kicad_pcb), tested 9 November 2026
-    2925. driver_module  (driver_module/driver_module.kicad_pcb), tested 9 November 2026
-    2926. RP2040_base  (RP2040_base/RP2040_base.kicad_pcb), tested 10 November 2026
-    2927. rp2040_encoder  (rp2040_encoder/rp2040_encoder.kicad_pcb), tested 9 November 2026
-    2928. user_interface  (user_interface/user_interface.kicad_pcb), tested 9 November 2026
+    2925. RP2040_debugger  (debugger/RP2040_debugger.kicad_pcb), tested 9 November 2026
+    2926. driver_module  (driver_module/driver_module.kicad_pcb), tested 9 November 2026
+    2927. RP2040_base  (RP2040_base/RP2040_base.kicad_pcb), tested 10 November 2026
+    2928. rp2040_encoder  (rp2040_encoder/rp2040_encoder.kicad_pcb), tested 9 November 2026
+    2929. user_interface  (user_interface/user_interface.kicad_pcb), tested 9 November 2026
 
 tzarc/keyboards
   https://github.com/tzarc/keyboards
   License: CERN-OHL-S-2.0 (CERN Open Hardware Licence v2, Strongly Reciprocal)
   Boards (9):
-    2929. Board-DjinnBase  (Djinn/Rev1/Board-DjinnBase/Board-DjinnBase.kicad_pcb), tested 9 November 2026
-    2930. Board-DjinnPlate  (Djinn/Rev1/Board-DjinnPlate/Board-DjinnPlate.kicad_pcb), tested 9 November 2026
-    2931. Djinn  (Djinn/Rev1/Djinn.kicad_pcb), tested 9 November 2026
-    2932. Djinn  (Djinn/Rev2a/Djinn.kicad_pcb), tested 9 November 2026
-    2933. ExtraBoard-Base  (Djinn/Rev2a/ExtraBoard-Base/ExtraBoard-Base.kicad_pcb), tested 10 November 2026
-    2934. ExtraBoard-Plate  (Djinn/Rev2a/ExtraBoard-Plate/ExtraBoard-Plate.kicad_pcb), tested 9 November 2026
-    2935. ghoul  (Ghoul/v1.0/ghoul.kicad_pcb), tested 10 November 2026
-    2936. half-plate  (Ghoul/v1.0/half-plate/half-plate.kicad_pcb), tested 9 November 2026
-    2937. Kobold  (Kobold/R1/Kobold.kicad_pcb), tested 9 November 2026
+    2930. Board-DjinnBase  (Djinn/Rev1/Board-DjinnBase/Board-DjinnBase.kicad_pcb), tested 9 November 2026
+    2931. Board-DjinnPlate  (Djinn/Rev1/Board-DjinnPlate/Board-DjinnPlate.kicad_pcb), tested 9 November 2026
+    2932. Djinn  (Djinn/Rev1/Djinn.kicad_pcb), tested 9 November 2026
+    2933. Djinn  (Djinn/Rev2a/Djinn.kicad_pcb), tested 9 November 2026
+    2934. ExtraBoard-Base  (Djinn/Rev2a/ExtraBoard-Base/ExtraBoard-Base.kicad_pcb), tested 10 November 2026
+    2935. ExtraBoard-Plate  (Djinn/Rev2a/ExtraBoard-Plate/ExtraBoard-Plate.kicad_pcb), tested 9 November 2026
+    2936. ghoul  (Ghoul/v1.0/ghoul.kicad_pcb), tested 10 November 2026
+    2937. half-plate  (Ghoul/v1.0/half-plate/half-plate.kicad_pcb), tested 9 November 2026
+    2938. Kobold  (Kobold/R1/Kobold.kicad_pcb), tested 9 November 2026
 
 ucdfs/circuits
   https://github.com/ucdfs/circuits
   License: No license found
   Boards (16):
-    2938. APPS final  (APPS_KR/APPS final.kicad_pcb), tested 9 November 2026
-    2939. Battery Temperature Sensor  (Archive/Battery Temperature Sensor_KR/Battery Temperature Sensor.kicad_pcb), tested 9 November 2026
-    2940. LTC6812-15W  (ENNOID_BMS/Slave/LTC6812-15W.kicad_pcb), tested 9 November 2026
-    2941. (LVE)Shutdown  (Kieran Care package/(LVE)Shutdown_KR/(LVE)Shutdown.kicad_pcb), tested 9 November 2026
-    2942. BSPD KiCAD  (Kieran Care package/BSPD_KR/BSPD KiCAD.kicad_pcb), tested 9 November 2026
-    2943. Charger_Shutdown_KR  (Kieran Care package/Charger_Shutdown_KR/Charger_Shutdown_KR.kicad_pcb), tested 9 November 2026
-    2944. Discharge KiCAD  (Kieran Care package/Discharge_KR/Discharge KiCAD.kicad_pcb), tested 9 November 2026
-    2945. Cell Tap Fuse Board 2x  (Kieran Care package/ENNOID_BMS - Cell Tap Fuse Board 2x/Cell Tap Fuse Board 2x.kicad_pcb), tested 9 November 2026
-    2946. Cell Tap Fuse Board 3x  (Kieran Care package/ENNOID_BMS - Cell Tap Fuse Board 3x/Cell Tap Fuse Board 3x.kicad_pcb), tested 9 November 2026
-    2947. BMS-Master  (Kieran Care package/ENNOID_BMS - Master/BMS-Master.kicad_pcb), tested 9 November 2026
-    2948. LTC6812-15W  (Kieran Care package/ENNOID_BMS - Slave/LTC6812-15W.kicad_pcb), tested 9 November 2026
-    2949. TSAL  (Kieran Care package/NEW_TSAL_KR/TSAL.kicad_pcb), tested 9 November 2026
-    2950. PDU_KR  (Kieran Care package/PDU_KR/PDU_KR.kicad_pcb), tested 9 November 2026
-    2951. Pre-charge KiCAD  (Kieran Care package/Pre-charge_KR/Pre-charge KiCAD.kicad_pcb), tested 9 November 2026
-    2952. Breakout  (Kieran Care package/Teensy 4.1 Breakout Board/Breakout.kicad_pcb), tested 9 November 2026
-    2953. Voltage_Measurement_KR  (Kieran Care package/Voltage_Measurement_KR/Voltage_Measurement_KR.kicad_pcb), tested 9 November 2026
+    2939. APPS final  (APPS_KR/APPS final.kicad_pcb), tested 9 November 2026
+    2940. Battery Temperature Sensor  (Archive/Battery Temperature Sensor_KR/Battery Temperature Sensor.kicad_pcb), tested 9 November 2026
+    2941. LTC6812-15W  (ENNOID_BMS/Slave/LTC6812-15W.kicad_pcb), tested 9 November 2026
+    2942. (LVE)Shutdown  (Kieran Care package/(LVE)Shutdown_KR/(LVE)Shutdown.kicad_pcb), tested 9 November 2026
+    2943. BSPD KiCAD  (Kieran Care package/BSPD_KR/BSPD KiCAD.kicad_pcb), tested 9 November 2026
+    2944. Charger_Shutdown_KR  (Kieran Care package/Charger_Shutdown_KR/Charger_Shutdown_KR.kicad_pcb), tested 9 November 2026
+    2945. Discharge KiCAD  (Kieran Care package/Discharge_KR/Discharge KiCAD.kicad_pcb), tested 9 November 2026
+    2946. Cell Tap Fuse Board 2x  (Kieran Care package/ENNOID_BMS - Cell Tap Fuse Board 2x/Cell Tap Fuse Board 2x.kicad_pcb), tested 9 November 2026
+    2947. Cell Tap Fuse Board 3x  (Kieran Care package/ENNOID_BMS - Cell Tap Fuse Board 3x/Cell Tap Fuse Board 3x.kicad_pcb), tested 9 November 2026
+    2948. BMS-Master  (Kieran Care package/ENNOID_BMS - Master/BMS-Master.kicad_pcb), tested 9 November 2026
+    2949. LTC6812-15W  (Kieran Care package/ENNOID_BMS - Slave/LTC6812-15W.kicad_pcb), tested 9 November 2026
+    2950. TSAL  (Kieran Care package/NEW_TSAL_KR/TSAL.kicad_pcb), tested 9 November 2026
+    2951. PDU_KR  (Kieran Care package/PDU_KR/PDU_KR.kicad_pcb), tested 9 November 2026
+    2952. Pre-charge KiCAD  (Kieran Care package/Pre-charge_KR/Pre-charge KiCAD.kicad_pcb), tested 9 November 2026
+    2953. Breakout  (Kieran Care package/Teensy 4.1 Breakout Board/Breakout.kicad_pcb), tested 9 November 2026
+    2954. Voltage_Measurement_KR  (Kieran Care package/Voltage_Measurement_KR/Voltage_Measurement_KR.kicad_pcb), tested 9 November 2026
 
 ukinori/flightcontroller
   https://github.com/ukinori/flightcontroller
   License: As README.md states it: "No project-wide license has been added. Existing third-party
            library notices are retained in their source files."
   Board (1):
-    2954. flightcontroller  (flightcontroller.kicad_pcb), tested 9 November 2026
+    2955. flightcontroller  (flightcontroller.kicad_pcb), tested 9 November 2026
 
 ultimaterobotics/uECG_pcb
   https://github.com/ultimaterobotics/uECG_pcb
   License: CERN-OHL-P-2.0 (CERN Open Hardware Licence v2, Permissive)
   Boards (2):
-    2955. uECG_v4_5  (uECG_v4_5/uECG_v4_5.kicad_pcb), tested 9 November 2026
-    2956. uECG_v4_52_lsm_tlv  (uECG_v4_52_lsm_tlv/uECG_v4_52_lsm_tlv.kicad_pcb), tested 9 November 2026
+    2956. uECG_v4_5  (uECG_v4_5/uECG_v4_5.kicad_pcb), tested 9 November 2026
+    2957. uECG_v4_52_lsm_tlv  (uECG_v4_52_lsm_tlv/uECG_v4_52_lsm_tlv.kicad_pcb), tested 9 November 2026
 
 UnexpectedMaker/esp32s3
   https://github.com/UnexpectedMaker/esp32s3
   License: CERN-OHL-1.2 (CERN Open Hardware Licence v1.2), in kicad/LICENSE
   Boards (3):
-    2957. NanoS3_Carrier  (kicad/NanoS3 Carrier/NanoS3_Carrier.kicad_pcb), tested 9 November 2026
-    2958. OMGS3_Carrier_R1  (kicad/OMGS3 Carrier/OMGS3_Carrier_R1.kicad_pcb), tested 9 November 2026
-    2959. EdgeS3D_Carrier_P1  (series_d/KiCAD/EdgeS3D_Carrier_P1/EdgeS3D_Carrier_P1.kicad_pcb), tested 9 November 2026
+    2958. NanoS3_Carrier  (kicad/NanoS3 Carrier/NanoS3_Carrier.kicad_pcb), tested 9 November 2026
+    2959. OMGS3_Carrier_R1  (kicad/OMGS3 Carrier/OMGS3_Carrier_R1.kicad_pcb), tested 9 November 2026
+    2960. EdgeS3D_Carrier_P1  (series_d/KiCAD/EdgeS3D_Carrier_P1/EdgeS3D_Carrier_P1.kicad_pcb), tested 9 November 2026
 
 usbarmory/usbarmory
   https://github.com/usbarmory/usbarmory
@@ -7168,39 +7174,39 @@ usbarmory/usbarmory
            CERN-OHL-S-2.0 (CERN Open Hardware Licence v2, Strongly Reciprocal), in
            hardware/mark-two-lan/LICENSE, hardware/mark-two/LICENSE
   Boards (5):
-    2960. armory  (hardware/mark-one/armory.kicad_pcb), tested 9 November 2026
-    2961. armory  (hardware/mark-two-beta/armory.kicad_pcb), tested 9 November 2026
-    2962. accessory  (hardware/mark-two-debug-accessory/accessory.kicad_pcb), tested 9 November 2026
-    2963. armory  (hardware/mark-two-lan/armory.kicad_pcb), tested 9 November 2026
-    2964. armory  (hardware/mark-two/armory.kicad_pcb), tested 9 November 2026
+    2961. armory  (hardware/mark-one/armory.kicad_pcb), tested 9 November 2026
+    2962. armory  (hardware/mark-two-beta/armory.kicad_pcb), tested 9 November 2026
+    2963. accessory  (hardware/mark-two-debug-accessory/accessory.kicad_pcb), tested 9 November 2026
+    2964. armory  (hardware/mark-two-lan/armory.kicad_pcb), tested 9 November 2026
+    2965. armory  (hardware/mark-two/armory.kicad_pcb), tested 9 November 2026
 
 usimd/milight-hub
   https://github.com/usimd/milight-hub
   License: CERN-OHL-S-2.0 (CERN Open Hardware Licence v2, Strongly Reciprocal)
   Board (1):
-    2965. milight-hub-base  (milight-hub-base.kicad_pcb), tested 9 November 2026
+    2966. milight-hub-base  (milight-hub-base.kicad_pcb), tested 9 November 2026
 
 v3l0c1r4pt0r/ucm4
   https://github.com/v3l0c1r4pt0r/ucm4
   License: CC-BY-4.0 (Creative Commons Attribution 4.0)
   Board (1):
-    2966. uCM4  (uCM4.kicad_pcb), tested 9 November 2026
+    2967. uCM4  (uCM4.kicad_pcb), tested 9 November 2026
 
 vascofazza/8bit-cpu
   https://github.com/vascofazza/8bit-cpu
   License: MIT (MIT License)
   Boards (5):
-    2967. bus_breakout  (bus_breakout/bus_breakout.kicad_pcb), tested 9 November 2026
-    2968. arduino_eeprom_programmer  (eeprom_programmer/arduino_eeprom_programmer/arduino_eeprom_programmer.kicad_pcb), tested 9 November 2026
-    2969. display_interface  (helix_display_interface/display_interface/display_interface.kicad_pcb), tested 9 November 2026
-    2970. 8bit-computer  (MK1_CPU/8bit-computer/8bit-computer.kicad_pcb), tested 9 November 2026
-    2971. programming_interface  (start9_programming_interface/programming_interface/programming_interface.kicad_pcb), tested 9 November 2026
+    2968. bus_breakout  (bus_breakout/bus_breakout.kicad_pcb), tested 9 November 2026
+    2969. arduino_eeprom_programmer  (eeprom_programmer/arduino_eeprom_programmer/arduino_eeprom_programmer.kicad_pcb), tested 9 November 2026
+    2970. display_interface  (helix_display_interface/display_interface/display_interface.kicad_pcb), tested 9 November 2026
+    2971. 8bit-computer  (MK1_CPU/8bit-computer/8bit-computer.kicad_pcb), tested 9 November 2026
+    2972. programming_interface  (start9_programming_interface/programming_interface/programming_interface.kicad_pcb), tested 9 November 2026
 
 vasimv/omower
   https://github.com/vasimv/omower
   License: GPL-3.0 (GNU GPL v3.0)
   Board (1):
-    2972. omower  (hardware/OMower/omower.kicad_pcb), tested 9 November 2026
+    2973. omower  (hardware/OMower/omower.kicad_pcb), tested 9 November 2026
 
 vedderb/bldc-hardware
   https://github.com/vedderb/bldc-hardware
@@ -7208,298 +7214,298 @@ vedderb/bldc-hardware
            Attribution-ShareAlike 4.0 International License. To view a copy of this license,
            visit http://creativecommons.org/licenses/by-sa/4.0/."
   Board (1):
-    2973. BLDC_4  (design/BLDC_4.kicad_pcb), tested 9 November 2026
+    2974. BLDC_4  (design/BLDC_4.kicad_pcb), tested 9 November 2026
 
 venseytech/VB-IoT1
   https://github.com/venseytech/VB-IoT1
   License: CC-BY-SA-3.0 (Creative Commons Attribution-ShareAlike 3.0), in LICENSE
   Board (1):
-    2974. VB-IoT1_v1  (VB-IoT1_v1/VB-IoT1_v1.kicad_pcb), tested 9 November 2026
+    2975. VB-IoT1_v1  (VB-IoT1_v1/VB-IoT1_v1.kicad_pcb), tested 9 November 2026
 
 viktor-nikolov/microzed-carrier-board
   https://github.com/viktor-nikolov/microzed-carrier-board
   License: CC0-1.0 (Creative Commons Zero v1.0)
   Board (1):
-    2975. MicroZed_carrier_board_v4  (KiCad_and_production_files/MicroZed_carrier_board_v4.kicad_pcb), tested 9 November 2026
+    2976. MicroZed_carrier_board_v4  (KiCad_and_production_files/MicroZed_carrier_board_v4.kicad_pcb), tested 9 November 2026
 
 VimDrones/AM32_esc_development_board
   https://github.com/VimDrones/AM32_esc_development_board
   License: GPL-3.0 (GNU GPL v3.0)
   Board (1):
-    2976. vimdrones_esc_development_board  (vimdrones_esc_development_board.kicad_pcb), tested 9 November 2026
+    2977. vimdrones_esc_development_board  (vimdrones_esc_development_board.kicad_pcb), tested 9 November 2026
 
 vmetodiev/tangenta
   https://github.com/vmetodiev/tangenta
   License: CERN-OHL-P-2.0 (CERN Open Hardware Licence v2, Permissive), in LICENSE
   Board (1):
-    2977. Tangenta  (Tangenta/Tangenta.kicad_pcb), tested 9 November 2026
+    2978. Tangenta  (Tangenta/Tangenta.kicad_pcb), tested 9 November 2026
 
 volkertb/CM4_MATX
   https://github.com/volkertb/CM4_MATX
   License: No license found
   Board (1):
-    2978. CM4_MATX  (KiCad/CM4_MATX.kicad_pcb), tested 9 November 2026
+    2979. CM4_MATX  (KiCad/CM4_MATX.kicad_pcb), tested 9 November 2026
 
 warmech/altair-8800b-cpu-card
   https://github.com/warmech/altair-8800b-cpu-card
   License: CERN-OHL-S-2.0 (CERN Open Hardware Licence v2, Strongly Reciprocal)
   Board (1):
-    2979. altair-8800b-cpu-card  (cad/altair-8800b-cpu-card.kicad_pcb), tested 9 November 2026
+    2980. altair-8800b-cpu-card  (cad/altair-8800b-cpu-card.kicad_pcb), tested 9 November 2026
 
 warmech/altair-8800b-display-control-pcb
   https://github.com/warmech/altair-8800b-display-control-pcb
   License: CERN-OHL-S-2.0 (CERN Open Hardware Licence v2, Strongly Reciprocal)
   Board (1):
-    2980. altair-8800b-display-control-pcb  (cad/altair-8800b-display-control-pcb.kicad_pcb), tested 9 November 2026
+    2981. altair-8800b-display-control-pcb  (cad/altair-8800b-display-control-pcb.kicad_pcb), tested 9 November 2026
 
 warmech/lisa-2mb-ram-card
   https://github.com/warmech/lisa-2mb-ram-card
   License: CERN-OHL-S-2.0 (CERN Open Hardware Licence v2, Strongly Reciprocal)
   Board (1):
-    2981. lisa-2mb-ram-card  (cad/lisa-2mb-ram-card.kicad_pcb), tested 9 November 2026
+    2982. lisa-2mb-ram-card  (cad/lisa-2mb-ram-card.kicad_pcb), tested 9 November 2026
 
 warmech/lisa-cpu-card
   https://github.com/warmech/lisa-cpu-card
   License: No license found
   Board (1):
-    2982. cpu-card  (cad/cpu-card.kicad_pcb), tested 9 November 2026
+    2983. cpu-card  (cad/cpu-card.kicad_pcb), tested 9 November 2026
 
 waterloo-rocketry/canhw
   https://github.com/waterloo-rocketry/canhw
   License: GPL-3.0 (GNU GPL v3.0)
   Boards (19):
-    2983. altimeter  (altimeter/altimeter.kicad_pcb), tested 9 November 2026
-    2984. camera  (camera/camera.kicad_pcb), tested 9 November 2026
-    2985. camera_interface_CAN_board  (camera_interface_CAN_board/camera_interface_CAN_board.kicad_pcb), tested 9 November 2026
-    2986. CAN_relay  (CAN_relay/CAN_relay.kicad_pcb), tested 9 November 2026
-    2987. AD_Breakout  (CanardBoard/AD_Breakout_Board/AD_Breakout.kicad_pcb), tested 10 November 2026
-    2988. CanardBoard  (CanardBoard/CanardBoard.kicad_pcb), tested 9 November 2026
-    2989. DAQ CAN support  (DAQ CAN support/DAQ CAN support.kicad_pcb), tested 9 November 2026
-    2990. gps_2  (gps/gps_2.kicad_pcb), tested 9 November 2026
-    2991. injector_sensor_hub  (injector_sensor_hub/injector_sensor_hub.kicad_pcb), tested 9 November 2026
-    2992. telemetry_transmitter  (live_telemetry/ARCHIVE/old_telemetry_transmitter/telemetry_transmitter.kicad_pcb), tested 10 November 2026
-    2993. LTT  (live_telemetry/LTT/LTT.kicad_pcb), tested 10 November 2026
-    2994. power-splitter  (live_telemetry/power-splitter/power-splitter.kicad_pcb), tested 9 November 2026
-    2995. novatel_gps_breakout  (novatel_gps_breakout/novatel_gps_breakout.kicad_pcb), tested 10 November 2026
-    2996. picdev  (picdev/picdev/picdev.kicad_pcb), tested 9 November 2026
-    2997. processor  (processor/processor.kicad_pcb), tested 9 November 2026
-    2998. PropulsionBoard  (PropulsionBoard/PropulsionBoard.kicad_pcb), tested 10 November 2026
-    2999. remote_arming  (remote_arming/remote_arming.kicad_pcb), tested 9 November 2026
-    3000. rocket_power_board  (rocket_power_board/rocket_power_board.kicad_pcb), tested 9 November 2026
-    3001. usbdbg  (usbdbg/usbdbg.kicad_pcb), tested 9 November 2026
+    2984. altimeter  (altimeter/altimeter.kicad_pcb), tested 9 November 2026
+    2985. camera  (camera/camera.kicad_pcb), tested 9 November 2026
+    2986. camera_interface_CAN_board  (camera_interface_CAN_board/camera_interface_CAN_board.kicad_pcb), tested 9 November 2026
+    2987. CAN_relay  (CAN_relay/CAN_relay.kicad_pcb), tested 9 November 2026
+    2988. AD_Breakout  (CanardBoard/AD_Breakout_Board/AD_Breakout.kicad_pcb), tested 10 November 2026
+    2989. CanardBoard  (CanardBoard/CanardBoard.kicad_pcb), tested 9 November 2026
+    2990. DAQ CAN support  (DAQ CAN support/DAQ CAN support.kicad_pcb), tested 9 November 2026
+    2991. gps_2  (gps/gps_2.kicad_pcb), tested 9 November 2026
+    2992. injector_sensor_hub  (injector_sensor_hub/injector_sensor_hub.kicad_pcb), tested 9 November 2026
+    2993. telemetry_transmitter  (live_telemetry/ARCHIVE/old_telemetry_transmitter/telemetry_transmitter.kicad_pcb), tested 10 November 2026
+    2994. LTT  (live_telemetry/LTT/LTT.kicad_pcb), tested 10 November 2026
+    2995. power-splitter  (live_telemetry/power-splitter/power-splitter.kicad_pcb), tested 9 November 2026
+    2996. novatel_gps_breakout  (novatel_gps_breakout/novatel_gps_breakout.kicad_pcb), tested 10 November 2026
+    2997. picdev  (picdev/picdev/picdev.kicad_pcb), tested 9 November 2026
+    2998. processor  (processor/processor.kicad_pcb), tested 9 November 2026
+    2999. PropulsionBoard  (PropulsionBoard/PropulsionBoard.kicad_pcb), tested 10 November 2026
+    3000. remote_arming  (remote_arming/remote_arming.kicad_pcb), tested 9 November 2026
+    3001. rocket_power_board  (rocket_power_board/rocket_power_board.kicad_pcb), tested 9 November 2026
+    3002. usbdbg  (usbdbg/usbdbg.kicad_pcb), tested 9 November 2026
 
 weirdgyn/Driverino-Shield
   https://github.com/weirdgyn/Driverino-Shield
   License: GPL-3.0 (GNU GPL v3.0)
   Board (1):
-    3002. Driverino-Shield  (PCB/Driverino-Shield.kicad_pcb), tested 9 November 2026
+    3003. Driverino-Shield  (PCB/Driverino-Shield.kicad_pcb), tested 9 November 2026
 
 will127534/FourThirdsEye
   https://github.com/will127534/FourThirdsEye
   License: MIT (MIT License)
   Board (1):
-    3003. FourThirdsEye  (FourThirdsEye.kicad_pcb), tested 9 November 2026
+    3004. FourThirdsEye  (FourThirdsEye.kicad_pcb), tested 9 November 2026
 
 will127534/IMU_Array
   https://github.com/will127534/IMU_Array
   License: MIT (MIT License)
   Boards (3):
-    3004. IMUArray_BreakoutBoard  (IMUArray_BreakoutBoard/IMUArray_BreakoutBoard.kicad_pcb), tested 9 November 2026
-    3005. IMUArray_ProcessingBoard  (IMUArray_ProcessingBoard/IMUArray_ProcessingBoard/IMUArray_ProcessingBoard.kicad_pcb), tested 9 November 2026
-    3006. IMUArray_SensorBoard  (IMUArray_SensorBoard/IMUArray_SensorBoard.kicad_pcb), tested 9 November 2026
+    3005. IMUArray_BreakoutBoard  (IMUArray_BreakoutBoard/IMUArray_BreakoutBoard.kicad_pcb), tested 9 November 2026
+    3006. IMUArray_ProcessingBoard  (IMUArray_ProcessingBoard/IMUArray_ProcessingBoard/IMUArray_ProcessingBoard.kicad_pcb), tested 9 November 2026
+    3007. IMUArray_SensorBoard  (IMUArray_SensorBoard/IMUArray_SensorBoard.kicad_pcb), tested 9 November 2026
 
 will127534/Miniature-CM4-Cluster
   https://github.com/will127534/Miniature-CM4-Cluster
   License: MIT (MIT License)
   Boards (2):
-    3007. CM4ClusterHat  (ClusterHat/CM4ClusterHat.kicad_pcb), tested 9 November 2026
-    3008. CM4Card  (CM4Card/CM4Card.kicad_pcb), tested 9 November 2026
+    3008. CM4ClusterHat  (ClusterHat/CM4ClusterHat.kicad_pcb), tested 9 November 2026
+    3009. CM4Card  (CM4Card/CM4Card.kicad_pcb), tested 9 November 2026
 
 will127534/OneInchEye
   https://github.com/will127534/OneInchEye
   License: MIT (MIT License)
   Board (1):
-    3009. OneInchEye  (OneInchEye.kicad_pcb), tested 9 November 2026
+    3010. OneInchEye  (OneInchEye.kicad_pcb), tested 9 November 2026
 
 will127534/RaspberryPiAtomicNixieClock
   https://github.com/will127534/RaspberryPiAtomicNixieClock
   License: No license found
   Board (1):
-    3010. NixieAtomicClock  (PCB/NixieAtomicClock.kicad_pcb), tested 9 November 2026
+    3011. NixieAtomicClock  (PCB/NixieAtomicClock.kicad_pcb), tested 9 November 2026
 
 will127534/StarlightEye
   https://github.com/will127534/StarlightEye
   License: MIT (MIT License)
   Board (1):
-    3011. StarlightEye  (StarlightEye.kicad_pcb), tested 9 November 2026
+    3012. StarlightEye  (StarlightEye.kicad_pcb), tested 9 November 2026
 
 winkleplex10-bit/the-mac-pro-project
   https://github.com/winkleplex10-bit/the-mac-pro-project
   License: No license found
   Boards (23):
-    3012. macpro62_am5  (kicad/macpro62-am5-v3/macpro62_am5.kicad_pcb), tested 9 November 2026
-    3013. macpro62_am5  (kicad/macpro62-am5/macpro62_am5.kicad_pcb), tested 9 November 2026
-    3014. backplane  (kicad/macpro62-backplane-v2/backplane.kicad_pcb), tested 9 November 2026
-    3015. backplane  (kicad/macpro62-backplane-v3/backplane.kicad_pcb), tested 9 November 2026
-    3016. backplane  (kicad/macpro62-backplane/backplane.kicad_pcb), tested 9 November 2026
-    3017. backplane_direct  (kicad/macpro62-backplane/backplane_direct.kicad_pcb), tested 9 November 2026
-    3018. hub_fitcheck  (kicad/macpro62-backplane/variants/fitcheck_hub_allMCIO_cable_variant/hub_fitcheck.kicad_pcb), tested 9 November 2026
-    3019. backplane_fp6  (kicad/macpro62-backplane/variants/fp6_floorplan_6L/backplane_fp6.kicad_pcb), tested 9 November 2026
-    3020. backplane_hub_fp2  (kicad/macpro62-backplane/variants/hub_fp2_d30_assumed/backplane_hub_fp2.kicad_pcb), tested 9 November 2026
-    3021. macpro62-io-board  (kicad/macpro62-io-board/macpro62-io-board.kicad_pcb), tested 9 November 2026
-    3022. mod_hdmi  (kicad/macpro62-io-modules/mod_hdmi/mod_hdmi.kicad_pcb), tested 9 November 2026
-    3023. mod_usba  (kicad/macpro62-io-modules/mod_usba/mod_usba.kicad_pcb), tested 9 November 2026
-    3024. mod_usbc  (kicad/macpro62-io-modules/mod_usbc/mod_usbc.kicad_pcb), tested 9 November 2026
-    3025. panel_a25  (kicad/macpro62-io-modules/panel/panel_a25/panel_a25.kicad_pcb), tested 9 November 2026
-    3026. panel_c50  (kicad/macpro62-io-modules/panel/panel_c50/panel_c50.kicad_pcb), tested 9 November 2026
-    3027. tdr_coupon_a25  (kicad/macpro62-io-modules/tdr/tdr_coupon_a25/tdr_coupon_a25.kicad_pcb), tested 9 November 2026
-    3028. tdr_coupon_c50  (kicad/macpro62-io-modules/tdr/tdr_coupon_c50/tdr_coupon_c50.kicad_pcb), tested 9 November 2026
-    3029. riser_a  (kicad/macpro62-io-risers/riser_a/riser_a.kicad_pcb), tested 9 November 2026
-    3030. riser_c  (kicad/macpro62-io-risers/riser_c/riser_c.kicad_pcb), tested 9 November 2026
-    3031. riser_hdmi  (kicad/macpro62-io-risers/riser_hdmi/riser_hdmi.kicad_pcb), tested 9 November 2026
-    3032. macpro62_lga1700  (kicad/macpro62-lga1700-v2/macpro62_lga1700.kicad_pcb), tested 9 November 2026
-    3033. macpro62-storage-face-2x  (kicad/macpro62-storage-face-2x/macpro62-storage-face-2x.kicad_pcb), tested 9 November 2026
-    3034. macpro62-storage-face  (kicad/macpro62-storage-face/macpro62-storage-face.kicad_pcb), tested 9 November 2026
+    3013. macpro62_am5  (kicad/macpro62-am5-v3/macpro62_am5.kicad_pcb), tested 9 November 2026
+    3014. macpro62_am5  (kicad/macpro62-am5/macpro62_am5.kicad_pcb), tested 9 November 2026
+    3015. backplane  (kicad/macpro62-backplane-v2/backplane.kicad_pcb), tested 9 November 2026
+    3016. backplane  (kicad/macpro62-backplane-v3/backplane.kicad_pcb), tested 9 November 2026
+    3017. backplane  (kicad/macpro62-backplane/backplane.kicad_pcb), tested 9 November 2026
+    3018. backplane_direct  (kicad/macpro62-backplane/backplane_direct.kicad_pcb), tested 9 November 2026
+    3019. hub_fitcheck  (kicad/macpro62-backplane/variants/fitcheck_hub_allMCIO_cable_variant/hub_fitcheck.kicad_pcb), tested 9 November 2026
+    3020. backplane_fp6  (kicad/macpro62-backplane/variants/fp6_floorplan_6L/backplane_fp6.kicad_pcb), tested 9 November 2026
+    3021. backplane_hub_fp2  (kicad/macpro62-backplane/variants/hub_fp2_d30_assumed/backplane_hub_fp2.kicad_pcb), tested 9 November 2026
+    3022. macpro62-io-board  (kicad/macpro62-io-board/macpro62-io-board.kicad_pcb), tested 9 November 2026
+    3023. mod_hdmi  (kicad/macpro62-io-modules/mod_hdmi/mod_hdmi.kicad_pcb), tested 9 November 2026
+    3024. mod_usba  (kicad/macpro62-io-modules/mod_usba/mod_usba.kicad_pcb), tested 9 November 2026
+    3025. mod_usbc  (kicad/macpro62-io-modules/mod_usbc/mod_usbc.kicad_pcb), tested 9 November 2026
+    3026. panel_a25  (kicad/macpro62-io-modules/panel/panel_a25/panel_a25.kicad_pcb), tested 9 November 2026
+    3027. panel_c50  (kicad/macpro62-io-modules/panel/panel_c50/panel_c50.kicad_pcb), tested 9 November 2026
+    3028. tdr_coupon_a25  (kicad/macpro62-io-modules/tdr/tdr_coupon_a25/tdr_coupon_a25.kicad_pcb), tested 9 November 2026
+    3029. tdr_coupon_c50  (kicad/macpro62-io-modules/tdr/tdr_coupon_c50/tdr_coupon_c50.kicad_pcb), tested 9 November 2026
+    3030. riser_a  (kicad/macpro62-io-risers/riser_a/riser_a.kicad_pcb), tested 9 November 2026
+    3031. riser_c  (kicad/macpro62-io-risers/riser_c/riser_c.kicad_pcb), tested 9 November 2026
+    3032. riser_hdmi  (kicad/macpro62-io-risers/riser_hdmi/riser_hdmi.kicad_pcb), tested 9 November 2026
+    3033. macpro62_lga1700  (kicad/macpro62-lga1700-v2/macpro62_lga1700.kicad_pcb), tested 9 November 2026
+    3034. macpro62-storage-face-2x  (kicad/macpro62-storage-face-2x/macpro62-storage-face-2x.kicad_pcb), tested 9 November 2026
+    3035. macpro62-storage-face  (kicad/macpro62-storage-face/macpro62-storage-face.kicad_pcb), tested 9 November 2026
 
 Wren6991/Snowflake-FPGA
   https://github.com/Wren6991/Snowflake-FPGA
   License: Apache-2.0 (Apache License 2.0), in License
   Boards (76):
-    3035. fpga_hat  (board/fpga_hat.kicad_pcb), tested 9 November 2026
-    3036. 2019-07-02_12:26:12_fpga_hat  (timelapse/2019-07-02_12:26:12_fpga_hat.kicad_pcb), tested 9 November 2026
-    3037. 2019-07-02_12:31:57_fpga_hat  (timelapse/2019-07-02_12:31:57_fpga_hat.kicad_pcb), tested 9 November 2026
-    3038. 2019-07-02_12:40:42_fpga_hat  (timelapse/2019-07-02_12:40:42_fpga_hat.kicad_pcb), tested 9 November 2026
-    3039. 2019-07-02_12:48:58_fpga_hat  (timelapse/2019-07-02_12:48:58_fpga_hat.kicad_pcb), tested 9 November 2026
-    3040. 2019-07-02_13:01:55_fpga_hat  (timelapse/2019-07-02_13:01:55_fpga_hat.kicad_pcb), tested 9 November 2026
-    3041. 2019-07-02_13:07:01_fpga_hat  (timelapse/2019-07-02_13:07:01_fpga_hat.kicad_pcb), tested 9 November 2026
-    3042. 2019-07-02_13:19:55_fpga_hat  (timelapse/2019-07-02_13:19:55_fpga_hat.kicad_pcb), tested 9 November 2026
-    3043. 2019-07-02_13:30:37_fpga_hat  (timelapse/2019-07-02_13:30:37_fpga_hat.kicad_pcb), tested 9 November 2026
-    3044. 2019-07-02_13:46:31_fpga_hat  (timelapse/2019-07-02_13:46:31_fpga_hat.kicad_pcb), tested 9 November 2026
-    3045. 2019-07-02_13:56:17_fpga_hat  (timelapse/2019-07-02_13:56:17_fpga_hat.kicad_pcb), tested 9 November 2026
-    3046. 2019-07-02_14:01:06_fpga_hat  (timelapse/2019-07-02_14:01:06_fpga_hat.kicad_pcb), tested 9 November 2026
-    3047. 2019-07-02_14:14:35_fpga_hat  (timelapse/2019-07-02_14:14:35_fpga_hat.kicad_pcb), tested 9 November 2026
-    3048. 2019-07-02_15:12:10_fpga_hat  (timelapse/2019-07-02_15:12:10_fpga_hat.kicad_pcb), tested 9 November 2026
-    3049. 2019-07-02_15:26:14_fpga_hat  (timelapse/2019-07-02_15:26:14_fpga_hat.kicad_pcb), tested 9 November 2026
-    3050. 2019-07-02_15:37:58_fpga_hat  (timelapse/2019-07-02_15:37:58_fpga_hat.kicad_pcb), tested 9 November 2026
-    3051. 2019-07-02_15:42:42_fpga_hat  (timelapse/2019-07-02_15:42:42_fpga_hat.kicad_pcb), tested 9 November 2026
-    3052. 2019-07-02_15:44:50_fpga_hat  (timelapse/2019-07-02_15:44:50_fpga_hat.kicad_pcb), tested 10 November 2026
-    3053. 2019-07-02_15:48:31_fpga_hat  (timelapse/2019-07-02_15:48:31_fpga_hat.kicad_pcb), tested 9 November 2026
-    3054. 2019-07-02_17:02:16_fpga_hat  (timelapse/2019-07-02_17:02:16_fpga_hat.kicad_pcb), tested 9 November 2026
-    3055. 2019-07-02_17:04:43_fpga_hat  (timelapse/2019-07-02_17:04:43_fpga_hat.kicad_pcb), tested 9 November 2026
-    3056. 2019-07-02_17:57:29_fpga_hat  (timelapse/2019-07-02_17:57:29_fpga_hat.kicad_pcb), tested 9 November 2026
-    3057. 2019-07-02_18:04:43_fpga_hat  (timelapse/2019-07-02_18:04:43_fpga_hat.kicad_pcb), tested 9 November 2026
-    3058. 2019-07-02_18:08:42_fpga_hat  (timelapse/2019-07-02_18:08:42_fpga_hat.kicad_pcb), tested 9 November 2026
-    3059. 2019-07-02_18:15:30_fpga_hat  (timelapse/2019-07-02_18:15:30_fpga_hat.kicad_pcb), tested 9 November 2026
-    3060. 2019-07-02_18:19:44_fpga_hat  (timelapse/2019-07-02_18:19:44_fpga_hat.kicad_pcb), tested 9 November 2026
-    3061. 2019-07-02_18:26:57_fpga_hat  (timelapse/2019-07-02_18:26:57_fpga_hat.kicad_pcb), tested 9 November 2026
-    3062. 2019-07-02_18:32:13_fpga_hat  (timelapse/2019-07-02_18:32:13_fpga_hat.kicad_pcb), tested 9 November 2026
-    3063. 2019-07-02_18:37:57_fpga_hat  (timelapse/2019-07-02_18:37:57_fpga_hat.kicad_pcb), tested 9 November 2026
-    3064. 2019-07-02_19:05:24_fpga_hat  (timelapse/2019-07-02_19:05:24_fpga_hat.kicad_pcb), tested 9 November 2026
-    3065. 2019-07-02_19:17:13_fpga_hat  (timelapse/2019-07-02_19:17:13_fpga_hat.kicad_pcb), tested 9 November 2026
-    3066. 2019-07-02_19:35:16_fpga_hat  (timelapse/2019-07-02_19:35:16_fpga_hat.kicad_pcb), tested 9 November 2026
-    3067. 2019-07-02_19:45:35_fpga_hat  (timelapse/2019-07-02_19:45:35_fpga_hat.kicad_pcb), tested 9 November 2026
-    3068. 2019-07-02_20:01:46_fpga_hat  (timelapse/2019-07-02_20:01:46_fpga_hat.kicad_pcb), tested 9 November 2026
-    3069. 2019-07-02_20:17:06_fpga_hat  (timelapse/2019-07-02_20:17:06_fpga_hat.kicad_pcb), tested 9 November 2026
-    3070. 2019-07-02_20:28:54_fpga_hat  (timelapse/2019-07-02_20:28:54_fpga_hat.kicad_pcb), tested 10 November 2026
-    3071. 2019-07-02_20:54:50_fpga_hat  (timelapse/2019-07-02_20:54:50_fpga_hat.kicad_pcb), tested 9 November 2026
-    3072. 2019-07-02_21:04:22_fpga_hat  (timelapse/2019-07-02_21:04:22_fpga_hat.kicad_pcb), tested 9 November 2026
-    3073. 2019-07-02_21:45:21_fpga_hat  (timelapse/2019-07-02_21:45:21_fpga_hat.kicad_pcb), tested 9 November 2026
-    3074. 2019-07-03_06:45:34_fpga_hat  (timelapse/2019-07-03_06:45:34_fpga_hat.kicad_pcb), tested 9 November 2026
-    3075. 2019-07-03_06:50:23_fpga_hat  (timelapse/2019-07-03_06:50:23_fpga_hat.kicad_pcb), tested 9 November 2026
-    3076. 2019-07-03_07:08:37_fpga_hat  (timelapse/2019-07-03_07:08:37_fpga_hat.kicad_pcb), tested 9 November 2026
-    3077. 2019-07-03_07:15:18_fpga_hat  (timelapse/2019-07-03_07:15:18_fpga_hat.kicad_pcb), tested 9 November 2026
-    3078. 2019-07-03_17:28:54_fpga_hat  (timelapse/2019-07-03_17:28:54_fpga_hat.kicad_pcb), tested 9 November 2026
-    3079. 2019-07-03_17:47:28_fpga_hat  (timelapse/2019-07-03_17:47:28_fpga_hat.kicad_pcb), tested 9 November 2026
-    3080. 2019-07-03_17:57:53_fpga_hat  (timelapse/2019-07-03_17:57:53_fpga_hat.kicad_pcb), tested 9 November 2026
-    3081. 2019-07-03_18:11:15_fpga_hat  (timelapse/2019-07-03_18:11:15_fpga_hat.kicad_pcb), tested 9 November 2026
-    3082. 2019-07-03_18:30:05_fpga_hat  (timelapse/2019-07-03_18:30:05_fpga_hat.kicad_pcb), tested 9 November 2026
-    3083. 2019-07-03_18:34:30_fpga_hat  (timelapse/2019-07-03_18:34:30_fpga_hat.kicad_pcb), tested 9 November 2026
-    3084. 2019-07-05_20:45:15_fpga_hat  (timelapse/2019-07-05_20:45:15_fpga_hat.kicad_pcb), tested 9 November 2026
-    3085. 2019-07-05_21:08:22_fpga_hat  (timelapse/2019-07-05_21:08:22_fpga_hat.kicad_pcb), tested 9 November 2026
-    3086. 2019-07-05_21:29:37_fpga_hat  (timelapse/2019-07-05_21:29:37_fpga_hat.kicad_pcb), tested 9 November 2026
-    3087. 2019-07-05_21:40:20_fpga_hat  (timelapse/2019-07-05_21:40:20_fpga_hat.kicad_pcb), tested 9 November 2026
-    3088. 2019-07-05_22:03:31_fpga_hat  (timelapse/2019-07-05_22:03:31_fpga_hat.kicad_pcb), tested 9 November 2026
-    3089. 2019-07-05_22:15:17_fpga_hat  (timelapse/2019-07-05_22:15:17_fpga_hat.kicad_pcb), tested 9 November 2026
-    3090. 2019-07-05_22:26:53_fpga_hat  (timelapse/2019-07-05_22:26:53_fpga_hat.kicad_pcb), tested 9 November 2026
-    3091. 2019-07-06_11:05:02_fpga_hat  (timelapse/2019-07-06_11:05:02_fpga_hat.kicad_pcb), tested 9 November 2026
-    3092. 2019-07-06_11:24:12_fpga_hat  (timelapse/2019-07-06_11:24:12_fpga_hat.kicad_pcb), tested 9 November 2026
-    3093. 2019-07-06_11:30:20_fpga_hat  (timelapse/2019-07-06_11:30:20_fpga_hat.kicad_pcb), tested 9 November 2026
-    3094. 2019-07-06_11:52:16_fpga_hat  (timelapse/2019-07-06_11:52:16_fpga_hat.kicad_pcb), tested 9 November 2026
-    3095. 2019-07-06_12:26:53_fpga_hat  (timelapse/2019-07-06_12:26:53_fpga_hat.kicad_pcb), tested 9 November 2026
-    3096. 2019-07-06_12:29:23_fpga_hat  (timelapse/2019-07-06_12:29:23_fpga_hat.kicad_pcb), tested 9 November 2026
-    3097. 2019-07-06_12:41:44_fpga_hat  (timelapse/2019-07-06_12:41:44_fpga_hat.kicad_pcb), tested 9 November 2026
-    3098. 2019-07-06_12:52:32_fpga_hat  (timelapse/2019-07-06_12:52:32_fpga_hat.kicad_pcb), tested 9 November 2026
-    3099. 2019-07-06_12:56:05_fpga_hat  (timelapse/2019-07-06_12:56:05_fpga_hat.kicad_pcb), tested 9 November 2026
-    3100. 2019-07-06_13:01:21_fpga_hat  (timelapse/2019-07-06_13:01:21_fpga_hat.kicad_pcb), tested 9 November 2026
-    3101. 2019-07-06_13:25:29_fpga_hat  (timelapse/2019-07-06_13:25:29_fpga_hat.kicad_pcb), tested 9 November 2026
-    3102. 2019-07-06_13:40:41_fpga_hat  (timelapse/2019-07-06_13:40:41_fpga_hat.kicad_pcb), tested 9 November 2026
-    3103. 2019-07-06_13:40:48_fpga_hat  (timelapse/2019-07-06_13:40:48_fpga_hat.kicad_pcb), tested 10 November 2026
-    3104. 2019-07-07_12:53:39_fpga_hat  (timelapse/2019-07-07_12:53:39_fpga_hat.kicad_pcb), tested 9 November 2026
-    3105. 2019-07-07_13:11:04_fpga_hat  (timelapse/2019-07-07_13:11:04_fpga_hat.kicad_pcb), tested 9 November 2026
-    3106. 2019-07-07_13:19:32_fpga_hat  (timelapse/2019-07-07_13:19:32_fpga_hat.kicad_pcb), tested 9 November 2026
-    3107. 2019-07-07_13:36:48_fpga_hat  (timelapse/2019-07-07_13:36:48_fpga_hat.kicad_pcb), tested 9 November 2026
-    3108. 2019-07-07_17:06:09_fpga_hat  (timelapse/2019-07-07_17:06:09_fpga_hat.kicad_pcb), tested 9 November 2026
-    3109. 2019-07-07_17:15:58_fpga_hat  (timelapse/2019-07-07_17:15:58_fpga_hat.kicad_pcb), tested 9 November 2026
-    3110. 2019-07-07_18:08:38_fpga_hat  (timelapse/2019-07-07_18:08:38_fpga_hat.kicad_pcb), tested 9 November 2026
+    3036. fpga_hat  (board/fpga_hat.kicad_pcb), tested 9 November 2026
+    3037. 2019-07-02_12:26:12_fpga_hat  (timelapse/2019-07-02_12:26:12_fpga_hat.kicad_pcb), tested 9 November 2026
+    3038. 2019-07-02_12:31:57_fpga_hat  (timelapse/2019-07-02_12:31:57_fpga_hat.kicad_pcb), tested 9 November 2026
+    3039. 2019-07-02_12:40:42_fpga_hat  (timelapse/2019-07-02_12:40:42_fpga_hat.kicad_pcb), tested 9 November 2026
+    3040. 2019-07-02_12:48:58_fpga_hat  (timelapse/2019-07-02_12:48:58_fpga_hat.kicad_pcb), tested 9 November 2026
+    3041. 2019-07-02_13:01:55_fpga_hat  (timelapse/2019-07-02_13:01:55_fpga_hat.kicad_pcb), tested 9 November 2026
+    3042. 2019-07-02_13:07:01_fpga_hat  (timelapse/2019-07-02_13:07:01_fpga_hat.kicad_pcb), tested 9 November 2026
+    3043. 2019-07-02_13:19:55_fpga_hat  (timelapse/2019-07-02_13:19:55_fpga_hat.kicad_pcb), tested 9 November 2026
+    3044. 2019-07-02_13:30:37_fpga_hat  (timelapse/2019-07-02_13:30:37_fpga_hat.kicad_pcb), tested 9 November 2026
+    3045. 2019-07-02_13:46:31_fpga_hat  (timelapse/2019-07-02_13:46:31_fpga_hat.kicad_pcb), tested 9 November 2026
+    3046. 2019-07-02_13:56:17_fpga_hat  (timelapse/2019-07-02_13:56:17_fpga_hat.kicad_pcb), tested 9 November 2026
+    3047. 2019-07-02_14:01:06_fpga_hat  (timelapse/2019-07-02_14:01:06_fpga_hat.kicad_pcb), tested 9 November 2026
+    3048. 2019-07-02_14:14:35_fpga_hat  (timelapse/2019-07-02_14:14:35_fpga_hat.kicad_pcb), tested 9 November 2026
+    3049. 2019-07-02_15:12:10_fpga_hat  (timelapse/2019-07-02_15:12:10_fpga_hat.kicad_pcb), tested 9 November 2026
+    3050. 2019-07-02_15:26:14_fpga_hat  (timelapse/2019-07-02_15:26:14_fpga_hat.kicad_pcb), tested 9 November 2026
+    3051. 2019-07-02_15:37:58_fpga_hat  (timelapse/2019-07-02_15:37:58_fpga_hat.kicad_pcb), tested 9 November 2026
+    3052. 2019-07-02_15:42:42_fpga_hat  (timelapse/2019-07-02_15:42:42_fpga_hat.kicad_pcb), tested 9 November 2026
+    3053. 2019-07-02_15:44:50_fpga_hat  (timelapse/2019-07-02_15:44:50_fpga_hat.kicad_pcb), tested 10 November 2026
+    3054. 2019-07-02_15:48:31_fpga_hat  (timelapse/2019-07-02_15:48:31_fpga_hat.kicad_pcb), tested 9 November 2026
+    3055. 2019-07-02_17:02:16_fpga_hat  (timelapse/2019-07-02_17:02:16_fpga_hat.kicad_pcb), tested 9 November 2026
+    3056. 2019-07-02_17:04:43_fpga_hat  (timelapse/2019-07-02_17:04:43_fpga_hat.kicad_pcb), tested 9 November 2026
+    3057. 2019-07-02_17:57:29_fpga_hat  (timelapse/2019-07-02_17:57:29_fpga_hat.kicad_pcb), tested 9 November 2026
+    3058. 2019-07-02_18:04:43_fpga_hat  (timelapse/2019-07-02_18:04:43_fpga_hat.kicad_pcb), tested 9 November 2026
+    3059. 2019-07-02_18:08:42_fpga_hat  (timelapse/2019-07-02_18:08:42_fpga_hat.kicad_pcb), tested 9 November 2026
+    3060. 2019-07-02_18:15:30_fpga_hat  (timelapse/2019-07-02_18:15:30_fpga_hat.kicad_pcb), tested 9 November 2026
+    3061. 2019-07-02_18:19:44_fpga_hat  (timelapse/2019-07-02_18:19:44_fpga_hat.kicad_pcb), tested 9 November 2026
+    3062. 2019-07-02_18:26:57_fpga_hat  (timelapse/2019-07-02_18:26:57_fpga_hat.kicad_pcb), tested 9 November 2026
+    3063. 2019-07-02_18:32:13_fpga_hat  (timelapse/2019-07-02_18:32:13_fpga_hat.kicad_pcb), tested 9 November 2026
+    3064. 2019-07-02_18:37:57_fpga_hat  (timelapse/2019-07-02_18:37:57_fpga_hat.kicad_pcb), tested 9 November 2026
+    3065. 2019-07-02_19:05:24_fpga_hat  (timelapse/2019-07-02_19:05:24_fpga_hat.kicad_pcb), tested 9 November 2026
+    3066. 2019-07-02_19:17:13_fpga_hat  (timelapse/2019-07-02_19:17:13_fpga_hat.kicad_pcb), tested 9 November 2026
+    3067. 2019-07-02_19:35:16_fpga_hat  (timelapse/2019-07-02_19:35:16_fpga_hat.kicad_pcb), tested 9 November 2026
+    3068. 2019-07-02_19:45:35_fpga_hat  (timelapse/2019-07-02_19:45:35_fpga_hat.kicad_pcb), tested 9 November 2026
+    3069. 2019-07-02_20:01:46_fpga_hat  (timelapse/2019-07-02_20:01:46_fpga_hat.kicad_pcb), tested 9 November 2026
+    3070. 2019-07-02_20:17:06_fpga_hat  (timelapse/2019-07-02_20:17:06_fpga_hat.kicad_pcb), tested 9 November 2026
+    3071. 2019-07-02_20:28:54_fpga_hat  (timelapse/2019-07-02_20:28:54_fpga_hat.kicad_pcb), tested 10 November 2026
+    3072. 2019-07-02_20:54:50_fpga_hat  (timelapse/2019-07-02_20:54:50_fpga_hat.kicad_pcb), tested 9 November 2026
+    3073. 2019-07-02_21:04:22_fpga_hat  (timelapse/2019-07-02_21:04:22_fpga_hat.kicad_pcb), tested 9 November 2026
+    3074. 2019-07-02_21:45:21_fpga_hat  (timelapse/2019-07-02_21:45:21_fpga_hat.kicad_pcb), tested 9 November 2026
+    3075. 2019-07-03_06:45:34_fpga_hat  (timelapse/2019-07-03_06:45:34_fpga_hat.kicad_pcb), tested 9 November 2026
+    3076. 2019-07-03_06:50:23_fpga_hat  (timelapse/2019-07-03_06:50:23_fpga_hat.kicad_pcb), tested 9 November 2026
+    3077. 2019-07-03_07:08:37_fpga_hat  (timelapse/2019-07-03_07:08:37_fpga_hat.kicad_pcb), tested 9 November 2026
+    3078. 2019-07-03_07:15:18_fpga_hat  (timelapse/2019-07-03_07:15:18_fpga_hat.kicad_pcb), tested 9 November 2026
+    3079. 2019-07-03_17:28:54_fpga_hat  (timelapse/2019-07-03_17:28:54_fpga_hat.kicad_pcb), tested 9 November 2026
+    3080. 2019-07-03_17:47:28_fpga_hat  (timelapse/2019-07-03_17:47:28_fpga_hat.kicad_pcb), tested 9 November 2026
+    3081. 2019-07-03_17:57:53_fpga_hat  (timelapse/2019-07-03_17:57:53_fpga_hat.kicad_pcb), tested 9 November 2026
+    3082. 2019-07-03_18:11:15_fpga_hat  (timelapse/2019-07-03_18:11:15_fpga_hat.kicad_pcb), tested 9 November 2026
+    3083. 2019-07-03_18:30:05_fpga_hat  (timelapse/2019-07-03_18:30:05_fpga_hat.kicad_pcb), tested 9 November 2026
+    3084. 2019-07-03_18:34:30_fpga_hat  (timelapse/2019-07-03_18:34:30_fpga_hat.kicad_pcb), tested 9 November 2026
+    3085. 2019-07-05_20:45:15_fpga_hat  (timelapse/2019-07-05_20:45:15_fpga_hat.kicad_pcb), tested 9 November 2026
+    3086. 2019-07-05_21:08:22_fpga_hat  (timelapse/2019-07-05_21:08:22_fpga_hat.kicad_pcb), tested 9 November 2026
+    3087. 2019-07-05_21:29:37_fpga_hat  (timelapse/2019-07-05_21:29:37_fpga_hat.kicad_pcb), tested 9 November 2026
+    3088. 2019-07-05_21:40:20_fpga_hat  (timelapse/2019-07-05_21:40:20_fpga_hat.kicad_pcb), tested 9 November 2026
+    3089. 2019-07-05_22:03:31_fpga_hat  (timelapse/2019-07-05_22:03:31_fpga_hat.kicad_pcb), tested 9 November 2026
+    3090. 2019-07-05_22:15:17_fpga_hat  (timelapse/2019-07-05_22:15:17_fpga_hat.kicad_pcb), tested 9 November 2026
+    3091. 2019-07-05_22:26:53_fpga_hat  (timelapse/2019-07-05_22:26:53_fpga_hat.kicad_pcb), tested 9 November 2026
+    3092. 2019-07-06_11:05:02_fpga_hat  (timelapse/2019-07-06_11:05:02_fpga_hat.kicad_pcb), tested 9 November 2026
+    3093. 2019-07-06_11:24:12_fpga_hat  (timelapse/2019-07-06_11:24:12_fpga_hat.kicad_pcb), tested 9 November 2026
+    3094. 2019-07-06_11:30:20_fpga_hat  (timelapse/2019-07-06_11:30:20_fpga_hat.kicad_pcb), tested 9 November 2026
+    3095. 2019-07-06_11:52:16_fpga_hat  (timelapse/2019-07-06_11:52:16_fpga_hat.kicad_pcb), tested 9 November 2026
+    3096. 2019-07-06_12:26:53_fpga_hat  (timelapse/2019-07-06_12:26:53_fpga_hat.kicad_pcb), tested 9 November 2026
+    3097. 2019-07-06_12:29:23_fpga_hat  (timelapse/2019-07-06_12:29:23_fpga_hat.kicad_pcb), tested 9 November 2026
+    3098. 2019-07-06_12:41:44_fpga_hat  (timelapse/2019-07-06_12:41:44_fpga_hat.kicad_pcb), tested 9 November 2026
+    3099. 2019-07-06_12:52:32_fpga_hat  (timelapse/2019-07-06_12:52:32_fpga_hat.kicad_pcb), tested 9 November 2026
+    3100. 2019-07-06_12:56:05_fpga_hat  (timelapse/2019-07-06_12:56:05_fpga_hat.kicad_pcb), tested 9 November 2026
+    3101. 2019-07-06_13:01:21_fpga_hat  (timelapse/2019-07-06_13:01:21_fpga_hat.kicad_pcb), tested 9 November 2026
+    3102. 2019-07-06_13:25:29_fpga_hat  (timelapse/2019-07-06_13:25:29_fpga_hat.kicad_pcb), tested 9 November 2026
+    3103. 2019-07-06_13:40:41_fpga_hat  (timelapse/2019-07-06_13:40:41_fpga_hat.kicad_pcb), tested 9 November 2026
+    3104. 2019-07-06_13:40:48_fpga_hat  (timelapse/2019-07-06_13:40:48_fpga_hat.kicad_pcb), tested 10 November 2026
+    3105. 2019-07-07_12:53:39_fpga_hat  (timelapse/2019-07-07_12:53:39_fpga_hat.kicad_pcb), tested 9 November 2026
+    3106. 2019-07-07_13:11:04_fpga_hat  (timelapse/2019-07-07_13:11:04_fpga_hat.kicad_pcb), tested 9 November 2026
+    3107. 2019-07-07_13:19:32_fpga_hat  (timelapse/2019-07-07_13:19:32_fpga_hat.kicad_pcb), tested 9 November 2026
+    3108. 2019-07-07_13:36:48_fpga_hat  (timelapse/2019-07-07_13:36:48_fpga_hat.kicad_pcb), tested 9 November 2026
+    3109. 2019-07-07_17:06:09_fpga_hat  (timelapse/2019-07-07_17:06:09_fpga_hat.kicad_pcb), tested 9 November 2026
+    3110. 2019-07-07_17:15:58_fpga_hat  (timelapse/2019-07-07_17:15:58_fpga_hat.kicad_pcb), tested 9 November 2026
+    3111. 2019-07-07_18:08:38_fpga_hat  (timelapse/2019-07-07_18:08:38_fpga_hat.kicad_pcb), tested 9 November 2026
 
 xesscorp/CAT-Board
   https://github.com/xesscorp/CAT-Board
   License: As README.md states it: "License: CC BY 4.0 Documentation: CAT-Board.readthedocs.org"
   Board (1):
-    3111. CAT  (pcb/CAT.kicad_pcb), tested 9 November 2026
+    3112. CAT  (pcb/CAT.kicad_pcb), tested 9 November 2026
 
 xtech/hw-openmower-sabo
   https://github.com/xtech/hw-openmower-sabo
   License: CC-BY-NC-4.0 (Creative Commons Attribution-NonCommercial 4.0), in LICENSE
   Board (1):
-    3112. hw-openmower-sabo  (hw-openmower-sabo.kicad_pcb), tested 9 November 2026
+    3113. hw-openmower-sabo  (hw-openmower-sabo.kicad_pcb), tested 9 November 2026
 
 xtech/hw-openmower-universal
   https://github.com/xtech/hw-openmower-universal
   License: CC-BY-4.0 (Creative Commons Attribution 4.0)
   Board (1):
-    3113. hw-openmower-universal  (hw-openmower-universal.kicad_pcb), tested 9 November 2026
+    3114. hw-openmower-universal  (hw-openmower-universal.kicad_pcb), tested 9 November 2026
 
 xtech/hw-openmower-yardforce
   https://github.com/xtech/hw-openmower-yardforce
   License: CC-BY-4.0 (Creative Commons Attribution 4.0)
   Board (1):
-    3114. hw-openmower-yardforce  (hw-openmower-yardforce.kicad_pcb), tested 9 November 2026
+    3115. hw-openmower-yardforce  (hw-openmower-yardforce.kicad_pcb), tested 9 November 2026
 
 y10-labs/prism-pcb
   https://github.com/y10-labs/prism-pcb
   License: As README.md states it: "© 2025 All Rights Reserved"
   Board (1):
-    3115. Prism  (Prism.kicad_pcb), tested 9 November 2026
+    3116. Prism  (Prism.kicad_pcb), tested 9 November 2026
 
 Z80-Retro/2063-Z80
   https://github.com/Z80-Retro/2063-Z80
   License: No license found
   Board (1):
-    3116. 2063-Z80  (2063-Z80.kicad_pcb), tested 9 November 2026
+    3117. 2063-Z80  (2063-Z80.kicad_pcb), tested 9 November 2026
 
 zephray/Fobu
   https://github.com/zephray/Fobu
   License: As README.md states it: "If not otherwise specified, all the materials provided in
            this repository are licensed under MIT license."
   Board (1):
-    3117. pcb  (hardware/pcb/pcb.kicad_pcb), tested 9 November 2026
+    3118. pcb  (hardware/pcb/pcb.kicad_pcb), tested 9 November 2026
 
 zephray/nekoink
   https://github.com/zephray/nekoink
   License: CERN-OHL-P-2.0 (CERN Open Hardware Licence v2, Permissive), in LICENSE
   Boards (3):
-    3118. adapter  (pcb/34p-a-adapter/adapter.kicad_pcb), tested 9 November 2026
-    3119. pcb  (pcb/mainboard_gen1/pcb.kicad_pcb), tested 9 November 2026
-    3120. pcb  (pcb/mainboard_gen2/pcb.kicad_pcb), tested 9 November 2026
+    3119. adapter  (pcb/34p-a-adapter/adapter.kicad_pcb), tested 9 November 2026
+    3120. pcb  (pcb/mainboard_gen1/pcb.kicad_pcb), tested 9 November 2026
+    3121. pcb  (pcb/mainboard_gen2/pcb.kicad_pcb), tested 9 November 2026
 
 ZeroPhone/ZeroPhone-PCBs
   https://github.com/ZeroPhone/ZeroPhone-PCBs
   License: GPL-3.0 (GNU GPL v3.0)
   Boards (6):
-    3121. 18650_pcb  (18650_pcb/18650_pcb.kicad_pcb), tested 10 November 2026
-    3122. 6p_separator  (6p_separator/6p_separator.kicad_pcb), tested 9 November 2026
-    3123. back_pcb  (back_pcb/back_pcb.kicad_pcb), tested 9 November 2026
-    3124. front_prototype  (front_pcb/front_prototype.kicad_pcb), tested 9 November 2026
-    3125. keypad_pcb  (keypad_pcb/keypad_pcb.kicad_pcb), tested 9 November 2026
-    3126. speaker_adapter  (speaker_adapter/speaker_adapter.kicad_pcb), tested 9 November 2026
+    3122. 18650_pcb  (18650_pcb/18650_pcb.kicad_pcb), tested 10 November 2026
+    3123. 6p_separator  (6p_separator/6p_separator.kicad_pcb), tested 9 November 2026
+    3124. back_pcb  (back_pcb/back_pcb.kicad_pcb), tested 9 November 2026
+    3125. front_prototype  (front_pcb/front_prototype.kicad_pcb), tested 9 November 2026
+    3126. keypad_pcb  (keypad_pcb/keypad_pcb.kicad_pcb), tested 9 November 2026
+    3127. speaker_adapter  (speaker_adapter/speaker_adapter.kicad_pcb), tested 9 November 2026

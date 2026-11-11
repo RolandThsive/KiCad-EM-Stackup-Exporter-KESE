@@ -1,6 +1,6 @@
 # 2468. frankenstein
 
-Board 2,468 of the 3,126 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 23](../CorpusTestingPages/Corpus-Testing-23.md#2468-frankenstein).
+Board 2,468 of the 3,127 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 23](../CorpusTestingPages/Corpus-Testing-23.md#2468-frankenstein).
 
 ![frankenstein: stages 4 and 6 take 56% to 84% of a run. Simulation, GLB takes 39 s. Simulation, STEP takes 51 s. Simulation, STL takes 40 s. Simulation, OBJ takes 57 s. Visual, GLB takes 65 s. Visual, OBJ takes 78 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2468b_rusefi-hardware_classic-designs-rusefi-hardware-history-frankenstein-rev00-11_frankenstein/stages.webp)
 

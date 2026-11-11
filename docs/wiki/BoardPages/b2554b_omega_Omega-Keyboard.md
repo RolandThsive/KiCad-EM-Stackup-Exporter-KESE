@@ -1,6 +1,6 @@
 # 2554. Omega-Keyboard
 
-Board 2,554 of the 3,126 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 24](../CorpusTestingPages/Corpus-Testing-24.md#2554-omega-keyboard).
+Board 2,554 of the 3,127 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 24](../CorpusTestingPages/Corpus-Testing-24.md#2554-omega-keyboard).
 
 ![Omega-Keyboard: stages 4 and 6 take 58% to 84% of a run. Simulation, GLB takes 26 s. Simulation, STEP takes 32 s. Simulation, STL takes 27 s. Simulation, OBJ takes 37 s. Visual, GLB takes 38 s. Visual, OBJ takes 46 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2554b_omega_Omega-Keyboard/stages.webp)
 

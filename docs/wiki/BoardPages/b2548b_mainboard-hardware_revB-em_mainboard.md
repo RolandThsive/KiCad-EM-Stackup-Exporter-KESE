@@ -1,6 +1,6 @@
 # 2548. mainboard
 
-Board 2,548 of the 3,126 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 24](../CorpusTestingPages/Corpus-Testing-24.md#2548-mainboard).
+Board 2,548 of the 3,127 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 24](../CorpusTestingPages/Corpus-Testing-24.md#2548-mainboard).
 
 ![mainboard: stages 4 and 6 take 51% to 84% of a run. Simulation, GLB takes 56 s. Simulation, STEP takes 66 s. Simulation, STL takes 52 s. Simulation, OBJ takes 81 s. Visual, GLB takes 77 s. Visual, OBJ takes 94 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2548b_mainboard-hardware_revB-em_mainboard/stages.webp)
 

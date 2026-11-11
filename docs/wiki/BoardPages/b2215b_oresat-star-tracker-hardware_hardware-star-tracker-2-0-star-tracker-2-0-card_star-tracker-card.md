@@ -1,6 +1,6 @@
 # 2215. star-tracker-card
 
-Board 2,215 of the 3,126 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 21](../CorpusTestingPages/Corpus-Testing-21.md#2215-star-tracker-card).
+Board 2,215 of the 3,127 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 21](../CorpusTestingPages/Corpus-Testing-21.md#2215-star-tracker-card).
 
 ![star-tracker-card: stages 4 and 6 take 52% to 81% of a run. Simulation, GLB takes 59 s. Simulation, STEP takes 73 s. Simulation, STL takes 64 s. Simulation, OBJ takes 90 s. Visual, GLB takes 91 s. Visual, OBJ takes 2 min](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2215b_oresat-star-tracker-hardware_hardware-star-tracker-2-0-star-tracker-2-0-card_star-tracker-card/stages.webp)
 

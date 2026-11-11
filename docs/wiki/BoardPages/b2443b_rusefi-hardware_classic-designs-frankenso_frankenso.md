@@ -1,6 +1,6 @@
 # 2443. frankenso
 
-Board 2,443 of the 3,126 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 23](../CorpusTestingPages/Corpus-Testing-23.md#2443-frankenso).
+Board 2,443 of the 3,127 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 23](../CorpusTestingPages/Corpus-Testing-23.md#2443-frankenso).
 
 ![frankenso: stages 4 and 6 take 56% to 87% of a run. Simulation, GLB takes 3 min. Simulation, STEP takes 4 min. Simulation, STL takes 3 min. Simulation, OBJ takes 5 min. Visual, GLB takes 5 min. Visual, OBJ takes 6 min](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2443b_rusefi-hardware_classic-designs-frankenso_frankenso/stages.webp)
 

@@ -1,6 +1,6 @@
 # 683. ButterStick
 
-Board 683 of the 3,126 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 7](../CorpusTestingPages/Corpus-Testing-07.md#683-butterstick).
+Board 683 of the 3,127 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 7](../CorpusTestingPages/Corpus-Testing-07.md#683-butterstick).
 
 ![ButterStick: stages 4 and 6 take 50% to 84% of a run. Simulation, GLB takes 65 s. Simulation, STEP takes 82 s. Simulation, STL takes 65 s. Simulation, OBJ takes 2 min. Visual, GLB takes 91 s. Visual, OBJ takes 2 min](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b0683b_butterstick-hardware_hardware-ButterStick-r0-1_ButterStick/stages.webp)
 

@@ -1,6 +1,6 @@
 # 2532. reCamera B101_B4_Gyro v0.1
 
-Board 2,532 of the 3,126 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 24](../CorpusTestingPages/Corpus-Testing-24.md#2532-recamera-b101_b4_gyro-v01).
+Board 2,532 of the 3,127 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 24](../CorpusTestingPages/Corpus-Testing-24.md#2532-recamera-b101_b4_gyro-v01).
 
 ![reCamera B101_B4_Gyro v0.1: stages 4 and 6 take 47% to 80% of a run. Simulation, GLB takes 6.4 s. Simulation, STEP takes 8.8 s. Simulation, STL takes 7.0 s. Simulation, OBJ takes 10 s. Visual, GLB takes 11 s. Visual, OBJ takes 15 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2532b_OSHW-reCamera-Series_reCamera-B101-B4-Gyro-v0-1/stages.webp)
 

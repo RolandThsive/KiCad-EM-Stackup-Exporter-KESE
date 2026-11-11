@@ -1,6 +1,6 @@
 # 1332. drone_power_2_screws_V2
 
-Board 1,332 of the 3,126 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 13](../CorpusTestingPages/Corpus-Testing-13.md#1332-drone_power_2_screws_v2).
+Board 1,332 of the 3,127 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 13](../CorpusTestingPages/Corpus-Testing-13.md#1332-drone_power_2_screws_v2).
 
 ![drone_power_2_screws_V2: stages 4 and 6 take 47% to 78% of a run. Simulation, GLB takes 6.2 s. Simulation, STEP takes 8.0 s. Simulation, STL takes 6.3 s. Simulation, OBJ takes 9.6 s. Visual, GLB takes 8.5 s. Visual, OBJ takes 10 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b1332b_iss-pcb_drone-power-2-screws-V2/stages.webp)
 

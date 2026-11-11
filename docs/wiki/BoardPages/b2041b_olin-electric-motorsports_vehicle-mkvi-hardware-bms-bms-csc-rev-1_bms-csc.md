@@ -1,6 +1,6 @@
 # 2041. bms_csc
 
-Board 2,041 of the 3,126 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 19](../CorpusTestingPages/Corpus-Testing-19.md#2041-bms_csc).
+Board 2,041 of the 3,127 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 19](../CorpusTestingPages/Corpus-Testing-19.md#2041-bms_csc).
 
 ![bms_csc: stages 4 and 6 take 59% to 85% of a run. Simulation, GLB takes 12 s. Simulation, STEP takes 15 s. Simulation, STL takes 11 s. Simulation, OBJ takes 16 s. Visual, GLB takes 19 s. Visual, OBJ takes 22 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2041b_olin-electric-motorsports_vehicle-mkvi-hardware-bms-bms-csc-rev-1_bms-csc/stages.webp)
 

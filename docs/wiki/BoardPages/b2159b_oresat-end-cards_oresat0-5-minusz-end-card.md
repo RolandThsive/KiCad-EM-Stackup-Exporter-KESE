@@ -1,6 +1,6 @@
 # 2159. oresat0.5-minusz-end-card
 
-Board 2,159 of the 3,126 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 20](../CorpusTestingPages/Corpus-Testing-20.md#2159-oresat05-minusz-end-card).
+Board 2,159 of the 3,127 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 20](../CorpusTestingPages/Corpus-Testing-20.md#2159-oresat05-minusz-end-card).
 
 ![oresat0.5-minusz-end-card: stages 4 and 6 take 48% to 82% of a run. Simulation, GLB takes 12 s. Simulation, STEP takes 14 s. Simulation, STL takes 12 s. Simulation, OBJ takes 19 s. Visual, GLB takes 17 s. Visual, OBJ takes 21 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2159b_oresat-end-cards_oresat0-5-minusz-end-card/stages.webp)
 

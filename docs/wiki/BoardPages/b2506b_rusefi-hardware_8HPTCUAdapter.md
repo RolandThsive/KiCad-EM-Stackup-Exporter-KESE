@@ -1,6 +1,6 @@
 # 2506. 8HPTCUAdapter
 
-Board 2,506 of the 3,126 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 24](../CorpusTestingPages/Corpus-Testing-24.md#2506-8hptcuadapter).
+Board 2,506 of the 3,127 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 24](../CorpusTestingPages/Corpus-Testing-24.md#2506-8hptcuadapter).
 
 ![8HPTCUAdapter: stages 4 and 6 take 45% to 74% of a run. Simulation, GLB takes 1.9 s. Simulation, STEP takes 2.7 s. Simulation, STL takes 1.9 s. Simulation, OBJ takes 2.5 s. Visual, GLB takes 2.7 s. Visual, OBJ takes 3.4 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2506b_rusefi-hardware_8HPTCUAdapter/stages.webp)
 

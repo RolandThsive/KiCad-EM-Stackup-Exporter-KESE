@@ -1,6 +1,6 @@
 # 2298. healthypi_6_v5
 
-Board 2,298 of the 3,126 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 22](../CorpusTestingPages/Corpus-Testing-22.md#2298-healthypi_6_v5).
+Board 2,298 of the 3,127 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 22](../CorpusTestingPages/Corpus-Testing-22.md#2298-healthypi_6_v5).
 
 ![healthypi_6_v5: stages 4 and 6 take 48% to 85% of a run. Simulation, GLB takes 48 s. Simulation, STEP takes 63 s. Simulation, STL takes 49 s. Simulation, OBJ takes 80 s. Visual, GLB takes 76 s. Visual, OBJ takes 94 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2298b_protocentral-healthypi6-hardware_healthypi-6-v5/stages.webp)
 

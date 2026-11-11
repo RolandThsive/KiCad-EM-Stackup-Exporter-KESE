@@ -1,6 +1,6 @@
 # 289. HCP65 64 Pin Tester
 
-Board 289 of the 3,126 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 3](../CorpusTestingPages/Corpus-Testing-03.md#289-hcp65-64-pin-tester).
+Board 289 of the 3,127 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 3](../CorpusTestingPages/Corpus-Testing-03.md#289-hcp65-64-pin-tester).
 
 ![HCP65 64 Pin Tester: stages 4 and 6 take 51% to 82% of a run. Simulation, GLB takes 26 s. Simulation, STEP takes 33 s. Simulation, STL takes 25 s. Simulation, OBJ takes 38 s. Visual, GLB takes 41 s. Visual, OBJ takes 49 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b0289b_658-Computer_HCP65-64-Pin-Tester/stages.webp)
 

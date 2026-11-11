@@ -1,6 +1,6 @@
 # 2197. open_stub_experiment
 
-Board 2,197 of the 3,126 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 21](../CorpusTestingPages/Corpus-Testing-21.md#2197-open_stub_experiment).
+Board 2,197 of the 3,127 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 21](../CorpusTestingPages/Corpus-Testing-21.md#2197-open_stub_experiment).
 
 ![Reading, start-up and exit take 38% to 56% of a run. Simulation, GLB takes 0.6 s. Simulation, STEP takes 0.7 s. Simulation, STL takes 0.6 s. Simulation, OBJ takes 0.6 s. Visual, GLB takes 0.8 s. Visual, OBJ takes 0.9 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2197b_oresat-live-handheld-ground-station_open-stub-experiment/stages.webp)
 

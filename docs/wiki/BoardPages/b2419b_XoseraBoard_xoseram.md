@@ -1,6 +1,6 @@
 # 2419. xoseram
 
-Board 2,419 of the 3,126 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 23](../CorpusTestingPages/Corpus-Testing-23.md#2419-xoseram).
+Board 2,419 of the 3,127 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 23](../CorpusTestingPages/Corpus-Testing-23.md#2419-xoseram).
 
 ![xoseram: stages 4 and 6 take 56% to 84% of a run. Simulation, GLB takes 36 s. Simulation, STEP takes 43 s. Simulation, STL takes 35 s. Simulation, OBJ takes 51 s. Visual, GLB takes 51 s. Visual, OBJ takes 61 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2419b_XoseraBoard_xoseram/stages.webp)
 

@@ -1,6 +1,6 @@
 # 2323. cm5MiniITX
 
-Board 2,323 of the 3,126 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 22](../CorpusTestingPages/Corpus-Testing-22.md#2323-cm5miniitx).
+Board 2,323 of the 3,127 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 22](../CorpusTestingPages/Corpus-Testing-22.md#2323-cm5miniitx).
 
 ![cm5MiniITX: stages 4 and 6 take 47% to 80% of a run. Simulation, GLB takes 54 s. Simulation, STEP takes 65 s. Simulation, STL takes 56 s. Simulation, OBJ takes 85 s. Visual, GLB takes 82 s. Visual, OBJ takes 99 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2323b_cm5MiniITX_cm5MiniITX/stages.webp)
 
