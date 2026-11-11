@@ -1,6 +1,6 @@
 # 25. CPU Card
 
-Board 25 of the 3,107 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 1](../CorpusTestingPages/Corpus-Testing-01.md#25-cpu-card).
+Board 25 of the 3,108 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 1](../CorpusTestingPages/Corpus-Testing-01.md#25-cpu-card).
 
 ![CPU Card: stages 4 and 6 take 48% to 84% of a run. Simulation, GLB takes 7.5 s. Simulation, STEP takes 9.5 s. Simulation, STL takes 7.4 s. Simulation, OBJ takes 12 s. Visual, GLB takes 11 s. Visual, OBJ takes 15 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b0025b_6502_Hardware-CPU-Card-Rev-1-1_CPU-Card/stages.webp)
 

@@ -1,6 +1,6 @@
 # 338. dc-sci-debug-interposer
 
-Board 338 of the 3,107 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 4](../CorpusTestingPages/Corpus-Testing-04.md#338-dc-sci-debug-interposer).
+Board 338 of the 3,108 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 4](../CorpusTestingPages/Corpus-Testing-04.md#338-dc-sci-debug-interposer).
 
 ![dc-sci-debug-interposer: stages 4 and 6 take 40% to 78% of a run. Simulation, GLB takes 46 s. Simulation, STEP takes 57 s. Simulation, STL takes 47 s. Simulation, OBJ takes 81 s. Visual, GLB takes 76 s. Visual, OBJ takes 93 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b0338b_dc-sci-debug-interposer_dc-sci-debug-interposer/stages.webp)
 

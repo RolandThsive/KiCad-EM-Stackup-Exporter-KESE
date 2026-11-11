@@ -1,6 +1,6 @@
 # 1180. FreshTwinkie_v0.1_panel
 
-Board 1,180 of the 3,107 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 11](../CorpusTestingPages/Corpus-Testing-11.md#1180-freshtwinkie_v01_panel).
+Board 1,180 of the 3,108 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 11](../CorpusTestingPages/Corpus-Testing-11.md#1180-freshtwinkie_v01_panel).
 
 ![FreshTwinkie_v0.1_panel: stages 4 and 6 take 52% to 83% of a run. Simulation, GLB takes 24 s. Simulation, STEP takes 30 s. Simulation, STL takes 24 s. Simulation, OBJ takes 38 s. Visual, GLB takes 35 s. Visual, OBJ takes 43 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b1180b_PD-sniffer_FreshTwinkie-v0-1-panel/stages.webp)
 

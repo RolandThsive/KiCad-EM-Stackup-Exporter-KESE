@@ -1,6 +1,6 @@
 # 902. EEZ DIB AFE3plus
 
-Board 902 of the 3,107 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 9](../CorpusTestingPages/Corpus-Testing-09.md#902-eez-dib-afe3plus).
+Board 902 of the 3,108 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 9](../CorpusTestingPages/Corpus-Testing-09.md#902-eez-dib-afe3plus).
 
 ![EEZ DIB AFE3plus: stages 4 and 6 take 54% to 84% of a run. Simulation, GLB takes 19 s. Simulation, STEP takes 24 s. Simulation, STL takes 19 s. Simulation, OBJ takes 29 s. Visual, GLB takes 31 s. Visual, OBJ takes 37 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b0902b_dib-mio168plus-afe3_EEZ-DIB-AFE3plus/stages.webp)
 

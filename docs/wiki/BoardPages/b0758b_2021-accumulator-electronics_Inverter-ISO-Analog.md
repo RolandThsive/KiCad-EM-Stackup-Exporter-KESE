@@ -1,6 +1,6 @@
 # 758. Inverter ISO Analog
 
-Board 758 of the 3,107 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 8](../CorpusTestingPages/Corpus-Testing-08.md#758-inverter-iso-analog).
+Board 758 of the 3,108 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 8](../CorpusTestingPages/Corpus-Testing-08.md#758-inverter-iso-analog).
 
 ![Inverter ISO Analog: stages 4 and 6 take 49% to 80% of a run. Simulation, GLB takes 3.6 s. Simulation, STEP takes 5.0 s. Simulation, STL takes 3.6 s. Simulation, OBJ takes 5.3 s. Visual, GLB takes 4.5 s. Visual, OBJ takes 5.7 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b0758b_2021-accumulator-electronics_Inverter-ISO-Analog/stages.webp)
 

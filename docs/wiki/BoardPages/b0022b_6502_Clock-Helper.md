@@ -1,6 +1,6 @@
 # 22. Clock Helper
 
-Board 22 of the 3,107 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 1](../CorpusTestingPages/Corpus-Testing-01.md#22-clock-helper).
+Board 22 of the 3,108 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 1](../CorpusTestingPages/Corpus-Testing-01.md#22-clock-helper).
 
 ![Clock Helper: stages 4 and 6 take 49% to 82% of a run. Simulation, GLB takes 6.0 s. Simulation, STEP takes 6.8 s. Simulation, STL takes 5.4 s. Simulation, OBJ takes 7.8 s. Visual, GLB takes 7.2 s. Visual, OBJ takes 8.9 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b0022b_6502_Clock-Helper/stages.webp)
 

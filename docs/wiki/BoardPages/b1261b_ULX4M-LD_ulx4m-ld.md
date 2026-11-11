@@ -1,6 +1,6 @@
 # 1261. ulx4m-ld
 
-Board 1,261 of the 3,107 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 12](../CorpusTestingPages/Corpus-Testing-12.md#1261-ulx4m-ld).
+Board 1,261 of the 3,108 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 12](../CorpusTestingPages/Corpus-Testing-12.md#1261-ulx4m-ld).
 
 ![ulx4m-ld: stages 4 and 6 take 49% to 82% of a run. Simulation, GLB takes 49 s. Simulation, STEP takes 60 s. Simulation, STL takes 50 s. Simulation, OBJ takes 78 s. Visual, GLB takes 80 s. Visual, OBJ takes 96 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b1261b_ULX4M-LD_ulx4m-ld/stages.webp)
 
@@ -44,4 +44,4 @@ Board 1,261 of the 3,107 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1260. ulx4m-cm4-hat](b1260b_ULX4M-CM4-HAT_ulx4m-cm4-hat.md) | [1262. ULX4M-PCIe-IO_x4_half](b1262b_ULX4M-PCIe-IO_ULX4M-PCIe-IO-x4-half.md) |
+| [1260. ulx4m-cm4-hat](b1260b_ULX4M-CM4-HAT_ulx4m-cm4-hat.md) | [1262. ulx4m_panel](b1262b_ULX4M-LS_ulx4m-panel.md) |

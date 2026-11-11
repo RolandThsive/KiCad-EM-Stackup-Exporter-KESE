@@ -1,0 +1,55 @@
+{
+ "name": "oresat-mag-card",
+ "project": "oresat/oresat-adcs-hardware",
+ "path": "oresat__oresat-adcs-hardware/oresat-mag-card/oresat-mag-card.kicad_pcb",
+ "license": "GPL-2.0 (GNU GPL v2.0)",
+ "license_checked": "2026-11-08",
+ "rank": 738,
+ "score": 3540,
+ "level": "HIGH",
+ "complexity": {
+  "grade": 376,
+  "size": 261,
+  "features": 115
+ },
+ "features": [
+  "through_vias",
+  "shaped_pads",
+  "drill_offsets",
+  "filled_zones",
+  "curved_outline",
+  "bare_copper_tracks",
+  "stackup",
+  "dielectric_properties",
+  "mask_silk_colours"
+ ],
+ "layers": 4,
+ "status": "pass",
+ "bad_design": null,
+ "chart_alt": "oresat-mag-card: stages 4 and 6 take 53% to 81% of a run. Simulation, GLB takes 32 s. Simulation, STEP takes 38 s. Simulation, STL takes 31 s. Simulation, OBJ takes 44 s. Visual, GLB takes 44 s. Visual, OBJ takes 54 s",
+ "rerun": {},
+ "tested": [
+  "2026-11-09",
+  "2026-11-09"
+ ],
+ "kese": [
+  "22fd70c"
+ ],
+ "kese_version": [
+  "2.4.0"
+ ],
+ "runs": [
+  [
+   "corpus",
+   "2026-11-09",
+   11000000000.0,
+   5400.0
+  ]
+ ],
+ "machine": {
+  "cpu": "Intel(R) Xeon(R) Processor @ 2.30GHz, 4 cores, 15 GB",
+  "geos": "3.14.1",
+  "python": "3.13.18",
+  "shapely": "2.2.0"
+ }
+}

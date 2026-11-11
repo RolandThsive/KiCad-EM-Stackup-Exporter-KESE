@@ -1,6 +1,6 @@
 # 1002. RAM2E
 
-Board 1,002 of the 3,107 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 10](../CorpusTestingPages/Corpus-Testing-10.md#1002-ram2e).
+Board 1,002 of the 3,108 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 10](../CorpusTestingPages/Corpus-Testing-10.md#1002-ram2e).
 
 ![RAM2E: stages 4 and 6 take 50% to 81% of a run. Simulation, GLB takes 26 s. Simulation, STEP takes 34 s. Simulation, STL takes 26 s. Simulation, OBJ takes 41 s. Visual, GLB takes 35 s. Visual, OBJ takes 45 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b1002b_RAM2E_Hardware-LCMXO2_RAM2E/stages.webp)
 

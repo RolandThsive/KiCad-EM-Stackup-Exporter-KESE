@@ -1,6 +1,6 @@
 # 260. VIA Board
 
-Board 260 of the 3,107 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 3](../CorpusTestingPages/Corpus-Testing-03.md#260-via-board).
+Board 260 of the 3,108 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 3](../CorpusTestingPages/Corpus-Testing-03.md#260-via-board).
 
 ![VIA Board: stages 4 and 6 take 52% to 87% of a run. Simulation, GLB takes 43 s. Simulation, STEP takes 53 s. Simulation, STL takes 43 s. Simulation, OBJ takes 68 s. Visual, GLB takes 77 s. Visual, OBJ takes 93 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b0260b_658-Computer_VIA-Board/stages.webp)
 

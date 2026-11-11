@@ -1,6 +1,6 @@
 # 940. Home Assistant Voice PE
 
-Board 940 of the 3,107 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 9](../CorpusTestingPages/Corpus-Testing-09.md#940-home-assistant-voice-pe).
+Board 940 of the 3,108 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 9](../CorpusTestingPages/Corpus-Testing-09.md#940-home-assistant-voice-pe).
 
 ![Home Assistant Voice PE: stages 4 and 6 take 48% to 80% of a run. Simulation, GLB takes 50 s. Simulation, STEP takes 61 s. Simulation, STL takes 52 s. Simulation, OBJ takes 76 s. Visual, GLB takes 85 s. Visual, OBJ takes 2 min](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b0940b_home-assistant-voice-pe_Home-Assistant-Voice-PE/stages.webp)
 

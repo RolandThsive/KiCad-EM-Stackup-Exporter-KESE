@@ -1,6 +1,6 @@
 # 895. ThunderScope Muxboard
 
-Board 895 of the 3,107 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 9](../CorpusTestingPages/Corpus-Testing-09.md#895-thunderscope-muxboard).
+Board 895 of the 3,108 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 9](../CorpusTestingPages/Corpus-Testing-09.md#895-thunderscope-muxboard).
 
 ![ThunderScope Muxboard: stages 4 and 6 take 47% to 81% of a run. Simulation, GLB takes 35 s. Simulation, STEP takes 46 s. Simulation, STL takes 35 s. Simulation, OBJ takes 55 s. Visual, GLB takes 50 s. Visual, OBJ takes 61 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b0895b_ts-test-fixtures_ThunderScope-Muxboard/stages.webp)
 

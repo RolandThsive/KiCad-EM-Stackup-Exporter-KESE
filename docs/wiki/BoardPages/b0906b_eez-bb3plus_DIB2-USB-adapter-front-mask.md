@@ -1,6 +1,6 @@
 # 906. DIB2 USB adapter front mask
 
-Board 906 of the 3,107 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 9](../CorpusTestingPages/Corpus-Testing-09.md#906-dib2-usb-adapter-front-mask).
+Board 906 of the 3,108 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 9](../CorpusTestingPages/Corpus-Testing-09.md#906-dib2-usb-adapter-front-mask).
 
 ![DIB2 USB adapter front mask: stages 4 and 6 take 42% to 77% of a run. Simulation, GLB takes 1.2 s. Simulation, STEP takes 1.9 s. Simulation, STL takes 1.2 s. Simulation, OBJ takes 1.6 s. Visual, GLB takes 1.5 s. Visual, OBJ takes 1.7 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b0906b_eez-bb3plus_DIB2-USB-adapter-front-mask/stages.webp)
 
