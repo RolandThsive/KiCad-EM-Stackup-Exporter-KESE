@@ -10,8 +10,9 @@ chart in docs/images/b<number>b_<repo>_<board>/stages.webp when it has one. From
 
 The boards are numbered 1 to n in order of project and then path, at every run. A board added comes as folders
 named <repo>_<board>, with no number: it goes into its place, and every board after it moves up by one. The engine
-renames each folder whose number is no longer right, in both docs/tables and docs/images, and writes every page
-again. A board whose folders are deleted is gone, and so are its board page and any page past the last.
+renames each folder whose number is no longer right, in docs/tables, docs/images and corpus-testing/data (the
+board's counts and runs), and writes every page again; a board with no folder in corpus-testing/data gets one that
+says no runs of it are recorded. A board whose folders are deleted is gone, and so are its board page and any page past the last.
 
     python3 corpus-testing/engine/assemble.py [<top of the corpus-testing branch>]
 
@@ -25,6 +26,7 @@ from pathlib import Path
 
 TOP = Path(sys.argv[1] if len(sys.argv) > 1 else Path(__file__).resolve().parents[2])
 TABLES, IMAGES, WIKI = TOP / "docs" / "tables", TOP / "docs" / "images", TOP / "docs" / "wiki"
+DATA = TOP / "corpus-testing" / "data"
 PAGES, BOARDPAGES = WIKI / "CorpusTestingPages", WIKI / "BoardPages"
 PER_PAGE = 108
 RAW = "https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images"
@@ -35,6 +37,13 @@ FEATURES = [tuple(f) for f in json.loads((Path(__file__).resolve().parent / "fea
 def charts():
     """The folders under docs/images that hold a chart."""
     return {p.parent.name for p in IMAGES.glob("*/stages.webp")}
+
+
+def write(path, text):
+    """Writes only what changed, so that a run that changes nothing leaves the files as they were."""
+    path.parent.mkdir(parents=True, exist_ok=True)
+    if not path.is_file() or path.read_text() != text:
+        path.write_text(text)
 
 
 # ---- the boards, numbered in order of project and path; each folder named b<number>b_<repo>_<board>
@@ -54,10 +63,15 @@ for i, m in enumerate(B, 1):
     m["page"] = (i - 1) // PER_PAGE + 1
     m["slug"] = f"b{i:0{WIDTH}d}b_{m['key']}"
     if m["folder"] != m["slug"]:                                       # a new board, or one whose number moved
-        (TABLES / m["folder"]).rename(TABLES / m["slug"])
-        if (IMAGES / m["folder"]).is_dir():
-            (IMAGES / m["folder"]).rename(IMAGES / m["slug"])
+        for root in (TABLES, IMAGES, DATA):
+            if (root / m["folder"]).is_dir():
+                (root / m["folder"]).rename(root / m["slug"])
         renamed += 1
+    if not (DATA / m["slug"] / "board.json").is_file():               # a board added by hand, with no runs recorded
+        (DATA / m["slug"]).mkdir(parents=True, exist_ok=True)
+        stub = {k: m[k] for k in ("rank", "name", "project", "path") if k in m}
+        stub["runs_recorded"] = False
+        write(DATA / m["slug"] / "board.json", json.dumps(stub, indent=1, ensure_ascii=False) + "\n")
     m["chart"] = m["folder"] in have_chart
     for part in ("stages", "facts", "files"):
         f = TABLES / m["slug"] / f"{part}.md"
@@ -81,13 +95,6 @@ def body(m):
     out.append(m["files"])
     out.append("\n</td></tr></table>\n")
     return "\n".join(out)
-
-
-def write(path, text):
-    """Writes only what changed, so that a run that changes nothing leaves the files as they were."""
-    path.parent.mkdir(parents=True, exist_ok=True)
-    if not path.is_file() or path.read_text() != text:
-        path.write_text(text)
 
 
 # ---- the corpus pages, 108 boards each, and the combined page

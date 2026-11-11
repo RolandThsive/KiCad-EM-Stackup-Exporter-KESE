@@ -1,6 +1,7 @@
 # Lives only on the corpus-testing branch. When a push adds, changes or deletes a board's files (docs/tables/,
-# docs/images/), the engine numbers the boards, renames the folders whose number moved, and builds every Corpus
-# Testing page again; the result is committed here and main's Sync Wiki is started, so the wiki follows.
+# docs/images/), the engine numbers the boards, renames the folders whose number moved (their data folders too), and
+# builds every Corpus Testing page again; the result is committed here and main's Sync Wiki is started, so the wiki
+# follows.
 name: Corpus Engine
 
 on:
@@ -33,7 +34,7 @@ jobs:
       - name: Commit and push what changed
         id: commit
         run: |
-          git add -A docs/tables docs/images docs/wiki
+          git add -A docs/tables docs/images docs/wiki corpus-testing/data
           if git diff --cached --quiet; then echo "The pages were already up to date."; exit 0; fi
           git -c user.name="github-actions[bot]" -c user.email="41898282+github-actions[bot]@users.noreply.github.com" \
             commit -q -m "Corpus Engine: boards numbered and pages built"

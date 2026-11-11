@@ -15,7 +15,8 @@ format a run, with the Verifier on.
 - [`corpus-testing/engine/`](corpus-testing/engine): the engine that numbers the boards and builds every page from
   their folders, by itself on each push.
 - [`corpus-testing/engine/maker/`](corpus-testing/engine/maker): makes a board's folders from its runs.
-- [`corpus-testing/data/`](corpus-testing/data): the record of every run and the boards' complexity list.
+- [`corpus-testing/data/`](corpus-testing/data): a folder per board, of the same name, with its counts from its
+  `.kicad_pcb` (`board.json`) and the record of every run of it (`runs.jsonl`).
 - [`docs/wiki/Credits.md`](docs/wiki/Credits.md) and [`credits.txt`](credits.txt): the projects whose boards were
   used, with their licenses.
 

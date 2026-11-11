@@ -1,6 +1,6 @@
 # Corpus Board Maker
 
-Makes each board's files from the run results in `corpus-testing/data/`, for the engine to build the pages from:
+Makes each board's files from its runs in `corpus-testing/data/`, for the engine to build the pages from:
 
     docs/tables/<repo>_<board>/board.json    name, project, path, complexity, features, status, bad design ...
     docs/tables/<repo>_<board>/stages.md     seconds per stage, one row per mode and format
@@ -17,14 +17,17 @@ a new board's folders have no number, and the engine numbers and renames them. F
 
 Needs Python 3.11 or newer with matplotlib and Pillow.
 
-- **Add a board:** add its line to `data/kicad_board_complexity_scores.txt` and its runs to `data/results/`, then
-  make it. Or add its two folders by hand, named `<repo>_<board>`.
-- **Take a board out:** delete its folders in `docs/tables/` and `docs/images/`, and add its rank to `left_out` in
-  `corpus_boards.json`, with why, so that it is not made again.
-- **Name a bad design:** add its rank to `bad_design` in `corpus_boards.json`, with what the file has there.
-- **A run that passes when run again:** `data/fixes/FIXED[23]*.jsonl` (with fixes to KESE), `data/fixes/C*.jsonl`
-  (with a bigger memory cap) and `data/fixes/M*.jsonl` (with no memory cap) take the place of a failed run; a run
-  that fails again keeps its first result.
+Each board's runs are in its folder in `corpus-testing/data/`, named as its tables folder: `board.json` (its counts
+from the `.kicad_pcb`, its KESE features, its path, and what makes it a bad design, if it is one) and `runs.jsonl`
+(every run of it in order, each with its date and source).
+
+- **Add a board:** add its folder to `data/`, `<repo>_<board>/`, with its `board.json` (a rank no other board has)
+  and `runs.jsonl`, then make it. Or add its two folders by hand, named `<repo>_<board>`.
+- **Take a board out:** delete its folders in `docs/tables/`, `docs/images/` and `data/`.
+- **Name a bad design:** set `bad_design` in the board's `data/.../board.json`, with what the file has there.
+- **A run that passes when run again:** add it to the board's `runs.jsonl` with its source: `"fixed"` (with fixes to
+  KESE), `"cap"` (with a bigger memory cap) or `"nocap"` (with no memory cap). It takes the place of a failed run; a
+  run that fails again keeps its first result. A `"corpus"` run takes the place of an earlier `"corpus"` run.
 - **Charts:** one is drawn only when its `stages.webp` is missing; delete it to draw it again.
 
 The boards themselves belong to their authors and are not here: only the numbers of the runs.

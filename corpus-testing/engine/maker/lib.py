@@ -11,7 +11,6 @@ from PIL import Image
 RES = Path(sys.argv[1]); REPO = Path(sys.argv[2]); IMG = REPO / "docs/images"; WIKI = REPO / "docs/wiki"
 RAW = "https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images"
 DATA = Path(HERE).parents[1] / "data"
-SCORES = DATA / "kicad_board_complexity_scores.txt"
 N = 23  # the page's number in the wiki's order
 for f in fm.findSystemFonts():
     if "/inter/Inter-" in f: fm.fontManager.addfont(f)
@@ -57,72 +56,39 @@ def anchor(title):
 
 
 # ---- the corpus: every board's numbers from the complexity list
-lines = open(SCORES).read().splitlines()
-hdr = next(l for l in lines if l.startswith("RANK"))
-cN, cP = hdr.index("NOTES"), hdr.index("PATH INSIDE ZIP")
-BOARDS = {}
-for l in lines:
-    m = re.match(r"\s*(\d+)\s+(\d+)\s+(EXTREME|VERY HIGH|HIGH|MEDIUM|LOW|SIMPLE)\s", l)
-    if not m or len(l) <= cP: continue
-    num = l[:cN].split()
-    path = l[cP:].strip()
-    BOARDS[int(m.group(1))] = dict(rank=int(m.group(1)), score=int(m.group(2)), level=m.group(3), layers=int(num[-10]),
-                                   parts=int(num[-9]), big=int(num[-8]), bga=int(num[-7]), tracks=int(num[-6]), vias=int(num[-5]), size_mb=float(num[-3]),
-                                   kicad=int(num[-2]), notes=l[cN:cP].strip(), path=path,
-                                   project=path.split("/")[0].replace("__", "/", 1), name=Path(path).stem)
-assert len(BOARDS) == 3146
-# the boards taken out of the corpus, and those that are a bad design according to KESE: corpus_boards.json
-_CFG = json.loads((Path(HERE) / "corpus_boards.json").read_text())
-CUT_SHORT = {int(r) for r in _CFG["left_out"]}
-BAD_DESIGN = {int(r): why for r, why in _CFG["bad_design"].items()}
-for _r in CUT_SHORT: BOARDS.pop(_r, None)
-
-def _clean(t): return re.sub(r"-+", "-", re.sub(r"[^A-Za-z0-9-]+", "-", t)).strip("-")
-_base = {r: _clean(b["project"].split("/")[1]) + "_" + _clean(b["name"]) for r, b in BOARDS.items()}
-_cnt = collections.Counter(_base.values())
-SLUG = {}
-for r, b in BOARDS.items():
-    if _cnt[_base[r]] == 1: SLUG[r] = _base[r]
-    else:
-        mid = _clean("-".join(b["path"].split("/")[1:-1]))
-        SLUG[r] = _base[r].split("_", 1)[0] + ("_" + mid if mid else "") + "_" + _clean(b["name"])
-_c2 = collections.Counter(SLUG.values())
-for r in SLUG:
-    if _c2[SLUG[r]] > 1: SLUG[r] += f"_{r}"
+# ---- the boards and their runs: one folder per board in data/, b<number>b_<repo>_<board> (named as its tables folder)
+#   board.json  the board's counts from its .kicad_pcb (tracks, vias, parts, chips, layers ...), its KESE features,
+#               its path and zip, and what makes it a bad design according to KESE, if it is one
+#   runs.jsonl  every run of the board in order, each with its date and source: "corpus" (the first runs; a later
+#               one replaces an earlier one), or "fixed", "cap" or "nocap" (run again with the fixes to KESE, with
+#               the memory cap raised to 14.5 GB, or with no memory cap: it takes the place of a run that failed,
+#               when it passes; a run that fails again keeps the first result)
+BOARDS, FEAT, BAD_DESIGN, SLUG, RUNS = {}, {}, {}, {}, {}
+for _d in sorted(p for p in DATA.iterdir() if (p / "board.json").is_file()):
+    _b = json.loads((_d / "board.json").read_text())
+    _r = _b["rank"]
+    BOARDS[_r] = _b
+    FEAT[_r] = _b.get("features") or {}
+    if _b.get("bad_design"): BAD_DESIGN[_r] = _b["bad_design"]
+    _m = re.fullmatch(r"b\d+b_(.+)", _d.name)
+    SLUG[_r] = _m.group(1) if _m else _d.name
+    _f = _d / "runs.jsonl"
+    RUNS[_r] = [json.loads(l) for l in open(_f) if l.strip()] if _f.is_file() else []
 assert len(set(SLUG.values())) == len(SLUG)
 
-# ---- the runs
 R = {}
-import datetime as _dt, bisect as _bs
-_SNAP = collections.defaultdict(list)          # file -> [(line count, UTC date)], from the line-count log taken every 2 minutes
-for _l in open(DATA / "linecounts.log"):
-    _t, _f, _n = _l.split()
-    _SNAP[_f].append((int(_n), _t[:10]))
-_FIRST = "2026-11-09"                          # results4 was started on 9 November 2026, before the log began
-def _run_date(fname, i):
-    for n, day in _SNAP.get(fname, []):
-        if n >= i: return day
-    return _dt.datetime.now(_dt.timezone.utc).strftime("%Y-%m-%d")
-for f in sorted(RES.glob("W*.jsonl")) + sorted(RES.glob("RERUN*.jsonl")):   # a rerun replaces a run whose runner was stopped
-    for i, l in enumerate(open(f), 1):
-        try: d = json.loads(l)
-        except Exception: continue
-        if d.get("runner_died") and d["tag"] in R: continue
-        d["date"] = _run_date(f.name, i) if _SNAP.get(f.name) else _FIRST
-        R[d["tag"]] = d
-# a run that failed and passes when run again, with the corpus fixes (FIXED*.jsonl) or under the raised
-# 14.5 GB memory cap (C*.jsonl), takes the new run's place; a run that fails again keeps its first record
-FIXES = RES.parent / "fixes"
-for f, why in [(p, "fixed") for p in sorted(FIXES.glob("FIXED[23]*.jsonl"))] + [(p, "cap") for p in sorted(FIXES.glob("C[0-9]*.jsonl"))] + [(p, "nocap") for p in sorted(FIXES.glob("M[0-9]*.jsonl"))]:
-    for l in open(f):
-        try: d = json.loads(l)
-        except Exception: continue
+import datetime as _dt
+for _r in sorted(RUNS):
+    for d in RUNS[_r]:
+        if d["source"] == "corpus":
+            if d.get("runner_died") and d["tag"] in R: continue      # a rerun replaces a run whose runner was stopped
+            R[d["tag"]] = d
+            continue
         old = R.get(d["tag"])
         if old is None or (old["rc"] == 0 and "PASS" in old["verifier"]): continue
         if not (d["rc"] == 0 and "PASS" in (d.get("verifier") or "")): continue
-        d["date"], d["rerun"] = d.get("date") or "2026-11-10", why
+        d["rerun"] = d["source"]
         R[d["tag"]] = d
-R = {t: d for t, d in R.items() if d["rank"] not in CUT_SHORT}
 for d in R.values():
     d["wall"] = d.get("wall") or 0
     st = {}
@@ -236,7 +202,6 @@ FNAME = {"glb": "GLB", "step": "STEP", "stl": "STL", "obj": "OBJ"}
 
 FEATURES = [tuple(f) for f in json.load(open(Path(HERE).parent / "features.json"))]  # (key in features.json, name on the page, what is counted in the .kicad_pcb file, weight)
 assert sum(w for *_, w in FEATURES) == 500
-FEAT = {int(k): v for k, v in json.load(open(DATA / "features.json")).items()}
 
 
 def grade(b):
@@ -302,7 +267,7 @@ def board_parts(b):
         lo, hi = round(min(a)), round(max(a))
         head = f"{b['name']}: {what} {lo}% to {hi}% of a run" if lo != hi else f"{b['name']}: {what} {lo}% of a run"
         if len(head) > 70: head = head.split(": ", 1)[1].capitalize()
-        cdir = board_dir(IMG, slug(b))
+        cdir = IMG / board_dir(REPO / "docs" / "tables", slug(b)).name   # named as its tables folder
         if not (cdir / "stages.webp").exists():   # a board's chart is drawn once
             cdir.mkdir(parents=True, exist_ok=True)
             stacked([(lab, d["bars"]) for lab, d in okrs], head, SUB, f"{cdir.name}/stages", label_w=0.24)
