@@ -384,4 +384,4 @@ How many triangles its rays test at once is `Parallel.VERIFY_TRIANGLES_AT_A_TIME
 
 | Previous | Next |
 |:---|---:|
-| [Corpus Testing](Corpus-Testing.md) | [Checks, Errors And Warnings](Checks-Errors-And-Warnings.md) |
+| [Feature Test Collection](Feature-Test-Collection.md) | [Checks, Errors And Warnings](Checks-Errors-And-Warnings.md) |
