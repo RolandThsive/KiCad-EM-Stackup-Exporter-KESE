@@ -1,0 +1,54 @@
+{
+ "name": "CSAD2",
+ "project": "myriadrf/lc-clock",
+ "path": "myriadrf__lc-clock/csad2/CSAD2.kicad_pcb",
+ "license": "As README.rst states it: \"LibreCelluar Reference Clock Designs is copyright 2023 AB Open Ltd and provided under the Solderpad Hardware License v2.1. .. LibreCellular Documentation: https://librecellular.org/developer/hardware/ci/csad10.html\"",
+ "license_checked": "2026-11-08",
+ "rank": 2379,
+ "score": 324,
+ "level": "LOW",
+ "complexity": {
+  "grade": 278,
+  "size": 163,
+  "features": 115
+ },
+ "features": [
+  "through_vias",
+  "custom_pads",
+  "shaped_pads",
+  "arc_tracks",
+  "filled_zones",
+  "copper_graphics",
+  "stackup",
+  "dielectric_properties"
+ ],
+ "layers": 4,
+ "status": "pass",
+ "bad_design": null,
+ "chart_alt": "CSAD2: stages 4 and 6 take 47% to 76% of a run. Simulation, GLB takes 3.0 s. Simulation, STEP takes 4.1 s. Simulation, STL takes 2.9 s. Simulation, OBJ takes 4.6 s. Visual, GLB takes 3.9 s. Visual, OBJ takes 5.0 s",
+ "rerun": {},
+ "tested": [
+  "2026-11-09",
+  "2026-11-09"
+ ],
+ "kese": [
+  "22fd70c"
+ ],
+ "kese_version": [
+  "2.4.0"
+ ],
+ "runs": [
+  [
+   "corpus",
+   "2026-11-09",
+   11000000000.0,
+   5400.0
+  ]
+ ],
+ "machine": {
+  "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz, 4 cores, 15 GB",
+  "geos": "3.14.1",
+  "python": "3.13.18",
+  "shapely": "2.2.0"
+ }
+}

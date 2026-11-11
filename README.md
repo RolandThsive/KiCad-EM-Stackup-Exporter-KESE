@@ -1,7 +1,7 @@
 # KESE Corpus Testing
 
 This branch holds the Corpus Testing of [KiCad EM Stackup Exporter (KESE)](https://github.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE),
-apart from the code: 3,118 KiCad boards from 811 open hardware projects, each exported six times by KESE, one file
+apart from the code: 3,119 KiCad boards from 811 open hardware projects, each exported six times by KESE, one file
 format a run, with the Verifier on.
 
 - [`corpus-testing/data/`](corpus-testing/data): a folder per board, `b<number>b_<repo>_<board>`, with its counts

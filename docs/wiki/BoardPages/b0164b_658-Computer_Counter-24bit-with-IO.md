@@ -1,6 +1,6 @@
 # 164. Counter 24bit with IO
 
-Board 164 of the 3,118 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 2](../CorpusTestingPages/Corpus-Testing-02.md#164-counter-24bit-with-io).
+Board 164 of the 3,119 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 2](../CorpusTestingPages/Corpus-Testing-02.md#164-counter-24bit-with-io).
 
 ![Counter 24bit with IO: stages 4 and 6 take 56% to 83% of a run. Simulation, GLB takes 13 s. Simulation, STEP takes 15 s. Simulation, STL takes 13 s. Simulation, OBJ takes 17 s. Visual, GLB takes 19 s. Visual, OBJ takes 23 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b0164b_658-Computer_Counter-24bit-with-IO/stages.webp)
 

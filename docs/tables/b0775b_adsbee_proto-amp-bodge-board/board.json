@@ -1,0 +1,49 @@
+{
+ "name": "proto_amp_bodge_board",
+ "project": "CoolNamesAllTaken/adsbee",
+ "path": "CoolNamesAllTaken__adsbee/kicad/prototyping/proto_amp_bodge_board/proto_amp_bodge_board.kicad_pcb",
+ "license": "GPL-3.0 (GNU GPL v3.0), in LICENSE",
+ "license_checked": "2026-11-08",
+ "rank": 2869,
+ "score": 27,
+ "level": "SIMPLE",
+ "complexity": {
+  "grade": 131,
+  "size": 96,
+  "features": 35
+ },
+ "features": [
+  "shaped_pads",
+  "copper_text",
+  "truetype_text"
+ ],
+ "layers": 2,
+ "status": "pass",
+ "bad_design": null,
+ "chart_alt": "proto_amp_bodge_board: stages 4 and 6 take 48% to 68% of a run. Simulation, GLB takes 1.0 s. Simulation, STEP takes 1.3 s. Simulation, STL takes 0.9 s. Simulation, OBJ takes 1.1 s. Visual, GLB takes 0.9 s. Visual, OBJ takes 1.1 s",
+ "rerun": {},
+ "tested": [
+  "2026-11-09",
+  "2026-11-09"
+ ],
+ "kese": [
+  "22fd70c"
+ ],
+ "kese_version": [
+  "2.4.0"
+ ],
+ "runs": [
+  [
+   "corpus",
+   "2026-11-09",
+   11000000000.0,
+   5400.0
+  ]
+ ],
+ "machine": {
+  "cpu": "Intel(R) Xeon(R) Processor @ 2.30GHz, 4 cores, 15 GB",
+  "geos": "3.14.1",
+  "python": "3.13.18",
+  "shapely": "2.2.0"
+ }
+}

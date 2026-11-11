@@ -1,6 +1,6 @@
 # 614. in-shaft-wsg-daughter
 
-Board 614 of the 3,118 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 6](../CorpusTestingPages/Corpus-Testing-06.md#614-in-shaft-wsg-daughter).
+Board 614 of the 3,119 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 6](../CorpusTestingPages/Corpus-Testing-06.md#614-in-shaft-wsg-daughter).
 
 ![in-shaft-wsg-daughter: stages 4 and 6 take 42% to 71% of a run. Simulation, GLB takes 2.2 s. Simulation, STEP takes 3.0 s. Simulation, STL takes 2.0 s. Simulation, OBJ takes 2.8 s. Visual, GLB takes 3.4 s. Visual, OBJ takes 3.8 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b0614b_bjr-kicad_in-shaft-wsg-daughter/stages.webp)
 

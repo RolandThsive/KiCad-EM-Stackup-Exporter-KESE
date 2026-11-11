@@ -1,6 +1,6 @@
 # 695. switch
 
-Board 695 of the 3,118 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 7](../CorpusTestingPages/Corpus-Testing-07.md#695-switch).
+Board 695 of the 3,119 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 7](../CorpusTestingPages/Corpus-Testing-07.md#695-switch).
 
 ![switch: stages 4 and 6 take 42% to 65% of a run. Simulation, GLB takes 0.8 s. Simulation, STEP takes 1.2 s. Simulation, STL takes 0.8 s. Simulation, OBJ takes 1.1 s. Visual, GLB takes 1.0 s. Visual, OBJ takes 1.2 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b0695b_laptop_switch/stages.webp)
 
@@ -45,4 +45,4 @@ Board 695 of the 3,118 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [694. power](b0694b_laptop_power.md) | [696. motherboard](b0696b_motherboard_motherboard.md) |
+| [694. power](b0694b_laptop_power.md) | [696. motherboard-stable](b0696b_motherboard_motherboard-stable.md) |

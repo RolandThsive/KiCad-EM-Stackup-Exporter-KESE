@@ -1,6 +1,6 @@
 # 145. Board 2x36 W22.86
 
-Board 145 of the 3,118 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 2](../CorpusTestingPages/Corpus-Testing-02.md#145-board-2x36-w2286).
+Board 145 of the 3,119 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 2](../CorpusTestingPages/Corpus-Testing-02.md#145-board-2x36-w2286).
 
 ![Board 2x36 W22.86: reading, start-up and exit take 75% to 87% of a run. Simulation, GLB takes 0.2 s. Simulation, STEP takes 0.2 s. Simulation, STL takes 0.2 s. Simulation, OBJ takes 0.2 s. Visual, GLB takes 0.2 s. Visual, OBJ takes 0.2 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b0145b_658-Computer_Kicad-Boards-Pins-Board-2x36-W22-86_Board-2x36-W22-86/stages.webp)
 

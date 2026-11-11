@@ -1,6 +1,6 @@
 # 290. HCP65 Board Tester
 
-Board 290 of the 3,118 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 3](../CorpusTestingPages/Corpus-Testing-03.md#290-hcp65-board-tester).
+Board 290 of the 3,119 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 3](../CorpusTestingPages/Corpus-Testing-03.md#290-hcp65-board-tester).
 
 ![HCP65 Board Tester: stages 4 and 6 take 53% to 84% of a run. Simulation, GLB takes 23 s. Simulation, STEP takes 30 s. Simulation, STL takes 23 s. Simulation, OBJ takes 35 s. Visual, GLB takes 35 s. Visual, OBJ takes 41 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b0290b_658-Computer_HCP65-Board-Tester/stages.webp)
 

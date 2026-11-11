@@ -1,6 +1,6 @@
 # 425. motherboard-hk10
 
-Board 425 of the 3,118 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 4](../CorpusTestingPages/Corpus-Testing-04.md#425-motherboard-hk10).
+Board 425 of the 3,119 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 4](../CorpusTestingPages/Corpus-Testing-04.md#425-motherboard-hk10).
 
 ![motherboard-hk10: stages 4 and 6 take 57% to 85% of a run. Simulation, GLB takes 60 s. Simulation, STEP takes 75 s. Simulation, STL takes 59 s. Simulation, OBJ takes 88 s. Visual, GLB takes 63 s. Visual, OBJ takes 78 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b0425b_motherboard-hk10_motherboard-hk10/stages.webp)
 

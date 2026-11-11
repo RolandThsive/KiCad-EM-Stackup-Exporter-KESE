@@ -1,6 +1,6 @@
 # 415. thunderbolt-gpu-adapter
 
-Board 415 of the 3,118 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 4](../CorpusTestingPages/Corpus-Testing-04.md#415-thunderbolt-gpu-adapter).
+Board 415 of the 3,119 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 4](../CorpusTestingPages/Corpus-Testing-04.md#415-thunderbolt-gpu-adapter).
 
 ![thunderbolt-gpu-adapter: stages 4 and 6 take 46% to 80% of a run. Simulation, GLB takes 73 s. Simulation, STEP takes 85 s. Simulation, STL takes 75 s. Simulation, OBJ takes 2 min. Visual, GLB takes 2 min. Visual, OBJ takes 3 min](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b0415b_thunderbolt-gpu-adapter_thunderbolt-gpu-adapter/stages.webp)
 

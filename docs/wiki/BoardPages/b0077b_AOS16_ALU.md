@@ -1,6 +1,6 @@
 # 77. ALU
 
-Board 77 of the 3,118 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 1](../CorpusTestingPages/Corpus-Testing-01.md#77-alu).
+Board 77 of the 3,119 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 1](../CorpusTestingPages/Corpus-Testing-01.md#77-alu).
 
 ![ALU: stages 4 and 6 take 51% to 83% of a run. Simulation, GLB takes 39 s. Simulation, STEP takes 50 s. Simulation, STL takes 39 s. Simulation, OBJ takes 60 s. Visual, GLB takes 54 s. Visual, OBJ takes 60 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b0077b_AOS16_ALU/stages.webp)
 

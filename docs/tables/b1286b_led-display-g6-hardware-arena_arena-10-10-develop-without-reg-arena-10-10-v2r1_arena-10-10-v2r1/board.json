@@ -1,0 +1,55 @@
+{
+ "name": "arena_10-10_v2r1",
+ "project": "iorodeo/led-display_g6_hardware_arena",
+ "path": "iorodeo__led-display_g6_hardware_arena/arena_10-10/develop/without_reg/arena_10-10_v2r1/arena_10-10_v2r1.kicad_pcb",
+ "license": "CC-BY-4.0 (Creative Commons Attribution 4.0)",
+ "license_checked": "2026-11-08",
+ "rank": 177,
+ "score": 11594,
+ "level": "VERY HIGH",
+ "complexity": {
+  "grade": 388,
+  "size": 263,
+  "features": 125
+ },
+ "features": [
+  "through_vias",
+  "slotted_holes",
+  "shaped_pads",
+  "arc_tracks",
+  "filled_zones",
+  "curved_outline",
+  "stackup",
+  "dielectric_properties",
+  "copper_finish"
+ ],
+ "layers": 6,
+ "status": "pass",
+ "bad_design": null,
+ "chart_alt": "arena_10-10_v2r1: stages 4 and 6 take 55% to 83% of a run. Simulation, GLB takes 74 s. Simulation, STEP takes 87 s. Simulation, STL takes 71 s. Simulation, OBJ takes 2 min. Visual, GLB takes 2 min. Visual, OBJ takes 2 min",
+ "rerun": {},
+ "tested": [
+  "2026-11-09",
+  "2026-11-09"
+ ],
+ "kese": [
+  "22fd70c"
+ ],
+ "kese_version": [
+  "2.4.0"
+ ],
+ "runs": [
+  [
+   "corpus",
+   "2026-11-09",
+   11000000000.0,
+   5400.0
+  ]
+ ],
+ "machine": {
+  "cpu": "Intel(R) Xeon(R) Processor @ 2.30GHz, 4 cores, 15 GB",
+  "geos": "3.14.1",
+  "python": "3.13.18",
+  "shapely": "2.2.0"
+ }
+}

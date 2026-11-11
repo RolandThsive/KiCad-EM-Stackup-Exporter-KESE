@@ -1,6 +1,6 @@
 # 216. Triple MPU Clock Generator
 
-Board 216 of the 3,118 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 2](../CorpusTestingPages/Corpus-Testing-02.md#216-triple-mpu-clock-generator).
+Board 216 of the 3,119 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 2](../CorpusTestingPages/Corpus-Testing-02.md#216-triple-mpu-clock-generator).
 
 ![Triple MPU Clock Generator: stages 4 and 6 take 52% to 83% of a run. Simulation, GLB takes 13 s. Simulation, STEP takes 15 s. Simulation, STL takes 12 s. Simulation, OBJ takes 19 s. Visual, GLB takes 19 s. Visual, OBJ takes 24 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b0216b_658-Computer_Triple-MPU-Clock-Generator/stages.webp)
 

@@ -1,6 +1,6 @@
 # 553. bela_mini_multi_pb2_wing_top
 
-Board 553 of the 3,118 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 6](../CorpusTestingPages/Corpus-Testing-06.md#553-bela_mini_multi_pb2_wing_top).
+Board 553 of the 3,119 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 6](../CorpusTestingPages/Corpus-Testing-06.md#553-bela_mini_multi_pb2_wing_top).
 
 ![bela_mini_multi_pb2_wing_top: stages 4 and 6 take 48% to 77% of a run. Simulation, GLB takes 3.3 s. Simulation, STEP takes 4.7 s. Simulation, STL takes 3.4 s. Simulation, OBJ takes 4.9 s. Visual, GLB takes 5.8 s. Visual, OBJ takes 7.4 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b0553b_bela-hardware_bela-mini-multi-pb2-wing-top/stages.webp)
 

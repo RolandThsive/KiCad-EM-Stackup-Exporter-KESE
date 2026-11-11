@@ -1,6 +1,6 @@
 # 544. belamini_cape_C1
 
-Board 544 of the 3,118 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 6](../CorpusTestingPages/Corpus-Testing-06.md#544-belamini_cape_c1).
+Board 544 of the 3,119 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 6](../CorpusTestingPages/Corpus-Testing-06.md#544-belamini_cape_c1).
 
 ![belamini_cape_C1: stages 4 and 6 take 48% to 84% of a run. Simulation, GLB takes 11 s. Simulation, STEP takes 15 s. Simulation, STL takes 12 s. Simulation, OBJ takes 17 s. Visual, GLB takes 20 s. Visual, OBJ takes 24 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b0544b_bela-hardware_belamini-cape-C1/stages.webp)
 

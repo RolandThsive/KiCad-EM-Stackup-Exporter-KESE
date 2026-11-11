@@ -1,0 +1,53 @@
+{
+ "name": "proto_ads_bee_mcu_board",
+ "project": "CoolNamesAllTaken/adsbee",
+ "path": "CoolNamesAllTaken__adsbee/kicad/prototyping/proto_ads_bee_mcu_board/proto_ads_bee_mcu_board.kicad_pcb",
+ "license": "GPL-3.0 (GNU GPL v3.0), in LICENSE",
+ "license_checked": "2026-11-08",
+ "rank": 2493,
+ "score": 240,
+ "level": "SIMPLE",
+ "complexity": {
+  "grade": 237,
+  "size": 137,
+  "features": 100
+ },
+ "features": [
+  "through_vias",
+  "shaped_pads",
+  "drill_offsets",
+  "filled_zones",
+  "knockout_text",
+  "stackup",
+  "dielectric_properties"
+ ],
+ "layers": 2,
+ "status": "pass",
+ "bad_design": null,
+ "chart_alt": "proto_ads_bee_mcu_board: stages 4 and 6 take 51% to 80% of a run. Simulation, GLB takes 3.5 s. Simulation, STEP takes 4.6 s. Simulation, STL takes 3.7 s. Simulation, OBJ takes 5.1 s. Visual, GLB takes 5.2 s. Visual, OBJ takes 7.1 s",
+ "rerun": {},
+ "tested": [
+  "2026-11-09",
+  "2026-11-09"
+ ],
+ "kese": [
+  "22fd70c"
+ ],
+ "kese_version": [
+  "2.4.0"
+ ],
+ "runs": [
+  [
+   "corpus",
+   "2026-11-09",
+   11000000000.0,
+   5400.0
+  ]
+ ],
+ "machine": {
+  "cpu": "Intel(R) Xeon(R) Processor @ 2.30GHz, 4 cores, 15 GB",
+  "geos": "3.14.1",
+  "python": "3.13.18",
+  "shapely": "2.2.0"
+ }
+}

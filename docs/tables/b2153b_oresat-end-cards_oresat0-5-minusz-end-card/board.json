@@ -1,0 +1,58 @@
+{
+ "name": "oresat0.5-minusz-end-card",
+ "project": "oresat/oresat-end-cards",
+ "path": "oresat__oresat-end-cards/oresat0.5-minusz-end-card/oresat0.5-minusz-end-card.kicad_pcb",
+ "license": "As README.md states it: \"Copyright Portland State Aerospace Society 2022. This documentation describes Open Hardware and is licensed under the CERN OHL v2 You may redistribute and modify this documentation under the terms of the CERN OHL v.1.2. https://ohwr.org/cernohl.\"",
+ "license_checked": "2026-11-08",
+ "rank": 1578,
+ "score": 1207,
+ "level": "MEDIUM",
+ "complexity": {
+  "grade": 335,
+  "size": 175,
+  "features": 160
+ },
+ "features": [
+  "through_vias",
+  "slotted_holes",
+  "custom_pads",
+  "shaped_pads",
+  "drill_offsets",
+  "arc_tracks",
+  "filled_zones",
+  "copper_graphics",
+  "curved_outline",
+  "stackup",
+  "dielectric_properties",
+  "copper_finish"
+ ],
+ "layers": 4,
+ "status": "pass",
+ "bad_design": null,
+ "chart_alt": "oresat0.5-minusz-end-card: stages 4 and 6 take 48% to 82% of a run. Simulation, GLB takes 12 s. Simulation, STEP takes 14 s. Simulation, STL takes 12 s. Simulation, OBJ takes 19 s. Visual, GLB takes 17 s. Visual, OBJ takes 21 s",
+ "rerun": {},
+ "tested": [
+  "2026-11-09",
+  "2026-11-09"
+ ],
+ "kese": [
+  "22fd70c"
+ ],
+ "kese_version": [
+  "2.4.0"
+ ],
+ "runs": [
+  [
+   "corpus",
+   "2026-11-09",
+   11000000000.0,
+   5400.0
+  ]
+ ],
+ "machine": {
+  "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz, 4 cores, 15 GB",
+  "geos": "3.14.1",
+  "python": "3.13.18",
+  "shapely": "2.2.0"
+ }
+}
