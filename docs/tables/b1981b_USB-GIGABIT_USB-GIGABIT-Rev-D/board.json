@@ -1,0 +1,51 @@
+{
+ "name": "USB-GIGABIT_Rev_D",
+ "project": "OLIMEX/USB-GIGABIT",
+ "path": "OLIMEX__USB-GIGABIT/HARDWARE/USB-GIGABIT-Rev.D/USB-GIGABIT_Rev_D.kicad_pcb",
+ "license": "As README.md states it: \"Hardware is released under CERN OHL v1.2 license; Documentation is released under CC BY-SA 4.0 license\"",
+ "license_checked": "2026-11-08",
+ "rank": 1735,
+ "score": 978,
+ "level": "LOW",
+ "complexity": {
+  "grade": 300,
+  "size": 225,
+  "features": 75
+ },
+ "features": [
+  "through_vias",
+  "slotted_holes",
+  "filled_zones",
+  "stackup",
+  "dielectric_properties"
+ ],
+ "layers": 4,
+ "status": "pass",
+ "bad_design": null,
+ "chart_alt": "USB-GIGABIT_Rev_D: stages 4 and 6 take 49% to 81% of a run. Simulation, GLB takes 5.6 s. Simulation, STEP takes 7.0 s. Simulation, STL takes 5.6 s. Simulation, OBJ takes 8.4 s. Visual, GLB takes 8.8 s. Visual, OBJ takes 11 s",
+ "rerun": {},
+ "tested": [
+  "2026-11-09",
+  "2026-11-09"
+ ],
+ "kese": [
+  "22fd70c"
+ ],
+ "kese_version": [
+  "2.4.0"
+ ],
+ "runs": [
+  [
+   "corpus",
+   "2026-11-09",
+   11000000000.0,
+   5400.0
+  ]
+ ],
+ "machine": {
+  "cpu": "Intel(R) Xeon(R) Processor @ 2.30GHz, 4 cores, 15 GB",
+  "geos": "3.14.1",
+  "python": "3.13.18",
+  "shapely": "2.2.0"
+ }
+}

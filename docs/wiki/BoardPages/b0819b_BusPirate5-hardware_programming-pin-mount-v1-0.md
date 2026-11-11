@@ -1,6 +1,6 @@
 # 819. programming_pin_mount.v1.0
 
-Board 819 of the 3,106 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 8](../CorpusTestingPages/Corpus-Testing-08.md#819-programming_pin_mountv10).
+Board 819 of the 3,107 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 8](../CorpusTestingPages/Corpus-Testing-08.md#819-programming_pin_mountv10).
 
 ![programming_pin_mount.v1.0: stages 4 and 6 take 43% to 64% of a run. Simulation, GLB takes 0.6 s. Simulation, STEP takes 0.6 s. Simulation, STL takes 0.5 s. Simulation, OBJ takes 0.7 s. Visual, GLB takes 0.6 s. Visual, OBJ takes 0.6 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b0819b_BusPirate5-hardware_programming-pin-mount-v1-0/stages.webp)
 

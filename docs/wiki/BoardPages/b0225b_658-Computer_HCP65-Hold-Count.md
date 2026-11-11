@@ -1,6 +1,6 @@
 # 225. HCP65 Hold Count
 
-Board 225 of the 3,106 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 3](../CorpusTestingPages/Corpus-Testing-03.md#225-hcp65-hold-count).
+Board 225 of the 3,107 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 3](../CorpusTestingPages/Corpus-Testing-03.md#225-hcp65-hold-count).
 
 ![HCP65 Hold Count: stages 4 and 6 take 48% to 80% of a run. Simulation, GLB takes 3.6 s. Simulation, STEP takes 4.9 s. Simulation, STL takes 3.6 s. Simulation, OBJ takes 5.4 s. Visual, GLB takes 5.8 s. Visual, OBJ takes 7.6 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b0225b_658-Computer_HCP65-Hold-Count/stages.webp)
 

@@ -1,6 +1,6 @@
 # 892. HMCAD1520_Impedence_Checker
 
-Board 892 of the 3,106 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 9](../CorpusTestingPages/Corpus-Testing-09.md#892-hmcad1520_impedence_checker).
+Board 892 of the 3,107 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 9](../CorpusTestingPages/Corpus-Testing-09.md#892-hmcad1520_impedence_checker).
 
 ![HMCAD1520_Impedence_Checker: stages 4 and 6 take 53% to 84% of a run. Simulation, GLB takes 5.8 s. Simulation, STEP takes 8.0 s. Simulation, STL takes 6.1 s. Simulation, OBJ takes 8.7 s. Visual, GLB takes 8.8 s. Visual, OBJ takes 11 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b0892b_ts-test-fixtures_HMCAD1520-Impedence-Checker/stages.webp)
 

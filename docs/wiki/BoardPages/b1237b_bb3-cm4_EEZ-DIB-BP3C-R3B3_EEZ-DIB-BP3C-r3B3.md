@@ -1,6 +1,6 @@
 # 1237. EEZ_DIB_BP3C_r3B3
 
-Board 1,237 of the 3,106 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 12](../CorpusTestingPages/Corpus-Testing-12.md#1237-eez_dib_bp3c_r3b3).
+Board 1,237 of the 3,107 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 12](../CorpusTestingPages/Corpus-Testing-12.md#1237-eez_dib_bp3c_r3b3).
 
 ![EEZ_DIB_BP3C_r3B3: stages 4 and 6 take 54% to 86% of a run. Simulation, GLB takes 25 s. Simulation, STEP takes 29 s. Simulation, STL takes 25 s. Simulation, OBJ takes 36 s. Visual, GLB takes 36 s. Visual, OBJ takes 42 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b1237b_bb3-cm4_EEZ-DIB-BP3C-R3B3_EEZ-DIB-BP3C-r3B3/stages.webp)
 

@@ -1,6 +1,6 @@
 # 1205. MotorControllerPowerBoard
 
-Board 1,205 of the 3,106 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 12](../CorpusTestingPages/Corpus-Testing-12.md#1205-motorcontrollerpowerboard).
+Board 1,205 of the 3,107 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 12](../CorpusTestingPages/Corpus-Testing-12.md#1205-motorcontrollerpowerboard).
 
 ![MotorControllerPowerBoard: stages 4 and 6 take 51% to 83% of a run. Simulation, GLB takes 22 s. Simulation, STEP takes 25 s. Simulation, STL takes 21 s. Simulation, OBJ takes 32 s. Visual, GLB takes 27 s. Visual, OBJ takes 33 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b1205b_motor-controller-2018_MotorControllerPowerBoard/stages.webp)
 

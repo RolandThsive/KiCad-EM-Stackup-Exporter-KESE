@@ -1,0 +1,51 @@
+{
+ "name": "unibone.unrouted",
+ "project": "QUniBone/QUniBoneClassic",
+ "path": "QUniBone__QUniBoneClassic/01.01_pcb/unibone/unibone.unrouted.kicad_pcb",
+ "license": "BSD-2-Clause (BSD 2-Clause License)",
+ "license_checked": "2026-11-08",
+ "rank": 1303,
+ "score": 1668,
+ "level": "MEDIUM",
+ "complexity": {
+  "grade": 308,
+  "size": 248,
+  "features": 60
+ },
+ "features": [
+  "through_vias",
+  "custom_pads",
+  "shaped_pads",
+  "drill_offsets",
+  "copper_graphics"
+ ],
+ "layers": 4,
+ "status": "pass",
+ "bad_design": null,
+ "chart_alt": "unibone.unrouted: stages 4 and 6 take 51% to 84% of a run. Simulation, GLB takes 2 min. Simulation, STEP takes 2 min. Simulation, STL takes 2 min. Simulation, OBJ takes 3 min. Visual, GLB takes 3 min. Visual, OBJ takes 3 min",
+ "rerun": {},
+ "tested": [
+  "2026-11-09",
+  "2026-11-09"
+ ],
+ "kese": [
+  "22fd70c"
+ ],
+ "kese_version": [
+  "2.4.0"
+ ],
+ "runs": [
+  [
+   "corpus",
+   "2026-11-09",
+   11000000000.0,
+   5400.0
+  ]
+ ],
+ "machine": {
+  "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz, 4 cores, 15 GB",
+  "geos": "3.14.1",
+  "python": "3.13.18",
+  "shapely": "2.2.0"
+ }
+}

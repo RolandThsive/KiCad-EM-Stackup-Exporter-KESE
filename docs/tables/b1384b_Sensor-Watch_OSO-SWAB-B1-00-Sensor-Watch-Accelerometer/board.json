@@ -1,0 +1,52 @@
+{
+ "name": "OSO-SWAB-B1-00 Sensor Watch Accelerometer",
+ "project": "joeycastillo/Sensor-Watch",
+ "path": "joeycastillo__Sensor-Watch/PCB/Sensor Boards/Kicad/OSO-SWAB-B1-00 Sensor Watch Accelerometer/OSO-SWAB-B1-00 Sensor Watch Accelerometer.kicad_pcb",
+ "license": "CC-BY-SA-4.0 (Creative Commons Attribution-ShareAlike 4.0), in LICENSE.md",
+ "license_checked": "2026-11-08",
+ "rank": 2776,
+ "score": 50,
+ "level": "SIMPLE",
+ "complexity": {
+  "grade": 182,
+  "size": 112,
+  "features": 70
+ },
+ "features": [
+  "through_vias",
+  "shaped_pads",
+  "curved_outline",
+  "stackup",
+  "dielectric_properties",
+  "mask_silk_colours"
+ ],
+ "layers": 2,
+ "status": "pass",
+ "bad_design": null,
+ "chart_alt": "Stages 4 and 6 take 42% to 74% of a run. Simulation, GLB takes 1.3 s. Simulation, STEP takes 2.0 s. Simulation, STL takes 1.2 s. Simulation, OBJ takes 1.6 s. Visual, GLB takes 1.9 s. Visual, OBJ takes 2.2 s",
+ "rerun": {},
+ "tested": [
+  "2026-11-09",
+  "2026-11-09"
+ ],
+ "kese": [
+  "22fd70c"
+ ],
+ "kese_version": [
+  "2.4.0"
+ ],
+ "runs": [
+  [
+   "corpus",
+   "2026-11-09",
+   11000000000.0,
+   5400.0
+  ]
+ ],
+ "machine": {
+  "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz, 4 cores, 15 GB",
+  "geos": "3.14.1",
+  "python": "3.13.18",
+  "shapely": "2.2.0"
+ }
+}

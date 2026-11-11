@@ -1,6 +1,6 @@
 # 1204. motor-controller-hw
 
-Board 1,204 of the 3,106 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 12](../CorpusTestingPages/Corpus-Testing-12.md#1204-motor-controller-hw).
+Board 1,204 of the 3,107 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 12](../CorpusTestingPages/Corpus-Testing-12.md#1204-motor-controller-hw).
 
 ![motor-controller-hw: stages 4 and 6 take 50% to 82% of a run. Simulation, GLB takes 30 s. Simulation, STEP takes 37 s. Simulation, STL takes 31 s. Simulation, OBJ takes 48 s. Visual, GLB takes 43 s. Visual, OBJ takes 54 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b1204b_motor-controller-2018_motor-controller-hw/stages.webp)
 

@@ -1,6 +1,6 @@
 # 1256. mono_addon
 
-Board 1,256 of the 3,106 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 12](../CorpusTestingPages/Corpus-Testing-12.md#1256-mono_addon).
+Board 1,256 of the 3,107 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 12](../CorpusTestingPages/Corpus-Testing-12.md#1256-mono_addon).
 
 ![mono_addon: stages 4 and 6 take 58% to 87% of a run. Simulation, GLB takes 9.7 s. Simulation, STEP takes 12 s. Simulation, STL takes 10 s. Simulation, OBJ takes 14 s. Visual, GLB takes 16 s. Visual, OBJ takes 19 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b1256b_mono-addon_mono-addon/stages.webp)
 
@@ -45,4 +45,4 @@ Board 1,256 of the 3,106 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1255. intergalaktik](b1255b_KiCad-PCB_intergalaktik.md) | [1257. ulx4m](b1257b_ULX4M_plot-panel_ulx4m.md) |
+| [1255. intergalaktik](b1255b_KiCad-PCB_intergalaktik.md) | [1257. ulx4m-panel](b1257b_ULX4M_ulx4m-panel.md) |

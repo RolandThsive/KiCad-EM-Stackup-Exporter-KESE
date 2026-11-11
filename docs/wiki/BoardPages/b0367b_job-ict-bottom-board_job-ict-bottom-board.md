@@ -1,6 +1,6 @@
 # 367. job-ict-bottom-board
 
-Board 367 of the 3,106 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 4](../CorpusTestingPages/Corpus-Testing-04.md#367-job-ict-bottom-board).
+Board 367 of the 3,107 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 4](../CorpusTestingPages/Corpus-Testing-04.md#367-job-ict-bottom-board).
 
 ![job-ict-bottom-board: stages 4 and 6 take 51% to 77% of a run. Simulation, GLB takes 20 s. Simulation, STEP takes 28 s. Simulation, STL takes 22 s. Simulation, OBJ takes 31 s. Visual, GLB takes 27 s. Visual, OBJ takes 35 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b0367b_job-ict-bottom-board_job-ict-bottom-board/stages.webp)
 

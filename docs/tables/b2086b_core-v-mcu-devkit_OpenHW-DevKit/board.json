@@ -1,0 +1,57 @@
+{
+ "name": "OpenHW DevKit",
+ "project": "openhwgroup/core-v-mcu-devkit",
+ "path": "openhwgroup__core-v-mcu-devkit/kicad/OpenHW DevKit.kicad_pcb",
+ "license": "SHL-2.0 (Solderpad Hardware License v2.0), in LICENSE.md",
+ "license_checked": "2026-11-08",
+ "rank": 819,
+ "score": 3158,
+ "level": "HIGH",
+ "complexity": {
+  "grade": 411,
+  "size": 271,
+  "features": 140
+ },
+ "features": [
+  "through_vias",
+  "slotted_holes",
+  "custom_pads",
+  "shaped_pads",
+  "filled_zones",
+  "copper_graphics",
+  "curved_outline",
+  "stackup",
+  "dielectric_properties",
+  "copper_finish",
+  "mask_silk_colours"
+ ],
+ "layers": 4,
+ "status": "pass",
+ "bad_design": null,
+ "chart_alt": "OpenHW DevKit: stages 4 and 6 take 56% to 83% of a run. Simulation, GLB takes 39 s. Simulation, STEP takes 48 s. Simulation, STL takes 39 s. Simulation, OBJ takes 55 s. Visual, GLB takes 59 s. Visual, OBJ takes 70 s",
+ "rerun": {},
+ "tested": [
+  "2026-11-09",
+  "2026-11-09"
+ ],
+ "kese": [
+  "22fd70c"
+ ],
+ "kese_version": [
+  "2.4.0"
+ ],
+ "runs": [
+  [
+   "corpus",
+   "2026-11-09",
+   11000000000.0,
+   5400.0
+  ]
+ ],
+ "machine": {
+  "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz, 4 cores, 15 GB",
+  "geos": "3.14.1",
+  "python": "3.13.18",
+  "shapely": "2.2.0"
+ }
+}

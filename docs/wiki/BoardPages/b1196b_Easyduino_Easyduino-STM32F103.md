@@ -1,6 +1,6 @@
 # 1196. Easyduino_STM32F103
 
-Board 1,196 of the 3,106 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 12](../CorpusTestingPages/Corpus-Testing-12.md#1196-easyduino_stm32f103).
+Board 1,196 of the 3,107 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 12](../CorpusTestingPages/Corpus-Testing-12.md#1196-easyduino_stm32f103).
 
 ![Easyduino_STM32F103: stages 4 and 6 take 48% to 81% of a run. Simulation, GLB takes 7.2 s. Simulation, STEP takes 9.3 s. Simulation, STL takes 7.0 s. Simulation, OBJ takes 11 s. Visual, GLB takes 9.8 s. Visual, OBJ takes 12 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b1196b_Easyduino_Easyduino-STM32F103/stages.webp)
 
