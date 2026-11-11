@@ -1,0 +1,29 @@
+{
+ "name": "ciaa-rx",
+ "project": "ciaa/Hardware",
+ "path": "ciaa__Hardware/PCB/RX/hw/ciaa-rx.kicad_pcb",
+ "rank": 239,
+ "complexity": {
+  "grade": 331,
+  "size": 296,
+  "features": 35
+ },
+ "features": [
+  "through_vias",
+  "filled_zones"
+ ],
+ "layers": 4,
+ "status": "pass",
+ "bad_design": null,
+ "chart_alt": "ciaa-rx: stages 4 and 6 take 49% to 81% of a run. Simulation, GLB takes 62 s. Simulation, STEP takes 73 s. Simulation, STL takes 62 s. Simulation, OBJ takes 99 s. Visual, GLB takes 99 s. Visual, OBJ takes 2 min",
+ "rerun": {},
+ "kese": [
+  "22fd70c"
+ ],
+ "machine": {
+  "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz, 4 cores, 15 GB",
+  "geos": "3.14.1",
+  "python": "3.13.18",
+  "shapely": "2.2.0"
+ }
+}

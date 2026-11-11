@@ -1,0 +1,30 @@
+{
+ "name": "W25Q02JVTBIM_breakout",
+ "project": "bluejayracing/22xt_kicad",
+ "path": "bluejayracing__22xt_kicad/02-wsg/W25Q02JVTBIM_breakout/W25Q02JVTBIM_breakout.kicad_pcb",
+ "rank": 2881,
+ "complexity": {
+  "grade": 146,
+  "size": 101,
+  "features": 45
+ },
+ "features": [
+  "through_vias",
+  "shaped_pads",
+  "filled_zones"
+ ],
+ "layers": 2,
+ "status": "pass",
+ "bad_design": null,
+ "chart_alt": "W25Q02JVTBIM_breakout: stages 4 and 6 take 40% to 76% of a run. Simulation, GLB takes 1.5 s. Simulation, STEP takes 2.3 s. Simulation, STL takes 1.5 s. Simulation, OBJ takes 1.8 s. Visual, GLB takes 2.1 s. Visual, OBJ takes 2.5 s",
+ "rerun": {},
+ "kese": [
+  "22fd70c"
+ ],
+ "machine": {
+  "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz, 4 cores, 15 GB",
+  "geos": "3.14.1",
+  "python": "3.13.18",
+  "shapely": "2.2.0"
+ }
+}

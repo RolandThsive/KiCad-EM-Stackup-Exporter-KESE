@@ -1,0 +1,30 @@
+{
+ "name": "pcb-bga-adapter-dualcon",
+ "project": "ahmadexp/Open-Source-PC110",
+ "path": "ahmadexp__Open-Source-PC110/Mods/CPU Upgrade/pcb-bga-adapter-dualcon/pcb-bga-adapter-dualcon.kicad_pcb",
+ "rank": 2235,
+ "complexity": {
+  "grade": 252,
+  "size": 207,
+  "features": 45
+ },
+ "features": [
+  "through_vias",
+  "stackup",
+  "dielectric_properties"
+ ],
+ "layers": 2,
+ "status": "pass",
+ "bad_design": null,
+ "chart_alt": "pcb-bga-adapter-dualcon: stages 4 and 6 take 48% to 79% of a run. Simulation, GLB takes 6.5 s. Simulation, STEP takes 9.3 s. Simulation, STL takes 6.5 s. Simulation, OBJ takes 9.9 s. Visual, GLB takes 10 s. Visual, OBJ takes 13 s",
+ "rerun": {},
+ "kese": [
+  "22fd70c"
+ ],
+ "machine": {
+  "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz, 4 cores, 15 GB",
+  "geos": "3.14.1",
+  "python": "3.13.18",
+  "shapely": "2.2.0"
+ }
+}

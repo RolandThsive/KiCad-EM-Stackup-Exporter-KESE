@@ -1,0 +1,30 @@
+{
+ "name": "reform-trackball",
+ "project": "jackhumbert/reform",
+ "path": "jackhumbert__reform/historic-reform1/reform-trackball-pcb/reform-trackball.kicad_pcb",
+ "rank": 2241,
+ "complexity": {
+  "grade": 229,
+  "size": 184,
+  "features": 45
+ },
+ "features": [
+  "through_vias",
+  "filled_zones",
+  "curved_outline"
+ ],
+ "layers": 2,
+ "status": "pass",
+ "bad_design": null,
+ "chart_alt": "reform-trackball: stages 4 and 6 take 49% to 81% of a run. Simulation, GLB takes 3.1 s. Simulation, STEP takes 4.2 s. Simulation, STL takes 3.2 s. Simulation, OBJ takes 4.6 s. Visual, GLB takes 4.3 s. Visual, OBJ takes 5.5 s",
+ "rerun": {},
+ "kese": [
+  "22fd70c"
+ ],
+ "machine": {
+  "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz, 4 cores, 15 GB",
+  "geos": "3.14.1",
+  "python": "3.13.18",
+  "shapely": "2.2.0"
+ }
+}

@@ -1,0 +1,33 @@
+{
+ "name": "LCD Board",
+ "project": "acwright/6502",
+ "path": "acwright__6502/Hardware/LCD Board/Rev 1.0/LCD Board.kicad_pcb",
+ "rank": 2065,
+ "complexity": {
+  "grade": 230,
+  "size": 150,
+  "features": 80
+ },
+ "features": [
+  "through_vias",
+  "custom_pads",
+  "shaped_pads",
+  "filled_zones",
+  "copper_graphics",
+  "curved_outline"
+ ],
+ "layers": 2,
+ "status": "pass",
+ "bad_design": null,
+ "chart_alt": "LCD Board: stages 4 and 6 take 55% to 84% of a run. Simulation, GLB takes 12 s. Simulation, STEP takes 15 s. Simulation, STL takes 12 s. Simulation, OBJ takes 17 s. Visual, GLB takes 17 s. Visual, OBJ takes 21 s",
+ "rerun": {},
+ "kese": [
+  "22fd70c"
+ ],
+ "machine": {
+  "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz, 4 cores, 15 GB",
+  "geos": "3.14.1",
+  "python": "3.13.18",
+  "shapely": "2.2.0"
+ }
+}

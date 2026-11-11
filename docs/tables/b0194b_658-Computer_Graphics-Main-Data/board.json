@@ -1,0 +1,32 @@
+{
+ "name": "Graphics Main Data",
+ "project": "andrewpaterson/658-Computer",
+ "path": "andrewpaterson__658-Computer/Kicad/Computer/Graphics/Graphics Main Data/Graphics Main Data.kicad_pcb",
+ "rank": 2516,
+ "complexity": {
+  "grade": 203,
+  "size": 133,
+  "features": 70
+ },
+ "features": [
+  "through_vias",
+  "shaped_pads",
+  "knockout_text",
+  "stackup",
+  "dielectric_properties"
+ ],
+ "layers": 2,
+ "status": "pass",
+ "bad_design": null,
+ "chart_alt": "Graphics Main Data: stages 4 and 6 take 49% to 81% of a run. Simulation, GLB takes 2.7 s. Simulation, STEP takes 3.7 s. Simulation, STL takes 2.7 s. Simulation, OBJ takes 3.9 s. Visual, GLB takes 4.2 s. Visual, OBJ takes 4.9 s",
+ "rerun": {},
+ "kese": [
+  "22fd70c"
+ ],
+ "machine": {
+  "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz, 4 cores, 15 GB",
+  "geos": "3.14.1",
+  "python": "3.13.18",
+  "shapely": "2.2.0"
+ }
+}

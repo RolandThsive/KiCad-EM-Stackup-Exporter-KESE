@@ -1,0 +1,36 @@
+{
+ "name": "kit-dev-coldfire-xilinx_5213",
+ "project": "KiCad/kicad-source-mirror",
+ "path": "KiCad__kicad-source-mirror/demos/kit-dev-coldfire-xilinx_5213/kit-dev-coldfire-xilinx_5213.kicad_pcb",
+ "rank": 663,
+ "complexity": {
+  "grade": 384,
+  "size": 269,
+  "features": 115
+ },
+ "features": [
+  "through_vias",
+  "slotted_holes",
+  "shaped_pads",
+  "filled_zones",
+  "copper_text",
+  "stackup",
+  "dielectric_properties",
+  "copper_finish",
+  "mask_silk_colours"
+ ],
+ "layers": 4,
+ "status": "pass",
+ "bad_design": null,
+ "chart_alt": "kit-dev-coldfire-xilinx_5213: stages 4 and 6 take 48% to 82% of a run. Simulation, GLB takes 35 s. Simulation, STEP takes 46 s. Simulation, STL takes 37 s. Simulation, OBJ takes 59 s. Visual, GLB takes 53 s. Visual, OBJ takes 66 s",
+ "rerun": {},
+ "kese": [
+  "22fd70c"
+ ],
+ "machine": {
+  "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz, 4 cores, 15 GB",
+  "geos": "3.14.1",
+  "python": "3.13.18",
+  "shapely": "2.2.0"
+ }
+}

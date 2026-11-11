@@ -1,0 +1,29 @@
+{
+ "name": "mod-gyro",
+ "project": "OLIMEX/UEXT-MODULES",
+ "path": "OLIMEX__UEXT-MODULES/MOD-MPU9150/mod-gyro.kicad_pcb",
+ "rank": 2582,
+ "complexity": {
+  "grade": 164,
+  "size": 129,
+  "features": 35
+ },
+ "features": [
+  "through_vias",
+  "filled_zones"
+ ],
+ "layers": 2,
+ "status": "pass",
+ "bad_design": null,
+ "chart_alt": "mod-gyro: stages 4 and 6 take 47% to 80% of a run. Simulation, GLB takes 1.9 s. Simulation, STEP takes 2.8 s. Simulation, STL takes 1.9 s. Simulation, OBJ takes 2.8 s. Visual, GLB takes 3.2 s. Visual, OBJ takes 3.7 s",
+ "rerun": {},
+ "kese": [
+  "22fd70c"
+ ],
+ "machine": {
+  "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz, 4 cores, 15 GB",
+  "geos": "3.14.1",
+  "python": "3.13.18",
+  "shapely": "2.2.0"
+ }
+}

@@ -1,0 +1,29 @@
+{
+ "name": "tdr_coupon_a25",
+ "project": "winkleplex10-bit/the-mac-pro-project",
+ "path": "winkleplex10-bit__the-mac-pro-project/kicad/macpro62-io-modules/tdr/tdr_coupon_a25/tdr_coupon_a25.kicad_pcb",
+ "rank": 2821,
+ "complexity": {
+  "grade": 142,
+  "size": 107,
+  "features": 35
+ },
+ "features": [
+  "through_vias",
+  "filled_zones"
+ ],
+ "layers": 2,
+ "status": "pass",
+ "bad_design": null,
+ "chart_alt": "tdr_coupon_a25: stages 4 and 6 take 72% to 87% of a run. Simulation, GLB takes 22 s. Simulation, STEP takes 27 s. Simulation, STL takes 23 s. Simulation, OBJ takes 26 s. Visual, GLB takes 18 s. Visual, OBJ takes 20 s",
+ "rerun": {},
+ "kese": [
+  "22fd70c"
+ ],
+ "machine": {
+  "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz, 4 cores, 15 GB",
+  "geos": "3.14.1",
+  "python": "3.13.18",
+  "shapely": "2.2.0"
+ }
+}

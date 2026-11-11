@@ -1,0 +1,31 @@
+{
+ "name": "TRS80IJP_1",
+ "project": "Board-Folk/TRS80IJP",
+ "path": "Board-Folk__TRS80IJP/v1.1/Kicad/TRS80IJP_1.kicad_pcb",
+ "rank": 164,
+ "complexity": {
+  "grade": 297,
+  "size": 232,
+  "features": 65
+ },
+ "features": [
+  "through_vias",
+  "filled_zones",
+  "stackup",
+  "dielectric_properties"
+ ],
+ "layers": 2,
+ "status": "pass",
+ "bad_design": null,
+ "chart_alt": "TRS80IJP_1: stages 4 and 6 take 51% to 84% of a run. Simulation, GLB takes 2 min. Simulation, STEP takes 2 min. Simulation, STL takes 2 min. Simulation, OBJ takes 3 min. Visual, GLB takes 3 min. Visual, OBJ takes 4 min",
+ "rerun": {},
+ "kese": [
+  "22fd70c"
+ ],
+ "machine": {
+  "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz, 4 cores, 15 GB",
+  "geos": "3.14.1",
+  "python": "3.13.18",
+  "shapely": "2.2.0"
+ }
+}

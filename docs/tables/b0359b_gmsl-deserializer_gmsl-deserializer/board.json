@@ -1,0 +1,39 @@
+{
+ "name": "gmsl-deserializer",
+ "project": "antmicro/gmsl-deserializer",
+ "path": "antmicro__gmsl-deserializer/gmsl-deserializer.kicad_pcb",
+ "rank": 680,
+ "complexity": {
+  "grade": 420,
+  "size": 265,
+  "features": 155
+ },
+ "features": [
+  "through_vias",
+  "custom_pads",
+  "shaped_pads",
+  "arc_tracks",
+  "filled_zones",
+  "copper_graphics",
+  "copper_text",
+  "curved_outline",
+  "knockout_text",
+  "stackup",
+  "dielectric_properties",
+  "mask_silk_colours"
+ ],
+ "layers": 4,
+ "status": "pass",
+ "bad_design": null,
+ "chart_alt": "gmsl-deserializer: stages 4 and 6 take 52% to 75% of a run. Simulation, GLB takes 30 s. Simulation, STEP takes 37 s. Simulation, STL takes 30 s. Simulation, OBJ takes 43 s. Visual, GLB takes 41 s. Visual, OBJ takes 51 s",
+ "rerun": {},
+ "kese": [
+  "22fd70c"
+ ],
+ "machine": {
+  "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz, 4 cores, 15 GB",
+  "geos": "3.14.1",
+  "python": "3.13.18",
+  "shapely": "2.2.0"
+ }
+}

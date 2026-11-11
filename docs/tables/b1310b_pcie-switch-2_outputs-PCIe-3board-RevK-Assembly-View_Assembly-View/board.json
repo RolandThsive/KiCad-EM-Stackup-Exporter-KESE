@@ -1,0 +1,29 @@
+{
+ "name": "Assembly_View",
+ "project": "isarmg/pcie-switch-2",
+ "path": "isarmg__pcie-switch-2/outputs/PCIe_3board_RevK/Assembly_View/Assembly_View.kicad_pcb",
+ "rank": 1777,
+ "complexity": {
+  "grade": 153,
+  "size": 133,
+  "features": 20
+ },
+ "features": [
+  "slotted_holes",
+  "shaped_pads"
+ ],
+ "layers": 2,
+ "status": "pass",
+ "bad_design": null,
+ "chart_alt": "Assembly_View: stages 4 and 6 take 64% to 87% of a run. Simulation, GLB takes 39 s. Simulation, STEP takes 51 s. Simulation, STL takes 40 s. Simulation, OBJ takes 53 s. Visual, GLB takes 45 s. Visual, OBJ takes 55 s",
+ "rerun": {},
+ "kese": [
+  "22fd70c"
+ ],
+ "machine": {
+  "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz, 4 cores, 15 GB",
+  "geos": "3.14.1",
+  "python": "3.13.18",
+  "shapely": "2.2.0"
+ }
+}

@@ -1,0 +1,31 @@
+{
+ "name": "mobof",
+ "project": "osrf/ovc",
+ "path": "osrf__ovc/ovc2/hardware/ovc2a/graveyard/mobof/mobof.kicad_pcb",
+ "rank": 1566,
+ "complexity": {
+  "grade": 314,
+  "size": 259,
+  "features": 55
+ },
+ "features": [
+  "through_vias",
+  "slotted_holes",
+  "shaped_pads",
+  "filled_zones"
+ ],
+ "layers": 6,
+ "status": "pass",
+ "bad_design": null,
+ "chart_alt": "mobof: stages 4 and 6 take 59% to 86% of a run. Simulation, GLB takes 27 s. Simulation, STEP takes 34 s. Simulation, STL takes 28 s. Simulation, OBJ takes 38 s. Visual, GLB takes 38 s. Visual, OBJ takes 45 s",
+ "rerun": {},
+ "kese": [
+  "22fd70c"
+ ],
+ "machine": {
+  "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz, 4 cores, 15 GB",
+  "geos": "3.14.1",
+  "python": "3.13.18",
+  "shapely": "2.2.0"
+ }
+}

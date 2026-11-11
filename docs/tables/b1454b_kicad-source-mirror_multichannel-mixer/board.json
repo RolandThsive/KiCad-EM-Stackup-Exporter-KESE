@@ -1,0 +1,31 @@
+{
+ "name": "multichannel_mixer",
+ "project": "KiCad/kicad-source-mirror",
+ "path": "KiCad__kicad-source-mirror/demos/multichannel/multichannel_mixer.kicad_pcb",
+ "rank": 1839,
+ "complexity": {
+  "grade": 230,
+  "size": 175,
+  "features": 55
+ },
+ "features": [
+  "through_vias",
+  "slotted_holes",
+  "shaped_pads",
+  "filled_zones"
+ ],
+ "layers": 2,
+ "status": "pass",
+ "bad_design": null,
+ "chart_alt": "multichannel_mixer: stages 4 and 6 take 51% to 81% of a run. Simulation, GLB takes 9.7 s. Simulation, STEP takes 12 s. Simulation, STL takes 9.4 s. Simulation, OBJ takes 14 s. Visual, GLB takes 14 s. Visual, OBJ takes 18 s",
+ "rerun": {},
+ "kese": [
+  "22fd70c"
+ ],
+ "machine": {
+  "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz, 4 cores, 15 GB",
+  "geos": "3.14.1",
+  "python": "3.13.18",
+  "shapely": "2.2.0"
+ }
+}

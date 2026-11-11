@@ -1,0 +1,32 @@
+{
+ "name": "USB-GIGABIT_Rev_D",
+ "project": "OLIMEX/USB-GIGABIT",
+ "path": "OLIMEX__USB-GIGABIT/HARDWARE/USB-GIGABIT-Rev.D/USB-GIGABIT_Rev_D.kicad_pcb",
+ "rank": 1771,
+ "complexity": {
+  "grade": 300,
+  "size": 225,
+  "features": 75
+ },
+ "features": [
+  "through_vias",
+  "slotted_holes",
+  "filled_zones",
+  "stackup",
+  "dielectric_properties"
+ ],
+ "layers": 4,
+ "status": "pass",
+ "bad_design": null,
+ "chart_alt": "USB-GIGABIT_Rev_D: stages 4 and 6 take 49% to 81% of a run. Simulation, GLB takes 5.6 s. Simulation, STEP takes 7.0 s. Simulation, STL takes 5.6 s. Simulation, OBJ takes 8.4 s. Visual, GLB takes 8.8 s. Visual, OBJ takes 11 s",
+ "rerun": {},
+ "kese": [
+  "22fd70c"
+ ],
+ "machine": {
+  "cpu": "Intel(R) Xeon(R) Processor @ 2.30GHz, 4 cores, 15 GB",
+  "geos": "3.14.1",
+  "python": "3.13.18",
+  "shapely": "2.2.0"
+ }
+}

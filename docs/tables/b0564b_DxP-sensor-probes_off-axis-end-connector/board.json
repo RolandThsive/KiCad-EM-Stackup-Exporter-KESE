@@ -1,0 +1,32 @@
+{
+ "name": "off-axis_end_connector",
+ "project": "BerkeleyLab/DxP-sensor-probes",
+ "path": "BerkeleyLab__DxP-sensor-probes/off-axis_end_connector/off-axis_end_connector.kicad_pcb",
+ "rank": 2992,
+ "complexity": {
+  "grade": 155,
+  "size": 90,
+  "features": 65
+ },
+ "features": [
+  "through_vias",
+  "shaped_pads",
+  "filled_zones",
+  "copper_graphics",
+  "curved_outline"
+ ],
+ "layers": 2,
+ "status": "pass",
+ "bad_design": null,
+ "chart_alt": "off-axis_end_connector: stages 4 and 6 take 40% to 71% of a run. Simulation, GLB takes 1.5 s. Simulation, STEP takes 2.1 s. Simulation, STL takes 1.2 s. Simulation, OBJ takes 1.7 s. Visual, GLB takes 1.8 s. Visual, OBJ takes 2.0 s",
+ "rerun": {},
+ "kese": [
+  "22fd70c"
+ ],
+ "machine": {
+  "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz, 4 cores, 15 GB",
+  "geos": "3.14.1",
+  "python": "3.13.18",
+  "shapely": "2.2.0"
+ }
+}

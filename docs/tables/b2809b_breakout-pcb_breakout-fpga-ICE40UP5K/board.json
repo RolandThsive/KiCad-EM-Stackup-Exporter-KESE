@@ -1,0 +1,36 @@
+{
+ "name": "breakout-fpga-ICE40UP5K",
+ "project": "TinyTapeout/breakout-pcb",
+ "path": "TinyTapeout__breakout-pcb/ASIC-simulator/tt04-fpga-ICE40UP5k/breakout-fpga-ICE40UP5K.kicad_pcb",
+ "rank": 1526,
+ "complexity": {
+  "grade": 361,
+  "size": 236,
+  "features": 125
+ },
+ "features": [
+  "through_vias",
+  "slotted_holes",
+  "shaped_pads",
+  "filled_zones",
+  "curved_outline",
+  "knockout_text",
+  "truetype_text",
+  "stackup",
+  "dielectric_properties"
+ ],
+ "layers": 4,
+ "status": "pass",
+ "bad_design": null,
+ "chart_alt": "breakout-fpga-ICE40UP5K: stages 4 and 6 take 50% to 80% of a run. Simulation, GLB takes 18 s. Simulation, STEP takes 21 s. Simulation, STL takes 16 s. Simulation, OBJ takes 24 s. Visual, GLB takes 26 s. Visual, OBJ takes 33 s",
+ "rerun": {},
+ "kese": [
+  "22fd70c"
+ ],
+ "machine": {
+  "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz, 4 cores, 15 GB",
+  "geos": "3.14.1",
+  "python": "3.13.18",
+  "shapely": "2.2.0"
+ }
+}

@@ -1,0 +1,31 @@
+{
+ "name": "lv_bms_tester_board",
+ "project": "olin-electric-motorsports/olin-electric-motorsports",
+ "path": "olin-electric-motorsports__olin-electric-motorsports/vehicle/mkv/hardware/lvbox/lvbms/tester_board/lv_bms_tester_board.kicad_pcb",
+ "rank": 2554,
+ "complexity": {
+  "grade": 202,
+  "size": 147,
+  "features": 55
+ },
+ "features": [
+  "through_vias",
+  "shaped_pads",
+  "filled_zones",
+  "curved_outline"
+ ],
+ "layers": 4,
+ "status": "pass",
+ "bad_design": null,
+ "chart_alt": "lv_bms_tester_board: stages 4 and 6 take 47% to 76% of a run. Simulation, GLB takes 2.7 s. Simulation, STEP takes 3.6 s. Simulation, STL takes 2.6 s. Simulation, OBJ takes 3.9 s. Visual, GLB takes 3.6 s. Visual, OBJ takes 4.4 s",
+ "rerun": {},
+ "kese": [
+  "22fd70c"
+ ],
+ "machine": {
+  "cpu": "Intel(R) Xeon(R) Processor @ 2.30GHz, 4 cores, 15 GB",
+  "geos": "3.14.1",
+  "python": "3.13.18",
+  "shapely": "2.2.0"
+ }
+}

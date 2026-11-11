@@ -1,0 +1,34 @@
+{
+ "name": "driver_module",
+ "project": "twisted-fields/rp2040-motor-controller",
+ "path": "twisted-fields__rp2040-motor-controller/driver_module/driver_module.kicad_pcb",
+ "rank": 1523,
+ "complexity": {
+  "grade": 294,
+  "size": 199,
+  "features": 95
+ },
+ "features": [
+  "through_vias",
+  "slotted_holes",
+  "shaped_pads",
+  "filled_zones",
+  "curved_outline",
+  "stackup",
+  "dielectric_properties"
+ ],
+ "layers": 4,
+ "status": "pass",
+ "bad_design": null,
+ "chart_alt": "driver_module: stages 4 and 6 take 48% to 81% of a run. Simulation, GLB takes 9.5 s. Simulation, STEP takes 12 s. Simulation, STL takes 9.4 s. Simulation, OBJ takes 14 s. Visual, GLB takes 16 s. Visual, OBJ takes 19 s",
+ "rerun": {},
+ "kese": [
+  "22fd70c"
+ ],
+ "machine": {
+  "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz, 4 cores, 15 GB",
+  "geos": "3.14.1",
+  "python": "3.13.18",
+  "shapely": "2.2.0"
+ }
+}

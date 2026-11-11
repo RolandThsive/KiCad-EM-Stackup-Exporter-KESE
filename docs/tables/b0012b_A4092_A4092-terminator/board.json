@@ -1,0 +1,32 @@
+{
+ "name": "A4092-terminator",
+ "project": "A4091/A4092",
+ "path": "A4091__A4092/Kicad/Terminator-LT1118-2.85/A4092-terminator.kicad_pcb",
+ "rank": 2627,
+ "complexity": {
+  "grade": 198,
+  "size": 123,
+  "features": 75
+ },
+ "features": [
+  "through_vias",
+  "shaped_pads",
+  "filled_zones",
+  "stackup",
+  "dielectric_properties"
+ ],
+ "layers": 2,
+ "status": "pass",
+ "bad_design": null,
+ "chart_alt": "A4092-terminator: stages 4 and 6 take 50% to 80% of a run. Simulation, GLB takes 3.6 s. Simulation, STEP takes 5.3 s. Simulation, STL takes 3.9 s. Simulation, OBJ takes 5.8 s. Visual, GLB takes 5.1 s. Visual, OBJ takes 6.6 s",
+ "rerun": {},
+ "kese": [
+  "22fd70c"
+ ],
+ "machine": {
+  "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz, 4 cores, 15 GB",
+  "geos": "3.14.1",
+  "python": "3.13.18",
+  "shapely": "2.2.0"
+ }
+}

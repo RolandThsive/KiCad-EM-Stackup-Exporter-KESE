@@ -1,0 +1,30 @@
+{
+ "name": "zMRETestFixture",
+ "project": "rusefi/hw_microrusefi",
+ "path": "rusefi__hw_microrusefi/zMRETestFixture.kicad_pcb",
+ "rank": 820,
+ "complexity": {
+  "grade": 249,
+  "size": 204,
+  "features": 45
+ },
+ "features": [
+  "through_vias",
+  "filled_zones",
+  "curved_outline"
+ ],
+ "layers": 2,
+ "status": "pass",
+ "bad_design": null,
+ "chart_alt": "zMRETestFixture: stages 4 and 6 take 57% to 87% of a run. Simulation, GLB takes 60 s. Simulation, STEP takes 79 s. Simulation, STL takes 62 s. Simulation, OBJ takes 90 s. Visual, GLB takes 99 s. Visual, OBJ takes 2 min",
+ "rerun": {},
+ "kese": [
+  "22fd70c"
+ ],
+ "machine": {
+  "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz, 4 cores, 15 GB",
+  "geos": "3.14.1",
+  "python": "3.13.18",
+  "shapely": "2.2.0"
+ }
+}

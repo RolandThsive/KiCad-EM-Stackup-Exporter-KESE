@@ -1,0 +1,32 @@
+{
+ "name": "oresat-5V2A-regulator",
+ "project": "oresat/oresat-kicad",
+ "path": "oresat__oresat-kicad/oresat-design-blocks/oresat-5V2A-regulator/oresat-5V2A-regulator.kicad_pcb",
+ "rank": 2621,
+ "complexity": {
+  "grade": 198,
+  "size": 123,
+  "features": 75
+ },
+ "features": [
+  "through_vias",
+  "shaped_pads",
+  "filled_zones",
+  "stackup",
+  "dielectric_properties"
+ ],
+ "layers": 2,
+ "status": "pass",
+ "bad_design": null,
+ "chart_alt": "oresat-5V2A-regulator: stages 4 and 6 take 47% to 72% of a run. Simulation, GLB takes 1.8 s. Simulation, STEP takes 2.6 s. Simulation, STL takes 1.9 s. Simulation, OBJ takes 2.4 s. Visual, GLB takes 2.2 s. Visual, OBJ takes 2.6 s",
+ "rerun": {},
+ "kese": [
+  "22fd70c"
+ ],
+ "machine": {
+  "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz, 4 cores, 15 GB",
+  "geos": "3.14.1",
+  "python": "3.13.18",
+  "shapely": "2.2.0"
+ }
+}

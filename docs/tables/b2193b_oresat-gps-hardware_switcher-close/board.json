@@ -1,0 +1,30 @@
+{
+ "name": "switcher_close",
+ "project": "oresat/oresat-gps-hardware",
+ "path": "oresat__oresat-gps-hardware/MicroSemi_FPGA_Dev_Board/kicad_switcher_board/switcher/switcher_close.kicad_pcb",
+ "rank": 2640,
+ "complexity": {
+  "grade": 185,
+  "size": 140,
+  "features": 45
+ },
+ "features": [
+  "through_vias",
+  "shaped_pads",
+  "filled_zones"
+ ],
+ "layers": 4,
+ "status": "pass",
+ "bad_design": null,
+ "chart_alt": "switcher_close: stages 4 and 6 take 47% to 75% of a run. Simulation, GLB takes 1.8 s. Simulation, STEP takes 2.4 s. Simulation, STL takes 1.7 s. Simulation, OBJ takes 2.3 s. Visual, GLB takes 2.4 s. Visual, OBJ takes 2.7 s",
+ "rerun": {},
+ "kese": [
+  "22fd70c"
+ ],
+ "machine": {
+  "cpu": "Intel(R) Xeon(R) Processor @ 2.30GHz, 4 cores, 15 GB",
+  "geos": "3.14.1",
+  "python": "3.13.18",
+  "shapely": "2.2.0"
+ }
+}

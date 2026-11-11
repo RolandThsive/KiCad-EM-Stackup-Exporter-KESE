@@ -1,0 +1,30 @@
+{
+ "name": "ESP32-EVB_Rev_H",
+ "project": "OLIMEX/ESP32-EVB",
+ "path": "OLIMEX__ESP32-EVB/HARDWARE/REV-H/ESP32-EVB_Rev_H.kicad_pcb",
+ "rank": 642,
+ "complexity": {
+  "grade": 291,
+  "size": 246,
+  "features": 45
+ },
+ "features": [
+  "through_vias",
+  "slotted_holes",
+  "filled_zones"
+ ],
+ "layers": 2,
+ "status": "pass",
+ "bad_design": null,
+ "chart_alt": "ESP32-EVB_Rev_H: stages 4 and 6 take 56% to 85% of a run. Simulation, GLB takes 26 s. Simulation, STEP takes 31 s. Simulation, STL takes 26 s. Simulation, OBJ takes 38 s. Visual, GLB takes 37 s. Visual, OBJ takes 47 s",
+ "rerun": {},
+ "kese": [
+  "22fd70c"
+ ],
+ "machine": {
+  "cpu": "Intel(R) Xeon(R) Processor @ 2.30GHz, 4 cores, 15 GB",
+  "geos": "3.14.1",
+  "python": "3.13.18",
+  "shapely": "2.2.0"
+ }
+}

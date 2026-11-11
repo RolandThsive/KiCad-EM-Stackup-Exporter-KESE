@@ -1,0 +1,30 @@
+{
+ "name": "uSTREAM",
+ "project": "myriadrf/STREAM",
+ "path": "myriadrf__STREAM/hardware/uSTREAM/v2/KiCAD/uSTREAM.kicad_pcb",
+ "rank": 263,
+ "complexity": {
+  "grade": 379,
+  "size": 334,
+  "features": 45
+ },
+ "features": [
+  "through_vias",
+  "slotted_holes",
+  "filled_zones"
+ ],
+ "layers": 12,
+ "status": "pass",
+ "bad_design": null,
+ "chart_alt": "uSTREAM: stages 4 and 6 take 23% to 28% of a run. Simulation, GLB takes 6.9 s. Simulation, STEP takes 7.1 s. Simulation, STL takes 7.0 s. Simulation, OBJ takes 6.8 s. Visual, GLB takes 7.5 s. Visual, OBJ takes 7.7 s",
+ "rerun": {},
+ "kese": [
+  "22fd70c"
+ ],
+ "machine": {
+  "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz, 4 cores, 15 GB",
+  "geos": "3.14.1",
+  "python": "3.13.18",
+  "shapely": "2.2.0"
+ }
+}

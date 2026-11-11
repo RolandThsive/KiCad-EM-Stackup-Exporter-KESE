@@ -1,0 +1,38 @@
+{
+ "name": "healthylink_compute_v5",
+ "project": "protocentral/protocentral_healthypi6_hardware",
+ "path": "protocentral__protocentral_healthypi6_hardware/hardware/healthylink_compute_v5/healthylink_compute_v5.kicad_pcb",
+ "rank": 1147,
+ "complexity": {
+  "grade": 418,
+  "size": 268,
+  "features": 150
+ },
+ "features": [
+  "through_vias",
+  "slotted_holes",
+  "custom_pads",
+  "shaped_pads",
+  "filled_zones",
+  "copper_graphics",
+  "curved_outline",
+  "knockout_text",
+  "truetype_text",
+  "stackup",
+  "dielectric_properties"
+ ],
+ "layers": 6,
+ "status": "pass",
+ "bad_design": null,
+ "chart_alt": "healthylink_compute_v5: stages 4 and 6 take 47% to 81% of a run. Simulation, GLB takes 18 s. Simulation, STEP takes 22 s. Simulation, STL takes 18 s. Simulation, OBJ takes 27 s. Visual, GLB takes 25 s. Visual, OBJ takes 31 s",
+ "rerun": {},
+ "kese": [
+  "22fd70c"
+ ],
+ "machine": {
+  "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz, 4 cores, 15 GB",
+  "geos": "3.14.1",
+  "python": "3.13.18",
+  "shapely": "2.2.0"
+ }
+}

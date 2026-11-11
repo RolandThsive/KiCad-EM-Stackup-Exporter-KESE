@@ -1,0 +1,33 @@
+{
+ "name": "Discharge",
+ "project": "sufst/pcb",
+ "path": "sufst__pcb/discharge/Discharge.kicad_pcb",
+ "rank": 2676,
+ "complexity": {
+  "grade": 201,
+  "size": 121,
+  "features": 80
+ },
+ "features": [
+  "through_vias",
+  "shaped_pads",
+  "curved_outline",
+  "knockout_text",
+  "stackup",
+  "dielectric_properties"
+ ],
+ "layers": 2,
+ "status": "pass",
+ "bad_design": null,
+ "chart_alt": "Discharge: stages 4 and 6 take 48% to 75% of a run. Simulation, GLB takes 2.1 s. Simulation, STEP takes 3.0 s. Simulation, STL takes 2.2 s. Simulation, OBJ takes 3.1 s. Visual, GLB takes 3.4 s. Visual, OBJ takes 3.6 s",
+ "rerun": {},
+ "kese": [
+  "22fd70c"
+ ],
+ "machine": {
+  "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz, 4 cores, 15 GB",
+  "geos": "3.14.1",
+  "python": "3.13.18",
+  "shapely": "2.2.0"
+ }
+}

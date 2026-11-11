@@ -1,0 +1,39 @@
+{
+ "name": "Bela_Gem_Multi",
+ "project": "belaplatform/bela-hardware",
+ "path": "belaplatform__bela-hardware/GemMulti/GemMulti_rev_A4/Bela_Gem_Multi.kicad_pcb",
+ "rank": 2798,
+ "complexity": {
+  "grade": 225,
+  "size": 70,
+  "features": 155
+ },
+ "features": [
+  "slotted_holes",
+  "custom_pads",
+  "shaped_pads",
+  "filled_zones",
+  "copper_graphics",
+  "curved_outline",
+  "knockout_text",
+  "truetype_text",
+  "stackup",
+  "dielectric_properties",
+  "copper_finish",
+  "mask_silk_colours"
+ ],
+ "layers": 4,
+ "status": "pass",
+ "bad_design": null,
+ "chart_alt": "Bela_Gem_Multi: stages 4 and 6 take 50% to 83% of a run. Simulation, GLB takes 9.9 s. Simulation, STEP takes 12 s. Simulation, STL takes 10 s. Simulation, OBJ takes 15 s. Visual, GLB takes 14 s. Visual, OBJ takes 17 s",
+ "rerun": {},
+ "kese": [
+  "22fd70c"
+ ],
+ "machine": {
+  "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz, 4 cores, 15 GB",
+  "geos": "3.14.1",
+  "python": "3.13.18",
+  "shapely": "2.2.0"
+ }
+}

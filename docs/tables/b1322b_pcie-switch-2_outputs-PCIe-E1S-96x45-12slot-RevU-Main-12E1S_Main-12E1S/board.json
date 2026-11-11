@@ -1,0 +1,30 @@
+{
+ "name": "Main_12E1S",
+ "project": "isarmg/pcie-switch-2",
+ "path": "isarmg__pcie-switch-2/outputs/PCIe_E1S_96x45_12slot_RevU/Main_12E1S/Main_12E1S.kicad_pcb",
+ "rank": 138,
+ "complexity": {
+  "grade": 442,
+  "size": 372,
+  "features": 70
+ },
+ "features": [
+  "blind_buried_vias",
+  "shaped_pads",
+  "filled_zones"
+ ],
+ "layers": 32,
+ "status": "memory",
+ "bad_design": null,
+ "chart_alt": "Main_12E1S: stages 4 and 6 take 63% to 86% of a run. Simulation, GLB takes 3 min. Simulation, STEP takes 4 min. Simulation, STL takes 3 min. Visual, GLB takes 5 min. Visual, OBJ takes 5 min",
+ "rerun": {},
+ "kese": [
+  "22fd70c"
+ ],
+ "machine": {
+  "cpu": "Intel(R) Xeon(R) Processor @ 2.30GHz, 4 cores, 15 GB",
+  "geos": "3.14.1",
+  "python": "3.13.18",
+  "shapely": "2.2.0"
+ }
+}

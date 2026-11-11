@@ -1,0 +1,30 @@
+{
+ "name": "96boards-robomezzi",
+ "project": "mwelling/96boards-robomezzi",
+ "path": "mwelling__96boards-robomezzi/96boards-robomezzi.kicad_pcb",
+ "rank": 1412,
+ "complexity": {
+  "grade": 247,
+  "size": 202,
+  "features": 45
+ },
+ "features": [
+  "through_vias",
+  "slotted_holes",
+  "filled_zones"
+ ],
+ "layers": 4,
+ "status": "pass",
+ "bad_design": null,
+ "chart_alt": "96boards-robomezzi: stages 4 and 6 take 48% to 82% of a run. Simulation, GLB takes 12 s. Simulation, STEP takes 15 s. Simulation, STL takes 12 s. Simulation, OBJ takes 19 s. Visual, GLB takes 18 s. Visual, OBJ takes 23 s",
+ "rerun": {},
+ "kese": [
+  "22fd70c"
+ ],
+ "machine": {
+  "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz, 4 cores, 15 GB",
+  "geos": "3.14.1",
+  "python": "3.13.18",
+  "shapely": "2.2.0"
+ }
+}

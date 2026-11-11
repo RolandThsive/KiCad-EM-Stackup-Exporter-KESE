@@ -1,0 +1,33 @@
+{
+ "name": "Memory Controller",
+ "project": "AJain9199/AOS16",
+ "path": "AJain9199__AOS16/Memory Controller/Memory Controller.kicad_pcb",
+ "rank": 1475,
+ "complexity": {
+  "grade": 318,
+  "size": 233,
+  "features": 85
+ },
+ "features": [
+  "through_vias",
+  "shaped_pads",
+  "filled_zones",
+  "curved_outline",
+  "stackup",
+  "dielectric_properties"
+ ],
+ "layers": 4,
+ "status": "pass",
+ "bad_design": null,
+ "chart_alt": "Memory Controller: stages 4 and 6 take 46% to 84% of a run. Simulation, GLB takes 17 s. Simulation, STEP takes 22 s. Simulation, STL takes 18 s. Simulation, OBJ takes 30 s. Visual, GLB takes 25 s. Visual, OBJ takes 32 s",
+ "rerun": {},
+ "kese": [
+  "22fd70c"
+ ],
+ "machine": {
+  "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz, 4 cores, 15 GB",
+  "geos": "3.14.1",
+  "python": "3.13.18",
+  "shapely": "2.2.0"
+ }
+}

@@ -1,0 +1,32 @@
+{
+ "name": "ulx4m_panel",
+ "project": "intergalaktik/ULX4M-LS",
+ "path": "intergalaktik__ULX4M-LS/panel/ulx4m_panel.kicad_pcb",
+ "rank": 17,
+ "complexity": {
+  "grade": 432,
+  "size": 357,
+  "features": 75
+ },
+ "features": [
+  "through_vias",
+  "shaped_pads",
+  "filled_zones",
+  "stackup",
+  "dielectric_properties"
+ ],
+ "layers": 6,
+ "status": "memory",
+ "bad_design": null,
+ "chart_alt": "ulx4m_panel: stages 4 and 6 take 65% to 86% of a run. Simulation, GLB takes 4 min. Simulation, STEP takes 5 min. Simulation, STL takes 4 min. Visual, GLB takes 7 min. Visual, OBJ takes 8 min",
+ "rerun": {},
+ "kese": [
+  "22fd70c"
+ ],
+ "machine": {
+  "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz, 4 cores, 15 GB",
+  "geos": "3.14.1",
+  "python": "3.13.18",
+  "shapely": "2.2.0"
+ }
+}

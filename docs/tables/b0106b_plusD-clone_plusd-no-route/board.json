@@ -1,0 +1,26 @@
+{
+ "name": "plusd_no_route",
+ "project": "alvaroalea/plusD-clone",
+ "path": "alvaroalea__plusD-clone/plusd_no_route.kicad_pcb",
+ "rank": 2726,
+ "complexity": {
+  "grade": 59,
+  "size": 59,
+  "features": 0
+ },
+ "features": [],
+ "layers": 2,
+ "status": "pass",
+ "bad_design": null,
+ "chart_alt": "plusd_no_route: stages 4 and 6 take 56% to 85% of a run. Simulation, GLB takes 16 s. Simulation, STEP takes 20 s. Simulation, STL takes 16 s. Simulation, OBJ takes 24 s. Visual, GLB takes 17 s. Visual, OBJ takes 20 s",
+ "rerun": {},
+ "kese": [
+  "22fd70c"
+ ],
+ "machine": {
+  "cpu": "Intel(R) Xeon(R) Processor @ 2.30GHz, 4 cores, 15 GB",
+  "geos": "3.14.1",
+  "python": "3.13.18",
+  "shapely": "2.2.0"
+ }
+}

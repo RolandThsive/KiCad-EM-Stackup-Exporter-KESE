@@ -1,0 +1,28 @@
+{
+ "name": "gate_nor_2in",
+ "project": "tmarhguy/alu",
+ "path": "tmarhguy__alu/schematics/kicad/modules/gates/gate_nor/gate_nor_2in_1bit/gate_nor_2in.kicad_pcb",
+ "rank": 2945,
+ "complexity": {
+  "grade": 104,
+  "size": 89,
+  "features": 15
+ },
+ "features": [
+  "through_vias"
+ ],
+ "layers": 2,
+ "status": "pass",
+ "bad_design": null,
+ "chart_alt": "gate_nor_2in: stages 4 and 6 take 44% to 66% of a run. Simulation, GLB takes 1.3 s. Simulation, STEP takes 2.1 s. Simulation, STL takes 1.3 s. Simulation, OBJ takes 1.7 s. Visual, GLB takes 1.4 s. Visual, OBJ takes 1.6 s",
+ "rerun": {},
+ "kese": [
+  "22fd70c"
+ ],
+ "machine": {
+  "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz, 4 cores, 15 GB",
+  "geos": "3.14.1",
+  "python": "3.13.18",
+  "shapely": "2.2.0"
+ }
+}

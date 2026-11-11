@@ -1,0 +1,28 @@
+{
+ "name": "arena_12-18",
+ "project": "iorodeo/led-display_g6_hardware_arena",
+ "path": "iorodeo__led-display_g6_hardware_arena/arena_12-18/layout_tool/arena_12-18.kicad_pcb",
+ "rank": 1762,
+ "complexity": {
+  "grade": 94,
+  "size": 84,
+  "features": 10
+ },
+ "features": [
+  "shaped_pads"
+ ],
+ "layers": 2,
+ "status": "pass",
+ "bad_design": null,
+ "chart_alt": "arena_12-18: stages 4 and 6 take 57% to 85% of a run. Simulation, GLB takes 27 s. Simulation, STEP takes 33 s. Simulation, STL takes 28 s. Simulation, OBJ takes 41 s. Visual, GLB takes 44 s. Visual, OBJ takes 52 s",
+ "rerun": {},
+ "kese": [
+  "22fd70c"
+ ],
+ "machine": {
+  "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz, 4 cores, 15 GB",
+  "geos": "3.14.1",
+  "python": "3.13.18",
+  "shapely": "2.2.0"
+ }
+}

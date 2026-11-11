@@ -1,0 +1,30 @@
+{
+ "name": "ciaa_acc",
+ "project": "ciaa/Hardware",
+ "path": "ciaa__Hardware/PCB/ACC/CIAA_ACC/ciaa_acc.kicad_pcb",
+ "rank": 3,
+ "complexity": {
+  "grade": 422,
+  "size": 377,
+  "features": 45
+ },
+ "features": [
+  "through_vias",
+  "slotted_holes",
+  "filled_zones"
+ ],
+ "layers": 12,
+ "status": "memory",
+ "bad_design": null,
+ "chart_alt": "ciaa_acc: stages 4 and 6 take 59% to 80% of a run. Simulation, GLB takes 4 min. Simulation, STEP takes 4 min. Simulation, STL takes 4 min. Visual, GLB takes 4 min. Visual, OBJ takes 5 min",
+ "rerun": {},
+ "kese": [
+  "22fd70c"
+ ],
+ "machine": {
+  "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz, 4 cores, 15 GB",
+  "geos": "3.14.1",
+  "python": "3.13.18",
+  "shapely": "2.2.0"
+ }
+}

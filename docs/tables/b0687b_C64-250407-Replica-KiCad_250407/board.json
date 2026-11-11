@@ -1,0 +1,31 @@
+{
+ "name": "250407_",
+ "project": "bwack/C64-250407-Replica-KiCad",
+ "path": "bwack__C64-250407-Replica-KiCad/250407_.kicad_pcb",
+ "rank": 295,
+ "complexity": {
+  "grade": 283,
+  "size": 223,
+  "features": 60
+ },
+ "features": [
+  "through_vias",
+  "custom_pads",
+  "filled_zones",
+  "copper_graphics"
+ ],
+ "layers": 2,
+ "status": "pass",
+ "bad_design": null,
+ "chart_alt": "250407_: stages 4 and 6 take 57% to 87% of a run. Simulation, GLB takes 2 min. Simulation, STEP takes 2 min. Simulation, STL takes 2 min. Simulation, OBJ takes 3 min. Visual, GLB takes 3 min. Visual, OBJ takes 3 min",
+ "rerun": {},
+ "kese": [
+  "22fd70c"
+ ],
+ "machine": {
+  "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz, 4 cores, 15 GB",
+  "geos": "3.14.1",
+  "python": "3.13.18",
+  "shapely": "2.2.0"
+ }
+}

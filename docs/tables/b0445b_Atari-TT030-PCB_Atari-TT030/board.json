@@ -1,0 +1,32 @@
+{
+ "name": "Atari TT030",
+ "project": "AtarianComputing/Atari-TT030-PCB",
+ "path": "AtarianComputing__Atari-TT030-PCB/Atari TT030.kicad_pcb",
+ "rank": 1191,
+ "complexity": {
+  "grade": 184,
+  "size": 174,
+  "features": 10
+ },
+ "features": [
+  "slotted_holes"
+ ],
+ "layers": 2,
+ "status": "pass",
+ "bad_design": null,
+ "chart_alt": "Atari TT030: stages 4 and 6 take 56% to 79% of a run. Simulation, GLB takes 6 min. Simulation, STEP takes 7 min. Simulation, STL takes 6 min. Simulation, OBJ takes 6 min. Visual, GLB takes 7 min. Visual, OBJ takes 9 min",
+ "rerun": {
+  "cap": [
+   "Simulation, OBJ"
+  ]
+ },
+ "kese": [
+  "22fd70c"
+ ],
+ "machine": {
+  "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz, 4 cores, 15 GB",
+  "geos": "3.14.1",
+  "python": "3.13.18",
+  "shapely": "2.2.0"
+ }
+}

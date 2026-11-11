@@ -1,0 +1,31 @@
+{
+ "name": "batteryboard",
+ "project": "pycubed/hardware",
+ "path": "pycubed__hardware/batteryboard-v01/batteryboard.kicad_pcb",
+ "rank": 2517,
+ "complexity": {
+  "grade": 193,
+  "size": 138,
+  "features": 55
+ },
+ "features": [
+  "through_vias",
+  "shaped_pads",
+  "filled_zones",
+  "curved_outline"
+ ],
+ "layers": 2,
+ "status": "pass",
+ "bad_design": null,
+ "chart_alt": "batteryboard: stages 4 and 6 take 50% to 81% of a run. Simulation, GLB takes 5.7 s. Simulation, STEP takes 6.9 s. Simulation, STL takes 5.5 s. Simulation, OBJ takes 8.1 s. Visual, GLB takes 7.4 s. Visual, OBJ takes 9.4 s",
+ "rerun": {},
+ "kese": [
+  "22fd70c"
+ ],
+ "machine": {
+  "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz, 4 cores, 15 GB",
+  "geos": "3.14.1",
+  "python": "3.13.18",
+  "shapely": "2.2.0"
+ }
+}

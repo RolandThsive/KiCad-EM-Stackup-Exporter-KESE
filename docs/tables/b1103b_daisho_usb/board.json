@@ -1,0 +1,29 @@
+{
+ "name": "usb",
+ "project": "greatscottgadgets/daisho",
+ "path": "greatscottgadgets__daisho/hw/frontend/usb/usb.kicad_pcb",
+ "rank": 304,
+ "complexity": {
+  "grade": 333,
+  "size": 308,
+  "features": 25
+ },
+ "features": [
+  "through_vias",
+  "curved_outline"
+ ],
+ "layers": 6,
+ "status": "pass",
+ "bad_design": null,
+ "chart_alt": "usb: stages 4 and 6 take 49% to 83% of a run. Simulation, GLB takes 58 s. Simulation, STEP takes 70 s. Simulation, STL takes 63 s. Simulation, OBJ takes 95 s. Visual, GLB takes 82 s. Visual, OBJ takes 2 min",
+ "rerun": {},
+ "kese": [
+  "22fd70c"
+ ],
+ "machine": {
+  "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz, 4 cores, 15 GB",
+  "geos": "3.14.1",
+  "python": "3.13.18",
+  "shapely": "2.2.0"
+ }
+}

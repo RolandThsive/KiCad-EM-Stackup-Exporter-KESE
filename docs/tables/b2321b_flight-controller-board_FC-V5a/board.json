@@ -1,0 +1,37 @@
+{
+ "name": "FC_V5a",
+ "project": "proveskit/flight_controller_board",
+ "path": "proveskit__flight_controller_board/Deprecated Versions/FC_V5a/FC_V5a.kicad_pcb",
+ "rank": 587,
+ "complexity": {
+  "grade": 406,
+  "size": 276,
+  "features": 130
+ },
+ "features": [
+  "through_vias",
+  "slotted_holes",
+  "custom_pads",
+  "shaped_pads",
+  "filled_zones",
+  "copper_graphics",
+  "copper_text",
+  "curved_outline",
+  "stackup",
+  "dielectric_properties"
+ ],
+ "layers": 4,
+ "status": "pass",
+ "bad_design": null,
+ "chart_alt": "FC_V5a: stages 4 and 6 take 51% to 82% of a run. Simulation, GLB takes 39 s. Simulation, STEP takes 49 s. Simulation, STL takes 41 s. Simulation, OBJ takes 62 s. Visual, GLB takes 64 s. Visual, OBJ takes 78 s",
+ "rerun": {},
+ "kese": [
+  "22fd70c"
+ ],
+ "machine": {
+  "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz, 4 cores, 15 GB",
+  "geos": "3.14.1",
+  "python": "3.13.18",
+  "shapely": "2.2.0"
+ }
+}

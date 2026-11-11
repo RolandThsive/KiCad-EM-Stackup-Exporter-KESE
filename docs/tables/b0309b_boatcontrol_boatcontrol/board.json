@@ -1,0 +1,32 @@
+{
+ "name": "boatcontrol",
+ "project": "antevens/boatcontrol",
+ "path": "antevens__boatcontrol/boatcontrol/boatcontrol.kicad_pcb",
+ "rank": 102,
+ "complexity": {
+  "grade": 358,
+  "size": 263,
+  "features": 95
+ },
+ "features": [
+  "through_vias",
+  "blind_buried_vias",
+  "shaped_pads",
+  "filled_zones",
+  "curved_outline"
+ ],
+ "layers": 4,
+ "status": "memory",
+ "bad_design": null,
+ "chart_alt": "boatcontrol: stages 4 and 6 take 68% to 87% of a run. Simulation, GLB takes 7 min. Simulation, STEP takes 9 min. Simulation, STL takes 8 min. Visual, GLB takes 11 min. Visual, OBJ takes 12 min",
+ "rerun": {},
+ "kese": [
+  "22fd70c"
+ ],
+ "machine": {
+  "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz, 4 cores, 15 GB",
+  "geos": "3.14.1",
+  "python": "3.13.18",
+  "shapely": "2.2.0"
+ }
+}

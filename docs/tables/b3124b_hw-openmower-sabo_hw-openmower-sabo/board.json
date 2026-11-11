@@ -1,0 +1,40 @@
+{
+ "name": "hw-openmower-sabo",
+ "project": "xtech/hw-openmower-sabo",
+ "path": "xtech__hw-openmower-sabo/hw-openmower-sabo.kicad_pcb",
+ "rank": 392,
+ "complexity": {
+  "grade": 419,
+  "size": 249,
+  "features": 170
+ },
+ "features": [
+  "through_vias",
+  "slotted_holes",
+  "custom_pads",
+  "shaped_pads",
+  "drill_offsets",
+  "filled_zones",
+  "copper_graphics",
+  "knockout_text",
+  "truetype_text",
+  "stackup",
+  "dielectric_properties",
+  "copper_finish",
+  "mask_silk_colours"
+ ],
+ "layers": 6,
+ "status": "pass",
+ "bad_design": null,
+ "chart_alt": "hw-openmower-sabo: stages 4 and 6 take 49% to 85% of a run. Simulation, GLB takes 2 min. Simulation, STEP takes 3 min. Simulation, STL takes 2 min. Simulation, OBJ takes 4 min. Visual, GLB takes 3 min. Visual, OBJ takes 4 min",
+ "rerun": {},
+ "kese": [
+  "22fd70c"
+ ],
+ "machine": {
+  "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz, 4 cores, 15 GB",
+  "geos": "3.14.1",
+  "python": "3.13.18",
+  "shapely": "2.2.0"
+ }
+}

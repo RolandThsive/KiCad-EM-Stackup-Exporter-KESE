@@ -1,0 +1,30 @@
+{
+ "name": "reform2-trackball-sensor",
+ "project": "jackhumbert/reform",
+ "path": "jackhumbert__reform/reform2-trackball-sensor-pcb/reform2-trackball-sensor.kicad_pcb",
+ "rank": 2826,
+ "complexity": {
+  "grade": 151,
+  "size": 106,
+  "features": 45
+ },
+ "features": [
+  "through_vias",
+  "shaped_pads",
+  "filled_zones"
+ ],
+ "layers": 2,
+ "status": "pass",
+ "bad_design": null,
+ "chart_alt": "reform2-trackball-sensor: stages 4 and 6 take 39% to 72% of a run. Simulation, GLB takes 1.8 s. Simulation, STEP takes 2.8 s. Simulation, STL takes 1.8 s. Simulation, OBJ takes 2.2 s. Visual, GLB takes 2.6 s. Visual, OBJ takes 3.0 s",
+ "rerun": {},
+ "kese": [
+  "22fd70c"
+ ],
+ "machine": {
+  "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz, 4 cores, 15 GB",
+  "geos": "3.14.1",
+  "python": "3.13.18",
+  "shapely": "2.2.0"
+ }
+}

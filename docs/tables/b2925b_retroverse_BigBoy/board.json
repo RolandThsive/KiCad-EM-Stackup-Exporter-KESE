@@ -1,0 +1,36 @@
+{
+ "name": "BigBoy",
+ "project": "transistorfet/retroverse",
+ "path": "transistorfet__retroverse/components/bigboy/hardware/BigBoy/BigBoy.kicad_pcb",
+ "rank": 426,
+ "complexity": {
+  "grade": 411,
+  "size": 286,
+  "features": 125
+ },
+ "features": [
+  "through_vias",
+  "slotted_holes",
+  "custom_pads",
+  "shaped_pads",
+  "arc_tracks",
+  "filled_zones",
+  "copper_graphics",
+  "stackup",
+  "dielectric_properties"
+ ],
+ "layers": 4,
+ "status": "pass",
+ "bad_design": null,
+ "chart_alt": "BigBoy: stages 4 and 6 take 58% to 84% of a run. Simulation, GLB takes 79 s. Simulation, STEP takes 97 s. Simulation, STL takes 80 s. Simulation, OBJ takes 2 min. Visual, GLB takes 99 s. Visual, OBJ takes 2 min",
+ "rerun": {},
+ "kese": [
+  "22fd70c"
+ ],
+ "machine": {
+  "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz, 4 cores, 15 GB",
+  "geos": "3.14.1",
+  "python": "3.13.18",
+  "shapely": "2.2.0"
+ }
+}

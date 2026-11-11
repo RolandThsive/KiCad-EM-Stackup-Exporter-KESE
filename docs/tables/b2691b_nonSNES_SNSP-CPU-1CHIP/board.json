@@ -1,0 +1,38 @@
+{
+ "name": "SNSP-CPU-1CHIP",
+ "project": "stonedDiscord/nonSNES",
+ "path": "stonedDiscord__nonSNES/SNSP-CPU-1CHIP/SNSP-CPU-1CHIP.kicad_pcb",
+ "rank": 393,
+ "complexity": {
+  "grade": 408,
+  "size": 263,
+  "features": 145
+ },
+ "features": [
+  "through_vias",
+  "slotted_holes",
+  "custom_pads",
+  "shaped_pads",
+  "filled_zones",
+  "copper_graphics",
+  "copper_text",
+  "curved_outline",
+  "knockout_text",
+  "stackup",
+  "dielectric_properties"
+ ],
+ "layers": 2,
+ "status": "pass",
+ "bad_design": null,
+ "chart_alt": "SNSP-CPU-1CHIP: stages 4 and 6 take 52% to 84% of a run. Simulation, GLB takes 41 s. Simulation, STEP takes 50 s. Simulation, STL takes 41 s. Simulation, OBJ takes 59 s. Visual, GLB takes 69 s. Visual, OBJ takes 88 s",
+ "rerun": {},
+ "kese": [
+  "22fd70c"
+ ],
+ "machine": {
+  "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz, 4 cores, 15 GB",
+  "geos": "3.14.1",
+  "python": "3.13.18",
+  "shapely": "2.2.0"
+ }
+}

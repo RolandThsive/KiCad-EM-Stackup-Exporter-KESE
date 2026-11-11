@@ -1,0 +1,35 @@
+{
+ "name": "hdmi-si",
+ "project": "gregdavill/advent-calendar-of-circuits-2020",
+ "path": "gregdavill__advent-calendar-of-circuits-2020/hdmi-si/kicad-src/hdmi-si.kicad_pcb",
+ "rank": 1919,
+ "complexity": {
+  "grade": 278,
+  "size": 178,
+  "features": 100
+ },
+ "features": [
+  "through_vias",
+  "slotted_holes",
+  "shaped_pads",
+  "filled_zones",
+  "curved_outline",
+  "stackup",
+  "dielectric_properties",
+  "mask_silk_colours"
+ ],
+ "layers": 4,
+ "status": "pass",
+ "bad_design": null,
+ "chart_alt": "hdmi-si: stages 4 and 6 take 44% to 79% of a run. Simulation, GLB takes 8.0 s. Simulation, STEP takes 10 s. Simulation, STL takes 8.0 s. Simulation, OBJ takes 13 s. Visual, GLB takes 11 s. Visual, OBJ takes 14 s",
+ "rerun": {},
+ "kese": [
+  "22fd70c"
+ ],
+ "machine": {
+  "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz, 4 cores, 15 GB",
+  "geos": "3.14.1",
+  "python": "3.13.18",
+  "shapely": "2.2.0"
+ }
+}

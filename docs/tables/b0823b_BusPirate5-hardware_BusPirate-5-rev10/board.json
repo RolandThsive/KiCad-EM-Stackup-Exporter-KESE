@@ -1,0 +1,36 @@
+{
+ "name": "BusPirate-5-rev10",
+ "project": "DangerousPrototypes/BusPirate5-hardware",
+ "path": "DangerousPrototypes__BusPirate5-hardware/bus_pirate_pcb/development/5-REV10-PFET-bug/BusPirate-5-rev10.kicad_pcb",
+ "rank": 600,
+ "complexity": {
+  "grade": 387,
+  "size": 267,
+  "features": 120
+ },
+ "features": [
+  "through_vias",
+  "slotted_holes",
+  "custom_pads",
+  "shaped_pads",
+  "filled_zones",
+  "copper_graphics",
+  "curved_outline",
+  "stackup",
+  "dielectric_properties"
+ ],
+ "layers": 4,
+ "status": "pass",
+ "bad_design": null,
+ "chart_alt": "BusPirate-5-rev10: stages 4 and 6 take 56% to 84% of a run. Simulation, GLB takes 39 s. Simulation, STEP takes 46 s. Simulation, STL takes 39 s. Simulation, OBJ takes 57 s. Visual, GLB takes 54 s. Visual, OBJ takes 65 s",
+ "rerun": {},
+ "kese": [
+  "22fd70c"
+ ],
+ "machine": {
+  "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz, 4 cores, 15 GB",
+  "geos": "3.14.1",
+  "python": "3.13.18",
+  "shapely": "2.2.0"
+ }
+}

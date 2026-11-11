@@ -1,0 +1,35 @@
+{
+ "name": "esi-minusZ-end-cap",
+ "project": "oresat/oresat-endcaps",
+ "path": "oresat__oresat-endcaps/esi-minusz-end-cap/esi-minusZ-end-cap.kicad_pcb",
+ "rank": 1739,
+ "complexity": {
+  "grade": 289,
+  "size": 184,
+  "features": 105
+ },
+ "features": [
+  "through_vias",
+  "shaped_pads",
+  "filled_zones",
+  "curved_outline",
+  "stackup",
+  "dielectric_properties",
+  "copper_finish",
+  "mask_silk_colours"
+ ],
+ "layers": 4,
+ "status": "pass",
+ "bad_design": null,
+ "chart_alt": "esi-minusZ-end-cap: stages 4 and 6 take 47% to 81% of a run. Simulation, GLB takes 8.0 s. Simulation, STEP takes 9.9 s. Simulation, STL takes 8.2 s. Simulation, OBJ takes 13 s. Visual, GLB takes 11 s. Visual, OBJ takes 14 s",
+ "rerun": {},
+ "kese": [
+  "22fd70c"
+ ],
+ "machine": {
+  "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz, 4 cores, 15 GB",
+  "geos": "3.14.1",
+  "python": "3.13.18",
+  "shapely": "2.2.0"
+ }
+}

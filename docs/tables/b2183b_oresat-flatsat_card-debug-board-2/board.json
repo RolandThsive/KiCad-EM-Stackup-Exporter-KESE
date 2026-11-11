@@ -1,0 +1,33 @@
+{
+ "name": "card-debug-board-2",
+ "project": "oresat/oresat-flatsat",
+ "path": "oresat__oresat-flatsat/card-debug-board-2/card-debug-board-2.kicad_pcb",
+ "rank": 2320,
+ "complexity": {
+  "grade": 234,
+  "size": 144,
+  "features": 90
+ },
+ "features": [
+  "through_vias",
+  "shaped_pads",
+  "filled_zones",
+  "stackup",
+  "dielectric_properties",
+  "copper_finish"
+ ],
+ "layers": 2,
+ "status": "pass",
+ "bad_design": null,
+ "chart_alt": "card-debug-board-2: stages 4 and 6 take 52% to 80% of a run. Simulation, GLB takes 5.2 s. Simulation, STEP takes 6.6 s. Simulation, STL takes 5.9 s. Simulation, OBJ takes 7.6 s. Visual, GLB takes 7.4 s. Visual, OBJ takes 8.5 s",
+ "rerun": {},
+ "kese": [
+  "22fd70c"
+ ],
+ "machine": {
+  "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz, 4 cores, 15 GB",
+  "geos": "3.14.1",
+  "python": "3.13.18",
+  "shapely": "2.2.0"
+ }
+}

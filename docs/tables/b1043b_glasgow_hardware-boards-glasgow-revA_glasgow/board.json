@@ -1,0 +1,30 @@
+{
+ "name": "glasgow",
+ "project": "GlasgowEmbedded/glasgow",
+ "path": "GlasgowEmbedded__glasgow/hardware/boards/glasgow/revA/glasgow.kicad_pcb",
+ "rank": 1205,
+ "complexity": {
+  "grade": 296,
+  "size": 251,
+  "features": 45
+ },
+ "features": [
+  "through_vias",
+  "filled_zones",
+  "curved_outline"
+ ],
+ "layers": 4,
+ "status": "pass",
+ "bad_design": null,
+ "chart_alt": "glasgow: stages 4 and 6 take 48% to 80% of a run. Simulation, GLB takes 11 s. Simulation, STEP takes 14 s. Simulation, STL takes 11 s. Simulation, OBJ takes 17 s. Visual, GLB takes 17 s. Visual, OBJ takes 20 s",
+ "rerun": {},
+ "kese": [
+  "22fd70c"
+ ],
+ "machine": {
+  "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz, 4 cores, 15 GB",
+  "geos": "3.14.1",
+  "python": "3.13.18",
+  "shapely": "2.2.0"
+ }
+}

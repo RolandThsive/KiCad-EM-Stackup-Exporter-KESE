@@ -1,0 +1,29 @@
+{
+ "name": "Analog Converter",
+ "project": "mwwhited/embeddedbakery",
+ "path": "mwwhited__embeddedbakery/circuits/HelperBoards/Controller/Analog Converter/Analog Converter/Analog Converter.kicad_pcb",
+ "rank": 2573,
+ "complexity": {
+  "grade": 161,
+  "size": 131,
+  "features": 30
+ },
+ "features": [
+  "shaped_pads",
+  "filled_zones"
+ ],
+ "layers": 2,
+ "status": "pass",
+ "bad_design": null,
+ "chart_alt": "Analog Converter: stages 4 and 6 take 49% to 83% of a run. Simulation, GLB takes 4.0 s. Simulation, STEP takes 5.2 s. Simulation, STL takes 3.9 s. Simulation, OBJ takes 6.0 s. Visual, GLB takes 5.4 s. Visual, OBJ takes 6.6 s",
+ "rerun": {},
+ "kese": [
+  "22fd70c"
+ ],
+ "machine": {
+  "cpu": "Intel(R) Xeon(R) Processor @ 2.30GHz, 4 cores, 15 GB",
+  "geos": "3.14.1",
+  "python": "3.13.18",
+  "shapely": "2.2.0"
+ }
+}

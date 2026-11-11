@@ -1,0 +1,40 @@
+{
+ "name": "esi-backplane-3u",
+ "project": "oresat/oresat-backplane",
+ "path": "oresat__oresat-backplane/3U/esi-backplane-3u/esi-backplane-3u.kicad_pcb",
+ "rank": 476,
+ "complexity": {
+  "grade": 392,
+  "size": 222,
+  "features": 170
+ },
+ "features": [
+  "through_vias",
+  "custom_pads",
+  "shaped_pads",
+  "drill_offsets",
+  "arc_tracks",
+  "filled_zones",
+  "copper_graphics",
+  "curved_outline",
+  "bare_copper_tracks",
+  "stackup",
+  "dielectric_properties",
+  "copper_finish",
+  "mask_silk_colours"
+ ],
+ "layers": 4,
+ "status": "pass",
+ "bad_design": null,
+ "chart_alt": "esi-backplane-3u: stages 4 and 6 take 55% to 87% of a run. Simulation, GLB takes 2 min. Simulation, STEP takes 2 min. Simulation, STL takes 2 min. Simulation, OBJ takes 3 min. Visual, GLB takes 3 min. Visual, OBJ takes 3 min",
+ "rerun": {},
+ "kese": [
+  "22fd70c"
+ ],
+ "machine": {
+  "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz, 4 cores, 15 GB",
+  "geos": "3.14.1",
+  "python": "3.13.18",
+  "shapely": "2.2.0"
+ }
+}

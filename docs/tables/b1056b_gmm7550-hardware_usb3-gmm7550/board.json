@@ -1,0 +1,36 @@
+{
+ "name": "usb3-gmm7550",
+ "project": "GMM-7550/gmm7550-hardware",
+ "path": "GMM-7550__gmm7550-hardware/usb3-gmm7550.kicad/usb3-gmm7550.kicad_pcb",
+ "rank": 707,
+ "complexity": {
+  "grade": 385,
+  "size": 270,
+  "features": 115
+ },
+ "features": [
+  "through_vias",
+  "slotted_holes",
+  "shaped_pads",
+  "filled_zones",
+  "curved_outline",
+  "stackup",
+  "dielectric_properties",
+  "copper_finish",
+  "mask_silk_colours"
+ ],
+ "layers": 4,
+ "status": "pass",
+ "bad_design": null,
+ "chart_alt": "usb3-gmm7550: stages 4 and 6 take 49% to 80% of a run. Simulation, GLB takes 20 s. Simulation, STEP takes 25 s. Simulation, STL takes 21 s. Simulation, OBJ takes 30 s. Visual, GLB takes 30 s. Visual, OBJ takes 39 s",
+ "rerun": {},
+ "kese": [
+  "22fd70c"
+ ],
+ "machine": {
+  "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz, 4 cores, 15 GB",
+  "geos": "3.14.1",
+  "python": "3.13.18",
+  "shapely": "2.2.0"
+ }
+}

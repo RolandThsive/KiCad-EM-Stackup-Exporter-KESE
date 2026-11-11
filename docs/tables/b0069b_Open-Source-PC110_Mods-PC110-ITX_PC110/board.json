@@ -1,0 +1,34 @@
+{
+ "name": "PC110",
+ "project": "ahmadexp/Open-Source-PC110",
+ "path": "ahmadexp__Open-Source-PC110/Mods/PC110-ITX/PC110.kicad_pcb",
+ "rank": 1095,
+ "complexity": {
+  "grade": 272,
+  "size": 187,
+  "features": 85
+ },
+ "features": [
+  "slotted_holes",
+  "custom_pads",
+  "shaped_pads",
+  "copper_graphics",
+  "curved_outline",
+  "stackup",
+  "dielectric_properties"
+ ],
+ "layers": 10,
+ "status": "pass",
+ "bad_design": null,
+ "chart_alt": "PC110: stages 4 and 6 take 49% to 82% of a run. Simulation, GLB takes 73 s. Simulation, STEP takes 89 s. Simulation, STL takes 76 s. Simulation, OBJ takes 2 min. Visual, GLB takes 2 min. Visual, OBJ takes 2 min",
+ "rerun": {},
+ "kese": [
+  "22fd70c"
+ ],
+ "machine": {
+  "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz, 4 cores, 15 GB",
+  "geos": "3.14.1",
+  "python": "3.13.18",
+  "shapely": "2.2.0"
+ }
+}

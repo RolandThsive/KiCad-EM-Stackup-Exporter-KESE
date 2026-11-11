@@ -1,0 +1,36 @@
+{
+ "name": "video-latency-testing-probe",
+ "project": "antmicro/video-latency-testing-probe",
+ "path": "antmicro__video-latency-testing-probe/video-latency-testing-probe.kicad_pcb",
+ "rank": 1348,
+ "complexity": {
+  "grade": 365,
+  "size": 250,
+  "features": 115
+ },
+ "features": [
+  "through_vias",
+  "slotted_holes",
+  "shaped_pads",
+  "arc_tracks",
+  "filled_zones",
+  "curved_outline",
+  "stackup",
+  "dielectric_properties",
+  "mask_silk_colours"
+ ],
+ "layers": 6,
+ "status": "pass",
+ "bad_design": null,
+ "chart_alt": "video-latency-testing-probe: stages 4 and 6 take 38% to 76% of a run. Simulation, GLB takes 10 s. Simulation, STEP takes 12 s. Simulation, STL takes 10 s. Simulation, OBJ takes 16 s. Visual, GLB takes 17 s. Visual, OBJ takes 20 s",
+ "rerun": {},
+ "kese": [
+  "22fd70c"
+ ],
+ "machine": {
+  "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz, 4 cores, 15 GB",
+  "geos": "3.14.1",
+  "python": "3.13.18",
+  "shapely": "2.2.0"
+ }
+}

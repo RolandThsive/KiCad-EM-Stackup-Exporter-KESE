@@ -1,0 +1,31 @@
+{
+ "name": "sun_sensor_test",
+ "project": "rgw3d/1kcubesat_hardware",
+ "path": "rgw3d__1kcubesat_hardware/sun_sensor_test/sun_sensor_test.kicad_pcb",
+ "rank": 967,
+ "complexity": {
+  "grade": 293,
+  "size": 238,
+  "features": 55
+ },
+ "features": [
+  "through_vias",
+  "slotted_holes",
+  "shaped_pads",
+  "filled_zones"
+ ],
+ "layers": 2,
+ "status": "pass",
+ "bad_design": null,
+ "chart_alt": "sun_sensor_test: stages 4 and 6 take 54% to 85% of a run. Simulation, GLB takes 27 s. Simulation, STEP takes 33 s. Simulation, STL takes 25 s. Simulation, OBJ takes 35 s. Visual, GLB takes 38 s. Visual, OBJ takes 45 s",
+ "rerun": {},
+ "kese": [
+  "22fd70c"
+ ],
+ "machine": {
+  "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz, 4 cores, 15 GB",
+  "geos": "3.14.1",
+  "python": "3.13.18",
+  "shapely": "2.2.0"
+ }
+}

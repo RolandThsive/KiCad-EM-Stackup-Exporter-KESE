@@ -1,0 +1,33 @@
+{
+ "name": "Audio Board",
+ "project": "andrewpaterson/658-Computer",
+ "path": "andrewpaterson__658-Computer/Kicad/Computer/Audio/Audio Board/Audio Board.kicad_pcb",
+ "rank": 831,
+ "complexity": {
+  "grade": 263,
+  "size": 183,
+  "features": 80
+ },
+ "features": [
+  "through_vias",
+  "shaped_pads",
+  "curved_outline",
+  "knockout_text",
+  "stackup",
+  "dielectric_properties"
+ ],
+ "layers": 2,
+ "status": "pass",
+ "bad_design": null,
+ "chart_alt": "Audio Board: stages 4 and 6 take 53% to 86% of a run. Simulation, GLB takes 35 s. Simulation, STEP takes 43 s. Simulation, STL takes 35 s. Simulation, OBJ takes 53 s. Visual, GLB takes 54 s. Visual, OBJ takes 65 s",
+ "rerun": {},
+ "kese": [
+  "22fd70c"
+ ],
+ "machine": {
+  "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz, 4 cores, 15 GB",
+  "geos": "3.14.1",
+  "python": "3.13.18",
+  "shapely": "2.2.0"
+ }
+}

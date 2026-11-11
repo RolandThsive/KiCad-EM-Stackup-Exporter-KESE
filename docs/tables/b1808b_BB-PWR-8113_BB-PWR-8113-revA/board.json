@@ -1,0 +1,28 @@
+{
+ "name": "BB-PWR-8113_revA",
+ "project": "OLIMEX/BB-PWR-8113",
+ "path": "OLIMEX__BB-PWR-8113/BB-PWR-8113_revA.kicad_pcb",
+ "rank": 2690,
+ "complexity": {
+  "grade": 139,
+  "size": 119,
+  "features": 20
+ },
+ "features": [
+  "filled_zones"
+ ],
+ "layers": 2,
+ "status": "pass",
+ "bad_design": null,
+ "chart_alt": "BB-PWR-8113_revA: stages 4 and 6 take 48% to 74% of a run. Simulation, GLB takes 2.0 s. Simulation, STEP takes 2.6 s. Simulation, STL takes 1.9 s. Simulation, OBJ takes 2.6 s. Visual, GLB takes 2.9 s. Visual, OBJ takes 3.3 s",
+ "rerun": {},
+ "kese": [
+  "22fd70c"
+ ],
+ "machine": {
+  "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz, 4 cores, 15 GB",
+  "geos": "3.14.1",
+  "python": "3.13.18",
+  "shapely": "2.2.0"
+ }
+}

@@ -1,0 +1,30 @@
+{
+ "name": "Driverino-Shield",
+ "project": "weirdgyn/Driverino-Shield",
+ "path": "weirdgyn__Driverino-Shield/PCB/Driverino-Shield.kicad_pcb",
+ "rank": 2181,
+ "complexity": {
+  "grade": 241,
+  "size": 196,
+  "features": 45
+ },
+ "features": [
+  "through_vias",
+  "shaped_pads",
+  "filled_zones"
+ ],
+ "layers": 2,
+ "status": "pass",
+ "bad_design": null,
+ "chart_alt": "Driverino-Shield: stages 4 and 6 take 53% to 82% of a run. Simulation, GLB takes 7.8 s. Simulation, STEP takes 9.4 s. Simulation, STL takes 7.1 s. Simulation, OBJ takes 11 s. Visual, GLB takes 10 s. Visual, OBJ takes 13 s",
+ "rerun": {},
+ "kese": [
+  "22fd70c"
+ ],
+ "machine": {
+  "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz, 4 cores, 15 GB",
+  "geos": "3.14.1",
+  "python": "3.13.18",
+  "shapely": "2.2.0"
+ }
+}

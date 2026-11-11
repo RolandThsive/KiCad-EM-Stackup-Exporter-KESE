@@ -1,0 +1,32 @@
+{
+ "name": "V1",
+ "project": "ssmiao/intel-i210-network-card",
+ "path": "ssmiao__intel-i210-network-card/PCBV3.0/reference/OCP2PCIe-master/OCP2PCIe-H-F-4/OCP2PCIe-H-F-4-V1.1Beta/V1.kicad_pcb",
+ "rank": 2041,
+ "complexity": {
+  "grade": 215,
+  "size": 150,
+  "features": 65
+ },
+ "features": [
+  "through_vias",
+  "shaped_pads",
+  "drill_offsets",
+  "filled_zones",
+  "curved_outline"
+ ],
+ "layers": 2,
+ "status": "pass",
+ "bad_design": null,
+ "chart_alt": "V1: stages 4 and 6 take 49% to 79% of a run. Simulation, GLB takes 4.8 s. Simulation, STEP takes 6.2 s. Simulation, STL takes 4.9 s. Simulation, OBJ takes 7.3 s. Visual, GLB takes 7.0 s. Visual, OBJ takes 9.0 s",
+ "rerun": {},
+ "kese": [
+  "22fd70c"
+ ],
+ "machine": {
+  "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz, 4 cores, 15 GB",
+  "geos": "3.14.1",
+  "python": "3.13.18",
+  "shapely": "2.2.0"
+ }
+}

@@ -1,0 +1,35 @@
+{
+ "name": "hermeslite",
+ "project": "softerhardware/Hermes-Lite2",
+ "path": "softerhardware__Hermes-Lite2/hardware/hl/hermeslite.kicad_pcb",
+ "rank": 388,
+ "complexity": {
+  "grade": 288,
+  "size": 243,
+  "features": 45
+ },
+ "features": [
+  "through_vias",
+  "shaped_pads",
+  "filled_zones"
+ ],
+ "layers": 4,
+ "status": "pass",
+ "bad_design": null,
+ "chart_alt": "hermeslite: stages 4 and 6 take 55% to 85% of a run. Simulation, GLB takes 99 s. Simulation, STEP takes 2 min. Simulation, STL takes 2 min. Simulation, OBJ takes 2 min. Visual, GLB takes 2 min. Visual, OBJ takes 3 min",
+ "rerun": {
+  "fixed": [
+   "Visual, GLB",
+   "Visual, OBJ"
+  ]
+ },
+ "kese": [
+  "22fd70c"
+ ],
+ "machine": {
+  "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz, 4 cores, 15 GB",
+  "geos": "3.14.1",
+  "python": "3.13.18",
+  "shapely": "2.2.0"
+ }
+}

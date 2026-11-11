@@ -1,0 +1,30 @@
+{
+ "name": "TestSRAM",
+ "project": "aslak3/maxi030",
+ "path": "aslak3__maxi030/ExpansionCards/TestSRAM/TestSRAM.kicad_pcb",
+ "rank": 1859,
+ "complexity": {
+  "grade": 202,
+  "size": 157,
+  "features": 45
+ },
+ "features": [
+  "through_vias",
+  "shaped_pads",
+  "filled_zones"
+ ],
+ "layers": 2,
+ "status": "pass",
+ "bad_design": null,
+ "chart_alt": "TestSRAM: stages 4 and 6 take 55% to 86% of a run. Simulation, GLB takes 14 s. Simulation, STEP takes 17 s. Simulation, STL takes 14 s. Simulation, OBJ takes 21 s. Visual, GLB takes 20 s. Visual, OBJ takes 24 s",
+ "rerun": {},
+ "kese": [
+  "22fd70c"
+ ],
+ "machine": {
+  "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz, 4 cores, 15 GB",
+  "geos": "3.14.1",
+  "python": "3.13.18",
+  "shapely": "2.2.0"
+ }
+}

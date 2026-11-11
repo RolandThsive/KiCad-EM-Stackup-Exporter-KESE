@@ -1,0 +1,11 @@
+| Board | Repo: [ahmadexp/Open-Source-PC110](https://github.com/ahmadexp/Open-Source-PC110)<br>Board: `bgacpu-dualcon.kicad_pcb` |
+|---|---|
+| Folder | Mods / CPU Upgrade / bgacpu-dualcon |
+| Complexity | 254&nbsp;/&nbsp;1000 (size&nbsp;209, features&nbsp;45) |
+| KESE&nbsp;features | through vias, stack-up,<br>dielectric εr and tanδ |
+| Tested | 9th November 2026 |
+| Copper&nbsp;layers | 2 |
+| File&nbsp;format | KiCad 9 (20241229) |
+| Parts,&nbsp;tracks,&nbsp;vias | 3, 773, 111 |
+| Triangles,&nbsp;simulation | 540,030 in 147 parts |
+| Verifier | PASS in all six runs |

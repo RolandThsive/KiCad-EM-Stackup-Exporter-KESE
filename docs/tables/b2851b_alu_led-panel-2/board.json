@@ -1,0 +1,28 @@
+{
+ "name": "led_panel_2",
+ "project": "tmarhguy/alu",
+ "path": "tmarhguy__alu/schematics/kicad/boards/led_panel/led_panel_2/led_panel_2.kicad_pcb",
+ "rank": 2490,
+ "complexity": {
+  "grade": 80,
+  "size": 70,
+  "features": 10
+ },
+ "features": [
+  "shaped_pads"
+ ],
+ "layers": 2,
+ "status": "pass",
+ "bad_design": null,
+ "chart_alt": "led_panel_2: stages 4 and 6 take 51% to 80% of a run. Simulation, GLB takes 6.4 s. Simulation, STEP takes 8.4 s. Simulation, STL takes 6.4 s. Simulation, OBJ takes 9.2 s. Visual, GLB takes 11 s. Visual, OBJ takes 13 s",
+ "rerun": {},
+ "kese": [
+  "22fd70c"
+ ],
+ "machine": {
+  "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz, 4 cores, 15 GB",
+  "geos": "3.14.1",
+  "python": "3.13.18",
+  "shapely": "2.2.0"
+ }
+}

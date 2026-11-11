@@ -1,0 +1,158 @@
+[
+ [
+  "through_vias",
+  "through vias",
+  "`(via (at ...` with no type",
+  15
+ ],
+ [
+  "blind_buried_vias",
+  "blind and buried vias",
+  "`(via blind ...`, `(via buried ...`",
+  40
+ ],
+ [
+  "microvias",
+  "microvias",
+  "`(via micro ...`",
+  40
+ ],
+ [
+  "backdrills",
+  "backdrills",
+  "`(backdrill ...`, `(tertiary_drill ...`",
+  40
+ ],
+ [
+  "counterbores_countersinks",
+  "counterbores and countersinks",
+  "`(front_post_machining counterbore ...`, and `countersink`, front or back",
+  25
+ ],
+ [
+  "via_protection",
+  "covered, plugged, capped or filled vias",
+  "`(covering ...)` or `(plugging ...)` with a `yes`, `(capping yes)`, `(filling yes)`",
+  30
+ ],
+ [
+  "padstacks",
+  "padstacks",
+  "`(padstack ...`",
+  30
+ ],
+ [
+  "slotted_holes",
+  "slotted holes",
+  "`(drill oval ...`",
+  10
+ ],
+ [
+  "custom_pads",
+  "custom pads",
+  "a pad of shape `custom`",
+  15
+ ],
+ [
+  "shaped_pads",
+  "rounded, trapezoid or chamfered pads",
+  "a pad of shape `roundrect` or `trapezoid`, or `(chamfer ...`",
+  10
+ ],
+ [
+  "drill_offsets",
+  "drill offsets",
+  "`(drill ... (offset ...))`",
+  10
+ ],
+ [
+  "arc_tracks",
+  "arc tracks",
+  "`(arc (start ...` (KiCad 6 and later)",
+  15
+ ],
+ [
+  "filled_zones",
+  "filled zones",
+  "`(filled_polygon ...` or `(fill_segments ...`",
+  20
+ ],
+ [
+  "copper_graphics",
+  "copper drawings",
+  "a `gr_line`, `gr_arc`, `gr_circle`, `gr_rect`, `gr_poly` or `gr_curve` on a copper layer",
+  10
+ ],
+ [
+  "copper_text",
+  "copper text",
+  "a `gr_text` on a copper layer",
+  10
+ ],
+ [
+  "curved_outline",
+  "curved board outline",
+  "an arc, circle or curve on `Edge.Cuts`",
+  10
+ ],
+ [
+  "knockout_text",
+  "knockout text",
+  "`knockout`",
+  15
+ ],
+ [
+  "truetype_text",
+  "TrueType text",
+  "`(face \"...\")` other than `\"KiCad Font\"`",
+  15
+ ],
+ [
+  "hatched_fills",
+  "hatched fills",
+  "`(fill hatch)`",
+  25
+ ],
+ [
+  "bare_copper_tracks",
+  "tracks bare of mask",
+  "a `segment` with `(layers \"F.Cu\" \"F.Mask\")` or the back's",
+  15
+ ],
+ [
+  "stackup",
+  "stack-up",
+  "`(stackup ...`",
+  20
+ ],
+ [
+  "dielectric_properties",
+  "dielectric εr and tanδ",
+  "`(epsilon_r ...`",
+  10
+ ],
+ [
+  "copper_finish",
+  "copper finish",
+  "`(copper_finish ...)` other than `None`",
+  15
+ ],
+ [
+  "mask_silk_colours",
+  "mask and silkscreen colours",
+  "a `(color ...)` on a mask or silkscreen layer of the stack-up",
+  5
+ ],
+ [
+  "castellated_pads",
+  "castellated pads",
+  "`pad_prop_castellated` or `(castellated_pads yes)`",
+  25
+ ],
+ [
+  "edge_plating",
+  "plated board edge",
+  "`(edge_plating yes)`",
+  25
+ ]
+]

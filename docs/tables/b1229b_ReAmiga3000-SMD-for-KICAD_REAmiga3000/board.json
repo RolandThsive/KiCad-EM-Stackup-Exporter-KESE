@@ -1,0 +1,38 @@
+{
+ "name": "REAmiga3000",
+ "project": "iansbremner/ReAmiga3000-SMD-for-KICAD",
+ "path": "iansbremner__ReAmiga3000-SMD-for-KICAD/REAmiga3000.kicad_pcb",
+ "rank": 22,
+ "complexity": {
+  "grade": 407,
+  "size": 332,
+  "features": 75
+ },
+ "features": [
+  "through_vias",
+  "slotted_holes",
+  "shaped_pads",
+  "filled_zones",
+  "copper_graphics",
+  "curved_outline"
+ ],
+ "layers": 4,
+ "status": "memory",
+ "bad_design": null,
+ "chart_alt": "REAmiga3000: stages 4 and 6 take 67% to 87% of a run. Simulation, GLB takes 10 min. Simulation, STEP takes 14 min. Simulation, STL takes 11 min. Visual, GLB takes 20 min",
+ "rerun": {
+  "cap": [
+   "Simulation, STEP",
+   "Visual, GLB"
+  ]
+ },
+ "kese": [
+  "22fd70c"
+ ],
+ "machine": {
+  "cpu": "Intel(R) Xeon(R) Processor @ 2.30GHz, 4 cores, 15 GB",
+  "geos": "3.14.1",
+  "python": "3.13.18",
+  "shapely": "2.2.0"
+ }
+}

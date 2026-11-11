@@ -1,0 +1,30 @@
+{
+ "name": "pressure_XGZP6897A",
+ "project": "respiraworks/ventilator",
+ "path": "respiraworks__ventilator/pcb/sensor-daughterboards/pressure_XGZP6897A/pressure_XGZP6897A.kicad_pcb",
+ "rank": 2746,
+ "complexity": {
+  "grade": 157,
+  "size": 112,
+  "features": 45
+ },
+ "features": [
+  "through_vias",
+  "shaped_pads",
+  "filled_zones"
+ ],
+ "layers": 2,
+ "status": "pass",
+ "bad_design": null,
+ "chart_alt": "pressure_XGZP6897A: stages 4 and 6 take 50% to 77% of a run. Simulation, GLB takes 2.0 s. Simulation, STEP takes 2.8 s. Simulation, STL takes 2.0 s. Simulation, OBJ takes 2.8 s. Visual, GLB takes 2.4 s. Visual, OBJ takes 2.8 s",
+ "rerun": {},
+ "kese": [
+  "22fd70c"
+ ],
+ "machine": {
+  "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz, 4 cores, 15 GB",
+  "geos": "3.14.1",
+  "python": "3.13.18",
+  "shapely": "2.2.0"
+ }
+}

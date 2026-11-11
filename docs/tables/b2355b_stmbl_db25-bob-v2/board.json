@@ -1,0 +1,29 @@
+{
+ "name": "db25_bob_v2",
+ "project": "rene-dev/stmbl",
+ "path": "rene-dev__stmbl/hw/kicad/bob/db25_bob_v2/db25_bob_v2.kicad_pcb",
+ "rank": 1446,
+ "complexity": {
+  "grade": 266,
+  "size": 231,
+  "features": 35
+ },
+ "features": [
+  "through_vias",
+  "filled_zones"
+ ],
+ "layers": 2,
+ "status": "pass",
+ "bad_design": null,
+ "chart_alt": "db25_bob_v2: stages 4 and 6 take 59% to 87% of a run. Simulation, GLB takes 20 s. Simulation, STEP takes 24 s. Simulation, STL takes 19 s. Simulation, OBJ takes 28 s. Visual, GLB takes 26 s. Visual, OBJ takes 29 s",
+ "rerun": {},
+ "kese": [
+  "22fd70c"
+ ],
+ "machine": {
+  "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz, 4 cores, 15 GB",
+  "geos": "3.14.1",
+  "python": "3.13.18",
+  "shapely": "2.2.0"
+ }
+}

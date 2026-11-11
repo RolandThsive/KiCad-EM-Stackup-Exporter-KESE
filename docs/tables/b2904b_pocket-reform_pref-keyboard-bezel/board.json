@@ -1,0 +1,26 @@
+{
+ "name": "pref-keyboard-bezel",
+ "project": "torlye/pocket-reform",
+ "path": "torlye__pocket-reform/case-plate-pcbs/pref-keyboard-bezel.kicad_pcb",
+ "rank": 3136,
+ "complexity": {
+  "grade": 17,
+  "size": 17,
+  "features": 0
+ },
+ "features": [],
+ "layers": 2,
+ "status": "pass",
+ "bad_design": null,
+ "chart_alt": "Reading, start-up and exit take 42% to 59% of a run. Simulation, GLB takes 0.4 s. Simulation, STEP takes 0.4 s. Simulation, STL takes 0.3 s. Simulation, OBJ takes 0.4 s. Visual, GLB takes 0.4 s. Visual, OBJ takes 0.5 s",
+ "rerun": {},
+ "kese": [
+  "22fd70c"
+ ],
+ "machine": {
+  "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz, 4 cores, 15 GB",
+  "geos": "3.14.1",
+  "python": "3.13.18",
+  "shapely": "2.2.0"
+ }
+}

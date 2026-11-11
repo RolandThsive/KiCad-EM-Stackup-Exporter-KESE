@@ -1,0 +1,31 @@
+{
+ "name": "triple_adapter",
+ "project": "rene-dev/stmbl",
+ "path": "rene-dev__stmbl/hw/kicad/11ua/triple_adapter.kicad_pcb",
+ "rank": 1495,
+ "complexity": {
+  "grade": 236,
+  "size": 181,
+  "features": 55
+ },
+ "features": [
+  "through_vias",
+  "shaped_pads",
+  "filled_zones",
+  "curved_outline"
+ ],
+ "layers": 2,
+ "status": "pass",
+ "bad_design": null,
+ "chart_alt": "triple_adapter: stages 4 and 6 take 58% to 86% of a run. Simulation, GLB takes 16 s. Simulation, STEP takes 19 s. Simulation, STL takes 16 s. Simulation, OBJ takes 24 s. Visual, GLB takes 22 s. Visual, OBJ takes 28 s",
+ "rerun": {},
+ "kese": [
+  "22fd70c"
+ ],
+ "machine": {
+  "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz, 4 cores, 15 GB",
+  "geos": "3.14.1",
+  "python": "3.13.18",
+  "shapely": "2.2.0"
+ }
+}

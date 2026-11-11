@@ -1,0 +1,30 @@
+{
+ "name": "LimeSDR_Breakout",
+ "project": "myriadrf/LimeSDR_GPIO_Board",
+ "path": "myriadrf__LimeSDR_GPIO_Board/hardware/0402_Variant/CAD2/LimeSDR_Breakout.kicad_pcb",
+ "rank": 741,
+ "complexity": {
+  "grade": 244,
+  "size": 199,
+  "features": 45
+ },
+ "features": [
+  "through_vias",
+  "filled_zones",
+  "curved_outline"
+ ],
+ "layers": 2,
+ "status": "pass",
+ "bad_design": null,
+ "chart_alt": "LimeSDR_Breakout: reading, start-up and exit take 42% to 46% of a run. Simulation, GLB takes 1.4 s. Simulation, STEP takes 1.4 s. Simulation, STL takes 1.4 s. Simulation, OBJ takes 1.4 s. Visual, GLB takes 1.4 s. Visual, OBJ takes 1.4 s",
+ "rerun": {},
+ "kese": [
+  "22fd70c"
+ ],
+ "machine": {
+  "cpu": "Intel(R) Xeon(R) Processor @ 2.30GHz, 4 cores, 15 GB",
+  "geos": "3.14.1",
+  "python": "3.13.18",
+  "shapely": "2.2.0"
+ }
+}

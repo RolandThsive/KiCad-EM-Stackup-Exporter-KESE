@@ -1,0 +1,33 @@
+{
+ "name": "Magnetometer",
+ "project": "bluejayracing/bjr_kicad",
+ "path": "bluejayracing__bjr_kicad/21xt/06-magnetometer/Magnetometer.kicad_pcb",
+ "rank": 2543,
+ "complexity": {
+  "grade": 237,
+  "size": 152,
+  "features": 85
+ },
+ "features": [
+  "through_vias",
+  "shaped_pads",
+  "filled_zones",
+  "curved_outline",
+  "stackup",
+  "dielectric_properties"
+ ],
+ "layers": 4,
+ "status": "pass",
+ "bad_design": null,
+ "chart_alt": "Magnetometer: stages 4 and 6 take 46% to 78% of a run. Simulation, GLB takes 2.3 s. Simulation, STEP takes 3.3 s. Simulation, STL takes 2.3 s. Simulation, OBJ takes 3.4 s. Visual, GLB takes 3.3 s. Visual, OBJ takes 4.1 s",
+ "rerun": {},
+ "kese": [
+  "22fd70c"
+ ],
+ "machine": {
+  "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz, 4 cores, 15 GB",
+  "geos": "3.14.1",
+  "python": "3.13.18",
+  "shapely": "2.2.0"
+ }
+}

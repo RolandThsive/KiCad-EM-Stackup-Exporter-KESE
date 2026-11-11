@@ -1,0 +1,29 @@
+{
+ "name": "mntcomp-keyboard",
+ "project": "jackhumbert/reform",
+ "path": "jackhumbert__reform/historic-reform1/reform-keyboard-pcb/mntcomp-keyboard.kicad_pcb",
+ "rank": 1317,
+ "complexity": {
+  "grade": 265,
+  "size": 230,
+  "features": 35
+ },
+ "features": [
+  "through_vias",
+  "filled_zones"
+ ],
+ "layers": 2,
+ "status": "pass",
+ "bad_design": null,
+ "chart_alt": "mntcomp-keyboard: stages 4 and 6 take 59% to 84% of a run. Simulation, GLB takes 33 s. Simulation, STEP takes 41 s. Simulation, STL takes 34 s. Simulation, OBJ takes 48 s. Visual, GLB takes 53 s. Visual, OBJ takes 64 s",
+ "rerun": {},
+ "kese": [
+  "22fd70c"
+ ],
+ "machine": {
+  "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz, 4 cores, 15 GB",
+  "geos": "3.14.1",
+  "python": "3.13.18",
+  "shapely": "2.2.0"
+ }
+}

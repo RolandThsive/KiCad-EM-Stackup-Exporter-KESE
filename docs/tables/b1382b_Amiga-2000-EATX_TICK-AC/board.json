@@ -1,0 +1,31 @@
+{
+ "name": "TICK_AC",
+ "project": "jasonsbeer/Amiga-2000-EATX",
+ "path": "jasonsbeer__Amiga-2000-EATX/TICK/TICK_AC_KiCAD/TICK_AC.kicad_pcb",
+ "rank": 2852,
+ "complexity": {
+  "grade": 155,
+  "size": 100,
+  "features": 55
+ },
+ "features": [
+  "through_vias",
+  "slotted_holes",
+  "shaped_pads",
+  "filled_zones"
+ ],
+ "layers": 2,
+ "status": "pass",
+ "bad_design": null,
+ "chart_alt": "TICK_AC: stages 4 and 6 take 44% to 75% of a run. Simulation, GLB takes 1.7 s. Simulation, STEP takes 2.7 s. Simulation, STL takes 1.7 s. Simulation, OBJ takes 2.3 s. Visual, GLB takes 2.3 s. Visual, OBJ takes 3.0 s",
+ "rerun": {},
+ "kese": [
+  "22fd70c"
+ ],
+ "machine": {
+  "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz, 4 cores, 15 GB",
+  "geos": "3.14.1",
+  "python": "3.13.18",
+  "shapely": "2.2.0"
+ }
+}

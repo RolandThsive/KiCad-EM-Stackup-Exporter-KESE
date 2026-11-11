@@ -1,0 +1,32 @@
+{
+ "name": "nref-flex-pcie",
+ "project": "cetola/reform-next-mirror",
+ "path": "cetola__reform-next-mirror/nref-flex/nref-flex-pcie/nref-flex-pcie.kicad_pcb",
+ "rank": 2844,
+ "complexity": {
+  "grade": 195,
+  "size": 115,
+  "features": 80
+ },
+ "features": [
+  "through_vias",
+  "filled_zones",
+  "truetype_text",
+  "stackup",
+  "dielectric_properties"
+ ],
+ "layers": 2,
+ "status": "pass",
+ "bad_design": null,
+ "chart_alt": "nref-flex-pcie: stages 4 and 6 take 45% to 75% of a run. Simulation, GLB takes 1.7 s. Simulation, STEP takes 2.5 s. Simulation, STL takes 1.7 s. Simulation, OBJ takes 2.2 s. Visual, GLB takes 2.5 s. Visual, OBJ takes 3.1 s",
+ "rerun": {},
+ "kese": [
+  "22fd70c"
+ ],
+ "machine": {
+  "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz, 4 cores, 15 GB",
+  "geos": "3.14.1",
+  "python": "3.13.18",
+  "shapely": "2.2.0"
+ }
+}

@@ -1,0 +1,39 @@
+{
+ "name": "zynq_test",
+ "project": "cropinghigh/zynq_a9_mb",
+ "path": "cropinghigh__zynq_a9_mb/hardware/zynq_test.kicad_pcb",
+ "rank": 51,
+ "complexity": {
+  "grade": 490,
+  "size": 335,
+  "features": 155
+ },
+ "features": [
+  "through_vias",
+  "slotted_holes",
+  "custom_pads",
+  "shaped_pads",
+  "arc_tracks",
+  "filled_zones",
+  "copper_graphics",
+  "copper_text",
+  "stackup",
+  "dielectric_properties",
+  "copper_finish",
+  "mask_silk_colours"
+ ],
+ "layers": 6,
+ "status": "pass",
+ "bad_design": null,
+ "chart_alt": "zynq_test: stages 4 and 6 take 48% to 84% of a run. Simulation, GLB takes 2 min. Simulation, STEP takes 2 min. Simulation, STL takes 2 min. Simulation, OBJ takes 3 min. Visual, GLB takes 3 min. Visual, OBJ takes 4 min",
+ "rerun": {},
+ "kese": [
+  "22fd70c"
+ ],
+ "machine": {
+  "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz, 4 cores, 15 GB",
+  "geos": "3.14.1",
+  "python": "3.13.18",
+  "shapely": "2.2.0"
+ }
+}

@@ -1,0 +1,32 @@
+{
+ "name": "Kilsyth",
+ "project": "kbeckmann/Kilsyth",
+ "path": "kbeckmann__Kilsyth/hardware/RevA/Kilsyth.kicad_pcb",
+ "rank": 625,
+ "complexity": {
+  "grade": 344,
+  "size": 279,
+  "features": 65
+ },
+ "features": [
+  "through_vias",
+  "slotted_holes",
+  "shaped_pads",
+  "filled_zones",
+  "curved_outline"
+ ],
+ "layers": 4,
+ "status": "pass",
+ "bad_design": null,
+ "chart_alt": "Kilsyth: stages 4 and 6 take 56% to 85% of a run. Simulation, GLB takes 51 s. Simulation, STEP takes 56 s. Simulation, STL takes 44 s. Simulation, OBJ takes 63 s. Visual, GLB takes 63 s. Visual, OBJ takes 77 s",
+ "rerun": {},
+ "kese": [
+  "22fd70c"
+ ],
+ "machine": {
+  "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz, 4 cores, 15 GB",
+  "geos": "3.14.1",
+  "python": "3.13.18",
+  "shapely": "2.2.0"
+ }
+}

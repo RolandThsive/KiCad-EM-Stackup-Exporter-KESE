@@ -1,0 +1,34 @@
+{
+ "name": "oresat-backplane-1u",
+ "project": "oresat/oresat-backplane",
+ "path": "oresat__oresat-backplane/1U/KiCad/oresat-backplane-1u/oresat-backplane-1u.kicad_pcb",
+ "rank": 1279,
+ "complexity": {
+  "grade": 292,
+  "size": 197,
+  "features": 95
+ },
+ "features": [
+  "through_vias",
+  "shaped_pads",
+  "drill_offsets",
+  "filled_zones",
+  "curved_outline",
+  "stackup",
+  "dielectric_properties"
+ ],
+ "layers": 4,
+ "status": "pass",
+ "bad_design": null,
+ "chart_alt": "oresat-backplane-1u: stages 4 and 6 take 53% to 85% of a run. Simulation, GLB takes 34 s. Simulation, STEP takes 42 s. Simulation, STL takes 35 s. Simulation, OBJ takes 54 s. Visual, GLB takes 51 s. Visual, OBJ takes 59 s",
+ "rerun": {},
+ "kese": [
+  "22fd70c"
+ ],
+ "machine": {
+  "cpu": "Intel(R) Xeon(R) Processor @ 2.30GHz, 4 cores, 15 GB",
+  "geos": "3.14.1",
+  "python": "3.13.18",
+  "shapely": "2.2.0"
+ }
+}

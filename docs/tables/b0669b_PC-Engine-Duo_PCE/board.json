@@ -1,0 +1,35 @@
+{
+ "name": "PCE",
+ "project": "Board-Folk/PC-Engine-Duo",
+ "path": "Board-Folk__PC-Engine-Duo/PCE.kicad_pcb",
+ "rank": 68,
+ "complexity": {
+  "grade": 414,
+  "size": 309,
+  "features": 105
+ },
+ "features": [
+  "through_vias",
+  "slotted_holes",
+  "shaped_pads",
+  "filled_zones",
+  "copper_graphics",
+  "curved_outline",
+  "stackup",
+  "dielectric_properties"
+ ],
+ "layers": 2,
+ "status": "pass",
+ "bad_design": null,
+ "chart_alt": "PCE: stages 4 and 6 take 50% to 83% of a run. Simulation, GLB takes 99 s. Simulation, STEP takes 2 min. Simulation, STL takes 2 min. Simulation, OBJ takes 3 min. Visual, GLB takes 3 min. Visual, OBJ takes 4 min",
+ "rerun": {},
+ "kese": [
+  "22fd70c"
+ ],
+ "machine": {
+  "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz, 4 cores, 15 GB",
+  "geos": "3.14.1",
+  "python": "3.13.18",
+  "shapely": "2.2.0"
+ }
+}

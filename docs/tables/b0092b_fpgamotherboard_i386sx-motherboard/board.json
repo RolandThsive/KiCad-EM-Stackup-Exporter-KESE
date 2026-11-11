@@ -1,0 +1,34 @@
+{
+ "name": "i386sx-motherboard",
+ "project": "alphaonex86/fpgamotherboard",
+ "path": "alphaonex86__fpgamotherboard/i386/fpga-ep4ce22/i386sx-motherboard.kicad_pcb",
+ "rank": 317,
+ "complexity": {
+  "grade": 398,
+  "size": 298,
+  "features": 100
+ },
+ "features": [
+  "through_vias",
+  "slotted_holes",
+  "shaped_pads",
+  "filled_zones",
+  "stackup",
+  "dielectric_properties",
+  "copper_finish"
+ ],
+ "layers": 6,
+ "status": "pass",
+ "bad_design": null,
+ "chart_alt": "i386sx-motherboard: stages 4 and 6 take 47% to 84% of a run. Simulation, GLB takes 50 s. Simulation, STEP takes 63 s. Simulation, STL takes 54 s. Simulation, OBJ takes 87 s. Visual, GLB takes 99 s. Visual, OBJ takes 2 min",
+ "rerun": {},
+ "kese": [
+  "22fd70c"
+ ],
+ "machine": {
+  "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz, 4 cores, 15 GB",
+  "geos": "3.14.1",
+  "python": "3.13.18",
+  "shapely": "2.2.0"
+ }
+}

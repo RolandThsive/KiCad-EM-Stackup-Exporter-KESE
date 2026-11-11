@@ -1,0 +1,28 @@
+{
+ "name": "NewBrain Original",
+ "project": "flypie/NewBrain",
+ "path": "flypie__NewBrain/NewBrain MainBoard Original KiCad/NewBrain Original.kicad_pcb",
+ "rank": 2290,
+ "complexity": {
+  "grade": 85,
+  "size": 75,
+  "features": 10
+ },
+ "features": [
+  "shaped_pads"
+ ],
+ "layers": 2,
+ "status": "bad_design",
+ "bad_design": "C118 pad 2 and C82 pad 1 overlap at (100.32, 170.52) mm, plated holes 0.25 mm apart (the file also has no Edge.Cuts outline)",
+ "chart_alt": "NewBrain Original: stages 4 and 6 take 59% to 85% of a run. Simulation, GLB takes 81 s. Simulation, STEP takes 2 min. Simulation, STL takes 81 s. Simulation, OBJ takes 2 min. Visual, GLB takes 2 min. Visual, OBJ takes 2 min",
+ "rerun": {},
+ "kese": [
+  "22fd70c"
+ ],
+ "machine": {
+  "cpu": "Intel(R) Xeon(R) Processor @ 2.30GHz, 4 cores, 15 GB",
+  "geos": "3.14.1",
+  "python": "3.13.18",
+  "shapely": "2.2.0"
+ }
+}

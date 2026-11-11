@@ -1,0 +1,31 @@
+{
+ "name": "ModulAdapterMagnet",
+ "project": "GaudiLabs/OpenDrop",
+ "path": "GaudiLabs__OpenDrop/OpenDropV4/Electronics/ModulAdapter_Magnet/PCB/ModulAdapterMagnet.kicad_pcb",
+ "rank": 976,
+ "complexity": {
+  "grade": 285,
+  "size": 230,
+  "features": 55
+ },
+ "features": [
+  "through_vias",
+  "shaped_pads",
+  "filled_zones",
+  "curved_outline"
+ ],
+ "layers": 2,
+ "status": "pass",
+ "bad_design": null,
+ "chart_alt": "ModulAdapterMagnet: stages 4 and 6 take 54% to 82% of a run. Simulation, GLB takes 8.8 s. Simulation, STEP takes 11 s. Simulation, STL takes 9.0 s. Simulation, OBJ takes 12 s. Visual, GLB takes 14 s. Visual, OBJ takes 18 s",
+ "rerun": {},
+ "kese": [
+  "22fd70c"
+ ],
+ "machine": {
+  "cpu": "Intel(R) Xeon(R) Processor @ 2.30GHz, 4 cores, 15 GB",
+  "geos": "3.14.1",
+  "python": "3.13.18",
+  "shapely": "2.2.0"
+ }
+}

@@ -1,0 +1,32 @@
+{
+ "name": "W65C64",
+ "project": "andrewpaterson/658-Computer",
+ "path": "andrewpaterson__658-Computer/Kicad/W65C64/W65C64.kicad_pcb",
+ "rank": 895,
+ "complexity": {
+  "grade": 260,
+  "size": 190,
+  "features": 70
+ },
+ "features": [
+  "through_vias",
+  "shaped_pads",
+  "knockout_text",
+  "stackup",
+  "dielectric_properties"
+ ],
+ "layers": 2,
+ "status": "pass",
+ "bad_design": null,
+ "chart_alt": "W65C64: stages 4 and 6 take 53% to 84% of a run. Simulation, GLB takes 13 s. Simulation, STEP takes 17 s. Simulation, STL takes 13 s. Simulation, OBJ takes 19 s. Visual, GLB takes 22 s. Visual, OBJ takes 27 s",
+ "rerun": {},
+ "kese": [
+  "22fd70c"
+ ],
+ "machine": {
+  "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz, 4 cores, 15 GB",
+  "geos": "3.14.1",
+  "python": "3.13.18",
+  "shapely": "2.2.0"
+ }
+}

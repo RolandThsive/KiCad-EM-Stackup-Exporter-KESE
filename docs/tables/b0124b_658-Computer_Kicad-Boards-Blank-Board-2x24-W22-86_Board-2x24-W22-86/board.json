@@ -1,0 +1,31 @@
+{
+ "name": "Board 2x24 W22.86",
+ "project": "andrewpaterson/658-Computer",
+ "path": "andrewpaterson__658-Computer/Kicad/Boards/Blank/Board 2x24 W22.86/Board 2x24 W22.86.kicad_pcb",
+ "rank": 3015,
+ "complexity": {
+  "grade": 89,
+  "size": 34,
+  "features": 55
+ },
+ "features": [
+  "shaped_pads",
+  "knockout_text",
+  "stackup",
+  "dielectric_properties"
+ ],
+ "layers": 2,
+ "status": "pass",
+ "bad_design": null,
+ "chart_alt": "Board 2x24 W22.86: stages 4 and 6 take 50% to 81% of a run. Simulation, GLB takes 2.7 s. Simulation, STEP takes 3.3 s. Simulation, STL takes 2.5 s. Simulation, OBJ takes 3.2 s. Visual, GLB takes 3.2 s. Visual, OBJ takes 3.7 s",
+ "rerun": {},
+ "kese": [
+  "22fd70c"
+ ],
+ "machine": {
+  "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz, 4 cores, 15 GB",
+  "geos": "3.14.1",
+  "python": "3.13.18",
+  "shapely": "2.2.0"
+ }
+}

@@ -1,0 +1,30 @@
+{
+ "name": "AgonLight2_Rev_A",
+ "project": "OLIMEX/AgonLight2",
+ "path": "OLIMEX__AgonLight2/HARDWARE/AgonLight2_Rev_A/AgonLight2_Rev_A.kicad_pcb",
+ "rank": 608,
+ "complexity": {
+  "grade": 313,
+  "size": 268,
+  "features": 45
+ },
+ "features": [
+  "through_vias",
+  "slotted_holes",
+  "filled_zones"
+ ],
+ "layers": 4,
+ "status": "pass",
+ "bad_design": null,
+ "chart_alt": "AgonLight2_Rev_A: stages 4 and 6 take 55% to 84% of a run. Simulation, GLB takes 44 s. Simulation, STEP takes 54 s. Simulation, STL takes 45 s. Simulation, OBJ takes 67 s. Visual, GLB takes 68 s. Visual, OBJ takes 83 s",
+ "rerun": {},
+ "kese": [
+  "22fd70c"
+ ],
+ "machine": {
+  "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz, 4 cores, 15 GB",
+  "geos": "3.14.1",
+  "python": "3.13.18",
+  "shapely": "2.2.0"
+ }
+}

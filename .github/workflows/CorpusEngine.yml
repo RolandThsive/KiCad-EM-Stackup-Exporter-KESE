@@ -1,0 +1,48 @@
+# Lives only on the corpus-testing branch. When a push adds, changes or deletes a board's files (docs/tables/,
+# docs/images/), the engine numbers the boards, renames the folders whose number moved, and builds every Corpus
+# Testing page again; the result is committed here and main's Sync Wiki is started, so the wiki follows.
+name: Corpus Engine
+
+on:
+  push:
+    branches: [corpus-testing]
+    paths:
+      - "docs/tables/**"
+      - "docs/images/**"
+      - "corpus-testing/engine/**"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  actions: write
+
+concurrency:
+  group: corpus-engine
+  cancel-in-progress: false
+
+jobs:
+  assemble:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out the branch
+        uses: actions/checkout@v4
+
+      - name: Build the pages
+        run: python3 corpus-testing/engine/assemble.py .
+
+      - name: Commit and push what changed
+        id: commit
+        run: |
+          git add -A docs/tables docs/images docs/wiki
+          if git diff --cached --quiet; then echo "The pages were already up to date."; exit 0; fi
+          git -c user.name="github-actions[bot]" -c user.email="41898282+github-actions[bot]@users.noreply.github.com" \
+            commit -q -m "Corpus Engine: boards numbered and pages built"
+          git push || { git pull -q --rebase origin corpus-testing && git push; }
+          echo "changed=1" >> "$GITHUB_OUTPUT"
+
+      # a push made with the workflow's own token starts no other workflow, so the wiki sync is started here
+      - name: Start Sync Wiki on main
+        if: steps.commit.outputs.changed == '1'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow run WikiSync.yml --repo "$GITHUB_REPOSITORY" --ref main

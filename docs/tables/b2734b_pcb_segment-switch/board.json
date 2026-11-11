@@ -1,0 +1,31 @@
+{
+ "name": "segment-switch",
+ "project": "sufst/pcb",
+ "path": "sufst__pcb/segment-switch/segment-switch.kicad_pcb",
+ "rank": 3040,
+ "complexity": {
+  "grade": 120,
+  "size": 65,
+  "features": 55
+ },
+ "features": [
+  "shaped_pads",
+  "filled_zones",
+  "curved_outline",
+  "knockout_text"
+ ],
+ "layers": 2,
+ "status": "pass",
+ "bad_design": null,
+ "chart_alt": "segment-switch: reading, start-up and exit take 42% to 56% of a run. Simulation, GLB takes 0.5 s. Simulation, STEP takes 0.6 s. Simulation, STL takes 0.5 s. Simulation, OBJ takes 0.5 s. Visual, GLB takes 0.6 s. Visual, OBJ takes 0.6 s",
+ "rerun": {},
+ "kese": [
+  "22fd70c"
+ ],
+ "machine": {
+  "cpu": "Intel(R) Xeon(R) Processor @ 2.30GHz, 4 cores, 15 GB",
+  "geos": "3.14.1",
+  "python": "3.13.18",
+  "shapely": "2.2.0"
+ }
+}

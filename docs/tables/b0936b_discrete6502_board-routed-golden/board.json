@@ -1,0 +1,33 @@
+{
+ "name": "board_routed_golden",
+ "project": "epatel/discrete6502",
+ "path": "epatel__discrete6502/gen/board_routed_golden.kicad_pcb",
+ "rank": 1,
+ "complexity": {
+  "grade": 409,
+  "size": 329,
+  "features": 80
+ },
+ "features": [
+  "through_vias",
+  "custom_pads",
+  "shaped_pads",
+  "drill_offsets",
+  "filled_zones",
+  "copper_graphics"
+ ],
+ "layers": 6,
+ "status": "memory",
+ "bad_design": null,
+ "chart_alt": "",
+ "rerun": {},
+ "kese": [
+  "22fd70c"
+ ],
+ "machine": {
+  "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz, 4 cores, 15 GB",
+  "geos": "3.14.1",
+  "python": "3.13.18",
+  "shapely": "2.2.0"
+ }
+}

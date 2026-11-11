@@ -1,0 +1,31 @@
+{
+ "name": "ethernet_bob_base",
+ "project": "rene-dev/stmbl",
+ "path": "rene-dev__stmbl/hw/kicad/bob/ethernet_bob_base/ethernet_bob_base.kicad_pcb",
+ "rank": 1632,
+ "complexity": {
+  "grade": 279,
+  "size": 224,
+  "features": 55
+ },
+ "features": [
+  "through_vias",
+  "shaped_pads",
+  "filled_zones",
+  "curved_outline"
+ ],
+ "layers": 2,
+ "status": "pass",
+ "bad_design": null,
+ "chart_alt": "ethernet_bob_base: stages 4 and 6 take 58% to 85% of a run. Simulation, GLB takes 24 s. Simulation, STEP takes 31 s. Simulation, STL takes 26 s. Simulation, OBJ takes 35 s. Visual, GLB takes 31 s. Visual, OBJ takes 38 s",
+ "rerun": {},
+ "kese": [
+  "22fd70c"
+ ],
+ "machine": {
+  "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz, 4 cores, 15 GB",
+  "geos": "3.14.1",
+  "python": "3.13.18",
+  "shapely": "2.2.0"
+ }
+}

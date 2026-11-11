@@ -1,0 +1,30 @@
+{
+ "name": "atsamd11_pro_micro",
+ "project": "google/myelin-acorn-electron-hardware",
+ "path": "google__myelin-acorn-electron-hardware/atsamd11_pro_micro/pcb/atsamd11_pro_micro.kicad_pcb",
+ "rank": 2528,
+ "complexity": {
+  "grade": 176,
+  "size": 131,
+  "features": 45
+ },
+ "features": [
+  "through_vias",
+  "shaped_pads",
+  "filled_zones"
+ ],
+ "layers": 2,
+ "status": "pass",
+ "bad_design": null,
+ "chart_alt": "atsamd11_pro_micro: stages 4 and 6 take 50% to 82% of a run. Simulation, GLB takes 2.8 s. Simulation, STEP takes 4.1 s. Simulation, STL takes 2.8 s. Simulation, OBJ takes 3.7 s. Visual, GLB takes 4.2 s. Visual, OBJ takes 5.3 s",
+ "rerun": {},
+ "kese": [
+  "22fd70c"
+ ],
+ "machine": {
+  "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz, 4 cores, 15 GB",
+  "geos": "3.14.1",
+  "python": "3.13.18",
+  "shapely": "2.2.0"
+ }
+}

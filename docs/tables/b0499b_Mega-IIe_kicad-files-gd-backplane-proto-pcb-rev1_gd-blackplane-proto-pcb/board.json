@@ -1,0 +1,31 @@
+{
+ "name": "gd blackplane proto pcb",
+ "project": "baldengineer/Mega-IIe",
+ "path": "baldengineer__Mega-IIe/kicad files/gd backplane proto pcb/rev1/gd blackplane proto pcb.kicad_pcb",
+ "rank": 1626,
+ "complexity": {
+  "grade": 223,
+  "size": 168,
+  "features": 55
+ },
+ "features": [
+  "through_vias",
+  "shaped_pads",
+  "filled_zones",
+  "curved_outline"
+ ],
+ "layers": 2,
+ "status": "pass",
+ "bad_design": null,
+ "chart_alt": "gd blackplane proto pcb: stages 4 and 6 take 51% to 85% of a run. Simulation, GLB takes 26 s. Simulation, STEP takes 34 s. Simulation, STL takes 26 s. Simulation, OBJ takes 41 s. Visual, GLB takes 41 s. Visual, OBJ takes 52 s",
+ "rerun": {},
+ "kese": [
+  "22fd70c"
+ ],
+ "machine": {
+  "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz, 4 cores, 15 GB",
+  "geos": "3.14.1",
+  "python": "3.13.18",
+  "shapely": "2.2.0"
+ }
+}

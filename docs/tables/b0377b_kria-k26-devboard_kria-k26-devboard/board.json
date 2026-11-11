@@ -1,0 +1,39 @@
+{
+ "name": "kria-k26-devboard",
+ "project": "antmicro/kria-k26-devboard",
+ "path": "antmicro__kria-k26-devboard/kria-k26-devboard.kicad_pcb",
+ "rank": 37,
+ "complexity": {
+  "grade": 491,
+  "size": 336,
+  "features": 155
+ },
+ "features": [
+  "through_vias",
+  "slotted_holes",
+  "custom_pads",
+  "shaped_pads",
+  "arc_tracks",
+  "filled_zones",
+  "copper_graphics",
+  "copper_text",
+  "stackup",
+  "dielectric_properties",
+  "copper_finish",
+  "mask_silk_colours"
+ ],
+ "layers": 8,
+ "status": "pass",
+ "bad_design": null,
+ "chart_alt": "kria-k26-devboard: stages 4 and 6 take 39% to 76% of a run. Simulation, GLB takes 2 min. Simulation, STEP takes 3 min. Simulation, STL takes 2 min. Simulation, OBJ takes 4 min. Visual, GLB takes 4 min. Visual, OBJ takes 4 min",
+ "rerun": {},
+ "kese": [
+  "22fd70c"
+ ],
+ "machine": {
+  "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz, 4 cores, 15 GB",
+  "geos": "3.14.1",
+  "python": "3.13.18",
+  "shapely": "2.2.0"
+ }
+}

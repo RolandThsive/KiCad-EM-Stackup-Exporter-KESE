@@ -1,0 +1,37 @@
+{
+ "name": "MegaCD",
+ "project": "Board-Folk/MegaCD-Main-BD",
+ "path": "Board-Folk__MegaCD-Main-BD/MegaCD-837-8952-Export/MegaCD.kicad_pcb",
+ "rank": 241,
+ "complexity": {
+  "grade": 424,
+  "size": 289,
+  "features": 135
+ },
+ "features": [
+  "through_vias",
+  "shaped_pads",
+  "filled_zones",
+  "copper_graphics",
+  "copper_text",
+  "curved_outline",
+  "knockout_text",
+  "truetype_text",
+  "stackup",
+  "dielectric_properties"
+ ],
+ "layers": 4,
+ "status": "pass",
+ "bad_design": null,
+ "chart_alt": "MegaCD: stages 4 and 6 take 46% to 81% of a run. Simulation, GLB takes 60 s. Simulation, STEP takes 74 s. Simulation, STL takes 61 s. Simulation, OBJ takes 2 min. Visual, GLB takes 2 min. Visual, OBJ takes 2 min",
+ "rerun": {},
+ "kese": [
+  "22fd70c"
+ ],
+ "machine": {
+  "cpu": "Intel(R) Xeon(R) Processor @ 2.30GHz, 4 cores, 15 GB",
+  "geos": "3.14.1",
+  "python": "3.13.18",
+  "shapely": "2.2.0"
+ }
+}

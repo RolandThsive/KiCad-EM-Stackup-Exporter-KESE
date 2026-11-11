@@ -1,0 +1,37 @@
+{
+ "name": "trigger-output-fmc",
+ "project": "osprey-dcs/trigger-output-fmc",
+ "path": "osprey-dcs__trigger-output-fmc/trigger-output-fmc.kicad_pcb",
+ "rank": 485,
+ "complexity": {
+  "grade": 428,
+  "size": 298,
+  "features": 130
+ },
+ "features": [
+  "through_vias",
+  "slotted_holes",
+  "shaped_pads",
+  "filled_zones",
+  "curved_outline",
+  "knockout_text",
+  "stackup",
+  "dielectric_properties",
+  "copper_finish",
+  "mask_silk_colours"
+ ],
+ "layers": 8,
+ "status": "pass",
+ "bad_design": null,
+ "chart_alt": "trigger-output-fmc: stages 4 and 6 take 43% to 82% of a run. Simulation, GLB takes 52 s. Simulation, STEP takes 66 s. Simulation, STL takes 54 s. Simulation, OBJ takes 95 s. Visual, GLB takes 81 s. Visual, OBJ takes 2 min",
+ "rerun": {},
+ "kese": [
+  "22fd70c"
+ ],
+ "machine": {
+  "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz, 4 cores, 15 GB",
+  "geos": "3.14.1",
+  "python": "3.13.18",
+  "shapely": "2.2.0"
+ }
+}

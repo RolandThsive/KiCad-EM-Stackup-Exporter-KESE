@@ -1,0 +1,36 @@
+{
+ "name": "reCamera S101 v1.0",
+ "project": "Seeed-Studio/OSHW-reCamera-Series",
+ "path": "Seeed-Studio__OSHW-reCamera-Series/hardware/recamera-2002/sensors/s101-ov5647/PCB/V1.0/reCamera S101 v1.0.kicad_pcb",
+ "rank": 1371,
+ "complexity": {
+  "grade": 325,
+  "size": 200,
+  "features": 125
+ },
+ "features": [
+  "through_vias",
+  "custom_pads",
+  "shaped_pads",
+  "filled_zones",
+  "copper_graphics",
+  "curved_outline",
+  "stackup",
+  "dielectric_properties",
+  "copper_finish"
+ ],
+ "layers": 4,
+ "status": "pass",
+ "bad_design": null,
+ "chart_alt": "reCamera S101 v1.0: stages 4 and 6 take 51% to 85% of a run. Simulation, GLB takes 13 s. Simulation, STEP takes 16 s. Simulation, STL takes 13 s. Simulation, OBJ takes 21 s. Visual, GLB takes 18 s. Visual, OBJ takes 24 s",
+ "rerun": {},
+ "kese": [
+  "22fd70c"
+ ],
+ "machine": {
+  "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz, 4 cores, 15 GB",
+  "geos": "3.14.1",
+  "python": "3.13.18",
+  "shapely": "2.2.0"
+ }
+}

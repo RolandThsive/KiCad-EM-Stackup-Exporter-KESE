@@ -1,0 +1,28 @@
+{
+ "name": "A64-OlinuXino_Rev_B",
+ "project": "OLIMEX/OLINUXINO",
+ "path": "OLIMEX__OLINUXINO/HARDWARE/A64-OLinuXino/2. Older hardware revisions/A64-OLinuXino hardware revision B/A64-OlinuXino_Rev_B.kicad_pcb",
+ "rank": 104,
+ "complexity": {
+  "grade": 348,
+  "size": 333,
+  "features": 15
+ },
+ "features": [
+  "through_vias"
+ ],
+ "layers": 6,
+ "status": "pass",
+ "bad_design": null,
+ "chart_alt": "A64-OlinuXino_Rev_B: stages 4 and 6 take 53% to 84% of a run. Simulation, GLB takes 77 s. Simulation, STEP takes 93 s. Simulation, STL takes 78 s. Simulation, OBJ takes 2 min. Visual, GLB takes 2 min. Visual, OBJ takes 2 min",
+ "rerun": {},
+ "kese": [
+  "22fd70c"
+ ],
+ "machine": {
+  "cpu": "Intel(R) Xeon(R) Processor @ 2.30GHz, 4 cores, 15 GB",
+  "geos": "3.14.1",
+  "python": "3.13.18",
+  "shapely": "2.2.0"
+ }
+}

@@ -1,0 +1,37 @@
+{
+ "name": "ecp5-mini",
+ "project": "joshajohnson/ecp5-mini",
+ "path": "joshajohnson__ecp5-mini/hardware/0.1/ecp5-mini.kicad_pcb",
+ "rank": 496,
+ "complexity": {
+  "grade": 400,
+  "size": 275,
+  "features": 125
+ },
+ "features": [
+  "through_vias",
+  "slotted_holes",
+  "shaped_pads",
+  "filled_zones",
+  "copper_text",
+  "curved_outline",
+  "stackup",
+  "dielectric_properties",
+  "copper_finish",
+  "mask_silk_colours"
+ ],
+ "layers": 4,
+ "status": "pass",
+ "bad_design": null,
+ "chart_alt": "ecp5-mini: stages 4 and 6 take 53% to 86% of a run. Simulation, GLB takes 25 s. Simulation, STEP takes 32 s. Simulation, STL takes 26 s. Simulation, OBJ takes 39 s. Visual, GLB takes 39 s. Visual, OBJ takes 49 s",
+ "rerun": {},
+ "kese": [
+  "22fd70c"
+ ],
+ "machine": {
+  "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz, 4 cores, 15 GB",
+  "geos": "3.14.1",
+  "python": "3.13.18",
+  "shapely": "2.2.0"
+ }
+}

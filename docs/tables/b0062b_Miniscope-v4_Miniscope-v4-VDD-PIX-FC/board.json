@@ -1,0 +1,31 @@
+{
+ "name": "Miniscope-v4-VDD-PIX-FC",
+ "project": "Aharoni-Lab/Miniscope-v4",
+ "path": "Aharoni-Lab__Miniscope-v4/Miniscope-v4-VDD-PIX-FC/Miniscope-v4-VDD-PIX-FC/Miniscope-v4-VDD-PIX-FC.kicad_pcb",
+ "rank": 2960,
+ "complexity": {
+  "grade": 128,
+  "size": 83,
+  "features": 45
+ },
+ "features": [
+  "custom_pads",
+  "shaped_pads",
+  "copper_graphics",
+  "curved_outline"
+ ],
+ "layers": 2,
+ "status": "pass",
+ "bad_design": null,
+ "chart_alt": "Miniscope-v4-VDD-PIX-FC: stages 4 and 6 take 41% to 58% of a run. Simulation, GLB takes 0.8 s. Simulation, STEP takes 1.0 s. Simulation, STL takes 0.8 s. Simulation, OBJ takes 0.9 s. Visual, GLB takes 1.0 s. Visual, OBJ takes 1.0 s",
+ "rerun": {},
+ "kese": [
+  "22fd70c"
+ ],
+ "machine": {
+  "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz, 4 cores, 15 GB",
+  "geos": "3.14.1",
+  "python": "3.13.18",
+  "shapely": "2.2.0"
+ }
+}

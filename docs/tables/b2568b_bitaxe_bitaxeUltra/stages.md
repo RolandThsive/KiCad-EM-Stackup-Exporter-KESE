@@ -1,0 +1,8 @@
+| Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
+|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
+| Simulation, GLB | 0.4 | 1.4 | 4.3 | 0.3&nbsp;ms | 4.2 | 0.2 | 0.6 | 0.2 | 11.3 |
+| Simulation, STEP | 0.4 | 1.3 | 4.4 | 0.3&nbsp;ms | 4.3 | 3.1 | 0.5 | 0.2 | 14.3 |
+| Simulation, STL | 0.4 | 1.3 | 4.3 | 0.3&nbsp;ms | 4.3 | 0.4 | 0.5 | 0.2 | 11.4 |
+| Simulation, OBJ | 0.4 | 1.4 | 4.4 | 0.3&nbsp;ms | 4.5 | 7.5 | 0.5 | 0.2 | 18.9 |
+| Visual, GLB | 0.4 | 1.4 | 4.5 | 0.4&nbsp;ms | 8.9 | 0.1 | 0.9 | 0.2 | 16.4 |
+| Visual, OBJ | 0.4 | 1.5 | 4.6 | 0.4&nbsp;ms | 8.5 | 4.4 | 1.0 | 0.2 | 20.5 |

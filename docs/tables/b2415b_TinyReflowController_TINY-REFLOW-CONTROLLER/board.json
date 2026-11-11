@@ -1,0 +1,32 @@
+{
+ "name": "TINY-REFLOW-CONTROLLER",
+ "project": "rocketscream/TinyReflowController",
+ "path": "rocketscream__TinyReflowController/TINY-REFLOW-CONTROLLER.kicad_pcb",
+ "rank": 1641,
+ "complexity": {
+  "grade": 278,
+  "size": 213,
+  "features": 65
+ },
+ "features": [
+  "through_vias",
+  "slotted_holes",
+  "shaped_pads",
+  "filled_zones",
+  "curved_outline"
+ ],
+ "layers": 2,
+ "status": "pass",
+ "bad_design": null,
+ "chart_alt": "TINY-REFLOW-CONTROLLER: stages 4 and 6 take 55% to 81% of a run. Simulation, GLB takes 7.1 s. Simulation, STEP takes 8.7 s. Simulation, STL takes 7.3 s. Simulation, OBJ takes 11 s. Visual, GLB takes 9.9 s. Visual, OBJ takes 13 s",
+ "rerun": {},
+ "kese": [
+  "22fd70c"
+ ],
+ "machine": {
+  "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz, 4 cores, 15 GB",
+  "geos": "3.14.1",
+  "python": "3.13.18",
+  "shapely": "2.2.0"
+ }
+}

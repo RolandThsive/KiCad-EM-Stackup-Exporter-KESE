@@ -1,0 +1,31 @@
+{
+ "name": "proto_lna_board",
+ "project": "CoolNamesAllTaken/adsbee",
+ "path": "CoolNamesAllTaken__adsbee/kicad/prototyping/proto_lna_board/proto_lna_board.kicad_pcb",
+ "rank": 2784,
+ "complexity": {
+  "grade": 160,
+  "size": 105,
+  "features": 55
+ },
+ "features": [
+  "through_vias",
+  "shaped_pads",
+  "filled_zones",
+  "copper_text"
+ ],
+ "layers": 2,
+ "status": "pass",
+ "bad_design": null,
+ "chart_alt": "proto_lna_board: stages 4 and 6 take 41% to 62% of a run. Simulation, GLB takes 0.9 s. Simulation, STEP takes 1.2 s. Simulation, STL takes 0.8 s. Simulation, OBJ takes 1.0 s. Visual, GLB takes 1.1 s. Visual, OBJ takes 1.4 s",
+ "rerun": {},
+ "kese": [
+  "22fd70c"
+ ],
+ "machine": {
+  "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz, 4 cores, 15 GB",
+  "geos": "3.14.1",
+  "python": "3.13.18",
+  "shapely": "2.2.0"
+ }
+}

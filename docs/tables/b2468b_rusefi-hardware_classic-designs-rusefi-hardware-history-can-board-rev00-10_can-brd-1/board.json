@@ -1,0 +1,30 @@
+{
+ "name": "can_brd_1",
+ "project": "rusefi/rusefi-hardware",
+ "path": "rusefi__rusefi-hardware/classic-designs/rusefi_hardware_history/can_board_rev00.10/can_brd_1.kicad_pcb",
+ "rank": 2672,
+ "complexity": {
+  "grade": 164,
+  "size": 119,
+  "features": 45
+ },
+ "features": [
+  "through_vias",
+  "filled_zones",
+  "curved_outline"
+ ],
+ "layers": 2,
+ "status": "pass",
+ "bad_design": null,
+ "chart_alt": "can_brd_1: reading, start-up and exit take 74% to 80% of a run. Simulation, GLB takes 0.4 s. Simulation, STEP takes 0.4 s. Simulation, STL takes 0.4 s. Simulation, OBJ takes 0.4 s. Visual, GLB takes 0.4 s. Visual, OBJ takes 0.4 s",
+ "rerun": {},
+ "kese": [
+  "22fd70c"
+ ],
+ "machine": {
+  "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz, 4 cores, 15 GB",
+  "geos": "3.14.1",
+  "python": "3.13.18",
+  "shapely": "2.2.0"
+ }
+}

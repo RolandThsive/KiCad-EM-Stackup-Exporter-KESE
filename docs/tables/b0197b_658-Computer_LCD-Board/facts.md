@@ -1,0 +1,11 @@
+| Board | Repo: [andrewpaterson/658-Computer](https://github.com/andrewpaterson/658-Computer)<br>Board: `LCD Board.kicad_pcb` |
+|---|---|
+| Folder | Kicad / Computer / LCD / LCD Board |
+| Complexity | 248&nbsp;/&nbsp;1000 (size&nbsp;168, features&nbsp;80) |
+| KESE&nbsp;features | through vias, rounded,<br>trapezoid or chamfered pads,<br>curved board outline,<br>knockout text, stack-up,<br>dielectric εr and tanδ |
+| Tested | 9th November 2026 |
+| Copper&nbsp;layers | 2 |
+| File&nbsp;format | KiCad 9 (20241229) |
+| Parts,&nbsp;tracks,&nbsp;vias | 17, 1,151, 117 |
+| Triangles,&nbsp;simulation | 1,760,916 in 194 parts |
+| Verifier | PASS in all six runs |

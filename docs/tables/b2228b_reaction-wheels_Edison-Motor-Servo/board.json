@@ -1,0 +1,30 @@
+{
+ "name": "Edison_Motor_Servo",
+ "project": "oresat/reaction-wheels",
+ "path": "oresat__reaction-wheels/Edison_GPIO_Motor_via_servo/Edison_Motor_Servo.kicad_pcb",
+ "rank": 2916,
+ "complexity": {
+  "grade": 130,
+  "size": 90,
+  "features": 40
+ },
+ "features": [
+  "filled_zones",
+  "copper_text",
+  "curved_outline"
+ ],
+ "layers": 2,
+ "status": "pass",
+ "bad_design": null,
+ "chart_alt": "Edison_Motor_Servo: stages 4 and 6 take 50% to 80% of a run. Simulation, GLB takes 2.1 s. Simulation, STEP takes 3.1 s. Simulation, STL takes 2.1 s. Simulation, OBJ takes 3.0 s. Visual, GLB takes 2.6 s. Visual, OBJ takes 3.2 s",
+ "rerun": {},
+ "kese": [
+  "22fd70c"
+ ],
+ "machine": {
+  "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz, 4 cores, 15 GB",
+  "geos": "3.14.1",
+  "python": "3.13.18",
+  "shapely": "2.2.0"
+ }
+}

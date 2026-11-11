@@ -1,0 +1,30 @@
+{
+ "name": "master_updateable_megarom",
+ "project": "google/myelin-acorn-electron-hardware",
+ "path": "google__myelin-acorn-electron-hardware/master_updateable_megarom/pcb/master_updateable_megarom.kicad_pcb",
+ "rank": 1776,
+ "complexity": {
+  "grade": 243,
+  "size": 198,
+  "features": 45
+ },
+ "features": [
+  "through_vias",
+  "shaped_pads",
+  "filled_zones"
+ ],
+ "layers": 2,
+ "status": "pass",
+ "bad_design": null,
+ "chart_alt": "master_updateable_megarom: stages 4 and 6 take 49% to 83% of a run. Simulation, GLB takes 6.4 s. Simulation, STEP takes 8.1 s. Simulation, STL takes 6.2 s. Simulation, OBJ takes 9.6 s. Visual, GLB takes 9.5 s. Visual, OBJ takes 12 s",
+ "rerun": {},
+ "kese": [
+  "22fd70c"
+ ],
+ "machine": {
+  "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz, 4 cores, 15 GB",
+  "geos": "3.14.1",
+  "python": "3.13.18",
+  "shapely": "2.2.0"
+ }
+}

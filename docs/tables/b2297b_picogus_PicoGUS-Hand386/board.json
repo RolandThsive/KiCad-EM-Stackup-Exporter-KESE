@@ -1,0 +1,37 @@
+{
+ "name": "PicoGUS Hand386",
+ "project": "polpo/picogus",
+ "path": "polpo__picogus/hw-hand386/PicoGUS Hand386.kicad_pcb",
+ "rank": 1263,
+ "complexity": {
+  "grade": 333,
+  "size": 198,
+  "features": 135
+ },
+ "features": [
+  "through_vias",
+  "custom_pads",
+  "shaped_pads",
+  "arc_tracks",
+  "filled_zones",
+  "copper_graphics",
+  "truetype_text",
+  "stackup",
+  "dielectric_properties",
+  "mask_silk_colours"
+ ],
+ "layers": 4,
+ "status": "pass",
+ "bad_design": null,
+ "chart_alt": "PicoGUS Hand386: stages 4 and 6 take 43% to 79% of a run. Simulation, GLB takes 14 s. Simulation, STEP takes 18 s. Simulation, STL takes 14 s. Simulation, OBJ takes 22 s. Visual, GLB takes 21 s. Visual, OBJ takes 27 s",
+ "rerun": {},
+ "kese": [
+  "22fd70c"
+ ],
+ "machine": {
+  "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz, 4 cores, 15 GB",
+  "geos": "3.14.1",
+  "python": "3.13.18",
+  "shapely": "2.2.0"
+ }
+}

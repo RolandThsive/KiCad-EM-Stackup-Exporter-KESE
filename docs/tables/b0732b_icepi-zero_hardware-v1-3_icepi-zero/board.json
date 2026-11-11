@@ -1,0 +1,37 @@
+{
+ "name": "icepi-zero",
+ "project": "cheyao/icepi-zero",
+ "path": "cheyao__icepi-zero/hardware/v1.3/icepi-zero.kicad_pcb",
+ "rank": 763,
+ "complexity": {
+  "grade": 401,
+  "size": 271,
+  "features": 130
+ },
+ "features": [
+  "through_vias",
+  "slotted_holes",
+  "shaped_pads",
+  "arc_tracks",
+  "filled_zones",
+  "curved_outline",
+  "truetype_text",
+  "stackup",
+  "dielectric_properties",
+  "mask_silk_colours"
+ ],
+ "layers": 4,
+ "status": "pass",
+ "bad_design": null,
+ "chart_alt": "icepi-zero: stages 4 and 6 take 52% to 84% of a run. Simulation, GLB takes 24 s. Simulation, STEP takes 30 s. Simulation, STL takes 25 s. Simulation, OBJ takes 38 s. Visual, GLB takes 37 s. Visual, OBJ takes 45 s",
+ "rerun": {},
+ "kese": [
+  "22fd70c"
+ ],
+ "machine": {
+  "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz, 4 cores, 15 GB",
+  "geos": "3.14.1",
+  "python": "3.13.18",
+  "shapely": "2.2.0"
+ }
+}

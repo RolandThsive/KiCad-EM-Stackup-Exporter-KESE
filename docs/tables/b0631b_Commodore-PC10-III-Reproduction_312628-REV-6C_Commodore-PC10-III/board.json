@@ -1,0 +1,37 @@
+{
+ "name": "Commodore PC10 III",
+ "project": "Board-Folk/Commodore-PC10-III-Reproduction",
+ "path": "Board-Folk__Commodore-PC10-III-Reproduction/312628-REV-6C/Commodore PC10 III.kicad_pcb",
+ "rank": 14,
+ "complexity": {
+  "grade": 390,
+  "size": 305,
+  "features": 85
+ },
+ "features": [
+  "through_vias",
+  "shaped_pads",
+  "filled_zones",
+  "curved_outline",
+  "stackup",
+  "dielectric_properties"
+ ],
+ "layers": 2,
+ "status": "pass",
+ "bad_design": null,
+ "chart_alt": "Commodore PC10 III: stages 4 and 6 take 54% to 87% of a run. Simulation, GLB takes 4 min. Simulation, STEP takes 5 min. Simulation, STL takes 4 min. Simulation, OBJ takes 6 min. Visual, GLB takes 6 min. Visual, OBJ takes 8 min",
+ "rerun": {
+  "cap": [
+   "Simulation, OBJ"
+  ]
+ },
+ "kese": [
+  "22fd70c"
+ ],
+ "machine": {
+  "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz, 4 cores, 15 GB",
+  "geos": "3.14.1",
+  "python": "3.13.18",
+  "shapely": "2.2.0"
+ }
+}

@@ -1,0 +1,32 @@
+{
+ "name": "nref-trackpad",
+ "project": "cetola/reform-next-mirror",
+ "path": "cetola__reform-next-mirror/nref-trackpad/nref-trackpad.kicad_pcb",
+ "rank": 2513,
+ "complexity": {
+  "grade": 243,
+  "size": 168,
+  "features": 75
+ },
+ "features": [
+  "through_vias",
+  "shaped_pads",
+  "filled_zones",
+  "stackup",
+  "dielectric_properties"
+ ],
+ "layers": 2,
+ "status": "pass",
+ "bad_design": null,
+ "chart_alt": "nref-trackpad: stages 4 and 6 take 49% to 75% of a run. Simulation, GLB takes 2.9 s. Simulation, STEP takes 4.4 s. Simulation, STL takes 2.9 s. Simulation, OBJ takes 4.3 s. Visual, GLB takes 3.6 s. Visual, OBJ takes 4.9 s",
+ "rerun": {},
+ "kese": [
+  "22fd70c"
+ ],
+ "machine": {
+  "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz, 4 cores, 15 GB",
+  "geos": "3.14.1",
+  "python": "3.13.18",
+  "shapely": "2.2.0"
+ }
+}

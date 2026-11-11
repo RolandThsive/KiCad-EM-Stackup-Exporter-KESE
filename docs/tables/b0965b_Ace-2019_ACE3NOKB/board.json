@@ -1,0 +1,34 @@
+{
+ "name": "ACE3NOKB",
+ "project": "flypie/Ace-2019",
+ "path": "flypie__Ace-2019/KiCad/ACE3NOKB/ACE3NOKB.kicad_pcb",
+ "rank": 423,
+ "complexity": {
+  "grade": 364,
+  "size": 264,
+  "features": 100
+ },
+ "features": [
+  "through_vias",
+  "shaped_pads",
+  "filled_zones",
+  "copper_graphics",
+  "stackup",
+  "dielectric_properties",
+  "copper_finish"
+ ],
+ "layers": 2,
+ "status": "pass",
+ "bad_design": null,
+ "chart_alt": "ACE3NOKB: stages 4 and 6 take 53% to 86% of a run. Simulation, GLB takes 66 s. Simulation, STEP takes 80 s. Simulation, STL takes 68 s. Simulation, OBJ takes 98 s. Visual, GLB takes 2 min. Visual, OBJ takes 2 min",
+ "rerun": {},
+ "kese": [
+  "22fd70c"
+ ],
+ "machine": {
+  "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz, 4 cores, 15 GB",
+  "geos": "3.14.1",
+  "python": "3.13.18",
+  "shapely": "2.2.0"
+ }
+}

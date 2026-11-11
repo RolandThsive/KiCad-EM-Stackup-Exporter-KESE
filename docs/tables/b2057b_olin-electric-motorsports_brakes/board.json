@@ -1,0 +1,33 @@
+{
+ "name": "brakes",
+ "project": "olin-electric-motorsports/olin-electric-motorsports",
+ "path": "olin-electric-motorsports__olin-electric-motorsports/vehicle/mkvi/hardware/nostril/brakes/brakes.kicad_pcb",
+ "rank": 1527,
+ "complexity": {
+  "grade": 299,
+  "size": 219,
+  "features": 80
+ },
+ "features": [
+  "through_vias",
+  "shaped_pads",
+  "filled_zones",
+  "stackup",
+  "dielectric_properties",
+  "mask_silk_colours"
+ ],
+ "layers": 2,
+ "status": "pass",
+ "bad_design": null,
+ "chart_alt": "brakes: stages 4 and 6 take 54% to 82% of a run. Simulation, GLB takes 7.7 s. Simulation, STEP takes 9.8 s. Simulation, STL takes 7.8 s. Simulation, OBJ takes 11 s. Visual, GLB takes 13 s. Visual, OBJ takes 15 s",
+ "rerun": {},
+ "kese": [
+  "22fd70c"
+ ],
+ "machine": {
+  "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz, 4 cores, 15 GB",
+  "geos": "3.14.1",
+  "python": "3.13.18",
+  "shapely": "2.2.0"
+ }
+}

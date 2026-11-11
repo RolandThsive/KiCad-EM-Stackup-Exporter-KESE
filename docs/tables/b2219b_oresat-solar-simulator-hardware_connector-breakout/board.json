@@ -1,0 +1,34 @@
+{
+ "name": "connector-breakout",
+ "project": "oresat/oresat-solar-simulator-hardware",
+ "path": "oresat__oresat-solar-simulator-hardware/boards/connector-breakout/connector-breakout.kicad_pcb",
+ "rank": 2604,
+ "complexity": {
+  "grade": 226,
+  "size": 131,
+  "features": 95
+ },
+ "features": [
+  "through_vias",
+  "shaped_pads",
+  "filled_zones",
+  "stackup",
+  "dielectric_properties",
+  "copper_finish",
+  "mask_silk_colours"
+ ],
+ "layers": 2,
+ "status": "pass",
+ "bad_design": null,
+ "chart_alt": "connector-breakout: stages 4 and 6 take 46% to 77% of a run. Simulation, GLB takes 3.9 s. Simulation, STEP takes 5.3 s. Simulation, STL takes 4.4 s. Simulation, OBJ takes 6.0 s. Visual, GLB takes 5.6 s. Visual, OBJ takes 6.5 s",
+ "rerun": {},
+ "kese": [
+  "22fd70c"
+ ],
+ "machine": {
+  "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz, 4 cores, 15 GB",
+  "geos": "3.14.1",
+  "python": "3.13.18",
+  "shapely": "2.2.0"
+ }
+}

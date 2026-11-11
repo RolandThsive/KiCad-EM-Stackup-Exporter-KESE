@@ -1,0 +1,40 @@
+{
+ "name": "oresat1-plusz-end-card",
+ "project": "oresat/oresat-end-cards",
+ "path": "oresat__oresat-end-cards/oresat1-plusz-end-card/oresat1-plusz-end-card.kicad_pcb",
+ "rank": 1101,
+ "complexity": {
+  "grade": 375,
+  "size": 205,
+  "features": 170
+ },
+ "features": [
+  "through_vias",
+  "custom_pads",
+  "shaped_pads",
+  "drill_offsets",
+  "arc_tracks",
+  "filled_zones",
+  "copper_graphics",
+  "curved_outline",
+  "bare_copper_tracks",
+  "stackup",
+  "dielectric_properties",
+  "copper_finish",
+  "mask_silk_colours"
+ ],
+ "layers": 4,
+ "status": "pass",
+ "bad_design": null,
+ "chart_alt": "oresat1-plusz-end-card: stages 4 and 6 take 50% to 81% of a run. Simulation, GLB takes 22 s. Simulation, STEP takes 28 s. Simulation, STL takes 23 s. Simulation, OBJ takes 36 s. Visual, GLB takes 31 s. Visual, OBJ takes 40 s",
+ "rerun": {},
+ "kese": [
+  "22fd70c"
+ ],
+ "machine": {
+  "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz, 4 cores, 15 GB",
+  "geos": "3.14.1",
+  "python": "3.13.18",
+  "shapely": "2.2.0"
+ }
+}

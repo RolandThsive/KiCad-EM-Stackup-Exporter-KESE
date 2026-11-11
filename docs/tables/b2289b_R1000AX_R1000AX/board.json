@@ -1,0 +1,30 @@
+{
+ "name": "R1000AX",
+ "project": "pluggee/R1000AX",
+ "path": "pluggee__R1000AX/pcb/R1000AX.kicad_pcb",
+ "rank": 577,
+ "complexity": {
+  "grade": 308,
+  "size": 263,
+  "features": 45
+ },
+ "features": [
+  "through_vias",
+  "filled_zones",
+  "curved_outline"
+ ],
+ "layers": 4,
+ "status": "pass",
+ "bad_design": null,
+ "chart_alt": "R1000AX: stages 4 and 6 take 51% to 84% of a run. Simulation, GLB takes 71 s. Simulation, STEP takes 86 s. Simulation, STL takes 73 s. Simulation, OBJ takes 2 min. Visual, GLB takes 95 s. Visual, OBJ takes 2 min",
+ "rerun": {},
+ "kese": [
+  "22fd70c"
+ ],
+ "machine": {
+  "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz, 4 cores, 15 GB",
+  "geos": "3.14.1",
+  "python": "3.13.18",
+  "shapely": "2.2.0"
+ }
+}

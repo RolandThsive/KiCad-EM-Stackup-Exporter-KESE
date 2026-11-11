@@ -1,0 +1,35 @@
+{
+ "name": "debug-board",
+ "project": "sufst/pcb",
+ "path": "sufst__pcb/archive/debug-board/debug-board.kicad_pcb",
+ "rank": 2205,
+ "complexity": {
+  "grade": 311,
+  "size": 196,
+  "features": 115
+ },
+ "features": [
+  "through_vias",
+  "shaped_pads",
+  "arc_tracks",
+  "filled_zones",
+  "curved_outline",
+  "knockout_text",
+  "stackup",
+  "dielectric_properties"
+ ],
+ "layers": 2,
+ "status": "pass",
+ "bad_design": null,
+ "chart_alt": "debug-board: stages 4 and 6 take 47% to 80% of a run. Simulation, GLB takes 4.1 s. Simulation, STEP takes 5.8 s. Simulation, STL takes 4.1 s. Simulation, OBJ takes 6.1 s. Visual, GLB takes 5.8 s. Visual, OBJ takes 8.2 s",
+ "rerun": {},
+ "kese": [
+  "22fd70c"
+ ],
+ "machine": {
+  "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz, 4 cores, 15 GB",
+  "geos": "3.14.1",
+  "python": "3.13.18",
+  "shapely": "2.2.0"
+ }
+}

@@ -1,0 +1,31 @@
+{
+ "name": "adapter",
+ "project": "Modos-Labs/Glider",
+ "path": "Modos-Labs__Glider/pcb/39p-adapter-b/adapter.kicad_pcb",
+ "rank": 2755,
+ "complexity": {
+  "grade": 191,
+  "size": 126,
+  "features": 65
+ },
+ "features": [
+  "through_vias",
+  "filled_zones",
+  "stackup",
+  "dielectric_properties"
+ ],
+ "layers": 2,
+ "status": "pass",
+ "bad_design": null,
+ "chart_alt": "adapter: stages 4 and 6 take 44% to 76% of a run. Simulation, GLB takes 1.9 s. Simulation, STEP takes 3.0 s. Simulation, STL takes 1.9 s. Simulation, OBJ takes 2.7 s. Visual, GLB takes 2.7 s. Visual, OBJ takes 3.3 s",
+ "rerun": {},
+ "kese": [
+  "22fd70c"
+ ],
+ "machine": {
+  "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz, 4 cores, 15 GB",
+  "geos": "3.14.1",
+  "python": "3.13.18",
+  "shapely": "2.2.0"
+ }
+}

@@ -1,0 +1,30 @@
+{
+ "name": "acez180",
+ "project": "flypie/Ace-2019",
+ "path": "flypie__Ace-2019/KiCad/ACEZ180/acez180.kicad_pcb",
+ "rank": 395,
+ "complexity": {
+  "grade": 312,
+  "size": 267,
+  "features": 45
+ },
+ "features": [
+  "through_vias",
+  "shaped_pads",
+  "filled_zones"
+ ],
+ "layers": 2,
+ "status": "pass",
+ "bad_design": null,
+ "chart_alt": "acez180: stages 4 and 6 take 56% to 86% of a run. Simulation, GLB takes 75 s. Simulation, STEP takes 92 s. Simulation, STL takes 77 s. Simulation, OBJ takes 2 min. Visual, GLB takes 2 min. Visual, OBJ takes 2 min",
+ "rerun": {},
+ "kese": [
+  "22fd70c"
+ ],
+ "machine": {
+  "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz, 4 cores, 15 GB",
+  "geos": "3.14.1",
+  "python": "3.13.18",
+  "shapely": "2.2.0"
+ }
+}

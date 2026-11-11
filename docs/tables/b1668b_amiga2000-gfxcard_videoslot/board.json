@@ -1,0 +1,29 @@
+{
+ "name": "videoslot",
+ "project": "mntmn/amiga2000-gfxcard",
+ "path": "mntmn__amiga2000-gfxcard/videoslot/videoslot.kicad_pcb",
+ "rank": 2099,
+ "complexity": {
+  "grade": 184,
+  "size": 149,
+  "features": 35
+ },
+ "features": [
+  "through_vias",
+  "filled_zones"
+ ],
+ "layers": 2,
+ "status": "pass",
+ "bad_design": null,
+ "chart_alt": "videoslot: stages 4 and 6 take 54% to 84% of a run. Simulation, GLB takes 8.0 s. Simulation, STEP takes 10 s. Simulation, STL takes 8.0 s. Simulation, OBJ takes 12 s. Visual, GLB takes 12 s. Visual, OBJ takes 14 s",
+ "rerun": {},
+ "kese": [
+  "22fd70c"
+ ],
+ "machine": {
+  "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz, 4 cores, 15 GB",
+  "geos": "3.14.1",
+  "python": "3.13.18",
+  "shapely": "2.2.0"
+ }
+}

@@ -1,0 +1,42 @@
+{
+ "name": "switch-main-v5",
+ "project": "ben5049/switch-v5-hardware",
+ "path": "ben5049__switch-v5-hardware/pcbs/switch-main-v5/switch-main-v5.kicad_pcb",
+ "rank": 170,
+ "complexity": {
+  "grade": 539,
+  "size": 329,
+  "features": 210
+ },
+ "features": [
+  "through_vias",
+  "slotted_holes",
+  "custom_pads",
+  "shaped_pads",
+  "arc_tracks",
+  "filled_zones",
+  "copper_graphics",
+  "curved_outline",
+  "knockout_text",
+  "truetype_text",
+  "stackup",
+  "dielectric_properties",
+  "copper_finish",
+  "mask_silk_colours",
+  "castellated_pads"
+ ],
+ "layers": 6,
+ "status": "pass",
+ "bad_design": null,
+ "chart_alt": "switch-main-v5: stages 4 and 6 take 52% to 88% of a run. Simulation, GLB takes 82 s. Simulation, STEP takes 99 s. Simulation, STL takes 84 s. Simulation, OBJ takes 2 min. Visual, GLB takes 3 min. Visual, OBJ takes 3 min",
+ "rerun": {},
+ "kese": [
+  "22fd70c"
+ ],
+ "machine": {
+  "cpu": "Intel(R) Xeon(R) Processor @ 2.30GHz, 4 cores, 15 GB",
+  "geos": "3.14.1",
+  "python": "3.13.18",
+  "shapely": "2.2.0"
+ }
+}

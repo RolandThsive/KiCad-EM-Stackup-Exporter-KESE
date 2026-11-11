@@ -1,0 +1,31 @@
+{
+ "name": "Prototype Card",
+ "project": "acwright/6502",
+ "path": "acwright__6502/Hardware/Prototype Card/Rev 1.0/Prototype Card.kicad_pcb",
+ "rank": 2427,
+ "complexity": {
+  "grade": 193,
+  "size": 138,
+  "features": 55
+ },
+ "features": [
+  "through_vias",
+  "shaped_pads",
+  "filled_zones",
+  "curved_outline"
+ ],
+ "layers": 2,
+ "status": "pass",
+ "bad_design": null,
+ "chart_alt": "Prototype Card: stages 4 and 6 take 48% to 82% of a run. Simulation, GLB takes 6.0 s. Simulation, STEP takes 7.4 s. Simulation, STL takes 5.7 s. Simulation, OBJ takes 8.6 s. Visual, GLB takes 8.8 s. Visual, OBJ takes 11 s",
+ "rerun": {},
+ "kese": [
+  "22fd70c"
+ ],
+ "machine": {
+  "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz, 4 cores, 15 GB",
+  "geos": "3.14.1",
+  "python": "3.13.18",
+  "shapely": "2.2.0"
+ }
+}

@@ -1,0 +1,34 @@
+{
+ "name": "Raemixx500",
+ "project": "sukkopera/raemixx500",
+ "path": "sukkopera__raemixx500/Raemixx500.kicad_pcb",
+ "rank": 127,
+ "complexity": {
+  "grade": 362,
+  "size": 277,
+  "features": 85
+ },
+ "features": [
+  "through_vias",
+  "slotted_holes",
+  "shaped_pads",
+  "drill_offsets",
+  "filled_zones",
+  "copper_text",
+  "curved_outline"
+ ],
+ "layers": 2,
+ "status": "pass",
+ "bad_design": null,
+ "chart_alt": "Raemixx500: stages 4 and 6 take 57% to 88% of a run. Simulation, GLB takes 3 min. Simulation, STEP takes 4 min. Simulation, STL takes 3 min. Simulation, OBJ takes 5 min. Visual, GLB takes 5 min. Visual, OBJ takes 6 min",
+ "rerun": {},
+ "kese": [
+  "22fd70c"
+ ],
+ "machine": {
+  "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz, 4 cores, 15 GB",
+  "geos": "3.14.1",
+  "python": "3.13.18",
+  "shapely": "2.2.0"
+ }
+}

@@ -1,0 +1,11 @@
+<table>
+<tr><th>File<br>type</th><th>File<br>size</th><th>Peak memory<br>used</th></tr>
+<tr><th colspan="3" align="left">Simulation</th></tr>
+<tr><td>GLB</td><td align="right">30&nbsp;MB</td><td align="right">476&nbsp;MB</td></tr>
+<tr><td>STEP</td><td align="right">93&nbsp;MB</td><td align="right">538&nbsp;MB</td></tr>
+<tr><td>STL</td><td align="right">45&nbsp;MB</td><td align="right">488&nbsp;MB</td></tr>
+<tr><td>OBJ</td><td align="right">90&nbsp;MB</td><td align="right">680&nbsp;MB</td></tr>
+<tr><th colspan="3" align="left">Visual</th></tr>
+<tr><td>GLB</td><td align="right">16&nbsp;MB</td><td align="right">458&nbsp;MB</td></tr>
+<tr><td>OBJ</td><td align="right">48&nbsp;MB</td><td align="right">493&nbsp;MB</td></tr>
+</table>

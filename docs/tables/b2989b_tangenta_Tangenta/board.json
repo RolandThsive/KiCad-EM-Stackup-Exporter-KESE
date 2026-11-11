@@ -1,0 +1,34 @@
+{
+ "name": "Tangenta",
+ "project": "vmetodiev/tangenta",
+ "path": "vmetodiev__tangenta/Tangenta/Tangenta.kicad_pcb",
+ "rank": 185,
+ "complexity": {
+  "grade": 395,
+  "size": 295,
+  "features": 100
+ },
+ "features": [
+  "through_vias",
+  "slotted_holes",
+  "shaped_pads",
+  "arc_tracks",
+  "filled_zones",
+  "stackup",
+  "dielectric_properties"
+ ],
+ "layers": 4,
+ "status": "pass",
+ "bad_design": null,
+ "chart_alt": "Tangenta: stages 4 and 6 take 55% to 84% of a run. Simulation, GLB takes 2 min. Simulation, STEP takes 2 min. Simulation, STL takes 2 min. Simulation, OBJ takes 3 min. Visual, GLB takes 2 min. Visual, OBJ takes 3 min",
+ "rerun": {},
+ "kese": [
+  "22fd70c"
+ ],
+ "machine": {
+  "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz, 4 cores, 15 GB",
+  "geos": "3.14.1",
+  "python": "3.13.18",
+  "shapely": "2.2.0"
+ }
+}

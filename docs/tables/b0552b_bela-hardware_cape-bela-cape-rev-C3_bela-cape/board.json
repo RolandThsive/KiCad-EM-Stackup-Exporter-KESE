@@ -1,0 +1,33 @@
+{
+ "name": "bela_cape",
+ "project": "belaplatform/bela-hardware",
+ "path": "belaplatform__bela-hardware/cape/bela_cape_rev_C3/bela_cape.kicad_pcb",
+ "rank": 977,
+ "complexity": {
+  "grade": 349,
+  "size": 264,
+  "features": 85
+ },
+ "features": [
+  "through_vias",
+  "shaped_pads",
+  "filled_zones",
+  "copper_graphics",
+  "stackup",
+  "dielectric_properties"
+ ],
+ "layers": 4,
+ "status": "pass",
+ "bad_design": null,
+ "chart_alt": "bela_cape: stages 4 and 6 take 51% to 86% of a run. Simulation, GLB takes 24 s. Simulation, STEP takes 30 s. Simulation, STL takes 26 s. Simulation, OBJ takes 38 s. Visual, GLB takes 37 s. Visual, OBJ takes 45 s",
+ "rerun": {},
+ "kese": [
+  "22fd70c"
+ ],
+ "machine": {
+  "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz, 4 cores, 15 GB",
+  "geos": "3.14.1",
+  "python": "3.13.18",
+  "shapely": "2.2.0"
+ }
+}

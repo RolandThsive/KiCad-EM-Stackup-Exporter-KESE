@@ -1,0 +1,30 @@
+{
+ "name": "Neptune-32x-315-5818-bypass",
+ "project": "Board-Folk/Neptune",
+ "path": "Board-Folk__Neptune/helpers/Neptune-32x-315-5818-bypass/Neptune-32x-315-5818-bypass.kicad_pcb",
+ "rank": 2797,
+ "complexity": {
+  "grade": 173,
+  "size": 128,
+  "features": 45
+ },
+ "features": [
+  "through_vias",
+  "stackup",
+  "dielectric_properties"
+ ],
+ "layers": 2,
+ "status": "pass",
+ "bad_design": null,
+ "chart_alt": "Neptune-32x-315-5818-bypass: stages 4 and 6 take 47% to 76% of a run. Simulation, GLB takes 2.8 s. Simulation, STEP takes 3.8 s. Simulation, STL takes 2.8 s. Simulation, OBJ takes 4.0 s. Visual, GLB takes 4.5 s. Visual, OBJ takes 5.4 s",
+ "rerun": {},
+ "kese": [
+  "22fd70c"
+ ],
+ "machine": {
+  "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz, 4 cores, 15 GB",
+  "geos": "3.14.1",
+  "python": "3.13.18",
+  "shapely": "2.2.0"
+ }
+}
