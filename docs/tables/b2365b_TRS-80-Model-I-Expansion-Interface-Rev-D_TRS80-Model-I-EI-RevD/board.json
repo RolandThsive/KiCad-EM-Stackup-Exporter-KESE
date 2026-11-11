@@ -1,0 +1,57 @@
+{
+ "name": "TRS80_Model_I_EI_RevD",
+ "project": "RetroStack/TRS-80-Model-I-Expansion-Interface-Rev-D",
+ "path": "RetroStack__TRS-80-Model-I-Expansion-Interface-Rev-D/KiCAD/TRS80_Model_I_EI_RevD.kicad_pcb",
+ "license": "MIT (MIT License)",
+ "license_checked": "2026-11-08",
+ "rank": 242,
+ "score": 9605,
+ "level": "VERY HIGH",
+ "complexity": {
+  "grade": 388,
+  "size": 223,
+  "features": 165
+ },
+ "features": [
+  "through_vias",
+  "padstacks",
+  "shaped_pads",
+  "filled_zones",
+  "copper_graphics",
+  "copper_text",
+  "curved_outline",
+  "truetype_text",
+  "stackup",
+  "dielectric_properties",
+  "copper_finish"
+ ],
+ "layers": 2,
+ "status": "pass",
+ "bad_design": null,
+ "chart_alt": "TRS80_Model_I_EI_RevD: stages 4 and 6 take 54% to 87% of a run. Simulation, GLB takes 99 s. Simulation, STEP takes 2 min. Simulation, STL takes 2 min. Simulation, OBJ takes 3 min. Visual, GLB takes 2 min. Visual, OBJ takes 3 min",
+ "rerun": {},
+ "tested": [
+  "2026-11-09",
+  "2026-11-09"
+ ],
+ "kese": [
+  "22fd70c"
+ ],
+ "kese_version": [
+  "2.4.0"
+ ],
+ "runs": [
+  [
+   "corpus",
+   "2026-11-09",
+   11000000000.0,
+   5400.0
+  ]
+ ],
+ "machine": {
+  "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz, 4 cores, 15 GB",
+  "geos": "3.14.1",
+  "python": "3.13.18",
+  "shapely": "2.2.0"
+ }
+}

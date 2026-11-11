@@ -1,6 +1,6 @@
 # 230. HCP65 MPU Address Decode
 
-Board 230 of the 3,112 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 3](../CorpusTestingPages/Corpus-Testing-03.md#230-hcp65-mpu-address-decode).
+Board 230 of the 3,116 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 3](../CorpusTestingPages/Corpus-Testing-03.md#230-hcp65-mpu-address-decode).
 
 ![HCP65 MPU Address Decode: stages 4 and 6 take 52% to 83% of a run. Simulation, GLB takes 10 s. Simulation, STEP takes 13 s. Simulation, STL takes 10 s. Simulation, OBJ takes 14 s. Visual, GLB takes 18 s. Visual, OBJ takes 22 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b0230b_658-Computer_HCP65-MPU-Address-Decode/stages.webp)
 

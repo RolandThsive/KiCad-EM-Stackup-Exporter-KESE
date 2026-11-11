@@ -1,0 +1,48 @@
+{
+ "name": "S3-OLinuXino_Rev_A",
+ "project": "OLIMEX/S3-OLinuXino",
+ "path": "OLIMEX__S3-OLinuXino/HARDWARE/S3-OLinuXino-Rev_A-preliminary/S3-OLinuXino_Rev_A.kicad_pcb",
+ "license": "GPL-3.0 (GNU GPL v3.0)",
+ "license_checked": "2026-11-08",
+ "rank": 1970,
+ "score": 714,
+ "level": "LOW",
+ "complexity": {
+  "grade": 176,
+  "size": 156,
+  "features": 20
+ },
+ "features": [
+  "slotted_holes",
+  "copper_text"
+ ],
+ "layers": 6,
+ "status": "pass",
+ "bad_design": null,
+ "chart_alt": "S3-OLinuXino_Rev_A: stages 4 and 6 take 50% to 80% of a run. Simulation, GLB takes 17 s. Simulation, STEP takes 22 s. Simulation, STL takes 17 s. Simulation, OBJ takes 24 s. Visual, GLB takes 25 s. Visual, OBJ takes 29 s",
+ "rerun": {},
+ "tested": [
+  "2026-11-09",
+  "2026-11-09"
+ ],
+ "kese": [
+  "22fd70c"
+ ],
+ "kese_version": [
+  "2.4.0"
+ ],
+ "runs": [
+  [
+   "corpus",
+   "2026-11-09",
+   11000000000.0,
+   5400.0
+  ]
+ ],
+ "machine": {
+  "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz, 4 cores, 15 GB",
+  "geos": "3.14.1",
+  "python": "3.13.18",
+  "shapely": "2.2.0"
+ }
+}

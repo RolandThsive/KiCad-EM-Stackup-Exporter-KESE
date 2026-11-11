@@ -1,0 +1,72 @@
+{
+ "name": "Commodore PC10 III",
+ "project": "Board-Folk/Commodore-PC10-III-Reproduction",
+ "path": "Board-Folk__Commodore-PC10-III-Reproduction/312628-REV-5.7A/Commodore PC10 III.kicad_pcb",
+ "license": "CC0-1.0 (Creative Commons Zero v1.0), in 312628-REV-5.7A/LICENSE, 312628-REV-6C/LICENSE",
+ "license_checked": "2026-11-08",
+ "rank": 18,
+ "score": 33717,
+ "level": "EXTREME",
+ "complexity": {
+  "grade": 384,
+  "size": 299,
+  "features": 85
+ },
+ "features": [
+  "through_vias",
+  "shaped_pads",
+  "filled_zones",
+  "curved_outline",
+  "stackup",
+  "dielectric_properties"
+ ],
+ "layers": 2,
+ "status": "pass",
+ "bad_design": null,
+ "chart_alt": "Commodore PC10 III: stages 4 and 6 take 63% to 88% of a run. Simulation, GLB takes 20 min. Simulation, STEP takes 21 min. Simulation, STL takes 20 min. Simulation, OBJ takes 24 min. Visual, GLB takes 28 min. Visual, OBJ takes 22 min",
+ "rerun": {
+  "cap": [
+   "Visual, OBJ"
+  ],
+  "nocap": [
+   "Simulation, OBJ"
+  ]
+ },
+ "tested": [
+  "2026-11-09",
+  "2026-11-11"
+ ],
+ "kese": [
+  "22fd70c",
+  "39950e6"
+ ],
+ "kese_version": [
+  "2.4.0"
+ ],
+ "runs": [
+  [
+   "cap",
+   "2026-11-10",
+   14500000000.0,
+   5400.0
+  ],
+  [
+   "corpus",
+   "2026-11-09",
+   11000000000.0,
+   5400.0
+  ],
+  [
+   "nocap",
+   "2026-11-11",
+   null,
+   null
+  ]
+ ],
+ "machine": {
+  "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz, 4 cores, 15 GB",
+  "geos": "3.14.1",
+  "python": "3.13.18",
+  "shapely": "2.2.0"
+ }
+}

@@ -1,0 +1,45 @@
+{
+ "name": "panel",
+ "project": "marqs85/ossc_pro_hw",
+ "path": "marqs85__ossc_pro_hw/buttonpanel/panel.kicad_pcb",
+ "license": "CERN-OHL-P-2.0 (CERN Open Hardware Licence v2, Permissive)",
+ "license_checked": "2026-11-08",
+ "rank": 2910,
+ "score": 15,
+ "level": "SIMPLE",
+ "complexity": {
+  "grade": 87,
+  "size": 87,
+  "features": 0
+ },
+ "features": [],
+ "layers": 2,
+ "status": "pass",
+ "bad_design": null,
+ "chart_alt": "panel: stages 4 and 6 take 44% to 76% of a run. Simulation, GLB takes 1.5 s. Simulation, STEP takes 2.2 s. Simulation, STL takes 1.5 s. Simulation, OBJ takes 2.0 s. Visual, GLB takes 1.8 s. Visual, OBJ takes 2.1 s",
+ "rerun": {},
+ "tested": [
+  "2026-11-09",
+  "2026-11-09"
+ ],
+ "kese": [
+  "22fd70c"
+ ],
+ "kese_version": [
+  "2.4.0"
+ ],
+ "runs": [
+  [
+   "corpus",
+   "2026-11-09",
+   11000000000.0,
+   5400.0
+  ]
+ ],
+ "machine": {
+  "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz, 4 cores, 15 GB",
+  "geos": "3.14.1",
+  "python": "3.13.18",
+  "shapely": "2.2.0"
+ }
+}
