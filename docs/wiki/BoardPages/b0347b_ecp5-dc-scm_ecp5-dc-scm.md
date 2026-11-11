@@ -1,6 +1,6 @@
 # 347. ecp5-dc-scm
 
-Board 347 of the 3,111 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 4](../CorpusTestingPages/Corpus-Testing-04.md#347-ecp5-dc-scm).
+Board 347 of the 3,112 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 4](../CorpusTestingPages/Corpus-Testing-04.md#347-ecp5-dc-scm).
 
 ![ecp5-dc-scm: stages 4 and 6 take 47% to 80% of a run. Simulation, GLB takes 3 min. Simulation, STEP takes 3 min. Simulation, STL takes 3 min. Simulation, OBJ takes 4 min. Visual, GLB takes 4 min. Visual, OBJ takes 5 min](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b0347b_ecp5-dc-scm_ecp5-dc-scm/stages.webp)
 

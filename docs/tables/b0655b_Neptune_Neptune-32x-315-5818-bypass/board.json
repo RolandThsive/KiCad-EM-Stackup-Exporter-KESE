@@ -1,0 +1,49 @@
+{
+ "name": "Neptune-32x-315-5818-bypass",
+ "project": "Board-Folk/Neptune",
+ "path": "Board-Folk__Neptune/helpers/Neptune-32x-315-5818-bypass/Neptune-32x-315-5818-bypass.kicad_pcb",
+ "license": "As README.md states it: \"Derivative works must be released under similar Open Source terms such that all sources are publicly available. The original authors' names and copyright statements may not be removed.\"",
+ "license_checked": "2026-11-08",
+ "rank": 2763,
+ "score": 56,
+ "level": "SIMPLE",
+ "complexity": {
+  "grade": 173,
+  "size": 128,
+  "features": 45
+ },
+ "features": [
+  "through_vias",
+  "stackup",
+  "dielectric_properties"
+ ],
+ "layers": 2,
+ "status": "pass",
+ "bad_design": null,
+ "chart_alt": "Neptune-32x-315-5818-bypass: stages 4 and 6 take 47% to 76% of a run. Simulation, GLB takes 2.8 s. Simulation, STEP takes 3.8 s. Simulation, STL takes 2.8 s. Simulation, OBJ takes 4.0 s. Visual, GLB takes 4.5 s. Visual, OBJ takes 5.4 s",
+ "rerun": {},
+ "tested": [
+  "2026-11-09",
+  "2026-11-09"
+ ],
+ "kese": [
+  "22fd70c"
+ ],
+ "kese_version": [
+  "2.4.0"
+ ],
+ "runs": [
+  [
+   "corpus",
+   "2026-11-09",
+   11000000000.0,
+   5400.0
+  ]
+ ],
+ "machine": {
+  "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz, 4 cores, 15 GB",
+  "geos": "3.14.1",
+  "python": "3.13.18",
+  "shapely": "2.2.0"
+ }
+}

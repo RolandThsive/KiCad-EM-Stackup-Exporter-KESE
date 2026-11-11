@@ -1,6 +1,6 @@
 # 362. ict-baseboard
 
-Board 362 of the 3,111 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 4](../CorpusTestingPages/Corpus-Testing-04.md#362-ict-baseboard).
+Board 362 of the 3,112 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 4](../CorpusTestingPages/Corpus-Testing-04.md#362-ict-baseboard).
 
 ![ict-baseboard: stages 4 and 6 take 51% to 77% of a run. Simulation, GLB takes 36 s. Simulation, STEP takes 44 s. Simulation, STL takes 36 s. Simulation, OBJ takes 55 s. Visual, GLB takes 47 s. Visual, OBJ takes 59 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b0362b_ict-baseboard_ict-baseboard/stages.webp)
 

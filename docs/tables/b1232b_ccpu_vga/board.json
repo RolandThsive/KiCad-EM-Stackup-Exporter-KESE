@@ -1,0 +1,50 @@
+{
+ "name": "vga",
+ "project": "imihajlow/ccpu",
+ "path": "imihajlow__ccpu/boards/vga/vga.kicad_pcb",
+ "license": "GPL-3.0 (GNU GPL v3.0), in LICENSE.GPL; TAPR-OHL-1.0 (TAPR Open Hardware License), in LICENSE.txt",
+ "license_checked": "2026-11-08",
+ "rank": 463,
+ "score": 5440,
+ "level": "HIGH",
+ "complexity": {
+  "grade": 300,
+  "size": 245,
+  "features": 55
+ },
+ "features": [
+  "through_vias",
+  "shaped_pads",
+  "filled_zones",
+  "copper_text"
+ ],
+ "layers": 2,
+ "status": "pass",
+ "bad_design": null,
+ "chart_alt": "vga: stages 4 and 6 take 58% to 86% of a run. Simulation, GLB takes 46 s. Simulation, STEP takes 61 s. Simulation, STL takes 48 s. Simulation, OBJ takes 68 s. Visual, GLB takes 69 s. Visual, OBJ takes 86 s",
+ "rerun": {},
+ "tested": [
+  "2026-11-09",
+  "2026-11-09"
+ ],
+ "kese": [
+  "22fd70c"
+ ],
+ "kese_version": [
+  "2.4.0"
+ ],
+ "runs": [
+  [
+   "corpus",
+   "2026-11-09",
+   11000000000.0,
+   5400.0
+  ]
+ ],
+ "machine": {
+  "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz, 4 cores, 15 GB",
+  "geos": "3.14.1",
+  "python": "3.13.18",
+  "shapely": "2.2.0"
+ }
+}

@@ -1,6 +1,6 @@
 # 364. jetson-agx-csi-adapter
 
-Board 364 of the 3,111 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 4](../CorpusTestingPages/Corpus-Testing-04.md#364-jetson-agx-csi-adapter).
+Board 364 of the 3,112 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 4](../CorpusTestingPages/Corpus-Testing-04.md#364-jetson-agx-csi-adapter).
 
 ![jetson-agx-csi-adapter: stages 4 and 6 take 52% to 82% of a run. Simulation, GLB takes 29 s. Simulation, STEP takes 40 s. Simulation, STL takes 30 s. Simulation, OBJ takes 47 s. Visual, GLB takes 49 s. Visual, OBJ takes 59 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b0364b_jetson-agx-csi-adapter_jetson-agx-csi-adapter/stages.webp)
 
@@ -44,4 +44,4 @@ Board 364 of the 3,111 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [363. ir-irradiance-probe](b0363b_infrared-irradiance-probe_ir-irradiance-probe.md) | [365. jetson-nano-baseboard](b0365b_jetson-nano-baseboard_jetson-nano-baseboard.md) |
+| [363. ir-irradiance-probe](b0363b_infrared-irradiance-probe_ir-irradiance-probe.md) | [365. jetson-agx-thor-baseboard](b0365b_jetson-agx-thor-baseboard_jetson-agx-thor-baseboard.md) |

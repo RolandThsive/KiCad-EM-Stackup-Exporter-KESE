@@ -1,0 +1,49 @@
+{
+ "name": "iMX8MPLUS-SOM_Rev_B",
+ "project": "OLIMEX/iMX8MP-SOM",
+ "path": "OLIMEX__iMX8MP-SOM/HARDWARE/iMX8MP-SOM-xGB-IND/iMX8MPLUS-SOM_Rev_B.kicad_pcb",
+ "license": "GPL-3.0 (GNU GPL v3.0)",
+ "license_checked": "2026-11-08",
+ "rank": 100,
+ "score": 15382,
+ "level": "VERY HIGH",
+ "complexity": {
+  "grade": 363,
+  "size": 318,
+  "features": 45
+ },
+ "features": [
+  "through_vias",
+  "filled_zones",
+  "copper_text"
+ ],
+ "layers": 6,
+ "status": "pass",
+ "bad_design": null,
+ "chart_alt": "iMX8MPLUS-SOM_Rev_B: stages 4 and 6 take 48% to 85% of a run. Simulation, GLB takes 86 s. Simulation, STEP takes 2 min. Simulation, STL takes 92 s. Simulation, OBJ takes 2 min. Visual, GLB takes 2 min. Visual, OBJ takes 3 min",
+ "rerun": {},
+ "tested": [
+  "2026-11-09",
+  "2026-11-09"
+ ],
+ "kese": [
+  "22fd70c"
+ ],
+ "kese_version": [
+  "2.4.0"
+ ],
+ "runs": [
+  [
+   "corpus",
+   "2026-11-09",
+   11000000000.0,
+   5400.0
+  ]
+ ],
+ "machine": {
+  "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz, 4 cores, 15 GB",
+  "geos": "3.14.1",
+  "python": "3.13.18",
+  "shapely": "2.2.0"
+ }
+}
