@@ -1,6 +1,6 @@
 # 1991. STMP1-OLinuXino_Rev_A
 
-Board 1,991 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 19](../CorpusTestingPages/Corpus-Testing-19.md#1991-stmp1-olinuxino_rev_a).
+Board 1,991 of the 3,139 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 19](../CorpusTestingPages/Corpus-Testing-19.md#1991-stmp1-olinuxino_rev_a).
 
 ![STMP1-OLinuXino_Rev_A: stages 4 and 6 take 59% to 85% of a run. Simulation, GLB takes 30 s. Simulation, STEP takes 36 s. Simulation, STL takes 30 s. Simulation, OBJ takes 43 s. Visual, GLB takes 45 s. Visual, OBJ takes 53 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b1991b_STMP1-OLinuXino_STMP1-OLinuXino-Rev-A/stages.webp)
 

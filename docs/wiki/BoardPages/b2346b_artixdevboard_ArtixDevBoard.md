@@ -1,6 +1,6 @@
 # 2346. ArtixDevBoard
 
-Board 2,346 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 22](../CorpusTestingPages/Corpus-Testing-22.md#2346-artixdevboard).
+Board 2,346 of the 3,139 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 22](../CorpusTestingPages/Corpus-Testing-22.md#2346-artixdevboard).
 
 ![ArtixDevBoard: stages 4 and 6 take 59% to 84% of a run. Simulation, GLB takes 66 s. Simulation, STEP takes 79 s. Simulation, STL takes 66 s. Simulation, OBJ takes 89 s. Visual, GLB takes 92 s. Visual, OBJ takes 2 min](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2346b_artixdevboard_ArtixDevBoard/stages.webp)
 

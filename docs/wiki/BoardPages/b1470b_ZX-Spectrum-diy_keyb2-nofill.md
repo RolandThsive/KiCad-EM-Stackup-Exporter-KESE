@@ -1,6 +1,6 @@
 # 1470. keyb2_nofill
 
-Board 1,470 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 14](../CorpusTestingPages/Corpus-Testing-14.md#1470-keyb2_nofill).
+Board 1,470 of the 3,139 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 14](../CorpusTestingPages/Corpus-Testing-14.md#1470-keyb2_nofill).
 
 ![keyb2_nofill: stages 4 and 6 take 58% to 79% of a run. Simulation, GLB takes 5.3 s. Simulation, STEP takes 7.0 s. Simulation, STL takes 5.2 s. Simulation, OBJ takes 7.4 s. Visual, GLB takes 6.4 s. Visual, OBJ takes 8.8 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b1470b_ZX-Spectrum-diy_keyb2-nofill/stages.webp)
 

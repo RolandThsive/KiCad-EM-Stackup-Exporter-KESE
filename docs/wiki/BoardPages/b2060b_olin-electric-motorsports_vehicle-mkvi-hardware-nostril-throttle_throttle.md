@@ -1,6 +1,6 @@
 # 2060. throttle
 
-Board 2,060 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 20](../CorpusTestingPages/Corpus-Testing-20.md#2060-throttle).
+Board 2,060 of the 3,139 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 20](../CorpusTestingPages/Corpus-Testing-20.md#2060-throttle).
 
 ![throttle: stages 4 and 6 take 51% to 80% of a run. Simulation, GLB takes 3.0 s. Simulation, STEP takes 4.1 s. Simulation, STL takes 3.1 s. Simulation, OBJ takes 4.4 s. Visual, GLB takes 4.7 s. Visual, OBJ takes 5.8 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2060b_olin-electric-motorsports_vehicle-mkvi-hardware-nostril-throttle_throttle/stages.webp)
 

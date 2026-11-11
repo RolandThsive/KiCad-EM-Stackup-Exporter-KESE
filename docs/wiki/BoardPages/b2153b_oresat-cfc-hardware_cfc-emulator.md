@@ -1,6 +1,6 @@
 # 2153. cfc_emulator
 
-Board 2,153 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 20](../CorpusTestingPages/Corpus-Testing-20.md#2153-cfc_emulator).
+Board 2,153 of the 3,139 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 20](../CorpusTestingPages/Corpus-Testing-20.md#2153-cfc_emulator).
 
 ![cfc_emulator: stages 4 and 6 take 51% to 82% of a run. Simulation, GLB takes 5.6 s. Simulation, STEP takes 7.6 s. Simulation, STL takes 5.7 s. Simulation, OBJ takes 8.5 s. Visual, GLB takes 7.8 s. Visual, OBJ takes 9.4 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2153b_oresat-cfc-hardware_cfc-emulator/stages.webp)
 

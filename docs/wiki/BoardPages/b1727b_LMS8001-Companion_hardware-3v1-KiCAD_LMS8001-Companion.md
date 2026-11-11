@@ -1,6 +1,6 @@
 # 1727. LMS8001_Companion
 
-Board 1,727 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 16](../CorpusTestingPages/Corpus-Testing-16.md#1727-lms8001_companion).
+Board 1,727 of the 3,139 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 16](../CorpusTestingPages/Corpus-Testing-16.md#1727-lms8001_companion).
 
 ![LMS8001_Companion: stages 4 and 6 take 12% to 14% of a run. Simulation, GLB takes 3.1 s. Simulation, STEP takes 3.3 s. Simulation, STL takes 3.2 s. Simulation, OBJ takes 3.1 s. Visual, GLB takes 3.0 s. Visual, OBJ takes 3.0 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b1727b_LMS8001-Companion_hardware-3v1-KiCAD_LMS8001-Companion/stages.webp)
 

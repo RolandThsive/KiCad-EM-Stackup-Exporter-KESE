@@ -1,6 +1,6 @@
 # 2386. AVIONICS_BOARD
 
-Board 2,386 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 23](../CorpusTestingPages/Corpus-Testing-23.md#2386-avionics_board).
+Board 2,386 of the 3,139 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 23](../CorpusTestingPages/Corpus-Testing-23.md#2386-avionics_board).
 
 ![AVIONICS_BOARD: stages 4 and 6 take 57% to 82% of a run. Simulation, GLB takes 46 s. Simulation, STEP takes 55 s. Simulation, STL takes 45 s. Simulation, OBJ takes 65 s. Visual, GLB takes 60 s. Visual, OBJ takes 79 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2386b_1kcubesat-hardware_AVIONICS-BOARD/stages.webp)
 

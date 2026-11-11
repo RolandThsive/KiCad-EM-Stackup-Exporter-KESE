@@ -1,6 +1,6 @@
 # 428. ICE40HXDevBoardHDMI
 
-Board 428 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 4](../CorpusTestingPages/Corpus-Testing-04.md#428-ice40hxdevboardhdmi).
+Board 428 of the 3,139 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 4](../CorpusTestingPages/Corpus-Testing-04.md#428-ice40hxdevboardhdmi).
 
 ![ICE40HXDevBoardHDMI: stages 4 and 6 take 50% to 83% of a run. Simulation, GLB takes 8.5 s. Simulation, STEP takes 11 s. Simulation, STL takes 9.0 s. Simulation, OBJ takes 14 s. Visual, GLB takes 12 s. Visual, OBJ takes 15 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b0428b_ICE40HXDevBoard_ICE40HXDevBoardHDMI/stages.webp)
 

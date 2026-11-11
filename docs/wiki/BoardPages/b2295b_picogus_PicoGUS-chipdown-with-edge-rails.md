@@ -1,6 +1,6 @@
 # 2295. PicoGUS chipdown with edge rails
 
-Board 2,295 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 22](../CorpusTestingPages/Corpus-Testing-22.md#2295-picogus-chipdown-with-edge-rails).
+Board 2,295 of the 3,139 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 22](../CorpusTestingPages/Corpus-Testing-22.md#2295-picogus-chipdown-with-edge-rails).
 
 ![Stages 4 and 6 take 43% to 79% of a run. Simulation, GLB takes 31 s. Simulation, STEP takes 39 s. Simulation, STL takes 32 s. Simulation, OBJ takes 52 s. Visual, GLB takes 53 s. Visual, OBJ takes 68 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2295b_picogus_PicoGUS-chipdown-with-edge-rails/stages.webp)
 

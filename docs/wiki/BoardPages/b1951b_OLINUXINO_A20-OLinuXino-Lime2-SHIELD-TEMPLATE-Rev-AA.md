@@ -1,6 +1,6 @@
 # 1951. A20_OLinuXino_Lime2_SHIELD_TEMPLATE_Rev-AA
 
-Board 1,951 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 19](../CorpusTestingPages/Corpus-Testing-19.md#1951-a20_olinuxino_lime2_shield_template_rev-aa).
+Board 1,951 of the 3,139 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 19](../CorpusTestingPages/Corpus-Testing-19.md#1951-a20_olinuxino_lime2_shield_template_rev-aa).
 
 ![Stages 4 and 6 take 43% to 70% of a run. Simulation, GLB takes 2.2 s. Simulation, STEP takes 3.3 s. Simulation, STL takes 2.3 s. Simulation, OBJ takes 3.1 s. Visual, GLB takes 3.1 s. Visual, OBJ takes 3.7 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b1951b_OLINUXINO_A20-OLinuXino-Lime2-SHIELD-TEMPLATE-Rev-AA/stages.webp)
 

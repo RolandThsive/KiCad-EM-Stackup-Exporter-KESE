@@ -1,6 +1,6 @@
 # 1177. pmod-quad-7segment
 
-Board 1,177 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 11](../CorpusTestingPages/Corpus-Testing-11.md#1177-pmod-quad-7segment).
+Board 1,177 of the 3,139 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 11](../CorpusTestingPages/Corpus-Testing-11.md#1177-pmod-quad-7segment).
 
 ![pmod-quad-7segment: stages 4 and 6 take 46% to 80% of a run. Simulation, GLB takes 4.1 s. Simulation, STEP takes 5.9 s. Simulation, STL takes 4.0 s. Simulation, OBJ takes 6.2 s. Visual, GLB takes 6.1 s. Visual, OBJ takes 7.3 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b1177b_advent-calendar-of-circuits-2020_pmod-quad-7segment/stages.webp)
 

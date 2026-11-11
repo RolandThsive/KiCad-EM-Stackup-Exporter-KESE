@@ -1,6 +1,6 @@
 # 1929. MOD-IR-TEMP_RevA
 
-Board 1,929 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 18](../CorpusTestingPages/Corpus-Testing-18.md#1929-mod-ir-temp_reva).
+Board 1,929 of the 3,139 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 18](../CorpusTestingPages/Corpus-Testing-18.md#1929-mod-ir-temp_reva).
 
 ![MOD-IR-TEMP_RevA: stages 4 and 6 take 45% to 76% of a run. Simulation, GLB takes 1.2 s. Simulation, STEP takes 2.0 s. Simulation, STL takes 1.3 s. Simulation, OBJ takes 1.6 s. Visual, GLB takes 2.0 s. Visual, OBJ takes 2.3 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b1929b_MOD-IR-TEMP_MOD-IR-TEMP-RevA/stages.webp)
 

@@ -1,6 +1,6 @@
 # 655. MegaCD
 
-Board 655 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 7](../CorpusTestingPages/Corpus-Testing-07.md#655-megacd).
+Board 655 of the 3,139 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 7](../CorpusTestingPages/Corpus-Testing-07.md#655-megacd).
 
 ![MegaCD: stages 4 and 6 take 49% to 83% of a run. Simulation, GLB takes 65 s. Simulation, STEP takes 81 s. Simulation, STL takes 65 s. Simulation, OBJ takes 2 min. Visual, GLB takes 2 min. Visual, OBJ takes 2 min](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b0655b_MegaCD-Main-BD_MegaCD-837-8015-01-Rev1-MCE2_MegaCD/stages.webp)
 

@@ -1,6 +1,6 @@
 # 2296. PicoGUS chipdown
 
-Board 2,296 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 22](../CorpusTestingPages/Corpus-Testing-22.md#2296-picogus-chipdown).
+Board 2,296 of the 3,139 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 22](../CorpusTestingPages/Corpus-Testing-22.md#2296-picogus-chipdown).
 
 ![PicoGUS chipdown: stages 4 and 6 take 44% to 78% of a run. Simulation, GLB takes 31 s. Simulation, STEP takes 40 s. Simulation, STL takes 32 s. Simulation, OBJ takes 53 s. Visual, GLB takes 56 s. Visual, OBJ takes 71 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2296b_picogus_PicoGUS-chipdown/stages.webp)
 

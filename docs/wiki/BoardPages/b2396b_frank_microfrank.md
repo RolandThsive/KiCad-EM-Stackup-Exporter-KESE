@@ -1,6 +1,6 @@
 # 2396. microfrank
 
-Board 2,396 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 23](../CorpusTestingPages/Corpus-Testing-23.md#2396-microfrank).
+Board 2,396 of the 3,139 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 23](../CorpusTestingPages/Corpus-Testing-23.md#2396-microfrank).
 
 ![microfrank: stages 4 and 6 take 48% to 82% of a run. Simulation, GLB takes 10 s. Simulation, STEP takes 14 s. Simulation, STL takes 10 s. Simulation, OBJ takes 15 s. Visual, GLB takes 17 s. Visual, OBJ takes 22 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2396b_frank_microfrank/stages.webp)
 

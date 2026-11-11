@@ -1,6 +1,6 @@
 # 1942. Neo6502kbd_Rev_A
 
-Board 1,942 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 18](../CorpusTestingPages/Corpus-Testing-18.md#1942-neo6502kbd_rev_a).
+Board 1,942 of the 3,139 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 18](../CorpusTestingPages/Corpus-Testing-18.md#1942-neo6502kbd_rev_a).
 
 ![Neo6502kbd_Rev_A: stages 4 and 6 take 52% to 82% of a run. Simulation, GLB takes 26 s. Simulation, STEP takes 31 s. Simulation, STL takes 27 s. Simulation, OBJ takes 37 s. Visual, GLB takes 39 s. Visual, OBJ takes 46 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b1942b_Neo6502kbd_Neo6502kbd-Rev-A/stages.webp)
 

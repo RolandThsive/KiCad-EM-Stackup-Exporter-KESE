@@ -1,6 +1,6 @@
 # 2241. ovc
 
-Board 2,241 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 21](../CorpusTestingPages/Corpus-Testing-21.md#2241-ovc).
+Board 2,241 of the 3,139 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 21](../CorpusTestingPages/Corpus-Testing-21.md#2241-ovc).
 
 ![ovc: stages 4 and 6 take 49% to 83% of a run. Simulation, GLB takes 72 s. Simulation, STEP takes 88 s. Simulation, STL takes 73 s. Simulation, OBJ takes 2 min. Visual, GLB takes 2 min. Visual, OBJ takes 2 min](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2241b_ovc_ovc/stages.webp)
 

@@ -1,6 +1,6 @@
 # 2090. headstage-neuropix2e
 
-Board 2,090 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 20](../CorpusTestingPages/Corpus-Testing-20.md#2090-headstage-neuropix2e).
+Board 2,090 of the 3,139 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 20](../CorpusTestingPages/Corpus-Testing-20.md#2090-headstage-neuropix2e).
 
 ![headstage-neuropix2e: stages 4 and 6 take 47% to 84% of a run. Simulation, GLB takes 8.5 s. Simulation, STEP takes 11 s. Simulation, STL takes 8.5 s. Simulation, OBJ takes 14 s. Visual, GLB takes 14 s. Visual, OBJ takes 17 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2090b_onix-headstage-neuropix2e-beta_headstage-neuropix2e/stages.webp)
 

@@ -1,6 +1,6 @@
 # 1747. PQ_Botnotsobot
 
-Board 1,747 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 17](../CorpusTestingPages/Corpus-Testing-17.md#1747-pq_botnotsobot).
+Board 1,747 of the 3,139 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 17](../CorpusTestingPages/Corpus-Testing-17.md#1747-pq_botnotsobot).
 
 ![PQ_Botnotsobot: stages 4 and 6 take 52% to 73% of a run. Simulation, GLB takes 8.0 s. Simulation, STEP takes 11 s. Simulation, STL takes 8.4 s. Simulation, OBJ takes 9.9 s. Visual, GLB takes 8.9 s. Visual, OBJ takes 11 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b1747b_pocat-hw_PQ-Botnotsobot/stages.webp)
 

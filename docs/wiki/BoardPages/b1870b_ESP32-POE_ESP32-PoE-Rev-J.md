@@ -1,6 +1,6 @@
 # 1870. ESP32-PoE_Rev_J
 
-Board 1,870 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 18](../CorpusTestingPages/Corpus-Testing-18.md#1870-esp32-poe_rev_j).
+Board 1,870 of the 3,139 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 18](../CorpusTestingPages/Corpus-Testing-18.md#1870-esp32-poe_rev_j).
 
 ![ESP32-PoE_Rev_J: stages 4 and 6 take 50% to 83% of a run. Simulation, GLB takes 18 s. Simulation, STEP takes 22 s. Simulation, STL takes 18 s. Simulation, OBJ takes 27 s. Visual, GLB takes 29 s. Visual, OBJ takes 36 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b1870b_ESP32-POE_ESP32-PoE-Rev-J/stages.webp)
 

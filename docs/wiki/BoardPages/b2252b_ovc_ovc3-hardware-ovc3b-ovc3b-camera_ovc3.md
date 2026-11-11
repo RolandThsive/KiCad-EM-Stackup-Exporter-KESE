@@ -1,6 +1,6 @@
 # 2252. ovc3
 
-Board 2,252 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 21](../CorpusTestingPages/Corpus-Testing-21.md#2252-ovc3).
+Board 2,252 of the 3,139 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 21](../CorpusTestingPages/Corpus-Testing-21.md#2252-ovc3).
 
 ![ovc3: stages 4 and 6 take 49% to 81% of a run. Simulation, GLB takes 47 s. Simulation, STEP takes 56 s. Simulation, STL takes 47 s. Simulation, OBJ takes 72 s. Visual, GLB takes 65 s. Visual, OBJ takes 80 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2252b_ovc_ovc3-hardware-ovc3b-ovc3b-camera_ovc3/stages.webp)
 

@@ -1,6 +1,6 @@
 # 1584. vna_r1
 
-Board 1,584 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 15](../CorpusTestingPages/Corpus-Testing-15.md#1584-vna_r1).
+Board 1,584 of the 3,139 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 15](../CorpusTestingPages/Corpus-Testing-15.md#1584-vna_r1).
 
 ![vna_r1: stages 4 and 6 take 53% to 81% of a run. Simulation, GLB takes 74 s. Simulation, STEP takes 83 s. Simulation, STL takes 71 s. Simulation, OBJ takes 2 min. Visual, GLB takes 2 min. Visual, OBJ takes 2 min](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b1584b_vna_vna-r1/stages.webp)
 

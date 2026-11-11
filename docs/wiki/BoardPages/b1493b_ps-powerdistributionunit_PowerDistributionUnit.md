@@ -1,6 +1,6 @@
 # 1493. PowerDistributionUnit
 
-Board 1,493 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 14](../CorpusTestingPages/Corpus-Testing-14.md#1493-powerdistributionunit).
+Board 1,493 of the 3,139 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 14](../CorpusTestingPages/Corpus-Testing-14.md#1493-powerdistributionunit).
 
 ![PowerDistributionUnit: stages 4 and 6 take 51% to 83% of a run. Simulation, GLB takes 76 s. Simulation, STEP takes 98 s. Simulation, STL takes 83 s. Simulation, OBJ takes 2 min. Visual, GLB takes 2 min. Visual, OBJ takes 3 min](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b1493b_ps-powerdistributionunit_PowerDistributionUnit/stages.webp)
 

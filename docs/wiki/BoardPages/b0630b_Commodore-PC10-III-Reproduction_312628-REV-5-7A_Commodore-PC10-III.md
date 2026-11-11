@@ -1,6 +1,6 @@
 # 630. Commodore PC10 III
 
-Board 630 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 6](../CorpusTestingPages/Corpus-Testing-06.md#630-commodore-pc10-iii).
+Board 630 of the 3,139 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 6](../CorpusTestingPages/Corpus-Testing-06.md#630-commodore-pc10-iii).
 
 ![Commodore PC10 III: stages 4 and 6 take 68% to 88% of a run. Simulation, GLB takes 20 min. Simulation, STEP takes 21 min. Simulation, STL takes 20 min. Visual, GLB takes 28 min. Visual, OBJ takes 22 min](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b0630b_Commodore-PC10-III-Reproduction_312628-REV-5-7A_Commodore-PC10-III/stages.webp)
 

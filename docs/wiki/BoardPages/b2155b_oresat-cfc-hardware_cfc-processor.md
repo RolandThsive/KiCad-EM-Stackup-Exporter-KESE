@@ -1,6 +1,6 @@
 # 2155. cfc-processor
 
-Board 2,155 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 20](../CorpusTestingPages/Corpus-Testing-20.md#2155-cfc-processor).
+Board 2,155 of the 3,139 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 20](../CorpusTestingPages/Corpus-Testing-20.md#2155-cfc-processor).
 
 ![cfc-processor: stages 4 and 6 take 55% to 83% of a run. Simulation, GLB takes 45 s. Simulation, STEP takes 55 s. Simulation, STL takes 45 s. Simulation, OBJ takes 67 s. Visual, GLB takes 62 s. Visual, OBJ takes 81 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2155b_oresat-cfc-hardware_cfc-processor/stages.webp)
 

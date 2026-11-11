@@ -1,6 +1,6 @@
 # 671. TRS80I-Charmap
 
-Board 671 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 7](../CorpusTestingPages/Corpus-Testing-07.md#671-trs80i-charmap).
+Board 671 of the 3,139 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 7](../CorpusTestingPages/Corpus-Testing-07.md#671-trs80i-charmap).
 
 ![TRS80I-Charmap: stages 4 and 6 take 48% to 81% of a run. Simulation, GLB takes 3.5 s. Simulation, STEP takes 4.6 s. Simulation, STL takes 3.4 s. Simulation, OBJ takes 5.1 s. Visual, GLB takes 4.9 s. Visual, OBJ takes 5.7 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b0671b_TRS80IJP_TRS80I-Charmap/stages.webp)
 

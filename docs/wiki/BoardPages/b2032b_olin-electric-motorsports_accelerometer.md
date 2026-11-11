@@ -1,6 +1,6 @@
 # 2032. accelerometer
 
-Board 2,032 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 19](../CorpusTestingPages/Corpus-Testing-19.md#2032-accelerometer).
+Board 2,032 of the 3,139 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 19](../CorpusTestingPages/Corpus-Testing-19.md#2032-accelerometer).
 
 ![accelerometer: stages 4 and 6 take 50% to 80% of a run. Simulation, GLB takes 6.4 s. Simulation, STEP takes 8.2 s. Simulation, STL takes 6.2 s. Simulation, OBJ takes 9.3 s. Visual, GLB takes 9.6 s. Visual, OBJ takes 12 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2032b_olin-electric-motorsports_accelerometer/stages.webp)
 

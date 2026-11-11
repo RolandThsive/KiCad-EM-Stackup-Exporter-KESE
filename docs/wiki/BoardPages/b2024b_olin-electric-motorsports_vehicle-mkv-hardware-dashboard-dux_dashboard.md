@@ -1,6 +1,6 @@
 # 2024. dashboard
 
-Board 2,024 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 19](../CorpusTestingPages/Corpus-Testing-19.md#2024-dashboard).
+Board 2,024 of the 3,139 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 19](../CorpusTestingPages/Corpus-Testing-19.md#2024-dashboard).
 
 ![dashboard: stages 4 and 6 take 47% to 80% of a run. Simulation, GLB takes 7.8 s. Simulation, STEP takes 9.4 s. Simulation, STL takes 7.7 s. Simulation, OBJ takes 11 s. Visual, GLB takes 11 s. Visual, OBJ takes 14 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2024b_olin-electric-motorsports_vehicle-mkv-hardware-dashboard-dux_dashboard/stages.webp)
 

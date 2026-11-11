@@ -1,6 +1,6 @@
 # 2076. ecp5u85-bse-usb_io-tester
 
-Board 2,076 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 20](../CorpusTestingPages/Corpus-Testing-20.md#2076-ecp5u85-bse-usb_io-tester).
+Board 2,076 of the 3,139 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 20](../CorpusTestingPages/Corpus-Testing-20.md#2076-ecp5u85-bse-usb_io-tester).
 
 ![ecp5u85-bse-usb_io-tester: stages 4 and 6 take 58% to 84% of a run. Simulation, GLB takes 32 s. Simulation, STEP takes 41 s. Simulation, STL takes 32 s. Simulation, OBJ takes 45 s. Visual, GLB takes 45 s. Visual, OBJ takes 52 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2076b_ECP5U85-BSE-USB-IO-Tester_ecp5u85-bse-usb-io-tester/stages.webp)
 

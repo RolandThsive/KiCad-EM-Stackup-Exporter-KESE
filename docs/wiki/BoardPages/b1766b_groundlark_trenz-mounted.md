@@ -1,6 +1,6 @@
 # 1766. trenz-mounted
 
-Board 1,766 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 17](../CorpusTestingPages/Corpus-Testing-17.md#1766-trenz-mounted).
+Board 1,766 of the 3,139 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 17](../CorpusTestingPages/Corpus-Testing-17.md#1766-trenz-mounted).
 
 ![trenz-mounted: stages 4 and 6 take 43% to 84% of a run. Simulation, GLB takes 46 s. Simulation, STEP takes 57 s. Simulation, STL takes 45 s. Simulation, OBJ takes 80 s. Visual, GLB takes 81 s. Visual, OBJ takes 99 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b1766b_groundlark_trenz-mounted/stages.webp)
 

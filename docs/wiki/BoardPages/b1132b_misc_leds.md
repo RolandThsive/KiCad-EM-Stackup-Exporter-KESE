@@ -1,6 +1,6 @@
 # 1132. leds
 
-Board 1,132 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 11](../CorpusTestingPages/Corpus-Testing-11.md#1132-leds).
+Board 1,132 of the 3,139 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 11](../CorpusTestingPages/Corpus-Testing-11.md#1132-leds).
 
 ![leds: stages 4 and 6 take 54% to 80% of a run. Simulation, GLB takes 4.8 s. Simulation, STEP takes 6.8 s. Simulation, STL takes 4.8 s. Simulation, OBJ takes 6.5 s. Visual, GLB takes 6.3 s. Visual, OBJ takes 7.8 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b1132b_misc_leds/stages.webp)
 

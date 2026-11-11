@@ -1,6 +1,6 @@
 # 2136. rev6.0_flat_controlstage
 
-Board 2,136 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 20](../CorpusTestingPages/Corpus-Testing-20.md#2136-rev60_flat_controlstage).
+Board 2,136 of the 3,139 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 20](../CorpusTestingPages/Corpus-Testing-20.md#2136-rev60_flat_controlstage).
 
 ![rev6.0_flat_controlstage: stages 4 and 6 take 50% to 80% of a run. Simulation, GLB takes 42 s. Simulation, STEP takes 49 s. Simulation, STL takes 45 s. Simulation, OBJ takes 67 s. Visual, GLB takes 61 s. Visual, OBJ takes 73 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2136b_oresat-adcs-hardware_rev6-0-flat-controlstage/stages.webp)
 

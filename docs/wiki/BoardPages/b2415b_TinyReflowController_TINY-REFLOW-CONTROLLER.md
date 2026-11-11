@@ -1,6 +1,6 @@
 # 2415. TINY-REFLOW-CONTROLLER
 
-Board 2,415 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 23](../CorpusTestingPages/Corpus-Testing-23.md#2415-tiny-reflow-controller).
+Board 2,415 of the 3,139 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 23](../CorpusTestingPages/Corpus-Testing-23.md#2415-tiny-reflow-controller).
 
 ![TINY-REFLOW-CONTROLLER: stages 4 and 6 take 55% to 81% of a run. Simulation, GLB takes 7.1 s. Simulation, STEP takes 8.7 s. Simulation, STL takes 7.3 s. Simulation, OBJ takes 11 s. Visual, GLB takes 9.9 s. Visual, OBJ takes 13 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2415b_TinyReflowController_TINY-REFLOW-CONTROLLER/stages.webp)
 
@@ -44,4 +44,4 @@ Board 2,415 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2414. Alius_6502](b2414b_Alius6502-PCB_Alius-6502.md) | [2416. GaNdapter-dual](b2416b_dcdc_GaNdapter-dual.md) |
+| [2414. Alius_6502](b2414b_Alius6502-PCB_Alius-6502.md) | [2416. TheMainBoard](b2416b_Thermometer_TheMainBoard.md) |

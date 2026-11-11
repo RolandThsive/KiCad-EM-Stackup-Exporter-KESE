@@ -1,6 +1,6 @@
 # 2162. balun-eval-board
 
-Board 2,162 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 21](../CorpusTestingPages/Corpus-Testing-21.md#2162-balun-eval-board).
+Board 2,162 of the 3,139 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 21](../CorpusTestingPages/Corpus-Testing-21.md#2162-balun-eval-board).
 
 ![balun-eval-board: stages 4 and 6 take 50% to 74% of a run. Simulation, GLB takes 4.5 s. Simulation, STEP takes 5.4 s. Simulation, STL takes 4.6 s. Simulation, OBJ takes 8.9 s. Visual, GLB takes 7.1 s. Visual, OBJ takes 8.0 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2162b_oresat-end-cards_balun-eval-board/stages.webp)
 

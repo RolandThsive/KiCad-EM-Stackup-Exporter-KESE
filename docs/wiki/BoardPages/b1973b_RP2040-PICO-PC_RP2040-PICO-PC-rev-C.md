@@ -1,6 +1,6 @@
 # 1973. RP2040-PICO-PC_rev_C
 
-Board 1,973 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 19](../CorpusTestingPages/Corpus-Testing-19.md#1973-rp2040-pico-pc_rev_c).
+Board 1,973 of the 3,139 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 19](../CorpusTestingPages/Corpus-Testing-19.md#1973-rp2040-pico-pc_rev_c).
 
 ![RP2040-PICO-PC_rev_C: stages 4 and 6 take 55% to 83% of a run. Simulation, GLB takes 14 s. Simulation, STEP takes 17 s. Simulation, STL takes 14 s. Simulation, OBJ takes 21 s. Visual, GLB takes 19 s. Visual, OBJ takes 25 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b1973b_RP2040-PICO-PC_RP2040-PICO-PC-rev-C/stages.webp)
 

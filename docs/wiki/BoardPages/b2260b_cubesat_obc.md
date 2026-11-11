@@ -1,6 +1,6 @@
 # 2260. obc
 
-Board 2,260 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 21](../CorpusTestingPages/Corpus-Testing-21.md#2260-obc).
+Board 2,260 of the 3,139 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 21](../CorpusTestingPages/Corpus-Testing-21.md#2260-obc).
 
 ![obc: stages 4 and 6 take 48% to 79% of a run. Simulation, GLB takes 34 s. Simulation, STEP takes 41 s. Simulation, STL takes 35 s. Simulation, OBJ takes 56 s. Visual, GLB takes 57 s. Visual, OBJ takes 67 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2260b_cubesat_obc/stages.webp)
 

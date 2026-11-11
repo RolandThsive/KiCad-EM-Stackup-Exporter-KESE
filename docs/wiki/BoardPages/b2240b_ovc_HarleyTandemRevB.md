@@ -1,6 +1,6 @@
 # 2240. HarleyTandemRevB
 
-Board 2,240 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 21](../CorpusTestingPages/Corpus-Testing-21.md#2240-harleytandemrevb).
+Board 2,240 of the 3,139 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 21](../CorpusTestingPages/Corpus-Testing-21.md#2240-harleytandemrevb).
 
 ![HarleyTandemRevB: stages 4 and 6 take 49% to 82% of a run. Simulation, GLB takes 22 s. Simulation, STEP takes 28 s. Simulation, STL takes 24 s. Simulation, OBJ takes 37 s. Visual, GLB takes 32 s. Visual, OBJ takes 40 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2240b_ovc_HarleyTandemRevB/stages.webp)
 

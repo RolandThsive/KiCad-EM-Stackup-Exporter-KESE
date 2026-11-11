@@ -1,6 +1,6 @@
 # 2352. 11ua
 
-Board 2,352 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 22](../CorpusTestingPages/Corpus-Testing-22.md#2352-11ua).
+Board 2,352 of the 3,139 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 22](../CorpusTestingPages/Corpus-Testing-22.md#2352-11ua).
 
 ![11ua: stages 4 and 6 take 63% to 88% of a run. Simulation, GLB takes 6.6 s. Simulation, STEP takes 8.3 s. Simulation, STL takes 7.0 s. Simulation, OBJ takes 9.4 s. Visual, GLB takes 9.9 s. Visual, OBJ takes 11 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2352b_stmbl_11ua/stages.webp)
 

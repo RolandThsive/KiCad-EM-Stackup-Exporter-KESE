@@ -1,6 +1,6 @@
 # 1228. A3000
 
-Board 1,228 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 12](../CorpusTestingPages/Corpus-Testing-12.md#1228-a3000).
+Board 1,228 of the 3,139 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 12](../CorpusTestingPages/Corpus-Testing-12.md#1228-a3000).
 
 ![A3000: stages 4 and 6 take 69% to 79% of a run. Simulation, GLB takes 17 min. Simulation, STEP takes 13 min. Simulation, STL takes 12 min](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b1228b_ReAmiga-3000-KiCAD_A3000/stages.webp)
 

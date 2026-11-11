@@ -1,6 +1,6 @@
 # 1588. Aleste520v4
 
-Board 1,588 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 15](../CorpusTestingPages/Corpus-Testing-15.md#1588-aleste520v4).
+Board 1,588 of the 3,139 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 15](../CorpusTestingPages/Corpus-Testing-15.md#1588-aleste520v4).
 
 ![Aleste520v4: stages 4 and 6 take 57% to 89% of a run. Simulation, GLB takes 5 min. Simulation, STEP takes 6 min. Simulation, STL takes 6 min. Simulation, OBJ takes 7 min. Visual, GLB takes 9 min. Visual, OBJ takes 11 min](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b1588b_Aleste520ex_Aleste520v4/stages.webp)
 

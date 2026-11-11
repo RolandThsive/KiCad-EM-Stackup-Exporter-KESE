@@ -1,6 +1,6 @@
 # 2130. mezzanine-flex-board
 
-Board 2,130 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 20](../CorpusTestingPages/Corpus-Testing-20.md#2130-mezzanine-flex-board).
+Board 2,130 of the 3,139 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 20](../CorpusTestingPages/Corpus-Testing-20.md#2130-mezzanine-flex-board).
 
 ![mezzanine-flex-board: stages 4 and 6 take 38% to 69% of a run. Simulation, GLB takes 1.3 s. Simulation, STEP takes 2.0 s. Simulation, STL takes 1.3 s. Simulation, OBJ takes 1.7 s. Visual, GLB takes 1.8 s. Visual, OBJ takes 2.1 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2130b_oresat-adcs-hardware_mezzanine-flex-board/stages.webp)
 

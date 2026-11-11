@@ -1,6 +1,6 @@
 # 1843. ESP32-EVB_Rev_K1
 
-Board 1,843 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 18](../CorpusTestingPages/Corpus-Testing-18.md#1843-esp32-evb_rev_k1).
+Board 1,843 of the 3,139 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 18](../CorpusTestingPages/Corpus-Testing-18.md#1843-esp32-evb_rev_k1).
 
 ![ESP32-EVB_Rev_K1: stages 4 and 6 take 55% to 84% of a run. Simulation, GLB takes 29 s. Simulation, STEP takes 35 s. Simulation, STL takes 29 s. Simulation, OBJ takes 43 s. Visual, GLB takes 45 s. Visual, OBJ takes 56 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b1843b_ESP32-EVB_ESP32-EVB-Rev-K1/stages.webp)
 

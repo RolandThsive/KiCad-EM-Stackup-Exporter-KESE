@@ -1,6 +1,6 @@
 # 1627. bodge_oshkosh
 
-Board 1,627 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 16](../CorpusTestingPages/Corpus-Testing-16.md#1627-bodge_oshkosh).
+Board 1,627 of the 3,139 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 16](../CorpusTestingPages/Corpus-Testing-16.md#1627-bodge_oshkosh).
 
 ![bodge_oshkosh: stages 4 and 6 take 42% to 78% of a run. Simulation, GLB takes 2.6 s. Simulation, STEP takes 3.6 s. Simulation, STL takes 2.6 s. Simulation, OBJ takes 4.0 s. Visual, GLB takes 3.9 s. Visual, OBJ takes 4.9 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b1627b_hardware-csat_bodge-oshkosh/stages.webp)
 

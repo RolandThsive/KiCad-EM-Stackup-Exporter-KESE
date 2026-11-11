@@ -1,6 +1,6 @@
 # 2297. PicoGUS Hand386
 
-Board 2,297 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 22](../CorpusTestingPages/Corpus-Testing-22.md#2297-picogus-hand386).
+Board 2,297 of the 3,139 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 22](../CorpusTestingPages/Corpus-Testing-22.md#2297-picogus-hand386).
 
 ![PicoGUS Hand386: stages 4 and 6 take 43% to 79% of a run. Simulation, GLB takes 14 s. Simulation, STEP takes 18 s. Simulation, STL takes 14 s. Simulation, OBJ takes 22 s. Visual, GLB takes 21 s. Visual, OBJ takes 27 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2297b_picogus_PicoGUS-Hand386/stages.webp)
 

@@ -1,6 +1,6 @@
 # 1992. STMP15x-BASE-SOM-EVB_Rev_B
 
-Board 1,992 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 19](../CorpusTestingPages/Corpus-Testing-19.md#1992-stmp15x-base-som-evb_rev_b).
+Board 1,992 of the 3,139 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 19](../CorpusTestingPages/Corpus-Testing-19.md#1992-stmp15x-base-som-evb_rev_b).
 
 ![STMP15x-BASE-SOM-EVB_Rev_B: stages 4 and 6 take 51% to 83% of a run. Simulation, GLB takes 84 s. Simulation, STEP takes 2 min. Simulation, STL takes 87 s. Simulation, OBJ takes 2 min. Visual, GLB takes 2 min. Visual, OBJ takes 3 min](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b1992b_STMP157-BASE-SOM-EVB_STMP15x-BASE-SOM-EVB-Rev-B/stages.webp)
 

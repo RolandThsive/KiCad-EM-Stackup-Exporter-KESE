@@ -1,6 +1,6 @@
 # 1750. PQ_Lat_Board
 
-Board 1,750 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 17](../CorpusTestingPages/Corpus-Testing-17.md#1750-pq_lat_board).
+Board 1,750 of the 3,139 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 17](../CorpusTestingPages/Corpus-Testing-17.md#1750-pq_lat_board).
 
 ![PQ_Lat_Board: stages 4 and 6 take 53% to 74% of a run. Simulation, GLB takes 9.5 s. Simulation, STEP takes 12 s. Simulation, STL takes 9.2 s. Simulation, OBJ takes 11 s. Visual, GLB takes 10 s. Visual, OBJ takes 12 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b1750b_pocat-hw_PQ-Lat-Board/stages.webp)
 

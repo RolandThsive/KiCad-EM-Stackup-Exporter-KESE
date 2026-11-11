@@ -1,6 +1,6 @@
 # 1285. arena_10_of_10_v1r1
 
-Board 1,285 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 12](../CorpusTestingPages/Corpus-Testing-12.md#1285-arena_10_of_10_v1r1).
+Board 1,285 of the 3,139 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 12](../CorpusTestingPages/Corpus-Testing-12.md#1285-arena_10_of_10_v1r1).
 
 ![arena_10_of_10_v1r1: stages 4 and 6 take 59% to 85% of a run. Simulation, GLB takes 24 s. Simulation, STEP takes 30 s. Simulation, STL takes 25 s. Simulation, OBJ takes 35 s. Visual, GLB takes 38 s. Visual, OBJ takes 46 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b1285b_led-display-g6-hardware-arena_arena-10-10-arena-10-10-v1-layout-tool_arena-10-of-10-v1r1/stages.webp)
 

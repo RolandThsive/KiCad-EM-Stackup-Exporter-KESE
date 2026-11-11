@@ -1,6 +1,6 @@
 # 2160. oresat-live-card
 
-Board 2,160 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 20](../CorpusTestingPages/Corpus-Testing-20.md#2160-oresat-live-card).
+Board 2,160 of the 3,139 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 20](../CorpusTestingPages/Corpus-Testing-20.md#2160-oresat-live-card).
 
 ![oresat-live-card: stages 4 and 6 take 54% to 83% of a run. Simulation, GLB takes 69 s. Simulation, STEP takes 85 s. Simulation, STL takes 70 s. Simulation, OBJ takes 2 min. Visual, GLB takes 2 min. Visual, OBJ takes 2 min](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2160b_oresat-dxwifi-hardware_oresat-live-card/stages.webp)
 

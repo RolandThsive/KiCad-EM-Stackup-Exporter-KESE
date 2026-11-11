@@ -1,6 +1,6 @@
 # 1202. sprig_console
 
-Board 1,202 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 12](../CorpusTestingPages/Corpus-Testing-12.md#1202-sprig_console).
+Board 1,202 of the 3,139 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 12](../CorpusTestingPages/Corpus-Testing-12.md#1202-sprig_console).
 
 ![sprig_console: stages 4 and 6 take 50% to 82% of a run. Simulation, GLB takes 7.2 s. Simulation, STEP takes 9.5 s. Simulation, STL takes 7.2 s. Simulation, OBJ takes 12 s. Visual, GLB takes 11 s. Visual, OBJ takes 14 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b1202b_sprig_sprig-hax-hardware-SprigHaxPCB-kicad_sprig-console/stages.webp)
 

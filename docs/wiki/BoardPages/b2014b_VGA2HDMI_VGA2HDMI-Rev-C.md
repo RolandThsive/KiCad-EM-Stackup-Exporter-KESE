@@ -1,6 +1,6 @@
 # 2014. VGA2HDMI_Rev_C
 
-Board 2,014 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 19](../CorpusTestingPages/Corpus-Testing-19.md#2014-vga2hdmi_rev_c).
+Board 2,014 of the 3,139 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 19](../CorpusTestingPages/Corpus-Testing-19.md#2014-vga2hdmi_rev_c).
 
 ![VGA2HDMI_Rev_C: stages 4 and 6 take 53% to 82% of a run. Simulation, GLB takes 12 s. Simulation, STEP takes 14 s. Simulation, STL takes 12 s. Simulation, OBJ takes 18 s. Visual, GLB takes 16 s. Visual, OBJ takes 21 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2014b_VGA2HDMI_VGA2HDMI-Rev-C/stages.webp)
 

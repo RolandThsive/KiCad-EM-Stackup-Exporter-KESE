@@ -1,6 +1,6 @@
 # 1376. bpm_dfe
 
-Board 1,376 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 13](../CorpusTestingPages/Corpus-Testing-13.md#1376-bpm_dfe).
+Board 1,376 of the 3,139 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 13](../CorpusTestingPages/Corpus-Testing-13.md#1376-bpm_dfe).
 
 ![bpm_dfe: stages 4 and 6 take 83% of a run. Simulation, GLB takes 14 min](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b1376b_rfsocdfe-hw_bpm-dfe/stages.webp)
 

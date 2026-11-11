@@ -1,6 +1,6 @@
 # 1597. ssx
 
-Board 1,597 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 15](../CorpusTestingPages/Corpus-Testing-15.md#1597-ssx).
+Board 1,597 of the 3,139 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 15](../CorpusTestingPages/Corpus-Testing-15.md#1597-ssx).
 
 ![ssx: stages 4 and 6 take 49% to 81% of a run. Simulation, GLB takes 6.4 s. Simulation, STEP takes 8.3 s. Simulation, STL takes 6.1 s. Simulation, OBJ takes 9.6 s. Visual, GLB takes 9.2 s. Visual, OBJ takes 11 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b1597b_ferrit_ssx/stages.webp)
 

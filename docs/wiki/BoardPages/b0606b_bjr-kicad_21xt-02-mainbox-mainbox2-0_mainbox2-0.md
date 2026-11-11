@@ -1,6 +1,6 @@
 # 606. mainbox2.0
 
-Board 606 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 6](../CorpusTestingPages/Corpus-Testing-06.md#606-mainbox20).
+Board 606 of the 3,139 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 6](../CorpusTestingPages/Corpus-Testing-06.md#606-mainbox20).
 
 ![mainbox2.0: stages 4 and 6 take 48% to 82% of a run. Simulation, GLB takes 9.2 s. Simulation, STEP takes 12 s. Simulation, STL takes 8.8 s. Simulation, OBJ takes 14 s. Visual, GLB takes 14 s. Visual, OBJ takes 16 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b0606b_bjr-kicad_21xt-02-mainbox-mainbox2-0_mainbox2-0/stages.webp)
 

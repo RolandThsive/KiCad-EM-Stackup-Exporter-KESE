@@ -1,6 +1,6 @@
 # 806. blank-plank-rev0b
 
-Board 806 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 8](../CorpusTestingPages/Corpus-Testing-08.md#806-blank-plank-rev0b).
+Board 806 of the 3,139 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 8](../CorpusTestingPages/Corpus-Testing-08.md#806-blank-plank-rev0b).
 
 ![blank-plank-rev0b: stages 4 and 6 take 54% to 81% of a run. Simulation, GLB takes 23 s. Simulation, STEP takes 29 s. Simulation, STL takes 24 s. Simulation, OBJ takes 33 s. Visual, GLB takes 30 s. Visual, OBJ takes 37 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b0806b_BusPirate5-hardware_blank-plank-rev0b/stages.webp)
 

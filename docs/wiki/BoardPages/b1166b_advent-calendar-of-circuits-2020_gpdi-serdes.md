@@ -1,6 +1,6 @@
 # 1166. gpdi-serdes
 
-Board 1,166 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 11](../CorpusTestingPages/Corpus-Testing-11.md#1166-gpdi-serdes).
+Board 1,166 of the 3,139 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 11](../CorpusTestingPages/Corpus-Testing-11.md#1166-gpdi-serdes).
 
 ![gpdi-serdes: stages 4 and 6 take 43% to 82% of a run. Simulation, GLB takes 3.8 s. Simulation, STEP takes 5.1 s. Simulation, STL takes 3.9 s. Simulation, OBJ takes 6.0 s. Visual, GLB takes 6.2 s. Visual, OBJ takes 7.7 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b1166b_advent-calendar-of-circuits-2020_gpdi-serdes/stages.webp)
 

@@ -1,6 +1,6 @@
 # 174. GPIO 16bit
 
-Board 174 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 2](../CorpusTestingPages/Corpus-Testing-02.md#174-gpio-16bit).
+Board 174 of the 3,139 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 2](../CorpusTestingPages/Corpus-Testing-02.md#174-gpio-16bit).
 
 ![GPIO 16bit: stages 4 and 6 take 57% to 81% of a run. Simulation, GLB takes 12 s. Simulation, STEP takes 15 s. Simulation, STL takes 11 s. Simulation, OBJ takes 16 s. Visual, GLB takes 19 s. Visual, OBJ takes 21 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b0174b_658-Computer_GPIO-16bit/stages.webp)
 

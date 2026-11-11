@@ -1,6 +1,6 @@
 # 1422. adapter
 
-Board 1,422 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 14](../CorpusTestingPages/Corpus-Testing-14.md#1422-adapter).
+Board 1,422 of the 3,139 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 14](../CorpusTestingPages/Corpus-Testing-14.md#1422-adapter).
 
 ![adapter: stages 4 and 6 take 50% to 77% of a run. Simulation, GLB takes 4.0 s. Simulation, STEP takes 5.6 s. Simulation, STL takes 4.1 s. Simulation, OBJ takes 6.1 s. Visual, GLB takes 6.8 s. Visual, OBJ takes 8.6 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b1422b_jtcores_cores-argus-sch-adapter_adapter/stages.webp)
 

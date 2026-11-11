@@ -1,6 +1,6 @@
 # 1695. Regulator7913-1
 
-Board 1,695 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 16](../CorpusTestingPages/Corpus-Testing-16.md#1695-regulator7913-1).
+Board 1,695 of the 3,139 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 16](../CorpusTestingPages/Corpus-Testing-16.md#1695-regulator7913-1).
 
 ![Regulator7913-1: stages 4 and 6 take 52% to 81% of a run. Simulation, GLB takes 4.9 s. Simulation, STEP takes 6.6 s. Simulation, STL takes 4.9 s. Simulation, OBJ takes 7.2 s. Visual, GLB takes 6.1 s. Visual, OBJ takes 7.5 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b1695b_embeddedbakery_Regulator7913-1/stages.webp)
 

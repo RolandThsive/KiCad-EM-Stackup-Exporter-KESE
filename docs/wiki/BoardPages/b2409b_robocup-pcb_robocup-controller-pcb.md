@@ -1,6 +1,6 @@
 # 2409. robocup-controller-pcb
 
-Board 2,409 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 23](../CorpusTestingPages/Corpus-Testing-23.md#2409-robocup-controller-pcb).
+Board 2,409 of the 3,139 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 23](../CorpusTestingPages/Corpus-Testing-23.md#2409-robocup-controller-pcb).
 
 ![robocup-controller-pcb: stages 4 and 6 take 49% to 81% of a run. Simulation, GLB takes 17 s. Simulation, STEP takes 21 s. Simulation, STL takes 17 s. Simulation, OBJ takes 27 s. Visual, GLB takes 25 s. Visual, OBJ takes 32 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2409b_robocup-pcb_robocup-controller-pcb/stages.webp)
 

@@ -1,6 +1,6 @@
 # 1697. Examples
 
-Board 1,697 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 16](../CorpusTestingPages/Corpus-Testing-16.md#1697-examples).
+Board 1,697 of the 3,139 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 16](../CorpusTestingPages/Corpus-Testing-16.md#1697-examples).
 
 ![Examples: stages 4 and 6 take 55% to 81% of a run. Simulation, GLB takes 5.1 s. Simulation, STEP takes 6.8 s. Simulation, STL takes 5.2 s. Simulation, OBJ takes 7.8 s. Visual, GLB takes 6.2 s. Visual, OBJ takes 7.9 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b1697b_embeddedbakery_Examples/stages.webp)
 

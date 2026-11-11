@@ -1,6 +1,6 @@
 # 1818. eduArdu_Rev_A
 
-Board 1,818 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 17](../CorpusTestingPages/Corpus-Testing-17.md#1818-eduardu_rev_a).
+Board 1,818 of the 3,139 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 17](../CorpusTestingPages/Corpus-Testing-17.md#1818-eduardu_rev_a).
 
 ![eduArdu_Rev_A: stages 4 and 6 take 53% to 81% of a run. Simulation, GLB takes 16 s. Simulation, STEP takes 20 s. Simulation, STL takes 16 s. Simulation, OBJ takes 23 s. Visual, GLB takes 24 s. Visual, OBJ takes 29 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b1818b_eduArdu_eduArdu-Rev-A/stages.webp)
 

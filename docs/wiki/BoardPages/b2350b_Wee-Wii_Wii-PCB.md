@@ -1,6 +1,6 @@
 # 2350. Wii PCB
 
-Board 2,350 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 22](../CorpusTestingPages/Corpus-Testing-22.md#2350-wii-pcb).
+Board 2,350 of the 3,139 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 22](../CorpusTestingPages/Corpus-Testing-22.md#2350-wii-pcb).
 
 ![Wii PCB: stages 4 and 6 take 54% to 83% of a run. Simulation, GLB takes 55 s. Simulation, STEP takes 68 s. Simulation, STL takes 56 s. Simulation, OBJ takes 84 s. Visual, GLB takes 93 s. Visual, OBJ takes 2 min](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2350b_Wee-Wii_Wii-PCB/stages.webp)
 

@@ -1,6 +1,6 @@
 # 2388. sun_sensor_test
 
-Board 2,388 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 23](../CorpusTestingPages/Corpus-Testing-23.md#2388-sun_sensor_test).
+Board 2,388 of the 3,139 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 23](../CorpusTestingPages/Corpus-Testing-23.md#2388-sun_sensor_test).
 
 ![sun_sensor_test: stages 4 and 6 take 54% to 85% of a run. Simulation, GLB takes 27 s. Simulation, STEP takes 33 s. Simulation, STL takes 25 s. Simulation, OBJ takes 35 s. Visual, GLB takes 38 s. Visual, OBJ takes 45 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2388b_1kcubesat-hardware_sun-sensor-test/stages.webp)
 

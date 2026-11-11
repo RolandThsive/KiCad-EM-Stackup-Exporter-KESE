@@ -1,6 +1,6 @@
 # 983. VGAGAL
 
-Board 983 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 10](../CorpusTestingPages/Corpus-Testing-10.md#983-vgagal).
+Board 983 of the 3,139 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 10](../CorpusTestingPages/Corpus-Testing-10.md#983-vgagal).
 
 ![VGAGAL: stages 4 and 6 take 53% to 85% of a run. Simulation, GLB takes 36 s. Simulation, STEP takes 47 s. Simulation, STL takes 37 s. Simulation, OBJ takes 58 s. Visual, GLB takes 55 s. Visual, OBJ takes 65 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b0983b_Ace-2019_VGAGAL/stages.webp)
 

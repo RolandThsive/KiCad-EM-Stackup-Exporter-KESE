@@ -1,6 +1,6 @@
 # 1897. ESP32-S3-DevKit-LiPo_Rev_B
 
-Board 1,897 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 18](../CorpusTestingPages/Corpus-Testing-18.md#1897-esp32-s3-devkit-lipo_rev_b).
+Board 1,897 of the 3,139 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 18](../CorpusTestingPages/Corpus-Testing-18.md#1897-esp32-s3-devkit-lipo_rev_b).
 
 ![ESP32-S3-DevKit-LiPo_Rev_B: stages 4 and 6 take 52% to 82% of a run. Simulation, GLB takes 14 s. Simulation, STEP takes 18 s. Simulation, STL takes 14 s. Simulation, OBJ takes 21 s. Visual, GLB takes 22 s. Visual, OBJ takes 28 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b1897b_ESP32-S3-DevKit-LiPo_ESP32-S3-DevKit-LiPo-Rev-B/stages.webp)
 

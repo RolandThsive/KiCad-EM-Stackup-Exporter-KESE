@@ -1,6 +1,6 @@
 # 2152. amp-PA-GRF5504-with-detect
 
-Board 2,152 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 20](../CorpusTestingPages/Corpus-Testing-20.md#2152-amp-pa-grf5504-with-detect).
+Board 2,152 of the 3,139 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 20](../CorpusTestingPages/Corpus-Testing-20.md#2152-amp-pa-grf5504-with-detect).
 
 ![amp-PA-GRF5504-with-detect: stages 4 and 6 take 51% to 80% of a run. Simulation, GLB takes 8.4 s. Simulation, STEP takes 11 s. Simulation, STL takes 8.4 s. Simulation, OBJ takes 12 s. Visual, GLB takes 11 s. Visual, OBJ takes 13 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2152b_oresat-c3-rf_amp-PA-GRF5504-with-detect/stages.webp)
 

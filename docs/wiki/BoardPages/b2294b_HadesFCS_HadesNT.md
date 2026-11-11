@@ -1,6 +1,6 @@
 # 2294. HadesNT
 
-Board 2,294 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 22](../CorpusTestingPages/Corpus-Testing-22.md#2294-hadesnt).
+Board 2,294 of the 3,139 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 22](../CorpusTestingPages/Corpus-Testing-22.md#2294-hadesnt).
 
 ![HadesNT: stages 4 and 6 take 50% to 81% of a run. Simulation, GLB takes 15 s. Simulation, STEP takes 17 s. Simulation, STL takes 14 s. Simulation, OBJ takes 23 s. Visual, GLB takes 20 s. Visual, OBJ takes 24 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2294b_HadesFCS_HadesNT/stages.webp)
 

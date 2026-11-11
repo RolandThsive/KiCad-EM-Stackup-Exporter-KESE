@@ -1,6 +1,6 @@
 # 2247. ovc2_mobo
 
-Board 2,247 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 21](../CorpusTestingPages/Corpus-Testing-21.md#2247-ovc2_mobo).
+Board 2,247 of the 3,139 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 21](../CorpusTestingPages/Corpus-Testing-21.md#2247-ovc2_mobo).
 
 ![ovc2_mobo: stages 4 and 6 take 57% to 84% of a run. Simulation, GLB takes 50 s. Simulation, STEP takes 57 s. Simulation, STL takes 50 s. Simulation, OBJ takes 71 s. Visual, GLB takes 70 s. Visual, OBJ takes 79 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2247b_ovc_ovc2-hardware-ovc2b-mobo_ovc2-mobo/stages.webp)
 

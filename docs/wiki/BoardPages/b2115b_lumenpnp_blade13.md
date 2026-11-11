@@ -1,6 +1,6 @@
 # 2115. blade13
 
-Board 2,115 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 20](../CorpusTestingPages/Corpus-Testing-20.md#2115-blade13).
+Board 2,115 of the 3,139 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 20](../CorpusTestingPages/Corpus-Testing-20.md#2115-blade13).
 
 ![blade13: stages 4 and 6 take 48% to 78% of a run. Simulation, GLB takes 8.8 s. Simulation, STEP takes 12 s. Simulation, STL takes 9.6 s. Simulation, OBJ takes 14 s. Visual, GLB takes 14 s. Visual, OBJ takes 18 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2115b_lumenpnp_blade13/stages.webp)
 

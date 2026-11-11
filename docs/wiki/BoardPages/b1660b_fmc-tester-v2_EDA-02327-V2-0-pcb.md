@@ -1,6 +1,6 @@
 # 1660. EDA-02327-V2-0_pcb
 
-Board 1,660 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 16](../CorpusTestingPages/Corpus-Testing-16.md#1660-eda-02327-v2-0_pcb).
+Board 1,660 of the 3,139 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 16](../CorpusTestingPages/Corpus-Testing-16.md#1660-eda-02327-v2-0_pcb).
 
 ![EDA-02327-V2-0_pcb: stages 4 and 6 take 46% to 79% of a run. Simulation, GLB takes 27 s. Simulation, STEP takes 35 s. Simulation, STL takes 28 s. Simulation, OBJ takes 43 s. Visual, GLB takes 42 s. Visual, OBJ takes 54 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b1660b_fmc-tester-v2_EDA-02327-V2-0-pcb/stages.webp)
 

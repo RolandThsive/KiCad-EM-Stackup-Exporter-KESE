@@ -1,6 +1,6 @@
 # 1774. ethersweep
 
-Board 1,774 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 17](../CorpusTestingPages/Corpus-Testing-17.md#1774-ethersweep).
+Board 1,774 of the 3,139 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 17](../CorpusTestingPages/Corpus-Testing-17.md#1774-ethersweep).
 
 ![ethersweep: stages 4 and 6 take 48% to 78% of a run. Simulation, GLB takes 5.4 s. Simulation, STEP takes 6.9 s. Simulation, STL takes 5.3 s. Simulation, OBJ takes 8.1 s. Visual, GLB takes 7.0 s. Visual, OBJ takes 8.4 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b1774b_ethersweep_electronic-design-development-ethersweep407-CAN_ethersweep/stages.webp)
 

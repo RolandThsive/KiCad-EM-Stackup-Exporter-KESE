@@ -1,6 +1,6 @@
 # 1961. LCD-DRIVER_Rev_C
 
-Board 1,961 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 19](../CorpusTestingPages/Corpus-Testing-19.md#1961-lcd-driver_rev_c).
+Board 1,961 of the 3,139 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 19](../CorpusTestingPages/Corpus-Testing-19.md#1961-lcd-driver_rev_c).
 
 ![LCD-DRIVER_Rev_C: stages 4 and 6 take 59% to 83% of a run. Simulation, GLB takes 38 s. Simulation, STEP takes 45 s. Simulation, STL takes 39 s. Simulation, OBJ takes 49 s. Visual, GLB takes 58 s. Visual, OBJ takes 69 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b1961b_OLINUXINO_LCD-DRIVER-Rev-C/stages.webp)
 

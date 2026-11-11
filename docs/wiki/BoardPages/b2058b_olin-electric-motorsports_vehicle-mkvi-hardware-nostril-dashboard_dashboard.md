@@ -1,6 +1,6 @@
 # 2058. dashboard
 
-Board 2,058 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 20](../CorpusTestingPages/Corpus-Testing-20.md#2058-dashboard).
+Board 2,058 of the 3,139 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 20](../CorpusTestingPages/Corpus-Testing-20.md#2058-dashboard).
 
 ![dashboard: stages 4 and 6 take 55% to 82% of a run. Simulation, GLB takes 8.1 s. Simulation, STEP takes 9.7 s. Simulation, STL takes 7.9 s. Simulation, OBJ takes 11 s. Visual, GLB takes 12 s. Visual, OBJ takes 14 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2058b_olin-electric-motorsports_vehicle-mkvi-hardware-nostril-dashboard_dashboard/stages.webp)
 

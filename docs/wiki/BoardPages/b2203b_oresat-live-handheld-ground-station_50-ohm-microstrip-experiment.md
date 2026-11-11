@@ -1,6 +1,6 @@
 # 2203. 50_ohm_microstrip_experiment
 
-Board 2,203 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 21](../CorpusTestingPages/Corpus-Testing-21.md#2203-50_ohm_microstrip_experiment).
+Board 2,203 of the 3,139 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 21](../CorpusTestingPages/Corpus-Testing-21.md#2203-50_ohm_microstrip_experiment).
 
 ![50_ohm_microstrip_experiment: stages 4 and 6 take 51% to 77% of a run. Simulation, GLB takes 5.0 s. Simulation, STEP takes 5.7 s. Simulation, STL takes 5.2 s. Simulation, OBJ takes 7.3 s. Visual, GLB takes 5.4 s. Visual, OBJ takes 7.3 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2203b_oresat-live-handheld-ground-station_50-ohm-microstrip-experiment/stages.webp)
 

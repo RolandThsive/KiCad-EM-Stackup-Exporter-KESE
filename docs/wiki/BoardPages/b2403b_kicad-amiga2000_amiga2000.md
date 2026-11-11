@@ -1,6 +1,6 @@
 # 2403. amiga2000
 
-Board 2,403 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 23](../CorpusTestingPages/Corpus-Testing-23.md#2403-amiga2000).
+Board 2,403 of the 3,139 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 23](../CorpusTestingPages/Corpus-Testing-23.md#2403-amiga2000).
 
 ![amiga2000: stages 4 and 6 take 72% to 90% of a run. Simulation, GLB takes 8 min. Simulation, STEP takes 9 min. Simulation, STL takes 7 min. Visual, GLB takes 10 min. Visual, OBJ takes 13 min](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2403b_kicad-amiga2000_amiga2000/stages.webp)
 

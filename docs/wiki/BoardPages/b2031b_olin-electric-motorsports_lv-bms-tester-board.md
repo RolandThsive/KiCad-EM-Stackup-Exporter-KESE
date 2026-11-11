@@ -1,6 +1,6 @@
 # 2031. lv_bms_tester_board
 
-Board 2,031 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 19](../CorpusTestingPages/Corpus-Testing-19.md#2031-lv_bms_tester_board).
+Board 2,031 of the 3,139 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 19](../CorpusTestingPages/Corpus-Testing-19.md#2031-lv_bms_tester_board).
 
 ![lv_bms_tester_board: stages 4 and 6 take 47% to 76% of a run. Simulation, GLB takes 2.7 s. Simulation, STEP takes 3.6 s. Simulation, STL takes 2.6 s. Simulation, OBJ takes 3.9 s. Visual, GLB takes 3.6 s. Visual, OBJ takes 4.4 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2031b_olin-electric-motorsports_lv-bms-tester-board/stages.webp)
 

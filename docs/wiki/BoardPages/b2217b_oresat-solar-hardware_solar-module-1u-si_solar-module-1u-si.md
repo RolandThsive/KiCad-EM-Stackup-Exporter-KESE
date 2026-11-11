@@ -1,6 +1,6 @@
 # 2217. solar-module-1u-si
 
-Board 2,217 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 21](../CorpusTestingPages/Corpus-Testing-21.md#2217-solar-module-1u-si).
+Board 2,217 of the 3,139 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 21](../CorpusTestingPages/Corpus-Testing-21.md#2217-solar-module-1u-si).
 
 ![solar-module-1u-si: stages 4 and 6 take 59% to 86% of a run. Simulation, GLB takes 37 s. Simulation, STEP takes 44 s. Simulation, STL takes 38 s. Simulation, OBJ takes 53 s. Visual, GLB takes 52 s. Visual, OBJ takes 62 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2217b_oresat-solar-hardware_solar-module-1u-si_solar-module-1u-si/stages.webp)
 

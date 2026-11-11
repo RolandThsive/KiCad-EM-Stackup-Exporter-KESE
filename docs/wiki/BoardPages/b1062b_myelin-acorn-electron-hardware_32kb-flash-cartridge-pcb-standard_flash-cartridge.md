@@ -1,6 +1,6 @@
 # 1062. flash_cartridge
 
-Board 1,062 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 10](../CorpusTestingPages/Corpus-Testing-10.md#1062-flash_cartridge).
+Board 1,062 of the 3,139 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 10](../CorpusTestingPages/Corpus-Testing-10.md#1062-flash_cartridge).
 
 ![flash_cartridge: stages 4 and 6 take 47% to 79% of a run. Simulation, GLB takes 3.4 s. Simulation, STEP takes 5.2 s. Simulation, STL takes 3.4 s. Simulation, OBJ takes 5.2 s. Visual, GLB takes 5.2 s. Visual, OBJ takes 6.9 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b1062b_myelin-acorn-electron-hardware_32kb-flash-cartridge-pcb-standard_flash-cartridge/stages.webp)
 

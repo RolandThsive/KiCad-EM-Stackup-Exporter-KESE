@@ -1,6 +1,6 @@
 # 766. Slave Board
 
-Board 766 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 8](../CorpusTestingPages/Corpus-Testing-08.md#766-slave-board).
+Board 766 of the 3,139 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 8](../CorpusTestingPages/Corpus-Testing-08.md#766-slave-board).
 
 ![Slave Board: stages 4 and 6 take 54% to 83% of a run. Simulation, GLB takes 25 s. Simulation, STEP takes 33 s. Simulation, STL takes 27 s. Simulation, OBJ takes 37 s. Visual, GLB takes 40 s. Visual, OBJ takes 50 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b0766b_2021-accumulator-electronics_Slave-Board/stages.webp)
 

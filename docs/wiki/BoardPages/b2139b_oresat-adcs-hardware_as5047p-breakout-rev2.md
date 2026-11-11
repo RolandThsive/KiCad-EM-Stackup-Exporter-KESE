@@ -1,6 +1,6 @@
 # 2139. as5047p_breakout_rev2
 
-Board 2,139 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 20](../CorpusTestingPages/Corpus-Testing-20.md#2139-as5047p_breakout_rev2).
+Board 2,139 of the 3,139 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 20](../CorpusTestingPages/Corpus-Testing-20.md#2139-as5047p_breakout_rev2).
 
 ![as5047p_breakout_rev2: stages 4 and 6 take 49% to 83% of a run. Simulation, GLB takes 2.3 s. Simulation, STEP takes 3.2 s. Simulation, STL takes 2.3 s. Simulation, OBJ takes 3.4 s. Visual, GLB takes 3.6 s. Visual, OBJ takes 3.9 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2139b_oresat-adcs-hardware_as5047p-breakout-rev2/stages.webp)
 

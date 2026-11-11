@@ -1,6 +1,6 @@
 # 1229. REAmiga3000
 
-Board 1,229 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 12](../CorpusTestingPages/Corpus-Testing-12.md#1229-reamiga3000).
+Board 1,229 of the 3,139 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 12](../CorpusTestingPages/Corpus-Testing-12.md#1229-reamiga3000).
 
 ![REAmiga3000: stages 4 and 6 take 67% to 87% of a run. Simulation, GLB takes 10 min. Simulation, STEP takes 14 min. Simulation, STL takes 11 min. Visual, GLB takes 20 min](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b1229b_ReAmiga3000-SMD-for-KICAD_REAmiga3000/stages.webp)
 

@@ -1,6 +1,6 @@
 # 1730. DigiRED
 
-Board 1,730 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 17](../CorpusTestingPages/Corpus-Testing-17.md#1730-digired).
+Board 1,730 of the 3,139 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 17](../CorpusTestingPages/Corpus-Testing-17.md#1730-digired).
 
 ![DigiRED: stages 4 and 6 take 49% to 83% of a run. Simulation, GLB takes 54 s. Simulation, STEP takes 63 s. Simulation, STL takes 54 s. Simulation, OBJ takes 84 s. Visual, GLB takes 75 s. Visual, OBJ takes 92 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b1730b_RASDR_DigiRED/stages.webp)
 

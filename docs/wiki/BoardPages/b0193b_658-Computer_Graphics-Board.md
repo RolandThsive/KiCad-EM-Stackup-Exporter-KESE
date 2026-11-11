@@ -1,6 +1,6 @@
 # 193. Graphics Board
 
-Board 193 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 2](../CorpusTestingPages/Corpus-Testing-02.md#193-graphics-board).
+Board 193 of the 3,139 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 2](../CorpusTestingPages/Corpus-Testing-02.md#193-graphics-board).
 
 ![Graphics Board: stages 4 and 6 take 55% to 85% of a run. Simulation, GLB takes 47 s. Simulation, STEP takes 58 s. Simulation, STL takes 48 s. Simulation, OBJ takes 72 s. Visual, GLB takes 76 s. Visual, OBJ takes 95 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b0193b_658-Computer_Graphics-Board/stages.webp)
 

@@ -1,6 +1,6 @@
 # 1380. 2000ATX
 
-Board 1,380 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 13](../CorpusTestingPages/Corpus-Testing-13.md#1380-2000atx).
+Board 1,380 of the 3,139 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 13](../CorpusTestingPages/Corpus-Testing-13.md#1380-2000atx).
 
 ![2000ATX: stages 4 and 6 take 71% to 89% of a run. Simulation, GLB takes 6 min. Simulation, STEP takes 7 min. Simulation, STL takes 6 min. Visual, GLB takes 9 min. Visual, OBJ takes 10 min](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b1380b_Amiga-2000-EATX_2000ATX/stages.webp)
 

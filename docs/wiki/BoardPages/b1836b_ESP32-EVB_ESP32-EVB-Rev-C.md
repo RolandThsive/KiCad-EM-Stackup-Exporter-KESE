@@ -1,6 +1,6 @@
 # 1836. ESP32-EVB_Rev_C
 
-Board 1,836 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 17](../CorpusTestingPages/Corpus-Testing-17.md#1836-esp32-evb_rev_c).
+Board 1,836 of the 3,139 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 17](../CorpusTestingPages/Corpus-Testing-17.md#1836-esp32-evb_rev_c).
 
 ![ESP32-EVB_Rev_C: stages 4 and 6 take 56% to 84% of a run. Simulation, GLB takes 24 s. Simulation, STEP takes 29 s. Simulation, STL takes 24 s. Simulation, OBJ takes 34 s. Visual, GLB takes 37 s. Visual, OBJ takes 46 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b1836b_ESP32-EVB_ESP32-EVB-Rev-C/stages.webp)
 

@@ -1,6 +1,6 @@
 # 468. akl-pt1
 
-Board 468 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 5](../CorpusTestingPages/Corpus-Testing-05.md#468-akl-pt1).
+Board 468 of the 3,139 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 5](../CorpusTestingPages/Corpus-Testing-05.md#468-akl-pt1).
 
 ![akl-pt1: stages 4 and 6 take 48% to 86% of a run. Simulation, GLB takes 5.0 s. Simulation, STEP takes 6.5 s. Simulation, STL takes 4.9 s. Simulation, OBJ takes 7.8 s. Visual, GLB takes 7.9 s. Visual, OBJ takes 8.8 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b0468b_starshipraider_akl-pt1/stages.webp)
 

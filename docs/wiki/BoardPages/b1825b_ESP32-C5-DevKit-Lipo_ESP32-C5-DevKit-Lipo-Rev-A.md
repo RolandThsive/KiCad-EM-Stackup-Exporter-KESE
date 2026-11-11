@@ -1,6 +1,6 @@
 # 1825. ESP32-C5-DevKit-Lipo_Rev_A
 
-Board 1,825 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 17](../CorpusTestingPages/Corpus-Testing-17.md#1825-esp32-c5-devkit-lipo_rev_a).
+Board 1,825 of the 3,139 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 17](../CorpusTestingPages/Corpus-Testing-17.md#1825-esp32-c5-devkit-lipo_rev_a).
 
 ![ESP32-C5-DevKit-Lipo_Rev_A: stages 4 and 6 take 49% to 81% of a run. Simulation, GLB takes 10 s. Simulation, STEP takes 13 s. Simulation, STL takes 11 s. Simulation, OBJ takes 16 s. Visual, GLB takes 17 s. Visual, OBJ takes 21 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b1825b_ESP32-C5-DevKit-Lipo_ESP32-C5-DevKit-Lipo-Rev-A/stages.webp)
 

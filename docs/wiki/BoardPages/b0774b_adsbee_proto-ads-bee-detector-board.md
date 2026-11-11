@@ -1,6 +1,6 @@
 # 774. proto_ads_bee_detector_board
 
-Board 774 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 8](../CorpusTestingPages/Corpus-Testing-08.md#774-proto_ads_bee_detector_board).
+Board 774 of the 3,139 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 8](../CorpusTestingPages/Corpus-Testing-08.md#774-proto_ads_bee_detector_board).
 
 ![proto_ads_bee_detector_board: stages 4 and 6 take 49% to 79% of a run. Simulation, GLB takes 5.5 s. Simulation, STEP takes 7.7 s. Simulation, STL takes 5.6 s. Simulation, OBJ takes 8.4 s. Visual, GLB takes 7.5 s. Visual, OBJ takes 9.6 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b0774b_adsbee_proto-ads-bee-detector-board/stages.webp)
 

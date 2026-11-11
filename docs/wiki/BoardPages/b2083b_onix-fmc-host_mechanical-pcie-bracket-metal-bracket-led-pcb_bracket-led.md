@@ -1,6 +1,6 @@
 # 2083. bracket-led
 
-Board 2,083 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 20](../CorpusTestingPages/Corpus-Testing-20.md#2083-bracket-led).
+Board 2,083 of the 3,139 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 20](../CorpusTestingPages/Corpus-Testing-20.md#2083-bracket-led).
 
 ![bracket-led: stages 4 and 6 take 20% to 28% of a run. Simulation, GLB takes 2.1 s. Simulation, STEP takes 2.4 s. Simulation, STL takes 2.1 s. Simulation, OBJ takes 2.2 s. Visual, GLB takes 2.1 s. Visual, OBJ takes 2.4 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2083b_onix-fmc-host_mechanical-pcie-bracket-metal-bracket-led-pcb_bracket-led/stages.webp)
 

@@ -4,7 +4,7 @@
  "path": "mntmn__amiga2000-gfxcard/videoslot/videoslot.kicad_pcb",
  "license": "As README.md states it: \"All aspects of the project (schematics, PCB, verilog, driver sources) are or will be published as open source under the MIT license, so you are free to produce your own clones of the board.\"",
  "license_checked": "2026-11-08",
- "rank": 2094,
+ "rank": 2095,
  "score": 598,
  "level": "LOW",
  "complexity": {

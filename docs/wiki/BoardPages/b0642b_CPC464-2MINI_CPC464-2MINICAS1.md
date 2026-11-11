@@ -1,6 +1,6 @@
 # 642. CPC464-2MINICAS1
 
-Board 642 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 6](../CorpusTestingPages/Corpus-Testing-06.md#642-cpc464-2minicas1).
+Board 642 of the 3,139 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 6](../CorpusTestingPages/Corpus-Testing-06.md#642-cpc464-2minicas1).
 
 ![CPC464-2MINICAS1: stages 4 and 6 take 54% to 83% of a run. Simulation, GLB takes 7.2 s. Simulation, STEP takes 9.0 s. Simulation, STL takes 7.3 s. Simulation, OBJ takes 11 s. Visual, GLB takes 9.9 s. Visual, OBJ takes 12 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b0642b_CPC464-2MINI_CPC464-2MINICAS1/stages.webp)
 

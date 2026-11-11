@@ -1,6 +1,6 @@
 # 584. AD5626BRMZ-kent
 
-Board 584 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 6](../CorpusTestingPages/Corpus-Testing-06.md#584-ad5626brmz-kent).
+Board 584 of the 3,139 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 6](../CorpusTestingPages/Corpus-Testing-06.md#584-ad5626brmz-kent).
 
 ![AD5626BRMZ-kent: stages 4 and 6 take 44% to 71% of a run. Simulation, GLB takes 1.5 s. Simulation, STEP takes 2.3 s. Simulation, STL takes 1.6 s. Simulation, OBJ takes 2.1 s. Visual, GLB takes 2.3 s. Visual, OBJ takes 2.6 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b0584b_22xt-kicad_AD5626BRMZ-kent/stages.webp)
 

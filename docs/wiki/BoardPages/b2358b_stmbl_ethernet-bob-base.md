@@ -1,6 +1,6 @@
 # 2358. ethernet_bob_base
 
-Board 2,358 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 22](../CorpusTestingPages/Corpus-Testing-22.md#2358-ethernet_bob_base).
+Board 2,358 of the 3,139 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 22](../CorpusTestingPages/Corpus-Testing-22.md#2358-ethernet_bob_base).
 
 ![ethernet_bob_base: stages 4 and 6 take 58% to 85% of a run. Simulation, GLB takes 24 s. Simulation, STEP takes 31 s. Simulation, STL takes 26 s. Simulation, OBJ takes 35 s. Visual, GLB takes 31 s. Visual, OBJ takes 38 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2358b_stmbl_ethernet-bob-base/stages.webp)
 

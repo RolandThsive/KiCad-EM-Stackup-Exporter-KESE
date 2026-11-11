@@ -1,6 +1,6 @@
 # 973. eBigRam
 
-Board 973 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 10](../CorpusTestingPages/Corpus-Testing-10.md#973-ebigram).
+Board 973 of the 3,139 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 10](../CorpusTestingPages/Corpus-Testing-10.md#973-ebigram).
 
 ![eBigRam: stages 4 and 6 take 60% to 83% of a run. Simulation, GLB takes 9.4 s. Simulation, STEP takes 13 s. Simulation, STL takes 9.8 s. Simulation, OBJ takes 13 s. Visual, GLB takes 14 s. Visual, OBJ takes 17 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b0973b_Ace-2019_eBigRam/stages.webp)
 

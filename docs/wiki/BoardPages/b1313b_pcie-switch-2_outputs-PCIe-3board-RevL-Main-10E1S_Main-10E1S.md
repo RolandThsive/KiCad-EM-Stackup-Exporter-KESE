@@ -1,6 +1,6 @@
 # 1313. Main_10E1S
 
-Board 1,313 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 13](../CorpusTestingPages/Corpus-Testing-13.md#1313-main_10e1s).
+Board 1,313 of the 3,139 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 13](../CorpusTestingPages/Corpus-Testing-13.md#1313-main_10e1s).
 
 ![Main_10E1S: stages 4 and 6 take 64% to 89% of a run. Simulation, GLB takes 2 min. Simulation, STEP takes 2 min. Simulation, STL takes 2 min. Simulation, OBJ takes 3 min. Visual, GLB takes 3 min. Visual, OBJ takes 3 min](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b1313b_pcie-switch-2_outputs-PCIe-3board-RevL-Main-10E1S_Main-10E1S/stages.webp)
 

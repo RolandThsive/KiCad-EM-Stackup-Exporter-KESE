@@ -1,6 +1,6 @@
 # 1005. NE_Delta
 
-Board 1,005 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 10](../CorpusTestingPages/Corpus-Testing-10.md#1005-ne_delta).
+Board 1,005 of the 3,139 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 10](../CorpusTestingPages/Corpus-Testing-10.md#1005-ne_delta).
 
 ![NE_Delta: stages 4 and 6 take 56% to 89% of a run. Simulation, GLB takes 4 min. Simulation, STEP takes 5 min. Simulation, STL takes 4 min. Simulation, OBJ takes 4 min. Visual, GLB takes 7 min. Visual, OBJ takes 8 min](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b1005b_NE-Delta-Schematics_LX780-Delta-fixed_NE-Delta/stages.webp)
 

@@ -1,6 +1,6 @@
 # 1805. BB-LVL-SHIFT_Rev_A
 
-Board 1,805 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 17](../CorpusTestingPages/Corpus-Testing-17.md#1805-bb-lvl-shift_rev_a).
+Board 1,805 of the 3,139 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 17](../CorpusTestingPages/Corpus-Testing-17.md#1805-bb-lvl-shift_rev_a).
 
 ![BB-LVL-SHIFT_Rev_A: stages 4 and 6 take 45% to 78% of a run. Simulation, GLB takes 1.6 s. Simulation, STEP takes 2.5 s. Simulation, STL takes 1.6 s. Simulation, OBJ takes 2.2 s. Visual, GLB takes 2.6 s. Visual, OBJ takes 3.0 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b1805b_BB-LVL-SHIFT_BB-LVL-SHIFT-Rev-A/stages.webp)
 

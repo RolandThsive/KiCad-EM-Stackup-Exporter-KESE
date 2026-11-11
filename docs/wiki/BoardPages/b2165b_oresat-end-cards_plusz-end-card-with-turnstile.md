@@ -1,6 +1,6 @@
 # 2165. plusz-end-card-with-turnstile
 
-Board 2,165 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 21](../CorpusTestingPages/Corpus-Testing-21.md#2165-plusz-end-card-with-turnstile).
+Board 2,165 of the 3,139 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 21](../CorpusTestingPages/Corpus-Testing-21.md#2165-plusz-end-card-with-turnstile).
 
 ![plusz-end-card-with-turnstile: stages 4 and 6 take 54% to 83% of a run. Simulation, GLB takes 15 s. Simulation, STEP takes 17 s. Simulation, STL takes 15 s. Simulation, OBJ takes 22 s. Visual, GLB takes 20 s. Visual, OBJ takes 25 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2165b_oresat-end-cards_plusz-end-card-with-turnstile/stages.webp)
 

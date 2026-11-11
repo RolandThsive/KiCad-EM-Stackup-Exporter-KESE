@@ -1,6 +1,6 @@
 # 1872. ESP32-PoE_Rev_L
 
-Board 1,872 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 18](../CorpusTestingPages/Corpus-Testing-18.md#1872-esp32-poe_rev_l).
+Board 1,872 of the 3,139 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 18](../CorpusTestingPages/Corpus-Testing-18.md#1872-esp32-poe_rev_l).
 
 ![ESP32-PoE_Rev_L: stages 4 and 6 take 50% to 83% of a run. Simulation, GLB takes 20 s. Simulation, STEP takes 25 s. Simulation, STL takes 20 s. Simulation, OBJ takes 31 s. Visual, GLB takes 31 s. Visual, OBJ takes 39 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b1872b_ESP32-POE_ESP32-PoE-Rev-L/stages.webp)
 

@@ -1,6 +1,6 @@
 # 1923. MiniBot_RevA
 
-Board 1,923 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 18](../CorpusTestingPages/Corpus-Testing-18.md#1923-minibot_reva).
+Board 1,923 of the 3,139 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 18](../CorpusTestingPages/Corpus-Testing-18.md#1923-minibot_reva).
 
 ![MiniBot_RevA: stages 4 and 6 take 47% to 79% of a run. Simulation, GLB takes 3.7 s. Simulation, STEP takes 5.4 s. Simulation, STL takes 4.0 s. Simulation, OBJ takes 5.9 s. Visual, GLB takes 5.8 s. Visual, OBJ takes 7.6 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b1923b_Minibot_MiniBot-RevA/stages.webp)
 

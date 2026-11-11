@@ -1,6 +1,6 @@
 # 2055. imu_panelized
 
-Board 2,055 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 20](../CorpusTestingPages/Corpus-Testing-20.md#2055-imu_panelized).
+Board 2,055 of the 3,139 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 20](../CorpusTestingPages/Corpus-Testing-20.md#2055-imu_panelized).
 
 ![imu_panelized: stages 4 and 6 take 50% to 81% of a run. Simulation, GLB takes 74 s. Simulation, STEP takes 88 s. Simulation, STL takes 71 s. Simulation, OBJ takes 2 min. Visual, GLB takes 2 min. Visual, OBJ takes 2 min](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2055b_olin-electric-motorsports_imu-panelized/stages.webp)
 

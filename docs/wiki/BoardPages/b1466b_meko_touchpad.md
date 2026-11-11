@@ -1,6 +1,6 @@
 # 1466. touchpad
 
-Board 1,466 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 14](../CorpusTestingPages/Corpus-Testing-14.md#1466-touchpad).
+Board 1,466 of the 3,139 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 14](../CorpusTestingPages/Corpus-Testing-14.md#1466-touchpad).
 
 ![touchpad: stages 4 and 6 take 50% to 77% of a run. Simulation, GLB takes 3.2 s. Simulation, STEP takes 4.7 s. Simulation, STL takes 3.2 s. Simulation, OBJ takes 4.5 s. Visual, GLB takes 4.0 s. Visual, OBJ takes 5.4 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b1466b_meko_touchpad/stages.webp)
 

@@ -1,6 +1,6 @@
 # 1920. STM32WL-DevKit_RevB
 
-Board 1,920 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 18](../CorpusTestingPages/Corpus-Testing-18.md#1920-stm32wl-devkit_revb).
+Board 1,920 of the 3,139 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 18](../CorpusTestingPages/Corpus-Testing-18.md#1920-stm32wl-devkit_revb).
 
 ![STM32WL-DevKit_RevB: stages 4 and 6 take 51% to 83% of a run. Simulation, GLB takes 11 s. Simulation, STEP takes 14 s. Simulation, STL takes 12 s. Simulation, OBJ takes 17 s. Visual, GLB takes 16 s. Visual, OBJ takes 23 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b1920b_LoRa-STM32WL-DevKIT_STM32WL-DevKit-RevB/stages.webp)
 

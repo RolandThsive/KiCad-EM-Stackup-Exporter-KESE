@@ -1,6 +1,6 @@
 # 2237. trigger-output-fmc
 
-Board 2,237 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 21](../CorpusTestingPages/Corpus-Testing-21.md#2237-trigger-output-fmc).
+Board 2,237 of the 3,139 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 21](../CorpusTestingPages/Corpus-Testing-21.md#2237-trigger-output-fmc).
 
 ![trigger-output-fmc: stages 4 and 6 take 43% to 82% of a run. Simulation, GLB takes 52 s. Simulation, STEP takes 66 s. Simulation, STL takes 54 s. Simulation, OBJ takes 95 s. Visual, GLB takes 81 s. Visual, OBJ takes 2 min](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2237b_trigger-output-fmc_trigger-output-fmc/stages.webp)
 

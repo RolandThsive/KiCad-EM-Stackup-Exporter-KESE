@@ -1,6 +1,6 @@
 # 1461. tinytapeout-demo
 
-Board 1,461 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 14](../CorpusTestingPages/Corpus-Testing-14.md#1461-tinytapeout-demo).
+Board 1,461 of the 3,139 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 14](../CorpusTestingPages/Corpus-Testing-14.md#1461-tinytapeout-demo).
 
 ![tinytapeout-demo: stages 4 and 6 take 50% to 81% of a run. Simulation, GLB takes 42 s. Simulation, STEP takes 52 s. Simulation, STL takes 42 s. Simulation, OBJ takes 63 s. Visual, GLB takes 72 s. Visual, OBJ takes 88 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b1461b_kicad-source-mirror_tinytapeout-demo/stages.webp)
 

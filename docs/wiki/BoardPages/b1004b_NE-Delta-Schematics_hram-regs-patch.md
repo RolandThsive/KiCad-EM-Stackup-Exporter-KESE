@@ -1,6 +1,6 @@
 # 1004. hram_regs_patch
 
-Board 1,004 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 10](../CorpusTestingPages/Corpus-Testing-10.md#1004-hram_regs_patch).
+Board 1,004 of the 3,139 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 10](../CorpusTestingPages/Corpus-Testing-10.md#1004-hram_regs_patch).
 
 ![hram_regs_patch: stages 4 and 6 take 51% to 80% of a run. Simulation, GLB takes 2.7 s. Simulation, STEP takes 3.7 s. Simulation, STL takes 2.7 s. Simulation, OBJ takes 3.7 s. Visual, GLB takes 3.7 s. Visual, OBJ takes 4.3 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b1004b_NE-Delta-Schematics_hram-regs-patch/stages.webp)
 

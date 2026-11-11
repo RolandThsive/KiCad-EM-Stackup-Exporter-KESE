@@ -1,6 +1,6 @@
 # 230. HCP65 Main Memory Data
 
-Board 230 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 3](../CorpusTestingPages/Corpus-Testing-03.md#230-hcp65-main-memory-data).
+Board 230 of the 3,139 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 3](../CorpusTestingPages/Corpus-Testing-03.md#230-hcp65-main-memory-data).
 
 ![HCP65 Main Memory Data: stages 4 and 6 take 49% to 80% of a run. Simulation, GLB takes 3.7 s. Simulation, STEP takes 5.1 s. Simulation, STL takes 3.6 s. Simulation, OBJ takes 5.6 s. Visual, GLB takes 6.1 s. Visual, OBJ takes 7.6 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b0230b_658-Computer_HCP65-Main-Memory-Data/stages.webp)
 

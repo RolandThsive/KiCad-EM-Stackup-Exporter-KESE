@@ -1,6 +1,6 @@
 # 349. dual-ipex-csi-interposer
 
-Board 349 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 4](../CorpusTestingPages/Corpus-Testing-04.md#349-dual-ipex-csi-interposer).
+Board 349 of the 3,139 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 4](../CorpusTestingPages/Corpus-Testing-04.md#349-dual-ipex-csi-interposer).
 
 ![dual-ipex-csi-interposer: stages 4 and 6 take 49% to 82% of a run. Simulation, GLB takes 6.3 s. Simulation, STEP takes 8.3 s. Simulation, STL takes 5.9 s. Simulation, OBJ takes 9.2 s. Visual, GLB takes 8.6 s. Visual, OBJ takes 11 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b0349b_dual-ipex-csi-interposer_dual-ipex-csi-interposer/stages.webp)
 

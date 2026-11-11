@@ -1,6 +1,6 @@
 # 1707. LimeSDR_Sony
 
-Board 1,707 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 16](../CorpusTestingPages/Corpus-Testing-16.md#1707-limesdr_sony).
+Board 1,707 of the 3,139 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 16](../CorpusTestingPages/Corpus-Testing-16.md#1707-limesdr_sony).
 
 ![LimeSDR_Sony: stages 4 and 6 take 50% to 81% of a run. Simulation, GLB takes 43 s. Simulation, STEP takes 51 s. Simulation, STL takes 43 s. Simulation, OBJ takes 64 s. Visual, GLB takes 64 s. Visual, OBJ takes 80 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b1707b_front-end-modules_LimeSDR-Sony/stages.webp)
 

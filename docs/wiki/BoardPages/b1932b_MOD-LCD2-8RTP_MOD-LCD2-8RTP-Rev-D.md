@@ -1,6 +1,6 @@
 # 1932. MOD-LCD2.8RTP_Rev_D
 
-Board 1,932 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 18](../CorpusTestingPages/Corpus-Testing-18.md#1932-mod-lcd28rtp_rev_d).
+Board 1,932 of the 3,139 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 18](../CorpusTestingPages/Corpus-Testing-18.md#1932-mod-lcd28rtp_rev_d).
 
 ![MOD-LCD2.8RTP_Rev_D: stages 4 and 6 take 50% to 76% of a run. Simulation, GLB takes 4.8 s. Simulation, STEP takes 6.6 s. Simulation, STL takes 4.9 s. Simulation, OBJ takes 7.2 s. Visual, GLB takes 7.5 s. Visual, OBJ takes 9.2 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b1932b_MOD-LCD2-8RTP_MOD-LCD2-8RTP-Rev-D/stages.webp)
 

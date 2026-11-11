@@ -1,6 +1,6 @@
 # 2287. everestCM4
 
-Board 2,287 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 22](../CorpusTestingPages/Corpus-Testing-22.md#2287-everestcm4).
+Board 2,287 of the 3,139 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 22](../CorpusTestingPages/Corpus-Testing-22.md#2287-everestcm4).
 
 ![everestCM4: stages 4 and 6 take 51% to 84% of a run. Simulation, GLB takes 52 s. Simulation, STEP takes 66 s. Simulation, STL takes 55 s. Simulation, OBJ takes 82 s. Visual, GLB takes 86 s. Visual, OBJ takes 2 min](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2287b_reference-hardware_everestCM4/stages.webp)
 

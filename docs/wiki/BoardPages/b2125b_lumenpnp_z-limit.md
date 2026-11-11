@@ -1,6 +1,6 @@
 # 2125. z-limit
 
-Board 2,125 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 20](../CorpusTestingPages/Corpus-Testing-20.md#2125-z-limit).
+Board 2,125 of the 3,139 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 20](../CorpusTestingPages/Corpus-Testing-20.md#2125-z-limit).
 
 ![z-limit: stages 4 and 6 take 39% to 75% of a run. Simulation, GLB takes 1.4 s. Simulation, STEP takes 2.4 s. Simulation, STL takes 1.5 s. Simulation, OBJ takes 2.1 s. Visual, GLB takes 2.3 s. Visual, OBJ takes 2.7 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2125b_lumenpnp_z-limit/stages.webp)
 

@@ -1,6 +1,6 @@
 # 795. mackerel-30-proto
 
-Board 795 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 8](../CorpusTestingPages/Corpus-Testing-08.md#795-mackerel-30-proto).
+Board 795 of the 3,139 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 8](../CorpusTestingPages/Corpus-Testing-08.md#795-mackerel-30-proto).
 
 ![mackerel-30-proto: stages 4 and 6 take 49% to 83% of a run. Simulation, GLB takes 73 s. Simulation, STEP takes 91 s. Simulation, STL takes 76 s. Simulation, OBJ takes 2 min. Visual, GLB takes 2 min. Visual, OBJ takes 2 min](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b0795b_mackerel-68k_mackerel-30-proto/stages.webp)
 

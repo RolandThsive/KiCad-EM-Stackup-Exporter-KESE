@@ -1,6 +1,6 @@
 # 2364. rectifier
 
-Board 2,364 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 22](../CorpusTestingPages/Corpus-Testing-22.md#2364-rectifier).
+Board 2,364 of the 3,139 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 22](../CorpusTestingPages/Corpus-Testing-22.md#2364-rectifier).
 
 ![rectifier: stages 4 and 6 take 57% to 82% of a run. Simulation, GLB takes 7.8 s. Simulation, STEP takes 9.5 s. Simulation, STL takes 7.6 s. Simulation, OBJ takes 10 s. Visual, GLB takes 9.2 s. Visual, OBJ takes 11 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2364b_stmbl_hw-kicad-rectifier2_rectifier/stages.webp)
 

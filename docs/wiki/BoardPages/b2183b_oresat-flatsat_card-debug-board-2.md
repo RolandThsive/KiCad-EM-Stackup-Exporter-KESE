@@ -1,6 +1,6 @@
 # 2183. card-debug-board-2
 
-Board 2,183 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 21](../CorpusTestingPages/Corpus-Testing-21.md#2183-card-debug-board-2).
+Board 2,183 of the 3,139 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 21](../CorpusTestingPages/Corpus-Testing-21.md#2183-card-debug-board-2).
 
 ![card-debug-board-2: stages 4 and 6 take 52% to 80% of a run. Simulation, GLB takes 5.2 s. Simulation, STEP takes 6.6 s. Simulation, STL takes 5.9 s. Simulation, OBJ takes 7.6 s. Visual, GLB takes 7.4 s. Visual, OBJ takes 8.5 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2183b_oresat-flatsat_card-debug-board-2/stages.webp)
 

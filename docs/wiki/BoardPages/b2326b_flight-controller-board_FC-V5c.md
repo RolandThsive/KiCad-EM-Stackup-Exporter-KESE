@@ -1,6 +1,6 @@
 # 2326. FC_V5c
 
-Board 2,326 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 22](../CorpusTestingPages/Corpus-Testing-22.md#2326-fc_v5c).
+Board 2,326 of the 3,139 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 22](../CorpusTestingPages/Corpus-Testing-22.md#2326-fc_v5c).
 
 ![FC_V5c: stages 4 and 6 take 50% to 83% of a run. Simulation, GLB takes 51 s. Simulation, STEP takes 63 s. Simulation, STL takes 48 s. Simulation, OBJ takes 73 s. Visual, GLB takes 75 s. Visual, OBJ takes 91 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2326b_flight-controller-board_FC-V5c/stages.webp)
 

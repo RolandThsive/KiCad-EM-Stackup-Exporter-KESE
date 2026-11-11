@@ -1,6 +1,6 @@
 # 1655. IIsiA7_Mini
 
-Board 1,655 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 16](../CorpusTestingPages/Corpus-Testing-16.md#1655-iisia7_mini).
+Board 1,655 of the 3,139 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 16](../CorpusTestingPages/Corpus-Testing-16.md#1655-iisia7_mini).
 
 ![IIsiA7_Mini: stages 4 and 6 take 51% to 84% of a run. Simulation, GLB takes 56 s. Simulation, STEP takes 70 s. Simulation, STL takes 57 s. Simulation, OBJ takes 89 s. Visual, GLB takes 86 s. Visual, OBJ takes 2 min](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b1655b_IIsiFPGA_IIsiA7-Mini/stages.webp)
 
