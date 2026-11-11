@@ -1,0 +1,52 @@
+{
+ "name": "SE-030",
+ "project": "garrettsworkshop/Warp-LC",
+ "path": "garrettsworkshop__Warp-LC/SE-030.kicad_pcb",
+ "license": "Garrett's Workshop's own terms, in LICENSE: \"You may elect to license this project under CC BY-NC-SA 4.0\", or under CC BY-SA 4.0 \"ONLY IF you remove all 'Garrett's Workshop' trademarks from the project\"",
+ "license_checked": "2026-11-08",
+ "rank": 594,
+ "score": 4480,
+ "level": "HIGH",
+ "complexity": {
+  "grade": 364,
+  "size": 289,
+  "features": 75
+ },
+ "features": [
+  "through_vias",
+  "slotted_holes",
+  "shaped_pads",
+  "curved_outline",
+  "stackup",
+  "dielectric_properties"
+ ],
+ "layers": 6,
+ "status": "pass",
+ "bad_design": null,
+ "chart_alt": "SE-030: stages 4 and 6 take 52% to 84% of a run. Simulation, GLB takes 61 s. Simulation, STEP takes 75 s. Simulation, STL takes 63 s. Simulation, OBJ takes 99 s. Visual, GLB takes 82 s. Visual, OBJ takes 97 s",
+ "rerun": {},
+ "tested": [
+  "2026-11-09",
+  "2026-11-09"
+ ],
+ "kese": [
+  "22fd70c"
+ ],
+ "kese_version": [
+  "2.4.0"
+ ],
+ "runs": [
+  [
+   "corpus",
+   "2026-11-09",
+   11000000000.0,
+   5400.0
+  ]
+ ],
+ "machine": {
+  "cpu": "Intel(R) Xeon(R) Processor @ 2.30GHz, 4 cores, 15 GB",
+  "geos": "3.14.1",
+  "python": "3.13.18",
+  "shapely": "2.2.0"
+ }
+}

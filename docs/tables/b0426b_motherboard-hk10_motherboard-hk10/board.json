@@ -1,0 +1,48 @@
+{
+ "name": "motherboard-hk10",
+ "project": "artemisamsx/motherboard-hk10",
+ "path": "artemisamsx__motherboard-hk10/motherboard-hk10.kicad_pcb",
+ "license": "TAPR-OHL-1.0 (TAPR Open Hardware License), in LICENSE.txt",
+ "license_checked": "2026-11-08",
+ "rank": 2517,
+ "score": 222,
+ "level": "SIMPLE",
+ "complexity": {
+  "grade": 88,
+  "size": 68,
+  "features": 20
+ },
+ "features": [
+  "shaped_pads",
+  "drill_offsets"
+ ],
+ "layers": 2,
+ "status": "pass",
+ "bad_design": null,
+ "chart_alt": "motherboard-hk10: stages 4 and 6 take 57% to 85% of a run. Simulation, GLB takes 60 s. Simulation, STEP takes 75 s. Simulation, STL takes 59 s. Simulation, OBJ takes 88 s. Visual, GLB takes 63 s. Visual, OBJ takes 78 s",
+ "rerun": {},
+ "tested": [
+  "2026-11-09",
+  "2026-11-09"
+ ],
+ "kese": [
+  "22fd70c"
+ ],
+ "kese_version": [
+  "2.4.0"
+ ],
+ "runs": [
+  [
+   "corpus",
+   "2026-11-09",
+   11000000000.0,
+   5400.0
+  ]
+ ],
+ "machine": {
+  "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz, 4 cores, 15 GB",
+  "geos": "3.14.1",
+  "python": "3.13.18",
+  "shapely": "2.2.0"
+ }
+}

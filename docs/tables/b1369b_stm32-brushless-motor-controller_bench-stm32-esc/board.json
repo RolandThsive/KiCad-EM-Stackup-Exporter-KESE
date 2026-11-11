@@ -1,0 +1,53 @@
+{
+ "name": "bench_stm32_esc",
+ "project": "jamesgossy/stm32-brushless-motor-controller",
+ "path": "jamesgossy__stm32-brushless-motor-controller/controller_hardware/bench_stm32_esc.kicad_pcb",
+ "license": "As README.md states it: \"MIT licensed. Copyright © 2026 James Goss.\"",
+ "license_checked": "2026-11-08",
+ "rank": 824,
+ "score": 3212,
+ "level": "HIGH",
+ "complexity": {
+  "grade": 366,
+  "size": 266,
+  "features": 100
+ },
+ "features": [
+  "through_vias",
+  "slotted_holes",
+  "custom_pads",
+  "shaped_pads",
+  "filled_zones",
+  "stackup",
+  "dielectric_properties"
+ ],
+ "layers": 4,
+ "status": "pass",
+ "bad_design": null,
+ "chart_alt": "bench_stm32_esc: stages 4 and 6 take 50% to 83% of a run. Simulation, GLB takes 19 s. Simulation, STEP takes 23 s. Simulation, STL takes 20 s. Simulation, OBJ takes 29 s. Visual, GLB takes 29 s. Visual, OBJ takes 35 s",
+ "rerun": {},
+ "tested": [
+  "2026-11-09",
+  "2026-11-09"
+ ],
+ "kese": [
+  "22fd70c"
+ ],
+ "kese_version": [
+  "2.4.0"
+ ],
+ "runs": [
+  [
+   "corpus",
+   "2026-11-09",
+   11000000000.0,
+   5400.0
+  ]
+ ],
+ "machine": {
+  "cpu": "Intel(R) Xeon(R) Processor @ 2.30GHz, 4 cores, 15 GB",
+  "geos": "3.14.1",
+  "python": "3.13.18",
+  "shapely": "2.2.0"
+ }
+}

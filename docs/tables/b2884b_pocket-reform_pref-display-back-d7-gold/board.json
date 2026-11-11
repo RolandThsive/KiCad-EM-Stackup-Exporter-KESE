@@ -1,0 +1,51 @@
+{
+ "name": "pref-display-back-d7-gold",
+ "project": "torlye/pocket-reform",
+ "path": "torlye__pocket-reform/case-plate-pcbs/pref-display-back-d7-gold.kicad_pcb",
+ "license": "CERN-OHL-S-2.0 (CERN Open Hardware Licence v2, Strongly Reciprocal), in LICENSE",
+ "license_checked": "2026-11-08",
+ "rank": 3104,
+ "score": 0,
+ "level": "SIMPLE",
+ "complexity": {
+  "grade": 82,
+  "size": 17,
+  "features": 65
+ },
+ "features": [
+  "filled_zones",
+  "copper_graphics",
+  "stackup",
+  "dielectric_properties",
+  "mask_silk_colours"
+ ],
+ "layers": 2,
+ "status": "pass",
+ "bad_design": null,
+ "chart_alt": "Reading, start-up and exit take 41% to 56% of a run. Simulation, GLB takes 0.4 s. Simulation, STEP takes 0.4 s. Simulation, STL takes 0.4 s. Simulation, OBJ takes 0.4 s. Visual, GLB takes 0.5 s. Visual, OBJ takes 0.5 s",
+ "rerun": {},
+ "tested": [
+  "2026-11-09",
+  "2026-11-09"
+ ],
+ "kese": [
+  "22fd70c"
+ ],
+ "kese_version": [
+  "2.4.0"
+ ],
+ "runs": [
+  [
+   "corpus",
+   "2026-11-09",
+   11000000000.0,
+   5400.0
+  ]
+ ],
+ "machine": {
+  "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz, 4 cores, 15 GB",
+  "geos": "3.14.1",
+  "python": "3.13.18",
+  "shapely": "2.2.0"
+ }
+}

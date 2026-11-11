@@ -1,0 +1,50 @@
+{
+ "name": "STMP157-OLinuXino-LIME2_Rev_B1",
+ "project": "OLIMEX/OLINUXINO",
+ "path": "OLIMEX__OLINUXINO/HARDWARE/STMP157-OLinuXino-LIME2/1. Latest hardware revision/STMP157-OLinuXino-LIME2_Rev_B1/STMP157-OLinuXino-LIME2_Rev_B1.kicad_pcb",
+ "license": "As README.md states it: \"Hardware The OLinuXino family of Single Board Computers (SBCs) is completely open-source and is licensed under permissive Creative Commons Attribution-Share Alike 3.0 United States License (CC-BY-SA 3.0 US).\"",
+ "license_checked": "2026-11-08",
+ "rank": 94,
+ "score": 17808,
+ "level": "VERY HIGH",
+ "complexity": {
+  "grade": 394,
+  "size": 339,
+  "features": 55
+ },
+ "features": [
+  "through_vias",
+  "slotted_holes",
+  "filled_zones",
+  "copper_text"
+ ],
+ "layers": 8,
+ "status": "pass",
+ "bad_design": null,
+ "chart_alt": "Stages 4 and 6 take 47% to 83% of a run. Simulation, GLB takes 2 min. Simulation, STEP takes 2 min. Simulation, STL takes 2 min. Simulation, OBJ takes 3 min. Visual, GLB takes 3 min. Visual, OBJ takes 3 min",
+ "rerun": {},
+ "tested": [
+  "2026-11-09",
+  "2026-11-09"
+ ],
+ "kese": [
+  "22fd70c"
+ ],
+ "kese_version": [
+  "2.4.0"
+ ],
+ "runs": [
+  [
+   "corpus",
+   "2026-11-09",
+   11000000000.0,
+   5400.0
+  ]
+ ],
+ "machine": {
+  "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz, 4 cores, 15 GB",
+  "geos": "3.14.1",
+  "python": "3.13.18",
+  "shapely": "2.2.0"
+ }
+}

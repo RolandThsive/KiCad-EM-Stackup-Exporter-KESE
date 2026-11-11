@@ -1,6 +1,6 @@
 # 117. Board 2x12 W22.86
 
-Board 117 of the 3,122 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 2](../CorpusTestingPages/Corpus-Testing-02.md#117-board-2x12-w2286).
+Board 117 of the 3,123 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 2](../CorpusTestingPages/Corpus-Testing-02.md#117-board-2x12-w2286).
 
 ![Board 2x12 W22.86: stages 4 and 6 take 46% to 77% of a run. Simulation, GLB takes 1.9 s. Simulation, STEP takes 2.7 s. Simulation, STL takes 1.7 s. Simulation, OBJ takes 2.4 s. Visual, GLB takes 2.4 s. Visual, OBJ takes 2.7 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b0117b_658-Computer_Kicad-Boards-Blank-Board-2x12-W22-86_Board-2x12-W22-86/stages.webp)
 
