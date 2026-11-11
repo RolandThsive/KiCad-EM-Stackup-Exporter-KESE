@@ -1,0 +1,54 @@
+{
+ "name": "MIPI-HDMI_Rev_B",
+ "project": "OLIMEX/MIPI-HDMI",
+ "path": "OLIMEX__MIPI-HDMI/HARDWARE/MIPI-HDMI-Rev.B/MIPI-HDMI_Rev_B.kicad_pcb",
+ "license": "As README.md states it: \"Hardware is released under CERN Open Hardware Licence Version 2 - Strongly Reciprocal, all silkscreen credits to Olimex should remain;; Documentation is released under CC BY-SA 4.0\"",
+ "license_checked": "2026-11-08",
+ "rank": 1284,
+ "score": 1726,
+ "level": "MEDIUM",
+ "complexity": {
+  "grade": 342,
+  "size": 237,
+  "features": 105
+ },
+ "features": [
+  "through_vias",
+  "slotted_holes",
+  "filled_zones",
+  "copper_text",
+  "knockout_text",
+  "stackup",
+  "dielectric_properties",
+  "mask_silk_colours"
+ ],
+ "layers": 4,
+ "status": "pass",
+ "bad_design": null,
+ "chart_alt": "MIPI-HDMI_Rev_B: stages 4 and 6 take 51% to 81% of a run. Simulation, GLB takes 7.5 s. Simulation, STEP takes 8.9 s. Simulation, STL takes 7.5 s. Simulation, OBJ takes 11 s. Visual, GLB takes 12 s. Visual, OBJ takes 14 s",
+ "rerun": {},
+ "tested": [
+  "2026-11-09",
+  "2026-11-09"
+ ],
+ "kese": [
+  "22fd70c"
+ ],
+ "kese_version": [
+  "2.4.0"
+ ],
+ "runs": [
+  [
+   "corpus",
+   "2026-11-09",
+   11000000000.0,
+   5400.0
+  ]
+ ],
+ "machine": {
+  "cpu": "Intel(R) Xeon(R) Processor @ 2.30GHz, 4 cores, 15 GB",
+  "geos": "3.14.1",
+  "python": "3.13.18",
+  "shapely": "2.2.0"
+ }
+}

@@ -1,0 +1,54 @@
+{
+ "name": "LC_RFE-RevA1",
+ "project": "myriadrf/lc-rfe",
+ "path": "myriadrf__lc-rfe/revisions/LC_RFE-RevA1/LC_RFE-RevA1.kicad_pcb",
+ "license": "SHL-2.1 (Solderpad Hardware License v2.1), in LICENSE",
+ "license_checked": "2026-11-08",
+ "rank": 434,
+ "score": 6062,
+ "level": "HIGH",
+ "complexity": {
+  "grade": 399,
+  "size": 284,
+  "features": 115
+ },
+ "features": [
+  "through_vias",
+  "shaped_pads",
+  "arc_tracks",
+  "filled_zones",
+  "curved_outline",
+  "truetype_text",
+  "stackup",
+  "dielectric_properties"
+ ],
+ "layers": 4,
+ "status": "pass",
+ "bad_design": null,
+ "chart_alt": "LC_RFE-RevA1: stages 4 and 6 take 53% to 82% of a run. Simulation, GLB takes 42 s. Simulation, STEP takes 51 s. Simulation, STL takes 45 s. Simulation, OBJ takes 66 s. Visual, GLB takes 62 s. Visual, OBJ takes 72 s",
+ "rerun": {},
+ "tested": [
+  "2026-11-09",
+  "2026-11-09"
+ ],
+ "kese": [
+  "22fd70c"
+ ],
+ "kese_version": [
+  "2.4.0"
+ ],
+ "runs": [
+  [
+   "corpus",
+   "2026-11-09",
+   11000000000.0,
+   5400.0
+  ]
+ ],
+ "machine": {
+  "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz, 4 cores, 15 GB",
+  "geos": "3.14.1",
+  "python": "3.13.18",
+  "shapely": "2.2.0"
+ }
+}

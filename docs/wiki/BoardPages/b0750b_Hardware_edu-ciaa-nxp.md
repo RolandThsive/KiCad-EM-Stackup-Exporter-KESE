@@ -1,6 +1,6 @@
 # 750. edu-ciaa-nxp
 
-Board 750 of the 3,119 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 7](../CorpusTestingPages/Corpus-Testing-07.md#750-edu-ciaa-nxp).
+Board 750 of the 3,120 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 7](../CorpusTestingPages/Corpus-Testing-07.md#750-edu-ciaa-nxp).
 
 ![edu-ciaa-nxp: stages 4 and 6 take 71% to 92% of a run. Simulation, GLB takes 77 s. Simulation, STEP takes 85 s. Simulation, STL takes 75 s. Simulation, OBJ takes 89 s. Visual, GLB takes 61 s. Visual, OBJ takes 71 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b0750b_Hardware_edu-ciaa-nxp/stages.webp)
 

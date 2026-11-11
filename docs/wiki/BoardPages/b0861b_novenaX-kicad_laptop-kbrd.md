@@ -1,6 +1,6 @@
 # 861. laptop_kbrd
 
-Board 861 of the 3,119 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 8](../CorpusTestingPages/Corpus-Testing-08.md#861-laptop_kbrd).
+Board 861 of the 3,120 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 8](../CorpusTestingPages/Corpus-Testing-08.md#861-laptop_kbrd).
 
 ![laptop_kbrd: reading, start-up and exit take 40% to 48% of a run. Simulation, GLB takes 1.8 s. Simulation, STEP takes 1.6 s. Simulation, STL takes 1.6 s. Simulation, OBJ takes 1.8 s. Visual, GLB takes 1.6 s. Visual, OBJ takes 1.7 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b0861b_novenaX-kicad_laptop-kbrd/stages.webp)
 

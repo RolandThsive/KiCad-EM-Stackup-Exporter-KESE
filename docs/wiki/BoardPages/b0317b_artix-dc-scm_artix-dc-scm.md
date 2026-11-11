@@ -1,6 +1,6 @@
 # 317. artix-dc-scm
 
-Board 317 of the 3,119 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 3](../CorpusTestingPages/Corpus-Testing-03.md#317-artix-dc-scm).
+Board 317 of the 3,120 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 3](../CorpusTestingPages/Corpus-Testing-03.md#317-artix-dc-scm).
 
 ![artix-dc-scm: stages 4 and 6 take 40% to 76% of a run. Simulation, GLB takes 2 min. Simulation, STEP takes 3 min. Simulation, STL takes 2 min. Simulation, OBJ takes 4 min. Visual, GLB takes 3 min. Visual, OBJ takes 4 min](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b0317b_artix-dc-scm_artix-dc-scm/stages.webp)
 

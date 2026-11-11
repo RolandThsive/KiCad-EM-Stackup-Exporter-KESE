@@ -1,0 +1,47 @@
+{
+ "name": "splitter_breakout",
+ "project": "loxodes/vna",
+ "path": "loxodes__vna/breakouts/splitter_breakout/splitter_breakout.kicad_pcb",
+ "license": "As README.md states it: \"Unless otherwise noted, all work is under a MIT license.\"",
+ "license_checked": "2026-11-08",
+ "rank": 2947,
+ "score": 8,
+ "level": "SIMPLE",
+ "complexity": {
+  "grade": 115,
+  "size": 95,
+  "features": 20
+ },
+ "features": [
+  "filled_zones"
+ ],
+ "layers": 4,
+ "status": "pass",
+ "bad_design": null,
+ "chart_alt": "splitter_breakout: stages 4 and 6 take 49% to 82% of a run. Simulation, GLB takes 2.2 s. Simulation, STEP takes 3.0 s. Simulation, STL takes 2.1 s. Simulation, OBJ takes 3.1 s. Visual, GLB takes 3.0 s. Visual, OBJ takes 3.4 s",
+ "rerun": {},
+ "tested": [
+  "2026-11-09",
+  "2026-11-09"
+ ],
+ "kese": [
+  "22fd70c"
+ ],
+ "kese_version": [
+  "2.4.0"
+ ],
+ "runs": [
+  [
+   "corpus",
+   "2026-11-09",
+   11000000000.0,
+   5400.0
+  ]
+ ],
+ "machine": {
+  "cpu": "Intel(R) Xeon(R) Processor @ 2.30GHz, 4 cores, 15 GB",
+  "geos": "3.14.1",
+  "python": "3.13.18",
+  "shapely": "2.2.0"
+ }
+}

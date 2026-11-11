@@ -1,6 +1,6 @@
 # 932. icehat
 
-Board 932 of the 3,119 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 9](../CorpusTestingPages/Corpus-Testing-09.md#932-icehat).
+Board 932 of the 3,120 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 9](../CorpusTestingPages/Corpus-Testing-09.md#932-icehat).
 
 ![icehat: stages 4 and 6 take 49% to 80% of a run. Simulation, GLB takes 6.9 s. Simulation, STEP takes 8.5 s. Simulation, STL takes 6.3 s. Simulation, OBJ takes 9.9 s. Visual, GLB takes 9.8 s. Visual, OBJ takes 12 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b0932b_icehat_icehat/stages.webp)
 
@@ -45,4 +45,4 @@ Board 932 of the 3,119 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [931. ice-prog-adapt](b0931b_ice-dongle_ice-prog-adapt.md) | [933. rv1106](b0933b_raven1106_pcb-v1-0_rv1106.md) |
+| [931. ice-prog-adapt](b0931b_ice-dongle_ice-prog-adapt.md) | [933. board_presignal](b0933b_discrete6502_board-presignal.md) |

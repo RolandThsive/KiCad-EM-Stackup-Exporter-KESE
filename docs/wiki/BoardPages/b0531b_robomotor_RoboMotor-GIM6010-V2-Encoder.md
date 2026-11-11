@@ -1,6 +1,6 @@
 # 531. RoboMotor-GIM6010-V2-Encoder
 
-Board 531 of the 3,119 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 5](../CorpusTestingPages/Corpus-Testing-05.md#531-robomotor-gim6010-v2-encoder).
+Board 531 of the 3,120 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 5](../CorpusTestingPages/Corpus-Testing-05.md#531-robomotor-gim6010-v2-encoder).
 
 ![RoboMotor-GIM6010-V2-Encoder: stages 4 and 6 take 49% to 82% of a run. Simulation, GLB takes 2.8 s. Simulation, STEP takes 4.1 s. Simulation, STL takes 3.0 s. Simulation, OBJ takes 4.1 s. Visual, GLB takes 5.2 s. Visual, OBJ takes 5.8 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b0531b_robomotor_RoboMotor-GIM6010-V2-Encoder/stages.webp)
 

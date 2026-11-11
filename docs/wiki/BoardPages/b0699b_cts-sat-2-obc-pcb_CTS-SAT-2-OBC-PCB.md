@@ -1,6 +1,6 @@
 # 699. CTS-SAT-2-OBC-PCB
 
-Board 699 of the 3,119 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 7](../CorpusTestingPages/Corpus-Testing-07.md#699-cts-sat-2-obc-pcb).
+Board 699 of the 3,120 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 7](../CorpusTestingPages/Corpus-Testing-07.md#699-cts-sat-2-obc-pcb).
 
 ![CTS-SAT-2-OBC-PCB: stages 4 and 6 take 52% to 83% of a run. Simulation, GLB takes 42 s. Simulation, STEP takes 53 s. Simulation, STL takes 43 s. Simulation, OBJ takes 65 s. Visual, GLB takes 66 s. Visual, OBJ takes 79 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b0699b_cts-sat-2-obc-pcb_CTS-SAT-2-OBC-PCB/stages.webp)
 
