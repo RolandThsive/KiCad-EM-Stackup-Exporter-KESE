@@ -1,6 +1,6 @@
 # 1497. adc32xx_syzygy
 
-Board 1,497 of the 3,124 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 14](../CorpusTestingPages/Corpus-Testing-14.md#1497-adc32xx_syzygy).
+Board 1,497 of the 3,125 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 14](../CorpusTestingPages/Corpus-Testing-14.md#1497-adc32xx_syzygy).
 
 ![adc32xx_syzygy: stages 4 and 6 take 53% to 85% of a run. Simulation, GLB takes 14 s. Simulation, STEP takes 17 s. Simulation, STL takes 13 s. Simulation, OBJ takes 21 s. Visual, GLB takes 20 s. Visual, OBJ takes 25 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b1497b_vna_adc32xx-syzygy/stages.webp)
 

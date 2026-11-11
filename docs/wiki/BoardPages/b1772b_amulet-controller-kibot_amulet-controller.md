@@ -1,6 +1,6 @@
 # 1772. amulet_controller
 
-Board 1,772 of the 3,124 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 17](../CorpusTestingPages/Corpus-Testing-17.md#1772-amulet_controller).
+Board 1,772 of the 3,125 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 17](../CorpusTestingPages/Corpus-Testing-17.md#1772-amulet_controller).
 
 ![amulet_controller: stages 4 and 6 take 50% to 88% of a run. Simulation, GLB takes 62 s. Simulation, STEP takes 72 s. Simulation, STL takes 63 s. Simulation, OBJ takes 97 s. Visual, GLB takes 2 min. Visual, OBJ takes 2 min](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b1772b_amulet-controller-kibot_amulet-controller/stages.webp)
 

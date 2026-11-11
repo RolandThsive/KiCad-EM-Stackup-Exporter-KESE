@@ -1,6 +1,6 @@
 # 1788. AgonLight2_Rev_B
 
-Board 1,788 of the 3,124 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 17](../CorpusTestingPages/Corpus-Testing-17.md#1788-agonlight2_rev_b).
+Board 1,788 of the 3,125 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 17](../CorpusTestingPages/Corpus-Testing-17.md#1788-agonlight2_rev_b).
 
 ![AgonLight2_Rev_B: stages 4 and 6 take 54% to 84% of a run. Simulation, GLB takes 46 s. Simulation, STEP takes 56 s. Simulation, STL takes 46 s. Simulation, OBJ takes 68 s. Visual, GLB takes 70 s. Visual, OBJ takes 84 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b1788b_AgonLight2_AgonLight2-Rev-B/stages.webp)
 

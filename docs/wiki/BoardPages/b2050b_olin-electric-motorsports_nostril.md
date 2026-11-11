@@ -1,6 +1,6 @@
 # 2050. nostril
 
-Board 2,050 of the 3,124 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 19](../CorpusTestingPages/Corpus-Testing-19.md#2050-nostril).
+Board 2,050 of the 3,125 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 19](../CorpusTestingPages/Corpus-Testing-19.md#2050-nostril).
 
 ![nostril: stages 4 and 6 take 57% to 85% of a run. Simulation, GLB takes 18 s. Simulation, STEP takes 22 s. Simulation, STL takes 18 s. Simulation, OBJ takes 25 s. Visual, GLB takes 27 s. Visual, OBJ takes 33 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2050b_olin-electric-motorsports_nostril/stages.webp)
 

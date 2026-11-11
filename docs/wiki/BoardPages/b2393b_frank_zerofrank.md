@@ -1,6 +1,6 @@
 # 2393. zerofrank
 
-Board 2,393 of the 3,124 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 23](../CorpusTestingPages/Corpus-Testing-23.md#2393-zerofrank).
+Board 2,393 of the 3,125 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 23](../CorpusTestingPages/Corpus-Testing-23.md#2393-zerofrank).
 
 ![zerofrank: stages 4 and 6 take 47% to 84% of a run. Simulation, GLB takes 12 s. Simulation, STEP takes 17 s. Simulation, STL takes 12 s. Simulation, OBJ takes 19 s. Visual, GLB takes 20 s. Visual, OBJ takes 25 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2393b_frank_zerofrank/stages.webp)
 
@@ -45,4 +45,4 @@ Board 2,393 of the 3,124 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2392. xt8086_alpha](b2392b_frank_xt8086-alpha.md) | [2394. PicoEVB](b2394b_PicoEVB_PicoEVB.md) |
+| [2392. xt8086_alpha](b2392b_frank_xt8086-alpha.md) | [2394. amiga2000](b2394b_kicad-amiga2000_amiga2000.md) |

@@ -1,6 +1,6 @@
 # 924. EEZ DIB B3C
 
-Board 924 of the 3,124 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 9](../CorpusTestingPages/Corpus-Testing-09.md#924-eez-dib-b3c).
+Board 924 of the 3,125 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 9](../CorpusTestingPages/Corpus-Testing-09.md#924-eez-dib-b3c).
 
 ![EEZ DIB B3C: stages 4 and 6 take 57% to 86% of a run. Simulation, GLB takes 21 s. Simulation, STEP takes 25 s. Simulation, STL takes 21 s. Simulation, OBJ takes 30 s. Visual, GLB takes 28 s. Visual, OBJ takes 34 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b0924b_modular-psu_EEZ-DIB-B3C/stages.webp)
 

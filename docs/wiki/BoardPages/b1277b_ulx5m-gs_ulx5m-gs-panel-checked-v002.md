@@ -1,6 +1,6 @@
 # 1277. ulx5m-gs_panel_checked_v002
 
-Board 1,277 of the 3,124 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 12](../CorpusTestingPages/Corpus-Testing-12.md#1277-ulx5m-gs_panel_checked_v002).
+Board 1,277 of the 3,125 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 12](../CorpusTestingPages/Corpus-Testing-12.md#1277-ulx5m-gs_panel_checked_v002).
 
 ![ulx5m-gs_panel_checked_v002: stages 4 and 6 take 46% to 86% of a run. Simulation, GLB takes 4 min. Simulation, STEP takes 4 min. Simulation, STL takes 4 min. Simulation, OBJ takes 8 min. Visual, GLB takes 7 min. Visual, OBJ takes 8 min](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b1277b_ulx5m-gs_ulx5m-gs-panel-checked-v002/stages.webp)
 

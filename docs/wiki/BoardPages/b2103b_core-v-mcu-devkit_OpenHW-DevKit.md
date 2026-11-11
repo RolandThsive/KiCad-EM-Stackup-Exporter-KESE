@@ -1,6 +1,6 @@
 # 2103. OpenHW DevKit
 
-Board 2,103 of the 3,124 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 20](../CorpusTestingPages/Corpus-Testing-20.md#2103-openhw-devkit).
+Board 2,103 of the 3,125 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 20](../CorpusTestingPages/Corpus-Testing-20.md#2103-openhw-devkit).
 
 ![OpenHW DevKit: stages 4 and 6 take 56% to 83% of a run. Simulation, GLB takes 39 s. Simulation, STEP takes 48 s. Simulation, STL takes 39 s. Simulation, OBJ takes 55 s. Visual, GLB takes 59 s. Visual, OBJ takes 70 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2103b_core-v-mcu-devkit_OpenHW-DevKit/stages.webp)
 

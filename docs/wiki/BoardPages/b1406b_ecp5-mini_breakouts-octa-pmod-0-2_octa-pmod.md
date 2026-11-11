@@ -1,6 +1,6 @@
 # 1406. octa-pmod
 
-Board 1,406 of the 3,124 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 14](../CorpusTestingPages/Corpus-Testing-14.md#1406-octa-pmod).
+Board 1,406 of the 3,125 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 14](../CorpusTestingPages/Corpus-Testing-14.md#1406-octa-pmod).
 
 ![octa-pmod: stages 4 and 6 take 56% to 85% of a run. Simulation, GLB takes 9.5 s. Simulation, STEP takes 11 s. Simulation, STL takes 9.4 s. Simulation, OBJ takes 13 s. Visual, GLB takes 12 s. Visual, OBJ takes 14 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b1406b_ecp5-mini_breakouts-octa-pmod-0-2_octa-pmod/stages.webp)
 

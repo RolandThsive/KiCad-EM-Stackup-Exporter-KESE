@@ -1,6 +1,6 @@
 # 1426. Lily58_Pro_TOP
 
-Board 1,426 of the 3,124 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 14](../CorpusTestingPages/Corpus-Testing-14.md#1426-lily58_pro_top).
+Board 1,426 of the 3,125 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 14](../CorpusTestingPages/Corpus-Testing-14.md#1426-lily58_pro_top).
 
 ![Lily58_Pro_TOP: reading, start-up and exit take 66% to 76% of a run. Simulation, GLB takes 0.3 s. Simulation, STEP takes 0.3 s. Simulation, STL takes 0.3 s. Simulation, OBJ takes 0.3 s. Visual, GLB takes 0.3 s. Visual, OBJ takes 0.3 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b1426b_Lily58_Lily58-Pro-TOP/stages.webp)
 

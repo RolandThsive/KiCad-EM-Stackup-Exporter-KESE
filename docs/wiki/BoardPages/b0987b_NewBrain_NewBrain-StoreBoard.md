@@ -1,6 +1,6 @@
 # 987. NewBrain StoreBoard
 
-Board 987 of the 3,124 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 10](../CorpusTestingPages/Corpus-Testing-10.md#987-newbrain-storeboard).
+Board 987 of the 3,125 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 10](../CorpusTestingPages/Corpus-Testing-10.md#987-newbrain-storeboard).
 
 ![NewBrain StoreBoard: stages 4 and 6 take 60% to 86% of a run. Simulation, GLB takes 33 s. Simulation, STEP takes 40 s. Simulation, STL takes 34 s. Simulation, OBJ takes 47 s. Visual, GLB takes 37 s. Visual, OBJ takes 44 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b0987b_NewBrain_NewBrain-StoreBoard/stages.webp)
 

@@ -1,6 +1,6 @@
 # 1935. Neo6502PC-PWR_Rev_B
 
-Board 1,935 of the 3,124 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 18](../CorpusTestingPages/Corpus-Testing-18.md#1935-neo6502pc-pwr_rev_b).
+Board 1,935 of the 3,125 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 18](../CorpusTestingPages/Corpus-Testing-18.md#1935-neo6502pc-pwr_rev_b).
 
 ![Neo6502PC-PWR_Rev_B: stages 4 and 6 take 50% to 80% of a run. Simulation, GLB takes 11 s. Simulation, STEP takes 14 s. Simulation, STL takes 11 s. Simulation, OBJ takes 17 s. Visual, GLB takes 17 s. Visual, OBJ takes 22 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b1935b_Neo6502pc_Neo6502PC-PWR-Rev-B/stages.webp)
 

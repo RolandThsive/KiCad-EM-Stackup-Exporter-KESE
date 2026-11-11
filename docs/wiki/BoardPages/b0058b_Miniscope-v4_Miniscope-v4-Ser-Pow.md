@@ -1,6 +1,6 @@
 # 58. Miniscope-v4-Ser-Pow
 
-Board 58 of the 3,124 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 1](../CorpusTestingPages/Corpus-Testing-01.md#58-miniscope-v4-ser-pow).
+Board 58 of the 3,125 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 1](../CorpusTestingPages/Corpus-Testing-01.md#58-miniscope-v4-ser-pow).
 
 ![Miniscope-v4-Ser-Pow: stages 4 and 6 take 45% to 79% of a run. Simulation, GLB takes 4.9 s. Simulation, STEP takes 6.0 s. Simulation, STL takes 4.6 s. Simulation, OBJ takes 6.8 s. Visual, GLB takes 6.6 s. Visual, OBJ takes 7.8 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b0058b_Miniscope-v4_Miniscope-v4-Ser-Pow/stages.webp)
 

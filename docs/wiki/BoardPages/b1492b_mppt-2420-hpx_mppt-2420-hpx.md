@@ -1,6 +1,6 @@
 # 1492. mppt-2420-hpx
 
-Board 1,492 of the 3,124 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 14](../CorpusTestingPages/Corpus-Testing-14.md#1492-mppt-2420-hpx).
+Board 1,492 of the 3,125 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 14](../CorpusTestingPages/Corpus-Testing-14.md#1492-mppt-2420-hpx).
 
 ![mppt-2420-hpx: stages 4 and 6 take 49% to 81% of a run. Simulation, GLB takes 18 s. Simulation, STEP takes 23 s. Simulation, STL takes 18 s. Simulation, OBJ takes 27 s. Visual, GLB takes 29 s. Visual, OBJ takes 34 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b1492b_mppt-2420-hpx_mppt-2420-hpx/stages.webp)
 

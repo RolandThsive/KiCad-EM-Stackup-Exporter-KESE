@@ -1,6 +1,6 @@
 # 2301. battery_board_v3b
 
-Board 2,301 of the 3,124 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 22](../CorpusTestingPages/Corpus-Testing-22.md#2301-battery_board_v3b).
+Board 2,301 of the 3,125 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 22](../CorpusTestingPages/Corpus-Testing-22.md#2301-battery_board_v3b).
 
 ![battery_board_v3b: stages 4 and 6 take 57% to 84% of a run. Simulation, GLB takes 39 s. Simulation, STEP takes 50 s. Simulation, STL takes 41 s. Simulation, OBJ takes 55 s. Visual, GLB takes 54 s. Visual, OBJ takes 68 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2301b_battery-board_battery-board-v3b/stages.webp)
 

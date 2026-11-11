@@ -1,6 +1,6 @@
 # 1482. BPS-Minion
 
-Board 1,482 of the 3,124 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 14](../CorpusTestingPages/Corpus-Testing-14.md#1482-bps-minion).
+Board 1,482 of the 3,125 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 14](../CorpusTestingPages/Corpus-Testing-14.md#1482-bps-minion).
 
 ![BPS-Minion: stages 4 and 6 take 57% to 85% of a run. Simulation, GLB takes 28 s. Simulation, STEP takes 36 s. Simulation, STL takes 28 s. Simulation, OBJ takes 42 s. Visual, GLB takes 42 s. Visual, OBJ takes 51 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b1482b_bps-voltagepcb_BPS-Minion/stages.webp)
 

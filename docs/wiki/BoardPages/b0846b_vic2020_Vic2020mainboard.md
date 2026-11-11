@@ -1,6 +1,6 @@
 # 846. Vic2020mainboard
 
-Board 846 of the 3,124 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 8](../CorpusTestingPages/Corpus-Testing-08.md#846-vic2020mainboard).
+Board 846 of the 3,125 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 8](../CorpusTestingPages/Corpus-Testing-08.md#846-vic2020mainboard).
 
 ![Vic2020mainboard: stages 4 and 6 take 55% to 87% of a run. Simulation, GLB takes 85 s. Simulation, STEP takes 2 min. Simulation, STL takes 90 s. Simulation, OBJ takes 2 min. Visual, GLB takes 2 min. Visual, OBJ takes 2 min](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b0846b_vic2020_Vic2020mainboard/stages.webp)
 

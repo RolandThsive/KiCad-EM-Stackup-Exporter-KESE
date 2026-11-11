@@ -1,6 +1,6 @@
 # 2043. J1772_V2
 
-Board 2,043 of the 3,124 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 19](../CorpusTestingPages/Corpus-Testing-19.md#2043-j1772_v2).
+Board 2,043 of the 3,125 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 19](../CorpusTestingPages/Corpus-Testing-19.md#2043-j1772_v2).
 
 ![J1772_V2: stages 4 and 6 take 51% to 81% of a run. Simulation, GLB takes 5.2 s. Simulation, STEP takes 6.8 s. Simulation, STL takes 5.1 s. Simulation, OBJ takes 7.3 s. Visual, GLB takes 6.6 s. Visual, OBJ takes 9.0 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2043b_olin-electric-motorsports_J1772-V2/stages.webp)
 

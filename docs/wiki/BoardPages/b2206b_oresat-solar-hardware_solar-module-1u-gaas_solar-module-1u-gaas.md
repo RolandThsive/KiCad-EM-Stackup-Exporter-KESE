@@ -1,6 +1,6 @@
 # 2206. solar-module-1u-gaas
 
-Board 2,206 of the 3,124 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 21](../CorpusTestingPages/Corpus-Testing-21.md#2206-solar-module-1u-gaas).
+Board 2,206 of the 3,125 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 21](../CorpusTestingPages/Corpus-Testing-21.md#2206-solar-module-1u-gaas).
 
 ![solar-module-1u-gaas: stages 4 and 6 take 62% to 86% of a run. Simulation, GLB takes 34 s. Simulation, STEP takes 42 s. Simulation, STL takes 36 s. Simulation, OBJ takes 46 s. Visual, GLB takes 45 s. Visual, OBJ takes 54 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2206b_oresat-solar-hardware_solar-module-1u-gaas_solar-module-1u-gaas/stages.webp)
 

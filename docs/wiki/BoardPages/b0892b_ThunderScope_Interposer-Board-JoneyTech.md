@@ -1,6 +1,6 @@
 # 892. Interposer_Board_JoneyTech
 
-Board 892 of the 3,124 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 9](../CorpusTestingPages/Corpus-Testing-09.md#892-interposer_board_joneytech).
+Board 892 of the 3,125 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 9](../CorpusTestingPages/Corpus-Testing-09.md#892-interposer_board_joneytech).
 
 ![Interposer_Board_JoneyTech: stages 4 and 6 take 53% to 80% of a run. Simulation, GLB takes 34 s. Simulation, STEP takes 41 s. Simulation, STL takes 37 s. Simulation, OBJ takes 53 s. Visual, GLB takes 39 s. Visual, OBJ takes 47 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b0892b_ThunderScope_Interposer-Board-JoneyTech/stages.webp)
 

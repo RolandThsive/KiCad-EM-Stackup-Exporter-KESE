@@ -1,0 +1,48 @@
+{
+ "name": "18650_pcb",
+ "project": "ZeroPhone/ZeroPhone-PCBs",
+ "path": "ZeroPhone__ZeroPhone-PCBs/18650_pcb/18650_pcb.kicad_pcb",
+ "license": "GPL-3.0 (GNU GPL v3.0)",
+ "license_checked": "2026-11-08",
+ "rank": 2931,
+ "score": 13,
+ "level": "SIMPLE",
+ "complexity": {
+  "grade": 118,
+  "size": 88,
+  "features": 30
+ },
+ "features": [
+  "filled_zones",
+  "curved_outline"
+ ],
+ "layers": 2,
+ "status": "pass",
+ "bad_design": null,
+ "chart_alt": "18650_pcb: stages 4 and 6 take 40% to 71% of a run. Simulation, GLB takes 2.5 s. Simulation, STEP takes 3.8 s. Simulation, STL takes 2.4 s. Simulation, OBJ takes 3.2 s. Visual, GLB takes 3.4 s. Visual, OBJ takes 4.2 s",
+ "rerun": {},
+ "tested": [
+  "2026-11-10",
+  "2026-11-10"
+ ],
+ "kese": [
+  "22fd70c"
+ ],
+ "kese_version": [
+  "2.4.0"
+ ],
+ "runs": [
+  [
+   "corpus",
+   "2026-11-10",
+   11000000000.0,
+   5400.0
+  ]
+ ],
+ "machine": {
+  "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz, 4 cores, 15 GB",
+  "geos": "3.14.1",
+  "python": "3.13.18",
+  "shapely": "2.2.0"
+ }
+}

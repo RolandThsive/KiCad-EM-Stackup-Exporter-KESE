@@ -1,6 +1,6 @@
 # 2076. headstage-16stim
 
-Board 2,076 of the 3,124 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 20](../CorpusTestingPages/Corpus-Testing-20.md#2076-headstage-16stim).
+Board 2,076 of the 3,125 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 20](../CorpusTestingPages/Corpus-Testing-20.md#2076-headstage-16stim).
 
 ![headstage-16stim: stages 4 and 6 take 47% to 85% of a run. Simulation, GLB takes 14 s. Simulation, STEP takes 18 s. Simulation, STL takes 14 s. Simulation, OBJ takes 21 s. Visual, GLB takes 25 s. Visual, OBJ takes 31 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2076b_onix-headstage-16stim_headstage-16stim/stages.webp)
 

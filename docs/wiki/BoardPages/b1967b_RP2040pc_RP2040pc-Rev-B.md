@@ -1,6 +1,6 @@
 # 1967. RP2040pc_Rev_B
 
-Board 1,967 of the 3,124 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 19](../CorpusTestingPages/Corpus-Testing-19.md#1967-rp2040pc_rev_b).
+Board 1,967 of the 3,125 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 19](../CorpusTestingPages/Corpus-Testing-19.md#1967-rp2040pc_rev_b).
 
 ![RP2040pc_Rev_B: stages 4 and 6 take 50% to 82% of a run. Simulation, GLB takes 23 s. Simulation, STEP takes 29 s. Simulation, STL takes 24 s. Simulation, OBJ takes 35 s. Visual, GLB takes 31 s. Visual, OBJ takes 41 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b1967b_RP2040pc_RP2040pc-Rev-B/stages.webp)
 

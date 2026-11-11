@@ -1,6 +1,6 @@
 # 2259. Power
 
-Board 2,259 of the 3,124 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 21](../CorpusTestingPages/Corpus-Testing-21.md#2259-power).
+Board 2,259 of the 3,125 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 21](../CorpusTestingPages/Corpus-Testing-21.md#2259-power).
 
 ![Power: stages 4 and 6 take 49% to 84% of a run. Simulation, GLB takes 60 s. Simulation, STEP takes 75 s. Simulation, STL takes 60 s. Simulation, OBJ takes 95 s. Visual, GLB takes 81 s. Visual, OBJ takes 97 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2259b_twist_Power/stages.webp)
 

@@ -1,6 +1,6 @@
 # 1958. STMP157-OLinuXino-LIME2_Rev_B1
 
-Board 1,958 of the 3,124 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 19](../CorpusTestingPages/Corpus-Testing-19.md#1958-stmp157-olinuxino-lime2_rev_b1).
+Board 1,958 of the 3,125 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 19](../CorpusTestingPages/Corpus-Testing-19.md#1958-stmp157-olinuxino-lime2_rev_b1).
 
 ![Stages 4 and 6 take 47% to 83% of a run. Simulation, GLB takes 2 min. Simulation, STEP takes 2 min. Simulation, STL takes 2 min. Simulation, OBJ takes 3 min. Visual, GLB takes 3 min. Visual, OBJ takes 3 min](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b1958b_OLINUXINO_STMP157-OLinuXino-LIME2-Rev-B1/stages.webp)
 

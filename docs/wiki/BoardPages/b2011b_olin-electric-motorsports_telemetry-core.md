@@ -1,6 +1,6 @@
 # 2011. telemetry_core
 
-Board 2,011 of the 3,124 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 19](../CorpusTestingPages/Corpus-Testing-19.md#2011-telemetry_core).
+Board 2,011 of the 3,125 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 19](../CorpusTestingPages/Corpus-Testing-19.md#2011-telemetry_core).
 
 ![telemetry_core: stages 4 and 6 take 47% to 79% of a run. Simulation, GLB takes 6.1 s. Simulation, STEP takes 7.5 s. Simulation, STL takes 5.8 s. Simulation, OBJ takes 8.9 s. Visual, GLB takes 8.8 s. Visual, OBJ takes 10 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2011b_olin-electric-motorsports_telemetry-core/stages.webp)
 

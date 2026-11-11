@@ -4,7 +4,7 @@
  "path": "opulo-inc__lumenpnp/src/PCB/mobo/mobo.kicad_pcb",
  "license": "In LICENSE: CERN-OHL-W-2.0 for the hardware designs, MPL-2.0 for the workflows, CC-BY-SA-4.0 for the KiCad libraries",
  "license_checked": "2026-11-08",
- "rank": 427,
+ "rank": 428,
  "score": 6218,
  "level": "HIGH",
  "complexity": {

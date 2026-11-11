@@ -1,6 +1,6 @@
 # 1938. OLIMEXINO-STM32F3_RevC
 
-Board 1,938 of the 3,124 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 18](../CorpusTestingPages/Corpus-Testing-18.md#1938-olimexino-stm32f3_revc).
+Board 1,938 of the 3,125 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 18](../CorpusTestingPages/Corpus-Testing-18.md#1938-olimexino-stm32f3_revc).
 
 ![OLIMEXINO-STM32F3_RevC: stages 4 and 6 take 54% to 84% of a run. Simulation, GLB takes 17 s. Simulation, STEP takes 20 s. Simulation, STL takes 16 s. Simulation, OBJ takes 24 s. Visual, GLB takes 27 s. Visual, OBJ takes 34 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b1938b_OLIMEXINO-STM32F3_OLIMEXINO-STM32F3-RevC/stages.webp)
 

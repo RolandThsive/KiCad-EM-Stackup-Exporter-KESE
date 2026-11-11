@@ -1,6 +1,6 @@
 # 1886. ESP32-S2-DevKit-USB_Rev_B
 
-Board 1,886 of the 3,124 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 18](../CorpusTestingPages/Corpus-Testing-18.md#1886-esp32-s2-devkit-usb_rev_b).
+Board 1,886 of the 3,125 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 18](../CorpusTestingPages/Corpus-Testing-18.md#1886-esp32-s2-devkit-usb_rev_b).
 
 ![ESP32-S2-DevKit-USB_Rev_B: stages 4 and 6 take 53% to 84% of a run. Simulation, GLB takes 13 s. Simulation, STEP takes 16 s. Simulation, STL takes 13 s. Simulation, OBJ takes 20 s. Visual, GLB takes 21 s. Visual, OBJ takes 28 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b1886b_ESP32-S2-DevKit-LiPo-USB_ESP32-S2-DevKit-USB-Rev-B/stages.webp)
 

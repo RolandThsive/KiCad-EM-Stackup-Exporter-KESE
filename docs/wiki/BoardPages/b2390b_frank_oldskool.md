@@ -1,6 +1,6 @@
 # 2390. oldskool
 
-Board 2,390 of the 3,124 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 23](../CorpusTestingPages/Corpus-Testing-23.md#2390-oldskool).
+Board 2,390 of the 3,125 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 23](../CorpusTestingPages/Corpus-Testing-23.md#2390-oldskool).
 
 ![oldskool: stages 4 and 6 take 54% to 86% of a run. Simulation, GLB takes 31 s. Simulation, STEP takes 38 s. Simulation, STL takes 31 s. Simulation, OBJ takes 46 s. Visual, GLB takes 51 s. Visual, OBJ takes 65 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2390b_frank_oldskool/stages.webp)
 

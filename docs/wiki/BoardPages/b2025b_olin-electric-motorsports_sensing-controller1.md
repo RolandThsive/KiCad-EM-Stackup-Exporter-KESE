@@ -1,6 +1,6 @@
 # 2025. sensing_controller1
 
-Board 2,025 of the 3,124 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 19](../CorpusTestingPages/Corpus-Testing-19.md#2025-sensing_controller1).
+Board 2,025 of the 3,125 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 19](../CorpusTestingPages/Corpus-Testing-19.md#2025-sensing_controller1).
 
 ![sensing_controller1: stages 4 and 6 take 48% to 82% of a run. Simulation, GLB takes 18 s. Simulation, STEP takes 22 s. Simulation, STL takes 18 s. Simulation, OBJ takes 27 s. Visual, GLB takes 31 s. Visual, OBJ takes 38 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2025b_olin-electric-motorsports_sensing-controller1/stages.webp)
 

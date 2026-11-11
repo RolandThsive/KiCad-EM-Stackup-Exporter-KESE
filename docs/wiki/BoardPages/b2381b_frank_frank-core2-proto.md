@@ -1,6 +1,6 @@
 # 2381. frank_core2_proto
 
-Board 2,381 of the 3,124 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 23](../CorpusTestingPages/Corpus-Testing-23.md#2381-frank_core2_proto).
+Board 2,381 of the 3,125 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 23](../CorpusTestingPages/Corpus-Testing-23.md#2381-frank_core2_proto).
 
 ![frank_core2_proto: stages 4 and 6 take 48% to 85% of a run. Simulation, GLB takes 20 s. Simulation, STEP takes 26 s. Simulation, STL takes 20 s. Simulation, OBJ takes 32 s. Visual, GLB takes 33 s. Visual, OBJ takes 40 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2381b_frank_frank-core2-proto/stages.webp)
 

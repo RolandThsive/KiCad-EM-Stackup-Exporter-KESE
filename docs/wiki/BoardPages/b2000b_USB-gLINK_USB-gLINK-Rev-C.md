@@ -1,6 +1,6 @@
 # 2000. USB-gLINK_Rev_C
 
-Board 2,000 of the 3,124 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 19](../CorpusTestingPages/Corpus-Testing-19.md#2000-usb-glink_rev_c).
+Board 2,000 of the 3,125 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 19](../CorpusTestingPages/Corpus-Testing-19.md#2000-usb-glink_rev_c).
 
 ![USB-gLINK_Rev_C: stages 4 and 6 take 48% to 81% of a run. Simulation, GLB takes 21 s. Simulation, STEP takes 27 s. Simulation, STL takes 22 s. Simulation, OBJ takes 34 s. Visual, GLB takes 35 s. Visual, OBJ takes 43 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2000b_USB-gLINK_USB-gLINK-Rev-C/stages.webp)
 

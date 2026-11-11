@@ -1,6 +1,6 @@
 # 1801. Bike-TSL-Kit_RevA
 
-Board 1,801 of the 3,124 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 17](../CorpusTestingPages/Corpus-Testing-17.md#1801-bike-tsl-kit_reva).
+Board 1,801 of the 3,125 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 17](../CorpusTestingPages/Corpus-Testing-17.md#1801-bike-tsl-kit_reva).
 
 ![Bike-TSL-Kit_RevA: stages 4 and 6 take 48% to 79% of a run. Simulation, GLB takes 5.2 s. Simulation, STEP takes 6.7 s. Simulation, STL takes 5.2 s. Simulation, OBJ takes 7.9 s. Visual, GLB takes 8.1 s. Visual, OBJ takes 10 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b1801b_Bike-TSL-Kit_Bike-TSL-Kit-RevA/stages.webp)
 

@@ -1,6 +1,6 @@
 # 1269. ulx4m-panel
 
-Board 1,269 of the 3,124 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 12](../CorpusTestingPages/Corpus-Testing-12.md#1269-ulx4m-panel).
+Board 1,269 of the 3,125 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 12](../CorpusTestingPages/Corpus-Testing-12.md#1269-ulx4m-panel).
 
 ![ulx4m-panel: stages 4 and 6 take 45% to 84% of a run. Simulation, GLB takes 3 min. Simulation, STEP takes 4 min. Simulation, STL takes 4 min. Simulation, OBJ takes 7 min. Visual, GLB takes 5 min. Visual, OBJ takes 7 min](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b1269b_ULX4M_ulx4m-panel/stages.webp)
 

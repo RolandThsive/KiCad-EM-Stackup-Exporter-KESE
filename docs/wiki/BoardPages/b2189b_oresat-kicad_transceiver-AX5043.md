@@ -1,6 +1,6 @@
 # 2189. transceiver-AX5043
 
-Board 2,189 of the 3,124 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 21](../CorpusTestingPages/Corpus-Testing-21.md#2189-transceiver-ax5043).
+Board 2,189 of the 3,125 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 21](../CorpusTestingPages/Corpus-Testing-21.md#2189-transceiver-ax5043).
 
 ![transceiver-AX5043: stages 4 and 6 take 54% to 84% of a run. Simulation, GLB takes 10 s. Simulation, STEP takes 12 s. Simulation, STL takes 9.2 s. Simulation, OBJ takes 14 s. Visual, GLB takes 14 s. Visual, OBJ takes 17 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2189b_oresat-kicad_transceiver-AX5043/stages.webp)
 

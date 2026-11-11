@@ -1,6 +1,6 @@
 # 2315. FC_V4c_InspireFly_Special
 
-Board 2,315 of the 3,124 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 22](../CorpusTestingPages/Corpus-Testing-22.md#2315-fc_v4c_inspirefly_special).
+Board 2,315 of the 3,125 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 22](../CorpusTestingPages/Corpus-Testing-22.md#2315-fc_v4c_inspirefly_special).
 
 ![FC_V4c_InspireFly_Special: stages 4 and 6 take 56% to 82% of a run. Simulation, GLB takes 29 s. Simulation, STEP takes 37 s. Simulation, STL takes 29 s. Simulation, OBJ takes 42 s. Visual, GLB takes 41 s. Visual, OBJ takes 49 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2315b_flight-controller-board_FC-V4c-InspireFly-Special/stages.webp)
 

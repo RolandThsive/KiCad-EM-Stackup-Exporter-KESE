@@ -1,6 +1,6 @@
 # 1642. jtag_base_board
 
-Board 1,642 of the 3,124 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 16](../CorpusTestingPages/Corpus-Testing-16.md#1642-jtag_base_board).
+Board 1,642 of the 3,125 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 16](../CorpusTestingPages/Corpus-Testing-16.md#1642-jtag_base_board).
 
 ![jtag_base_board: stages 4 and 6 take 53% to 86% of a run. Simulation, GLB takes 9.0 s. Simulation, STEP takes 11 s. Simulation, STL takes 9.2 s. Simulation, OBJ takes 14 s. Visual, GLB takes 13 s. Visual, OBJ takes 16 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b1642b_mega65-r3-expansion-board_jtag-base-board/stages.webp)
 

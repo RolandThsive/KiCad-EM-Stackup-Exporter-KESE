@@ -1,0 +1,55 @@
+{
+ "name": "virgo-rpl-uph",
+ "project": "system76/virgo",
+ "path": "system76__virgo/pcb-rpl-uph/virgo-rpl-uph.kicad_pcb",
+ "license": "CERN-OHL-S-2.0 (CERN Open Hardware Licence v2, Strongly Reciprocal)",
+ "license_checked": "2026-11-08",
+ "rank": 782,
+ "score": 3422,
+ "level": "HIGH",
+ "complexity": {
+  "grade": 429,
+  "size": 309,
+  "features": 120
+ },
+ "features": [
+  "through_vias",
+  "slotted_holes",
+  "custom_pads",
+  "shaped_pads",
+  "filled_zones",
+  "copper_graphics",
+  "copper_text",
+  "stackup",
+  "dielectric_properties"
+ ],
+ "layers": 10,
+ "status": "pass",
+ "bad_design": null,
+ "chart_alt": "virgo-rpl-uph: stages 4 and 6 take 58% to 82% of a run. Simulation, GLB takes 2 min. Simulation, STEP takes 2 min. Simulation, STL takes 2 min. Simulation, OBJ takes 3 min. Visual, GLB takes 2 min. Visual, OBJ takes 3 min",
+ "rerun": {},
+ "tested": [
+  "2026-11-09",
+  "2026-11-09"
+ ],
+ "kese": [
+  "22fd70c"
+ ],
+ "kese_version": [
+  "2.4.0"
+ ],
+ "runs": [
+  [
+   "corpus",
+   "2026-11-09",
+   11000000000.0,
+   5400.0
+  ]
+ ],
+ "machine": {
+  "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz, 4 cores, 15 GB",
+  "geos": "3.14.1",
+  "python": "3.13.18",
+  "shapely": "2.2.0"
+ }
+}

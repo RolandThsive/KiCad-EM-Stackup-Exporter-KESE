@@ -1,6 +1,6 @@
 # 1725. uMyriad7002
 
-Board 1,725 of the 3,124 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 16](../CorpusTestingPages/Corpus-Testing-16.md#1725-umyriad7002).
+Board 1,725 of the 3,125 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 16](../CorpusTestingPages/Corpus-Testing-16.md#1725-umyriad7002).
 
 ![uMyriad7002: stages 4 and 6 take 21% to 28% of a run. Simulation, GLB takes 2.7 s. Simulation, STEP takes 2.8 s. Simulation, STL takes 2.8 s. Simulation, OBJ takes 2.8 s. Visual, GLB takes 3.0 s. Visual, OBJ takes 3.0 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b1725b_reference-development-kit_uMyriad7002/stages.webp)
 

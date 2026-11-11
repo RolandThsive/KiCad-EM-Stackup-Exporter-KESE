@@ -1,6 +1,6 @@
 # 2225. icE1usb-panel
 
-Board 2,225 of the 3,124 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 21](../CorpusTestingPages/Corpus-Testing-21.md#2225-ice1usb-panel).
+Board 2,225 of the 3,125 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 21](../CorpusTestingPages/Corpus-Testing-21.md#2225-ice1usb-panel).
 
 ![icE1usb-panel: stages 4 and 6 take 57% to 83% of a run. Simulation, GLB takes 41 s. Simulation, STEP takes 49 s. Simulation, STL takes 40 s. Simulation, OBJ takes 58 s. Visual, GLB takes 52 s. Visual, OBJ takes 64 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2225b_osmo-e1-hardware_icE1usb-panel/stages.webp)
 

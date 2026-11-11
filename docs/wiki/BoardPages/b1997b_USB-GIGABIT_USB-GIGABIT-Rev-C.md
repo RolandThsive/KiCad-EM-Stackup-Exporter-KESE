@@ -1,6 +1,6 @@
 # 1997. USB-GIGABIT_Rev_C
 
-Board 1,997 of the 3,124 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 19](../CorpusTestingPages/Corpus-Testing-19.md#1997-usb-gigabit_rev_c).
+Board 1,997 of the 3,125 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 19](../CorpusTestingPages/Corpus-Testing-19.md#1997-usb-gigabit_rev_c).
 
 ![USB-GIGABIT_Rev_C: stages 4 and 6 take 46% to 81% of a run. Simulation, GLB takes 5.9 s. Simulation, STEP takes 7.6 s. Simulation, STL takes 5.9 s. Simulation, OBJ takes 9.2 s. Visual, GLB takes 9.2 s. Visual, OBJ takes 11 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b1997b_USB-GIGABIT_USB-GIGABIT-Rev-C/stages.webp)
 

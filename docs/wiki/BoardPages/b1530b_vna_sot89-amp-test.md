@@ -1,6 +1,6 @@
 # 1530. sot89_amp_test
 
-Board 1,530 of the 3,124 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 15](../CorpusTestingPages/Corpus-Testing-15.md#1530-sot89_amp_test).
+Board 1,530 of the 3,125 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 15](../CorpusTestingPages/Corpus-Testing-15.md#1530-sot89_amp_test).
 
 ![sot89_amp_test: stages 4 and 6 take 49% to 80% of a run. Simulation, GLB takes 5.0 s. Simulation, STEP takes 6.3 s. Simulation, STL takes 5.1 s. Simulation, OBJ takes 7.6 s. Visual, GLB takes 6.3 s. Visual, OBJ takes 8.0 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b1530b_vna_sot89-amp-test/stages.webp)
 

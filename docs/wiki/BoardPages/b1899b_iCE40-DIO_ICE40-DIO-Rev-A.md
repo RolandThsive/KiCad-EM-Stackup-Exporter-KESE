@@ -1,6 +1,6 @@
 # 1899. ICE40-DIO_Rev_A
 
-Board 1,899 of the 3,124 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 18](../CorpusTestingPages/Corpus-Testing-18.md#1899-ice40-dio_rev_a).
+Board 1,899 of the 3,125 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 18](../CorpusTestingPages/Corpus-Testing-18.md#1899-ice40-dio_rev_a).
 
 ![ICE40-DIO_Rev_A: stages 4 and 6 take 53% to 85% of a run. Simulation, GLB takes 17 s. Simulation, STEP takes 20 s. Simulation, STL takes 16 s. Simulation, OBJ takes 24 s. Visual, GLB takes 24 s. Visual, OBJ takes 30 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b1899b_iCE40-DIO_ICE40-DIO-Rev-A/stages.webp)
 

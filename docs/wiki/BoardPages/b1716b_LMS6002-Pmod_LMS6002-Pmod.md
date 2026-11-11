@@ -1,6 +1,6 @@
 # 1716. LMS6002-Pmod
 
-Board 1,716 of the 3,124 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 16](../CorpusTestingPages/Corpus-Testing-16.md#1716-lms6002-pmod).
+Board 1,716 of the 3,125 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 16](../CorpusTestingPages/Corpus-Testing-16.md#1716-lms6002-pmod).
 
 ![LMS6002-Pmod: stages 4 and 6 take 59% to 86% of a run. Simulation, GLB takes 8.7 s. Simulation, STEP takes 11 s. Simulation, STL takes 9.2 s. Simulation, OBJ takes 13 s. Visual, GLB takes 13 s. Visual, OBJ takes 15 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b1716b_LMS6002-Pmod_LMS6002-Pmod/stages.webp)
 

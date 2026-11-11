@@ -1,6 +1,6 @@
 # 1910. MOD-LoRa_RevB
 
-Board 1,910 of the 3,124 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 18](../CorpusTestingPages/Corpus-Testing-18.md#1910-mod-lora_revb).
+Board 1,910 of the 3,125 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 18](../CorpusTestingPages/Corpus-Testing-18.md#1910-mod-lora_revb).
 
 ![MOD-LoRa_RevB: stages 4 and 6 take 49% to 79% of a run. Simulation, GLB takes 3.1 s. Simulation, STEP takes 4.0 s. Simulation, STL takes 3.1 s. Simulation, OBJ takes 4.4 s. Visual, GLB takes 4.6 s. Visual, OBJ takes 5.6 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b1910b_LoRa-868-915_MOD-LoRa-RevB/stages.webp)
 

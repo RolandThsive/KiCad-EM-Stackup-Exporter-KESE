@@ -1,6 +1,6 @@
 # 1732. LattePandaMu_Motherboard
 
-Board 1,732 of the 3,124 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 17](../CorpusTestingPages/Corpus-Testing-17.md#1732-lattepandamu_motherboard).
+Board 1,732 of the 3,125 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 17](../CorpusTestingPages/Corpus-Testing-17.md#1732-lattepandamu_motherboard).
 
 ![LattePandaMu_Motherboard: stages 4 and 6 take 60% to 82% of a run. Simulation, GLB takes 64 s. Simulation, STEP takes 74 s. Simulation, STL takes 64 s. Simulation, OBJ takes 86 s. Visual, GLB takes 83 s. Visual, OBJ takes 99 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b1732b_vohm_LattePandaMu-Motherboard/stages.webp)
 

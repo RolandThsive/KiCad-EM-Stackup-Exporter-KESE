@@ -1,6 +1,6 @@
 # 2350. Bob
 
-Board 2,350 of the 3,124 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 22](../CorpusTestingPages/Corpus-Testing-22.md#2350-bob).
+Board 2,350 of the 3,125 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 22](../CorpusTestingPages/Corpus-Testing-22.md#2350-bob).
 
 ![Bob: stages 4 and 6 take 60% to 86% of a run. Simulation, GLB takes 30 s. Simulation, STEP takes 35 s. Simulation, STL takes 30 s. Simulation, OBJ takes 40 s. Visual, GLB takes 44 s. Visual, OBJ takes 54 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2350b_stmbl_Bob/stages.webp)
 

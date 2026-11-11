@@ -1,6 +1,6 @@
 # 2360. stmbl_4.0
 
-Board 2,360 of the 3,124 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 22](../CorpusTestingPages/Corpus-Testing-22.md#2360-stmbl_40).
+Board 2,360 of the 3,125 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 22](../CorpusTestingPages/Corpus-Testing-22.md#2360-stmbl_40).
 
 ![stmbl_4.0: stages 4 and 6 take 61% to 85% of a run. Simulation, GLB takes 82 s. Simulation, STEP takes 94 s. Simulation, STL takes 82 s. Simulation, OBJ takes 2 min. Visual, GLB takes 2 min. Visual, OBJ takes 3 min](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2360b_stmbl_stmbl-4-0/stages.webp)
 

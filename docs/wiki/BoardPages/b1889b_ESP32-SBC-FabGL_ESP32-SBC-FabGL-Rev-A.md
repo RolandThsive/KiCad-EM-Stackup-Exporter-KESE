@@ -1,6 +1,6 @@
 # 1889. ESP32-SBC-FabGL_Rev_A
 
-Board 1,889 of the 3,124 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 18](../CorpusTestingPages/Corpus-Testing-18.md#1889-esp32-sbc-fabgl_rev_a).
+Board 1,889 of the 3,125 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 18](../CorpusTestingPages/Corpus-Testing-18.md#1889-esp32-sbc-fabgl_rev_a).
 
 ![ESP32-SBC-FabGL_Rev_A: stages 4 and 6 take 59% to 84% of a run. Simulation, GLB takes 21 s. Simulation, STEP takes 25 s. Simulation, STL takes 21 s. Simulation, OBJ takes 30 s. Visual, GLB takes 31 s. Visual, OBJ takes 37 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b1889b_ESP32-SBC-FabGL_ESP32-SBC-FabGL-Rev-A/stages.webp)
 

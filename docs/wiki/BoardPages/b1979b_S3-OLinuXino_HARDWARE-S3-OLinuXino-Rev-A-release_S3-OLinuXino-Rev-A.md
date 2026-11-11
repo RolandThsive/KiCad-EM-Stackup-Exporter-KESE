@@ -1,6 +1,6 @@
 # 1979. S3-OLinuXino_Rev_A
 
-Board 1,979 of the 3,124 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 19](../CorpusTestingPages/Corpus-Testing-19.md#1979-s3-olinuxino_rev_a).
+Board 1,979 of the 3,125 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 19](../CorpusTestingPages/Corpus-Testing-19.md#1979-s3-olinuxino_rev_a).
 
 ![S3-OLinuXino_Rev_A: stages 4 and 6 take 53% to 81% of a run. Simulation, GLB takes 55 s. Simulation, STEP takes 67 s. Simulation, STL takes 57 s. Simulation, OBJ takes 80 s. Visual, GLB takes 93 s. Visual, OBJ takes 2 min](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b1979b_S3-OLinuXino_HARDWARE-S3-OLinuXino-Rev-A-release_S3-OLinuXino-Rev-A/stages.webp)
 

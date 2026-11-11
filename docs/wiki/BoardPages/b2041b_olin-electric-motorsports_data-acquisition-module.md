@@ -1,6 +1,6 @@
 # 2041. data_acquisition_module
 
-Board 2,041 of the 3,124 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 19](../CorpusTestingPages/Corpus-Testing-19.md#2041-data_acquisition_module).
+Board 2,041 of the 3,125 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 19](../CorpusTestingPages/Corpus-Testing-19.md#2041-data_acquisition_module).
 
 ![data_acquisition_module: stages 4 and 6 take 49% to 80% of a run. Simulation, GLB takes 4.2 s. Simulation, STEP takes 5.5 s. Simulation, STL takes 4.2 s. Simulation, OBJ takes 6.0 s. Visual, GLB takes 6.2 s. Visual, OBJ takes 7.5 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2041b_olin-electric-motorsports_data-acquisition-module/stages.webp)
 

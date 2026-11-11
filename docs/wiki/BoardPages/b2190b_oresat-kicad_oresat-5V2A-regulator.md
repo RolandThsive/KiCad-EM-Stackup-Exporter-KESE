@@ -1,6 +1,6 @@
 # 2190. oresat-5V2A-regulator
 
-Board 2,190 of the 3,124 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 21](../CorpusTestingPages/Corpus-Testing-21.md#2190-oresat-5v2a-regulator).
+Board 2,190 of the 3,125 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 21](../CorpusTestingPages/Corpus-Testing-21.md#2190-oresat-5v2a-regulator).
 
 ![oresat-5V2A-regulator: stages 4 and 6 take 47% to 72% of a run. Simulation, GLB takes 1.8 s. Simulation, STEP takes 2.6 s. Simulation, STL takes 1.9 s. Simulation, OBJ takes 2.4 s. Visual, GLB takes 2.2 s. Visual, OBJ takes 2.6 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2190b_oresat-kicad_oresat-5V2A-regulator/stages.webp)
 

@@ -1,6 +1,6 @@
 # 1578. [DFR1142]Lite Carrier for LattePanda Mu
 
-Board 1,578 of the 3,124 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 15](../CorpusTestingPages/Corpus-Testing-15.md#1578-dfr1142lite-carrier-for-lattepanda-mu).
+Board 1,578 of the 3,125 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 15](../CorpusTestingPages/Corpus-Testing-15.md#1578-dfr1142lite-carrier-for-lattepanda-mu).
 
 ![Stages 4 and 6 take 55% to 83% of a run. Simulation, GLB takes 54 s. Simulation, STEP takes 68 s. Simulation, STL takes 55 s. Simulation, OBJ takes 80 s. Visual, GLB takes 87 s. Visual, OBJ takes 2 min](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b1578b_mubook_DFR1142-Lite-Carrier-for-LattePanda-Mu/stages.webp)
 

@@ -1,6 +1,6 @@
 # 2369. DigiTrainer
 
-Board 2,369 of the 3,124 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 22](../CorpusTestingPages/Corpus-Testing-22.md#2369-digitrainer).
+Board 2,369 of the 3,125 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 22](../CorpusTestingPages/Corpus-Testing-22.md#2369-digitrainer).
 
 ![DigiTrainer: stages 4 and 6 take 52% to 83% of a run. Simulation, GLB takes 56 s. Simulation, STEP takes 69 s. Simulation, STL takes 55 s. Simulation, OBJ takes 82 s. Visual, GLB takes 82 s. Visual, OBJ takes 2 min](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2369b_BitStack-DigiTrainer_DigiTrainer/stages.webp)
 

@@ -1,6 +1,6 @@
 # 2168. oresat1-plusz-end-cap
 
-Board 2,168 of the 3,124 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 21](../CorpusTestingPages/Corpus-Testing-21.md#2168-oresat1-plusz-end-cap).
+Board 2,168 of the 3,125 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 21](../CorpusTestingPages/Corpus-Testing-21.md#2168-oresat1-plusz-end-cap).
 
 ![oresat1-plusz-end-cap: stages 4 and 6 take 47% to 81% of a run. Simulation, GLB takes 10 s. Simulation, STEP takes 12 s. Simulation, STL takes 9.7 s. Simulation, OBJ takes 15 s. Visual, GLB takes 13 s. Visual, OBJ takes 17 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2168b_oresat-endcaps_oresat1-plusz-end-cap/stages.webp)
 

@@ -1,6 +1,6 @@
 # 2125. power-stage-rev8
 
-Board 2,125 of the 3,124 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 20](../CorpusTestingPages/Corpus-Testing-20.md#2125-power-stage-rev8).
+Board 2,125 of the 3,125 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 20](../CorpusTestingPages/Corpus-Testing-20.md#2125-power-stage-rev8).
 
 ![power-stage-rev8: stages 4 and 6 take 48% to 87% of a run. Simulation, GLB takes 39 s. Simulation, STEP takes 47 s. Simulation, STL takes 40 s. Simulation, OBJ takes 64 s. Visual, GLB takes 74 s. Visual, OBJ takes 85 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2125b_oresat-adcs-hardware_power-stage-rev8/stages.webp)
 

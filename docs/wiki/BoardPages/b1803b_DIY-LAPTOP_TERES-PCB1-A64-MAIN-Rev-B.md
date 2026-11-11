@@ -1,6 +1,6 @@
 # 1803. TERES_PCB1-A64-MAIN_Rev.B
 
-Board 1,803 of the 3,124 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 17](../CorpusTestingPages/Corpus-Testing-17.md#1803-teres_pcb1-a64-main_revb).
+Board 1,803 of the 3,125 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 17](../CorpusTestingPages/Corpus-Testing-17.md#1803-teres_pcb1-a64-main_revb).
 
 ![TERES_PCB1-A64-MAIN_Rev.B: stages 4 and 6 take 54% to 85% of a run. Simulation, GLB takes 92 s. Simulation, STEP takes 2 min. Simulation, STL takes 2 min. Simulation, OBJ takes 2 min. Visual, GLB takes 2 min. Visual, OBJ takes 3 min](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b1803b_DIY-LAPTOP_TERES-PCB1-A64-MAIN-Rev-B/stages.webp)
 

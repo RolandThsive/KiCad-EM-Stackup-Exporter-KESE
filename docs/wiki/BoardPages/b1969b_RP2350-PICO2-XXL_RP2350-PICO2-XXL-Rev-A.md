@@ -1,6 +1,6 @@
 # 1969. RP2350-PICO2-XXL_Rev_A
 
-Board 1,969 of the 3,124 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 19](../CorpusTestingPages/Corpus-Testing-19.md#1969-rp2350-pico2-xxl_rev_a).
+Board 1,969 of the 3,125 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 19](../CorpusTestingPages/Corpus-Testing-19.md#1969-rp2350-pico2-xxl_rev_a).
 
 ![RP2350-PICO2-XXL_Rev_A: stages 4 and 6 take 51% to 84% of a run. Simulation, GLB takes 15 s. Simulation, STEP takes 19 s. Simulation, STL takes 15 s. Simulation, OBJ takes 22 s. Visual, GLB takes 22 s. Visual, OBJ takes 27 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b1969b_RP2350-PICO2-XXL_RP2350-PICO2-XXL-Rev-A/stages.webp)
 

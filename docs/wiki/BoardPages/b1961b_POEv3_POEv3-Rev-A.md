@@ -1,6 +1,6 @@
 # 1961. POEv3_Rev_A
 
-Board 1,961 of the 3,124 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 19](../CorpusTestingPages/Corpus-Testing-19.md#1961-poev3_rev_a).
+Board 1,961 of the 3,125 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 19](../CorpusTestingPages/Corpus-Testing-19.md#1961-poev3_rev_a).
 
 ![POEv3_Rev_A: stages 4 and 6 take 43% to 76% of a run. Simulation, GLB takes 3.7 s. Simulation, STEP takes 4.7 s. Simulation, STL takes 3.5 s. Simulation, OBJ takes 5.7 s. Visual, GLB takes 5.5 s. Visual, OBJ takes 7.0 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b1961b_POEv3_POEv3-Rev-A/stages.webp)
 

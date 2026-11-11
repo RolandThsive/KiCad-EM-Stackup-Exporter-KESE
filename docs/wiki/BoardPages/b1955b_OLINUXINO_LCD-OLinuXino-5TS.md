@@ -1,6 +1,6 @@
 # 1955. LCD-OLinuXino-5TS
 
-Board 1,955 of the 3,124 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 19](../CorpusTestingPages/Corpus-Testing-19.md#1955-lcd-olinuxino-5ts).
+Board 1,955 of the 3,125 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 19](../CorpusTestingPages/Corpus-Testing-19.md#1955-lcd-olinuxino-5ts).
 
 ![LCD-OLinuXino-5TS: stages 4 and 6 take 55% to 81% of a run. Simulation, GLB takes 6.3 s. Simulation, STEP takes 8.4 s. Simulation, STL takes 6.7 s. Simulation, OBJ takes 9.0 s. Visual, GLB takes 9.9 s. Visual, OBJ takes 12 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b1955b_OLINUXINO_LCD-OLinuXino-5TS/stages.webp)
 

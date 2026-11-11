@@ -4,7 +4,7 @@
  "path": "OLIMEX__ESP32-POE-ISO/HARDWARE/ESP32-PoE-ISO-Rev.C/ESP32-PoE-ISO_Rev_C.kicad_pcb",
  "license": "A license in Licensee.pdf; as README.md states it: \"ESP32-POE-ISO is Open Source Hardware as per OSHWA.org definition. It is distributed with CERN OSH Licensee v1.2 which is available in the root directory of this repository. The software examples for ESP32-POE-ISO are distributed with GPL v3 Licensee.\"",
  "license_checked": "2026-11-08",
- "rank": 634,
+ "rank": 635,
  "score": 4215,
  "level": "HIGH",
  "complexity": {

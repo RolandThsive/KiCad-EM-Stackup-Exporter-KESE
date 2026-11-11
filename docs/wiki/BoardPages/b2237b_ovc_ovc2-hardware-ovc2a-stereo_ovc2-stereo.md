@@ -1,6 +1,6 @@
 # 2237. ovc2_stereo
 
-Board 2,237 of the 3,124 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 21](../CorpusTestingPages/Corpus-Testing-21.md#2237-ovc2_stereo).
+Board 2,237 of the 3,125 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 21](../CorpusTestingPages/Corpus-Testing-21.md#2237-ovc2_stereo).
 
 ![ovc2_stereo: stages 4 and 6 take 48% to 83% of a run. Simulation, GLB takes 56 s. Simulation, STEP takes 70 s. Simulation, STL takes 57 s. Simulation, OBJ takes 93 s. Visual, GLB takes 83 s. Visual, OBJ takes 2 min](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2237b_ovc_ovc2-hardware-ovc2a-stereo_ovc2-stereo/stages.webp)
 

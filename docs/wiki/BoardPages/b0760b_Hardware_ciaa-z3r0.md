@@ -1,6 +1,6 @@
 # 760. ciaa-z3r0
 
-Board 760 of the 3,124 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 8](../CorpusTestingPages/Corpus-Testing-08.md#760-ciaa-z3r0).
+Board 760 of the 3,125 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 8](../CorpusTestingPages/Corpus-Testing-08.md#760-ciaa-z3r0).
 
 ![ciaa-z3r0: stages 4 and 6 take 51% to 82% of a run. Simulation, GLB takes 5.9 s. Simulation, STEP takes 7.3 s. Simulation, STL takes 5.5 s. Simulation, OBJ takes 8.3 s. Visual, GLB takes 8.7 s. Visual, OBJ takes 11 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b0760b_Hardware_ciaa-z3r0/stages.webp)
 

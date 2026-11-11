@@ -1,6 +1,6 @@
 # 2294. healthylink_compute_v5
 
-Board 2,294 of the 3,124 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 22](../CorpusTestingPages/Corpus-Testing-22.md#2294-healthylink_compute_v5).
+Board 2,294 of the 3,125 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 22](../CorpusTestingPages/Corpus-Testing-22.md#2294-healthylink_compute_v5).
 
 ![healthylink_compute_v5: stages 4 and 6 take 47% to 81% of a run. Simulation, GLB takes 18 s. Simulation, STEP takes 22 s. Simulation, STL takes 18 s. Simulation, OBJ takes 27 s. Visual, GLB takes 25 s. Visual, OBJ takes 31 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2294b_protocentral-healthypi6-hardware_healthylink-compute-v5/stages.webp)
 

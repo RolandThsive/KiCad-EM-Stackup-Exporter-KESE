@@ -1,6 +1,6 @@
 # 1884. ESP32-PRO_Rev_B1
 
-Board 1,884 of the 3,124 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 18](../CorpusTestingPages/Corpus-Testing-18.md#1884-esp32-pro_rev_b1).
+Board 1,884 of the 3,125 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 18](../CorpusTestingPages/Corpus-Testing-18.md#1884-esp32-pro_rev_b1).
 
 ![ESP32-PRO_Rev_B1: stages 4 and 6 take 56% to 82% of a run. Simulation, GLB takes 19 s. Simulation, STEP takes 22 s. Simulation, STL takes 19 s. Simulation, OBJ takes 26 s. Visual, GLB takes 30 s. Visual, OBJ takes 36 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b1884b_ESP32-PRO_ESP32-PRO-Rev-B1/stages.webp)
 

@@ -4,7 +4,50 @@ Part 25 of 29 of [Corpus Testing](../Corpus-Testing.md): boards 2,593 to 2,700, 
 
 ## 2593. endcap
 
-![endcap: stages 4 and 6 take 40% to 70% of a run. Simulation, GLB takes 3.4 s. Simulation, STEP takes 4.6 s. Simulation, STL takes 3.3 s. Simulation, OBJ takes 5.1 s. Visual, GLB takes 4.6 s. Visual, OBJ takes 6.0 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2593b_Hermes-Lite2_hardware-enclosure-endcaps-kd9s-hl2-55f-hl2-55f-v_endcap/stages.webp)
+![endcap: stages 4 and 6 take 53% to 81% of a run. Simulation, GLB takes 5.3 s. Simulation, STEP takes 6.9 s. Simulation, STL takes 5.3 s. Simulation, OBJ takes 7.4 s. Visual, GLB takes 7.9 s. Visual, OBJ takes 9.3 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2593b_Hermes-Lite2_hardware-enclosure-endcaps-kd9s-hl2-55b-hl2-55b-v_endcap/stages.webp)
+
+| Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
+|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
+| Simulation, GLB | 0.2 | 0.6 | 2.1 | 0.3&nbsp;ms | 1.9 | 75&nbsp;ms | 0.2 | 0.2 | 5.3 |
+| Simulation, STEP | 0.2 | 0.5 | 2.1 | 0.2&nbsp;ms | 1.8 | 1.8 | 0.2 | 0.2 | 6.9 |
+| Simulation, STL | 0.2 | 0.5 | 2.1 | 0.4&nbsp;ms | 2.0 | 0.1 | 0.3 | 0.2 | 5.3 |
+| Simulation, OBJ | 0.3 | 0.6 | 2.0 | 0.2&nbsp;ms | 1.9 | 2.2 | 0.2 | 0.2 | 7.4 |
+| Visual, GLB | 0.2 | 0.5 | 2.2 | 0.2&nbsp;ms | 4.1 | 62&nbsp;ms | 0.5 | 0.2 | 7.9 |
+| Visual, OBJ | 0.2 | 0.5 | 2.0 | 0.2&nbsp;ms | 3.9 | 2.0 | 0.5 | 0.2 | 9.3 |
+
+<table align="center"><tr><td valign="top">
+
+| Board | Repo: [softerhardware/Hermes-Lite2](https://github.com/softerhardware/Hermes-Lite2)<br>Board: `endcap.kicad_pcb` |
+|---|---|
+| Folder | hardware / enclosure / endcaps / kd9s / hl2_55b / hl2_55b_v |
+| Complexity | 208&nbsp;/&nbsp;1000 (size&nbsp;153, features&nbsp;55) |
+| KESE&nbsp;features | through vias, slotted holes,<br>filled zones, curved board outline |
+| Tested | 9th November 2026 |
+| Copper&nbsp;layers | 2 |
+| File&nbsp;format | KiCad 5 (20171130) |
+| Parts,&nbsp;tracks,&nbsp;vias | 42, 278, 19 |
+| Triangles,&nbsp;simulation | 404,012 in 40 parts |
+| Verifier | PASS in all six runs |
+
+</td><td valign="top">
+
+<table>
+<tr><th>File<br>type</th><th>File<br>size</th><th>Peak memory<br>used</th></tr>
+<tr><th colspan="3" align="left">Simulation</th></tr>
+<tr><td>GLB</td><td align="right">15&nbsp;MB</td><td align="right">298&nbsp;MB</td></tr>
+<tr><td>STEP</td><td align="right">71&nbsp;MB</td><td align="right">337&nbsp;MB</td></tr>
+<tr><td>STL</td><td align="right">20&nbsp;MB</td><td align="right">290&nbsp;MB</td></tr>
+<tr><td>OBJ</td><td align="right">42&nbsp;MB</td><td align="right">341&nbsp;MB</td></tr>
+<tr><th colspan="3" align="left">Visual</th></tr>
+<tr><td>GLB</td><td align="right">12&nbsp;MB</td><td align="right">336&nbsp;MB</td></tr>
+<tr><td>OBJ</td><td align="right">35&nbsp;MB</td><td align="right">344&nbsp;MB</td></tr>
+</table>
+
+</td></tr></table>
+
+## 2594. endcap
+
+![endcap: stages 4 and 6 take 40% to 70% of a run. Simulation, GLB takes 3.4 s. Simulation, STEP takes 4.6 s. Simulation, STL takes 3.3 s. Simulation, OBJ takes 5.1 s. Visual, GLB takes 4.6 s. Visual, OBJ takes 6.0 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2594b_Hermes-Lite2_hardware-enclosure-endcaps-kd9s-hl2-55f-hl2-55f-v_endcap/stages.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -45,9 +88,9 @@ Part 25 of 29 of [Corpus Testing](../Corpus-Testing.md): boards 2,593 to 2,700, 
 
 </td></tr></table>
 
-## 2594. endcap
+## 2595. endcap
 
-![endcap: stages 4 and 6 take 53% to 78% of a run. Simulation, GLB takes 4.5 s. Simulation, STEP takes 5.8 s. Simulation, STL takes 4.4 s. Simulation, OBJ takes 6.1 s. Visual, GLB takes 5.9 s. Visual, OBJ takes 7.5 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2594b_Hermes-Lite2_hardware-enclosure-endcaps-kf7o-hl2-40b_endcap/stages.webp)
+![endcap: stages 4 and 6 take 53% to 78% of a run. Simulation, GLB takes 4.5 s. Simulation, STEP takes 5.8 s. Simulation, STL takes 4.4 s. Simulation, OBJ takes 6.1 s. Visual, GLB takes 5.9 s. Visual, OBJ takes 7.5 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2595b_Hermes-Lite2_hardware-enclosure-endcaps-kf7o-hl2-40b_endcap/stages.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -88,9 +131,9 @@ Part 25 of 29 of [Corpus Testing](../Corpus-Testing.md): boards 2,593 to 2,700, 
 
 </td></tr></table>
 
-## 2595. endcap
+## 2596. endcap
 
-![endcap: stages 4 and 6 take 37% to 67% of a run. Simulation, GLB takes 1.2 s. Simulation, STEP takes 1.9 s. Simulation, STL takes 1.2 s. Simulation, OBJ takes 1.7 s. Visual, GLB takes 1.6 s. Visual, OBJ takes 1.9 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2595b_Hermes-Lite2_hardware-enclosure-endcaps-kf7o-hl2-40f_endcap/stages.webp)
+![endcap: stages 4 and 6 take 37% to 67% of a run. Simulation, GLB takes 1.2 s. Simulation, STEP takes 1.9 s. Simulation, STL takes 1.2 s. Simulation, OBJ takes 1.7 s. Visual, GLB takes 1.6 s. Visual, OBJ takes 1.9 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2596b_Hermes-Lite2_hardware-enclosure-endcaps-kf7o-hl2-40f_endcap/stages.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -131,9 +174,9 @@ Part 25 of 29 of [Corpus Testing](../Corpus-Testing.md): boards 2,593 to 2,700, 
 
 </td></tr></table>
 
-## 2596. endcap
+## 2597. endcap
 
-![endcap: stages 4 and 6 take 55% to 77% of a run. Simulation, GLB takes 6.1 s. Simulation, STEP takes 7.9 s. Simulation, STL takes 6.2 s. Simulation, OBJ takes 8.1 s. Visual, GLB takes 8.5 s. Visual, OBJ takes 10 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2596b_Hermes-Lite2_hardware-enclosure-endcaps-kf7o-hl2-55b_endcap/stages.webp)
+![endcap: stages 4 and 6 take 55% to 77% of a run. Simulation, GLB takes 6.1 s. Simulation, STEP takes 7.9 s. Simulation, STL takes 6.2 s. Simulation, OBJ takes 8.1 s. Visual, GLB takes 8.5 s. Visual, OBJ takes 10 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2597b_Hermes-Lite2_hardware-enclosure-endcaps-kf7o-hl2-55b_endcap/stages.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -174,9 +217,9 @@ Part 25 of 29 of [Corpus Testing](../Corpus-Testing.md): boards 2,593 to 2,700, 
 
 </td></tr></table>
 
-## 2597. endcap
+## 2598. endcap
 
-![endcap: stages 4 and 6 take 39% to 66% of a run. Simulation, GLB takes 1.6 s. Simulation, STEP takes 2.4 s. Simulation, STL takes 1.6 s. Simulation, OBJ takes 2.2 s. Visual, GLB takes 2.1 s. Visual, OBJ takes 2.6 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2597b_Hermes-Lite2_hardware-enclosure-endcaps-kf7o-hl2-55f_endcap/stages.webp)
+![endcap: stages 4 and 6 take 39% to 66% of a run. Simulation, GLB takes 1.6 s. Simulation, STEP takes 2.4 s. Simulation, STL takes 1.6 s. Simulation, OBJ takes 2.2 s. Visual, GLB takes 2.1 s. Visual, OBJ takes 2.6 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2598b_Hermes-Lite2_hardware-enclosure-endcaps-kf7o-hl2-55f_endcap/stages.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -217,9 +260,9 @@ Part 25 of 29 of [Corpus Testing](../Corpus-Testing.md): boards 2,593 to 2,700, 
 
 </td></tr></table>
 
-## 2598. endcap
+## 2599. endcap
 
-![endcap: stages 4 and 6 take 33% to 64% of a run. Simulation, GLB takes 0.9 s. Simulation, STEP takes 1.6 s. Simulation, STL takes 0.9 s. Simulation, OBJ takes 1.1 s. Visual, GLB takes 1.1 s. Visual, OBJ takes 1.4 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2598b_Hermes-Lite2_hardware-enclosure-endcaps-kf7o-hl2-55fb_endcap/stages.webp)
+![endcap: stages 4 and 6 take 33% to 64% of a run. Simulation, GLB takes 0.9 s. Simulation, STEP takes 1.6 s. Simulation, STL takes 0.9 s. Simulation, OBJ takes 1.1 s. Visual, GLB takes 1.1 s. Visual, OBJ takes 1.4 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2599b_Hermes-Lite2_hardware-enclosure-endcaps-kf7o-hl2-55fb_endcap/stages.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -260,9 +303,9 @@ Part 25 of 29 of [Corpus Testing](../Corpus-Testing.md): boards 2,593 to 2,700, 
 
 </td></tr></table>
 
-## 2599. hermeslite
+## 2600. hermeslite
 
-![hermeslite: stages 4 and 6 take 55% to 85% of a run. Simulation, GLB takes 99 s. Simulation, STEP takes 2 min. Simulation, STL takes 2 min. Simulation, OBJ takes 2 min. Visual, GLB takes 2 min. Visual, OBJ takes 3 min](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2599b_Hermes-Lite2_hermeslite/stages.webp)
+![hermeslite: stages 4 and 6 take 55% to 85% of a run. Simulation, GLB takes 99 s. Simulation, STEP takes 2 min. Simulation, STL takes 2 min. Simulation, OBJ takes 2 min. Visual, GLB takes 2 min. Visual, OBJ takes 3 min](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2600b_Hermes-Lite2_hermeslite/stages.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -304,9 +347,9 @@ Part 25 of 29 of [Corpus Testing](../Corpus-Testing.md): boards 2,593 to 2,700, 
 
 </td></tr></table>
 
-## 2600. SparkFun_GNSS_Flex_Module_DAN-F10N_panelized
+## 2601. SparkFun_GNSS_Flex_Module_DAN-F10N_panelized
 
-![Stages 4 and 6 take 52% to 81% of a run. Simulation, GLB takes 91 s. Simulation, STEP takes 2 min. Simulation, STL takes 93 s. Simulation, OBJ takes 2 min. Visual, GLB takes 2 min. Visual, OBJ takes 3 min](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2600b_sparkfun-gnss-flex-system_SparkFun-GNSS-Flex-Module-DAN-F10N-panelized/stages.webp)
+![Stages 4 and 6 take 52% to 81% of a run. Simulation, GLB takes 91 s. Simulation, STEP takes 2 min. Simulation, STL takes 93 s. Simulation, OBJ takes 2 min. Visual, GLB takes 2 min. Visual, OBJ takes 3 min](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2601b_sparkfun-gnss-flex-system_SparkFun-GNSS-Flex-Module-DAN-F10N-panelized/stages.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -348,9 +391,9 @@ Part 25 of 29 of [Corpus Testing](../Corpus-Testing.md): boards 2,593 to 2,700, 
 
 </td></tr></table>
 
-## 2601. SparkFun_GNSS_Flex_Module_DAN-F10N
+## 2602. SparkFun_GNSS_Flex_Module_DAN-F10N
 
-![Stages 4 and 6 take 51% to 79% of a run. Simulation, GLB takes 5.1 s. Simulation, STEP takes 6.5 s. Simulation, STL takes 5.0 s. Simulation, OBJ takes 7.3 s. Visual, GLB takes 6.7 s. Visual, OBJ takes 8.1 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2601b_sparkfun-gnss-flex-system_SparkFun-GNSS-Flex-Module-DAN-F10N/stages.webp)
+![Stages 4 and 6 take 51% to 79% of a run. Simulation, GLB takes 5.1 s. Simulation, STEP takes 6.5 s. Simulation, STL takes 5.0 s. Simulation, OBJ takes 7.3 s. Visual, GLB takes 6.7 s. Visual, OBJ takes 8.1 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2602b_sparkfun-gnss-flex-system_SparkFun-GNSS-Flex-Module-DAN-F10N/stages.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -391,9 +434,9 @@ Part 25 of 29 of [Corpus Testing](../Corpus-Testing.md): boards 2,593 to 2,700, 
 
 </td></tr></table>
 
-## 2602. SparkFun_GNSS_Flex_Module_LG290P-Tilt_panelized
+## 2603. SparkFun_GNSS_Flex_Module_LG290P-Tilt_panelized
 
-![Stages 4 and 6 take 50% to 83% of a run. Simulation, GLB takes 2 min. Simulation, STEP takes 2 min. Simulation, STL takes 2 min. Simulation, OBJ takes 3 min. Visual, GLB takes 3 min. Visual, OBJ takes 4 min](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2602b_sparkfun-gnss-flex-system_SparkFun-GNSS-Flex-Module-LG290P-Tilt-panelized/stages.webp)
+![Stages 4 and 6 take 50% to 83% of a run. Simulation, GLB takes 2 min. Simulation, STEP takes 2 min. Simulation, STL takes 2 min. Simulation, OBJ takes 3 min. Visual, GLB takes 3 min. Visual, OBJ takes 4 min](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2603b_sparkfun-gnss-flex-system_SparkFun-GNSS-Flex-Module-LG290P-Tilt-panelized/stages.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -435,9 +478,9 @@ Part 25 of 29 of [Corpus Testing](../Corpus-Testing.md): boards 2,593 to 2,700, 
 
 </td></tr></table>
 
-## 2603. SparkFun_GNSS_Flex_Module_LG290P-Tilt
+## 2604. SparkFun_GNSS_Flex_Module_LG290P-Tilt
 
-![Stages 4 and 6 take 48% to 81% of a run. Simulation, GLB takes 7.7 s. Simulation, STEP takes 10 s. Simulation, STL takes 7.7 s. Simulation, OBJ takes 12 s. Visual, GLB takes 11 s. Visual, OBJ takes 15 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2603b_sparkfun-gnss-flex-system_SparkFun-GNSS-Flex-Module-LG290P-Tilt/stages.webp)
+![Stages 4 and 6 take 48% to 81% of a run. Simulation, GLB takes 7.7 s. Simulation, STEP takes 10 s. Simulation, STL takes 7.7 s. Simulation, OBJ takes 12 s. Visual, GLB takes 11 s. Visual, OBJ takes 15 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2604b_sparkfun-gnss-flex-system_SparkFun-GNSS-Flex-Module-LG290P-Tilt/stages.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -478,9 +521,9 @@ Part 25 of 29 of [Corpus Testing](../Corpus-Testing.md): boards 2,593 to 2,700, 
 
 </td></tr></table>
 
-## 2604. SparkFun_GNSS_Flex_Module_LG290P_panelized
+## 2605. SparkFun_GNSS_Flex_Module_LG290P_panelized
 
-![Stages 4 and 6 take 53% to 82% of a run. Simulation, GLB takes 91 s. Simulation, STEP takes 2 min. Simulation, STL takes 95 s. Simulation, OBJ takes 2 min. Visual, GLB takes 2 min. Visual, OBJ takes 3 min](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2604b_sparkfun-gnss-flex-system_SparkFun-GNSS-Flex-Module-LG290P-panelized/stages.webp)
+![Stages 4 and 6 take 53% to 82% of a run. Simulation, GLB takes 91 s. Simulation, STEP takes 2 min. Simulation, STL takes 95 s. Simulation, OBJ takes 2 min. Visual, GLB takes 2 min. Visual, OBJ takes 3 min](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2605b_sparkfun-gnss-flex-system_SparkFun-GNSS-Flex-Module-LG290P-panelized/stages.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -522,9 +565,9 @@ Part 25 of 29 of [Corpus Testing](../Corpus-Testing.md): boards 2,593 to 2,700, 
 
 </td></tr></table>
 
-## 2605. SparkFun_GNSS_Flex_Module_LG290P
+## 2606. SparkFun_GNSS_Flex_Module_LG290P
 
-![Stages 4 and 6 take 48% to 78% of a run. Simulation, GLB takes 5.0 s. Simulation, STEP takes 6.3 s. Simulation, STL takes 5.0 s. Simulation, OBJ takes 7.4 s. Visual, GLB takes 6.9 s. Visual, OBJ takes 8.5 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2605b_sparkfun-gnss-flex-system_SparkFun-GNSS-Flex-Module-LG290P/stages.webp)
+![Stages 4 and 6 take 48% to 78% of a run. Simulation, GLB takes 5.0 s. Simulation, STEP takes 6.3 s. Simulation, STL takes 5.0 s. Simulation, OBJ takes 7.4 s. Visual, GLB takes 6.9 s. Visual, OBJ takes 8.5 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2606b_sparkfun-gnss-flex-system_SparkFun-GNSS-Flex-Module-LG290P/stages.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -565,9 +608,9 @@ Part 25 of 29 of [Corpus Testing](../Corpus-Testing.md): boards 2,593 to 2,700, 
 
 </td></tr></table>
 
-## 2606. SparkFun_GNSS_Flex_Module_LG580P_panelized
+## 2607. SparkFun_GNSS_Flex_Module_LG580P_panelized
 
-![Stages 4 and 6 take 54% to 82% of a run. Simulation, GLB takes 37 s. Simulation, STEP takes 46 s. Simulation, STL takes 40 s. Simulation, OBJ takes 58 s. Visual, GLB takes 57 s. Visual, OBJ takes 70 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2606b_sparkfun-gnss-flex-system_SparkFun-GNSS-Flex-Module-LG580P-panelized/stages.webp)
+![Stages 4 and 6 take 54% to 82% of a run. Simulation, GLB takes 37 s. Simulation, STEP takes 46 s. Simulation, STL takes 40 s. Simulation, OBJ takes 58 s. Visual, GLB takes 57 s. Visual, OBJ takes 70 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2607b_sparkfun-gnss-flex-system_SparkFun-GNSS-Flex-Module-LG580P-panelized/stages.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -609,9 +652,9 @@ Part 25 of 29 of [Corpus Testing](../Corpus-Testing.md): boards 2,593 to 2,700, 
 
 </td></tr></table>
 
-## 2607. SparkFun_GNSS_Flex_Module_LG580P
+## 2608. SparkFun_GNSS_Flex_Module_LG580P
 
-![Stages 4 and 6 take 47% to 80% of a run. Simulation, GLB takes 6.4 s. Simulation, STEP takes 8.6 s. Simulation, STL takes 6.5 s. Simulation, OBJ takes 10 s. Visual, GLB takes 9.2 s. Visual, OBJ takes 12 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2607b_sparkfun-gnss-flex-system_SparkFun-GNSS-Flex-Module-LG580P/stages.webp)
+![Stages 4 and 6 take 47% to 80% of a run. Simulation, GLB takes 6.4 s. Simulation, STEP takes 8.6 s. Simulation, STL takes 6.5 s. Simulation, OBJ takes 10 s. Visual, GLB takes 9.2 s. Visual, OBJ takes 12 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2608b_sparkfun-gnss-flex-system_SparkFun-GNSS-Flex-Module-LG580P/stages.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -652,9 +695,9 @@ Part 25 of 29 of [Corpus Testing](../Corpus-Testing.md): boards 2,593 to 2,700, 
 
 </td></tr></table>
 
-## 2608. SparkFun_GNSS_Flex_Module_mosaic-G5_P3_Tilt_panelized
+## 2609. SparkFun_GNSS_Flex_Module_mosaic-G5_P3_Tilt_panelized
 
-![Stages 4 and 6 take 49% to 83% of a run. Simulation, GLB takes 2 min. Simulation, STEP takes 3 min. Simulation, STL takes 2 min. Simulation, OBJ takes 4 min. Visual, GLB takes 3 min. Visual, OBJ takes 4 min](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2608b_sparkfun-gnss-flex-system_SparkFun-GNSS-Flex-Module-mosaic-G5-P3-Tilt-panelized/stages.webp)
+![Stages 4 and 6 take 49% to 83% of a run. Simulation, GLB takes 2 min. Simulation, STEP takes 3 min. Simulation, STL takes 2 min. Simulation, OBJ takes 4 min. Visual, GLB takes 3 min. Visual, OBJ takes 4 min](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2609b_sparkfun-gnss-flex-system_SparkFun-GNSS-Flex-Module-mosaic-G5-P3-Tilt-panelized/stages.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -696,9 +739,9 @@ Part 25 of 29 of [Corpus Testing](../Corpus-Testing.md): boards 2,593 to 2,700, 
 
 </td></tr></table>
 
-## 2609. SparkFun_GNSS_Flex_Module_mosaic-G5_P3_Tilt
+## 2610. SparkFun_GNSS_Flex_Module_mosaic-G5_P3_Tilt
 
-![Stages 4 and 6 take 49% to 81% of a run. Simulation, GLB takes 7.9 s. Simulation, STEP takes 9.8 s. Simulation, STL takes 7.8 s. Simulation, OBJ takes 12 s. Visual, GLB takes 10 s. Visual, OBJ takes 14 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2609b_sparkfun-gnss-flex-system_SparkFun-GNSS-Flex-Module-mosaic-G5-P3-Tilt/stages.webp)
+![Stages 4 and 6 take 49% to 81% of a run. Simulation, GLB takes 7.9 s. Simulation, STEP takes 9.8 s. Simulation, STL takes 7.8 s. Simulation, OBJ takes 12 s. Visual, GLB takes 10 s. Visual, OBJ takes 14 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2610b_sparkfun-gnss-flex-system_SparkFun-GNSS-Flex-Module-mosaic-G5-P3-Tilt/stages.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -739,9 +782,9 @@ Part 25 of 29 of [Corpus Testing](../Corpus-Testing.md): boards 2,593 to 2,700, 
 
 </td></tr></table>
 
-## 2610. SparkFun_GNSS_Flex_Module_mosaic-X5_IM19_panelized
+## 2611. SparkFun_GNSS_Flex_Module_mosaic-X5_IM19_panelized
 
-![Stages 4 and 6 take 51% to 84% of a run. Simulation, GLB takes 85 s. Simulation, STEP takes 2 min. Simulation, STL takes 86 s. Simulation, OBJ takes 2 min. Visual, GLB takes 2 min. Visual, OBJ takes 3 min](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2610b_sparkfun-gnss-flex-system_SparkFun-GNSS-Flex-Module-mosaic-X5-IM19-panelized/stages.webp)
+![Stages 4 and 6 take 51% to 84% of a run. Simulation, GLB takes 85 s. Simulation, STEP takes 2 min. Simulation, STL takes 86 s. Simulation, OBJ takes 2 min. Visual, GLB takes 2 min. Visual, OBJ takes 3 min](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2611b_sparkfun-gnss-flex-system_SparkFun-GNSS-Flex-Module-mosaic-X5-IM19-panelized/stages.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -783,9 +826,9 @@ Part 25 of 29 of [Corpus Testing](../Corpus-Testing.md): boards 2,593 to 2,700, 
 
 </td></tr></table>
 
-## 2611. SparkFun_GNSS_Flex_Module_mosaic-X5_IM19
+## 2612. SparkFun_GNSS_Flex_Module_mosaic-X5_IM19
 
-![Stages 4 and 6 take 48% to 82% of a run. Simulation, GLB takes 12 s. Simulation, STEP takes 15 s. Simulation, STL takes 12 s. Simulation, OBJ takes 18 s. Visual, GLB takes 16 s. Visual, OBJ takes 20 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2611b_sparkfun-gnss-flex-system_SparkFun-GNSS-Flex-Module-mosaic-X5-IM19/stages.webp)
+![Stages 4 and 6 take 48% to 82% of a run. Simulation, GLB takes 12 s. Simulation, STEP takes 15 s. Simulation, STL takes 12 s. Simulation, OBJ takes 18 s. Visual, GLB takes 16 s. Visual, OBJ takes 20 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2612b_sparkfun-gnss-flex-system_SparkFun-GNSS-Flex-Module-mosaic-X5-IM19/stages.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -826,9 +869,9 @@ Part 25 of 29 of [Corpus Testing](../Corpus-Testing.md): boards 2,593 to 2,700, 
 
 </td></tr></table>
 
-## 2612. SparkFun_GNSS_Flex_Module_mosaic-X5_panelized
+## 2613. SparkFun_GNSS_Flex_Module_mosaic-X5_panelized
 
-![Stages 4 and 6 take 51% to 84% of a run. Simulation, GLB takes 79 s. Simulation, STEP takes 96 s. Simulation, STL takes 79 s. Simulation, OBJ takes 2 min. Visual, GLB takes 2 min. Visual, OBJ takes 2 min](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2612b_sparkfun-gnss-flex-system_SparkFun-GNSS-Flex-Module-mosaic-X5-panelized/stages.webp)
+![Stages 4 and 6 take 51% to 84% of a run. Simulation, GLB takes 79 s. Simulation, STEP takes 96 s. Simulation, STL takes 79 s. Simulation, OBJ takes 2 min. Visual, GLB takes 2 min. Visual, OBJ takes 2 min](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2613b_sparkfun-gnss-flex-system_SparkFun-GNSS-Flex-Module-mosaic-X5-panelized/stages.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -870,9 +913,9 @@ Part 25 of 29 of [Corpus Testing](../Corpus-Testing.md): boards 2,593 to 2,700, 
 
 </td></tr></table>
 
-## 2613. SparkFun_GNSS_Flex_Module_mosaic-X5
+## 2614. SparkFun_GNSS_Flex_Module_mosaic-X5
 
-![Stages 4 and 6 take 50% to 83% of a run. Simulation, GLB takes 13 s. Simulation, STEP takes 16 s. Simulation, STL takes 13 s. Simulation, OBJ takes 21 s. Visual, GLB takes 19 s. Visual, OBJ takes 24 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2613b_sparkfun-gnss-flex-system_SparkFun-GNSS-Flex-Module-mosaic-X5/stages.webp)
+![Stages 4 and 6 take 50% to 83% of a run. Simulation, GLB takes 13 s. Simulation, STEP takes 16 s. Simulation, STL takes 13 s. Simulation, OBJ takes 21 s. Visual, GLB takes 19 s. Visual, OBJ takes 24 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2614b_sparkfun-gnss-flex-system_SparkFun-GNSS-Flex-Module-mosaic-X5/stages.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -913,9 +956,9 @@ Part 25 of 29 of [Corpus Testing](../Corpus-Testing.md): boards 2,593 to 2,700, 
 
 </td></tr></table>
 
-## 2614. SparkFun_GNSS_Flex_Module_ZED-X20P_Tilt_panelized
+## 2615. SparkFun_GNSS_Flex_Module_ZED-X20P_Tilt_panelized
 
-![Stages 4 and 6 take 46% to 82% of a run. Simulation, GLB takes 2 min. Simulation, STEP takes 2 min. Simulation, STL takes 2 min. Simulation, OBJ takes 3 min. Visual, GLB takes 3 min. Visual, OBJ takes 4 min](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2614b_sparkfun-gnss-flex-system_SparkFun-GNSS-Flex-Module-ZED-X20P-Tilt-panelized/stages.webp)
+![Stages 4 and 6 take 46% to 82% of a run. Simulation, GLB takes 2 min. Simulation, STEP takes 2 min. Simulation, STL takes 2 min. Simulation, OBJ takes 3 min. Visual, GLB takes 3 min. Visual, OBJ takes 4 min](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2615b_sparkfun-gnss-flex-system_SparkFun-GNSS-Flex-Module-ZED-X20P-Tilt-panelized/stages.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -957,9 +1000,9 @@ Part 25 of 29 of [Corpus Testing](../Corpus-Testing.md): boards 2,593 to 2,700, 
 
 </td></tr></table>
 
-## 2615. SparkFun_GNSS_Flex_Module_ZED-X20P_Tilt
+## 2616. SparkFun_GNSS_Flex_Module_ZED-X20P_Tilt
 
-![Stages 4 and 6 take 47% to 80% of a run. Simulation, GLB takes 6.9 s. Simulation, STEP takes 8.4 s. Simulation, STL takes 6.8 s. Simulation, OBJ takes 11 s. Visual, GLB takes 9.8 s. Visual, OBJ takes 13 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2615b_sparkfun-gnss-flex-system_SparkFun-GNSS-Flex-Module-ZED-X20P-Tilt/stages.webp)
+![Stages 4 and 6 take 47% to 80% of a run. Simulation, GLB takes 6.9 s. Simulation, STEP takes 8.4 s. Simulation, STL takes 6.8 s. Simulation, OBJ takes 11 s. Visual, GLB takes 9.8 s. Visual, OBJ takes 13 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2616b_sparkfun-gnss-flex-system_SparkFun-GNSS-Flex-Module-ZED-X20P-Tilt/stages.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -1000,9 +1043,9 @@ Part 25 of 29 of [Corpus Testing](../Corpus-Testing.md): boards 2,593 to 2,700, 
 
 </td></tr></table>
 
-## 2616. SparkPNT_GPSDO_panelized
+## 2617. SparkPNT_GPSDO_panelized
 
-![SparkPNT_GPSDO_panelized: stages 4 and 6 take 54% to 83% of a run. Simulation, GLB takes 48 s. Simulation, STEP takes 59 s. Simulation, STL takes 50 s. Simulation, OBJ takes 70 s. Visual, GLB takes 74 s. Visual, OBJ takes 87 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2616b_sparkfun-gnssdo_SparkPNT-GPSDO-panelized/stages.webp)
+![SparkPNT_GPSDO_panelized: stages 4 and 6 take 54% to 83% of a run. Simulation, GLB takes 48 s. Simulation, STEP takes 59 s. Simulation, STL takes 50 s. Simulation, OBJ takes 70 s. Visual, GLB takes 74 s. Visual, OBJ takes 87 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2617b_sparkfun-gnssdo_SparkPNT-GPSDO-panelized/stages.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -1044,9 +1087,9 @@ Part 25 of 29 of [Corpus Testing](../Corpus-Testing.md): boards 2,593 to 2,700, 
 
 </td></tr></table>
 
-## 2617. SparkPNT_GPSDO
+## 2618. SparkPNT_GPSDO
 
-![SparkPNT_GPSDO: stages 4 and 6 take 52% to 85% of a run. Simulation, GLB takes 46 s. Simulation, STEP takes 56 s. Simulation, STL takes 47 s. Simulation, OBJ takes 70 s. Visual, GLB takes 66 s. Visual, OBJ takes 81 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2617b_sparkfun-gnssdo_SparkPNT-GPSDO/stages.webp)
+![SparkPNT_GPSDO: stages 4 and 6 take 52% to 85% of a run. Simulation, GLB takes 46 s. Simulation, STEP takes 56 s. Simulation, STL takes 47 s. Simulation, OBJ takes 70 s. Visual, GLB takes 66 s. Visual, OBJ takes 81 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2618b_sparkfun-gnssdo_SparkPNT-GPSDO/stages.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -1087,9 +1130,9 @@ Part 25 of 29 of [Corpus Testing](../Corpus-Testing.md): boards 2,593 to 2,700, 
 
 </td></tr></table>
 
-## 2618. SparkPNT_GNSSDO_Plus_panelized
+## 2619. SparkPNT_GNSSDO_Plus_panelized
 
-![Stages 4 and 6 take 56% to 82% of a run. Simulation, GLB takes 60 s. Simulation, STEP takes 72 s. Simulation, STL takes 60 s. Simulation, OBJ takes 86 s. Visual, GLB takes 75 s. Visual, OBJ takes 92 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2618b_sparkfun-gnssdo_SparkPNT-GNSSDO-Plus-panelized/stages.webp)
+![Stages 4 and 6 take 56% to 82% of a run. Simulation, GLB takes 60 s. Simulation, STEP takes 72 s. Simulation, STL takes 60 s. Simulation, OBJ takes 86 s. Visual, GLB takes 75 s. Visual, OBJ takes 92 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2619b_sparkfun-gnssdo_SparkPNT-GNSSDO-Plus-panelized/stages.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -1131,9 +1174,9 @@ Part 25 of 29 of [Corpus Testing](../Corpus-Testing.md): boards 2,593 to 2,700, 
 
 </td></tr></table>
 
-## 2619. SparkPNT_GNSSDO_Plus
+## 2620. SparkPNT_GNSSDO_Plus
 
-![SparkPNT_GNSSDO_Plus: stages 4 and 6 take 56% to 82% of a run. Simulation, GLB takes 63 s. Simulation, STEP takes 75 s. Simulation, STL takes 66 s. Simulation, OBJ takes 95 s. Visual, GLB takes 82 s. Visual, OBJ takes 96 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2619b_sparkfun-gnssdo_SparkPNT-GNSSDO-Plus/stages.webp)
+![SparkPNT_GNSSDO_Plus: stages 4 and 6 take 56% to 82% of a run. Simulation, GLB takes 63 s. Simulation, STEP takes 75 s. Simulation, STL takes 66 s. Simulation, OBJ takes 95 s. Visual, GLB takes 82 s. Visual, OBJ takes 96 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2620b_sparkfun-gnssdo_SparkPNT-GNSSDO-Plus/stages.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -1174,9 +1217,9 @@ Part 25 of 29 of [Corpus Testing](../Corpus-Testing.md): boards 2,593 to 2,700, 
 
 </td></tr></table>
 
-## 2620. SparkFun_Thing_Plus_ESP32-S3_panelized
+## 2621. SparkFun_Thing_Plus_ESP32-S3_panelized
 
-![Stages 4 and 6 take 49% to 83% of a run. Simulation, GLB takes 2 min. Simulation, STEP takes 3 min. Simulation, STL takes 2 min. Simulation, OBJ takes 4 min. Visual, GLB takes 3 min. Visual, OBJ takes 4 min](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2620b_SparkFun-Thing-Plus-ESP32-S3_SparkFun-Thing-Plus-ESP32-S3-panelized/stages.webp)
+![Stages 4 and 6 take 49% to 83% of a run. Simulation, GLB takes 2 min. Simulation, STEP takes 3 min. Simulation, STL takes 2 min. Simulation, OBJ takes 4 min. Visual, GLB takes 3 min. Visual, OBJ takes 4 min](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2621b_SparkFun-Thing-Plus-ESP32-S3_SparkFun-Thing-Plus-ESP32-S3-panelized/stages.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -1218,9 +1261,9 @@ Part 25 of 29 of [Corpus Testing](../Corpus-Testing.md): boards 2,593 to 2,700, 
 
 </td></tr></table>
 
-## 2621. SparkFun_Thing_Plus_ESP32-S3
+## 2622. SparkFun_Thing_Plus_ESP32-S3
 
-![SparkFun_Thing_Plus_ESP32-S3: stages 4 and 6 take 46% to 80% of a run. Simulation, GLB takes 8.2 s. Simulation, STEP takes 11 s. Simulation, STL takes 8.6 s. Simulation, OBJ takes 13 s. Visual, GLB takes 13 s. Visual, OBJ takes 17 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2621b_SparkFun-Thing-Plus-ESP32-S3_SparkFun-Thing-Plus-ESP32-S3/stages.webp)
+![SparkFun_Thing_Plus_ESP32-S3: stages 4 and 6 take 46% to 80% of a run. Simulation, GLB takes 8.2 s. Simulation, STEP takes 11 s. Simulation, STL takes 8.6 s. Simulation, OBJ takes 13 s. Visual, GLB takes 13 s. Visual, OBJ takes 17 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2622b_SparkFun-Thing-Plus-ESP32-S3_SparkFun-Thing-Plus-ESP32-S3/stages.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -1261,9 +1304,9 @@ Part 25 of 29 of [Corpus Testing](../Corpus-Testing.md): boards 2,593 to 2,700, 
 
 </td></tr></table>
 
-## 2622. MAP Card
+## 2623. MAP Card
 
-![MAP Card: stages 4 and 6 take 41% to 75% of a run. Simulation, GLB takes 1.3 s. Simulation, STEP takes 2.1 s. Simulation, STL takes 1.2 s. Simulation, OBJ takes 1.6 s. Visual, GLB takes 1.9 s. Visual, OBJ takes 2.1 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2622b_hardware_DropBear-MAP-Card-v0-2_MAP-Card/stages.webp)
+![MAP Card: stages 4 and 6 take 41% to 75% of a run. Simulation, GLB takes 1.3 s. Simulation, STEP takes 2.1 s. Simulation, STL takes 1.2 s. Simulation, OBJ takes 1.6 s. Visual, GLB takes 1.9 s. Visual, OBJ takes 2.1 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2623b_hardware_DropBear-MAP-Card-v0-2_MAP-Card/stages.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -1304,9 +1347,9 @@ Part 25 of 29 of [Corpus Testing](../Corpus-Testing.md): boards 2,593 to 2,700, 
 
 </td></tr></table>
 
-## 2623. MAP Card
+## 2624. MAP Card
 
-![MAP Card: stages 4 and 6 take 38% to 74% of a run. Simulation, GLB takes 1.1 s. Simulation, STEP takes 1.8 s. Simulation, STL takes 1.1 s. Simulation, OBJ takes 1.4 s. Visual, GLB takes 1.6 s. Visual, OBJ takes 1.8 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2623b_hardware_DropBear-MAP-Card-v0-3_MAP-Card/stages.webp)
+![MAP Card: stages 4 and 6 take 38% to 74% of a run. Simulation, GLB takes 1.1 s. Simulation, STEP takes 1.8 s. Simulation, STL takes 1.1 s. Simulation, OBJ takes 1.4 s. Visual, GLB takes 1.6 s. Visual, OBJ takes 1.8 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2624b_hardware_DropBear-MAP-Card-v0-3_MAP-Card/stages.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -1347,9 +1390,9 @@ Part 25 of 29 of [Corpus Testing](../Corpus-Testing.md): boards 2,593 to 2,700, 
 
 </td></tr></table>
 
-## 2624. DropBear
+## 2625. DropBear
 
-![DropBear: stages 4 and 6 take 60% to 86% of a run. Simulation, GLB takes 38 s. Simulation, STEP takes 46 s. Simulation, STL takes 39 s. Simulation, OBJ takes 54 s. Visual, GLB takes 52 s. Visual, OBJ takes 63 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2624b_hardware_DropBear-V1-1_DropBear/stages.webp)
+![DropBear: stages 4 and 6 take 60% to 86% of a run. Simulation, GLB takes 38 s. Simulation, STEP takes 46 s. Simulation, STL takes 39 s. Simulation, OBJ takes 54 s. Visual, GLB takes 52 s. Visual, OBJ takes 63 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2625b_hardware_DropBear-V1-1_DropBear/stages.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -1390,9 +1433,9 @@ Part 25 of 29 of [Corpus Testing](../Corpus-Testing.md): boards 2,593 to 2,700, 
 
 </td></tr></table>
 
-## 2625. DropBear
+## 2626. DropBear
 
-![DropBear: stages 4 and 6 take 59% to 84% of a run. Simulation, GLB takes 28 s. Simulation, STEP takes 36 s. Simulation, STL takes 29 s. Simulation, OBJ takes 41 s. Visual, GLB takes 46 s. Visual, OBJ takes 56 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2625b_hardware_DropBear-V2_DropBear/stages.webp)
+![DropBear: stages 4 and 6 take 59% to 84% of a run. Simulation, GLB takes 28 s. Simulation, STEP takes 36 s. Simulation, STL takes 29 s. Simulation, OBJ takes 41 s. Visual, GLB takes 46 s. Visual, OBJ takes 56 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2626b_hardware_DropBear-V2_DropBear/stages.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -1433,9 +1476,9 @@ Part 25 of 29 of [Corpus Testing](../Corpus-Testing.md): boards 2,593 to 2,700, 
 
 </td></tr></table>
 
-## 2626. 48-pin breakout
+## 2627. 48-pin breakout
 
-![48-pin breakout: stages 4 and 6 take 53% to 83% of a run. Simulation, GLB takes 5.9 s. Simulation, STEP takes 7.6 s. Simulation, STL takes 6.1 s. Simulation, OBJ takes 9.0 s. Visual, GLB takes 8.2 s. Visual, OBJ takes 10 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2626b_hardware_48-pin-breakout/stages.webp)
+![48-pin breakout: stages 4 and 6 take 53% to 83% of a run. Simulation, GLB takes 5.9 s. Simulation, STEP takes 7.6 s. Simulation, STL takes 6.1 s. Simulation, OBJ takes 9.0 s. Visual, GLB takes 8.2 s. Visual, OBJ takes 10 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2627b_hardware_48-pin-breakout/stages.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -1476,9 +1519,9 @@ Part 25 of 29 of [Corpus Testing](../Corpus-Testing.md): boards 2,593 to 2,700, 
 
 </td></tr></table>
 
-## 2627. NA6 v1.3
+## 2628. NA6 v1.3
 
-![NA6 v1.3: stages 4 and 6 take 56% to 86% of a run. Simulation, GLB takes 46 s. Simulation, STEP takes 57 s. Simulation, STL takes 46 s. Simulation, OBJ takes 62 s. Visual, GLB takes 59 s. Visual, OBJ takes 67 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2627b_hardware_NA6-v1-3/stages.webp)
+![NA6 v1.3: stages 4 and 6 take 56% to 86% of a run. Simulation, GLB takes 46 s. Simulation, STEP takes 57 s. Simulation, STL takes 46 s. Simulation, OBJ takes 62 s. Visual, GLB takes 59 s. Visual, OBJ takes 67 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2628b_hardware_NA6-v1-3/stages.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -1519,9 +1562,9 @@ Part 25 of 29 of [Corpus Testing](../Corpus-Testing.md): boards 2,593 to 2,700, 
 
 </td></tr></table>
 
-## 2628. NA6
+## 2629. NA6
 
-![NA6: stages 4 and 6 take 59% to 86% of a run. Simulation, GLB takes 44 s. Simulation, STEP takes 50 s. Simulation, STL takes 42 s. Simulation, OBJ takes 58 s. Visual, GLB takes 55 s. Visual, OBJ takes 62 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2628b_hardware_NA6/stages.webp)
+![NA6: stages 4 and 6 take 59% to 86% of a run. Simulation, GLB takes 44 s. Simulation, STEP takes 50 s. Simulation, STL takes 42 s. Simulation, OBJ takes 58 s. Visual, GLB takes 55 s. Visual, OBJ takes 62 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2629b_hardware_NA6/stages.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -1562,9 +1605,9 @@ Part 25 of 29 of [Corpus Testing](../Corpus-Testing.md): boards 2,593 to 2,700, 
 
 </td></tr></table>
 
-## 2629. Screw terminal interface
+## 2630. Screw terminal interface
 
-![Screw terminal interface: stages 4 and 6 take 52% to 79% of a run. Simulation, GLB takes 3.2 s. Simulation, STEP takes 4.3 s. Simulation, STL takes 3.3 s. Simulation, OBJ takes 4.6 s. Visual, GLB takes 3.8 s. Visual, OBJ takes 4.6 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2629b_hardware_Screw-terminal-interface/stages.webp)
+![Screw terminal interface: stages 4 and 6 take 52% to 79% of a run. Simulation, GLB takes 3.2 s. Simulation, STEP takes 4.3 s. Simulation, STL takes 3.3 s. Simulation, OBJ takes 4.6 s. Visual, GLB takes 3.8 s. Visual, OBJ takes 4.6 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2630b_hardware_Screw-terminal-interface/stages.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -1604,9 +1647,9 @@ Part 25 of 29 of [Corpus Testing](../Corpus-Testing.md): boards 2,593 to 2,700, 
 
 </td></tr></table>
 
-## 2630. v0.4.4d
+## 2631. v0.4.4d
 
-![v0.4.4d: stages 4 and 6 take 60% to 84% of a run. Simulation, GLB takes 45 s. Simulation, STEP takes 56 s. Simulation, STL takes 48 s. Simulation, OBJ takes 65 s. Visual, GLB takes 65 s. Visual, OBJ takes 77 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2630b_hardware_v0-4-4d/stages.webp)
+![v0.4.4d: stages 4 and 6 take 60% to 84% of a run. Simulation, GLB takes 45 s. Simulation, STEP takes 56 s. Simulation, STL takes 48 s. Simulation, OBJ takes 65 s. Visual, GLB takes 65 s. Visual, OBJ takes 77 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2631b_hardware_v0-4-4d/stages.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -1647,9 +1690,9 @@ Part 25 of 29 of [Corpus Testing](../Corpus-Testing.md): boards 2,593 to 2,700, 
 
 </td></tr></table>
 
-## 2631. v0.4.4b
+## 2632. v0.4.4b
 
-![v0.4.4b: stages 4 and 6 take 59% to 84% of a run. Simulation, GLB takes 42 s. Simulation, STEP takes 51 s. Simulation, STL takes 41 s. Simulation, OBJ takes 56 s. Visual, GLB takes 56 s. Visual, OBJ takes 68 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2631b_hardware_v0-4-4b/stages.webp)
+![v0.4.4b: stages 4 and 6 take 59% to 84% of a run. Simulation, GLB takes 42 s. Simulation, STEP takes 51 s. Simulation, STL takes 41 s. Simulation, OBJ takes 56 s. Visual, GLB takes 56 s. Visual, OBJ takes 68 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2632b_hardware_v0-4-4b/stages.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -1690,9 +1733,9 @@ Part 25 of 29 of [Corpus Testing](../Corpus-Testing.md): boards 2,593 to 2,700, 
 
 </td></tr></table>
 
-## 2632. v0.4.4c
+## 2633. v0.4.4c
 
-![v0.4.4c: stages 4 and 6 take 59% to 84% of a run. Simulation, GLB takes 41 s. Simulation, STEP takes 49 s. Simulation, STL takes 43 s. Simulation, OBJ takes 58 s. Visual, GLB takes 60 s. Visual, OBJ takes 67 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2632b_hardware_v0-4-4c/stages.webp)
+![v0.4.4c: stages 4 and 6 take 59% to 84% of a run. Simulation, GLB takes 41 s. Simulation, STEP takes 49 s. Simulation, STL takes 43 s. Simulation, OBJ takes 58 s. Visual, GLB takes 60 s. Visual, OBJ takes 67 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2633b_hardware_v0-4-4c/stages.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -1733,9 +1776,9 @@ Part 25 of 29 of [Corpus Testing](../Corpus-Testing.md): boards 2,593 to 2,700, 
 
 </td></tr></table>
 
-## 2633. v0.4.3d
+## 2634. v0.4.3d
 
-![v0.4.3d: stages 4 and 6 take 56% to 87% of a run. Simulation, GLB takes 40 s. Simulation, STEP takes 49 s. Simulation, STL takes 40 s. Simulation, OBJ takes 59 s. Visual, GLB takes 54 s. Visual, OBJ takes 68 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2633b_hardware_v0-4-3d/stages.webp)
+![v0.4.3d: stages 4 and 6 take 56% to 87% of a run. Simulation, GLB takes 40 s. Simulation, STEP takes 49 s. Simulation, STL takes 40 s. Simulation, OBJ takes 59 s. Visual, GLB takes 54 s. Visual, OBJ takes 68 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2634b_hardware_v0-4-3d/stages.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -1776,9 +1819,9 @@ Part 25 of 29 of [Corpus Testing](../Corpus-Testing.md): boards 2,593 to 2,700, 
 
 </td></tr></table>
 
-## 2634. VR-Conditioner-MAX9926+reg
+## 2635. VR-Conditioner-MAX9926+reg
 
-![VR-Conditioner-MAX9926+reg: stages 4 and 6 take 52% to 78% of a run. Simulation, GLB takes 2.4 s. Simulation, STEP takes 3.2 s. Simulation, STL takes 2.4 s. Simulation, OBJ takes 3.2 s. Visual, GLB takes 3.6 s. Visual, OBJ takes 4.2 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2634b_hardware_VR-Conditioner-MAX9926-reg/stages.webp)
+![VR-Conditioner-MAX9926+reg: stages 4 and 6 take 52% to 78% of a run. Simulation, GLB takes 2.4 s. Simulation, STEP takes 3.2 s. Simulation, STL takes 2.4 s. Simulation, OBJ takes 3.2 s. Visual, GLB takes 3.6 s. Visual, OBJ takes 4.2 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2635b_hardware_VR-Conditioner-MAX9926-reg/stages.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -1819,9 +1862,9 @@ Part 25 of 29 of [Corpus Testing](../Corpus-Testing.md): boards 2,593 to 2,700, 
 
 </td></tr></table>
 
-## 2635. DubaiXTClone
+## 2636. DubaiXTClone
 
-![DubaiXTClone: stages 4 and 6 take 48% to 85% of a run. Simulation, GLB takes 2 min. Simulation, STEP takes 3 min. Simulation, STL takes 2 min. Simulation, OBJ takes 4 min. Visual, GLB takes 3 min. Visual, OBJ takes 4 min](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2635b_DubaiXTClone_DubaiXTClone/stages.webp)
+![DubaiXTClone: stages 4 and 6 take 48% to 85% of a run. Simulation, GLB takes 2 min. Simulation, STEP takes 3 min. Simulation, STL takes 2 min. Simulation, OBJ takes 4 min. Visual, GLB takes 3 min. Visual, OBJ takes 4 min](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2636b_DubaiXTClone_DubaiXTClone/stages.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -1861,9 +1904,9 @@ Part 25 of 29 of [Corpus Testing](../Corpus-Testing.md): boards 2,593 to 2,700, 
 
 </td></tr></table>
 
-## 2636. cm5-carrier
+## 2637. cm5-carrier
 
-![cm5-carrier: stages 4 and 6 take 49% to 81% of a run. Simulation, GLB takes 7.1 s. Simulation, STEP takes 8.7 s. Simulation, STL takes 7.1 s. Simulation, OBJ takes 9.5 s. Visual, GLB takes 11 s. Visual, OBJ takes 14 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2636b_spirit_cm5-carrier/stages.webp)
+![cm5-carrier: stages 4 and 6 take 49% to 81% of a run. Simulation, GLB takes 7.1 s. Simulation, STEP takes 8.7 s. Simulation, STL takes 7.1 s. Simulation, OBJ takes 9.5 s. Visual, GLB takes 11 s. Visual, OBJ takes 14 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2637b_spirit_cm5-carrier/stages.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -1904,9 +1947,9 @@ Part 25 of 29 of [Corpus Testing](../Corpus-Testing.md): boards 2,593 to 2,700, 
 
 </td></tr></table>
 
-## 2637. motherboard
+## 2638. motherboard
 
-![motherboard: stages 4 and 6 take 57% to 88% of a run. Simulation, GLB takes 5 min. Simulation, STEP takes 5 min. Simulation, STL takes 4 min. Simulation, OBJ takes 5 min. Visual, GLB takes 6 min. Visual, OBJ takes 7 min](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2637b_kicad-conversions-atari-260-520-st-motherboard-c070231_motherboard/stages.webp)
+![motherboard: stages 4 and 6 take 57% to 88% of a run. Simulation, GLB takes 5 min. Simulation, STEP takes 5 min. Simulation, STL takes 4 min. Simulation, OBJ takes 5 min. Visual, GLB takes 6 min. Visual, OBJ takes 7 min](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2638b_kicad-conversions-atari-260-520-st-motherboard-c070231_motherboard/stages.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -1946,9 +1989,9 @@ Part 25 of 29 of [Corpus Testing](../Corpus-Testing.md): boards 2,593 to 2,700, 
 
 </td></tr></table>
 
-## 2638. leaf
+## 2639. leaf
 
-![leaf: stages 4 and 6 take 53% to 83% of a run. Simulation, GLB takes 40 s. Simulation, STEP takes 50 s. Simulation, STL takes 39 s. Simulation, OBJ takes 58 s. Visual, GLB takes 63 s. Visual, OBJ takes 80 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2638b_leaf-rv1126_leaf/stages.webp)
+![leaf: stages 4 and 6 take 53% to 83% of a run. Simulation, GLB takes 40 s. Simulation, STEP takes 50 s. Simulation, STL takes 39 s. Simulation, OBJ takes 58 s. Visual, GLB takes 63 s. Visual, OBJ takes 80 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2639b_leaf-rv1126_leaf/stages.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -1988,9 +2031,9 @@ Part 25 of 29 of [Corpus Testing](../Corpus-Testing.md): boards 2,593 to 2,700, 
 
 </td></tr></table>
 
-## 2639. leaf-minipcie
+## 2640. leaf-minipcie
 
-![leaf-minipcie: stages 4 and 6 take 45% to 82% of a run. Simulation, GLB takes 19 s. Simulation, STEP takes 25 s. Simulation, STL takes 20 s. Simulation, OBJ takes 33 s. Visual, GLB takes 35 s. Visual, OBJ takes 45 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2639b_leaf-rv1126_leaf-minipcie/stages.webp)
+![leaf-minipcie: stages 4 and 6 take 45% to 82% of a run. Simulation, GLB takes 19 s. Simulation, STEP takes 25 s. Simulation, STL takes 20 s. Simulation, OBJ takes 33 s. Visual, GLB takes 35 s. Visual, OBJ takes 45 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2640b_leaf-rv1126_leaf-minipcie/stages.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -2031,9 +2074,9 @@ Part 25 of 29 of [Corpus Testing](../Corpus-Testing.md): boards 2,593 to 2,700, 
 
 </td></tr></table>
 
-## 2640. hadbadge2019
+## 2641. hadbadge2019
 
-![hadbadge2019: stages 4 and 6 take 53% to 83% of a run. Simulation, GLB takes 48 s. Simulation, STEP takes 57 s. Simulation, STL takes 47 s. Simulation, OBJ takes 69 s. Visual, GLB takes 69 s. Visual, OBJ takes 80 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2640b_hadbadge2019-pcb_hadbadge2019/stages.webp)
+![hadbadge2019: stages 4 and 6 take 53% to 83% of a run. Simulation, GLB takes 48 s. Simulation, STEP takes 57 s. Simulation, STL takes 47 s. Simulation, OBJ takes 69 s. Visual, GLB takes 69 s. Visual, OBJ takes 80 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2641b_hadbadge2019-pcb_hadbadge2019/stages.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -2073,9 +2116,9 @@ Part 25 of 29 of [Corpus Testing](../Corpus-Testing.md): boards 2,593 to 2,700, 
 
 </td></tr></table>
 
-## 2641. beepy
+## 2642. beepy
 
-![beepy: stages 4 and 6 take 52% to 84% of a run. Simulation, GLB takes 14 s. Simulation, STEP takes 18 s. Simulation, STL takes 14 s. Simulation, OBJ takes 21 s. Visual, GLB takes 21 s. Visual, OBJ takes 27 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2641b_beepy-hardware_beepy/stages.webp)
+![beepy: stages 4 and 6 take 52% to 84% of a run. Simulation, GLB takes 14 s. Simulation, STEP takes 18 s. Simulation, STL takes 14 s. Simulation, OBJ takes 21 s. Visual, GLB takes 21 s. Visual, OBJ takes 27 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2642b_beepy-hardware_beepy/stages.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -2116,9 +2159,9 @@ Part 25 of 29 of [Corpus Testing](../Corpus-Testing.md): boards 2,593 to 2,700, 
 
 </td></tr></table>
 
-## 2642. Watchy
+## 2643. Watchy
 
-![Watchy: stages 4 and 6 take 54% to 84% of a run. Simulation, GLB takes 9.5 s. Simulation, STEP takes 12 s. Simulation, STL takes 9.5 s. Simulation, OBJ takes 14 s. Visual, GLB takes 13 s. Visual, OBJ takes 16 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2642b_watchy-hardware_Watchy/stages.webp)
+![Watchy: stages 4 and 6 take 54% to 84% of a run. Simulation, GLB takes 9.5 s. Simulation, STEP takes 12 s. Simulation, STL takes 9.5 s. Simulation, OBJ takes 14 s. Visual, GLB takes 13 s. Visual, OBJ takes 16 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2643b_watchy-hardware_Watchy/stages.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -2158,9 +2201,9 @@ Part 25 of 29 of [Corpus Testing](../Corpus-Testing.md): boards 2,593 to 2,700, 
 
 </td></tr></table>
 
-## 2643. inteli210AT
+## 2644. inteli210AT
 
-![inteli210AT: stages 4 and 6 take 54% to 82% of a run. Simulation, GLB takes 10 s. Simulation, STEP takes 13 s. Simulation, STL takes 10 s. Simulation, OBJ takes 15 s. Visual, GLB takes 13 s. Visual, OBJ takes 16 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2643b_intel-i210-network-card_inteli210AT/stages.webp)
+![inteli210AT: stages 4 and 6 take 54% to 82% of a run. Simulation, GLB takes 10 s. Simulation, STEP takes 13 s. Simulation, STL takes 10 s. Simulation, OBJ takes 15 s. Visual, GLB takes 13 s. Visual, OBJ takes 16 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2644b_intel-i210-network-card_inteli210AT/stages.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -2201,9 +2244,9 @@ Part 25 of 29 of [Corpus Testing](../Corpus-Testing.md): boards 2,593 to 2,700, 
 
 </td></tr></table>
 
-## 2644. V1
+## 2645. V1
 
-![V1: stages 4 and 6 take 50% to 79% of a run. Simulation, GLB takes 5.0 s. Simulation, STEP takes 6.2 s. Simulation, STL takes 4.6 s. Simulation, OBJ takes 6.7 s. Visual, GLB takes 7.4 s. Visual, OBJ takes 9.1 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2644b_intel-i210-network-card_PCBV3-0-reference-OCP2PCIe-master-OCP2PCIe-H-F-4-OCP2PCIe-H-F-4-V0-1Beta_V1/stages.webp)
+![V1: stages 4 and 6 take 50% to 79% of a run. Simulation, GLB takes 5.0 s. Simulation, STEP takes 6.2 s. Simulation, STL takes 4.6 s. Simulation, OBJ takes 6.7 s. Visual, GLB takes 7.4 s. Visual, OBJ takes 9.1 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2645b_intel-i210-network-card_PCBV3-0-reference-OCP2PCIe-master-OCP2PCIe-H-F-4-OCP2PCIe-H-F-4-V0-1Beta_V1/stages.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -2244,9 +2287,9 @@ Part 25 of 29 of [Corpus Testing](../Corpus-Testing.md): boards 2,593 to 2,700, 
 
 </td></tr></table>
 
-## 2645. V1
+## 2646. V1
 
-![V1: stages 4 and 6 take 49% to 78% of a run. Simulation, GLB takes 4.7 s. Simulation, STEP takes 5.9 s. Simulation, STL takes 4.5 s. Simulation, OBJ takes 6.8 s. Visual, GLB takes 7.0 s. Visual, OBJ takes 8.9 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2645b_intel-i210-network-card_PCBV3-0-reference-OCP2PCIe-master-OCP2PCIe-H-F-4-OCP2PCIe-H-F-4-V1-0Beta_V1/stages.webp)
+![V1: stages 4 and 6 take 49% to 78% of a run. Simulation, GLB takes 4.7 s. Simulation, STEP takes 5.9 s. Simulation, STL takes 4.5 s. Simulation, OBJ takes 6.8 s. Visual, GLB takes 7.0 s. Visual, OBJ takes 8.9 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2646b_intel-i210-network-card_PCBV3-0-reference-OCP2PCIe-master-OCP2PCIe-H-F-4-OCP2PCIe-H-F-4-V1-0Beta_V1/stages.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -2287,9 +2330,9 @@ Part 25 of 29 of [Corpus Testing](../Corpus-Testing.md): boards 2,593 to 2,700, 
 
 </td></tr></table>
 
-## 2646. v1-cut10x10
+## 2647. v1-cut10x10
 
-![v1-cut10x10: stages 4 and 6 take 49% to 80% of a run. Simulation, GLB takes 5.6 s. Simulation, STEP takes 7.7 s. Simulation, STL takes 6.1 s. Simulation, OBJ takes 8.9 s. Visual, GLB takes 8.8 s. Visual, OBJ takes 12 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2646b_intel-i210-network-card_v1-cut10x10/stages.webp)
+![v1-cut10x10: stages 4 and 6 take 49% to 80% of a run. Simulation, GLB takes 5.6 s. Simulation, STEP takes 7.7 s. Simulation, STL takes 6.1 s. Simulation, OBJ takes 8.9 s. Visual, GLB takes 8.8 s. Visual, OBJ takes 12 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2647b_intel-i210-network-card_v1-cut10x10/stages.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -2330,9 +2373,9 @@ Part 25 of 29 of [Corpus Testing](../Corpus-Testing.md): boards 2,593 to 2,700, 
 
 </td></tr></table>
 
-## 2647. V1
+## 2648. V1
 
-![V1: stages 4 and 6 take 49% to 79% of a run. Simulation, GLB takes 4.8 s. Simulation, STEP takes 6.2 s. Simulation, STL takes 4.9 s. Simulation, OBJ takes 7.3 s. Visual, GLB takes 7.0 s. Visual, OBJ takes 9.0 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2647b_intel-i210-network-card_PCBV3-0-reference-OCP2PCIe-master-OCP2PCIe-H-F-4-OCP2PCIe-H-F-4-V1-1Beta_V1/stages.webp)
+![V1: stages 4 and 6 take 49% to 79% of a run. Simulation, GLB takes 4.8 s. Simulation, STEP takes 6.2 s. Simulation, STL takes 4.9 s. Simulation, OBJ takes 7.3 s. Visual, GLB takes 7.0 s. Visual, OBJ takes 9.0 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2648b_intel-i210-network-card_PCBV3-0-reference-OCP2PCIe-master-OCP2PCIe-H-F-4-OCP2PCIe-H-F-4-V1-1Beta_V1/stages.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -2373,9 +2416,9 @@ Part 25 of 29 of [Corpus Testing](../Corpus-Testing.md): boards 2,593 to 2,700, 
 
 </td></tr></table>
 
-## 2648. V1-cut10x10
+## 2649. V1-cut10x10
 
-![V1-cut10x10: stages 4 and 6 take 50% to 81% of a run. Simulation, GLB takes 7.4 s. Simulation, STEP takes 9.3 s. Simulation, STL takes 7.7 s. Simulation, OBJ takes 11 s. Visual, GLB takes 11 s. Visual, OBJ takes 14 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2648b_intel-i210-network-card_V1-cut10x10/stages.webp)
+![V1-cut10x10: stages 4 and 6 take 50% to 81% of a run. Simulation, GLB takes 7.4 s. Simulation, STEP takes 9.3 s. Simulation, STL takes 7.7 s. Simulation, OBJ takes 11 s. Visual, GLB takes 11 s. Visual, OBJ takes 14 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2649b_intel-i210-network-card_V1-cut10x10/stages.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -2416,9 +2459,9 @@ Part 25 of 29 of [Corpus Testing](../Corpus-Testing.md): boards 2,593 to 2,700, 
 
 </td></tr></table>
 
-## 2649. V1
+## 2650. V1
 
-![V1: stages 4 and 6 take 51% to 82% of a run. Simulation, GLB takes 6.6 s. Simulation, STEP takes 8.1 s. Simulation, STL takes 6.6 s. Simulation, OBJ takes 9.6 s. Visual, GLB takes 8.9 s. Visual, OBJ takes 12 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2649b_intel-i210-network-card_PCBV3-0-reference-OCP2PCIe-master-OCP2PCIe-H-F-4-OCP2PCIe-H-F-4-V2-0Beta_V1/stages.webp)
+![V1: stages 4 and 6 take 51% to 82% of a run. Simulation, GLB takes 6.6 s. Simulation, STEP takes 8.1 s. Simulation, STL takes 6.6 s. Simulation, OBJ takes 9.6 s. Visual, GLB takes 8.9 s. Visual, OBJ takes 12 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2650b_intel-i210-network-card_PCBV3-0-reference-OCP2PCIe-master-OCP2PCIe-H-F-4-OCP2PCIe-H-F-4-V2-0Beta_V1/stages.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -2459,9 +2502,9 @@ Part 25 of 29 of [Corpus Testing](../Corpus-Testing.md): boards 2,593 to 2,700, 
 
 </td></tr></table>
 
-## 2650. m5-pantilt
+## 2651. m5-pantilt
 
-![m5-pantilt: stages 4 and 6 take 50% to 82% of a run. Simulation, GLB takes 6.1 s. Simulation, STEP takes 7.7 s. Simulation, STL takes 6.0 s. Simulation, OBJ takes 9.1 s. Visual, GLB takes 8.7 s. Visual, OBJ takes 11 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2650b_stack-chan_m5-pantilt/stages.webp)
+![m5-pantilt: stages 4 and 6 take 50% to 82% of a run. Simulation, GLB takes 6.1 s. Simulation, STEP takes 7.7 s. Simulation, STL takes 6.0 s. Simulation, OBJ takes 9.1 s. Visual, GLB takes 8.7 s. Visual, OBJ takes 11 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2651b_stack-chan_m5-pantilt/stages.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -2502,9 +2545,9 @@ Part 25 of 29 of [Corpus Testing](../Corpus-Testing.md): boards 2,593 to 2,700, 
 
 </td></tr></table>
 
-## 2651. aerolotl_av
+## 2652. aerolotl_av
 
-![aerolotl_av: stages 4 and 6 take 54% to 82% of a run. Simulation, GLB takes 37 s. Simulation, STEP takes 46 s. Simulation, STL takes 38 s. Simulation, OBJ takes 55 s. Visual, GLB takes 51 s. Visual, OBJ takes 63 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2651b_aerolotl-av_aerolotl-av/stages.webp)
+![aerolotl_av: stages 4 and 6 take 54% to 82% of a run. Simulation, GLB takes 37 s. Simulation, STEP takes 46 s. Simulation, STL takes 38 s. Simulation, OBJ takes 55 s. Visual, GLB takes 51 s. Visual, OBJ takes 63 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2652b_aerolotl-av_aerolotl-av/stages.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -2544,9 +2587,9 @@ Part 25 of 29 of [Corpus Testing](../Corpus-Testing.md): boards 2,593 to 2,700, 
 
 </td></tr></table>
 
-## 2652. aerolotl
+## 2653. aerolotl
 
-![aerolotl: stages 4 and 6 take 53% to 83% of a run. Simulation, GLB takes 13 s. Simulation, STEP takes 16 s. Simulation, STL takes 13 s. Simulation, OBJ takes 18 s. Visual, GLB takes 19 s. Visual, OBJ takes 23 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2652b_aerolotl-kicad_aerolotl/stages.webp)
+![aerolotl: stages 4 and 6 take 53% to 83% of a run. Simulation, GLB takes 13 s. Simulation, STEP takes 16 s. Simulation, STL takes 13 s. Simulation, OBJ takes 18 s. Visual, GLB takes 19 s. Visual, OBJ takes 23 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2653b_aerolotl-kicad_aerolotl/stages.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -2587,9 +2630,9 @@ Part 25 of 29 of [Corpus Testing](../Corpus-Testing.md): boards 2,593 to 2,700, 
 
 </td></tr></table>
 
-## 2653. battery_pcb
+## 2654. battery_pcb
 
-![battery_pcb: stages 4 and 6 take 50% to 83% of a run. Simulation, GLB takes 8.5 s. Simulation, STEP takes 10 s. Simulation, STL takes 8.4 s. Simulation, OBJ takes 13 s. Visual, GLB takes 12 s. Visual, OBJ takes 16 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2653b_aerolotl-kicad_battery-pcb/stages.webp)
+![battery_pcb: stages 4 and 6 take 50% to 83% of a run. Simulation, GLB takes 8.5 s. Simulation, STEP takes 10 s. Simulation, STL takes 8.4 s. Simulation, OBJ takes 13 s. Visual, GLB takes 12 s. Visual, OBJ takes 16 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2654b_aerolotl-kicad_battery-pcb/stages.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -2630,9 +2673,9 @@ Part 25 of 29 of [Corpus Testing](../Corpus-Testing.md): boards 2,593 to 2,700, 
 
 </td></tr></table>
 
-## 2654. battery_pcb_30pin
+## 2655. battery_pcb_30pin
 
-![battery_pcb_30pin: stages 4 and 6 take 52% to 82% of a run. Simulation, GLB takes 6.9 s. Simulation, STEP takes 8.7 s. Simulation, STL takes 6.9 s. Simulation, OBJ takes 9.8 s. Visual, GLB takes 10 s. Visual, OBJ takes 13 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2654b_aerolotl-kicad_battery-pcb-30pin/stages.webp)
+![battery_pcb_30pin: stages 4 and 6 take 52% to 82% of a run. Simulation, GLB takes 6.9 s. Simulation, STEP takes 8.7 s. Simulation, STL takes 6.9 s. Simulation, OBJ takes 9.8 s. Visual, GLB takes 10 s. Visual, OBJ takes 13 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2655b_aerolotl-kicad_battery-pcb-30pin/stages.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -2673,9 +2716,9 @@ Part 25 of 29 of [Corpus Testing](../Corpus-Testing.md): boards 2,593 to 2,700, 
 
 </td></tr></table>
 
-## 2655. seed_user_1224
+## 2656. seed_user_1224
 
-![seed_user_1224: stages 4 and 6 take 50% to 80% of a run. Simulation, GLB takes 4.9 s. Simulation, STEP takes 6.5 s. Simulation, STL takes 5.0 s. Simulation, OBJ takes 7.5 s. Visual, GLB takes 7.8 s. Visual, OBJ takes 9.7 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2655b_aerolotl-kicad_seed-user-1224/stages.webp)
+![seed_user_1224: stages 4 and 6 take 50% to 80% of a run. Simulation, GLB takes 4.9 s. Simulation, STEP takes 6.5 s. Simulation, STL takes 5.0 s. Simulation, OBJ takes 7.5 s. Visual, GLB takes 7.8 s. Visual, OBJ takes 9.7 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2656b_aerolotl-kicad_seed-user-1224/stages.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -2716,9 +2759,9 @@ Part 25 of 29 of [Corpus Testing](../Corpus-Testing.md): boards 2,593 to 2,700, 
 
 </td></tr></table>
 
-## 2656. motor_board
+## 2657. motor_board
 
-![motor_board: stages 4 and 6 take 56% to 86% of a run. Simulation, GLB takes 35 s. Simulation, STEP takes 42 s. Simulation, STL takes 37 s. Simulation, OBJ takes 54 s. Visual, GLB takes 52 s. Visual, OBJ takes 62 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2656b_samwise-avionics_motor-board/stages.webp)
+![motor_board: stages 4 and 6 take 56% to 86% of a run. Simulation, GLB takes 35 s. Simulation, STEP takes 42 s. Simulation, STL takes 37 s. Simulation, OBJ takes 54 s. Visual, GLB takes 52 s. Visual, OBJ takes 62 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2657b_samwise-avionics_motor-board/stages.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -2759,9 +2802,9 @@ Part 25 of 29 of [Corpus Testing](../Corpus-Testing.md): boards 2,593 to 2,700, 
 
 </td></tr></table>
 
-## 2657. ADCS_board
+## 2658. ADCS_board
 
-![ADCS_board: stages 4 and 6 take 59% to 85% of a run. Simulation, GLB takes 42 s. Simulation, STEP takes 51 s. Simulation, STL takes 43 s. Simulation, OBJ takes 59 s. Visual, GLB takes 61 s. Visual, OBJ takes 73 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2657b_samwise-avionics_ADCS-board/stages.webp)
+![ADCS_board: stages 4 and 6 take 59% to 85% of a run. Simulation, GLB takes 42 s. Simulation, STEP takes 51 s. Simulation, STL takes 43 s. Simulation, OBJ takes 59 s. Visual, GLB takes 61 s. Visual, OBJ takes 73 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2658b_samwise-avionics_ADCS-board/stages.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -2802,9 +2845,9 @@ Part 25 of 29 of [Corpus Testing](../Corpus-Testing.md): boards 2,593 to 2,700, 
 
 </td></tr></table>
 
-## 2658. batteryboard
+## 2659. batteryboard
 
-![batteryboard: stages 4 and 6 take 48% to 78% of a run. Simulation, GLB takes 6.4 s. Simulation, STEP takes 8.0 s. Simulation, STL takes 6.6 s. Simulation, OBJ takes 9.6 s. Visual, GLB takes 8.8 s. Visual, OBJ takes 12 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2658b_samwise-avionics_batteryboard/stages.webp)
+![batteryboard: stages 4 and 6 take 48% to 78% of a run. Simulation, GLB takes 6.4 s. Simulation, STEP takes 8.0 s. Simulation, STL takes 6.6 s. Simulation, OBJ takes 9.6 s. Visual, GLB takes 8.8 s. Visual, OBJ takes 12 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2659b_samwise-avionics_batteryboard/stages.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -2845,9 +2888,9 @@ Part 25 of 29 of [Corpus Testing](../Corpus-Testing.md): boards 2,593 to 2,700, 
 
 </td></tr></table>
 
-## 2659. FlexDeploySidePanels
+## 2660. FlexDeploySidePanels
 
-![FlexDeploySidePanels: stages 4 and 6 take 45% to 77% of a run. Simulation, GLB takes 13 s. Simulation, STEP takes 16 s. Simulation, STL takes 12 s. Simulation, OBJ takes 20 s. Visual, GLB takes 17 s. Visual, OBJ takes 21 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2659b_samwise-avionics_FlexDeploySidePanels/stages.webp)
+![FlexDeploySidePanels: stages 4 and 6 take 45% to 77% of a run. Simulation, GLB takes 13 s. Simulation, STEP takes 16 s. Simulation, STL takes 12 s. Simulation, OBJ takes 20 s. Visual, GLB takes 17 s. Visual, OBJ takes 21 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2660b_samwise-avionics_FlexDeploySidePanels/stages.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -2889,9 +2932,9 @@ Part 25 of 29 of [Corpus Testing](../Corpus-Testing.md): boards 2,593 to 2,700, 
 
 </td></tr></table>
 
-## 2660. Groundstation_2400_Hat
+## 2661. Groundstation_2400_Hat
 
-![Groundstation_2400_Hat: stages 4 and 6 take 47% to 80% of a run. Simulation, GLB takes 5.7 s. Simulation, STEP takes 7.1 s. Simulation, STL takes 5.6 s. Simulation, OBJ takes 8.6 s. Visual, GLB takes 7.8 s. Visual, OBJ takes 9.9 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2660b_samwise-avionics_Groundstation-2400-Hat/stages.webp)
+![Groundstation_2400_Hat: stages 4 and 6 take 47% to 80% of a run. Simulation, GLB takes 5.7 s. Simulation, STEP takes 7.1 s. Simulation, STL takes 5.6 s. Simulation, OBJ takes 8.6 s. Visual, GLB takes 7.8 s. Visual, OBJ takes 9.9 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2661b_samwise-avionics_Groundstation-2400-Hat/stages.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -2932,9 +2975,9 @@ Part 25 of 29 of [Corpus Testing](../Corpus-Testing.md): boards 2,593 to 2,700, 
 
 </td></tr></table>
 
-## 2661. Groundstation_433_Hat
+## 2662. Groundstation_433_Hat
 
-![Groundstation_433_Hat: stages 4 and 6 take 48% to 82% of a run. Simulation, GLB takes 8.1 s. Simulation, STEP takes 11 s. Simulation, STL takes 8.1 s. Simulation, OBJ takes 13 s. Visual, GLB takes 11 s. Visual, OBJ takes 13 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2661b_samwise-avionics_Groundstation-433-Hat/stages.webp)
+![Groundstation_433_Hat: stages 4 and 6 take 48% to 82% of a run. Simulation, GLB takes 8.1 s. Simulation, STEP takes 11 s. Simulation, STL takes 8.1 s. Simulation, OBJ takes 13 s. Visual, GLB takes 11 s. Visual, OBJ takes 13 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2662b_samwise-avionics_Groundstation-433-Hat/stages.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -2975,9 +3018,9 @@ Part 25 of 29 of [Corpus Testing](../Corpus-Testing.md): boards 2,593 to 2,700, 
 
 </td></tr></table>
 
-## 2662. LT8491-mezzanine
+## 2663. LT8491-mezzanine
 
-![LT8491-mezzanine: stages 4 and 6 take 48% to 82% of a run. Simulation, GLB takes 12 s. Simulation, STEP takes 16 s. Simulation, STL takes 13 s. Simulation, OBJ takes 20 s. Visual, GLB takes 18 s. Visual, OBJ takes 22 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2662b_samwise-avionics_LT8491-mezzanine/stages.webp)
+![LT8491-mezzanine: stages 4 and 6 take 48% to 82% of a run. Simulation, GLB takes 12 s. Simulation, STEP takes 16 s. Simulation, STL takes 13 s. Simulation, OBJ takes 20 s. Visual, GLB takes 18 s. Visual, OBJ takes 22 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2663b_samwise-avionics_LT8491-mezzanine/stages.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -3018,9 +3061,9 @@ Part 25 of 29 of [Corpus Testing](../Corpus-Testing.md): boards 2,593 to 2,700, 
 
 </td></tr></table>
 
-## 2663. magnetometer_extern
+## 2664. magnetometer_extern
 
-![magnetometer_extern: stages 4 and 6 take 39% to 71% of a run. Simulation, GLB takes 1.2 s. Simulation, STEP takes 2.1 s. Simulation, STL takes 1.3 s. Simulation, OBJ takes 1.6 s. Visual, GLB takes 1.8 s. Visual, OBJ takes 2.0 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2663b_samwise-avionics_magnetometer-extern/stages.webp)
+![magnetometer_extern: stages 4 and 6 take 39% to 71% of a run. Simulation, GLB takes 1.2 s. Simulation, STEP takes 2.1 s. Simulation, STL takes 1.3 s. Simulation, OBJ takes 1.6 s. Visual, GLB takes 1.8 s. Visual, OBJ takes 2.0 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2664b_samwise-avionics_magnetometer-extern/stages.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -3061,9 +3104,9 @@ Part 25 of 29 of [Corpus Testing](../Corpus-Testing.md): boards 2,593 to 2,700, 
 
 </td></tr></table>
 
-## 2664. MPPT_addon_board
+## 2665. MPPT_addon_board
 
-![MPPT_addon_board: stages 4 and 6 take 61% to 84% of a run. Simulation, GLB takes 14 s. Simulation, STEP takes 16 s. Simulation, STL takes 12 s. Simulation, OBJ takes 18 s. Visual, GLB takes 16 s. Visual, OBJ takes 21 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2664b_samwise-avionics_MPPT-addon-board/stages.webp)
+![MPPT_addon_board: stages 4 and 6 take 61% to 84% of a run. Simulation, GLB takes 14 s. Simulation, STEP takes 16 s. Simulation, STL takes 12 s. Simulation, OBJ takes 18 s. Visual, GLB takes 16 s. Visual, OBJ takes 21 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2665b_samwise-avionics_MPPT-addon-board/stages.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -3104,9 +3147,9 @@ Part 25 of 29 of [Corpus Testing](../Corpus-Testing.md): boards 2,593 to 2,700, 
 
 </td></tr></table>
 
-## 2665. picubed_samwise
+## 2666. picubed_samwise
 
-![picubed_samwise: stages 4 and 6 take 54% to 83% of a run. Simulation, GLB takes 35 s. Simulation, STEP takes 43 s. Simulation, STL takes 37 s. Simulation, OBJ takes 54 s. Visual, GLB takes 55 s. Visual, OBJ takes 69 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2665b_samwise-avionics_picubed-samwise/stages.webp)
+![picubed_samwise: stages 4 and 6 take 54% to 83% of a run. Simulation, GLB takes 35 s. Simulation, STEP takes 43 s. Simulation, STL takes 37 s. Simulation, OBJ takes 54 s. Visual, GLB takes 55 s. Visual, OBJ takes 69 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2666b_samwise-avionics_picubed-samwise/stages.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -3147,9 +3190,9 @@ Part 25 of 29 of [Corpus Testing](../Corpus-Testing.md): boards 2,593 to 2,700, 
 
 </td></tr></table>
 
-## 2666. RPi_interface
+## 2667. RPi_interface
 
-![RPi_interface: stages 4 and 6 take 46% to 79% of a run. Simulation, GLB takes 12 s. Simulation, STEP takes 15 s. Simulation, STL takes 12 s. Simulation, OBJ takes 19 s. Visual, GLB takes 17 s. Visual, OBJ takes 21 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2666b_samwise-avionics_RPi-interface/stages.webp)
+![RPi_interface: stages 4 and 6 take 46% to 79% of a run. Simulation, GLB takes 12 s. Simulation, STEP takes 15 s. Simulation, STL takes 12 s. Simulation, OBJ takes 19 s. Visual, GLB takes 17 s. Visual, OBJ takes 21 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2667b_samwise-avionics_RPi-interface/stages.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -3190,9 +3233,9 @@ Part 25 of 29 of [Corpus Testing](../Corpus-Testing.md): boards 2,593 to 2,700, 
 
 </td></tr></table>
 
-## 2667. Stationary_X_Panel
+## 2668. Stationary_X_Panel
 
-![Stationary_X_Panel: stages 4 and 6 take 45% to 78% of a run. Simulation, GLB takes 4.9 s. Simulation, STEP takes 6.2 s. Simulation, STL takes 4.7 s. Simulation, OBJ takes 7.0 s. Visual, GLB takes 8.1 s. Visual, OBJ takes 9.9 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2667b_samwise-avionics_Stationary-X-Panel/stages.webp)
+![Stationary_X_Panel: stages 4 and 6 take 45% to 78% of a run. Simulation, GLB takes 4.9 s. Simulation, STEP takes 6.2 s. Simulation, STL takes 4.7 s. Simulation, OBJ takes 7.0 s. Visual, GLB takes 8.1 s. Visual, OBJ takes 9.9 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2668b_samwise-avionics_Stationary-X-Panel/stages.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -3234,9 +3277,9 @@ Part 25 of 29 of [Corpus Testing](../Corpus-Testing.md): boards 2,593 to 2,700, 
 
 </td></tr></table>
 
-## 2668. Piramide_Del_Sol
+## 2669. Piramide_Del_Sol
 
-![Piramide_Del_Sol: stages 4 and 6 take 53% to 78% of a run. Simulation, GLB takes 2.4 s. Simulation, STEP takes 3.3 s. Simulation, STL takes 2.3 s. Simulation, OBJ takes 3.2 s. Visual, GLB takes 3.2 s. Visual, OBJ takes 4.0 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2668b_samwise-avionics_Piramide-Del-Sol/stages.webp)
+![Piramide_Del_Sol: stages 4 and 6 take 53% to 78% of a run. Simulation, GLB takes 2.4 s. Simulation, STEP takes 3.3 s. Simulation, STL takes 2.3 s. Simulation, OBJ takes 3.2 s. Visual, GLB takes 3.2 s. Visual, OBJ takes 4.0 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2669b_samwise-avionics_Piramide-Del-Sol/stages.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -3277,9 +3320,9 @@ Part 25 of 29 of [Corpus Testing](../Corpus-Testing.md): boards 2,593 to 2,700, 
 
 </td></tr></table>
 
-## 2669. Coil_Panel_XY
+## 2670. Coil_Panel_XY
 
-![Coil_Panel_XY: stages 4 and 6 take 41% to 74% of a run. Simulation, GLB takes 2.1 s. Simulation, STEP takes 3.0 s. Simulation, STL takes 2.2 s. Simulation, OBJ takes 3.3 s. Visual, GLB takes 3.4 s. Visual, OBJ takes 4.2 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2669b_samwise-avionics_Coil-Panel-XY/stages.webp)
+![Coil_Panel_XY: stages 4 and 6 take 41% to 74% of a run. Simulation, GLB takes 2.1 s. Simulation, STEP takes 3.0 s. Simulation, STL takes 2.2 s. Simulation, OBJ takes 3.3 s. Visual, GLB takes 3.4 s. Visual, OBJ takes 4.2 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2670b_samwise-avionics_Coil-Panel-XY/stages.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -3321,9 +3364,9 @@ Part 25 of 29 of [Corpus Testing](../Corpus-Testing.md): boards 2,593 to 2,700, 
 
 </td></tr></table>
 
-## 2670. Coil_Panel_Z
+## 2671. Coil_Panel_Z
 
-![Coil_Panel_Z: stages 4 and 6 take 41% to 71% of a run. Simulation, GLB takes 2.2 s. Simulation, STEP takes 3.4 s. Simulation, STL takes 2.2 s. Simulation, OBJ takes 3.1 s. Visual, GLB takes 3.3 s. Visual, OBJ takes 3.8 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2670b_samwise-avionics_Coil-Panel-Z/stages.webp)
+![Coil_Panel_Z: stages 4 and 6 take 41% to 71% of a run. Simulation, GLB takes 2.2 s. Simulation, STEP takes 3.4 s. Simulation, STL takes 2.2 s. Simulation, OBJ takes 3.1 s. Visual, GLB takes 3.3 s. Visual, OBJ takes 3.8 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2671b_samwise-avionics_Coil-Panel-Z/stages.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -3365,9 +3408,9 @@ Part 25 of 29 of [Corpus Testing](../Corpus-Testing.md): boards 2,593 to 2,700, 
 
 </td></tr></table>
 
-## 2671. FeatherRadioAdapter
+## 2672. FeatherRadioAdapter
 
-![FeatherRadioAdapter: stages 4 and 6 take 45% to 80% of a run. Simulation, GLB takes 3.3 s. Simulation, STEP takes 4.3 s. Simulation, STL takes 3.2 s. Simulation, OBJ takes 5.0 s. Visual, GLB takes 4.4 s. Visual, OBJ takes 5.1 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2671b_samwise-avionics_FeatherRadioAdapter/stages.webp)
+![FeatherRadioAdapter: stages 4 and 6 take 45% to 80% of a run. Simulation, GLB takes 3.3 s. Simulation, STEP takes 4.3 s. Simulation, STL takes 3.2 s. Simulation, OBJ takes 5.0 s. Visual, GLB takes 4.4 s. Visual, OBJ takes 5.1 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2672b_samwise-avionics_FeatherRadioAdapter/stages.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -3408,9 +3451,9 @@ Part 25 of 29 of [Corpus Testing](../Corpus-Testing.md): boards 2,593 to 2,700, 
 
 </td></tr></table>
 
-## 2672. Pete_2400_Mini
+## 2673. Pete_2400_Mini
 
-![Pete_2400_Mini: stages 4 and 6 take 47% to 82% of a run. Simulation, GLB takes 5.1 s. Simulation, STEP takes 6.8 s. Simulation, STL takes 5.3 s. Simulation, OBJ takes 8.3 s. Visual, GLB takes 7.8 s. Visual, OBJ takes 9.5 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2672b_samwise-avionics_Pete-2400-Mini/stages.webp)
+![Pete_2400_Mini: stages 4 and 6 take 47% to 82% of a run. Simulation, GLB takes 5.1 s. Simulation, STEP takes 6.8 s. Simulation, STL takes 5.3 s. Simulation, OBJ takes 8.3 s. Visual, GLB takes 7.8 s. Visual, OBJ takes 9.5 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2673b_samwise-avionics_Pete-2400-Mini/stages.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -3451,9 +3494,9 @@ Part 25 of 29 of [Corpus Testing](../Corpus-Testing.md): boards 2,593 to 2,700, 
 
 </td></tr></table>
 
-## 2673. reaction_wheel
+## 2674. reaction_wheel
 
-![reaction_wheel: stages 4 and 6 take 46% to 78% of a run. Simulation, GLB takes 3.5 s. Simulation, STEP takes 4.8 s. Simulation, STL takes 3.3 s. Simulation, OBJ takes 4.7 s. Visual, GLB takes 4.4 s. Visual, OBJ takes 5.4 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2673b_samwise-avionics_reaction-wheel/stages.webp)
+![reaction_wheel: stages 4 and 6 take 46% to 78% of a run. Simulation, GLB takes 3.5 s. Simulation, STEP takes 4.8 s. Simulation, STL takes 3.3 s. Simulation, OBJ takes 4.7 s. Visual, GLB takes 4.4 s. Visual, OBJ takes 5.4 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2674b_samwise-avionics_reaction-wheel/stages.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -3494,9 +3537,9 @@ Part 25 of 29 of [Corpus Testing](../Corpus-Testing.md): boards 2,593 to 2,700, 
 
 </td></tr></table>
 
-## 2674. solar_charger
+## 2675. solar_charger
 
-![solar_charger: stages 4 and 6 take 47% to 83% of a run. Simulation, GLB takes 6.1 s. Simulation, STEP takes 7.9 s. Simulation, STL takes 6.2 s. Simulation, OBJ takes 9.2 s. Visual, GLB takes 9.2 s. Visual, OBJ takes 11 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2674b_samwise-avionics_solar-charger/stages.webp)
+![solar_charger: stages 4 and 6 take 47% to 83% of a run. Simulation, GLB takes 6.1 s. Simulation, STEP takes 7.9 s. Simulation, STL takes 6.2 s. Simulation, OBJ takes 9.2 s. Visual, GLB takes 9.2 s. Visual, OBJ takes 11 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2675b_samwise-avionics_solar-charger/stages.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -3537,9 +3580,9 @@ Part 25 of 29 of [Corpus Testing](../Corpus-Testing.md): boards 2,593 to 2,700, 
 
 </td></tr></table>
 
-## 2675. ZPlus_Panel
+## 2676. ZPlus_Panel
 
-![ZPlus_Panel: stages 4 and 6 take 45% to 79% of a run. Simulation, GLB takes 6.8 s. Simulation, STEP takes 8.8 s. Simulation, STL takes 7.0 s. Simulation, OBJ takes 10 s. Visual, GLB takes 9.2 s. Visual, OBJ takes 12 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2675b_samwise-avionics_ZPlus-Panel/stages.webp)
+![ZPlus_Panel: stages 4 and 6 take 45% to 79% of a run. Simulation, GLB takes 6.8 s. Simulation, STEP takes 8.8 s. Simulation, STL takes 7.0 s. Simulation, OBJ takes 10 s. Visual, GLB takes 9.2 s. Visual, OBJ takes 12 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2676b_samwise-avionics_ZPlus-Panel/stages.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -3581,9 +3624,9 @@ Part 25 of 29 of [Corpus Testing](../Corpus-Testing.md): boards 2,593 to 2,700, 
 
 </td></tr></table>
 
-## 2676. MegaDrive
+## 2677. MegaDrive
 
-![MegaDrive: stages 4 and 6 take 57% to 88% of a run. Simulation, GLB takes 85 s. Simulation, STEP takes 2 min. Simulation, STL takes 87 s. Simulation, OBJ takes 2 min. Visual, GLB takes 3 min. Visual, OBJ takes 3 min](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2676b_MegaDrive_MegaDrive/stages.webp)
+![MegaDrive: stages 4 and 6 take 57% to 88% of a run. Simulation, GLB takes 85 s. Simulation, STEP takes 2 min. Simulation, STL takes 87 s. Simulation, OBJ takes 2 min. Visual, GLB takes 3 min. Visual, OBJ takes 3 min](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2677b_MegaDrive_MegaDrive/stages.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -3623,9 +3666,9 @@ Part 25 of 29 of [Corpus Testing](../Corpus-Testing.md): boards 2,593 to 2,700, 
 
 </td></tr></table>
 
-## 2677. SNSP-CPU-01
+## 2678. SNSP-CPU-01
 
-![SNSP-CPU-01: stages 4 and 6 take 53% to 85% of a run. Simulation, GLB takes 68 s. Simulation, STEP takes 84 s. Simulation, STL takes 68 s. Simulation, OBJ takes 99 s. Visual, GLB takes 2 min. Visual, OBJ takes 2 min](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2677b_nonSNES_SNSP-CPU-01/stages.webp)
+![SNSP-CPU-01: stages 4 and 6 take 53% to 85% of a run. Simulation, GLB takes 68 s. Simulation, STEP takes 84 s. Simulation, STL takes 68 s. Simulation, OBJ takes 99 s. Visual, GLB takes 2 min. Visual, OBJ takes 2 min](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2678b_nonSNES_SNSP-CPU-01/stages.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -3666,9 +3709,9 @@ Part 25 of 29 of [Corpus Testing](../Corpus-Testing.md): boards 2,593 to 2,700, 
 
 </td></tr></table>
 
-## 2678. SNSP-CPU-1CHIP
+## 2679. SNSP-CPU-1CHIP
 
-![SNSP-CPU-1CHIP: stages 4 and 6 take 52% to 84% of a run. Simulation, GLB takes 41 s. Simulation, STEP takes 50 s. Simulation, STL takes 41 s. Simulation, OBJ takes 59 s. Visual, GLB takes 69 s. Visual, OBJ takes 88 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2678b_nonSNES_SNSP-CPU-1CHIP/stages.webp)
+![SNSP-CPU-1CHIP: stages 4 and 6 take 52% to 84% of a run. Simulation, GLB takes 41 s. Simulation, STEP takes 50 s. Simulation, STL takes 41 s. Simulation, OBJ takes 59 s. Visual, GLB takes 69 s. Visual, OBJ takes 88 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2679b_nonSNES_SNSP-CPU-1CHIP/stages.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -3709,9 +3752,9 @@ Part 25 of 29 of [Corpus Testing](../Corpus-Testing.md): boards 2,593 to 2,700, 
 
 </td></tr></table>
 
-## 2679. ControllerCircuit
+## 2680. ControllerCircuit
 
-![ControllerCircuit: stages 4 and 6 take 52% to 81% of a run. Simulation, GLB takes 25 s. Simulation, STEP takes 27 s. Simulation, STL takes 22 s. Simulation, OBJ takes 31 s. Visual, GLB takes 35 s. Visual, OBJ takes 43 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2679b_diybmsv4_ControllerCircuit/stages.webp)
+![ControllerCircuit: stages 4 and 6 take 52% to 81% of a run. Simulation, GLB takes 25 s. Simulation, STEP takes 27 s. Simulation, STL takes 22 s. Simulation, OBJ takes 31 s. Visual, GLB takes 35 s. Visual, OBJ takes 43 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2680b_diybmsv4_ControllerCircuit/stages.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -3752,9 +3795,9 @@ Part 25 of 29 of [Corpus Testing](../Corpus-Testing.md): boards 2,593 to 2,700, 
 
 </td></tr></table>
 
-## 2680. ControllerCurrentShuntAddOn
+## 2681. ControllerCurrentShuntAddOn
 
-![ControllerCurrentShuntAddOn: stages 4 and 6 take 47% to 76% of a run. Simulation, GLB takes 1.7 s. Simulation, STEP takes 2.5 s. Simulation, STL takes 1.7 s. Simulation, OBJ takes 2.4 s. Visual, GLB takes 2.4 s. Visual, OBJ takes 2.8 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2680b_diybmsv4_ControllerCurrentShuntAddOn/stages.webp)
+![ControllerCurrentShuntAddOn: stages 4 and 6 take 47% to 76% of a run. Simulation, GLB takes 1.7 s. Simulation, STEP takes 2.5 s. Simulation, STL takes 1.7 s. Simulation, OBJ takes 2.4 s. Visual, GLB takes 2.4 s. Visual, OBJ takes 2.8 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2681b_diybmsv4_ControllerCurrentShuntAddOn/stages.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -3795,9 +3838,9 @@ Part 25 of 29 of [Corpus Testing](../Corpus-Testing.md): boards 2,593 to 2,700, 
 
 </td></tr></table>
 
-## 2681. ESP8266ControllerCircuit
+## 2682. ESP8266ControllerCircuit
 
-![ESP8266ControllerCircuit: stages 4 and 6 take 54% to 82% of a run. Simulation, GLB takes 4.1 s. Simulation, STEP takes 5.4 s. Simulation, STL takes 4.2 s. Simulation, OBJ takes 5.9 s. Visual, GLB takes 6.1 s. Visual, OBJ takes 7.3 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2681b_diybmsv4_ESP8266ControllerCircuit/stages.webp)
+![ESP8266ControllerCircuit: stages 4 and 6 take 54% to 82% of a run. Simulation, GLB takes 4.1 s. Simulation, STEP takes 5.4 s. Simulation, STL takes 4.2 s. Simulation, OBJ takes 5.9 s. Visual, GLB takes 6.1 s. Visual, OBJ takes 7.3 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2682b_diybmsv4_ESP8266ControllerCircuit/stages.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -3838,9 +3881,9 @@ Part 25 of 29 of [Corpus Testing](../Corpus-Testing.md): boards 2,593 to 2,700, 
 
 </td></tr></table>
 
-## 2682. v4
+## 2683. v4
 
-![v4: stages 4 and 6 take 52% to 79% of a run. Simulation, GLB takes 3.9 s. Simulation, STEP takes 4.8 s. Simulation, STL takes 3.9 s. Simulation, OBJ takes 5.6 s. Visual, GLB takes 6.0 s. Visual, OBJ takes 7.6 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2682b_diybmsv4_v4/stages.webp)
+![v4: stages 4 and 6 take 52% to 79% of a run. Simulation, GLB takes 3.9 s. Simulation, STEP takes 4.8 s. Simulation, STL takes 3.9 s. Simulation, OBJ takes 5.6 s. Visual, GLB takes 6.0 s. Visual, OBJ takes 7.6 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2683b_diybmsv4_v4/stages.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -3881,9 +3924,9 @@ Part 25 of 29 of [Corpus Testing](../Corpus-Testing.md): boards 2,593 to 2,700, 
 
 </td></tr></table>
 
-## 2683. ModuleV421
+## 2684. ModuleV421
 
-![ModuleV421: stages 4 and 6 take 56% to 82% of a run. Simulation, GLB takes 4.3 s. Simulation, STEP takes 5.7 s. Simulation, STL takes 4.7 s. Simulation, OBJ takes 6.7 s. Visual, GLB takes 7.3 s. Visual, OBJ takes 8.3 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2683b_diybmsv4_ModuleV421/stages.webp)
+![ModuleV421: stages 4 and 6 take 56% to 82% of a run. Simulation, GLB takes 4.3 s. Simulation, STEP takes 5.7 s. Simulation, STL takes 4.7 s. Simulation, OBJ takes 6.7 s. Visual, GLB takes 7.3 s. Visual, OBJ takes 8.3 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2684b_diybmsv4_ModuleV421/stages.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -3924,9 +3967,9 @@ Part 25 of 29 of [Corpus Testing](../Corpus-Testing.md): boards 2,593 to 2,700, 
 
 </td></tr></table>
 
-## 2684. ModuleV440
+## 2685. ModuleV440
 
-![ModuleV440: stages 4 and 6 take 53% to 81% of a run. Simulation, GLB takes 5.3 s. Simulation, STEP takes 6.8 s. Simulation, STL takes 5.4 s. Simulation, OBJ takes 7.2 s. Visual, GLB takes 7.8 s. Visual, OBJ takes 9.6 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2684b_diybmsv4_ModuleV440/stages.webp)
+![ModuleV440: stages 4 and 6 take 53% to 81% of a run. Simulation, GLB takes 5.3 s. Simulation, STEP takes 6.8 s. Simulation, STL takes 5.4 s. Simulation, OBJ takes 7.2 s. Visual, GLB takes 7.8 s. Visual, OBJ takes 9.6 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2685b_diybmsv4_ModuleV440/stages.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -3967,9 +4010,9 @@ Part 25 of 29 of [Corpus Testing](../Corpus-Testing.md): boards 2,593 to 2,700, 
 
 </td></tr></table>
 
-## 2685. ModuleV450
+## 2686. ModuleV450
 
-![ModuleV450: stages 4 and 6 take 54% to 82% of a run. Simulation, GLB takes 5.8 s. Simulation, STEP takes 7.2 s. Simulation, STL takes 5.7 s. Simulation, OBJ takes 8.7 s. Visual, GLB takes 8.4 s. Visual, OBJ takes 11 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2685b_diybmsv4_ModuleV450/stages.webp)
+![ModuleV450: stages 4 and 6 take 54% to 82% of a run. Simulation, GLB takes 5.8 s. Simulation, STEP takes 7.2 s. Simulation, STL takes 5.7 s. Simulation, OBJ takes 8.7 s. Visual, GLB takes 8.4 s. Visual, OBJ takes 11 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2686b_diybmsv4_ModuleV450/stages.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -4010,9 +4053,9 @@ Part 25 of 29 of [Corpus Testing](../Corpus-Testing.md): boards 2,593 to 2,700, 
 
 </td></tr></table>
 
-## 2686. Module_16S
+## 2687. Module_16S
 
-![Module_16S: stages 4 and 6 take 49% to 82% of a run. Simulation, GLB takes 22 s. Simulation, STEP takes 28 s. Simulation, STL takes 22 s. Simulation, OBJ takes 33 s. Visual, GLB takes 34 s. Visual, OBJ takes 43 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2686b_diybmsv4_Module-16S/stages.webp)
+![Module_16S: stages 4 and 6 take 49% to 82% of a run. Simulation, GLB takes 22 s. Simulation, STEP takes 28 s. Simulation, STL takes 22 s. Simulation, OBJ takes 33 s. Visual, GLB takes 34 s. Visual, OBJ takes 43 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2687b_diybmsv4_Module-16S/stages.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -4053,9 +4096,9 @@ Part 25 of 29 of [Corpus Testing](../Corpus-Testing.md): boards 2,593 to 2,700, 
 
 </td></tr></table>
 
-## 2687. Module_16S_PassiveBalanceAddOn
+## 2688. Module_16S_PassiveBalanceAddOn
 
-![Stages 4 and 6 take 52% to 81% of a run. Simulation, GLB takes 11 s. Simulation, STEP takes 14 s. Simulation, STL takes 10 s. Simulation, OBJ takes 16 s. Visual, GLB takes 15 s. Visual, OBJ takes 20 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2687b_diybmsv4_Module-16S-PassiveBalanceAddOn/stages.webp)
+![Stages 4 and 6 take 52% to 81% of a run. Simulation, GLB takes 11 s. Simulation, STEP takes 14 s. Simulation, STL takes 10 s. Simulation, OBJ takes 16 s. Visual, GLB takes 15 s. Visual, OBJ takes 20 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2688b_diybmsv4_Module-16S-PassiveBalanceAddOn/stages.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -4096,9 +4139,9 @@ Part 25 of 29 of [Corpus Testing](../Corpus-Testing.md): boards 2,593 to 2,700, 
 
 </td></tr></table>
 
-## 2688. ProgrammingAdapter
+## 2689. ProgrammingAdapter
 
-![ProgrammingAdapter: stages 4 and 6 take 47% to 78% of a run. Simulation, GLB takes 1.9 s. Simulation, STEP takes 2.7 s. Simulation, STL takes 1.9 s. Simulation, OBJ takes 2.6 s. Visual, GLB takes 2.6 s. Visual, OBJ takes 3.2 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2688b_diybmsv4_ProgrammingAdapter/stages.webp)
+![ProgrammingAdapter: stages 4 and 6 take 47% to 78% of a run. Simulation, GLB takes 1.9 s. Simulation, STEP takes 2.7 s. Simulation, STL takes 1.9 s. Simulation, OBJ takes 2.6 s. Visual, GLB takes 2.6 s. Visual, OBJ takes 3.2 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2689b_diybmsv4_ProgrammingAdapter/stages.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -4139,9 +4182,9 @@ Part 25 of 29 of [Corpus Testing](../Corpus-Testing.md): boards 2,593 to 2,700, 
 
 </td></tr></table>
 
-## 2689. TemperaturePCB
+## 2690. TemperaturePCB
 
-![TemperaturePCB: stages 4 and 6 take 38% to 76% of a run. Simulation, GLB takes 1.3 s. Simulation, STEP takes 2.1 s. Simulation, STL takes 1.4 s. Simulation, OBJ takes 1.8 s. Visual, GLB takes 2.2 s. Visual, OBJ takes 2.4 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2689b_diybmsv4_TemperaturePCB/stages.webp)
+![TemperaturePCB: stages 4 and 6 take 38% to 76% of a run. Simulation, GLB takes 1.3 s. Simulation, STEP takes 2.1 s. Simulation, STL takes 1.4 s. Simulation, OBJ takes 1.8 s. Visual, GLB takes 2.2 s. Visual, OBJ takes 2.4 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2690b_diybmsv4_TemperaturePCB/stages.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -4182,9 +4225,9 @@ Part 25 of 29 of [Corpus Testing](../Corpus-Testing.md): boards 2,593 to 2,700, 
 
 </td></tr></table>
 
-## 2690. TemperaturePCB_PANEL
+## 2691. TemperaturePCB_PANEL
 
-![TemperaturePCB_PANEL: stages 4 and 6 take 49% to 79% of a run. Simulation, GLB takes 10 s. Simulation, STEP takes 14 s. Simulation, STL takes 11 s. Simulation, OBJ takes 16 s. Visual, GLB takes 17 s. Visual, OBJ takes 23 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2690b_diybmsv4_TemperaturePCB-PANEL/stages.webp)
+![TemperaturePCB_PANEL: stages 4 and 6 take 49% to 79% of a run. Simulation, GLB takes 10 s. Simulation, STEP takes 14 s. Simulation, STL takes 11 s. Simulation, OBJ takes 16 s. Visual, GLB takes 17 s. Visual, OBJ takes 23 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2691b_diybmsv4_TemperaturePCB-PANEL/stages.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -4226,9 +4269,9 @@ Part 25 of 29 of [Corpus Testing](../Corpus-Testing.md): boards 2,593 to 2,700, 
 
 </td></tr></table>
 
-## 2691. sensors
+## 2692. sensors
 
-![sensors: stages 4 and 6 take 42% to 75% of a run. Simulation, GLB takes 1.6 s. Simulation, STEP takes 2.8 s. Simulation, STL takes 2.1 s. Simulation, OBJ takes 2.6 s. Visual, GLB takes 2.8 s. Visual, OBJ takes 2.7 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2691b_Racer_sensors/stages.webp)
+![sensors: stages 4 and 6 take 42% to 75% of a run. Simulation, GLB takes 1.6 s. Simulation, STEP takes 2.8 s. Simulation, STL takes 2.1 s. Simulation, OBJ takes 2.6 s. Visual, GLB takes 2.8 s. Visual, OBJ takes 2.7 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2692b_Racer_sensors/stages.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -4269,9 +4312,9 @@ Part 25 of 29 of [Corpus Testing](../Corpus-Testing.md): boards 2,593 to 2,700, 
 
 </td></tr></table>
 
-## 2692. racer
+## 2693. racer
 
-![racer: stages 4 and 6 take 53% to 83% of a run. Simulation, GLB takes 12 s. Simulation, STEP takes 16 s. Simulation, STL takes 12 s. Simulation, OBJ takes 18 s. Visual, GLB takes 16 s. Visual, OBJ takes 22 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2692b_Racer_racer/stages.webp)
+![racer: stages 4 and 6 take 53% to 83% of a run. Simulation, GLB takes 12 s. Simulation, STEP takes 16 s. Simulation, STL takes 12 s. Simulation, OBJ takes 18 s. Visual, GLB takes 16 s. Visual, OBJ takes 22 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2693b_Racer_racer/stages.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -4312,9 +4355,9 @@ Part 25 of 29 of [Corpus Testing](../Corpus-Testing.md): boards 2,593 to 2,700, 
 
 </td></tr></table>
 
-## 2693. controller
+## 2694. controller
 
-![controller: stages 4 and 6 take 49% to 81% of a run. Simulation, GLB takes 9.1 s. Simulation, STEP takes 12 s. Simulation, STL takes 9.2 s. Simulation, OBJ takes 14 s. Visual, GLB takes 12 s. Visual, OBJ takes 17 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2693b_Racer_controller/stages.webp)
+![controller: stages 4 and 6 take 49% to 81% of a run. Simulation, GLB takes 9.1 s. Simulation, STEP takes 12 s. Simulation, STL takes 9.2 s. Simulation, OBJ takes 14 s. Visual, GLB takes 12 s. Visual, OBJ takes 17 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2694b_Racer_controller/stages.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -4355,9 +4398,9 @@ Part 25 of 29 of [Corpus Testing](../Corpus-Testing.md): boards 2,593 to 2,700, 
 
 </td></tr></table>
 
-## 2694. ail-LED
+## 2695. ail-LED
 
-![ail-LED: stages 4 and 6 take 41% to 72% of a run. Simulation, GLB takes 1.2 s. Simulation, STEP takes 1.9 s. Simulation, STL takes 1.2 s. Simulation, OBJ takes 1.6 s. Visual, GLB takes 1.7 s. Visual, OBJ takes 2.0 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2694b_pcb_ail-LED/stages.webp)
+![ail-LED: stages 4 and 6 take 41% to 72% of a run. Simulation, GLB takes 1.2 s. Simulation, STEP takes 1.9 s. Simulation, STL takes 1.2 s. Simulation, OBJ takes 1.6 s. Visual, GLB takes 1.7 s. Visual, OBJ takes 2.0 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2695b_pcb_ail-LED/stages.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -4398,9 +4441,9 @@ Part 25 of 29 of [Corpus Testing](../Corpus-Testing.md): boards 2,593 to 2,700, 
 
 </td></tr></table>
 
-## 2695. ail-LED_handsolder
+## 2696. ail-LED_handsolder
 
-![ail-LED_handsolder: stages 4 and 6 take 41% to 73% of a run. Simulation, GLB takes 1.2 s. Simulation, STEP takes 2.1 s. Simulation, STL takes 1.3 s. Simulation, OBJ takes 1.7 s. Visual, GLB takes 2.0 s. Visual, OBJ takes 2.2 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2695b_pcb_ail-LED-handsolder/stages.webp)
+![ail-LED_handsolder: stages 4 and 6 take 41% to 73% of a run. Simulation, GLB takes 1.2 s. Simulation, STEP takes 2.1 s. Simulation, STL takes 1.3 s. Simulation, OBJ takes 1.7 s. Visual, GLB takes 2.0 s. Visual, OBJ takes 2.2 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2696b_pcb_ail-LED-handsolder/stages.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -4441,9 +4484,9 @@ Part 25 of 29 of [Corpus Testing](../Corpus-Testing.md): boards 2,593 to 2,700, 
 
 </td></tr></table>
 
-## 2696. ail
+## 2697. ail
 
-![ail: stages 4 and 6 take 42% to 74% of a run. Simulation, GLB takes 1.9 s. Simulation, STEP takes 2.8 s. Simulation, STL takes 2.0 s. Simulation, OBJ takes 2.3 s. Visual, GLB takes 2.6 s. Visual, OBJ takes 3.3 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2696b_pcb_ail/stages.webp)
+![ail: stages 4 and 6 take 42% to 74% of a run. Simulation, GLB takes 1.9 s. Simulation, STEP takes 2.8 s. Simulation, STL takes 2.0 s. Simulation, OBJ takes 2.3 s. Visual, GLB takes 2.6 s. Visual, OBJ takes 3.3 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2697b_pcb_ail/stages.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -4484,9 +4527,9 @@ Part 25 of 29 of [Corpus Testing](../Corpus-Testing.md): boards 2,593 to 2,700, 
 
 </td></tr></table>
 
-## 2697. debug-board
+## 2698. debug-board
 
-![debug-board: stages 4 and 6 take 47% to 80% of a run. Simulation, GLB takes 4.1 s. Simulation, STEP takes 5.8 s. Simulation, STL takes 4.1 s. Simulation, OBJ takes 6.1 s. Visual, GLB takes 5.8 s. Visual, OBJ takes 8.2 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2697b_pcb_debug-board/stages.webp)
+![debug-board: stages 4 and 6 take 47% to 80% of a run. Simulation, GLB takes 4.1 s. Simulation, STEP takes 5.8 s. Simulation, STL takes 4.1 s. Simulation, OBJ takes 6.1 s. Visual, GLB takes 5.8 s. Visual, OBJ takes 8.2 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2698b_pcb_debug-board/stages.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -4527,9 +4570,9 @@ Part 25 of 29 of [Corpus Testing](../Corpus-Testing.md): boards 2,593 to 2,700, 
 
 </td></tr></table>
 
-## 2698. latching
+## 2699. latching
 
-![latching: stages 4 and 6 take 52% to 78% of a run. Simulation, GLB takes 4.0 s. Simulation, STEP takes 5.4 s. Simulation, STL takes 4.0 s. Simulation, OBJ takes 5.9 s. Visual, GLB takes 6.0 s. Visual, OBJ takes 7.8 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2698b_pcb_latching/stages.webp)
+![latching: stages 4 and 6 take 52% to 78% of a run. Simulation, GLB takes 4.0 s. Simulation, STEP takes 5.4 s. Simulation, STL takes 4.0 s. Simulation, OBJ takes 5.9 s. Visual, GLB takes 6.0 s. Visual, OBJ takes 7.8 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2699b_pcb_latching/stages.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -4570,9 +4613,9 @@ Part 25 of 29 of [Corpus Testing](../Corpus-Testing.md): boards 2,593 to 2,700, 
 
 </td></tr></table>
 
-## 2699. segment
+## 2700. segment
 
-![segment: stages 4 and 6 take 45% to 80% of a run. Simulation, GLB takes 8.7 s. Simulation, STEP takes 11 s. Simulation, STL takes 9.1 s. Simulation, OBJ takes 14 s. Visual, GLB takes 13 s. Visual, OBJ takes 16 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2699b_pcb_segment/stages.webp)
+![segment: stages 4 and 6 take 45% to 80% of a run. Simulation, GLB takes 8.7 s. Simulation, STEP takes 11 s. Simulation, STL takes 9.1 s. Simulation, OBJ takes 14 s. Visual, GLB takes 13 s. Visual, OBJ takes 16 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2700b_pcb_segment/stages.webp)
 
 | Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -4609,49 +4652,6 @@ Part 25 of 29 of [Corpus Testing](../Corpus-Testing.md): boards 2,593 to 2,700, 
 <tr><th colspan="3" align="left">Visual</th></tr>
 <tr><td>GLB</td><td align="right">18&nbsp;MB</td><td align="right">506&nbsp;MB</td></tr>
 <tr><td>OBJ</td><td align="right">54&nbsp;MB</td><td align="right">478&nbsp;MB</td></tr>
-</table>
-
-</td></tr></table>
-
-## 2700. sensor-board
-
-![sensor-board: stages 4 and 6 take 51% to 82% of a run. Simulation, GLB takes 12 s. Simulation, STEP takes 16 s. Simulation, STL takes 13 s. Simulation, OBJ takes 20 s. Visual, GLB takes 17 s. Visual, OBJ takes 21 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2700b_pcb_sensor-board/stages.webp)
-
-| Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
-|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-| Simulation, GLB | 0.5 | 1.1 | 4.5 | 0.7&nbsp;ms | 4.9 | 0.2 | 0.6 | 0.3 | 12.1 |
-| Simulation, STEP | 0.5 | 1.1 | 4.2 | 0.4&nbsp;ms | 5.0 | 4.1 | 0.6 | 0.3 | 15.8 |
-| Simulation, STL | 0.5 | 1.1 | 4.8 | 0.6&nbsp;ms | 5.2 | 0.4 | 0.6 | 0.3 | 13.0 |
-| Simulation, OBJ | 0.6 | 1.1 | 4.5 | 0.7&nbsp;ms | 5.4 | 7.0 | 0.6 | 0.2 | 19.5 |
-| Visual, GLB | 0.6 | 1.1 | 4.3 | 0.5&nbsp;ms | 9.3 | 0.1 | 1.0 | 0.3 | 16.6 |
-| Visual, OBJ | 0.5 | 1.1 | 4.2 | 0.5&nbsp;ms | 9.3 | 4.4 | 1.3 | 0.2 | 21.1 |
-
-<table align="center"><tr><td valign="top">
-
-| Board | Repo: [sufst/pcb](https://github.com/sufst/pcb)<br>Board: `sensor-board.kicad_pcb` |
-|---|---|
-| Folder | archive / sensor-board |
-| Complexity | 319&nbsp;/&nbsp;1000 (size&nbsp;234, features&nbsp;85) |
-| KESE&nbsp;features | through vias, rounded,<br>trapezoid or chamfered pads,<br>filled zones, curved board outline,<br>stack-up, dielectric εr and tanδ |
-| Tested | 9th November 2026 |
-| Copper&nbsp;layers | 4 |
-| File&nbsp;format | KiCad 8 (20240108) |
-| Parts,&nbsp;tracks,&nbsp;vias | 95, 679, 65 |
-| Triangles,&nbsp;simulation | 1,192,408 in 126 parts |
-| Verifier | PASS in all six runs |
-
-</td><td valign="top">
-
-<table>
-<tr><th>File<br>type</th><th>File<br>size</th><th>Peak memory<br>used</th></tr>
-<tr><th colspan="3" align="left">Simulation</th></tr>
-<tr><td>GLB</td><td align="right">41&nbsp;MB</td><td align="right">484&nbsp;MB</td></tr>
-<tr><td>STEP</td><td align="right">175&nbsp;MB</td><td align="right">570&nbsp;MB</td></tr>
-<tr><td>STL</td><td align="right">60&nbsp;MB</td><td align="right">489&nbsp;MB</td></tr>
-<tr><td>OBJ</td><td align="right">121&nbsp;MB</td><td align="right">828&nbsp;MB</td></tr>
-<tr><th colspan="3" align="left">Visual</th></tr>
-<tr><td>GLB</td><td align="right">26&nbsp;MB</td><td align="right">712&nbsp;MB</td></tr>
-<tr><td>OBJ</td><td align="right">78&nbsp;MB</td><td align="right">706&nbsp;MB</td></tr>
 </table>
 
 </td></tr></table>

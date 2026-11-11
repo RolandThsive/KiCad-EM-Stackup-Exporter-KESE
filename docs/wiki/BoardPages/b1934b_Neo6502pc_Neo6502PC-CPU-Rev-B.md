@@ -1,6 +1,6 @@
 # 1934. Neo6502PC-CPU_Rev_B
 
-Board 1,934 of the 3,124 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 18](../CorpusTestingPages/Corpus-Testing-18.md#1934-neo6502pc-cpu_rev_b).
+Board 1,934 of the 3,125 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 18](../CorpusTestingPages/Corpus-Testing-18.md#1934-neo6502pc-cpu_rev_b).
 
 ![Neo6502PC-CPU_Rev_B: stages 4 and 6 take 51% to 81% of a run. Simulation, GLB takes 35 s. Simulation, STEP takes 42 s. Simulation, STL takes 36 s. Simulation, OBJ takes 54 s. Visual, GLB takes 56 s. Visual, OBJ takes 67 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b1934b_Neo6502pc_Neo6502PC-CPU-Rev-B/stages.webp)
 

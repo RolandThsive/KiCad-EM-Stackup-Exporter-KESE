@@ -1,6 +1,6 @@
 # 1424. Lily58
 
-Board 1,424 of the 3,124 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 14](../CorpusTestingPages/Corpus-Testing-14.md#1424-lily58).
+Board 1,424 of the 3,125 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 14](../CorpusTestingPages/Corpus-Testing-14.md#1424-lily58).
 
 ![Lily58: stages 4 and 6 take 57% to 86% of a run. Simulation, GLB takes 34 s. Simulation, STEP takes 45 s. Simulation, STL takes 36 s. Simulation, OBJ takes 54 s. Visual, GLB takes 55 s. Visual, OBJ takes 72 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b1424b_Lily58_Lily58/stages.webp)
 

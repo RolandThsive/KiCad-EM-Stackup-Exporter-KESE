@@ -1,6 +1,6 @@
 # 2036. bms_peripheral_v2
 
-Board 2,036 of the 3,124 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 19](../CorpusTestingPages/Corpus-Testing-19.md#2036-bms_peripheral_v2).
+Board 2,036 of the 3,125 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 19](../CorpusTestingPages/Corpus-Testing-19.md#2036-bms_peripheral_v2).
 
 ![bms_peripheral_v2: stages 4 and 6 take 52% to 82% of a run. Simulation, GLB takes 17 s. Simulation, STEP takes 21 s. Simulation, STL takes 17 s. Simulation, OBJ takes 23 s. Visual, GLB takes 25 s. Visual, OBJ takes 32 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2036b_olin-electric-motorsports_bms-peripheral-v2/stages.webp)
 

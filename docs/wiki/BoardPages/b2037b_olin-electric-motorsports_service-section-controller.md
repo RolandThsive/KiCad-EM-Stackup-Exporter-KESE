@@ -1,6 +1,6 @@
 # 2037. service_section_controller
 
-Board 2,037 of the 3,124 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 19](../CorpusTestingPages/Corpus-Testing-19.md#2037-service_section_controller).
+Board 2,037 of the 3,125 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 19](../CorpusTestingPages/Corpus-Testing-19.md#2037-service_section_controller).
 
 ![service_section_controller: stages 4 and 6 take 53% to 81% of a run. Simulation, GLB takes 26 s. Simulation, STEP takes 33 s. Simulation, STL takes 27 s. Simulation, OBJ takes 39 s. Visual, GLB takes 47 s. Visual, OBJ takes 57 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b2037b_olin-electric-motorsports_service-section-controller/stages.webp)
 

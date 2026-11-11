@@ -1,6 +1,6 @@
 # 1928. NB-IoT-DevKit_Rev_C
 
-Board 1,928 of the 3,124 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 18](../CorpusTestingPages/Corpus-Testing-18.md#1928-nb-iot-devkit_rev_c).
+Board 1,928 of the 3,125 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 18](../CorpusTestingPages/Corpus-Testing-18.md#1928-nb-iot-devkit_rev_c).
 
 ![NB-IoT-DevKit_Rev_C: stages 4 and 6 take 48% to 84% of a run. Simulation, GLB takes 14 s. Simulation, STEP takes 18 s. Simulation, STL takes 14 s. Simulation, OBJ takes 22 s. Visual, GLB takes 23 s. Visual, OBJ takes 29 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b1928b_NB-IoT_NB-IoT-DevKit-Rev-C/stages.webp)
 
