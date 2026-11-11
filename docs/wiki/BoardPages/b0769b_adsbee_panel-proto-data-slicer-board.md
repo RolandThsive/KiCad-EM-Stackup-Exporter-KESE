@@ -1,6 +1,6 @@
 # 769. panel_proto_data_slicer_board
 
-Board 769 of the 3,123 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 8](../CorpusTestingPages/Corpus-Testing-08.md#769-panel_proto_data_slicer_board).
+Board 769 of the 3,124 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 8](../CorpusTestingPages/Corpus-Testing-08.md#769-panel_proto_data_slicer_board).
 
 ![panel_proto_data_slicer_board: stages 4 and 6 take 59% to 82% of a run. Simulation, GLB takes 9.2 s. Simulation, STEP takes 11 s. Simulation, STL takes 8.3 s. Simulation, OBJ takes 11 s. Visual, GLB takes 9.9 s. Visual, OBJ takes 12 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b0769b_adsbee_panel-proto-data-slicer-board/stages.webp)
 

@@ -1,0 +1,53 @@
+{
+ "name": "N2360",
+ "project": "jasonsbeer/Amiga-N2630",
+ "path": "jasonsbeer__Amiga-N2630/KiCAD/Archive/A2630-New-KiCAD-Rev401-PGA/N2360.kicad_pcb",
+ "license": "As README.md states it: \"This work is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License .\"",
+ "license_checked": "2026-11-08",
+ "rank": 220,
+ "score": 10596,
+ "level": "VERY HIGH",
+ "complexity": {
+  "grade": 389,
+  "size": 294,
+  "features": 95
+ },
+ "features": [
+  "through_vias",
+  "shaped_pads",
+  "filled_zones",
+  "copper_text",
+  "curved_outline",
+  "stackup",
+  "dielectric_properties"
+ ],
+ "layers": 4,
+ "status": "pass",
+ "bad_design": null,
+ "chart_alt": "N2360: stages 4 and 6 take 48% to 85% of a run. Simulation, GLB takes 88 s. Simulation, STEP takes 2 min. Simulation, STL takes 91 s. Simulation, OBJ takes 2 min. Visual, GLB takes 2 min. Visual, OBJ takes 3 min",
+ "rerun": {},
+ "tested": [
+  "2026-11-09",
+  "2026-11-09"
+ ],
+ "kese": [
+  "22fd70c"
+ ],
+ "kese_version": [
+  "2.4.0"
+ ],
+ "runs": [
+  [
+   "corpus",
+   "2026-11-09",
+   11000000000.0,
+   5400.0
+  ]
+ ],
+ "machine": {
+  "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz, 4 cores, 15 GB",
+  "geos": "3.14.1",
+  "python": "3.13.18",
+  "shapely": "2.2.0"
+ }
+}

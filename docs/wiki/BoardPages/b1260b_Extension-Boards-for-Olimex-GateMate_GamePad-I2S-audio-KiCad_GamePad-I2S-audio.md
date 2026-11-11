@@ -1,6 +1,6 @@
 # 1260. GamePad_I2S_audio
 
-Board 1,260 of the 3,123 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 12](../CorpusTestingPages/Corpus-Testing-12.md#1260-gamepad_i2s_audio).
+Board 1,260 of the 3,124 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 12](../CorpusTestingPages/Corpus-Testing-12.md#1260-gamepad_i2s_audio).
 
 ![GamePad_I2S_audio: stages 4 and 6 take 37% to 70% of a run. Simulation, GLB takes 2.4 s. Simulation, STEP takes 3.7 s. Simulation, STL takes 2.5 s. Simulation, OBJ takes 3.0 s. Visual, GLB takes 3.7 s. Visual, OBJ takes 4.7 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b1260b_Extension-Boards-for-Olimex-GateMate_GamePad-I2S-audio-KiCad_GamePad-I2S-audio/stages.webp)
 

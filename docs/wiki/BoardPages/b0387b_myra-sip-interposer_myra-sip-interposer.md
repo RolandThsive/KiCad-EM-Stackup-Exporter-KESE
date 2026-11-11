@@ -1,6 +1,6 @@
 # 387. myra-sip-interposer
 
-Board 387 of the 3,123 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 4](../CorpusTestingPages/Corpus-Testing-04.md#387-myra-sip-interposer).
+Board 387 of the 3,124 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 4](../CorpusTestingPages/Corpus-Testing-04.md#387-myra-sip-interposer).
 
 ![myra-sip-interposer: stages 4 and 6 take 49% to 80% of a run. Simulation, GLB takes 9.5 s. Simulation, STEP takes 12 s. Simulation, STL takes 9.8 s. Simulation, OBJ takes 15 s. Visual, GLB takes 13 s. Visual, OBJ takes 15 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b0387b_myra-sip-interposer_myra-sip-interposer/stages.webp)
 

@@ -1,6 +1,6 @@
 # 62. Miniscope-v4-VDD-PIX-FC
 
-Board 62 of the 3,123 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 1](../CorpusTestingPages/Corpus-Testing-01.md#62-miniscope-v4-vdd-pix-fc).
+Board 62 of the 3,124 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 1](../CorpusTestingPages/Corpus-Testing-01.md#62-miniscope-v4-vdd-pix-fc).
 
 ![Miniscope-v4-VDD-PIX-FC: stages 4 and 6 take 41% to 58% of a run. Simulation, GLB takes 0.8 s. Simulation, STEP takes 1.0 s. Simulation, STL takes 0.8 s. Simulation, OBJ takes 0.9 s. Visual, GLB takes 1.0 s. Visual, OBJ takes 1.0 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b0062b_Miniscope-v4_Miniscope-v4-VDD-PIX-FC/stages.webp)
 

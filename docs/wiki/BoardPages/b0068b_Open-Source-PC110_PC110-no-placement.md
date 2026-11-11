@@ -1,6 +1,6 @@
 # 68. PC110-no-placement
 
-Board 68 of the 3,123 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 1](../CorpusTestingPages/Corpus-Testing-01.md#68-pc110-no-placement).
+Board 68 of the 3,124 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 1](../CorpusTestingPages/Corpus-Testing-01.md#68-pc110-no-placement).
 
 ![PC110-no-placement: stages 4 and 6 take 45% to 78% of a run. Simulation, GLB takes 27 s. Simulation, STEP takes 31 s. Simulation, STL takes 27 s. Simulation, OBJ takes 38 s. Visual, GLB takes 39 s. Visual, OBJ takes 46 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b0068b_Open-Source-PC110_PC110-no-placement/stages.webp)
 
