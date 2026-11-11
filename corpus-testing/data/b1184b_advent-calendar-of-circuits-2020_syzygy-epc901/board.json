@@ -1,7 +1,4 @@
 {
- "rank": 1007,
- "score": 2517,
- "level": "MEDIUM",
  "layers": 4,
  "parts": 97,
  "big": 1,
@@ -15,6 +12,7 @@
  "project": "gregdavill/advent-calendar-of-circuits-2020",
  "name": "syzygy-epc901",
  "license": "CERN-OHL-P-2.0 (CERN Open Hardware Licence v2, Permissive), in LICENCE-CERN-OHL-P-2.0",
+ "license_checked": "2026-11-08",
  "zip": "part14_of_17",
  "features": {
   "through_vias": 308,

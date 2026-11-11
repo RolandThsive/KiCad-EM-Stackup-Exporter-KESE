@@ -1,7 +1,4 @@
 {
- "rank": 1853,
- "score": 873,
- "level": "LOW",
  "layers": 4,
  "parts": 39,
  "big": 1,
@@ -15,9 +12,10 @@
  "project": "nzevh/barebones",
  "name": "battery",
  "license": "CERN-OHL-S-2.0 (CERN Open Hardware Licence v2, Strongly Reciprocal)",
+ "license_checked": "2026-11-08",
  "zip": "part16_of_17",
  "features": {
-  "through_vias": 258,
+  "through_vias": 129,
   "blind_buried_vias": 0,
   "microvias": 0,
   "backdrills": 0,

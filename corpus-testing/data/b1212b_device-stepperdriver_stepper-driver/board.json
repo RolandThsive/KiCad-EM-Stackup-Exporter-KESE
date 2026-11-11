@@ -1,7 +1,4 @@
 {
- "rank": 499,
- "score": 5376,
- "level": "HIGH",
  "layers": 4,
  "parts": 207,
  "big": 4,
@@ -15,9 +12,10 @@
  "project": "harp-tech/device.stepperdriver",
  "name": "stepper driver",
  "license": "As README.md states it: \"Each subdirectory will contain a license or, possibly, a set of licenses if it involves both hardware and software.\"",
+ "license_checked": "2026-11-08",
  "zip": "part11_of_17",
  "features": {
-  "through_vias": 1800,
+  "through_vias": 900,
   "blind_buried_vias": 0,
   "microvias": 0,
   "backdrills": 0,

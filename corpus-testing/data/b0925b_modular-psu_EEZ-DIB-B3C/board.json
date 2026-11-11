@@ -1,7 +1,4 @@
 {
- "rank": 1585,
- "score": 1243,
- "level": "MEDIUM",
  "layers": 2,
  "parts": 55,
  "big": 0,
@@ -15,6 +12,7 @@
  "project": "eez-open/modular-psu",
  "name": "EEZ DIB B3C",
  "license": "TAPR-OHL-1.0 (TAPR Open Hardware License), in LICENSE.TXT",
+ "license_checked": "2026-11-08",
  "zip": "part15_of_17",
  "features": {
   "through_vias": 145,

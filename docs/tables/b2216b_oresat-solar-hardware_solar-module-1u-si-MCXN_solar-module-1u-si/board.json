@@ -3,7 +3,10 @@
  "project": "oresat/oresat-solar-hardware",
  "path": "oresat__oresat-solar-hardware/solar-module-1u-si-MCXN/solar-module-1u-si.kicad_pcb",
  "license": "As README.md states it: \"Copyright the Portland State Aerospace Society, 2025. This source describes Open Hardware that is licensed under CERN-OHL-S v2, or any later version. You may redistribute and modify this source and make products using it under the terms of the CERN-OHL-S v2 (https://ohwr.org/cern ohl s v2.txt).\"",
+ "license_checked": "2026-11-08",
  "rank": 531,
+ "score": 4998,
+ "level": "HIGH",
  "complexity": {
   "grade": 399,
   "size": 264,
@@ -26,8 +29,23 @@
  "bad_design": null,
  "chart_alt": "solar-module-1u-si: stages 4 and 6 take 53% to 84% of a run. Simulation, GLB takes 47 s. Simulation, STEP takes 56 s. Simulation, STL takes 49 s. Simulation, OBJ takes 72 s. Visual, GLB takes 60 s. Visual, OBJ takes 74 s",
  "rerun": {},
+ "tested": [
+  "2026-11-09",
+  "2026-11-09"
+ ],
  "kese": [
   "22fd70c"
+ ],
+ "kese_version": [
+  "2.4.0"
+ ],
+ "runs": [
+  [
+   "corpus",
+   "2026-11-09",
+   11000000000.0,
+   5400.0
+  ]
  ],
  "machine": {
   "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz, 4 cores, 15 GB",

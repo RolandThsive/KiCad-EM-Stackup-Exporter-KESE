@@ -1,7 +1,4 @@
 {
- "rank": 3,
- "score": 66799,
- "level": "EXTREME",
  "layers": 12,
  "parts": 550,
  "big": 10,
@@ -15,6 +12,7 @@
  "project": "ciaa/Hardware",
  "name": "ciaa_acc",
  "license": "BSD-2-Clause (BSD 2-Clause License), in LICENSE, PCB/EDU-FPGA/LICENSE, PCB/Z3R0/LICENSE",
+ "license_checked": "2026-11-08",
  "zip": "part01_of_17",
  "features": {
   "through_vias": 1875,

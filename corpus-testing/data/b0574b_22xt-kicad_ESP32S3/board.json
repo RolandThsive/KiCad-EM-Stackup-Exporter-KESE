@@ -1,7 +1,4 @@
 {
- "rank": 1178,
- "score": 2020,
- "level": "MEDIUM",
  "layers": 2,
  "parts": 61,
  "big": 1,
@@ -15,9 +12,10 @@
  "project": "bluejayracing/22xt_kicad",
  "name": "ESP32S3",
  "license": "No license found",
+ "license_checked": "2026-11-08",
  "zip": "part14_of_17",
  "features": {
-  "through_vias": 440,
+  "through_vias": 220,
   "blind_buried_vias": 0,
   "microvias": 0,
   "backdrills": 0,

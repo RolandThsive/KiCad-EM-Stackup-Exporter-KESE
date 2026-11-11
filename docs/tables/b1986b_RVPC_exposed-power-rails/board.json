@@ -3,7 +3,10 @@
  "project": "OLIMEX/RVPC",
  "path": "OLIMEX__RVPC/SOFTWARE/rvpc/tools/esp32s2-cookbook/hardware/exposed_power_rails/exposed_power_rails.kicad_pcb",
  "license": "GPL-3.0 (GNU GPL v3.0)",
- "rank": 1779,
+ "license_checked": "2026-11-08",
+ "rank": 1774,
+ "score": 966,
+ "level": "LOW",
  "complexity": {
   "grade": 272,
   "size": 167,
@@ -24,8 +27,23 @@
  "bad_design": null,
  "chart_alt": "exposed_power_rails: stages 4 and 6 take 57% to 82% of a run. Simulation, GLB takes 5.9 s. Simulation, STEP takes 8.0 s. Simulation, STL takes 6.2 s. Simulation, OBJ takes 8.1 s. Visual, GLB takes 8.3 s. Visual, OBJ takes 10 s",
  "rerun": {},
+ "tested": [
+  "2026-11-09",
+  "2026-11-09"
+ ],
  "kese": [
   "22fd70c"
+ ],
+ "kese_version": [
+  "2.4.0"
+ ],
+ "runs": [
+  [
+   "corpus",
+   "2026-11-09",
+   11000000000.0,
+   5400.0
+  ]
  ],
  "machine": {
   "cpu": "Intel(R) Xeon(R) Processor @ 2.30GHz, 4 cores, 15 GB",

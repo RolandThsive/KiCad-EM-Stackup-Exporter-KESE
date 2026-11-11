@@ -1,7 +1,4 @@
 {
- "rank": 77,
- "score": 20378,
- "level": "EXTREME",
  "layers": 10,
  "parts": 521,
  "big": 9,
@@ -15,6 +12,7 @@
  "project": "timvideos/HDMI2USB-numato-opsis-hardware",
  "name": "HDMI2USB",
  "license": "CC-BY-SA-4.0 (Creative Commons Attribution-ShareAlike 4.0)",
+ "license_checked": "2026-11-08",
  "zip": "part04_of_17",
  "features": {
   "through_vias": 1490,

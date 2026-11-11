@@ -1,7 +1,4 @@
 {
- "rank": 36,
- "score": 29578,
- "level": "EXTREME",
  "layers": 6,
  "parts": 5385,
  "big": 0,
@@ -15,9 +12,10 @@
  "project": "epatel/discrete6502",
  "name": "board_presignal",
  "license": "CC-BY-NC-SA-4.0 (Creative Commons Attribution-NonCommercial-ShareAlike 4.0), in LICENSE",
+ "license_checked": "2026-11-08",
  "zip": "part03_of_17",
  "features": {
-  "through_vias": 7704,
+  "through_vias": 3852,
   "blind_buried_vias": 0,
   "microvias": 0,
   "backdrills": 0,

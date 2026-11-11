@@ -1,7 +1,4 @@
 {
- "rank": 483,
- "score": 5517,
- "level": "HIGH",
  "layers": 2,
  "parts": 120,
  "big": 0,
@@ -15,9 +12,10 @@
  "project": "rusefi/rusefi-hardware",
  "name": "uaBrain-gm-e38",
  "license": "No license found",
+ "license_checked": "2026-11-08",
  "zip": "part11_of_17",
  "features": {
-  "through_vias": 1608,
+  "through_vias": 804,
   "blind_buried_vias": 0,
   "microvias": 0,
   "backdrills": 0,

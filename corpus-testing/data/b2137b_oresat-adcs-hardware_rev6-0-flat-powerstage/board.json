@@ -1,7 +1,4 @@
 {
- "rank": 118,
- "score": 15976,
- "level": "VERY HIGH",
  "layers": 4,
  "parts": 201,
  "big": 0,
@@ -15,6 +12,7 @@
  "project": "oresat/oresat-adcs-hardware",
  "name": "rev6.0_flat_powerstage",
  "license": "GPL-2.0 (GNU GPL v2.0)",
+ "license_checked": "2026-11-08",
  "zip": "part06_of_17",
  "features": {
   "through_vias": 4881,

@@ -3,7 +3,10 @@
  "project": "ahmadexp/Open-Source-PC110",
  "path": "ahmadexp__Open-Source-PC110/PCB/Mainboard/Single-Sheet-Schematic/PC110.kicad_pcb",
  "license": "CC-BY-NC-4.0 (Creative Commons Attribution-NonCommercial 4.0), in LICENSE",
+ "license_checked": "2026-11-08",
  "rank": 4,
+ "score": 65812,
+ "level": "EXTREME",
  "complexity": {
   "grade": 563,
   "size": 378,
@@ -32,8 +35,29 @@
    "Visual, OBJ"
   ]
  },
+ "tested": [
+  "2026-11-09",
+  "2026-11-10"
+ ],
  "kese": [
   "22fd70c"
+ ],
+ "kese_version": [
+  "2.4.0"
+ ],
+ "runs": [
+  [
+   "cap",
+   "2026-11-10",
+   14500000000.0,
+   5400.0
+  ],
+  [
+   "corpus",
+   "2026-11-09",
+   11000000000.0,
+   5400.0
+  ]
  ],
  "machine": {
   "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz, 4 cores, 15 GB",

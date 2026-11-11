@@ -1,7 +1,4 @@
 {
- "rank": 515,
- "score": 5132,
- "level": "HIGH",
  "layers": 2,
  "parts": 341,
  "big": 1,
@@ -15,6 +12,7 @@
  "project": "rusefi/rusefi-hardware",
  "name": "denso079721_outline-append",
  "license": "No license found",
+ "license_checked": "2026-11-08",
  "zip": "part12_of_17",
  "features": {
   "through_vias": 406,

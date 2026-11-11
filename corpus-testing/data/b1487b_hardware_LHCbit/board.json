@@ -1,7 +1,4 @@
 {
- "rank": 1303,
- "score": 1730,
- "level": "MEDIUM",
  "layers": 4,
  "parts": 51,
  "big": 0,
@@ -15,9 +12,10 @@
  "project": "lhc/hardware",
  "name": "LHCbit",
  "license": "MIT (MIT License), in Oficinas/monte-sua-placa-kicad/LICENSE",
+ "license_checked": "2026-11-08",
  "zip": "part15_of_17",
  "features": {
-  "through_vias": 590,
+  "through_vias": 295,
   "blind_buried_vias": 0,
   "microvias": 0,
   "backdrills": 0,

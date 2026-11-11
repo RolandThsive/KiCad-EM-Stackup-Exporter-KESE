@@ -1,7 +1,4 @@
 {
- "rank": 1568,
- "score": 1260,
- "level": "MEDIUM",
  "layers": 6,
  "parts": 56,
  "big": 0,
@@ -15,9 +12,10 @@
  "project": "nanosatlab/pocat-hw",
  "name": "PQ_ADCS",
  "license": "No license found",
+ "license_checked": "2026-11-08",
  "zip": "part15_of_17",
  "features": {
-  "through_vias": 246,
+  "through_vias": 123,
   "blind_buried_vias": 0,
   "microvias": 0,
   "backdrills": 0,

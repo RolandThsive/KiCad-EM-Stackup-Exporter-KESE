@@ -1,7 +1,4 @@
 {
- "rank": 861,
- "score": 3087,
- "level": "HIGH",
  "layers": 4,
  "parts": 145,
  "big": 2,
@@ -15,6 +12,7 @@
  "project": "kbeckmann/Kilsyth",
  "name": "Kilsyth",
  "license": "0BSD (BSD Zero Clause License)",
+ "license_checked": "2026-11-08",
  "zip": "part13_of_17",
  "features": {
   "through_vias": 378,

@@ -1,7 +1,4 @@
 {
- "rank": 530,
- "score": 5005,
- "level": "HIGH",
  "layers": 6,
  "parts": 117,
  "big": 2,
@@ -15,6 +12,7 @@
  "project": "gregdavill/advent-calendar-of-circuits-2020",
  "name": "ecpbreaker",
  "license": "CERN-OHL-P-2.0 (CERN Open Hardware Licence v2, Permissive), in LICENCE-CERN-OHL-P-2.0",
+ "license_checked": "2026-11-08",
  "zip": "part12_of_17",
  "features": {
   "through_vias": 442,

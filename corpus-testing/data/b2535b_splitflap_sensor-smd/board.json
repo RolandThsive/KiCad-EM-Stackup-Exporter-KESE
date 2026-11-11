@@ -1,7 +1,4 @@
 {
- "rank": 2921,
- "score": 20,
- "level": "SIMPLE",
  "layers": 2,
  "parts": 5,
  "big": 0,
@@ -15,6 +12,7 @@
  "project": "scottbez1/splitflap",
  "name": "sensor_smd",
  "license": "Apache-2.0 (Apache License 2.0), in LICENSE.txt",
+ "license_checked": "2026-11-08",
  "zip": "part16_of_17",
  "features": {
   "through_vias": 2,

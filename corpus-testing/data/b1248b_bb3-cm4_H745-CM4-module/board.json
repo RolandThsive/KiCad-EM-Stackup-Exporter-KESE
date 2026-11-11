@@ -1,7 +1,4 @@
 {
- "rank": 589,
- "score": 4588,
- "level": "HIGH",
  "layers": 6,
  "parts": 110,
  "big": 1,
@@ -15,6 +12,7 @@
  "project": "intergalaktik/bb3-cm4",
  "name": "H745 CM4 module",
  "license": "CERN-OHL-S-2.0 (CERN Open Hardware Licence v2, Strongly Reciprocal), in LICENSE.md, EEZ_BB3_CM4_H7/LICENSE.md",
+ "license_checked": "2026-11-08",
  "zip": "part12_of_17",
  "features": {
   "through_vias": 483,

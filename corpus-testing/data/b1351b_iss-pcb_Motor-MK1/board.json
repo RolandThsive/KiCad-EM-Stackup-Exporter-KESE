@@ -1,7 +1,4 @@
 {
- "rank": 1497,
- "score": 1397,
- "level": "MEDIUM",
  "layers": 4,
  "parts": 63,
  "big": 2,
@@ -15,9 +12,10 @@
  "project": "issuiuc/iss-pcb",
  "name": "Motor-MK1",
  "license": "No license found",
+ "license_checked": "2026-11-08",
  "zip": "part15_of_17",
  "features": {
-  "through_vias": 480,
+  "through_vias": 240,
   "blind_buried_vias": 0,
   "microvias": 0,
   "backdrills": 0,

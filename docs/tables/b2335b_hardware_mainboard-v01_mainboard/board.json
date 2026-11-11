@@ -3,7 +3,10 @@
  "project": "pycubed/hardware",
  "path": "pycubed__hardware/mainboard-v01/mainboard.kicad_pcb",
  "license": "As README.md states it: \"; Hardware in this repository is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License .; Software/firmware in this repository is licensed under MIT unless otherwise indicated.\"",
+ "license_checked": "2026-11-08",
  "rank": 1009,
+ "score": 2511,
+ "level": "MEDIUM",
  "complexity": {
   "grade": 314,
   "size": 259,
@@ -20,8 +23,23 @@
  "bad_design": null,
  "chart_alt": "mainboard: stages 4 and 6 take 55% to 82% of a run. Simulation, GLB takes 27 s. Simulation, STEP takes 33 s. Simulation, STL takes 27 s. Simulation, OBJ takes 38 s. Visual, GLB takes 37 s. Visual, OBJ takes 46 s",
  "rerun": {},
+ "tested": [
+  "2026-11-09",
+  "2026-11-09"
+ ],
  "kese": [
   "22fd70c"
+ ],
+ "kese_version": [
+  "2.4.0"
+ ],
+ "runs": [
+  [
+   "corpus",
+   "2026-11-09",
+   11000000000.0,
+   5400.0
+  ]
  ],
  "machine": {
   "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz, 4 cores, 15 GB",

@@ -1,7 +1,4 @@
 {
- "rank": 441,
- "score": 6239,
- "level": "HIGH",
  "layers": 4,
  "parts": 407,
  "big": 3,
@@ -15,9 +12,10 @@
  "project": "eez-open/dib-dcp405plus",
  "name": "EEZ DIB DCP405plus",
  "license": "TAPR-OHL-1.0 (TAPR Open Hardware License), in LICENSE.TXT",
+ "license_checked": "2026-11-08",
  "zip": "part11_of_17",
  "features": {
-  "through_vias": 1384,
+  "through_vias": 692,
   "blind_buried_vias": 0,
   "microvias": 0,
   "backdrills": 0,

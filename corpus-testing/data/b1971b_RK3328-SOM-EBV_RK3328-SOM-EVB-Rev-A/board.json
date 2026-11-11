@@ -1,7 +1,4 @@
 {
- "rank": 557,
- "score": 4861,
- "level": "HIGH",
  "layers": 4,
  "parts": 129,
  "big": 1,
@@ -15,6 +12,7 @@
  "project": "OLIMEX/RK3328-SOM-EBV",
  "name": "RK3328-SOM-EVB_Rev_A",
  "license": "GPL-3.0 (GNU GPL v3.0)",
+ "license_checked": "2026-11-08",
  "zip": "part12_of_17",
  "features": {
   "through_vias": 520,

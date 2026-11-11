@@ -1,7 +1,4 @@
 {
- "rank": 2146,
- "score": 560,
- "level": "LOW",
  "layers": 2,
  "parts": 41,
  "big": 1,
@@ -15,9 +12,10 @@
  "project": "byrantech/laptop",
  "name": "audio",
  "license": "MIT (MIT License)",
+ "license_checked": "2026-11-08",
  "zip": "part16_of_17",
  "features": {
-  "through_vias": 116,
+  "through_vias": 58,
   "blind_buried_vias": 0,
   "microvias": 0,
   "backdrills": 0,

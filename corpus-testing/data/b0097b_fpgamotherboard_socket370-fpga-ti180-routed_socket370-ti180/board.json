@@ -1,7 +1,4 @@
 {
- "rank": 28,
- "score": 33261,
- "level": "EXTREME",
  "layers": 6,
  "parts": 444,
  "big": 5,
@@ -15,9 +12,10 @@
  "project": "alphaonex86/fpgamotherboard",
  "name": "socket370-ti180",
  "license": "GPL-3.0 (GNU GPL v3.0)",
+ "license_checked": "2026-11-08",
  "zip": "part02_of_17",
  "features": {
-  "through_vias": 2612,
+  "through_vias": 1306,
   "blind_buried_vias": 0,
   "microvias": 626,
   "backdrills": 0,

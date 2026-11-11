@@ -1,7 +1,4 @@
 {
- "rank": 817,
- "score": 3299,
- "level": "HIGH",
  "layers": 4,
  "parts": 63,
  "big": 0,
@@ -15,6 +12,7 @@
  "project": "MelkhiorVintageComputing/IIsiFPGA",
  "name": "IIsi-to-ztex",
  "license": "CC-BY-NC-SA-4.0 (Creative Commons Attribution-NonCommercial-ShareAlike 4.0), in LICENSE.md",
+ "license_checked": "2026-11-08",
  "zip": "part13_of_17",
  "features": {
   "through_vias": 112,

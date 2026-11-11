@@ -1,7 +1,4 @@
 {
- "rank": 1505,
- "score": 1375,
- "level": "MEDIUM",
  "layers": 2,
  "parts": 24,
  "big": 0,
@@ -15,9 +12,10 @@
  "project": "andrewpaterson/658-Computer",
  "name": "HCP65 MPU NMI",
  "license": "No license found",
+ "license_checked": "2026-11-08",
  "zip": "part15_of_17",
  "features": {
-  "through_vias": 274,
+  "through_vias": 137,
   "blind_buried_vias": 0,
   "microvias": 0,
   "backdrills": 0,

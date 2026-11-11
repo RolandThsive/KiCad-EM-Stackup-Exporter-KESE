@@ -1,7 +1,4 @@
 {
- "rank": 979,
- "score": 2593,
- "level": "MEDIUM",
  "layers": 4,
  "parts": 174,
  "big": 0,
@@ -15,9 +12,10 @@
  "project": "hatlabs/halser-hardware",
  "name": "HALSER",
  "license": "CC-BY-4.0 (Creative Commons Attribution 4.0)",
+ "license_checked": "2026-11-08",
  "zip": "part14_of_17",
  "features": {
-  "through_vias": 708,
+  "through_vias": 354,
   "blind_buried_vias": 0,
   "microvias": 0,
   "backdrills": 0,

@@ -1,7 +1,4 @@
 {
- "rank": 1165,
- "score": 2047,
- "level": "MEDIUM",
  "layers": 4,
  "parts": 98,
  "big": 1,
@@ -15,9 +12,10 @@
  "project": "antmicro/hdmi-edid-debug-board",
  "name": "hdmi-edid-debug-board",
  "license": "Apache-2.0 (Apache License 2.0)",
+ "license_checked": "2026-11-08",
  "zip": "part14_of_17",
  "features": {
-  "through_vias": 350,
+  "through_vias": 175,
   "blind_buried_vias": 0,
   "microvias": 0,
   "backdrills": 0,

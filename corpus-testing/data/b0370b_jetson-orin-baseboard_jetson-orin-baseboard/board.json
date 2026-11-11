@@ -1,7 +1,4 @@
 {
- "rank": 87,
- "score": 19572,
- "level": "VERY HIGH",
  "layers": 8,
  "parts": 618,
  "big": 2,
@@ -15,9 +12,10 @@
  "project": "antmicro/jetson-orin-baseboard",
  "name": "jetson-orin-baseboard",
  "license": "Apache-2.0 (Apache License 2.0)",
+ "license_checked": "2026-11-08",
  "zip": "part05_of_17",
  "features": {
-  "through_vias": 2690,
+  "through_vias": 1345,
   "blind_buried_vias": 0,
   "microvias": 0,
   "backdrills": 0,

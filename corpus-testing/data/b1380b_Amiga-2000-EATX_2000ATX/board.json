@@ -1,7 +1,4 @@
 {
- "rank": 100,
- "score": 18638,
- "level": "VERY HIGH",
  "layers": 4,
  "parts": 601,
  "big": 1,
@@ -15,9 +12,10 @@
  "project": "jasonsbeer/Amiga-2000-EATX",
  "name": "2000ATX",
  "license": "GPL-3.0 (GNU GPL v3.0)",
+ "license_checked": "2026-11-08",
  "zip": "part05_of_17",
  "features": {
-  "through_vias": 2424,
+  "through_vias": 1212,
   "blind_buried_vias": 0,
   "microvias": 0,
   "backdrills": 0,

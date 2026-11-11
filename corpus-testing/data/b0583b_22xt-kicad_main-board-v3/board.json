@@ -1,7 +1,4 @@
 {
- "rank": 919,
- "score": 2808,
- "level": "MEDIUM",
  "layers": 4,
  "parts": 116,
  "big": 1,
@@ -15,9 +12,10 @@
  "project": "bluejayracing/22xt_kicad",
  "name": "main_board_v3",
  "license": "No license found",
+ "license_checked": "2026-11-08",
  "zip": "part14_of_17",
  "features": {
-  "through_vias": 570,
+  "through_vias": 285,
   "blind_buried_vias": 0,
   "microvias": 0,
   "backdrills": 0,

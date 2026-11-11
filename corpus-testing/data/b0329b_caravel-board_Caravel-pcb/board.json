@@ -1,7 +1,4 @@
 {
- "rank": 1062,
- "score": 2307,
- "level": "MEDIUM",
  "layers": 2,
  "parts": 72,
  "big": 2,
@@ -15,6 +12,7 @@
  "project": "antmicro/caravel_board",
  "name": "Caravel_pcb",
  "license": "No license found",
+ "license_checked": "2026-11-08",
  "zip": "part14_of_17",
  "features": {
   "through_vias": 98,

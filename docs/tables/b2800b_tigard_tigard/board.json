@@ -3,7 +3,10 @@
  "project": "tigard-tools/tigard",
  "path": "tigard-tools__tigard/tigard.kicad_pcb",
  "license": "CC-BY-SA-4.0 (Creative Commons Attribution-ShareAlike 4.0), in LICENSE.txt",
- "rank": 1441,
+ "license_checked": "2026-11-08",
+ "rank": 1438,
+ "score": 1495,
+ "level": "MEDIUM",
  "complexity": {
   "grade": 329,
   "size": 239,
@@ -23,8 +26,23 @@
  "bad_design": null,
  "chart_alt": "tigard: stages 4 and 6 take 55% to 85% of a run. Simulation, GLB takes 23 s. Simulation, STEP takes 27 s. Simulation, STL takes 22 s. Simulation, OBJ takes 31 s. Visual, GLB takes 27 s. Visual, OBJ takes 34 s",
  "rerun": {},
+ "tested": [
+  "2026-11-09",
+  "2026-11-09"
+ ],
  "kese": [
   "22fd70c"
+ ],
+ "kese_version": [
+  "2.4.0"
+ ],
+ "runs": [
+  [
+   "corpus",
+   "2026-11-09",
+   11000000000.0,
+   5400.0
+  ]
  ],
  "machine": {
   "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz, 4 cores, 15 GB",

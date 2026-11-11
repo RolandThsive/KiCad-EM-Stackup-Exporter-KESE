@@ -1,7 +1,4 @@
 {
- "rank": 910,
- "score": 2845,
- "level": "MEDIUM",
  "layers": 2,
  "parts": 137,
  "big": 2,
@@ -15,6 +12,7 @@
  "project": "dmitrystu/nuco-v",
  "name": "nuco-v",
  "license": "CERN-OHL-W-2.0 (CERN Open Hardware Licence v2, Weakly Reciprocal), in LICENSE.md",
+ "license_checked": "2026-11-08",
  "zip": "part14_of_17",
  "features": {
   "through_vias": 208,

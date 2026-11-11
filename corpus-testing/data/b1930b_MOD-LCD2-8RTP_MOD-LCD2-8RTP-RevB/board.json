@@ -1,7 +1,4 @@
 {
- "rank": 1994,
- "score": 718,
- "level": "LOW",
  "layers": 2,
  "parts": 24,
  "big": 0,
@@ -15,6 +12,7 @@
  "project": "OLIMEX/MOD-LCD2.8RTP",
  "name": "MOD-LCD2.8RTP_RevB",
  "license": "Apache-2.0 (Apache License 2.0)",
+ "license_checked": "2026-11-08",
  "zip": "part16_of_17",
  "features": {
   "through_vias": 60,

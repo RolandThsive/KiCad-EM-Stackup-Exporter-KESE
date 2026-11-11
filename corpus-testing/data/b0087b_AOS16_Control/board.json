@@ -1,7 +1,4 @@
 {
- "rank": 1255,
- "score": 1851,
- "level": "MEDIUM",
  "layers": 4,
  "parts": 120,
  "big": 1,
@@ -15,9 +12,10 @@
  "project": "AJain9199/AOS16",
  "name": "Control",
  "license": "No license found",
+ "license_checked": "2026-11-08",
  "zip": "part15_of_17",
  "features": {
-  "through_vias": 202,
+  "through_vias": 101,
   "blind_buried_vias": 0,
   "microvias": 0,
   "backdrills": 0,

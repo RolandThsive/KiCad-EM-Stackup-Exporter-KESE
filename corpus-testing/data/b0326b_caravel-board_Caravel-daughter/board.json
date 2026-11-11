@@ -1,7 +1,4 @@
 {
- "rank": 2456,
- "score": 282,
- "level": "LOW",
  "layers": 2,
  "parts": 36,
  "big": 1,
@@ -15,6 +12,7 @@
  "project": "antmicro/caravel_board",
  "name": "Caravel_daughter",
  "license": "No license found",
+ "license_checked": "2026-11-08",
  "zip": "part16_of_17",
  "features": {
   "through_vias": 0,

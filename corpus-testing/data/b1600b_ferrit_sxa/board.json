@@ -1,7 +1,4 @@
 {
- "rank": 1835,
- "score": 894,
- "level": "LOW",
  "layers": 4,
  "parts": 30,
  "big": 0,
@@ -15,9 +12,10 @@
  "project": "machdyne/ferrit",
  "name": "sxa",
  "license": "The Lone Dynamics Open License, in LICENSE.md: \"Redistribution and use in source, binary or physical forms, with or without modification, is permitted\", provided redistributed source keeps the copyright notice; the README names its exceptions",
+ "license_checked": "2026-11-08",
  "zip": "part16_of_17",
  "features": {
-  "through_vias": 206,
+  "through_vias": 103,
   "blind_buried_vias": 0,
   "microvias": 0,
   "backdrills": 0,

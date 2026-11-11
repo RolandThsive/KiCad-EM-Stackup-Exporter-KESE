@@ -1,7 +1,4 @@
 {
- "rank": 108,
- "score": 17817,
- "level": "VERY HIGH",
  "layers": 12,
  "parts": 695,
  "big": 8,
@@ -15,6 +12,7 @@
  "project": "myriadrf/STREAM",
  "name": "Stream",
  "license": "CC-BY-3.0 (Creative Commons Attribution 3.0), in hardware/STREAM/COPYING, hardware/uSTREAM/COPYING",
+ "license_checked": "2026-11-08",
  "zip": "part05_of_17",
  "features": {
   "through_vias": 1470,

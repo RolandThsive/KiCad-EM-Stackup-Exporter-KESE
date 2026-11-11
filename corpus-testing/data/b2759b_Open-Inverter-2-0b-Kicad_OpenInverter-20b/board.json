@@ -1,7 +1,4 @@
 {
- "rank": 1795,
- "score": 950,
- "level": "LOW",
  "layers": 4,
  "parts": 61,
  "big": 0,
@@ -15,6 +12,7 @@
  "project": "teknomadix/Open_Inverter_2.0b_Kicad",
  "name": "OpenInverter_20b",
  "license": "CC-BY-SA-4.0 (Creative Commons Attribution-ShareAlike 4.0), in LICENSE.md",
+ "license_checked": "2026-11-08",
  "zip": "part16_of_17",
  "features": {
   "through_vias": 28,

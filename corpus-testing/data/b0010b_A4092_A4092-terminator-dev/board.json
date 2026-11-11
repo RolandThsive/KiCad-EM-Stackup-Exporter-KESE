@@ -1,7 +1,4 @@
 {
- "rank": 2383,
- "score": 344,
- "level": "LOW",
  "layers": 2,
  "parts": 14,
  "big": 0,
@@ -15,9 +12,10 @@
  "project": "A4091/A4092",
  "name": "A4092-terminator-dev",
  "license": "As README.md states it: \"License: CC BY-SA 4.0\"",
+ "license_checked": "2026-11-08",
  "zip": "part16_of_17",
  "features": {
-  "through_vias": 128,
+  "through_vias": 64,
   "blind_buried_vias": 0,
   "microvias": 0,
   "backdrills": 0,

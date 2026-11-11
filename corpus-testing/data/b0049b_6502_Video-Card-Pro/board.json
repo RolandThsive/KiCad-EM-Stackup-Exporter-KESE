@@ -1,7 +1,4 @@
 {
- "rank": 1454,
- "score": 1472,
- "level": "MEDIUM",
  "layers": 2,
  "parts": 33,
  "big": 0,
@@ -15,9 +12,10 @@
  "project": "acwright/6502",
  "name": "Video Card Pro",
  "license": "CERN-OHL-P-2.0 (CERN Open Hardware Licence v2, Permissive), in LICENSE",
+ "license_checked": "2026-11-08",
  "zip": "part15_of_17",
  "features": {
-  "through_vias": 404,
+  "through_vias": 202,
   "blind_buried_vias": 0,
   "microvias": 0,
   "backdrills": 0,

@@ -1,7 +1,4 @@
 {
- "rank": 305,
- "score": 8469,
- "level": "VERY HIGH",
  "layers": 2,
  "parts": 30,
  "big": 0,
@@ -15,9 +12,10 @@
  "project": "andrewpaterson/658-Computer",
  "name": "Video Board - Memory",
  "license": "No license found",
+ "license_checked": "2026-11-08",
  "zip": "part10_of_17",
  "features": {
-  "through_vias": 1370,
+  "through_vias": 685,
   "blind_buried_vias": 0,
   "microvias": 0,
   "backdrills": 0,

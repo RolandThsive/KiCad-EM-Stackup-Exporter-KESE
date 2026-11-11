@@ -1,7 +1,4 @@
 {
- "rank": 1202,
- "score": 1955,
- "level": "MEDIUM",
  "layers": 2,
  "parts": 118,
  "big": 1,
@@ -15,6 +12,7 @@
  "project": "LibreSolar/mppt-1210-hus",
  "name": "mppt-1210-hus",
  "license": "CERN-OHL-W-2.0 (CERN Open Hardware Licence v2, Weakly Reciprocal), in LICENCE",
+ "license_checked": "2026-11-08",
  "zip": "part15_of_17",
  "features": {
   "through_vias": 212,

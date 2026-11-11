@@ -1,7 +1,4 @@
 {
- "rank": 358,
- "score": 7488,
- "level": "HIGH",
  "layers": 4,
  "parts": 331,
  "big": 6,
@@ -15,6 +12,7 @@
  "project": "jsyk/x65",
  "name": "x65-sbc-revB1",
  "license": "MIT (MIT License)",
+ "license_checked": "2026-11-08",
  "zip": "part10_of_17",
  "features": {
   "through_vias": 622,

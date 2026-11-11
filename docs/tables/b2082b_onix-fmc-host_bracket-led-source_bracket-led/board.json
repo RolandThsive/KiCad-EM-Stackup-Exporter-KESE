@@ -3,7 +3,10 @@
  "project": "open-ephys/onix-fmc-host",
  "path": "open-ephys__onix-fmc-host/bracket-led/source/bracket-led.kicad_pcb",
  "license": "CC-BY-NC-SA-4.0 (Creative Commons Attribution-NonCommercial-ShareAlike 4.0), in LICENSE.md",
- "rank": 2838,
+ "license_checked": "2026-11-08",
+ "rank": 2830,
+ "score": 40,
+ "level": "SIMPLE",
  "complexity": {
   "grade": 181,
   "size": 106,
@@ -21,8 +24,23 @@
  "bad_design": null,
  "chart_alt": "bracket-led: stages 4 and 6 take 43% to 63% of a run. Simulation, GLB takes 0.9 s. Simulation, STEP takes 1.1 s. Simulation, STL takes 0.9 s. Simulation, OBJ takes 1.0 s. Visual, GLB takes 0.9 s. Visual, OBJ takes 1.1 s",
  "rerun": {},
+ "tested": [
+  "2026-11-09",
+  "2026-11-09"
+ ],
  "kese": [
   "22fd70c"
+ ],
+ "kese_version": [
+  "2.4.0"
+ ],
+ "runs": [
+  [
+   "corpus",
+   "2026-11-09",
+   11000000000.0,
+   5400.0
+  ]
  ],
  "machine": {
   "cpu": "Intel(R) Xeon(R) Processor @ 2.30GHz, 4 cores, 15 GB",

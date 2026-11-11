@@ -1,7 +1,4 @@
 {
- "rank": 287,
- "score": 8886,
- "level": "VERY HIGH",
  "layers": 4,
  "parts": 269,
  "big": 3,
@@ -15,9 +12,10 @@
  "project": "cheyao/icepi-sbc",
  "name": "cm0",
  "license": "SHL-2.1 (Solderpad Hardware License v2.1), in LICENSE",
+ "license_checked": "2026-11-08",
  "zip": "part10_of_17",
  "features": {
-  "through_vias": 1646,
+  "through_vias": 823,
   "blind_buried_vias": 0,
   "microvias": 0,
   "backdrills": 0,

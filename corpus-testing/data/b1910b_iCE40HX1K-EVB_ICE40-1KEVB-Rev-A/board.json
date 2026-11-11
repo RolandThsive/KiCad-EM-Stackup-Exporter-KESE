@@ -1,7 +1,4 @@
 {
- "rank": 2574,
- "score": 194,
- "level": "SIMPLE",
  "layers": 2,
  "parts": 67,
  "big": 1,
@@ -15,6 +12,7 @@
  "project": "OLIMEX/iCE40HX1K-EVB",
  "name": "ICE40-1KEVB_Rev_A",
  "license": "Apache-2.0 (Apache License 2.0)",
+ "license_checked": "2026-11-08",
  "zip": "part16_of_17",
  "features": {
   "through_vias": 0,

@@ -1,7 +1,4 @@
 {
- "rank": 903,
- "score": 2890,
- "level": "MEDIUM",
  "layers": 4,
  "parts": 153,
  "big": 0,
@@ -15,9 +12,10 @@
  "project": "eez-open/dib-mio168plus-afe3",
  "name": "EEZ DIB AFE3plus",
  "license": "TAPR-OHL-1.0 (TAPR Open Hardware License), in LICENSE.TXT",
+ "license_checked": "2026-11-08",
  "zip": "part14_of_17",
  "features": {
-  "through_vias": 776,
+  "through_vias": 388,
   "blind_buried_vias": 0,
   "microvias": 0,
   "backdrills": 0,

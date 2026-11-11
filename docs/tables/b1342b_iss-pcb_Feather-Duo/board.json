@@ -3,7 +3,10 @@
  "project": "issuiuc/iss-pcb",
  "path": "issuiuc__iss-pcb/boards/Feather_Duo/Feather_Duo.kicad_pcb",
  "license": "No license found",
- "rank": 2143,
+ "license_checked": "2026-11-08",
+ "rank": 2137,
+ "score": 564,
+ "level": "LOW",
  "complexity": {
   "grade": 285,
   "size": 175,
@@ -24,8 +27,23 @@
  "bad_design": null,
  "chart_alt": "Feather_Duo: stages 4 and 6 take 46% to 80% of a run. Simulation, GLB takes 5.7 s. Simulation, STEP takes 7.4 s. Simulation, STL takes 6.0 s. Simulation, OBJ takes 8.7 s. Visual, GLB takes 8.8 s. Visual, OBJ takes 10 s",
  "rerun": {},
+ "tested": [
+  "2026-11-09",
+  "2026-11-09"
+ ],
  "kese": [
   "22fd70c"
+ ],
+ "kese_version": [
+  "2.4.0"
+ ],
+ "runs": [
+  [
+   "corpus",
+   "2026-11-09",
+   11000000000.0,
+   5400.0
+  ]
  ],
  "machine": {
   "cpu": "Intel(R) Xeon(R) Processor @ 2.30GHz, 4 cores, 15 GB",

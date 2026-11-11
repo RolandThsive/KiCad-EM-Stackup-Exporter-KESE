@@ -1,7 +1,4 @@
 {
- "rank": 798,
- "score": 3413,
- "level": "HIGH",
  "layers": 2,
  "parts": 171,
  "big": 0,
@@ -15,9 +12,10 @@
  "project": "rh1tech/frank",
  "name": "frank_pga",
  "license": "GPL-3.0 (GNU GPL v3.0)",
+ "license_checked": "2026-11-08",
  "zip": "part13_of_17",
  "features": {
-  "through_vias": 696,
+  "through_vias": 348,
   "blind_buried_vias": 0,
   "microvias": 0,
   "backdrills": 0,

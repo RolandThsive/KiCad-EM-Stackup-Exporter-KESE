@@ -3,7 +3,10 @@
  "project": "robojackets/robocup-pcb",
  "path": "robojackets__robocup-pcb/boards/rev-2026/motorboard-v1.0/motorboard-v1.0.kicad_pcb",
  "license": "Apache-2.0 (Apache License 2.0)",
+ "license_checked": "2026-11-08",
  "rank": 548,
+ "score": 4903,
+ "level": "HIGH",
  "complexity": {
   "grade": 332,
   "size": 232,
@@ -23,8 +26,23 @@
  "bad_design": null,
  "chart_alt": "motorboard-v1.0: stages 4 and 6 take 49% to 82% of a run. Simulation, GLB takes 46 s. Simulation, STEP takes 57 s. Simulation, STL takes 46 s. Simulation, OBJ takes 70 s. Visual, GLB takes 76 s. Visual, OBJ takes 95 s",
  "rerun": {},
+ "tested": [
+  "2026-11-09",
+  "2026-11-09"
+ ],
  "kese": [
   "22fd70c"
+ ],
+ "kese_version": [
+  "2.4.0"
+ ],
+ "runs": [
+  [
+   "corpus",
+   "2026-11-09",
+   11000000000.0,
+   5400.0
+  ]
  ],
  "machine": {
   "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz, 4 cores, 15 GB",

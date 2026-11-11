@@ -3,7 +3,10 @@
  "project": "intergalaktik/ULX4M-LD",
  "path": "intergalaktik__ULX4M-LD/ulx4m-ld.kicad_pcb",
  "license": "CERN-OHL-S-2.0 (CERN Open Hardware Licence v2, Strongly Reciprocal), in LICENSE.md",
+ "license_checked": "2026-11-08",
  "rank": 94,
+ "score": 19233,
+ "level": "VERY HIGH",
  "complexity": {
   "grade": 409,
   "size": 324,
@@ -22,8 +25,23 @@
  "bad_design": null,
  "chart_alt": "ulx4m-ld: stages 4 and 6 take 49% to 82% of a run. Simulation, GLB takes 49 s. Simulation, STEP takes 60 s. Simulation, STL takes 50 s. Simulation, OBJ takes 78 s. Visual, GLB takes 80 s. Visual, OBJ takes 96 s",
  "rerun": {},
+ "tested": [
+  "2026-11-09",
+  "2026-11-09"
+ ],
  "kese": [
   "22fd70c"
+ ],
+ "kese_version": [
+  "2.4.0"
+ ],
+ "runs": [
+  [
+   "corpus",
+   "2026-11-09",
+   11000000000.0,
+   5400.0
+  ]
  ],
  "machine": {
   "cpu": "Intel(R) Xeon(R) Processor @ 2.30GHz, 4 cores, 15 GB",

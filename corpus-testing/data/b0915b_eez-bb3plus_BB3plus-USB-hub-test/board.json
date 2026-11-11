@@ -1,7 +1,4 @@
 {
- "rank": 376,
- "score": 7138,
- "level": "HIGH",
  "layers": 4,
  "parts": 248,
  "big": 2,
@@ -15,9 +12,10 @@
  "project": "eez-open/eez-bb3plus",
  "name": "BB3plus USB hub test",
  "license": "TAPR-OHL-1.0 (TAPR Open Hardware License), in LICENSE.TXT",
+ "license_checked": "2026-11-08",
  "zip": "part10_of_17",
  "features": {
-  "through_vias": 1426,
+  "through_vias": 713,
   "blind_buried_vias": 0,
   "microvias": 0,
   "backdrills": 0,

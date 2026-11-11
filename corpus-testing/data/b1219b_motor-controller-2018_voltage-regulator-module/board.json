@@ -1,7 +1,4 @@
 {
- "rank": 2583,
- "score": 185,
- "level": "SIMPLE",
  "layers": 2,
  "parts": 14,
  "big": 0,
@@ -15,6 +12,7 @@
  "project": "heev/motor-controller-2018",
  "name": "voltage-regulator-module",
  "license": "No license found",
+ "license_checked": "2026-11-08",
  "zip": "part16_of_17",
  "features": {
   "through_vias": 10,

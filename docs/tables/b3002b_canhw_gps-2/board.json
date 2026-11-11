@@ -3,7 +3,10 @@
  "project": "waterloo-rocketry/canhw",
  "path": "waterloo-rocketry__canhw/gps/gps_2.kicad_pcb",
  "license": "GPL-3.0 (GNU GPL v3.0)",
- "rank": 1927,
+ "license_checked": "2026-11-08",
+ "rank": 1922,
+ "score": 791,
+ "level": "LOW",
  "complexity": {
   "grade": 254,
   "size": 164,
@@ -23,8 +26,23 @@
  "bad_design": null,
  "chart_alt": "gps_2: stages 4 and 6 take 48% to 80% of a run. Simulation, GLB takes 6.1 s. Simulation, STEP takes 7.9 s. Simulation, STL takes 6.0 s. Simulation, OBJ takes 9.6 s. Visual, GLB takes 9.3 s. Visual, OBJ takes 12 s",
  "rerun": {},
+ "tested": [
+  "2026-11-09",
+  "2026-11-09"
+ ],
  "kese": [
   "22fd70c"
+ ],
+ "kese_version": [
+  "2.4.0"
+ ],
+ "runs": [
+  [
+   "corpus",
+   "2026-11-09",
+   11000000000.0,
+   5400.0
+  ]
  ],
  "machine": {
   "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz, 4 cores, 15 GB",

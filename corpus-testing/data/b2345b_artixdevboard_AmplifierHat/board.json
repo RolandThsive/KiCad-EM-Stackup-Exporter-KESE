@@ -1,7 +1,4 @@
 {
- "rank": 1107,
- "score": 2193,
- "level": "MEDIUM",
  "layers": 4,
  "parts": 163,
  "big": 0,
@@ -15,9 +12,10 @@
  "project": "rasmusstagsted/artixdevboard",
  "name": "AmplifierHat",
  "license": "As README.md states it: \"This project is released under MIT License. See License for details.\"",
+ "license_checked": "2026-11-08",
  "zip": "part14_of_17",
  "features": {
-  "through_vias": 774,
+  "through_vias": 387,
   "blind_buried_vias": 0,
   "microvias": 0,
   "backdrills": 0,

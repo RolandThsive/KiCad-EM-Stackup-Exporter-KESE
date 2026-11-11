@@ -1,7 +1,4 @@
 {
- "rank": 2738,
- "score": 86,
- "level": "SIMPLE",
  "layers": 4,
  "parts": 10,
  "big": 0,
@@ -15,6 +12,7 @@
  "project": "loxodes/vna",
  "name": "switch_breakout",
  "license": "As README.md states it: \"Unless otherwise noted, all work is under a MIT license.\"",
+ "license_checked": "2026-11-08",
  "zip": "part16_of_17",
  "features": {
   "through_vias": 4,

@@ -1,7 +1,4 @@
 {
- "rank": 1470,
- "score": 1443,
- "level": "MEDIUM",
  "layers": 4,
  "parts": 37,
  "big": 0,
@@ -15,9 +12,10 @@
  "project": "machdyne/ferrit",
  "name": "ssu",
  "license": "The Lone Dynamics Open License, in LICENSE.md: \"Redistribution and use in source, binary or physical forms, with or without modification, is permitted\", provided redistributed source keeps the copyright notice; the README names its exceptions",
+ "license_checked": "2026-11-08",
  "zip": "part15_of_17",
  "features": {
-  "through_vias": 100,
+  "through_vias": 50,
   "blind_buried_vias": 0,
   "microvias": 0,
   "backdrills": 0,

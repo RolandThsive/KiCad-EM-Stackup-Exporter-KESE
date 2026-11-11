@@ -1,7 +1,4 @@
 {
- "rank": 1691,
- "score": 1078,
- "level": "MEDIUM",
  "layers": 2,
  "parts": 26,
  "big": 1,
@@ -15,9 +12,10 @@
  "project": "andrewpaterson/658-Computer",
  "name": "Video DAC",
  "license": "No license found",
+ "license_checked": "2026-11-08",
  "zip": "part15_of_17",
  "features": {
-  "through_vias": 168,
+  "through_vias": 84,
   "blind_buried_vias": 0,
   "microvias": 0,
   "backdrills": 0,

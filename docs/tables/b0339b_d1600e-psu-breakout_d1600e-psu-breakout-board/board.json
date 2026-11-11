@@ -3,7 +3,10 @@
  "project": "antmicro/d1600e-psu-breakout",
  "path": "antmicro__d1600e-psu-breakout/d1600e-psu-breakout-board.kicad_pcb",
  "license": "Apache-2.0 (Apache License 2.0)",
+ "license_checked": "2026-11-08",
  "rank": 661,
+ "score": 4124,
+ "level": "HIGH",
  "complexity": {
   "grade": 405,
   "size": 265,
@@ -32,8 +35,29 @@
    "Visual, OBJ"
   ]
  },
+ "tested": [
+  "2026-11-09",
+  "2026-11-10"
+ ],
  "kese": [
   "22fd70c"
+ ],
+ "kese_version": [
+  "2.4.0"
+ ],
+ "runs": [
+  [
+   "corpus",
+   "2026-11-09",
+   11000000000.0,
+   5400.0
+  ],
+  [
+   "fixed",
+   "2026-11-10",
+   11000000000.0,
+   5400.0
+  ]
  ],
  "machine": {
   "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz, 4 cores, 15 GB",

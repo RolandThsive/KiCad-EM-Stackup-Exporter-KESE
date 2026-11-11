@@ -1,7 +1,9 @@
-"""The Corpus Testing engine: builds every Corpus Testing page from the boards' files alone.
+"""The Corpus Testing engine: builds every Corpus Testing page from the boards' files.
 
-A board is a folder docs/tables/b<number>b_<repo>_<board>/ (board.json, stages.md, facts.md, files.md), with its
-chart in docs/images/b<number>b_<repo>_<board>/stages.webp when it has one. From those this writes:
+A board is its data folder, corpus-testing/data/<repo>_<board>/ (board.json: its counts, path and license;
+runs.jsonl: its runs). The maker (maker/make.py) makes from it the board's tables, docs/tables/<same name>/
+(board.json, stages.md, facts.md, files.md), and its chart, docs/images/<same name>/stages.webp; from those this
+writes:
 
     docs/wiki/Corpus-Testing.md                                  the master page
     docs/wiki/CorpusTestingPages/Corpus-Testing-NN.md            Corpus Page NN, 108 boards each
@@ -9,19 +11,20 @@ chart in docs/images/b<number>b_<repo>_<board>/stages.webp when it has one. From
     docs/wiki/BoardPages/b<number>b_<repo>_<board>.md            one page per board
     docs/wiki/Credits.md, credits.txt                            every board by number, with its project and license
 
-The boards are numbered 1 to n in order of project and then path, at every run. A board added comes as folders
+The boards are numbered 1 to n in order of project and then path, at every run. A board added comes as a data folder
 named <repo>_<board>, with no number: it goes into its place, and every board after it moves up by one. The engine
-renames each folder whose number is no longer right, in docs/tables, docs/images and corpus-testing/data (the
-board's counts and runs), and writes every page again; a board with no folder in corpus-testing/data gets one that
-says no runs of it are recorded. A board whose folders are deleted is gone, and so are its board page and any page past the last.
+renames each folder whose number is no longer right, in corpus-testing/data, docs/tables and docs/images, and writes
+every page again. A board whose data folder is deleted is gone: its tables, chart and board page with it, and any page
+past the last.
 
-    python3 corpus-testing/engine/assemble.py [<top of the corpus-testing branch>]
+    python3 corpus-testing/engine/maker/make.py && python3 corpus-testing/engine/assemble.py
 
-Needs only Python 3.9 or newer: no run results, no drawing."""
+Needs only Python 3.9 or newer (the maker needs matplotlib and Pillow, for the charts)."""
 import collections
 import json
 import math
 import re
+import shutil
 import textwrap
 import sys
 from pathlib import Path
@@ -48,6 +51,17 @@ def write(path, text):
         path.write_text(text)
 
 
+# ---- a board whose data folder is gone is taken out: its tables and chart go with it
+data_boards = {p.name for p in DATA.iterdir() if (p / "board.json").is_file()} if DATA.is_dir() else set()
+taken_out = []
+if data_boards:                                       # (no data at all is a checkout without it: nothing is taken out)
+    for root in (TABLES, IMAGES):
+        for d in sorted(p for p in root.iterdir() if p.is_dir() and p.name not in data_boards):
+            shutil.rmtree(d)
+            if root == TABLES:
+                taken_out.append(d.name)
+waiting = sorted(n for n in data_boards if not (TABLES / n / "board.json").is_file())   # the maker says why
+
 # ---- the boards, numbered in order of project and path; each folder named b<number>b_<repo>_<board>
 PREFIX = re.compile(r"b(\d+)b_(.+)")
 B = []
@@ -69,11 +83,6 @@ for i, m in enumerate(B, 1):
             if (root / m["folder"]).is_dir():
                 (root / m["folder"]).rename(root / m["slug"])
         renamed += 1
-    if not (DATA / m["slug"] / "board.json").is_file():               # a board added by hand, with no runs recorded
-        (DATA / m["slug"]).mkdir(parents=True, exist_ok=True)
-        stub = {k: m[k] for k in ("rank", "name", "project", "path", "license") if m.get(k) is not None}
-        stub["runs_recorded"] = False
-        write(DATA / m["slug"] / "board.json", json.dumps(stub, indent=1, ensure_ascii=False) + "\n")
     m["chart"] = m["folder"] in have_chart
     for part in ("stages", "facts", "files"):
         f = TABLES / m["slug"] / f"{part}.md"
@@ -145,11 +154,81 @@ ok = [m for m in B if m["status"] == "pass"]
 gr = sorted(m["complexity"]["grade"] for m in B)
 projects = {m["project"] for m in B}
 kese = sorted({c for m in B for c in m["kese"]})
+versions = sorted({v for m in B for v in m.get("kese_version", [])})
 mach = collections.Counter(json.dumps(m["machine"], sort_keys=True) for m in B).most_common(1)
 mach = json.loads(mach[0][0]) if mach else {}
 ver = f"shapely {mach.get('shapely', '2.2.0')} (GEOS {mach.get('geos', '3.14.1')})"
-cpu = mach.get("cpu", "an Intel Xeon").split(",")[0]
-rerun_any = {w for m in B for w in m.get("rerun", {})}
+join = lambda xs: ", ".join(xs[:-1]) + (" and " if len(xs) > 1 else "") + (xs[-1] if xs else "")
+WORDS = "zero one two three four five six seven eight nine ten eleven twelve".split()
+word = lambda n: WORDS[n] if n < len(WORDS) else f"{n:,}"
+gb = lambda v: f"{v / 1e9:g} GB"
+day = lambda iso: f"{int(iso[8:]):d} {['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'][int(iso[5:7]) - 1]} {iso[:4]}"
+
+
+def days(ds, on="on "):
+    """A day, or the first and last of several: 10 November 2026; 9 to 10 November 2026."""
+    ds = sorted(set(ds))
+    if not ds: return ""
+    a, z = ds[0], ds[-1]
+    if a == z: return on + day(a)
+    if a[:7] == z[:7]: return f"{'between ' if on else ''}{int(a[8:])} {'and' if on else 'to'} {day(z)}"
+    return f"{'between ' if on else ''}{day(a)} {'and' if on else 'to'} {day(z)}"
+
+
+def spec(cpu):
+    """(cores, GB of RAM) from a machine's cpu entry, "..., 4 cores, 15 GB": the system reports a little under the RAM
+    fitted, so it is rounded up to the next 4 GB."""
+    c, g = re.search(r"(\d+) cores", cpu), re.search(r"(\d+) GB", cpu)
+    return (int(c.group(1)) if c else None, 4 * math.ceil(int(g.group(1)) / 4) if g else None)
+
+
+specs = collections.Counter(spec(m["machine"].get("cpu", "")) for m in B if m.get("machine"))
+on_machine = lambda s: (f"a {s[0]}-core CPU" if s[0] else "a CPU") + (f" with {s[1]} GB of RAM" if s[1] else "")
+if len(specs) <= 1:
+    s0 = next(iter(specs), (4, 16))
+    machine_text = (f"on {on_machine(s0)}, so `Parallel.WORKERS = 0` gave {word(s0[0] or 4)} workers")
+else:
+    machine_text = ("on " + " or ".join(f"{on_machine(s)} ({n:,} boards)" for s, n in specs.most_common())
+                    + ", and `Parallel.WORKERS = 0` gave as many workers as the CPU has cores")
+ram_text = lambda: (f"a {specs.most_common(1)[0][0][1]} GB machine" if specs and specs.most_common(1)[0][0][1] else "the test machine")
+# the limits each run had, from the runs: [source, date, cap, time limit] of every run of every board
+RUNREC = [(m["number"], *x) for m in B for x in m.get("runs", [])]
+first = collections.Counter((cap, tl) for _, src, _, cap, tl in RUNREC if src == "corpus")
+
+
+def limit_words(cap, tl):
+    w = ([f"after {tl / 60:g} minutes"] if tl else []) + ([f"once its memory passed {gb(cap)}"] if cap else [])
+    return ", or ".join(w)
+
+
+if first:
+    (cap0, tl0), _ = first.most_common(1)[0]
+    others = [limit_words(c, t) or "with no limit" for (c, t), _ in first.most_common()[1:]]
+    stop_text = ((f"A run was stopped {limit_words(cap0, tl0)}" if limit_words(cap0, tl0) else "A run had no memory cap and no time limit")
+                 + (f" (some, {'; '.join(others)})" if others else "")
+                 + (": that cap is a limit of the measurement, not of KESE, and a board stopped there "
+                    "needs a machine with more memory" if cap0 else "") + ". ")
+else:
+    cap0, stop_text = None, ""
+again = {src: [x for x in RUNREC if x[1] == src] for src in ("fixed", "cap", "nocap")}
+how = []
+if again["fixed"]: how.append("one that KESE had got wrong, with the fixes to KESE made for it")
+if again["cap"]:
+    caps = sorted({x[3] for x in again["cap"] if x[3]})
+    how.append(f"one stopped at the {gb(cap0) if cap0 else 'memory'} cap, with the cap raised to {' or '.join(gb(c) for c in caps)}")
+first_again = days([x[2] for src in ("fixed", "cap") for x in again[src]])
+rerun_text = ""
+if how or again["nocap"]:
+    rerun_text = ("**A run that failed was run again " + first_again + ", with the same settings: " + ", and ".join(how)
+                  if how else "**A run that failed was run again")
+    if again["nocap"]:
+        nc = again["nocap"]
+        lim = ("no memory cap" if not any(x[3] for x in nc) else "a higher memory cap") + \
+              (" and no time limit" if not any(x[4] for x in nc) else "")
+        rerun_text += ((", and, where that was not enough, " if how else " ") + days([x[2] for x in nc]) + f", with {lim} on "
+                       f"{ram_text()} with swap added (its seconds then include waiting on the swap)")
+    rerun_text += (". A run that passed then shows the new run, and its board says so in a Run again row; a run that failed "
+                   "again keeps its first result.**\n")
 idx = ["# Corpus Testing\n",
        f"Every board in [Credits](Credits.md), {len(B):,} KiCad boards from {len(projects):,} open hardware projects, "
        "exported by the current KESE once for every file format each mode writes, board by board, in the style of the "
@@ -171,18 +250,11 @@ idx = ["# Corpus Testing\n",
        "    --set SolderMask.SOLDER_MASK_ENABLED=True --set Silkscreen.SILKSCREEN_ENABLED=True\n"
        "python run_KESE.py B --mode visual --format F --verify \\\n"
        "    --set SolderMask.SOLDER_MASK_ENABLED=True --set Silkscreen.SILKSCREEN_ENABLED=True\n```\n",
-       f"**The runs used KESE version 2.4.0 (`main` at {', '.join(kese) or '22fd70c'}) with the default parameters "
-       f"otherwise and {ver}, spread over several Linux machines with 4 cores each ({cpu}) and 16 GB of RAM, so "
-       "`Parallel.WORKERS = 0` gave four workers ([Work Done In Parallel](Working-Principle.md#74-work-done-in-parallel)). "
-       "A run was stopped after 90 minutes, or once its memory passed 11 GB: that cap is a limit of the measurement on "
-       "these 15 GB machines, not of KESE, and a board stopped there needs a machine with more memory. On another "
-       "machine the seconds differ.**\n",
-       "**A run that failed was run again on 10 November 2026, with the same settings: one that KESE had got wrong, with the fixes to KESE "
-       "made for it, and one stopped at the 11 GB cap, with the cap raised to 14.5 GB"
-       + (", and, where that was not enough, with no memory cap and no time limit on a 15 GB machine with swap added "
-          "(its seconds then include waiting on the swap)" if "nocap" in rerun_any else "")
-       + ". A run that passed then shows the new run, and its board says so in a Run again row; a run that failed "
-       "again keeps its first result.**\n",
+       f"**The runs used KESE version {join(versions) or '2.4.0'} (`main` at {join(kese) or '22fd70c'}) "
+       f"with the default parameters otherwise and {ver}, {machine_text} "
+       "([Work Done In Parallel](Working-Principle.md#74-work-done-in-parallel)). "
+       f"{stop_text}On another machine the seconds differ.**\n",
+       rerun_text,
        f"{len(ok):,} of the {len(B):,} boards passed the Verifier in all six runs. The {len(B) - len(ok)} others are "
        "listed by why under [What Did Not Pass](#what-did-not-pass).\n",
        "## Grading A Board's Complexity\n",
@@ -249,13 +321,13 @@ text = re.sub(r"\]\(((?!CorpusTestingPages/|BoardPages/|Credits\.md)[A-Za-z0-9-]
 write(WIKI / "Corpus-Testing.md", text + "\n")
 
 # ---- the Credits page and credits.txt: every board by its number, with its project and the project's license
-LOOKED_UP = "8 November 2026"
 NOT_YET = "Not looked up yet"
 known = {}
 for m in B:
     if m.get("license"):
         known.setdefault(m["project"], m["license"])
 lic = lambda m: m.get("license") or known.get(m["project"], NOT_YET)      # a board added by hand takes its project's
+LOOKED_UP = days([m["license_checked"] for m in B if m.get("license_checked")])
 esc = lambda s: re.sub(r"([\\`*_\[\]<>|&])", r"\\\1", s)
 gh = lambda p: f"https://github.com/{p}"
 CREDITS_TXT = "https://github.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/blob/corpus-testing/credits.txt"
@@ -268,19 +340,22 @@ owners = ("Every board belongs to its authors, and so does its license: the righ
 how = ("The license is the one GitHub identifies in the repository (an SPDX identifier); where GitHub names none, it is "
        "what the project's own license files or README say, with the file it is in. \"No license found\" means that "
        "neither the repository's root, the folders of its boards nor its README names one, and the boards remain under "
-       "their authors' copyright. Each repository is the authority on its own terms. The licenses were looked up on "
-       f"{LOOKED_UP}" + (f"; \"{NOT_YET}\" marks a board added since, whose project's license is still to be looked "
+       "their authors' copyright. Each repository is the authority on its own terms. "
+       + (f"The licenses were looked up {LOOKED_UP}" if LOOKED_UP else "The licenses are still to be looked up")
+       + (f"; \"{NOT_YET}\" marks a board added since, whose project's license is still to be looked "
                          "up" if any(lic(m) == NOT_YET for m in B) else "") + ".")
 cr = ["# Credits\n", thanks + "\n", owners + "\n", "## The Licenses\n", how + "\n",
       f"The repository's [`credits.txt`]({CREDITS_TXT}) holds the same list by project, with the path of each board in "
       "its repository.\n",
       "## The Boards\n",
       f"The {len(B):,} boards by their number in [Corpus Testing](Corpus-Testing.md), in order of project and then path, "
-      "each with its project and the project's license. A board's name links to its section on its Corpus Page.\n",
-      "| No. | Board | Project | License |", "|---:|:---|:---|:---|"]
+      "each with its project, the project's license and the days its runs were made. A board's name links to its "
+      "section on its Corpus Page.\n",
+      "| No. | Board | Project | License | Tested |", "|---:|:---|:---|:---|:---|"]
+tested = lambda m: days(m["tested"], on="") if m.get("tested") else ""
 for m in B:
     cr.append(f"| {m['number']:,} | [{esc(m['name'])}](CorpusTestingPages/{page_file(m['page'])}.md{anchor(heading(m))}) "
-              f"| [{esc(m['project'])}]({gh(m['project'])}) | {esc(lic(m))} |")
+              f"| [{esc(m['project'])}]({gh(m['project'])}) | {esc(lic(m))} | {tested(m)} |")
 cr.append("\n| Previous | Next |\n|:---|---:|\n| [Corpus Testing](Corpus-Testing.md) | |")
 write(WIKI / "Credits.md", "\n".join(cr) + "\n")
 
@@ -290,11 +365,12 @@ for m in B:
     by_project.setdefault(m["project"], []).append(m)
 tx = ["Credits: the KiCad boards KESE was checked against", "=" * 51, "", fill(thanks), "", fill(owners), "",
       fill("Below, for each project in the order of Corpus Testing: its repository, its license, and the boards used, "
-           "by their number in Corpus Testing, their name and their path in the repository. " + how), "", ""]
+           "by their number in Corpus Testing, their name, their path in the repository and the days their runs were made. " + how), "", ""]
 for p, ms in by_project.items():
     tx += [p, f"  {gh(p)}", fill(lic(ms[0]), initial_indent="  License: ", subsequent_indent=" " * 11),
            f"  {'Board' if len(ms) == 1 else 'Boards'} ({len(ms)}):"]
-    tx += [f"    {m['number']}. {m['name']}  ({m['path'].split('/', 1)[-1]})" for m in ms]
+    tx += [f"    {m['number']}. {m['name']}  ({m['path'].split('/', 1)[-1]})" + (f", tested {tested(m)}" if tested(m) else "")
+           for m in ms]
     tx.append("")
 write(TOP / "credits.txt", "\n".join(tx))
 
@@ -304,5 +380,9 @@ if readme.is_file():
     t = re.sub(r"[\d,]+ KiCad boards from [\d,]+ open hardware projects",
                f"{len(B):,} KiCad boards from {len(projects):,} open hardware projects", readme.read_text())
     write(readme, re.sub(r"Corpus Page 1 to \d+", f"Corpus Page 1 to {NPAGES}", t))
+if taken_out:
+    print(f"{len(taken_out)} boards taken out (their data folder is gone): " + ", ".join(taken_out))
+if waiting:
+    print(f"{len(waiting)} data folders with no board made from them (the maker says why): " + ", ".join(waiting))
 print(f"{renamed} folders renamed; {len(B):,} boards on {NPAGES} pages; {len(ok):,} pass all six runs; {len(bad)} bad design, {len(mem)} memory, "
       f"{len(other)} failed")

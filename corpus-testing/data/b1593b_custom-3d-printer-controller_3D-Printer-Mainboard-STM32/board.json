@@ -1,7 +1,4 @@
 {
- "rank": 1012,
- "score": 2496,
- "level": "MEDIUM",
  "layers": 2,
  "parts": 191,
  "big": 1,
@@ -15,6 +12,7 @@
  "project": "m47812/custom-3d-printer-controller",
  "name": "3D_Printer_Mainboard_STM32",
  "license": "GPL-3.0 (GNU GPL v3.0)",
+ "license_checked": "2026-11-08",
  "zip": "part14_of_17",
  "features": {
   "through_vias": 233,

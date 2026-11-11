@@ -1,7 +1,4 @@
 {
- "rank": 1084,
- "score": 2243,
- "level": "MEDIUM",
  "layers": 4,
  "parts": 65,
  "big": 0,
@@ -15,9 +12,10 @@
  "project": "oresat/oresat-end-cards",
  "name": "oresat1-minusz-end-card",
  "license": "As README.md states it: \"Copyright Portland State Aerospace Society 2022. This documentation describes Open Hardware and is licensed under the CERN OHL v2 You may redistribute and modify this documentation under the terms of the CERN OHL v.1.2. https://ohwr.org/cernohl.\"",
+ "license_checked": "2026-11-08",
  "zip": "part14_of_17",
  "features": {
-  "through_vias": 954,
+  "through_vias": 477,
   "blind_buried_vias": 0,
   "microvias": 0,
   "backdrills": 0,

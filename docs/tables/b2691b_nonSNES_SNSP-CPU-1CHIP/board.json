@@ -3,7 +3,10 @@
  "project": "stonedDiscord/nonSNES",
  "path": "stonedDiscord__nonSNES/SNSP-CPU-1CHIP/SNSP-CPU-1CHIP.kicad_pcb",
  "license": "GPL-3.0 (GNU GPL v3.0)",
+ "license_checked": "2026-11-08",
  "rank": 393,
+ "score": 6879,
+ "level": "HIGH",
  "complexity": {
   "grade": 408,
   "size": 263,
@@ -27,8 +30,23 @@
  "bad_design": null,
  "chart_alt": "SNSP-CPU-1CHIP: stages 4 and 6 take 52% to 84% of a run. Simulation, GLB takes 41 s. Simulation, STEP takes 50 s. Simulation, STL takes 41 s. Simulation, OBJ takes 59 s. Visual, GLB takes 69 s. Visual, OBJ takes 88 s",
  "rerun": {},
+ "tested": [
+  "2026-11-09",
+  "2026-11-09"
+ ],
  "kese": [
   "22fd70c"
+ ],
+ "kese_version": [
+  "2.4.0"
+ ],
+ "runs": [
+  [
+   "corpus",
+   "2026-11-09",
+   11000000000.0,
+   5400.0
+  ]
  ],
  "machine": {
   "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz, 4 cores, 15 GB",

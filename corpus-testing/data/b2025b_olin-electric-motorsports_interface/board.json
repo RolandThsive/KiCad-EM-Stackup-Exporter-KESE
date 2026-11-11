@@ -1,7 +1,4 @@
 {
- "rank": 2132,
- "score": 575,
- "level": "LOW",
  "layers": 4,
  "parts": 15,
  "big": 0,
@@ -15,6 +12,7 @@
  "project": "olin-electric-motorsports/olin-electric-motorsports",
  "name": "interface",
  "license": "No license found",
+ "license_checked": "2026-11-08",
  "zip": "part16_of_17",
  "features": {
   "through_vias": 10,

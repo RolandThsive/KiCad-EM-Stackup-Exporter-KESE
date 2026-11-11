@@ -1,7 +1,4 @@
 {
- "rank": 42,
- "score": 25077,
- "level": "EXTREME",
  "layers": 12,
  "parts": 546,
  "big": 6,
@@ -15,9 +12,10 @@
  "project": "antmicro/sodimm-ddr5-tester",
  "name": "sodimm-ddr5-tester",
  "license": "Apache-2.0 (Apache License 2.0)",
+ "license_checked": "2026-11-08",
  "zip": "part03_of_17",
  "features": {
-  "through_vias": 4230,
+  "through_vias": 2115,
   "blind_buried_vias": 0,
   "microvias": 0,
   "backdrills": 0,

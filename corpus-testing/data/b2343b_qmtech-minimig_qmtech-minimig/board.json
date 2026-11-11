@@ -1,7 +1,4 @@
 {
- "rank": 121,
- "score": 15767,
- "level": "VERY HIGH",
  "layers": 4,
  "parts": 207,
  "big": 4,
@@ -15,6 +12,7 @@
  "project": "ranzbak/qmtech_minimig",
  "name": "qmtech-minimig",
  "license": "No license found",
+ "license_checked": "2026-11-08",
  "zip": "part06_of_17",
  "features": {
   "through_vias": 316,

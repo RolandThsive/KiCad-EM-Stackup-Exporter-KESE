@@ -1,7 +1,4 @@
 {
- "rank": 222,
- "score": 11014,
- "level": "VERY HIGH",
  "layers": 2,
  "parts": 230,
  "big": 0,
@@ -15,9 +12,10 @@
  "project": "RetroStack/TRS-80-Model-I-G-E1",
  "name": "TRS80_Model_I_G_E1",
  "license": "MIT (MIT License)",
+ "license_checked": "2026-11-08",
  "zip": "part09_of_17",
  "features": {
-  "through_vias": 766,
+  "through_vias": 383,
   "blind_buried_vias": 0,
   "microvias": 0,
   "backdrills": 0,

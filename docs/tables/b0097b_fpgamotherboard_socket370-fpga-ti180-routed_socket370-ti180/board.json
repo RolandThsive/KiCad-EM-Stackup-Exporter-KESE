@@ -3,7 +3,10 @@
  "project": "alphaonex86/fpgamotherboard",
  "path": "alphaonex86__fpgamotherboard/socket370/fpga-ti180/routed/socket370-ti180.kicad_pcb",
  "license": "GPL-3.0 (GNU GPL v3.0)",
+ "license_checked": "2026-11-08",
  "rank": 28,
+ "score": 33261,
+ "level": "EXTREME",
  "complexity": {
   "grade": 475,
   "size": 335,
@@ -31,8 +34,29 @@
    "Simulation, OBJ"
   ]
  },
+ "tested": [
+  "2026-11-09",
+  "2026-11-10"
+ ],
  "kese": [
   "22fd70c"
+ ],
+ "kese_version": [
+  "2.4.0"
+ ],
+ "runs": [
+  [
+   "corpus",
+   "2026-11-09",
+   11000000000.0,
+   5400.0
+  ],
+  [
+   "fixed",
+   "2026-11-10",
+   11000000000.0,
+   5400.0
+  ]
  ],
  "machine": {
   "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz, 4 cores, 15 GB",

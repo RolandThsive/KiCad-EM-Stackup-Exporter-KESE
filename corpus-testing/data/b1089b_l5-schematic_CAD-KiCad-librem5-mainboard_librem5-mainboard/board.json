@@ -1,7 +1,4 @@
 {
- "rank": 23,
- "score": 37908,
- "level": "EXTREME",
  "layers": 10,
  "parts": 1164,
  "big": 6,
@@ -15,9 +12,10 @@
  "project": "gralco/l5-schematic",
  "name": "librem5_mainboard",
  "license": "GPL-3.0 (GNU GPL v3.0)",
+ "license_checked": "2026-11-08",
  "zip": "part02_of_17",
  "features": {
-  "through_vias": 1634,
+  "through_vias": 817,
   "blind_buried_vias": 1319,
   "microvias": 2908,
   "backdrills": 0,

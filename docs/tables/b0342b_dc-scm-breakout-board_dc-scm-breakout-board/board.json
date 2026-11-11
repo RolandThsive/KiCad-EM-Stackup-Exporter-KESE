@@ -3,7 +3,10 @@
  "project": "antmicro/dc-scm-breakout-board",
  "path": "antmicro__dc-scm-breakout-board/dc-scm-breakout-board.kicad_pcb",
  "license": "Apache-2.0 (Apache License 2.0)",
+ "license_checked": "2026-11-08",
  "rank": 469,
+ "score": 5775,
+ "level": "HIGH",
  "complexity": {
   "grade": 449,
   "size": 284,
@@ -29,8 +32,23 @@
  "bad_design": null,
  "chart_alt": "dc-scm-breakout-board: stages 4 and 6 take 46% to 73% of a run. Simulation, GLB takes 60 s. Simulation, STEP takes 74 s. Simulation, STL takes 60 s. Simulation, OBJ takes 88 s. Visual, GLB takes 83 s. Visual, OBJ takes 2 min",
  "rerun": {},
+ "tested": [
+  "2026-11-09",
+  "2026-11-09"
+ ],
  "kese": [
   "22fd70c"
+ ],
+ "kese_version": [
+  "2.4.0"
+ ],
+ "runs": [
+  [
+   "corpus",
+   "2026-11-09",
+   11000000000.0,
+   5400.0
+  ]
  ],
  "machine": {
   "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz, 4 cores, 15 GB",

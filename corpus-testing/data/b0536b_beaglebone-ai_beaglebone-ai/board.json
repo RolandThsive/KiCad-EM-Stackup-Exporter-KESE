@@ -1,7 +1,4 @@
 {
- "rank": 56,
- "score": 22359,
- "level": "EXTREME",
  "layers": 12,
  "parts": 702,
  "big": 7,
@@ -15,6 +12,7 @@
  "project": "beagleboard/beaglebone-ai",
  "name": "beaglebone-ai",
  "license": "CC-BY-4.0 (Creative Commons Attribution 4.0)",
+ "license_checked": "2026-11-08",
  "zip": "part03_of_17",
  "features": {
   "through_vias": 1788,

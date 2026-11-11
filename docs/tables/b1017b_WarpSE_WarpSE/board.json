@@ -3,7 +3,10 @@
  "project": "garrettsworkshop/WarpSE",
  "path": "garrettsworkshop__WarpSE/WarpSE.kicad_pcb",
  "license": "No license found",
+ "license_checked": "2026-11-08",
  "rank": 277,
+ "score": 9279,
+ "level": "VERY HIGH",
  "complexity": {
   "grade": 374,
   "size": 289,
@@ -22,8 +25,23 @@
  "bad_design": null,
  "chart_alt": "WarpSE: stages 4 and 6 take 52% to 82% of a run. Simulation, GLB takes 69 s. Simulation, STEP takes 79 s. Simulation, STL takes 67 s. Simulation, OBJ takes 98 s. Visual, GLB takes 95 s. Visual, OBJ takes 2 min",
  "rerun": {},
+ "tested": [
+  "2026-11-09",
+  "2026-11-09"
+ ],
  "kese": [
   "22fd70c"
+ ],
+ "kese_version": [
+  "2.4.0"
+ ],
+ "runs": [
+  [
+   "corpus",
+   "2026-11-09",
+   11000000000.0,
+   5400.0
+  ]
  ],
  "machine": {
   "cpu": "Intel(R) Xeon(R) Processor @ 2.30GHz, 4 cores, 15 GB",

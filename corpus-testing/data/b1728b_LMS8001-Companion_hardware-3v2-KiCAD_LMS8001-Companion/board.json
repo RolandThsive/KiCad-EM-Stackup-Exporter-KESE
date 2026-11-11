@@ -1,7 +1,4 @@
 {
- "rank": 709,
- "score": 3807,
- "level": "HIGH",
  "layers": 4,
  "parts": 352,
  "big": 1,
@@ -15,6 +12,7 @@
  "project": "myriadrf/LMS8001-Companion",
  "name": "LMS8001_Companion",
  "license": "As README.md states it: \"Documentation Documentation is licensed under a Creative Commons Attribution 4.0 International licence.\"",
+ "license_checked": "2026-11-08",
  "zip": "part13_of_17",
  "features": {
   "through_vias": 192,

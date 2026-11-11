@@ -3,7 +3,10 @@
  "project": "epatel/discrete6502",
  "path": "epatel__discrete6502/gen/board_presignal.kicad_pcb",
  "license": "CC-BY-NC-SA-4.0 (Creative Commons Attribution-NonCommercial-ShareAlike 4.0), in LICENSE",
+ "license_checked": "2026-11-08",
  "rank": 36,
+ "score": 29578,
+ "level": "EXTREME",
  "complexity": {
   "grade": 378,
   "size": 298,
@@ -27,8 +30,29 @@
    "Visual, GLB"
   ]
  },
+ "tested": [
+  "2026-11-09",
+  "2026-11-10"
+ ],
  "kese": [
   "22fd70c"
+ ],
+ "kese_version": [
+  "2.4.0"
+ ],
+ "runs": [
+  [
+   "cap",
+   "2026-11-10",
+   14500000000.0,
+   5400.0
+  ],
+  [
+   "corpus",
+   "2026-11-09",
+   11000000000.0,
+   5400.0
+  ]
  ],
  "machine": {
   "cpu": "Intel(R) Xeon(R) Processor @ 2.30GHz, 4 cores, 15 GB",

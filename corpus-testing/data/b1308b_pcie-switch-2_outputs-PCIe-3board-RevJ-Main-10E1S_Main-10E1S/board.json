@@ -1,7 +1,4 @@
 {
- "rank": 245,
- "score": 10281,
- "level": "VERY HIGH",
  "layers": 32,
  "parts": 198,
  "big": 1,
@@ -15,9 +12,10 @@
  "project": "isarmg/pcie-switch-2",
  "name": "Main_10E1S",
  "license": "No license found",
+ "license_checked": "2026-11-08",
  "zip": "part09_of_17",
  "features": {
-  "through_vias": 370,
+  "through_vias": 185,
   "blind_buried_vias": 1364,
   "microvias": 0,
   "backdrills": 0,

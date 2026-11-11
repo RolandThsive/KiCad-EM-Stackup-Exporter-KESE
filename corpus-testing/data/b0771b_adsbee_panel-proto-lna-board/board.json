@@ -1,7 +1,4 @@
 {
- "rank": 1963,
- "score": 744,
- "level": "LOW",
  "layers": 2,
  "parts": 144,
  "big": 0,
@@ -15,9 +12,10 @@
  "project": "CoolNamesAllTaken/adsbee",
  "name": "panel_proto_lna_board",
  "license": "GPL-3.0 (GNU GPL v3.0), in LICENSE",
+ "license_checked": "2026-11-08",
  "zip": "part16_of_17",
  "features": {
-  "through_vias": 144,
+  "through_vias": 72,
   "blind_buried_vias": 0,
   "microvias": 0,
   "backdrills": 0,

@@ -1,7 +1,4 @@
 {
- "rank": 804,
- "score": 3367,
- "level": "HIGH",
  "layers": 4,
  "parts": 140,
  "big": 1,
@@ -15,9 +12,10 @@
  "project": "cheyao/icepi-zero",
  "name": "icepi-zero",
  "license": "SHL-2.1 (Solderpad Hardware License v2.1), in LICENSE",
+ "license_checked": "2026-11-08",
  "zip": "part13_of_17",
  "features": {
-  "through_vias": 542,
+  "through_vias": 271,
   "blind_buried_vias": 0,
   "microvias": 0,
   "backdrills": 0,

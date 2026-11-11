@@ -1,7 +1,4 @@
 {
- "rank": 1728,
- "score": 1027,
- "level": "MEDIUM",
  "layers": 2,
  "parts": 83,
  "big": 0,
@@ -15,6 +12,7 @@
  "project": "rusefi/rusefi-hardware",
  "name": "Stimulator",
  "license": "No license found",
+ "license_checked": "2026-11-08",
  "zip": "part16_of_17",
  "features": {
   "through_vias": 31,

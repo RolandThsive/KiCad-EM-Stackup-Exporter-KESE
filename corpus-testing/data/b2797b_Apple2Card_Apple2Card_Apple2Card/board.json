@@ -1,7 +1,4 @@
 {
- "rank": 1396,
- "score": 1549,
- "level": "MEDIUM",
  "layers": 2,
  "parts": 77,
  "big": 0,
@@ -15,6 +12,7 @@
  "project": "ThorstenBr/Apple2Card",
  "name": "Apple2Card",
  "license": "Zlib (zlib License), in README.md",
+ "license_checked": "2026-11-08",
  "zip": "part15_of_17",
  "features": {
   "through_vias": 48,

@@ -1,7 +1,4 @@
 {
- "rank": 3001,
- "score": 5,
- "level": "SIMPLE",
  "layers": 2,
  "parts": 4,
  "big": 0,
@@ -15,6 +12,7 @@
  "project": "opulo-inc/lumenpnp",
  "name": "datum",
  "license": "In LICENSE: CERN-OHL-W-2.0 for the hardware designs, MPL-2.0 for the workflows, CC-BY-SA-4.0 for the KiCad libraries",
+ "license_checked": "2026-11-08",
  "zip": "part16_of_17",
  "features": {
   "through_vias": 0,

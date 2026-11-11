@@ -3,7 +3,10 @@
  "project": "kelu124/echomods",
  "path": "kelu124__echomods/doj/source/v2.0-kicad/doj_v2.kicad_pcb",
  "license": "TAPR-OHL-1.0 (TAPR Open Hardware License), in LICENSE.txt, goblin/LICENSE.txt, retired/tobo/LICENSE.txt",
- "rank": 2140,
+ "license_checked": "2026-11-08",
+ "rank": 2134,
+ "score": 568,
+ "level": "LOW",
  "complexity": {
   "grade": 208,
   "size": 153,
@@ -20,8 +23,23 @@
  "bad_design": null,
  "chart_alt": "doj_v2: stages 4 and 6 take 56% to 86% of a run. Simulation, GLB takes 22 s. Simulation, STEP takes 28 s. Simulation, STL takes 22 s. Simulation, OBJ takes 34 s. Visual, GLB takes 31 s. Visual, OBJ takes 37 s",
  "rerun": {},
+ "tested": [
+  "2026-11-09",
+  "2026-11-09"
+ ],
  "kese": [
   "22fd70c"
+ ],
+ "kese_version": [
+  "2.4.0"
+ ],
+ "runs": [
+  [
+   "corpus",
+   "2026-11-09",
+   11000000000.0,
+   5400.0
+  ]
  ],
  "machine": {
   "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz, 4 cores, 15 GB",

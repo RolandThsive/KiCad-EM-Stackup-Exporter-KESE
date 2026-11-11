@@ -1,7 +1,4 @@
 {
- "rank": 1811,
- "score": 928,
- "level": "LOW",
  "layers": 2,
  "parts": 102,
  "big": 0,
@@ -15,9 +12,10 @@
  "project": "kata0510/Lily58",
  "name": "Lily58_Lite_Rev3",
  "license": "MIT (MIT License), in LICENSE",
+ "license_checked": "2026-11-08",
  "zip": "part16_of_17",
  "features": {
-  "through_vias": 58,
+  "through_vias": 29,
   "blind_buried_vias": 0,
   "microvias": 0,
   "backdrills": 0,

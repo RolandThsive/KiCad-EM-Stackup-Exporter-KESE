@@ -1,7 +1,4 @@
 {
- "rank": 386,
- "score": 7059,
- "level": "HIGH",
  "layers": 4,
  "parts": 168,
  "big": 2,
@@ -15,9 +12,10 @@
  "project": "akastanley/html_accelerator",
  "name": "html_accelerator",
  "license": "GPL-3.0 (GNU GPL v3.0)",
+ "license_checked": "2026-11-08",
  "zip": "part11_of_17",
  "features": {
-  "through_vias": 2610,
+  "through_vias": 1305,
   "blind_buried_vias": 0,
   "microvias": 0,
   "backdrills": 0,

@@ -1,7 +1,4 @@
 {
- "rank": 2890,
- "score": 28,
- "level": "SIMPLE",
  "layers": 2,
  "parts": 4,
  "big": 0,
@@ -15,9 +12,10 @@
  "project": "astronuat21/4ds",
  "name": "CTRL_PWR",
  "license": "AGPL-3.0 (GNU AGPL v3.0)",
+ "license_checked": "2026-11-08",
  "zip": "part16_of_17",
  "features": {
-  "through_vias": 16,
+  "through_vias": 8,
   "blind_buried_vias": 0,
   "microvias": 0,
   "backdrills": 0,

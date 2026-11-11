@@ -1,7 +1,4 @@
 {
- "rank": 611,
- "score": 4445,
- "level": "HIGH",
  "layers": 4,
  "parts": 251,
  "big": 0,
@@ -15,6 +12,7 @@
  "project": "sfusatclub/cubesat-radio",
  "name": "SFUSat-Radio",
  "license": "No license found",
+ "license_checked": "2026-11-08",
  "zip": "part12_of_17",
  "features": {
   "through_vias": 649,

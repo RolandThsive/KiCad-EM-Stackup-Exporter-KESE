@@ -1,7 +1,4 @@
 {
- "rank": 698,
- "score": 3910,
- "level": "HIGH",
  "layers": 2,
  "parts": 166,
  "big": 0,
@@ -15,6 +12,7 @@
  "project": "tzarc/keyboards",
  "name": "ghoul",
  "license": "CERN-OHL-S-2.0 (CERN Open Hardware Licence v2, Strongly Reciprocal)",
+ "license_checked": "2026-11-08",
  "zip": "part13_of_17",
  "features": {
   "through_vias": 497,

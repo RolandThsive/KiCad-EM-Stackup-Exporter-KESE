@@ -3,7 +3,10 @@
  "project": "ahmadexp/Open-Source-PC110",
  "path": "ahmadexp__Open-Source-PC110/Mods/PC110-ITX/PC110-no-placement.kicad_pcb",
  "license": "CC-BY-NC-4.0 (Creative Commons Attribution-NonCommercial 4.0), in LICENSE",
+ "license_checked": "2026-11-08",
  "rank": 1094,
+ "score": 2228,
+ "level": "MEDIUM",
  "complexity": {
   "grade": 272,
   "size": 187,
@@ -23,8 +26,23 @@
  "bad_design": null,
  "chart_alt": "PC110-no-placement: stages 4 and 6 take 45% to 78% of a run. Simulation, GLB takes 27 s. Simulation, STEP takes 31 s. Simulation, STL takes 27 s. Simulation, OBJ takes 38 s. Visual, GLB takes 39 s. Visual, OBJ takes 46 s",
  "rerun": {},
+ "tested": [
+  "2026-11-09",
+  "2026-11-09"
+ ],
  "kese": [
   "22fd70c"
+ ],
+ "kese_version": [
+  "2.4.0"
+ ],
+ "runs": [
+  [
+   "corpus",
+   "2026-11-09",
+   11000000000.0,
+   5400.0
+  ]
  ],
  "machine": {
   "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz, 4 cores, 15 GB",

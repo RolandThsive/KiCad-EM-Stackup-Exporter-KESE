@@ -1,7 +1,4 @@
 {
- "rank": 1756,
- "score": 996,
- "level": "LOW",
  "layers": 2,
  "parts": 102,
  "big": 1,
@@ -15,9 +12,10 @@
  "project": "lhr-solar/ps-powerdistributionunit",
  "name": "TestBoard_TPS27SA08-Q1",
  "license": "No license found",
+ "license_checked": "2026-11-08",
  "zip": "part16_of_17",
  "features": {
-  "through_vias": 104,
+  "through_vias": 52,
   "blind_buried_vias": 0,
   "microvias": 0,
   "backdrills": 0,

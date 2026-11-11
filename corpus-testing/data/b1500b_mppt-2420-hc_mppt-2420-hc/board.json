@@ -1,7 +1,4 @@
 {
- "rank": 1018,
- "score": 2449,
- "level": "MEDIUM",
  "layers": 4,
  "parts": 140,
  "big": 1,
@@ -15,6 +12,7 @@
  "project": "LibreSolar/mppt-2420-hc",
  "name": "mppt-2420-hc",
  "license": "CERN-OHL-W-2.0 (CERN Open Hardware Licence v2, Weakly Reciprocal), in LICENCE",
+ "license_checked": "2026-11-08",
  "zip": "part14_of_17",
  "features": {
   "through_vias": 282,

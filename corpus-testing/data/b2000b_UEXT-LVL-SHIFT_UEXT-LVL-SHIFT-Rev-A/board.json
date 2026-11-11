@@ -1,7 +1,4 @@
 {
- "rank": 1609,
- "score": 1192,
- "level": "MEDIUM",
  "layers": 2,
  "parts": 28,
  "big": 0,
@@ -15,9 +12,10 @@
  "project": "OLIMEX/UEXT-LVL-SHIFT",
  "name": "UEXT-LVL-SHIFT_Rev_A",
  "license": "MIT (MIT License)",
+ "license_checked": "2026-11-08",
  "zip": "part15_of_17",
  "features": {
-  "through_vias": 260,
+  "through_vias": 130,
   "blind_buried_vias": 0,
   "microvias": 0,
   "backdrills": 0,

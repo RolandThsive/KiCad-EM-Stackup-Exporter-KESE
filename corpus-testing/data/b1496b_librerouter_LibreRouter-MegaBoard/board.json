@@ -1,7 +1,4 @@
 {
- "rank": 242,
- "score": 10447,
- "level": "VERY HIGH",
  "layers": 2,
  "parts": 234,
  "big": 0,
@@ -15,6 +12,7 @@
  "project": "libremesh/librerouter",
  "name": "LibreRouter_MegaBoard",
  "license": "AGPL-3.0 (GNU AGPL v3.0), in LICENSE",
+ "license_checked": "2026-11-08",
  "zip": "part09_of_17",
  "features": {
   "through_vias": 2552,

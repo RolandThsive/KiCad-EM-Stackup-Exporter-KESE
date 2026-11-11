@@ -1,7 +1,4 @@
 {
- "rank": 372,
- "score": 7185,
- "level": "HIGH",
  "layers": 4,
  "parts": 221,
  "big": 2,
@@ -15,6 +12,7 @@
  "project": "emard/ulx3s",
  "name": "ulx3s",
  "license": "MIT (MIT License), in LICENSE.md",
+ "license_checked": "2026-11-08",
  "zip": "part10_of_17",
  "features": {
   "through_vias": 554,

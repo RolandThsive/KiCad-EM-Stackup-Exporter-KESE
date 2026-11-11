@@ -1,7 +1,4 @@
 {
- "rank": 2168,
- "score": 537,
- "level": "LOW",
  "layers": 4,
  "parts": 19,
  "big": 0,
@@ -15,6 +12,7 @@
  "project": "antevens/boatcontrol",
  "name": "NonLatchingNO30A",
  "license": "SHL-2.1 (Solderpad Hardware License v2.1), in LICENSE",
+ "license_checked": "2026-11-08",
  "zip": "part16_of_17",
  "features": {
   "through_vias": 0,

@@ -1,7 +1,4 @@
 {
- "rank": 186,
- "score": 12277,
- "level": "VERY HIGH",
  "layers": 2,
  "parts": 194,
  "big": 0,
@@ -15,9 +12,10 @@
  "project": "reifsnyderb/Apple-II-R0",
  "name": "AppleII",
  "license": "No license found",
+ "license_checked": "2026-11-08",
  "zip": "part08_of_17",
  "features": {
-  "through_vias": 748,
+  "through_vias": 374,
   "blind_buried_vias": 0,
   "microvias": 0,
   "backdrills": 0,

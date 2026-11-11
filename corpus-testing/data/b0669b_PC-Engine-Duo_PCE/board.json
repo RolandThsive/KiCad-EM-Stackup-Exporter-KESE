@@ -1,7 +1,4 @@
 {
- "rank": 68,
- "score": 21740,
- "level": "EXTREME",
  "layers": 2,
  "parts": 618,
  "big": 8,
@@ -15,6 +12,7 @@
  "project": "Board-Folk/PC-Engine-Duo",
  "name": "PCE",
  "license": "As README.md states it: \"As the product of this project is a replica of a proprietary product, the the author makes no claim of copyright to the schematics nor PCB layouts and releases these into the public domain, solely for the purposes of study and historical preservation.\"",
+ "license_checked": "2026-11-08",
  "zip": "part04_of_17",
  "features": {
   "through_vias": 1491,

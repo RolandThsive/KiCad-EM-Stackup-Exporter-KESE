@@ -1,7 +1,4 @@
 {
- "rank": 1705,
- "score": 1050,
- "level": "MEDIUM",
  "layers": 2,
  "parts": 75,
  "big": 0,
@@ -15,6 +12,7 @@
  "project": "open-ephys/onix-fmc-host",
  "name": "bracket-led-panel-tight",
  "license": "CC-BY-NC-SA-4.0 (Creative Commons Attribution-NonCommercial-ShareAlike 4.0), in LICENSE.md",
+ "license_checked": "2026-11-08",
  "zip": "part15_of_17",
  "features": {
   "through_vias": 90,

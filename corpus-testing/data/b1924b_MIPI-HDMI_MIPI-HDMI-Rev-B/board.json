@@ -1,7 +1,4 @@
 {
- "rank": 1306,
- "score": 1726,
- "level": "MEDIUM",
  "layers": 4,
  "parts": 55,
  "big": 1,
@@ -15,6 +12,7 @@
  "project": "OLIMEX/MIPI-HDMI",
  "name": "MIPI-HDMI_Rev_B",
  "license": "As README.md states it: \"Hardware is released under CERN Open Hardware Licence Version 2 - Strongly Reciprocal, all silkscreen credits to Olimex should remain;; Documentation is released under CC BY-SA 4.0\"",
+ "license_checked": "2026-11-08",
  "zip": "part15_of_17",
  "features": {
   "through_vias": 162,

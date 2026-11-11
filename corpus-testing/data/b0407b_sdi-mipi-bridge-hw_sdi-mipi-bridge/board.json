@@ -1,7 +1,4 @@
 {
- "rank": 410,
- "score": 6663,
- "level": "HIGH",
  "layers": 6,
  "parts": 166,
  "big": 2,
@@ -15,6 +12,7 @@
  "project": "antmicro/sdi-mipi-bridge-hw",
  "name": "sdi-mipi-bridge",
  "license": "Apache-2.0 (Apache License 2.0)",
+ "license_checked": "2026-11-08",
  "zip": "part11_of_17",
  "features": {
   "through_vias": 374,

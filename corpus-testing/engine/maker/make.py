@@ -1,15 +1,19 @@
-"""Makes each board's files from the run results in corpus-testing/data/:
+"""Makes each board's files from its data folder, corpus-testing/data/<name>/ (board.json, runs.jsonl):
 
-    docs/tables/<repo>_<board>/board.json   what the engine needs: name, project, path, license, complexity ...
-    docs/tables/<repo>_<board>/stages.md    seconds per stage, one row per mode and format
-    docs/tables/<repo>_<board>/facts.md     repo, folder, complexity, layers, format, the Verifier's result ...
-    docs/tables/<repo>_<board>/files.md     the file each run wrote and its peak memory
-    docs/images/<repo>_<board>/stages.webp  the chart, drawn only when it is missing
+    docs/tables/<name>/board.json   what the engine needs: name, project, path, license, complexity ...
+    docs/tables/<name>/stages.md    seconds per stage, one row per mode and format
+    docs/tables/<name>/facts.md     repo, folder, complexity, layers, format, the Verifier's result ...
+    docs/tables/<name>/files.md     the file each run wrote and its peak memory
+    docs/images/<name>/stages.webp  the chart, drawn only when it is missing
 
-    python3 corpus-testing/engine/maker/make.py            every board
-    python3 corpus-testing/engine/maker/make.py 2 13 57    only the boards of these ranks
+<name> is the data folder's: <repo>_<board> for a new board, b<number>b_<repo>_<board> once the engine has numbered it.
+A board is made once runs.jsonl has a run of each of its six modes and formats. Its rank, score and level
+are worked out here, from the counts in its board.json, and written into its tables' board.json.
 
-Then corpus-testing/engine/assemble.py (or the Corpus Engine workflow, on a push) builds the pages from them.
+    python3 corpus-testing/engine/maker/make.py                          every board
+    python3 corpus-testing/engine/maker/make.py Thermometer_TheMainBoard  only the boards of these data folders
+
+Then corpus-testing/engine/assemble.py builds the pages. The Corpus Engine workflow runs both on every push.
 Needs Python 3.11 or newer with matplotlib and Pillow."""
 import collections
 import json
@@ -18,19 +22,11 @@ import sys
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 TOP = os.path.dirname(os.path.dirname(os.path.dirname(HERE)))
-only = [int(a) for a in sys.argv[1:]]
+only = sys.argv[1:]                                         # data folder names, with or without the number
 sys.argv = [sys.argv[0], os.path.join(TOP, "corpus-testing", "data", "results"), TOP]
 exec(open(os.path.join(HERE, "lib.py")).read())
 
 TABLES = REPO / "docs" / "tables"
-
-
-def board_dir(root, name):
-    """The board's folder under root: b<number>b_<repo>_<board> once the engine has numbered it, else <repo>_<board>
-    (a new board, which the engine numbers and renames at its next run)."""
-    old = sorted(root.glob(f"b[0-9]*b_{name}"))
-    old = [p for p in old if re.fullmatch(r"b\d+b_" + re.escape(name), p.name)]
-    return old[0] if old else root / name
 
 
 def status(b, parts):
@@ -41,28 +37,53 @@ def status(b, parts):
     return "failed"
 
 
+def limits(x):
+    """A run's memory cap and time limit: None for none."""
+    cap = x.get("cap")
+    return [cap if isinstance(cap, (int, float)) and cap != float("inf") else None, x.get("time_limit")]
+
+
+for s in SKIPPED:
+    print("not made:", s)
 made = 0
-for r in (only or sorted(BOARDS)):
-    if r not in BOARDS or not all(run_of(r, k) for k in KINDS):
-        continue                                            # left out, or not every run done yet
-    b = BOARDS[r]
-    parts = board_parts(b)
-    runs = [run_of(r, k) for k in KINDS]
-    g = grade(b)
-    meta = dict(name=b["name"], project=b["project"], path=b["path"], license=b.get("license"), rank=r,
-                complexity=dict(grade=g[0], size=g[1], features=g[2]),
-                features=[k for k, *_ in FEATURES if FEAT.get(r, {}).get(k, 0) > 0],
-                layers=b["layers"], status=status(b, parts), bad_design=BAD_DESIGN.get(r),
-                chart_alt=parts["alt"], rerun={w: v for w, v in parts["rerun"].items() if v},
-                kese=sorted({d["machine"]["kese"][:7] for d in runs}),
-                machine=collections.Counter(json.dumps({k: d["machine"][k] for k in ("cpu", "python", "shapely", "geos")},
-                                                       sort_keys=True) for d in runs).most_common(1)[0][0])
-    meta["machine"] = json.loads(meta["machine"])
-    d = board_dir(TABLES, slug(b))
+want = [r for r in BOARDS if FOLDER[r] in only or SLUG[r] in only] if only else sorted(BOARDS)
+waiting = []
+for r in want:
+    if not all(run_of(r, k) for k in KINDS):
+        waiting.append(FOLDER[r])                           # not every run done yet
+        continue
+    try:
+        b = BOARDS[r]
+        parts = board_parts(b)
+        runs = [run_of(r, k) for k in KINDS]
+        g = grade(b)
+        days = sorted({d["date"] for d in runs})
+        meta = dict(name=b["name"], project=b["project"], path=b["path"], license=b.get("license"),
+                    license_checked=b.get("license_checked"), rank=r, score=b["score"], level=b["level"],
+                    complexity=dict(grade=g[0], size=g[1], features=g[2]),
+                    features=[k for k, *_ in FEATURES if FEAT.get(r, {}).get(k, 0) > 0],
+                    layers=b["layers"], status=status(b, parts), bad_design=BAD_DESIGN.get(r),
+                    chart_alt=parts["alt"], rerun={w: v for w, v in parts["rerun"].items() if v},
+                    tested=[days[0], days[-1]],
+                    kese=sorted({d["machine"]["kese"][:7] for d in runs}),
+                    kese_version=sorted({d["machine"]["kese_version"] for d in runs if d["machine"].get("kese_version")}),
+                    # every run of the board (one the test machine's restart cut short aside): its source, date, cap, time limit
+                    runs=sorted({json.dumps([x["source"], x["date"], *limits(x)]) for x in RUNS[r] if not x.get("runner_died")}),
+                    machine=collections.Counter(json.dumps({k: d["machine"][k] for k in ("cpu", "python", "shapely", "geos")},
+                                                           sort_keys=True) for d in runs).most_common(1)[0][0])
+        meta["machine"] = json.loads(meta["machine"])
+        meta["runs"] = [json.loads(x) for x in meta["runs"]]
+        text = json.dumps(meta, indent=1, ensure_ascii=False) + "\n"
+    except Exception as e:                                  # never a traceback: the board is named, with what went wrong
+        print(f"not made: {FOLDER[r]}: {type(e).__name__}: {e}")
+        continue
+    d = TABLES / FOLDER[r]                                  # named as its data folder
     d.mkdir(parents=True, exist_ok=True)
-    (d / "board.json").write_text(json.dumps(meta, indent=1, ensure_ascii=False) + "\n")
+    (d / "board.json").write_text(text)
     (d / "stages.md").write_text(parts["stages"] + "\n")
     (d / "facts.md").write_text(parts["facts"] + "\n")
     (d / "files.md").write_text(parts["files"] + "\n")
     made += 1
+if waiting:
+    print("not made yet, not every run is in runs.jsonl:", ", ".join(waiting))
 print(made, "boards made")

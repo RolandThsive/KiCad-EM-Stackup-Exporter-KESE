@@ -1,7 +1,4 @@
 {
- "rank": 209,
- "score": 11291,
- "level": "VERY HIGH",
  "layers": 4,
  "parts": 149,
  "big": 1,
@@ -15,9 +12,10 @@
  "project": "winkleplex10-bit/the-mac-pro-project",
  "name": "backplane",
  "license": "No license found",
+ "license_checked": "2026-11-08",
  "zip": "part09_of_17",
  "features": {
-  "through_vias": 2672,
+  "through_vias": 1336,
   "blind_buried_vias": 0,
   "microvias": 0,
   "backdrills": 0,

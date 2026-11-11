@@ -3,7 +3,10 @@
  "project": "antmicro/mec1723-espi-debugger",
  "path": "antmicro__mec1723-espi-debugger/mec1723-espi-debugger.kicad_pcb",
  "license": "Apache-2.0 (Apache License 2.0)",
+ "license_checked": "2026-11-08",
  "rank": 492,
+ "score": 5431,
+ "level": "HIGH",
  "complexity": {
   "grade": 471,
   "size": 301,
@@ -29,8 +32,23 @@
  "bad_design": null,
  "chart_alt": "mec1723-espi-debugger: stages 4 and 6 take 40% to 76% of a run. Simulation, GLB takes 47 s. Simulation, STEP takes 60 s. Simulation, STL takes 47 s. Simulation, OBJ takes 78 s. Visual, GLB takes 70 s. Visual, OBJ takes 89 s",
  "rerun": {},
+ "tested": [
+  "2026-11-09",
+  "2026-11-09"
+ ],
  "kese": [
   "22fd70c"
+ ],
+ "kese_version": [
+  "2.4.0"
+ ],
+ "runs": [
+  [
+   "corpus",
+   "2026-11-09",
+   11000000000.0,
+   5400.0
+  ]
  ],
  "machine": {
   "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz, 4 cores, 15 GB",

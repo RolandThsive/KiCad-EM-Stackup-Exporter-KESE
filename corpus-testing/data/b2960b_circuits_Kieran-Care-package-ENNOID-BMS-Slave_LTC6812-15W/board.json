@@ -1,7 +1,4 @@
 {
- "rank": 1098,
- "score": 2222,
- "level": "MEDIUM",
  "layers": 2,
  "parts": 246,
  "big": 2,
@@ -15,9 +12,10 @@
  "project": "ucdfs/circuits",
  "name": "LTC6812-15W",
  "license": "No license found",
+ "license_checked": "2026-11-08",
  "zip": "part14_of_17",
  "features": {
-  "through_vias": 128,
+  "through_vias": 64,
   "blind_buried_vias": 0,
   "microvias": 0,
   "backdrills": 0,

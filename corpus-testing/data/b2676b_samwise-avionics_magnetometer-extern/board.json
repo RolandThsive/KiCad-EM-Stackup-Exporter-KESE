@@ -1,7 +1,4 @@
 {
- "rank": 2975,
- "score": 8,
- "level": "SIMPLE",
  "layers": 2,
  "parts": 4,
  "big": 0,
@@ -15,6 +12,7 @@
  "project": "stanford-ssi/samwise-avionics",
  "name": "magnetometer_extern",
  "license": "No license found",
+ "license_checked": "2026-11-08",
  "zip": "part16_of_17",
  "features": {
   "through_vias": 0,

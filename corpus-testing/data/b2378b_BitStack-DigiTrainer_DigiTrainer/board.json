@@ -1,7 +1,4 @@
 {
- "rank": 516,
- "score": 5128,
- "level": "HIGH",
  "layers": 2,
  "parts": 262,
  "big": 0,
@@ -15,9 +12,10 @@
  "project": "RetroStack/BitStack-DigiTrainer",
  "name": "DigiTrainer",
  "license": "MIT (MIT License)",
+ "license_checked": "2026-11-08",
  "zip": "part12_of_17",
  "features": {
-  "through_vias": 290,
+  "through_vias": 145,
   "blind_buried_vias": 0,
   "microvias": 0,
   "backdrills": 0,

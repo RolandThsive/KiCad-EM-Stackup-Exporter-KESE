@@ -1,7 +1,4 @@
 {
- "rank": 871,
- "score": 3030,
- "level": "HIGH",
  "layers": 12,
  "parts": 75,
  "big": 23,
@@ -15,6 +12,7 @@
  "project": "hamedroghani/zu64dr_rfsoc_kicad",
  "name": "ZU64DR_RFSOC_A5",
  "license": "No license found",
+ "license_checked": "2026-11-08",
  "zip": "part13_of_17",
  "features": {
   "through_vias": 0,

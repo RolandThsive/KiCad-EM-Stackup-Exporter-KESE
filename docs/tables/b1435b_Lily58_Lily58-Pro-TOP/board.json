@@ -3,7 +3,10 @@
  "project": "kata0510/Lily58",
  "path": "kata0510__Lily58/Pro/Case/Lily58_Pro_TOP.kicad_pcb",
  "license": "MIT (MIT License), in LICENSE",
- "rank": 3106,
+ "license_checked": "2026-11-08",
+ "rank": 3091,
+ "score": 0,
+ "level": "SIMPLE",
  "complexity": {
   "grade": 37,
   "size": 17,
@@ -17,8 +20,23 @@
  "bad_design": null,
  "chart_alt": "Lily58_Pro_TOP: reading, start-up and exit take 66% to 76% of a run. Simulation, GLB takes 0.3 s. Simulation, STEP takes 0.3 s. Simulation, STL takes 0.3 s. Simulation, OBJ takes 0.3 s. Visual, GLB takes 0.3 s. Visual, OBJ takes 0.3 s",
  "rerun": {},
+ "tested": [
+  "2026-11-09",
+  "2026-11-09"
+ ],
  "kese": [
   "22fd70c"
+ ],
+ "kese_version": [
+  "2.4.0"
+ ],
+ "runs": [
+  [
+   "corpus",
+   "2026-11-09",
+   11000000000.0,
+   5400.0
+  ]
  ],
  "machine": {
   "cpu": "Intel(R) Xeon(R) Processor @ 2.30GHz, 4 cores, 15 GB",

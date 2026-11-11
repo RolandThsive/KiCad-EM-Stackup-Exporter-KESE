@@ -3,7 +3,10 @@
  "project": "a-little-wifi/stroopwafel-lga1151-cfl",
  "path": "a-little-wifi__stroopwafel-lga1151-cfl/Stroopwafel-LGA1151-CFL.kicad_pcb",
  "license": "No license found",
- "rank": 1736,
+ "license_checked": "2026-11-08",
+ "rank": 1731,
+ "score": 1017,
+ "level": "MEDIUM",
  "complexity": {
   "grade": 256,
   "size": 211,
@@ -20,8 +23,23 @@
  "bad_design": null,
  "chart_alt": "Stroopwafel-LGA1151-CFL: stages 4 and 6 take 61% to 86% of a run. Simulation, GLB takes 68 s. Simulation, STEP takes 81 s. Simulation, STL takes 68 s. Simulation, OBJ takes 97 s. Visual, GLB takes 87 s. Visual, OBJ takes 2 min",
  "rerun": {},
+ "tested": [
+  "2026-11-09",
+  "2026-11-09"
+ ],
  "kese": [
   "22fd70c"
+ ],
+ "kese_version": [
+  "2.4.0"
+ ],
+ "runs": [
+  [
+   "corpus",
+   "2026-11-09",
+   11000000000.0,
+   5400.0
+  ]
  ],
  "machine": {
   "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz, 4 cores, 15 GB",

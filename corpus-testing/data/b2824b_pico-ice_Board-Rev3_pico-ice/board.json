@@ -1,7 +1,4 @@
 {
- "rank": 996,
- "score": 2550,
- "level": "MEDIUM",
  "layers": 4,
  "parts": 87,
  "big": 2,
@@ -15,9 +12,10 @@
  "project": "tinyvision-ai-inc/pico-ice",
  "name": "pico-ice",
  "license": "MIT (MIT License)",
+ "license_checked": "2026-11-08",
  "zip": "part14_of_17",
  "features": {
-  "through_vias": 378,
+  "through_vias": 189,
   "blind_buried_vias": 0,
   "microvias": 0,
   "backdrills": 0,

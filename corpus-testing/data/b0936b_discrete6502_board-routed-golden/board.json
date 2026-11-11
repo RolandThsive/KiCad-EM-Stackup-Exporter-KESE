@@ -1,7 +1,4 @@
 {
- "rank": 1,
- "score": 141319,
- "level": "EXTREME",
  "layers": 6,
  "parts": 5385,
  "big": 0,
@@ -15,9 +12,10 @@
  "project": "epatel/discrete6502",
  "name": "board_routed_golden",
  "license": "CC-BY-NC-SA-4.0 (Creative Commons Attribution-NonCommercial-ShareAlike 4.0), in LICENSE",
+ "license_checked": "2026-11-08",
  "zip": "part01_of_17",
  "features": {
-  "through_vias": 28908,
+  "through_vias": 14454,
   "blind_buried_vias": 0,
   "microvias": 0,
   "backdrills": 0,

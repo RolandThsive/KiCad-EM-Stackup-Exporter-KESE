@@ -1,7 +1,4 @@
 {
- "rank": 491,
- "score": 5440,
- "level": "HIGH",
  "layers": 8,
  "parts": 262,
  "big": 0,
@@ -15,6 +12,7 @@
  "project": "pionixpublic/reference-hardware",
  "name": "yeti",
  "license": "CERN-OHL-P-2.0 (CERN Open Hardware Licence v2, Permissive)",
+ "license_checked": "2026-11-08",
  "zip": "part11_of_17",
  "features": {
   "through_vias": 718,

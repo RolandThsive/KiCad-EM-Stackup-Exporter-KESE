@@ -1,7 +1,4 @@
 {
- "rank": 2692,
- "score": 110,
- "level": "SIMPLE",
  "layers": 2,
  "parts": 9,
  "big": 0,
@@ -15,6 +12,7 @@
  "project": "terrapin-rocket-team/srad-avionics",
  "name": "LVPD-board_v2",
  "license": "No license found",
+ "license_checked": "2026-11-08",
  "zip": "part16_of_17",
  "features": {
   "through_vias": 0,

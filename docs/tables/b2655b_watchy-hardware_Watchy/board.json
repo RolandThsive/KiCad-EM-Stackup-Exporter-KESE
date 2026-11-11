@@ -3,7 +3,10 @@
  "project": "sqfmi/watchy-hardware",
  "path": "sqfmi__watchy-hardware/Watchy.kicad_pcb",
  "license": "MIT (MIT License)",
- "rank": 1590,
+ "license_checked": "2026-11-08",
+ "rank": 1585,
+ "score": 1231,
+ "level": "MEDIUM",
  "complexity": {
   "grade": 344,
   "size": 234,
@@ -24,8 +27,23 @@
  "bad_design": null,
  "chart_alt": "Watchy: stages 4 and 6 take 54% to 84% of a run. Simulation, GLB takes 9.5 s. Simulation, STEP takes 12 s. Simulation, STL takes 9.5 s. Simulation, OBJ takes 14 s. Visual, GLB takes 13 s. Visual, OBJ takes 16 s",
  "rerun": {},
+ "tested": [
+  "2026-11-09",
+  "2026-11-09"
+ ],
  "kese": [
   "22fd70c"
+ ],
+ "kese_version": [
+  "2.4.0"
+ ],
+ "runs": [
+  [
+   "corpus",
+   "2026-11-09",
+   11000000000.0,
+   5400.0
+  ]
  ],
  "machine": {
   "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz, 4 cores, 15 GB",

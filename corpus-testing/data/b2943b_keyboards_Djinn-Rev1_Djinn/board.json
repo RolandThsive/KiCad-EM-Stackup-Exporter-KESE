@@ -1,7 +1,4 @@
 {
- "rank": 501,
- "score": 5366,
- "level": "HIGH",
  "layers": 2,
  "parts": 230,
  "big": 1,
@@ -15,6 +12,7 @@
  "project": "tzarc/keyboards",
  "name": "Djinn",
  "license": "CERN-OHL-S-2.0 (CERN Open Hardware Licence v2, Strongly Reciprocal)",
+ "license_checked": "2026-11-08",
  "zip": "part11_of_17",
  "features": {
   "through_vias": 630,

@@ -1,7 +1,4 @@
 {
- "rank": 1544,
- "score": 1311,
- "level": "MEDIUM",
  "layers": 4,
  "parts": 55,
  "big": 0,
@@ -15,6 +12,7 @@
  "project": "intergalaktik/bb3-cm4",
  "name": "EEZ_DIB_BP3C_r3B3",
  "license": "CERN-OHL-S-2.0 (CERN Open Hardware Licence v2, Strongly Reciprocal), in LICENSE.md, EEZ_BB3_CM4_H7/LICENSE.md",
+ "license_checked": "2026-11-08",
  "zip": "part15_of_17",
  "features": {
   "through_vias": 161,

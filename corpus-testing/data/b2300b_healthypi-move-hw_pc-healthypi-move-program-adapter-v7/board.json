@@ -1,7 +1,4 @@
 {
- "rank": 2400,
- "score": 332,
- "level": "LOW",
  "layers": 4,
  "parts": 9,
  "big": 0,
@@ -15,9 +12,10 @@
  "project": "Protocentral/healthypi-move-hw",
  "name": "pc_healthypi_move_program_adapter_v7",
  "license": "MIT (MIT License)",
+ "license_checked": "2026-11-08",
  "zip": "part16_of_17",
  "features": {
-  "through_vias": 50,
+  "through_vias": 25,
   "blind_buried_vias": 0,
   "microvias": 0,
   "backdrills": 0,

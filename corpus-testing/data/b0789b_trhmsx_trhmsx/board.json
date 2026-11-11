@@ -1,7 +1,4 @@
 {
- "rank": 607,
- "score": 4502,
- "level": "HIGH",
  "layers": 4,
  "parts": 130,
  "big": 1,
@@ -15,9 +12,10 @@
  "project": "cristianoag/trhmsx",
  "name": "trhmsx",
  "license": "As README.md states it: \"Open Hardware This work is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License.; If you remix, transform, or build upon the material, you must distribute your contributions under the same license as the original.; You may not use the material for commercial purposes.;\"",
+ "license_checked": "2026-11-08",
  "zip": "part12_of_17",
  "features": {
-  "through_vias": 610,
+  "through_vias": 305,
   "blind_buried_vias": 0,
   "microvias": 0,
   "backdrills": 0,

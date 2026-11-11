@@ -1,7 +1,4 @@
 {
- "rank": 631,
- "score": 4318,
- "level": "HIGH",
  "layers": 6,
  "parts": 227,
  "big": 2,
@@ -15,9 +12,10 @@
  "project": "antmicro/machx05-espi-debugger",
  "name": "machxo5-espi-debugger",
  "license": "Apache-2.0 (Apache License 2.0)",
+ "license_checked": "2026-11-08",
  "zip": "part12_of_17",
  "features": {
-  "through_vias": 982,
+  "through_vias": 491,
   "blind_buried_vias": 0,
   "microvias": 0,
   "backdrills": 0,

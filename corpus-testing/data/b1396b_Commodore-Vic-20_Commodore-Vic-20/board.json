@@ -1,7 +1,4 @@
 {
- "rank": 497,
- "score": 5386,
- "level": "HIGH",
  "layers": 2,
  "parts": 142,
  "big": 0,
@@ -15,9 +12,10 @@
  "project": "jimbro1000/Commodore-Vic-20",
  "name": "Commodore-Vic-20",
  "license": "GPL-3.0 (GNU GPL v3.0)",
+ "license_checked": "2026-11-08",
  "zip": "part11_of_17",
  "features": {
-  "through_vias": 708,
+  "through_vias": 354,
   "blind_buried_vias": 0,
   "microvias": 0,
   "backdrills": 0,

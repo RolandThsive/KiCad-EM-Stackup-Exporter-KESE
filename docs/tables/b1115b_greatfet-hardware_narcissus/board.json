@@ -3,7 +3,10 @@
  "project": "greatscottgadgets/greatfet-hardware",
  "path": "greatscottgadgets__greatfet-hardware/narcissus/narcissus.kicad_pcb",
  "license": "BSD-3-Clause (BSD 3-Clause License)",
- "rank": 1354,
+ "license_checked": "2026-11-08",
+ "rank": 1351,
+ "score": 1638,
+ "level": "MEDIUM",
  "complexity": {
   "grade": 280,
   "size": 225,
@@ -20,8 +23,23 @@
  "bad_design": null,
  "chart_alt": "narcissus: stages 4 and 6 take 60% to 88% of a run. Simulation, GLB takes 30 s. Simulation, STEP takes 37 s. Simulation, STL takes 30 s. Simulation, OBJ takes 44 s. Visual, GLB takes 36 s. Visual, OBJ takes 43 s",
  "rerun": {},
+ "tested": [
+  "2026-11-09",
+  "2026-11-09"
+ ],
  "kese": [
   "22fd70c"
+ ],
+ "kese_version": [
+  "2.4.0"
+ ],
+ "runs": [
+  [
+   "corpus",
+   "2026-11-09",
+   11000000000.0,
+   5400.0
+  ]
  ],
  "machine": {
   "cpu": "Intel(R) Xeon(R) Processor @ 2.30GHz, 4 cores, 15 GB",

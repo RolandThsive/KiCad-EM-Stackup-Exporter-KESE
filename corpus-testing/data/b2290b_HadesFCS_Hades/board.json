@@ -1,7 +1,4 @@
 {
- "rank": 729,
- "score": 3660,
- "level": "HIGH",
  "layers": 4,
  "parts": 208,
  "big": 2,
@@ -15,6 +12,7 @@
  "project": "pms67/HadesFCS",
  "name": "Hades",
  "license": "BSD-3-Clause (BSD 3-Clause License)",
+ "license_checked": "2026-11-08",
  "zip": "part13_of_17",
  "features": {
   "through_vias": 382,

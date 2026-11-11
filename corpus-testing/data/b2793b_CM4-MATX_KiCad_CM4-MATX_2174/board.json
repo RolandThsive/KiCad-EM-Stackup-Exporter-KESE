@@ -1,7 +1,4 @@
 {
- "rank": 2174,
- "score": 534,
- "level": "LOW",
  "layers": 4,
  "parts": 207,
  "big": 2,
@@ -15,6 +12,7 @@
  "project": "TheGuyDanish/CM4_MATX",
  "name": "CM4_MATX",
  "license": "CERN-OHL-P-2.0 (CERN Open Hardware Licence v2, Permissive), in LICENSE",
+ "license_checked": "2026-11-08",
  "zip": "part16_of_17",
  "features": {
   "through_vias": 0,

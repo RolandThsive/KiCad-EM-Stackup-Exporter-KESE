@@ -1,7 +1,4 @@
 {
- "rank": 375,
- "score": 7176,
- "level": "HIGH",
  "layers": 4,
  "parts": 149,
  "big": 1,
@@ -15,6 +12,7 @@
  "project": "oresat/oresat-adcs-hardware",
  "name": "controller_rev5.0_flat",
  "license": "GPL-2.0 (GNU GPL v2.0)",
+ "license_checked": "2026-11-08",
  "zip": "part10_of_17",
  "features": {
   "through_vias": 1552,

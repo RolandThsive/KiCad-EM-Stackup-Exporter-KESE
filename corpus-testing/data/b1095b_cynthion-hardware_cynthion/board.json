@@ -1,7 +1,4 @@
 {
- "rank": 417,
- "score": 6553,
- "level": "HIGH",
  "layers": 6,
  "parts": 294,
  "big": 4,
@@ -15,6 +12,7 @@
  "project": "greatscottgadgets/cynthion-hardware",
  "name": "cynthion",
  "license": "CERN-OHL-P-2.0 (CERN Open Hardware Licence v2, Permissive)",
+ "license_checked": "2026-11-08",
  "zip": "part11_of_17",
  "features": {
   "through_vias": 651,

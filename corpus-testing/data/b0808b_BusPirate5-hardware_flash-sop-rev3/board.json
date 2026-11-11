@@ -1,7 +1,4 @@
 {
- "rank": 2397,
- "score": 335,
- "level": "LOW",
  "layers": 2,
  "parts": 10,
  "big": 0,
@@ -15,6 +12,7 @@
  "project": "DangerousPrototypes/BusPirate5-hardware",
  "name": "flash-sop-rev3",
  "license": "MIT (MIT License)",
+ "license_checked": "2026-11-08",
  "zip": "part16_of_17",
  "features": {
   "through_vias": 49,

@@ -1,7 +1,4 @@
 {
- "rank": 310,
- "score": 8426,
- "level": "VERY HIGH",
  "layers": 4,
  "parts": 347,
  "big": 5,
@@ -15,9 +12,10 @@
  "project": "oresat/oresat-c3-hardware",
  "name": "oresat-c3",
  "license": "CERN-OHL-S-2.0 (CERN Open Hardware Licence v2, Strongly Reciprocal), in LICENSE.md",
+ "license_checked": "2026-11-08",
  "zip": "part10_of_17",
  "features": {
-  "through_vias": 2760,
+  "through_vias": 1380,
   "blind_buried_vias": 0,
   "microvias": 0,
   "backdrills": 0,

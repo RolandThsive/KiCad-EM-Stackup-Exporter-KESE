@@ -3,7 +3,10 @@
  "project": "loxodes/vna",
  "path": "loxodes__vna/breakouts/usb_pd/usb_pd/usb_pd.kicad_pcb",
  "license": "As README.md states it: \"Unless otherwise noted, all work is under a MIT license.\"",
- "rank": 2396,
+ "license_checked": "2026-11-08",
+ "rank": 2388,
+ "score": 336,
+ "level": "LOW",
  "complexity": {
   "grade": 263,
   "size": 163,
@@ -24,8 +27,29 @@
  "bad_design": null,
  "chart_alt": "usb_pd: stages 4 and 6 take 46% to 76% of a run. Simulation, GLB takes 2.5 s. Simulation, STEP takes 3.7 s. Simulation, STL takes 2.7 s. Simulation, OBJ takes 3.9 s. Visual, GLB takes 4.1 s. Visual, OBJ takes 5.0 s",
  "rerun": {},
+ "tested": [
+  "2026-11-09",
+  "2026-11-09"
+ ],
  "kese": [
   "22fd70c"
+ ],
+ "kese_version": [
+  "2.4.0"
+ ],
+ "runs": [
+  [
+   "corpus",
+   "2026-11-09",
+   11000000000.0,
+   5400.0
+  ],
+  [
+   "fixed",
+   "2026-11-10",
+   11000000000.0,
+   5400.0
+  ]
  ],
  "machine": {
   "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz, 4 cores, 15 GB",

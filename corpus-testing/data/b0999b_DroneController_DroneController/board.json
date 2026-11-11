@@ -1,7 +1,4 @@
 {
- "rank": 1746,
- "score": 1006,
- "level": "MEDIUM",
  "layers": 4,
  "parts": 59,
  "big": 1,
@@ -15,9 +12,10 @@
  "project": "FPV-Drone-STM32F411/DroneController",
  "name": "DroneController",
  "license": "As README.md states it: \"This project is released under the MIT License. All design files, including schematics, PCB layouts, and firmware modifications are open source and available for personal and commercial use with attribution.\"",
+ "license_checked": "2026-11-08",
  "zip": "part16_of_17",
  "features": {
-  "through_vias": 252,
+  "through_vias": 126,
   "blind_buried_vias": 0,
   "microvias": 0,
   "backdrills": 0,

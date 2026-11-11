@@ -1,7 +1,4 @@
 {
- "rank": 280,
- "score": 9161,
- "level": "VERY HIGH",
  "layers": 4,
  "parts": 163,
  "big": 2,
@@ -15,9 +12,10 @@
  "project": "bradgrantham/other-m68k",
  "name": "other-m68k",
  "license": "No license found",
+ "license_checked": "2026-11-08",
  "zip": "part10_of_17",
  "features": {
-  "through_vias": 1330,
+  "through_vias": 665,
   "blind_buried_vias": 0,
   "microvias": 0,
   "backdrills": 0,

@@ -1,7 +1,4 @@
 {
- "rank": 2729,
- "score": 91,
- "level": "SIMPLE",
  "layers": 4,
  "parts": 14,
  "big": 0,
@@ -15,6 +12,7 @@
  "project": "naturalhazardscience/groundlark",
  "name": "raspberrypi_hat",
  "license": "MIT (MIT License)",
+ "license_checked": "2026-11-08",
  "zip": "part16_of_17",
  "features": {
   "through_vias": 0,

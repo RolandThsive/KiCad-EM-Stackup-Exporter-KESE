@@ -1,7 +1,4 @@
 {
- "rank": 1037,
- "score": 2390,
- "level": "MEDIUM",
  "layers": 4,
  "parts": 111,
  "big": 1,
@@ -15,9 +12,10 @@
  "project": "aslak3/ICE40HXDevBoard",
  "name": "ICE40HXDevBoard",
  "license": "GPL-2.0 (GNU GPL v2.0)",
+ "license_checked": "2026-11-08",
  "zip": "part14_of_17",
  "features": {
-  "through_vias": 388,
+  "through_vias": 194,
   "blind_buried_vias": 0,
   "microvias": 0,
   "backdrills": 0,

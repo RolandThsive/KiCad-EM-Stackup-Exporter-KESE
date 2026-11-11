@@ -1,7 +1,4 @@
 {
- "rank": 1993,
- "score": 719,
- "level": "LOW",
  "layers": 6,
  "parts": 7,
  "big": 0,
@@ -15,9 +12,10 @@
  "project": "stanford-ssi/samwise-avionics",
  "name": "Coil_Panel_Z",
  "license": "No license found",
+ "license_checked": "2026-11-08",
  "zip": "part16_of_17",
  "features": {
-  "through_vias": 18,
+  "through_vias": 9,
   "blind_buried_vias": 0,
   "microvias": 0,
   "backdrills": 0,

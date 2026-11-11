@@ -1,7 +1,4 @@
 {
- "rank": 934,
- "score": 2772,
- "level": "MEDIUM",
  "layers": 2,
  "parts": 81,
  "big": 0,
@@ -15,9 +12,10 @@
  "project": "andrewpaterson/658-Computer",
  "name": "W65C816 Debug Display",
  "license": "No license found",
+ "license_checked": "2026-11-08",
  "zip": "part14_of_17",
  "features": {
-  "through_vias": 552,
+  "through_vias": 276,
   "blind_buried_vias": 0,
   "microvias": 0,
   "backdrills": 0,

@@ -3,7 +3,10 @@
  "project": "antmicro/data-center-dram-tester",
  "path": "antmicro__data-center-dram-tester/data-center-rdimm-ddr4-tester.kicad_pcb",
  "license": "Apache-2.0 (Apache License 2.0), in LICENSE",
+ "license_checked": "2026-11-08",
  "rank": 31,
+ "score": 31146,
+ "level": "EXTREME",
  "complexity": {
   "grade": 559,
   "size": 359,
@@ -29,8 +32,29 @@
  "bad_design": null,
  "chart_alt": "data-center-rdimm-ddr4-tester: stages 4 and 6 take 54% to 77% of a run. Simulation, GLB takes 3 min. Simulation, STEP takes 4 min. Simulation, STL takes 3 min. Visual, GLB takes 5 min. Visual, OBJ takes 6 min",
  "rerun": {},
+ "tested": [
+  "2026-11-09",
+  "2026-11-09"
+ ],
  "kese": [
   "22fd70c"
+ ],
+ "kese_version": [
+  "2.4.0"
+ ],
+ "runs": [
+  [
+   "cap",
+   "2026-11-10",
+   14500000000.0,
+   5400.0
+  ],
+  [
+   "corpus",
+   "2026-11-09",
+   11000000000.0,
+   5400.0
+  ]
  ],
  "machine": {
   "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz, 4 cores, 15 GB",

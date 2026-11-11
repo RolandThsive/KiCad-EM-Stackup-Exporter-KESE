@@ -1,7 +1,4 @@
 {
- "rank": 308,
- "score": 8444,
- "level": "VERY HIGH",
  "layers": 4,
  "parts": 340,
  "big": 0,
@@ -15,9 +12,10 @@
  "project": "jimbro1000/Atari65_130XE_C070067",
  "name": "Atari65XEC070067RevB",
  "license": "No license found",
+ "license_checked": "2026-11-08",
  "zip": "part10_of_17",
  "features": {
-  "through_vias": 858,
+  "through_vias": 429,
   "blind_buried_vias": 0,
   "microvias": 0,
   "backdrills": 0,

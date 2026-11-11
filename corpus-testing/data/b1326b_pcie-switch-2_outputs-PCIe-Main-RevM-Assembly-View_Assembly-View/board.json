@@ -1,7 +1,4 @@
 {
- "rank": 1640,
- "score": 1148,
- "level": "MEDIUM",
  "layers": 2,
  "parts": 364,
  "big": 2,
@@ -15,6 +12,7 @@
  "project": "isarmg/pcie-switch-2",
  "name": "Assembly_View",
  "license": "No license found",
+ "license_checked": "2026-11-08",
  "zip": "part15_of_17",
  "features": {
   "through_vias": 0,

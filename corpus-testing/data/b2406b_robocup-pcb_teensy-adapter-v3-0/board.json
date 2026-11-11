@@ -1,7 +1,4 @@
 {
- "rank": 2651,
- "score": 137,
- "level": "SIMPLE",
  "layers": 4,
  "parts": 8,
  "big": 0,
@@ -15,9 +12,10 @@
  "project": "robojackets/robocup-pcb",
  "name": "teensy-adapter-v3.0",
  "license": "Apache-2.0 (Apache License 2.0)",
+ "license_checked": "2026-11-08",
  "zip": "part16_of_17",
  "features": {
-  "through_vias": 28,
+  "through_vias": 14,
   "blind_buried_vias": 0,
   "microvias": 0,
   "backdrills": 0,

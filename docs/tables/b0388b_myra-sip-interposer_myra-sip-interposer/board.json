@@ -3,7 +3,10 @@
  "project": "antmicro/myra-sip-interposer",
  "path": "antmicro__myra-sip-interposer/myra-sip-interposer.kicad_pcb",
  "license": "Apache-2.0 (Apache License 2.0)",
- "rank": 1533,
+ "license_checked": "2026-11-08",
+ "rank": 1530,
+ "score": 1328,
+ "level": "MEDIUM",
  "complexity": {
   "grade": 405,
   "size": 240,
@@ -26,8 +29,23 @@
  "bad_design": null,
  "chart_alt": "myra-sip-interposer: stages 4 and 6 take 49% to 80% of a run. Simulation, GLB takes 9.5 s. Simulation, STEP takes 12 s. Simulation, STL takes 9.8 s. Simulation, OBJ takes 15 s. Visual, GLB takes 13 s. Visual, OBJ takes 15 s",
  "rerun": {},
+ "tested": [
+  "2026-11-09",
+  "2026-11-09"
+ ],
  "kese": [
   "22fd70c"
+ ],
+ "kese_version": [
+  "2.4.0"
+ ],
+ "runs": [
+  [
+   "corpus",
+   "2026-11-09",
+   11000000000.0,
+   5400.0
+  ]
  ],
  "machine": {
   "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz, 4 cores, 15 GB",

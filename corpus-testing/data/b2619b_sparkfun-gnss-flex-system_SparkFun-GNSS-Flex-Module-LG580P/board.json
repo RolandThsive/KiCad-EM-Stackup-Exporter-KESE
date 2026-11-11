@@ -1,7 +1,4 @@
 {
- "rank": 2108,
- "score": 586,
- "level": "LOW",
  "layers": 4,
  "parts": 22,
  "big": 0,
@@ -15,9 +12,10 @@
  "project": "sparkfun/sparkfun_gnss_flex_system",
  "name": "SparkFun_GNSS_Flex_Module_LG580P",
  "license": "MIT (MIT License), in LICENSE.md",
+ "license_checked": "2026-11-08",
  "zip": "part16_of_17",
  "features": {
-  "through_vias": 262,
+  "through_vias": 131,
   "blind_buried_vias": 0,
   "microvias": 0,
   "backdrills": 0,

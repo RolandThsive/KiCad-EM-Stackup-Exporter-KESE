@@ -1,7 +1,4 @@
 {
- "rank": 239,
- "score": 10528,
- "level": "VERY HIGH",
  "layers": 4,
  "parts": 437,
  "big": 2,
@@ -15,6 +12,7 @@
  "project": "ciaa/Hardware",
  "name": "ciaa-rx",
  "license": "BSD-2-Clause (BSD 2-Clause License), in LICENSE, PCB/EDU-FPGA/LICENSE, PCB/Z3R0/LICENSE",
+ "license_checked": "2026-11-08",
  "zip": "part09_of_17",
  "features": {
   "through_vias": 615,

@@ -1,7 +1,4 @@
 {
- "rank": 852,
- "score": 3158,
- "level": "HIGH",
  "layers": 4,
  "parts": 194,
  "big": 4,
@@ -15,9 +12,10 @@
  "project": "proveskit/battery_board",
  "name": "battery_board_v3b",
  "license": "CERN-OHL-W-2.0 (CERN Open Hardware Licence v2, Weakly Reciprocal)",
+ "license_checked": "2026-11-08",
  "zip": "part13_of_17",
  "features": {
-  "through_vias": 512,
+  "through_vias": 256,
   "blind_buried_vias": 0,
   "microvias": 0,
   "backdrills": 0,

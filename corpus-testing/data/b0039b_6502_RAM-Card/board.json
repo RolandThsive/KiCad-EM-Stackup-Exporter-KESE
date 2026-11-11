@@ -1,7 +1,4 @@
 {
- "rank": 1425,
- "score": 1516,
- "level": "MEDIUM",
  "layers": 2,
  "parts": 21,
  "big": 0,
@@ -15,9 +12,10 @@
  "project": "acwright/6502",
  "name": "RAM Card",
  "license": "CERN-OHL-P-2.0 (CERN Open Hardware Licence v2, Permissive), in LICENSE",
+ "license_checked": "2026-11-08",
  "zip": "part15_of_17",
  "features": {
-  "through_vias": 476,
+  "through_vias": 238,
   "blind_buried_vias": 0,
   "microvias": 0,
   "backdrills": 0,

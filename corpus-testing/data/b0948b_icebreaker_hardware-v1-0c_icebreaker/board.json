@@ -1,7 +1,4 @@
 {
- "rank": 1082,
- "score": 2250,
- "level": "MEDIUM",
  "layers": 4,
  "parts": 128,
  "big": 2,
@@ -15,6 +12,7 @@
  "project": "esden/icebreaker",
  "name": "icebreaker",
  "license": "No license found",
+ "license_checked": "2026-11-08",
  "zip": "part14_of_17",
  "features": {
   "through_vias": 157,

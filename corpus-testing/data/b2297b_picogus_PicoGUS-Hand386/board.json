@@ -1,7 +1,4 @@
 {
- "rank": 1263,
- "score": 1837,
- "level": "MEDIUM",
  "layers": 4,
  "parts": 50,
  "big": 0,
@@ -15,9 +12,10 @@
  "project": "polpo/picogus",
  "name": "PicoGUS Hand386",
  "license": "CERN-OHL-P-2.0 (CERN Open Hardware Licence v2, Permissive), in hw-chipdown/LICENSE, hw-hand386/LICENSE, hw/LICENSE",
+ "license_checked": "2026-11-08",
  "zip": "part15_of_17",
  "features": {
-  "through_vias": 556,
+  "through_vias": 278,
   "blind_buried_vias": 0,
   "microvias": 0,
   "backdrills": 0,

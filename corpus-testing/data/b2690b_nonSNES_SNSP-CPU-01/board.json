@@ -1,7 +1,4 @@
 {
- "rank": 166,
- "score": 13112,
- "level": "VERY HIGH",
  "layers": 2,
  "parts": 291,
  "big": 5,
@@ -15,9 +12,10 @@
  "project": "stonedDiscord/nonSNES",
  "name": "SNSP-CPU-01",
  "license": "GPL-3.0 (GNU GPL v3.0)",
+ "license_checked": "2026-11-08",
  "zip": "part07_of_17",
  "features": {
-  "through_vias": 2394,
+  "through_vias": 1197,
   "blind_buried_vias": 0,
   "microvias": 0,
   "backdrills": 0,

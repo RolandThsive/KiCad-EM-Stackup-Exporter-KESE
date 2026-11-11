@@ -1,7 +1,4 @@
 {
- "rank": 803,
- "score": 3379,
- "level": "HIGH",
  "layers": 4,
  "parts": 167,
  "big": 0,
@@ -15,9 +12,10 @@
  "project": "EEVengers/ts_test_fixtures",
  "name": "ThunderScope Muxboard",
  "license": "CERN-OHL-P-2.0 (CERN Open Hardware Licence v2, Permissive)",
+ "license_checked": "2026-11-08",
  "zip": "part13_of_17",
  "features": {
-  "through_vias": 790,
+  "through_vias": 395,
   "blind_buried_vias": 0,
   "microvias": 0,
   "backdrills": 0,

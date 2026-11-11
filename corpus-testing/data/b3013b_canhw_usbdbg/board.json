@@ -1,7 +1,4 @@
 {
- "rank": 2267,
- "score": 440,
- "level": "LOW",
  "layers": 2,
  "parts": 31,
  "big": 0,
@@ -15,9 +12,10 @@
  "project": "waterloo-rocketry/canhw",
  "name": "usbdbg",
  "license": "GPL-3.0 (GNU GPL v3.0)",
+ "license_checked": "2026-11-08",
  "zip": "part16_of_17",
  "features": {
-  "through_vias": 84,
+  "through_vias": 42,
   "blind_buried_vias": 0,
   "microvias": 0,
   "backdrills": 0,

@@ -1,7 +1,4 @@
 {
- "rank": 114,
- "score": 16892,
- "level": "VERY HIGH",
  "layers": 2,
  "parts": 482,
  "big": 0,
@@ -15,6 +12,7 @@
  "project": "nmikstas/quantum_arcade_pcb",
  "name": "quantum_arcade_pcb",
  "license": "No license found",
+ "license_checked": "2026-11-08",
  "zip": "part06_of_17",
  "features": {
   "through_vias": 809,

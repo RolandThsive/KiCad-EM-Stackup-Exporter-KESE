@@ -1,7 +1,4 @@
 {
- "rank": 404,
- "score": 6788,
- "level": "HIGH",
  "layers": 2,
  "parts": 195,
  "big": 0,
@@ -15,6 +12,7 @@
  "project": "iansbremner/ZX-Spectrum-Issue-4B-KiCAD",
  "name": "Issue 4",
  "license": "No license found",
+ "license_checked": "2026-11-08",
  "zip": "part11_of_17",
  "features": {
   "through_vias": 429,

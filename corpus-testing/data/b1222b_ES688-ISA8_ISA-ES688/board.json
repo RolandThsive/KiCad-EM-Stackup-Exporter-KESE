@@ -1,7 +1,4 @@
 {
- "rank": 887,
- "score": 2965,
- "level": "MEDIUM",
  "layers": 4,
  "parts": 125,
  "big": 1,
@@ -15,6 +12,7 @@
  "project": "hkzlab/ES688_ISA8",
  "name": "ISA_ES688",
  "license": "CC-BY-NC-SA-4.0 (Creative Commons Attribution-NonCommercial-ShareAlike 4.0), in LICENSE",
+ "license_checked": "2026-11-08",
  "zip": "part13_of_17",
  "features": {
   "through_vias": 166,

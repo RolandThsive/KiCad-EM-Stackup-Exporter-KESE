@@ -1,7 +1,4 @@
 {
- "rank": 407,
- "score": 6715,
- "level": "HIGH",
  "layers": 4,
  "parts": 83,
  "big": 0,
@@ -15,6 +12,7 @@
  "project": "luxonis/depthai-hardware",
  "name": "DepthABC",
  "license": "MIT (MIT License), in LICENSE",
+ "license_checked": "2026-11-08",
  "zip": "part11_of_17",
  "features": {
   "through_vias": 450,

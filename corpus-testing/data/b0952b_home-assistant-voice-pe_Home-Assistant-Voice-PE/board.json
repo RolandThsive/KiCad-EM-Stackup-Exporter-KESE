@@ -1,7 +1,4 @@
 {
- "rank": 377,
- "score": 7133,
- "level": "HIGH",
  "layers": 4,
  "parts": 398,
  "big": 1,
@@ -15,9 +12,10 @@
  "project": "esphome/home-assistant-voice-pe",
  "name": "Home Assistant Voice PE",
  "license": "CERN-OHL-P-2.0 (CERN Open Hardware Licence v2, Permissive) for the hardware, in hardware/LICENSE.txt; the ESPHome License (MIT and GPL-3.0) for the code, in LICENSE",
+ "license_checked": "2026-11-08",
  "zip": "part10_of_17",
  "features": {
-  "through_vias": 1864,
+  "through_vias": 932,
   "blind_buried_vias": 0,
   "microvias": 0,
   "backdrills": 0,

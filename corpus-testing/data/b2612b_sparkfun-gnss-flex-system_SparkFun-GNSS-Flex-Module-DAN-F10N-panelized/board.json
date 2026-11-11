@@ -1,7 +1,4 @@
 {
- "rank": 437,
- "score": 6312,
- "level": "HIGH",
  "layers": 4,
  "parts": 180,
  "big": 0,
@@ -15,9 +12,10 @@
  "project": "sparkfun/sparkfun_gnss_flex_system",
  "name": "SparkFun_GNSS_Flex_Module_DAN-F10N_panelized",
  "license": "MIT (MIT License), in LICENSE.md",
+ "license_checked": "2026-11-08",
  "zip": "part11_of_17",
  "features": {
-  "through_vias": 3288,
+  "through_vias": 1644,
   "blind_buried_vias": 0,
   "microvias": 0,
   "backdrills": 0,

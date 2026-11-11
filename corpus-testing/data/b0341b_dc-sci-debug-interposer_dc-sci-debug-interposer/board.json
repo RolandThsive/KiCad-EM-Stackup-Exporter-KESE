@@ -1,7 +1,4 @@
 {
- "rank": 398,
- "score": 6846,
- "level": "HIGH",
  "layers": 8,
  "parts": 266,
  "big": 1,
@@ -15,9 +12,10 @@
  "project": "antmicro/dc-sci-debug-interposer",
  "name": "dc-sci-debug-interposer",
  "license": "Apache-2.0 (Apache License 2.0)",
+ "license_checked": "2026-11-08",
  "zip": "part11_of_17",
  "features": {
-  "through_vias": 1358,
+  "through_vias": 679,
   "blind_buried_vias": 0,
   "microvias": 0,
   "backdrills": 0,

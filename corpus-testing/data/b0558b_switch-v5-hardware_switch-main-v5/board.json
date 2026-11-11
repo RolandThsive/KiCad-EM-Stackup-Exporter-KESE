@@ -1,7 +1,4 @@
 {
- "rank": 170,
- "score": 12773,
- "level": "VERY HIGH",
  "layers": 6,
  "parts": 601,
  "big": 5,
@@ -15,9 +12,10 @@
  "project": "ben5049/switch-v5-hardware",
  "name": "switch-main-v5",
  "license": "AGPL-3.0 (GNU AGPL v3.0)",
+ "license_checked": "2026-11-08",
  "zip": "part07_of_17",
  "features": {
-  "through_vias": 2534,
+  "through_vias": 1267,
   "blind_buried_vias": 0,
   "microvias": 0,
   "backdrills": 0,

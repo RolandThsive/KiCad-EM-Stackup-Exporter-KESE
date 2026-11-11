@@ -1,7 +1,4 @@
 {
- "rank": 838,
- "score": 3214,
- "level": "HIGH",
  "layers": 4,
  "parts": 104,
  "big": 2,
@@ -15,6 +12,7 @@
  "project": "mwelling/beagle-wire",
  "name": "beagle-wire",
  "license": "CERN-OHL-1.2 (CERN Open Hardware Licence v1.2), in LICENSE.txt",
+ "license_checked": "2026-11-08",
  "zip": "part13_of_17",
  "features": {
   "through_vias": 289,

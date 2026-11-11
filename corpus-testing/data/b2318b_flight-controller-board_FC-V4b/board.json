@@ -1,7 +1,4 @@
 {
- "rank": 991,
- "score": 2560,
- "level": "MEDIUM",
  "layers": 4,
  "parts": 108,
  "big": 2,
@@ -15,9 +12,10 @@
  "project": "proveskit/flight_controller_board",
  "name": "FC_V4b",
  "license": "CERN-OHL-W-2.0 (CERN Open Hardware Licence v2, Weakly Reciprocal)",
+ "license_checked": "2026-11-08",
  "zip": "part14_of_17",
  "features": {
-  "through_vias": 514,
+  "through_vias": 257,
   "blind_buried_vias": 0,
   "microvias": 0,
   "backdrills": 0,

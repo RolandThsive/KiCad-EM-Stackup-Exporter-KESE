@@ -1,7 +1,4 @@
 {
- "rank": 949,
- "score": 2708,
- "level": "MEDIUM",
  "layers": 4,
  "parts": 96,
  "big": 1,
@@ -15,6 +12,7 @@
  "project": "polpo/picogus",
  "name": "PicoGUS chipdown",
  "license": "CERN-OHL-P-2.0 (CERN Open Hardware Licence v2, Permissive), in hw-chipdown/LICENSE, hw-hand386/LICENSE, hw/LICENSE",
+ "license_checked": "2026-11-08",
  "zip": "part14_of_17",
  "features": {
   "through_vias": 374,

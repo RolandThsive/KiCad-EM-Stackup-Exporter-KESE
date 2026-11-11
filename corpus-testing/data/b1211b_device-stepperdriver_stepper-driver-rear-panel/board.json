@@ -1,7 +1,4 @@
 {
- "rank": 3043,
- "score": 1,
- "level": "SIMPLE",
  "layers": 2,
  "parts": 1,
  "big": 0,
@@ -15,9 +12,10 @@
  "project": "harp-tech/device.stepperdriver",
  "name": "stepper driver rear panel",
  "license": "As README.md states it: \"Each subdirectory will contain a license or, possibly, a set of licenses if it involves both hardware and software.\"",
+ "license_checked": "2026-11-08",
  "zip": "part16_of_17",
  "features": {
-  "through_vias": 8,
+  "through_vias": 4,
   "blind_buried_vias": 0,
   "microvias": 0,
   "backdrills": 0,

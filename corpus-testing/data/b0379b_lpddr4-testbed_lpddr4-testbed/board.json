@@ -1,7 +1,4 @@
 {
- "rank": 985,
- "score": 2578,
- "level": "MEDIUM",
  "layers": 6,
  "parts": 63,
  "big": 1,
@@ -15,9 +12,10 @@
  "project": "antmicro/lpddr4-testbed",
  "name": "lpddr4-testbed",
  "license": "Apache-2.0 (Apache License 2.0)",
+ "license_checked": "2026-11-08",
  "zip": "part14_of_17",
  "features": {
-  "through_vias": 496,
+  "through_vias": 248,
   "blind_buried_vias": 0,
   "microvias": 0,
   "backdrills": 0,

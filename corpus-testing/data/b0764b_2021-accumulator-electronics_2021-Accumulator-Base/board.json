@@ -1,7 +1,4 @@
 {
- "rank": 959,
- "score": 2664,
- "level": "MEDIUM",
  "layers": 4,
  "parts": 136,
  "big": 0,
@@ -15,6 +12,7 @@
  "project": "columbia-fsae/2021_accumulator_electronics",
  "name": "2021 Accumulator Base",
  "license": "No license found",
+ "license_checked": "2026-11-08",
  "zip": "part14_of_17",
  "features": {
   "through_vias": 330,

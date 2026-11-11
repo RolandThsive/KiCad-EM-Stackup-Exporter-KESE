@@ -20,7 +20,7 @@ def scan(t):
     f = {}
     c = lambda pat, flags=0: len(re.findall(pat, t, flags))
     # vias
-    f["through_vias"] = c(r"\(via\s+\(at") + c(r"\(via\s*\n\s*\(at")
+    f["through_vias"] = c(r"\(via\s+\(at")             # \s+ takes a line break too: KiCad 8 and later put (at on the next line
     f["blind_buried_vias"] = c(r"\(via\s+(?:blind|buried)\b") + c(r"\(type\s+(?:blind|buried)\)")
     f["microvias"] = c(r"\(via\s+micro\b") + c(r"\(type\s+micro\)")
     f["backdrills"] = c(r"\((?:backdrill|back_drill|tertiary_drill)\b")

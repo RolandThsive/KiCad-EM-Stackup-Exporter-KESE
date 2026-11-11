@@ -1,7 +1,4 @@
 {
- "rank": 1570,
- "score": 1256,
- "level": "MEDIUM",
  "layers": 2,
  "parts": 55,
  "big": 1,
@@ -15,6 +12,7 @@
  "project": "myriadrf/LMS6002-Pmod",
  "name": "LMS6002-Pmod",
  "license": "CC-BY-SA-3.0 (Creative Commons Attribution-ShareAlike 3.0), in board/KiCad/LICENSE.md",
+ "license_checked": "2026-11-08",
  "zip": "part15_of_17",
  "features": {
   "through_vias": 65,

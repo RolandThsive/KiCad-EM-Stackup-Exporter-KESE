@@ -1,7 +1,4 @@
 {
- "rank": 2015,
- "score": 698,
- "level": "LOW",
  "layers": 2,
  "parts": 21,
  "big": 0,
@@ -15,9 +12,10 @@
  "project": "acwright/6502",
  "name": "PS2 Helper",
  "license": "CERN-OHL-P-2.0 (CERN Open Hardware Licence v2, Permissive), in LICENSE",
+ "license_checked": "2026-11-08",
  "zip": "part16_of_17",
  "features": {
-  "through_vias": 204,
+  "through_vias": 102,
   "blind_buried_vias": 0,
   "microvias": 0,
   "backdrills": 0,

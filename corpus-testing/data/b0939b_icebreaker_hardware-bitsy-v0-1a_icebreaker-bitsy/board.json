@@ -1,7 +1,4 @@
 {
- "rank": 1720,
- "score": 1035,
- "level": "MEDIUM",
  "layers": 4,
  "parts": 54,
  "big": 1,
@@ -15,6 +12,7 @@
  "project": "esden/icebreaker",
  "name": "icebreaker-bitsy",
  "license": "No license found",
+ "license_checked": "2026-11-08",
  "zip": "part16_of_17",
  "features": {
   "through_vias": 99,

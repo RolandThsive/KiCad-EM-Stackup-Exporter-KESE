@@ -1,7 +1,4 @@
 {
- "rank": 1939,
- "score": 775,
- "level": "LOW",
  "layers": 4,
  "parts": 80,
  "big": 0,
@@ -15,9 +12,10 @@
  "project": "sufst/pcb",
  "name": "tsal-latching-integrated",
  "license": "GPL-3.0 (GNU GPL v3.0)",
+ "license_checked": "2026-11-08",
  "zip": "part16_of_17",
  "features": {
-  "through_vias": 124,
+  "through_vias": 62,
   "blind_buried_vias": 0,
   "microvias": 0,
   "backdrills": 0,

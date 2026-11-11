@@ -1,7 +1,4 @@
 {
- "rank": 1100,
- "score": 2217,
- "level": "MEDIUM",
  "layers": 6,
  "parts": 99,
  "big": 3,
@@ -15,9 +12,10 @@
  "project": "Aharoni-Lab/Miniscope-v4",
  "name": "Miniscope-v4-Rigid-Flex",
  "license": "GPL-3.0 (GNU GPL v3.0)",
+ "license_checked": "2026-11-08",
  "zip": "part14_of_17",
  "features": {
-  "through_vias": 328,
+  "through_vias": 164,
   "blind_buried_vias": 0,
   "microvias": 0,
   "backdrills": 0,

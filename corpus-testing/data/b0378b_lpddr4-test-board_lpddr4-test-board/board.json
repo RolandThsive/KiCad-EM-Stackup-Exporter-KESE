@@ -1,7 +1,4 @@
 {
- "rank": 232,
- "score": 10634,
- "level": "VERY HIGH",
  "layers": 8,
  "parts": 445,
  "big": 4,
@@ -15,9 +12,10 @@
  "project": "antmicro/lpddr4-test-board",
  "name": "lpddr4-test-board",
  "license": "Apache-2.0 (Apache License 2.0)",
+ "license_checked": "2026-11-08",
  "zip": "part09_of_17",
  "features": {
-  "through_vias": 2102,
+  "through_vias": 1051,
   "blind_buried_vias": 163,
   "microvias": 0,
   "backdrills": 0,

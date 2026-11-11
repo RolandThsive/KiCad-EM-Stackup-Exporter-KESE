@@ -1,7 +1,4 @@
 {
- "rank": 545,
- "score": 4913,
- "level": "HIGH",
  "layers": 4,
  "parts": 149,
  "big": 5,
@@ -15,9 +12,10 @@
  "project": "tomojitakasu/PocketSDR",
  "name": "v3.0",
  "license": "BSD-2-Clause (BSD 2-Clause License), in LICENSE.txt",
+ "license_checked": "2026-11-08",
  "zip": "part12_of_17",
  "features": {
-  "through_vias": 1252,
+  "through_vias": 626,
   "blind_buried_vias": 0,
   "microvias": 0,
   "backdrills": 0,

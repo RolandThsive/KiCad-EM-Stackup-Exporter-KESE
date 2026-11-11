@@ -1,7 +1,4 @@
 {
- "rank": 1839,
- "score": 891,
- "level": "LOW",
  "layers": 2,
  "parts": 114,
  "big": 0,
@@ -15,9 +12,10 @@
  "project": "KiCad/kicad-source-mirror",
  "name": "multichannel_mixer",
  "license": "GPL-3.0 (GNU GPL v3.0)",
+ "license_checked": "2026-11-08",
  "zip": "part16_of_17",
  "features": {
-  "through_vias": 58,
+  "through_vias": 29,
   "blind_buried_vias": 0,
   "microvias": 0,
   "backdrills": 0,

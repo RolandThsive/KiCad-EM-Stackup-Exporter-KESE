@@ -1,7 +1,4 @@
 {
- "rank": 1458,
- "score": 1463,
- "level": "MEDIUM",
  "layers": 6,
  "parts": 54,
  "big": 2,
@@ -15,6 +12,7 @@
  "project": "Aharoni-Lab/Miniscope-v4",
  "name": "Miniscope-v4-PCB-fab-assembly",
  "license": "GPL-3.0 (GNU GPL v3.0)",
+ "license_checked": "2026-11-08",
  "zip": "part15_of_17",
  "features": {
   "through_vias": 139,

@@ -3,7 +3,10 @@
  "project": "polpo/picogus",
  "path": "polpo__picogus/hw/PicoGUS.kicad_pcb",
  "license": "CERN-OHL-P-2.0 (CERN Open Hardware Licence v2, Permissive), in hw-chipdown/LICENSE, hw-hand386/LICENSE, hw/LICENSE",
+ "license_checked": "2026-11-08",
  "rank": 1193,
+ "score": 1989,
+ "level": "MEDIUM",
  "complexity": {
   "grade": 313,
   "size": 183,
@@ -26,8 +29,29 @@
  "bad_design": null,
  "chart_alt": "PicoGUS: stages 4 and 6 take 51% to 80% of a run. Simulation, GLB takes 19 s. Simulation, STEP takes 23 s. Simulation, STL takes 18 s. Simulation, OBJ takes 28 s. Visual, GLB takes 33 s. Visual, OBJ takes 41 s",
  "rerun": {},
+ "tested": [
+  "2026-11-09",
+  "2026-11-09"
+ ],
  "kese": [
   "22fd70c"
+ ],
+ "kese_version": [
+  "2.4.0"
+ ],
+ "runs": [
+  [
+   "corpus",
+   "2026-11-09",
+   11000000000.0,
+   5400.0
+  ],
+  [
+   "fixed",
+   "2026-11-10",
+   11000000000.0,
+   5400.0
+  ]
  ],
  "machine": {
   "cpu": "Intel(R) Xeon(R) Processor @ 2.30GHz, 4 cores, 15 GB",

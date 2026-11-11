@@ -1,7 +1,4 @@
 {
- "rank": 1921,
- "score": 798,
- "level": "LOW",
  "layers": 2,
  "parts": 18,
  "big": 0,
@@ -15,6 +12,7 @@
  "project": "OLIMEX/A20-CAN",
  "name": "A20-CAN_Rev_A",
  "license": "Apache-2.0 (Apache License 2.0)",
+ "license_checked": "2026-11-08",
  "zip": "part16_of_17",
  "features": {
   "through_vias": 117,

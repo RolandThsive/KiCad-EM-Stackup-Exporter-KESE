@@ -1,7 +1,4 @@
 {
- "rank": 1273,
- "score": 1809,
- "level": "MEDIUM",
  "layers": 4,
  "parts": 82,
  "big": 0,
@@ -15,6 +12,7 @@
  "project": "antmicro/ov5640-dual-camera-board",
  "name": "OV5640-dual-camera-board",
  "license": "Apache-2.0 (Apache License 2.0)",
+ "license_checked": "2026-11-08",
  "zip": "part15_of_17",
  "features": {
   "through_vias": 234,

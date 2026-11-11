@@ -1,7 +1,4 @@
 {
- "rank": 905,
- "score": 2888,
- "level": "MEDIUM",
  "layers": 2,
  "parts": 218,
  "big": 4,
@@ -15,9 +12,10 @@
  "project": "lhr-solar/bps-voltagepcb",
  "name": "BPS-Minion",
  "license": "No license found",
+ "license_checked": "2026-11-08",
  "zip": "part14_of_17",
  "features": {
-  "through_vias": 446,
+  "through_vias": 223,
   "blind_buried_vias": 0,
   "microvias": 0,
   "backdrills": 0,

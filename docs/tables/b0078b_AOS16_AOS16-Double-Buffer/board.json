@@ -3,7 +3,10 @@
  "project": "AJain9199/AOS16",
  "path": "AJain9199__AOS16/AOS16 Double Buffer/AOS16 Double Buffer.kicad_pcb",
  "license": "No license found",
+ "license_checked": "2026-11-08",
  "rank": 1216,
+ "score": 1926,
+ "level": "MEDIUM",
  "complexity": {
   "grade": 327,
   "size": 252,
@@ -21,8 +24,23 @@
  "bad_design": null,
  "chart_alt": "AOS16 Double Buffer: stages 4 and 6 take 49% to 84% of a run. Simulation, GLB takes 16 s. Simulation, STEP takes 21 s. Simulation, STL takes 16 s. Simulation, OBJ takes 26 s. Visual, GLB takes 22 s. Visual, OBJ takes 28 s",
  "rerun": {},
+ "tested": [
+  "2026-11-09",
+  "2026-11-09"
+ ],
  "kese": [
   "22fd70c"
+ ],
+ "kese_version": [
+  "2.4.0"
+ ],
+ "runs": [
+  [
+   "corpus",
+   "2026-11-09",
+   11000000000.0,
+   5400.0
+  ]
  ],
  "machine": {
   "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz, 4 cores, 15 GB",

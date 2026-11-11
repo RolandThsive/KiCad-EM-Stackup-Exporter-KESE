@@ -3,7 +3,10 @@
  "project": "OLIMEX/UEXT-3TO5V",
  "path": "OLIMEX__UEXT-3TO5V/HARDWARE/UEXT-3TO5V-Rev.A/UEXT-3TO5V_Rev_A.kicad_pcb",
  "license": "As README.md states it: \"Hardware is released under CERN Open Hardware Licence Version 2 - Strongly Reciprocal; Documentation is released under CC BY-SA 4.0\"",
- "rank": 2039,
+ "license_checked": "2026-11-08",
+ "rank": 2034,
+ "score": 666,
+ "level": "LOW",
  "complexity": {
   "grade": 253,
   "size": 158,
@@ -23,8 +26,23 @@
  "bad_design": null,
  "chart_alt": "UEXT-3TO5V_Rev_A: stages 4 and 6 take 48% to 77% of a run. Simulation, GLB takes 2.9 s. Simulation, STEP takes 3.9 s. Simulation, STL takes 2.9 s. Simulation, OBJ takes 4.1 s. Visual, GLB takes 4.4 s. Visual, OBJ takes 5.5 s",
  "rerun": {},
+ "tested": [
+  "2026-11-09",
+  "2026-11-09"
+ ],
  "kese": [
   "22fd70c"
+ ],
+ "kese_version": [
+  "2.4.0"
+ ],
+ "runs": [
+  [
+   "corpus",
+   "2026-11-09",
+   11000000000.0,
+   5400.0
+  ]
  ],
  "machine": {
   "cpu": "Intel(R) Xeon(R) Processor @ 2.30GHz, 4 cores, 15 GB",

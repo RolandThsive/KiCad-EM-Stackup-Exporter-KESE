@@ -1,7 +1,4 @@
 {
- "rank": 1727,
- "score": 1027,
- "level": "MEDIUM",
  "layers": 2,
  "parts": 80,
  "big": 0,
@@ -15,6 +12,7 @@
  "project": "paltatech/vesc-controller",
  "name": "Power_Integrations_interface",
  "license": "As README.md states it: \"This documentation describes Open Hardware and is licensed under the CERN OHL v. 1.2\"",
+ "license_checked": "2026-11-08",
  "zip": "part16_of_17",
  "features": {
   "through_vias": 66,

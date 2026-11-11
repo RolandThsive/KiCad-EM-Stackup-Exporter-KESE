@@ -1,7 +1,4 @@
 {
- "rank": 1984,
- "score": 731,
- "level": "LOW",
  "layers": 4,
  "parts": 47,
  "big": 0,
@@ -15,6 +12,7 @@
  "project": "terrapin-rocket-team/srad-avionics",
  "name": "Unified_Board",
  "license": "No license found",
+ "license_checked": "2026-11-08",
  "zip": "part16_of_17",
  "features": {
   "through_vias": 26,

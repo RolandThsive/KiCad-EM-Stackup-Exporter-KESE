@@ -1,7 +1,4 @@
 {
- "rank": 390,
- "score": 6919,
- "level": "HIGH",
  "layers": 4,
  "parts": 455,
  "big": 3,
@@ -15,6 +12,7 @@
  "project": "ciaa/Hardware",
  "name": "CIAA_K60",
  "license": "BSD-2-Clause (BSD 2-Clause License), in LICENSE, PCB/EDU-FPGA/LICENSE, PCB/Z3R0/LICENSE",
+ "license_checked": "2026-11-08",
  "zip": "part11_of_17",
  "features": {
   "through_vias": 456,

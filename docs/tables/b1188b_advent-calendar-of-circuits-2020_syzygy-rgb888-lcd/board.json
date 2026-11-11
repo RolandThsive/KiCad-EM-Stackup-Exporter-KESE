@@ -3,7 +3,10 @@
  "project": "gregdavill/advent-calendar-of-circuits-2020",
  "path": "gregdavill__advent-calendar-of-circuits-2020/syzygy-rgb888-lcd/kicad-src/syzygy-rgb888-lcd.kicad_pcb",
  "license": "CERN-OHL-P-2.0 (CERN Open Hardware Licence v2, Permissive), in LICENCE-CERN-OHL-P-2.0",
- "rank": 2109,
+ "license_checked": "2026-11-08",
+ "rank": 2104,
+ "score": 584,
+ "level": "LOW",
  "complexity": {
   "grade": 282,
   "size": 167,
@@ -25,8 +28,23 @@
  "bad_design": null,
  "chart_alt": "syzygy-rgb888-lcd: stages 4 and 6 take 44% to 80% of a run. Simulation, GLB takes 3.6 s. Simulation, STEP takes 5.0 s. Simulation, STL takes 3.6 s. Simulation, OBJ takes 5.7 s. Visual, GLB takes 6.1 s. Visual, OBJ takes 7.6 s",
  "rerun": {},
+ "tested": [
+  "2026-11-09",
+  "2026-11-09"
+ ],
  "kese": [
   "22fd70c"
+ ],
+ "kese_version": [
+  "2.4.0"
+ ],
+ "runs": [
+  [
+   "corpus",
+   "2026-11-09",
+   11000000000.0,
+   5400.0
+  ]
  ],
  "machine": {
   "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz, 4 cores, 15 GB",

@@ -1,7 +1,4 @@
 {
- "rank": 955,
- "score": 2693,
- "level": "MEDIUM",
  "layers": 4,
  "parts": 7,
  "big": 0,
@@ -15,9 +12,10 @@
  "project": "EEVengers/ThunderScope",
  "name": "Interposer_Board_JoneyTech",
  "license": "MIT (MIT License)",
+ "license_checked": "2026-11-08",
  "zip": "part14_of_17",
  "features": {
-  "through_vias": 2382,
+  "through_vias": 1191,
   "blind_buried_vias": 0,
   "microvias": 0,
   "backdrills": 0,

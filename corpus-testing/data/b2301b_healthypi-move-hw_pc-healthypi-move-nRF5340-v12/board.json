@@ -1,7 +1,4 @@
 {
- "rank": 1014,
- "score": 2485,
- "level": "MEDIUM",
  "layers": 6,
  "parts": 78,
  "big": 1,
@@ -15,9 +12,10 @@
  "project": "Protocentral/healthypi-move-hw",
  "name": "pc_healthypi_move_nRF5340_v12",
  "license": "MIT (MIT License)",
+ "license_checked": "2026-11-08",
  "zip": "part14_of_17",
  "features": {
-  "through_vias": 368,
+  "through_vias": 184,
   "blind_buried_vias": 0,
   "microvias": 2,
   "backdrills": 0,

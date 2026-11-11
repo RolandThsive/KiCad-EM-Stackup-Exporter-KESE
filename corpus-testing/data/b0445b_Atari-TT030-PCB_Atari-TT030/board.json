@@ -1,7 +1,4 @@
 {
- "rank": 1191,
- "score": 1997,
- "level": "MEDIUM",
  "layers": 2,
  "parts": 577,
  "big": 14,
@@ -15,6 +12,7 @@
  "project": "AtarianComputing/Atari-TT030-PCB",
  "name": "Atari TT030",
  "license": "No license found",
+ "license_checked": "2026-11-08",
  "zip": "part15_of_17",
  "features": {
   "through_vias": 0,

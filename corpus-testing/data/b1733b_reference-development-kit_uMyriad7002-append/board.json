@@ -1,7 +1,4 @@
 {
- "rank": 448,
- "score": 6127,
- "level": "HIGH",
  "layers": 8,
  "parts": 272,
  "big": 2,
@@ -15,6 +12,7 @@
  "project": "myriadrf/reference-development-kit",
  "name": "uMyriad7002-append",
  "license": "CC-BY-3.0 (Creative Commons Attribution 3.0), in myriadrf-8001/COPYING, umyriadrf-6002/COPYING, umyriadrf-7002/COPYING and others",
+ "license_checked": "2026-11-08",
  "zip": "part11_of_17",
  "features": {
   "through_vias": 701,

@@ -1,7 +1,4 @@
 {
- "rank": 14,
- "score": 47523,
- "level": "EXTREME",
  "layers": 2,
  "parts": 406,
  "big": 2,
@@ -15,9 +12,10 @@
  "project": "Board-Folk/Commodore-PC10-III-Reproduction",
  "name": "Commodore PC10 III",
  "license": "CC0-1.0 (Creative Commons Zero v1.0), in 312628-REV-5.7A/LICENSE, 312628-REV-6C/LICENSE",
+ "license_checked": "2026-11-08",
  "zip": "part01_of_17",
  "features": {
-  "through_vias": 3676,
+  "through_vias": 1838,
   "blind_buried_vias": 0,
   "microvias": 0,
   "backdrills": 0,

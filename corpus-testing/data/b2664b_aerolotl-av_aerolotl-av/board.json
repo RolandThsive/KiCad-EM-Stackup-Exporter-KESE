@@ -1,7 +1,4 @@
 {
- "rank": 653,
- "score": 4192,
- "level": "HIGH",
  "layers": 4,
  "parts": 163,
  "big": 1,
@@ -15,9 +12,10 @@
  "project": "stanford-ssi/aerolotl_av",
  "name": "aerolotl_av",
  "license": "No license found",
+ "license_checked": "2026-11-08",
  "zip": "part12_of_17",
  "features": {
-  "through_vias": 1278,
+  "through_vias": 639,
   "blind_buried_vias": 0,
   "microvias": 0,
   "backdrills": 0,

@@ -1,7 +1,4 @@
 {
- "rank": 2431,
- "score": 299,
- "level": "LOW",
  "layers": 2,
  "parts": 9,
  "big": 0,
@@ -15,6 +12,7 @@
  "project": "zephray/nekoink",
  "name": "adapter",
  "license": "CERN-OHL-P-2.0 (CERN Open Hardware Licence v2, Permissive), in LICENSE",
+ "license_checked": "2026-11-08",
  "zip": "part16_of_17",
  "features": {
   "through_vias": 43,

@@ -1,7 +1,4 @@
 {
- "rank": 1266,
- "score": 1829,
- "level": "MEDIUM",
  "layers": 2,
  "parts": 44,
  "big": 0,
@@ -15,9 +12,10 @@
  "project": "flypie/Ace-2019",
  "name": "ACEDIAGBOARD",
  "license": "GPL-3.0 (GNU GPL v3.0)",
+ "license_checked": "2026-11-08",
  "zip": "part15_of_17",
  "features": {
-  "through_vias": 78,
+  "through_vias": 39,
   "blind_buried_vias": 0,
   "microvias": 0,
   "backdrills": 0,

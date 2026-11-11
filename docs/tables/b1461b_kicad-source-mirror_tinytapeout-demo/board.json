@@ -3,7 +3,10 @@
  "project": "KiCad/kicad-source-mirror",
  "path": "KiCad__kicad-source-mirror/demos/tiny_tapeout/tinytapeout-demo.kicad_pcb",
  "license": "GPL-3.0 (GNU GPL v3.0)",
+ "license_checked": "2026-11-08",
  "rank": 725,
+ "score": 3698,
+ "level": "HIGH",
  "complexity": {
   "grade": 415,
   "size": 260,
@@ -28,8 +31,23 @@
  "bad_design": null,
  "chart_alt": "tinytapeout-demo: stages 4 and 6 take 50% to 81% of a run. Simulation, GLB takes 42 s. Simulation, STEP takes 52 s. Simulation, STL takes 42 s. Simulation, OBJ takes 63 s. Visual, GLB takes 72 s. Visual, OBJ takes 88 s",
  "rerun": {},
+ "tested": [
+  "2026-11-09",
+  "2026-11-09"
+ ],
  "kese": [
   "22fd70c"
+ ],
+ "kese_version": [
+  "2.4.0"
+ ],
+ "runs": [
+  [
+   "corpus",
+   "2026-11-09",
+   11000000000.0,
+   5400.0
+  ]
  ],
  "machine": {
   "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz, 4 cores, 15 GB",

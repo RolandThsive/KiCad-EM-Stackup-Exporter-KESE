@@ -3,7 +3,10 @@
  "project": "sporniket/kicad-conversions--atari-ste-motherboard--c300780-001",
  "path": "sporniket__kicad-conversions--atari-ste-motherboard--c300780-001/motherboard.kicad_pcb",
  "license": "CC0-1.0 (Creative Commons Zero v1.0)",
+ "license_checked": "2026-11-08",
  "rank": 91,
+ "score": 19302,
+ "level": "VERY HIGH",
  "complexity": {
   "grade": 383,
   "size": 318,
@@ -21,8 +24,29 @@
  "bad_design": null,
  "chart_alt": "motherboard: stages 4 and 6 take 66% to 88% of a run. Simulation, GLB takes 7 min. Simulation, STEP takes 9 min. Simulation, STL takes 6 min. Visual, GLB takes 9 min. Visual, OBJ takes 10 min",
  "rerun": {},
+ "tested": [
+  "2026-11-09",
+  "2026-11-09"
+ ],
  "kese": [
   "22fd70c"
+ ],
+ "kese_version": [
+  "2.4.0"
+ ],
+ "runs": [
+  [
+   "cap",
+   "2026-11-10",
+   14500000000.0,
+   5400.0
+  ],
+  [
+   "corpus",
+   "2026-11-09",
+   11000000000.0,
+   5400.0
+  ]
  ],
  "machine": {
   "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz, 4 cores, 15 GB",

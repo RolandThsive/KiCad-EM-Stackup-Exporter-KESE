@@ -1,7 +1,4 @@
 {
- "rank": 38,
- "score": 27521,
- "level": "EXTREME",
  "layers": 6,
  "parts": 1461,
  "big": 0,
@@ -15,6 +12,7 @@
  "project": "myriadrf/LimeRFE-8001P",
  "name": "FrontEnd_5G",
  "license": "SHL-2.1 (Solderpad Hardware License v2.1), in hardware/LICENSE",
+ "license_checked": "2026-11-08",
  "zip": "part03_of_17",
  "features": {
   "through_vias": 767,

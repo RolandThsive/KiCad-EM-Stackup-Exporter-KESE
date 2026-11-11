@@ -1,7 +1,4 @@
 {
- "rank": 246,
- "score": 10254,
- "level": "VERY HIGH",
  "layers": 6,
  "parts": 379,
  "big": 3,
@@ -15,6 +12,7 @@
  "project": "osrf/ovc",
  "name": "ovc",
  "license": "Apache-2.0 (Apache License 2.0)",
+ "license_checked": "2026-11-08",
  "zip": "part09_of_17",
  "features": {
   "through_vias": 835,

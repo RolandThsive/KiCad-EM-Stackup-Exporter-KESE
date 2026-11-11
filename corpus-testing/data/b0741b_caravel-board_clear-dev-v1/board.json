@@ -1,7 +1,4 @@
 {
- "rank": 1139,
- "score": 2103,
- "level": "MEDIUM",
  "layers": 2,
  "parts": 82,
  "big": 1,
@@ -15,6 +12,7 @@
  "project": "chipfoundry/caravel_board",
  "name": "clear-dev-v1",
  "license": "No license found",
+ "license_checked": "2026-11-08",
  "zip": "part14_of_17",
  "features": {
   "through_vias": 186,

@@ -1,7 +1,4 @@
 {
- "rank": 1437,
- "score": 1503,
- "level": "MEDIUM",
  "layers": 4,
  "parts": 108,
  "big": 0,
@@ -15,9 +12,10 @@
  "project": "antmicro/usb-c-power-adapter",
  "name": "usb-c-power-adapter",
  "license": "Apache-2.0 (Apache License 2.0)",
+ "license_checked": "2026-11-08",
  "zip": "part15_of_17",
  "features": {
-  "through_vias": 458,
+  "through_vias": 229,
   "blind_buried_vias": 0,
   "microvias": 0,
   "backdrills": 0,

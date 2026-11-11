@@ -1,7 +1,4 @@
 {
- "rank": 2641,
- "score": 143,
- "level": "SIMPLE",
  "layers": 4,
  "parts": 3,
  "big": 0,
@@ -15,6 +12,7 @@
  "project": "azonenberg/starshipraider",
  "name": "fixture-akl-pt2",
  "license": "BSD-3-Clause (BSD 3-Clause License)",
+ "license_checked": "2026-11-08",
  "zip": "part16_of_17",
  "features": {
   "through_vias": 115,

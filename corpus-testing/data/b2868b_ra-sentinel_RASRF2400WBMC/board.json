@@ -1,7 +1,4 @@
 {
- "rank": 326,
- "score": 8093,
- "level": "VERY HIGH",
  "layers": 6,
  "parts": 388,
  "big": 3,
@@ -15,9 +12,10 @@
  "project": "tobias-dg3yev/ra-sentinel",
  "name": "RASRF2400WBMC",
  "license": "GPL-3.0 (GNU GPL v3.0)",
+ "license_checked": "2026-11-08",
  "zip": "part10_of_17",
  "features": {
-  "through_vias": 1842,
+  "through_vias": 921,
   "blind_buried_vias": 0,
   "microvias": 0,
   "backdrills": 0,

@@ -1,7 +1,4 @@
 {
- "rank": 821,
- "score": 3278,
- "level": "HIGH",
  "layers": 2,
  "parts": 40,
  "big": 0,
@@ -15,9 +12,10 @@
  "project": "winkleplex10-bit/the-mac-pro-project",
  "name": "panel_c50",
  "license": "No license found",
+ "license_checked": "2026-11-08",
  "zip": "part13_of_17",
  "features": {
-  "through_vias": 444,
+  "through_vias": 222,
   "blind_buried_vias": 0,
   "microvias": 0,
   "backdrills": 0,

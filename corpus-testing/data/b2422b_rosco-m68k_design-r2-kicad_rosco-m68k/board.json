@@ -1,7 +1,4 @@
 {
- "rank": 507,
- "score": 5298,
- "level": "HIGH",
  "layers": 4,
  "parts": 128,
  "big": 2,
@@ -15,9 +12,10 @@
  "project": "rosco-m68k/rosco_m68k",
  "name": "rosco_m68k",
  "license": "MIT (MIT License), in LICENSE",
+ "license_checked": "2026-11-08",
  "zip": "part12_of_17",
  "features": {
-  "through_vias": 804,
+  "through_vias": 402,
   "blind_buried_vias": 0,
   "microvias": 0,
   "backdrills": 0,

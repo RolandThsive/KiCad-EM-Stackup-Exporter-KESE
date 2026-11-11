@@ -1,7 +1,4 @@
 {
- "rank": 397,
- "score": 6850,
- "level": "HIGH",
  "layers": 6,
  "parts": 240,
  "big": 2,
@@ -15,6 +12,7 @@
  "project": "GMM-7550/gmm7550-hardware",
  "name": "gmm",
  "license": "CERN-OHL-P-2.0 (CERN Open Hardware Licence v2, Permissive), in LICENSE (which names cern_ohl_p_v2.txt) and as README.md states it",
+ "license_checked": "2026-11-08",
  "zip": "part11_of_17",
  "features": {
   "through_vias": 855,

@@ -1,7 +1,4 @@
 {
- "rank": 2715,
- "score": 100,
- "level": "SIMPLE",
  "layers": 6,
  "parts": 20,
  "big": 1,
@@ -15,6 +12,7 @@
  "project": "winkleplex10-bit/the-mac-pro-project",
  "name": "backplane_fp6",
  "license": "No license found",
+ "license_checked": "2026-11-08",
  "zip": "part16_of_17",
  "features": {
   "through_vias": 0,

@@ -3,7 +3,10 @@
  "project": "ciaa/Hardware",
  "path": "ciaa__Hardware/PCB/ACC/CIAA_ACC/ciaa_acc.kicad_pcb",
  "license": "BSD-2-Clause (BSD 2-Clause License), in LICENSE, PCB/EDU-FPGA/LICENSE, PCB/Z3R0/LICENSE",
+ "license_checked": "2026-11-08",
  "rank": 3,
+ "score": 66799,
+ "level": "EXTREME",
  "complexity": {
   "grade": 422,
   "size": 377,
@@ -19,8 +22,29 @@
  "bad_design": null,
  "chart_alt": "ciaa_acc: stages 4 and 6 take 59% to 80% of a run. Simulation, GLB takes 4 min. Simulation, STEP takes 4 min. Simulation, STL takes 4 min. Visual, GLB takes 4 min. Visual, OBJ takes 5 min",
  "rerun": {},
+ "tested": [
+  "2026-11-09",
+  "2026-11-09"
+ ],
  "kese": [
   "22fd70c"
+ ],
+ "kese_version": [
+  "2.4.0"
+ ],
+ "runs": [
+  [
+   "cap",
+   "2026-11-10",
+   14500000000.0,
+   5400.0
+  ],
+  [
+   "corpus",
+   "2026-11-09",
+   11000000000.0,
+   5400.0
+  ]
  ],
  "machine": {
   "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz, 4 cores, 15 GB",

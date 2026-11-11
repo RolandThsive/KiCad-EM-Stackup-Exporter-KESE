@@ -1,7 +1,4 @@
 {
- "rank": 2289,
- "score": 418,
- "level": "LOW",
  "layers": 2,
  "parts": 23,
  "big": 0,
@@ -15,9 +12,10 @@
  "project": "andrewpaterson/658-Computer",
  "name": "Power and Reset",
  "license": "No license found",
+ "license_checked": "2026-11-08",
  "zip": "part16_of_17",
  "features": {
-  "through_vias": 58,
+  "through_vias": 29,
   "blind_buried_vias": 0,
   "microvias": 0,
   "backdrills": 0,

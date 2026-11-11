@@ -1,7 +1,4 @@
 {
- "rank": 692,
- "score": 3935,
- "level": "HIGH",
  "layers": 2,
  "parts": 187,
  "big": 3,
@@ -15,6 +12,7 @@
  "project": "speeduino/hardware",
  "name": "DropBear",
  "license": "As README.md states it: \"These designs are release under the CERN Open Hardware License v2 Strong (CERN-OHL-S). This license is similar to the GPL, however is designed specifically for hardware design files, including PCB layouts and schematics.\"",
+ "license_checked": "2026-11-08",
  "zip": "part13_of_17",
  "features": {
   "through_vias": 417,

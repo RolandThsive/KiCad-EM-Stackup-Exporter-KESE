@@ -1,7 +1,4 @@
 {
- "rank": 185,
- "score": 12298,
- "level": "VERY HIGH",
  "layers": 4,
  "parts": 559,
  "big": 1,
@@ -15,9 +12,10 @@
  "project": "vmetodiev/tangenta",
  "name": "Tangenta",
  "license": "CERN-OHL-P-2.0 (CERN Open Hardware Licence v2, Permissive), in LICENSE",
+ "license_checked": "2026-11-08",
  "zip": "part08_of_17",
  "features": {
-  "through_vias": 2256,
+  "through_vias": 1128,
   "blind_buried_vias": 0,
   "microvias": 0,
   "backdrills": 0,

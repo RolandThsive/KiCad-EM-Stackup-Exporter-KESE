@@ -3,7 +3,10 @@
  "project": "andrewpaterson/658-Computer",
  "path": "andrewpaterson__658-Computer/Kicad/Computer/UART/UART Signals/UART Signals.kicad_pcb",
  "license": "No license found",
- "rank": 2656,
+ "license_checked": "2026-11-08",
+ "rank": 2647,
+ "score": 135,
+ "level": "SIMPLE",
  "complexity": {
   "grade": 192,
   "size": 122,
@@ -21,8 +24,23 @@
  "bad_design": null,
  "chart_alt": "UART Signals: stages 4 and 6 take 48% to 77% of a run. Simulation, GLB takes 1.8 s. Simulation, STEP takes 2.8 s. Simulation, STL takes 2.0 s. Simulation, OBJ takes 2.7 s. Visual, GLB takes 2.9 s. Visual, OBJ takes 3.4 s",
  "rerun": {},
+ "tested": [
+  "2026-11-09",
+  "2026-11-09"
+ ],
  "kese": [
   "22fd70c"
+ ],
+ "kese_version": [
+  "2.4.0"
+ ],
+ "runs": [
+  [
+   "corpus",
+   "2026-11-09",
+   11000000000.0,
+   5400.0
+  ]
  ],
  "machine": {
   "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz, 4 cores, 15 GB",

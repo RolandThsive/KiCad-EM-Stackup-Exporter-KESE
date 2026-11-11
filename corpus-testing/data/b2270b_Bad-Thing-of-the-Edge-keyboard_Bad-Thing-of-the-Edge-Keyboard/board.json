@@ -1,7 +1,4 @@
 {
- "rank": 1920,
- "score": 800,
- "level": "LOW",
  "layers": 2,
  "parts": 53,
  "big": 0,
@@ -15,6 +12,7 @@
  "project": "Pakequis/Bad-Thing-of-the-Edge-keyboard",
  "name": "Bad Thing of the Edge Keyboard",
  "license": "MIT (MIT License)",
+ "license_checked": "2026-11-08",
  "zip": "part16_of_17",
  "features": {
   "through_vias": 99,

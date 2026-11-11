@@ -1,7 +1,4 @@
 {
- "rank": 190,
- "score": 12004,
- "level": "VERY HIGH",
  "layers": 4,
  "parts": 287,
  "big": 0,
@@ -15,6 +12,7 @@
  "project": "kangyuzhe666/zynq7010-7020_ad9363",
  "name": "ZYNQ7020_AD9364_V2",
  "license": "Apache-2.0 (Apache License 2.0)",
+ "license_checked": "2026-11-08",
  "zip": "part08_of_17",
  "features": {
   "through_vias": 1628,

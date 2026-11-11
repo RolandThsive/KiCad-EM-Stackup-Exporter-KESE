@@ -3,7 +3,10 @@
  "project": "Aharoni-Lab/Miniscope-v4",
  "path": "Aharoni-Lab__Miniscope-v4/Development Files/Individual PCBs/Miniscope-v4-PYTHON480/KiCad/Miniscope-v4-PYTHON480.kicad_pcb",
  "license": "GPL-3.0 (GNU GPL v3.0)",
- "rank": 1866,
+ "license_checked": "2026-11-08",
+ "rank": 1861,
+ "score": 863,
+ "level": "LOW",
  "complexity": {
   "grade": 282,
   "size": 237,
@@ -19,8 +22,23 @@
  "bad_design": null,
  "chart_alt": "Miniscope-v4-PYTHON480: stages 4 and 6 take 46% to 82% of a run. Simulation, GLB takes 5.8 s. Simulation, STEP takes 7.2 s. Simulation, STL takes 5.6 s. Simulation, OBJ takes 9.0 s. Visual, GLB takes 8.6 s. Visual, OBJ takes 10 s",
  "rerun": {},
+ "tested": [
+  "2026-11-09",
+  "2026-11-09"
+ ],
  "kese": [
   "22fd70c"
+ ],
+ "kese_version": [
+  "2.4.0"
+ ],
+ "runs": [
+  [
+   "corpus",
+   "2026-11-09",
+   11000000000.0,
+   5400.0
+  ]
  ],
  "machine": {
   "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz, 4 cores, 15 GB",

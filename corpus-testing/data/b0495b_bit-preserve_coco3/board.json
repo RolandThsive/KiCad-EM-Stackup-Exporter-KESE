@@ -1,7 +1,4 @@
 {
- "rank": 432,
- "score": 6349,
- "level": "HIGH",
  "layers": 2,
  "parts": 207,
  "big": 1,
@@ -15,6 +12,7 @@
  "project": "baldengineer/bit-preserve",
  "name": "coco3",
  "license": "CC-BY-4.0 (Creative Commons Attribution 4.0), in LICENSE.md",
+ "license_checked": "2026-11-08",
  "zip": "part11_of_17",
  "features": {
   "through_vias": 236,

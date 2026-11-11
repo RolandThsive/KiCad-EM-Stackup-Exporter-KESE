@@ -3,7 +3,10 @@
  "project": "andrewpaterson/658-Computer",
  "path": "andrewpaterson__658-Computer/Kicad/Computer/Main/Clock LTC6903/Clock LTC6903.kicad_pcb",
  "license": "No license found",
- "rank": 2937,
+ "license_checked": "2026-11-08",
+ "rank": 2929,
+ "score": 15,
+ "level": "SIMPLE",
  "complexity": {
   "grade": 156,
   "size": 86,
@@ -21,8 +24,23 @@
  "bad_design": null,
  "chart_alt": "Clock LTC6903: stages 4 and 6 take 40% to 69% of a run. Simulation, GLB takes 1.4 s. Simulation, STEP takes 2.2 s. Simulation, STL takes 1.5 s. Simulation, OBJ takes 1.7 s. Visual, GLB takes 1.4 s. Visual, OBJ takes 1.7 s",
  "rerun": {},
+ "tested": [
+  "2026-11-09",
+  "2026-11-09"
+ ],
  "kese": [
   "22fd70c"
+ ],
+ "kese_version": [
+  "2.4.0"
+ ],
+ "runs": [
+  [
+   "corpus",
+   "2026-11-09",
+   11000000000.0,
+   5400.0
+  ]
  ],
  "machine": {
   "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz, 4 cores, 15 GB",

@@ -3,7 +3,10 @@
  "project": "01GOD/PCB-8-bit-Computer",
  "path": "01GOD__PCB-8-bit-Computer/8 Bit Computer.kicad_pcb",
  "license": "No license found",
+ "license_checked": "2026-11-08",
  "rank": 475,
+ "score": 5623,
+ "level": "HIGH",
  "complexity": {
   "grade": 254,
   "size": 219,
@@ -18,8 +21,23 @@
  "bad_design": null,
  "chart_alt": "8 Bit Computer: stages 4 and 6 take 56% to 87% of a run. Simulation, GLB takes 84 s. Simulation, STEP takes 2 min. Simulation, STL takes 87 s. Simulation, OBJ takes 2 min. Visual, GLB takes 2 min. Visual, OBJ takes 3 min",
  "rerun": {},
+ "tested": [
+  "2026-11-09",
+  "2026-11-09"
+ ],
  "kese": [
   "22fd70c"
+ ],
+ "kese_version": [
+  "2.4.0"
+ ],
+ "runs": [
+  [
+   "corpus",
+   "2026-11-09",
+   11000000000.0,
+   5400.0
+  ]
  ],
  "machine": {
   "cpu": "Intel(R) Xeon(R) Processor @ 2.30GHz, 4 cores, 15 GB",

@@ -1,7 +1,4 @@
 {
- "rank": 1566,
- "score": 1262,
- "level": "MEDIUM",
  "layers": 6,
  "parts": 225,
  "big": 1,
@@ -15,6 +12,7 @@
  "project": "osrf/ovc",
  "name": "mobof",
  "license": "Apache-2.0 (Apache License 2.0)",
+ "license_checked": "2026-11-08",
  "zip": "part15_of_17",
  "features": {
   "through_vias": 93,

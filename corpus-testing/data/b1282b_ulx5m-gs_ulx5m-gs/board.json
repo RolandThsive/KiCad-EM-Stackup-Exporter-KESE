@@ -1,7 +1,4 @@
 {
- "rank": 220,
- "score": 11034,
- "level": "VERY HIGH",
  "layers": 6,
  "parts": 287,
  "big": 2,
@@ -15,9 +12,10 @@
  "project": "intergalaktik/ulx5m-gs",
  "name": "ulx5m-gs",
  "license": "CERN-OHL-S-2.0 (CERN Open Hardware Licence v2, Strongly Reciprocal), in LICENSE.md",
+ "license_checked": "2026-11-08",
  "zip": "part09_of_17",
  "features": {
-  "through_vias": 1708,
+  "through_vias": 854,
   "blind_buried_vias": 0,
   "microvias": 0,
   "backdrills": 0,

@@ -1,7 +1,4 @@
 {
- "rank": 1563,
- "score": 1269,
- "level": "MEDIUM",
  "layers": 4,
  "parts": 89,
  "big": 1,
@@ -15,9 +12,10 @@
  "project": "rh1tech/frank",
  "name": "zerofrank",
  "license": "GPL-3.0 (GNU GPL v3.0)",
+ "license_checked": "2026-11-08",
  "zip": "part15_of_17",
  "features": {
-  "through_vias": 250,
+  "through_vias": 125,
   "blind_buried_vias": 0,
   "microvias": 0,
   "backdrills": 0,

@@ -1,7 +1,4 @@
 {
- "rank": 2072,
- "score": 626,
- "level": "LOW",
  "layers": 2,
  "parts": 42,
  "big": 0,
@@ -15,6 +12,7 @@
  "project": "issuiuc/iss-pcb",
  "name": "L1-Altimeter",
  "license": "No license found",
+ "license_checked": "2026-11-08",
  "zip": "part16_of_17",
  "features": {
   "through_vias": 44,

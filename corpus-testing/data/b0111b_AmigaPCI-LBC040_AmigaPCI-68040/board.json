@@ -1,7 +1,4 @@
 {
- "rank": 415,
- "score": 6581,
- "level": "HIGH",
  "layers": 6,
  "parts": 126,
  "big": 2,
@@ -15,9 +12,10 @@
  "project": "AmigaPCI/AmigaPCI-LBC040",
  "name": "AmigaPCI 68040",
  "license": "No license found",
+ "license_checked": "2026-11-08",
  "zip": "part11_of_17",
  "features": {
-  "through_vias": 1126,
+  "through_vias": 563,
   "blind_buried_vias": 0,
   "microvias": 0,
   "backdrills": 0,

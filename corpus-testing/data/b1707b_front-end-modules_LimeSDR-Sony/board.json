@@ -1,7 +1,4 @@
 {
- "rank": 777,
- "score": 3524,
- "level": "HIGH",
  "layers": 6,
  "parts": 244,
  "big": 1,
@@ -15,6 +12,7 @@
  "project": "myriadrf/front-end-modules",
  "name": "LimeSDR_Sony",
  "license": "CC-BY-3.0 (Creative Commons Attribution 3.0), in LimeSDR_PA_LNA/hardware/COPYING",
+ "license_checked": "2026-11-08",
  "zip": "part13_of_17",
  "features": {
   "through_vias": 237,

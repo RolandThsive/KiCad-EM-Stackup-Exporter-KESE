@@ -1,7 +1,4 @@
 {
- "rank": 1951,
- "score": 766,
- "level": "LOW",
  "layers": 6,
  "parts": 14,
  "big": 0,
@@ -15,9 +12,10 @@
  "project": "nanosatlab/pocat-hw",
  "name": "PQ_Lat_Board_Deploy",
  "license": "No license found",
+ "license_checked": "2026-11-08",
  "zip": "part16_of_17",
  "features": {
-  "through_vias": 42,
+  "through_vias": 21,
   "blind_buried_vias": 0,
   "microvias": 0,
   "backdrills": 0,

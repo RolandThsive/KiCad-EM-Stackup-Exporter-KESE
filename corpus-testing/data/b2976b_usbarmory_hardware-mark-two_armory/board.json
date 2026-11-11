@@ -1,7 +1,4 @@
 {
- "rank": 83,
- "score": 19790,
- "level": "VERY HIGH",
  "layers": 6,
  "parts": 180,
  "big": 2,
@@ -15,6 +12,7 @@
  "project": "usbarmory/usbarmory",
  "name": "armory",
  "license": "CERN-OHL-1.2 (CERN Open Hardware Licence v1.2), in hardware/mark-one/LICENSE, hardware/mark-two-beta/LICENSE, hardware/mark-two-debug-accessory/LICENSE; CERN-OHL-S-2.0 (CERN Open Hardware Licence v2, Strongly Reciprocal), in hardware/mark-two-lan/LICENSE, hardware/mark-two/LICENSE",
+ "license_checked": "2026-11-08",
  "zip": "part05_of_17",
  "features": {
   "through_vias": 431,

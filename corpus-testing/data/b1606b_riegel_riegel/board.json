@@ -1,7 +1,4 @@
 {
- "rank": 1046,
- "score": 2366,
- "level": "MEDIUM",
  "layers": 4,
  "parts": 89,
  "big": 2,
@@ -15,6 +12,7 @@
  "project": "machdyne/riegel",
  "name": "riegel",
  "license": "The Lone Dynamics Open License, in LICENSE.md: \"Redistribution and use in source, binary or physical forms, with or without modification, is permitted\", provided redistributed source keeps the copyright notice; the README names its exceptions",
+ "license_checked": "2026-11-08",
  "zip": "part14_of_17",
  "features": {
   "through_vias": 157,

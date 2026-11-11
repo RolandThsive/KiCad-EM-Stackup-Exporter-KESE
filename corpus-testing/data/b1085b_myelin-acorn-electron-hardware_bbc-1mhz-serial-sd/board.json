@@ -1,7 +1,4 @@
 {
- "rank": 2261,
- "score": 444,
- "level": "LOW",
  "layers": 2,
  "parts": 13,
  "big": 0,
@@ -15,6 +12,7 @@
  "project": "google/myelin-acorn-electron-hardware",
  "name": "bbc_1mhz_serial_sd",
  "license": "Apache-2.0 (Apache License 2.0)",
+ "license_checked": "2026-11-08",
  "zip": "part16_of_17",
  "features": {
   "through_vias": 19,

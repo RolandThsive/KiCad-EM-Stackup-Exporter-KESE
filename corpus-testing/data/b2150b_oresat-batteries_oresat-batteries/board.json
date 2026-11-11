@@ -1,7 +1,4 @@
 {
- "rank": 598,
- "score": 4541,
- "level": "HIGH",
  "layers": 4,
  "parts": 277,
  "big": 1,
@@ -15,9 +12,10 @@
  "project": "oresat/oresat-batteries",
  "name": "oresat-batteries",
  "license": "As README.md states it: \"Copyright Portland State Aerospace Society 2020. This documentation describes Open Hardware and is licensed under the CERN OHL v. 1.2. You may redistribute and modify this documentation under the terms of the CERN OHL v.1.2. http://ohwr.org/cernohl.\"",
+ "license_checked": "2026-11-08",
  "zip": "part12_of_17",
  "features": {
-  "through_vias": 1132,
+  "through_vias": 566,
   "blind_buried_vias": 0,
   "microvias": 0,
   "backdrills": 0,

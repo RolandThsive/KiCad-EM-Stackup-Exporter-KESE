@@ -1,7 +1,4 @@
 {
- "rank": 945,
- "score": 2717,
- "level": "MEDIUM",
  "layers": 4,
  "parts": 198,
  "big": 1,
@@ -15,6 +12,7 @@
  "project": "issuiuc/iss-pcb",
  "name": "MIDAS-MK1.1",
  "license": "No license found",
+ "license_checked": "2026-11-08",
  "zip": "part14_of_17",
  "features": {
   "through_vias": 273,

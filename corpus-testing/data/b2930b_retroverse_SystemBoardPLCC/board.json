@@ -1,7 +1,4 @@
 {
- "rank": 1676,
- "score": 1108,
- "level": "MEDIUM",
  "layers": 2,
  "parts": 33,
  "big": 1,
@@ -15,9 +12,10 @@
  "project": "transistorfet/retroverse",
  "name": "SystemBoardPLCC",
  "license": "In LICENSE: CERN-OHL-P-2.0 for hardware designs and programmable logic, Apache-2.0 or MIT for other source code, CC-BY-SA-4.0 for artwork and documentation",
+ "license_checked": "2026-11-08",
  "zip": "part15_of_17",
  "features": {
-  "through_vias": 276,
+  "through_vias": 138,
   "blind_buried_vias": 0,
   "microvias": 0,
   "backdrills": 0,

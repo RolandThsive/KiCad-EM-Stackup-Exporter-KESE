@@ -1,7 +1,4 @@
 {
- "rank": 1355,
- "score": 1633,
- "level": "MEDIUM",
  "layers": 2,
  "parts": 44,
  "big": 0,
@@ -15,6 +12,7 @@
  "project": "OLIMEX/ESP32-DevKit-LiPo",
  "name": "ESP32-DevKit-Lipo_Rev_D",
  "license": "Apache-2.0 (Apache License 2.0)",
+ "license_checked": "2026-11-08",
  "zip": "part15_of_17",
  "features": {
   "through_vias": 108,

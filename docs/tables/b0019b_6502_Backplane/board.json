@@ -3,7 +3,10 @@
  "project": "acwright/6502",
  "path": "acwright__6502/Hardware/Backplane/Rev 1.0/Backplane.kicad_pcb",
  "license": "CERN-OHL-P-2.0 (CERN Open Hardware Licence v2, Permissive), in LICENSE",
- "rank": 1862,
+ "license_checked": "2026-11-08",
+ "rank": 1857,
+ "score": 867,
+ "level": "LOW",
  "complexity": {
   "grade": 201,
   "size": 156,
@@ -19,8 +22,23 @@
  "bad_design": null,
  "chart_alt": "Backplane: stages 4 and 6 take 54% to 85% of a run. Simulation, GLB takes 19 s. Simulation, STEP takes 24 s. Simulation, STL takes 19 s. Simulation, OBJ takes 29 s. Visual, GLB takes 25 s. Visual, OBJ takes 30 s",
  "rerun": {},
+ "tested": [
+  "2026-11-09",
+  "2026-11-09"
+ ],
  "kese": [
   "22fd70c"
+ ],
+ "kese_version": [
+  "2.4.0"
+ ],
+ "runs": [
+  [
+   "corpus",
+   "2026-11-09",
+   11000000000.0,
+   5400.0
+  ]
  ],
  "machine": {
   "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz, 4 cores, 15 GB",

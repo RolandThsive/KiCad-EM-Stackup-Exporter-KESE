@@ -1,7 +1,4 @@
 {
- "rank": 2813,
- "score": 50,
- "level": "SIMPLE",
  "layers": 2,
  "parts": 6,
  "big": 0,
@@ -15,6 +12,7 @@
  "project": "bluejayracing/bjr_kicad",
  "name": "ad5689r",
  "license": "No license found",
+ "license_checked": "2026-11-08",
  "zip": "part16_of_17",
  "features": {
   "through_vias": 3,

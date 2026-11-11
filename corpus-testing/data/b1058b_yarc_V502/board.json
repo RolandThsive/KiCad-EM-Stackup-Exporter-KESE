@@ -1,7 +1,4 @@
 {
- "rank": 1543,
- "score": 1311,
- "level": "MEDIUM",
  "layers": 4,
  "parts": 36,
  "big": 0,
@@ -15,6 +12,7 @@
  "project": "gmofishsauce/yarc",
  "name": "V502",
  "license": "In LICENSE: \"Content of the yarc/ subdirectory is licensed as described there (AGPL). Everything else here has NO LICENSE and may not be used for any purpose.\"",
+ "license_checked": "2026-11-08",
  "zip": "part15_of_17",
  "features": {
   "through_vias": 127,

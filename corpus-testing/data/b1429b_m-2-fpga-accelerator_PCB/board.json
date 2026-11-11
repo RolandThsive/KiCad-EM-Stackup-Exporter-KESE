@@ -1,7 +1,4 @@
 {
- "rank": 257,
- "score": 9926,
- "level": "VERY HIGH",
  "layers": 6,
  "parts": 277,
  "big": 4,
@@ -15,9 +12,10 @@
  "project": "kaipereira/m.2-fpga-accelerator",
  "name": "PCB",
  "license": "No license found",
+ "license_checked": "2026-11-08",
  "zip": "part09_of_17",
  "features": {
-  "through_vias": 1658,
+  "through_vias": 829,
   "blind_buried_vias": 0,
   "microvias": 0,
   "backdrills": 0,

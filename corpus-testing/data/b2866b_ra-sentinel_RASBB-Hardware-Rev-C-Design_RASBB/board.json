@@ -1,7 +1,4 @@
 {
- "rank": 53,
- "score": 22710,
- "level": "EXTREME",
  "layers": 8,
  "parts": 689,
  "big": 6,
@@ -15,9 +12,10 @@
  "project": "tobias-dg3yev/ra-sentinel",
  "name": "RASBB",
  "license": "GPL-3.0 (GNU GPL v3.0)",
+ "license_checked": "2026-11-08",
  "zip": "part03_of_17",
  "features": {
-  "through_vias": 4156,
+  "through_vias": 2078,
   "blind_buried_vias": 0,
   "microvias": 0,
   "backdrills": 0,

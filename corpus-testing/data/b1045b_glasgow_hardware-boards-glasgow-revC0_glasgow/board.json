@@ -1,7 +1,4 @@
 {
- "rank": 443,
- "score": 6180,
- "level": "HIGH",
  "layers": 4,
  "parts": 187,
  "big": 2,
@@ -15,6 +12,7 @@
  "project": "GlasgowEmbedded/glasgow",
  "name": "glasgow",
  "license": "0BSD (BSD Zero Clause License)",
+ "license_checked": "2026-11-08",
  "zip": "part11_of_17",
  "features": {
   "through_vias": 325,

@@ -1,7 +1,4 @@
 {
- "rank": 1326,
- "score": 1685,
- "level": "MEDIUM",
  "layers": 4,
  "parts": 42,
  "big": 1,
@@ -15,6 +12,7 @@
  "project": "QuickLogic-Corp/qomu-dev-board",
  "name": "qomu-board",
  "license": "CC-BY-SA-4.0 (Creative Commons Attribution-ShareAlike 4.0)",
+ "license_checked": "2026-11-08",
  "zip": "part15_of_17",
  "features": {
   "through_vias": 0,

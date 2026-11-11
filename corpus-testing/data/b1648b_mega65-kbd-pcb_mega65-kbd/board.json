@@ -1,7 +1,4 @@
 {
- "rank": 1103,
- "score": 2204,
- "level": "MEDIUM",
  "layers": 2,
  "parts": 105,
  "big": 0,
@@ -15,6 +12,7 @@
  "project": "MEGA65/mega65-kbd-pcb",
  "name": "mega65-kbd",
  "license": "As README.md states it: \"This PCB design is (C) Copyright Paul Gardner-Stephen, 2022, and is offered to you under the CC-BY-SA 4.0 license. Open Hardware Certification has been applied for.\"",
+ "license_checked": "2026-11-08",
  "zip": "part14_of_17",
  "features": {
   "through_vias": 210,

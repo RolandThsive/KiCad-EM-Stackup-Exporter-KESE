@@ -3,7 +3,10 @@
  "project": "devnithw/stm32-devboard",
  "path": "devnithw__stm32-devboard/stm32_board.kicad_pcb",
  "license": "No license found",
- "rank": 2334,
+ "license_checked": "2026-11-08",
+ "rank": 2327,
+ "score": 383,
+ "level": "LOW",
  "complexity": {
   "grade": 280,
   "size": 185,
@@ -23,8 +26,23 @@
  "bad_design": null,
  "chart_alt": "stm32_board: stages 4 and 6 take 50% to 79% of a run. Simulation, GLB takes 3.6 s. Simulation, STEP takes 5.1 s. Simulation, STL takes 3.7 s. Simulation, OBJ takes 5.6 s. Visual, GLB takes 4.9 s. Visual, OBJ takes 5.4 s",
  "rerun": {},
+ "tested": [
+  "2026-11-09",
+  "2026-11-09"
+ ],
  "kese": [
   "22fd70c"
+ ],
+ "kese_version": [
+  "2.4.0"
+ ],
+ "runs": [
+  [
+   "corpus",
+   "2026-11-09",
+   11000000000.0,
+   5400.0
+  ]
  ],
  "machine": {
   "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz, 4 cores, 15 GB",

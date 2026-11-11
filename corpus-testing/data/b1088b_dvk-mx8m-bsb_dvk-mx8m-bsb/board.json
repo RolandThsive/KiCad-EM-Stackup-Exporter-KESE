@@ -1,7 +1,4 @@
 {
- "rank": 48,
- "score": 23371,
- "level": "EXTREME",
  "layers": 6,
  "parts": 651,
  "big": 1,
@@ -15,6 +12,7 @@
  "project": "gralco/dvk-mx8m-bsb",
  "name": "dvk-mx8m-bsb",
  "license": "GPL-3.0 (GNU GPL v3.0)",
+ "license_checked": "2026-11-08",
  "zip": "part03_of_17",
  "features": {
   "through_vias": 1474,

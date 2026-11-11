@@ -1,7 +1,4 @@
 {
- "rank": 1150,
- "score": 2061,
- "level": "MEDIUM",
  "layers": 4,
  "parts": 198,
  "big": 0,
@@ -15,9 +12,10 @@
  "project": "nalgonda-tiger/vohm",
  "name": "NewAudio_System",
  "license": "No license found",
+ "license_checked": "2026-11-08",
  "zip": "part14_of_17",
  "features": {
-  "through_vias": 376,
+  "through_vias": 188,
   "blind_buried_vias": 0,
   "microvias": 0,
   "backdrills": 0,

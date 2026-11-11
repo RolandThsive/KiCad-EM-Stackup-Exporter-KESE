@@ -1,7 +1,4 @@
 {
- "rank": 1451,
- "score": 1475,
- "level": "MEDIUM",
  "layers": 4,
  "parts": 19,
  "big": 0,
@@ -15,6 +12,7 @@
  "project": "olvint/CM4-NAS-MiniPCIE",
  "name": "CM4_2",
  "license": "No license found",
+ "license_checked": "2026-11-08",
  "zip": "part15_of_17",
  "features": {
   "through_vias": 132,

@@ -1,7 +1,4 @@
 {
- "rank": 556,
- "score": 4863,
- "level": "HIGH",
  "layers": 4,
  "parts": 107,
  "big": 2,
@@ -15,6 +12,7 @@
  "project": "medhyal/ecp5-dev-board",
  "name": "ecp5-dev-board",
  "license": "No license found",
+ "license_checked": "2026-11-08",
  "zip": "part12_of_17",
  "features": {
   "through_vias": 336,

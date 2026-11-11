@@ -3,7 +3,10 @@
  "project": "DangerousPrototypes/BusPirate5-hardware",
  "path": "DangerousPrototypes__BusPirate5-hardware/bus_pirate_pcb/6-REV2B/6-REV2b.kicad_pcb",
  "license": "MIT (MIT License)",
+ "license_checked": "2026-11-08",
  "rank": 624,
+ "score": 4358,
+ "level": "HIGH",
  "complexity": {
   "grade": 387,
   "size": 267,
@@ -25,8 +28,23 @@
  "bad_design": null,
  "chart_alt": "6-REV2b: stages 4 and 6 take 58% to 84% of a run. Simulation, GLB takes 29 s. Simulation, STEP takes 35 s. Simulation, STL takes 28 s. Simulation, OBJ takes 42 s. Visual, GLB takes 40 s. Visual, OBJ takes 50 s",
  "rerun": {},
+ "tested": [
+  "2026-11-09",
+  "2026-11-09"
+ ],
  "kese": [
   "22fd70c"
+ ],
+ "kese_version": [
+  "2.4.0"
+ ],
+ "runs": [
+  [
+   "corpus",
+   "2026-11-09",
+   11000000000.0,
+   5400.0
+  ]
  ],
  "machine": {
   "cpu": "Intel(R) Xeon(R) Processor @ 2.30GHz, 4 cores, 15 GB",

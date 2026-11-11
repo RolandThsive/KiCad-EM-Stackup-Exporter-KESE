@@ -1,7 +1,4 @@
 {
- "rank": 3098,
- "score": 0,
- "level": "SIMPLE",
  "layers": 2,
  "parts": 2,
  "big": 0,
@@ -15,6 +12,7 @@
  "project": "eez-open/eez-bb3plus",
  "name": "DIB2 USB adapter front mask",
  "license": "TAPR-OHL-1.0 (TAPR Open Hardware License), in LICENSE.TXT",
+ "license_checked": "2026-11-08",
  "zip": "part16_of_17",
  "features": {
   "through_vias": 0,

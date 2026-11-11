@@ -1,7 +1,4 @@
 {
- "rank": 1500,
- "score": 1392,
- "level": "MEDIUM",
  "layers": 4,
  "parts": 38,
  "big": 1,
@@ -15,9 +12,10 @@
  "project": "open-ephys/low-profile-headstage-64ch-3d",
  "name": "low-profile-headstage-64ch-3d",
  "license": "As README.md states it: \"This work is licensed under Creative Commons Attribution-NonCommercial-ShareAlike 4.0.\"",
+ "license_checked": "2026-11-08",
  "zip": "part15_of_17",
  "features": {
-  "through_vias": 190,
+  "through_vias": 95,
   "blind_buried_vias": 0,
   "microvias": 0,
   "backdrills": 0,

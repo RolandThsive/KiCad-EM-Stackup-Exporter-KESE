@@ -1,7 +1,4 @@
 {
- "rank": 389,
- "score": 6950,
- "level": "HIGH",
  "layers": 2,
  "parts": 407,
  "big": 2,
@@ -15,6 +12,7 @@
  "project": "rene-dev/stmbl",
  "name": "stmbl_4.0",
  "license": "GPL-3.0 (GNU GPL v3.0)",
+ "license_checked": "2026-11-08",
  "zip": "part11_of_17",
  "features": {
   "through_vias": 1076,

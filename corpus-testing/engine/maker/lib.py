@@ -1,7 +1,7 @@
 """Builds docs/wiki/Corpus-Testing.md and its charts from the workers' results (results/W*.jsonl).
     python3 build.py <results dir> <repo>
 The prose that depends on the results is written from the numbers; read the page through after each build."""
-import collections, json, math, re, statistics, sys
+import collections, itertools, json, math, re, statistics, sys
 from pathlib import Path
 import matplotlib; matplotlib.use("Agg")
 import matplotlib.pyplot as plt
@@ -12,8 +12,11 @@ RES = Path(sys.argv[1]); REPO = Path(sys.argv[2]); IMG = REPO / "docs/images"; W
 RAW = "https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images"
 DATA = Path(HERE).parents[1] / "data"
 N = 23  # the page's number in the wiki's order
-for f in fm.findSystemFonts():
-    if "/inter/Inter-" in f: fm.fontManager.addfont(f)
+_INTER = [f for f in fm.findSystemFonts() if "/inter/Inter-" in f]
+if not _INTER:                     # never a chart in another font: matplotlib would fall back to one without a word
+    sys.exit("::error::The Inter font is not installed (Debian and Ubuntu: fonts-inter), so no chart can be drawn in it. "
+             "Install it and run again.")
+for f in _INTER: fm.fontManager.addfont(f)
 plt.rcParams["font.family"] = "Inter"
 BG, INK, SOFT, GRID = "#fcfcfb", "#1a1a1a", "#5f5e5b", "#e4e3df"
 BARS = [("1–2 read", ("read", "collect"), "#2a78d6"), ("3 resolve", ("resolve",), "#eb6834"),
@@ -55,25 +58,133 @@ def anchor(title):
     return "#" + re.sub(r"[^a-z0-9 -]", "", title.lower()).replace(" ", "-")
 
 
-# ---- the corpus: every board's numbers from the complexity list
 # ---- the boards and their runs: one folder per board in data/, b<number>b_<repo>_<board> (named as its tables folder)
-#   board.json  the board's counts from its .kicad_pcb (tracks, vias, parts, chips, layers ...), its KESE features,
-#               its path and zip, and what makes it a bad design according to KESE, if it is one
-#   runs.jsonl  every run of the board in order, each with its date and source: "corpus" (the first runs; a later
-#               one replaces an earlier one), or "fixed", "cap" or "nocap" (run again with the fixes to KESE, with
-#               the memory cap raised to 14.5 GB, or with no memory cap: it takes the place of a run that failed,
+#   board.json  given by hand: the board's name, project (owner/repo), path (<owner>__<repo>/<path in the repo>),
+#               license and the day it was looked up (license_checked); its counts from its .kicad_pcb (layers, parts,
+#               big, bga, tracks, vias, kicad, notes: see score.py), its KESE features, and what makes it a bad design
+#               according to KESE, if it is one
+#   runs.jsonl  given by hand: every run of the board in order, each with its date, its memory cap and time limit (cap,
+#               time_limit; none: null), the machine and the KESE version and commit it ran on, and its source: "corpus"
+#               (the first runs; a later one replaces an earlier one), or "fixed", "cap" or "nocap" (run again with the
+#               fixes to KESE, with a higher memory cap, or with no memory cap: it takes the place of a run that failed,
 #               when it passes; a run that fails again keeps the first result)
-BOARDS, FEAT, BAD_DESIGN, SLUG, RUNS = {}, {}, {}, {}, {}
+# Worked out here, never given: a board's name, when board.json has none (its file's name); its folder's name, for a
+# new board (<repo>_<board>, with -2, -3 ... after it when another board has that name already); its score and level
+# (score.py); and its rank, 1 the most complex, by score. A data folder that cannot be read is left out with a message
+# saying why (SKIPPED), never a crash.
+sys.path.insert(0, HERE)
+import score as SCORE
+
+NEEDED = ("project", "path", "layers", "parts", "big", "bga", "tracks", "vias", "kicad")
+COUNTS = ("layers", "parts", "big", "bga", "tracks", "vias", "kicad")
+RUN_NEEDED = ("mode", "format", "rc", "timeout", "verifier", "stages", "files", "log", "machine", "date")
+MACHINE_NEEDED = ("cpu", "python", "shapely", "geos", "kese")
+_clean = lambda s: re.sub(r"-+", "-", re.sub(r"[^A-Za-z0-9-]+", "-", s)).strip("-")
+_PREFIX = re.compile(r"b\d+b_(.+)")
+_DATE = re.compile(r"\d{4}-\d{2}-\d{2}")
+
+
+def _problem(b):
+    """What is wrong with a board.json, or None."""
+    if not isinstance(b, dict): return "board.json is not a JSON object"
+    miss = [k for k in NEEDED if k not in b]
+    if miss: return f"board.json has no {', '.join(miss)}"
+    bad = [k for k in COUNTS if not isinstance(b[k], int) or isinstance(b[k], bool) or b[k] < 0]
+    if bad: return f"board.json: {', '.join(bad)} must be {'a whole number' if len(bad) == 1 else 'whole numbers'}, 0 or more"
+    if not isinstance(b["project"], str) or not re.fullmatch(r"[^/\s]+/[^/\s]+", b["project"]):
+        return 'board.json: project must be "owner/repo"'
+    if not isinstance(b["path"], str) or "/" not in b["path"] or not b["path"].endswith(".kicad_pcb"):
+        return "board.json: path must be <owner>__<repo>/<path of the .kicad_pcb file in the repo>"
+    for k in ("name", "notes", "license", "license_checked"):
+        if k in b and not isinstance(b[k], str): return f"board.json: {k} must be text"
+    if "license_checked" in b and not _DATE.fullmatch(b["license_checked"]): return "board.json: license_checked must be YYYY-MM-DD"
+    if "features" in b and not (isinstance(b["features"], dict) and all(isinstance(v, int) for v in b["features"].values())):
+        return "board.json: features must map each feature to a whole number"
+    return None
+
+
+def _runs(d):
+    """The runs of a data folder, and what is wrong with them, if anything."""
+    f = d / "runs.jsonl"
+    if not f.is_file(): return [], None
+    out = []
+    for i, l in enumerate(f.read_text().splitlines(), 1):
+        if not l.strip(): continue
+        try:
+            x = json.loads(l)
+        except ValueError as e:
+            return [], f"runs.jsonl line {i} is not valid JSON ({e})"
+        miss = [k for k in RUN_NEEDED if k not in x] if isinstance(x, dict) else ["anything"]
+        if not miss and isinstance(x["machine"], dict): miss = [f"machine.{k}" for k in MACHINE_NEEDED if k not in x["machine"]]
+        if miss: return [], f"runs.jsonl line {i} has no {', '.join(miss)}"
+        if f"{x['mode']}/{x['format']}" not in KINDS:
+            return [], f"runs.jsonl line {i}: {x['mode']}/{x['format']} is not one of the six modes and formats"
+        if not _DATE.fullmatch(str(x["date"])): return [], f"runs.jsonl line {i}: date must be YYYY-MM-DD"
+        if not (isinstance(x["stages"], list) and all(isinstance(s, list) and len(s) == 2 and isinstance(s[0], str)
+                                                      and isinstance(s[1], (int, float)) for s in x["stages"])):
+            return [], f'runs.jsonl line {i}: stages must be a list of ["stage", seconds]'
+        if not isinstance(x["files"], dict) or not isinstance(x["verifier"], str) or not isinstance(x["log"], str):
+            return [], f"runs.jsonl line {i}: files must be an object, verifier and log text"
+        if not (x["rc"] is None or isinstance(x["rc"], int)): return [], f"runs.jsonl line {i}: rc must be a whole number or null"
+        if x.get("source", "corpus") not in ("corpus", "fixed", "cap", "nocap"):
+            return [], f"runs.jsonl line {i}: source must be corpus, fixed, cap or nocap"
+        out.append(x)
+    return out, None
+
+
+_items, SKIPPED = [], []
 for _d in sorted(p for p in DATA.iterdir() if (p / "board.json").is_file()):
-    _b = json.loads((_d / "board.json").read_text())
-    _r = _b["rank"]
+    try:
+        _b = json.loads((_d / "board.json").read_text())
+    except (ValueError, UnicodeDecodeError) as e:
+        SKIPPED.append(f"{_d.name}: board.json is not valid JSON ({e})"); continue
+    _why = _problem(_b)
+    if _why is None:
+        _rs, _why = _runs(_d)
+    if _why:
+        SKIPPED.append(f"{_d.name}: {_why}"); continue
+    _b.setdefault("name", Path(_b["path"]).stem)
+    _b.setdefault("notes", "")
+    _b.pop("rank", None); _b.pop("score", None); _b.pop("level", None)    # worked out below, never taken as given
+    _items.append([_d, _b, _rs])
+
+# a new board (a folder with no b<number>b_ prefix) is named <repo>_<board>; a second board of that name gets -2, a
+# third -3, and so on (names compared without regard to case, as the wiki's page names are)
+_taken = {_PREFIX.fullmatch(d.name).group(1).lower() for d, *_ in _items if _PREFIX.fullmatch(d.name)}
+_have = {(b["project"], b["path"]): d.name for d, b, _ in _items if _PREFIX.fullmatch(d.name)}
+for _it in sorted((it for it in _items if not _PREFIX.fullmatch(it[0].name)),      # in the order they will be numbered
+                  key=lambda it: (it[1]["project"].lower(), it[1]["path"].lower(), it[0].name)):
+    _d, _b, _ = _it
+    if (_b["project"], _b["path"]) in _have:
+        SKIPPED.append(f"{_d.name}: the same board as {_have[(_b['project'], _b['path'])]}, already in the corpus")
+        _items.remove(_it); continue
+    _base = f"{_clean(_b['project'].split('/')[-1])}_{_clean(_b['name']) or 'board'}"
+    _key = next(n for n in (_base if k == 1 else f"{_base}-{k}" for k in itertools.count(1))
+                if n.lower() not in _taken and (n == _d.name or not (DATA / n).exists()))
+    _taken.add(_key.lower())
+    if _d.name != _key:
+        _d.rename(DATA / _key)
+        _it[0] = DATA / _key
+    _have[(_b["project"], _b["path"])] = _key
+
+for _d, _b, _ in _items:
+    _b["score"] = SCORE.score(_b)
+    _b["level"] = SCORE.level(_b["score"])
+_items.sort(key=lambda x: (-x[1]["score"], x[1]["project"].lower(), x[1]["path"].lower()))
+
+BOARDS, FEAT, BAD_DESIGN, SLUG, FOLDER, RUNS = {}, {}, {}, {}, {}, {}
+for _r, (_d, _b, _rs) in enumerate(_items, 1):
+    _b["rank"] = _r
     BOARDS[_r] = _b
     FEAT[_r] = _b.get("features") or {}
     if _b.get("bad_design"): BAD_DESIGN[_r] = _b["bad_design"]
-    _m = re.fullmatch(r"b\d+b_(.+)", _d.name)
+    _m = _PREFIX.fullmatch(_d.name)
     SLUG[_r] = _m.group(1) if _m else _d.name
-    _f = _d / "runs.jsonl"
-    RUNS[_r] = [json.loads(l) for l in open(_f) if l.strip()] if _f.is_file() else []
+    FOLDER[_r] = _d.name                              # its tables and images folders take this name too
+    RUNS[_r] = _rs
+    for _x in RUNS[_r]:                               # a run is the board's by its folder; the tag it ran with is not kept
+        _x["rank"], _x["tag"] = _r, f"{_r:04d}/{_x['mode']}/{_x['format']}"
+        _x.setdefault("source", "corpus")
 assert len(set(SLUG.values())) == len(SLUG)
 
 R = {}
@@ -108,18 +219,40 @@ versions = collections.Counter((d["machine"]["shapely"], d["machine"]["geos"], d
 kese = {d["machine"]["kese"] for d in R.values()}
 
 
+def ram(d):
+    """The GB of RAM of the machine a run was on. The runner notes what the system reports (the cpu entry ends
+    "4 cores, 15 GB"), a little under the RAM fitted, so this rounds it up to the next 4 GB."""
+    m = re.search(r"(\d+) GB", d["machine"]["cpu"])
+    return 4 * math.ceil(int(m.group(1)) / 4) if m else None
+
+
+gb = lambda v: f"{v / 1e9:g} GB"                     # a memory cap: 11 GB, 14.5 GB
+
+
+def limits_text(d):
+    """A run's memory cap and time limit, in words."""
+    cap, tl = d.get("cap"), d.get("time_limit")
+    c = f"a {gb(cap)} memory cap" if isinstance(cap, (int, float)) and cap != float("inf") else "no memory cap"
+    return c + " and " + (f"a {tl / 60:g}-minute time limit" if tl else "no time limit")
+
+
+def machine_of(d):
+    return f"a {ram(d)} GB machine" if ram(d) else "the test machine"
+
+
 def outcome(d):
     if d is None: return "not run"
-    if d["timeout"]: return "time-out (90 minutes)"
-    if d.get("capped"): return (f"exceeded {size(d.get('cap') or 11e9)} on a 15 GB machine (stopped there, not a KESE failure); "
+    if d["timeout"]:
+        return f"time-out ({d['time_limit'] / 60:g} minutes)" if d.get("time_limit") else "time-out"
+    if d.get("capped"): return (f"exceeded {gb(d.get('cap') or 11e9)} on {machine_of(d)} (stopped there, not a KESE failure); "
                                 "it will be run again on a machine with more memory")
     if d.get("runner_died"): return "interrupted: the test machine restarted during the run (not a KESE result)"
-    if d["rc"] == -9: return "ran out of memory on a 15 GB machine; it will be run again on a machine with more memory"
+    if d["rc"] == -9: return f"ran out of memory on {machine_of(d)}; it will be run again on a machine with more memory"
     if d["rc"] != 0:
         err = next((l for l in reversed(d["log"].splitlines()) if l.strip()), "")
         return "error: " + re.sub(r"^\w+Error: ", "", err).strip()
     if "PASS" in d["verifier"] and d.get("rerun") == "fixed": return "PASS (run again with the corpus fixes)"
-    if "PASS" in d["verifier"] and d.get("rerun") == "cap": return "PASS (run again with a 14.5 GB memory cap)"
+    if "PASS" in d["verifier"] and d.get("rerun") == "cap": return f"PASS (run again with a {gb(d['cap'])} memory cap)"
     if "PASS" in d["verifier"] and d.get("rerun") == "nocap": return "PASS (run again with no memory cap)"
     if "PASS" in d["verifier"]: return "PASS"
     return d["verifier"].replace("Verifier: ", "Verifier ") or "no Verifier line"
@@ -267,7 +400,7 @@ def board_parts(b):
         lo, hi = round(min(a)), round(max(a))
         head = f"{b['name']}: {what} {lo}% to {hi}% of a run" if lo != hi else f"{b['name']}: {what} {lo}% of a run"
         if len(head) > 70: head = head.split(": ", 1)[1].capitalize()
-        cdir = IMG / board_dir(REPO / "docs" / "tables", slug(b)).name   # named as its tables folder
+        cdir = IMG / FOLDER[b["rank"]]             # named as its data folder
         if not (cdir / "stages.webp").exists():   # a board's chart is drawn once
             cdir.mkdir(parents=True, exist_ok=True)
             stacked([(lab, d["bars"]) for lab, d in okrs], head, SUB, f"{cdir.name}/stages", label_w=0.24)
@@ -307,13 +440,16 @@ def board_parts(b):
         out.append(f"| Bad&nbsp;design | Bad design according to KESE: copper of two nets on top of each other in the file, "
                    f"a short KiCad's DRC reports; {BAD_DESIGN[b['rank']]}. KESE models what the file says, so the Verifier "
                    f"rightly finds the two nets' solids overlapping |")
-    again = [(lab, rs[k]["rerun"]) for k, lab in MODES if rs[k] and rs[k].get("rerun")]
+    again = [(k, lab, rs[k]["rerun"]) for k, lab in MODES if rs[k] and rs[k].get("rerun")]
+    first = lambda k: next((x for x in RUNS[b["rank"]] if x["source"] == "corpus" and f"{x['mode']}/{x['format']}" == k), {})
     for why in ("fixed", "cap", "nocap"):
-        labs = [lab for lab, w in again if w == why]
-        if labs:
+        ks = [(k, lab) for k, lab, w in again if w == why]
+        if ks:
+            d = rs[ks[0][0]]
             how = {"fixed": "with fixes to KESE made after the corpus run, and passed",
-                   "cap": "with the memory cap raised from 11 GB to 14.5 GB, and passed",
-                   "nocap": "with no memory cap and no time limit (swap added to the 15 GB machine), and passed"}[why]
-            out.append(f"| Run&nbsp;again | {'; '.join(labs)}: failed in the corpus run, run again {how} |")
+                   "cap": f"with the memory cap raised from {gb(first(ks[0][0]).get('cap') or 11e9)} to {gb(d['cap'])}, and passed",
+                   "nocap": f"with {limits_text(d)} (swap added to {machine_of(d)}), and passed"}[why]
+            out.append(f"| Run&nbsp;again | {'; '.join(lab for _, lab in ks)}: failed in the corpus run, run again {how} |")
+    again = [(lab, w) for _, lab, w in again]
     return dict(stages=stages, facts="\n".join(out), files=board_files_table(b), alt=alt, ok=not bad,
                 done=all(rs.values()), rerun={w: [lab for lab, x in again if x == w] for w in ("fixed", "cap", "nocap")})

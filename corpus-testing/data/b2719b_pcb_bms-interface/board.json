@@ -1,7 +1,4 @@
 {
- "rank": 2559,
- "score": 206,
- "level": "SIMPLE",
  "layers": 2,
  "parts": 11,
  "big": 0,
@@ -15,9 +12,10 @@
  "project": "sufst/pcb",
  "name": "bms-interface",
  "license": "GPL-3.0 (GNU GPL v3.0)",
+ "license_checked": "2026-11-08",
  "zip": "part16_of_17",
  "features": {
-  "through_vias": 64,
+  "through_vias": 32,
   "blind_buried_vias": 0,
   "microvias": 0,
   "backdrills": 0,

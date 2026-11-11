@@ -1,7 +1,4 @@
 {
- "rank": 882,
- "score": 2984,
- "level": "MEDIUM",
  "layers": 2,
  "parts": 10,
  "big": 0,
@@ -15,9 +12,10 @@
  "project": "cetola/reform-next-mirror",
  "name": "Trackpad_IQS9150",
  "license": "As README.md states it: \"All hardware design work in this repository is © 2024 MNT Research GmbH, Berlin, Germany, and contributors (see Credits).\"",
+ "license_checked": "2026-11-08",
  "zip": "part13_of_17",
  "features": {
-  "through_vias": 1266,
+  "through_vias": 633,
   "blind_buried_vias": 0,
   "microvias": 0,
   "backdrills": 0,

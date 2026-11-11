@@ -1,7 +1,4 @@
 {
- "rank": 66,
- "score": 21966,
- "level": "EXTREME",
  "layers": 6,
  "parts": 765,
  "big": 2,
@@ -15,9 +12,10 @@
  "project": "EEVengers/ts_hardware_archive",
  "name": "Thunderscope_Rev5.2",
  "license": "CERN-OHL-P-2.0 (CERN Open Hardware Licence v2, Permissive)",
+ "license_checked": "2026-11-08",
  "zip": "part04_of_17",
  "features": {
-  "through_vias": 7620,
+  "through_vias": 3810,
   "blind_buried_vias": 0,
   "microvias": 0,
   "backdrills": 0,

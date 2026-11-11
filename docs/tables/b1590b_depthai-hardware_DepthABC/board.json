@@ -3,7 +3,10 @@
  "project": "luxonis/depthai-hardware",
  "path": "luxonis__depthai-hardware/OSHW_KiCad_Community/Reference Designs (In Progress)/DepthABC/DepthABC.kicad_pcb",
  "license": "MIT (MIT License), in LICENSE",
+ "license_checked": "2026-11-08",
  "rank": 407,
+ "score": 6715,
+ "level": "HIGH",
  "complexity": {
   "grade": 315,
   "size": 225,
@@ -23,8 +26,23 @@
  "bad_design": null,
  "chart_alt": "DepthABC: stages 4 and 6 take 50% to 80% of a run. Simulation, GLB takes 23 s. Simulation, STEP takes 29 s. Simulation, STL takes 23 s. Simulation, OBJ takes 35 s. Visual, GLB takes 36 s. Visual, OBJ takes 45 s",
  "rerun": {},
+ "tested": [
+  "2026-11-09",
+  "2026-11-09"
+ ],
  "kese": [
   "22fd70c"
+ ],
+ "kese_version": [
+  "2.4.0"
+ ],
+ "runs": [
+  [
+   "corpus",
+   "2026-11-09",
+   11000000000.0,
+   5400.0
+  ]
  ],
  "machine": {
   "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz, 4 cores, 15 GB",

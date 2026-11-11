@@ -1,7 +1,4 @@
 {
- "rank": 2916,
- "score": 21,
- "level": "SIMPLE",
  "layers": 2,
  "parts": 6,
  "big": 0,
@@ -15,6 +12,7 @@
  "project": "oresat/reaction-wheels",
  "name": "Edison_Motor_Servo",
  "license": "No license found",
+ "license_checked": "2026-11-08",
  "zip": "part16_of_17",
  "features": {
   "through_vias": 0,

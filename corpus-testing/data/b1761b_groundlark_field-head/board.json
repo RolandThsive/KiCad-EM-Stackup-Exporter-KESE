@@ -1,7 +1,4 @@
 {
- "rank": 2666,
- "score": 128,
- "level": "SIMPLE",
  "layers": 2,
  "parts": 34,
  "big": 1,
@@ -15,6 +12,7 @@
  "project": "naturalhazardscience/groundlark",
  "name": "field_head",
  "license": "MIT (MIT License)",
+ "license_checked": "2026-11-08",
  "zip": "part16_of_17",
  "features": {
   "through_vias": 0,

@@ -1,7 +1,4 @@
 {
- "rank": 210,
- "score": 11270,
- "level": "VERY HIGH",
  "layers": 6,
  "parts": 442,
  "big": 2,
@@ -15,9 +12,10 @@
  "project": "antmicro/cm4-baseboard",
  "name": "cm4-baseboard",
  "license": "Apache-2.0 (Apache License 2.0)",
+ "license_checked": "2026-11-08",
  "zip": "part09_of_17",
  "features": {
-  "through_vias": 2258,
+  "through_vias": 1129,
   "blind_buried_vias": 0,
   "microvias": 0,
   "backdrills": 0,

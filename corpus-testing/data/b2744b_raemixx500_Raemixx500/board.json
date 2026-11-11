@@ -1,7 +1,4 @@
 {
- "rank": 127,
- "score": 15225,
- "level": "VERY HIGH",
  "layers": 2,
  "parts": 362,
  "big": 1,
@@ -15,6 +12,7 @@
  "project": "sukkopera/raemixx500",
  "name": "Raemixx500",
  "license": "As README.md states it: \"The Rämixx500 documentation, including the design itself, is copyright © SukkoPera 2019-2021 and is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License.\"",
+ "license_checked": "2026-11-08",
  "zip": "part06_of_17",
  "features": {
   "through_vias": 902,

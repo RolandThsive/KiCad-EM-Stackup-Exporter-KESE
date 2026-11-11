@@ -1,7 +1,4 @@
 {
- "rank": 151,
- "score": 14093,
- "level": "VERY HIGH",
  "layers": 4,
  "parts": 122,
  "big": 2,
@@ -15,9 +12,10 @@
  "project": "maniekx86/m8sbc-486",
  "name": "homebrew_486",
  "license": "GPL-3.0 (GNU GPL v3.0), in pcb/LICENSE",
+ "license_checked": "2026-11-08",
  "zip": "part07_of_17",
  "features": {
-  "through_vias": 2300,
+  "through_vias": 1150,
   "blind_buried_vias": 0,
   "microvias": 0,
   "backdrills": 0,

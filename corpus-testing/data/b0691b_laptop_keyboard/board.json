@@ -1,7 +1,4 @@
 {
- "rank": 728,
- "score": 3673,
- "level": "HIGH",
  "layers": 2,
  "parts": 208,
  "big": 1,
@@ -15,9 +12,10 @@
  "project": "byrantech/laptop",
  "name": "keyboard",
  "license": "MIT (MIT License)",
+ "license_checked": "2026-11-08",
  "zip": "part13_of_17",
  "features": {
-  "through_vias": 1142,
+  "through_vias": 571,
   "blind_buried_vias": 0,
   "microvias": 0,
   "backdrills": 0,

@@ -1,7 +1,4 @@
 {
- "rank": 1063,
- "score": 2303,
- "level": "MEDIUM",
  "layers": 4,
  "parts": 57,
  "big": 1,
@@ -15,9 +12,10 @@
  "project": "BerkeleyLab/DxP-data-logger",
  "name": "loggerhw_v5.0",
  "license": "CC-BY-NC-4.0 (Creative Commons Attribution-NonCommercial 4.0), in LICENSE.md",
+ "license_checked": "2026-11-08",
  "zip": "part14_of_17",
  "features": {
-  "through_vias": 644,
+  "through_vias": 322,
   "blind_buried_vias": 0,
   "microvias": 0,
   "backdrills": 0,

@@ -1,7 +1,4 @@
 {
- "rank": 896,
- "score": 2925,
- "level": "MEDIUM",
  "layers": 4,
  "parts": 190,
  "big": 0,
@@ -15,9 +12,10 @@
  "project": "issuiuc/iss-pcb",
  "name": "MIDAS-MK2",
  "license": "No license found",
+ "license_checked": "2026-11-08",
  "zip": "part13_of_17",
  "features": {
-  "through_vias": 802,
+  "through_vias": 401,
   "blind_buried_vias": 0,
   "microvias": 0,
   "backdrills": 0,

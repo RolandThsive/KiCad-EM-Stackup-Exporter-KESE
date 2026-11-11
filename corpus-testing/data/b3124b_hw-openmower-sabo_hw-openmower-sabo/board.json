@@ -1,7 +1,4 @@
 {
- "rank": 392,
- "score": 6909,
- "level": "HIGH",
  "layers": 6,
  "parts": 324,
  "big": 0,
@@ -15,9 +12,10 @@
  "project": "xtech/hw-openmower-sabo",
  "name": "hw-openmower-sabo",
  "license": "CC-BY-NC-4.0 (Creative Commons Attribution-NonCommercial 4.0), in LICENSE",
+ "license_checked": "2026-11-08",
  "zip": "part11_of_17",
  "features": {
-  "through_vias": 2354,
+  "through_vias": 1177,
   "blind_buried_vias": 0,
   "microvias": 0,
   "backdrills": 0,

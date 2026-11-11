@@ -3,7 +3,10 @@
  "project": "iansbremner/ReAmiga3000-SMD-for-KICAD",
  "path": "iansbremner__ReAmiga3000-SMD-for-KICAD/REAmiga3000.kicad_pcb",
  "license": "No license found",
+ "license_checked": "2026-11-08",
  "rank": 22,
+ "score": 39437,
+ "level": "EXTREME",
  "complexity": {
   "grade": 407,
   "size": 332,
@@ -27,8 +30,29 @@
    "Visual, GLB"
   ]
  },
+ "tested": [
+  "2026-11-09",
+  "2026-11-10"
+ ],
  "kese": [
   "22fd70c"
+ ],
+ "kese_version": [
+  "2.4.0"
+ ],
+ "runs": [
+  [
+   "cap",
+   "2026-11-10",
+   14500000000.0,
+   5400.0
+  ],
+  [
+   "corpus",
+   "2026-11-09",
+   11000000000.0,
+   5400.0
+  ]
  ],
  "machine": {
   "cpu": "Intel(R) Xeon(R) Processor @ 2.30GHz, 4 cores, 15 GB",

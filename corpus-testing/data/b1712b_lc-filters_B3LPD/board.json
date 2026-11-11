@@ -1,7 +1,4 @@
 {
- "rank": 2534,
- "score": 226,
- "level": "SIMPLE",
  "layers": 4,
  "parts": 7,
  "big": 0,
@@ -15,6 +12,7 @@
  "project": "myriadrf/lc-filters",
  "name": "B3LPD",
  "license": "As README.rst states it: \"LibreCellular RF Filter Designs is copyright 2023 AB Open Ltd and provided under the Solderpad Hardware License v2.1. .. LibreCellular Documentation: https://librecellular.org/developer/hardware/rf/b3lpd.html\"",
+ "license_checked": "2026-11-08",
  "zip": "part16_of_17",
  "features": {
   "through_vias": 96,

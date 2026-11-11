@@ -1,7 +1,4 @@
 {
- "rank": 489,
- "score": 5444,
- "level": "HIGH",
  "layers": 4,
  "parts": 213,
  "big": 2,
@@ -15,9 +12,10 @@
  "project": "jrengdahl/MSCP",
  "name": "QBusH723Z",
  "license": "BSD-2-Clause (BSD 2-Clause License), in LICENSE",
+ "license_checked": "2026-11-08",
  "zip": "part11_of_17",
  "features": {
-  "through_vias": 1438,
+  "through_vias": 719,
   "blind_buried_vias": 0,
   "microvias": 0,
   "backdrills": 0,

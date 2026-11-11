@@ -1,7 +1,4 @@
 {
- "rank": 33,
- "score": 29804,
- "level": "EXTREME",
  "layers": 6,
  "parts": 723,
  "big": 9,
@@ -15,9 +12,10 @@
  "project": "AmigaPCI/AmigaPCI-MainBoard",
  "name": "AmigaPCI Mainboard",
  "license": "As README.md states it: \"Floppy interface modifications from Ian Steadman (noted in schematic) released under the GNU GENERAL PUBLIC LICENSE, Version 3. AmigaPCI by Jason Neus is licensed under Creative Commons Attribution-NonCommercial 4.0 International\"",
+ "license_checked": "2026-11-08",
  "zip": "part03_of_17",
  "features": {
-  "through_vias": 4894,
+  "through_vias": 2447,
   "blind_buried_vias": 0,
   "microvias": 0,
   "backdrills": 0,

@@ -1,7 +1,4 @@
 {
- "rank": 111,
- "score": 17175,
- "level": "VERY HIGH",
  "layers": 8,
  "parts": 504,
  "big": 2,
@@ -15,9 +12,10 @@
  "project": "BerkeleyLab/Obsidian",
  "name": "Obsidian",
  "license": "CERN-OHL-W-2.0 (CERN Open Hardware Licence v2, Weakly Reciprocal)",
+ "license_checked": "2026-11-08",
  "zip": "part05_of_17",
  "features": {
-  "through_vias": 2518,
+  "through_vias": 1259,
   "blind_buried_vias": 0,
   "microvias": 0,
   "backdrills": 0,

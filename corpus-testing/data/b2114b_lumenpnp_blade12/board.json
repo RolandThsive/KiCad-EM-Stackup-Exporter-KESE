@@ -1,7 +1,4 @@
 {
- "rank": 1688,
- "score": 1085,
- "level": "MEDIUM",
  "layers": 2,
  "parts": 38,
  "big": 0,
@@ -15,9 +12,10 @@
  "project": "opulo-inc/lumenpnp",
  "name": "blade12",
  "license": "In LICENSE: CERN-OHL-W-2.0 for the hardware designs, MPL-2.0 for the workflows, CC-BY-SA-4.0 for the KiCad libraries",
+ "license_checked": "2026-11-08",
  "zip": "part15_of_17",
  "features": {
-  "through_vias": 412,
+  "through_vias": 206,
   "blind_buried_vias": 0,
   "microvias": 0,
   "backdrills": 0,

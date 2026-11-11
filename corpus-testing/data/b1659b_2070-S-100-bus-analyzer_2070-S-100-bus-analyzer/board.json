@@ -1,7 +1,4 @@
 {
- "rank": 724,
- "score": 3699,
- "level": "HIGH",
  "layers": 4,
  "parts": 90,
  "big": 0,
@@ -15,9 +12,10 @@
  "project": "MichaelPetry/2070-S-100-bus-analyzer",
  "name": "2070-S-100-bus-analyzer",
  "license": "No license found",
+ "license_checked": "2026-11-08",
  "zip": "part13_of_17",
  "features": {
-  "through_vias": 1040,
+  "through_vias": 520,
   "blind_buried_vias": 0,
   "microvias": 0,
   "backdrills": 0,

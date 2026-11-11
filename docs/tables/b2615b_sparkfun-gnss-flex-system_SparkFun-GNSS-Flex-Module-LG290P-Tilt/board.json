@@ -3,7 +3,10 @@
  "project": "sparkfun/sparkfun_gnss_flex_system",
  "path": "sparkfun__sparkfun_gnss_flex_system/flex_boards/SparkPNT_GNSS_Flex_Module_LG290P-Tilt/hardware/SparkFun_GNSS_Flex_Module_LG290P-Tilt.kicad_pcb",
  "license": "MIT (MIT License), in LICENSE.md",
- "rank": 1975,
+ "license_checked": "2026-11-08",
+ "rank": 1970,
+ "score": 738,
+ "level": "LOW",
  "complexity": {
   "grade": 295,
   "size": 175,
@@ -25,8 +28,23 @@
  "bad_design": null,
  "chart_alt": "Stages 4 and 6 take 48% to 81% of a run. Simulation, GLB takes 7.7 s. Simulation, STEP takes 10 s. Simulation, STL takes 7.7 s. Simulation, OBJ takes 12 s. Visual, GLB takes 11 s. Visual, OBJ takes 15 s",
  "rerun": {},
+ "tested": [
+  "2026-11-10",
+  "2026-11-10"
+ ],
  "kese": [
   "22fd70c"
+ ],
+ "kese_version": [
+  "2.4.0"
+ ],
+ "runs": [
+  [
+   "corpus",
+   "2026-11-10",
+   11000000000.0,
+   5400.0
+  ]
  ],
  "machine": {
   "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz, 4 cores, 15 GB",

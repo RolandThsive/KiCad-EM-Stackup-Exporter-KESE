@@ -3,7 +3,10 @@
  "project": "antmicro/thunderbolt-gpu-adapter",
  "path": "antmicro__thunderbolt-gpu-adapter/thunderbolt-gpu-adapter.kicad_pcb",
  "license": "Apache-2.0 (Apache License 2.0)",
+ "license_checked": "2026-11-08",
  "rank": 300,
+ "score": 8569,
+ "level": "VERY HIGH",
  "complexity": {
   "grade": 433,
   "size": 293,
@@ -27,8 +30,23 @@
  "bad_design": null,
  "chart_alt": "thunderbolt-gpu-adapter: stages 4 and 6 take 46% to 80% of a run. Simulation, GLB takes 73 s. Simulation, STEP takes 85 s. Simulation, STL takes 75 s. Simulation, OBJ takes 2 min. Visual, GLB takes 2 min. Visual, OBJ takes 3 min",
  "rerun": {},
+ "tested": [
+  "2026-11-09",
+  "2026-11-09"
+ ],
  "kese": [
   "22fd70c"
+ ],
+ "kese_version": [
+  "2.4.0"
+ ],
+ "runs": [
+  [
+   "corpus",
+   "2026-11-09",
+   11000000000.0,
+   5400.0
+  ]
  ],
  "machine": {
   "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz, 4 cores, 15 GB",

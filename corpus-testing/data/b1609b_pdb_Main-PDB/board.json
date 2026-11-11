@@ -1,7 +1,4 @@
 {
- "rank": 1452,
- "score": 1474,
- "level": "MEDIUM",
  "layers": 6,
  "parts": 186,
  "big": 0,
@@ -15,9 +12,10 @@
  "project": "malcollm/pdb",
  "name": "Main_PDB",
  "license": "No license found",
+ "license_checked": "2026-11-08",
  "zip": "part15_of_17",
  "features": {
-  "through_vias": 432,
+  "through_vias": 216,
   "blind_buried_vias": 0,
   "microvias": 0,
   "backdrills": 0,

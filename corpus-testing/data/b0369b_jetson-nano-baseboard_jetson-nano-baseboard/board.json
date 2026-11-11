@@ -1,7 +1,4 @@
 {
- "rank": 99,
- "score": 18718,
- "level": "VERY HIGH",
  "layers": 8,
  "parts": 326,
  "big": 1,
@@ -15,9 +12,10 @@
  "project": "antmicro/jetson-nano-baseboard",
  "name": "jetson-nano-baseboard",
  "license": "Apache-2.0 (Apache License 2.0)",
+ "license_checked": "2026-11-08",
  "zip": "part05_of_17",
  "features": {
-  "through_vias": 1588,
+  "through_vias": 794,
   "blind_buried_vias": 0,
   "microvias": 0,
   "backdrills": 0,

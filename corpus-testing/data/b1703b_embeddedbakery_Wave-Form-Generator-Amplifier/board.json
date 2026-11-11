@@ -1,7 +1,4 @@
 {
- "rank": 2475,
- "score": 267,
- "level": "LOW",
  "layers": 2,
  "parts": 22,
  "big": 0,
@@ -15,6 +12,7 @@
  "project": "mwwhited/embeddedbakery",
  "name": "Wave Form Generator Amplifier",
  "license": "MIT (MIT License), in LICENSE",
+ "license_checked": "2026-11-08",
  "zip": "part16_of_17",
  "features": {
   "through_vias": 0,

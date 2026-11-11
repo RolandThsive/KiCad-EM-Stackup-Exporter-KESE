@@ -1,7 +1,4 @@
 {
- "rank": 3134,
- "score": 0,
- "level": "SIMPLE",
  "layers": 2,
  "parts": 0,
  "big": 0,
@@ -15,6 +12,7 @@
  "project": "torlye/pocket-reform",
  "name": "pref-keyboard-back-d1-fr4",
  "license": "CERN-OHL-S-2.0 (CERN Open Hardware Licence v2, Strongly Reciprocal), in LICENSE",
+ "license_checked": "2026-11-08",
  "zip": "part16_of_17",
  "features": {
   "through_vias": 0,

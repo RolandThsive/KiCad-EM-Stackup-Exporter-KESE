@@ -1,7 +1,4 @@
 {
- "rank": 2602,
- "score": 168,
- "level": "SIMPLE",
  "layers": 4,
  "parts": 12,
  "big": 0,
@@ -15,9 +12,10 @@
  "project": "antmicro/microphone-board",
  "name": "microphone-board",
  "license": "Apache-2.0 (Apache License 2.0), in LICENSE",
+ "license_checked": "2026-11-08",
  "zip": "part16_of_17",
  "features": {
-  "through_vias": 56,
+  "through_vias": 28,
   "blind_buried_vias": 0,
   "microvias": 0,
   "backdrills": 0,

@@ -1,7 +1,4 @@
 {
- "rank": 198,
- "score": 11573,
- "level": "VERY HIGH",
  "layers": 4,
  "parts": 187,
  "big": 0,
@@ -15,6 +12,7 @@
  "project": "eez-open/modular-psu",
  "name": "EEZ DIB MCU r1B2",
  "license": "TAPR-OHL-1.0 (TAPR Open Hardware License), in LICENSE.TXT",
+ "license_checked": "2026-11-08",
  "zip": "part08_of_17",
  "features": {
   "through_vias": 591,

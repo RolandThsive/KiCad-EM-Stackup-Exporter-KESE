@@ -1,7 +1,4 @@
 {
- "rank": 1182,
- "score": 2013,
- "level": "MEDIUM",
  "layers": 2,
  "parts": 24,
  "big": 0,
@@ -15,9 +12,10 @@
  "project": "andrewpaterson/658-Computer",
  "name": "Counter 16bit with IO",
  "license": "No license found",
+ "license_checked": "2026-11-08",
  "zip": "part14_of_17",
  "features": {
-  "through_vias": 398,
+  "through_vias": 199,
   "blind_buried_vias": 0,
   "microvias": 0,
   "backdrills": 0,

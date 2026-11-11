@@ -1,7 +1,4 @@
 {
- "rank": 93,
- "score": 19252,
- "level": "VERY HIGH",
  "layers": 4,
  "parts": 260,
  "big": 4,
@@ -15,9 +12,10 @@
  "project": "thorpej/pg68k",
  "name": "cpu010",
  "license": "No license found",
+ "license_checked": "2026-11-08",
  "zip": "part05_of_17",
  "features": {
-  "through_vias": 5380,
+  "through_vias": 2690,
   "blind_buried_vias": 0,
   "microvias": 0,
   "backdrills": 0,

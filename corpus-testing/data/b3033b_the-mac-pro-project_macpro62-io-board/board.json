@@ -1,7 +1,4 @@
 {
- "rank": 1659,
- "score": 1126,
- "level": "MEDIUM",
  "layers": 6,
  "parts": 143,
  "big": 14,
@@ -15,6 +12,7 @@
  "project": "winkleplex10-bit/the-mac-pro-project",
  "name": "macpro62-io-board",
  "license": "No license found",
+ "license_checked": "2026-11-08",
  "zip": "part15_of_17",
  "features": {
   "through_vias": 0,

@@ -1,7 +1,4 @@
 {
- "rank": 1149,
- "score": 2068,
- "level": "MEDIUM",
  "layers": 4,
  "parts": 72,
  "big": 1,
@@ -15,6 +12,7 @@
  "project": "OLIMEX/RP2350-PICO2-BB48",
  "name": "PICO2-BB48_Rev_A",
  "license": "MIT (MIT License)",
+ "license_checked": "2026-11-08",
  "zip": "part14_of_17",
  "features": {
   "through_vias": 126,

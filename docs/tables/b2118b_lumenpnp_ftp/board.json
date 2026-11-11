@@ -3,7 +3,10 @@
  "project": "opulo-inc/lumenpnp",
  "path": "opulo-inc__lumenpnp/src/PCB/ftp/ftp.kicad_pcb",
  "license": "In LICENSE: CERN-OHL-W-2.0 for the hardware designs, MPL-2.0 for the workflows, CC-BY-SA-4.0 for the KiCad libraries",
- "rank": 2463,
+ "license_checked": "2026-11-08",
+ "rank": 2455,
+ "score": 277,
+ "level": "LOW",
  "complexity": {
   "grade": 202,
   "size": 142,
@@ -20,8 +23,23 @@
  "bad_design": null,
  "chart_alt": "ftp: stages 4 and 6 take 60% to 80% of a run. Simulation, GLB takes 7.3 s. Simulation, STEP takes 10 s. Simulation, STL takes 7.9 s. Simulation, OBJ takes 9.9 s. Visual, GLB takes 9.3 s. Visual, OBJ takes 11 s",
  "rerun": {},
+ "tested": [
+  "2026-11-09",
+  "2026-11-09"
+ ],
  "kese": [
   "22fd70c"
+ ],
+ "kese_version": [
+  "2.4.0"
+ ],
+ "runs": [
+  [
+   "corpus",
+   "2026-11-09",
+   11000000000.0,
+   5400.0
+  ]
  ],
  "machine": {
   "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz, 4 cores, 15 GB",

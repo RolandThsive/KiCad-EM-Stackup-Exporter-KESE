@@ -1,7 +1,4 @@
 {
- "rank": 1428,
- "score": 1511,
- "level": "MEDIUM",
  "layers": 2,
  "parts": 63,
  "big": 1,
@@ -15,6 +12,7 @@
  "project": "antmicro/caravel_board",
  "name": "caravel_pcb_v3_FTDI_SMD",
  "license": "No license found",
+ "license_checked": "2026-11-08",
  "zip": "part15_of_17",
  "features": {
   "through_vias": 131,

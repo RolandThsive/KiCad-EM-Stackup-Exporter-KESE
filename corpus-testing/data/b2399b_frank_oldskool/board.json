@@ -1,7 +1,4 @@
 {
- "rank": 1390,
- "score": 1559,
- "level": "MEDIUM",
  "layers": 2,
  "parts": 100,
  "big": 0,
@@ -15,9 +12,10 @@
  "project": "rh1tech/frank",
  "name": "oldskool",
  "license": "GPL-3.0 (GNU GPL v3.0)",
+ "license_checked": "2026-11-08",
  "zip": "part15_of_17",
  "features": {
-  "through_vias": 152,
+  "through_vias": 76,
   "blind_buried_vias": 0,
   "microvias": 0,
   "backdrills": 0,

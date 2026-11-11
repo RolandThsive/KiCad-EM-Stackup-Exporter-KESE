@@ -1,7 +1,4 @@
 {
- "rank": 2948,
- "score": 13,
- "level": "SIMPLE",
  "layers": 2,
  "parts": 4,
  "big": 0,
@@ -15,6 +12,7 @@
  "project": "ZeroPhone/ZeroPhone-PCBs",
  "name": "18650_pcb",
  "license": "GPL-3.0 (GNU GPL v3.0)",
+ "license_checked": "2026-11-08",
  "zip": "part16_of_17",
  "features": {
   "through_vias": 0,

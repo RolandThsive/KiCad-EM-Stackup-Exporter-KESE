@@ -1,7 +1,4 @@
 {
- "rank": 453,
- "score": 6062,
- "level": "HIGH",
  "layers": 4,
  "parts": 228,
  "big": 3,
@@ -15,9 +12,10 @@
  "project": "myriadrf/lc-rfe",
  "name": "LC_RFE-RevA1",
  "license": "SHL-2.1 (Solderpad Hardware License v2.1), in LICENSE",
+ "license_checked": "2026-11-08",
  "zip": "part11_of_17",
  "features": {
-  "through_vias": 2786,
+  "through_vias": 1393,
   "blind_buried_vias": 0,
   "microvias": 0,
   "backdrills": 0,

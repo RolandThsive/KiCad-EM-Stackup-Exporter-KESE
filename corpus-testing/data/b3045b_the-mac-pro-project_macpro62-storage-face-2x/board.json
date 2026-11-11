@@ -1,7 +1,4 @@
 {
- "rank": 354,
- "score": 7529,
- "level": "HIGH",
  "layers": 4,
  "parts": 85,
  "big": 0,
@@ -15,9 +12,10 @@
  "project": "winkleplex10-bit/the-mac-pro-project",
  "name": "macpro62-storage-face-2x",
  "license": "No license found",
+ "license_checked": "2026-11-08",
  "zip": "part10_of_17",
  "features": {
-  "through_vias": 4096,
+  "through_vias": 2048,
   "blind_buried_vias": 0,
   "microvias": 0,
   "backdrills": 0,

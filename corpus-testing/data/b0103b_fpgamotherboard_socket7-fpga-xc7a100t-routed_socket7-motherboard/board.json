@@ -1,7 +1,4 @@
 {
- "rank": 136,
- "score": 15015,
- "level": "VERY HIGH",
  "layers": 6,
  "parts": 312,
  "big": 3,
@@ -15,9 +12,10 @@
  "project": "alphaonex86/fpgamotherboard",
  "name": "socket7-motherboard",
  "license": "GPL-3.0 (GNU GPL v3.0)",
+ "license_checked": "2026-11-08",
  "zip": "part06_of_17",
  "features": {
-  "through_vias": 1702,
+  "through_vias": 851,
   "blind_buried_vias": 0,
   "microvias": 0,
   "backdrills": 0,

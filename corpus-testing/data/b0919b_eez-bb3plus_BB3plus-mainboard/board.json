@@ -1,7 +1,4 @@
 {
- "rank": 141,
- "score": 14609,
- "level": "VERY HIGH",
  "layers": 4,
  "parts": 399,
  "big": 2,
@@ -15,9 +12,10 @@
  "project": "eez-open/eez-bb3plus",
  "name": "BB3plus mainboard",
  "license": "TAPR-OHL-1.0 (TAPR Open Hardware License), in LICENSE.TXT",
+ "license_checked": "2026-11-08",
  "zip": "part06_of_17",
  "features": {
-  "through_vias": 3066,
+  "through_vias": 1533,
   "blind_buried_vias": 0,
   "microvias": 0,
   "backdrills": 0,

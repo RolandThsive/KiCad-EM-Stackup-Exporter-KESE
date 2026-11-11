@@ -1,7 +1,4 @@
 {
- "rank": 1562,
- "score": 1270,
- "level": "MEDIUM",
  "layers": 2,
  "parts": 89,
  "big": 0,
@@ -15,6 +12,7 @@
  "project": "skiselev/omega",
  "name": "Omega-Keyboard",
  "license": "GPL-3.0 (GNU GPL v3.0)",
+ "license_checked": "2026-11-08",
  "zip": "part15_of_17",
  "features": {
   "through_vias": 38,

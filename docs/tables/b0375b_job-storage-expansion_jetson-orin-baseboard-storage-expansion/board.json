@@ -3,7 +3,10 @@
  "project": "antmicro/job-storage-expansion",
  "path": "antmicro__job-storage-expansion/jetson-orin-baseboard-storage-expansion.kicad_pcb",
  "license": "Apache-2.0 (Apache License 2.0)",
+ "license_checked": "2026-11-08",
  "rank": 898,
+ "score": 2921,
+ "level": "MEDIUM",
  "complexity": {
   "grade": 411,
   "size": 251,
@@ -28,8 +31,23 @@
  "bad_design": null,
  "chart_alt": "Stages 4 and 6 take 46% to 77% of a run. Simulation, GLB takes 18 s. Simulation, STEP takes 22 s. Simulation, STL takes 17 s. Simulation, OBJ takes 26 s. Visual, GLB takes 28 s. Visual, OBJ takes 35 s",
  "rerun": {},
+ "tested": [
+  "2026-11-09",
+  "2026-11-09"
+ ],
  "kese": [
   "22fd70c"
+ ],
+ "kese_version": [
+  "2.4.0"
+ ],
+ "runs": [
+  [
+   "corpus",
+   "2026-11-09",
+   11000000000.0,
+   5400.0
+  ]
  ],
  "machine": {
   "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz, 4 cores, 15 GB",

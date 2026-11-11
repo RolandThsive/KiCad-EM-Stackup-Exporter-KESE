@@ -1,7 +1,4 @@
 {
- "rank": 1424,
- "score": 1519,
- "level": "MEDIUM",
  "layers": 2,
  "parts": 18,
  "big": 1,
@@ -15,6 +12,7 @@
  "project": "cyrozap/HDMI-to-MIPI",
  "name": "SSD2828QN4-breakout",
  "license": "CERN-OHL-1.2 (CERN Open Hardware Licence v1.2), in LICENSE.txt",
+ "license_checked": "2026-11-08",
  "zip": "part15_of_17",
  "features": {
   "through_vias": 0,

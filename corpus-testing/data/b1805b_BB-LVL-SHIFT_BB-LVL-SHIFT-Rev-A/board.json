@@ -1,7 +1,4 @@
 {
- "rank": 2655,
- "score": 135,
- "level": "SIMPLE",
  "layers": 2,
  "parts": 13,
  "big": 0,
@@ -15,9 +12,10 @@
  "project": "OLIMEX/BB-LVL-SHIFT",
  "name": "BB-LVL-SHIFT_Rev_A",
  "license": "MIT (MIT License)",
+ "license_checked": "2026-11-08",
  "zip": "part16_of_17",
  "features": {
-  "through_vias": 16,
+  "through_vias": 8,
   "blind_buried_vias": 0,
   "microvias": 0,
   "backdrills": 0,

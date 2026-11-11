@@ -1,7 +1,4 @@
 {
- "rank": 163,
- "score": 13416,
- "level": "VERY HIGH",
  "layers": 2,
  "parts": 328,
  "big": 4,
@@ -15,6 +12,7 @@
  "project": "vascofazza/8bit-cpu",
  "name": "8bit-computer",
  "license": "MIT (MIT License)",
+ "license_checked": "2026-11-08",
  "zip": "part07_of_17",
  "features": {
   "through_vias": 441,

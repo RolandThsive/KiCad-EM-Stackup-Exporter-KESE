@@ -1,7 +1,4 @@
 {
- "rank": 2522,
- "score": 238,
- "level": "SIMPLE",
  "layers": 2,
  "parts": 13,
  "big": 0,
@@ -15,6 +12,7 @@
  "project": "OLIMEX/MOD-ENV",
  "name": "MOD-ENV_revB",
  "license": "As README.md states it: \"Software License is GPL3; Hardware License is CERN OHL v1.2; Documentation is released under CC BY-SA 3.0\"",
+ "license_checked": "2026-11-08",
  "zip": "part16_of_17",
  "features": {
   "through_vias": 15,

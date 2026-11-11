@@ -1,7 +1,4 @@
 {
- "rank": 423,
- "score": 6520,
- "level": "HIGH",
  "layers": 2,
  "parts": 142,
  "big": 3,
@@ -15,9 +12,10 @@
  "project": "flypie/Ace-2019",
  "name": "ACE3NOKB",
  "license": "GPL-3.0 (GNU GPL v3.0)",
+ "license_checked": "2026-11-08",
  "zip": "part11_of_17",
  "features": {
-  "through_vias": 470,
+  "through_vias": 235,
   "blind_buried_vias": 0,
   "microvias": 0,
   "backdrills": 0,

@@ -1,7 +1,4 @@
 {
- "rank": 912,
- "score": 2832,
- "level": "MEDIUM",
  "layers": 2,
  "parts": 89,
  "big": 0,
@@ -15,6 +12,7 @@
  "project": "imihajlow/ccpu",
  "name": "control",
  "license": "GPL-3.0 (GNU GPL v3.0), in LICENSE.GPL; TAPR-OHL-1.0 (TAPR Open Hardware License), in LICENSE.txt",
+ "license_checked": "2026-11-08",
  "zip": "part14_of_17",
  "features": {
   "through_vias": 408,

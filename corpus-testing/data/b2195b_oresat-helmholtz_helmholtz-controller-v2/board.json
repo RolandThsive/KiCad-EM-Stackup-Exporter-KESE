@@ -1,7 +1,4 @@
 {
- "rank": 1675,
- "score": 1108,
- "level": "MEDIUM",
  "layers": 2,
  "parts": 46,
  "big": 0,
@@ -15,9 +12,10 @@
  "project": "oresat/oresat-helmholtz",
  "name": "helmholtz-controller-v2",
  "license": "No license found",
+ "license_checked": "2026-11-08",
  "zip": "part15_of_17",
  "features": {
-  "through_vias": 400,
+  "through_vias": 200,
   "blind_buried_vias": 0,
   "microvias": 0,
   "backdrills": 0,

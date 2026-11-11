@@ -1,7 +1,4 @@
 {
- "rank": 2235,
- "score": 474,
- "level": "LOW",
  "layers": 2,
  "parts": 3,
  "big": 3,
@@ -15,9 +12,10 @@
  "project": "ahmadexp/Open-Source-PC110",
  "name": "pcb-bga-adapter-dualcon",
  "license": "CC-BY-NC-4.0 (Creative Commons Attribution-NonCommercial 4.0), in LICENSE",
+ "license_checked": "2026-11-08",
  "zip": "part16_of_17",
  "features": {
-  "through_vias": 214,
+  "through_vias": 107,
   "blind_buried_vias": 0,
   "microvias": 0,
   "backdrills": 0,

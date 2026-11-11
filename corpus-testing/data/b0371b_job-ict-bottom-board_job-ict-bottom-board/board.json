@@ -1,7 +1,4 @@
 {
- "rank": 1857,
- "score": 870,
- "level": "LOW",
  "layers": 2,
  "parts": 93,
  "big": 0,
@@ -15,9 +12,10 @@
  "project": "antmicro/job-ict-bottom-board",
  "name": "job-ict-bottom-board",
  "license": "Apache-2.0 (Apache License 2.0)",
+ "license_checked": "2026-11-08",
  "zip": "part16_of_17",
  "features": {
-  "through_vias": 128,
+  "through_vias": 64,
   "blind_buried_vias": 0,
   "microvias": 0,
   "backdrills": 0,

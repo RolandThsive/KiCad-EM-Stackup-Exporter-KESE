@@ -1,7 +1,4 @@
 {
- "rank": 125,
- "score": 15390,
- "level": "VERY HIGH",
  "layers": 8,
  "parts": 289,
  "big": 5,
@@ -15,9 +12,10 @@
  "project": "groupgets/kimchi-micro",
  "name": "kimchi_micro",
  "license": "CERN-OHL-S-2.0 (CERN Open Hardware Licence v2, Strongly Reciprocal), in LICENSE",
+ "license_checked": "2026-11-08",
  "zip": "part06_of_17",
  "features": {
-  "through_vias": 2116,
+  "through_vias": 1058,
   "blind_buried_vias": 0,
   "microvias": 0,
   "backdrills": 0,

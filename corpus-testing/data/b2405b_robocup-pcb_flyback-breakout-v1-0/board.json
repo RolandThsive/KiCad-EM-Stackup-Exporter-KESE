@@ -1,7 +1,4 @@
 {
- "rank": 1962,
- "score": 749,
- "level": "LOW",
  "layers": 2,
  "parts": 51,
  "big": 0,
@@ -15,9 +12,10 @@
  "project": "robojackets/robocup-pcb",
  "name": "flyback-breakout-v1.0",
  "license": "Apache-2.0 (Apache License 2.0)",
+ "license_checked": "2026-11-08",
  "zip": "part16_of_17",
  "features": {
-  "through_vias": 330,
+  "through_vias": 165,
   "blind_buried_vias": 0,
   "microvias": 0,
   "backdrills": 0,

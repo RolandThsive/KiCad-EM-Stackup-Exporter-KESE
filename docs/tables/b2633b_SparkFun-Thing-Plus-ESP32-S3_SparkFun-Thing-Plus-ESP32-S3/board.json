@@ -3,7 +3,10 @@
  "project": "sparkfun/SparkFun_Thing_Plus_ESP32-S3",
  "path": "sparkfun__SparkFun_Thing_Plus_ESP32-S3/Hardware/SparkFun_Thing_Plus_ESP32-S3.kicad_pcb",
  "license": "MIT (MIT License), in LICENSE.md",
- "rank": 1553,
+ "license_checked": "2026-11-08",
+ "rank": 1549,
+ "score": 1298,
+ "level": "MEDIUM",
  "complexity": {
   "grade": 333,
   "size": 193,
@@ -27,8 +30,23 @@
  "bad_design": null,
  "chart_alt": "SparkFun_Thing_Plus_ESP32-S3: stages 4 and 6 take 46% to 80% of a run. Simulation, GLB takes 8.2 s. Simulation, STEP takes 11 s. Simulation, STL takes 8.6 s. Simulation, OBJ takes 13 s. Visual, GLB takes 13 s. Visual, OBJ takes 17 s",
  "rerun": {},
+ "tested": [
+  "2026-11-09",
+  "2026-11-09"
+ ],
  "kese": [
   "22fd70c"
+ ],
+ "kese_version": [
+  "2.4.0"
+ ],
+ "runs": [
+  [
+   "corpus",
+   "2026-11-09",
+   11000000000.0,
+   5400.0
+  ]
  ],
  "machine": {
   "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz, 4 cores, 15 GB",

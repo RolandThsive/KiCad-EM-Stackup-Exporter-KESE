@@ -1,7 +1,4 @@
 {
- "rank": 968,
- "score": 2636,
- "level": "MEDIUM",
  "layers": 2,
  "parts": 26,
  "big": 0,
@@ -15,9 +12,10 @@
  "project": "BerkeleyLab/DxP-sensor-probes",
  "name": "TMP117-ADXL345_section_5cm",
  "license": "CC-BY-NC-4.0 (Creative Commons Attribution-NonCommercial 4.0), in LICENSE.md",
+ "license_checked": "2026-11-08",
  "zip": "part14_of_17",
  "features": {
-  "through_vias": 104,
+  "through_vias": 52,
   "blind_buried_vias": 0,
   "microvias": 0,
   "backdrills": 0,

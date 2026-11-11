@@ -1,7 +1,4 @@
 {
- "rank": 1877,
- "score": 851,
- "level": "LOW",
  "layers": 4,
  "parts": 38,
  "big": 0,
@@ -15,9 +12,10 @@
  "project": "stanford-ssi/samwise-avionics",
  "name": "RPi_interface",
  "license": "No license found",
+ "license_checked": "2026-11-08",
  "zip": "part16_of_17",
  "features": {
-  "through_vias": 290,
+  "through_vias": 145,
   "blind_buried_vias": 0,
   "microvias": 0,
   "backdrills": 0,

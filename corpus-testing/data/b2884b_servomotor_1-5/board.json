@@ -1,7 +1,4 @@
 {
- "rank": 1296,
- "score": 1750,
- "level": "MEDIUM",
  "layers": 2,
  "parts": 75,
  "big": 1,
@@ -15,9 +12,10 @@
  "project": "tomrodinger/servomotor",
  "name": "1.5",
  "license": "MIT (MIT License)",
+ "license_checked": "2026-11-08",
  "zip": "part15_of_17",
  "features": {
-  "through_vias": 660,
+  "through_vias": 330,
   "blind_buried_vias": 0,
   "microvias": 0,
   "backdrills": 0,

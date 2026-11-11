@@ -1,7 +1,4 @@
 {
- "rank": 2298,
- "score": 414,
- "level": "LOW",
  "layers": 2,
  "parts": 87,
  "big": 4,
@@ -15,6 +12,7 @@
  "project": "flypie/Ace-2019",
  "name": "VGAVDG",
  "license": "GPL-3.0 (GNU GPL v3.0)",
+ "license_checked": "2026-11-08",
  "zip": "part16_of_17",
  "features": {
   "through_vias": 0,

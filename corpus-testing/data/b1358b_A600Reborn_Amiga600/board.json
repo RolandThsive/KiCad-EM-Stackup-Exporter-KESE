@@ -1,7 +1,4 @@
 {
- "rank": 84,
- "score": 19716,
- "level": "VERY HIGH",
  "layers": 2,
  "parts": 565,
  "big": 8,
@@ -15,6 +12,7 @@
  "project": "istedman/A600Reborn",
  "name": "Amiga600",
  "license": "No license found",
+ "license_checked": "2026-11-08",
  "zip": "part05_of_17",
  "features": {
   "through_vias": 1423,

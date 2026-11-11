@@ -1,7 +1,4 @@
 {
- "rank": 967,
- "score": 2637,
- "level": "MEDIUM",
  "layers": 2,
  "parts": 149,
  "big": 1,
@@ -15,6 +12,7 @@
  "project": "rgw3d/1kcubesat_hardware",
  "name": "sun_sensor_test",
  "license": "GPL-3.0 (GNU GPL v3.0)",
+ "license_checked": "2026-11-08",
  "zip": "part14_of_17",
  "features": {
   "through_vias": 250,

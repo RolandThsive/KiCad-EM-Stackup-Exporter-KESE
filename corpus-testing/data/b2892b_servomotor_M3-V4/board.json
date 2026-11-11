@@ -1,7 +1,4 @@
 {
- "rank": 1324,
- "score": 1694,
- "level": "MEDIUM",
  "layers": 2,
  "parts": 65,
  "big": 1,
@@ -15,6 +12,7 @@
  "project": "tomrodinger/servomotor",
  "name": "M3-V4",
  "license": "MIT (MIT License)",
+ "license_checked": "2026-11-08",
  "zip": "part15_of_17",
  "features": {
   "through_vias": 159,

@@ -1,7 +1,4 @@
 {
- "rank": 274,
- "score": 9368,
- "level": "VERY HIGH",
  "layers": 4,
  "parts": 256,
  "big": 1,
@@ -15,6 +12,7 @@
  "project": "will127534/RaspberryPiAtomicNixieClock",
  "name": "NixieAtomicClock",
  "license": "No license found",
+ "license_checked": "2026-11-08",
  "zip": "part10_of_17",
  "features": {
   "through_vias": 2132,

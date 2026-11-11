@@ -1,7 +1,4 @@
 {
- "rank": 1056,
- "score": 2325,
- "level": "MEDIUM",
  "layers": 4,
  "parts": 113,
  "big": 0,
@@ -15,6 +12,7 @@
  "project": "mwwhited/embeddedbakery",
  "name": "AnalogComputer",
  "license": "MIT (MIT License), in LICENSE",
+ "license_checked": "2026-11-08",
  "zip": "part14_of_17",
  "features": {
   "through_vias": 31,

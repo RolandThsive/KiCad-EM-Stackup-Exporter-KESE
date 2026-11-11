@@ -1,7 +1,4 @@
 {
- "rank": 1325,
- "score": 1686,
- "level": "MEDIUM",
  "layers": 4,
  "parts": 54,
  "big": 0,
@@ -15,6 +12,7 @@
  "project": "will127534/Miniature-CM4-Cluster",
  "name": "CM4Card",
  "license": "MIT (MIT License)",
+ "license_checked": "2026-11-08",
  "zip": "part15_of_17",
  "features": {
   "through_vias": 252,

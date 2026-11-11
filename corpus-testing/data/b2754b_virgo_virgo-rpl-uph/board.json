@@ -1,7 +1,4 @@
 {
- "rank": 796,
- "score": 3422,
- "level": "HIGH",
  "layers": 10,
  "parts": 591,
  "big": 3,
@@ -15,6 +12,7 @@
  "project": "system76/virgo",
  "name": "virgo-rpl-uph",
  "license": "CERN-OHL-S-2.0 (CERN Open Hardware Licence v2, Strongly Reciprocal)",
+ "license_checked": "2026-11-08",
  "zip": "part13_of_17",
  "features": {
   "through_vias": 292,

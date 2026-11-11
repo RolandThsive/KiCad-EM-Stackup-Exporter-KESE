@@ -1,7 +1,4 @@
 {
- "rank": 86,
- "score": 19658,
- "level": "VERY HIGH",
  "layers": 8,
  "parts": 277,
  "big": 6,
@@ -15,6 +12,7 @@
  "project": "kitspace-forks/reform-kintex-som",
  "name": "reform-kintex",
  "license": "As README.md states it: \"All hardware design work in this repository is © 2021-2022 MNT Research GmbH, Berlin, Germany.\"",
+ "license_checked": "2026-11-08",
  "zip": "part05_of_17",
  "features": {
   "through_vias": 1145,

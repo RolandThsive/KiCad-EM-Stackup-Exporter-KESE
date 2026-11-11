@@ -1,7 +1,4 @@
 {
- "rank": 1999,
- "score": 713,
- "level": "LOW",
  "layers": 4,
  "parts": 64,
  "big": 1,
@@ -15,9 +12,10 @@
  "project": "issuiuc/iss-pcb",
  "name": "TeleDecoder-revB",
  "license": "No license found",
+ "license_checked": "2026-11-08",
  "zip": "part16_of_17",
  "features": {
-  "through_vias": 162,
+  "through_vias": 81,
   "blind_buried_vias": 0,
   "microvias": 0,
   "backdrills": 0,

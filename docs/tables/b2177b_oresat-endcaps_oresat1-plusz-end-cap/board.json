@@ -3,7 +3,10 @@
  "project": "oresat/oresat-endcaps",
  "path": "oresat__oresat-endcaps/oresat1-plusz-end-cap/oresat1-plusz-end-cap.kicad_pcb",
  "license": "As README.md states it: \"Copyright the Portland State Aerospace Society, 2024. This source describes Open Hardware that is licensed under CERN-OHL-S v2, or any later version. You may redistribute and modify this source and make products using it under the terms of the CERN-OHL-S v2 (https://ohwr.org/cern ohl s v2.txt).\"",
- "rank": 1677,
+ "license_checked": "2026-11-08",
+ "rank": 1673,
+ "score": 1106,
+ "level": "MEDIUM",
  "complexity": {
   "grade": 293,
   "size": 188,
@@ -24,8 +27,23 @@
  "bad_design": null,
  "chart_alt": "oresat1-plusz-end-cap: stages 4 and 6 take 47% to 81% of a run. Simulation, GLB takes 10 s. Simulation, STEP takes 12 s. Simulation, STL takes 9.7 s. Simulation, OBJ takes 15 s. Visual, GLB takes 13 s. Visual, OBJ takes 17 s",
  "rerun": {},
+ "tested": [
+  "2026-11-09",
+  "2026-11-09"
+ ],
  "kese": [
   "22fd70c"
+ ],
+ "kese_version": [
+  "2.4.0"
+ ],
+ "runs": [
+  [
+   "corpus",
+   "2026-11-09",
+   11000000000.0,
+   5400.0
+  ]
  ],
  "machine": {
   "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz, 4 cores, 15 GB",

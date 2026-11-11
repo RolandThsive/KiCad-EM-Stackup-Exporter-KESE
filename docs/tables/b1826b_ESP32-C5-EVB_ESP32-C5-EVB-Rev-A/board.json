@@ -3,7 +3,10 @@
  "project": "OLIMEX/ESP32-C5-EVB",
  "path": "OLIMEX__ESP32-C5-EVB/HARDWARE/ESP32-C5-EVB-Rev.A/ESP32-C5-EVB_Rev_A.kicad_pcb",
  "license": "MIT (MIT License)",
+ "license_checked": "2026-11-08",
  "rank": 1187,
+ "score": 2007,
+ "level": "MEDIUM",
  "complexity": {
   "grade": 291,
   "size": 191,
@@ -23,8 +26,23 @@
  "bad_design": null,
  "chart_alt": "ESP32-C5-EVB_Rev_A: stages 4 and 6 take 53% to 82% of a run. Simulation, GLB takes 12 s. Simulation, STEP takes 15 s. Simulation, STL takes 13 s. Simulation, OBJ takes 17 s. Visual, GLB takes 18 s. Visual, OBJ takes 21 s",
  "rerun": {},
+ "tested": [
+  "2026-11-09",
+  "2026-11-09"
+ ],
  "kese": [
   "22fd70c"
+ ],
+ "kese_version": [
+  "2.4.0"
+ ],
+ "runs": [
+  [
+   "corpus",
+   "2026-11-09",
+   11000000000.0,
+   5400.0
+  ]
  ],
  "machine": {
   "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz, 4 cores, 15 GB",

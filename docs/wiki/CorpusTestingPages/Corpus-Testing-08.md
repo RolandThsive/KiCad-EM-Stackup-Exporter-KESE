@@ -227,7 +227,7 @@ Part 8 of 30 of [Corpus Testing](../Corpus-Testing.md): boards 757 to 864, six r
 | Simulation, GLB | 16.4 | 41.0 | 90.4 | 5&nbsp;ms | 149.7 | 7.3 | 22.3 | 1.4 | 328.5 |
 | Simulation, STEP | 16.1 | 42.1 | 96.0 | 6&nbsp;ms | 161.6 | 91.8 | 28.1 | 1.5 | 437.2 |
 | Simulation, STL | 16.5 | 41.8 | 93.4 | 8&nbsp;ms | 163.0 | 20.9 | 24.3 | 1.4 | 361.2 |
-| Simulation, OBJ |  |  |  |  |  |  |  |  | exceeded 11 GB on a 15 GB machine (stopped there, not a KESE failure); it will be run again on a machine with more memory |
+| Simulation, OBJ |  |  |  |  |  |  |  |  | exceeded 11 GB on a 16 GB machine (stopped there, not a KESE failure); it will be run again on a machine with more memory |
 | Visual, GLB | 16.5 | 40.6 | 87.9 | 5&nbsp;ms | 434.5 | 3.9 | 30.5 | 0.9 | 614.7 |
 | Visual, OBJ | 18.4 | 42.4 | 94.2 | 6&nbsp;ms | 488.9 | 121.5 | 38.4 | 1.4 | 805.3 |
 
@@ -242,7 +242,7 @@ Part 8 of 30 of [Corpus Testing](../Corpus-Testing.md): boards 757 to 864, six r
 | File&nbsp;format | KiCad 9 (20241229) |
 | Parts,&nbsp;tracks,&nbsp;vias | 1,479, 26,650, 4,374 |
 | Triangles,&nbsp;simulation | 38,156,760 in 1822 parts |
-| Verifier | Simulation, OBJ: exceeded 11 GB on a 15 GB machine (stopped there, not a KESE failure); it will be run again on a machine with more memory |
+| Verifier | Simulation, OBJ: exceeded 11 GB on a 16 GB machine (stopped there, not a KESE failure); it will be run again on a machine with more memory |
 | Run&nbsp;again | Visual, OBJ: failed in the corpus run, run again with the memory cap raised from 11 GB to 14.5 GB, and passed |
 
 </td><td valign="top">

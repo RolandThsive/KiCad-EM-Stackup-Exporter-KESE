@@ -1,7 +1,4 @@
 {
- "rank": 137,
- "score": 15003,
- "level": "VERY HIGH",
  "layers": 4,
  "parts": 437,
  "big": 1,
@@ -15,9 +12,10 @@
  "project": "smoothieware/smoothieboard2",
  "name": "smoothiev2-prime",
  "license": "As README.md states it: \"Under the same license as v1 ( CERN OHL v1.2 or later and GPL v3 or later )\"",
+ "license_checked": "2026-11-08",
  "zip": "part06_of_17",
  "features": {
-  "through_vias": 2878,
+  "through_vias": 1439,
   "blind_buried_vias": 0,
   "microvias": 0,
   "backdrills": 0,

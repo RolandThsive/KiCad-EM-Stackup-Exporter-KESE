@@ -1,7 +1,4 @@
 {
- "rank": 129,
- "score": 15041,
- "level": "VERY HIGH",
  "layers": 6,
  "parts": 190,
  "big": 1,
@@ -15,9 +12,10 @@
  "project": "naturalhazardscience/groundlark",
  "name": "groundlark-daqhat-01",
  "license": "MIT (MIT License)",
+ "license_checked": "2026-11-08",
  "zip": "part06_of_17",
  "features": {
-  "through_vias": 1490,
+  "through_vias": 745,
   "blind_buried_vias": 0,
   "microvias": 0,
   "backdrills": 0,

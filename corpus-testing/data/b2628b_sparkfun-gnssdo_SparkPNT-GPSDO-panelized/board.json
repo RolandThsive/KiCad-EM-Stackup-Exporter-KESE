@@ -1,7 +1,4 @@
 {
- "rank": 561,
- "score": 4846,
- "level": "HIGH",
  "layers": 4,
  "parts": 232,
  "big": 2,
@@ -15,9 +12,10 @@
  "project": "sparkfun/sparkfun_gnssdo",
  "name": "SparkPNT_GPSDO_panelized",
  "license": "MIT (MIT License), in LICENSE.md",
+ "license_checked": "2026-11-08",
  "zip": "part12_of_17",
  "features": {
-  "through_vias": 1384,
+  "through_vias": 692,
   "blind_buried_vias": 0,
   "microvias": 0,
   "backdrills": 0,

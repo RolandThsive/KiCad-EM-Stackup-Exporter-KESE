@@ -1,7 +1,4 @@
 {
- "rank": 435,
- "score": 6327,
- "level": "HIGH",
  "layers": 4,
  "parts": 64,
  "big": 0,
@@ -15,9 +12,10 @@
  "project": "mibs510/openxtcm5-head-unit",
  "name": "CM5IO",
  "license": "MIT (MIT License)",
+ "license_checked": "2026-11-08",
  "zip": "part11_of_17",
  "features": {
-  "through_vias": 1406,
+  "through_vias": 703,
   "blind_buried_vias": 0,
   "microvias": 0,
   "backdrills": 0,

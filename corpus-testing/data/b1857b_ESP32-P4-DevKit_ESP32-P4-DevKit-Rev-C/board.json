@@ -1,7 +1,4 @@
 {
- "rank": 640,
- "score": 4279,
- "level": "HIGH",
  "layers": 4,
  "parts": 138,
  "big": 2,
@@ -15,6 +12,7 @@
  "project": "OLIMEX/ESP32-P4-DevKit",
  "name": "ESP32-P4-DevKit_Rev_C",
  "license": "GPL-3.0 (GNU GPL v3.0)",
+ "license_checked": "2026-11-08",
  "zip": "part12_of_17",
  "features": {
   "through_vias": 216,

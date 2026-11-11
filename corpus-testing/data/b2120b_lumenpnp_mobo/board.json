@@ -1,7 +1,4 @@
 {
- "rank": 442,
- "score": 6218,
- "level": "HIGH",
  "layers": 4,
  "parts": 296,
  "big": 7,
@@ -15,9 +12,10 @@
  "project": "opulo-inc/lumenpnp",
  "name": "mobo",
  "license": "In LICENSE: CERN-OHL-W-2.0 for the hardware designs, MPL-2.0 for the workflows, CC-BY-SA-4.0 for the KiCad libraries",
+ "license_checked": "2026-11-08",
  "zip": "part11_of_17",
  "features": {
-  "through_vias": 2020,
+  "through_vias": 1010,
   "blind_buried_vias": 0,
   "microvias": 0,
   "backdrills": 0,

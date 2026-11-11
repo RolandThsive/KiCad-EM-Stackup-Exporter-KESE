@@ -1,7 +1,4 @@
 {
- "rank": 735,
- "score": 3651,
- "level": "HIGH",
  "layers": 4,
  "parts": 83,
  "big": 0,
@@ -15,6 +12,7 @@
  "project": "apertus-open-source-cinema/axiom-micro-mainboard",
  "name": "pcb",
  "license": "CERN-OHL-S-2.0 (CERN Open Hardware Licence v2, Strongly Reciprocal), in LICENSE.txt",
+ "license_checked": "2026-11-08",
  "zip": "part13_of_17",
  "features": {
   "through_vias": 310,

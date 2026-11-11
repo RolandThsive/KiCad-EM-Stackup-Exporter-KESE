@@ -1,7 +1,4 @@
 {
- "rank": 542,
- "score": 4927,
- "level": "HIGH",
  "layers": 4,
  "parts": 102,
  "big": 1,
@@ -15,6 +12,7 @@
  "project": "joshajohnson/ecp5-mini",
  "name": "ecp5-mini",
  "license": "CERN-OHL-S-2.0 (CERN Open Hardware Licence v2, Strongly Reciprocal), in LICENSE",
+ "license_checked": "2026-11-08",
  "zip": "part12_of_17",
  "features": {
   "through_vias": 210,

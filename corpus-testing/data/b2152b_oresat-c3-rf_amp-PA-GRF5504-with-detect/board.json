@@ -1,7 +1,4 @@
 {
- "rank": 1741,
- "score": 1009,
- "level": "MEDIUM",
  "layers": 4,
  "parts": 51,
  "big": 0,
@@ -15,9 +12,10 @@
  "project": "oresat/oresat-c3-rf",
  "name": "amp-PA-GRF5504-with-detect",
  "license": "MIT (MIT License)",
+ "license_checked": "2026-11-08",
  "zip": "part16_of_17",
  "features": {
-  "through_vias": 440,
+  "through_vias": 220,
   "blind_buried_vias": 0,
   "microvias": 0,
   "backdrills": 0,

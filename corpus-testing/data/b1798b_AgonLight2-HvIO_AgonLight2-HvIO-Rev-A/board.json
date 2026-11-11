@@ -1,7 +1,4 @@
 {
- "rank": 1578,
- "score": 1250,
- "level": "MEDIUM",
  "layers": 2,
  "parts": 62,
  "big": 0,
@@ -15,6 +12,7 @@
  "project": "OLIMEX/AgonLight2-HvIO",
  "name": "AgonLight2-HvIO_Rev_A",
  "license": "GPL-3.0 (GNU GPL v3.0)",
+ "license_checked": "2026-11-08",
  "zip": "part15_of_17",
  "features": {
   "through_vias": 180,

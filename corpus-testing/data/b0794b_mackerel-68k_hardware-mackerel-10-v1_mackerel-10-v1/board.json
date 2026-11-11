@@ -1,7 +1,4 @@
 {
- "rank": 823,
- "score": 3267,
- "level": "HIGH",
  "layers": 4,
  "parts": 113,
  "big": 3,
@@ -15,9 +12,10 @@
  "project": "crmaykish/mackerel-68k",
  "name": "mackerel-10-v1",
  "license": "MIT (MIT License)",
+ "license_checked": "2026-11-08",
  "zip": "part13_of_17",
  "features": {
-  "through_vias": 400,
+  "through_vias": 200,
   "blind_buried_vias": 0,
   "microvias": 0,
   "backdrills": 0,

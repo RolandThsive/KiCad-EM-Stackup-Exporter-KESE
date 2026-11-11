@@ -1,7 +1,4 @@
 {
- "rank": 39,
- "score": 26814,
- "level": "EXTREME",
  "layers": 2,
  "parts": 118,
  "big": 0,
@@ -15,6 +12,7 @@
  "project": "eduardocasino/kim-1",
  "name": "kim-1",
  "license": "CC-BY-NC-4.0 (Creative Commons Attribution-NonCommercial 4.0), in LICENSE.md",
+ "license_checked": "2026-11-08",
  "zip": "part03_of_17",
  "features": {
   "through_vias": 112,

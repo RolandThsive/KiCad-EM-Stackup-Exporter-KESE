@@ -1,7 +1,4 @@
 {
- "rank": 3052,
- "score": 1,
- "level": "SIMPLE",
  "layers": 6,
  "parts": 3,
  "big": 0,
@@ -15,6 +12,7 @@
  "project": "owntech-foundation/twist",
  "name": "heatsink_drawing",
  "license": "As README.md states it: \"This project is propelled by OwnTech Team under CERN-OHL-S open hardware Licence The documentation provided is placed under Creative Commons SA-BY\"",
+ "license_checked": "2026-11-08",
  "zip": "part16_of_17",
  "features": {
   "through_vias": 0,

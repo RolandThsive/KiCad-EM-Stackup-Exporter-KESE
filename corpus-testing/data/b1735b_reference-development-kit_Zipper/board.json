@@ -1,7 +1,4 @@
 {
- "rank": 449,
- "score": 6108,
- "level": "HIGH",
  "layers": 6,
  "parts": 173,
  "big": 5,
@@ -15,6 +12,7 @@
  "project": "myriadrf/reference-development-kit",
  "name": "Zipper",
  "license": "CC-BY-3.0 (Creative Commons Attribution 3.0), in myriadrf-8001/COPYING, umyriadrf-6002/COPYING, umyriadrf-7002/COPYING and others",
+ "license_checked": "2026-11-08",
  "zip": "part11_of_17",
  "features": {
   "through_vias": 614,

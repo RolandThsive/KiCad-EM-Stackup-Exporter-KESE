@@ -3,7 +3,10 @@
  "project": "myriadrf/lc-b3-mpa",
  "path": "myriadrf__lc-b3-mpa/hardware/0v1/lc-b3-mpa.kicad_pcb",
  "license": "SHL-2.1 (Solderpad Hardware License v2.1), in LICENSE",
- "rank": 2551,
+ "license_checked": "2026-11-08",
+ "rank": 2543,
+ "score": 209,
+ "level": "SIMPLE",
  "complexity": {
   "grade": 219,
   "size": 149,
@@ -21,8 +24,23 @@
  "bad_design": null,
  "chart_alt": "lc-b3-mpa: stages 4 and 6 take 53% to 81% of a run. Simulation, GLB takes 2.5 s. Simulation, STEP takes 3.5 s. Simulation, STL takes 2.7 s. Simulation, OBJ takes 3.4 s. Visual, GLB takes 3.1 s. Visual, OBJ takes 3.3 s",
  "rerun": {},
+ "tested": [
+  "2026-11-09",
+  "2026-11-09"
+ ],
  "kese": [
   "22fd70c"
+ ],
+ "kese_version": [
+  "2.4.0"
+ ],
+ "runs": [
+  [
+   "corpus",
+   "2026-11-09",
+   11000000000.0,
+   5400.0
+  ]
  ],
  "machine": {
   "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz, 4 cores, 15 GB",

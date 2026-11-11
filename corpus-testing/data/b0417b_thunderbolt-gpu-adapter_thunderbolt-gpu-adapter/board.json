@@ -1,7 +1,4 @@
 {
- "rank": 300,
- "score": 8569,
- "level": "VERY HIGH",
  "layers": 6,
  "parts": 344,
  "big": 1,
@@ -15,9 +12,10 @@
  "project": "antmicro/thunderbolt-gpu-adapter",
  "name": "thunderbolt-gpu-adapter",
  "license": "Apache-2.0 (Apache License 2.0)",
+ "license_checked": "2026-11-08",
  "zip": "part10_of_17",
  "features": {
-  "through_vias": 2184,
+  "through_vias": 1092,
   "blind_buried_vias": 0,
   "microvias": 0,
   "backdrills": 0,

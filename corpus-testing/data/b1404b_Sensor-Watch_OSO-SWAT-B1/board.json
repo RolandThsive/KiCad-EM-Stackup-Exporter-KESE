@@ -1,7 +1,4 @@
 {
- "rank": 1852,
- "score": 873,
- "level": "LOW",
  "layers": 2,
  "parts": 23,
  "big": 1,
@@ -15,9 +12,10 @@
  "project": "joeycastillo/Sensor-Watch",
  "name": "OSO-SWAT-B1",
  "license": "CC-BY-SA-4.0 (Creative Commons Attribution-ShareAlike 4.0), in LICENSE.md",
+ "license_checked": "2026-11-08",
  "zip": "part16_of_17",
  "features": {
-  "through_vias": 158,
+  "through_vias": 79,
   "blind_buried_vias": 0,
   "microvias": 0,
   "backdrills": 0,

@@ -1,7 +1,4 @@
 {
- "rank": 3061,
- "score": 0,
- "level": "SIMPLE",
  "layers": 2,
  "parts": 0,
  "big": 0,
@@ -15,9 +12,10 @@
  "project": "BerkeleyLab/DxP-sensor-probes",
  "name": "extension_board_MM",
  "license": "CC-BY-NC-4.0 (Creative Commons Attribution-NonCommercial 4.0), in LICENSE.md",
+ "license_checked": "2026-11-08",
  "zip": "part16_of_17",
  "features": {
-  "through_vias": 60,
+  "through_vias": 30,
   "blind_buried_vias": 0,
   "microvias": 0,
   "backdrills": 0,

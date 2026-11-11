@@ -1,7 +1,4 @@
 {
- "rank": 555,
- "score": 4874,
- "level": "HIGH",
  "layers": 4,
  "parts": 240,
  "big": 2,
@@ -15,6 +12,7 @@
  "project": "osmocom/osmo-e1-hardware",
  "name": "icE1usb-panel",
  "license": "CERN-OHL-S-2.0 (CERN Open Hardware Licence v2, Strongly Reciprocal), in hardware/icE1usb/LICENSE",
+ "license_checked": "2026-11-08",
  "zip": "part12_of_17",
  "features": {
   "through_vias": 370,

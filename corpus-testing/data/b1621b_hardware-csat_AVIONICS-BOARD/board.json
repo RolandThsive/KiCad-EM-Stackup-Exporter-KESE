@@ -1,7 +1,4 @@
 {
- "rank": 775,
- "score": 3526,
- "level": "HIGH",
  "layers": 4,
  "parts": 182,
  "big": 1,
@@ -15,9 +12,10 @@
  "project": "matthiasgeorgimhof/hardware_csat",
  "name": "AVIONICS_BOARD",
  "license": "CC-BY-NC-SA-4.0 (Creative Commons Attribution-NonCommercial-ShareAlike 4.0), in LICENSE, aux_board/LICENSE, auxio_board/LICENSE and others",
+ "license_checked": "2026-11-08",
  "zip": "part13_of_17",
  "features": {
-  "through_vias": 734,
+  "through_vias": 367,
   "blind_buried_vias": 0,
   "microvias": 0,
   "backdrills": 0,

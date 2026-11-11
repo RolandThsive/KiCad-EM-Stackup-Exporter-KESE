@@ -3,7 +3,10 @@
  "project": "AmigaPCI/AmigaPCI-MainBoard",
  "path": "AmigaPCI__AmigaPCI-MainBoard/KiCAD/AmigaPCI Mainboard-KiCAD REV 70/AmigaPCI Mainboard.kicad_pcb",
  "license": "As README.md states it: \"Floppy interface modifications from Ian Steadman (noted in schematic) released under the GNU GENERAL PUBLIC LICENSE, Version 3. AmigaPCI by Jason Neus is licensed under Creative Commons Attribution-NonCommercial 4.0 International\"",
+ "license_checked": "2026-11-08",
  "rank": 33,
+ "score": 29804,
+ "level": "EXTREME",
  "complexity": {
   "grade": 493,
   "size": 343,
@@ -31,8 +34,29 @@
    "Visual, OBJ"
   ]
  },
+ "tested": [
+  "2026-11-09",
+  "2026-11-10"
+ ],
  "kese": [
   "22fd70c"
+ ],
+ "kese_version": [
+  "2.4.0"
+ ],
+ "runs": [
+  [
+   "cap",
+   "2026-11-10",
+   14500000000.0,
+   5400.0
+  ],
+  [
+   "corpus",
+   "2026-11-09",
+   11000000000.0,
+   5400.0
+  ]
  ],
  "machine": {
   "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz, 4 cores, 15 GB",

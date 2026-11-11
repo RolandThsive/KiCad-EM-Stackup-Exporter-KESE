@@ -3,7 +3,10 @@
  "project": "GaudiLabs/OpenDrop",
  "path": "GaudiLabs__OpenDrop/OpenDropV4/Electronics/CartridgeV4/DIMMTop/DIMMTop.kicad_pcb",
  "license": "GPL-3.0 (GNU GPL v3.0)",
- "rank": 3066,
+ "license_checked": "2026-11-08",
+ "rank": 3084,
+ "score": 0,
+ "level": "SIMPLE",
  "complexity": {
   "grade": 17,
   "size": 17,
@@ -15,8 +18,23 @@
  "bad_design": null,
  "chart_alt": "DIMMTop: stages 4 and 6 take 32% to 53% of a run. Simulation, GLB takes 0.4 s. Simulation, STEP takes 0.6 s. Simulation, STL takes 0.4 s. Simulation, OBJ takes 0.6 s. Visual, GLB takes 0.6 s. Visual, OBJ takes 0.8 s",
  "rerun": {},
+ "tested": [
+  "2026-11-09",
+  "2026-11-09"
+ ],
  "kese": [
   "22fd70c"
+ ],
+ "kese_version": [
+  "2.4.0"
+ ],
+ "runs": [
+  [
+   "corpus",
+   "2026-11-09",
+   11000000000.0,
+   5400.0
+  ]
  ],
  "machine": {
   "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz, 4 cores, 15 GB",

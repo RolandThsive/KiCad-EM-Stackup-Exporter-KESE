@@ -3,7 +3,10 @@
  "project": "azonenberg/starshipraider",
  "path": "azonenberg__starshipraider/boards/probes/akl-ad4/akl-ad4.kicad_pcb",
  "license": "BSD-3-Clause (BSD 3-Clause License)",
- "rank": 2245,
+ "license_checked": "2026-11-08",
+ "rank": 2238,
+ "score": 468,
+ "level": "LOW",
  "complexity": {
   "grade": 264,
   "size": 169,
@@ -23,8 +26,23 @@
  "bad_design": null,
  "chart_alt": "akl-ad4: stages 4 and 6 take 47% to 84% of a run. Simulation, GLB takes 3.5 s. Simulation, STEP takes 4.4 s. Simulation, STL takes 3.1 s. Simulation, OBJ takes 5.0 s. Visual, GLB takes 5.6 s. Visual, OBJ takes 6.6 s",
  "rerun": {},
+ "tested": [
+  "2026-11-09",
+  "2026-11-09"
+ ],
  "kese": [
   "22fd70c"
+ ],
+ "kese_version": [
+  "2.4.0"
+ ],
+ "runs": [
+  [
+   "corpus",
+   "2026-11-09",
+   11000000000.0,
+   5400.0
+  ]
  ],
  "machine": {
   "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz, 4 cores, 15 GB",

@@ -1,7 +1,4 @@
 {
- "rank": 89,
- "score": 19365,
- "level": "VERY HIGH",
  "layers": 8,
  "parts": 488,
  "big": 7,
@@ -15,6 +12,7 @@
  "project": "antmicro/ecp5-dc-scm",
  "name": "ecp5-dc-scm",
  "license": "Apache-2.0 (Apache License 2.0)",
+ "license_checked": "2026-11-08",
  "zip": "part05_of_17",
  "features": {
   "through_vias": 1411,

@@ -3,7 +3,10 @@
  "project": "cetola/reform-next-mirror",
  "path": "cetola__reform-next-mirror/nref-trackpad/nref-trackpad.kicad_pcb",
  "license": "As README.md states it: \"All hardware design work in this repository is © 2024 MNT Research GmbH, Berlin, Germany, and contributors (see Credits).\"",
- "rank": 2513,
+ "license_checked": "2026-11-08",
+ "rank": 2505,
+ "score": 243,
+ "level": "SIMPLE",
  "complexity": {
   "grade": 243,
   "size": 168,
@@ -21,8 +24,23 @@
  "bad_design": null,
  "chart_alt": "nref-trackpad: stages 4 and 6 take 49% to 75% of a run. Simulation, GLB takes 2.9 s. Simulation, STEP takes 4.4 s. Simulation, STL takes 2.9 s. Simulation, OBJ takes 4.3 s. Visual, GLB takes 3.6 s. Visual, OBJ takes 4.9 s",
  "rerun": {},
+ "tested": [
+  "2026-11-09",
+  "2026-11-09"
+ ],
  "kese": [
   "22fd70c"
+ ],
+ "kese_version": [
+  "2.4.0"
+ ],
+ "runs": [
+  [
+   "corpus",
+   "2026-11-09",
+   11000000000.0,
+   5400.0
+  ]
  ],
  "machine": {
   "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz, 4 cores, 15 GB",

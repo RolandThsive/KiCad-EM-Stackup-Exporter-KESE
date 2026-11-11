@@ -1,7 +1,4 @@
 {
- "rank": 1641,
- "score": 1148,
- "level": "MEDIUM",
  "layers": 2,
  "parts": 54,
  "big": 1,
@@ -15,6 +12,7 @@
  "project": "rocketscream/TinyReflowController",
  "name": "TINY-REFLOW-CONTROLLER",
  "license": "No license found",
+ "license_checked": "2026-11-08",
  "zip": "part15_of_17",
  "features": {
   "through_vias": 147,

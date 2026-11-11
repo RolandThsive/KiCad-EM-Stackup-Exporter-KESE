@@ -1,7 +1,4 @@
 {
- "rank": 254,
- "score": 10087,
- "level": "VERY HIGH",
  "layers": 4,
  "parts": 90,
  "big": 2,
@@ -15,9 +12,10 @@
  "project": "A4091/A4092",
  "name": "A4092",
  "license": "As README.md states it: \"License: CC BY-SA 4.0\"",
+ "license_checked": "2026-11-08",
  "zip": "part09_of_17",
  "features": {
-  "through_vias": 3114,
+  "through_vias": 1557,
   "blind_buried_vias": 0,
   "microvias": 0,
   "backdrills": 0,

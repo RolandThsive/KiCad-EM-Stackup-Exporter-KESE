@@ -1,7 +1,4 @@
 {
- "rank": 452,
- "score": 6068,
- "level": "HIGH",
  "layers": 6,
  "parts": 59,
  "big": 2,
@@ -15,9 +12,10 @@
  "project": "antmicro/ddr5-testbed",
  "name": "ddr5-testbed",
  "license": "Apache-2.0 (Apache License 2.0)",
+ "license_checked": "2026-11-08",
  "zip": "part11_of_17",
  "features": {
-  "through_vias": 360,
+  "through_vias": 180,
   "blind_buried_vias": 0,
   "microvias": 0,
   "backdrills": 0,

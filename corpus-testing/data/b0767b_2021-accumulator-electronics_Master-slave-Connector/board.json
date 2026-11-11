@@ -1,7 +1,4 @@
 {
- "rank": 2412,
- "score": 320,
- "level": "LOW",
  "layers": 2,
  "parts": 8,
  "big": 0,
@@ -15,6 +12,7 @@
  "project": "columbia-fsae/2021_accumulator_electronics",
  "name": "Master_slave Connector",
  "license": "No license found",
+ "license_checked": "2026-11-08",
  "zip": "part16_of_17",
  "features": {
   "through_vias": 61,

@@ -1,7 +1,4 @@
 {
- "rank": 229,
- "score": 10746,
- "level": "VERY HIGH",
  "layers": 2,
  "parts": 138,
  "big": 0,
@@ -15,6 +12,7 @@
  "project": "bwack/C64C-250469-KiCAD-Replica",
  "name": "C64-250469-KiCad",
  "license": "CERN-OHL-1.2 (CERN Open Hardware Licence v1.2), in LICENSE",
+ "license_checked": "2026-11-08",
  "zip": "part09_of_17",
  "features": {
   "through_vias": 642,

@@ -1,7 +1,4 @@
 {
- "rank": 2768,
- "score": 73,
- "level": "SIMPLE",
  "layers": 2,
  "parts": 9,
  "big": 0,
@@ -15,9 +12,10 @@
  "project": "terrapin-rocket-team/srad-avionics",
  "name": "BatteryCharger",
  "license": "No license found",
+ "license_checked": "2026-11-08",
  "zip": "part16_of_17",
  "features": {
-  "through_vias": 12,
+  "through_vias": 6,
   "blind_buried_vias": 0,
   "microvias": 0,
   "backdrills": 0,

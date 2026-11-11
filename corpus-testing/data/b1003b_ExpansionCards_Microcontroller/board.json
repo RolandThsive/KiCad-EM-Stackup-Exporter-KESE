@@ -1,7 +1,4 @@
 {
- "rank": 1770,
- "score": 981,
- "level": "LOW",
  "layers": 2,
  "parts": 26,
  "big": 1,
@@ -15,6 +12,7 @@
  "project": "FrameworkComputer/ExpansionCards",
  "name": "Microcontroller",
  "license": "CC-BY-4.0 (Creative Commons Attribution 4.0)",
+ "license_checked": "2026-11-08",
  "zip": "part16_of_17",
  "features": {
   "through_vias": 110,

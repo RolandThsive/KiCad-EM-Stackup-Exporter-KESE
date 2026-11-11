@@ -3,7 +3,10 @@
  "project": "butterstick-fpga/butterstick-hardware",
  "path": "butterstick-fpga__butterstick-hardware/hardware/ButterStick_r0.2/ButterStick.kicad_pcb",
  "license": "CERN-OHL-1.2 (CERN Open Hardware Licence v1.2), in LICENSE",
+ "license_checked": "2026-11-08",
  "rank": 80,
+ "score": 20094,
+ "level": "EXTREME",
  "complexity": {
   "grade": 410,
   "size": 320,
@@ -23,8 +26,23 @@
  "bad_design": null,
  "chart_alt": "ButterStick: stages 4 and 6 take 51% to 82% of a run. Simulation, GLB takes 53 s. Simulation, STEP takes 67 s. Simulation, STL takes 57 s. Simulation, OBJ takes 85 s. Visual, GLB takes 76 s. Visual, OBJ takes 91 s",
  "rerun": {},
+ "tested": [
+  "2026-11-09",
+  "2026-11-09"
+ ],
  "kese": [
   "22fd70c"
+ ],
+ "kese_version": [
+  "2.4.0"
+ ],
+ "runs": [
+  [
+   "corpus",
+   "2026-11-09",
+   11000000000.0,
+   5400.0
+  ]
  ],
  "machine": {
   "cpu": "Intel(R) Xeon(R) Processor @ 2.30GHz, 4 cores, 15 GB",

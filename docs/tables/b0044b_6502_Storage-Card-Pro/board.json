@@ -3,7 +3,10 @@
  "project": "acwright/6502",
  "path": "acwright__6502/Hardware/Storage Card Pro/Rev 1.0/Storage Card Pro.kicad_pcb",
  "license": "CERN-OHL-P-2.0 (CERN Open Hardware Licence v2, Permissive), in LICENSE",
- "rank": 1810,
+ "license_checked": "2026-11-08",
+ "rank": 1805,
+ "score": 928,
+ "level": "LOW",
  "complexity": {
   "grade": 218,
   "size": 163,
@@ -20,8 +23,23 @@
  "bad_design": null,
  "chart_alt": "Storage Card Pro: stages 4 and 6 take 55% to 81% of a run. Simulation, GLB takes 9.6 s. Simulation, STEP takes 12 s. Simulation, STL takes 9.7 s. Simulation, OBJ takes 15 s. Visual, GLB takes 14 s. Visual, OBJ takes 17 s",
  "rerun": {},
+ "tested": [
+  "2026-11-09",
+  "2026-11-09"
+ ],
  "kese": [
   "22fd70c"
+ ],
+ "kese_version": [
+  "2.4.0"
+ ],
+ "runs": [
+  [
+   "corpus",
+   "2026-11-09",
+   11000000000.0,
+   5400.0
+  ]
  ],
  "machine": {
   "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz, 4 cores, 15 GB",

@@ -1,7 +1,4 @@
 {
- "rank": 2074,
- "score": 624,
- "level": "LOW",
  "layers": 4,
  "parts": 44,
  "big": 0,
@@ -15,6 +12,7 @@
  "project": "azonenberg/starshipraider",
  "name": "akl-av1",
  "license": "BSD-3-Clause (BSD 3-Clause License)",
+ "license_checked": "2026-11-08",
  "zip": "part16_of_17",
  "features": {
   "through_vias": 79,

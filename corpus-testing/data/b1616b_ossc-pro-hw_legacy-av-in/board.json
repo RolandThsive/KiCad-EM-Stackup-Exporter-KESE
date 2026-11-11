@@ -1,7 +1,4 @@
 {
- "rank": 1032,
- "score": 2412,
- "level": "MEDIUM",
  "layers": 4,
  "parts": 87,
  "big": 2,
@@ -15,9 +12,10 @@
  "project": "marqs85/ossc_pro_hw",
  "name": "legacy_av_in",
  "license": "CERN-OHL-P-2.0 (CERN Open Hardware Licence v2, Permissive)",
+ "license_checked": "2026-11-08",
  "zip": "part14_of_17",
  "features": {
-  "through_vias": 788,
+  "through_vias": 394,
   "blind_buried_vias": 0,
   "microvias": 0,
   "backdrills": 0,

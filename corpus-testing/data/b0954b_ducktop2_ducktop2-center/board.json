@@ -1,7 +1,4 @@
 {
- "rank": 206,
- "score": 11305,
- "level": "VERY HIGH",
  "layers": 8,
  "parts": 840,
  "big": 7,
@@ -15,9 +12,10 @@
  "project": "ewoudvv/ducktop2",
  "name": "ducktop2-center",
  "license": "MIT (MIT License)",
+ "license_checked": "2026-11-08",
  "zip": "part09_of_17",
  "features": {
-  "through_vias": 2330,
+  "through_vias": 1165,
   "blind_buried_vias": 0,
   "microvias": 0,
   "backdrills": 0,

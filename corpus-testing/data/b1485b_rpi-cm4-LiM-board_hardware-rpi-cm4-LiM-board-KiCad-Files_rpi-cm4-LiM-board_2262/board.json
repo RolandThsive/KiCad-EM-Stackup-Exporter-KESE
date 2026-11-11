@@ -1,7 +1,4 @@
 {
- "rank": 2262,
- "score": 443,
- "level": "LOW",
  "layers": 2,
  "parts": 12,
  "big": 0,
@@ -15,6 +12,7 @@
  "project": "l00nix/rpi-cm4-LiM-board",
  "name": "rpi-cm4-LiM+-board",
  "license": "CC0-1.0 (Creative Commons Zero v1.0)",
+ "license_checked": "2026-11-08",
  "zip": "part16_of_17",
  "features": {
   "through_vias": 45,

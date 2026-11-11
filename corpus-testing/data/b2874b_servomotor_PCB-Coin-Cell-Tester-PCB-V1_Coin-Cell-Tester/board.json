@@ -1,7 +1,4 @@
 {
- "rank": 1072,
- "score": 2270,
- "level": "MEDIUM",
  "layers": 2,
  "parts": 193,
  "big": 1,
@@ -15,6 +12,7 @@
  "project": "tomrodinger/servomotor",
  "name": "Coin_Cell_Tester",
  "license": "MIT (MIT License)",
+ "license_checked": "2026-11-08",
  "zip": "part14_of_17",
  "features": {
   "through_vias": 181,

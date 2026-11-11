@@ -1,7 +1,4 @@
 {
- "rank": 306,
- "score": 8468,
- "level": "VERY HIGH",
  "layers": 4,
  "parts": 217,
  "big": 1,
@@ -15,9 +12,10 @@
  "project": "ddraig68k/hardware",
  "name": "yddraig",
  "license": "MIT (MIT License)",
+ "license_checked": "2026-11-08",
  "zip": "part10_of_17",
  "features": {
-  "through_vias": 2084,
+  "through_vias": 1042,
   "blind_buried_vias": 0,
   "microvias": 0,
   "backdrills": 0,

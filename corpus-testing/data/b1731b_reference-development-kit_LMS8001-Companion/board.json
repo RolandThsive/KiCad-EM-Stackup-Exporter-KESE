@@ -1,7 +1,4 @@
 {
- "rank": 1048,
- "score": 2360,
- "level": "MEDIUM",
  "layers": 4,
  "parts": 282,
  "big": 1,
@@ -15,6 +12,7 @@
  "project": "myriadrf/reference-development-kit",
  "name": "LMS8001_Companion",
  "license": "CC-BY-3.0 (Creative Commons Attribution 3.0), in myriadrf-8001/COPYING, umyriadrf-6002/COPYING, umyriadrf-7002/COPYING and others",
+ "license_checked": "2026-11-08",
  "zip": "part14_of_17",
  "features": {
   "through_vias": 165,

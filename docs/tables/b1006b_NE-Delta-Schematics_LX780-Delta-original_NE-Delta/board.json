@@ -3,7 +3,10 @@
  "project": "frubem/NE_Delta_Schematics",
  "path": "frubem__NE_Delta_Schematics/LX780_Delta-original/NE_Delta.kicad_pcb",
  "license": "No license found",
+ "license_checked": "2026-11-08",
  "rank": 11,
+ "score": 54843,
+ "level": "EXTREME",
  "complexity": {
   "grade": 422,
   "size": 252,
@@ -33,8 +36,29 @@
    "Simulation, OBJ"
   ]
  },
+ "tested": [
+  "2026-11-09",
+  "2026-11-10"
+ ],
  "kese": [
   "22fd70c"
+ ],
+ "kese_version": [
+  "2.4.0"
+ ],
+ "runs": [
+  [
+   "cap",
+   "2026-11-10",
+   14500000000.0,
+   5400.0
+  ],
+  [
+   "corpus",
+   "2026-11-09",
+   11000000000.0,
+   5400.0
+  ]
  ],
  "machine": {
   "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz, 4 cores, 15 GB",

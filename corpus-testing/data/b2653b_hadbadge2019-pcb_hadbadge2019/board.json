@@ -1,7 +1,4 @@
 {
- "rank": 484,
- "score": 5503,
- "level": "HIGH",
  "layers": 4,
  "parts": 184,
  "big": 1,
@@ -15,6 +12,7 @@
  "project": "Spritetm/hadbadge2019_pcb",
  "name": "hadbadge2019",
  "license": "CC-BY-SA-3.0 (Creative Commons Attribution-ShareAlike 3.0), in LICENSE",
+ "license_checked": "2026-11-08",
  "zip": "part11_of_17",
  "features": {
   "through_vias": 393,

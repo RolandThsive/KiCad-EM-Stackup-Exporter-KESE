@@ -1,7 +1,4 @@
 {
- "rank": 1105,
- "score": 2197,
- "level": "MEDIUM",
  "layers": 4,
  "parts": 76,
  "big": 2,
@@ -15,9 +12,10 @@
  "project": "open-ephys/commutators",
  "name": "oe-commutator-controller",
  "license": "CC-BY-NC-SA-4.0 (Creative Commons Attribution-NonCommercial-ShareAlike 4.0), in LICENSE.TXT",
+ "license_checked": "2026-11-08",
  "zip": "part14_of_17",
  "features": {
-  "through_vias": 782,
+  "through_vias": 391,
   "blind_buried_vias": 0,
   "microvias": 0,
   "backdrills": 0,

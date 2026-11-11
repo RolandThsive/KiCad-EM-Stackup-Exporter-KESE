@@ -1,7 +1,4 @@
 {
- "rank": 260,
- "score": 9792,
- "level": "VERY HIGH",
  "layers": 4,
  "parts": 123,
  "big": 2,
@@ -15,9 +12,10 @@
  "project": "A4091/cheetah",
  "name": "A4770",
  "license": "No license found",
+ "license_checked": "2026-11-08",
  "zip": "part09_of_17",
  "features": {
-  "through_vias": 2448,
+  "through_vias": 1224,
   "blind_buried_vias": 0,
   "microvias": 0,
   "backdrills": 0,

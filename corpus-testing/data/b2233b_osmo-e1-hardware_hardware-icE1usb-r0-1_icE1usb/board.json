@@ -1,7 +1,4 @@
 {
- "rank": 1017,
- "score": 2450,
- "level": "MEDIUM",
  "layers": 4,
  "parts": 116,
  "big": 1,
@@ -15,6 +12,7 @@
  "project": "osmocom/osmo-e1-hardware",
  "name": "icE1usb",
  "license": "CERN-OHL-S-2.0 (CERN Open Hardware Licence v2, Strongly Reciprocal), in hardware/icE1usb/LICENSE",
+ "license_checked": "2026-11-08",
  "zip": "part14_of_17",
  "features": {
   "through_vias": 187,

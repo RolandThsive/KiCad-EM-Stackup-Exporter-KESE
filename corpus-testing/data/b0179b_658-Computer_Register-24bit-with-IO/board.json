@@ -1,7 +1,4 @@
 {
- "rank": 1587,
- "score": 1236,
- "level": "MEDIUM",
  "layers": 2,
  "parts": 18,
  "big": 0,
@@ -15,9 +12,10 @@
  "project": "andrewpaterson/658-Computer",
  "name": "Register 24bit with IO",
  "license": "No license found",
+ "license_checked": "2026-11-08",
  "zip": "part15_of_17",
  "features": {
-  "through_vias": 198,
+  "through_vias": 99,
   "blind_buried_vias": 0,
   "microvias": 0,
   "backdrills": 0,

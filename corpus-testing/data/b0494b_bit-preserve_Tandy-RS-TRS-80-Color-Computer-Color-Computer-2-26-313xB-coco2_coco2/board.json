@@ -1,7 +1,4 @@
 {
- "rank": 606,
- "score": 4502,
- "level": "HIGH",
  "layers": 2,
  "parts": 147,
  "big": 0,
@@ -15,6 +12,7 @@
  "project": "baldengineer/bit-preserve",
  "name": "coco2",
  "license": "CC-BY-4.0 (Creative Commons Attribution 4.0), in LICENSE.md",
+ "license_checked": "2026-11-08",
  "zip": "part12_of_17",
  "features": {
   "through_vias": 215,

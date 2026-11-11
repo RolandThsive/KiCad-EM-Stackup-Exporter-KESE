@@ -1,7 +1,4 @@
 {
- "rank": 293,
- "score": 8735,
- "level": "VERY HIGH",
  "layers": 6,
  "parts": 154,
  "big": 1,
@@ -15,9 +12,10 @@
  "project": "eez-open/eez-bb3plus-cm5-mcu",
  "name": "BB3plus CM5 STM32H7 module",
  "license": "TAPR-OHL-1.0 (TAPR Open Hardware License), in LICENSE.TXT",
+ "license_checked": "2026-11-08",
  "zip": "part10_of_17",
  "features": {
-  "through_vias": 1450,
+  "through_vias": 725,
   "blind_buried_vias": 0,
   "microvias": 0,
   "backdrills": 0,

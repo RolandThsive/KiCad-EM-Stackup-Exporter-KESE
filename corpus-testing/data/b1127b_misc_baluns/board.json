@@ -1,7 +1,4 @@
 {
- "rank": 2210,
- "score": 504,
- "level": "LOW",
  "layers": 4,
  "parts": 92,
  "big": 0,
@@ -15,9 +12,10 @@
  "project": "greatscottgadgets/misc",
  "name": "baluns",
  "license": "GPL-2.0 (GNU GPL v2.0)",
+ "license_checked": "2026-11-08",
  "zip": "part16_of_17",
  "features": {
-  "through_vias": 60,
+  "through_vias": 30,
   "blind_buried_vias": 0,
   "microvias": 0,
   "backdrills": 0,

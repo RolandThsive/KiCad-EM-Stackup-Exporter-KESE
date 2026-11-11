@@ -3,7 +3,10 @@
  "project": "azonenberg/starshipraider",
  "path": "azonenberg__starshipraider/boards/MAXWELL/maxwell-main/maxwell-main.kicad_pcb",
  "license": "BSD-3-Clause (BSD 3-Clause License)",
+ "license_checked": "2026-11-08",
  "rank": 2,
+ "score": 67060,
+ "level": "EXTREME",
  "complexity": {
   "grade": 415,
   "size": 370,
@@ -19,8 +22,29 @@
  "bad_design": null,
  "chart_alt": "maxwell-main: stages 4 and 6 take 66% to 89% of a run. Simulation, GLB takes 7 min. Simulation, STEP takes 8 min. Simulation, STL takes 8 min. Visual, GLB takes 14 min. Visual, OBJ takes 16 min",
  "rerun": {},
+ "tested": [
+  "2026-11-09",
+  "2026-11-09"
+ ],
  "kese": [
   "22fd70c"
+ ],
+ "kese_version": [
+  "2.4.0"
+ ],
+ "runs": [
+  [
+   "cap",
+   "2026-11-10",
+   14500000000.0,
+   5400.0
+  ],
+  [
+   "corpus",
+   "2026-11-09",
+   11000000000.0,
+   5400.0
+  ]
  ],
  "machine": {
   "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz, 4 cores, 15 GB",

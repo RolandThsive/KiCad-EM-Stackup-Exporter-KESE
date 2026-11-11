@@ -3,7 +3,10 @@
  "project": "intergalaktik/ULX4M-CM4-HAT",
  "path": "intergalaktik__ULX4M-CM4-HAT/ulx4m-cm4-hat.kicad_pcb",
  "license": "GPL-3.0 (GNU GPL v3.0)",
- "rank": 1698,
+ "license_checked": "2026-11-08",
+ "rank": 1694,
+ "score": 1067,
+ "level": "MEDIUM",
  "complexity": {
   "grade": 241,
   "size": 186,
@@ -20,8 +23,23 @@
  "bad_design": null,
  "chart_alt": "ulx4m-cm4-hat: stages 4 and 6 take 50% to 80% of a run. Simulation, GLB takes 7.7 s. Simulation, STEP takes 9.9 s. Simulation, STL takes 7.6 s. Simulation, OBJ takes 12 s. Visual, GLB takes 11 s. Visual, OBJ takes 14 s",
  "rerun": {},
+ "tested": [
+  "2026-11-09",
+  "2026-11-09"
+ ],
  "kese": [
   "22fd70c"
+ ],
+ "kese_version": [
+  "2.4.0"
+ ],
+ "runs": [
+  [
+   "corpus",
+   "2026-11-09",
+   11000000000.0,
+   5400.0
+  ]
  ],
  "machine": {
   "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz, 4 cores, 15 GB",

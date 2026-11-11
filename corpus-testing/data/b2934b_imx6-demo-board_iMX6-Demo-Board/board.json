@@ -1,7 +1,4 @@
 {
- "rank": 182,
- "score": 12391,
- "level": "VERY HIGH",
  "layers": 6,
  "parts": 458,
  "big": 5,
@@ -15,9 +12,10 @@
  "project": "ts-manuel/imx6-demo-board",
  "name": "iMX6 Demo Board",
  "license": "GPL-3.0 (GNU GPL v3.0)",
+ "license_checked": "2026-11-08",
  "zip": "part08_of_17",
  "features": {
-  "through_vias": 1946,
+  "through_vias": 973,
   "blind_buried_vias": 0,
   "microvias": 0,
   "backdrills": 0,

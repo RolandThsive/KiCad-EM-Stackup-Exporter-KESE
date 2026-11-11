@@ -3,7 +3,10 @@
  "project": "olin-electric-motorsports/olin-electric-motorsports",
  "path": "olin-electric-motorsports__olin-electric-motorsports/vehicle/mkv/hardware/service_section/airs/precharge/precharge.kicad_pcb",
  "license": "No license found",
- "rank": 3038,
+ "license_checked": "2026-11-08",
+ "rank": 3030,
+ "score": 2,
+ "level": "SIMPLE",
  "complexity": {
   "grade": 60,
   "size": 60,
@@ -15,8 +18,23 @@
  "bad_design": null,
  "chart_alt": "precharge: stages 4 and 6 take 40% to 72% of a run. Simulation, GLB takes 1.2 s. Simulation, STEP takes 2.1 s. Simulation, STL takes 1.3 s. Simulation, OBJ takes 1.6 s. Visual, GLB takes 1.7 s. Visual, OBJ takes 1.9 s",
  "rerun": {},
+ "tested": [
+  "2026-11-09",
+  "2026-11-09"
+ ],
  "kese": [
   "22fd70c"
+ ],
+ "kese_version": [
+  "2.4.0"
+ ],
+ "runs": [
+  [
+   "corpus",
+   "2026-11-09",
+   11000000000.0,
+   5400.0
+  ]
  ],
  "machine": {
   "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz, 4 cores, 15 GB",

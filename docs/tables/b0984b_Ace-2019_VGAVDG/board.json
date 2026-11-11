@@ -3,7 +3,10 @@
  "project": "flypie/Ace-2019",
  "path": "flypie__Ace-2019/VGA/VGAVDG.kicad_pcb",
  "license": "GPL-3.0 (GNU GPL v3.0)",
- "rank": 2298,
+ "license_checked": "2026-11-08",
+ "rank": 2290,
+ "score": 414,
+ "level": "LOW",
  "complexity": {
   "grade": 128,
   "size": 118,
@@ -17,8 +20,23 @@
  "bad_design": null,
  "chart_alt": "VGAVDG: stages 4 and 6 take 57% to 85% of a run. Simulation, GLB takes 21 s. Simulation, STEP takes 27 s. Simulation, STL takes 22 s. Simulation, OBJ takes 30 s. Visual, GLB takes 28 s. Visual, OBJ takes 35 s",
  "rerun": {},
+ "tested": [
+  "2026-11-09",
+  "2026-11-09"
+ ],
  "kese": [
   "22fd70c"
+ ],
+ "kese_version": [
+  "2.4.0"
+ ],
+ "runs": [
+  [
+   "corpus",
+   "2026-11-09",
+   11000000000.0,
+   5400.0
+  ]
  ],
  "machine": {
   "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz, 4 cores, 15 GB",

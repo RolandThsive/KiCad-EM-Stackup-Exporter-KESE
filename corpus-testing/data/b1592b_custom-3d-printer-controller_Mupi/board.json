@@ -1,7 +1,4 @@
 {
- "rank": 1860,
- "score": 869,
- "level": "LOW",
  "layers": 2,
  "parts": 84,
  "big": 0,
@@ -15,6 +12,7 @@
  "project": "m47812/custom-3d-printer-controller",
  "name": "Mupi",
  "license": "GPL-3.0 (GNU GPL v3.0)",
+ "license_checked": "2026-11-08",
  "zip": "part16_of_17",
  "features": {
   "through_vias": 68,

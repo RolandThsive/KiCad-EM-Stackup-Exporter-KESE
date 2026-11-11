@@ -1,7 +1,4 @@
 {
- "rank": 174,
- "score": 12718,
- "level": "VERY HIGH",
  "layers": 2,
  "parts": 346,
  "big": 0,
@@ -15,9 +12,10 @@
  "project": "Board-Folk/Einstein-TC-01",
  "name": "EinsteinTC01",
  "license": "As README.md states it: \"As the product of this project is a replica of a proprietary product, the the author makes no claim of copyright to the schematics nor PCB layouts and releases these into the public domain, solely for the purposes of study and historical preservation.\"",
+ "license_checked": "2026-11-08",
  "zip": "part08_of_17",
  "features": {
-  "through_vias": 1538,
+  "through_vias": 769,
   "blind_buried_vias": 0,
   "microvias": 0,
   "backdrills": 0,

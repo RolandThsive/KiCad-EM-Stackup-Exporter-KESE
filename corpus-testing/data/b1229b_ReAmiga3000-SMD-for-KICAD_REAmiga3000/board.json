@@ -1,7 +1,4 @@
 {
- "rank": 22,
- "score": 39437,
- "level": "EXTREME",
  "layers": 4,
  "parts": 470,
  "big": 7,
@@ -15,6 +12,7 @@
  "project": "iansbremner/ReAmiga3000-SMD-for-KICAD",
  "name": "REAmiga3000",
  "license": "No license found",
+ "license_checked": "2026-11-08",
  "zip": "part02_of_17",
  "features": {
   "through_vias": 2572,

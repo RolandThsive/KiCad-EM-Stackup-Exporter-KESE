@@ -3,7 +3,10 @@
  "project": "EEVengers/ts_hardware_archive",
  "path": "EEVengers__ts_hardware_archive/KiCad/FPGA_Module_Rev2/TS_FPGA_Module_Rev2.kicad_pcb",
  "license": "CERN-OHL-P-2.0 (CERN Open Hardware Licence v2, Permissive)",
+ "license_checked": "2026-11-08",
  "rank": 233,
+ "score": 10633,
+ "level": "VERY HIGH",
  "complexity": {
   "grade": 340,
   "size": 250,
@@ -22,8 +25,23 @@
  "bad_design": null,
  "chart_alt": "TS_FPGA_Module_Rev2: stages 4 and 6 take 45% to 81% of a run. Simulation, GLB takes 45 s. Simulation, STEP takes 59 s. Simulation, STL takes 47 s. Simulation, OBJ takes 82 s. Visual, GLB takes 73 s. Visual, OBJ takes 91 s",
  "rerun": {},
+ "tested": [
+  "2026-11-09",
+  "2026-11-09"
+ ],
  "kese": [
   "22fd70c"
+ ],
+ "kese_version": [
+  "2.4.0"
+ ],
+ "runs": [
+  [
+   "corpus",
+   "2026-11-09",
+   11000000000.0,
+   5400.0
+  ]
  ],
  "machine": {
   "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz, 4 cores, 15 GB",

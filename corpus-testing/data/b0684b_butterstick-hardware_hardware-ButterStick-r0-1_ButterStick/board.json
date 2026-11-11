@@ -1,7 +1,4 @@
 {
- "rank": 79,
- "score": 20323,
- "level": "EXTREME",
  "layers": 6,
  "parts": 181,
  "big": 3,
@@ -15,6 +12,7 @@
  "project": "butterstick-fpga/butterstick-hardware",
  "name": "ButterStick",
  "license": "CERN-OHL-1.2 (CERN Open Hardware Licence v1.2), in LICENSE",
+ "license_checked": "2026-11-08",
  "zip": "part05_of_17",
  "features": {
   "through_vias": 671,

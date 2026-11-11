@@ -1,7 +1,4 @@
 {
- "rank": 1222,
- "score": 1909,
- "level": "MEDIUM",
  "layers": 8,
  "parts": 388,
  "big": 6,
@@ -15,6 +12,7 @@
  "project": "OLIMEX/STMP1-OLinuXino",
  "name": "STMP1-OLinuXino_Rev_A",
  "license": "GPL-3.0 (GNU GPL v3.0)",
+ "license_checked": "2026-11-08",
  "zip": "part15_of_17",
  "features": {
   "through_vias": 25,

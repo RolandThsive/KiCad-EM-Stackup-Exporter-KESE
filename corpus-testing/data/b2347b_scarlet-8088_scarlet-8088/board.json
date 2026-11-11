@@ -1,7 +1,4 @@
 {
- "rank": 149,
- "score": 14171,
- "level": "VERY HIGH",
  "layers": 4,
  "parts": 140,
  "big": 1,
@@ -15,9 +12,10 @@
  "project": "Red-Lucy-Engineering/scarlet-8088",
  "name": "scarlet-8088",
  "license": "CC-BY-4.0 (Creative Commons Attribution 4.0)",
+ "license_checked": "2026-11-08",
  "zip": "part07_of_17",
  "features": {
-  "through_vias": 4702,
+  "through_vias": 2351,
   "blind_buried_vias": 0,
   "microvias": 0,
   "backdrills": 0,

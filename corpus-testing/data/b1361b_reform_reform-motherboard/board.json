@@ -1,7 +1,4 @@
 {
- "rank": 460,
- "score": 5961,
- "level": "HIGH",
  "layers": 4,
  "parts": 221,
  "big": 3,
@@ -15,6 +12,7 @@
  "project": "jackhumbert/reform",
  "name": "reform-motherboard",
  "license": "As README.md states it: \"Copyright 2018-2020 MNT Research GmbH. The following licenses are used in the project, unless specified differently in a particular subfolder:; Schematics, PCBs: CERN-OHL-S v2; Other documentation, artwork, photos and drawings that are not trademarks (see below): CC-BY-SA 4.0; Software, firmware: Various. GPL 3.0 if not specified otherwise in the file/subdirectory.\"",
+ "license_checked": "2026-11-08",
  "zip": "part11_of_17",
  "features": {
   "through_vias": 531,

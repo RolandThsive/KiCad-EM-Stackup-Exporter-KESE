@@ -1,7 +1,4 @@
 {
- "rank": 191,
- "score": 11940,
- "level": "VERY HIGH",
  "layers": 4,
  "parts": 345,
  "big": 0,
@@ -15,9 +12,10 @@
  "project": "sparkfun/sparkfun_gnss_flex_system",
  "name": "SparkFun_GNSS_Flex_Module_ZED-X20P_Tilt_panelized",
  "license": "MIT (MIT License), in LICENSE.md",
+ "license_checked": "2026-11-08",
  "zip": "part08_of_17",
  "features": {
-  "through_vias": 4020,
+  "through_vias": 2010,
   "blind_buried_vias": 0,
   "microvias": 0,
   "backdrills": 0,

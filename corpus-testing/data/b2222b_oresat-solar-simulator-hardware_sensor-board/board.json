@@ -1,7 +1,4 @@
 {
- "rank": 2388,
- "score": 341,
- "level": "LOW",
  "layers": 2,
  "parts": 12,
  "big": 0,
@@ -15,9 +12,10 @@
  "project": "oresat/oresat-solar-simulator-hardware",
  "name": "sensor-board",
  "license": "CERN-OHL-S-2.0 (CERN Open Hardware Licence v2, Strongly Reciprocal)",
+ "license_checked": "2026-11-08",
  "zip": "part16_of_17",
  "features": {
-  "through_vias": 172,
+  "through_vias": 86,
   "blind_buried_vias": 0,
   "microvias": 0,
   "backdrills": 0,

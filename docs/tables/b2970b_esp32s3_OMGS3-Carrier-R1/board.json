@@ -3,7 +3,10 @@
  "project": "UnexpectedMaker/esp32s3",
  "path": "UnexpectedMaker__esp32s3/kicad/OMGS3 Carrier/OMGS3_Carrier_R1.kicad_pcb",
  "license": "CERN-OHL-1.2 (CERN Open Hardware Licence v1.2), in kicad/LICENSE",
- "rank": 2313,
+ "license_checked": "2026-11-08",
+ "rank": 2306,
+ "score": 404,
+ "level": "LOW",
  "complexity": {
   "grade": 269,
   "size": 144,
@@ -26,8 +29,23 @@
  "bad_design": null,
  "chart_alt": "OMGS3_Carrier_R1: stages 4 and 6 take 51% to 80% of a run. Simulation, GLB takes 3.8 s. Simulation, STEP takes 4.9 s. Simulation, STL takes 3.5 s. Simulation, OBJ takes 5.2 s. Visual, GLB takes 5.9 s. Visual, OBJ takes 6.8 s",
  "rerun": {},
+ "tested": [
+  "2026-11-09",
+  "2026-11-09"
+ ],
  "kese": [
   "22fd70c"
+ ],
+ "kese_version": [
+  "2.4.0"
+ ],
+ "runs": [
+  [
+   "corpus",
+   "2026-11-09",
+   11000000000.0,
+   5400.0
+  ]
  ],
  "machine": {
   "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz, 4 cores, 15 GB",

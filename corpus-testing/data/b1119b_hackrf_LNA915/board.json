@@ -1,7 +1,4 @@
 {
- "rank": 2571,
- "score": 198,
- "level": "SIMPLE",
  "layers": 4,
  "parts": 25,
  "big": 0,
@@ -15,6 +12,7 @@
  "project": "greatscottgadgets/hackrf",
  "name": "LNA915",
  "license": "GPL-2.0 (GNU GPL v2.0)",
+ "license_checked": "2026-11-08",
  "zip": "part16_of_17",
  "features": {
   "through_vias": 8,

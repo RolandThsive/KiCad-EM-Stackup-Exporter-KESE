@@ -1,7 +1,4 @@
 {
- "rank": 32,
- "score": 29977,
- "level": "EXTREME",
  "layers": 12,
  "parts": 761,
  "big": 7,
@@ -15,9 +12,10 @@
  "project": "antmicro/ddr5-tester",
  "name": "data-center-rdimm-ddr5-tester",
  "license": "Apache-2.0 (Apache License 2.0), in LICENSE",
+ "license_checked": "2026-11-08",
  "zip": "part02_of_17",
  "features": {
-  "through_vias": 5250,
+  "through_vias": 2625,
   "blind_buried_vias": 0,
   "microvias": 0,
   "backdrills": 0,

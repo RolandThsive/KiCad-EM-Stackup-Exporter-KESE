@@ -1,7 +1,4 @@
 {
- "rank": 281,
- "score": 9047,
- "level": "VERY HIGH",
  "layers": 4,
  "parts": 231,
  "big": 4,
@@ -15,6 +12,7 @@
  "project": "zephray/nekoink",
  "name": "pcb",
  "license": "CERN-OHL-P-2.0 (CERN Open Hardware Licence v2, Permissive), in LICENSE",
+ "license_checked": "2026-11-08",
  "zip": "part10_of_17",
  "features": {
   "through_vias": 606,

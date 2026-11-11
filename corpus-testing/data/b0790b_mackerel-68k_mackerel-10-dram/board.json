@@ -1,7 +1,4 @@
 {
- "rank": 1946,
- "score": 768,
- "level": "LOW",
  "layers": 4,
  "parts": 41,
  "big": 1,
@@ -15,9 +12,10 @@
  "project": "crmaykish/mackerel-68k",
  "name": "mackerel-10-dram",
  "license": "MIT (MIT License)",
+ "license_checked": "2026-11-08",
  "zip": "part16_of_17",
  "features": {
-  "through_vias": 62,
+  "through_vias": 31,
   "blind_buried_vias": 0,
   "microvias": 0,
   "backdrills": 0,

@@ -3,7 +3,10 @@
  "project": "spirit-org/spirit",
  "path": "spirit-org__spirit/EDA-kicad/cm5-carrier.kicad_pcb",
  "license": "CC-BY-SA-4.0 (Creative Commons Attribution-ShareAlike 4.0), in LICENSE.md",
- "rank": 2031,
+ "license_checked": "2026-11-08",
+ "rank": 2026,
+ "score": 678,
+ "level": "LOW",
  "complexity": {
   "grade": 362,
   "size": 232,
@@ -26,8 +29,23 @@
  "bad_design": null,
  "chart_alt": "cm5-carrier: stages 4 and 6 take 49% to 81% of a run. Simulation, GLB takes 7.1 s. Simulation, STEP takes 8.7 s. Simulation, STL takes 7.1 s. Simulation, OBJ takes 9.5 s. Visual, GLB takes 11 s. Visual, OBJ takes 14 s",
  "rerun": {},
+ "tested": [
+  "2026-11-09",
+  "2026-11-09"
+ ],
  "kese": [
   "22fd70c"
+ ],
+ "kese_version": [
+  "2.4.0"
+ ],
+ "runs": [
+  [
+   "corpus",
+   "2026-11-09",
+   11000000000.0,
+   5400.0
+  ]
  ],
  "machine": {
   "cpu": "Intel(R) Xeon(R) Processor @ 2.30GHz, 4 cores, 15 GB",

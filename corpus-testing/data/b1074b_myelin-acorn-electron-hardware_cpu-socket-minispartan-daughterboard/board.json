@@ -1,7 +1,4 @@
 {
- "rank": 2644,
- "score": 142,
- "level": "SIMPLE",
  "layers": 2,
  "parts": 5,
  "big": 0,
@@ -15,6 +12,7 @@
  "project": "google/myelin-acorn-electron-hardware",
  "name": "cpu_socket_minispartan_daughterboard",
  "license": "Apache-2.0 (Apache License 2.0)",
+ "license_checked": "2026-11-08",
  "zip": "part16_of_17",
  "features": {
   "through_vias": 1,

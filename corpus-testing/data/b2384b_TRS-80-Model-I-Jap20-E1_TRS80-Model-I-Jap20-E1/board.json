@@ -1,7 +1,4 @@
 {
- "rank": 85,
- "score": 19684,
- "level": "VERY HIGH",
  "layers": 2,
  "parts": 253,
  "big": 0,
@@ -15,9 +12,10 @@
  "project": "RetroStack/TRS-80-Model-I-Jap20-E1",
  "name": "TRS80_Model_I_Jap20_E1",
  "license": "MIT (MIT License)",
+ "license_checked": "2026-11-08",
  "zip": "part05_of_17",
  "features": {
-  "through_vias": 1474,
+  "through_vias": 737,
   "blind_buried_vias": 0,
   "microvias": 0,
   "backdrills": 0,

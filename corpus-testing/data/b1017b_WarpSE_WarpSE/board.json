@@ -1,7 +1,4 @@
 {
- "rank": 277,
- "score": 9279,
- "level": "VERY HIGH",
  "layers": 4,
  "parts": 135,
  "big": 4,
@@ -15,9 +12,10 @@
  "project": "garrettsworkshop/WarpSE",
  "name": "WarpSE",
  "license": "No license found",
+ "license_checked": "2026-11-08",
  "zip": "part10_of_17",
  "features": {
-  "through_vias": 2940,
+  "through_vias": 1470,
   "blind_buried_vias": 0,
   "microvias": 0,
   "backdrills": 0,

@@ -1,7 +1,4 @@
 {
- "rank": 202,
- "score": 11424,
- "level": "VERY HIGH",
  "layers": 4,
  "parts": 144,
  "big": 0,
@@ -15,9 +12,10 @@
  "project": "spencer-uk/DubaiXTClone",
  "name": "DubaiXTClone",
  "license": "CERN-OHL-W-2.0 (CERN Open Hardware Licence v2, Weakly Reciprocal), in LICENSE",
+ "license_checked": "2026-11-08",
  "zip": "part08_of_17",
  "features": {
-  "through_vias": 1072,
+  "through_vias": 536,
   "blind_buried_vias": 0,
   "microvias": 0,
   "backdrills": 0,

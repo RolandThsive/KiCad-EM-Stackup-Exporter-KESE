@@ -1,7 +1,4 @@
 {
- "rank": 1464,
- "score": 1457,
- "level": "MEDIUM",
  "layers": 2,
  "parts": 71,
  "big": 1,
@@ -15,6 +12,7 @@
  "project": "ultimaterobotics/uECG_pcb",
  "name": "uECG_v4_52_lsm_tlv",
  "license": "CERN-OHL-P-2.0 (CERN Open Hardware Licence v2, Permissive)",
+ "license_checked": "2026-11-08",
  "zip": "part15_of_17",
  "features": {
   "through_vias": 147,

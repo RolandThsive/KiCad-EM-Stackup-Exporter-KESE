@@ -1,7 +1,4 @@
 {
- "rank": 806,
- "score": 3356,
- "level": "HIGH",
  "layers": 4,
  "parts": 107,
  "big": 0,
@@ -15,9 +12,10 @@
  "project": "will127534/FourThirdsEye",
  "name": "FourThirdsEye",
  "license": "MIT (MIT License)",
+ "license_checked": "2026-11-08",
  "zip": "part13_of_17",
  "features": {
-  "through_vias": 1672,
+  "through_vias": 836,
   "blind_buried_vias": 0,
   "microvias": 0,
   "backdrills": 0,

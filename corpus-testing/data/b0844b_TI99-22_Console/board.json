@@ -1,7 +1,4 @@
 {
- "rank": 204,
- "score": 11326,
- "level": "VERY HIGH",
  "layers": 2,
  "parts": 244,
  "big": 0,
@@ -15,6 +12,7 @@
  "project": "danwerner21/TI99_22",
  "name": "Console",
  "license": "As README.md states it: \"The original project was licensed under the Creative Commons - Attribution - ShareAlike 3.0 License\"",
+ "license_checked": "2026-11-08",
  "zip": "part09_of_17",
  "features": {
   "through_vias": 592,

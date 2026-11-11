@@ -1,7 +1,4 @@
 {
- "rank": 2,
- "score": 67060,
- "level": "EXTREME",
  "layers": 8,
  "parts": 910,
  "big": 6,
@@ -15,6 +12,7 @@
  "project": "azonenberg/starshipraider",
  "name": "maxwell-main",
  "license": "BSD-3-Clause (BSD 3-Clause License)",
+ "license_checked": "2026-11-08",
  "zip": "part01_of_17",
  "features": {
   "through_vias": 3708,

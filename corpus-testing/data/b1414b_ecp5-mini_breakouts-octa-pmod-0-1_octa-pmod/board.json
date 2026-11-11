@@ -1,7 +1,4 @@
 {
- "rank": 2353,
- "score": 371,
- "level": "LOW",
  "layers": 2,
  "parts": 14,
  "big": 0,
@@ -15,6 +12,7 @@
  "project": "joshajohnson/ecp5-mini",
  "name": "octa-pmod",
  "license": "CERN-OHL-S-2.0 (CERN Open Hardware Licence v2, Strongly Reciprocal), in LICENSE",
+ "license_checked": "2026-11-08",
  "zip": "part16_of_17",
  "features": {
   "through_vias": 0,

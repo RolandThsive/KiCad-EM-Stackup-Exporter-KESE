@@ -1,7 +1,4 @@
 {
- "rank": 1090,
- "score": 2236,
- "level": "MEDIUM",
  "layers": 4,
  "parts": 97,
  "big": 2,
@@ -15,9 +12,10 @@
  "project": "antmicro/job-oculink-expansion",
  "name": "jetson-orin-baseboard-oculink-expansion",
  "license": "Apache-2.0 (Apache License 2.0)",
+ "license_checked": "2026-11-08",
  "zip": "part14_of_17",
  "features": {
-  "through_vias": 438,
+  "through_vias": 219,
   "blind_buried_vias": 0,
   "microvias": 0,
   "backdrills": 0,

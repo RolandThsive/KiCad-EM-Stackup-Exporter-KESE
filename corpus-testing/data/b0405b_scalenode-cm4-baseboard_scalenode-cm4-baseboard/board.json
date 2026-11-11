@@ -1,7 +1,4 @@
 {
- "rank": 585,
- "score": 4609,
- "level": "HIGH",
  "layers": 4,
  "parts": 129,
  "big": 0,
@@ -15,6 +12,7 @@
  "project": "antmicro/scalenode-cm4-baseboard",
  "name": "scalenode-cm4-baseboard",
  "license": "Apache-2.0 (Apache License 2.0)",
+ "license_checked": "2026-11-08",
  "zip": "part12_of_17",
  "features": {
   "through_vias": 536,

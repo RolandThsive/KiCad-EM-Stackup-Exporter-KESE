@@ -1,7 +1,4 @@
 {
- "rank": 715,
- "score": 3764,
- "level": "HIGH",
  "layers": 4,
  "parts": 80,
  "big": 0,
@@ -15,9 +12,10 @@
  "project": "antmicro/jetson-agx-csi-adapter",
  "name": "jetson-agx-csi-adapter",
  "license": "Apache-2.0 (Apache License 2.0)",
+ "license_checked": "2026-11-08",
  "zip": "part13_of_17",
  "features": {
-  "through_vias": 450,
+  "through_vias": 225,
   "blind_buried_vias": 0,
   "microvias": 0,
   "backdrills": 0,

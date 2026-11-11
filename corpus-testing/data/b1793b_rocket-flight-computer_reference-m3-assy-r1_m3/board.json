@@ -1,7 +1,4 @@
 {
- "rank": 787,
- "score": 3479,
- "level": "HIGH",
  "layers": 4,
  "parts": 115,
  "big": 1,
@@ -15,9 +12,10 @@
  "project": "oak-wjr/rocket-flight-computer",
  "name": "m3",
  "license": "No license found",
+ "license_checked": "2026-11-08",
  "zip": "part13_of_17",
  "features": {
-  "through_vias": 988,
+  "through_vias": 494,
   "blind_buried_vias": 0,
   "microvias": 0,
   "backdrills": 0,

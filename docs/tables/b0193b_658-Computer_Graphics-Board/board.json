@@ -3,7 +3,10 @@
  "project": "andrewpaterson/658-Computer",
  "path": "andrewpaterson__658-Computer/Kicad/Computer/Graphics/Graphics Board/Graphics Board.kicad_pcb",
  "license": "No license found",
+ "license_checked": "2026-11-08",
  "rank": 479,
+ "score": 5574,
+ "level": "HIGH",
  "complexity": {
   "grade": 274,
   "size": 194,
@@ -22,8 +25,23 @@
  "bad_design": null,
  "chart_alt": "Graphics Board: stages 4 and 6 take 55% to 85% of a run. Simulation, GLB takes 47 s. Simulation, STEP takes 58 s. Simulation, STL takes 48 s. Simulation, OBJ takes 72 s. Visual, GLB takes 76 s. Visual, OBJ takes 95 s",
  "rerun": {},
+ "tested": [
+  "2026-11-09",
+  "2026-11-09"
+ ],
  "kese": [
   "22fd70c"
+ ],
+ "kese_version": [
+  "2.4.0"
+ ],
+ "runs": [
+  [
+   "corpus",
+   "2026-11-09",
+   11000000000.0,
+   5400.0
+  ]
  ],
  "machine": {
   "cpu": "Intel(R) Xeon(R) Processor @ 2.30GHz, 4 cores, 15 GB",

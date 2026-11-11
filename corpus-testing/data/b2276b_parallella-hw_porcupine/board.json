@@ -1,7 +1,4 @@
 {
- "rank": 938,
- "score": 2764,
- "level": "MEDIUM",
  "layers": 6,
  "parts": 28,
  "big": 0,
@@ -15,6 +12,7 @@
  "project": "parallella/parallella-hw",
  "name": "porcupine",
  "license": "CC-BY-SA-3.0 (Creative Commons Attribution-ShareAlike 3.0), in LICENSE",
+ "license_checked": "2026-11-08",
  "zip": "part14_of_17",
  "features": {
   "through_vias": 215,

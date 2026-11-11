@@ -1,7 +1,4 @@
 {
- "rank": 2430,
- "score": 299,
- "level": "LOW",
  "layers": 4,
  "parts": 19,
  "big": 0,
@@ -15,6 +12,7 @@
  "project": "sufst/pcb",
  "name": "segment",
  "license": "GPL-3.0 (GNU GPL v3.0)",
+ "license_checked": "2026-11-08",
  "zip": "part16_of_17",
  "features": {
   "through_vias": 0,

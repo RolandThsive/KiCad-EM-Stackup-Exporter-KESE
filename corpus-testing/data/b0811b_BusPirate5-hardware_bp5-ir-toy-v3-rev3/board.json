@@ -1,7 +1,4 @@
 {
- "rank": 2375,
- "score": 349,
- "level": "LOW",
  "layers": 2,
  "parts": 35,
  "big": 0,
@@ -15,9 +12,10 @@
  "project": "DangerousPrototypes/BusPirate5-hardware",
  "name": "bp5-ir-toy-v3-rev3",
  "license": "MIT (MIT License)",
+ "license_checked": "2026-11-08",
  "zip": "part16_of_17",
  "features": {
-  "through_vias": 74,
+  "through_vias": 37,
   "blind_buried_vias": 0,
   "microvias": 0,
   "backdrills": 0,

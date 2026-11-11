@@ -1,7 +1,4 @@
 {
- "rank": 278,
- "score": 9199,
- "level": "VERY HIGH",
  "layers": 4,
  "parts": 152,
  "big": 4,
@@ -15,9 +12,10 @@
  "project": "bogdan8266/h616-board",
  "name": "H616_devboard",
  "license": "CERN-OHL-P-2.0 (CERN Open Hardware Licence v2, Permissive)",
+ "license_checked": "2026-11-08",
  "zip": "part10_of_17",
  "features": {
-  "through_vias": 1430,
+  "through_vias": 715,
   "blind_buried_vias": 0,
   "microvias": 0,
   "backdrills": 0,

@@ -1,7 +1,4 @@
 {
- "rank": 3063,
- "score": 0,
- "level": "SIMPLE",
  "layers": 2,
  "parts": 0,
  "big": 0,
@@ -15,9 +12,10 @@
  "project": "Board-Folk/Neptune",
  "name": "Neptune-Region-Fix",
  "license": "As README.md states it: \"Derivative works must be released under similar Open Source terms such that all sources are publicly available. The original authors' names and copyright statements may not be removed.\"",
+ "license_checked": "2026-11-08",
  "zip": "part16_of_17",
  "features": {
-  "through_vias": 2,
+  "through_vias": 1,
   "blind_buried_vias": 0,
   "microvias": 0,
   "backdrills": 0,

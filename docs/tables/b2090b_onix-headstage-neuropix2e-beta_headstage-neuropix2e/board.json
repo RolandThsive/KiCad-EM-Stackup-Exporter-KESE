@@ -3,7 +3,10 @@
  "project": "open-ephys/onix-headstage-neuropix2e-beta",
  "path": "open-ephys__onix-headstage-neuropix2e-beta/pcb/headstage-neuropix2e.kicad_pcb",
  "license": "No license found",
- "rank": 1520,
+ "license_checked": "2026-11-08",
+ "rank": 1517,
+ "score": 1347,
+ "level": "MEDIUM",
  "complexity": {
   "grade": 366,
   "size": 241,
@@ -26,8 +29,23 @@
  "bad_design": null,
  "chart_alt": "headstage-neuropix2e: stages 4 and 6 take 47% to 84% of a run. Simulation, GLB takes 8.5 s. Simulation, STEP takes 11 s. Simulation, STL takes 8.5 s. Simulation, OBJ takes 14 s. Visual, GLB takes 14 s. Visual, OBJ takes 17 s",
  "rerun": {},
+ "tested": [
+  "2026-11-09",
+  "2026-11-09"
+ ],
  "kese": [
   "22fd70c"
+ ],
+ "kese_version": [
+  "2.4.0"
+ ],
+ "runs": [
+  [
+   "corpus",
+   "2026-11-09",
+   11000000000.0,
+   5400.0
+  ]
  ],
  "machine": {
   "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz, 4 cores, 15 GB",

@@ -1,7 +1,4 @@
 {
- "rank": 1071,
- "score": 2270,
- "level": "MEDIUM",
  "layers": 4,
  "parts": 51,
  "big": 2,
@@ -15,6 +12,7 @@
  "project": "baldengineer/Mega-IIe",
  "name": "gd MEGA-65c02 proto pcb",
  "license": "MIT (MIT License)",
+ "license_checked": "2026-11-08",
  "zip": "part14_of_17",
  "features": {
   "through_vias": 139,

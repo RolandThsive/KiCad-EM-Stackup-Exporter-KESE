@@ -1,7 +1,4 @@
 {
- "rank": 75,
- "score": 20499,
- "level": "EXTREME",
  "layers": 2,
  "parts": 366,
  "big": 0,
@@ -15,6 +12,7 @@
  "project": "jgrip/open128",
  "name": "Open128",
  "license": "CC-BY-SA-4.0 (Creative Commons Attribution-ShareAlike 4.0), in LICENSE.md",
+ "license_checked": "2026-11-08",
  "zip": "part04_of_17",
  "features": {
   "through_vias": 1119,

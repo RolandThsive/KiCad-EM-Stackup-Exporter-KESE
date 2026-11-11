@@ -1,7 +1,4 @@
 {
- "rank": 1064,
- "score": 2299,
- "level": "MEDIUM",
  "layers": 4,
  "parts": 117,
  "big": 7,
@@ -15,6 +12,7 @@
  "project": "transistorfet/retroverse",
  "name": "BigBoy.stretch_bkup",
  "license": "In LICENSE: CERN-OHL-P-2.0 for hardware designs and programmable logic, Apache-2.0 or MIT for other source code, CC-BY-SA-4.0 for artwork and documentation",
+ "license_checked": "2026-11-08",
  "zip": "part14_of_17",
  "features": {
   "through_vias": 184,

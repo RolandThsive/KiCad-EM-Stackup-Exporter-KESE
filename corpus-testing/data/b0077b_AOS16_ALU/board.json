@@ -1,7 +1,4 @@
 {
- "rank": 1151,
- "score": 2054,
- "level": "MEDIUM",
  "layers": 4,
  "parts": 66,
  "big": 3,
@@ -15,9 +12,10 @@
  "project": "AJain9199/AOS16",
  "name": "ALU",
  "license": "No license found",
+ "license_checked": "2026-11-08",
  "zip": "part14_of_17",
  "features": {
-  "through_vias": 312,
+  "through_vias": 156,
   "blind_buried_vias": 0,
   "microvias": 0,
   "backdrills": 0,

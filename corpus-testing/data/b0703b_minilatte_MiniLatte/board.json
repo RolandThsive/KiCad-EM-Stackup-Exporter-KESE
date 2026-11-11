@@ -1,7 +1,4 @@
 {
- "rank": 139,
- "score": 14774,
- "level": "VERY HIGH",
  "layers": 4,
  "parts": 495,
  "big": 7,
@@ -15,9 +12,10 @@
  "project": "cath272/minilatte",
  "name": "MiniLatte",
  "license": "GPL-3.0 (GNU GPL v3.0), in PCB/LICENSE",
+ "license_checked": "2026-11-08",
  "zip": "part06_of_17",
  "features": {
-  "through_vias": 1472,
+  "through_vias": 736,
   "blind_buried_vias": 0,
   "microvias": 0,
   "backdrills": 0,

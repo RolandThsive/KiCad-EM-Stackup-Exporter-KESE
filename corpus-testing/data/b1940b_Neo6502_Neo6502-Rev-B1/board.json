@@ -1,7 +1,4 @@
 {
- "rank": 644,
- "score": 4247,
- "level": "HIGH",
  "layers": 2,
  "parts": 89,
  "big": 2,
@@ -15,6 +12,7 @@
  "project": "OLIMEX/Neo6502",
  "name": "Neo6502_Rev_B1",
  "license": "As README.md states it: \"Hardware is released under CERN Open Hardware Licence Version 2 - Strongly Reciprocal, all silkscreen credits to Olimex should remain;; Software is released under GPL3 Licensee; Documentation is released under CC BY-SA 3.0\"",
+ "license_checked": "2026-11-08",
  "zip": "part12_of_17",
  "features": {
   "through_vias": 438,

@@ -1,7 +1,4 @@
 {
- "rank": 2313,
- "score": 404,
- "level": "LOW",
  "layers": 2,
  "parts": 15,
  "big": 0,
@@ -15,9 +12,10 @@
  "project": "UnexpectedMaker/esp32s3",
  "name": "OMGS3_Carrier_R1",
  "license": "CERN-OHL-1.2 (CERN Open Hardware Licence v1.2), in kicad/LICENSE",
+ "license_checked": "2026-11-08",
  "zip": "part16_of_17",
  "features": {
-  "through_vias": 160,
+  "through_vias": 80,
   "blind_buried_vias": 0,
   "microvias": 0,
   "backdrills": 0,

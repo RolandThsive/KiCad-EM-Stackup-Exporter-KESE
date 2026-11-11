@@ -1,7 +1,4 @@
 {
- "rank": 682,
- "score": 3969,
- "level": "HIGH",
  "layers": 6,
  "parts": 505,
  "big": 0,
@@ -15,9 +12,10 @@
  "project": "iorodeo/led-display_g6_hardware_arena",
  "name": "arena_12-18",
  "license": "CC-BY-4.0 (Creative Commons Attribution 4.0)",
+ "license_checked": "2026-11-08",
  "zip": "part13_of_17",
  "features": {
-  "through_vias": 808,
+  "through_vias": 404,
   "blind_buried_vias": 1,
   "microvias": 0,
   "backdrills": 0,

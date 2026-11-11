@@ -1,7 +1,4 @@
 {
- "rank": 1682,
- "score": 1095,
- "level": "MEDIUM",
  "layers": 4,
  "parts": 16,
  "big": 0,
@@ -15,9 +12,10 @@
  "project": "antmicro/m2-pcie-adapter",
  "name": "m2-pcie-adapter",
  "license": "Apache-2.0 (Apache License 2.0)",
+ "license_checked": "2026-11-08",
  "zip": "part15_of_17",
  "features": {
-  "through_vias": 184,
+  "through_vias": 92,
   "blind_buried_vias": 0,
   "microvias": 0,
   "backdrills": 0,

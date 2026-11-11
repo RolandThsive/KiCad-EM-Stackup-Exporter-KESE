@@ -1,7 +1,4 @@
 {
- "rank": 2487,
- "score": 262,
- "level": "LOW",
  "layers": 2,
  "parts": 24,
  "big": 0,
@@ -15,9 +12,10 @@
  "project": "lhc/hardware",
  "name": "placas-kicad",
  "license": "MIT (MIT License), in Oficinas/monte-sua-placa-kicad/LICENSE",
+ "license_checked": "2026-11-08",
  "zip": "part16_of_17",
  "features": {
-  "through_vias": 50,
+  "through_vias": 25,
   "blind_buried_vias": 0,
   "microvias": 0,
   "backdrills": 0,

@@ -1,7 +1,4 @@
 {
- "rank": 875,
- "score": 3009,
- "level": "HIGH",
  "layers": 2,
  "parts": 77,
  "big": 4,
@@ -15,6 +12,7 @@
  "project": "skiselev/tiny_z80",
  "name": "Tiny_Z80",
  "license": "GPL-3.0 (GNU GPL v3.0)",
+ "license_checked": "2026-11-08",
  "zip": "part13_of_17",
  "features": {
   "through_vias": 213,

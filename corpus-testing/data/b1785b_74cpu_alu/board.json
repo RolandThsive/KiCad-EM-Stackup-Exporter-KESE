@@ -1,7 +1,4 @@
 {
- "rank": 1433,
- "score": 1506,
- "level": "MEDIUM",
  "layers": 2,
  "parts": 280,
  "big": 0,
@@ -15,6 +12,7 @@
  "project": "Noah1989/74cpu",
  "name": "alu",
  "license": "No license found",
+ "license_checked": "2026-11-08",
  "zip": "part15_of_17",
  "features": {
   "through_vias": 86,

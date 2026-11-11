@@ -1,7 +1,4 @@
 {
- "rank": 95,
- "score": 19150,
- "level": "VERY HIGH",
  "layers": 32,
  "parts": 527,
  "big": 4,
@@ -15,6 +12,7 @@
  "project": "isarmg/pcie-switch-2",
  "name": "Main_12E1S",
  "license": "No license found",
+ "license_checked": "2026-11-08",
  "zip": "part05_of_17",
  "features": {
   "through_vias": 0,

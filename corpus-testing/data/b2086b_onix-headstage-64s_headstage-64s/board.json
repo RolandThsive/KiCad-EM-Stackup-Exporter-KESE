@@ -1,7 +1,4 @@
 {
- "rank": 833,
- "score": 3235,
- "level": "HIGH",
  "layers": 6,
  "parts": 112,
  "big": 2,
@@ -15,6 +12,7 @@
  "project": "open-ephys/onix-headstage-64s",
  "name": "headstage-64s",
  "license": "No license found",
+ "license_checked": "2026-11-08",
  "zip": "part13_of_17",
  "features": {
   "through_vias": 241,

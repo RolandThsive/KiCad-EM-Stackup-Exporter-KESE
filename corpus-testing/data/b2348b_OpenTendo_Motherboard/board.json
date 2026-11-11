@@ -1,7 +1,4 @@
 {
- "rank": 674,
- "score": 4003,
- "level": "HIGH",
  "layers": 2,
  "parts": 99,
  "big": 0,
@@ -15,9 +12,10 @@
  "project": "Redherring32/OpenTendo",
  "name": "Motherboard",
  "license": "TAPR-OHL-1.0 (TAPR Open Hardware License), in LICENSE",
+ "license_checked": "2026-11-08",
  "zip": "part13_of_17",
  "features": {
-  "through_vias": 774,
+  "through_vias": 387,
   "blind_buried_vias": 0,
   "microvias": 0,
   "backdrills": 0,

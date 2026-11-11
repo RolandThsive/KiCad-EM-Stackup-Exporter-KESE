@@ -1,7 +1,4 @@
 {
- "rank": 920,
- "score": 2805,
- "level": "MEDIUM",
  "layers": 4,
  "parts": 100,
  "big": 2,
@@ -15,6 +12,7 @@
  "project": "aslak3/maxi030",
  "name": "Video+Sound",
  "license": "GPL-2.0 (GNU GPL v2.0)",
+ "license_checked": "2026-11-08",
  "zip": "part14_of_17",
  "features": {
   "through_vias": 147,

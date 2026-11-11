@@ -1,7 +1,4 @@
 {
- "rank": 533,
- "score": 4988,
- "level": "HIGH",
  "layers": 4,
  "parts": 240,
  "big": 1,
@@ -15,9 +12,10 @@
  "project": "DangerousPrototypes/BusPirate5-hardware",
  "name": "7-REV1B",
  "license": "MIT (MIT License)",
+ "license_checked": "2026-11-08",
  "zip": "part12_of_17",
  "features": {
-  "through_vias": 1016,
+  "through_vias": 508,
   "blind_buried_vias": 0,
   "microvias": 0,
   "backdrills": 0,

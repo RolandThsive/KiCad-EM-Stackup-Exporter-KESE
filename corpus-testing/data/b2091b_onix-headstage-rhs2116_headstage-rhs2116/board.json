@@ -1,7 +1,4 @@
 {
- "rank": 880,
- "score": 2993,
- "level": "MEDIUM",
  "layers": 6,
  "parts": 131,
  "big": 3,
@@ -15,9 +12,10 @@
  "project": "open-ephys/onix-headstage-rhs2116",
  "name": "headstage-rhs2116",
  "license": "No license found",
+ "license_checked": "2026-11-08",
  "zip": "part13_of_17",
  "features": {
-  "through_vias": 626,
+  "through_vias": 313,
   "blind_buried_vias": 0,
   "microvias": 0,
   "backdrills": 0,

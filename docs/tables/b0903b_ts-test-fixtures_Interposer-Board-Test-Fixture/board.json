@@ -3,7 +3,10 @@
  "project": "EEVengers/ts_test_fixtures",
  "path": "EEVengers__ts_test_fixtures/Interposer_Board_Test_Fixture/Interposer_Board_Test_Fixture.kicad_pcb",
  "license": "CERN-OHL-P-2.0 (CERN Open Hardware Licence v2, Permissive)",
- "rank": 1701,
+ "license_checked": "2026-11-08",
+ "rank": 1697,
+ "score": 1066,
+ "level": "MEDIUM",
  "complexity": {
   "grade": 266,
   "size": 176,
@@ -22,8 +25,23 @@
  "bad_design": null,
  "chart_alt": "Interposer_Board_Test_Fixture: stages 4 and 6 take 51% to 78% of a run. Simulation, GLB takes 7.2 s. Simulation, STEP takes 8.7 s. Simulation, STL takes 7.3 s. Simulation, OBJ takes 11 s. Visual, GLB takes 8.6 s. Visual, OBJ takes 10 s",
  "rerun": {},
+ "tested": [
+  "2026-11-09",
+  "2026-11-09"
+ ],
  "kese": [
   "22fd70c"
+ ],
+ "kese_version": [
+  "2.4.0"
+ ],
+ "runs": [
+  [
+   "corpus",
+   "2026-11-09",
+   11000000000.0,
+   5400.0
+  ]
  ],
  "machine": {
   "cpu": "Intel(R) Xeon(R) Processor @ 2.30GHz, 4 cores, 15 GB",

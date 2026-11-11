@@ -1,7 +1,4 @@
 {
- "rank": 2737,
- "score": 87,
- "level": "SIMPLE",
  "layers": 4,
  "parts": 5,
  "big": 1,
@@ -15,6 +12,7 @@
  "project": "loxodes/vna",
  "name": "siw",
  "license": "As README.md states it: \"Unless otherwise noted, all work is under a MIT license.\"",
+ "license_checked": "2026-11-08",
  "zip": "part16_of_17",
  "features": {
   "through_vias": 2,

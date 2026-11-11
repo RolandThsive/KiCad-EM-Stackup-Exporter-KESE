@@ -1,7 +1,4 @@
 {
- "rank": 893,
- "score": 2937,
- "level": "MEDIUM",
  "layers": 4,
  "parts": 55,
  "big": 1,
@@ -15,9 +12,10 @@
  "project": "osusat/cubesat",
  "name": "payload",
  "license": "MIT (MIT License)",
+ "license_checked": "2026-11-08",
  "zip": "part13_of_17",
  "features": {
-  "through_vias": 1282,
+  "through_vias": 641,
   "blind_buried_vias": 0,
   "microvias": 0,
   "backdrills": 0,

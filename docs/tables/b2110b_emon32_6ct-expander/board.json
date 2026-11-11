@@ -3,7 +3,10 @@
  "project": "openenergymonitor/emon32",
  "path": "openenergymonitor__emon32/pcb/6ct-expander/6ct-expander.kicad_pcb",
  "license": "CC-BY-SA-4.0 (Creative Commons Attribution-ShareAlike 4.0)",
- "rank": 2329,
+ "license_checked": "2026-11-08",
+ "rank": 2322,
+ "score": 388,
+ "level": "LOW",
  "complexity": {
   "grade": 223,
   "size": 153,
@@ -21,8 +24,23 @@
  "bad_design": null,
  "chart_alt": "6ct-expander: stages 4 and 6 take 56% to 80% of a run. Simulation, GLB takes 4.1 s. Simulation, STEP takes 5.3 s. Simulation, STL takes 4.0 s. Simulation, OBJ takes 5.7 s. Visual, GLB takes 5.3 s. Visual, OBJ takes 6.3 s",
  "rerun": {},
+ "tested": [
+  "2026-11-09",
+  "2026-11-09"
+ ],
  "kese": [
   "22fd70c"
+ ],
+ "kese_version": [
+  "2.4.0"
+ ],
+ "runs": [
+  [
+   "corpus",
+   "2026-11-09",
+   11000000000.0,
+   5400.0
+  ]
  ],
  "machine": {
   "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz, 4 cores, 15 GB",

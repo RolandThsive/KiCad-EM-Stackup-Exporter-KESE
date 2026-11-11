@@ -1,7 +1,4 @@
 {
- "rank": 1372,
- "score": 1599,
- "level": "MEDIUM",
  "layers": 4,
  "parts": 92,
  "big": 2,
@@ -15,9 +12,10 @@
  "project": "antmicro/environment-sensor",
  "name": "environment-sensor",
  "license": "Apache-2.0 (Apache License 2.0)",
+ "license_checked": "2026-11-08",
  "zip": "part15_of_17",
  "features": {
-  "through_vias": 288,
+  "through_vias": 144,
   "blind_buried_vias": 0,
   "microvias": 0,
   "backdrills": 0,

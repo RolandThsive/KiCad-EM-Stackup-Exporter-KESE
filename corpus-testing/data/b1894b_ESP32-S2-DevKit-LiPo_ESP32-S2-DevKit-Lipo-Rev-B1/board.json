@@ -1,7 +1,4 @@
 {
- "rank": 1132,
- "score": 2116,
- "level": "MEDIUM",
  "layers": 2,
  "parts": 76,
  "big": 0,
@@ -15,6 +12,7 @@
  "project": "OLIMEX/ESP32-S2-DevKit-LiPo",
  "name": "ESP32-S2-DevKit-Lipo_Rev_B1",
  "license": "AGPL-3.0 (GNU AGPL v3.0)",
+ "license_checked": "2026-11-08",
  "zip": "part14_of_17",
  "features": {
   "through_vias": 164,

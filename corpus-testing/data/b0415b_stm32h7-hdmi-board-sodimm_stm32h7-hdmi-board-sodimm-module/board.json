@@ -1,7 +1,4 @@
 {
- "rank": 447,
- "score": 6146,
- "level": "HIGH",
  "layers": 6,
  "parts": 86,
  "big": 1,
@@ -15,9 +12,10 @@
  "project": "antmicro/stm32h7-hdmi-board-sodimm",
  "name": "stm32h7-hdmi-board-sodimm-module",
  "license": "Apache-2.0 (Apache License 2.0)",
+ "license_checked": "2026-11-08",
  "zip": "part11_of_17",
  "features": {
-  "through_vias": 494,
+  "through_vias": 247,
   "blind_buried_vias": 0,
   "microvias": 0,
   "backdrills": 0,

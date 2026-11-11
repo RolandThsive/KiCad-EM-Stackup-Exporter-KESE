@@ -1,7 +1,4 @@
 {
- "rank": 2349,
- "score": 374,
- "level": "LOW",
  "layers": 2,
  "parts": 22,
  "big": 1,
@@ -15,9 +12,10 @@
  "project": "antmicro/optiga-tpm",
  "name": "optiga-tpm",
  "license": "Apache-2.0 (Apache License 2.0)",
+ "license_checked": "2026-11-08",
  "zip": "part16_of_17",
  "features": {
-  "through_vias": 54,
+  "through_vias": 27,
   "blind_buried_vias": 0,
   "microvias": 0,
   "backdrills": 0,

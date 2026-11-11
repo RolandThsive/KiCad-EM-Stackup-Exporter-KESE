@@ -1,7 +1,4 @@
 {
- "rank": 459,
- "score": 5975,
- "level": "HIGH",
  "layers": 4,
  "parts": 213,
  "big": 5,
@@ -15,6 +12,7 @@
  "project": "neuroidss/freeeeg32",
  "name": "FreeEEG32",
  "license": "AGPL-3.0 (GNU AGPL v3.0), in LICENSE",
+ "license_checked": "2026-11-08",
  "zip": "part11_of_17",
  "features": {
   "through_vias": 279,

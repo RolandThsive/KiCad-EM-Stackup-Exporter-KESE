@@ -1,7 +1,4 @@
 {
- "rank": 675,
- "score": 3997,
- "level": "HIGH",
  "layers": 4,
  "parts": 130,
  "big": 4,
@@ -15,9 +12,10 @@
  "project": "crmaykish/mackerel-68k",
  "name": "mackerel-30-proto",
  "license": "MIT (MIT License)",
+ "license_checked": "2026-11-08",
  "zip": "part13_of_17",
  "features": {
-  "through_vias": 588,
+  "through_vias": 294,
   "blind_buried_vias": 0,
   "microvias": 0,
   "backdrills": 0,

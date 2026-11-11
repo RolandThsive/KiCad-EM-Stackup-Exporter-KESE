@@ -1,7 +1,4 @@
 {
- "rank": 958,
- "score": 2676,
- "level": "MEDIUM",
  "layers": 4,
  "parts": 183,
  "big": 2,
@@ -15,9 +12,10 @@
  "project": "antmicro/sdi-fiber-adapter",
  "name": "sdi-fiber-adapter",
  "license": "Apache-2.0 (Apache License 2.0)",
+ "license_checked": "2026-11-08",
  "zip": "part14_of_17",
  "features": {
-  "through_vias": 536,
+  "through_vias": 268,
   "blind_buried_vias": 0,
   "microvias": 0,
   "backdrills": 0,

@@ -1,7 +1,4 @@
 {
- "rank": 188,
- "score": 12152,
- "level": "VERY HIGH",
  "layers": 2,
  "parts": 239,
  "big": 0,
@@ -15,6 +12,7 @@
  "project": "eduardocasino/k-1013-floppy-disk-controller-replica",
  "name": "k-1013-floppy-controller-replica",
  "license": "CC-BY-NC-4.0 (Creative Commons Attribution-NonCommercial 4.0), in LICENSE.md",
+ "license_checked": "2026-11-08",
  "zip": "part08_of_17",
  "features": {
   "through_vias": 385,

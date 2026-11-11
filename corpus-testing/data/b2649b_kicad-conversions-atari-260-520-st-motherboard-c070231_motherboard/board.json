@@ -1,7 +1,4 @@
 {
- "rank": 107,
- "score": 17829,
- "level": "VERY HIGH",
  "layers": 2,
  "parts": 331,
  "big": 2,
@@ -15,6 +12,7 @@
  "project": "sporniket/kicad-conversions--atari-260-520-st-motherboard--c070231",
  "name": "motherboard",
  "license": "CC0-1.0 (Creative Commons Zero v1.0)",
+ "license_checked": "2026-11-08",
  "zip": "part05_of_17",
  "features": {
   "through_vias": 1159,

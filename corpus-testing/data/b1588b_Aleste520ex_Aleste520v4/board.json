@@ -1,7 +1,4 @@
 {
- "rank": 54,
- "score": 22626,
- "level": "EXTREME",
  "layers": 2,
  "parts": 326,
  "big": 0,
@@ -15,9 +12,10 @@
  "project": "lucedoriente/Aleste520ex",
  "name": "Aleste520v4",
  "license": "GPL-3.0 (GNU GPL v3.0)",
+ "license_checked": "2026-11-08",
  "zip": "part03_of_17",
  "features": {
-  "through_vias": 8390,
+  "through_vias": 4195,
   "blind_buried_vias": 0,
   "microvias": 0,
   "backdrills": 0,

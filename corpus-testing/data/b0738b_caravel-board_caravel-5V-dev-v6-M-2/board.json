@@ -1,7 +1,4 @@
 {
- "rank": 1256,
- "score": 1851,
- "level": "MEDIUM",
  "layers": 4,
  "parts": 82,
  "big": 1,
@@ -15,6 +12,7 @@
  "project": "chipfoundry/caravel_board",
  "name": "caravel-5V-dev-v6-M.2",
  "license": "No license found",
+ "license_checked": "2026-11-08",
  "zip": "part15_of_17",
  "features": {
   "through_vias": 175,

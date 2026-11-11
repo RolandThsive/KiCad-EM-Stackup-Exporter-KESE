@@ -1,7 +1,4 @@
 {
- "rank": 2423,
- "score": 302,
- "level": "LOW",
  "layers": 6,
  "parts": 17,
  "big": 0,
@@ -15,6 +12,7 @@
  "project": "Aharoni-Lab/Miniscope-v4",
  "name": "MS_v4_ETL_LED_Driver",
  "license": "GPL-3.0 (GNU GPL v3.0)",
+ "license_checked": "2026-11-08",
  "zip": "part16_of_17",
  "features": {
   "through_vias": 29,

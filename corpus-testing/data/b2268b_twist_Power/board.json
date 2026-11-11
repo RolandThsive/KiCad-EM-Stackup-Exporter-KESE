@@ -1,7 +1,4 @@
 {
- "rank": 637,
- "score": 4293,
- "level": "HIGH",
  "layers": 6,
  "parts": 312,
  "big": 0,
@@ -15,9 +12,10 @@
  "project": "owntech-foundation/twist",
  "name": "Power",
  "license": "As README.md states it: \"This project is propelled by OwnTech Team under CERN-OHL-S open hardware Licence The documentation provided is placed under Creative Commons SA-BY\"",
+ "license_checked": "2026-11-08",
  "zip": "part12_of_17",
  "features": {
-  "through_vias": 1286,
+  "through_vias": 643,
   "blind_buried_vias": 0,
   "microvias": 0,
   "backdrills": 0,

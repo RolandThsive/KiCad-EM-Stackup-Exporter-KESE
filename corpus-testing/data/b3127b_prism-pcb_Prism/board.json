@@ -1,7 +1,4 @@
 {
- "rank": 184,
- "score": 12330,
- "level": "VERY HIGH",
  "layers": 8,
  "parts": 229,
  "big": 3,
@@ -15,9 +12,10 @@
  "project": "y10-labs/prism-pcb",
  "name": "Prism",
  "license": "As README.md states it: \"© 2025 All Rights Reserved\"",
+ "license_checked": "2026-11-08",
  "zip": "part08_of_17",
  "features": {
-  "through_vias": 1666,
+  "through_vias": 833,
   "blind_buried_vias": 0,
   "microvias": 0,
   "backdrills": 0,

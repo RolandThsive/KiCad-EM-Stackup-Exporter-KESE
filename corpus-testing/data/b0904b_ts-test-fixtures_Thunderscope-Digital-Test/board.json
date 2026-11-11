@@ -1,7 +1,4 @@
 {
- "rank": 1614,
- "score": 1186,
- "level": "MEDIUM",
  "layers": 4,
  "parts": 68,
  "big": 1,
@@ -15,9 +12,10 @@
  "project": "EEVengers/ts_test_fixtures",
  "name": "Thunderscope Digital Test",
  "license": "CERN-OHL-P-2.0 (CERN Open Hardware Licence v2, Permissive)",
+ "license_checked": "2026-11-08",
  "zip": "part15_of_17",
  "features": {
-  "through_vias": 160,
+  "through_vias": 80,
   "blind_buried_vias": 0,
   "microvias": 0,
   "backdrills": 0,

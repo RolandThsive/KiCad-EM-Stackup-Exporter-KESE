@@ -3,7 +3,10 @@
  "project": "seandepagnier/mppt",
  "path": "seandepagnier__mppt/schematics/mppt.kicad_pcb",
  "license": "No license found",
- "rank": 1370,
+ "license_checked": "2026-11-08",
+ "rank": 1367,
+ "score": 1604,
+ "level": "MEDIUM",
  "complexity": {
   "grade": 275,
   "size": 205,
@@ -21,8 +24,23 @@
  "bad_design": null,
  "chart_alt": "mppt: stages 4 and 6 take 51% to 82% of a run. Simulation, GLB takes 15 s. Simulation, STEP takes 19 s. Simulation, STL takes 15 s. Simulation, OBJ takes 23 s. Visual, GLB takes 20 s. Visual, OBJ takes 26 s",
  "rerun": {},
+ "tested": [
+  "2026-11-09",
+  "2026-11-09"
+ ],
  "kese": [
   "22fd70c"
+ ],
+ "kese_version": [
+  "2.4.0"
+ ],
+ "runs": [
+  [
+   "corpus",
+   "2026-11-09",
+   11000000000.0,
+   5400.0
+  ]
  ],
  "machine": {
   "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz, 4 cores, 15 GB",

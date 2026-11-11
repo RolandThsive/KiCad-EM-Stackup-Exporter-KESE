@@ -1,7 +1,4 @@
 {
- "rank": 818,
- "score": 3293,
- "level": "HIGH",
  "layers": 4,
  "parts": 58,
  "big": 1,
@@ -15,6 +12,7 @@
  "project": "garrettsworkshop/GR8RAM",
  "name": "GR8RAM",
  "license": "Garrett's Workshop's own terms, in LICENSE: \"You may elect to license this project under CC BY-NC-SA 4.0\", or under CC BY-SA 4.0 \"ONLY IF you remove all 'Garrett's Workshop' trademarks from the project\"",
+ "license_checked": "2026-11-08",
  "zip": "part13_of_17",
  "features": {
   "through_vias": 476,

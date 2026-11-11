@@ -1,7 +1,4 @@
 {
- "rank": 388,
- "score": 7009,
- "level": "HIGH",
  "layers": 4,
  "parts": 456,
  "big": 0,
@@ -15,6 +12,7 @@
  "project": "softerhardware/Hermes-Lite2",
  "name": "hermeslite",
  "license": "No license found",
+ "license_checked": "2026-11-08",
  "zip": "part11_of_17",
  "features": {
   "through_vias": 489,

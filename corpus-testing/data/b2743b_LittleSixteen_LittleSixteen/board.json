@@ -1,7 +1,4 @@
 {
- "rank": 303,
- "score": 8539,
- "level": "VERY HIGH",
  "layers": 2,
  "parts": 339,
  "big": 0,
@@ -15,6 +12,7 @@
  "project": "SukkoPera/LittleSixteen",
  "name": "LittleSixteen",
  "license": "A license in LICENSE.pdf; as README.md states it: \"The LittleSixteen documentation, including the design itself, is copyright © SukkoPera 2019-2025 and is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License.\"",
+ "license_checked": "2026-11-08",
  "zip": "part10_of_17",
  "features": {
   "through_vias": 622,

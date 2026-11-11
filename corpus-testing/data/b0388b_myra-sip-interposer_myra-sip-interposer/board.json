@@ -1,7 +1,4 @@
 {
- "rank": 1533,
- "score": 1328,
- "level": "MEDIUM",
  "layers": 4,
  "parts": 31,
  "big": 2,
@@ -15,6 +12,7 @@
  "project": "antmicro/myra-sip-interposer",
  "name": "myra-sip-interposer",
  "license": "Apache-2.0 (Apache License 2.0)",
+ "license_checked": "2026-11-08",
  "zip": "part15_of_17",
  "features": {
   "through_vias": 164,

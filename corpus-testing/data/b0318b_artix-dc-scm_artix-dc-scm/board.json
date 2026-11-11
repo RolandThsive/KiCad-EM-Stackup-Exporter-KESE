@@ -1,7 +1,4 @@
 {
- "rank": 92,
- "score": 19284,
- "level": "VERY HIGH",
  "layers": 8,
  "parts": 529,
  "big": 7,
@@ -15,9 +12,10 @@
  "project": "antmicro/artix-dc-scm",
  "name": "artix-dc-scm",
  "license": "Apache-2.0 (Apache License 2.0)",
+ "license_checked": "2026-11-08",
  "zip": "part05_of_17",
  "features": {
-  "through_vias": 2278,
+  "through_vias": 1139,
   "blind_buried_vias": 419,
   "microvias": 0,
   "backdrills": 0,

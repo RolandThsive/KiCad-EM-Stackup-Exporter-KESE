@@ -3,7 +3,10 @@
  "project": "baldengineer/Mega-IIe",
  "path": "baldengineer__Mega-IIe/kicad files/gd IWM proto pcb/gd IWM proto pcb.kicad_pcb",
  "license": "MIT (MIT License)",
- "rank": 1469,
+ "license_checked": "2026-11-08",
+ "rank": 1466,
+ "score": 1449,
+ "level": "MEDIUM",
  "complexity": {
   "grade": 234,
   "size": 179,
@@ -20,8 +23,23 @@
  "bad_design": null,
  "chart_alt": "gd IWM proto pcb: stages 4 and 6 take 53% to 85% of a run. Simulation, GLB takes 23 s. Simulation, STEP takes 29 s. Simulation, STL takes 23 s. Simulation, OBJ takes 35 s. Visual, GLB takes 40 s. Visual, OBJ takes 47 s",
  "rerun": {},
+ "tested": [
+  "2026-11-09",
+  "2026-11-09"
+ ],
  "kese": [
   "22fd70c"
+ ],
+ "kese_version": [
+  "2.4.0"
+ ],
+ "runs": [
+  [
+   "corpus",
+   "2026-11-09",
+   11000000000.0,
+   5400.0
+  ]
  ],
  "machine": {
   "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz, 4 cores, 15 GB",

@@ -1,7 +1,4 @@
 {
- "rank": 1767,
- "score": 984,
- "level": "LOW",
  "layers": 2,
  "parts": 41,
  "big": 0,
@@ -15,6 +12,7 @@
  "project": "OLIMEX/ESP32-C3-DevKit-Lipo",
  "name": "ESP32-C3-DevKit-Lipo_Rev_A",
  "license": "GPL-3.0 (GNU GPL v3.0)",
+ "license_checked": "2026-11-08",
  "zip": "part16_of_17",
  "features": {
   "through_vias": 63,

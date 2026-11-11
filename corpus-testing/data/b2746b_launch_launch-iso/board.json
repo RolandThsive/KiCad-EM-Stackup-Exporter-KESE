@@ -1,7 +1,4 @@
 {
- "rank": 422,
- "score": 6532,
- "level": "HIGH",
  "layers": 4,
  "parts": 361,
  "big": 2,
@@ -15,6 +12,7 @@
  "project": "system76/launch",
  "name": "launch-iso",
  "license": "GPL-3.0 (GNU GPL v3.0)",
+ "license_checked": "2026-11-08",
  "zip": "part11_of_17",
  "features": {
   "through_vias": 723,

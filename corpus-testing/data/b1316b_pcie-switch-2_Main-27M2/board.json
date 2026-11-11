@@ -1,7 +1,4 @@
 {
- "rank": 1005,
- "score": 2520,
- "level": "MEDIUM",
  "layers": 32,
  "parts": 717,
  "big": 2,
@@ -15,6 +12,7 @@
  "project": "isarmg/pcie-switch-2",
  "name": "Main_27M2",
  "license": "No license found",
+ "license_checked": "2026-11-08",
  "zip": "part14_of_17",
  "features": {
   "through_vias": 0,

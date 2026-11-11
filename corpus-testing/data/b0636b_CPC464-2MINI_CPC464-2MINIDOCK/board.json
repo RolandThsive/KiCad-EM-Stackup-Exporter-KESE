@@ -1,7 +1,4 @@
 {
- "rank": 1686,
- "score": 1088,
- "level": "MEDIUM",
  "layers": 2,
  "parts": 13,
  "big": 0,
@@ -15,6 +12,7 @@
  "project": "Board-Folk/CPC464-2MINI",
  "name": "CPC464-2MINIDOCK",
  "license": "No license found",
+ "license_checked": "2026-11-08",
  "zip": "part15_of_17",
  "features": {
   "through_vias": 14,

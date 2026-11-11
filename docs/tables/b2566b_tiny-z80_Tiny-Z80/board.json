@@ -3,7 +3,10 @@
  "project": "skiselev/tiny_z80",
  "path": "skiselev__tiny_z80/KiCad/Tiny_Z80.kicad_pcb",
  "license": "GPL-3.0 (GNU GPL v3.0)",
+ "license_checked": "2026-11-08",
  "rank": 875,
+ "score": 3009,
+ "level": "HIGH",
  "complexity": {
   "grade": 326,
   "size": 246,
@@ -22,8 +25,23 @@
  "bad_design": null,
  "chart_alt": "Tiny_Z80: stages 4 and 6 take 54% to 82% of a run. Simulation, GLB takes 23 s. Simulation, STEP takes 29 s. Simulation, STL takes 22 s. Simulation, OBJ takes 34 s. Visual, GLB takes 41 s. Visual, OBJ takes 43 s",
  "rerun": {},
+ "tested": [
+  "2026-11-09",
+  "2026-11-09"
+ ],
  "kese": [
   "22fd70c"
+ ],
+ "kese_version": [
+  "2.4.0"
+ ],
+ "runs": [
+  [
+   "corpus",
+   "2026-11-09",
+   11000000000.0,
+   5400.0
+  ]
  ],
  "machine": {
   "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz, 4 cores, 15 GB",

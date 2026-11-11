@@ -1,7 +1,4 @@
 {
- "rank": 725,
- "score": 3698,
- "level": "HIGH",
  "layers": 4,
  "parts": 140,
  "big": 1,
@@ -15,9 +12,10 @@
  "project": "KiCad/kicad-source-mirror",
  "name": "tinytapeout-demo",
  "license": "GPL-3.0 (GNU GPL v3.0)",
+ "license_checked": "2026-11-08",
  "zip": "part13_of_17",
  "features": {
-  "through_vias": 810,
+  "through_vias": 405,
   "blind_buried_vias": 0,
   "microvias": 0,
   "backdrills": 0,

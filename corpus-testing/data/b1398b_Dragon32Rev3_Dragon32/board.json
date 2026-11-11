@@ -1,7 +1,4 @@
 {
- "rank": 330,
- "score": 8037,
- "level": "VERY HIGH",
  "layers": 2,
  "parts": 169,
  "big": 0,
@@ -15,9 +12,10 @@
  "project": "jimbro1000/Dragon32Rev3",
  "name": "Dragon32",
  "license": "MIT (MIT License)",
+ "license_checked": "2026-11-08",
  "zip": "part10_of_17",
  "features": {
-  "through_vias": 1920,
+  "through_vias": 960,
   "blind_buried_vias": 0,
   "microvias": 0,
   "backdrills": 0,

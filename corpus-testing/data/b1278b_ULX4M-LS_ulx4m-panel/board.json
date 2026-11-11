@@ -1,7 +1,4 @@
 {
- "rank": 17,
- "score": 45224,
- "level": "EXTREME",
  "layers": 6,
  "parts": 872,
  "big": 4,
@@ -15,9 +12,10 @@
  "project": "intergalaktik/ULX4M-LS",
  "name": "ulx4m_panel",
  "license": "CERN-OHL-S-2.0 (CERN Open Hardware Licence v2, Strongly Reciprocal), in LICENSE.md",
+ "license_checked": "2026-11-08",
  "zip": "part01_of_17",
  "features": {
-  "through_vias": 5600,
+  "through_vias": 2800,
   "blind_buried_vias": 0,
   "microvias": 0,
   "backdrills": 0,

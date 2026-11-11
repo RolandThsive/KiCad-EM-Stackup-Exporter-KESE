@@ -1,7 +1,4 @@
 {
- "rank": 1879,
- "score": 850,
- "level": "LOW",
  "layers": 2,
  "parts": 60,
  "big": 0,
@@ -15,6 +12,7 @@
  "project": "smoothieware/smoothieboard2",
  "name": "level-shifter",
  "license": "As README.md states it: \"Under the same license as v1 ( CERN OHL v1.2 or later and GPL v3 or later )\"",
+ "license_checked": "2026-11-08",
  "zip": "part16_of_17",
  "features": {
   "through_vias": 70,

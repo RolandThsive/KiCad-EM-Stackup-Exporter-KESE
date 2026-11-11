@@ -1,7 +1,4 @@
 {
- "rank": 2020,
- "score": 690,
- "level": "LOW",
  "layers": 4,
  "parts": 127,
  "big": 0,
@@ -15,9 +12,10 @@
  "project": "stanford-ssi/samwise-avionics",
  "name": "FlexDeploySidePanels",
  "license": "No license found",
+ "license_checked": "2026-11-08",
  "zip": "part16_of_17",
  "features": {
-  "through_vias": 46,
+  "through_vias": 23,
   "blind_buried_vias": 0,
   "microvias": 0,
   "backdrills": 0,

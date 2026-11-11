@@ -1,7 +1,4 @@
 {
- "rank": 211,
- "score": 11243,
- "level": "VERY HIGH",
  "layers": 6,
  "parts": 388,
  "big": 0,
@@ -15,9 +12,10 @@
  "project": "incutec-hw/openesc-30x30",
  "name": "4in1-panel",
  "license": "CERN-OHL-S-2.0 (CERN Open Hardware Licence v2, Strongly Reciprocal), in LICENSE",
+ "license_checked": "2026-11-08",
  "zip": "part09_of_17",
  "features": {
-  "through_vias": 5208,
+  "through_vias": 2604,
   "blind_buried_vias": 0,
   "microvias": 0,
   "backdrills": 0,

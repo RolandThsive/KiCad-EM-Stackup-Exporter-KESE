@@ -3,7 +3,10 @@
  "project": "eez-open/eez-bb3plus",
  "path": "eez-open__eez-bb3plus/Experimental/KiCad/BB3plus test mainboard.kicad_pcb",
  "license": "TAPR-OHL-1.0 (TAPR Open Hardware License), in LICENSE.TXT",
+ "license_checked": "2026-11-08",
  "rank": 286,
+ "score": 8890,
+ "level": "VERY HIGH",
  "complexity": {
   "grade": 449,
   "size": 289,
@@ -28,8 +31,23 @@
  "bad_design": null,
  "chart_alt": "BB3plus test mainboard: stages 4 and 6 take 50% to 86% of a run. Simulation, GLB takes 63 s. Simulation, STEP takes 81 s. Simulation, STL takes 65 s. Simulation, OBJ takes 2 min. Visual, GLB takes 2 min. Visual, OBJ takes 2 min",
  "rerun": {},
+ "tested": [
+  "2026-11-09",
+  "2026-11-09"
+ ],
  "kese": [
   "22fd70c"
+ ],
+ "kese_version": [
+  "2.4.0"
+ ],
+ "runs": [
+  [
+   "corpus",
+   "2026-11-09",
+   11000000000.0,
+   5400.0
+  ]
  ],
  "machine": {
   "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz, 4 cores, 15 GB",

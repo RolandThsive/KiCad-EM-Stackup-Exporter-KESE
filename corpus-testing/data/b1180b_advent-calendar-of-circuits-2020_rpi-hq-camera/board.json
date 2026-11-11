@@ -1,7 +1,4 @@
 {
- "rank": 2323,
- "score": 392,
- "level": "LOW",
  "layers": 4,
  "parts": 7,
  "big": 0,
@@ -15,6 +12,7 @@
  "project": "gregdavill/advent-calendar-of-circuits-2020",
  "name": "rpi-hq-camera",
  "license": "CERN-OHL-P-2.0 (CERN Open Hardware Licence v2, Permissive), in LICENCE-CERN-OHL-P-2.0",
+ "license_checked": "2026-11-08",
  "zip": "part16_of_17",
  "features": {
   "through_vias": 31,

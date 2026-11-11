@@ -1,7 +1,4 @@
 {
- "rank": 1913,
- "score": 813,
- "level": "LOW",
  "layers": 4,
  "parts": 6,
  "big": 0,
@@ -15,6 +12,7 @@
  "project": "antmicro/raspberry-pi-cm4-csi-adapter",
  "name": "rpi-cm4-csi-adapter",
  "license": "Apache-2.0 (Apache License 2.0)",
+ "license_checked": "2026-11-08",
  "zip": "part16_of_17",
  "features": {
   "through_vias": 38,

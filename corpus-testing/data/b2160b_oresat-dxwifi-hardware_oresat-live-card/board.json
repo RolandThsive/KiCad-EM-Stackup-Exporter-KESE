@@ -1,7 +1,4 @@
 {
- "rank": 307,
- "score": 8464,
- "level": "VERY HIGH",
  "layers": 4,
  "parts": 313,
  "big": 3,
@@ -15,9 +12,10 @@
  "project": "oresat/oresat-dxwifi-hardware",
  "name": "oresat-live-card",
  "license": "GPL-3.0 (GNU GPL v3.0)",
+ "license_checked": "2026-11-08",
  "zip": "part10_of_17",
  "features": {
-  "through_vias": 2498,
+  "through_vias": 1249,
   "blind_buried_vias": 0,
   "microvias": 0,
   "backdrills": 0,

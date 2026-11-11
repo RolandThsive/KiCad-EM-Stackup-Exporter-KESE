@@ -1,7 +1,4 @@
 {
- "rank": 1225,
- "score": 1900,
- "level": "MEDIUM",
  "layers": 4,
  "parts": 220,
  "big": 0,
@@ -15,9 +12,10 @@
  "project": "cuspaceflight/white-giant-sensing-pcb",
  "name": "daq_griffin",
  "license": "GPL-3.0 (GNU GPL v3.0)",
+ "license_checked": "2026-11-08",
  "zip": "part15_of_17",
  "features": {
-  "through_vias": 332,
+  "through_vias": 166,
   "blind_buried_vias": 0,
   "microvias": 0,
   "backdrills": 0,

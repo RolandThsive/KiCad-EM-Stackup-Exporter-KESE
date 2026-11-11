@@ -1,7 +1,4 @@
 {
- "rank": 574,
- "score": 4721,
- "level": "HIGH",
  "layers": 2,
  "parts": 146,
  "big": 0,
@@ -15,6 +12,7 @@
  "project": "flypie/Gigatron",
  "name": "Gigatron",
  "license": "As README.md states it: \"No Copyright is claimed and rmeinas was the original creators of Gigatron.\"",
+ "license_checked": "2026-11-08",
  "zip": "part12_of_17",
  "features": {
   "through_vias": 92,

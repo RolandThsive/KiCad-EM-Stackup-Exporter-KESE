@@ -1,7 +1,4 @@
 {
- "rank": 1463,
- "score": 1460,
- "level": "MEDIUM",
  "layers": 6,
  "parts": 93,
  "big": 1,
@@ -15,9 +12,10 @@
  "project": "baoqi-zhong/robomotor",
  "name": "RoboMotor-DJI-M3508",
  "license": "MIT (MIT License)",
+ "license_checked": "2026-11-08",
  "zip": "part15_of_17",
  "features": {
-  "through_vias": 342,
+  "through_vias": 171,
   "blind_buried_vias": 0,
   "microvias": 0,
   "backdrills": 0,

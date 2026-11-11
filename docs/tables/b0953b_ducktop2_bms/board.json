@@ -3,7 +3,10 @@
  "project": "ewoudvv/ducktop2",
  "path": "ewoudvv__ducktop2/bms/bms.kicad_pcb",
  "license": "MIT (MIT License)",
+ "license_checked": "2026-11-08",
  "rank": 800,
+ "score": 3402,
+ "level": "HIGH",
  "complexity": {
   "grade": 392,
   "size": 267,
@@ -25,8 +28,23 @@
  "bad_design": null,
  "chart_alt": "bms: stages 4 and 6 take 43% to 85% of a run. Simulation, GLB takes 26 s. Simulation, STEP takes 32 s. Simulation, STL takes 26 s. Simulation, OBJ takes 48 s. Visual, GLB takes 36 s. Visual, OBJ takes 45 s",
  "rerun": {},
+ "tested": [
+  "2026-11-09",
+  "2026-11-09"
+ ],
  "kese": [
   "22fd70c"
+ ],
+ "kese_version": [
+  "2.4.0"
+ ],
+ "runs": [
+  [
+   "corpus",
+   "2026-11-09",
+   11000000000.0,
+   5400.0
+  ]
  ],
  "machine": {
   "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz, 4 cores, 15 GB",

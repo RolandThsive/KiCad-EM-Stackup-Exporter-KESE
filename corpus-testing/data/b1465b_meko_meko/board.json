@@ -1,7 +1,4 @@
 {
- "rank": 311,
- "score": 8418,
- "level": "VERY HIGH",
  "layers": 6,
  "parts": 217,
  "big": 4,
@@ -15,9 +12,10 @@
  "project": "koeglike/meko",
  "name": "meko",
  "license": "GPL-3.0 (GNU GPL v3.0)",
+ "license_checked": "2026-11-08",
  "zip": "part10_of_17",
  "features": {
-  "through_vias": 2210,
+  "through_vias": 1105,
   "blind_buried_vias": 0,
   "microvias": 0,
   "backdrills": 0,

@@ -1,7 +1,4 @@
 {
- "rank": 446,
- "score": 6148,
- "level": "HIGH",
  "layers": 2,
  "parts": 130,
  "big": 0,
@@ -15,6 +12,7 @@
  "project": "danwerner21/we816",
  "name": "we816",
  "license": "No license found",
+ "license_checked": "2026-11-08",
  "zip": "part11_of_17",
  "features": {
   "through_vias": 183,

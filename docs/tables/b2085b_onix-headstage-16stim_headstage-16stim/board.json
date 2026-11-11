@@ -3,7 +3,10 @@
  "project": "open-ephys/onix-headstage-16stim",
  "path": "open-ephys__onix-headstage-16stim/pcb/headstage-16stim.kicad_pcb",
  "license": "No license found",
+ "license_checked": "2026-11-08",
  "rank": 859,
+ "score": 3097,
+ "level": "HIGH",
  "complexity": {
   "grade": 427,
   "size": 282,
@@ -27,8 +30,23 @@
  "bad_design": null,
  "chart_alt": "headstage-16stim: stages 4 and 6 take 47% to 85% of a run. Simulation, GLB takes 14 s. Simulation, STEP takes 18 s. Simulation, STL takes 14 s. Simulation, OBJ takes 21 s. Visual, GLB takes 25 s. Visual, OBJ takes 31 s",
  "rerun": {},
+ "tested": [
+  "2026-11-09",
+  "2026-11-09"
+ ],
  "kese": [
   "22fd70c"
+ ],
+ "kese_version": [
+  "2.4.0"
+ ],
+ "runs": [
+  [
+   "corpus",
+   "2026-11-09",
+   11000000000.0,
+   5400.0
+  ]
  ],
  "machine": {
   "cpu": "Intel(R) Xeon(R) Processor @ 2.30GHz, 4 cores, 15 GB",

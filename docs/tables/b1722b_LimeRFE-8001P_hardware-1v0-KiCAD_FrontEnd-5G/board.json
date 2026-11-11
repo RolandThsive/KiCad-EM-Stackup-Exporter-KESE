@@ -3,7 +3,10 @@
  "project": "myriadrf/LimeRFE-8001P",
  "path": "myriadrf__LimeRFE-8001P/hardware/1v0/KiCAD/FrontEnd_5G.kicad_pcb",
  "license": "SHL-2.1 (Solderpad Hardware License v2.1), in hardware/LICENSE",
+ "license_checked": "2026-11-08",
  "rank": 29,
+ "score": 31563,
+ "level": "EXTREME",
  "complexity": {
   "grade": 376,
   "size": 291,
@@ -24,8 +27,29 @@
    "Visual, OBJ"
   ]
  },
+ "tested": [
+  "2026-11-09",
+  "2026-11-10"
+ ],
  "kese": [
   "22fd70c"
+ ],
+ "kese_version": [
+  "2.4.0"
+ ],
+ "runs": [
+  [
+   "cap",
+   "2026-11-10",
+   14500000000.0,
+   5400.0
+  ],
+  [
+   "corpus",
+   "2026-11-09",
+   11000000000.0,
+   5400.0
+  ]
  ],
  "machine": {
   "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz, 4 cores, 15 GB",

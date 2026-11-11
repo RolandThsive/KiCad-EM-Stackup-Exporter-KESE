@@ -1,7 +1,4 @@
 {
- "rank": 704,
- "score": 3874,
- "level": "HIGH",
  "layers": 2,
  "parts": 225,
  "big": 0,
@@ -15,9 +12,10 @@
  "project": "lhr-solar/ps-bpsleader",
  "name": "BPS-Leader",
  "license": "MIT (MIT License)",
+ "license_checked": "2026-11-08",
  "zip": "part13_of_17",
  "features": {
-  "through_vias": 950,
+  "through_vias": 475,
   "blind_buried_vias": 0,
   "microvias": 0,
   "backdrills": 0,

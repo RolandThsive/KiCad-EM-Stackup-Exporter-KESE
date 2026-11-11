@@ -1,7 +1,4 @@
 {
- "rank": 1243,
- "score": 1872,
- "level": "MEDIUM",
  "layers": 4,
  "parts": 62,
  "big": 1,
@@ -15,6 +12,7 @@
  "project": "mattvenn/basic-ecp5-pcb",
  "name": "basic-ecp5-pcb",
  "license": "CC0-1.0 (Creative Commons Zero v1.0)",
+ "license_checked": "2026-11-08",
  "zip": "part15_of_17",
  "features": {
   "through_vias": 130,

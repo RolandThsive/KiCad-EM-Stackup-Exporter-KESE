@@ -1,7 +1,4 @@
 {
- "rank": 374,
- "score": 7178,
- "level": "HIGH",
  "layers": 2,
  "parts": 233,
  "big": 2,
@@ -15,6 +12,7 @@
  "project": "rusefi/rusefi-hardware",
  "name": "micro_rusEFI",
  "license": "No license found",
+ "license_checked": "2026-11-08",
  "zip": "part10_of_17",
  "features": {
   "through_vias": 857,

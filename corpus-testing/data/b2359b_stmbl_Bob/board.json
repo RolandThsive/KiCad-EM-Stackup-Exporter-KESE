@@ -1,7 +1,4 @@
 {
- "rank": 762,
- "score": 3549,
- "level": "HIGH",
  "layers": 2,
  "parts": 140,
  "big": 0,
@@ -15,6 +12,7 @@
  "project": "rene-dev/stmbl",
  "name": "Bob",
  "license": "GPL-3.0 (GNU GPL v3.0)",
+ "license_checked": "2026-11-08",
  "zip": "part13_of_17",
  "features": {
   "through_vias": 170,

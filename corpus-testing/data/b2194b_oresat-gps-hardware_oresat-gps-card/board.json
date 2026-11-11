@@ -1,7 +1,4 @@
 {
- "rank": 425,
- "score": 6507,
- "level": "HIGH",
  "layers": 4,
  "parts": 215,
  "big": 3,
@@ -15,9 +12,10 @@
  "project": "oresat/oresat-gps-hardware",
  "name": "oresat-gps-card",
  "license": "CERN-OHL-S-2.0 (CERN Open Hardware Licence v2, Strongly Reciprocal)",
+ "license_checked": "2026-11-08",
  "zip": "part11_of_17",
  "features": {
-  "through_vias": 1534,
+  "through_vias": 767,
   "blind_buried_vias": 0,
   "microvias": 0,
   "backdrills": 0,

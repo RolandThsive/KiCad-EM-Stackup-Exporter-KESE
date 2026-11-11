@@ -1,7 +1,4 @@
 {
- "rank": 973,
- "score": 2611,
- "level": "MEDIUM",
  "layers": 2,
  "parts": 72,
  "big": 0,
@@ -15,6 +12,7 @@
  "project": "OLIMEX/ESP32-C5-DevKit-Lipo",
  "name": "ESP32-C5-DevKit-Lipo_Rev_A",
  "license": "MIT (MIT License)",
+ "license_checked": "2026-11-08",
  "zip": "part14_of_17",
  "features": {
   "through_vias": 108,

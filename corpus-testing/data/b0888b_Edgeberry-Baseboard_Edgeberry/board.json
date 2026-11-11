@@ -1,7 +1,4 @@
 {
- "rank": 2051,
- "score": 650,
- "level": "LOW",
  "layers": 2,
  "parts": 28,
  "big": 0,
@@ -15,9 +12,10 @@
  "project": "Edgeberry/Edgeberry-Baseboard",
  "name": "Edgeberry",
  "license": "CERN-OHL-W-2.0 (CERN Open Hardware Licence v2, Weakly Reciprocal)",
+ "license_checked": "2026-11-08",
  "zip": "part16_of_17",
  "features": {
-  "through_vias": 194,
+  "through_vias": 97,
   "blind_buried_vias": 0,
   "microvias": 0,
   "backdrills": 0,

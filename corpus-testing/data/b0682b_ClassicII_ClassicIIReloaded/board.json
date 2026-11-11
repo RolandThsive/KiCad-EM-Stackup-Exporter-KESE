@@ -1,7 +1,4 @@
 {
- "rank": 134,
- "score": 15035,
- "level": "VERY HIGH",
  "layers": 4,
  "parts": 290,
  "big": 4,
@@ -15,9 +12,10 @@
  "project": "btb/ClassicII",
  "name": "ClassicIIReloaded",
  "license": "No license found",
+ "license_checked": "2026-11-08",
  "zip": "part06_of_17",
  "features": {
-  "through_vias": 2510,
+  "through_vias": 1255,
   "blind_buried_vias": 0,
   "microvias": 0,
   "backdrills": 0,

@@ -1,7 +1,4 @@
 {
- "rank": 668,
- "score": 4044,
- "level": "HIGH",
  "layers": 2,
  "parts": 1482,
  "big": 8,
@@ -15,6 +12,7 @@
  "project": "ahmadexp/Open-Source-PC110",
  "name": "PC110",
  "license": "CC-BY-NC-4.0 (Creative Commons Attribution-NonCommercial 4.0), in LICENSE",
+ "license_checked": "2026-11-08",
  "zip": "part12_of_17",
  "features": {
   "through_vias": 0,

@@ -1,7 +1,4 @@
 {
- "rank": 1867,
- "score": 863,
- "level": "LOW",
  "layers": 4,
  "parts": 60,
  "big": 1,
@@ -15,6 +12,7 @@
  "project": "myriadrf/lc-clock",
  "name": "CSAD10",
  "license": "As README.rst states it: \"LibreCelluar Reference Clock Designs is copyright 2023 AB Open Ltd and provided under the Solderpad Hardware License v2.1. .. LibreCellular Documentation: https://librecellular.org/developer/hardware/ci/csad10.html\"",
+ "license_checked": "2026-11-08",
  "zip": "part16_of_17",
  "features": {
   "through_vias": 81,

@@ -1,7 +1,4 @@
 {
- "rank": 2415,
- "score": 313,
- "level": "LOW",
  "layers": 2,
  "parts": 34,
  "big": 0,
@@ -15,6 +12,7 @@
  "project": "mwwhited/embeddedbakery",
  "name": "Regulator7913-1",
  "license": "MIT (MIT License), in LICENSE",
+ "license_checked": "2026-11-08",
  "zip": "part16_of_17",
  "features": {
   "through_vias": 1,

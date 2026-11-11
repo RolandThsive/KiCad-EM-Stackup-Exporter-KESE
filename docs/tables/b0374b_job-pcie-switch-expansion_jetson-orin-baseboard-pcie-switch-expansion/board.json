@@ -3,7 +3,10 @@
  "project": "antmicro/job-pcie-switch-expansion",
  "path": "antmicro__job-pcie-switch-expansion/jetson-orin-baseboard-pcie-switch-expansion.kicad_pcb",
  "license": "Apache-2.0 (Apache License 2.0)",
+ "license_checked": "2026-11-08",
  "rank": 336,
+ "score": 7890,
+ "level": "HIGH",
  "complexity": {
   "grade": 489,
   "size": 304,
@@ -30,8 +33,23 @@
  "bad_design": null,
  "chart_alt": "Stages 4 and 6 take 41% to 76% of a run. Simulation, GLB takes 58 s. Simulation, STEP takes 71 s. Simulation, STL takes 58 s. Simulation, OBJ takes 94 s. Visual, GLB takes 91 s. Visual, OBJ takes 2 min",
  "rerun": {},
+ "tested": [
+  "2026-11-09",
+  "2026-11-09"
+ ],
  "kese": [
   "22fd70c"
+ ],
+ "kese_version": [
+  "2.4.0"
+ ],
+ "runs": [
+  [
+   "corpus",
+   "2026-11-09",
+   11000000000.0,
+   5400.0
+  ]
  ],
  "machine": {
   "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz, 4 cores, 15 GB",

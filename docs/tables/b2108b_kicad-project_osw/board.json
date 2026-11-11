@@ -3,7 +3,10 @@
  "project": "Open-Smartwatch/kicad-project",
  "path": "Open-Smartwatch__kicad-project/osw.kicad_pcb",
  "license": "GPL-3.0 (GNU GPL v3.0), in LICENSE",
- "rank": 1486,
+ "license_checked": "2026-11-08",
+ "rank": 1483,
+ "score": 1420,
+ "level": "MEDIUM",
  "complexity": {
   "grade": 261,
   "size": 196,
@@ -21,8 +24,23 @@
  "bad_design": null,
  "chart_alt": "osw: stages 4 and 6 take 51% to 84% of a run. Simulation, GLB takes 14 s. Simulation, STEP takes 16 s. Simulation, STL takes 13 s. Simulation, OBJ takes 20 s. Visual, GLB takes 19 s. Visual, OBJ takes 25 s",
  "rerun": {},
+ "tested": [
+  "2026-11-09",
+  "2026-11-09"
+ ],
  "kese": [
   "22fd70c"
+ ],
+ "kese_version": [
+  "2.4.0"
+ ],
+ "runs": [
+  [
+   "corpus",
+   "2026-11-09",
+   11000000000.0,
+   5400.0
+  ]
  ],
  "machine": {
   "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz, 4 cores, 15 GB",

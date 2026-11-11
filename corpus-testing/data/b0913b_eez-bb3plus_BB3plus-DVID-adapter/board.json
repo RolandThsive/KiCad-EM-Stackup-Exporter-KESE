@@ -1,7 +1,4 @@
 {
- "rank": 1755,
- "score": 996,
- "level": "LOW",
  "layers": 4,
  "parts": 16,
  "big": 0,
@@ -15,9 +12,10 @@
  "project": "eez-open/eez-bb3plus",
  "name": "BB3plus DVID adapter",
  "license": "TAPR-OHL-1.0 (TAPR Open Hardware License), in LICENSE.TXT",
+ "license_checked": "2026-11-08",
  "zip": "part16_of_17",
  "features": {
-  "through_vias": 122,
+  "through_vias": 61,
   "blind_buried_vias": 0,
   "microvias": 0,
   "backdrills": 0,

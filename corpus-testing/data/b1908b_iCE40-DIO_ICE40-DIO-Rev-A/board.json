@@ -1,7 +1,4 @@
 {
- "rank": 1004,
- "score": 2520,
- "level": "MEDIUM",
  "layers": 2,
  "parts": 41,
  "big": 2,
@@ -15,6 +12,7 @@
  "project": "OLIMEX/iCE40-DIO",
  "name": "ICE40-DIO_Rev_A",
  "license": "Apache-2.0 (Apache License 2.0)",
+ "license_checked": "2026-11-08",
  "zip": "part14_of_17",
  "features": {
   "through_vias": 205,

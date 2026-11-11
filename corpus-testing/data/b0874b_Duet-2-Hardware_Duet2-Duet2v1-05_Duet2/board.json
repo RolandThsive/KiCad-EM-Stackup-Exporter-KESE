@@ -1,7 +1,4 @@
 {
- "rank": 227,
- "score": 10875,
- "level": "VERY HIGH",
  "layers": 4,
  "parts": 333,
  "big": 1,
@@ -15,6 +12,7 @@
  "project": "Duet3D/Duet-2-Hardware",
  "name": "Duet2",
  "license": "CERN-OHL-1.2 (CERN Open Hardware Licence v1.2), in LICENSE",
+ "license_checked": "2026-11-08",
  "zip": "part09_of_17",
  "features": {
   "through_vias": 1084,

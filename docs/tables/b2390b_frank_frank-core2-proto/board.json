@@ -3,7 +3,10 @@
  "project": "rh1tech/frank",
  "path": "rh1tech__frank/hardware/frank_core2_proto/frank_core2_proto.kicad_pcb",
  "license": "GPL-3.0 (GNU GPL v3.0)",
+ "license_checked": "2026-11-08",
  "rank": 994,
+ "score": 2551,
+ "level": "MEDIUM",
  "complexity": {
   "grade": 394,
   "size": 259,
@@ -26,8 +29,23 @@
  "bad_design": null,
  "chart_alt": "frank_core2_proto: stages 4 and 6 take 48% to 85% of a run. Simulation, GLB takes 20 s. Simulation, STEP takes 26 s. Simulation, STL takes 20 s. Simulation, OBJ takes 32 s. Visual, GLB takes 33 s. Visual, OBJ takes 40 s",
  "rerun": {},
+ "tested": [
+  "2026-11-09",
+  "2026-11-09"
+ ],
  "kese": [
   "22fd70c"
+ ],
+ "kese_version": [
+  "2.4.0"
+ ],
+ "runs": [
+  [
+   "corpus",
+   "2026-11-09",
+   11000000000.0,
+   5400.0
+  ]
  ],
  "machine": {
   "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz, 4 cores, 15 GB",

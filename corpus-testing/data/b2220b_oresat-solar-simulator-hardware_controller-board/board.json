@@ -1,7 +1,4 @@
 {
- "rank": 471,
- "score": 5709,
- "level": "HIGH",
  "layers": 4,
  "parts": 96,
  "big": 0,
@@ -15,9 +12,10 @@
  "project": "oresat/oresat-solar-simulator-hardware",
  "name": "controller-board",
  "license": "CERN-OHL-S-2.0 (CERN Open Hardware Licence v2, Strongly Reciprocal)",
+ "license_checked": "2026-11-08",
  "zip": "part11_of_17",
  "features": {
-  "through_vias": 3374,
+  "through_vias": 1687,
   "blind_buried_vias": 0,
   "microvias": 0,
   "backdrills": 0,

@@ -1,7 +1,4 @@
 {
- "rank": 999,
- "score": 2546,
- "level": "MEDIUM",
  "layers": 4,
  "parts": 130,
  "big": 0,
@@ -15,6 +12,7 @@
  "project": "cuspaceflight/aquila-avionics",
  "name": "aquila_main",
  "license": "No license found",
+ "license_checked": "2026-11-08",
  "zip": "part14_of_17",
  "features": {
   "through_vias": 472,

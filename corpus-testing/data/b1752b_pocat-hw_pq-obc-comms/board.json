@@ -1,7 +1,4 @@
 {
- "rank": 1657,
- "score": 1127,
- "level": "MEDIUM",
  "layers": 4,
  "parts": 68,
  "big": 1,
@@ -15,9 +12,10 @@
  "project": "nanosatlab/pocat-hw",
  "name": "pq_obc_comms",
  "license": "No license found",
+ "license_checked": "2026-11-08",
  "zip": "part15_of_17",
  "features": {
-  "through_vias": 262,
+  "through_vias": 131,
   "blind_buried_vias": 0,
   "microvias": 0,
   "backdrills": 0,

@@ -1,7 +1,4 @@
 {
- "rank": 168,
- "score": 12893,
- "level": "VERY HIGH",
  "layers": 4,
  "parts": 438,
  "big": 3,
@@ -15,9 +12,10 @@
  "project": "Board-Folk/Acorn_A3010",
  "name": "Acorn-A3010",
  "license": "CC-BY-SA-4.0 (Creative Commons Attribution-ShareAlike 4.0), in LICENSE.md",
+ "license_checked": "2026-11-08",
  "zip": "part07_of_17",
  "features": {
-  "through_vias": 1654,
+  "through_vias": 827,
   "blind_buried_vias": 0,
   "microvias": 0,
   "backdrills": 0,

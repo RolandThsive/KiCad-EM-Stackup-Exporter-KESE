@@ -1,7 +1,4 @@
 {
- "rank": 962,
- "score": 2651,
- "level": "MEDIUM",
  "layers": 4,
  "parts": 71,
  "big": 0,
@@ -15,9 +12,10 @@
  "project": "atomic14/esp32-zxspectrum-hardware",
  "name": "esp32-s3-spectrum",
  "license": "GPL-3.0 (GNU GPL v3.0)",
+ "license_checked": "2026-11-08",
  "zip": "part14_of_17",
  "features": {
-  "through_vias": 728,
+  "through_vias": 364,
   "blind_buried_vias": 0,
   "microvias": 0,
   "backdrills": 0,

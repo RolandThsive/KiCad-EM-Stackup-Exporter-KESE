@@ -1,7 +1,4 @@
 {
- "rank": 957,
- "score": 2678,
- "level": "MEDIUM",
  "layers": 6,
  "parts": 130,
  "big": 1,
@@ -15,9 +12,10 @@
  "project": "antmicro/cm4-baseboard-lvds-adapter",
  "name": "cm4-lvds-adapter",
  "license": "Apache-2.0 (Apache License 2.0)",
+ "license_checked": "2026-11-08",
  "zip": "part14_of_17",
  "features": {
-  "through_vias": 508,
+  "through_vias": 254,
   "blind_buried_vias": 0,
   "microvias": 0,
   "backdrills": 0,

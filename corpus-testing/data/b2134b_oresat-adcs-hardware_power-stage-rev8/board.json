@@ -1,7 +1,4 @@
 {
- "rank": 718,
- "score": 3729,
- "level": "HIGH",
  "layers": 6,
  "parts": 213,
  "big": 1,
@@ -15,9 +12,10 @@
  "project": "oresat/oresat-adcs-hardware",
  "name": "power-stage-rev8",
  "license": "GPL-2.0 (GNU GPL v2.0)",
+ "license_checked": "2026-11-08",
  "zip": "part13_of_17",
  "features": {
-  "through_vias": 1372,
+  "through_vias": 686,
   "blind_buried_vias": 0,
   "microvias": 0,
   "backdrills": 0,

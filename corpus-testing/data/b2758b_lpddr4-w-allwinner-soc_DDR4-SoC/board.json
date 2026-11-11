@@ -1,7 +1,4 @@
 {
- "rank": 279,
- "score": 9199,
- "level": "VERY HIGH",
  "layers": 6,
  "parts": 152,
  "big": 4,
@@ -15,9 +12,10 @@
  "project": "tatakimon/lpddr4_w_allwinner_soc",
  "name": "DDR4_SoC",
  "license": "No license found",
+ "license_checked": "2026-11-08",
  "zip": "part10_of_17",
  "features": {
-  "through_vias": 1430,
+  "through_vias": 715,
   "blind_buried_vias": 0,
   "microvias": 0,
   "backdrills": 0,

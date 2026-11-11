@@ -1,7 +1,4 @@
 {
- "rank": 1471,
- "score": 1442,
- "level": "MEDIUM",
  "layers": 2,
  "parts": 108,
  "big": 0,
@@ -15,9 +12,10 @@
  "project": "Seeed-Studio/OSHW-reCamera-Series",
  "name": "reCamera Gimbal",
  "license": "Apache-2.0 (Apache License 2.0)",
+ "license_checked": "2026-11-08",
  "zip": "part15_of_17",
  "features": {
-  "through_vias": 474,
+  "through_vias": 237,
   "blind_buried_vias": 0,
   "microvias": 0,
   "backdrills": 0,

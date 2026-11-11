@@ -1,7 +1,4 @@
 {
- "rank": 1381,
- "score": 1587,
- "level": "MEDIUM",
  "layers": 2,
  "parts": 178,
  "big": 0,
@@ -15,6 +12,7 @@
  "project": "Redlolz/Altair8800-Simulator-PCB",
  "name": "Arduino_Altair_8800",
  "license": "TAPR-OHL-1.0 (TAPR Open Hardware License), in LICENSE",
+ "license_checked": "2026-11-08",
  "zip": "part15_of_17",
  "features": {
   "through_vias": 50,

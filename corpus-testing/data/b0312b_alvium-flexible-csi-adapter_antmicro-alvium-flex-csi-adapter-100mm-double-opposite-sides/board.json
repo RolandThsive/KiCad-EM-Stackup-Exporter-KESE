@@ -1,7 +1,4 @@
 {
- "rank": 1525,
- "score": 1337,
- "level": "MEDIUM",
  "layers": 2,
  "parts": 5,
  "big": 0,
@@ -15,6 +12,7 @@
  "project": "antmicro/alvium-flexible-csi-adapter",
  "name": "antmicro-alvium-flex-csi-adapter-100mm-double-opposite-sides",
  "license": "Apache-2.0 (Apache License 2.0)",
+ "license_checked": "2026-11-08",
  "zip": "part15_of_17",
  "features": {
   "through_vias": 294,

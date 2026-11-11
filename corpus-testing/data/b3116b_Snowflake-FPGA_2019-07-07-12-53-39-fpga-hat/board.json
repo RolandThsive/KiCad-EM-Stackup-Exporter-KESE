@@ -1,7 +1,4 @@
 {
- "rank": 1152,
- "score": 2051,
- "level": "MEDIUM",
  "layers": 4,
  "parts": 82,
  "big": 2,
@@ -15,6 +12,7 @@
  "project": "Wren6991/Snowflake-FPGA",
  "name": "2019-07-07_12:53:39_fpga_hat",
  "license": "Apache-2.0 (Apache License 2.0), in License",
+ "license_checked": "2026-11-08",
  "zip": "part14_of_17",
  "features": {
   "through_vias": 122,

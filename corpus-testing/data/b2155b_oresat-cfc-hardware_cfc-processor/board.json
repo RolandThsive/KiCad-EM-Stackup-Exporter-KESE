@@ -1,7 +1,4 @@
 {
- "rank": 583,
- "score": 4634,
- "level": "HIGH",
  "layers": 4,
  "parts": 163,
  "big": 2,
@@ -15,9 +12,10 @@
  "project": "oresat/oresat-cfc-hardware",
  "name": "cfc-processor",
  "license": "CERN-OHL-S-2.0 (CERN Open Hardware Licence v2, Strongly Reciprocal)",
+ "license_checked": "2026-11-08",
  "zip": "part12_of_17",
  "features": {
-  "through_vias": 1002,
+  "through_vias": 501,
   "blind_buried_vias": 0,
   "microvias": 0,
   "backdrills": 0,

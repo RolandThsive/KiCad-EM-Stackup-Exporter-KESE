@@ -1,7 +1,4 @@
 {
- "rank": 780,
- "score": 3517,
- "level": "HIGH",
  "layers": 4,
  "parts": 87,
  "big": 2,
@@ -15,6 +12,7 @@
  "project": "pda/pda6502v2",
  "name": "pda6502v2",
  "license": "No license found",
+ "license_checked": "2026-11-08",
  "zip": "part13_of_17",
  "features": {
   "through_vias": 321,

@@ -3,7 +3,10 @@
  "project": "speeduino/hardware",
  "path": "speeduino__hardware/PNPs/Miata NA6/Latest/48-pin breakout/48-pin breakout.kicad_pcb",
  "license": "As README.md states it: \"These designs are release under the CERN Open Hardware License v2 Strong (CERN-OHL-S). This license is similar to the GPL, however is designed specifically for hardware design files, including PCB layouts and schematics.\"",
- "rank": 2805,
+ "license_checked": "2026-11-08",
+ "rank": 2797,
+ "score": 52,
+ "level": "SIMPLE",
  "complexity": {
   "grade": 148,
   "size": 113,
@@ -18,8 +21,23 @@
  "bad_design": null,
  "chart_alt": "48-pin breakout: stages 4 and 6 take 53% to 83% of a run. Simulation, GLB takes 5.9 s. Simulation, STEP takes 7.6 s. Simulation, STL takes 6.1 s. Simulation, OBJ takes 9.0 s. Visual, GLB takes 8.2 s. Visual, OBJ takes 10 s",
  "rerun": {},
+ "tested": [
+  "2026-11-09",
+  "2026-11-09"
+ ],
  "kese": [
   "22fd70c"
+ ],
+ "kese_version": [
+  "2.4.0"
+ ],
+ "runs": [
+  [
+   "corpus",
+   "2026-11-09",
+   11000000000.0,
+   5400.0
+  ]
  ],
  "machine": {
   "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz, 4 cores, 15 GB",

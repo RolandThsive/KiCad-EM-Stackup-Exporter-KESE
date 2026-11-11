@@ -1,7 +1,4 @@
 {
- "rank": 918,
- "score": 2813,
- "level": "MEDIUM",
  "layers": 4,
  "parts": 136,
  "big": 2,
@@ -15,9 +12,10 @@
  "project": "proveskit/flight_controller_board",
  "name": "FC_V4c_InspireFly_Special",
  "license": "CERN-OHL-W-2.0 (CERN Open Hardware Licence v2, Weakly Reciprocal)",
+ "license_checked": "2026-11-08",
  "zip": "part14_of_17",
  "features": {
-  "through_vias": 568,
+  "through_vias": 284,
   "blind_buried_vias": 0,
   "microvias": 0,
   "backdrills": 0,

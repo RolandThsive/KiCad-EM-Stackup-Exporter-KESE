@@ -1,7 +1,4 @@
 {
- "rank": 1633,
- "score": 1160,
- "level": "MEDIUM",
  "layers": 2,
  "parts": 14,
  "big": 1,
@@ -15,6 +12,7 @@
  "project": "antmicro/caravel_board",
  "name": "caravel_breakout_QFN",
  "license": "No license found",
+ "license_checked": "2026-11-08",
  "zip": "part15_of_17",
  "features": {
   "through_vias": 99,

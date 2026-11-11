@@ -1,7 +1,4 @@
 {
- "rank": 2091,
- "score": 608,
- "level": "LOW",
  "layers": 6,
  "parts": 15,
  "big": 0,
@@ -15,6 +12,7 @@
  "project": "antmicro/ac922interposer",
  "name": "ac922interposer",
  "license": "Apache-2.0 (Apache License 2.0)",
+ "license_checked": "2026-11-08",
  "zip": "part16_of_17",
  "features": {
   "through_vias": 43,

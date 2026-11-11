@@ -1,7 +1,4 @@
 {
- "rank": 873,
- "score": 3017,
- "level": "HIGH",
  "layers": 4,
  "parts": 147,
  "big": 0,
@@ -15,9 +12,10 @@
  "project": "tobias-dg3yev/ra-sentinel",
  "name": "RASRF",
  "license": "GPL-3.0 (GNU GPL v3.0)",
+ "license_checked": "2026-11-08",
  "zip": "part13_of_17",
  "features": {
-  "through_vias": 936,
+  "through_vias": 468,
   "blind_buried_vias": 0,
   "microvias": 0,
   "backdrills": 0,

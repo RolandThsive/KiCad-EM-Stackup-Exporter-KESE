@@ -1,7 +1,4 @@
 {
- "rank": 1550,
- "score": 1304,
- "level": "MEDIUM",
  "layers": 4,
  "parts": 31,
  "big": 1,
@@ -15,9 +12,10 @@
  "project": "joeycastillo/Sensor-Watch",
  "name": "OSO-SWAT-C1-rounded",
  "license": "CC-BY-SA-4.0 (Creative Commons Attribution-ShareAlike 4.0), in LICENSE.md",
+ "license_checked": "2026-11-08",
  "zip": "part15_of_17",
  "features": {
-  "through_vias": 162,
+  "through_vias": 81,
   "blind_buried_vias": 0,
   "microvias": 0,
   "backdrills": 0,

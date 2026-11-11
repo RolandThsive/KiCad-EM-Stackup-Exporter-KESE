@@ -1,7 +1,4 @@
 {
- "rank": 700,
- "score": 3900,
- "level": "HIGH",
  "layers": 2,
  "parts": 30,
  "big": 0,
@@ -15,9 +12,10 @@
  "project": "andrewpaterson/658-Computer",
  "name": "SD Card Board",
  "license": "No license found",
+ "license_checked": "2026-11-08",
  "zip": "part13_of_17",
  "features": {
-  "through_vias": 646,
+  "through_vias": 323,
   "blind_buried_vias": 0,
   "microvias": 0,
   "backdrills": 0,

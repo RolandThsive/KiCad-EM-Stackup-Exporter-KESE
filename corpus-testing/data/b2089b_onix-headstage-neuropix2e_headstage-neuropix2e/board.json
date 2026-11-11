@@ -1,7 +1,4 @@
 {
- "rank": 1501,
- "score": 1392,
- "level": "MEDIUM",
  "layers": 4,
  "parts": 58,
  "big": 0,
@@ -15,6 +12,7 @@
  "project": "open-ephys/onix-headstage-neuropix2e",
  "name": "headstage-neuropix2e",
  "license": "No license found",
+ "license_checked": "2026-11-08",
  "zip": "part15_of_17",
  "features": {
   "through_vias": 155,

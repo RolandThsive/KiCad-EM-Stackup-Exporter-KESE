@@ -1,7 +1,4 @@
 {
- "rank": 1669,
- "score": 1116,
- "level": "MEDIUM",
  "layers": 2,
  "parts": 60,
  "big": 1,
@@ -15,6 +12,7 @@
  "project": "geekbozu/Golden-Delicious",
  "name": "gd rp2040 keyboard proto pcb",
  "license": "MIT (MIT License)",
+ "license_checked": "2026-11-08",
  "zip": "part15_of_17",
  "features": {
   "through_vias": 97,

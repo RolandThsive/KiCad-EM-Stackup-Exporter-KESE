@@ -1,7 +1,4 @@
 {
- "rank": 247,
- "score": 10227,
- "level": "VERY HIGH",
  "layers": 2,
  "parts": 137,
  "big": 0,
@@ -15,9 +12,10 @@
  "project": "snippyrow/-816-board",
  "name": "main",
  "license": "MIT (MIT License)",
+ "license_checked": "2026-11-08",
  "zip": "part09_of_17",
  "features": {
-  "through_vias": 1340,
+  "through_vias": 670,
   "blind_buried_vias": 0,
   "microvias": 0,
   "backdrills": 0,

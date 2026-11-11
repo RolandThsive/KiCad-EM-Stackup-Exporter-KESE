@@ -1,7 +1,4 @@
 {
- "rank": 1456,
- "score": 1466,
- "level": "MEDIUM",
  "layers": 4,
  "parts": 5,
  "big": 0,
@@ -15,9 +12,10 @@
  "project": "mwrnd/opencapi-to-pcie_for_mnv303212a_reva2",
  "name": "OpenCAPI-to-PCIe_for_MNV303212A_RevA2",
  "license": "GPL-2.0 (GNU GPL v2.0)",
+ "license_checked": "2026-11-08",
  "zip": "part15_of_17",
  "features": {
-  "through_vias": 350,
+  "through_vias": 175,
   "blind_buried_vias": 0,
   "microvias": 0,
   "backdrills": 0,

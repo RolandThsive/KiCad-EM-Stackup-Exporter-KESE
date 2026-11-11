@@ -1,7 +1,4 @@
 {
- "rank": 1528,
- "score": 1333,
- "level": "MEDIUM",
  "layers": 4,
  "parts": 131,
  "big": 0,
@@ -15,6 +12,7 @@
  "project": "heev/motor-controller-2018",
  "name": "MotorControllerPowerBoard",
  "license": "No license found",
+ "license_checked": "2026-11-08",
  "zip": "part15_of_17",
  "features": {
   "through_vias": 108,

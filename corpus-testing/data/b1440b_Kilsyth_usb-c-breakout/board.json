@@ -1,7 +1,4 @@
 {
- "rank": 1926,
- "score": 791,
- "level": "LOW",
  "layers": 4,
  "parts": 33,
  "big": 0,
@@ -15,6 +12,7 @@
  "project": "kbeckmann/Kilsyth",
  "name": "usb-c-breakout",
  "license": "0BSD (BSD Zero Clause License)",
+ "license_checked": "2026-11-08",
  "zip": "part16_of_17",
  "features": {
   "through_vias": 41,

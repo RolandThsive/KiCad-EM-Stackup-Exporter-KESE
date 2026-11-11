@@ -1,7 +1,4 @@
 {
- "rank": 144,
- "score": 14533,
- "level": "VERY HIGH",
  "layers": 6,
  "parts": 208,
  "big": 3,
@@ -15,6 +12,7 @@
  "project": "open-ephys/ECP5U85-BSE-USB",
  "name": "ecp5u85-bse-usb",
  "license": "CC-BY-NC-SA-4.0 (Creative Commons Attribution-NonCommercial-ShareAlike 4.0), in LICENSE.md",
+ "license_checked": "2026-11-08",
  "zip": "part06_of_17",
  "features": {
   "through_vias": 1183,

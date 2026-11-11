@@ -1,7 +1,4 @@
 {
- "rank": 1038,
- "score": 2388,
- "level": "MEDIUM",
  "layers": 2,
  "parts": 94,
  "big": 0,
@@ -15,9 +12,10 @@
  "project": "beagleboard/capes",
  "name": "TechLab",
  "license": "CC-BY-SA-4.0 (Creative Commons Attribution-ShareAlike 4.0), in pocketbeagle/TechLab/LICENSE",
+ "license_checked": "2026-11-08",
  "zip": "part14_of_17",
  "features": {
-  "through_vias": 580,
+  "through_vias": 290,
   "blind_buried_vias": 0,
   "microvias": 0,
   "backdrills": 0,

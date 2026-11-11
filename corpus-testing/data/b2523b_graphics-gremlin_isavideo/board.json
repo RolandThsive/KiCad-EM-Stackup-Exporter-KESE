@@ -1,7 +1,4 @@
 {
- "rank": 824,
- "score": 3262,
- "level": "HIGH",
  "layers": 2,
  "parts": 93,
  "big": 4,
@@ -15,6 +12,7 @@
  "project": "schlae/graphics-gremlin",
  "name": "isavideo",
  "license": "CC-BY-SA-4.0 (Creative Commons Attribution-ShareAlike 4.0)",
+ "license_checked": "2026-11-08",
  "zip": "part13_of_17",
  "features": {
   "through_vias": 258,

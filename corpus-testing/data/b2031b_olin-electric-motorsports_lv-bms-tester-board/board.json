@@ -1,7 +1,4 @@
 {
- "rank": 2554,
- "score": 207,
- "level": "SIMPLE",
  "layers": 4,
  "parts": 8,
  "big": 0,
@@ -15,6 +12,7 @@
  "project": "olin-electric-motorsports/olin-electric-motorsports",
  "name": "lv_bms_tester_board",
  "license": "No license found",
+ "license_checked": "2026-11-08",
  "zip": "part16_of_17",
  "features": {
   "through_vias": 58,

@@ -1,7 +1,4 @@
 {
- "rank": 2222,
- "score": 488,
- "level": "LOW",
  "layers": 2,
  "parts": 19,
  "big": 1,
@@ -15,6 +12,7 @@
  "project": "greatscottgadgets/greatfet-hardware",
  "name": "foxglove",
  "license": "BSD-3-Clause (BSD 3-Clause License)",
+ "license_checked": "2026-11-08",
  "zip": "part16_of_17",
  "features": {
   "through_vias": 24,

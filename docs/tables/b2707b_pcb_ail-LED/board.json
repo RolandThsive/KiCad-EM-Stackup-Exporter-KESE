@@ -3,7 +3,10 @@
  "project": "sufst/pcb",
  "path": "sufst__pcb/ail-LED/ail-LED.kicad_pcb",
  "license": "GPL-3.0 (GNU GPL v3.0)",
- "rank": 2803,
+ "license_checked": "2026-11-08",
+ "rank": 2795,
+ "score": 53,
+ "level": "SIMPLE",
  "complexity": {
   "grade": 221,
   "size": 96,
@@ -25,8 +28,23 @@
  "bad_design": null,
  "chart_alt": "ail-LED: stages 4 and 6 take 41% to 72% of a run. Simulation, GLB takes 1.2 s. Simulation, STEP takes 1.9 s. Simulation, STL takes 1.2 s. Simulation, OBJ takes 1.6 s. Visual, GLB takes 1.7 s. Visual, OBJ takes 2.0 s",
  "rerun": {},
+ "tested": [
+  "2026-11-09",
+  "2026-11-09"
+ ],
  "kese": [
   "22fd70c"
+ ],
+ "kese_version": [
+  "2.4.0"
+ ],
+ "runs": [
+  [
+   "corpus",
+   "2026-11-09",
+   11000000000.0,
+   5400.0
+  ]
  ],
  "machine": {
   "cpu": "Intel(R) Xeon(R) Processor @ 2.30GHz, 4 cores, 15 GB",

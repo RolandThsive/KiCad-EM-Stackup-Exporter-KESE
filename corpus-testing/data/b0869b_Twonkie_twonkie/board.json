@@ -1,7 +1,4 @@
 {
- "rank": 1491,
- "score": 1411,
- "level": "MEDIUM",
  "layers": 4,
  "parts": 56,
  "big": 1,
@@ -15,9 +12,10 @@
  "project": "dojoe/Twonkie",
  "name": "twonkie",
  "license": "CC-BY-4.0 (Creative Commons Attribution 4.0), in hw/LICENSE",
+ "license_checked": "2026-11-08",
  "zip": "part15_of_17",
  "features": {
-  "through_vias": 240,
+  "through_vias": 120,
   "blind_buried_vias": 0,
   "microvias": 0,
   "backdrills": 0,

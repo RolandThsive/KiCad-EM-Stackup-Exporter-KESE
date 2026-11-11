@@ -1,7 +1,4 @@
 {
- "rank": 2086,
- "score": 615,
- "level": "LOW",
  "layers": 2,
  "parts": 60,
  "big": 0,
@@ -15,6 +12,7 @@
  "project": "kelu124/echomods",
  "name": "goblin",
  "license": "TAPR-OHL-1.0 (TAPR Open Hardware License), in LICENSE.txt, goblin/LICENSE.txt, retired/tobo/LICENSE.txt",
+ "license_checked": "2026-11-08",
  "zip": "part16_of_17",
  "features": {
   "through_vias": 12,

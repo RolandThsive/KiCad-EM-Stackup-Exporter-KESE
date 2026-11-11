@@ -1,7 +1,4 @@
 {
- "rank": 268,
- "score": 9543,
- "level": "VERY HIGH",
  "layers": 4,
  "parts": 693,
  "big": 2,
@@ -15,9 +12,10 @@
  "project": "lhr-solar/ps-powerdistributionunit",
  "name": "PowerDistributionUnit",
  "license": "No license found",
+ "license_checked": "2026-11-08",
  "zip": "part10_of_17",
  "features": {
-  "through_vias": 1978,
+  "through_vias": 989,
   "blind_buried_vias": 0,
   "microvias": 0,
   "backdrills": 0,

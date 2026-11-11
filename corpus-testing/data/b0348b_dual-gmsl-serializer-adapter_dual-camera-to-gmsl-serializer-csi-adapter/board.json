@@ -1,7 +1,4 @@
 {
- "rank": 929,
- "score": 2787,
- "level": "MEDIUM",
  "layers": 4,
  "parts": 95,
  "big": 0,
@@ -15,9 +12,10 @@
  "project": "antmicro/dual-gmsl-serializer-adapter",
  "name": "dual-camera-to-gmsl-serializer-csi-adapter",
  "license": "Apache-2.0 (Apache License 2.0)",
+ "license_checked": "2026-11-08",
  "zip": "part14_of_17",
  "features": {
-  "through_vias": 578,
+  "through_vias": 289,
   "blind_buried_vias": 0,
   "microvias": 0,
   "backdrills": 0,

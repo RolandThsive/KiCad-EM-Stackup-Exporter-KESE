@@ -1,7 +1,4 @@
 {
- "rank": 1713,
- "score": 1042,
- "level": "MEDIUM",
  "layers": 4,
  "parts": 49,
  "big": 0,
@@ -15,9 +12,10 @@
  "project": "issuiuc/iss-pcb",
  "name": "EAGLE-MK1-revB",
  "license": "No license found",
+ "license_checked": "2026-11-08",
  "zip": "part15_of_17",
  "features": {
-  "through_vias": 432,
+  "through_vias": 216,
   "blind_buried_vias": 0,
   "microvias": 0,
   "backdrills": 0,

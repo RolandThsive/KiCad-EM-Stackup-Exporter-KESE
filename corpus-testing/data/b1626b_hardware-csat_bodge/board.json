@@ -1,7 +1,4 @@
 {
- "rank": 2279,
- "score": 429,
- "level": "LOW",
  "layers": 4,
  "parts": 9,
  "big": 0,
@@ -15,9 +12,10 @@
  "project": "matthiasgeorgimhof/hardware_csat",
  "name": "bodge",
  "license": "CC-BY-NC-SA-4.0 (Creative Commons Attribution-NonCommercial-ShareAlike 4.0), in LICENSE, aux_board/LICENSE, auxio_board/LICENSE and others",
+ "license_checked": "2026-11-08",
  "zip": "part16_of_17",
  "features": {
-  "through_vias": 96,
+  "through_vias": 48,
   "blind_buried_vias": 0,
   "microvias": 0,
   "backdrills": 0,

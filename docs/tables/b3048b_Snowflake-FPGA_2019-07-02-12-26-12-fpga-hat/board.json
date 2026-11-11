@@ -3,7 +3,10 @@
  "project": "Wren6991/Snowflake-FPGA",
  "path": "Wren6991__Snowflake-FPGA/timelapse/2019-07-02_12:26:12_fpga_hat.kicad_pcb",
  "license": "Apache-2.0 (Apache License 2.0), in License",
- "rank": 3071,
+ "license_checked": "2026-11-08",
+ "rank": 3135,
+ "score": 0,
+ "level": "SIMPLE",
  "complexity": {
   "grade": 27,
   "size": 17,
@@ -17,8 +20,23 @@
  "bad_design": null,
  "chart_alt": "Reading, start-up and exit take 45% to 59% of a run. Simulation, GLB takes 0.3 s. Simulation, STEP takes 0.4 s. Simulation, STL takes 0.4 s. Simulation, OBJ takes 0.3 s. Visual, GLB takes 0.4 s. Visual, OBJ takes 0.5 s",
  "rerun": {},
+ "tested": [
+  "2026-11-09",
+  "2026-11-09"
+ ],
  "kese": [
   "22fd70c"
+ ],
+ "kese_version": [
+  "2.4.0"
+ ],
+ "runs": [
+  [
+   "corpus",
+   "2026-11-09",
+   11000000000.0,
+   5400.0
+  ]
  ],
  "machine": {
   "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz, 4 cores, 15 GB",

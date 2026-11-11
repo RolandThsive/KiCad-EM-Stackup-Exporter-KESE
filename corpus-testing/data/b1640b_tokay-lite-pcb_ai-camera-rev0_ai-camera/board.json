@@ -1,7 +1,4 @@
 {
- "rank": 971,
- "score": 2631,
- "level": "MEDIUM",
  "layers": 4,
  "parts": 130,
  "big": 0,
@@ -15,6 +12,7 @@
  "project": "maxlab-io/tokay-lite-pcb",
  "name": "ai-camera",
  "license": "CERN-OHL-P-2.0 (CERN Open Hardware Licence v2, Permissive)",
+ "license_checked": "2026-11-08",
  "zip": "part14_of_17",
  "features": {
   "through_vias": 340,

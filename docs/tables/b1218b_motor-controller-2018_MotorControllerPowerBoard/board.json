@@ -3,7 +3,10 @@
  "project": "heev/motor-controller-2018",
  "path": "heev__motor-controller-2018/MotorControllerPowerBoardRev2/MotorControllerPowerBoard/MotorControllerPowerBoard.kicad_pcb",
  "license": "No license found",
- "rank": 1528,
+ "license_checked": "2026-11-08",
+ "rank": 1525,
+ "score": 1333,
+ "level": "MEDIUM",
  "complexity": {
   "grade": 271,
   "size": 201,
@@ -21,8 +24,23 @@
  "bad_design": null,
  "chart_alt": "MotorControllerPowerBoard: stages 4 and 6 take 51% to 83% of a run. Simulation, GLB takes 22 s. Simulation, STEP takes 25 s. Simulation, STL takes 21 s. Simulation, OBJ takes 32 s. Visual, GLB takes 27 s. Visual, OBJ takes 33 s",
  "rerun": {},
+ "tested": [
+  "2026-11-09",
+  "2026-11-09"
+ ],
  "kese": [
   "22fd70c"
+ ],
+ "kese_version": [
+  "2.4.0"
+ ],
+ "runs": [
+  [
+   "corpus",
+   "2026-11-09",
+   11000000000.0,
+   5400.0
+  ]
  ],
  "machine": {
   "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz, 4 cores, 15 GB",

@@ -1,7 +1,4 @@
 {
- "rank": 2017,
- "score": 697,
- "level": "LOW",
  "layers": 4,
  "parts": 42,
  "big": 0,
@@ -15,9 +12,10 @@
  "project": "bluejayracing/bjr_kicad",
  "name": "wsg3.0",
  "license": "No license found",
+ "license_checked": "2026-11-08",
  "zip": "part16_of_17",
  "features": {
-  "through_vias": 148,
+  "through_vias": 74,
   "blind_buried_vias": 0,
   "microvias": 0,
   "backdrills": 0,

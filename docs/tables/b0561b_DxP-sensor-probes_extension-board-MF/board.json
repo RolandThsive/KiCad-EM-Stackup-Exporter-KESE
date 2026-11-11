@@ -3,7 +3,10 @@
  "project": "BerkeleyLab/DxP-sensor-probes",
  "path": "BerkeleyLab__DxP-sensor-probes/extension_board_MF/extension_board_MF.kicad_pcb",
  "license": "CC-BY-NC-4.0 (Creative Commons Attribution-NonCommercial 4.0), in LICENSE.md",
- "rank": 3060,
+ "license_checked": "2026-11-08",
+ "rank": 3071,
+ "score": 0,
+ "level": "SIMPLE",
  "complexity": {
   "grade": 175,
   "size": 110,
@@ -21,8 +24,23 @@
  "bad_design": null,
  "chart_alt": "extension_board_MF: stages 4 and 6 take 44% to 78% of a run. Simulation, GLB takes 1.3 s. Simulation, STEP takes 1.9 s. Simulation, STL takes 1.2 s. Simulation, OBJ takes 1.6 s. Visual, GLB takes 2.0 s. Visual, OBJ takes 2.1 s",
  "rerun": {},
+ "tested": [
+  "2026-11-09",
+  "2026-11-09"
+ ],
  "kese": [
   "22fd70c"
+ ],
+ "kese_version": [
+  "2.4.0"
+ ],
+ "runs": [
+  [
+   "corpus",
+   "2026-11-09",
+   11000000000.0,
+   5400.0
+  ]
  ],
  "machine": {
   "cpu": "Intel(R) Xeon(R) Processor @ 2.30GHz, 4 cores, 15 GB",

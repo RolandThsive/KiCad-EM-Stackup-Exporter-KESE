@@ -1,7 +1,4 @@
 {
- "rank": 340,
- "score": 7722,
- "level": "HIGH",
  "layers": 4,
  "parts": 118,
  "big": 0,
@@ -15,9 +12,10 @@
  "project": "intergalaktik/ULX4M-PCIe-IO",
  "name": "ULX4M-PCIe-IO_x4_half",
  "license": "CERN-OHL-S-2.0 (CERN Open Hardware Licence v2, Strongly Reciprocal), in LICENSE.md",
+ "license_checked": "2026-11-08",
  "zip": "part10_of_17",
  "features": {
-  "through_vias": 954,
+  "through_vias": 477,
   "blind_buried_vias": 0,
   "microvias": 0,
   "backdrills": 0,

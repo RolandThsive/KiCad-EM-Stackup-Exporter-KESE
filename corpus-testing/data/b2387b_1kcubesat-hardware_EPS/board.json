@@ -1,7 +1,4 @@
 {
- "rank": 240,
- "score": 10514,
- "level": "VERY HIGH",
  "layers": 4,
  "parts": 633,
  "big": 3,
@@ -15,6 +12,7 @@
  "project": "rgw3d/1kcubesat_hardware",
  "name": "EPS",
  "license": "GPL-3.0 (GNU GPL v3.0)",
+ "license_checked": "2026-11-08",
  "zip": "part09_of_17",
  "features": {
   "through_vias": 621,

@@ -1,7 +1,4 @@
 {
- "rank": 76,
- "score": 20469,
- "level": "EXTREME",
  "layers": 14,
  "parts": 421,
  "big": 6,
@@ -15,9 +12,10 @@
  "project": "antmicro/polarfire-som",
  "name": "polarfire-som",
  "license": "Apache-2.0 (Apache License 2.0)",
+ "license_checked": "2026-11-08",
  "zip": "part04_of_17",
  "features": {
-  "through_vias": 3130,
+  "through_vias": 1565,
   "blind_buried_vias": 0,
   "microvias": 0,
   "backdrills": 0,

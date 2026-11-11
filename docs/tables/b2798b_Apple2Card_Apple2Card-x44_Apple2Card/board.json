@@ -3,7 +3,10 @@
  "project": "ThorstenBr/Apple2Card",
  "path": "ThorstenBr__Apple2Card/Apple2Card_x44/Apple2Card.kicad_pcb",
  "license": "Zlib (zlib License), in README.md",
- "rank": 1298,
+ "license_checked": "2026-11-08",
+ "rank": 1295,
+ "score": 1739,
+ "level": "MEDIUM",
  "complexity": {
   "grade": 299,
   "size": 224,
@@ -21,8 +24,23 @@
  "bad_design": null,
  "chart_alt": "Apple2Card: stages 4 and 6 take 53% to 85% of a run. Simulation, GLB takes 15 s. Simulation, STEP takes 20 s. Simulation, STL takes 15 s. Simulation, OBJ takes 23 s. Visual, GLB takes 22 s. Visual, OBJ takes 28 s",
  "rerun": {},
+ "tested": [
+  "2026-11-09",
+  "2026-11-09"
+ ],
  "kese": [
   "22fd70c"
+ ],
+ "kese_version": [
+  "2.4.0"
+ ],
+ "runs": [
+  [
+   "corpus",
+   "2026-11-09",
+   11000000000.0,
+   5400.0
+  ]
  ],
  "machine": {
   "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz, 4 cores, 15 GB",

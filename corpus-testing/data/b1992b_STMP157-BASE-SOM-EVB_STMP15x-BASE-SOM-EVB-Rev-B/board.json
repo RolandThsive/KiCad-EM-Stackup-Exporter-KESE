@@ -1,7 +1,4 @@
 {
- "rank": 181,
- "score": 12464,
- "level": "VERY HIGH",
  "layers": 4,
  "parts": 263,
  "big": 3,
@@ -15,6 +12,7 @@
  "project": "OLIMEX/STMP157-BASE-SOM-EVB",
  "name": "STMP15x-BASE-SOM-EVB_Rev_B",
  "license": "GPL-3.0 (GNU GPL v3.0)",
+ "license_checked": "2026-11-08",
  "zip": "part08_of_17",
  "features": {
   "through_vias": 1294,

@@ -1,7 +1,4 @@
 {
- "rank": 2354,
- "score": 370,
- "level": "LOW",
  "layers": 2,
  "parts": 35,
  "big": 0,
@@ -15,9 +12,10 @@
  "project": "AJain9199/AOS16",
  "name": "clock",
  "license": "No license found",
+ "license_checked": "2026-11-08",
  "zip": "part16_of_17",
  "features": {
-  "through_vias": 42,
+  "through_vias": 21,
   "blind_buried_vias": 0,
   "microvias": 0,
   "backdrills": 0,

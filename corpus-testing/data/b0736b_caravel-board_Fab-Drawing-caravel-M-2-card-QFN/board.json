@@ -1,7 +1,4 @@
 {
- "rank": 1786,
- "score": 959,
- "level": "LOW",
  "layers": 4,
  "parts": 11,
  "big": 1,
@@ -15,6 +12,7 @@
  "project": "chipfoundry/caravel_board",
  "name": "Fab-Drawing-caravel-M.2-card-QFN",
  "license": "No license found",
+ "license_checked": "2026-11-08",
  "zip": "part16_of_17",
  "features": {
   "through_vias": 95,

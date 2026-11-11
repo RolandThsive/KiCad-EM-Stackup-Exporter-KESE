@@ -1,7 +1,4 @@
 {
- "rank": 2797,
- "score": 56,
- "level": "SIMPLE",
  "layers": 2,
  "parts": 1,
  "big": 0,
@@ -15,9 +12,10 @@
  "project": "Board-Folk/Neptune",
  "name": "Neptune-32x-315-5818-bypass",
  "license": "As README.md states it: \"Derivative works must be released under similar Open Source terms such that all sources are publicly available. The original authors' names and copyright statements may not be removed.\"",
+ "license_checked": "2026-11-08",
  "zip": "part16_of_17",
  "features": {
-  "through_vias": 130,
+  "through_vias": 65,
   "blind_buried_vias": 0,
   "microvias": 0,
   "backdrills": 0,

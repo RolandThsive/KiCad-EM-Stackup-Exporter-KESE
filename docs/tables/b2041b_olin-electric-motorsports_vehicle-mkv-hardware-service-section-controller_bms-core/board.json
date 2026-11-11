@@ -3,7 +3,10 @@
  "project": "olin-electric-motorsports/olin-electric-motorsports",
  "path": "olin-electric-motorsports__olin-electric-motorsports/vehicle/mkv/hardware/service_section/controller/bms_core.kicad_pcb",
  "license": "No license found",
- "rank": 1559,
+ "license_checked": "2026-11-08",
+ "rank": 1556,
+ "score": 1274,
+ "level": "MEDIUM",
  "complexity": {
   "grade": 283,
   "size": 218,
@@ -21,8 +24,23 @@
  "bad_design": null,
  "chart_alt": "bms_core: stages 4 and 6 take 55% to 84% of a run. Simulation, GLB takes 11 s. Simulation, STEP takes 14 s. Simulation, STL takes 11 s. Simulation, OBJ takes 16 s. Visual, GLB takes 16 s. Visual, OBJ takes 19 s",
  "rerun": {},
+ "tested": [
+  "2026-11-09",
+  "2026-11-09"
+ ],
  "kese": [
   "22fd70c"
+ ],
+ "kese_version": [
+  "2.4.0"
+ ],
+ "runs": [
+  [
+   "corpus",
+   "2026-11-09",
+   11000000000.0,
+   5400.0
+  ]
  ],
  "machine": {
   "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz, 4 cores, 15 GB",

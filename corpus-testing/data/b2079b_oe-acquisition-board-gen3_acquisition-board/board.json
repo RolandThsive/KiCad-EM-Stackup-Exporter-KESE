@@ -1,7 +1,4 @@
 {
- "rank": 320,
- "score": 8186,
- "level": "VERY HIGH",
  "layers": 4,
  "parts": 309,
  "big": 0,
@@ -15,9 +12,10 @@
  "project": "open-ephys/oe-acquisition-board-gen3",
  "name": "acquisition-board",
  "license": "Creative Commons, in LICENSE",
+ "license_checked": "2026-11-08",
  "zip": "part10_of_17",
  "features": {
-  "through_vias": 2584,
+  "through_vias": 1292,
   "blind_buried_vias": 0,
   "microvias": 0,
   "backdrills": 0,

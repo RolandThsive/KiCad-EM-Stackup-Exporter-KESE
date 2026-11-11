@@ -3,7 +3,10 @@
  "project": "tomrodinger/servomotor",
  "path": "tomrodinger__servomotor/PCB/Servomotor3/V11RC3/V11RC3.kicad_pcb",
  "license": "MIT (MIT License)",
- "rank": 1435,
+ "license_checked": "2026-11-08",
+ "rank": 1432,
+ "score": 1505,
+ "level": "MEDIUM",
  "complexity": {
   "grade": 345,
   "size": 220,
@@ -25,8 +28,23 @@
  "bad_design": null,
  "chart_alt": "V11RC3: stages 4 and 6 take 53% to 81% of a run. Simulation, GLB takes 9.9 s. Simulation, STEP takes 12 s. Simulation, STL takes 10 s. Simulation, OBJ takes 14 s. Visual, GLB takes 15 s. Visual, OBJ takes 19 s",
  "rerun": {},
+ "tested": [
+  "2026-11-09",
+  "2026-11-09"
+ ],
  "kese": [
   "22fd70c"
+ ],
+ "kese_version": [
+  "2.4.0"
+ ],
+ "runs": [
+  [
+   "corpus",
+   "2026-11-09",
+   11000000000.0,
+   5400.0
+  ]
  ],
  "machine": {
   "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz, 4 cores, 15 GB",

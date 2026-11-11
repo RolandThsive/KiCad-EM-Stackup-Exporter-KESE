@@ -3,7 +3,10 @@
  "project": "32bitmicro/FEMTO",
  "path": "32bitmicro__FEMTO/source_files/Kicad/Frame/Femto_frame.kicad_pcb",
  "license": "A license in LICENSE.pdf; as readme.md states it: \"Project published as Open Source Hardware (OSHW) under CERN OHL v1.2 (Open Hardware Licence). Screenshot Project has been certified as Open Source Hardware by the Open Source Hardware Association (OSHWA). UID is: PL000009 Screenshot https://certification.oshwa.org/pl000009.html\"",
- "rank": 2689,
+ "license_checked": "2026-11-08",
+ "rank": 2681,
+ "score": 111,
+ "level": "SIMPLE",
  "complexity": {
   "grade": 212,
   "size": 167,
@@ -20,8 +23,23 @@
  "bad_design": null,
  "chart_alt": "Femto_frame: stages 4 and 6 take 51% to 84% of a run. Simulation, GLB takes 2.6 s. Simulation, STEP takes 3.5 s. Simulation, STL takes 2.5 s. Simulation, OBJ takes 3.7 s. Visual, GLB takes 3.5 s. Visual, OBJ takes 4.0 s",
  "rerun": {},
+ "tested": [
+  "2026-11-09",
+  "2026-11-09"
+ ],
  "kese": [
   "22fd70c"
+ ],
+ "kese_version": [
+  "2.4.0"
+ ],
+ "runs": [
+  [
+   "corpus",
+   "2026-11-09",
+   11000000000.0,
+   5400.0
+  ]
  ],
  "machine": {
   "cpu": "Intel(R) Xeon(R) Processor @ 2.30GHz, 4 cores, 15 GB",

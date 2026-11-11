@@ -1,7 +1,4 @@
 {
- "rank": 960,
- "score": 2662,
- "level": "MEDIUM",
  "layers": 2,
  "parts": 104,
  "big": 1,
@@ -15,6 +12,7 @@
  "project": "OLIMEX/OLIMEXINO-STM32F3",
  "name": "OLIMEXINO-STM32F3_Rev_D",
  "license": "GPL-3.0 (GNU GPL v3.0)",
+ "license_checked": "2026-11-08",
  "zip": "part14_of_17",
  "features": {
   "through_vias": 174,

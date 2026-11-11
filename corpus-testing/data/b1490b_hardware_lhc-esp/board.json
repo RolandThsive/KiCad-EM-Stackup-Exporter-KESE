@@ -1,7 +1,4 @@
 {
- "rank": 2291,
- "score": 416,
- "level": "LOW",
  "layers": 2,
  "parts": 24,
  "big": 0,
@@ -15,10 +12,11 @@
  "project": "lhc/hardware",
  "name": "lhc-esp",
  "license": "MIT (MIT License), in Oficinas/monte-sua-placa-kicad/LICENSE",
+ "license_checked": "2026-11-08",
  "zip": "part16_of_17",
  "member": "lhc__hardware/Oficinas/monte-sua-placa-kicad/Projeto Refer├¬ncia/lhc-esp.kicad_pcb",
  "features": {
-  "through_vias": 116,
+  "through_vias": 58,
   "blind_buried_vias": 0,
   "microvias": 0,
   "backdrills": 0,

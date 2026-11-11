@@ -1,7 +1,4 @@
 {
- "rank": 63,
- "score": 22123,
- "level": "EXTREME",
  "layers": 8,
  "parts": 782,
  "big": 5,
@@ -15,9 +12,10 @@
  "project": "antmicro/modular-agilex5e-dc-scm",
  "name": "altera-modular-agilex-5-dc-scm",
  "license": "Apache-2.0 (Apache License 2.0)",
+ "license_checked": "2026-11-08",
  "zip": "part03_of_17",
  "features": {
-  "through_vias": 3212,
+  "through_vias": 1606,
   "blind_buried_vias": 0,
   "microvias": 0,
   "backdrills": 0,

@@ -3,7 +3,10 @@
  "project": "timvideos/HDMI2USB-numato-opsis-hardware",
  "path": "timvideos__HDMI2USB-numato-opsis-hardware/board/HDMI2USB.kicad_pcb",
  "license": "CC-BY-SA-4.0 (Creative Commons Attribution-ShareAlike 4.0)",
+ "license_checked": "2026-11-08",
  "rank": 77,
+ "score": 20378,
+ "level": "EXTREME",
  "complexity": {
   "grade": 395,
   "size": 350,
@@ -23,8 +26,29 @@
    "Simulation, OBJ"
   ]
  },
+ "tested": [
+  "2026-11-09",
+  "2026-11-10"
+ ],
  "kese": [
   "22fd70c"
+ ],
+ "kese_version": [
+  "2.4.0"
+ ],
+ "runs": [
+  [
+   "cap",
+   "2026-11-10",
+   14500000000.0,
+   5400.0
+  ],
+  [
+   "corpus",
+   "2026-11-09",
+   11000000000.0,
+   5400.0
+  ]
  ],
  "machine": {
   "cpu": "Intel(R) Xeon(R) Processor @ 2.30GHz, 4 cores, 15 GB",

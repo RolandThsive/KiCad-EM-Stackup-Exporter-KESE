@@ -1,7 +1,4 @@
 {
- "rank": 196,
- "score": 11636,
- "level": "VERY HIGH",
  "layers": 2,
  "parts": 475,
  "big": 0,
@@ -15,6 +12,7 @@
  "project": "nmikstas/asteroids-pcb",
  "name": "Asteroids_PCB",
  "license": "No license found",
+ "license_checked": "2026-11-08",
  "zip": "part08_of_17",
  "features": {
   "through_vias": 0,

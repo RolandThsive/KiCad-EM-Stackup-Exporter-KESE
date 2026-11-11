@@ -3,7 +3,10 @@
  "project": "joeycastillo/Sensor-Watch",
  "path": "joeycastillo__Sensor-Watch/PCB/Main Boards/OSO-SWAT-B1/OSO-SWAT-B1-jig/OSO-SWAT-B1-jig.kicad_pcb",
  "license": "CC-BY-SA-4.0 (Creative Commons Attribution-ShareAlike 4.0), in LICENSE.md",
- "rank": 2904,
+ "license_checked": "2026-11-08",
+ "rank": 2896,
+ "score": 24,
+ "level": "SIMPLE",
  "complexity": {
   "grade": 45,
   "size": 45,
@@ -15,8 +18,23 @@
  "bad_design": null,
  "chart_alt": "OSO-SWAT-B1-jig: stages 4 and 6 take 48% to 77% of a run. Simulation, GLB takes 2.6 s. Simulation, STEP takes 3.4 s. Simulation, STL takes 2.4 s. Simulation, OBJ takes 3.2 s. Visual, GLB takes 3.4 s. Visual, OBJ takes 4.3 s",
  "rerun": {},
+ "tested": [
+  "2026-11-09",
+  "2026-11-09"
+ ],
  "kese": [
   "22fd70c"
+ ],
+ "kese_version": [
+  "2.4.0"
+ ],
+ "runs": [
+  [
+   "corpus",
+   "2026-11-09",
+   11000000000.0,
+   5400.0
+  ]
  ],
  "machine": {
   "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz, 4 cores, 15 GB",

@@ -1,7 +1,4 @@
 {
- "rank": 1363,
- "score": 1618,
- "level": "MEDIUM",
  "layers": 4,
  "parts": 110,
  "big": 1,
@@ -15,9 +12,10 @@
  "project": "issuiuc/iss-pcb",
  "name": "CAM-MK3-revC",
  "license": "No license found",
+ "license_checked": "2026-11-08",
  "zip": "part15_of_17",
  "features": {
-  "through_vias": 396,
+  "through_vias": 198,
   "blind_buried_vias": 0,
   "microvias": 0,
   "backdrills": 0,

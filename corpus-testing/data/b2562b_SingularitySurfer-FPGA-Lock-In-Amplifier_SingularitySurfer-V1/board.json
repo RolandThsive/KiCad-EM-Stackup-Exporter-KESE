@@ -1,7 +1,4 @@
 {
- "rank": 909,
- "score": 2848,
- "level": "MEDIUM",
  "layers": 2,
  "parts": 158,
  "big": 1,
@@ -15,6 +12,7 @@
  "project": "SingularitySurfer/SingularitySurfer-FPGA-Lock-In-Amplifier",
  "name": "SingularitySurfer_V1",
  "license": "MIT (MIT License), in LICENSE",
+ "license_checked": "2026-11-08",
  "zip": "part14_of_17",
  "features": {
   "through_vias": 415,

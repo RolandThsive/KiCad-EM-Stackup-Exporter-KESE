@@ -1,7 +1,4 @@
 {
- "rank": 51,
- "score": 23106,
- "level": "EXTREME",
  "layers": 6,
  "parts": 471,
  "big": 4,
@@ -15,9 +12,10 @@
  "project": "cropinghigh/zynq_a9_mb",
  "name": "zynq_test",
  "license": "No license found",
+ "license_checked": "2026-11-08",
  "zip": "part03_of_17",
  "features": {
-  "through_vias": 2192,
+  "through_vias": 1096,
   "blind_buried_vias": 0,
   "microvias": 0,
   "backdrills": 0,

@@ -1,7 +1,4 @@
 {
- "rank": 1386,
- "score": 1573,
- "level": "MEDIUM",
  "layers": 4,
  "parts": 41,
  "big": 1,
@@ -15,9 +12,10 @@
  "project": "TinyTapeout/breakout-pcb",
  "name": "ttdbv3-fpga-ICE40UP5k",
  "license": "Apache-2.0 (Apache License 2.0)",
+ "license_checked": "2026-11-08",
  "zip": "part15_of_17",
  "features": {
-  "through_vias": 338,
+  "through_vias": 169,
   "blind_buried_vias": 0,
   "microvias": 0,
   "backdrills": 0,

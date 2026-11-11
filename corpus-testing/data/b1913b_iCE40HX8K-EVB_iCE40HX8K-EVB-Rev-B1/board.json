@@ -1,7 +1,4 @@
 {
- "rank": 253,
- "score": 10169,
- "level": "VERY HIGH",
  "layers": 2,
  "parts": 96,
  "big": 1,
@@ -15,6 +12,7 @@
  "project": "OLIMEX/iCE40HX8K-EVB",
  "name": "iCE40HX8K-EVB_Rev_B1",
  "license": "Apache-2.0 (Apache License 2.0)",
+ "license_checked": "2026-11-08",
  "zip": "part09_of_17",
  "features": {
   "through_vias": 863,

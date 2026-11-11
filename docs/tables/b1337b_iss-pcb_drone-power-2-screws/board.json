@@ -3,7 +3,10 @@
  "project": "issuiuc/iss-pcb",
  "path": "issuiuc__iss-pcb/boards/Drone_Power/drone_power_2_screws/drone_power_2_screws.kicad_pcb",
  "license": "No license found",
- "rank": 2488,
+ "license_checked": "2026-11-08",
+ "rank": 2480,
+ "score": 261,
+ "level": "LOW",
  "complexity": {
   "grade": 197,
   "size": 142,
@@ -20,8 +23,23 @@
  "bad_design": null,
  "chart_alt": "drone_power_2_screws: stages 4 and 6 take 50% to 78% of a run. Simulation, GLB takes 2.7 s. Simulation, STEP takes 3.7 s. Simulation, STL takes 2.5 s. Simulation, OBJ takes 3.6 s. Visual, GLB takes 3.4 s. Visual, OBJ takes 4.0 s",
  "rerun": {},
+ "tested": [
+  "2026-11-09",
+  "2026-11-09"
+ ],
  "kese": [
   "22fd70c"
+ ],
+ "kese_version": [
+  "2.4.0"
+ ],
+ "runs": [
+  [
+   "corpus",
+   "2026-11-09",
+   11000000000.0,
+   5400.0
+  ]
  ],
  "machine": {
   "cpu": "Intel(R) Xeon(R) Processor @ 2.30GHz, 4 cores, 15 GB",

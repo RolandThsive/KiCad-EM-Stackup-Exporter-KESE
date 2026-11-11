@@ -1,7 +1,4 @@
 {
- "rank": 3051,
- "score": 1,
- "level": "SIMPLE",
  "layers": 2,
  "parts": 1,
  "big": 0,
@@ -15,6 +12,7 @@
  "project": "myriadrf/vivaldi-antenna",
  "name": "Vivaldi",
  "license": "CC-BY-3.0 (Creative Commons Attribution 3.0), in COPYING",
+ "license_checked": "2026-11-08",
  "zip": "part16_of_17",
  "features": {
   "through_vias": 2,

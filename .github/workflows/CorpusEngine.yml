@@ -1,8 +1,9 @@
-# Lives only on the corpus-testing branch. When a push adds, changes or deletes a board's files (docs/tables/,
-# docs/images/), the engine numbers the boards, renames the folders whose number moved (their data folders too), and
-# builds every Corpus Testing page again; the result is committed here and main's Sync Wiki is started, so the wiki
-# follows. It runs at every push, with no paths filter: GitHub looks only at the first 300 files of a push for one, so
-# a push of many boards would not start it. A push that changes no board changes nothing.
+# Lives only on the corpus-testing branch. A board is its data folder in corpus-testing/data/: at every push the maker
+# makes each board's tables and chart from it, and the engine takes out a board whose data folder is gone, numbers the
+# boards, renames the folders whose number moved and builds every Corpus Testing page, the Credits and the counts. The
+# result is committed here and main's Sync Wiki is started, so the wiki follows. It runs at every push, with no paths
+# filter: GitHub looks only at the first 300 files of a push for one, so a push of many boards would not start it. A
+# push that changes no board changes nothing.
 name: Corpus Engine
 
 on:
@@ -25,8 +26,24 @@ jobs:
       - name: Check out the branch
         uses: actions/checkout@v4
 
-      - name: Build the pages
-        run: python3 corpus-testing/engine/assemble.py .
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+
+      - name: Install what the charts are drawn with
+        run: |
+          sudo apt-get update -q && sudo apt-get install -y -q fonts-inter
+          python -m pip install -q matplotlib==3.11.2 pillow==12.3.0
+          # a chart is never drawn in another font: matplotlib would fall back to one without a word
+          fc-list | grep -q "/inter/Inter-" || { echo "::error::The Inter font (fonts-inter) did not install"; exit 1; }
+
+      - name: Make each board's tables and chart from its data folder
+        shell: bash          # with pipefail: the maker stopping fails the step, though tee does not
+        run: python corpus-testing/engine/maker/make.py | tee "$RUNNER_TEMP/make.log"
+
+      - name: Number the boards and build the pages
+        run: python corpus-testing/engine/assemble.py .
 
       - name: Commit and push what changed
         id: commit
@@ -44,3 +61,14 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: gh workflow run WikiSync.yml --repo "$GITHUB_REPOSITORY" --ref main
+
+      # a data folder the maker could not use (broken JSON, a field missing, the same board twice) fails the run, so
+      # it is seen; the other boards are made and the pages built all the same
+      - name: Report the data folders not made into boards
+        if: always()
+        run: |
+          test -f "$RUNNER_TEMP/make.log" || exit 0
+          if grep "^not made:" "$RUNNER_TEMP/make.log"; then
+            grep "^not made:" "$RUNNER_TEMP/make.log" | sed 's/^/::error::/'
+            exit 1
+          fi

@@ -1,7 +1,4 @@
 {
- "rank": 2040,
- "score": 664,
- "level": "LOW",
  "layers": 4,
  "parts": 34,
  "big": 1,
@@ -15,6 +12,7 @@
  "project": "olin-electric-motorsports/olin-electric-motorsports",
  "name": "imu",
  "license": "No license found",
+ "license_checked": "2026-11-08",
  "zip": "part16_of_17",
  "features": {
   "through_vias": 51,

@@ -1,7 +1,4 @@
 {
- "rank": 467,
- "score": 5789,
- "level": "HIGH",
  "layers": 4,
  "parts": 382,
  "big": 0,
@@ -15,9 +12,10 @@
  "project": "xtech/hw-openmower-universal",
  "name": "hw-openmower-universal",
  "license": "CC-BY-4.0 (Creative Commons Attribution 4.0)",
+ "license_checked": "2026-11-08",
  "zip": "part11_of_17",
  "features": {
-  "through_vias": 1856,
+  "through_vias": 928,
   "blind_buried_vias": 0,
   "microvias": 0,
   "backdrills": 0,

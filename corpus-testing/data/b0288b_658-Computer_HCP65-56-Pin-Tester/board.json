@@ -1,7 +1,4 @@
 {
- "rank": 788,
- "score": 3474,
- "level": "HIGH",
  "layers": 2,
  "parts": 116,
  "big": 0,
@@ -15,9 +12,10 @@
  "project": "andrewpaterson/658-Computer",
  "name": "HCP65 56 Pin Tester",
  "license": "No license found",
+ "license_checked": "2026-11-08",
  "zip": "part13_of_17",
  "features": {
-  "through_vias": 616,
+  "through_vias": 308,
   "blind_buried_vias": 0,
   "microvias": 0,
   "backdrills": 0,

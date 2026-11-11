@@ -1,7 +1,4 @@
 {
- "rank": 738,
- "score": 3649,
- "level": "HIGH",
  "layers": 4,
  "parts": 137,
  "big": 2,
@@ -15,9 +12,10 @@
  "project": "cetola/reform-next-mirror",
  "name": "nref-ports-two",
  "license": "As README.md states it: \"All hardware design work in this repository is © 2024 MNT Research GmbH, Berlin, Germany, and contributors (see Credits).\"",
+ "license_checked": "2026-11-08",
  "zip": "part13_of_17",
  "features": {
-  "through_vias": 844,
+  "through_vias": 422,
   "blind_buried_vias": 0,
   "microvias": 0,
   "backdrills": 0,

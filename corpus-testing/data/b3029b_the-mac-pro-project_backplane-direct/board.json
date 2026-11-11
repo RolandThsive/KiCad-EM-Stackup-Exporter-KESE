@@ -1,7 +1,4 @@
 {
- "rank": 2718,
- "score": 98,
- "level": "SIMPLE",
  "layers": 4,
  "parts": 19,
  "big": 1,
@@ -15,6 +12,7 @@
  "project": "winkleplex10-bit/the-mac-pro-project",
  "name": "backplane_direct",
  "license": "No license found",
+ "license_checked": "2026-11-08",
  "zip": "part16_of_17",
  "features": {
   "through_vias": 0,

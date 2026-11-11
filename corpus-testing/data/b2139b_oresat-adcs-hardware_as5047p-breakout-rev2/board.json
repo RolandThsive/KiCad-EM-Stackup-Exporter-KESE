@@ -1,7 +1,4 @@
 {
- "rank": 2745,
- "score": 83,
- "level": "SIMPLE",
  "layers": 2,
  "parts": 8,
  "big": 0,
@@ -15,6 +12,7 @@
  "project": "oresat/oresat-adcs-hardware",
  "name": "as5047p_breakout_rev2",
  "license": "GPL-2.0 (GNU GPL v2.0)",
+ "license_checked": "2026-11-08",
  "zip": "part16_of_17",
  "features": {
   "through_vias": 0,

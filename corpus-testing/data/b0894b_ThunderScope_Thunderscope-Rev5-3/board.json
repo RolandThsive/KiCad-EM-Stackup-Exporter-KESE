@@ -1,7 +1,4 @@
 {
- "rank": 62,
- "score": 22145,
- "level": "EXTREME",
  "layers": 6,
  "parts": 811,
  "big": 2,
@@ -15,9 +12,10 @@
  "project": "EEVengers/ThunderScope",
  "name": "Thunderscope_Rev5.3",
  "license": "MIT (MIT License)",
+ "license_checked": "2026-11-08",
  "zip": "part03_of_17",
  "features": {
-  "through_vias": 7482,
+  "through_vias": 3741,
   "blind_buried_vias": 0,
   "microvias": 0,
   "backdrills": 0,

@@ -1,7 +1,4 @@
 {
- "rank": 2309,
- "score": 408,
- "level": "LOW",
  "layers": 2,
  "parts": 42,
  "big": 0,
@@ -15,6 +12,7 @@
  "project": "softerhardware/Hermes-Lite2",
  "name": "endcap",
  "license": "No license found",
+ "license_checked": "2026-11-08",
  "zip": "part16_of_17",
  "features": {
   "through_vias": 19,

@@ -1,7 +1,4 @@
 {
- "rank": 1906,
- "score": 820,
- "level": "LOW",
  "layers": 4,
  "parts": 73,
  "big": 0,
@@ -15,9 +12,10 @@
  "project": "greatscottgadgets/misc",
  "name": "rf-switch-sp4t",
  "license": "GPL-2.0 (GNU GPL v2.0)",
+ "license_checked": "2026-11-08",
  "zip": "part16_of_17",
  "features": {
-  "through_vias": 218,
+  "through_vias": 109,
   "blind_buried_vias": 0,
   "microvias": 0,
   "backdrills": 0,

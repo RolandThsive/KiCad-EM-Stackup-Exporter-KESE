@@ -1,7 +1,4 @@
 {
- "rank": 842,
- "score": 3208,
- "level": "HIGH",
  "layers": 4,
  "parts": 55,
  "big": 2,
@@ -15,9 +12,10 @@
  "project": "transistorfet/retroverse",
  "name": "MemBird - Woodcock",
  "license": "In LICENSE: CERN-OHL-P-2.0 for hardware designs and programmable logic, Apache-2.0 or MIT for other source code, CC-BY-SA-4.0 for artwork and documentation",
+ "license_checked": "2026-11-08",
  "zip": "part13_of_17",
  "features": {
-  "through_vias": 908,
+  "through_vias": 454,
   "blind_buried_vias": 0,
   "microvias": 0,
   "backdrills": 0,

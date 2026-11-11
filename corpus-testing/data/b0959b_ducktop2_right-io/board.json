@@ -1,7 +1,4 @@
 {
- "rank": 1768,
- "score": 984,
- "level": "LOW",
  "layers": 8,
  "parts": 169,
  "big": 3,
@@ -15,9 +12,10 @@
  "project": "ewoudvv/ducktop2",
  "name": "right_io",
  "license": "MIT (MIT License)",
+ "license_checked": "2026-11-08",
  "zip": "part16_of_17",
  "features": {
-  "through_vias": 113,
+  "through_vias": 57,
   "blind_buried_vias": 0,
   "microvias": 0,
   "backdrills": 0,

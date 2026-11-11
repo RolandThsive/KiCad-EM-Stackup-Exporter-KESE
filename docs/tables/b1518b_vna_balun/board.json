@@ -3,7 +3,10 @@
  "project": "loxodes/vna",
  "path": "loxodes__vna/breakouts/balun/balun.kicad_pcb",
  "license": "As README.md states it: \"Unless otherwise noted, all work is under a MIT license.\"",
- "rank": 2927,
+ "license_checked": "2026-11-08",
+ "rank": 2919,
+ "score": 18,
+ "level": "SIMPLE",
  "complexity": {
   "grade": 121,
   "size": 81,
@@ -19,8 +22,23 @@
  "bad_design": null,
  "chart_alt": "balun: stages 4 and 6 take 48% to 80% of a run. Simulation, GLB takes 1.8 s. Simulation, STEP takes 2.8 s. Simulation, STL takes 1.8 s. Simulation, OBJ takes 2.6 s. Visual, GLB takes 2.4 s. Visual, OBJ takes 2.8 s",
  "rerun": {},
+ "tested": [
+  "2026-11-09",
+  "2026-11-09"
+ ],
  "kese": [
   "22fd70c"
+ ],
+ "kese_version": [
+  "2.4.0"
+ ],
+ "runs": [
+  [
+   "corpus",
+   "2026-11-09",
+   11000000000.0,
+   5400.0
+  ]
  ],
  "machine": {
   "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz, 4 cores, 15 GB",

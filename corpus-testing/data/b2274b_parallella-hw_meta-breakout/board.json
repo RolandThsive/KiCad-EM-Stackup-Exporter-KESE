@@ -1,7 +1,4 @@
 {
- "rank": 1670,
- "score": 1115,
- "level": "MEDIUM",
  "layers": 4,
  "parts": 5,
  "big": 0,
@@ -15,6 +12,7 @@
  "project": "parallella/parallella-hw",
  "name": "meta_breakout",
  "license": "CC-BY-SA-3.0 (Creative Commons Attribution-ShareAlike 3.0), in LICENSE",
+ "license_checked": "2026-11-08",
  "zip": "part15_of_17",
  "features": {
   "through_vias": 120,

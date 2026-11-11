@@ -3,7 +3,10 @@
  "project": "acwright/6502",
  "path": "acwright__6502/Hardware/LCD Board/Rev 1.0/LCD Board.kicad_pcb",
  "license": "CERN-OHL-P-2.0 (CERN Open Hardware Licence v2, Permissive), in LICENSE",
- "rank": 2065,
+ "license_checked": "2026-11-08",
+ "rank": 2060,
+ "score": 635,
+ "level": "LOW",
  "complexity": {
   "grade": 230,
   "size": 150,
@@ -22,8 +25,23 @@
  "bad_design": null,
  "chart_alt": "LCD Board: stages 4 and 6 take 55% to 84% of a run. Simulation, GLB takes 12 s. Simulation, STEP takes 15 s. Simulation, STL takes 12 s. Simulation, OBJ takes 17 s. Visual, GLB takes 17 s. Visual, OBJ takes 21 s",
  "rerun": {},
+ "tested": [
+  "2026-11-09",
+  "2026-11-09"
+ ],
  "kese": [
   "22fd70c"
+ ],
+ "kese_version": [
+  "2.4.0"
+ ],
+ "runs": [
+  [
+   "corpus",
+   "2026-11-09",
+   11000000000.0,
+   5400.0
+  ]
  ],
  "machine": {
   "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz, 4 cores, 15 GB",

@@ -1,7 +1,4 @@
 {
- "rank": 2083,
- "score": 617,
- "level": "LOW",
  "layers": 2,
  "parts": 46,
  "big": 0,
@@ -15,6 +12,7 @@
  "project": "OLIMEX/Bike-TSL-Kit",
  "name": "Bike-TSL-Kit_RevA",
  "license": "As README.md states it: \"Hardware is with CERN OHL v1.2 license; Documentation is with CC BY-SA 4.0 license\"",
+ "license_checked": "2026-11-08",
  "zip": "part16_of_17",
  "features": {
   "through_vias": 45,

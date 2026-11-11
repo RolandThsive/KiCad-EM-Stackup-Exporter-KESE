@@ -3,7 +3,10 @@
  "project": "greatscottgadgets/misc",
  "path": "greatscottgadgets__misc/evaluation-boards/DC1722J5005AHF/DC1722J5005AHF.kicad_pcb",
  "license": "GPL-2.0 (GNU GPL v2.0)",
- "rank": 2825,
+ "license_checked": "2026-11-08",
+ "rank": 2817,
+ "score": 46,
+ "level": "SIMPLE",
  "complexity": {
   "grade": 172,
   "size": 117,
@@ -20,8 +23,23 @@
  "bad_design": null,
  "chart_alt": "DC1722J5005AHF: stages 4 and 6 take 50% to 80% of a run. Simulation, GLB takes 3.5 s. Simulation, STEP takes 4.6 s. Simulation, STL takes 3.4 s. Simulation, OBJ takes 5.5 s. Visual, GLB takes 3.8 s. Visual, OBJ takes 4.6 s",
  "rerun": {},
+ "tested": [
+  "2026-11-09",
+  "2026-11-09"
+ ],
  "kese": [
   "22fd70c"
+ ],
+ "kese_version": [
+  "2.4.0"
+ ],
+ "runs": [
+  [
+   "corpus",
+   "2026-11-09",
+   11000000000.0,
+   5400.0
+  ]
  ],
  "machine": {
   "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz, 4 cores, 15 GB",

@@ -1,7 +1,4 @@
 {
- "rank": 1527,
- "score": 1335,
- "level": "MEDIUM",
  "layers": 2,
  "parts": 78,
  "big": 1,
@@ -15,6 +12,7 @@
  "project": "olin-electric-motorsports/olin-electric-motorsports",
  "name": "brakes",
  "license": "No license found",
+ "license_checked": "2026-11-08",
  "zip": "part15_of_17",
  "features": {
   "through_vias": 120,

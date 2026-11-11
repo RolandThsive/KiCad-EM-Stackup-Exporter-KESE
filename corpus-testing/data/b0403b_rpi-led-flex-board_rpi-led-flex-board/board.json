@@ -1,7 +1,4 @@
 {
- "rank": 2216,
- "score": 495,
- "level": "LOW",
  "layers": 2,
  "parts": 27,
  "big": 1,
@@ -15,6 +12,7 @@
  "project": "antmicro/rpi-led-flex-board",
  "name": "rpi-led-flex-board",
  "license": "Apache-2.0 (Apache License 2.0)",
+ "license_checked": "2026-11-08",
  "zip": "part16_of_17",
  "features": {
   "through_vias": 43,

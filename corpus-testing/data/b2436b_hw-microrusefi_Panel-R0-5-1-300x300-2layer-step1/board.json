@@ -1,7 +1,4 @@
 {
- "rank": 8,
- "score": 64494,
- "level": "EXTREME",
  "layers": 2,
  "parts": 2097,
  "big": 18,
@@ -15,6 +12,7 @@
  "project": "rusefi/hw_microrusefi",
  "name": "Panel_R0.5.1_300x300_2layer_step1",
  "license": "No license found",
+ "license_checked": "2026-11-08",
  "zip": "part01_of_17",
  "features": {
   "through_vias": 7605,

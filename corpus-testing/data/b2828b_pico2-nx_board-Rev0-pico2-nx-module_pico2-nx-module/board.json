@@ -1,7 +1,4 @@
 {
- "rank": 853,
- "score": 3156,
- "level": "HIGH",
  "layers": 6,
  "parts": 71,
  "big": 1,
@@ -15,9 +12,10 @@
  "project": "tinyvision-ai-inc/pico2-nx",
  "name": "pico2-nx-module",
  "license": "MIT (MIT License)",
+ "license_checked": "2026-11-08",
  "zip": "part13_of_17",
  "features": {
-  "through_vias": 540,
+  "through_vias": 270,
   "blind_buried_vias": 0,
   "microvias": 0,
   "backdrills": 0,

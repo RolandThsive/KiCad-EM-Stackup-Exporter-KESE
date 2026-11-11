@@ -1,7 +1,4 @@
 {
- "rank": 2868,
- "score": 34,
- "level": "SIMPLE",
  "layers": 2,
  "parts": 17,
  "big": 0,
@@ -15,6 +12,7 @@
  "project": "mwwhited/embeddedbakery",
  "name": "h4n2rs485",
  "license": "MIT (MIT License), in LICENSE",
+ "license_checked": "2026-11-08",
  "zip": "part16_of_17",
  "features": {
   "through_vias": 0,

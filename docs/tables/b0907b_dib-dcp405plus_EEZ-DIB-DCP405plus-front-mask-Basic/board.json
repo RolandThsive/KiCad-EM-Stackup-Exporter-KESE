@@ -3,7 +3,10 @@
  "project": "eez-open/dib-dcp405plus",
  "path": "eez-open__dib-dcp405plus/KiCad/EEZ DIB DCP405plus front mask (Basic).kicad_pcb",
  "license": "TAPR-OHL-1.0 (TAPR Open Hardware License), in LICENSE.TXT",
- "rank": 2977,
+ "license_checked": "2026-11-08",
+ "rank": 2969,
+ "score": 7,
+ "level": "SIMPLE",
  "complexity": {
   "grade": 103,
   "size": 38,
@@ -21,8 +24,23 @@
  "bad_design": null,
  "chart_alt": "Stages 4 and 6 take 52% to 80% of a run. Simulation, GLB takes 2.3 s. Simulation, STEP takes 3.1 s. Simulation, STL takes 2.4 s. Simulation, OBJ takes 3.5 s. Visual, GLB takes 2.9 s. Visual, OBJ takes 3.1 s",
  "rerun": {},
+ "tested": [
+  "2026-11-09",
+  "2026-11-09"
+ ],
  "kese": [
   "22fd70c"
+ ],
+ "kese_version": [
+  "2.4.0"
+ ],
+ "runs": [
+  [
+   "corpus",
+   "2026-11-09",
+   11000000000.0,
+   5400.0
+  ]
  ],
  "machine": {
   "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz, 4 cores, 15 GB",

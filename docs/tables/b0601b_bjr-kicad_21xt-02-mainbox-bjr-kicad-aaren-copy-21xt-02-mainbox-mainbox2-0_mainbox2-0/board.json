@@ -3,7 +3,10 @@
  "project": "bluejayracing/bjr_kicad",
  "path": "bluejayracing__bjr_kicad/21xt/02-mainbox/bjr_kicad_aaren_copy/21xt/02-mainbox/mainbox2.0/mainbox2.0.kicad_pcb",
  "license": "No license found",
- "rank": 1914,
+ "license_checked": "2026-11-08",
+ "rank": 1909,
+ "score": 811,
+ "level": "LOW",
  "complexity": {
   "grade": 270,
   "size": 185,
@@ -22,8 +25,23 @@
  "bad_design": null,
  "chart_alt": "mainbox2.0: stages 4 and 6 take 50% to 81% of a run. Simulation, GLB takes 11 s. Simulation, STEP takes 15 s. Simulation, STL takes 11 s. Simulation, OBJ takes 16 s. Visual, GLB takes 16 s. Visual, OBJ takes 20 s",
  "rerun": {},
+ "tested": [
+  "2026-11-09",
+  "2026-11-09"
+ ],
  "kese": [
   "22fd70c"
+ ],
+ "kese_version": [
+  "2.4.0"
+ ],
+ "runs": [
+  [
+   "corpus",
+   "2026-11-09",
+   11000000000.0,
+   5400.0
+  ]
  ],
  "machine": {
   "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz, 4 cores, 15 GB",

@@ -1,7 +1,4 @@
 {
- "rank": 1484,
- "score": 1426,
- "level": "MEDIUM",
  "layers": 4,
  "parts": 28,
  "big": 1,
@@ -15,9 +12,10 @@
  "project": "sparkfun/sparkfun_gnss_flex_system",
  "name": "SparkFun_GNSS_Flex_Module_mosaic-X5",
  "license": "MIT (MIT License), in LICENSE.md",
+ "license_checked": "2026-11-08",
  "zip": "part15_of_17",
  "features": {
-  "through_vias": 424,
+  "through_vias": 212,
   "blind_buried_vias": 0,
   "microvias": 0,
   "backdrills": 0,

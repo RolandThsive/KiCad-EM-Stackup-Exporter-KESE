@@ -1,7 +1,4 @@
 {
- "rank": 218,
- "score": 11063,
- "level": "VERY HIGH",
  "layers": 8,
  "parts": 1031,
  "big": 11,
@@ -15,9 +12,10 @@
  "project": "nzevh/barebones",
  "name": "barebones",
  "license": "CERN-OHL-S-2.0 (CERN Open Hardware Licence v2, Strongly Reciprocal)",
+ "license_checked": "2026-11-08",
  "zip": "part09_of_17",
  "features": {
-  "through_vias": 848,
+  "through_vias": 424,
   "blind_buried_vias": 100,
   "microvias": 1377,
   "backdrills": 0,

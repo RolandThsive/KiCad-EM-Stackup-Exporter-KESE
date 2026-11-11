@@ -1,7 +1,4 @@
 {
- "rank": 829,
- "score": 3246,
- "level": "HIGH",
  "layers": 4,
  "parts": 192,
  "big": 1,
@@ -15,9 +12,10 @@
  "project": "issuiuc/iss-pcb",
  "name": "BAGEL-MK1",
  "license": "No license found",
+ "license_checked": "2026-11-08",
  "zip": "part13_of_17",
  "features": {
-  "through_vias": 1050,
+  "through_vias": 525,
   "blind_buried_vias": 0,
   "microvias": 0,
   "backdrills": 0,

@@ -1,7 +1,4 @@
 {
- "rank": 505,
- "score": 5350,
- "level": "HIGH",
  "layers": 2,
  "parts": 117,
  "big": 0,
@@ -15,6 +12,7 @@
  "project": "imihajlow/ccpu",
  "name": "vario",
  "license": "GPL-3.0 (GNU GPL v3.0), in LICENSE.GPL; TAPR-OHL-1.0 (TAPR Open Hardware License), in LICENSE.txt",
+ "license_checked": "2026-11-08",
  "zip": "part11_of_17",
  "features": {
   "through_vias": 737,

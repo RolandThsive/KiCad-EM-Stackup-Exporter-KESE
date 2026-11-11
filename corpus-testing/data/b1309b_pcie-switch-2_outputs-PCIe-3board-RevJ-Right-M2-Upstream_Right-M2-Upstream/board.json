@@ -1,7 +1,4 @@
 {
- "rank": 1065,
- "score": 2298,
- "level": "MEDIUM",
  "layers": 32,
  "parts": 80,
  "big": 0,
@@ -15,9 +12,10 @@
  "project": "isarmg/pcie-switch-2",
  "name": "Right_M2_Upstream",
  "license": "No license found",
+ "license_checked": "2026-11-08",
  "zip": "part14_of_17",
  "features": {
-  "through_vias": 30,
+  "through_vias": 15,
   "blind_buried_vias": 409,
   "microvias": 0,
   "backdrills": 0,

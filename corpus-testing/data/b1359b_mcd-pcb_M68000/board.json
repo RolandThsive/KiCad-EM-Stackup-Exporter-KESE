@@ -1,7 +1,4 @@
 {
- "rank": 888,
- "score": 2965,
- "level": "MEDIUM",
  "layers": 2,
  "parts": 70,
  "big": 5,
@@ -15,6 +12,7 @@
  "project": "jack-mil/mcd-pcb",
  "name": "M68000",
  "license": "No license found",
+ "license_checked": "2026-11-08",
  "zip": "part13_of_17",
  "features": {
   "through_vias": 272,

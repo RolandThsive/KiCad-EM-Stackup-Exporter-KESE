@@ -1,7 +1,4 @@
 {
- "rank": 172,
- "score": 12723,
- "level": "VERY HIGH",
  "layers": 4,
  "parts": 375,
  "big": 4,
@@ -15,9 +12,10 @@
  "project": "Modos-Labs/Glider",
  "name": "pcb",
  "license": "CERN-OHL-S-2.0 (CERN Open Hardware Licence v2, Strongly Reciprocal), in LICENSE",
+ "license_checked": "2026-11-08",
  "zip": "part07_of_17",
  "features": {
-  "through_vias": 1800,
+  "through_vias": 900,
   "blind_buried_vias": 0,
   "microvias": 0,
   "backdrills": 0,

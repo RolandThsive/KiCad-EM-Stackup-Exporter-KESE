@@ -1,7 +1,4 @@
 {
- "rank": 1185,
- "score": 2009,
- "level": "MEDIUM",
  "layers": 4,
  "parts": 114,
  "big": 1,
@@ -15,6 +12,7 @@
  "project": "bitcraze/crazyflie-electronics",
  "name": "Crazyflie contol board",
  "license": "CC-BY-NC-SA-3.0 (Creative Commons Attribution-NonCommercial-ShareAlike 3.0), in LICENSE.md",
+ "license_checked": "2026-11-08",
  "zip": "part14_of_17",
  "features": {
   "through_vias": 140,

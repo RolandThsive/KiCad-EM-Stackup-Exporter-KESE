@@ -1,7 +1,4 @@
 {
- "rank": 874,
- "score": 3009,
- "level": "HIGH",
  "layers": 4,
  "parts": 136,
  "big": 2,
@@ -15,6 +12,7 @@
  "project": "pergola-fpga/pergola",
  "name": "RevA",
  "license": "MIT (MIT License)",
+ "license_checked": "2026-11-08",
  "zip": "part13_of_17",
  "features": {
   "through_vias": 318,

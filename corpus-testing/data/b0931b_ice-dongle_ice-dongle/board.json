@@ -1,7 +1,4 @@
 {
- "rank": 1707,
- "score": 1048,
- "level": "MEDIUM",
  "layers": 4,
  "parts": 45,
  "big": 1,
@@ -15,6 +12,7 @@
  "project": "emeb/ice-dongle",
  "name": "ice-dongle",
  "license": "MIT (MIT License)",
+ "license_checked": "2026-11-08",
  "zip": "part15_of_17",
  "features": {
   "through_vias": 95,

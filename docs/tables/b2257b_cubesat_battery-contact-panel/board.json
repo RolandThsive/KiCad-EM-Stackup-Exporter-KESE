@@ -3,7 +3,10 @@
  "project": "osusat/cubesat",
  "path": "osusat__cubesat/eps/v1/battery_contact_panel/battery_contact_panel.kicad_pcb",
  "license": "MIT (MIT License)",
- "rank": 2773,
+ "license_checked": "2026-11-08",
+ "rank": 2765,
+ "score": 70,
+ "level": "SIMPLE",
  "complexity": {
   "grade": 178,
   "size": 118,
@@ -20,8 +23,23 @@
  "bad_design": null,
  "chart_alt": "battery_contact_panel: stages 4 and 6 take 39% to 70% of a run. Simulation, GLB takes 1.6 s. Simulation, STEP takes 2.3 s. Simulation, STL takes 1.6 s. Simulation, OBJ takes 2.2 s. Visual, GLB takes 2.2 s. Visual, OBJ takes 2.9 s",
  "rerun": {},
+ "tested": [
+  "2026-11-09",
+  "2026-11-09"
+ ],
  "kese": [
   "22fd70c"
+ ],
+ "kese_version": [
+  "2.4.0"
+ ],
+ "runs": [
+  [
+   "corpus",
+   "2026-11-09",
+   11000000000.0,
+   5400.0
+  ]
  ],
  "machine": {
   "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz, 4 cores, 15 GB",

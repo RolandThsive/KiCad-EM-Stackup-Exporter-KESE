@@ -1,7 +1,4 @@
 {
- "rank": 2198,
- "score": 516,
- "level": "LOW",
  "layers": 6,
  "parts": 228,
  "big": 1,
@@ -15,6 +12,7 @@
  "project": "alphaonex86/fpgamotherboard",
  "name": "socket3-motherboard",
  "license": "GPL-3.0 (GNU GPL v3.0)",
+ "license_checked": "2026-11-08",
  "zip": "part16_of_17",
  "features": {
   "through_vias": 0,

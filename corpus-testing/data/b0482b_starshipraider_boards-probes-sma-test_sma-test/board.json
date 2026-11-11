@@ -1,7 +1,4 @@
 {
- "rank": 1468,
- "score": 1452,
- "level": "MEDIUM",
  "layers": 4,
  "parts": 11,
  "big": 0,
@@ -15,6 +12,7 @@
  "project": "azonenberg/starshipraider",
  "name": "sma-test",
  "license": "BSD-3-Clause (BSD 3-Clause License)",
+ "license_checked": "2026-11-08",
  "zip": "part15_of_17",
  "features": {
   "through_vias": 334,

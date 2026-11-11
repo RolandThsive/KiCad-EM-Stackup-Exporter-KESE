@@ -1,7 +1,4 @@
 {
- "rank": 2409,
- "score": 321,
- "level": "LOW",
  "layers": 2,
  "parts": 41,
  "big": 0,
@@ -15,9 +12,10 @@
  "project": "ucdfs/circuits",
  "name": "Charger_Shutdown_KR",
  "license": "No license found",
+ "license_checked": "2026-11-08",
  "zip": "part16_of_17",
  "features": {
-  "through_vias": 20,
+  "through_vias": 10,
   "blind_buried_vias": 0,
   "microvias": 0,
   "backdrills": 0,

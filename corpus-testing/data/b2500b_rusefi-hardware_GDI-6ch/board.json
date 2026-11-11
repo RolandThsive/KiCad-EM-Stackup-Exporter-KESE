@@ -1,7 +1,4 @@
 {
- "rank": 584,
- "score": 4627,
- "level": "HIGH",
  "layers": 4,
  "parts": 245,
  "big": 2,
@@ -15,9 +12,10 @@
  "project": "rusefi/rusefi-hardware",
  "name": "GDI-6ch",
  "license": "No license found",
+ "license_checked": "2026-11-08",
  "zip": "part12_of_17",
  "features": {
-  "through_vias": 1294,
+  "through_vias": 647,
   "blind_buried_vias": 0,
   "microvias": 0,
   "backdrills": 0,

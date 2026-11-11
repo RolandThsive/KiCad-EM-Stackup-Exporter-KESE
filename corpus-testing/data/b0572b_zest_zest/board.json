@@ -1,7 +1,4 @@
 {
- "rank": 249,
- "score": 10198,
- "level": "VERY HIGH",
  "layers": 8,
  "parts": 410,
  "big": 0,
@@ -15,9 +12,10 @@
  "project": "berkeleylab/zest",
  "name": "zest",
  "license": "CERN-OHL-1.2 (CERN Open Hardware Licence v1.2), in License",
+ "license_checked": "2026-11-08",
  "zip": "part09_of_17",
  "features": {
-  "through_vias": 2236,
+  "through_vias": 1118,
   "blind_buried_vias": 0,
   "microvias": 0,
   "backdrills": 0,

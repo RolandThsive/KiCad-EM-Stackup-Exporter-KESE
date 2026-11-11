@@ -1,7 +1,4 @@
 {
- "rank": 593,
- "score": 4555,
- "level": "HIGH",
  "layers": 2,
  "parts": 157,
  "big": 1,
@@ -15,6 +12,7 @@
  "project": "OLIMEX/ESP32-EVB",
  "name": "ESP32-EVB_Rev_K1",
  "license": "Apache-2.0 (Apache License 2.0)",
+ "license_checked": "2026-11-08",
  "zip": "part12_of_17",
  "features": {
   "through_vias": 315,

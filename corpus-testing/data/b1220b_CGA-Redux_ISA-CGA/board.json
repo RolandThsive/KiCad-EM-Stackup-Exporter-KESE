@@ -1,7 +1,4 @@
 {
- "rank": 289,
- "score": 8827,
- "level": "VERY HIGH",
  "layers": 4,
  "parts": 170,
  "big": 0,
@@ -15,6 +12,7 @@
  "project": "hkzlab/CGA_Redux",
  "name": "ISA_CGA",
  "license": "CC-BY-NC-SA-4.0 (Creative Commons Attribution-NonCommercial-ShareAlike 4.0), in LICENSE",
+ "license_checked": "2026-11-08",
  "zip": "part10_of_17",
  "features": {
   "through_vias": 328,

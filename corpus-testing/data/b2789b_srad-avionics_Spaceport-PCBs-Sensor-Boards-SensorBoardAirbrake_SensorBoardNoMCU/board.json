@@ -1,7 +1,4 @@
 {
- "rank": 2631,
- "score": 149,
- "level": "SIMPLE",
  "layers": 4,
  "parts": 12,
  "big": 0,
@@ -15,9 +12,10 @@
  "project": "terrapin-rocket-team/srad-avionics",
  "name": "SensorBoardNoMCU",
  "license": "No license found",
+ "license_checked": "2026-11-08",
  "zip": "part16_of_17",
  "features": {
-  "through_vias": 22,
+  "through_vias": 11,
   "blind_buried_vias": 0,
   "microvias": 0,
   "backdrills": 0,

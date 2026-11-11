@@ -1,7 +1,4 @@
 {
- "rank": 699,
- "score": 3904,
- "level": "HIGH",
  "layers": 4,
  "parts": 68,
  "big": 0,
@@ -15,9 +12,10 @@
  "project": "antmicro/agx-thor-baseboard-pcie-interposer",
  "name": "jetson-agx-thor-baseboard-pcie-x1-interposer",
  "license": "Apache-2.0 (Apache License 2.0)",
+ "license_checked": "2026-11-08",
  "zip": "part13_of_17",
  "features": {
-  "through_vias": 1880,
+  "through_vias": 940,
   "blind_buried_vias": 0,
   "microvias": 0,
   "backdrills": 0,

@@ -1,7 +1,4 @@
 {
- "rank": 553,
- "score": 4884,
- "level": "HIGH",
  "layers": 6,
  "parts": 170,
  "big": 1,
@@ -15,9 +12,10 @@
  "project": "jlcjak/astra_pinas",
  "name": "astra_piNas",
  "license": "No license found",
+ "license_checked": "2026-11-08",
  "zip": "part12_of_17",
  "features": {
-  "through_vias": 1384,
+  "through_vias": 692,
   "blind_buried_vias": 0,
   "microvias": 0,
   "backdrills": 0,

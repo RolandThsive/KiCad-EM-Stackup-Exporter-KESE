@@ -1,7 +1,4 @@
 {
- "rank": 216,
- "score": 11143,
- "level": "VERY HIGH",
  "layers": 6,
  "parts": 180,
  "big": 3,
@@ -15,6 +12,7 @@
  "project": "Tinkerforge/red-brick",
  "name": "red",
  "license": "CERN-OHL-1.1 (CERN Open Hardware Licence v1.1), in hardware/LICENSE.txt",
+ "license_checked": "2026-11-08",
  "zip": "part09_of_17",
  "features": {
   "through_vias": 754,

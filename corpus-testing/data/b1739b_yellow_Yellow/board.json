@@ -1,7 +1,4 @@
 {
- "rank": 256,
- "score": 10026,
- "level": "VERY HIGH",
  "layers": 4,
  "parts": 280,
  "big": 2,
@@ -15,6 +12,7 @@
  "project": "NabuCasa/yellow",
  "name": "Yellow",
  "license": "CERN-OHL-W-2.0 (CERN Open Hardware Licence v2, Weakly Reciprocal), in LICENSE.md",
+ "license_checked": "2026-11-08",
  "zip": "part09_of_17",
  "features": {
   "through_vias": 1961,

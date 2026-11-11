@@ -1,7 +1,4 @@
 {
- "rank": 103,
- "score": 18464,
- "level": "VERY HIGH",
  "layers": 2,
  "parts": 167,
  "big": 0,
@@ -15,9 +12,10 @@
  "project": "lucedoriente/Aleste520ex",
  "name": "Aleste520_Keyboard",
  "license": "GPL-3.0 (GNU GPL v3.0)",
+ "license_checked": "2026-11-08",
  "zip": "part05_of_17",
  "features": {
-  "through_vias": 282,
+  "through_vias": 141,
   "blind_buried_vias": 0,
   "microvias": 0,
   "backdrills": 0,

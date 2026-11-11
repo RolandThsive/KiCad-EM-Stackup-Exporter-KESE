@@ -3,7 +3,10 @@
  "project": "oresat/oresat-star-tracker-hardware",
  "path": "oresat__oresat-star-tracker-hardware/hardware/star-tracker-camera-board/star-tracker-camera-board.kicad_pcb",
  "license": "No license found",
- "rank": 1953,
+ "license_checked": "2026-11-08",
+ "rank": 1948,
+ "score": 762,
+ "level": "LOW",
  "complexity": {
   "grade": 310,
   "size": 180,
@@ -26,8 +29,23 @@
  "bad_design": null,
  "chart_alt": "star-tracker-camera-board: stages 4 and 6 take 46% to 79% of a run. Simulation, GLB takes 5.5 s. Simulation, STEP takes 6.8 s. Simulation, STL takes 5.4 s. Simulation, OBJ takes 8.3 s. Visual, GLB takes 8.6 s. Visual, OBJ takes 11 s",
  "rerun": {},
+ "tested": [
+  "2026-11-09",
+  "2026-11-09"
+ ],
  "kese": [
   "22fd70c"
+ ],
+ "kese_version": [
+  "2.4.0"
+ ],
+ "runs": [
+  [
+   "corpus",
+   "2026-11-09",
+   11000000000.0,
+   5400.0
+  ]
  ],
  "machine": {
   "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz, 4 cores, 15 GB",

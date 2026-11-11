@@ -1,7 +1,4 @@
 {
- "rank": 1990,
- "score": 722,
- "level": "LOW",
  "layers": 2,
  "parts": 46,
  "big": 0,
@@ -15,6 +12,7 @@
  "project": "lhc/hardware",
  "name": "lhc_tijolo32_board",
  "license": "MIT (MIT License), in Oficinas/monte-sua-placa-kicad/LICENSE",
+ "license_checked": "2026-11-08",
  "zip": "part16_of_17",
  "features": {
   "through_vias": 75,

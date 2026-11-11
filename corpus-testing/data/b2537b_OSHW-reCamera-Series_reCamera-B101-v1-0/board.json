@@ -1,7 +1,4 @@
 {
- "rank": 1831,
- "score": 899,
- "level": "LOW",
  "layers": 4,
  "parts": 46,
  "big": 0,
@@ -15,9 +12,10 @@
  "project": "Seeed-Studio/OSHW-reCamera-Series",
  "name": "reCamera B101 v1.0",
  "license": "Apache-2.0 (Apache License 2.0)",
+ "license_checked": "2026-11-08",
  "zip": "part16_of_17",
  "features": {
-  "through_vias": 266,
+  "through_vias": 133,
   "blind_buried_vias": 0,
   "microvias": 0,
   "backdrills": 0,

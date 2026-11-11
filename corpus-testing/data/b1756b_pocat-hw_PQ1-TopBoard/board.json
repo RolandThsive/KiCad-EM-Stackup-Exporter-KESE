@@ -1,7 +1,4 @@
 {
- "rank": 2658,
- "score": 135,
- "level": "SIMPLE",
  "layers": 2,
  "parts": 10,
  "big": 0,
@@ -15,6 +12,7 @@
  "project": "nanosatlab/pocat-hw",
  "name": "PQ1_TopBoard",
  "license": "No license found",
+ "license_checked": "2026-11-08",
  "zip": "part16_of_17",
  "features": {
   "through_vias": 17,

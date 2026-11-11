@@ -1,7 +1,4 @@
 {
- "rank": 922,
- "score": 2794,
- "level": "MEDIUM",
  "layers": 4,
  "parts": 150,
  "big": 2,
@@ -15,9 +12,10 @@
  "project": "rh1tech/frank",
  "name": "frank_core2u",
  "license": "GPL-3.0 (GNU GPL v3.0)",
+ "license_checked": "2026-11-08",
  "zip": "part14_of_17",
  "features": {
-  "through_vias": 512,
+  "through_vias": 256,
   "blind_buried_vias": 0,
   "microvias": 0,
   "backdrills": 0,

@@ -1,7 +1,4 @@
 {
- "rank": 2359,
- "score": 367,
- "level": "LOW",
  "layers": 2,
  "parts": 14,
  "big": 0,
@@ -15,9 +12,10 @@
  "project": "protocentral/protocentral_healthypi6_hardware",
  "name": "healthypi_6_display_v7",
  "license": "CERN-OHL-P-2.0 (CERN Open Hardware Licence v2, Permissive)",
+ "license_checked": "2026-11-08",
  "zip": "part16_of_17",
  "features": {
-  "through_vias": 100,
+  "through_vias": 50,
   "blind_buried_vias": 0,
   "microvias": 0,
   "backdrills": 0,

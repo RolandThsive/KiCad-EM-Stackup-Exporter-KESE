@@ -1,7 +1,4 @@
 {
- "rank": 329,
- "score": 8038,
- "level": "VERY HIGH",
  "layers": 4,
  "parts": 406,
  "big": 6,
@@ -15,6 +12,7 @@
  "project": "matthuszagh/fmcw",
  "name": "fmcw",
  "license": "Apache-2.0 (Apache License 2.0)",
+ "license_checked": "2026-11-08",
  "zip": "part10_of_17",
  "features": {
   "through_vias": 947,

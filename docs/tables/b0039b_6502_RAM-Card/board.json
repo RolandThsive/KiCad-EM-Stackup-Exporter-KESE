@@ -3,7 +3,10 @@
  "project": "acwright/6502",
  "path": "acwright__6502/Hardware/RAM Card/Rev 1.0/RAM Card.kicad_pcb",
  "license": "CERN-OHL-P-2.0 (CERN Open Hardware Licence v2, Permissive), in LICENSE",
- "rank": 1425,
+ "license_checked": "2026-11-08",
+ "rank": 1422,
+ "score": 1516,
+ "level": "MEDIUM",
  "complexity": {
   "grade": 280,
   "size": 170,
@@ -24,8 +27,23 @@
  "bad_design": null,
  "chart_alt": "RAM Card: stages 4 and 6 take 50% to 83% of a run. Simulation, GLB takes 16 s. Simulation, STEP takes 19 s. Simulation, STL takes 14 s. Simulation, OBJ takes 22 s. Visual, GLB takes 22 s. Visual, OBJ takes 28 s",
  "rerun": {},
+ "tested": [
+  "2026-11-09",
+  "2026-11-09"
+ ],
  "kese": [
   "22fd70c"
+ ],
+ "kese_version": [
+  "2.4.0"
+ ],
+ "runs": [
+  [
+   "corpus",
+   "2026-11-09",
+   11000000000.0,
+   5400.0
+  ]
  ],
  "machine": {
   "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz, 4 cores, 15 GB",

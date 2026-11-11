@@ -1,7 +1,4 @@
 {
- "rank": 916,
- "score": 2820,
- "level": "MEDIUM",
  "layers": 4,
  "parts": 123,
  "big": 1,
@@ -15,9 +12,10 @@
  "project": "baoqi-zhong/robomotor",
  "name": "RoboMotor-GIM6010",
  "license": "MIT (MIT License)",
+ "license_checked": "2026-11-08",
  "zip": "part14_of_17",
  "features": {
-  "through_vias": 956,
+  "through_vias": 478,
   "blind_buried_vias": 0,
   "microvias": 0,
   "backdrills": 0,

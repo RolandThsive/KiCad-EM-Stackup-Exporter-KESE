@@ -1,7 +1,4 @@
 {
- "rank": 2327,
- "score": 389,
- "level": "LOW",
  "layers": 4,
  "parts": 21,
  "big": 0,
@@ -15,6 +12,7 @@
  "project": "machdyne/katze",
  "name": "pmod_ethernet",
  "license": "The Lone Dynamics Open License, in LICENSE.md: \"Redistribution and use in source, binary or physical forms, with or without modification, is permitted\", provided redistributed source keeps the copyright notice; the README names its exceptions",
+ "license_checked": "2026-11-08",
  "zip": "part16_of_17",
  "features": {
   "through_vias": 30,

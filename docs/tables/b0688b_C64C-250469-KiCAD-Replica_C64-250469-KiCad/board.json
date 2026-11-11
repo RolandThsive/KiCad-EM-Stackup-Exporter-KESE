@@ -3,7 +3,10 @@
  "project": "bwack/C64C-250469-KiCAD-Replica",
  "path": "bwack__C64C-250469-KiCAD-Replica/C64-250469-KiCad.kicad_pcb",
  "license": "CERN-OHL-1.2 (CERN Open Hardware Licence v1.2), in LICENSE",
+ "license_checked": "2026-11-08",
  "rank": 229,
+ "score": 10746,
+ "level": "VERY HIGH",
  "complexity": {
   "grade": 322,
   "size": 222,
@@ -30,8 +33,29 @@
    "Simulation, OBJ"
   ]
  },
+ "tested": [
+  "2026-11-09",
+  "2026-11-10"
+ ],
  "kese": [
   "22fd70c"
+ ],
+ "kese_version": [
+  "2.4.0"
+ ],
+ "runs": [
+  [
+   "corpus",
+   "2026-11-09",
+   11000000000.0,
+   5400.0
+  ],
+  [
+   "fixed",
+   "2026-11-10",
+   11000000000.0,
+   5400.0
+  ]
  ],
  "machine": {
   "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz, 4 cores, 15 GB",

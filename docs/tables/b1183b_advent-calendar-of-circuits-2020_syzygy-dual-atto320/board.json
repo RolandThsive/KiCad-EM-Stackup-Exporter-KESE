@@ -3,7 +3,10 @@
  "project": "gregdavill/advent-calendar-of-circuits-2020",
  "path": "gregdavill__advent-calendar-of-circuits-2020/syzygy-dual-atto320/kicad-src/syzygy-dual-atto320.kicad_pcb",
  "license": "CERN-OHL-P-2.0 (CERN Open Hardware Licence v2, Permissive), in LICENCE-CERN-OHL-P-2.0",
- "rank": 2259,
+ "license_checked": "2026-11-08",
+ "rank": 2252,
+ "score": 446,
+ "level": "LOW",
  "complexity": {
   "grade": 275,
   "size": 160,
@@ -25,8 +28,23 @@
  "bad_design": null,
  "chart_alt": "syzygy-dual-atto320: stages 4 and 6 take 45% to 81% of a run. Simulation, GLB takes 4.7 s. Simulation, STEP takes 6.3 s. Simulation, STL takes 4.6 s. Simulation, OBJ takes 7.5 s. Visual, GLB takes 7.4 s. Visual, OBJ takes 9.5 s",
  "rerun": {},
+ "tested": [
+  "2026-11-09",
+  "2026-11-09"
+ ],
  "kese": [
   "22fd70c"
+ ],
+ "kese_version": [
+  "2.4.0"
+ ],
+ "runs": [
+  [
+   "corpus",
+   "2026-11-09",
+   11000000000.0,
+   5400.0
+  ]
  ],
  "machine": {
   "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz, 4 cores, 15 GB",

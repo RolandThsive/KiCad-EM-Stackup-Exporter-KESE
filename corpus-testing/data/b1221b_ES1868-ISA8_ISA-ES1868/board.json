@@ -1,7 +1,4 @@
 {
- "rank": 1120,
- "score": 2160,
- "level": "MEDIUM",
  "layers": 4,
  "parts": 119,
  "big": 1,
@@ -15,6 +12,7 @@
  "project": "hkzlab/ES1868_ISA8",
  "name": "ISA_ES1868",
  "license": "CC-BY-NC-SA-4.0 (Creative Commons Attribution-NonCommercial-ShareAlike 4.0), in LICENSE",
+ "license_checked": "2026-11-08",
  "zip": "part14_of_17",
  "features": {
   "through_vias": 85,

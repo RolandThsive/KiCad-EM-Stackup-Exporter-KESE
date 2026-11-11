@@ -1,7 +1,4 @@
 {
- "rank": 1693,
- "score": 1073,
- "level": "MEDIUM",
  "layers": 4,
  "parts": 20,
  "big": 1,
@@ -15,9 +12,10 @@
  "project": "sparkfun/sparkfun_gnss_flex_system",
  "name": "SparkFun_GNSS_Flex_Module_mosaic-G5_P3_Tilt",
  "license": "MIT (MIT License), in LICENSE.md",
+ "license_checked": "2026-11-08",
  "zip": "part15_of_17",
  "features": {
-  "through_vias": 330,
+  "through_vias": 165,
   "blind_buried_vias": 0,
   "microvias": 0,
   "backdrills": 0,

@@ -1,7 +1,4 @@
 {
- "rank": 43,
- "score": 24877,
- "level": "EXTREME",
  "layers": 2,
  "parts": 582,
  "big": 2,
@@ -15,6 +12,7 @@
  "project": "amigalisa/Amiga-SMD-500",
  "name": "SMD500",
  "license": "CERN-OHL-S-2.0 (CERN Open Hardware Licence v2, Strongly Reciprocal)",
+ "license_checked": "2026-11-08",
  "zip": "part03_of_17",
  "features": {
   "through_vias": 1862,

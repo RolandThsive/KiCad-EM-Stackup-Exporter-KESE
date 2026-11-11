@@ -1,7 +1,4 @@
 {
- "rank": 19,
- "score": 43600,
- "level": "EXTREME",
  "layers": 12,
  "parts": 1479,
  "big": 7,
@@ -15,9 +12,10 @@
  "project": "circuitly/kicad-demo-vme-wren",
  "name": "vme-wren",
  "license": "No license found",
+ "license_checked": "2026-11-08",
  "zip": "part01_of_17",
  "features": {
-  "through_vias": 8748,
+  "through_vias": 4374,
   "blind_buried_vias": 0,
   "microvias": 0,
   "backdrills": 0,

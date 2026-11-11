@@ -1,7 +1,4 @@
 {
- "rank": 790,
- "score": 3444,
- "level": "HIGH",
  "layers": 4,
  "parts": 98,
  "big": 1,
@@ -15,9 +12,10 @@
  "project": "myriadrf/lc-rfe-mini",
  "name": "LC-RFE-Mini-RevA1",
  "license": "SHL-2.1 (Solderpad Hardware License v2.1), in LICENSE",
+ "license_checked": "2026-11-08",
  "zip": "part13_of_17",
  "features": {
-  "through_vias": 1820,
+  "through_vias": 910,
   "blind_buried_vias": 0,
   "microvias": 0,
   "backdrills": 0,

@@ -1,7 +1,4 @@
 {
- "rank": 24,
- "score": 34544,
- "level": "EXTREME",
  "layers": 10,
  "parts": 1025,
  "big": 3,
@@ -15,9 +12,10 @@
  "project": "antmicro/jetson-agx-thor-baseboard",
  "name": "jetson-agx-thor-baseboard",
  "license": "Apache-2.0 (Apache License 2.0)",
+ "license_checked": "2026-11-08",
  "zip": "part02_of_17",
  "features": {
-  "through_vias": 6446,
+  "through_vias": 3223,
   "blind_buried_vias": 0,
   "microvias": 0,
   "backdrills": 0,

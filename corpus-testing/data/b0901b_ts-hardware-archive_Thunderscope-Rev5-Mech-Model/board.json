@@ -1,7 +1,4 @@
 {
- "rank": 2791,
- "score": 58,
- "level": "SIMPLE",
  "layers": 2,
  "parts": 20,
  "big": 0,
@@ -15,6 +12,7 @@
  "project": "EEVengers/ts_hardware_archive",
  "name": "Thunderscope_Rev5_Mech_Model",
  "license": "CERN-OHL-P-2.0 (CERN Open Hardware Licence v2, Permissive)",
+ "license_checked": "2026-11-08",
  "zip": "part16_of_17",
  "features": {
   "through_vias": 0,

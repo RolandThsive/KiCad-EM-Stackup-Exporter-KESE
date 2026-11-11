@@ -3,7 +3,10 @@
  "project": "Aharoni-Lab/Miniscope-v4",
  "path": "Aharoni-Lab__Miniscope-v4/Development Files/Individual PCBs/Miniscope-v4-FlexPC/Miniscope-v4-FlexPC-array/KiCad/Miniscope-v4-FlexPC.kicad_pcb",
  "license": "GPL-3.0 (GNU GPL v3.0)",
- "rank": 2848,
+ "license_checked": "2026-11-08",
+ "rank": 2840,
+ "score": 37,
+ "level": "SIMPLE",
  "complexity": {
   "grade": 102,
   "size": 102,
@@ -15,8 +18,23 @@
  "bad_design": null,
  "chart_alt": "Miniscope-v4-FlexPC: stages 4 and 6 take 50% to 78% of a run. Simulation, GLB takes 4.0 s. Simulation, STEP takes 5.5 s. Simulation, STL takes 4.1 s. Simulation, OBJ takes 6.1 s. Visual, GLB takes 4.8 s. Visual, OBJ takes 5.5 s",
  "rerun": {},
+ "tested": [
+  "2026-11-09",
+  "2026-11-09"
+ ],
  "kese": [
   "22fd70c"
+ ],
+ "kese_version": [
+  "2.4.0"
+ ],
+ "runs": [
+  [
+   "corpus",
+   "2026-11-09",
+   11000000000.0,
+   5400.0
+  ]
  ],
  "machine": {
   "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz, 4 cores, 15 GB",

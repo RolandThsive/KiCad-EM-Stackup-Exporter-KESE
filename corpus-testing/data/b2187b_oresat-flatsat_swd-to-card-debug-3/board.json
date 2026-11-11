@@ -1,7 +1,4 @@
 {
- "rank": 2191,
- "score": 521,
- "level": "LOW",
  "layers": 2,
  "parts": 14,
  "big": 0,
@@ -15,9 +12,10 @@
  "project": "oresat/oresat-flatsat",
  "name": "swd-to-card-debug-3",
  "license": "As README.md states it: \"Copyright the Portland State Aerospace Society 2021. This source describes Open Hardware and is licensed under CERN-OHL-S v2 or any later version. You may redistribute and modify this source and make products using it under the terms of the CERN-OHL-S v2 (https://ohwr.org/cern ohl s v2.txt).\"",
+ "license_checked": "2026-11-08",
  "zip": "part16_of_17",
  "features": {
-  "through_vias": 206,
+  "through_vias": 103,
   "blind_buried_vias": 0,
   "microvias": 0,
   "backdrills": 0,

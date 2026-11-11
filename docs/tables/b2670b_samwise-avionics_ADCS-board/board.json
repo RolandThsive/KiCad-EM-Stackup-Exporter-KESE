@@ -3,7 +3,10 @@
  "project": "stanford-ssi/samwise-avionics",
  "path": "stanford-ssi__samwise-avionics/ADCS/ADCS-v1-samwise/ADCS_board.kicad_pcb",
  "license": "No license found",
+ "license_checked": "2026-11-08",
  "rank": 797,
+ "score": 3420,
+ "level": "HIGH",
  "complexity": {
   "grade": 393,
   "size": 268,
@@ -26,8 +29,23 @@
  "bad_design": null,
  "chart_alt": "ADCS_board: stages 4 and 6 take 59% to 85% of a run. Simulation, GLB takes 42 s. Simulation, STEP takes 51 s. Simulation, STL takes 43 s. Simulation, OBJ takes 59 s. Visual, GLB takes 61 s. Visual, OBJ takes 73 s",
  "rerun": {},
+ "tested": [
+  "2026-11-09",
+  "2026-11-09"
+ ],
  "kese": [
   "22fd70c"
+ ],
+ "kese_version": [
+  "2.4.0"
+ ],
+ "runs": [
+  [
+   "corpus",
+   "2026-11-09",
+   11000000000.0,
+   5400.0
+  ]
  ],
  "machine": {
   "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz, 4 cores, 15 GB",

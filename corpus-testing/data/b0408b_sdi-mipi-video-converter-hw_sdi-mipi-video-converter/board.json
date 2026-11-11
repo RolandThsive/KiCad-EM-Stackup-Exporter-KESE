@@ -1,7 +1,4 @@
 {
- "rank": 167,
- "score": 12900,
- "level": "VERY HIGH",
  "layers": 8,
  "parts": 327,
  "big": 3,
@@ -15,9 +12,10 @@
  "project": "antmicro/sdi-mipi-video-converter-hw",
  "name": "sdi-mipi-video-converter",
  "license": "Apache-2.0 (Apache License 2.0)",
+ "license_checked": "2026-11-08",
  "zip": "part07_of_17",
  "features": {
-  "through_vias": 2186,
+  "through_vias": 1093,
   "blind_buried_vias": 0,
   "microvias": 0,
   "backdrills": 0,

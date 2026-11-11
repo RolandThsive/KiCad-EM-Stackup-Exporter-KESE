@@ -1,7 +1,4 @@
 {
- "rank": 795,
- "score": 3427,
- "level": "HIGH",
  "layers": 4,
  "parts": 175,
  "big": 1,
@@ -15,6 +12,7 @@
  "project": "fossasia/pslab-hardware",
  "name": "PSLab",
  "license": "Apache-2.0 (Apache License 2.0)",
+ "license_checked": "2026-11-08",
  "zip": "part13_of_17",
  "features": {
   "through_vias": 365,

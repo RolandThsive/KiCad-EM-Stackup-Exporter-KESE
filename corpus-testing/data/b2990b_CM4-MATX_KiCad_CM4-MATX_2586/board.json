@@ -1,7 +1,4 @@
 {
- "rank": 2586,
- "score": 182,
- "level": "SIMPLE",
  "layers": 2,
  "parts": 31,
  "big": 2,
@@ -15,6 +12,7 @@
  "project": "volkertb/CM4_MATX",
  "name": "CM4_MATX",
  "license": "No license found",
+ "license_checked": "2026-11-08",
  "zip": "part16_of_17",
  "features": {
   "through_vias": 0,

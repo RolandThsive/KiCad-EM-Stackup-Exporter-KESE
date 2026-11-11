@@ -1,7 +1,4 @@
 {
- "rank": 1338,
- "score": 1668,
- "level": "MEDIUM",
  "layers": 4,
  "parts": 224,
  "big": 1,
@@ -15,9 +12,10 @@
  "project": "QUniBone/QUniBoneClassic",
  "name": "unibone.unrouted",
  "license": "BSD-2-Clause (BSD 2-Clause License)",
+ "license_checked": "2026-11-08",
  "zip": "part15_of_17",
  "features": {
-  "through_vias": 240,
+  "through_vias": 120,
   "blind_buried_vias": 0,
   "microvias": 0,
   "backdrills": 0,

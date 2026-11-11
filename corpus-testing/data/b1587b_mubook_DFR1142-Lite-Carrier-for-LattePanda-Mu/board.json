@@ -1,7 +1,4 @@
 {
- "rank": 337,
- "score": 7884,
- "level": "HIGH",
  "layers": 4,
  "parts": 273,
  "big": 2,
@@ -15,9 +12,10 @@
  "project": "ltbrain/mubook",
  "name": "[DFR1142]Lite Carrier for LattePanda Mu",
  "license": "MIT (MIT License)",
+ "license_checked": "2026-11-08",
  "zip": "part10_of_17",
  "features": {
-  "through_vias": 2070,
+  "through_vias": 1035,
   "blind_buried_vias": 0,
   "microvias": 0,
   "backdrills": 0,

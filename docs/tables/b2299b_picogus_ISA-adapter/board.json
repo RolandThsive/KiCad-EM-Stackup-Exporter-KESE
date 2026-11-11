@@ -3,7 +3,10 @@
  "project": "polpo/picogus",
  "path": "polpo__picogus/isa-hand386 adapter/ISA adapter.kicad_pcb",
  "license": "CERN-OHL-P-2.0 (CERN Open Hardware Licence v2, Permissive), in hw-chipdown/LICENSE, hw-hand386/LICENSE, hw/LICENSE",
- "rank": 2030,
+ "license_checked": "2026-11-08",
+ "rank": 2025,
+ "score": 679,
+ "level": "LOW",
  "complexity": {
   "grade": 257,
   "size": 152,
@@ -24,8 +27,23 @@
  "bad_design": null,
  "chart_alt": "ISA adapter: stages 4 and 6 take 51% to 80% of a run. Simulation, GLB takes 18 s. Simulation, STEP takes 22 s. Simulation, STL takes 18 s. Simulation, OBJ takes 27 s. Visual, GLB takes 27 s. Visual, OBJ takes 35 s",
  "rerun": {},
+ "tested": [
+  "2026-11-09",
+  "2026-11-09"
+ ],
  "kese": [
   "22fd70c"
+ ],
+ "kese_version": [
+  "2.4.0"
+ ],
+ "runs": [
+  [
+   "corpus",
+   "2026-11-09",
+   11000000000.0,
+   5400.0
+  ]
  ],
  "machine": {
   "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz, 4 cores, 15 GB",

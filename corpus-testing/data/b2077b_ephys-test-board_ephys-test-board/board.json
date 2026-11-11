@@ -1,7 +1,4 @@
 {
- "rank": 267,
- "score": 9558,
- "level": "VERY HIGH",
  "layers": 4,
  "parts": 542,
  "big": 1,
@@ -15,9 +12,10 @@
  "project": "open-ephys/ephys-test-board",
  "name": "ephys-test-board",
  "license": "CC-BY-NC-SA-4.0 (Creative Commons Attribution-NonCommercial-ShareAlike 4.0), in LICENSE.md",
+ "license_checked": "2026-11-08",
  "zip": "part10_of_17",
  "features": {
-  "through_vias": 2290,
+  "through_vias": 1145,
   "blind_buried_vias": 0,
   "microvias": 0,
   "backdrills": 0,

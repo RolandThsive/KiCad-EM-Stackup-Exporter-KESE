@@ -1,7 +1,4 @@
 {
- "rank": 769,
- "score": 3540,
- "level": "HIGH",
  "layers": 4,
  "parts": 175,
  "big": 1,
@@ -15,9 +12,10 @@
  "project": "oresat/oresat-adcs-hardware",
  "name": "oresat-mag-card",
  "license": "GPL-2.0 (GNU GPL v2.0)",
+ "license_checked": "2026-11-08",
  "zip": "part13_of_17",
  "features": {
-  "through_vias": 1302,
+  "through_vias": 651,
   "blind_buried_vias": 0,
   "microvias": 0,
   "backdrills": 0,

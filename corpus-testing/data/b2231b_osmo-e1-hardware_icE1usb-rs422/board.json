@@ -1,7 +1,4 @@
 {
- "rank": 1805,
- "score": 935,
- "level": "LOW",
  "layers": 4,
  "parts": 52,
  "big": 0,
@@ -15,6 +12,7 @@
  "project": "osmocom/osmo-e1-hardware",
  "name": "icE1usb-rs422",
  "license": "CERN-OHL-S-2.0 (CERN Open Hardware Licence v2, Strongly Reciprocal), in hardware/icE1usb/LICENSE",
+ "license_checked": "2026-11-08",
  "zip": "part16_of_17",
  "features": {
   "through_vias": 110,

@@ -1,7 +1,4 @@
 {
- "rank": 514,
- "score": 5160,
- "level": "HIGH",
  "layers": 6,
  "parts": 183,
  "big": 1,
@@ -15,9 +12,10 @@
  "project": "mjbots/moteus",
  "name": "moteus_x1",
  "license": "Apache-2.0 (Apache License 2.0)",
+ "license_checked": "2026-11-08",
  "zip": "part12_of_17",
  "features": {
-  "through_vias": 2174,
+  "through_vias": 1087,
   "blind_buried_vias": 0,
   "microvias": 0,
   "backdrills": 0,

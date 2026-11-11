@@ -1,7 +1,4 @@
 {
- "rank": 290,
- "score": 8818,
- "level": "VERY HIGH",
  "layers": 2,
  "parts": 201,
  "big": 0,
@@ -15,9 +12,10 @@
  "project": "liveboxandy/ZX-Spectrum-48K-Issue-3B---Based-on-Gerbers-by-PABB-on-PCBWay",
  "name": "Issue3B",
  "license": "CC0-1.0 (Creative Commons Zero v1.0)",
+ "license_checked": "2026-11-08",
  "zip": "part10_of_17",
  "features": {
-  "through_vias": 844,
+  "through_vias": 422,
   "blind_buried_vias": 0,
   "microvias": 0,
   "backdrills": 0,

@@ -1,7 +1,4 @@
 {
- "rank": 1370,
- "score": 1604,
- "level": "MEDIUM",
  "layers": 4,
  "parts": 152,
  "big": 0,
@@ -15,6 +12,7 @@
  "project": "seandepagnier/mppt",
  "name": "mppt",
  "license": "No license found",
+ "license_checked": "2026-11-08",
  "zip": "part15_of_17",
  "features": {
   "through_vias": 117,

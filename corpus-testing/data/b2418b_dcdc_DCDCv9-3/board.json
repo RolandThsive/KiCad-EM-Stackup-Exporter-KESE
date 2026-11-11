@@ -1,7 +1,4 @@
 {
- "rank": 812,
- "score": 3308,
- "level": "HIGH",
  "layers": 4,
  "parts": 197,
  "big": 0,
@@ -15,9 +12,10 @@
  "project": "rootthecause/dcdc",
  "name": "DCDCv9-3",
  "license": "CERN-OHL-W-2.0 (CERN Open Hardware Licence v2, Weakly Reciprocal)",
+ "license_checked": "2026-11-08",
  "zip": "part13_of_17",
  "features": {
-  "through_vias": 1488,
+  "through_vias": 744,
   "blind_buried_vias": 0,
   "microvias": 0,
   "backdrills": 0,
