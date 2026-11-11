@@ -1,0 +1,54 @@
+{
+ "name": "EEZ DIB AFE3plus",
+ "project": "eez-open/dib-mio168plus-afe3",
+ "path": "eez-open__dib-mio168plus-afe3/KiCad/EEZ DIB AFE3plus.kicad_pcb",
+ "license": "TAPR-OHL-1.0 (TAPR Open Hardware License), in LICENSE.TXT",
+ "license_checked": "2026-11-08",
+ "rank": 881,
+ "score": 2890,
+ "level": "MEDIUM",
+ "complexity": {
+  "grade": 332,
+  "size": 217,
+  "features": 115
+ },
+ "features": [
+  "through_vias",
+  "shaped_pads",
+  "filled_zones",
+  "curved_outline",
+  "knockout_text",
+  "truetype_text",
+  "stackup",
+  "dielectric_properties"
+ ],
+ "layers": 4,
+ "status": "pass",
+ "bad_design": null,
+ "chart_alt": "EEZ DIB AFE3plus: stages 4 and 6 take 54% to 84% of a run. Simulation, GLB takes 19 s. Simulation, STEP takes 24 s. Simulation, STL takes 19 s. Simulation, OBJ takes 29 s. Visual, GLB takes 31 s. Visual, OBJ takes 37 s",
+ "rerun": {},
+ "tested": [
+  "2026-11-09",
+  "2026-11-09"
+ ],
+ "kese": [
+  "22fd70c"
+ ],
+ "kese_version": [
+  "2.4.0"
+ ],
+ "runs": [
+  [
+   "corpus",
+   "2026-11-09",
+   11000000000.0,
+   5400.0
+  ]
+ ],
+ "machine": {
+  "cpu": "Intel(R) Xeon(R) Processor @ 2.30GHz, 4 cores, 15 GB",
+  "geos": "3.14.1",
+  "python": "3.13.18",
+  "shapely": "2.2.0"
+ }
+}

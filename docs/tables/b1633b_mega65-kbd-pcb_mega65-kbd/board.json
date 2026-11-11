@@ -1,0 +1,49 @@
+{
+ "name": "mega65-kbd",
+ "project": "MEGA65/mega65-kbd-pcb",
+ "path": "MEGA65__mega65-kbd-pcb/mega65-kbd.kicad_pcb",
+ "license": "As README.md states it: \"This PCB design is (C) Copyright Paul Gardner-Stephen, 2022, and is offered to you under the CC-BY-SA 4.0 license. Open Hardware Certification has been applied for.\"",
+ "license_checked": "2026-11-08",
+ "rank": 1081,
+ "score": 2204,
+ "level": "MEDIUM",
+ "complexity": {
+  "grade": 237,
+  "size": 192,
+  "features": 45
+ },
+ "features": [
+  "through_vias",
+  "filled_zones",
+  "curved_outline"
+ ],
+ "layers": 2,
+ "status": "pass",
+ "bad_design": null,
+ "chart_alt": "mega65-kbd: stages 4 and 6 take 53% to 84% of a run. Simulation, GLB takes 54 s. Simulation, STEP takes 65 s. Simulation, STL takes 53 s. Simulation, OBJ takes 79 s. Visual, GLB takes 84 s. Visual, OBJ takes 2 min",
+ "rerun": {},
+ "tested": [
+  "2026-11-09",
+  "2026-11-09"
+ ],
+ "kese": [
+  "22fd70c"
+ ],
+ "kese_version": [
+  "2.4.0"
+ ],
+ "runs": [
+  [
+   "corpus",
+   "2026-11-09",
+   11000000000.0,
+   5400.0
+  ]
+ ],
+ "machine": {
+  "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz, 4 cores, 15 GB",
+  "geos": "3.14.1",
+  "python": "3.13.18",
+  "shapely": "2.2.0"
+ }
+}

@@ -1,0 +1,54 @@
+{
+ "name": "hat-gmm7550",
+ "project": "GMM-7550/gmm7550-hardware",
+ "path": "GMM-7550__gmm7550-hardware/hat-gmm7550.kicad/hat-gmm7550.kicad_pcb",
+ "license": "CERN-OHL-P-2.0 (CERN Open Hardware Licence v2, Permissive), in LICENSE (which names cern_ohl_p_v2.txt) and as README.md states it",
+ "license_checked": "2026-11-08",
+ "rank": 1370,
+ "score": 1549,
+ "level": "MEDIUM",
+ "complexity": {
+  "grade": 303,
+  "size": 198,
+  "features": 105
+ },
+ "features": [
+  "through_vias",
+  "shaped_pads",
+  "filled_zones",
+  "curved_outline",
+  "stackup",
+  "dielectric_properties",
+  "copper_finish",
+  "mask_silk_colours"
+ ],
+ "layers": 4,
+ "status": "pass",
+ "bad_design": null,
+ "chart_alt": "hat-gmm7550: stages 4 and 6 take 46% to 80% of a run. Simulation, GLB takes 13 s. Simulation, STEP takes 17 s. Simulation, STL takes 13 s. Simulation, OBJ takes 21 s. Visual, GLB takes 18 s. Visual, OBJ takes 22 s",
+ "rerun": {},
+ "tested": [
+  "2026-11-09",
+  "2026-11-09"
+ ],
+ "kese": [
+  "22fd70c"
+ ],
+ "kese_version": [
+  "2.4.0"
+ ],
+ "runs": [
+  [
+   "corpus",
+   "2026-11-09",
+   11000000000.0,
+   5400.0
+  ]
+ ],
+ "machine": {
+  "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz, 4 cores, 15 GB",
+  "geos": "3.14.1",
+  "python": "3.13.18",
+  "shapely": "2.2.0"
+ }
+}

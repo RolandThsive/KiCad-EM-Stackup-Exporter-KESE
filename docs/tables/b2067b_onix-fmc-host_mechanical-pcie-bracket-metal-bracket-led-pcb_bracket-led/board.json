@@ -1,0 +1,51 @@
+{
+ "name": "bracket-led",
+ "project": "open-ephys/onix-fmc-host",
+ "path": "open-ephys__onix-fmc-host/mechanical/pcie-bracket-metal/bracket-led-pcb/bracket-led.kicad_pcb",
+ "license": "CC-BY-NC-SA-4.0 (Creative Commons Attribution-NonCommercial-ShareAlike 4.0), in LICENSE.md",
+ "license_checked": "2026-11-08",
+ "rank": 1087,
+ "score": 2184,
+ "level": "MEDIUM",
+ "complexity": {
+  "grade": 268,
+  "size": 193,
+  "features": 75
+ },
+ "features": [
+  "through_vias",
+  "shaped_pads",
+  "filled_zones",
+  "stackup",
+  "dielectric_properties"
+ ],
+ "layers": 2,
+ "status": "pass",
+ "bad_design": null,
+ "chart_alt": "bracket-led: stages 4 and 6 take 20% to 28% of a run. Simulation, GLB takes 2.1 s. Simulation, STEP takes 2.4 s. Simulation, STL takes 2.1 s. Simulation, OBJ takes 2.2 s. Visual, GLB takes 2.1 s. Visual, OBJ takes 2.4 s",
+ "rerun": {},
+ "tested": [
+  "2026-11-09",
+  "2026-11-09"
+ ],
+ "kese": [
+  "22fd70c"
+ ],
+ "kese_version": [
+  "2.4.0"
+ ],
+ "runs": [
+  [
+   "corpus",
+   "2026-11-09",
+   11000000000.0,
+   5400.0
+  ]
+ ],
+ "machine": {
+  "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz, 4 cores, 15 GB",
+  "geos": "3.14.1",
+  "python": "3.13.18",
+  "shapely": "2.2.0"
+ }
+}

@@ -1,0 +1,55 @@
+{
+ "name": "esp32s2-breakout",
+ "project": "gregdavill/advent-calendar-of-circuits-2020",
+ "path": "gregdavill__advent-calendar-of-circuits-2020/esp32s2-breakout/kicad-src/esp32s2-breakout.kicad_pcb",
+ "license": "CERN-OHL-P-2.0 (CERN Open Hardware Licence v2, Permissive), in LICENCE-CERN-OHL-P-2.0",
+ "license_checked": "2026-11-08",
+ "rank": 1012,
+ "score": 2403,
+ "level": "MEDIUM",
+ "complexity": {
+  "grade": 360,
+  "size": 245,
+  "features": 115
+ },
+ "features": [
+  "through_vias",
+  "slotted_holes",
+  "shaped_pads",
+  "arc_tracks",
+  "filled_zones",
+  "curved_outline",
+  "stackup",
+  "dielectric_properties",
+  "mask_silk_colours"
+ ],
+ "layers": 4,
+ "status": "pass",
+ "bad_design": null,
+ "chart_alt": "esp32s2-breakout: stages 4 and 6 take 56% to 84% of a run. Simulation, GLB takes 31 s. Simulation, STEP takes 39 s. Simulation, STL takes 32 s. Simulation, OBJ takes 46 s. Visual, GLB takes 49 s. Visual, OBJ takes 61 s",
+ "rerun": {},
+ "tested": [
+  "2026-11-09",
+  "2026-11-09"
+ ],
+ "kese": [
+  "22fd70c"
+ ],
+ "kese_version": [
+  "2.4.0"
+ ],
+ "runs": [
+  [
+   "corpus",
+   "2026-11-09",
+   11000000000.0,
+   5400.0
+  ]
+ ],
+ "machine": {
+  "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz, 4 cores, 15 GB",
+  "geos": "3.14.1",
+  "python": "3.13.18",
+  "shapely": "2.2.0"
+ }
+}

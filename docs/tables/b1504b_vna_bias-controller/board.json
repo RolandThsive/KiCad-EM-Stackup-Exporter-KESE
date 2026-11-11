@@ -1,0 +1,48 @@
+{
+ "name": "bias_controller",
+ "project": "loxodes/vna",
+ "path": "loxodes__vna/breakouts/bias_controller/bias_controller/bias_controller.kicad_pcb",
+ "license": "As README.md states it: \"Unless otherwise noted, all work is under a MIT license.\"",
+ "license_checked": "2026-11-08",
+ "rank": 2221,
+ "score": 462,
+ "level": "LOW",
+ "complexity": {
+  "grade": 134,
+  "size": 114,
+  "features": 20
+ },
+ "features": [
+  "slotted_holes",
+  "shaped_pads"
+ ],
+ "layers": 2,
+ "status": "pass",
+ "bad_design": null,
+ "chart_alt": "bias_controller: stages 4 and 6 take 58% to 82% of a run. Simulation, GLB takes 11 s. Simulation, STEP takes 15 s. Simulation, STL takes 12 s. Simulation, OBJ takes 16 s. Visual, GLB takes 17 s. Visual, OBJ takes 21 s",
+ "rerun": {},
+ "tested": [
+  "2026-11-09",
+  "2026-11-09"
+ ],
+ "kese": [
+  "22fd70c"
+ ],
+ "kese_version": [
+  "2.4.0"
+ ],
+ "runs": [
+  [
+   "corpus",
+   "2026-11-09",
+   11000000000.0,
+   5400.0
+  ]
+ ],
+ "machine": {
+  "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz, 4 cores, 15 GB",
+  "geos": "3.14.1",
+  "python": "3.13.18",
+  "shapely": "2.2.0"
+ }
+}

@@ -1,0 +1,47 @@
+{
+ "name": "arena_10_of_10_v1r1",
+ "project": "iorodeo/led-display_g6_hardware_arena",
+ "path": "iorodeo__led-display_g6_hardware_arena/arena_10-10/arena_10-10_v1/layout_tool/arena_10_of_10_v1r1.kicad_pcb",
+ "license": "CC-BY-4.0 (Creative Commons Attribution 4.0)",
+ "license_checked": "2026-11-08",
+ "rank": 1733,
+ "score": 990,
+ "level": "LOW",
+ "complexity": {
+  "grade": 94,
+  "size": 84,
+  "features": 10
+ },
+ "features": [
+  "shaped_pads"
+ ],
+ "layers": 2,
+ "status": "pass",
+ "bad_design": null,
+ "chart_alt": "arena_10_of_10_v1r1: stages 4 and 6 take 59% to 85% of a run. Simulation, GLB takes 24 s. Simulation, STEP takes 30 s. Simulation, STL takes 25 s. Simulation, OBJ takes 35 s. Visual, GLB takes 38 s. Visual, OBJ takes 46 s",
+ "rerun": {},
+ "tested": [
+  "2026-11-09",
+  "2026-11-09"
+ ],
+ "kese": [
+  "22fd70c"
+ ],
+ "kese_version": [
+  "2.4.0"
+ ],
+ "runs": [
+  [
+   "corpus",
+   "2026-11-09",
+   11000000000.0,
+   5400.0
+  ]
+ ],
+ "machine": {
+  "cpu": "Intel(R) Xeon(R) Processor @ 2.30GHz, 4 cores, 15 GB",
+  "geos": "3.14.1",
+  "python": "3.13.18",
+  "shapely": "2.2.0"
+ }
+}

@@ -1,0 +1,51 @@
+{
+ "name": "nref-flex-usb3-camera",
+ "project": "cetola/reform-next-mirror",
+ "path": "cetola__reform-next-mirror/nref-flex/nref-flex-usb3-one/nref-flex-usb3-camera.kicad_pcb",
+ "license": "As README.md states it: \"All hardware design work in this repository is © 2024 MNT Research GmbH, Berlin, Germany, and contributors (see Credits).\"",
+ "license_checked": "2026-11-08",
+ "rank": 2785,
+ "score": 50,
+ "level": "SIMPLE",
+ "complexity": {
+  "grade": 199,
+  "size": 119,
+  "features": 80
+ },
+ "features": [
+  "through_vias",
+  "filled_zones",
+  "truetype_text",
+  "stackup",
+  "dielectric_properties"
+ ],
+ "layers": 2,
+ "status": "pass",
+ "bad_design": null,
+ "chart_alt": "nref-flex-usb3-camera: stages 4 and 6 take 43% to 74% of a run. Simulation, GLB takes 1.7 s. Simulation, STEP takes 2.3 s. Simulation, STL takes 1.6 s. Simulation, OBJ takes 2.1 s. Visual, GLB takes 2.2 s. Visual, OBJ takes 3.4 s",
+ "rerun": {},
+ "tested": [
+  "2026-11-09",
+  "2026-11-09"
+ ],
+ "kese": [
+  "22fd70c"
+ ],
+ "kese_version": [
+  "2.4.0"
+ ],
+ "runs": [
+  [
+   "corpus",
+   "2026-11-09",
+   11000000000.0,
+   5400.0
+  ]
+ ],
+ "machine": {
+  "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz, 4 cores, 15 GB",
+  "geos": "3.14.1",
+  "python": "3.13.18",
+  "shapely": "2.2.0"
+ }
+}

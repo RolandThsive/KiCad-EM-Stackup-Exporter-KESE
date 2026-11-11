@@ -1,0 +1,49 @@
+{
+ "name": "rom_socket_level_shifter",
+ "project": "google/myelin-acorn-electron-hardware",
+ "path": "google__myelin-acorn-electron-hardware/rom_socket_level_shifter/pcb/rom_socket_level_shifter.kicad_pcb",
+ "license": "Apache-2.0 (Apache License 2.0)",
+ "license_checked": "2026-11-08",
+ "rank": 2078,
+ "score": 591,
+ "level": "LOW",
+ "complexity": {
+  "grade": 194,
+  "size": 149,
+  "features": 45
+ },
+ "features": [
+  "through_vias",
+  "shaped_pads",
+  "filled_zones"
+ ],
+ "layers": 2,
+ "status": "pass",
+ "bad_design": null,
+ "chart_alt": "rom_socket_level_shifter: stages 4 and 6 take 53% to 82% of a run. Simulation, GLB takes 4.5 s. Simulation, STEP takes 5.9 s. Simulation, STL takes 4.7 s. Simulation, OBJ takes 6.5 s. Visual, GLB takes 7.3 s. Visual, OBJ takes 8.4 s",
+ "rerun": {},
+ "tested": [
+  "2026-11-09",
+  "2026-11-09"
+ ],
+ "kese": [
+  "22fd70c"
+ ],
+ "kese_version": [
+  "2.4.0"
+ ],
+ "runs": [
+  [
+   "corpus",
+   "2026-11-09",
+   11000000000.0,
+   5400.0
+  ]
+ ],
+ "machine": {
+  "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz, 4 cores, 15 GB",
+  "geos": "3.14.1",
+  "python": "3.13.18",
+  "shapely": "2.2.0"
+ }
+}

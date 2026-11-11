@@ -1,0 +1,49 @@
+{
+ "name": "Lime2-SHIELD_RevC",
+ "project": "OLIMEX/LIME2-SHIELD",
+ "path": "OLIMEX__LIME2-SHIELD/HARDWARE/Lime2-SHIELD-Rev.C/Lime2-SHIELD_RevC.kicad_pcb",
+ "license": "GPL-3.0 (GNU GPL v3.0)",
+ "license_checked": "2026-11-08",
+ "rank": 1641,
+ "score": 1118,
+ "level": "MEDIUM",
+ "complexity": {
+  "grade": 232,
+  "size": 187,
+  "features": 45
+ },
+ "features": [
+  "through_vias",
+  "shaped_pads",
+  "filled_zones"
+ ],
+ "layers": 4,
+ "status": "pass",
+ "bad_design": null,
+ "chart_alt": "Lime2-SHIELD_RevC: stages 4 and 6 take 46% to 79% of a run. Simulation, GLB takes 9.7 s. Simulation, STEP takes 12 s. Simulation, STL takes 9.0 s. Simulation, OBJ takes 14 s. Visual, GLB takes 14 s. Visual, OBJ takes 18 s",
+ "rerun": {},
+ "tested": [
+  "2026-11-09",
+  "2026-11-09"
+ ],
+ "kese": [
+  "22fd70c"
+ ],
+ "kese_version": [
+  "2.4.0"
+ ],
+ "runs": [
+  [
+   "corpus",
+   "2026-11-09",
+   11000000000.0,
+   5400.0
+  ]
+ ],
+ "machine": {
+  "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz, 4 cores, 15 GB",
+  "geos": "3.14.1",
+  "python": "3.13.18",
+  "shapely": "2.2.0"
+ }
+}

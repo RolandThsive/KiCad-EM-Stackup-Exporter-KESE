@@ -1,6 +1,6 @@
 # 198. Clock Device
 
-Board 198 of the 3,116 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 2](../CorpusTestingPages/Corpus-Testing-02.md#198-clock-device).
+Board 198 of the 3,117 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 2](../CorpusTestingPages/Corpus-Testing-02.md#198-clock-device).
 
 ![Clock Device: stages 4 and 6 take 51% to 81% of a run. Simulation, GLB takes 4.9 s. Simulation, STEP takes 6.2 s. Simulation, STL takes 4.8 s. Simulation, OBJ takes 7.2 s. Visual, GLB takes 7.2 s. Visual, OBJ takes 9.1 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b0198b_658-Computer_Clock-Device/stages.webp)
 

@@ -1,6 +1,6 @@
 # 337. d1600e-psu-breakout-board
 
-Board 337 of the 3,116 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 4](../CorpusTestingPages/Corpus-Testing-04.md#337-d1600e-psu-breakout-board).
+Board 337 of the 3,117 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 4](../CorpusTestingPages/Corpus-Testing-04.md#337-d1600e-psu-breakout-board).
 
 ![d1600e-psu-breakout-board: stages 4 and 6 take 48% to 79% of a run. Simulation, GLB takes 37 s. Simulation, STEP takes 46 s. Simulation, STL takes 38 s. Simulation, OBJ takes 56 s. Visual, GLB takes 61 s. Visual, OBJ takes 74 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b0337b_d1600e-psu-breakout_d1600e-psu-breakout-board/stages.webp)
 
@@ -45,4 +45,4 @@ Board 337 of the 3,116 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [336. cvbs-mipi-bridge](b0336b_cvbs-mipi-bridge_cvbs-mipi-bridge.md) | [338. dc-sci-debug-interposer](b0338b_dc-sci-debug-interposer_dc-sci-debug-interposer.md) |
+| [336. cvbs-mipi-bridge](b0336b_cvbs-mipi-bridge_cvbs-mipi-bridge.md) | [338. data-center-rdimm-ddr4-tester](b0338b_data-center-dram-tester_data-center-rdimm-ddr4-tester.md) |
