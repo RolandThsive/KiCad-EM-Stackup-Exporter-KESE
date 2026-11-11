@@ -1,0 +1,49 @@
+{
+ "name": "HDMI-to-LH550WF1",
+ "project": "cyrozap/HDMI-to-MIPI",
+ "path": "cyrozap__HDMI-to-MIPI/HDMI-to-LH550WF1/HDMI-to-LH550WF1.kicad_pcb",
+ "license": "CERN-OHL-1.2 (CERN Open Hardware Licence v1.2), in LICENSE.txt",
+ "license_checked": "2026-11-08",
+ "rank": 859,
+ "score": 2922,
+ "level": "MEDIUM",
+ "complexity": {
+  "grade": 314,
+  "size": 269,
+  "features": 45
+ },
+ "features": [
+  "through_vias",
+  "filled_zones",
+  "copper_text"
+ ],
+ "layers": 4,
+ "status": "pass",
+ "bad_design": null,
+ "chart_alt": "HDMI-to-LH550WF1: stages 4 and 6 take 56% to 84% of a run. Simulation, GLB takes 14 s. Simulation, STEP takes 17 s. Simulation, STL takes 15 s. Simulation, OBJ takes 20 s. Visual, GLB takes 20 s. Visual, OBJ takes 24 s",
+ "rerun": {},
+ "tested": [
+  "2026-11-09",
+  "2026-11-09"
+ ],
+ "kese": [
+  "22fd70c"
+ ],
+ "kese_version": [
+  "2.4.0"
+ ],
+ "runs": [
+  [
+   "corpus",
+   "2026-11-09",
+   11000000000.0,
+   5400.0
+  ]
+ ],
+ "machine": {
+  "cpu": "Intel(R) Xeon(R) Processor @ 2.30GHz, 4 cores, 15 GB",
+  "geos": "3.14.1",
+  "python": "3.13.18",
+  "shapely": "2.2.0"
+ }
+}

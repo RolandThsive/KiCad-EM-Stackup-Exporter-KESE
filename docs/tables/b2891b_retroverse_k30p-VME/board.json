@@ -1,0 +1,54 @@
+{
+ "name": "k30p-VME",
+ "project": "transistorfet/retroverse",
+ "path": "transistorfet__retroverse/components/computie-vme/hardware/k30p-VME/k30p-VME.kicad_pcb",
+ "license": "In LICENSE: CERN-OHL-P-2.0 for hardware designs and programmable logic, Apache-2.0 or MIT for other source code, CC-BY-SA-4.0 for artwork and documentation",
+ "license_checked": "2026-11-08",
+ "rank": 311,
+ "score": 7624,
+ "level": "HIGH",
+ "complexity": {
+  "grade": 399,
+  "size": 289,
+  "features": 110
+ },
+ "features": [
+  "through_vias",
+  "slotted_holes",
+  "custom_pads",
+  "shaped_pads",
+  "filled_zones",
+  "copper_graphics",
+  "stackup",
+  "dielectric_properties"
+ ],
+ "layers": 4,
+ "status": "pass",
+ "bad_design": null,
+ "chart_alt": "k30p-VME: stages 4 and 6 take 46% to 84% of a run. Simulation, GLB takes 55 s. Simulation, STEP takes 71 s. Simulation, STL takes 58 s. Simulation, OBJ takes 98 s. Visual, GLB takes 90 s. Visual, OBJ takes 2 min",
+ "rerun": {},
+ "tested": [
+  "2026-11-10",
+  "2026-11-10"
+ ],
+ "kese": [
+  "22fd70c"
+ ],
+ "kese_version": [
+  "2.4.0"
+ ],
+ "runs": [
+  [
+   "corpus",
+   "2026-11-10",
+   11000000000.0,
+   5400.0
+  ]
+ ],
+ "machine": {
+  "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz, 4 cores, 15 GB",
+  "geos": "3.14.1",
+  "python": "3.13.18",
+  "shapely": "2.2.0"
+ }
+}

@@ -1,6 +1,6 @@
 # 352. zglue-gem1-adapter
 
-Board 352 of the 3,100 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 4](../CorpusTestingPages/Corpus-Testing-04.md#352-zglue-gem1-adapter).
+Board 352 of the 3,101 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 4](../CorpusTestingPages/Corpus-Testing-04.md#352-zglue-gem1-adapter).
 
 ![zglue-gem1-adapter: stages 4 and 6 take 43% to 79% of a run. Simulation, GLB takes 13 s. Simulation, STEP takes 17 s. Simulation, STL takes 14 s. Simulation, OBJ takes 22 s. Visual, GLB takes 20 s. Visual, OBJ takes 26 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b0352b_gem1-adapter_zglue-gem1-adapter/stages.webp)
 

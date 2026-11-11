@@ -1,0 +1,49 @@
+{
+ "name": "LimeSDR_Breakout",
+ "project": "myriadrf/LimeSDR_GPIO_Board",
+ "path": "myriadrf__LimeSDR_GPIO_Board/hardware/0402_Variant/CAD2/LimeSDR_Breakout.kicad_pcb",
+ "license": "As README.md states it: \"LimeSDR GPIO Board copyright 2018 AB Open Ltd. This work is licensed under a Creative Commons Attribution 4.0 International License .\"",
+ "license_checked": "2026-11-08",
+ "rank": 703,
+ "score": 3636,
+ "level": "HIGH",
+ "complexity": {
+  "grade": 244,
+  "size": 199,
+  "features": 45
+ },
+ "features": [
+  "through_vias",
+  "filled_zones",
+  "curved_outline"
+ ],
+ "layers": 2,
+ "status": "pass",
+ "bad_design": null,
+ "chart_alt": "LimeSDR_Breakout: reading, start-up and exit take 42% to 46% of a run. Simulation, GLB takes 1.4 s. Simulation, STEP takes 1.4 s. Simulation, STL takes 1.4 s. Simulation, OBJ takes 1.4 s. Visual, GLB takes 1.4 s. Visual, OBJ takes 1.4 s",
+ "rerun": {},
+ "tested": [
+  "2026-11-09",
+  "2026-11-09"
+ ],
+ "kese": [
+  "22fd70c"
+ ],
+ "kese_version": [
+  "2.4.0"
+ ],
+ "runs": [
+  [
+   "corpus",
+   "2026-11-09",
+   11000000000.0,
+   5400.0
+  ]
+ ],
+ "machine": {
+  "cpu": "Intel(R) Xeon(R) Processor @ 2.30GHz, 4 cores, 15 GB",
+  "geos": "3.14.1",
+  "python": "3.13.18",
+  "shapely": "2.2.0"
+ }
+}

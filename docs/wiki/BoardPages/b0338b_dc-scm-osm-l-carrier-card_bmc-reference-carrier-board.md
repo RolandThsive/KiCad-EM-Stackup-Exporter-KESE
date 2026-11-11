@@ -1,6 +1,6 @@
 # 338. bmc-reference-carrier-board
 
-Board 338 of the 3,100 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 4](../CorpusTestingPages/Corpus-Testing-04.md#338-bmc-reference-carrier-board).
+Board 338 of the 3,101 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 4](../CorpusTestingPages/Corpus-Testing-04.md#338-bmc-reference-carrier-board).
 
 ![bmc-reference-carrier-board: stages 4 and 6 take 40% to 79% of a run. Simulation, GLB takes 2 min. Simulation, STEP takes 2 min. Simulation, STL takes 2 min. Simulation, OBJ takes 3 min. Visual, GLB takes 3 min. Visual, OBJ takes 3 min](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b0338b_dc-scm-osm-l-carrier-card_bmc-reference-carrier-board/stages.webp)
 

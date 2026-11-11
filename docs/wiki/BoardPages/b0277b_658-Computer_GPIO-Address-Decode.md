@@ -1,6 +1,6 @@
 # 277. GPIO Address Decode
 
-Board 277 of the 3,100 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 3](../CorpusTestingPages/Corpus-Testing-03.md#277-gpio-address-decode).
+Board 277 of the 3,101 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 3](../CorpusTestingPages/Corpus-Testing-03.md#277-gpio-address-decode).
 
 ![GPIO Address Decode: stages 4 and 6 take 52% to 83% of a run. Simulation, GLB takes 6.7 s. Simulation, STEP takes 8.5 s. Simulation, STL takes 6.7 s. Simulation, OBJ takes 9.5 s. Visual, GLB takes 10 s. Visual, OBJ takes 13 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b0277b_658-Computer_GPIO-Address-Decode/stages.webp)
 
