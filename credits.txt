@@ -14,9 +14,9 @@ boards used, by their number in Corpus Testing, their name, their path in the re
 days their runs were made. The license is the one GitHub identifies in the repository (an SPDX
 identifier); where GitHub names none, it is what the project's own license files or README say,
 with the file it is in. "No license found" means that neither the repository's root, the folders
-of its boards nor its README names one, and the boards remain under their authors' copyright.
-Each repository is the authority on its own terms. The licenses were looked up on 8 November
-2026.
+of its boards nor its README names one, and the boards remain under their authors' copyright. A
+board added later carries the license given with it. Each repository is the authority on its own
+terms. The licenses were looked up on 8 November 2026.
 
 
 01GOD/PCB-8-bit-Computer

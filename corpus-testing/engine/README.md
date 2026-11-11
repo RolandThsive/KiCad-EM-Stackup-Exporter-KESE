@@ -13,8 +13,9 @@ what changed and starts the wiki sync:
    board's score, level and rank (1 the most complex) from the counts in its `board.json`. It then makes each
    board's tables, `docs/tables/<name>/` (`board.json`, `stages.md`, `facts.md`, `files.md`), and its chart,
    `docs/images/<name>/stages.webp`, named as its data folder. A board is made once its `runs.jsonl` has a run of
-   each of the six modes and formats. A chart is drawn only when it is missing: taking a board out and adding it back
-   draws it again. A data folder that can't be read is left out, and the run fails naming it and why.
+   each of the six modes and formats: one without them is rejected, its data folder and anything made from it
+   deleted. A chart is drawn only when it is missing: taking a board out and adding it back draws it again. A data
+   folder that can't be read is left out. Either way the run fails, naming the folder and why.
 2. The **engine** (`assemble.py`) takes out a board whose data folder is gone, with its tables and chart, and numbers
    the boards 1 to n in order of project and then path.
 3. It names every board's folders `b<number>b_<repo>_<board>`, in `corpus-testing/data/`, `docs/tables/` and

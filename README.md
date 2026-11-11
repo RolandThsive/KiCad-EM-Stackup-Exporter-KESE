@@ -19,10 +19,13 @@ format a run, with the Verifier on.
   its project and the project's license.
 - [`corpus-testing/engine/`](corpus-testing/engine): the maker, which makes each board's tables and chart from its
   data folder, and the engine, which numbers the boards and builds every page; both run by themselves on each push.
+- [`RunABoard/`](RunABoard): the runner, which you run on your own computer: give it KESE and boards, and it writes
+  each board's data folder.
 
-To add a board, push its data folder; to take one out, delete it. The rest is made on GitHub: the folder's name, the
-board's score, rank and number, its tables and chart, every page, the Credits and the counts. A second board of the
-same name gets `-2` after its folder's name. A board's chart is drawn once: to draw it again after its runs change,
-take the board out in one push and add it back in another.
+To add a board, make its data folder with [Run A Board](RunABoard), fill in its license (or leave it blank) and
+push it; to take one out, delete it. The rest is made on GitHub: the folder's name, the board's score, rank and
+number, its tables and chart, every page, the Credits and the counts. A folder without all six runs is rejected and
+deleted. A second board of the same name gets `-2` after its folder's name. A board's chart is drawn once: to draw it
+again after its runs change, take the board out in one push and add it back in another.
 
 No board, nor any part of one, is in this branch: the boards belong to their authors ([Credits](docs/wiki/Credits.md)).

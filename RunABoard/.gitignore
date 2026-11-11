@@ -1,0 +1,9 @@
+# What goes into these folders stays on your computer: KESE, other people's boards and the runs' files are never
+# committed here. Only each folder's README is.
+The Main Program/*
+!The Main Program/README.md
+Input_Boards/*
+!Input_Boards/README.md
+Output_Run/*
+!Output_Run/README.md
+__pycache__/

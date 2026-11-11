@@ -10,8 +10,8 @@
 
 The level: EXTREME 20,000 and over, VERY HIGH 8,000, HIGH 3,000, MEDIUM 1,000, LOW 250, SIMPLE below.
 
-The maker works out every board's score, level and rank from the counts in its board.json. To write a new board's
-board.json, this prints its counts and its KESE features from its file:
+The maker works out every board's score, level and rank from the counts in its board.json. RunABoard/run_a_board.py
+writes a new board's board.json with count() and features.scan(); this prints the same for one file:
 
     python3 corpus-testing/engine/maker/score.py <board.kicad_pcb>
 

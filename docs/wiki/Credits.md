@@ -6,7 +6,7 @@ Every board belongs to its authors, and so does its license: the rights in each 
 
 ## The Licenses
 
-The license is the one GitHub identifies in the repository (an SPDX identifier); where GitHub names none, it is what the project's own license files or README say, with the file it is in. "No license found" means that neither the repository's root, the folders of its boards nor its README names one, and the boards remain under their authors' copyright. Each repository is the authority on its own terms. The licenses were looked up on 8 November 2026.
+The license is the one GitHub identifies in the repository (an SPDX identifier); where GitHub names none, it is what the project's own license files or README say, with the file it is in. "No license found" means that neither the repository's root, the folders of its boards nor its README names one, and the boards remain under their authors' copyright. A board added later carries the license given with it. Each repository is the authority on its own terms. The licenses were looked up on 8 November 2026.
 
 The repository's [`credits.txt`](https://github.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/blob/corpus-testing/credits.txt) holds the same list by project, with the path of each board in its repository.
 

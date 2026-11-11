@@ -20,10 +20,12 @@ Needs Python 3.11 or newer with matplotlib and Pillow.
 
 A board's data folder is given by hand. It holds `board.json`, with the board's `project` (`owner/repo`), its `path`
 (`<owner>__<repo>/<path in the repo>`), its `name` (if left out, its file's name), its project's `license` and the
-day it was looked up (`license_checked`, `YYYY-MM-DD`), its counts from the `.kicad_pcb` (`layers`, `parts`, `big`,
+day it was looked up (`license_checked`, `YYYY-MM-DD`), both given by whoever adds the board and both left blank
+if not known, its counts from the `.kicad_pcb` (`layers`, `parts`, `big`,
 `bga`, `tracks`, `vias`, `kicad`, `notes`), its KESE `features`, and `bad_design` if KESE finds it one. It also holds
 `runs.jsonl`, every run of the board in order, each with its `date`, its `source`, its memory `cap` and `time_limit`
 (in bytes and seconds, `null` for none) and the `machine` it ran on, with the KESE `kese_version` and commit (`kese`).
+[Run A Board](../../../RunABoard) writes both files for any board, running KESE on your own computer;
 [`score.py`](score.py) prints a board's counts and features from its file:
 
     python3 corpus-testing/engine/maker/score.py <board.kicad_pcb>
@@ -43,6 +45,8 @@ A data folder that can't be read is not added, and the workflow run fails with a
 
 - **Add a board:** push its data folder under any name, with its `board.json` and its six runs in `runs.jsonl`. A
   board already in the corpus (the same project and path) is not added twice, and the workflow's log says so.
+- **A board without all six runs** is rejected: its data folder is deleted, with its tables and chart if it had any,
+  and the workflow run fails, naming it. Nothing of an unfinished board stays in.
 - **Take a board out:** delete its data folder; its tables, chart and board page go at the next run.
 - **Name a bad design:** set `bad_design` in the board's `data/.../board.json`, with what the file has there.
 - **A run that passes when run again:** add it to the board's `runs.jsonl` with its source: `"fixed"` (with fixes to

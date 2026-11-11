@@ -58,13 +58,14 @@ jobs:
           GH_TOKEN: ${{ github.token }}
         run: gh workflow run WikiSync.yml --repo "$GITHUB_REPOSITORY" --ref main
 
-      # a data folder the maker could not use (broken JSON, a field missing, the same board twice) fails the run, so
-      # it is seen; the other boards are made and the pages built all the same
+      # a data folder the maker could not use (broken JSON, a field missing, the same board twice) or rejected (fewer
+      # than six runs: deleted, with all made from it) fails the run, so it is seen; the other boards are made and the
+      # pages built all the same
       - name: Report the data folders not made into boards
         if: always()
         run: |
           test -f "$RUNNER_TEMP/make.log" || exit 0
-          if grep "^not made:" "$RUNNER_TEMP/make.log"; then
-            grep "^not made:" "$RUNNER_TEMP/make.log" | sed 's/^/::error::/'
+          if grep -E "^(not made|rejected):" "$RUNNER_TEMP/make.log"; then
+            grep -E "^(not made|rejected):" "$RUNNER_TEMP/make.log" | sed 's/^/::error::/'
             exit 1
           fi

@@ -7,8 +7,9 @@
     docs/images/<name>/stages.webp  the chart, drawn only when it is missing
 
 <name> is the data folder's: <repo>_<board> for a new board, b<number>b_<repo>_<board> once the engine has numbered it.
-A board is made once runs.jsonl has a run of each of its six modes and formats. Its rank, score and level
-are worked out here, from the counts in its board.json, and written into its tables' board.json.
+A board needs a run of each of the six modes and formats in its runs.jsonl: one without is rejected, and its data
+folder and every file made from it are deleted. Its rank, score and level are worked out here, from the counts in
+its board.json, and written into its tables' board.json.
 
     python3 corpus-testing/engine/maker/make.py                          every board
     python3 corpus-testing/engine/maker/make.py Thermometer_TheMainBoard  only the boards of these data folders
@@ -18,6 +19,7 @@ Needs Python 3.11 or newer with matplotlib and Pillow."""
 import collections
 import json
 import os
+import shutil
 import sys
 
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -45,13 +47,15 @@ def limits(x):
 
 for s in SKIPPED:
     print("not made:", s)
+# a board without all six runs is rejected: its data folder, tables and chart are deleted, so nothing of it stays
+for d, why in UNFINISHED:
+    for root in (d.parent, TABLES, IMG):
+        if (root / d.name).is_dir():
+            shutil.rmtree(root / d.name)
+    print(f"rejected: {d.name}: {why}; its data folder and every file made from it are deleted")
 made = 0
 want = [r for r in BOARDS if FOLDER[r] in only or SLUG[r] in only] if only else sorted(BOARDS)
-waiting = []
 for r in want:
-    if not all(run_of(r, k) for k in KINDS):
-        waiting.append(FOLDER[r])                           # not every run done yet
-        continue
     try:
         b = BOARDS[r]
         parts = board_parts(b)
@@ -84,6 +88,4 @@ for r in want:
     (d / "facts.md").write_text(parts["facts"] + "\n")
     (d / "files.md").write_text(parts["files"] + "\n")
     made += 1
-if waiting:
-    print("not made yet, not every run is in runs.jsonl:", ", ".join(waiting))
 print(made, "boards made")

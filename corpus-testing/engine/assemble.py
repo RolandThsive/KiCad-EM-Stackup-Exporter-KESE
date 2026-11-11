@@ -321,7 +321,7 @@ text = re.sub(r"\]\(((?!CorpusTestingPages/|BoardPages/|Credits\.md)[A-Za-z0-9-]
 write(WIKI / "Corpus-Testing.md", text + "\n")
 
 # ---- the Credits page and credits.txt: every board by its number, with its project and the project's license
-NOT_YET = "Not looked up yet"
+NOT_YET = "Not given"
 known = {}
 for m in B:
     if m.get("license"):
@@ -340,10 +340,11 @@ owners = ("Every board belongs to its authors, and so does its license: the righ
 how = ("The license is the one GitHub identifies in the repository (an SPDX identifier); where GitHub names none, it is "
        "what the project's own license files or README say, with the file it is in. \"No license found\" means that "
        "neither the repository's root, the folders of its boards nor its README names one, and the boards remain under "
-       "their authors' copyright. Each repository is the authority on its own terms. "
+       "their authors' copyright. A board added later carries the license given with it. Each repository is the "
+       "authority on its own terms. "
        + (f"The licenses were looked up {LOOKED_UP}" if LOOKED_UP else "The licenses are still to be looked up")
-       + (f"; \"{NOT_YET}\" marks a board added since, whose project's license is still to be looked "
-                         "up" if any(lic(m) == NOT_YET for m in B) else "") + ".")
+       + (f"; \"{NOT_YET}\" marks a board whose license was left blank when it was added" if any(lic(m) == NOT_YET for m in B)
+          else "") + ".")
 cr = ["# Credits\n", thanks + "\n", owners + "\n", "## The Licenses\n", how + "\n",
       f"The repository's [`credits.txt`]({CREDITS_TXT}) holds the same list by project, with the path of each board in "
       "its repository.\n",

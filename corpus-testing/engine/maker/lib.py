@@ -91,7 +91,8 @@ def _problem(b):
         return "board.json: path must be <owner>__<repo>/<path of the .kicad_pcb file in the repo>"
     for k in ("name", "notes", "license", "license_checked"):
         if k in b and not isinstance(b[k], str): return f"board.json: {k} must be text"
-    if "license_checked" in b and not _DATE.fullmatch(b["license_checked"]): return "board.json: license_checked must be YYYY-MM-DD"
+    if b.get("license_checked") and not _DATE.fullmatch(b["license_checked"]):
+        return "board.json: license_checked must be YYYY-MM-DD, or blank"
     if "features" in b and not (isinstance(b["features"], dict) and all(isinstance(v, int) for v in b["features"].values())):
         return "board.json: features must map each feature to a whole number"
     return None
@@ -126,7 +127,7 @@ def _runs(d):
     return out, None
 
 
-_items, SKIPPED = [], []
+_items, SKIPPED, UNFINISHED = [], [], []
 for _d in sorted(p for p in DATA.iterdir() if (p / "board.json").is_file()):
     try:
         _b = json.loads((_d / "board.json").read_text())
@@ -137,6 +138,10 @@ for _d in sorted(p for p in DATA.iterdir() if (p / "board.json").is_file()):
         _rs, _why = _runs(_d)
     if _why:
         SKIPPED.append(f"{_d.name}: {_why}"); continue
+    _miss = [k for k in KINDS if k not in {f"{x['mode']}/{x['format']}" for x in _rs}]
+    if _miss:                                         # never made: make.py deletes every trace of it
+        _m = ", ".join(_miss[:-1]) + (" and " if len(_miss) > 1 else "") + _miss[-1]
+        UNFINISHED.append((_d, f"it has {6 - len(_miss)} of the six runs, none in {_m}")); continue
     _b.setdefault("name", Path(_b["path"]).stem)
     _b.setdefault("notes", "")
     _b.pop("rank", None); _b.pop("score", None); _b.pop("level", None)    # worked out below, never taken as given
