@@ -1,6 +1,6 @@
 # 774. proto_ads_bee_mcu_board
 
-Board 774 of the 3,129 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 8](../CorpusTestingPages/Corpus-Testing-08.md#774-proto_ads_bee_mcu_board).
+Board 774 of the 3,130 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 8](../CorpusTestingPages/Corpus-Testing-08.md#774-proto_ads_bee_mcu_board).
 
 ![proto_ads_bee_mcu_board: stages 4 and 6 take 51% to 80% of a run. Simulation, GLB takes 3.5 s. Simulation, STEP takes 4.6 s. Simulation, STL takes 3.7 s. Simulation, OBJ takes 5.1 s. Visual, GLB takes 5.2 s. Visual, OBJ takes 7.1 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b0774b_adsbee_proto-ads-bee-mcu-board/stages.webp)
 

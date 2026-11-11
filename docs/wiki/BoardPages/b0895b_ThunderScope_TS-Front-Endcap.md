@@ -1,6 +1,6 @@
 # 895. TS_Front_Endcap
 
-Board 895 of the 3,129 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 9](../CorpusTestingPages/Corpus-Testing-09.md#895-ts_front_endcap).
+Board 895 of the 3,130 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 9](../CorpusTestingPages/Corpus-Testing-09.md#895-ts_front_endcap).
 
 ![TS_Front_Endcap: stages 4 and 6 take 48% to 74% of a run. Simulation, GLB takes 3.3 s. Simulation, STEP takes 4.3 s. Simulation, STL takes 3.3 s. Simulation, OBJ takes 5.0 s. Visual, GLB takes 4.3 s. Visual, OBJ takes 5.4 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b0895b_ThunderScope_TS-Front-Endcap/stages.webp)
 

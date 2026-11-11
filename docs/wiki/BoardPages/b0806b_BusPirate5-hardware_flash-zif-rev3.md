@@ -1,6 +1,6 @@
 # 806. flash-zif-rev3
 
-Board 806 of the 3,129 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 8](../CorpusTestingPages/Corpus-Testing-08.md#806-flash-zif-rev3).
+Board 806 of the 3,130 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 8](../CorpusTestingPages/Corpus-Testing-08.md#806-flash-zif-rev3).
 
 ![flash-zif-rev3: stages 4 and 6 take 51% to 82% of a run. Simulation, GLB takes 3.5 s. Simulation, STEP takes 4.7 s. Simulation, STL takes 3.6 s. Simulation, OBJ takes 4.8 s. Visual, GLB takes 5.5 s. Visual, OBJ takes 6.3 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b0806b_BusPirate5-hardware_flash-zif-rev3/stages.webp)
 

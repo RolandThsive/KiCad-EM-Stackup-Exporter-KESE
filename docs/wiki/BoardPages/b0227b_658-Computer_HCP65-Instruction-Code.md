@@ -1,6 +1,6 @@
 # 227. HCP65 Instruction Code
 
-Board 227 of the 3,129 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 3](../CorpusTestingPages/Corpus-Testing-03.md#227-hcp65-instruction-code).
+Board 227 of the 3,130 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 3](../CorpusTestingPages/Corpus-Testing-03.md#227-hcp65-instruction-code).
 
 ![HCP65 Instruction Code: stages 4 and 6 take 51% to 85% of a run. Simulation, GLB takes 11 s. Simulation, STEP takes 14 s. Simulation, STL takes 11 s. Simulation, OBJ takes 17 s. Visual, GLB takes 19 s. Visual, OBJ takes 24 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b0227b_658-Computer_HCP65-Instruction-Code/stages.webp)
 

@@ -1,6 +1,6 @@
 # 175. GPIO 4bit
 
-Board 175 of the 3,129 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 2](../CorpusTestingPages/Corpus-Testing-02.md#175-gpio-4bit).
+Board 175 of the 3,130 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 2](../CorpusTestingPages/Corpus-Testing-02.md#175-gpio-4bit).
 
 ![GPIO 4bit: stages 4 and 6 take 52% to 82% of a run. Simulation, GLB takes 4.8 s. Simulation, STEP takes 5.9 s. Simulation, STL takes 4.4 s. Simulation, OBJ takes 6.5 s. Visual, GLB takes 7.0 s. Visual, OBJ takes 8.5 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b0175b_658-Computer_GPIO-4bit/stages.webp)
 

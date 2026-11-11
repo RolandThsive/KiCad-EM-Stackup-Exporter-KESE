@@ -1,6 +1,6 @@
 # 872. DuetWifi
 
-Board 872 of the 3,129 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 9](../CorpusTestingPages/Corpus-Testing-09.md#872-duetwifi).
+Board 872 of the 3,130 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 9](../CorpusTestingPages/Corpus-Testing-09.md#872-duetwifi).
 
 ![DuetWifi: stages 4 and 6 take 53% to 85% of a run. Simulation, GLB takes 85 s. Simulation, STEP takes 99 s. Simulation, STL takes 88 s. Simulation, OBJ takes 2 min. Visual, GLB takes 2 min. Visual, OBJ takes 2 min](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b0872b_Duet-2-Hardware_DuetWifi/stages.webp)
 

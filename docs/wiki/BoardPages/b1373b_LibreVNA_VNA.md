@@ -1,6 +1,6 @@
 # 1373. VNA
 
-Board 1,373 of the 3,129 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 13](../CorpusTestingPages/Corpus-Testing-13.md#1373-vna).
+Board 1,373 of the 3,130 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 13](../CorpusTestingPages/Corpus-Testing-13.md#1373-vna).
 
 ![VNA: stages 4 and 6 take 50% to 89% of a run. Simulation, GLB takes 3 min. Simulation, STEP takes 3 min. Simulation, STL takes 3 min. Simulation, OBJ takes 4 min. Visual, GLB takes 5 min. Visual, OBJ takes 6 min](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b1373b_LibreVNA_VNA/stages.webp)
 
@@ -45,4 +45,4 @@ Board 1,373 of the 3,129 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1372. LibreCAL](b1372b_LibreCAL_LibreCAL.md) | [1374. TICK](b1374b_Amiga-2000-EATX_TICK-TICK-Dual-0805_TICK.md) |
+| [1372. LibreCAL](b1372b_LibreCAL_LibreCAL.md) | [1374. 2000ATX](b1374b_Amiga-2000-EATX_2000ATX.md) |

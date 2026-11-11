@@ -1,6 +1,6 @@
 # 793. mackerel-10-v1
 
-Board 793 of the 3,129 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 8](../CorpusTestingPages/Corpus-Testing-08.md#793-mackerel-10-v1).
+Board 793 of the 3,130 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 8](../CorpusTestingPages/Corpus-Testing-08.md#793-mackerel-10-v1).
 
 ![mackerel-10-v1: stages 4 and 6 take 47% to 82% of a run. Simulation, GLB takes 71 s. Simulation, STEP takes 86 s. Simulation, STL takes 69 s. Simulation, OBJ takes 2 min. Visual, GLB takes 87 s. Visual, OBJ takes 2 min](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b0793b_mackerel-68k_hardware-mackerel-10-v1_mackerel-10-v1/stages.webp)
 

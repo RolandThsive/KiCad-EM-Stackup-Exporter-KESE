@@ -1,6 +1,6 @@
 # 925. EEZ DIB MCU r1B1
 
-Board 925 of the 3,129 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 9](../CorpusTestingPages/Corpus-Testing-09.md#925-eez-dib-mcu-r1b1).
+Board 925 of the 3,130 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 9](../CorpusTestingPages/Corpus-Testing-09.md#925-eez-dib-mcu-r1b1).
 
 ![EEZ DIB MCU r1B1: stages 4 and 6 take 54% to 86% of a run. Simulation, GLB takes 39 s. Simulation, STEP takes 49 s. Simulation, STL takes 41 s. Simulation, OBJ takes 59 s. Visual, GLB takes 65 s. Visual, OBJ takes 75 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b0925b_modular-psu_EEZ-DIB-MCU-r1B1/stages.webp)
 
