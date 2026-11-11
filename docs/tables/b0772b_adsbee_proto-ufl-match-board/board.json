@@ -1,0 +1,52 @@
+{
+ "name": "proto_ufl_match_board",
+ "project": "CoolNamesAllTaken/adsbee",
+ "path": "CoolNamesAllTaken__adsbee/kicad/prototyping/proto_ufl_match_board/proto_ufl_match_board.kicad_pcb",
+ "license": "GPL-3.0 (GNU GPL v3.0), in LICENSE",
+ "license_checked": "2026-11-08",
+ "rank": 840,
+ "score": 3040,
+ "level": "HIGH",
+ "complexity": {
+  "grade": 289,
+  "size": 204,
+  "features": 85
+ },
+ "features": [
+  "through_vias",
+  "shaped_pads",
+  "filled_zones",
+  "copper_text",
+  "stackup",
+  "dielectric_properties"
+ ],
+ "layers": 2,
+ "status": "pass",
+ "bad_design": null,
+ "chart_alt": "proto_ufl_match_board: stages 4 and 6 take 57% to 81% of a run. Simulation, GLB takes 22 s. Simulation, STEP takes 28 s. Simulation, STL takes 22 s. Simulation, OBJ takes 30 s. Visual, GLB takes 26 s. Visual, OBJ takes 33 s",
+ "rerun": {},
+ "tested": [
+  "2026-11-09",
+  "2026-11-09"
+ ],
+ "kese": [
+  "22fd70c"
+ ],
+ "kese_version": [
+  "2.4.0"
+ ],
+ "runs": [
+  [
+   "corpus",
+   "2026-11-09",
+   11000000000.0,
+   5400.0
+  ]
+ ],
+ "machine": {
+  "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz, 4 cores, 15 GB",
+  "geos": "3.14.1",
+  "python": "3.13.18",
+  "shapely": "2.2.0"
+ }
+}

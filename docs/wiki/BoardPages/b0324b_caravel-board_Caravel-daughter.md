@@ -1,6 +1,6 @@
 # 324. Caravel_daughter
 
-Board 324 of the 3,109 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 3](../CorpusTestingPages/Corpus-Testing-03.md#324-caravel_daughter).
+Board 324 of the 3,110 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 3](../CorpusTestingPages/Corpus-Testing-03.md#324-caravel_daughter).
 
 ![Caravel_daughter: stages 4 and 6 take 48% to 77% of a run. Simulation, GLB takes 5.1 s. Simulation, STEP takes 6.4 s. Simulation, STL takes 5.0 s. Simulation, OBJ takes 6.7 s. Visual, GLB takes 6.7 s. Visual, OBJ takes 8.1 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b0324b_caravel-board_Caravel-daughter/stages.webp)
 

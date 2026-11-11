@@ -1,6 +1,6 @@
 # 752. ciaa-z3r0
 
-Board 752 of the 3,109 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 7](../CorpusTestingPages/Corpus-Testing-07.md#752-ciaa-z3r0).
+Board 752 of the 3,110 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 7](../CorpusTestingPages/Corpus-Testing-07.md#752-ciaa-z3r0).
 
 ![ciaa-z3r0: stages 4 and 6 take 51% to 82% of a run. Simulation, GLB takes 5.9 s. Simulation, STEP takes 7.3 s. Simulation, STL takes 5.5 s. Simulation, OBJ takes 8.3 s. Visual, GLB takes 8.7 s. Visual, OBJ takes 11 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b0752b_Hardware_ciaa-z3r0/stages.webp)
 
@@ -45,4 +45,4 @@ Board 752 of the 3,109 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [751. CIAA_Safety_VTI_1.0](b0751b_Hardware_CIAA-Safety-VTI-1-0.md) | [753. fmcw3](b0753b_fmcw3-kicad_fmcw3.md) |
+| [751. CIAA_Safety_VTI_1.0](b0751b_Hardware_CIAA-Safety-VTI-1-0.md) | [753. vme-wren](b0753b_kicad-demo-vme-wren_vme-wren.md) |

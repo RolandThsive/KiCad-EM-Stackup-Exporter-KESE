@@ -1,6 +1,6 @@
 # 483. KU-14194HB-REV-B-KiCad
 
-Board 483 of the 3,109 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 5](../CorpusTestingPages/Corpus-Testing-05.md#483-ku-14194hb-rev-b-kicad).
+Board 483 of the 3,110 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 5](../CorpusTestingPages/Corpus-Testing-05.md#483-ku-14194hb-rev-b-kicad).
 
 ![KU-14194HB-REV-B-KiCad: stages 4 and 6 take 58% to 89% of a run. Simulation, GLB takes 3 min. Simulation, STEP takes 5 min. Simulation, STL takes 4 min. Simulation, OBJ takes 4 min. Visual, GLB takes 4 min. Visual, OBJ takes 4 min](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b0483b_bit-preserve_KU-14194HB-REV-B-KiCad/stages.webp)
 

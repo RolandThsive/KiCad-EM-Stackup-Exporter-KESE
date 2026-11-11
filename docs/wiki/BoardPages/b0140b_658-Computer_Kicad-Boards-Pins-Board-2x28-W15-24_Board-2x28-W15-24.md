@@ -1,6 +1,6 @@
 # 140. Board 2x28 W15.24
 
-Board 140 of the 3,109 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 2](../CorpusTestingPages/Corpus-Testing-02.md#140-board-2x28-w1524).
+Board 140 of the 3,110 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 2](../CorpusTestingPages/Corpus-Testing-02.md#140-board-2x28-w1524).
 
 ![Board 2x28 W15.24: reading, start-up and exit take 76% to 87% of a run. Simulation, GLB takes 0.2 s. Simulation, STEP takes 0.2 s. Simulation, STL takes 0.2 s. Simulation, OBJ takes 0.2 s. Visual, GLB takes 0.2 s. Visual, OBJ takes 0.2 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b0140b_658-Computer_Kicad-Boards-Pins-Board-2x28-W15-24_Board-2x28-W15-24/stages.webp)
 

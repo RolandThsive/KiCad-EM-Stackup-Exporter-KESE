@@ -1,0 +1,49 @@
+{
+ "name": "DuetEthernet",
+ "project": "Duet3D/Duet-2-Hardware",
+ "path": "Duet3D__Duet-2-Hardware/Duet2/EthernetModule/DuetEthernet.kicad_pcb",
+ "license": "CERN-OHL-1.2 (CERN Open Hardware Licence v1.2), in LICENSE",
+ "license_checked": "2026-11-08",
+ "rank": 1938,
+ "score": 739,
+ "level": "LOW",
+ "complexity": {
+  "grade": 246,
+  "size": 201,
+  "features": 45
+ },
+ "features": [
+  "through_vias",
+  "filled_zones",
+  "copper_text"
+ ],
+ "layers": 2,
+ "status": "pass",
+ "bad_design": null,
+ "chart_alt": "DuetEthernet: stages 4 and 6 take 50% to 82% of a run. Simulation, GLB takes 5.1 s. Simulation, STEP takes 6.5 s. Simulation, STL takes 4.9 s. Simulation, OBJ takes 7.4 s. Visual, GLB takes 7.7 s. Visual, OBJ takes 9.5 s",
+ "rerun": {},
+ "tested": [
+  "2026-11-09",
+  "2026-11-09"
+ ],
+ "kese": [
+  "22fd70c"
+ ],
+ "kese_version": [
+  "2.4.0"
+ ],
+ "runs": [
+  [
+   "corpus",
+   "2026-11-09",
+   11000000000.0,
+   5400.0
+  ]
+ ],
+ "machine": {
+  "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz, 4 cores, 15 GB",
+  "geos": "3.14.1",
+  "python": "3.13.18",
+  "shapely": "2.2.0"
+ }
+}
