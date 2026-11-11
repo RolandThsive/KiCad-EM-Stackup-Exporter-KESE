@@ -1,6 +1,6 @@
 # 1055. archimedes_bus_scope
 
-Board 1,055 of the 3,110 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 10](../CorpusTestingPages/Corpus-Testing-10.md#1055-archimedes_bus_scope).
+Board 1,055 of the 3,111 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 10](../CorpusTestingPages/Corpus-Testing-10.md#1055-archimedes_bus_scope).
 
 ![archimedes_bus_scope: stages 4 and 6 take 53% to 79% of a run. Simulation, GLB takes 7.1 s. Simulation, STEP takes 8.8 s. Simulation, STL takes 7.1 s. Simulation, OBJ takes 9.8 s. Visual, GLB takes 7.8 s. Visual, OBJ takes 9.8 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b1055b_myelin-acorn-electron-hardware_archimedes-bus-scope/stages.webp)
 

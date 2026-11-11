@@ -1,6 +1,6 @@
 # 873. EthernetModule
 
-Board 873 of the 3,110 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 9](../CorpusTestingPages/Corpus-Testing-09.md#873-ethernetmodule).
+Board 873 of the 3,111 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 9](../CorpusTestingPages/Corpus-Testing-09.md#873-ethernetmodule).
 
 ![EthernetModule: stages 4 and 6 take 51% to 81% of a run. Simulation, GLB takes 4.6 s. Simulation, STEP takes 6.0 s. Simulation, STL takes 4.7 s. Simulation, OBJ takes 6.5 s. Visual, GLB takes 7.4 s. Visual, OBJ takes 8.5 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b0873b_Duet-2-Hardware_EthernetModule/stages.webp)
 

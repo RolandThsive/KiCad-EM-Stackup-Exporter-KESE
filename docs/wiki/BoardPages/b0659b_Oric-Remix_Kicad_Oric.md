@@ -1,6 +1,6 @@
 # 659. Oric
 
-Board 659 of the 3,110 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 7](../CorpusTestingPages/Corpus-Testing-07.md#659-oric).
+Board 659 of the 3,111 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 7](../CorpusTestingPages/Corpus-Testing-07.md#659-oric).
 
 ![Oric: stages 4 and 6 take 53% to 85% of a run. Simulation, GLB takes 42 s. Simulation, STEP takes 55 s. Simulation, STL takes 46 s. Simulation, OBJ takes 65 s. Visual, GLB takes 65 s. Visual, OBJ takes 80 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b0659b_Oric-Remix_Kicad_Oric/stages.webp)
 

@@ -1,6 +1,6 @@
 # 1025. T12_Control
 
-Board 1,025 of the 3,110 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 10](../CorpusTestingPages/Corpus-Testing-10.md#1025-t12_control).
+Board 1,025 of the 3,111 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 10](../CorpusTestingPages/Corpus-Testing-10.md#1025-t12_control).
 
 ![T12_Control: stages 4 and 6 take 52% to 80% of a run. Simulation, GLB takes 7.1 s. Simulation, STEP takes 9.5 s. Simulation, STL takes 6.7 s. Simulation, OBJ takes 10 s. Visual, GLB takes 9.7 s. Visual, OBJ takes 12 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b1025b_prntrboardv2_T12-Control/stages.webp)
 

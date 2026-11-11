@@ -1,6 +1,6 @@
 # 1021. DRV-StepStick
 
-Board 1,021 of the 3,110 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 10](../CorpusTestingPages/Corpus-Testing-10.md#1021-drv-stepstick).
+Board 1,021 of the 3,111 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 10](../CorpusTestingPages/Corpus-Testing-10.md#1021-drv-stepstick).
 
 ![DRV-StepStick: stages 4 and 6 take 47% to 80% of a run. Simulation, GLB takes 3.7 s. Simulation, STEP takes 4.8 s. Simulation, STL takes 3.6 s. Simulation, OBJ takes 5.4 s. Visual, GLB takes 5.7 s. Visual, OBJ takes 6.8 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b1021b_prntrboardv2_DRV-StepStick/stages.webp)
 

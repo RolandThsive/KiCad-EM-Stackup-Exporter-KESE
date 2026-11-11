@@ -1,6 +1,6 @@
 # 300. LCD Dual 7 Segment Tester
 
-Board 300 of the 3,110 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 3](../CorpusTestingPages/Corpus-Testing-03.md#300-lcd-dual-7-segment-tester).
+Board 300 of the 3,111 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 3](../CorpusTestingPages/Corpus-Testing-03.md#300-lcd-dual-7-segment-tester).
 
 ![LCD Dual 7 Segment Tester: stages 4 and 6 take 52% to 81% of a run. Simulation, GLB takes 4.7 s. Simulation, STEP takes 6.4 s. Simulation, STL takes 4.9 s. Simulation, OBJ takes 7.2 s. Visual, GLB takes 7.3 s. Visual, OBJ takes 8.5 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b0300b_658-Computer_LCD-Dual-7-Segment-Tester/stages.webp)
 

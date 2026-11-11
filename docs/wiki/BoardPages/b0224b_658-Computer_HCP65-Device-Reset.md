@@ -1,6 +1,6 @@
 # 224. HCP65 Device Reset
 
-Board 224 of the 3,110 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 3](../CorpusTestingPages/Corpus-Testing-03.md#224-hcp65-device-reset).
+Board 224 of the 3,111 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 3](../CorpusTestingPages/Corpus-Testing-03.md#224-hcp65-device-reset).
 
 ![HCP65 Device Reset: stages 4 and 6 take 51% to 81% of a run. Simulation, GLB takes 4.5 s. Simulation, STEP takes 5.7 s. Simulation, STL takes 4.5 s. Simulation, OBJ takes 6.0 s. Visual, GLB takes 7.0 s. Visual, OBJ takes 8.4 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b0224b_658-Computer_HCP65-Device-Reset/stages.webp)
 

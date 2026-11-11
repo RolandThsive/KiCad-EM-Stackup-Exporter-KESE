@@ -1,6 +1,6 @@
 # 906. BB3plus USB hub test
 
-Board 906 of the 3,110 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 9](../CorpusTestingPages/Corpus-Testing-09.md#906-bb3plus-usb-hub-test).
+Board 906 of the 3,111 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 9](../CorpusTestingPages/Corpus-Testing-09.md#906-bb3plus-usb-hub-test).
 
 ![BB3plus USB hub test: stages 4 and 6 take 53% to 83% of a run. Simulation, GLB takes 47 s. Simulation, STEP takes 58 s. Simulation, STL takes 48 s. Simulation, OBJ takes 71 s. Visual, GLB takes 77 s. Visual, OBJ takes 89 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b0906b_eez-bb3plus_BB3plus-USB-hub-test/stages.webp)
 

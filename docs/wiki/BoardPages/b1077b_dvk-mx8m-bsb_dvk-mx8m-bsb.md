@@ -1,6 +1,6 @@
 # 1077. dvk-mx8m-bsb
 
-Board 1,077 of the 3,110 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 10](../CorpusTestingPages/Corpus-Testing-10.md#1077-dvk-mx8m-bsb).
+Board 1,077 of the 3,111 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 10](../CorpusTestingPages/Corpus-Testing-10.md#1077-dvk-mx8m-bsb).
 
 ![dvk-mx8m-bsb: stages 4 and 6 take 50% to 83% of a run. Simulation, GLB takes 2 min. Simulation, STEP takes 2 min. Simulation, STL takes 2 min. Simulation, OBJ takes 3 min. Visual, GLB takes 3 min. Visual, OBJ takes 3 min](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b1077b_dvk-mx8m-bsb_dvk-mx8m-bsb/stages.webp)
 
@@ -44,4 +44,4 @@ Board 1,077 of the 3,110 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1076. xc9500xl_44_breakout](b1076b_myelin-acorn-electron-hardware_xc9500xl-44-breakout.md) | [1078. librem5_usb-c_board](b1078b_l5-schematic_librem5-usb-c-board.md) |
+| [1076. xc9500xl_44_breakout](b1076b_myelin-acorn-electron-hardware_xc9500xl-44-breakout.md) | [1078. librem5_mainboard](b1078b_l5-schematic_CAD-KiCad-librem5-mainboard_librem5-mainboard.md) |

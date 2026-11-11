@@ -1,6 +1,6 @@
 # 944. 12_keyboard_daughterboard
 
-Board 944 of the 3,110 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 9](../CorpusTestingPages/Corpus-Testing-09.md#944-12_keyboard_daughterboard).
+Board 944 of the 3,111 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 9](../CorpusTestingPages/Corpus-Testing-09.md#944-12_keyboard_daughterboard).
 
 ![12_keyboard_daughterboard: stages 4 and 6 take 48% to 78% of a run. Simulation, GLB takes 34 s. Simulation, STEP takes 43 s. Simulation, STL takes 35 s. Simulation, OBJ takes 55 s. Visual, GLB takes 55 s. Visual, OBJ takes 69 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b0944b_ducktop2_12-keyboard-daughterboard/stages.webp)
 

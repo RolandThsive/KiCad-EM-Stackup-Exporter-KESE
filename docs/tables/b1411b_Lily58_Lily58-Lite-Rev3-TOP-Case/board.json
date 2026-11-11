@@ -1,0 +1,49 @@
+{
+ "name": "Lily58_Lite_Rev3_TOP_Case",
+ "project": "kata0510/Lily58",
+ "path": "kata0510__Lily58/case/top-plate/Lily58_Lite_Rev3_TOP_Case.kicad_pcb",
+ "license": "MIT (MIT License), in LICENSE",
+ "license_checked": "2026-11-08",
+ "rank": 2760,
+ "score": 58,
+ "level": "SIMPLE",
+ "complexity": {
+  "grade": 94,
+  "size": 54,
+  "features": 40
+ },
+ "features": [
+  "shaped_pads",
+  "filled_zones",
+  "curved_outline"
+ ],
+ "layers": 2,
+ "status": "pass",
+ "bad_design": null,
+ "chart_alt": "Lily58_Lite_Rev3_TOP_Case: stages 4 and 6 take 44% to 81% of a run. Simulation, GLB takes 2.8 s. Simulation, STEP takes 4.0 s. Simulation, STL takes 2.7 s. Simulation, OBJ takes 4.3 s. Visual, GLB takes 3.7 s. Visual, OBJ takes 4.5 s",
+ "rerun": {},
+ "tested": [
+  "2026-11-09",
+  "2026-11-09"
+ ],
+ "kese": [
+  "22fd70c"
+ ],
+ "kese_version": [
+  "2.4.0"
+ ],
+ "runs": [
+  [
+   "corpus",
+   "2026-11-09",
+   11000000000.0,
+   5400.0
+  ]
+ ],
+ "machine": {
+  "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz, 4 cores, 15 GB",
+  "geos": "3.14.1",
+  "python": "3.13.18",
+  "shapely": "2.2.0"
+ }
+}

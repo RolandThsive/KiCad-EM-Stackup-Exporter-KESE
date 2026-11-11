@@ -1,0 +1,51 @@
+{
+ "name": "transceiver-AX5043",
+ "project": "oresat/oresat-kicad",
+ "path": "oresat__oresat-kicad/oresat-design-blocks/ax5043-design-block/transceiver-AX5043.kicad_pcb",
+ "license": "As README.md states it: \"Copyright the Portland State Aerospace Society 2022. This source describes Open Hardware and is licensed under CERN-OHL-S v2 or any later version. You may redistribute and modify this source and make products using it under the terms of the CERN-OHL-S v2 (https://ohwr.org/cern ohl s v2.txt).\"",
+ "license_checked": "2026-11-08",
+ "rank": 1765,
+ "score": 946,
+ "level": "LOW",
+ "complexity": {
+  "grade": 255,
+  "size": 185,
+  "features": 70
+ },
+ "features": [
+  "through_vias",
+  "shaped_pads",
+  "arc_tracks",
+  "filled_zones",
+  "curved_outline"
+ ],
+ "layers": 4,
+ "status": "pass",
+ "bad_design": null,
+ "chart_alt": "transceiver-AX5043: stages 4 and 6 take 54% to 84% of a run. Simulation, GLB takes 10 s. Simulation, STEP takes 12 s. Simulation, STL takes 9.2 s. Simulation, OBJ takes 14 s. Visual, GLB takes 14 s. Visual, OBJ takes 17 s",
+ "rerun": {},
+ "tested": [
+  "2026-11-09",
+  "2026-11-09"
+ ],
+ "kese": [
+  "22fd70c"
+ ],
+ "kese_version": [
+  "2.4.0"
+ ],
+ "runs": [
+  [
+   "corpus",
+   "2026-11-09",
+   11000000000.0,
+   5400.0
+  ]
+ ],
+ "machine": {
+  "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz, 4 cores, 15 GB",
+  "geos": "3.14.1",
+  "python": "3.13.18",
+  "shapely": "2.2.0"
+ }
+}

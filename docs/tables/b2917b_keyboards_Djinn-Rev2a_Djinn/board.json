@@ -1,0 +1,53 @@
+{
+ "name": "Djinn",
+ "project": "tzarc/keyboards",
+ "path": "tzarc__keyboards/Djinn/Rev2a/Djinn.kicad_pcb",
+ "license": "CERN-OHL-S-2.0 (CERN Open Hardware Licence v2, Strongly Reciprocal)",
+ "license_checked": "2026-11-08",
+ "rank": 430,
+ "score": 5987,
+ "level": "HIGH",
+ "complexity": {
+  "grade": 353,
+  "size": 263,
+  "features": 90
+ },
+ "features": [
+  "through_vias",
+  "slotted_holes",
+  "custom_pads",
+  "shaped_pads",
+  "filled_zones",
+  "copper_graphics",
+  "curved_outline"
+ ],
+ "layers": 2,
+ "status": "pass",
+ "bad_design": null,
+ "chart_alt": "Djinn: stages 4 and 6 take 49% to 81% of a run. Simulation, GLB takes 90 s. Simulation, STEP takes 2 min. Simulation, STL takes 96 s. Simulation, OBJ takes 2 min. Visual, GLB takes 3 min. Visual, OBJ takes 3 min",
+ "rerun": {},
+ "tested": [
+  "2026-11-09",
+  "2026-11-09"
+ ],
+ "kese": [
+  "22fd70c"
+ ],
+ "kese_version": [
+  "2.4.0"
+ ],
+ "runs": [
+  [
+   "corpus",
+   "2026-11-09",
+   11000000000.0,
+   5400.0
+  ]
+ ],
+ "machine": {
+  "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz, 4 cores, 15 GB",
+  "geos": "3.14.1",
+  "python": "3.13.18",
+  "shapely": "2.2.0"
+ }
+}

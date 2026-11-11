@@ -1,6 +1,6 @@
 # 806. rs232-dual-adapter
 
-Board 806 of the 3,110 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 8](../CorpusTestingPages/Corpus-Testing-08.md#806-rs232-dual-adapter).
+Board 806 of the 3,111 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 8](../CorpusTestingPages/Corpus-Testing-08.md#806-rs232-dual-adapter).
 
 ![rs232-dual-adapter: stages 4 and 6 take 52% to 82% of a run. Simulation, GLB takes 4.3 s. Simulation, STEP takes 5.6 s. Simulation, STL takes 4.4 s. Simulation, OBJ takes 6.2 s. Visual, GLB takes 5.5 s. Visual, OBJ takes 6.8 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b0806b_BusPirate5-hardware_rs232-dual-adapter/stages.webp)
 
