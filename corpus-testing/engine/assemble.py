@@ -206,8 +206,8 @@ if first:
     others = [limit_words(c, t) or "with no limit" for (c, t), _ in first.most_common()[1:]]
     stop_text = ((f"A run was stopped {limit_words(cap0, tl0)}" if limit_words(cap0, tl0) else "A run had no memory cap and no time limit")
                  + (f" (some, {'; '.join(others)})" if others else "")
-                 + (": that cap is a limit of the measurement, not of KESE, and a board stopped there "
-                    "needs a machine with more memory" if cap0 else "") + ". ")
+                 + (": that cap is a limit of the measurement, not of KESE, and a board stopped there is "
+                    "left out of the corpus until it passes on a machine with more memory" if cap0 else "") + ". ")
 else:
     cap0, stop_text = None, ""
 again = {src: [x for x in RUNREC if x[1] == src] for src in ("fixed", "cap", "nocap")}
