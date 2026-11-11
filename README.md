@@ -28,4 +28,8 @@ number, its tables and chart, every page, the Credits and the counts. A folder w
 deleted. A second board of the same name gets `-2` after its folder's name. A board's chart is drawn once: to draw it
 again after its runs change, take the board out in one push and add it back in another.
 
+For how to add a board, see [pull request #56](https://github.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/pull/56),
+which added Thermometer's main board this way: a branch made from corpus-testing with only the board's data folder,
+`board.json` and `runs.jsonl`, merged into corpus-testing. The engine did the rest at the merge.
+
 No board, nor any part of one, is in this branch: the boards belong to their authors ([Credits](docs/wiki/Credits.md)).
