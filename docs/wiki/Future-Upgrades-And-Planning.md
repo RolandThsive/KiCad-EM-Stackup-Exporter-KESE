@@ -33,4 +33,4 @@ In no fixed order:
 
 | Previous | Next |
 |:---|---:|
-| [Glossary](Glossary.md) | [Credits](Credits.md) |
+| [Glossary](Glossary.md) | [License](License.md) |
