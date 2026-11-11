@@ -1,6 +1,6 @@
 # Corpus Testing
 
-Every board in [Credits](Credits.md), 3,139 KiCad boards from 820 open hardware projects, exported by the current KESE once for every file format each mode writes, board by board, in the style of the [Feature Test Collection](https://github.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/wiki/Feature-Test-Collection):
+Every board in [Credits](Credits.md), 3,100 KiCad boards from 801 open hardware projects, exported by the current KESE once for every file format each mode writes, board by board, in the style of the [Feature Test Collection](https://github.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/wiki/Feature-Test-Collection):
 
 - Each board was run six times, **one file format a run**: in simulation mode with GLB, with STEP, with STL and with OBJ, and in visual mode with GLB and with OBJ (visual mode is a surface, not solids, so KESE does not write STEP or STL in it). One format a run gives each format its own time, file size and peak memory.
 - Every run had the Verifier, the solder mask and the silkscreen on. Each bar of a board's chart is one stage's seconds in that run, from the `timing` block of [`report.txt`](https://github.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/wiki/Project-Output-Organization#1122-reporttxt).
@@ -15,11 +15,11 @@ python run_KESE.py B --mode visual --format F --verify \
     --set SolderMask.SOLDER_MASK_ENABLED=True --set Silkscreen.SILKSCREEN_ENABLED=True
 ```
 
-**The runs used KESE version 2.4.0 (`main` at 22fd70c and 39950e6) with the default parameters otherwise and shapely 2.2.0 (GEOS 3.14.1), on a 4-core CPU with 16 GB of RAM, so `Parallel.WORKERS = 0` gave four workers ([Work Done In Parallel](https://github.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/wiki/Working-Principle#74-work-done-in-parallel)). A run was stopped after 90 minutes, or once its memory passed 11 GB: that cap is a limit of the measurement, not of KESE, and a board stopped there needs a machine with more memory. On another machine the seconds differ.**
+**The runs used KESE version 2.4.0 (`main` at 22fd70c and 39950e6) with the default parameters otherwise and shapely 2.2.0 (GEOS 3.14.1), on a 4-core CPU with 16 GB of RAM, so `Parallel.WORKERS = 0` gave four workers ([Work Done In Parallel](https://github.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/wiki/Working-Principle#74-work-done-in-parallel)). A run was stopped after 90 minutes, or once its memory passed 11 GB: that cap is a limit of the measurement, not of KESE, and a board stopped there is left out of the corpus until it passes on a machine with more memory. On another machine the seconds differ.**
 
 **A run that failed was run again on 10 November 2026, with the same settings: one that KESE had got wrong, with the fixes to KESE made for it, and one stopped at the 11 GB cap, with the cap raised to 14.5 GB. A run that passed then shows the new run, and its board says so in a Run again row; a run that failed again keeps its first result.**
 
-3,093 of the 3,139 boards passed the Verifier in all six runs. The 46 others are listed by why under [What Did Not Pass](#what-did-not-pass).
+3,093 of the 3,100 boards passed the Verifier in all six runs. The 7 others are listed by why under [What Did Not Pass](#what-did-not-pass).
 
 ## Grading A Board's Complexity
 
@@ -64,35 +64,35 @@ features = the sum of the weights of the features present
 
 | Feature | Present when the file has | Weight | Boards in this corpus |
 |---|---|---:|---:|
-| Through vias | `(via (at ...` with no type | 15 | 2,749 |
-| Blind and buried vias | `(via blind ...`, `(via buried ...` | 40 | 43 |
-| Microvias | `(via micro ...` | 40 | 22 |
+| Through vias | `(via (at ...` with no type | 15 | 2,712 |
+| Blind and buried vias | `(via blind ...`, `(via buried ...` | 40 | 33 |
+| Microvias | `(via micro ...` | 40 | 21 |
 | Backdrills | `(backdrill ...`, `(tertiary_drill ...` | 40 | 0 |
 | Counterbores and countersinks | `(front_post_machining counterbore ...`, and `countersink`, front or back | 25 | 0 |
 | Covered, plugged, capped or filled vias | `(covering ...)` or `(plugging ...)` with a `yes`, `(capping yes)`, `(filling yes)` | 30 | 2 |
-| Padstacks | `(padstack ...` | 30 | 21 |
-| Slotted holes | `(drill oval ...` | 10 | 1,041 |
-| Custom pads | a pad of shape `custom` | 15 | 627 |
-| Rounded, trapezoid or chamfered pads | a pad of shape `roundrect` or `trapezoid`, or `(chamfer ...` | 10 | 2,314 |
-| Drill offsets | `(drill ... (offset ...))` | 10 | 150 |
-| Arc tracks | `(arc (start ...` (KiCad 6 and later) | 15 | 383 |
-| Filled zones | `(filled_polygon ...` or `(fill_segments ...` | 20 | 2,589 |
-| Copper drawings | a `gr_line`, `gr_arc`, `gr_circle`, `gr_rect`, `gr_poly` or `gr_curve` on a copper layer | 10 | 687 |
-| Copper text | a `gr_text` on a copper layer | 10 | 489 |
-| Curved board outline | an arc, circle or curve on `Edge.Cuts` | 10 | 1,671 |
-| Knockout text | `knockout` | 15 | 459 |
-| Truetype text | `(face "...")` other than `"KiCad Font"` | 15 | 242 |
+| Padstacks | `(padstack ...` | 30 | 20 |
+| Slotted holes | `(drill oval ...` | 10 | 1,019 |
+| Custom pads | a pad of shape `custom` | 15 | 611 |
+| Rounded, trapezoid or chamfered pads | a pad of shape `roundrect` or `trapezoid`, or `(chamfer ...` | 10 | 2,279 |
+| Drill offsets | `(drill ... (offset ...))` | 10 | 146 |
+| Arc tracks | `(arc (start ...` (KiCad 6 and later) | 15 | 373 |
+| Filled zones | `(filled_polygon ...` or `(fill_segments ...` | 20 | 2,551 |
+| Copper drawings | a `gr_line`, `gr_arc`, `gr_circle`, `gr_rect`, `gr_poly` or `gr_curve` on a copper layer | 10 | 668 |
+| Copper text | a `gr_text` on a copper layer | 10 | 475 |
+| Curved board outline | an arc, circle or curve on `Edge.Cuts` | 10 | 1,655 |
+| Knockout text | `knockout` | 15 | 456 |
+| Truetype text | `(face "...")` other than `"KiCad Font"` | 15 | 238 |
 | Hatched fills | `(fill hatch)` | 25 | 2 |
 | Tracks bare of mask | a `segment` with `(layers "F.Cu" "F.Mask")` or the back's | 15 | 20 |
-| Stack-up | `(stackup ...` | 20 | 1,626 |
-| Dielectric εr and tanδ | `(epsilon_r ...` | 10 | 1,626 |
-| Copper finish | `(copper_finish ...)` other than `None` | 15 | 302 |
-| Mask and silkscreen colours | a `(color ...)` on a mask or silkscreen layer of the stack-up | 5 | 535 |
+| Stack-up | `(stackup ...` | 20 | 1,609 |
+| Dielectric εr and tanδ | `(epsilon_r ...` | 10 | 1,609 |
+| Copper finish | `(copper_finish ...)` other than `None` | 15 | 296 |
+| Mask and silkscreen colours | a `(color ...)` on a mask or silkscreen layer of the stack-up | 5 | 527 |
 | Castellated pads | `pad_prop_castellated` or `(castellated_pads yes)` | 25 | 16 |
 | Plated board edge | `(edge_plating yes)` | 25 | 6 |
 | **All** | | **500** | |
 
-In this corpus the grades run from 17 to 651, half the boards below 274: the top of the scale is left for boards larger and richer in features than any here. Each board's section gives its grade as size plus features, and names its features.
+In this corpus the grades run from 17 to 651, half the boards below 273: the top of the scale is left for boards larger and richer in features than any here. Each board's section gives its grade as size plus features, and names its features.
 
 ## The Boards, By Project
 
@@ -100,41 +100,39 @@ The boards are numbered in order of project and then path, 108 to a page.
 
 | Page | Boards | Projects | Passed all six runs |
 |---|---|---:|---:|
-| [Corpus Page 1](CorpusTestingPages/Corpus-Testing-01.md) | 1 to 108 | 15 | 106 |
-| [Corpus Page 2](CorpusTestingPages/Corpus-Testing-02.md) | 109 to 216 | 6 | 107 |
-| [Corpus Page 3](CorpusTestingPages/Corpus-Testing-03.md) | 217 to 324 | 11 | 107 |
-| [Corpus Page 4](CorpusTestingPages/Corpus-Testing-04.md) | 325 to 432 | 96 | 103 |
-| [Corpus Page 5](CorpusTestingPages/Corpus-Testing-05.md) | 433 to 540 | 17 | 105 |
-| [Corpus Page 6](CorpusTestingPages/Corpus-Testing-06.md) | 541 to 648 | 20 | 106 |
-| [Corpus Page 7](CorpusTestingPages/Corpus-Testing-07.md) | 649 to 756 | 27 | 106 |
-| [Corpus Page 8](CorpusTestingPages/Corpus-Testing-08.md) | 757 to 864 | 30 | 106 |
-| [Corpus Page 9](CorpusTestingPages/Corpus-Testing-09.md) | 865 to 972 | 35 | 106 |
-| [Corpus Page 10](CorpusTestingPages/Corpus-Testing-10.md) | 973 to 1,080 | 26 | 106 |
-| [Corpus Page 11](CorpusTestingPages/Corpus-Testing-11.md) | 1,081 to 1,188 | 20 | 106 |
-| [Corpus Page 12](CorpusTestingPages/Corpus-Testing-12.md) | 1,189 to 1,296 | 43 | 102 |
-| [Corpus Page 13](CorpusTestingPages/Corpus-Testing-13.md) | 1,297 to 1,404 | 26 | 102 |
-| [Corpus Page 14](CorpusTestingPages/Corpus-Testing-14.md) | 1,405 to 1,512 | 34 | 108 |
-| [Corpus Page 15](CorpusTestingPages/Corpus-Testing-15.md) | 1,513 to 1,620 | 22 | 108 |
-| [Corpus Page 16](CorpusTestingPages/Corpus-Testing-16.md) | 1,621 to 1,728 | 37 | 106 |
-| [Corpus Page 17](CorpusTestingPages/Corpus-Testing-17.md) | 1,729 to 1,836 | 47 | 108 |
-| [Corpus Page 18](CorpusTestingPages/Corpus-Testing-18.md) | 1,837 to 1,944 | 41 | 108 |
-| [Corpus Page 19](CorpusTestingPages/Corpus-Testing-19.md) | 1,945 to 2,052 | 37 | 108 |
-| [Corpus Page 20](CorpusTestingPages/Corpus-Testing-20.md) | 2,053 to 2,160 | 33 | 108 |
-| [Corpus Page 21](CorpusTestingPages/Corpus-Testing-21.md) | 2,161 to 2,268 | 23 | 108 |
-| [Corpus Page 22](CorpusTestingPages/Corpus-Testing-22.md) | 2,269 to 2,376 | 36 | 108 |
-| [Corpus Page 23](CorpusTestingPages/Corpus-Testing-23.md) | 2,377 to 2,484 | 24 | 103 |
-| [Corpus Page 24](CorpusTestingPages/Corpus-Testing-24.md) | 2,485 to 2,592 | 30 | 107 |
-| [Corpus Page 25](CorpusTestingPages/Corpus-Testing-25.md) | 2,593 to 2,700 | 21 | 107 |
-| [Corpus Page 26](CorpusTestingPages/Corpus-Testing-26.md) | 2,701 to 2,808 | 23 | 107 |
-| [Corpus Page 27](CorpusTestingPages/Corpus-Testing-27.md) | 2,809 to 2,916 | 17 | 108 |
-| [Corpus Page 28](CorpusTestingPages/Corpus-Testing-28.md) | 2,917 to 3,024 | 33 | 108 |
-| [Corpus Page 29](CorpusTestingPages/Corpus-Testing-29.md) | 3,025 to 3,132 | 10 | 108 |
-| [Corpus Page 30](CorpusTestingPages/Corpus-Testing-30.md) | 3,133 to 3,139 | 2 | 7 |
+| [Corpus Page 1](CorpusTestingPages/Corpus-Testing-01.md) | 1 to 108 | 16 | 108 |
+| [Corpus Page 2](CorpusTestingPages/Corpus-Testing-02.md) | 109 to 216 | 3 | 108 |
+| [Corpus Page 3](CorpusTestingPages/Corpus-Testing-03.md) | 217 to 324 | 11 | 108 |
+| [Corpus Page 4](CorpusTestingPages/Corpus-Testing-04.md) | 325 to 432 | 93 | 107 |
+| [Corpus Page 5](CorpusTestingPages/Corpus-Testing-05.md) | 433 to 540 | 20 | 107 |
+| [Corpus Page 6](CorpusTestingPages/Corpus-Testing-06.md) | 541 to 648 | 17 | 108 |
+| [Corpus Page 7](CorpusTestingPages/Corpus-Testing-07.md) | 649 to 756 | 27 | 107 |
+| [Corpus Page 8](CorpusTestingPages/Corpus-Testing-08.md) | 757 to 864 | 33 | 108 |
+| [Corpus Page 9](CorpusTestingPages/Corpus-Testing-09.md) | 865 to 972 | 30 | 107 |
+| [Corpus Page 10](CorpusTestingPages/Corpus-Testing-10.md) | 973 to 1,080 | 28 | 107 |
+| [Corpus Page 11](CorpusTestingPages/Corpus-Testing-11.md) | 1,081 to 1,188 | 21 | 108 |
+| [Corpus Page 12](CorpusTestingPages/Corpus-Testing-12.md) | 1,189 to 1,296 | 33 | 108 |
+| [Corpus Page 13](CorpusTestingPages/Corpus-Testing-13.md) | 1,297 to 1,404 | 33 | 108 |
+| [Corpus Page 14](CorpusTestingPages/Corpus-Testing-14.md) | 1,405 to 1,512 | 24 | 108 |
+| [Corpus Page 15](CorpusTestingPages/Corpus-Testing-15.md) | 1,513 to 1,620 | 29 | 108 |
+| [Corpus Page 16](CorpusTestingPages/Corpus-Testing-16.md) | 1,621 to 1,728 | 38 | 108 |
+| [Corpus Page 17](CorpusTestingPages/Corpus-Testing-17.md) | 1,729 to 1,836 | 44 | 108 |
+| [Corpus Page 18](CorpusTestingPages/Corpus-Testing-18.md) | 1,837 to 1,944 | 47 | 108 |
+| [Corpus Page 19](CorpusTestingPages/Corpus-Testing-19.md) | 1,945 to 2,052 | 36 | 108 |
+| [Corpus Page 20](CorpusTestingPages/Corpus-Testing-20.md) | 2,053 to 2,160 | 26 | 108 |
+| [Corpus Page 21](CorpusTestingPages/Corpus-Testing-21.md) | 2,161 to 2,268 | 36 | 108 |
+| [Corpus Page 22](CorpusTestingPages/Corpus-Testing-22.md) | 2,269 to 2,376 | 32 | 108 |
+| [Corpus Page 23](CorpusTestingPages/Corpus-Testing-23.md) | 2,377 to 2,484 | 15 | 106 |
+| [Corpus Page 24](CorpusTestingPages/Corpus-Testing-24.md) | 2,485 to 2,592 | 28 | 108 |
+| [Corpus Page 25](CorpusTestingPages/Corpus-Testing-25.md) | 2,593 to 2,700 | 20 | 108 |
+| [Corpus Page 26](CorpusTestingPages/Corpus-Testing-26.md) | 2,701 to 2,808 | 32 | 108 |
+| [Corpus Page 27](CorpusTestingPages/Corpus-Testing-27.md) | 2,809 to 2,916 | 13 | 108 |
+| [Corpus Page 28](CorpusTestingPages/Corpus-Testing-28.md) | 2,917 to 3,024 | 29 | 108 |
+| [Corpus Page 29](CorpusTestingPages/Corpus-Testing-29.md) | 3,025 to 3,100 | 10 | 76 |
 
 ## What Did Not Pass
 
-Of the 3,139 boards, 46 did not pass in all six runs, none of them for a fault of KESE (each board's section says what stopped it):
+Of the 3,100 boards, 7 did not pass in all six runs, none of them for a fault of KESE (each board's section says what stopped it):
 
-- **Bad design according to KESE (7 boards):** the file puts copper of two nets on top of each other, a short KiCad's DRC reports. KESE models what the file says, so the Verifier rightly finds the two nets' solids overlapping: [librem5_mainboard](CorpusTestingPages/Corpus-Testing-11.md#1092-librem5_mainboard), [CM5RevEng](CorpusTestingPages/Corpus-Testing-24.md#2521-cm5reveng), [denso079721_outline-append](CorpusTestingPages/Corpus-Testing-23.md#2468-denso079721_outline-append), [scalenode-cm4-baseboard](CorpusTestingPages/Corpus-Testing-04.md#405-scalenode-cm4-baseboard), [gd VGC proto pcb](CorpusTestingPages/Corpus-Testing-05.md#522-gd-vgc-proto-pcb), [.kicad_pcb](CorpusTestingPages/Corpus-Testing-08.md#758-kicad_pcb), [NewBrain Original](CorpusTestingPages/Corpus-Testing-10.md#987-newbrain-original).
-- **Stopped for memory (39 boards):** a run passed the memory the test machines allow, and again when run again; they will be run again on a machine with more memory: [board_routed_golden](CorpusTestingPages/Corpus-Testing-09.md#936-board_routed_golden), [maxwell-main](CorpusTestingPages/Corpus-Testing-05.md#455-maxwell-main), [ciaa_acc](CorpusTestingPages/Corpus-Testing-07.md#748-ciaa_acc), [PC110](CorpusTestingPages/Corpus-Testing-01.md#73-pc110), [PC110](CorpusTestingPages/Corpus-Testing-01.md#72-pc110), [output.Panel_R0.5.1_300x300_2layer_step1](CorpusTestingPages/Corpus-Testing-23.md#2434-outputpanel_r051_300x300_2layer_step1), [output.Panel_R0.5.1_300x300_2layer_step1_Modified](CorpusTestingPages/Corpus-Testing-23.md#2435-outputpanel_r051_300x300_2layer_step1_modified), [Panel_R0.5.1_300x300_2layer_step1](CorpusTestingPages/Corpus-Testing-23.md#2437-panel_r051_300x300_2layer_step1), [ecp5_mainboard](CorpusTestingPages/Corpus-Testing-10.md#1018-ecp5_mainboard), [Marble](CorpusTestingPages/Corpus-Testing-06.md#569-marble), [bpm_dfe](CorpusTestingPages/Corpus-Testing-13.md#1376-bpm_dfe), [ulx4m-panel](CorpusTestingPages/Corpus-Testing-12.md#1273-ulx4m-panel), [ulx4m_panel](CorpusTestingPages/Corpus-Testing-12.md#1278-ulx4m_panel), [ulx5m-gs_panel_checked_v002](CorpusTestingPages/Corpus-Testing-12.md#1281-ulx5m-gs_panel_checked_v002), [vme-wren](CorpusTestingPages/Corpus-Testing-08.md#762-vme-wren), [A3000](CorpusTestingPages/Corpus-Testing-12.md#1228-a3000), [REAmiga3000](CorpusTestingPages/Corpus-Testing-12.md#1229-reamiga3000), [librem5_mainboard](CorpusTestingPages/Corpus-Testing-11.md#1089-librem5_mainboard), [jetson-agx-thor-baseboard](CorpusTestingPages/Corpus-Testing-04.md#368-jetson-agx-thor-baseboard), [Commodore PC10 III](CorpusTestingPages/Corpus-Testing-06.md#630-commodore-pc10-iii), [latentpink](CorpusTestingPages/Corpus-Testing-05.md#448-latentpink), [FrontEnd_5G](CorpusTestingPages/Corpus-Testing-16.md#1722-frontend_5g), [k410t-devboard](CorpusTestingPages/Corpus-Testing-04.md#376-k410t-devboard), [data-center-rdimm-ddr4-tester](CorpusTestingPages/Corpus-Testing-04.md#340-data-center-rdimm-ddr4-tester), [AmigaPCI Mainboard](CorpusTestingPages/Corpus-Testing-02.md#112-amigapci-mainboard), [motherboard-stable](CorpusTestingPages/Corpus-Testing-07.md#698-motherboard-stable), [board_presignal](CorpusTestingPages/Corpus-Testing-09.md#935-board_presignal), [FrontEnd_5G](CorpusTestingPages/Corpus-Testing-16.md#1723-frontend_5g), [Amiga 2000R6](CorpusTestingPages/Corpus-Testing-12.md#1226-amiga-2000r6), [sodimm-ddr5-tester](CorpusTestingPages/Corpus-Testing-04.md#413-sodimm-ddr5-tester), [Main_12E1S](CorpusTestingPages/Corpus-Testing-13.md#1324-main_12e1s), [amiga2000](CorpusTestingPages/Corpus-Testing-23.md#2403-amiga2000), [Open128](CorpusTestingPages/Corpus-Testing-13.md#1391-open128), [motherboard](CorpusTestingPages/Corpus-Testing-25.md#2651-motherboard), [cpu010](CorpusTestingPages/Corpus-Testing-26.md#2795-cpu010), [Main_12E1S](CorpusTestingPages/Corpus-Testing-13.md#1323-main_12e1s), [2000ATX](CorpusTestingPages/Corpus-Testing-13.md#1380-2000atx), [boatcontrol](CorpusTestingPages/Corpus-Testing-03.md#309-boatcontrol), [Main_12E1S](CorpusTestingPages/Corpus-Testing-13.md#1322-main_12e1s).
+- **Bad design according to KESE (7 boards):** the file puts copper of two nets on top of each other, a short KiCad's DRC reports. KESE models what the file says, so the Verifier rightly finds the two nets' solids overlapping: [librem5_mainboard](CorpusTestingPages/Corpus-Testing-10.md#1073-librem5_mainboard), [CM5RevEng](CorpusTestingPages/Corpus-Testing-23.md#2484-cm5reveng), [denso079721_outline-append](CorpusTestingPages/Corpus-Testing-23.md#2431-denso079721_outline-append), [scalenode-cm4-baseboard](CorpusTestingPages/Corpus-Testing-04.md#398-scalenode-cm4-baseboard), [gd VGC proto pcb](CorpusTestingPages/Corpus-Testing-05.md#512-gd-vgc-proto-pcb), [.kicad_pcb](CorpusTestingPages/Corpus-Testing-07.md#744-kicad_pcb), [NewBrain Original](CorpusTestingPages/Corpus-Testing-09.md#970-newbrain-original).
 - **Failed because of KESE:** none.

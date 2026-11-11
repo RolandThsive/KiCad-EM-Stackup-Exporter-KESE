@@ -1,0 +1,48 @@
+# 163. D Flip Flop 16bit
+
+Board 163 of the 3,100 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 2](../CorpusTestingPages/Corpus-Testing-02.md#163-d-flip-flop-16bit).
+
+![D Flip Flop 16bit: stages 4 and 6 take 51% to 82% of a run. Simulation, GLB takes 4.9 s. Simulation, STEP takes 6.6 s. Simulation, STL takes 4.9 s. Simulation, OBJ takes 6.4 s. Visual, GLB takes 6.8 s. Visual, OBJ takes 9.2 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b0163b_658-Computer_D-Flip-Flop-16bit/stages.webp)
+
+| Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
+|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
+| Simulation, GLB | 0.2 | 0.5 | 1.9 | 0.3&nbsp;ms | 1.7 | 89&nbsp;ms | 0.3 | 0.3 | 4.9 |
+| Simulation, STEP | 0.2 | 0.4 | 2.0 | 0.2&nbsp;ms | 1.6 | 1.8 | 0.3 | 0.2 | 6.6 |
+| Simulation, STL | 0.2 | 0.4 | 1.9 | 0.2&nbsp;ms | 1.6 | 0.1 | 0.3 | 0.3 | 4.9 |
+| Simulation, OBJ | 0.2 | 0.4 | 1.8 | 0.3&nbsp;ms | 1.5 | 1.9 | 0.3 | 0.3 | 6.4 |
+| Visual, GLB | 0.2 | 0.4 | 2.0 | 0.3&nbsp;ms | 3.6 | 48&nbsp;ms | 0.3 | 0.3 | 6.8 |
+| Visual, OBJ | 0.2 | 0.4 | 1.9 | 0.2&nbsp;ms | 4.3 | 1.8 | 0.3 | 0.3 | 9.2 |
+
+<table align="center"><tr><td valign="top">
+
+| Board | Repo: [andrewpaterson/658-Computer](https://github.com/andrewpaterson/658-Computer)<br>Board: `D Flip Flop 16bit.kicad_pcb` |
+|---|---|
+| Folder | Kicad / Computer / Component Boards / D Flip Flop 16bit |
+| Complexity | 211&nbsp;/&nbsp;1000 (size&nbsp;141, features&nbsp;70) |
+| KESE&nbsp;features | through vias, rounded,<br>trapezoid or chamfered pads,<br>knockout text, stack-up,<br>dielectric εr and tanδ |
+| Tested | 9th November 2026 |
+| Copper&nbsp;layers | 2 |
+| File&nbsp;format | KiCad 9 (20241229) |
+| Parts,&nbsp;tracks,&nbsp;vias | 8, 360, 31 |
+| Triangles,&nbsp;simulation | 343,422 in 48 parts |
+| Verifier | PASS in all six runs |
+
+</td><td valign="top">
+
+<table>
+<tr><th>File<br>type</th><th>File<br>size</th><th>Peak memory<br>used</th></tr>
+<tr><th colspan="3" align="left">Simulation</th></tr>
+<tr><td>GLB</td><td align="right">12&nbsp;MB</td><td align="right">238&nbsp;MB</td></tr>
+<tr><td>STEP</td><td align="right">56&nbsp;MB</td><td align="right">283&nbsp;MB</td></tr>
+<tr><td>STL</td><td align="right">17&nbsp;MB</td><td align="right">250&nbsp;MB</td></tr>
+<tr><td>OBJ</td><td align="right">35&nbsp;MB</td><td align="right">273&nbsp;MB</td></tr>
+<tr><th colspan="3" align="left">Visual</th></tr>
+<tr><td>GLB</td><td align="right">8.5&nbsp;MB</td><td align="right">273&nbsp;MB</td></tr>
+<tr><td>OBJ</td><td align="right">25&nbsp;MB</td><td align="right">276&nbsp;MB</td></tr>
+</table>
+
+</td></tr></table>
+
+| Previous | Next |
+|:---|---:|
+| [162. Counter 24bit](b0162b_658-Computer_Counter-24bit.md) | [164. D Flip Flop 24bit](b0164b_658-Computer_D-Flip-Flop-24bit.md) |

@@ -1,7 +1,7 @@
 # KESE Corpus Testing
 
 This branch holds the Corpus Testing of [KiCad EM Stackup Exporter (KESE)](https://github.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE),
-apart from the code: 3,139 KiCad boards from 820 open hardware projects, each exported six times by KESE, one file
+apart from the code: 3,100 KiCad boards from 801 open hardware projects, each exported six times by KESE, one file
 format a run, with the Verifier on.
 
 - [`corpus-testing/data/`](corpus-testing/data): a folder per board, `b<number>b_<repo>_<board>`, with its counts
@@ -12,7 +12,7 @@ format a run, with the Verifier on.
 - [`docs/images/`](docs/images): a folder per board, of the same name, with its chart.
 - [`docs/wiki/Corpus-Testing.md`](docs/wiki/Corpus-Testing.md): the master page, how the boards were run and graded,
   and what did not pass.
-- [`docs/wiki/CorpusTestingPages/`](docs/wiki/CorpusTestingPages): Corpus Page 1 to 30, 108 boards each, and every
+- [`docs/wiki/CorpusTestingPages/`](docs/wiki/CorpusTestingPages): Corpus Page 1 to 29, 108 boards each, and every
   board on one page.
 - [`docs/wiki/BoardPages/`](docs/wiki/BoardPages): a page per board.
 - [`docs/wiki/Credits.md`](docs/wiki/Credits.md) and [`credits.txt`](credits.txt): every board by its number, with

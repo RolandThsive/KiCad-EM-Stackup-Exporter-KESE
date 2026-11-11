@@ -1,0 +1,51 @@
+{
+ "name": "flash-sop-rev4",
+ "project": "DangerousPrototypes/BusPirate5-hardware",
+ "path": "DangerousPrototypes__BusPirate5-hardware/development/adapter-flash-sop-1REV4/flash-sop-rev4.kicad_pcb",
+ "license": "MIT (MIT License)",
+ "license_checked": "2026-11-08",
+ "rank": 2348,
+ "score": 336,
+ "level": "LOW",
+ "complexity": {
+  "grade": 207,
+  "size": 137,
+  "features": 70
+ },
+ "features": [
+  "through_vias",
+  "shaped_pads",
+  "filled_zones",
+  "curved_outline",
+  "knockout_text"
+ ],
+ "layers": 2,
+ "status": "pass",
+ "bad_design": null,
+ "chart_alt": "flash-sop-rev4: stages 4 and 6 take 49% to 81% of a run. Simulation, GLB takes 5.8 s. Simulation, STEP takes 7.6 s. Simulation, STL takes 6.2 s. Simulation, OBJ takes 9.0 s. Visual, GLB takes 8.8 s. Visual, OBJ takes 11 s",
+ "rerun": {},
+ "tested": [
+  "2026-11-09",
+  "2026-11-09"
+ ],
+ "kese": [
+  "22fd70c"
+ ],
+ "kese_version": [
+  "2.4.0"
+ ],
+ "runs": [
+  [
+   "corpus",
+   "2026-11-09",
+   11000000000.0,
+   5400.0
+  ]
+ ],
+ "machine": {
+  "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz, 4 cores, 15 GB",
+  "geos": "3.14.1",
+  "python": "3.13.18",
+  "shapely": "2.2.0"
+ }
+}

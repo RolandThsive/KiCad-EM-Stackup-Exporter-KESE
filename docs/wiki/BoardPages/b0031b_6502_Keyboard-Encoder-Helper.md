@@ -1,6 +1,6 @@
 # 31. Keyboard Encoder Helper
 
-Board 31 of the 3,139 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 1](../CorpusTestingPages/Corpus-Testing-01.md#31-keyboard-encoder-helper).
+Board 31 of the 3,100 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 1](../CorpusTestingPages/Corpus-Testing-01.md#31-keyboard-encoder-helper).
 
 ![Keyboard Encoder Helper: stages 4 and 6 take 53% to 84% of a run. Simulation, GLB takes 9.0 s. Simulation, STEP takes 11 s. Simulation, STL takes 9.2 s. Simulation, OBJ takes 13 s. Visual, GLB takes 14 s. Visual, OBJ takes 17 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b0031b_6502_Keyboard-Encoder-Helper/stages.webp)
 

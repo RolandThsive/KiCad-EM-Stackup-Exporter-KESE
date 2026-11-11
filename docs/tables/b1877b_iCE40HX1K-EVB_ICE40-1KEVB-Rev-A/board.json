@@ -1,0 +1,45 @@
+{
+ "name": "ICE40-1KEVB_Rev_A",
+ "project": "OLIMEX/iCE40HX1K-EVB",
+ "path": "OLIMEX__iCE40HX1K-EVB/ICE40-1KEVB_Rev_A.kicad_pcb",
+ "license": "Apache-2.0 (Apache License 2.0)",
+ "license_checked": "2026-11-08",
+ "rank": 2528,
+ "score": 194,
+ "level": "SIMPLE",
+ "complexity": {
+  "grade": 102,
+  "size": 102,
+  "features": 0
+ },
+ "features": [],
+ "layers": 2,
+ "status": "pass",
+ "bad_design": null,
+ "chart_alt": "ICE40-1KEVB_Rev_A: stages 4 and 6 take 55% to 81% of a run. Simulation, GLB takes 6.2 s. Simulation, STEP takes 7.9 s. Simulation, STL takes 6.1 s. Simulation, OBJ takes 8.0 s. Visual, GLB takes 8.8 s. Visual, OBJ takes 11 s",
+ "rerun": {},
+ "tested": [
+  "2026-11-09",
+  "2026-11-09"
+ ],
+ "kese": [
+  "22fd70c"
+ ],
+ "kese_version": [
+  "2.4.0"
+ ],
+ "runs": [
+  [
+   "corpus",
+   "2026-11-09",
+   11000000000.0,
+   5400.0
+  ]
+ ],
+ "machine": {
+  "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz, 4 cores, 15 GB",
+  "geos": "3.14.1",
+  "python": "3.13.18",
+  "shapely": "2.2.0"
+ }
+}

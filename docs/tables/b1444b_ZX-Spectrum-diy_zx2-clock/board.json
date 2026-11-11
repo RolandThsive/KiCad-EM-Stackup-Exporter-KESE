@@ -1,0 +1,50 @@
+{
+ "name": "zx2_clock",
+ "project": "krzys9876/ZX_Spectrum_diy",
+ "path": "krzys9876__ZX_Spectrum_diy/Kicad5/zx2_clock/zx2_clock.kicad_pcb",
+ "license": "MIT (MIT License)",
+ "license_checked": "2026-11-08",
+ "rank": 2375,
+ "score": 305,
+ "level": "LOW",
+ "complexity": {
+  "grade": 198,
+  "size": 143,
+  "features": 55
+ },
+ "features": [
+  "through_vias",
+  "shaped_pads",
+  "filled_zones",
+  "copper_text"
+ ],
+ "layers": 2,
+ "status": "pass",
+ "bad_design": null,
+ "chart_alt": "zx2_clock: stages 4 and 6 take 48% to 84% of a run. Simulation, GLB takes 4.4 s. Simulation, STEP takes 5.9 s. Simulation, STL takes 4.4 s. Simulation, OBJ takes 7.0 s. Visual, GLB takes 6.6 s. Visual, OBJ takes 8.8 s",
+ "rerun": {},
+ "tested": [
+  "2026-11-09",
+  "2026-11-09"
+ ],
+ "kese": [
+  "22fd70c"
+ ],
+ "kese_version": [
+  "2.4.0"
+ ],
+ "runs": [
+  [
+   "corpus",
+   "2026-11-09",
+   11000000000.0,
+   5400.0
+  ]
+ ],
+ "machine": {
+  "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz, 4 cores, 15 GB",
+  "geos": "3.14.1",
+  "python": "3.13.18",
+  "shapely": "2.2.0"
+ }
+}

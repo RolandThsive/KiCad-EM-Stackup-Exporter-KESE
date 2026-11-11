@@ -1,0 +1,48 @@
+{
+ "name": "akl-pt3",
+ "project": "azonenberg/starshipraider",
+ "path": "azonenberg__starshipraider/boards/probes/akl-pt3/akl-pt3.kicad_pcb",
+ "license": "BSD-3-Clause (BSD 3-Clause License)",
+ "license_checked": "2026-11-08",
+ "rank": 2915,
+ "score": 10,
+ "level": "SIMPLE",
+ "complexity": {
+  "grade": 117,
+  "size": 82,
+  "features": 35
+ },
+ "features": [
+  "through_vias",
+  "filled_zones"
+ ],
+ "layers": 2,
+ "status": "pass",
+ "bad_design": null,
+ "chart_alt": "akl-pt3: reading, start-up and exit take 33% to 50% of a run. Simulation, GLB takes 0.6 s. Simulation, STEP takes 0.7 s. Simulation, STL takes 0.6 s. Simulation, OBJ takes 0.7 s. Visual, GLB takes 0.7 s. Visual, OBJ takes 0.8 s",
+ "rerun": {},
+ "tested": [
+  "2026-11-09",
+  "2026-11-09"
+ ],
+ "kese": [
+  "22fd70c"
+ ],
+ "kese_version": [
+  "2.4.0"
+ ],
+ "runs": [
+  [
+   "corpus",
+   "2026-11-09",
+   11000000000.0,
+   5400.0
+  ]
+ ],
+ "machine": {
+  "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz, 4 cores, 15 GB",
+  "geos": "3.14.1",
+  "python": "3.13.18",
+  "shapely": "2.2.0"
+ }
+}

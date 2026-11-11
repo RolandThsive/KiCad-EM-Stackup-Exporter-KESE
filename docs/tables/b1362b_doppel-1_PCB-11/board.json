@@ -1,0 +1,48 @@
+{
+ "name": "PCB-11",
+ "project": "jgw4/doppel-1",
+ "path": "jgw4__doppel-1/gerbers/PCB-11.kicad_pcb",
+ "license": "No license found",
+ "license_checked": "2026-11-08",
+ "rank": 3051,
+ "score": 0,
+ "level": "SIMPLE",
+ "complexity": {
+  "grade": 214,
+  "size": 189,
+  "features": 25
+ },
+ "features": [
+  "through_vias",
+  "copper_graphics"
+ ],
+ "layers": 2,
+ "status": "pass",
+ "bad_design": null,
+ "chart_alt": "PCB-11: stages 4 and 6 take 60% to 87% of a run. Simulation, GLB takes 3 min. Simulation, STEP takes 3 min. Simulation, STL takes 3 min. Simulation, OBJ takes 4 min. Visual, GLB takes 3 min. Visual, OBJ takes 4 min",
+ "rerun": {},
+ "tested": [
+  "2026-11-09",
+  "2026-11-09"
+ ],
+ "kese": [
+  "22fd70c"
+ ],
+ "kese_version": [
+  "2.4.0"
+ ],
+ "runs": [
+  [
+   "corpus",
+   "2026-11-09",
+   11000000000.0,
+   5400.0
+  ]
+ ],
+ "machine": {
+  "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz, 4 cores, 15 GB",
+  "geos": "3.14.1",
+  "python": "3.13.18",
+  "shapely": "2.2.0"
+ }
+}
