@@ -1,16 +1,13 @@
 # Lives only on the corpus-testing branch. When a push adds, changes or deletes a board's files (docs/tables/,
 # docs/images/), the engine numbers the boards, renames the folders whose number moved (their data folders too), and
 # builds every Corpus Testing page again; the result is committed here and main's Sync Wiki is started, so the wiki
-# follows.
+# follows. It runs at every push, with no paths filter: GitHub looks only at the first 300 files of a push for one, so
+# a push of many boards would not start it. A push that changes no board changes nothing.
 name: Corpus Engine
 
 on:
   push:
     branches: [corpus-testing]
-    paths:
-      - "docs/tables/**"
-      - "docs/images/**"
-      - "corpus-testing/engine/**"
   workflow_dispatch:
 
 permissions:

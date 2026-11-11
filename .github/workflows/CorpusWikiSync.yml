@@ -1,12 +1,11 @@
-# Lives only on the corpus-testing branch. When a push here changes the Corpus Testing pages,
-# it starts main's Sync Wiki, which copies this branch's docs/wiki pages into the GitHub Wiki.
+# Lives only on the corpus-testing branch. At every push here it starts main's Sync Wiki, which copies this branch's
+# docs/wiki pages into the GitHub Wiki (and does nothing when they are the same). It has no paths filter: GitHub
+# looks only at the first 300 files of a push for one, so a push of many boards would not start it.
 name: Corpus Wiki Sync
 
 on:
   push:
     branches: [corpus-testing]
-    paths:
-      - "docs/wiki/**"
   workflow_dispatch:
 
 permissions:
