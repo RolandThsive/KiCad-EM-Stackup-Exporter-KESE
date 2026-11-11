@@ -6,8 +6,8 @@
     docs/tables/<repo>_<board>/files.md     the file each run wrote and its peak memory
     docs/images/<repo>_<board>/stages.webp  the chart, drawn only when it is missing
 
-    python3 corpus-testing/maker/make.py            every board
-    python3 corpus-testing/maker/make.py 2 13 57    only the boards of these ranks
+    python3 corpus-testing/engine/maker/make.py            every board
+    python3 corpus-testing/engine/maker/make.py 2 13 57    only the boards of these ranks
 
 Then corpus-testing/engine/assemble.py (or the Corpus Engine workflow, on a push) builds the pages from them.
 Needs Python 3.11 or newer with matplotlib and Pillow."""
@@ -17,7 +17,7 @@ import os
 import sys
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-TOP = os.path.dirname(os.path.dirname(HERE))
+TOP = os.path.dirname(os.path.dirname(os.path.dirname(HERE)))
 only = [int(a) for a in sys.argv[1:]]
 sys.argv = [sys.argv[0], os.path.join(TOP, "corpus-testing", "data", "results"), TOP]
 exec(open(os.path.join(HERE, "lib.py")).read())

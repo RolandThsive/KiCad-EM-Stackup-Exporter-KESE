@@ -14,7 +14,7 @@ format a run, with the Verifier on.
 - [`docs/wiki/BoardPages/`](docs/wiki/BoardPages): a page per board.
 - [`corpus-testing/engine/`](corpus-testing/engine): the engine that numbers the boards and builds every page from
   their folders, by itself on each push.
-- [`corpus-testing/maker/`](corpus-testing/maker): makes a board's folders from its runs.
+- [`corpus-testing/engine/maker/`](corpus-testing/engine/maker): makes a board's folders from its runs.
 - [`corpus-testing/data/`](corpus-testing/data): the record of every run and the boards' complexity list.
 
 To add a board, push its two folders named `<repo>_<board>`; to take one out, delete them. The engine does the rest.

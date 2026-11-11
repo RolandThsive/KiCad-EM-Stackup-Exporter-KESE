@@ -19,3 +19,5 @@ A board whose folders are deleted is gone at the next run, with its board page. 
 and weights of the complexity grade, which the master page lists.
 
     python3 corpus-testing/engine/assemble.py
+
+The boards' files are made from their runs by [`maker/`](maker), which lives here too.

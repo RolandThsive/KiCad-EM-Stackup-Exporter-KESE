@@ -10,7 +10,7 @@ from PIL import Image
 
 RES = Path(sys.argv[1]); REPO = Path(sys.argv[2]); IMG = REPO / "docs/images"; WIKI = REPO / "docs/wiki"
 RAW = "https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images"
-DATA = Path(HERE).parent / "data"
+DATA = Path(HERE).parents[1] / "data"
 SCORES = DATA / "kicad_board_complexity_scores.txt"
 N = 23  # the page's number in the wiki's order
 for f in fm.findSystemFonts():
@@ -234,7 +234,7 @@ SUB = "Seconds per stage, one run per format, 4 cores, the Verifier, mask and si
 FNAME = {"glb": "GLB", "step": "STEP", "stl": "STL", "obj": "OBJ"}
 
 
-FEATURES = [tuple(f) for f in json.load(open(Path(HERE).parent / "engine" / "features.json"))]  # (key in features.json, name on the page, what is counted in the .kicad_pcb file, weight)
+FEATURES = [tuple(f) for f in json.load(open(Path(HERE).parent / "features.json"))]  # (key in features.json, name on the page, what is counted in the .kicad_pcb file, weight)
 assert sum(w for *_, w in FEATURES) == 500
 FEAT = {int(k): v for k, v in json.load(open(DATA / "features.json")).items()}
 

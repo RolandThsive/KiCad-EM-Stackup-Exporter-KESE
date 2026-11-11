@@ -11,8 +11,8 @@ Makes each board's files from the run results in `corpus-testing/data/`, for the
 A board the engine has numbered already keeps its folders (`b0057b_<repo>_<board>`) and they are written in place;
 a new board's folders have no number, and the engine numbers and renames them. From the top of this branch:
 
-    python3 corpus-testing/maker/make.py            every board
-    python3 corpus-testing/maker/make.py 2 13 57    the boards of these ranks only
+    python3 corpus-testing/engine/maker/make.py            every board
+    python3 corpus-testing/engine/maker/make.py 2 13 57    the boards of these ranks only
     python3 corpus-testing/engine/assemble.py       then the pages (a push does this by itself)
 
 Needs Python 3.11 or newer with matplotlib and Pillow.
