@@ -313,8 +313,8 @@ if mem:
                + ", ".join(where(m) for m in sorted(mem, key=lambda m: m["rank"])) + ".")
 if other:
     idx.append(f"- **Failed ({len(other)} boards):** " + ", ".join(where(m) for m in sorted(other, key=lambda m: m["rank"])) + ".")
-idx.append("\n| Previous | Next |\n|:---|---:|\n| [Feature Test Collection](Feature-Test-Collection.md) "
-           "| [Parameter Reference](Parameter-Reference.md) |")
+# no Previous and Next row: the wiki's reading order goes from Feature Test Collection straight to Parameter Reference,
+# so that this page can vanish with the branch (main keeps a page saying the branch was not found) and break nothing
 # the pages of KESE's wiki live on the main branch, not beside this one: linked there
 text = re.sub(r"\]\(((?!CorpusTestingPages/|BoardPages/|Credits\.md)[A-Za-z0-9-]+)\.md(#[^)]*)?\)",
               lambda m: f"]({WIKI_URL}{m.group(1)}{m.group(2) or ''})", "\n".join(idx))
