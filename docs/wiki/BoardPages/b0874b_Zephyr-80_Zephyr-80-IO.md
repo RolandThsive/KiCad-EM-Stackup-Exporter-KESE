@@ -1,6 +1,6 @@
 # 874. Zephyr-80-IO
 
-Board 874 of the 3,108 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 9](../CorpusTestingPages/Corpus-Testing-09.md#874-zephyr-80-io).
+Board 874 of the 3,109 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 9](../CorpusTestingPages/Corpus-Testing-09.md#874-zephyr-80-io).
 
 ![Zephyr-80-IO: stages 4 and 6 take 46% to 84% of a run. Simulation, GLB takes 39 s. Simulation, STEP takes 48 s. Simulation, STL takes 39 s. Simulation, OBJ takes 64 s. Visual, GLB takes 52 s. Visual, OBJ takes 65 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b0874b_Zephyr-80_Zephyr-80-IO/stages.webp)
 

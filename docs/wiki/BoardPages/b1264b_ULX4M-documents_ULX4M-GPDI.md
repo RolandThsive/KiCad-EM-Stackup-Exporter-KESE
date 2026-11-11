@@ -1,6 +1,6 @@
 # 1264. ULX4M_GPDI
 
-Board 1,264 of the 3,108 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 12](../CorpusTestingPages/Corpus-Testing-12.md#1264-ulx4m_gpdi).
+Board 1,264 of the 3,109 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 12](../CorpusTestingPages/Corpus-Testing-12.md#1264-ulx4m_gpdi).
 
 ![ULX4M_GPDI: stages 4 and 6 take 49% to 82% of a run. Simulation, GLB takes 12 s. Simulation, STEP takes 15 s. Simulation, STL takes 11 s. Simulation, OBJ takes 18 s. Visual, GLB takes 19 s. Visual, OBJ takes 24 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b1264b_ULX4M-documents_ULX4M-GPDI/stages.webp)
 
@@ -45,4 +45,4 @@ Board 1,264 of the 3,108 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1263. ULX4M-PCIe-IO_x4_half](b1263b_ULX4M-PCIe-IO_ULX4M-PCIe-IO-x4-half.md) | [1265. ulx5m-gs](b1265b_ulx5m-gs_ulx5m-gs.md) |
+| [1263. ULX4M-PCIe-IO_x4_half](b1263b_ULX4M-PCIe-IO_ULX4M-PCIe-IO-x4-half.md) | [1265. ulx5m-gs_panel_checked_v002](b1265b_ulx5m-gs_ulx5m-gs-panel-checked-v002.md) |

@@ -1,6 +1,6 @@
 # 180. Selector 1-of-4 4bit with Input
 
-Board 180 of the 3,108 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 2](../CorpusTestingPages/Corpus-Testing-02.md#180-selector-1-of-4-4bit-with-input).
+Board 180 of the 3,109 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 2](../CorpusTestingPages/Corpus-Testing-02.md#180-selector-1-of-4-4bit-with-input).
 
 ![Stages 4 and 6 take 50% to 82% of a run. Simulation, GLB takes 3.6 s. Simulation, STEP takes 4.9 s. Simulation, STL takes 3.6 s. Simulation, OBJ takes 5.2 s. Visual, GLB takes 5.3 s. Visual, OBJ takes 6.4 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b0180b_658-Computer_Selector-1-of-4-4bit-with-Input/stages.webp)
 

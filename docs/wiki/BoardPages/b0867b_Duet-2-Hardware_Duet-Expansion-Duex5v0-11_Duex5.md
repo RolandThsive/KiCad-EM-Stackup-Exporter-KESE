@@ -1,6 +1,6 @@
 # 867. Duex5
 
-Board 867 of the 3,108 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 9](../CorpusTestingPages/Corpus-Testing-09.md#867-duex5).
+Board 867 of the 3,109 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 9](../CorpusTestingPages/Corpus-Testing-09.md#867-duex5).
 
 ![Duex5: stages 4 and 6 take 54% to 84% of a run. Simulation, GLB takes 58 s. Simulation, STEP takes 70 s. Simulation, STL takes 61 s. Simulation, OBJ takes 87 s. Visual, GLB takes 81 s. Visual, OBJ takes 96 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b0867b_Duet-2-Hardware_Duet-Expansion-Duex5v0-11_Duex5/stages.webp)
 

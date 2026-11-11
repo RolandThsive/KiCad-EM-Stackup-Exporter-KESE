@@ -1,0 +1,53 @@
+{
+ "name": "leaf-minipcie",
+ "project": "sprhawk/leaf-rv1126",
+ "path": "sprhawk__leaf-rv1126/minipcie/leaf-minipcie.kicad_pcb",
+ "license": "As README.md states it: \"This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.\"",
+ "license_checked": "2026-11-08",
+ "rank": 1025,
+ "score": 2328,
+ "level": "MEDIUM",
+ "complexity": {
+  "grade": 371,
+  "size": 281,
+  "features": 90
+ },
+ "features": [
+  "through_vias",
+  "slotted_holes",
+  "custom_pads",
+  "shaped_pads",
+  "copper_graphics",
+  "stackup",
+  "dielectric_properties"
+ ],
+ "layers": 6,
+ "status": "pass",
+ "bad_design": null,
+ "chart_alt": "leaf-minipcie: stages 4 and 6 take 45% to 82% of a run. Simulation, GLB takes 19 s. Simulation, STEP takes 25 s. Simulation, STL takes 20 s. Simulation, OBJ takes 33 s. Visual, GLB takes 35 s. Visual, OBJ takes 45 s",
+ "rerun": {},
+ "tested": [
+  "2026-11-09",
+  "2026-11-09"
+ ],
+ "kese": [
+  "22fd70c"
+ ],
+ "kese_version": [
+  "2.4.0"
+ ],
+ "runs": [
+  [
+   "corpus",
+   "2026-11-09",
+   11000000000.0,
+   5400.0
+  ]
+ ],
+ "machine": {
+  "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz, 4 cores, 15 GB",
+  "geos": "3.14.1",
+  "python": "3.13.18",
+  "shapely": "2.2.0"
+ }
+}

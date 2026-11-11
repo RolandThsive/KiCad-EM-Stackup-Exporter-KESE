@@ -1,6 +1,6 @@
 # 241. W65C816 Power
 
-Board 241 of the 3,108 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 3](../CorpusTestingPages/Corpus-Testing-03.md#241-w65c816-power).
+Board 241 of the 3,109 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 3](../CorpusTestingPages/Corpus-Testing-03.md#241-w65c816-power).
 
 ![W65C816 Power: stages 4 and 6 take 42% to 72% of a run. Simulation, GLB takes 1.3 s. Simulation, STEP takes 2.1 s. Simulation, STL takes 1.3 s. Simulation, OBJ takes 1.7 s. Visual, GLB takes 1.8 s. Visual, OBJ takes 2.1 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b0241b_658-Computer_W65C816-Power/stages.webp)
 
