@@ -1,6 +1,6 @@
 # 234. HCP65 MPU Timer
 
-Board 234 of the 3,130 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 3](../CorpusTestingPages/Corpus-Testing-03.md#234-hcp65-mpu-timer).
+Board 234 of the 3,131 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 3](../CorpusTestingPages/Corpus-Testing-03.md#234-hcp65-mpu-timer).
 
 ![HCP65 MPU Timer: stages 4 and 6 take 51% to 82% of a run. Simulation, GLB takes 4.0 s. Simulation, STEP takes 5.3 s. Simulation, STL takes 4.0 s. Simulation, OBJ takes 5.7 s. Visual, GLB takes 6.5 s. Visual, OBJ takes 8.2 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b0234b_658-Computer_HCP65-MPU-Timer/stages.webp)
 

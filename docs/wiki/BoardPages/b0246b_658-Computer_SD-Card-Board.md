@@ -1,6 +1,6 @@
 # 246. SD Card Board
 
-Board 246 of the 3,130 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 3](../CorpusTestingPages/Corpus-Testing-03.md#246-sd-card-board).
+Board 246 of the 3,131 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 3](../CorpusTestingPages/Corpus-Testing-03.md#246-sd-card-board).
 
 ![SD Card Board: stages 4 and 6 take 54% to 87% of a run. Simulation, GLB takes 59 s. Simulation, STEP takes 70 s. Simulation, STL takes 61 s. Simulation, OBJ takes 93 s. Visual, GLB takes 98 s. Visual, OBJ takes 2 min](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b0246b_658-Computer_SD-Card-Board/stages.webp)
 

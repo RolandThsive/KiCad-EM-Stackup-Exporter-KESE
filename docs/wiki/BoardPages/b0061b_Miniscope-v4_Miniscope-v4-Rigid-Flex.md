@@ -1,6 +1,6 @@
 # 61. Miniscope-v4-Rigid-Flex
 
-Board 61 of the 3,130 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 1](../CorpusTestingPages/Corpus-Testing-01.md#61-miniscope-v4-rigid-flex).
+Board 61 of the 3,131 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 1](../CorpusTestingPages/Corpus-Testing-01.md#61-miniscope-v4-rigid-flex).
 
 ![Miniscope-v4-Rigid-Flex: stages 4 and 6 take 47% to 82% of a run. Simulation, GLB takes 12 s. Simulation, STEP takes 15 s. Simulation, STL takes 13 s. Simulation, OBJ takes 19 s. Visual, GLB takes 20 s. Visual, OBJ takes 23 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b0061b_Miniscope-v4_Miniscope-v4-Rigid-Flex/stages.webp)
 

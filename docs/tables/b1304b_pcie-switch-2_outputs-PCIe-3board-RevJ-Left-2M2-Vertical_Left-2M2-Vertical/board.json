@@ -1,0 +1,50 @@
+{
+ "name": "Left_2M2_Vertical",
+ "project": "isarmg/pcie-switch-2",
+ "path": "isarmg__pcie-switch-2/outputs/PCIe_3board_RevJ/Left_2M2_Vertical/Left_2M2_Vertical.kicad_pcb",
+ "license": "No license found",
+ "license_checked": "2026-11-08",
+ "rank": 981,
+ "score": 2563,
+ "level": "MEDIUM",
+ "complexity": {
+  "grade": 345,
+  "size": 260,
+  "features": 85
+ },
+ "features": [
+  "through_vias",
+  "blind_buried_vias",
+  "shaped_pads",
+  "filled_zones"
+ ],
+ "layers": 32,
+ "status": "pass",
+ "bad_design": null,
+ "chart_alt": "Left_2M2_Vertical: stages 4 and 6 take 35% to 78% of a run. Simulation, GLB takes 26 s. Simulation, STEP takes 30 s. Simulation, STL takes 26 s. Simulation, OBJ takes 48 s. Visual, GLB takes 32 s. Visual, OBJ takes 35 s",
+ "rerun": {},
+ "tested": [
+  "2026-11-09",
+  "2026-11-09"
+ ],
+ "kese": [
+  "22fd70c"
+ ],
+ "kese_version": [
+  "2.4.0"
+ ],
+ "runs": [
+  [
+   "corpus",
+   "2026-11-09",
+   11000000000.0,
+   5400.0
+  ]
+ ],
+ "machine": {
+  "cpu": "Intel(R) Xeon(R) Processor @ 2.30GHz, 4 cores, 15 GB",
+  "geos": "3.14.1",
+  "python": "3.13.18",
+  "shapely": "2.2.0"
+ }
+}
