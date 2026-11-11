@@ -1,4 +1,4 @@
-# 149 Blitter Board
+# 149. Blitter Board
 
 Board 149 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 2](../CorpusTestingPages/Corpus-Testing-02.md#149-blitter-board).
 
@@ -45,4 +45,4 @@ Board 149 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [148 Audio Clock](b0148b_658-Computer_Audio-Clock.md) | [150 Added 8bit](b0150b_658-Computer_Added-8bit.md) |
+| [148. Audio Clock](b0148b_658-Computer_Audio-Clock.md) | [150. Added 8bit](b0150b_658-Computer_Added-8bit.md) |

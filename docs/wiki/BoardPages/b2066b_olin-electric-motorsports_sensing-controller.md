@@ -1,4 +1,4 @@
-# 2066 sensing_controller
+# 2066. sensing_controller
 
 Board 2,066 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 20](../CorpusTestingPages/Corpus-Testing-20.md#2066-sensing_controller).
 
@@ -45,4 +45,4 @@ Board 2,066 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2065 sensing_carrier](b2065b_olin-electric-motorsports_sensing-carrier.md) | [2067 AIRs](b2067b_olin-electric-motorsports_AIRs.md) |
+| [2065. sensing_carrier](b2065b_olin-electric-motorsports_sensing-carrier.md) | [2067. AIRs](b2067b_olin-electric-motorsports_AIRs.md) |

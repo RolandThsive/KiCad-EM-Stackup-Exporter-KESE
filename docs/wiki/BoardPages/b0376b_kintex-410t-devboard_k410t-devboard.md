@@ -1,4 +1,4 @@
-# 376 k410t-devboard
+# 376. k410t-devboard
 
 Board 376 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 4](../CorpusTestingPages/Corpus-Testing-04.md#376-k410t-devboard).
 
@@ -44,4 +44,4 @@ Board 376 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [375 jetson-orin-baseboard-storage-expansion](b0375b_job-storage-expansion_jetson-orin-baseboard-storage-expansion.md) | [377 kria-k26-devboard](b0377b_kria-k26-devboard_kria-k26-devboard.md) |
+| [375. jetson-orin-baseboard-storage-expansion](b0375b_job-storage-expansion_jetson-orin-baseboard-storage-expansion.md) | [377. kria-k26-devboard](b0377b_kria-k26-devboard_kria-k26-devboard.md) |

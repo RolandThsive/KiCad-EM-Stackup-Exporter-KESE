@@ -1,4 +1,4 @@
-# 1247 4in1
+# 1247. 4in1
 
 Board 1,247 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 12](../CorpusTestingPages/Corpus-Testing-12.md#1247-4in1).
 
@@ -45,4 +45,4 @@ Board 1,247 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1246 4in1-panel](b1246b_openesc-30x30_4in1-panel.md) | [1248 H745 CM4 module](b1248b_bb3-cm4_H745-CM4-module.md) |
+| [1246. 4in1-panel](b1246b_openesc-30x30_4in1-panel.md) | [1248. H745 CM4 module](b1248b_bb3-cm4_H745-CM4-module.md) |

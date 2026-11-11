@@ -1,4 +1,4 @@
-# 1701 Analog Converter Backplane
+# 1701. Analog Converter Backplane
 
 Board 1,701 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 16](../CorpusTestingPages/Corpus-Testing-16.md#1701-analog-converter-backplane).
 
@@ -45,4 +45,4 @@ Board 1,701 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1700 Analog Controller](b1700b_embeddedbakery_Analog-Controller.md) | [1702 Analog Converter](b1702b_embeddedbakery_Analog-Converter.md) |
+| [1700. Analog Controller](b1700b_embeddedbakery_Analog-Controller.md) | [1702. Analog Converter](b1702b_embeddedbakery_Analog-Converter.md) |

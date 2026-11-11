@@ -1,4 +1,4 @@
-# 362 hdmi-edid-debug-board
+# 362. hdmi-edid-debug-board
 
 Board 362 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 4](../CorpusTestingPages/Corpus-Testing-04.md#362-hdmi-edid-debug-board).
 
@@ -44,4 +44,4 @@ Board 362 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [361 gpu-cluster-backplane](b0361b_gpu-cluster-backplane_gpu-cluster-backplane.md) | [363 antmicro-hdmi-mipi-bridge-hw](b0363b_hdmi-mipi-bridge_antmicro-hdmi-mipi-bridge-hw.md) |
+| [361. gpu-cluster-backplane](b0361b_gpu-cluster-backplane_gpu-cluster-backplane.md) | [363. antmicro-hdmi-mipi-bridge-hw](b0363b_hdmi-mipi-bridge_antmicro-hdmi-mipi-bridge-hw.md) |

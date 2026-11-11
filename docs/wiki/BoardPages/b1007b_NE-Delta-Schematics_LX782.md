@@ -1,4 +1,4 @@
-# 1007 LX782
+# 1007. LX782
 
 Board 1,007 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 10](../CorpusTestingPages/Corpus-Testing-10.md#1007-lx782).
 
@@ -45,4 +45,4 @@ Board 1,007 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1006 NE_Delta](b1006b_NE-Delta-Schematics_LX780-Delta-original_NE-Delta.md) | [1008 LX783](b1008b_NE-Delta-Schematics_LX783.md) |
+| [1006. NE_Delta](b1006b_NE-Delta-Schematics_LX780-Delta-original_NE-Delta.md) | [1008. LX783](b1008b_NE-Delta-Schematics_LX783.md) |

@@ -1,4 +1,4 @@
-# 1199 StackLink
+# 1199. StackLink
 
 Board 1,199 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 12](../CorpusTestingPages/Corpus-Testing-12.md#1199-stacklink).
 
@@ -45,4 +45,4 @@ Board 1,199 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1198 jitx-design](b1198b_logicanalyzer_jitx-design.md) | [1200 sprig_console](b1200b_sprig_hardware-mainboard-PCB-kicad_sprig-console.md) |
+| [1198. jitx-design](b1198b_logicanalyzer_jitx-design.md) | [1200. sprig_console](b1200b_sprig_hardware-mainboard-PCB-kicad_sprig-console.md) |

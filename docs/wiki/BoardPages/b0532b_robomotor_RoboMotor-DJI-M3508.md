@@ -1,4 +1,4 @@
-# 532 RoboMotor-DJI-M3508
+# 532. RoboMotor-DJI-M3508
 
 Board 532 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 5](../CorpusTestingPages/Corpus-Testing-05.md#532-robomotor-dji-m3508).
 
@@ -45,4 +45,4 @@ Board 532 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [531 dabao_v3c](b0531b_dabao_dabao-v3c.md) | [533 RoboMotor-GIM6010-V2-Encoder](b0533b_robomotor_RoboMotor-GIM6010-V2-Encoder.md) |
+| [531. dabao_v3c](b0531b_dabao_dabao-v3c.md) | [533. RoboMotor-GIM6010-V2-Encoder](b0533b_robomotor_RoboMotor-GIM6010-V2-Encoder.md) |

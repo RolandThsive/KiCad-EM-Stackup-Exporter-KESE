@@ -1,4 +1,4 @@
-# 2731 precharge
+# 2731. precharge
 
 Board 2,731 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 26](../CorpusTestingPages/Corpus-Testing-26.md#2731-precharge).
 
@@ -45,4 +45,4 @@ Board 2,731 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2730 PCB - VOLTAGE TAPS](b2730b_pcb_PCB-VOLTAGE-TAPS.md) | [2732 right-sidepanel](b2732b_pcb_right-sidepanel.md) |
+| [2730. PCB - VOLTAGE TAPS](b2730b_pcb_PCB-VOLTAGE-TAPS.md) | [2732. right-sidepanel](b2732b_pcb_right-sidepanel.md) |

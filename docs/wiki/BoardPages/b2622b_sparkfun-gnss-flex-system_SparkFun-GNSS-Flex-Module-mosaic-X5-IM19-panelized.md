@@ -1,4 +1,4 @@
-# 2622 SparkFun_GNSS_Flex_Module_mosaic-X5_IM19_panelized
+# 2622. SparkFun_GNSS_Flex_Module_mosaic-X5_IM19_panelized
 
 Board 2,622 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 25](../CorpusTestingPages/Corpus-Testing-25.md#2622-sparkfun_gnss_flex_module_mosaic-x5_im19_panelized).
 
@@ -46,4 +46,4 @@ Board 2,622 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2621 SparkFun_GNSS_Flex_Module_mosaic-G5_P3_Tilt](b2621b_sparkfun-gnss-flex-system_SparkFun-GNSS-Flex-Module-mosaic-G5-P3-Tilt.md) | [2623 SparkFun_GNSS_Flex_Module_mosaic-X5_IM19](b2623b_sparkfun-gnss-flex-system_SparkFun-GNSS-Flex-Module-mosaic-X5-IM19.md) |
+| [2621. SparkFun_GNSS_Flex_Module_mosaic-G5_P3_Tilt](b2621b_sparkfun-gnss-flex-system_SparkFun-GNSS-Flex-Module-mosaic-G5-P3-Tilt.md) | [2623. SparkFun_GNSS_Flex_Module_mosaic-X5_IM19](b2623b_sparkfun-gnss-flex-system_SparkFun-GNSS-Flex-Module-mosaic-X5-IM19.md) |

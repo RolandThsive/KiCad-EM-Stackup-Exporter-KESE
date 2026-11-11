@@ -1,4 +1,4 @@
-# 1841 ESP32-EVB_Rev_J
+# 1841. ESP32-EVB_Rev_J
 
 Board 1,841 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 18](../CorpusTestingPages/Corpus-Testing-18.md#1841-esp32-evb_rev_j).
 
@@ -45,4 +45,4 @@ Board 1,841 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1840 ESP32-EVB_Rev_I](b1840b_ESP32-EVB_ESP32-EVB-Rev-I.md) | [1842 ESP32-EVB_Rev_K](b1842b_ESP32-EVB_ESP32-EVB-Rev-K.md) |
+| [1840. ESP32-EVB_Rev_I](b1840b_ESP32-EVB_ESP32-EVB-Rev-I.md) | [1842. ESP32-EVB_Rev_K](b1842b_ESP32-EVB_ESP32-EVB-Rev-K.md) |

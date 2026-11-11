@@ -1,4 +1,4 @@
-# 1653 pmod_connector_board
+# 1653. pmod_connector_board
 
 Board 1,653 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 16](../CorpusTestingPages/Corpus-Testing-16.md#1653-pmod_connector_board).
 
@@ -45,4 +45,4 @@ Board 1,653 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1652 mega65-r3-expansion-board.kicad](b1652b_mega65-r3-expansion-board_mega65-r3-expansion-board-kicad.md) | [1654 IIsi-to-ztex](b1654b_IIsiFPGA_IIsi-to-ztex.md) |
+| [1652. mega65-r3-expansion-board.kicad](b1652b_mega65-r3-expansion-board_mega65-r3-expansion-board-kicad.md) | [1654. IIsi-to-ztex](b1654b_IIsiFPGA_IIsi-to-ztex.md) |

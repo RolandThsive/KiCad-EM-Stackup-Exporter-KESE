@@ -1,4 +1,4 @@
-# 1282 ulx5m-gs
+# 1282. ulx5m-gs
 
 Board 1,282 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 12](../CorpusTestingPages/Corpus-Testing-12.md#1282-ulx5m-gs).
 
@@ -45,4 +45,4 @@ Board 1,282 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1281 ulx5m-gs_panel_checked_v002](b1281b_ulx5m-gs_ulx5m-gs-panel-checked-v002.md) | [1283 ulx5m-m2](b1283b_ulx5m-m2_ulx5m-m2.md) |
+| [1281. ulx5m-gs_panel_checked_v002](b1281b_ulx5m-gs_ulx5m-gs-panel-checked-v002.md) | [1283. ulx5m-m2](b1283b_ulx5m-m2_ulx5m-m2.md) |

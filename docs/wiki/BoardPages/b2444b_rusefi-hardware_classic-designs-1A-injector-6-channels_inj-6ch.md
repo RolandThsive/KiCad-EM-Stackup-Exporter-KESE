@@ -1,4 +1,4 @@
-# 2444 inj_6ch
+# 2444. inj_6ch
 
 Board 2,444 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 23](../CorpusTestingPages/Corpus-Testing-23.md#2444-inj_6ch).
 
@@ -45,4 +45,4 @@ Board 2,444 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2443 inj_12ch](b2443b_rusefi-hardware_inj-12ch.md) | [2445 PWR_5V_linear](b2445b_rusefi-hardware_PWR-5V-linear.md) |
+| [2443. inj_12ch](b2443b_rusefi-hardware_inj-12ch.md) | [2445. PWR_5V_linear](b2445b_rusefi-hardware_PWR-5V-linear.md) |

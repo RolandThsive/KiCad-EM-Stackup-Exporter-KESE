@@ -1,4 +1,4 @@
-# 1697 Examples
+# 1697. Examples
 
 Board 1,697 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 16](../CorpusTestingPages/Corpus-Testing-16.md#1697-examples).
 
@@ -45,4 +45,4 @@ Board 1,697 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1696 Digital Logic Board](b1696b_embeddedbakery_Digital-Logic-Board.md) | [1698 PROM](b1698b_embeddedbakery_PROM.md) |
+| [1696. Digital Logic Board](b1696b_embeddedbakery_Digital-Logic-Board.md) | [1698. PROM](b1698b_embeddedbakery_PROM.md) |

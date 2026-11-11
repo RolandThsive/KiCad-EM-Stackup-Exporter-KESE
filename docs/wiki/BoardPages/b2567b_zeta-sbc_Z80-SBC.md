@@ -1,4 +1,4 @@
-# 2567 Z80-SBC
+# 2567. Z80-SBC
 
 Board 2,567 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 24](../CorpusTestingPages/Corpus-Testing-24.md#2567-z80-sbc).
 
@@ -45,4 +45,4 @@ Board 2,567 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2566 Tiny_Z80](b2566b_tiny-z80_Tiny-Z80.md) | [2568 bitaxeUltra](b2568b_bitaxe_bitaxeUltra.md) |
+| [2566. Tiny_Z80](b2566b_tiny-z80_Tiny-Z80.md) | [2568. bitaxeUltra](b2568b_bitaxe_bitaxeUltra.md) |

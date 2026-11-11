@@ -1,4 +1,4 @@
-# 1169 icebreaker++
+# 1169. icebreaker++
 
 Board 1,169 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 11](../CorpusTestingPages/Corpus-Testing-11.md#1169-icebreaker).
 
@@ -45,4 +45,4 @@ Board 1,169 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1168 hdmi-si](b1168b_advent-calendar-of-circuits-2020_hdmi-si.md) | [1170 jtag-programmer](b1170b_advent-calendar-of-circuits-2020_jtag-programmer.md) |
+| [1168. hdmi-si](b1168b_advent-calendar-of-circuits-2020_hdmi-si.md) | [1170. jtag-programmer](b1170b_advent-calendar-of-circuits-2020_jtag-programmer.md) |

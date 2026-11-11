@@ -1,4 +1,4 @@
-# 895 TS_Back_Endcap
+# 895. TS_Back_Endcap
 
 Board 895 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 9](../CorpusTestingPages/Corpus-Testing-09.md#895-ts_back_endcap).
 
@@ -45,4 +45,4 @@ Board 895 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [894 Thunderscope_Rev5.3](b0894b_ThunderScope_Thunderscope-Rev5-3.md) | [896 TS_Front_Endcap](b0896b_ThunderScope_TS-Front-Endcap.md) |
+| [894. Thunderscope_Rev5.3](b0894b_ThunderScope_Thunderscope-Rev5-3.md) | [896. TS_Front_Endcap](b0896b_ThunderScope_TS-Front-Endcap.md) |

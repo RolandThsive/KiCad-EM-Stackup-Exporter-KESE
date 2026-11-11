@@ -1,4 +1,4 @@
-# 1388 BeamBender
+# 1388. BeamBender
 
 Board 1,388 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 13](../CorpusTestingPages/Corpus-Testing-13.md#1388-beambender).
 
@@ -45,4 +45,4 @@ Board 1,388 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1387 N2360](b1387b_Amiga-N2630_KiCAD-Archive-A2630-New-KiCAD-Rev401-PLCC_N2360.md) | [1389 SF2000](b1389b_SF2000_SF2000.md) |
+| [1387. N2360](b1387b_Amiga-N2630_KiCAD-Archive-A2630-New-KiCAD-Rev401-PLCC_N2360.md) | [1389. SF2000](b1389b_SF2000_SF2000.md) |

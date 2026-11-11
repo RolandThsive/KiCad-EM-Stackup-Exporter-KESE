@@ -1,4 +1,4 @@
-# 1410 2057-ICE40HX4K-TQ144-breakout
+# 1410. 2057-ICE40HX4K-TQ144-breakout
 
 Board 1,410 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 14](../CorpusTestingPages/Corpus-Testing-14.md#1410-2057-ice40hx4k-tq144-breakout).
 
@@ -44,4 +44,4 @@ Board 1,410 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1409 Q3Q-SWAB-A1-00 Temperature + Test Points + OPT3001](b1409b_Sensor-Watch_Q3Q-SWAB-A1-00-Temperature-Test-Points-OPT3001.md) | [1411 gw](b1411b_blixten_gw.md) |
+| [1409. Q3Q-SWAB-A1-00 Temperature + Test Points + OPT3001](b1409b_Sensor-Watch_Q3Q-SWAB-A1-00-Temperature-Test-Points-OPT3001.md) | [1411. gw](b1411b_blixten_gw.md) |

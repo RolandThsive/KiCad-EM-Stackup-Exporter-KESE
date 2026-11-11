@@ -1,4 +1,4 @@
-# 1427 x65-sbc-revB1
+# 1427. x65-sbc-revB1
 
 Board 1,427 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 14](../CorpusTestingPages/Corpus-Testing-14.md#1427-x65-sbc-revb1).
 
@@ -45,4 +45,4 @@ Board 1,427 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1426 x65-sbc-revA1](b1426b_x65_x65-sbc-revA1.md) | [1428 DFTBoard](b1428b_zynqpcb_DFTBoard.md) |
+| [1426. x65-sbc-revA1](b1426b_x65_x65-sbc-revA1.md) | [1428. DFTBoard](b1428b_zynqpcb_DFTBoard.md) |

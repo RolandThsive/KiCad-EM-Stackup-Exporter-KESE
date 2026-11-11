@@ -1,4 +1,4 @@
-# 1168 hdmi-si
+# 1168. hdmi-si
 
 Board 1,168 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 11](../CorpusTestingPages/Corpus-Testing-11.md#1168-hdmi-si).
 
@@ -45,4 +45,4 @@ Board 1,168 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1167 gpdi](b1167b_advent-calendar-of-circuits-2020_gpdi.md) | [1169 icebreaker++](b1169b_advent-calendar-of-circuits-2020_icebreaker.md) |
+| [1167. gpdi](b1167b_advent-calendar-of-circuits-2020_gpdi.md) | [1169. icebreaker++](b1169b_advent-calendar-of-circuits-2020_icebreaker.md) |

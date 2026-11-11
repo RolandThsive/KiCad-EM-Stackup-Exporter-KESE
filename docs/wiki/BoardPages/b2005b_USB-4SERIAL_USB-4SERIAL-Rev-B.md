@@ -1,4 +1,4 @@
-# 2005 USB-4SERIAL_Rev_B
+# 2005. USB-4SERIAL_Rev_B
 
 Board 2,005 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 19](../CorpusTestingPages/Corpus-Testing-19.md#2005-usb-4serial_rev_b).
 
@@ -45,4 +45,4 @@ Board 2,005 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2004 URC_revB](b2004b_URC_URC-revB.md) | [2006 USB-GIGABIT_Rev_C](b2006b_USB-GIGABIT_USB-GIGABIT-Rev-C.md) |
+| [2004. URC_revB](b2004b_URC_URC-revB.md) | [2006. USB-GIGABIT_Rev_C](b2006b_USB-GIGABIT_USB-GIGABIT-Rev-C.md) |

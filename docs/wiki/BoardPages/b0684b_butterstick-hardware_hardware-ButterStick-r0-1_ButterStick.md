@@ -1,4 +1,4 @@
-# 684 ButterStick
+# 684. ButterStick
 
 Board 684 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 7](../CorpusTestingPages/Corpus-Testing-07.md#684-butterstick).
 
@@ -45,4 +45,4 @@ Board 684 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [683 ClassicIIRevB](b0683b_ClassicII_ClassicIIRevB.md) | [685 ButterStick](b0685b_butterstick-hardware_hardware-ButterStick-r0-2_ButterStick.md) |
+| [683. ClassicIIRevB](b0683b_ClassicII_ClassicIIRevB.md) | [685. ButterStick](b0685b_butterstick-hardware_hardware-ButterStick-r0-2_ButterStick.md) |

@@ -1,4 +1,4 @@
-# 653 EinsteinTC01
+# 653. EinsteinTC01
 
 Board 653 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 7](../CorpusTestingPages/Corpus-Testing-07.md#653-einsteintc01).
 
@@ -45,4 +45,4 @@ Board 653 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [652 V9958AdapterTC01](b0652b_Einstein-TC-01_V9958AdapterTC01.md) | [654 EinsteinCE](b0654b_Einstein-TC-01_EinsteinCE.md) |
+| [652. V9958AdapterTC01](b0652b_Einstein-TC-01_V9958AdapterTC01.md) | [654. EinsteinCE](b0654b_Einstein-TC-01_EinsteinCE.md) |

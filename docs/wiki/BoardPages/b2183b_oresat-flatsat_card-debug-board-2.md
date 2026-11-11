@@ -1,4 +1,4 @@
-# 2183 card-debug-board-2
+# 2183. card-debug-board-2
 
 Board 2,183 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 21](../CorpusTestingPages/Corpus-Testing-21.md#2183-card-debug-board-2).
 
@@ -45,4 +45,4 @@ Board 2,183 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2182 c3s-card-adapter](b2182b_oresat-flatsat_c3s-card-adapter.md) | [2184 card-debug-board-3](b2184b_oresat-flatsat_card-debug-board-3.md) |
+| [2182. c3s-card-adapter](b2182b_oresat-flatsat_c3s-card-adapter.md) | [2184. card-debug-board-3](b2184b_oresat-flatsat_card-debug-board-3.md) |

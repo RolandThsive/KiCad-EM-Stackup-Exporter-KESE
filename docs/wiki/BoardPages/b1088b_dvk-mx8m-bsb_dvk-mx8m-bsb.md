@@ -1,4 +1,4 @@
-# 1088 dvk-mx8m-bsb
+# 1088. dvk-mx8m-bsb
 
 Board 1,088 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 11](../CorpusTestingPages/Corpus-Testing-11.md#1088-dvk-mx8m-bsb).
 
@@ -44,4 +44,4 @@ Board 1,088 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1087 xc9500xl_44_breakout](b1087b_myelin-acorn-electron-hardware_xc9500xl-44-breakout.md) | [1089 librem5_mainboard](b1089b_l5-schematic_CAD-KiCad-librem5-mainboard_librem5-mainboard.md) |
+| [1087. xc9500xl_44_breakout](b1087b_myelin-acorn-electron-hardware_xc9500xl-44-breakout.md) | [1089. librem5_mainboard](b1089b_l5-schematic_CAD-KiCad-librem5-mainboard_librem5-mainboard.md) |

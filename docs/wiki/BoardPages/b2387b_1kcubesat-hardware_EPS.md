@@ -1,4 +1,4 @@
-# 2387 EPS
+# 2387. EPS
 
 Board 2,387 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 23](../CorpusTestingPages/Corpus-Testing-23.md#2387-eps).
 
@@ -45,4 +45,4 @@ Board 2,387 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2386 AVIONICS_BOARD](b2386b_1kcubesat-hardware_AVIONICS-BOARD.md) | [2388 sun_sensor_test](b2388b_1kcubesat-hardware_sun-sensor-test.md) |
+| [2386. AVIONICS_BOARD](b2386b_1kcubesat-hardware_AVIONICS-BOARD.md) | [2388. sun_sensor_test](b2388b_1kcubesat-hardware_sun-sensor-test.md) |

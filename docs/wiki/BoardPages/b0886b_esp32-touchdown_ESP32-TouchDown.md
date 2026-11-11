@@ -1,4 +1,4 @@
-# 886 ESP32_TouchDown
+# 886. ESP32_TouchDown
 
 Board 886 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 9](../CorpusTestingPages/Corpus-Testing-09.md#886-esp32_touchdown).
 
@@ -45,4 +45,4 @@ Board 886 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [885 ESP32_TouchDown_Rev1.1](b0885b_esp32-touchdown_ESP32-TouchDown-Rev1-1.md) | [887 PCIe-Adapter](b0887b_ecp5-pcie_PCIe-Adapter.md) |
+| [885. ESP32_TouchDown_Rev1.1](b0885b_esp32-touchdown_ESP32-TouchDown-Rev1-1.md) | [887. PCIe-Adapter](b0887b_ecp5-pcie_PCIe-Adapter.md) |

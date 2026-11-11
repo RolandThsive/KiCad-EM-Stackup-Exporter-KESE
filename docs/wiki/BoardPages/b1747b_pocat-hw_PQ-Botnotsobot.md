@@ -1,4 +1,4 @@
-# 1747 PQ_Botnotsobot
+# 1747. PQ_Botnotsobot
 
 Board 1,747 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 17](../CorpusTestingPages/Corpus-Testing-17.md#1747-pq_botnotsobot).
 
@@ -45,4 +45,4 @@ Board 1,747 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1746 PQ_BotBoard](b1746b_pocat-hw_PQ-BotBoard.md) | [1748 EGSE](b1748b_pocat-hw_EGSE.md) |
+| [1746. PQ_BotBoard](b1746b_pocat-hw_PQ-BotBoard.md) | [1748. EGSE](b1748b_pocat-hw_EGSE.md) |

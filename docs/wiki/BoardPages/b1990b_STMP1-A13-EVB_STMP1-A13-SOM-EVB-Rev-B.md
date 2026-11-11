@@ -1,4 +1,4 @@
-# 1990 STMP1(A13)-SOM-EVB_Rev_B
+# 1990. STMP1(A13)-SOM-EVB_Rev_B
 
 Board 1,990 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 19](../CorpusTestingPages/Corpus-Testing-19.md#1990-stmp1a13-som-evb_rev_b).
 
@@ -45,4 +45,4 @@ Board 1,990 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1989 smd-protoboard](b1989b_SMT-PROTOBOARD_smd-protoboard.md) | [1991 STMP1-OLinuXino_Rev_A](b1991b_STMP1-OLinuXino_STMP1-OLinuXino-Rev-A.md) |
+| [1989. smd-protoboard](b1989b_SMT-PROTOBOARD_smd-protoboard.md) | [1991. STMP1-OLinuXino_Rev_A](b1991b_STMP1-OLinuXino_STMP1-OLinuXino-Rev-A.md) |

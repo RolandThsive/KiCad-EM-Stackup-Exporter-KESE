@@ -1,4 +1,4 @@
-# 2153 cfc_emulator
+# 2153. cfc_emulator
 
 Board 2,153 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 20](../CorpusTestingPages/Corpus-Testing-20.md#2153-cfc_emulator).
 
@@ -45,4 +45,4 @@ Board 2,153 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2152 amp-PA-GRF5504-with-detect](b2152b_oresat-c3-rf_amp-PA-GRF5504-with-detect.md) | [2154 cfc-minibackplane](b2154b_oresat-cfc-hardware_cfc-minibackplane.md) |
+| [2152. amp-PA-GRF5504-with-detect](b2152b_oresat-c3-rf_amp-PA-GRF5504-with-detect.md) | [2154. cfc-minibackplane](b2154b_oresat-cfc-hardware_cfc-minibackplane.md) |

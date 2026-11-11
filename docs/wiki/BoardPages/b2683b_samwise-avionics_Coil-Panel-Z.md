@@ -1,4 +1,4 @@
-# 2683 Coil_Panel_Z
+# 2683. Coil_Panel_Z
 
 Board 2,683 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 25](../CorpusTestingPages/Corpus-Testing-25.md#2683-coil_panel_z).
 
@@ -46,4 +46,4 @@ Board 2,683 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2682 Coil_Panel_XY](b2682b_samwise-avionics_Coil-Panel-XY.md) | [2684 FeatherRadioAdapter](b2684b_samwise-avionics_FeatherRadioAdapter.md) |
+| [2682. Coil_Panel_XY](b2682b_samwise-avionics_Coil-Panel-XY.md) | [2684. FeatherRadioAdapter](b2684b_samwise-avionics_FeatherRadioAdapter.md) |

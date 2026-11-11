@@ -1,4 +1,4 @@
-# 2901 pref-display-front
+# 2901. pref-display-front
 
 Board 2,901 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 27](../CorpusTestingPages/Corpus-Testing-27.md#2901-pref-display-front).
 
@@ -46,4 +46,4 @@ Board 2,901 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2900 pref-display-front-d7](b2900b_pocket-reform_pref-display-front-d7.md) | [2902 pref-keyboard-back-d1-fr4](b2902b_pocket-reform_pref-keyboard-back-d1-fr4.md) |
+| [2900. pref-display-front-d7](b2900b_pocket-reform_pref-display-front-d7.md) | [2902. pref-keyboard-back-d1-fr4](b2902b_pocket-reform_pref-keyboard-back-d1-fr4.md) |

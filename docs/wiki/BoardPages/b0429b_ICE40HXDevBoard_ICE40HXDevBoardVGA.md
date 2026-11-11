@@ -1,4 +1,4 @@
-# 429 ICE40HXDevBoardVGA
+# 429. ICE40HXDevBoardVGA
 
 Board 429 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 4](../CorpusTestingPages/Corpus-Testing-04.md#429-ice40hxdevboardvga).
 
@@ -45,4 +45,4 @@ Board 429 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [428 ICE40HXDevBoardHDMI](b0428b_ICE40HXDevBoard_ICE40HXDevBoardHDMI.md) | [430 ICE40HXDevBoard](b0430b_ICE40HXDevBoard_ICE40HXDevBoard.md) |
+| [428. ICE40HXDevBoardHDMI](b0428b_ICE40HXDevBoard_ICE40HXDevBoardHDMI.md) | [430. ICE40HXDevBoard](b0430b_ICE40HXDevBoard_ICE40HXDevBoard.md) |

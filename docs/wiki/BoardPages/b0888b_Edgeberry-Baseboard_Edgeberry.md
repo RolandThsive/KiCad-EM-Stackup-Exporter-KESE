@@ -1,4 +1,4 @@
-# 888 Edgeberry
+# 888. Edgeberry
 
 Board 888 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 9](../CorpusTestingPages/Corpus-Testing-09.md#888-edgeberry).
 
@@ -44,4 +44,4 @@ Board 888 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [887 PCIe-Adapter](b0887b_ecp5-pcie_PCIe-Adapter.md) | [889 k-1008-visable-memory](b0889b_k-1008-visable-memory-card-replica_k-1008-visable-memory.md) |
+| [887. PCIe-Adapter](b0887b_ecp5-pcie_PCIe-Adapter.md) | [889. k-1008-visable-memory](b0889b_k-1008-visable-memory-card-replica_k-1008-visable-memory.md) |

@@ -1,4 +1,4 @@
-# 616 in-shaft-wsg-daughter
+# 616. in-shaft-wsg-daughter
 
 Board 616 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 6](../CorpusTestingPages/Corpus-Testing-06.md#616-in-shaft-wsg-daughter).
 
@@ -45,4 +45,4 @@ Board 616 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [615 justin_big_hbridge](b0615b_bjr-kicad_justin-big-hbridge.md) | [617 in-shaft-wsg-mommy](b0617b_bjr-kicad_in-shaft-wsg-mommy.md) |
+| [615. justin_big_hbridge](b0615b_bjr-kicad_justin-big-hbridge.md) | [617. in-shaft-wsg-mommy](b0617b_bjr-kicad_in-shaft-wsg-mommy.md) |

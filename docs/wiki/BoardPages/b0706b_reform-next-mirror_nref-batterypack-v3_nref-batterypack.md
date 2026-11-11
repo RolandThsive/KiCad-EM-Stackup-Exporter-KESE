@@ -1,4 +1,4 @@
-# 706 nref-batterypack
+# 706. nref-batterypack
 
 Board 706 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 7](../CorpusTestingPages/Corpus-Testing-07.md#706-nref-batterypack).
 
@@ -45,4 +45,4 @@ Board 706 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [705 nref-batterypack-backside](b0705b_reform-next-mirror_nref-batterypack-v3_nref-batterypack-backside.md) | [707 nref-batterypack-backside](b0707b_reform-next-mirror_nref-batterypack_nref-batterypack-backside.md) |
+| [705. nref-batterypack-backside](b0705b_reform-next-mirror_nref-batterypack-v3_nref-batterypack-backside.md) | [707. nref-batterypack-backside](b0707b_reform-next-mirror_nref-batterypack_nref-batterypack-backside.md) |

@@ -1,4 +1,4 @@
-# 2253 vectornav_carrier
+# 2253. vectornav_carrier
 
 Board 2,253 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 21](../CorpusTestingPages/Corpus-Testing-21.md#2253-vectornav_carrier).
 
@@ -45,4 +45,4 @@ Board 2,253 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2252 ovc3](b2252b_ovc_ovc3-hardware-ovc3b-ovc3b-camera_ovc3.md) | [2254 ovc4](b2254b_ovc_ovc4.md) |
+| [2252. ovc3](b2252b_ovc_ovc3-hardware-ovc3b-ovc3b-camera_ovc3.md) | [2254. ovc4](b2254b_ovc_ovc4.md) |

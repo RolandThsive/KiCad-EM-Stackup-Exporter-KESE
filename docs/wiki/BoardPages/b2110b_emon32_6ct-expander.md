@@ -1,4 +1,4 @@
-# 2110 6ct-expander
+# 2110. 6ct-expander
 
 Board 2,110 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 20](../CorpusTestingPages/Corpus-Testing-20.md#2110-6ct-expander).
 
@@ -45,4 +45,4 @@ Board 2,110 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2109 osw-light](b2109b_open-smartwatch-light_osw-light.md) | [2111 emonPi3](b2111b_emon32_emonPi3.md) |
+| [2109. osw-light](b2109b_open-smartwatch-light_osw-light.md) | [2111. emonPi3](b2111b_emon32_emonPi3.md) |

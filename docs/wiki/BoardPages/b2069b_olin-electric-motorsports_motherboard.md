@@ -1,4 +1,4 @@
-# 2069 motherboard
+# 2069. motherboard
 
 Board 2,069 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 20](../CorpusTestingPages/Corpus-Testing-20.md#2069-motherboard).
 
@@ -45,4 +45,4 @@ Board 2,069 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2068 imd_latch](b2068b_olin-electric-motorsports_imd-latch.md) | [2070 precharge_discharge](b2070b_olin-electric-motorsports_precharge-discharge.md) |
+| [2068. imd_latch](b2068b_olin-electric-motorsports_imd-latch.md) | [2070. precharge_discharge](b2070b_olin-electric-motorsports_precharge-discharge.md) |

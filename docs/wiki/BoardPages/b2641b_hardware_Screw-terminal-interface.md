@@ -1,4 +1,4 @@
-# 2641 Screw terminal interface
+# 2641. Screw terminal interface
 
 Board 2,641 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 25](../CorpusTestingPages/Corpus-Testing-25.md#2641-screw-terminal-interface).
 
@@ -44,4 +44,4 @@ Board 2,641 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2640 NA6](b2640b_hardware_NA6.md) | [2642 v0.4.4d](b2642b_hardware_v0-4-4d.md) |
+| [2640. NA6](b2640b_hardware_NA6.md) | [2642. v0.4.4d](b2642b_hardware_v0-4-4d.md) |

@@ -1,4 +1,4 @@
-# 2694 ESP8266ControllerCircuit
+# 2694. ESP8266ControllerCircuit
 
 Board 2,694 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 25](../CorpusTestingPages/Corpus-Testing-25.md#2694-esp8266controllercircuit).
 
@@ -45,4 +45,4 @@ Board 2,694 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2693 ControllerCurrentShuntAddOn](b2693b_diybmsv4_ControllerCurrentShuntAddOn.md) | [2695 v4](b2695b_diybmsv4_v4.md) |
+| [2693. ControllerCurrentShuntAddOn](b2693b_diybmsv4_ControllerCurrentShuntAddOn.md) | [2695. v4](b2695b_diybmsv4_v4.md) |

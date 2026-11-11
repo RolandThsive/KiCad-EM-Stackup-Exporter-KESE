@@ -1,4 +1,4 @@
-# 1203 ZU64DR_RFSOC_A5
+# 1203. ZU64DR_RFSOC_A5
 
 Board 1,203 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 12](../CorpusTestingPages/Corpus-Testing-12.md#1203-zu64dr_rfsoc_a5).
 
@@ -45,4 +45,4 @@ Board 1,203 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1202 sprig_console](b1202b_sprig_sprig-hax-hardware-SprigHaxPCB-kicad_sprig-console.md) | [1204 Easyduino_Atmega_Nano](b1204b_Easyduino_Easyduino-Atmega-Nano.md) |
+| [1202. sprig_console](b1202b_sprig_sprig-hax-hardware-SprigHaxPCB-kicad_sprig-console.md) | [1204. Easyduino_Atmega_Nano](b1204b_Easyduino_Easyduino-Atmega-Nano.md) |

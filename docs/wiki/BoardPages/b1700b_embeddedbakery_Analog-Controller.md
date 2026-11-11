@@ -1,4 +1,4 @@
-# 1700 Analog Controller
+# 1700. Analog Controller
 
 Board 1,700 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 16](../CorpusTestingPages/Corpus-Testing-16.md#1700-analog-controller).
 
@@ -45,4 +45,4 @@ Board 1,700 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1699 h4n2rs485](b1699b_embeddedbakery_h4n2rs485.md) | [1701 Analog Converter Backplane](b1701b_embeddedbakery_Analog-Converter-Backplane.md) |
+| [1699. h4n2rs485](b1699b_embeddedbakery_h4n2rs485.md) | [1701. Analog Converter Backplane](b1701b_embeddedbakery_Analog-Converter-Backplane.md) |

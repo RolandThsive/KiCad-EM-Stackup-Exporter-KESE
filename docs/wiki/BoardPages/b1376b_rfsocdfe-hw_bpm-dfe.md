@@ -1,4 +1,4 @@
-# 1376 bpm_dfe
+# 1376. bpm_dfe
 
 Board 1,376 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 13](../CorpusTestingPages/Corpus-Testing-13.md#1376-bpm_dfe).
 
@@ -45,4 +45,4 @@ Board 1,376 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1375 reform2-trackpad](b1375b_reform_reform2-trackpad.md) | [1377 bench_stm32_esc](b1377b_stm32-brushless-motor-controller_bench-stm32-esc.md) |
+| [1375. reform2-trackpad](b1375b_reform_reform2-trackpad.md) | [1377. bench_stm32_esc](b1377b_stm32-brushless-motor-controller_bench-stm32-esc.md) |

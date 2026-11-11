@@ -1,4 +1,4 @@
-# 2592 io_jumper
+# 2592. io_jumper
 
 Board 2,592 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 24](../CorpusTestingPages/Corpus-Testing-24.md#2592-io_jumper).
 
@@ -45,4 +45,4 @@ Board 2,592 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2591 db9](b2591b_Hermes-Lite2_db9.md) | [2593 n2adr](b2593b_Hermes-Lite2_n2adr.md) |
+| [2591. db9](b2591b_Hermes-Lite2_db9.md) | [2593. n2adr](b2593b_Hermes-Lite2_n2adr.md) |

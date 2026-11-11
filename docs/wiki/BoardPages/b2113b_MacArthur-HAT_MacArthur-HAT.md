@@ -1,4 +1,4 @@
-# 2113 MacArthur-HAT
+# 2113. MacArthur-HAT
 
 Board 2,113 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 20](../CorpusTestingPages/Corpus-Testing-20.md#2113-macarthur-hat).
 
@@ -45,4 +45,4 @@ Board 2,113 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2112 OpenHW DevKit](b2112b_core-v-mcu-devkit_OpenHW-DevKit.md) | [2114 blade12](b2114b_lumenpnp_blade12.md) |
+| [2112. OpenHW DevKit](b2112b_core-v-mcu-devkit_OpenHW-DevKit.md) | [2114. blade12](b2114b_lumenpnp_blade12.md) |

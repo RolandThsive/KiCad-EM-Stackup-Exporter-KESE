@@ -1,4 +1,4 @@
-# 1652 mega65-r3-expansion-board.kicad
+# 1652. mega65-r3-expansion-board.kicad
 
 Board 1,652 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 16](../CorpusTestingPages/Corpus-Testing-16.md#1652-mega65-r3-expansion-boardkicad).
 
@@ -44,4 +44,4 @@ Board 1,652 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1651 jtag_base_board](b1651b_mega65-r3-expansion-board_jtag-base-board.md) | [1653 pmod_connector_board](b1653b_mega65-r3-expansion-board_pmod-connector-board.md) |
+| [1651. jtag_base_board](b1651b_mega65-r3-expansion-board_jtag-base-board.md) | [1653. pmod_connector_board](b1653b_mega65-r3-expansion-board_pmod-connector-board.md) |

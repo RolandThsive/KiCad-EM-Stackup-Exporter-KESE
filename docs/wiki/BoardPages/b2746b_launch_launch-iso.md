@@ -1,4 +1,4 @@
-# 2746 launch-iso
+# 2746. launch-iso
 
 Board 2,746 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 26](../CorpusTestingPages/Corpus-Testing-26.md#2746-launch-iso).
 
@@ -45,4 +45,4 @@ Board 2,746 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2745 launch-heavy](b2745b_launch_launch-heavy.md) | [2747 launch-lite-iso](b2747b_launch_launch-lite-iso.md) |
+| [2745. launch-heavy](b2745b_launch_launch-heavy.md) | [2747. launch-lite-iso](b2747b_launch_launch-lite-iso.md) |

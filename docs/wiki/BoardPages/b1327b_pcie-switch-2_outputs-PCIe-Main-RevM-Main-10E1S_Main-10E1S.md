@@ -1,4 +1,4 @@
-# 1327 Main_10E1S
+# 1327. Main_10E1S
 
 Board 1,327 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 13](../CorpusTestingPages/Corpus-Testing-13.md#1327-main_10e1s).
 
@@ -45,4 +45,4 @@ Board 1,327 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1326 Assembly_View](b1326b_pcie-switch-2_outputs-PCIe-Main-RevM-Assembly-View_Assembly-View.md) | [1328 BAGEL-MK1](b1328b_iss-pcb_BAGEL-MK1.md) |
+| [1326. Assembly_View](b1326b_pcie-switch-2_outputs-PCIe-Main-RevM-Assembly-View_Assembly-View.md) | [1328. BAGEL-MK1](b1328b_iss-pcb_BAGEL-MK1.md) |

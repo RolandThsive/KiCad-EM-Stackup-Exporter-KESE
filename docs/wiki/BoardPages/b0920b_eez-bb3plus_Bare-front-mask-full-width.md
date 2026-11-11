@@ -1,4 +1,4 @@
-# 920 Bare front mask full width
+# 920. Bare front mask full width
 
 Board 920 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 9](../CorpusTestingPages/Corpus-Testing-09.md#920-bare-front-mask-full-width).
 
@@ -45,4 +45,4 @@ Board 920 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [919 BB3plus mainboard](b0919b_eez-bb3plus_BB3plus-mainboard.md) | [921 Bare front mask half width](b0921b_eez-bb3plus_Bare-front-mask-half-width.md) |
+| [919. BB3plus mainboard](b0919b_eez-bb3plus_BB3plus-mainboard.md) | [921. Bare front mask half width](b0921b_eez-bb3plus_Bare-front-mask-half-width.md) |

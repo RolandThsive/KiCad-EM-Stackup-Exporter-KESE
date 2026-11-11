@@ -1,4 +1,4 @@
-# 2753 virgo-keyboard-test
+# 2753. virgo-keyboard-test
 
 Board 2,753 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 26](../CorpusTestingPages/Corpus-Testing-26.md#2753-virgo-keyboard-test).
 
@@ -45,4 +45,4 @@ Board 2,753 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2752 thelio-io](b2752b_thelio-io-hardware_thelio-io.md) | [2754 virgo-rpl-uph](b2754b_virgo_virgo-rpl-uph.md) |
+| [2752. thelio-io](b2752b_thelio-io-hardware_thelio-io.md) | [2754. virgo-rpl-uph](b2754b_virgo_virgo-rpl-uph.md) |

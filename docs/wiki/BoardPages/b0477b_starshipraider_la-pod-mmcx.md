@@ -1,4 +1,4 @@
-# 477 la-pod-mmcx
+# 477. la-pod-mmcx
 
 Board 477 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 5](../CorpusTestingPages/Corpus-Testing-05.md#477-la-pod-mmcx).
 
@@ -45,4 +45,4 @@ Board 477 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [476 integralstick-mead](b0476b_starshipraider_integralstick-mead.md) | [478 sma-test](b0478b_starshipraider_boards-probes-oshpark-sma-test-sma-test_sma-test.md) |
+| [476. integralstick-mead](b0476b_starshipraider_integralstick-mead.md) | [478. sma-test](b0478b_starshipraider_boards-probes-oshpark-sma-test-sma-test_sma-test.md) |

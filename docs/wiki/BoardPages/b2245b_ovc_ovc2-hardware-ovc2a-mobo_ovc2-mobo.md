@@ -1,4 +1,4 @@
-# 2245 ovc2_mobo
+# 2245. ovc2_mobo
 
 Board 2,245 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 21](../CorpusTestingPages/Corpus-Testing-21.md#2245-ovc2_mobo).
 
@@ -45,4 +45,4 @@ Board 2,245 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2244 mono_imu](b2244b_ovc_mono-imu.md) | [2246 ovc2_stereo](b2246b_ovc_ovc2-hardware-ovc2a-stereo_ovc2-stereo.md) |
+| [2244. mono_imu](b2244b_ovc_mono-imu.md) | [2246. ovc2_stereo](b2246b_ovc_ovc2-hardware-ovc2a-stereo_ovc2-stereo.md) |

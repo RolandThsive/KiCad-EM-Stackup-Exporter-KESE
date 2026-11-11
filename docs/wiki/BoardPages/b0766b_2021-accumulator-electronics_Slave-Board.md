@@ -1,4 +1,4 @@
-# 766 Slave Board
+# 766. Slave Board
 
 Board 766 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 8](../CorpusTestingPages/Corpus-Testing-08.md#766-slave-board).
 
@@ -45,4 +45,4 @@ Board 766 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [765 AIL_TSAL](b0765b_2021-accumulator-electronics_AIL-TSAL.md) | [767 Master_slave Connector](b0767b_2021-accumulator-electronics_Master-slave-Connector.md) |
+| [765. AIL_TSAL](b0765b_2021-accumulator-electronics_AIL-TSAL.md) | [767. Master_slave Connector](b0767b_2021-accumulator-electronics_Master-slave-Connector.md) |

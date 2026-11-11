@@ -1,4 +1,4 @@
-# 772 panel_proto_tracking_comparator_board
+# 772. panel_proto_tracking_comparator_board
 
 Board 772 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 8](../CorpusTestingPages/Corpus-Testing-08.md#772-panel_proto_tracking_comparator_board).
 
@@ -46,4 +46,4 @@ Board 772 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [771 panel_proto_lna_board](b0771b_adsbee_panel-proto-lna-board.md) | [773 panel_saw_eval_board](b0773b_adsbee_panel-saw-eval-board.md) |
+| [771. panel_proto_lna_board](b0771b_adsbee_panel-proto-lna-board.md) | [773. panel_saw_eval_board](b0773b_adsbee_panel-saw-eval-board.md) |

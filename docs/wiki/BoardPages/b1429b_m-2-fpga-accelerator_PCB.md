@@ -1,4 +1,4 @@
-# 1429 PCB
+# 1429. PCB
 
 Board 1,429 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 14](../CorpusTestingPages/Corpus-Testing-14.md#1429-pcb).
 
@@ -45,4 +45,4 @@ Board 1,429 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1428 DFTBoard](b1428b_zynqpcb_DFTBoard.md) | [1430 ZYNQ7020_AD9364_V2](b1430b_zynq7010-7020-ad9363_ZYNQ7020-AD9364-V2.md) |
+| [1428. DFTBoard](b1428b_zynqpcb_DFTBoard.md) | [1430. ZYNQ7020_AD9364_V2](b1430b_zynq7010-7020-ad9363_ZYNQ7020-AD9364-V2.md) |

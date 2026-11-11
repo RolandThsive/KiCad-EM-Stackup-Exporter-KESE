@@ -1,4 +1,4 @@
-# 2607 endcap
+# 2607. endcap
 
 Board 2,607 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 25](../CorpusTestingPages/Corpus-Testing-25.md#2607-endcap).
 
@@ -45,4 +45,4 @@ Board 2,607 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2606 endcap](b2606b_Hermes-Lite2_hardware-enclosure-endcaps-kf7o-hl2-40b_endcap.md) | [2608 endcap](b2608b_Hermes-Lite2_hardware-enclosure-endcaps-kf7o-hl2-55b_endcap.md) |
+| [2606. endcap](b2606b_Hermes-Lite2_hardware-enclosure-endcaps-kf7o-hl2-40b_endcap.md) | [2608. endcap](b2608b_Hermes-Lite2_hardware-enclosure-endcaps-kf7o-hl2-55b_endcap.md) |

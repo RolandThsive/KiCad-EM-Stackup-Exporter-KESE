@@ -1,4 +1,4 @@
-# 2696 ModuleV421
+# 2696. ModuleV421
 
 Board 2,696 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 25](../CorpusTestingPages/Corpus-Testing-25.md#2696-modulev421).
 
@@ -45,4 +45,4 @@ Board 2,696 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2695 v4](b2695b_diybmsv4_v4.md) | [2697 ModuleV440](b2697b_diybmsv4_ModuleV440.md) |
+| [2695. v4](b2695b_diybmsv4_v4.md) | [2697. ModuleV440](b2697b_diybmsv4_ModuleV440.md) |

@@ -1,4 +1,4 @@
-# 1843 ESP32-EVB_Rev_K1
+# 1843. ESP32-EVB_Rev_K1
 
 Board 1,843 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 18](../CorpusTestingPages/Corpus-Testing-18.md#1843-esp32-evb_rev_k1).
 
@@ -45,4 +45,4 @@ Board 1,843 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1842 ESP32-EVB_Rev_K](b1842b_ESP32-EVB_ESP32-EVB-Rev-K.md) | [1844 ESP32-EVB_Rev_K2](b1844b_ESP32-EVB_ESP32-EVB-Rev-K2.md) |
+| [1842. ESP32-EVB_Rev_K](b1842b_ESP32-EVB_ESP32-EVB-Rev-K.md) | [1844. ESP32-EVB_Rev_K2](b1844b_ESP32-EVB_ESP32-EVB-Rev-K2.md) |

@@ -1,4 +1,4 @@
-# 2108 osw
+# 2108. osw
 
 Board 2,108 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 20](../CorpusTestingPages/Corpus-Testing-20.md#2108-osw).
 
@@ -44,4 +44,4 @@ Board 2,108 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2107 stimjim](b2107b_stimjim_stimjim.md) | [2109 osw-light](b2109b_open-smartwatch-light_osw-light.md) |
+| [2107. stimjim](b2107b_stimjim_stimjim.md) | [2109. osw-light](b2109b_open-smartwatch-light_osw-light.md) |

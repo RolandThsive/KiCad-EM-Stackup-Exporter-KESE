@@ -1,4 +1,4 @@
-# 2226 star-tracker-card
+# 2226. star-tracker-card
 
 Board 2,226 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 21](../CorpusTestingPages/Corpus-Testing-21.md#2226-star-tracker-card).
 
@@ -45,4 +45,4 @@ Board 2,226 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2225 star-tracker-camera-board](b2225b_oresat-star-tracker-hardware_hardware-star-tracker-camera-board_star-tracker-camera-board.md) | [2227 GPIO to motor](b2227b_reaction-wheels_GPIO-to-motor.md) |
+| [2225. star-tracker-camera-board](b2225b_oresat-star-tracker-hardware_hardware-star-tracker-camera-board_star-tracker-camera-board.md) | [2227. GPIO to motor](b2227b_reaction-wheels_GPIO-to-motor.md) |

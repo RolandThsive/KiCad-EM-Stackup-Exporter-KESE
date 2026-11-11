@@ -1,4 +1,4 @@
-# 81 AOS16 Timer
+# 81. AOS16 Timer
 
 Board 81 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 1](../CorpusTestingPages/Corpus-Testing-01.md#81-aos16-timer).
 
@@ -45,4 +45,4 @@ Board 81 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page
 
 | Previous | Next |
 |:---|---:|
-| [80 AOS16 Register](b0080b_AOS16_AOS16-Register.md) | [82 Bus Connector](b0082b_AOS16_Bus-Connector.md) |
+| [80. AOS16 Register](b0080b_AOS16_AOS16-Register.md) | [82. Bus Connector](b0082b_AOS16_Bus-Connector.md) |

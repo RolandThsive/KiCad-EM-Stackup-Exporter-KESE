@@ -1,4 +1,4 @@
-# 1340 EAGLE-MK1-revA
+# 1340. EAGLE-MK1-revA
 
 Board 1,340 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 13](../CorpusTestingPages/Corpus-Testing-13.md#1340-eagle-mk1-reva).
 
@@ -45,4 +45,4 @@ Board 1,340 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1339 drone_power_3_screws](b1339b_iss-pcb_drone-power-3-screws.md) | [1341 EAGLE-MK1-revB](b1341b_iss-pcb_EAGLE-MK1-revB.md) |
+| [1339. drone_power_3_screws](b1339b_iss-pcb_drone-power-3-screws.md) | [1341. EAGLE-MK1-revB](b1341b_iss-pcb_EAGLE-MK1-revB.md) |

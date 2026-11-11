@@ -1,4 +1,4 @@
-# 2403 amiga2000
+# 2403. amiga2000
 
 Board 2,403 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 23](../CorpusTestingPages/Corpus-Testing-23.md#2403-amiga2000).
 
@@ -45,4 +45,4 @@ Board 2,403 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2402 zerofrank](b2402b_frank_zerofrank.md) | [2404 PicoEVB](b2404b_PicoEVB_PicoEVB.md) |
+| [2402. zerofrank](b2402b_frank_zerofrank.md) | [2404. PicoEVB](b2404b_PicoEVB_PicoEVB.md) |

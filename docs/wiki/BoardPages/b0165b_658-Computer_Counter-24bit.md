@@ -1,4 +1,4 @@
-# 165 Counter 24bit
+# 165. Counter 24bit
 
 Board 165 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 2](../CorpusTestingPages/Corpus-Testing-02.md#165-counter-24bit).
 
@@ -45,4 +45,4 @@ Board 165 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [164 Counter 24bit with IO](b0164b_658-Computer_Counter-24bit-with-IO.md) | [166 D Flip Flop 16bit](b0166b_658-Computer_D-Flip-Flop-16bit.md) |
+| [164. Counter 24bit with IO](b0164b_658-Computer_Counter-24bit-with-IO.md) | [166. D Flip Flop 16bit](b0166b_658-Computer_D-Flip-Flop-16bit.md) |

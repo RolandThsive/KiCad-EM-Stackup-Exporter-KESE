@@ -1,4 +1,4 @@
-# 2897 pref-display-back-d5-gold
+# 2897. pref-display-back-d5-gold
 
 Board 2,897 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 27](../CorpusTestingPages/Corpus-Testing-27.md#2897-pref-display-back-d5-gold).
 
@@ -46,4 +46,4 @@ Board 2,897 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2896 pocket-reform-keyboard](b2896b_pocket-reform_pocket-reform-keyboard.md) | [2898 pref-display-back-d5](b2898b_pocket-reform_pref-display-back-d5.md) |
+| [2896. pocket-reform-keyboard](b2896b_pocket-reform_pocket-reform-keyboard.md) | [2898. pref-display-back-d5](b2898b_pocket-reform_pref-display-back-d5.md) |

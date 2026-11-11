@@ -1,4 +1,4 @@
-# 1226 Amiga 2000R6
+# 1226. Amiga 2000R6
 
 Board 1,226 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 12](../CorpusTestingPages/Corpus-Testing-12.md#1226-amiga-2000r6).
 
@@ -45,4 +45,4 @@ Board 1,226 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1225 FCCU-v21-schematic-pcb](b1225b_fuel-cell-control-unit-pcb-fccu-v2-1_FCCU-v21-schematic-pcb.md) | [1227 Daughterboard](b1227b_Amiga-3000-Daughterboard_Daughterboard.md) |
+| [1225. FCCU-v21-schematic-pcb](b1225b_fuel-cell-control-unit-pcb-fccu-v2-1_FCCU-v21-schematic-pcb.md) | [1227. Daughterboard](b1227b_Amiga-3000-Daughterboard_Daughterboard.md) |

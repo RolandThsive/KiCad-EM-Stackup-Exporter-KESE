@@ -1,4 +1,4 @@
-# 1677 pcb
+# 1677. pcb
 
 Board 1,677 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 16](../CorpusTestingPages/Corpus-Testing-16.md#1677-pcb).
 
@@ -45,4 +45,4 @@ Board 1,677 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1676 adapter](b1676b_Glider_pcb-50p-adapter-c_adapter.md) | [1678 adapter](b1678b_Glider_pcb-mega-adapter_adapter.md) |
+| [1676. adapter](b1676b_Glider_pcb-50p-adapter-c_adapter.md) | [1678. adapter](b1678b_Glider_pcb-mega-adapter_adapter.md) |

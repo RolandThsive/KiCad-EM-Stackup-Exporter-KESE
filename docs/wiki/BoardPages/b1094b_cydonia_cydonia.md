@@ -1,4 +1,4 @@
-# 1094 cydonia
+# 1094. cydonia
 
 Board 1,094 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 11](../CorpusTestingPages/Corpus-Testing-11.md#1094-cydonia).
 
@@ -44,4 +44,4 @@ Board 1,094 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1093 amalthea](b1093b_amalthea-hardware_amalthea.md) | [1095 cynthion](b1095b_cynthion-hardware_cynthion.md) |
+| [1093. amalthea](b1093b_amalthea-hardware_amalthea.md) | [1095. cynthion](b1095b_cynthion-hardware_cynthion.md) |

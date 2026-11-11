@@ -1,4 +1,4 @@
-# 1781 amulet_controller
+# 1781. amulet_controller
 
 Board 1,781 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 17](../CorpusTestingPages/Corpus-Testing-17.md#1781-amulet_controller).
 
@@ -44,4 +44,4 @@ Board 1,781 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1780 SONATA-ONE](b1780b_sonata-pcb_SONATA-ONE.md) | [1782 Asteroids_PCB](b1782b_asteroids-pcb_Asteroids-PCB.md) |
+| [1780. SONATA-ONE](b1780b_sonata-pcb_SONATA-ONE.md) | [1782. Asteroids_PCB](b1782b_asteroids-pcb_Asteroids-PCB.md) |

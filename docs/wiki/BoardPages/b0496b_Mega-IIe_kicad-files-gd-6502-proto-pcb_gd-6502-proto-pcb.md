@@ -1,4 +1,4 @@
-# 496 gd 6502 proto pcb
+# 496. gd 6502 proto pcb
 
 Board 496 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 5](../CorpusTestingPages/Corpus-Testing-05.md#496-gd-6502-proto-pcb).
 
@@ -45,4 +45,4 @@ Board 496 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [495 coco3](b0495b_bit-preserve_coco3.md) | [497 gd audio proto pcb-rev1 bad footprint](b0497b_Mega-IIe_gd-audio-proto-pcb-rev1-bad-footprint.md) |
+| [495. coco3](b0495b_bit-preserve_coco3.md) | [497. gd audio proto pcb-rev1 bad footprint](b0497b_Mega-IIe_gd-audio-proto-pcb-rev1-bad-footprint.md) |

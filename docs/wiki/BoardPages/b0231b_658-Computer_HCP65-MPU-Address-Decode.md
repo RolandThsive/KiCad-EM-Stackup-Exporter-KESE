@@ -1,4 +1,4 @@
-# 231 HCP65 MPU Address Decode
+# 231. HCP65 MPU Address Decode
 
 Board 231 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 3](../CorpusTestingPages/Corpus-Testing-03.md#231-hcp65-mpu-address-decode).
 
@@ -45,4 +45,4 @@ Board 231 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [230 HCP65 Main Memory Data](b0230b_658-Computer_HCP65-Main-Memory-Data.md) | [232 HCP65 MPU Memory](b0232b_658-Computer_HCP65-MPU-Memory.md) |
+| [230. HCP65 Main Memory Data](b0230b_658-Computer_HCP65-Main-Memory-Data.md) | [232. HCP65 MPU Memory](b0232b_658-Computer_HCP65-MPU-Memory.md) |

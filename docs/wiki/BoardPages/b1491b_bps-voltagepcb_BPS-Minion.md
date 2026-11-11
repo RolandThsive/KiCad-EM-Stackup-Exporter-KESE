@@ -1,4 +1,4 @@
-# 1491 BPS-Minion
+# 1491. BPS-Minion
 
 Board 1,491 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 14](../CorpusTestingPages/Corpus-Testing-14.md#1491-bps-minion).
 
@@ -44,4 +44,4 @@ Board 1,491 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1490 lhc-esp](b1490b_hardware_lhc-esp.md) | [1492 BPS-Leader](b1492b_ps-bpsleader_BPS-Leader.md) |
+| [1490. lhc-esp](b1490b_hardware_lhc-esp.md) | [1492. BPS-Leader](b1492b_ps-bpsleader_BPS-Leader.md) |

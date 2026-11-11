@@ -1,4 +1,4 @@
-# 1928 MOD-ESP32-C5_Rev_A
+# 1928. MOD-ESP32-C5_Rev_A
 
 Board 1,928 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 18](../CorpusTestingPages/Corpus-Testing-18.md#1928-mod-esp32-c5_rev_a).
 
@@ -45,4 +45,4 @@ Board 1,928 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1927 MOD-ENV_revB](b1927b_MOD-ENV_MOD-ENV-revB.md) | [1929 MOD-IR-TEMP_RevA](b1929b_MOD-IR-TEMP_MOD-IR-TEMP-RevA.md) |
+| [1927. MOD-ENV_revB](b1927b_MOD-ENV_MOD-ENV-revB.md) | [1929. MOD-IR-TEMP_RevA](b1929b_MOD-IR-TEMP_MOD-IR-TEMP-RevA.md) |

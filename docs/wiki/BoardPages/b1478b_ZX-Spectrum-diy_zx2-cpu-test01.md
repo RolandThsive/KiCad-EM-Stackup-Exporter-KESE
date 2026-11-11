@@ -1,4 +1,4 @@
-# 1478 zx2_cpu_test01
+# 1478. zx2_cpu_test01
 
 Board 1,478 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 14](../CorpusTestingPages/Corpus-Testing-14.md#1478-zx2_cpu_test01).
 
@@ -45,4 +45,4 @@ Board 1,478 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1477 zx2_cpu](b1477b_ZX-Spectrum-diy_zx2-cpu.md) | [1479 zx2_fpga_int](b1479b_ZX-Spectrum-diy_zx2-fpga-int.md) |
+| [1477. zx2_cpu](b1477b_ZX-Spectrum-diy_zx2-cpu.md) | [1479. zx2_fpga_int](b1479b_ZX-Spectrum-diy_zx2-fpga-int.md) |

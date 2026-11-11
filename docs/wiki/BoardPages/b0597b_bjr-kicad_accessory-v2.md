@@ -1,4 +1,4 @@
-# 597 accessory_v2
+# 597. accessory_v2
 
 Board 597 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 6](../CorpusTestingPages/Corpus-Testing-06.md#597-accessory_v2).
 
@@ -45,4 +45,4 @@ Board 597 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [596 accessory_v1](b0596b_bjr-kicad_accessory-v1.md) | [598 ad5689r](b0598b_bjr-kicad_ad5689r.md) |
+| [596. accessory_v1](b0596b_bjr-kicad_accessory-v1.md) | [598. ad5689r](b0598b_bjr-kicad_ad5689r.md) |

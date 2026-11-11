@@ -1,4 +1,4 @@
-# 2959 BMS-Master
+# 2959. BMS-Master
 
 Board 2,959 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 28](../CorpusTestingPages/Corpus-Testing-28.md#2959-bms-master).
 
@@ -45,4 +45,4 @@ Board 2,959 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2958 Cell Tap Fuse Board 3x](b2958b_circuits_Cell-Tap-Fuse-Board-3x.md) | [2960 LTC6812-15W](b2960b_circuits_Kieran-Care-package-ENNOID-BMS-Slave_LTC6812-15W.md) |
+| [2958. Cell Tap Fuse Board 3x](b2958b_circuits_Cell-Tap-Fuse-Board-3x.md) | [2960. LTC6812-15W](b2960b_circuits_Kieran-Care-package-ENNOID-BMS-Slave_LTC6812-15W.md) |

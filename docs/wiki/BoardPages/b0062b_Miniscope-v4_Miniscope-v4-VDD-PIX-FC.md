@@ -1,4 +1,4 @@
-# 62 Miniscope-v4-VDD-PIX-FC
+# 62. Miniscope-v4-VDD-PIX-FC
 
 Board 62 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 1](../CorpusTestingPages/Corpus-Testing-01.md#62-miniscope-v4-vdd-pix-fc).
 
@@ -45,4 +45,4 @@ Board 62 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page
 
 | Previous | Next |
 |:---|---:|
-| [61 Miniscope-v4-Rigid-Flex](b0061b_Miniscope-v4_Miniscope-v4-Rigid-Flex.md) | [63 interposer](b0063b_Open-Source-PC110_interposer.md) |
+| [61. Miniscope-v4-Rigid-Flex](b0061b_Miniscope-v4_Miniscope-v4-Rigid-Flex.md) | [63. interposer](b0063b_Open-Source-PC110_interposer.md) |

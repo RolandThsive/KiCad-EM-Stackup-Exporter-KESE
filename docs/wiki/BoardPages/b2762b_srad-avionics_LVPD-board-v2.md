@@ -1,4 +1,4 @@
-# 2762 LVPD-board_v2
+# 2762. LVPD-board_v2
 
 Board 2,762 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 26](../CorpusTestingPages/Corpus-Testing-26.md#2762-lvpd-board_v2).
 
@@ -45,4 +45,4 @@ Board 2,762 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2761 LVPD-board_Payload](b2761b_srad-avionics_LVPD-board-Payload.md) | [2763 charge_deployment](b2763b_srad-avionics_charge-deployment.md) |
+| [2761. LVPD-board_Payload](b2761b_srad-avionics_LVPD-board-Payload.md) | [2763. charge_deployment](b2763b_srad-avionics_charge-deployment.md) |

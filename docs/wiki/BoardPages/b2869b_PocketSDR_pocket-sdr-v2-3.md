@@ -1,4 +1,4 @@
-# 2869 pocket_sdr_v2.3
+# 2869. pocket_sdr_v2.3
 
 Board 2,869 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 27](../CorpusTestingPages/Corpus-Testing-27.md#2869-pocket_sdr_v23).
 
@@ -45,4 +45,4 @@ Board 2,869 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2868 RASRF2400WBMC](b2868b_ra-sentinel_RASRF2400WBMC.md) | [2870 v3.0](b2870b_PocketSDR_v3-0.md) |
+| [2868. RASRF2400WBMC](b2868b_ra-sentinel_RASRF2400WBMC.md) | [2870. v3.0](b2870b_PocketSDR_v3-0.md) |

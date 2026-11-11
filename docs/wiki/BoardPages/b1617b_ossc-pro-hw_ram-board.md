@@ -1,4 +1,4 @@
-# 1617 ram_board
+# 1617. ram_board
 
 Board 1,617 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 15](../CorpusTestingPages/Corpus-Testing-15.md#1617-ram_board).
 
@@ -45,4 +45,4 @@ Board 1,617 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1616 legacy_av_in](b1616b_ossc-pro-hw_legacy-av-in.md) | [1618 ossc_pro](b1618b_ossc-pro-hw_ossc-pro.md) |
+| [1616. legacy_av_in](b1616b_ossc-pro-hw_legacy-av-in.md) | [1618. ossc_pro](b1618b_ossc-pro-hw_ossc-pro.md) |

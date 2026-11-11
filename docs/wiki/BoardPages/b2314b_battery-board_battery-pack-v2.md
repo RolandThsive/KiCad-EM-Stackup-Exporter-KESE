@@ -1,4 +1,4 @@
-# 2314 battery_pack_v2
+# 2314. battery_pack_v2
 
 Board 2,314 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 22](../CorpusTestingPages/Corpus-Testing-22.md#2314-battery_pack_v2).
 
@@ -45,4 +45,4 @@ Board 2,314 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2313 battery_pack_v1a](b2313b_battery-board_battery-pack-v1a.md) | [2315 inhibit_diagram](b2315b_battery-board_inhibit-diagram.md) |
+| [2313. battery_pack_v1a](b2313b_battery-board_battery-pack-v1a.md) | [2315. inhibit_diagram](b2315b_battery-board_inhibit-diagram.md) |

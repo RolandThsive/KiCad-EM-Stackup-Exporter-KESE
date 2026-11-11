@@ -1,4 +1,4 @@
-# 402 rpi-cm4-csi-adapter
+# 402. rpi-cm4-csi-adapter
 
 Board 402 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 4](../CorpusTestingPages/Corpus-Testing-04.md#402-rpi-cm4-csi-adapter).
 
@@ -44,4 +44,4 @@ Board 402 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [401 quickfeather-board](b0401b_quickfeather-dev-board_quickfeather-board.md) | [403 rpi-led-flex-board](b0403b_rpi-led-flex-board_rpi-led-flex-board.md) |
+| [401. quickfeather-board](b0401b_quickfeather-dev-board_quickfeather-board.md) | [403. rpi-led-flex-board](b0403b_rpi-led-flex-board_rpi-led-flex-board.md) |

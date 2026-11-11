@@ -1,4 +1,4 @@
-# 121 Board 2x20 W22.86
+# 121. Board 2x20 W22.86
 
 Board 121 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 2](../CorpusTestingPages/Corpus-Testing-02.md#121-board-2x20-w2286).
 
@@ -45,4 +45,4 @@ Board 121 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [120 Board 2x20 W15.24](b0120b_658-Computer_Kicad-Boards-Blank-Board-2x20-W15-24_Board-2x20-W15-24.md) | [122 Board 2x22 W15.24](b0122b_658-Computer_Kicad-Boards-Blank-Board-2x22-W15-24_Board-2x22-W15-24.md) |
+| [120. Board 2x20 W15.24](b0120b_658-Computer_Kicad-Boards-Blank-Board-2x20-W15-24_Board-2x20-W15-24.md) | [122. Board 2x22 W15.24](b0122b_658-Computer_Kicad-Boards-Blank-Board-2x22-W15-24_Board-2x22-W15-24.md) |

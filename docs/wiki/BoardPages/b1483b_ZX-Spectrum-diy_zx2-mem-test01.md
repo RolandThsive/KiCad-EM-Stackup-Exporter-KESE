@@ -1,4 +1,4 @@
-# 1483 zx2_mem_test01
+# 1483. zx2_mem_test01
 
 Board 1,483 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 14](../CorpusTestingPages/Corpus-Testing-14.md#1483-zx2_mem_test01).
 
@@ -45,4 +45,4 @@ Board 1,483 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1482 zx2_mem](b1482b_ZX-Spectrum-diy_zx2-mem.md) | [1484 zx2_uart](b1484b_ZX-Spectrum-diy_zx2-uart.md) |
+| [1482. zx2_mem](b1482b_ZX-Spectrum-diy_zx2-mem.md) | [1484. zx2_uart](b1484b_ZX-Spectrum-diy_zx2-uart.md) |

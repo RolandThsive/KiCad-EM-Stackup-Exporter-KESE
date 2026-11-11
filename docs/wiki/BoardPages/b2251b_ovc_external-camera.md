@@ -1,4 +1,4 @@
-# 2251 external_camera
+# 2251. external_camera
 
 Board 2,251 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 21](../CorpusTestingPages/Corpus-Testing-21.md#2251-external_camera).
 
@@ -45,4 +45,4 @@ Board 2,251 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2250 ovc3](b2250b_ovc_ovc3-hardware-ovc3a-ovc3a-camera_ovc3.md) | [2252 ovc3](b2252b_ovc_ovc3-hardware-ovc3b-ovc3b-camera_ovc3.md) |
+| [2250. ovc3](b2250b_ovc_ovc3-hardware-ovc3a-ovc3a-camera_ovc3.md) | [2252. ovc3](b2252b_ovc_ovc3-hardware-ovc3b-ovc3b-camera_ovc3.md) |

@@ -1,4 +1,4 @@
-# 1098 rs232
+# 1098. rs232
 
 Board 1,098 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 11](../CorpusTestingPages/Corpus-Testing-11.md#1098-rs232).
 
@@ -45,4 +45,4 @@ Board 1,098 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1097 hdmi](b1097b_daisho_hw-de2-115-frontend-hdmi_hdmi.md) | [1099 gige_fe](b1099b_daisho_gige-fe.md) |
+| [1097. hdmi](b1097b_daisho_hw-de2-115-frontend-hdmi_hdmi.md) | [1099. gige_fe](b1099b_daisho_gige-fe.md) |

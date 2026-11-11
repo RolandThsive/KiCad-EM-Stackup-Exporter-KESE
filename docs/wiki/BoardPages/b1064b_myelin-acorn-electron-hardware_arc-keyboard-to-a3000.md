@@ -1,4 +1,4 @@
-# 1064 arc_keyboard_to_a3000
+# 1064. arc_keyboard_to_a3000
 
 Board 1,064 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 10](../CorpusTestingPages/Corpus-Testing-10.md#1064-arc_keyboard_to_a3000).
 
@@ -45,4 +45,4 @@ Board 1,064 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1063 a3000_ram_buffer](b1063b_myelin-acorn-electron-hardware_a3000-ram-buffer.md) | [1065 arc_mouse_breakout](b1065b_myelin-acorn-electron-hardware_arc-mouse-breakout.md) |
+| [1063. a3000_ram_buffer](b1063b_myelin-acorn-electron-hardware_a3000-ram-buffer.md) | [1065. arc_mouse_breakout](b1065b_myelin-acorn-electron-hardware_arc-mouse-breakout.md) |

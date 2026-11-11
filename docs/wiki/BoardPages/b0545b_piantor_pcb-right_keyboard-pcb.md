@@ -1,4 +1,4 @@
-# 545 keyboard_pcb
+# 545. keyboard_pcb
 
 Board 545 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 6](../CorpusTestingPages/Corpus-Testing-06.md#545-keyboard_pcb).
 
@@ -45,4 +45,4 @@ Board 545 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [544 keyboard_pcb](b0544b_piantor_pcb-left_keyboard-pcb.md) | [546 belamini_cape_C1](b0546b_bela-hardware_belamini-cape-C1.md) |
+| [544. keyboard_pcb](b0544b_piantor_pcb-left_keyboard-pcb.md) | [546. belamini_cape_C1](b0546b_bela-hardware_belamini-cape-C1.md) |

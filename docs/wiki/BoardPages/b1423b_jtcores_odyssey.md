@@ -1,4 +1,4 @@
-# 1423 odyssey
+# 1423. odyssey
 
 Board 1,423 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 14](../CorpusTestingPages/Corpus-Testing-14.md#1423-odyssey).
 
@@ -45,4 +45,4 @@ Board 1,423 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1422 adapter](b1422b_jtcores_cores-argus-sch-adapter_adapter.md) | [1424 adapter](b1424b_jtcores_cores-wc-sch-adapter_adapter.md) |
+| [1422. adapter](b1422b_jtcores_cores-argus-sch-adapter_adapter.md) | [1424. adapter](b1424b_jtcores_cores-wc-sch-adapter_adapter.md) |

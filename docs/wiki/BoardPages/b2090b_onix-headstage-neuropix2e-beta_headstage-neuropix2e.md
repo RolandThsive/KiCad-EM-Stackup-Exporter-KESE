@@ -1,4 +1,4 @@
-# 2090 headstage-neuropix2e
+# 2090. headstage-neuropix2e
 
 Board 2,090 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 20](../CorpusTestingPages/Corpus-Testing-20.md#2090-headstage-neuropix2e).
 
@@ -45,4 +45,4 @@ Board 2,090 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2089 headstage-neuropix2e](b2089b_onix-headstage-neuropix2e_headstage-neuropix2e.md) | [2091 headstage-rhs2116](b2091b_onix-headstage-rhs2116_headstage-rhs2116.md) |
+| [2089. headstage-neuropix2e](b2089b_onix-headstage-neuropix2e_headstage-neuropix2e.md) | [2091. headstage-rhs2116](b2091b_onix-headstage-rhs2116_headstage-rhs2116.md) |

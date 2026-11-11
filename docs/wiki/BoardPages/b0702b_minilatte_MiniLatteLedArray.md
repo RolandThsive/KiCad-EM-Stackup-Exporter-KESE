@@ -1,4 +1,4 @@
-# 702 MiniLatteLedArray
+# 702. MiniLatteLedArray
 
 Board 702 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 7](../CorpusTestingPages/Corpus-Testing-07.md#702-minilatteledarray).
 
@@ -46,4 +46,4 @@ Board 702 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [701 CTS-SAT-2-OBC-PCB](b0701b_cts-sat-2-obc-pcb_CTS-SAT-2-OBC-PCB.md) | [703 MiniLatte](b0703b_minilatte_MiniLatte.md) |
+| [701. CTS-SAT-2-OBC-PCB](b0701b_cts-sat-2-obc-pcb_CTS-SAT-2-OBC-PCB.md) | [703. MiniLatte](b0703b_minilatte_MiniLatte.md) |

@@ -1,4 +1,4 @@
-# 2489 NGC_38_connector
+# 2489. NGC_38_connector
 
 Board 2,489 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 24](../CorpusTestingPages/Corpus-Testing-24.md#2489-ngc_38_connector).
 
@@ -44,4 +44,4 @@ Board 2,489 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2488 NGC_38_connector](b2488b_rusefi-hardware_classic-designs-rusefi-hardware-history-NGC-38-connector-rev00-20-NGC-38-connector_NGC-38-connector.md) | [2490 PWR_buck_12V_switcher](b2490b_rusefi-hardware_classic-designs-rusefi-hardware-history-power-supply-kb1gtt-rev00-10_PWR-buck-12V-switcher.md) |
+| [2488. NGC_38_connector](b2488b_rusefi-hardware_classic-designs-rusefi-hardware-history-NGC-38-connector-rev00-20-NGC-38-connector_NGC-38-connector.md) | [2490. PWR_buck_12V_switcher](b2490b_rusefi-hardware_classic-designs-rusefi-hardware-history-power-supply-kb1gtt-rev00-10_PWR-buck-12V-switcher.md) |

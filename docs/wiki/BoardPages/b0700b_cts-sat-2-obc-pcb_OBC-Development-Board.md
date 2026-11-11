@@ -1,4 +1,4 @@
-# 700 OBC Development Board
+# 700. OBC Development Board
 
 Board 700 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 7](../CorpusTestingPages/Corpus-Testing-07.md#700-obc-development-board).
 
@@ -45,4 +45,4 @@ Board 700 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [699 motherboard](b0699b_motherboard_motherboard.md) | [701 CTS-SAT-2-OBC-PCB](b0701b_cts-sat-2-obc-pcb_CTS-SAT-2-OBC-PCB.md) |
+| [699. motherboard](b0699b_motherboard_motherboard.md) | [701. CTS-SAT-2-OBC-PCB](b0701b_cts-sat-2-obc-pcb_CTS-SAT-2-OBC-PCB.md) |

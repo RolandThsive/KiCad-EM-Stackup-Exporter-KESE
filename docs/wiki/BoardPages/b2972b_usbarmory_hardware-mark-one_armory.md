@@ -1,4 +1,4 @@
-# 2972 armory
+# 2972. armory
 
 Board 2,972 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 28](../CorpusTestingPages/Corpus-Testing-28.md#2972-armory).
 
@@ -45,4 +45,4 @@ Board 2,972 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2971 EdgeS3D_Carrier_P1](b2971b_esp32s3_EdgeS3D-Carrier-P1.md) | [2973 armory](b2973b_usbarmory_hardware-mark-two-beta_armory.md) |
+| [2971. EdgeS3D_Carrier_P1](b2971b_esp32s3_EdgeS3D-Carrier-P1.md) | [2973. armory](b2973b_usbarmory_hardware-mark-two-beta_armory.md) |

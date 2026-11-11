@@ -1,4 +1,4 @@
-# 1732 uMyriad6002
+# 1732. uMyriad6002
 
 Board 1,732 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 17](../CorpusTestingPages/Corpus-Testing-17.md#1732-umyriad6002).
 
@@ -45,4 +45,4 @@ Board 1,732 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1731 LMS8001_Companion](b1731b_reference-development-kit_LMS8001-Companion.md) | [1733 uMyriad7002-append](b1733b_reference-development-kit_uMyriad7002-append.md) |
+| [1731. LMS8001_Companion](b1731b_reference-development-kit_LMS8001-Companion.md) | [1733. uMyriad7002-append](b1733b_reference-development-kit_uMyriad7002-append.md) |

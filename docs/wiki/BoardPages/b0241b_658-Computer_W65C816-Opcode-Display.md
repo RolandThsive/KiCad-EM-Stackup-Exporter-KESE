@@ -1,4 +1,4 @@
-# 241 W65C816 Opcode Display
+# 241. W65C816 Opcode Display
 
 Board 241 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 3](../CorpusTestingPages/Corpus-Testing-03.md#241-w65c816-opcode-display).
 
@@ -45,4 +45,4 @@ Board 241 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [240 W65C816 Minimal](b0240b_658-Computer_W65C816-Minimal.md) | [242 W65C816 Power](b0242b_658-Computer_W65C816-Power.md) |
+| [240. W65C816 Minimal](b0240b_658-Computer_W65C816-Minimal.md) | [242. W65C816 Power](b0242b_658-Computer_W65C816-Power.md) |

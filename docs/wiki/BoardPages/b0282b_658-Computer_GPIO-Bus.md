@@ -1,4 +1,4 @@
-# 282 GPIO Bus
+# 282. GPIO Bus
 
 Board 282 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 3](../CorpusTestingPages/Corpus-Testing-03.md#282-gpio-bus).
 
@@ -45,4 +45,4 @@ Board 282 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [281 GPIO Backplane Board](b0281b_658-Computer_GPIO-Backplane-Board.md) | [283 GPIO Controller Board](b0283b_658-Computer_GPIO-Controller-Board.md) |
+| [281. GPIO Backplane Board](b0281b_658-Computer_GPIO-Backplane-Board.md) | [283. GPIO Controller Board](b0283b_658-Computer_GPIO-Controller-Board.md) |

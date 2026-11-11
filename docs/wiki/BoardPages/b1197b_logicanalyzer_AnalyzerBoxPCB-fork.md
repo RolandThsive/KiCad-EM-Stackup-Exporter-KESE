@@ -1,4 +1,4 @@
-# 1197 AnalyzerBoxPCB_fork
+# 1197. AnalyzerBoxPCB_fork
 
 Board 1,197 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 12](../CorpusTestingPages/Corpus-Testing-12.md#1197-analyzerboxpcb_fork).
 
@@ -45,4 +45,4 @@ Board 1,197 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1196 LogicAnalyzer](b1196b_logicanalyzer_LogicAnalyzer.md) | [1198 jitx-design](b1198b_logicanalyzer_jitx-design.md) |
+| [1196. LogicAnalyzer](b1196b_logicanalyzer_LogicAnalyzer.md) | [1198. jitx-design](b1198b_logicanalyzer_jitx-design.md) |

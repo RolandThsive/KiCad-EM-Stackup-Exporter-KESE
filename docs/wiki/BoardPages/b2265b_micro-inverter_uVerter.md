@@ -1,4 +1,4 @@
-# 2265 uVerter
+# 2265. uVerter
 
 Board 2,265 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 21](../CorpusTestingPages/Corpus-Testing-21.md#2265-uverter).
 
@@ -45,4 +45,4 @@ Board 2,265 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2264 film_capacitors](b2264b_micro-inverter_film-capacitors.md) | [2266 ownverter](b2266b_ownverter_ownverter.md) |
+| [2264. film_capacitors](b2264b_micro-inverter_film-capacitors.md) | [2266. ownverter](b2266b_ownverter_ownverter.md) |

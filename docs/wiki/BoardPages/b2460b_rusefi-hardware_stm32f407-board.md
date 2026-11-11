@@ -1,4 +1,4 @@
-# 2460 stm32f407_board
+# 2460. stm32f407_board
 
 Board 2,460 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 23](../CorpusTestingPages/Corpus-Testing-23.md#2460-stm32f407_board).
 
@@ -45,4 +45,4 @@ Board 2,460 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2459 inj_6ch](b2459b_rusefi-hardware_classic-designs-rusefi-hardware-history-1A-injector-6-channels-rev00-20_inj-6ch.md) | [2461 brain_board_STM32F407](b2461b_rusefi-hardware_classic-designs-rusefi-hardware-history-brain-board-rev00-20_brain-board-STM32F407.md) |
+| [2459. inj_6ch](b2459b_rusefi-hardware_classic-designs-rusefi-hardware-history-1A-injector-6-channels-rev00-20_inj-6ch.md) | [2461. brain_board_STM32F407](b2461b_rusefi-hardware_classic-designs-rusefi-hardware-history-brain-board-rev00-20_brain-board-STM32F407.md) |

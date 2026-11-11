@@ -1,4 +1,4 @@
-# 882 EthernetModule
+# 882. EthernetModule
 
 Board 882 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 9](../CorpusTestingPages/Corpus-Testing-09.md#882-ethernetmodule).
 
@@ -45,4 +45,4 @@ Board 882 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [881 ExpBreakout](b0881b_Duet-2-Hardware_ExpBreakout.md) | [883 Zephyr-80-CPU](b0883b_Zephyr-80_Zephyr-80-CPU.md) |
+| [881. ExpBreakout](b0881b_Duet-2-Hardware_ExpBreakout.md) | [883. Zephyr-80-CPU](b0883b_Zephyr-80_Zephyr-80-CPU.md) |

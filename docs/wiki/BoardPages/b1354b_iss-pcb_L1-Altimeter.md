@@ -1,4 +1,4 @@
-# 1354 L1-Altimeter
+# 1354. L1-Altimeter
 
 Board 1,354 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 13](../CorpusTestingPages/Corpus-Testing-13.md#1354-l1-altimeter).
 
@@ -45,4 +45,4 @@ Board 1,354 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1353 555-Timer-Demo-Circuit](b1353b_iss-pcb_555-Timer-Demo-Circuit.md) | [1355 SPARK-MK1](b1355b_iss-pcb_SPARK-MK1.md) |
+| [1353. 555-Timer-Demo-Circuit](b1353b_iss-pcb_555-Timer-Demo-Circuit.md) | [1355. SPARK-MK1](b1355b_iss-pcb_SPARK-MK1.md) |

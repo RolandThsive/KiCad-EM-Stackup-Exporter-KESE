@@ -1,4 +1,4 @@
-# 1101 hdmi
+# 1101. hdmi
 
 Board 1,101 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 11](../CorpusTestingPages/Corpus-Testing-11.md#1101-hdmi).
 
@@ -45,4 +45,4 @@ Board 1,101 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1100 rs232_fe](b1100b_daisho_rs232-fe.md) | [1102 prod_fe](b1102b_daisho_prod-fe.md) |
+| [1100. rs232_fe](b1100b_daisho_rs232-fe.md) | [1102. prod_fe](b1102b_daisho_prod-fe.md) |

@@ -1,4 +1,4 @@
-# 1532 mixer_breakout
+# 1532. mixer_breakout
 
 Board 1,532 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 15](../CorpusTestingPages/Corpus-Testing-15.md#1532-mixer_breakout).
 
@@ -45,4 +45,4 @@ Board 1,532 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1531 maam_011109_bias](b1531b_vna_maam-011109-bias.md) | [1533 pe42520_breakout](b1533b_vna_pe42520-breakout.md) |
+| [1531. maam_011109_bias](b1531b_vna_maam-011109-bias.md) | [1533. pe42520_breakout](b1533b_vna_pe42520-breakout.md) |

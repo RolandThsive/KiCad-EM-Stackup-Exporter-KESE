@@ -1,4 +1,4 @@
-# 2669 motor_board
+# 2669. motor_board
 
 Board 2,669 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 25](../CorpusTestingPages/Corpus-Testing-25.md#2669-motor_board).
 
@@ -45,4 +45,4 @@ Board 2,669 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2668 seed_user_1224](b2668b_aerolotl-kicad_seed-user-1224.md) | [2670 ADCS_board](b2670b_samwise-avionics_ADCS-board.md) |
+| [2668. seed_user_1224](b2668b_aerolotl-kicad_seed-user-1224.md) | [2670. ADCS_board](b2670b_samwise-avionics_ADCS-board.md) |

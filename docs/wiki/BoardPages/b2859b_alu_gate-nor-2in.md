@@ -1,4 +1,4 @@
-# 2859 gate_nor_2in
+# 2859. gate_nor_2in
 
 Board 2,859 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 27](../CorpusTestingPages/Corpus-Testing-27.md#2859-gate_nor_2in).
 
@@ -45,4 +45,4 @@ Board 2,859 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2858 gate_nand_2in](b2858b_alu_gate-nand-2in.md) | [2860 gate_or_2in](b2860b_alu_gate-or-2in.md) |
+| [2858. gate_nand_2in](b2858b_alu_gate-nand-2in.md) | [2860. gate_or_2in](b2860b_alu_gate-or-2in.md) |

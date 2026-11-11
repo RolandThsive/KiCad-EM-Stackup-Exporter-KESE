@@ -1,4 +1,4 @@
-# 2426 xoseram
+# 2426. xoseram
 
 Board 2,426 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 23](../CorpusTestingPages/Corpus-Testing-23.md#2426-xoseram).
 
@@ -45,4 +45,4 @@ Board 2,426 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2425 rosco_pro_030_proto](b2425b_rosco-m68k-pro_rosco-pro-030-proto.md) | [2427 hellen1-mcz33810](b2427b_hellen-one_hellen1-mcz33810.md) |
+| [2425. rosco_pro_030_proto](b2425b_rosco-m68k-pro_rosco-pro-030-proto.md) | [2427. hellen1-mcz33810](b2427b_hellen-one_hellen1-mcz33810.md) |

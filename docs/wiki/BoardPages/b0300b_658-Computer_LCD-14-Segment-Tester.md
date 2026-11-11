@@ -1,4 +1,4 @@
-# 300 LCD 14 Segment Tester
+# 300. LCD 14 Segment Tester
 
 Board 300 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 3](../CorpusTestingPages/Corpus-Testing-03.md#300-lcd-14-segment-tester).
 
@@ -45,4 +45,4 @@ Board 300 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [299 Speed](b0299b_658-Computer_Speed.md) | [301 LCD Dual 7 Segment Tester](b0301b_658-Computer_LCD-Dual-7-Segment-Tester.md) |
+| [299. Speed](b0299b_658-Computer_Speed.md) | [301. LCD Dual 7 Segment Tester](b0301b_658-Computer_LCD-Dual-7-Segment-Tester.md) |

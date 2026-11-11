@@ -1,4 +1,4 @@
-# 1444 goblin
+# 1444. goblin
 
 Board 1,444 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 14](../CorpusTestingPages/Corpus-Testing-14.md#1444-goblin).
 
@@ -45,4 +45,4 @@ Board 1,444 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1443 doj_v2](b1443b_echomods_doj-v2.md) | [1445 tobo](b1445b_echomods_tobo.md) |
+| [1443. doj_v2](b1443b_echomods_doj-v2.md) | [1445. tobo](b1445b_echomods_tobo.md) |

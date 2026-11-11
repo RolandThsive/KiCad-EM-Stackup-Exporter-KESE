@@ -1,4 +1,4 @@
-# 511 gd rev3
+# 511. gd rev3
 
 Board 511 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 5](../CorpusTestingPages/Corpus-Testing-05.md#511-gd-rev3).
 
@@ -45,4 +45,4 @@ Board 511 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [510 gd rev2 crystalposer](b0510b_Mega-IIe_gd-rev2-crystalposer.md) | [512 gd rev3b](b0512b_Mega-IIe_gd-rev3b.md) |
+| [510. gd rev2 crystalposer](b0510b_Mega-IIe_gd-rev2-crystalposer.md) | [512. gd rev3b](b0512b_Mega-IIe_gd-rev3b.md) |

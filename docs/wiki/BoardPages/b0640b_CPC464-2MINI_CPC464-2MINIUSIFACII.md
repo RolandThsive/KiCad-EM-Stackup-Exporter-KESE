@@ -1,4 +1,4 @@
-# 640 CPC464-2MINIUSIFACII
+# 640. CPC464-2MINIUSIFACII
 
 Board 640 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 6](../CorpusTestingPages/Corpus-Testing-06.md#640-cpc464-2miniusifacii).
 
@@ -45,4 +45,4 @@ Board 640 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [639 CPC464-2MINIRS232C](b0639b_CPC464-2MINI_CPC464-2MINIRS232C.md) | [641 CPC-40007AdapterLM1117](b0641b_CPC464-2MINI_CPC-40007AdapterLM1117.md) |
+| [639. CPC464-2MINIRS232C](b0639b_CPC464-2MINI_CPC464-2MINIRS232C.md) | [641. CPC-40007AdapterLM1117](b0641b_CPC464-2MINI_CPC-40007AdapterLM1117.md) |

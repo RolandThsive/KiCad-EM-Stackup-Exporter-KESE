@@ -1,4 +1,4 @@
-# 2915 pods_panel
+# 2915. pods_panel
 
 Board 2,915 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 27](../CorpusTestingPages/Corpus-Testing-27.md#2915-pods_panel).
 
@@ -46,4 +46,4 @@ Board 2,915 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2914 pocket-reform-wifi](b2914b_pocket-reform_pocket-reform-wifi.md) | [2916 ramn](b2916b_RAMN_ramn.md) |
+| [2914. pocket-reform-wifi](b2914b_pocket-reform_pocket-reform-wifi.md) | [2916. ramn](b2916b_RAMN_ramn.md) |

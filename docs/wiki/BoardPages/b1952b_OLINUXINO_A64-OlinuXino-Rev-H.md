@@ -1,4 +1,4 @@
-# 1952 A64-OlinuXino_Rev_H
+# 1952. A64-OlinuXino_Rev_H
 
 Board 1,952 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 19](../CorpusTestingPages/Corpus-Testing-19.md#1952-a64-olinuxino_rev_h).
 
@@ -45,4 +45,4 @@ Board 1,952 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1951 A20_OLinuXino_Lime2_SHIELD_TEMPLATE_Rev-AA](b1951b_OLINUXINO_A20-OLinuXino-Lime2-SHIELD-TEMPLATE-Rev-AA.md) | [1953 A64-OlinuXino_Rev_A](b1953b_OLINUXINO_A64-OlinuXino-Rev-A.md) |
+| [1951. A20_OLinuXino_Lime2_SHIELD_TEMPLATE_Rev-AA](b1951b_OLINUXINO_A20-OLinuXino-Lime2-SHIELD-TEMPLATE-Rev-AA.md) | [1953. A64-OlinuXino_Rev_A](b1953b_OLINUXINO_A64-OlinuXino-Rev-A.md) |

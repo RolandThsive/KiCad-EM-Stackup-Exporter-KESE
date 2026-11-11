@@ -1,4 +1,4 @@
-# 1832 ESP32-DevKit-Lipo_Rev_C
+# 1832. ESP32-DevKit-Lipo_Rev_C
 
 Board 1,832 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 17](../CorpusTestingPages/Corpus-Testing-17.md#1832-esp32-devkit-lipo_rev_c).
 
@@ -45,4 +45,4 @@ Board 1,832 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1831 ESP32-DevKit-Lipo_Rev_B](b1831b_ESP32-DevKit-LiPo_ESP32-DevKit-Lipo-Rev-B.md) | [1833 ESP32-DevKit-Lipo_Rev_D](b1833b_ESP32-DevKit-LiPo_ESP32-DevKit-Lipo-Rev-D.md) |
+| [1831. ESP32-DevKit-Lipo_Rev_B](b1831b_ESP32-DevKit-LiPo_ESP32-DevKit-Lipo-Rev-B.md) | [1833. ESP32-DevKit-Lipo_Rev_D](b1833b_ESP32-DevKit-LiPo_ESP32-DevKit-Lipo-Rev-D.md) |

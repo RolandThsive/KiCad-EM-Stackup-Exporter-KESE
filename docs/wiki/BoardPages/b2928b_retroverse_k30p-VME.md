@@ -1,4 +1,4 @@
-# 2928 k30p-VME
+# 2928. k30p-VME
 
 Board 2,928 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 28](../CorpusTestingPages/Corpus-Testing-28.md#2928-k30p-vme).
 
@@ -45,4 +45,4 @@ Board 2,928 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2927 k30p-VME-Frontpanel](b2927b_retroverse_k30p-VME-Frontpanel.md) | [2929 MemBird - Woodcock](b2929b_retroverse_MemBird-Woodcock.md) |
+| [2927. k30p-VME-Frontpanel](b2927b_retroverse_k30p-VME-Frontpanel.md) | [2929. MemBird - Woodcock](b2929b_retroverse_MemBird-Woodcock.md) |

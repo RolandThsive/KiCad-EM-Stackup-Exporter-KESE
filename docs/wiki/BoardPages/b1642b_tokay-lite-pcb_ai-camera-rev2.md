@@ -1,4 +1,4 @@
-# 1642 ai-camera-rev2
+# 1642. ai-camera-rev2
 
 Board 1,642 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 16](../CorpusTestingPages/Corpus-Testing-16.md#1642-ai-camera-rev2).
 
@@ -45,4 +45,4 @@ Board 1,642 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1641 ai-camera](b1641b_tokay-lite-pcb_ai-camera-rev1_ai-camera.md) | [1643 ai-camera-rev3.1](b1643b_tokay-lite-pcb_ai-camera-rev3-1.md) |
+| [1641. ai-camera](b1641b_tokay-lite-pcb_ai-camera-rev1_ai-camera.md) | [1643. ai-camera-rev3.1](b1643b_tokay-lite-pcb_ai-camera-rev3-1.md) |

@@ -1,4 +1,4 @@
-# 430 ICE40HXDevBoard
+# 430. ICE40HXDevBoard
 
 Board 430 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 4](../CorpusTestingPages/Corpus-Testing-04.md#430-ice40hxdevboard).
 
@@ -44,4 +44,4 @@ Board 430 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [429 ICE40HXDevBoardVGA](b0429b_ICE40HXDevBoard_ICE40HXDevBoardVGA.md) | [431 ICE40UPDevBoard](b0431b_ICE40UPDevBoard_ICE40UPDevBoard.md) |
+| [429. ICE40HXDevBoardVGA](b0429b_ICE40HXDevBoard_ICE40HXDevBoardVGA.md) | [431. ICE40UPDevBoard](b0431b_ICE40UPDevBoard_ICE40UPDevBoard.md) |

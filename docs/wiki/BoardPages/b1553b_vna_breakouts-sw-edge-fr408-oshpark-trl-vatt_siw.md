@@ -1,4 +1,4 @@
-# 1553 siw
+# 1553. siw
 
 Board 1,553 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 15](../CorpusTestingPages/Corpus-Testing-15.md#1553-siw).
 
@@ -45,4 +45,4 @@ Board 1,553 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1552 siw](b1552b_vna_breakouts-sw-edge-fr408-oshpark-trl-thru_siw.md) | [1554 switch_breakout](b1554b_vna_switch-breakout.md) |
+| [1552. siw](b1552b_vna_breakouts-sw-edge-fr408-oshpark-trl-thru_siw.md) | [1554. switch_breakout](b1554b_vna_switch-breakout.md) |

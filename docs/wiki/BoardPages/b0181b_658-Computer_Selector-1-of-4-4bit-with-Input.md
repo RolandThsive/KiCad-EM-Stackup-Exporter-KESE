@@ -1,4 +1,4 @@
-# 181 Selector 1-of-4 4bit with Input
+# 181. Selector 1-of-4 4bit with Input
 
 Board 181 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 2](../CorpusTestingPages/Corpus-Testing-02.md#181-selector-1-of-4-4bit-with-input).
 
@@ -45,4 +45,4 @@ Board 181 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [180 Register 8bit with IO](b0180b_658-Computer_Register-8bit-with-IO.md) | [182 Selector 1-of-4 4bit](b0182b_658-Computer_Selector-1-of-4-4bit.md) |
+| [180. Register 8bit with IO](b0180b_658-Computer_Register-8bit-with-IO.md) | [182. Selector 1-of-4 4bit](b0182b_658-Computer_Selector-1-of-4-4bit.md) |

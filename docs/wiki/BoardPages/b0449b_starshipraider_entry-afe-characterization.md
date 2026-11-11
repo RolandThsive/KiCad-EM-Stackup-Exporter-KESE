@@ -1,4 +1,4 @@
-# 449 entry-afe-characterization
+# 449. entry-afe-characterization
 
 Board 449 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 5](../CorpusTestingPages/Corpus-Testing-05.md#449-entry-afe-characterization).
 
@@ -45,4 +45,4 @@ Board 449 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [448 latentpink](b0448b_latentpacket_latentpink.md) | [450 hmcad-characterization](b0450b_starshipraider_hmcad-characterization.md) |
+| [448. latentpink](b0448b_latentpacket_latentpink.md) | [450. hmcad-characterization](b0450b_starshipraider_hmcad-characterization.md) |

@@ -1,4 +1,4 @@
-# 1612 dexx_video_adapter
+# 1612. dexx_video_adapter
 
 Board 1,612 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 15](../CorpusTestingPages/Corpus-Testing-15.md#1612-dexx_video_adapter).
 
@@ -45,4 +45,4 @@ Board 1,612 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1611 pcb](b1611b_huma-rocket-flight-computer_pcb.md) | [1613 pcb1p5_hv_syncfix](b1613b_ossc-pro-hw_pcb1p5-hv-syncfix.md) |
+| [1611. pcb](b1611b_huma-rocket-flight-computer_pcb.md) | [1613. pcb1p5_hv_syncfix](b1613b_ossc-pro-hw_pcb1p5-hv-syncfix.md) |

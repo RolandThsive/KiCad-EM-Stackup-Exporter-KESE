@@ -1,4 +1,4 @@
-# 892 Interposer_Board_IOCrest
+# 892. Interposer_Board_IOCrest
 
 Board 892 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 9](../CorpusTestingPages/Corpus-Testing-09.md#892-interposer_board_iocrest).
 
@@ -45,4 +45,4 @@ Board 892 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [891 kim-1](b0891b_kim-1_kim-1.md) | [893 Interposer_Board_JoneyTech](b0893b_ThunderScope_Interposer-Board-JoneyTech.md) |
+| [891. kim-1](b0891b_kim-1_kim-1.md) | [893. Interposer_Board_JoneyTech](b0893b_ThunderScope_Interposer-Board-JoneyTech.md) |

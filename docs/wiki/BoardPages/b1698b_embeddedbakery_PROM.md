@@ -1,4 +1,4 @@
-# 1698 PROM
+# 1698. PROM
 
 Board 1,698 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 16](../CorpusTestingPages/Corpus-Testing-16.md#1698-prom).
 
@@ -45,4 +45,4 @@ Board 1,698 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1697 Examples](b1697b_embeddedbakery_Examples.md) | [1699 h4n2rs485](b1699b_embeddedbakery_h4n2rs485.md) |
+| [1697. Examples](b1697b_embeddedbakery_Examples.md) | [1699. h4n2rs485](b1699b_embeddedbakery_h4n2rs485.md) |

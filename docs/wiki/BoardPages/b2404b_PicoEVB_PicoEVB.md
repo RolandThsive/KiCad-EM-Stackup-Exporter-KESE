@@ -1,4 +1,4 @@
-# 2404 PicoEVB
+# 2404. PicoEVB
 
 Board 2,404 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 23](../CorpusTestingPages/Corpus-Testing-23.md#2404-picoevb).
 
@@ -45,4 +45,4 @@ Board 2,404 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2403 amiga2000](b2403b_kicad-amiga2000_amiga2000.md) | [2405 flyback-breakout-v1.0](b2405b_robocup-pcb_flyback-breakout-v1-0.md) |
+| [2403. amiga2000](b2403b_kicad-amiga2000_amiga2000.md) | [2405. flyback-breakout-v1.0](b2405b_robocup-pcb_flyback-breakout-v1-0.md) |

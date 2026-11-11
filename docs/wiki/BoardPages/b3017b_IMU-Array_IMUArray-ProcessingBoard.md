@@ -1,4 +1,4 @@
-# 3017 IMUArray_ProcessingBoard
+# 3017. IMUArray_ProcessingBoard
 
 Board 3,017 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 28](../CorpusTestingPages/Corpus-Testing-28.md#3017-imuarray_processingboard).
 
@@ -46,4 +46,4 @@ Board 3,017 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [3016 IMUArray_BreakoutBoard](b3016b_IMU-Array_IMUArray-BreakoutBoard.md) | [3018 IMUArray_SensorBoard](b3018b_IMU-Array_IMUArray-SensorBoard.md) |
+| [3016. IMUArray_BreakoutBoard](b3016b_IMU-Array_IMUArray-BreakoutBoard.md) | [3018. IMUArray_SensorBoard](b3018b_IMU-Array_IMUArray-SensorBoard.md) |

@@ -1,4 +1,4 @@
-# 755 ciaa-nxp
+# 755. ciaa-nxp
 
 Board 755 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 7](../CorpusTestingPages/Corpus-Testing-07.md#755-ciaa-nxp).
 
@@ -45,4 +45,4 @@ Board 755 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [754 CIAA_K60](b0754b_Hardware_CIAA-K60.md) | [756 ciaa-pic](b0756b_Hardware_ciaa-pic.md) |
+| [754. CIAA_K60](b0754b_Hardware_CIAA-K60.md) | [756. ciaa-pic](b0756b_Hardware_ciaa-pic.md) |

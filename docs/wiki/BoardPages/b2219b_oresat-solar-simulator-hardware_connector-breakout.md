@@ -1,4 +1,4 @@
-# 2219 connector-breakout
+# 2219. connector-breakout
 
 Board 2,219 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 21](../CorpusTestingPages/Corpus-Testing-21.md#2219-connector-breakout).
 
@@ -45,4 +45,4 @@ Board 2,219 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2218 1u_panel_breakout](b2218b_oresat-solar-hardware_1u-panel-breakout.md) | [2220 controller-board](b2220b_oresat-solar-simulator-hardware_controller-board.md) |
+| [2218. 1u_panel_breakout](b2218b_oresat-solar-hardware_1u-panel-breakout.md) | [2220. controller-board](b2220b_oresat-solar-simulator-hardware_controller-board.md) |

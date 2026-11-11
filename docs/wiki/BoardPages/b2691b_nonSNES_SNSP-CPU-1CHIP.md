@@ -1,4 +1,4 @@
-# 2691 SNSP-CPU-1CHIP
+# 2691. SNSP-CPU-1CHIP
 
 Board 2,691 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 25](../CorpusTestingPages/Corpus-Testing-25.md#2691-snsp-cpu-1chip).
 
@@ -45,4 +45,4 @@ Board 2,691 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2690 SNSP-CPU-01](b2690b_nonSNES_SNSP-CPU-01.md) | [2692 ControllerCircuit](b2692b_diybmsv4_ControllerCircuit.md) |
+| [2690. SNSP-CPU-01](b2690b_nonSNES_SNSP-CPU-01.md) | [2692. ControllerCircuit](b2692b_diybmsv4_ControllerCircuit.md) |

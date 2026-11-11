@@ -1,4 +1,4 @@
-# 352 environment-sensor-sip-baseboard
+# 352. environment-sensor-sip-baseboard
 
 Board 352 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 4](../CorpusTestingPages/Corpus-Testing-04.md#352-environment-sensor-sip-baseboard).
 
@@ -44,4 +44,4 @@ Board 352 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [351 environment-sensor](b0351b_environment-sensor_environment-sensor.md) | [353 lz1-led-driver](b0353b_flickerless-led-driver_lz1-led-driver.md) |
+| [351. environment-sensor](b0351b_environment-sensor_environment-sensor.md) | [353. lz1-led-driver](b0353b_flickerless-led-driver_lz1-led-driver.md) |

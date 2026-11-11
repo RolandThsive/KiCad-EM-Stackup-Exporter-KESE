@@ -1,4 +1,4 @@
-# 2328 FC_V5d_Production_Rev2
+# 2328. FC_V5d_Production_Rev2
 
 Board 2,328 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 22](../CorpusTestingPages/Corpus-Testing-22.md#2328-fc_v5d_production_rev2).
 
@@ -45,4 +45,4 @@ Board 2,328 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2327 FC_V5d_Production](b2327b_flight-controller-board_FC-V5d-Production.md) | [2329 FC_V5e](b2329b_flight-controller-board_FC-V5e.md) |
+| [2327. FC_V5d_Production](b2327b_flight-controller-board_FC-V5d-Production.md) | [2329. FC_V5e](b2329b_flight-controller-board_FC-V5e.md) |

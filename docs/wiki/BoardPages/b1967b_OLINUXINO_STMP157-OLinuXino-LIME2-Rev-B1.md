@@ -1,4 +1,4 @@
-# 1967 STMP157-OLinuXino-LIME2_Rev_B1
+# 1967. STMP157-OLinuXino-LIME2_Rev_B1
 
 Board 1,967 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 19](../CorpusTestingPages/Corpus-Testing-19.md#1967-stmp157-olinuxino-lime2_rev_b1).
 
@@ -45,4 +45,4 @@ Board 1,967 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1966 Lime2-SATA_RevA](b1966b_OLINUXINO_Lime2-SATA-RevA.md) | [1968 OSHW-GHOST_Rev_A](b1968b_OSHW-GHOST_OSHW-GHOST-Rev-A.md) |
+| [1966. Lime2-SATA_RevA](b1966b_OLINUXINO_Lime2-SATA-RevA.md) | [1968. OSHW-GHOST_Rev_A](b1968b_OSHW-GHOST_OSHW-GHOST-Rev-A.md) |

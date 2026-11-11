@@ -1,4 +1,4 @@
-# 593 as5047p-atsm_breakout
+# 593. as5047p-atsm_breakout
 
 Board 593 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 6](../CorpusTestingPages/Corpus-Testing-06.md#593-as5047p-atsm_breakout).
 
@@ -45,4 +45,4 @@ Board 593 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [592 05-can_encoder](b0592b_22xt-kicad_05-can-encoder.md) | [594 stm32f072cb_breakout](b0594b_22xt-kicad_stm32f072cb-breakout.md) |
+| [592. 05-can_encoder](b0592b_22xt-kicad_05-can-encoder.md) | [594. stm32f072cb_breakout](b0594b_22xt-kicad_stm32f072cb-breakout.md) |

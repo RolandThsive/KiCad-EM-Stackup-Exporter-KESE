@@ -1,4 +1,4 @@
-# 2071 tsal-ail
+# 2071. tsal-ail
 
 Board 2,071 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 20](../CorpusTestingPages/Corpus-Testing-20.md#2071-tsal-ail).
 
@@ -45,4 +45,4 @@ Board 2,071 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2070 precharge_discharge](b2070b_olin-electric-motorsports_precharge-discharge.md) | [2072 CM4_2](b2072b_CM4-NAS-MiniPCIE_CM4-2.md) |
+| [2070. precharge_discharge](b2070b_olin-electric-motorsports_precharge-discharge.md) | [2072. CM4_2](b2072b_CM4-NAS-MiniPCIE_CM4-2.md) |

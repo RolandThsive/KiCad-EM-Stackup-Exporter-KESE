@@ -1,4 +1,4 @@
-# 1043 glasgow
+# 1043. glasgow
 
 Board 1,043 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 10](../CorpusTestingPages/Corpus-Testing-10.md#1043-glasgow).
 
@@ -45,4 +45,4 @@ Board 1,043 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1042 ESP32 Demo Project](b1042b_esp32-4layer-iot-board_ESP32-Demo-Project.md) | [1044 glasgow](b1044b_glasgow_hardware-boards-glasgow-revB_glasgow.md) |
+| [1042. ESP32 Demo Project](b1042b_esp32-4layer-iot-board_ESP32-Demo-Project.md) | [1044. glasgow](b1044b_glasgow_hardware-boards-glasgow-revB_glasgow.md) |

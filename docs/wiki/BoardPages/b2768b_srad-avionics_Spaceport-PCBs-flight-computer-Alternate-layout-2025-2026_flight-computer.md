@@ -1,4 +1,4 @@
-# 2768 flight-computer
+# 2768. flight-computer
 
 Board 2,768 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 26](../CorpusTestingPages/Corpus-Testing-26.md#2768-flight-computer).
 
@@ -45,4 +45,4 @@ Board 2,768 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2767 dipole-breakout](b2767b_srad-avionics_dipole-breakout.md) | [2769 flight-computer](b2769b_srad-avionics_Spaceport-PCBs-flight-computer-flight-computer-2025-2026_flight-computer.md) |
+| [2767. dipole-breakout](b2767b_srad-avionics_dipole-breakout.md) | [2769. flight-computer](b2769b_srad-avionics_Spaceport-PCBs-flight-computer-flight-computer-2025-2026_flight-computer.md) |

@@ -1,4 +1,4 @@
-# 2007 USB-GIGABIT_Rev_D
+# 2007. USB-GIGABIT_Rev_D
 
 Board 2,007 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 19](../CorpusTestingPages/Corpus-Testing-19.md#2007-usb-gigabit_rev_d).
 
@@ -45,4 +45,4 @@ Board 2,007 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2006 USB-GIGABIT_Rev_C](b2006b_USB-GIGABIT_USB-GIGABIT-Rev-C.md) | [2008 USB-GIGABIT_Rev_E](b2008b_USB-GIGABIT_USB-GIGABIT-Rev-E.md) |
+| [2006. USB-GIGABIT_Rev_C](b2006b_USB-GIGABIT_USB-GIGABIT-Rev-C.md) | [2008. USB-GIGABIT_Rev_E](b2008b_USB-GIGABIT_USB-GIGABIT-Rev-E.md) |

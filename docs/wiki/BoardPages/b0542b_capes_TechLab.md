@@ -1,4 +1,4 @@
-# 542 TechLab
+# 542. TechLab
 
 Board 542 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 6](../CorpusTestingPages/Corpus-Testing-06.md#542-techlab).
 
@@ -45,4 +45,4 @@ Board 542 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [541 BeagleConnect Freedom C7](b0541b_beagleconnect-freedom_BeagleConnect-Freedom-C7.md) | [543 PocketBeagle](b0543b_pocketbeagle_PocketBeagle.md) |
+| [541. BeagleConnect Freedom C7](b0541b_beagleconnect-freedom_BeagleConnect-Freedom-C7.md) | [543. PocketBeagle](b0543b_pocketbeagle_PocketBeagle.md) |

@@ -1,4 +1,4 @@
-# 2684 FeatherRadioAdapter
+# 2684. FeatherRadioAdapter
 
 Board 2,684 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 25](../CorpusTestingPages/Corpus-Testing-25.md#2684-featherradioadapter).
 
@@ -45,4 +45,4 @@ Board 2,684 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2683 Coil_Panel_Z](b2683b_samwise-avionics_Coil-Panel-Z.md) | [2685 Pete_2400_Mini](b2685b_samwise-avionics_Pete-2400-Mini.md) |
+| [2683. Coil_Panel_Z](b2683b_samwise-avionics_Coil-Panel-Z.md) | [2685. Pete_2400_Mini](b2685b_samwise-avionics_Pete-2400-Mini.md) |

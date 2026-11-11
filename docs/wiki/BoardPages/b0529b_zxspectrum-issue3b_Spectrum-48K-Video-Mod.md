@@ -1,4 +1,4 @@
-# 529 Spectrum 48K Video Mod
+# 529. Spectrum 48K Video Mod
 
 Board 529 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 5](../CorpusTestingPages/Corpus-Testing-05.md#529-spectrum-48k-video-mod).
 
@@ -45,4 +45,4 @@ Board 529 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [528 zx_coil](b0528b_zxspectrum-issue3b_zx-coil.md) | [530 zx_spectrum_composite_mod](b0530b_zxspectrum-issue3b_zx-spectrum-composite-mod.md) |
+| [528. zx_coil](b0528b_zxspectrum-issue3b_zx-coil.md) | [530. zx_spectrum_composite_mod](b0530b_zxspectrum-issue3b_zx-spectrum-composite-mod.md) |

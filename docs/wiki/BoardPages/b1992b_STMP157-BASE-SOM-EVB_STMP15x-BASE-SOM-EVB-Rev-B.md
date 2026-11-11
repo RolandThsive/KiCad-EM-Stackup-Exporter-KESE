@@ -1,4 +1,4 @@
-# 1992 STMP15x-BASE-SOM-EVB_Rev_B
+# 1992. STMP15x-BASE-SOM-EVB_Rev_B
 
 Board 1,992 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 19](../CorpusTestingPages/Corpus-Testing-19.md#1992-stmp15x-base-som-evb_rev_b).
 
@@ -45,4 +45,4 @@ Board 1,992 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1991 STMP1-OLinuXino_Rev_A](b1991b_STMP1-OLinuXino_STMP1-OLinuXino-Rev-A.md) | [1993 STMP15x-SHIELD_Rev_A](b1993b_STMP15X-SHIELD_STMP15x-SHIELD-Rev-A.md) |
+| [1991. STMP1-OLinuXino_Rev_A](b1991b_STMP1-OLinuXino_STMP1-OLinuXino-Rev-A.md) | [1993. STMP15x-SHIELD_Rev_A](b1993b_STMP15X-SHIELD_STMP15x-SHIELD-Rev-A.md) |

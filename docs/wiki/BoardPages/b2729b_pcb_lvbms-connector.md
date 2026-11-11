@@ -1,4 +1,4 @@
-# 2729 lvbms-connector
+# 2729. lvbms-connector
 
 Board 2,729 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 26](../CorpusTestingPages/Corpus-Testing-26.md#2729-lvbms-connector).
 
@@ -45,4 +45,4 @@ Board 2,729 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2728 CAN_Bridge](b2728b_pcb_CAN-Bridge.md) | [2730 PCB - VOLTAGE TAPS](b2730b_pcb_PCB-VOLTAGE-TAPS.md) |
+| [2728. CAN_Bridge](b2728b_pcb_CAN-Bridge.md) | [2730. PCB - VOLTAGE TAPS](b2730b_pcb_PCB-VOLTAGE-TAPS.md) |

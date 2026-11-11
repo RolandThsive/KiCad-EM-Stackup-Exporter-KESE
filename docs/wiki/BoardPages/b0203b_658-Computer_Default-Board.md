@@ -1,4 +1,4 @@
-# 203 Default Board
+# 203. Default Board
 
 Board 203 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 2](../CorpusTestingPages/Corpus-Testing-02.md#203-default-board).
 
@@ -45,4 +45,4 @@ Board 203 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [202 Clock Push Button](b0202b_658-Computer_Clock-Push-Button.md) | [204 Main Memory Channel](b0204b_658-Computer_Main-Memory-Channel.md) |
+| [202. Clock Push Button](b0202b_658-Computer_Clock-Push-Button.md) | [204. Main Memory Channel](b0204b_658-Computer_Main-Memory-Channel.md) |

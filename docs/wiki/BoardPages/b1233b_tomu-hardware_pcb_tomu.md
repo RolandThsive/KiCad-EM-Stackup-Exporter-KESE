@@ -1,4 +1,4 @@
-# 1233 tomu
+# 1233. tomu
 
 Board 1,233 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 12](../CorpusTestingPages/Corpus-Testing-12.md#1233-tomu).
 
@@ -45,4 +45,4 @@ Board 1,233 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1232 tomu-fpga](b1232b_fomu-hardware_archive-evt-pcb_tomu-fpga.md) | [1234 tomu](b1234b_tomu-hardware_releases-v0-0-gerbers_tomu.md) |
+| [1232. tomu-fpga](b1232b_fomu-hardware_archive-evt-pcb_tomu-fpga.md) | [1234. tomu](b1234b_tomu-hardware_releases-v0-0-gerbers_tomu.md) |

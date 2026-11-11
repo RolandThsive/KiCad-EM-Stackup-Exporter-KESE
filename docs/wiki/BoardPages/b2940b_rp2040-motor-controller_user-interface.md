@@ -1,4 +1,4 @@
-# 2940 user_interface
+# 2940. user_interface
 
 Board 2,940 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 28](../CorpusTestingPages/Corpus-Testing-28.md#2940-user_interface).
 
@@ -45,4 +45,4 @@ Board 2,940 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2939 rp2040_encoder](b2939b_rp2040-motor-controller_rp2040-encoder.md) | [2941 Board-DjinnBase](b2941b_keyboards_Board-DjinnBase.md) |
+| [2939. rp2040_encoder](b2939b_rp2040-motor-controller_rp2040-encoder.md) | [2941. Board-DjinnBase](b2941b_keyboards_Board-DjinnBase.md) |

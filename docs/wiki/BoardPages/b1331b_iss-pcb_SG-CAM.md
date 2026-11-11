@@ -1,4 +1,4 @@
-# 1331 SG_CAM
+# 1331. SG_CAM
 
 Board 1,331 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 13](../CorpusTestingPages/Corpus-Testing-13.md#1331-sg_cam).
 
@@ -45,4 +45,4 @@ Board 1,331 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1330 BAGEL-MK1.1-Butter](b1330b_iss-pcb_BAGEL-MK1-1-Butter.md) | [1332 CAM-MK2](b1332b_iss-pcb_CAM-MK2.md) |
+| [1330. BAGEL-MK1.1-Butter](b1330b_iss-pcb_BAGEL-MK1-1-Butter.md) | [1332. CAM-MK2](b1332b_iss-pcb_CAM-MK2.md) |

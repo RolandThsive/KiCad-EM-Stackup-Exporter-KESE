@@ -1,4 +1,4 @@
-# 1459 sonde xilinx
+# 1459. sonde xilinx
 
 Board 1,459 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 14](../CorpusTestingPages/Corpus-Testing-14.md#1459-sonde-xilinx).
 
@@ -45,4 +45,4 @@ Board 1,459 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1458 RoyalBlue54L-Feather](b1458b_kicad-source-mirror_RoyalBlue54L-Feather.md) | [1460 StickHub](b1460b_kicad-source-mirror_StickHub.md) |
+| [1458. RoyalBlue54L-Feather](b1458b_kicad-source-mirror_RoyalBlue54L-Feather.md) | [1460. StickHub](b1460b_kicad-source-mirror_StickHub.md) |

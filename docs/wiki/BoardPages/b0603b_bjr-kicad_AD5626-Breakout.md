@@ -1,4 +1,4 @@
-# 603 AD5626_Breakout
+# 603. AD5626_Breakout
 
 Board 603 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 6](../CorpusTestingPages/Corpus-Testing-06.md#603-ad5626_breakout).
 
@@ -45,4 +45,4 @@ Board 603 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [602 mainbox2.0_sophie](b0602b_bjr-kicad_mainbox2-0-sophie.md) | [604 wsg1.0](b0604b_bjr-kicad_wsg1-0.md) |
+| [602. mainbox2.0_sophie](b0602b_bjr-kicad_mainbox2-0-sophie.md) | [604. wsg1.0](b0604b_bjr-kicad_wsg1-0.md) |

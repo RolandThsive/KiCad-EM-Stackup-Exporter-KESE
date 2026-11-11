@@ -1,4 +1,4 @@
-# 1681 pcb
+# 1681. pcb
 
 Board 1,681 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 16](../CorpusTestingPages/Corpus-Testing-16.md#1681-pcb).
 
@@ -45,4 +45,4 @@ Board 1,681 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1680 pcb](b1680b_Lancer_pcb-epdc-poc-board_pcb.md) | [1682 pcb](b1682b_Lancer_pcb-usb-adapter-board_pcb.md) |
+| [1680. pcb](b1680b_Lancer_pcb-epdc-poc-board_pcb.md) | [1682. pcb](b1682b_Lancer_pcb-usb-adapter-board_pcb.md) |

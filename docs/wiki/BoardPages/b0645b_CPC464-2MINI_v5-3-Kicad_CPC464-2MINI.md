@@ -1,4 +1,4 @@
-# 645 CPC464-2MINI
+# 645. CPC464-2MINI
 
 Board 645 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 6](../CorpusTestingPages/Corpus-Testing-06.md#645-cpc464-2mini).
 
@@ -45,4 +45,4 @@ Board 645 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [644 CPC464-2MINI](b0644b_CPC464-2MINI_v4-1-Kicad_CPC464-2MINI.md) | [646 EinsteinTC01](b0646b_Einstein-TC-01_Archive-MainBoard-v1-1-Kicad_EinsteinTC01.md) |
+| [644. CPC464-2MINI](b0644b_CPC464-2MINI_v4-1-Kicad_CPC464-2MINI.md) | [646. EinsteinTC01](b0646b_Einstein-TC-01_Archive-MainBoard-v1-1-Kicad_EinsteinTC01.md) |

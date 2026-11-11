@@ -1,4 +1,4 @@
-# 2879 servo_motor
+# 2879. servo_motor
 
 Board 2,879 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 27](../CorpusTestingPages/Corpus-Testing-27.md#2879-servo_motor).
 
@@ -45,4 +45,4 @@ Board 2,879 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2878 servo_motor](b2878b_servomotor_PCB-Servomotor2-V4_servo-motor.md) | [2880 servo_motor-V6](b2880b_servomotor_servo-motor-V6.md) |
+| [2878. servo_motor](b2878b_servomotor_PCB-Servomotor2-V4_servo-motor.md) | [2880. servo_motor-V6](b2880b_servomotor_servo-motor-V6.md) |

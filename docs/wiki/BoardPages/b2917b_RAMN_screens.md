@@ -1,4 +1,4 @@
-# 2917 screens
+# 2917. screens
 
 Board 2,917 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 28](../CorpusTestingPages/Corpus-Testing-28.md#2917-screens).
 
@@ -45,4 +45,4 @@ Board 2,917 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2916 ramn](b2916b_RAMN_ramn.md) | [2918 chassis](b2918b_RAMN_chassis.md) |
+| [2916. ramn](b2916b_RAMN_ramn.md) | [2918. chassis](b2918b_RAMN_chassis.md) |

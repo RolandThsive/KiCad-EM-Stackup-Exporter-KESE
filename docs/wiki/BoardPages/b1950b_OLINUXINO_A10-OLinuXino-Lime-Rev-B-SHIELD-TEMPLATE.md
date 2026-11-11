@@ -1,4 +1,4 @@
-# 1950 A10_OLinuXino_Lime_Rev-B_SHIELD_TEMPLATE
+# 1950. A10_OLinuXino_Lime_Rev-B_SHIELD_TEMPLATE
 
 Board 1,950 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 19](../CorpusTestingPages/Corpus-Testing-19.md#1950-a10_olinuxino_lime_rev-b_shield_template).
 
@@ -44,4 +44,4 @@ Board 1,950 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1949 OLIMEXINO-STM32F3_Rev_D](b1949b_OLIMEXINO-STM32F3_OLIMEXINO-STM32F3-Rev-D.md) | [1951 A20_OLinuXino_Lime2_SHIELD_TEMPLATE_Rev-AA](b1951b_OLINUXINO_A20-OLinuXino-Lime2-SHIELD-TEMPLATE-Rev-AA.md) |
+| [1949. OLIMEXINO-STM32F3_Rev_D](b1949b_OLIMEXINO-STM32F3_OLIMEXINO-STM32F3-Rev-D.md) | [1951. A20_OLinuXino_Lime2_SHIELD_TEMPLATE_Rev-AA](b1951b_OLINUXINO_A20-OLinuXino-Lime2-SHIELD-TEMPLATE-Rev-AA.md) |

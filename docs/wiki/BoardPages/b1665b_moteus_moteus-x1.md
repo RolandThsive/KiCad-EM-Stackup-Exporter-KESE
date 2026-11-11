@@ -1,4 +1,4 @@
-# 1665 moteus_x1
+# 1665. moteus_x1
 
 Board 1,665 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 16](../CorpusTestingPages/Corpus-Testing-16.md#1665-moteus_x1).
 
@@ -45,4 +45,4 @@ Board 1,665 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1664 mjuart](b1664b_moteus_mjuart.md) | [1666 amiga-gfxcard-before-pour](b1666b_amiga2000-gfxcard_amiga-gfxcard-before-pour.md) |
+| [1664. mjuart](b1664b_moteus_mjuart.md) | [1666. amiga-gfxcard-before-pour](b1666b_amiga2000-gfxcard_amiga-gfxcard-before-pour.md) |

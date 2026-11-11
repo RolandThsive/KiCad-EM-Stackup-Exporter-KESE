@@ -1,4 +1,4 @@
-# 2956 Discharge KiCAD
+# 2956. Discharge KiCAD
 
 Board 2,956 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 28](../CorpusTestingPages/Corpus-Testing-28.md#2956-discharge-kicad).
 
@@ -45,4 +45,4 @@ Board 2,956 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2955 Charger_Shutdown_KR](b2955b_circuits_Charger-Shutdown-KR.md) | [2957 Cell Tap Fuse Board 2x](b2957b_circuits_Cell-Tap-Fuse-Board-2x.md) |
+| [2955. Charger_Shutdown_KR](b2955b_circuits_Charger-Shutdown-KR.md) | [2957. Cell Tap Fuse Board 2x](b2957b_circuits_Cell-Tap-Fuse-Board-2x.md) |

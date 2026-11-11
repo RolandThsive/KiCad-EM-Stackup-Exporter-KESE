@@ -1,4 +1,4 @@
-# 2646 VR-Conditioner-MAX9926+reg
+# 2646. VR-Conditioner-MAX9926+reg
 
 Board 2,646 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 25](../CorpusTestingPages/Corpus-Testing-25.md#2646-vr-conditioner-max9926reg).
 
@@ -45,4 +45,4 @@ Board 2,646 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2645 v0.4.3d](b2645b_hardware_v0-4-3d.md) | [2647 DubaiXTClone](b2647b_DubaiXTClone_DubaiXTClone.md) |
+| [2645. v0.4.3d](b2645b_hardware_v0-4-3d.md) | [2647. DubaiXTClone](b2647b_DubaiXTClone_DubaiXTClone.md) |

@@ -1,4 +1,4 @@
-# 1469 keyb2
+# 1469. keyb2
 
 Board 1,469 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 14](../CorpusTestingPages/Corpus-Testing-14.md#1469-keyb2).
 
@@ -45,4 +45,4 @@ Board 1,469 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1468 ovio_core](b1468b_ovio-core_ovio-core.md) | [1470 keyb2_nofill](b1470b_ZX-Spectrum-diy_keyb2-nofill.md) |
+| [1468. ovio_core](b1468b_ovio-core_ovio-core.md) | [1470. keyb2_nofill](b1470b_ZX-Spectrum-diy_keyb2-nofill.md) |

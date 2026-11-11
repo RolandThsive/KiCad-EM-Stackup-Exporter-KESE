@@ -1,4 +1,4 @@
-# 272 Video Device RAM Select
+# 272. Video Device RAM Select
 
 Board 272 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 3](../CorpusTestingPages/Corpus-Testing-03.md#272-video-device-ram-select).
 
@@ -45,4 +45,4 @@ Board 272 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [271 Video Data Select](b0271b_658-Computer_Video-Data-Select.md) | [273 Video Memory 2MB](b0273b_658-Computer_Video-Memory-2MB.md) |
+| [271. Video Data Select](b0271b_658-Computer_Video-Data-Select.md) | [273. Video Memory 2MB](b0273b_658-Computer_Video-Memory-2MB.md) |

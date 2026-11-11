@@ -1,4 +1,4 @@
-# 2759 OpenInverter_20b
+# 2759. OpenInverter_20b
 
 Board 2,759 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 26](../CorpusTestingPages/Corpus-Testing-26.md#2759-openinverter_20b).
 
@@ -45,4 +45,4 @@ Board 2,759 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2758 DDR4_SoC](b2758b_lpddr4-w-allwinner-soc_DDR4-SoC.md) | [2760 LVPD-board](b2760b_srad-avionics_LVPD-board.md) |
+| [2758. DDR4_SoC](b2758b_lpddr4-w-allwinner-soc_DDR4-SoC.md) | [2760. LVPD-board](b2760b_srad-avionics_LVPD-board.md) |

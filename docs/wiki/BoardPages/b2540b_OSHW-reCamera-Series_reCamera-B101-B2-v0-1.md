@@ -1,4 +1,4 @@
-# 2540 reCamera B101_B2_v0.1
+# 2540. reCamera B101_B2_v0.1
 
 Board 2,540 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 24](../CorpusTestingPages/Corpus-Testing-24.md#2540-recamera-b101_b2_v01).
 
@@ -45,4 +45,4 @@ Board 2,540 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2539 reCamera B101 v1.2](b2539b_OSHW-reCamera-Series_reCamera-B101-v1-2.md) | [2541 reCamera 2002 POE Board](b2541b_OSHW-reCamera-Series_reCamera-2002-POE-Board.md) |
+| [2539. reCamera B101 v1.2](b2539b_OSHW-reCamera-Series_reCamera-B101-v1-2.md) | [2541. reCamera 2002 POE Board](b2541b_OSHW-reCamera-Series_reCamera-2002-POE-Board.md) |

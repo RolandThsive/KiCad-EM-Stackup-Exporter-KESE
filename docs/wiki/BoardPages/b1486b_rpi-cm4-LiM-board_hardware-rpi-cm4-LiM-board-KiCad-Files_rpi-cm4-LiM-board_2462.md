@@ -1,4 +1,4 @@
-# 1486 rpi-cm4-LiM-board
+# 1486. rpi-cm4-LiM-board
 
 Board 1,486 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 14](../CorpusTestingPages/Corpus-Testing-14.md#1486-rpi-cm4-lim-board).
 
@@ -45,4 +45,4 @@ Board 1,486 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1485 rpi-cm4-LiM+-board](b1485b_rpi-cm4-LiM-board_hardware-rpi-cm4-LiM-board-KiCad-Files_rpi-cm4-LiM-board_2262.md) | [1487 LHCbit](b1487b_hardware_LHCbit.md) |
+| [1485. rpi-cm4-LiM+-board](b1485b_rpi-cm4-LiM-board_hardware-rpi-cm4-LiM-board-KiCad-Files_rpi-cm4-LiM-board_2262.md) | [1487. LHCbit](b1487b_hardware_LHCbit.md) |

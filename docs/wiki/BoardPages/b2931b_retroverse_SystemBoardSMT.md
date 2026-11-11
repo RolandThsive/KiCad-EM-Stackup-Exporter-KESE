@@ -1,4 +1,4 @@
-# 2931 SystemBoardSMT
+# 2931. SystemBoardSMT
 
 Board 2,931 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 28](../CorpusTestingPages/Corpus-Testing-28.md#2931-systemboardsmt).
 
@@ -45,4 +45,4 @@ Board 2,931 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2930 SystemBoardPLCC](b2930b_retroverse_SystemBoardPLCC.md) | [2932 CYM1A113](b2932b_trezor-hardware_CYM1A113.md) |
+| [2930. SystemBoardPLCC](b2930b_retroverse_SystemBoardPLCC.md) | [2932. CYM1A113](b2932b_trezor-hardware_CYM1A113.md) |

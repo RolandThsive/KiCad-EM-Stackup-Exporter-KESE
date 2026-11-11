@@ -1,4 +1,4 @@
-# 188 Coprocessor Board - Main
+# 188. Coprocessor Board - Main
 
 Board 188 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 2](../CorpusTestingPages/Corpus-Testing-02.md#188-coprocessor-board---main).
 
@@ -45,4 +45,4 @@ Board 188 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [187 Coprocessor Board - Additional](b0187b_658-Computer_Coprocessor-Board-Additional.md) | [189 Coprocessor Clock](b0189b_658-Computer_Coprocessor-Clock.md) |
+| [187. Coprocessor Board - Additional](b0187b_658-Computer_Coprocessor-Board-Additional.md) | [189. Coprocessor Clock](b0189b_658-Computer_Coprocessor-Clock.md) |

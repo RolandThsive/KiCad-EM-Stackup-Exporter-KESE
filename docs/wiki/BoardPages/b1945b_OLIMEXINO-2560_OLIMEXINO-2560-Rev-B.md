@@ -1,4 +1,4 @@
-# 1945 OLIMEXINO-2560_Rev_B
+# 1945. OLIMEXINO-2560_Rev_B
 
 Board 1,945 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 19](../CorpusTestingPages/Corpus-Testing-19.md#1945-olimexino-2560_rev_b).
 
@@ -45,4 +45,4 @@ Board 1,945 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1944 Neo6502PC-PWR_Rev_B](b1944b_Neo6502pc_Neo6502PC-PWR-Rev-B.md) | [1946 OLIMEXINO-STM32F3_RevB](b1946b_OLIMEXINO-STM32F3_OLIMEXINO-STM32F3-RevB.md) |
+| [1944. Neo6502PC-PWR_Rev_B](b1944b_Neo6502pc_Neo6502PC-PWR-Rev-B.md) | [1946. OLIMEXINO-STM32F3_RevB](b1946b_OLIMEXINO-STM32F3_OLIMEXINO-STM32F3-RevB.md) |

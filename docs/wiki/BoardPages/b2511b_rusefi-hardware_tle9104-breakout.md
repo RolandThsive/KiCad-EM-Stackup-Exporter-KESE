@@ -1,4 +1,4 @@
-# 2511 tle9104-breakout
+# 2511. tle9104-breakout
 
 Board 2,511 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 24](../CorpusTestingPages/Corpus-Testing-24.md#2511-tle9104-breakout).
 
@@ -45,4 +45,4 @@ Board 2,511 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2510 superseal-igbt](b2510b_rusefi-hardware_superseal-igbt.md) | [2512 uaBrain-gm-e38](b2512b_rusefi-hardware_uaBrain-gm-e38.md) |
+| [2510. superseal-igbt](b2510b_rusefi-hardware_superseal-igbt.md) | [2512. uaBrain-gm-e38](b2512b_rusefi-hardware_uaBrain-gm-e38.md) |

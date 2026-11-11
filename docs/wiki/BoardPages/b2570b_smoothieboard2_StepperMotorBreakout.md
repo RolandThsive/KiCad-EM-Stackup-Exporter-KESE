@@ -1,4 +1,4 @@
-# 2570 StepperMotorBreakout
+# 2570. StepperMotorBreakout
 
 Board 2,570 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 24](../CorpusTestingPages/Corpus-Testing-24.md#2570-steppermotorbreakout).
 
@@ -45,4 +45,4 @@ Board 2,570 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2569 a13board](b2569b_a13board_a13board.md) | [2571 C.H.I.P-DIP](b2571b_smoothieboard2_C-H-I-P-DIP.md) |
+| [2569. a13board](b2569b_a13board_a13board.md) | [2571. C.H.I.P-DIP](b2571b_smoothieboard2_C-H-I-P-DIP.md) |

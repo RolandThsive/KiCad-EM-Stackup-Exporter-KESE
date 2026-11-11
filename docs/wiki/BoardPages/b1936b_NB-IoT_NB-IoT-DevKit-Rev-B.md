@@ -1,4 +1,4 @@
-# 1936 NB-IoT-DevKit_Rev_B
+# 1936. NB-IoT-DevKit_Rev_B
 
 Board 1,936 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 18](../CorpusTestingPages/Corpus-Testing-18.md#1936-nb-iot-devkit_rev_b).
 
@@ -45,4 +45,4 @@ Board 1,936 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1935 MOD-RTC2_Rev_A](b1935b_MOD-RTC2_MOD-RTC2-Rev-A.md) | [1937 NB-IoT-DevKit_Rev_C](b1937b_NB-IoT_NB-IoT-DevKit-Rev-C.md) |
+| [1935. MOD-RTC2_Rev_A](b1935b_MOD-RTC2_MOD-RTC2-Rev-A.md) | [1937. NB-IoT-DevKit_Rev_C](b1937b_NB-IoT_NB-IoT-DevKit-Rev-C.md) |

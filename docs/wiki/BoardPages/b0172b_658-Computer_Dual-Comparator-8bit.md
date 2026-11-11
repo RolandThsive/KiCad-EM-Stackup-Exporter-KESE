@@ -1,4 +1,4 @@
-# 172 Dual Comparator 8bit
+# 172. Dual Comparator 8bit
 
 Board 172 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 2](../CorpusTestingPages/Corpus-Testing-02.md#172-dual-comparator-8bit).
 
@@ -45,4 +45,4 @@ Board 172 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [171 Device Decode stage B](b0171b_658-Computer_Device-Decode-stage-B.md) | [173 Flags Enable Interrupt](b0173b_658-Computer_Flags-Enable-Interrupt.md) |
+| [171. Device Decode stage B](b0171b_658-Computer_Device-Decode-stage-B.md) | [173. Flags Enable Interrupt](b0173b_658-Computer_Flags-Enable-Interrupt.md) |

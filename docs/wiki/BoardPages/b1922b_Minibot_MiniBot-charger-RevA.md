@@ -1,4 +1,4 @@
-# 1922 MiniBot_charger_RevA
+# 1922. MiniBot_charger_RevA
 
 Board 1,922 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 18](../CorpusTestingPages/Corpus-Testing-18.md#1922-minibot_charger_reva).
 
@@ -45,4 +45,4 @@ Board 1,922 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1921 LoRa-STM32WL-DevKit_RevD1](b1921b_LoRa-STM32WL-DevKIT_LoRa-STM32WL-DevKit-RevD1.md) | [1923 MiniBot_RevA](b1923b_Minibot_MiniBot-RevA.md) |
+| [1921. LoRa-STM32WL-DevKit_RevD1](b1921b_LoRa-STM32WL-DevKIT_LoRa-STM32WL-DevKit-RevD1.md) | [1923. MiniBot_RevA](b1923b_Minibot_MiniBot-RevA.md) |

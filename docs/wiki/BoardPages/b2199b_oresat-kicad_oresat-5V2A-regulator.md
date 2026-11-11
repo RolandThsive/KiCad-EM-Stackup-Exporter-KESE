@@ -1,4 +1,4 @@
-# 2199 oresat-5V2A-regulator
+# 2199. oresat-5V2A-regulator
 
 Board 2,199 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 21](../CorpusTestingPages/Corpus-Testing-21.md#2199-oresat-5v2a-regulator).
 
@@ -45,4 +45,4 @@ Board 2,199 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2198 transceiver-AX5043](b2198b_oresat-kicad_transceiver-AX5043.md) | [2200 synthesizer-IF-Si4112](b2200b_oresat-kicad_synthesizer-IF-Si4112.md) |
+| [2198. transceiver-AX5043](b2198b_oresat-kicad_transceiver-AX5043.md) | [2200. synthesizer-IF-Si4112](b2200b_oresat-kicad_synthesizer-IF-Si4112.md) |

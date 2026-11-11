@@ -1,4 +1,4 @@
-# 2715 telemetry
+# 2715. telemetry
 
 Board 2,715 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 26](../CorpusTestingPages/Corpus-Testing-26.md#2715-telemetry).
 
@@ -45,4 +45,4 @@ Board 2,715 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2714 strain-gauge-amp-breakout](b2714b_pcb_strain-gauge-amp-breakout.md) | [2716 test-rig](b2716b_pcb_test-rig.md) |
+| [2714. strain-gauge-amp-breakout](b2714b_pcb_strain-gauge-amp-breakout.md) | [2716. test-rig](b2716b_pcb_test-rig.md) |

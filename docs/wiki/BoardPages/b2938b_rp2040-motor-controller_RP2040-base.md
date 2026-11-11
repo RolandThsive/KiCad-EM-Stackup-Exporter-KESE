@@ -1,4 +1,4 @@
-# 2938 RP2040_base
+# 2938. RP2040_base
 
 Board 2,938 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 28](../CorpusTestingPages/Corpus-Testing-28.md#2938-rp2040_base).
 
@@ -45,4 +45,4 @@ Board 2,938 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2937 driver_module](b2937b_rp2040-motor-controller_driver-module.md) | [2939 rp2040_encoder](b2939b_rp2040-motor-controller_rp2040-encoder.md) |
+| [2937. driver_module](b2937b_rp2040-motor-controller_driver-module.md) | [2939. rp2040_encoder](b2939b_rp2040-motor-controller_rp2040-encoder.md) |

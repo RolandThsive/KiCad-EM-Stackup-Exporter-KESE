@@ -1,4 +1,4 @@
-# 1005 NE_Delta
+# 1005. NE_Delta
 
 Board 1,005 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 10](../CorpusTestingPages/Corpus-Testing-10.md#1005-ne_delta).
 
@@ -46,4 +46,4 @@ Board 1,005 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1004 hram_regs_patch](b1004b_NE-Delta-Schematics_hram-regs-patch.md) | [1006 NE_Delta](b1006b_NE-Delta-Schematics_LX780-Delta-original_NE-Delta.md) |
+| [1004. hram_regs_patch](b1004b_NE-Delta-Schematics_hram-regs-patch.md) | [1006. NE_Delta](b1006b_NE-Delta-Schematics_LX780-Delta-original_NE-Delta.md) |

@@ -1,4 +1,4 @@
-# 437 CTRL_L
+# 437. CTRL_L
 
 Board 437 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 5](../CorpusTestingPages/Corpus-Testing-05.md#437-ctrl_l).
 
@@ -45,4 +45,4 @@ Board 437 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [436 spreadout](b0436b_maxi030_spreadout.md) | [438 CTRL_panelized](b0438b_4ds_CTRL-panelized.md) |
+| [436. spreadout](b0436b_maxi030_spreadout.md) | [438. CTRL_panelized](b0438b_4ds_CTRL-panelized.md) |

@@ -1,4 +1,4 @@
-# 1149 trace-width-sunstone
+# 1149. trace-width-sunstone
 
 Board 1,149 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 11](../CorpusTestingPages/Corpus-Testing-11.md#1149-trace-width-sunstone).
 
@@ -45,4 +45,4 @@ Board 1,149 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1148 trace-width-jlcpcb](b1148b_misc_trace-width-jlcpcb.md) | [1150 trace-width](b1150b_misc_trace-width.md) |
+| [1148. trace-width-jlcpcb](b1148b_misc_trace-width-jlcpcb.md) | [1150. trace-width](b1150b_misc_trace-width.md) |

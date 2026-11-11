@@ -1,4 +1,4 @@
-# 1191 obsidian-boa-r0.1
+# 1191. obsidian-boa-r0.1
 
 Board 1,191 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 12](../CorpusTestingPages/Corpus-Testing-12.md#1191-obsidian-boa-r01).
 
@@ -45,4 +45,4 @@ Board 1,191 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1190 syzygy-txr-breakout](b1190b_advent-calendar-of-circuits-2020_syzygy-txr-breakout.md) | [1192 FreshTwinkie](b1192b_PD-sniffer_FreshTwinkie.md) |
+| [1190. syzygy-txr-breakout](b1190b_advent-calendar-of-circuits-2020_syzygy-txr-breakout.md) | [1192. FreshTwinkie](b1192b_PD-sniffer_FreshTwinkie.md) |

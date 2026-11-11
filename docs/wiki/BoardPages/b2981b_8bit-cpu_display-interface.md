@@ -1,4 +1,4 @@
-# 2981 display_interface
+# 2981. display_interface
 
 Board 2,981 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 28](../CorpusTestingPages/Corpus-Testing-28.md#2981-display_interface).
 
@@ -45,4 +45,4 @@ Board 2,981 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2980 arduino_eeprom_programmer](b2980b_8bit-cpu_arduino-eeprom-programmer.md) | [2982 8bit-computer](b2982b_8bit-cpu_8bit-computer.md) |
+| [2980. arduino_eeprom_programmer](b2980b_8bit-cpu_arduino-eeprom-programmer.md) | [2982. 8bit-computer](b2982b_8bit-cpu_8bit-computer.md) |

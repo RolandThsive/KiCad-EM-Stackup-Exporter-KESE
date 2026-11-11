@@ -1,4 +1,4 @@
-# 377 kria-k26-devboard
+# 377. kria-k26-devboard
 
 Board 377 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 4](../CorpusTestingPages/Corpus-Testing-04.md#377-kria-k26-devboard).
 
@@ -44,4 +44,4 @@ Board 377 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [376 k410t-devboard](b0376b_kintex-410t-devboard_k410t-devboard.md) | [378 lpddr4-test-board](b0378b_lpddr4-test-board_lpddr4-test-board.md) |
+| [376. k410t-devboard](b0376b_kintex-410t-devboard_k410t-devboard.md) | [378. lpddr4-test-board](b0378b_lpddr4-test-board_lpddr4-test-board.md) |

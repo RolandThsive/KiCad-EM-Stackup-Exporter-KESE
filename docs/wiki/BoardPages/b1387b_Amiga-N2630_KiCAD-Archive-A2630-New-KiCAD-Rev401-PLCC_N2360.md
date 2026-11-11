@@ -1,4 +1,4 @@
-# 1387 N2360
+# 1387. N2360
 
 Board 1,387 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 13](../CorpusTestingPages/Corpus-Testing-13.md#1387-n2360).
 
@@ -45,4 +45,4 @@ Board 1,387 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1386 N2360](b1386b_Amiga-N2630_KiCAD-Archive-A2630-New-KiCAD-Rev401-PGA_N2360.md) | [1388 BeamBender](b1388b_BeamBender_BeamBender.md) |
+| [1386. N2360](b1386b_Amiga-N2630_KiCAD-Archive-A2630-New-KiCAD-Rev401-PGA_N2360.md) | [1388. BeamBender](b1388b_BeamBender_BeamBender.md) |

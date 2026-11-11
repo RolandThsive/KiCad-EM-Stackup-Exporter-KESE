@@ -1,4 +1,4 @@
-# 695 motherboard
+# 695. motherboard
 
 Board 695 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 7](../CorpusTestingPages/Corpus-Testing-07.md#695-motherboard).
 
@@ -45,4 +45,4 @@ Board 695 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [694 display_eval_short](b0694b_laptop_display-eval-short.md) | [696 power](b0696b_laptop_power.md) |
+| [694. display_eval_short](b0694b_laptop_display-eval-short.md) | [696. power](b0696b_laptop_power.md) |

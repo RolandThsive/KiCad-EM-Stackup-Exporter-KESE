@@ -1,4 +1,4 @@
-# 367 jetson-agx-csi-adapter
+# 367. jetson-agx-csi-adapter
 
 Board 367 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 4](../CorpusTestingPages/Corpus-Testing-04.md#367-jetson-agx-csi-adapter).
 
@@ -44,4 +44,4 @@ Board 367 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [366 ir-irradiance-probe](b0366b_infrared-irradiance-probe_ir-irradiance-probe.md) | [368 jetson-agx-thor-baseboard](b0368b_jetson-agx-thor-baseboard_jetson-agx-thor-baseboard.md) |
+| [366. ir-irradiance-probe](b0366b_infrared-irradiance-probe_ir-irradiance-probe.md) | [368. jetson-agx-thor-baseboard](b0368b_jetson-agx-thor-baseboard_jetson-agx-thor-baseboard.md) |

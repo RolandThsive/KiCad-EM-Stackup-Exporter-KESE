@@ -1,4 +1,4 @@
-# 2504 lambda-x2
+# 2504. lambda-x2
 
 Board 2,504 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 24](../CorpusTestingPages/Corpus-Testing-24.md#2504-lambda-x2).
 
@@ -46,4 +46,4 @@ Board 2,504 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2503 micro_rusEFI](b2503b_rusefi-hardware_micro-rusEFI.md) | [2505 LM1949_Driver](b2505b_rusefi-hardware_LM1949-Driver.md) |
+| [2503. micro_rusEFI](b2503b_rusefi-hardware_micro-rusEFI.md) | [2505. LM1949_Driver](b2505b_rusefi-hardware_LM1949-Driver.md) |

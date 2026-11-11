@@ -1,4 +1,4 @@
-# 1487 LHCbit
+# 1487. LHCbit
 
 Board 1,487 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 14](../CorpusTestingPages/Corpus-Testing-14.md#1487-lhcbit).
 
@@ -45,4 +45,4 @@ Board 1,487 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1486 rpi-cm4-LiM-board](b1486b_rpi-cm4-LiM-board_hardware-rpi-cm4-LiM-board-KiCad-Files_rpi-cm4-LiM-board_2462.md) | [1488 lhc_tijolo32_board](b1488b_hardware_lhc-tijolo32-board.md) |
+| [1486. rpi-cm4-LiM-board](b1486b_rpi-cm4-LiM-board_hardware-rpi-cm4-LiM-board-KiCad-Files_rpi-cm4-LiM-board_2462.md) | [1488. lhc_tijolo32_board](b1488b_hardware_lhc-tijolo32-board.md) |

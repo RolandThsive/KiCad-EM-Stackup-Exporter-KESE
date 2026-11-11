@@ -1,4 +1,4 @@
-# 1588 Aleste520v4
+# 1588. Aleste520v4
 
 Board 1,588 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 15](../CorpusTestingPages/Corpus-Testing-15.md#1588-aleste520v4).
 
@@ -46,4 +46,4 @@ Board 1,588 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1587 [DFR1142]Lite Carrier for LattePanda Mu](b1587b_mubook_DFR1142-Lite-Carrier-for-LattePanda-Mu.md) | [1589 Aleste520_Keyboard](b1589b_Aleste520ex_Aleste520-Keyboard.md) |
+| [1587. [DFR1142]Lite Carrier for LattePanda Mu](b1587b_mubook_DFR1142-Lite-Carrier-for-LattePanda-Mu.md) | [1589. Aleste520_Keyboard](b1589b_Aleste520ex_Aleste520-Keyboard.md) |

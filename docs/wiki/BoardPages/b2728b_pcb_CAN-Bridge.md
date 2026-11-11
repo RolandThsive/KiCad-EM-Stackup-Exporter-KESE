@@ -1,4 +1,4 @@
-# 2728 CAN_Bridge
+# 2728. CAN_Bridge
 
 Board 2,728 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 26](../CorpusTestingPages/Corpus-Testing-26.md#2728-can_bridge).
 
@@ -45,4 +45,4 @@ Board 2,728 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2727 hv_sense](b2727b_pcb_hv-sense.md) | [2729 lvbms-connector](b2729b_pcb_lvbms-connector.md) |
+| [2727. hv_sense](b2727b_pcb_hv-sense.md) | [2729. lvbms-connector](b2729b_pcb_lvbms-connector.md) |

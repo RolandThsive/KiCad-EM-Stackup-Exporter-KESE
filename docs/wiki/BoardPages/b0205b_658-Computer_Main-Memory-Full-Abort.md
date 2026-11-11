@@ -1,4 +1,4 @@
-# 205 Main Memory Full Abort
+# 205. Main Memory Full Abort
 
 Board 205 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 2](../CorpusTestingPages/Corpus-Testing-02.md#205-main-memory-full-abort).
 
@@ -45,4 +45,4 @@ Board 205 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [204 Main Memory Channel](b0204b_658-Computer_Main-Memory-Channel.md) | [206 Main Memory Full Enable](b0206b_658-Computer_Main-Memory-Full-Enable.md) |
+| [204. Main Memory Channel](b0204b_658-Computer_Main-Memory-Channel.md) | [206. Main Memory Full Enable](b0206b_658-Computer_Main-Memory-Full-Enable.md) |

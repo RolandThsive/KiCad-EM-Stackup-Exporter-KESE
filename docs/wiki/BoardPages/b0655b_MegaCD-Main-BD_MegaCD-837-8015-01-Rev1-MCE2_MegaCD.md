@@ -1,4 +1,4 @@
-# 655 MegaCD
+# 655. MegaCD
 
 Board 655 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 7](../CorpusTestingPages/Corpus-Testing-07.md#655-megacd).
 
@@ -45,4 +45,4 @@ Board 655 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [654 EinsteinCE](b0654b_Einstein-TC-01_EinsteinCE.md) | [656 MegaCD](b0656b_MegaCD-Main-BD_MegaCD-837-8015-Rev0-MCE1_MegaCD.md) |
+| [654. EinsteinCE](b0654b_Einstein-TC-01_EinsteinCE.md) | [656. MegaCD](b0656b_MegaCD-Main-BD_MegaCD-837-8015-Rev0-MCE1_MegaCD.md) |

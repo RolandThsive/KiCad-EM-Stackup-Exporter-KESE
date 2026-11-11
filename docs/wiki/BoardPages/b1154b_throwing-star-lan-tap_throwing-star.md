@@ -1,4 +1,4 @@
-# 1154 throwing-star
+# 1154. throwing-star
 
 Board 1,154 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 11](../CorpusTestingPages/Corpus-Testing-11.md#1154-throwing-star).
 
@@ -44,4 +44,4 @@ Board 1,154 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1153 throwing-star-pro](b1153b_throwing-star-lan-tap_throwing-star-pro.md) | [1155 toorcamp2018badge](b1155b_toorcamp2018badge_toorcamp2018badge.md) |
+| [1153. throwing-star-pro](b1153b_throwing-star-lan-tap_throwing-star-pro.md) | [1155. toorcamp2018badge](b1155b_toorcamp2018badge_toorcamp2018badge.md) |

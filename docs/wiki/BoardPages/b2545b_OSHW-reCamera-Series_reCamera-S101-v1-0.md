@@ -1,4 +1,4 @@
-# 2545 reCamera S101 v1.0
+# 2545. reCamera S101 v1.0
 
 Board 2,545 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 24](../CorpusTestingPages/Corpus-Testing-24.md#2545-recamera-s101-v10).
 
@@ -45,4 +45,4 @@ Board 2,545 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2544 reCamera Basically Board](b2544b_OSHW-reCamera-Series_reCamera-Basically-Board.md) | [2546 reCamera S101 v1.1](b2546b_OSHW-reCamera-Series_reCamera-S101-v1-1.md) |
+| [2544. reCamera Basically Board](b2544b_OSHW-reCamera-Series_reCamera-Basically-Board.md) | [2546. reCamera S101 v1.1](b2546b_OSHW-reCamera-Series_reCamera-S101-v1-1.md) |

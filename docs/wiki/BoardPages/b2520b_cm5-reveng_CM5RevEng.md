@@ -1,4 +1,4 @@
-# 2520 CM5RevEng
+# 2520. CM5RevEng
 
 Board 2,520 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 24](../CorpusTestingPages/Corpus-Testing-24.md#2520-cm5reveng).
 
@@ -45,4 +45,4 @@ Board 2,520 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2519 tv070hat](b2519b_tv070wxm-hat_tv070hat.md) | [2521 rpi-rm0](b2521b_cm5-reveng_rpi-rm0.md) |
+| [2519. tv070hat](b2519b_tv070wxm-hat_tv070hat.md) | [2521. rpi-rm0](b2521b_cm5-reveng_rpi-rm0.md) |

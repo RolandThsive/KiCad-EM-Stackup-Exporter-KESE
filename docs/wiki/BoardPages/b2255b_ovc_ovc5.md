@@ -1,4 +1,4 @@
-# 2255 ovc5
+# 2255. ovc5
 
 Board 2,255 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 21](../CorpusTestingPages/Corpus-Testing-21.md#2255-ovc5).
 
@@ -45,4 +45,4 @@ Board 2,255 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2254 ovc4](b2254b_ovc_ovc4.md) | [2256 battery_contact](b2256b_cubesat_eps-v1-battery-contact-l_battery-contact.md) |
+| [2254. ovc4](b2254b_ovc_ovc4.md) | [2256. battery_contact](b2256b_cubesat_eps-v1-battery-contact-l_battery-contact.md) |

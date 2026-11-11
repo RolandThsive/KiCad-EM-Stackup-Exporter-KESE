@@ -1,4 +1,4 @@
-# 2445 PWR_5V_linear
+# 2445. PWR_5V_linear
 
 Board 2,445 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 23](../CorpusTestingPages/Corpus-Testing-23.md#2445-pwr_5v_linear).
 
@@ -45,4 +45,4 @@ Board 2,445 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2444 inj_6ch](b2444b_rusefi-hardware_classic-designs-1A-injector-6-channels_inj-6ch.md) | [2446 stepper_motor_driver](b2446b_rusefi-hardware_stepper-motor-driver.md) |
+| [2444. inj_6ch](b2444b_rusefi-hardware_classic-designs-1A-injector-6-channels_inj-6ch.md) | [2446. stepper_motor_driver](b2446b_rusefi-hardware_stepper-motor-driver.md) |

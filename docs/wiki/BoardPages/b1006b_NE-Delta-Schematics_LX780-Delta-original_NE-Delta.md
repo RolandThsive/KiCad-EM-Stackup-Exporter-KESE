@@ -1,4 +1,4 @@
-# 1006 NE_Delta
+# 1006. NE_Delta
 
 Board 1,006 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 10](../CorpusTestingPages/Corpus-Testing-10.md#1006-ne_delta).
 
@@ -46,4 +46,4 @@ Board 1,006 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1005 NE_Delta](b1005b_NE-Delta-Schematics_LX780-Delta-fixed_NE-Delta.md) | [1007 LX782](b1007b_NE-Delta-Schematics_LX782.md) |
+| [1005. NE_Delta](b1005b_NE-Delta-Schematics_LX780-Delta-fixed_NE-Delta.md) | [1007. LX782](b1007b_NE-Delta-Schematics_LX782.md) |

@@ -1,4 +1,4 @@
-# 382 m2-pcie-adapter
+# 382. m2-pcie-adapter
 
 Board 382 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 4](../CorpusTestingPages/Corpus-Testing-04.md#382-m2-pcie-adapter).
 
@@ -44,4 +44,4 @@ Board 382 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [381 antmicro-m2-oculink-adapter-hw](b0381b_m2-oculink-adapter_antmicro-m2-oculink-adapter-hw.md) | [383 m2-smart-iot-module](b0383b_m2-smart-iot-module_m2-smart-iot-module.md) |
+| [381. antmicro-m2-oculink-adapter-hw](b0381b_m2-oculink-adapter_antmicro-m2-oculink-adapter-hw.md) | [383. m2-smart-iot-module](b0383b_m2-smart-iot-module_m2-smart-iot-module.md) |

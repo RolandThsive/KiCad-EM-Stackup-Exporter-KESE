@@ -1,4 +1,4 @@
-# 2292 HadesMicro
+# 2292. HadesMicro
 
 Board 2,292 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 22](../CorpusTestingPages/Corpus-Testing-22.md#2292-hadesmicro).
 
@@ -45,4 +45,4 @@ Board 2,292 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2291 HadesGPSDongle](b2291b_HadesFCS_HadesGPSDongle.md) | [2293 HadesMicroJLCPCB](b2293b_HadesFCS_HadesMicroJLCPCB.md) |
+| [2291. HadesGPSDongle](b2291b_HadesFCS_HadesGPSDongle.md) | [2293. HadesMicroJLCPCB](b2293b_HadesFCS_HadesMicroJLCPCB.md) |

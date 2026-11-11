@@ -1,4 +1,4 @@
-# 2922 6-Slot-Backplane
+# 2922. 6-Slot-Backplane
 
 Board 2,922 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 28](../CorpusTestingPages/Corpus-Testing-28.md#2922-6-slot-backplane).
 
@@ -45,4 +45,4 @@ Board 2,922 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2921 debugger](b2921b_RAMN_debugger.md) | [2923 60mm-Extender](b2923b_retroverse_60mm-Extender.md) |
+| [2921. debugger](b2921b_RAMN_debugger.md) | [2923. 60mm-Extender](b2923b_retroverse_60mm-Extender.md) |

@@ -1,4 +1,4 @@
-# 2982 8bit-computer
+# 2982. 8bit-computer
 
 Board 2,982 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 28](../CorpusTestingPages/Corpus-Testing-28.md#2982-8bit-computer).
 
@@ -45,4 +45,4 @@ Board 2,982 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2981 display_interface](b2981b_8bit-cpu_display-interface.md) | [2983 programming_interface](b2983b_8bit-cpu_programming-interface.md) |
+| [2981. display_interface](b2981b_8bit-cpu_display-interface.md) | [2983. programming_interface](b2983b_8bit-cpu_programming-interface.md) |

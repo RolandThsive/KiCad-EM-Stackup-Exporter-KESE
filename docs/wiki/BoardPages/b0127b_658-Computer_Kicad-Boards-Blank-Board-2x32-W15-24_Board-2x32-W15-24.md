@@ -1,4 +1,4 @@
-# 127 Board 2x32 W15.24
+# 127. Board 2x32 W15.24
 
 Board 127 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 2](../CorpusTestingPages/Corpus-Testing-02.md#127-board-2x32-w1524).
 
@@ -45,4 +45,4 @@ Board 127 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [126 Board 2x28 W22.86](b0126b_658-Computer_Kicad-Boards-Blank-Board-2x28-W22-86_Board-2x28-W22-86.md) | [128 Board 2x32 W22.86](b0128b_658-Computer_Kicad-Boards-Blank-Board-2x32-W22-86_Board-2x32-W22-86.md) |
+| [126. Board 2x28 W22.86](b0126b_658-Computer_Kicad-Boards-Blank-Board-2x28-W22-86_Board-2x28-W22-86.md) | [128. Board 2x32 W22.86](b0128b_658-Computer_Kicad-Boards-Blank-Board-2x32-W22-86_Board-2x32-W22-86.md) |

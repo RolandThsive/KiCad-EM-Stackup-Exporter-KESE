@@ -1,4 +1,4 @@
-# 508 proto socket adapter
+# 508. proto socket adapter
 
 Board 508 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 5](../CorpusTestingPages/Corpus-Testing-05.md#508-proto-socket-adapter).
 
@@ -45,4 +45,4 @@ Board 508 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [507 gd power supply board pcb](b0507b_Mega-IIe_kicad-files-gd-power-supply-board-pcb-gd-ps-rev1_gd-power-supply-board-pcb.md) | [509 gd protoboard pcb](b0509b_Mega-IIe_gd-protoboard-pcb.md) |
+| [507. gd power supply board pcb](b0507b_Mega-IIe_kicad-files-gd-power-supply-board-pcb-gd-ps-rev1_gd-power-supply-board-pcb.md) | [509. gd protoboard pcb](b0509b_Mega-IIe_gd-protoboard-pcb.md) |

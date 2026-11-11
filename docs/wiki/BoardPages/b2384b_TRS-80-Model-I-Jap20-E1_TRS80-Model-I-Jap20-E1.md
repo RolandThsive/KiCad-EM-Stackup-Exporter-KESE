@@ -1,4 +1,4 @@
-# 2384 TRS80_Model_I_Jap20_E1
+# 2384. TRS80_Model_I_Jap20_E1
 
 Board 2,384 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 23](../CorpusTestingPages/Corpus-Testing-23.md#2384-trs80_model_i_jap20_e1).
 
@@ -45,4 +45,4 @@ Board 2,384 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2383 TRS80_Model_I_G_E1](b2383b_TRS-80-Model-I-G-E1_TRS80-Model-I-G-E1.md) | [2385 TRS80_Model_I_Jap50_E1](b2385b_TRS-80-Model-I-Jap50-E1_TRS80-Model-I-Jap50-E1.md) |
+| [2383. TRS80_Model_I_G_E1](b2383b_TRS-80-Model-I-G-E1_TRS80-Model-I-G-E1.md) | [2385. TRS80_Model_I_Jap50_E1](b2385b_TRS-80-Model-I-Jap50-E1_TRS80-Model-I-Jap50-E1.md) |

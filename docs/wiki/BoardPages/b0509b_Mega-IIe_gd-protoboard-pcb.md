@@ -1,4 +1,4 @@
-# 509 gd protoboard pcb
+# 509. gd protoboard pcb
 
 Board 509 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 5](../CorpusTestingPages/Corpus-Testing-05.md#509-gd-protoboard-pcb).
 
@@ -45,4 +45,4 @@ Board 509 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [508 proto socket adapter](b0508b_Mega-IIe_proto-socket-adapter.md) | [510 gd rev2 crystalposer](b0510b_Mega-IIe_gd-rev2-crystalposer.md) |
+| [508. proto socket adapter](b0508b_Mega-IIe_proto-socket-adapter.md) | [510. gd rev2 crystalposer](b0510b_Mega-IIe_gd-rev2-crystalposer.md) |

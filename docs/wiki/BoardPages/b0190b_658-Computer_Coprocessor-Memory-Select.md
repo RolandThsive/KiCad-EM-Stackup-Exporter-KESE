@@ -1,4 +1,4 @@
-# 190 Coprocessor Memory Select
+# 190. Coprocessor Memory Select
 
 Board 190 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 2](../CorpusTestingPages/Corpus-Testing-02.md#190-coprocessor-memory-select).
 
@@ -45,4 +45,4 @@ Board 190 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [189 Coprocessor Clock](b0189b_658-Computer_Coprocessor-Clock.md) | [191 Coprocessor Support](b0191b_658-Computer_Coprocessor-Support.md) |
+| [189. Coprocessor Clock](b0189b_658-Computer_Coprocessor-Clock.md) | [191. Coprocessor Support](b0191b_658-Computer_Coprocessor-Support.md) |

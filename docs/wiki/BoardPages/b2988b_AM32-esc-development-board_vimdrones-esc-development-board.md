@@ -1,4 +1,4 @@
-# 2988 vimdrones_esc_development_board
+# 2988. vimdrones_esc_development_board
 
 Board 2,988 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 28](../CorpusTestingPages/Corpus-Testing-28.md#2988-vimdrones_esc_development_board).
 
@@ -44,4 +44,4 @@ Board 2,988 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2987 MicroZed_carrier_board_v4](b2987b_microzed-carrier-board_MicroZed-carrier-board-v4.md) | [2989 Tangenta](b2989b_tangenta_Tangenta.md) |
+| [2987. MicroZed_carrier_board_v4](b2987b_microzed-carrier-board_MicroZed-carrier-board-v4.md) | [2989. Tangenta](b2989b_tangenta_Tangenta.md) |

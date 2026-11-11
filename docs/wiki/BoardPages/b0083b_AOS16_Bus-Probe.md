@@ -1,4 +1,4 @@
-# 83 Bus Probe
+# 83. Bus Probe
 
 Board 83 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 1](../CorpusTestingPages/Corpus-Testing-01.md#83-bus-probe).
 
@@ -45,4 +45,4 @@ Board 83 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page
 
 | Previous | Next |
 |:---|---:|
-| [82 Bus Connector](b0082b_AOS16_Bus-Connector.md) | [84 Bus Terminator](b0084b_AOS16_Bus-Terminator.md) |
+| [82. Bus Connector](b0082b_AOS16_Bus-Connector.md) | [84. Bus Terminator](b0084b_AOS16_Bus-Terminator.md) |

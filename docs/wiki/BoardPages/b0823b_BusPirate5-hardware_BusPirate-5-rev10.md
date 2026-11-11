@@ -1,4 +1,4 @@
-# 823 BusPirate-5-rev10
+# 823. BusPirate-5-rev10
 
 Board 823 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 8](../CorpusTestingPages/Corpus-Testing-08.md#823-buspirate-5-rev10).
 
@@ -45,4 +45,4 @@ Board 823 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [822 6-REV2b](b0822b_BusPirate5-hardware_6-REV2b.md) | [824 7-REV0](b0824b_BusPirate5-hardware_7-REV0.md) |
+| [822. 6-REV2b](b0822b_BusPirate5-hardware_6-REV2b.md) | [824. 7-REV0](b0824b_BusPirate5-hardware_7-REV0.md) |

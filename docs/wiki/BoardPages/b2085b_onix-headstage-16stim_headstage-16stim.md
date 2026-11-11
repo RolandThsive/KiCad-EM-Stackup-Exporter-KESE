@@ -1,4 +1,4 @@
-# 2085 headstage-16stim
+# 2085. headstage-16stim
 
 Board 2,085 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 20](../CorpusTestingPages/Corpus-Testing-20.md#2085-headstage-16stim).
 
@@ -45,4 +45,4 @@ Board 2,085 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2084 fmc-host](b2084b_onix-fmc-host_fmc-host.md) | [2086 headstage-64s](b2086b_onix-headstage-64s_headstage-64s.md) |
+| [2084. fmc-host](b2084b_onix-fmc-host_fmc-host.md) | [2086. headstage-64s](b2086b_onix-headstage-64s_headstage-64s.md) |

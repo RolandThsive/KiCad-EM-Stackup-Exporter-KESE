@@ -1,4 +1,4 @@
-# 1378 LibreCAL
+# 1378. LibreCAL
 
 Board 1,378 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 13](../CorpusTestingPages/Corpus-Testing-13.md#1378-librecal).
 
@@ -45,4 +45,4 @@ Board 1,378 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1377 bench_stm32_esc](b1377b_stm32-brushless-motor-controller_bench-stm32-esc.md) | [1379 VNA](b1379b_LibreVNA_VNA.md) |
+| [1377. bench_stm32_esc](b1377b_stm32-brushless-motor-controller_bench-stm32-esc.md) | [1379. VNA](b1379b_LibreVNA_VNA.md) |

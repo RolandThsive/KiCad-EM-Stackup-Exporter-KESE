@@ -1,4 +1,4 @@
-# 2777 live-video-multi-function-board
+# 2777. live-video-multi-function-board
 
 Board 2,777 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 26](../CorpusTestingPages/Corpus-Testing-26.md#2777-live-video-multi-function-board).
 
@@ -45,4 +45,4 @@ Board 2,777 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2776 LiBatteryCharger](b2776b_srad-avionics_LiBatteryCharger.md) | [2778 low_power_module](b2778b_srad-avionics_low-power-module.md) |
+| [2776. LiBatteryCharger](b2776b_srad-avionics_LiBatteryCharger.md) | [2778. low_power_module](b2778b_srad-avionics_low-power-module.md) |

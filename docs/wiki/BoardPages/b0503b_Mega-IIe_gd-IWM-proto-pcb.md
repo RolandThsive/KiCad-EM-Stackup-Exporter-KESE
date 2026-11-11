@@ -1,4 +1,4 @@
-# 503 gd IWM proto pcb
+# 503. gd IWM proto pcb
 
 Board 503 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 5](../CorpusTestingPages/Corpus-Testing-05.md#503-gd-iwm-proto-pcb).
 
@@ -45,4 +45,4 @@ Board 503 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [502 gd io proto pcb](b0502b_Mega-IIe_kicad-files-gd-io-proto-pcb-mk1_gd-io-proto-pcb.md) | [504 gd MEGA-65c02 proto pcb](b0504b_Mega-IIe_gd-MEGA-65c02-proto-pcb.md) |
+| [502. gd io proto pcb](b0502b_Mega-IIe_kicad-files-gd-io-proto-pcb-mk1_gd-io-proto-pcb.md) | [504. gd MEGA-65c02 proto pcb](b0504b_Mega-IIe_gd-MEGA-65c02-proto-pcb.md) |

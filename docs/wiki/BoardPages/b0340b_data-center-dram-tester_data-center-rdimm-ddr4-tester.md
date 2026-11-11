@@ -1,4 +1,4 @@
-# 340 data-center-rdimm-ddr4-tester
+# 340. data-center-rdimm-ddr4-tester
 
 Board 340 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 4](../CorpusTestingPages/Corpus-Testing-04.md#340-data-center-rdimm-ddr4-tester).
 
@@ -44,4 +44,4 @@ Board 340 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [339 d1600e-psu-breakout-board](b0339b_d1600e-psu-breakout_d1600e-psu-breakout-board.md) | [341 dc-sci-debug-interposer](b0341b_dc-sci-debug-interposer_dc-sci-debug-interposer.md) |
+| [339. d1600e-psu-breakout-board](b0339b_d1600e-psu-breakout_d1600e-psu-breakout-board.md) | [341. dc-sci-debug-interposer](b0341b_dc-sci-debug-interposer_dc-sci-debug-interposer.md) |

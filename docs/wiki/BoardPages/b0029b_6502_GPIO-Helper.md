@@ -1,4 +1,4 @@
-# 29 GPIO Helper
+# 29. GPIO Helper
 
 Board 29 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 1](../CorpusTestingPages/Corpus-Testing-01.md#29-gpio-helper).
 
@@ -45,4 +45,4 @@ Board 29 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page
 
 | Previous | Next |
 |:---|---:|
-| [28 GPIO Card](b0028b_6502_GPIO-Card.md) | [30 Joystick Helper](b0030b_6502_Joystick-Helper.md) |
+| [28. GPIO Card](b0028b_6502_GPIO-Card.md) | [30. Joystick Helper](b0030b_6502_Joystick-Helper.md) |

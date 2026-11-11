@@ -1,4 +1,4 @@
-# 348 dual-camera-to-gmsl-serializer-csi-adapter
+# 348. dual-camera-to-gmsl-serializer-csi-adapter
 
 Board 348 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 4](../CorpusTestingPages/Corpus-Testing-04.md#348-dual-camera-to-gmsl-serializer-csi-adapter).
 
@@ -44,4 +44,4 @@ Board 348 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [347 data-center-rdimm-ddr5-tester](b0347b_ddr5-tester_data-center-rdimm-ddr5-tester.md) | [349 dual-ipex-csi-interposer](b0349b_dual-ipex-csi-interposer_dual-ipex-csi-interposer.md) |
+| [347. data-center-rdimm-ddr5-tester](b0347b_ddr5-tester_data-center-rdimm-ddr5-tester.md) | [349. dual-ipex-csi-interposer](b0349b_dual-ipex-csi-interposer_dual-ipex-csi-interposer.md) |

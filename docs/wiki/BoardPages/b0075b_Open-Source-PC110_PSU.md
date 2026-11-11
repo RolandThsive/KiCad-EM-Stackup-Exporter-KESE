@@ -1,4 +1,4 @@
-# 75 PSU
+# 75. PSU
 
 Board 75 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 1](../CorpusTestingPages/Corpus-Testing-01.md#75-psu).
 
@@ -45,4 +45,4 @@ Board 75 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page
 
 | Previous | Next |
 |:---|---:|
-| [74 Modem](b0074b_Open-Source-PC110_Modem.md) | [76 RAM-Module](b0076b_Open-Source-PC110_RAM-Module.md) |
+| [74. Modem](b0074b_Open-Source-PC110_Modem.md) | [76. RAM-Module](b0076b_Open-Source-PC110_RAM-Module.md) |

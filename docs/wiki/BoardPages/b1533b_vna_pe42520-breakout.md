@@ -1,4 +1,4 @@
-# 1533 pe42520_breakout
+# 1533. pe42520_breakout
 
 Board 1,533 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 15](../CorpusTestingPages/Corpus-Testing-15.md#1533-pe42520_breakout).
 
@@ -45,4 +45,4 @@ Board 1,533 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1532 mixer_breakout](b1532b_vna_mixer-breakout.md) | [1534 pe42543_breakout](b1534b_vna_pe42543-breakout.md) |
+| [1532. mixer_breakout](b1532b_vna_mixer-breakout.md) | [1534. pe42543_breakout](b1534b_vna_pe42543-breakout.md) |

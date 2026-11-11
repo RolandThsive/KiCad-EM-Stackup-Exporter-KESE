@@ -1,4 +1,4 @@
-# 1670 adapter
+# 1670. adapter
 
 Board 1,670 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 16](../CorpusTestingPages/Corpus-Testing-16.md#1670-adapter).
 
@@ -45,4 +45,4 @@ Board 1,670 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1669 adapter](b1669b_Glider_pcb-34p-adapter-a_adapter.md) | [1671 adapter](b1671b_Glider_pcb-35p-adapter-a_adapter.md) |
+| [1669. adapter](b1669b_Glider_pcb-34p-adapter-a_adapter.md) | [1671. adapter](b1671b_Glider_pcb-35p-adapter-a_adapter.md) |

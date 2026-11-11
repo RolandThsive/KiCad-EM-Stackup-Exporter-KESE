@@ -1,4 +1,4 @@
-# 1333 CAM-MK2.1
+# 1333. CAM-MK2.1
 
 Board 1,333 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 13](../CorpusTestingPages/Corpus-Testing-13.md#1333-cam-mk21).
 
@@ -45,4 +45,4 @@ Board 1,333 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1332 CAM-MK2](b1332b_iss-pcb_CAM-MK2.md) | [1334 CAM-MK3-revA](b1334b_iss-pcb_CAM-MK3-revA.md) |
+| [1332. CAM-MK2](b1332b_iss-pcb_CAM-MK2.md) | [1334. CAM-MK3-revA](b1334b_iss-pcb_CAM-MK3-revA.md) |

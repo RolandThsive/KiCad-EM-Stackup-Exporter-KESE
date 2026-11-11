@@ -1,4 +1,4 @@
-# 2704 sensors
+# 2704. sensors
 
 Board 2,704 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 26](../CorpusTestingPages/Corpus-Testing-26.md#2704-sensors).
 
@@ -45,4 +45,4 @@ Board 2,704 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2703 TemperaturePCB_PANEL](b2703b_diybmsv4_TemperaturePCB-PANEL.md) | [2705 racer](b2705b_Racer_racer.md) |
+| [2703. TemperaturePCB_PANEL](b2703b_diybmsv4_TemperaturePCB-PANEL.md) | [2705. racer](b2705b_Racer_racer.md) |

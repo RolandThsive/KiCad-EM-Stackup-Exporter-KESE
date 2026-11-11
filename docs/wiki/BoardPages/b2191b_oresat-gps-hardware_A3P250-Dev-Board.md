@@ -1,4 +1,4 @@
-# 2191 A3P250_Dev_Board
+# 2191. A3P250_Dev_Board
 
 Board 2,191 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 21](../CorpusTestingPages/Corpus-Testing-21.md#2191-a3p250_dev_board).
 
@@ -46,4 +46,4 @@ Board 2,191 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2190 1.5V_switcher_test](b2190b_oresat-gps-hardware_1-5V-switcher-test.md) | [2192 switcher](b2192b_oresat-gps-hardware_switcher.md) |
+| [2190. 1.5V_switcher_test](b2190b_oresat-gps-hardware_1-5V-switcher-test.md) | [2192. switcher](b2192b_oresat-gps-hardware_switcher.md) |

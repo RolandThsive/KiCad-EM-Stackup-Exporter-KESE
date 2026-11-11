@@ -1,4 +1,4 @@
-# 2132 oresat-mag-card
+# 2132. oresat-mag-card
 
 Board 2,132 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 20](../CorpusTestingPages/Corpus-Testing-20.md#2132-oresat-mag-card).
 
@@ -45,4 +45,4 @@ Board 2,132 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2131 oresat-adcs-card](b2131b_oresat-adcs-hardware_oresat-adcs-card.md) | [2133 control-stage](b2133b_oresat-adcs-hardware_oresat-rw-board-rev1-MCXN-control-stage_control-stage.md) |
+| [2131. oresat-adcs-card](b2131b_oresat-adcs-hardware_oresat-adcs-card.md) | [2133. control-stage](b2133b_oresat-adcs-hardware_oresat-rw-board-rev1-MCXN-control-stage_control-stage.md) |

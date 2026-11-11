@@ -1,4 +1,4 @@
-# 2690 SNSP-CPU-01
+# 2690. SNSP-CPU-01
 
 Board 2,690 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 25](../CorpusTestingPages/Corpus-Testing-25.md#2690-snsp-cpu-01).
 
@@ -45,4 +45,4 @@ Board 2,690 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2689 MegaDrive](b2689b_MegaDrive_MegaDrive.md) | [2691 SNSP-CPU-1CHIP](b2691b_nonSNES_SNSP-CPU-1CHIP.md) |
+| [2689. MegaDrive](b2689b_MegaDrive_MegaDrive.md) | [2691. SNSP-CPU-1CHIP](b2691b_nonSNES_SNSP-CPU-1CHIP.md) |

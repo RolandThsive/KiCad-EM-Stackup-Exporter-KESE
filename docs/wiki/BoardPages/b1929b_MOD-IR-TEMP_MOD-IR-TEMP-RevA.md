@@ -1,4 +1,4 @@
-# 1929 MOD-IR-TEMP_RevA
+# 1929. MOD-IR-TEMP_RevA
 
 Board 1,929 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 18](../CorpusTestingPages/Corpus-Testing-18.md#1929-mod-ir-temp_reva).
 
@@ -45,4 +45,4 @@ Board 1,929 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1928 MOD-ESP32-C5_Rev_A](b1928b_MOD-ESP32-C5_MOD-ESP32-C5-Rev-A.md) | [1930 MOD-LCD2.8RTP_RevB](b1930b_MOD-LCD2-8RTP_MOD-LCD2-8RTP-RevB.md) |
+| [1928. MOD-ESP32-C5_Rev_A](b1928b_MOD-ESP32-C5_MOD-ESP32-C5-Rev-A.md) | [1930. MOD-LCD2.8RTP_RevB](b1930b_MOD-LCD2-8RTP_MOD-LCD2-8RTP-RevB.md) |

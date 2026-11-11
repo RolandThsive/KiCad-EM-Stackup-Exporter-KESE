@@ -1,4 +1,4 @@
-# 776 proto_ads_bee_rf_board
+# 776. proto_ads_bee_rf_board
 
 Board 776 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 8](../CorpusTestingPages/Corpus-Testing-08.md#776-proto_ads_bee_rf_board).
 
@@ -45,4 +45,4 @@ Board 776 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [775 proto_ads_bee_mcu_board](b0775b_adsbee_proto-ads-bee-mcu-board.md) | [777 proto_amp_bodge_board](b0777b_adsbee_proto-amp-bodge-board.md) |
+| [775. proto_ads_bee_mcu_board](b0775b_adsbee_proto-ads-bee-mcu-board.md) | [777. proto_amp_bodge_board](b0777b_adsbee_proto-amp-bodge-board.md) |

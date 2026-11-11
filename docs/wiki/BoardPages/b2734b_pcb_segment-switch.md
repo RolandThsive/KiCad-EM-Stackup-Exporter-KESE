@@ -1,4 +1,4 @@
-# 2734 segment-switch
+# 2734. segment-switch
 
 Board 2,734 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 26](../CorpusTestingPages/Corpus-Testing-26.md#2734-segment-switch).
 
@@ -45,4 +45,4 @@ Board 2,734 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2733 rotary-switch](b2733b_pcb_rotary-switch.md) | [2735 16Ch-Sensor-Hub](b2735b_pcb_16Ch-Sensor-Hub.md) |
+| [2733. rotary-switch](b2733b_pcb_rotary-switch.md) | [2735. 16Ch-Sensor-Hub](b2735b_pcb_16Ch-Sensor-Hub.md) |

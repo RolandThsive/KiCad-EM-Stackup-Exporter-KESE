@@ -1,4 +1,4 @@
-# 22 Clock Helper
+# 22. Clock Helper
 
 Board 22 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 1](../CorpusTestingPages/Corpus-Testing-01.md#22-clock-helper).
 
@@ -45,4 +45,4 @@ Board 22 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page
 
 | Previous | Next |
 |:---|---:|
-| [21 Breadboard Helper](b0021b_6502_Breadboard-Helper.md) | [23 CPU Card Pro](b0023b_6502_CPU-Card-Pro.md) |
+| [21. Breadboard Helper](b0021b_6502_Breadboard-Helper.md) | [23. CPU Card Pro](b0023b_6502_CPU-Card-Pro.md) |

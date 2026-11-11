@@ -1,4 +1,4 @@
-# 302 RAM 48K Select
+# 302. RAM 48K Select
 
 Board 302 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 3](../CorpusTestingPages/Corpus-Testing-03.md#302-ram-48k-select).
 
@@ -45,4 +45,4 @@ Board 302 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [301 LCD Dual 7 Segment Tester](b0301b_658-Computer_LCD-Dual-7-Segment-Tester.md) | [303 ROM 2316 to 2716](b0303b_658-Computer_ROM-2316-to-2716.md) |
+| [301. LCD Dual 7 Segment Tester](b0301b_658-Computer_LCD-Dual-7-Segment-Tester.md) | [303. ROM 2316 to 2716](b0303b_658-Computer_ROM-2316-to-2716.md) |

@@ -1,4 +1,4 @@
-# 1001 Expansion_Card
+# 1001. Expansion_Card
 
 Board 1,001 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 10](../CorpusTestingPages/Corpus-Testing-10.md#1001-expansion_card).
 
@@ -45,4 +45,4 @@ Board 1,001 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1000 ESC_Board](b1000b_DroneController_ESC-Board.md) | [1002 Expansion_Card_Retrofit](b1002b_ExpansionCards_Expansion-Card-Retrofit.md) |
+| [1000. ESC_Board](b1000b_DroneController_ESC-Board.md) | [1002. Expansion_Card_Retrofit](b1002b_ExpansionCards_Expansion-Card-Retrofit.md) |

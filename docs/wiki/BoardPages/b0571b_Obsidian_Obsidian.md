@@ -1,4 +1,4 @@
-# 571 Obsidian
+# 571. Obsidian
 
 Board 571 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 6](../CorpusTestingPages/Corpus-Testing-06.md#571-obsidian).
 
@@ -45,4 +45,4 @@ Board 571 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [570 AMC_FMC_Carrier-PcbDoc](b0570b_Marble-Mini_AMC-FMC-Carrier-PcbDoc.md) | [572 zest](b0572b_zest_zest.md) |
+| [570. AMC_FMC_Carrier-PcbDoc](b0570b_Marble-Mini_AMC-FMC-Carrier-PcbDoc.md) | [572. zest](b0572b_zest_zest.md) |

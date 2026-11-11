@@ -1,4 +1,4 @@
-# 14 FPGA-BOARD
+# 14. FPGA-BOARD
 
 Board 14 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 1](../CorpusTestingPages/Corpus-Testing-01.md#14-fpga-board).
 
@@ -44,4 +44,4 @@ Board 14 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page
 
 | Previous | Next |
 |:---|---:|
-| [13 A4770](b0013b_cheetah_A4770.md) | [15 A4k-Replica-Acill](b0015b_A4000RevB_A4k-Replica-Acill.md) |
+| [13. A4770](b0013b_cheetah_A4770.md) | [15. A4k-Replica-Acill](b0015b_A4000RevB_A4k-Replica-Acill.md) |

@@ -1,4 +1,4 @@
-# 294 SDRAM
+# 294. SDRAM
 
 Board 294 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 3](../CorpusTestingPages/Corpus-Testing-03.md#294-sdram).
 
@@ -45,4 +45,4 @@ Board 294 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [293 LED Digit Tester](b0293b_658-Computer_LED-Digit-Tester.md) | [295 Signal Protection](b0295b_658-Computer_Signal-Protection.md) |
+| [293. LED Digit Tester](b0293b_658-Computer_LED-Digit-Tester.md) | [295. Signal Protection](b0295b_658-Computer_Signal-Protection.md) |

@@ -1,4 +1,4 @@
-# 521 gd MegaII proto pcb
+# 521. gd MegaII proto pcb
 
 Board 521 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 5](../CorpusTestingPages/Corpus-Testing-05.md#521-gd-megaii-proto-pcb).
 
@@ -45,4 +45,4 @@ Board 521 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [520 gd 6502 proto pcb](b0520b_Mega-IIe_kicad-files-rev1-gd-6502-proto-pcb_gd-6502-proto-pcb.md) | [522 gd VGC proto pcb](b0522b_Mega-IIe_kicad-files-rev1-gd-VGC-proto-pcb_gd-VGC-proto-pcb.md) |
+| [520. gd 6502 proto pcb](b0520b_Mega-IIe_kicad-files-rev1-gd-6502-proto-pcb_gd-6502-proto-pcb.md) | [522. gd VGC proto pcb](b0522b_Mega-IIe_kicad-files-rev1-gd-VGC-proto-pcb_gd-VGC-proto-pcb.md) |

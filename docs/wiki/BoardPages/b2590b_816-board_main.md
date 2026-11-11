@@ -1,4 +1,4 @@
-# 2590 main
+# 2590. main
 
 Board 2,590 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 24](../CorpusTestingPages/Corpus-Testing-24.md#2590-main).
 
@@ -44,4 +44,4 @@ Board 2,590 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2589 main](b2589b_816-board_EXP-RAM-SCH_main.md) | [2591 db9](b2591b_Hermes-Lite2_db9.md) |
+| [2589. main](b2589b_816-board_EXP-RAM-SCH_main.md) | [2591. db9](b2591b_Hermes-Lite2_db9.md) |

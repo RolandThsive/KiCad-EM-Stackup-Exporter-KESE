@@ -1,4 +1,4 @@
-# 276 Video Signal Dragger
+# 276. Video Signal Dragger
 
 Board 276 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 3](../CorpusTestingPages/Corpus-Testing-03.md#276-video-signal-dragger).
 
@@ -45,4 +45,4 @@ Board 276 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [275 Video Row Latch](b0275b_658-Computer_Video-Row-Latch.md) | [277 Video Signals Output](b0277b_658-Computer_Video-Signals-Output.md) |
+| [275. Video Row Latch](b0275b_658-Computer_Video-Row-Latch.md) | [277. Video Signals Output](b0277b_658-Computer_Video-Signals-Output.md) |

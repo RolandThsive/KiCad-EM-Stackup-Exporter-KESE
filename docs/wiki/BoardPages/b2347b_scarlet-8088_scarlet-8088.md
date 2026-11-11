@@ -1,4 +1,4 @@
-# 2347 scarlet-8088
+# 2347. scarlet-8088
 
 Board 2,347 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 22](../CorpusTestingPages/Corpus-Testing-22.md#2347-scarlet-8088).
 
@@ -45,4 +45,4 @@ Board 2,347 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2346 ArtixDevBoard](b2346b_artixdevboard_ArtixDevBoard.md) | [2348 Motherboard](b2348b_OpenTendo_Motherboard.md) |
+| [2346. ArtixDevBoard](b2346b_artixdevboard_ArtixDevBoard.md) | [2348. Motherboard](b2348b_OpenTendo_Motherboard.md) |

@@ -1,4 +1,4 @@
-# 2293 HadesMicroJLCPCB
+# 2293. HadesMicroJLCPCB
 
 Board 2,293 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 22](../CorpusTestingPages/Corpus-Testing-22.md#2293-hadesmicrojlcpcb).
 
@@ -45,4 +45,4 @@ Board 2,293 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2292 HadesMicro](b2292b_HadesFCS_HadesMicro.md) | [2294 HadesNT](b2294b_HadesFCS_HadesNT.md) |
+| [2292. HadesMicro](b2292b_HadesFCS_HadesMicro.md) | [2294. HadesNT](b2294b_HadesFCS_HadesNT.md) |

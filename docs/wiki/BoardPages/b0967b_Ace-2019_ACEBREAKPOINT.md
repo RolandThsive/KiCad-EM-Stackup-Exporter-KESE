@@ -1,4 +1,4 @@
-# 967 ACEBREAKPOINT
+# 967. ACEBREAKPOINT
 
 Board 967 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 9](../CorpusTestingPages/Corpus-Testing-09.md#967-acebreakpoint).
 
@@ -45,4 +45,4 @@ Board 967 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [966 ACE4NOKB](b0966b_Ace-2019_ACE4NOKB.md) | [968 ACEDIAGBOARD](b0968b_Ace-2019_ACEDIAGBOARD.md) |
+| [966. ACE4NOKB](b0966b_Ace-2019_ACE4NOKB.md) | [968. ACEDIAGBOARD](b0968b_Ace-2019_ACEDIAGBOARD.md) |

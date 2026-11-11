@@ -1,4 +1,4 @@
-# 721 nref-ports-one
+# 721. nref-ports-one
 
 Board 721 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 7](../CorpusTestingPages/Corpus-Testing-07.md#721-nref-ports-one).
 
@@ -45,4 +45,4 @@ Board 721 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [720 nref-motherboard](b0720b_reform-next-mirror_nref-motherboard.md) | [722 nref-ports-two](b0722b_reform-next-mirror_nref-ports-two.md) |
+| [720. nref-motherboard](b0720b_reform-next-mirror_nref-motherboard.md) | [722. nref-ports-two](b0722b_reform-next-mirror_nref-ports-two.md) |

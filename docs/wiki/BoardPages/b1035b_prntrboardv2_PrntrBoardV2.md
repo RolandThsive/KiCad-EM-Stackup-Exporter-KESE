@@ -1,4 +1,4 @@
-# 1035 PrntrBoardV2
+# 1035. PrntrBoardV2
 
 Board 1,035 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 10](../CorpusTestingPages/Corpus-Testing-10.md#1035-prntrboardv2).
 
@@ -45,4 +45,4 @@ Board 1,035 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1034 MP-Power](b1034b_prntrboardv2_MP-Power.md) | [1036 T12_Control](b1036b_prntrboardv2_T12-Control.md) |
+| [1034. MP-Power](b1034b_prntrboardv2_MP-Power.md) | [1036. T12_Control](b1036b_prntrboardv2_T12-Control.md) |

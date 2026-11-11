@@ -1,4 +1,4 @@
-# 1367 reform2-keyboard3
+# 1367. reform2-keyboard3
 
 Board 1,367 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 13](../CorpusTestingPages/Corpus-Testing-13.md#1367-reform2-keyboard3).
 
@@ -45,4 +45,4 @@ Board 1,367 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1366 reform2-keyboard](b1366b_reform_reform2-keyboard.md) | [1368 reform2-motherboard](b1368b_reform_reform2-motherboard.md) |
+| [1366. reform2-keyboard](b1366b_reform_reform2-keyboard.md) | [1368. reform2-motherboard](b1368b_reform_reform2-motherboard.md) |

@@ -1,4 +1,4 @@
-# 535 RoboMotor-GIM6010
+# 535. RoboMotor-GIM6010
 
 Board 535 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 5](../CorpusTestingPages/Corpus-Testing-05.md#535-robomotor-gim6010).
 
@@ -45,4 +45,4 @@ Board 535 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [534 RoboMotor-GIM6010-V2](b0534b_robomotor_RoboMotor-GIM6010-V2.md) | [536 beaglebone-ai](b0536b_beaglebone-ai_beaglebone-ai.md) |
+| [534. RoboMotor-GIM6010-V2](b0534b_robomotor_RoboMotor-GIM6010-V2.md) | [536. beaglebone-ai](b0536b_beaglebone-ai_beaglebone-ai.md) |

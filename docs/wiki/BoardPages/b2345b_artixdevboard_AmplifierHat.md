@@ -1,4 +1,4 @@
-# 2345 AmplifierHat
+# 2345. AmplifierHat
 
 Board 2,345 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 22](../CorpusTestingPages/Corpus-Testing-22.md#2345-amplifierhat).
 
@@ -45,4 +45,4 @@ Board 2,345 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2344 ACU5EV_Carrier_Base](b2344b_fcboardkicad_ACU5EV-Carrier-Base.md) | [2346 ArtixDevBoard](b2346b_artixdevboard_ArtixDevBoard.md) |
+| [2344. ACU5EV_Carrier_Base](b2344b_fcboardkicad_ACU5EV-Carrier-Base.md) | [2346. ArtixDevBoard](b2346b_artixdevboard_ArtixDevBoard.md) |

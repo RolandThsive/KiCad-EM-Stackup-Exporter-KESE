@@ -1,4 +1,4 @@
-# 2008 USB-GIGABIT_Rev_E
+# 2008. USB-GIGABIT_Rev_E
 
 Board 2,008 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 19](../CorpusTestingPages/Corpus-Testing-19.md#2008-usb-gigabit_rev_e).
 
@@ -45,4 +45,4 @@ Board 2,008 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2007 USB-GIGABIT_Rev_D](b2007b_USB-GIGABIT_USB-GIGABIT-Rev-D.md) | [2009 USB-gLINK_Rev_C](b2009b_USB-gLINK_USB-gLINK-Rev-C.md) |
+| [2007. USB-GIGABIT_Rev_D](b2007b_USB-GIGABIT_USB-GIGABIT-Rev-D.md) | [2009. USB-gLINK_Rev_C](b2009b_USB-gLINK_USB-gLINK-Rev-C.md) |

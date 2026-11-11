@@ -1,4 +1,4 @@
-# 1785 alu
+# 1785. alu
 
 Board 1,785 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 17](../CorpusTestingPages/Corpus-Testing-17.md#1785-alu).
 
@@ -44,4 +44,4 @@ Board 1,785 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1784 quantum_arcade_pcb](b1784b_quantum-arcade-pcb_quantum-arcade-pcb.md) | [1786 adcboard](b1786b_ibxII-hardware_adcboard.md) |
+| [1784. quantum_arcade_pcb](b1784b_quantum-arcade-pcb_quantum-arcade-pcb.md) | [1786. adcboard](b1786b_ibxII-hardware_adcboard.md) |

@@ -1,4 +1,4 @@
-# 2814 breakout-qfn
+# 2814. breakout-qfn
 
 Board 2,814 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 27](../CorpusTestingPages/Corpus-Testing-27.md#2814-breakout-qfn).
 
@@ -45,4 +45,4 @@ Board 2,814 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2813 breakout-ihp-qfn](b2813b_breakout-pcb_breakout-ihp-qfn.md) | [2815 breakout-sky-qfn](b2815b_breakout-pcb_breakout-sky-qfn.md) |
+| [2813. breakout-ihp-qfn](b2813b_breakout-pcb_breakout-ihp-qfn.md) | [2815. breakout-sky-qfn](b2815b_breakout-pcb_breakout-sky-qfn.md) |

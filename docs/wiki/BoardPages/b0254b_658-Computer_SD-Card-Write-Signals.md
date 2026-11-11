@@ -1,4 +1,4 @@
-# 254 SD Card Write Signals
+# 254. SD Card Write Signals
 
 Board 254 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 3](../CorpusTestingPages/Corpus-Testing-03.md#254-sd-card-write-signals).
 
@@ -45,4 +45,4 @@ Board 254 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [253 SD Card Write Data](b0253b_658-Computer_SD-Card-Write-Data.md) | [255 SNES Controller Clock](b0255b_658-Computer_SNES-Controller-Clock.md) |
+| [253. SD Card Write Data](b0253b_658-Computer_SD-Card-Write-Data.md) | [255. SNES Controller Clock](b0255b_658-Computer_SNES-Controller-Clock.md) |

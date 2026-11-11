@@ -1,4 +1,4 @@
-# 454 probecard-pinheader
+# 454. probecard-pinheader
 
 Board 454 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 5](../CorpusTestingPages/Corpus-Testing-05.md#454-probecard-pinheader).
 
@@ -45,4 +45,4 @@ Board 454 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [453 probecard-mmcx](b0453b_starshipraider_probecard-mmcx.md) | [455 maxwell-main](b0455b_starshipraider_maxwell-main.md) |
+| [453. probecard-mmcx](b0453b_starshipraider_probecard-mmcx.md) | [455. maxwell-main](b0455b_starshipraider_maxwell-main.md) |

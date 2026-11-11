@@ -1,4 +1,4 @@
-# 169 Device Buffer
+# 169. Device Buffer
 
 Board 169 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 2](../CorpusTestingPages/Corpus-Testing-02.md#169-device-buffer).
 
@@ -45,4 +45,4 @@ Board 169 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [168 Data and Signal Buffer](b0168b_658-Computer_Data-and-Signal-Buffer.md) | [170 Device Decode stage A](b0170b_658-Computer_Device-Decode-stage-A.md) |
+| [168. Data and Signal Buffer](b0168b_658-Computer_Data-and-Signal-Buffer.md) | [170. Device Decode stage A](b0170b_658-Computer_Device-Decode-stage-A.md) |

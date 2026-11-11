@@ -1,4 +1,4 @@
-# 350 ecp5-dc-scm
+# 350. ecp5-dc-scm
 
 Board 350 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 4](../CorpusTestingPages/Corpus-Testing-04.md#350-ecp5-dc-scm).
 
@@ -44,4 +44,4 @@ Board 350 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [349 dual-ipex-csi-interposer](b0349b_dual-ipex-csi-interposer_dual-ipex-csi-interposer.md) | [351 environment-sensor](b0351b_environment-sensor_environment-sensor.md) |
+| [349. dual-ipex-csi-interposer](b0349b_dual-ipex-csi-interposer_dual-ipex-csi-interposer.md) | [351. environment-sensor](b0351b_environment-sensor_environment-sensor.md) |

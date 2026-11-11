@@ -1,4 +1,4 @@
-# 986 NewBrain Keyboard A
+# 986. NewBrain Keyboard A
 
 Board 986 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 10](../CorpusTestingPages/Corpus-Testing-10.md#986-newbrain-keyboard-a).
 
@@ -45,4 +45,4 @@ Board 986 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [985 Gigatron](b0985b_Gigatron_Gigatron.md) | [987 NewBrain Original](b0987b_NewBrain_NewBrain-Original.md) |
+| [985. Gigatron](b0985b_Gigatron_Gigatron.md) | [987. NewBrain Original](b0987b_NewBrain_NewBrain-Original.md) |

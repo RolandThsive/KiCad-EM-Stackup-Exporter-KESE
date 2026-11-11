@@ -1,4 +1,4 @@
-# 2223 star-tracker-card
+# 2223. star-tracker-card
 
 Board 2,223 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 21](../CorpusTestingPages/Corpus-Testing-21.md#2223-star-tracker-card).
 
@@ -45,4 +45,4 @@ Board 2,223 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2222 sensor-board](b2222b_oresat-solar-simulator-hardware_sensor-board.md) | [2224 star-tracker-camera-board](b2224b_oresat-star-tracker-hardware_hardware-star-tracker-2-0-star-tracker-camera-board-2-0_star-tracker-camera-board.md) |
+| [2222. sensor-board](b2222b_oresat-solar-simulator-hardware_sensor-board.md) | [2224. star-tracker-camera-board](b2224b_oresat-star-tracker-hardware_hardware-star-tracker-2-0-star-tracker-camera-board-2-0_star-tracker-camera-board.md) |

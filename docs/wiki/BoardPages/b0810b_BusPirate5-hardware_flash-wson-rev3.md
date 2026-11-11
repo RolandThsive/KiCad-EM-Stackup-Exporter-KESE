@@ -1,4 +1,4 @@
-# 810 flash-wson-rev3
+# 810. flash-wson-rev3
 
 Board 810 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 8](../CorpusTestingPages/Corpus-Testing-08.md#810-flash-wson-rev3).
 
@@ -45,4 +45,4 @@ Board 810 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [809 flash-sop-lotes-rev3](b0809b_BusPirate5-hardware_flash-sop-lotes-rev3.md) | [811 bp5-ir-toy-v3-rev3](b0811b_BusPirate5-hardware_bp5-ir-toy-v3-rev3.md) |
+| [809. flash-sop-lotes-rev3](b0809b_BusPirate5-hardware_flash-sop-lotes-rev3.md) | [811. bp5-ir-toy-v3-rev3](b0811b_BusPirate5-hardware_bp5-ir-toy-v3-rev3.md) |

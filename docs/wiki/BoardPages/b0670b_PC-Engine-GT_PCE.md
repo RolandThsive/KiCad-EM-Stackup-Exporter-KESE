@@ -1,4 +1,4 @@
-# 670 PCE
+# 670. PCE
 
 Board 670 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 7](../CorpusTestingPages/Corpus-Testing-07.md#670-pce).
 
@@ -44,4 +44,4 @@ Board 670 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [669 PCE](b0669b_PC-Engine-Duo_PCE.md) | [671 TRS80I-Charmap](b0671b_TRS80IJP_TRS80I-Charmap.md) |
+| [669. PCE](b0669b_PC-Engine-Duo_PCE.md) | [671. TRS80I-Charmap](b0671b_TRS80IJP_TRS80I-Charmap.md) |

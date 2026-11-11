@@ -1,4 +1,4 @@
-# 264 Video Address Reader
+# 264. Video Address Reader
 
 Board 264 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 3](../CorpusTestingPages/Corpus-Testing-03.md#264-video-address-reader).
 
@@ -45,4 +45,4 @@ Board 264 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [263 VIA Control](b0263b_658-Computer_VIA-Control.md) | [265 Video Blank and Sync](b0265b_658-Computer_Video-Blank-and-Sync.md) |
+| [263. VIA Control](b0263b_658-Computer_VIA-Control.md) | [265. Video Blank and Sync](b0265b_658-Computer_Video-Blank-and-Sync.md) |

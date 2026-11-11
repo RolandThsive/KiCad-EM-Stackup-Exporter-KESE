@@ -1,4 +1,4 @@
-# 1797 AgonLight2_Rev_B
+# 1797. AgonLight2_Rev_B
 
 Board 1,797 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 17](../CorpusTestingPages/Corpus-Testing-17.md#1797-agonlight2_rev_b).
 
@@ -45,4 +45,4 @@ Board 1,797 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1796 AgonLight2_Rev_A](b1796b_AgonLight2_AgonLight2-Rev-A.md) | [1798 AgonLight2-HvIO_Rev_A](b1798b_AgonLight2-HvIO_AgonLight2-HvIO-Rev-A.md) |
+| [1796. AgonLight2_Rev_A](b1796b_AgonLight2_AgonLight2-Rev-A.md) | [1798. AgonLight2-HvIO_Rev_A](b1798b_AgonLight2-HvIO_AgonLight2-HvIO-Rev-A.md) |

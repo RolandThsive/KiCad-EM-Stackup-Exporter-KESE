@@ -1,4 +1,4 @@
-# 1692 OperationalAmplifierExamples
+# 1692. OperationalAmplifierExamples
 
 Board 1,692 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 16](../CorpusTestingPages/Corpus-Testing-16.md#1692-operationalamplifierexamples).
 
@@ -45,4 +45,4 @@ Board 1,692 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1691 Diode Function](b1691b_embeddedbakery_Diode-Function.md) | [1693 Connectors](b1693b_embeddedbakery_Connectors.md) |
+| [1691. Diode Function](b1691b_embeddedbakery_Diode-Function.md) | [1693. Connectors](b1693b_embeddedbakery_Connectors.md) |

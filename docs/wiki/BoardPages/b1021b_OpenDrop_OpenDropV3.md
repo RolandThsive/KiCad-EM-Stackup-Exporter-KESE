@@ -1,4 +1,4 @@
-# 1021 OpenDropV3
+# 1021. OpenDropV3
 
 Board 1,021 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 10](../CorpusTestingPages/Corpus-Testing-10.md#1021-opendropv3).
 
@@ -45,4 +45,4 @@ Board 1,021 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1020 PCBFrame](b1020b_OpenDrop_PCBFrame.md) | [1022 DIMMCartridgeConect](b1022b_OpenDrop_DIMMCartridgeConect.md) |
+| [1020. PCBFrame](b1020b_OpenDrop_PCBFrame.md) | [1022. DIMMCartridgeConect](b1022b_OpenDrop_DIMMCartridgeConect.md) |

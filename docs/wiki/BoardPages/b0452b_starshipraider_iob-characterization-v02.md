@@ -1,4 +1,4 @@
-# 452 iob-characterization-v02
+# 452. iob-characterization-v02
 
 Board 452 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 5](../CorpusTestingPages/Corpus-Testing-05.md#452-iob-characterization-v02).
 
@@ -45,4 +45,4 @@ Board 452 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [451 host-x1](b0451b_starshipraider_host-x1.md) | [453 probecard-mmcx](b0453b_starshipraider_probecard-mmcx.md) |
+| [451. host-x1](b0451b_starshipraider_host-x1.md) | [453. probecard-mmcx](b0453b_starshipraider_probecard-mmcx.md) |

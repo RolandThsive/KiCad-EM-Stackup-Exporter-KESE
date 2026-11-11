@@ -1,4 +1,4 @@
-# 1467 H616_devboard
+# 1467. H616_devboard
 
 Board 1,467 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 14](../CorpusTestingPages/Corpus-Testing-14.md#1467-h616_devboard).
 
@@ -45,4 +45,4 @@ Board 1,467 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1466 touchpad](b1466b_meko_touchpad.md) | [1468 ovio_core](b1468b_ovio-core_ovio-core.md) |
+| [1466. touchpad](b1466b_meko_touchpad.md) | [1468. ovio_core](b1468b_ovio-core_ovio-core.md) |

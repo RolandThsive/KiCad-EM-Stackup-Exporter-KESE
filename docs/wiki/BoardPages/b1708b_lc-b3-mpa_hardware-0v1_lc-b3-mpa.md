@@ -1,4 +1,4 @@
-# 1708 lc-b3-mpa
+# 1708. lc-b3-mpa
 
 Board 1,708 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 16](../CorpusTestingPages/Corpus-Testing-16.md#1708-lc-b3-mpa).
 
@@ -45,4 +45,4 @@ Board 1,708 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1707 LimeSDR_Sony](b1707b_front-end-modules_LimeSDR-Sony.md) | [1709 lc-b3-mpa](b1709b_lc-b3-mpa_hardware-1v0_lc-b3-mpa.md) |
+| [1707. LimeSDR_Sony](b1707b_front-end-modules_LimeSDR-Sony.md) | [1709. lc-b3-mpa](b1709b_lc-b3-mpa_hardware-1v0_lc-b3-mpa.md) |

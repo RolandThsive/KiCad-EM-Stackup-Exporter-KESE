@@ -1,4 +1,4 @@
-# 2819 syzygy-mipi-adapter
+# 2819. syzygy-mipi-adapter
 
 Board 2,819 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 27](../CorpusTestingPages/Corpus-Testing-27.md#2819-syzygy-mipi-adapter).
 
@@ -45,4 +45,4 @@ Board 2,819 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2818 tinytapeout-demo](b2818b_tt-demo-pcb_tinytapeout-demo.md) | [2820 syzygy-mipi-adapter](b2820b_oshw-adapters_syzygy-mipi-adapter-board-Rev1_syzygy-mipi-adapter.md) |
+| [2818. tinytapeout-demo](b2818b_tt-demo-pcb_tinytapeout-demo.md) | [2820. syzygy-mipi-adapter](b2820b_oshw-adapters_syzygy-mipi-adapter-board-Rev1_syzygy-mipi-adapter.md) |

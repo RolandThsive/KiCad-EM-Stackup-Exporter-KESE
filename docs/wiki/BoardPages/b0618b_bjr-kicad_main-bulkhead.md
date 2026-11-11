@@ -1,4 +1,4 @@
-# 618 main_bulkhead
+# 618. main_bulkhead
 
 Board 618 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 6](../CorpusTestingPages/Corpus-Testing-06.md#618-main_bulkhead).
 
@@ -45,4 +45,4 @@ Board 618 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [617 in-shaft-wsg-mommy](b0617b_bjr-kicad_in-shaft-wsg-mommy.md) | [619 power_distribution_board](b0619b_bjr-kicad_power-distribution-board.md) |
+| [617. in-shaft-wsg-mommy](b0617b_bjr-kicad_in-shaft-wsg-mommy.md) | [619. power_distribution_board](b0619b_bjr-kicad_power-distribution-board.md) |

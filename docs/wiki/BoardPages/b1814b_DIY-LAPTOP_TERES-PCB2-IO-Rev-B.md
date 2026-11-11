@@ -1,4 +1,4 @@
-# 1814 TERES-PCB2-IO_Rev.B
+# 1814. TERES-PCB2-IO_Rev.B
 
 Board 1,814 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 17](../CorpusTestingPages/Corpus-Testing-17.md#1814-teres-pcb2-io_revb).
 
@@ -45,4 +45,4 @@ Board 1,814 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1813 TERES_PCB1-A64-MAIN_Rev.C](b1813b_DIY-LAPTOP_TERES-PCB1-A64-MAIN-Rev-C.md) | [1815 TERES-PCB3-TOUCH-BTN_Rev.A](b1815b_DIY-LAPTOP_TERES-PCB3-TOUCH-BTN-Rev-A.md) |
+| [1813. TERES_PCB1-A64-MAIN_Rev.C](b1813b_DIY-LAPTOP_TERES-PCB1-A64-MAIN-Rev-C.md) | [1815. TERES-PCB3-TOUCH-BTN_Rev.A](b1815b_DIY-LAPTOP_TERES-PCB3-TOUCH-BTN-Rev-A.md) |

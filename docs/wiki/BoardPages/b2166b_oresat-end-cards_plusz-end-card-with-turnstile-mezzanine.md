@@ -1,4 +1,4 @@
-# 2166 plusz-end-card-with-turnstile-mezzanine
+# 2166. plusz-end-card-with-turnstile-mezzanine
 
 Board 2,166 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 21](../CorpusTestingPages/Corpus-Testing-21.md#2166-plusz-end-card-with-turnstile-mezzanine).
 
@@ -45,4 +45,4 @@ Board 2,166 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2165 plusz-end-card-with-turnstile](b2165b_oresat-end-cards_plusz-end-card-with-turnstile.md) | [2167 oresat0.5-minusz-end-card](b2167b_oresat-end-cards_oresat0-5-minusz-end-card.md) |
+| [2165. plusz-end-card-with-turnstile](b2165b_oresat-end-cards_plusz-end-card-with-turnstile.md) | [2167. oresat0.5-minusz-end-card](b2167b_oresat-end-cards_oresat0-5-minusz-end-card.md) |

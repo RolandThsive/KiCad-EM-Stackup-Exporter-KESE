@@ -1,4 +1,4 @@
-# 1738 Vivaldi
+# 1738. Vivaldi
 
 Board 1,738 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 17](../CorpusTestingPages/Corpus-Testing-17.md#1738-vivaldi).
 
@@ -45,4 +45,4 @@ Board 1,738 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1737 uSTREAM](b1737b_STREAM_uSTREAM.md) | [1739 Yellow](b1739b_yellow_Yellow.md) |
+| [1737. uSTREAM](b1737b_STREAM_uSTREAM.md) | [1739. Yellow](b1739b_yellow_Yellow.md) |

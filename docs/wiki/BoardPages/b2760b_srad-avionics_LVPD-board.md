@@ -1,4 +1,4 @@
-# 2760 LVPD-board
+# 2760. LVPD-board
 
 Board 2,760 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 26](../CorpusTestingPages/Corpus-Testing-26.md#2760-lvpd-board).
 
@@ -45,4 +45,4 @@ Board 2,760 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2759 OpenInverter_20b](b2759b_Open-Inverter-2-0b-Kicad_OpenInverter-20b.md) | [2761 LVPD-board_Payload](b2761b_srad-avionics_LVPD-board-Payload.md) |
+| [2759. OpenInverter_20b](b2759b_Open-Inverter-2-0b-Kicad_OpenInverter-20b.md) | [2761. LVPD-board_Payload](b2761b_srad-avionics_LVPD-board-Payload.md) |

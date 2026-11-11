@@ -1,4 +1,4 @@
-# 2736 8Ch-Sensor-Hub
+# 2736. 8Ch-Sensor-Hub
 
 Board 2,736 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 26](../CorpusTestingPages/Corpus-Testing-26.md#2736-8ch-sensor-hub).
 
@@ -45,4 +45,4 @@ Board 2,736 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2735 16Ch-Sensor-Hub](b2735b_pcb_16Ch-Sensor-Hub.md) | [2737 ss-relay](b2737b_pcb_ss-relay.md) |
+| [2735. 16Ch-Sensor-Hub](b2735b_pcb_16Ch-Sensor-Hub.md) | [2737. ss-relay](b2737b_pcb_ss-relay.md) |

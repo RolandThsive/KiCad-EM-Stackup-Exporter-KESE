@@ -1,4 +1,4 @@
-# 2215 solar-module-1u-gaas
+# 2215. solar-module-1u-gaas
 
 Board 2,215 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 21](../CorpusTestingPages/Corpus-Testing-21.md#2215-solar-module-1u-gaas).
 
@@ -45,4 +45,4 @@ Board 2,215 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2214 solar-module-1u-gaas](b2214b_oresat-solar-hardware_solar-module-1u-gaas-MCXN_solar-module-1u-gaas.md) | [2216 solar-module-1u-si](b2216b_oresat-solar-hardware_solar-module-1u-si-MCXN_solar-module-1u-si.md) |
+| [2214. solar-module-1u-gaas](b2214b_oresat-solar-hardware_solar-module-1u-gaas-MCXN_solar-module-1u-gaas.md) | [2216. solar-module-1u-si](b2216b_oresat-solar-hardware_solar-module-1u-si-MCXN_solar-module-1u-si.md) |

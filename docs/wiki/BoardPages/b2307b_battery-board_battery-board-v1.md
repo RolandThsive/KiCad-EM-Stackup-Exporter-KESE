@@ -1,4 +1,4 @@
-# 2307 battery_board_v1
+# 2307. battery_board_v1
 
 Board 2,307 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 22](../CorpusTestingPages/Corpus-Testing-22.md#2307-battery_board_v1).
 
@@ -45,4 +45,4 @@ Board 2,307 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2306 healthypi_6_v5](b2306b_protocentral-healthypi6-hardware_healthypi-6-v5.md) | [2308 Battery_Board_V3](b2308b_battery-board_Battery-Board-V3.md) |
+| [2306. healthypi_6_v5](b2306b_protocentral-healthypi6-hardware_healthypi-6-v5.md) | [2308. Battery_Board_V3](b2308b_battery-board_Battery-Board-V3.md) |

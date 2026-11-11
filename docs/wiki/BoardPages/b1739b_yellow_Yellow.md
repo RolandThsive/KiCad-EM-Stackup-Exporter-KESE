@@ -1,4 +1,4 @@
-# 1739 Yellow
+# 1739. Yellow
 
 Board 1,739 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 17](../CorpusTestingPages/Corpus-Testing-17.md#1739-yellow).
 
@@ -44,4 +44,4 @@ Board 1,739 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1738 Vivaldi](b1738b_vivaldi-antenna_Vivaldi.md) | [1740 keyboard_system](b1740b_vohm_keyboard-system.md) |
+| [1738. Vivaldi](b1738b_vivaldi-antenna_Vivaldi.md) | [1740. keyboard_system](b1740b_vohm_keyboard-system.md) |

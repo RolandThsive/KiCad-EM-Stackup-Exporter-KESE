@@ -1,4 +1,4 @@
-# 598 ad5689r
+# 598. ad5689r
 
 Board 598 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 6](../CorpusTestingPages/Corpus-Testing-06.md#598-ad5689r).
 
@@ -45,4 +45,4 @@ Board 598 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [597 accessory_v2](b0597b_bjr-kicad_accessory-v2.md) | [599 accessoryidk](b0599b_bjr-kicad_accessoryidk.md) |
+| [597. accessory_v2](b0597b_bjr-kicad_accessory-v2.md) | [599. accessoryidk](b0599b_bjr-kicad_accessoryidk.md) |

@@ -1,4 +1,4 @@
-# 2267 heatsink_drawing
+# 2267. heatsink_drawing
 
 Board 2,267 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 21](../CorpusTestingPages/Corpus-Testing-21.md#2267-heatsink_drawing).
 
@@ -45,4 +45,4 @@ Board 2,267 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2266 ownverter](b2266b_ownverter_ownverter.md) | [2268 Power](b2268b_twist_Power.md) |
+| [2266. ownverter](b2266b_ownverter_ownverter.md) | [2268. Power](b2268b_twist_Power.md) |

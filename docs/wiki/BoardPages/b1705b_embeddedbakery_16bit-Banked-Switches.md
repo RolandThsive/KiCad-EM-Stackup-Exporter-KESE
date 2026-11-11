@@ -1,4 +1,4 @@
-# 1705 16bit Banked Switches
+# 1705. 16bit Banked Switches
 
 Board 1,705 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 16](../CorpusTestingPages/Corpus-Testing-16.md#1705-16bit-banked-switches).
 
@@ -45,4 +45,4 @@ Board 1,705 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1704 MyIOShield](b1704b_embeddedbakery_MyIOShield.md) | [1706 SimpleClock](b1706b_embeddedbakery_SimpleClock.md) |
+| [1704. MyIOShield](b1704b_embeddedbakery_MyIOShield.md) | [1706. SimpleClock](b1706b_embeddedbakery_SimpleClock.md) |

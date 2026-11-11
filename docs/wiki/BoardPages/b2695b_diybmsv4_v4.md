@@ -1,4 +1,4 @@
-# 2695 v4
+# 2695. v4
 
 Board 2,695 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 25](../CorpusTestingPages/Corpus-Testing-25.md#2695-v4).
 
@@ -45,4 +45,4 @@ Board 2,695 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2694 ESP8266ControllerCircuit](b2694b_diybmsv4_ESP8266ControllerCircuit.md) | [2696 ModuleV421](b2696b_diybmsv4_ModuleV421.md) |
+| [2694. ESP8266ControllerCircuit](b2694b_diybmsv4_ESP8266ControllerCircuit.md) | [2696. ModuleV421](b2696b_diybmsv4_ModuleV421.md) |

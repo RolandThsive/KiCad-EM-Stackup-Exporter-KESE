@@ -1,4 +1,4 @@
-# 227 HCP65 Instruction Code
+# 227. HCP65 Instruction Code
 
 Board 227 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 3](../CorpusTestingPages/Corpus-Testing-03.md#227-hcp65-instruction-code).
 
@@ -45,4 +45,4 @@ Board 227 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [226 HCP65 Hold Count](b0226b_658-Computer_HCP65-Hold-Count.md) | [228 HCP65 Kernal Mode](b0228b_658-Computer_HCP65-Kernal-Mode.md) |
+| [226. HCP65 Hold Count](b0226b_658-Computer_HCP65-Hold-Count.md) | [228. HCP65 Kernal Mode](b0228b_658-Computer_HCP65-Kernal-Mode.md) |

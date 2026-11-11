@@ -1,4 +1,4 @@
-# 266 Video Board - Memory
+# 266. Video Board - Memory
 
 Board 266 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 3](../CorpusTestingPages/Corpus-Testing-03.md#266-video-board---memory).
 
@@ -45,4 +45,4 @@ Board 266 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [265 Video Blank and Sync](b0265b_658-Computer_Video-Blank-and-Sync.md) | [267 Video Board - Signals](b0267b_658-Computer_Video-Board-Signals.md) |
+| [265. Video Blank and Sync](b0265b_658-Computer_Video-Blank-and-Sync.md) | [267. Video Board - Signals](b0267b_658-Computer_Video-Board-Signals.md) |

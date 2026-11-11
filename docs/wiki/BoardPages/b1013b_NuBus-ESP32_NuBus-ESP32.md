@@ -1,4 +1,4 @@
-# 1013 NuBus-ESP32
+# 1013. NuBus-ESP32
 
 Board 1,013 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 10](../CorpusTestingPages/Corpus-Testing-10.md#1013-nubus-esp32).
 
@@ -44,4 +44,4 @@ Board 1,013 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1012 GR8RAM](b1012b_GR8RAM_GR8RAM.md) | [1014 RAM2E](b1014b_RAM2E_Hardware-LCMXO2_RAM2E.md) |
+| [1012. GR8RAM](b1012b_GR8RAM_GR8RAM.md) | [1014. RAM2E](b1014b_RAM2E_Hardware-LCMXO2_RAM2E.md) |

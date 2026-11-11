@@ -1,4 +1,4 @@
-# 815 rs232-dual-adapter
+# 815. rs232-dual-adapter
 
 Board 815 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 8](../CorpusTestingPages/Corpus-Testing-08.md#815-rs232-dual-adapter).
 
@@ -45,4 +45,4 @@ Board 815 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [814 adapter-ram-ddr5-1REV2](b0814b_BusPirate5-hardware_adapter-ram-ddr5-1REV2.md) | [816 sim-rev3c](b0816b_BusPirate5-hardware_sim-rev3c.md) |
+| [814. adapter-ram-ddr5-1REV2](b0814b_BusPirate5-hardware_adapter-ram-ddr5-1REV2.md) | [816. sim-rev3c](b0816b_BusPirate5-hardware_sim-rev3c.md) |

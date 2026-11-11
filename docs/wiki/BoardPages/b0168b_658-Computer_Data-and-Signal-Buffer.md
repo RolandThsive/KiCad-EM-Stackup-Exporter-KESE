@@ -1,4 +1,4 @@
-# 168 Data and Signal Buffer
+# 168. Data and Signal Buffer
 
 Board 168 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 2](../CorpusTestingPages/Corpus-Testing-02.md#168-data-and-signal-buffer).
 
@@ -45,4 +45,4 @@ Board 168 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [167 D Flip Flop 24bit](b0167b_658-Computer_D-Flip-Flop-24bit.md) | [169 Device Buffer](b0169b_658-Computer_Device-Buffer.md) |
+| [167. D Flip Flop 24bit](b0167b_658-Computer_D-Flip-Flop-24bit.md) | [169. Device Buffer](b0169b_658-Computer_Device-Buffer.md) |

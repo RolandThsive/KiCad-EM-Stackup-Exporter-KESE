@@ -1,4 +1,4 @@
-# 1647 ecp5-dev-board
+# 1647. ecp5-dev-board
 
 Board 1,647 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 16](../CorpusTestingPages/Corpus-Testing-16.md#1647-ecp5-dev-board).
 
@@ -45,4 +45,4 @@ Board 1,647 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1646 CM4_NAS](b1646b_CM4-NAS_CM4-NAS.md) | [1648 mega65-kbd](b1648b_mega65-kbd-pcb_mega65-kbd.md) |
+| [1646. CM4_NAS](b1646b_CM4-NAS_CM4-NAS.md) | [1648. mega65-kbd](b1648b_mega65-kbd-pcb_mega65-kbd.md) |

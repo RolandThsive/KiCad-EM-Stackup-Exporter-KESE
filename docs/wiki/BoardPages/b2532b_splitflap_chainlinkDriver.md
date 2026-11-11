@@ -1,4 +1,4 @@
-# 2532 chainlinkDriver
+# 2532. chainlinkDriver
 
 Board 2,532 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 24](../CorpusTestingPages/Corpus-Testing-24.md#2532-chainlinkdriver).
 
@@ -45,4 +45,4 @@ Board 2,532 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2531 chainlinkBuddyTDisplay](b2531b_splitflap_chainlinkBuddyTDisplay.md) | [2533 chainlinkDriverTester](b2533b_splitflap_chainlinkDriverTester.md) |
+| [2531. chainlinkBuddyTDisplay](b2531b_splitflap_chainlinkBuddyTDisplay.md) | [2533. chainlinkDriverTester](b2533b_splitflap_chainlinkDriverTester.md) |

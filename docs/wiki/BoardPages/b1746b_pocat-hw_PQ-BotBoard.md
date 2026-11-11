@@ -1,4 +1,4 @@
-# 1746 PQ_BotBoard
+# 1746. PQ_BotBoard
 
 Board 1,746 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 17](../CorpusTestingPages/Corpus-Testing-17.md#1746-pq_botboard).
 
@@ -45,4 +45,4 @@ Board 1,746 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1745 PQ_ADCS](b1745b_pocat-hw_pq-adcs-PQ-ADCS-HBridge_PQ-ADCS.md) | [1747 PQ_Botnotsobot](b1747b_pocat-hw_PQ-Botnotsobot.md) |
+| [1745. PQ_ADCS](b1745b_pocat-hw_pq-adcs-PQ-ADCS-HBridge_PQ-ADCS.md) | [1747. PQ_Botnotsobot](b1747b_pocat-hw_PQ-Botnotsobot.md) |

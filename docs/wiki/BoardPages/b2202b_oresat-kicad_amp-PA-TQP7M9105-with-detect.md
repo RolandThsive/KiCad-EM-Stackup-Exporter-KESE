@@ -1,4 +1,4 @@
-# 2202 amp-PA-TQP7M9105-with-detect
+# 2202. amp-PA-TQP7M9105-with-detect
 
 Board 2,202 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 21](../CorpusTestingPages/Corpus-Testing-21.md#2202-amp-pa-tqp7m9105-with-detect).
 
@@ -45,4 +45,4 @@ Board 2,202 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2201 stm32u595-breakout](b2201b_oresat-kicad_stm32u595-breakout.md) | [2203 50_ohm_microstrip_experiment](b2203b_oresat-live-handheld-ground-station_50-ohm-microstrip-experiment.md) |
+| [2201. stm32u595-breakout](b2201b_oresat-kicad_stm32u595-breakout.md) | [2203. 50_ohm_microstrip_experiment](b2203b_oresat-live-handheld-ground-station_50-ohm-microstrip-experiment.md) |

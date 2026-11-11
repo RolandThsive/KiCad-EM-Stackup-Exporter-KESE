@@ -1,4 +1,4 @@
-# 85 bus_boards
+# 85. bus_boards
 
 Board 85 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 1](../CorpusTestingPages/Corpus-Testing-01.md#85-bus_boards).
 
@@ -45,4 +45,4 @@ Board 85 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page
 
 | Previous | Next |
 |:---|---:|
-| [84 Bus Terminator](b0084b_AOS16_Bus-Terminator.md) | [86 clock](b0086b_AOS16_clock.md) |
+| [84. Bus Terminator](b0084b_AOS16_Bus-Terminator.md) | [86. clock](b0086b_AOS16_clock.md) |

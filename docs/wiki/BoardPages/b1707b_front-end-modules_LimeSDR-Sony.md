@@ -1,4 +1,4 @@
-# 1707 LimeSDR_Sony
+# 1707. LimeSDR_Sony
 
 Board 1,707 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 16](../CorpusTestingPages/Corpus-Testing-16.md#1707-limesdr_sony).
 
@@ -45,4 +45,4 @@ Board 1,707 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1706 SimpleClock](b1706b_embeddedbakery_SimpleClock.md) | [1708 lc-b3-mpa](b1708b_lc-b3-mpa_hardware-0v1_lc-b3-mpa.md) |
+| [1706. SimpleClock](b1706b_embeddedbakery_SimpleClock.md) | [1708. lc-b3-mpa](b1708b_lc-b3-mpa_hardware-0v1_lc-b3-mpa.md) |

@@ -1,4 +1,4 @@
-# 2827 pico2-ice
+# 2827. pico2-ice
 
 Board 2,827 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 27](../CorpusTestingPages/Corpus-Testing-27.md#2827-pico2-ice).
 
@@ -45,4 +45,4 @@ Board 2,827 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2826 pico2-ice](b2826b_pico2-ice_Board-Rev1_pico2-ice.md) | [2828 pico2-nx-module](b2828b_pico2-nx_board-Rev0-pico2-nx-module_pico2-nx-module.md) |
+| [2826. pico2-ice](b2826b_pico2-ice_Board-Rev1_pico2-ice.md) | [2828. pico2-nx-module](b2828b_pico2-nx_board-Rev0-pico2-nx-module_pico2-nx-module.md) |

@@ -1,4 +1,4 @@
-# 600 mainbox1.0
+# 600. mainbox1.0
 
 Board 600 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 6](../CorpusTestingPages/Corpus-Testing-06.md#600-mainbox10).
 
@@ -45,4 +45,4 @@ Board 600 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [599 accessoryidk](b0599b_bjr-kicad_accessoryidk.md) | [601 mainbox2.0](b0601b_bjr-kicad_21xt-02-mainbox-bjr-kicad-aaren-copy-21xt-02-mainbox-mainbox2-0_mainbox2-0.md) |
+| [599. accessoryidk](b0599b_bjr-kicad_accessoryidk.md) | [601. mainbox2.0](b0601b_bjr-kicad_21xt-02-mainbox-bjr-kicad-aaren-copy-21xt-02-mainbox-mainbox2-0_mainbox2-0.md) |

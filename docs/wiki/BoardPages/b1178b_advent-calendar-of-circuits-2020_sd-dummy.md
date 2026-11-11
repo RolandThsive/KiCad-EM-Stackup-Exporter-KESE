@@ -1,4 +1,4 @@
-# 1178 sd-dummy
+# 1178. sd-dummy
 
 Board 1,178 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 11](../CorpusTestingPages/Corpus-Testing-11.md#1178-sd-dummy).
 
@@ -45,4 +45,4 @@ Board 1,178 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1177 pmod-quad-7segment](b1177b_advent-calendar-of-circuits-2020_pmod-quad-7segment.md) | [1179 resonance](b1179b_advent-calendar-of-circuits-2020_resonance.md) |
+| [1177. pmod-quad-7segment](b1177b_advent-calendar-of-circuits-2020_pmod-quad-7segment.md) | [1179. resonance](b1179b_advent-calendar-of-circuits-2020_resonance.md) |

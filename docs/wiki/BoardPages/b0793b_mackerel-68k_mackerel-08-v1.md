@@ -1,4 +1,4 @@
-# 793 mackerel-08-v1
+# 793. mackerel-08-v1
 
 Board 793 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 8](../CorpusTestingPages/Corpus-Testing-08.md#793-mackerel-08-v1).
 
@@ -45,4 +45,4 @@ Board 793 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [792 mackerel-10-v1](b0792b_mackerel-68k_hardware-mack-10-proto-mackerel-10-v1_mackerel-10-v1.md) | [794 mackerel-10-v1](b0794b_mackerel-68k_hardware-mackerel-10-v1_mackerel-10-v1.md) |
+| [792. mackerel-10-v1](b0792b_mackerel-68k_hardware-mack-10-proto-mackerel-10-v1_mackerel-10-v1.md) | [794. mackerel-10-v1](b0794b_mackerel-68k_hardware-mackerel-10-v1_mackerel-10-v1.md) |

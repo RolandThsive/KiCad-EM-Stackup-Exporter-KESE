@@ -1,4 +1,4 @@
-# 2733 rotary-switch
+# 2733. rotary-switch
 
 Board 2,733 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 26](../CorpusTestingPages/Corpus-Testing-26.md#2733-rotary-switch).
 
@@ -45,4 +45,4 @@ Board 2,733 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2732 right-sidepanel](b2732b_pcb_right-sidepanel.md) | [2734 segment-switch](b2734b_pcb_segment-switch.md) |
+| [2732. right-sidepanel](b2732b_pcb_right-sidepanel.md) | [2734. segment-switch](b2734b_pcb_segment-switch.md) |

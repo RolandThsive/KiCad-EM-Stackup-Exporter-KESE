@@ -1,4 +1,4 @@
-# 1918 LoRa_RevB
+# 1918. LoRa_RevB
 
 Board 1,918 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 18](../CorpusTestingPages/Corpus-Testing-18.md#1918-lora_revb).
 
@@ -45,4 +45,4 @@ Board 1,918 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1917 LoRa_RevA](b1917b_LoRa-868-915_LoRa-RevA.md) | [1919 MOD-LoRa_RevB](b1919b_LoRa-868-915_MOD-LoRa-RevB.md) |
+| [1917. LoRa_RevA](b1917b_LoRa-868-915_LoRa-RevA.md) | [1919. MOD-LoRa_RevB](b1919b_LoRa-868-915_MOD-LoRa-RevB.md) |

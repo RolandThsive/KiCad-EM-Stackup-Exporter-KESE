@@ -1,4 +1,4 @@
-# 1906 ICE40-DAC_Rev_A1
+# 1906. ICE40-DAC_Rev_A1
 
 Board 1,906 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 18](../CorpusTestingPages/Corpus-Testing-18.md#1906-ice40-dac_rev_a1).
 
@@ -46,4 +46,4 @@ Board 1,906 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1905 ICE40-ADC_Rev_A](b1905b_iCE40-ADC_ICE40-ADC-Rev-A.md) | [1907 ICE40-DAC_Rev_A](b1907b_iCE40-DAC_ICE40-DAC-Rev-A.md) |
+| [1905. ICE40-ADC_Rev_A](b1905b_iCE40-ADC_ICE40-ADC-Rev-A.md) | [1907. ICE40-DAC_Rev_A](b1907b_iCE40-DAC_ICE40-DAC-Rev-A.md) |

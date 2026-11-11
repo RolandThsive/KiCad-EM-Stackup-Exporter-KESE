@@ -1,4 +1,4 @@
-# 926 EEZ DIB MCU r1B1
+# 926. EEZ DIB MCU r1B1
 
 Board 926 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 9](../CorpusTestingPages/Corpus-Testing-09.md#926-eez-dib-mcu-r1b1).
 
@@ -45,4 +45,4 @@ Board 926 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [925 EEZ DIB B3C](b0925b_modular-psu_EEZ-DIB-B3C.md) | [927 EEZ DIB MCU r1B2](b0927b_modular-psu_EEZ-DIB-MCU-r1B2.md) |
+| [925. EEZ DIB B3C](b0925b_modular-psu_EEZ-DIB-B3C.md) | [927. EEZ DIB MCU r1B2](b0927b_modular-psu_EEZ-DIB-MCU-r1B2.md) |

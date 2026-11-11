@@ -1,4 +1,4 @@
-# 2040 data_acquisition_2
+# 2040. data_acquisition_2
 
 Board 2,040 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 19](../CorpusTestingPages/Corpus-Testing-19.md#2040-data_acquisition_2).
 
@@ -45,4 +45,4 @@ Board 2,040 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2039 data_acquisition_1](b2039b_olin-electric-motorsports_data-acquisition-1.md) | [2041 bms_core](b2041b_olin-electric-motorsports_vehicle-mkv-hardware-service-section-controller_bms-core.md) |
+| [2039. data_acquisition_1](b2039b_olin-electric-motorsports_data-acquisition-1.md) | [2041. bms_core](b2041b_olin-electric-motorsports_vehicle-mkv-hardware-service-section-controller_bms-core.md) |

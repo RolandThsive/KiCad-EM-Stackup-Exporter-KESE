@@ -1,4 +1,4 @@
-# 1106 begonia
+# 1106. begonia
 
 Board 1,106 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 11](../CorpusTestingPages/Corpus-Testing-11.md#1106-begonia).
 
@@ -45,4 +45,4 @@ Board 1,106 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1105 azalea](b1105b_greatfet-hardware_azalea.md) | [1107 crocus](b1107b_greatfet-hardware_crocus.md) |
+| [1105. azalea](b1105b_greatfet-hardware_azalea.md) | [1107. crocus](b1107b_greatfet-hardware_crocus.md) |

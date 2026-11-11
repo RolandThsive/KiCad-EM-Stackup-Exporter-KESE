@@ -1,4 +1,4 @@
-# 2787 high-range-IMU
+# 2787. high-range-IMU
 
 Board 2,787 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 26](../CorpusTestingPages/Corpus-Testing-26.md#2787-high-range-imu).
 
@@ -45,4 +45,4 @@ Board 2,787 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2786 Screw Switch](b2786b_srad-avionics_Screw-Switch.md) | [2788 PatchAntennaBreakout](b2788b_srad-avionics_PatchAntennaBreakout.md) |
+| [2786. Screw Switch](b2786b_srad-avionics_Screw-Switch.md) | [2788. PatchAntennaBreakout](b2788b_srad-avionics_PatchAntennaBreakout.md) |

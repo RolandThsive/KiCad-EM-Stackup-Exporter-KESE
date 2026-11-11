@@ -1,4 +1,4 @@
-# 2796 nqvme_template
+# 2796. nqvme_template
 
 Board 2,796 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 26](../CorpusTestingPages/Corpus-Testing-26.md#2796-nqvme_template).
 
@@ -45,4 +45,4 @@ Board 2,796 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2795 cpu030](b2795b_pg68k_cpu030.md) | [2797 Apple2Card](b2797b_Apple2Card_Apple2Card_Apple2Card.md) |
+| [2795. cpu030](b2795b_pg68k_cpu030.md) | [2797. Apple2Card](b2797b_Apple2Card_Apple2Card_Apple2Card.md) |

@@ -1,4 +1,4 @@
-# 2401 xt8086_alpha
+# 2401. xt8086_alpha
 
 Board 2,401 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 23](../CorpusTestingPages/Corpus-Testing-23.md#2401-xt8086_alpha).
 
@@ -45,4 +45,4 @@ Board 2,401 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2400 turbosound](b2400b_frank_turbosound.md) | [2402 zerofrank](b2402b_frank_zerofrank.md) |
+| [2400. turbosound](b2400b_frank_turbosound.md) | [2402. zerofrank](b2402b_frank_zerofrank.md) |

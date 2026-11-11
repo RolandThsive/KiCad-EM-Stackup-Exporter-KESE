@@ -1,4 +1,4 @@
-# 1598 ssu
+# 1598. ssu
 
 Board 1,598 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 15](../CorpusTestingPages/Corpus-Testing-15.md#1598-ssu).
 
@@ -45,4 +45,4 @@ Board 1,598 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1597 ssx](b1597b_ferrit_ssx.md) | [1599 sxy](b1599b_ferrit_sxy.md) |
+| [1597. ssx](b1597b_ferrit_ssx.md) | [1599. sxy](b1599b_ferrit_sxy.md) |

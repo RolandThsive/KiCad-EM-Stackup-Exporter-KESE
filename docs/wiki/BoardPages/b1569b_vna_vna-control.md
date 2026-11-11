@@ -1,4 +1,4 @@
-# 1569 vna_control
+# 1569. vna_control
 
 Board 1,569 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 15](../CorpusTestingPages/Corpus-Testing-15.md#1569-vna_control).
 
@@ -45,4 +45,4 @@ Board 1,569 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1568 switch_demod](b1568b_vna_switch-demod.md) | [1570 vna_demod](b1570b_vna_vna-demod.md) |
+| [1568. switch_demod](b1568b_vna_switch-demod.md) | [1570. vna_demod](b1570b_vna_vna-demod.md) |

@@ -1,4 +1,4 @@
-# 2873 v4.1
+# 2873. v4.1
 
 Board 2,873 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 27](../CorpusTestingPages/Corpus-Testing-27.md#2873-v41).
 
@@ -45,4 +45,4 @@ Board 2,873 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2872 v4.0](b2872b_PocketSDR_v4-0.md) | [2874 Coin_Cell_Tester](b2874b_servomotor_PCB-Coin-Cell-Tester-PCB-V1_Coin-Cell-Tester.md) |
+| [2872. v4.0](b2872b_PocketSDR_v4-0.md) | [2874. Coin_Cell_Tester](b2874b_servomotor_PCB-Coin-Cell-Tester-PCB-V1_Coin-Cell-Tester.md) |

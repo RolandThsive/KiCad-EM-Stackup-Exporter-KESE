@@ -1,4 +1,4 @@
-# 2818 tinytapeout-demo
+# 2818. tinytapeout-demo
 
 Board 2,818 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 27](../CorpusTestingPages/Corpus-Testing-27.md#2818-tinytapeout-demo).
 
@@ -44,4 +44,4 @@ Board 2,818 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2817 breakout-tt06-qfn-socket](b2817b_breakout-pcb_breakout-tt06-qfn-socket.md) | [2819 syzygy-mipi-adapter](b2819b_oshw-adapters_syzygy-mipi-adapter-board-Rev0_syzygy-mipi-adapter.md) |
+| [2817. breakout-tt06-qfn-socket](b2817b_breakout-pcb_breakout-tt06-qfn-socket.md) | [2819. syzygy-mipi-adapter](b2819b_oshw-adapters_syzygy-mipi-adapter-board-Rev0_syzygy-mipi-adapter.md) |

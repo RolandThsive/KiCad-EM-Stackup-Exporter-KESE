@@ -1,4 +1,4 @@
-# 59 Miniscope-v4-PCB-fab-assembly
+# 59. Miniscope-v4-PCB-fab-assembly
 
 Board 59 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 1](../CorpusTestingPages/Corpus-Testing-01.md#59-miniscope-v4-pcb-fab-assembly).
 
@@ -45,4 +45,4 @@ Board 59 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page
 
 | Previous | Next |
 |:---|---:|
-| [58 Miniscope-v4-Ser-Pow](b0058b_Miniscope-v4_Miniscope-v4-Ser-Pow.md) | [60 Miniscope-v4-PCB-fab-assembly_2](b0060b_Miniscope-v4_Miniscope-v4-PCB-fab-assembly-2.md) |
+| [58. Miniscope-v4-Ser-Pow](b0058b_Miniscope-v4_Miniscope-v4-Ser-Pow.md) | [60. Miniscope-v4-PCB-fab-assembly_2](b0060b_Miniscope-v4_Miniscope-v4-PCB-fab-assembly-2.md) |

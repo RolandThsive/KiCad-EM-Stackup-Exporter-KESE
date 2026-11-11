@@ -1,4 +1,4 @@
-# 1984 RVPC_Rev_A
+# 1984. RVPC_Rev_A
 
 Board 1,984 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 19](../CorpusTestingPages/Corpus-Testing-19.md#1984-rvpc_rev_a).
 
@@ -45,4 +45,4 @@ Board 1,984 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1983 RT1010Py-DevKit_RevB](b1983b_RT1010Py-DevKit_RT1010Py-DevKit-RevB.md) | [1985 RVPC_Rev_B](b1985b_RVPC_RVPC-Rev-B.md) |
+| [1983. RT1010Py-DevKit_RevB](b1983b_RT1010Py-DevKit_RT1010Py-DevKit-RevB.md) | [1985. RVPC_Rev_B](b1985b_RVPC_RVPC-Rev-B.md) |

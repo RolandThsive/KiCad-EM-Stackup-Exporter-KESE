@@ -1,4 +1,4 @@
-# 2306 healthypi_6_v5
+# 2306. healthypi_6_v5
 
 Board 2,306 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 22](../CorpusTestingPages/Corpus-Testing-22.md#2306-healthypi_6_v5).
 
@@ -45,4 +45,4 @@ Board 2,306 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2305 healthypi_6_display_v7](b2305b_protocentral-healthypi6-hardware_healthypi-6-display-v7.md) | [2307 battery_board_v1](b2307b_battery-board_battery-board-v1.md) |
+| [2305. healthypi_6_display_v7](b2305b_protocentral-healthypi6-hardware_healthypi-6-display-v7.md) | [2307. battery_board_v1](b2307b_battery-board_battery-board-v1.md) |

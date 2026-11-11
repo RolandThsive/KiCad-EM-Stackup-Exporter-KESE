@@ -1,4 +1,4 @@
-# 277 Video Signals Output
+# 277. Video Signals Output
 
 Board 277 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 3](../CorpusTestingPages/Corpus-Testing-03.md#277-video-signals-output).
 
@@ -45,4 +45,4 @@ Board 277 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [276 Video Signal Dragger](b0276b_658-Computer_Video-Signal-Dragger.md) | [278 Keypad](b0278b_658-Computer_Keypad.md) |
+| [276. Video Signal Dragger](b0276b_658-Computer_Video-Signal-Dragger.md) | [278. Keypad](b0278b_658-Computer_Keypad.md) |

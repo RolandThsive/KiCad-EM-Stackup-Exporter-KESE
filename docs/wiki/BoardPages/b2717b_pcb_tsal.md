@@ -1,4 +1,4 @@
-# 2717 tsal
+# 2717. tsal
 
 Board 2,717 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 26](../CorpusTestingPages/Corpus-Testing-26.md#2717-tsal).
 
@@ -45,4 +45,4 @@ Board 2,717 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2716 test-rig](b2716b_pcb_test-rig.md) | [2718 batak](b2718b_pcb_batak.md) |
+| [2716. test-rig](b2716b_pcb_test-rig.md) | [2718. batak](b2718b_pcb_batak.md) |

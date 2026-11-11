@@ -1,4 +1,4 @@
-# 201 Clock Oscillator
+# 201. Clock Oscillator
 
 Board 201 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 2](../CorpusTestingPages/Corpus-Testing-02.md#201-clock-oscillator).
 
@@ -45,4 +45,4 @@ Board 201 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [200 Clock LTC6903](b0200b_658-Computer_Clock-LTC6903.md) | [202 Clock Push Button](b0202b_658-Computer_Clock-Push-Button.md) |
+| [200. Clock LTC6903](b0200b_658-Computer_Clock-LTC6903.md) | [202. Clock Push Button](b0202b_658-Computer_Clock-Push-Button.md) |

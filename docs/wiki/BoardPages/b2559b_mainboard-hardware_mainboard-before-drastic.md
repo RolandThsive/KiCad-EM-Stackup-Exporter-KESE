@@ -1,4 +1,4 @@
-# 2559 mainboard_before_drastic
+# 2559. mainboard_before_drastic
 
 Board 2,559 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 24](../CorpusTestingPages/Corpus-Testing-24.md#2559-mainboard_before_drastic).
 
@@ -45,4 +45,4 @@ Board 2,559 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2558 mainboard](b2558b_mainboard-hardware_revB-em_mainboard.md) | [2560 mainboard](b2560b_mainboard-hardware_revC-fm_mainboard.md) |
+| [2558. mainboard](b2558b_mainboard-hardware_revB-em_mainboard.md) | [2560. mainboard](b2560b_mainboard-hardware_revC-fm_mainboard.md) |

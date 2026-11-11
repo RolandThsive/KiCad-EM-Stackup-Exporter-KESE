@@ -1,4 +1,4 @@
-# 2315 inhibit_diagram
+# 2315. inhibit_diagram
 
 Board 2,315 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 22](../CorpusTestingPages/Corpus-Testing-22.md#2315-inhibit_diagram).
 
@@ -45,4 +45,4 @@ Board 2,315 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2314 battery_pack_v2](b2314b_battery-board_battery-pack-v2.md) | [2316 FC_Board_v3](b2316b_flight-controller-board_FC-Board-v3.md) |
+| [2314. battery_pack_v2](b2314b_battery-board_battery-pack-v2.md) | [2316. FC_Board_v3](b2316b_flight-controller-board_FC-Board-v3.md) |

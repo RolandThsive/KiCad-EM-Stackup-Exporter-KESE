@@ -1,4 +1,4 @@
-# 223 HCP65 Board Presence
+# 223. HCP65 Board Presence
 
 Board 223 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 3](../CorpusTestingPages/Corpus-Testing-03.md#223-hcp65-board-presence).
 
@@ -45,4 +45,4 @@ Board 223 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [222 Clock Hold V1 to V2](b0222b_658-Computer_Clock-Hold-V1-to-V2.md) | [224 HCP65 Device Interrupts](b0224b_658-Computer_HCP65-Device-Interrupts.md) |
+| [222. Clock Hold V1 to V2](b0222b_658-Computer_Clock-Hold-V1-to-V2.md) | [224. HCP65 Device Interrupts](b0224b_658-Computer_HCP65-Device-Interrupts.md) |

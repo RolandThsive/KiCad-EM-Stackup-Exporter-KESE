@@ -1,4 +1,4 @@
-# 650 TC02Mini
+# 650. TC02Mini
 
 Board 650 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 7](../CorpusTestingPages/Corpus-Testing-07.md#650-tc02mini).
 
@@ -45,4 +45,4 @@ Board 650 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [649 TC01AtariJoystick](b0649b_Einstein-TC-01_TC01AtariJoystick.md) | [651 TMSAdapterTC01](b0651b_Einstein-TC-01_TMSAdapterTC01.md) |
+| [649. TC01AtariJoystick](b0649b_Einstein-TC-01_TC01AtariJoystick.md) | [651. TMSAdapterTC01](b0651b_Einstein-TC-01_TMSAdapterTC01.md) |

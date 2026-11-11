@@ -1,4 +1,4 @@
-# 473 attenuator-test
+# 473. attenuator-test
 
 Board 473 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 5](../CorpusTestingPages/Corpus-Testing-05.md#473-attenuator-test).
 
@@ -45,4 +45,4 @@ Board 473 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [472 akl-pt6](b0472b_starshipraider_akl-pt6.md) | [474 bnc-test](b0474b_starshipraider_bnc-test.md) |
+| [472. akl-pt6](b0472b_starshipraider_akl-pt6.md) | [474. bnc-test](b0474b_starshipraider_bnc-test.md) |

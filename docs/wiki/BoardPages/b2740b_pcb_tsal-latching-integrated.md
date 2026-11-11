@@ -1,4 +1,4 @@
-# 2740 tsal-latching-integrated
+# 2740. tsal-latching-integrated
 
 Board 2,740 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 26](../CorpusTestingPages/Corpus-Testing-26.md#2740-tsal-latching-integrated).
 
@@ -45,4 +45,4 @@ Board 2,740 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2739 trc](b2739b_pcb_trc.md) | [2741 tsal-led](b2741b_pcb_tsal-led.md) |
+| [2739. trc](b2739b_pcb_trc.md) | [2741. tsal-led](b2741b_pcb_tsal-led.md) |

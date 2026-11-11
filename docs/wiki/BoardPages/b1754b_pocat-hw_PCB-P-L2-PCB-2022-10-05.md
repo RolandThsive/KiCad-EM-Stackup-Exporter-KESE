@@ -1,4 +1,4 @@
-# 1754 PCB_P L2_PCB_2022-10-05
+# 1754. PCB_P L2_PCB_2022-10-05
 
 Board 1,754 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 17](../CorpusTestingPages/Corpus-Testing-17.md#1754-pcb_p-l2_pcb_2022-10-05).
 
@@ -45,4 +45,4 @@ Board 1,754 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1753 PQ_PL1](b1753b_pocat-hw_PQ-PL1.md) | [1755 PQ_PL2](b1755b_pocat-hw_PQ-PL2.md) |
+| [1753. PQ_PL1](b1753b_pocat-hw_PQ-PL1.md) | [1755. PQ_PL2](b1755b_pocat-hw_PQ-PL2.md) |

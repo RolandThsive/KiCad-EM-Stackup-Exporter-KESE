@@ -1,4 +1,4 @@
-# 861 DDR4_8GB_UDIMM
+# 861. DDR4_8GB_UDIMM
 
 Board 861 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 8](../CorpusTestingPages/Corpus-Testing-08.md#861-ddr4_8gb_udimm).
 
@@ -45,4 +45,4 @@ Board 861 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [860 stm32_board](b0860b_stm32-devboard_stm32-board.md) | [862 dfb1_r5](b0862b_DFB_dfb1-r5.md) |
+| [860. stm32_board](b0860b_stm32-devboard_stm32-board.md) | [862. dfb1_r5](b0862b_DFB_dfb1-r5.md) |

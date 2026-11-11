@@ -1,4 +1,4 @@
-# 2494 thermocouple_module
+# 2494. thermocouple_module
 
 Board 2,494 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 24](../CorpusTestingPages/Corpus-Testing-24.md#2494-thermocouple_module).
 
@@ -45,4 +45,4 @@ Board 2,494 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2493 Stimulator](b2493b_rusefi-hardware_classic-designs-rusefi-hardware-history-Stimulator-rev00-20_Stimulator.md) | [2495 mmc_usb_1](b2495b_rusefi-hardware_classic-designs-rusefi-hardware-history-usb-mmc-spi-rev00-10_mmc-usb-1.md) |
+| [2493. Stimulator](b2493b_rusefi-hardware_classic-designs-rusefi-hardware-history-Stimulator-rev00-20_Stimulator.md) | [2495. mmc_usb_1](b2495b_rusefi-hardware_classic-designs-rusefi-hardware-history-usb-mmc-spi-rev00-10_mmc-usb-1.md) |

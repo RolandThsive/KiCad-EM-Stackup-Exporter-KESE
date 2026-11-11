@@ -1,4 +1,4 @@
-# 2299 ISA adapter
+# 2299. ISA adapter
 
 Board 2,299 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 22](../CorpusTestingPages/Corpus-Testing-22.md#2299-isa-adapter).
 
@@ -45,4 +45,4 @@ Board 2,299 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2298 PicoGUS](b2298b_picogus_PicoGUS.md) | [2300 pc_healthypi_move_program_adapter_v7](b2300b_healthypi-move-hw_pc-healthypi-move-program-adapter-v7.md) |
+| [2298. PicoGUS](b2298b_picogus_PicoGUS.md) | [2300. pc_healthypi_move_program_adapter_v7](b2300b_healthypi-move-hw_pc-healthypi-move-program-adapter-v7.md) |

@@ -1,4 +1,4 @@
-# 992 MyCPU
+# 992. MyCPU
 
 Board 992 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 10](../CorpusTestingPages/Corpus-Testing-10.md#992-mycpu).
 
@@ -45,4 +45,4 @@ Board 992 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [991 corne-chocolate](b0991b_crkbd_corne-chocolate.md) | [993 PCBs](b0993b_pslab-hardware_PCBs.md) |
+| [991. corne-chocolate](b0991b_crkbd_corne-chocolate.md) | [993. PCBs](b0993b_pslab-hardware_PCBs.md) |

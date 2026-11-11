@@ -1,4 +1,4 @@
-# 431 ICE40UPDevBoard
+# 431. ICE40UPDevBoard
 
 Board 431 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 4](../CorpusTestingPages/Corpus-Testing-04.md#431-ice40updevboard).
 
@@ -44,4 +44,4 @@ Board 431 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [430 ICE40HXDevBoard](b0430b_ICE40HXDevBoard_ICE40HXDevBoard.md) | [432 Printer+Sticks](b0432b_maxi030_Printer-Sticks.md) |
+| [430. ICE40HXDevBoard](b0430b_ICE40HXDevBoard_ICE40HXDevBoard.md) | [432. Printer+Sticks](b0432b_maxi030_Printer-Sticks.md) |

@@ -1,4 +1,4 @@
-# 1758 PQ_MagYBoard
+# 1758. PQ_MagYBoard
 
 Board 1,758 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 17](../CorpusTestingPages/Corpus-Testing-17.md#1758-pq_magyboard).
 
@@ -45,4 +45,4 @@ Board 1,758 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1757 PQ1_TopBoardV9](b1757b_pocat-hw_PQ1-TopBoardV9.md) | [1759 Control_Boards](b1759b_open-source-rover_Control-Boards.md) |
+| [1757. PQ1_TopBoardV9](b1757b_pocat-hw_PQ1-TopBoardV9.md) | [1759. Control_Boards](b1759b_open-source-rover_Control-Boards.md) |

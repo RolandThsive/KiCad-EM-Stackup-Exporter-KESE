@@ -1,4 +1,4 @@
-# 622 Acorn-A3010
+# 622. Acorn-A3010
 
 Board 622 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 6](../CorpusTestingPages/Corpus-Testing-06.md#622-acorn-a3010).
 
@@ -44,4 +44,4 @@ Board 622 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [621 steering_wheel](b0621b_bjr-kicad_steering-wheel.md) | [623 lynx128](b0623b_Camputers-Lynx_Lynx-128-Archive-Lynx-192-Kicad_lynx128.md) |
+| [621. steering_wheel](b0621b_bjr-kicad_steering-wheel.md) | [623. lynx128](b0623b_Camputers-Lynx_Lynx-128-Archive-Lynx-192-Kicad_lynx128.md) |

@@ -1,4 +1,4 @@
-# 34 LCD Card
+# 34. LCD Card
 
 Board 34 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 1](../CorpusTestingPages/Corpus-Testing-01.md#34-lcd-card).
 
@@ -45,4 +45,4 @@ Board 34 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page
 
 | Previous | Next |
 |:---|---:|
-| [33 LCD Board](b0033b_6502_LCD-Board.md) | [35 Mega Helper](b0035b_6502_Mega-Helper.md) |
+| [33. LCD Board](b0033b_6502_LCD-Board.md) | [35. Mega Helper](b0035b_6502_Mega-Helper.md) |

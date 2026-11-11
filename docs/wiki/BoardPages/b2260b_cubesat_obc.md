@@ -1,4 +1,4 @@
-# 2260 obc
+# 2260. obc
 
 Board 2,260 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 21](../CorpusTestingPages/Corpus-Testing-21.md#2260-obc).
 
@@ -45,4 +45,4 @@ Board 2,260 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2259 eps](b2259b_cubesat_eps.md) | [2261 payload](b2261b_cubesat_payload.md) |
+| [2259. eps](b2259b_cubesat_eps.md) | [2261. payload](b2261b_cubesat_payload.md) |

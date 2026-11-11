@@ -1,4 +1,4 @@
-# 1164 esp32s2-co2-monitor
+# 1164. esp32s2-co2-monitor
 
 Board 1,164 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 11](../CorpusTestingPages/Corpus-Testing-11.md#1164-esp32s2-co2-monitor).
 
@@ -45,4 +45,4 @@ Board 1,164 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1163 esp32s2-breakout](b1163b_advent-calendar-of-circuits-2020_esp32s2-breakout.md) | [1165 esp32s2-lepton](b1165b_advent-calendar-of-circuits-2020_esp32s2-lepton.md) |
+| [1163. esp32s2-breakout](b1163b_advent-calendar-of-circuits-2020_esp32s2-breakout.md) | [1165. esp32s2-lepton](b1165b_advent-calendar-of-circuits-2020_esp32s2-lepton.md) |

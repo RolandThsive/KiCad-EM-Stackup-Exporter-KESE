@@ -1,4 +1,4 @@
-# 2418 DCDCv9-3
+# 2418. DCDCv9-3
 
 Board 2,418 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 23](../CorpusTestingPages/Corpus-Testing-23.md#2418-dcdcv9-3).
 
@@ -45,4 +45,4 @@ Board 2,418 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2417 GaNdapter](b2417b_dcdc_GaNdapter.md) | [2419 rosco_m68k](b2419b_rosco-m68k_design-r0-r0-kicad-import_rosco-m68k.md) |
+| [2417. GaNdapter](b2417b_dcdc_GaNdapter.md) | [2419. rosco_m68k](b2419b_rosco-m68k_design-r0-r0-kicad-import_rosco-m68k.md) |

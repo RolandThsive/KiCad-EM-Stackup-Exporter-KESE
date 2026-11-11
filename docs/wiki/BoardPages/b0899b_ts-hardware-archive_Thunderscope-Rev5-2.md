@@ -1,4 +1,4 @@
-# 899 Thunderscope_Rev5.2
+# 899. Thunderscope_Rev5.2
 
 Board 899 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 9](../CorpusTestingPages/Corpus-Testing-09.md#899-thunderscope_rev52).
 
@@ -46,4 +46,4 @@ Board 899 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [898 Thunderscope_Rev5.1](b0898b_ts-hardware-archive_Thunderscope-Rev5-1.md) | [900 Thunderscope_Rev5](b0900b_ts-hardware-archive_Thunderscope-Rev5.md) |
+| [898. Thunderscope_Rev5.1](b0898b_ts-hardware-archive_Thunderscope-Rev5-1.md) | [900. Thunderscope_Rev5](b0900b_ts-hardware-archive_Thunderscope-Rev5.md) |

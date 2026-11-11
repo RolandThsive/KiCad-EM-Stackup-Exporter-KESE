@@ -1,4 +1,4 @@
-# 1036 T12_Control
+# 1036. T12_Control
 
 Board 1,036 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 10](../CorpusTestingPages/Corpus-Testing-10.md#1036-t12_control).
 
@@ -45,4 +45,4 @@ Board 1,036 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1035 PrntrBoardV2](b1035b_prntrboardv2_PrntrBoardV2.md) | [1037 TMC2130_Driver](b1037b_prntrboardv2_TMC2130-Driver.md) |
+| [1035. PrntrBoardV2](b1035b_prntrboardv2_PrntrBoardV2.md) | [1037. TMC2130_Driver](b1037b_prntrboardv2_TMC2130-Driver.md) |

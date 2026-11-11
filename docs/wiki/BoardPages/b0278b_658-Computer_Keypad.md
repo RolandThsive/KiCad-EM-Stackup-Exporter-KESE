@@ -1,4 +1,4 @@
-# 278 Keypad
+# 278. Keypad
 
 Board 278 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 3](../CorpusTestingPages/Corpus-Testing-03.md#278-keypad).
 
@@ -45,4 +45,4 @@ Board 278 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [277 Video Signals Output](b0277b_658-Computer_Video-Signals-Output.md) | [279 GPIO 32bit Board](b0279b_658-Computer_GPIO-32bit-Board.md) |
+| [277. Video Signals Output](b0277b_658-Computer_Video-Signals-Output.md) | [279. GPIO 32bit Board](b0279b_658-Computer_GPIO-32bit-Board.md) |

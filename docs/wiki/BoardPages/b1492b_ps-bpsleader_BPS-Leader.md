@@ -1,4 +1,4 @@
-# 1492 BPS-Leader
+# 1492. BPS-Leader
 
 Board 1,492 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 14](../CorpusTestingPages/Corpus-Testing-14.md#1492-bps-leader).
 
@@ -45,4 +45,4 @@ Board 1,492 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1491 BPS-Minion](b1491b_bps-voltagepcb_BPS-Minion.md) | [1493 PowerDistributionUnit](b1493b_ps-powerdistributionunit_PowerDistributionUnit.md) |
+| [1491. BPS-Minion](b1491b_bps-voltagepcb_BPS-Minion.md) | [1493. PowerDistributionUnit](b1493b_ps-powerdistributionunit_PowerDistributionUnit.md) |

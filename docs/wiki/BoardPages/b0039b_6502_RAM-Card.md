@@ -1,4 +1,4 @@
-# 39 RAM Card
+# 39. RAM Card
 
 Board 39 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 1](../CorpusTestingPages/Corpus-Testing-01.md#39-ram-card).
 
@@ -45,4 +45,4 @@ Board 39 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page
 
 | Previous | Next |
 |:---|---:|
-| [38 PS2 Helper](b0038b_6502_PS2-Helper.md) | [40 RTC Card](b0040b_6502_RTC-Card.md) |
+| [38. PS2 Helper](b0038b_6502_PS2-Helper.md) | [40. RTC Card](b0040b_6502_RTC-Card.md) |

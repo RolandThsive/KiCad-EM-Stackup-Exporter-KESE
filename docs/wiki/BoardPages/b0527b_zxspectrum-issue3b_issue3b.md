@@ -1,4 +1,4 @@
-# 527 issue3b
+# 527. issue3b
 
 Board 527 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 5](../CorpusTestingPages/Corpus-Testing-05.md#527-issue3b).
 
@@ -45,4 +45,4 @@ Board 527 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [526 servid-rp2040-hdmi proto rev1](b0526b_Mega-IIe_servid-rp2040-hdmi-proto-rev1.md) | [528 zx_coil](b0528b_zxspectrum-issue3b_zx-coil.md) |
+| [526. servid-rp2040-hdmi proto rev1](b0526b_Mega-IIe_servid-rp2040-hdmi-proto-rev1.md) | [528. zx_coil](b0528b_zxspectrum-issue3b_zx-coil.md) |

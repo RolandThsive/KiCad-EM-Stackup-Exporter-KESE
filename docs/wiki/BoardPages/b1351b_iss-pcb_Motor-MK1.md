@@ -1,4 +1,4 @@
-# 1351 Motor-MK1
+# 1351. Motor-MK1
 
 Board 1,351 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 13](../CorpusTestingPages/Corpus-Testing-13.md#1351-motor-mk1).
 
@@ -45,4 +45,4 @@ Board 1,351 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1350 Mini-MK1](b1350b_iss-pcb_Mini-MK1.md) | [1352 GATOR](b1352b_iss-pcb_GATOR.md) |
+| [1350. Mini-MK1](b1350b_iss-pcb_Mini-MK1.md) | [1352. GATOR](b1352b_iss-pcb_GATOR.md) |

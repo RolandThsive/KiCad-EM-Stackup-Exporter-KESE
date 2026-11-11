@@ -1,4 +1,4 @@
-# 1909 ICE40-IO_Rev_A
+# 1909. ICE40-IO_Rev_A
 
 Board 1,909 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 18](../CorpusTestingPages/Corpus-Testing-18.md#1909-ice40-io_rev_a).
 
@@ -44,4 +44,4 @@ Board 1,909 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1908 ICE40-DIO_Rev_A](b1908b_iCE40-DIO_ICE40-DIO-Rev-A.md) | [1910 ICE40-1KEVB_Rev_A](b1910b_iCE40HX1K-EVB_ICE40-1KEVB-Rev-A.md) |
+| [1908. ICE40-DIO_Rev_A](b1908b_iCE40-DIO_ICE40-DIO-Rev-A.md) | [1910. ICE40-1KEVB_Rev_A](b1910b_iCE40HX1K-EVB_ICE40-1KEVB-Rev-A.md) |

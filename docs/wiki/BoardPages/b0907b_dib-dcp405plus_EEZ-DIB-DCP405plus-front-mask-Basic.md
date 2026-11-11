@@ -1,4 +1,4 @@
-# 907 EEZ DIB DCP405plus front mask (Basic)
+# 907. EEZ DIB DCP405plus front mask (Basic)
 
 Board 907 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 9](../CorpusTestingPages/Corpus-Testing-09.md#907-eez-dib-dcp405plus-front-mask-basic).
 
@@ -45,4 +45,4 @@ Board 907 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [906 Thunderscope_Rev5.1_Bed_Of_Nails](b0906b_ts-test-fixtures_Thunderscope-Rev5-1-Bed-Of-Nails.md) | [908 EEZ DIB DCP405plus front mask](b0908b_dib-dcp405plus_EEZ-DIB-DCP405plus-front-mask.md) |
+| [906. Thunderscope_Rev5.1_Bed_Of_Nails](b0906b_ts-test-fixtures_Thunderscope-Rev5-1-Bed-Of-Nails.md) | [908. EEZ DIB DCP405plus front mask](b0908b_dib-dcp405plus_EEZ-DIB-DCP405plus-front-mask.md) |

@@ -65,7 +65,7 @@ for i, m in enumerate(B, 1):
 NPAGES = max(1, math.ceil(len(B) / PER_PAGE))
 page_file = lambda k: f"Corpus-Testing-{k:02d}"
 page_title = lambda k: f"Corpus Page {k}"
-heading = lambda m: f"{m['number']} {m['name']}"
+heading = lambda m: f"{m['number']}. {m['name']}"
 anchor = lambda title: "#" + re.sub(r"[^a-z0-9 _-]", "", title.lower()).replace(" ", "-")   # as GitHub makes it
 
 

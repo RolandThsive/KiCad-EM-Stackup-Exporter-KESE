@@ -1,4 +1,4 @@
-# 1796 AgonLight2_Rev_A
+# 1796. AgonLight2_Rev_A
 
 Board 1,796 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 17](../CorpusTestingPages/Corpus-Testing-17.md#1796-agonlight2_rev_a).
 
@@ -45,4 +45,4 @@ Board 1,796 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1795 A20-CAN-ISO_Rev_B](b1795b_A20-CAN-ISO_A20-CAN-ISO-Rev-B.md) | [1797 AgonLight2_Rev_B](b1797b_AgonLight2_AgonLight2-Rev-B.md) |
+| [1795. A20-CAN-ISO_Rev_B](b1795b_A20-CAN-ISO_A20-CAN-ISO-Rev-B.md) | [1797. AgonLight2_Rev_B](b1797b_AgonLight2_AgonLight2-Rev-B.md) |

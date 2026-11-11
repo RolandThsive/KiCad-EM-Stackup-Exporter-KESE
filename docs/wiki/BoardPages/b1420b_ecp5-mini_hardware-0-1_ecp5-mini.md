@@ -1,4 +1,4 @@
-# 1420 ecp5-mini
+# 1420. ecp5-mini
 
 Board 1,420 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 14](../CorpusTestingPages/Corpus-Testing-14.md#1420-ecp5-mini).
 
@@ -45,4 +45,4 @@ Board 1,420 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1419 quad-pmod](b1419b_ecp5-mini_breakouts-quad-pmod-0-2_quad-pmod.md) | [1421 ecp5-mini](b1421b_ecp5-mini_hardware-0-2_ecp5-mini.md) |
+| [1419. quad-pmod](b1419b_ecp5-mini_breakouts-quad-pmod-0-2_quad-pmod.md) | [1421. ecp5-mini](b1421b_ecp5-mini_hardware-0-2_ecp5-mini.md) |

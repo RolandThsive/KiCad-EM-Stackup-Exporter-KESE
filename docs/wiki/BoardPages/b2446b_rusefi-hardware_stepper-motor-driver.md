@@ -1,4 +1,4 @@
-# 2446 stepper_motor_driver
+# 2446. stepper_motor_driver
 
 Board 2,446 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 23](../CorpusTestingPages/Corpus-Testing-23.md#2446-stepper_motor_driver).
 
@@ -44,4 +44,4 @@ Board 2,446 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2445 PWR_5V_linear](b2445b_rusefi-hardware_PWR-5V-linear.md) | [2447 adc_amp_divider_vert](b2447b_rusefi-hardware_adc-amp-divider-vert.md) |
+| [2445. PWR_5V_linear](b2445b_rusefi-hardware_PWR-5V-linear.md) | [2447. adc_amp_divider_vert](b2447b_rusefi-hardware_adc-amp-divider-vert.md) |

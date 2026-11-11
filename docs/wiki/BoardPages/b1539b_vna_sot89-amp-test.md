@@ -1,4 +1,4 @@
-# 1539 sot89_amp_test
+# 1539. sot89_amp_test
 
 Board 1,539 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 15](../CorpusTestingPages/Corpus-Testing-15.md#1539-sot89_amp_test).
 
@@ -45,4 +45,4 @@ Board 1,539 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1538 sequencing_ltc2937](b1538b_vna_sequencing-ltc2937.md) | [1540 splitter_breakout](b1540b_vna_splitter-breakout.md) |
+| [1538. sequencing_ltc2937](b1538b_vna_sequencing-ltc2937.md) | [1540. splitter_breakout](b1540b_vna_splitter-breakout.md) |

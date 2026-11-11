@@ -1,4 +1,4 @@
-# 378 lpddr4-test-board
+# 378. lpddr4-test-board
 
 Board 378 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 4](../CorpusTestingPages/Corpus-Testing-04.md#378-lpddr4-test-board).
 
@@ -44,4 +44,4 @@ Board 378 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [377 kria-k26-devboard](b0377b_kria-k26-devboard_kria-k26-devboard.md) | [379 lpddr4-testbed](b0379b_lpddr4-testbed_lpddr4-testbed.md) |
+| [377. kria-k26-devboard](b0377b_kria-k26-devboard_kria-k26-devboard.md) | [379. lpddr4-testbed](b0379b_lpddr4-testbed_lpddr4-testbed.md) |

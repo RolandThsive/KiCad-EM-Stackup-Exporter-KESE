@@ -1,4 +1,4 @@
-# 413 sodimm-ddr5-tester
+# 413. sodimm-ddr5-tester
 
 Board 413 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 4](../CorpusTestingPages/Corpus-Testing-04.md#413-sodimm-ddr5-tester).
 
@@ -44,4 +44,4 @@ Board 413 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [412 snickerdoodle-hdmi-breakout](b0412b_snickerdoodle-hdmi-breakout_snickerdoodle-hdmi-breakout.md) | [414 stm32h7-hdmi-board](b0414b_stm32h7-hdmi-board_stm32h7-hdmi-board.md) |
+| [412. snickerdoodle-hdmi-breakout](b0412b_snickerdoodle-hdmi-breakout_snickerdoodle-hdmi-breakout.md) | [414. stm32h7-hdmi-board](b0414b_stm32h7-hdmi-board_stm32h7-hdmi-board.md) |

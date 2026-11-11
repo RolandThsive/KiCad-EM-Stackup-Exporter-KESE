@@ -1,4 +1,4 @@
-# 1938 NB-IoT-DevKit_Rev_D
+# 1938. NB-IoT-DevKit_Rev_D
 
 Board 1,938 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 18](../CorpusTestingPages/Corpus-Testing-18.md#1938-nb-iot-devkit_rev_d).
 
@@ -45,4 +45,4 @@ Board 1,938 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1937 NB-IoT-DevKit_Rev_C](b1937b_NB-IoT_NB-IoT-DevKit-Rev-C.md) | [1939 Neo6502_Rev_B](b1939b_Neo6502_Neo6502-Rev-B.md) |
+| [1937. NB-IoT-DevKit_Rev_C](b1937b_NB-IoT_NB-IoT-DevKit-Rev-C.md) | [1939. Neo6502_Rev_B](b1939b_Neo6502_Neo6502-Rev-B.md) |

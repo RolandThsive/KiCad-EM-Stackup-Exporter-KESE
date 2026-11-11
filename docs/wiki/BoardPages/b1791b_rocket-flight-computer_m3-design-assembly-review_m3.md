@@ -1,4 +1,4 @@
-# 1791 m3
+# 1791. m3
 
 Board 1,791 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 17](../CorpusTestingPages/Corpus-Testing-17.md#1791-m3).
 
@@ -45,4 +45,4 @@ Board 1,791 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1790 barebones](b1790b_barebones_barebones.md) | [1792 m1](b1792b_rocket-flight-computer_m1.md) |
+| [1790. barebones](b1790b_barebones_barebones.md) | [1792. m1](b1792b_rocket-flight-computer_m1.md) |

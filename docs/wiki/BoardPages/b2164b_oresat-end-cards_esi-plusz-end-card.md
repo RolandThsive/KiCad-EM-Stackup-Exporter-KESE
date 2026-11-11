@@ -1,4 +1,4 @@
-# 2164 esi-plusz-end-card
+# 2164. esi-plusz-end-card
 
 Board 2,164 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 21](../CorpusTestingPages/Corpus-Testing-21.md#2164-esi-plusz-end-card).
 
@@ -45,4 +45,4 @@ Board 2,164 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2163 esi-minusz-end-card](b2163b_oresat-end-cards_esi-minusz-end-card.md) | [2165 plusz-end-card-with-turnstile](b2165b_oresat-end-cards_plusz-end-card-with-turnstile.md) |
+| [2163. esi-minusz-end-card](b2163b_oresat-end-cards_esi-minusz-end-card.md) | [2165. plusz-end-card-with-turnstile](b2165b_oresat-end-cards_plusz-end-card-with-turnstile.md) |

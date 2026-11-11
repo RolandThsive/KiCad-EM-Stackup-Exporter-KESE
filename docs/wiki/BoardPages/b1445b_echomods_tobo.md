@@ -1,4 +1,4 @@
-# 1445 tobo
+# 1445. tobo
 
 Board 1,445 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 14](../CorpusTestingPages/Corpus-Testing-14.md#1445-tobo).
 
@@ -45,4 +45,4 @@ Board 1,445 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1444 goblin](b1444b_echomods_goblin.md) | [1446 CM5_MINIMA_3](b1446b_kicad-source-mirror_CM5-MINIMA-3.md) |
+| [1444. goblin](b1444b_echomods_goblin.md) | [1446. CM5_MINIMA_3](b1446b_kicad-source-mirror_CM5-MINIMA-3.md) |

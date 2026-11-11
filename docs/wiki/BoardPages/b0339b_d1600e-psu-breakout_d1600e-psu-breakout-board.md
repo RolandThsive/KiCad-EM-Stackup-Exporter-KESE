@@ -1,4 +1,4 @@
-# 339 d1600e-psu-breakout-board
+# 339. d1600e-psu-breakout-board
 
 Board 339 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 4](../CorpusTestingPages/Corpus-Testing-04.md#339-d1600e-psu-breakout-board).
 
@@ -45,4 +45,4 @@ Board 339 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [338 cvbs-mipi-bridge](b0338b_cvbs-mipi-bridge_cvbs-mipi-bridge.md) | [340 data-center-rdimm-ddr4-tester](b0340b_data-center-dram-tester_data-center-rdimm-ddr4-tester.md) |
+| [338. cvbs-mipi-bridge](b0338b_cvbs-mipi-bridge_cvbs-mipi-bridge.md) | [340. data-center-rdimm-ddr4-tester](b0340b_data-center-dram-tester_data-center-rdimm-ddr4-tester.md) |

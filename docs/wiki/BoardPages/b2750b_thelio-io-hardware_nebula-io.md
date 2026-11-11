@@ -1,4 +1,4 @@
-# 2750 nebula-io
+# 2750. nebula-io
 
 Board 2,750 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 26](../CorpusTestingPages/Corpus-Testing-26.md#2750-nebula-io).
 
@@ -45,4 +45,4 @@ Board 2,750 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2749 launch](b2749b_launch_launch.md) | [2751 thelio-io-sata](b2751b_thelio-io-hardware_thelio-io-sata.md) |
+| [2749. launch](b2749b_launch_launch.md) | [2751. thelio-io-sata](b2751b_thelio-io-hardware_thelio-io-sata.md) |

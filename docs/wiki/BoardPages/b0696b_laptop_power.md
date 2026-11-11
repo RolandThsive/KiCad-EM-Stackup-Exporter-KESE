@@ -1,4 +1,4 @@
-# 696 power
+# 696. power
 
 Board 696 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 7](../CorpusTestingPages/Corpus-Testing-07.md#696-power).
 
@@ -45,4 +45,4 @@ Board 696 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [695 motherboard](b0695b_laptop_motherboard.md) | [697 switch](b0697b_laptop_switch.md) |
+| [695. motherboard](b0695b_laptop_motherboard.md) | [697. switch](b0697b_laptop_switch.md) |

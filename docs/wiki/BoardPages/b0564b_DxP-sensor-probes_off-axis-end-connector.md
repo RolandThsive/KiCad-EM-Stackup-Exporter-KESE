@@ -1,4 +1,4 @@
-# 564 off-axis_end_connector
+# 564. off-axis_end_connector
 
 Board 564 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 6](../CorpusTestingPages/Corpus-Testing-06.md#564-off-axis_end_connector).
 
@@ -45,4 +45,4 @@ Board 564 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [563 FF_connector](b0563b_DxP-sensor-probes_FF-connector.md) | [565 sensor_board_outline](b0565b_DxP-sensor-probes_sensor-board-outline.md) |
+| [563. FF_connector](b0563b_DxP-sensor-probes_FF-connector.md) | [565. sensor_board_outline](b0565b_DxP-sensor-probes_sensor-board-outline.md) |

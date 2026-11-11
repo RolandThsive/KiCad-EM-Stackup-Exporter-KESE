@@ -1,4 +1,4 @@
-# 395 pmod-i3c-driver
+# 395. pmod-i3c-driver
 
 Board 395 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 4](../CorpusTestingPages/Corpus-Testing-04.md#395-pmod-i3c-driver).
 
@@ -44,4 +44,4 @@ Board 395 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [394 ov9281-dual-camera-board](b0394b_ov9281-camera-board_ov9281-dual-camera-board.md) | [396 pmod-i3c-sensor-board](b0396b_pmod-i3c-sensor-board_pmod-i3c-sensor-board.md) |
+| [394. ov9281-dual-camera-board](b0394b_ov9281-camera-board_ov9281-dual-camera-board.md) | [396. pmod-i3c-sensor-board](b0396b_pmod-i3c-sensor-board_pmod-i3c-sensor-board.md) |

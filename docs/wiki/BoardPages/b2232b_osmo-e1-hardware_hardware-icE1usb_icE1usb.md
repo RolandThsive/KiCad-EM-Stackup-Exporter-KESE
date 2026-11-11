@@ -1,4 +1,4 @@
-# 2232 icE1usb
+# 2232. icE1usb
 
 Board 2,232 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 21](../CorpusTestingPages/Corpus-Testing-21.md#2232-ice1usb).
 
@@ -45,4 +45,4 @@ Board 2,232 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2231 icE1usb-rs422](b2231b_osmo-e1-hardware_icE1usb-rs422.md) | [2233 icE1usb](b2233b_osmo-e1-hardware_hardware-icE1usb-r0-1_icE1usb.md) |
+| [2231. icE1usb-rs422](b2231b_osmo-e1-hardware_icE1usb-rs422.md) | [2233. icE1usb](b2233b_osmo-e1-hardware_hardware-icE1usb-r0-1_icE1usb.md) |

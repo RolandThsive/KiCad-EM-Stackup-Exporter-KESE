@@ -1,4 +1,4 @@
-# 2863 RASANT2400
+# 2863. RASANT2400
 
 Board 2,863 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 27](../CorpusTestingPages/Corpus-Testing-27.md#2863-rasant2400).
 
@@ -46,4 +46,4 @@ Board 2,863 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2862 gate_xor_2in](b2862b_alu_gate-xor-2in.md) | [2864 RASBB](b2864b_ra-sentinel_RASBB-Hardware-Rev-A-Design_RASBB.md) |
+| [2862. gate_xor_2in](b2862b_alu_gate-xor-2in.md) | [2864. RASBB](b2864b_ra-sentinel_RASBB-Hardware-Rev-A-Design_RASBB.md) |

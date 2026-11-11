@@ -1,4 +1,4 @@
-# 1724 LimeSDR_Breakout
+# 1724. LimeSDR_Breakout
 
 Board 1,724 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 16](../CorpusTestingPages/Corpus-Testing-16.md#1724-limesdr_breakout).
 
@@ -45,4 +45,4 @@ Board 1,724 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1723 FrontEnd_5G](b1723b_LimeRFE-8001P_hardware-1v1-KiCAD_FrontEnd-5G.md) | [1725 LMS6002-Pmod](b1725b_LMS6002-Pmod_LMS6002-Pmod.md) |
+| [1723. FrontEnd_5G](b1723b_LimeRFE-8001P_hardware-1v1-KiCAD_FrontEnd-5G.md) | [1725. LMS6002-Pmod](b1725b_LMS6002-Pmod_LMS6002-Pmod.md) |

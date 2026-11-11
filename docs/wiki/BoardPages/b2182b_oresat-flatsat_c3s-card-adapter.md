@@ -1,4 +1,4 @@
-# 2182 c3s-card-adapter
+# 2182. c3s-card-adapter
 
 Board 2,182 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 21](../CorpusTestingPages/Corpus-Testing-21.md#2182-c3s-card-adapter).
 
@@ -45,4 +45,4 @@ Board 2,182 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2181 oresat-c3-surrogate](b2181b_oresat-flatsat_oresat-c3-surrogate.md) | [2183 card-debug-board-2](b2183b_oresat-flatsat_card-debug-board-2.md) |
+| [2181. oresat-c3-surrogate](b2181b_oresat-flatsat_oresat-c3-surrogate.md) | [2183. card-debug-board-2](b2183b_oresat-flatsat_card-debug-board-2.md) |

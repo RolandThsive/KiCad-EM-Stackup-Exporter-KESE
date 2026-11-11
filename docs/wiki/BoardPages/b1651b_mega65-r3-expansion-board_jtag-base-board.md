@@ -1,4 +1,4 @@
-# 1651 jtag_base_board
+# 1651. jtag_base_board
 
 Board 1,651 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 16](../CorpusTestingPages/Corpus-Testing-16.md#1651-jtag_base_board).
 
@@ -45,4 +45,4 @@ Board 1,651 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1650 external_drive_board](b1650b_mega65-r3-expansion-board_external-drive-board.md) | [1652 mega65-r3-expansion-board.kicad](b1652b_mega65-r3-expansion-board_mega65-r3-expansion-board-kicad.md) |
+| [1650. external_drive_board](b1650b_mega65-r3-expansion-board_external-drive-board.md) | [1652. mega65-r3-expansion-board.kicad](b1652b_mega65-r3-expansion-board_mega65-r3-expansion-board-kicad.md) |

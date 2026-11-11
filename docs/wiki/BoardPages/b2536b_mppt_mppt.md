@@ -1,4 +1,4 @@
-# 2536 mppt
+# 2536. mppt
 
 Board 2,536 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 24](../CorpusTestingPages/Corpus-Testing-24.md#2536-mppt).
 
@@ -45,4 +45,4 @@ Board 2,536 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2535 sensor_smd](b2535b_splitflap_sensor-smd.md) | [2537 reCamera B101 v1.0](b2537b_OSHW-reCamera-Series_reCamera-B101-v1-0.md) |
+| [2535. sensor_smd](b2535b_splitflap_sensor-smd.md) | [2537. reCamera B101 v1.0](b2537b_OSHW-reCamera-Series_reCamera-B101-v1-0.md) |

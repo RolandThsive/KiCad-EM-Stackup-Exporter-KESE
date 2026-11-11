@@ -1,4 +1,4 @@
-# 885 ESP32_TouchDown_Rev1.1
+# 885. ESP32_TouchDown_Rev1.1
 
 Board 885 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 9](../CorpusTestingPages/Corpus-Testing-09.md#885-esp32_touchdown_rev11).
 
@@ -45,4 +45,4 @@ Board 885 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [884 Zephyr-80-IO](b0884b_Zephyr-80_Zephyr-80-IO.md) | [886 ESP32_TouchDown](b0886b_esp32-touchdown_ESP32-TouchDown.md) |
+| [884. Zephyr-80-IO](b0884b_Zephyr-80_Zephyr-80-IO.md) | [886. ESP32_TouchDown](b0886b_esp32-touchdown_ESP32-TouchDown.md) |

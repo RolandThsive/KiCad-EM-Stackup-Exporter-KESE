@@ -1,4 +1,4 @@
-# 602 mainbox2.0_sophie
+# 602. mainbox2.0_sophie
 
 Board 602 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 6](../CorpusTestingPages/Corpus-Testing-06.md#602-mainbox20_sophie).
 
@@ -46,4 +46,4 @@ Board 602 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [601 mainbox2.0](b0601b_bjr-kicad_21xt-02-mainbox-bjr-kicad-aaren-copy-21xt-02-mainbox-mainbox2-0_mainbox2-0.md) | [603 AD5626_Breakout](b0603b_bjr-kicad_AD5626-Breakout.md) |
+| [601. mainbox2.0](b0601b_bjr-kicad_21xt-02-mainbox-bjr-kicad-aaren-copy-21xt-02-mainbox-mainbox2-0_mainbox2-0.md) | [603. AD5626_Breakout](b0603b_bjr-kicad_AD5626-Breakout.md) |

@@ -1,4 +1,4 @@
-# 1964 LCD-OLinuXino-5TS
+# 1964. LCD-OLinuXino-5TS
 
 Board 1,964 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 19](../CorpusTestingPages/Corpus-Testing-19.md#1964-lcd-olinuxino-5ts).
 
@@ -45,4 +45,4 @@ Board 1,964 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1963 LCD-OLinuXino-15.6FHD_Rev_H](b1963b_OLINUXINO_LCD-OLinuXino-15-6FHD-Rev-H.md) | [1965 LCD-OLinuXino-5TS_Rev.B](b1965b_OLINUXINO_LCD-OLinuXino-5TS-Rev-B.md) |
+| [1963. LCD-OLinuXino-15.6FHD_Rev_H](b1963b_OLINUXINO_LCD-OLinuXino-15-6FHD-Rev-H.md) | [1965. LCD-OLinuXino-5TS_Rev.B](b1965b_OLINUXINO_LCD-OLinuXino-5TS-Rev-B.md) |

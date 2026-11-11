@@ -1,4 +1,4 @@
-# 2013 USB-SERIAL-L_Rev_B
+# 2013. USB-SERIAL-L_Rev_B
 
 Board 2,013 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 19](../CorpusTestingPages/Corpus-Testing-19.md#2013-usb-serial-l_rev_b).
 
@@ -45,4 +45,4 @@ Board 2,013 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2012 usb-sata_Rev.A](b2012b_USB-SATA_usb-sata-Rev-A.md) | [2014 VGA2HDMI_Rev_C](b2014b_VGA2HDMI_VGA2HDMI-Rev-C.md) |
+| [2012. usb-sata_Rev.A](b2012b_USB-SATA_usb-sata-Rev-A.md) | [2014. VGA2HDMI_Rev_C](b2014b_VGA2HDMI_VGA2HDMI-Rev-C.md) |

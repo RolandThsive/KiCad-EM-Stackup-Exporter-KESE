@@ -1,4 +1,4 @@
-# 1726 LMS8001_Companion
+# 1726. LMS8001_Companion
 
 Board 1,726 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 16](../CorpusTestingPages/Corpus-Testing-16.md#1726-lms8001_companion).
 
@@ -45,4 +45,4 @@ Board 1,726 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1725 LMS6002-Pmod](b1725b_LMS6002-Pmod_LMS6002-Pmod.md) | [1727 LMS8001_Companion](b1727b_LMS8001-Companion_hardware-3v1-KiCAD_LMS8001-Companion.md) |
+| [1725. LMS6002-Pmod](b1725b_LMS6002-Pmod_LMS6002-Pmod.md) | [1727. LMS8001_Companion](b1727b_LMS8001-Companion_hardware-3v1-KiCAD_LMS8001-Companion.md) |

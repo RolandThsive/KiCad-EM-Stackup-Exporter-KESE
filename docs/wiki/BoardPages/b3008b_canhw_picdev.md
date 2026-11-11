@@ -1,4 +1,4 @@
-# 3008 picdev
+# 3008. picdev
 
 Board 3,008 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 28](../CorpusTestingPages/Corpus-Testing-28.md#3008-picdev).
 
@@ -45,4 +45,4 @@ Board 3,008 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [3007 novatel_gps_breakout](b3007b_canhw_novatel-gps-breakout.md) | [3009 processor](b3009b_canhw_processor.md) |
+| [3007. novatel_gps_breakout](b3007b_canhw_novatel-gps-breakout.md) | [3009. processor](b3009b_canhw_processor.md) |

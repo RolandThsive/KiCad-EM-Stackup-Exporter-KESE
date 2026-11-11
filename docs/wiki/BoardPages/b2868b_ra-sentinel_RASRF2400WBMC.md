@@ -1,4 +1,4 @@
-# 2868 RASRF2400WBMC
+# 2868. RASRF2400WBMC
 
 Board 2,868 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 27](../CorpusTestingPages/Corpus-Testing-27.md#2868-rasrf2400wbmc).
 
@@ -45,4 +45,4 @@ Board 2,868 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2867 RASRF](b2867b_ra-sentinel_RASRF.md) | [2869 pocket_sdr_v2.3](b2869b_PocketSDR_pocket-sdr-v2-3.md) |
+| [2867. RASRF](b2867b_ra-sentinel_RASRF.md) | [2869. pocket_sdr_v2.3](b2869b_PocketSDR_pocket-sdr-v2-3.md) |

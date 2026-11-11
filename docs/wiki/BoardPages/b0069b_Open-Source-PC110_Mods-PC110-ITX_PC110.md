@@ -1,4 +1,4 @@
-# 69 PC110
+# 69. PC110
 
 Board 69 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 1](../CorpusTestingPages/Corpus-Testing-01.md#69-pc110).
 
@@ -46,4 +46,4 @@ Board 69 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page
 
 | Previous | Next |
 |:---|---:|
-| [68 PC110-no-placement](b0068b_Open-Source-PC110_PC110-no-placement.md) | [70 DockingStation](b0070b_Open-Source-PC110_PCB-DockingStation_DockingStation.md) |
+| [68. PC110-no-placement](b0068b_Open-Source-PC110_PC110-no-placement.md) | [70. DockingStation](b0070b_Open-Source-PC110_PCB-DockingStation_DockingStation.md) |

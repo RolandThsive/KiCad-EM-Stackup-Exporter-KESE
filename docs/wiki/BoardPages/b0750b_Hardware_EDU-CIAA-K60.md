@@ -1,4 +1,4 @@
-# 750 EDU_CIAA_K60
+# 750. EDU_CIAA_K60
 
 Board 750 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 7](../CorpusTestingPages/Corpus-Testing-07.md#750-edu_ciaa_k60).
 
@@ -45,4 +45,4 @@ Board 750 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [749 FPGA para todos](b0749b_Hardware_FPGA-para-todos.md) | [751 edk](b0751b_Hardware_edk.md) |
+| [749. FPGA para todos](b0749b_Hardware_FPGA-para-todos.md) | [751. edk](b0751b_Hardware_edk.md) |

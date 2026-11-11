@@ -1,4 +1,4 @@
-# 1280 ULX4M_GPDI
+# 1280. ULX4M_GPDI
 
 Board 1,280 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 12](../CorpusTestingPages/Corpus-Testing-12.md#1280-ulx4m_gpdi).
 
@@ -45,4 +45,4 @@ Board 1,280 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1279 ULX4M-PCIe-IO_x4_half](b1279b_ULX4M-PCIe-IO_ULX4M-PCIe-IO-x4-half.md) | [1281 ulx5m-gs_panel_checked_v002](b1281b_ulx5m-gs_ulx5m-gs-panel-checked-v002.md) |
+| [1279. ULX4M-PCIe-IO_x4_half](b1279b_ULX4M-PCIe-IO_ULX4M-PCIe-IO-x4-half.md) | [1281. ulx5m-gs_panel_checked_v002](b1281b_ulx5m-gs_ulx5m-gs-panel-checked-v002.md) |

@@ -1,4 +1,4 @@
-# 1033 LcdFlip
+# 1033. LcdFlip
 
 Board 1,033 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 10](../CorpusTestingPages/Corpus-Testing-10.md#1033-lcdflip).
 
@@ -45,4 +45,4 @@ Board 1,033 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1032 DRV-StepStick](b1032b_prntrboardv2_DRV-StepStick.md) | [1034 MP-Power](b1034b_prntrboardv2_MP-Power.md) |
+| [1032. DRV-StepStick](b1032b_prntrboardv2_DRV-StepStick.md) | [1034. MP-Power](b1034b_prntrboardv2_MP-Power.md) |

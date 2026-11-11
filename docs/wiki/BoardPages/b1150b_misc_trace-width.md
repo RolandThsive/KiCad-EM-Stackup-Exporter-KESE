@@ -1,4 +1,4 @@
-# 1150 trace-width
+# 1150. trace-width
 
 Board 1,150 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 11](../CorpusTestingPages/Corpus-Testing-11.md#1150-trace-width).
 
@@ -45,4 +45,4 @@ Board 1,150 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1149 trace-width-sunstone](b1149b_misc_trace-width-sunstone.md) | [1151 ununs](b1151b_misc_ununs.md) |
+| [1149. trace-width-sunstone](b1149b_misc_trace-width-sunstone.md) | [1151. ununs](b1151b_misc_ununs.md) |

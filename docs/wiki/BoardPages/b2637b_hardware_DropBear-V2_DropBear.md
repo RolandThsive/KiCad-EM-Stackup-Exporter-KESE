@@ -1,4 +1,4 @@
-# 2637 DropBear
+# 2637. DropBear
 
 Board 2,637 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 25](../CorpusTestingPages/Corpus-Testing-25.md#2637-dropbear).
 
@@ -45,4 +45,4 @@ Board 2,637 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2636 DropBear](b2636b_hardware_DropBear-V1-1_DropBear.md) | [2638 48-pin breakout](b2638b_hardware_48-pin-breakout.md) |
+| [2636. DropBear](b2636b_hardware_DropBear-V1-1_DropBear.md) | [2638. 48-pin breakout](b2638b_hardware_48-pin-breakout.md) |

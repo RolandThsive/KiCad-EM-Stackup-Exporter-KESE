@@ -1,4 +1,4 @@
-# 198 LCD Display
+# 198. LCD Display
 
 Board 198 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 2](../CorpusTestingPages/Corpus-Testing-02.md#198-lcd-display).
 
@@ -45,4 +45,4 @@ Board 198 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [197 LCD Board](b0197b_658-Computer_LCD-Board.md) | [199 Clock Device](b0199b_658-Computer_Clock-Device.md) |
+| [197. LCD Board](b0197b_658-Computer_LCD-Board.md) | [199. Clock Device](b0199b_658-Computer_Clock-Device.md) |

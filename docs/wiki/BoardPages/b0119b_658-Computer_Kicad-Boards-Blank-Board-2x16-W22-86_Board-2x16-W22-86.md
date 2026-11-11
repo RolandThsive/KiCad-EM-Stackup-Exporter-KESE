@@ -1,4 +1,4 @@
-# 119 Board 2x16 W22.86
+# 119. Board 2x16 W22.86
 
 Board 119 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 2](../CorpusTestingPages/Corpus-Testing-02.md#119-board-2x16-w2286).
 
@@ -45,4 +45,4 @@ Board 119 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [118 Board 2x16 W15.24](b0118b_658-Computer_Kicad-Boards-Blank-Board-2x16-W15-24_Board-2x16-W15-24.md) | [120 Board 2x20 W15.24](b0120b_658-Computer_Kicad-Boards-Blank-Board-2x20-W15-24_Board-2x20-W15-24.md) |
+| [118. Board 2x16 W15.24](b0118b_658-Computer_Kicad-Boards-Blank-Board-2x16-W15-24_Board-2x16-W15-24.md) | [120. Board 2x20 W15.24](b0120b_658-Computer_Kicad-Boards-Blank-Board-2x20-W15-24_Board-2x20-W15-24.md) |

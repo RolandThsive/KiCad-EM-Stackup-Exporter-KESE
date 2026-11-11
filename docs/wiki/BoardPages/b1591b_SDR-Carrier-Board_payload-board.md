@@ -1,4 +1,4 @@
-# 1591 payload_board
+# 1591. payload_board
 
 Board 1,591 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 15](../CorpusTestingPages/Corpus-Testing-15.md#1591-payload_board).
 
@@ -45,4 +45,4 @@ Board 1,591 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1590 DepthABC](b1590b_depthai-hardware_DepthABC.md) | [1592 Mupi](b1592b_custom-3d-printer-controller_Mupi.md) |
+| [1590. DepthABC](b1590b_depthai-hardware_DepthABC.md) | [1592. Mupi](b1592b_custom-3d-printer-controller_Mupi.md) |

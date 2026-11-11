@@ -1,4 +1,4 @@
-# 1691 Diode Function
+# 1691. Diode Function
 
 Board 1,691 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 16](../CorpusTestingPages/Corpus-Testing-16.md#1691-diode-function).
 
@@ -45,4 +45,4 @@ Board 1,691 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1690 AnalogComputer](b1690b_embeddedbakery_AnalogComputer.md) | [1692 OperationalAmplifierExamples](b1692b_embeddedbakery_OperationalAmplifierExamples.md) |
+| [1690. AnalogComputer](b1690b_embeddedbakery_AnalogComputer.md) | [1692. OperationalAmplifierExamples](b1692b_embeddedbakery_OperationalAmplifierExamples.md) |

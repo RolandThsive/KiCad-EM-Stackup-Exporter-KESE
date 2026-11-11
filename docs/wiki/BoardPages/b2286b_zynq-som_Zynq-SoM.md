@@ -1,4 +1,4 @@
-# 2286 Zynq_SoM
+# 2286. Zynq_SoM
 
 Board 2,286 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 22](../CorpusTestingPages/Corpus-Testing-22.md#2286-zynq_som).
 
@@ -44,4 +44,4 @@ Board 2,286 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2285 carrier_template](b2285b_zynq-som_carrier-template.md) | [2287 everestCM4](b2287b_reference-hardware_everestCM4.md) |
+| [2285. carrier_template](b2285b_zynq-som_carrier-template.md) | [2287. everestCM4](b2287b_reference-hardware_everestCM4.md) |

@@ -1,4 +1,4 @@
-# 1163 esp32s2-breakout
+# 1163. esp32s2-breakout
 
 Board 1,163 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 11](../CorpusTestingPages/Corpus-Testing-11.md#1163-esp32s2-breakout).
 
@@ -45,4 +45,4 @@ Board 1,163 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1162 ecpbreaker](b1162b_advent-calendar-of-circuits-2020_ecpbreaker.md) | [1164 esp32s2-co2-monitor](b1164b_advent-calendar-of-circuits-2020_esp32s2-co2-monitor.md) |
+| [1162. ecpbreaker](b1162b_advent-calendar-of-circuits-2020_ecpbreaker.md) | [1164. esp32s2-co2-monitor](b1164b_advent-calendar-of-circuits-2020_esp32s2-co2-monitor.md) |

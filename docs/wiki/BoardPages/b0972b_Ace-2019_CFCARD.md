@@ -1,4 +1,4 @@
-# 972 CFCARD
+# 972. CFCARD
 
 Board 972 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 9](../CorpusTestingPages/Corpus-Testing-09.md#972-cfcard).
 
@@ -45,4 +45,4 @@ Board 972 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [971 acez380](b0971b_Ace-2019_acez380.md) | [973 eBigRam](b0973b_Ace-2019_eBigRam.md) |
+| [971. acez380](b0971b_Ace-2019_acez380.md) | [973. eBigRam](b0973b_Ace-2019_eBigRam.md) |

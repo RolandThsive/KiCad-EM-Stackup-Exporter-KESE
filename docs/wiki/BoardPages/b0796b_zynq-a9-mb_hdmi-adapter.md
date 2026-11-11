@@ -1,4 +1,4 @@
-# 796 hdmi_adapter
+# 796. hdmi_adapter
 
 Board 796 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 8](../CorpusTestingPages/Corpus-Testing-08.md#796-hdmi_adapter).
 
@@ -45,4 +45,4 @@ Board 796 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [795 mackerel-30-proto](b0795b_mackerel-68k_mackerel-30-proto.md) | [797 zynq_test](b0797b_zynq-a9-mb_zynq-test.md) |
+| [795. mackerel-30-proto](b0795b_mackerel-68k_mackerel-30-proto.md) | [797. zynq_test](b0797b_zynq-a9-mb_zynq-test.md) |

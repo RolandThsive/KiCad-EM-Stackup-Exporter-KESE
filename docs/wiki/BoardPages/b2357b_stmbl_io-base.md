@@ -1,4 +1,4 @@
-# 2357 io_base
+# 2357. io_base
 
 Board 2,357 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 22](../CorpusTestingPages/Corpus-Testing-22.md#2357-io_base).
 
@@ -45,4 +45,4 @@ Board 2,357 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2356 ethernet_bob](b2356b_stmbl_ethernet-bob.md) | [2358 ethernet_bob_base](b2358b_stmbl_ethernet-bob-base.md) |
+| [2356. ethernet_bob](b2356b_stmbl_ethernet-bob.md) | [2358. ethernet_bob_base](b2358b_stmbl_ethernet-bob-base.md) |

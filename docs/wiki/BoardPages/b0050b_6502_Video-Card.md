@@ -1,4 +1,4 @@
-# 50 Video Card
+# 50. Video Card
 
 Board 50 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 1](../CorpusTestingPages/Corpus-Testing-01.md#50-video-card).
 
@@ -45,4 +45,4 @@ Board 50 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page
 
 | Previous | Next |
 |:---|---:|
-| [49 Video Card Pro](b0049b_6502_Video-Card-Pro.md) | [51 Miniscope-v4-FlexPC](b0051b_Miniscope-v4_Development-Files-Individual-PCBs-Miniscope-v4-FlexPC-Miniscope-v4-FlexPC-array-clamp-KiCad_Miniscope-v4-FlexPC.md) |
+| [49. Video Card Pro](b0049b_6502_Video-Card-Pro.md) | [51. Miniscope-v4-FlexPC](b0051b_Miniscope-v4_Development-Files-Individual-PCBs-Miniscope-v4-FlexPC-Miniscope-v4-FlexPC-array-clamp-KiCad_Miniscope-v4-FlexPC.md) |

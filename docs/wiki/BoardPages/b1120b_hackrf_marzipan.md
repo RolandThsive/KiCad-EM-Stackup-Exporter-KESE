@@ -1,4 +1,4 @@
-# 1120 marzipan
+# 1120. marzipan
 
 Board 1,120 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 11](../CorpusTestingPages/Corpus-Testing-11.md#1120-marzipan).
 
@@ -45,4 +45,4 @@ Board 1,120 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1119 LNA915](b1119b_hackrf_LNA915.md) | [1121 neapolitan](b1121b_hackrf_neapolitan.md) |
+| [1119. LNA915](b1119b_hackrf_LNA915.md) | [1121. neapolitan](b1121b_hackrf_neapolitan.md) |

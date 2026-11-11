@@ -1,4 +1,4 @@
-# 800 OpeN64
+# 800. OpeN64
 
 Board 800 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 8](../CorpusTestingPages/Corpus-Testing-08.md#800-open64).
 
@@ -45,4 +45,4 @@ Board 800 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [799 daq_griffin](b0799b_white-giant-sensing-pcb_daq-griffin.md) | [801 HDMI-to-LH550WF1](b0801b_HDMI-to-MIPI_HDMI-to-LH550WF1.md) |
+| [799. daq_griffin](b0799b_white-giant-sensing-pcb_daq-griffin.md) | [801. HDMI-to-LH550WF1](b0801b_HDMI-to-MIPI_HDMI-to-LH550WF1.md) |

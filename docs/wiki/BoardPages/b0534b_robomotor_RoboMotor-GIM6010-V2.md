@@ -1,4 +1,4 @@
-# 534 RoboMotor-GIM6010-V2
+# 534. RoboMotor-GIM6010-V2
 
 Board 534 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 5](../CorpusTestingPages/Corpus-Testing-05.md#534-robomotor-gim6010-v2).
 
@@ -45,4 +45,4 @@ Board 534 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [533 RoboMotor-GIM6010-V2-Encoder](b0533b_robomotor_RoboMotor-GIM6010-V2-Encoder.md) | [535 RoboMotor-GIM6010](b0535b_robomotor_RoboMotor-GIM6010.md) |
+| [533. RoboMotor-GIM6010-V2-Encoder](b0533b_robomotor_RoboMotor-GIM6010-V2-Encoder.md) | [535. RoboMotor-GIM6010](b0535b_robomotor_RoboMotor-GIM6010.md) |

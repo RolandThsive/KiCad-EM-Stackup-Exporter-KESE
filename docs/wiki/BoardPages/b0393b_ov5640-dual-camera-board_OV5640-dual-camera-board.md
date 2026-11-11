@@ -1,4 +1,4 @@
-# 393 OV5640-dual-camera-board
+# 393. OV5640-dual-camera-board
 
 Board 393 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 4](../CorpusTestingPages/Corpus-Testing-04.md#393-ov5640-dual-camera-board).
 
@@ -44,4 +44,4 @@ Board 393 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [392 bmc-reference-osm](b0392b_osm-l-bmc-som_bmc-reference-osm.md) | [394 ov9281-dual-camera-board](b0394b_ov9281-camera-board_ov9281-dual-camera-board.md) |
+| [392. bmc-reference-osm](b0392b_osm-l-bmc-som_bmc-reference-osm.md) | [394. ov9281-dual-camera-board](b0394b_ov9281-camera-board_ov9281-dual-camera-board.md) |

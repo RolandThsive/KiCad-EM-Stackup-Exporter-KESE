@@ -1,4 +1,4 @@
-# 1350 Mini-MK1
+# 1350. Mini-MK1
 
 Board 1,350 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 13](../CorpusTestingPages/Corpus-Testing-13.md#1350-mini-mk1).
 
@@ -45,4 +45,4 @@ Board 1,350 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1349 MIDAS-MK2.1](b1349b_iss-pcb_boards-MIDAS-MK2-MIDAS-MK2-1-revB_MIDAS-MK2-1.md) | [1351 Motor-MK1](b1351b_iss-pcb_Motor-MK1.md) |
+| [1349. MIDAS-MK2.1](b1349b_iss-pcb_boards-MIDAS-MK2-MIDAS-MK2-1-revB_MIDAS-MK2-1.md) | [1351. Motor-MK1](b1351b_iss-pcb_Motor-MK1.md) |

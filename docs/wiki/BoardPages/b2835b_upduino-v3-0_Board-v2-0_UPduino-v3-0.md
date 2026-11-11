@@ -1,4 +1,4 @@
-# 2835 UPduino_v3.0
+# 2835. UPduino_v3.0
 
 Board 2,835 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 27](../CorpusTestingPages/Corpus-Testing-27.md#2835-upduino_v30).
 
@@ -45,4 +45,4 @@ Board 2,835 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2834 UPduino_v3.0](b2834b_upduino-v3-0_Board-v1-0_UPduino-v3-0.md) | [2836 UPduino_v3.0](b2836b_upduino-v3-0_Board-v3-0_UPduino-v3-0.md) |
+| [2834. UPduino_v3.0](b2834b_upduino-v3-0_Board-v1-0_UPduino-v3-0.md) | [2836. UPduino_v3.0](b2836b_upduino-v3-0_Board-v3-0_UPduino-v3-0.md) |

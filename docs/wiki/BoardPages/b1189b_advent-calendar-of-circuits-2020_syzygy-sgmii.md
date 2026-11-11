@@ -1,4 +1,4 @@
-# 1189 syzygy-sgmii
+# 1189. syzygy-sgmii
 
 Board 1,189 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 12](../CorpusTestingPages/Corpus-Testing-12.md#1189-syzygy-sgmii).
 
@@ -45,4 +45,4 @@ Board 1,189 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1188 syzygy-rgb888-lcd](b1188b_advent-calendar-of-circuits-2020_syzygy-rgb888-lcd.md) | [1190 syzygy-txr-breakout](b1190b_advent-calendar-of-circuits-2020_syzygy-txr-breakout.md) |
+| [1188. syzygy-rgb888-lcd](b1188b_advent-calendar-of-circuits-2020_syzygy-rgb888-lcd.md) | [1190. syzygy-txr-breakout](b1190b_advent-calendar-of-circuits-2020_syzygy-txr-breakout.md) |

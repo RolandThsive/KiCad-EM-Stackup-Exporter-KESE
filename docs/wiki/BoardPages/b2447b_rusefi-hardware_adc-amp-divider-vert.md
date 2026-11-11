@@ -1,4 +1,4 @@
-# 2447 adc_amp_divider_vert
+# 2447. adc_amp_divider_vert
 
 Board 2,447 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 23](../CorpusTestingPages/Corpus-Testing-23.md#2447-adc_amp_divider_vert).
 
@@ -45,4 +45,4 @@ Board 2,447 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2446 stepper_motor_driver](b2446b_rusefi-hardware_stepper-motor-driver.md) | [2448 adc_amp_divider](b2448b_rusefi-hardware_classic-designs-adc-amp-divider-vertical12_adc-amp-divider.md) |
+| [2446. stepper_motor_driver](b2446b_rusefi-hardware_stepper-motor-driver.md) | [2448. adc_amp_divider](b2448b_rusefi-hardware_classic-designs-adc-amp-divider-vertical12_adc-amp-divider.md) |

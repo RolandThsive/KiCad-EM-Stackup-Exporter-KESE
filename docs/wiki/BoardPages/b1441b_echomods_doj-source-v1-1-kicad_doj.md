@@ -1,4 +1,4 @@
-# 1441 doj
+# 1441. doj
 
 Board 1,441 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 14](../CorpusTestingPages/Corpus-Testing-14.md#1441-doj).
 
@@ -45,4 +45,4 @@ Board 1,441 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1440 usb-c-breakout](b1440b_Kilsyth_usb-c-breakout.md) | [1442 doj](b1442b_echomods_doj-source-v1-2-kicad_doj.md) |
+| [1440. usb-c-breakout](b1440b_Kilsyth_usb-c-breakout.md) | [1442. doj](b1442b_echomods_doj-source-v1-2-kicad_doj.md) |

@@ -1,4 +1,4 @@
-# 642 CPC464-2MINICAS1
+# 642. CPC464-2MINICAS1
 
 Board 642 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 6](../CorpusTestingPages/Corpus-Testing-06.md#642-cpc464-2minicas1).
 
@@ -45,4 +45,4 @@ Board 642 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [641 CPC-40007AdapterLM1117](b0641b_CPC464-2MINI_CPC-40007AdapterLM1117.md) | [643 CPC464-2MINITapeAdapter](b0643b_CPC464-2MINI_CPC464-2MINITapeAdapter.md) |
+| [641. CPC-40007AdapterLM1117](b0641b_CPC464-2MINI_CPC-40007AdapterLM1117.md) | [643. CPC464-2MINITapeAdapter](b0643b_CPC464-2MINI_CPC464-2MINITapeAdapter.md) |

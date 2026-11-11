@@ -1,4 +1,4 @@
-# 2077 ephys-test-board
+# 2077. ephys-test-board
 
 Board 2,077 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 20](../CorpusTestingPages/Corpus-Testing-20.md#2077-ephys-test-board).
 
@@ -45,4 +45,4 @@ Board 2,077 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2076 ecp5u85-bse-usb_io-tester](b2076b_ECP5U85-BSE-USB-IO-Tester_ecp5u85-bse-usb-io-tester.md) | [2078 low-profile-headstage-64ch-3d](b2078b_low-profile-headstage-64ch-3d_low-profile-headstage-64ch-3d.md) |
+| [2076. ecp5u85-bse-usb_io-tester](b2076b_ECP5U85-BSE-USB-IO-Tester_ecp5u85-bse-usb-io-tester.md) | [2078. low-profile-headstage-64ch-3d](b2078b_low-profile-headstage-64ch-3d_low-profile-headstage-64ch-3d.md) |

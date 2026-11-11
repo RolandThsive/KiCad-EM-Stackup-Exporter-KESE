@@ -1,4 +1,4 @@
-# 19 Backplane
+# 19. Backplane
 
 Board 19 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 1](../CorpusTestingPages/Corpus-Testing-01.md#19-backplane).
 
@@ -45,4 +45,4 @@ Board 19 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page
 
 | Previous | Next |
 |:---|---:|
-| [18 Backplane Pro](b0018b_6502_Hardware-Backplane-Pro-Rev-1-1_Backplane-Pro.md) | [20 Blinkenlights Card](b0020b_6502_Blinkenlights-Card.md) |
+| [18. Backplane Pro](b0018b_6502_Hardware-Backplane-Pro-Rev-1-1_Backplane-Pro.md) | [20. Blinkenlights Card](b0020b_6502_Blinkenlights-Card.md) |

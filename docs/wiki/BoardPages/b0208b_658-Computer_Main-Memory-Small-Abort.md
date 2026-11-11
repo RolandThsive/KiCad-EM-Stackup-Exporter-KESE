@@ -1,4 +1,4 @@
-# 208 Main Memory Small Abort
+# 208. Main Memory Small Abort
 
 Board 208 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 2](../CorpusTestingPages/Corpus-Testing-02.md#208-main-memory-small-abort).
 
@@ -45,4 +45,4 @@ Board 208 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [207 Main Memory Select](b0207b_658-Computer_Main-Memory-Select.md) | [209 Main Memory Small Enable](b0209b_658-Computer_Main-Memory-Small-Enable.md) |
+| [207. Main Memory Select](b0207b_658-Computer_Main-Memory-Select.md) | [209. Main Memory Small Enable](b0209b_658-Computer_Main-Memory-Small-Enable.md) |

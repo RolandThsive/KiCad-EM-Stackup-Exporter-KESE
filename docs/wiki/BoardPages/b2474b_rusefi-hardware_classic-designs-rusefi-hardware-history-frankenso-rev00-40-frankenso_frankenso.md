@@ -1,4 +1,4 @@
-# 2474 frankenso
+# 2474. frankenso
 
 Board 2,474 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 23](../CorpusTestingPages/Corpus-Testing-23.md#2474-frankenso).
 
@@ -45,4 +45,4 @@ Board 2,474 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2473 frankenso](b2473b_rusefi-hardware_classic-designs-rusefi-hardware-history-frankenso-rev00-20-frankenso_frankenso.md) | [2475 frankenso](b2475b_rusefi-hardware_classic-designs-rusefi-hardware-history-frankenso-rev00-50-frankenso_frankenso.md) |
+| [2473. frankenso](b2473b_rusefi-hardware_classic-designs-rusefi-hardware-history-frankenso-rev00-20-frankenso_frankenso.md) | [2475. frankenso](b2475b_rusefi-hardware_classic-designs-rusefi-hardware-history-frankenso-rev00-50-frankenso_frankenso.md) |

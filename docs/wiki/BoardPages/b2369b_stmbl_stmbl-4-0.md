@@ -1,4 +1,4 @@
-# 2369 stmbl_4.0
+# 2369. stmbl_4.0
 
 Board 2,369 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 22](../CorpusTestingPages/Corpus-Testing-22.md#2369-stmbl_40).
 
@@ -45,4 +45,4 @@ Board 2,369 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2368 trollerv2](b2368b_stmbl_trollerv2.md) | [2370 indicator-board](b2370b_ventilator_indicator-board.md) |
+| [2368. trollerv2](b2368b_stmbl_trollerv2.md) | [2370. indicator-board](b2370b_ventilator_indicator-board.md) |

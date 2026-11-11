@@ -1,4 +1,4 @@
-# 3037 panel_a25
+# 3037. panel_a25
 
 Board 3,037 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 29](../CorpusTestingPages/Corpus-Testing-29.md#3037-panel_a25).
 
@@ -46,4 +46,4 @@ Board 3,037 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [3036 mod_usbc](b3036b_the-mac-pro-project_mod-usbc.md) | [3038 panel_c50](b3038b_the-mac-pro-project_panel-c50.md) |
+| [3036. mod_usbc](b3036b_the-mac-pro-project_mod-usbc.md) | [3038. panel_c50](b3038b_the-mac-pro-project_panel-c50.md) |

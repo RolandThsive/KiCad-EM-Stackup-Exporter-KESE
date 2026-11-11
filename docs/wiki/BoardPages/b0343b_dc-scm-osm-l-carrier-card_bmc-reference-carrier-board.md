@@ -1,4 +1,4 @@
-# 343 bmc-reference-carrier-board
+# 343. bmc-reference-carrier-board
 
 Board 343 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 4](../CorpusTestingPages/Corpus-Testing-04.md#343-bmc-reference-carrier-board).
 
@@ -44,4 +44,4 @@ Board 343 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [342 dc-scm-breakout-board](b0342b_dc-scm-breakout-board_dc-scm-breakout-board.md) | [344 dc-scm-rot-jumper-card](b0344b_dc-scm-rot-jumper-card_dc-scm-rot-jumper-card.md) |
+| [342. dc-scm-breakout-board](b0342b_dc-scm-breakout-board_dc-scm-breakout-board.md) | [344. dc-scm-rot-jumper-card](b0344b_dc-scm-rot-jumper-card_dc-scm-rot-jumper-card.md) |

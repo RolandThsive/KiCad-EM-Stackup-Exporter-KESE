@@ -1,4 +1,4 @@
-# 2083 bracket-led
+# 2083. bracket-led
 
 Board 2,083 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 20](../CorpusTestingPages/Corpus-Testing-20.md#2083-bracket-led).
 
@@ -45,4 +45,4 @@ Board 2,083 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2082 bracket-led](b2082b_onix-fmc-host_bracket-led-source_bracket-led.md) | [2084 fmc-host](b2084b_onix-fmc-host_fmc-host.md) |
+| [2082. bracket-led](b2082b_onix-fmc-host_bracket-led-source_bracket-led.md) | [2084. fmc-host](b2084b_onix-fmc-host_fmc-host.md) |

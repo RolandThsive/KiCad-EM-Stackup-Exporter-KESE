@@ -1,4 +1,4 @@
-# 2725 can-node
+# 2725. can-node
 
 Board 2,725 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 26](../CorpusTestingPages/Corpus-Testing-26.md#2725-can-node).
 
@@ -45,4 +45,4 @@ Board 2,725 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2724 Dash-PCB](b2724b_pcb_Dash-PCB.md) | [2726 Discharge](b2726b_pcb_Discharge.md) |
+| [2724. Dash-PCB](b2724b_pcb_Dash-PCB.md) | [2726. Discharge](b2726b_pcb_Discharge.md) |

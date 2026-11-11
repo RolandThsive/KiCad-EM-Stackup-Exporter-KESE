@@ -1,4 +1,4 @@
-# 2943 Djinn
+# 2943. Djinn
 
 Board 2,943 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 28](../CorpusTestingPages/Corpus-Testing-28.md#2943-djinn).
 
@@ -45,4 +45,4 @@ Board 2,943 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2942 Board-DjinnPlate](b2942b_keyboards_Board-DjinnPlate.md) | [2944 Djinn](b2944b_keyboards_Djinn-Rev2a_Djinn.md) |
+| [2942. Board-DjinnPlate](b2942b_keyboards_Board-DjinnPlate.md) | [2944. Djinn](b2944b_keyboards_Djinn-Rev2a_Djinn.md) |

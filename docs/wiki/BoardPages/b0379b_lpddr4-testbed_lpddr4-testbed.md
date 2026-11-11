@@ -1,4 +1,4 @@
-# 379 lpddr4-testbed
+# 379. lpddr4-testbed
 
 Board 379 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 4](../CorpusTestingPages/Corpus-Testing-04.md#379-lpddr4-testbed).
 
@@ -44,4 +44,4 @@ Board 379 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [378 lpddr4-test-board](b0378b_lpddr4-test-board_lpddr4-test-board.md) | [380 lpddr5-testbed](b0380b_lpddr5-testbed_lpddr5-testbed.md) |
+| [378. lpddr4-test-board](b0378b_lpddr4-test-board_lpddr4-test-board.md) | [380. lpddr5-testbed](b0380b_lpddr5-testbed_lpddr5-testbed.md) |

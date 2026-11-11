@@ -1,4 +1,4 @@
-# 504 gd MEGA-65c02 proto pcb
+# 504. gd MEGA-65c02 proto pcb
 
 Board 504 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 5](../CorpusTestingPages/Corpus-Testing-05.md#504-gd-mega-65c02-proto-pcb).
 
@@ -45,4 +45,4 @@ Board 504 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [503 gd IWM proto pcb](b0503b_Mega-IIe_gd-IWM-proto-pcb.md) | [505 gd MegaII proto pcb](b0505b_Mega-IIe_kicad-files-gd-MegaII-proto-pcb_gd-MegaII-proto-pcb.md) |
+| [503. gd IWM proto pcb](b0503b_Mega-IIe_gd-IWM-proto-pcb.md) | [505. gd MegaII proto pcb](b0505b_Mega-IIe_kicad-files-gd-MegaII-proto-pcb_gd-MegaII-proto-pcb.md) |

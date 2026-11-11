@@ -1,4 +1,4 @@
-# 2568 bitaxeUltra
+# 2568. bitaxeUltra
 
 Board 2,568 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 24](../CorpusTestingPages/Corpus-Testing-24.md#2568-bitaxeultra).
 
@@ -44,4 +44,4 @@ Board 2,568 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2567 Z80-SBC](b2567b_zeta-sbc_Z80-SBC.md) | [2569 a13board](b2569b_a13board_a13board.md) |
+| [2567. Z80-SBC](b2567b_zeta-sbc_Z80-SBC.md) | [2569. a13board](b2569b_a13board_a13board.md) |

@@ -1,4 +1,4 @@
-# 2283 CM5_MINIMA
+# 2283. CM5_MINIMA
 
 Board 2,283 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 22](../CorpusTestingPages/Corpus-Testing-22.md#2283-cm5_minima).
 
@@ -44,4 +44,4 @@ Board 2,283 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2282 RevA](b2282b_pergola_RevA.md) | [2284 CM5_MINIMA_2](b2284b_CM5-MINIMA-REV2_CM5-MINIMA-2.md) |
+| [2282. RevA](b2282b_pergola_RevA.md) | [2284. CM5_MINIMA_2](b2284b_CM5-MINIMA-REV2_CM5-MINIMA-2.md) |

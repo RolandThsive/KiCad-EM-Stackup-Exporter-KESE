@@ -1,4 +1,4 @@
-# 1110 foxglove
+# 1110. foxglove
 
 Board 1,110 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 11](../CorpusTestingPages/Corpus-Testing-11.md#1110-foxglove).
 
@@ -45,4 +45,4 @@ Board 1,110 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1109 edelweiss](b1109b_greatfet-hardware_edelweiss.md) | [1111 gladiolus](b1111b_greatfet-hardware_gladiolus.md) |
+| [1109. edelweiss](b1109b_greatfet-hardware_edelweiss.md) | [1111. gladiolus](b1111b_greatfet-hardware_gladiolus.md) |

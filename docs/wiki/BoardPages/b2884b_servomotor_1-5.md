@@ -1,4 +1,4 @@
-# 2884 1.5
+# 2884. 1.5
 
 Board 2,884 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 27](../CorpusTestingPages/Corpus-Testing-27.md#2884-15).
 
@@ -45,4 +45,4 @@ Board 2,884 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2883 1.3](b2883b_servomotor_1-3.md) | [2885 V10](b2885b_servomotor_V10.md) |
+| [2883. 1.3](b2883b_servomotor_1-3.md) | [2885. V10](b2885b_servomotor_V10.md) |

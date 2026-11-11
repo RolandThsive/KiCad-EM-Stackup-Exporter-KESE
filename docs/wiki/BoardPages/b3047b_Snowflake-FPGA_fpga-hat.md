@@ -1,4 +1,4 @@
-# 3047 fpga_hat
+# 3047. fpga_hat
 
 Board 3,047 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 29](../CorpusTestingPages/Corpus-Testing-29.md#3047-fpga_hat).
 
@@ -45,4 +45,4 @@ Board 3,047 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [3046 macpro62-storage-face](b3046b_the-mac-pro-project_macpro62-storage-face.md) | [3048 2019-07-02_12:26:12_fpga_hat](b3048b_Snowflake-FPGA_2019-07-02-12-26-12-fpga-hat.md) |
+| [3046. macpro62-storage-face](b3046b_the-mac-pro-project_macpro62-storage-face.md) | [3048. 2019-07-02_12:26:12_fpga_hat](b3048b_Snowflake-FPGA_2019-07-02-12-26-12-fpga-hat.md) |

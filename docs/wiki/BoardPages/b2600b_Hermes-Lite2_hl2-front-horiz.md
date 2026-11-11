@@ -1,4 +1,4 @@
-# 2600 hl2-front-horiz
+# 2600. hl2-front-horiz
 
 Board 2,600 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 25](../CorpusTestingPages/Corpus-Testing-25.md#2600-hl2-front-horiz).
 
@@ -46,4 +46,4 @@ Board 2,600 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2599 hl2-back](b2599b_Hermes-Lite2_hl2-back.md) | [2601 hl2-front-vert](b2601b_Hermes-Lite2_hl2-front-vert.md) |
+| [2599. hl2-back](b2599b_Hermes-Lite2_hl2-back.md) | [2601. hl2-front-vert](b2601b_Hermes-Lite2_hl2-front-vert.md) |

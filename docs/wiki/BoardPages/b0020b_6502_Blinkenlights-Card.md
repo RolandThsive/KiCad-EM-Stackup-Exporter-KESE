@@ -1,4 +1,4 @@
-# 20 Blinkenlights Card
+# 20. Blinkenlights Card
 
 Board 20 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 1](../CorpusTestingPages/Corpus-Testing-01.md#20-blinkenlights-card).
 
@@ -45,4 +45,4 @@ Board 20 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page
 
 | Previous | Next |
 |:---|---:|
-| [19 Backplane](b0019b_6502_Backplane.md) | [21 Breadboard Helper](b0021b_6502_Breadboard-Helper.md) |
+| [19. Backplane](b0019b_6502_Backplane.md) | [21. Breadboard Helper](b0021b_6502_Breadboard-Helper.md) |

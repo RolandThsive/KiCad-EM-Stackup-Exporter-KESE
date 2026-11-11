@@ -1,4 +1,4 @@
-# 2613 SparkFun_GNSS_Flex_Module_DAN-F10N
+# 2613. SparkFun_GNSS_Flex_Module_DAN-F10N
 
 Board 2,613 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 25](../CorpusTestingPages/Corpus-Testing-25.md#2613-sparkfun_gnss_flex_module_dan-f10n).
 
@@ -45,4 +45,4 @@ Board 2,613 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2612 SparkFun_GNSS_Flex_Module_DAN-F10N_panelized](b2612b_sparkfun-gnss-flex-system_SparkFun-GNSS-Flex-Module-DAN-F10N-panelized.md) | [2614 SparkFun_GNSS_Flex_Module_LG290P-Tilt_panelized](b2614b_sparkfun-gnss-flex-system_SparkFun-GNSS-Flex-Module-LG290P-Tilt-panelized.md) |
+| [2612. SparkFun_GNSS_Flex_Module_DAN-F10N_panelized](b2612b_sparkfun-gnss-flex-system_SparkFun-GNSS-Flex-Module-DAN-F10N-panelized.md) | [2614. SparkFun_GNSS_Flex_Module_LG290P-Tilt_panelized](b2614b_sparkfun-gnss-flex-system_SparkFun-GNSS-Flex-Module-LG290P-Tilt-panelized.md) |

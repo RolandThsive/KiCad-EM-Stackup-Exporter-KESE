@@ -1,4 +1,4 @@
-# 669 PCE
+# 669. PCE
 
 Board 669 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 7](../CorpusTestingPages/Corpus-Testing-07.md#669-pce).
 
@@ -44,4 +44,4 @@ Board 669 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [668 PCE](b0668b_PC-Engine_PCE.md) | [670 PCE](b0670b_PC-Engine-GT_PCE.md) |
+| [668. PCE](b0668b_PC-Engine_PCE.md) | [670. PCE](b0670b_PC-Engine-GT_PCE.md) |

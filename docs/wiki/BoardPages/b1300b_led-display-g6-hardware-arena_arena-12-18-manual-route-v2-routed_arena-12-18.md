@@ -1,4 +1,4 @@
-# 1300 arena_12-18
+# 1300. arena_12-18
 
 Board 1,300 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 13](../CorpusTestingPages/Corpus-Testing-13.md#1300-arena_12-18).
 
@@ -45,4 +45,4 @@ Board 1,300 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1299 arena_12-18](b1299b_led-display-g6-hardware-arena_arena-12-18-manual-route-v2_arena-12-18.md) | [1301 E1S_10slot_80x45_12V](b1301b_pcie-switch-2_E1S-10slot-80x45-12V.md) |
+| [1299. arena_12-18](b1299b_led-display-g6-hardware-arena_arena-12-18-manual-route-v2_arena-12-18.md) | [1301. E1S_10slot_80x45_12V](b1301b_pcie-switch-2_E1S-10slot-80x45-12V.md) |

@@ -1,4 +1,4 @@
-# 1411 gw
+# 1411. gw
 
 Board 1,411 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 14](../CorpusTestingPages/Corpus-Testing-14.md#1411-gw).
 
@@ -45,4 +45,4 @@ Board 1,411 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1410 2057-ICE40HX4K-TQ144-breakout](b1410b_2057-ICE40HX4K-TQ144-breakout_2057-ICE40HX4K-TQ144-breakout.md) | [1412 Blixten](b1412b_blixten_Blixten.md) |
+| [1410. 2057-ICE40HX4K-TQ144-breakout](b1410b_2057-ICE40HX4K-TQ144-breakout_2057-ICE40HX4K-TQ144-breakout.md) | [1412. Blixten](b1412b_blixten_Blixten.md) |

@@ -1,4 +1,4 @@
-# 2406 teensy-adapter-v3.0
+# 2406. teensy-adapter-v3.0
 
 Board 2,406 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 23](../CorpusTestingPages/Corpus-Testing-23.md#2406-teensy-adapter-v30).
 
@@ -45,4 +45,4 @@ Board 2,406 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2405 flyback-breakout-v1.0](b2405b_robocup-pcb_flyback-breakout-v1-0.md) | [2407 motortester-v2.0](b2407b_robocup-pcb_motortester-v2-0.md) |
+| [2405. flyback-breakout-v1.0](b2405b_robocup-pcb_flyback-breakout-v1-0.md) | [2407. motortester-v2.0](b2407b_robocup-pcb_motortester-v2-0.md) |

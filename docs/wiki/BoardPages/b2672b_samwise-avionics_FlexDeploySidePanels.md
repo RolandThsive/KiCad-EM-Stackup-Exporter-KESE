@@ -1,4 +1,4 @@
-# 2672 FlexDeploySidePanels
+# 2672. FlexDeploySidePanels
 
 Board 2,672 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 25](../CorpusTestingPages/Corpus-Testing-25.md#2672-flexdeploysidepanels).
 
@@ -46,4 +46,4 @@ Board 2,672 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2671 batteryboard](b2671b_samwise-avionics_batteryboard.md) | [2673 Groundstation_2400_Hat](b2673b_samwise-avionics_Groundstation-2400-Hat.md) |
+| [2671. batteryboard](b2671b_samwise-avionics_batteryboard.md) | [2673. Groundstation_2400_Hat](b2673b_samwise-avionics_Groundstation-2400-Hat.md) |

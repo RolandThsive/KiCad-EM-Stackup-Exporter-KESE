@@ -1,4 +1,4 @@
-# 2032 accelerometer
+# 2032. accelerometer
 
 Board 2,032 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 19](../CorpusTestingPages/Corpus-Testing-19.md#2032-accelerometer).
 
@@ -45,4 +45,4 @@ Board 2,032 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2031 lv_bms_tester_board](b2031b_olin-electric-motorsports_lv-bms-tester-board.md) | [2033 sensing_module_interface](b2033b_olin-electric-motorsports_sensing-module-interface.md) |
+| [2031. lv_bms_tester_board](b2031b_olin-electric-motorsports_lv-bms-tester-board.md) | [2033. sensing_module_interface](b2033b_olin-electric-motorsports_sensing-module-interface.md) |

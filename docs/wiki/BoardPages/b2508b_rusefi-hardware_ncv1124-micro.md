@@ -1,4 +1,4 @@
-# 2508 ncv1124-micro
+# 2508. ncv1124-micro
 
 Board 2,508 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 24](../CorpusTestingPages/Corpus-Testing-24.md#2508-ncv1124-micro).
 
@@ -45,4 +45,4 @@ Board 2,508 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2507 mini48-stm32](b2507b_rusefi-hardware_mini48-stm32_mini48-stm32.md) | [2509 quad-igbt](b2509b_rusefi-hardware_quad-igbt.md) |
+| [2507. mini48-stm32](b2507b_rusefi-hardware_mini48-stm32_mini48-stm32.md) | [2509. quad-igbt](b2509b_rusefi-hardware_quad-igbt.md) |

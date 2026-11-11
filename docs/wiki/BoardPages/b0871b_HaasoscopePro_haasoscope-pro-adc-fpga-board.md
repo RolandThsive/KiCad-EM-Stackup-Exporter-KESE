@@ -1,4 +1,4 @@
-# 871 haasoscope_pro_adc_fpga_board
+# 871. haasoscope_pro_adc_fpga_board
 
 Board 871 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 9](../CorpusTestingPages/Corpus-Testing-09.md#871-haasoscope_pro_adc_fpga_board).
 
@@ -45,4 +45,4 @@ Board 871 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [870 Domesday Duplicator](b0870b_domesdayduplicator_Domesday-Duplicator.md) | [872 Duet2Maestro](b0872b_Duet-2-Hardware_Duet2Maestro.md) |
+| [870. Domesday Duplicator](b0870b_domesdayduplicator_Domesday-Duplicator.md) | [872. Duet2Maestro](b0872b_Duet-2-Hardware_Duet2Maestro.md) |

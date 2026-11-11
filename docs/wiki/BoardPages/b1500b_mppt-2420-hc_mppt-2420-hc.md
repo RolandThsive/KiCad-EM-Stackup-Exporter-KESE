@@ -1,4 +1,4 @@
-# 1500 mppt-2420-hc
+# 1500. mppt-2420-hc
 
 Board 1,500 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 14](../CorpusTestingPages/Corpus-Testing-14.md#1500-mppt-2420-hc).
 
@@ -45,4 +45,4 @@ Board 1,500 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1499 mppt-1210-hus](b1499b_mppt-1210-hus_mppt-1210-hus.md) | [1501 mppt-2420-hpx](b1501b_mppt-2420-hpx_mppt-2420-hpx.md) |
+| [1499. mppt-1210-hus](b1499b_mppt-1210-hus_mppt-1210-hus.md) | [1501. mppt-2420-hpx](b1501b_mppt-2420-hpx_mppt-2420-hpx.md) |

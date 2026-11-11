@@ -1,4 +1,4 @@
-# 808 flash-sop-rev3
+# 808. flash-sop-rev3
 
 Board 808 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 8](../CorpusTestingPages/Corpus-Testing-08.md#808-flash-sop-rev3).
 
@@ -45,4 +45,4 @@ Board 808 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [807 flash-zif-rev3](b0807b_BusPirate5-hardware_flash-zif-rev3.md) | [809 flash-sop-lotes-rev3](b0809b_BusPirate5-hardware_flash-sop-lotes-rev3.md) |
+| [807. flash-zif-rev3](b0807b_BusPirate5-hardware_flash-zif-rev3.md) | [809. flash-sop-lotes-rev3](b0809b_BusPirate5-hardware_flash-sop-lotes-rev3.md) |

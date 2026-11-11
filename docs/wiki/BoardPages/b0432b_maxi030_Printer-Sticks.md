@@ -1,4 +1,4 @@
-# 432 Printer+Sticks
+# 432. Printer+Sticks
 
 Board 432 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 4](../CorpusTestingPages/Corpus-Testing-04.md#432-printersticks).
 
@@ -45,4 +45,4 @@ Board 432 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [431 ICE40UPDevBoard](b0431b_ICE40UPDevBoard_ICE40UPDevBoard.md) | [433 TestSRAM](b0433b_maxi030_TestSRAM.md) |
+| [431. ICE40UPDevBoard](b0431b_ICE40UPDevBoard_ICE40UPDevBoard.md) | [433. TestSRAM](b0433b_maxi030_TestSRAM.md) |

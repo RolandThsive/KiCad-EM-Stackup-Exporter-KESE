@@ -1,4 +1,4 @@
-# 2343 qmtech-minimig
+# 2343. qmtech-minimig
 
 Board 2,343 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 22](../CorpusTestingPages/Corpus-Testing-22.md#2343-qmtech-minimig).
 
@@ -44,4 +44,4 @@ Board 2,343 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2342 unibone.unrouted](b2342b_QUniBoneClassic_unibone-unrouted.md) | [2344 ACU5EV_Carrier_Base](b2344b_fcboardkicad_ACU5EV-Carrier-Base.md) |
+| [2342. unibone.unrouted](b2342b_QUniBoneClassic_unibone-unrouted.md) | [2344. ACU5EV_Carrier_Base](b2344b_fcboardkicad_ACU5EV-Carrier-Base.md) |

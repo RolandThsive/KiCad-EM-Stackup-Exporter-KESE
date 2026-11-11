@@ -1,4 +1,4 @@
-# 145 Board 2x36 W22.86
+# 145. Board 2x36 W22.86
 
 Board 145 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 2](../CorpusTestingPages/Corpus-Testing-02.md#145-board-2x36-w2286).
 
@@ -46,4 +46,4 @@ Board 145 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [144 Board 2x32 W22.86](b0144b_658-Computer_Kicad-Boards-Pins-Board-2x32-W22-86_Board-2x32-W22-86.md) | [146 Audio Address Decode](b0146b_658-Computer_Audio-Address-Decode.md) |
+| [144. Board 2x32 W22.86](b0144b_658-Computer_Kicad-Boards-Pins-Board-2x32-W22-86_Board-2x32-W22-86.md) | [146. Audio Address Decode](b0146b_658-Computer_Audio-Address-Decode.md) |

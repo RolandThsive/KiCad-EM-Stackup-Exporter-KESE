@@ -1,4 +1,4 @@
-# 2034 sensing_controller1
+# 2034. sensing_controller1
 
 Board 2,034 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 19](../CorpusTestingPages/Corpus-Testing-19.md#2034-sensing_controller1).
 
@@ -45,4 +45,4 @@ Board 2,034 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2033 sensing_module_interface](b2033b_olin-electric-motorsports_sensing-module-interface.md) | [2035 discharge](b2035b_olin-electric-motorsports_discharge.md) |
+| [2033. sensing_module_interface](b2033b_olin-electric-motorsports_sensing-module-interface.md) | [2035. discharge](b2035b_olin-electric-motorsports_discharge.md) |

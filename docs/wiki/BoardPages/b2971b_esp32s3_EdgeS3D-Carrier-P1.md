@@ -1,4 +1,4 @@
-# 2971 EdgeS3D_Carrier_P1
+# 2971. EdgeS3D_Carrier_P1
 
 Board 2,971 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 28](../CorpusTestingPages/Corpus-Testing-28.md#2971-edges3d_carrier_p1).
 
@@ -45,4 +45,4 @@ Board 2,971 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2970 OMGS3_Carrier_R1](b2970b_esp32s3_OMGS3-Carrier-R1.md) | [2972 armory](b2972b_usbarmory_hardware-mark-one_armory.md) |
+| [2970. OMGS3_Carrier_R1](b2970b_esp32s3_OMGS3-Carrier-R1.md) | [2972. armory](b2972b_usbarmory_hardware-mark-one_armory.md) |

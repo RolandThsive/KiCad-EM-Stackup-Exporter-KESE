@@ -1,4 +1,4 @@
-# 2235 icE1usb
+# 2235. icE1usb
 
 Board 2,235 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 21](../CorpusTestingPages/Corpus-Testing-21.md#2235-ice1usb).
 
@@ -45,4 +45,4 @@ Board 2,235 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2234 icE1usb-panel](b2234b_osmo-e1-hardware_icE1usb-panel.md) | [2236 clk-input-fmc](b2236b_clk-input-fmc_clk-input-fmc.md) |
+| [2234. icE1usb-panel](b2234b_osmo-e1-hardware_icE1usb-panel.md) | [2236. clk-input-fmc](b2236b_clk-input-fmc_clk-input-fmc.md) |

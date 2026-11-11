@@ -1,4 +1,4 @@
-# 1776 ethersweep
+# 1776. ethersweep
 
 Board 1,776 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 17](../CorpusTestingPages/Corpus-Testing-17.md#1776-ethersweep).
 
@@ -45,4 +45,4 @@ Board 1,776 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1775 ethersweep](b1775b_ethersweep_electronic-design-development-ethersweep-tmc2209_ethersweep.md) | [1777 FreeEEG32](b1777b_freeeeg32_FreeEEG32.md) |
+| [1775. ethersweep](b1775b_ethersweep_electronic-design-development-ethersweep-tmc2209_ethersweep.md) | [1777. FreeEEG32](b1777b_freeeeg32_FreeEEG32.md) |

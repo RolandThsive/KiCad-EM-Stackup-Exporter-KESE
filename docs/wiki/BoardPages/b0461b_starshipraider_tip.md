@@ -1,4 +1,4 @@
-# 461 tip
+# 461. tip
 
 Board 461 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 5](../CorpusTestingPages/Corpus-Testing-05.md#461-tip).
 
@@ -45,4 +45,4 @@ Board 461 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [460 amplifier](b0460b_starshipraider_amplifier.md) | [462 vna-amplifier](b0462b_starshipraider_vna-amplifier.md) |
+| [460. amplifier](b0460b_starshipraider_amplifier.md) | [462. vna-amplifier](b0462b_starshipraider_vna-amplifier.md) |

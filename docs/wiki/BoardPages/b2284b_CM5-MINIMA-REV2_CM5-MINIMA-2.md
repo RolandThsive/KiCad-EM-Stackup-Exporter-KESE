@@ -1,4 +1,4 @@
-# 2284 CM5_MINIMA_2
+# 2284. CM5_MINIMA_2
 
 Board 2,284 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 22](../CorpusTestingPages/Corpus-Testing-22.md#2284-cm5_minima_2).
 
@@ -44,4 +44,4 @@ Board 2,284 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2283 CM5_MINIMA](b2283b_CM5-MINIMA-REV1_CM5-MINIMA.md) | [2285 carrier_template](b2285b_zynq-som_carrier-template.md) |
+| [2283. CM5_MINIMA](b2283b_CM5-MINIMA-REV1_CM5-MINIMA.md) | [2285. carrier_template](b2285b_zynq-som_carrier-template.md) |

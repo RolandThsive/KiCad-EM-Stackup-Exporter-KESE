@@ -1,4 +1,4 @@
-# 621 steering_wheel
+# 621. steering_wheel
 
 Board 621 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 6](../CorpusTestingPages/Corpus-Testing-06.md#621-steering_wheel).
 
@@ -45,4 +45,4 @@ Board 621 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [620 serial_bulkhead](b0620b_bjr-kicad_serial-bulkhead.md) | [622 Acorn-A3010](b0622b_Acorn-A3010_Acorn-A3010.md) |
+| [620. serial_bulkhead](b0620b_bjr-kicad_serial-bulkhead.md) | [622. Acorn-A3010](b0622b_Acorn-A3010_Acorn-A3010.md) |

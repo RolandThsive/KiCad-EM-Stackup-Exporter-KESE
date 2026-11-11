@@ -1,4 +1,4 @@
-# 1137 rf-amps
+# 1137. rf-amps
 
 Board 1,137 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 11](../CorpusTestingPages/Corpus-Testing-11.md#1137-rf-amps).
 
@@ -45,4 +45,4 @@ Board 1,137 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1136 quad-balun-directional-coupler](b1136b_misc_quad-balun-directional-coupler.md) | [1138 rf-switch-dpdt](b1138b_misc_rf-switch-dpdt.md) |
+| [1136. quad-balun-directional-coupler](b1136b_misc_quad-balun-directional-coupler.md) | [1138. rf-switch-dpdt](b1138b_misc_rf-switch-dpdt.md) |

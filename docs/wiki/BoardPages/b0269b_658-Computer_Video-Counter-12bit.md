@@ -1,4 +1,4 @@
-# 269 Video Counter 12bit
+# 269. Video Counter 12bit
 
 Board 269 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 3](../CorpusTestingPages/Corpus-Testing-03.md#269-video-counter-12bit).
 
@@ -45,4 +45,4 @@ Board 269 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [268 Video Clock](b0268b_658-Computer_Video-Clock.md) | [270 Video DAC](b0270b_658-Computer_Video-DAC.md) |
+| [268. Video Clock](b0268b_658-Computer_Video-Clock.md) | [270. Video DAC](b0270b_658-Computer_Video-DAC.md) |

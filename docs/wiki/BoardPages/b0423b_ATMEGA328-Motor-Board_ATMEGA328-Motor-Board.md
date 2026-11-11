@@ -1,4 +1,4 @@
-# 423 ATMEGA328_Motor_Board
+# 423. ATMEGA328_Motor_Board
 
 Board 423 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 4](../CorpusTestingPages/Corpus-Testing-04.md#423-atmega328_motor_board).
 
@@ -45,4 +45,4 @@ Board 423 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [422 vna-se-probe](b0422b_vna-se-probe_vna-se-probe.md) | [424 pcb](b0424b_axiom-micro-mainboard_pcb.md) |
+| [422. vna-se-probe](b0422b_vna-se-probe_vna-se-probe.md) | [424. pcb](b0424b_axiom-micro-mainboard_pcb.md) |

@@ -1,4 +1,4 @@
-# 2162 balun-eval-board
+# 2162. balun-eval-board
 
 Board 2,162 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 21](../CorpusTestingPages/Corpus-Testing-21.md#2162-balun-eval-board).
 
@@ -45,4 +45,4 @@ Board 2,162 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2161 receive_Path](b2161b_oresat-dxwifi-hardware_receive-Path.md) | [2163 esi-minusz-end-card](b2163b_oresat-end-cards_esi-minusz-end-card.md) |
+| [2161. receive_Path](b2161b_oresat-dxwifi-hardware_receive-Path.md) | [2163. esi-minusz-end-card](b2163b_oresat-end-cards_esi-minusz-end-card.md) |

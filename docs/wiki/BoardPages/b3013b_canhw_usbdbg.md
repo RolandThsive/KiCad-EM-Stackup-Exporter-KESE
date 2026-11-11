@@ -1,4 +1,4 @@
-# 3013 usbdbg
+# 3013. usbdbg
 
 Board 3,013 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 28](../CorpusTestingPages/Corpus-Testing-28.md#3013-usbdbg).
 
@@ -45,4 +45,4 @@ Board 3,013 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [3012 rocket_power_board](b3012b_canhw_rocket-power-board.md) | [3014 Driverino-Shield](b3014b_Driverino-Shield_Driverino-Shield.md) |
+| [3012. rocket_power_board](b3012b_canhw_rocket-power-board.md) | [3014. Driverino-Shield](b3014b_Driverino-Shield_Driverino-Shield.md) |

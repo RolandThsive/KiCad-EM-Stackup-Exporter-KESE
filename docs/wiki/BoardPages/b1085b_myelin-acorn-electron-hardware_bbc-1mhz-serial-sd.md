@@ -1,4 +1,4 @@
-# 1085 bbc_1mhz_serial_sd
+# 1085. bbc_1mhz_serial_sd
 
 Board 1,085 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 11](../CorpusTestingPages/Corpus-Testing-11.md#1085-bbc_1mhz_serial_sd).
 
@@ -45,4 +45,4 @@ Board 1,085 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1084 rom_socket_level_shifter](b1084b_myelin-acorn-electron-hardware_rom-socket-level-shifter.md) | [1086 standalone_programmer](b1086b_myelin-acorn-electron-hardware_standalone-programmer.md) |
+| [1084. rom_socket_level_shifter](b1084b_myelin-acorn-electron-hardware_rom-socket-level-shifter.md) | [1086. standalone_programmer](b1086b_myelin-acorn-electron-hardware_standalone-programmer.md) |

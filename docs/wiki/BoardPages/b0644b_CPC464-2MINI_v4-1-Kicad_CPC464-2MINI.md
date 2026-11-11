@@ -1,4 +1,4 @@
-# 644 CPC464-2MINI
+# 644. CPC464-2MINI
 
 Board 644 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 6](../CorpusTestingPages/Corpus-Testing-06.md#644-cpc464-2mini).
 
@@ -45,4 +45,4 @@ Board 644 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [643 CPC464-2MINITapeAdapter](b0643b_CPC464-2MINI_CPC464-2MINITapeAdapter.md) | [645 CPC464-2MINI](b0645b_CPC464-2MINI_v5-3-Kicad_CPC464-2MINI.md) |
+| [643. CPC464-2MINITapeAdapter](b0643b_CPC464-2MINI_CPC464-2MINITapeAdapter.md) | [645. CPC464-2MINI](b0645b_CPC464-2MINI_v5-3-Kicad_CPC464-2MINI.md) |

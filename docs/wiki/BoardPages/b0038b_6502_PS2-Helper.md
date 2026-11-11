@@ -1,4 +1,4 @@
-# 38 PS2 Helper
+# 38. PS2 Helper
 
 Board 38 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 1](../CorpusTestingPages/Corpus-Testing-01.md#38-ps2-helper).
 
@@ -45,4 +45,4 @@ Board 38 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page
 
 | Previous | Next |
 |:---|---:|
-| [37 Prototype Card](b0037b_6502_Prototype-Card.md) | [39 RAM Card](b0039b_6502_RAM-Card.md) |
+| [37. Prototype Card](b0037b_6502_Prototype-Card.md) | [39. RAM Card](b0039b_6502_RAM-Card.md) |

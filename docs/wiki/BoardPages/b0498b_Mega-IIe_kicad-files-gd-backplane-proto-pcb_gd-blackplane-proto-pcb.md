@@ -1,4 +1,4 @@
-# 498 gd blackplane proto pcb
+# 498. gd blackplane proto pcb
 
 Board 498 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 5](../CorpusTestingPages/Corpus-Testing-05.md#498-gd-blackplane-proto-pcb).
 
@@ -45,4 +45,4 @@ Board 498 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [497 gd audio proto pcb-rev1 bad footprint](b0497b_Mega-IIe_gd-audio-proto-pcb-rev1-bad-footprint.md) | [499 gd blackplane proto pcb](b0499b_Mega-IIe_kicad-files-gd-backplane-proto-pcb-rev1_gd-blackplane-proto-pcb.md) |
+| [497. gd audio proto pcb-rev1 bad footprint](b0497b_Mega-IIe_gd-audio-proto-pcb-rev1-bad-footprint.md) | [499. gd blackplane proto pcb](b0499b_Mega-IIe_kicad-files-gd-backplane-proto-pcb-rev1_gd-blackplane-proto-pcb.md) |

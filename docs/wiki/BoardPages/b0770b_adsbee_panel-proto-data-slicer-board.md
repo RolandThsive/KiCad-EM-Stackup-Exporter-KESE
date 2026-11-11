@@ -1,4 +1,4 @@
-# 770 panel_proto_data_slicer_board
+# 770. panel_proto_data_slicer_board
 
 Board 770 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 8](../CorpusTestingPages/Corpus-Testing-08.md#770-panel_proto_data_slicer_board).
 
@@ -46,4 +46,4 @@ Board 770 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [769 Power Transducer](b0769b_2021-accumulator-electronics_Power-Transducer.md) | [771 panel_proto_lna_board](b0771b_adsbee_panel-proto-lna-board.md) |
+| [769. Power Transducer](b0769b_2021-accumulator-electronics_Power-Transducer.md) | [771. panel_proto_lna_board](b0771b_adsbee_panel-proto-lna-board.md) |

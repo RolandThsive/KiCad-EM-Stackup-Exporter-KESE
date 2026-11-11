@@ -1,4 +1,4 @@
-# 2061 rkh
+# 2061. rkh
 
 Board 2,061 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 20](../CorpusTestingPages/Corpus-Testing-20.md#2061-rkh).
 
@@ -45,4 +45,4 @@ Board 2,061 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2060 throttle](b2060b_olin-electric-motorsports_vehicle-mkvi-hardware-nostril-throttle_throttle.md) | [2062 carrier-fix](b2062b_olin-electric-motorsports_carrier-fix.md) |
+| [2060. throttle](b2060b_olin-electric-motorsports_vehicle-mkvi-hardware-nostril-throttle_throttle.md) | [2062. carrier-fix](b2062b_olin-electric-motorsports_carrier-fix.md) |

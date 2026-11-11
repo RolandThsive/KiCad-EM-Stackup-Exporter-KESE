@@ -1,4 +1,4 @@
-# 2757 TAPRX-888
+# 2757. TAPRX-888
 
 Board 2,757 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 26](../CorpusTestingPages/Corpus-Testing-26.md#2757-taprx-888).
 
@@ -44,4 +44,4 @@ Board 2,757 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2756 ZX80_Board_Foil](b2756b_ZX80_ZX80-Board-Foil.md) | [2758 DDR4_SoC](b2758b_lpddr4-w-allwinner-soc_DDR4-SoC.md) |
+| [2756. ZX80_Board_Foil](b2756b_ZX80_ZX80-Board-Foil.md) | [2758. DDR4_SoC](b2758b_lpddr4-w-allwinner-soc_DDR4-SoC.md) |

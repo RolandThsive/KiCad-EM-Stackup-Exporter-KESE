@@ -1,4 +1,4 @@
-# 728 cm0
+# 728. cm0
 
 Board 728 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 7](../CorpusTestingPages/Corpus-Testing-07.md#728-cm0).
 
@@ -45,4 +45,4 @@ Board 728 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [727 nref-wifi](b0727b_reform-next-mirror_nref-wifi.md) | [729 icepi-zero](b0729b_icepi-zero_hardware-v1-0_icepi-zero.md) |
+| [727. nref-wifi](b0727b_reform-next-mirror_nref-wifi.md) | [729. icepi-zero](b0729b_icepi-zero_hardware-v1-0_icepi-zero.md) |

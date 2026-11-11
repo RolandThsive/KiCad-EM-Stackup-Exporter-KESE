@@ -1,4 +1,4 @@
-# 2030 lvbms
+# 2030. lvbms
 
 Board 2,030 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 19](../CorpusTestingPages/Corpus-Testing-19.md#2030-lvbms).
 
@@ -45,4 +45,4 @@ Board 2,030 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2029 lv_interface](b2029b_olin-electric-motorsports_lv-interface.md) | [2031 lv_bms_tester_board](b2031b_olin-electric-motorsports_lv-bms-tester-board.md) |
+| [2029. lv_interface](b2029b_olin-electric-motorsports_lv-interface.md) | [2031. lv_bms_tester_board](b2031b_olin-electric-motorsports_lv-bms-tester-board.md) |

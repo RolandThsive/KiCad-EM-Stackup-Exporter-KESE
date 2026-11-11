@@ -1,4 +1,4 @@
-# 179 Register 24bit with IO
+# 179. Register 24bit with IO
 
 Board 179 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 2](../CorpusTestingPages/Corpus-Testing-02.md#179-register-24bit-with-io).
 
@@ -45,4 +45,4 @@ Board 179 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [178 Memory 32KB with Output](b0178b_658-Computer_Memory-32KB-with-Output.md) | [180 Register 8bit with IO](b0180b_658-Computer_Register-8bit-with-IO.md) |
+| [178. Memory 32KB with Output](b0178b_658-Computer_Memory-32KB-with-Output.md) | [180. Register 8bit with IO](b0180b_658-Computer_Register-8bit-with-IO.md) |

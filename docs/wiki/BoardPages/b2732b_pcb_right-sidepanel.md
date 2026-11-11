@@ -1,4 +1,4 @@
-# 2732 right-sidepanel
+# 2732. right-sidepanel
 
 Board 2,732 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 26](../CorpusTestingPages/Corpus-Testing-26.md#2732-right-sidepanel).
 
@@ -46,4 +46,4 @@ Board 2,732 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2731 precharge](b2731b_pcb_precharge.md) | [2733 rotary-switch](b2733b_pcb_rotary-switch.md) |
+| [2731. precharge](b2731b_pcb_precharge.md) | [2733. rotary-switch](b2733b_pcb_rotary-switch.md) |

@@ -1,4 +1,4 @@
-# 159 Clock Transition
+# 159. Clock Transition
 
 Board 159 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 2](../CorpusTestingPages/Corpus-Testing-02.md#159-clock-transition).
 
@@ -45,4 +45,4 @@ Board 159 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [158 Clock Hold Standard](b0158b_658-Computer_Clock-Hold-Standard.md) | [160 Comparator 10bit](b0160b_658-Computer_Comparator-10bit.md) |
+| [158. Clock Hold Standard](b0158b_658-Computer_Clock-Hold-Standard.md) | [160. Comparator 10bit](b0160b_658-Computer_Comparator-10bit.md) |

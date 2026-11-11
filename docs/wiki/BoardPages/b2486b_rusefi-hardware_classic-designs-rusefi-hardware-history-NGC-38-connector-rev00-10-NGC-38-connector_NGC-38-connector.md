@@ -1,4 +1,4 @@
-# 2486 NGC_38_connector
+# 2486. NGC_38_connector
 
 Board 2,486 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 24](../CorpusTestingPages/Corpus-Testing-24.md#2486-ngc_38_connector).
 
@@ -44,4 +44,4 @@ Board 2,486 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2485 mini48-stm32](b2485b_rusefi-hardware_classic-designs-rusefi-hardware-history-mini48-stm32-rev00-20-mini48-stm32_mini48-stm32.md) | [2487 NGC_38_connector](b2487b_rusefi-hardware_classic-designs-rusefi-hardware-history-NGC-38-connector-rev00-11-NGC-38-connector_NGC-38-connector.md) |
+| [2485. mini48-stm32](b2485b_rusefi-hardware_classic-designs-rusefi-hardware-history-mini48-stm32-rev00-20-mini48-stm32_mini48-stm32.md) | [2487. NGC_38_connector](b2487b_rusefi-hardware_classic-designs-rusefi-hardware-history-NGC-38-connector-rev00-11-NGC-38-connector_NGC-38-connector.md) |

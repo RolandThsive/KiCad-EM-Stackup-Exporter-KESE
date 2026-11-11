@@ -1,4 +1,4 @@
-# 364 icicle-hdmi-breakout
+# 364. icicle-hdmi-breakout
 
 Board 364 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 4](../CorpusTestingPages/Corpus-Testing-04.md#364-icicle-hdmi-breakout).
 
@@ -44,4 +44,4 @@ Board 364 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [363 antmicro-hdmi-mipi-bridge-hw](b0363b_hdmi-mipi-bridge_antmicro-hdmi-mipi-bridge-hw.md) | [365 ict-baseboard](b0365b_ict-baseboard_ict-baseboard.md) |
+| [363. antmicro-hdmi-mipi-bridge-hw](b0363b_hdmi-mipi-bridge_antmicro-hdmi-mipi-bridge-hw.md) | [365. ict-baseboard](b0365b_ict-baseboard_ict-baseboard.md) |

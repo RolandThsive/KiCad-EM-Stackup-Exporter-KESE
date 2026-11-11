@@ -1,4 +1,4 @@
-# 1192 FreshTwinkie
+# 1192. FreshTwinkie
 
 Board 1,192 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 12](../CorpusTestingPages/Corpus-Testing-12.md#1192-freshtwinkie).
 
@@ -45,4 +45,4 @@ Board 1,192 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1191 obsidian-boa-r0.1](b1191b_obsidian-boa_obsidian-boa-r0-1.md) | [1193 FreshTwinkie_v0.1_panel](b1193b_PD-sniffer_FreshTwinkie-v0-1-panel.md) |
+| [1191. obsidian-boa-r0.1](b1191b_obsidian-boa_obsidian-boa-r0-1.md) | [1193. FreshTwinkie_v0.1_panel](b1193b_PD-sniffer_FreshTwinkie-v0-1-panel.md) |

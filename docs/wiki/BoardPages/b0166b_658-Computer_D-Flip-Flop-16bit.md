@@ -1,4 +1,4 @@
-# 166 D Flip Flop 16bit
+# 166. D Flip Flop 16bit
 
 Board 166 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 2](../CorpusTestingPages/Corpus-Testing-02.md#166-d-flip-flop-16bit).
 
@@ -45,4 +45,4 @@ Board 166 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [165 Counter 24bit](b0165b_658-Computer_Counter-24bit.md) | [167 D Flip Flop 24bit](b0167b_658-Computer_D-Flip-Flop-24bit.md) |
+| [165. Counter 24bit](b0165b_658-Computer_Counter-24bit.md) | [167. D Flip Flop 24bit](b0167b_658-Computer_D-Flip-Flop-24bit.md) |

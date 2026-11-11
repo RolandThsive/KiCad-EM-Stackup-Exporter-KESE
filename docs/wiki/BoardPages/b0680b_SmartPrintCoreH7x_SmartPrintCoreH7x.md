@@ -1,4 +1,4 @@
-# 680 SmartPrintCoreH7x
+# 680. SmartPrintCoreH7x
 
 Board 680 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 7](../CorpusTestingPages/Corpus-Testing-07.md#680-smartprintcoreh7x).
 
@@ -45,4 +45,4 @@ Board 680 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [679 H616_devboard](b0679b_h616-board_Hardware-H616-LPDDR4_H616-devboard.md) | [681 other-m68k](b0681b_other-m68k_other-m68k.md) |
+| [679. H616_devboard](b0679b_h616-board_Hardware-H616-LPDDR4_H616-devboard.md) | [681. other-m68k](b0681b_other-m68k_other-m68k.md) |

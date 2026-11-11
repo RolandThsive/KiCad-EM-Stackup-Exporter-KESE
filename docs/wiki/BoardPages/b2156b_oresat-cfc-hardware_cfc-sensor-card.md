@@ -1,4 +1,4 @@
-# 2156 cfc-sensor-card
+# 2156. cfc-sensor-card
 
 Board 2,156 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 20](../CorpusTestingPages/Corpus-Testing-20.md#2156-cfc-sensor-card).
 
@@ -45,4 +45,4 @@ Board 2,156 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2155 cfc-processor](b2155b_oresat-cfc-hardware_cfc-processor.md) | [2157 oresat-diode-test-card](b2157b_oresat-diode-test-card_oresat-diode-test-card.md) |
+| [2155. cfc-processor](b2155b_oresat-cfc-hardware_cfc-processor.md) | [2157. oresat-diode-test-card](b2157b_oresat-diode-test-card_oresat-diode-test-card.md) |

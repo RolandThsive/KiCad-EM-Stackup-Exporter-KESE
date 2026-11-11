@@ -1,4 +1,4 @@
-# 2392 frank_next
+# 2392. frank_next
 
 Board 2,392 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 23](../CorpusTestingPages/Corpus-Testing-23.md#2392-frank_next).
 
@@ -45,4 +45,4 @@ Board 2,392 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2391 frank_core2u](b2391b_frank_frank-core2u.md) | [2393 frank_pga](b2393b_frank_frank-pga.md) |
+| [2391. frank_core2u](b2391b_frank_frank-core2u.md) | [2393. frank_pga](b2393b_frank_frank-pga.md) |

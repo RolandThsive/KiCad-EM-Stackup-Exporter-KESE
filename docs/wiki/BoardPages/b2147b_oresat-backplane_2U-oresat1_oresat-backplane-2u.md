@@ -1,4 +1,4 @@
-# 2147 oresat-backplane-2u
+# 2147. oresat-backplane-2u
 
 Board 2,147 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 20](../CorpusTestingPages/Corpus-Testing-20.md#2147-oresat-backplane-2u).
 
@@ -45,4 +45,4 @@ Board 2,147 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2146 oresat-backplane-2u](b2146b_oresat-backplane_2U-oresat0-5_oresat-backplane-2u.md) | [2148 esi-backplane-3u](b2148b_oresat-backplane_esi-backplane-3u.md) |
+| [2146. oresat-backplane-2u](b2146b_oresat-backplane_2U-oresat0-5_oresat-backplane-2u.md) | [2148. esi-backplane-3u](b2148b_oresat-backplane_esi-backplane-3u.md) |

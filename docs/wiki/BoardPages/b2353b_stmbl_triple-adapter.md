@@ -1,4 +1,4 @@
-# 2353 triple_adapter
+# 2353. triple_adapter
 
 Board 2,353 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 22](../CorpusTestingPages/Corpus-Testing-22.md#2353-triple_adapter).
 
@@ -45,4 +45,4 @@ Board 2,353 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2352 11ua](b2352b_stmbl_11ua.md) | [2354 db25_bob](b2354b_stmbl_db25-bob.md) |
+| [2352. 11ua](b2352b_stmbl_11ua.md) | [2354. db25_bob](b2354b_stmbl_db25-bob.md) |

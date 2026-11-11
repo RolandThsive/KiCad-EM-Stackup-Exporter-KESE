@@ -1,4 +1,4 @@
-# 475 fixture-akl-pt2
+# 475. fixture-akl-pt2
 
 Board 475 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 5](../CorpusTestingPages/Corpus-Testing-05.md#475-fixture-akl-pt2).
 
@@ -45,4 +45,4 @@ Board 475 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [474 bnc-test](b0474b_starshipraider_bnc-test.md) | [476 integralstick-mead](b0476b_starshipraider_integralstick-mead.md) |
+| [474. bnc-test](b0474b_starshipraider_bnc-test.md) | [476. integralstick-mead](b0476b_starshipraider_integralstick-mead.md) |

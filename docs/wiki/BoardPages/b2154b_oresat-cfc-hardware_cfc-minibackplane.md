@@ -1,4 +1,4 @@
-# 2154 cfc-minibackplane
+# 2154. cfc-minibackplane
 
 Board 2,154 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 20](../CorpusTestingPages/Corpus-Testing-20.md#2154-cfc-minibackplane).
 
@@ -45,4 +45,4 @@ Board 2,154 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2153 cfc_emulator](b2153b_oresat-cfc-hardware_cfc-emulator.md) | [2155 cfc-processor](b2155b_oresat-cfc-hardware_cfc-processor.md) |
+| [2153. cfc_emulator](b2153b_oresat-cfc-hardware_cfc-emulator.md) | [2155. cfc-processor](b2155b_oresat-cfc-hardware_cfc-processor.md) |

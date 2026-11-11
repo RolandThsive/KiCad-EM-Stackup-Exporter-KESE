@@ -1,4 +1,4 @@
-# 2707 ail-LED
+# 2707. ail-LED
 
 Board 2,707 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 26](../CorpusTestingPages/Corpus-Testing-26.md#2707-ail-led).
 
@@ -45,4 +45,4 @@ Board 2,707 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2706 controller](b2706b_Racer_controller.md) | [2708 ail-LED_handsolder](b2708b_pcb_ail-LED-handsolder.md) |
+| [2706. controller](b2706b_Racer_controller.md) | [2708. ail-LED_handsolder](b2708b_pcb_ail-LED-handsolder.md) |

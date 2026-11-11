@@ -1,4 +1,4 @@
-# 283 GPIO Controller Board
+# 283. GPIO Controller Board
 
 Board 283 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 3](../CorpusTestingPages/Corpus-Testing-03.md#283-gpio-controller-board).
 
@@ -45,4 +45,4 @@ Board 283 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [282 GPIO Bus](b0282b_658-Computer_GPIO-Bus.md) | [284 GPIO Power Switch](b0284b_658-Computer_GPIO-Power-Switch.md) |
+| [282. GPIO Bus](b0282b_658-Computer_GPIO-Bus.md) | [284. GPIO Power Switch](b0284b_658-Computer_GPIO-Power-Switch.md) |

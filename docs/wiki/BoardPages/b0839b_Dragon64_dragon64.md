@@ -1,4 +1,4 @@
-# 839 dragon64
+# 839. dragon64
 
 Board 839 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 8](../CorpusTestingPages/Corpus-Testing-08.md#839-dragon64).
 
@@ -45,4 +45,4 @@ Board 839 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [838 BPUv2a](b0838b_BusPirateUltraHardware_BPUv2a.md) | [840 DragonKeyboard](b0840b_Dragon64_DragonKeyboard.md) |
+| [838. BPUv2a](b0838b_BusPirateUltraHardware_BPUv2a.md) | [840. DragonKeyboard](b0840b_Dragon64_DragonKeyboard.md) |

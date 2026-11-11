@@ -1,4 +1,4 @@
-# 1805 BB-LVL-SHIFT_Rev_A
+# 1805. BB-LVL-SHIFT_Rev_A
 
 Board 1,805 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 17](../CorpusTestingPages/Corpus-Testing-17.md#1805-bb-lvl-shift_rev_a).
 
@@ -45,4 +45,4 @@ Board 1,805 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1804 bb-ch340t](b1804b_BB-CH340T_HARDWARE-BB-CH340T-Rev-B_bb-ch340t.md) | [1806 BB-PWR-3608_revA](b1806b_BB-PWR-3608_BB-PWR-3608-revA.md) |
+| [1804. bb-ch340t](b1804b_BB-CH340T_HARDWARE-BB-CH340T-Rev-B_bb-ch340t.md) | [1806. BB-PWR-3608_revA](b1806b_BB-PWR-3608_BB-PWR-3608-revA.md) |

@@ -1,4 +1,4 @@
-# 553 Bela_Gem_Multi
+# 553. Bela_Gem_Multi
 
 Board 553 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 6](../CorpusTestingPages/Corpus-Testing-06.md#553-bela_gem_multi).
 
@@ -45,4 +45,4 @@ Board 553 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [552 bela_cape](b0552b_bela-hardware_cape-bela-cape-rev-C3_bela-cape.md) | [554 bela_mini_multi_pb2_wing_bottom](b0554b_bela-hardware_bela-mini-multi-pb2-wing-bottom.md) |
+| [552. bela_cape](b0552b_bela-hardware_cape-bela-cape-rev-C3_bela-cape.md) | [554. bela_mini_multi_pb2_wing_bottom](b0554b_bela-hardware_bela-mini-multi-pb2-wing-bottom.md) |

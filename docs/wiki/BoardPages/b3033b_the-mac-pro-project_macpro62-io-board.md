@@ -1,4 +1,4 @@
-# 3033 macpro62-io-board
+# 3033. macpro62-io-board
 
 Board 3,033 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 29](../CorpusTestingPages/Corpus-Testing-29.md#3033-macpro62-io-board).
 
@@ -46,4 +46,4 @@ Board 3,033 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [3032 backplane_hub_fp2](b3032b_the-mac-pro-project_backplane-hub-fp2.md) | [3034 mod_hdmi](b3034b_the-mac-pro-project_mod-hdmi.md) |
+| [3032. backplane_hub_fp2](b3032b_the-mac-pro-project_backplane-hub-fp2.md) | [3034. mod_hdmi](b3034b_the-mac-pro-project_mod-hdmi.md) |

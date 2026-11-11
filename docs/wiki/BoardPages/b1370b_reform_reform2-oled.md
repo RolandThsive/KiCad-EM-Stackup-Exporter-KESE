@@ -1,4 +1,4 @@
-# 1370 reform2-oled
+# 1370. reform2-oled
 
 Board 1,370 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 13](../CorpusTestingPages/Corpus-Testing-13.md#1370-reform2-oled).
 
@@ -45,4 +45,4 @@ Board 1,370 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1369 reform2-motherboard25](b1369b_reform_reform2-motherboard25.md) | [1371 reform2-protected-batterypack-pcb](b1371b_reform_reform2-protected-batterypack-pcb.md) |
+| [1369. reform2-motherboard25](b1369b_reform_reform2-motherboard25.md) | [1371. reform2-protected-batterypack-pcb](b1371b_reform_reform2-protected-batterypack-pcb.md) |

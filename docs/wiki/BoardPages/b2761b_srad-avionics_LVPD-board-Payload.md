@@ -1,4 +1,4 @@
-# 2761 LVPD-board_Payload
+# 2761. LVPD-board_Payload
 
 Board 2,761 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 26](../CorpusTestingPages/Corpus-Testing-26.md#2761-lvpd-board_payload).
 
@@ -45,4 +45,4 @@ Board 2,761 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2760 LVPD-board](b2760b_srad-avionics_LVPD-board.md) | [2762 LVPD-board_v2](b2762b_srad-avionics_LVPD-board-v2.md) |
+| [2760. LVPD-board](b2760b_srad-avionics_LVPD-board.md) | [2762. LVPD-board_v2](b2762b_srad-avionics_LVPD-board-v2.md) |

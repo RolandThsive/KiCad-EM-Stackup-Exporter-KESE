@@ -1,4 +1,4 @@
-# 2781 mcu-board
+# 2781. mcu-board
 
 Board 2,781 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 26](../CorpusTestingPages/Corpus-Testing-26.md#2781-mcu-board).
 
@@ -45,4 +45,4 @@ Board 2,781 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2780 Main Board](b2780b_srad-avionics_Main-Board.md) | [2782 new-pa-test-board](b2782b_srad-avionics_new-pa-test-board.md) |
+| [2780. Main Board](b2780b_srad-avionics_Main-Board.md) | [2782. new-pa-test-board](b2782b_srad-avionics_new-pa-test-board.md) |

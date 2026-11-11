@@ -1,4 +1,4 @@
-# 2351 AppleII
+# 2351. AppleII
 
 Board 2,351 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 22](../CorpusTestingPages/Corpus-Testing-22.md#2351-appleii).
 
@@ -44,4 +44,4 @@ Board 2,351 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2350 Wii PCB](b2350b_Wee-Wii_Wii-PCB.md) | [2352 11ua](b2352b_stmbl_11ua.md) |
+| [2350. Wii PCB](b2350b_Wee-Wii_Wii-PCB.md) | [2352. 11ua](b2352b_stmbl_11ua.md) |

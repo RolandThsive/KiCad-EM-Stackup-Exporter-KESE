@@ -1,4 +1,4 @@
-# 2678 picubed_samwise
+# 2678. picubed_samwise
 
 Board 2,678 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 25](../CorpusTestingPages/Corpus-Testing-25.md#2678-picubed_samwise).
 
@@ -45,4 +45,4 @@ Board 2,678 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2677 MPPT_addon_board](b2677b_samwise-avionics_MPPT-addon-board.md) | [2679 RPi_interface](b2679b_samwise-avionics_RPi-interface.md) |
+| [2677. MPPT_addon_board](b2677b_samwise-avionics_MPPT-addon-board.md) | [2679. RPi_interface](b2679b_samwise-avionics_RPi-interface.md) |

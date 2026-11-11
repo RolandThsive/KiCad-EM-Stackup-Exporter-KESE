@@ -1,4 +1,4 @@
-# 2589 main
+# 2589. main
 
 Board 2,589 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 24](../CorpusTestingPages/Corpus-Testing-24.md#2589-main).
 
@@ -45,4 +45,4 @@ Board 2,589 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2588 main](b2588b_816-board_EXP-GPU-SCH_main.md) | [2590 main](b2590b_816-board_main.md) |
+| [2588. main](b2588b_816-board_EXP-GPU-SCH_main.md) | [2590. main](b2590b_816-board_main.md) |

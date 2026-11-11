@@ -1,4 +1,4 @@
-# 2534 sensor
+# 2534. sensor
 
 Board 2,534 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 24](../CorpusTestingPages/Corpus-Testing-24.md#2534-sensor).
 
@@ -44,4 +44,4 @@ Board 2,534 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2533 chainlinkDriverTester](b2533b_splitflap_chainlinkDriverTester.md) | [2535 sensor_smd](b2535b_splitflap_sensor-smd.md) |
+| [2533. chainlinkDriverTester](b2533b_splitflap_chainlinkDriverTester.md) | [2535. sensor_smd](b2535b_splitflap_sensor-smd.md) |

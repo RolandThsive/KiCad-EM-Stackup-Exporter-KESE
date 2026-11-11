@@ -1,4 +1,4 @@
-# 13 A4770
+# 13. A4770
 
 Board 13 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 1](../CorpusTestingPages/Corpus-Testing-01.md#13-a4770).
 
@@ -45,4 +45,4 @@ Board 13 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page
 
 | Previous | Next |
 |:---|---:|
-| [12 A4092-terminator](b0012b_A4092_A4092-terminator.md) | [14 FPGA-BOARD](b0014b_fpga-board_FPGA-BOARD.md) |
+| [12. A4092-terminator](b0012b_A4092_A4092-terminator.md) | [14. FPGA-BOARD](b0014b_fpga-board_FPGA-BOARD.md) |

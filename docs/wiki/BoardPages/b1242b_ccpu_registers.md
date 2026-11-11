@@ -1,4 +1,4 @@
-# 1242 registers
+# 1242. registers
 
 Board 1,242 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 12](../CorpusTestingPages/Corpus-Testing-12.md#1242-registers).
 
@@ -45,4 +45,4 @@ Board 1,242 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1241 io](b1241b_ccpu_io.md) | [1243 stack](b1243b_ccpu_stack.md) |
+| [1241. io](b1241b_ccpu_io.md) | [1243. stack](b1243b_ccpu_stack.md) |

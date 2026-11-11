@@ -1,4 +1,4 @@
-# 1537 trl_thru
+# 1537. trl_thru
 
 Board 1,537 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 15](../CorpusTestingPages/Corpus-Testing-15.md#1537-trl_thru).
 
@@ -45,4 +45,4 @@ Board 1,537 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1536 refclk_breakout](b1536b_vna_refclk-breakout.md) | [1538 sequencing_ltc2937](b1538b_vna_sequencing-ltc2937.md) |
+| [1536. refclk_breakout](b1536b_vna_refclk-breakout.md) | [1538. sequencing_ltc2937](b1538b_vna_sequencing-ltc2937.md) |

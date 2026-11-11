@@ -1,4 +1,4 @@
-# 661 Neptune-32x-315-5805-bypass
+# 661. Neptune-32x-315-5805-bypass
 
 Board 661 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 7](../CorpusTestingPages/Corpus-Testing-07.md#661-neptune-32x-315-5805-bypass).
 
@@ -45,4 +45,4 @@ Board 661 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [660 NeoGeoAES3_5](b0660b_NeoGeoAES-3-5_NeoGeoAES3-5.md) | [662 Neptune-32x-315-5818-bypass](b0662b_Neptune_Neptune-32x-315-5818-bypass.md) |
+| [660. NeoGeoAES3_5](b0660b_NeoGeoAES-3-5_NeoGeoAES3-5.md) | [662. Neptune-32x-315-5818-bypass](b0662b_Neptune_Neptune-32x-315-5818-bypass.md) |

@@ -1,4 +1,4 @@
-# 2955 Charger_Shutdown_KR
+# 2955. Charger_Shutdown_KR
 
 Board 2,955 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 28](../CorpusTestingPages/Corpus-Testing-28.md#2955-charger_shutdown_kr).
 
@@ -45,4 +45,4 @@ Board 2,955 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2954 BSPD KiCAD](b2954b_circuits_BSPD-KiCAD.md) | [2956 Discharge KiCAD](b2956b_circuits_Discharge-KiCAD.md) |
+| [2954. BSPD KiCAD](b2954b_circuits_BSPD-KiCAD.md) | [2956. Discharge KiCAD](b2956b_circuits_Discharge-KiCAD.md) |

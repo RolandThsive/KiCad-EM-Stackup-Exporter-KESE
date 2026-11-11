@@ -1,4 +1,4 @@
-# 1725 LMS6002-Pmod
+# 1725. LMS6002-Pmod
 
 Board 1,725 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 16](../CorpusTestingPages/Corpus-Testing-16.md#1725-lms6002-pmod).
 
@@ -45,4 +45,4 @@ Board 1,725 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1724 LimeSDR_Breakout](b1724b_LimeSDR-GPIO-Board_LimeSDR-Breakout.md) | [1726 LMS8001_Companion](b1726b_LMS8001-Companion_hardware-2v1-KiCAD_LMS8001-Companion.md) |
+| [1724. LimeSDR_Breakout](b1724b_LimeSDR-GPIO-Board_LimeSDR-Breakout.md) | [1726. LMS8001_Companion](b1726b_LMS8001-Companion_hardware-2v1-KiCAD_LMS8001-Companion.md) |

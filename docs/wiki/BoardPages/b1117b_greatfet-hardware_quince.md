@@ -1,4 +1,4 @@
-# 1117 quince
+# 1117. quince
 
 Board 1,117 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 11](../CorpusTestingPages/Corpus-Testing-11.md#1117-quince).
 
@@ -45,4 +45,4 @@ Board 1,117 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1116 neighbor-template](b1116b_greatfet-hardware_neighbor-template.md) | [1118 hackrf-one](b1118b_hackrf_hackrf-one.md) |
+| [1116. neighbor-template](b1116b_greatfet-hardware_neighbor-template.md) | [1118. hackrf-one](b1118b_hackrf_hackrf-one.md) |

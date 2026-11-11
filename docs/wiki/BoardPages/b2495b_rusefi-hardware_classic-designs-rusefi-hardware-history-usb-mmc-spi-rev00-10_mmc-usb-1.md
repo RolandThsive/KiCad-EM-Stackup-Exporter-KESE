@@ -1,4 +1,4 @@
-# 2495 mmc_usb_1
+# 2495. mmc_usb_1
 
 Board 2,495 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 24](../CorpusTestingPages/Corpus-Testing-24.md#2495-mmc_usb_1).
 
@@ -45,4 +45,4 @@ Board 2,495 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2494 thermocouple_module](b2494b_rusefi-hardware_thermocouple-module.md) | [2496 mmc_usb_1](b2496b_rusefi-hardware_classic-designs-rusefi-hardware-history-usb-mmc-spi-rev00-20_mmc-usb-1.md) |
+| [2494. thermocouple_module](b2494b_rusefi-hardware_thermocouple-module.md) | [2496. mmc_usb_1](b2496b_rusefi-hardware_classic-designs-rusefi-hardware-history-usb-mmc-spi-rev00-20_mmc-usb-1.md) |

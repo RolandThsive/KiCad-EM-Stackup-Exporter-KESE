@@ -1,4 +1,4 @@
-# 1520 boosterpack
+# 1520. boosterpack
 
 Board 1,520 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 15](../CorpusTestingPages/Corpus-Testing-15.md#1520-boosterpack).
 
@@ -45,4 +45,4 @@ Board 1,520 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1519 bias_controller](b1519b_vna_bias-controller.md) | [1521 clk_lo_buffer](b1521b_vna_clk-lo-buffer.md) |
+| [1519. bias_controller](b1519b_vna_bias-controller.md) | [1521. clk_lo_buffer](b1521b_vna_clk-lo-buffer.md) |

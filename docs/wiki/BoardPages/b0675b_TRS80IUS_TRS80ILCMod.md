@@ -1,4 +1,4 @@
-# 675 TRS80ILCMod
+# 675. TRS80ILCMod
 
 Board 675 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 7](../CorpusTestingPages/Corpus-Testing-07.md#675-trs80ilcmod).
 
@@ -45,4 +45,4 @@ Board 675 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [674 TRS80IJP_1](b0674b_TRS80IJP_TRS80IJP-1.md) | [676 TRS80IUS](b0676b_TRS80IUS_TRS80IUS.md) |
+| [674. TRS80IJP_1](b0674b_TRS80IJP_TRS80IJP-1.md) | [676. TRS80IUS](b0676b_TRS80IUS_TRS80IUS.md) |

@@ -1,4 +1,4 @@
-# 1266 MikroBusIO
+# 1266. MikroBusIO
 
 Board 1,266 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 12](../CorpusTestingPages/Corpus-Testing-12.md#1266-mikrobusio).
 
@@ -45,4 +45,4 @@ Board 1,266 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1265 GamePad_I2S_audio](b1265b_Extension-Boards-for-Olimex-GateMate_GamePad-I2S-audio-Buttons-KiCad_GamePad-I2S-audio.md) | [1267 pwrIO](b1267b_Extension-Boards-for-Olimex-GateMate_pwrIO.md) |
+| [1265. GamePad_I2S_audio](b1265b_Extension-Boards-for-Olimex-GateMate_GamePad-I2S-audio-Buttons-KiCad_GamePad-I2S-audio.md) | [1267. pwrIO](b1267b_Extension-Boards-for-Olimex-GateMate_pwrIO.md) |

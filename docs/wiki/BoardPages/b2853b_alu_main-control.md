@@ -1,4 +1,4 @@
-# 2853 main_control
+# 2853. main_control
 
 Board 2,853 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 27](../CorpusTestingPages/Corpus-Testing-27.md#2853-main_control).
 
@@ -46,4 +46,4 @@ Board 2,853 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2852 led_panel_3](b2852b_alu_led-panel-3.md) | [2854 main_logic](b2854b_alu_main-logic.md) |
+| [2852. led_panel_3](b2852b_alu_led-panel-3.md) | [2854. main_logic](b2854b_alu_main-logic.md) |

@@ -1,4 +1,4 @@
-# 174 GPIO 16bit
+# 174. GPIO 16bit
 
 Board 174 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 2](../CorpusTestingPages/Corpus-Testing-02.md#174-gpio-16bit).
 
@@ -45,4 +45,4 @@ Board 174 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [173 Flags Enable Interrupt](b0173b_658-Computer_Flags-Enable-Interrupt.md) | [175 GPIO 4bit](b0175b_658-Computer_GPIO-4bit.md) |
+| [173. Flags Enable Interrupt](b0173b_658-Computer_Flags-Enable-Interrupt.md) | [175. GPIO 4bit](b0175b_658-Computer_GPIO-4bit.md) |

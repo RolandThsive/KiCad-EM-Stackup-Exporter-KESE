@@ -1,4 +1,4 @@
-# 916 DIB2 USB adapter front mask
+# 916. DIB2 USB adapter front mask
 
 Board 916 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 9](../CorpusTestingPages/Corpus-Testing-09.md#916-dib2-usb-adapter-front-mask).
 
@@ -45,4 +45,4 @@ Board 916 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [915 BB3plus USB hub test](b0915b_eez-bb3plus_BB3plus-USB-hub-test.md) | [917 DIB2 USB adapter](b0917b_eez-bb3plus_DIB2-USB-adapter.md) |
+| [915. BB3plus USB hub test](b0915b_eez-bb3plus_BB3plus-USB-hub-test.md) | [917. DIB2 USB adapter](b0917b_eez-bb3plus_DIB2-USB-adapter.md) |

@@ -1,4 +1,4 @@
-# 1802 BB-ADS1262-Rev.A
+# 1802. BB-ADS1262-Rev.A
 
 Board 1,802 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 17](../CorpusTestingPages/Corpus-Testing-17.md#1802-bb-ads1262-reva).
 
@@ -45,4 +45,4 @@ Board 1,802 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1801 bb-ads1220](b1801b_BB-ADS1220_bb-ads1220.md) | [1803 bb-ch340t](b1803b_BB-CH340T_HARDWARE-BB-CH340T-Rev-A_bb-ch340t.md) |
+| [1801. bb-ads1220](b1801b_BB-ADS1220_bb-ads1220.md) | [1803. bb-ch340t](b1803b_BB-CH340T_HARDWARE-BB-CH340T-Rev-A_bb-ch340t.md) |

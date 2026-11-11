@@ -1,4 +1,4 @@
-# 2935 iMX6 Demo Board_from_REF
+# 2935. iMX6 Demo Board_from_REF
 
 Board 2,935 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 28](../CorpusTestingPages/Corpus-Testing-28.md#2935-imx6-demo-board_from_ref).
 
@@ -45,4 +45,4 @@ Board 2,935 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2934 iMX6 Demo Board](b2934b_imx6-demo-board_iMX6-Demo-Board.md) | [2936 RP2040_debugger](b2936b_rp2040-motor-controller_RP2040-debugger.md) |
+| [2934. iMX6 Demo Board](b2934b_imx6-demo-board_iMX6-Demo-Board.md) | [2936. RP2040_debugger](b2936b_rp2040-motor-controller_RP2040-debugger.md) |

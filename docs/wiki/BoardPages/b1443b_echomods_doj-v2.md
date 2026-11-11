@@ -1,4 +1,4 @@
-# 1443 doj_v2
+# 1443. doj_v2
 
 Board 1,443 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 14](../CorpusTestingPages/Corpus-Testing-14.md#1443-doj_v2).
 
@@ -45,4 +45,4 @@ Board 1,443 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1442 doj](b1442b_echomods_doj-source-v1-2-kicad_doj.md) | [1444 goblin](b1444b_echomods_goblin.md) |
+| [1442. doj](b1442b_echomods_doj-source-v1-2-kicad_doj.md) | [1444. goblin](b1444b_echomods_goblin.md) |

@@ -1,4 +1,4 @@
-# 1172 meiji-led-ring
+# 1172. meiji-led-ring
 
 Board 1,172 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 11](../CorpusTestingPages/Corpus-Testing-11.md#1172-meiji-led-ring).
 
@@ -45,4 +45,4 @@ Board 1,172 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1171 led-panel](b1171b_advent-calendar-of-circuits-2020_led-panel.md) | [1173 memory-lcd-wing](b1173b_advent-calendar-of-circuits-2020_memory-lcd-wing.md) |
+| [1171. led-panel](b1171b_advent-calendar-of-circuits-2020_led-panel.md) | [1173. memory-lcd-wing](b1173b_advent-calendar-of-circuits-2020_memory-lcd-wing.md) |

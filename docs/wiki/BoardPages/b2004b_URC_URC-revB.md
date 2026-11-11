@@ -1,4 +1,4 @@
-# 2004 URC_revB
+# 2004. URC_revB
 
 Board 2,004 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 19](../CorpusTestingPages/Corpus-Testing-19.md#2004-urc_revb).
 
@@ -45,4 +45,4 @@ Board 2,004 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2003 Ultra_Sound_Levitation_Rev_B](b2003b_Ultra-Sound-Levitation_Ultra-Sound-Levitation-Rev-B.md) | [2005 USB-4SERIAL_Rev_B](b2005b_USB-4SERIAL_USB-4SERIAL-Rev-B.md) |
+| [2003. Ultra_Sound_Levitation_Rev_B](b2003b_Ultra-Sound-Levitation_Ultra-Sound-Levitation-Rev-B.md) | [2005. USB-4SERIAL_Rev_B](b2005b_USB-4SERIAL_USB-4SERIAL-Rev-B.md) |

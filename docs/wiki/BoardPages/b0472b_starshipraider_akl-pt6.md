@@ -1,4 +1,4 @@
-# 472 akl-pt6
+# 472. akl-pt6
 
 Board 472 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 5](../CorpusTestingPages/Corpus-Testing-05.md#472-akl-pt6).
 
@@ -45,4 +45,4 @@ Board 472 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [471 akl-pt5](b0471b_starshipraider_akl-pt5.md) | [473 attenuator-test](b0473b_starshipraider_attenuator-test.md) |
+| [471. akl-pt5](b0471b_starshipraider_akl-pt5.md) | [473. attenuator-test](b0473b_starshipraider_attenuator-test.md) |

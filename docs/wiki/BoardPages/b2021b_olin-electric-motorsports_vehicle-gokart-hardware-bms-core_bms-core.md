@@ -1,4 +1,4 @@
-# 2021 bms_core
+# 2021. bms_core
 
 Board 2,021 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 19](../CorpusTestingPages/Corpus-Testing-19.md#2021-bms_core).
 
@@ -45,4 +45,4 @@ Board 2,021 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2020 telemetry_core](b2020b_olin-electric-motorsports_telemetry-core.md) | [2022 motor_ctrl_interface](b2022b_olin-electric-motorsports_motor-ctrl-interface.md) |
+| [2020. telemetry_core](b2020b_olin-electric-motorsports_telemetry-core.md) | [2022. motor_ctrl_interface](b2022b_olin-electric-motorsports_motor-ctrl-interface.md) |

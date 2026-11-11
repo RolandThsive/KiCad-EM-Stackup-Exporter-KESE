@@ -1,4 +1,4 @@
-# 2791 SensorBoard
+# 2791. SensorBoard
 
 Board 2,791 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 26](../CorpusTestingPages/Corpus-Testing-26.md#2791-sensorboard).
 
@@ -45,4 +45,4 @@ Board 2,791 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2790 SensorBoardNoMCU](b2790b_srad-avionics_Spaceport-PCBs-Sensor-Boards-SensorBoardPatch_SensorBoardNoMCU.md) | [2792 Unified_Board](b2792b_srad-avionics_Unified-Board.md) |
+| [2790. SensorBoardNoMCU](b2790b_srad-avionics_Spaceport-PCBs-Sensor-Boards-SensorBoardPatch_SensorBoardNoMCU.md) | [2792. Unified_Board](b2792b_srad-avionics_Unified-Board.md) |

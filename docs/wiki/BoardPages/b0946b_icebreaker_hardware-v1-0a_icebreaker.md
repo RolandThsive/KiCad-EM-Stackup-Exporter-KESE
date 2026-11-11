@@ -1,4 +1,4 @@
-# 946 icebreaker
+# 946. icebreaker
 
 Board 946 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 9](../CorpusTestingPages/Corpus-Testing-09.md#946-icebreaker).
 
@@ -45,4 +45,4 @@ Board 946 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [945 icebreaker](b0945b_icebreaker_hardware-v0-2a_icebreaker.md) | [947 icebreaker](b0947b_icebreaker_hardware-v1-0b_icebreaker.md) |
+| [945. icebreaker](b0945b_icebreaker_hardware-v0-2a_icebreaker.md) | [947. icebreaker](b0947b_icebreaker_hardware-v1-0b_icebreaker.md) |

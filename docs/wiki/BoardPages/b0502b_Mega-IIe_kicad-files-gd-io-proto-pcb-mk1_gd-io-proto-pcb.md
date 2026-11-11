@@ -1,4 +1,4 @@
-# 502 gd io proto pcb
+# 502. gd io proto pcb
 
 Board 502 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 5](../CorpusTestingPages/Corpus-Testing-05.md#502-gd-io-proto-pcb).
 
@@ -45,4 +45,4 @@ Board 502 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [501 gd io proto pcb](b0501b_Mega-IIe_kicad-files-gd-io-proto-pcb_gd-io-proto-pcb.md) | [503 gd IWM proto pcb](b0503b_Mega-IIe_gd-IWM-proto-pcb.md) |
+| [501. gd io proto pcb](b0501b_Mega-IIe_kicad-files-gd-io-proto-pcb_gd-io-proto-pcb.md) | [503. gd IWM proto pcb](b0503b_Mega-IIe_gd-IWM-proto-pcb.md) |

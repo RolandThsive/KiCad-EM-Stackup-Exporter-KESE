@@ -1,4 +1,4 @@
-# 479 probe-characterization
+# 479. probe-characterization
 
 Board 479 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 5](../CorpusTestingPages/Corpus-Testing-05.md#479-probe-characterization).
 
@@ -45,4 +45,4 @@ Board 479 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [478 sma-test](b0478b_starshipraider_boards-probes-oshpark-sma-test-sma-test_sma-test.md) | [480 resistor-carrier](b0480b_starshipraider_resistor-carrier.md) |
+| [478. sma-test](b0478b_starshipraider_boards-probes-oshpark-sma-test-sma-test_sma-test.md) | [480. resistor-carrier](b0480b_starshipraider_resistor-carrier.md) |

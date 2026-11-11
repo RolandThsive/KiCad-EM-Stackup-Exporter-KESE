@@ -1,4 +1,4 @@
-# 296 EPM570 Programmer
+# 296. EPM570 Programmer
 
 Board 296 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 3](../CorpusTestingPages/Corpus-Testing-03.md#296-epm570-programmer).
 
@@ -45,4 +45,4 @@ Board 296 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [295 Signal Protection](b0295b_658-Computer_Signal-Protection.md) | [297 EPM7032S Programmer](b0297b_658-Computer_EPM7032S-Programmer.md) |
+| [295. Signal Protection](b0295b_658-Computer_Signal-Protection.md) | [297. EPM7032S Programmer](b0297b_658-Computer_EPM7032S-Programmer.md) |

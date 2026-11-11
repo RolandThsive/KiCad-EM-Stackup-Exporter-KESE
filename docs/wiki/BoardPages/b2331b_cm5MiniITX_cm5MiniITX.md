@@ -1,4 +1,4 @@
-# 2331 cm5MiniITX
+# 2331. cm5MiniITX
 
 Board 2,331 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 22](../CorpusTestingPages/Corpus-Testing-22.md#2331-cm5miniitx).
 
@@ -44,4 +44,4 @@ Board 2,331 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2330 FC_V5e_Production_Rev1](b2330b_flight-controller-board_FC-V5e-Production-Rev1.md) | [2332 SwitchBlox](b2332b_SwitchBlox_SwitchBlox.md) |
+| [2330. FC_V5e_Production_Rev1](b2330b_flight-controller-board_FC-V5e-Production-Rev1.md) | [2332. SwitchBlox](b2332b_SwitchBlox_SwitchBlox.md) |

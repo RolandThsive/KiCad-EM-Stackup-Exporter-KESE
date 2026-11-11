@@ -1,4 +1,4 @@
-# 1142 Si5351A
+# 1142. Si5351A
 
 Board 1,142 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 11](../CorpusTestingPages/Corpus-Testing-11.md#1142-si5351a).
 
@@ -45,4 +45,4 @@ Board 1,142 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1141 rf-switch-spdt](b1141b_misc_rf-switch-spdt.md) | [1143 sky13350](b1143b_misc_sky13350.md) |
+| [1141. rf-switch-spdt](b1141b_misc_rf-switch-spdt.md) | [1143. sky13350](b1143b_misc_sky13350.md) |

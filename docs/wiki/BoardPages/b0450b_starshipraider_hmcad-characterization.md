@@ -1,4 +1,4 @@
-# 450 hmcad-characterization
+# 450. hmcad-characterization
 
 Board 450 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 5](../CorpusTestingPages/Corpus-Testing-05.md#450-hmcad-characterization).
 
@@ -45,4 +45,4 @@ Board 450 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [449 entry-afe-characterization](b0449b_starshipraider_entry-afe-characterization.md) | [451 host-x1](b0451b_starshipraider_host-x1.md) |
+| [449. entry-afe-characterization](b0449b_starshipraider_entry-afe-characterization.md) | [451. host-x1](b0451b_starshipraider_host-x1.md) |

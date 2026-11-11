@@ -1,4 +1,4 @@
-# 180 Register 8bit with IO
+# 180. Register 8bit with IO
 
 Board 180 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 2](../CorpusTestingPages/Corpus-Testing-02.md#180-register-8bit-with-io).
 
@@ -45,4 +45,4 @@ Board 180 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [179 Register 24bit with IO](b0179b_658-Computer_Register-24bit-with-IO.md) | [181 Selector 1-of-4 4bit with Input](b0181b_658-Computer_Selector-1-of-4-4bit-with-Input.md) |
+| [179. Register 24bit with IO](b0179b_658-Computer_Register-24bit-with-IO.md) | [181. Selector 1-of-4 4bit with Input](b0181b_658-Computer_Selector-1-of-4-4bit-with-Input.md) |

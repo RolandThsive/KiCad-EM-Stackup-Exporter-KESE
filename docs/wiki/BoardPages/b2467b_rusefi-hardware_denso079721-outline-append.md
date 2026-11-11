@@ -1,4 +1,4 @@
-# 2467 denso079721_outline-append
+# 2467. denso079721_outline-append
 
 Board 2,467 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 23](../CorpusTestingPages/Corpus-Testing-23.md#2467-denso079721_outline-append).
 
@@ -46,4 +46,4 @@ Board 2,467 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2466 Breakout_TLE6244](b2466b_rusefi-hardware_Breakout-TLE6244.md) | [2468 can_brd_1](b2468b_rusefi-hardware_classic-designs-rusefi-hardware-history-can-board-rev00-10_can-brd-1.md) |
+| [2466. Breakout_TLE6244](b2466b_rusefi-hardware_Breakout-TLE6244.md) | [2468. can_brd_1](b2468b_rusefi-hardware_classic-designs-rusefi-hardware-history-can-board-rev00-10_can-brd-1.md) |

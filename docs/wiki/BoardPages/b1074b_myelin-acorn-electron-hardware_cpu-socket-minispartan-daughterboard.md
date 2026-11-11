@@ -1,4 +1,4 @@
-# 1074 cpu_socket_minispartan_daughterboard
+# 1074. cpu_socket_minispartan_daughterboard
 
 Board 1,074 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 10](../CorpusTestingPages/Corpus-Testing-10.md#1074-cpu_socket_minispartan_daughterboard).
 
@@ -45,4 +45,4 @@ Board 1,074 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1073 cpu_socket_expansion](b1073b_myelin-acorn-electron-hardware_cpu-socket-expansion.md) | [1075 econet_standalone](b1075b_myelin-acorn-electron-hardware_econet-standalone.md) |
+| [1073. cpu_socket_expansion](b1073b_myelin-acorn-electron-hardware_cpu-socket-expansion.md) | [1075. econet_standalone](b1075b_myelin-acorn-electron-hardware_econet-standalone.md) |

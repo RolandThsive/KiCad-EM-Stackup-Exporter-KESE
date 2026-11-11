@@ -1,4 +1,4 @@
-# 355 framos-csi-adapter
+# 355. framos-csi-adapter
 
 Board 355 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 4](../CorpusTestingPages/Corpus-Testing-04.md#355-framos-csi-adapter).
 
@@ -44,4 +44,4 @@ Board 355 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [354 fmc2sata](b0354b_fmc-sata-adapter_fmc2sata.md) | [356 gem-demo-board](b0356b_gem-baseboard_gem-demo-board.md) |
+| [354. fmc2sata](b0354b_fmc-sata-adapter_fmc2sata.md) | [356. gem-demo-board](b0356b_gem-baseboard_gem-demo-board.md) |

@@ -1,4 +1,4 @@
-# 1944 Neo6502PC-PWR_Rev_B
+# 1944. Neo6502PC-PWR_Rev_B
 
 Board 1,944 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 18](../CorpusTestingPages/Corpus-Testing-18.md#1944-neo6502pc-pwr_rev_b).
 
@@ -45,4 +45,4 @@ Board 1,944 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1943 Neo6502PC-CPU_Rev_B](b1943b_Neo6502pc_Neo6502PC-CPU-Rev-B.md) | [1945 OLIMEXINO-2560_Rev_B](b1945b_OLIMEXINO-2560_OLIMEXINO-2560-Rev-B.md) |
+| [1943. Neo6502PC-CPU_Rev_B](b1943b_Neo6502pc_Neo6502PC-CPU-Rev-B.md) | [1945. OLIMEXINO-2560_Rev_B](b1945b_OLIMEXINO-2560_OLIMEXINO-2560-Rev-B.md) |

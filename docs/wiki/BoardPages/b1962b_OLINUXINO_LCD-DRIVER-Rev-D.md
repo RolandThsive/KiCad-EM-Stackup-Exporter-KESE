@@ -1,4 +1,4 @@
-# 1962 LCD-DRIVER_Rev_D
+# 1962. LCD-DRIVER_Rev_D
 
 Board 1,962 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 19](../CorpusTestingPages/Corpus-Testing-19.md#1962-lcd-driver_rev_d).
 
@@ -45,4 +45,4 @@ Board 1,962 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1961 LCD-DRIVER_Rev_C](b1961b_OLINUXINO_LCD-DRIVER-Rev-C.md) | [1963 LCD-OLinuXino-15.6FHD_Rev_H](b1963b_OLINUXINO_LCD-OLinuXino-15-6FHD-Rev-H.md) |
+| [1961. LCD-DRIVER_Rev_C](b1961b_OLINUXINO_LCD-DRIVER-Rev-C.md) | [1963. LCD-OLinuXino-15.6FHD_Rev_H](b1963b_OLINUXINO_LCD-OLinuXino-15-6FHD-Rev-H.md) |

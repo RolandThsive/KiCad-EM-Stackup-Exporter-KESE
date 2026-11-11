@@ -1,4 +1,4 @@
-# 1749 PQ_EPS
+# 1749. PQ_EPS
 
 Board 1,749 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 17](../CorpusTestingPages/Corpus-Testing-17.md#1749-pq_eps).
 
@@ -45,4 +45,4 @@ Board 1,749 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1748 EGSE](b1748b_pocat-hw_EGSE.md) | [1750 PQ_Lat_Board](b1750b_pocat-hw_PQ-Lat-Board.md) |
+| [1748. EGSE](b1748b_pocat-hw_EGSE.md) | [1750. PQ_Lat_Board](b1750b_pocat-hw_PQ-Lat-Board.md) |

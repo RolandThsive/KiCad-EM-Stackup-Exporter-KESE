@@ -1,4 +1,4 @@
-# 256 SNES Controller Reader
+# 256. SNES Controller Reader
 
 Board 256 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 3](../CorpusTestingPages/Corpus-Testing-03.md#256-snes-controller-reader).
 
@@ -45,4 +45,4 @@ Board 256 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [255 SNES Controller Clock](b0255b_658-Computer_SNES-Controller-Clock.md) | [257 RS232](b0257b_658-Computer_RS232.md) |
+| [255. SNES Controller Clock](b0255b_658-Computer_SNES-Controller-Clock.md) | [257. RS232](b0257b_658-Computer_RS232.md) |

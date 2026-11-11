@@ -1,4 +1,4 @@
-# 548 bela_cape
+# 548. bela_cape
 
 Board 548 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 6](../CorpusTestingPages/Corpus-Testing-06.md#548-bela_cape).
 
@@ -45,4 +45,4 @@ Board 548 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [547 belamini_cape_C2](b0547b_bela-hardware_belamini-cape-C2.md) | [549 analog_out_fix_c2](b0549b_bela-hardware_analog-out-fix-c2.md) |
+| [547. belamini_cape_C2](b0547b_bela-hardware_belamini-cape-C2.md) | [549. analog_out_fix_c2](b0549b_bela-hardware_analog-out-fix-c2.md) |

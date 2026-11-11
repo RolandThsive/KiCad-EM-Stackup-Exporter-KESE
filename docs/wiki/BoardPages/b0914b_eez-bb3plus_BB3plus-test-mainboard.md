@@ -1,4 +1,4 @@
-# 914 BB3plus test mainboard
+# 914. BB3plus test mainboard
 
 Board 914 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 9](../CorpusTestingPages/Corpus-Testing-09.md#914-bb3plus-test-mainboard).
 
@@ -45,4 +45,4 @@ Board 914 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [913 BB3plus DVID adapter](b0913b_eez-bb3plus_BB3plus-DVID-adapter.md) | [915 BB3plus USB hub test](b0915b_eez-bb3plus_BB3plus-USB-hub-test.md) |
+| [913. BB3plus DVID adapter](b0913b_eez-bb3plus_BB3plus-DVID-adapter.md) | [915. BB3plus USB hub test](b0915b_eez-bb3plus_BB3plus-USB-hub-test.md) |

@@ -1,4 +1,4 @@
-# 863 laptop_kbrd
+# 863. laptop_kbrd
 
 Board 863 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 8](../CorpusTestingPages/Corpus-Testing-08.md#863-laptop_kbrd).
 
@@ -44,4 +44,4 @@ Board 863 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [862 dfb1_r5](b0862b_DFB_dfb1-r5.md) | [864 Piunora](b0864b_Piunora-Hardware_Piunora.md) |
+| [862. dfb1_r5](b0862b_DFB_dfb1-r5.md) | [864. Piunora](b0864b_Piunora-Hardware_Piunora.md) |

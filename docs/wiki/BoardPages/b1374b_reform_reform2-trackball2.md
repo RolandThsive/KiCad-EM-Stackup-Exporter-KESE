@@ -1,4 +1,4 @@
-# 1374 reform2-trackball2
+# 1374. reform2-trackball2
 
 Board 1,374 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 13](../CorpusTestingPages/Corpus-Testing-13.md#1374-reform2-trackball2).
 
@@ -45,4 +45,4 @@ Board 1,374 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1373 reform2-trackball-sensor](b1373b_reform_reform2-trackball-sensor.md) | [1375 reform2-trackpad](b1375b_reform_reform2-trackpad.md) |
+| [1373. reform2-trackball-sensor](b1373b_reform_reform2-trackball-sensor.md) | [1375. reform2-trackpad](b1375b_reform_reform2-trackpad.md) |

@@ -1,4 +1,4 @@
-# 1722 FrontEnd_5G
+# 1722. FrontEnd_5G
 
 Board 1,722 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 16](../CorpusTestingPages/Corpus-Testing-16.md#1722-frontend_5g).
 
@@ -46,4 +46,4 @@ Board 1,722 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1721 Lime_RFE](b1721b_LimeRFE_hardware-1v31-KiCAD_Lime-RFE.md) | [1723 FrontEnd_5G](b1723b_LimeRFE-8001P_hardware-1v1-KiCAD_FrontEnd-5G.md) |
+| [1721. Lime_RFE](b1721b_LimeRFE_hardware-1v31-KiCAD_Lime-RFE.md) | [1723. FrontEnd_5G](b1723b_LimeRFE-8001P_hardware-1v1-KiCAD_FrontEnd-5G.md) |

@@ -1,4 +1,4 @@
-# 1639 basic-ecp5-pcb
+# 1639. basic-ecp5-pcb
 
 Board 1,639 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 16](../CorpusTestingPages/Corpus-Testing-16.md#1639-basic-ecp5-pcb).
 
@@ -45,4 +45,4 @@ Board 1,639 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1638 microstrip_width_nightly](b1638b_fmcw_microstrip-width-nightly.md) | [1640 ai-camera](b1640b_tokay-lite-pcb_ai-camera-rev0_ai-camera.md) |
+| [1638. microstrip_width_nightly](b1638b_fmcw_microstrip-width-nightly.md) | [1640. ai-camera](b1640b_tokay-lite-pcb_ai-camera-rev0_ai-camera.md) |

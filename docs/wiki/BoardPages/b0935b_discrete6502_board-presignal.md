@@ -1,4 +1,4 @@
-# 935 board_presignal
+# 935. board_presignal
 
 Board 935 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 9](../CorpusTestingPages/Corpus-Testing-09.md#935-board_presignal).
 
@@ -46,4 +46,4 @@ Board 935 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [934 icehat](b0934b_icehat_icehat.md) | [936 board_routed_golden](b0936b_discrete6502_board-routed-golden.md) |
+| [934. icehat](b0934b_icehat_icehat.md) | [936. board_routed_golden](b0936b_discrete6502_board-routed-golden.md) |

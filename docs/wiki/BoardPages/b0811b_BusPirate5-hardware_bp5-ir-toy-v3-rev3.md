@@ -1,4 +1,4 @@
-# 811 bp5-ir-toy-v3-rev3
+# 811. bp5-ir-toy-v3-rev3
 
 Board 811 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 8](../CorpusTestingPages/Corpus-Testing-08.md#811-bp5-ir-toy-v3-rev3).
 
@@ -45,4 +45,4 @@ Board 811 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [810 flash-wson-rev3](b0810b_BusPirate5-hardware_flash-wson-rev3.md) | [812 wago kf141r adapter](b0812b_BusPirate5-hardware_wago-kf141r-adapter.md) |
+| [810. flash-wson-rev3](b0810b_BusPirate5-hardware_flash-wson-rev3.md) | [812. wago kf141r adapter](b0812b_BusPirate5-hardware_wago-kf141r-adapter.md) |

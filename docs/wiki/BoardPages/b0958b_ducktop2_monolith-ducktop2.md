@@ -1,4 +1,4 @@
-# 958 monolith_ducktop2
+# 958. monolith_ducktop2
 
 Board 958 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 9](../CorpusTestingPages/Corpus-Testing-09.md#958-monolith_ducktop2).
 
@@ -46,4 +46,4 @@ Board 958 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [957 radio_daughterboard](b0957b_ducktop2_radio-daughterboard.md) | [959 right_io](b0959b_ducktop2_right-io.md) |
+| [957. radio_daughterboard](b0957b_ducktop2_radio-daughterboard.md) | [959. right_io](b0959b_ducktop2_right-io.md) |

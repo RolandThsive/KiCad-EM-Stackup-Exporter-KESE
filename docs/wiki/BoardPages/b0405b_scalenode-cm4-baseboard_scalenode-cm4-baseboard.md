@@ -1,4 +1,4 @@
-# 405 scalenode-cm4-baseboard
+# 405. scalenode-cm4-baseboard
 
 Board 405 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 4](../CorpusTestingPages/Corpus-Testing-04.md#405-scalenode-cm4-baseboard).
 
@@ -45,4 +45,4 @@ Board 405 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [404 scalenode-adapter](b0404b_scalenode-adapter_scalenode-adapter.md) | [406 sdi-fiber-adapter](b0406b_sdi-fiber-adapter_sdi-fiber-adapter.md) |
+| [404. scalenode-adapter](b0404b_scalenode-adapter_scalenode-adapter.md) | [406. sdi-fiber-adapter](b0406b_sdi-fiber-adapter_sdi-fiber-adapter.md) |

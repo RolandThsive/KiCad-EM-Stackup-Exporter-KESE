@@ -1,4 +1,4 @@
-# 2739 trc
+# 2739. trc
 
 Board 2,739 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 26](../CorpusTestingPages/Corpus-Testing-26.md#2739-trc).
 
@@ -45,4 +45,4 @@ Board 2,739 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2738 tem](b2738b_pcb_tem.md) | [2740 tsal-latching-integrated](b2740b_pcb_tsal-latching-integrated.md) |
+| [2738. tem](b2738b_pcb_tem.md) | [2740. tsal-latching-integrated](b2740b_pcb_tsal-latching-integrated.md) |

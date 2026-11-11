@@ -1,4 +1,4 @@
-# 1813 TERES_PCB1-A64-MAIN_Rev.C
+# 1813. TERES_PCB1-A64-MAIN_Rev.C
 
 Board 1,813 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 17](../CorpusTestingPages/Corpus-Testing-17.md#1813-teres_pcb1-a64-main_revc).
 
@@ -45,4 +45,4 @@ Board 1,813 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1812 TERES_PCB1-A64-MAIN_Rev.B](b1812b_DIY-LAPTOP_TERES-PCB1-A64-MAIN-Rev-B.md) | [1814 TERES-PCB2-IO_Rev.B](b1814b_DIY-LAPTOP_TERES-PCB2-IO-Rev-B.md) |
+| [1812. TERES_PCB1-A64-MAIN_Rev.B](b1812b_DIY-LAPTOP_TERES-PCB1-A64-MAIN-Rev-B.md) | [1814. TERES-PCB2-IO_Rev.B](b1814b_DIY-LAPTOP_TERES-PCB2-IO-Rev-B.md) |

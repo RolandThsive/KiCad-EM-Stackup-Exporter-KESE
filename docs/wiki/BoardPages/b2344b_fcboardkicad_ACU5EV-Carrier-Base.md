@@ -1,4 +1,4 @@
-# 2344 ACU5EV_Carrier_Base
+# 2344. ACU5EV_Carrier_Base
 
 Board 2,344 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 22](../CorpusTestingPages/Corpus-Testing-22.md#2344-acu5ev_carrier_base).
 
@@ -45,4 +45,4 @@ Board 2,344 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2343 qmtech-minimig](b2343b_qmtech-minimig_qmtech-minimig.md) | [2345 AmplifierHat](b2345b_artixdevboard_AmplifierHat.md) |
+| [2343. qmtech-minimig](b2343b_qmtech-minimig_qmtech-minimig.md) | [2345. AmplifierHat](b2345b_artixdevboard_AmplifierHat.md) |

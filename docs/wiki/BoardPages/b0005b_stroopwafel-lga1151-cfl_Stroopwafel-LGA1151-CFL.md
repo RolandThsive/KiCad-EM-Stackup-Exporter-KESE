@@ -1,4 +1,4 @@
-# 5 Stroopwafel-LGA1151-CFL
+# 5. Stroopwafel-LGA1151-CFL
 
 Board 5 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 1](../CorpusTestingPages/Corpus-Testing-01.md#5-stroopwafel-lga1151-cfl).
 
@@ -45,4 +45,4 @@ Board 5 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 
 
 | Previous | Next |
 |:---|---:|
-| [4 Femto_tester_v1](b0004b_FEMTO_Femto-tester-v1.md) | [6 iMX6_BareBones](b0006b_imx6-barebones_iMX6-BareBones.md) |
+| [4. Femto_tester_v1](b0004b_FEMTO_Femto-tester-v1.md) | [6. iMX6_BareBones](b0006b_imx6-barebones_iMX6-BareBones.md) |

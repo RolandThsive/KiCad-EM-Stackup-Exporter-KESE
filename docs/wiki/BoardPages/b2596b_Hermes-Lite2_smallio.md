@@ -1,4 +1,4 @@
-# 2596 smallio
+# 2596. smallio
 
 Board 2,596 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 25](../CorpusTestingPages/Corpus-Testing-25.md#2596-smallio).
 
@@ -45,4 +45,4 @@ Board 2,596 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2595 psfeedback](b2595b_Hermes-Lite2_psfeedback.md) | [2597 hl2-back-horiz](b2597b_Hermes-Lite2_hl2-back-horiz.md) |
+| [2595. psfeedback](b2595b_Hermes-Lite2_psfeedback.md) | [2597. hl2-back-horiz](b2597b_Hermes-Lite2_hl2-back-horiz.md) |

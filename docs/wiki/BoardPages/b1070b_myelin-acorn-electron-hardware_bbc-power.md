@@ -1,4 +1,4 @@
-# 1070 bbc_power
+# 1070. bbc_power
 
 Board 1,070 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 10](../CorpusTestingPages/Corpus-Testing-10.md#1070-bbc_power).
 
@@ -45,4 +45,4 @@ Board 1,070 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1069 bbc_128kb_sram](b1069b_myelin-acorn-electron-hardware_bbc-128kb-sram.md) | [1071 bga_in_two_layers](b1071b_myelin-acorn-electron-hardware_bga-in-two-layers.md) |
+| [1069. bbc_128kb_sram](b1069b_myelin-acorn-electron-hardware_bbc-128kb-sram.md) | [1071. bga_in_two_layers](b1071b_myelin-acorn-electron-hardware_bga-in-two-layers.md) |

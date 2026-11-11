@@ -1,4 +1,4 @@
-# 767 Master_slave Connector
+# 767. Master_slave Connector
 
 Board 767 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 8](../CorpusTestingPages/Corpus-Testing-08.md#767-master_slave-connector).
 
@@ -45,4 +45,4 @@ Board 767 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [766 Slave Board](b0766b_2021-accumulator-electronics_Slave-Board.md) | [768 Inverter ISO Analog](b0768b_2021-accumulator-electronics_Inverter-ISO-Analog.md) |
+| [766. Slave Board](b0766b_2021-accumulator-electronics_Slave-Board.md) | [768. Inverter ISO Analog](b0768b_2021-accumulator-electronics_Inverter-ISO-Analog.md) |

@@ -1,4 +1,4 @@
-# 1696 Digital Logic Board
+# 1696. Digital Logic Board
 
 Board 1,696 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 16](../CorpusTestingPages/Corpus-Testing-16.md#1696-digital-logic-board).
 
@@ -45,4 +45,4 @@ Board 1,696 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1695 Regulator7913-1](b1695b_embeddedbakery_Regulator7913-1.md) | [1697 Examples](b1697b_embeddedbakery_Examples.md) |
+| [1695. Regulator7913-1](b1695b_embeddedbakery_Regulator7913-1.md) | [1697. Examples](b1697b_embeddedbakery_Examples.md) |

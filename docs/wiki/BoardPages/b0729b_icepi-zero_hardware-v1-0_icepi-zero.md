@@ -1,4 +1,4 @@
-# 729 icepi-zero
+# 729. icepi-zero
 
 Board 729 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 7](../CorpusTestingPages/Corpus-Testing-07.md#729-icepi-zero).
 
@@ -45,4 +45,4 @@ Board 729 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [728 cm0](b0728b_icepi-sbc_cm0.md) | [730 icepi-zero](b0730b_icepi-zero_hardware-v1-1_icepi-zero.md) |
+| [728. cm0](b0728b_icepi-sbc_cm0.md) | [730. icepi-zero](b0730b_icepi-zero_hardware-v1-1_icepi-zero.md) |

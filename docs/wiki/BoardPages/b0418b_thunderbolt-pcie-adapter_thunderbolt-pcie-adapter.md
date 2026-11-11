@@ -1,4 +1,4 @@
-# 418 thunderbolt-pcie-adapter
+# 418. thunderbolt-pcie-adapter
 
 Board 418 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 4](../CorpusTestingPages/Corpus-Testing-04.md#418-thunderbolt-pcie-adapter).
 
@@ -44,4 +44,4 @@ Board 418 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [417 thunderbolt-gpu-adapter](b0417b_thunderbolt-gpu-adapter_thunderbolt-gpu-adapter.md) | [419 usb-c-power-adapter](b0419b_usb-c-power-adapter_usb-c-power-adapter.md) |
+| [417. thunderbolt-gpu-adapter](b0417b_thunderbolt-gpu-adapter_thunderbolt-gpu-adapter.md) | [419. usb-c-power-adapter](b0419b_usb-c-power-adapter_usb-c-power-adapter.md) |

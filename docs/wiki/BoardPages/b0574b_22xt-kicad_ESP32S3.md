@@ -1,4 +1,4 @@
-# 574 ESP32S3
+# 574. ESP32S3
 
 Board 574 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 6](../CorpusTestingPages/Corpus-Testing-06.md#574-esp32s3).
 
@@ -45,4 +45,4 @@ Board 574 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [573 Crazyflie contol board](b0573b_crazyflie-electronics_Crazyflie-contol-board.md) | [575 AD5689RARUZ-RL7_breakboard](b0575b_22xt-kicad_AD5689RARUZ-RL7-breakboard.md) |
+| [573. Crazyflie contol board](b0573b_crazyflie-electronics_Crazyflie-contol-board.md) | [575. AD5689RARUZ-RL7_breakboard](b0575b_22xt-kicad_AD5689RARUZ-RL7-breakboard.md) |

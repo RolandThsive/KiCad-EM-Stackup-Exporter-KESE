@@ -1,4 +1,4 @@
-# 2122 ringLight
+# 2122. ringLight
 
 Board 2,122 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 20](../CorpusTestingPages/Corpus-Testing-20.md#2122-ringlight).
 
@@ -45,4 +45,4 @@ Board 2,122 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2121 pi-interface](b2121b_lumenpnp_pi-interface.md) | [2123 x-cable-chain-support](b2123b_lumenpnp_x-cable-chain-support.md) |
+| [2121. pi-interface](b2121b_lumenpnp_pi-interface.md) | [2123. x-cable-chain-support](b2123b_lumenpnp_x-cable-chain-support.md) |

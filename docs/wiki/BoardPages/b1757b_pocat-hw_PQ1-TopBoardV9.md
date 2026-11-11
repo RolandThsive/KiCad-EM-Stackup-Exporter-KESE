@@ -1,4 +1,4 @@
-# 1757 PQ1_TopBoardV9
+# 1757. PQ1_TopBoardV9
 
 Board 1,757 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 17](../CorpusTestingPages/Corpus-Testing-17.md#1757-pq1_topboardv9).
 
@@ -45,4 +45,4 @@ Board 1,757 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1756 PQ1_TopBoard](b1756b_pocat-hw_PQ1-TopBoard.md) | [1758 PQ_MagYBoard](b1758b_pocat-hw_PQ-MagYBoard.md) |
+| [1756. PQ1_TopBoard](b1756b_pocat-hw_PQ1-TopBoard.md) | [1758. PQ_MagYBoard](b1758b_pocat-hw_PQ-MagYBoard.md) |

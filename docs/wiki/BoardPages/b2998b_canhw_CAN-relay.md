@@ -1,4 +1,4 @@
-# 2998 CAN_relay
+# 2998. CAN_relay
 
 Board 2,998 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 28](../CorpusTestingPages/Corpus-Testing-28.md#2998-can_relay).
 
@@ -45,4 +45,4 @@ Board 2,998 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2997 camera_interface_CAN_board](b2997b_canhw_camera-interface-CAN-board.md) | [2999 AD_Breakout](b2999b_canhw_AD-Breakout.md) |
+| [2997. camera_interface_CAN_board](b2997b_canhw_camera-interface-CAN-board.md) | [2999. AD_Breakout](b2999b_canhw_AD-Breakout.md) |

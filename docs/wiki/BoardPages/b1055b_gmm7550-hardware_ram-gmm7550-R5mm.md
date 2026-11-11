@@ -1,4 +1,4 @@
-# 1055 ram-gmm7550_R5mm
+# 1055. ram-gmm7550_R5mm
 
 Board 1,055 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 10](../CorpusTestingPages/Corpus-Testing-10.md#1055-ram-gmm7550_r5mm).
 
@@ -45,4 +45,4 @@ Board 1,055 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1054 ram-gmm7550](b1054b_gmm7550-hardware_ram-gmm7550.md) | [1056 usb3-gmm7550](b1056b_gmm7550-hardware_usb3-gmm7550.md) |
+| [1054. ram-gmm7550](b1054b_gmm7550-hardware_ram-gmm7550.md) | [1056. usb3-gmm7550](b1056b_gmm7550-hardware_usb3-gmm7550.md) |

@@ -1,4 +1,4 @@
-# 742 Fab-Drawing-clear-dev-v1
+# 742. Fab-Drawing-clear-dev-v1
 
 Board 742 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 7](../CorpusTestingPages/Corpus-Testing-07.md#742-fab-drawing-clear-dev-v1).
 
@@ -45,4 +45,4 @@ Board 742 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [741 clear-dev-v1](b0741b_caravel-board_clear-dev-v1.md) | [743 caravel-dev-v5-M.2](b0743b_caravel-board_hardware-development-caravel-dev-v5-M-2-revA_caravel-dev-v5-M-2.md) |
+| [741. clear-dev-v1](b0741b_caravel-board_clear-dev-v1.md) | [743. caravel-dev-v5-M.2](b0743b_caravel-board_hardware-development-caravel-dev-v5-M-2-revA_caravel-dev-v5-M-2.md) |

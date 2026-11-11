@@ -1,4 +1,4 @@
-# 2157 oresat-diode-test-card
+# 2157. oresat-diode-test-card
 
 Board 2,157 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 20](../CorpusTestingPages/Corpus-Testing-20.md#2157-oresat-diode-test-card).
 
@@ -45,4 +45,4 @@ Board 2,157 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2156 cfc-sensor-card](b2156b_oresat-cfc-hardware_cfc-sensor-card.md) | [2158 AR9271_eval](b2158b_oresat-dxwifi-hardware_AR9271-eval.md) |
+| [2156. cfc-sensor-card](b2156b_oresat-cfc-hardware_cfc-sensor-card.md) | [2158. AR9271_eval](b2158b_oresat-dxwifi-hardware_AR9271-eval.md) |

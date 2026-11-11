@@ -1,4 +1,4 @@
-# 74 Modem
+# 74. Modem
 
 Board 74 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 1](../CorpusTestingPages/Corpus-Testing-01.md#74-modem).
 
@@ -45,4 +45,4 @@ Board 74 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page
 
 | Previous | Next |
 |:---|---:|
-| [73 PC110](b0073b_Open-Source-PC110_PCB-Mainboard-Single-Sheet-Schematic_PC110.md) | [75 PSU](b0075b_Open-Source-PC110_PSU.md) |
+| [73. PC110](b0073b_Open-Source-PC110_PCB-Mainboard-Single-Sheet-Schematic_PC110.md) | [75. PSU](b0075b_Open-Source-PC110_PSU.md) |

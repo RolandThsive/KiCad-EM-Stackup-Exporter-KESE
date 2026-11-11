@@ -1,4 +1,4 @@
-# 1809 BB-TB6612FNG-Rev_A
+# 1809. BB-TB6612FNG-Rev_A
 
 Board 1,809 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 17](../CorpusTestingPages/Corpus-Testing-17.md#1809-bb-tb6612fng-rev_a).
 
@@ -45,4 +45,4 @@ Board 1,809 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1808 BB-PWR-8113_revA](b1808b_BB-PWR-8113_BB-PWR-8113-revA.md) | [1810 Bike-TSL-Kit_RevA](b1810b_Bike-TSL-Kit_Bike-TSL-Kit-RevA.md) |
+| [1808. BB-PWR-8113_revA](b1808b_BB-PWR-8113_BB-PWR-8113-revA.md) | [1810. Bike-TSL-Kit_RevA](b1810b_Bike-TSL-Kit_Bike-TSL-Kit-RevA.md) |

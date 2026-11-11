@@ -1,4 +1,4 @@
-# 1481 zx2_keyb_idc
+# 1481. zx2_keyb_idc
 
 Board 1,481 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 14](../CorpusTestingPages/Corpus-Testing-14.md#1481-zx2_keyb_idc).
 
@@ -45,4 +45,4 @@ Board 1,481 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1480 zx2_keyb_conn](b1480b_ZX-Spectrum-diy_zx2-keyb-conn.md) | [1482 zx2_mem](b1482b_ZX-Spectrum-diy_zx2-mem.md) |
+| [1480. zx2_keyb_conn](b1480b_ZX-Spectrum-diy_zx2-keyb-conn.md) | [1482. zx2_mem](b1482b_ZX-Spectrum-diy_zx2-mem.md) |

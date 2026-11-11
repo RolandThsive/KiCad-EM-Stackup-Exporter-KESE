@@ -1,4 +1,4 @@
-# 1255 Intergalaktik_proto
+# 1255. Intergalaktik_proto
 
 Board 1,255 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 12](../CorpusTestingPages/Corpus-Testing-12.md#1255-intergalaktik_proto).
 
@@ -46,4 +46,4 @@ Board 1,255 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1254 EEZ_DIB_MCU_r3B4](b1254b_bb3-cm4_EEZ-DIB-MCU-r3B4_EEZ-DIB-MCU-r3B4.md) | [1256 EMC_antenna](b1256b_EMC-experiments_EMC-antenna.md) |
+| [1254. EEZ_DIB_MCU_r3B4](b1254b_bb3-cm4_EEZ-DIB-MCU-r3B4_EEZ-DIB-MCU-r3B4.md) | [1256. EMC_antenna](b1256b_EMC-experiments_EMC-antenna.md) |

@@ -1,4 +1,4 @@
-# 1613 pcb1p5_hv_syncfix
+# 1613. pcb1p5_hv_syncfix
 
 Board 1,613 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 15](../CorpusTestingPages/Corpus-Testing-15.md#1613-pcb1p5_hv_syncfix).
 
@@ -45,4 +45,4 @@ Board 1,613 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1612 dexx_video_adapter](b1612b_ossc-pro-hw_dexx-video-adapter.md) | [1614 panel](b1614b_ossc-pro-hw_panel.md) |
+| [1612. dexx_video_adapter](b1612b_ossc-pro-hw_dexx-video-adapter.md) | [1614. panel](b1614b_ossc-pro-hw_panel.md) |

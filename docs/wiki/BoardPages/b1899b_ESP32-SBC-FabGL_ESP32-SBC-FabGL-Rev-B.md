@@ -1,4 +1,4 @@
-# 1899 ESP32-SBC-FabGL_Rev_B
+# 1899. ESP32-SBC-FabGL_Rev_B
 
 Board 1,899 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 18](../CorpusTestingPages/Corpus-Testing-18.md#1899-esp32-sbc-fabgl_rev_b).
 
@@ -45,4 +45,4 @@ Board 1,899 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1898 ESP32-SBC-FabGL_Rev_A](b1898b_ESP32-SBC-FabGL_ESP32-SBC-FabGL-Rev-A.md) | [1900 Flash-e_Rev_C](b1900b_Flash-e_Flash-e-Rev-C.md) |
+| [1898. ESP32-SBC-FabGL_Rev_A](b1898b_ESP32-SBC-FabGL_ESP32-SBC-FabGL-Rev-A.md) | [1900. Flash-e_Rev_C](b1900b_Flash-e_Flash-e-Rev-C.md) |

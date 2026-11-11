@@ -1,4 +1,4 @@
-# 787 BlankMSXCartHSH
+# 787. BlankMSXCartHSH
 
 Board 787 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 8](../CorpusTestingPages/Corpus-Testing-08.md#787-blankmsxcarthsh).
 
@@ -45,4 +45,4 @@ Board 787 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [786 discipline-pcb](b0786b_discipline_plate_discipline-pcb.md) | [788 TRH9000](b0788b_trh9000_TRH9000.md) |
+| [786. discipline-pcb](b0786b_discipline_plate_discipline-pcb.md) | [788. TRH9000](b0788b_trh9000_TRH9000.md) |

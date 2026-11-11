@@ -1,4 +1,4 @@
-# 468 akl-pt1
+# 468. akl-pt1
 
 Board 468 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 5](../CorpusTestingPages/Corpus-Testing-05.md#468-akl-pt1).
 
@@ -45,4 +45,4 @@ Board 468 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [467 head](b0467b_starshipraider_head.md) | [469 akl-pt2](b0469b_starshipraider_akl-pt2.md) |
+| [467. head](b0467b_starshipraider_head.md) | [469. akl-pt2](b0469b_starshipraider_akl-pt2.md) |

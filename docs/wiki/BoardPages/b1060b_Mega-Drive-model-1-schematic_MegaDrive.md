@@ -1,4 +1,4 @@
-# 1060 MegaDrive
+# 1060. MegaDrive
 
 Board 1,060 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 10](../CorpusTestingPages/Corpus-Testing-10.md#1060-megadrive).
 
@@ -44,4 +44,4 @@ Board 1,060 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1059 V503](b1059b_yarc_V503.md) | [1061 flash_cartridge](b1061b_myelin-acorn-electron-hardware_32kb-flash-cartridge-pcb-mini_flash-cartridge.md) |
+| [1059. V503](b1059b_yarc_V503.md) | [1061. flash_cartridge](b1061b_myelin-acorn-electron-hardware_32kb-flash-cartridge-pcb-mini_flash-cartridge.md) |

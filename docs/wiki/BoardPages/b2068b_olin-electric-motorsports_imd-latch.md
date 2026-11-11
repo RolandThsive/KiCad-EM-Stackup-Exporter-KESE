@@ -1,4 +1,4 @@
-# 2068 imd_latch
+# 2068. imd_latch
 
 Board 2,068 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 20](../CorpusTestingPages/Corpus-Testing-20.md#2068-imd_latch).
 
@@ -45,4 +45,4 @@ Board 2,068 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2067 AIRs](b2067b_olin-electric-motorsports_AIRs.md) | [2069 motherboard](b2069b_olin-electric-motorsports_motherboard.md) |
+| [2067. AIRs](b2067b_olin-electric-motorsports_AIRs.md) | [2069. motherboard](b2069b_olin-electric-motorsports_motherboard.md) |

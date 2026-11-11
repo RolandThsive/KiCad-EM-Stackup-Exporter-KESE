@@ -1,4 +1,4 @@
-# 1237 tomu
+# 1237. tomu
 
 Board 1,237 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 12](../CorpusTestingPages/Corpus-Testing-12.md#1237-tomu).
 
@@ -45,4 +45,4 @@ Board 1,237 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1236 tomu](b1236b_tomu-hardware_releases-v0-2-gerbers_tomu.md) | [1238 alu](b1238b_ccpu_alu.md) |
+| [1236. tomu](b1236b_tomu-hardware_releases-v0-2-gerbers_tomu.md) | [1238. alu](b1238b_ccpu_alu.md) |

@@ -1,4 +1,4 @@
-# 789 trhmsx
+# 789. trhmsx
 
 Board 789 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 8](../CorpusTestingPages/Corpus-Testing-08.md#789-trhmsx).
 
@@ -45,4 +45,4 @@ Board 789 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [788 TRH9000](b0788b_trh9000_TRH9000.md) | [790 mackerel-10-dram](b0790b_mackerel-68k_mackerel-10-dram.md) |
+| [788. TRH9000](b0788b_trh9000_TRH9000.md) | [790. mackerel-10-dram](b0790b_mackerel-68k_mackerel-10-dram.md) |

@@ -1,4 +1,4 @@
-# 491 Commodore Plus 4
+# 491. Commodore Plus 4
 
 Board 491 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 5](../CorpusTestingPages/Corpus-Testing-05.md#491-commodore-plus-4).
 
@@ -46,4 +46,4 @@ Board 491 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [490 KU-14194HB-REV-B-KiCad](b0490b_bit-preserve_KU-14194HB-REV-B-KiCad.md) | [492 coco2](b0492b_bit-preserve_Tandy-RS-TRS-80-Color-Computer-Color-Computer-2-26-302x-coco2_coco2.md) |
+| [490. KU-14194HB-REV-B-KiCad](b0490b_bit-preserve_KU-14194HB-REV-B-KiCad.md) | [492. coco2](b0492b_bit-preserve_Tandy-RS-TRS-80-Color-Computer-Color-Computer-2-26-302x-coco2_coco2.md) |

@@ -1,4 +1,4 @@
-# 3136 front_prototype
+# 3136. front_prototype
 
 Board 3,136 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 30](../CorpusTestingPages/Corpus-Testing-30.md#3136-front_prototype).
 
@@ -45,4 +45,4 @@ Board 3,136 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [3135 back_pcb](b3135b_ZeroPhone-PCBs_back-pcb.md) | [3137 keypad_pcb](b3137b_ZeroPhone-PCBs_keypad-pcb.md) |
+| [3135. back_pcb](b3135b_ZeroPhone-PCBs_back-pcb.md) | [3137. keypad_pcb](b3137b_ZeroPhone-PCBs_keypad-pcb.md) |

@@ -1,4 +1,4 @@
-# 976 eUniBoard
+# 976. eUniBoard
 
 Board 976 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 10](../CorpusTestingPages/Corpus-Testing-10.md#976-euniboard).
 
@@ -44,4 +44,4 @@ Board 976 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [975 eMultiUniBoard](b0975b_Ace-2019_eMultiUniBoard.md) | [977 MultiUniBoard](b0977b_Ace-2019_MultiUniBoard.md) |
+| [975. eMultiUniBoard](b0975b_Ace-2019_eMultiUniBoard.md) | [977. MultiUniBoard](b0977b_Ace-2019_MultiUniBoard.md) |

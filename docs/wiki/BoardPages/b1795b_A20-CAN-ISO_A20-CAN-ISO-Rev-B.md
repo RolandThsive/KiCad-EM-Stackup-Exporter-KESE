@@ -1,4 +1,4 @@
-# 1795 A20-CAN-ISO_Rev_B
+# 1795. A20-CAN-ISO_Rev_B
 
 Board 1,795 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 17](../CorpusTestingPages/Corpus-Testing-17.md#1795-a20-can-iso_rev_b).
 
@@ -45,4 +45,4 @@ Board 1,795 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1794 A20-CAN_Rev_A](b1794b_A20-CAN_A20-CAN-Rev-A.md) | [1796 AgonLight2_Rev_A](b1796b_AgonLight2_AgonLight2-Rev-A.md) |
+| [1794. A20-CAN_Rev_A](b1794b_A20-CAN_A20-CAN-Rev-A.md) | [1796. AgonLight2_Rev_A](b1796b_AgonLight2_AgonLight2-Rev-A.md) |

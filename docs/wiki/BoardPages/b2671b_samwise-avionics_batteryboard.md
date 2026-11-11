@@ -1,4 +1,4 @@
-# 2671 batteryboard
+# 2671. batteryboard
 
 Board 2,671 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 25](../CorpusTestingPages/Corpus-Testing-25.md#2671-batteryboard).
 
@@ -45,4 +45,4 @@ Board 2,671 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2670 ADCS_board](b2670b_samwise-avionics_ADCS-board.md) | [2672 FlexDeploySidePanels](b2672b_samwise-avionics_FlexDeploySidePanels.md) |
+| [2670. ADCS_board](b2670b_samwise-avionics_ADCS-board.md) | [2672. FlexDeploySidePanels](b2672b_samwise-avionics_FlexDeploySidePanels.md) |

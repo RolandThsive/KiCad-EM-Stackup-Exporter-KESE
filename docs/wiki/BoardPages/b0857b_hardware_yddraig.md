@@ -1,4 +1,4 @@
-# 857 yddraig
+# 857. yddraig
 
 Board 857 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 8](../CorpusTestingPages/Corpus-Testing-08.md#857-yddraig).
 
@@ -45,4 +45,4 @@ Board 857 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [856 JoypadController](b0856b_hardware_JoypadController.md) | [858 muon](b0858b_muon-kbd_muon.md) |
+| [856. JoypadController](b0856b_hardware_JoypadController.md) | [858. muon](b0858b_muon-kbd_muon.md) |

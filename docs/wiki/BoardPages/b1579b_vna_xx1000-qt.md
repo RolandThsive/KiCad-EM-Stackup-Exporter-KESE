@@ -1,4 +1,4 @@
-# 1579 xx1000-qt
+# 1579. xx1000-qt
 
 Board 1,579 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 15](../CorpusTestingPages/Corpus-Testing-15.md#1579-xx1000-qt).
 
@@ -45,4 +45,4 @@ Board 1,579 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1578 sumusu_ats2012](b1578b_vna_sumusu-ats2012.md) | [1580 mm_synth](b1580b_vna_mm-synth.md) |
+| [1578. sumusu_ats2012](b1578b_vna_sumusu-ats2012.md) | [1580. mm_synth](b1580b_vna_mm-synth.md) |

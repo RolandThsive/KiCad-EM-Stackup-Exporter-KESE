@@ -1,4 +1,4 @@
-# 2506 MC33810-breakout
+# 2506. MC33810-breakout
 
 Board 2,506 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 24](../CorpusTestingPages/Corpus-Testing-24.md#2506-mc33810-breakout).
 
@@ -45,4 +45,4 @@ Board 2,506 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2505 LM1949_Driver](b2505b_rusefi-hardware_LM1949-Driver.md) | [2507 mini48-stm32](b2507b_rusefi-hardware_mini48-stm32_mini48-stm32.md) |
+| [2505. LM1949_Driver](b2505b_rusefi-hardware_LM1949-Driver.md) | [2507. mini48-stm32](b2507b_rusefi-hardware_mini48-stm32_mini48-stm32.md) |

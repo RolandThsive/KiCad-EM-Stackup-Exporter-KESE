@@ -1,4 +1,4 @@
-# 1999 UEXT-PQ_Rev_A
+# 1999. UEXT-PQ_Rev_A
 
 Board 1,999 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 19](../CorpusTestingPages/Corpus-Testing-19.md#1999-uext-pq_rev_a).
 
@@ -45,4 +45,4 @@ Board 1,999 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1998 UEXT-P4Q_Rev_A](b1998b_UEXT-ADAPTERS_UEXT-P4Q-Rev-A.md) | [2000 UEXT-LVL-SHIFT_Rev_A](b2000b_UEXT-LVL-SHIFT_UEXT-LVL-SHIFT-Rev-A.md) |
+| [1998. UEXT-P4Q_Rev_A](b1998b_UEXT-ADAPTERS_UEXT-P4Q-Rev-A.md) | [2000. UEXT-LVL-SHIFT_Rev_A](b2000b_UEXT-LVL-SHIFT_UEXT-LVL-SHIFT-Rev-A.md) |

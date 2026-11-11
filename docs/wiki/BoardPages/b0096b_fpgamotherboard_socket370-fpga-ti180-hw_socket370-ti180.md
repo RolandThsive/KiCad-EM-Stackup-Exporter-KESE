@@ -1,4 +1,4 @@
-# 96 socket370-ti180
+# 96. socket370-ti180
 
 Board 96 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 1](../CorpusTestingPages/Corpus-Testing-01.md#96-socket370-ti180).
 
@@ -45,4 +45,4 @@ Board 96 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page
 
 | Previous | Next |
 |:---|---:|
-| [95 socket3-motherboard](b0095b_fpgamotherboard_socket3-motherboard.md) | [97 socket370-ti180](b0097b_fpgamotherboard_socket370-fpga-ti180-routed_socket370-ti180.md) |
+| [95. socket3-motherboard](b0095b_fpgamotherboard_socket3-motherboard.md) | [97. socket370-ti180](b0097b_fpgamotherboard_socket370-fpga-ti180-routed_socket370-ti180.md) |

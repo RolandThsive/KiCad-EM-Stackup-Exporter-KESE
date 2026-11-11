@@ -1,4 +1,4 @@
-# 1062 flash_cartridge
+# 1062. flash_cartridge
 
 Board 1,062 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 10](../CorpusTestingPages/Corpus-Testing-10.md#1062-flash_cartridge).
 
@@ -45,4 +45,4 @@ Board 1,062 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1061 flash_cartridge](b1061b_myelin-acorn-electron-hardware_32kb-flash-cartridge-pcb-mini_flash-cartridge.md) | [1063 a3000_ram_buffer](b1063b_myelin-acorn-electron-hardware_a3000-ram-buffer.md) |
+| [1061. flash_cartridge](b1061b_myelin-acorn-electron-hardware_32kb-flash-cartridge-pcb-mini_flash-cartridge.md) | [1063. a3000_ram_buffer](b1063b_myelin-acorn-electron-hardware_a3000-ram-buffer.md) |

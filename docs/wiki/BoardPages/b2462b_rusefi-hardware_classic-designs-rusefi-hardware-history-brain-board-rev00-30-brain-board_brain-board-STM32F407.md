@@ -1,4 +1,4 @@
-# 2462 brain_board_STM32F407
+# 2462. brain_board_STM32F407
 
 Board 2,462 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 23](../CorpusTestingPages/Corpus-Testing-23.md#2462-brain_board_stm32f407).
 
@@ -45,4 +45,4 @@ Board 2,462 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2461 brain_board_STM32F407](b2461b_rusefi-hardware_classic-designs-rusefi-hardware-history-brain-board-rev00-20_brain-board-STM32F407.md) | [2463 brain_board_SD_Card_1](b2463b_rusefi-hardware_brain-board-SD-Card-1.md) |
+| [2461. brain_board_STM32F407](b2461b_rusefi-hardware_classic-designs-rusefi-hardware-history-brain-board-rev00-20_brain-board-STM32F407.md) | [2463. brain_board_SD_Card_1](b2463b_rusefi-hardware_brain-board-SD-Card-1.md) |

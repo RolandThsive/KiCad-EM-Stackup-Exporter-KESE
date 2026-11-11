@@ -1,4 +1,4 @@
-# 1916 Lime2-SHIELD_RevC
+# 1916. Lime2-SHIELD_RevC
 
 Board 1,916 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 18](../CorpusTestingPages/Corpus-Testing-18.md#1916-lime2-shield_revc).
 
@@ -45,4 +45,4 @@ Board 1,916 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1915 iMX8MPLUS-SOM-EVB_Rev_B](b1915b_iMX8MP-SOM-EVB_iMX8MPLUS-SOM-EVB-Rev-B.md) | [1917 LoRa_RevA](b1917b_LoRa-868-915_LoRa-RevA.md) |
+| [1915. iMX8MPLUS-SOM-EVB_Rev_B](b1915b_iMX8MP-SOM-EVB_iMX8MPLUS-SOM-EVB-Rev-B.md) | [1917. LoRa_RevA](b1917b_LoRa-868-915_LoRa-RevA.md) |

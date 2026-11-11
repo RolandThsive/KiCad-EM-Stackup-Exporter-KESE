@@ -1,4 +1,4 @@
-# 2472 frankenso-PWR-Supply
+# 2472. frankenso-PWR-Supply
 
 Board 2,472 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 23](../CorpusTestingPages/Corpus-Testing-23.md#2472-frankenso-pwr-supply).
 
@@ -45,4 +45,4 @@ Board 2,472 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2471 DDPAK_breakout](b2471b_rusefi-hardware_DDPAK-breakout.md) | [2473 frankenso](b2473b_rusefi-hardware_classic-designs-rusefi-hardware-history-frankenso-rev00-20-frankenso_frankenso.md) |
+| [2471. DDPAK_breakout](b2471b_rusefi-hardware_DDPAK-breakout.md) | [2473. frankenso](b2473b_rusefi-hardware_classic-designs-rusefi-hardware-history-frankenso-rev00-20-frankenso_frankenso.md) |

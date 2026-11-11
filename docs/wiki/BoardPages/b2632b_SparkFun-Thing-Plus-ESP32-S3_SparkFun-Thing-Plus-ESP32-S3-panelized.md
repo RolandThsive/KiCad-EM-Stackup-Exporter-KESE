@@ -1,4 +1,4 @@
-# 2632 SparkFun_Thing_Plus_ESP32-S3_panelized
+# 2632. SparkFun_Thing_Plus_ESP32-S3_panelized
 
 Board 2,632 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 25](../CorpusTestingPages/Corpus-Testing-25.md#2632-sparkfun_thing_plus_esp32-s3_panelized).
 
@@ -46,4 +46,4 @@ Board 2,632 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2631 SparkPNT_GNSSDO_Plus](b2631b_sparkfun-gnssdo_SparkPNT-GNSSDO-Plus.md) | [2633 SparkFun_Thing_Plus_ESP32-S3](b2633b_SparkFun-Thing-Plus-ESP32-S3_SparkFun-Thing-Plus-ESP32-S3.md) |
+| [2631. SparkPNT_GNSSDO_Plus](b2631b_sparkfun-gnssdo_SparkPNT-GNSSDO-Plus.md) | [2633. SparkFun_Thing_Plus_ESP32-S3](b2633b_SparkFun-Thing-Plus-ESP32-S3_SparkFun-Thing-Plus-ESP32-S3.md) |

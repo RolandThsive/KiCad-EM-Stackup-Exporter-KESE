@@ -1,4 +1,4 @@
-# 2239 HarleyTandem
+# 2239. HarleyTandem
 
 Board 2,239 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 21](../CorpusTestingPages/Corpus-Testing-21.md#2239-harleytandem).
 
@@ -45,4 +45,4 @@ Board 2,239 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2238 HarleyGhostRider](b2238b_ovc_HarleyGhostRider.md) | [2240 HarleyTandemRevB](b2240b_ovc_HarleyTandemRevB.md) |
+| [2238. HarleyGhostRider](b2238b_ovc_HarleyGhostRider.md) | [2240. HarleyTandemRevB](b2240b_ovc_HarleyTandemRevB.md) |

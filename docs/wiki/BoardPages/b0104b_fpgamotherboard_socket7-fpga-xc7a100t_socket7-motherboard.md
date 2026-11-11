@@ -1,4 +1,4 @@
-# 104 socket7-motherboard
+# 104. socket7-motherboard
 
 Board 104 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 1](../CorpusTestingPages/Corpus-Testing-01.md#104-socket7-motherboard).
 
@@ -45,4 +45,4 @@ Board 104 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [103 socket7-motherboard](b0103b_fpgamotherboard_socket7-fpga-xc7a100t-routed_socket7-motherboard.md) | [105 plusd](b0105b_plusD-clone_plusd.md) |
+| [103. socket7-motherboard](b0103b_fpgamotherboard_socket7-fpga-xc7a100t-routed_socket7-motherboard.md) | [105. plusd](b0105b_plusD-clone_plusd.md) |

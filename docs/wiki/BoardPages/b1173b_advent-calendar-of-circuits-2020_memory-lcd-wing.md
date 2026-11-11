@@ -1,4 +1,4 @@
-# 1173 memory-lcd-wing
+# 1173. memory-lcd-wing
 
 Board 1,173 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 11](../CorpusTestingPages/Corpus-Testing-11.md#1173-memory-lcd-wing).
 
@@ -45,4 +45,4 @@ Board 1,173 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1172 meiji-led-ring](b1172b_advent-calendar-of-circuits-2020_meiji-led-ring.md) | [1174 pcie_x1](b1174b_advent-calendar-of-circuits-2020_pcie-x1.md) |
+| [1172. meiji-led-ring](b1172b_advent-calendar-of-circuits-2020_meiji-led-ring.md) | [1174. pcie_x1](b1174b_advent-calendar-of-circuits-2020_pcie-x1.md) |

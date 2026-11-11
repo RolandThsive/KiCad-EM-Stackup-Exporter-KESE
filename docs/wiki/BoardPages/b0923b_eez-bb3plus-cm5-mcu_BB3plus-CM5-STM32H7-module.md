@@ -1,4 +1,4 @@
-# 923 BB3plus CM5 STM32H7 module
+# 923. BB3plus CM5 STM32H7 module
 
 Board 923 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 9](../CorpusTestingPages/Corpus-Testing-09.md#923-bb3plus-cm5-stm32h7-module).
 
@@ -45,4 +45,4 @@ Board 923 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [922 BB3plus DVID TFT display](b0922b_eez-bb3plus_BB3plus-DVID-TFT-display.md) | [924 EEZ DIB AUX-PS](b0924b_modular-psu_EEZ-DIB-AUX-PS.md) |
+| [922. BB3plus DVID TFT display](b0922b_eez-bb3plus_BB3plus-DVID-TFT-display.md) | [924. EEZ DIB AUX-PS](b0924b_modular-psu_EEZ-DIB-AUX-PS.md) |

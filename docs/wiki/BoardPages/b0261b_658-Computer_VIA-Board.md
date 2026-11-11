@@ -1,4 +1,4 @@
-# 261 VIA Board
+# 261. VIA Board
 
 Board 261 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 3](../CorpusTestingPages/Corpus-Testing-03.md#261-via-board).
 
@@ -45,4 +45,4 @@ Board 261 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [260 UART Signals](b0260b_658-Computer_UART-Signals.md) | [262 VIA Breakout](b0262b_658-Computer_VIA-Breakout.md) |
+| [260. UART Signals](b0260b_658-Computer_UART-Signals.md) | [262. VIA Breakout](b0262b_658-Computer_VIA-Breakout.md) |

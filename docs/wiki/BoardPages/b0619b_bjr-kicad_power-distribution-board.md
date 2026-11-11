@@ -1,4 +1,4 @@
-# 619 power_distribution_board
+# 619. power_distribution_board
 
 Board 619 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 6](../CorpusTestingPages/Corpus-Testing-06.md#619-power_distribution_board).
 
@@ -45,4 +45,4 @@ Board 619 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [618 main_bulkhead](b0618b_bjr-kicad_main-bulkhead.md) | [620 serial_bulkhead](b0620b_bjr-kicad_serial-bulkhead.md) |
+| [618. main_bulkhead](b0618b_bjr-kicad_main-bulkhead.md) | [620. serial_bulkhead](b0620b_bjr-kicad_serial-bulkhead.md) |

@@ -1,4 +1,4 @@
-# 1986 exposed_power_rails
+# 1986. exposed_power_rails
 
 Board 1,986 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 19](../CorpusTestingPages/Corpus-Testing-19.md#1986-exposed_power_rails).
 
@@ -45,4 +45,4 @@ Board 1,986 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1985 RVPC_Rev_B](b1985b_RVPC_RVPC-Rev-B.md) | [1987 S3-OLinuXino_Rev_A](b1987b_S3-OLinuXino_HARDWARE-S3-OLinuXino-Rev-A-preliminary_S3-OLinuXino-Rev-A.md) |
+| [1985. RVPC_Rev_B](b1985b_RVPC_RVPC-Rev-B.md) | [1987. S3-OLinuXino_Rev_A](b1987b_S3-OLinuXino_HARDWARE-S3-OLinuXino-Rev-A-preliminary_S3-OLinuXino-Rev-A.md) |

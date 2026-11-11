@@ -1,4 +1,4 @@
-# 1381 TICK
+# 1381. TICK
 
 Board 1,381 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 13](../CorpusTestingPages/Corpus-Testing-13.md#1381-tick).
 
@@ -45,4 +45,4 @@ Board 1,381 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1380 2000ATX](b1380b_Amiga-2000-EATX_2000ATX.md) | [1382 TICK_AC](b1382b_Amiga-2000-EATX_TICK-AC.md) |
+| [1380. 2000ATX](b1380b_Amiga-2000-EATX_2000ATX.md) | [1382. TICK_AC](b1382b_Amiga-2000-EATX_TICK-AC.md) |

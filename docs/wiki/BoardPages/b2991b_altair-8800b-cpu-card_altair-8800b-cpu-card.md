@@ -1,4 +1,4 @@
-# 2991 altair-8800b-cpu-card
+# 2991. altair-8800b-cpu-card
 
 Board 2,991 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 28](../CorpusTestingPages/Corpus-Testing-28.md#2991-altair-8800b-cpu-card).
 
@@ -45,4 +45,4 @@ Board 2,991 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2990 CM4_MATX](b2990b_CM4-MATX_KiCad_CM4-MATX_2586.md) | [2992 altair-8800b-display-control-pcb](b2992b_altair-8800b-display-control-pcb_altair-8800b-display-control-pcb.md) |
+| [2990. CM4_MATX](b2990b_CM4-MATX_KiCad_CM4-MATX_2586.md) | [2992. altair-8800b-display-control-pcb](b2992b_altair-8800b-display-control-pcb_altair-8800b-display-control-pcb.md) |

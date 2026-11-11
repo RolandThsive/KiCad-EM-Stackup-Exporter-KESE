@@ -1,4 +1,4 @@
-# 381 antmicro-m2-oculink-adapter-hw
+# 381. antmicro-m2-oculink-adapter-hw
 
 Board 381 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 4](../CorpusTestingPages/Corpus-Testing-04.md#381-antmicro-m2-oculink-adapter-hw).
 
@@ -44,4 +44,4 @@ Board 381 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [380 lpddr5-testbed](b0380b_lpddr5-testbed_lpddr5-testbed.md) | [382 m2-pcie-adapter](b0382b_m2-pcie-adapter_m2-pcie-adapter.md) |
+| [380. lpddr5-testbed](b0380b_lpddr5-testbed_lpddr5-testbed.md) | [382. m2-pcie-adapter](b0382b_m2-pcie-adapter_m2-pcie-adapter.md) |

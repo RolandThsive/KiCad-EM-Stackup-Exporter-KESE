@@ -1,4 +1,4 @@
-# 2516 8HPTCUAdapter
+# 2516. 8HPTCUAdapter
 
 Board 2,516 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 24](../CorpusTestingPages/Corpus-Testing-24.md#2516-8hptcuadapter).
 
@@ -45,4 +45,4 @@ Board 2,516 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2515 wideband_controller](b2515b_rusefi-hardware_wideband-controller.md) | [2517 uaefi](b2517b_uaefi_uaefi.md) |
+| [2515. wideband_controller](b2515b_rusefi-hardware_wideband-controller.md) | [2517. uaefi](b2517b_uaefi_uaefi.md) |

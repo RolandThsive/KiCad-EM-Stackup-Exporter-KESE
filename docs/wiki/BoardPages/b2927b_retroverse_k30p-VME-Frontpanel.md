@@ -1,4 +1,4 @@
-# 2927 k30p-VME-Frontpanel
+# 2927. k30p-VME-Frontpanel
 
 Board 2,927 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 28](../CorpusTestingPages/Corpus-Testing-28.md#2927-k30p-vme-frontpanel).
 
@@ -46,4 +46,4 @@ Board 2,927 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2926 BigBoy.stretch_bkup](b2926b_retroverse_BigBoy-stretch-bkup.md) | [2928 k30p-VME](b2928b_retroverse_k30p-VME.md) |
+| [2926. BigBoy.stretch_bkup](b2926b_retroverse_BigBoy-stretch-bkup.md) | [2928. k30p-VME](b2928b_retroverse_k30p-VME.md) |

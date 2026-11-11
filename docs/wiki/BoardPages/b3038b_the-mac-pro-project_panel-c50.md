@@ -1,4 +1,4 @@
-# 3038 panel_c50
+# 3038. panel_c50
 
 Board 3,038 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 29](../CorpusTestingPages/Corpus-Testing-29.md#3038-panel_c50).
 
@@ -46,4 +46,4 @@ Board 3,038 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [3037 panel_a25](b3037b_the-mac-pro-project_panel-a25.md) | [3039 tdr_coupon_a25](b3039b_the-mac-pro-project_tdr-coupon-a25.md) |
+| [3037. panel_a25](b3037b_the-mac-pro-project_panel-a25.md) | [3039. tdr_coupon_a25](b3039b_the-mac-pro-project_tdr-coupon-a25.md) |

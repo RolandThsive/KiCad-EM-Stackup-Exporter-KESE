@@ -1,4 +1,4 @@
-# 956 left_io
+# 956. left_io
 
 Board 956 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 9](../CorpusTestingPages/Corpus-Testing-09.md#956-left_io).
 
@@ -45,4 +45,4 @@ Board 956 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [955 12_keyboard_daughterboard](b0955b_ducktop2_12-keyboard-daughterboard.md) | [957 radio_daughterboard](b0957b_ducktop2_radio-daughterboard.md) |
+| [955. 12_keyboard_daughterboard](b0955b_ducktop2_12-keyboard-daughterboard.md) | [957. radio_daughterboard](b0957b_ducktop2_radio-daughterboard.md) |

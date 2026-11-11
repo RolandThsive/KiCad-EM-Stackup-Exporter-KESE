@@ -1,4 +1,4 @@
-# 474 bnc-test
+# 474. bnc-test
 
 Board 474 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 5](../CorpusTestingPages/Corpus-Testing-05.md#474-bnc-test).
 
@@ -45,4 +45,4 @@ Board 474 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [473 attenuator-test](b0473b_starshipraider_attenuator-test.md) | [475 fixture-akl-pt2](b0475b_starshipraider_fixture-akl-pt2.md) |
+| [473. attenuator-test](b0473b_starshipraider_attenuator-test.md) | [475. fixture-akl-pt2](b0475b_starshipraider_fixture-akl-pt2.md) |

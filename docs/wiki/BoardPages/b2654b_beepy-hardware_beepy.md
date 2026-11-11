@@ -1,4 +1,4 @@
-# 2654 beepy
+# 2654. beepy
 
 Board 2,654 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 25](../CorpusTestingPages/Corpus-Testing-25.md#2654-beepy).
 
@@ -45,4 +45,4 @@ Board 2,654 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2653 hadbadge2019](b2653b_hadbadge2019-pcb_hadbadge2019.md) | [2655 Watchy](b2655b_watchy-hardware_Watchy.md) |
+| [2653. hadbadge2019](b2653b_hadbadge2019-pcb_hadbadge2019.md) | [2655. Watchy](b2655b_watchy-hardware_Watchy.md) |

@@ -1,4 +1,4 @@
-# 462 vna-amplifier
+# 462. vna-amplifier
 
 Board 462 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 5](../CorpusTestingPages/Corpus-Testing-05.md#462-vna-amplifier).
 
@@ -45,4 +45,4 @@ Board 462 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [461 tip](b0461b_starshipraider_tip.md) | [463 akl-ad4](b0463b_starshipraider_akl-ad4.md) |
+| [461. tip](b0461b_starshipraider_tip.md) | [463. akl-ad4](b0463b_starshipraider_akl-ad4.md) |

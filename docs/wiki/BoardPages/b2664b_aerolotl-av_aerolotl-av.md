@@ -1,4 +1,4 @@
-# 2664 aerolotl_av
+# 2664. aerolotl_av
 
 Board 2,664 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 25](../CorpusTestingPages/Corpus-Testing-25.md#2664-aerolotl_av).
 
@@ -44,4 +44,4 @@ Board 2,664 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2663 m5-pantilt](b2663b_stack-chan_m5-pantilt.md) | [2665 aerolotl](b2665b_aerolotl-kicad_aerolotl.md) |
+| [2663. m5-pantilt](b2663b_stack-chan_m5-pantilt.md) | [2665. aerolotl](b2665b_aerolotl-kicad_aerolotl.md) |

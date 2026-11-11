@@ -1,4 +1,4 @@
-# 1784 quantum_arcade_pcb
+# 1784. quantum_arcade_pcb
 
 Board 1,784 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 17](../CorpusTestingPages/Corpus-Testing-17.md#1784-quantum_arcade_pcb).
 
@@ -46,4 +46,4 @@ Board 1,784 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1783 ROM_To_2716](b1783b_asteroids-pcb_ROM-To-2716.md) | [1785 alu](b1785b_74cpu_alu.md) |
+| [1783. ROM_To_2716](b1783b_asteroids-pcb_ROM-To-2716.md) | [1785. alu](b1785b_74cpu_alu.md) |

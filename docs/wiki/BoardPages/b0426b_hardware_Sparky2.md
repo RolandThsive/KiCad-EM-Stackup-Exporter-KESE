@@ -1,4 +1,4 @@
-# 426 Sparky2
+# 426. Sparky2
 
 Board 426 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 4](../CorpusTestingPages/Corpus-Testing-04.md#426-sparky2).
 
@@ -45,4 +45,4 @@ Board 426 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [425 NxtPX4](b0425b_hardware_NxtPX4.md) | [427 motherboard-hk10](b0427b_motherboard-hk10_motherboard-hk10.md) |
+| [425. NxtPX4](b0425b_hardware_NxtPX4.md) | [427. motherboard-hk10](b0427b_motherboard-hk10_motherboard-hk10.md) |

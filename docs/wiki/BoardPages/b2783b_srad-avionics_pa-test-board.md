@@ -1,4 +1,4 @@
-# 2783 pa-test-board
+# 2783. pa-test-board
 
 Board 2,783 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 26](../CorpusTestingPages/Corpus-Testing-26.md#2783-pa-test-board).
 
@@ -45,4 +45,4 @@ Board 2,783 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2782 new-pa-test-board](b2782b_srad-avionics_new-pa-test-board.md) | [2784 power-delivery-board](b2784b_srad-avionics_power-delivery-board.md) |
+| [2782. new-pa-test-board](b2782b_srad-avionics_new-pa-test-board.md) | [2784. power-delivery-board](b2784b_srad-avionics_power-delivery-board.md) |

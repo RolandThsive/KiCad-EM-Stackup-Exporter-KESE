@@ -1,4 +1,4 @@
-# 494 coco2
+# 494. coco2
 
 Board 494 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 5](../CorpusTestingPages/Corpus-Testing-05.md#494-coco2).
 
@@ -45,4 +45,4 @@ Board 494 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [493 coco2](b0493b_bit-preserve_Tandy-RS-TRS-80-Color-Computer-Color-Computer-2-26-313xA-coco2_coco2.md) | [495 coco3](b0495b_bit-preserve_coco3.md) |
+| [493. coco2](b0493b_bit-preserve_Tandy-RS-TRS-80-Color-Computer-Color-Computer-2-26-313xA-coco2_coco2.md) | [495. coco3](b0495b_bit-preserve_coco3.md) |

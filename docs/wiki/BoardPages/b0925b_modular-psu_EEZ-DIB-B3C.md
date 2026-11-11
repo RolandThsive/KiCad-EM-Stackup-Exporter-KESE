@@ -1,4 +1,4 @@
-# 925 EEZ DIB B3C
+# 925. EEZ DIB B3C
 
 Board 925 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 9](../CorpusTestingPages/Corpus-Testing-09.md#925-eez-dib-b3c).
 
@@ -45,4 +45,4 @@ Board 925 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [924 EEZ DIB AUX-PS](b0924b_modular-psu_EEZ-DIB-AUX-PS.md) | [926 EEZ DIB MCU r1B1](b0926b_modular-psu_EEZ-DIB-MCU-r1B1.md) |
+| [924. EEZ DIB AUX-PS](b0924b_modular-psu_EEZ-DIB-AUX-PS.md) | [926. EEZ DIB MCU r1B1](b0926b_modular-psu_EEZ-DIB-MCU-r1B1.md) |

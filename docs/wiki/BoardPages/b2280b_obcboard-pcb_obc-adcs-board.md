@@ -1,4 +1,4 @@
-# 2280 obc-adcs-board
+# 2280. obc-adcs-board
 
 Board 2,280 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 22](../CorpusTestingPages/Corpus-Testing-22.md#2280-obc-adcs-board).
 
@@ -44,4 +44,4 @@ Board 2,280 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2279 pda6502v2](b2279b_pda6502v2_pda6502v2.md) | [2281 mc0020x](b2281b_cpc-schematics_mc0020x.md) |
+| [2279. pda6502v2](b2279b_pda6502v2_pda6502v2.md) | [2281. mc0020x](b2281b_cpc-schematics_mc0020x.md) |

@@ -1,4 +1,4 @@
-# 95 socket3-motherboard
+# 95. socket3-motherboard
 
 Board 95 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 1](../CorpusTestingPages/Corpus-Testing-01.md#95-socket3-motherboard).
 
@@ -46,4 +46,4 @@ Board 95 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page
 
 | Previous | Next |
 |:---|---:|
-| [94 socket3-csg324](b0094b_fpgamotherboard_socket3-csg324.md) | [96 socket370-ti180](b0096b_fpgamotherboard_socket370-fpga-ti180-hw_socket370-ti180.md) |
+| [94. socket3-csg324](b0094b_fpgamotherboard_socket3-csg324.md) | [96. socket370-ti180](b0096b_fpgamotherboard_socket370-fpga-ti180-hw_socket370-ti180.md) |

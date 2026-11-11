@@ -1,4 +1,4 @@
-# 834 ram-ddr5
+# 834. ram-ddr5
 
 Board 834 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 8](../CorpusTestingPages/Corpus-Testing-08.md#834-ram-ddr5).
 
@@ -45,4 +45,4 @@ Board 834 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [833 kaybee-plank](b0833b_BusPirate5-hardware_development-adapter-kaybee-plank-1REV1_kaybee-plank.md) | [835 ram-ddr5-1REV1](b0835b_BusPirate5-hardware_ram-ddr5-1REV1.md) |
+| [833. kaybee-plank](b0833b_BusPirate5-hardware_development-adapter-kaybee-plank-1REV1_kaybee-plank.md) | [835. ram-ddr5-1REV1](b0835b_BusPirate5-hardware_ram-ddr5-1REV1.md) |

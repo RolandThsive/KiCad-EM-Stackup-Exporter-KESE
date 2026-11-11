@@ -1,4 +1,4 @@
-# 610 usb_c_daughter
+# 610. usb_c_daughter
 
 Board 610 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 6](../CorpusTestingPages/Corpus-Testing-06.md#610-usb_c_daughter).
 
@@ -45,4 +45,4 @@ Board 610 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [609 SPIBreakout](b0609b_bjr-kicad_SPIBreakout.md) | [611 wsg3.0](b0611b_bjr-kicad_wsg3-0.md) |
+| [609. SPIBreakout](b0609b_bjr-kicad_SPIBreakout.md) | [611. wsg3.0](b0611b_bjr-kicad_wsg3-0.md) |

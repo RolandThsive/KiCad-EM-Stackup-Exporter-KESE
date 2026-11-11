@@ -1,4 +1,4 @@
-# 1009 vera-module-rev2
+# 1009. vera-module-rev2
 
 Board 1,009 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 10](../CorpusTestingPages/Corpus-Testing-10.md#1009-vera-module-rev2).
 
@@ -45,4 +45,4 @@ Board 1,009 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1008 LX783](b1008b_NE-Delta-Schematics_LX783.md) | [1010 vera-module-rev3](b1010b_vera-module_vera-module-rev3.md) |
+| [1008. LX783](b1008b_NE-Delta-Schematics_LX783.md) | [1010. vera-module-rev3](b1010b_vera-module_vera-module-rev3.md) |

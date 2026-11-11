@@ -1,4 +1,4 @@
-# 1306 Assembly_View
+# 1306. Assembly_View
 
 Board 1,306 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 13](../CorpusTestingPages/Corpus-Testing-13.md#1306-assembly_view).
 
@@ -46,4 +46,4 @@ Board 1,306 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1305 Right_M2_Upstream](b1305b_pcie-switch-2_outputs-PCIe-3board-RevI-Right-M2-Upstream_Right-M2-Upstream.md) | [1307 Left_2M2_Vertical](b1307b_pcie-switch-2_outputs-PCIe-3board-RevJ-Left-2M2-Vertical_Left-2M2-Vertical.md) |
+| [1305. Right_M2_Upstream](b1305b_pcie-switch-2_outputs-PCIe-3board-RevI-Right-M2-Upstream_Right-M2-Upstream.md) | [1307. Left_2M2_Vertical](b1307b_pcie-switch-2_outputs-PCIe-3board-RevJ-Left-2M2-Vertical_Left-2M2-Vertical.md) |

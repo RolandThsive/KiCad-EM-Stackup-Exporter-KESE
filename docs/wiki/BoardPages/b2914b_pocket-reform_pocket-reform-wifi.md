@@ -1,4 +1,4 @@
-# 2914 pocket-reform-wifi
+# 2914. pocket-reform-wifi
 
 Board 2,914 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 27](../CorpusTestingPages/Corpus-Testing-27.md#2914-pocket-reform-wifi).
 
@@ -45,4 +45,4 @@ Board 2,914 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2913 nref-wifi-m2](b2913b_pocket-reform_nref-wifi-m2.md) | [2915 pods_panel](b2915b_RAMN_pods-panel.md) |
+| [2913. nref-wifi-m2](b2913b_pocket-reform_nref-wifi-m2.md) | [2915. pods_panel](b2915b_RAMN_pods-panel.md) |

@@ -1,4 +1,4 @@
-# 428 ICE40HXDevBoardHDMI
+# 428. ICE40HXDevBoardHDMI
 
 Board 428 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 4](../CorpusTestingPages/Corpus-Testing-04.md#428-ice40hxdevboardhdmi).
 
@@ -45,4 +45,4 @@ Board 428 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [427 motherboard-hk10](b0427b_motherboard-hk10_motherboard-hk10.md) | [429 ICE40HXDevBoardVGA](b0429b_ICE40HXDevBoard_ICE40HXDevBoardVGA.md) |
+| [427. motherboard-hk10](b0427b_motherboard-hk10_motherboard-hk10.md) | [429. ICE40HXDevBoardVGA](b0429b_ICE40HXDevBoard_ICE40HXDevBoardVGA.md) |

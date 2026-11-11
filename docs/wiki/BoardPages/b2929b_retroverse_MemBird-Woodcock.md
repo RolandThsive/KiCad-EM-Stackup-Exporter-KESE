@@ -1,4 +1,4 @@
-# 2929 MemBird - Woodcock
+# 2929. MemBird - Woodcock
 
 Board 2,929 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 28](../CorpusTestingPages/Corpus-Testing-28.md#2929-membird---woodcock).
 
@@ -45,4 +45,4 @@ Board 2,929 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2928 k30p-VME](b2928b_retroverse_k30p-VME.md) | [2930 SystemBoardPLCC](b2930b_retroverse_SystemBoardPLCC.md) |
+| [2928. k30p-VME](b2928b_retroverse_k30p-VME.md) | [2930. SystemBoardPLCC](b2930b_retroverse_SystemBoardPLCC.md) |

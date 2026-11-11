@@ -1,4 +1,4 @@
-# 657 MegaCD
+# 657. MegaCD
 
 Board 657 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 7](../CorpusTestingPages/Corpus-Testing-07.md#657-megacd).
 
@@ -45,4 +45,4 @@ Board 657 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [656 MegaCD](b0656b_MegaCD-Main-BD_MegaCD-837-8015-Rev0-MCE1_MegaCD.md) | [658 MegaCD](b0658b_MegaCD-Main-BD_RAM-Adapter-837-8015-01_MegaCD.md) |
+| [656. MegaCD](b0656b_MegaCD-Main-BD_MegaCD-837-8015-Rev0-MCE1_MegaCD.md) | [658. MegaCD](b0658b_MegaCD-Main-BD_RAM-Adapter-837-8015-01_MegaCD.md) |

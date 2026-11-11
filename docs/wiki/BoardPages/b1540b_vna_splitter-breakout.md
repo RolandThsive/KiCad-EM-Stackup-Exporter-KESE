@@ -1,4 +1,4 @@
-# 1540 splitter_breakout
+# 1540. splitter_breakout
 
 Board 1,540 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 15](../CorpusTestingPages/Corpus-Testing-15.md#1540-splitter_breakout).
 
@@ -45,4 +45,4 @@ Board 1,540 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1539 sot89_amp_test](b1539b_vna_sot89-amp-test.md) | [1541 siw](b1541b_vna_breakouts-sw-edge-fr408-oshpark-lpf-20ghz_siw.md) |
+| [1539. sot89_amp_test](b1539b_vna_sot89-amp-test.md) | [1541. siw](b1541b_vna_breakouts-sw-edge-fr408-oshpark-lpf-20ghz_siw.md) |

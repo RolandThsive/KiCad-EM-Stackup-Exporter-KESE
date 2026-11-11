@@ -1,4 +1,4 @@
-# 1676 adapter
+# 1676. adapter
 
 Board 1,676 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 16](../CorpusTestingPages/Corpus-Testing-16.md#1676-adapter).
 
@@ -45,4 +45,4 @@ Board 1,676 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1675 adapter](b1675b_Glider_pcb-50p-adapter-b_adapter.md) | [1677 pcb](b1677b_Glider_pcb.md) |
+| [1675. adapter](b1675b_Glider_pcb-50p-adapter-b_adapter.md) | [1677. pcb](b1677b_Glider_pcb.md) |

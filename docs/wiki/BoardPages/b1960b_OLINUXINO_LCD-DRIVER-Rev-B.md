@@ -1,4 +1,4 @@
-# 1960 LCD-DRIVER_Rev_B
+# 1960. LCD-DRIVER_Rev_B
 
 Board 1,960 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 19](../CorpusTestingPages/Corpus-Testing-19.md#1960-lcd-driver_rev_b).
 
@@ -45,4 +45,4 @@ Board 1,960 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1959 A64-OlinuXino_Rev_G1](b1959b_OLINUXINO_A64-OlinuXino-Rev-G1.md) | [1961 LCD-DRIVER_Rev_C](b1961b_OLINUXINO_LCD-DRIVER-Rev-C.md) |
+| [1959. A64-OlinuXino_Rev_G1](b1959b_OLINUXINO_A64-OlinuXino-Rev-G1.md) | [1961. LCD-DRIVER_Rev_C](b1961b_OLINUXINO_LCD-DRIVER-Rev-C.md) |

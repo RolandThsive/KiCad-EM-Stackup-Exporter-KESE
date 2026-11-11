@@ -1,4 +1,4 @@
-# 2518 sd2snes_ecp5
+# 2518. sd2snes_ecp5
 
 Board 2,518 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 24](../CorpusTestingPages/Corpus-Testing-24.md#2518-sd2snes_ecp5).
 
@@ -44,4 +44,4 @@ Board 2,518 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2517 uaefi](b2517b_uaefi_uaefi.md) | [2519 tv070hat](b2519b_tv070wxm-hat_tv070hat.md) |
+| [2517. uaefi](b2517b_uaefi_uaefi.md) | [2519. tv070hat](b2519b_tv070wxm-hat_tv070hat.md) |

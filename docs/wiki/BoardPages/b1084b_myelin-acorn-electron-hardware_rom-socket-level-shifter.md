@@ -1,4 +1,4 @@
-# 1084 rom_socket_level_shifter
+# 1084. rom_socket_level_shifter
 
 Board 1,084 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 11](../CorpusTestingPages/Corpus-Testing-11.md#1084-rom_socket_level_shifter).
 
@@ -45,4 +45,4 @@ Board 1,084 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1083 post_box_usb](b1083b_myelin-acorn-electron-hardware_post-box-usb.md) | [1085 bbc_1mhz_serial_sd](b1085b_myelin-acorn-electron-hardware_bbc-1mhz-serial-sd.md) |
+| [1083. post_box_usb](b1083b_myelin-acorn-electron-hardware_post-box-usb.md) | [1085. bbc_1mhz_serial_sd](b1085b_myelin-acorn-electron-hardware_bbc-1mhz-serial-sd.md) |

@@ -1,4 +1,4 @@
-# 2686 reaction_wheel
+# 2686. reaction_wheel
 
 Board 2,686 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 25](../CorpusTestingPages/Corpus-Testing-25.md#2686-reaction_wheel).
 
@@ -45,4 +45,4 @@ Board 2,686 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2685 Pete_2400_Mini](b2685b_samwise-avionics_Pete-2400-Mini.md) | [2687 solar_charger](b2687b_samwise-avionics_solar-charger.md) |
+| [2685. Pete_2400_Mini](b2685b_samwise-avionics_Pete-2400-Mini.md) | [2687. solar_charger](b2687b_samwise-avionics_solar-charger.md) |

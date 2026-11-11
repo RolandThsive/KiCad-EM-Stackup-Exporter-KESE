@@ -1,4 +1,4 @@
-# 2367 to220_powerstage
+# 2367. to220_powerstage
 
 Board 2,367 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 22](../CorpusTestingPages/Corpus-Testing-22.md#2367-to220_powerstage).
 
@@ -45,4 +45,4 @@ Board 2,367 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2366 stmsp](b2366b_stmbl_stmsp.md) | [2368 trollerv2](b2368b_stmbl_trollerv2.md) |
+| [2366. stmsp](b2366b_stmbl_stmsp.md) | [2368. trollerv2](b2368b_stmbl_trollerv2.md) |

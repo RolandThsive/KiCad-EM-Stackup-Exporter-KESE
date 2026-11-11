@@ -1,4 +1,4 @@
-# 877 Duex5
+# 877. Duex5
 
 Board 877 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 9](../CorpusTestingPages/Corpus-Testing-09.md#877-duex5).
 
@@ -45,4 +45,4 @@ Board 877 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [876 DuetEthernet](b0876b_Duet-2-Hardware_DuetEthernet.md) | [878 Duex5](b0878b_Duet-2-Hardware_Duet-Expansion-Duex5v0-7_Duex5.md) |
+| [876. DuetEthernet](b0876b_Duet-2-Hardware_DuetEthernet.md) | [878. Duex5](b0878b_Duet-2-Hardware_Duet-Expansion-Duex5v0-7_Duex5.md) |

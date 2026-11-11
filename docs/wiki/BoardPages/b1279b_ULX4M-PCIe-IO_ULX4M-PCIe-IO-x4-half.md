@@ -1,4 +1,4 @@
-# 1279 ULX4M-PCIe-IO_x4_half
+# 1279. ULX4M-PCIe-IO_x4_half
 
 Board 1,279 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 12](../CorpusTestingPages/Corpus-Testing-12.md#1279-ulx4m-pcie-io_x4_half).
 
@@ -45,4 +45,4 @@ Board 1,279 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1278 ulx4m_panel](b1278b_ULX4M-LS_ulx4m-panel.md) | [1280 ULX4M_GPDI](b1280b_ULX4M-documents_ULX4M-GPDI.md) |
+| [1278. ulx4m_panel](b1278b_ULX4M-LS_ulx4m-panel.md) | [1280. ULX4M_GPDI](b1280b_ULX4M-documents_ULX4M-GPDI.md) |

@@ -1,4 +1,4 @@
-# 1968 OSHW-GHOST_Rev_A
+# 1968. OSHW-GHOST_Rev_A
 
 Board 1,968 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 19](../CorpusTestingPages/Corpus-Testing-19.md#1968-oshw-ghost_rev_a).
 
@@ -45,4 +45,4 @@ Board 1,968 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1967 STMP157-OLinuXino-LIME2_Rev_B1](b1967b_OLINUXINO_STMP157-OLinuXino-LIME2-Rev-B1.md) | [1969 PICO-EVB_Rev_A](b1969b_PICO-EVB_PICO-EVB-Rev-A.md) |
+| [1967. STMP157-OLinuXino-LIME2_Rev_B1](b1967b_OLINUXINO_STMP157-OLinuXino-LIME2-Rev-B1.md) | [1969. PICO-EVB_Rev_A](b1969b_PICO-EVB_PICO-EVB-Rev-A.md) |

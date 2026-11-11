@@ -1,4 +1,4 @@
-# 3134 6p_separator
+# 3134. 6p_separator
 
 Board 3,134 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 30](../CorpusTestingPages/Corpus-Testing-30.md#3134-6p_separator).
 
@@ -44,4 +44,4 @@ Board 3,134 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [3133 18650_pcb](b3133b_ZeroPhone-PCBs_18650-pcb.md) | [3135 back_pcb](b3135b_ZeroPhone-PCBs_back-pcb.md) |
+| [3133. 18650_pcb](b3133b_ZeroPhone-PCBs_18650-pcb.md) | [3135. back_pcb](b3135b_ZeroPhone-PCBs_back-pcb.md) |

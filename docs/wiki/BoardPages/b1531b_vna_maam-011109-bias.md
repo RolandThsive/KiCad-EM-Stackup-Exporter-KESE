@@ -1,4 +1,4 @@
-# 1531 maam_011109_bias
+# 1531. maam_011109_bias
 
 Board 1,531 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 15](../CorpusTestingPages/Corpus-Testing-15.md#1531-maam_011109_bias).
 
@@ -45,4 +45,4 @@ Board 1,531 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1530 maam_011109](b1530b_vna_maam-011109.md) | [1532 mixer_breakout](b1532b_vna_mixer-breakout.md) |
+| [1530. maam_011109](b1530b_vna_maam-011109.md) | [1532. mixer_breakout](b1532b_vna_mixer-breakout.md) |

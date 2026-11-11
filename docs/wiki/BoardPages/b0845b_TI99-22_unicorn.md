@@ -1,4 +1,4 @@
-# 845 unicorn
+# 845. unicorn
 
 Board 845 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 8](../CorpusTestingPages/Corpus-Testing-08.md#845-unicorn).
 
@@ -45,4 +45,4 @@ Board 845 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [844 Console](b0844b_TI99-22_Console.md) | [846 vic2020keyboard](b0846b_vic2020_vic2020keyboard.md) |
+| [844. Console](b0844b_TI99-22_Console.md) | [846. vic2020keyboard](b0846b_vic2020_vic2020keyboard.md) |

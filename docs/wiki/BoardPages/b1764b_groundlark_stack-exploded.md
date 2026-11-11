@@ -1,4 +1,4 @@
-# 1764 stack-exploded
+# 1764. stack-exploded
 
 Board 1,764 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 17](../CorpusTestingPages/Corpus-Testing-17.md#1764-stack-exploded).
 
@@ -45,4 +45,4 @@ Board 1,764 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1763 pi-trenz-stack-concept](b1763b_groundlark_pi-trenz-stack-concept.md) | [1765 stack-service-envelopes](b1765b_groundlark_stack-service-envelopes.md) |
+| [1763. pi-trenz-stack-concept](b1763b_groundlark_pi-trenz-stack-concept.md) | [1765. stack-service-envelopes](b1765b_groundlark_stack-service-envelopes.md) |

@@ -1,4 +1,4 @@
-# 1379 VNA
+# 1379. VNA
 
 Board 1,379 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 13](../CorpusTestingPages/Corpus-Testing-13.md#1379-vna).
 
@@ -45,4 +45,4 @@ Board 1,379 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1378 LibreCAL](b1378b_LibreCAL_LibreCAL.md) | [1380 2000ATX](b1380b_Amiga-2000-EATX_2000ATX.md) |
+| [1378. LibreCAL](b1378b_LibreCAL_LibreCAL.md) | [1380. 2000ATX](b1380b_Amiga-2000-EATX_2000ATX.md) |

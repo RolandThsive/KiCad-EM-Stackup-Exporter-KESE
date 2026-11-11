@@ -1,4 +1,4 @@
-# 2723 curr-amp
+# 2723. curr-amp
 
 Board 2,723 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 26](../CorpusTestingPages/Corpus-Testing-26.md#2723-curr-amp).
 
@@ -45,4 +45,4 @@ Board 2,723 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2722 can-repeater](b2722b_pcb_can-repeater.md) | [2724 Dash-PCB](b2724b_pcb_Dash-PCB.md) |
+| [2722. can-repeater](b2722b_pcb_can-repeater.md) | [2724. Dash-PCB](b2724b_pcb_Dash-PCB.md) |

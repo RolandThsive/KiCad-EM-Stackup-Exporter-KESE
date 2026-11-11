@@ -1,4 +1,4 @@
-# 2429 hellen1-uaefi
+# 2429. hellen1-uaefi
 
 Board 2,429 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 23](../CorpusTestingPages/Corpus-Testing-23.md#2429-hellen1-uaefi).
 
@@ -45,4 +45,4 @@ Board 2,429 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2428 hellen1-motor-driver](b2428b_hellen-one_hellen1-motor-driver.md) | [2430 hellen1-vr-discrete](b2430b_hellen-one_hellen1-vr-discrete.md) |
+| [2428. hellen1-motor-driver](b2428b_hellen-one_hellen1-motor-driver.md) | [2430. hellen1-vr-discrete](b2430b_hellen-one_hellen1-vr-discrete.md) |

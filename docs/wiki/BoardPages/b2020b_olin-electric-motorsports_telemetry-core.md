@@ -1,4 +1,4 @@
-# 2020 telemetry_core
+# 2020. telemetry_core
 
 Board 2,020 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 19](../CorpusTestingPages/Corpus-Testing-19.md#2020-telemetry_core).
 
@@ -45,4 +45,4 @@ Board 2,020 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2019 imu](b2019b_olin-electric-motorsports_projects-telemetry-imu_imu.md) | [2021 bms_core](b2021b_olin-electric-motorsports_vehicle-gokart-hardware-bms-core_bms-core.md) |
+| [2019. imu](b2019b_olin-electric-motorsports_projects-telemetry-imu_imu.md) | [2021. bms_core](b2021b_olin-electric-motorsports_vehicle-gokart-hardware-bms-core_bms-core.md) |

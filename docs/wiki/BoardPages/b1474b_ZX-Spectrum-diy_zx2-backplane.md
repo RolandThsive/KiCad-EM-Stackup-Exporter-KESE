@@ -1,4 +1,4 @@
-# 1474 zx2_backplane
+# 1474. zx2_backplane
 
 Board 1,474 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 14](../CorpusTestingPages/Corpus-Testing-14.md#1474-zx2_backplane).
 
@@ -45,4 +45,4 @@ Board 1,474 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1473 z2_io_test02](b1473b_ZX-Spectrum-diy_z2-io-test02.md) | [1475 zx2_clock](b1475b_ZX-Spectrum-diy_zx2-clock.md) |
+| [1473. z2_io_test02](b1473b_ZX-Spectrum-diy_z2-io-test02.md) | [1475. zx2_clock](b1475b_ZX-Spectrum-diy_zx2-clock.md) |

@@ -1,4 +1,4 @@
-# 1517 attenuator
+# 1517. attenuator
 
 Board 1,517 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 15](../CorpusTestingPages/Corpus-Testing-15.md#1517-attenuator).
 
@@ -45,4 +45,4 @@ Board 1,517 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1516 amp_macom_vga](b1516b_vna_amp-macom-vga.md) | [1518 balun](b1518b_vna_balun.md) |
+| [1516. amp_macom_vga](b1516b_vna_amp-macom-vga.md) | [1518. balun](b1518b_vna_balun.md) |

@@ -1,4 +1,4 @@
-# 1165 esp32s2-lepton
+# 1165. esp32s2-lepton
 
 Board 1,165 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 11](../CorpusTestingPages/Corpus-Testing-11.md#1165-esp32s2-lepton).
 
@@ -45,4 +45,4 @@ Board 1,165 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1164 esp32s2-co2-monitor](b1164b_advent-calendar-of-circuits-2020_esp32s2-co2-monitor.md) | [1166 gpdi-serdes](b1166b_advent-calendar-of-circuits-2020_gpdi-serdes.md) |
+| [1164. esp32s2-co2-monitor](b1164b_advent-calendar-of-circuits-2020_esp32s2-co2-monitor.md) | [1166. gpdi-serdes](b1166b_advent-calendar-of-circuits-2020_gpdi-serdes.md) |

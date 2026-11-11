@@ -1,4 +1,4 @@
-# 295 Signal Protection
+# 295. Signal Protection
 
 Board 295 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 3](../CorpusTestingPages/Corpus-Testing-03.md#295-signal-protection).
 
@@ -45,4 +45,4 @@ Board 295 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [294 SDRAM](b0294b_658-Computer_SDRAM.md) | [296 EPM570 Programmer](b0296b_658-Computer_EPM570-Programmer.md) |
+| [294. SDRAM](b0294b_658-Computer_SDRAM.md) | [296. EPM570 Programmer](b0296b_658-Computer_EPM570-Programmer.md) |

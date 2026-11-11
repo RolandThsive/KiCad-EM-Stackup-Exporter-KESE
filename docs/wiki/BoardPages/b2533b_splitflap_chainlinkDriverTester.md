@@ -1,4 +1,4 @@
-# 2533 chainlinkDriverTester
+# 2533. chainlinkDriverTester
 
 Board 2,533 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 24](../CorpusTestingPages/Corpus-Testing-24.md#2533-chainlinkdrivertester).
 
@@ -45,4 +45,4 @@ Board 2,533 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2532 chainlinkDriver](b2532b_splitflap_chainlinkDriver.md) | [2534 sensor](b2534b_splitflap_sensor.md) |
+| [2532. chainlinkDriver](b2532b_splitflap_chainlinkDriver.md) | [2534. sensor](b2534b_splitflap_sensor.md) |

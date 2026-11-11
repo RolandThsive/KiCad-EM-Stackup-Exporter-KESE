@@ -1,4 +1,4 @@
-# 2561 Frontend_test
+# 2561. Frontend_test
 
 Board 2,561 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 24](../CorpusTestingPages/Corpus-Testing-24.md#2561-frontend_test).
 
@@ -45,4 +45,4 @@ Board 2,561 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2560 mainboard](b2560b_mainboard-hardware_revC-fm_mainboard.md) | [2562 SingularitySurfer_V1](b2562b_SingularitySurfer-FPGA-Lock-In-Amplifier_SingularitySurfer-V1.md) |
+| [2560. mainboard](b2560b_mainboard-hardware_revC-fm_mainboard.md) | [2562. SingularitySurfer_V1](b2562b_SingularitySurfer-FPGA-Lock-In-Amplifier_SingularitySurfer-V1.md) |

@@ -1,4 +1,4 @@
-# 1399 cm4-carrier-net
+# 1399. cm4-carrier-net
 
 Board 1,399 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 13](../CorpusTestingPages/Corpus-Testing-13.md#1399-cm4-carrier-net).
 
@@ -45,4 +45,4 @@ Board 1,399 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1398 Dragon32](b1398b_Dragon32Rev3_Dragon32.md) | [1400 cm4-carrier-template](b1400b_cm4-carriers_cm4-carrier-template.md) |
+| [1398. Dragon32](b1398b_Dragon32Rev3_Dragon32.md) | [1400. cm4-carrier-template](b1400b_cm4-carriers_cm4-carrier-template.md) |

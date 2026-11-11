@@ -1,4 +1,4 @@
-# 2946 ExtraBoard-Plate
+# 2946. ExtraBoard-Plate
 
 Board 2,946 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 28](../CorpusTestingPages/Corpus-Testing-28.md#2946-extraboard-plate).
 
@@ -45,4 +45,4 @@ Board 2,946 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2945 ExtraBoard-Base](b2945b_keyboards_ExtraBoard-Base.md) | [2947 ghoul](b2947b_keyboards_ghoul.md) |
+| [2945. ExtraBoard-Base](b2945b_keyboards_ExtraBoard-Base.md) | [2947. ghoul](b2947b_keyboards_ghoul.md) |

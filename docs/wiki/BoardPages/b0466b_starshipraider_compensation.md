@@ -1,4 +1,4 @@
-# 466 compensation
+# 466. compensation
 
 Board 466 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 5](../CorpusTestingPages/Corpus-Testing-05.md#466-compensation).
 
@@ -45,4 +45,4 @@ Board 466 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [465 akl-pd1](b0465b_starshipraider_akl-pd1.md) | [467 head](b0467b_starshipraider_head.md) |
+| [465. akl-pd1](b0465b_starshipraider_akl-pd1.md) | [467. head](b0467b_starshipraider_head.md) |

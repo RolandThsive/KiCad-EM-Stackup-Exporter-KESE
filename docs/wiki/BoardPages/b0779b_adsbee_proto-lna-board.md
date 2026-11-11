@@ -1,4 +1,4 @@
-# 779 proto_lna_board
+# 779. proto_lna_board
 
 Board 779 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 8](../CorpusTestingPages/Corpus-Testing-08.md#779-proto_lna_board).
 
@@ -45,4 +45,4 @@ Board 779 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [778 proto_data_slicer_board](b0778b_adsbee_proto-data-slicer-board.md) | [780 proto_tracking_comparator_board](b0780b_adsbee_proto-tracking-comparator-board.md) |
+| [778. proto_data_slicer_board](b0778b_adsbee_proto-data-slicer-board.md) | [780. proto_tracking_comparator_board](b0780b_adsbee_proto-tracking-comparator-board.md) |

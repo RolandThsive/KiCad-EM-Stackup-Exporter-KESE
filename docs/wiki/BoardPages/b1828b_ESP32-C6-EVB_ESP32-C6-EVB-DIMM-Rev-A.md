@@ -1,4 +1,4 @@
-# 1828 ESP32-C6-EVB_DIMM_Rev_A
+# 1828. ESP32-C6-EVB_DIMM_Rev_A
 
 Board 1,828 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 17](../CorpusTestingPages/Corpus-Testing-17.md#1828-esp32-c6-evb_dimm_rev_a).
 
@@ -45,4 +45,4 @@ Board 1,828 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1827 ESP32-C6-DevKit-Lipo_Rev_A](b1827b_ESP32-C6-DevKit-Lipo_ESP32-C6-DevKit-Lipo-Rev-A.md) | [1829 ESP32-C6-EVB_Rev_A](b1829b_ESP32-C6-EVB_ESP32-C6-EVB-Rev-A.md) |
+| [1827. ESP32-C6-DevKit-Lipo_Rev_A](b1827b_ESP32-C6-DevKit-Lipo_ESP32-C6-DevKit-Lipo-Rev-A.md) | [1829. ESP32-C6-EVB_Rev_A](b1829b_ESP32-C6-EVB_ESP32-C6-EVB-Rev-A.md) |

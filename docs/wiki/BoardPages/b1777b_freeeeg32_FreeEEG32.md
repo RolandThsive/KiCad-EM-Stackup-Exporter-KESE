@@ -1,4 +1,4 @@
-# 1777 FreeEEG32
+# 1777. FreeEEG32
 
 Board 1,777 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 17](../CorpusTestingPages/Corpus-Testing-17.md#1777-freeeeg32).
 
@@ -45,4 +45,4 @@ Board 1,777 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1776 ethersweep](b1776b_ethersweep_electronic-design-production-ethersweep405_ethersweep.md) | [1778 tmp](b1778b_freeeeg32_tmp.md) |
+| [1776. ethersweep](b1776b_ethersweep_electronic-design-production-ethersweep405_ethersweep.md) | [1778. tmp](b1778b_freeeeg32_tmp.md) |

@@ -1,4 +1,4 @@
-# 2003 Ultra_Sound_Levitation_Rev_B
+# 2003. Ultra_Sound_Levitation_Rev_B
 
 Board 2,003 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 19](../CorpusTestingPages/Corpus-Testing-19.md#2003-ultra_sound_levitation_rev_b).
 
@@ -45,4 +45,4 @@ Board 2,003 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2002 mod-oled-128x64](b2002b_UEXT-MODULES_mod-oled-128x64.md) | [2004 URC_revB](b2004b_URC_URC-revB.md) |
+| [2002. mod-oled-128x64](b2002b_UEXT-MODULES_mod-oled-128x64.md) | [2004. URC_revB](b2004b_URC_URC-revB.md) |

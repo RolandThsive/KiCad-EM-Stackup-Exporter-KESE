@@ -1,4 +1,4 @@
-# 1273 ulx4m-panel
+# 1273. ulx4m-panel
 
 Board 1,273 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 12](../CorpusTestingPages/Corpus-Testing-12.md#1273-ulx4m-panel).
 
@@ -46,4 +46,4 @@ Board 1,273 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1272 mono_addon](b1272b_mono-addon_mono-addon.md) | [1274 ulx4m](b1274b_ULX4M_plot-panel_ulx4m.md) |
+| [1272. mono_addon](b1272b_mono-addon_mono-addon.md) | [1274. ulx4m](b1274b_ULX4M_plot-panel_ulx4m.md) |

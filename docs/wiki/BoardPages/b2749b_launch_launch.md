@@ -1,4 +1,4 @@
-# 2749 launch
+# 2749. launch
 
 Board 2,749 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 26](../CorpusTestingPages/Corpus-Testing-26.md#2749-launch).
 
@@ -45,4 +45,4 @@ Board 2,749 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2748 launch-lite](b2748b_launch_launch-lite.md) | [2750 nebula-io](b2750b_thelio-io-hardware_nebula-io.md) |
+| [2748. launch-lite](b2748b_launch_launch-lite.md) | [2750. nebula-io](b2750b_thelio-io-hardware_nebula-io.md) |

@@ -1,4 +1,4 @@
-# 2053 cooling-board
+# 2053. cooling-board
 
 Board 2,053 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 20](../CorpusTestingPages/Corpus-Testing-20.md#2053-cooling-board).
 
@@ -45,4 +45,4 @@ Board 2,053 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2052 J1772_V2](b2052b_olin-electric-motorsports_J1772-V2.md) | [2054 imu](b2054b_olin-electric-motorsports_vehicle-mkvi-hardware-imu_imu.md) |
+| [2052. J1772_V2](b2052b_olin-electric-motorsports_J1772-V2.md) | [2054. imu](b2054b_olin-electric-motorsports_vehicle-mkvi-hardware-imu_imu.md) |

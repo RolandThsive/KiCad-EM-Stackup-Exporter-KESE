@@ -1,4 +1,4 @@
-# 663 Neptune-Region-Fix
+# 663. Neptune-Region-Fix
 
 Board 663 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 7](../CorpusTestingPages/Corpus-Testing-07.md#663-neptune-region-fix).
 
@@ -46,4 +46,4 @@ Board 663 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [662 Neptune-32x-315-5818-bypass](b0662b_Neptune_Neptune-32x-315-5818-bypass.md) | [664 Neptune](b0664b_Neptune_Neptune.md) |
+| [662. Neptune-32x-315-5818-bypass](b0662b_Neptune_Neptune-32x-315-5818-bypass.md) | [664. Neptune](b0664b_Neptune_Neptune.md) |

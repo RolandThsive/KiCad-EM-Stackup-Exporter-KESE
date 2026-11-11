@@ -1,4 +1,4 @@
-# 625 Lynx-Keyboard
+# 625. Lynx-Keyboard
 
 Board 625 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 6](../CorpusTestingPages/Corpus-Testing-06.md#625-lynx-keyboard).
 
@@ -45,4 +45,4 @@ Board 625 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [624 lynx128](b0624b_Camputers-Lynx_Lynx-128-Kicad_lynx128.md) | [626 Lynx-MK1-MEM](b0626b_Camputers-Lynx_Lynx-96-Expansions-Lynx-MK1-MEM-Original-Kicad_Lynx-MK1-MEM.md) |
+| [624. lynx128](b0624b_Camputers-Lynx_Lynx-128-Kicad_lynx128.md) | [626. Lynx-MK1-MEM](b0626b_Camputers-Lynx_Lynx-96-Expansions-Lynx-MK1-MEM-Original-Kicad_Lynx-MK1-MEM.md) |

@@ -1,4 +1,4 @@
-# 522 gd VGC proto pcb
+# 522. gd VGC proto pcb
 
 Board 522 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 5](../CorpusTestingPages/Corpus-Testing-05.md#522-gd-vgc-proto-pcb).
 
@@ -46,4 +46,4 @@ Board 522 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [521 gd MegaII proto pcb](b0521b_Mega-IIe_kicad-files-rev1-gd-MegaII-proto-pcb_gd-MegaII-proto-pcb.md) | [523 MegaII Breakout](b0523b_Mega-IIe_kicad-files-rev1-MegaII-Breakout_MegaII-Breakout.md) |
+| [521. gd MegaII proto pcb](b0521b_Mega-IIe_kicad-files-rev1-gd-MegaII-proto-pcb_gd-MegaII-proto-pcb.md) | [523. MegaII Breakout](b0523b_Mega-IIe_kicad-files-rev1-MegaII-Breakout_MegaII-Breakout.md) |

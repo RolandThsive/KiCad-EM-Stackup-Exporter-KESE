@@ -1,4 +1,4 @@
-# 1136 quad-balun-directional-coupler
+# 1136. quad-balun-directional-coupler
 
 Board 1,136 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 11](../CorpusTestingPages/Corpus-Testing-11.md#1136-quad-balun-directional-coupler).
 
@@ -45,4 +45,4 @@ Board 1,136 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1135 pmos-or](b1135b_misc_pmos-or.md) | [1137 rf-amps](b1137b_misc_rf-amps.md) |
+| [1135. pmos-or](b1135b_misc_pmos-or.md) | [1137. rf-amps](b1137b_misc_rf-amps.md) |

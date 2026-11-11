@@ -1,4 +1,4 @@
-# 2597 hl2-back-horiz
+# 2597. hl2-back-horiz
 
 Board 2,597 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 25](../CorpusTestingPages/Corpus-Testing-25.md#2597-hl2-back-horiz).
 
@@ -46,4 +46,4 @@ Board 2,597 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2596 smallio](b2596b_Hermes-Lite2_smallio.md) | [2598 hl2-back-vert](b2598b_Hermes-Lite2_hl2-back-vert.md) |
+| [2596. smallio](b2596b_Hermes-Lite2_smallio.md) | [2598. hl2-back-vert](b2598b_Hermes-Lite2_hl2-back-vert.md) |

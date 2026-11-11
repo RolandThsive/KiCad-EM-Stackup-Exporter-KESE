@@ -1,4 +1,4 @@
-# 569 Marble
+# 569. Marble
 
 Board 569 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 6](../CorpusTestingPages/Corpus-Testing-06.md#569-marble).
 
@@ -46,4 +46,4 @@ Board 569 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [568 TMP117_section_5cm](b0568b_DxP-sensor-probes_TMP117-section-5cm.md) | [570 AMC_FMC_Carrier-PcbDoc](b0570b_Marble-Mini_AMC-FMC-Carrier-PcbDoc.md) |
+| [568. TMP117_section_5cm](b0568b_DxP-sensor-probes_TMP117-section-5cm.md) | [570. AMC_FMC_Carrier-PcbDoc](b0570b_Marble-Mini_AMC-FMC-Carrier-PcbDoc.md) |

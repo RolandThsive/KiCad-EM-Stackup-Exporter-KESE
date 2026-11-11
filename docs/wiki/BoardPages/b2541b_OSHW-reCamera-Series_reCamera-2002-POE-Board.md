@@ -1,4 +1,4 @@
-# 2541 reCamera 2002 POE Board
+# 2541. reCamera 2002 POE Board
 
 Board 2,541 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 24](../CorpusTestingPages/Corpus-Testing-24.md#2541-recamera-2002-poe-board).
 
@@ -45,4 +45,4 @@ Board 2,541 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2540 reCamera B101_B2_v0.1](b2540b_OSHW-reCamera-Series_reCamera-B101-B2-v0-1.md) | [2542 reCamera B101_B4_Gyro v0.1](b2542b_OSHW-reCamera-Series_reCamera-B101-B4-Gyro-v0-1.md) |
+| [2540. reCamera B101_B2_v0.1](b2540b_OSHW-reCamera-Series_reCamera-B101-B2-v0-1.md) | [2542. reCamera B101_B4_Gyro v0.1](b2542b_OSHW-reCamera-Series_reCamera-B101-B4-Gyro-v0-1.md) |

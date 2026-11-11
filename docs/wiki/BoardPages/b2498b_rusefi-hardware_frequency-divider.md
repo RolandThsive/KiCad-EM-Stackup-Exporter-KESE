@@ -1,4 +1,4 @@
-# 2498 frequency-divider
+# 2498. frequency-divider
 
 Board 2,498 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 24](../CorpusTestingPages/Corpus-Testing-24.md#2498-frequency-divider).
 
@@ -45,4 +45,4 @@ Board 2,498 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2497 mmc_usb_1](b2497b_rusefi-hardware_classic-designs-rusefi-hardware-history-usb-mmc-spi-rev00-30-usb-mmc-spi_mmc-usb-1.md) | [2499 GDI-4ch](b2499b_rusefi-hardware_GDI-4ch.md) |
+| [2497. mmc_usb_1](b2497b_rusefi-hardware_classic-designs-rusefi-hardware-history-usb-mmc-spi-rev00-30-usb-mmc-spi_mmc-usb-1.md) | [2499. GDI-4ch](b2499b_rusefi-hardware_GDI-4ch.md) |

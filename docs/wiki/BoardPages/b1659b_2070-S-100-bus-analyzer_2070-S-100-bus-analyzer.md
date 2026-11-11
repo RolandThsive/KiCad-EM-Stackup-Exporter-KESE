@@ -1,4 +1,4 @@
-# 1659 2070-S-100-bus-analyzer
+# 1659. 2070-S-100-bus-analyzer
 
 Board 1,659 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 16](../CorpusTestingPages/Corpus-Testing-16.md#1659-2070-s-100-bus-analyzer).
 
@@ -44,4 +44,4 @@ Board 1,659 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1658 CM5IO](b1658b_openxtcm5-head-unit_CM5IO.md) | [1660 EDA-02327-V2-0_pcb](b1660b_fmc-tester-v2_EDA-02327-V2-0-pcb.md) |
+| [1658. CM5IO](b1658b_openxtcm5-head-unit_CM5IO.md) | [1660. EDA-02327-V2-0_pcb](b1660b_fmc-tester-v2_EDA-02327-V2-0-pcb.md) |

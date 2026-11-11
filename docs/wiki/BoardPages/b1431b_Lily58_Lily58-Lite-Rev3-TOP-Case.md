@@ -1,4 +1,4 @@
-# 1431 Lily58_Lite_Rev3_TOP_Case
+# 1431. Lily58_Lite_Rev3_TOP_Case
 
 Board 1,431 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 14](../CorpusTestingPages/Corpus-Testing-14.md#1431-lily58_lite_rev3_top_case).
 
@@ -45,4 +45,4 @@ Board 1,431 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1430 ZYNQ7020_AD9364_V2](b1430b_zynq7010-7020-ad9363_ZYNQ7020-AD9364-V2.md) | [1432 Lily58_Lite_Rev3](b1432b_Lily58_Lily58-Lite-Rev3.md) |
+| [1430. ZYNQ7020_AD9364_V2](b1430b_zynq7010-7020-ad9363_ZYNQ7020-AD9364-V2.md) | [1432. Lily58_Lite_Rev3](b1432b_Lily58_Lily58-Lite-Rev3.md) |

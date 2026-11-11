@@ -1,4 +1,4 @@
-# 369 jetson-nano-baseboard
+# 369. jetson-nano-baseboard
 
 Board 369 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 4](../CorpusTestingPages/Corpus-Testing-04.md#369-jetson-nano-baseboard).
 
@@ -44,4 +44,4 @@ Board 369 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [368 jetson-agx-thor-baseboard](b0368b_jetson-agx-thor-baseboard_jetson-agx-thor-baseboard.md) | [370 jetson-orin-baseboard](b0370b_jetson-orin-baseboard_jetson-orin-baseboard.md) |
+| [368. jetson-agx-thor-baseboard](b0368b_jetson-agx-thor-baseboard_jetson-agx-thor-baseboard.md) | [370. jetson-orin-baseboard](b0370b_jetson-orin-baseboard_jetson-orin-baseboard.md) |

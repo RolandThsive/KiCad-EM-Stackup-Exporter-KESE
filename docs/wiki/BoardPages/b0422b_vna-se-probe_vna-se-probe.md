@@ -1,4 +1,4 @@
-# 422 vna-se-probe
+# 422. vna-se-probe
 
 Board 422 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 4](../CorpusTestingPages/Corpus-Testing-04.md#422-vna-se-probe).
 
@@ -44,4 +44,4 @@ Board 422 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [421 video-booster-board](b0421b_video-signal-booster-board_video-booster-board.md) | [423 ATMEGA328_Motor_Board](b0423b_ATMEGA328-Motor-Board_ATMEGA328-Motor-Board.md) |
+| [421. video-booster-board](b0421b_video-signal-booster-board_video-booster-board.md) | [423. ATMEGA328_Motor_Board](b0423b_ATMEGA328-Motor-Board_ATMEGA328-Motor-Board.md) |

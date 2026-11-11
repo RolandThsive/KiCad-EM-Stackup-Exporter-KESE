@@ -1,4 +1,4 @@
-# 2362 powerstep
+# 2362. powerstep
 
 Board 2,362 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 22](../CorpusTestingPages/Corpus-Testing-22.md#2362-powerstep).
 
@@ -45,4 +45,4 @@ Board 2,362 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2361 mesabob](b2361b_stmbl_mesabob.md) | [2363 rectifier](b2363b_stmbl_hw-kicad-rectifier_rectifier.md) |
+| [2361. mesabob](b2361b_stmbl_mesabob.md) | [2363. rectifier](b2363b_stmbl_hw-kicad-rectifier_rectifier.md) |

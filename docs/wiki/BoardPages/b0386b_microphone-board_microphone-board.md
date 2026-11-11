@@ -1,4 +1,4 @@
-# 386 microphone-board
+# 386. microphone-board
 
 Board 386 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 4](../CorpusTestingPages/Corpus-Testing-04.md#386-microphone-board).
 
@@ -44,4 +44,4 @@ Board 386 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [385 mec1723-espi-debugger](b0385b_mec1723-espi-debugger_mec1723-espi-debugger.md) | [387 altera-modular-agilex-5-dc-scm](b0387b_modular-agilex5e-dc-scm_altera-modular-agilex-5-dc-scm.md) |
+| [385. mec1723-espi-debugger](b0385b_mec1723-espi-debugger_mec1723-espi-debugger.md) | [387. altera-modular-agilex-5-dc-scm](b0387b_modular-agilex5e-dc-scm_altera-modular-agilex-5-dc-scm.md) |

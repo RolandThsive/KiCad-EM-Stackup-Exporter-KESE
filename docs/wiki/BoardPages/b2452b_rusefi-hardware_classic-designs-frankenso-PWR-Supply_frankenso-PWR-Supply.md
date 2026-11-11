@@ -1,4 +1,4 @@
-# 2452 frankenso-PWR-Supply
+# 2452. frankenso-PWR-Supply
 
 Board 2,452 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 23](../CorpusTestingPages/Corpus-Testing-23.md#2452-frankenso-pwr-supply).
 
@@ -45,4 +45,4 @@ Board 2,452 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2451 adc_amp_divider](b2451b_rusefi-hardware_classic-designs-adc-amp-divider-history-rev00-20_adc-amp-divider.md) | [2453 frankenso](b2453b_rusefi-hardware_classic-designs-frankenso_frankenso.md) |
+| [2451. adc_amp_divider](b2451b_rusefi-hardware_classic-designs-adc-amp-divider-history-rev00-20_adc-amp-divider.md) | [2453. frankenso](b2453b_rusefi-hardware_classic-designs-frankenso_frankenso.md) |

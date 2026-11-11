@@ -1,4 +1,4 @@
-# 1585 vna_r1_demod
+# 1585. vna_r1_demod
 
 Board 1,585 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 15](../CorpusTestingPages/Corpus-Testing-15.md#1585-vna_r1_demod).
 
@@ -45,4 +45,4 @@ Board 1,585 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1584 vna_r1](b1584b_vna_vna-r1.md) | [1586 vna_r1_synth](b1586b_vna_vna-r1-synth.md) |
+| [1584. vna_r1](b1584b_vna_vna-r1.md) | [1586. vna_r1_synth](b1586b_vna_vna-r1-synth.md) |

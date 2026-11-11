@@ -1,4 +1,4 @@
-# 2861 gate_xnor_2in
+# 2861. gate_xnor_2in
 
 Board 2,861 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 27](../CorpusTestingPages/Corpus-Testing-27.md#2861-gate_xnor_2in).
 
@@ -45,4 +45,4 @@ Board 2,861 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2860 gate_or_2in](b2860b_alu_gate-or-2in.md) | [2862 gate_xor_2in](b2862b_alu_gate-xor-2in.md) |
+| [2860. gate_or_2in](b2860b_alu_gate-or-2in.md) | [2862. gate_xor_2in](b2862b_alu_gate-xor-2in.md) |

@@ -1,4 +1,4 @@
-# 2237 trigger-output-fmc
+# 2237. trigger-output-fmc
 
 Board 2,237 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 21](../CorpusTestingPages/Corpus-Testing-21.md#2237-trigger-output-fmc).
 
@@ -44,4 +44,4 @@ Board 2,237 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2236 clk-input-fmc](b2236b_clk-input-fmc_clk-input-fmc.md) | [2238 HarleyGhostRider](b2238b_ovc_HarleyGhostRider.md) |
+| [2236. clk-input-fmc](b2236b_clk-input-fmc_clk-input-fmc.md) | [2238. HarleyGhostRider](b2238b_ovc_HarleyGhostRider.md) |

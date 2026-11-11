@@ -1,4 +1,4 @@
-# 1249 EEZ_BB3_CM4_R1B0
+# 1249. EEZ_BB3_CM4_R1B0
 
 Board 1,249 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 12](../CorpusTestingPages/Corpus-Testing-12.md#1249-eez_bb3_cm4_r1b0).
 
@@ -45,4 +45,4 @@ Board 1,249 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1248 H745 CM4 module](b1248b_bb3-cm4_H745-CM4-module.md) | [1250 EEZ_DIB_BP3C_r3B3](b1250b_bb3-cm4_EEZ-BB3-CM4-R1B0_EEZ-DIB-BP3C-r3B3.md) |
+| [1248. H745 CM4 module](b1248b_bb3-cm4_H745-CM4-module.md) | [1250. EEZ_DIB_BP3C_r3B3](b1250b_bb3-cm4_EEZ-BB3-CM4-R1B0_EEZ-DIB-BP3C-r3B3.md) |

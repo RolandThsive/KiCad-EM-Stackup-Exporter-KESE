@@ -1,4 +1,4 @@
-# 2023 throttle
+# 2023. throttle
 
 Board 2,023 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 19](../CorpusTestingPages/Corpus-Testing-19.md#2023-throttle).
 
@@ -45,4 +45,4 @@ Board 2,023 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2022 motor_ctrl_interface](b2022b_olin-electric-motorsports_motor-ctrl-interface.md) | [2024 dashboard](b2024b_olin-electric-motorsports_vehicle-mkv-hardware-dashboard-dux_dashboard.md) |
+| [2022. motor_ctrl_interface](b2022b_olin-electric-motorsports_motor-ctrl-interface.md) | [2024. dashboard](b2024b_olin-electric-motorsports_vehicle-mkv-hardware-dashboard-dux_dashboard.md) |

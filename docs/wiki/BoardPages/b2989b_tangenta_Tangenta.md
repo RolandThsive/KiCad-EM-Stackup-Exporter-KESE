@@ -1,4 +1,4 @@
-# 2989 Tangenta
+# 2989. Tangenta
 
 Board 2,989 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 28](../CorpusTestingPages/Corpus-Testing-28.md#2989-tangenta).
 
@@ -45,4 +45,4 @@ Board 2,989 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2988 vimdrones_esc_development_board](b2988b_AM32-esc-development-board_vimdrones-esc-development-board.md) | [2990 CM4_MATX](b2990b_CM4-MATX_KiCad_CM4-MATX_2586.md) |
+| [2988. vimdrones_esc_development_board](b2988b_AM32-esc-development-board_vimdrones-esc-development-board.md) | [2990. CM4_MATX](b2990b_CM4-MATX_KiCad_CM4-MATX_2586.md) |

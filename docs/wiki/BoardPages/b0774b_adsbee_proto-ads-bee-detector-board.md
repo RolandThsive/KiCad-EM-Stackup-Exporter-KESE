@@ -1,4 +1,4 @@
-# 774 proto_ads_bee_detector_board
+# 774. proto_ads_bee_detector_board
 
 Board 774 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 8](../CorpusTestingPages/Corpus-Testing-08.md#774-proto_ads_bee_detector_board).
 
@@ -45,4 +45,4 @@ Board 774 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [773 panel_saw_eval_board](b0773b_adsbee_panel-saw-eval-board.md) | [775 proto_ads_bee_mcu_board](b0775b_adsbee_proto-ads-bee-mcu-board.md) |
+| [773. panel_saw_eval_board](b0773b_adsbee_panel-saw-eval-board.md) | [775. proto_ads_bee_mcu_board](b0775b_adsbee_proto-ads-bee-mcu-board.md) |

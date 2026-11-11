@@ -1,4 +1,4 @@
-# 1180 rpi-hq-camera
+# 1180. rpi-hq-camera
 
 Board 1,180 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 11](../CorpusTestingPages/Corpus-Testing-11.md#1180-rpi-hq-camera).
 
@@ -45,4 +45,4 @@ Board 1,180 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1179 resonance](b1179b_advent-calendar-of-circuits-2020_resonance.md) | [1181 SCD30-3d-model](b1181b_advent-calendar-of-circuits-2020_SCD30-3d-model.md) |
+| [1179. resonance](b1179b_advent-calendar-of-circuits-2020_resonance.md) | [1181. SCD30-3d-model](b1181b_advent-calendar-of-circuits-2020_SCD30-3d-model.md) |

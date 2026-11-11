@@ -1,4 +1,4 @@
-# 292 HCP65 Wide Analyser
+# 292. HCP65 Wide Analyser
 
 Board 292 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 3](../CorpusTestingPages/Corpus-Testing-03.md#292-hcp65-wide-analyser).
 
@@ -45,4 +45,4 @@ Board 292 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [291 HCP65 Narrow Analyser](b0291b_658-Computer_HCP65-Narrow-Analyser.md) | [293 LED Digit Tester](b0293b_658-Computer_LED-Digit-Tester.md) |
+| [291. HCP65 Narrow Analyser](b0291b_658-Computer_HCP65-Narrow-Analyser.md) | [293. LED Digit Tester](b0293b_658-Computer_LED-Digit-Tester.md) |

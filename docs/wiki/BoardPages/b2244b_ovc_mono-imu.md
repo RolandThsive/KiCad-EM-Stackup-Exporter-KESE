@@ -1,4 +1,4 @@
-# 2244 mono_imu
+# 2244. mono_imu
 
 Board 2,244 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 21](../CorpusTestingPages/Corpus-Testing-21.md#2244-mono_imu).
 
@@ -45,4 +45,4 @@ Board 2,244 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2243 ovc2_mono](b2243b_ovc_ovc2-mono.md) | [2245 ovc2_mobo](b2245b_ovc_ovc2-hardware-ovc2a-mobo_ovc2-mobo.md) |
+| [2243. ovc2_mono](b2243b_ovc_ovc2-mono.md) | [2245. ovc2_mobo](b2245b_ovc_ovc2-hardware-ovc2a-mobo_ovc2-mobo.md) |

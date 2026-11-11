@@ -1,4 +1,4 @@
-# 312 antmicro-alvium-flex-csi-adapter-100mm-double-opposite-sides
+# 312. antmicro-alvium-flex-csi-adapter-100mm-double-opposite-sides
 
 Board 312 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 3](../CorpusTestingPages/Corpus-Testing-03.md#312-antmicro-alvium-flex-csi-adapter-100mm-double-opposite-sides).
 
@@ -45,4 +45,4 @@ Board 312 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [311 jetson-agx-thor-baseboard-pcie-x1-interposer](b0311b_agx-thor-baseboard-pcie-interposer_jetson-agx-thor-baseboard-pcie-x1-interposer.md) | [313 antmicro-alvium-flex-csi-adapter-100mm-double-same-side](b0313b_alvium-flexible-csi-adapter_antmicro-alvium-flex-csi-adapter-100mm-double-same-side.md) |
+| [311. jetson-agx-thor-baseboard-pcie-x1-interposer](b0311b_agx-thor-baseboard-pcie-interposer_jetson-agx-thor-baseboard-pcie-x1-interposer.md) | [313. antmicro-alvium-flex-csi-adapter-100mm-double-same-side](b0313b_alvium-flexible-csi-adapter_antmicro-alvium-flex-csi-adapter-100mm-double-same-side.md) |

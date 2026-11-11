@@ -1,4 +1,4 @@
-# 372 job-ict-support-board
+# 372. job-ict-support-board
 
 Board 372 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 4](../CorpusTestingPages/Corpus-Testing-04.md#372-job-ict-support-board).
 
@@ -45,4 +45,4 @@ Board 372 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [371 job-ict-bottom-board](b0371b_job-ict-bottom-board_job-ict-bottom-board.md) | [373 jetson-orin-baseboard-oculink-expansion](b0373b_job-oculink-expansion_jetson-orin-baseboard-oculink-expansion.md) |
+| [371. job-ict-bottom-board](b0371b_job-ict-bottom-board_job-ict-bottom-board.md) | [373. jetson-orin-baseboard-oculink-expansion](b0373b_job-oculink-expansion_jetson-orin-baseboard-oculink-expansion.md) |

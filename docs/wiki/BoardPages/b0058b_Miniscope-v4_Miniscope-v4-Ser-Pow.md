@@ -1,4 +1,4 @@
-# 58 Miniscope-v4-Ser-Pow
+# 58. Miniscope-v4-Ser-Pow
 
 Board 58 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 1](../CorpusTestingPages/Corpus-Testing-01.md#58-miniscope-v4-ser-pow).
 
@@ -45,4 +45,4 @@ Board 58 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page
 
 | Previous | Next |
 |:---|---:|
-| [57 Miniscope-v4-PYTHON480](b0057b_Miniscope-v4_Miniscope-v4-PYTHON480.md) | [59 Miniscope-v4-PCB-fab-assembly](b0059b_Miniscope-v4_Miniscope-v4-PCB-fab-assembly.md) |
+| [57. Miniscope-v4-PYTHON480](b0057b_Miniscope-v4_Miniscope-v4-PYTHON480.md) | [59. Miniscope-v4-PCB-fab-assembly](b0059b_Miniscope-v4_Miniscope-v4-PCB-fab-assembly.md) |

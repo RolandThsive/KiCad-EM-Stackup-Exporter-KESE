@@ -1,4 +1,4 @@
-# 596 accessory_v1
+# 596. accessory_v1
 
 Board 596 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 6](../CorpusTestingPages/Corpus-Testing-06.md#596-accessory_v1).
 
@@ -45,4 +45,4 @@ Board 596 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [595 accessory_peripheral](b0595b_bjr-kicad_accessory-peripheral.md) | [597 accessory_v2](b0597b_bjr-kicad_accessory-v2.md) |
+| [595. accessory_peripheral](b0595b_bjr-kicad_accessory-peripheral.md) | [597. accessory_v2](b0597b_bjr-kicad_accessory-v2.md) |

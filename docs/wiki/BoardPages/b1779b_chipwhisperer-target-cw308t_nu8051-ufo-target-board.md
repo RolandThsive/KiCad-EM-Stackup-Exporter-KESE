@@ -1,4 +1,4 @@
-# 1779 nu8051-ufo-target-board
+# 1779. nu8051-ufo-target-board
 
 Board 1,779 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 17](../CorpusTestingPages/Corpus-Testing-17.md#1779-nu8051-ufo-target-board).
 
@@ -45,4 +45,4 @@ Board 1,779 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1778 tmp](b1778b_freeeeg32_tmp.md) | [1780 SONATA-ONE](b1780b_sonata-pcb_SONATA-ONE.md) |
+| [1778. tmp](b1778b_freeeeg32_tmp.md) | [1780. SONATA-ONE](b1780b_sonata-pcb_SONATA-ONE.md) |

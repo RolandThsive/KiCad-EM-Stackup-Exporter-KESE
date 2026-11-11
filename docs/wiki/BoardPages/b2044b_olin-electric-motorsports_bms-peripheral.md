@@ -1,4 +1,4 @@
-# 2044 bms_peripheral
+# 2044. bms_peripheral
 
 Board 2,044 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 19](../CorpusTestingPages/Corpus-Testing-19.md#2044-bms_peripheral).
 
@@ -45,4 +45,4 @@ Board 2,044 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2043 internal_interface](b2043b_olin-electric-motorsports_internal-interface.md) | [2045 bms_peripheral_v2](b2045b_olin-electric-motorsports_bms-peripheral-v2.md) |
+| [2043. internal_interface](b2043b_olin-electric-motorsports_internal-interface.md) | [2045. bms_peripheral_v2](b2045b_olin-electric-motorsports_bms-peripheral-v2.md) |

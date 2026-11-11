@@ -1,4 +1,4 @@
-# 993 PCBs
+# 993. PCBs
 
 Board 993 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 10](../CorpusTestingPages/Corpus-Testing-10.md#993-pcbs).
 
@@ -45,4 +45,4 @@ Board 993 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [992 MyCPU](b0992b_MyCpu_MyCPU.md) | [994 PSLab](b0994b_pslab-hardware_archives-PSLab-KiCAD-v2_PSLab.md) |
+| [992. MyCPU](b0992b_MyCpu_MyCPU.md) | [994. PSLab](b0994b_pslab-hardware_archives-PSLab-KiCAD-v2_PSLab.md) |

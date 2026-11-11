@@ -1,4 +1,4 @@
-# 327 caravel_FTDI_QFN_test_socket
+# 327. caravel_FTDI_QFN_test_socket
 
 Board 327 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 4](../CorpusTestingPages/Corpus-Testing-04.md#327-caravel_ftdi_qfn_test_socket).
 
@@ -45,4 +45,4 @@ Board 327 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [326 Caravel_daughter](b0326b_caravel-board_Caravel-daughter.md) | [328 caravel_Nucleo](b0328b_caravel-board_caravel-Nucleo.md) |
+| [326. Caravel_daughter](b0326b_caravel-board_Caravel-daughter.md) | [328. caravel_Nucleo](b0328b_caravel-board_caravel-Nucleo.md) |

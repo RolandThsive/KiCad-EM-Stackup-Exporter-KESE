@@ -1,4 +1,4 @@
-# 1845 ESP32-EVB_Rev_L
+# 1845. ESP32-EVB_Rev_L
 
 Board 1,845 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 18](../CorpusTestingPages/Corpus-Testing-18.md#1845-esp32-evb_rev_l).
 
@@ -45,4 +45,4 @@ Board 1,845 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1844 ESP32-EVB_Rev_K2](b1844b_ESP32-EVB_ESP32-EVB-Rev-K2.md) | [1846 ESP32-GATEWAY_Rev_A](b1846b_ESP32-GATEWAY_ESP32-GATEWAY-Rev-A.md) |
+| [1844. ESP32-EVB_Rev_K2](b1844b_ESP32-EVB_ESP32-EVB-Rev-K2.md) | [1846. ESP32-GATEWAY_Rev_A](b1846b_ESP32-GATEWAY_ESP32-GATEWAY-Rev-A.md) |

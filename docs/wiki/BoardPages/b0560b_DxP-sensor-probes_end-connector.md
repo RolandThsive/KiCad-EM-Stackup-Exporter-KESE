@@ -1,4 +1,4 @@
-# 560 end_connector
+# 560. end_connector
 
 Board 560 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 6](../CorpusTestingPages/Corpus-Testing-06.md#560-end_connector).
 
@@ -45,4 +45,4 @@ Board 560 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [559 loggerhw_v5.0](b0559b_DxP-data-logger_loggerhw-v5-0.md) | [561 extension_board_MF](b0561b_DxP-sensor-probes_extension-board-MF.md) |
+| [559. loggerhw_v5.0](b0559b_DxP-data-logger_loggerhw-v5-0.md) | [561. extension_board_MF](b0561b_DxP-sensor-probes_extension-board-MF.md) |

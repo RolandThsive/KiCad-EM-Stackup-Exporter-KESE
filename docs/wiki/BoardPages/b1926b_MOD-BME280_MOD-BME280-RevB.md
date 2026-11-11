@@ -1,4 +1,4 @@
-# 1926 MOD-BME280_RevB
+# 1926. MOD-BME280_RevB
 
 Board 1,926 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 18](../CorpusTestingPages/Corpus-Testing-18.md#1926-mod-bme280_revb).
 
@@ -45,4 +45,4 @@ Board 1,926 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1925 MOD-BME280_RevA](b1925b_MOD-BME280_MOD-BME280-RevA.md) | [1927 MOD-ENV_revB](b1927b_MOD-ENV_MOD-ENV-revB.md) |
+| [1925. MOD-BME280_RevA](b1925b_MOD-BME280_MOD-BME280-RevA.md) | [1927. MOD-ENV_revB](b1927b_MOD-ENV_MOD-ENV-revB.md) |

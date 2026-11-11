@@ -1,4 +1,4 @@
-# 2682 Coil_Panel_XY
+# 2682. Coil_Panel_XY
 
 Board 2,682 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 25](../CorpusTestingPages/Corpus-Testing-25.md#2682-coil_panel_xy).
 
@@ -46,4 +46,4 @@ Board 2,682 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2681 Piramide_Del_Sol](b2681b_samwise-avionics_Piramide-Del-Sol.md) | [2683 Coil_Panel_Z](b2683b_samwise-avionics_Coil-Panel-Z.md) |
+| [2681. Piramide_Del_Sol](b2681b_samwise-avionics_Piramide-Del-Sol.md) | [2683. Coil_Panel_Z](b2683b_samwise-avionics_Coil-Panel-Z.md) |

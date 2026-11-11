@@ -1,4 +1,4 @@
-# 3011 remote_arming
+# 3011. remote_arming
 
 Board 3,011 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 28](../CorpusTestingPages/Corpus-Testing-28.md#3011-remote_arming).
 
@@ -45,4 +45,4 @@ Board 3,011 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [3010 PropulsionBoard](b3010b_canhw_PropulsionBoard.md) | [3012 rocket_power_board](b3012b_canhw_rocket-power-board.md) |
+| [3010. PropulsionBoard](b3010b_canhw_PropulsionBoard.md) | [3012. rocket_power_board](b3012b_canhw_rocket-power-board.md) |

@@ -1,4 +1,4 @@
-# 279 GPIO 32bit Board
+# 279. GPIO 32bit Board
 
 Board 279 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 3](../CorpusTestingPages/Corpus-Testing-03.md#279-gpio-32bit-board).
 
@@ -45,4 +45,4 @@ Board 279 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [278 Keypad](b0278b_658-Computer_Keypad.md) | [280 GPIO Address Decode](b0280b_658-Computer_GPIO-Address-Decode.md) |
+| [278. Keypad](b0278b_658-Computer_Keypad.md) | [280. GPIO Address Decode](b0280b_658-Computer_GPIO-Address-Decode.md) |

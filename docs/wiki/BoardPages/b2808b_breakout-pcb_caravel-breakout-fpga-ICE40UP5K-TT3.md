@@ -1,4 +1,4 @@
-# 2808 caravel-breakout-fpga-ICE40UP5K-TT3
+# 2808. caravel-breakout-fpga-ICE40UP5K-TT3
 
 Board 2,808 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 26](../CorpusTestingPages/Corpus-Testing-26.md#2808-caravel-breakout-fpga-ice40up5k-tt3).
 
@@ -45,4 +45,4 @@ Board 2,808 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2807 TinyFPGA-BX](b2807b_TinyFPGA-BX_TinyFPGA-BX.md) | [2809 breakout-fpga-ICE40UP5K](b2809b_breakout-pcb_breakout-fpga-ICE40UP5K.md) |
+| [2807. TinyFPGA-BX](b2807b_TinyFPGA-BX_TinyFPGA-BX.md) | [2809. breakout-fpga-ICE40UP5K](b2809b_breakout-pcb_breakout-fpga-ICE40UP5K.md) |

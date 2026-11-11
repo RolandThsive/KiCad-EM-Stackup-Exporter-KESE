@@ -1,4 +1,4 @@
-# 2116 cal-fid
+# 2116. cal-fid
 
 Board 2,116 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 20](../CorpusTestingPages/Corpus-Testing-20.md#2116-cal-fid).
 
@@ -46,4 +46,4 @@ Board 2,116 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2115 blade13](b2115b_lumenpnp_blade13.md) | [2117 datum](b2117b_lumenpnp_datum.md) |
+| [2115. blade13](b2115b_lumenpnp_blade13.md) | [2117. datum](b2117b_lumenpnp_datum.md) |

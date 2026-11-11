@@ -1,4 +1,4 @@
-# 2440 24pins_In_3conn
+# 2440. 24pins_In_3conn
 
 Board 2,440 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 23](../CorpusTestingPages/Corpus-Testing-23.md#2440-24pins_in_3conn).
 
@@ -45,4 +45,4 @@ Board 2,440 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2439 Breakout-24pin-superseal](b2439b_rusefi-hardware_Breakout-24pin-superseal.md) | [2441 284617-1](b2441b_rusefi-hardware_284617-1.md) |
+| [2439. Breakout-24pin-superseal](b2439b_rusefi-hardware_Breakout-24pin-superseal.md) | [2441. 284617-1](b2441b_rusefi-hardware_284617-1.md) |

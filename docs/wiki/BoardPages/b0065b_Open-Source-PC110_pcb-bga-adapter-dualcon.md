@@ -1,4 +1,4 @@
-# 65 pcb-bga-adapter-dualcon
+# 65. pcb-bga-adapter-dualcon
 
 Board 65 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 1](../CorpusTestingPages/Corpus-Testing-01.md#65-pcb-bga-adapter-dualcon).
 
@@ -45,4 +45,4 @@ Board 65 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page
 
 | Previous | Next |
 |:---|---:|
-| [64 bgacpu-dualcon](b0064b_Open-Source-PC110_bgacpu-dualcon.md) | [66 DockingStation](b0066b_Open-Source-PC110_Mods-NewDock_DockingStation.md) |
+| [64. bgacpu-dualcon](b0064b_Open-Source-PC110_bgacpu-dualcon.md) | [66. DockingStation](b0066b_Open-Source-PC110_Mods-NewDock_DockingStation.md) |

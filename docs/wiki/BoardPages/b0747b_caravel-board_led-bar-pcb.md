@@ -1,4 +1,4 @@
-# 747 led-bar-pcb
+# 747. led-bar-pcb
 
 Board 747 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 7](../CorpusTestingPages/Corpus-Testing-07.md#747-led-bar-pcb).
 
@@ -45,4 +45,4 @@ Board 747 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [746 caravel-Nucleo-v2-M.2](b0746b_caravel-board_caravel-Nucleo-v2-M-2.md) | [748 ciaa_acc](b0748b_Hardware_ciaa-acc.md) |
+| [746. caravel-Nucleo-v2-M.2](b0746b_caravel-board_caravel-Nucleo-v2-M-2.md) | [748. ciaa_acc](b0748b_Hardware_ciaa-acc.md) |

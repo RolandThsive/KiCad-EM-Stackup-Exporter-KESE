@@ -1,4 +1,4 @@
-# 1731 LMS8001_Companion
+# 1731. LMS8001_Companion
 
 Board 1,731 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 17](../CorpusTestingPages/Corpus-Testing-17.md#1731-lms8001_companion).
 
@@ -45,4 +45,4 @@ Board 1,731 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1730 DigiRED](b1730b_RASDR_DigiRED.md) | [1732 uMyriad6002](b1732b_reference-development-kit_uMyriad6002.md) |
+| [1730. DigiRED](b1730b_RASDR_DigiRED.md) | [1732. uMyriad6002](b1732b_reference-development-kit_uMyriad6002.md) |

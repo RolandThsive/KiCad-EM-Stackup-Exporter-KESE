@@ -1,4 +1,4 @@
-# 1494 PowerDistributionUnit_Mk1
+# 1494. PowerDistributionUnit_Mk1
 
 Board 1,494 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 14](../CorpusTestingPages/Corpus-Testing-14.md#1494-powerdistributionunit_mk1).
 
@@ -45,4 +45,4 @@ Board 1,494 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1493 PowerDistributionUnit](b1493b_ps-powerdistributionunit_PowerDistributionUnit.md) | [1495 TestBoard_TPS27SA08-Q1](b1495b_ps-powerdistributionunit_TestBoard-TPS27SA08-Q1.md) |
+| [1493. PowerDistributionUnit](b1493b_ps-powerdistributionunit_PowerDistributionUnit.md) | [1495. TestBoard_TPS27SA08-Q1](b1495b_ps-powerdistributionunit_TestBoard-TPS27SA08-Q1.md) |

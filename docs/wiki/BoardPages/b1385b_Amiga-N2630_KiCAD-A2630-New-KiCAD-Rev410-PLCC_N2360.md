@@ -1,4 +1,4 @@
-# 1385 N2360
+# 1385. N2360
 
 Board 1,385 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 13](../CorpusTestingPages/Corpus-Testing-13.md#1385-n2360).
 
@@ -45,4 +45,4 @@ Board 1,385 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1384 N2360](b1384b_Amiga-N2630_KiCAD-A2630-New-KiCAD-Rev410-PGA_N2360.md) | [1386 N2360](b1386b_Amiga-N2630_KiCAD-Archive-A2630-New-KiCAD-Rev401-PGA_N2360.md) |
+| [1384. N2360](b1384b_Amiga-N2630_KiCAD-A2630-New-KiCAD-Rev410-PGA_N2360.md) | [1386. N2360](b1386b_Amiga-N2630_KiCAD-Archive-A2630-New-KiCAD-Rev401-PGA_N2360.md) |

@@ -1,4 +1,4 @@
-# 1638 microstrip_width_nightly
+# 1638. microstrip_width_nightly
 
 Board 1,638 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 16](../CorpusTestingPages/Corpus-Testing-16.md#1638-microstrip_width_nightly).
 
@@ -45,4 +45,4 @@ Board 1,638 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1637 microstrip_width](b1637b_fmcw_microstrip-width.md) | [1639 basic-ecp5-pcb](b1639b_basic-ecp5-pcb_basic-ecp5-pcb.md) |
+| [1637. microstrip_width](b1637b_fmcw_microstrip-width.md) | [1639. basic-ecp5-pcb](b1639b_basic-ecp5-pcb_basic-ecp5-pcb.md) |

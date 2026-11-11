@@ -1,4 +1,4 @@
-# 1688 pocketbone-kicad
+# 1688. pocketbone-kicad
 
 Board 1,688 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 16](../CorpusTestingPages/Corpus-Testing-16.md#1688-pocketbone-kicad).
 
@@ -44,4 +44,4 @@ Board 1,688 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1687 lofive](b1687b_lofive_lofive.md) | [1689 OpenCAPI-to-PCIe_for_MNV303212A_RevA2](b1689b_opencapi-to-pcie-for-mnv303212a-reva2_OpenCAPI-to-PCIe-for-MNV303212A-RevA2.md) |
+| [1687. lofive](b1687b_lofive_lofive.md) | [1689. OpenCAPI-to-PCIe_for_MNV303212A_RevA2](b1689b_opencapi-to-pcie-for-mnv303212a-reva2_OpenCAPI-to-PCIe-for-MNV303212A-RevA2.md) |

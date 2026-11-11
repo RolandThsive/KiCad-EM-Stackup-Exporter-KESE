@@ -1,4 +1,4 @@
-# 189 Coprocessor Clock
+# 189. Coprocessor Clock
 
 Board 189 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 2](../CorpusTestingPages/Corpus-Testing-02.md#189-coprocessor-clock).
 
@@ -45,4 +45,4 @@ Board 189 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [188 Coprocessor Board - Main](b0188b_658-Computer_Coprocessor-Board-Main.md) | [190 Coprocessor Memory Select](b0190b_658-Computer_Coprocessor-Memory-Select.md) |
+| [188. Coprocessor Board - Main](b0188b_658-Computer_Coprocessor-Board-Main.md) | [190. Coprocessor Memory Select](b0190b_658-Computer_Coprocessor-Memory-Select.md) |

@@ -1,4 +1,4 @@
-# 1769 skylark-usb
+# 1769. skylark-usb
 
 Board 1,769 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 17](../CorpusTestingPages/Corpus-Testing-17.md#1769-skylark-usb).
 
@@ -45,4 +45,4 @@ Board 1,769 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1768 raspberrypi_hat](b1768b_groundlark_raspberrypi-hat.md) | [1770 skylark](b1770b_groundlark_skylark.md) |
+| [1768. raspberrypi_hat](b1768b_groundlark_raspberrypi-hat.md) | [1770. skylark](b1770b_groundlark_skylark.md) |

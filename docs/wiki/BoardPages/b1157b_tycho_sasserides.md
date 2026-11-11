@@ -1,4 +1,4 @@
-# 1157 sasserides
+# 1157. sasserides
 
 Board 1,157 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 11](../CorpusTestingPages/Corpus-Testing-11.md#1157-sasserides).
 
@@ -45,4 +45,4 @@ Board 1,157 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1156 toorcamp2018jig](b1156b_toorcamp2018badge_toorcamp2018jig.md) | [1158 tycho](b1158b_tycho_tycho.md) |
+| [1156. toorcamp2018jig](b1156b_toorcamp2018badge_toorcamp2018jig.md) | [1158. tycho](b1158b_tycho_tycho.md) |

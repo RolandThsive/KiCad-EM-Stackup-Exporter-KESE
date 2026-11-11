@@ -1,4 +1,4 @@
-# 2015 firmware_tester_board
+# 2015. firmware_tester_board
 
 Board 2,015 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 19](../CorpusTestingPages/Corpus-Testing-19.md#2015-firmware_tester_board).
 
@@ -45,4 +45,4 @@ Board 2,015 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2014 VGA2HDMI_Rev_C](b2014b_VGA2HDMI_VGA2HDMI-Rev-C.md) | [2016 hitl-primary](b2016b_olin-electric-motorsports_hitl-primary.md) |
+| [2014. VGA2HDMI_Rev_C](b2014b_VGA2HDMI_VGA2HDMI-Rev-C.md) | [2016. hitl-primary](b2016b_olin-electric-motorsports_hitl-primary.md) |

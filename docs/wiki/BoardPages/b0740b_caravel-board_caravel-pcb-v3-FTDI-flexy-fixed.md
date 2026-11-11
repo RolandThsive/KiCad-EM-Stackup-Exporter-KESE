@@ -1,4 +1,4 @@
-# 740 caravel_pcb_v3_FTDI_flexy_fixed
+# 740. caravel_pcb_v3_FTDI_flexy_fixed
 
 Board 740 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 7](../CorpusTestingPages/Corpus-Testing-07.md#740-caravel_pcb_v3_ftdi_flexy_fixed).
 
@@ -45,4 +45,4 @@ Board 740 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [739 caravel_pcb_v3_FTDI_flexy](b0739b_caravel-board_hardware-development-archive-caravel-pcb-v3-FTDI-prev_caravel-pcb-v3-FTDI-flexy.md) | [741 clear-dev-v1](b0741b_caravel-board_clear-dev-v1.md) |
+| [739. caravel_pcb_v3_FTDI_flexy](b0739b_caravel-board_hardware-development-archive-caravel-pcb-v3-FTDI-prev_caravel-pcb-v3-FTDI-flexy.md) | [741. clear-dev-v1](b0741b_caravel-board_clear-dev-v1.md) |

@@ -1,4 +1,4 @@
-# 951 esp-rust-board
+# 951. esp-rust-board
 
 Board 951 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 9](../CorpusTestingPages/Corpus-Testing-09.md#951-esp-rust-board).
 
@@ -45,4 +45,4 @@ Board 951 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [950 icebreaker](b0950b_icebreaker_hardware-v1-0e_icebreaker.md) | [952 Home Assistant Voice PE](b0952b_home-assistant-voice-pe_Home-Assistant-Voice-PE.md) |
+| [950. icebreaker](b0950b_icebreaker_hardware-v1-0e_icebreaker.md) | [952. Home Assistant Voice PE](b0952b_home-assistant-voice-pe_Home-Assistant-Voice-PE.md) |

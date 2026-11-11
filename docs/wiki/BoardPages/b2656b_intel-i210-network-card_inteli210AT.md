@@ -1,4 +1,4 @@
-# 2656 inteli210AT
+# 2656. inteli210AT
 
 Board 2,656 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 25](../CorpusTestingPages/Corpus-Testing-25.md#2656-inteli210at).
 
@@ -45,4 +45,4 @@ Board 2,656 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2655 Watchy](b2655b_watchy-hardware_Watchy.md) | [2657 V1](b2657b_intel-i210-network-card_PCBV3-0-reference-OCP2PCIe-master-OCP2PCIe-H-F-4-OCP2PCIe-H-F-4-V0-1Beta_V1.md) |
+| [2655. Watchy](b2655b_watchy-hardware_Watchy.md) | [2657. V1](b2657b_intel-i210-network-card_PCBV3-0-reference-OCP2PCIe-master-OCP2PCIe-H-F-4-OCP2PCIe-H-F-4-V0-1Beta_V1.md) |

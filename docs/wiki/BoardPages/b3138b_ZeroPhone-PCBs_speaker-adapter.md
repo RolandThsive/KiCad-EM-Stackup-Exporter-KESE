@@ -1,4 +1,4 @@
-# 3138 speaker_adapter
+# 3138. speaker_adapter
 
 Board 3,138 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 30](../CorpusTestingPages/Corpus-Testing-30.md#3138-speaker_adapter).
 
@@ -46,4 +46,4 @@ Board 3,138 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [3137 keypad_pcb](b3137b_ZeroPhone-PCBs_keypad-pcb.md) | [Corpus Testing](../Corpus-Testing.md) |
+| [3137. keypad_pcb](b3137b_ZeroPhone-PCBs_keypad-pcb.md) | [Corpus Testing](../Corpus-Testing.md) |

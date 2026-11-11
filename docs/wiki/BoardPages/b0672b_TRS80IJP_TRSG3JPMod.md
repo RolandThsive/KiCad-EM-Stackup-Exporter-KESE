@@ -1,4 +1,4 @@
-# 672 TRSG3JPMod
+# 672. TRSG3JPMod
 
 Board 672 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 7](../CorpusTestingPages/Corpus-Testing-07.md#672-trsg3jpmod).
 
@@ -45,4 +45,4 @@ Board 672 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [671 TRS80I-Charmap](b0671b_TRS80IJP_TRS80I-Charmap.md) | [673 TRSG3Mod](b0673b_TRS80IJP_TRSG3Mod.md) |
+| [671. TRS80I-Charmap](b0671b_TRS80IJP_TRS80I-Charmap.md) | [673. TRSG3Mod](b0673b_TRS80IJP_TRSG3Mod.md) |

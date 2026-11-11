@@ -1,4 +1,4 @@
-# 2437 zMRETestFixture
+# 2437. zMRETestFixture
 
 Board 2,437 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 23](../CorpusTestingPages/Corpus-Testing-23.md#2437-zmretestfixture).
 
@@ -44,4 +44,4 @@ Board 2,437 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2436 Panel_R0.5.1_300x300_2layer_step1](b2436b_hw-microrusefi_Panel-R0-5-1-300x300-2layer-step1.md) | [2438 Motor_driver_A4988](b2438b_rusefi-hardware_Motor-driver-A4988.md) |
+| [2436. Panel_R0.5.1_300x300_2layer_step1](b2436b_hw-microrusefi_Panel-R0-5-1-300x300-2layer-step1.md) | [2438. Motor_driver_A4988](b2438b_rusefi-hardware_Motor-driver-A4988.md) |

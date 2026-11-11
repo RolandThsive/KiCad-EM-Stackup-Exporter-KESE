@@ -1,4 +1,4 @@
-# 829 programming_pin_mount.v1.0
+# 829. programming_pin_mount.v1.0
 
 Board 829 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 8](../CorpusTestingPages/Corpus-Testing-08.md#829-programming_pin_mountv10).
 
@@ -44,4 +44,4 @@ Board 829 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [828 7-REV2-vout-protection](b0828b_BusPirate5-hardware_bus-pirate-pcb-development-7-REV2-prototype3b-side-leds_7-REV2-vout-protection.md) | [830 flash-dip-rev4](b0830b_BusPirate5-hardware_flash-dip-rev4.md) |
+| [828. 7-REV2-vout-protection](b0828b_BusPirate5-hardware_bus-pirate-pcb-development-7-REV2-prototype3b-side-leds_7-REV2-vout-protection.md) | [830. flash-dip-rev4](b0830b_BusPirate5-hardware_flash-dip-rev4.md) |

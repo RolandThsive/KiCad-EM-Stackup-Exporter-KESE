@@ -1,4 +1,4 @@
-# 2979 bus_breakout
+# 2979. bus_breakout
 
 Board 2,979 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 28](../CorpusTestingPages/Corpus-Testing-28.md#2979-bus_breakout).
 
@@ -45,4 +45,4 @@ Board 2,979 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2978 uCM4](b2978b_ucm4_uCM4.md) | [2980 arduino_eeprom_programmer](b2980b_8bit-cpu_arduino-eeprom-programmer.md) |
+| [2978. uCM4](b2978b_ucm4_uCM4.md) | [2980. arduino_eeprom_programmer](b2980b_8bit-cpu_arduino-eeprom-programmer.md) |

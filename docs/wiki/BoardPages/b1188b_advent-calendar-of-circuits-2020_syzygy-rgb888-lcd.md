@@ -1,4 +1,4 @@
-# 1188 syzygy-rgb888-lcd
+# 1188. syzygy-rgb888-lcd
 
 Board 1,188 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 11](../CorpusTestingPages/Corpus-Testing-11.md#1188-syzygy-rgb888-lcd).
 
@@ -45,4 +45,4 @@ Board 1,188 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1187 syzygy-pmod](b1187b_advent-calendar-of-circuits-2020_syzygy-pmod.md) | [1189 syzygy-sgmii](b1189b_advent-calendar-of-circuits-2020_syzygy-sgmii.md) |
+| [1187. syzygy-pmod](b1187b_advent-calendar-of-circuits-2020_syzygy-pmod.md) | [1189. syzygy-sgmii](b1189b_advent-calendar-of-circuits-2020_syzygy-sgmii.md) |

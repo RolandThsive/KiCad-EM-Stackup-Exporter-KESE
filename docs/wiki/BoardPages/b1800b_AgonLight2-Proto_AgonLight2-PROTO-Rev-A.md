@@ -1,4 +1,4 @@
-# 1800 AgonLight2-PROTO_Rev_A
+# 1800. AgonLight2-PROTO_Rev_A
 
 Board 1,800 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 17](../CorpusTestingPages/Corpus-Testing-17.md#1800-agonlight2-proto_rev_a).
 
@@ -45,4 +45,4 @@ Board 1,800 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1799 AgonLight2-HvIO_Rev_A1](b1799b_AgonLight2-HvIO_AgonLight2-HvIO-Rev-A1.md) | [1801 bb-ads1220](b1801b_BB-ADS1220_bb-ads1220.md) |
+| [1799. AgonLight2-HvIO_Rev_A1](b1799b_AgonLight2-HvIO_AgonLight2-HvIO-Rev-A1.md) | [1801. bb-ads1220](b1801b_BB-ADS1220_bb-ads1220.md) |

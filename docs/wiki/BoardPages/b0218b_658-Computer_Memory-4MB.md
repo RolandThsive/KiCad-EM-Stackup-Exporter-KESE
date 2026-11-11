@@ -1,4 +1,4 @@
-# 218 Memory 4MB
+# 218. Memory 4MB
 
 Board 218 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 3](../CorpusTestingPages/Corpus-Testing-03.md#218-memory-4mb).
 
@@ -45,4 +45,4 @@ Board 218 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [217 Memory 1MB](b0217b_658-Computer_Memory-1MB.md) | [219 Memory Board](b0219b_658-Computer_Memory-Board.md) |
+| [217. Memory 1MB](b0217b_658-Computer_Memory-1MB.md) | [219. Memory Board](b0219b_658-Computer_Memory-Board.md) |

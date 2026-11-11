@@ -1,4 +1,4 @@
-# 1428 DFTBoard
+# 1428. DFTBoard
 
 Board 1,428 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 14](../CorpusTestingPages/Corpus-Testing-14.md#1428-dftboard).
 
@@ -44,4 +44,4 @@ Board 1,428 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1427 x65-sbc-revB1](b1427b_x65_x65-sbc-revB1.md) | [1429 PCB](b1429b_m-2-fpga-accelerator_PCB.md) |
+| [1427. x65-sbc-revB1](b1427b_x65_x65-sbc-revB1.md) | [1429. PCB](b1429b_m-2-fpga-accelerator_PCB.md) |

@@ -1,4 +1,4 @@
-# 2640 NA6
+# 2640. NA6
 
 Board 2,640 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 25](../CorpusTestingPages/Corpus-Testing-25.md#2640-na6).
 
@@ -45,4 +45,4 @@ Board 2,640 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2639 NA6 v1.3](b2639b_hardware_NA6-v1-3.md) | [2641 Screw terminal interface](b2641b_hardware_Screw-terminal-interface.md) |
+| [2639. NA6 v1.3](b2639b_hardware_NA6-v1-3.md) | [2641. Screw terminal interface](b2641b_hardware_Screw-terminal-interface.md) |

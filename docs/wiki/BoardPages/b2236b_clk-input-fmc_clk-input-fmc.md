@@ -1,4 +1,4 @@
-# 2236 clk-input-fmc
+# 2236. clk-input-fmc
 
 Board 2,236 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 21](../CorpusTestingPages/Corpus-Testing-21.md#2236-clk-input-fmc).
 
@@ -44,4 +44,4 @@ Board 2,236 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2235 icE1usb](b2235b_osmo-e1-hardware_hardware-icE1usb-r1-0_icE1usb.md) | [2237 trigger-output-fmc](b2237b_trigger-output-fmc_trigger-output-fmc.md) |
+| [2235. icE1usb](b2235b_osmo-e1-hardware_hardware-icE1usb-r1-0_icE1usb.md) | [2237. trigger-output-fmc](b2237b_trigger-output-fmc_trigger-output-fmc.md) |

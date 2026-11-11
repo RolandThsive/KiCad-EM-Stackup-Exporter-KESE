@@ -1,4 +1,4 @@
-# 299 Speed
+# 299. Speed
 
 Board 299 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 3](../CorpusTestingPages/Corpus-Testing-03.md#299-speed).
 
@@ -45,4 +45,4 @@ Board 299 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [298 EPM7160S Programmer](b0298b_658-Computer_EPM7160S-Programmer.md) | [300 LCD 14 Segment Tester](b0300b_658-Computer_LCD-14-Segment-Tester.md) |
+| [298. EPM7160S Programmer](b0298b_658-Computer_EPM7160S-Programmer.md) | [300. LCD 14 Segment Tester](b0300b_658-Computer_LCD-14-Segment-Tester.md) |

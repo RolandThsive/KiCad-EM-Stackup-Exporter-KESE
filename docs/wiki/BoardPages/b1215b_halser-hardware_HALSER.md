@@ -1,4 +1,4 @@
-# 1215 HALSER
+# 1215. HALSER
 
 Board 1,215 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 12](../CorpusTestingPages/Corpus-Testing-12.md#1215-halser).
 
@@ -44,4 +44,4 @@ Board 1,215 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1214 HALPI2](b1214b_halpi2-hardware_HALPI2.md) | [1216 SH-RPi](b1216b_sh-rpi-hardware_SH-RPi.md) |
+| [1214. HALPI2](b1214b_halpi2-hardware_HALPI2.md) | [1216. SH-RPi](b1216b_sh-rpi-hardware_SH-RPi.md) |

@@ -1,4 +1,4 @@
-# 396 pmod-i3c-sensor-board
+# 396. pmod-i3c-sensor-board
 
 Board 396 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 4](../CorpusTestingPages/Corpus-Testing-04.md#396-pmod-i3c-sensor-board).
 
@@ -44,4 +44,4 @@ Board 396 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [395 pmod-i3c-driver](b0395b_pmod-i3c-driver_pmod-i3c-driver.md) | [397 antmicro-poe-to-usbc-pd-adapter](b0397b_poe-usb-c-pd-converter_antmicro-poe-to-usbc-pd-adapter.md) |
+| [395. pmod-i3c-driver](b0395b_pmod-i3c-driver_pmod-i3c-driver.md) | [397. antmicro-poe-to-usbc-pd-adapter](b0397b_poe-usb-c-pd-converter_antmicro-poe-to-usbc-pd-adapter.md) |

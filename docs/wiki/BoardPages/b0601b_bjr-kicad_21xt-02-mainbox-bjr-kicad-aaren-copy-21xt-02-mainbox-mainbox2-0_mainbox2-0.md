@@ -1,4 +1,4 @@
-# 601 mainbox2.0
+# 601. mainbox2.0
 
 Board 601 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 6](../CorpusTestingPages/Corpus-Testing-06.md#601-mainbox20).
 
@@ -45,4 +45,4 @@ Board 601 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [600 mainbox1.0](b0600b_bjr-kicad_21xt-02-mainbox-bjr-kicad-aaren-copy-21xt-02-mainbox-mainbox1-0_mainbox1-0.md) | [602 mainbox2.0_sophie](b0602b_bjr-kicad_mainbox2-0-sophie.md) |
+| [600. mainbox1.0](b0600b_bjr-kicad_21xt-02-mainbox-bjr-kicad-aaren-copy-21xt-02-mainbox-mainbox1-0_mainbox1-0.md) | [602. mainbox2.0_sophie](b0602b_bjr-kicad_mainbox2-0-sophie.md) |

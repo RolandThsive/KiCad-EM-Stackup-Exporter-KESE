@@ -1,4 +1,4 @@
-# 1425 QBusH723Z
+# 1425. QBusH723Z
 
 Board 1,425 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 14](../CorpusTestingPages/Corpus-Testing-14.md#1425-qbush723z).
 
@@ -45,4 +45,4 @@ Board 1,425 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1424 adapter](b1424b_jtcores_cores-wc-sch-adapter_adapter.md) | [1426 x65-sbc-revA1](b1426b_x65_x65-sbc-revA1.md) |
+| [1424. adapter](b1424b_jtcores_cores-wc-sch-adapter_adapter.md) | [1426. x65-sbc-revA1](b1426b_x65_x65-sbc-revA1.md) |

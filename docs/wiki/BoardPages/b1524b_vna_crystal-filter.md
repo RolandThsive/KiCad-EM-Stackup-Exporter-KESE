@@ -1,4 +1,4 @@
-# 1524 crystal_filter
+# 1524. crystal_filter
 
 Board 1,524 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 15](../CorpusTestingPages/Corpus-Testing-15.md#1524-crystal_filter).
 
@@ -45,4 +45,4 @@ Board 1,524 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1523 cpw_test](b1523b_vna_breakouts-cpw-test_cpw-test.md) | [1525 demod_breakout](b1525b_vna_demod-breakout.md) |
+| [1523. cpw_test](b1523b_vna_breakouts-cpw-test_cpw-test.md) | [1525. demod_breakout](b1525b_vna_demod-breakout.md) |

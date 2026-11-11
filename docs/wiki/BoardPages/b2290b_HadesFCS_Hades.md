@@ -1,4 +1,4 @@
-# 2290 Hades
+# 2290. Hades
 
 Board 2,290 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 22](../CorpusTestingPages/Corpus-Testing-22.md#2290-hades).
 
@@ -45,4 +45,4 @@ Board 2,290 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2289 R1000AX](b2289b_R1000AX_R1000AX.md) | [2291 HadesGPSDongle](b2291b_HadesFCS_HadesGPSDongle.md) |
+| [2289. R1000AX](b2289b_R1000AX_R1000AX.md) | [2291. HadesGPSDongle](b2291b_HadesFCS_HadesGPSDongle.md) |

@@ -1,4 +1,4 @@
-# 941 icebreaker-bitsy
+# 941. icebreaker-bitsy
 
 Board 941 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 9](../CorpusTestingPages/Corpus-Testing-09.md#941-icebreaker-bitsy).
 
@@ -45,4 +45,4 @@ Board 941 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [940 icebreaker-bitsy](b0940b_icebreaker_hardware-bitsy-v0-2a_icebreaker-bitsy.md) | [942 icebreaker-bitsy](b0942b_icebreaker_hardware-bitsy-v1-0a_icebreaker-bitsy.md) |
+| [940. icebreaker-bitsy](b0940b_icebreaker_hardware-bitsy-v0-2a_icebreaker-bitsy.md) | [942. icebreaker-bitsy](b0942b_icebreaker_hardware-bitsy-v1-0a_icebreaker-bitsy.md) |

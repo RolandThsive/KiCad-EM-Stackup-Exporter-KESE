@@ -1,4 +1,4 @@
-# 1803 bb-ch340t
+# 1803. bb-ch340t
 
 Board 1,803 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 17](../CorpusTestingPages/Corpus-Testing-17.md#1803-bb-ch340t).
 
@@ -45,4 +45,4 @@ Board 1,803 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1802 BB-ADS1262-Rev.A](b1802b_BB-ADS1262_BB-ADS1262-Rev-A.md) | [1804 bb-ch340t](b1804b_BB-CH340T_HARDWARE-BB-CH340T-Rev-B_bb-ch340t.md) |
+| [1802. BB-ADS1262-Rev.A](b1802b_BB-ADS1262_BB-ADS1262-Rev-A.md) | [1804. bb-ch340t](b1804b_BB-CH340T_HARDWARE-BB-CH340T-Rev-B_bb-ch340t.md) |

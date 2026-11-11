@@ -1,4 +1,4 @@
-# 2185 flatsat-breakout-main
+# 2185. flatsat-breakout-main
 
 Board 2,185 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 21](../CorpusTestingPages/Corpus-Testing-21.md#2185-flatsat-breakout-main).
 
@@ -45,4 +45,4 @@ Board 2,185 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2184 card-debug-board-3](b2184b_oresat-flatsat_card-debug-board-3.md) | [2186 oresat-flatsat-interface](b2186b_oresat-flatsat_oresat-flatsat-interface.md) |
+| [2184. card-debug-board-3](b2184b_oresat-flatsat_card-debug-board-3.md) | [2186. oresat-flatsat-interface](b2186b_oresat-flatsat_oresat-flatsat-interface.md) |

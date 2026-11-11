@@ -1,4 +1,4 @@
-# 1229 REAmiga3000
+# 1229. REAmiga3000
 
 Board 1,229 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 12](../CorpusTestingPages/Corpus-Testing-12.md#1229-reamiga3000).
 
@@ -45,4 +45,4 @@ Board 1,229 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1228 A3000](b1228b_ReAmiga-3000-KiCAD_A3000.md) | [1230 Issue 4](b1230b_ZX-Spectrum-Issue-4B-KiCAD_Issue-4.md) |
+| [1228. A3000](b1228b_ReAmiga-3000-KiCAD_A3000.md) | [1230. Issue 4](b1230b_ZX-Spectrum-Issue-4B-KiCAD_Issue-4.md) |

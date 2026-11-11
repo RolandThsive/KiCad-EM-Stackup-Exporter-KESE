@@ -1,4 +1,4 @@
-# 1361 reform-motherboard
+# 1361. reform-motherboard
 
 Board 1,361 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 13](../CorpusTestingPages/Corpus-Testing-13.md#1361-reform-motherboard).
 
@@ -45,4 +45,4 @@ Board 1,361 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1360 mntcomp-keyboard](b1360b_reform_mntcomp-keyboard.md) | [1362 reform-trackball](b1362b_reform_reform-trackball.md) |
+| [1360. mntcomp-keyboard](b1360b_reform_mntcomp-keyboard.md) | [1362. reform-trackball](b1362b_reform_reform-trackball.md) |

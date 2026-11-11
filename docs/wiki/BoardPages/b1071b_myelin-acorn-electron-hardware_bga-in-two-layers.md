@@ -1,4 +1,4 @@
-# 1071 bga_in_two_layers
+# 1071. bga_in_two_layers
 
 Board 1,071 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 10](../CorpusTestingPages/Corpus-Testing-10.md#1071-bga_in_two_layers).
 
@@ -45,4 +45,4 @@ Board 1,071 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1070 bbc_power](b1070b_myelin-acorn-electron-hardware_bbc-power.md) | [1072 cherry_mx](b1072b_myelin-acorn-electron-hardware_cherry-mx.md) |
+| [1070. bbc_power](b1070b_myelin-acorn-electron-hardware_bbc-power.md) | [1072. cherry_mx](b1072b_myelin-acorn-electron-hardware_cherry-mx.md) |

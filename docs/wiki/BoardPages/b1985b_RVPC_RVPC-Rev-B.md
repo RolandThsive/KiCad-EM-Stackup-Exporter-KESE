@@ -1,4 +1,4 @@
-# 1985 RVPC_Rev_B
+# 1985. RVPC_Rev_B
 
 Board 1,985 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 19](../CorpusTestingPages/Corpus-Testing-19.md#1985-rvpc_rev_b).
 
@@ -45,4 +45,4 @@ Board 1,985 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1984 RVPC_Rev_A](b1984b_RVPC_RVPC-Rev-A.md) | [1986 exposed_power_rails](b1986b_RVPC_exposed-power-rails.md) |
+| [1984. RVPC_Rev_A](b1984b_RVPC_RVPC-Rev-A.md) | [1986. exposed_power_rails](b1986b_RVPC_exposed-power-rails.md) |

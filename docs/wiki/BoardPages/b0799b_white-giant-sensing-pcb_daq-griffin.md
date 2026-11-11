@@ -1,4 +1,4 @@
-# 799 daq_griffin
+# 799. daq_griffin
 
 Board 799 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 8](../CorpusTestingPages/Corpus-Testing-08.md#799-daq_griffin).
 
@@ -45,4 +45,4 @@ Board 799 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [798 aquila_main](b0798b_aquila-avionics_aquila-main.md) | [800 OpeN64](b0800b_OpeN64_OpeN64.md) |
+| [798. aquila_main](b0798b_aquila-avionics_aquila-main.md) | [800. OpeN64](b0800b_OpeN64_OpeN64.md) |

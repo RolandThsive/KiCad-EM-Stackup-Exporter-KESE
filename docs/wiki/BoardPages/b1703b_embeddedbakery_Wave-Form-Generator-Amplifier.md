@@ -1,4 +1,4 @@
-# 1703 Wave Form Generator Amplifier
+# 1703. Wave Form Generator Amplifier
 
 Board 1,703 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 16](../CorpusTestingPages/Corpus-Testing-16.md#1703-wave-form-generator-amplifier).
 
@@ -45,4 +45,4 @@ Board 1,703 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1702 Analog Converter](b1702b_embeddedbakery_Analog-Converter.md) | [1704 MyIOShield](b1704b_embeddedbakery_MyIOShield.md) |
+| [1702. Analog Converter](b1702b_embeddedbakery_Analog-Converter.md) | [1704. MyIOShield](b1704b_embeddedbakery_MyIOShield.md) |

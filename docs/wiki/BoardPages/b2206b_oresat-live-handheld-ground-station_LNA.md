@@ -1,4 +1,4 @@
-# 2206 LNA
+# 2206. LNA
 
 Board 2,206 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 21](../CorpusTestingPages/Corpus-Testing-21.md#2206-lna).
 
@@ -45,4 +45,4 @@ Board 2,206 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2205 open_stub_experiment](b2205b_oresat-live-handheld-ground-station_open-stub-experiment.md) | [2207 transformer](b2207b_oresat-live-handheld-ground-station_transformer.md) |
+| [2205. open_stub_experiment](b2205b_oresat-live-handheld-ground-station_open-stub-experiment.md) | [2207. transformer](b2207b_oresat-live-handheld-ground-station_transformer.md) |

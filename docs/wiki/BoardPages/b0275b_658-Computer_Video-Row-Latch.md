@@ -1,4 +1,4 @@
-# 275 Video Row Latch
+# 275. Video Row Latch
 
 Board 275 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 3](../CorpusTestingPages/Corpus-Testing-03.md#275-video-row-latch).
 
@@ -45,4 +45,4 @@ Board 275 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [274 Video Pixel Advance](b0274b_658-Computer_Video-Pixel-Advance.md) | [276 Video Signal Dragger](b0276b_658-Computer_Video-Signal-Dragger.md) |
+| [274. Video Pixel Advance](b0274b_658-Computer_Video-Pixel-Advance.md) | [276. Video Signal Dragger](b0276b_658-Computer_Video-Signal-Dragger.md) |

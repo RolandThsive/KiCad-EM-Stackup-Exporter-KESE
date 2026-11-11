@@ -1,4 +1,4 @@
-# 1590 DepthABC
+# 1590. DepthABC
 
 Board 1,590 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 15](../CorpusTestingPages/Corpus-Testing-15.md#1590-depthabc).
 
@@ -45,4 +45,4 @@ Board 1,590 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1589 Aleste520_Keyboard](b1589b_Aleste520ex_Aleste520-Keyboard.md) | [1591 payload_board](b1591b_SDR-Carrier-Board_payload-board.md) |
+| [1589. Aleste520_Keyboard](b1589b_Aleste520ex_Aleste520-Keyboard.md) | [1591. payload_board](b1591b_SDR-Carrier-Board_payload-board.md) |

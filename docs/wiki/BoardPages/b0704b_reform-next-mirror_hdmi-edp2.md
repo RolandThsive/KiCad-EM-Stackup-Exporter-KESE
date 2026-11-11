@@ -1,4 +1,4 @@
-# 704 hdmi-edp2
+# 704. hdmi-edp2
 
 Board 704 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 7](../CorpusTestingPages/Corpus-Testing-07.md#704-hdmi-edp2).
 
@@ -45,4 +45,4 @@ Board 704 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [703 MiniLatte](b0703b_minilatte_MiniLatte.md) | [705 nref-batterypack-backside](b0705b_reform-next-mirror_nref-batterypack-v3_nref-batterypack-backside.md) |
+| [703. MiniLatte](b0703b_minilatte_MiniLatte.md) | [705. nref-batterypack-backside](b0705b_reform-next-mirror_nref-batterypack-v3_nref-batterypack-backside.md) |

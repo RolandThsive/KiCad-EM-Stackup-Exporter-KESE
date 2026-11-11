@@ -1,4 +1,4 @@
-# 33 LCD Board
+# 33. LCD Board
 
 Board 33 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 1](../CorpusTestingPages/Corpus-Testing-01.md#33-lcd-board).
 
@@ -45,4 +45,4 @@ Board 33 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page
 
 | Previous | Next |
 |:---|---:|
-| [32 Keyboard Helper](b0032b_6502_Keyboard-Helper.md) | [34 LCD Card](b0034b_6502_LCD-Card.md) |
+| [32. Keyboard Helper](b0032b_6502_Keyboard-Helper.md) | [34. LCD Card](b0034b_6502_LCD-Card.md) |

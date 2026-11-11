@@ -1,4 +1,4 @@
-# 2342 unibone.unrouted
+# 2342. unibone.unrouted
 
 Board 2,342 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 22](../CorpusTestingPages/Corpus-Testing-22.md#2342-uniboneunrouted).
 
@@ -45,4 +45,4 @@ Board 2,342 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2341 unibone.routed](b2341b_QUniBoneClassic_unibone-routed.md) | [2343 qmtech-minimig](b2343b_qmtech-minimig_qmtech-minimig.md) |
+| [2341. unibone.routed](b2341b_QUniBoneClassic_unibone-routed.md) | [2343. qmtech-minimig](b2343b_qmtech-minimig_qmtech-minimig.md) |

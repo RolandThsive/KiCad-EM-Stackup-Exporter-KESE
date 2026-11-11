@@ -1,4 +1,4 @@
-# 1159 mainboard
+# 1159. mainboard
 
 Board 1,159 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 11](../CorpusTestingPages/Corpus-Testing-11.md#1159-mainboard).
 
@@ -44,4 +44,4 @@ Board 1,159 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1158 tycho](b1158b_tycho_tycho.md) | [1160 yardstickone](b1160b_yardstick_yardstickone.md) |
+| [1158. tycho](b1158b_tycho_tycho.md) | [1160. yardstickone](b1160b_yardstick_yardstickone.md) |

@@ -1,4 +1,4 @@
-# 756 ciaa-pic
+# 756. ciaa-pic
 
 Board 756 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 7](../CorpusTestingPages/Corpus-Testing-07.md#756-ciaa-pic).
 
@@ -45,4 +45,4 @@ Board 756 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [755 ciaa-nxp](b0755b_Hardware_ciaa-nxp.md) | [757 picociaa](b0757b_Hardware_picociaa.md) |
+| [755. ciaa-nxp](b0755b_Hardware_ciaa-nxp.md) | [757. picociaa](b0757b_Hardware_picociaa.md) |

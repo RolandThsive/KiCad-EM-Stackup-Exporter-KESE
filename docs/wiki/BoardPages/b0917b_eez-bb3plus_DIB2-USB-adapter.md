@@ -1,4 +1,4 @@
-# 917 DIB2 USB adapter
+# 917. DIB2 USB adapter
 
 Board 917 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 9](../CorpusTestingPages/Corpus-Testing-09.md#917-dib2-usb-adapter).
 
@@ -45,4 +45,4 @@ Board 917 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [916 DIB2 USB adapter front mask](b0916b_eez-bb3plus_DIB2-USB-adapter-front-mask.md) | [918 BB3plus DSI TFT display](b0918b_eez-bb3plus_BB3plus-DSI-TFT-display.md) |
+| [916. DIB2 USB adapter front mask](b0916b_eez-bb3plus_DIB2-USB-adapter-front-mask.md) | [918. BB3plus DSI TFT display](b0918b_eez-bb3plus_BB3plus-DSI-TFT-display.md) |

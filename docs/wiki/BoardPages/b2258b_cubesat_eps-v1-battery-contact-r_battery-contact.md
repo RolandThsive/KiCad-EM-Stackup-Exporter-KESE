@@ -1,4 +1,4 @@
-# 2258 battery_contact
+# 2258. battery_contact
 
 Board 2,258 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 21](../CorpusTestingPages/Corpus-Testing-21.md#2258-battery_contact).
 
@@ -45,4 +45,4 @@ Board 2,258 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2257 battery_contact_panel](b2257b_cubesat_battery-contact-panel.md) | [2259 eps](b2259b_cubesat_eps.md) |
+| [2257. battery_contact_panel](b2257b_cubesat_battery-contact-panel.md) | [2259. eps](b2259b_cubesat_eps.md) |

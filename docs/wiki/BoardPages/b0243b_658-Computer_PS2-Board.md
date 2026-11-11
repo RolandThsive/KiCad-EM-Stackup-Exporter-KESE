@@ -1,4 +1,4 @@
-# 243 PS2 Board
+# 243. PS2 Board
 
 Board 243 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 3](../CorpusTestingPages/Corpus-Testing-03.md#243-ps2-board).
 
@@ -45,4 +45,4 @@ Board 243 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [242 W65C816 Power](b0242b_658-Computer_W65C816-Power.md) | [244 PS2 FIFO](b0244b_658-Computer_PS2-FIFO.md) |
+| [242. W65C816 Power](b0242b_658-Computer_W65C816-Power.md) | [244. PS2 FIFO](b0244b_658-Computer_PS2-FIFO.md) |

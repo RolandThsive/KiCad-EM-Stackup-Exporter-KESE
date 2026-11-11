@@ -1,4 +1,4 @@
-# 123 Board 2x24 W15.24
+# 123. Board 2x24 W15.24
 
 Board 123 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 2](../CorpusTestingPages/Corpus-Testing-02.md#123-board-2x24-w1524).
 
@@ -45,4 +45,4 @@ Board 123 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [122 Board 2x22 W15.24](b0122b_658-Computer_Kicad-Boards-Blank-Board-2x22-W15-24_Board-2x22-W15-24.md) | [124 Board 2x24 W22.86](b0124b_658-Computer_Kicad-Boards-Blank-Board-2x24-W22-86_Board-2x24-W22-86.md) |
+| [122. Board 2x22 W15.24](b0122b_658-Computer_Kicad-Boards-Blank-Board-2x22-W15-24_Board-2x22-W15-24.md) | [124. Board 2x24 W22.86](b0124b_658-Computer_Kicad-Boards-Blank-Board-2x24-W22-86_Board-2x24-W22-86.md) |

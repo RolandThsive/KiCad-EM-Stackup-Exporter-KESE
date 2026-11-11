@@ -1,4 +1,4 @@
-# 3007 novatel_gps_breakout
+# 3007. novatel_gps_breakout
 
 Board 3,007 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 28](../CorpusTestingPages/Corpus-Testing-28.md#3007-novatel_gps_breakout).
 
@@ -45,4 +45,4 @@ Board 3,007 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [3006 power-splitter](b3006b_canhw_power-splitter.md) | [3008 picdev](b3008b_canhw_picdev.md) |
+| [3006. power-splitter](b3006b_canhw_power-splitter.md) | [3008. picdev](b3008b_canhw_picdev.md) |

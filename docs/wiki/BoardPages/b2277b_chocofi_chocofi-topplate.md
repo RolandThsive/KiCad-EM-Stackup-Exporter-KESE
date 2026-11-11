@@ -1,4 +1,4 @@
-# 2277 chocofi-topplate
+# 2277. chocofi-topplate
 
 Board 2,277 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 22](../CorpusTestingPages/Corpus-Testing-22.md#2277-chocofi-topplate).
 
@@ -46,4 +46,4 @@ Board 2,277 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2276 porcupine](b2276b_parallella-hw_porcupine.md) | [2278 chocofi](b2278b_chocofi_chocofi.md) |
+| [2276. porcupine](b2276b_parallella-hw_porcupine.md) | [2278. chocofi](b2278b_chocofi_chocofi.md) |

@@ -1,4 +1,4 @@
-# 2705 racer
+# 2705. racer
 
 Board 2,705 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 26](../CorpusTestingPages/Corpus-Testing-26.md#2705-racer).
 
@@ -45,4 +45,4 @@ Board 2,705 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2704 sensors](b2704b_Racer_sensors.md) | [2706 controller](b2706b_Racer_controller.md) |
+| [2704. sensors](b2704b_Racer_sensors.md) | [2706. controller](b2706b_Racer_controller.md) |

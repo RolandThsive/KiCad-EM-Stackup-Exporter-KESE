@@ -1,4 +1,4 @@
-# 2170 oresat1-plusz-end-card
+# 2170. oresat1-plusz-end-card
 
 Board 2,170 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 21](../CorpusTestingPages/Corpus-Testing-21.md#2170-oresat1-plusz-end-card).
 
@@ -45,4 +45,4 @@ Board 2,170 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2169 oresat1-minusz-end-card](b2169b_oresat-end-cards_oresat1-minusz-end-card.md) | [2171 esi-minusZ-end-cap](b2171b_oresat-endcaps_esi-minusZ-end-cap.md) |
+| [2169. oresat1-minusz-end-card](b2169b_oresat-end-cards_oresat1-minusz-end-card.md) | [2171. esi-minusZ-end-cap](b2171b_oresat-endcaps_esi-minusZ-end-cap.md) |

@@ -1,4 +1,4 @@
-# 1669 adapter
+# 1669. adapter
 
 Board 1,669 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 16](../CorpusTestingPages/Corpus-Testing-16.md#1669-adapter).
 
@@ -45,4 +45,4 @@ Board 1,669 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1668 videoslot](b1668b_amiga2000-gfxcard_videoslot.md) | [1670 adapter](b1670b_Glider_pcb-34p-adapter-b_adapter.md) |
+| [1668. videoslot](b1668b_amiga2000-gfxcard_videoslot.md) | [1670. adapter](b1670b_Glider_pcb-34p-adapter-b_adapter.md) |

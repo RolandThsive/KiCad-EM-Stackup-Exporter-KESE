@@ -1,4 +1,4 @@
-# 3125 hw-openmower-universal
+# 3125. hw-openmower-universal
 
 Board 3,125 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 29](../CorpusTestingPages/Corpus-Testing-29.md#3125-hw-openmower-universal).
 
@@ -44,4 +44,4 @@ Board 3,125 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [3124 hw-openmower-sabo](b3124b_hw-openmower-sabo_hw-openmower-sabo.md) | [3126 hw-openmower-yardforce](b3126b_hw-openmower-yardforce_hw-openmower-yardforce.md) |
+| [3124. hw-openmower-sabo](b3124b_hw-openmower-sabo_hw-openmower-sabo.md) | [3126. hw-openmower-yardforce](b3126b_hw-openmower-yardforce_hw-openmower-yardforce.md) |

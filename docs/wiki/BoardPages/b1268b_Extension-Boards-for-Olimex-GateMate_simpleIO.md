@@ -1,4 +1,4 @@
-# 1268 simpleIO
+# 1268. simpleIO
 
 Board 1,268 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 12](../CorpusTestingPages/Corpus-Testing-12.md#1268-simpleio).
 
@@ -45,4 +45,4 @@ Board 1,268 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1267 pwrIO](b1267b_Extension-Boards-for-Olimex-GateMate_pwrIO.md) | [1269 tmrIO](b1269b_Extension-Boards-for-Olimex-GateMate_tmrIO.md) |
+| [1267. pwrIO](b1267b_Extension-Boards-for-Olimex-GateMate_pwrIO.md) | [1269. tmrIO](b1269b_Extension-Boards-for-Olimex-GateMate_tmrIO.md) |

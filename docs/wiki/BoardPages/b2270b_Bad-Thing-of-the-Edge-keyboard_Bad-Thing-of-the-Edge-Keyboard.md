@@ -1,4 +1,4 @@
-# 2270 Bad Thing of the Edge Keyboard
+# 2270. Bad Thing of the Edge Keyboard
 
 Board 2,270 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 22](../CorpusTestingPages/Corpus-Testing-22.md#2270-bad-thing-of-the-edge-keyboard).
 
@@ -45,4 +45,4 @@ Board 2,270 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2269 fpx](b2269b_fpx_fpx.md) | [2271 panel](b2271b_Bad-Thing-of-the-Edge-keyboard_panel.md) |
+| [2269. fpx](b2269b_fpx_fpx.md) | [2271. panel](b2271b_Bad-Thing-of-the-Edge-keyboard_panel.md) |

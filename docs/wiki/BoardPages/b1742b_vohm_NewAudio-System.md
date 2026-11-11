@@ -1,4 +1,4 @@
-# 1742 NewAudio_System
+# 1742. NewAudio_System
 
 Board 1,742 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 17](../CorpusTestingPages/Corpus-Testing-17.md#1742-newaudio_system).
 
@@ -45,4 +45,4 @@ Board 1,742 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1741 LattePandaMu_Motherboard](b1741b_vohm_LattePandaMu-Motherboard.md) | [1743 webcam_microphone_system](b1743b_vohm_webcam-microphone-system.md) |
+| [1741. LattePandaMu_Motherboard](b1741b_vohm_LattePandaMu-Motherboard.md) | [1743. webcam_microphone_system](b1743b_vohm_webcam-microphone-system.md) |

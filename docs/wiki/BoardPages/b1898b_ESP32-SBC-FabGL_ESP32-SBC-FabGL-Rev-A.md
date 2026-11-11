@@ -1,4 +1,4 @@
-# 1898 ESP32-SBC-FabGL_Rev_A
+# 1898. ESP32-SBC-FabGL_Rev_A
 
 Board 1,898 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 18](../CorpusTestingPages/Corpus-Testing-18.md#1898-esp32-sbc-fabgl_rev_a).
 
@@ -45,4 +45,4 @@ Board 1,898 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1897 ESP32-S3-DevKit-LiPo_Rev_B](b1897b_ESP32-S3-DevKit-LiPo_ESP32-S3-DevKit-LiPo-Rev-B.md) | [1899 ESP32-SBC-FabGL_Rev_B](b1899b_ESP32-SBC-FabGL_ESP32-SBC-FabGL-Rev-B.md) |
+| [1897. ESP32-S3-DevKit-LiPo_Rev_B](b1897b_ESP32-S3-DevKit-LiPo_ESP32-S3-DevKit-LiPo-Rev-B.md) | [1899. ESP32-SBC-FabGL_Rev_B](b1899b_ESP32-SBC-FabGL_ESP32-SBC-FabGL-Rev-B.md) |

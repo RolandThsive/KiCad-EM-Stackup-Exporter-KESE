@@ -1,4 +1,4 @@
-# 2453 frankenso
+# 2453. frankenso
 
 Board 2,453 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 23](../CorpusTestingPages/Corpus-Testing-23.md#2453-frankenso).
 
@@ -45,4 +45,4 @@ Board 2,453 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2452 frankenso-PWR-Supply](b2452b_rusefi-hardware_classic-designs-frankenso-PWR-Supply_frankenso-PWR-Supply.md) | [2454 frankenstein](b2454b_rusefi-hardware_classic-designs-frankenstein_frankenstein.md) |
+| [2452. frankenso-PWR-Supply](b2452b_rusefi-hardware_classic-designs-frankenso-PWR-Supply_frankenso-PWR-Supply.md) | [2454. frankenstein](b2454b_rusefi-hardware_classic-designs-frankenstein_frankenstein.md) |

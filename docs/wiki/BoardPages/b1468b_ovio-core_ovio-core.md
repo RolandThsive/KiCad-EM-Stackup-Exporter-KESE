@@ -1,4 +1,4 @@
-# 1468 ovio_core
+# 1468. ovio_core
 
 Board 1,468 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 14](../CorpusTestingPages/Corpus-Testing-14.md#1468-ovio_core).
 
@@ -44,4 +44,4 @@ Board 1,468 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1467 H616_devboard](b1467b_allwinner-h616-devboard_H616-devboard.md) | [1469 keyb2](b1469b_ZX-Spectrum-diy_keyb2.md) |
+| [1467. H616_devboard](b1467b_allwinner-h616-devboard_H616-devboard.md) | [1469. keyb2](b1469b_ZX-Spectrum-diy_keyb2.md) |

@@ -1,4 +1,4 @@
-# 2612 SparkFun_GNSS_Flex_Module_DAN-F10N_panelized
+# 2612. SparkFun_GNSS_Flex_Module_DAN-F10N_panelized
 
 Board 2,612 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 25](../CorpusTestingPages/Corpus-Testing-25.md#2612-sparkfun_gnss_flex_module_dan-f10n_panelized).
 
@@ -46,4 +46,4 @@ Board 2,612 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2611 hermeslite](b2611b_Hermes-Lite2_hermeslite.md) | [2613 SparkFun_GNSS_Flex_Module_DAN-F10N](b2613b_sparkfun-gnss-flex-system_SparkFun-GNSS-Flex-Module-DAN-F10N.md) |
+| [2611. hermeslite](b2611b_Hermes-Lite2_hermeslite.md) | [2613. SparkFun_GNSS_Flex_Module_DAN-F10N](b2613b_sparkfun-gnss-flex-system_SparkFun-GNSS-Flex-Module-DAN-F10N.md) |

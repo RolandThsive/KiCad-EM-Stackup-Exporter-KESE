@@ -1,4 +1,4 @@
-# 2276 porcupine
+# 2276. porcupine
 
 Board 2,276 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 22](../CorpusTestingPages/Corpus-Testing-22.md#2276-porcupine).
 
@@ -45,4 +45,4 @@ Board 2,276 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2275 paracard-template](b2275b_parallella-hw_paracard-template.md) | [2277 chocofi-topplate](b2277b_chocofi_chocofi-topplate.md) |
+| [2275. paracard-template](b2275b_parallella-hw_paracard-template.md) | [2277. chocofi-topplate](b2277b_chocofi_chocofi-topplate.md) |

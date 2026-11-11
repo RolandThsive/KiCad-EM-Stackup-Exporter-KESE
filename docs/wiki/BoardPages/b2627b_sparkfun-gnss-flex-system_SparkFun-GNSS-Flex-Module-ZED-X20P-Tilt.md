@@ -1,4 +1,4 @@
-# 2627 SparkFun_GNSS_Flex_Module_ZED-X20P_Tilt
+# 2627. SparkFun_GNSS_Flex_Module_ZED-X20P_Tilt
 
 Board 2,627 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 25](../CorpusTestingPages/Corpus-Testing-25.md#2627-sparkfun_gnss_flex_module_zed-x20p_tilt).
 
@@ -45,4 +45,4 @@ Board 2,627 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2626 SparkFun_GNSS_Flex_Module_ZED-X20P_Tilt_panelized](b2626b_sparkfun-gnss-flex-system_SparkFun-GNSS-Flex-Module-ZED-X20P-Tilt-panelized.md) | [2628 SparkPNT_GPSDO_panelized](b2628b_sparkfun-gnssdo_SparkPNT-GPSDO-panelized.md) |
+| [2626. SparkFun_GNSS_Flex_Module_ZED-X20P_Tilt_panelized](b2626b_sparkfun-gnss-flex-system_SparkFun-GNSS-Flex-Module-ZED-X20P-Tilt-panelized.md) | [2628. SparkPNT_GPSDO_panelized](b2628b_sparkfun-gnssdo_SparkPNT-GPSDO-panelized.md) |

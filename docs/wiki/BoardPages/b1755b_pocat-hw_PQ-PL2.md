@@ -1,4 +1,4 @@
-# 1755 PQ_PL2
+# 1755. PQ_PL2
 
 Board 1,755 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 17](../CorpusTestingPages/Corpus-Testing-17.md#1755-pq_pl2).
 
@@ -45,4 +45,4 @@ Board 1,755 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1754 PCB_P L2_PCB_2022-10-05](b1754b_pocat-hw_PCB-P-L2-PCB-2022-10-05.md) | [1756 PQ1_TopBoard](b1756b_pocat-hw_PQ1-TopBoard.md) |
+| [1754. PCB_P L2_PCB_2022-10-05](b1754b_pocat-hw_PCB-P-L2-PCB-2022-10-05.md) | [1756. PQ1_TopBoard](b1756b_pocat-hw_PQ1-TopBoard.md) |

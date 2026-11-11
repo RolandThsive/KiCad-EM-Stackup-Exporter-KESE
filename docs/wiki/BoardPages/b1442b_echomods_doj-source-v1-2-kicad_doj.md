@@ -1,4 +1,4 @@
-# 1442 doj
+# 1442. doj
 
 Board 1,442 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 14](../CorpusTestingPages/Corpus-Testing-14.md#1442-doj).
 
@@ -45,4 +45,4 @@ Board 1,442 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1441 doj](b1441b_echomods_doj-source-v1-1-kicad_doj.md) | [1443 doj_v2](b1443b_echomods_doj-v2.md) |
+| [1441. doj](b1441b_echomods_doj-source-v1-1-kicad_doj.md) | [1443. doj_v2](b1443b_echomods_doj-v2.md) |

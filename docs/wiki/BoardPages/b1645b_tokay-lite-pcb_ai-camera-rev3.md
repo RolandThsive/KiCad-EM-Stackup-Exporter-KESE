@@ -1,4 +1,4 @@
-# 1645 ai-camera-rev3
+# 1645. ai-camera-rev3
 
 Board 1,645 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 16](../CorpusTestingPages/Corpus-Testing-16.md#1645-ai-camera-rev3).
 
@@ -45,4 +45,4 @@ Board 1,645 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1644 ai-camera-rev3.2](b1644b_tokay-lite-pcb_ai-camera-rev3-2.md) | [1646 CM4_NAS](b1646b_CM4-NAS_CM4-NAS.md) |
+| [1644. ai-camera-rev3.2](b1644b_tokay-lite-pcb_ai-camera-rev3-2.md) | [1646. CM4_NAS](b1646b_CM4-NAS_CM4-NAS.md) |

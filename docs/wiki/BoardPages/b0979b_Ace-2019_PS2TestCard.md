@@ -1,4 +1,4 @@
-# 979 PS2TestCard
+# 979. PS2TestCard
 
 Board 979 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 10](../CorpusTestingPages/Corpus-Testing-10.md#979-ps2testcard).
 
@@ -45,4 +45,4 @@ Board 979 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [978 PS2](b0978b_Ace-2019_PS2.md) | [980 STM8SUBSYS](b0980b_Ace-2019_STM8SUBSYS.md) |
+| [978. PS2](b0978b_Ace-2019_PS2.md) | [980. STM8SUBSYS](b0980b_Ace-2019_STM8SUBSYS.md) |

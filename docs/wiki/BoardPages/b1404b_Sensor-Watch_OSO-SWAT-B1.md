@@ -1,4 +1,4 @@
-# 1404 OSO-SWAT-B1
+# 1404. OSO-SWAT-B1
 
 Board 1,404 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 13](../CorpusTestingPages/Corpus-Testing-13.md#1404-oso-swat-b1).
 
@@ -45,4 +45,4 @@ Board 1,404 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1403 OSO-SWAT-B1-jig](b1403b_Sensor-Watch_OSO-SWAT-B1-jig.md) | [1405 OSO-SWAT-C1-jig](b1405b_Sensor-Watch_OSO-SWAT-C1-jig.md) |
+| [1403. OSO-SWAT-B1-jig](b1403b_Sensor-Watch_OSO-SWAT-B1-jig.md) | [1405. OSO-SWAT-C1-jig](b1405b_Sensor-Watch_OSO-SWAT-C1-jig.md) |

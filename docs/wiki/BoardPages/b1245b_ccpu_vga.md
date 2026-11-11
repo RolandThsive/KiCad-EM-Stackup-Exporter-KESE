@@ -1,4 +1,4 @@
-# 1245 vga
+# 1245. vga
 
 Board 1,245 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 12](../CorpusTestingPages/Corpus-Testing-12.md#1245-vga).
 
@@ -45,4 +45,4 @@ Board 1,245 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1244 vario](b1244b_ccpu_vario.md) | [1246 4in1-panel](b1246b_openesc-30x30_4in1-panel.md) |
+| [1244. vario](b1244b_ccpu_vario.md) | [1246. 4in1-panel](b1246b_openesc-30x30_4in1-panel.md) |

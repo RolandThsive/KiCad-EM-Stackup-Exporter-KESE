@@ -1,4 +1,4 @@
-# 2985 BLDC_4
+# 2985. BLDC_4
 
 Board 2,985 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 28](../CorpusTestingPages/Corpus-Testing-28.md#2985-bldc_4).
 
@@ -45,4 +45,4 @@ Board 2,985 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2984 omower](b2984b_omower_omower.md) | [2986 VB-IoT1_v1](b2986b_VB-IoT1_VB-IoT1-v1.md) |
+| [2984. omower](b2984b_omower_omower.md) | [2986. VB-IoT1_v1](b2986b_VB-IoT1_VB-IoT1-v1.md) |

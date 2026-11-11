@@ -1,4 +1,4 @@
-# 726 nref-wifi-m2
+# 726. nref-wifi-m2
 
 Board 726 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 7](../CorpusTestingPages/Corpus-Testing-07.md#726-nref-wifi-m2).
 
@@ -45,4 +45,4 @@ Board 726 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [725 nref-usb3-redriver](b0725b_reform-next-mirror_nref-usb3-redriver.md) | [727 nref-wifi](b0727b_reform-next-mirror_nref-wifi.md) |
+| [725. nref-usb3-redriver](b0725b_reform-next-mirror_nref-usb3-redriver.md) | [727. nref-wifi](b0727b_reform-next-mirror_nref-wifi.md) |

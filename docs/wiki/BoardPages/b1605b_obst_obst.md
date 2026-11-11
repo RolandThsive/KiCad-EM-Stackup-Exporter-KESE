@@ -1,4 +1,4 @@
-# 1605 obst
+# 1605. obst
 
 Board 1,605 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 15](../CorpusTestingPages/Corpus-Testing-15.md#1605-obst).
 
@@ -45,4 +45,4 @@ Board 1,605 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1604 lakritz](b1604b_lakritz_lakritz.md) | [1606 riegel](b1606b_riegel_riegel.md) |
+| [1604. lakritz](b1604b_lakritz_lakritz.md) | [1606. riegel](b1606b_riegel_riegel.md) |

@@ -1,4 +1,4 @@
-# 1053 hat-gmm7550
+# 1053. hat-gmm7550
 
 Board 1,053 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 10](../CorpusTestingPages/Corpus-Testing-10.md#1053-hat-gmm7550).
 
@@ -45,4 +45,4 @@ Board 1,053 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1052 gmm](b1052b_gmm7550-hardware_gmm.md) | [1054 ram-gmm7550](b1054b_gmm7550-hardware_ram-gmm7550.md) |
+| [1052. gmm](b1052b_gmm7550-hardware_gmm.md) | [1054. ram-gmm7550](b1054b_gmm7550-hardware_ram-gmm7550.md) |

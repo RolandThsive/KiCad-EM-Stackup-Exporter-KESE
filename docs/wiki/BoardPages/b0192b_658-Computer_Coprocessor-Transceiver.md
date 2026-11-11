@@ -1,4 +1,4 @@
-# 192 Coprocessor Transceiver
+# 192. Coprocessor Transceiver
 
 Board 192 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 2](../CorpusTestingPages/Corpus-Testing-02.md#192-coprocessor-transceiver).
 
@@ -45,4 +45,4 @@ Board 192 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [191 Coprocessor Support](b0191b_658-Computer_Coprocessor-Support.md) | [193 Graphics Board](b0193b_658-Computer_Graphics-Board.md) |
+| [191. Coprocessor Support](b0191b_658-Computer_Coprocessor-Support.md) | [193. Graphics Board](b0193b_658-Computer_Graphics-Board.md) |

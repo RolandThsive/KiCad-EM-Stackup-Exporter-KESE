@@ -1,4 +1,4 @@
-# 287 HCP65 40 Pin Tester
+# 287. HCP65 40 Pin Tester
 
 Board 287 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 3](../CorpusTestingPages/Corpus-Testing-03.md#287-hcp65-40-pin-tester).
 
@@ -45,4 +45,4 @@ Board 287 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [286 HCP65 32 Pin Tester](b0286b_658-Computer_HCP65-32-Pin-Tester.md) | [288 HCP65 56 Pin Tester](b0288b_658-Computer_HCP65-56-Pin-Tester.md) |
+| [286. HCP65 32 Pin Tester](b0286b_658-Computer_HCP65-32-Pin-Tester.md) | [288. HCP65 56 Pin Tester](b0288b_658-Computer_HCP65-56-Pin-Tester.md) |

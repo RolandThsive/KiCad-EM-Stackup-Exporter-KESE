@@ -1,4 +1,4 @@
-# 1397 Dragon32
+# 1397. Dragon32
 
 Board 1,397 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 13](../CorpusTestingPages/Corpus-Testing-13.md#1397-dragon32).
 
@@ -44,4 +44,4 @@ Board 1,397 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1396 Commodore-Vic-20](b1396b_Commodore-Vic-20_Commodore-Vic-20.md) | [1398 Dragon32](b1398b_Dragon32Rev3_Dragon32.md) |
+| [1396. Commodore-Vic-20](b1396b_Commodore-Vic-20_Commodore-Vic-20.md) | [1398. Dragon32](b1398b_Dragon32Rev3_Dragon32.md) |

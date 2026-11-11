@@ -1,4 +1,4 @@
-# 1790 barebones
+# 1790. barebones
 
 Board 1,790 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 17](../CorpusTestingPages/Corpus-Testing-17.md#1790-barebones).
 
@@ -45,4 +45,4 @@ Board 1,790 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1789 battery](b1789b_barebones_battery.md) | [1791 m3](b1791b_rocket-flight-computer_m3-design-assembly-review_m3.md) |
+| [1789. battery](b1789b_barebones_battery.md) | [1791. m3](b1791b_rocket-flight-computer_m3-design-assembly-review_m3.md) |

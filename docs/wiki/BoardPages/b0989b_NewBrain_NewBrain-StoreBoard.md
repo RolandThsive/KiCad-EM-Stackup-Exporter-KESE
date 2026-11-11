@@ -1,4 +1,4 @@
-# 989 NewBrain StoreBoard
+# 989. NewBrain StoreBoard
 
 Board 989 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 10](../CorpusTestingPages/Corpus-Testing-10.md#989-newbrain-storeboard).
 
@@ -46,4 +46,4 @@ Board 989 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [988 NewBrain PSU](b0988b_NewBrain_NewBrain-PSU.md) | [990 corne-cherry](b0990b_crkbd_corne-cherry.md) |
+| [988. NewBrain PSU](b0988b_NewBrain_NewBrain-PSU.md) | [990. corne-cherry](b0990b_crkbd_corne-cherry.md) |

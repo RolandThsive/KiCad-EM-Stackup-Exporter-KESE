@@ -1,4 +1,4 @@
-# 1046 glasgow
+# 1046. glasgow
 
 Board 1,046 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 10](../CorpusTestingPages/Corpus-Testing-10.md#1046-glasgow).
 
@@ -45,4 +45,4 @@ Board 1,046 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1045 glasgow](b1045b_glasgow_hardware-boards-glasgow-revC0_glasgow.md) | [1047 glasgow](b1047b_glasgow_hardware-boards-glasgow-revC2_glasgow.md) |
+| [1045. glasgow](b1045b_glasgow_hardware-boards-glasgow-revC0_glasgow.md) | [1047. glasgow](b1047b_glasgow_hardware-boards-glasgow-revC2_glasgow.md) |

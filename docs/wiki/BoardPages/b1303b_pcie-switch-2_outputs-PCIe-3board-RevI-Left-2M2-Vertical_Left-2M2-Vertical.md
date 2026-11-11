@@ -1,4 +1,4 @@
-# 1303 Left_2M2_Vertical
+# 1303. Left_2M2_Vertical
 
 Board 1,303 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 13](../CorpusTestingPages/Corpus-Testing-13.md#1303-left_2m2_vertical).
 
@@ -45,4 +45,4 @@ Board 1,303 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1302 Assembly_View](b1302b_pcie-switch-2_outputs-PCIe-3board-RevI-Assembly-View_Assembly-View.md) | [1304 Main_10E1S](b1304b_pcie-switch-2_outputs-PCIe-3board-RevI-Main-10E1S_Main-10E1S.md) |
+| [1302. Assembly_View](b1302b_pcie-switch-2_outputs-PCIe-3board-RevI-Assembly-View_Assembly-View.md) | [1304. Main_10E1S](b1304b_pcie-switch-2_outputs-PCIe-3board-RevI-Main-10E1S_Main-10E1S.md) |

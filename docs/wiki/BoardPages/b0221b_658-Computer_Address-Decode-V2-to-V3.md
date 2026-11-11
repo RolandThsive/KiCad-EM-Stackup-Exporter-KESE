@@ -1,4 +1,4 @@
-# 221 Address Decode V2 to V3
+# 221. Address Decode V2 to V3
 
 Board 221 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 3](../CorpusTestingPages/Corpus-Testing-03.md#221-address-decode-v2-to-v3).
 
@@ -45,4 +45,4 @@ Board 221 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [220 Power and Reset](b0220b_658-Computer_Power-and-Reset.md) | [222 Clock Hold V1 to V2](b0222b_658-Computer_Clock-Hold-V1-to-V2.md) |
+| [220. Power and Reset](b0220b_658-Computer_Power-and-Reset.md) | [222. Clock Hold V1 to V2](b0222b_658-Computer_Clock-Hold-V1-to-V2.md) |

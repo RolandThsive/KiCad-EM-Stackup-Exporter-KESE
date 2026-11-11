@@ -1,4 +1,4 @@
-# 2197 at86rf215-design-block
+# 2197. at86rf215-design-block
 
 Board 2,197 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 21](../CorpusTestingPages/Corpus-Testing-21.md#2197-at86rf215-design-block).
 
@@ -45,4 +45,4 @@ Board 2,197 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2196 helmholtz-controller](b2196b_oresat-helmholtz_helmholtz-controller.md) | [2198 transceiver-AX5043](b2198b_oresat-kicad_transceiver-AX5043.md) |
+| [2196. helmholtz-controller](b2196b_oresat-helmholtz_helmholtz-controller.md) | [2198. transceiver-AX5043](b2198b_oresat-kicad_transceiver-AX5043.md) |

@@ -1,4 +1,4 @@
-# 2268 Power
+# 2268. Power
 
 Board 2,268 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 21](../CorpusTestingPages/Corpus-Testing-21.md#2268-power).
 
@@ -45,4 +45,4 @@ Board 2,268 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2267 heatsink_drawing](b2267b_twist_heatsink-drawing.md) | [2269 fpx](b2269b_fpx_fpx.md) |
+| [2267. heatsink_drawing](b2267b_twist_heatsink-drawing.md) | [2269. fpx](b2269b_fpx_fpx.md) |

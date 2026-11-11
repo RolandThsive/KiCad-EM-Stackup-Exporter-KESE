@@ -1,4 +1,4 @@
-# 325 Caravel_breakout_v2
+# 325. Caravel_breakout_v2
 
 Board 325 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 4](../CorpusTestingPages/Corpus-Testing-04.md#325-caravel_breakout_v2).
 
@@ -45,4 +45,4 @@ Board 325 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [324 Caravel_breakout](b0324b_caravel-board_Caravel-breakout.md) | [326 Caravel_daughter](b0326b_caravel-board_Caravel-daughter.md) |
+| [324. Caravel_breakout](b0324b_caravel-board_Caravel-breakout.md) | [326. Caravel_daughter](b0326b_caravel-board_Caravel-daughter.md) |

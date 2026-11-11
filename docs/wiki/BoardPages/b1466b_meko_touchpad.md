@@ -1,4 +1,4 @@
-# 1466 touchpad
+# 1466. touchpad
 
 Board 1,466 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 14](../CorpusTestingPages/Corpus-Testing-14.md#1466-touchpad).
 
@@ -45,4 +45,4 @@ Board 1,466 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1465 meko](b1465b_meko_meko.md) | [1467 H616_devboard](b1467b_allwinner-h616-devboard_H616-devboard.md) |
+| [1465. meko](b1465b_meko_meko.md) | [1467. H616_devboard](b1467b_allwinner-h616-devboard_H616-devboard.md) |

@@ -1,4 +1,4 @@
-# 2770 mcu-board v2
+# 2770. mcu-board v2
 
 Board 2,770 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 26](../CorpusTestingPages/Corpus-Testing-26.md#2770-mcu-board-v2).
 
@@ -45,4 +45,4 @@ Board 2,770 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2769 flight-computer](b2769b_srad-avionics_Spaceport-PCBs-flight-computer-flight-computer-2025-2026_flight-computer.md) | [2771 SensorBoardNoMCU](b2771b_srad-avionics_Spaceport-PCBs-Gerbers-Teensy-v3-0_SensorBoardNoMCU.md) |
+| [2769. flight-computer](b2769b_srad-avionics_Spaceport-PCBs-flight-computer-flight-computer-2025-2026_flight-computer.md) | [2771. SensorBoardNoMCU](b2771b_srad-avionics_Spaceport-PCBs-Gerbers-Teensy-v3-0_SensorBoardNoMCU.md) |

@@ -1,4 +1,4 @@
-# 2920 body
+# 2920. body
 
 Board 2,920 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 28](../CorpusTestingPages/Corpus-Testing-28.md#2920-body).
 
@@ -45,4 +45,4 @@ Board 2,920 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2919 powertrain](b2919b_RAMN_powertrain.md) | [2921 debugger](b2921b_RAMN_debugger.md) |
+| [2919. powertrain](b2919b_RAMN_powertrain.md) | [2921. debugger](b2921b_RAMN_debugger.md) |

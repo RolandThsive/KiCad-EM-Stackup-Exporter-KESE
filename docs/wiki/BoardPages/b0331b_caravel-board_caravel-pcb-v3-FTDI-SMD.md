@@ -1,4 +1,4 @@
-# 331 caravel_pcb_v3_FTDI_SMD
+# 331. caravel_pcb_v3_FTDI_SMD
 
 Board 331 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 4](../CorpusTestingPages/Corpus-Testing-04.md#331-caravel_pcb_v3_ftdi_smd).
 
@@ -45,4 +45,4 @@ Board 331 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [330 caravel_pcb_v3_FTDI_flexy](b0330b_caravel-board_hardware-caravel-pcb-v3-FTDI_caravel-pcb-v3-FTDI-flexy.md) | [332 caravel_pcb_v3_MCP](b0332b_caravel-board_caravel-pcb-v3-MCP.md) |
+| [330. caravel_pcb_v3_FTDI_flexy](b0330b_caravel-board_hardware-caravel-pcb-v3-FTDI_caravel-pcb-v3-FTDI-flexy.md) | [332. caravel_pcb_v3_MCP](b0332b_caravel-board_caravel-pcb-v3-MCP.md) |

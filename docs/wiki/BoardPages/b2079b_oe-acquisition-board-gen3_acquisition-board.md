@@ -1,4 +1,4 @@
-# 2079 acquisition-board
+# 2079. acquisition-board
 
 Board 2,079 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 20](../CorpusTestingPages/Corpus-Testing-20.md#2079-acquisition-board).
 
@@ -45,4 +45,4 @@ Board 2,079 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2078 low-profile-headstage-64ch-3d](b2078b_low-profile-headstage-64ch-3d_low-profile-headstage-64ch-3d.md) | [2080 bracket-led-panel-tight](b2080b_onix-fmc-host_bracket-led-panel-tight.md) |
+| [2078. low-profile-headstage-64ch-3d](b2078b_low-profile-headstage-64ch-3d_low-profile-headstage-64ch-3d.md) | [2080. bracket-led-panel-tight](b2080b_onix-fmc-host_bracket-led-panel-tight.md) |

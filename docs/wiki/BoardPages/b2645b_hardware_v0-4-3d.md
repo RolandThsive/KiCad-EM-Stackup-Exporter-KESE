@@ -1,4 +1,4 @@
-# 2645 v0.4.3d
+# 2645. v0.4.3d
 
 Board 2,645 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 25](../CorpusTestingPages/Corpus-Testing-25.md#2645-v043d).
 
@@ -45,4 +45,4 @@ Board 2,645 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2644 v0.4.4c](b2644b_hardware_v0-4-4c.md) | [2646 VR-Conditioner-MAX9926+reg](b2646b_hardware_VR-Conditioner-MAX9926-reg.md) |
+| [2644. v0.4.4c](b2644b_hardware_v0-4-4c.md) | [2646. VR-Conditioner-MAX9926+reg](b2646b_hardware_VR-Conditioner-MAX9926-reg.md) |

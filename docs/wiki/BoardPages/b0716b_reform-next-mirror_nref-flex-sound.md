@@ -1,4 +1,4 @@
-# 716 nref-flex-sound
+# 716. nref-flex-sound
 
 Board 716 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 7](../CorpusTestingPages/Corpus-Testing-07.md#716-nref-flex-sound).
 
@@ -45,4 +45,4 @@ Board 716 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [715 nref-flex-sdcard](b0715b_reform-next-mirror_nref-flex-sdcard.md) | [717 nref-flex-usb3-camera](b0717b_reform-next-mirror_nref-flex-usb3-camera.md) |
+| [715. nref-flex-sdcard](b0715b_reform-next-mirror_nref-flex-sdcard.md) | [717. nref-flex-usb3-camera](b0717b_reform-next-mirror_nref-flex-usb3-camera.md) |

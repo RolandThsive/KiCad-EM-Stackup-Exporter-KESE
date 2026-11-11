@@ -1,4 +1,4 @@
-# 30 Joystick Helper
+# 30. Joystick Helper
 
 Board 30 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 1](../CorpusTestingPages/Corpus-Testing-01.md#30-joystick-helper).
 
@@ -45,4 +45,4 @@ Board 30 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page
 
 | Previous | Next |
 |:---|---:|
-| [29 GPIO Helper](b0029b_6502_GPIO-Helper.md) | [31 Keyboard Encoder Helper](b0031b_6502_Keyboard-Encoder-Helper.md) |
+| [29. GPIO Helper](b0029b_6502_GPIO-Helper.md) | [31. Keyboard Encoder Helper](b0031b_6502_Keyboard-Encoder-Helper.md) |

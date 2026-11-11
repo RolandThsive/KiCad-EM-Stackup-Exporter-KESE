@@ -1,4 +1,4 @@
-# 1780 SONATA-ONE
+# 1780. SONATA-ONE
 
 Board 1,780 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 17](../CorpusTestingPages/Corpus-Testing-17.md#1780-sonata-one).
 
@@ -45,4 +45,4 @@ Board 1,780 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1779 nu8051-ufo-target-board](b1779b_chipwhisperer-target-cw308t_nu8051-ufo-target-board.md) | [1781 amulet_controller](b1781b_amulet-controller-kibot_amulet-controller.md) |
+| [1779. nu8051-ufo-target-board](b1779b_chipwhisperer-target-cw308t_nu8051-ufo-target-board.md) | [1781. amulet_controller](b1781b_amulet-controller-kibot_amulet-controller.md) |

@@ -1,4 +1,4 @@
-# 2960 LTC6812-15W
+# 2960. LTC6812-15W
 
 Board 2,960 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 28](../CorpusTestingPages/Corpus-Testing-28.md#2960-ltc6812-15w).
 
@@ -45,4 +45,4 @@ Board 2,960 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2959 BMS-Master](b2959b_circuits_BMS-Master.md) | [2961 TSAL](b2961b_circuits_TSAL.md) |
+| [2959. BMS-Master](b2959b_circuits_BMS-Master.md) | [2961. TSAL](b2961b_circuits_TSAL.md) |

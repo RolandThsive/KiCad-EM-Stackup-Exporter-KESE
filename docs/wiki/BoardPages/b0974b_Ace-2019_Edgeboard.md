@@ -1,4 +1,4 @@
-# 974 Edgeboard
+# 974. Edgeboard
 
 Board 974 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 10](../CorpusTestingPages/Corpus-Testing-10.md#974-edgeboard).
 
@@ -45,4 +45,4 @@ Board 974 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [973 eBigRam](b0973b_Ace-2019_eBigRam.md) | [975 eMultiUniBoard](b0975b_Ace-2019_eMultiUniBoard.md) |
+| [973. eBigRam](b0973b_Ace-2019_eBigRam.md) | [975. eMultiUniBoard](b0975b_Ace-2019_eMultiUniBoard.md) |

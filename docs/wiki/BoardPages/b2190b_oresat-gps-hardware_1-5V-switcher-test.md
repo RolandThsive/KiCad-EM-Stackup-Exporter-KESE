@@ -1,4 +1,4 @@
-# 2190 1.5V_switcher_test
+# 2190. 1.5V_switcher_test
 
 Board 2,190 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 21](../CorpusTestingPages/Corpus-Testing-21.md#2190-15v_switcher_test).
 
@@ -45,4 +45,4 @@ Board 2,190 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2189 BaseBoard](b2189b_oresat-gps-hardware_BaseBoard.md) | [2191 A3P250_Dev_Board](b2191b_oresat-gps-hardware_A3P250-Dev-Board.md) |
+| [2189. BaseBoard](b2189b_oresat-gps-hardware_BaseBoard.md) | [2191. A3P250_Dev_Board](b2191b_oresat-gps-hardware_A3P250-Dev-Board.md) |

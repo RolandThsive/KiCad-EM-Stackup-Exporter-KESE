@@ -1,4 +1,4 @@
-# 1216 SH-RPi
+# 1216. SH-RPi
 
 Board 1,216 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 12](../CorpusTestingPages/Corpus-Testing-12.md#1216-sh-rpi).
 
@@ -44,4 +44,4 @@ Board 1,216 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1215 HALSER](b1215b_halser-hardware_HALSER.md) | [1217 motor-controller-hw](b1217b_motor-controller-2018_motor-controller-hw.md) |
+| [1215. HALSER](b1215b_halser-hardware_HALSER.md) | [1217. motor-controller-hw](b1217b_motor-controller-2018_motor-controller-hw.md) |

@@ -1,4 +1,4 @@
-# 2865 RASBB
+# 2865. RASBB
 
 Board 2,865 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 27](../CorpusTestingPages/Corpus-Testing-27.md#2865-rasbb).
 
@@ -45,4 +45,4 @@ Board 2,865 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2864 RASBB](b2864b_ra-sentinel_RASBB-Hardware-Rev-A-Design_RASBB.md) | [2866 RASBB](b2866b_ra-sentinel_RASBB-Hardware-Rev-C-Design_RASBB.md) |
+| [2864. RASBB](b2864b_ra-sentinel_RASBB-Hardware-Rev-A-Design_RASBB.md) | [2866. RASBB](b2866b_ra-sentinel_RASBB-Hardware-Rev-C-Design_RASBB.md) |

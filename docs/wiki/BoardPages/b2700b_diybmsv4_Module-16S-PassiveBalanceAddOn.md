@@ -1,4 +1,4 @@
-# 2700 Module_16S_PassiveBalanceAddOn
+# 2700. Module_16S_PassiveBalanceAddOn
 
 Board 2,700 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 25](../CorpusTestingPages/Corpus-Testing-25.md#2700-module_16s_passivebalanceaddon).
 
@@ -45,4 +45,4 @@ Board 2,700 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2699 Module_16S](b2699b_diybmsv4_Module-16S.md) | [2701 ProgrammingAdapter](b2701b_diybmsv4_ProgrammingAdapter.md) |
+| [2699. Module_16S](b2699b_diybmsv4_Module-16S.md) | [2701. ProgrammingAdapter](b2701b_diybmsv4_ProgrammingAdapter.md) |

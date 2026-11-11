@@ -1,4 +1,4 @@
-# 1628 antenna_switch
+# 1628. antenna_switch
 
 Board 1,628 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 16](../CorpusTestingPages/Corpus-Testing-16.md#1628-antenna_switch).
 
@@ -45,4 +45,4 @@ Board 1,628 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1627 bodge_oshkosh](b1627b_hardware-csat_bodge-oshkosh.md) | [1629 fmcw](b1629b_fmcw_hardware-boards-rev1_fmcw.md) |
+| [1627. bodge_oshkosh](b1627b_hardware-csat_bodge-oshkosh.md) | [1629. fmcw](b1629b_fmcw_hardware-boards-rev1_fmcw.md) |

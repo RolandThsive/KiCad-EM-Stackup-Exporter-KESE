@@ -1,4 +1,4 @@
-# 3030 hub_fitcheck
+# 3030. hub_fitcheck
 
 Board 3,030 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 29](../CorpusTestingPages/Corpus-Testing-29.md#3030-hub_fitcheck).
 
@@ -45,4 +45,4 @@ Board 3,030 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [3029 backplane_direct](b3029b_the-mac-pro-project_backplane-direct.md) | [3031 backplane_fp6](b3031b_the-mac-pro-project_backplane-fp6.md) |
+| [3029. backplane_direct](b3029b_the-mac-pro-project_backplane-direct.md) | [3031. backplane_fp6](b3031b_the-mac-pro-project_backplane-fp6.md) |

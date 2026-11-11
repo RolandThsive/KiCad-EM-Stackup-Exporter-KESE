@@ -1,4 +1,4 @@
-# 594 stm32f072cb_breakout
+# 594. stm32f072cb_breakout
 
 Board 594 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 6](../CorpusTestingPages/Corpus-Testing-06.md#594-stm32f072cb_breakout).
 
@@ -45,4 +45,4 @@ Board 594 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [593 as5047p-atsm_breakout](b0593b_22xt-kicad_as5047p-atsm-breakout.md) | [595 accessory_peripheral](b0595b_bjr-kicad_accessory-peripheral.md) |
+| [593. as5047p-atsm_breakout](b0593b_22xt-kicad_as5047p-atsm-breakout.md) | [595. accessory_peripheral](b0595b_bjr-kicad_accessory-peripheral.md) |

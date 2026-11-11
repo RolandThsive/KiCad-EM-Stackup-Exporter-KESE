@@ -1,4 +1,4 @@
-# 2574 MechEndstop
+# 2574. MechEndstop
 
 Board 2,574 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 24](../CorpusTestingPages/Corpus-Testing-24.md#2574-mechendstop).
 
@@ -45,4 +45,4 @@ Board 2,574 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2573 level-shifter](b2573b_smoothieboard2_level-shifter.md) | [2575 RPi zero with ethernet](b2575b_smoothieboard2_RPi-zero-with-ethernet.md) |
+| [2573. level-shifter](b2573b_smoothieboard2_level-shifter.md) | [2575. RPi zero with ethernet](b2575b_smoothieboard2_RPi-zero-with-ethernet.md) |

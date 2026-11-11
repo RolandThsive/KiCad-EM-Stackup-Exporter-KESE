@@ -1,4 +1,4 @@
-# 318 artix-dc-scm
+# 318. artix-dc-scm
 
 Board 318 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 3](../CorpusTestingPages/Corpus-Testing-03.md#318-artix-dc-scm).
 
@@ -44,4 +44,4 @@ Board 318 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [317 antmicro-alvium-flex-csi-adapter_200mm-single-same-side](b0317b_alvium-flexible-csi-adapter_antmicro-alvium-flex-csi-adapter-200mm-single-same-side.md) | [319 arty-a7-expansion](b0319b_arty-expansion-board_arty-a7-expansion.md) |
+| [317. antmicro-alvium-flex-csi-adapter_200mm-single-same-side](b0317b_alvium-flexible-csi-adapter_antmicro-alvium-flex-csi-adapter-200mm-single-same-side.md) | [319. arty-a7-expansion](b0319b_arty-expansion-board_arty-a7-expansion.md) |

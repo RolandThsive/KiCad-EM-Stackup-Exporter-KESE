@@ -1,4 +1,4 @@
-# 111 AmigaPCI 68040
+# 111. AmigaPCI 68040
 
 Board 111 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 2](../CorpusTestingPages/Corpus-Testing-02.md#111-amigapci-68040).
 
@@ -45,4 +45,4 @@ Board 111 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [110 SMD500](b0110b_Amiga-SMD-500_SMD500.md) | [112 AmigaPCI Mainboard](b0112b_AmigaPCI-MainBoard_AmigaPCI-Mainboard.md) |
+| [110. SMD500](b0110b_Amiga-SMD-500_SMD500.md) | [112. AmigaPCI Mainboard](b0112b_AmigaPCI-MainBoard_AmigaPCI-Mainboard.md) |

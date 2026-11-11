@@ -1,4 +1,4 @@
-# 2718 batak
+# 2718. batak
 
 Board 2,718 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 26](../CorpusTestingPages/Corpus-Testing-26.md#2718-batak).
 
@@ -45,4 +45,4 @@ Board 2,718 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2717 tsal](b2717b_pcb_tsal.md) | [2719 bms-interface](b2719b_pcb_bms-interface.md) |
+| [2717. tsal](b2717b_pcb_tsal.md) | [2719. bms-interface](b2719b_pcb_bms-interface.md) |

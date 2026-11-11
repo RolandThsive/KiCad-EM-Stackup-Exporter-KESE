@@ -1,4 +1,4 @@
-# 1371 reform2-protected-batterypack-pcb
+# 1371. reform2-protected-batterypack-pcb
 
 Board 1,371 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 13](../CorpusTestingPages/Corpus-Testing-13.md#1371-reform2-protected-batterypack-pcb).
 
@@ -45,4 +45,4 @@ Board 1,371 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1370 reform2-oled](b1370b_reform_reform2-oled.md) | [1372 reform2-trackball](b1372b_reform_reform2-trackball.md) |
+| [1370. reform2-oled](b1370b_reform_reform2-oled.md) | [1372. reform2-trackball](b1372b_reform_reform2-trackball.md) |

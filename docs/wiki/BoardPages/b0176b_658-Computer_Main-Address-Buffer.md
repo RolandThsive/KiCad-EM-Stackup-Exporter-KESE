@@ -1,4 +1,4 @@
-# 176 Main Address Buffer
+# 176. Main Address Buffer
 
 Board 176 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 2](../CorpusTestingPages/Corpus-Testing-02.md#176-main-address-buffer).
 
@@ -45,4 +45,4 @@ Board 176 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [175 GPIO 4bit](b0175b_658-Computer_GPIO-4bit.md) | [177 Main Data Buffer](b0177b_658-Computer_Main-Data-Buffer.md) |
+| [175. GPIO 4bit](b0175b_658-Computer_GPIO-4bit.md) | [177. Main Data Buffer](b0177b_658-Computer_Main-Data-Buffer.md) |

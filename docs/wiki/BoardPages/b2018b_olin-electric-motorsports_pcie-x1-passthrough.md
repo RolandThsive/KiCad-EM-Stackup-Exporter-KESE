@@ -1,4 +1,4 @@
-# 2018 pcie_x1_passthrough
+# 2018. pcie_x1_passthrough
 
 Board 2,018 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 19](../CorpusTestingPages/Corpus-Testing-19.md#2018-pcie_x1_passthrough).
 
@@ -45,4 +45,4 @@ Board 2,018 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2017 breakout_pcie](b2017b_olin-electric-motorsports_breakout-pcie.md) | [2019 imu](b2019b_olin-electric-motorsports_projects-telemetry-imu_imu.md) |
+| [2017. breakout_pcie](b2017b_olin-electric-motorsports_breakout-pcie.md) | [2019. imu](b2019b_olin-electric-motorsports_projects-telemetry-imu_imu.md) |

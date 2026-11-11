@@ -1,4 +1,4 @@
-# 1256 EMC_antenna
+# 1256. EMC_antenna
 
 Board 1,256 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 12](../CorpusTestingPages/Corpus-Testing-12.md#1256-emc_antenna).
 
@@ -45,4 +45,4 @@ Board 1,256 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1255 Intergalaktik_proto](b1255b_business-card-smd-proto_Intergalaktik-proto.md) | [1257 adcIO](b1257b_Extension-Boards-for-Olimex-GateMate_adcIO.md) |
+| [1255. Intergalaktik_proto](b1255b_business-card-smd-proto_Intergalaktik-proto.md) | [1257. adcIO](b1257b_Extension-Boards-for-Olimex-GateMate_adcIO.md) |

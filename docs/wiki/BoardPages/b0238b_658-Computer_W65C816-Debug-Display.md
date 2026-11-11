@@ -1,4 +1,4 @@
-# 238 W65C816 Debug Display
+# 238. W65C816 Debug Display
 
 Board 238 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 3](../CorpusTestingPages/Corpus-Testing-03.md#238-w65c816-debug-display).
 
@@ -45,4 +45,4 @@ Board 238 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [237 W65C816 Clock Hold](b0237b_658-Computer_W65C816-Clock-Hold.md) | [239 W65C816 Latch](b0239b_658-Computer_W65C816-Latch.md) |
+| [237. W65C816 Clock Hold](b0237b_658-Computer_W65C816-Clock-Hold.md) | [239. W65C816 Latch](b0239b_658-Computer_W65C816-Latch.md) |

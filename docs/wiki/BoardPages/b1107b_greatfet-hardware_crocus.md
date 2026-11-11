@@ -1,4 +1,4 @@
-# 1107 crocus
+# 1107. crocus
 
 Board 1,107 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 11](../CorpusTestingPages/Corpus-Testing-11.md#1107-crocus).
 
@@ -45,4 +45,4 @@ Board 1,107 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1106 begonia](b1106b_greatfet-hardware_begonia.md) | [1108 daffodil](b1108b_greatfet-hardware_daffodil.md) |
+| [1106. begonia](b1106b_greatfet-hardware_begonia.md) | [1108. daffodil](b1108b_greatfet-hardware_daffodil.md) |

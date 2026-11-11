@@ -1,4 +1,4 @@
-# 2517 uaefi
+# 2517. uaefi
 
 Board 2,517 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 24](../CorpusTestingPages/Corpus-Testing-24.md#2517-uaefi).
 
@@ -44,4 +44,4 @@ Board 2,517 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2516 8HPTCUAdapter](b2516b_rusefi-hardware_8HPTCUAdapter.md) | [2518 sd2snes_ecp5](b2518b_sd2snes-ecp5_sd2snes-ecp5.md) |
+| [2516. 8HPTCUAdapter](b2516b_rusefi-hardware_8HPTCUAdapter.md) | [2518. sd2snes_ecp5](b2518b_sd2snes-ecp5_sd2snes-ecp5.md) |

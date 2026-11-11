@@ -1,4 +1,4 @@
-# 2210 oresat-proto-card
+# 2210. oresat-proto-card
 
 Board 2,210 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 21](../CorpusTestingPages/Corpus-Testing-21.md#2210-oresat-proto-card).
 
@@ -45,4 +45,4 @@ Board 2,210 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2209 oresat-live-card](b2209b_oresat-proto-card_oresat-live-card.md) | [2211 oresat-proto-card](b2211b_oresat-proto-card_mcxn-proto-card_oresat-proto-card.md) |
+| [2209. oresat-live-card](b2209b_oresat-proto-card_oresat-live-card.md) | [2211. oresat-proto-card](b2211b_oresat-proto-card_mcxn-proto-card_oresat-proto-card.md) |

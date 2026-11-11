@@ -1,4 +1,4 @@
-# 2980 arduino_eeprom_programmer
+# 2980. arduino_eeprom_programmer
 
 Board 2,980 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 28](../CorpusTestingPages/Corpus-Testing-28.md#2980-arduino_eeprom_programmer).
 
@@ -45,4 +45,4 @@ Board 2,980 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2979 bus_breakout](b2979b_8bit-cpu_bus-breakout.md) | [2981 display_interface](b2981b_8bit-cpu_display-interface.md) |
+| [2979. bus_breakout](b2979b_8bit-cpu_bus-breakout.md) | [2981. display_interface](b2981b_8bit-cpu_display-interface.md) |

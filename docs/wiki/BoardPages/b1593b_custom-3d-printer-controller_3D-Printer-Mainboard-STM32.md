@@ -1,4 +1,4 @@
-# 1593 3D_Printer_Mainboard_STM32
+# 1593. 3D_Printer_Mainboard_STM32
 
 Board 1,593 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 15](../CorpusTestingPages/Corpus-Testing-15.md#1593-3d_printer_mainboard_stm32).
 
@@ -45,4 +45,4 @@ Board 1,593 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1592 Mupi](b1592b_custom-3d-printer-controller_Mupi.md) | [1594 3D_Printer_Stepper_TMC2209](b1594b_custom-3d-printer-controller_3D-Printer-Stepper-TMC2209.md) |
+| [1592. Mupi](b1592b_custom-3d-printer-controller_Mupi.md) | [1594. 3D_Printer_Stepper_TMC2209](b1594b_custom-3d-printer-controller_3D-Printer-Stepper-TMC2209.md) |

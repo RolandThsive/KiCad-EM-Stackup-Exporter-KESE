@@ -1,4 +1,4 @@
-# 1699 h4n2rs485
+# 1699. h4n2rs485
 
 Board 1,699 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 16](../CorpusTestingPages/Corpus-Testing-16.md#1699-h4n2rs485).
 
@@ -45,4 +45,4 @@ Board 1,699 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1698 PROM](b1698b_embeddedbakery_PROM.md) | [1700 Analog Controller](b1700b_embeddedbakery_Analog-Controller.md) |
+| [1698. PROM](b1698b_embeddedbakery_PROM.md) | [1700. Analog Controller](b1700b_embeddedbakery_Analog-Controller.md) |

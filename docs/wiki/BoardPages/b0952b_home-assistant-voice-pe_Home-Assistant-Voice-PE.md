@@ -1,4 +1,4 @@
-# 952 Home Assistant Voice PE
+# 952. Home Assistant Voice PE
 
 Board 952 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 9](../CorpusTestingPages/Corpus-Testing-09.md#952-home-assistant-voice-pe).
 
@@ -45,4 +45,4 @@ Board 952 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [951 esp-rust-board](b0951b_esp-rust-board_esp-rust-board.md) | [953 bms](b0953b_ducktop2_bms.md) |
+| [951. esp-rust-board](b0951b_esp-rust-board_esp-rust-board.md) | [953. bms](b0953b_ducktop2_bms.md) |

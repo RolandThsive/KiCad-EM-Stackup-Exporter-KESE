@@ -1,4 +1,4 @@
-# 2870 v3.0
+# 2870. v3.0
 
 Board 2,870 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 27](../CorpusTestingPages/Corpus-Testing-27.md#2870-v30).
 
@@ -45,4 +45,4 @@ Board 2,870 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2869 pocket_sdr_v2.3](b2869b_PocketSDR_pocket-sdr-v2-3.md) | [2871 div_4px2](b2871b_PocketSDR_div-4px2.md) |
+| [2869. pocket_sdr_v2.3](b2869b_PocketSDR_pocket-sdr-v2-3.md) | [2871. div_4px2](b2871b_PocketSDR_div-4px2.md) |

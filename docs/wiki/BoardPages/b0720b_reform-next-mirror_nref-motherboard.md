@@ -1,4 +1,4 @@
-# 720 nref-motherboard
+# 720. nref-motherboard
 
 Board 720 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 7](../CorpusTestingPages/Corpus-Testing-07.md#720-nref-motherboard).
 
@@ -45,4 +45,4 @@ Board 720 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [719 nref-flex-usb3-one](b0719b_reform-next-mirror_nref-flex-usb3-one.md) | [721 nref-ports-one](b0721b_reform-next-mirror_nref-ports-one.md) |
+| [719. nref-flex-usb3-one](b0719b_reform-next-mirror_nref-flex-usb3-one.md) | [721. nref-ports-one](b0721b_reform-next-mirror_nref-ports-one.md) |

@@ -1,4 +1,4 @@
-# 2443 inj_12ch
+# 2443. inj_12ch
 
 Board 2,443 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 23](../CorpusTestingPages/Corpus-Testing-23.md#2443-inj_12ch).
 
@@ -45,4 +45,4 @@ Board 2,443 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2442 CDI-test](b2442b_rusefi-hardware_CDI-test.md) | [2444 inj_6ch](b2444b_rusefi-hardware_classic-designs-1A-injector-6-channels_inj-6ch.md) |
+| [2442. CDI-test](b2442b_rusefi-hardware_CDI-test.md) | [2444. inj_6ch](b2444b_rusefi-hardware_classic-designs-1A-injector-6-channels_inj-6ch.md) |

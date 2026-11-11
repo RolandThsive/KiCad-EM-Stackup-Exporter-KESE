@@ -1,4 +1,4 @@
-# 565 sensor_board_outline
+# 565. sensor_board_outline
 
 Board 565 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 6](../CorpusTestingPages/Corpus-Testing-06.md#565-sensor_board_outline).
 
@@ -46,4 +46,4 @@ Board 565 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [564 off-axis_end_connector](b0564b_DxP-sensor-probes_off-axis-end-connector.md) | [566 TMP117-ADXL345_section_5cm](b0566b_DxP-sensor-probes_TMP117-ADXL345-section-5cm.md) |
+| [564. off-axis_end_connector](b0564b_DxP-sensor-probes_off-axis-end-connector.md) | [566. TMP117-ADXL345_section_5cm](b0566b_DxP-sensor-probes_TMP117-ADXL345-section-5cm.md) |

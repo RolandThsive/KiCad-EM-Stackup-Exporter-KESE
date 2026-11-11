@@ -1,4 +1,4 @@
-# 2254 ovc4
+# 2254. ovc4
 
 Board 2,254 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 21](../CorpusTestingPages/Corpus-Testing-21.md#2254-ovc4).
 
@@ -45,4 +45,4 @@ Board 2,254 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2253 vectornav_carrier](b2253b_ovc_vectornav-carrier.md) | [2255 ovc5](b2255b_ovc_ovc5.md) |
+| [2253. vectornav_carrier](b2253b_ovc_vectornav-carrier.md) | [2255. ovc5](b2255b_ovc_ovc5.md) |

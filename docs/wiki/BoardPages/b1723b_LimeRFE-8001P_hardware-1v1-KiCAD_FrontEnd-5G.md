@@ -1,4 +1,4 @@
-# 1723 FrontEnd_5G
+# 1723. FrontEnd_5G
 
 Board 1,723 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 16](../CorpusTestingPages/Corpus-Testing-16.md#1723-frontend_5g).
 
@@ -45,4 +45,4 @@ Board 1,723 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1722 FrontEnd_5G](b1722b_LimeRFE-8001P_hardware-1v0-KiCAD_FrontEnd-5G.md) | [1724 LimeSDR_Breakout](b1724b_LimeSDR-GPIO-Board_LimeSDR-Breakout.md) |
+| [1722. FrontEnd_5G](b1722b_LimeRFE-8001P_hardware-1v0-KiCAD_FrontEnd-5G.md) | [1724. LimeSDR_Breakout](b1724b_LimeSDR-GPIO-Board_LimeSDR-Breakout.md) |

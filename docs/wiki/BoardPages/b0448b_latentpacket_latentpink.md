@@ -1,4 +1,4 @@
-# 448 latentpink
+# 448. latentpink
 
 Board 448 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 5](../CorpusTestingPages/Corpus-Testing-05.md#448-latentpink).
 
@@ -45,4 +45,4 @@ Board 448 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [447 argo-v2](b0447b_Argo_argo-v2.md) | [449 entry-afe-characterization](b0449b_starshipraider_entry-afe-characterization.md) |
+| [447. argo-v2](b0447b_Argo_argo-v2.md) | [449. entry-afe-characterization](b0449b_starshipraider_entry-afe-characterization.md) |

@@ -1,4 +1,4 @@
-# 2207 transformer
+# 2207. transformer
 
 Board 2,207 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 21](../CorpusTestingPages/Corpus-Testing-21.md#2207-transformer).
 
@@ -45,4 +45,4 @@ Board 2,207 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2206 LNA](b2206b_oresat-live-handheld-ground-station_LNA.md) | [2208 HGS_Reflector](b2208b_oresat-live-handheld-ground-station_HGS-Reflector.md) |
+| [2206. LNA](b2206b_oresat-live-handheld-ground-station_LNA.md) | [2208. HGS_Reflector](b2208b_oresat-live-handheld-ground-station_HGS-Reflector.md) |

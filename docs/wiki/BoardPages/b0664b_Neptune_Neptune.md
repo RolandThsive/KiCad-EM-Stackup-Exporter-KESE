@@ -1,4 +1,4 @@
-# 664 Neptune
+# 664. Neptune
 
 Board 664 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 7](../CorpusTestingPages/Corpus-Testing-07.md#664-neptune).
 
@@ -44,4 +44,4 @@ Board 664 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [663 Neptune-Region-Fix](b0663b_Neptune_Neptune-Region-Fix.md) | [665 Oric](b0665b_Oric-Remix_Archive-IssueAv1-1_Oric.md) |
+| [663. Neptune-Region-Fix](b0663b_Neptune_Neptune-Region-Fix.md) | [665. Oric](b0665b_Oric-Remix_Archive-IssueAv1-1_Oric.md) |

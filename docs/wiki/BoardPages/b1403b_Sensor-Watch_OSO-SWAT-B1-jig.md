@@ -1,4 +1,4 @@
-# 1403 OSO-SWAT-B1-jig
+# 1403. OSO-SWAT-B1-jig
 
 Board 1,403 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 13](../CorpusTestingPages/Corpus-Testing-13.md#1403-oso-swat-b1-jig).
 
@@ -44,4 +44,4 @@ Board 1,403 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1402 RK3576 SBCv2](b1402b_open-source-sbc-board_RK3576-SBCv2.md) | [1404 OSO-SWAT-B1](b1404b_Sensor-Watch_OSO-SWAT-B1.md) |
+| [1402. RK3576 SBCv2](b1402b_open-source-sbc-board_RK3576-SBCv2.md) | [1404. OSO-SWAT-B1](b1404b_Sensor-Watch_OSO-SWAT-B1.md) |

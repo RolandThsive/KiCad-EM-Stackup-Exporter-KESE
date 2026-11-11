@@ -1,4 +1,4 @@
-# 2687 solar_charger
+# 2687. solar_charger
 
 Board 2,687 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 25](../CorpusTestingPages/Corpus-Testing-25.md#2687-solar_charger).
 
@@ -45,4 +45,4 @@ Board 2,687 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2686 reaction_wheel](b2686b_samwise-avionics_reaction-wheel.md) | [2688 ZPlus_Panel](b2688b_samwise-avionics_ZPlus-Panel.md) |
+| [2686. reaction_wheel](b2686b_samwise-avionics_reaction-wheel.md) | [2688. ZPlus_Panel](b2688b_samwise-avionics_ZPlus-Panel.md) |

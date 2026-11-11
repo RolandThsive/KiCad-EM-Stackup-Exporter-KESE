@@ -1,4 +1,4 @@
-# 2442 CDI-test
+# 2442. CDI-test
 
 Board 2,442 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 23](../CorpusTestingPages/Corpus-Testing-23.md#2442-cdi-test).
 
@@ -45,4 +45,4 @@ Board 2,442 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2441 284617-1](b2441b_rusefi-hardware_284617-1.md) | [2443 inj_12ch](b2443b_rusefi-hardware_inj-12ch.md) |
+| [2441. 284617-1](b2441b_rusefi-hardware_284617-1.md) | [2443. inj_12ch](b2443b_rusefi-hardware_inj-12ch.md) |

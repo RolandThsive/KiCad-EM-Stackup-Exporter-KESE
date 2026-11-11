@@ -1,4 +1,4 @@
-# 1887 ESP32-PoE-ISO_Rev_M1
+# 1887. ESP32-PoE-ISO_Rev_M1
 
 Board 1,887 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 18](../CorpusTestingPages/Corpus-Testing-18.md#1887-esp32-poe-iso_rev_m1).
 
@@ -45,4 +45,4 @@ Board 1,887 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1886 ESP32-PoE-ISO_Rev_M](b1886b_ESP32-POE-ISO_ESP32-PoE-ISO-Rev-M.md) | [1888 ESP32-PoE-ISO_Rev_N](b1888b_ESP32-POE-ISO_ESP32-PoE-ISO-Rev-N.md) |
+| [1886. ESP32-PoE-ISO_Rev_M](b1886b_ESP32-POE-ISO_ESP32-PoE-ISO-Rev-M.md) | [1888. ESP32-PoE-ISO_Rev_N](b1888b_ESP32-POE-ISO_ESP32-PoE-ISO-Rev-N.md) |

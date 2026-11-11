@@ -1,4 +1,4 @@
-# 1661 moteus_c1
+# 1661. moteus_c1
 
 Board 1,661 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 16](../CorpusTestingPages/Corpus-Testing-16.md#1661-moteus_c1).
 
@@ -45,4 +45,4 @@ Board 1,661 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1660 EDA-02327-V2-0_pcb](b1660b_fmc-tester-v2_EDA-02327-V2-0-pcb.md) | [1662 moteus_c1](b1662b_moteus_hw-c1-r1-0_moteus-c1.md) |
+| [1660. EDA-02327-V2-0_pcb](b1660b_fmc-tester-v2_EDA-02327-V2-0-pcb.md) | [1662. moteus_c1](b1662b_moteus_hw-c1-r1-0_moteus-c1.md) |

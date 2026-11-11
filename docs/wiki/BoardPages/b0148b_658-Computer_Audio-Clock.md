@@ -1,4 +1,4 @@
-# 148 Audio Clock
+# 148. Audio Clock
 
 Board 148 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 2](../CorpusTestingPages/Corpus-Testing-02.md#148-audio-clock).
 
@@ -45,4 +45,4 @@ Board 148 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [147 Audio Board](b0147b_658-Computer_Audio-Board.md) | [149 Blitter Board](b0149b_658-Computer_Blitter-Board.md) |
+| [147. Audio Board](b0147b_658-Computer_Audio-Board.md) | [149. Blitter Board](b0149b_658-Computer_Blitter-Board.md) |

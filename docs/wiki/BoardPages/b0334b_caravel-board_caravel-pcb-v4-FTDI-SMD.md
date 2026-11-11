@@ -1,4 +1,4 @@
-# 334 caravel_pcb_v4_FTDI_SMD
+# 334. caravel_pcb_v4_FTDI_SMD
 
 Board 334 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 4](../CorpusTestingPages/Corpus-Testing-04.md#334-caravel_pcb_v4_ftdi_smd).
 
@@ -45,4 +45,4 @@ Board 334 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [333 caravel_pcb_v4_FTDI_flexy](b0333b_caravel-board_caravel-pcb-v4-FTDI-flexy.md) | [335 cm4-baseboard](b0335b_cm4-baseboard_cm4-baseboard.md) |
+| [333. caravel_pcb_v4_FTDI_flexy](b0333b_caravel-board_caravel-pcb-v4-FTDI-flexy.md) | [335. cm4-baseboard](b0335b_cm4-baseboard_cm4-baseboard.md) |

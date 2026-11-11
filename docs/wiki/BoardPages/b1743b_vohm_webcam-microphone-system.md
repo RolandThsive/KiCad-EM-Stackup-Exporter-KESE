@@ -1,4 +1,4 @@
-# 1743 webcam_microphone_system
+# 1743. webcam_microphone_system
 
 Board 1,743 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 17](../CorpusTestingPages/Corpus-Testing-17.md#1743-webcam_microphone_system).
 
@@ -45,4 +45,4 @@ Board 1,743 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1742 NewAudio_System](b1742b_vohm_NewAudio-System.md) | [1744 PQ_ADCS](b1744b_pocat-hw_pq-adcs-PQ-ADCS_PQ-ADCS.md) |
+| [1742. NewAudio_System](b1742b_vohm_NewAudio-System.md) | [1744. PQ_ADCS](b1744b_pocat-hw_pq-adcs-PQ-ADCS_PQ-ADCS.md) |

@@ -1,4 +1,4 @@
-# 1416 octa-pmod
+# 1416. octa-pmod
 
 Board 1,416 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 14](../CorpusTestingPages/Corpus-Testing-14.md#1416-octa-pmod).
 
@@ -45,4 +45,4 @@ Board 1,416 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1415 octa-pmod](b1415b_ecp5-mini_breakouts-octa-pmod-0-2_octa-pmod.md) | [1417 octa-pmod](b1417b_ecp5-mini_breakouts-octa-pmod-horizontal-0-2_octa-pmod.md) |
+| [1415. octa-pmod](b1415b_ecp5-mini_breakouts-octa-pmod-0-2_octa-pmod.md) | [1417. octa-pmod](b1417b_ecp5-mini_breakouts-octa-pmod-horizontal-0-2_octa-pmod.md) |

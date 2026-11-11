@@ -1,4 +1,4 @@
-# 2375 pressure_ms4525do
+# 2375. pressure_ms4525do
 
 Board 2,375 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 22](../CorpusTestingPages/Corpus-Testing-22.md#2375-pressure_ms4525do).
 
@@ -45,4 +45,4 @@ Board 2,375 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2374 pressure_mpxv5010dp](b2374b_ventilator_pressure-mpxv5010dp.md) | [2376 pressure_XGZP6897A](b2376b_ventilator_pressure-XGZP6897A.md) |
+| [2374. pressure_mpxv5010dp](b2374b_ventilator_pressure-mpxv5010dp.md) | [2376. pressure_XGZP6897A](b2376b_ventilator_pressure-XGZP6897A.md) |

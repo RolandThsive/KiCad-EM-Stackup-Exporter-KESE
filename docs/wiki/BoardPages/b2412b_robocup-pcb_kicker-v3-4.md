@@ -1,4 +1,4 @@
-# 2412 kicker-v3.4
+# 2412. kicker-v3.4
 
 Board 2,412 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 23](../CorpusTestingPages/Corpus-Testing-23.md#2412-kicker-v34).
 
@@ -45,4 +45,4 @@ Board 2,412 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2411 control-v4.1-stm32](b2411b_robocup-pcb_control-v4-1-stm32.md) | [2413 motorboard-v1.0](b2413b_robocup-pcb_motorboard-v1-0.md) |
+| [2411. control-v4.1-stm32](b2411b_robocup-pcb_control-v4-1-stm32.md) | [2413. motorboard-v1.0](b2413b_robocup-pcb_motorboard-v1-0.md) |

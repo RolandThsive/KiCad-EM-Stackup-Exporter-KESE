@@ -1,4 +1,4 @@
-# 1198 jitx-design
+# 1198. jitx-design
 
 Board 1,198 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 12](../CorpusTestingPages/Corpus-Testing-12.md#1198-jitx-design).
 
@@ -45,4 +45,4 @@ Board 1,198 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1197 AnalyzerBoxPCB_fork](b1197b_logicanalyzer_AnalyzerBoxPCB-fork.md) | [1199 StackLink](b1199b_logicanalyzer_StackLink.md) |
+| [1197. AnalyzerBoxPCB_fork](b1197b_logicanalyzer_AnalyzerBoxPCB-fork.md) | [1199. StackLink](b1199b_logicanalyzer_StackLink.md) |

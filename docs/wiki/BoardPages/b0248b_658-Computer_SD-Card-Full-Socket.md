@@ -1,4 +1,4 @@
-# 248 SD Card Full Socket
+# 248. SD Card Full Socket
 
 Board 248 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 3](../CorpusTestingPages/Corpus-Testing-03.md#248-sd-card-full-socket).
 
@@ -45,4 +45,4 @@ Board 248 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [247 SD Card Clock](b0247b_658-Computer_SD-Card-Clock.md) | [249 SD Card Micro Socket](b0249b_658-Computer_SD-Card-Micro-Socket.md) |
+| [247. SD Card Clock](b0247b_658-Computer_SD-Card-Clock.md) | [249. SD Card Micro Socket](b0249b_658-Computer_SD-Card-Micro-Socket.md) |

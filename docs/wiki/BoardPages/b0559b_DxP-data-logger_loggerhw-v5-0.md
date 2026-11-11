@@ -1,4 +1,4 @@
-# 559 loggerhw_v5.0
+# 559. loggerhw_v5.0
 
 Board 559 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 6](../CorpusTestingPages/Corpus-Testing-06.md#559-loggerhw_v50).
 
@@ -44,4 +44,4 @@ Board 559 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [558 switch-main-v5](b0558b_switch-v5-hardware_switch-main-v5.md) | [560 end_connector](b0560b_DxP-sensor-probes_end-connector.md) |
+| [558. switch-main-v5](b0558b_switch-v5-hardware_switch-main-v5.md) | [560. end_connector](b0560b_DxP-sensor-probes_end-connector.md) |

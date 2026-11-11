@@ -1,4 +1,4 @@
-# 2712 segment
+# 2712. segment
 
 Board 2,712 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 26](../CorpusTestingPages/Corpus-Testing-26.md#2712-segment).
 
@@ -45,4 +45,4 @@ Board 2,712 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2711 latching](b2711b_pcb_latching.md) | [2713 sensor-board](b2713b_pcb_sensor-board.md) |
+| [2711. latching](b2711b_pcb_latching.md) | [2713. sensor-board](b2713b_pcb_sensor-board.md) |

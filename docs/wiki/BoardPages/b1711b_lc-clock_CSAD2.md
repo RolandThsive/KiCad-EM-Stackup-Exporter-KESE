@@ -1,4 +1,4 @@
-# 1711 CSAD2
+# 1711. CSAD2
 
 Board 1,711 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 16](../CorpusTestingPages/Corpus-Testing-16.md#1711-csad2).
 
@@ -45,4 +45,4 @@ Board 1,711 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1710 CSAD10](b1710b_lc-clock_CSAD10.md) | [1712 B3LPD](b1712b_lc-filters_B3LPD.md) |
+| [1710. CSAD10](b1710b_lc-clock_CSAD10.md) | [1712. B3LPD](b1712b_lc-filters_B3LPD.md) |

@@ -1,4 +1,4 @@
-# 2414 Alius_6502
+# 2414. Alius_6502
 
 Board 2,414 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 23](../CorpusTestingPages/Corpus-Testing-23.md#2414-alius_6502).
 
@@ -44,4 +44,4 @@ Board 2,414 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2413 motorboard-v1.0](b2413b_robocup-pcb_motorboard-v1-0.md) | [2415 TINY-REFLOW-CONTROLLER](b2415b_TinyReflowController_TINY-REFLOW-CONTROLLER.md) |
+| [2413. motorboard-v1.0](b2413b_robocup-pcb_motorboard-v1-0.md) | [2415. TINY-REFLOW-CONTROLLER](b2415b_TinyReflowController_TINY-REFLOW-CONTROLLER.md) |

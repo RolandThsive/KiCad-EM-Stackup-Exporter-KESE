@@ -1,4 +1,4 @@
-# 2832 pogo_adapter
+# 2832. pogo_adapter
 
 Board 2,832 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 27](../CorpusTestingPages/Corpus-Testing-27.md#2832-pogo_adapter).
 
@@ -45,4 +45,4 @@ Board 2,832 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2831 pico2-nx-module](b2831b_pico2-nx_board-Rev2-nx-module_pico2-nx-module.md) | [2833 upduino-jtag](b2833b_upduino-jtag_upduino-jtag.md) |
+| [2831. pico2-nx-module](b2831b_pico2-nx_board-Rev2-nx-module_pico2-nx-module.md) | [2833. upduino-jtag](b2833b_upduino-jtag_upduino-jtag.md) |

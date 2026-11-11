@@ -1,4 +1,4 @@
-# 76 RAM-Module
+# 76. RAM-Module
 
 Board 76 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 1](../CorpusTestingPages/Corpus-Testing-01.md#76-ram-module).
 
@@ -45,4 +45,4 @@ Board 76 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page
 
 | Previous | Next |
 |:---|---:|
-| [75 PSU](b0075b_Open-Source-PC110_PSU.md) | [77 ALU](b0077b_AOS16_ALU.md) |
+| [75. PSU](b0075b_Open-Source-PC110_PSU.md) | [77. ALU](b0077b_AOS16_ALU.md) |

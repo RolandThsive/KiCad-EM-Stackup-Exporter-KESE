@@ -1,4 +1,4 @@
-# 1694 Simple OpAmp
+# 1694. Simple OpAmp
 
 Board 1,694 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 16](../CorpusTestingPages/Corpus-Testing-16.md#1694-simple-opamp).
 
@@ -46,4 +46,4 @@ Board 1,694 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1693 Connectors](b1693b_embeddedbakery_Connectors.md) | [1695 Regulator7913-1](b1695b_embeddedbakery_Regulator7913-1.md) |
+| [1693. Connectors](b1693b_embeddedbakery_Connectors.md) | [1695. Regulator7913-1](b1695b_embeddedbakery_Regulator7913-1.md) |

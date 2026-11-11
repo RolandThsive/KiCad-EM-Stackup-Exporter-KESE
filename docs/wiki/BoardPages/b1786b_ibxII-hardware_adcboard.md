@@ -1,4 +1,4 @@
-# 1786 adcboard
+# 1786. adcboard
 
 Board 1,786 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 17](../CorpusTestingPages/Corpus-Testing-17.md#1786-adcboard).
 
@@ -45,4 +45,4 @@ Board 1,786 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1785 alu](b1785b_74cpu_alu.md) | [1787 hvboard](b1787b_ibxII-hardware_hvboard.md) |
+| [1785. alu](b1785b_74cpu_alu.md) | [1787. hvboard](b1787b_ibxII-hardware_hvboard.md) |

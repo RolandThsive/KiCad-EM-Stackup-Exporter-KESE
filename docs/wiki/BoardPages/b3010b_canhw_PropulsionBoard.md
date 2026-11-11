@@ -1,4 +1,4 @@
-# 3010 PropulsionBoard
+# 3010. PropulsionBoard
 
 Board 3,010 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 28](../CorpusTestingPages/Corpus-Testing-28.md#3010-propulsionboard).
 
@@ -45,4 +45,4 @@ Board 3,010 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [3009 processor](b3009b_canhw_processor.md) | [3011 remote_arming](b3011b_canhw_remote-arming.md) |
+| [3009. processor](b3009b_canhw_processor.md) | [3011. remote_arming](b3011b_canhw_remote-arming.md) |

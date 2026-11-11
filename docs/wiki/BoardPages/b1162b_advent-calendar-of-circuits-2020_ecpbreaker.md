@@ -1,4 +1,4 @@
-# 1162 ecpbreaker
+# 1162. ecpbreaker
 
 Board 1,162 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 11](../CorpusTestingPages/Corpus-Testing-11.md#1162-ecpbreaker).
 
@@ -45,4 +45,4 @@ Board 1,162 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1161 arm-watch](b1161b_advent-calendar-of-circuits-2020_arm-watch.md) | [1163 esp32s2-breakout](b1163b_advent-calendar-of-circuits-2020_esp32s2-breakout.md) |
+| [1161. arm-watch](b1161b_advent-calendar-of-circuits-2020_arm-watch.md) | [1163. esp32s2-breakout](b1163b_advent-calendar-of-circuits-2020_esp32s2-breakout.md) |

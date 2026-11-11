@@ -1,4 +1,4 @@
-# 2365 rj45_breakout
+# 2365. rj45_breakout
 
 Board 2,365 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 22](../CorpusTestingPages/Corpus-Testing-22.md#2365-rj45_breakout).
 
@@ -45,4 +45,4 @@ Board 2,365 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2364 rectifier](b2364b_stmbl_hw-kicad-rectifier2_rectifier.md) | [2366 stmsp](b2366b_stmbl_stmsp.md) |
+| [2364. rectifier](b2364b_stmbl_hw-kicad-rectifier2_rectifier.md) | [2366. stmsp](b2366b_stmbl_stmsp.md) |

@@ -1,4 +1,4 @@
-# 930 ulx3s
+# 930. ulx3s
 
 Board 930 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 9](../CorpusTestingPages/Corpus-Testing-09.md#930-ulx3s).
 
@@ -44,4 +44,4 @@ Board 930 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [929 PCIeDMA](b0929b_pciedma_PCIeDMA.md) | [931 ice-dongle](b0931b_ice-dongle_ice-dongle.md) |
+| [929. PCIeDMA](b0929b_pciedma_PCIeDMA.md) | [931. ice-dongle](b0931b_ice-dongle_ice-dongle.md) |

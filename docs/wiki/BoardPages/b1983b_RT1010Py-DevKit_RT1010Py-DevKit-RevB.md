@@ -1,4 +1,4 @@
-# 1983 RT1010Py-DevKit_RevB
+# 1983. RT1010Py-DevKit_RevB
 
 Board 1,983 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 19](../CorpusTestingPages/Corpus-Testing-19.md#1983-rt1010py-devkit_revb).
 
@@ -45,4 +45,4 @@ Board 1,983 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1982 RT1010Py_Rev.C](b1982b_RT1010Py_RT1010Py-Rev-C.md) | [1984 RVPC_Rev_A](b1984b_RVPC_RVPC-Rev-A.md) |
+| [1982. RT1010Py_Rev.C](b1982b_RT1010Py_RT1010Py-Rev-C.md) | [1984. RVPC_Rev_A](b1984b_RVPC_RVPC-Rev-A.md) |

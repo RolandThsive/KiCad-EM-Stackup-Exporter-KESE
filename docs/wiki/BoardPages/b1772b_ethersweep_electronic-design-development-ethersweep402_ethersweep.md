@@ -1,4 +1,4 @@
-# 1772 ethersweep
+# 1772. ethersweep
 
 Board 1,772 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 17](../CorpusTestingPages/Corpus-Testing-17.md#1772-ethersweep).
 
@@ -45,4 +45,4 @@ Board 1,772 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1771 C64C-250469-01-A](b1771b_Commodore64C_C64C-250469-01-A.md) | [1773 ethersweep](b1773b_ethersweep_electronic-design-development-ethersweep406_ethersweep.md) |
+| [1771. C64C-250469-01-A](b1771b_Commodore64C_C64C-250469-01-A.md) | [1773. ethersweep](b1773b_ethersweep_electronic-design-development-ethersweep406_ethersweep.md) |

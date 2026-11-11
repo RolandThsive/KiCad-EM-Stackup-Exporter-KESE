@@ -1,4 +1,4 @@
-# 1230 Issue 4
+# 1230. Issue 4
 
 Board 1,230 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 12](../CorpusTestingPages/Corpus-Testing-12.md#1230-issue-4).
 
@@ -44,4 +44,4 @@ Board 1,230 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1229 REAmiga3000](b1229b_ReAmiga3000-SMD-for-KICAD_REAmiga3000.md) | [1231 tomu-fpga](b1231b_fomu-hardware_archive-dvt-pcb_tomu-fpga.md) |
+| [1229. REAmiga3000](b1229b_ReAmiga3000-SMD-for-KICAD_REAmiga3000.md) | [1231. tomu-fpga](b1231b_fomu-hardware_archive-dvt-pcb_tomu-fpga.md) |

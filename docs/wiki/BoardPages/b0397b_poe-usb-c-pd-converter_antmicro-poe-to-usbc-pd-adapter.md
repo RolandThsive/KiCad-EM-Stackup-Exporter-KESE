@@ -1,4 +1,4 @@
-# 397 antmicro-poe-to-usbc-pd-adapter
+# 397. antmicro-poe-to-usbc-pd-adapter
 
 Board 397 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 4](../CorpusTestingPages/Corpus-Testing-04.md#397-antmicro-poe-to-usbc-pd-adapter).
 
@@ -44,4 +44,4 @@ Board 397 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [396 pmod-i3c-sensor-board](b0396b_pmod-i3c-sensor-board_pmod-i3c-sensor-board.md) | [398 polarfire-som](b0398b_polarfire-som_polarfire-som.md) |
+| [396. pmod-i3c-sensor-board](b0396b_pmod-i3c-sensor-board_pmod-i3c-sensor-board.md) | [398. polarfire-som](b0398b_polarfire-som_polarfire-som.md) |

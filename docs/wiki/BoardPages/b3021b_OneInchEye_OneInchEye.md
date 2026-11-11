@@ -1,4 +1,4 @@
-# 3021 OneInchEye
+# 3021. OneInchEye
 
 Board 3,021 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 28](../CorpusTestingPages/Corpus-Testing-28.md#3021-oneincheye).
 
@@ -44,4 +44,4 @@ Board 3,021 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [3020 CM4Card](b3020b_Miniature-CM4-Cluster_CM4Card.md) | [3022 NixieAtomicClock](b3022b_RaspberryPiAtomicNixieClock_NixieAtomicClock.md) |
+| [3020. CM4Card](b3020b_Miniature-CM4-Cluster_CM4Card.md) | [3022. NixieAtomicClock](b3022b_RaspberryPiAtomicNixieClock_NixieAtomicClock.md) |

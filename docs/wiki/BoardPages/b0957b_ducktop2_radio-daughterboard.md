@@ -1,4 +1,4 @@
-# 957 radio_daughterboard
+# 957. radio_daughterboard
 
 Board 957 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 9](../CorpusTestingPages/Corpus-Testing-09.md#957-radio_daughterboard).
 
@@ -46,4 +46,4 @@ Board 957 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [956 left_io](b0956b_ducktop2_left-io.md) | [958 monolith_ducktop2](b0958b_ducktop2_monolith-ducktop2.md) |
+| [956. left_io](b0956b_ducktop2_left-io.md) | [958. monolith_ducktop2](b0958b_ducktop2_monolith-ducktop2.md) |

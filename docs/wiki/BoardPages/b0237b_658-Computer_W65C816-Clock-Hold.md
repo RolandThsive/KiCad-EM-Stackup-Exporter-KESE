@@ -1,4 +1,4 @@
-# 237 W65C816 Clock Hold
+# 237. W65C816 Clock Hold
 
 Board 237 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 3](../CorpusTestingPages/Corpus-Testing-03.md#237-w65c816-clock-hold).
 
@@ -45,4 +45,4 @@ Board 237 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [236 W65C816 Breakout](b0236b_658-Computer_W65C816-Breakout.md) | [238 W65C816 Debug Display](b0238b_658-Computer_W65C816-Debug-Display.md) |
+| [236. W65C816 Breakout](b0236b_658-Computer_W65C816-Breakout.md) | [238. W65C816 Debug Display](b0238b_658-Computer_W65C816-Debug-Display.md) |

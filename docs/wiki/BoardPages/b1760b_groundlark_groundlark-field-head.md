@@ -1,4 +1,4 @@
-# 1760 groundlark-field-head
+# 1760. groundlark-field-head
 
 Board 1,760 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 17](../CorpusTestingPages/Corpus-Testing-17.md#1760-groundlark-field-head).
 
@@ -45,4 +45,4 @@ Board 1,760 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1759 Control_Boards](b1759b_open-source-rover_Control-Boards.md) | [1761 field_head](b1761b_groundlark_field-head.md) |
+| [1759. Control_Boards](b1759b_open-source-rover_Control-Boards.md) | [1761. field_head](b1761b_groundlark_field-head.md) |

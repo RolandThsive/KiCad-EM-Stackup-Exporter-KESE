@@ -1,4 +1,4 @@
-# 2662 V1
+# 2662. V1
 
 Board 2,662 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 25](../CorpusTestingPages/Corpus-Testing-25.md#2662-v1).
 
@@ -45,4 +45,4 @@ Board 2,662 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2661 V1-cut10x10](b2661b_intel-i210-network-card_V1-cut10x10.md) | [2663 m5-pantilt](b2663b_stack-chan_m5-pantilt.md) |
+| [2661. V1-cut10x10](b2661b_intel-i210-network-card_V1-cut10x10.md) | [2663. m5-pantilt](b2663b_stack-chan_m5-pantilt.md) |

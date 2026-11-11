@@ -1,4 +1,4 @@
-# 2329 FC_V5e
+# 2329. FC_V5e
 
 Board 2,329 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 22](../CorpusTestingPages/Corpus-Testing-22.md#2329-fc_v5e).
 
@@ -45,4 +45,4 @@ Board 2,329 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2328 FC_V5d_Production_Rev2](b2328b_flight-controller-board_FC-V5d-Production-Rev2.md) | [2330 FC_V5e_Production_Rev1](b2330b_flight-controller-board_FC-V5e-Production-Rev1.md) |
+| [2328. FC_V5d_Production_Rev2](b2328b_flight-controller-board_FC-V5d-Production-Rev2.md) | [2330. FC_V5e_Production_Rev1](b2330b_flight-controller-board_FC-V5e-Production-Rev1.md) |

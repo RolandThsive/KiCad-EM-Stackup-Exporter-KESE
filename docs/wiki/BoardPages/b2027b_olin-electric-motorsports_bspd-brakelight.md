@@ -1,4 +1,4 @@
-# 2027 bspd_brakelight
+# 2027. bspd_brakelight
 
 Board 2,027 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 19](../CorpusTestingPages/Corpus-Testing-19.md#2027-bspd_brakelight).
 
@@ -45,4 +45,4 @@ Board 2,027 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2026 throttle](b2026b_olin-electric-motorsports_vehicle-mkv-hardware-dashboard-throttle_throttle.md) | [2028 cooling_sense](b2028b_olin-electric-motorsports_cooling-sense.md) |
+| [2026. throttle](b2026b_olin-electric-motorsports_vehicle-mkv-hardware-dashboard-throttle_throttle.md) | [2028. cooling_sense](b2028b_olin-electric-motorsports_cooling-sense.md) |

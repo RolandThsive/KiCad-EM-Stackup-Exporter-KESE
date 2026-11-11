@@ -1,4 +1,4 @@
-# 860 stm32_board
+# 860. stm32_board
 
 Board 860 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 8](../CorpusTestingPages/Corpus-Testing-08.md#860-stm32_board).
 
@@ -44,4 +44,4 @@ Board 860 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [859 FC_REV_A](b0859b_flight-controller-v1_FC-REV-A.md) | [861 DDR4_8GB_UDIMM](b0861b_ddr4-8gb-udimm_DDR4-8GB-UDIMM.md) |
+| [859. FC_REV_A](b0859b_flight-controller-v1_FC-REV-A.md) | [861. DDR4_8GB_UDIMM](b0861b_ddr4-8gb-udimm_DDR4-8GB-UDIMM.md) |

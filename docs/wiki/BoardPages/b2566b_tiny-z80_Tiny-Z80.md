@@ -1,4 +1,4 @@
-# 2566 Tiny_Z80
+# 2566. Tiny_Z80
 
 Board 2,566 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 24](../CorpusTestingPages/Corpus-Testing-24.md#2566-tiny_z80).
 
@@ -45,4 +45,4 @@ Board 2,566 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2565 Omega-Mainboard](b2565b_omega_Omega-Mainboard.md) | [2567 Z80-SBC](b2567b_zeta-sbc_Z80-SBC.md) |
+| [2565. Omega-Mainboard](b2565b_omega_Omega-Mainboard.md) | [2567. Z80-SBC](b2567b_zeta-sbc_Z80-SBC.md) |

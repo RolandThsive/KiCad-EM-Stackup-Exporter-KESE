@@ -1,4 +1,4 @@
-# 78 AOS16 Double Buffer
+# 78. AOS16 Double Buffer
 
 Board 78 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 1](../CorpusTestingPages/Corpus-Testing-01.md#78-aos16-double-buffer).
 
@@ -45,4 +45,4 @@ Board 78 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page
 
 | Previous | Next |
 |:---|---:|
-| [77 ALU](b0077b_AOS16_ALU.md) | [79 AOS16 GPU](b0079b_AOS16_AOS16-GPU.md) |
+| [77. ALU](b0077b_AOS16_ALU.md) | [79. AOS16 GPU](b0079b_AOS16_AOS16-GPU.md) |

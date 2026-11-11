@@ -1,4 +1,4 @@
-# 1127 baluns
+# 1127. baluns
 
 Board 1,127 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 11](../CorpusTestingPages/Corpus-Testing-11.md#1127-baluns).
 
@@ -45,4 +45,4 @@ Board 1,127 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1126 LNA3030](b1126b_LNA3030_LNA3030.md) | [1128 BGA622H6820](b1128b_misc_BGA622H6820.md) |
+| [1126. LNA3030](b1126b_LNA3030_LNA3030.md) | [1128. BGA622H6820](b1128b_misc_BGA622H6820.md) |

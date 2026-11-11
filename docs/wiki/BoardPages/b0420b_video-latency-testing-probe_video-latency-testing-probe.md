@@ -1,4 +1,4 @@
-# 420 video-latency-testing-probe
+# 420. video-latency-testing-probe
 
 Board 420 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 4](../CorpusTestingPages/Corpus-Testing-04.md#420-video-latency-testing-probe).
 
@@ -44,4 +44,4 @@ Board 420 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [419 usb-c-power-adapter](b0419b_usb-c-power-adapter_usb-c-power-adapter.md) | [421 video-booster-board](b0421b_video-signal-booster-board_video-booster-board.md) |
+| [419. usb-c-power-adapter](b0419b_usb-c-power-adapter_usb-c-power-adapter.md) | [421. video-booster-board](b0421b_video-signal-booster-board_video-booster-board.md) |

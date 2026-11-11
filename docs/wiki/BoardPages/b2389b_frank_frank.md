@@ -1,4 +1,4 @@
-# 2389 frank
+# 2389. frank
 
 Board 2,389 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 23](../CorpusTestingPages/Corpus-Testing-23.md#2389-frank).
 
@@ -45,4 +45,4 @@ Board 2,389 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2388 sun_sensor_test](b2388b_1kcubesat-hardware_sun-sensor-test.md) | [2390 frank_core2_proto](b2390b_frank_frank-core2-proto.md) |
+| [2388. sun_sensor_test](b2388b_1kcubesat-hardware_sun-sensor-test.md) | [2390. frank_core2_proto](b2390b_frank_frank-core2-proto.md) |

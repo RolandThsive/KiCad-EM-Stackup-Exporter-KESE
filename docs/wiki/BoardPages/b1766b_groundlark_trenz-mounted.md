@@ -1,4 +1,4 @@
-# 1766 trenz-mounted
+# 1766. trenz-mounted
 
 Board 1,766 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 17](../CorpusTestingPages/Corpus-Testing-17.md#1766-trenz-mounted).
 
@@ -45,4 +45,4 @@ Board 1,766 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1765 stack-service-envelopes](b1765b_groundlark_stack-service-envelopes.md) | [1767 trenz_hat](b1767b_groundlark_trenz-hat.md) |
+| [1765. stack-service-envelopes](b1765b_groundlark_stack-service-envelopes.md) | [1767. trenz_hat](b1767b_groundlark_trenz-hat.md) |

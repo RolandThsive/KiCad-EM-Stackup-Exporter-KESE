@@ -1,4 +1,4 @@
-# 2588 main
+# 2588. main
 
 Board 2,588 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 24](../CorpusTestingPages/Corpus-Testing-24.md#2588-main).
 
@@ -45,4 +45,4 @@ Board 2,588 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2587 smoothiev2-prime](b2587b_smoothieboard2_V2-P12-Prime2590_smoothiev2-prime.md) | [2589 main](b2589b_816-board_EXP-RAM-SCH_main.md) |
+| [2587. smoothiev2-prime](b2587b_smoothieboard2_V2-P12-Prime2590_smoothiev2-prime.md) | [2589. main](b2589b_816-board_EXP-RAM-SCH_main.md) |

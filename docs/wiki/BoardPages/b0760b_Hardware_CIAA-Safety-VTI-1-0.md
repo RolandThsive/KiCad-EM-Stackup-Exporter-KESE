@@ -1,4 +1,4 @@
-# 760 CIAA_Safety_VTI_1.0
+# 760. CIAA_Safety_VTI_1.0
 
 Board 760 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 8](../CorpusTestingPages/Corpus-Testing-08.md#760-ciaa_safety_vti_10).
 
@@ -45,4 +45,4 @@ Board 760 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [759 ciaa-rx](b0759b_Hardware_ciaa-rx.md) | [761 ciaa-z3r0](b0761b_Hardware_ciaa-z3r0.md) |
+| [759. ciaa-rx](b0759b_Hardware_ciaa-rx.md) | [761. ciaa-z3r0](b0761b_Hardware_ciaa-z3r0.md) |

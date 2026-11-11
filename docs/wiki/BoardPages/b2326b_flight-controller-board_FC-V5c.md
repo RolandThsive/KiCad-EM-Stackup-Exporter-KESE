@@ -1,4 +1,4 @@
-# 2326 FC_V5c
+# 2326. FC_V5c
 
 Board 2,326 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 22](../CorpusTestingPages/Corpus-Testing-22.md#2326-fc_v5c).
 
@@ -45,4 +45,4 @@ Board 2,326 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2325 FC_V5b](b2325b_flight-controller-board_FC-V5b.md) | [2327 FC_V5d_Production](b2327b_flight-controller-board_FC-V5d-Production.md) |
+| [2325. FC_V5b](b2325b_flight-controller-board_FC-V5b.md) | [2327. FC_V5d_Production](b2327b_flight-controller-board_FC-V5d-Production.md) |

@@ -1,4 +1,4 @@
-# 2490 PWR_buck_12V_switcher
+# 2490. PWR_buck_12V_switcher
 
 Board 2,490 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 24](../CorpusTestingPages/Corpus-Testing-24.md#2490-pwr_buck_12v_switcher).
 
@@ -45,4 +45,4 @@ Board 2,490 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2489 NGC_38_connector](b2489b_rusefi-hardware_classic-designs-rusefi-hardware-history-NGC-38-connector-rev00-30-NGC-38-connector_NGC-38-connector.md) | [2491 PowerSSO-24_breakout](b2491b_rusefi-hardware_PowerSSO-24-breakout.md) |
+| [2489. NGC_38_connector](b2489b_rusefi-hardware_classic-designs-rusefi-hardware-history-NGC-38-connector-rev00-30-NGC-38-connector_NGC-38-connector.md) | [2491. PowerSSO-24_breakout](b2491b_rusefi-hardware_PowerSSO-24-breakout.md) |

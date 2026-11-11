@@ -1,4 +1,4 @@
-# 746 caravel-Nucleo-v2-M.2
+# 746. caravel-Nucleo-v2-M.2
 
 Board 746 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 7](../CorpusTestingPages/Corpus-Testing-07.md#746-caravel-nucleo-v2-m2).
 
@@ -45,4 +45,4 @@ Board 746 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [745 Fab-Drawing-caravel-dev-v5-M.2](b0745b_caravel-board_Fab-Drawing-caravel-dev-v5-M-2.md) | [747 led-bar-pcb](b0747b_caravel-board_led-bar-pcb.md) |
+| [745. Fab-Drawing-caravel-dev-v5-M.2](b0745b_caravel-board_Fab-Drawing-caravel-dev-v5-M-2.md) | [747. led-bar-pcb](b0747b_caravel-board_led-bar-pcb.md) |

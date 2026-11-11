@@ -1,4 +1,4 @@
-# 1400 cm4-carrier-template
+# 1400. cm4-carrier-template
 
 Board 1,400 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 13](../CorpusTestingPages/Corpus-Testing-13.md#1400-cm4-carrier-template).
 
@@ -45,4 +45,4 @@ Board 1,400 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1399 cm4-carrier-net](b1399b_cm4-carriers_cm4-carrier-net.md) | [1401 astra_piNas](b1401b_astra-pinas_astra-piNas.md) |
+| [1399. cm4-carrier-net](b1399b_cm4-carriers_cm4-carrier-net.md) | [1401. astra_piNas](b1401b_astra-pinas_astra-piNas.md) |

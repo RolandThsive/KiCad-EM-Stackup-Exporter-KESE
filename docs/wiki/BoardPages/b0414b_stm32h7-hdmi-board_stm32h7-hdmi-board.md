@@ -1,4 +1,4 @@
-# 414 stm32h7-hdmi-board
+# 414. stm32h7-hdmi-board
 
 Board 414 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 4](../CorpusTestingPages/Corpus-Testing-04.md#414-stm32h7-hdmi-board).
 
@@ -45,4 +45,4 @@ Board 414 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [413 sodimm-ddr5-tester](b0413b_sodimm-ddr5-tester_sodimm-ddr5-tester.md) | [415 stm32h7-hdmi-board-sodimm-module](b0415b_stm32h7-hdmi-board-sodimm_stm32h7-hdmi-board-sodimm-module.md) |
+| [413. sodimm-ddr5-tester](b0413b_sodimm-ddr5-tester_sodimm-ddr5-tester.md) | [415. stm32h7-hdmi-board-sodimm-module](b0415b_stm32h7-hdmi-board-sodimm_stm32h7-hdmi-board-sodimm-module.md) |

@@ -1,4 +1,4 @@
-# 2503 micro_rusEFI
+# 2503. micro_rusEFI
 
 Board 2,503 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 24](../CorpusTestingPages/Corpus-Testing-24.md#2503-micro_rusefi).
 
@@ -45,4 +45,4 @@ Board 2,503 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2502 IR2302-testboard](b2502b_rusefi-hardware_IR2302-testboard.md) | [2504 lambda-x2](b2504b_rusefi-hardware_lambda-x2.md) |
+| [2502. IR2302-testboard](b2502b_rusefi-hardware_IR2302-testboard.md) | [2504. lambda-x2](b2504b_rusefi-hardware_lambda-x2.md) |

@@ -1,4 +1,4 @@
-# 1296 modified_arena_10_of_10_v1r1
+# 1296. modified_arena_10_of_10_v1r1
 
 Board 1,296 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 12](../CorpusTestingPages/Corpus-Testing-12.md#1296-modified_arena_10_of_10_v1r1).
 
@@ -46,4 +46,4 @@ Board 1,296 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1295 arena_12-18](b1295b_led-display-g6-hardware-arena_arena-12-18-layout-tool_arena-12-18.md) | [1297 arena_12-18](b1297b_led-display-g6-hardware-arena_arena-12-18-manual-route-v1_arena-12-18.md) |
+| [1295. arena_12-18](b1295b_led-display-g6-hardware-arena_arena-12-18-layout-tool_arena-12-18.md) | [1297. arena_12-18](b1297b_led-display-g6-hardware-arena_arena-12-18-manual-route-v1_arena-12-18.md) |

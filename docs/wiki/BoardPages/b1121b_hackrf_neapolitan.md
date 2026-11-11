@@ -1,4 +1,4 @@
-# 1121 neapolitan
+# 1121. neapolitan
 
 Board 1,121 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 11](../CorpusTestingPages/Corpus-Testing-11.md#1121-neapolitan).
 
@@ -45,4 +45,4 @@ Board 1,121 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1120 marzipan](b1120b_hackrf_marzipan.md) | [1122 operacake](b1122b_hackrf_operacake.md) |
+| [1120. marzipan](b1120b_hackrf_marzipan.md) | [1122. operacake](b1122b_hackrf_operacake.md) |

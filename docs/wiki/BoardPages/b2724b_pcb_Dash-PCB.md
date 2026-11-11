@@ -1,4 +1,4 @@
-# 2724 Dash-PCB
+# 2724. Dash-PCB
 
 Board 2,724 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 26](../CorpusTestingPages/Corpus-Testing-26.md#2724-dash-pcb).
 
@@ -45,4 +45,4 @@ Board 2,724 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2723 curr-amp](b2723b_pcb_curr-amp.md) | [2725 can-node](b2725b_pcb_can-node.md) |
+| [2723. curr-amp](b2723b_pcb_curr-amp.md) | [2725. can-node](b2725b_pcb_can-node.md) |

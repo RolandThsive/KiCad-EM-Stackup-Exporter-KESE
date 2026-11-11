@@ -1,4 +1,4 @@
-# 88 Memory Controller
+# 88. Memory Controller
 
 Board 88 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 1](../CorpusTestingPages/Corpus-Testing-01.md#88-memory-controller).
 
@@ -45,4 +45,4 @@ Board 88 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page
 
 | Previous | Next |
 |:---|---:|
-| [87 Control](b0087b_AOS16_Control.md) | [89 Program Counter](b0089b_AOS16_Program-Counter.md) |
+| [87. Control](b0087b_AOS16_Control.md) | [89. Program Counter](b0089b_AOS16_Program-Counter.md) |

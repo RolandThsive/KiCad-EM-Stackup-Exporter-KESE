@@ -1,4 +1,4 @@
-# 2535 sensor_smd
+# 2535. sensor_smd
 
 Board 2,535 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 24](../CorpusTestingPages/Corpus-Testing-24.md#2535-sensor_smd).
 
@@ -45,4 +45,4 @@ Board 2,535 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2534 sensor](b2534b_splitflap_sensor.md) | [2536 mppt](b2536b_mppt_mppt.md) |
+| [2534. sensor](b2534b_splitflap_sensor.md) | [2536. mppt](b2536b_mppt_mppt.md) |

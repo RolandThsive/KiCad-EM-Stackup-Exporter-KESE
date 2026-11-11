@@ -1,4 +1,4 @@
-# 2745 launch-heavy
+# 2745. launch-heavy
 
 Board 2,745 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 26](../CorpusTestingPages/Corpus-Testing-26.md#2745-launch-heavy).
 
@@ -45,4 +45,4 @@ Board 2,745 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2744 Raemixx500](b2744b_raemixx500_Raemixx500.md) | [2746 launch-iso](b2746b_launch_launch-iso.md) |
+| [2744. Raemixx500](b2744b_raemixx500_Raemixx500.md) | [2746. launch-iso](b2746b_launch_launch-iso.md) |

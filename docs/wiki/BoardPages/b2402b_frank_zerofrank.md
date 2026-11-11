@@ -1,4 +1,4 @@
-# 2402 zerofrank
+# 2402. zerofrank
 
 Board 2,402 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 23](../CorpusTestingPages/Corpus-Testing-23.md#2402-zerofrank).
 
@@ -45,4 +45,4 @@ Board 2,402 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2401 xt8086_alpha](b2401b_frank_xt8086-alpha.md) | [2403 amiga2000](b2403b_kicad-amiga2000_amiga2000.md) |
+| [2401. xt8086_alpha](b2401b_frank_xt8086-alpha.md) | [2403. amiga2000](b2403b_kicad-amiga2000_amiga2000.md) |

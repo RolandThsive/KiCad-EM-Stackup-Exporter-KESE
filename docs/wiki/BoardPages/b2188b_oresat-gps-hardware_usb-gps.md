@@ -1,4 +1,4 @@
-# 2188 usb_gps
+# 2188. usb_gps
 
 Board 2,188 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 21](../CorpusTestingPages/Corpus-Testing-21.md#2188-usb_gps).
 
@@ -45,4 +45,4 @@ Board 2,188 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2187 swd-to-card-debug-3](b2187b_oresat-flatsat_swd-to-card-debug-3.md) | [2189 BaseBoard](b2189b_oresat-gps-hardware_BaseBoard.md) |
+| [2187. swd-to-card-debug-3](b2187b_oresat-flatsat_swd-to-card-debug-3.md) | [2189. BaseBoard](b2189b_oresat-gps-hardware_BaseBoard.md) |

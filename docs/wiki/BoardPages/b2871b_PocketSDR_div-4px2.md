@@ -1,4 +1,4 @@
-# 2871 div_4px2
+# 2871. div_4px2
 
 Board 2,871 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 27](../CorpusTestingPages/Corpus-Testing-27.md#2871-div_4px2).
 
@@ -45,4 +45,4 @@ Board 2,871 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2870 v3.0](b2870b_PocketSDR_v3-0.md) | [2872 v4.0](b2872b_PocketSDR_v4-0.md) |
+| [2870. v3.0](b2870b_PocketSDR_v3-0.md) | [2872. v4.0](b2872b_PocketSDR_v4-0.md) |

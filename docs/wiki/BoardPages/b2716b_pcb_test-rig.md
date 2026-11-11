@@ -1,4 +1,4 @@
-# 2716 test-rig
+# 2716. test-rig
 
 Board 2,716 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 26](../CorpusTestingPages/Corpus-Testing-26.md#2716-test-rig).
 
@@ -45,4 +45,4 @@ Board 2,716 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2715 telemetry](b2715b_pcb_telemetry.md) | [2717 tsal](b2717b_pcb_tsal.md) |
+| [2715. telemetry](b2715b_pcb_telemetry.md) | [2717. tsal](b2717b_pcb_tsal.md) |

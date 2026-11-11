@@ -1,4 +1,4 @@
-# 407 sdi-mipi-bridge
+# 407. sdi-mipi-bridge
 
 Board 407 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 4](../CorpusTestingPages/Corpus-Testing-04.md#407-sdi-mipi-bridge).
 
@@ -44,4 +44,4 @@ Board 407 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [406 sdi-fiber-adapter](b0406b_sdi-fiber-adapter_sdi-fiber-adapter.md) | [408 sdi-mipi-video-converter](b0408b_sdi-mipi-video-converter-hw_sdi-mipi-video-converter.md) |
+| [406. sdi-fiber-adapter](b0406b_sdi-fiber-adapter_sdi-fiber-adapter.md) | [408. sdi-mipi-video-converter](b0408b_sdi-mipi-video-converter-hw_sdi-mipi-video-converter.md) |

@@ -1,4 +1,4 @@
-# 434 Video+Sound
+# 434. Video+Sound
 
 Board 434 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 5](../CorpusTestingPages/Corpus-Testing-05.md#434-videosound).
 
@@ -45,4 +45,4 @@ Board 434 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [433 TestSRAM](b0433b_maxi030_TestSRAM.md) | [435 MAXI030](b0435b_maxi030_MAXI030.md) |
+| [433. TestSRAM](b0433b_maxi030_TestSRAM.md) | [435. MAXI030](b0435b_maxi030_MAXI030.md) |

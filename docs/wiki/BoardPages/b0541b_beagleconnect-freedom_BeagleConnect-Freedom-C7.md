@@ -1,4 +1,4 @@
-# 541 BeagleConnect Freedom C7
+# 541. BeagleConnect Freedom C7
 
 Board 541 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 6](../CorpusTestingPages/Corpus-Testing-06.md#541-beagleconnect-freedom-c7).
 
@@ -45,4 +45,4 @@ Board 541 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [540 BeagleConnect](b0540b_beagleconnect_BeagleConnect.md) | [542 TechLab](b0542b_capes_TechLab.md) |
+| [540. BeagleConnect](b0540b_beagleconnect_BeagleConnect.md) | [542. TechLab](b0542b_capes_TechLab.md) |

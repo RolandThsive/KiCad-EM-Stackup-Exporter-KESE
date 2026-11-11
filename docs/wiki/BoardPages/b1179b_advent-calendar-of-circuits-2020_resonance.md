@@ -1,4 +1,4 @@
-# 1179 resonance
+# 1179. resonance
 
 Board 1,179 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 11](../CorpusTestingPages/Corpus-Testing-11.md#1179-resonance).
 
@@ -45,4 +45,4 @@ Board 1,179 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1178 sd-dummy](b1178b_advent-calendar-of-circuits-2020_sd-dummy.md) | [1180 rpi-hq-camera](b1180b_advent-calendar-of-circuits-2020_rpi-hq-camera.md) |
+| [1178. sd-dummy](b1178b_advent-calendar-of-circuits-2020_sd-dummy.md) | [1180. rpi-hq-camera](b1180b_advent-calendar-of-circuits-2020_rpi-hq-camera.md) |

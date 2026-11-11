@@ -1,4 +1,4 @@
-# 1079 fx2_tube_cartridge_adapter
+# 1079. fx2_tube_cartridge_adapter
 
 Board 1,079 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 10](../CorpusTestingPages/Corpus-Testing-10.md#1079-fx2_tube_cartridge_adapter).
 
@@ -45,4 +45,4 @@ Board 1,079 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1078 acorn-electron-expansion](b1078b_myelin-acorn-electron-hardware_acorn-electron-expansion.md) | [1080 master_updateable_megarom](b1080b_myelin-acorn-electron-hardware_master-updateable-megarom.md) |
+| [1078. acorn-electron-expansion](b1078b_myelin-acorn-electron-hardware_acorn-electron-expansion.md) | [1080. master_updateable_megarom](b1080b_myelin-acorn-electron-hardware_master-updateable-megarom.md) |

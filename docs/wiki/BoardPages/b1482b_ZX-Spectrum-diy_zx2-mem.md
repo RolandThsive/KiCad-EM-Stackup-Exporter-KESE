@@ -1,4 +1,4 @@
-# 1482 zx2_mem
+# 1482. zx2_mem
 
 Board 1,482 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 14](../CorpusTestingPages/Corpus-Testing-14.md#1482-zx2_mem).
 
@@ -45,4 +45,4 @@ Board 1,482 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1481 zx2_keyb_idc](b1481b_ZX-Spectrum-diy_zx2-keyb-idc.md) | [1483 zx2_mem_test01](b1483b_ZX-Spectrum-diy_zx2-mem-test01.md) |
+| [1481. zx2_keyb_idc](b1481b_ZX-Spectrum-diy_zx2-keyb-idc.md) | [1483. zx2_mem_test01](b1483b_ZX-Spectrum-diy_zx2-mem-test01.md) |

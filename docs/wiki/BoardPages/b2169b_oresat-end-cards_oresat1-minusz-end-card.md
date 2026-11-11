@@ -1,4 +1,4 @@
-# 2169 oresat1-minusz-end-card
+# 2169. oresat1-minusz-end-card
 
 Board 2,169 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 21](../CorpusTestingPages/Corpus-Testing-21.md#2169-oresat1-minusz-end-card).
 
@@ -45,4 +45,4 @@ Board 2,169 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2168 oresat0.5-pluz-end-card](b2168b_oresat-end-cards_oresat0-5-pluz-end-card.md) | [2170 oresat1-plusz-end-card](b2170b_oresat-end-cards_oresat1-plusz-end-card.md) |
+| [2168. oresat0.5-pluz-end-card](b2168b_oresat-end-cards_oresat0-5-pluz-end-card.md) | [2170. oresat1-plusz-end-card](b2170b_oresat-end-cards_oresat1-plusz-end-card.md) |

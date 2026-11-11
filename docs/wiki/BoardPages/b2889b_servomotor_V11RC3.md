@@ -1,4 +1,4 @@
-# 2889 V11RC3
+# 2889. V11RC3
 
 Board 2,889 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 27](../CorpusTestingPages/Corpus-Testing-27.md#2889-v11rc3).
 
@@ -45,4 +45,4 @@ Board 2,889 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2888 V11RC2](b2888b_servomotor_V11RC2.md) | [2890 V11RC4](b2890b_servomotor_V11RC4.md) |
+| [2888. V11RC2](b2888b_servomotor_V11RC2.md) | [2890. V11RC4](b2890b_servomotor_V11RC4.md) |

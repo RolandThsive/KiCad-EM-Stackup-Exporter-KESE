@@ -1,4 +1,4 @@
-# 1452 microwave
+# 1452. microwave
 
 Board 1,452 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 14](../CorpusTestingPages/Corpus-Testing-14.md#1452-microwave).
 
@@ -44,4 +44,4 @@ Board 1,452 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1451 kit-dev-coldfire-xilinx_5213](b1451b_kicad-source-mirror_kit-dev-coldfire-xilinx-5213.md) | [1453 multichannel_mixer-unrouted](b1453b_kicad-source-mirror_multichannel-mixer-unrouted.md) |
+| [1451. kit-dev-coldfire-xilinx_5213](b1451b_kicad-source-mirror_kit-dev-coldfire-xilinx-5213.md) | [1453. multichannel_mixer-unrouted](b1453b_kicad-source-mirror_multichannel-mixer-unrouted.md) |

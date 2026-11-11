@@ -1,4 +1,4 @@
-# 1077 elk_pi_tube_direct
+# 1077. elk_pi_tube_direct
 
 Board 1,077 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 10](../CorpusTestingPages/Corpus-Testing-10.md#1077-elk_pi_tube_direct).
 
@@ -45,4 +45,4 @@ Board 1,077 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1076 econet_hub](b1076b_myelin-acorn-electron-hardware_econet-hub.md) | [1078 acorn-electron-expansion](b1078b_myelin-acorn-electron-hardware_acorn-electron-expansion.md) |
+| [1076. econet_hub](b1076b_myelin-acorn-electron-hardware_econet-hub.md) | [1078. acorn-electron-expansion](b1078b_myelin-acorn-electron-hardware_acorn-electron-expansion.md) |

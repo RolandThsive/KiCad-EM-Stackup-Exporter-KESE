@@ -1,4 +1,4 @@
-# 2742 vcu
+# 2742. vcu
 
 Board 2,742 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 26](../CorpusTestingPages/Corpus-Testing-26.md#2742-vcu).
 
@@ -45,4 +45,4 @@ Board 2,742 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2741 tsal-led](b2741b_pcb_tsal-led.md) | [2743 LittleSixteen](b2743b_LittleSixteen_LittleSixteen.md) |
+| [2741. tsal-led](b2741b_pcb_tsal-led.md) | [2743. LittleSixteen](b2743b_LittleSixteen_LittleSixteen.md) |

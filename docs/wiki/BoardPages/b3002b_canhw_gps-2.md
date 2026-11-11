@@ -1,4 +1,4 @@
-# 3002 gps_2
+# 3002. gps_2
 
 Board 3,002 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 28](../CorpusTestingPages/Corpus-Testing-28.md#3002-gps_2).
 
@@ -45,4 +45,4 @@ Board 3,002 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [3001 DAQ CAN support](b3001b_canhw_DAQ-CAN-support.md) | [3003 injector_sensor_hub](b3003b_canhw_injector-sensor-hub.md) |
+| [3001. DAQ CAN support](b3001b_canhw_DAQ-CAN-support.md) | [3003. injector_sensor_hub](b3003b_canhw_injector-sensor-hub.md) |

@@ -1,4 +1,4 @@
-# 3042 riser_c
+# 3042. riser_c
 
 Board 3,042 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 29](../CorpusTestingPages/Corpus-Testing-29.md#3042-riser_c).
 
@@ -45,4 +45,4 @@ Board 3,042 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [3041 riser_a](b3041b_the-mac-pro-project_riser-a.md) | [3043 riser_hdmi](b3043b_the-mac-pro-project_riser-hdmi.md) |
+| [3041. riser_a](b3041b_the-mac-pro-project_riser-a.md) | [3043. riser_hdmi](b3043b_the-mac-pro-project_riser-hdmi.md) |

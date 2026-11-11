@@ -1,4 +1,4 @@
-# 627 Lynx-MK1-MEM
+# 627. Lynx-MK1-MEM
 
 Board 627 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 6](../CorpusTestingPages/Corpus-Testing-06.md#627-lynx-mk1-mem).
 
@@ -45,4 +45,4 @@ Board 627 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [626 Lynx-MK1-MEM](b0626b_Camputers-Lynx_Lynx-96-Expansions-Lynx-MK1-MEM-Original-Kicad_Lynx-MK1-MEM.md) | [628 Lynx-PS2](b0628b_Camputers-Lynx_Lynx-PS2.md) |
+| [626. Lynx-MK1-MEM](b0626b_Camputers-Lynx_Lynx-96-Expansions-Lynx-MK1-MEM-Original-Kicad_Lynx-MK1-MEM.md) | [628. Lynx-PS2](b0628b_Camputers-Lynx_Lynx-PS2.md) |

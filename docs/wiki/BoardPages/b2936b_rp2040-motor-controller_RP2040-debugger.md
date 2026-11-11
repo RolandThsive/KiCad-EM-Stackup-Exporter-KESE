@@ -1,4 +1,4 @@
-# 2936 RP2040_debugger
+# 2936. RP2040_debugger
 
 Board 2,936 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 28](../CorpusTestingPages/Corpus-Testing-28.md#2936-rp2040_debugger).
 
@@ -45,4 +45,4 @@ Board 2,936 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2935 iMX6 Demo Board_from_REF](b2935b_imx6-demo-board_iMX6-Demo-Board-from-REF.md) | [2937 driver_module](b2937b_rp2040-motor-controller_driver-module.md) |
+| [2935. iMX6 Demo Board_from_REF](b2935b_imx6-demo-board_iMX6-Demo-Board-from-REF.md) | [2937. driver_module](b2937b_rp2040-motor-controller_driver-module.md) |

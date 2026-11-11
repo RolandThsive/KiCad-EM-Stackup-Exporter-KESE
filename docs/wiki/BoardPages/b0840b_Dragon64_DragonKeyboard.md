@@ -1,4 +1,4 @@
-# 840 DragonKeyboard
+# 840. DragonKeyboard
 
 Board 840 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 8](../CorpusTestingPages/Corpus-Testing-08.md#840-dragonkeyboard).
 
@@ -45,4 +45,4 @@ Board 840 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [839 dragon64](b0839b_Dragon64_dragon64.md) | [841 CartRiser](b0841b_TI99-22_CartRiser.md) |
+| [839. dragon64](b0839b_Dragon64_dragon64.md) | [841. CartRiser](b0841b_TI99-22_CartRiser.md) |

@@ -1,4 +1,4 @@
-# 1072 cherry_mx
+# 1072. cherry_mx
 
 Board 1,072 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 10](../CorpusTestingPages/Corpus-Testing-10.md#1072-cherry_mx).
 
@@ -44,4 +44,4 @@ Board 1,072 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1071 bga_in_two_layers](b1071b_myelin-acorn-electron-hardware_bga-in-two-layers.md) | [1073 cpu_socket_expansion](b1073b_myelin-acorn-electron-hardware_cpu-socket-expansion.md) |
+| [1071. bga_in_two_layers](b1071b_myelin-acorn-electron-hardware_bga-in-two-layers.md) | [1073. cpu_socket_expansion](b1073b_myelin-acorn-electron-hardware_cpu-socket-expansion.md) |

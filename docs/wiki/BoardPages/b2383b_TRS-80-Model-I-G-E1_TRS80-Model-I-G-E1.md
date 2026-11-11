@@ -1,4 +1,4 @@
-# 2383 TRS80_Model_I_G_E1
+# 2383. TRS80_Model_I_G_E1
 
 Board 2,383 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 23](../CorpusTestingPages/Corpus-Testing-23.md#2383-trs80_model_i_g_e1).
 
@@ -45,4 +45,4 @@ Board 2,383 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2382 TRS80_Model_I_EI_RevD](b2382b_TRS-80-Model-I-Expansion-Interface-Rev-D_TRS80-Model-I-EI-RevD.md) | [2384 TRS80_Model_I_Jap20_E1](b2384b_TRS-80-Model-I-Jap20-E1_TRS80-Model-I-Jap20-E1.md) |
+| [2382. TRS80_Model_I_EI_RevD](b2382b_TRS-80-Model-I-Expansion-Interface-Rev-D_TRS80-Model-I-EI-RevD.md) | [2384. TRS80_Model_I_Jap20_E1](b2384b_TRS-80-Model-I-Jap20-E1_TRS80-Model-I-Jap20-E1.md) |

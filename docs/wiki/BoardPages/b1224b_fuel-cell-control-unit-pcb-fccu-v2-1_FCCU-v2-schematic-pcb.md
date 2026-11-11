@@ -1,4 +1,4 @@
-# 1224 FCCU-v2-schematic-pcb
+# 1224. FCCU-v2-schematic-pcb
 
 Board 1,224 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 12](../CorpusTestingPages/Corpus-Testing-12.md#1224-fccu-v2-schematic-pcb).
 
@@ -44,4 +44,4 @@ Board 1,224 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1223 allwinner-h3](b1223b_allwinner-h3-ddr3-16x1-kicad_allwinner-h3.md) | [1225 FCCU-v21-schematic-pcb](b1225b_fuel-cell-control-unit-pcb-fccu-v2-1_FCCU-v21-schematic-pcb.md) |
+| [1223. allwinner-h3](b1223b_allwinner-h3-ddr3-16x1-kicad_allwinner-h3.md) | [1225. FCCU-v21-schematic-pcb](b1225b_fuel-cell-control-unit-pcb-fccu-v2-1_FCCU-v21-schematic-pcb.md) |

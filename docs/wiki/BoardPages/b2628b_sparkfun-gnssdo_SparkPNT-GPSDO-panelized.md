@@ -1,4 +1,4 @@
-# 2628 SparkPNT_GPSDO_panelized
+# 2628. SparkPNT_GPSDO_panelized
 
 Board 2,628 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 25](../CorpusTestingPages/Corpus-Testing-25.md#2628-sparkpnt_gpsdo_panelized).
 
@@ -46,4 +46,4 @@ Board 2,628 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2627 SparkFun_GNSS_Flex_Module_ZED-X20P_Tilt](b2627b_sparkfun-gnss-flex-system_SparkFun-GNSS-Flex-Module-ZED-X20P-Tilt.md) | [2629 SparkPNT_GPSDO](b2629b_sparkfun-gnssdo_SparkPNT-GPSDO.md) |
+| [2627. SparkFun_GNSS_Flex_Module_ZED-X20P_Tilt](b2627b_sparkfun-gnss-flex-system_SparkFun-GNSS-Flex-Module-ZED-X20P-Tilt.md) | [2629. SparkPNT_GPSDO](b2629b_sparkfun-gnssdo_SparkPNT-GPSDO.md) |

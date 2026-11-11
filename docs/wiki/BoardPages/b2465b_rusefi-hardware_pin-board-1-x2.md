@@ -1,4 +1,4 @@
-# 2465 pin_board_1_x2
+# 2465. pin_board_1_x2
 
 Board 2,465 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 23](../CorpusTestingPages/Corpus-Testing-23.md#2465-pin_board_1_x2).
 
@@ -45,4 +45,4 @@ Board 2,465 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2464 pin_board_1](b2464b_rusefi-hardware_pin-board-1.md) | [2466 Breakout_TLE6244](b2466b_rusefi-hardware_Breakout-TLE6244.md) |
+| [2464. pin_board_1](b2464b_rusefi-hardware_pin-board-1.md) | [2466. Breakout_TLE6244](b2466b_rusefi-hardware_Breakout-TLE6244.md) |

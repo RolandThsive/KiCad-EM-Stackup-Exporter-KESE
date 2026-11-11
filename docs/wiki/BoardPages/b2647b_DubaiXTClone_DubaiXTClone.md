@@ -1,4 +1,4 @@
-# 2647 DubaiXTClone
+# 2647. DubaiXTClone
 
 Board 2,647 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 25](../CorpusTestingPages/Corpus-Testing-25.md#2647-dubaixtclone).
 
@@ -44,4 +44,4 @@ Board 2,647 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2646 VR-Conditioner-MAX9926+reg](b2646b_hardware_VR-Conditioner-MAX9926-reg.md) | [2648 cm5-carrier](b2648b_spirit_cm5-carrier.md) |
+| [2646. VR-Conditioner-MAX9926+reg](b2646b_hardware_VR-Conditioner-MAX9926-reg.md) | [2648. cm5-carrier](b2648b_spirit_cm5-carrier.md) |

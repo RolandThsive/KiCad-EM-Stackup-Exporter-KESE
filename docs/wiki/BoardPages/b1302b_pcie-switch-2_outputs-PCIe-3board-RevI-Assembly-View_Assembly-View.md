@@ -1,4 +1,4 @@
-# 1302 Assembly_View
+# 1302. Assembly_View
 
 Board 1,302 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 13](../CorpusTestingPages/Corpus-Testing-13.md#1302-assembly_view).
 
@@ -46,4 +46,4 @@ Board 1,302 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1301 E1S_10slot_80x45_12V](b1301b_pcie-switch-2_E1S-10slot-80x45-12V.md) | [1303 Left_2M2_Vertical](b1303b_pcie-switch-2_outputs-PCIe-3board-RevI-Left-2M2-Vertical_Left-2M2-Vertical.md) |
+| [1301. E1S_10slot_80x45_12V](b1301b_pcie-switch-2_E1S-10slot-80x45-12V.md) | [1303. Left_2M2_Vertical](b1303b_pcie-switch-2_outputs-PCIe-3board-RevI-Left-2M2-Vertical_Left-2M2-Vertical.md) |

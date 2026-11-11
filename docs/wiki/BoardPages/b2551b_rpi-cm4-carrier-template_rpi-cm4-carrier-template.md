@@ -1,4 +1,4 @@
-# 2551 rpi-cm4-carrier-template
+# 2551. rpi-cm4-carrier-template
 
 Board 2,551 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 24](../CorpusTestingPages/Corpus-Testing-24.md#2551-rpi-cm4-carrier-template).
 
@@ -45,4 +45,4 @@ Board 2,551 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2550 portapack_h1](b2550b_portapack-hackrf_portapack-h1.md) | [2552 tulipcc](b2552b_tulipcc_tulipcc.md) |
+| [2550. portapack_h1](b2550b_portapack-hackrf_portapack-h1.md) | [2552. tulipcc](b2552b_tulipcc_tulipcc.md) |

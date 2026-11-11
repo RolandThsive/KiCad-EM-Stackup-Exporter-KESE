@@ -1,4 +1,4 @@
-# 3020 CM4Card
+# 3020. CM4Card
 
 Board 3,020 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 28](../CorpusTestingPages/Corpus-Testing-28.md#3020-cm4card).
 
@@ -45,4 +45,4 @@ Board 3,020 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [3019 CM4ClusterHat](b3019b_Miniature-CM4-Cluster_CM4ClusterHat.md) | [3021 OneInchEye](b3021b_OneInchEye_OneInchEye.md) |
+| [3019. CM4ClusterHat](b3019b_Miniature-CM4-Cluster_CM4ClusterHat.md) | [3021. OneInchEye](b3021b_OneInchEye_OneInchEye.md) |

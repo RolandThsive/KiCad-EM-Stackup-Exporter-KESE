@@ -1,4 +1,4 @@
-# 2636 DropBear
+# 2636. DropBear
 
 Board 2,636 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 25](../CorpusTestingPages/Corpus-Testing-25.md#2636-dropbear).
 
@@ -45,4 +45,4 @@ Board 2,636 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2635 MAP Card](b2635b_hardware_DropBear-MAP-Card-v0-3_MAP-Card.md) | [2637 DropBear](b2637b_hardware_DropBear-V2_DropBear.md) |
+| [2635. MAP Card](b2635b_hardware_DropBear-MAP-Card-v0-3_MAP-Card.md) | [2637. DropBear](b2637b_hardware_DropBear-V2_DropBear.md) |

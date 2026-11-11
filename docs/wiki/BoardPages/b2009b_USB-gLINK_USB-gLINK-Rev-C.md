@@ -1,4 +1,4 @@
-# 2009 USB-gLINK_Rev_C
+# 2009. USB-gLINK_Rev_C
 
 Board 2,009 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 19](../CorpusTestingPages/Corpus-Testing-19.md#2009-usb-glink_rev_c).
 
@@ -45,4 +45,4 @@ Board 2,009 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2008 USB-GIGABIT_Rev_E](b2008b_USB-GIGABIT_USB-GIGABIT-Rev-E.md) | [2010 USB-gLINK_Rev_D](b2010b_USB-gLINK_USB-gLINK-Rev-D.md) |
+| [2008. USB-GIGABIT_Rev_E](b2008b_USB-GIGABIT_USB-GIGABIT-Rev-E.md) | [2010. USB-gLINK_Rev_D](b2010b_USB-gLINK_USB-gLINK-Rev-D.md) |

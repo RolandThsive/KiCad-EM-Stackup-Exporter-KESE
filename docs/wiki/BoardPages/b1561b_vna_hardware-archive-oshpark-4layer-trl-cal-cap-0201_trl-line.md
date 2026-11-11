@@ -1,4 +1,4 @@
-# 1561 trl_line
+# 1561. trl_line
 
 Board 1,561 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 15](../CorpusTestingPages/Corpus-Testing-15.md#1561-trl_line).
 
@@ -45,4 +45,4 @@ Board 1,561 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1560 frequency_synth](b1560b_vna_frequency-synth.md) | [1562 trl_line](b1562b_vna_hardware-archive-oshpark-4layer-trl-cal-cap-0402_trl-line.md) |
+| [1560. frequency_synth](b1560b_vna_frequency-synth.md) | [1562. trl_line](b1562b_vna_hardware-archive-oshpark-4layer-trl-cal-cap-0402_trl-line.md) |

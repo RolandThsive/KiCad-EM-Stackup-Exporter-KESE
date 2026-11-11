@@ -1,4 +1,4 @@
-# 1037 TMC2130_Driver
+# 1037. TMC2130_Driver
 
 Board 1,037 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 10](../CorpusTestingPages/Corpus-Testing-10.md#1037-tmc2130_driver).
 
@@ -45,4 +45,4 @@ Board 1,037 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1036 T12_Control](b1036b_prntrboardv2_T12-Control.md) | [1038 TMC2209_Driver](b1038b_prntrboardv2_TMC2209-Driver.md) |
+| [1036. T12_Control](b1036b_prntrboardv2_T12-Control.md) | [1038. TMC2209_Driver](b1038b_prntrboardv2_TMC2209-Driver.md) |

@@ -1,4 +1,4 @@
-# 2765 BatteryCharger
+# 2765. BatteryCharger
 
 Board 2,765 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 26](../CorpusTestingPages/Corpus-Testing-26.md#2765-batterycharger).
 
@@ -45,4 +45,4 @@ Board 2,765 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2764 ARCH](b2764b_srad-avionics_ARCH.md) | [2766 Blue Raven Extension](b2766b_srad-avionics_Blue-Raven-Extension.md) |
+| [2764. ARCH](b2764b_srad-avionics_ARCH.md) | [2766. Blue Raven Extension](b2766b_srad-avionics_Blue-Raven-Extension.md) |

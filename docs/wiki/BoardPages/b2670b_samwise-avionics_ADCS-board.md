@@ -1,4 +1,4 @@
-# 2670 ADCS_board
+# 2670. ADCS_board
 
 Board 2,670 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 25](../CorpusTestingPages/Corpus-Testing-25.md#2670-adcs_board).
 
@@ -45,4 +45,4 @@ Board 2,670 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2669 motor_board](b2669b_samwise-avionics_motor-board.md) | [2671 batteryboard](b2671b_samwise-avionics_batteryboard.md) |
+| [2669. motor_board](b2669b_samwise-avionics_motor-board.md) | [2671. batteryboard](b2671b_samwise-avionics_batteryboard.md) |

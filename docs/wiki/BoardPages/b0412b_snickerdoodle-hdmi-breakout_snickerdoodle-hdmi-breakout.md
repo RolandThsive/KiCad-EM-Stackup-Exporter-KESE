@@ -1,4 +1,4 @@
-# 412 snickerdoodle-hdmi-breakout
+# 412. snickerdoodle-hdmi-breakout
 
 Board 412 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 4](../CorpusTestingPages/Corpus-Testing-04.md#412-snickerdoodle-hdmi-breakout).
 
@@ -44,4 +44,4 @@ Board 412 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [411 sa800u-baseboard-hw](b0411b_snapdragon-845-baseboard_sa800u-baseboard-hw.md) | [413 sodimm-ddr5-tester](b0413b_sodimm-ddr5-tester_sodimm-ddr5-tester.md) |
+| [411. sa800u-baseboard-hw](b0411b_snapdragon-845-baseboard_sa800u-baseboard-hw.md) | [413. sodimm-ddr5-tester](b0413b_sodimm-ddr5-tester_sodimm-ddr5-tester.md) |

@@ -1,4 +1,4 @@
-# 1222 ISA_ES688
+# 1222. ISA_ES688
 
 Board 1,222 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 12](../CorpusTestingPages/Corpus-Testing-12.md#1222-isa_es688).
 
@@ -44,4 +44,4 @@ Board 1,222 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1221 ISA_ES1868](b1221b_ES1868-ISA8_ISA-ES1868.md) | [1223 allwinner-h3](b1223b_allwinner-h3-ddr3-16x1-kicad_allwinner-h3.md) |
+| [1221. ISA_ES1868](b1221b_ES1868-ISA8_ISA-ES1868.md) | [1223. allwinner-h3](b1223b_allwinner-h3-ddr3-16x1-kicad_allwinner-h3.md) |

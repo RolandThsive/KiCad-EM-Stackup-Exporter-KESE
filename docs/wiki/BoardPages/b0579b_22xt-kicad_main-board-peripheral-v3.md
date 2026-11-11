@@ -1,4 +1,4 @@
-# 579 main_board_peripheral_v3
+# 579. main_board_peripheral_v3
 
 Board 579 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 6](../CorpusTestingPages/Corpus-Testing-06.md#579-main_board_peripheral_v3).
 
@@ -46,4 +46,4 @@ Board 579 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [578 main_board_peripheral_v2](b0578b_22xt-kicad_main-board-peripheral-v2.md) | [580 main_board_peripheral_v3_1](b0580b_22xt-kicad_main-board-peripheral-v3-1.md) |
+| [578. main_board_peripheral_v2](b0578b_22xt-kicad_main-board-peripheral-v2.md) | [580. main_board_peripheral_v3_1](b0580b_22xt-kicad_main-board-peripheral-v3-1.md) |

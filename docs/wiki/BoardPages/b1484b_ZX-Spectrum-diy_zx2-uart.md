@@ -1,4 +1,4 @@
-# 1484 zx2_uart
+# 1484. zx2_uart
 
 Board 1,484 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 14](../CorpusTestingPages/Corpus-Testing-14.md#1484-zx2_uart).
 
@@ -45,4 +45,4 @@ Board 1,484 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1483 zx2_mem_test01](b1483b_ZX-Spectrum-diy_zx2-mem-test01.md) | [1485 rpi-cm4-LiM+-board](b1485b_rpi-cm4-LiM-board_hardware-rpi-cm4-LiM-board-KiCad-Files_rpi-cm4-LiM-board_2262.md) |
+| [1483. zx2_mem_test01](b1483b_ZX-Spectrum-diy_zx2-mem-test01.md) | [1485. rpi-cm4-LiM+-board](b1485b_rpi-cm4-LiM-board_hardware-rpi-cm4-LiM-board-KiCad-Files_rpi-cm4-LiM-board_2262.md) |

@@ -1,4 +1,4 @@
-# 1260 dvi
+# 1260. dvi
 
 Board 1,260 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 12](../CorpusTestingPages/Corpus-Testing-12.md#1260-dvi).
 
@@ -45,4 +45,4 @@ Board 1,260 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1259 dualTranslation](b1259b_Extension-Boards-for-Olimex-GateMate_dualTranslation.md) | [1261 eduIO](b1261b_Extension-Boards-for-Olimex-GateMate_eduIO.md) |
+| [1259. dualTranslation](b1259b_Extension-Boards-for-Olimex-GateMate_dualTranslation.md) | [1261. eduIO](b1261b_Extension-Boards-for-Olimex-GateMate_eduIO.md) |

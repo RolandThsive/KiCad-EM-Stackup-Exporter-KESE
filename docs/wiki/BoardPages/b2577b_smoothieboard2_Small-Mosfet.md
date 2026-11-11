@@ -1,4 +1,4 @@
-# 2577 Small Mosfet
+# 2577. Small Mosfet
 
 Board 2,577 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 24](../CorpusTestingPages/Corpus-Testing-24.md#2577-small-mosfet).
 
@@ -45,4 +45,4 @@ Board 2,577 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2576 Rpi-zero](b2576b_smoothieboard2_Rpi-zero.md) | [2578 SPI Hub](b2578b_smoothieboard2_SPI-Hub.md) |
+| [2576. Rpi-zero](b2576b_smoothieboard2_Rpi-zero.md) | [2578. SPI Hub](b2578b_smoothieboard2_SPI-Hub.md) |

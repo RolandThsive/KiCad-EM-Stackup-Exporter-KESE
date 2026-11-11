@@ -1,4 +1,4 @@
-# 1232 tomu-fpga
+# 1232. tomu-fpga
 
 Board 1,232 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 12](../CorpusTestingPages/Corpus-Testing-12.md#1232-tomu-fpga).
 
@@ -45,4 +45,4 @@ Board 1,232 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1231 tomu-fpga](b1231b_fomu-hardware_archive-dvt-pcb_tomu-fpga.md) | [1233 tomu](b1233b_tomu-hardware_pcb_tomu.md) |
+| [1231. tomu-fpga](b1231b_fomu-hardware_archive-dvt-pcb_tomu-fpga.md) | [1233. tomu](b1233b_tomu-hardware_pcb_tomu.md) |

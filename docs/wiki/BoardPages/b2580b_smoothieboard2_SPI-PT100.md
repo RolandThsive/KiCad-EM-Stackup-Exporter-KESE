@@ -1,4 +1,4 @@
-# 2580 SPI PT100
+# 2580. SPI PT100
 
 Board 2,580 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 24](../CorpusTestingPages/Corpus-Testing-24.md#2580-spi-pt100).
 
@@ -45,4 +45,4 @@ Board 2,580 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2579 SPIOpto](b2579b_smoothieboard2_SPIOpto.md) | [2581 Thermocouple](b2581b_smoothieboard2_Thermocouple.md) |
+| [2579. SPIOpto](b2579b_smoothieboard2_SPIOpto.md) | [2581. Thermocouple](b2581b_smoothieboard2_Thermocouple.md) |

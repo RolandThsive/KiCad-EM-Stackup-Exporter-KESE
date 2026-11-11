@@ -1,4 +1,4 @@
-# 349 dual-ipex-csi-interposer
+# 349. dual-ipex-csi-interposer
 
 Board 349 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 4](../CorpusTestingPages/Corpus-Testing-04.md#349-dual-ipex-csi-interposer).
 
@@ -44,4 +44,4 @@ Board 349 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [348 dual-camera-to-gmsl-serializer-csi-adapter](b0348b_dual-gmsl-serializer-adapter_dual-camera-to-gmsl-serializer-csi-adapter.md) | [350 ecp5-dc-scm](b0350b_ecp5-dc-scm_ecp5-dc-scm.md) |
+| [348. dual-camera-to-gmsl-serializer-csi-adapter](b0348b_dual-gmsl-serializer-adapter_dual-camera-to-gmsl-serializer-csi-adapter.md) | [350. ecp5-dc-scm](b0350b_ecp5-dc-scm_ecp5-dc-scm.md) |

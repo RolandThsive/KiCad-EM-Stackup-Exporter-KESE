@@ -1,4 +1,4 @@
-# 2666 battery_pcb
+# 2666. battery_pcb
 
 Board 2,666 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 25](../CorpusTestingPages/Corpus-Testing-25.md#2666-battery_pcb).
 
@@ -45,4 +45,4 @@ Board 2,666 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2665 aerolotl](b2665b_aerolotl-kicad_aerolotl.md) | [2667 battery_pcb_30pin](b2667b_aerolotl-kicad_battery-pcb-30pin.md) |
+| [2665. aerolotl](b2665b_aerolotl-kicad_aerolotl.md) | [2667. battery_pcb_30pin](b2667b_aerolotl-kicad_battery-pcb-30pin.md) |

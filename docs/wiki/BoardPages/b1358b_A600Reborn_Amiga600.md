@@ -1,4 +1,4 @@
-# 1358 Amiga600
+# 1358. Amiga600
 
 Board 1,358 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 13](../CorpusTestingPages/Corpus-Testing-13.md#1358-amiga600).
 
@@ -45,4 +45,4 @@ Board 1,358 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1357 TeleDecoder-revB](b1357b_iss-pcb_TeleDecoder-revB.md) | [1359 M68000](b1359b_mcd-pcb_M68000.md) |
+| [1357. TeleDecoder-revB](b1357b_iss-pcb_TeleDecoder-revB.md) | [1359. M68000](b1359b_mcd-pcb_M68000.md) |

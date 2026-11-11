@@ -1,4 +1,4 @@
-# 2771 SensorBoardNoMCU
+# 2771. SensorBoardNoMCU
 
 Board 2,771 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 26](../CorpusTestingPages/Corpus-Testing-26.md#2771-sensorboardnomcu).
 
@@ -45,4 +45,4 @@ Board 2,771 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2770 mcu-board v2](b2770b_srad-avionics_mcu-board-v2.md) | [2772 Ground Receiver v2](b2772b_srad-avionics_Ground-Receiver-v2.md) |
+| [2770. mcu-board v2](b2770b_srad-avionics_mcu-board-v2.md) | [2772. Ground Receiver v2](b2772b_srad-avionics_Ground-Receiver-v2.md) |

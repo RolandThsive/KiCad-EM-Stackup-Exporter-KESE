@@ -1,4 +1,4 @@
-# 912 EEZ DIB AFE3plus
+# 912. EEZ DIB AFE3plus
 
 Board 912 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 9](../CorpusTestingPages/Corpus-Testing-09.md#912-eez-dib-afe3plus).
 
@@ -45,4 +45,4 @@ Board 912 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [911 EEZ DIB MIO168plus](b0911b_dib-mio168plus_EEZ-DIB-MIO168plus.md) | [913 BB3plus DVID adapter](b0913b_eez-bb3plus_BB3plus-DVID-adapter.md) |
+| [911. EEZ DIB MIO168plus](b0911b_dib-mio168plus_EEZ-DIB-MIO168plus.md) | [913. BB3plus DVID adapter](b0913b_eez-bb3plus_BB3plus-DVID-adapter.md) |

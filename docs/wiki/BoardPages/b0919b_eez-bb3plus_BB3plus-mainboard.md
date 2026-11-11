@@ -1,4 +1,4 @@
-# 919 BB3plus mainboard
+# 919. BB3plus mainboard
 
 Board 919 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 9](../CorpusTestingPages/Corpus-Testing-09.md#919-bb3plus-mainboard).
 
@@ -45,4 +45,4 @@ Board 919 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [918 BB3plus DSI TFT display](b0918b_eez-bb3plus_BB3plus-DSI-TFT-display.md) | [920 Bare front mask full width](b0920b_eez-bb3plus_Bare-front-mask-full-width.md) |
+| [918. BB3plus DSI TFT display](b0918b_eez-bb3plus_BB3plus-DSI-TFT-display.md) | [920. Bare front mask full width](b0920b_eez-bb3plus_Bare-front-mask-full-width.md) |

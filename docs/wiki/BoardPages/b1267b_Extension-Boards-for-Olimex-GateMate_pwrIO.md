@@ -1,4 +1,4 @@
-# 1267 pwrIO
+# 1267. pwrIO
 
 Board 1,267 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 12](../CorpusTestingPages/Corpus-Testing-12.md#1267-pwrio).
 
@@ -45,4 +45,4 @@ Board 1,267 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1266 MikroBusIO](b1266b_Extension-Boards-for-Olimex-GateMate_MikroBusIO.md) | [1268 simpleIO](b1268b_Extension-Boards-for-Olimex-GateMate_simpleIO.md) |
+| [1266. MikroBusIO](b1266b_Extension-Boards-for-Olimex-GateMate_MikroBusIO.md) | [1268. simpleIO](b1268b_Extension-Boards-for-Olimex-GateMate_simpleIO.md) |

@@ -1,4 +1,4 @@
-# 1011 vera-module-rev4
+# 1011. vera-module-rev4
 
 Board 1,011 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 10](../CorpusTestingPages/Corpus-Testing-10.md#1011-vera-module-rev4).
 
@@ -45,4 +45,4 @@ Board 1,011 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1010 vera-module-rev3](b1010b_vera-module_vera-module-rev3.md) | [1012 GR8RAM](b1012b_GR8RAM_GR8RAM.md) |
+| [1010. vera-module-rev3](b1010b_vera-module_vera-module-rev3.md) | [1012. GR8RAM](b1012b_GR8RAM_GR8RAM.md) |

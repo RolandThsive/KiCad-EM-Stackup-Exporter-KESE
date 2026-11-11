@@ -1,4 +1,4 @@
-# 308 NonLatchingNO30A
+# 308. NonLatchingNO30A
 
 Board 308 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 3](../CorpusTestingPages/Corpus-Testing-03.md#308-nonlatchingno30a).
 
@@ -45,4 +45,4 @@ Board 308 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [307 CurrentSensor](b0307b_boatcontrol_CurrentSensor.md) | [309 boatcontrol](b0309b_boatcontrol_boatcontrol.md) |
+| [307. CurrentSensor](b0307b_boatcontrol_CurrentSensor.md) | [309. boatcontrol](b0309b_boatcontrol_boatcontrol.md) |

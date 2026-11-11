@@ -1,4 +1,4 @@
-# 2050 data_acquisition_module
+# 2050. data_acquisition_module
 
 Board 2,050 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 19](../CorpusTestingPages/Corpus-Testing-19.md#2050-data_acquisition_module).
 
@@ -45,4 +45,4 @@ Board 2,050 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2049 bms_csc](b2049b_olin-electric-motorsports_vehicle-mkvi-hardware-bms-bms-csc-rev-1_bms-csc.md) | [2051 J1772](b2051b_olin-electric-motorsports_J1772.md) |
+| [2049. bms_csc](b2049b_olin-electric-motorsports_vehicle-mkvi-hardware-bms-bms-csc-rev-1_bms-csc.md) | [2051. J1772](b2051b_olin-electric-motorsports_J1772.md) |

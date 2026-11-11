@@ -1,4 +1,4 @@
-# 2525 BM28B0.6-24DSBreakout
+# 2525. BM28B0.6-24DSBreakout
 
 Board 2,525 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 24](../CorpusTestingPages/Corpus-Testing-24.md#2525-bm28b06-24dsbreakout).
 
@@ -44,4 +44,4 @@ Board 2,525 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2524 SnarkBarker](b2524b_snark-barker_SnarkBarker.md) | [2526 LevelShifterBreakout](b2526b_smartknob_LevelShifterBreakout.md) |
+| [2524. SnarkBarker](b2524b_snark-barker_SnarkBarker.md) | [2526. LevelShifterBreakout](b2526b_smartknob_LevelShifterBreakout.md) |

@@ -1,4 +1,4 @@
-# 2316 FC_Board_v3
+# 2316. FC_Board_v3
 
 Board 2,316 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 22](../CorpusTestingPages/Corpus-Testing-22.md#2316-fc_board_v3).
 
@@ -45,4 +45,4 @@ Board 2,316 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2315 inhibit_diagram](b2315b_battery-board_inhibit-diagram.md) | [2317 FC_V4a](b2317b_flight-controller-board_FC-V4a.md) |
+| [2315. inhibit_diagram](b2315b_battery-board_inhibit-diagram.md) | [2317. FC_V4a](b2317b_flight-controller-board_FC-V4a.md) |

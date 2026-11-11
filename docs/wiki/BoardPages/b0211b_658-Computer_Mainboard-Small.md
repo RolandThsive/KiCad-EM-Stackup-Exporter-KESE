@@ -1,4 +1,4 @@
-# 211 Mainboard Small
+# 211. Mainboard Small
 
 Board 211 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 2](../CorpusTestingPages/Corpus-Testing-02.md#211-mainboard-small).
 
@@ -45,4 +45,4 @@ Board 211 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [210 Mainboard Full](b0210b_658-Computer_Mainboard-Full.md) | [212 Processor Full Device](b0212b_658-Computer_Processor-Full-Device.md) |
+| [210. Mainboard Full](b0210b_658-Computer_Mainboard-Full.md) | [212. Processor Full Device](b0212b_658-Computer_Processor-Full-Device.md) |

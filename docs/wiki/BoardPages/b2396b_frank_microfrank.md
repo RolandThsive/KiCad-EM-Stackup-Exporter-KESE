@@ -1,4 +1,4 @@
-# 2396 microfrank
+# 2396. microfrank
 
 Board 2,396 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 23](../CorpusTestingPages/Corpus-Testing-23.md#2396-microfrank).
 
@@ -45,4 +45,4 @@ Board 2,396 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2395 megafrank](b2395b_frank_megafrank.md) | [2397 minifrank](b2397b_frank_minifrank.md) |
+| [2395. megafrank](b2395b_frank_megafrank.md) | [2397. minifrank](b2397b_frank_minifrank.md) |

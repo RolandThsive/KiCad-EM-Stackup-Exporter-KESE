@@ -1,4 +1,4 @@
-# 2269 fpx
+# 2269. fpx
 
 Board 2,269 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 22](../CorpusTestingPages/Corpus-Testing-22.md#2269-fpx).
 
@@ -45,4 +45,4 @@ Board 2,269 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2268 Power](b2268b_twist_Power.md) | [2270 Bad Thing of the Edge Keyboard](b2270b_Bad-Thing-of-the-Edge-keyboard_Bad-Thing-of-the-Edge-Keyboard.md) |
+| [2268. Power](b2268b_twist_Power.md) | [2270. Bad Thing of the Edge Keyboard](b2270b_Bad-Thing-of-the-Edge-keyboard_Bad-Thing-of-the-Edge-Keyboard.md) |

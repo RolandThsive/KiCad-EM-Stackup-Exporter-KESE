@@ -1,4 +1,4 @@
-# 2093 PCIexpress_x16_full
+# 2093. PCIexpress_x16_full
 
 Board 2,093 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 20](../CorpusTestingPages/Corpus-Testing-20.md#2093-pciexpress_x16_full).
 
@@ -45,4 +45,4 @@ Board 2,093 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2092 test-board](b2092b_onix-headstage-rhs2116_test-board.md) | [2094 PCIexpress_x16_half](b2094b_PCIexpress-KiCad_PCIexpress-x16-half.md) |
+| [2092. test-board](b2092b_onix-headstage-rhs2116_test-board.md) | [2094. PCIexpress_x16_half](b2094b_PCIexpress-KiCad_PCIexpress-x16-half.md) |

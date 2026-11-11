@@ -1,4 +1,4 @@
-# 1394 pong
+# 1394. pong
 
 Board 1,394 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 13](../CorpusTestingPages/Corpus-Testing-13.md#1394-pong).
 
@@ -44,4 +44,4 @@ Board 1,394 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1393 PCB-11](b1393b_doppel-1_PCB-11.md) | [1395 Atari65XEC070067RevB](b1395b_Atari65-130XE-C070067_Atari65XEC070067RevB.md) |
+| [1393. PCB-11](b1393b_doppel-1_PCB-11.md) | [1395. Atari65XEC070067RevB](b1395b_Atari65-130XE-C070067_Atari65XEC070067RevB.md) |

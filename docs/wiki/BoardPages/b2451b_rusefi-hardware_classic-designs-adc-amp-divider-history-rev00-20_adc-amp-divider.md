@@ -1,4 +1,4 @@
-# 2451 adc_amp_divider
+# 2451. adc_amp_divider
 
 Board 2,451 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 23](../CorpusTestingPages/Corpus-Testing-23.md#2451-adc_amp_divider).
 
@@ -45,4 +45,4 @@ Board 2,451 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2450 adc_amp_dividor](b2450b_rusefi-hardware_adc-amp-dividor.md) | [2452 frankenso-PWR-Supply](b2452b_rusefi-hardware_classic-designs-frankenso-PWR-Supply_frankenso-PWR-Supply.md) |
+| [2450. adc_amp_dividor](b2450b_rusefi-hardware_adc-amp-dividor.md) | [2452. frankenso-PWR-Supply](b2452b_rusefi-hardware_classic-designs-frankenso-PWR-Supply_frankenso-PWR-Supply.md) |

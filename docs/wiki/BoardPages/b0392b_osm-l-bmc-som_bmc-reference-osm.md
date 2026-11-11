@@ -1,4 +1,4 @@
-# 392 bmc-reference-osm
+# 392. bmc-reference-osm
 
 Board 392 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 4](../CorpusTestingPages/Corpus-Testing-04.md#392-bmc-reference-osm).
 
@@ -44,4 +44,4 @@ Board 392 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [391 optiga-tpm](b0391b_optiga-tpm_optiga-tpm.md) | [393 OV5640-dual-camera-board](b0393b_ov5640-dual-camera-board_OV5640-dual-camera-board.md) |
+| [391. optiga-tpm](b0391b_optiga-tpm_optiga-tpm.md) | [393. OV5640-dual-camera-board](b0393b_ov5640-dual-camera-board_OV5640-dual-camera-board.md) |

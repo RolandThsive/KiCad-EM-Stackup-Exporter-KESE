@@ -1,4 +1,4 @@
-# 1105 azalea
+# 1105. azalea
 
 Board 1,105 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 11](../CorpusTestingPages/Corpus-Testing-11.md#1105-azalea).
 
@@ -45,4 +45,4 @@ Board 1,105 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1104 main_board](b1104b_daisho_main-board.md) | [1106 begonia](b1106b_greatfet-hardware_begonia.md) |
+| [1104. main_board](b1104b_daisho_main-board.md) | [1106. begonia](b1106b_greatfet-hardware_begonia.md) |

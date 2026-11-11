@@ -1,4 +1,4 @@
-# 2371 pressure_mpx5700ap,gp
+# 2371. pressure_mpx5700ap,gp
 
 Board 2,371 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 22](../CorpusTestingPages/Corpus-Testing-22.md#2371-pressure_mpx5700apgp).
 
@@ -45,4 +45,4 @@ Board 2,371 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2370 indicator-board](b2370b_ventilator_indicator-board.md) | [2372 pressure_mpxv5004,10dp](b2372b_ventilator_pressure-mpxv5004-10dp.md) |
+| [2370. indicator-board](b2370b_ventilator_indicator-board.md) | [2372. pressure_mpxv5004,10dp](b2372b_ventilator_pressure-mpxv5004-10dp.md) |

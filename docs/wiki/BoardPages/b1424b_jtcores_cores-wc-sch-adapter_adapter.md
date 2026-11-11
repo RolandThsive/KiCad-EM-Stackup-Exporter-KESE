@@ -1,4 +1,4 @@
-# 1424 adapter
+# 1424. adapter
 
 Board 1,424 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 14](../CorpusTestingPages/Corpus-Testing-14.md#1424-adapter).
 
@@ -44,4 +44,4 @@ Board 1,424 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1423 odyssey](b1423b_jtcores_odyssey.md) | [1425 QBusH723Z](b1425b_MSCP_QBusH723Z.md) |
+| [1423. odyssey](b1423b_jtcores_odyssey.md) | [1425. QBusH723Z](b1425b_MSCP_QBusH723Z.md) |

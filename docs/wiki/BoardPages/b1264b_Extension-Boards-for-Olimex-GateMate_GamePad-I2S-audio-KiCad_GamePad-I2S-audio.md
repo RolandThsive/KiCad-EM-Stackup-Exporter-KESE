@@ -1,4 +1,4 @@
-# 1264 GamePad_I2S_audio
+# 1264. GamePad_I2S_audio
 
 Board 1,264 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 12](../CorpusTestingPages/Corpus-Testing-12.md#1264-gamepad_i2s_audio).
 
@@ -45,4 +45,4 @@ Board 1,264 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1263 extension_template](b1263b_Extension-Boards-for-Olimex-GateMate_extension-template.md) | [1265 GamePad_I2S_audio](b1265b_Extension-Boards-for-Olimex-GateMate_GamePad-I2S-audio-Buttons-KiCad_GamePad-I2S-audio.md) |
+| [1263. extension_template](b1263b_Extension-Boards-for-Olimex-GateMate_extension-template.md) | [1265. GamePad_I2S_audio](b1265b_Extension-Boards-for-Olimex-GateMate_GamePad-I2S-audio-Buttons-KiCad_GamePad-I2S-audio.md) |

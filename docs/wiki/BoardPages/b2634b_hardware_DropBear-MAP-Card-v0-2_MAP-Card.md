@@ -1,4 +1,4 @@
-# 2634 MAP Card
+# 2634. MAP Card
 
 Board 2,634 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 25](../CorpusTestingPages/Corpus-Testing-25.md#2634-map-card).
 
@@ -45,4 +45,4 @@ Board 2,634 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2633 SparkFun_Thing_Plus_ESP32-S3](b2633b_SparkFun-Thing-Plus-ESP32-S3_SparkFun-Thing-Plus-ESP32-S3.md) | [2635 MAP Card](b2635b_hardware_DropBear-MAP-Card-v0-3_MAP-Card.md) |
+| [2633. SparkFun_Thing_Plus_ESP32-S3](b2633b_SparkFun-Thing-Plus-ESP32-S3_SparkFun-Thing-Plus-ESP32-S3.md) | [2635. MAP Card](b2635b_hardware_DropBear-MAP-Card-v0-3_MAP-Card.md) |

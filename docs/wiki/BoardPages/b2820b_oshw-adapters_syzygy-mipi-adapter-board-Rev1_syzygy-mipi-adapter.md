@@ -1,4 +1,4 @@
-# 2820 syzygy-mipi-adapter
+# 2820. syzygy-mipi-adapter
 
 Board 2,820 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 27](../CorpusTestingPages/Corpus-Testing-27.md#2820-syzygy-mipi-adapter).
 
@@ -45,4 +45,4 @@ Board 2,820 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2819 syzygy-mipi-adapter](b2819b_oshw-adapters_syzygy-mipi-adapter-board-Rev0_syzygy-mipi-adapter.md) | [2821 pico-ice](b2821b_pico-ice_Board-Rev0_pico-ice.md) |
+| [2819. syzygy-mipi-adapter](b2819b_oshw-adapters_syzygy-mipi-adapter-board-Rev0_syzygy-mipi-adapter.md) | [2821. pico-ice](b2821b_pico-ice_Board-Rev0_pico-ice.md) |

@@ -1,4 +1,4 @@
-# 1190 syzygy-txr-breakout
+# 1190. syzygy-txr-breakout
 
 Board 1,190 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 12](../CorpusTestingPages/Corpus-Testing-12.md#1190-syzygy-txr-breakout).
 
@@ -45,4 +45,4 @@ Board 1,190 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1189 syzygy-sgmii](b1189b_advent-calendar-of-circuits-2020_syzygy-sgmii.md) | [1191 obsidian-boa-r0.1](b1191b_obsidian-boa_obsidian-boa-r0-1.md) |
+| [1189. syzygy-sgmii](b1189b_advent-calendar-of-circuits-2020_syzygy-sgmii.md) | [1191. obsidian-boa-r0.1](b1191b_obsidian-boa_obsidian-boa-r0-1.md) |

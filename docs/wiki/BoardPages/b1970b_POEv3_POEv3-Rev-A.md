@@ -1,4 +1,4 @@
-# 1970 POEv3_Rev_A
+# 1970. POEv3_Rev_A
 
 Board 1,970 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 19](../CorpusTestingPages/Corpus-Testing-19.md#1970-poev3_rev_a).
 
@@ -45,4 +45,4 @@ Board 1,970 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1969 PICO-EVB_Rev_A](b1969b_PICO-EVB_PICO-EVB-Rev-A.md) | [1971 RK3328-SOM-EVB_Rev_A](b1971b_RK3328-SOM-EBV_RK3328-SOM-EVB-Rev-A.md) |
+| [1969. PICO-EVB_Rev_A](b1969b_PICO-EVB_PICO-EVB-Rev-A.md) | [1971. RK3328-SOM-EVB_Rev_A](b1971b_RK3328-SOM-EBV_RK3328-SOM-EVB-Rev-A.md) |

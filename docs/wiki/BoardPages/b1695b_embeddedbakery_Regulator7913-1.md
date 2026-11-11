@@ -1,4 +1,4 @@
-# 1695 Regulator7913-1
+# 1695. Regulator7913-1
 
 Board 1,695 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 16](../CorpusTestingPages/Corpus-Testing-16.md#1695-regulator7913-1).
 
@@ -45,4 +45,4 @@ Board 1,695 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1694 Simple OpAmp](b1694b_embeddedbakery_Simple-OpAmp.md) | [1696 Digital Logic Board](b1696b_embeddedbakery_Digital-Logic-Board.md) |
+| [1694. Simple OpAmp](b1694b_embeddedbakery_Simple-OpAmp.md) | [1696. Digital Logic Board](b1696b_embeddedbakery_Digital-Logic-Board.md) |

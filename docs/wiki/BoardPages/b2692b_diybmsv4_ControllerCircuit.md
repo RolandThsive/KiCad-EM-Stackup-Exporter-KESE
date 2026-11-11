@@ -1,4 +1,4 @@
-# 2692 ControllerCircuit
+# 2692. ControllerCircuit
 
 Board 2,692 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 25](../CorpusTestingPages/Corpus-Testing-25.md#2692-controllercircuit).
 
@@ -45,4 +45,4 @@ Board 2,692 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2691 SNSP-CPU-1CHIP](b2691b_nonSNES_SNSP-CPU-1CHIP.md) | [2693 ControllerCurrentShuntAddOn](b2693b_diybmsv4_ControllerCurrentShuntAddOn.md) |
+| [2691. SNSP-CPU-1CHIP](b2691b_nonSNES_SNSP-CPU-1CHIP.md) | [2693. ControllerCurrentShuntAddOn](b2693b_diybmsv4_ControllerCurrentShuntAddOn.md) |

@@ -1,4 +1,4 @@
-# 1501 mppt-2420-hpx
+# 1501. mppt-2420-hpx
 
 Board 1,501 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 14](../CorpusTestingPages/Corpus-Testing-14.md#1501-mppt-2420-hpx).
 
@@ -45,4 +45,4 @@ Board 1,501 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1500 mppt-2420-hc](b1500b_mppt-2420-hc_mppt-2420-hc.md) | [1502 cantact](b1502b_cantact-hw_cantact.md) |
+| [1500. mppt-2420-hc](b1500b_mppt-2420-hc_mppt-2420-hc.md) | [1502. cantact](b1502b_cantact-hw_cantact.md) |

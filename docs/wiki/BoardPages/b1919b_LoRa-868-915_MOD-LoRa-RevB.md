@@ -1,4 +1,4 @@
-# 1919 MOD-LoRa_RevB
+# 1919. MOD-LoRa_RevB
 
 Board 1,919 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 18](../CorpusTestingPages/Corpus-Testing-18.md#1919-mod-lora_revb).
 
@@ -45,4 +45,4 @@ Board 1,919 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1918 LoRa_RevB](b1918b_LoRa-868-915_LoRa-RevB.md) | [1920 STM32WL-DevKit_RevB](b1920b_LoRa-STM32WL-DevKIT_STM32WL-DevKit-RevB.md) |
+| [1918. LoRa_RevB](b1918b_LoRa-868-915_LoRa-RevB.md) | [1920. STM32WL-DevKit_RevB](b1920b_LoRa-STM32WL-DevKIT_STM32WL-DevKit-RevB.md) |

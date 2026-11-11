@@ -1,4 +1,4 @@
-# 1626 bodge
+# 1626. bodge
 
 Board 1,626 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 16](../CorpusTestingPages/Corpus-Testing-16.md#1626-bodge).
 
@@ -45,4 +45,4 @@ Board 1,626 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1625 sci_board_wo_switches](b1625b_hardware-csat_sci-board-wo-switches.md) | [1627 bodge_oshkosh](b1627b_hardware-csat_bodge-oshkosh.md) |
+| [1625. sci_board_wo_switches](b1625b_hardware-csat_sci-board-wo-switches.md) | [1627. bodge_oshkosh](b1627b_hardware-csat_bodge-oshkosh.md) |

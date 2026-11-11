@@ -1,4 +1,4 @@
-# 761 ciaa-z3r0
+# 761. ciaa-z3r0
 
 Board 761 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 8](../CorpusTestingPages/Corpus-Testing-08.md#761-ciaa-z3r0).
 
@@ -45,4 +45,4 @@ Board 761 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [760 CIAA_Safety_VTI_1.0](b0760b_Hardware_CIAA-Safety-VTI-1-0.md) | [762 vme-wren](b0762b_kicad-demo-vme-wren_vme-wren.md) |
+| [760. CIAA_Safety_VTI_1.0](b0760b_Hardware_CIAA-Safety-VTI-1-0.md) | [762. vme-wren](b0762b_kicad-demo-vme-wren_vme-wren.md) |

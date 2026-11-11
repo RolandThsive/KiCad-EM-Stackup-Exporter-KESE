@@ -1,4 +1,4 @@
-# 160 Comparator 10bit
+# 160. Comparator 10bit
 
 Board 160 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 2](../CorpusTestingPages/Corpus-Testing-02.md#160-comparator-10bit).
 
@@ -45,4 +45,4 @@ Board 160 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [159 Clock Transition](b0159b_658-Computer_Clock-Transition.md) | [161 Comparator 16bit](b0161b_658-Computer_Comparator-16bit.md) |
+| [159. Clock Transition](b0159b_658-Computer_Clock-Transition.md) | [161. Comparator 16bit](b0161b_658-Computer_Comparator-16bit.md) |

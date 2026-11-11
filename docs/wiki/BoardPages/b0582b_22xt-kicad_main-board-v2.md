@@ -1,4 +1,4 @@
-# 582 main_board_v2
+# 582. main_board_v2
 
 Board 582 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 6](../CorpusTestingPages/Corpus-Testing-06.md#582-main_board_v2).
 
@@ -45,4 +45,4 @@ Board 582 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [581 main_board_v1](b0581b_22xt-kicad_main-board-v1.md) | [583 main_board_v3](b0583b_22xt-kicad_main-board-v3.md) |
+| [581. main_board_v1](b0581b_22xt-kicad_main-board-v1.md) | [583. main_board_v3](b0583b_22xt-kicad_main-board-v3.md) |

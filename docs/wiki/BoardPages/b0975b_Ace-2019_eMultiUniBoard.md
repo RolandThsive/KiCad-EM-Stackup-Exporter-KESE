@@ -1,4 +1,4 @@
-# 975 eMultiUniBoard
+# 975. eMultiUniBoard
 
 Board 975 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 10](../CorpusTestingPages/Corpus-Testing-10.md#975-emultiuniboard).
 
@@ -44,4 +44,4 @@ Board 975 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [974 Edgeboard](b0974b_Ace-2019_Edgeboard.md) | [976 eUniBoard](b0976b_Ace-2019_eUniBoard.md) |
+| [974. Edgeboard](b0974b_Ace-2019_Edgeboard.md) | [976. eUniBoard](b0976b_Ace-2019_eUniBoard.md) |

@@ -1,4 +1,4 @@
-# 841 CartRiser
+# 841. CartRiser
 
 Board 841 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 8](../CorpusTestingPages/Corpus-Testing-08.md#841-cartriser).
 
@@ -45,4 +45,4 @@ Board 841 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [840 DragonKeyboard](b0840b_Dragon64_DragonKeyboard.md) | [842 IO_Riser](b0842b_TI99-22_IO-Riser.md) |
+| [840. DragonKeyboard](b0840b_Dragon64_DragonKeyboard.md) | [842. IO_Riser](b0842b_TI99-22_IO-Riser.md) |

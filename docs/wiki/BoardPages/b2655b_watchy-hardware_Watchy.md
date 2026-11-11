@@ -1,4 +1,4 @@
-# 2655 Watchy
+# 2655. Watchy
 
 Board 2,655 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 25](../CorpusTestingPages/Corpus-Testing-25.md#2655-watchy).
 
@@ -44,4 +44,4 @@ Board 2,655 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2654 beepy](b2654b_beepy-hardware_beepy.md) | [2656 inteli210AT](b2656b_intel-i210-network-card_inteli210AT.md) |
+| [2654. beepy](b2654b_beepy-hardware_beepy.md) | [2656. inteli210AT](b2656b_intel-i210-network-card_inteli210AT.md) |

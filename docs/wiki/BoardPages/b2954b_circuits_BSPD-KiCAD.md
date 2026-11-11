@@ -1,4 +1,4 @@
-# 2954 BSPD KiCAD
+# 2954. BSPD KiCAD
 
 Board 2,954 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 28](../CorpusTestingPages/Corpus-Testing-28.md#2954-bspd-kicad).
 
@@ -45,4 +45,4 @@ Board 2,954 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2953 (LVE)Shutdown](b2953b_circuits_LVE-Shutdown.md) | [2955 Charger_Shutdown_KR](b2955b_circuits_Charger-Shutdown-KR.md) |
+| [2953. (LVE)Shutdown](b2953b_circuits_LVE-Shutdown.md) | [2955. Charger_Shutdown_KR](b2955b_circuits_Charger-Shutdown-KR.md) |

@@ -1,4 +1,4 @@
-# 2785 RF4463F30-test-board
+# 2785. RF4463F30-test-board
 
 Board 2,785 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 26](../CorpusTestingPages/Corpus-Testing-26.md#2785-rf4463f30-test-board).
 
@@ -45,4 +45,4 @@ Board 2,785 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2784 power-delivery-board](b2784b_srad-avionics_power-delivery-board.md) | [2786 Screw Switch](b2786b_srad-avionics_Screw-Switch.md) |
+| [2784. power-delivery-board](b2784b_srad-avionics_power-delivery-board.md) | [2786. Screw Switch](b2786b_srad-avionics_Screw-Switch.md) |

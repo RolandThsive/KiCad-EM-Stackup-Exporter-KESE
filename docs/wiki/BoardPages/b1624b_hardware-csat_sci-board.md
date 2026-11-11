@@ -1,4 +1,4 @@
-# 1624 sci_board
+# 1624. sci_board
 
 Board 1,624 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 16](../CorpusTestingPages/Corpus-Testing-16.md#1624-sci_board).
 
@@ -45,4 +45,4 @@ Board 1,624 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1623 EPS](b1623b_hardware-csat_EPS.md) | [1625 sci_board_wo_switches](b1625b_hardware-csat_sci-board-wo-switches.md) |
+| [1623. EPS](b1623b_hardware-csat_EPS.md) | [1625. sci_board_wo_switches](b1625b_hardware-csat_sci-board-wo-switches.md) |

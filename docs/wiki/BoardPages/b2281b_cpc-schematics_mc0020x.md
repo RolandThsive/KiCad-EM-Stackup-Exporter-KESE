@@ -1,4 +1,4 @@
-# 2281 mc0020x
+# 2281. mc0020x
 
 Board 2,281 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 22](../CorpusTestingPages/Corpus-Testing-22.md#2281-mc0020x).
 
@@ -45,4 +45,4 @@ Board 2,281 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2280 obc-adcs-board](b2280b_obcboard-pcb_obc-adcs-board.md) | [2282 RevA](b2282b_pergola_RevA.md) |
+| [2280. obc-adcs-board](b2280b_obcboard-pcb_obc-adcs-board.md) | [2282. RevA](b2282b_pergola_RevA.md) |

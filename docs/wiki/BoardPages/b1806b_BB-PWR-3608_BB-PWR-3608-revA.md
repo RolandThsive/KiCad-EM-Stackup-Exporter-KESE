@@ -1,4 +1,4 @@
-# 1806 BB-PWR-3608_revA
+# 1806. BB-PWR-3608_revA
 
 Board 1,806 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 17](../CorpusTestingPages/Corpus-Testing-17.md#1806-bb-pwr-3608_reva).
 
@@ -44,4 +44,4 @@ Board 1,806 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1805 BB-LVL-SHIFT_Rev_A](b1805b_BB-LVL-SHIFT_BB-LVL-SHIFT-Rev-A.md) | [1807 BB-PWR-8009_revA](b1807b_BB-PWR-8009_BB-PWR-8009-revA.md) |
+| [1805. BB-LVL-SHIFT_Rev_A](b1805b_BB-LVL-SHIFT_BB-LVL-SHIFT-Rev-A.md) | [1807. BB-PWR-8009_revA](b1807b_BB-PWR-8009_BB-PWR-8009-revA.md) |

@@ -1,4 +1,4 @@
-# 991 corne-chocolate
+# 991. corne-chocolate
 
 Board 991 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 10](../CorpusTestingPages/Corpus-Testing-10.md#991-corne-chocolate).
 
@@ -45,4 +45,4 @@ Board 991 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [990 corne-cherry](b0990b_crkbd_corne-cherry.md) | [992 MyCPU](b0992b_MyCpu_MyCPU.md) |
+| [990. corne-cherry](b0990b_crkbd_corne-cherry.md) | [992. MyCPU](b0992b_MyCpu_MyCPU.md) |

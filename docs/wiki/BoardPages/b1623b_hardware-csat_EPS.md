@@ -1,4 +1,4 @@
-# 1623 EPS
+# 1623. EPS
 
 Board 1,623 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 16](../CorpusTestingPages/Corpus-Testing-16.md#1623-eps).
 
@@ -45,4 +45,4 @@ Board 1,623 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1622 comm_board](b1622b_hardware-csat_comm-board.md) | [1624 sci_board](b1624b_hardware-csat_sci-board.md) |
+| [1622. comm_board](b1622b_hardware-csat_comm-board.md) | [1624. sci_board](b1624b_hardware-csat_sci-board.md) |

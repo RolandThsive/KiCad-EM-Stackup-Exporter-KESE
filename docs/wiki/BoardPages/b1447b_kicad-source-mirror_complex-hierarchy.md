@@ -1,4 +1,4 @@
-# 1447 complex_hierarchy
+# 1447. complex_hierarchy
 
 Board 1,447 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 14](../CorpusTestingPages/Corpus-Testing-14.md#1447-complex_hierarchy).
 
@@ -45,4 +45,4 @@ Board 1,447 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1446 CM5_MINIMA_3](b1446b_kicad-source-mirror_CM5-MINIMA-3.md) | [1448 ecc83-pp](b1448b_kicad-source-mirror_ecc83-pp.md) |
+| [1446. CM5_MINIMA_3](b1446b_kicad-source-mirror_CM5-MINIMA-3.md) | [1448. ecc83-pp](b1448b_kicad-source-mirror_ecc83-pp.md) |

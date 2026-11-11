@@ -1,4 +1,4 @@
-# 2668 seed_user_1224
+# 2668. seed_user_1224
 
 Board 2,668 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 25](../CorpusTestingPages/Corpus-Testing-25.md#2668-seed_user_1224).
 
@@ -45,4 +45,4 @@ Board 2,668 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2667 battery_pcb_30pin](b2667b_aerolotl-kicad_battery-pcb-30pin.md) | [2669 motor_board](b2669b_samwise-avionics_motor-board.md) |
+| [2667. battery_pcb_30pin](b2667b_aerolotl-kicad_battery-pcb-30pin.md) | [2669. motor_board](b2669b_samwise-avionics_motor-board.md) |

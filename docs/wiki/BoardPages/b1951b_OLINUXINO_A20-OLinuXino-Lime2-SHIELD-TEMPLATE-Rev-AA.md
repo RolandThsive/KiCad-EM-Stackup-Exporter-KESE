@@ -1,4 +1,4 @@
-# 1951 A20_OLinuXino_Lime2_SHIELD_TEMPLATE_Rev-AA
+# 1951. A20_OLinuXino_Lime2_SHIELD_TEMPLATE_Rev-AA
 
 Board 1,951 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 19](../CorpusTestingPages/Corpus-Testing-19.md#1951-a20_olinuxino_lime2_shield_template_rev-aa).
 
@@ -44,4 +44,4 @@ Board 1,951 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1950 A10_OLinuXino_Lime_Rev-B_SHIELD_TEMPLATE](b1950b_OLINUXINO_A10-OLinuXino-Lime-Rev-B-SHIELD-TEMPLATE.md) | [1952 A64-OlinuXino_Rev_H](b1952b_OLINUXINO_A64-OlinuXino-Rev-H.md) |
+| [1950. A10_OLinuXino_Lime_Rev-B_SHIELD_TEMPLATE](b1950b_OLINUXINO_A10-OLinuXino-Lime-Rev-B-SHIELD-TEMPLATE.md) | [1952. A64-OlinuXino_Rev_H](b1952b_OLINUXINO_A64-OlinuXino-Rev-H.md) |

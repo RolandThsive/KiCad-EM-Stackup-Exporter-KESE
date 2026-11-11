@@ -1,4 +1,4 @@
-# 1969 PICO-EVB_Rev_A
+# 1969. PICO-EVB_Rev_A
 
 Board 1,969 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 19](../CorpusTestingPages/Corpus-Testing-19.md#1969-pico-evb_rev_a).
 
@@ -45,4 +45,4 @@ Board 1,969 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1968 OSHW-GHOST_Rev_A](b1968b_OSHW-GHOST_OSHW-GHOST-Rev-A.md) | [1970 POEv3_Rev_A](b1970b_POEv3_POEv3-Rev-A.md) |
+| [1968. OSHW-GHOST_Rev_A](b1968b_OSHW-GHOST_OSHW-GHOST-Rev-A.md) | [1970. POEv3_Rev_A](b1970b_POEv3_POEv3-Rev-A.md) |

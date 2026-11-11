@@ -1,4 +1,4 @@
-# 2890 V11RC4
+# 2890. V11RC4
 
 Board 2,890 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 27](../CorpusTestingPages/Corpus-Testing-27.md#2890-v11rc4).
 
@@ -45,4 +45,4 @@ Board 2,890 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2889 V11RC3](b2889b_servomotor_V11RC3.md) | [2891 servomotorStepper-V2I1](b2891b_servomotor_servomotorStepper-V2I1.md) |
+| [2889. V11RC3](b2889b_servomotor_V11RC3.md) | [2891. servomotorStepper-V2I1](b2891b_servomotor_servomotorStepper-V2I1.md) |

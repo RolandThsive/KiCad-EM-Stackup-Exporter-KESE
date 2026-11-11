@@ -1,4 +1,4 @@
-# 354 fmc2sata
+# 354. fmc2sata
 
 Board 354 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 4](../CorpusTestingPages/Corpus-Testing-04.md#354-fmc2sata).
 
@@ -44,4 +44,4 @@ Board 354 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [353 lz1-led-driver](b0353b_flickerless-led-driver_lz1-led-driver.md) | [355 framos-csi-adapter](b0355b_framos-csi-adapter_framos-csi-adapter.md) |
+| [353. lz1-led-driver](b0353b_flickerless-led-driver_lz1-led-driver.md) | [355. framos-csi-adapter](b0355b_framos-csi-adapter_framos-csi-adapter.md) |

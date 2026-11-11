@@ -1,4 +1,4 @@
-# 1390 baseboard
+# 1390. baseboard
 
 Board 1,390 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 13](../CorpusTestingPages/Corpus-Testing-13.md#1390-baseboard).
 
@@ -44,4 +44,4 @@ Board 1,390 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1389 SF2000](b1389b_SF2000_SF2000.md) | [1391 Open128](b1391b_open128_Open128.md) |
+| [1389. SF2000](b1389b_SF2000_SF2000.md) | [1391. Open128](b1391b_open128_Open128.md) |

@@ -1,4 +1,4 @@
-# 647 EinsteinTC01PS2
+# 647. EinsteinTC01PS2
 
 Board 647 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 6](../CorpusTestingPages/Corpus-Testing-06.md#647-einsteintc01ps2).
 
@@ -45,4 +45,4 @@ Board 647 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [646 EinsteinTC01](b0646b_Einstein-TC-01_Archive-MainBoard-v1-1-Kicad_EinsteinTC01.md) | [648 EinsteinTC01PS2Mini](b0648b_Einstein-TC-01_EinsteinTC01PS2Mini.md) |
+| [646. EinsteinTC01](b0646b_Einstein-TC-01_Archive-MainBoard-v1-1-Kicad_EinsteinTC01.md) | [648. EinsteinTC01PS2Mini](b0648b_Einstein-TC-01_EinsteinTC01PS2Mini.md) |

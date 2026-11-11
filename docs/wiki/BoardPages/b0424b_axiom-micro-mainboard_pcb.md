@@ -1,4 +1,4 @@
-# 424 pcb
+# 424. pcb
 
 Board 424 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 4](../CorpusTestingPages/Corpus-Testing-04.md#424-pcb).
 
@@ -45,4 +45,4 @@ Board 424 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [423 ATMEGA328_Motor_Board](b0423b_ATMEGA328-Motor-Board_ATMEGA328-Motor-Board.md) | [425 NxtPX4](b0425b_hardware_NxtPX4.md) |
+| [423. ATMEGA328_Motor_Board](b0423b_ATMEGA328-Motor-Board_ATMEGA328-Motor-Board.md) | [425. NxtPX4](b0425b_hardware_NxtPX4.md) |

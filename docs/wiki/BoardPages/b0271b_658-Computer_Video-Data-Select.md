@@ -1,4 +1,4 @@
-# 271 Video Data Select
+# 271. Video Data Select
 
 Board 271 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 3](../CorpusTestingPages/Corpus-Testing-03.md#271-video-data-select).
 
@@ -45,4 +45,4 @@ Board 271 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [270 Video DAC](b0270b_658-Computer_Video-DAC.md) | [272 Video Device RAM Select](b0272b_658-Computer_Video-Device-RAM-Select.md) |
+| [270. Video DAC](b0270b_658-Computer_Video-DAC.md) | [272. Video Device RAM Select](b0272b_658-Computer_Video-Device-RAM-Select.md) |

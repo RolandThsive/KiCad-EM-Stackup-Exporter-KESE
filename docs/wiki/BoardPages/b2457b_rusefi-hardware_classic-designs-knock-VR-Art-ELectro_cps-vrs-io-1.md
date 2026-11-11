@@ -1,4 +1,4 @@
-# 2457 cps_vrs_io_1
+# 2457. cps_vrs_io_1
 
 Board 2,457 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 23](../CorpusTestingPages/Corpus-Testing-23.md#2457-cps_vrs_io_1).
 
@@ -45,4 +45,4 @@ Board 2,457 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2456 VN750PS_E](b2456b_rusefi-hardware_VN750PS-E.md) | [2458 PWR_buck_12V_switcher](b2458b_rusefi-hardware_classic-designs-power-supply-kb1gtt_PWR-buck-12V-switcher.md) |
+| [2456. VN750PS_E](b2456b_rusefi-hardware_VN750PS-E.md) | [2458. PWR_buck_12V_switcher](b2458b_rusefi-hardware_classic-designs-power-supply-kb1gtt_PWR-buck-12V-switcher.md) |

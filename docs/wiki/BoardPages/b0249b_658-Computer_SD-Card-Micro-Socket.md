@@ -1,4 +1,4 @@
-# 249 SD Card Micro Socket
+# 249. SD Card Micro Socket
 
 Board 249 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 3](../CorpusTestingPages/Corpus-Testing-03.md#249-sd-card-micro-socket).
 
@@ -45,4 +45,4 @@ Board 249 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [248 SD Card Full Socket](b0248b_658-Computer_SD-Card-Full-Socket.md) | [250 SD Card Read Data](b0250b_658-Computer_SD-Card-Read-Data.md) |
+| [248. SD Card Full Socket](b0248b_658-Computer_SD-Card-Full-Socket.md) | [250. SD Card Read Data](b0250b_658-Computer_SD-Card-Read-Data.md) |

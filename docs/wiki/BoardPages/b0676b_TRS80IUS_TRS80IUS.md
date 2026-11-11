@@ -1,4 +1,4 @@
-# 676 TRS80IUS
+# 676. TRS80IUS
 
 Board 676 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 7](../CorpusTestingPages/Corpus-Testing-07.md#676-trs80ius).
 
@@ -45,4 +45,4 @@ Board 676 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [675 TRS80ILCMod](b0675b_TRS80IUS_TRS80ILCMod.md) | [677 Debug_Adapter](b0677b_h616-board_Debug-Adapter.md) |
+| [675. TRS80ILCMod](b0675b_TRS80IUS_TRS80ILCMod.md) | [677. Debug_Adapter](b0677b_h616-board_Debug-Adapter.md) |

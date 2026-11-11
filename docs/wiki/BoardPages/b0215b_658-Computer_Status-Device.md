@@ -1,4 +1,4 @@
-# 215 Status Device
+# 215. Status Device
 
 Board 215 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 2](../CorpusTestingPages/Corpus-Testing-02.md#215-status-device).
 
@@ -45,4 +45,4 @@ Board 215 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [214 Processor Small Device](b0214b_658-Computer_Processor-Small-Device.md) | [216 Triple MPU Clock Generator](b0216b_658-Computer_Triple-MPU-Clock-Generator.md) |
+| [214. Processor Small Device](b0214b_658-Computer_Processor-Small-Device.md) | [216. Triple MPU Clock Generator](b0216b_658-Computer_Triple-MPU-Clock-Generator.md) |

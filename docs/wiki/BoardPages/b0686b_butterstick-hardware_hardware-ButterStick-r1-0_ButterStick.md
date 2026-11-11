@@ -1,4 +1,4 @@
-# 686 ButterStick
+# 686. ButterStick
 
 Board 686 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 7](../CorpusTestingPages/Corpus-Testing-07.md#686-butterstick).
 
@@ -45,4 +45,4 @@ Board 686 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [685 ButterStick](b0685b_butterstick-hardware_hardware-ButterStick-r0-2_ButterStick.md) | [687 250407_](b0687b_C64-250407-Replica-KiCad_250407.md) |
+| [685. ButterStick](b0685b_butterstick-hardware_hardware-ButterStick-r0-2_ButterStick.md) | [687. 250407_](b0687b_C64-250407-Replica-KiCad_250407.md) |

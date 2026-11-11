@@ -1,4 +1,4 @@
-# 2417 GaNdapter
+# 2417. GaNdapter
 
 Board 2,417 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 23](../CorpusTestingPages/Corpus-Testing-23.md#2417-gandapter).
 
@@ -45,4 +45,4 @@ Board 2,417 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2416 GaNdapter-dual](b2416b_dcdc_GaNdapter-dual.md) | [2418 DCDCv9-3](b2418b_dcdc_DCDCv9-3.md) |
+| [2416. GaNdapter-dual](b2416b_dcdc_GaNdapter-dual.md) | [2418. DCDCv9-3](b2418b_dcdc_DCDCv9-3.md) |

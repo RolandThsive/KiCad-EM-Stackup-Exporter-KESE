@@ -1,4 +1,4 @@
-# 1134 passives
+# 1134. passives
 
 Board 1,134 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 11](../CorpusTestingPages/Corpus-Testing-11.md#1134-passives).
 
@@ -45,4 +45,4 @@ Board 1,134 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1133 limiters](b1133b_misc_limiters.md) | [1135 pmos-or](b1135b_misc_pmos-or.md) |
+| [1133. limiters](b1133b_misc_limiters.md) | [1135. pmos-or](b1135b_misc_pmos-or.md) |

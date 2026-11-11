@@ -1,4 +1,4 @@
-# 1526 filter_bank
+# 1526. filter_bank
 
 Board 1,526 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 15](../CorpusTestingPages/Corpus-Testing-15.md#1526-filter_bank).
 
@@ -45,4 +45,4 @@ Board 1,526 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1525 demod_breakout](b1525b_vna_demod-breakout.md) | [1527 trl_thru](b1527b_vna_breakouts-hmc576-breakout_trl-thru.md) |
+| [1525. demod_breakout](b1525b_vna_demod-breakout.md) | [1527. trl_thru](b1527b_vna_breakouts-hmc576-breakout_trl-thru.md) |

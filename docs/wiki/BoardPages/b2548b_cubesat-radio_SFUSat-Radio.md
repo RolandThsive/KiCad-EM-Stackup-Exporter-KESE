@@ -1,4 +1,4 @@
-# 2548 SFUSat-Radio
+# 2548. SFUSat-Radio
 
 Board 2,548 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 24](../CorpusTestingPages/Corpus-Testing-24.md#2548-sfusat-radio).
 
@@ -44,4 +44,4 @@ Board 2,548 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2547 reCamera 2002 S4 GC2053 Sensor Board_V1.0_SCH&PCB_250905](b2547b_OSHW-reCamera-Series_reCamera-2002-S4-GC2053-Sensor-Board-V1-0-SCH-PCB-250905.md) | [2549 Cheap FOCer 2 60mm](b2549b_cheap-focer-2_Cheap-FOCer-2-60mm.md) |
+| [2547. reCamera 2002 S4 GC2053 Sensor Board_V1.0_SCH&PCB_250905](b2547b_OSHW-reCamera-Series_reCamera-2002-S4-GC2053-Sensor-Board-V1-0-SCH-PCB-250905.md) | [2549. Cheap FOCer 2 60mm](b2549b_cheap-focer-2_Cheap-FOCer-2-60mm.md) |

@@ -1,4 +1,4 @@
-# 2151 oresat-c3
+# 2151. oresat-c3
 
 Board 2,151 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 20](../CorpusTestingPages/Corpus-Testing-20.md#2151-oresat-c3).
 
@@ -45,4 +45,4 @@ Board 2,151 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2150 oresat-batteries](b2150b_oresat-batteries_oresat-batteries.md) | [2152 amp-PA-GRF5504-with-detect](b2152b_oresat-c3-rf_amp-PA-GRF5504-with-detect.md) |
+| [2150. oresat-batteries](b2150b_oresat-batteries_oresat-batteries.md) | [2152. amp-PA-GRF5504-with-detect](b2152b_oresat-c3-rf_amp-PA-GRF5504-with-detect.md) |

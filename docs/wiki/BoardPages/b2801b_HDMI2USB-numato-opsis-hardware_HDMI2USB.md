@@ -1,4 +1,4 @@
-# 2801 HDMI2USB
+# 2801. HDMI2USB
 
 Board 2,801 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 26](../CorpusTestingPages/Corpus-Testing-26.md#2801-hdmi2usb).
 
@@ -46,4 +46,4 @@ Board 2,801 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2800 tigard](b2800b_tigard_tigard.md) | [2802 ethernet-extension-poe](b2802b_ethernet-extension_ethernet-extension-poe.md) |
+| [2800. tigard](b2800b_tigard_tigard.md) | [2802. ethernet-extension-poe](b2802b_ethernet-extension_ethernet-extension-poe.md) |

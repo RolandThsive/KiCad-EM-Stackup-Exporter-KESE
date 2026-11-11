@@ -1,4 +1,4 @@
-# 1219 voltage-regulator-module
+# 1219. voltage-regulator-module
 
 Board 1,219 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 12](../CorpusTestingPages/Corpus-Testing-12.md#1219-voltage-regulator-module).
 
@@ -45,4 +45,4 @@ Board 1,219 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1218 MotorControllerPowerBoard](b1218b_motor-controller-2018_MotorControllerPowerBoard.md) | [1220 ISA_CGA](b1220b_CGA-Redux_ISA-CGA.md) |
+| [1218. MotorControllerPowerBoard](b1218b_motor-controller-2018_MotorControllerPowerBoard.md) | [1220. ISA_CGA](b1220b_CGA-Redux_ISA-CGA.md) |

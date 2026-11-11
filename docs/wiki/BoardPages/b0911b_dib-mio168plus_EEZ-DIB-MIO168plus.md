@@ -1,4 +1,4 @@
-# 911 EEZ DIB MIO168plus
+# 911. EEZ DIB MIO168plus
 
 Board 911 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 9](../CorpusTestingPages/Corpus-Testing-09.md#911-eez-dib-mio168plus).
 
@@ -45,4 +45,4 @@ Board 911 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [910 EEZ DIB MIO168plus front mask](b0910b_dib-mio168plus_EEZ-DIB-MIO168plus-front-mask.md) | [912 EEZ DIB AFE3plus](b0912b_dib-mio168plus-afe3_EEZ-DIB-AFE3plus.md) |
+| [910. EEZ DIB MIO168plus front mask](b0910b_dib-mio168plus_EEZ-DIB-MIO168plus-front-mask.md) | [912. EEZ DIB AFE3plus](b0912b_dib-mio168plus-afe3_EEZ-DIB-AFE3plus.md) |

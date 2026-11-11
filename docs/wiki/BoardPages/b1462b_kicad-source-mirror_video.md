@@ -1,4 +1,4 @@
-# 1462 video
+# 1462. video
 
 Board 1,462 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 14](../CorpusTestingPages/Corpus-Testing-14.md#1462-video).
 
@@ -45,4 +45,4 @@ Board 1,462 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1461 tinytapeout-demo](b1461b_kicad-source-mirror_tinytapeout-demo.md) | [1463 reform-kintex-edp](b1463b_reform-kintex-som_reform-kintex-edp.md) |
+| [1461. tinytapeout-demo](b1461b_kicad-source-mirror_tinytapeout-demo.md) | [1463. reform-kintex-edp](b1463b_reform-kintex-som_reform-kintex-edp.md) |

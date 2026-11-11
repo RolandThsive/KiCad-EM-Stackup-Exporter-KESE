@@ -1,4 +1,4 @@
-# 206 Main Memory Full Enable
+# 206. Main Memory Full Enable
 
 Board 206 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 2](../CorpusTestingPages/Corpus-Testing-02.md#206-main-memory-full-enable).
 
@@ -45,4 +45,4 @@ Board 206 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [205 Main Memory Full Abort](b0205b_658-Computer_Main-Memory-Full-Abort.md) | [207 Main Memory Select](b0207b_658-Computer_Main-Memory-Select.md) |
+| [205. Main Memory Full Abort](b0205b_658-Computer_Main-Memory-Full-Abort.md) | [207. Main Memory Select](b0207b_658-Computer_Main-Memory-Select.md) |

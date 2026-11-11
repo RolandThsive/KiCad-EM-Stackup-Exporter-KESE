@@ -1,4 +1,4 @@
-# 2496 mmc_usb_1
+# 2496. mmc_usb_1
 
 Board 2,496 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 24](../CorpusTestingPages/Corpus-Testing-24.md#2496-mmc_usb_1).
 
@@ -45,4 +45,4 @@ Board 2,496 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2495 mmc_usb_1](b2495b_rusefi-hardware_classic-designs-rusefi-hardware-history-usb-mmc-spi-rev00-10_mmc-usb-1.md) | [2497 mmc_usb_1](b2497b_rusefi-hardware_classic-designs-rusefi-hardware-history-usb-mmc-spi-rev00-30-usb-mmc-spi_mmc-usb-1.md) |
+| [2495. mmc_usb_1](b2495b_rusefi-hardware_classic-designs-rusefi-hardware-history-usb-mmc-spi-rev00-10_mmc-usb-1.md) | [2497. mmc_usb_1](b2497b_rusefi-hardware_classic-designs-rusefi-hardware-history-usb-mmc-spi-rev00-30-usb-mmc-spi_mmc-usb-1.md) |

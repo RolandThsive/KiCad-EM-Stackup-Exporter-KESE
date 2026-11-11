@@ -1,4 +1,4 @@
-# 1717 Lime_RFE
+# 1717. Lime_RFE
 
 Board 1,717 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 16](../CorpusTestingPages/Corpus-Testing-16.md#1717-lime_rfe).
 
@@ -46,4 +46,4 @@ Board 1,717 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1716 LC-RFE-Mini-RevA2](b1716b_lc-rfe-mini_LC-RFE-Mini-RevA2.md) | [1718 Lime_RFE_fab](b1718b_LimeRFE_Lime-RFE-fab.md) |
+| [1716. LC-RFE-Mini-RevA2](b1716b_lc-rfe-mini_LC-RFE-Mini-RevA2.md) | [1718. Lime_RFE_fab](b1718b_LimeRFE_Lime-RFE-fab.md) |

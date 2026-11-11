@@ -1,4 +1,4 @@
-# 2413 motorboard-v1.0
+# 2413. motorboard-v1.0
 
 Board 2,413 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 23](../CorpusTestingPages/Corpus-Testing-23.md#2413-motorboard-v10).
 
@@ -45,4 +45,4 @@ Board 2,413 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2412 kicker-v3.4](b2412b_robocup-pcb_kicker-v3-4.md) | [2414 Alius_6502](b2414b_Alius6502-PCB_Alius-6502.md) |
+| [2412. kicker-v3.4](b2412b_robocup-pcb_kicker-v3-4.md) | [2414. Alius_6502](b2414b_Alius6502-PCB_Alius-6502.md) |

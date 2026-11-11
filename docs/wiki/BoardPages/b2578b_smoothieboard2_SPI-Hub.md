@@ -1,4 +1,4 @@
-# 2578 SPI Hub
+# 2578. SPI Hub
 
 Board 2,578 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 24](../CorpusTestingPages/Corpus-Testing-24.md#2578-spi-hub).
 
@@ -45,4 +45,4 @@ Board 2,578 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2577 Small Mosfet](b2577b_smoothieboard2_Small-Mosfet.md) | [2579 SPIOpto](b2579b_smoothieboard2_SPIOpto.md) |
+| [2577. Small Mosfet](b2577b_smoothieboard2_Small-Mosfet.md) | [2579. SPIOpto](b2579b_smoothieboard2_SPIOpto.md) |

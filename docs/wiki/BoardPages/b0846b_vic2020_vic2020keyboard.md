@@ -1,4 +1,4 @@
-# 846 vic2020keyboard
+# 846. vic2020keyboard
 
 Board 846 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 8](../CorpusTestingPages/Corpus-Testing-08.md#846-vic2020keyboard).
 
@@ -45,4 +45,4 @@ Board 846 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [845 unicorn](b0845b_TI99-22_unicorn.md) | [847 Vic2020mainboard](b0847b_vic2020_Vic2020mainboard.md) |
+| [845. unicorn](b0845b_TI99-22_unicorn.md) | [847. Vic2020mainboard](b0847b_vic2020_Vic2020mainboard.md) |

@@ -1,4 +1,4 @@
-# 1942 Neo6502kbd_Rev_A
+# 1942. Neo6502kbd_Rev_A
 
 Board 1,942 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 18](../CorpusTestingPages/Corpus-Testing-18.md#1942-neo6502kbd_rev_a).
 
@@ -45,4 +45,4 @@ Board 1,942 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1941 Neo6502_Rev_A](b1941b_Neo6502_Neo6502-Rev-A.md) | [1943 Neo6502PC-CPU_Rev_B](b1943b_Neo6502pc_Neo6502PC-CPU-Rev-B.md) |
+| [1941. Neo6502_Rev_A](b1941b_Neo6502_Neo6502-Rev-A.md) | [1943. Neo6502PC-CPU_Rev_B](b1943b_Neo6502pc_Neo6502PC-CPU-Rev-B.md) |

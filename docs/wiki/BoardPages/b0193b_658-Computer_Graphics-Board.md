@@ -1,4 +1,4 @@
-# 193 Graphics Board
+# 193. Graphics Board
 
 Board 193 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 2](../CorpusTestingPages/Corpus-Testing-02.md#193-graphics-board).
 
@@ -45,4 +45,4 @@ Board 193 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [192 Coprocessor Transceiver](b0192b_658-Computer_Coprocessor-Transceiver.md) | [194 Graphics Main Data](b0194b_658-Computer_Graphics-Main-Data.md) |
+| [192. Coprocessor Transceiver](b0192b_658-Computer_Coprocessor-Transceiver.md) | [194. Graphics Main Data](b0194b_658-Computer_Graphics-Main-Data.md) |

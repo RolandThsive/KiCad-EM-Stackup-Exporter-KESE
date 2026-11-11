@@ -1,4 +1,4 @@
-# 2803 ethernet-extension-wopoe
+# 2803. ethernet-extension-wopoe
 
 Board 2,803 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 26](../CorpusTestingPages/Corpus-Testing-26.md#2803-ethernet-extension-wopoe).
 
@@ -45,4 +45,4 @@ Board 2,803 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2802 ethernet-extension-poe](b2802b_ethernet-extension_ethernet-extension-poe.md) | [2804 evse-v4](b2804b_evse-v4-bricklet_evse-v4.md) |
+| [2802. ethernet-extension-poe](b2802b_ethernet-extension_ethernet-extension-poe.md) | [2804. evse-v4](b2804b_evse-v4-bricklet_evse-v4.md) |

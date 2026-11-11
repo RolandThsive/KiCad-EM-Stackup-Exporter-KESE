@@ -1,4 +1,4 @@
-# 1834 ESP32-EVB_Rev_A
+# 1834. ESP32-EVB_Rev_A
 
 Board 1,834 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 17](../CorpusTestingPages/Corpus-Testing-17.md#1834-esp32-evb_rev_a).
 
@@ -45,4 +45,4 @@ Board 1,834 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1833 ESP32-DevKit-Lipo_Rev_D](b1833b_ESP32-DevKit-LiPo_ESP32-DevKit-Lipo-Rev-D.md) | [1835 ESP32-EVB_Rev_B](b1835b_ESP32-EVB_ESP32-EVB-Rev-B.md) |
+| [1833. ESP32-DevKit-Lipo_Rev_D](b1833b_ESP32-DevKit-LiPo_ESP32-DevKit-Lipo-Rev-D.md) | [1835. ESP32-EVB_Rev_B](b1835b_ESP32-EVB_ESP32-EVB-Rev-B.md) |

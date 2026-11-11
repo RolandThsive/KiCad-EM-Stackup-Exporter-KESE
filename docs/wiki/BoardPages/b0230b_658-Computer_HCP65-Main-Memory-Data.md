@@ -1,4 +1,4 @@
-# 230 HCP65 Main Memory Data
+# 230. HCP65 Main Memory Data
 
 Board 230 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 3](../CorpusTestingPages/Corpus-Testing-03.md#230-hcp65-main-memory-data).
 
@@ -45,4 +45,4 @@ Board 230 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [229 HCP65 Main Memory Address](b0229b_658-Computer_HCP65-Main-Memory-Address.md) | [231 HCP65 MPU Address Decode](b0231b_658-Computer_HCP65-MPU-Address-Decode.md) |
+| [229. HCP65 Main Memory Address](b0229b_658-Computer_HCP65-Main-Memory-Address.md) | [231. HCP65 MPU Address Decode](b0231b_658-Computer_HCP65-MPU-Address-Decode.md) |

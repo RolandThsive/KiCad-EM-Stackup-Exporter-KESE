@@ -1,4 +1,4 @@
-# 1175 pcie_x4
+# 1175. pcie_x4
 
 Board 1,175 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 11](../CorpusTestingPages/Corpus-Testing-11.md#1175-pcie_x4).
 
@@ -45,4 +45,4 @@ Board 1,175 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1174 pcie_x1](b1174b_advent-calendar-of-circuits-2020_pcie-x1.md) | [1176 pmod-gnss](b1176b_advent-calendar-of-circuits-2020_pmod-gnss.md) |
+| [1174. pcie_x1](b1174b_advent-calendar-of-circuits-2020_pcie-x1.md) | [1176. pmod-gnss](b1176b_advent-calendar-of-circuits-2020_pmod-gnss.md) |

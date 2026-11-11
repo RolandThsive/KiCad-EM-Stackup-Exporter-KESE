@@ -1,4 +1,4 @@
-# 2405 flyback-breakout-v1.0
+# 2405. flyback-breakout-v1.0
 
 Board 2,405 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 23](../CorpusTestingPages/Corpus-Testing-23.md#2405-flyback-breakout-v10).
 
@@ -45,4 +45,4 @@ Board 2,405 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2404 PicoEVB](b2404b_PicoEVB_PicoEVB.md) | [2406 teensy-adapter-v3.0](b2406b_robocup-pcb_teensy-adapter-v3-0.md) |
+| [2404. PicoEVB](b2404b_PicoEVB_PicoEVB.md) | [2406. teensy-adapter-v3.0](b2406b_robocup-pcb_teensy-adapter-v3-0.md) |

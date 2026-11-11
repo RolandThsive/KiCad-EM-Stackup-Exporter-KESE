@@ -1,4 +1,4 @@
-# 1505 ad9864_breakout
+# 1505. ad9864_breakout
 
 Board 1,505 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 14](../CorpusTestingPages/Corpus-Testing-14.md#1505-ad9864_breakout).
 
@@ -45,4 +45,4 @@ Board 1,505 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1504 dualpmod](b1504b_sonata-system_dualpmod.md) | [1506 adc32xx_syzygy](b1506b_vna_adc32xx-syzygy.md) |
+| [1504. dualpmod](b1504b_sonata-system_dualpmod.md) | [1506. adc32xx_syzygy](b1506b_vna_adc32xx-syzygy.md) |

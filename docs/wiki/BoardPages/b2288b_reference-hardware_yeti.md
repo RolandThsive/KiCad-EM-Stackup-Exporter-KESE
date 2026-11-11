@@ -1,4 +1,4 @@
-# 2288 yeti
+# 2288. yeti
 
 Board 2,288 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 22](../CorpusTestingPages/Corpus-Testing-22.md#2288-yeti).
 
@@ -45,4 +45,4 @@ Board 2,288 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2287 everestCM4](b2287b_reference-hardware_everestCM4.md) | [2289 R1000AX](b2289b_R1000AX_R1000AX.md) |
+| [2287. everestCM4](b2287b_reference-hardware_everestCM4.md) | [2289. R1000AX](b2289b_R1000AX_R1000AX.md) |

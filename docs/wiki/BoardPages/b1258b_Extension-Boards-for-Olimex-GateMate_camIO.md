@@ -1,4 +1,4 @@
-# 1258 camIO
+# 1258. camIO
 
 Board 1,258 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 12](../CorpusTestingPages/Corpus-Testing-12.md#1258-camio).
 
@@ -45,4 +45,4 @@ Board 1,258 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1257 adcIO](b1257b_Extension-Boards-for-Olimex-GateMate_adcIO.md) | [1259 dualTranslation](b1259b_Extension-Boards-for-Olimex-GateMate_dualTranslation.md) |
+| [1257. adcIO](b1257b_Extension-Boards-for-Olimex-GateMate_adcIO.md) | [1259. dualTranslation](b1259b_Extension-Boards-for-Olimex-GateMate_dualTranslation.md) |

@@ -1,4 +1,4 @@
-# 370 jetson-orin-baseboard
+# 370. jetson-orin-baseboard
 
 Board 370 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 4](../CorpusTestingPages/Corpus-Testing-04.md#370-jetson-orin-baseboard).
 
@@ -44,4 +44,4 @@ Board 370 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [369 jetson-nano-baseboard](b0369b_jetson-nano-baseboard_jetson-nano-baseboard.md) | [371 job-ict-bottom-board](b0371b_job-ict-bottom-board_job-ict-bottom-board.md) |
+| [369. jetson-nano-baseboard](b0369b_jetson-nano-baseboard_jetson-nano-baseboard.md) | [371. job-ict-bottom-board](b0371b_job-ict-bottom-board_job-ict-bottom-board.md) |

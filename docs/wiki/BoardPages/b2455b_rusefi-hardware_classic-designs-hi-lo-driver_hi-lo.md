@@ -1,4 +1,4 @@
-# 2455 hi-lo
+# 2455. hi-lo
 
 Board 2,455 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 23](../CorpusTestingPages/Corpus-Testing-23.md#2455-hi-lo).
 
@@ -45,4 +45,4 @@ Board 2,455 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2454 frankenstein](b2454b_rusefi-hardware_classic-designs-frankenstein_frankenstein.md) | [2456 VN750PS_E](b2456b_rusefi-hardware_VN750PS-E.md) |
+| [2454. frankenstein](b2454b_rusefi-hardware_classic-designs-frankenstein_frankenstein.md) | [2456. VN750PS_E](b2456b_rusefi-hardware_VN750PS-E.md) |

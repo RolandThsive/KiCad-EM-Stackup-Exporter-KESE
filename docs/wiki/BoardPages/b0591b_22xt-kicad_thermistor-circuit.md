@@ -1,4 +1,4 @@
-# 591 thermistor circuit
+# 591. thermistor circuit
 
 Board 591 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 6](../CorpusTestingPages/Corpus-Testing-06.md#591-thermistor-circuit).
 
@@ -45,4 +45,4 @@ Board 591 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [590 TC_shuwen](b0590b_22xt-kicad_TC-shuwen.md) | [592 05-can_encoder](b0592b_22xt-kicad_05-can-encoder.md) |
+| [590. TC_shuwen](b0590b_22xt-kicad_TC-shuwen.md) | [592. 05-can_encoder](b0592b_22xt-kicad_05-can-encoder.md) |

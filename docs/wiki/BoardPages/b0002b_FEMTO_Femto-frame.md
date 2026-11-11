@@ -1,4 +1,4 @@
-# 2 Femto_frame
+# 2. Femto_frame
 
 Board 2 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 1](../CorpusTestingPages/Corpus-Testing-01.md#2-femto_frame).
 
@@ -45,4 +45,4 @@ Board 2 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 
 
 | Previous | Next |
 |:---|---:|
-| [1 8 Bit Computer](b0001b_PCB-8-bit-Computer_8-Bit-Computer.md) | [3 Femto_v1](b0003b_FEMTO_Femto-v1.md) |
+| [1. 8 Bit Computer](b0001b_PCB-8-bit-Computer_8-Bit-Computer.md) | [3. Femto_v1](b0003b_FEMTO_Femto-v1.md) |

@@ -1,4 +1,4 @@
-# 2195 helmholtz-controller-v2
+# 2195. helmholtz-controller-v2
 
 Board 2,195 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 21](../CorpusTestingPages/Corpus-Testing-21.md#2195-helmholtz-controller-v2).
 
@@ -45,4 +45,4 @@ Board 2,195 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2194 oresat-gps-card](b2194b_oresat-gps-hardware_oresat-gps-card.md) | [2196 helmholtz-controller](b2196b_oresat-helmholtz_helmholtz-controller.md) |
+| [2194. oresat-gps-card](b2194b_oresat-gps-hardware_oresat-gps-card.md) | [2196. helmholtz-controller](b2196b_oresat-helmholtz_helmholtz-controller.md) |

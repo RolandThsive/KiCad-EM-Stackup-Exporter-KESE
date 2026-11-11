@@ -1,4 +1,4 @@
-# 1065 arc_mouse_breakout
+# 1065. arc_mouse_breakout
 
 Board 1,065 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 10](../CorpusTestingPages/Corpus-Testing-10.md#1065-arc_mouse_breakout).
 
@@ -45,4 +45,4 @@ Board 1,065 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1064 arc_keyboard_to_a3000](b1064b_myelin-acorn-electron-hardware_arc-keyboard-to-a3000.md) | [1066 archimedes_bus_scope](b1066b_myelin-acorn-electron-hardware_archimedes-bus-scope.md) |
+| [1064. arc_keyboard_to_a3000](b1064b_myelin-acorn-electron-hardware_arc-keyboard-to-a3000.md) | [1066. archimedes_bus_scope](b1066b_myelin-acorn-electron-hardware_archimedes-bus-scope.md) |

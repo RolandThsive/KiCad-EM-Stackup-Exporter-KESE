@@ -1,4 +1,4 @@
-# 1087 xc9500xl_44_breakout
+# 1087. xc9500xl_44_breakout
 
 Board 1,087 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 11](../CorpusTestingPages/Corpus-Testing-11.md#1087-xc9500xl_44_breakout).
 
@@ -45,4 +45,4 @@ Board 1,087 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1086 standalone_programmer](b1086b_myelin-acorn-electron-hardware_standalone-programmer.md) | [1088 dvk-mx8m-bsb](b1088b_dvk-mx8m-bsb_dvk-mx8m-bsb.md) |
+| [1086. standalone_programmer](b1086b_myelin-acorn-electron-hardware_standalone-programmer.md) | [1088. dvk-mx8m-bsb](b1088b_dvk-mx8m-bsb_dvk-mx8m-bsb.md) |

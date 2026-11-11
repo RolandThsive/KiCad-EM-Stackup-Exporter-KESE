@@ -1,4 +1,4 @@
-# 2051 J1772
+# 2051. J1772
 
 Board 2,051 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 19](../CorpusTestingPages/Corpus-Testing-19.md#2051-j1772).
 
@@ -45,4 +45,4 @@ Board 2,051 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2050 data_acquisition_module](b2050b_olin-electric-motorsports_data-acquisition-module.md) | [2052 J1772_V2](b2052b_olin-electric-motorsports_J1772-V2.md) |
+| [2050. data_acquisition_module](b2050b_olin-electric-motorsports_data-acquisition-module.md) | [2052. J1772_V2](b2052b_olin-electric-motorsports_J1772-V2.md) |

@@ -1,4 +1,4 @@
-# 106 plusd_no_route
+# 106. plusd_no_route
 
 Board 106 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 1](../CorpusTestingPages/Corpus-Testing-01.md#106-plusd_no_route).
 
@@ -44,4 +44,4 @@ Board 106 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [105 plusd](b0105b_plusD-clone_plusd.md) | [107 plusd](b0107b_plusD-clone_Rev-01_plusd.md) |
+| [105. plusd](b0105b_plusD-clone_plusd.md) | [107. plusd](b0107b_plusD-clone_Rev-01_plusd.md) |

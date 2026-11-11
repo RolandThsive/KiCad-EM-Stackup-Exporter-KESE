@@ -1,4 +1,4 @@
-# 1920 STM32WL-DevKit_RevB
+# 1920. STM32WL-DevKit_RevB
 
 Board 1,920 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 18](../CorpusTestingPages/Corpus-Testing-18.md#1920-stm32wl-devkit_revb).
 
@@ -45,4 +45,4 @@ Board 1,920 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1919 MOD-LoRa_RevB](b1919b_LoRa-868-915_MOD-LoRa-RevB.md) | [1921 LoRa-STM32WL-DevKit_RevD1](b1921b_LoRa-STM32WL-DevKIT_LoRa-STM32WL-DevKit-RevD1.md) |
+| [1919. MOD-LoRa_RevB](b1919b_LoRa-868-915_MOD-LoRa-RevB.md) | [1921. LoRa-STM32WL-DevKit_RevD1](b1921b_LoRa-STM32WL-DevKIT_LoRa-STM32WL-DevKit-RevD1.md) |

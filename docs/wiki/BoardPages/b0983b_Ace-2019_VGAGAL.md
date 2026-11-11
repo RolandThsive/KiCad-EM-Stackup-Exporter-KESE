@@ -1,4 +1,4 @@
-# 983 VGAGAL
+# 983. VGAGAL
 
 Board 983 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 10](../CorpusTestingPages/Corpus-Testing-10.md#983-vgagal).
 
@@ -45,4 +45,4 @@ Board 983 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [982 Full Card](b0982b_Ace-2019_Full-Card.md) | [984 VGAVDG](b0984b_Ace-2019_VGAVDG.md) |
+| [982. Full Card](b0982b_Ace-2019_Full-Card.md) | [984. VGAVDG](b0984b_Ace-2019_VGAVDG.md) |

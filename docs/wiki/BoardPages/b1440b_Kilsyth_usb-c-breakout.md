@@ -1,4 +1,4 @@
-# 1440 usb-c-breakout
+# 1440. usb-c-breakout
 
 Board 1,440 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 14](../CorpusTestingPages/Corpus-Testing-14.md#1440-usb-c-breakout).
 
@@ -45,4 +45,4 @@ Board 1,440 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1439 Kilsyth](b1439b_Kilsyth_hardware-RevB_Kilsyth.md) | [1441 doj](b1441b_echomods_doj-source-v1-1-kicad_doj.md) |
+| [1439. Kilsyth](b1439b_Kilsyth_hardware-RevB_Kilsyth.md) | [1441. doj](b1441b_echomods_doj-source-v1-1-kicad_doj.md) |

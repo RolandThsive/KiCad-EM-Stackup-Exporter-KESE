@@ -1,4 +1,4 @@
-# 786 discipline-pcb
+# 786. discipline-pcb
 
 Board 786 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 8](../CorpusTestingPages/Corpus-Testing-08.md#786-discipline-pcb).
 
@@ -46,4 +46,4 @@ Board 786 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [785 discipline-pcb](b0785b_discipline_discipline-pcb.md) | [787 BlankMSXCartHSH](b0787b_trh9000_BlankMSXCartHSH.md) |
+| [785. discipline-pcb](b0785b_discipline_discipline-pcb.md) | [787. BlankMSXCartHSH](b0787b_trh9000_BlankMSXCartHSH.md) |

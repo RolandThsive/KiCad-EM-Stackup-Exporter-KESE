@@ -1,4 +1,4 @@
-# 390 oculink-to-pcie-adapter
+# 390. oculink-to-pcie-adapter
 
 Board 390 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 4](../CorpusTestingPages/Corpus-Testing-04.md#390-oculink-to-pcie-adapter).
 
@@ -44,4 +44,4 @@ Board 390 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [389 oculink-to-10gbe-adapter](b0389b_oculink-10gbe-adapter_oculink-to-10gbe-adapter.md) | [391 optiga-tpm](b0391b_optiga-tpm_optiga-tpm.md) |
+| [389. oculink-to-10gbe-adapter](b0389b_oculink-10gbe-adapter_oculink-to-10gbe-adapter.md) | [391. optiga-tpm](b0391b_optiga-tpm_optiga-tpm.md) |

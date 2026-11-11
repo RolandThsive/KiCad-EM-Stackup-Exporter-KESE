@@ -1,4 +1,4 @@
-# 1158 tycho
+# 1158. tycho
 
 Board 1,158 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 11](../CorpusTestingPages/Corpus-Testing-11.md#1158-tycho).
 
@@ -45,4 +45,4 @@ Board 1,158 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1157 sasserides](b1157b_tycho_sasserides.md) | [1159 mainboard](b1159b_urti-mainboard_mainboard.md) |
+| [1157. sasserides](b1157b_tycho_sasserides.md) | [1159. mainboard](b1159b_urti-mainboard_mainboard.md) |

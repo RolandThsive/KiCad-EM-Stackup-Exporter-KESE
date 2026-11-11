@@ -1,4 +1,4 @@
-# 442 Motherboard
+# 442. Motherboard
 
 Board 442 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 5](../CorpusTestingPages/Corpus-Testing-05.md#442-motherboard).
 
@@ -45,4 +45,4 @@ Board 442 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [441 CTRL_Z](b0441b_4ds_CTRL-Z.md) | [443 usb-sniffer](b0443b_usb-sniffer_usb-sniffer.md) |
+| [441. CTRL_Z](b0441b_4ds_CTRL-Z.md) | [443. usb-sniffer](b0443b_usb-sniffer_usb-sniffer.md) |

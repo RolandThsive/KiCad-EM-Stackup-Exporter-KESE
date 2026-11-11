@@ -1,4 +1,4 @@
-# 3003 injector_sensor_hub
+# 3003. injector_sensor_hub
 
 Board 3,003 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 28](../CorpusTestingPages/Corpus-Testing-28.md#3003-injector_sensor_hub).
 
@@ -45,4 +45,4 @@ Board 3,003 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [3002 gps_2](b3002b_canhw_gps-2.md) | [3004 telemetry_transmitter](b3004b_canhw_telemetry-transmitter.md) |
+| [3002. gps_2](b3002b_canhw_gps-2.md) | [3004. telemetry_transmitter](b3004b_canhw_telemetry-transmitter.md) |

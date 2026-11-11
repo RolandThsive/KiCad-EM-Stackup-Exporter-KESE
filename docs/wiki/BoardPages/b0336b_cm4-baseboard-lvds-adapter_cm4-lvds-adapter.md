@@ -1,4 +1,4 @@
-# 336 cm4-lvds-adapter
+# 336. cm4-lvds-adapter
 
 Board 336 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 4](../CorpusTestingPages/Corpus-Testing-04.md#336-cm4-lvds-adapter).
 
@@ -44,4 +44,4 @@ Board 336 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [335 cm4-baseboard](b0335b_cm4-baseboard_cm4-baseboard.md) | [337 com-express-7-baseboard](b0337b_com-express-7-baseboard_com-express-7-baseboard.md) |
+| [335. cm4-baseboard](b0335b_cm4-baseboard_cm4-baseboard.md) | [337. com-express-7-baseboard](b0337b_com-express-7-baseboard_com-express-7-baseboard.md) |

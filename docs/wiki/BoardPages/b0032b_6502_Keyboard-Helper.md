@@ -1,4 +1,4 @@
-# 32 Keyboard Helper
+# 32. Keyboard Helper
 
 Board 32 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 1](../CorpusTestingPages/Corpus-Testing-01.md#32-keyboard-helper).
 
@@ -45,4 +45,4 @@ Board 32 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page
 
 | Previous | Next |
 |:---|---:|
-| [31 Keyboard Encoder Helper](b0031b_6502_Keyboard-Encoder-Helper.md) | [33 LCD Board](b0033b_6502_LCD-Board.md) |
+| [31. Keyboard Encoder Helper](b0031b_6502_Keyboard-Encoder-Helper.md) | [33. LCD Board](b0033b_6502_LCD-Board.md) |

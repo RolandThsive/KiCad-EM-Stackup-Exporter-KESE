@@ -1,4 +1,4 @@
-# 2997 camera_interface_CAN_board
+# 2997. camera_interface_CAN_board
 
 Board 2,997 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 28](../CorpusTestingPages/Corpus-Testing-28.md#2997-camera_interface_can_board).
 
@@ -45,4 +45,4 @@ Board 2,997 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2996 camera](b2996b_canhw_camera.md) | [2998 CAN_relay](b2998b_canhw_CAN-relay.md) |
+| [2996. camera](b2996b_canhw_camera.md) | [2998. CAN_relay](b2998b_canhw_CAN-relay.md) |

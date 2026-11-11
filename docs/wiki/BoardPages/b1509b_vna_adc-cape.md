@@ -1,4 +1,4 @@
-# 1509 adc_cape
+# 1509. adc_cape
 
 Board 1,509 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 14](../CorpusTestingPages/Corpus-Testing-14.md#1509-adc_cape).
 
@@ -45,4 +45,4 @@ Board 1,509 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1508 adc_32xx](b1508b_vna_adc-32xx.md) | [1510 adc_dual](b1510b_vna_adc-dual.md) |
+| [1508. adc_32xx](b1508b_vna_adc-32xx.md) | [1510. adc_dual](b1510b_vna_adc-dual.md) |

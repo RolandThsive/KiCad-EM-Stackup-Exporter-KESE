@@ -1,4 +1,4 @@
-# 2764 ARCH
+# 2764. ARCH
 
 Board 2,764 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 26](../CorpusTestingPages/Corpus-Testing-26.md#2764-arch).
 
@@ -45,4 +45,4 @@ Board 2,764 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2763 charge_deployment](b2763b_srad-avionics_charge-deployment.md) | [2765 BatteryCharger](b2765b_srad-avionics_BatteryCharger.md) |
+| [2763. charge_deployment](b2763b_srad-avionics_charge-deployment.md) | [2765. BatteryCharger](b2765b_srad-avionics_BatteryCharger.md) |

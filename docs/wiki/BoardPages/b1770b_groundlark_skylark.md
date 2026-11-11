@@ -1,4 +1,4 @@
-# 1770 skylark
+# 1770. skylark
 
 Board 1,770 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 17](../CorpusTestingPages/Corpus-Testing-17.md#1770-skylark).
 
@@ -46,4 +46,4 @@ Board 1,770 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1769 skylark-usb](b1769b_groundlark_skylark-usb.md) | [1771 C64C-250469-01-A](b1771b_Commodore64C_C64C-250469-01-A.md) |
+| [1769. skylark-usb](b1769b_groundlark_skylark-usb.md) | [1771. C64C-250469-01-A](b1771b_Commodore64C_C64C-250469-01-A.md) |

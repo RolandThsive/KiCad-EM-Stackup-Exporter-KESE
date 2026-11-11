@@ -1,4 +1,4 @@
-# 2572 Large MOSFET
+# 2572. Large MOSFET
 
 Board 2,572 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 24](../CorpusTestingPages/Corpus-Testing-24.md#2572-large-mosfet).
 
@@ -45,4 +45,4 @@ Board 2,572 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2571 C.H.I.P-DIP](b2571b_smoothieboard2_C-H-I-P-DIP.md) | [2573 level-shifter](b2573b_smoothieboard2_level-shifter.md) |
+| [2571. C.H.I.P-DIP](b2571b_smoothieboard2_C-H-I-P-DIP.md) | [2573. level-shifter](b2573b_smoothieboard2_level-shifter.md) |

@@ -1,4 +1,4 @@
-# 2134 power-stage-rev8
+# 2134. power-stage-rev8
 
 Board 2,134 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 20](../CorpusTestingPages/Corpus-Testing-20.md#2134-power-stage-rev8).
 
@@ -45,4 +45,4 @@ Board 2,134 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2133 control-stage](b2133b_oresat-adcs-hardware_oresat-rw-board-rev1-MCXN-control-stage_control-stage.md) | [2135 controller_rev5.0_flat](b2135b_oresat-adcs-hardware_controller-rev5-0-flat.md) |
+| [2133. control-stage](b2133b_oresat-adcs-hardware_oresat-rw-board-rev1-MCXN-control-stage_control-stage.md) | [2135. controller_rev5.0_flat](b2135b_oresat-adcs-hardware_controller-rev5-0-flat.md) |

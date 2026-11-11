@@ -1,4 +1,4 @@
-# 2131 oresat-adcs-card
+# 2131. oresat-adcs-card
 
 Board 2,131 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 20](../CorpusTestingPages/Corpus-Testing-20.md#2131-oresat-adcs-card).
 
@@ -45,4 +45,4 @@ Board 2,131 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2130 mezzanine-flex-board](b2130b_oresat-adcs-hardware_mezzanine-flex-board.md) | [2132 oresat-mag-card](b2132b_oresat-adcs-hardware_oresat-mag-card.md) |
+| [2130. mezzanine-flex-board](b2130b_oresat-adcs-hardware_mezzanine-flex-board.md) | [2132. oresat-mag-card](b2132b_oresat-adcs-hardware_oresat-mag-card.md) |

@@ -1,4 +1,4 @@
-# 1789 battery
+# 1789. battery
 
 Board 1,789 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 17](../CorpusTestingPages/Corpus-Testing-17.md#1789-battery).
 
@@ -45,4 +45,4 @@ Board 1,789 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1788 greybadge_pcb](b1788b_greybadge25_greybadge-pcb.md) | [1790 barebones](b1790b_barebones_barebones.md) |
+| [1788. greybadge_pcb](b1788b_greybadge25_greybadge-pcb.md) | [1790. barebones](b1790b_barebones_barebones.md) |

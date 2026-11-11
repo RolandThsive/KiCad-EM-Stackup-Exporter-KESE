@@ -1,4 +1,4 @@
-# 1270 USB
+# 1270. USB
 
 Board 1,270 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 12](../CorpusTestingPages/Corpus-Testing-12.md#1270-usb).
 
@@ -45,4 +45,4 @@ Board 1,270 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1269 tmrIO](b1269b_Extension-Boards-for-Olimex-GateMate_tmrIO.md) | [1271 intergalaktik](b1271b_KiCad-PCB_intergalaktik.md) |
+| [1269. tmrIO](b1269b_Extension-Boards-for-Olimex-GateMate_tmrIO.md) | [1271. intergalaktik](b1271b_KiCad-PCB_intergalaktik.md) |

@@ -1,4 +1,4 @@
-# 345 ddr4-spd-breakout
+# 345. ddr4-spd-breakout
 
 Board 345 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 4](../CorpusTestingPages/Corpus-Testing-04.md#345-ddr4-spd-breakout).
 
@@ -44,4 +44,4 @@ Board 345 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [344 dc-scm-rot-jumper-card](b0344b_dc-scm-rot-jumper-card_dc-scm-rot-jumper-card.md) | [346 ddr5-testbed](b0346b_ddr5-testbed_ddr5-testbed.md) |
+| [344. dc-scm-rot-jumper-card](b0344b_dc-scm-rot-jumper-card_dc-scm-rot-jumper-card.md) | [346. ddr5-testbed](b0346b_ddr5-testbed_ddr5-testbed.md) |

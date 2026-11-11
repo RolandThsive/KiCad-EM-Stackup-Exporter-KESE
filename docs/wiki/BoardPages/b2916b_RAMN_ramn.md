@@ -1,4 +1,4 @@
-# 2916 ramn
+# 2916. ramn
 
 Board 2,916 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 27](../CorpusTestingPages/Corpus-Testing-27.md#2916-ramn).
 
@@ -45,4 +45,4 @@ Board 2,916 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2915 pods_panel](b2915b_RAMN_pods-panel.md) | [2917 screens](b2917b_RAMN_screens.md) |
+| [2915. pods_panel](b2915b_RAMN_pods-panel.md) | [2917. screens](b2917b_RAMN_screens.md) |

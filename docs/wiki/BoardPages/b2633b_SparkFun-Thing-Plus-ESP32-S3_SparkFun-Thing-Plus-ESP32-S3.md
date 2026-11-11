@@ -1,4 +1,4 @@
-# 2633 SparkFun_Thing_Plus_ESP32-S3
+# 2633. SparkFun_Thing_Plus_ESP32-S3
 
 Board 2,633 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 25](../CorpusTestingPages/Corpus-Testing-25.md#2633-sparkfun_thing_plus_esp32-s3).
 
@@ -45,4 +45,4 @@ Board 2,633 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2632 SparkFun_Thing_Plus_ESP32-S3_panelized](b2632b_SparkFun-Thing-Plus-ESP32-S3_SparkFun-Thing-Plus-ESP32-S3-panelized.md) | [2634 MAP Card](b2634b_hardware_DropBear-MAP-Card-v0-2_MAP-Card.md) |
+| [2632. SparkFun_Thing_Plus_ESP32-S3_panelized](b2632b_SparkFun-Thing-Plus-ESP32-S3_SparkFun-Thing-Plus-ESP32-S3-panelized.md) | [2634. MAP Card](b2634b_hardware_DropBear-MAP-Card-v0-2_MAP-Card.md) |

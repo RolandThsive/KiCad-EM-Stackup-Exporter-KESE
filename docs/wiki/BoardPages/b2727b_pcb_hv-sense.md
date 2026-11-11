@@ -1,4 +1,4 @@
-# 2727 hv_sense
+# 2727. hv_sense
 
 Board 2,727 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 26](../CorpusTestingPages/Corpus-Testing-26.md#2727-hv_sense).
 
@@ -45,4 +45,4 @@ Board 2,727 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2726 Discharge](b2726b_pcb_Discharge.md) | [2728 CAN_Bridge](b2728b_pcb_CAN-Bridge.md) |
+| [2726. Discharge](b2726b_pcb_Discharge.md) | [2728. CAN_Bridge](b2728b_pcb_CAN-Bridge.md) |

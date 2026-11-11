@@ -1,4 +1,4 @@
-# 739 caravel_pcb_v3_FTDI_flexy
+# 739. caravel_pcb_v3_FTDI_flexy
 
 Board 739 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 7](../CorpusTestingPages/Corpus-Testing-07.md#739-caravel_pcb_v3_ftdi_flexy).
 
@@ -45,4 +45,4 @@ Board 739 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [738 caravel-5V-dev-v6-M.2](b0738b_caravel-board_caravel-5V-dev-v6-M-2.md) | [740 caravel_pcb_v3_FTDI_flexy_fixed](b0740b_caravel-board_caravel-pcb-v3-FTDI-flexy-fixed.md) |
+| [738. caravel-5V-dev-v6-M.2](b0738b_caravel-board_caravel-5V-dev-v6-M-2.md) | [740. caravel_pcb_v3_FTDI_flexy_fixed](b0740b_caravel-board_caravel-pcb-v3-FTDI-flexy-fixed.md) |

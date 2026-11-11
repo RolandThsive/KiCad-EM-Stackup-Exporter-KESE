@@ -1,4 +1,4 @@
-# 213 Processor Reset Device
+# 213. Processor Reset Device
 
 Board 213 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 2](../CorpusTestingPages/Corpus-Testing-02.md#213-processor-reset-device).
 
@@ -45,4 +45,4 @@ Board 213 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [212 Processor Full Device](b0212b_658-Computer_Processor-Full-Device.md) | [214 Processor Small Device](b0214b_658-Computer_Processor-Small-Device.md) |
+| [212. Processor Full Device](b0212b_658-Computer_Processor-Full-Device.md) | [214. Processor Small Device](b0214b_658-Computer_Processor-Small-Device.md) |

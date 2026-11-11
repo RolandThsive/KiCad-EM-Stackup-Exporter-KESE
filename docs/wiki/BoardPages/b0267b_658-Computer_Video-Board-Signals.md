@@ -1,4 +1,4 @@
-# 267 Video Board - Signals
+# 267. Video Board - Signals
 
 Board 267 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 3](../CorpusTestingPages/Corpus-Testing-03.md#267-video-board---signals).
 
@@ -45,4 +45,4 @@ Board 267 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [266 Video Board - Memory](b0266b_658-Computer_Video-Board-Memory.md) | [268 Video Clock](b0268b_658-Computer_Video-Clock.md) |
+| [266. Video Board - Memory](b0266b_658-Computer_Video-Board-Memory.md) | [268. Video Clock](b0268b_658-Computer_Video-Clock.md) |

@@ -1,4 +1,4 @@
-# 1131 filters
+# 1131. filters
 
 Board 1,131 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 11](../CorpusTestingPages/Corpus-Testing-11.md#1131-filters).
 
@@ -45,4 +45,4 @@ Board 1,131 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1130 DC1722J5005AHF](b1130b_misc_DC1722J5005AHF.md) | [1132 leds](b1132b_misc_leds.md) |
+| [1130. DC1722J5005AHF](b1130b_misc_DC1722J5005AHF.md) | [1132. leds](b1132b_misc_leds.md) |

@@ -1,4 +1,4 @@
-# 2189 BaseBoard
+# 2189. BaseBoard
 
 Board 2,189 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 21](../CorpusTestingPages/Corpus-Testing-21.md#2189-baseboard).
 
@@ -45,4 +45,4 @@ Board 2,189 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2188 usb_gps](b2188b_oresat-gps-hardware_usb-gps.md) | [2190 1.5V_switcher_test](b2190b_oresat-gps-hardware_1-5V-switcher-test.md) |
+| [2188. usb_gps](b2188b_oresat-gps-hardware_usb-gps.md) | [2190. 1.5V_switcher_test](b2190b_oresat-gps-hardware_1-5V-switcher-test.md) |

@@ -1,4 +1,4 @@
-# 1355 SPARK-MK1
+# 1355. SPARK-MK1
 
 Board 1,355 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 13](../CorpusTestingPages/Corpus-Testing-13.md#1355-spark-mk1).
 
@@ -45,4 +45,4 @@ Board 1,355 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1354 L1-Altimeter](b1354b_iss-pcb_L1-Altimeter.md) | [1356 TeleDecoder-revA](b1356b_iss-pcb_TeleDecoder-revA.md) |
+| [1354. L1-Altimeter](b1354b_iss-pcb_L1-Altimeter.md) | [1356. TeleDecoder-revA](b1356b_iss-pcb_TeleDecoder-revA.md) |

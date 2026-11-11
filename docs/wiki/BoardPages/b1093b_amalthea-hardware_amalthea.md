@@ -1,4 +1,4 @@
-# 1093 amalthea
+# 1093. amalthea
 
 Board 1,093 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 11](../CorpusTestingPages/Corpus-Testing-11.md#1093-amalthea).
 
@@ -44,4 +44,4 @@ Board 1,093 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1092 librem5_mainboard](b1092b_l5-schematic_CAD-PADS-librem5-mainboard-librem5-mainboard-kicad-conversion_librem5-mainboard.md) | [1094 cydonia](b1094b_cydonia_cydonia.md) |
+| [1092. librem5_mainboard](b1092b_l5-schematic_CAD-PADS-librem5-mainboard-librem5-mainboard-kicad-conversion_librem5-mainboard.md) | [1094. cydonia](b1094b_cydonia_cydonia.md) |

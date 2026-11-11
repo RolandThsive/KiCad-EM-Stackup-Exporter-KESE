@@ -1,4 +1,4 @@
-# 2124 xy-limit
+# 2124. xy-limit
 
 Board 2,124 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 20](../CorpusTestingPages/Corpus-Testing-20.md#2124-xy-limit).
 
@@ -45,4 +45,4 @@ Board 2,124 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2123 x-cable-chain-support](b2123b_lumenpnp_x-cable-chain-support.md) | [2125 z-limit](b2125b_lumenpnp_z-limit.md) |
+| [2123. x-cable-chain-support](b2123b_lumenpnp_x-cable-chain-support.md) | [2125. z-limit](b2125b_lumenpnp_z-limit.md) |

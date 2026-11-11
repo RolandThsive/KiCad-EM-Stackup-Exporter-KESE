@@ -1,4 +1,4 @@
-# 710 reform-camera
+# 710. reform-camera
 
 Board 710 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 7](../CorpusTestingPages/Corpus-Testing-07.md#710-reform-camera).
 
@@ -45,4 +45,4 @@ Board 710 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [709 nref-camera-adapter](b0709b_reform-next-mirror_nref-camera-adapter.md) | [711 nref-flex-eth](b0711b_reform-next-mirror_nref-flex-eth.md) |
+| [709. nref-camera-adapter](b0709b_reform-next-mirror_nref-camera-adapter.md) | [711. nref-flex-eth](b0711b_reform-next-mirror_nref-flex-eth.md) |

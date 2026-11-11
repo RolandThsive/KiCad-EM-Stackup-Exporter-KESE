@@ -1,4 +1,4 @@
-# 2950 APPS final
+# 2950. APPS final
 
 Board 2,950 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 28](../CorpusTestingPages/Corpus-Testing-28.md#2950-apps-final).
 
@@ -45,4 +45,4 @@ Board 2,950 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2949 Kobold](b2949b_keyboards_Kobold.md) | [2951 Battery Temperature Sensor](b2951b_circuits_Battery-Temperature-Sensor.md) |
+| [2949. Kobold](b2949b_keyboards_Kobold.md) | [2951. Battery Temperature Sensor](b2951b_circuits_Battery-Temperature-Sensor.md) |

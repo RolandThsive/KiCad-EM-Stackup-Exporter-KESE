@@ -1,4 +1,4 @@
-# 1003 Microcontroller
+# 1003. Microcontroller
 
 Board 1,003 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 10](../CorpusTestingPages/Corpus-Testing-10.md#1003-microcontroller).
 
@@ -45,4 +45,4 @@ Board 1,003 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1002 Expansion_Card_Retrofit](b1002b_ExpansionCards_Expansion-Card-Retrofit.md) | [1004 hram_regs_patch](b1004b_NE-Delta-Schematics_hram-regs-patch.md) |
+| [1002. Expansion_Card_Retrofit](b1002b_ExpansionCards_Expansion-Card-Retrofit.md) | [1004. hram_regs_patch](b1004b_NE-Delta-Schematics_hram-regs-patch.md) |

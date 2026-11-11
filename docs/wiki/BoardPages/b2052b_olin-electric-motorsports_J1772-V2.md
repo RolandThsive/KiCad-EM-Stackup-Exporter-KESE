@@ -1,4 +1,4 @@
-# 2052 J1772_V2
+# 2052. J1772_V2
 
 Board 2,052 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 19](../CorpusTestingPages/Corpus-Testing-19.md#2052-j1772_v2).
 
@@ -45,4 +45,4 @@ Board 2,052 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2051 J1772](b2051b_olin-electric-motorsports_J1772.md) | [2053 cooling-board](b2053b_olin-electric-motorsports_cooling-board.md) |
+| [2051. J1772](b2051b_olin-electric-motorsports_J1772.md) | [2053. cooling-board](b2053b_olin-electric-motorsports_cooling-board.md) |

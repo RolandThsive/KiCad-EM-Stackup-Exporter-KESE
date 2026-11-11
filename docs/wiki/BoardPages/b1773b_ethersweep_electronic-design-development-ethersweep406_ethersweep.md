@@ -1,4 +1,4 @@
-# 1773 ethersweep
+# 1773. ethersweep
 
 Board 1,773 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 17](../CorpusTestingPages/Corpus-Testing-17.md#1773-ethersweep).
 
@@ -45,4 +45,4 @@ Board 1,773 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1772 ethersweep](b1772b_ethersweep_electronic-design-development-ethersweep402_ethersweep.md) | [1774 ethersweep](b1774b_ethersweep_electronic-design-development-ethersweep407-CAN_ethersweep.md) |
+| [1772. ethersweep](b1772b_ethersweep_electronic-design-development-ethersweep402_ethersweep.md) | [1774. ethersweep](b1774b_ethersweep_electronic-design-development-ethersweep407-CAN_ethersweep.md) |

@@ -1,4 +1,4 @@
-# 182 Selector 1-of-4 4bit
+# 182. Selector 1-of-4 4bit
 
 Board 182 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 2](../CorpusTestingPages/Corpus-Testing-02.md#182-selector-1-of-4-4bit).
 
@@ -45,4 +45,4 @@ Board 182 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [181 Selector 1-of-4 4bit with Input](b0181b_658-Computer_Selector-1-of-4-4bit-with-Input.md) | [183 Selector 12bit](b0183b_658-Computer_Selector-12bit.md) |
+| [181. Selector 1-of-4 4bit with Input](b0181b_658-Computer_Selector-1-of-4-4bit-with-Input.md) | [183. Selector 12bit](b0183b_658-Computer_Selector-12bit.md) |

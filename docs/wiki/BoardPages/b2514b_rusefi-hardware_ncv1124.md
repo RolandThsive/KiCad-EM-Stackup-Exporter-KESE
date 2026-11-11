@@ -1,4 +1,4 @@
-# 2514 ncv1124
+# 2514. ncv1124
 
 Board 2,514 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 24](../CorpusTestingPages/Corpus-Testing-24.md#2514-ncv1124).
 
@@ -45,4 +45,4 @@ Board 2,514 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2513 VR-Hall](b2513b_rusefi-hardware_VR-Hall.md) | [2515 wideband_controller](b2515b_rusefi-hardware_wideband-controller.md) |
+| [2513. VR-Hall](b2513b_rusefi-hardware_VR-Hall.md) | [2515. wideband_controller](b2515b_rusefi-hardware_wideband-controller.md) |

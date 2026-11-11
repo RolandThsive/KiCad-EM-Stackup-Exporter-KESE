@@ -1,4 +1,4 @@
-# 2179 backplane-debug-breakout
+# 2179. backplane-debug-breakout
 
 Board 2,179 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 21](../CorpusTestingPages/Corpus-Testing-21.md#2179-backplane-debug-breakout).
 
@@ -45,4 +45,4 @@ Board 2,179 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2178 backplane-debug](b2178b_oresat-flatsat_backplane-debug.md) | [2180 c3-proxy](b2180b_oresat-flatsat_c3-proxy.md) |
+| [2178. backplane-debug](b2178b_oresat-flatsat_backplane-debug.md) | [2180. c3-proxy](b2180b_oresat-flatsat_c3-proxy.md) |

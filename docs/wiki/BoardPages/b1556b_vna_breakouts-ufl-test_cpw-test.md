@@ -1,4 +1,4 @@
-# 1556 cpw_test
+# 1556. cpw_test
 
 Board 1,556 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 15](../CorpusTestingPages/Corpus-Testing-15.md#1556-cpw_test).
 
@@ -45,4 +45,4 @@ Board 1,556 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1555 synth](b1555b_vna_synth.md) | [1557 usb_pd](b1557b_vna_usb-pd.md) |
+| [1555. synth](b1555b_vna_synth.md) | [1557. usb_pd](b1557b_vna_usb-pd.md) |

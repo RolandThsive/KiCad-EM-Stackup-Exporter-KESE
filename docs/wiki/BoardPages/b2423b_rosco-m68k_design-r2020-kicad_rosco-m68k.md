@@ -1,4 +1,4 @@
-# 2423 rosco_m68k
+# 2423. rosco_m68k
 
 Board 2,423 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 23](../CorpusTestingPages/Corpus-Testing-23.md#2423-rosco_m68k).
 
@@ -45,4 +45,4 @@ Board 2,423 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2422 rosco_m68k](b2422b_rosco-m68k_design-r2-kicad_rosco-m68k.md) | [2424 rosco_m68k](b2424b_rosco-m68k_design-r2030-kicad_rosco-m68k.md) |
+| [2422. rosco_m68k](b2422b_rosco-m68k_design-r2-kicad_rosco-m68k.md) | [2424. rosco_m68k](b2424b_rosco-m68k_design-r2030-kicad_rosco-m68k.md) |

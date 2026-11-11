@@ -1,4 +1,4 @@
-# 3131 pcb
+# 3131. pcb
 
 Board 3,131 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 29](../CorpusTestingPages/Corpus-Testing-29.md#3131-pcb).
 
@@ -45,4 +45,4 @@ Board 3,131 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [3130 adapter](b3130b_nekoink_adapter.md) | [3132 pcb](b3132b_nekoink_pcb-mainboard-gen2_pcb.md) |
+| [3130. adapter](b3130b_nekoink_adapter.md) | [3132. pcb](b3132b_nekoink_pcb-mainboard-gen2_pcb.md) |

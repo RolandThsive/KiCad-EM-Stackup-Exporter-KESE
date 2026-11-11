@@ -1,4 +1,4 @@
-# 1115 narcissus
+# 1115. narcissus
 
 Board 1,115 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 11](../CorpusTestingPages/Corpus-Testing-11.md#1115-narcissus).
 
@@ -45,4 +45,4 @@ Board 1,115 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1114 luckybamboo](b1114b_greatfet-hardware_luckybamboo.md) | [1116 neighbor-template](b1116b_greatfet-hardware_neighbor-template.md) |
+| [1114. luckybamboo](b1114b_greatfet-hardware_luckybamboo.md) | [1116. neighbor-template](b1116b_greatfet-hardware_neighbor-template.md) |

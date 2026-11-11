@@ -1,4 +1,4 @@
-# 2338 mainboard
+# 2338. mainboard
 
 Board 2,338 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 22](../CorpusTestingPages/Corpus-Testing-22.md#2338-mainboard).
 
@@ -45,4 +45,4 @@ Board 2,338 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2337 mainboard](b2337b_hardware_mainboard-v04_mainboard.md) | [2339 coco3](b2339b_coco-motherboards_coco3.md) |
+| [2337. mainboard](b2337b_hardware_mainboard-v04_mainboard.md) | [2339. coco3](b2339b_coco-motherboards_coco3.md) |

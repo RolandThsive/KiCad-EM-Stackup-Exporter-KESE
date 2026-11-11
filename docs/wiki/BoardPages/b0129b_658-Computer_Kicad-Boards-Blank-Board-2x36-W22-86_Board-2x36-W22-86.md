@@ -1,4 +1,4 @@
-# 129 Board 2x36 W22.86
+# 129. Board 2x36 W22.86
 
 Board 129 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 2](../CorpusTestingPages/Corpus-Testing-02.md#129-board-2x36-w2286).
 
@@ -45,4 +45,4 @@ Board 129 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [128 Board 2x32 W22.86](b0128b_658-Computer_Kicad-Boards-Blank-Board-2x32-W22-86_Board-2x32-W22-86.md) | [130 Board 2x06 W15.24](b0130b_658-Computer_Kicad-Boards-Pins-Board-2x06-W15-24_Board-2x06-W15-24.md) |
+| [128. Board 2x32 W22.86](b0128b_658-Computer_Kicad-Boards-Blank-Board-2x32-W22-86_Board-2x32-W22-86.md) | [130. Board 2x06 W15.24](b0130b_658-Computer_Kicad-Boards-Pins-Board-2x06-W15-24_Board-2x06-W15-24.md) |

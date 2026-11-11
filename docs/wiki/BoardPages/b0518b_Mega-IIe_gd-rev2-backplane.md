@@ -1,4 +1,4 @@
-# 518 gd rev2 backplane
+# 518. gd rev2 backplane
 
 Board 518 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 5](../CorpusTestingPages/Corpus-Testing-05.md#518-gd-rev2-backplane).
 
@@ -45,4 +45,4 @@ Board 518 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [517 MegaII Breakout](b0517b_Mega-IIe_kicad-files-MegaII-Breakout_MegaII-Breakout.md) | [519 PLCC44 to DIP44 Adapter](b0519b_Mega-IIe_PLCC44-to-DIP44-Adapter.md) |
+| [517. MegaII Breakout](b0517b_Mega-IIe_kicad-files-MegaII-Breakout_MegaII-Breakout.md) | [519. PLCC44 to DIP44 Adapter](b0519b_Mega-IIe_PLCC44-to-DIP44-Adapter.md) |

@@ -1,4 +1,4 @@
-# 2967 uECG_v4_5
+# 2967. uECG_v4_5
 
 Board 2,967 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 28](../CorpusTestingPages/Corpus-Testing-28.md#2967-uecg_v4_5).
 
@@ -45,4 +45,4 @@ Board 2,967 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2966 flightcontroller](b2966b_flightcontroller_flightcontroller.md) | [2968 uECG_v4_52_lsm_tlv](b2968b_uECG-pcb_uECG-v4-52-lsm-tlv.md) |
+| [2966. flightcontroller](b2966b_flightcontroller_flightcontroller.md) | [2968. uECG_v4_52_lsm_tlv](b2968b_uECG-pcb_uECG-v4-52-lsm-tlv.md) |

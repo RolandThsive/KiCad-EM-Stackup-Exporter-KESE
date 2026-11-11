@@ -1,4 +1,4 @@
-# 998 FABulous_board
+# 998. FABulous_board
 
 Board 998 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 10](../CorpusTestingPages/Corpus-Testing-10.md#998-fabulous_board).
 
@@ -45,4 +45,4 @@ Board 998 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [997 PSLab](b0997b_pslab-hardware_schematics_PSLab.md) | [999 DroneController](b0999b_DroneController_DroneController.md) |
+| [997. PSLab](b0997b_pslab-hardware_schematics_PSLab.md) | [999. DroneController](b0999b_DroneController_DroneController.md) |

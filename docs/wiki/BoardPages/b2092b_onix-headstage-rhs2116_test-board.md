@@ -1,4 +1,4 @@
-# 2092 test-board
+# 2092. test-board
 
 Board 2,092 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 20](../CorpusTestingPages/Corpus-Testing-20.md#2092-test-board).
 
@@ -45,4 +45,4 @@ Board 2,092 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2091 headstage-rhs2116](b2091b_onix-headstage-rhs2116_headstage-rhs2116.md) | [2093 PCIexpress_x16_full](b2093b_PCIexpress-KiCad_PCIexpress-x16-full.md) |
+| [2091. headstage-rhs2116](b2091b_onix-headstage-rhs2116_headstage-rhs2116.md) | [2093. PCIexpress_x16_full](b2093b_PCIexpress-KiCad_PCIexpress-x16-full.md) |

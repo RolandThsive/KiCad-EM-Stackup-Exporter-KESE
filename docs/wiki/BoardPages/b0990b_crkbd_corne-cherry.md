@@ -1,4 +1,4 @@
-# 990 corne-cherry
+# 990. corne-cherry
 
 Board 990 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 10](../CorpusTestingPages/Corpus-Testing-10.md#990-corne-cherry).
 
@@ -45,4 +45,4 @@ Board 990 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [989 NewBrain StoreBoard](b0989b_NewBrain_NewBrain-StoreBoard.md) | [991 corne-chocolate](b0991b_crkbd_corne-chocolate.md) |
+| [989. NewBrain StoreBoard](b0989b_NewBrain_NewBrain-StoreBoard.md) | [991. corne-chocolate](b0991b_crkbd_corne-chocolate.md) |

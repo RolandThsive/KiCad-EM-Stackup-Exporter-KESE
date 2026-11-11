@@ -1,4 +1,4 @@
-# 1955 A64-OlinuXino_Rev_C
+# 1955. A64-OlinuXino_Rev_C
 
 Board 1,955 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 19](../CorpusTestingPages/Corpus-Testing-19.md#1955-a64-olinuxino_rev_c).
 
@@ -45,4 +45,4 @@ Board 1,955 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1954 A64-OlinuXino_Rev_B](b1954b_OLINUXINO_A64-OlinuXino-Rev-B.md) | [1956 A64-OlinuXino_Rev_D](b1956b_OLINUXINO_A64-OlinuXino-Rev-D.md) |
+| [1954. A64-OlinuXino_Rev_B](b1954b_OLINUXINO_A64-OlinuXino-Rev-B.md) | [1956. A64-OlinuXino_Rev_D](b1956b_OLINUXINO_A64-OlinuXino-Rev-D.md) |

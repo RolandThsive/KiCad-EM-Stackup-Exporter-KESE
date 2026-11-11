@@ -1,4 +1,4 @@
-# 2022 motor_ctrl_interface
+# 2022. motor_ctrl_interface
 
 Board 2,022 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 19](../CorpusTestingPages/Corpus-Testing-19.md#2022-motor_ctrl_interface).
 
@@ -45,4 +45,4 @@ Board 2,022 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2021 bms_core](b2021b_olin-electric-motorsports_vehicle-gokart-hardware-bms-core_bms-core.md) | [2023 throttle](b2023b_olin-electric-motorsports_vehicle-gokart-hardware-throttle_throttle.md) |
+| [2021. bms_core](b2021b_olin-electric-motorsports_vehicle-gokart-hardware-bms-core_bms-core.md) | [2023. throttle](b2023b_olin-electric-motorsports_vehicle-gokart-hardware-throttle_throttle.md) |

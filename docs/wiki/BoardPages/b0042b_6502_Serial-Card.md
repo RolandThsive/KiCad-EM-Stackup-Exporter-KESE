@@ -1,4 +1,4 @@
-# 42 Serial Card
+# 42. Serial Card
 
 Board 42 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 1](../CorpusTestingPages/Corpus-Testing-01.md#42-serial-card).
 
@@ -45,4 +45,4 @@ Board 42 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page
 
 | Previous | Next |
 |:---|---:|
-| [41 Serial Card Pro](b0041b_6502_Serial-Card-Pro.md) | [43 Sound Card](b0043b_6502_Sound-Card.md) |
+| [41. Serial Card Pro](b0041b_6502_Serial-Card-Pro.md) | [43. Sound Card](b0043b_6502_Sound-Card.md) |

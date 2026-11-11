@@ -1,4 +1,4 @@
-# 2125 z-limit
+# 2125. z-limit
 
 Board 2,125 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 20](../CorpusTestingPages/Corpus-Testing-20.md#2125-z-limit).
 
@@ -45,4 +45,4 @@ Board 2,125 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2124 xy-limit](b2124b_lumenpnp_xy-limit.md) | [2126 OrangeCrab](b2126b_orangecrab-hardware_hardware-orangecrab-r0-1_OrangeCrab.md) |
+| [2124. xy-limit](b2124b_lumenpnp_xy-limit.md) | [2126. OrangeCrab](b2126b_orangecrab-hardware_hardware-orangecrab-r0-1_OrangeCrab.md) |

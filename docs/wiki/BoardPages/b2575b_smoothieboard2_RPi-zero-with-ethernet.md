@@ -1,4 +1,4 @@
-# 2575 RPi zero with ethernet
+# 2575. RPi zero with ethernet
 
 Board 2,575 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 24](../CorpusTestingPages/Corpus-Testing-24.md#2575-rpi-zero-with-ethernet).
 
@@ -45,4 +45,4 @@ Board 2,575 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2574 MechEndstop](b2574b_smoothieboard2_MechEndstop.md) | [2576 Rpi-zero](b2576b_smoothieboard2_Rpi-zero.md) |
+| [2574. MechEndstop](b2574b_smoothieboard2_MechEndstop.md) | [2576. Rpi-zero](b2576b_smoothieboard2_Rpi-zero.md) |

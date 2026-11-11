@@ -1,4 +1,4 @@
-# 53 Miniscope-v4-FlexPC
+# 53. Miniscope-v4-FlexPC
 
 Board 53 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 1](../CorpusTestingPages/Corpus-Testing-01.md#53-miniscope-v4-flexpc).
 
@@ -45,4 +45,4 @@ Board 53 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page
 
 | Previous | Next |
 |:---|---:|
-| [52 Miniscope-v4-FlexPC](b0052b_Miniscope-v4_Development-Files-Individual-PCBs-Miniscope-v4-FlexPC-Miniscope-v4-FlexPC-array-double-sided-KiCad_Miniscope-v4-FlexPC.md) | [54 BNO055_08092019](b0054b_Miniscope-v4_BNO055-08092019.md) |
+| [52. Miniscope-v4-FlexPC](b0052b_Miniscope-v4_Development-Files-Individual-PCBs-Miniscope-v4-FlexPC-Miniscope-v4-FlexPC-array-double-sided-KiCad_Miniscope-v4-FlexPC.md) | [54. BNO055_08092019](b0054b_Miniscope-v4_BNO055-08092019.md) |

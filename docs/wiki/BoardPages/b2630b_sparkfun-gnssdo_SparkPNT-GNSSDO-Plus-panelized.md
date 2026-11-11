@@ -1,4 +1,4 @@
-# 2630 SparkPNT_GNSSDO_Plus_panelized
+# 2630. SparkPNT_GNSSDO_Plus_panelized
 
 Board 2,630 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 25](../CorpusTestingPages/Corpus-Testing-25.md#2630-sparkpnt_gnssdo_plus_panelized).
 
@@ -46,4 +46,4 @@ Board 2,630 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2629 SparkPNT_GPSDO](b2629b_sparkfun-gnssdo_SparkPNT-GPSDO.md) | [2631 SparkPNT_GNSSDO_Plus](b2631b_sparkfun-gnssdo_SparkPNT-GNSSDO-Plus.md) |
+| [2629. SparkPNT_GPSDO](b2629b_sparkfun-gnssdo_SparkPNT-GPSDO.md) | [2631. SparkPNT_GNSSDO_Plus](b2631b_sparkfun-gnssdo_SparkPNT-GNSSDO-Plus.md) |

@@ -1,4 +1,4 @@
-# 484 solder-kf047-test
+# 484. solder-kf047-test
 
 Board 484 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 5](../CorpusTestingPages/Corpus-Testing-05.md#484-solder-kf047-test).
 
@@ -45,4 +45,4 @@ Board 484 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [483 smpm-test](b0483b_starshipraider_smpm-test.md) | [485 tip-holder-base](b0485b_starshipraider_tip-holder-base.md) |
+| [483. smpm-test](b0483b_starshipraider_smpm-test.md) | [485. tip-holder-base](b0485b_starshipraider_tip-holder-base.md) |

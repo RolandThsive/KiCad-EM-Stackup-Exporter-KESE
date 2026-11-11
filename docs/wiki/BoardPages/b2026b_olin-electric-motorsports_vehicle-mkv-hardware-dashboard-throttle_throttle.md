@@ -1,4 +1,4 @@
-# 2026 throttle
+# 2026. throttle
 
 Board 2,026 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 19](../CorpusTestingPages/Corpus-Testing-19.md#2026-throttle).
 
@@ -45,4 +45,4 @@ Board 2,026 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2025 interface](b2025b_olin-electric-motorsports_interface.md) | [2027 bspd_brakelight](b2027b_olin-electric-motorsports_bspd-brakelight.md) |
+| [2025. interface](b2025b_olin-electric-motorsports_interface.md) | [2027. bspd_brakelight](b2027b_olin-electric-motorsports_bspd-brakelight.md) |

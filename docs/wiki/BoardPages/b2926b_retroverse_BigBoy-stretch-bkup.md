@@ -1,4 +1,4 @@
-# 2926 BigBoy.stretch_bkup
+# 2926. BigBoy.stretch_bkup
 
 Board 2,926 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 28](../CorpusTestingPages/Corpus-Testing-28.md#2926-bigboystretch_bkup).
 
@@ -45,4 +45,4 @@ Board 2,926 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2925 BigBoy](b2925b_retroverse_BigBoy.md) | [2927 k30p-VME-Frontpanel](b2927b_retroverse_k30p-VME-Frontpanel.md) |
+| [2925. BigBoy](b2925b_retroverse_BigBoy.md) | [2927. k30p-VME-Frontpanel](b2927b_retroverse_k30p-VME-Frontpanel.md) |

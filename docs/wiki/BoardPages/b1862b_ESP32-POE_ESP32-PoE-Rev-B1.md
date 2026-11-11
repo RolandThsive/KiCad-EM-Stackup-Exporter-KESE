@@ -1,4 +1,4 @@
-# 1862 ESP32-PoE_Rev_B1
+# 1862. ESP32-PoE_Rev_B1
 
 Board 1,862 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 18](../CorpusTestingPages/Corpus-Testing-18.md#1862-esp32-poe_rev_b1).
 
@@ -45,4 +45,4 @@ Board 1,862 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1861 ESP32-P4-PC_Rev_C](b1861b_ESP32-P4-PC_ESP32-P4-PC-Rev-C.md) | [1863 ESP32-PoE_Rev_B2](b1863b_ESP32-POE_ESP32-PoE-Rev-B2.md) |
+| [1861. ESP32-P4-PC_Rev_C](b1861b_ESP32-P4-PC_ESP32-P4-PC-Rev-C.md) | [1863. ESP32-PoE_Rev_B2](b1863b_ESP32-POE_ESP32-PoE-Rev-B2.md) |

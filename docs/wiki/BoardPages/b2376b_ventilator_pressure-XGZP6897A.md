@@ -1,4 +1,4 @@
-# 2376 pressure_XGZP6897A
+# 2376. pressure_XGZP6897A
 
 Board 2,376 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 22](../CorpusTestingPages/Corpus-Testing-22.md#2376-pressure_xgzp6897a).
 
@@ -45,4 +45,4 @@ Board 2,376 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2375 pressure_ms4525do](b2375b_ventilator_pressure-ms4525do.md) | [2377 Ventilator](b2377b_ventilator_Ventilator.md) |
+| [2375. pressure_ms4525do](b2375b_ventilator_pressure-ms4525do.md) | [2377. Ventilator](b2377b_ventilator_Ventilator.md) |

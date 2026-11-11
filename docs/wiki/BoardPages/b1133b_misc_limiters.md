@@ -1,4 +1,4 @@
-# 1133 limiters
+# 1133. limiters
 
 Board 1,133 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 11](../CorpusTestingPages/Corpus-Testing-11.md#1133-limiters).
 
@@ -45,4 +45,4 @@ Board 1,133 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1132 leds](b1132b_misc_leds.md) | [1134 passives](b1134b_misc_passives.md) |
+| [1132. leds](b1132b_misc_leds.md) | [1134. passives](b1134b_misc_passives.md) |

@@ -1,4 +1,4 @@
-# 2855 gate_and_2in
+# 2855. gate_and_2in
 
 Board 2,855 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 27](../CorpusTestingPages/Corpus-Testing-27.md#2855-gate_and_2in).
 
@@ -45,4 +45,4 @@ Board 2,855 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2854 main_logic](b2854b_alu_main-logic.md) | [2856 gate_and_4in](b2856b_alu_gate-and-4in.md) |
+| [2854. main_logic](b2854b_alu_main-logic.md) | [2856. gate_and_4in](b2856b_alu_gate-and-4in.md) |

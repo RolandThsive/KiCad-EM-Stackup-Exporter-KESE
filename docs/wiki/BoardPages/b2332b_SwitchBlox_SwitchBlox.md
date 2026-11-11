@@ -1,4 +1,4 @@
-# 2332 SwitchBlox
+# 2332. SwitchBlox
 
 Board 2,332 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 22](../CorpusTestingPages/Corpus-Testing-22.md#2332-switchblox).
 
@@ -45,4 +45,4 @@ Board 2,332 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2331 cm5MiniITX](b2331b_cm5MiniITX_cm5MiniITX.md) | [2333 batteryboard](b2333b_hardware_batteryboard-v01_batteryboard.md) |
+| [2331. cm5MiniITX](b2331b_cm5MiniITX_cm5MiniITX.md) | [2333. batteryboard](b2333b_hardware_batteryboard-v01_batteryboard.md) |

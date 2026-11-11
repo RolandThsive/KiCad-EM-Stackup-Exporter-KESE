@@ -1,4 +1,4 @@
-# 222 Clock Hold V1 to V2
+# 222. Clock Hold V1 to V2
 
 Board 222 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 3](../CorpusTestingPages/Corpus-Testing-03.md#222-clock-hold-v1-to-v2).
 
@@ -45,4 +45,4 @@ Board 222 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [221 Address Decode V2 to V3](b0221b_658-Computer_Address-Decode-V2-to-V3.md) | [223 HCP65 Board Presence](b0223b_658-Computer_HCP65-Board-Presence.md) |
+| [221. Address Decode V2 to V3](b0221b_658-Computer_Address-Decode-V2-to-V3.md) | [223. HCP65 Board Presence](b0223b_658-Computer_HCP65-Board-Presence.md) |

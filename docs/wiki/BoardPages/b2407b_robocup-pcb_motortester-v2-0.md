@@ -1,4 +1,4 @@
-# 2407 motortester-v2.0
+# 2407. motortester-v2.0
 
 Board 2,407 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 23](../CorpusTestingPages/Corpus-Testing-23.md#2407-motortester-v20).
 
@@ -45,4 +45,4 @@ Board 2,407 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2406 teensy-adapter-v3.0](b2406b_robocup-pcb_teensy-adapter-v3-0.md) | [2408 motor-module](b2408b_robocup-pcb_motor-module.md) |
+| [2406. teensy-adapter-v3.0](b2406b_robocup-pcb_teensy-adapter-v3-0.md) | [2408. motor-module](b2408b_robocup-pcb_motor-module.md) |

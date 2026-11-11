@@ -1,4 +1,4 @@
-# 2521 rpi-rm0
+# 2521. rpi-rm0
 
 Board 2,521 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 24](../CorpusTestingPages/Corpus-Testing-24.md#2521-rpi-rm0).
 
@@ -45,4 +45,4 @@ Board 2,521 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2520 CM5RevEng](b2520b_cm5-reveng_CM5RevEng.md) | [2522 GreengateDS3](b2522b_goodgreat-ds3_GreengateDS3.md) |
+| [2520. CM5RevEng](b2520b_cm5-reveng_CM5RevEng.md) | [2522. GreengateDS3](b2522b_goodgreat-ds3_GreengateDS3.md) |

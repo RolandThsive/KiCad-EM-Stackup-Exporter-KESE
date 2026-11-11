@@ -1,4 +1,4 @@
-# 1915 iMX8MPLUS-SOM-EVB_Rev_B
+# 1915. iMX8MPLUS-SOM-EVB_Rev_B
 
 Board 1,915 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 18](../CorpusTestingPages/Corpus-Testing-18.md#1915-imx8mplus-som-evb_rev_b).
 
@@ -45,4 +45,4 @@ Board 1,915 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1914 iMX8MPLUS-SOM_Rev_B](b1914b_iMX8MP-SOM_iMX8MPLUS-SOM-Rev-B.md) | [1916 Lime2-SHIELD_RevC](b1916b_LIME2-SHIELD_Lime2-SHIELD-RevC.md) |
+| [1914. iMX8MPLUS-SOM_Rev_B](b1914b_iMX8MP-SOM_iMX8MPLUS-SOM-Rev-B.md) | [1916. Lime2-SHIELD_RevC](b1916b_LIME2-SHIELD_Lime2-SHIELD-RevC.md) |

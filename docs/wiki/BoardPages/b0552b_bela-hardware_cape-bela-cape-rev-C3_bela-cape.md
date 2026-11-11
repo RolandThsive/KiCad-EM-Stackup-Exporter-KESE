@@ -1,4 +1,4 @@
-# 552 bela_cape
+# 552. bela_cape
 
 Board 552 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 6](../CorpusTestingPages/Corpus-Testing-06.md#552-bela_cape).
 
@@ -45,4 +45,4 @@ Board 552 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [551 bela_cape](b0551b_bela-hardware_cape-bela-cape-rev-C2_bela-cape.md) | [553 Bela_Gem_Multi](b0553b_bela-hardware_Bela-Gem-Multi.md) |
+| [551. bela_cape](b0551b_bela-hardware_cape-bela-cape-rev-C2_bela-cape.md) | [553. Bela_Gem_Multi](b0553b_bela-hardware_Bela-Gem-Multi.md) |

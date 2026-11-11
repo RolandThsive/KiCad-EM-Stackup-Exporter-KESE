@@ -1,4 +1,4 @@
-# 549 analog_out_fix_c2
+# 549. analog_out_fix_c2
 
 Board 549 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 6](../CorpusTestingPages/Corpus-Testing-06.md#549-analog_out_fix_c2).
 
@@ -45,4 +45,4 @@ Board 549 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [548 bela_cape](b0548b_bela-hardware_cape-bela-cape-rev-C1_bela-cape.md) | [550 panel](b0550b_bela-hardware_panel.md) |
+| [548. bela_cape](b0548b_bela-hardware_cape-bela-cape-rev-C1_bela-cape.md) | [550. panel](b0550b_bela-hardware_panel.md) |

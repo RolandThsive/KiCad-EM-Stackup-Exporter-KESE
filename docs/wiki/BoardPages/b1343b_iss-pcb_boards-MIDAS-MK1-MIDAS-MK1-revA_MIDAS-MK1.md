@@ -1,4 +1,4 @@
-# 1343 MIDAS-MK1
+# 1343. MIDAS-MK1
 
 Board 1,343 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 13](../CorpusTestingPages/Corpus-Testing-13.md#1343-midas-mk1).
 
@@ -45,4 +45,4 @@ Board 1,343 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1342 Feather_Duo](b1342b_iss-pcb_Feather-Duo.md) | [1344 MIDAS-MK1](b1344b_iss-pcb_boards-MIDAS-MK1-MIDAS-MK1-revB_MIDAS-MK1.md) |
+| [1342. Feather_Duo](b1342b_iss-pcb_Feather-Duo.md) | [1344. MIDAS-MK1](b1344b_iss-pcb_boards-MIDAS-MK1-MIDAS-MK1-revB_MIDAS-MK1.md) |

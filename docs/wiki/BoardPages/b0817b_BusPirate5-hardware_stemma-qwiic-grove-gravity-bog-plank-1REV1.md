@@ -1,4 +1,4 @@
-# 817 stemma-qwiic-grove-gravity-bog-plank-1REV1
+# 817. stemma-qwiic-grove-gravity-bog-plank-1REV1
 
 Board 817 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 8](../CorpusTestingPages/Corpus-Testing-08.md#817-stemma-qwiic-grove-gravity-bog-plank-1rev1).
 
@@ -45,4 +45,4 @@ Board 817 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [816 sim-rev3c](b0816b_BusPirate5-hardware_sim-rev3c.md) | [818 vpp-maker-rev6-ian](b0818b_BusPirate5-hardware_vpp-maker-rev6-ian.md) |
+| [816. sim-rev3c](b0816b_BusPirate5-hardware_sim-rev3c.md) | [818. vpp-maker-rev6-ian](b0818b_BusPirate5-hardware_vpp-maker-rev6-ian.md) |

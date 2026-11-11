@@ -1,4 +1,4 @@
-# 2978 uCM4
+# 2978. uCM4
 
 Board 2,978 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 28](../CorpusTestingPages/Corpus-Testing-28.md#2978-ucm4).
 
@@ -44,4 +44,4 @@ Board 2,978 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2977 milight-hub-base](b2977b_milight-hub_milight-hub-base.md) | [2979 bus_breakout](b2979b_8bit-cpu_bus-breakout.md) |
+| [2977. milight-hub-base](b2977b_milight-hub_milight-hub-base.md) | [2979. bus_breakout](b2979b_8bit-cpu_bus-breakout.md) |

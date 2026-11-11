@@ -1,4 +1,4 @@
-# 1994 TuxCon_Kitty_Rev_A
+# 1994. TuxCon_Kitty_Rev_A
 
 Board 1,994 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 19](../CorpusTestingPages/Corpus-Testing-19.md#1994-tuxcon_kitty_rev_a).
 
@@ -45,4 +45,4 @@ Board 1,994 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1993 STMP15x-SHIELD_Rev_A](b1993b_STMP15X-SHIELD_STMP15x-SHIELD-Rev-A.md) | [1995 UEXT-3TO5V_Rev_A](b1995b_UEXT-3TO5V_UEXT-3TO5V-Rev-A.md) |
+| [1993. STMP15x-SHIELD_Rev_A](b1993b_STMP15X-SHIELD_STMP15x-SHIELD-Rev-A.md) | [1995. UEXT-3TO5V_Rev_A](b1995b_UEXT-3TO5V_UEXT-3TO5V-Rev-A.md) |

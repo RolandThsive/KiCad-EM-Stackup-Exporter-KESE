@@ -1,4 +1,4 @@
-# 1744 PQ_ADCS
+# 1744. PQ_ADCS
 
 Board 1,744 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 17](../CorpusTestingPages/Corpus-Testing-17.md#1744-pq_adcs).
 
@@ -45,4 +45,4 @@ Board 1,744 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1743 webcam_microphone_system](b1743b_vohm_webcam-microphone-system.md) | [1745 PQ_ADCS](b1745b_pocat-hw_pq-adcs-PQ-ADCS-HBridge_PQ-ADCS.md) |
+| [1743. webcam_microphone_system](b1743b_vohm_webcam-microphone-system.md) | [1745. PQ_ADCS](b1745b_pocat-hw_pq-adcs-PQ-ADCS-HBridge_PQ-ADCS.md) |

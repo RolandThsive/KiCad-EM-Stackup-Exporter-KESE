@@ -1,4 +1,4 @@
-# 387 altera-modular-agilex-5-dc-scm
+# 387. altera-modular-agilex-5-dc-scm
 
 Board 387 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 4](../CorpusTestingPages/Corpus-Testing-04.md#387-altera-modular-agilex-5-dc-scm).
 
@@ -44,4 +44,4 @@ Board 387 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [386 microphone-board](b0386b_microphone-board_microphone-board.md) | [388 myra-sip-interposer](b0388b_myra-sip-interposer_myra-sip-interposer.md) |
+| [386. microphone-board](b0386b_microphone-board_microphone-board.md) | [388. myra-sip-interposer](b0388b_myra-sip-interposer_myra-sip-interposer.md) |

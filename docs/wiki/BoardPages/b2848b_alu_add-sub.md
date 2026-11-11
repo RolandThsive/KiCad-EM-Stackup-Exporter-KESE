@@ -1,4 +1,4 @@
-# 2848 add_sub
+# 2848. add_sub
 
 Board 2,848 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 27](../CorpusTestingPages/Corpus-Testing-27.md#2848-add_sub).
 
@@ -46,4 +46,4 @@ Board 2,848 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2847 rpi-cm4-switch-board](b2847b_rpi-cm4-switch-board_rpi-cm4-switch-board.md) | [2849 flags](b2849b_alu_flags.md) |
+| [2847. rpi-cm4-switch-board](b2847b_rpi-cm4-switch-board_rpi-cm4-switch-board.md) | [2849. flags](b2849b_alu_flags.md) |

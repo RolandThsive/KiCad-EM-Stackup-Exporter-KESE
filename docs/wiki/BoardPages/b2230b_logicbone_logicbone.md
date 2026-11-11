@@ -1,4 +1,4 @@
-# 2230 logicbone
+# 2230. logicbone
 
 Board 2,230 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 21](../CorpusTestingPages/Corpus-Testing-21.md#2230-logicbone).
 
@@ -44,4 +44,4 @@ Board 2,230 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2229 MotCtrl](b2229b_motctrl_MotCtrl.md) | [2231 icE1usb-rs422](b2231b_osmo-e1-hardware_icE1usb-rs422.md) |
+| [2229. MotCtrl](b2229b_motctrl_MotCtrl.md) | [2231. icE1usb-rs422](b2231b_osmo-e1-hardware_icE1usb-rs422.md) |

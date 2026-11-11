@@ -1,4 +1,4 @@
-# 768 Inverter ISO Analog
+# 768. Inverter ISO Analog
 
 Board 768 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 8](../CorpusTestingPages/Corpus-Testing-08.md#768-inverter-iso-analog).
 
@@ -45,4 +45,4 @@ Board 768 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [767 Master_slave Connector](b0767b_2021-accumulator-electronics_Master-slave-Connector.md) | [769 Power Transducer](b0769b_2021-accumulator-electronics_Power-Transducer.md) |
+| [767. Master_slave Connector](b0767b_2021-accumulator-electronics_Master-slave-Connector.md) | [769. Power Transducer](b0769b_2021-accumulator-electronics_Power-Transducer.md) |

@@ -1,4 +1,4 @@
-# 1756 PQ1_TopBoard
+# 1756. PQ1_TopBoard
 
 Board 1,756 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 17](../CorpusTestingPages/Corpus-Testing-17.md#1756-pq1_topboard).
 
@@ -45,4 +45,4 @@ Board 1,756 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1755 PQ_PL2](b1755b_pocat-hw_PQ-PL2.md) | [1757 PQ1_TopBoardV9](b1757b_pocat-hw_PQ1-TopBoardV9.md) |
+| [1755. PQ_PL2](b1755b_pocat-hw_PQ-PL2.md) | [1757. PQ1_TopBoardV9](b1757b_pocat-hw_PQ1-TopBoardV9.md) |

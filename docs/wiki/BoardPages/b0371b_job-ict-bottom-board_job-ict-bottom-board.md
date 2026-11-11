@@ -1,4 +1,4 @@
-# 371 job-ict-bottom-board
+# 371. job-ict-bottom-board
 
 Board 371 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 4](../CorpusTestingPages/Corpus-Testing-04.md#371-job-ict-bottom-board).
 
@@ -44,4 +44,4 @@ Board 371 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [370 jetson-orin-baseboard](b0370b_jetson-orin-baseboard_jetson-orin-baseboard.md) | [372 job-ict-support-board](b0372b_job-ict-support-board_job-ict-support-board.md) |
+| [370. jetson-orin-baseboard](b0370b_jetson-orin-baseboard_jetson-orin-baseboard.md) | [372. job-ict-support-board](b0372b_job-ict-support-board_job-ict-support-board.md) |

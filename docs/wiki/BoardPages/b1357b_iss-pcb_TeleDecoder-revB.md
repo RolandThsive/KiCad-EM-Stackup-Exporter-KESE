@@ -1,4 +1,4 @@
-# 1357 TeleDecoder-revB
+# 1357. TeleDecoder-revB
 
 Board 1,357 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 13](../CorpusTestingPages/Corpus-Testing-13.md#1357-teledecoder-revb).
 
@@ -45,4 +45,4 @@ Board 1,357 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1356 TeleDecoder-revA](b1356b_iss-pcb_TeleDecoder-revA.md) | [1358 Amiga600](b1358b_A600Reborn_Amiga600.md) |
+| [1356. TeleDecoder-revA](b1356b_iss-pcb_TeleDecoder-revA.md) | [1358. Amiga600](b1358b_A600Reborn_Amiga600.md) |

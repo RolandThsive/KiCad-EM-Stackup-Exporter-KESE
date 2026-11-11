@@ -1,4 +1,4 @@
-# 226 HCP65 Hold Count
+# 226. HCP65 Hold Count
 
 Board 226 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 3](../CorpusTestingPages/Corpus-Testing-03.md#226-hcp65-hold-count).
 
@@ -45,4 +45,4 @@ Board 226 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [225 HCP65 Device Reset](b0225b_658-Computer_HCP65-Device-Reset.md) | [227 HCP65 Instruction Code](b0227b_658-Computer_HCP65-Instruction-Code.md) |
+| [225. HCP65 Device Reset](b0225b_658-Computer_HCP65-Device-Reset.md) | [227. HCP65 Instruction Code](b0227b_658-Computer_HCP65-Instruction-Code.md) |

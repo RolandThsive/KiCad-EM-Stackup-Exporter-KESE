@@ -1,4 +1,4 @@
-# 23 CPU Card Pro
+# 23. CPU Card Pro
 
 Board 23 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 1](../CorpusTestingPages/Corpus-Testing-01.md#23-cpu-card-pro).
 
@@ -45,4 +45,4 @@ Board 23 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page
 
 | Previous | Next |
 |:---|---:|
-| [22 Clock Helper](b0022b_6502_Clock-Helper.md) | [24 CPU Card](b0024b_6502_Hardware-CPU-Card-Rev-1-0_CPU-Card.md) |
+| [22. Clock Helper](b0022b_6502_Clock-Helper.md) | [24. CPU Card](b0024b_6502_Hardware-CPU-Card-Rev-1-0_CPU-Card.md) |

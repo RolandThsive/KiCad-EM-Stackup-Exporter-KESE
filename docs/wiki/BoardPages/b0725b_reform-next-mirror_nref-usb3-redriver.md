@@ -1,4 +1,4 @@
-# 725 nref-usb3-redriver
+# 725. nref-usb3-redriver
 
 Board 725 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 7](../CorpusTestingPages/Corpus-Testing-07.md#725-nref-usb3-redriver).
 
@@ -45,4 +45,4 @@ Board 725 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [724 nref-trackpad](b0724b_reform-next-mirror_nref-trackpad.md) | [726 nref-wifi-m2](b0726b_reform-next-mirror_nref-wifi-m2.md) |
+| [724. nref-trackpad](b0724b_reform-next-mirror_nref-trackpad.md) | [726. nref-wifi-m2](b0726b_reform-next-mirror_nref-wifi-m2.md) |

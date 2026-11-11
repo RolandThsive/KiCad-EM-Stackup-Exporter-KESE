@@ -1,4 +1,4 @@
-# 2349 Arduino_Altair_8800
+# 2349. Arduino_Altair_8800
 
 Board 2,349 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 22](../CorpusTestingPages/Corpus-Testing-22.md#2349-arduino_altair_8800).
 
@@ -44,4 +44,4 @@ Board 2,349 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2348 Motherboard](b2348b_OpenTendo_Motherboard.md) | [2350 Wii PCB](b2350b_Wee-Wii_Wii-PCB.md) |
+| [2348. Motherboard](b2348b_OpenTendo_Motherboard.md) | [2350. Wii PCB](b2350b_Wee-Wii_Wii-PCB.md) |

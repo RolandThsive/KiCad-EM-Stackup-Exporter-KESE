@@ -1,4 +1,4 @@
-# 575 AD5689RARUZ-RL7_breakboard
+# 575. AD5689RARUZ-RL7_breakboard
 
 Board 575 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 6](../CorpusTestingPages/Corpus-Testing-06.md#575-ad5689raruz-rl7_breakboard).
 
@@ -45,4 +45,4 @@ Board 575 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [574 ESP32S3](b0574b_22xt-kicad_ESP32S3.md) | [576 DB44_breakout](b0576b_22xt-kicad_DB44-breakout.md) |
+| [574. ESP32S3](b0574b_22xt-kicad_ESP32S3.md) | [576. DB44_breakout](b0576b_22xt-kicad_DB44-breakout.md) |

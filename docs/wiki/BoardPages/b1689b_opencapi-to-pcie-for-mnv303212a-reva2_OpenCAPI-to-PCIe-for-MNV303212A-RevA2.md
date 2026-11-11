@@ -1,4 +1,4 @@
-# 1689 OpenCAPI-to-PCIe_for_MNV303212A_RevA2
+# 1689. OpenCAPI-to-PCIe_for_MNV303212A_RevA2
 
 Board 1,689 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 16](../CorpusTestingPages/Corpus-Testing-16.md#1689-opencapi-to-pcie_for_mnv303212a_reva2).
 
@@ -44,4 +44,4 @@ Board 1,689 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1688 pocketbone-kicad](b1688b_pocketbone-kicad_pocketbone-kicad.md) | [1690 AnalogComputer](b1690b_embeddedbakery_AnalogComputer.md) |
+| [1688. pocketbone-kicad](b1688b_pocketbone-kicad_pocketbone-kicad.md) | [1690. AnalogComputer](b1690b_embeddedbakery_AnalogComputer.md) |

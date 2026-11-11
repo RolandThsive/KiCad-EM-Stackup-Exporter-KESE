@@ -1,4 +1,4 @@
-# 357 zglue-gem1-adapter
+# 357. zglue-gem1-adapter
 
 Board 357 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 4](../CorpusTestingPages/Corpus-Testing-04.md#357-zglue-gem1-adapter).
 
@@ -44,4 +44,4 @@ Board 357 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [356 gem-demo-board](b0356b_gem-baseboard_gem-demo-board.md) | [358 gem2-adapter](b0358b_gem2-adapter_gem2-adapter.md) |
+| [356. gem-demo-board](b0356b_gem-baseboard_gem-demo-board.md) | [358. gem2-adapter](b0358b_gem2-adapter_gem2-adapter.md) |

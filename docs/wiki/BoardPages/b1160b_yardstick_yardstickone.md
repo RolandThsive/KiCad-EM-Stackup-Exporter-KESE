@@ -1,4 +1,4 @@
-# 1160 yardstickone
+# 1160. yardstickone
 
 Board 1,160 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 11](../CorpusTestingPages/Corpus-Testing-11.md#1160-yardstickone).
 
@@ -45,4 +45,4 @@ Board 1,160 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1159 mainboard](b1159b_urti-mainboard_mainboard.md) | [1161 arm-watch](b1161b_advent-calendar-of-circuits-2020_arm-watch.md) |
+| [1159. mainboard](b1159b_urti-mainboard_mainboard.md) | [1161. arm-watch](b1161b_advent-calendar-of-circuits-2020_arm-watch.md) |

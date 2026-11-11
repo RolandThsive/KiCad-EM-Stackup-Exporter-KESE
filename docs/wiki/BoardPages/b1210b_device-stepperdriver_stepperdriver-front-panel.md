@@ -1,4 +1,4 @@
-# 1210 stepperdriver front panel
+# 1210. stepperdriver front panel
 
 Board 1,210 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 12](../CorpusTestingPages/Corpus-Testing-12.md#1210-stepperdriver-front-panel).
 
@@ -46,4 +46,4 @@ Board 1,210 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1209 Easyduino_STM32F103](b1209b_Easyduino_Easyduino-STM32F103.md) | [1211 stepper driver rear panel](b1211b_device-stepperdriver_stepper-driver-rear-panel.md) |
+| [1209. Easyduino_STM32F103](b1209b_Easyduino_Easyduino-STM32F103.md) | [1211. stepper driver rear panel](b1211b_device-stepperdriver_stepper-driver-rear-panel.md) |

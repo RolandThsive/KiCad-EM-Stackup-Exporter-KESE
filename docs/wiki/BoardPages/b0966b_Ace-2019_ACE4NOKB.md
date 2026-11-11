@@ -1,4 +1,4 @@
-# 966 ACE4NOKB
+# 966. ACE4NOKB
 
 Board 966 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 9](../CorpusTestingPages/Corpus-Testing-09.md#966-ace4nokb).
 
@@ -45,4 +45,4 @@ Board 966 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [965 ACE3NOKB](b0965b_Ace-2019_ACE3NOKB.md) | [967 ACEBREAKPOINT](b0967b_Ace-2019_ACEBREAKPOINT.md) |
+| [965. ACE3NOKB](b0965b_Ace-2019_ACE3NOKB.md) | [967. ACEBREAKPOINT](b0967b_Ace-2019_ACEBREAKPOINT.md) |

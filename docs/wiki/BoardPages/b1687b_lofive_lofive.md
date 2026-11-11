@@ -1,4 +1,4 @@
-# 1687 lofive
+# 1687. lofive
 
 Board 1,687 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 16](../CorpusTestingPages/Corpus-Testing-16.md#1687-lofive).
 
@@ -44,4 +44,4 @@ Board 1,687 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1686 icebreaker++](b1686b_icecrusher_icebreaker.md) | [1688 pocketbone-kicad](b1688b_pocketbone-kicad_pocketbone-kicad.md) |
+| [1686. icebreaker++](b1686b_icecrusher_icebreaker.md) | [1688. pocketbone-kicad](b1688b_pocketbone-kicad_pocketbone-kicad.md) |

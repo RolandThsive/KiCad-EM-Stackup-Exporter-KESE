@@ -1,4 +1,4 @@
-# 512 gd rev3b
+# 512. gd rev3b
 
 Board 512 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 5](../CorpusTestingPages/Corpus-Testing-05.md#512-gd-rev3b).
 
@@ -45,4 +45,4 @@ Board 512 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [511 gd rev3](b0511b_Mega-IIe_gd-rev3.md) | [513 gd rp2040 keyboard proto pcb](b0513b_Mega-IIe_gd-rp2040-keyboard-proto-pcb.md) |
+| [511. gd rev3](b0511b_Mega-IIe_gd-rev3.md) | [513. gd rp2040 keyboard proto pcb](b0513b_Mega-IIe_gd-rp2040-keyboard-proto-pcb.md) |

@@ -1,4 +1,4 @@
-# 1193 FreshTwinkie_v0.1_panel
+# 1193. FreshTwinkie_v0.1_panel
 
 Board 1,193 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 12](../CorpusTestingPages/Corpus-Testing-12.md#1193-freshtwinkie_v01_panel).
 
@@ -46,4 +46,4 @@ Board 1,193 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1192 FreshTwinkie](b1192b_PD-sniffer_FreshTwinkie.md) | [1194 kimchi_micro](b1194b_kimchi-micro_kimchi-micro.md) |
+| [1192. FreshTwinkie](b1192b_PD-sniffer_FreshTwinkie.md) | [1194. kimchi_micro](b1194b_kimchi-micro_kimchi-micro.md) |

@@ -1,4 +1,4 @@
-# 68 PC110-no-placement
+# 68. PC110-no-placement
 
 Board 68 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 1](../CorpusTestingPages/Corpus-Testing-01.md#68-pc110-no-placement).
 
@@ -46,4 +46,4 @@ Board 68 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page
 
 | Previous | Next |
 |:---|---:|
-| [67 PC110](b0067b_Open-Source-PC110_Mods-PC110-ITX-all-in-one_PC110.md) | [69 PC110](b0069b_Open-Source-PC110_Mods-PC110-ITX_PC110.md) |
+| [67. PC110](b0067b_Open-Source-PC110_Mods-PC110-ITX-all-in-one_PC110.md) | [69. PC110](b0069b_Open-Source-PC110_Mods-PC110-ITX_PC110.md) |

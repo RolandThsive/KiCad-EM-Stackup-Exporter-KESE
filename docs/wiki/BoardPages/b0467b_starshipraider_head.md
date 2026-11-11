@@ -1,4 +1,4 @@
-# 467 head
+# 467. head
 
 Board 467 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 5](../CorpusTestingPages/Corpus-Testing-05.md#467-head).
 
@@ -45,4 +45,4 @@ Board 467 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [466 compensation](b0466b_starshipraider_compensation.md) | [468 akl-pt1](b0468b_starshipraider_akl-pt1.md) |
+| [466. compensation](b0466b_starshipraider_compensation.md) | [468. akl-pt1](b0468b_starshipraider_akl-pt1.md) |

@@ -1,4 +1,4 @@
-# 2393 frank_pga
+# 2393. frank_pga
 
 Board 2,393 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 23](../CorpusTestingPages/Corpus-Testing-23.md#2393-frank_pga).
 
@@ -45,4 +45,4 @@ Board 2,393 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2392 frank_next](b2392b_frank_frank-next.md) | [2394 hecate](b2394b_frank_hecate.md) |
+| [2392. frank_next](b2392b_frank_frank-next.md) | [2394. hecate](b2394b_frank_hecate.md) |

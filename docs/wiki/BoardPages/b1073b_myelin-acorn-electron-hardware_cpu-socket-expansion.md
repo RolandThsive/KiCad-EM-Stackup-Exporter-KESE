@@ -1,4 +1,4 @@
-# 1073 cpu_socket_expansion
+# 1073. cpu_socket_expansion
 
 Board 1,073 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 10](../CorpusTestingPages/Corpus-Testing-10.md#1073-cpu_socket_expansion).
 
@@ -45,4 +45,4 @@ Board 1,073 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1072 cherry_mx](b1072b_myelin-acorn-electron-hardware_cherry-mx.md) | [1074 cpu_socket_minispartan_daughterboard](b1074b_myelin-acorn-electron-hardware_cpu-socket-minispartan-daughterboard.md) |
+| [1072. cherry_mx](b1072b_myelin-acorn-electron-hardware_cherry-mx.md) | [1074. cpu_socket_minispartan_daughterboard](b1074b_myelin-acorn-electron-hardware_cpu-socket-minispartan-daughterboard.md) |

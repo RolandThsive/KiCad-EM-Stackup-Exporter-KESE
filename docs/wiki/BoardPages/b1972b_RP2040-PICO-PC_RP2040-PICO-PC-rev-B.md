@@ -1,4 +1,4 @@
-# 1972 RP2040-PICO-PC_rev_B
+# 1972. RP2040-PICO-PC_rev_B
 
 Board 1,972 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 19](../CorpusTestingPages/Corpus-Testing-19.md#1972-rp2040-pico-pc_rev_b).
 
@@ -45,4 +45,4 @@ Board 1,972 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1971 RK3328-SOM-EVB_Rev_A](b1971b_RK3328-SOM-EBV_RK3328-SOM-EVB-Rev-A.md) | [1973 RP2040-PICO-PC_rev_C](b1973b_RP2040-PICO-PC_RP2040-PICO-PC-rev-C.md) |
+| [1971. RK3328-SOM-EVB_Rev_A](b1971b_RK3328-SOM-EBV_RK3328-SOM-EVB-Rev-A.md) | [1973. RP2040-PICO-PC_rev_C](b1973b_RP2040-PICO-PC_RP2040-PICO-PC-rev-C.md) |

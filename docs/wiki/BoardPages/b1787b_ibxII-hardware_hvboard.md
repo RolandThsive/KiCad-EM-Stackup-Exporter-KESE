@@ -1,4 +1,4 @@
-# 1787 hvboard
+# 1787. hvboard
 
 Board 1,787 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 17](../CorpusTestingPages/Corpus-Testing-17.md#1787-hvboard).
 
@@ -45,4 +45,4 @@ Board 1,787 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1786 adcboard](b1786b_ibxII-hardware_adcboard.md) | [1788 greybadge_pcb](b1788b_greybadge25_greybadge-pcb.md) |
+| [1786. adcboard](b1786b_ibxII-hardware_adcboard.md) | [1788. greybadge_pcb](b1788b_greybadge25_greybadge-pcb.md) |

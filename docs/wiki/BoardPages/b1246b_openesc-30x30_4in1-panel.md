@@ -1,4 +1,4 @@
-# 1246 4in1-panel
+# 1246. 4in1-panel
 
 Board 1,246 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 12](../CorpusTestingPages/Corpus-Testing-12.md#1246-4in1-panel).
 
@@ -46,4 +46,4 @@ Board 1,246 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1245 vga](b1245b_ccpu_vga.md) | [1247 4in1](b1247b_openesc-30x30_4in1.md) |
+| [1245. vga](b1245b_ccpu_vga.md) | [1247. 4in1](b1247b_openesc-30x30_4in1.md) |

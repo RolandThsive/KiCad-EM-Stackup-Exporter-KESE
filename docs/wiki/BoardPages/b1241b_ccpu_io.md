@@ -1,4 +1,4 @@
-# 1241 io
+# 1241. io
 
 Board 1,241 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 12](../CorpusTestingPages/Corpus-Testing-12.md#1241-io).
 
@@ -45,4 +45,4 @@ Board 1,241 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1240 eth](b1240b_ccpu_eth.md) | [1242 registers](b1242b_ccpu_registers.md) |
+| [1240. eth](b1240b_ccpu_eth.md) | [1242. registers](b1242b_ccpu_registers.md) |

@@ -1,4 +1,4 @@
-# 1767 trenz_hat
+# 1767. trenz_hat
 
 Board 1,767 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 17](../CorpusTestingPages/Corpus-Testing-17.md#1767-trenz_hat).
 
@@ -46,4 +46,4 @@ Board 1,767 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1766 trenz-mounted](b1766b_groundlark_trenz-mounted.md) | [1768 raspberrypi_hat](b1768b_groundlark_raspberrypi-hat.md) |
+| [1766. trenz-mounted](b1766b_groundlark_trenz-mounted.md) | [1768. raspberrypi_hat](b1768b_groundlark_raspberrypi-hat.md) |

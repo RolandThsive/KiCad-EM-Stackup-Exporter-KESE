@@ -1,4 +1,4 @@
-# 3036 mod_usbc
+# 3036. mod_usbc
 
 Board 3,036 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 29](../CorpusTestingPages/Corpus-Testing-29.md#3036-mod_usbc).
 
@@ -45,4 +45,4 @@ Board 3,036 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [3035 mod_usba](b3035b_the-mac-pro-project_mod-usba.md) | [3037 panel_a25](b3037b_the-mac-pro-project_panel-a25.md) |
+| [3035. mod_usba](b3035b_the-mac-pro-project_mod-usba.md) | [3037. panel_a25](b3037b_the-mac-pro-project_panel-a25.md) |

@@ -1,4 +1,4 @@
-# 1604 lakritz
+# 1604. lakritz
 
 Board 1,604 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 15](../CorpusTestingPages/Corpus-Testing-15.md#1604-lakritz).
 
@@ -45,4 +45,4 @@ Board 1,604 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1603 kuchen](b1603b_kuchen_kuchen.md) | [1605 obst](b1605b_obst_obst.md) |
+| [1603. kuchen](b1603b_kuchen_kuchen.md) | [1605. obst](b1605b_obst_obst.md) |

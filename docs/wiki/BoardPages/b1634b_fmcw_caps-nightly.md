@@ -1,4 +1,4 @@
-# 1634 caps_nightly
+# 1634. caps_nightly
 
 Board 1,634 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 16](../CorpusTestingPages/Corpus-Testing-16.md#1634-caps_nightly).
 
@@ -45,4 +45,4 @@ Board 1,634 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1633 caps](b1633b_fmcw_caps.md) | [1635 coupler](b1635b_fmcw_coupler.md) |
+| [1633. caps](b1633b_fmcw_caps.md) | [1635. coupler](b1635b_fmcw_coupler.md) |

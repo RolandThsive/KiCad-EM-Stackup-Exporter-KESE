@@ -1,4 +1,4 @@
-# 2439 Breakout-24pin-superseal
+# 2439. Breakout-24pin-superseal
 
 Board 2,439 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 23](../CorpusTestingPages/Corpus-Testing-23.md#2439-breakout-24pin-superseal).
 
@@ -45,4 +45,4 @@ Board 2,439 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2438 Motor_driver_A4988](b2438b_rusefi-hardware_Motor-driver-A4988.md) | [2440 24pins_In_3conn](b2440b_rusefi-hardware_24pins-In-3conn.md) |
+| [2438. Motor_driver_A4988](b2438b_rusefi-hardware_Motor-driver-A4988.md) | [2440. 24pins_In_3conn](b2440b_rusefi-hardware_24pins-In-3conn.md) |

@@ -1,4 +1,4 @@
-# 2298 PicoGUS
+# 2298. PicoGUS
 
 Board 2,298 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 22](../CorpusTestingPages/Corpus-Testing-22.md#2298-picogus).
 
@@ -45,4 +45,4 @@ Board 2,298 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2297 PicoGUS Hand386](b2297b_picogus_PicoGUS-Hand386.md) | [2299 ISA adapter](b2299b_picogus_ISA-adapter.md) |
+| [2297. PicoGUS Hand386](b2297b_picogus_PicoGUS-Hand386.md) | [2299. ISA adapter](b2299b_picogus_ISA-adapter.md) |

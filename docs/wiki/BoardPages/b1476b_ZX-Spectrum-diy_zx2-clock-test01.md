@@ -1,4 +1,4 @@
-# 1476 zx2_clock_test01
+# 1476. zx2_clock_test01
 
 Board 1,476 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 14](../CorpusTestingPages/Corpus-Testing-14.md#1476-zx2_clock_test01).
 
@@ -45,4 +45,4 @@ Board 1,476 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1475 zx2_clock](b1475b_ZX-Spectrum-diy_zx2-clock.md) | [1477 zx2_cpu](b1477b_ZX-Spectrum-diy_zx2-cpu.md) |
+| [1475. zx2_clock](b1475b_ZX-Spectrum-diy_zx2-clock.md) | [1477. zx2_cpu](b1477b_ZX-Spectrum-diy_zx2-cpu.md) |

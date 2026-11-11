@@ -1,4 +1,4 @@
-# 611 wsg3.0
+# 611. wsg3.0
 
 Board 611 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 6](../CorpusTestingPages/Corpus-Testing-06.md#611-wsg30).
 
@@ -45,4 +45,4 @@ Board 611 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [610 usb_c_daughter](b0610b_bjr-kicad_usb-c-daughter.md) | [612 Magnetometer](b0612b_bjr-kicad_Magnetometer.md) |
+| [610. usb_c_daughter](b0610b_bjr-kicad_usb-c-daughter.md) | [612. Magnetometer](b0612b_bjr-kicad_Magnetometer.md) |

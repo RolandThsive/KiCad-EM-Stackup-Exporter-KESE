@@ -1,4 +1,4 @@
-# 1019 OpenDropV2
+# 1019. OpenDropV2
 
 Board 1,019 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 10](../CorpusTestingPages/Corpus-Testing-10.md#1019-opendropv2).
 
@@ -45,4 +45,4 @@ Board 1,019 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1018 ecp5_mainboard](b1018b_TrellisBoard_ecp5-mainboard.md) | [1020 PCBFrame](b1020b_OpenDrop_PCBFrame.md) |
+| [1018. ecp5_mainboard](b1018b_TrellisBoard_ecp5-mainboard.md) | [1020. PCBFrame](b1020b_OpenDrop_PCBFrame.md) |

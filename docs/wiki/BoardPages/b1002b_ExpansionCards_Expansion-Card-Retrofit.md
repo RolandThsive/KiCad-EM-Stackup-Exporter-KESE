@@ -1,4 +1,4 @@
-# 1002 Expansion_Card_Retrofit
+# 1002. Expansion_Card_Retrofit
 
 Board 1,002 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 10](../CorpusTestingPages/Corpus-Testing-10.md#1002-expansion_card_retrofit).
 
@@ -45,4 +45,4 @@ Board 1,002 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1001 Expansion_Card](b1001b_ExpansionCards_Expansion-Card.md) | [1003 Microcontroller](b1003b_ExpansionCards_Microcontroller.md) |
+| [1001. Expansion_Card](b1001b_ExpansionCards_Expansion-Card.md) | [1003. Microcontroller](b1003b_ExpansionCards_Microcontroller.md) |

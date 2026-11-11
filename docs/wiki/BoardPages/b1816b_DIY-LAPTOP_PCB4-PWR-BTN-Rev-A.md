@@ -1,4 +1,4 @@
-# 1816 PCB4-PWR-BTN_Rev.A
+# 1816. PCB4-PWR-BTN_Rev.A
 
 Board 1,816 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 17](../CorpusTestingPages/Corpus-Testing-17.md#1816-pcb4-pwr-btn_reva).
 
@@ -45,4 +45,4 @@ Board 1,816 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1815 TERES-PCB3-TOUCH-BTN_Rev.A](b1815b_DIY-LAPTOP_TERES-PCB3-TOUCH-BTN-Rev-A.md) | [1817 TERES-PCB5-KEYBOARD_Rev.A](b1817b_DIY-LAPTOP_TERES-PCB5-KEYBOARD-Rev-A.md) |
+| [1815. TERES-PCB3-TOUCH-BTN_Rev.A](b1815b_DIY-LAPTOP_TERES-PCB3-TOUCH-BTN-Rev-A.md) | [1817. TERES-PCB5-KEYBOARD_Rev.A](b1817b_DIY-LAPTOP_TERES-PCB5-KEYBOARD-Rev-A.md) |

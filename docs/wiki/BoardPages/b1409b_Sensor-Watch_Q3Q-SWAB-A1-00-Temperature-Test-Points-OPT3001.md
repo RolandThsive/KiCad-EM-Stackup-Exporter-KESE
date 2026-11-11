@@ -1,4 +1,4 @@
-# 1409 Q3Q-SWAB-A1-00 Temperature + Test Points + OPT3001
+# 1409. Q3Q-SWAB-A1-00 Temperature + Test Points + OPT3001
 
 Board 1,409 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 14](../CorpusTestingPages/Corpus-Testing-14.md#1409-q3q-swab-a1-00-temperature--test-points--opt3001).
 
@@ -45,4 +45,4 @@ Board 1,409 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1408 OSO-SWAB-B1-00 Sensor Watch Accelerometer](b1408b_Sensor-Watch_OSO-SWAB-B1-00-Sensor-Watch-Accelerometer.md) | [1410 2057-ICE40HX4K-TQ144-breakout](b1410b_2057-ICE40HX4K-TQ144-breakout_2057-ICE40HX4K-TQ144-breakout.md) |
+| [1408. OSO-SWAB-B1-00 Sensor Watch Accelerometer](b1408b_Sensor-Watch_OSO-SWAB-B1-00-Sensor-Watch-Accelerometer.md) | [1410. 2057-ICE40HX4K-TQ144-breakout](b1410b_2057-ICE40HX4K-TQ144-breakout_2057-ICE40HX4K-TQ144-breakout.md) |

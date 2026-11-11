@@ -1,4 +1,4 @@
-# 1451 kit-dev-coldfire-xilinx_5213
+# 1451. kit-dev-coldfire-xilinx_5213
 
 Board 1,451 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 14](../CorpusTestingPages/Corpus-Testing-14.md#1451-kit-dev-coldfire-xilinx_5213).
 
@@ -45,4 +45,4 @@ Board 1,451 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1450 interf_u](b1450b_kicad-source-mirror_interf-u.md) | [1452 microwave](b1452b_kicad-source-mirror_microwave.md) |
+| [1450. interf_u](b1450b_kicad-source-mirror_interf-u.md) | [1452. microwave](b1452b_kicad-source-mirror_microwave.md) |

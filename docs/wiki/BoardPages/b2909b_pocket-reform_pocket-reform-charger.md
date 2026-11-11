@@ -1,4 +1,4 @@
-# 2909 pocket-reform-charger
+# 2909. pocket-reform-charger
 
 Board 2,909 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 27](../CorpusTestingPages/Corpus-Testing-27.md#2909-pocket-reform-charger).
 
@@ -45,4 +45,4 @@ Board 2,909 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2908 pref-side-panel-ports](b2908b_pocket-reform_pref-side-panel-ports.md) | [2910 pocket-reform-headphones](b2910b_pocket-reform_pocket-reform-headphones.md) |
+| [2908. pref-side-panel-ports](b2908b_pocket-reform_pref-side-panel-ports.md) | [2910. pocket-reform-headphones](b2910b_pocket-reform_pocket-reform-headphones.md) |

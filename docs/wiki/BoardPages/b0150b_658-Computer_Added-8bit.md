@@ -1,4 +1,4 @@
-# 150 Added 8bit
+# 150. Added 8bit
 
 Board 150 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 2](../CorpusTestingPages/Corpus-Testing-02.md#150-added-8bit).
 
@@ -45,4 +45,4 @@ Board 150 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [149 Blitter Board](b0149b_658-Computer_Blitter-Board.md) | [151 Adder 16bit](b0151b_658-Computer_Adder-16bit.md) |
+| [149. Blitter Board](b0149b_658-Computer_Blitter-Board.md) | [151. Adder 16bit](b0151b_658-Computer_Adder-16bit.md) |

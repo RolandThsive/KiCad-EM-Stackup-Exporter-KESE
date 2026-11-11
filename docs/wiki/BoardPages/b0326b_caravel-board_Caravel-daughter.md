@@ -1,4 +1,4 @@
-# 326 Caravel_daughter
+# 326. Caravel_daughter
 
 Board 326 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 4](../CorpusTestingPages/Corpus-Testing-04.md#326-caravel_daughter).
 
@@ -45,4 +45,4 @@ Board 326 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [325 Caravel_breakout_v2](b0325b_caravel-board_Caravel-breakout-v2.md) | [327 caravel_FTDI_QFN_test_socket](b0327b_caravel-board_caravel-FTDI-QFN-test-socket.md) |
+| [325. Caravel_breakout_v2](b0325b_caravel-board_Caravel-breakout-v2.md) | [327. caravel_FTDI_QFN_test_socket](b0327b_caravel-board_caravel-FTDI-QFN-test-socket.md) |

@@ -1,4 +1,4 @@
-# 1392 d1
+# 1392. d1
 
 Board 1,392 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 13](../CorpusTestingPages/Corpus-Testing-13.md#1392-d1).
 
@@ -44,4 +44,4 @@ Board 1,392 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1391 Open128](b1391b_open128_Open128.md) | [1393 PCB-11](b1393b_doppel-1_PCB-11.md) |
+| [1391. Open128](b1391b_open128_Open128.md) | [1393. PCB-11](b1393b_doppel-1_PCB-11.md) |

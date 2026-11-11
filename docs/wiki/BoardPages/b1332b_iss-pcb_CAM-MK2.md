@@ -1,4 +1,4 @@
-# 1332 CAM-MK2
+# 1332. CAM-MK2
 
 Board 1,332 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 13](../CorpusTestingPages/Corpus-Testing-13.md#1332-cam-mk2).
 
@@ -45,4 +45,4 @@ Board 1,332 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1331 SG_CAM](b1331b_iss-pcb_SG-CAM.md) | [1333 CAM-MK2.1](b1333b_iss-pcb_CAM-MK2-1.md) |
+| [1331. SG_CAM](b1331b_iss-pcb_SG-CAM.md) | [1333. CAM-MK2.1](b1333b_iss-pcb_CAM-MK2-1.md) |

@@ -1,4 +1,4 @@
-# 1008 LX783
+# 1008. LX783
 
 Board 1,008 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 10](../CorpusTestingPages/Corpus-Testing-10.md#1008-lx783).
 
@@ -45,4 +45,4 @@ Board 1,008 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1007 LX782](b1007b_NE-Delta-Schematics_LX782.md) | [1009 vera-module-rev2](b1009b_vera-module_vera-module-rev2.md) |
+| [1007. LX782](b1007b_NE-Delta-Schematics_LX782.md) | [1009. vera-module-rev2](b1009b_vera-module_vera-module-rev2.md) |

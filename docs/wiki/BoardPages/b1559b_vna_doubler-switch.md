@@ -1,4 +1,4 @@
-# 1559 doubler_switch
+# 1559. doubler_switch
 
 Board 1,559 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 15](../CorpusTestingPages/Corpus-Testing-15.md#1559-doubler_switch).
 
@@ -45,4 +45,4 @@ Board 1,559 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1558 demod_module](b1558b_vna_demod-module.md) | [1560 frequency_synth](b1560b_vna_frequency-synth.md) |
+| [1558. demod_module](b1558b_vna_demod-module.md) | [1560. frequency_synth](b1560b_vna_frequency-synth.md) |

@@ -1,4 +1,4 @@
-# 2409 robocup-controller-pcb
+# 2409. robocup-controller-pcb
 
 Board 2,409 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 23](../CorpusTestingPages/Corpus-Testing-23.md#2409-robocup-controller-pcb).
 
@@ -45,4 +45,4 @@ Board 2,409 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2408 motor-module](b2408b_robocup-pcb_motor-module.md) | [2410 control-v4.0](b2410b_robocup-pcb_control-v4-0.md) |
+| [2408. motor-module](b2408b_robocup-pcb_motor-module.md) | [2410. control-v4.0](b2410b_robocup-pcb_control-v4-0.md) |

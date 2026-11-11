@@ -1,4 +1,4 @@
-# 1365 reform2-imx8mplus
+# 1365. reform2-imx8mplus
 
 Board 1,365 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 13](../CorpusTestingPages/Corpus-Testing-13.md#1365-reform2-imx8mplus).
 
@@ -45,4 +45,4 @@ Board 1,365 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1364 reform2-batterypack](b1364b_reform_reform2-batterypack.md) | [1366 reform2-keyboard](b1366b_reform_reform2-keyboard.md) |
+| [1364. reform2-batterypack](b1364b_reform_reform2-batterypack.md) | [1366. reform2-keyboard](b1366b_reform_reform2-keyboard.md) |

@@ -1,4 +1,4 @@
-# 613 MagnetometerLayout
+# 613. MagnetometerLayout
 
 Board 613 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 6](../CorpusTestingPages/Corpus-Testing-06.md#613-magnetometerlayout).
 
@@ -45,4 +45,4 @@ Board 613 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [612 Magnetometer](b0612b_bjr-kicad_Magnetometer.md) | [614 big_hbridge](b0614b_bjr-kicad_big-hbridge.md) |
+| [612. Magnetometer](b0612b_bjr-kicad_Magnetometer.md) | [614. big_hbridge](b0614b_bjr-kicad_big-hbridge.md) |

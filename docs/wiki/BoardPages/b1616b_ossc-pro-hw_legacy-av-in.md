@@ -1,4 +1,4 @@
-# 1616 legacy_av_in
+# 1616. legacy_av_in
 
 Board 1,616 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 15](../CorpusTestingPages/Corpus-Testing-15.md#1616-legacy_av_in).
 
@@ -45,4 +45,4 @@ Board 1,616 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1615 extra_av_out](b1615b_ossc-pro-hw_extra-av-out.md) | [1617 ram_board](b1617b_ossc-pro-hw_ram-board.md) |
+| [1615. extra_av_out](b1615b_ossc-pro-hw_extra-av-out.md) | [1617. ram_board](b1617b_ossc-pro-hw_ram-board.md) |

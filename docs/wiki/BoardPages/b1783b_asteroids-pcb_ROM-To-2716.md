@@ -1,4 +1,4 @@
-# 1783 ROM_To_2716
+# 1783. ROM_To_2716
 
 Board 1,783 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 17](../CorpusTestingPages/Corpus-Testing-17.md#1783-rom_to_2716).
 
@@ -45,4 +45,4 @@ Board 1,783 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1782 Asteroids_PCB](b1782b_asteroids-pcb_Asteroids-PCB.md) | [1784 quantum_arcade_pcb](b1784b_quantum-arcade-pcb_quantum-arcade-pcb.md) |
+| [1782. Asteroids_PCB](b1782b_asteroids-pcb_Asteroids-PCB.md) | [1784. quantum_arcade_pcb](b1784b_quantum-arcade-pcb_quantum-arcade-pcb.md) |

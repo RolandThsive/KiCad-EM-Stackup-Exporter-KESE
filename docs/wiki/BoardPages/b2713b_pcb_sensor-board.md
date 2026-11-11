@@ -1,4 +1,4 @@
-# 2713 sensor-board
+# 2713. sensor-board
 
 Board 2,713 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 26](../CorpusTestingPages/Corpus-Testing-26.md#2713-sensor-board).
 
@@ -45,4 +45,4 @@ Board 2,713 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2712 segment](b2712b_pcb_segment.md) | [2714 strain-gauge-amp-breakout](b2714b_pcb_strain-gauge-amp-breakout.md) |
+| [2712. segment](b2712b_pcb_segment.md) | [2714. strain-gauge-amp-breakout](b2714b_pcb_strain-gauge-amp-breakout.md) |

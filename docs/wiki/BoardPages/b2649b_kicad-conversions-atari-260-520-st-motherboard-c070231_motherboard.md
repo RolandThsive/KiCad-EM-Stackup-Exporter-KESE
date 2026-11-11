@@ -1,4 +1,4 @@
-# 2649 motherboard
+# 2649. motherboard
 
 Board 2,649 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 25](../CorpusTestingPages/Corpus-Testing-25.md#2649-motherboard).
 
@@ -44,4 +44,4 @@ Board 2,649 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2648 cm5-carrier](b2648b_spirit_cm5-carrier.md) | [2650 motherboard](b2650b_kicad-conversions-atari-ste-motherboard-c300780-001_motherboard.md) |
+| [2648. cm5-carrier](b2648b_spirit_cm5-carrier.md) | [2650. motherboard](b2650b_kicad-conversions-atari-ste-motherboard-c300780-001_motherboard.md) |

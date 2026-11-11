@@ -1,4 +1,4 @@
-# 1204 Easyduino_Atmega_Nano
+# 1204. Easyduino_Atmega_Nano
 
 Board 1,204 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 12](../CorpusTestingPages/Corpus-Testing-12.md#1204-easyduino_atmega_nano).
 
@@ -45,4 +45,4 @@ Board 1,204 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1203 ZU64DR_RFSOC_A5](b1203b_zu64dr-rfsoc-kicad_ZU64DR-RFSOC-A5.md) | [1205 Easyduino_Atmega](b1205b_Easyduino_Easyduino-Atmega.md) |
+| [1203. ZU64DR_RFSOC_A5](b1203b_zu64dr-rfsoc-kicad_ZU64DR-RFSOC-A5.md) | [1205. Easyduino_Atmega](b1205b_Easyduino_Easyduino-Atmega.md) |

@@ -1,4 +1,4 @@
-# 258 TTL5V
+# 258. TTL5V
 
 Board 258 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 3](../CorpusTestingPages/Corpus-Testing-03.md#258-ttl5v).
 
@@ -45,4 +45,4 @@ Board 258 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [257 RS232](b0257b_658-Computer_RS232.md) | [259 UART Board](b0259b_658-Computer_UART-Board.md) |
+| [257. RS232](b0257b_658-Computer_RS232.md) | [259. UART Board](b0259b_658-Computer_UART-Board.md) |

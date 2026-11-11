@@ -1,4 +1,4 @@
-# 486 mch2022
+# 486. mch2022
 
 Board 486 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 5](../CorpusTestingPages/Corpus-Testing-05.md#486-mch2022).
 
@@ -45,4 +45,4 @@ Board 486 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [485 tip-holder-base](b0485b_starshipraider_tip-holder-base.md) | [487 Platinum IIe keyboard](b0487b_bit-preserve_Platinum-IIe-keyboard.md) |
+| [485. tip-holder-base](b0485b_starshipraider_tip-holder-base.md) | [487. Platinum IIe keyboard](b0487b_bit-preserve_Platinum-IIe-keyboard.md) |

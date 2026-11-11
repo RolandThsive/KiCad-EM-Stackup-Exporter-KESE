@@ -1,4 +1,4 @@
-# 1788 greybadge_pcb
+# 1788. greybadge_pcb
 
 Board 1,788 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 17](../CorpusTestingPages/Corpus-Testing-17.md#1788-greybadge_pcb).
 
@@ -45,4 +45,4 @@ Board 1,788 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1787 hvboard](b1787b_ibxII-hardware_hvboard.md) | [1789 battery](b1789b_barebones_battery.md) |
+| [1787. hvboard](b1787b_ibxII-hardware_hvboard.md) | [1789. battery](b1789b_barebones_battery.md) |

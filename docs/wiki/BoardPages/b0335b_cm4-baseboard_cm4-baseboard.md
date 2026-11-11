@@ -1,4 +1,4 @@
-# 335 cm4-baseboard
+# 335. cm4-baseboard
 
 Board 335 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 4](../CorpusTestingPages/Corpus-Testing-04.md#335-cm4-baseboard).
 
@@ -44,4 +44,4 @@ Board 335 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [334 caravel_pcb_v4_FTDI_SMD](b0334b_caravel-board_caravel-pcb-v4-FTDI-SMD.md) | [336 cm4-lvds-adapter](b0336b_cm4-baseboard-lvds-adapter_cm4-lvds-adapter.md) |
+| [334. caravel_pcb_v4_FTDI_SMD](b0334b_caravel-board_caravel-pcb-v4-FTDI-SMD.md) | [336. cm4-lvds-adapter](b0336b_cm4-baseboard-lvds-adapter_cm4-lvds-adapter.md) |

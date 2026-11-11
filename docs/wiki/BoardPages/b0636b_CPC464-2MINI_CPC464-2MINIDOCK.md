@@ -1,4 +1,4 @@
-# 636 CPC464-2MINIDOCK
+# 636. CPC464-2MINIDOCK
 
 Board 636 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 6](../CorpusTestingPages/Corpus-Testing-06.md#636-cpc464-2minidock).
 
@@ -45,4 +45,4 @@ Board 636 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [635 CPC464-2MINIDDI](b0635b_CPC464-2MINI_CPC464-2MINIDDI.md) | [637 CPC464-2MINI-EDGE](b0637b_CPC464-2MINI_CPC464-2MINI-EDGE.md) |
+| [635. CPC464-2MINIDDI](b0635b_CPC464-2MINI_CPC464-2MINIDDI.md) | [637. CPC464-2MINI-EDGE](b0637b_CPC464-2MINI_CPC464-2MINI-EDGE.md) |

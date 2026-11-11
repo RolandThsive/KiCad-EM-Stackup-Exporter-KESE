@@ -1,4 +1,4 @@
-# 56 Miniscope-v4-MCU
+# 56. Miniscope-v4-MCU
 
 Board 56 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 1](../CorpusTestingPages/Corpus-Testing-01.md#56-miniscope-v4-mcu).
 
@@ -45,4 +45,4 @@ Board 56 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page
 
 | Previous | Next |
 |:---|---:|
-| [55 MS_v4_ETL_LED_Driver](b0055b_Miniscope-v4_MS-v4-ETL-LED-Driver.md) | [57 Miniscope-v4-PYTHON480](b0057b_Miniscope-v4_Miniscope-v4-PYTHON480.md) |
+| [55. MS_v4_ETL_LED_Driver](b0055b_Miniscope-v4_MS-v4-ETL-LED-Driver.md) | [57. Miniscope-v4-PYTHON480](b0057b_Miniscope-v4_Miniscope-v4-PYTHON480.md) |

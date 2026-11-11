@@ -1,4 +1,4 @@
-# 2854 main_logic
+# 2854. main_logic
 
 Board 2,854 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 27](../CorpusTestingPages/Corpus-Testing-27.md#2854-main_logic).
 
@@ -46,4 +46,4 @@ Board 2,854 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2853 main_control](b2853b_alu_main-control.md) | [2855 gate_and_2in](b2855b_alu_gate-and-2in.md) |
+| [2853. main_control](b2853b_alu_main-control.md) | [2855. gate_and_2in](b2855b_alu_gate-and-2in.md) |

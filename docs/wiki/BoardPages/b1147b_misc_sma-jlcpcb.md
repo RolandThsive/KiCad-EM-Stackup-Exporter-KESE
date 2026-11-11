@@ -1,4 +1,4 @@
-# 1147 sma-jlcpcb
+# 1147. sma-jlcpcb
 
 Board 1,147 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 11](../CorpusTestingPages/Corpus-Testing-11.md#1147-sma-jlcpcb).
 
@@ -45,4 +45,4 @@ Board 1,147 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1146 sky13411](b1146b_misc_sky13411.md) | [1148 trace-width-jlcpcb](b1148b_misc_trace-width-jlcpcb.md) |
+| [1146. sky13411](b1146b_misc_sky13411.md) | [1148. trace-width-jlcpcb](b1148b_misc_trace-width-jlcpcb.md) |

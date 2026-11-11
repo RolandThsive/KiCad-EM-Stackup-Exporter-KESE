@@ -1,4 +1,4 @@
-# 2581 Thermocouple
+# 2581. Thermocouple
 
 Board 2,581 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 24](../CorpusTestingPages/Corpus-Testing-24.md#2581-thermocouple).
 
@@ -45,4 +45,4 @@ Board 2,581 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2580 SPI PT100](b2580b_smoothieboard2_SPI-PT100.md) | [2582 smoothiev2-prime-2660](b2582b_smoothieboard2_smoothiev2-prime-Proto9and10-Kicad5_smoothiev2-prime-2660.md) |
+| [2580. SPI PT100](b2580b_smoothieboard2_SPI-PT100.md) | [2582. smoothiev2-prime-2660](b2582b_smoothieboard2_smoothiev2-prime-Proto9and10-Kicad5_smoothiev2-prime-2660.md) |

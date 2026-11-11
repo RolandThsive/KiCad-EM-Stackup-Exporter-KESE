@@ -1,4 +1,4 @@
-# 1741 LattePandaMu_Motherboard
+# 1741. LattePandaMu_Motherboard
 
 Board 1,741 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 17](../CorpusTestingPages/Corpus-Testing-17.md#1741-lattepandamu_motherboard).
 
@@ -45,4 +45,4 @@ Board 1,741 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1740 keyboard_system](b1740b_vohm_keyboard-system.md) | [1742 NewAudio_System](b1742b_vohm_NewAudio-System.md) |
+| [1740. keyboard_system](b1740b_vohm_keyboard-system.md) | [1742. NewAudio_System](b1742b_vohm_NewAudio-System.md) |

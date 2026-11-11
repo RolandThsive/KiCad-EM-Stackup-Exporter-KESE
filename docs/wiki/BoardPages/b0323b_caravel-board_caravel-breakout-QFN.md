@@ -1,4 +1,4 @@
-# 323 caravel_breakout_QFN
+# 323. caravel_breakout_QFN
 
 Board 323 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 3](../CorpusTestingPages/Corpus-Testing-03.md#323-caravel_breakout_qfn).
 
@@ -45,4 +45,4 @@ Board 323 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [322 audio-latency-tester-board](b0322b_audio-latency-tester-board_audio-latency-tester-board.md) | [324 Caravel_breakout](b0324b_caravel-board_Caravel-breakout.md) |
+| [322. audio-latency-tester-board](b0322b_audio-latency-tester-board_audio-latency-tester-board.md) | [324. Caravel_breakout](b0324b_caravel-board_Caravel-breakout.md) |

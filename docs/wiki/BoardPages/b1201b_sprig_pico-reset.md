@@ -1,4 +1,4 @@
-# 1201 pico-reset
+# 1201. pico-reset
 
 Board 1,201 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 12](../CorpusTestingPages/Corpus-Testing-12.md#1201-pico-reset).
 
@@ -44,4 +44,4 @@ Board 1,201 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1200 sprig_console](b1200b_sprig_hardware-mainboard-PCB-kicad_sprig-console.md) | [1202 sprig_console](b1202b_sprig_sprig-hax-hardware-SprigHaxPCB-kicad_sprig-console.md) |
+| [1200. sprig_console](b1200b_sprig_hardware-mainboard-PCB-kicad_sprig-console.md) | [1202. sprig_console](b1202b_sprig_sprig-hax-hardware-SprigHaxPCB-kicad_sprig-console.md) |

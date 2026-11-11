@@ -1,4 +1,4 @@
-# 1529 launchpad_synthcontrol
+# 1529. launchpad_synthcontrol
 
 Board 1,529 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 15](../CorpusTestingPages/Corpus-Testing-15.md#1529-launchpad_synthcontrol).
 
@@ -45,4 +45,4 @@ Board 1,529 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1528 hyperram_3p3v](b1528b_vna_hyperram-3p3v.md) | [1530 maam_011109](b1530b_vna_maam-011109.md) |
+| [1528. hyperram_3p3v](b1528b_vna_hyperram-3p3v.md) | [1530. maam_011109](b1530b_vna_maam-011109.md) |

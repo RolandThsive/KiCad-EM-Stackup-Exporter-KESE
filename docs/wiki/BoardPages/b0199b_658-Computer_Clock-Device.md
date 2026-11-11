@@ -1,4 +1,4 @@
-# 199 Clock Device
+# 199. Clock Device
 
 Board 199 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 2](../CorpusTestingPages/Corpus-Testing-02.md#199-clock-device).
 
@@ -45,4 +45,4 @@ Board 199 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [198 LCD Display](b0198b_658-Computer_LCD-Display.md) | [200 Clock LTC6903](b0200b_658-Computer_Clock-LTC6903.md) |
+| [198. LCD Display](b0198b_658-Computer_LCD-Display.md) | [200. Clock LTC6903](b0200b_658-Computer_Clock-LTC6903.md) |

@@ -1,4 +1,4 @@
-# 28 GPIO Card
+# 28. GPIO Card
 
 Board 28 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 1](../CorpusTestingPages/Corpus-Testing-01.md#28-gpio-card).
 
@@ -45,4 +45,4 @@ Board 28 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page
 
 | Previous | Next |
 |:---|---:|
-| [27 GPIO Breadboard Helper](b0027b_6502_GPIO-Breadboard-Helper.md) | [29 GPIO Helper](b0029b_6502_GPIO-Helper.md) |
+| [27. GPIO Breadboard Helper](b0027b_6502_GPIO-Breadboard-Helper.md) | [29. GPIO Helper](b0029b_6502_GPIO-Helper.md) |

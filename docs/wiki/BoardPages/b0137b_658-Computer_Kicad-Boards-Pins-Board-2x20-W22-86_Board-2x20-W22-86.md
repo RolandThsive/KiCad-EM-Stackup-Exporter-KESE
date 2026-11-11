@@ -1,4 +1,4 @@
-# 137 Board 2x20 W22.86
+# 137. Board 2x20 W22.86
 
 Board 137 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 2](../CorpusTestingPages/Corpus-Testing-02.md#137-board-2x20-w2286).
 
@@ -46,4 +46,4 @@ Board 137 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [136 Board 2x20 W15.24](b0136b_658-Computer_Kicad-Boards-Pins-Board-2x20-W15-24_Board-2x20-W15-24.md) | [138 Board 2x22 W15.24](b0138b_658-Computer_Kicad-Boards-Pins-Board-2x22-W15-24_Board-2x22-W15-24.md) |
+| [136. Board 2x20 W15.24](b0136b_658-Computer_Kicad-Boards-Pins-Board-2x20-W15-24_Board-2x20-W15-24.md) | [138. Board 2x22 W15.24](b0138b_658-Computer_Kicad-Boards-Pins-Board-2x22-W15-24_Board-2x22-W15-24.md) |

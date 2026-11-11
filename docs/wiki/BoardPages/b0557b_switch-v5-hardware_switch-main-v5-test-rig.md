@@ -1,4 +1,4 @@
-# 557 switch-main-v5-test-rig
+# 557. switch-main-v5-test-rig
 
 Board 557 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 6](../CorpusTestingPages/Corpus-Testing-06.md#557-switch-main-v5-test-rig).
 
@@ -45,4 +45,4 @@ Board 557 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [556 Bela_Gem_Stereo](b0556b_bela-hardware_Bela-Gem-Stereo.md) | [558 switch-main-v5](b0558b_switch-v5-hardware_switch-main-v5.md) |
+| [556. Bela_Gem_Stereo](b0556b_bela-hardware_Bela-Gem-Stereo.md) | [558. switch-main-v5](b0558b_switch-v5-hardware_switch-main-v5.md) |

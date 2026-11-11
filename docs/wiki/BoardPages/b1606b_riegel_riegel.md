@@ -1,4 +1,4 @@
-# 1606 riegel
+# 1606. riegel
 
 Board 1,606 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 15](../CorpusTestingPages/Corpus-Testing-15.md#1606-riegel).
 
@@ -45,4 +45,4 @@ Board 1,606 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1605 obst](b1605b_obst_obst.md) | [1607 schoko](b1607b_schoko_schoko.md) |
+| [1605. obst](b1605b_obst_obst.md) | [1607. schoko](b1607b_schoko_schoko.md) |

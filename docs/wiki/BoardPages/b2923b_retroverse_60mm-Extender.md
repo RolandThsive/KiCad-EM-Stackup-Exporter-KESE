@@ -1,4 +1,4 @@
-# 2923 60mm-Extender
+# 2923. 60mm-Extender
 
 Board 2,923 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 28](../CorpusTestingPages/Corpus-Testing-28.md#2923-60mm-extender).
 
@@ -45,4 +45,4 @@ Board 2,923 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2922 6-Slot-Backplane](b2922b_retroverse_6-Slot-Backplane.md) | [2924 BigBoy-Frontpanel](b2924b_retroverse_BigBoy-Frontpanel.md) |
+| [2922. 6-Slot-Backplane](b2922b_retroverse_6-Slot-Backplane.md) | [2924. BigBoy-Frontpanel](b2924b_retroverse_BigBoy-Frontpanel.md) |

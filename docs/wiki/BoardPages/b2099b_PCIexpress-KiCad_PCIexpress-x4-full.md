@@ -1,4 +1,4 @@
-# 2099 PCIexpress_x4_full
+# 2099. PCIexpress_x4_full
 
 Board 2,099 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 20](../CorpusTestingPages/Corpus-Testing-20.md#2099-pciexpress_x4_full).
 
@@ -45,4 +45,4 @@ Board 2,099 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2098 PCIexpress_x1_low](b2098b_PCIexpress-KiCad_PCIexpress-x1-low.md) | [2100 PCIexpress_x4_half](b2100b_PCIexpress-KiCad_PCIexpress-x4-half.md) |
+| [2098. PCIexpress_x1_low](b2098b_PCIexpress-KiCad_PCIexpress-x1-low.md) | [2100. PCIexpress_x4_half](b2100b_PCIexpress-KiCad_PCIexpress-x4-half.md) |

@@ -1,4 +1,4 @@
-# 2391 frank_core2u
+# 2391. frank_core2u
 
 Board 2,391 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 23](../CorpusTestingPages/Corpus-Testing-23.md#2391-frank_core2u).
 
@@ -45,4 +45,4 @@ Board 2,391 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2390 frank_core2_proto](b2390b_frank_frank-core2-proto.md) | [2392 frank_next](b2392b_frank_frank-next.md) |
+| [2390. frank_core2_proto](b2390b_frank_frank-core2-proto.md) | [2392. frank_next](b2392b_frank_frank-next.md) |

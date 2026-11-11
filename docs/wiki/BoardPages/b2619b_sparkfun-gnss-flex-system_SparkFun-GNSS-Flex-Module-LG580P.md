@@ -1,4 +1,4 @@
-# 2619 SparkFun_GNSS_Flex_Module_LG580P
+# 2619. SparkFun_GNSS_Flex_Module_LG580P
 
 Board 2,619 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 25](../CorpusTestingPages/Corpus-Testing-25.md#2619-sparkfun_gnss_flex_module_lg580p).
 
@@ -45,4 +45,4 @@ Board 2,619 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2618 SparkFun_GNSS_Flex_Module_LG580P_panelized](b2618b_sparkfun-gnss-flex-system_SparkFun-GNSS-Flex-Module-LG580P-panelized.md) | [2620 SparkFun_GNSS_Flex_Module_mosaic-G5_P3_Tilt_panelized](b2620b_sparkfun-gnss-flex-system_SparkFun-GNSS-Flex-Module-mosaic-G5-P3-Tilt-panelized.md) |
+| [2618. SparkFun_GNSS_Flex_Module_LG580P_panelized](b2618b_sparkfun-gnss-flex-system_SparkFun-GNSS-Flex-Module-LG580P-panelized.md) | [2620. SparkFun_GNSS_Flex_Module_mosaic-G5_P3_Tilt_panelized](b2620b_sparkfun-gnss-flex-system_SparkFun-GNSS-Flex-Module-mosaic-G5-P3-Tilt-panelized.md) |

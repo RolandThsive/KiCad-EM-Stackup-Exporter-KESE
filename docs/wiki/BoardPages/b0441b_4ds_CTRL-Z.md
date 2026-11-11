@@ -1,4 +1,4 @@
-# 441 CTRL_Z
+# 441. CTRL_Z
 
 Board 441 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 5](../CorpusTestingPages/Corpus-Testing-05.md#441-ctrl_z).
 
@@ -45,4 +45,4 @@ Board 441 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [440 CTRL_R](b0440b_4ds_CTRL-R.md) | [442 Motherboard](b0442b_4ds_Motherboard.md) |
+| [440. CTRL_R](b0440b_4ds_CTRL-R.md) | [442. Motherboard](b0442b_4ds_Motherboard.md) |

@@ -1,4 +1,4 @@
-# 1448 ecc83-pp
+# 1448. ecc83-pp
 
 Board 1,448 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 14](../CorpusTestingPages/Corpus-Testing-14.md#1448-ecc83-pp).
 
@@ -45,4 +45,4 @@ Board 1,448 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1447 complex_hierarchy](b1447b_kicad-source-mirror_complex-hierarchy.md) | [1449 ecc83-pp_v2](b1449b_kicad-source-mirror_ecc83-pp-v2.md) |
+| [1447. complex_hierarchy](b1447b_kicad-source-mirror_complex-hierarchy.md) | [1449. ecc83-pp_v2](b1449b_kicad-source-mirror_ecc83-pp-v2.md) |

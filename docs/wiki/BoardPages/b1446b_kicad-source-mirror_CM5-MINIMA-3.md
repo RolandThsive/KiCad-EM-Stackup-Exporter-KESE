@@ -1,4 +1,4 @@
-# 1446 CM5_MINIMA_3
+# 1446. CM5_MINIMA_3
 
 Board 1,446 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 14](../CorpusTestingPages/Corpus-Testing-14.md#1446-cm5_minima_3).
 
@@ -45,4 +45,4 @@ Board 1,446 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1445 tobo](b1445b_echomods_tobo.md) | [1447 complex_hierarchy](b1447b_kicad-source-mirror_complex-hierarchy.md) |
+| [1445. tobo](b1445b_echomods_tobo.md) | [1447. complex_hierarchy](b1447b_kicad-source-mirror_complex-hierarchy.md) |

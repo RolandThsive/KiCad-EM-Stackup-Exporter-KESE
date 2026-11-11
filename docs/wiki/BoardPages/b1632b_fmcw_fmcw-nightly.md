@@ -1,4 +1,4 @@
-# 1632 fmcw_nightly
+# 1632. fmcw_nightly
 
 Board 1,632 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 16](../CorpusTestingPages/Corpus-Testing-16.md#1632-fmcw_nightly).
 
@@ -45,4 +45,4 @@ Board 1,632 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1631 fmcw](b1631b_fmcw_hardware-boards-rev2b_fmcw.md) | [1633 caps](b1633b_fmcw_caps.md) |
+| [1631. fmcw](b1631b_fmcw_hardware-boards-rev2b_fmcw.md) | [1633. caps](b1633b_fmcw_caps.md) |

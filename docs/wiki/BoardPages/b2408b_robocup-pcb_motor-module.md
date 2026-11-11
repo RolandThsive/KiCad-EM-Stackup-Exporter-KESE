@@ -1,4 +1,4 @@
-# 2408 motor-module
+# 2408. motor-module
 
 Board 2,408 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 23](../CorpusTestingPages/Corpus-Testing-23.md#2408-motor-module).
 
@@ -46,4 +46,4 @@ Board 2,408 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2407 motortester-v2.0](b2407b_robocup-pcb_motortester-v2-0.md) | [2409 robocup-controller-pcb](b2409b_robocup-pcb_robocup-controller-pcb.md) |
+| [2407. motortester-v2.0](b2407b_robocup-pcb_motortester-v2-0.md) | [2409. robocup-controller-pcb](b2409b_robocup-pcb_robocup-controller-pcb.md) |

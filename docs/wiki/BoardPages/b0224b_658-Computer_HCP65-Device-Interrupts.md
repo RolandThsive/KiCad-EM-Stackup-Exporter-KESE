@@ -1,4 +1,4 @@
-# 224 HCP65 Device Interrupts
+# 224. HCP65 Device Interrupts
 
 Board 224 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 3](../CorpusTestingPages/Corpus-Testing-03.md#224-hcp65-device-interrupts).
 
@@ -45,4 +45,4 @@ Board 224 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [223 HCP65 Board Presence](b0223b_658-Computer_HCP65-Board-Presence.md) | [225 HCP65 Device Reset](b0225b_658-Computer_HCP65-Device-Reset.md) |
+| [223. HCP65 Board Presence](b0223b_658-Computer_HCP65-Board-Presence.md) | [225. HCP65 Device Reset](b0225b_658-Computer_HCP65-Device-Reset.md) |

@@ -1,4 +1,4 @@
-# 1014 RAM2E
+# 1014. RAM2E
 
 Board 1,014 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 10](../CorpusTestingPages/Corpus-Testing-10.md#1014-ram2e).
 
@@ -45,4 +45,4 @@ Board 1,014 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1013 NuBus-ESP32](b1013b_NuBus-ESP32_NuBus-ESP32.md) | [1015 RAM2E](b1015b_RAM2E_Hardware-MAX_RAM2E.md) |
+| [1013. NuBus-ESP32](b1013b_NuBus-ESP32_NuBus-ESP32.md) | [1015. RAM2E](b1015b_RAM2E_Hardware-MAX_RAM2E.md) |

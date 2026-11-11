@@ -1,4 +1,4 @@
-# 791 mackerel-10-ide
+# 791. mackerel-10-ide
 
 Board 791 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 8](../CorpusTestingPages/Corpus-Testing-08.md#791-mackerel-10-ide).
 
@@ -45,4 +45,4 @@ Board 791 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [790 mackerel-10-dram](b0790b_mackerel-68k_mackerel-10-dram.md) | [792 mackerel-10-v1](b0792b_mackerel-68k_hardware-mack-10-proto-mackerel-10-v1_mackerel-10-v1.md) |
+| [790. mackerel-10-dram](b0790b_mackerel-68k_mackerel-10-dram.md) | [792. mackerel-10-v1](b0792b_mackerel-68k_hardware-mack-10-proto-mackerel-10-v1_mackerel-10-v1.md) |

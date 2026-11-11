@@ -1,4 +1,4 @@
-# 1923 MiniBot_RevA
+# 1923. MiniBot_RevA
 
 Board 1,923 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 18](../CorpusTestingPages/Corpus-Testing-18.md#1923-minibot_reva).
 
@@ -45,4 +45,4 @@ Board 1,923 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1922 MiniBot_charger_RevA](b1922b_Minibot_MiniBot-charger-RevA.md) | [1924 MIPI-HDMI_Rev_B](b1924b_MIPI-HDMI_MIPI-HDMI-Rev-B.md) |
+| [1922. MiniBot_charger_RevA](b1922b_Minibot_MiniBot-charger-RevA.md) | [1924. MIPI-HDMI_Rev_B](b1924b_MIPI-HDMI_MIPI-HDMI-Rev-B.md) |

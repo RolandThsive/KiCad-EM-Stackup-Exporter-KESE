@@ -1,4 +1,4 @@
-# 183 Selector 12bit
+# 183. Selector 12bit
 
 Board 183 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 2](../CorpusTestingPages/Corpus-Testing-02.md#183-selector-12bit).
 
@@ -45,4 +45,4 @@ Board 183 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [182 Selector 1-of-4 4bit](b0182b_658-Computer_Selector-1-of-4-4bit.md) | [184 Selector 18bit](b0184b_658-Computer_Selector-18bit.md) |
+| [182. Selector 1-of-4 4bit](b0182b_658-Computer_Selector-1-of-4-4bit.md) | [184. Selector 18bit](b0184b_658-Computer_Selector-18bit.md) |

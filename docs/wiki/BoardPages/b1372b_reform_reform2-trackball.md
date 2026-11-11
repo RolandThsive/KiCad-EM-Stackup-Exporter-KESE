@@ -1,4 +1,4 @@
-# 1372 reform2-trackball
+# 1372. reform2-trackball
 
 Board 1,372 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 13](../CorpusTestingPages/Corpus-Testing-13.md#1372-reform2-trackball).
 
@@ -45,4 +45,4 @@ Board 1,372 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1371 reform2-protected-batterypack-pcb](b1371b_reform_reform2-protected-batterypack-pcb.md) | [1373 reform2-trackball-sensor](b1373b_reform_reform2-trackball-sensor.md) |
+| [1371. reform2-protected-batterypack-pcb](b1371b_reform_reform2-protected-batterypack-pcb.md) | [1373. reform2-trackball-sensor](b1373b_reform_reform2-trackball-sensor.md) |

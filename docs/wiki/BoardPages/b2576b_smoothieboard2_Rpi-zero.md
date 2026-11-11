@@ -1,4 +1,4 @@
-# 2576 Rpi-zero
+# 2576. Rpi-zero
 
 Board 2,576 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 24](../CorpusTestingPages/Corpus-Testing-24.md#2576-rpi-zero).
 
@@ -45,4 +45,4 @@ Board 2,576 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2575 RPi zero with ethernet](b2575b_smoothieboard2_RPi-zero-with-ethernet.md) | [2577 Small Mosfet](b2577b_smoothieboard2_Small-Mosfet.md) |
+| [2575. RPi zero with ethernet](b2575b_smoothieboard2_RPi-zero-with-ethernet.md) | [2577. Small Mosfet](b2577b_smoothieboard2_Small-Mosfet.md) |

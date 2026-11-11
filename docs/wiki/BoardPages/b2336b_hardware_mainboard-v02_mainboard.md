@@ -1,4 +1,4 @@
-# 2336 mainboard
+# 2336. mainboard
 
 Board 2,336 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 22](../CorpusTestingPages/Corpus-Testing-22.md#2336-mainboard).
 
@@ -45,4 +45,4 @@ Board 2,336 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2335 mainboard](b2335b_hardware_mainboard-v01_mainboard.md) | [2337 mainboard](b2337b_hardware_mainboard-v04_mainboard.md) |
+| [2335. mainboard](b2335b_hardware_mainboard-v01_mainboard.md) | [2337. mainboard](b2337b_hardware_mainboard-v04_mainboard.md) |

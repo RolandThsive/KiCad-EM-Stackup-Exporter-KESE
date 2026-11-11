@@ -1,4 +1,4 @@
-# 955 12_keyboard_daughterboard
+# 955. 12_keyboard_daughterboard
 
 Board 955 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 9](../CorpusTestingPages/Corpus-Testing-09.md#955-12_keyboard_daughterboard).
 
@@ -45,4 +45,4 @@ Board 955 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [954 ducktop2-center](b0954b_ducktop2_ducktop2-center.md) | [956 left_io](b0956b_ducktop2_left-io.md) |
+| [954. ducktop2-center](b0954b_ducktop2_ducktop2-center.md) | [956. left_io](b0956b_ducktop2_left-io.md) |

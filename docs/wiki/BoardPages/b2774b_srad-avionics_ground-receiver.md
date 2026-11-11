@@ -1,4 +1,4 @@
-# 2774 ground-receiver
+# 2774. ground-receiver
 
 Board 2,774 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 26](../CorpusTestingPages/Corpus-Testing-26.md#2774-ground-receiver).
 
@@ -45,4 +45,4 @@ Board 2,774 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2773 Ground Reciever](b2773b_srad-avionics_Ground-Reciever.md) | [2775 high-power-module](b2775b_srad-avionics_high-power-module.md) |
+| [2773. Ground Reciever](b2773b_srad-avionics_Ground-Reciever.md) | [2775. high-power-module](b2775b_srad-avionics_high-power-module.md) |

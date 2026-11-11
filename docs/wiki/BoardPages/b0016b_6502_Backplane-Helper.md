@@ -1,4 +1,4 @@
-# 16 Backplane Helper
+# 16. Backplane Helper
 
 Board 16 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 1](../CorpusTestingPages/Corpus-Testing-01.md#16-backplane-helper).
 
@@ -45,4 +45,4 @@ Board 16 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page
 
 | Previous | Next |
 |:---|---:|
-| [15 A4k-Replica-Acill](b0015b_A4000RevB_A4k-Replica-Acill.md) | [17 Backplane Pro](b0017b_6502_Hardware-Backplane-Pro-Rev-1-0_Backplane-Pro.md) |
+| [15. A4k-Replica-Acill](b0015b_A4000RevB_A4k-Replica-Acill.md) | [17. Backplane Pro](b0017b_6502_Hardware-Backplane-Pro-Rev-1-0_Backplane-Pro.md) |

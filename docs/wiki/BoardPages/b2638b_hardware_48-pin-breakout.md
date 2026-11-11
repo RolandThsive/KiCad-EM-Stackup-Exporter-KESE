@@ -1,4 +1,4 @@
-# 2638 48-pin breakout
+# 2638. 48-pin breakout
 
 Board 2,638 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 25](../CorpusTestingPages/Corpus-Testing-25.md#2638-48-pin-breakout).
 
@@ -45,4 +45,4 @@ Board 2,638 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2637 DropBear](b2637b_hardware_DropBear-V2_DropBear.md) | [2639 NA6 v1.3](b2639b_hardware_NA6-v1-3.md) |
+| [2637. DropBear](b2637b_hardware_DropBear-V2_DropBear.md) | [2639. NA6 v1.3](b2639b_hardware_NA6-v1-3.md) |

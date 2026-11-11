@@ -1,4 +1,4 @@
-# 2797 Apple2Card
+# 2797. Apple2Card
 
 Board 2,797 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 26](../CorpusTestingPages/Corpus-Testing-26.md#2797-apple2card).
 
@@ -45,4 +45,4 @@ Board 2,797 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2796 nqvme_template](b2796b_pg68k_nqvme-template.md) | [2798 Apple2Card](b2798b_Apple2Card_Apple2Card-x44_Apple2Card.md) |
+| [2796. nqvme_template](b2796b_pg68k_nqvme-template.md) | [2798. Apple2Card](b2798b_Apple2Card_Apple2Card-x44_Apple2Card.md) |

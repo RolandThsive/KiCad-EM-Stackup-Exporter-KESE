@@ -1,4 +1,4 @@
-# 225 HCP65 Device Reset
+# 225. HCP65 Device Reset
 
 Board 225 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 3](../CorpusTestingPages/Corpus-Testing-03.md#225-hcp65-device-reset).
 
@@ -45,4 +45,4 @@ Board 225 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [224 HCP65 Device Interrupts](b0224b_658-Computer_HCP65-Device-Interrupts.md) | [226 HCP65 Hold Count](b0226b_658-Computer_HCP65-Hold-Count.md) |
+| [224. HCP65 Device Interrupts](b0224b_658-Computer_HCP65-Device-Interrupts.md) | [226. HCP65 Hold Count](b0226b_658-Computer_HCP65-Hold-Count.md) |

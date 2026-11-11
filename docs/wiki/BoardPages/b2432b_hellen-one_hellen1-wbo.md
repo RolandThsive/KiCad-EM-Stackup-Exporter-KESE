@@ -1,4 +1,4 @@
-# 2432 hellen1-wbo
+# 2432. hellen1-wbo
 
 Board 2,432 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 23](../CorpusTestingPages/Corpus-Testing-23.md#2432-hellen1-wbo).
 
@@ -45,4 +45,4 @@ Board 2,432 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2431 hellen1-vr-max9924](b2431b_hellen-one_hellen1-vr-max9924.md) | [2433 output.Panel_R0.5.1_300x300_2layer_step1](b2433b_hw-microrusefi_output-Panel-R0-5-1-300x300-2layer-step1.md) |
+| [2431. hellen1-vr-max9924](b2431b_hellen-one_hellen1-vr-max9924.md) | [2433. output.Panel_R0.5.1_300x300_2layer_step1](b2433b_hw-microrusefi_output-Panel-R0-5-1-300x300-2layer-step1.md) |

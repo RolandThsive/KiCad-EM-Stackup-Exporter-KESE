@@ -1,4 +1,4 @@
-# 342 dc-scm-breakout-board
+# 342. dc-scm-breakout-board
 
 Board 342 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 4](../CorpusTestingPages/Corpus-Testing-04.md#342-dc-scm-breakout-board).
 
@@ -44,4 +44,4 @@ Board 342 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [341 dc-sci-debug-interposer](b0341b_dc-sci-debug-interposer_dc-sci-debug-interposer.md) | [343 bmc-reference-carrier-board](b0343b_dc-scm-osm-l-carrier-card_bmc-reference-carrier-board.md) |
+| [341. dc-sci-debug-interposer](b0341b_dc-sci-debug-interposer_dc-sci-debug-interposer.md) | [343. bmc-reference-carrier-board](b0343b_dc-scm-osm-l-carrier-card_bmc-reference-carrier-board.md) |

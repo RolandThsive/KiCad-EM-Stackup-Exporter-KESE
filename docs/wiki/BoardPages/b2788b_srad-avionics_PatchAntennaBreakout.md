@@ -1,4 +1,4 @@
-# 2788 PatchAntennaBreakout
+# 2788. PatchAntennaBreakout
 
 Board 2,788 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 26](../CorpusTestingPages/Corpus-Testing-26.md#2788-patchantennabreakout).
 
@@ -45,4 +45,4 @@ Board 2,788 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2787 high-range-IMU](b2787b_srad-avionics_high-range-IMU.md) | [2789 SensorBoardNoMCU](b2789b_srad-avionics_Spaceport-PCBs-Sensor-Boards-SensorBoardAirbrake_SensorBoardNoMCU.md) |
+| [2787. high-range-IMU](b2787b_srad-avionics_high-range-IMU.md) | [2789. SensorBoardNoMCU](b2789b_srad-avionics_Spaceport-PCBs-Sensor-Boards-SensorBoardAirbrake_SensorBoardNoMCU.md) |

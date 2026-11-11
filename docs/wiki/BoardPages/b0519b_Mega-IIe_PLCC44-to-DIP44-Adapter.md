@@ -1,4 +1,4 @@
-# 519 PLCC44 to DIP44 Adapter
+# 519. PLCC44 to DIP44 Adapter
 
 Board 519 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 5](../CorpusTestingPages/Corpus-Testing-05.md#519-plcc44-to-dip44-adapter).
 
@@ -45,4 +45,4 @@ Board 519 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [518 gd rev2 backplane](b0518b_Mega-IIe_gd-rev2-backplane.md) | [520 gd 6502 proto pcb](b0520b_Mega-IIe_kicad-files-rev1-gd-6502-proto-pcb_gd-6502-proto-pcb.md) |
+| [518. gd rev2 backplane](b0518b_Mega-IIe_gd-rev2-backplane.md) | [520. gd 6502 proto pcb](b0520b_Mega-IIe_kicad-files-rev1-gd-6502-proto-pcb_gd-6502-proto-pcb.md) |

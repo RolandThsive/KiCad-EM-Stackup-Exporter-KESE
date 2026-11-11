@@ -1,4 +1,4 @@
-# 2065 sensing_carrier
+# 2065. sensing_carrier
 
 Board 2,065 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 20](../CorpusTestingPages/Corpus-Testing-20.md#2065-sensing_carrier).
 
@@ -45,4 +45,4 @@ Board 2,065 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2064 thermistors](b2064b_olin-electric-motorsports_thermistors.md) | [2066 sensing_controller](b2066b_olin-electric-motorsports_sensing-controller.md) |
+| [2064. thermistors](b2064b_olin-electric-motorsports_thermistors.md) | [2066. sensing_controller](b2066b_olin-electric-motorsports_sensing-controller.md) |

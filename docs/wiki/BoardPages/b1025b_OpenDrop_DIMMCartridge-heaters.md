@@ -1,4 +1,4 @@
-# 1025 DIMMCartridge_heaters
+# 1025. DIMMCartridge_heaters
 
 Board 1,025 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 10](../CorpusTestingPages/Corpus-Testing-10.md#1025-dimmcartridge_heaters).
 
@@ -45,4 +45,4 @@ Board 1,025 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1024 DIMMTop](b1024b_OpenDrop_DIMMTop.md) | [1026 ModulAdapterBasic](b1026b_OpenDrop_ModulAdapterBasic.md) |
+| [1024. DIMMTop](b1024b_OpenDrop_DIMMTop.md) | [1026. ModulAdapterBasic](b1026b_OpenDrop_ModulAdapterBasic.md) |

@@ -1,4 +1,4 @@
-# 2908 pref-side-panel-ports
+# 2908. pref-side-panel-ports
 
 Board 2,908 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 27](../CorpusTestingPages/Corpus-Testing-27.md#2908-pref-side-panel-ports).
 
@@ -45,4 +45,4 @@ Board 2,908 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2907 pref-side-panel-ports-d8](b2907b_pocket-reform_pref-side-panel-ports-d8.md) | [2909 pocket-reform-charger](b2909b_pocket-reform_pocket-reform-charger.md) |
+| [2907. pref-side-panel-ports-d8](b2907b_pocket-reform_pref-side-panel-ports-d8.md) | [2909. pocket-reform-charger](b2909b_pocket-reform_pocket-reform-charger.md) |

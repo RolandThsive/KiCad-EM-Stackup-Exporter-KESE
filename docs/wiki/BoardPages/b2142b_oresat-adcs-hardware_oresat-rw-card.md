@@ -1,4 +1,4 @@
-# 2142 oresat-rw-card
+# 2142. oresat-rw-card
 
 Board 2,142 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 20](../CorpusTestingPages/Corpus-Testing-20.md#2142-oresat-rw-card).
 
@@ -45,4 +45,4 @@ Board 2,142 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2141 power-stage](b2141b_oresat-adcs-hardware_power-stage.md) | [2143 oresat-backplane-1u](b2143b_oresat-backplane_oresat-backplane-1u.md) |
+| [2141. power-stage](b2141b_oresat-adcs-hardware_power-stage.md) | [2143. oresat-backplane-1u](b2143b_oresat-backplane_oresat-backplane-1u.md) |

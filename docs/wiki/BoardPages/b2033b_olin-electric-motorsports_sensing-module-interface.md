@@ -1,4 +1,4 @@
-# 2033 sensing_module_interface
+# 2033. sensing_module_interface
 
 Board 2,033 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 19](../CorpusTestingPages/Corpus-Testing-19.md#2033-sensing_module_interface).
 
@@ -45,4 +45,4 @@ Board 2,033 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2032 accelerometer](b2032b_olin-electric-motorsports_accelerometer.md) | [2034 sensing_controller1](b2034b_olin-electric-motorsports_sensing-controller1.md) |
+| [2032. accelerometer](b2032b_olin-electric-motorsports_accelerometer.md) | [2034. sensing_controller1](b2034b_olin-electric-motorsports_sensing-controller1.md) |

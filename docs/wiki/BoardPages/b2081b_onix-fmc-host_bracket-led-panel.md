@@ -1,4 +1,4 @@
-# 2081 bracket-led-panel
+# 2081. bracket-led-panel
 
 Board 2,081 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 20](../CorpusTestingPages/Corpus-Testing-20.md#2081-bracket-led-panel).
 
@@ -46,4 +46,4 @@ Board 2,081 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2080 bracket-led-panel-tight](b2080b_onix-fmc-host_bracket-led-panel-tight.md) | [2082 bracket-led](b2082b_onix-fmc-host_bracket-led-source_bracket-led.md) |
+| [2080. bracket-led-panel-tight](b2080b_onix-fmc-host_bracket-led-panel-tight.md) | [2082. bracket-led](b2082b_onix-fmc-host_bracket-led-source_bracket-led.md) |

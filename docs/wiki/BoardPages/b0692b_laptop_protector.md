@@ -1,4 +1,4 @@
-# 692 protector
+# 692. protector
 
 Board 692 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 7](../CorpusTestingPages/Corpus-Testing-07.md#692-protector).
 
@@ -45,4 +45,4 @@ Board 692 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [691 keyboard](b0691b_laptop_keyboard.md) | [693 display_eval](b0693b_laptop_display-eval.md) |
+| [691. keyboard](b0691b_laptop_keyboard.md) | [693. display_eval](b0693b_laptop_display-eval.md) |

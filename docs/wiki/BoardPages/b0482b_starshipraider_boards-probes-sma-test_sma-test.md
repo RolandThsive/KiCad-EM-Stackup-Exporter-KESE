@@ -1,4 +1,4 @@
-# 482 sma-test
+# 482. sma-test
 
 Board 482 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 5](../CorpusTestingPages/Corpus-Testing-05.md#482-sma-test).
 
@@ -45,4 +45,4 @@ Board 482 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [481 resistor-characterization](b0481b_starshipraider_resistor-characterization.md) | [483 smpm-test](b0483b_starshipraider_smpm-test.md) |
+| [481. resistor-characterization](b0481b_starshipraider_resistor-characterization.md) | [483. smpm-test](b0483b_starshipraider_smpm-test.md) |

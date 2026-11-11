@@ -1,4 +1,4 @@
-# 2782 new-pa-test-board
+# 2782. new-pa-test-board
 
 Board 2,782 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 26](../CorpusTestingPages/Corpus-Testing-26.md#2782-new-pa-test-board).
 
@@ -45,4 +45,4 @@ Board 2,782 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2781 mcu-board](b2781b_srad-avionics_mcu-board.md) | [2783 pa-test-board](b2783b_srad-avionics_pa-test-board.md) |
+| [2781. mcu-board](b2781b_srad-avionics_mcu-board.md) | [2783. pa-test-board](b2783b_srad-avionics_pa-test-board.md) |

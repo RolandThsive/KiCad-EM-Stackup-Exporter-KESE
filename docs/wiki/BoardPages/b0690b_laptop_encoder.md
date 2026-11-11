@@ -1,4 +1,4 @@
-# 690 encoder
+# 690. encoder
 
 Board 690 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 7](../CorpusTestingPages/Corpus-Testing-07.md#690-encoder).
 
@@ -45,4 +45,4 @@ Board 690 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [689 audio](b0689b_laptop_audio.md) | [691 keyboard](b0691b_laptop_keyboard.md) |
+| [689. audio](b0689b_laptop_audio.md) | [691. keyboard](b0691b_laptop_keyboard.md) |

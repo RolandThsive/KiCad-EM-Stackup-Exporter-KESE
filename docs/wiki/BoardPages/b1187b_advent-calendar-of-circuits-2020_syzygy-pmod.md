@@ -1,4 +1,4 @@
-# 1187 syzygy-pmod
+# 1187. syzygy-pmod
 
 Board 1,187 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 11](../CorpusTestingPages/Corpus-Testing-11.md#1187-syzygy-pmod).
 
@@ -45,4 +45,4 @@ Board 1,187 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1186 syzygy-flir-tau2](b1186b_advent-calendar-of-circuits-2020_syzygy-flir-tau2.md) | [1188 syzygy-rgb888-lcd](b1188b_advent-calendar-of-circuits-2020_syzygy-rgb888-lcd.md) |
+| [1186. syzygy-flir-tau2](b1186b_advent-calendar-of-circuits-2020_syzygy-flir-tau2.md) | [1188. syzygy-rgb888-lcd](b1188b_advent-calendar-of-circuits-2020_syzygy-rgb888-lcd.md) |

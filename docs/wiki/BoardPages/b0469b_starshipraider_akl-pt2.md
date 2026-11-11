@@ -1,4 +1,4 @@
-# 469 akl-pt2
+# 469. akl-pt2
 
 Board 469 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 5](../CorpusTestingPages/Corpus-Testing-05.md#469-akl-pt2).
 
@@ -45,4 +45,4 @@ Board 469 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [468 akl-pt1](b0468b_starshipraider_akl-pt1.md) | [470 akl-pt3](b0470b_starshipraider_akl-pt3.md) |
+| [468. akl-pt1](b0468b_starshipraider_akl-pt1.md) | [470. akl-pt3](b0470b_starshipraider_akl-pt3.md) |

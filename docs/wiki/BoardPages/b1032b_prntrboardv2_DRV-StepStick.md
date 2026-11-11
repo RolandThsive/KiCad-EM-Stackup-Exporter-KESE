@@ -1,4 +1,4 @@
-# 1032 DRV-StepStick
+# 1032. DRV-StepStick
 
 Board 1,032 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 10](../CorpusTestingPages/Corpus-Testing-10.md#1032-drv-stepstick).
 
@@ -45,4 +45,4 @@ Board 1,032 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1031 gd rp2040 keyboard proto pcb](b1031b_Golden-Delicious_gd-rp2040-keyboard-proto-pcb.md) | [1033 LcdFlip](b1033b_prntrboardv2_LcdFlip.md) |
+| [1031. gd rp2040 keyboard proto pcb](b1031b_Golden-Delicious_gd-rp2040-keyboard-proto-pcb.md) | [1033. LcdFlip](b1033b_prntrboardv2_LcdFlip.md) |

@@ -1,4 +1,4 @@
-# 1528 hyperram_3p3v
+# 1528. hyperram_3p3v
 
 Board 1,528 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 15](../CorpusTestingPages/Corpus-Testing-15.md#1528-hyperram_3p3v).
 
@@ -45,4 +45,4 @@ Board 1,528 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1527 trl_thru](b1527b_vna_breakouts-hmc576-breakout_trl-thru.md) | [1529 launchpad_synthcontrol](b1529b_vna_launchpad-synthcontrol.md) |
+| [1527. trl_thru](b1527b_vna_breakouts-hmc576-breakout_trl-thru.md) | [1529. launchpad_synthcontrol](b1529b_vna_launchpad-synthcontrol.md) |

@@ -1,4 +1,4 @@
-# 1490 lhc-esp
+# 1490. lhc-esp
 
 Board 1,490 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 14](../CorpusTestingPages/Corpus-Testing-14.md#1490-lhc-esp).
 
@@ -45,4 +45,4 @@ Board 1,490 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1489 placas-kicad](b1489b_hardware_placas-kicad.md) | [1491 BPS-Minion](b1491b_bps-voltagepcb_BPS-Minion.md) |
+| [1489. placas-kicad](b1489b_hardware_placas-kicad.md) | [1491. BPS-Minion](b1491b_bps-voltagepcb_BPS-Minion.md) |

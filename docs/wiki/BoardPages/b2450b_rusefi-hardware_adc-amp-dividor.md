@@ -1,4 +1,4 @@
-# 2450 adc_amp_dividor
+# 2450. adc_amp_dividor
 
 Board 2,450 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 23](../CorpusTestingPages/Corpus-Testing-23.md#2450-adc_amp_dividor).
 
@@ -45,4 +45,4 @@ Board 2,450 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2449 adc_amp_divider](b2449b_rusefi-hardware_classic-designs-adc-amp-divider_adc-amp-divider.md) | [2451 adc_amp_divider](b2451b_rusefi-hardware_classic-designs-adc-amp-divider-history-rev00-20_adc-amp-divider.md) |
+| [2449. adc_amp_divider](b2449b_rusefi-hardware_classic-designs-adc-amp-divider_adc-amp-divider.md) | [2451. adc_amp_divider](b2451b_rusefi-hardware_classic-designs-adc-amp-divider-history-rev00-20_adc-amp-divider.md) |

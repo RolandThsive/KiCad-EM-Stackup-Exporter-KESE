@@ -1,4 +1,4 @@
-# 677 Debug_Adapter
+# 677. Debug_Adapter
 
 Board 677 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 7](../CorpusTestingPages/Corpus-Testing-07.md#677-debug_adapter).
 
@@ -45,4 +45,4 @@ Board 677 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [676 TRS80IUS](b0676b_TRS80IUS_TRS80IUS.md) | [678 H616_devboard](b0678b_h616-board_Hardware-H616-DDR3_H616-devboard.md) |
+| [676. TRS80IUS](b0676b_TRS80IUS_TRS80IUS.md) | [678. H616_devboard](b0678b_h616-board_Hardware-H616-DDR3_H616-devboard.md) |

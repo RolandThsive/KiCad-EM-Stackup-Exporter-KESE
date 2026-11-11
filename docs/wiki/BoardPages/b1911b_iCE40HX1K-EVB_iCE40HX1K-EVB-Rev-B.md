@@ -1,4 +1,4 @@
-# 1911 iCE40HX1K-EVB_Rev_B
+# 1911. iCE40HX1K-EVB_Rev_B
 
 Board 1,911 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 18](../CorpusTestingPages/Corpus-Testing-18.md#1911-ice40hx1k-evb_rev_b).
 
@@ -44,4 +44,4 @@ Board 1,911 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1910 ICE40-1KEVB_Rev_A](b1910b_iCE40HX1K-EVB_ICE40-1KEVB-Rev-A.md) | [1912 iCE40HX8K-EVB_Rev_B](b1912b_iCE40HX8K-EVB_iCE40HX8K-EVB-Rev-B.md) |
+| [1910. ICE40-1KEVB_Rev_A](b1910b_iCE40HX1K-EVB_ICE40-1KEVB-Rev-A.md) | [1912. iCE40HX8K-EVB_Rev_B](b1912b_iCE40HX8K-EVB_iCE40HX8K-EVB-Rev-B.md) |

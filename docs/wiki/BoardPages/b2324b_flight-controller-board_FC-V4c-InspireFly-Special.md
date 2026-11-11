@@ -1,4 +1,4 @@
-# 2324 FC_V4c_InspireFly_Special
+# 2324. FC_V4c_InspireFly_Special
 
 Board 2,324 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 22](../CorpusTestingPages/Corpus-Testing-22.md#2324-fc_v4c_inspirefly_special).
 
@@ -45,4 +45,4 @@ Board 2,324 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2323 FC_V5d_Pro_Rev1](b2323b_flight-controller-board_FC-V5d-Pro-Rev1.md) | [2325 FC_V5b](b2325b_flight-controller-board_FC-V5b.md) |
+| [2323. FC_V5d_Pro_Rev1](b2323b_flight-controller-board_FC-V5d-Pro-Rev1.md) | [2325. FC_V5b](b2325b_flight-controller-board_FC-V5b.md) |

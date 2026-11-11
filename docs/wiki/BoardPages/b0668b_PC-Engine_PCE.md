@@ -1,4 +1,4 @@
-# 668 PCE
+# 668. PCE
 
 Board 668 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 7](../CorpusTestingPages/Corpus-Testing-07.md#668-pce).
 
@@ -44,4 +44,4 @@ Board 668 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [667 Oric](b0667b_Oric-Remix_Kicad_Oric.md) | [669 PCE](b0669b_PC-Engine-Duo_PCE.md) |
+| [667. Oric](b0667b_Oric-Remix_Kicad_Oric.md) | [669. PCE](b0669b_PC-Engine-Duo_PCE.md) |

@@ -1,4 +1,4 @@
-# 1794 A20-CAN_Rev_A
+# 1794. A20-CAN_Rev_A
 
 Board 1,794 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 17](../CorpusTestingPages/Corpus-Testing-17.md#1794-a20-can_rev_a).
 
@@ -44,4 +44,4 @@ Board 1,794 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1793 m3](b1793b_rocket-flight-computer_reference-m3-assy-r1_m3.md) | [1795 A20-CAN-ISO_Rev_B](b1795b_A20-CAN-ISO_A20-CAN-ISO-Rev-B.md) |
+| [1793. m3](b1793b_rocket-flight-computer_reference-m3-assy-r1_m3.md) | [1795. A20-CAN-ISO_Rev_B](b1795b_A20-CAN-ISO_A20-CAN-ISO-Rev-B.md) |

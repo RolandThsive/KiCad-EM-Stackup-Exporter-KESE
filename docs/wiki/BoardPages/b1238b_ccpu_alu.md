@@ -1,4 +1,4 @@
-# 1238 alu
+# 1238. alu
 
 Board 1,238 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 12](../CorpusTestingPages/Corpus-Testing-12.md#1238-alu).
 
@@ -45,4 +45,4 @@ Board 1,238 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1237 tomu](b1237b_tomu-hardware_releases-v0-3-gerber_tomu.md) | [1239 control](b1239b_ccpu_control.md) |
+| [1237. tomu](b1237b_tomu-hardware_releases-v0-3-gerber_tomu.md) | [1239. control](b1239b_ccpu_control.md) |

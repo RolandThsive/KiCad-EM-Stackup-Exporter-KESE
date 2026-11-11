@@ -1,4 +1,4 @@
-# 1307 Left_2M2_Vertical
+# 1307. Left_2M2_Vertical
 
 Board 1,307 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 13](../CorpusTestingPages/Corpus-Testing-13.md#1307-left_2m2_vertical).
 
@@ -45,4 +45,4 @@ Board 1,307 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1306 Assembly_View](b1306b_pcie-switch-2_outputs-PCIe-3board-RevJ-Assembly-View_Assembly-View.md) | [1308 Main_10E1S](b1308b_pcie-switch-2_outputs-PCIe-3board-RevJ-Main-10E1S_Main-10E1S.md) |
+| [1306. Assembly_View](b1306b_pcie-switch-2_outputs-PCIe-3board-RevJ-Assembly-View_Assembly-View.md) | [1308. Main_10E1S](b1308b_pcie-switch-2_outputs-PCIe-3board-RevJ-Main-10E1S_Main-10E1S.md) |

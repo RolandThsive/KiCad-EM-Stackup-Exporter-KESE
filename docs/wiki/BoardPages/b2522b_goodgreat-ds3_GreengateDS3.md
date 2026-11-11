@@ -1,4 +1,4 @@
-# 2522 GreengateDS3
+# 2522. GreengateDS3
 
 Board 2,522 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 24](../CorpusTestingPages/Corpus-Testing-24.md#2522-greengateds3).
 
@@ -44,4 +44,4 @@ Board 2,522 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2521 rpi-rm0](b2521b_cm5-reveng_rpi-rm0.md) | [2523 isavideo](b2523b_graphics-gremlin_isavideo.md) |
+| [2521. rpi-rm0](b2521b_cm5-reveng_rpi-rm0.md) | [2523. isavideo](b2523b_graphics-gremlin_isavideo.md) |

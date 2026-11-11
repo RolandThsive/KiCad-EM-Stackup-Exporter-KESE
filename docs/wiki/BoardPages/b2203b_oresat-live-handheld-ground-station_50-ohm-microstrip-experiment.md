@@ -1,4 +1,4 @@
-# 2203 50_ohm_microstrip_experiment
+# 2203. 50_ohm_microstrip_experiment
 
 Board 2,203 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 21](../CorpusTestingPages/Corpus-Testing-21.md#2203-50_ohm_microstrip_experiment).
 
@@ -45,4 +45,4 @@ Board 2,203 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2202 amp-PA-TQP7M9105-with-detect](b2202b_oresat-kicad_amp-PA-TQP7M9105-with-detect.md) | [2204 HGS_antenna_tester](b2204b_oresat-live-handheld-ground-station_HGS-antenna-tester.md) |
+| [2202. amp-PA-TQP7M9105-with-detect](b2202b_oresat-kicad_amp-PA-TQP7M9105-with-detect.md) | [2204. HGS_antenna_tester](b2204b_oresat-live-handheld-ground-station_HGS-antenna-tester.md) |

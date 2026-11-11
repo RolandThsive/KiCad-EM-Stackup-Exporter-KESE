@@ -1,4 +1,4 @@
-# 1156 toorcamp2018jig
+# 1156. toorcamp2018jig
 
 Board 1,156 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 11](../CorpusTestingPages/Corpus-Testing-11.md#1156-toorcamp2018jig).
 
@@ -45,4 +45,4 @@ Board 1,156 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1155 toorcamp2018badge](b1155b_toorcamp2018badge_toorcamp2018badge.md) | [1157 sasserides](b1157b_tycho_sasserides.md) |
+| [1155. toorcamp2018badge](b1155b_toorcamp2018badge_toorcamp2018badge.md) | [1157. sasserides](b1157b_tycho_sasserides.md) |

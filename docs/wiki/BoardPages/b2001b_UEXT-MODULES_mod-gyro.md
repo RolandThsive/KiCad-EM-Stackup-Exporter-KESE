@@ -1,4 +1,4 @@
-# 2001 mod-gyro
+# 2001. mod-gyro
 
 Board 2,001 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 19](../CorpusTestingPages/Corpus-Testing-19.md#2001-mod-gyro).
 
@@ -45,4 +45,4 @@ Board 2,001 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2000 UEXT-LVL-SHIFT_Rev_A](b2000b_UEXT-LVL-SHIFT_UEXT-LVL-SHIFT-Rev-A.md) | [2002 mod-oled-128x64](b2002b_UEXT-MODULES_mod-oled-128x64.md) |
+| [2000. UEXT-LVL-SHIFT_Rev_A](b2000b_UEXT-LVL-SHIFT_UEXT-LVL-SHIFT-Rev-A.md) | [2002. mod-oled-128x64](b2002b_UEXT-MODULES_mod-oled-128x64.md) |

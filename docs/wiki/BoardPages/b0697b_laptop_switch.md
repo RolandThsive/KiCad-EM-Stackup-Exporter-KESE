@@ -1,4 +1,4 @@
-# 697 switch
+# 697. switch
 
 Board 697 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 7](../CorpusTestingPages/Corpus-Testing-07.md#697-switch).
 
@@ -45,4 +45,4 @@ Board 697 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [696 power](b0696b_laptop_power.md) | [698 motherboard-stable](b0698b_motherboard_motherboard-stable.md) |
+| [696. power](b0696b_laptop_power.md) | [698. motherboard-stable](b0698b_motherboard_motherboard-stable.md) |

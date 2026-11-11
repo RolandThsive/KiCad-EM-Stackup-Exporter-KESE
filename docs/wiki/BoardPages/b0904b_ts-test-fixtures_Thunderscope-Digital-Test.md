@@ -1,4 +1,4 @@
-# 904 Thunderscope Digital Test
+# 904. Thunderscope Digital Test
 
 Board 904 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 9](../CorpusTestingPages/Corpus-Testing-09.md#904-thunderscope-digital-test).
 
@@ -45,4 +45,4 @@ Board 904 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [903 Interposer_Board_Test_Fixture](b0903b_ts-test-fixtures_Interposer-Board-Test-Fixture.md) | [905 ThunderScope Muxboard](b0905b_ts-test-fixtures_ThunderScope-Muxboard.md) |
+| [903. Interposer_Board_Test_Fixture](b0903b_ts-test-fixtures_Interposer-Board-Test-Fixture.md) | [905. ThunderScope Muxboard](b0905b_ts-test-fixtures_ThunderScope-Muxboard.md) |

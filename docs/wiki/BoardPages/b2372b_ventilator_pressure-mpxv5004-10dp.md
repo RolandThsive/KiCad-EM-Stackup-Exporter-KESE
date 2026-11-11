@@ -1,4 +1,4 @@
-# 2372 pressure_mpxv5004,10dp
+# 2372. pressure_mpxv5004,10dp
 
 Board 2,372 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 22](../CorpusTestingPages/Corpus-Testing-22.md#2372-pressure_mpxv500410dp).
 
@@ -45,4 +45,4 @@ Board 2,372 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2371 pressure_mpx5700ap,gp](b2371b_ventilator_pressure-mpx5700ap-gp.md) | [2373 pressure_mpxv5004dp](b2373b_ventilator_pressure-mpxv5004dp.md) |
+| [2371. pressure_mpx5700ap,gp](b2371b_ventilator_pressure-mpx5700ap-gp.md) | [2373. pressure_mpxv5004dp](b2373b_ventilator_pressure-mpxv5004dp.md) |

@@ -1,4 +1,4 @@
-# 830 flash-dip-rev4
+# 830. flash-dip-rev4
 
 Board 830 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 8](../CorpusTestingPages/Corpus-Testing-08.md#830-flash-dip-rev4).
 
@@ -45,4 +45,4 @@ Board 830 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [829 programming_pin_mount.v1.0](b0829b_BusPirate5-hardware_programming-pin-mount-v1-0.md) | [831 flash-sop-rev4](b0831b_BusPirate5-hardware_flash-sop-rev4.md) |
+| [829. programming_pin_mount.v1.0](b0829b_BusPirate5-hardware_programming-pin-mount-v1-0.md) | [831. flash-sop-rev4](b0831b_BusPirate5-hardware_flash-sop-rev4.md) |

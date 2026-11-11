@@ -1,4 +1,4 @@
-# 2029 lv_interface
+# 2029. lv_interface
 
 Board 2,029 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 19](../CorpusTestingPages/Corpus-Testing-19.md#2029-lv_interface).
 
@@ -45,4 +45,4 @@ Board 2,029 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2028 cooling_sense](b2028b_olin-electric-motorsports_cooling-sense.md) | [2030 lvbms](b2030b_olin-electric-motorsports_lvbms.md) |
+| [2028. cooling_sense](b2028b_olin-electric-motorsports_cooling-sense.md) | [2030. lvbms](b2030b_olin-electric-motorsports_lvbms.md) |

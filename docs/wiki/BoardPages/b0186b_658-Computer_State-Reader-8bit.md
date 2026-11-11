@@ -1,4 +1,4 @@
-# 186 State Reader 8bit
+# 186. State Reader 8bit
 
 Board 186 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 2](../CorpusTestingPages/Corpus-Testing-02.md#186-state-reader-8bit).
 
@@ -45,4 +45,4 @@ Board 186 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [185 State Reader 16bit](b0185b_658-Computer_State-Reader-16bit.md) | [187 Coprocessor Board - Additional](b0187b_658-Computer_Coprocessor-Board-Additional.md) |
+| [185. State Reader 16bit](b0185b_658-Computer_State-Reader-16bit.md) | [187. Coprocessor Board - Additional](b0187b_658-Computer_Coprocessor-Board-Additional.md) |

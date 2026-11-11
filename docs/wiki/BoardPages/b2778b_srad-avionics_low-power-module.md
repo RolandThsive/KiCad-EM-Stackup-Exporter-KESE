@@ -1,4 +1,4 @@
-# 2778 low_power_module
+# 2778. low_power_module
 
 Board 2,778 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 26](../CorpusTestingPages/Corpus-Testing-26.md#2778-low_power_module).
 
@@ -45,4 +45,4 @@ Board 2,778 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2777 live-video-multi-function-board](b2777b_srad-avionics_live-video-multi-function-board.md) | [2779 ESP32_BluetoothModule_TerrapinRockets](b2779b_srad-avionics_ESP32-BluetoothModule-TerrapinRockets.md) |
+| [2777. live-video-multi-function-board](b2777b_srad-avionics_live-video-multi-function-board.md) | [2779. ESP32_BluetoothModule_TerrapinRockets](b2779b_srad-avionics_ESP32-BluetoothModule-TerrapinRockets.md) |

@@ -1,4 +1,4 @@
-# 769 Power Transducer
+# 769. Power Transducer
 
 Board 769 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 8](../CorpusTestingPages/Corpus-Testing-08.md#769-power-transducer).
 
@@ -45,4 +45,4 @@ Board 769 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [768 Inverter ISO Analog](b0768b_2021-accumulator-electronics_Inverter-ISO-Analog.md) | [770 panel_proto_data_slicer_board](b0770b_adsbee_panel-proto-data-slicer-board.md) |
+| [768. Inverter ISO Analog](b0768b_2021-accumulator-electronics_Inverter-ISO-Analog.md) | [770. panel_proto_data_slicer_board](b0770b_adsbee_panel-proto-data-slicer-board.md) |

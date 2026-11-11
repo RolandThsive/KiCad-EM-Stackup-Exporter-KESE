@@ -1,4 +1,4 @@
-# 1454 multichannel_mixer
+# 1454. multichannel_mixer
 
 Board 1,454 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 14](../CorpusTestingPages/Corpus-Testing-14.md#1454-multichannel_mixer).
 
@@ -45,4 +45,4 @@ Board 1,454 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1453 multichannel_mixer-unrouted](b1453b_kicad-source-mirror_multichannel-mixer-unrouted.md) | [1455 One-Air-Max](b1455b_kicad-source-mirror_One-Air-Max.md) |
+| [1453. multichannel_mixer-unrouted](b1453b_kicad-source-mirror_multichannel-mixer-unrouted.md) | [1455. One-Air-Max](b1455b_kicad-source-mirror_One-Air-Max.md) |

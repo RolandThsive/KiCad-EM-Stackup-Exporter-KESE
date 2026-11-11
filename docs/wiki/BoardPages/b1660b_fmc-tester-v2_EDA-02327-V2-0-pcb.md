@@ -1,4 +1,4 @@
-# 1660 EDA-02327-V2-0_pcb
+# 1660. EDA-02327-V2-0_pcb
 
 Board 1,660 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 16](../CorpusTestingPages/Corpus-Testing-16.md#1660-eda-02327-v2-0_pcb).
 
@@ -44,4 +44,4 @@ Board 1,660 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1659 2070-S-100-bus-analyzer](b1659b_2070-S-100-bus-analyzer_2070-S-100-bus-analyzer.md) | [1661 moteus_c1](b1661b_moteus_hw-c1_moteus-c1.md) |
+| [1659. 2070-S-100-bus-analyzer](b1659b_2070-S-100-bus-analyzer_2070-S-100-bus-analyzer.md) | [1661. moteus_c1](b1661b_moteus_hw-c1_moteus-c1.md) |

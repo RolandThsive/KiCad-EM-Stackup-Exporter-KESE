@@ -1,4 +1,4 @@
-# 114 Board 2x06 W15.24
+# 114. Board 2x06 W15.24
 
 Board 114 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 2](../CorpusTestingPages/Corpus-Testing-02.md#114-board-2x06-w1524).
 
@@ -45,4 +45,4 @@ Board 114 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [113 anavi-light-controller](b0113b_anavi-light-controller_anavi-light-controller.md) | [115 Board 2x06 W22.86](b0115b_658-Computer_Kicad-Boards-Blank-Board-2x06-W22-86_Board-2x06-W22-86.md) |
+| [113. anavi-light-controller](b0113b_anavi-light-controller_anavi-light-controller.md) | [115. Board 2x06 W22.86](b0115b_658-Computer_Kicad-Boards-Blank-Board-2x06-W22-86_Board-2x06-W22-86.md) |

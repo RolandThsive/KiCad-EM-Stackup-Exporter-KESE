@@ -1,4 +1,4 @@
-# 691 keyboard
+# 691. keyboard
 
 Board 691 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 7](../CorpusTestingPages/Corpus-Testing-07.md#691-keyboard).
 
@@ -45,4 +45,4 @@ Board 691 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [690 encoder](b0690b_laptop_encoder.md) | [692 protector](b0692b_laptop_protector.md) |
+| [690. encoder](b0690b_laptop_encoder.md) | [692. protector](b0692b_laptop_protector.md) |

@@ -1,4 +1,4 @@
-# 526 servid-rp2040-hdmi proto rev1
+# 526. servid-rp2040-hdmi proto rev1
 
 Board 526 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 5](../CorpusTestingPages/Corpus-Testing-05.md#526-servid-rp2040-hdmi-proto-rev1).
 
@@ -45,4 +45,4 @@ Board 526 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [525 ROM Interposer board](b0525b_Mega-IIe_kicad-files-ROM-Interposer-board_ROM-Interposer-board.md) | [527 issue3b](b0527b_zxspectrum-issue3b_issue3b.md) |
+| [525. ROM Interposer board](b0525b_Mega-IIe_kicad-files-ROM-Interposer-board_ROM-Interposer-board.md) | [527. issue3b](b0527b_zxspectrum-issue3b_issue3b.md) |

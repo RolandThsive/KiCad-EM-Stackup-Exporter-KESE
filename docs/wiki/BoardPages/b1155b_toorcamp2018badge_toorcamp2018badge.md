@@ -1,4 +1,4 @@
-# 1155 toorcamp2018badge
+# 1155. toorcamp2018badge
 
 Board 1,155 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 11](../CorpusTestingPages/Corpus-Testing-11.md#1155-toorcamp2018badge).
 
@@ -45,4 +45,4 @@ Board 1,155 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1154 throwing-star](b1154b_throwing-star-lan-tap_throwing-star.md) | [1156 toorcamp2018jig](b1156b_toorcamp2018badge_toorcamp2018jig.md) |
+| [1154. throwing-star](b1154b_throwing-star-lan-tap_throwing-star.md) | [1156. toorcamp2018jig](b1156b_toorcamp2018badge_toorcamp2018jig.md) |

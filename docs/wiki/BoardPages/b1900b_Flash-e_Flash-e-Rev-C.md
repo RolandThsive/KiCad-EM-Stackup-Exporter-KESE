@@ -1,4 +1,4 @@
-# 1900 Flash-e_Rev_C
+# 1900. Flash-e_Rev_C
 
 Board 1,900 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 18](../CorpusTestingPages/Corpus-Testing-18.md#1900-flash-e_rev_c).
 
@@ -45,4 +45,4 @@ Board 1,900 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1899 ESP32-SBC-FabGL_Rev_B](b1899b_ESP32-SBC-FabGL_ESP32-SBC-FabGL-Rev-B.md) | [1901 FOSDEM-MUSIC-BOX_RevA](b1901b_FOSDEM-MUSIC-BOX_FOSDEM-MUSIC-BOX-RevA.md) |
+| [1899. ESP32-SBC-FabGL_Rev_B](b1899b_ESP32-SBC-FabGL_ESP32-SBC-FabGL-Rev-B.md) | [1901. FOSDEM-MUSIC-BOX_RevA](b1901b_FOSDEM-MUSIC-BOX_FOSDEM-MUSIC-BOX-RevA.md) |

@@ -1,4 +1,4 @@
-# 1135 pmos-or
+# 1135. pmos-or
 
 Board 1,135 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 11](../CorpusTestingPages/Corpus-Testing-11.md#1135-pmos-or).
 
@@ -45,4 +45,4 @@ Board 1,135 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1134 passives](b1134b_misc_passives.md) | [1136 quad-balun-directional-coupler](b1136b_misc_quad-balun-directional-coupler.md) |
+| [1134. passives](b1134b_misc_passives.md) | [1136. quad-balun-directional-coupler](b1136b_misc_quad-balun-directional-coupler.md) |

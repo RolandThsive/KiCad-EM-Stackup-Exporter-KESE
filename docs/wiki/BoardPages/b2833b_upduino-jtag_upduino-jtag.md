@@ -1,4 +1,4 @@
-# 2833 upduino-jtag
+# 2833. upduino-jtag
 
 Board 2,833 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 27](../CorpusTestingPages/Corpus-Testing-27.md#2833-upduino-jtag).
 
@@ -45,4 +45,4 @@ Board 2,833 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2832 pogo_adapter](b2832b_upduino-jtag_pogo-adapter.md) | [2834 UPduino_v3.0](b2834b_upduino-v3-0_Board-v1-0_UPduino-v3-0.md) |
+| [2832. pogo_adapter](b2832b_upduino-jtag_pogo-adapter.md) | [2834. UPduino_v3.0](b2834b_upduino-v3-0_Board-v1-0_UPduino-v3-0.md) |

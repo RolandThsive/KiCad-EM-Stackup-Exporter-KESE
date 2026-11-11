@@ -1,4 +1,4 @@
-# 1519 bias_controller
+# 1519. bias_controller
 
 Board 1,519 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 15](../CorpusTestingPages/Corpus-Testing-15.md#1519-bias_controller).
 
@@ -46,4 +46,4 @@ Board 1,519 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1518 balun](b1518b_vna_balun.md) | [1520 boosterpack](b1520b_vna_boosterpack.md) |
+| [1518. balun](b1518b_vna_balun.md) | [1520. boosterpack](b1520b_vna_boosterpack.md) |

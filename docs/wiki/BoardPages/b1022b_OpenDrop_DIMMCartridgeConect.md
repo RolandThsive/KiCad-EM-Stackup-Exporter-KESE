@@ -1,4 +1,4 @@
-# 1022 DIMMCartridgeConect
+# 1022. DIMMCartridgeConect
 
 Board 1,022 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 10](../CorpusTestingPages/Corpus-Testing-10.md#1022-dimmcartridgeconect).
 
@@ -45,4 +45,4 @@ Board 1,022 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1021 OpenDropV3](b1021b_OpenDrop_OpenDropV3.md) | [1023 DIMMCartridgeV4](b1023b_OpenDrop_DIMMCartridgeV4.md) |
+| [1021. OpenDropV3](b1021b_OpenDrop_OpenDropV3.md) | [1023. DIMMCartridgeV4](b1023b_OpenDrop_DIMMCartridgeV4.md) |

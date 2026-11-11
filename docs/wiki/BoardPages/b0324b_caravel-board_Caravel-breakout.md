@@ -1,4 +1,4 @@
-# 324 Caravel_breakout
+# 324. Caravel_breakout
 
 Board 324 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 3](../CorpusTestingPages/Corpus-Testing-03.md#324-caravel_breakout).
 
@@ -45,4 +45,4 @@ Board 324 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [323 caravel_breakout_QFN](b0323b_caravel-board_caravel-breakout-QFN.md) | [325 Caravel_breakout_v2](b0325b_caravel-board_Caravel-breakout-v2.md) |
+| [323. caravel_breakout_QFN](b0323b_caravel-board_caravel-breakout-QFN.md) | [325. Caravel_breakout_v2](b0325b_caravel-board_Caravel-breakout-v2.md) |

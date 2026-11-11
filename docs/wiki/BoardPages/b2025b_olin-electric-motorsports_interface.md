@@ -1,4 +1,4 @@
-# 2025 interface
+# 2025. interface
 
 Board 2,025 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 19](../CorpusTestingPages/Corpus-Testing-19.md#2025-interface).
 
@@ -45,4 +45,4 @@ Board 2,025 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2024 dashboard](b2024b_olin-electric-motorsports_vehicle-mkv-hardware-dashboard-dux_dashboard.md) | [2026 throttle](b2026b_olin-electric-motorsports_vehicle-mkv-hardware-dashboard-throttle_throttle.md) |
+| [2024. dashboard](b2024b_olin-electric-motorsports_vehicle-mkv-hardware-dashboard-dux_dashboard.md) | [2026. throttle](b2026b_olin-electric-motorsports_vehicle-mkv-hardware-dashboard-throttle_throttle.md) |

@@ -1,4 +1,4 @@
-# 620 serial_bulkhead
+# 620. serial_bulkhead
 
 Board 620 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 6](../CorpusTestingPages/Corpus-Testing-06.md#620-serial_bulkhead).
 
@@ -45,4 +45,4 @@ Board 620 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [619 power_distribution_board](b0619b_bjr-kicad_power-distribution-board.md) | [621 steering_wheel](b0621b_bjr-kicad_steering-wheel.md) |
+| [619. power_distribution_board](b0619b_bjr-kicad_power-distribution-board.md) | [621. steering_wheel](b0621b_bjr-kicad_steering-wheel.md) |

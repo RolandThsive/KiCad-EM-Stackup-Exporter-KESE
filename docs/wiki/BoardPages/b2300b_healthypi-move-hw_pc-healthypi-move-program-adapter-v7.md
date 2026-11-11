@@ -1,4 +1,4 @@
-# 2300 pc_healthypi_move_program_adapter_v7
+# 2300. pc_healthypi_move_program_adapter_v7
 
 Board 2,300 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 22](../CorpusTestingPages/Corpus-Testing-22.md#2300-pc_healthypi_move_program_adapter_v7).
 
@@ -45,4 +45,4 @@ Board 2,300 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2299 ISA adapter](b2299b_picogus_ISA-adapter.md) | [2301 pc_healthypi_move_nRF5340_v12](b2301b_healthypi-move-hw_pc-healthypi-move-nRF5340-v12.md) |
+| [2299. ISA adapter](b2299b_picogus_ISA-adapter.md) | [2301. pc_healthypi_move_nRF5340_v12](b2301b_healthypi-move-hw_pc-healthypi-move-nRF5340-v12.md) |

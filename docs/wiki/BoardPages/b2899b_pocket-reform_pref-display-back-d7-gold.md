@@ -1,4 +1,4 @@
-# 2899 pref-display-back-d7-gold
+# 2899. pref-display-back-d7-gold
 
 Board 2,899 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 27](../CorpusTestingPages/Corpus-Testing-27.md#2899-pref-display-back-d7-gold).
 
@@ -46,4 +46,4 @@ Board 2,899 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2898 pref-display-back-d5](b2898b_pocket-reform_pref-display-back-d5.md) | [2900 pref-display-front-d7](b2900b_pocket-reform_pref-display-front-d7.md) |
+| [2898. pref-display-back-d5](b2898b_pocket-reform_pref-display-back-d5.md) | [2900. pref-display-front-d7](b2900b_pocket-reform_pref-display-front-d7.md) |

@@ -1,4 +1,4 @@
-# 2159 Bidirectional_Amp
+# 2159. Bidirectional_Amp
 
 Board 2,159 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 20](../CorpusTestingPages/Corpus-Testing-20.md#2159-bidirectional_amp).
 
@@ -45,4 +45,4 @@ Board 2,159 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2158 AR9271_eval](b2158b_oresat-dxwifi-hardware_AR9271-eval.md) | [2160 oresat-live-card](b2160b_oresat-dxwifi-hardware_oresat-live-card.md) |
+| [2158. AR9271_eval](b2158b_oresat-dxwifi-hardware_AR9271-eval.md) | [2160. oresat-live-card](b2160b_oresat-dxwifi-hardware_oresat-live-card.md) |

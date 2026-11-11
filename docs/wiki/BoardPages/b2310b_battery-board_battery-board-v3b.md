@@ -1,4 +1,4 @@
-# 2310 battery_board_v3b
+# 2310. battery_board_v3b
 
 Board 2,310 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 22](../CorpusTestingPages/Corpus-Testing-22.md#2310-battery_board_v3b).
 
@@ -45,4 +45,4 @@ Board 2,310 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2309 Battery_Board_V3a](b2309b_battery-board_Battery-Board-V3a.md) | [2311 battery_board_v3c](b2311b_battery-board_battery-board-v3c.md) |
+| [2309. Battery_Board_V3a](b2309b_battery-board_Battery-Board-V3a.md) | [2311. battery_board_v3c](b2311b_battery-board_battery-board-v3c.md) |

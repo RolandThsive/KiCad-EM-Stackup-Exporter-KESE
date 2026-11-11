@@ -1,4 +1,4 @@
-# 2799 TFGPS01
+# 2799. TFGPS01
 
 Board 2,799 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 26](../CorpusTestingPages/Corpus-Testing-26.md#2799-tfgps01).
 
@@ -45,4 +45,4 @@ Board 2,799 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2798 Apple2Card](b2798b_Apple2Card_Apple2Card-x44_Apple2Card.md) | [2800 tigard](b2800b_tigard_tigard.md) |
+| [2798. Apple2Card](b2798b_Apple2Card_Apple2Card-x44_Apple2Card.md) | [2800. tigard](b2800b_tigard_tigard.md) |

@@ -1,4 +1,4 @@
-# 1507 adc344x
+# 1507. adc344x
 
 Board 1,507 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 14](../CorpusTestingPages/Corpus-Testing-14.md#1507-adc344x).
 
@@ -45,4 +45,4 @@ Board 1,507 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1506 adc32xx_syzygy](b1506b_vna_adc32xx-syzygy.md) | [1508 adc_32xx](b1508b_vna_adc-32xx.md) |
+| [1506. adc32xx_syzygy](b1506b_vna_adc32xx-syzygy.md) | [1508. adc_32xx](b1508b_vna_adc-32xx.md) |

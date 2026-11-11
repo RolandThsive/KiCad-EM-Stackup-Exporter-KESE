@@ -1,4 +1,4 @@
-# 2674 Groundstation_433_Hat
+# 2674. Groundstation_433_Hat
 
 Board 2,674 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 25](../CorpusTestingPages/Corpus-Testing-25.md#2674-groundstation_433_hat).
 
@@ -45,4 +45,4 @@ Board 2,674 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2673 Groundstation_2400_Hat](b2673b_samwise-avionics_Groundstation-2400-Hat.md) | [2675 LT8491-mezzanine](b2675b_samwise-avionics_LT8491-mezzanine.md) |
+| [2673. Groundstation_2400_Hat](b2673b_samwise-avionics_Groundstation-2400-Hat.md) | [2675. LT8491-mezzanine](b2675b_samwise-avionics_LT8491-mezzanine.md) |

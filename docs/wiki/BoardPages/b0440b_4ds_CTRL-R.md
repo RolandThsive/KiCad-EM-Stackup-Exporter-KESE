@@ -1,4 +1,4 @@
-# 440 CTRL_R
+# 440. CTRL_R
 
 Board 440 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 5](../CorpusTestingPages/Corpus-Testing-05.md#440-ctrl_r).
 
@@ -45,4 +45,4 @@ Board 440 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [439 CTRL_PWR](b0439b_4ds_CTRL-PWR.md) | [441 CTRL_Z](b0441b_4ds_CTRL-Z.md) |
+| [439. CTRL_PWR](b0439b_4ds_CTRL-PWR.md) | [441. CTRL_Z](b0441b_4ds_CTRL-Z.md) |

@@ -1,4 +1,4 @@
-# 556 Bela_Gem_Stereo
+# 556. Bela_Gem_Stereo
 
 Board 556 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 6](../CorpusTestingPages/Corpus-Testing-06.md#556-bela_gem_stereo).
 
@@ -45,4 +45,4 @@ Board 556 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [555 bela_mini_multi_pb2_wing_top](b0555b_bela-hardware_bela-mini-multi-pb2-wing-top.md) | [557 switch-main-v5-test-rig](b0557b_switch-v5-hardware_switch-main-v5-test-rig.md) |
+| [555. bela_mini_multi_pb2_wing_top](b0555b_bela-hardware_bela-mini-multi-pb2-wing-top.md) | [557. switch-main-v5-test-rig](b0557b_switch-v5-hardware_switch-main-v5-test-rig.md) |

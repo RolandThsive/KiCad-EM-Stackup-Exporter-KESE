@@ -1,4 +1,4 @@
-# 1089 librem5_mainboard
+# 1089. librem5_mainboard
 
 Board 1,089 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 11](../CorpusTestingPages/Corpus-Testing-11.md#1089-librem5_mainboard).
 
@@ -45,4 +45,4 @@ Board 1,089 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1088 dvk-mx8m-bsb](b1088b_dvk-mx8m-bsb_dvk-mx8m-bsb.md) | [1090 librem5_usb-c_board](b1090b_l5-schematic_librem5-usb-c-board.md) |
+| [1088. dvk-mx8m-bsb](b1088b_dvk-mx8m-bsb_dvk-mx8m-bsb.md) | [1090. librem5_usb-c_board](b1090b_l5-schematic_librem5-usb-c-board.md) |

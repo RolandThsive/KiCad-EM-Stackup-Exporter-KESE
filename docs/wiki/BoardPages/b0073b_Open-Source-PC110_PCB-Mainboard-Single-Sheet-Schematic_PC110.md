@@ -1,4 +1,4 @@
-# 73 PC110
+# 73. PC110
 
 Board 73 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 1](../CorpusTestingPages/Corpus-Testing-01.md#73-pc110).
 
@@ -46,4 +46,4 @@ Board 73 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page
 
 | Previous | Next |
 |:---|---:|
-| [72 PC110](b0072b_Open-Source-PC110_PCB-Mainboard_PC110.md) | [74 Modem](b0074b_Open-Source-PC110_Modem.md) |
+| [72. PC110](b0072b_Open-Source-PC110_PCB-Mainboard_PC110.md) | [74. Modem](b0074b_Open-Source-PC110_Modem.md) |

@@ -1,4 +1,4 @@
-# 2780 Main Board
+# 2780. Main Board
 
 Board 2,780 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 26](../CorpusTestingPages/Corpus-Testing-26.md#2780-main-board).
 
@@ -45,4 +45,4 @@ Board 2,780 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2779 ESP32_BluetoothModule_TerrapinRockets](b2779b_srad-avionics_ESP32-BluetoothModule-TerrapinRockets.md) | [2781 mcu-board](b2781b_srad-avionics_mcu-board.md) |
+| [2779. ESP32_BluetoothModule_TerrapinRockets](b2779b_srad-avionics_ESP32-BluetoothModule-TerrapinRockets.md) | [2781. mcu-board](b2781b_srad-avionics_mcu-board.md) |

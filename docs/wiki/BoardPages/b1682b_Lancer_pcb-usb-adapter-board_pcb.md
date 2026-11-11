@@ -1,4 +1,4 @@
-# 1682 pcb
+# 1682. pcb
 
 Board 1,682 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 16](../CorpusTestingPages/Corpus-Testing-16.md#1682-pcb).
 
@@ -45,4 +45,4 @@ Board 1,682 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1681 pcb](b1681b_Lancer_pcb-mainboard_pcb.md) | [1683 Project NuXT](b1683b_NuXT_Project-NuXT.md) |
+| [1681. pcb](b1681b_Lancer_pcb-mainboard_pcb.md) | [1683. Project NuXT](b1683b_NuXT_Project-NuXT.md) |

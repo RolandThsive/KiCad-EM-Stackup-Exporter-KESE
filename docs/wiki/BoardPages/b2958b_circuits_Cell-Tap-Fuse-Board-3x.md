@@ -1,4 +1,4 @@
-# 2958 Cell Tap Fuse Board 3x
+# 2958. Cell Tap Fuse Board 3x
 
 Board 2,958 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 28](../CorpusTestingPages/Corpus-Testing-28.md#2958-cell-tap-fuse-board-3x).
 
@@ -45,4 +45,4 @@ Board 2,958 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2957 Cell Tap Fuse Board 2x](b2957b_circuits_Cell-Tap-Fuse-Board-2x.md) | [2959 BMS-Master](b2959b_circuits_BMS-Master.md) |
+| [2957. Cell Tap Fuse Board 2x](b2957b_circuits_Cell-Tap-Fuse-Board-2x.md) | [2959. BMS-Master](b2959b_circuits_BMS-Master.md) |

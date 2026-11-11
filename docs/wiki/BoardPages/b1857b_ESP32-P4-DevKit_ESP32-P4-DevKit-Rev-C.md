@@ -1,4 +1,4 @@
-# 1857 ESP32-P4-DevKit_Rev_C
+# 1857. ESP32-P4-DevKit_Rev_C
 
 Board 1,857 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 18](../CorpusTestingPages/Corpus-Testing-18.md#1857-esp32-p4-devkit_rev_c).
 
@@ -45,4 +45,4 @@ Board 1,857 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1856 ESP32-P4-DevKit_Rev_B](b1856b_ESP32-P4-DevKit_ESP32-P4-DevKit-Rev-B.md) | [1858 ESP32-P4-DevKit_Rev_D](b1858b_ESP32-P4-DevKit_ESP32-P4-DevKit-Rev-D.md) |
+| [1856. ESP32-P4-DevKit_Rev_B](b1856b_ESP32-P4-DevKit_ESP32-P4-DevKit-Rev-B.md) | [1858. ESP32-P4-DevKit_Rev_D](b1858b_ESP32-P4-DevKit_ESP32-P4-DevKit-Rev-D.md) |

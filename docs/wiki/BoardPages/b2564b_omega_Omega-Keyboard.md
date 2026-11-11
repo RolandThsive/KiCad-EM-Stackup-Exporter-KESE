@@ -1,4 +1,4 @@
-# 2564 Omega-Keyboard
+# 2564. Omega-Keyboard
 
 Board 2,564 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 24](../CorpusTestingPages/Corpus-Testing-24.md#2564-omega-keyboard).
 
@@ -45,4 +45,4 @@ Board 2,564 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2563 AT386SX](b2563b_mb386sx-rc2016_AT386SX.md) | [2565 Omega-Mainboard](b2565b_omega_Omega-Mainboard.md) |
+| [2563. AT386SX](b2563b_mb386sx-rc2016_AT386SX.md) | [2565. Omega-Mainboard](b2565b_omega_Omega-Mainboard.md) |

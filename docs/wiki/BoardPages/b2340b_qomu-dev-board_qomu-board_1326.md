@@ -1,4 +1,4 @@
-# 2340 qomu-board
+# 2340. qomu-board
 
 Board 2,340 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 22](../CorpusTestingPages/Corpus-Testing-22.md#2340-qomu-board).
 
@@ -44,4 +44,4 @@ Board 2,340 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2339 coco3](b2339b_coco-motherboards_coco3.md) | [2341 unibone.routed](b2341b_QUniBoneClassic_unibone-routed.md) |
+| [2339. coco3](b2339b_coco-motherboards_coco3.md) | [2341. unibone.routed](b2341b_QUniBoneClassic_unibone-routed.md) |

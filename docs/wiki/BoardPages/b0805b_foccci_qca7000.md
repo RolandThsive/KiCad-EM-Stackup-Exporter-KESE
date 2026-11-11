@@ -1,4 +1,4 @@
-# 805 qca7000
+# 805. qca7000
 
 Board 805 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 8](../CorpusTestingPages/Corpus-Testing-08.md#805-qca7000).
 
@@ -45,4 +45,4 @@ Board 805 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [804 reDIP-SID](b0804b_reDIP-SID_reDIP-SID.md) | [806 blank-plank-rev0b](b0806b_BusPirate5-hardware_blank-plank-rev0b.md) |
+| [804. reDIP-SID](b0804b_reDIP-SID_reDIP-SID.md) | [806. blank-plank-rev0b](b0806b_BusPirate5-hardware_blank-plank-rev0b.md) |

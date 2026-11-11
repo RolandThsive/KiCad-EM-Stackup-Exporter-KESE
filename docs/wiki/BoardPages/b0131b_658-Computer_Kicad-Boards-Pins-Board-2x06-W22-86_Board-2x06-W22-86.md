@@ -1,4 +1,4 @@
-# 131 Board 2x06 W22.86
+# 131. Board 2x06 W22.86
 
 Board 131 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 2](../CorpusTestingPages/Corpus-Testing-02.md#131-board-2x06-w2286).
 
@@ -46,4 +46,4 @@ Board 131 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [130 Board 2x06 W15.24](b0130b_658-Computer_Kicad-Boards-Pins-Board-2x06-W15-24_Board-2x06-W15-24.md) | [132 Board 2x12 W15.24](b0132b_658-Computer_Kicad-Boards-Pins-Board-2x12-W15-24_Board-2x12-W15-24.md) |
+| [130. Board 2x06 W15.24](b0130b_658-Computer_Kicad-Boards-Pins-Board-2x06-W15-24_Board-2x06-W15-24.md) | [132. Board 2x12 W15.24](b0132b_658-Computer_Kicad-Boards-Pins-Board-2x12-W15-24_Board-2x12-W15-24.md) |

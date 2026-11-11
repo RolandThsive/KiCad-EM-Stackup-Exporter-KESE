@@ -1,4 +1,4 @@
-# 1611 pcb
+# 1611. pcb
 
 Board 1,611 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 15](../CorpusTestingPages/Corpus-Testing-15.md#1611-pcb).
 
@@ -45,4 +45,4 @@ Board 1,611 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1610 homebrew_486](b1610b_m8sbc-486_homebrew-486.md) | [1612 dexx_video_adapter](b1612b_ossc-pro-hw_dexx-video-adapter.md) |
+| [1610. homebrew_486](b1610b_m8sbc-486_homebrew-486.md) | [1612. dexx_video_adapter](b1612b_ossc-pro-hw_dexx-video-adapter.md) |

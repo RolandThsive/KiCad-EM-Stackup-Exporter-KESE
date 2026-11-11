@@ -1,4 +1,4 @@
-# 713 nref-flex-hdmi
+# 713. nref-flex-hdmi
 
 Board 713 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 7](../CorpusTestingPages/Corpus-Testing-07.md#713-nref-flex-hdmi).
 
@@ -45,4 +45,4 @@ Board 713 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [712 nref-flex-dp-140mm](b0712b_reform-next-mirror_nref-flex-dp-140mm.md) | [714 nref-flex-pcie](b0714b_reform-next-mirror_nref-flex-pcie.md) |
+| [712. nref-flex-dp-140mm](b0712b_reform-next-mirror_nref-flex-dp-140mm.md) | [714. nref-flex-pcie](b0714b_reform-next-mirror_nref-flex-pcie.md) |

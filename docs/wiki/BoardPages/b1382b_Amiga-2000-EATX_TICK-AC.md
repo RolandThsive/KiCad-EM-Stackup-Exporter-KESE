@@ -1,4 +1,4 @@
-# 1382 TICK_AC
+# 1382. TICK_AC
 
 Board 1,382 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 13](../CorpusTestingPages/Corpus-Testing-13.md#1382-tick_ac).
 
@@ -45,4 +45,4 @@ Board 1,382 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1381 TICK](b1381b_Amiga-2000-EATX_TICK-TICK-Dual-0805_TICK.md) | [1383 TICK](b1383b_Amiga-2000-EATX_TICK-TICK-OSC-KiCAD_TICK.md) |
+| [1381. TICK](b1381b_Amiga-2000-EATX_TICK-TICK-Dual-0805_TICK.md) | [1383. TICK](b1383b_Amiga-2000-EATX_TICK-TICK-OSC-KiCAD_TICK.md) |

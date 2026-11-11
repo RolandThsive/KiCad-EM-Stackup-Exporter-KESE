@@ -1,4 +1,4 @@
-# 2582 smoothiev2-prime-2660
+# 2582. smoothiev2-prime-2660
 
 Board 2,582 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 24](../CorpusTestingPages/Corpus-Testing-24.md#2582-smoothiev2-prime-2660).
 
@@ -45,4 +45,4 @@ Board 2,582 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2581 Thermocouple](b2581b_smoothieboard2_Thermocouple.md) | [2583 V2 Core](b2583b_smoothieboard2_V2-Core.md) |
+| [2581. Thermocouple](b2581b_smoothieboard2_Thermocouple.md) | [2583. V2 Core](b2583b_smoothieboard2_V2-Core.md) |

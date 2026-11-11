@@ -1,4 +1,4 @@
-# 2112 OpenHW DevKit
+# 2112. OpenHW DevKit
 
 Board 2,112 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 20](../CorpusTestingPages/Corpus-Testing-20.md#2112-openhw-devkit).
 
@@ -45,4 +45,4 @@ Board 2,112 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2111 emonPi3](b2111b_emon32_emonPi3.md) | [2113 MacArthur-HAT](b2113b_MacArthur-HAT_MacArthur-HAT.md) |
+| [2111. emonPi3](b2111b_emon32_emonPi3.md) | [2113. MacArthur-HAT](b2113b_MacArthur-HAT_MacArthur-HAT.md) |

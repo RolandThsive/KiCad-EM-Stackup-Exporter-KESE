@@ -1,4 +1,4 @@
-# 2133 control-stage
+# 2133. control-stage
 
 Board 2,133 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 20](../CorpusTestingPages/Corpus-Testing-20.md#2133-control-stage).
 
@@ -45,4 +45,4 @@ Board 2,133 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2132 oresat-mag-card](b2132b_oresat-adcs-hardware_oresat-mag-card.md) | [2134 power-stage-rev8](b2134b_oresat-adcs-hardware_power-stage-rev8.md) |
+| [2132. oresat-mag-card](b2132b_oresat-adcs-hardware_oresat-mag-card.md) | [2134. power-stage-rev8](b2134b_oresat-adcs-hardware_power-stage-rev8.md) |

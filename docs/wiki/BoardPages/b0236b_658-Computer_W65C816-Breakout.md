@@ -1,4 +1,4 @@
-# 236 W65C816 Breakout
+# 236. W65C816 Breakout
 
 Board 236 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 3](../CorpusTestingPages/Corpus-Testing-03.md#236-w65c816-breakout).
 
@@ -45,4 +45,4 @@ Board 236 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [235 Processor Board](b0235b_658-Computer_Processor-Board.md) | [237 W65C816 Clock Hold](b0237b_658-Computer_W65C816-Clock-Hold.md) |
+| [235. Processor Board](b0235b_658-Computer_Processor-Board.md) | [237. W65C816 Clock Hold](b0237b_658-Computer_W65C816-Clock-Hold.md) |

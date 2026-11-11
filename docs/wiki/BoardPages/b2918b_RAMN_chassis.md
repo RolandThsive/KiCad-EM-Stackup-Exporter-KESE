@@ -1,4 +1,4 @@
-# 2918 chassis
+# 2918. chassis
 
 Board 2,918 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 28](../CorpusTestingPages/Corpus-Testing-28.md#2918-chassis).
 
@@ -45,4 +45,4 @@ Board 2,918 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2917 screens](b2917b_RAMN_screens.md) | [2919 powertrain](b2919b_RAMN_powertrain.md) |
+| [2917. screens](b2917b_RAMN_screens.md) | [2919. powertrain](b2919b_RAMN_powertrain.md) |

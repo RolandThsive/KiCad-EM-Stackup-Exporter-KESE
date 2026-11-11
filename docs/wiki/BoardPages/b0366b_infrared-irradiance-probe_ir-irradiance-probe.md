@@ -1,4 +1,4 @@
-# 366 ir-irradiance-probe
+# 366. ir-irradiance-probe
 
 Board 366 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 4](../CorpusTestingPages/Corpus-Testing-04.md#366-ir-irradiance-probe).
 
@@ -44,4 +44,4 @@ Board 366 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [365 ict-baseboard](b0365b_ict-baseboard_ict-baseboard.md) | [367 jetson-agx-csi-adapter](b0367b_jetson-agx-csi-adapter_jetson-agx-csi-adapter.md) |
+| [365. ict-baseboard](b0365b_ict-baseboard_ict-baseboard.md) | [367. jetson-agx-csi-adapter](b0367b_jetson-agx-csi-adapter_jetson-agx-csi-adapter.md) |

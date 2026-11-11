@@ -1,4 +1,4 @@
-# 2354 db25_bob
+# 2354. db25_bob
 
 Board 2,354 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 22](../CorpusTestingPages/Corpus-Testing-22.md#2354-db25_bob).
 
@@ -45,4 +45,4 @@ Board 2,354 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2353 triple_adapter](b2353b_stmbl_triple-adapter.md) | [2355 db25_bob_v2](b2355b_stmbl_db25-bob-v2.md) |
+| [2353. triple_adapter](b2353b_stmbl_triple-adapter.md) | [2355. db25_bob_v2](b2355b_stmbl_db25-bob-v2.md) |

@@ -1,4 +1,4 @@
-# 743 caravel-dev-v5-M.2
+# 743. caravel-dev-v5-M.2
 
 Board 743 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 7](../CorpusTestingPages/Corpus-Testing-07.md#743-caravel-dev-v5-m2).
 
@@ -45,4 +45,4 @@ Board 743 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [742 Fab-Drawing-clear-dev-v1](b0742b_caravel-board_Fab-Drawing-clear-dev-v1.md) | [744 caravel-dev-v5-M.2](b0744b_caravel-board_hardware-development-caravel-dev-v5-M-2-revB_caravel-dev-v5-M-2.md) |
+| [742. Fab-Drawing-clear-dev-v1](b0742b_caravel-board_Fab-Drawing-clear-dev-v1.md) | [744. caravel-dev-v5-M.2](b0744b_caravel-board_hardware-development-caravel-dev-v5-M-2-revB_caravel-dev-v5-M-2.md) |

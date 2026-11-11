@@ -1,4 +1,4 @@
-# 1259 dualTranslation
+# 1259. dualTranslation
 
 Board 1,259 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 12](../CorpusTestingPages/Corpus-Testing-12.md#1259-dualtranslation).
 
@@ -45,4 +45,4 @@ Board 1,259 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1258 camIO](b1258b_Extension-Boards-for-Olimex-GateMate_camIO.md) | [1260 dvi](b1260b_Extension-Boards-for-Olimex-GateMate_dvi.md) |
+| [1258. camIO](b1258b_Extension-Boards-for-Olimex-GateMate_camIO.md) | [1260. dvi](b1260b_Extension-Boards-for-Olimex-GateMate_dvi.md) |

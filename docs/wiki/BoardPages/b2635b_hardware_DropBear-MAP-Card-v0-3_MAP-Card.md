@@ -1,4 +1,4 @@
-# 2635 MAP Card
+# 2635. MAP Card
 
 Board 2,635 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 25](../CorpusTestingPages/Corpus-Testing-25.md#2635-map-card).
 
@@ -45,4 +45,4 @@ Board 2,635 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2634 MAP Card](b2634b_hardware_DropBear-MAP-Card-v0-2_MAP-Card.md) | [2636 DropBear](b2636b_hardware_DropBear-V1-1_DropBear.md) |
+| [2634. MAP Card](b2634b_hardware_DropBear-MAP-Card-v0-2_MAP-Card.md) | [2636. DropBear](b2636b_hardware_DropBear-V1-1_DropBear.md) |

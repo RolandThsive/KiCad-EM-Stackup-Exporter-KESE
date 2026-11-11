@@ -1,4 +1,4 @@
-# 873 DuetWifi
+# 873. DuetWifi
 
 Board 873 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 9](../CorpusTestingPages/Corpus-Testing-09.md#873-duetwifi).
 
@@ -45,4 +45,4 @@ Board 873 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [872 Duet2Maestro](b0872b_Duet-2-Hardware_Duet2Maestro.md) | [874 Duet2](b0874b_Duet-2-Hardware_Duet2-Duet2v1-05_Duet2.md) |
+| [872. Duet2Maestro](b0872b_Duet-2-Hardware_Duet2Maestro.md) | [874. Duet2](b0874b_Duet-2-Hardware_Duet2-Duet2v1-05_Duet2.md) |

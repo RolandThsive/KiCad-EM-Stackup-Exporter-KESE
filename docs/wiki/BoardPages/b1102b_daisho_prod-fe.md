@@ -1,4 +1,4 @@
-# 1102 prod_fe
+# 1102. prod_fe
 
 Board 1,102 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 11](../CorpusTestingPages/Corpus-Testing-11.md#1102-prod_fe).
 
@@ -45,4 +45,4 @@ Board 1,102 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1101 hdmi](b1101b_daisho_hw-frontend-hdmi_hdmi.md) | [1103 usb](b1103b_daisho_usb.md) |
+| [1101. hdmi](b1101b_daisho_hw-frontend-hdmi_hdmi.md) | [1103. usb](b1103b_daisho_usb.md) |

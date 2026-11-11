@@ -1,4 +1,4 @@
-# 506 gd power supply board pcb
+# 506. gd power supply board pcb
 
 Board 506 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 5](../CorpusTestingPages/Corpus-Testing-05.md#506-gd-power-supply-board-pcb).
 
@@ -45,4 +45,4 @@ Board 506 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [505 gd MegaII proto pcb](b0505b_Mega-IIe_kicad-files-gd-MegaII-proto-pcb_gd-MegaII-proto-pcb.md) | [507 gd power supply board pcb](b0507b_Mega-IIe_kicad-files-gd-power-supply-board-pcb-gd-ps-rev1_gd-power-supply-board-pcb.md) |
+| [505. gd MegaII proto pcb](b0505b_Mega-IIe_kicad-files-gd-MegaII-proto-pcb_gd-MegaII-proto-pcb.md) | [507. gd power supply board pcb](b0507b_Mega-IIe_kicad-files-gd-power-supply-board-pcb-gd-ps-rev1_gd-power-supply-board-pcb.md) |

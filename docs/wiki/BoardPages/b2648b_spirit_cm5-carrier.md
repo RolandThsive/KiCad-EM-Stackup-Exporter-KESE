@@ -1,4 +1,4 @@
-# 2648 cm5-carrier
+# 2648. cm5-carrier
 
 Board 2,648 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 25](../CorpusTestingPages/Corpus-Testing-25.md#2648-cm5-carrier).
 
@@ -45,4 +45,4 @@ Board 2,648 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2647 DubaiXTClone](b2647b_DubaiXTClone_DubaiXTClone.md) | [2649 motherboard](b2649b_kicad-conversions-atari-260-520-st-motherboard-c070231_motherboard.md) |
+| [2647. DubaiXTClone](b2647b_DubaiXTClone_DubaiXTClone.md) | [2649. motherboard](b2649b_kicad-conversions-atari-260-520-st-motherboard-c070231_motherboard.md) |

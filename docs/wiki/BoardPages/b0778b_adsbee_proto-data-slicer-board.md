@@ -1,4 +1,4 @@
-# 778 proto_data_slicer_board
+# 778. proto_data_slicer_board
 
 Board 778 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 8](../CorpusTestingPages/Corpus-Testing-08.md#778-proto_data_slicer_board).
 
@@ -45,4 +45,4 @@ Board 778 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [777 proto_amp_bodge_board](b0777b_adsbee_proto-amp-bodge-board.md) | [779 proto_lna_board](b0779b_adsbee_proto-lna-board.md) |
+| [777. proto_amp_bodge_board](b0777b_adsbee_proto-amp-bodge-board.md) | [779. proto_lna_board](b0779b_adsbee_proto-lna-board.md) |

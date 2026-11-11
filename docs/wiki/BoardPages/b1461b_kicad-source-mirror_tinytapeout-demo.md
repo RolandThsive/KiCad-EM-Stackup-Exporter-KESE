@@ -1,4 +1,4 @@
-# 1461 tinytapeout-demo
+# 1461. tinytapeout-demo
 
 Board 1,461 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 14](../CorpusTestingPages/Corpus-Testing-14.md#1461-tinytapeout-demo).
 
@@ -45,4 +45,4 @@ Board 1,461 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1460 StickHub](b1460b_kicad-source-mirror_StickHub.md) | [1462 video](b1462b_kicad-source-mirror_video.md) |
+| [1460. StickHub](b1460b_kicad-source-mirror_StickHub.md) | [1462. video](b1462b_kicad-source-mirror_video.md) |

@@ -1,4 +1,4 @@
-# 1041 XL-Power
+# 1041. XL-Power
 
 Board 1,041 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 10](../CorpusTestingPages/Corpus-Testing-10.md#1041-xl-power).
 
@@ -45,4 +45,4 @@ Board 1,041 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1040 WiFi-Addon](b1040b_prntrboardv2_WiFi-Addon.md) | [1042 ESP32 Demo Project](b1042b_esp32-4layer-iot-board_ESP32-Demo-Project.md) |
+| [1040. WiFi-Addon](b1040b_prntrboardv2_WiFi-Addon.md) | [1042. ESP32 Demo Project](b1042b_esp32-4layer-iot-board_ESP32-Demo-Project.md) |

@@ -1,4 +1,4 @@
-# 2948 half-plate
+# 2948. half-plate
 
 Board 2,948 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 28](../CorpusTestingPages/Corpus-Testing-28.md#2948-half-plate).
 
@@ -46,4 +46,4 @@ Board 2,948 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2947 ghoul](b2947b_keyboards_ghoul.md) | [2949 Kobold](b2949b_keyboards_Kobold.md) |
+| [2947. ghoul](b2947b_keyboards_ghoul.md) | [2949. Kobold](b2949b_keyboards_Kobold.md) |

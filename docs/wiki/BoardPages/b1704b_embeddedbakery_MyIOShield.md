@@ -1,4 +1,4 @@
-# 1704 MyIOShield
+# 1704. MyIOShield
 
 Board 1,704 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 16](../CorpusTestingPages/Corpus-Testing-16.md#1704-myioshield).
 
@@ -44,4 +44,4 @@ Board 1,704 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1703 Wave Form Generator Amplifier](b1703b_embeddedbakery_Wave-Form-Generator-Amplifier.md) | [1705 16bit Banked Switches](b1705b_embeddedbakery_16bit-Banked-Switches.md) |
+| [1703. Wave Form Generator Amplifier](b1703b_embeddedbakery_Wave-Form-Generator-Amplifier.md) | [1705. 16bit Banked Switches](b1705b_embeddedbakery_16bit-Banked-Switches.md) |

@@ -1,4 +1,4 @@
-# 536 beaglebone-ai
+# 536. beaglebone-ai
 
 Board 536 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 5](../CorpusTestingPages/Corpus-Testing-05.md#536-beaglebone-ai).
 
@@ -45,4 +45,4 @@ Board 536 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [535 RoboMotor-GIM6010](b0535b_robomotor_RoboMotor-GIM6010.md) | [537 beaglebone-ai-rev-a2](b0537b_beaglebone-ai_beaglebone-ai-rev-a2.md) |
+| [535. RoboMotor-GIM6010](b0535b_robomotor_RoboMotor-GIM6010.md) | [537. beaglebone-ai-rev-a2](b0537b_beaglebone-ai_beaglebone-ai-rev-a2.md) |

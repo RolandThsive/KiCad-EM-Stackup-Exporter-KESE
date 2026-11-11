@@ -1,4 +1,4 @@
-# 2193 switcher_close
+# 2193. switcher_close
 
 Board 2,193 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 21](../CorpusTestingPages/Corpus-Testing-21.md#2193-switcher_close).
 
@@ -45,4 +45,4 @@ Board 2,193 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2192 switcher](b2192b_oresat-gps-hardware_switcher.md) | [2194 oresat-gps-card](b2194b_oresat-gps-hardware_oresat-gps-card.md) |
+| [2192. switcher](b2192b_oresat-gps-hardware_switcher.md) | [2194. oresat-gps-card](b2194b_oresat-gps-hardware_oresat-gps-card.md) |

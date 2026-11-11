@@ -1,4 +1,4 @@
-# 1271 intergalaktik
+# 1271. intergalaktik
 
 Board 1,271 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 12](../CorpusTestingPages/Corpus-Testing-12.md#1271-intergalaktik).
 
@@ -45,4 +45,4 @@ Board 1,271 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1270 USB](b1270b_Extension-Boards-for-Olimex-GateMate_USB.md) | [1272 mono_addon](b1272b_mono-addon_mono-addon.md) |
+| [1270. USB](b1270b_Extension-Boards-for-Olimex-GateMate_USB.md) | [1272. mono_addon](b1272b_mono-addon_mono-addon.md) |

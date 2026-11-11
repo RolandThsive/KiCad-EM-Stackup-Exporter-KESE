@@ -1,4 +1,4 @@
-# 792 mackerel-10-v1
+# 792. mackerel-10-v1
 
 Board 792 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 8](../CorpusTestingPages/Corpus-Testing-08.md#792-mackerel-10-v1).
 
@@ -45,4 +45,4 @@ Board 792 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [791 mackerel-10-ide](b0791b_mackerel-68k_mackerel-10-ide.md) | [793 mackerel-08-v1](b0793b_mackerel-68k_mackerel-08-v1.md) |
+| [791. mackerel-10-ide](b0791b_mackerel-68k_mackerel-10-ide.md) | [793. mackerel-08-v1](b0793b_mackerel-68k_mackerel-08-v1.md) |

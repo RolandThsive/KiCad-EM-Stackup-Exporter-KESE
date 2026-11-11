@@ -1,4 +1,4 @@
-# 86 clock
+# 86. clock
 
 Board 86 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 1](../CorpusTestingPages/Corpus-Testing-01.md#86-clock).
 
@@ -45,4 +45,4 @@ Board 86 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page
 
 | Previous | Next |
 |:---|---:|
-| [85 bus_boards](b0085b_AOS16_bus-boards.md) | [87 Control](b0087b_AOS16_Control.md) |
+| [85. bus_boards](b0085b_AOS16_bus-boards.md) | [87. Control](b0087b_AOS16_Control.md) |

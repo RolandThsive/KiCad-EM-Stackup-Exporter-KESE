@@ -1,4 +1,4 @@
-# 507 gd power supply board pcb
+# 507. gd power supply board pcb
 
 Board 507 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 5](../CorpusTestingPages/Corpus-Testing-05.md#507-gd-power-supply-board-pcb).
 
@@ -45,4 +45,4 @@ Board 507 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [506 gd power supply board pcb](b0506b_Mega-IIe_kicad-files-gd-power-supply-board-pcb_gd-power-supply-board-pcb.md) | [508 proto socket adapter](b0508b_Mega-IIe_proto-socket-adapter.md) |
+| [506. gd power supply board pcb](b0506b_Mega-IIe_kicad-files-gd-power-supply-board-pcb_gd-power-supply-board-pcb.md) | [508. proto socket adapter](b0508b_Mega-IIe_proto-socket-adapter.md) |

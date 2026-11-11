@@ -1,4 +1,4 @@
-# 608 Untitled
+# 608. Untitled
 
 Board 608 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 6](../CorpusTestingPages/Corpus-Testing-06.md#608-untitled).
 
@@ -45,4 +45,4 @@ Board 608 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [607 mainbox2.1](b0607b_bjr-kicad_mainbox2-1.md) | [609 SPIBreakout](b0609b_bjr-kicad_SPIBreakout.md) |
+| [607. mainbox2.1](b0607b_bjr-kicad_mainbox2-1.md) | [609. SPIBreakout](b0609b_bjr-kicad_SPIBreakout.md) |

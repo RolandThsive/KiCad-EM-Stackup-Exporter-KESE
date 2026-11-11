@@ -1,4 +1,4 @@
-# 1921 LoRa-STM32WL-DevKit_RevD1
+# 1921. LoRa-STM32WL-DevKit_RevD1
 
 Board 1,921 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 18](../CorpusTestingPages/Corpus-Testing-18.md#1921-lora-stm32wl-devkit_revd1).
 
@@ -45,4 +45,4 @@ Board 1,921 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1920 STM32WL-DevKit_RevB](b1920b_LoRa-STM32WL-DevKIT_STM32WL-DevKit-RevB.md) | [1922 MiniBot_charger_RevA](b1922b_Minibot_MiniBot-charger-RevA.md) |
+| [1920. STM32WL-DevKit_RevB](b1920b_LoRa-STM32WL-DevKIT_STM32WL-DevKit-RevB.md) | [1922. MiniBot_charger_RevA](b1922b_Minibot_MiniBot-charger-RevA.md) |

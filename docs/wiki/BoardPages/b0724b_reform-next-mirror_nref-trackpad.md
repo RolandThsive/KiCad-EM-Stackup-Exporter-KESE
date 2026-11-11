@@ -1,4 +1,4 @@
-# 724 nref-trackpad
+# 724. nref-trackpad
 
 Board 724 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 7](../CorpusTestingPages/Corpus-Testing-07.md#724-nref-trackpad).
 
@@ -45,4 +45,4 @@ Board 724 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [723 Trackpad_IQS9150](b0723b_reform-next-mirror_Trackpad-IQS9150.md) | [725 nref-usb3-redriver](b0725b_reform-next-mirror_nref-usb3-redriver.md) |
+| [723. Trackpad_IQS9150](b0723b_reform-next-mirror_Trackpad-IQS9150.md) | [725. nref-usb3-redriver](b0725b_reform-next-mirror_nref-usb3-redriver.md) |

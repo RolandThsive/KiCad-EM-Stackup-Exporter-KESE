@@ -1,4 +1,4 @@
-# 1368 reform2-motherboard
+# 1368. reform2-motherboard
 
 Board 1,368 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 13](../CorpusTestingPages/Corpus-Testing-13.md#1368-reform2-motherboard).
 
@@ -45,4 +45,4 @@ Board 1,368 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1367 reform2-keyboard3](b1367b_reform_reform2-keyboard3.md) | [1369 reform2-motherboard25](b1369b_reform_reform2-motherboard25.md) |
+| [1367. reform2-keyboard3](b1367b_reform_reform2-keyboard3.md) | [1369. reform2-motherboard25](b1369b_reform_reform2-motherboard25.md) |

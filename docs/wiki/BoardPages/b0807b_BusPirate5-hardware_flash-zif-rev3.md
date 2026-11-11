@@ -1,4 +1,4 @@
-# 807 flash-zif-rev3
+# 807. flash-zif-rev3
 
 Board 807 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 8](../CorpusTestingPages/Corpus-Testing-08.md#807-flash-zif-rev3).
 
@@ -45,4 +45,4 @@ Board 807 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [806 blank-plank-rev0b](b0806b_BusPirate5-hardware_blank-plank-rev0b.md) | [808 flash-sop-rev3](b0808b_BusPirate5-hardware_flash-sop-rev3.md) |
+| [806. blank-plank-rev0b](b0806b_BusPirate5-hardware_blank-plank-rev0b.md) | [808. flash-sop-rev3](b0808b_BusPirate5-hardware_flash-sop-rev3.md) |

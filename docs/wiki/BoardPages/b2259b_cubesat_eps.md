@@ -1,4 +1,4 @@
-# 2259 eps
+# 2259. eps
 
 Board 2,259 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 21](../CorpusTestingPages/Corpus-Testing-21.md#2259-eps).
 
@@ -45,4 +45,4 @@ Board 2,259 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2258 battery_contact](b2258b_cubesat_eps-v1-battery-contact-r_battery-contact.md) | [2260 obc](b2260b_cubesat_obc.md) |
+| [2258. battery_contact](b2258b_cubesat_eps-v1-battery-contact-r_battery-contact.md) | [2260. obc](b2260b_cubesat_obc.md) |

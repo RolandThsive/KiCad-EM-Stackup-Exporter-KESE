@@ -1,4 +1,4 @@
-# 678 H616_devboard
+# 678. H616_devboard
 
 Board 678 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 7](../CorpusTestingPages/Corpus-Testing-07.md#678-h616_devboard).
 
@@ -45,4 +45,4 @@ Board 678 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [677 Debug_Adapter](b0677b_h616-board_Debug-Adapter.md) | [679 H616_devboard](b0679b_h616-board_Hardware-H616-LPDDR4_H616-devboard.md) |
+| [677. Debug_Adapter](b0677b_h616-board_Debug-Adapter.md) | [679. H616_devboard](b0679b_h616-board_Hardware-H616-LPDDR4_H616-devboard.md) |

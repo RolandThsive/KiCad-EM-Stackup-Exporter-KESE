@@ -1,4 +1,4 @@
-# 1031 gd rp2040 keyboard proto pcb
+# 1031. gd rp2040 keyboard proto pcb
 
 Board 1,031 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 10](../CorpusTestingPages/Corpus-Testing-10.md#1031-gd-rp2040-keyboard-proto-pcb).
 
@@ -45,4 +45,4 @@ Board 1,031 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1030 OpenFrame](b1030b_OpenDrop_OpenFrame.md) | [1032 DRV-StepStick](b1032b_prntrboardv2_DRV-StepStick.md) |
+| [1030. OpenFrame](b1030b_OpenDrop_OpenFrame.md) | [1032. DRV-StepStick](b1032b_prntrboardv2_DRV-StepStick.md) |

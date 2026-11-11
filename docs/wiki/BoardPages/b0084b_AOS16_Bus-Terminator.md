@@ -1,4 +1,4 @@
-# 84 Bus Terminator
+# 84. Bus Terminator
 
 Board 84 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 1](../CorpusTestingPages/Corpus-Testing-01.md#84-bus-terminator).
 
@@ -45,4 +45,4 @@ Board 84 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page
 
 | Previous | Next |
 |:---|---:|
-| [83 Bus Probe](b0083b_AOS16_Bus-Probe.md) | [85 bus_boards](b0085b_AOS16_bus-boards.md) |
+| [83. Bus Probe](b0083b_AOS16_Bus-Probe.md) | [85. bus_boards](b0085b_AOS16_bus-boards.md) |

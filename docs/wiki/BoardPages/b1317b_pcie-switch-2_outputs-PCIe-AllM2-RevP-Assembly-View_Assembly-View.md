@@ -1,4 +1,4 @@
-# 1317 Assembly_View
+# 1317. Assembly_View
 
 Board 1,317 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 13](../CorpusTestingPages/Corpus-Testing-13.md#1317-assembly_view).
 
@@ -46,4 +46,4 @@ Board 1,317 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1316 Main_27M2](b1316b_pcie-switch-2_Main-27M2.md) | [1318 Main_20M2](b1318b_pcie-switch-2_Main-20M2.md) |
+| [1316. Main_27M2](b1316b_pcie-switch-2_Main-27M2.md) | [1318. Main_20M2](b1318b_pcie-switch-2_Main-20M2.md) |

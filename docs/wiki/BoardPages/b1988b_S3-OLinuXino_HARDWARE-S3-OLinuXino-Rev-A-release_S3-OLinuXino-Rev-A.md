@@ -1,4 +1,4 @@
-# 1988 S3-OLinuXino_Rev_A
+# 1988. S3-OLinuXino_Rev_A
 
 Board 1,988 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 19](../CorpusTestingPages/Corpus-Testing-19.md#1988-s3-olinuxino_rev_a).
 
@@ -45,4 +45,4 @@ Board 1,988 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1987 S3-OLinuXino_Rev_A](b1987b_S3-OLinuXino_HARDWARE-S3-OLinuXino-Rev-A-preliminary_S3-OLinuXino-Rev-A.md) | [1989 smd-protoboard](b1989b_SMT-PROTOBOARD_smd-protoboard.md) |
+| [1987. S3-OLinuXino_Rev_A](b1987b_S3-OLinuXino_HARDWARE-S3-OLinuXino-Rev-A-preliminary_S3-OLinuXino-Rev-A.md) | [1989. smd-protoboard](b1989b_SMT-PROTOBOARD_smd-protoboard.md) |

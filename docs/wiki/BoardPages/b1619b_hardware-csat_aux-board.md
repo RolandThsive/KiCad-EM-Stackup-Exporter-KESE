@@ -1,4 +1,4 @@
-# 1619 aux_board
+# 1619. aux_board
 
 Board 1,619 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 15](../CorpusTestingPages/Corpus-Testing-15.md#1619-aux_board).
 
@@ -45,4 +45,4 @@ Board 1,619 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1618 ossc_pro](b1618b_ossc-pro-hw_ossc-pro.md) | [1620 auxio_board](b1620b_hardware-csat_auxio-board.md) |
+| [1618. ossc_pro](b1618b_ossc-pro-hw_ossc-pro.md) | [1620. auxio_board](b1620b_hardware-csat_auxio-board.md) |

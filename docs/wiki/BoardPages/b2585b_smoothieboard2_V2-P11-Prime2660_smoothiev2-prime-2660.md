@@ -1,4 +1,4 @@
-# 2585 smoothiev2-prime-2660
+# 2585. smoothiev2-prime-2660
 
 Board 2,585 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 24](../CorpusTestingPages/Corpus-Testing-24.md#2585-smoothiev2-prime-2660).
 
@@ -45,4 +45,4 @@ Board 2,585 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2584 motordriver](b2584b_smoothieboard2_motordriver.md) | [2586 smoothiev2-prime](b2586b_smoothieboard2_V2-P11-Prime2660_smoothiev2-prime.md) |
+| [2584. motordriver](b2584b_smoothieboard2_motordriver.md) | [2586. smoothiev2-prime](b2586b_smoothieboard2_V2-P11-Prime2660_smoothiev2-prime.md) |

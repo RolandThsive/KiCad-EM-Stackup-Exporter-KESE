@@ -1,4 +1,4 @@
-# 253 SD Card Write Data
+# 253. SD Card Write Data
 
 Board 253 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 3](../CorpusTestingPages/Corpus-Testing-03.md#253-sd-card-write-data).
 
@@ -45,4 +45,4 @@ Board 253 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [252 SD Card Read Signals](b0252b_658-Computer_SD-Card-Read-Signals.md) | [254 SD Card Write Signals](b0254b_658-Computer_SD-Card-Write-Signals.md) |
+| [252. SD Card Read Signals](b0252b_658-Computer_SD-Card-Read-Signals.md) | [254. SD Card Write Signals](b0254b_658-Computer_SD-Card-Write-Signals.md) |

@@ -1,4 +1,4 @@
-# 929 PCIeDMA
+# 929. PCIeDMA
 
 Board 929 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 9](../CorpusTestingPages/Corpus-Testing-09.md#929-pciedma).
 
@@ -44,4 +44,4 @@ Board 929 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [928 EEZ PSU consolidated r5B13a](b0928b_psu-hw_EEZ-PSU-consolidated-r5B13a.md) | [930 ulx3s](b0930b_ulx3s_ulx3s.md) |
+| [928. EEZ PSU consolidated r5B13a](b0928b_psu-hw_EEZ-PSU-consolidated-r5B13a.md) | [930. ulx3s](b0930b_ulx3s_ulx3s.md) |

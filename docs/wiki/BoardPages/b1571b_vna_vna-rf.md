@@ -1,4 +1,4 @@
-# 1571 vna_rf
+# 1571. vna_rf
 
 Board 1,571 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 15](../CorpusTestingPages/Corpus-Testing-15.md#1571-vna_rf).
 
@@ -46,4 +46,4 @@ Board 1,571 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1570 vna_demod](b1570b_vna_vna-demod.md) | [1572 ecp5](b1572b_vna_ecp5.md) |
+| [1570. vna_demod](b1570b_vna_vna-demod.md) | [1572. ecp5](b1572b_vna_ecp5.md) |

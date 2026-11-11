@@ -1,4 +1,4 @@
-# 41 Serial Card Pro
+# 41. Serial Card Pro
 
 Board 41 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 1](../CorpusTestingPages/Corpus-Testing-01.md#41-serial-card-pro).
 
@@ -45,4 +45,4 @@ Board 41 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page
 
 | Previous | Next |
 |:---|---:|
-| [40 RTC Card](b0040b_6502_RTC-Card.md) | [42 Serial Card](b0042b_6502_Serial-Card.md) |
+| [40. RTC Card](b0040b_6502_RTC-Card.md) | [42. Serial Card](b0042b_6502_Serial-Card.md) |

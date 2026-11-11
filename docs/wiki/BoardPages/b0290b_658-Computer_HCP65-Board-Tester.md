@@ -1,4 +1,4 @@
-# 290 HCP65 Board Tester
+# 290. HCP65 Board Tester
 
 Board 290 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 3](../CorpusTestingPages/Corpus-Testing-03.md#290-hcp65-board-tester).
 
@@ -45,4 +45,4 @@ Board 290 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [289 HCP65 64 Pin Tester](b0289b_658-Computer_HCP65-64-Pin-Tester.md) | [291 HCP65 Narrow Analyser](b0291b_658-Computer_HCP65-Narrow-Analyser.md) |
+| [289. HCP65 64 Pin Tester](b0289b_658-Computer_HCP65-64-Pin-Tester.md) | [291. HCP65 Narrow Analyser](b0291b_658-Computer_HCP65-Narrow-Analyser.md) |

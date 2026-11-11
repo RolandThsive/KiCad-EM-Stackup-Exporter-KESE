@@ -1,4 +1,4 @@
-# 147 Audio Board
+# 147. Audio Board
 
 Board 147 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 2](../CorpusTestingPages/Corpus-Testing-02.md#147-audio-board).
 
@@ -45,4 +45,4 @@ Board 147 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [146 Audio Address Decode](b0146b_658-Computer_Audio-Address-Decode.md) | [148 Audio Clock](b0148b_658-Computer_Audio-Clock.md) |
+| [146. Audio Address Decode](b0146b_658-Computer_Audio-Address-Decode.md) | [148. Audio Clock](b0148b_658-Computer_Audio-Clock.md) |

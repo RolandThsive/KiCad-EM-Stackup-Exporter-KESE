@@ -1,4 +1,4 @@
-# 1818 eduArdu_Rev_A
+# 1818. eduArdu_Rev_A
 
 Board 1,818 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 17](../CorpusTestingPages/Corpus-Testing-17.md#1818-eduardu_rev_a).
 
@@ -45,4 +45,4 @@ Board 1,818 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1817 TERES-PCB5-KEYBOARD_Rev.A](b1817b_DIY-LAPTOP_TERES-PCB5-KEYBOARD-Rev-A.md) | [1819 eduArdu_Rev_B](b1819b_eduArdu_eduArdu-Rev-B.md) |
+| [1817. TERES-PCB5-KEYBOARD_Rev.A](b1817b_DIY-LAPTOP_TERES-PCB5-KEYBOARD-Rev-A.md) | [1819. eduArdu_Rev_B](b1819b_eduArdu_eduArdu-Rev-B.md) |

@@ -1,4 +1,4 @@
-# 1124 swg_test
+# 1124. swg_test
 
 Board 1,124 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 11](../CorpusTestingPages/Corpus-Testing-11.md#1124-swg_test).
 
@@ -45,4 +45,4 @@ Board 1,124 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1123 praline](b1123b_hackrf-pro_praline.md) | [1125 LNA1109](b1125b_LNA1109_LNA1109.md) |
+| [1123. praline](b1123b_hackrf-pro_praline.md) | [1125. LNA1109](b1125b_LNA1109_LNA1109.md) |

@@ -1,4 +1,4 @@
-# 2297 PicoGUS Hand386
+# 2297. PicoGUS Hand386
 
 Board 2,297 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 22](../CorpusTestingPages/Corpus-Testing-22.md#2297-picogus-hand386).
 
@@ -45,4 +45,4 @@ Board 2,297 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2296 PicoGUS chipdown](b2296b_picogus_PicoGUS-chipdown.md) | [2298 PicoGUS](b2298b_picogus_PicoGUS.md) |
+| [2296. PicoGUS chipdown](b2296b_picogus_PicoGUS-chipdown.md) | [2298. PicoGUS](b2298b_picogus_PicoGUS.md) |

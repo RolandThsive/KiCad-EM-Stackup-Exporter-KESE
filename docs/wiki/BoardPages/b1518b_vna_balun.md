@@ -1,4 +1,4 @@
-# 1518 balun
+# 1518. balun
 
 Board 1,518 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 15](../CorpusTestingPages/Corpus-Testing-15.md#1518-balun).
 
@@ -45,4 +45,4 @@ Board 1,518 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1517 attenuator](b1517b_vna_attenuator.md) | [1519 bias_controller](b1519b_vna_bias-controller.md) |
+| [1517. attenuator](b1517b_vna_attenuator.md) | [1519. bias_controller](b1519b_vna_bias-controller.md) |

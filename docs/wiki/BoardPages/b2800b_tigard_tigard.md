@@ -1,4 +1,4 @@
-# 2800 tigard
+# 2800. tigard
 
 Board 2,800 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 26](../CorpusTestingPages/Corpus-Testing-26.md#2800-tigard).
 
@@ -44,4 +44,4 @@ Board 2,800 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2799 TFGPS01](b2799b_TFGPS01_TFGPS01.md) | [2801 HDMI2USB](b2801b_HDMI2USB-numato-opsis-hardware_HDMI2USB.md) |
+| [2799. TFGPS01](b2799b_TFGPS01_TFGPS01.md) | [2801. HDMI2USB](b2801b_HDMI2USB-numato-opsis-hardware_HDMI2USB.md) |

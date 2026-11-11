@@ -1,4 +1,4 @@
-# 749 FPGA para todos
+# 749. FPGA para todos
 
 Board 749 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 7](../CorpusTestingPages/Corpus-Testing-07.md#749-fpga-para-todos).
 
@@ -45,4 +45,4 @@ Board 749 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [748 ciaa_acc](b0748b_Hardware_ciaa-acc.md) | [750 EDU_CIAA_K60](b0750b_Hardware_EDU-CIAA-K60.md) |
+| [748. ciaa_acc](b0748b_Hardware_ciaa-acc.md) | [750. EDU_CIAA_K60](b0750b_Hardware_EDU-CIAA-K60.md) |

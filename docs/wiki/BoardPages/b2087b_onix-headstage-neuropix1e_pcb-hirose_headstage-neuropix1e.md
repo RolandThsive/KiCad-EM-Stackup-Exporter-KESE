@@ -1,4 +1,4 @@
-# 2087 headstage-neuropix1e
+# 2087. headstage-neuropix1e
 
 Board 2,087 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 20](../CorpusTestingPages/Corpus-Testing-20.md#2087-headstage-neuropix1e).
 
@@ -45,4 +45,4 @@ Board 2,087 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2086 headstage-64s](b2086b_onix-headstage-64s_headstage-64s.md) | [2088 headstage-neuropix1e](b2088b_onix-headstage-neuropix1e_pcb-te_headstage-neuropix1e.md) |
+| [2086. headstage-64s](b2086b_onix-headstage-64s_headstage-64s.md) | [2088. headstage-neuropix1e](b2088b_onix-headstage-neuropix1e_pcb-te_headstage-neuropix1e.md) |

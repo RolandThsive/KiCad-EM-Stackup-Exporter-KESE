@@ -1,4 +1,4 @@
-# 528 zx_coil
+# 528. zx_coil
 
 Board 528 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 5](../CorpusTestingPages/Corpus-Testing-05.md#528-zx_coil).
 
@@ -45,4 +45,4 @@ Board 528 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [527 issue3b](b0527b_zxspectrum-issue3b_issue3b.md) | [529 Spectrum 48K Video Mod](b0529b_zxspectrum-issue3b_Spectrum-48K-Video-Mod.md) |
+| [527. issue3b](b0527b_zxspectrum-issue3b_issue3b.md) | [529. Spectrum 48K Video Mod](b0529b_zxspectrum-issue3b_Spectrum-48K-Video-Mod.md) |

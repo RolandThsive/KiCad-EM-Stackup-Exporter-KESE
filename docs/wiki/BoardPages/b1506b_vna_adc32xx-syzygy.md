@@ -1,4 +1,4 @@
-# 1506 adc32xx_syzygy
+# 1506. adc32xx_syzygy
 
 Board 1,506 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 14](../CorpusTestingPages/Corpus-Testing-14.md#1506-adc32xx_syzygy).
 
@@ -45,4 +45,4 @@ Board 1,506 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1505 ad9864_breakout](b1505b_vna_ad9864-breakout.md) | [1507 adc344x](b1507b_vna_adc344x.md) |
+| [1505. ad9864_breakout](b1505b_vna_ad9864-breakout.md) | [1507. adc344x](b1507b_vna_adc344x.md) |

@@ -1,4 +1,4 @@
-# 900 Thunderscope_Rev5
+# 900. Thunderscope_Rev5
 
 Board 900 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 9](../CorpusTestingPages/Corpus-Testing-09.md#900-thunderscope_rev5).
 
@@ -46,4 +46,4 @@ Board 900 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [899 Thunderscope_Rev5.2](b0899b_ts-hardware-archive_Thunderscope-Rev5-2.md) | [901 Thunderscope_Rev5_Mech_Model](b0901b_ts-hardware-archive_Thunderscope-Rev5-Mech-Model.md) |
+| [899. Thunderscope_Rev5.2](b0899b_ts-hardware-archive_Thunderscope-Rev5-2.md) | [901. Thunderscope_Rev5_Mech_Model](b0901b_ts-hardware-archive_Thunderscope-Rev5-Mech-Model.md) |

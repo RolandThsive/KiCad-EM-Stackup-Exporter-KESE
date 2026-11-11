@@ -1,4 +1,4 @@
-# 8 A4092-backpanel
+# 8. A4092-backpanel
 
 Board 8 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 1](../CorpusTestingPages/Corpus-Testing-01.md#8-a4092-backpanel).
 
@@ -46,4 +46,4 @@ Board 8 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 
 
 | Previous | Next |
 |:---|---:|
-| [7 A4092](b0007b_A4092_A4092.md) | [9 Flipper](b0009b_A4092_Flipper.md) |
+| [7. A4092](b0007b_A4092_A4092.md) | [9. Flipper](b0009b_A4092_Flipper.md) |

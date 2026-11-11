@@ -1,4 +1,4 @@
-# 3044 macpro62_lga1700
+# 3044. macpro62_lga1700
 
 Board 3,044 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 29](../CorpusTestingPages/Corpus-Testing-29.md#3044-macpro62_lga1700).
 
@@ -45,4 +45,4 @@ Board 3,044 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [3043 riser_hdmi](b3043b_the-mac-pro-project_riser-hdmi.md) | [3045 macpro62-storage-face-2x](b3045b_the-mac-pro-project_macpro62-storage-face-2x.md) |
+| [3043. riser_hdmi](b3043b_the-mac-pro-project_riser-hdmi.md) | [3045. macpro62-storage-face-2x](b3045b_the-mac-pro-project_macpro62-storage-face-2x.md) |

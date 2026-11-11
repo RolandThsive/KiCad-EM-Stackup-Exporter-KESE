@@ -1,4 +1,4 @@
-# 709 nref-camera-adapter
+# 709. nref-camera-adapter
 
 Board 709 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 7](../CorpusTestingPages/Corpus-Testing-07.md#709-nref-camera-adapter).
 
@@ -45,4 +45,4 @@ Board 709 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [708 nref-batterypack](b0708b_reform-next-mirror_nref-batterypack_nref-batterypack.md) | [710 reform-camera](b0710b_reform-next-mirror_reform-camera.md) |
+| [708. nref-batterypack](b0708b_reform-next-mirror_nref-batterypack_nref-batterypack.md) | [710. reform-camera](b0710b_reform-next-mirror_reform-camera.md) |

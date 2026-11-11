@@ -1,4 +1,4 @@
-# 1513 amp_breakout
+# 1513. amp_breakout
 
 Board 1,513 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 15](../CorpusTestingPages/Corpus-Testing-15.md#1513-amp_breakout).
 
@@ -45,4 +45,4 @@ Board 1,513 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1512 ammp6120_breakout](b1512b_vna_ammp6120-breakout.md) | [1514 amp_cpw_hmc311](b1514b_vna_amp-cpw-hmc311.md) |
+| [1512. ammp6120_breakout](b1512b_vna_ammp6120-breakout.md) | [1514. amp_cpw_hmc311](b1514b_vna_amp-cpw-hmc311.md) |

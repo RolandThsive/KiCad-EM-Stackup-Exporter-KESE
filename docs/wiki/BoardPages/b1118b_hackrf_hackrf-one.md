@@ -1,4 +1,4 @@
-# 1118 hackrf-one
+# 1118. hackrf-one
 
 Board 1,118 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 11](../CorpusTestingPages/Corpus-Testing-11.md#1118-hackrf-one).
 
@@ -45,4 +45,4 @@ Board 1,118 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1117 quince](b1117b_greatfet-hardware_quince.md) | [1119 LNA915](b1119b_hackrf_LNA915.md) |
+| [1117. quince](b1117b_greatfet-hardware_quince.md) | [1119. LNA915](b1119b_hackrf_LNA915.md) |

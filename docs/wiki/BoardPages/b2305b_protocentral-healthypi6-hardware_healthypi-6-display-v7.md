@@ -1,4 +1,4 @@
-# 2305 healthypi_6_display_v7
+# 2305. healthypi_6_display_v7
 
 Board 2,305 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 22](../CorpusTestingPages/Corpus-Testing-22.md#2305-healthypi_6_display_v7).
 
@@ -45,4 +45,4 @@ Board 2,305 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2304 healthylink_gpio_v2](b2304b_protocentral-healthypi6-hardware_healthylink-gpio-v2.md) | [2306 healthypi_6_v5](b2306b_protocentral-healthypi6-hardware_healthypi-6-v5.md) |
+| [2304. healthylink_gpio_v2](b2304b_protocentral-healthypi6-hardware_healthylink-gpio-v2.md) | [2306. healthypi_6_v5](b2306b_protocentral-healthypi6-hardware_healthypi-6-v5.md) |

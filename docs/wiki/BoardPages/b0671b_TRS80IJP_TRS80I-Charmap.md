@@ -1,4 +1,4 @@
-# 671 TRS80I-Charmap
+# 671. TRS80I-Charmap
 
 Board 671 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 7](../CorpusTestingPages/Corpus-Testing-07.md#671-trs80i-charmap).
 
@@ -45,4 +45,4 @@ Board 671 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [670 PCE](b0670b_PC-Engine-GT_PCE.md) | [672 TRSG3JPMod](b0672b_TRS80IJP_TRSG3JPMod.md) |
+| [670. PCE](b0670b_PC-Engine-GT_PCE.md) | [672. TRSG3JPMod](b0672b_TRS80IJP_TRSG3JPMod.md) |

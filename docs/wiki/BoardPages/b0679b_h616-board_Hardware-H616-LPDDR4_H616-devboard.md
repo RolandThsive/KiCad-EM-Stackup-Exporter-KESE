@@ -1,4 +1,4 @@
-# 679 H616_devboard
+# 679. H616_devboard
 
 Board 679 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 7](../CorpusTestingPages/Corpus-Testing-07.md#679-h616_devboard).
 
@@ -45,4 +45,4 @@ Board 679 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [678 H616_devboard](b0678b_h616-board_Hardware-H616-DDR3_H616-devboard.md) | [680 SmartPrintCoreH7x](b0680b_SmartPrintCoreH7x_SmartPrintCoreH7x.md) |
+| [678. H616_devboard](b0678b_h616-board_Hardware-H616-DDR3_H616-devboard.md) | [680. SmartPrintCoreH7x](b0680b_SmartPrintCoreH7x_SmartPrintCoreH7x.md) |

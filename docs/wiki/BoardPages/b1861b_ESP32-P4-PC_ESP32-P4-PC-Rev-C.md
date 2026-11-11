@@ -1,4 +1,4 @@
-# 1861 ESP32-P4-PC_Rev_C
+# 1861. ESP32-P4-PC_Rev_C
 
 Board 1,861 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 18](../CorpusTestingPages/Corpus-Testing-18.md#1861-esp32-p4-pc_rev_c).
 
@@ -45,4 +45,4 @@ Board 1,861 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1860 ESP32-P4-PC_Rev_B](b1860b_ESP32-P4-PC_ESP32-P4-PC-Rev-B.md) | [1862 ESP32-PoE_Rev_B1](b1862b_ESP32-POE_ESP32-PoE-Rev-B1.md) |
+| [1860. ESP32-P4-PC_Rev_B](b1860b_ESP32-P4-PC_ESP32-P4-PC-Rev-B.md) | [1862. ESP32-PoE_Rev_B1](b1862b_ESP32-POE_ESP32-PoE-Rev-B1.md) |

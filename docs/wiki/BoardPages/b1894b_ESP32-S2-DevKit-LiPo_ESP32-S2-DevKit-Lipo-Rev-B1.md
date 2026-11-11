@@ -1,4 +1,4 @@
-# 1894 ESP32-S2-DevKit-Lipo_Rev_B1
+# 1894. ESP32-S2-DevKit-Lipo_Rev_B1
 
 Board 1,894 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 18](../CorpusTestingPages/Corpus-Testing-18.md#1894-esp32-s2-devkit-lipo_rev_b1).
 
@@ -45,4 +45,4 @@ Board 1,894 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1893 ESP32-PRO_Rev_B1](b1893b_ESP32-PRO_ESP32-PRO-Rev-B1.md) | [1895 ESP32-S2-DevKit-USB_Rev_B](b1895b_ESP32-S2-DevKit-LiPo-USB_ESP32-S2-DevKit-USB-Rev-B.md) |
+| [1893. ESP32-PRO_Rev_B1](b1893b_ESP32-PRO_ESP32-PRO-Rev-B1.md) | [1895. ESP32-S2-DevKit-USB_Rev_B](b1895b_ESP32-S2-DevKit-LiPo-USB_ESP32-S2-DevKit-USB-Rev-B.md) |

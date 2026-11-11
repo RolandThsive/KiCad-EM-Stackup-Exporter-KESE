@@ -1,4 +1,4 @@
-# 240 W65C816 Minimal
+# 240. W65C816 Minimal
 
 Board 240 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 3](../CorpusTestingPages/Corpus-Testing-03.md#240-w65c816-minimal).
 
@@ -45,4 +45,4 @@ Board 240 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [239 W65C816 Latch](b0239b_658-Computer_W65C816-Latch.md) | [241 W65C816 Opcode Display](b0241b_658-Computer_W65C816-Opcode-Display.md) |
+| [239. W65C816 Latch](b0239b_658-Computer_W65C816-Latch.md) | [241. W65C816 Opcode Display](b0241b_658-Computer_W65C816-Opcode-Display.md) |

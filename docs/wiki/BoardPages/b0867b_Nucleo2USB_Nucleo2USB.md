@@ -1,4 +1,4 @@
-# 867 Nucleo2USB
+# 867. Nucleo2USB
 
 Board 867 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 9](../CorpusTestingPages/Corpus-Testing-09.md#867-nucleo2usb).
 
@@ -44,4 +44,4 @@ Board 867 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [866 Nixie_proj_conflict-20171112-163801](b0866b_tlnixie_Nixie-proj-conflict-20171112-163801.md) | [868 nuco-v](b0868b_nuco-v_nuco-v.md) |
+| [866. Nixie_proj_conflict-20171112-163801](b0866b_tlnixie_Nixie-proj-conflict-20171112-163801.md) | [868. nuco-v](b0868b_nuco-v_nuco-v.md) |

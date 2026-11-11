@@ -1,4 +1,4 @@
-# 693 display_eval
+# 693. display_eval
 
 Board 693 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 7](../CorpusTestingPages/Corpus-Testing-07.md#693-display_eval).
 
@@ -45,4 +45,4 @@ Board 693 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [692 protector](b0692b_laptop_protector.md) | [694 display_eval_short](b0694b_laptop_display-eval-short.md) |
+| [692. protector](b0692b_laptop_protector.md) | [694. display_eval_short](b0694b_laptop_display-eval-short.md) |

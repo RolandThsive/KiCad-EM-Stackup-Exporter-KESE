@@ -1,4 +1,4 @@
-# 2945 ExtraBoard-Base
+# 2945. ExtraBoard-Base
 
 Board 2,945 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 28](../CorpusTestingPages/Corpus-Testing-28.md#2945-extraboard-base).
 
@@ -45,4 +45,4 @@ Board 2,945 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2944 Djinn](b2944b_keyboards_Djinn-Rev2a_Djinn.md) | [2946 ExtraBoard-Plate](b2946b_keyboards_ExtraBoard-Plate.md) |
+| [2944. Djinn](b2944b_keyboards_Djinn-Rev2a_Djinn.md) | [2946. ExtraBoard-Plate](b2946b_keyboards_ExtraBoard-Plate.md) |

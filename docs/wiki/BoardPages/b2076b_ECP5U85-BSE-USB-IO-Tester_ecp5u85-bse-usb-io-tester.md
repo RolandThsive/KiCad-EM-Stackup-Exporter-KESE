@@ -1,4 +1,4 @@
-# 2076 ecp5u85-bse-usb_io-tester
+# 2076. ecp5u85-bse-usb_io-tester
 
 Board 2,076 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 20](../CorpusTestingPages/Corpus-Testing-20.md#2076-ecp5u85-bse-usb_io-tester).
 
@@ -45,4 +45,4 @@ Board 2,076 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2075 ecp5u85-bse-usb](b2075b_ECP5U85-BSE-USB_ecp5u85-bse-usb.md) | [2077 ephys-test-board](b2077b_ephys-test-board_ephys-test-board.md) |
+| [2075. ecp5u85-bse-usb](b2075b_ECP5U85-BSE-USB_ecp5u85-bse-usb.md) | [2077. ephys-test-board](b2077b_ephys-test-board_ephys-test-board.md) |

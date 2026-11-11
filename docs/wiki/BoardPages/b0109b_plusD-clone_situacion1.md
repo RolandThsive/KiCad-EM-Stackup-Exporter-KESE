@@ -1,4 +1,4 @@
-# 109 situacion1
+# 109. situacion1
 
 Board 109 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 2](../CorpusTestingPages/Corpus-Testing-02.md#109-situacion1).
 
@@ -44,4 +44,4 @@ Board 109 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [108 plusd](b0108b_plusD-clone_Rev-02_plusd.md) | [110 SMD500](b0110b_Amiga-SMD-500_SMD500.md) |
+| [108. plusd](b0108b_plusD-clone_Rev-02_plusd.md) | [110. SMD500](b0110b_Amiga-SMD-500_SMD500.md) |

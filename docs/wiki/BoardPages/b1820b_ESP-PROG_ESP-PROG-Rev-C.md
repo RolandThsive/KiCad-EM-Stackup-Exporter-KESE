@@ -1,4 +1,4 @@
-# 1820 ESP-PROG_Rev.C
+# 1820. ESP-PROG_Rev.C
 
 Board 1,820 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 17](../CorpusTestingPages/Corpus-Testing-17.md#1820-esp-prog_revc).
 
@@ -45,4 +45,4 @@ Board 1,820 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1819 eduArdu_Rev_B](b1819b_eduArdu_eduArdu-Rev-B.md) | [1821 ESP32-C3-DevKit-Lipo_Rev_A](b1821b_ESP32-C3-DevKit-Lipo_ESP32-C3-DevKit-Lipo-Rev-A.md) |
+| [1819. eduArdu_Rev_B](b1819b_eduArdu_eduArdu-Rev-B.md) | [1821. ESP32-C3-DevKit-Lipo_Rev_A](b1821b_ESP32-C3-DevKit-Lipo_ESP32-C3-DevKit-Lipo-Rev-A.md) |

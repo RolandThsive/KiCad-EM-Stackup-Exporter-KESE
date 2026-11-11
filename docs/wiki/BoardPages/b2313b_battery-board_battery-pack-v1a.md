@@ -1,4 +1,4 @@
-# 2313 battery_pack_v1a
+# 2313. battery_pack_v1a
 
 Board 2,313 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 22](../CorpusTestingPages/Corpus-Testing-22.md#2313-battery_pack_v1a).
 
@@ -45,4 +45,4 @@ Board 2,313 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2312 battery_pack_v1](b2312b_battery-board_battery-pack-v1.md) | [2314 battery_pack_v2](b2314b_battery-board_battery-pack-v2.md) |
+| [2312. battery_pack_v1](b2312b_battery-board_battery-pack-v1.md) | [2314. battery_pack_v2](b2314b_battery-board_battery-pack-v2.md) |

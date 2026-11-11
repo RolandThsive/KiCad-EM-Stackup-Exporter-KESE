@@ -1,4 +1,4 @@
-# 538 BeagleConnect Freedom
+# 538. BeagleConnect Freedom
 
 Board 538 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 5](../CorpusTestingPages/Corpus-Testing-05.md#538-beagleconnect-freedom).
 
@@ -45,4 +45,4 @@ Board 538 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [537 beaglebone-ai-rev-a2](b0537b_beaglebone-ai_beaglebone-ai-rev-a2.md) | [539 BeagleConnect Freedom](b0539b_beagleconnect_hw-Freedom-C4_BeagleConnect-Freedom.md) |
+| [537. beaglebone-ai-rev-a2](b0537b_beaglebone-ai_beaglebone-ai-rev-a2.md) | [539. BeagleConnect Freedom](b0539b_beagleconnect_hw-Freedom-C4_BeagleConnect-Freedom.md) |

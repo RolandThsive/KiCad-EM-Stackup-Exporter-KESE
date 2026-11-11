@@ -1,4 +1,4 @@
-# 1063 a3000_ram_buffer
+# 1063. a3000_ram_buffer
 
 Board 1,063 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 10](../CorpusTestingPages/Corpus-Testing-10.md#1063-a3000_ram_buffer).
 
@@ -45,4 +45,4 @@ Board 1,063 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1062 flash_cartridge](b1062b_myelin-acorn-electron-hardware_32kb-flash-cartridge-pcb-standard_flash-cartridge.md) | [1064 arc_keyboard_to_a3000](b1064b_myelin-acorn-electron-hardware_arc-keyboard-to-a3000.md) |
+| [1062. flash_cartridge](b1062b_myelin-acorn-electron-hardware_32kb-flash-cartridge-pcb-standard_flash-cartridge.md) | [1064. arc_keyboard_to_a3000](b1064b_myelin-acorn-electron-hardware_arc-keyboard-to-a3000.md) |

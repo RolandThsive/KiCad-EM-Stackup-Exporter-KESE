@@ -1,4 +1,4 @@
-# 624 lynx128
+# 624. lynx128
 
 Board 624 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 6](../CorpusTestingPages/Corpus-Testing-06.md#624-lynx128).
 
@@ -45,4 +45,4 @@ Board 624 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [623 lynx128](b0623b_Camputers-Lynx_Lynx-128-Archive-Lynx-192-Kicad_lynx128.md) | [625 Lynx-Keyboard](b0625b_Camputers-Lynx_Lynx-Keyboard.md) |
+| [623. lynx128](b0623b_Camputers-Lynx_Lynx-128-Archive-Lynx-192-Kicad_lynx128.md) | [625. Lynx-Keyboard](b0625b_Camputers-Lynx_Lynx-Keyboard.md) |

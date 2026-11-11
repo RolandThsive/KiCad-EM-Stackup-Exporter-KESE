@@ -1,4 +1,4 @@
-# 2031 lv_bms_tester_board
+# 2031. lv_bms_tester_board
 
 Board 2,031 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 19](../CorpusTestingPages/Corpus-Testing-19.md#2031-lv_bms_tester_board).
 
@@ -45,4 +45,4 @@ Board 2,031 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2030 lvbms](b2030b_olin-electric-motorsports_lvbms.md) | [2032 accelerometer](b2032b_olin-electric-motorsports_accelerometer.md) |
+| [2030. lvbms](b2030b_olin-electric-motorsports_lvbms.md) | [2032. accelerometer](b2032b_olin-electric-motorsports_accelerometer.md) |

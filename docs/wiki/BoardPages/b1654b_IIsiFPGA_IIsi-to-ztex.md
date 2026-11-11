@@ -1,4 +1,4 @@
-# 1654 IIsi-to-ztex
+# 1654. IIsi-to-ztex
 
 Board 1,654 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 16](../CorpusTestingPages/Corpus-Testing-16.md#1654-iisi-to-ztex).
 
@@ -45,4 +45,4 @@ Board 1,654 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1653 pmod_connector_board](b1653b_mega65-r3-expansion-board_pmod-connector-board.md) | [1655 IIsiA7_Mini](b1655b_IIsiFPGA_IIsiA7-Mini.md) |
+| [1653. pmod_connector_board](b1653b_mega65-r3-expansion-board_pmod-connector-board.md) | [1655. IIsiA7_Mini](b1655b_IIsiFPGA_IIsiA7-Mini.md) |

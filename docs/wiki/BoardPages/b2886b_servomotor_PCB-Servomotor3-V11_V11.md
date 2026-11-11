@@ -1,4 +1,4 @@
-# 2886 V11
+# 2886. V11
 
 Board 2,886 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 27](../CorpusTestingPages/Corpus-Testing-27.md#2886-v11).
 
@@ -45,4 +45,4 @@ Board 2,886 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2885 V10](b2885b_servomotor_V10.md) | [2887 V11](b2887b_servomotor_PCB-Servomotor3-V11RC1_V11.md) |
+| [2885. V10](b2885b_servomotor_V10.md) | [2887. V11](b2887b_servomotor_PCB-Servomotor3-V11RC1_V11.md) |

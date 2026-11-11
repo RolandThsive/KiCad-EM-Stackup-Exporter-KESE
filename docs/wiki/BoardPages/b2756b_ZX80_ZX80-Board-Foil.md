@@ -1,4 +1,4 @@
-# 2756 ZX80_Board_Foil
+# 2756. ZX80_Board_Foil
 
 Board 2,756 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 26](../CorpusTestingPages/Corpus-Testing-26.md#2756-zx80_board_foil).
 
@@ -45,4 +45,4 @@ Board 2,756 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2755 ZX80_Board](b2755b_ZX80_ZX80-Board.md) | [2757 TAPRX-888](b2757b_TAPRx888_TAPRX-888.md) |
+| [2755. ZX80_Board](b2755b_ZX80_ZX80-Board.md) | [2757. TAPRX-888](b2757b_TAPRx888_TAPRX-888.md) |

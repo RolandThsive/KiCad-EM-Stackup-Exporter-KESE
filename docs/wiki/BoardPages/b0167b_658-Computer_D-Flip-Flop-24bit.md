@@ -1,4 +1,4 @@
-# 167 D Flip Flop 24bit
+# 167. D Flip Flop 24bit
 
 Board 167 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 2](../CorpusTestingPages/Corpus-Testing-02.md#167-d-flip-flop-24bit).
 
@@ -45,4 +45,4 @@ Board 167 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [166 D Flip Flop 16bit](b0166b_658-Computer_D-Flip-Flop-16bit.md) | [168 Data and Signal Buffer](b0168b_658-Computer_Data-and-Signal-Buffer.md) |
+| [166. D Flip Flop 16bit](b0166b_658-Computer_D-Flip-Flop-16bit.md) | [168. Data and Signal Buffer](b0168b_658-Computer_Data-and-Signal-Buffer.md) |

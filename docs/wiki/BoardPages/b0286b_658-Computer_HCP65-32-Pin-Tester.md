@@ -1,4 +1,4 @@
-# 286 HCP65 32 Pin Tester
+# 286. HCP65 32 Pin Tester
 
 Board 286 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 3](../CorpusTestingPages/Corpus-Testing-03.md#286-hcp65-32-pin-tester).
 
@@ -45,4 +45,4 @@ Board 286 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [285 HCP65 24 Pin Tester](b0285b_658-Computer_HCP65-24-Pin-Tester.md) | [287 HCP65 40 Pin Tester](b0287b_658-Computer_HCP65-40-Pin-Tester.md) |
+| [285. HCP65 24 Pin Tester](b0285b_658-Computer_HCP65-24-Pin-Tester.md) | [287. HCP65 40 Pin Tester](b0287b_658-Computer_HCP65-40-Pin-Tester.md) |

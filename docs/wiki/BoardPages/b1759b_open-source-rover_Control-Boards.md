@@ -1,4 +1,4 @@
-# 1759 Control_Boards
+# 1759. Control_Boards
 
 Board 1,759 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 17](../CorpusTestingPages/Corpus-Testing-17.md#1759-control_boards).
 
@@ -45,4 +45,4 @@ Board 1,759 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1758 PQ_MagYBoard](b1758b_pocat-hw_PQ-MagYBoard.md) | [1760 groundlark-field-head](b1760b_groundlark_groundlark-field-head.md) |
+| [1758. PQ_MagYBoard](b1758b_pocat-hw_PQ-MagYBoard.md) | [1760. groundlark-field-head](b1760b_groundlark_groundlark-field-head.md) |

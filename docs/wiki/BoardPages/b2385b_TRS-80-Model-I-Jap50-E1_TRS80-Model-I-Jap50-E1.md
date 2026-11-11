@@ -1,4 +1,4 @@
-# 2385 TRS80_Model_I_Jap50_E1
+# 2385. TRS80_Model_I_Jap50_E1
 
 Board 2,385 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 23](../CorpusTestingPages/Corpus-Testing-23.md#2385-trs80_model_i_jap50_e1).
 
@@ -45,4 +45,4 @@ Board 2,385 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2384 TRS80_Model_I_Jap20_E1](b2384b_TRS-80-Model-I-Jap20-E1_TRS80-Model-I-Jap20-E1.md) | [2386 AVIONICS_BOARD](b2386b_1kcubesat-hardware_AVIONICS-BOARD.md) |
+| [2384. TRS80_Model_I_Jap20_E1](b2384b_TRS-80-Model-I-Jap20-E1_TRS80-Model-I-Jap20-E1.md) | [2386. AVIONICS_BOARD](b2386b_1kcubesat-hardware_AVIONICS-BOARD.md) |

@@ -1,4 +1,4 @@
-# 2841 Speeduino_base
+# 2841. Speeduino_base
 
 Board 2,841 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 27](../CorpusTestingPages/Corpus-Testing-27.md#2841-speeduino_base).
 
@@ -45,4 +45,4 @@ Board 2,841 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2840 Speeduino_base](b2840b_spectre_SPECTRE-V0-5-1_Speeduino-base.md) | [2842 Speeduino_base](b2842b_spectre_SPECTRE-V0-5-3_Speeduino-base.md) |
+| [2840. Speeduino_base](b2840b_spectre_SPECTRE-V0-5-1_Speeduino-base.md) | [2842. Speeduino_base](b2842b_spectre_SPECTRE-V0-5-3_Speeduino-base.md) |

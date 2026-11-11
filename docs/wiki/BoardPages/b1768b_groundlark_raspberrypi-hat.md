@@ -1,4 +1,4 @@
-# 1768 raspberrypi_hat
+# 1768. raspberrypi_hat
 
 Board 1,768 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 17](../CorpusTestingPages/Corpus-Testing-17.md#1768-raspberrypi_hat).
 
@@ -45,4 +45,4 @@ Board 1,768 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1767 trenz_hat](b1767b_groundlark_trenz-hat.md) | [1769 skylark-usb](b1769b_groundlark_skylark-usb.md) |
+| [1767. trenz_hat](b1767b_groundlark_trenz-hat.md) | [1769. skylark-usb](b1769b_groundlark_skylark-usb.md) |

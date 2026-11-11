@@ -1,4 +1,4 @@
-# 2735 16Ch-Sensor-Hub
+# 2735. 16Ch-Sensor-Hub
 
 Board 2,735 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 26](../CorpusTestingPages/Corpus-Testing-26.md#2735-16ch-sensor-hub).
 
@@ -45,4 +45,4 @@ Board 2,735 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2734 segment-switch](b2734b_pcb_segment-switch.md) | [2736 8Ch-Sensor-Hub](b2736b_pcb_8Ch-Sensor-Hub.md) |
+| [2734. segment-switch](b2734b_pcb_segment-switch.md) | [2736. 8Ch-Sensor-Hub](b2736b_pcb_8Ch-Sensor-Hub.md) |

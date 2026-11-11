@@ -1,4 +1,4 @@
-# 1384 N2360
+# 1384. N2360
 
 Board 1,384 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 13](../CorpusTestingPages/Corpus-Testing-13.md#1384-n2360).
 
@@ -45,4 +45,4 @@ Board 1,384 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1383 TICK](b1383b_Amiga-2000-EATX_TICK-TICK-OSC-KiCAD_TICK.md) | [1385 N2360](b1385b_Amiga-N2630_KiCAD-A2630-New-KiCAD-Rev410-PLCC_N2360.md) |
+| [1383. TICK](b1383b_Amiga-2000-EATX_TICK-TICK-OSC-KiCAD_TICK.md) | [1385. N2360](b1385b_Amiga-N2630_KiCAD-A2630-New-KiCAD-Rev410-PLCC_N2360.md) |

@@ -1,4 +1,4 @@
-# 2556 rp-micro
+# 2556. rp-micro
 
 Board 2,556 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 24](../CorpusTestingPages/Corpus-Testing-24.md#2556-rp-micro).
 
@@ -45,4 +45,4 @@ Board 2,556 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2555 FlightPCB](b2555b_tsar_v3_FlightPCB.md) | [2557 mainboard](b2557b_mainboard-hardware_revA-proto_mainboard.md) |
+| [2555. FlightPCB](b2555b_tsar_v3_FlightPCB.md) | [2557. mainboard](b2557b_mainboard-hardware_revA-proto_mainboard.md) |

@@ -1,4 +1,4 @@
-# 2747 launch-lite-iso
+# 2747. launch-lite-iso
 
 Board 2,747 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 26](../CorpusTestingPages/Corpus-Testing-26.md#2747-launch-lite-iso).
 
@@ -45,4 +45,4 @@ Board 2,747 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2746 launch-iso](b2746b_launch_launch-iso.md) | [2748 launch-lite](b2748b_launch_launch-lite.md) |
+| [2746. launch-iso](b2746b_launch_launch-iso.md) | [2748. launch-lite](b2748b_launch_launch-lite.md) |

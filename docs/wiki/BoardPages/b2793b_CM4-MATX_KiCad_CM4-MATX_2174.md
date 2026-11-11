@@ -1,4 +1,4 @@
-# 2793 CM4_MATX
+# 2793. CM4_MATX
 
 Board 2,793 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 26](../CorpusTestingPages/Corpus-Testing-26.md#2793-cm4_matx).
 
@@ -46,4 +46,4 @@ Board 2,793 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2792 Unified_Board](b2792b_srad-avionics_Unified-Board.md) | [2794 cpu010](b2794b_pg68k_cpu010.md) |
+| [2792. Unified_Board](b2792b_srad-avionics_Unified-Board.md) | [2794. cpu010](b2794b_pg68k_cpu010.md) |

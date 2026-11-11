@@ -1,4 +1,4 @@
-# 305 W65C64
+# 305. W65C64
 
 Board 305 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 3](../CorpusTestingPages/Corpus-Testing-03.md#305-w65c64).
 
@@ -45,4 +45,4 @@ Board 305 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [304 TSSOP32-14mm Adapter](b0304b_658-Computer_TSSOP32-14mm-Adapter.md) | [306 CommonCathode60A](b0306b_boatcontrol_CommonCathode60A.md) |
+| [304. TSSOP32-14mm Adapter](b0304b_658-Computer_TSSOP32-14mm-Adapter.md) | [306. CommonCathode60A](b0306b_boatcontrol_CommonCathode60A.md) |

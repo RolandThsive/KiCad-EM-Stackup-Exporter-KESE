@@ -1,4 +1,4 @@
-# 2558 mainboard
+# 2558. mainboard
 
 Board 2,558 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 24](../CorpusTestingPages/Corpus-Testing-24.md#2558-mainboard).
 
@@ -45,4 +45,4 @@ Board 2,558 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2557 mainboard](b2557b_mainboard-hardware_revA-proto_mainboard.md) | [2559 mainboard_before_drastic](b2559b_mainboard-hardware_mainboard-before-drastic.md) |
+| [2557. mainboard](b2557b_mainboard-hardware_revA-proto_mainboard.md) | [2559. mainboard_before_drastic](b2559b_mainboard-hardware_mainboard-before-drastic.md) |

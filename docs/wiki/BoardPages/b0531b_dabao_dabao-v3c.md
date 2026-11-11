@@ -1,4 +1,4 @@
-# 531 dabao_v3c
+# 531. dabao_v3c
 
 Board 531 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 5](../CorpusTestingPages/Corpus-Testing-05.md#531-dabao_v3c).
 
@@ -44,4 +44,4 @@ Board 531 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [530 zx_spectrum_composite_mod](b0530b_zxspectrum-issue3b_zx-spectrum-composite-mod.md) | [532 RoboMotor-DJI-M3508](b0532b_robomotor_RoboMotor-DJI-M3508.md) |
+| [530. zx_spectrum_composite_mod](b0530b_zxspectrum-issue3b_zx-spectrum-composite-mod.md) | [532. RoboMotor-DJI-M3508](b0532b_robomotor_RoboMotor-DJI-M3508.md) |

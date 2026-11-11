@@ -1,4 +1,4 @@
-# 758 .kicad_pcb
+# 758. .kicad_pcb
 
 Board 758 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 8](../CorpusTestingPages/Corpus-Testing-08.md#758-kicad_pcb).
 
@@ -46,4 +46,4 @@ Board 758 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [757 picociaa](b0757b_Hardware_picociaa.md) | [759 ciaa-rx](b0759b_Hardware_ciaa-rx.md) |
+| [757. picociaa](b0757b_Hardware_picociaa.md) | [759. ciaa-rx](b0759b_Hardware_ciaa-rx.md) |

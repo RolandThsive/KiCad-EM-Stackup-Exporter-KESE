@@ -1,4 +1,4 @@
-# 1712 B3LPD
+# 1712. B3LPD
 
 Board 1,712 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 16](../CorpusTestingPages/Corpus-Testing-16.md#1712-b3lpd).
 
@@ -45,4 +45,4 @@ Board 1,712 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1711 CSAD2](b1711b_lc-clock_CSAD2.md) | [1713 LC_RFE-RevA1](b1713b_lc-rfe_LC-RFE-RevA1.md) |
+| [1711. CSAD2](b1711b_lc-clock_CSAD2.md) | [1713. LC_RFE-RevA1](b1713b_lc-rfe_LC-RFE-RevA1.md) |

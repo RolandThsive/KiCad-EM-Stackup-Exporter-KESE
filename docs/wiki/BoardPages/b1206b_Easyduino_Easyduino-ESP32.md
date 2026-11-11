@@ -1,4 +1,4 @@
-# 1206 Easyduino_ESP32
+# 1206. Easyduino_ESP32
 
 Board 1,206 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 12](../CorpusTestingPages/Corpus-Testing-12.md#1206-easyduino_esp32).
 
@@ -45,4 +45,4 @@ Board 1,206 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1205 Easyduino_Atmega](b1205b_Easyduino_Easyduino-Atmega.md) | [1207 Easyduino_ESP32S3](b1207b_Easyduino_Easyduino-ESP32S3.md) |
+| [1205. Easyduino_Atmega](b1205b_Easyduino_Easyduino-Atmega.md) | [1207. Easyduino_ESP32S3](b1207b_Easyduino_Easyduino-ESP32S3.md) |

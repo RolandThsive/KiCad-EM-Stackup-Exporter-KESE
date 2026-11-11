@@ -1,4 +1,4 @@
-# 156 Clock Doubler
+# 156. Clock Doubler
 
 Board 156 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 2](../CorpusTestingPages/Corpus-Testing-02.md#156-clock-doubler).
 
@@ -45,4 +45,4 @@ Board 156 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [155 Big Board](b0155b_658-Computer_Big-Board.md) | [157 Clock Hold Select](b0157b_658-Computer_Clock-Hold-Select.md) |
+| [155. Big Board](b0155b_658-Computer_Big-Board.md) | [157. Clock Hold Select](b0157b_658-Computer_Clock-Hold-Select.md) |

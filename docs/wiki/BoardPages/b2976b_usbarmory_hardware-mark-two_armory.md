@@ -1,4 +1,4 @@
-# 2976 armory
+# 2976. armory
 
 Board 2,976 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 28](../CorpusTestingPages/Corpus-Testing-28.md#2976-armory).
 
@@ -45,4 +45,4 @@ Board 2,976 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2975 armory](b2975b_usbarmory_hardware-mark-two-lan_armory.md) | [2977 milight-hub-base](b2977b_milight-hub_milight-hub-base.md) |
+| [2975. armory](b2975b_usbarmory_hardware-mark-two-lan_armory.md) | [2977. milight-hub-base](b2977b_milight-hub_milight-hub-base.md) |

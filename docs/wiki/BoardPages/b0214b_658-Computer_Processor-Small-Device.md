@@ -1,4 +1,4 @@
-# 214 Processor Small Device
+# 214. Processor Small Device
 
 Board 214 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 2](../CorpusTestingPages/Corpus-Testing-02.md#214-processor-small-device).
 
@@ -45,4 +45,4 @@ Board 214 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [213 Processor Reset Device](b0213b_658-Computer_Processor-Reset-Device.md) | [215 Status Device](b0215b_658-Computer_Status-Device.md) |
+| [213. Processor Reset Device](b0213b_658-Computer_Processor-Reset-Device.md) | [215. Status Device](b0215b_658-Computer_Status-Device.md) |

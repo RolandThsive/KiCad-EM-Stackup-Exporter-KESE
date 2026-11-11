@@ -1,4 +1,4 @@
-# 2710 debug-board
+# 2710. debug-board
 
 Board 2,710 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 26](../CorpusTestingPages/Corpus-Testing-26.md#2710-debug-board).
 
@@ -45,4 +45,4 @@ Board 2,710 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2709 ail](b2709b_pcb_ail.md) | [2711 latching](b2711b_pcb_latching.md) |
+| [2709. ail](b2709b_pcb_ail.md) | [2711. latching](b2711b_pcb_latching.md) |

@@ -1,4 +1,4 @@
-# 801 HDMI-to-LH550WF1
+# 801. HDMI-to-LH550WF1
 
 Board 801 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 8](../CorpusTestingPages/Corpus-Testing-08.md#801-hdmi-to-lh550wf1).
 
@@ -45,4 +45,4 @@ Board 801 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [800 OpeN64](b0800b_OpeN64_OpeN64.md) | [802 LH550WF1-breakout](b0802b_HDMI-to-MIPI_LH550WF1-breakout.md) |
+| [800. OpeN64](b0800b_OpeN64_OpeN64.md) | [802. LH550WF1-breakout](b0802b_HDMI-to-MIPI_LH550WF1-breakout.md) |

@@ -1,4 +1,4 @@
-# 1360 mntcomp-keyboard
+# 1360. mntcomp-keyboard
 
 Board 1,360 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 13](../CorpusTestingPages/Corpus-Testing-13.md#1360-mntcomp-keyboard).
 
@@ -45,4 +45,4 @@ Board 1,360 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1359 M68000](b1359b_mcd-pcb_M68000.md) | [1361 reform-motherboard](b1361b_reform_reform-motherboard.md) |
+| [1359. M68000](b1359b_mcd-pcb_M68000.md) | [1361. reform-motherboard](b1361b_reform_reform-motherboard.md) |

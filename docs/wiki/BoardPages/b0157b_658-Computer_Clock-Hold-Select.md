@@ -1,4 +1,4 @@
-# 157 Clock Hold Select
+# 157. Clock Hold Select
 
 Board 157 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 2](../CorpusTestingPages/Corpus-Testing-02.md#157-clock-hold-select).
 
@@ -45,4 +45,4 @@ Board 157 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [156 Clock Doubler](b0156b_658-Computer_Clock-Doubler.md) | [158 Clock Hold Standard](b0158b_658-Computer_Clock-Hold-Standard.md) |
+| [156. Clock Doubler](b0156b_658-Computer_Clock-Doubler.md) | [158. Clock Hold Standard](b0158b_658-Computer_Clock-Hold-Standard.md) |

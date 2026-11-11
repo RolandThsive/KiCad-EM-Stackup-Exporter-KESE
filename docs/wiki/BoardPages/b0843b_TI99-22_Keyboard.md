@@ -1,4 +1,4 @@
-# 843 Keyboard
+# 843. Keyboard
 
 Board 843 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 8](../CorpusTestingPages/Corpus-Testing-08.md#843-keyboard).
 
@@ -45,4 +45,4 @@ Board 843 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [842 IO_Riser](b0842b_TI99-22_IO-Riser.md) | [844 Console](b0844b_TI99-22_Console.md) |
+| [842. IO_Riser](b0842b_TI99-22_IO-Riser.md) | [844. Console](b0844b_TI99-22_Console.md) |

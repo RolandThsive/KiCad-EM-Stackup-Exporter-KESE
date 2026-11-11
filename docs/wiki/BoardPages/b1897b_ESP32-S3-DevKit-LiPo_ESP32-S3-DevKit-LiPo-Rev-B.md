@@ -1,4 +1,4 @@
-# 1897 ESP32-S3-DevKit-LiPo_Rev_B
+# 1897. ESP32-S3-DevKit-LiPo_Rev_B
 
 Board 1,897 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 18](../CorpusTestingPages/Corpus-Testing-18.md#1897-esp32-s3-devkit-lipo_rev_b).
 
@@ -45,4 +45,4 @@ Board 1,897 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1896 ESP32-S3-DevKit-LiPo_Rev_B_DIMM](b1896b_ESP32-S3-DevKit-LiPo_ESP32-S3-DevKit-LiPo-Rev-B-DIMM.md) | [1898 ESP32-SBC-FabGL_Rev_A](b1898b_ESP32-SBC-FabGL_ESP32-SBC-FabGL-Rev-A.md) |
+| [1896. ESP32-S3-DevKit-LiPo_Rev_B_DIMM](b1896b_ESP32-S3-DevKit-LiPo_ESP32-S3-DevKit-LiPo-Rev-B-DIMM.md) | [1898. ESP32-SBC-FabGL_Rev_A](b1898b_ESP32-SBC-FabGL_ESP32-SBC-FabGL-Rev-A.md) |

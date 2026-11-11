@@ -1,4 +1,4 @@
-# 858 muon
+# 858. muon
 
 Board 858 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 8](../CorpusTestingPages/Corpus-Testing-08.md#858-muon).
 
@@ -45,4 +45,4 @@ Board 858 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [857 yddraig](b0857b_hardware_yddraig.md) | [859 FC_REV_A](b0859b_flight-controller-v1_FC-REV-A.md) |
+| [857. yddraig](b0857b_hardware_yddraig.md) | [859. FC_REV_A](b0859b_flight-controller-v1_FC-REV-A.md) |

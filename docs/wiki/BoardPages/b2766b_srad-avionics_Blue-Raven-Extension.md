@@ -1,4 +1,4 @@
-# 2766 Blue Raven Extension
+# 2766. Blue Raven Extension
 
 Board 2,766 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 26](../CorpusTestingPages/Corpus-Testing-26.md#2766-blue-raven-extension).
 
@@ -45,4 +45,4 @@ Board 2,766 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2765 BatteryCharger](b2765b_srad-avionics_BatteryCharger.md) | [2767 dipole-breakout](b2767b_srad-avionics_dipole-breakout.md) |
+| [2765. BatteryCharger](b2765b_srad-avionics_BatteryCharger.md) | [2767. dipole-breakout](b2767b_srad-avionics_dipole-breakout.md) |

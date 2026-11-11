@@ -1,4 +1,4 @@
-# 316 antmicro-alvium-flex-csi-adapter-200mm-single-opposite-sides
+# 316. antmicro-alvium-flex-csi-adapter-200mm-single-opposite-sides
 
 Board 316 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 3](../CorpusTestingPages/Corpus-Testing-03.md#316-antmicro-alvium-flex-csi-adapter-200mm-single-opposite-sides).
 
@@ -45,4 +45,4 @@ Board 316 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [315 antmicro-alvium-flex-csi-adapter_100mm-single-same-side](b0315b_alvium-flexible-csi-adapter_antmicro-alvium-flex-csi-adapter-100mm-single-same-side.md) | [317 antmicro-alvium-flex-csi-adapter_200mm-single-same-side](b0317b_alvium-flexible-csi-adapter_antmicro-alvium-flex-csi-adapter-200mm-single-same-side.md) |
+| [315. antmicro-alvium-flex-csi-adapter_100mm-single-same-side](b0315b_alvium-flexible-csi-adapter_antmicro-alvium-flex-csi-adapter-100mm-single-same-side.md) | [317. antmicro-alvium-flex-csi-adapter_200mm-single-same-side](b0317b_alvium-flexible-csi-adapter_antmicro-alvium-flex-csi-adapter-200mm-single-same-side.md) |

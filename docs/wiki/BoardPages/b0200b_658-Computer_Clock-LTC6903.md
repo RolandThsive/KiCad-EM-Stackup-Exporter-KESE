@@ -1,4 +1,4 @@
-# 200 Clock LTC6903
+# 200. Clock LTC6903
 
 Board 200 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 2](../CorpusTestingPages/Corpus-Testing-02.md#200-clock-ltc6903).
 
@@ -45,4 +45,4 @@ Board 200 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [199 Clock Device](b0199b_658-Computer_Clock-Device.md) | [201 Clock Oscillator](b0201b_658-Computer_Clock-Oscillator.md) |
+| [199. Clock Device](b0199b_658-Computer_Clock-Device.md) | [201. Clock Oscillator](b0201b_658-Computer_Clock-Oscillator.md) |

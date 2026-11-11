@@ -1,4 +1,4 @@
-# 408 sdi-mipi-video-converter
+# 408. sdi-mipi-video-converter
 
 Board 408 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 4](../CorpusTestingPages/Corpus-Testing-04.md#408-sdi-mipi-video-converter).
 
@@ -44,4 +44,4 @@ Board 408 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [407 sdi-mipi-bridge](b0407b_sdi-mipi-bridge-hw_sdi-mipi-bridge.md) | [409 si-simulation-test-board](b0409b_signal-integrity-test-board_si-simulation-test-board.md) |
+| [407. sdi-mipi-bridge](b0407b_sdi-mipi-bridge-hw_sdi-mipi-bridge.md) | [409. si-simulation-test-board](b0409b_signal-integrity-test-board_si-simulation-test-board.md) |

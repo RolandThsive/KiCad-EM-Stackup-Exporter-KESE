@@ -1,4 +1,4 @@
-# 1234 tomu
+# 1234. tomu
 
 Board 1,234 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 12](../CorpusTestingPages/Corpus-Testing-12.md#1234-tomu).
 
@@ -45,4 +45,4 @@ Board 1,234 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1233 tomu](b1233b_tomu-hardware_pcb_tomu.md) | [1235 tomu](b1235b_tomu-hardware_releases-v0-1-gerbers_tomu.md) |
+| [1233. tomu](b1233b_tomu-hardware_pcb_tomu.md) | [1235. tomu](b1235b_tomu-hardware_releases-v0-1-gerbers_tomu.md) |

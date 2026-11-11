@@ -1,4 +1,4 @@
-# 784 discipline-pcb
+# 784. discipline-pcb
 
 Board 784 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 8](../CorpusTestingPages/Corpus-Testing-08.md#784-discipline-pcb).
 
@@ -46,4 +46,4 @@ Board 784 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [783 saw_eval_board](b0783b_adsbee_saw-eval-board.md) | [785 discipline-pcb](b0785b_discipline_discipline-pcb.md) |
+| [783. saw_eval_board](b0783b_adsbee_saw-eval-board.md) | [785. discipline-pcb](b0785b_discipline_discipline-pcb.md) |

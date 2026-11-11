@@ -1,4 +1,4 @@
-# 2220 controller-board
+# 2220. controller-board
 
 Board 2,220 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 21](../CorpusTestingPages/Corpus-Testing-21.md#2220-controller-board).
 
@@ -45,4 +45,4 @@ Board 2,220 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2219 connector-breakout](b2219b_oresat-solar-simulator-hardware_connector-breakout.md) | [2221 cree-xega-led-breakout](b2221b_oresat-solar-simulator-hardware_cree-xega-led-breakout.md) |
+| [2219. connector-breakout](b2219b_oresat-solar-simulator-hardware_connector-breakout.md) | [2221. cree-xega-led-breakout](b2221b_oresat-solar-simulator-hardware_cree-xega-led-breakout.md) |

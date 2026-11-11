@@ -1,4 +1,4 @@
-# 1480 zx2_keyb_conn
+# 1480. zx2_keyb_conn
 
 Board 1,480 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 14](../CorpusTestingPages/Corpus-Testing-14.md#1480-zx2_keyb_conn).
 
@@ -45,4 +45,4 @@ Board 1,480 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1479 zx2_fpga_int](b1479b_ZX-Spectrum-diy_zx2-fpga-int.md) | [1481 zx2_keyb_idc](b1481b_ZX-Spectrum-diy_zx2-keyb-idc.md) |
+| [1479. zx2_fpga_int](b1479b_ZX-Spectrum-diy_zx2-fpga-int.md) | [1481. zx2_keyb_idc](b1481b_ZX-Spectrum-diy_zx2-keyb-idc.md) |

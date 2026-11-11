@@ -1,4 +1,4 @@
-# 1761 field_head
+# 1761. field_head
 
 Board 1,761 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 17](../CorpusTestingPages/Corpus-Testing-17.md#1761-field_head).
 
@@ -45,4 +45,4 @@ Board 1,761 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1760 groundlark-field-head](b1760b_groundlark_groundlark-field-head.md) | [1762 groundlark-daqhat-01](b1762b_groundlark_groundlark-daqhat-01.md) |
+| [1760. groundlark-field-head](b1760b_groundlark_groundlark-field-head.md) | [1762. groundlark-daqhat-01](b1762b_groundlark_groundlark-daqhat-01.md) |

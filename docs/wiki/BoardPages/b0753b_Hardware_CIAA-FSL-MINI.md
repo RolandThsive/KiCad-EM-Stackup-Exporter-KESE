@@ -1,4 +1,4 @@
-# 753 CIAA_FSL_MINI
+# 753. CIAA_FSL_MINI
 
 Board 753 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 7](../CorpusTestingPages/Corpus-Testing-07.md#753-ciaa_fsl_mini).
 
@@ -45,4 +45,4 @@ Board 753 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [752 edu-ciaa-nxp](b0752b_Hardware_edu-ciaa-nxp.md) | [754 CIAA_K60](b0754b_Hardware_CIAA-K60.md) |
+| [752. edu-ciaa-nxp](b0752b_Hardware_edu-ciaa-nxp.md) | [754. CIAA_K60](b0754b_Hardware_CIAA-K60.md) |

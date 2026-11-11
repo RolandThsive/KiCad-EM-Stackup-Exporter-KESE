@@ -1,4 +1,4 @@
-# 765 AIL_TSAL
+# 765. AIL_TSAL
 
 Board 765 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 8](../CorpusTestingPages/Corpus-Testing-08.md#765-ail_tsal).
 
@@ -45,4 +45,4 @@ Board 765 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [764 2021 Accumulator Base](b0764b_2021-accumulator-electronics_2021-Accumulator-Base.md) | [766 Slave Board](b0766b_2021-accumulator-electronics_Slave-Board.md) |
+| [764. 2021 Accumulator Base](b0764b_2021-accumulator-electronics_2021-Accumulator-Base.md) | [766. Slave Board](b0766b_2021-accumulator-electronics_Slave-Board.md) |

@@ -1,4 +1,4 @@
-# 2867 RASRF
+# 2867. RASRF
 
 Board 2,867 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 27](../CorpusTestingPages/Corpus-Testing-27.md#2867-rasrf).
 
@@ -45,4 +45,4 @@ Board 2,867 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2866 RASBB](b2866b_ra-sentinel_RASBB-Hardware-Rev-C-Design_RASBB.md) | [2868 RASRF2400WBMC](b2868b_ra-sentinel_RASRF2400WBMC.md) |
+| [2866. RASBB](b2866b_ra-sentinel_RASBB-Hardware-Rev-C-Design_RASBB.md) | [2868. RASRF2400WBMC](b2868b_ra-sentinel_RASRF2400WBMC.md) |

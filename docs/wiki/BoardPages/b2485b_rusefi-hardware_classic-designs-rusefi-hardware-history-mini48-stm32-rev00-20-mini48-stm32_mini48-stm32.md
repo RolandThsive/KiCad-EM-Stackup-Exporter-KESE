@@ -1,4 +1,4 @@
-# 2485 mini48-stm32
+# 2485. mini48-stm32
 
 Board 2,485 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 24](../CorpusTestingPages/Corpus-Testing-24.md#2485-mini48-stm32).
 
@@ -45,4 +45,4 @@ Board 2,485 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2484 Map_MPX](b2484b_rusefi-hardware_Map-MPX.md) | [2486 NGC_38_connector](b2486b_rusefi-hardware_classic-designs-rusefi-hardware-history-NGC-38-connector-rev00-10-NGC-38-connector_NGC-38-connector.md) |
+| [2484. Map_MPX](b2484b_rusefi-hardware_Map-MPX.md) | [2486. NGC_38_connector](b2486b_rusefi-hardware_classic-designs-rusefi-hardware-history-NGC-38-connector-rev00-10-NGC-38-connector_NGC-38-connector.md) |

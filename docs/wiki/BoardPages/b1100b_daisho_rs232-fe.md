@@ -1,4 +1,4 @@
-# 1100 rs232_fe
+# 1100. rs232_fe
 
 Board 1,100 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 11](../CorpusTestingPages/Corpus-Testing-11.md#1100-rs232_fe).
 
@@ -45,4 +45,4 @@ Board 1,100 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1099 gige_fe](b1099b_daisho_gige-fe.md) | [1101 hdmi](b1101b_daisho_hw-frontend-hdmi_hdmi.md) |
+| [1099. gige_fe](b1099b_daisho_gige-fe.md) | [1101. hdmi](b1101b_daisho_hw-frontend-hdmi_hdmi.md) |

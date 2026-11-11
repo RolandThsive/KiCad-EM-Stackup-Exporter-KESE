@@ -1,4 +1,4 @@
-# 2828 pico2-nx-module
+# 2828. pico2-nx-module
 
 Board 2,828 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 27](../CorpusTestingPages/Corpus-Testing-27.md#2828-pico2-nx-module).
 
@@ -45,4 +45,4 @@ Board 2,828 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2827 pico2-ice](b2827b_pico2-ice_Board-Rev2_pico2-ice.md) | [2829 pico2-nx](b2829b_pico2-nx_pico2-nx.md) |
+| [2827. pico2-ice](b2827b_pico2-ice_Board-Rev2_pico2-ice.md) | [2829. pico2-nx](b2829b_pico2-nx_pico2-nx.md) |

@@ -1,4 +1,4 @@
-# 908 EEZ DIB DCP405plus front mask
+# 908. EEZ DIB DCP405plus front mask
 
 Board 908 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 9](../CorpusTestingPages/Corpus-Testing-09.md#908-eez-dib-dcp405plus-front-mask).
 
@@ -45,4 +45,4 @@ Board 908 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [907 EEZ DIB DCP405plus front mask (Basic)](b0907b_dib-dcp405plus_EEZ-DIB-DCP405plus-front-mask-Basic.md) | [909 EEZ DIB DCP405plus](b0909b_dib-dcp405plus_EEZ-DIB-DCP405plus.md) |
+| [907. EEZ DIB DCP405plus front mask (Basic)](b0907b_dib-dcp405plus_EEZ-DIB-DCP405plus-front-mask-Basic.md) | [909. EEZ DIB DCP405plus](b0909b_dib-dcp405plus_EEZ-DIB-DCP405plus.md) |

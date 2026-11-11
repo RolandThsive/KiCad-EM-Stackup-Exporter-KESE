@@ -1,4 +1,4 @@
-# 1935 MOD-RTC2_Rev_A
+# 1935. MOD-RTC2_Rev_A
 
 Board 1,935 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 18](../CorpusTestingPages/Corpus-Testing-18.md#1935-mod-rtc2_rev_a).
 
@@ -45,4 +45,4 @@ Board 1,935 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1934 mod-oled-128x64](b1934b_MOD-OLED-128x64_mod-oled-128x64.md) | [1936 NB-IoT-DevKit_Rev_B](b1936b_NB-IoT_NB-IoT-DevKit-Rev-B.md) |
+| [1934. mod-oled-128x64](b1934b_MOD-OLED-128x64_mod-oled-128x64.md) | [1936. NB-IoT-DevKit_Rev_B](b1936b_NB-IoT_NB-IoT-DevKit-Rev-B.md) |

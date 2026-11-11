@@ -1,4 +1,4 @@
-# 2519 tv070hat
+# 2519. tv070hat
 
 Board 2,519 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 24](../CorpusTestingPages/Corpus-Testing-24.md#2519-tv070hat).
 
@@ -44,4 +44,4 @@ Board 2,519 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2518 sd2snes_ecp5](b2518b_sd2snes-ecp5_sd2snes-ecp5.md) | [2520 CM5RevEng](b2520b_cm5-reveng_CM5RevEng.md) |
+| [2518. sd2snes_ecp5](b2518b_sd2snes-ecp5_sd2snes-ecp5.md) | [2520. CM5RevEng](b2520b_cm5-reveng_CM5RevEng.md) |

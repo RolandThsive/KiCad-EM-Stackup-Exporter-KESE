@@ -1,4 +1,4 @@
-# 980 STM8SUBSYS
+# 980. STM8SUBSYS
 
 Board 980 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 10](../CorpusTestingPages/Corpus-Testing-10.md#980-stm8subsys).
 
@@ -45,4 +45,4 @@ Board 980 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [979 PS2TestCard](b0979b_Ace-2019_PS2TestCard.md) | [981 UniBoard](b0981b_Ace-2019_UniBoard.md) |
+| [979. PS2TestCard](b0979b_Ace-2019_PS2TestCard.md) | [981. UniBoard](b0981b_Ace-2019_UniBoard.md) |

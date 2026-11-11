@@ -1,4 +1,4 @@
-# 380 lpddr5-testbed
+# 380. lpddr5-testbed
 
 Board 380 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 4](../CorpusTestingPages/Corpus-Testing-04.md#380-lpddr5-testbed).
 
@@ -44,4 +44,4 @@ Board 380 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [379 lpddr4-testbed](b0379b_lpddr4-testbed_lpddr4-testbed.md) | [381 antmicro-m2-oculink-adapter-hw](b0381b_m2-oculink-adapter_antmicro-m2-oculink-adapter-hw.md) |
+| [379. lpddr4-testbed](b0379b_lpddr4-testbed_lpddr4-testbed.md) | [381. antmicro-m2-oculink-adapter-hw](b0381b_m2-oculink-adapter_antmicro-m2-oculink-adapter-hw.md) |

@@ -1,4 +1,4 @@
-# 2741 tsal-led
+# 2741. tsal-led
 
 Board 2,741 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 26](../CorpusTestingPages/Corpus-Testing-26.md#2741-tsal-led).
 
@@ -45,4 +45,4 @@ Board 2,741 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2740 tsal-latching-integrated](b2740b_pcb_tsal-latching-integrated.md) | [2742 vcu](b2742b_pcb_vcu.md) |
+| [2740. tsal-latching-integrated](b2740b_pcb_tsal-latching-integrated.md) | [2742. vcu](b2742b_pcb_vcu.md) |

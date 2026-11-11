@@ -1,4 +1,4 @@
-# 79 AOS16 GPU
+# 79. AOS16 GPU
 
 Board 79 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 1](../CorpusTestingPages/Corpus-Testing-01.md#79-aos16-gpu).
 
@@ -45,4 +45,4 @@ Board 79 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page
 
 | Previous | Next |
 |:---|---:|
-| [78 AOS16 Double Buffer](b0078b_AOS16_AOS16-Double-Buffer.md) | [80 AOS16 Register](b0080b_AOS16_AOS16-Register.md) |
+| [78. AOS16 Double Buffer](b0078b_AOS16_AOS16-Double-Buffer.md) | [80. AOS16 Register](b0080b_AOS16_AOS16-Register.md) |

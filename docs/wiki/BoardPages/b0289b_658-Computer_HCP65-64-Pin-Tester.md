@@ -1,4 +1,4 @@
-# 289 HCP65 64 Pin Tester
+# 289. HCP65 64 Pin Tester
 
 Board 289 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 3](../CorpusTestingPages/Corpus-Testing-03.md#289-hcp65-64-pin-tester).
 
@@ -45,4 +45,4 @@ Board 289 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [288 HCP65 56 Pin Tester](b0288b_658-Computer_HCP65-56-Pin-Tester.md) | [290 HCP65 Board Tester](b0290b_658-Computer_HCP65-Board-Tester.md) |
+| [288. HCP65 56 Pin Tester](b0288b_658-Computer_HCP65-56-Pin-Tester.md) | [290. HCP65 Board Tester](b0290b_658-Computer_HCP65-Board-Tester.md) |

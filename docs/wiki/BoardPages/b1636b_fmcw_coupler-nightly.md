@@ -1,4 +1,4 @@
-# 1636 coupler_nightly
+# 1636. coupler_nightly
 
 Board 1,636 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 16](../CorpusTestingPages/Corpus-Testing-16.md#1636-coupler_nightly).
 
@@ -45,4 +45,4 @@ Board 1,636 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1635 coupler](b1635b_fmcw_coupler.md) | [1637 microstrip_width](b1637b_fmcw_microstrip-width.md) |
+| [1635. coupler](b1635b_fmcw_coupler.md) | [1637. microstrip_width](b1637b_fmcw_microstrip-width.md) |

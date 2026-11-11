@@ -1,4 +1,4 @@
-# 2730 PCB - VOLTAGE TAPS
+# 2730. PCB - VOLTAGE TAPS
 
 Board 2,730 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 26](../CorpusTestingPages/Corpus-Testing-26.md#2730-pcb---voltage-taps).
 
@@ -45,4 +45,4 @@ Board 2,730 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2729 lvbms-connector](b2729b_pcb_lvbms-connector.md) | [2731 precharge](b2731b_pcb_precharge.md) |
+| [2729. lvbms-connector](b2729b_pcb_lvbms-connector.md) | [2731. precharge](b2731b_pcb_precharge.md) |

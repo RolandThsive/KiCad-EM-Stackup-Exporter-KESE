@@ -1,4 +1,4 @@
-# 1421 ecp5-mini
+# 1421. ecp5-mini
 
 Board 1,421 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 14](../CorpusTestingPages/Corpus-Testing-14.md#1421-ecp5-mini).
 
@@ -45,4 +45,4 @@ Board 1,421 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1420 ecp5-mini](b1420b_ecp5-mini_hardware-0-1_ecp5-mini.md) | [1422 adapter](b1422b_jtcores_cores-argus-sch-adapter_adapter.md) |
+| [1420. ecp5-mini](b1420b_ecp5-mini_hardware-0-1_ecp5-mini.md) | [1422. adapter](b1422b_jtcores_cores-argus-sch-adapter_adapter.md) |

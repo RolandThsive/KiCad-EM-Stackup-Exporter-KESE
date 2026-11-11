@@ -1,4 +1,4 @@
-# 1402 RK3576 SBCv2
+# 1402. RK3576 SBCv2
 
 Board 1,402 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 13](../CorpusTestingPages/Corpus-Testing-13.md#1402-rk3576-sbcv2).
 
@@ -45,4 +45,4 @@ Board 1,402 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1401 astra_piNas](b1401b_astra-pinas_astra-piNas.md) | [1403 OSO-SWAT-B1-jig](b1403b_Sensor-Watch_OSO-SWAT-B1-jig.md) |
+| [1401. astra_piNas](b1401b_astra-pinas_astra-piNas.md) | [1403. OSO-SWAT-B1-jig](b1403b_Sensor-Watch_OSO-SWAT-B1-jig.md) |

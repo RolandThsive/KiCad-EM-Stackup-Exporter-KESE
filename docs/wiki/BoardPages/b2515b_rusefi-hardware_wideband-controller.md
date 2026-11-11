@@ -1,4 +1,4 @@
-# 2515 wideband_controller
+# 2515. wideband_controller
 
 Board 2,515 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 24](../CorpusTestingPages/Corpus-Testing-24.md#2515-wideband_controller).
 
@@ -45,4 +45,4 @@ Board 2,515 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2514 ncv1124](b2514b_rusefi-hardware_ncv1124.md) | [2516 8HPTCUAdapter](b2516b_rusefi-hardware_8HPTCUAdapter.md) |
+| [2514. ncv1124](b2514b_rusefi-hardware_ncv1124.md) | [2516. 8HPTCUAdapter](b2516b_rusefi-hardware_8HPTCUAdapter.md) |

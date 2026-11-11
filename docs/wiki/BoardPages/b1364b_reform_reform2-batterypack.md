@@ -1,4 +1,4 @@
-# 1364 reform2-batterypack
+# 1364. reform2-batterypack
 
 Board 1,364 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 13](../CorpusTestingPages/Corpus-Testing-13.md#1364-reform2-batterypack).
 
@@ -45,4 +45,4 @@ Board 1,364 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1363 reform2-batterypack-upstream](b1363b_reform_reform2-batterypack-upstream.md) | [1365 reform2-imx8mplus](b1365b_reform_reform2-imx8mplus.md) |
+| [1363. reform2-batterypack-upstream](b1363b_reform_reform2-batterypack-upstream.md) | [1365. reform2-imx8mplus](b1365b_reform_reform2-imx8mplus.md) |

@@ -1,4 +1,4 @@
-# 2415 TINY-REFLOW-CONTROLLER
+# 2415. TINY-REFLOW-CONTROLLER
 
 Board 2,415 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 23](../CorpusTestingPages/Corpus-Testing-23.md#2415-tiny-reflow-controller).
 
@@ -44,4 +44,4 @@ Board 2,415 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2414 Alius_6502](b2414b_Alius6502-PCB_Alius-6502.md) | [2416 GaNdapter-dual](b2416b_dcdc_GaNdapter-dual.md) |
+| [2414. Alius_6502](b2414b_Alius6502-PCB_Alius-6502.md) | [2416. GaNdapter-dual](b2416b_dcdc_GaNdapter-dual.md) |

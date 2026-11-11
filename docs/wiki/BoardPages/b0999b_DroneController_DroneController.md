@@ -1,4 +1,4 @@
-# 999 DroneController
+# 999. DroneController
 
 Board 999 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 10](../CorpusTestingPages/Corpus-Testing-10.md#999-dronecontroller).
 
@@ -45,4 +45,4 @@ Board 999 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [998 FABulous_board](b0998b_fabulous-board_FABulous-board.md) | [1000 ESC_Board](b1000b_DroneController_ESC-Board.md) |
+| [998. FABulous_board](b0998b_fabulous-board_FABulous-board.md) | [1000. ESC_Board](b1000b_DroneController_ESC-Board.md) |

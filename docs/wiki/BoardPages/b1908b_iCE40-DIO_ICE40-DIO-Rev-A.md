@@ -1,4 +1,4 @@
-# 1908 ICE40-DIO_Rev_A
+# 1908. ICE40-DIO_Rev_A
 
 Board 1,908 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 18](../CorpusTestingPages/Corpus-Testing-18.md#1908-ice40-dio_rev_a).
 
@@ -44,4 +44,4 @@ Board 1,908 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1907 ICE40-DAC_Rev_A](b1907b_iCE40-DAC_ICE40-DAC-Rev-A.md) | [1909 ICE40-IO_Rev_A](b1909b_iCE40-IO_ICE40-IO-Rev-A.md) |
+| [1907. ICE40-DAC_Rev_A](b1907b_iCE40-DAC_ICE40-DAC-Rev-A.md) | [1909. ICE40-IO_Rev_A](b1909b_iCE40-IO_ICE40-IO-Rev-A.md) |

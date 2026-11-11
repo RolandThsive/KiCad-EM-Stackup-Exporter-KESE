@@ -1,4 +1,4 @@
-# 1463 reform-kintex-edp
+# 1463. reform-kintex-edp
 
 Board 1,463 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 14](../CorpusTestingPages/Corpus-Testing-14.md#1463-reform-kintex-edp).
 
@@ -45,4 +45,4 @@ Board 1,463 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1462 video](b1462b_kicad-source-mirror_video.md) | [1464 reform-kintex](b1464b_reform-kintex-som_reform-kintex.md) |
+| [1462. video](b1462b_kicad-source-mirror_video.md) | [1464. reform-kintex](b1464b_reform-kintex-som_reform-kintex.md) |

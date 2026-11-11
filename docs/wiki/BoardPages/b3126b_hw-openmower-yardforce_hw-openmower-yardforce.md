@@ -1,4 +1,4 @@
-# 3126 hw-openmower-yardforce
+# 3126. hw-openmower-yardforce
 
 Board 3,126 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 29](../CorpusTestingPages/Corpus-Testing-29.md#3126-hw-openmower-yardforce).
 
@@ -44,4 +44,4 @@ Board 3,126 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [3125 hw-openmower-universal](b3125b_hw-openmower-universal_hw-openmower-universal.md) | [3127 Prism](b3127b_prism-pcb_Prism.md) |
+| [3125. hw-openmower-universal](b3125b_hw-openmower-universal_hw-openmower-universal.md) | [3127. Prism](b3127b_prism-pcb_Prism.md) |

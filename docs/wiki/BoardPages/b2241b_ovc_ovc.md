@@ -1,4 +1,4 @@
-# 2241 ovc
+# 2241. ovc
 
 Board 2,241 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 21](../CorpusTestingPages/Corpus-Testing-21.md#2241-ovc).
 
@@ -45,4 +45,4 @@ Board 2,241 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2240 HarleyTandemRevB](b2240b_ovc_HarleyTandemRevB.md) | [2242 mobof](b2242b_ovc_mobof.md) |
+| [2240. HarleyTandemRevB](b2240b_ovc_HarleyTandemRevB.md) | [2242. mobof](b2242b_ovc_mobof.md) |

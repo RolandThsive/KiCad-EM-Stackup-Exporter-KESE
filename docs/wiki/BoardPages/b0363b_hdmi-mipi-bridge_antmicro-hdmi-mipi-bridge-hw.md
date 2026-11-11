@@ -1,4 +1,4 @@
-# 363 antmicro-hdmi-mipi-bridge-hw
+# 363. antmicro-hdmi-mipi-bridge-hw
 
 Board 363 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 4](../CorpusTestingPages/Corpus-Testing-04.md#363-antmicro-hdmi-mipi-bridge-hw).
 
@@ -44,4 +44,4 @@ Board 363 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [362 hdmi-edid-debug-board](b0362b_hdmi-edid-debug-board_hdmi-edid-debug-board.md) | [364 icicle-hdmi-breakout](b0364b_icicle-hdmi-breakout_icicle-hdmi-breakout.md) |
+| [362. hdmi-edid-debug-board](b0362b_hdmi-edid-debug-board_hdmi-edid-debug-board.md) | [364. icicle-hdmi-breakout](b0364b_icicle-hdmi-breakout_icicle-hdmi-breakout.md) |

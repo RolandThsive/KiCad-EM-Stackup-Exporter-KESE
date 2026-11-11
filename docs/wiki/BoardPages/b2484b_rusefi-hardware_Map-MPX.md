@@ -1,4 +1,4 @@
-# 2484 Map_MPX
+# 2484. Map_MPX
 
 Board 2,484 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 23](../CorpusTestingPages/Corpus-Testing-23.md#2484-map_mpx).
 
@@ -45,4 +45,4 @@ Board 2,484 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2483 tle6240_driver](b2483b_rusefi-hardware_classic-designs-rusefi-hardware-history-low-side-tle6240-rev00-11_tle6240-driver.md) | [2485 mini48-stm32](b2485b_rusefi-hardware_classic-designs-rusefi-hardware-history-mini48-stm32-rev00-20-mini48-stm32_mini48-stm32.md) |
+| [2483. tle6240_driver](b2483b_rusefi-hardware_classic-designs-rusefi-hardware-history-low-side-tle6240-rev00-11_tle6240-driver.md) | [2485. mini48-stm32](b2485b_rusefi-hardware_classic-designs-rusefi-hardware-history-mini48-stm32-rev00-20-mini48-stm32_mini48-stm32.md) |

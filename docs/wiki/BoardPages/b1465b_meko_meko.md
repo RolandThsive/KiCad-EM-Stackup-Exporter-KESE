@@ -1,4 +1,4 @@
-# 1465 meko
+# 1465. meko
 
 Board 1,465 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 14](../CorpusTestingPages/Corpus-Testing-14.md#1465-meko).
 
@@ -45,4 +45,4 @@ Board 1,465 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1464 reform-kintex](b1464b_reform-kintex-som_reform-kintex.md) | [1466 touchpad](b1466b_meko_touchpad.md) |
+| [1464. reform-kintex](b1464b_reform-kintex-som_reform-kintex.md) | [1466. touchpad](b1466b_meko_touchpad.md) |

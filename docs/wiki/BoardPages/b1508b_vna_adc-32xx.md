@@ -1,4 +1,4 @@
-# 1508 adc_32xx
+# 1508. adc_32xx
 
 Board 1,508 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 14](../CorpusTestingPages/Corpus-Testing-14.md#1508-adc_32xx).
 
@@ -45,4 +45,4 @@ Board 1,508 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1507 adc344x](b1507b_vna_adc344x.md) | [1509 adc_cape](b1509b_vna_adc-cape.md) |
+| [1507. adc344x](b1507b_vna_adc344x.md) | [1509. adc_cape](b1509b_vna_adc-cape.md) |

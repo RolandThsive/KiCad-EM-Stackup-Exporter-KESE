@@ -1,4 +1,4 @@
-# 2481 cps_vrs_io_1
+# 2481. cps_vrs_io_1
 
 Board 2,481 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 23](../CorpusTestingPages/Corpus-Testing-23.md#2481-cps_vrs_io_1).
 
@@ -45,4 +45,4 @@ Board 2,481 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2480 DD HIP9011](b2480b_rusefi-hardware_DD-HIP9011.md) | [2482 tle6240_driver](b2482b_rusefi-hardware_classic-designs-rusefi-hardware-history-low-side-tle6240-rev00-10_tle6240-driver.md) |
+| [2480. DD HIP9011](b2480b_rusefi-hardware_DD-HIP9011.md) | [2482. tle6240_driver](b2482b_rusefi-hardware_classic-designs-rusefi-hardware-history-low-side-tle6240-rev00-10_tle6240-driver.md) |

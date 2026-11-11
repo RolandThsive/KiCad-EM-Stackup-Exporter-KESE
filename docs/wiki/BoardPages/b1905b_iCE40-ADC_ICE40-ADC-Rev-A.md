@@ -1,4 +1,4 @@
-# 1905 ICE40-ADC_Rev_A
+# 1905. ICE40-ADC_Rev_A
 
 Board 1,905 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 18](../CorpusTestingPages/Corpus-Testing-18.md#1905-ice40-adc_rev_a).
 
@@ -44,4 +44,4 @@ Board 1,905 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1904 GateMateA1-EVB_Rev_C](b1904b_GateMateA1-EVB_GateMateA1-EVB-Rev-C.md) | [1906 ICE40-DAC_Rev_A1](b1906b_iCE40-DAC_ICE40-DAC-Rev-A1.md) |
+| [1904. GateMateA1-EVB_Rev_C](b1904b_GateMateA1-EVB_GateMateA1-EVB-Rev-C.md) | [1906. ICE40-DAC_Rev_A1](b1906b_iCE40-DAC_ICE40-DAC-Rev-A1.md) |

@@ -1,4 +1,4 @@
-# 2651 leaf
+# 2651. leaf
 
 Board 2,651 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 25](../CorpusTestingPages/Corpus-Testing-25.md#2651-leaf).
 
@@ -44,4 +44,4 @@ Board 2,651 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2650 motherboard](b2650b_kicad-conversions-atari-ste-motherboard-c300780-001_motherboard.md) | [2652 leaf-minipcie](b2652b_leaf-rv1126_leaf-minipcie.md) |
+| [2650. motherboard](b2650b_kicad-conversions-atari-ste-motherboard-c300780-001_motherboard.md) | [2652. leaf-minipcie](b2652b_leaf-rv1126_leaf-minipcie.md) |

@@ -1,4 +1,4 @@
-# 2952 LTC6812-15W
+# 2952. LTC6812-15W
 
 Board 2,952 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 28](../CorpusTestingPages/Corpus-Testing-28.md#2952-ltc6812-15w).
 
@@ -45,4 +45,4 @@ Board 2,952 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2951 Battery Temperature Sensor](b2951b_circuits_Battery-Temperature-Sensor.md) | [2953 (LVE)Shutdown](b2953b_circuits_LVE-Shutdown.md) |
+| [2951. Battery Temperature Sensor](b2951b_circuits_Battery-Temperature-Sensor.md) | [2953. (LVE)Shutdown](b2953b_circuits_LVE-Shutdown.md) |

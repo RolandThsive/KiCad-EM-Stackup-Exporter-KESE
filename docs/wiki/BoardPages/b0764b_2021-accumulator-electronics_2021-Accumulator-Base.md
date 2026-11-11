@@ -1,4 +1,4 @@
-# 764 2021 Accumulator Base
+# 764. 2021 Accumulator Base
 
 Board 764 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 8](../CorpusTestingPages/Corpus-Testing-08.md#764-2021-accumulator-base).
 
@@ -45,4 +45,4 @@ Board 764 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [763 fmcw3](b0763b_fmcw3-kicad_fmcw3.md) | [765 AIL_TSAL](b0765b_2021-accumulator-electronics_AIL-TSAL.md) |
+| [763. fmcw3](b0763b_fmcw3-kicad_fmcw3.md) | [765. AIL_TSAL](b0765b_2021-accumulator-electronics_AIL-TSAL.md) |

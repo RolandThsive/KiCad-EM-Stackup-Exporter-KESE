@@ -1,4 +1,4 @@
-# 1103 usb
+# 1103. usb
 
 Board 1,103 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 11](../CorpusTestingPages/Corpus-Testing-11.md#1103-usb).
 
@@ -45,4 +45,4 @@ Board 1,103 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1102 prod_fe](b1102b_daisho_prod-fe.md) | [1104 main_board](b1104b_daisho_main-board.md) |
+| [1102. prod_fe](b1102b_daisho_prod-fe.md) | [1104. main_board](b1104b_daisho_main-board.md) |

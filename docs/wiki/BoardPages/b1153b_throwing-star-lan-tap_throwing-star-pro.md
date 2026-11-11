@@ -1,4 +1,4 @@
-# 1153 throwing-star-pro
+# 1153. throwing-star-pro
 
 Board 1,153 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 11](../CorpusTestingPages/Corpus-Testing-11.md#1153-throwing-star-pro).
 
@@ -44,4 +44,4 @@ Board 1,153 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1152 vbus-switch](b1152b_misc_vbus-switch.md) | [1154 throwing-star](b1154b_throwing-star-lan-tap_throwing-star.md) |
+| [1152. vbus-switch](b1152b_misc_vbus-switch.md) | [1154. throwing-star](b1154b_throwing-star-lan-tap_throwing-star.md) |

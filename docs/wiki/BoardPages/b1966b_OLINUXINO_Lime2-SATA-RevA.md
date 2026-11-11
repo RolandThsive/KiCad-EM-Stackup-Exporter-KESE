@@ -1,4 +1,4 @@
-# 1966 Lime2-SATA_RevA
+# 1966. Lime2-SATA_RevA
 
 Board 1,966 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 19](../CorpusTestingPages/Corpus-Testing-19.md#1966-lime2-sata_reva).
 
@@ -45,4 +45,4 @@ Board 1,966 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1965 LCD-OLinuXino-5TS_Rev.B](b1965b_OLINUXINO_LCD-OLinuXino-5TS-Rev-B.md) | [1967 STMP157-OLinuXino-LIME2_Rev_B1](b1967b_OLINUXINO_STMP157-OLinuXino-LIME2-Rev-B1.md) |
+| [1965. LCD-OLinuXino-5TS_Rev.B](b1965b_OLINUXINO_LCD-OLinuXino-5TS-Rev-B.md) | [1967. STMP157-OLinuXino-LIME2_Rev_B1](b1967b_OLINUXINO_STMP157-OLinuXino-LIME2-Rev-B1.md) |

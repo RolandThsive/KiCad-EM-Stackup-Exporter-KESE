@@ -1,4 +1,4 @@
-# 982 Full Card
+# 982. Full Card
 
 Board 982 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 10](../CorpusTestingPages/Corpus-Testing-10.md#982-full-card).
 
@@ -46,4 +46,4 @@ Board 982 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [981 UniBoard](b0981b_Ace-2019_UniBoard.md) | [983 VGAGAL](b0983b_Ace-2019_VGAGAL.md) |
+| [981. UniBoard](b0981b_Ace-2019_UniBoard.md) | [983. VGAGAL](b0983b_Ace-2019_VGAGAL.md) |

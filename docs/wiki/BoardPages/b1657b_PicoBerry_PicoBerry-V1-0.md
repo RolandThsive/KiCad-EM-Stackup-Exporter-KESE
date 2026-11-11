@@ -1,4 +1,4 @@
-# 1657 PicoBerry_V1.0
+# 1657. PicoBerry_V1.0
 
 Board 1,657 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 16](../CorpusTestingPages/Corpus-Testing-16.md#1657-picoberry_v10).
 
@@ -45,4 +45,4 @@ Board 1,657 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1656 nubus-to-ztex](b1656b_NuBusFPGA_nubus-to-ztex.md) | [1658 CM5IO](b1658b_openxtcm5-head-unit_CM5IO.md) |
+| [1656. nubus-to-ztex](b1656b_NuBusFPGA_nubus-to-ztex.md) | [1658. CM5IO](b1658b_openxtcm5-head-unit_CM5IO.md) |

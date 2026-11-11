@@ -1,4 +1,4 @@
-# 2665 aerolotl
+# 2665. aerolotl
 
 Board 2,665 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 25](../CorpusTestingPages/Corpus-Testing-25.md#2665-aerolotl).
 
@@ -45,4 +45,4 @@ Board 2,665 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2664 aerolotl_av](b2664b_aerolotl-av_aerolotl-av.md) | [2666 battery_pcb](b2666b_aerolotl-kicad_battery-pcb.md) |
+| [2664. aerolotl_av](b2664b_aerolotl-av_aerolotl-av.md) | [2666. battery_pcb](b2666b_aerolotl-kicad_battery-pcb.md) |

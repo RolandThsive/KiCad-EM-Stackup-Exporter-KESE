@@ -1,4 +1,4 @@
-# 833 kaybee-plank
+# 833. kaybee-plank
 
 Board 833 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 8](../CorpusTestingPages/Corpus-Testing-08.md#833-kaybee-plank).
 
@@ -45,4 +45,4 @@ Board 833 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [832 kaybee-plank](b0832b_BusPirate5-hardware_development-adapter-kaybee-plank-1REV0_kaybee-plank.md) | [834 ram-ddr5](b0834b_BusPirate5-hardware_ram-ddr5.md) |
+| [832. kaybee-plank](b0832b_BusPirate5-hardware_development-adapter-kaybee-plank-1REV0_kaybee-plank.md) | [834. ram-ddr5](b0834b_BusPirate5-hardware_ram-ddr5.md) |

@@ -1,4 +1,4 @@
-# 711 nref-flex-eth
+# 711. nref-flex-eth
 
 Board 711 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 7](../CorpusTestingPages/Corpus-Testing-07.md#711-nref-flex-eth).
 
@@ -45,4 +45,4 @@ Board 711 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [710 reform-camera](b0710b_reform-next-mirror_reform-camera.md) | [712 nref-flex-dp-140mm](b0712b_reform-next-mirror_nref-flex-dp-140mm.md) |
+| [710. reform-camera](b0710b_reform-next-mirror_reform-camera.md) | [712. nref-flex-dp-140mm](b0712b_reform-next-mirror_nref-flex-dp-140mm.md) |

@@ -1,4 +1,4 @@
-# 1336 CAM-MK3-revC
+# 1336. CAM-MK3-revC
 
 Board 1,336 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 13](../CorpusTestingPages/Corpus-Testing-13.md#1336-cam-mk3-revc).
 
@@ -45,4 +45,4 @@ Board 1,336 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1335 CAM-MK3-revB](b1335b_iss-pcb_CAM-MK3-revB.md) | [1337 drone_power_2_screws](b1337b_iss-pcb_drone-power-2-screws.md) |
+| [1335. CAM-MK3-revB](b1335b_iss-pcb_CAM-MK3-revB.md) | [1337. drone_power_2_screws](b1337b_iss-pcb_drone-power-2-screws.md) |

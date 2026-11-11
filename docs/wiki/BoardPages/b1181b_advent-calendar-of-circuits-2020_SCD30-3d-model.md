@@ -1,4 +1,4 @@
-# 1181 SCD30-3d-model
+# 1181. SCD30-3d-model
 
 Board 1,181 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 11](../CorpusTestingPages/Corpus-Testing-11.md#1181-scd30-3d-model).
 
@@ -45,4 +45,4 @@ Board 1,181 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1180 rpi-hq-camera](b1180b_advent-calendar-of-circuits-2020_rpi-hq-camera.md) | [1182 syzygy-breakout](b1182b_advent-calendar-of-circuits-2020_syzygy-breakout.md) |
+| [1180. rpi-hq-camera](b1180b_advent-calendar-of-circuits-2020_rpi-hq-camera.md) | [1182. syzygy-breakout](b1182b_advent-calendar-of-circuits-2020_syzygy-breakout.md) |

@@ -1,4 +1,4 @@
-# 1664 mjuart
+# 1664. mjuart
 
 Board 1,664 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 16](../CorpusTestingPages/Corpus-Testing-16.md#1664-mjuart).
 
@@ -45,4 +45,4 @@ Board 1,664 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1663 moteus_c1](b1663b_moteus_hw-c1-r1-1_moteus-c1.md) | [1665 moteus_x1](b1665b_moteus_moteus-x1.md) |
+| [1663. moteus_c1](b1663b_moteus_hw-c1-r1-1_moteus-c1.md) | [1665. moteus_x1](b1665b_moteus_moteus-x1.md) |

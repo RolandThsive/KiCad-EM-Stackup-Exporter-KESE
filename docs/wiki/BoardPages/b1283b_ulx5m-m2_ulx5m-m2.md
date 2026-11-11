@@ -1,4 +1,4 @@
-# 1283 ulx5m-m2
+# 1283. ulx5m-m2
 
 Board 1,283 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 12](../CorpusTestingPages/Corpus-Testing-12.md#1283-ulx5m-m2).
 
@@ -44,4 +44,4 @@ Board 1,283 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1282 ulx5m-gs](b1282b_ulx5m-gs_ulx5m-gs.md) | [1284 arena_10_of_10_v1r1](b1284b_led-display-g6-hardware-arena_arena-10-10-arena-10-10-v1_arena-10-of-10-v1r1.md) |
+| [1282. ulx5m-gs](b1282b_ulx5m-gs_ulx5m-gs.md) | [1284. arena_10_of_10_v1r1](b1284b_led-display-g6-hardware-arena_arena-10-10-arena-10-10-v1_arena-10-of-10-v1r1.md) |

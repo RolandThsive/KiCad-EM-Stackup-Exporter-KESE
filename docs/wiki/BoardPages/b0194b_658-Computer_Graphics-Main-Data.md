@@ -1,4 +1,4 @@
-# 194 Graphics Main Data
+# 194. Graphics Main Data
 
 Board 194 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 2](../CorpusTestingPages/Corpus-Testing-02.md#194-graphics-main-data).
 
@@ -45,4 +45,4 @@ Board 194 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [193 Graphics Board](b0193b_658-Computer_Graphics-Board.md) | [195 Graphics Signals](b0195b_658-Computer_Graphics-Signals.md) |
+| [193. Graphics Board](b0193b_658-Computer_Graphics-Board.md) | [195. Graphics Signals](b0195b_658-Computer_Graphics-Signals.md) |

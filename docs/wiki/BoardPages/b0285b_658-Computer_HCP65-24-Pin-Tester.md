@@ -1,4 +1,4 @@
-# 285 HCP65 24 Pin Tester
+# 285. HCP65 24 Pin Tester
 
 Board 285 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 3](../CorpusTestingPages/Corpus-Testing-03.md#285-hcp65-24-pin-tester).
 
@@ -45,4 +45,4 @@ Board 285 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [284 GPIO Power Switch](b0284b_658-Computer_GPIO-Power-Switch.md) | [286 HCP65 32 Pin Tester](b0286b_658-Computer_HCP65-32-Pin-Tester.md) |
+| [284. GPIO Power Switch](b0284b_658-Computer_GPIO-Power-Switch.md) | [286. HCP65 32 Pin Tester](b0286b_658-Computer_HCP65-32-Pin-Tester.md) |

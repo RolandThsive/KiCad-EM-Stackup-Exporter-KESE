@@ -1,4 +1,4 @@
-# 1042 ESP32 Demo Project
+# 1042. ESP32 Demo Project
 
 Board 1,042 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 10](../CorpusTestingPages/Corpus-Testing-10.md#1042-esp32-demo-project).
 
@@ -44,4 +44,4 @@ Board 1,042 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1041 XL-Power](b1041b_prntrboardv2_XL-Power.md) | [1043 glasgow](b1043b_glasgow_hardware-boards-glasgow-revA_glasgow.md) |
+| [1041. XL-Power](b1041b_prntrboardv2_XL-Power.md) | [1043. glasgow](b1043b_glasgow_hardware-boards-glasgow-revA_glasgow.md) |

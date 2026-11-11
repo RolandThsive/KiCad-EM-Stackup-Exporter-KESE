@@ -1,4 +1,4 @@
-# 2573 level-shifter
+# 2573. level-shifter
 
 Board 2,573 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 24](../CorpusTestingPages/Corpus-Testing-24.md#2573-level-shifter).
 
@@ -45,4 +45,4 @@ Board 2,573 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2572 Large MOSFET](b2572b_smoothieboard2_Large-MOSFET.md) | [2574 MechEndstop](b2574b_smoothieboard2_MechEndstop.md) |
+| [2572. Large MOSFET](b2572b_smoothieboard2_Large-MOSFET.md) | [2574. MechEndstop](b2574b_smoothieboard2_MechEndstop.md) |

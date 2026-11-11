@@ -1,4 +1,4 @@
-# 112 AmigaPCI Mainboard
+# 112. AmigaPCI Mainboard
 
 Board 112 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 2](../CorpusTestingPages/Corpus-Testing-02.md#112-amigapci-mainboard).
 
@@ -46,4 +46,4 @@ Board 112 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [111 AmigaPCI 68040](b0111b_AmigaPCI-LBC040_AmigaPCI-68040.md) | [113 anavi-light-controller](b0113b_anavi-light-controller_anavi-light-controller.md) |
+| [111. AmigaPCI 68040](b0111b_AmigaPCI-LBC040_AmigaPCI-68040.md) | [113. anavi-light-controller](b0113b_anavi-light-controller_anavi-light-controller.md) |

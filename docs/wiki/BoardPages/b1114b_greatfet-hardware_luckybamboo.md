@@ -1,4 +1,4 @@
-# 1114 luckybamboo
+# 1114. luckybamboo
 
 Board 1,114 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 11](../CorpusTestingPages/Corpus-Testing-11.md#1114-luckybamboo).
 
@@ -45,4 +45,4 @@ Board 1,114 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1113 lily](b1113b_greatfet-hardware_lily.md) | [1115 narcissus](b1115b_greatfet-hardware_narcissus.md) |
+| [1113. lily](b1113b_greatfet-hardware_lily.md) | [1115. narcissus](b1115b_greatfet-hardware_narcissus.md) |

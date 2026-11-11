@@ -1,4 +1,4 @@
-# 1504 dualpmod
+# 1504. dualpmod
 
 Board 1,504 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 14](../CorpusTestingPages/Corpus-Testing-14.md#1504-dualpmod).
 
@@ -45,4 +45,4 @@ Board 1,504 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1503 Issue3B](b1503b_ZX-Spectrum-48K-Issue-3B-Based-on-Gerbers-by-PABB-on-PCBWay_Issue3B.md) | [1505 ad9864_breakout](b1505b_vna_ad9864-breakout.md) |
+| [1503. Issue3B](b1503b_ZX-Spectrum-48K-Issue-3B-Based-on-Gerbers-by-PABB-on-PCBWay_Issue3B.md) | [1505. ad9864_breakout](b1505b_vna_ad9864-breakout.md) |

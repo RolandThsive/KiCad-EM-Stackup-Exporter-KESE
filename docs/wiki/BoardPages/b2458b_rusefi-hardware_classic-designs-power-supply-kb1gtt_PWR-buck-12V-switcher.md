@@ -1,4 +1,4 @@
-# 2458 PWR_buck_12V_switcher
+# 2458. PWR_buck_12V_switcher
 
 Board 2,458 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 23](../CorpusTestingPages/Corpus-Testing-23.md#2458-pwr_buck_12v_switcher).
 
@@ -45,4 +45,4 @@ Board 2,458 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2457 cps_vrs_io_1](b2457b_rusefi-hardware_classic-designs-knock-VR-Art-ELectro_cps-vrs-io-1.md) | [2459 inj_6ch](b2459b_rusefi-hardware_classic-designs-rusefi-hardware-history-1A-injector-6-channels-rev00-20_inj-6ch.md) |
+| [2457. cps_vrs_io_1](b2457b_rusefi-hardware_classic-designs-knock-VR-Art-ELectro_cps-vrs-io-1.md) | [2459. inj_6ch](b2459b_rusefi-hardware_classic-designs-rusefi-hardware-history-1A-injector-6-channels-rev00-20_inj-6ch.md) |

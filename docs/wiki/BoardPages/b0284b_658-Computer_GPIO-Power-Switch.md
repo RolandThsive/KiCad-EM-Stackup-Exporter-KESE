@@ -1,4 +1,4 @@
-# 284 GPIO Power Switch
+# 284. GPIO Power Switch
 
 Board 284 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 3](../CorpusTestingPages/Corpus-Testing-03.md#284-gpio-power-switch).
 
@@ -45,4 +45,4 @@ Board 284 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [283 GPIO Controller Board](b0283b_658-Computer_GPIO-Controller-Board.md) | [285 HCP65 24 Pin Tester](b0285b_658-Computer_HCP65-24-Pin-Tester.md) |
+| [283. GPIO Controller Board](b0283b_658-Computer_GPIO-Controller-Board.md) | [285. HCP65 24 Pin Tester](b0285b_658-Computer_HCP65-24-Pin-Tester.md) |

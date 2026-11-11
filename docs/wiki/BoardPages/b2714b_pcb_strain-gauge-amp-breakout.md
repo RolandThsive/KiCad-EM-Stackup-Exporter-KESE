@@ -1,4 +1,4 @@
-# 2714 strain-gauge-amp-breakout
+# 2714. strain-gauge-amp-breakout
 
 Board 2,714 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 26](../CorpusTestingPages/Corpus-Testing-26.md#2714-strain-gauge-amp-breakout).
 
@@ -45,4 +45,4 @@ Board 2,714 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2713 sensor-board](b2713b_pcb_sensor-board.md) | [2715 telemetry](b2715b_pcb_telemetry.md) |
+| [2713. sensor-board](b2713b_pcb_sensor-board.md) | [2715. telemetry](b2715b_pcb_telemetry.md) |

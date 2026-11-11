@@ -1,4 +1,4 @@
-# 2479 hi-lo
+# 2479. hi-lo
 
 Board 2,479 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 23](../CorpusTestingPages/Corpus-Testing-23.md#2479-hi-lo).
 
@@ -45,4 +45,4 @@ Board 2,479 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2478 frankenstein](b2478b_rusefi-hardware_classic-designs-rusefi-hardware-history-frankenstein-rev00-11_frankenstein.md) | [2480 DD HIP9011](b2480b_rusefi-hardware_DD-HIP9011.md) |
+| [2478. frankenstein](b2478b_rusefi-hardware_classic-designs-rusefi-hardware-history-frankenstein-rev00-11_frankenstein.md) | [2480. DD HIP9011](b2480b_rusefi-hardware_DD-HIP9011.md) |

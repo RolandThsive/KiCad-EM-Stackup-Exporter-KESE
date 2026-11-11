@@ -1,4 +1,4 @@
-# 2891 servomotorStepper-V2I1
+# 2891. servomotorStepper-V2I1
 
 Board 2,891 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 27](../CorpusTestingPages/Corpus-Testing-27.md#2891-servomotorstepper-v2i1).
 
@@ -45,4 +45,4 @@ Board 2,891 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2890 V11RC4](b2890b_servomotor_V11RC4.md) | [2892 M3-V4](b2892b_servomotor_M3-V4.md) |
+| [2890. V11RC4](b2890b_servomotor_V11RC4.md) | [2892. M3-V4](b2892b_servomotor_M3-V4.md) |

@@ -1,4 +1,4 @@
-# 510 gd rev2 crystalposer
+# 510. gd rev2 crystalposer
 
 Board 510 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 5](../CorpusTestingPages/Corpus-Testing-05.md#510-gd-rev2-crystalposer).
 
@@ -45,4 +45,4 @@ Board 510 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [509 gd protoboard pcb](b0509b_Mega-IIe_gd-protoboard-pcb.md) | [511 gd rev3](b0511b_Mega-IIe_gd-rev3.md) |
+| [509. gd protoboard pcb](b0509b_Mega-IIe_gd-protoboard-pcb.md) | [511. gd rev3](b0511b_Mega-IIe_gd-rev3.md) |

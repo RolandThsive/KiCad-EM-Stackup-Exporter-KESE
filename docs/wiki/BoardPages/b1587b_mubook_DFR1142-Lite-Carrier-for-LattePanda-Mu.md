@@ -1,4 +1,4 @@
-# 1587 [DFR1142]Lite Carrier for LattePanda Mu
+# 1587. [DFR1142]Lite Carrier for LattePanda Mu
 
 Board 1,587 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 15](../CorpusTestingPages/Corpus-Testing-15.md#1587-dfr1142lite-carrier-for-lattepanda-mu).
 
@@ -45,4 +45,4 @@ Board 1,587 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1586 vna_r1_synth](b1586b_vna_vna-r1-synth.md) | [1588 Aleste520v4](b1588b_Aleste520ex_Aleste520v4.md) |
+| [1586. vna_r1_synth](b1586b_vna_vna-r1-synth.md) | [1588. Aleste520v4](b1588b_Aleste520ex_Aleste520v4.md) |

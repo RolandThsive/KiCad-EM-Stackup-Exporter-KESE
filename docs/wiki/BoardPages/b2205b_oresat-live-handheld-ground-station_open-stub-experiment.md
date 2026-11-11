@@ -1,4 +1,4 @@
-# 2205 open_stub_experiment
+# 2205. open_stub_experiment
 
 Board 2,205 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 21](../CorpusTestingPages/Corpus-Testing-21.md#2205-open_stub_experiment).
 
@@ -45,4 +45,4 @@ Board 2,205 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2204 HGS_antenna_tester](b2204b_oresat-live-handheld-ground-station_HGS-antenna-tester.md) | [2206 LNA](b2206b_oresat-live-handheld-ground-station_LNA.md) |
+| [2204. HGS_antenna_tester](b2204b_oresat-live-handheld-ground-station_HGS-antenna-tester.md) | [2206. LNA](b2206b_oresat-live-handheld-ground-station_LNA.md) |

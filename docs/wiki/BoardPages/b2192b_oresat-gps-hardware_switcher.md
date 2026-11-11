@@ -1,4 +1,4 @@
-# 2192 switcher
+# 2192. switcher
 
 Board 2,192 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 21](../CorpusTestingPages/Corpus-Testing-21.md#2192-switcher).
 
@@ -45,4 +45,4 @@ Board 2,192 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2191 A3P250_Dev_Board](b2191b_oresat-gps-hardware_A3P250-Dev-Board.md) | [2193 switcher_close](b2193b_oresat-gps-hardware_switcher-close.md) |
+| [2191. A3P250_Dev_Board](b2191b_oresat-gps-hardware_A3P250-Dev-Board.md) | [2193. switcher_close](b2193b_oresat-gps-hardware_switcher-close.md) |

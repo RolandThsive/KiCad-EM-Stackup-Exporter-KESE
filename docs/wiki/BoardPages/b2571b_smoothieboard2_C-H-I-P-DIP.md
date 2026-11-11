@@ -1,4 +1,4 @@
-# 2571 C.H.I.P-DIP
+# 2571. C.H.I.P-DIP
 
 Board 2,571 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 24](../CorpusTestingPages/Corpus-Testing-24.md#2571-chip-dip).
 
@@ -45,4 +45,4 @@ Board 2,571 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2570 StepperMotorBreakout](b2570b_smoothieboard2_StepperMotorBreakout.md) | [2572 Large MOSFET](b2572b_smoothieboard2_Large-MOSFET.md) |
+| [2570. StepperMotorBreakout](b2570b_smoothieboard2_StepperMotorBreakout.md) | [2572. Large MOSFET](b2572b_smoothieboard2_Large-MOSFET.md) |

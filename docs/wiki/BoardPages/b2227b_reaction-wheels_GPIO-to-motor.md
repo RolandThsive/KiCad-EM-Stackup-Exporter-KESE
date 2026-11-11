@@ -1,4 +1,4 @@
-# 2227 GPIO to motor
+# 2227. GPIO to motor
 
 Board 2,227 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 21](../CorpusTestingPages/Corpus-Testing-21.md#2227-gpio-to-motor).
 
@@ -45,4 +45,4 @@ Board 2,227 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2226 star-tracker-card](b2226b_oresat-star-tracker-hardware_hardware-star-tracker-card_star-tracker-card.md) | [2228 Edison_Motor_Servo](b2228b_reaction-wheels_Edison-Motor-Servo.md) |
+| [2226. star-tracker-card](b2226b_oresat-star-tracker-hardware_hardware-star-tracker-card_star-tracker-card.md) | [2228. Edison_Motor_Servo](b2228b_reaction-wheels_Edison-Motor-Servo.md) |

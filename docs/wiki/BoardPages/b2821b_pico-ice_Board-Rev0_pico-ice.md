@@ -1,4 +1,4 @@
-# 2821 pico-ice
+# 2821. pico-ice
 
 Board 2,821 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 27](../CorpusTestingPages/Corpus-Testing-27.md#2821-pico-ice).
 
@@ -45,4 +45,4 @@ Board 2,821 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2820 syzygy-mipi-adapter](b2820b_oshw-adapters_syzygy-mipi-adapter-board-Rev1_syzygy-mipi-adapter.md) | [2822 pico-ice](b2822b_pico-ice_Board-Rev1_pico-ice.md) |
+| [2820. syzygy-mipi-adapter](b2820b_oshw-adapters_syzygy-mipi-adapter-board-Rev1_syzygy-mipi-adapter.md) | [2822. pico-ice](b2822b_pico-ice_Board-Rev1_pico-ice.md) |

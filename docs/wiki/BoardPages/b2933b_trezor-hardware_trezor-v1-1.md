@@ -1,4 +1,4 @@
-# 2933 trezor_v1.1
+# 2933. trezor_v1.1
 
 Board 2,933 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 28](../CorpusTestingPages/Corpus-Testing-28.md#2933-trezor_v11).
 
@@ -45,4 +45,4 @@ Board 2,933 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2932 CYM1A113](b2932b_trezor-hardware_CYM1A113.md) | [2934 iMX6 Demo Board](b2934b_imx6-demo-board_iMX6-Demo-Board.md) |
+| [2932. CYM1A113](b2932b_trezor-hardware_CYM1A113.md) | [2934. iMX6 Demo Board](b2934b_imx6-demo-board_iMX6-Demo-Board.md) |

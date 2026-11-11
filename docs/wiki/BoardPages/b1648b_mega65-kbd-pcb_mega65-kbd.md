@@ -1,4 +1,4 @@
-# 1648 mega65-kbd
+# 1648. mega65-kbd
 
 Board 1,648 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 16](../CorpusTestingPages/Corpus-Testing-16.md#1648-mega65-kbd).
 
@@ -44,4 +44,4 @@ Board 1,648 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1647 ecp5-dev-board](b1647b_ecp5-dev-board_ecp5-dev-board.md) | [1649 expansion_connector_board](b1649b_mega65-r3-expansion-board_expansion-connector-board.md) |
+| [1647. ecp5-dev-board](b1647b_ecp5-dev-board_ecp5-dev-board.md) | [1649. expansion_connector_board](b1649b_mega65-r3-expansion-board_expansion-connector-board.md) |

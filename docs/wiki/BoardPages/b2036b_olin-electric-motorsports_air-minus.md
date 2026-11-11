@@ -1,4 +1,4 @@
-# 2036 air_minus
+# 2036. air_minus
 
 Board 2,036 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 19](../CorpusTestingPages/Corpus-Testing-19.md#2036-air_minus).
 
@@ -45,4 +45,4 @@ Board 2,036 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2035 discharge](b2035b_olin-electric-motorsports_discharge.md) | [2037 air_plus](b2037b_olin-electric-motorsports_air-plus.md) |
+| [2035. discharge](b2035b_olin-electric-motorsports_discharge.md) | [2037. air_plus](b2037b_olin-electric-motorsports_air-plus.md) |

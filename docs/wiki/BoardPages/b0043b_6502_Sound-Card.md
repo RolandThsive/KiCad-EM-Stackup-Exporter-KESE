@@ -1,4 +1,4 @@
-# 43 Sound Card
+# 43. Sound Card
 
 Board 43 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 1](../CorpusTestingPages/Corpus-Testing-01.md#43-sound-card).
 
@@ -45,4 +45,4 @@ Board 43 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page
 
 | Previous | Next |
 |:---|---:|
-| [42 Serial Card](b0042b_6502_Serial-Card.md) | [44 Storage Card Pro](b0044b_6502_Storage-Card-Pro.md) |
+| [42. Serial Card](b0042b_6502_Serial-Card.md) | [44. Storage Card Pro](b0044b_6502_Storage-Card-Pro.md) |

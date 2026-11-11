@@ -1,4 +1,4 @@
-# 1228 A3000
+# 1228. A3000
 
 Board 1,228 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 12](../CorpusTestingPages/Corpus-Testing-12.md#1228-a3000).
 
@@ -45,4 +45,4 @@ Board 1,228 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1227 Daughterboard](b1227b_Amiga-3000-Daughterboard_Daughterboard.md) | [1229 REAmiga3000](b1229b_ReAmiga3000-SMD-for-KICAD_REAmiga3000.md) |
+| [1227. Daughterboard](b1227b_Amiga-3000-Daughterboard_Daughterboard.md) | [1229. REAmiga3000](b1229b_ReAmiga3000-SMD-for-KICAD_REAmiga3000.md) |

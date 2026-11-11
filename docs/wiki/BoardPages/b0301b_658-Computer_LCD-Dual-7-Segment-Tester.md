@@ -1,4 +1,4 @@
-# 301 LCD Dual 7 Segment Tester
+# 301. LCD Dual 7 Segment Tester
 
 Board 301 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 3](../CorpusTestingPages/Corpus-Testing-03.md#301-lcd-dual-7-segment-tester).
 
@@ -45,4 +45,4 @@ Board 301 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [300 LCD 14 Segment Tester](b0300b_658-Computer_LCD-14-Segment-Tester.md) | [302 RAM 48K Select](b0302b_658-Computer_RAM-48K-Select.md) |
+| [300. LCD 14 Segment Tester](b0300b_658-Computer_LCD-14-Segment-Tester.md) | [302. RAM 48K Select](b0302b_658-Computer_RAM-48K-Select.md) |

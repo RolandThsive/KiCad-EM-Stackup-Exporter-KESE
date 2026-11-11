@@ -1,4 +1,4 @@
-# 1422 adapter
+# 1422. adapter
 
 Board 1,422 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 14](../CorpusTestingPages/Corpus-Testing-14.md#1422-adapter).
 
@@ -45,4 +45,4 @@ Board 1,422 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1421 ecp5-mini](b1421b_ecp5-mini_hardware-0-2_ecp5-mini.md) | [1423 odyssey](b1423b_jtcores_odyssey.md) |
+| [1421. ecp5-mini](b1421b_ecp5-mini_hardware-0-2_ecp5-mini.md) | [1423. odyssey](b1423b_jtcores_odyssey.md) |

@@ -1,4 +1,4 @@
-# 639 CPC464-2MINIRS232C
+# 639. CPC464-2MINIRS232C
 
 Board 639 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 6](../CorpusTestingPages/Corpus-Testing-06.md#639-cpc464-2minirs232c).
 
@@ -45,4 +45,4 @@ Board 639 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [638 CPC464-2MINIPS2](b0638b_CPC464-2MINI_CPC464-2MINIPS2.md) | [640 CPC464-2MINIUSIFACII](b0640b_CPC464-2MINI_CPC464-2MINIUSIFACII.md) |
+| [638. CPC464-2MINIPS2](b0638b_CPC464-2MINI_CPC464-2MINIPS2.md) | [640. CPC464-2MINIUSIFACII](b0640b_CPC464-2MINI_CPC464-2MINIUSIFACII.md) |

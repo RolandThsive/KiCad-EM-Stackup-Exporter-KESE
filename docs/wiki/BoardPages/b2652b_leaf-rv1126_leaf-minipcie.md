@@ -1,4 +1,4 @@
-# 2652 leaf-minipcie
+# 2652. leaf-minipcie
 
 Board 2,652 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 25](../CorpusTestingPages/Corpus-Testing-25.md#2652-leaf-minipcie).
 
@@ -45,4 +45,4 @@ Board 2,652 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2651 leaf](b2651b_leaf-rv1126_leaf.md) | [2653 hadbadge2019](b2653b_hadbadge2019-pcb_hadbadge2019.md) |
+| [2651. leaf](b2651b_leaf-rv1126_leaf.md) | [2653. hadbadge2019](b2653b_hadbadge2019-pcb_hadbadge2019.md) |

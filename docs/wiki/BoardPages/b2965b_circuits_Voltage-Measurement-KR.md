@@ -1,4 +1,4 @@
-# 2965 Voltage_Measurement_KR
+# 2965. Voltage_Measurement_KR
 
 Board 2,965 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 28](../CorpusTestingPages/Corpus-Testing-28.md#2965-voltage_measurement_kr).
 
@@ -45,4 +45,4 @@ Board 2,965 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2964 Breakout](b2964b_circuits_Breakout.md) | [2966 flightcontroller](b2966b_flightcontroller_flightcontroller.md) |
+| [2964. Breakout](b2964b_circuits_Breakout.md) | [2966. flightcontroller](b2966b_flightcontroller_flightcontroller.md) |

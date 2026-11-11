@@ -1,4 +1,4 @@
-# 2287 everestCM4
+# 2287. everestCM4
 
 Board 2,287 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 22](../CorpusTestingPages/Corpus-Testing-22.md#2287-everestcm4).
 
@@ -45,4 +45,4 @@ Board 2,287 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2286 Zynq_SoM](b2286b_zynq-som_Zynq-SoM.md) | [2288 yeti](b2288b_reference-hardware_yeti.md) |
+| [2286. Zynq_SoM](b2286b_zynq-som_Zynq-SoM.md) | [2288. yeti](b2288b_reference-hardware_yeti.md) |

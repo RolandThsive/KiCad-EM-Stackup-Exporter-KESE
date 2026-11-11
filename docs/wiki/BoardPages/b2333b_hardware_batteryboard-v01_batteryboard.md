@@ -1,4 +1,4 @@
-# 2333 batteryboard
+# 2333. batteryboard
 
 Board 2,333 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 22](../CorpusTestingPages/Corpus-Testing-22.md#2333-batteryboard).
 
@@ -45,4 +45,4 @@ Board 2,333 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2332 SwitchBlox](b2332b_SwitchBlox_SwitchBlox.md) | [2334 batteryboard](b2334b_hardware_batteryboard-v01b_batteryboard.md) |
+| [2332. SwitchBlox](b2332b_SwitchBlox_SwitchBlox.md) | [2334. batteryboard](b2334b_hardware_batteryboard-v01b_batteryboard.md) |

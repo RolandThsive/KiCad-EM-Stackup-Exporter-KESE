@@ -1,4 +1,4 @@
-# 82 Bus Connector
+# 82. Bus Connector
 
 Board 82 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 1](../CorpusTestingPages/Corpus-Testing-01.md#82-bus-connector).
 
@@ -45,4 +45,4 @@ Board 82 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page
 
 | Previous | Next |
 |:---|---:|
-| [81 AOS16 Timer](b0081b_AOS16_AOS16-Timer.md) | [83 Bus Probe](b0083b_AOS16_Bus-Probe.md) |
+| [81. AOS16 Timer](b0081b_AOS16_AOS16-Timer.md) | [83. Bus Probe](b0083b_AOS16_Bus-Probe.md) |

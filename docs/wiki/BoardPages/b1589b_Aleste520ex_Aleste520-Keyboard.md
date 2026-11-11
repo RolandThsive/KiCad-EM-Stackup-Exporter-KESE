@@ -1,4 +1,4 @@
-# 1589 Aleste520_Keyboard
+# 1589. Aleste520_Keyboard
 
 Board 1,589 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 15](../CorpusTestingPages/Corpus-Testing-15.md#1589-aleste520_keyboard).
 
@@ -45,4 +45,4 @@ Board 1,589 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1588 Aleste520v4](b1588b_Aleste520ex_Aleste520v4.md) | [1590 DepthABC](b1590b_depthai-hardware_DepthABC.md) |
+| [1588. Aleste520v4](b1588b_Aleste520ex_Aleste520v4.md) | [1590. DepthABC](b1590b_depthai-hardware_DepthABC.md) |

@@ -1,4 +1,4 @@
-# 2208 HGS_Reflector
+# 2208. HGS_Reflector
 
 Board 2,208 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 21](../CorpusTestingPages/Corpus-Testing-21.md#2208-hgs_reflector).
 
@@ -45,4 +45,4 @@ Board 2,208 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2207 transformer](b2207b_oresat-live-handheld-ground-station_transformer.md) | [2209 oresat-live-card](b2209b_oresat-proto-card_oresat-live-card.md) |
+| [2207. transformer](b2207b_oresat-live-handheld-ground-station_transformer.md) | [2209. oresat-live-card](b2209b_oresat-proto-card_oresat-live-card.md) |

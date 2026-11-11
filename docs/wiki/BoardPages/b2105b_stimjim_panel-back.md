@@ -1,4 +1,4 @@
-# 2105 panel-back
+# 2105. panel-back
 
 Board 2,105 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 20](../CorpusTestingPages/Corpus-Testing-20.md#2105-panel-back).
 
@@ -46,4 +46,4 @@ Board 2,105 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2104 PCIexpress_x8_low](b2104b_PCIexpress-KiCad_PCIexpress-x8-low.md) | [2106 panel-front](b2106b_stimjim_panel-front.md) |
+| [2104. PCIexpress_x8_low](b2104b_PCIexpress-KiCad_PCIexpress-x8-low.md) | [2106. panel-front](b2106b_stimjim_panel-front.md) |

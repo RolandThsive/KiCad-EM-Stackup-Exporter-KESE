@@ -1,4 +1,4 @@
-# 2501 GDI-STM
+# 2501. GDI-STM
 
 Board 2,501 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 24](../CorpusTestingPages/Corpus-Testing-24.md#2501-gdi-stm).
 
@@ -45,4 +45,4 @@ Board 2,501 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2500 GDI-6ch](b2500b_rusefi-hardware_GDI-6ch.md) | [2502 IR2302-testboard](b2502b_rusefi-hardware_IR2302-testboard.md) |
+| [2500. GDI-6ch](b2500b_rusefi-hardware_GDI-6ch.md) | [2502. IR2302-testboard](b2502b_rusefi-hardware_IR2302-testboard.md) |

@@ -1,4 +1,4 @@
-# 641 CPC-40007AdapterLM1117
+# 641. CPC-40007AdapterLM1117
 
 Board 641 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 6](../CorpusTestingPages/Corpus-Testing-06.md#641-cpc-40007adapterlm1117).
 
@@ -45,4 +45,4 @@ Board 641 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [640 CPC464-2MINIUSIFACII](b0640b_CPC464-2MINI_CPC464-2MINIUSIFACII.md) | [642 CPC464-2MINICAS1](b0642b_CPC464-2MINI_CPC464-2MINICAS1.md) |
+| [640. CPC464-2MINIUSIFACII](b0640b_CPC464-2MINI_CPC464-2MINIUSIFACII.md) | [642. CPC464-2MINICAS1](b0642b_CPC464-2MINI_CPC464-2MINICAS1.md) |

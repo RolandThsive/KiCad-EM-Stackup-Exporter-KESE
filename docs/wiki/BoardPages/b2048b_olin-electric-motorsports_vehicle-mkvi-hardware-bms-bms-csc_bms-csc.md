@@ -1,4 +1,4 @@
-# 2048 bms_csc
+# 2048. bms_csc
 
 Board 2,048 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 19](../CorpusTestingPages/Corpus-Testing-19.md#2048-bms_csc).
 
@@ -45,4 +45,4 @@ Board 2,048 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2047 bms_core](b2047b_olin-electric-motorsports_vehicle-mkvi-hardware-bms-bms-core_bms-core.md) | [2049 bms_csc](b2049b_olin-electric-motorsports_vehicle-mkvi-hardware-bms-bms-csc-rev-1_bms-csc.md) |
+| [2047. bms_core](b2047b_olin-electric-motorsports_vehicle-mkvi-hardware-bms-bms-core_bms-core.md) | [2049. bms_csc](b2049b_olin-electric-motorsports_vehicle-mkvi-hardware-bms-bms-csc-rev-1_bms-csc.md) |

@@ -1,4 +1,4 @@
-# 373 jetson-orin-baseboard-oculink-expansion
+# 373. jetson-orin-baseboard-oculink-expansion
 
 Board 373 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 4](../CorpusTestingPages/Corpus-Testing-04.md#373-jetson-orin-baseboard-oculink-expansion).
 
@@ -44,4 +44,4 @@ Board 373 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [372 job-ict-support-board](b0372b_job-ict-support-board_job-ict-support-board.md) | [374 jetson-orin-baseboard-pcie-switch-expansion](b0374b_job-pcie-switch-expansion_jetson-orin-baseboard-pcie-switch-expansion.md) |
+| [372. job-ict-support-board](b0372b_job-ict-support-board_job-ict-support-board.md) | [374. jetson-orin-baseboard-pcie-switch-expansion](b0374b_job-pcie-switch-expansion_jetson-orin-baseboard-pcie-switch-expansion.md) |

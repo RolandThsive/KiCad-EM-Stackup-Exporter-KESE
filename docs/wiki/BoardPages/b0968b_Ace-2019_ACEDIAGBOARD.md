@@ -1,4 +1,4 @@
-# 968 ACEDIAGBOARD
+# 968. ACEDIAGBOARD
 
 Board 968 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 9](../CorpusTestingPages/Corpus-Testing-09.md#968-acediagboard).
 
@@ -45,4 +45,4 @@ Board 968 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [967 ACEBREAKPOINT](b0967b_Ace-2019_ACEBREAKPOINT.md) | [969 ACEKEYBOARD](b0969b_Ace-2019_ACEKEYBOARD.md) |
+| [967. ACEBREAKPOINT](b0967b_Ace-2019_ACEBREAKPOINT.md) | [969. ACEKEYBOARD](b0969b_Ace-2019_ACEKEYBOARD.md) |

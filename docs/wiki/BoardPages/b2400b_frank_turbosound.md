@@ -1,4 +1,4 @@
-# 2400 turbosound
+# 2400. turbosound
 
 Board 2,400 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 23](../CorpusTestingPages/Corpus-Testing-23.md#2400-turbosound).
 
@@ -45,4 +45,4 @@ Board 2,400 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2399 oldskool](b2399b_frank_oldskool.md) | [2401 xt8086_alpha](b2401b_frank_xt8086-alpha.md) |
+| [2399. oldskool](b2399b_frank_oldskool.md) | [2401. xt8086_alpha](b2401b_frank_xt8086-alpha.md) |

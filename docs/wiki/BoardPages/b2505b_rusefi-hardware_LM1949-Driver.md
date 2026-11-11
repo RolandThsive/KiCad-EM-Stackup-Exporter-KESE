@@ -1,4 +1,4 @@
-# 2505 LM1949_Driver
+# 2505. LM1949_Driver
 
 Board 2,505 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 24](../CorpusTestingPages/Corpus-Testing-24.md#2505-lm1949_driver).
 
@@ -45,4 +45,4 @@ Board 2,505 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2504 lambda-x2](b2504b_rusefi-hardware_lambda-x2.md) | [2506 MC33810-breakout](b2506b_rusefi-hardware_MC33810-breakout.md) |
+| [2504. lambda-x2](b2504b_rusefi-hardware_lambda-x2.md) | [2506. MC33810-breakout](b2506b_rusefi-hardware_MC33810-breakout.md) |

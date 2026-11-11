@@ -1,4 +1,4 @@
-# 1597 ssx
+# 1597. ssx
 
 Board 1,597 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 15](../CorpusTestingPages/Corpus-Testing-15.md#1597-ssx).
 
@@ -45,4 +45,4 @@ Board 1,597 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1596 eis](b1596b_eis_eis.md) | [1598 ssu](b1598b_ferrit_ssu.md) |
+| [1596. eis](b1596b_eis_eis.md) | [1598. ssu](b1598b_ferrit_ssu.md) |

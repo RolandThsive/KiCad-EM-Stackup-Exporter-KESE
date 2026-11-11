@@ -1,4 +1,4 @@
-# 850 AudioYM2151
+# 850. AudioYM2151
 
 Board 850 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 8](../CorpusTestingPages/Corpus-Testing-08.md#850-audioym2151).
 
@@ -45,4 +45,4 @@ Board 850 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [849 AudioSID](b0849b_hardware_AudioSID.md) | [851 Eth8019](b0851b_hardware_Eth8019.md) |
+| [849. AudioSID](b0849b_hardware_AudioSID.md) | [851. Eth8019](b0851b_hardware_Eth8019.md) |

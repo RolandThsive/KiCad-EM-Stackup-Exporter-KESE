@@ -1,4 +1,4 @@
-# 681 other-m68k
+# 681. other-m68k
 
 Board 681 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 7](../CorpusTestingPages/Corpus-Testing-07.md#681-other-m68k).
 
@@ -45,4 +45,4 @@ Board 681 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [680 SmartPrintCoreH7x](b0680b_SmartPrintCoreH7x_SmartPrintCoreH7x.md) | [682 ClassicIIReloaded](b0682b_ClassicII_ClassicIIReloaded.md) |
+| [680. SmartPrintCoreH7x](b0680b_SmartPrintCoreH7x_SmartPrintCoreH7x.md) | [682. ClassicIIReloaded](b0682b_ClassicII_ClassicIIReloaded.md) |

@@ -1,4 +1,4 @@
-# 732 icepi-zero
+# 732. icepi-zero
 
 Board 732 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 7](../CorpusTestingPages/Corpus-Testing-07.md#732-icepi-zero).
 
@@ -45,4 +45,4 @@ Board 732 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [731 icepi-zero](b0731b_icepi-zero_hardware-v1-2_icepi-zero.md) | [733 icepi-zero](b0733b_icepi-zero_hardware-v1-4_icepi-zero.md) |
+| [731. icepi-zero](b0731b_icepi-zero_hardware-v1-2_icepi-zero.md) | [733. icepi-zero](b0733b_icepi-zero_hardware-v1-4_icepi-zero.md) |

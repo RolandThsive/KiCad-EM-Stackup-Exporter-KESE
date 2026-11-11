@@ -1,4 +1,4 @@
-# 2395 megafrank
+# 2395. megafrank
 
 Board 2,395 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 23](../CorpusTestingPages/Corpus-Testing-23.md#2395-megafrank).
 
@@ -45,4 +45,4 @@ Board 2,395 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2394 hecate](b2394b_frank_hecate.md) | [2396 microfrank](b2396b_frank_microfrank.md) |
+| [2394. hecate](b2394b_frank_hecate.md) | [2396. microfrank](b2396b_frank_microfrank.md) |

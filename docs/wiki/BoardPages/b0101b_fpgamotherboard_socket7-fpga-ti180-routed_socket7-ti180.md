@@ -1,4 +1,4 @@
-# 101 socket7-ti180
+# 101. socket7-ti180
 
 Board 101 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 1](../CorpusTestingPages/Corpus-Testing-01.md#101-socket7-ti180).
 
@@ -46,4 +46,4 @@ Board 101 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [100 socket7-ti180](b0100b_fpgamotherboard_socket7-fpga-ti180-hw_socket7-ti180.md) | [102 socket7-motherboard-hdi1](b0102b_fpgamotherboard_socket7-motherboard-hdi1.md) |
+| [100. socket7-ti180](b0100b_fpgamotherboard_socket7-fpga-ti180-hw_socket7-ti180.md) | [102. socket7-motherboard-hdi1](b0102b_fpgamotherboard_socket7-motherboard-hdi1.md) |

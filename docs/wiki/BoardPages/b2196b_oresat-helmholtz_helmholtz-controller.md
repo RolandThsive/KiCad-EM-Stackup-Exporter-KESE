@@ -1,4 +1,4 @@
-# 2196 helmholtz-controller
+# 2196. helmholtz-controller
 
 Board 2,196 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 21](../CorpusTestingPages/Corpus-Testing-21.md#2196-helmholtz-controller).
 
@@ -45,4 +45,4 @@ Board 2,196 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2195 helmholtz-controller-v2](b2195b_oresat-helmholtz_helmholtz-controller-v2.md) | [2197 at86rf215-design-block](b2197b_oresat-kicad_at86rf215-design-block.md) |
+| [2195. helmholtz-controller-v2](b2195b_oresat-helmholtz_helmholtz-controller-v2.md) | [2197. at86rf215-design-block](b2197b_oresat-kicad_at86rf215-design-block.md) |

@@ -1,4 +1,4 @@
-# 2225 star-tracker-camera-board
+# 2225. star-tracker-camera-board
 
 Board 2,225 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 21](../CorpusTestingPages/Corpus-Testing-21.md#2225-star-tracker-camera-board).
 
@@ -45,4 +45,4 @@ Board 2,225 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2224 star-tracker-camera-board](b2224b_oresat-star-tracker-hardware_hardware-star-tracker-2-0-star-tracker-camera-board-2-0_star-tracker-camera-board.md) | [2226 star-tracker-card](b2226b_oresat-star-tracker-hardware_hardware-star-tracker-card_star-tracker-card.md) |
+| [2224. star-tracker-camera-board](b2224b_oresat-star-tracker-hardware_hardware-star-tracker-2-0-star-tracker-camera-board-2-0_star-tracker-camera-board.md) | [2226. star-tracker-card](b2226b_oresat-star-tracker-hardware_hardware-star-tracker-card_star-tracker-card.md) |

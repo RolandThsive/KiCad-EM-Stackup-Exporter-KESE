@@ -1,4 +1,4 @@
-# 682 ClassicIIReloaded
+# 682. ClassicIIReloaded
 
 Board 682 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 7](../CorpusTestingPages/Corpus-Testing-07.md#682-classiciireloaded).
 
@@ -45,4 +45,4 @@ Board 682 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [681 other-m68k](b0681b_other-m68k_other-m68k.md) | [683 ClassicIIRevB](b0683b_ClassicII_ClassicIIRevB.md) |
+| [681. other-m68k](b0681b_other-m68k_other-m68k.md) | [683. ClassicIIRevB](b0683b_ClassicII_ClassicIIRevB.md) |

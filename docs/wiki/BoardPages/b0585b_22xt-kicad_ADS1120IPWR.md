@@ -1,4 +1,4 @@
-# 585 ADS1120IPWR
+# 585. ADS1120IPWR
 
 Board 585 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 6](../CorpusTestingPages/Corpus-Testing-06.md#585-ads1120ipwr).
 
@@ -45,4 +45,4 @@ Board 585 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [584 AD5626BRMZ-kent](b0584b_22xt-kicad_AD5626BRMZ-kent.md) | [586 esp32s3](b0586b_22xt-kicad_esp32s3.md) |
+| [584. AD5626BRMZ-kent](b0584b_22xt-kicad_AD5626BRMZ-kent.md) | [586. esp32s3](b0586b_22xt-kicad_esp32s3.md) |

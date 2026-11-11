@@ -1,4 +1,4 @@
-# 1485 rpi-cm4-LiM+-board
+# 1485. rpi-cm4-LiM+-board
 
 Board 1,485 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 14](../CorpusTestingPages/Corpus-Testing-14.md#1485-rpi-cm4-lim-board).
 
@@ -45,4 +45,4 @@ Board 1,485 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1484 zx2_uart](b1484b_ZX-Spectrum-diy_zx2-uart.md) | [1486 rpi-cm4-LiM-board](b1486b_rpi-cm4-LiM-board_hardware-rpi-cm4-LiM-board-KiCad-Files_rpi-cm4-LiM-board_2462.md) |
+| [1484. zx2_uart](b1484b_ZX-Spectrum-diy_zx2-uart.md) | [1486. rpi-cm4-LiM-board](b1486b_rpi-cm4-LiM-board_hardware-rpi-cm4-LiM-board-KiCad-Files_rpi-cm4-LiM-board_2462.md) |

@@ -1,4 +1,4 @@
-# 108 plusd
+# 108. plusd
 
 Board 108 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 1](../CorpusTestingPages/Corpus-Testing-01.md#108-plusd).
 
@@ -45,4 +45,4 @@ Board 108 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [107 plusd](b0107b_plusD-clone_Rev-01_plusd.md) | [109 situacion1](b0109b_plusD-clone_situacion1.md) |
+| [107. plusd](b0107b_plusD-clone_Rev-01_plusd.md) | [109. situacion1](b0109b_plusD-clone_situacion1.md) |

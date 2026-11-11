@@ -1,4 +1,4 @@
-# 2361 mesabob
+# 2361. mesabob
 
 Board 2,361 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 22](../CorpusTestingPages/Corpus-Testing-22.md#2361-mesabob).
 
@@ -45,4 +45,4 @@ Board 2,361 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2360 diff_driver](b2360b_stmbl_diff-driver.md) | [2362 powerstep](b2362b_stmbl_powerstep.md) |
+| [2360. diff_driver](b2360b_stmbl_diff-driver.md) | [2362. powerstep](b2362b_stmbl_powerstep.md) |

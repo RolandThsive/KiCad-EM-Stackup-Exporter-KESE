@@ -1,4 +1,4 @@
-# 2263 daughterboard
+# 2263. daughterboard
 
 Board 2,263 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 21](../CorpusTestingPages/Corpus-Testing-21.md#2263-daughterboard).
 
@@ -45,4 +45,4 @@ Board 2,263 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2262 usb_c](b2262b_cubesat_usb-c.md) | [2264 film_capacitors](b2264b_micro-inverter_film-capacitors.md) |
+| [2262. usb_c](b2262b_cubesat_usb-c.md) | [2264. film_capacitors](b2264b_micro-inverter_film-capacitors.md) |

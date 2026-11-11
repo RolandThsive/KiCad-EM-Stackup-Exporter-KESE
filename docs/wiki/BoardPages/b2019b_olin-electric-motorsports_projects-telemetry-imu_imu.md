@@ -1,4 +1,4 @@
-# 2019 imu
+# 2019. imu
 
 Board 2,019 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 19](../CorpusTestingPages/Corpus-Testing-19.md#2019-imu).
 
@@ -45,4 +45,4 @@ Board 2,019 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2018 pcie_x1_passthrough](b2018b_olin-electric-motorsports_pcie-x1-passthrough.md) | [2020 telemetry_core](b2020b_olin-electric-motorsports_telemetry-core.md) |
+| [2018. pcie_x1_passthrough](b2018b_olin-electric-motorsports_pcie-x1-passthrough.md) | [2020. telemetry_core](b2020b_olin-electric-motorsports_telemetry-core.md) |

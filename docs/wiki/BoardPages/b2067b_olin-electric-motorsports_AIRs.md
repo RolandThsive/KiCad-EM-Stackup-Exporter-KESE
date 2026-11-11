@@ -1,4 +1,4 @@
-# 2067 AIRs
+# 2067. AIRs
 
 Board 2,067 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 20](../CorpusTestingPages/Corpus-Testing-20.md#2067-airs).
 
@@ -45,4 +45,4 @@ Board 2,067 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2066 sensing_controller](b2066b_olin-electric-motorsports_sensing-controller.md) | [2068 imd_latch](b2068b_olin-electric-motorsports_imd-latch.md) |
+| [2066. sensing_controller](b2066b_olin-electric-motorsports_sensing-controller.md) | [2068. imd_latch](b2068b_olin-electric-motorsports_imd-latch.md) |

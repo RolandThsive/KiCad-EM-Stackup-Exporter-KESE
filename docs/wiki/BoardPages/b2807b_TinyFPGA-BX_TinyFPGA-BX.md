@@ -1,4 +1,4 @@
-# 2807 TinyFPGA-BX
+# 2807. TinyFPGA-BX
 
 Board 2,807 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 26](../CorpusTestingPages/Corpus-Testing-26.md#2807-tinyfpga-bx).
 
@@ -45,4 +45,4 @@ Board 2,807 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2806 red](b2806b_red-brick_red.md) | [2808 caravel-breakout-fpga-ICE40UP5K-TT3](b2808b_breakout-pcb_caravel-breakout-fpga-ICE40UP5K-TT3.md) |
+| [2806. red](b2806b_red-brick_red.md) | [2808. caravel-breakout-fpga-ICE40UP5K-TT3](b2808b_breakout-pcb_caravel-breakout-fpga-ICE40UP5K-TT3.md) |

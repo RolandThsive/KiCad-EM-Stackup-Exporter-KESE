@@ -1,4 +1,4 @@
-# 2470 O2_input_CJ125
+# 2470. O2_input_CJ125
 
 Board 2,470 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 23](../CorpusTestingPages/Corpus-Testing-23.md#2470-o2_input_cj125).
 
@@ -45,4 +45,4 @@ Board 2,470 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2469 can_brd_1](b2469b_rusefi-hardware_classic-designs-rusefi-hardware-history-can-board-rev00-20-can-board_can-brd-1.md) | [2471 DDPAK_breakout](b2471b_rusefi-hardware_DDPAK-breakout.md) |
+| [2469. can_brd_1](b2469b_rusefi-hardware_classic-designs-rusefi-hardware-history-can-board-rev00-20-can-board_can-brd-1.md) | [2471. DDPAK_breakout](b2471b_rusefi-hardware_DDPAK-breakout.md) |

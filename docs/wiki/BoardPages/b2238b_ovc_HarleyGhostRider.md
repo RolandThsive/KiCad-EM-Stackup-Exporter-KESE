@@ -1,4 +1,4 @@
-# 2238 HarleyGhostRider
+# 2238. HarleyGhostRider
 
 Board 2,238 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 21](../CorpusTestingPages/Corpus-Testing-21.md#2238-harleyghostrider).
 
@@ -45,4 +45,4 @@ Board 2,238 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2237 trigger-output-fmc](b2237b_trigger-output-fmc_trigger-output-fmc.md) | [2239 HarleyTandem](b2239b_ovc_HarleyTandem.md) |
+| [2237. trigger-output-fmc](b2237b_trigger-output-fmc_trigger-output-fmc.md) | [2239. HarleyTandem](b2239b_ovc_HarleyTandem.md) |

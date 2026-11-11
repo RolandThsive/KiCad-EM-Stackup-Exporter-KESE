@@ -1,4 +1,4 @@
-# 540 BeagleConnect
+# 540. BeagleConnect
 
 Board 540 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 5](../CorpusTestingPages/Corpus-Testing-05.md#540-beagleconnect).
 
@@ -45,4 +45,4 @@ Board 540 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [539 BeagleConnect Freedom](b0539b_beagleconnect_hw-Freedom-C4_BeagleConnect-Freedom.md) | [541 BeagleConnect Freedom C7](b0541b_beagleconnect-freedom_BeagleConnect-Freedom-C7.md) |
+| [539. BeagleConnect Freedom](b0539b_beagleconnect_hw-Freedom-C4_BeagleConnect-Freedom.md) | [541. BeagleConnect Freedom C7](b0541b_beagleconnect-freedom_BeagleConnect-Freedom-C7.md) |

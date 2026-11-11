@@ -1,4 +1,4 @@
-# 2303 healthylink_compute_v5
+# 2303. healthylink_compute_v5
 
 Board 2,303 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 22](../CorpusTestingPages/Corpus-Testing-22.md#2303-healthylink_compute_v5).
 
@@ -45,4 +45,4 @@ Board 2,303 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2302 pc_healthypi_move_sensor_v9](b2302b_healthypi-move-hw_pc-healthypi-move-sensor-v9.md) | [2304 healthylink_gpio_v2](b2304b_protocentral-healthypi6-hardware_healthylink-gpio-v2.md) |
+| [2302. pc_healthypi_move_sensor_v9](b2302b_healthypi-move-hw_pc-healthypi-move-sensor-v9.md) | [2304. healthylink_gpio_v2](b2304b_protocentral-healthypi6-hardware_healthylink-gpio-v2.md) |

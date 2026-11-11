@@ -1,4 +1,4 @@
-# 365 ict-baseboard
+# 365. ict-baseboard
 
 Board 365 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 4](../CorpusTestingPages/Corpus-Testing-04.md#365-ict-baseboard).
 
@@ -44,4 +44,4 @@ Board 365 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [364 icicle-hdmi-breakout](b0364b_icicle-hdmi-breakout_icicle-hdmi-breakout.md) | [366 ir-irradiance-probe](b0366b_infrared-irradiance-probe_ir-irradiance-probe.md) |
+| [364. icicle-hdmi-breakout](b0364b_icicle-hdmi-breakout_icicle-hdmi-breakout.md) | [366. ir-irradiance-probe](b0366b_infrared-irradiance-probe_ir-irradiance-probe.md) |

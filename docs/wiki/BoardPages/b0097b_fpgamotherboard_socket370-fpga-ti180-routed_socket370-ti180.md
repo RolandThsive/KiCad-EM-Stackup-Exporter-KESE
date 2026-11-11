@@ -1,4 +1,4 @@
-# 97 socket370-ti180
+# 97. socket370-ti180
 
 Board 97 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 1](../CorpusTestingPages/Corpus-Testing-01.md#97-socket370-ti180).
 
@@ -46,4 +46,4 @@ Board 97 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page
 
 | Previous | Next |
 |:---|---:|
-| [96 socket370-ti180](b0096b_fpgamotherboard_socket370-fpga-ti180-hw_socket370-ti180.md) | [98 socket370-motherboard](b0098b_fpgamotherboard_socket370-fpga-xc7a100t-routed_socket370-motherboard.md) |
+| [96. socket370-ti180](b0096b_fpgamotherboard_socket370-fpga-ti180-hw_socket370-ti180.md) | [98. socket370-motherboard](b0098b_fpgamotherboard_socket370-fpga-xc7a100t-routed_socket370-motherboard.md) |

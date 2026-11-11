@@ -1,4 +1,4 @@
-# 1217 motor-controller-hw
+# 1217. motor-controller-hw
 
 Board 1,217 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 12](../CorpusTestingPages/Corpus-Testing-12.md#1217-motor-controller-hw).
 
@@ -45,4 +45,4 @@ Board 1,217 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1216 SH-RPi](b1216b_sh-rpi-hardware_SH-RPi.md) | [1218 MotorControllerPowerBoard](b1218b_motor-controller-2018_MotorControllerPowerBoard.md) |
+| [1216. SH-RPi](b1216b_sh-rpi-hardware_SH-RPi.md) | [1218. MotorControllerPowerBoard](b1218b_motor-controller-2018_MotorControllerPowerBoard.md) |

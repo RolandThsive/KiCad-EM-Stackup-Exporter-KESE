@@ -1,4 +1,4 @@
-# 1356 TeleDecoder-revA
+# 1356. TeleDecoder-revA
 
 Board 1,356 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 13](../CorpusTestingPages/Corpus-Testing-13.md#1356-teledecoder-reva).
 
@@ -45,4 +45,4 @@ Board 1,356 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1355 SPARK-MK1](b1355b_iss-pcb_SPARK-MK1.md) | [1357 TeleDecoder-revB](b1357b_iss-pcb_TeleDecoder-revB.md) |
+| [1355. SPARK-MK1](b1355b_iss-pcb_SPARK-MK1.md) | [1357. TeleDecoder-revB](b1357b_iss-pcb_TeleDecoder-revB.md) |

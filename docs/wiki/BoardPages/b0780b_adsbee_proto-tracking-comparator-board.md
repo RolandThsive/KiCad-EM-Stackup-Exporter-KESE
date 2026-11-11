@@ -1,4 +1,4 @@
-# 780 proto_tracking_comparator_board
+# 780. proto_tracking_comparator_board
 
 Board 780 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 8](../CorpusTestingPages/Corpus-Testing-08.md#780-proto_tracking_comparator_board).
 
@@ -45,4 +45,4 @@ Board 780 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [779 proto_lna_board](b0779b_adsbee_proto-lna-board.md) | [781 proto_ufl_match_board](b0781b_adsbee_proto-ufl-match-board.md) |
+| [779. proto_lna_board](b0779b_adsbee_proto-lna-board.md) | [781. proto_ufl_match_board](b0781b_adsbee_proto-ufl-match-board.md) |

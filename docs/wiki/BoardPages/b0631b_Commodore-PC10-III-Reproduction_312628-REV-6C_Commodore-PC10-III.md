@@ -1,4 +1,4 @@
-# 631 Commodore PC10 III
+# 631. Commodore PC10 III
 
 Board 631 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 6](../CorpusTestingPages/Corpus-Testing-06.md#631-commodore-pc10-iii).
 
@@ -46,4 +46,4 @@ Board 631 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [630 Commodore PC10 III](b0630b_Commodore-PC10-III-Reproduction_312628-REV-5-7A_Commodore-PC10-III.md) | [632 CPC464-2MINIITX](b0632b_CPC464-2MINI_CPC464-2MINIITX.md) |
+| [630. Commodore PC10 III](b0630b_Commodore-PC10-III-Reproduction_312628-REV-5-7A_Commodore-PC10-III.md) | [632. CPC464-2MINIITX](b0632b_CPC464-2MINI_CPC464-2MINIITX.md) |

@@ -1,4 +1,4 @@
-# 828 7-REV2-vout-protection
+# 828. 7-REV2-vout-protection
 
 Board 828 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 8](../CorpusTestingPages/Corpus-Testing-08.md#828-7-rev2-vout-protection).
 
@@ -45,4 +45,4 @@ Board 828 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [827 7-REV2-vout-protection](b0827b_BusPirate5-hardware_bus-pirate-pcb-development-7-REV2-prototype3a_7-REV2-vout-protection.md) | [829 programming_pin_mount.v1.0](b0829b_BusPirate5-hardware_programming-pin-mount-v1-0.md) |
+| [827. 7-REV2-vout-protection](b0827b_BusPirate5-hardware_bus-pirate-pcb-development-7-REV2-prototype3a_7-REV2-vout-protection.md) | [829. programming_pin_mount.v1.0](b0829b_BusPirate5-hardware_programming-pin-mount-v1-0.md) |

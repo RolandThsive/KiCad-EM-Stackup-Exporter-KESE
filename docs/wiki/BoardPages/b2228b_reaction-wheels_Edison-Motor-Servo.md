@@ -1,4 +1,4 @@
-# 2228 Edison_Motor_Servo
+# 2228. Edison_Motor_Servo
 
 Board 2,228 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 21](../CorpusTestingPages/Corpus-Testing-21.md#2228-edison_motor_servo).
 
@@ -45,4 +45,4 @@ Board 2,228 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2227 GPIO to motor](b2227b_reaction-wheels_GPIO-to-motor.md) | [2229 MotCtrl](b2229b_motctrl_MotCtrl.md) |
+| [2227. GPIO to motor](b2227b_reaction-wheels_GPIO-to-motor.md) | [2229. MotCtrl](b2229b_motctrl_MotCtrl.md) |

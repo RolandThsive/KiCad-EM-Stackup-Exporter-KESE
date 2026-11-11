@@ -1,4 +1,4 @@
-# 320 arty-mpw-tester
+# 320. arty-mpw-tester
 
 Board 320 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 3](../CorpusTestingPages/Corpus-Testing-03.md#320-arty-mpw-tester).
 
@@ -44,4 +44,4 @@ Board 320 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [319 arty-a7-expansion](b0319b_arty-expansion-board_arty-a7-expansion.md) | [321 arvsom](b0321b_arvsom_arvsom.md) |
+| [319. arty-a7-expansion](b0319b_arty-expansion-board_arty-a7-expansion.md) | [321. arvsom](b0321b_arvsom_arvsom.md) |

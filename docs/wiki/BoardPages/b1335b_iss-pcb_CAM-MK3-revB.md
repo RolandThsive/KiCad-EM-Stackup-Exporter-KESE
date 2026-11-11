@@ -1,4 +1,4 @@
-# 1335 CAM-MK3-revB
+# 1335. CAM-MK3-revB
 
 Board 1,335 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 13](../CorpusTestingPages/Corpus-Testing-13.md#1335-cam-mk3-revb).
 
@@ -45,4 +45,4 @@ Board 1,335 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1334 CAM-MK3-revA](b1334b_iss-pcb_CAM-MK3-revA.md) | [1336 CAM-MK3-revC](b1336b_iss-pcb_CAM-MK3-revC.md) |
+| [1334. CAM-MK3-revA](b1334b_iss-pcb_CAM-MK3-revA.md) | [1336. CAM-MK3-revC](b1336b_iss-pcb_CAM-MK3-revC.md) |

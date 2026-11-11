@@ -1,4 +1,4 @@
-# 2823 pico-ice
+# 2823. pico-ice
 
 Board 2,823 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 27](../CorpusTestingPages/Corpus-Testing-27.md#2823-pico-ice).
 
@@ -45,4 +45,4 @@ Board 2,823 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2822 pico-ice](b2822b_pico-ice_Board-Rev1_pico-ice.md) | [2824 pico-ice](b2824b_pico-ice_Board-Rev3_pico-ice.md) |
+| [2822. pico-ice](b2822b_pico-ice_Board-Rev1_pico-ice.md) | [2824. pico-ice](b2824b_pico-ice_Board-Rev3_pico-ice.md) |

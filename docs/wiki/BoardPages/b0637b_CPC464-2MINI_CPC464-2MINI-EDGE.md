@@ -1,4 +1,4 @@
-# 637 CPC464-2MINI-EDGE
+# 637. CPC464-2MINI-EDGE
 
 Board 637 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 6](../CorpusTestingPages/Corpus-Testing-06.md#637-cpc464-2mini-edge).
 
@@ -45,4 +45,4 @@ Board 637 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [636 CPC464-2MINIDOCK](b0636b_CPC464-2MINI_CPC464-2MINIDOCK.md) | [638 CPC464-2MINIPS2](b0638b_CPC464-2MINI_CPC464-2MINIPS2.md) |
+| [636. CPC464-2MINIDOCK](b0636b_CPC464-2MINI_CPC464-2MINIDOCK.md) | [638. CPC464-2MINIPS2](b0638b_CPC464-2MINI_CPC464-2MINIPS2.md) |

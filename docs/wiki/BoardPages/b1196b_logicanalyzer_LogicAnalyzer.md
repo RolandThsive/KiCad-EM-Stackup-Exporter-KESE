@@ -1,4 +1,4 @@
-# 1196 LogicAnalyzer
+# 1196. LogicAnalyzer
 
 Board 1,196 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 12](../CorpusTestingPages/Corpus-Testing-12.md#1196-logicanalyzer).
 
@@ -45,4 +45,4 @@ Board 1,196 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1195 LevelShifter](b1195b_logicanalyzer_LevelShifter.md) | [1197 AnalyzerBoxPCB_fork](b1197b_logicanalyzer_AnalyzerBoxPCB-fork.md) |
+| [1195. LevelShifter](b1195b_logicanalyzer_LevelShifter.md) | [1197. AnalyzerBoxPCB_fork](b1197b_logicanalyzer_AnalyzerBoxPCB-fork.md) |

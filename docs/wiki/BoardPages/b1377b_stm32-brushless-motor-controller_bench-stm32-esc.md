@@ -1,4 +1,4 @@
-# 1377 bench_stm32_esc
+# 1377. bench_stm32_esc
 
 Board 1,377 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 13](../CorpusTestingPages/Corpus-Testing-13.md#1377-bench_stm32_esc).
 
@@ -45,4 +45,4 @@ Board 1,377 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1376 bpm_dfe](b1376b_rfsocdfe-hw_bpm-dfe.md) | [1378 LibreCAL](b1378b_LibreCAL_LibreCAL.md) |
+| [1376. bpm_dfe](b1376b_rfsocdfe-hw_bpm-dfe.md) | [1378. LibreCAL](b1378b_LibreCAL_LibreCAL.md) |

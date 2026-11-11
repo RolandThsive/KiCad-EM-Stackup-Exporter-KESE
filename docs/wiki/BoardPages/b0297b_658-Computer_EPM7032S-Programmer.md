@@ -1,4 +1,4 @@
-# 297 EPM7032S Programmer
+# 297. EPM7032S Programmer
 
 Board 297 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 3](../CorpusTestingPages/Corpus-Testing-03.md#297-epm7032s-programmer).
 
@@ -45,4 +45,4 @@ Board 297 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [296 EPM570 Programmer](b0296b_658-Computer_EPM570-Programmer.md) | [298 EPM7160S Programmer](b0298b_658-Computer_EPM7160S-Programmer.md) |
+| [296. EPM570 Programmer](b0296b_658-Computer_EPM570-Programmer.md) | [298. EPM7160S Programmer](b0298b_658-Computer_EPM7160S-Programmer.md) |

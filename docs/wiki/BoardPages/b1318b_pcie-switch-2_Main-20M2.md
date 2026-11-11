@@ -1,4 +1,4 @@
-# 1318 Main_20M2
+# 1318. Main_20M2
 
 Board 1,318 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 13](../CorpusTestingPages/Corpus-Testing-13.md#1318-main_20m2).
 
@@ -45,4 +45,4 @@ Board 1,318 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1317 Assembly_View](b1317b_pcie-switch-2_outputs-PCIe-AllM2-RevP-Assembly-View_Assembly-View.md) | [1319 Main_10E1S](b1319b_pcie-switch-2_outputs-PCIe-E1S-82x45-FakePEX90064-RevS-Main-10E1S_Main-10E1S.md) |
+| [1317. Assembly_View](b1317b_pcie-switch-2_outputs-PCIe-AllM2-RevP-Assembly-View_Assembly-View.md) | [1319. Main_10E1S](b1319b_pcie-switch-2_outputs-PCIe-E1S-82x45-FakePEX90064-RevS-Main-10E1S_Main-10E1S.md) |

@@ -1,4 +1,4 @@
-# 1262 ethIO
+# 1262. ethIO
 
 Board 1,262 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 12](../CorpusTestingPages/Corpus-Testing-12.md#1262-ethio).
 
@@ -45,4 +45,4 @@ Board 1,262 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1261 eduIO](b1261b_Extension-Boards-for-Olimex-GateMate_eduIO.md) | [1263 extension_template](b1263b_Extension-Boards-for-Olimex-GateMate_extension-template.md) |
+| [1261. eduIO](b1261b_Extension-Boards-for-Olimex-GateMate_eduIO.md) | [1263. extension_template](b1263b_Extension-Boards-for-Olimex-GateMate_extension-template.md) |

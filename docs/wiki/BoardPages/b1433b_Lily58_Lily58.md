@@ -1,4 +1,4 @@
-# 1433 Lily58
+# 1433. Lily58
 
 Board 1,433 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 14](../CorpusTestingPages/Corpus-Testing-14.md#1433-lily58).
 
@@ -45,4 +45,4 @@ Board 1,433 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1432 Lily58_Lite_Rev3](b1432b_Lily58_Lily58-Lite-Rev3.md) | [1434 Lily58_Pro_BOTTOM](b1434b_Lily58_Lily58-Pro-BOTTOM.md) |
+| [1432. Lily58_Lite_Rev3](b1432b_Lily58_Lily58-Lite-Rev3.md) | [1434. Lily58_Pro_BOTTOM](b1434b_Lily58_Lily58-Pro-BOTTOM.md) |

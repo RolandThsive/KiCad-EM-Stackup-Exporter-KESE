@@ -1,4 +1,4 @@
-# 1601 kaltstahl
+# 1601. kaltstahl
 
 Board 1,601 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 15](../CorpusTestingPages/Corpus-Testing-15.md#1601-kaltstahl).
 
@@ -45,4 +45,4 @@ Board 1,601 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1600 sxa](b1600b_ferrit_sxa.md) | [1602 pmod_ethernet](b1602b_katze_pmod-ethernet.md) |
+| [1600. sxa](b1600b_ferrit_sxa.md) | [1602. pmod_ethernet](b1602b_katze_pmod-ethernet.md) |

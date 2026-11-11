@@ -1,4 +1,4 @@
-# 902 HMCAD1520_Impedence_Checker
+# 902. HMCAD1520_Impedence_Checker
 
 Board 902 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 9](../CorpusTestingPages/Corpus-Testing-09.md#902-hmcad1520_impedence_checker).
 
@@ -45,4 +45,4 @@ Board 902 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [901 Thunderscope_Rev5_Mech_Model](b0901b_ts-hardware-archive_Thunderscope-Rev5-Mech-Model.md) | [903 Interposer_Board_Test_Fixture](b0903b_ts-test-fixtures_Interposer-Board-Test-Fixture.md) |
+| [901. Thunderscope_Rev5_Mech_Model](b0901b_ts-hardware-archive_Thunderscope-Rev5-Mech-Model.md) | [903. Interposer_Board_Test_Fixture](b0903b_ts-test-fixtures_Interposer-Board-Test-Fixture.md) |

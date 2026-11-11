@@ -1,4 +1,4 @@
-# 524 ROM Interposer board
+# 524. ROM Interposer board
 
 Board 524 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 5](../CorpusTestingPages/Corpus-Testing-05.md#524-rom-interposer-board).
 
@@ -45,4 +45,4 @@ Board 524 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [523 MegaII Breakout](b0523b_Mega-IIe_kicad-files-rev1-MegaII-Breakout_MegaII-Breakout.md) | [525 ROM Interposer board](b0525b_Mega-IIe_kicad-files-ROM-Interposer-board_ROM-Interposer-board.md) |
+| [523. MegaII Breakout](b0523b_Mega-IIe_kicad-files-rev1-MegaII-Breakout_MegaII-Breakout.md) | [525. ROM Interposer board](b0525b_Mega-IIe_kicad-files-ROM-Interposer-board_ROM-Interposer-board.md) |

@@ -1,4 +1,4 @@
-# 1161 arm-watch
+# 1161. arm-watch
 
 Board 1,161 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 11](../CorpusTestingPages/Corpus-Testing-11.md#1161-arm-watch).
 
@@ -45,4 +45,4 @@ Board 1,161 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1160 yardstickone](b1160b_yardstick_yardstickone.md) | [1162 ecpbreaker](b1162b_advent-calendar-of-circuits-2020_ecpbreaker.md) |
+| [1160. yardstickone](b1160b_yardstick_yardstickone.md) | [1162. ecpbreaker](b1162b_advent-calendar-of-circuits-2020_ecpbreaker.md) |

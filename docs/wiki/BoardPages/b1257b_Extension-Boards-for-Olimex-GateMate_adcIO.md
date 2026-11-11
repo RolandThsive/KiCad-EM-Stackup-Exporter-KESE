@@ -1,4 +1,4 @@
-# 1257 adcIO
+# 1257. adcIO
 
 Board 1,257 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 12](../CorpusTestingPages/Corpus-Testing-12.md#1257-adcio).
 
@@ -45,4 +45,4 @@ Board 1,257 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1256 EMC_antenna](b1256b_EMC-experiments_EMC-antenna.md) | [1258 camIO](b1258b_Extension-Boards-for-Olimex-GateMate_camIO.md) |
+| [1256. EMC_antenna](b1256b_EMC-experiments_EMC-antenna.md) | [1258. camIO](b1258b_Extension-Boards-for-Olimex-GateMate_camIO.md) |

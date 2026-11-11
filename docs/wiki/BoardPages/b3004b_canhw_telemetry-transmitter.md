@@ -1,4 +1,4 @@
-# 3004 telemetry_transmitter
+# 3004. telemetry_transmitter
 
 Board 3,004 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 28](../CorpusTestingPages/Corpus-Testing-28.md#3004-telemetry_transmitter).
 
@@ -45,4 +45,4 @@ Board 3,004 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [3003 injector_sensor_hub](b3003b_canhw_injector-sensor-hub.md) | [3005 LTT](b3005b_canhw_LTT.md) |
+| [3003. injector_sensor_hub](b3003b_canhw_injector-sensor-hub.md) | [3005. LTT](b3005b_canhw_LTT.md) |

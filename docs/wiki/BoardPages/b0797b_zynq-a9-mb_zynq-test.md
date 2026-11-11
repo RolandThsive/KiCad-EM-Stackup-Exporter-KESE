@@ -1,4 +1,4 @@
-# 797 zynq_test
+# 797. zynq_test
 
 Board 797 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 8](../CorpusTestingPages/Corpus-Testing-08.md#797-zynq_test).
 
@@ -45,4 +45,4 @@ Board 797 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [796 hdmi_adapter](b0796b_zynq-a9-mb_hdmi-adapter.md) | [798 aquila_main](b0798b_aquila-avionics_aquila-main.md) |
+| [796. hdmi_adapter](b0796b_zynq-a9-mb_hdmi-adapter.md) | [798. aquila_main](b0798b_aquila-avionics_aquila-main.md) |

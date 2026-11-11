@@ -1,4 +1,4 @@
-# 1337 drone_power_2_screws
+# 1337. drone_power_2_screws
 
 Board 1,337 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 13](../CorpusTestingPages/Corpus-Testing-13.md#1337-drone_power_2_screws).
 
@@ -45,4 +45,4 @@ Board 1,337 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1336 CAM-MK3-revC](b1336b_iss-pcb_CAM-MK3-revC.md) | [1338 drone_power_2_screws_V2](b1338b_iss-pcb_drone-power-2-screws-V2.md) |
+| [1336. CAM-MK3-revC](b1336b_iss-pcb_CAM-MK3-revC.md) | [1338. drone_power_2_screws_V2](b1338b_iss-pcb_drone-power-2-screws-V2.md) |

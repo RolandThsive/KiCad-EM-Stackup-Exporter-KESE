@@ -1,4 +1,4 @@
-# 1308 Main_10E1S
+# 1308. Main_10E1S
 
 Board 1,308 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 13](../CorpusTestingPages/Corpus-Testing-13.md#1308-main_10e1s).
 
@@ -46,4 +46,4 @@ Board 1,308 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1307 Left_2M2_Vertical](b1307b_pcie-switch-2_outputs-PCIe-3board-RevJ-Left-2M2-Vertical_Left-2M2-Vertical.md) | [1309 Right_M2_Upstream](b1309b_pcie-switch-2_outputs-PCIe-3board-RevJ-Right-M2-Upstream_Right-M2-Upstream.md) |
+| [1307. Left_2M2_Vertical](b1307b_pcie-switch-2_outputs-PCIe-3board-RevJ-Left-2M2-Vertical_Left-2M2-Vertical.md) | [1309. Right_M2_Upstream](b1309b_pcie-switch-2_outputs-PCIe-3board-RevJ-Right-M2-Upstream_Right-M2-Upstream.md) |

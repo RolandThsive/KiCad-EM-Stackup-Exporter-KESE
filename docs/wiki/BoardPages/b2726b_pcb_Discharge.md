@@ -1,4 +1,4 @@
-# 2726 Discharge
+# 2726. Discharge
 
 Board 2,726 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 26](../CorpusTestingPages/Corpus-Testing-26.md#2726-discharge).
 
@@ -45,4 +45,4 @@ Board 2,726 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2725 can-node](b2725b_pcb_can-node.md) | [2727 hv_sense](b2727b_pcb_hv-sense.md) |
+| [2725. can-node](b2725b_pcb_can-node.md) | [2727. hv_sense](b2727b_pcb_hv-sense.md) |

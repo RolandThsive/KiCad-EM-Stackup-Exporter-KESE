@@ -1,4 +1,4 @@
-# 2924 BigBoy-Frontpanel
+# 2924. BigBoy-Frontpanel
 
 Board 2,924 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 28](../CorpusTestingPages/Corpus-Testing-28.md#2924-bigboy-frontpanel).
 
@@ -46,4 +46,4 @@ Board 2,924 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2923 60mm-Extender](b2923b_retroverse_60mm-Extender.md) | [2925 BigBoy](b2925b_retroverse_BigBoy.md) |
+| [2923. 60mm-Extender](b2923b_retroverse_60mm-Extender.md) | [2925. BigBoy](b2925b_retroverse_BigBoy.md) |

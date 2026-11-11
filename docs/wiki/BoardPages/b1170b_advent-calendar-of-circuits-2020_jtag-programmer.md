@@ -1,4 +1,4 @@
-# 1170 jtag-programmer
+# 1170. jtag-programmer
 
 Board 1,170 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 11](../CorpusTestingPages/Corpus-Testing-11.md#1170-jtag-programmer).
 
@@ -45,4 +45,4 @@ Board 1,170 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1169 icebreaker++](b1169b_advent-calendar-of-circuits-2020_icebreaker.md) | [1171 led-panel](b1171b_advent-calendar-of-circuits-2020_led-panel.md) |
+| [1169. icebreaker++](b1169b_advent-calendar-of-circuits-2020_icebreaker.md) | [1171. led-panel](b1171b_advent-calendar-of-circuits-2020_led-panel.md) |

@@ -1,4 +1,4 @@
-# 2073 acquisition-board
+# 2073. acquisition-board
 
 Board 2,073 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 20](../CorpusTestingPages/Corpus-Testing-20.md#2073-acquisition-board).
 
@@ -45,4 +45,4 @@ Board 2,073 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2072 CM4_2](b2072b_CM4-NAS-MiniPCIE_CM4-2.md) | [2074 oe-commutator-controller](b2074b_commutators_oe-commutator-controller.md) |
+| [2072. CM4_2](b2072b_CM4-NAS-MiniPCIE_CM4-2.md) | [2074. oe-commutator-controller](b2074b_commutators_oe-commutator-controller.md) |

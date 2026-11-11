@@ -1,4 +1,4 @@
-# 1167 gpdi
+# 1167. gpdi
 
 Board 1,167 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 11](../CorpusTestingPages/Corpus-Testing-11.md#1167-gpdi).
 
@@ -45,4 +45,4 @@ Board 1,167 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1166 gpdi-serdes](b1166b_advent-calendar-of-circuits-2020_gpdi-serdes.md) | [1168 hdmi-si](b1168b_advent-calendar-of-circuits-2020_hdmi-si.md) |
+| [1166. gpdi-serdes](b1166b_advent-calendar-of-circuits-2020_gpdi-serdes.md) | [1168. hdmi-si](b1168b_advent-calendar-of-circuits-2020_hdmi-si.md) |

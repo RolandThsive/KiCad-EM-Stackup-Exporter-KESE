@@ -1,4 +1,4 @@
-# 1949 OLIMEXINO-STM32F3_Rev_D
+# 1949. OLIMEXINO-STM32F3_Rev_D
 
 Board 1,949 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 19](../CorpusTestingPages/Corpus-Testing-19.md#1949-olimexino-stm32f3_rev_d).
 
@@ -45,4 +45,4 @@ Board 1,949 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1948 OLIMEXINO-STM32F3_Rev_C1](b1948b_OLIMEXINO-STM32F3_OLIMEXINO-STM32F3-Rev-C1.md) | [1950 A10_OLinuXino_Lime_Rev-B_SHIELD_TEMPLATE](b1950b_OLINUXINO_A10-OLinuXino-Lime-Rev-B-SHIELD-TEMPLATE.md) |
+| [1948. OLIMEXINO-STM32F3_Rev_C1](b1948b_OLIMEXINO-STM32F3_OLIMEXINO-STM32F3-Rev-C1.md) | [1950. A10_OLinuXino_Lime_Rev-B_SHIELD_TEMPLATE](b1950b_OLINUXINO_A10-OLinuXino-Lime-Rev-B-SHIELD-TEMPLATE.md) |

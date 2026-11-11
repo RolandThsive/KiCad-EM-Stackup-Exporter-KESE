@@ -1,4 +1,4 @@
-# 1066 archimedes_bus_scope
+# 1066. archimedes_bus_scope
 
 Board 1,066 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 10](../CorpusTestingPages/Corpus-Testing-10.md#1066-archimedes_bus_scope).
 
@@ -45,4 +45,4 @@ Board 1,066 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1065 arc_mouse_breakout](b1065b_myelin-acorn-electron-hardware_arc-mouse-breakout.md) | [1067 atsamd11_pro_micro](b1067b_myelin-acorn-electron-hardware_atsamd11-pro-micro.md) |
+| [1065. arc_mouse_breakout](b1065b_myelin-acorn-electron-hardware_arc-mouse-breakout.md) | [1067. atsamd11_pro_micro](b1067b_myelin-acorn-electron-hardware_atsamd11-pro-micro.md) |

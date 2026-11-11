@@ -1,4 +1,4 @@
-# 651 TMSAdapterTC01
+# 651. TMSAdapterTC01
 
 Board 651 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 7](../CorpusTestingPages/Corpus-Testing-07.md#651-tmsadaptertc01).
 
@@ -45,4 +45,4 @@ Board 651 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [650 TC02Mini](b0650b_Einstein-TC-01_TC02Mini.md) | [652 V9958AdapterTC01](b0652b_Einstein-TC-01_V9958AdapterTC01.md) |
+| [650. TC02Mini](b0650b_Einstein-TC-01_TC02Mini.md) | [652. V9958AdapterTC01](b0652b_Einstein-TC-01_V9958AdapterTC01.md) |

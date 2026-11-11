@@ -1,4 +1,4 @@
-# 2296 PicoGUS chipdown
+# 2296. PicoGUS chipdown
 
 Board 2,296 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 22](../CorpusTestingPages/Corpus-Testing-22.md#2296-picogus-chipdown).
 
@@ -45,4 +45,4 @@ Board 2,296 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2295 PicoGUS chipdown with edge rails](b2295b_picogus_PicoGUS-chipdown-with-edge-rails.md) | [2297 PicoGUS Hand386](b2297b_picogus_PicoGUS-Hand386.md) |
+| [2295. PicoGUS chipdown with edge rails](b2295b_picogus_PicoGUS-chipdown-with-edge-rails.md) | [2297. PicoGUS Hand386](b2297b_picogus_PicoGUS-Hand386.md) |

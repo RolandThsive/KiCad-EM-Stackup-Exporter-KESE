@@ -1,4 +1,4 @@
-# 1614 panel
+# 1614. panel
 
 Board 1,614 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 15](../CorpusTestingPages/Corpus-Testing-15.md#1614-panel).
 
@@ -45,4 +45,4 @@ Board 1,614 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1613 pcb1p5_hv_syncfix](b1613b_ossc-pro-hw_pcb1p5-hv-syncfix.md) | [1615 extra_av_out](b1615b_ossc-pro-hw_extra-av-out.md) |
+| [1613. pcb1p5_hv_syncfix](b1613b_ossc-pro-hw_pcb1p5-hv-syncfix.md) | [1615. extra_av_out](b1615b_ossc-pro-hw_extra-av-out.md) |

@@ -1,4 +1,4 @@
-# 969 ACEKEYBOARD
+# 969. ACEKEYBOARD
 
 Board 969 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 9](../CorpusTestingPages/Corpus-Testing-09.md#969-acekeyboard).
 
@@ -45,4 +45,4 @@ Board 969 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [968 ACEDIAGBOARD](b0968b_Ace-2019_ACEDIAGBOARD.md) | [970 acez180](b0970b_Ace-2019_acez180.md) |
+| [968. ACEDIAGBOARD](b0968b_Ace-2019_ACEDIAGBOARD.md) | [970. acez180](b0970b_Ace-2019_acez180.md) |

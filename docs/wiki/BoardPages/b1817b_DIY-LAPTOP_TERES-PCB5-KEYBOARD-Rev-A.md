@@ -1,4 +1,4 @@
-# 1817 TERES-PCB5-KEYBOARD_Rev.A
+# 1817. TERES-PCB5-KEYBOARD_Rev.A
 
 Board 1,817 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 17](../CorpusTestingPages/Corpus-Testing-17.md#1817-teres-pcb5-keyboard_reva).
 
@@ -45,4 +45,4 @@ Board 1,817 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1816 PCB4-PWR-BTN_Rev.A](b1816b_DIY-LAPTOP_PCB4-PWR-BTN-Rev-A.md) | [1818 eduArdu_Rev_A](b1818b_eduArdu_eduArdu-Rev-A.md) |
+| [1816. PCB4-PWR-BTN_Rev.A](b1816b_DIY-LAPTOP_PCB4-PWR-BTN-Rev-A.md) | [1818. eduArdu_Rev_A](b1818b_eduArdu_eduArdu-Rev-A.md) |

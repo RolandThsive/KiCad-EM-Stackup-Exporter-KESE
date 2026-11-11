@@ -1,4 +1,4 @@
-# 1289 arena_10_of_10_v1r1
+# 1289. arena_10_of_10_v1r1
 
 Board 1,289 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 12](../CorpusTestingPages/Corpus-Testing-12.md#1289-arena_10_of_10_v1r1).
 
@@ -45,4 +45,4 @@ Board 1,289 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1288 arena_10_of_10_v1r1](b1288b_led-display-g6-hardware-arena_arena-10-10-arena-10-10-v1-manual-route-v1-routed_arena-10-of-10-v1r1.md) | [1290 arena_10_of_10_v1r1](b1290b_led-display-g6-hardware-arena_arena-10-10-arena-10-10-v1-manual-route-v2-routed_arena-10-of-10-v1r1.md) |
+| [1288. arena_10_of_10_v1r1](b1288b_led-display-g6-hardware-arena_arena-10-10-arena-10-10-v1-manual-route-v1-routed_arena-10-of-10-v1r1.md) | [1290. arena_10_of_10_v1r1](b1290b_led-display-g6-hardware-arena_arena-10-10-arena-10-10-v1-manual-route-v2-routed_arena-10-of-10-v1r1.md) |

@@ -1,4 +1,4 @@
-# 660 NeoGeoAES3_5
+# 660. NeoGeoAES3_5
 
 Board 660 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 7](../CorpusTestingPages/Corpus-Testing-07.md#660-neogeoaes3_5).
 
@@ -44,4 +44,4 @@ Board 660 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [659 MegaCD](b0659b_MegaCD-Main-BD_RAM-Adapter-837-8015_MegaCD.md) | [661 Neptune-32x-315-5805-bypass](b0661b_Neptune_Neptune-32x-315-5805-bypass.md) |
+| [659. MegaCD](b0659b_MegaCD-Main-BD_RAM-Adapter-837-8015_MegaCD.md) | [661. Neptune-32x-315-5805-bypass](b0661b_Neptune_Neptune-32x-315-5805-bypass.md) |

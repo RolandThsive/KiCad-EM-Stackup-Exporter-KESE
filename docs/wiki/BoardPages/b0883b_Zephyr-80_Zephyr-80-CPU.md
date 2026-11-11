@@ -1,4 +1,4 @@
-# 883 Zephyr-80-CPU
+# 883. Zephyr-80-CPU
 
 Board 883 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 9](../CorpusTestingPages/Corpus-Testing-09.md#883-zephyr-80-cpu).
 
@@ -45,4 +45,4 @@ Board 883 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [882 EthernetModule](b0882b_Duet-2-Hardware_EthernetModule.md) | [884 Zephyr-80-IO](b0884b_Zephyr-80_Zephyr-80-IO.md) |
+| [882. EthernetModule](b0882b_Duet-2-Hardware_EthernetModule.md) | [884. Zephyr-80-IO](b0884b_Zephyr-80_Zephyr-80-IO.md) |

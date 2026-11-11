@@ -1,4 +1,4 @@
-# 63 interposer
+# 63. interposer
 
 Board 63 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 1](../CorpusTestingPages/Corpus-Testing-01.md#63-interposer).
 
@@ -45,4 +45,4 @@ Board 63 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page
 
 | Previous | Next |
 |:---|---:|
-| [62 Miniscope-v4-VDD-PIX-FC](b0062b_Miniscope-v4_Miniscope-v4-VDD-PIX-FC.md) | [64 bgacpu-dualcon](b0064b_Open-Source-PC110_bgacpu-dualcon.md) |
+| [62. Miniscope-v4-VDD-PIX-FC](b0062b_Miniscope-v4_Miniscope-v4-VDD-PIX-FC.md) | [64. bgacpu-dualcon](b0064b_Open-Source-PC110_bgacpu-dualcon.md) |

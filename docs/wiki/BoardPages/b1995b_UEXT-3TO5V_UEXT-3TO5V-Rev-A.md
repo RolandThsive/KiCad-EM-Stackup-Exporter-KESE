@@ -1,4 +1,4 @@
-# 1995 UEXT-3TO5V_Rev_A
+# 1995. UEXT-3TO5V_Rev_A
 
 Board 1,995 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 19](../CorpusTestingPages/Corpus-Testing-19.md#1995-uext-3to5v_rev_a).
 
@@ -45,4 +45,4 @@ Board 1,995 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1994 TuxCon_Kitty_Rev_A](b1994b_TuxCon-Kitty_TuxCon-Kitty-Rev-A.md) | [1996 RPI-UEXT-MPQ_Rev_A](b1996b_UEXT-ADAPTERS_RPI-UEXT-MPQ-Rev-A.md) |
+| [1994. TuxCon_Kitty_Rev_A](b1994b_TuxCon-Kitty_TuxCon-Kitty-Rev-A.md) | [1996. RPI-UEXT-MPQ_Rev_A](b1996b_UEXT-ADAPTERS_RPI-UEXT-MPQ-Rev-A.md) |

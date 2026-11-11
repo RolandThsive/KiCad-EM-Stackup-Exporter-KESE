@@ -1,4 +1,4 @@
-# 614 big_hbridge
+# 614. big_hbridge
 
 Board 614 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 6](../CorpusTestingPages/Corpus-Testing-06.md#614-big_hbridge).
 
@@ -45,4 +45,4 @@ Board 614 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [613 MagnetometerLayout](b0613b_bjr-kicad_MagnetometerLayout.md) | [615 justin_big_hbridge](b0615b_bjr-kicad_justin-big-hbridge.md) |
+| [613. MagnetometerLayout](b0613b_bjr-kicad_MagnetometerLayout.md) | [615. justin_big_hbridge](b0615b_bjr-kicad_justin-big-hbridge.md) |

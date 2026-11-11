@@ -1,4 +1,4 @@
-# 87 Control
+# 87. Control
 
 Board 87 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 1](../CorpusTestingPages/Corpus-Testing-01.md#87-control).
 
@@ -45,4 +45,4 @@ Board 87 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page
 
 | Previous | Next |
 |:---|---:|
-| [86 clock](b0086b_AOS16_clock.md) | [88 Memory Controller](b0088b_AOS16_Memory-Controller.md) |
+| [86. clock](b0086b_AOS16_clock.md) | [88. Memory Controller](b0088b_AOS16_Memory-Controller.md) |

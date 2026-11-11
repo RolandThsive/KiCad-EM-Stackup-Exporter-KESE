@@ -1,4 +1,4 @@
-# 2086 headstage-64s
+# 2086. headstage-64s
 
 Board 2,086 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 20](../CorpusTestingPages/Corpus-Testing-20.md#2086-headstage-64s).
 
@@ -45,4 +45,4 @@ Board 2,086 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2085 headstage-16stim](b2085b_onix-headstage-16stim_headstage-16stim.md) | [2087 headstage-neuropix1e](b2087b_onix-headstage-neuropix1e_pcb-hirose_headstage-neuropix1e.md) |
+| [2085. headstage-16stim](b2085b_onix-headstage-16stim_headstage-16stim.md) | [2087. headstage-neuropix1e](b2087b_onix-headstage-neuropix1e_pcb-hirose_headstage-neuropix1e.md) |

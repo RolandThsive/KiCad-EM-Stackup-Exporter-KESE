@@ -1,4 +1,4 @@
-# 903 Interposer_Board_Test_Fixture
+# 903. Interposer_Board_Test_Fixture
 
 Board 903 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 9](../CorpusTestingPages/Corpus-Testing-09.md#903-interposer_board_test_fixture).
 
@@ -45,4 +45,4 @@ Board 903 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [902 HMCAD1520_Impedence_Checker](b0902b_ts-test-fixtures_HMCAD1520-Impedence-Checker.md) | [904 Thunderscope Digital Test](b0904b_ts-test-fixtures_Thunderscope-Digital-Test.md) |
+| [902. HMCAD1520_Impedence_Checker](b0902b_ts-test-fixtures_HMCAD1520-Impedence-Checker.md) | [904. Thunderscope Digital Test](b0904b_ts-test-fixtures_Thunderscope-Digital-Test.md) |

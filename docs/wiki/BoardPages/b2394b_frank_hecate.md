@@ -1,4 +1,4 @@
-# 2394 hecate
+# 2394. hecate
 
 Board 2,394 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 23](../CorpusTestingPages/Corpus-Testing-23.md#2394-hecate).
 
@@ -45,4 +45,4 @@ Board 2,394 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2393 frank_pga](b2393b_frank_frank-pga.md) | [2395 megafrank](b2395b_frank_megafrank.md) |
+| [2393. frank_pga](b2393b_frank_frank-pga.md) | [2395. megafrank](b2395b_frank_megafrank.md) |

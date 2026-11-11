@@ -1,4 +1,4 @@
-# 346 ddr5-testbed
+# 346. ddr5-testbed
 
 Board 346 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 4](../CorpusTestingPages/Corpus-Testing-04.md#346-ddr5-testbed).
 
@@ -44,4 +44,4 @@ Board 346 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [345 ddr4-spd-breakout](b0345b_ddr4-spd-breakout-board_ddr4-spd-breakout.md) | [347 data-center-rdimm-ddr5-tester](b0347b_ddr5-tester_data-center-rdimm-ddr5-tester.md) |
+| [345. ddr4-spd-breakout](b0345b_ddr4-spd-breakout-board_ddr4-spd-breakout.md) | [347. data-center-rdimm-ddr5-tester](b0347b_ddr5-tester_data-center-rdimm-ddr5-tester.md) |

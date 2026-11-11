@@ -1,4 +1,4 @@
-# 714 nref-flex-pcie
+# 714. nref-flex-pcie
 
 Board 714 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 7](../CorpusTestingPages/Corpus-Testing-07.md#714-nref-flex-pcie).
 
@@ -45,4 +45,4 @@ Board 714 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [713 nref-flex-hdmi](b0713b_reform-next-mirror_nref-flex-hdmi.md) | [715 nref-flex-sdcard](b0715b_reform-next-mirror_nref-flex-sdcard.md) |
+| [713. nref-flex-hdmi](b0713b_reform-next-mirror_nref-flex-hdmi.md) | [715. nref-flex-sdcard](b0715b_reform-next-mirror_nref-flex-sdcard.md) |

@@ -1,4 +1,4 @@
-# 1316 Main_27M2
+# 1316. Main_27M2
 
 Board 1,316 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 13](../CorpusTestingPages/Corpus-Testing-13.md#1316-main_27m2).
 
@@ -45,4 +45,4 @@ Board 1,316 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1315 Main_23M2](b1315b_pcie-switch-2_Main-23M2.md) | [1317 Assembly_View](b1317b_pcie-switch-2_outputs-PCIe-AllM2-RevP-Assembly-View_Assembly-View.md) |
+| [1315. Main_23M2](b1315b_pcie-switch-2_Main-23M2.md) | [1317. Assembly_View](b1317b_pcie-switch-2_outputs-PCIe-AllM2-RevP-Assembly-View_Assembly-View.md) |

@@ -1,4 +1,4 @@
-# 2114 blade12
+# 2114. blade12
 
 Board 2,114 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 20](../CorpusTestingPages/Corpus-Testing-20.md#2114-blade12).
 
@@ -45,4 +45,4 @@ Board 2,114 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2113 MacArthur-HAT](b2113b_MacArthur-HAT_MacArthur-HAT.md) | [2115 blade13](b2115b_lumenpnp_blade13.md) |
+| [2113. MacArthur-HAT](b2113b_MacArthur-HAT_MacArthur-HAT.md) | [2115. blade13](b2115b_lumenpnp_blade13.md) |

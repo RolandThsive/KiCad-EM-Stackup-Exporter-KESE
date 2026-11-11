@@ -1,4 +1,4 @@
-# 66 DockingStation
+# 66. DockingStation
 
 Board 66 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 1](../CorpusTestingPages/Corpus-Testing-01.md#66-dockingstation).
 
@@ -45,4 +45,4 @@ Board 66 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page
 
 | Previous | Next |
 |:---|---:|
-| [65 pcb-bga-adapter-dualcon](b0065b_Open-Source-PC110_pcb-bga-adapter-dualcon.md) | [67 PC110](b0067b_Open-Source-PC110_Mods-PC110-ITX-all-in-one_PC110.md) |
+| [65. pcb-bga-adapter-dualcon](b0065b_Open-Source-PC110_pcb-bga-adapter-dualcon.md) | [67. PC110](b0067b_Open-Source-PC110_Mods-PC110-ITX-all-in-one_PC110.md) |

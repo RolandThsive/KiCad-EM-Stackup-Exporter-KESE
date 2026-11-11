@@ -1,4 +1,4 @@
-# 92 i386sx-motherboard
+# 92. i386sx-motherboard
 
 Board 92 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 1](../CorpusTestingPages/Corpus-Testing-01.md#92-i386sx-motherboard).
 
@@ -45,4 +45,4 @@ Board 92 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page
 
 | Previous | Next |
 |:---|---:|
-| [91 html_accelerator](b0091b_html-accelerator_html-accelerator.md) | [93 i386sx-gw2ar18](b0093b_fpgamotherboard_i386sx-gw2ar18.md) |
+| [91. html_accelerator](b0091b_html-accelerator_html-accelerator.md) | [93. i386sx-gw2ar18](b0093b_fpgamotherboard_i386sx-gw2ar18.md) |

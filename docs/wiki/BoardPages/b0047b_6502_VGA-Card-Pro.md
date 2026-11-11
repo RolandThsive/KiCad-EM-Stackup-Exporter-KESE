@@ -1,4 +1,4 @@
-# 47 VGA Card Pro
+# 47. VGA Card Pro
 
 Board 47 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 1](../CorpusTestingPages/Corpus-Testing-01.md#47-vga-card-pro).
 
@@ -45,4 +45,4 @@ Board 47 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page
 
 | Previous | Next |
 |:---|---:|
-| [46 VERA Helper](b0046b_6502_VERA-Helper.md) | [48 VGA Card](b0048b_6502_VGA-Card.md) |
+| [46. VERA Helper](b0046b_6502_VERA-Helper.md) | [48. VGA Card](b0048b_6502_VGA-Card.md) |

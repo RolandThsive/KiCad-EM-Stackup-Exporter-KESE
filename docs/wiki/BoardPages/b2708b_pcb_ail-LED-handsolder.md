@@ -1,4 +1,4 @@
-# 2708 ail-LED_handsolder
+# 2708. ail-LED_handsolder
 
 Board 2,708 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 26](../CorpusTestingPages/Corpus-Testing-26.md#2708-ail-led_handsolder).
 
@@ -45,4 +45,4 @@ Board 2,708 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2707 ail-LED](b2707b_pcb_ail-LED.md) | [2709 ail](b2709b_pcb_ail.md) |
+| [2707. ail-LED](b2707b_pcb_ail-LED.md) | [2709. ail](b2709b_pcb_ail.md) |

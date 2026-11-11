@@ -1,4 +1,4 @@
-# 1893 ESP32-PRO_Rev_B1
+# 1893. ESP32-PRO_Rev_B1
 
 Board 1,893 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 18](../CorpusTestingPages/Corpus-Testing-18.md#1893-esp32-pro_rev_b1).
 
@@ -45,4 +45,4 @@ Board 1,893 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1892 ESP32-PRO_Rev_B](b1892b_ESP32-PRO_ESP32-PRO-Rev-B.md) | [1894 ESP32-S2-DevKit-Lipo_Rev_B1](b1894b_ESP32-S2-DevKit-LiPo_ESP32-S2-DevKit-Lipo-Rev-B1.md) |
+| [1892. ESP32-PRO_Rev_B](b1892b_ESP32-PRO_ESP32-PRO-Rev-B.md) | [1894. ESP32-S2-DevKit-Lipo_Rev_B1](b1894b_ESP32-S2-DevKit-LiPo_ESP32-S2-DevKit-Lipo-Rev-B1.md) |

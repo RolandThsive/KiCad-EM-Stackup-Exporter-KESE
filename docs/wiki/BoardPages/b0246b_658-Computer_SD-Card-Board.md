@@ -1,4 +1,4 @@
-# 246 SD Card Board
+# 246. SD Card Board
 
 Board 246 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 3](../CorpusTestingPages/Corpus-Testing-03.md#246-sd-card-board).
 
@@ -45,4 +45,4 @@ Board 246 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [245 PS2 Timing](b0245b_658-Computer_PS2-Timing.md) | [247 SD Card Clock](b0247b_658-Computer_SD-Card-Clock.md) |
+| [245. PS2 Timing](b0245b_658-Computer_PS2-Timing.md) | [247. SD Card Clock](b0247b_658-Computer_SD-Card-Clock.md) |

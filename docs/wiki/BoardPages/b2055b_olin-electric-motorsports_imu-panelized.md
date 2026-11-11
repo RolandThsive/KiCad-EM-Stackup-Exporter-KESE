@@ -1,4 +1,4 @@
-# 2055 imu_panelized
+# 2055. imu_panelized
 
 Board 2,055 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 20](../CorpusTestingPages/Corpus-Testing-20.md#2055-imu_panelized).
 
@@ -46,4 +46,4 @@ Board 2,055 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2054 imu](b2054b_olin-electric-motorsports_vehicle-mkvi-hardware-imu_imu.md) | [2056 mock-inverter](b2056b_olin-electric-motorsports_mock-inverter.md) |
+| [2054. imu](b2054b_olin-electric-motorsports_vehicle-mkvi-hardware-imu_imu.md) | [2056. mock-inverter](b2056b_olin-electric-motorsports_mock-inverter.md) |

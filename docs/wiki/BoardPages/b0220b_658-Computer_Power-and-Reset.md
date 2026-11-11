@@ -1,4 +1,4 @@
-# 220 Power and Reset
+# 220. Power and Reset
 
 Board 220 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 3](../CorpusTestingPages/Corpus-Testing-03.md#220-power-and-reset).
 
@@ -45,4 +45,4 @@ Board 220 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [219 Memory Board](b0219b_658-Computer_Memory-Board.md) | [221 Address Decode V2 to V3](b0221b_658-Computer_Address-Decode-V2-to-V3.md) |
+| [219. Memory Board](b0219b_658-Computer_Memory-Board.md) | [221. Address Decode V2 to V3](b0221b_658-Computer_Address-Decode-V2-to-V3.md) |

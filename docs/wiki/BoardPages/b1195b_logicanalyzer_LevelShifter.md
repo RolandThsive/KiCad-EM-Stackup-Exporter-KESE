@@ -1,4 +1,4 @@
-# 1195 LevelShifter
+# 1195. LevelShifter
 
 Board 1,195 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 12](../CorpusTestingPages/Corpus-Testing-12.md#1195-levelshifter).
 
@@ -45,4 +45,4 @@ Board 1,195 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1194 kimchi_micro](b1194b_kimchi-micro_kimchi-micro.md) | [1196 LogicAnalyzer](b1196b_logicanalyzer_LogicAnalyzer.md) |
+| [1194. kimchi_micro](b1194b_kimchi-micro_kimchi-micro.md) | [1196. LogicAnalyzer](b1196b_logicanalyzer_LogicAnalyzer.md) |

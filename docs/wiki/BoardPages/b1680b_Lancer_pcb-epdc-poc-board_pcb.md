@@ -1,4 +1,4 @@
-# 1680 pcb
+# 1680. pcb
 
 Board 1,680 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 16](../CorpusTestingPages/Corpus-Testing-16.md#1680-pcb).
 
@@ -45,4 +45,4 @@ Board 1,680 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1679 adapter](b1679b_Glider_pcb-u133-adapter_adapter.md) | [1681 pcb](b1681b_Lancer_pcb-mainboard_pcb.md) |
+| [1679. adapter](b1679b_Glider_pcb-u133-adapter_adapter.md) | [1681. pcb](b1681b_Lancer_pcb-mainboard_pcb.md) |

@@ -1,4 +1,4 @@
-# 905 ThunderScope Muxboard
+# 905. ThunderScope Muxboard
 
 Board 905 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 9](../CorpusTestingPages/Corpus-Testing-09.md#905-thunderscope-muxboard).
 
@@ -45,4 +45,4 @@ Board 905 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [904 Thunderscope Digital Test](b0904b_ts-test-fixtures_Thunderscope-Digital-Test.md) | [906 Thunderscope_Rev5.1_Bed_Of_Nails](b0906b_ts-test-fixtures_Thunderscope-Rev5-1-Bed-Of-Nails.md) |
+| [904. Thunderscope Digital Test](b0904b_ts-test-fixtures_Thunderscope-Digital-Test.md) | [906. Thunderscope_Rev5.1_Bed_Of_Nails](b0906b_ts-test-fixtures_Thunderscope-Rev5-1-Bed-Of-Nails.md) |

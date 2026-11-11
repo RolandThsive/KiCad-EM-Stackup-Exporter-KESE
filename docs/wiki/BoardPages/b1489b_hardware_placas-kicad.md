@@ -1,4 +1,4 @@
-# 1489 placas-kicad
+# 1489. placas-kicad
 
 Board 1,489 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 14](../CorpusTestingPages/Corpus-Testing-14.md#1489-placas-kicad).
 
@@ -45,4 +45,4 @@ Board 1,489 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1488 lhc_tijolo32_board](b1488b_hardware_lhc-tijolo32-board.md) | [1490 lhc-esp](b1490b_hardware_lhc-esp.md) |
+| [1488. lhc_tijolo32_board](b1488b_hardware_lhc-tijolo32-board.md) | [1490. lhc-esp](b1490b_hardware_lhc-esp.md) |

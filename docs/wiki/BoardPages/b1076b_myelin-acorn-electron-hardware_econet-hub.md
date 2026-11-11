@@ -1,4 +1,4 @@
-# 1076 econet_hub
+# 1076. econet_hub
 
 Board 1,076 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 10](../CorpusTestingPages/Corpus-Testing-10.md#1076-econet_hub).
 
@@ -45,4 +45,4 @@ Board 1,076 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1075 econet_standalone](b1075b_myelin-acorn-electron-hardware_econet-standalone.md) | [1077 elk_pi_tube_direct](b1077b_myelin-acorn-electron-hardware_elk-pi-tube-direct.md) |
+| [1075. econet_standalone](b1075b_myelin-acorn-electron-hardware_econet-standalone.md) | [1077. elk_pi_tube_direct](b1077b_myelin-acorn-electron-hardware_elk-pi-tube-direct.md) |

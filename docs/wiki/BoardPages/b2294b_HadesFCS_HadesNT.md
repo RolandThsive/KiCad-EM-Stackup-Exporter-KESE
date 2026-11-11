@@ -1,4 +1,4 @@
-# 2294 HadesNT
+# 2294. HadesNT
 
 Board 2,294 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 22](../CorpusTestingPages/Corpus-Testing-22.md#2294-hadesnt).
 
@@ -45,4 +45,4 @@ Board 2,294 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2293 HadesMicroJLCPCB](b2293b_HadesFCS_HadesMicroJLCPCB.md) | [2295 PicoGUS chipdown with edge rails](b2295b_picogus_PicoGUS-chipdown-with-edge-rails.md) |
+| [2293. HadesMicroJLCPCB](b2293b_HadesFCS_HadesMicroJLCPCB.md) | [2295. PicoGUS chipdown with edge rails](b2295b_picogus_PicoGUS-chipdown-with-edge-rails.md) |

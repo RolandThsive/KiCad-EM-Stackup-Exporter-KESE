@@ -1,4 +1,4 @@
-# 2082 bracket-led
+# 2082. bracket-led
 
 Board 2,082 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 20](../CorpusTestingPages/Corpus-Testing-20.md#2082-bracket-led).
 
@@ -45,4 +45,4 @@ Board 2,082 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2081 bracket-led-panel](b2081b_onix-fmc-host_bracket-led-panel.md) | [2083 bracket-led](b2083b_onix-fmc-host_mechanical-pcie-bracket-metal-bracket-led-pcb_bracket-led.md) |
+| [2081. bracket-led-panel](b2081b_onix-fmc-host_bracket-led-panel.md) | [2083. bracket-led](b2083b_onix-fmc-host_mechanical-pcie-bracket-metal-bracket-led-pcb_bracket-led.md) |

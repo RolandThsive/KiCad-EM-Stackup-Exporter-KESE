@@ -1,4 +1,4 @@
-# 1572 ecp5
+# 1572. ecp5
 
 Board 1,572 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 15](../CorpusTestingPages/Corpus-Testing-15.md#1572-ecp5).
 
@@ -45,4 +45,4 @@ Board 1,572 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1571 vna_rf](b1571b_vna_vna-rf.md) | [1573 ep2k1P](b1573b_vna_ep2k1P.md) |
+| [1571. vna_rf](b1571b_vna_vna-rf.md) | [1573. ep2k1P](b1573b_vna_ep2k1P.md) |

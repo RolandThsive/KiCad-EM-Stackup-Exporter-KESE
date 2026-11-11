@@ -1,4 +1,4 @@
-# 1515 amp_macom
+# 1515. amp_macom
 
 Board 1,515 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 15](../CorpusTestingPages/Corpus-Testing-15.md#1515-amp_macom).
 
@@ -45,4 +45,4 @@ Board 1,515 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1514 amp_cpw_hmc311](b1514b_vna_amp-cpw-hmc311.md) | [1516 amp_macom_vga](b1516b_vna_amp-macom-vga.md) |
+| [1514. amp_cpw_hmc311](b1514b_vna_amp-cpw-hmc311.md) | [1516. amp_macom_vga](b1516b_vna_amp-macom-vga.md) |

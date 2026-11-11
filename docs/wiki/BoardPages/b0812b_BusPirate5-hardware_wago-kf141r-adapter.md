@@ -1,4 +1,4 @@
-# 812 wago kf141r adapter
+# 812. wago kf141r adapter
 
 Board 812 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 8](../CorpusTestingPages/Corpus-Testing-08.md#812-wago-kf141r-adapter).
 
@@ -45,4 +45,4 @@ Board 812 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [811 bp5-ir-toy-v3-rev3](b0811b_BusPirate5-hardware_bp5-ir-toy-v3-rev3.md) | [813 wago kf141v adapter](b0813b_BusPirate5-hardware_wago-kf141v-adapter.md) |
+| [811. bp5-ir-toy-v3-rev3](b0811b_BusPirate5-hardware_bp5-ir-toy-v3-rev3.md) | [813. wago kf141v adapter](b0813b_BusPirate5-hardware_wago-kf141v-adapter.md) |

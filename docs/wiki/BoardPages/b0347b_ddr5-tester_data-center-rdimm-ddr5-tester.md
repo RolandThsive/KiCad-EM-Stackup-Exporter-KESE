@@ -1,4 +1,4 @@
-# 347 data-center-rdimm-ddr5-tester
+# 347. data-center-rdimm-ddr5-tester
 
 Board 347 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 4](../CorpusTestingPages/Corpus-Testing-04.md#347-data-center-rdimm-ddr5-tester).
 
@@ -45,4 +45,4 @@ Board 347 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [346 ddr5-testbed](b0346b_ddr5-testbed_ddr5-testbed.md) | [348 dual-camera-to-gmsl-serializer-csi-adapter](b0348b_dual-gmsl-serializer-adapter_dual-camera-to-gmsl-serializer-csi-adapter.md) |
+| [346. ddr5-testbed](b0346b_ddr5-testbed_ddr5-testbed.md) | [348. dual-camera-to-gmsl-serializer-csi-adapter](b0348b_dual-gmsl-serializer-adapter_dual-camera-to-gmsl-serializer-csi-adapter.md) |

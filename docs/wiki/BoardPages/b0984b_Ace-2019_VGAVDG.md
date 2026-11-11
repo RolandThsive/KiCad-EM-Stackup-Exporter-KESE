@@ -1,4 +1,4 @@
-# 984 VGAVDG
+# 984. VGAVDG
 
 Board 984 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 10](../CorpusTestingPages/Corpus-Testing-10.md#984-vgavdg).
 
@@ -46,4 +46,4 @@ Board 984 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [983 VGAGAL](b0983b_Ace-2019_VGAGAL.md) | [985 Gigatron](b0985b_Gigatron_Gigatron.md) |
+| [983. VGAGAL](b0983b_Ace-2019_VGAGAL.md) | [985. Gigatron](b0985b_Gigatron_Gigatron.md) |

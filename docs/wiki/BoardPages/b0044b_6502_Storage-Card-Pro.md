@@ -1,4 +1,4 @@
-# 44 Storage Card Pro
+# 44. Storage Card Pro
 
 Board 44 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 1](../CorpusTestingPages/Corpus-Testing-01.md#44-storage-card-pro).
 
@@ -45,4 +45,4 @@ Board 44 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page
 
 | Previous | Next |
 |:---|---:|
-| [43 Sound Card](b0043b_6502_Sound-Card.md) | [45 Storage Card](b0045b_6502_Storage-Card.md) |
+| [43. Sound Card](b0043b_6502_Sound-Card.md) | [45. Storage Card](b0045b_6502_Storage-Card.md) |

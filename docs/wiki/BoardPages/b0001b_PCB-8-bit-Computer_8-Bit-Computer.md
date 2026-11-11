@@ -1,4 +1,4 @@
-# 1 8 Bit Computer
+# 1. 8 Bit Computer
 
 Board 1 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 1](../CorpusTestingPages/Corpus-Testing-01.md#1-8-bit-computer).
 
@@ -44,4 +44,4 @@ Board 1 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 
 
 | Previous | Next |
 |:---|---:|
-| [Corpus Testing](../Corpus-Testing.md) | [2 Femto_frame](b0002b_FEMTO_Femto-frame.md) |
+| [Corpus Testing](../Corpus-Testing.md) | [2. Femto_frame](b0002b_FEMTO_Femto-frame.md) |

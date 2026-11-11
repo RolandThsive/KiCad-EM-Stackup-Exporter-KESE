@@ -1,4 +1,4 @@
-# 3018 IMUArray_SensorBoard
+# 3018. IMUArray_SensorBoard
 
 Board 3,018 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 28](../CorpusTestingPages/Corpus-Testing-28.md#3018-imuarray_sensorboard).
 
@@ -46,4 +46,4 @@ Board 3,018 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [3017 IMUArray_ProcessingBoard](b3017b_IMU-Array_IMUArray-ProcessingBoard.md) | [3019 CM4ClusterHat](b3019b_Miniature-CM4-Cluster_CM4ClusterHat.md) |
+| [3017. IMUArray_ProcessingBoard](b3017b_IMU-Array_IMUArray-ProcessingBoard.md) | [3019. CM4ClusterHat](b3019b_Miniature-CM4-Cluster_CM4ClusterHat.md) |

@@ -1,4 +1,4 @@
-# 1782 Asteroids_PCB
+# 1782. Asteroids_PCB
 
 Board 1,782 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 17](../CorpusTestingPages/Corpus-Testing-17.md#1782-asteroids_pcb).
 
@@ -46,4 +46,4 @@ Board 1,782 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1781 amulet_controller](b1781b_amulet-controller-kibot_amulet-controller.md) | [1783 ROM_To_2716](b1783b_asteroids-pcb_ROM-To-2716.md) |
+| [1781. amulet_controller](b1781b_amulet-controller-kibot_amulet-controller.md) | [1783. ROM_To_2716](b1783b_asteroids-pcb_ROM-To-2716.md) |

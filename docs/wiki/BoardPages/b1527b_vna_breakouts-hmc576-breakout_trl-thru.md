@@ -1,4 +1,4 @@
-# 1527 trl_thru
+# 1527. trl_thru
 
 Board 1,527 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 15](../CorpusTestingPages/Corpus-Testing-15.md#1527-trl_thru).
 
@@ -45,4 +45,4 @@ Board 1,527 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1526 filter_bank](b1526b_vna_filter-bank.md) | [1528 hyperram_3p3v](b1528b_vna_hyperram-3p3v.md) |
+| [1526. filter_bank](b1526b_vna_filter-bank.md) | [1528. hyperram_3p3v](b1528b_vna_hyperram-3p3v.md) |

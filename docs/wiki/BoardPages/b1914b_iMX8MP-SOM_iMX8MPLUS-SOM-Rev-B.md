@@ -1,4 +1,4 @@
-# 1914 iMX8MPLUS-SOM_Rev_B
+# 1914. iMX8MPLUS-SOM_Rev_B
 
 Board 1,914 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 18](../CorpusTestingPages/Corpus-Testing-18.md#1914-imx8mplus-som_rev_b).
 
@@ -45,4 +45,4 @@ Board 1,914 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1913 iCE40HX8K-EVB_Rev_B1](b1913b_iCE40HX8K-EVB_iCE40HX8K-EVB-Rev-B1.md) | [1915 iMX8MPLUS-SOM-EVB_Rev_B](b1915b_iMX8MP-SOM-EVB_iMX8MPLUS-SOM-EVB-Rev-B.md) |
+| [1913. iCE40HX8K-EVB_Rev_B1](b1913b_iCE40HX8K-EVB_iCE40HX8K-EVB-Rev-B1.md) | [1915. iMX8MPLUS-SOM-EVB_Rev_B](b1915b_iMX8MP-SOM-EVB_iMX8MPLUS-SOM-EVB-Rev-B.md) |

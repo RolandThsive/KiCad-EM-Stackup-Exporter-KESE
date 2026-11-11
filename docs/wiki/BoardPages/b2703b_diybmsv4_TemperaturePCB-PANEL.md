@@ -1,4 +1,4 @@
-# 2703 TemperaturePCB_PANEL
+# 2703. TemperaturePCB_PANEL
 
 Board 2,703 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 26](../CorpusTestingPages/Corpus-Testing-26.md#2703-temperaturepcb_panel).
 
@@ -46,4 +46,4 @@ Board 2,703 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2702 TemperaturePCB](b2702b_diybmsv4_TemperaturePCB.md) | [2704 sensors](b2704b_Racer_sensors.md) |
+| [2702. TemperaturePCB](b2702b_diybmsv4_TemperaturePCB.md) | [2704. sensors](b2704b_Racer_sensors.md) |

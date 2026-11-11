@@ -1,4 +1,4 @@
-# 153 Address Buffer 24bit
+# 153. Address Buffer 24bit
 
 Board 153 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 2](../CorpusTestingPages/Corpus-Testing-02.md#153-address-buffer-24bit).
 
@@ -45,4 +45,4 @@ Board 153 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [152 Address Buffer 16bit](b0152b_658-Computer_Address-Buffer-16bit.md) | [154 Audio DAC](b0154b_658-Computer_Audio-DAC.md) |
+| [152. Address Buffer 16bit](b0152b_658-Computer_Address-Buffer-16bit.md) | [154. Audio DAC](b0154b_658-Computer_Audio-DAC.md) |

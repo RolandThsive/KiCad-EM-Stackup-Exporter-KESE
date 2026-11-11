@@ -1,4 +1,4 @@
-# 689 audio
+# 689. audio
 
 Board 689 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 7](../CorpusTestingPages/Corpus-Testing-07.md#689-audio).
 
@@ -45,4 +45,4 @@ Board 689 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [688 C64-250469-KiCad](b0688b_C64C-250469-KiCAD-Replica_C64-250469-KiCad.md) | [690 encoder](b0690b_laptop_encoder.md) |
+| [688. C64-250469-KiCad](b0688b_C64C-250469-KiCAD-Replica_C64-250469-KiCad.md) | [690. encoder](b0690b_laptop_encoder.md) |

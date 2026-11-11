@@ -1,4 +1,4 @@
-# 1872 ESP32-PoE_Rev_L
+# 1872. ESP32-PoE_Rev_L
 
 Board 1,872 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 18](../CorpusTestingPages/Corpus-Testing-18.md#1872-esp32-poe_rev_l).
 
@@ -45,4 +45,4 @@ Board 1,872 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1871 ESP32-PoE_Rev_K](b1871b_ESP32-POE_ESP32-PoE-Rev-K.md) | [1873 ESP32-PoE_Rev_L1](b1873b_ESP32-POE_ESP32-PoE-Rev-L1.md) |
+| [1871. ESP32-PoE_Rev_K](b1871b_ESP32-POE_ESP32-PoE-Rev-K.md) | [1873. ESP32-PoE_Rev_L1](b1873b_ESP32-POE_ESP32-PoE-Rev-L1.md) |

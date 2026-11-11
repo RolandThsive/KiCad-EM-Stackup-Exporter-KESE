@@ -1,4 +1,4 @@
-# 2060 throttle
+# 2060. throttle
 
 Board 2,060 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 20](../CorpusTestingPages/Corpus-Testing-20.md#2060-throttle).
 
@@ -45,4 +45,4 @@ Board 2,060 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2059 nostril](b2059b_olin-electric-motorsports_nostril.md) | [2061 rkh](b2061b_olin-electric-motorsports_rkh.md) |
+| [2059. nostril](b2059b_olin-electric-motorsports_nostril.md) | [2061. rkh](b2061b_olin-electric-motorsports_rkh.md) |

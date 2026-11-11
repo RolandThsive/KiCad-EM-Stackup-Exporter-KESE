@@ -1,4 +1,4 @@
-# 2161 receive_Path
+# 2161. receive_Path
 
 Board 2,161 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 21](../CorpusTestingPages/Corpus-Testing-21.md#2161-receive_path).
 
@@ -45,4 +45,4 @@ Board 2,161 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2160 oresat-live-card](b2160b_oresat-dxwifi-hardware_oresat-live-card.md) | [2162 balun-eval-board](b2162b_oresat-end-cards_balun-eval-board.md) |
+| [2160. oresat-live-card](b2160b_oresat-dxwifi-hardware_oresat-live-card.md) | [2162. balun-eval-board](b2162b_oresat-end-cards_balun-eval-board.md) |

@@ -1,4 +1,4 @@
-# 46 VERA Helper
+# 46. VERA Helper
 
 Board 46 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 1](../CorpusTestingPages/Corpus-Testing-01.md#46-vera-helper).
 
@@ -45,4 +45,4 @@ Board 46 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page
 
 | Previous | Next |
 |:---|---:|
-| [45 Storage Card](b0045b_6502_Storage-Card.md) | [47 VGA Card Pro](b0047b_6502_VGA-Card-Pro.md) |
+| [45. Storage Card](b0045b_6502_Storage-Card.md) | [47. VGA Card Pro](b0047b_6502_VGA-Card-Pro.md) |

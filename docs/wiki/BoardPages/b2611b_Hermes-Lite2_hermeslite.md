@@ -1,4 +1,4 @@
-# 2611 hermeslite
+# 2611. hermeslite
 
 Board 2,611 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 25](../CorpusTestingPages/Corpus-Testing-25.md#2611-hermeslite).
 
@@ -46,4 +46,4 @@ Board 2,611 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2610 endcap](b2610b_Hermes-Lite2_hardware-enclosure-endcaps-kf7o-hl2-55fb_endcap.md) | [2612 SparkFun_GNSS_Flex_Module_DAN-F10N_panelized](b2612b_sparkfun-gnss-flex-system_SparkFun-GNSS-Flex-Module-DAN-F10N-panelized.md) |
+| [2610. endcap](b2610b_Hermes-Lite2_hardware-enclosure-endcaps-kf7o-hl2-55fb_endcap.md) | [2612. SparkFun_GNSS_Flex_Module_DAN-F10N_panelized](b2612b_sparkfun-gnss-flex-system_SparkFun-GNSS-Flex-Module-DAN-F10N-panelized.md) |

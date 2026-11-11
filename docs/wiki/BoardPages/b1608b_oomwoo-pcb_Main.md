@@ -1,4 +1,4 @@
-# 1608 Main
+# 1608. Main
 
 Board 1,608 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 15](../CorpusTestingPages/Corpus-Testing-15.md#1608-main).
 
@@ -46,4 +46,4 @@ Board 1,608 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1607 schoko](b1607b_schoko_schoko.md) | [1609 Main_PDB](b1609b_pdb_Main-PDB.md) |
+| [1607. schoko](b1607b_schoko_schoko.md) | [1609. Main_PDB](b1609b_pdb_Main-PDB.md) |

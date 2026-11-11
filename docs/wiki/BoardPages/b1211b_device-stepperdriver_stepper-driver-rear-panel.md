@@ -1,4 +1,4 @@
-# 1211 stepper driver rear panel
+# 1211. stepper driver rear panel
 
 Board 1,211 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 12](../CorpusTestingPages/Corpus-Testing-12.md#1211-stepper-driver-rear-panel).
 
@@ -46,4 +46,4 @@ Board 1,211 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1210 stepperdriver front panel](b1210b_device-stepperdriver_stepperdriver-front-panel.md) | [1212 stepper driver](b1212b_device-stepperdriver_stepper-driver.md) |
+| [1210. stepperdriver front panel](b1210b_device-stepperdriver_stepperdriver-front-panel.md) | [1212. stepper driver](b1212b_device-stepperdriver_stepper-driver.md) |

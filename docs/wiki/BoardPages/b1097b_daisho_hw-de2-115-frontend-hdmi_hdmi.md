@@ -1,4 +1,4 @@
-# 1097 hdmi
+# 1097. hdmi
 
 Board 1,097 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 11](../CorpusTestingPages/Corpus-Testing-11.md#1097-hdmi).
 
@@ -45,4 +45,4 @@ Board 1,097 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1096 gig-e](b1096b_daisho_gig-e.md) | [1098 rs232](b1098b_daisho_rs232.md) |
+| [1096. gig-e](b1096b_daisho_gig-e.md) | [1098. rs232](b1098b_daisho_rs232.md) |

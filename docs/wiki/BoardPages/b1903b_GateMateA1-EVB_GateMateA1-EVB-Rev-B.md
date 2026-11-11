@@ -1,4 +1,4 @@
-# 1903 GateMateA1-EVB_Rev_B
+# 1903. GateMateA1-EVB_Rev_B
 
 Board 1,903 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 18](../CorpusTestingPages/Corpus-Testing-18.md#1903-gatematea1-evb_rev_b).
 
@@ -45,4 +45,4 @@ Board 1,903 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1902 GateMateA1-EVB_Rev_A](b1902b_GateMateA1-EVB_GateMateA1-EVB-Rev-A.md) | [1904 GateMateA1-EVB_Rev_C](b1904b_GateMateA1-EVB_GateMateA1-EVB-Rev-C.md) |
+| [1902. GateMateA1-EVB_Rev_A](b1902b_GateMateA1-EVB_GateMateA1-EVB-Rev-A.md) | [1904. GateMateA1-EVB_Rev_C](b1904b_GateMateA1-EVB_GateMateA1-EVB-Rev-C.md) |

@@ -1,4 +1,4 @@
-# 894 Thunderscope_Rev5.3
+# 894. Thunderscope_Rev5.3
 
 Board 894 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 9](../CorpusTestingPages/Corpus-Testing-09.md#894-thunderscope_rev53).
 
@@ -46,4 +46,4 @@ Board 894 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [893 Interposer_Board_JoneyTech](b0893b_ThunderScope_Interposer-Board-JoneyTech.md) | [895 TS_Back_Endcap](b0895b_ThunderScope_TS-Back-Endcap.md) |
+| [893. Interposer_Board_JoneyTech](b0893b_ThunderScope_Interposer-Board-JoneyTech.md) | [895. TS_Back_Endcap](b0895b_ThunderScope_TS-Back-Endcap.md) |

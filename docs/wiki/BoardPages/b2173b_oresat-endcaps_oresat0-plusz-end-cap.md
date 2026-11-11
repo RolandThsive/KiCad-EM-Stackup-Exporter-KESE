@@ -1,4 +1,4 @@
-# 2173 oresat0-plusz-end-cap
+# 2173. oresat0-plusz-end-cap
 
 Board 2,173 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 21](../CorpusTestingPages/Corpus-Testing-21.md#2173-oresat0-plusz-end-cap).
 
@@ -45,4 +45,4 @@ Board 2,173 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2172 esi-plusz-end-cap](b2172b_oresat-endcaps_esi-plusz-end-cap.md) | [2174 oresat0.5-minusz-end-cap](b2174b_oresat-endcaps_oresat0-5-minusz-end-cap.md) |
+| [2172. esi-plusz-end-cap](b2172b_oresat-endcaps_esi-plusz-end-cap.md) | [2174. oresat0.5-minusz-end-cap](b2174b_oresat-endcaps_oresat0-5-minusz-end-cap.md) |

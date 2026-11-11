@@ -1,4 +1,4 @@
-# 3012 rocket_power_board
+# 3012. rocket_power_board
 
 Board 3,012 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 28](../CorpusTestingPages/Corpus-Testing-28.md#3012-rocket_power_board).
 
@@ -45,4 +45,4 @@ Board 3,012 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [3011 remote_arming](b3011b_canhw_remote-arming.md) | [3013 usbdbg](b3013b_canhw_usbdbg.md) |
+| [3011. remote_arming](b3011b_canhw_remote-arming.md) | [3013. usbdbg](b3013b_canhw_usbdbg.md) |

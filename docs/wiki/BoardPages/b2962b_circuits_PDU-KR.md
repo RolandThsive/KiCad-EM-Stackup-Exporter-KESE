@@ -1,4 +1,4 @@
-# 2962 PDU_KR
+# 2962. PDU_KR
 
 Board 2,962 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 28](../CorpusTestingPages/Corpus-Testing-28.md#2962-pdu_kr).
 
@@ -45,4 +45,4 @@ Board 2,962 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2961 TSAL](b2961b_circuits_TSAL.md) | [2963 Pre-charge KiCAD](b2963b_circuits_Pre-charge-KiCAD.md) |
+| [2961. TSAL](b2961b_circuits_TSAL.md) | [2963. Pre-charge KiCAD](b2963b_circuits_Pre-charge-KiCAD.md) |

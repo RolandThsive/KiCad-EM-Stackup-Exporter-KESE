@@ -1,4 +1,4 @@
-# 2386 AVIONICS_BOARD
+# 2386. AVIONICS_BOARD
 
 Board 2,386 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 23](../CorpusTestingPages/Corpus-Testing-23.md#2386-avionics_board).
 
@@ -45,4 +45,4 @@ Board 2,386 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2385 TRS80_Model_I_Jap50_E1](b2385b_TRS-80-Model-I-Jap50-E1_TRS80-Model-I-Jap50-E1.md) | [2387 EPS](b2387b_1kcubesat-hardware_EPS.md) |
+| [2385. TRS80_Model_I_Jap50_E1](b2385b_TRS-80-Model-I-Jap50-E1_TRS80-Model-I-Jap50-E1.md) | [2387. EPS](b2387b_1kcubesat-hardware_EPS.md) |

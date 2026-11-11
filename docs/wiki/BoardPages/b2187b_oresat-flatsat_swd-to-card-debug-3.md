@@ -1,4 +1,4 @@
-# 2187 swd-to-card-debug-3
+# 2187. swd-to-card-debug-3
 
 Board 2,187 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 21](../CorpusTestingPages/Corpus-Testing-21.md#2187-swd-to-card-debug-3).
 
@@ -45,4 +45,4 @@ Board 2,187 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2186 oresat-flatsat-interface](b2186b_oresat-flatsat_oresat-flatsat-interface.md) | [2188 usb_gps](b2188b_oresat-gps-hardware_usb-gps.md) |
+| [2186. oresat-flatsat-interface](b2186b_oresat-flatsat_oresat-flatsat-interface.md) | [2188. usb_gps](b2188b_oresat-gps-hardware_usb-gps.md) |

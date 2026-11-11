@@ -1,4 +1,4 @@
-# 3009 processor
+# 3009. processor
 
 Board 3,009 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 28](../CorpusTestingPages/Corpus-Testing-28.md#3009-processor).
 
@@ -45,4 +45,4 @@ Board 3,009 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [3008 picdev](b3008b_canhw_picdev.md) | [3010 PropulsionBoard](b3010b_canhw_PropulsionBoard.md) |
+| [3008. picdev](b3008b_canhw_picdev.md) | [3010. PropulsionBoard](b3010b_canhw_PropulsionBoard.md) |

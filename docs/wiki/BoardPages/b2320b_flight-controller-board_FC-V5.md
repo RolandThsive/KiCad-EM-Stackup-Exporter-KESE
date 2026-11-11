@@ -1,4 +1,4 @@
-# 2320 FC_V5
+# 2320. FC_V5
 
 Board 2,320 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 22](../CorpusTestingPages/Corpus-Testing-22.md#2320-fc_v5).
 
@@ -45,4 +45,4 @@ Board 2,320 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2319 FC_V4c_Express](b2319b_flight-controller-board_FC-V4c-Express.md) | [2321 FC_V5a](b2321b_flight-controller-board_FC-V5a.md) |
+| [2319. FC_V4c_Express](b2319b_flight-controller-board_FC-V4c-Express.md) | [2321. FC_V5a](b2321b_flight-controller-board_FC-V5a.md) |

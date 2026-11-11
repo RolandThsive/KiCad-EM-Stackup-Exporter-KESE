@@ -1,4 +1,4 @@
-# 1856 ESP32-P4-DevKit_Rev_B
+# 1856. ESP32-P4-DevKit_Rev_B
 
 Board 1,856 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 18](../CorpusTestingPages/Corpus-Testing-18.md#1856-esp32-p4-devkit_rev_b).
 
@@ -45,4 +45,4 @@ Board 1,856 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1855 ESP32-H2-DevKit-LiPo_Rev_A](b1855b_ESP32-H2-DevKit-Lipo_ESP32-H2-DevKit-LiPo-Rev-A.md) | [1857 ESP32-P4-DevKit_Rev_C](b1857b_ESP32-P4-DevKit_ESP32-P4-DevKit-Rev-C.md) |
+| [1855. ESP32-H2-DevKit-LiPo_Rev_A](b1855b_ESP32-H2-DevKit-Lipo_ESP32-H2-DevKit-LiPo-Rev-A.md) | [1857. ESP32-P4-DevKit_Rev_C](b1857b_ESP32-P4-DevKit_ESP32-P4-DevKit-Rev-C.md) |

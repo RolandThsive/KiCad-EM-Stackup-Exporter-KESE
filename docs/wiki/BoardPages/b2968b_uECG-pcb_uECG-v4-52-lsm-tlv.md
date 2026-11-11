@@ -1,4 +1,4 @@
-# 2968 uECG_v4_52_lsm_tlv
+# 2968. uECG_v4_52_lsm_tlv
 
 Board 2,968 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 28](../CorpusTestingPages/Corpus-Testing-28.md#2968-uecg_v4_52_lsm_tlv).
 
@@ -45,4 +45,4 @@ Board 2,968 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2967 uECG_v4_5](b2967b_uECG-pcb_uECG-v4-5.md) | [2969 NanoS3_Carrier](b2969b_esp32s3_NanoS3-Carrier.md) |
+| [2967. uECG_v4_5](b2967b_uECG-pcb_uECG-v4-5.md) | [2969. NanoS3_Carrier](b2969b_esp32s3_NanoS3-Carrier.md) |

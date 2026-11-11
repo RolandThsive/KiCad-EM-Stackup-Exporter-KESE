@@ -1,4 +1,4 @@
-# 2130 mezzanine-flex-board
+# 2130. mezzanine-flex-board
 
 Board 2,130 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 20](../CorpusTestingPages/Corpus-Testing-20.md#2130-mezzanine-flex-board).
 
@@ -45,4 +45,4 @@ Board 2,130 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2129 mezzanine-breakout-board](b2129b_oresat-adcs-hardware_mezzanine-breakout-board.md) | [2131 oresat-adcs-card](b2131b_oresat-adcs-hardware_oresat-adcs-card.md) |
+| [2129. mezzanine-breakout-board](b2129b_oresat-adcs-hardware_mezzanine-breakout-board.md) | [2131. oresat-adcs-card](b2131b_oresat-adcs-hardware_oresat-adcs-card.md) |

@@ -1,4 +1,4 @@
-# 1092 librem5_mainboard
+# 1092. librem5_mainboard
 
 Board 1,092 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 11](../CorpusTestingPages/Corpus-Testing-11.md#1092-librem5_mainboard).
 
@@ -47,4 +47,4 @@ Board 1,092 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1091 librem5_usb-c_fpc](b1091b_l5-schematic_librem5-usb-c-fpc.md) | [1093 amalthea](b1093b_amalthea-hardware_amalthea.md) |
+| [1091. librem5_usb-c_fpc](b1091b_l5-schematic_librem5-usb-c-fpc.md) | [1093. amalthea](b1093b_amalthea-hardware_amalthea.md) |

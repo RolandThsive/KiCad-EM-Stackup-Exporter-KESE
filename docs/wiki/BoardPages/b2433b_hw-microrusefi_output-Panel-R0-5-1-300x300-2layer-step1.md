@@ -1,4 +1,4 @@
-# 2433 output.Panel_R0.5.1_300x300_2layer_step1
+# 2433. output.Panel_R0.5.1_300x300_2layer_step1
 
 Board 2,433 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 23](../CorpusTestingPages/Corpus-Testing-23.md#2433-outputpanel_r051_300x300_2layer_step1).
 
@@ -47,4 +47,4 @@ Board 2,433 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2432 hellen1-wbo](b2432b_hellen-one_hellen1-wbo.md) | [2434 output.Panel_R0.5.1_300x300_2layer_step1_Modified](b2434b_hw-microrusefi_output-Panel-R0-5-1-300x300-2layer-step1-Modified.md) |
+| [2432. hellen1-wbo](b2432b_hellen-one_hellen1-wbo.md) | [2434. output.Panel_R0.5.1_300x300_2layer_step1_Modified](b2434b_hw-microrusefi_output-Panel-R0-5-1-300x300-2layer-step1-Modified.md) |

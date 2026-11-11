@@ -1,4 +1,4 @@
-# 2468 can_brd_1
+# 2468. can_brd_1
 
 Board 2,468 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 23](../CorpusTestingPages/Corpus-Testing-23.md#2468-can_brd_1).
 
@@ -45,4 +45,4 @@ Board 2,468 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2467 denso079721_outline-append](b2467b_rusefi-hardware_denso079721-outline-append.md) | [2469 can_brd_1](b2469b_rusefi-hardware_classic-designs-rusefi-hardware-history-can-board-rev00-20-can-board_can-brd-1.md) |
+| [2467. denso079721_outline-append](b2467b_rusefi-hardware_denso079721-outline-append.md) | [2469. can_brd_1](b2469b_rusefi-hardware_classic-designs-rusefi-hardware-history-can-board-rev00-20-can-board_can-brd-1.md) |

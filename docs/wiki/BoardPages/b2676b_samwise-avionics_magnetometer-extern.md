@@ -1,4 +1,4 @@
-# 2676 magnetometer_extern
+# 2676. magnetometer_extern
 
 Board 2,676 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 25](../CorpusTestingPages/Corpus-Testing-25.md#2676-magnetometer_extern).
 
@@ -45,4 +45,4 @@ Board 2,676 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2675 LT8491-mezzanine](b2675b_samwise-avionics_LT8491-mezzanine.md) | [2677 MPPT_addon_board](b2677b_samwise-avionics_MPPT-addon-board.md) |
+| [2675. LT8491-mezzanine](b2675b_samwise-avionics_LT8491-mezzanine.md) | [2677. MPPT_addon_board](b2677b_samwise-avionics_MPPT-addon-board.md) |

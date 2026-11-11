@@ -1,4 +1,4 @@
-# 1426 x65-sbc-revA1
+# 1426. x65-sbc-revA1
 
 Board 1,426 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 14](../CorpusTestingPages/Corpus-Testing-14.md#1426-x65-sbc-reva1).
 
@@ -45,4 +45,4 @@ Board 1,426 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1425 QBusH723Z](b1425b_MSCP_QBusH723Z.md) | [1427 x65-sbc-revB1](b1427b_x65_x65-sbc-revB1.md) |
+| [1425. QBusH723Z](b1425b_MSCP_QBusH723Z.md) | [1427. x65-sbc-revB1](b1427b_x65_x65-sbc-revB1.md) |

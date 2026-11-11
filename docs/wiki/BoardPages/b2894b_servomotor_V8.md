@@ -1,4 +1,4 @@
-# 2894 V8
+# 2894. V8
 
 Board 2,894 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 27](../CorpusTestingPages/Corpus-Testing-27.md#2894-v8).
 
@@ -45,4 +45,4 @@ Board 2,894 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2893 M3-V5](b2893b_servomotor_M3-V5.md) | [2895 V9](b2895b_servomotor_V9.md) |
+| [2893. M3-V5](b2893b_servomotor_M3-V5.md) | [2895. V9](b2895b_servomotor_V9.md) |

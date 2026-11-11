@@ -1,4 +1,4 @@
-# 495 coco3
+# 495. coco3
 
 Board 495 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 5](../CorpusTestingPages/Corpus-Testing-05.md#495-coco3).
 
@@ -45,4 +45,4 @@ Board 495 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [494 coco2](b0494b_bit-preserve_Tandy-RS-TRS-80-Color-Computer-Color-Computer-2-26-313xB-coco2_coco2.md) | [496 gd 6502 proto pcb](b0496b_Mega-IIe_kicad-files-gd-6502-proto-pcb_gd-6502-proto-pcb.md) |
+| [494. coco2](b0494b_bit-preserve_Tandy-RS-TRS-80-Color-Computer-Color-Computer-2-26-313xB-coco2_coco2.md) | [496. gd 6502 proto pcb](b0496b_Mega-IIe_kicad-files-gd-6502-proto-pcb_gd-6502-proto-pcb.md) |

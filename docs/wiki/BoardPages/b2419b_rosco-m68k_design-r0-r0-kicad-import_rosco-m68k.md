@@ -1,4 +1,4 @@
-# 2419 rosco_m68k
+# 2419. rosco_m68k
 
 Board 2,419 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 23](../CorpusTestingPages/Corpus-Testing-23.md#2419-rosco_m68k).
 
@@ -45,4 +45,4 @@ Board 2,419 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2418 DCDCv9-3](b2418b_dcdc_DCDCv9-3.md) | [2420 rosco_m68k](b2420b_rosco-m68k_design-r1-2-kicad_rosco-m68k.md) |
+| [2418. DCDCv9-3](b2418b_dcdc_DCDCv9-3.md) | [2420. rosco_m68k](b2420b_rosco-m68k_design-r1-2-kicad_rosco-m68k.md) |

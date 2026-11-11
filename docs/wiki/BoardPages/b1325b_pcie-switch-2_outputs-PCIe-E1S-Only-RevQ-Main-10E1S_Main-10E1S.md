@@ -1,4 +1,4 @@
-# 1325 Main_10E1S
+# 1325. Main_10E1S
 
 Board 1,325 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 13](../CorpusTestingPages/Corpus-Testing-13.md#1325-main_10e1s).
 
@@ -45,4 +45,4 @@ Board 1,325 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1324 Main_12E1S](b1324b_pcie-switch-2_outputs-PCIe-E1S-96x45-USB12mm-RevW-Main-12E1S_Main-12E1S.md) | [1326 Assembly_View](b1326b_pcie-switch-2_outputs-PCIe-Main-RevM-Assembly-View_Assembly-View.md) |
+| [1324. Main_12E1S](b1324b_pcie-switch-2_outputs-PCIe-E1S-96x45-USB12mm-RevW-Main-12E1S_Main-12E1S.md) | [1326. Assembly_View](b1326b_pcie-switch-2_outputs-PCIe-Main-RevM-Assembly-View_Assembly-View.md) |

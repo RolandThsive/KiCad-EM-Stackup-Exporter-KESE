@@ -1,4 +1,4 @@
-# 2947 ghoul
+# 2947. ghoul
 
 Board 2,947 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 28](../CorpusTestingPages/Corpus-Testing-28.md#2947-ghoul).
 
@@ -45,4 +45,4 @@ Board 2,947 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2946 ExtraBoard-Plate](b2946b_keyboards_ExtraBoard-Plate.md) | [2948 half-plate](b2948b_keyboards_half-plate.md) |
+| [2946. ExtraBoard-Plate](b2946b_keyboards_ExtraBoard-Plate.md) | [2948. half-plate](b2948b_keyboards_half-plate.md) |

@@ -1,4 +1,4 @@
-# 612 Magnetometer
+# 612. Magnetometer
 
 Board 612 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 6](../CorpusTestingPages/Corpus-Testing-06.md#612-magnetometer).
 
@@ -45,4 +45,4 @@ Board 612 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [611 wsg3.0](b0611b_bjr-kicad_wsg3-0.md) | [613 MagnetometerLayout](b0613b_bjr-kicad_MagnetometerLayout.md) |
+| [611. wsg3.0](b0611b_bjr-kicad_wsg3-0.md) | [613. MagnetometerLayout](b0613b_bjr-kicad_MagnetometerLayout.md) |

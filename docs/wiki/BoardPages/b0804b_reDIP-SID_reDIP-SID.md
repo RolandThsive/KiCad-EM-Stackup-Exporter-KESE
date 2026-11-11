@@ -1,4 +1,4 @@
-# 804 reDIP-SID
+# 804. reDIP-SID
 
 Board 804 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 8](../CorpusTestingPages/Corpus-Testing-08.md#804-redip-sid).
 
@@ -45,4 +45,4 @@ Board 804 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [803 SSD2828QN4-breakout](b0803b_HDMI-to-MIPI_SSD2828QN4-breakout.md) | [805 qca7000](b0805b_foccci_qca7000.md) |
+| [803. SSD2828QN4-breakout](b0803b_HDMI-to-MIPI_SSD2828QN4-breakout.md) | [805. qca7000](b0805b_foccci_qca7000.md) |

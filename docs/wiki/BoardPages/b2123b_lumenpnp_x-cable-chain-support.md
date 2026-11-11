@@ -1,4 +1,4 @@
-# 2123 x-cable-chain-support
+# 2123. x-cable-chain-support
 
 Board 2,123 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 20](../CorpusTestingPages/Corpus-Testing-20.md#2123-x-cable-chain-support).
 
@@ -46,4 +46,4 @@ Board 2,123 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2122 ringLight](b2122b_lumenpnp_ringLight.md) | [2124 xy-limit](b2124b_lumenpnp_xy-limit.md) |
+| [2122. ringLight](b2122b_lumenpnp_ringLight.md) | [2124. xy-limit](b2124b_lumenpnp_xy-limit.md) |

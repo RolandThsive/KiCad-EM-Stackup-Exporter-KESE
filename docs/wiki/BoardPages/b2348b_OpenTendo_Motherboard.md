@@ -1,4 +1,4 @@
-# 2348 Motherboard
+# 2348. Motherboard
 
 Board 2,348 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 22](../CorpusTestingPages/Corpus-Testing-22.md#2348-motherboard).
 
@@ -45,4 +45,4 @@ Board 2,348 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2347 scarlet-8088](b2347b_scarlet-8088_scarlet-8088.md) | [2349 Arduino_Altair_8800](b2349b_Altair8800-Simulator-PCB_Arduino-Altair-8800.md) |
+| [2347. scarlet-8088](b2347b_scarlet-8088_scarlet-8088.md) | [2349. Arduino_Altair_8800](b2349b_Altair8800-Simulator-PCB_Arduino-Altair-8800.md) |

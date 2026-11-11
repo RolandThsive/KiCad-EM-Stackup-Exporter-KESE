@@ -1,4 +1,4 @@
-# 2080 bracket-led-panel-tight
+# 2080. bracket-led-panel-tight
 
 Board 2,080 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 20](../CorpusTestingPages/Corpus-Testing-20.md#2080-bracket-led-panel-tight).
 
@@ -46,4 +46,4 @@ Board 2,080 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2079 acquisition-board](b2079b_oe-acquisition-board-gen3_acquisition-board.md) | [2081 bracket-led-panel](b2081b_onix-fmc-host_bracket-led-panel.md) |
+| [2079. acquisition-board](b2079b_oe-acquisition-board-gen3_acquisition-board.md) | [2081. bracket-led-panel](b2081b_onix-fmc-host_bracket-led-panel.md) |

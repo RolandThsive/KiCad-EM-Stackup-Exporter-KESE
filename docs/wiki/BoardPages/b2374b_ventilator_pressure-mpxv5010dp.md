@@ -1,4 +1,4 @@
-# 2374 pressure_mpxv5010dp
+# 2374. pressure_mpxv5010dp
 
 Board 2,374 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 22](../CorpusTestingPages/Corpus-Testing-22.md#2374-pressure_mpxv5010dp).
 
@@ -45,4 +45,4 @@ Board 2,374 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2373 pressure_mpxv5004dp](b2373b_ventilator_pressure-mpxv5004dp.md) | [2375 pressure_ms4525do](b2375b_ventilator_pressure-ms4525do.md) |
+| [2373. pressure_mpxv5004dp](b2373b_ventilator_pressure-mpxv5004dp.md) | [2375. pressure_ms4525do](b2375b_ventilator_pressure-ms4525do.md) |

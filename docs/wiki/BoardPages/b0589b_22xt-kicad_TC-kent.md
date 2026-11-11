@@ -1,4 +1,4 @@
-# 589 TC_kent
+# 589. TC_kent
 
 Board 589 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 6](../CorpusTestingPages/Corpus-Testing-06.md#589-tc_kent).
 
@@ -45,4 +45,4 @@ Board 589 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [588 WSG_2.0](b0588b_22xt-kicad_WSG-2-0.md) | [590 TC_shuwen](b0590b_22xt-kicad_TC-shuwen.md) |
+| [588. WSG_2.0](b0588b_22xt-kicad_WSG-2-0.md) | [590. TC_shuwen](b0590b_22xt-kicad_TC-shuwen.md) |

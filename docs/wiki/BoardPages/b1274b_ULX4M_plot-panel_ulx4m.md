@@ -1,4 +1,4 @@
-# 1274 ulx4m
+# 1274. ulx4m
 
 Board 1,274 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 12](../CorpusTestingPages/Corpus-Testing-12.md#1274-ulx4m).
 
@@ -46,4 +46,4 @@ Board 1,274 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1273 ulx4m-panel](b1273b_ULX4M_ulx4m-panel.md) | [1275 ulx4m](b1275b_ULX4M_ulx4m.md) |
+| [1273. ulx4m-panel](b1273b_ULX4M_ulx4m-panel.md) | [1275. ulx4m](b1275b_ULX4M_ulx4m.md) |

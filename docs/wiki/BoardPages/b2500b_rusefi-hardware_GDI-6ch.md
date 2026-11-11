@@ -1,4 +1,4 @@
-# 2500 GDI-6ch
+# 2500. GDI-6ch
 
 Board 2,500 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 24](../CorpusTestingPages/Corpus-Testing-24.md#2500-gdi-6ch).
 
@@ -45,4 +45,4 @@ Board 2,500 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2499 GDI-4ch](b2499b_rusefi-hardware_GDI-4ch.md) | [2501 GDI-STM](b2501b_rusefi-hardware_GDI-STM.md) |
+| [2499. GDI-4ch](b2499b_rusefi-hardware_GDI-4ch.md) | [2501. GDI-STM](b2501b_rusefi-hardware_GDI-STM.md) |

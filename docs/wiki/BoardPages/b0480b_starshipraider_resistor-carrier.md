@@ -1,4 +1,4 @@
-# 480 resistor-carrier
+# 480. resistor-carrier
 
 Board 480 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 5](../CorpusTestingPages/Corpus-Testing-05.md#480-resistor-carrier).
 
@@ -45,4 +45,4 @@ Board 480 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [479 probe-characterization](b0479b_starshipraider_probe-characterization.md) | [481 resistor-characterization](b0481b_starshipraider_resistor-characterization.md) |
+| [479. probe-characterization](b0479b_starshipraider_probe-characterization.md) | [481. resistor-characterization](b0481b_starshipraider_resistor-characterization.md) |

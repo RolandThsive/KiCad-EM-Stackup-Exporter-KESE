@@ -1,4 +1,4 @@
-# 1666 amiga-gfxcard-before-pour
+# 1666. amiga-gfxcard-before-pour
 
 Board 1,666 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 16](../CorpusTestingPages/Corpus-Testing-16.md#1666-amiga-gfxcard-before-pour).
 
@@ -45,4 +45,4 @@ Board 1,666 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1665 moteus_x1](b1665b_moteus_moteus-x1.md) | [1667 amiga-gfxcard](b1667b_amiga2000-gfxcard_amiga-gfxcard.md) |
+| [1665. moteus_x1](b1665b_moteus_moteus-x1.md) | [1667. amiga-gfxcard](b1667b_amiga2000-gfxcard_amiga-gfxcard.md) |

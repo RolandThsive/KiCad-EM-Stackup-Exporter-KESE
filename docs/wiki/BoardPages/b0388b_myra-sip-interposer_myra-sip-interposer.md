@@ -1,4 +1,4 @@
-# 388 myra-sip-interposer
+# 388. myra-sip-interposer
 
 Board 388 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 4](../CorpusTestingPages/Corpus-Testing-04.md#388-myra-sip-interposer).
 
@@ -44,4 +44,4 @@ Board 388 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [387 altera-modular-agilex-5-dc-scm](b0387b_modular-agilex5e-dc-scm_altera-modular-agilex-5-dc-scm.md) | [389 oculink-to-10gbe-adapter](b0389b_oculink-10gbe-adapter_oculink-to-10gbe-adapter.md) |
+| [387. altera-modular-agilex-5-dc-scm](b0387b_modular-agilex5e-dc-scm_altera-modular-agilex-5-dc-scm.md) | [389. oculink-to-10gbe-adapter](b0389b_oculink-10gbe-adapter_oculink-to-10gbe-adapter.md) |

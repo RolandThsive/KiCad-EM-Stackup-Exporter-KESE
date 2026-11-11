@@ -1,4 +1,4 @@
-# 1182 syzygy-breakout
+# 1182. syzygy-breakout
 
 Board 1,182 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 11](../CorpusTestingPages/Corpus-Testing-11.md#1182-syzygy-breakout).
 
@@ -45,4 +45,4 @@ Board 1,182 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1181 SCD30-3d-model](b1181b_advent-calendar-of-circuits-2020_SCD30-3d-model.md) | [1183 syzygy-dual-atto320](b1183b_advent-calendar-of-circuits-2020_syzygy-dual-atto320.md) |
+| [1181. SCD30-3d-model](b1181b_advent-calendar-of-circuits-2020_SCD30-3d-model.md) | [1183. syzygy-dual-atto320](b1183b_advent-calendar-of-circuits-2020_syzygy-dual-atto320.md) |

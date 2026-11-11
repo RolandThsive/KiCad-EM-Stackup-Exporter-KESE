@@ -1,4 +1,4 @@
-# 2264 film_capacitors
+# 2264. film_capacitors
 
 Board 2,264 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 21](../CorpusTestingPages/Corpus-Testing-21.md#2264-film_capacitors).
 
@@ -45,4 +45,4 @@ Board 2,264 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2263 daughterboard](b2263b_cubesat_daughterboard.md) | [2265 uVerter](b2265b_micro-inverter_uVerter.md) |
+| [2263. daughterboard](b2263b_cubesat_daughterboard.md) | [2265. uVerter](b2265b_micro-inverter_uVerter.md) |

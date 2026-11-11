@@ -1,4 +1,4 @@
-# 1068 atsamd21_usb
+# 1068. atsamd21_usb
 
 Board 1,068 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 10](../CorpusTestingPages/Corpus-Testing-10.md#1068-atsamd21_usb).
 
@@ -45,4 +45,4 @@ Board 1,068 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1067 atsamd11_pro_micro](b1067b_myelin-acorn-electron-hardware_atsamd11-pro-micro.md) | [1069 bbc_128kb_sram](b1069b_myelin-acorn-electron-hardware_bbc-128kb-sram.md) |
+| [1067. atsamd11_pro_micro](b1067b_myelin-acorn-electron-hardware_atsamd11-pro-micro.md) | [1069. bbc_128kb_sram](b1069b_myelin-acorn-electron-hardware_bbc-128kb-sram.md) |

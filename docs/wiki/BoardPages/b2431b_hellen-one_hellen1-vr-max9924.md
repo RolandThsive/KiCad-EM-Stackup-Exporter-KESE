@@ -1,4 +1,4 @@
-# 2431 hellen1-vr-max9924
+# 2431. hellen1-vr-max9924
 
 Board 2,431 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 23](../CorpusTestingPages/Corpus-Testing-23.md#2431-hellen1-vr-max9924).
 
@@ -45,4 +45,4 @@ Board 2,431 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2430 hellen1-vr-discrete](b2430b_hellen-one_hellen1-vr-discrete.md) | [2432 hellen1-wbo](b2432b_hellen-one_hellen1-wbo.md) |
+| [2430. hellen1-vr-discrete](b2430b_hellen-one_hellen1-vr-discrete.md) | [2432. hellen1-wbo](b2432b_hellen-one_hellen1-wbo.md) |

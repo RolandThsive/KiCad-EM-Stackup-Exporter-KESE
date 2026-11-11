@@ -1,4 +1,4 @@
-# 2167 oresat0.5-minusz-end-card
+# 2167. oresat0.5-minusz-end-card
 
 Board 2,167 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 21](../CorpusTestingPages/Corpus-Testing-21.md#2167-oresat05-minusz-end-card).
 
@@ -45,4 +45,4 @@ Board 2,167 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2166 plusz-end-card-with-turnstile-mezzanine](b2166b_oresat-end-cards_plusz-end-card-with-turnstile-mezzanine.md) | [2168 oresat0.5-pluz-end-card](b2168b_oresat-end-cards_oresat0-5-pluz-end-card.md) |
+| [2166. plusz-end-card-with-turnstile-mezzanine](b2166b_oresat-end-cards_plusz-end-card-with-turnstile-mezzanine.md) | [2168. oresat0.5-pluz-end-card](b2168b_oresat-end-cards_oresat0-5-pluz-end-card.md) |

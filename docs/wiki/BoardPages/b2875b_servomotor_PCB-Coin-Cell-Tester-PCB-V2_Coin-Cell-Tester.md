@@ -1,4 +1,4 @@
-# 2875 Coin_Cell_Tester
+# 2875. Coin_Cell_Tester
 
 Board 2,875 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 27](../CorpusTestingPages/Corpus-Testing-27.md#2875-coin_cell_tester).
 
@@ -45,4 +45,4 @@ Board 2,875 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2874 Coin_Cell_Tester](b2874b_servomotor_PCB-Coin-Cell-Tester-PCB-V1_Coin-Cell-Tester.md) | [2876 servo_motor](b2876b_servomotor_PCB-Servomotor1-V26_servo-motor.md) |
+| [2874. Coin_Cell_Tester](b2874b_servomotor_PCB-Coin-Cell-Tester-PCB-V1_Coin-Cell-Tester.md) | [2876. servo_motor](b2876b_servomotor_PCB-Servomotor1-V26_servo-motor.md) |

@@ -1,4 +1,4 @@
-# 649 TC01AtariJoystick
+# 649. TC01AtariJoystick
 
 Board 649 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 7](../CorpusTestingPages/Corpus-Testing-07.md#649-tc01atarijoystick).
 
@@ -45,4 +45,4 @@ Board 649 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [648 EinsteinTC01PS2Mini](b0648b_Einstein-TC-01_EinsteinTC01PS2Mini.md) | [650 TC02Mini](b0650b_Einstein-TC-01_TC02Mini.md) |
+| [648. EinsteinTC01PS2Mini](b0648b_Einstein-TC-01_EinsteinTC01PS2Mini.md) | [650. TC02Mini](b0650b_Einstein-TC-01_TC02Mini.md) |

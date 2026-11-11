@@ -1,4 +1,4 @@
-# 105 plusd
+# 105. plusd
 
 Board 105 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 1](../CorpusTestingPages/Corpus-Testing-01.md#105-plusd).
 
@@ -44,4 +44,4 @@ Board 105 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [104 socket7-motherboard](b0104b_fpgamotherboard_socket7-fpga-xc7a100t_socket7-motherboard.md) | [106 plusd_no_route](b0106b_plusD-clone_plusd-no-route.md) |
+| [104. socket7-motherboard](b0104b_fpgamotherboard_socket7-fpga-xc7a100t_socket7-motherboard.md) | [106. plusd_no_route](b0106b_plusD-clone_plusd-no-route.md) |

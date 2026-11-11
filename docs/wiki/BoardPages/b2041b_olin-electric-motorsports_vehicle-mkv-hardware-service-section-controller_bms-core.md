@@ -1,4 +1,4 @@
-# 2041 bms_core
+# 2041. bms_core
 
 Board 2,041 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 19](../CorpusTestingPages/Corpus-Testing-19.md#2041-bms_core).
 
@@ -45,4 +45,4 @@ Board 2,041 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2040 data_acquisition_2](b2040b_olin-electric-motorsports_data-acquisition-2.md) | [2042 external_interface](b2042b_olin-electric-motorsports_external-interface.md) |
+| [2040. data_acquisition_2](b2040b_olin-electric-motorsports_data-acquisition-2.md) | [2042. external_interface](b2042b_olin-electric-motorsports_external-interface.md) |

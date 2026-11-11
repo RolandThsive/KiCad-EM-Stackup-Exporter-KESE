@@ -1,4 +1,4 @@
-# 2763 charge_deployment
+# 2763. charge_deployment
 
 Board 2,763 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 26](../CorpusTestingPages/Corpus-Testing-26.md#2763-charge_deployment).
 
@@ -45,4 +45,4 @@ Board 2,763 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2762 LVPD-board_v2](b2762b_srad-avionics_LVPD-board-v2.md) | [2764 ARCH](b2764b_srad-avionics_ARCH.md) |
+| [2762. LVPD-board_v2](b2762b_srad-avionics_LVPD-board-v2.md) | [2764. ARCH](b2764b_srad-avionics_ARCH.md) |

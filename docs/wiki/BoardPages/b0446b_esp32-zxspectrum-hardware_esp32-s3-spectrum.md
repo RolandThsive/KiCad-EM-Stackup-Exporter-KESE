@@ -1,4 +1,4 @@
-# 446 esp32-s3-spectrum
+# 446. esp32-s3-spectrum
 
 Board 446 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 5](../CorpusTestingPages/Corpus-Testing-05.md#446-esp32-s3-spectrum).
 
@@ -44,4 +44,4 @@ Board 446 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [445 Atari TT030](b0445b_Atari-TT030-PCB_Atari-TT030.md) | [447 argo-v2](b0447b_Argo_argo-v2.md) |
+| [445. Atari TT030](b0445b_Atari-TT030-PCB_Atari-TT030.md) | [447. argo-v2](b0447b_Argo_argo-v2.md) |

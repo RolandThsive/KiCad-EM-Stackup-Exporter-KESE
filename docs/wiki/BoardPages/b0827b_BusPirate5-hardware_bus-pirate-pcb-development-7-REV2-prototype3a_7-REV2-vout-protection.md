@@ -1,4 +1,4 @@
-# 827 7-REV2-vout-protection
+# 827. 7-REV2-vout-protection
 
 Board 827 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 8](../CorpusTestingPages/Corpus-Testing-08.md#827-7-rev2-vout-protection).
 
@@ -45,4 +45,4 @@ Board 827 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [826 7-REV1B](b0826b_BusPirate5-hardware_7-REV1B.md) | [828 7-REV2-vout-protection](b0828b_BusPirate5-hardware_bus-pirate-pcb-development-7-REV2-prototype3b-side-leds_7-REV2-vout-protection.md) |
+| [826. 7-REV1B](b0826b_BusPirate5-hardware_7-REV1B.md) | [828. 7-REV2-vout-protection](b0828b_BusPirate5-hardware_bus-pirate-pcb-development-7-REV2-prototype3b-side-leds_7-REV2-vout-protection.md) |

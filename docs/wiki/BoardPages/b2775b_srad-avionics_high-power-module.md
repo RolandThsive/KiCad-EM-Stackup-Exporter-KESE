@@ -1,4 +1,4 @@
-# 2775 high-power-module
+# 2775. high-power-module
 
 Board 2,775 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 26](../CorpusTestingPages/Corpus-Testing-26.md#2775-high-power-module).
 
@@ -45,4 +45,4 @@ Board 2,775 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2774 ground-receiver](b2774b_srad-avionics_ground-receiver.md) | [2776 LiBatteryCharger](b2776b_srad-avionics_LiBatteryCharger.md) |
+| [2774. ground-receiver](b2774b_srad-avionics_ground-receiver.md) | [2776. LiBatteryCharger](b2776b_srad-avionics_LiBatteryCharger.md) |

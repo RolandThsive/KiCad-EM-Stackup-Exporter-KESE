@@ -1,4 +1,4 @@
-# 2410 control-v4.0
+# 2410. control-v4.0
 
 Board 2,410 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 23](../CorpusTestingPages/Corpus-Testing-23.md#2410-control-v40).
 
@@ -45,4 +45,4 @@ Board 2,410 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2409 robocup-controller-pcb](b2409b_robocup-pcb_robocup-controller-pcb.md) | [2411 control-v4.1-stm32](b2411b_robocup-pcb_control-v4-1-stm32.md) |
+| [2409. robocup-controller-pcb](b2409b_robocup-pcb_robocup-controller-pcb.md) | [2411. control-v4.1-stm32](b2411b_robocup-pcb_control-v4-1-stm32.md) |

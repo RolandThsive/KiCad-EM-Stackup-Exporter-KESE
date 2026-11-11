@@ -1,4 +1,4 @@
-# 806 blank-plank-rev0b
+# 806. blank-plank-rev0b
 
 Board 806 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 8](../CorpusTestingPages/Corpus-Testing-08.md#806-blank-plank-rev0b).
 
@@ -46,4 +46,4 @@ Board 806 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [805 qca7000](b0805b_foccci_qca7000.md) | [807 flash-zif-rev3](b0807b_BusPirate5-hardware_flash-zif-rev3.md) |
+| [805. qca7000](b0805b_foccci_qca7000.md) | [807. flash-zif-rev3](b0807b_BusPirate5-hardware_flash-zif-rev3.md) |

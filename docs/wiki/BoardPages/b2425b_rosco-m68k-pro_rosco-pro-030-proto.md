@@ -1,4 +1,4 @@
-# 2425 rosco_pro_030_proto
+# 2425. rosco_pro_030_proto
 
 Board 2,425 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 23](../CorpusTestingPages/Corpus-Testing-23.md#2425-rosco_pro_030_proto).
 
@@ -45,4 +45,4 @@ Board 2,425 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2424 rosco_m68k](b2424b_rosco-m68k_design-r2030-kicad_rosco-m68k.md) | [2426 xoseram](b2426b_XoseraBoard_xoseram.md) |
+| [2424. rosco_m68k](b2424b_rosco-m68k_design-r2030-kicad_rosco-m68k.md) | [2426. xoseram](b2426b_XoseraBoard_xoseram.md) |

@@ -1,4 +1,4 @@
-# 1209 Easyduino_STM32F103
+# 1209. Easyduino_STM32F103
 
 Board 1,209 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 12](../CorpusTestingPages/Corpus-Testing-12.md#1209-easyduino_stm32f103).
 
@@ -45,4 +45,4 @@ Board 1,209 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1208 Easyduino_RP2040](b1208b_Easyduino_Easyduino-RP2040.md) | [1210 stepperdriver front panel](b1210b_device-stepperdriver_stepperdriver-front-panel.md) |
+| [1208. Easyduino_RP2040](b1208b_Easyduino_Easyduino-RP2040.md) | [1210. stepperdriver front panel](b1210b_device-stepperdriver_stepperdriver-front-panel.md) |

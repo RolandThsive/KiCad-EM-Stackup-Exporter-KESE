@@ -1,4 +1,4 @@
-# 1439 Kilsyth
+# 1439. Kilsyth
 
 Board 1,439 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 14](../CorpusTestingPages/Corpus-Testing-14.md#1439-kilsyth).
 
@@ -45,4 +45,4 @@ Board 1,439 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1438 Kilsyth](b1438b_Kilsyth_hardware-RevA_Kilsyth.md) | [1440 usb-c-breakout](b1440b_Kilsyth_usb-c-breakout.md) |
+| [1438. Kilsyth](b1438b_Kilsyth_hardware-RevA_Kilsyth.md) | [1440. usb-c-breakout](b1440b_Kilsyth_usb-c-breakout.md) |

@@ -1,4 +1,4 @@
-# 1083 post_box_usb
+# 1083. post_box_usb
 
 Board 1,083 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 11](../CorpusTestingPages/Corpus-Testing-11.md#1083-post_box_usb).
 
@@ -45,4 +45,4 @@ Board 1,083 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1082 pcf8583_daughterboard](b1082b_myelin-acorn-electron-hardware_pcf8583-daughterboard.md) | [1084 rom_socket_level_shifter](b1084b_myelin-acorn-electron-hardware_rom-socket-level-shifter.md) |
+| [1082. pcf8583_daughterboard](b1082b_myelin-acorn-electron-hardware_pcf8583-daughterboard.md) | [1084. rom_socket_level_shifter](b1084b_myelin-acorn-electron-hardware_rom-socket-level-shifter.md) |

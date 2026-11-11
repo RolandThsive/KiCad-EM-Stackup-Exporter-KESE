@@ -1,4 +1,4 @@
-# 694 display_eval_short
+# 694. display_eval_short
 
 Board 694 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 7](../CorpusTestingPages/Corpus-Testing-07.md#694-display_eval_short).
 
@@ -45,4 +45,4 @@ Board 694 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [693 display_eval](b0693b_laptop_display-eval.md) | [695 motherboard](b0695b_laptop_motherboard.md) |
+| [693. display_eval](b0693b_laptop_display-eval.md) | [695. motherboard](b0695b_laptop_motherboard.md) |

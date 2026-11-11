@@ -1,4 +1,4 @@
-# 1176 pmod-gnss
+# 1176. pmod-gnss
 
 Board 1,176 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 11](../CorpusTestingPages/Corpus-Testing-11.md#1176-pmod-gnss).
 
@@ -45,4 +45,4 @@ Board 1,176 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1175 pcie_x4](b1175b_advent-calendar-of-circuits-2020_pcie-x4.md) | [1177 pmod-quad-7segment](b1177b_advent-calendar-of-circuits-2020_pmod-quad-7segment.md) |
+| [1175. pcie_x4](b1175b_advent-calendar-of-circuits-2020_pcie-x4.md) | [1177. pmod-quad-7segment](b1177b_advent-calendar-of-circuits-2020_pmod-quad-7segment.md) |

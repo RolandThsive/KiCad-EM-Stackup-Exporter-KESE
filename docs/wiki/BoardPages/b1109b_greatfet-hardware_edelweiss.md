@@ -1,4 +1,4 @@
-# 1109 edelweiss
+# 1109. edelweiss
 
 Board 1,109 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 11](../CorpusTestingPages/Corpus-Testing-11.md#1109-edelweiss).
 
@@ -45,4 +45,4 @@ Board 1,109 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1108 daffodil](b1108b_greatfet-hardware_daffodil.md) | [1110 foxglove](b1110b_greatfet-hardware_foxglove.md) |
+| [1108. daffodil](b1108b_greatfet-hardware_daffodil.md) | [1110. foxglove](b1110b_greatfet-hardware_foxglove.md) |

@@ -1,4 +1,4 @@
-# 383 m2-smart-iot-module
+# 383. m2-smart-iot-module
 
 Board 383 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 4](../CorpusTestingPages/Corpus-Testing-04.md#383-m2-smart-iot-module).
 
@@ -44,4 +44,4 @@ Board 383 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [382 m2-pcie-adapter](b0382b_m2-pcie-adapter_m2-pcie-adapter.md) | [384 machxo5-espi-debugger](b0384b_machx05-espi-debugger_machxo5-espi-debugger.md) |
+| [382. m2-pcie-adapter](b0382b_m2-pcie-adapter_m2-pcie-adapter.md) | [384. machxo5-espi-debugger](b0384b_machx05-espi-debugger_machxo5-espi-debugger.md) |

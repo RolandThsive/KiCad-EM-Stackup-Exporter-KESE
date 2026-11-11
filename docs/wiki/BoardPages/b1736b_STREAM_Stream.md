@@ -1,4 +1,4 @@
-# 1736 Stream
+# 1736. Stream
 
 Board 1,736 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 17](../CorpusTestingPages/Corpus-Testing-17.md#1736-stream).
 
@@ -45,4 +45,4 @@ Board 1,736 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1735 Zipper](b1735b_reference-development-kit_Zipper.md) | [1737 uSTREAM](b1737b_STREAM_uSTREAM.md) |
+| [1735. Zipper](b1735b_reference-development-kit_Zipper.md) | [1737. uSTREAM](b1737b_STREAM_uSTREAM.md) |

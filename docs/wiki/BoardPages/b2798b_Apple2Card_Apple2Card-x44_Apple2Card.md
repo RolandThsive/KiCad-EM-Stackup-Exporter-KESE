@@ -1,4 +1,4 @@
-# 2798 Apple2Card
+# 2798. Apple2Card
 
 Board 2,798 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 26](../CorpusTestingPages/Corpus-Testing-26.md#2798-apple2card).
 
@@ -45,4 +45,4 @@ Board 2,798 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2797 Apple2Card](b2797b_Apple2Card_Apple2Card_Apple2Card.md) | [2799 TFGPS01](b2799b_TFGPS01_TFGPS01.md) |
+| [2797. Apple2Card](b2797b_Apple2Card_Apple2Card_Apple2Card.md) | [2799. TFGPS01](b2799b_TFGPS01_TFGPS01.md) |

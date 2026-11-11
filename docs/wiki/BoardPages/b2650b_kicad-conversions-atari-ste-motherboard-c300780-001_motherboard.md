@@ -1,4 +1,4 @@
-# 2650 motherboard
+# 2650. motherboard
 
 Board 2,650 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 25](../CorpusTestingPages/Corpus-Testing-25.md#2650-motherboard).
 
@@ -44,4 +44,4 @@ Board 2,650 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2649 motherboard](b2649b_kicad-conversions-atari-260-520-st-motherboard-c070231_motherboard.md) | [2651 leaf](b2651b_leaf-rv1126_leaf.md) |
+| [2649. motherboard](b2649b_kicad-conversions-atari-260-520-st-motherboard-c070231_motherboard.md) | [2651. leaf](b2651b_leaf-rv1126_leaf.md) |

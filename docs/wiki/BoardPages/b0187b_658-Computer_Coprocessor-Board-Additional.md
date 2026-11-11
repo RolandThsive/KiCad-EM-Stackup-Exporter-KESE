@@ -1,4 +1,4 @@
-# 187 Coprocessor Board - Additional
+# 187. Coprocessor Board - Additional
 
 Board 187 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 2](../CorpusTestingPages/Corpus-Testing-02.md#187-coprocessor-board---additional).
 
@@ -45,4 +45,4 @@ Board 187 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [186 State Reader 8bit](b0186b_658-Computer_State-Reader-8bit.md) | [188 Coprocessor Board - Main](b0188b_658-Computer_Coprocessor-Board-Main.md) |
+| [186. State Reader 8bit](b0186b_658-Computer_State-Reader-8bit.md) | [188. Coprocessor Board - Main](b0188b_658-Computer_Coprocessor-Board-Main.md) |

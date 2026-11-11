@@ -1,4 +1,4 @@
-# 232 HCP65 MPU Memory
+# 232. HCP65 MPU Memory
 
 Board 232 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 3](../CorpusTestingPages/Corpus-Testing-03.md#232-hcp65-mpu-memory).
 
@@ -45,4 +45,4 @@ Board 232 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [231 HCP65 MPU Address Decode](b0231b_658-Computer_HCP65-MPU-Address-Decode.md) | [233 HCP65 MPU NMI](b0233b_658-Computer_HCP65-MPU-NMI.md) |
+| [231. HCP65 MPU Address Decode](b0231b_658-Computer_HCP65-MPU-Address-Decode.md) | [233. HCP65 MPU NMI](b0233b_658-Computer_HCP65-MPU-NMI.md) |

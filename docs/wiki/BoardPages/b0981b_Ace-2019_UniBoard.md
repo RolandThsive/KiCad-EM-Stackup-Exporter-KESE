@@ -1,4 +1,4 @@
-# 981 UniBoard
+# 981. UniBoard
 
 Board 981 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 10](../CorpusTestingPages/Corpus-Testing-10.md#981-uniboard).
 
@@ -45,4 +45,4 @@ Board 981 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [980 STM8SUBSYS](b0980b_Ace-2019_STM8SUBSYS.md) | [982 Full Card](b0982b_Ace-2019_Full-Card.md) |
+| [980. STM8SUBSYS](b0980b_Ace-2019_STM8SUBSYS.md) | [982. Full Card](b0982b_Ace-2019_Full-Card.md) |

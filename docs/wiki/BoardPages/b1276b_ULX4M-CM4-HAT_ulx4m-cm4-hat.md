@@ -1,4 +1,4 @@
-# 1276 ulx4m-cm4-hat
+# 1276. ulx4m-cm4-hat
 
 Board 1,276 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 12](../CorpusTestingPages/Corpus-Testing-12.md#1276-ulx4m-cm4-hat).
 
@@ -44,4 +44,4 @@ Board 1,276 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1275 ulx4m](b1275b_ULX4M_ulx4m.md) | [1277 ulx4m-ld](b1277b_ULX4M-LD_ulx4m-ld.md) |
+| [1275. ulx4m](b1275b_ULX4M_ulx4m.md) | [1277. ulx4m-ld](b1277b_ULX4M-LD_ulx4m-ld.md) |

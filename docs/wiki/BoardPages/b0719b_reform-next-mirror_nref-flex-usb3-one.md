@@ -1,4 +1,4 @@
-# 719 nref-flex-usb3-one
+# 719. nref-flex-usb3-one
 
 Board 719 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 7](../CorpusTestingPages/Corpus-Testing-07.md#719-nref-flex-usb3-one).
 
@@ -45,4 +45,4 @@ Board 719 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [718 nref-flex-usb3-one-130mm](b0718b_reform-next-mirror_nref-flex-usb3-one-130mm.md) | [720 nref-motherboard](b0720b_reform-next-mirror_nref-motherboard.md) |
+| [718. nref-flex-usb3-one-130mm](b0718b_reform-next-mirror_nref-flex-usb3-one-130mm.md) | [720. nref-motherboard](b0720b_reform-next-mirror_nref-motherboard.md) |

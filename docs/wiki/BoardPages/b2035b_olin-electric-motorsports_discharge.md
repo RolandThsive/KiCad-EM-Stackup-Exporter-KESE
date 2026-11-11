@@ -1,4 +1,4 @@
-# 2035 discharge
+# 2035. discharge
 
 Board 2,035 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 19](../CorpusTestingPages/Corpus-Testing-19.md#2035-discharge).
 
@@ -44,4 +44,4 @@ Board 2,035 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2034 sensing_controller1](b2034b_olin-electric-motorsports_sensing-controller1.md) | [2036 air_minus](b2036b_olin-electric-motorsports_air-minus.md) |
+| [2034. sensing_controller1](b2034b_olin-electric-motorsports_sensing-controller1.md) | [2036. air_minus](b2036b_olin-electric-motorsports_air-minus.md) |

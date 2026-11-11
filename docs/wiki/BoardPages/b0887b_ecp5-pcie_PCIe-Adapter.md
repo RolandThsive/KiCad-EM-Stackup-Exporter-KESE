@@ -1,4 +1,4 @@
-# 887 PCIe-Adapter
+# 887. PCIe-Adapter
 
 Board 887 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 9](../CorpusTestingPages/Corpus-Testing-09.md#887-pcie-adapter).
 
@@ -45,4 +45,4 @@ Board 887 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [886 ESP32_TouchDown](b0886b_esp32-touchdown_ESP32-TouchDown.md) | [888 Edgeberry](b0888b_Edgeberry-Baseboard_Edgeberry.md) |
+| [886. ESP32_TouchDown](b0886b_esp32-touchdown_ESP32-TouchDown.md) | [888. Edgeberry](b0888b_Edgeberry-Baseboard_Edgeberry.md) |

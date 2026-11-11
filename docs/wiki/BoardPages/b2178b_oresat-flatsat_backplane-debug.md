@@ -1,4 +1,4 @@
-# 2178 backplane-debug
+# 2178. backplane-debug
 
 Board 2,178 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 21](../CorpusTestingPages/Corpus-Testing-21.md#2178-backplane-debug).
 
@@ -45,4 +45,4 @@ Board 2,178 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2177 oresat1-plusz-end-cap](b2177b_oresat-endcaps_oresat1-plusz-end-cap.md) | [2179 backplane-debug-breakout](b2179b_oresat-flatsat_backplane-debug-breakout.md) |
+| [2177. oresat1-plusz-end-cap](b2177b_oresat-endcaps_oresat1-plusz-end-cap.md) | [2179. backplane-debug-breakout](b2179b_oresat-flatsat_backplane-debug-breakout.md) |

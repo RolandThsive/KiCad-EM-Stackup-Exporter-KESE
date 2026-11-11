@@ -1,4 +1,4 @@
-# 309 boatcontrol
+# 309. boatcontrol
 
 Board 309 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 3](../CorpusTestingPages/Corpus-Testing-03.md#309-boatcontrol).
 
@@ -45,4 +45,4 @@ Board 309 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [308 NonLatchingNO30A](b0308b_boatcontrol_NonLatchingNO30A.md) | [310 ac922interposer](b0310b_ac922interposer_ac922interposer.md) |
+| [308. NonLatchingNO30A](b0308b_boatcontrol_NonLatchingNO30A.md) | [310. ac922interposer](b0310b_ac922interposer_ac922interposer.md) |

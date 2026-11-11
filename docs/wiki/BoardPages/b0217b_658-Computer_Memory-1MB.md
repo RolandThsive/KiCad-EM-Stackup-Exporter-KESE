@@ -1,4 +1,4 @@
-# 217 Memory 1MB
+# 217. Memory 1MB
 
 Board 217 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 3](../CorpusTestingPages/Corpus-Testing-03.md#217-memory-1mb).
 
@@ -45,4 +45,4 @@ Board 217 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [216 Triple MPU Clock Generator](b0216b_658-Computer_Triple-MPU-Clock-Generator.md) | [218 Memory 4MB](b0218b_658-Computer_Memory-4MB.md) |
+| [216. Triple MPU Clock Generator](b0216b_658-Computer_Triple-MPU-Clock-Generator.md) | [218. Memory 4MB](b0218b_658-Computer_Memory-4MB.md) |

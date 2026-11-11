@@ -1,4 +1,4 @@
-# 1449 ecc83-pp_v2
+# 1449. ecc83-pp_v2
 
 Board 1,449 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 14](../CorpusTestingPages/Corpus-Testing-14.md#1449-ecc83-pp_v2).
 
@@ -45,4 +45,4 @@ Board 1,449 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1448 ecc83-pp](b1448b_kicad-source-mirror_ecc83-pp.md) | [1450 interf_u](b1450b_kicad-source-mirror_interf-u.md) |
+| [1448. ecc83-pp](b1448b_kicad-source-mirror_ecc83-pp.md) | [1450. interf_u](b1450b_kicad-source-mirror_interf-u.md) |

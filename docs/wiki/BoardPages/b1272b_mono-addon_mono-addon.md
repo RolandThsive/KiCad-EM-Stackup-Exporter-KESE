@@ -1,4 +1,4 @@
-# 1272 mono_addon
+# 1272. mono_addon
 
 Board 1,272 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 12](../CorpusTestingPages/Corpus-Testing-12.md#1272-mono_addon).
 
@@ -45,4 +45,4 @@ Board 1,272 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1271 intergalaktik](b1271b_KiCad-PCB_intergalaktik.md) | [1273 ulx4m-panel](b1273b_ULX4M_ulx4m-panel.md) |
+| [1271. intergalaktik](b1271b_KiCad-PCB_intergalaktik.md) | [1273. ulx4m-panel](b1273b_ULX4M_ulx4m-panel.md) |

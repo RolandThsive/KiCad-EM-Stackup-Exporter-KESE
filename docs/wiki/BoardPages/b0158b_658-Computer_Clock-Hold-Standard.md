@@ -1,4 +1,4 @@
-# 158 Clock Hold Standard
+# 158. Clock Hold Standard
 
 Board 158 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 2](../CorpusTestingPages/Corpus-Testing-02.md#158-clock-hold-standard).
 
@@ -45,4 +45,4 @@ Board 158 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [157 Clock Hold Select](b0157b_658-Computer_Clock-Hold-Select.md) | [159 Clock Transition](b0159b_658-Computer_Clock-Transition.md) |
+| [157. Clock Hold Select](b0157b_658-Computer_Clock-Hold-Select.md) | [159. Clock Transition](b0159b_658-Computer_Clock-Transition.md) |

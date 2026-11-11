@@ -1,4 +1,4 @@
-# 242 W65C816 Power
+# 242. W65C816 Power
 
 Board 242 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 3](../CorpusTestingPages/Corpus-Testing-03.md#242-w65c816-power).
 
@@ -45,4 +45,4 @@ Board 242 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [241 W65C816 Opcode Display](b0241b_658-Computer_W65C816-Opcode-Display.md) | [243 PS2 Board](b0243b_658-Computer_PS2-Board.md) |
+| [241. W65C816 Opcode Display](b0241b_658-Computer_W65C816-Opcode-Display.md) | [243. PS2 Board](b0243b_658-Computer_PS2-Board.md) |

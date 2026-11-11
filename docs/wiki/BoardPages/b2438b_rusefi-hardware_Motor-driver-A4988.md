@@ -1,4 +1,4 @@
-# 2438 Motor_driver_A4988
+# 2438. Motor_driver_A4988
 
 Board 2,438 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 23](../CorpusTestingPages/Corpus-Testing-23.md#2438-motor_driver_a4988).
 
@@ -45,4 +45,4 @@ Board 2,438 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2437 zMRETestFixture](b2437b_hw-microrusefi_zMRETestFixture.md) | [2439 Breakout-24pin-superseal](b2439b_rusefi-hardware_Breakout-24pin-superseal.md) |
+| [2437. zMRETestFixture](b2437b_hw-microrusefi_zMRETestFixture.md) | [2439. Breakout-24pin-superseal](b2439b_rusefi-hardware_Breakout-24pin-superseal.md) |

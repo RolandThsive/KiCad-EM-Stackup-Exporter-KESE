@@ -1,4 +1,4 @@
-# 1104 main_board
+# 1104. main_board
 
 Board 1,104 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 11](../CorpusTestingPages/Corpus-Testing-11.md#1104-main_board).
 
@@ -45,4 +45,4 @@ Board 1,104 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1103 usb](b1103b_daisho_usb.md) | [1105 azalea](b1105b_greatfet-hardware_azalea.md) |
+| [1103. usb](b1103b_daisho_usb.md) | [1105. azalea](b1105b_greatfet-hardware_azalea.md) |

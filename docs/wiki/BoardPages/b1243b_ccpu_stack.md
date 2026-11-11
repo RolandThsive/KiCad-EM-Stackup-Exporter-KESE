@@ -1,4 +1,4 @@
-# 1243 stack
+# 1243. stack
 
 Board 1,243 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 12](../CorpusTestingPages/Corpus-Testing-12.md#1243-stack).
 
@@ -45,4 +45,4 @@ Board 1,243 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1242 registers](b1242b_ccpu_registers.md) | [1244 vario](b1244b_ccpu_vario.md) |
+| [1242. registers](b1242b_ccpu_registers.md) | [1244. vario](b1244b_ccpu_vario.md) |

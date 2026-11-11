@@ -1,4 +1,4 @@
-# 2969 NanoS3_Carrier
+# 2969. NanoS3_Carrier
 
 Board 2,969 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 28](../CorpusTestingPages/Corpus-Testing-28.md#2969-nanos3_carrier).
 
@@ -45,4 +45,4 @@ Board 2,969 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2968 uECG_v4_52_lsm_tlv](b2968b_uECG-pcb_uECG-v4-52-lsm-tlv.md) | [2970 OMGS3_Carrier_R1](b2970b_esp32s3_OMGS3-Carrier-R1.md) |
+| [2968. uECG_v4_52_lsm_tlv](b2968b_uECG-pcb_uECG-v4-52-lsm-tlv.md) | [2970. OMGS3_Carrier_R1](b2970b_esp32s3_OMGS3-Carrier-R1.md) |

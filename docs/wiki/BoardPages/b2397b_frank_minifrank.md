@@ -1,4 +1,4 @@
-# 2397 minifrank
+# 2397. minifrank
 
 Board 2,397 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 23](../CorpusTestingPages/Corpus-Testing-23.md#2397-minifrank).
 
@@ -45,4 +45,4 @@ Board 2,397 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2396 microfrank](b2396b_frank_microfrank.md) | [2398 nyx](b2398b_frank_nyx.md) |
+| [2396. microfrank](b2396b_frank_microfrank.md) | [2398. nyx](b2398b_frank_nyx.md) |

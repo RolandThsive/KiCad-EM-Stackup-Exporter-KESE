@@ -1,4 +1,4 @@
-# 1012 GR8RAM
+# 1012. GR8RAM
 
 Board 1,012 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 10](../CorpusTestingPages/Corpus-Testing-10.md#1012-gr8ram).
 
@@ -44,4 +44,4 @@ Board 1,012 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1011 vera-module-rev4](b1011b_vera-module_vera-module-rev4.md) | [1013 NuBus-ESP32](b1013b_NuBus-ESP32_NuBus-ESP32.md) |
+| [1011. vera-module-rev4](b1011b_vera-module_vera-module-rev4.md) | [1013. NuBus-ESP32](b1013b_NuBus-ESP32_NuBus-ESP32.md) |

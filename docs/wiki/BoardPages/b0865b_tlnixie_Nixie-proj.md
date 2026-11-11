@@ -1,4 +1,4 @@
-# 865 Nixie_proj
+# 865. Nixie_proj
 
 Board 865 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 9](../CorpusTestingPages/Corpus-Testing-09.md#865-nixie_proj).
 
@@ -44,4 +44,4 @@ Board 865 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [864 Piunora](b0864b_Piunora-Hardware_Piunora.md) | [866 Nixie_proj_conflict-20171112-163801](b0866b_tlnixie_Nixie-proj-conflict-20171112-163801.md) |
+| [864. Piunora](b0864b_Piunora-Hardware_Piunora.md) | [866. Nixie_proj_conflict-20171112-163801](b0866b_tlnixie_Nixie-proj-conflict-20171112-163801.md) |

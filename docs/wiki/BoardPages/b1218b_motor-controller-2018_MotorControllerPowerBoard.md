@@ -1,4 +1,4 @@
-# 1218 MotorControllerPowerBoard
+# 1218. MotorControllerPowerBoard
 
 Board 1,218 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 12](../CorpusTestingPages/Corpus-Testing-12.md#1218-motorcontrollerpowerboard).
 
@@ -45,4 +45,4 @@ Board 1,218 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1217 motor-controller-hw](b1217b_motor-controller-2018_motor-controller-hw.md) | [1219 voltage-regulator-module](b1219b_motor-controller-2018_voltage-regulator-module.md) |
+| [1217. motor-controller-hw](b1217b_motor-controller-2018_motor-controller-hw.md) | [1219. voltage-regulator-module](b1219b_motor-controller-2018_voltage-regulator-module.md) |

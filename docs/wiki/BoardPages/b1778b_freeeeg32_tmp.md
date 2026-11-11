@@ -1,4 +1,4 @@
-# 1778 tmp
+# 1778. tmp
 
 Board 1,778 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 17](../CorpusTestingPages/Corpus-Testing-17.md#1778-tmp).
 
@@ -44,4 +44,4 @@ Board 1,778 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1777 FreeEEG32](b1777b_freeeeg32_FreeEEG32.md) | [1779 nu8051-ufo-target-board](b1779b_chipwhisperer-target-cw308t_nu8051-ufo-target-board.md) |
+| [1777. FreeEEG32](b1777b_freeeeg32_FreeEEG32.md) | [1779. nu8051-ufo-target-board](b1779b_chipwhisperer-target-cw308t_nu8051-ufo-target-board.md) |

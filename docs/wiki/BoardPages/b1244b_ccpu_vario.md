@@ -1,4 +1,4 @@
-# 1244 vario
+# 1244. vario
 
 Board 1,244 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 12](../CorpusTestingPages/Corpus-Testing-12.md#1244-vario).
 
@@ -45,4 +45,4 @@ Board 1,244 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1243 stack](b1243b_ccpu_stack.md) | [1245 vga](b1245b_ccpu_vga.md) |
+| [1243. stack](b1243b_ccpu_stack.md) | [1245. vga](b1245b_ccpu_vga.md) |

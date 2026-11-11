@@ -1,4 +1,4 @@
-# 2218 1u_panel_breakout
+# 2218. 1u_panel_breakout
 
 Board 2,218 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 21](../CorpusTestingPages/Corpus-Testing-21.md#2218-1u_panel_breakout).
 
@@ -46,4 +46,4 @@ Board 2,218 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2217 solar-module-1u-si](b2217b_oresat-solar-hardware_solar-module-1u-si_solar-module-1u-si.md) | [2219 connector-breakout](b2219b_oresat-solar-simulator-hardware_connector-breakout.md) |
+| [2217. solar-module-1u-si](b2217b_oresat-solar-hardware_solar-module-1u-si_solar-module-1u-si.md) | [2219. connector-breakout](b2219b_oresat-solar-simulator-hardware_connector-breakout.md) |

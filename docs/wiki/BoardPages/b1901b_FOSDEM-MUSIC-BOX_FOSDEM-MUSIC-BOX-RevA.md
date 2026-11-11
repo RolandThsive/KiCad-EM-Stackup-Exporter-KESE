@@ -1,4 +1,4 @@
-# 1901 FOSDEM-MUSIC-BOX_RevA
+# 1901. FOSDEM-MUSIC-BOX_RevA
 
 Board 1,901 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 18](../CorpusTestingPages/Corpus-Testing-18.md#1901-fosdem-music-box_reva).
 
@@ -45,4 +45,4 @@ Board 1,901 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1900 Flash-e_Rev_C](b1900b_Flash-e_Flash-e-Rev-C.md) | [1902 GateMateA1-EVB_Rev_A](b1902b_GateMateA1-EVB_GateMateA1-EVB-Rev-A.md) |
+| [1900. Flash-e_Rev_C](b1900b_Flash-e_Flash-e-Rev-C.md) | [1902. GateMateA1-EVB_Rev_A](b1902b_GateMateA1-EVB_GateMateA1-EVB-Rev-A.md) |

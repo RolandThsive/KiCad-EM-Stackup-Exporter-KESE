@@ -1,4 +1,4 @@
-# 2304 healthylink_gpio_v2
+# 2304. healthylink_gpio_v2
 
 Board 2,304 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 22](../CorpusTestingPages/Corpus-Testing-22.md#2304-healthylink_gpio_v2).
 
@@ -45,4 +45,4 @@ Board 2,304 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2303 healthylink_compute_v5](b2303b_protocentral-healthypi6-hardware_healthylink-compute-v5.md) | [2305 healthypi_6_display_v7](b2305b_protocentral-healthypi6-hardware_healthypi-6-display-v7.md) |
+| [2303. healthylink_compute_v5](b2303b_protocentral-healthypi6-hardware_healthylink-compute-v5.md) | [2305. healthypi_6_display_v7](b2305b_protocentral-healthypi6-hardware_healthypi-6-display-v7.md) |

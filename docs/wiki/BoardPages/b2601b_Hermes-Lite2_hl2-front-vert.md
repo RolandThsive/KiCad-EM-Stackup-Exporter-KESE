@@ -1,4 +1,4 @@
-# 2601 hl2-front-vert
+# 2601. hl2-front-vert
 
 Board 2,601 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 25](../CorpusTestingPages/Corpus-Testing-25.md#2601-hl2-front-vert).
 
@@ -46,4 +46,4 @@ Board 2,601 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2600 hl2-front-horiz](b2600b_Hermes-Lite2_hl2-front-horiz.md) | [2602 hl2-front](b2602b_Hermes-Lite2_hl2-front.md) |
+| [2600. hl2-front-horiz](b2600b_Hermes-Lite2_hl2-front-horiz.md) | [2602. hl2-front](b2602b_Hermes-Lite2_hl2-front.md) |

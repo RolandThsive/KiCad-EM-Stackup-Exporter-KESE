@@ -1,4 +1,4 @@
-# 525 ROM Interposer board
+# 525. ROM Interposer board
 
 Board 525 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 5](../CorpusTestingPages/Corpus-Testing-05.md#525-rom-interposer-board).
 
@@ -45,4 +45,4 @@ Board 525 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [524 ROM Interposer board](b0524b_Mega-IIe_kicad-files-rev1-ROM-Interposer-board_ROM-Interposer-board.md) | [526 servid-rp2040-hdmi proto rev1](b0526b_Mega-IIe_servid-rp2040-hdmi-proto-rev1.md) |
+| [524. ROM Interposer board](b0524b_Mega-IIe_kicad-files-rev1-ROM-Interposer-board_ROM-Interposer-board.md) | [526. servid-rp2040-hdmi proto rev1](b0526b_Mega-IIe_servid-rp2040-hdmi-proto-rev1.md) |

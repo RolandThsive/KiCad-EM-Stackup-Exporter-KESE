@@ -1,4 +1,4 @@
-# 2721 BSPD
+# 2721. BSPD
 
 Board 2,721 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 26](../CorpusTestingPages/Corpus-Testing-26.md#2721-bspd).
 
@@ -45,4 +45,4 @@ Board 2,721 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2720 brake-light](b2720b_pcb_brake-light.md) | [2722 can-repeater](b2722b_pcb_can-repeater.md) |
+| [2720. brake-light](b2720b_pcb_brake-light.md) | [2722. can-repeater](b2722b_pcb_can-repeater.md) |

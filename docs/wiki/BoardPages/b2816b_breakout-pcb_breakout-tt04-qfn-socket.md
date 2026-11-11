@@ -1,4 +1,4 @@
-# 2816 breakout-tt04-qfn-socket
+# 2816. breakout-tt04-qfn-socket
 
 Board 2,816 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 27](../CorpusTestingPages/Corpus-Testing-27.md#2816-breakout-tt04-qfn-socket).
 
@@ -45,4 +45,4 @@ Board 2,816 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2815 breakout-sky-qfn](b2815b_breakout-pcb_breakout-sky-qfn.md) | [2817 breakout-tt06-qfn-socket](b2817b_breakout-pcb_breakout-tt06-qfn-socket.md) |
+| [2815. breakout-sky-qfn](b2815b_breakout-pcb_breakout-sky-qfn.md) | [2817. breakout-tt06-qfn-socket](b2817b_breakout-pcb_breakout-tt06-qfn-socket.md) |

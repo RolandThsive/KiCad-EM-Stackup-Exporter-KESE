@@ -1,4 +1,4 @@
-# 1319 Main_10E1S
+# 1319. Main_10E1S
 
 Board 1,319 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 13](../CorpusTestingPages/Corpus-Testing-13.md#1319-main_10e1s).
 
@@ -45,4 +45,4 @@ Board 1,319 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1318 Main_20M2](b1318b_pcie-switch-2_Main-20M2.md) | [1320 Main_10E1S](b1320b_pcie-switch-2_outputs-PCIe-E1S-82x45-RevR-Main-10E1S_Main-10E1S.md) |
+| [1318. Main_20M2](b1318b_pcie-switch-2_Main-20M2.md) | [1320. Main_10E1S](b1320b_pcie-switch-2_outputs-PCIe-E1S-82x45-RevR-Main-10E1S_Main-10E1S.md) |

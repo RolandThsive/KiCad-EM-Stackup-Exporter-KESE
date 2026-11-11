@@ -1,4 +1,4 @@
-# 517 MegaII Breakout
+# 517. MegaII Breakout
 
 Board 517 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 5](../CorpusTestingPages/Corpus-Testing-05.md#517-megaii-breakout).
 
@@ -45,4 +45,4 @@ Board 517 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [516 gd VGC proto pcb](b0516b_Mega-IIe_kicad-files-gd-VGC-proto-pcb_gd-VGC-proto-pcb.md) | [518 gd rev2 backplane](b0518b_Mega-IIe_gd-rev2-backplane.md) |
+| [516. gd VGC proto pcb](b0516b_Mega-IIe_kicad-files-gd-VGC-proto-pcb_gd-VGC-proto-pcb.md) | [518. gd rev2 backplane](b0518b_Mega-IIe_gd-rev2-backplane.md) |

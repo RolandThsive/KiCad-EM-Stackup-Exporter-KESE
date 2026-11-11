@@ -1,4 +1,4 @@
-# 1471 z2_io
+# 1471. z2_io
 
 Board 1,471 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 14](../CorpusTestingPages/Corpus-Testing-14.md#1471-z2_io).
 
@@ -45,4 +45,4 @@ Board 1,471 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1470 keyb2_nofill](b1470b_ZX-Spectrum-diy_keyb2-nofill.md) | [1472 z2_io_test01](b1472b_ZX-Spectrum-diy_z2-io-test01.md) |
+| [1470. keyb2_nofill](b1470b_ZX-Spectrum-diy_keyb2-nofill.md) | [1472. z2_io_test01](b1472b_ZX-Spectrum-diy_z2-io-test01.md) |

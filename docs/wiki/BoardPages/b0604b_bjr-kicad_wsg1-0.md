@@ -1,4 +1,4 @@
-# 604 wsg1.0
+# 604. wsg1.0
 
 Board 604 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 6](../CorpusTestingPages/Corpus-Testing-06.md#604-wsg10).
 
@@ -45,4 +45,4 @@ Board 604 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [603 AD5626_Breakout](b0603b_bjr-kicad_AD5626-Breakout.md) | [605 mainbox1.0](b0605b_bjr-kicad_21xt-02-mainbox-mainbox1-0_mainbox1-0.md) |
+| [603. AD5626_Breakout](b0603b_bjr-kicad_AD5626-Breakout.md) | [605. mainbox1.0](b0605b_bjr-kicad_21xt-02-mainbox-mainbox1-0_mainbox1-0.md) |

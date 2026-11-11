@@ -1,4 +1,4 @@
-# 1979 RP2350-PICO2-XXL_Rev_B
+# 1979. RP2350-PICO2-XXL_Rev_B
 
 Board 1,979 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 19](../CorpusTestingPages/Corpus-Testing-19.md#1979-rp2350-pico2-xxl_rev_b).
 
@@ -45,4 +45,4 @@ Board 1,979 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1978 RP2350-PICO2-XXL_Rev_A](b1978b_RP2350-PICO2-XXL_RP2350-PICO2-XXL-Rev-A.md) | [1980 RP2350-PICO2-XXL_Rev_C](b1980b_RP2350-PICO2-XXL_RP2350-PICO2-XXL-Rev-C.md) |
+| [1978. RP2350-PICO2-XXL_Rev_A](b1978b_RP2350-PICO2-XXL_RP2350-PICO2-XXL-Rev-A.md) | [1980. RP2350-PICO2-XXL_Rev_C](b1980b_RP2350-PICO2-XXL_RP2350-PICO2-XXL-Rev-C.md) |

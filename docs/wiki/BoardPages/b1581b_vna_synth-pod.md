@@ -1,4 +1,4 @@
-# 1581 synth_pod
+# 1581. synth_pod
 
 Board 1,581 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 15](../CorpusTestingPages/Corpus-Testing-15.md#1581-synth_pod).
 
@@ -46,4 +46,4 @@ Board 1,581 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1580 mm_synth](b1580b_vna_mm-synth.md) | [1582 vna_mm_ref](b1582b_vna_vna-mm-ref.md) |
+| [1580. mm_synth](b1580b_vna_mm-synth.md) | [1582. vna_mm_ref](b1582b_vna_vna-mm-ref.md) |

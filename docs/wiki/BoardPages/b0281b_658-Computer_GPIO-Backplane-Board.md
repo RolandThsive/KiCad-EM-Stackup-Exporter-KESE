@@ -1,4 +1,4 @@
-# 281 GPIO Backplane Board
+# 281. GPIO Backplane Board
 
 Board 281 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 3](../CorpusTestingPages/Corpus-Testing-03.md#281-gpio-backplane-board).
 
@@ -45,4 +45,4 @@ Board 281 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [280 GPIO Address Decode](b0280b_658-Computer_GPIO-Address-Decode.md) | [282 GPIO Bus](b0282b_658-Computer_GPIO-Bus.md) |
+| [280. GPIO Address Decode](b0280b_658-Computer_GPIO-Address-Decode.md) | [282. GPIO Bus](b0282b_658-Computer_GPIO-Bus.md) |

@@ -1,4 +1,4 @@
-# 2346 ArtixDevBoard
+# 2346. ArtixDevBoard
 
 Board 2,346 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 22](../CorpusTestingPages/Corpus-Testing-22.md#2346-artixdevboard).
 
@@ -44,4 +44,4 @@ Board 2,346 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2345 AmplifierHat](b2345b_artixdevboard_AmplifierHat.md) | [2347 scarlet-8088](b2347b_scarlet-8088_scarlet-8088.md) |
+| [2345. AmplifierHat](b2345b_artixdevboard_AmplifierHat.md) | [2347. scarlet-8088](b2347b_scarlet-8088_scarlet-8088.md) |

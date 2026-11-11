@@ -1,4 +1,4 @@
-# 1406 OSO-SWAT-C1-rounded
+# 1406. OSO-SWAT-C1-rounded
 
 Board 1,406 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 14](../CorpusTestingPages/Corpus-Testing-14.md#1406-oso-swat-c1-rounded).
 
@@ -45,4 +45,4 @@ Board 1,406 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1405 OSO-SWAT-C1-jig](b1405b_Sensor-Watch_OSO-SWAT-C1-jig.md) | [1407 OSO-SWAT-C1](b1407b_Sensor-Watch_OSO-SWAT-C1.md) |
+| [1405. OSO-SWAT-C1-jig](b1405b_Sensor-Watch_OSO-SWAT-C1-jig.md) | [1407. OSO-SWAT-C1](b1407b_Sensor-Watch_OSO-SWAT-C1.md) |

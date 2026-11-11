@@ -1,4 +1,4 @@
-# 2805 evse-v4b
+# 2805. evse-v4b
 
 Board 2,805 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 26](../CorpusTestingPages/Corpus-Testing-26.md#2805-evse-v4b).
 
@@ -45,4 +45,4 @@ Board 2,805 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2804 evse-v4](b2804b_evse-v4-bricklet_evse-v4.md) | [2806 red](b2806b_red-brick_red.md) |
+| [2804. evse-v4](b2804b_evse-v4-bricklet_evse-v4.md) | [2806. red](b2806b_red-brick_red.md) |

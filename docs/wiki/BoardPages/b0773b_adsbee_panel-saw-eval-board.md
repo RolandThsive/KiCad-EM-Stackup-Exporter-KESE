@@ -1,4 +1,4 @@
-# 773 panel_saw_eval_board
+# 773. panel_saw_eval_board
 
 Board 773 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 8](../CorpusTestingPages/Corpus-Testing-08.md#773-panel_saw_eval_board).
 
@@ -46,4 +46,4 @@ Board 773 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [772 panel_proto_tracking_comparator_board](b0772b_adsbee_panel-proto-tracking-comparator-board.md) | [774 proto_ads_bee_detector_board](b0774b_adsbee_proto-ads-bee-detector-board.md) |
+| [772. panel_proto_tracking_comparator_board](b0772b_adsbee_panel-proto-tracking-comparator-board.md) | [774. proto_ads_bee_detector_board](b0774b_adsbee_proto-ads-bee-detector-board.md) |

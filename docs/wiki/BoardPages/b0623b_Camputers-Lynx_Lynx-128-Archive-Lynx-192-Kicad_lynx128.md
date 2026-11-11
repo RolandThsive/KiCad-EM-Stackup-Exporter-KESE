@@ -1,4 +1,4 @@
-# 623 lynx128
+# 623. lynx128
 
 Board 623 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 6](../CorpusTestingPages/Corpus-Testing-06.md#623-lynx128).
 
@@ -45,4 +45,4 @@ Board 623 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [622 Acorn-A3010](b0622b_Acorn-A3010_Acorn-A3010.md) | [624 lynx128](b0624b_Camputers-Lynx_Lynx-128-Kicad_lynx128.md) |
+| [622. Acorn-A3010](b0622b_Acorn-A3010_Acorn-A3010.md) | [624. lynx128](b0624b_Camputers-Lynx_Lynx-128-Kicad_lynx128.md) |

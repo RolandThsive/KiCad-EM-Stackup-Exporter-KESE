@@ -1,4 +1,4 @@
-# 2274 meta_breakout
+# 2274. meta_breakout
 
 Board 2,274 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 22](../CorpusTestingPages/Corpus-Testing-22.md#2274-meta_breakout).
 
@@ -45,4 +45,4 @@ Board 2,274 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2273 VESC-controller](b2273b_vesc-controller_VESC-controller.md) | [2275 paracard-template](b2275b_parallella-hw_paracard-template.md) |
+| [2273. VESC-controller](b2273b_vesc-controller_VESC-controller.md) | [2275. paracard-template](b2275b_parallella-hw_paracard-template.md) |

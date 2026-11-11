@@ -1,4 +1,4 @@
-# 1810 Bike-TSL-Kit_RevA
+# 1810. Bike-TSL-Kit_RevA
 
 Board 1,810 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 17](../CorpusTestingPages/Corpus-Testing-17.md#1810-bike-tsl-kit_reva).
 
@@ -45,4 +45,4 @@ Board 1,810 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1809 BB-TB6612FNG-Rev_A](b1809b_BB-TB6612_BB-TB6612FNG-Rev-A.md) | [1811 DCDC-50-5-12_Rev_A1](b1811b_DCDC-50-5-12_DCDC-50-5-12-Rev-A1.md) |
+| [1809. BB-TB6612FNG-Rev_A](b1809b_BB-TB6612_BB-TB6612FNG-Rev-A.md) | [1811. DCDC-50-5-12_Rev_A1](b1811b_DCDC-50-5-12_DCDC-50-5-12-Rev-A1.md) |

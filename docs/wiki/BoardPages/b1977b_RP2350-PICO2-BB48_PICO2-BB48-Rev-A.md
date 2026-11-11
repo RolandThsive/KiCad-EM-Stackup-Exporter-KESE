@@ -1,4 +1,4 @@
-# 1977 PICO2-BB48_Rev_A
+# 1977. PICO2-BB48_Rev_A
 
 Board 1,977 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 19](../CorpusTestingPages/Corpus-Testing-19.md#1977-pico2-bb48_rev_a).
 
@@ -45,4 +45,4 @@ Board 1,977 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1976 RP2040pc_Rev_B](b1976b_RP2040pc_RP2040pc-Rev-B.md) | [1978 RP2350-PICO2-XXL_Rev_A](b1978b_RP2350-PICO2-XXL_RP2350-PICO2-XXL-Rev-A.md) |
+| [1976. RP2040pc_Rev_B](b1976b_RP2040pc_RP2040pc-Rev-B.md) | [1978. RP2350-PICO2-XXL_Rev_A](b1978b_RP2350-PICO2-XXL_RP2350-PICO2-XXL-Rev-A.md) |

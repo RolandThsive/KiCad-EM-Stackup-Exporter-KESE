@@ -1,4 +1,4 @@
-# 1116 neighbor-template
+# 1116. neighbor-template
 
 Board 1,116 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 11](../CorpusTestingPages/Corpus-Testing-11.md#1116-neighbor-template).
 
@@ -45,4 +45,4 @@ Board 1,116 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1115 narcissus](b1115b_greatfet-hardware_narcissus.md) | [1117 quince](b1117b_greatfet-hardware_quince.md) |
+| [1115. narcissus](b1115b_greatfet-hardware_narcissus.md) | [1117. quince](b1117b_greatfet-hardware_quince.md) |

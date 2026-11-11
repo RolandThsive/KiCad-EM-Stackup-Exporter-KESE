@@ -1,4 +1,4 @@
-# 2118 ftp
+# 2118. ftp
 
 Board 2,118 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 20](../CorpusTestingPages/Corpus-Testing-20.md#2118-ftp).
 
@@ -45,4 +45,4 @@ Board 2,118 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2117 datum](b2117b_lumenpnp_datum.md) | [2119 ftp0402](b2119b_lumenpnp_ftp0402.md) |
+| [2117. datum](b2117b_lumenpnp_datum.md) | [2119. ftp0402](b2119b_lumenpnp_ftp0402.md) |

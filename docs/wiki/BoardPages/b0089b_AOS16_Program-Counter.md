@@ -1,4 +1,4 @@
-# 89 Program Counter
+# 89. Program Counter
 
 Board 89 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 1](../CorpusTestingPages/Corpus-Testing-01.md#89-program-counter).
 
@@ -45,4 +45,4 @@ Board 89 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page
 
 | Previous | Next |
 |:---|---:|
-| [88 Memory Controller](b0088b_AOS16_Memory-Controller.md) | [90 reg4x16](b0090b_AOS16_reg4x16.md) |
+| [88. Memory Controller](b0088b_AOS16_Memory-Controller.md) | [90. reg4x16](b0090b_AOS16_reg4x16.md) |

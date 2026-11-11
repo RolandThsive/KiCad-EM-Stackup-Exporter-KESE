@@ -1,4 +1,4 @@
-# 252 SD Card Read Signals
+# 252. SD Card Read Signals
 
 Board 252 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 3](../CorpusTestingPages/Corpus-Testing-03.md#252-sd-card-read-signals).
 
@@ -45,4 +45,4 @@ Board 252 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [251 SD Card Read Function](b0251b_658-Computer_SD-Card-Read-Function.md) | [253 SD Card Write Data](b0253b_658-Computer_SD-Card-Write-Data.md) |
+| [251. SD Card Read Function](b0251b_658-Computer_SD-Card-Read-Function.md) | [253. SD Card Write Data](b0253b_658-Computer_SD-Card-Write-Data.md) |

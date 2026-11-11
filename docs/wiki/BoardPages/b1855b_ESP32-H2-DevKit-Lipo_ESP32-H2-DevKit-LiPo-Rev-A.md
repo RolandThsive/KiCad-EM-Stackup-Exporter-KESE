@@ -1,4 +1,4 @@
-# 1855 ESP32-H2-DevKit-LiPo_Rev_A
+# 1855. ESP32-H2-DevKit-LiPo_Rev_A
 
 Board 1,855 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 18](../CorpusTestingPages/Corpus-Testing-18.md#1855-esp32-h2-devkit-lipo_rev_a).
 
@@ -45,4 +45,4 @@ Board 1,855 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1854 ESP32-GATEWAY_Rev_I](b1854b_ESP32-GATEWAY_ESP32-GATEWAY-Rev-I.md) | [1856 ESP32-P4-DevKit_Rev_B](b1856b_ESP32-P4-DevKit_ESP32-P4-DevKit-Rev-B.md) |
+| [1854. ESP32-GATEWAY_Rev_I](b1854b_ESP32-GATEWAY_ESP32-GATEWAY-Rev-I.md) | [1856. ESP32-P4-DevKit_Rev_B](b1856b_ESP32-P4-DevKit_ESP32-P4-DevKit-Rev-B.md) |

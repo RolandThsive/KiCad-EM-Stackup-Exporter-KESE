@@ -1,4 +1,4 @@
-# 1932 MOD-LCD2.8RTP_Rev_D
+# 1932. MOD-LCD2.8RTP_Rev_D
 
 Board 1,932 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 18](../CorpusTestingPages/Corpus-Testing-18.md#1932-mod-lcd28rtp_rev_d).
 
@@ -45,4 +45,4 @@ Board 1,932 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1931 MOD-LCD2.8RTP_Rev_C](b1931b_MOD-LCD2-8RTP_MOD-LCD2-8RTP-Rev-C.md) | [1933 mod-mpu9150](b1933b_MOD-MPU9150_mod-mpu9150.md) |
+| [1931. MOD-LCD2.8RTP_Rev_C](b1931b_MOD-LCD2-8RTP_MOD-LCD2-8RTP-Rev-C.md) | [1933. mod-mpu9150](b1933b_MOD-MPU9150_mod-mpu9150.md) |

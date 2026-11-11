@@ -1,4 +1,4 @@
-# 3023 StarlightEye
+# 3023. StarlightEye
 
 Board 3,023 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 28](../CorpusTestingPages/Corpus-Testing-28.md#3023-starlighteye).
 
@@ -44,4 +44,4 @@ Board 3,023 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [3022 NixieAtomicClock](b3022b_RaspberryPiAtomicNixieClock_NixieAtomicClock.md) | [3024 macpro62_am5](b3024b_the-mac-pro-project_kicad-macpro62-am5-v3_macpro62-am5.md) |
+| [3022. NixieAtomicClock](b3022b_RaspberryPiAtomicNixieClock_NixieAtomicClock.md) | [3024. macpro62_am5](b3024b_the-mac-pro-project_kicad-macpro62-am5-v3_macpro62-am5.md) |

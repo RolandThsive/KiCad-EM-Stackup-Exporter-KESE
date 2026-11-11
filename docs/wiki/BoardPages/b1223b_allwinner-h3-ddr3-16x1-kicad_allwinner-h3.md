@@ -1,4 +1,4 @@
-# 1223 allwinner-h3
+# 1223. allwinner-h3
 
 Board 1,223 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 12](../CorpusTestingPages/Corpus-Testing-12.md#1223-allwinner-h3).
 
@@ -45,4 +45,4 @@ Board 1,223 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1222 ISA_ES688](b1222b_ES688-ISA8_ISA-ES688.md) | [1224 FCCU-v2-schematic-pcb](b1224b_fuel-cell-control-unit-pcb-fccu-v2-1_FCCU-v2-schematic-pcb.md) |
+| [1222. ISA_ES688](b1222b_ES688-ISA8_ISA-ES688.md) | [1224. FCCU-v2-schematic-pcb](b1224b_fuel-cell-control-unit-pcb-fccu-v2-1_FCCU-v2-schematic-pcb.md) |

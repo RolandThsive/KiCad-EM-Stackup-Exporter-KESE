@@ -1,4 +1,4 @@
-# 2139 as5047p_breakout_rev2
+# 2139. as5047p_breakout_rev2
 
 Board 2,139 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 20](../CorpusTestingPages/Corpus-Testing-20.md#2139-as5047p_breakout_rev2).
 
@@ -45,4 +45,4 @@ Board 2,139 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2138 as5047p_breakout](b2138b_oresat-adcs-hardware_as5047p-breakout.md) | [2140 control-stage](b2140b_oresat-adcs-hardware_oresat-rw-board-rev7-control-stage_control-stage.md) |
+| [2138. as5047p_breakout](b2138b_oresat-adcs-hardware_as5047p-breakout.md) | [2140. control-stage](b2140b_oresat-adcs-hardware_oresat-rw-board-rev7-control-stage_control-stage.md) |

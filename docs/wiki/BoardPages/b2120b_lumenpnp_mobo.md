@@ -1,4 +1,4 @@
-# 2120 mobo
+# 2120. mobo
 
 Board 2,120 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 20](../CorpusTestingPages/Corpus-Testing-20.md#2120-mobo).
 
@@ -45,4 +45,4 @@ Board 2,120 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2119 ftp0402](b2119b_lumenpnp_ftp0402.md) | [2121 pi-interface](b2121b_lumenpnp_pi-interface.md) |
+| [2119. ftp0402](b2119b_lumenpnp_ftp0402.md) | [2121. pi-interface](b2121b_lumenpnp_pi-interface.md) |

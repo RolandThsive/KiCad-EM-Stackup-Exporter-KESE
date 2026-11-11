@@ -1,4 +1,4 @@
-# 2849 flags
+# 2849. flags
 
 Board 2,849 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 27](../CorpusTestingPages/Corpus-Testing-27.md#2849-flags).
 
@@ -45,4 +45,4 @@ Board 2,849 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2848 add_sub](b2848b_alu_add-sub.md) | [2850 led_panel_1](b2850b_alu_led-panel-1.md) |
+| [2848. add_sub](b2848b_alu_add-sub.md) | [2850. led_panel_1](b2850b_alu_led-panel-1.md) |

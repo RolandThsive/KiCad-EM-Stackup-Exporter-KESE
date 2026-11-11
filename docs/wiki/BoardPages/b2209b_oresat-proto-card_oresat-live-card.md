@@ -1,4 +1,4 @@
-# 2209 oresat-live-card
+# 2209. oresat-live-card
 
 Board 2,209 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 21](../CorpusTestingPages/Corpus-Testing-21.md#2209-oresat-live-card).
 
@@ -45,4 +45,4 @@ Board 2,209 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2208 HGS_Reflector](b2208b_oresat-live-handheld-ground-station_HGS-Reflector.md) | [2210 oresat-proto-card](b2210b_oresat-proto-card_m0-proto-card_oresat-proto-card.md) |
+| [2208. HGS_Reflector](b2208b_oresat-live-handheld-ground-station_HGS-Reflector.md) | [2210. oresat-proto-card](b2210b_oresat-proto-card_m0-proto-card_oresat-proto-card.md) |

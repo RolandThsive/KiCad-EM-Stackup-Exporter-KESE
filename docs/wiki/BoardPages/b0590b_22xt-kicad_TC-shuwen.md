@@ -1,4 +1,4 @@
-# 590 TC_shuwen
+# 590. TC_shuwen
 
 Board 590 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 6](../CorpusTestingPages/Corpus-Testing-06.md#590-tc_shuwen).
 
@@ -45,4 +45,4 @@ Board 590 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [589 TC_kent](b0589b_22xt-kicad_TC-kent.md) | [591 thermistor circuit](b0591b_22xt-kicad_thermistor-circuit.md) |
+| [589. TC_kent](b0589b_22xt-kicad_TC-kent.md) | [591. thermistor circuit](b0591b_22xt-kicad_thermistor-circuit.md) |

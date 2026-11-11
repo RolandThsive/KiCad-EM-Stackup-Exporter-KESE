@@ -1,4 +1,4 @@
-# 2366 stmsp
+# 2366. stmsp
 
 Board 2,366 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 22](../CorpusTestingPages/Corpus-Testing-22.md#2366-stmsp).
 
@@ -45,4 +45,4 @@ Board 2,366 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2365 rj45_breakout](b2365b_stmbl_rj45-breakout.md) | [2367 to220_powerstage](b2367b_stmbl_to220-powerstage.md) |
+| [2365. rj45_breakout](b2365b_stmbl_rj45-breakout.md) | [2367. to220_powerstage](b2367b_stmbl_to220-powerstage.md) |

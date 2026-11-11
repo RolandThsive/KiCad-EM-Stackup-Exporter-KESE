@@ -1,4 +1,4 @@
-# 896 TS_Front_Endcap
+# 896. TS_Front_Endcap
 
 Board 896 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 9](../CorpusTestingPages/Corpus-Testing-09.md#896-ts_front_endcap).
 
@@ -45,4 +45,4 @@ Board 896 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [895 TS_Back_Endcap](b0895b_ThunderScope_TS-Back-Endcap.md) | [897 TS_FPGA_Module_Rev2](b0897b_ts-hardware-archive_TS-FPGA-Module-Rev2.md) |
+| [895. TS_Back_Endcap](b0895b_ThunderScope_TS-Back-Endcap.md) | [897. TS_FPGA_Module_Rev2](b0897b_ts-hardware-archive_TS-FPGA-Module-Rev2.md) |

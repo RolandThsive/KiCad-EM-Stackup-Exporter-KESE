@@ -1,4 +1,4 @@
-# 3016 IMUArray_BreakoutBoard
+# 3016. IMUArray_BreakoutBoard
 
 Board 3,016 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 28](../CorpusTestingPages/Corpus-Testing-28.md#3016-imuarray_breakoutboard).
 
@@ -46,4 +46,4 @@ Board 3,016 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [3015 FourThirdsEye](b3015b_FourThirdsEye_FourThirdsEye.md) | [3017 IMUArray_ProcessingBoard](b3017b_IMU-Array_IMUArray-ProcessingBoard.md) |
+| [3015. FourThirdsEye](b3015b_FourThirdsEye_FourThirdsEye.md) | [3017. IMUArray_ProcessingBoard](b3017b_IMU-Array_IMUArray-ProcessingBoard.md) |

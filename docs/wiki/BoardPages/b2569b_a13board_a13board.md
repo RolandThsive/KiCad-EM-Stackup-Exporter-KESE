@@ -1,4 +1,4 @@
-# 2569 a13board
+# 2569. a13board
 
 Board 2,569 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 24](../CorpusTestingPages/Corpus-Testing-24.md#2569-a13board).
 
@@ -44,4 +44,4 @@ Board 2,569 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2568 bitaxeUltra](b2568b_bitaxe_bitaxeUltra.md) | [2570 StepperMotorBreakout](b2570b_smoothieboard2_StepperMotorBreakout.md) |
+| [2568. bitaxeUltra](b2568b_bitaxe_bitaxeUltra.md) | [2570. StepperMotorBreakout](b2570b_smoothieboard2_StepperMotorBreakout.md) |

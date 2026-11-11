@@ -1,4 +1,4 @@
-# 2812 breakout-dip-gf
+# 2812. breakout-dip-gf
 
 Board 2,812 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 27](../CorpusTestingPages/Corpus-Testing-27.md#2812-breakout-dip-gf).
 
@@ -45,4 +45,4 @@ Board 2,812 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2811 ttdbv3-fpga-ICE40UP5k](b2811b_breakout-pcb_ttdbv3-fpga-ICE40UP5k.md) | [2813 breakout-ihp-qfn](b2813b_breakout-pcb_breakout-ihp-qfn.md) |
+| [2811. ttdbv3-fpga-ICE40UP5k](b2811b_breakout-pcb_ttdbv3-fpga-ICE40UP5k.md) | [2813. breakout-ihp-qfn](b2813b_breakout-pcb_breakout-ihp-qfn.md) |

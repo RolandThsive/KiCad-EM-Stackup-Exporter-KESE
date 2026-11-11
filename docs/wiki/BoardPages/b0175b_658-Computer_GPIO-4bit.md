@@ -1,4 +1,4 @@
-# 175 GPIO 4bit
+# 175. GPIO 4bit
 
 Board 175 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 2](../CorpusTestingPages/Corpus-Testing-02.md#175-gpio-4bit).
 
@@ -45,4 +45,4 @@ Board 175 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [174 GPIO 16bit](b0174b_658-Computer_GPIO-16bit.md) | [176 Main Address Buffer](b0176b_658-Computer_Main-Address-Buffer.md) |
+| [174. GPIO 16bit](b0174b_658-Computer_GPIO-16bit.md) | [176. Main Address Buffer](b0176b_658-Computer_Main-Address-Buffer.md) |

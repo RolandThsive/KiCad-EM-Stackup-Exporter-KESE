@@ -1,4 +1,4 @@
-# 2603 hl2-panel
+# 2603. hl2-panel
 
 Board 2,603 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 25](../CorpusTestingPages/Corpus-Testing-25.md#2603-hl2-panel).
 
@@ -46,4 +46,4 @@ Board 2,603 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2602 hl2-front](b2602b_Hermes-Lite2_hl2-front.md) | [2604 endcap](b2604b_Hermes-Lite2_hardware-enclosure-endcaps-kd9s-hl2-55b-hl2-55b-v_endcap.md) |
+| [2602. hl2-front](b2602b_Hermes-Lite2_hl2-front.md) | [2604. endcap](b2604b_Hermes-Lite2_hardware-enclosure-endcaps-kd9s-hl2-55b-hl2-55b-v_endcap.md) |

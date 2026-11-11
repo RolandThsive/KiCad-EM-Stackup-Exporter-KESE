@@ -1,4 +1,4 @@
-# 1369 reform2-motherboard25
+# 1369. reform2-motherboard25
 
 Board 1,369 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 13](../CorpusTestingPages/Corpus-Testing-13.md#1369-reform2-motherboard25).
 
@@ -45,4 +45,4 @@ Board 1,369 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1368 reform2-motherboard](b1368b_reform_reform2-motherboard.md) | [1370 reform2-oled](b1370b_reform_reform2-oled.md) |
+| [1368. reform2-motherboard](b1368b_reform_reform2-motherboard.md) | [1370. reform2-oled](b1370b_reform_reform2-oled.md) |

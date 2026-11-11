@@ -1,4 +1,4 @@
-# 417 thunderbolt-gpu-adapter
+# 417. thunderbolt-gpu-adapter
 
 Board 417 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 4](../CorpusTestingPages/Corpus-Testing-04.md#417-thunderbolt-gpu-adapter).
 
@@ -44,4 +44,4 @@ Board 417 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [416 thunderbolt-to-10gbe-adapter](b0416b_thunderbolt-10gbe-adapter_thunderbolt-to-10gbe-adapter.md) | [418 thunderbolt-pcie-adapter](b0418b_thunderbolt-pcie-adapter_thunderbolt-pcie-adapter.md) |
+| [416. thunderbolt-to-10gbe-adapter](b0416b_thunderbolt-10gbe-adapter_thunderbolt-to-10gbe-adapter.md) | [418. thunderbolt-pcie-adapter](b0418b_thunderbolt-pcie-adapter_thunderbolt-pcie-adapter.md) |

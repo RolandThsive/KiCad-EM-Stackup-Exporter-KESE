@@ -1,4 +1,4 @@
-# 229 HCP65 Main Memory Address
+# 229. HCP65 Main Memory Address
 
 Board 229 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 3](../CorpusTestingPages/Corpus-Testing-03.md#229-hcp65-main-memory-address).
 
@@ -45,4 +45,4 @@ Board 229 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [228 HCP65 Kernal Mode](b0228b_658-Computer_HCP65-Kernal-Mode.md) | [230 HCP65 Main Memory Data](b0230b_658-Computer_HCP65-Main-Memory-Data.md) |
+| [228. HCP65 Kernal Mode](b0228b_658-Computer_HCP65-Kernal-Mode.md) | [230. HCP65 Main Memory Data](b0230b_658-Computer_HCP65-Main-Memory-Data.md) |

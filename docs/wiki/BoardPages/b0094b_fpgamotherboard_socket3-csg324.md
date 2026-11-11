@@ -1,4 +1,4 @@
-# 94 socket3-csg324
+# 94. socket3-csg324
 
 Board 94 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 1](../CorpusTestingPages/Corpus-Testing-01.md#94-socket3-csg324).
 
@@ -46,4 +46,4 @@ Board 94 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page
 
 | Previous | Next |
 |:---|---:|
-| [93 i386sx-gw2ar18](b0093b_fpgamotherboard_i386sx-gw2ar18.md) | [95 socket3-motherboard](b0095b_fpgamotherboard_socket3-motherboard.md) |
+| [93. i386sx-gw2ar18](b0093b_fpgamotherboard_i386sx-gw2ar18.md) | [95. socket3-motherboard](b0095b_fpgamotherboard_socket3-motherboard.md) |

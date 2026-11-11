@@ -1,4 +1,4 @@
-# 2553 FlightPCB
+# 2553. FlightPCB
 
 Board 2,553 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 24](../CorpusTestingPages/Corpus-Testing-24.md#2553-flightpcb).
 
@@ -45,4 +45,4 @@ Board 2,553 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2552 tulipcc](b2552b_tulipcc_tulipcc.md) | [2554 FlightPCB](b2554b_tsar_v2_FlightPCB.md) |
+| [2552. tulipcc](b2552b_tulipcc_tulipcc.md) | [2554. FlightPCB](b2554b_tsar_v2_FlightPCB.md) |

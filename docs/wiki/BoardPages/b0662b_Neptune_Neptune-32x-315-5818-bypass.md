@@ -1,4 +1,4 @@
-# 662 Neptune-32x-315-5818-bypass
+# 662. Neptune-32x-315-5818-bypass
 
 Board 662 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 7](../CorpusTestingPages/Corpus-Testing-07.md#662-neptune-32x-315-5818-bypass).
 
@@ -45,4 +45,4 @@ Board 662 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [661 Neptune-32x-315-5805-bypass](b0661b_Neptune_Neptune-32x-315-5805-bypass.md) | [663 Neptune-Region-Fix](b0663b_Neptune_Neptune-Region-Fix.md) |
+| [661. Neptune-32x-315-5805-bypass](b0661b_Neptune_Neptune-32x-315-5805-bypass.md) | [663. Neptune-Region-Fix](b0663b_Neptune_Neptune-Region-Fix.md) |

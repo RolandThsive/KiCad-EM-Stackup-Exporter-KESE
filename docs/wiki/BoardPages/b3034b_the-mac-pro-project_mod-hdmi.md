@@ -1,4 +1,4 @@
-# 3034 mod_hdmi
+# 3034. mod_hdmi
 
 Board 3,034 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 29](../CorpusTestingPages/Corpus-Testing-29.md#3034-mod_hdmi).
 
@@ -45,4 +45,4 @@ Board 3,034 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [3033 macpro62-io-board](b3033b_the-mac-pro-project_macpro62-io-board.md) | [3035 mod_usba](b3035b_the-mac-pro-project_mod-usba.md) |
+| [3033. macpro62-io-board](b3033b_the-mac-pro-project_macpro62-io-board.md) | [3035. mod_usba](b3035b_the-mac-pro-project_mod-usba.md) |

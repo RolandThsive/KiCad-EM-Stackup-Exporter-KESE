@@ -1,4 +1,4 @@
-# 568 TMP117_section_5cm
+# 568. TMP117_section_5cm
 
 Board 568 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 6](../CorpusTestingPages/Corpus-Testing-06.md#568-tmp117_section_5cm).
 
@@ -45,4 +45,4 @@ Board 568 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [567 TMP117_section_10cm](b0567b_DxP-sensor-probes_TMP117-section-10cm.md) | [569 Marble](b0569b_Marble_Marble.md) |
+| [567. TMP117_section_10cm](b0567b_DxP-sensor-probes_TMP117-section-10cm.md) | [569. Marble](b0569b_Marble_Marble.md) |

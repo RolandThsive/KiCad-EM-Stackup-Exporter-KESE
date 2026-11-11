@@ -1,4 +1,4 @@
-# 922 BB3plus DVID TFT display
+# 922. BB3plus DVID TFT display
 
 Board 922 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 9](../CorpusTestingPages/Corpus-Testing-09.md#922-bb3plus-dvid-tft-display).
 
@@ -45,4 +45,4 @@ Board 922 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [921 Bare front mask half width](b0921b_eez-bb3plus_Bare-front-mask-half-width.md) | [923 BB3plus CM5 STM32H7 module](b0923b_eez-bb3plus-cm5-mcu_BB3plus-CM5-STM32H7-module.md) |
+| [921. Bare front mask half width](b0921b_eez-bb3plus_Bare-front-mask-half-width.md) | [923. BB3plus CM5 STM32H7 module](b0923b_eez-bb3plus-cm5-mcu_BB3plus-CM5-STM32H7-module.md) |

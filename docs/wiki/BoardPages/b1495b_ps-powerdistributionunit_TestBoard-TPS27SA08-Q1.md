@@ -1,4 +1,4 @@
-# 1495 TestBoard_TPS27SA08-Q1
+# 1495. TestBoard_TPS27SA08-Q1
 
 Board 1,495 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 14](../CorpusTestingPages/Corpus-Testing-14.md#1495-testboard_tps27sa08-q1).
 
@@ -45,4 +45,4 @@ Board 1,495 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1494 PowerDistributionUnit_Mk1](b1494b_ps-powerdistributionunit_PowerDistributionUnit-Mk1.md) | [1496 LibreRouter_MegaBoard](b1496b_librerouter_LibreRouter-MegaBoard.md) |
+| [1494. PowerDistributionUnit_Mk1](b1494b_ps-powerdistributionunit_PowerDistributionUnit-Mk1.md) | [1496. LibreRouter_MegaBoard](b1496b_librerouter_LibreRouter-MegaBoard.md) |

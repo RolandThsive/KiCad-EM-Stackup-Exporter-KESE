@@ -1,4 +1,4 @@
-# 1686 icebreaker++
+# 1686. icebreaker++
 
 Board 1,686 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 16](../CorpusTestingPages/Corpus-Testing-16.md#1686-icebreaker).
 
@@ -45,4 +45,4 @@ Board 1,686 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1685 beagle-wire](b1685b_beagle-wire_beagle-wire.md) | [1687 lofive](b1687b_lofive_lofive.md) |
+| [1685. beagle-wire](b1685b_beagle-wire_beagle-wire.md) | [1687. lofive](b1687b_lofive_lofive.md) |

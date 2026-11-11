@@ -1,4 +1,4 @@
-# 2038 precharge
+# 2038. precharge
 
 Board 2,038 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 19](../CorpusTestingPages/Corpus-Testing-19.md#2038-precharge).
 
@@ -44,4 +44,4 @@ Board 2,038 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2037 air_plus](b2037b_olin-electric-motorsports_air-plus.md) | [2039 data_acquisition_1](b2039b_olin-electric-motorsports_data-acquisition-1.md) |
+| [2037. air_plus](b2037b_olin-electric-motorsports_air-plus.md) | [2039. data_acquisition_1](b2039b_olin-electric-motorsports_data-acquisition-1.md) |

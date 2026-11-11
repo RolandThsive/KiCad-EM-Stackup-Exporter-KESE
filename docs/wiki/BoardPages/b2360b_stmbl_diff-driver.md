@@ -1,4 +1,4 @@
-# 2360 diff_driver
+# 2360. diff_driver
 
 Board 2,360 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 22](../CorpusTestingPages/Corpus-Testing-22.md#2360-diff_driver).
 
@@ -45,4 +45,4 @@ Board 2,360 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2359 Bob](b2359b_stmbl_Bob.md) | [2361 mesabob](b2361b_stmbl_mesabob.md) |
+| [2359. Bob](b2359b_stmbl_Bob.md) | [2361. mesabob](b2361b_stmbl_mesabob.md) |

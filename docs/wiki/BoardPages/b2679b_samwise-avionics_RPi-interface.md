@@ -1,4 +1,4 @@
-# 2679 RPi_interface
+# 2679. RPi_interface
 
 Board 2,679 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 25](../CorpusTestingPages/Corpus-Testing-25.md#2679-rpi_interface).
 
@@ -45,4 +45,4 @@ Board 2,679 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2678 picubed_samwise](b2678b_samwise-avionics_picubed-samwise.md) | [2680 Stationary_X_Panel](b2680b_samwise-avionics_Stationary-X-Panel.md) |
+| [2678. picubed_samwise](b2678b_samwise-avionics_picubed-samwise.md) | [2680. Stationary_X_Panel](b2680b_samwise-avionics_Stationary-X-Panel.md) |

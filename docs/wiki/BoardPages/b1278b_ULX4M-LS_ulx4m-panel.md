@@ -1,4 +1,4 @@
-# 1278 ulx4m_panel
+# 1278. ulx4m_panel
 
 Board 1,278 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 12](../CorpusTestingPages/Corpus-Testing-12.md#1278-ulx4m_panel).
 
@@ -46,4 +46,4 @@ Board 1,278 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1277 ulx4m-ld](b1277b_ULX4M-LD_ulx4m-ld.md) | [1279 ULX4M-PCIe-IO_x4_half](b1279b_ULX4M-PCIe-IO_ULX4M-PCIe-IO-x4-half.md) |
+| [1277. ulx4m-ld](b1277b_ULX4M-LD_ulx4m-ld.md) | [1279. ULX4M-PCIe-IO_x4_half](b1279b_ULX4M-PCIe-IO_ULX4M-PCIe-IO-x4-half.md) |

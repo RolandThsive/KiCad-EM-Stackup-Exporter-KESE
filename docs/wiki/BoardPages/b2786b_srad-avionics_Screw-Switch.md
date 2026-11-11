@@ -1,4 +1,4 @@
-# 2786 Screw Switch
+# 2786. Screw Switch
 
 Board 2,786 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 26](../CorpusTestingPages/Corpus-Testing-26.md#2786-screw-switch).
 
@@ -45,4 +45,4 @@ Board 2,786 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2785 RF4463F30-test-board](b2785b_srad-avionics_RF4463F30-test-board.md) | [2787 high-range-IMU](b2787b_srad-avionics_high-range-IMU.md) |
+| [2785. RF4463F30-test-board](b2785b_srad-avionics_RF4463F30-test-board.md) | [2787. high-range-IMU](b2787b_srad-avionics_high-range-IMU.md) |

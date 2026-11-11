@@ -1,4 +1,4 @@
-# 228 HCP65 Kernal Mode
+# 228. HCP65 Kernal Mode
 
 Board 228 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 3](../CorpusTestingPages/Corpus-Testing-03.md#228-hcp65-kernal-mode).
 
@@ -45,4 +45,4 @@ Board 228 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [227 HCP65 Instruction Code](b0227b_658-Computer_HCP65-Instruction-Code.md) | [229 HCP65 Main Memory Address](b0229b_658-Computer_HCP65-Main-Memory-Address.md) |
+| [227. HCP65 Instruction Code](b0227b_658-Computer_HCP65-Instruction-Code.md) | [229. HCP65 Main Memory Address](b0229b_658-Computer_HCP65-Main-Memory-Address.md) |

@@ -1,4 +1,4 @@
-# 2994 cpu-card
+# 2994. cpu-card
 
 Board 2,994 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 28](../CorpusTestingPages/Corpus-Testing-28.md#2994-cpu-card).
 
@@ -45,4 +45,4 @@ Board 2,994 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2993 lisa-2mb-ram-card](b2993b_lisa-2mb-ram-card_lisa-2mb-ram-card.md) | [2995 altimeter](b2995b_canhw_altimeter.md) |
+| [2993. lisa-2mb-ram-card](b2993b_lisa-2mb-ram-card_lisa-2mb-ram-card.md) | [2995. altimeter](b2995b_canhw_altimeter.md) |

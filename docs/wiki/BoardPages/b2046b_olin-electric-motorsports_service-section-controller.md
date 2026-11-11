@@ -1,4 +1,4 @@
-# 2046 service_section_controller
+# 2046. service_section_controller
 
 Board 2,046 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 19](../CorpusTestingPages/Corpus-Testing-19.md#2046-service_section_controller).
 
@@ -45,4 +45,4 @@ Board 2,046 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2045 bms_peripheral_v2](b2045b_olin-electric-motorsports_bms-peripheral-v2.md) | [2047 bms_core](b2047b_olin-electric-motorsports_vehicle-mkvi-hardware-bms-bms-core_bms-core.md) |
+| [2045. bms_peripheral_v2](b2045b_olin-electric-motorsports_bms-peripheral-v2.md) | [2047. bms_core](b2047b_olin-electric-motorsports_vehicle-mkvi-hardware-bms-bms-core_bms-core.md) |

@@ -1,4 +1,4 @@
-# 652 V9958AdapterTC01
+# 652. V9958AdapterTC01
 
 Board 652 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 7](../CorpusTestingPages/Corpus-Testing-07.md#652-v9958adaptertc01).
 
@@ -45,4 +45,4 @@ Board 652 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [651 TMSAdapterTC01](b0651b_Einstein-TC-01_TMSAdapterTC01.md) | [653 EinsteinTC01](b0653b_Einstein-TC-01_Kicad_EinsteinTC01.md) |
+| [651. TMSAdapterTC01](b0651b_Einstein-TC-01_TMSAdapterTC01.md) | [653. EinsteinTC01](b0653b_Einstein-TC-01_Kicad_EinsteinTC01.md) |

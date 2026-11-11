@@ -1,4 +1,4 @@
-# 2653 hadbadge2019
+# 2653. hadbadge2019
 
 Board 2,653 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 25](../CorpusTestingPages/Corpus-Testing-25.md#2653-hadbadge2019).
 
@@ -44,4 +44,4 @@ Board 2,653 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2652 leaf-minipcie](b2652b_leaf-rv1126_leaf-minipcie.md) | [2654 beepy](b2654b_beepy-hardware_beepy.md) |
+| [2652. leaf-minipcie](b2652b_leaf-rv1126_leaf-minipcie.md) | [2654. beepy](b2654b_beepy-hardware_beepy.md) |

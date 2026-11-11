@@ -1,4 +1,4 @@
-# 173 Flags Enable Interrupt
+# 173. Flags Enable Interrupt
 
 Board 173 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 2](../CorpusTestingPages/Corpus-Testing-02.md#173-flags-enable-interrupt).
 
@@ -45,4 +45,4 @@ Board 173 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [172 Dual Comparator 8bit](b0172b_658-Computer_Dual-Comparator-8bit.md) | [174 GPIO 16bit](b0174b_658-Computer_GPIO-16bit.md) |
+| [172. Dual Comparator 8bit](b0172b_658-Computer_Dual-Comparator-8bit.md) | [174. GPIO 16bit](b0174b_658-Computer_GPIO-16bit.md) |

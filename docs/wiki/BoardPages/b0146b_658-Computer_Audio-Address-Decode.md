@@ -1,4 +1,4 @@
-# 146 Audio Address Decode
+# 146. Audio Address Decode
 
 Board 146 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 2](../CorpusTestingPages/Corpus-Testing-02.md#146-audio-address-decode).
 
@@ -45,4 +45,4 @@ Board 146 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [145 Board 2x36 W22.86](b0145b_658-Computer_Kicad-Boards-Pins-Board-2x36-W22-86_Board-2x36-W22-86.md) | [147 Audio Board](b0147b_658-Computer_Audio-Board.md) |
+| [145. Board 2x36 W22.86](b0145b_658-Computer_Kicad-Boards-Pins-Board-2x36-W22-86_Board-2x36-W22-86.md) | [147. Audio Board](b0147b_658-Computer_Audio-Board.md) |

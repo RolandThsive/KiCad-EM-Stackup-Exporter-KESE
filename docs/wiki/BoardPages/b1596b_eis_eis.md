@@ -1,4 +1,4 @@
-# 1596 eis
+# 1596. eis
 
 Board 1,596 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 15](../CorpusTestingPages/Corpus-Testing-15.md#1596-eis).
 
@@ -45,4 +45,4 @@ Board 1,596 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1595 blaustahl](b1595b_blaustahl_blaustahl.md) | [1597 ssx](b1597b_ferrit_ssx.md) |
+| [1595. blaustahl](b1595b_blaustahl_blaustahl.md) | [1597. ssx](b1597b_ferrit_ssx.md) |

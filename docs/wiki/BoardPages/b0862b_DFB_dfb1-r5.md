@@ -1,4 +1,4 @@
-# 862 dfb1_r5
+# 862. dfb1_r5
 
 Board 862 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 8](../CorpusTestingPages/Corpus-Testing-08.md#862-dfb1_r5).
 
@@ -45,4 +45,4 @@ Board 862 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [861 DDR4_8GB_UDIMM](b0861b_ddr4-8gb-udimm_DDR4-8GB-UDIMM.md) | [863 laptop_kbrd](b0863b_novenaX-kicad_laptop-kbrd.md) |
+| [861. DDR4_8GB_UDIMM](b0861b_ddr4-8gb-udimm_DDR4-8GB-UDIMM.md) | [863. laptop_kbrd](b0863b_novenaX-kicad_laptop-kbrd.md) |

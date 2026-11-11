@@ -1,4 +1,4 @@
-# 960 ACE-COLOUR
+# 960. ACE-COLOUR
 
 Board 960 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 9](../CorpusTestingPages/Corpus-Testing-09.md#960-ace-colour).
 
@@ -45,4 +45,4 @@ Board 960 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [959 right_io](b0959b_ducktop2_right-io.md) | [961 ACE-COLOUR2](b0961b_Ace-2019_ACE-COLOUR2.md) |
+| [959. right_io](b0959b_ducktop2_right-io.md) | [961. ACE-COLOUR2](b0961b_Ace-2019_ACE-COLOUR2.md) |

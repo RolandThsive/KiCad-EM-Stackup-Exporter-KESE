@@ -1,4 +1,4 @@
-# 2974 accessory
+# 2974. accessory
 
 Board 2,974 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 28](../CorpusTestingPages/Corpus-Testing-28.md#2974-accessory).
 
@@ -45,4 +45,4 @@ Board 2,974 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2973 armory](b2973b_usbarmory_hardware-mark-two-beta_armory.md) | [2975 armory](b2975b_usbarmory_hardware-mark-two-lan_armory.md) |
+| [2973. armory](b2973b_usbarmory_hardware-mark-two-beta_armory.md) | [2975. armory](b2975b_usbarmory_hardware-mark-two-lan_armory.md) |

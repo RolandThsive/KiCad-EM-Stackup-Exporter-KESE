@@ -1,4 +1,4 @@
-# 1023 DIMMCartridgeV4
+# 1023. DIMMCartridgeV4
 
 Board 1,023 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 10](../CorpusTestingPages/Corpus-Testing-10.md#1023-dimmcartridgev4).
 
@@ -45,4 +45,4 @@ Board 1,023 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1022 DIMMCartridgeConect](b1022b_OpenDrop_DIMMCartridgeConect.md) | [1024 DIMMTop](b1024b_OpenDrop_DIMMTop.md) |
+| [1022. DIMMCartridgeConect](b1022b_OpenDrop_DIMMCartridgeConect.md) | [1024. DIMMTop](b1024b_OpenDrop_DIMMTop.md) |

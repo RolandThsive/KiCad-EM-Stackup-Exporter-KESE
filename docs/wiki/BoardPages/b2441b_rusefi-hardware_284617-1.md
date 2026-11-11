@@ -1,4 +1,4 @@
-# 2441 284617-1
+# 2441. 284617-1
 
 Board 2,441 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 23](../CorpusTestingPages/Corpus-Testing-23.md#2441-284617-1).
 
@@ -45,4 +45,4 @@ Board 2,441 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2440 24pins_In_3conn](b2440b_rusefi-hardware_24pins-In-3conn.md) | [2442 CDI-test](b2442b_rusefi-hardware_CDI-test.md) |
+| [2440. 24pins_In_3conn](b2440b_rusefi-hardware_24pins-In-3conn.md) | [2442. CDI-test](b2442b_rusefi-hardware_CDI-test.md) |

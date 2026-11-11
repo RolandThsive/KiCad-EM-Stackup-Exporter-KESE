@@ -1,4 +1,4 @@
-# 1248 H745 CM4 module
+# 1248. H745 CM4 module
 
 Board 1,248 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 12](../CorpusTestingPages/Corpus-Testing-12.md#1248-h745-cm4-module).
 
@@ -45,4 +45,4 @@ Board 1,248 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1247 4in1](b1247b_openesc-30x30_4in1.md) | [1249 EEZ_BB3_CM4_R1B0](b1249b_bb3-cm4_EEZ-BB3-CM4-R1B0.md) |
+| [1247. 4in1](b1247b_openesc-30x30_4in1.md) | [1249. EEZ_BB3_CM4_R1B0](b1249b_bb3-cm4_EEZ-BB3-CM4-R1B0.md) |

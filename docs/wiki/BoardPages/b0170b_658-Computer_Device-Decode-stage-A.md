@@ -1,4 +1,4 @@
-# 170 Device Decode stage A
+# 170. Device Decode stage A
 
 Board 170 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 2](../CorpusTestingPages/Corpus-Testing-02.md#170-device-decode-stage-a).
 
@@ -45,4 +45,4 @@ Board 170 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [169 Device Buffer](b0169b_658-Computer_Device-Buffer.md) | [171 Device Decode stage B](b0171b_658-Computer_Device-Decode-stage-B.md) |
+| [169. Device Buffer](b0169b_658-Computer_Device-Buffer.md) | [171. Device Decode stage B](b0171b_658-Computer_Device-Decode-stage-B.md) |

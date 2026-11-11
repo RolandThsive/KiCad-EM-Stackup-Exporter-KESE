@@ -1,4 +1,4 @@
-# 1714 LC_RFE-RevA2
+# 1714. LC_RFE-RevA2
 
 Board 1,714 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 16](../CorpusTestingPages/Corpus-Testing-16.md#1714-lc_rfe-reva2).
 
@@ -45,4 +45,4 @@ Board 1,714 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1713 LC_RFE-RevA1](b1713b_lc-rfe_LC-RFE-RevA1.md) | [1715 LC-RFE-Mini-RevA1](b1715b_lc-rfe-mini_LC-RFE-Mini-RevA1.md) |
+| [1713. LC_RFE-RevA1](b1713b_lc-rfe_LC-RFE-RevA1.md) | [1715. LC-RFE-Mini-RevA1](b1715b_lc-rfe-mini_LC-RFE-Mini-RevA1.md) |

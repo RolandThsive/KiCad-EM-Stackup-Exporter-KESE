@@ -1,4 +1,4 @@
-# 546 belamini_cape_C1
+# 546. belamini_cape_C1
 
 Board 546 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 6](../CorpusTestingPages/Corpus-Testing-06.md#546-belamini_cape_c1).
 
@@ -45,4 +45,4 @@ Board 546 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [545 keyboard_pcb](b0545b_piantor_pcb-right_keyboard-pcb.md) | [547 belamini_cape_C2](b0547b_bela-hardware_belamini-cape-C2.md) |
+| [545. keyboard_pcb](b0545b_piantor_pcb-right_keyboard-pcb.md) | [547. belamini_cape_C2](b0547b_bela-hardware_belamini-cape-C2.md) |

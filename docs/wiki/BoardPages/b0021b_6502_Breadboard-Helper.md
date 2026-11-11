@@ -1,4 +1,4 @@
-# 21 Breadboard Helper
+# 21. Breadboard Helper
 
 Board 21 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 1](../CorpusTestingPages/Corpus-Testing-01.md#21-breadboard-helper).
 
@@ -45,4 +45,4 @@ Board 21 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page
 
 | Previous | Next |
 |:---|---:|
-| [20 Blinkenlights Card](b0020b_6502_Blinkenlights-Card.md) | [22 Clock Helper](b0022b_6502_Clock-Helper.md) |
+| [20. Blinkenlights Card](b0020b_6502_Blinkenlights-Card.md) | [22. Clock Helper](b0022b_6502_Clock-Helper.md) |

@@ -1,4 +1,4 @@
-# 2752 thelio-io
+# 2752. thelio-io
 
 Board 2,752 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 26](../CorpusTestingPages/Corpus-Testing-26.md#2752-thelio-io).
 
@@ -45,4 +45,4 @@ Board 2,752 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2751 thelio-io-sata](b2751b_thelio-io-hardware_thelio-io-sata.md) | [2753 virgo-keyboard-test](b2753b_virgo_virgo-keyboard-test.md) |
+| [2751. thelio-io-sata](b2751b_thelio-io-hardware_thelio-io-sata.md) | [2753. virgo-keyboard-test](b2753b_virgo_virgo-keyboard-test.md) |

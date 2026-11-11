@@ -1,4 +1,4 @@
-# 2689 MegaDrive
+# 2689. MegaDrive
 
 Board 2,689 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 25](../CorpusTestingPages/Corpus-Testing-25.md#2689-megadrive).
 
@@ -44,4 +44,4 @@ Board 2,689 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2688 ZPlus_Panel](b2688b_samwise-avionics_ZPlus-Panel.md) | [2690 SNSP-CPU-01](b2690b_nonSNES_SNSP-CPU-01.md) |
+| [2688. ZPlus_Panel](b2688b_samwise-avionics_ZPlus-Panel.md) | [2690. SNSP-CPU-01](b2690b_nonSNES_SNSP-CPU-01.md) |

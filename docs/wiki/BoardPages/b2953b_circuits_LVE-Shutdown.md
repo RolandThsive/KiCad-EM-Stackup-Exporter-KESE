@@ -1,4 +1,4 @@
-# 2953 (LVE)Shutdown
+# 2953. (LVE)Shutdown
 
 Board 2,953 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 28](../CorpusTestingPages/Corpus-Testing-28.md#2953-lveshutdown).
 
@@ -45,4 +45,4 @@ Board 2,953 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2952 LTC6812-15W](b2952b_circuits_ENNOID-BMS-Slave_LTC6812-15W.md) | [2954 BSPD KiCAD](b2954b_circuits_BSPD-KiCAD.md) |
+| [2952. LTC6812-15W](b2952b_circuits_ENNOID-BMS-Slave_LTC6812-15W.md) | [2954. BSPD KiCAD](b2954b_circuits_BSPD-KiCAD.md) |

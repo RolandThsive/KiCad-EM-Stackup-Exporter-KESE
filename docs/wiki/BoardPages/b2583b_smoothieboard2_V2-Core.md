@@ -1,4 +1,4 @@
-# 2583 V2 Core
+# 2583. V2 Core
 
 Board 2,583 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 24](../CorpusTestingPages/Corpus-Testing-24.md#2583-v2-core).
 
@@ -45,4 +45,4 @@ Board 2,583 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2582 smoothiev2-prime-2660](b2582b_smoothieboard2_smoothiev2-prime-Proto9and10-Kicad5_smoothiev2-prime-2660.md) | [2584 motordriver](b2584b_smoothieboard2_motordriver.md) |
+| [2582. smoothiev2-prime-2660](b2582b_smoothieboard2_smoothiev2-prime-Proto9and10-Kicad5_smoothiev2-prime-2660.md) | [2584. motordriver](b2584b_smoothieboard2_motordriver.md) |

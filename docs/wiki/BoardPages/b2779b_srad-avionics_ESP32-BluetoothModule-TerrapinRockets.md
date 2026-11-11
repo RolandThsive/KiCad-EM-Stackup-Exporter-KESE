@@ -1,4 +1,4 @@
-# 2779 ESP32_BluetoothModule_TerrapinRockets
+# 2779. ESP32_BluetoothModule_TerrapinRockets
 
 Board 2,779 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 26](../CorpusTestingPages/Corpus-Testing-26.md#2779-esp32_bluetoothmodule_terrapinrockets).
 
@@ -45,4 +45,4 @@ Board 2,779 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2778 low_power_module](b2778b_srad-avionics_low-power-module.md) | [2780 Main Board](b2780b_srad-avionics_Main-Board.md) |
+| [2778. low_power_module](b2778b_srad-avionics_low-power-module.md) | [2780. Main Board](b2780b_srad-avionics_Main-Board.md) |

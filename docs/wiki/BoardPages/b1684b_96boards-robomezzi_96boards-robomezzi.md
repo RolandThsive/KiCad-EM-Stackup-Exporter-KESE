@@ -1,4 +1,4 @@
-# 1684 96boards-robomezzi
+# 1684. 96boards-robomezzi
 
 Board 1,684 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 16](../CorpusTestingPages/Corpus-Testing-16.md#1684-96boards-robomezzi).
 
@@ -44,4 +44,4 @@ Board 1,684 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1683 Project NuXT](b1683b_NuXT_Project-NuXT.md) | [1685 beagle-wire](b1685b_beagle-wire_beagle-wire.md) |
+| [1683. Project NuXT](b1683b_NuXT_Project-NuXT.md) | [1685. beagle-wire](b1685b_beagle-wire_beagle-wire.md) |

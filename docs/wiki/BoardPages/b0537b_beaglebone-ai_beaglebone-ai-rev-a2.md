@@ -1,4 +1,4 @@
-# 537 beaglebone-ai-rev-a2
+# 537. beaglebone-ai-rev-a2
 
 Board 537 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 5](../CorpusTestingPages/Corpus-Testing-05.md#537-beaglebone-ai-rev-a2).
 
@@ -45,4 +45,4 @@ Board 537 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [536 beaglebone-ai](b0536b_beaglebone-ai_beaglebone-ai.md) | [538 BeagleConnect Freedom](b0538b_beagleconnect_hw-Freedom_BeagleConnect-Freedom.md) |
+| [536. beaglebone-ai](b0536b_beaglebone-ai_beaglebone-ai.md) | [538. BeagleConnect Freedom](b0538b_beagleconnect_hw-Freedom_BeagleConnect-Freedom.md) |

@@ -1,4 +1,4 @@
-# 1982 RT1010Py_Rev.C
+# 1982. RT1010Py_Rev.C
 
 Board 1,982 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 19](../CorpusTestingPages/Corpus-Testing-19.md#1982-rt1010py_revc).
 
@@ -45,4 +45,4 @@ Board 1,982 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1981 RP2350pc_Rev_A](b1981b_RP2350pc_RP2350pc-Rev-A.md) | [1983 RT1010Py-DevKit_RevB](b1983b_RT1010Py-DevKit_RT1010Py-DevKit-RevB.md) |
+| [1981. RP2350pc_Rev_A](b1981b_RP2350pc_RP2350pc-Rev-A.md) | [1983. RT1010Py-DevKit_RevB](b1983b_RT1010Py-DevKit_RT1010Py-DevKit-RevB.md) |

@@ -1,4 +1,4 @@
-# 1622 comm_board
+# 1622. comm_board
 
 Board 1,622 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 16](../CorpusTestingPages/Corpus-Testing-16.md#1622-comm_board).
 
@@ -45,4 +45,4 @@ Board 1,622 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1621 AVIONICS_BOARD](b1621b_hardware-csat_AVIONICS-BOARD.md) | [1623 EPS](b1623b_hardware-csat_EPS.md) |
+| [1621. AVIONICS_BOARD](b1621b_hardware-csat_AVIONICS-BOARD.md) | [1623. EPS](b1623b_hardware-csat_EPS.md) |

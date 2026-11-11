@@ -1,4 +1,4 @@
-# 847 Vic2020mainboard
+# 847. Vic2020mainboard
 
 Board 847 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 8](../CorpusTestingPages/Corpus-Testing-08.md#847-vic2020mainboard).
 
@@ -45,4 +45,4 @@ Board 847 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [846 vic2020keyboard](b0846b_vic2020_vic2020keyboard.md) | [848 we816](b0848b_we816_we816.md) |
+| [846. vic2020keyboard](b0846b_vic2020_vic2020keyboard.md) | [848. we816](b0848b_we816_we816.md) |

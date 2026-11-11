@@ -1,4 +1,4 @@
-# 1815 TERES-PCB3-TOUCH-BTN_Rev.A
+# 1815. TERES-PCB3-TOUCH-BTN_Rev.A
 
 Board 1,815 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 17](../CorpusTestingPages/Corpus-Testing-17.md#1815-teres-pcb3-touch-btn_reva).
 
@@ -45,4 +45,4 @@ Board 1,815 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1814 TERES-PCB2-IO_Rev.B](b1814b_DIY-LAPTOP_TERES-PCB2-IO-Rev-B.md) | [1816 PCB4-PWR-BTN_Rev.A](b1816b_DIY-LAPTOP_PCB4-PWR-BTN-Rev-A.md) |
+| [1814. TERES-PCB2-IO_Rev.B](b1814b_DIY-LAPTOP_TERES-PCB2-IO-Rev-B.md) | [1816. PCB4-PWR-BTN_Rev.A](b1816b_DIY-LAPTOP_PCB4-PWR-BTN-Rev-A.md) |

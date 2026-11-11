@@ -1,4 +1,4 @@
-# 391 optiga-tpm
+# 391. optiga-tpm
 
 Board 391 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 4](../CorpusTestingPages/Corpus-Testing-04.md#391-optiga-tpm).
 
@@ -44,4 +44,4 @@ Board 391 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [390 oculink-to-pcie-adapter](b0390b_oculink-pcie-adapter_oculink-to-pcie-adapter.md) | [392 bmc-reference-osm](b0392b_osm-l-bmc-som_bmc-reference-osm.md) |
+| [390. oculink-to-pcie-adapter](b0390b_oculink-pcie-adapter_oculink-to-pcie-adapter.md) | [392. bmc-reference-osm](b0392b_osm-l-bmc-som_bmc-reference-osm.md) |

@@ -1,4 +1,4 @@
-# 250 SD Card Read Data
+# 250. SD Card Read Data
 
 Board 250 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 3](../CorpusTestingPages/Corpus-Testing-03.md#250-sd-card-read-data).
 
@@ -45,4 +45,4 @@ Board 250 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [249 SD Card Micro Socket](b0249b_658-Computer_SD-Card-Micro-Socket.md) | [251 SD Card Read Function](b0251b_658-Computer_SD-Card-Read-Function.md) |
+| [249. SD Card Micro Socket](b0249b_658-Computer_SD-Card-Micro-Socket.md) | [251. SD Card Read Function](b0251b_658-Computer_SD-Card-Read-Function.md) |

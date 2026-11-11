@@ -1,4 +1,4 @@
-# 913 BB3plus DVID adapter
+# 913. BB3plus DVID adapter
 
 Board 913 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 9](../CorpusTestingPages/Corpus-Testing-09.md#913-bb3plus-dvid-adapter).
 
@@ -45,4 +45,4 @@ Board 913 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [912 EEZ DIB AFE3plus](b0912b_dib-mio168plus-afe3_EEZ-DIB-AFE3plus.md) | [914 BB3plus test mainboard](b0914b_eez-bb3plus_BB3plus-test-mainboard.md) |
+| [912. EEZ DIB AFE3plus](b0912b_dib-mio168plus-afe3_EEZ-DIB-AFE3plus.md) | [914. BB3plus test mainboard](b0914b_eez-bb3plus_BB3plus-test-mainboard.md) |

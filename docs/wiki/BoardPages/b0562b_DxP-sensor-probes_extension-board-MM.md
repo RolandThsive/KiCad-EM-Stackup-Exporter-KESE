@@ -1,4 +1,4 @@
-# 562 extension_board_MM
+# 562. extension_board_MM
 
 Board 562 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 6](../CorpusTestingPages/Corpus-Testing-06.md#562-extension_board_mm).
 
@@ -46,4 +46,4 @@ Board 562 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [561 extension_board_MF](b0561b_DxP-sensor-probes_extension-board-MF.md) | [563 FF_connector](b0563b_DxP-sensor-probes_FF-connector.md) |
+| [561. extension_board_MF](b0561b_DxP-sensor-probes_extension-board-MF.md) | [563. FF_connector](b0563b_DxP-sensor-probes_FF-connector.md) |

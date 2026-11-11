@@ -1,4 +1,4 @@
-# 2673 Groundstation_2400_Hat
+# 2673. Groundstation_2400_Hat
 
 Board 2,673 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 25](../CorpusTestingPages/Corpus-Testing-25.md#2673-groundstation_2400_hat).
 
@@ -45,4 +45,4 @@ Board 2,673 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2672 FlexDeploySidePanels](b2672b_samwise-avionics_FlexDeploySidePanels.md) | [2674 Groundstation_433_Hat](b2674b_samwise-avionics_Groundstation-433-Hat.md) |
+| [2672. FlexDeploySidePanels](b2672b_samwise-avionics_FlexDeploySidePanels.md) | [2674. Groundstation_433_Hat](b2674b_samwise-avionics_Groundstation-433-Hat.md) |

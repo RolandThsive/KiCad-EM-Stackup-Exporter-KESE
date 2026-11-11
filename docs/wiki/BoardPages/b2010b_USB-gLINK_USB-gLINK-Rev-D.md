@@ -1,4 +1,4 @@
-# 2010 USB-gLINK_Rev_D
+# 2010. USB-gLINK_Rev_D
 
 Board 2,010 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 19](../CorpusTestingPages/Corpus-Testing-19.md#2010-usb-glink_rev_d).
 
@@ -45,4 +45,4 @@ Board 2,010 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2009 USB-gLINK_Rev_C](b2009b_USB-gLINK_USB-gLINK-Rev-C.md) | [2011 USB-NeoHUB_Rev_A](b2011b_USB-NeoHub_USB-NeoHUB-Rev-A.md) |
+| [2009. USB-gLINK_Rev_C](b2009b_USB-gLINK_USB-gLINK-Rev-C.md) | [2011. USB-NeoHUB_Rev_A](b2011b_USB-NeoHub_USB-NeoHUB-Rev-A.md) |

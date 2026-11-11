@@ -1,4 +1,4 @@
-# 2983 programming_interface
+# 2983. programming_interface
 
 Board 2,983 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 28](../CorpusTestingPages/Corpus-Testing-28.md#2983-programming_interface).
 
@@ -45,4 +45,4 @@ Board 2,983 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2982 8bit-computer](b2982b_8bit-cpu_8bit-computer.md) | [2984 omower](b2984b_omower_omower.md) |
+| [2982. 8bit-computer](b2982b_8bit-cpu_8bit-computer.md) | [2984. omower](b2984b_omower_omower.md) |

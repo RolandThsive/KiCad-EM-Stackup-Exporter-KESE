@@ -1,4 +1,4 @@
-# 516 gd VGC proto pcb
+# 516. gd VGC proto pcb
 
 Board 516 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 5](../CorpusTestingPages/Corpus-Testing-05.md#516-gd-vgc-proto-pcb).
 
@@ -45,4 +45,4 @@ Board 516 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [515 gd vga pico proto pcb](b0515b_Mega-IIe_gd-vga-pico-proto-pcb.md) | [517 MegaII Breakout](b0517b_Mega-IIe_kicad-files-MegaII-Breakout_MegaII-Breakout.md) |
+| [515. gd vga pico proto pcb](b0515b_Mega-IIe_gd-vga-pico-proto-pcb.md) | [517. MegaII Breakout](b0517b_Mega-IIe_kicad-files-MegaII-Breakout_MegaII-Breakout.md) |

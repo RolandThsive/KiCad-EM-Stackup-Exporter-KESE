@@ -1,4 +1,4 @@
-# 1748 EGSE
+# 1748. EGSE
 
 Board 1,748 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 17](../CorpusTestingPages/Corpus-Testing-17.md#1748-egse).
 
@@ -45,4 +45,4 @@ Board 1,748 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1747 PQ_Botnotsobot](b1747b_pocat-hw_PQ-Botnotsobot.md) | [1749 PQ_EPS](b1749b_pocat-hw_PQ-EPS.md) |
+| [1747. PQ_Botnotsobot](b1747b_pocat-hw_PQ-Botnotsobot.md) | [1749. PQ_EPS](b1749b_pocat-hw_PQ-EPS.md) |

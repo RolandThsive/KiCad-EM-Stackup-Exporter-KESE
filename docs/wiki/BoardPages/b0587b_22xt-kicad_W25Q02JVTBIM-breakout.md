@@ -1,4 +1,4 @@
-# 587 W25Q02JVTBIM_breakout
+# 587. W25Q02JVTBIM_breakout
 
 Board 587 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 6](../CorpusTestingPages/Corpus-Testing-06.md#587-w25q02jvtbim_breakout).
 
@@ -45,4 +45,4 @@ Board 587 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [586 esp32s3](b0586b_22xt-kicad_esp32s3.md) | [588 WSG_2.0](b0588b_22xt-kicad_WSG-2-0.md) |
+| [586. esp32s3](b0586b_22xt-kicad_esp32s3.md) | [588. WSG_2.0](b0588b_22xt-kicad_WSG-2-0.md) |

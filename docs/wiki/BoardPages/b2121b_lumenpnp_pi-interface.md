@@ -1,4 +1,4 @@
-# 2121 pi-interface
+# 2121. pi-interface
 
 Board 2,121 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 20](../CorpusTestingPages/Corpus-Testing-20.md#2121-pi-interface).
 
@@ -45,4 +45,4 @@ Board 2,121 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2120 mobo](b2120b_lumenpnp_mobo.md) | [2122 ringLight](b2122b_lumenpnp_ringLight.md) |
+| [2120. mobo](b2120b_lumenpnp_mobo.md) | [2122. ringLight](b2122b_lumenpnp_ringLight.md) |

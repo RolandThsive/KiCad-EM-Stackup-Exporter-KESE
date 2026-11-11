@@ -1,4 +1,4 @@
-# 1804 bb-ch340t
+# 1804. bb-ch340t
 
 Board 1,804 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 17](../CorpusTestingPages/Corpus-Testing-17.md#1804-bb-ch340t).
 
@@ -45,4 +45,4 @@ Board 1,804 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1803 bb-ch340t](b1803b_BB-CH340T_HARDWARE-BB-CH340T-Rev-A_bb-ch340t.md) | [1805 BB-LVL-SHIFT_Rev_A](b1805b_BB-LVL-SHIFT_BB-LVL-SHIFT-Rev-A.md) |
+| [1803. bb-ch340t](b1803b_BB-CH340T_HARDWARE-BB-CH340T-Rev-A_bb-ch340t.md) | [1805. BB-LVL-SHIFT_Rev_A](b1805b_BB-LVL-SHIFT_BB-LVL-SHIFT-Rev-A.md) |

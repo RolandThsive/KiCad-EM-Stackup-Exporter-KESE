@@ -1,4 +1,4 @@
-# 2054 imu
+# 2054. imu
 
 Board 2,054 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 20](../CorpusTestingPages/Corpus-Testing-20.md#2054-imu).
 
@@ -45,4 +45,4 @@ Board 2,054 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2053 cooling-board](b2053b_olin-electric-motorsports_cooling-board.md) | [2055 imu_panelized](b2055b_olin-electric-motorsports_imu-panelized.md) |
+| [2053. cooling-board](b2053b_olin-electric-motorsports_cooling-board.md) | [2055. imu_panelized](b2055b_olin-electric-motorsports_imu-panelized.md) |

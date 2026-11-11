@@ -1,4 +1,4 @@
-# 1924 MIPI-HDMI_Rev_B
+# 1924. MIPI-HDMI_Rev_B
 
 Board 1,924 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 18](../CorpusTestingPages/Corpus-Testing-18.md#1924-mipi-hdmi_rev_b).
 
@@ -45,4 +45,4 @@ Board 1,924 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1923 MiniBot_RevA](b1923b_Minibot_MiniBot-RevA.md) | [1925 MOD-BME280_RevA](b1925b_MOD-BME280_MOD-BME280-RevA.md) |
+| [1923. MiniBot_RevA](b1923b_Minibot_MiniBot-RevA.md) | [1925. MOD-BME280_RevA](b1925b_MOD-BME280_MOD-BME280-RevA.md) |

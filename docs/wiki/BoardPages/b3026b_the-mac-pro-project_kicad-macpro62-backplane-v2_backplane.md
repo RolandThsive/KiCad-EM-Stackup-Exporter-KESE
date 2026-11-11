@@ -1,4 +1,4 @@
-# 3026 backplane
+# 3026. backplane
 
 Board 3,026 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 29](../CorpusTestingPages/Corpus-Testing-29.md#3026-backplane).
 
@@ -45,4 +45,4 @@ Board 3,026 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [3025 macpro62_am5](b3025b_the-mac-pro-project_kicad-macpro62-am5_macpro62-am5.md) | [3027 backplane](b3027b_the-mac-pro-project_kicad-macpro62-backplane-v3_backplane.md) |
+| [3025. macpro62_am5](b3025b_the-mac-pro-project_kicad-macpro62-am5_macpro62-am5.md) | [3027. backplane](b3027b_the-mac-pro-project_kicad-macpro62-backplane-v3_backplane.md) |

@@ -1,4 +1,4 @@
-# 1727 LMS8001_Companion
+# 1727. LMS8001_Companion
 
 Board 1,727 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 16](../CorpusTestingPages/Corpus-Testing-16.md#1727-lms8001_companion).
 
@@ -45,4 +45,4 @@ Board 1,727 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1726 LMS8001_Companion](b1726b_LMS8001-Companion_hardware-2v1-KiCAD_LMS8001-Companion.md) | [1728 LMS8001_Companion](b1728b_LMS8001-Companion_hardware-3v2-KiCAD_LMS8001-Companion.md) |
+| [1726. LMS8001_Companion](b1726b_LMS8001-Companion_hardware-2v1-KiCAD_LMS8001-Companion.md) | [1728. LMS8001_Companion](b1728b_LMS8001-Companion_hardware-3v2-KiCAD_LMS8001-Companion.md) |

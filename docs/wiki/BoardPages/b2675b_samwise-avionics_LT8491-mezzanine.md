@@ -1,4 +1,4 @@
-# 2675 LT8491-mezzanine
+# 2675. LT8491-mezzanine
 
 Board 2,675 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 25](../CorpusTestingPages/Corpus-Testing-25.md#2675-lt8491-mezzanine).
 
@@ -45,4 +45,4 @@ Board 2,675 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2674 Groundstation_433_Hat](b2674b_samwise-avionics_Groundstation-433-Hat.md) | [2676 magnetometer_extern](b2676b_samwise-avionics_magnetometer-extern.md) |
+| [2674. Groundstation_433_Hat](b2674b_samwise-avionics_Groundstation-433-Hat.md) | [2676. magnetometer_extern](b2676b_samwise-avionics_magnetometer-extern.md) |

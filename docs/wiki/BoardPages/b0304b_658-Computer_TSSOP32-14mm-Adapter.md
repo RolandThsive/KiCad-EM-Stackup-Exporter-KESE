@@ -1,4 +1,4 @@
-# 304 TSSOP32-14mm Adapter
+# 304. TSSOP32-14mm Adapter
 
 Board 304 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 3](../CorpusTestingPages/Corpus-Testing-03.md#304-tssop32-14mm-adapter).
 
@@ -45,4 +45,4 @@ Board 304 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [303 ROM 2316 to 2716](b0303b_658-Computer_ROM-2316-to-2716.md) | [305 W65C64](b0305b_658-Computer_W65C64.md) |
+| [303. ROM 2316 to 2716](b0303b_658-Computer_ROM-2316-to-2716.md) | [305. W65C64](b0305b_658-Computer_W65C64.md) |

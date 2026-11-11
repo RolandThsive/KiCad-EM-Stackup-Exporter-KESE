@@ -1,4 +1,4 @@
-# 1027 ModulAdapterMagnet
+# 1027. ModulAdapterMagnet
 
 Board 1,027 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 10](../CorpusTestingPages/Corpus-Testing-10.md#1027-moduladaptermagnet).
 
@@ -45,4 +45,4 @@ Board 1,027 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1026 ModulAdapterBasic](b1026b_OpenDrop_ModulAdapterBasic.md) | [1028 ModulAdapter_universal](b1028b_OpenDrop_ModulAdapter-universal.md) |
+| [1026. ModulAdapterBasic](b1026b_OpenDrop_ModulAdapterBasic.md) | [1028. ModulAdapter_universal](b1028b_OpenDrop_ModulAdapter-universal.md) |

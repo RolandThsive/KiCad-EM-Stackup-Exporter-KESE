@@ -1,4 +1,4 @@
-# 1132 leds
+# 1132. leds
 
 Board 1,132 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 11](../CorpusTestingPages/Corpus-Testing-11.md#1132-leds).
 
@@ -45,4 +45,4 @@ Board 1,132 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1131 filters](b1131b_misc_filters.md) | [1133 limiters](b1133b_misc_limiters.md) |
+| [1131. filters](b1131b_misc_filters.md) | [1133. limiters](b1133b_misc_limiters.md) |

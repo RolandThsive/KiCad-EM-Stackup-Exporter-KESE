@@ -1,4 +1,4 @@
-# 1052 gmm
+# 1052. gmm
 
 Board 1,052 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 10](../CorpusTestingPages/Corpus-Testing-10.md#1052-gmm).
 
@@ -45,4 +45,4 @@ Board 1,052 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1051 test-jig](b1051b_glasgow_test-jig.md) | [1053 hat-gmm7550](b1053b_gmm7550-hardware_hat-gmm7550.md) |
+| [1051. test-jig](b1051b_glasgow_test-jig.md) | [1053. hat-gmm7550](b1053b_gmm7550-hardware_hat-gmm7550.md) |

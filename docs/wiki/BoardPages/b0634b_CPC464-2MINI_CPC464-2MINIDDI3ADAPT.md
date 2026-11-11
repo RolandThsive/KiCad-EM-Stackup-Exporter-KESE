@@ -1,4 +1,4 @@
-# 634 CPC464-2MINIDDI3ADAPT
+# 634. CPC464-2MINIDDI3ADAPT
 
 Board 634 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 6](../CorpusTestingPages/Corpus-Testing-06.md#634-cpc464-2miniddi3adapt).
 
@@ -45,4 +45,4 @@ Board 634 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [633 CPC464-2MINI](b0633b_CPC464-2MINI_Archive-v1-Kicad_CPC464-2MINI.md) | [635 CPC464-2MINIDDI](b0635b_CPC464-2MINI_CPC464-2MINIDDI.md) |
+| [633. CPC464-2MINI](b0633b_CPC464-2MINI_Archive-v1-Kicad_CPC464-2MINI.md) | [635. CPC464-2MINIDDI](b0635b_CPC464-2MINI_CPC464-2MINIDDI.md) |

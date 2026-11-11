@@ -1,4 +1,4 @@
-# 2117 datum
+# 2117. datum
 
 Board 2,117 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 20](../CorpusTestingPages/Corpus-Testing-20.md#2117-datum).
 
@@ -45,4 +45,4 @@ Board 2,117 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2116 cal-fid](b2116b_lumenpnp_cal-fid.md) | [2118 ftp](b2118b_lumenpnp_ftp.md) |
+| [2116. cal-fid](b2116b_lumenpnp_cal-fid.md) | [2118. ftp](b2118b_lumenpnp_ftp.md) |

@@ -1,4 +1,4 @@
-# 1580 mm_synth
+# 1580. mm_synth
 
 Board 1,580 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 15](../CorpusTestingPages/Corpus-Testing-15.md#1580-mm_synth).
 
@@ -46,4 +46,4 @@ Board 1,580 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1579 xx1000-qt](b1579b_vna_xx1000-qt.md) | [1581 synth_pod](b1581b_vna_synth-pod.md) |
+| [1579. xx1000-qt](b1579b_vna_xx1000-qt.md) | [1581. synth_pod](b1581b_vna_synth-pod.md) |

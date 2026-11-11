@@ -1,4 +1,4 @@
-# 884 Zephyr-80-IO
+# 884. Zephyr-80-IO
 
 Board 884 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 9](../CorpusTestingPages/Corpus-Testing-09.md#884-zephyr-80-io).
 
@@ -45,4 +45,4 @@ Board 884 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [883 Zephyr-80-CPU](b0883b_Zephyr-80_Zephyr-80-CPU.md) | [885 ESP32_TouchDown_Rev1.1](b0885b_esp32-touchdown_ESP32-TouchDown-Rev1-1.md) |
+| [883. Zephyr-80-CPU](b0883b_Zephyr-80_Zephyr-80-CPU.md) | [885. ESP32_TouchDown_Rev1.1](b0885b_esp32-touchdown_ESP32-TouchDown-Rev1-1.md) |

@@ -1,4 +1,4 @@
-# 759 ciaa-rx
+# 759. ciaa-rx
 
 Board 759 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 8](../CorpusTestingPages/Corpus-Testing-08.md#759-ciaa-rx).
 
@@ -45,4 +45,4 @@ Board 759 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [758 .kicad_pcb](b0758b_Hardware_kicad-pcb.md) | [760 CIAA_Safety_VTI_1.0](b0760b_Hardware_CIAA-Safety-VTI-1-0.md) |
+| [758. .kicad_pcb](b0758b_Hardware_kicad-pcb.md) | [760. CIAA_Safety_VTI_1.0](b0760b_Hardware_CIAA-Safety-VTI-1-0.md) |

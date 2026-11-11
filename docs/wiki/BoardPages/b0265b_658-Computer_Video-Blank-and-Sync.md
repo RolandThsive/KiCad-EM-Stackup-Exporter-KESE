@@ -1,4 +1,4 @@
-# 265 Video Blank and Sync
+# 265. Video Blank and Sync
 
 Board 265 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 3](../CorpusTestingPages/Corpus-Testing-03.md#265-video-blank-and-sync).
 
@@ -45,4 +45,4 @@ Board 265 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [264 Video Address Reader](b0264b_658-Computer_Video-Address-Reader.md) | [266 Video Board - Memory](b0266b_658-Computer_Video-Board-Memory.md) |
+| [264. Video Address Reader](b0264b_658-Computer_Video-Address-Reader.md) | [266. Video Board - Memory](b0266b_658-Computer_Video-Board-Memory.md) |

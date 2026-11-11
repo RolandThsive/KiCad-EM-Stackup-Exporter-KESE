@@ -1,4 +1,4 @@
-# 2744 Raemixx500
+# 2744. Raemixx500
 
 Board 2,744 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 26](../CorpusTestingPages/Corpus-Testing-26.md#2744-raemixx500).
 
@@ -44,4 +44,4 @@ Board 2,744 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2743 LittleSixteen](b2743b_LittleSixteen_LittleSixteen.md) | [2745 launch-heavy](b2745b_launch_launch-heavy.md) |
+| [2743. LittleSixteen](b2743b_LittleSixteen_LittleSixteen.md) | [2745. launch-heavy](b2745b_launch_launch-heavy.md) |

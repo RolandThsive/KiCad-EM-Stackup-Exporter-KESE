@@ -1,4 +1,4 @@
-# 2275 paracard-template
+# 2275. paracard-template
 
 Board 2,275 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 22](../CorpusTestingPages/Corpus-Testing-22.md#2275-paracard-template).
 
@@ -44,4 +44,4 @@ Board 2,275 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2274 meta_breakout](b2274b_parallella-hw_meta-breakout.md) | [2276 porcupine](b2276b_parallella-hw_porcupine.md) |
+| [2274. meta_breakout](b2274b_parallella-hw_meta-breakout.md) | [2276. porcupine](b2276b_parallella-hw_porcupine.md) |

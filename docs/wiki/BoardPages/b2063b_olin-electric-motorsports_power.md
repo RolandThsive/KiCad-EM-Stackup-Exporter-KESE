@@ -1,4 +1,4 @@
-# 2063 power
+# 2063. power
 
 Board 2,063 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 20](../CorpusTestingPages/Corpus-Testing-20.md#2063-power).
 
@@ -45,4 +45,4 @@ Board 2,063 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2062 carrier-fix](b2062b_olin-electric-motorsports_carrier-fix.md) | [2064 thermistors](b2064b_olin-electric-motorsports_thermistors.md) |
+| [2062. carrier-fix](b2062b_olin-electric-motorsports_carrier-fix.md) | [2064. thermistors](b2064b_olin-electric-motorsports_thermistors.md) |

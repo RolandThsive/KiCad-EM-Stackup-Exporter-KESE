@@ -1,4 +1,4 @@
-# 1346 MIDAS-MK1.1
+# 1346. MIDAS-MK1.1
 
 Board 1,346 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 13](../CorpusTestingPages/Corpus-Testing-13.md#1346-midas-mk11).
 
@@ -45,4 +45,4 @@ Board 1,346 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1345 MIDAS-MK1.1](b1345b_iss-pcb_boards-MIDAS-MK1-MIDAS-MK1-1-revA_MIDAS-MK1-1.md) | [1347 MIDAS-MK2](b1347b_iss-pcb_MIDAS-MK2.md) |
+| [1345. MIDAS-MK1.1](b1345b_iss-pcb_boards-MIDAS-MK1-MIDAS-MK1-1-revA_MIDAS-MK1-1.md) | [1347. MIDAS-MK2](b1347b_iss-pcb_MIDAS-MK2.md) |

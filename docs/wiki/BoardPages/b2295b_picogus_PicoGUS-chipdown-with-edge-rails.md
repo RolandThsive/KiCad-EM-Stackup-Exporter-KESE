@@ -1,4 +1,4 @@
-# 2295 PicoGUS chipdown with edge rails
+# 2295. PicoGUS chipdown with edge rails
 
 Board 2,295 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 22](../CorpusTestingPages/Corpus-Testing-22.md#2295-picogus-chipdown-with-edge-rails).
 
@@ -45,4 +45,4 @@ Board 2,295 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2294 HadesNT](b2294b_HadesFCS_HadesNT.md) | [2296 PicoGUS chipdown](b2296b_picogus_PicoGUS-chipdown.md) |
+| [2294. HadesNT](b2294b_HadesFCS_HadesNT.md) | [2296. PicoGUS chipdown](b2296b_picogus_PicoGUS-chipdown.md) |

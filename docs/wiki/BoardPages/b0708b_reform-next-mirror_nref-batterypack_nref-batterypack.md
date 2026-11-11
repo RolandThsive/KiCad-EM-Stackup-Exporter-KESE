@@ -1,4 +1,4 @@
-# 708 nref-batterypack
+# 708. nref-batterypack
 
 Board 708 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 7](../CorpusTestingPages/Corpus-Testing-07.md#708-nref-batterypack).
 
@@ -45,4 +45,4 @@ Board 708 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [707 nref-batterypack-backside](b0707b_reform-next-mirror_nref-batterypack_nref-batterypack-backside.md) | [709 nref-camera-adapter](b0709b_reform-next-mirror_nref-camera-adapter.md) |
+| [707. nref-batterypack-backside](b0707b_reform-next-mirror_nref-batterypack_nref-batterypack-backside.md) | [709. nref-camera-adapter](b0709b_reform-next-mirror_nref-camera-adapter.md) |

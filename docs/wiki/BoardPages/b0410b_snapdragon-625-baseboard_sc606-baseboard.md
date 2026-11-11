@@ -1,4 +1,4 @@
-# 410 sc606-baseboard
+# 410. sc606-baseboard
 
 Board 410 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 4](../CorpusTestingPages/Corpus-Testing-04.md#410-sc606-baseboard).
 
@@ -44,4 +44,4 @@ Board 410 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [409 si-simulation-test-board](b0409b_signal-integrity-test-board_si-simulation-test-board.md) | [411 sa800u-baseboard-hw](b0411b_snapdragon-845-baseboard_sa800u-baseboard-hw.md) |
+| [409. si-simulation-test-board](b0409b_signal-integrity-test-board_si-simulation-test-board.md) | [411. sa800u-baseboard-hw](b0411b_snapdragon-845-baseboard_sa800u-baseboard-hw.md) |

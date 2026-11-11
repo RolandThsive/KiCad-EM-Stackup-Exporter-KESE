@@ -1,4 +1,4 @@
-# 45 Storage Card
+# 45. Storage Card
 
 Board 45 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 1](../CorpusTestingPages/Corpus-Testing-01.md#45-storage-card).
 
@@ -45,4 +45,4 @@ Board 45 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page
 
 | Previous | Next |
 |:---|---:|
-| [44 Storage Card Pro](b0044b_6502_Storage-Card-Pro.md) | [46 VERA Helper](b0046b_6502_VERA-Helper.md) |
+| [44. Storage Card Pro](b0044b_6502_Storage-Card-Pro.md) | [46. VERA Helper](b0046b_6502_VERA-Helper.md) |

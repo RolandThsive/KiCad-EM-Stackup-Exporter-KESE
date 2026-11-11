@@ -1,4 +1,4 @@
-# 2127 OrangeCrab
+# 2127. OrangeCrab
 
 Board 2,127 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 20](../CorpusTestingPages/Corpus-Testing-20.md#2127-orangecrab).
 
@@ -45,4 +45,4 @@ Board 2,127 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2126 OrangeCrab](b2126b_orangecrab-hardware_hardware-orangecrab-r0-1_OrangeCrab.md) | [2128 OrangeCrab](b2128b_orangecrab-hardware_hardware-orangecrab-r0-2_OrangeCrab.md) |
+| [2126. OrangeCrab](b2126b_orangecrab-hardware_hardware-orangecrab-r0-1_OrangeCrab.md) | [2128. OrangeCrab](b2128b_orangecrab-hardware_hardware-orangecrab-r0-2_OrangeCrab.md) |

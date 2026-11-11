@@ -1,4 +1,4 @@
-# 2322 FC_v5d
+# 2322. FC_v5d
 
 Board 2,322 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 22](../CorpusTestingPages/Corpus-Testing-22.md#2322-fc_v5d).
 
@@ -45,4 +45,4 @@ Board 2,322 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2321 FC_V5a](b2321b_flight-controller-board_FC-V5a.md) | [2323 FC_V5d_Pro_Rev1](b2323b_flight-controller-board_FC-V5d-Pro-Rev1.md) |
+| [2321. FC_V5a](b2321b_flight-controller-board_FC-V5a.md) | [2323. FC_V5d_Pro_Rev1](b2323b_flight-controller-board_FC-V5d-Pro-Rev1.md) |

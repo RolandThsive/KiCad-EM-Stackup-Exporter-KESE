@@ -1,4 +1,4 @@
-# 1650 external_drive_board
+# 1650. external_drive_board
 
 Board 1,650 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 16](../CorpusTestingPages/Corpus-Testing-16.md#1650-external_drive_board).
 
@@ -45,4 +45,4 @@ Board 1,650 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1649 expansion_connector_board](b1649b_mega65-r3-expansion-board_expansion-connector-board.md) | [1651 jtag_base_board](b1651b_mega65-r3-expansion-board_jtag-base-board.md) |
+| [1649. expansion_connector_board](b1649b_mega65-r3-expansion-board_expansion-connector-board.md) | [1651. jtag_base_board](b1651b_mega65-r3-expansion-board_jtag-base-board.md) |

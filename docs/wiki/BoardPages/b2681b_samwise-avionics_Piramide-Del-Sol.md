@@ -1,4 +1,4 @@
-# 2681 Piramide_Del_Sol
+# 2681. Piramide_Del_Sol
 
 Board 2,681 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 25](../CorpusTestingPages/Corpus-Testing-25.md#2681-piramide_del_sol).
 
@@ -45,4 +45,4 @@ Board 2,681 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2680 Stationary_X_Panel](b2680b_samwise-avionics_Stationary-X-Panel.md) | [2682 Coil_Panel_XY](b2682b_samwise-avionics_Coil-Panel-XY.md) |
+| [2680. Stationary_X_Panel](b2680b_samwise-avionics_Stationary-X-Panel.md) | [2682. Coil_Panel_XY](b2682b_samwise-avionics_Coil-Panel-XY.md) |

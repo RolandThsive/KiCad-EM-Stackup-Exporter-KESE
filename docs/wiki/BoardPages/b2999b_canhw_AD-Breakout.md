@@ -1,4 +1,4 @@
-# 2999 AD_Breakout
+# 2999. AD_Breakout
 
 Board 2,999 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 28](../CorpusTestingPages/Corpus-Testing-28.md#2999-ad_breakout).
 
@@ -45,4 +45,4 @@ Board 2,999 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2998 CAN_relay](b2998b_canhw_CAN-relay.md) | [3000 CanardBoard](b3000b_canhw_CanardBoard.md) |
+| [2998. CAN_relay](b2998b_canhw_CAN-relay.md) | [3000. CanardBoard](b3000b_canhw_CanardBoard.md) |

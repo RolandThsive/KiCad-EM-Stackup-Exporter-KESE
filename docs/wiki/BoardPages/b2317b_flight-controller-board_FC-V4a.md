@@ -1,4 +1,4 @@
-# 2317 FC_V4a
+# 2317. FC_V4a
 
 Board 2,317 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 22](../CorpusTestingPages/Corpus-Testing-22.md#2317-fc_v4a).
 
@@ -45,4 +45,4 @@ Board 2,317 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2316 FC_Board_v3](b2316b_flight-controller-board_FC-Board-v3.md) | [2318 FC_V4b](b2318b_flight-controller-board_FC-V4b.md) |
+| [2316. FC_Board_v3](b2316b_flight-controller-board_FC-Board-v3.md) | [2318. FC_V4b](b2318b_flight-controller-board_FC-V4b.md) |

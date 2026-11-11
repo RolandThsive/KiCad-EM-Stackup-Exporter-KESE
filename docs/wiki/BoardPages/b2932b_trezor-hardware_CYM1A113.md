@@ -1,4 +1,4 @@
-# 2932 CYM1A113
+# 2932. CYM1A113
 
 Board 2,932 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 28](../CorpusTestingPages/Corpus-Testing-28.md#2932-cym1a113).
 
@@ -45,4 +45,4 @@ Board 2,932 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2931 SystemBoardSMT](b2931b_retroverse_SystemBoardSMT.md) | [2933 trezor_v1.1](b2933b_trezor-hardware_trezor-v1-1.md) |
+| [2931. SystemBoardSMT](b2931b_retroverse_SystemBoardSMT.md) | [2933. trezor_v1.1](b2933b_trezor-hardware_trezor-v1-1.md) |

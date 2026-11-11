@@ -1,4 +1,4 @@
-# 2181 oresat-c3-surrogate
+# 2181. oresat-c3-surrogate
 
 Board 2,181 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 21](../CorpusTestingPages/Corpus-Testing-21.md#2181-oresat-c3-surrogate).
 
@@ -45,4 +45,4 @@ Board 2,181 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2180 c3-proxy](b2180b_oresat-flatsat_c3-proxy.md) | [2182 c3s-card-adapter](b2182b_oresat-flatsat_c3s-card-adapter.md) |
+| [2180. c3-proxy](b2180b_oresat-flatsat_c3-proxy.md) | [2182. c3s-card-adapter](b2182b_oresat-flatsat_c3s-card-adapter.md) |

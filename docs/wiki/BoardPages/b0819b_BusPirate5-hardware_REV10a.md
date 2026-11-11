@@ -1,4 +1,4 @@
-# 819 REV10a
+# 819. REV10a
 
 Board 819 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 8](../CorpusTestingPages/Corpus-Testing-08.md#819-rev10a).
 
@@ -45,4 +45,4 @@ Board 819 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [818 vpp-maker-rev6-ian](b0818b_BusPirate5-hardware_vpp-maker-rev6-ian.md) | [820 BusPirate-5-rev8](b0820b_BusPirate5-hardware_BusPirate-5-rev8.md) |
+| [818. vpp-maker-rev6-ian](b0818b_BusPirate5-hardware_vpp-maker-rev6-ian.md) | [820. BusPirate-5-rev8](b0820b_BusPirate5-hardware_BusPirate-5-rev8.md) |

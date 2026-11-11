@@ -1,4 +1,4 @@
-# 2552 tulipcc
+# 2552. tulipcc
 
 Board 2,552 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 24](../CorpusTestingPages/Corpus-Testing-24.md#2552-tulipcc).
 
@@ -45,4 +45,4 @@ Board 2,552 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2551 rpi-cm4-carrier-template](b2551b_rpi-cm4-carrier-template_rpi-cm4-carrier-template.md) | [2553 FlightPCB](b2553b_tsar_v1_FlightPCB.md) |
+| [2551. rpi-cm4-carrier-template](b2551b_rpi-cm4-carrier-template_rpi-cm4-carrier-template.md) | [2553. FlightPCB](b2553b_tsar_v1_FlightPCB.md) |

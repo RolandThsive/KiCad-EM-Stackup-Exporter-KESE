@@ -1,4 +1,4 @@
-# 1702 Analog Converter
+# 1702. Analog Converter
 
 Board 1,702 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 16](../CorpusTestingPages/Corpus-Testing-16.md#1702-analog-converter).
 
@@ -45,4 +45,4 @@ Board 1,702 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1701 Analog Converter Backplane](b1701b_embeddedbakery_Analog-Converter-Backplane.md) | [1703 Wave Form Generator Amplifier](b1703b_embeddedbakery_Wave-Form-Generator-Amplifier.md) |
+| [1701. Analog Converter Backplane](b1701b_embeddedbakery_Analog-Converter-Backplane.md) | [1703. Wave Form Generator Amplifier](b1703b_embeddedbakery_Wave-Form-Generator-Amplifier.md) |

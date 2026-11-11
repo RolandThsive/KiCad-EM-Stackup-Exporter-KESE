@@ -1,4 +1,4 @@
-# 2677 MPPT_addon_board
+# 2677. MPPT_addon_board
 
 Board 2,677 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 25](../CorpusTestingPages/Corpus-Testing-25.md#2677-mppt_addon_board).
 
@@ -45,4 +45,4 @@ Board 2,677 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2676 magnetometer_extern](b2676b_samwise-avionics_magnetometer-extern.md) | [2678 picubed_samwise](b2678b_samwise-avionics_picubed-samwise.md) |
+| [2676. magnetometer_extern](b2676b_samwise-avionics_magnetometer-extern.md) | [2678. picubed_samwise](b2678b_samwise-avionics_picubed-samwise.md) |

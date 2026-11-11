@@ -1,4 +1,4 @@
-# 977 MultiUniBoard
+# 977. MultiUniBoard
 
 Board 977 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 10](../CorpusTestingPages/Corpus-Testing-10.md#977-multiuniboard).
 
@@ -44,4 +44,4 @@ Board 977 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [976 eUniBoard](b0976b_Ace-2019_eUniBoard.md) | [978 PS2](b0978b_Ace-2019_PS2.md) |
+| [976. eUniBoard](b0976b_Ace-2019_eUniBoard.md) | [978. PS2](b0978b_Ace-2019_PS2.md) |

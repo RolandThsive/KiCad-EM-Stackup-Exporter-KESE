@@ -1,4 +1,4 @@
-# 2995 altimeter
+# 2995. altimeter
 
 Board 2,995 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 28](../CorpusTestingPages/Corpus-Testing-28.md#2995-altimeter).
 
@@ -45,4 +45,4 @@ Board 2,995 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2994 cpu-card](b2994b_lisa-cpu-card_cpu-card.md) | [2996 camera](b2996b_canhw_camera.md) |
+| [2994. cpu-card](b2994b_lisa-cpu-card_cpu-card.md) | [2996. camera](b2996b_canhw_camera.md) |

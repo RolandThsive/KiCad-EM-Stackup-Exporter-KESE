@@ -1,4 +1,4 @@
-# 3032 backplane_hub_fp2
+# 3032. backplane_hub_fp2
 
 Board 3,032 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 29](../CorpusTestingPages/Corpus-Testing-29.md#3032-backplane_hub_fp2).
 
@@ -45,4 +45,4 @@ Board 3,032 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [3031 backplane_fp6](b3031b_the-mac-pro-project_backplane-fp6.md) | [3033 macpro62-io-board](b3033b_the-mac-pro-project_macpro62-io-board.md) |
+| [3031. backplane_fp6](b3031b_the-mac-pro-project_backplane-fp6.md) | [3033. macpro62-io-board](b3033b_the-mac-pro-project_macpro62-io-board.md) |

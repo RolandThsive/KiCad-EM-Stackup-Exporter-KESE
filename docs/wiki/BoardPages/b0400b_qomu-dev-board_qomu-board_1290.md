@@ -1,4 +1,4 @@
-# 400 qomu-board
+# 400. qomu-board
 
 Board 400 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 4](../CorpusTestingPages/Corpus-Testing-04.md#400-qomu-board).
 
@@ -44,4 +44,4 @@ Board 400 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [399 led-panel](b0399b_programmable-led-panel_led-panel.md) | [401 quickfeather-board](b0401b_quickfeather-dev-board_quickfeather-board.md) |
+| [399. led-panel](b0399b_programmable-led-panel_led-panel.md) | [401. quickfeather-board](b0401b_quickfeather-dev-board_quickfeather-board.md) |

@@ -1,4 +1,4 @@
-# 2094 PCIexpress_x16_half
+# 2094. PCIexpress_x16_half
 
 Board 2,094 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 20](../CorpusTestingPages/Corpus-Testing-20.md#2094-pciexpress_x16_half).
 
@@ -45,4 +45,4 @@ Board 2,094 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2093 PCIexpress_x16_full](b2093b_PCIexpress-KiCad_PCIexpress-x16-full.md) | [2095 PCIexpress_x16_low](b2095b_PCIexpress-KiCad_PCIexpress-x16-low.md) |
+| [2093. PCIexpress_x16_full](b2093b_PCIexpress-KiCad_PCIexpress-x16-full.md) | [2095. PCIexpress_x16_low](b2095b_PCIexpress-KiCad_PCIexpress-x16-low.md) |

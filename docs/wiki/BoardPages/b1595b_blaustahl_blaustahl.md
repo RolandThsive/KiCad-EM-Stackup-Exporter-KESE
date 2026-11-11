@@ -1,4 +1,4 @@
-# 1595 blaustahl
+# 1595. blaustahl
 
 Board 1,595 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 15](../CorpusTestingPages/Corpus-Testing-15.md#1595-blaustahl).
 
@@ -45,4 +45,4 @@ Board 1,595 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1594 3D_Printer_Stepper_TMC2209](b1594b_custom-3d-printer-controller_3D-Printer-Stepper-TMC2209.md) | [1596 eis](b1596b_eis_eis.md) |
+| [1594. 3D_Printer_Stepper_TMC2209](b1594b_custom-3d-printer-controller_3D-Printer-Stepper-TMC2209.md) | [1596. eis](b1596b_eis_eis.md) |

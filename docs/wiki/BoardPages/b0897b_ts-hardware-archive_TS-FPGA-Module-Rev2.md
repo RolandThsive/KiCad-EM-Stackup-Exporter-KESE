@@ -1,4 +1,4 @@
-# 897 TS_FPGA_Module_Rev2
+# 897. TS_FPGA_Module_Rev2
 
 Board 897 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 9](../CorpusTestingPages/Corpus-Testing-09.md#897-ts_fpga_module_rev2).
 
@@ -45,4 +45,4 @@ Board 897 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [896 TS_Front_Endcap](b0896b_ThunderScope_TS-Front-Endcap.md) | [898 Thunderscope_Rev5.1](b0898b_ts-hardware-archive_Thunderscope-Rev5-1.md) |
+| [896. TS_Front_Endcap](b0896b_ThunderScope_TS-Front-Endcap.md) | [898. Thunderscope_Rev5.1](b0898b_ts-hardware-archive_Thunderscope-Rev5-1.md) |

@@ -1,4 +1,4 @@
-# 2993 lisa-2mb-ram-card
+# 2993. lisa-2mb-ram-card
 
 Board 2,993 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 28](../CorpusTestingPages/Corpus-Testing-28.md#2993-lisa-2mb-ram-card).
 
@@ -45,4 +45,4 @@ Board 2,993 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2992 altair-8800b-display-control-pcb](b2992b_altair-8800b-display-control-pcb_altair-8800b-display-control-pcb.md) | [2994 cpu-card](b2994b_lisa-cpu-card_cpu-card.md) |
+| [2992. altair-8800b-display-control-pcb](b2992b_altair-8800b-display-control-pcb_altair-8800b-display-control-pcb.md) | [2994. cpu-card](b2994b_lisa-cpu-card_cpu-card.md) |

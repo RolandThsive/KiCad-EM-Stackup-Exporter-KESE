@@ -1,4 +1,4 @@
-# 961 ACE-COLOUR2
+# 961. ACE-COLOUR2
 
 Board 961 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 9](../CorpusTestingPages/Corpus-Testing-09.md#961-ace-colour2).
 
@@ -45,4 +45,4 @@ Board 961 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [960 ACE-COLOUR](b0960b_Ace-2019_ACE-COLOUR.md) | [962 ACE1](b0962b_Ace-2019_ACE1.md) |
+| [960. ACE-COLOUR](b0960b_Ace-2019_ACE-COLOUR.md) | [962. ACE1](b0962b_Ace-2019_ACE1.md) |

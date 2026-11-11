@@ -1,4 +1,4 @@
-# 2141 power-stage
+# 2141. power-stage
 
 Board 2,141 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 20](../CorpusTestingPages/Corpus-Testing-20.md#2141-power-stage).
 
@@ -45,4 +45,4 @@ Board 2,141 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2140 control-stage](b2140b_oresat-adcs-hardware_oresat-rw-board-rev7-control-stage_control-stage.md) | [2142 oresat-rw-card](b2142b_oresat-adcs-hardware_oresat-rw-card.md) |
+| [2140. control-stage](b2140b_oresat-adcs-hardware_oresat-rw-board-rev7-control-stage_control-stage.md) | [2142. oresat-rw-card](b2142b_oresat-adcs-hardware_oresat-rw-card.md) |

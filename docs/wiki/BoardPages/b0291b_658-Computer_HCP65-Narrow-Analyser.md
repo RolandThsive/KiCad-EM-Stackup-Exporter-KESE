@@ -1,4 +1,4 @@
-# 291 HCP65 Narrow Analyser
+# 291. HCP65 Narrow Analyser
 
 Board 291 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 3](../CorpusTestingPages/Corpus-Testing-03.md#291-hcp65-narrow-analyser).
 
@@ -45,4 +45,4 @@ Board 291 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [290 HCP65 Board Tester](b0290b_658-Computer_HCP65-Board-Tester.md) | [292 HCP65 Wide Analyser](b0292b_658-Computer_HCP65-Wide-Analyser.md) |
+| [290. HCP65 Board Tester](b0290b_658-Computer_HCP65-Board-Tester.md) | [292. HCP65 Wide Analyser](b0292b_658-Computer_HCP65-Wide-Analyser.md) |

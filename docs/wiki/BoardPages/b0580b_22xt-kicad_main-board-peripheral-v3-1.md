@@ -1,4 +1,4 @@
-# 580 main_board_peripheral_v3_1
+# 580. main_board_peripheral_v3_1
 
 Board 580 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 6](../CorpusTestingPages/Corpus-Testing-06.md#580-main_board_peripheral_v3_1).
 
@@ -46,4 +46,4 @@ Board 580 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [579 main_board_peripheral_v3](b0579b_22xt-kicad_main-board-peripheral-v3.md) | [581 main_board_v1](b0581b_22xt-kicad_main-board-v1.md) |
+| [579. main_board_peripheral_v3](b0579b_22xt-kicad_main-board-peripheral-v3.md) | [581. main_board_v1](b0581b_22xt-kicad_main-board-v1.md) |

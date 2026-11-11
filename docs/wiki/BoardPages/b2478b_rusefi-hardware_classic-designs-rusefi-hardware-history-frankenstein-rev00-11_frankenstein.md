@@ -1,4 +1,4 @@
-# 2478 frankenstein
+# 2478. frankenstein
 
 Board 2,478 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 23](../CorpusTestingPages/Corpus-Testing-23.md#2478-frankenstein).
 
@@ -45,4 +45,4 @@ Board 2,478 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2477 frankenstein](b2477b_rusefi-hardware_classic-designs-rusefi-hardware-history-frankenstein-rev00-10_frankenstein.md) | [2479 hi-lo](b2479b_rusefi-hardware_classic-designs-rusefi-hardware-history-hi-lo-driver-rev00-10_hi-lo.md) |
+| [2477. frankenstein](b2477b_rusefi-hardware_classic-designs-rusefi-hardware-history-frankenstein-rev00-10_frankenstein.md) | [2479. hi-lo](b2479b_rusefi-hardware_classic-designs-rusefi-hardware-history-hi-lo-driver-rev00-10_hi-lo.md) |

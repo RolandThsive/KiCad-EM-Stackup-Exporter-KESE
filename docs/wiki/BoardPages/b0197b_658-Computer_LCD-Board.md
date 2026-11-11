@@ -1,4 +1,4 @@
-# 197 LCD Board
+# 197. LCD Board
 
 Board 197 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 2](../CorpusTestingPages/Corpus-Testing-02.md#197-lcd-board).
 
@@ -45,4 +45,4 @@ Board 197 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [196 Graphics Transparency](b0196b_658-Computer_Graphics-Transparency.md) | [198 LCD Display](b0198b_658-Computer_LCD-Display.md) |
+| [196. Graphics Transparency](b0196b_658-Computer_Graphics-Transparency.md) | [198. LCD Display](b0198b_658-Computer_LCD-Display.md) |

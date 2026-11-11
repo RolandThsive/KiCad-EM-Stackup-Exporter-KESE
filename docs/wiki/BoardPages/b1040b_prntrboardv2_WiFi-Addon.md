@@ -1,4 +1,4 @@
-# 1040 WiFi-Addon
+# 1040. WiFi-Addon
 
 Board 1,040 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 10](../CorpusTestingPages/Corpus-Testing-10.md#1040-wifi-addon).
 
@@ -45,4 +45,4 @@ Board 1,040 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1039 TMC2660_Driver](b1039b_prntrboardv2_TMC2660-Driver.md) | [1041 XL-Power](b1041b_prntrboardv2_XL-Power.md) |
+| [1039. TMC2660_Driver](b1039b_prntrboardv2_TMC2660-Driver.md) | [1041. XL-Power](b1041b_prntrboardv2_XL-Power.md) |

@@ -1,4 +1,4 @@
-# 2011 USB-NeoHUB_Rev_A
+# 2011. USB-NeoHUB_Rev_A
 
 Board 2,011 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 19](../CorpusTestingPages/Corpus-Testing-19.md#2011-usb-neohub_rev_a).
 
@@ -45,4 +45,4 @@ Board 2,011 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2010 USB-gLINK_Rev_D](b2010b_USB-gLINK_USB-gLINK-Rev-D.md) | [2012 usb-sata_Rev.A](b2012b_USB-SATA_usb-sata-Rev-A.md) |
+| [2010. USB-gLINK_Rev_D](b2010b_USB-gLINK_USB-gLINK-Rev-D.md) | [2012. usb-sata_Rev.A](b2012b_USB-SATA_usb-sata-Rev-A.md) |

@@ -1,4 +1,4 @@
-# 3043 riser_hdmi
+# 3043. riser_hdmi
 
 Board 3,043 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 29](../CorpusTestingPages/Corpus-Testing-29.md#3043-riser_hdmi).
 
@@ -45,4 +45,4 @@ Board 3,043 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [3042 riser_c](b3042b_the-mac-pro-project_riser-c.md) | [3044 macpro62_lga1700](b3044b_the-mac-pro-project_macpro62-lga1700.md) |
+| [3042. riser_c](b3042b_the-mac-pro-project_riser-c.md) | [3044. macpro62_lga1700](b3044b_the-mac-pro-project_macpro62-lga1700.md) |

@@ -1,4 +1,4 @@
-# 2643 v0.4.4b
+# 2643. v0.4.4b
 
 Board 2,643 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 25](../CorpusTestingPages/Corpus-Testing-25.md#2643-v044b).
 
@@ -45,4 +45,4 @@ Board 2,643 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2642 v0.4.4d](b2642b_hardware_v0-4-4d.md) | [2644 v0.4.4c](b2644b_hardware_v0-4-4c.md) |
+| [2642. v0.4.4d](b2642b_hardware_v0-4-4d.md) | [2644. v0.4.4c](b2644b_hardware_v0-4-4c.md) |

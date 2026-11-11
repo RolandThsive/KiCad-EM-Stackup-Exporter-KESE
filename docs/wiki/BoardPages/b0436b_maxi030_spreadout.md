@@ -1,4 +1,4 @@
-# 436 spreadout
+# 436. spreadout
 
 Board 436 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 5](../CorpusTestingPages/Corpus-Testing-05.md#436-spreadout).
 
@@ -44,4 +44,4 @@ Board 436 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [435 MAXI030](b0435b_maxi030_MAXI030.md) | [437 CTRL_L](b0437b_4ds_CTRL-L.md) |
+| [435. MAXI030](b0435b_maxi030_MAXI030.md) | [437. CTRL_L](b0437b_4ds_CTRL-L.md) |

@@ -1,4 +1,4 @@
-# 1584 vna_r1
+# 1584. vna_r1
 
 Board 1,584 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 15](../CorpusTestingPages/Corpus-Testing-15.md#1584-vna_r1).
 
@@ -45,4 +45,4 @@ Board 1,584 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1583 vna_mm_synth](b1583b_vna_vna-mm-synth.md) | [1585 vna_r1_demod](b1585b_vna_vna-r1-demod.md) |
+| [1583. vna_mm_synth](b1583b_vna_vna-mm-synth.md) | [1585. vna_r1_demod](b1585b_vna_vna-r1-demod.md) |

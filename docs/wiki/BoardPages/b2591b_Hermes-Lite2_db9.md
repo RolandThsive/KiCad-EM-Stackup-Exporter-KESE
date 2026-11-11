@@ -1,4 +1,4 @@
-# 2591 db9
+# 2591. db9
 
 Board 2,591 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 24](../CorpusTestingPages/Corpus-Testing-24.md#2591-db9).
 
@@ -45,4 +45,4 @@ Board 2,591 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2590 main](b2590b_816-board_main.md) | [2592 io_jumper](b2592b_Hermes-Lite2_io-jumper.md) |
+| [2590. main](b2590b_816-board_main.md) | [2592. io_jumper](b2592b_Hermes-Lite2_io-jumper.md) |

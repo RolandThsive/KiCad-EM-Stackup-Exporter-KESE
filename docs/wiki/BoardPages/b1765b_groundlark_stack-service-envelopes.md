@@ -1,4 +1,4 @@
-# 1765 stack-service-envelopes
+# 1765. stack-service-envelopes
 
 Board 1,765 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 17](../CorpusTestingPages/Corpus-Testing-17.md#1765-stack-service-envelopes).
 
@@ -45,4 +45,4 @@ Board 1,765 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1764 stack-exploded](b1764b_groundlark_stack-exploded.md) | [1766 trenz-mounted](b1766b_groundlark_trenz-mounted.md) |
+| [1764. stack-exploded](b1764b_groundlark_stack-exploded.md) | [1766. trenz-mounted](b1766b_groundlark_trenz-mounted.md) |

@@ -1,4 +1,4 @@
-# 870 Domesday Duplicator
+# 870. Domesday Duplicator
 
 Board 870 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 9](../CorpusTestingPages/Corpus-Testing-09.md#870-domesday-duplicator).
 
@@ -45,4 +45,4 @@ Board 870 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [869 twonkie](b0869b_Twonkie_twonkie.md) | [871 haasoscope_pro_adc_fpga_board](b0871b_HaasoscopePro_haasoscope-pro-adc-fpga-board.md) |
+| [869. twonkie](b0869b_Twonkie_twonkie.md) | [871. haasoscope_pro_adc_fpga_board](b0871b_HaasoscopePro_haasoscope-pro-adc-fpga-board.md) |

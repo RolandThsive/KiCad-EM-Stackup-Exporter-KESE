@@ -1,4 +1,4 @@
-# 1108 daffodil
+# 1108. daffodil
 
 Board 1,108 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 11](../CorpusTestingPages/Corpus-Testing-11.md#1108-daffodil).
 
@@ -45,4 +45,4 @@ Board 1,108 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1107 crocus](b1107b_greatfet-hardware_crocus.md) | [1109 edelweiss](b1109b_greatfet-hardware_edelweiss.md) |
+| [1107. crocus](b1107b_greatfet-hardware_crocus.md) | [1109. edelweiss](b1109b_greatfet-hardware_edelweiss.md) |

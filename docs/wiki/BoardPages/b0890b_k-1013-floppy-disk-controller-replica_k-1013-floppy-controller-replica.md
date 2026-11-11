@@ -1,4 +1,4 @@
-# 890 k-1013-floppy-controller-replica
+# 890. k-1013-floppy-controller-replica
 
 Board 890 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 9](../CorpusTestingPages/Corpus-Testing-09.md#890-k-1013-floppy-controller-replica).
 
@@ -44,4 +44,4 @@ Board 890 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [889 k-1008-visable-memory](b0889b_k-1008-visable-memory-card-replica_k-1008-visable-memory.md) | [891 kim-1](b0891b_kim-1_kim-1.md) |
+| [889. k-1008-visable-memory](b0889b_k-1008-visable-memory-card-replica_k-1008-visable-memory.md) | [891. kim-1](b0891b_kim-1_kim-1.md) |

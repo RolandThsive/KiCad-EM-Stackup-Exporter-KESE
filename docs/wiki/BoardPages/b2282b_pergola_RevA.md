@@ -1,4 +1,4 @@
-# 2282 RevA
+# 2282. RevA
 
 Board 2,282 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 22](../CorpusTestingPages/Corpus-Testing-22.md#2282-reva).
 
@@ -45,4 +45,4 @@ Board 2,282 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2281 mc0020x](b2281b_cpc-schematics_mc0020x.md) | [2283 CM5_MINIMA](b2283b_CM5-MINIMA-REV1_CM5-MINIMA.md) |
+| [2281. mc0020x](b2281b_cpc-schematics_mc0020x.md) | [2283. CM5_MINIMA](b2283b_CM5-MINIMA-REV1_CM5-MINIMA.md) |

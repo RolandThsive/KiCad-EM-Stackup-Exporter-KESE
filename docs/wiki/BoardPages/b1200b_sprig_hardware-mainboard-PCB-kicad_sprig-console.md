@@ -1,4 +1,4 @@
-# 1200 sprig_console
+# 1200. sprig_console
 
 Board 1,200 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 12](../CorpusTestingPages/Corpus-Testing-12.md#1200-sprig_console).
 
@@ -45,4 +45,4 @@ Board 1,200 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1199 StackLink](b1199b_logicanalyzer_StackLink.md) | [1201 pico-reset](b1201b_sprig_pico-reset.md) |
+| [1199. StackLink](b1199b_logicanalyzer_StackLink.md) | [1201. pico-reset](b1201b_sprig_pico-reset.md) |

@@ -1,4 +1,4 @@
-# 1752 pq_obc_comms
+# 1752. pq_obc_comms
 
 Board 1,752 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 17](../CorpusTestingPages/Corpus-Testing-17.md#1752-pq_obc_comms).
 
@@ -45,4 +45,4 @@ Board 1,752 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1751 PQ_Lat_Board_Deploy](b1751b_pocat-hw_PQ-Lat-Board-Deploy.md) | [1753 PQ_PL1](b1753b_pocat-hw_PQ-PL1.md) |
+| [1751. PQ_Lat_Board_Deploy](b1751b_pocat-hw_PQ-Lat-Board-Deploy.md) | [1753. PQ_PL1](b1753b_pocat-hw_PQ-PL1.md) |

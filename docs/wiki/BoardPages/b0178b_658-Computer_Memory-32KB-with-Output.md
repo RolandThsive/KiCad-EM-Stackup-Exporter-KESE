@@ -1,4 +1,4 @@
-# 178 Memory 32KB with Output
+# 178. Memory 32KB with Output
 
 Board 178 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 2](../CorpusTestingPages/Corpus-Testing-02.md#178-memory-32kb-with-output).
 
@@ -45,4 +45,4 @@ Board 178 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [177 Main Data Buffer](b0177b_658-Computer_Main-Data-Buffer.md) | [179 Register 24bit with IO](b0179b_658-Computer_Register-24bit-with-IO.md) |
+| [177. Main Data Buffer](b0177b_658-Computer_Main-Data-Buffer.md) | [179. Register 24bit with IO](b0179b_658-Computer_Register-24bit-with-IO.md) |

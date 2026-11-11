@@ -1,4 +1,4 @@
-# 1436 Lily58_Pro
+# 1436. Lily58_Pro
 
 Board 1,436 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 14](../CorpusTestingPages/Corpus-Testing-14.md#1436-lily58_pro).
 
@@ -45,4 +45,4 @@ Board 1,436 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1435 Lily58_Pro_TOP](b1435b_Lily58_Lily58-Pro-TOP.md) | [1437 Pro_V2](b1437b_Lily58_Pro-V2.md) |
+| [1435. Lily58_Pro_TOP](b1435b_Lily58_Lily58-Pro-TOP.md) | [1437. Pro_V2](b1437b_Lily58_Pro-V2.md) |

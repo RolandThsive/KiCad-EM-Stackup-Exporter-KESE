@@ -1,4 +1,4 @@
-# 1534 pe42543_breakout
+# 1534. pe42543_breakout
 
 Board 1,534 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 15](../CorpusTestingPages/Corpus-Testing-15.md#1534-pe42543_breakout).
 
@@ -45,4 +45,4 @@ Board 1,534 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1533 pe42520_breakout](b1533b_vna_pe42520-breakout.md) | [1535 powerdet_breakout](b1535b_vna_powerdet-breakout.md) |
+| [1533. pe42520_breakout](b1533b_vna_pe42520-breakout.md) | [1535. powerdet_breakout](b1535b_vna_powerdet-breakout.md) |

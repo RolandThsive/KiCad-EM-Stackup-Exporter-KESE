@@ -1,4 +1,4 @@
-# 2961 TSAL
+# 2961. TSAL
 
 Board 2,961 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 28](../CorpusTestingPages/Corpus-Testing-28.md#2961-tsal).
 
@@ -45,4 +45,4 @@ Board 2,961 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2960 LTC6812-15W](b2960b_circuits_Kieran-Care-package-ENNOID-BMS-Slave_LTC6812-15W.md) | [2962 PDU_KR](b2962b_circuits_PDU-KR.md) |
+| [2960. LTC6812-15W](b2960b_circuits_Kieran-Care-package-ENNOID-BMS-Slave_LTC6812-15W.md) | [2962. PDU_KR](b2962b_circuits_PDU-KR.md) |

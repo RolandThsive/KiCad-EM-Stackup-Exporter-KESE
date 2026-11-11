@@ -1,4 +1,4 @@
-# 715 nref-flex-sdcard
+# 715. nref-flex-sdcard
 
 Board 715 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 7](../CorpusTestingPages/Corpus-Testing-07.md#715-nref-flex-sdcard).
 
@@ -45,4 +45,4 @@ Board 715 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [714 nref-flex-pcie](b0714b_reform-next-mirror_nref-flex-pcie.md) | [716 nref-flex-sound](b0716b_reform-next-mirror_nref-flex-sound.md) |
+| [714. nref-flex-pcie](b0714b_reform-next-mirror_nref-flex-pcie.md) | [716. nref-flex-sound](b0716b_reform-next-mirror_nref-flex-sound.md) |

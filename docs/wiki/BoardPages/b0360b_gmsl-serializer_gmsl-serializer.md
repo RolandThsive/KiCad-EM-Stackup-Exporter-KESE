@@ -1,4 +1,4 @@
-# 360 gmsl-serializer
+# 360. gmsl-serializer
 
 Board 360 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 4](../CorpusTestingPages/Corpus-Testing-04.md#360-gmsl-serializer).
 
@@ -44,4 +44,4 @@ Board 360 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [359 gmsl-deserializer](b0359b_gmsl-deserializer_gmsl-deserializer.md) | [361 gpu-cluster-backplane](b0361b_gpu-cluster-backplane_gpu-cluster-backplane.md) |
+| [359. gmsl-deserializer](b0359b_gmsl-deserializer_gmsl-deserializer.md) | [361. gpu-cluster-backplane](b0361b_gpu-cluster-backplane_gpu-cluster-backplane.md) |

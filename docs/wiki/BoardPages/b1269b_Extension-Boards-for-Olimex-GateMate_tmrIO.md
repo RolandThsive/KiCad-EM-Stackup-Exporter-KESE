@@ -1,4 +1,4 @@
-# 1269 tmrIO
+# 1269. tmrIO
 
 Board 1,269 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 12](../CorpusTestingPages/Corpus-Testing-12.md#1269-tmrio).
 
@@ -45,4 +45,4 @@ Board 1,269 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1268 simpleIO](b1268b_Extension-Boards-for-Olimex-GateMate_simpleIO.md) | [1270 USB](b1270b_Extension-Boards-for-Olimex-GateMate_USB.md) |
+| [1268. simpleIO](b1268b_Extension-Boards-for-Olimex-GateMate_simpleIO.md) | [1270. USB](b1270b_Extension-Boards-for-Olimex-GateMate_USB.md) |

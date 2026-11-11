@@ -1,4 +1,4 @@
-# 3133 18650_pcb
+# 3133. 18650_pcb
 
 Board 3,133 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 30](../CorpusTestingPages/Corpus-Testing-30.md#3133-18650_pcb).
 
@@ -45,4 +45,4 @@ Board 3,133 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [3132 pcb](b3132b_nekoink_pcb-mainboard-gen2_pcb.md) | [3134 6p_separator](b3134b_ZeroPhone-PCBs_6p-separator.md) |
+| [3132. pcb](b3132b_nekoink_pcb-mainboard-gen2_pcb.md) | [3134. 6p_separator](b3134b_ZeroPhone-PCBs_6p-separator.md) |

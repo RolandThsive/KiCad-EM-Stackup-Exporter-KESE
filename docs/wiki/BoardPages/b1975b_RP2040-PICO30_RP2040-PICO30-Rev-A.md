@@ -1,4 +1,4 @@
-# 1975 RP2040-PICO30_Rev_A
+# 1975. RP2040-PICO30_Rev_A
 
 Board 1,975 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 19](../CorpusTestingPages/Corpus-Testing-19.md#1975-rp2040-pico30_rev_a).
 
@@ -45,4 +45,4 @@ Board 1,975 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1974 RP2040-PICO-PC_rev_D](b1974b_RP2040-PICO-PC_RP2040-PICO-PC-rev-D.md) | [1976 RP2040pc_Rev_B](b1976b_RP2040pc_RP2040pc-Rev-B.md) |
+| [1974. RP2040-PICO-PC_rev_D](b1974b_RP2040-PICO-PC_RP2040-PICO-PC-rev-D.md) | [1976. RP2040pc_Rev_B](b1976b_RP2040pc_RP2040pc-Rev-B.md) |

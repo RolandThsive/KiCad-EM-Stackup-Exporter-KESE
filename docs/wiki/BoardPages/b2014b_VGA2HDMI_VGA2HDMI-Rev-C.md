@@ -1,4 +1,4 @@
-# 2014 VGA2HDMI_Rev_C
+# 2014. VGA2HDMI_Rev_C
 
 Board 2,014 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 19](../CorpusTestingPages/Corpus-Testing-19.md#2014-vga2hdmi_rev_c).
 
@@ -45,4 +45,4 @@ Board 2,014 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2013 USB-SERIAL-L_Rev_B](b2013b_USB-SERIAL-L_USB-SERIAL-L-Rev-B.md) | [2015 firmware_tester_board](b2015b_olin-electric-motorsports_firmware-tester-board.md) |
+| [2013. USB-SERIAL-L_Rev_B](b2013b_USB-SERIAL-L_USB-SERIAL-L-Rev-B.md) | [2015. firmware_tester_board](b2015b_olin-electric-motorsports_firmware-tester-board.md) |

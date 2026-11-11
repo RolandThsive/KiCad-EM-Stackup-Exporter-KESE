@@ -1,4 +1,4 @@
-# 1220 ISA_CGA
+# 1220. ISA_CGA
 
 Board 1,220 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 12](../CorpusTestingPages/Corpus-Testing-12.md#1220-isa_cga).
 
@@ -44,4 +44,4 @@ Board 1,220 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1219 voltage-regulator-module](b1219b_motor-controller-2018_voltage-regulator-module.md) | [1221 ISA_ES1868](b1221b_ES1868-ISA8_ISA-ES1868.md) |
+| [1219. voltage-regulator-module](b1219b_motor-controller-2018_voltage-regulator-module.md) | [1221. ISA_ES1868](b1221b_ES1868-ISA8_ISA-ES1868.md) |

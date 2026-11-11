@@ -1,4 +1,4 @@
-# 820 BusPirate-5-rev8
+# 820. BusPirate-5-rev8
 
 Board 820 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 8](../CorpusTestingPages/Corpus-Testing-08.md#820-buspirate-5-rev8).
 
@@ -45,4 +45,4 @@ Board 820 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [819 REV10a](b0819b_BusPirate5-hardware_REV10a.md) | [821 5XL-REV0](b0821b_BusPirate5-hardware_5XL-REV0.md) |
+| [819. REV10a](b0819b_BusPirate5-hardware_REV10a.md) | [821. 5XL-REV0](b0821b_BusPirate5-hardware_5XL-REV0.md) |

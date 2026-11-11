@@ -1,4 +1,4 @@
-# 737 caravel-M.2-card-WCSP
+# 737. caravel-M.2-card-WCSP
 
 Board 737 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 7](../CorpusTestingPages/Corpus-Testing-07.md#737-caravel-m2-card-wcsp).
 
@@ -45,4 +45,4 @@ Board 737 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [736 Fab-Drawing-caravel-M.2-card-QFN](b0736b_caravel-board_Fab-Drawing-caravel-M-2-card-QFN.md) | [738 caravel-5V-dev-v6-M.2](b0738b_caravel-board_caravel-5V-dev-v6-M-2.md) |
+| [736. Fab-Drawing-caravel-M.2-card-QFN](b0736b_caravel-board_Fab-Drawing-caravel-M-2-card-QFN.md) | [738. caravel-5V-dev-v6-M.2](b0738b_caravel-board_caravel-5V-dev-v6-M-2.md) |

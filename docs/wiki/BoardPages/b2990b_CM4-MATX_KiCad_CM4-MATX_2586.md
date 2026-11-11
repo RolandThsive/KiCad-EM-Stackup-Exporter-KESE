@@ -1,4 +1,4 @@
-# 2990 CM4_MATX
+# 2990. CM4_MATX
 
 Board 2,990 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 28](../CorpusTestingPages/Corpus-Testing-28.md#2990-cm4_matx).
 
@@ -45,4 +45,4 @@ Board 2,990 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2989 Tangenta](b2989b_tangenta_Tangenta.md) | [2991 altair-8800b-cpu-card](b2991b_altair-8800b-cpu-card_altair-8800b-cpu-card.md) |
+| [2989. Tangenta](b2989b_tangenta_Tangenta.md) | [2991. altair-8800b-cpu-card](b2991b_altair-8800b-cpu-card_altair-8800b-cpu-card.md) |

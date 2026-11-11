@@ -1,4 +1,4 @@
-# 40 RTC Card
+# 40. RTC Card
 
 Board 40 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 1](../CorpusTestingPages/Corpus-Testing-01.md#40-rtc-card).
 
@@ -45,4 +45,4 @@ Board 40 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page
 
 | Previous | Next |
 |:---|---:|
-| [39 RAM Card](b0039b_6502_RAM-Card.md) | [41 Serial Card Pro](b0041b_6502_Serial-Card-Pro.md) |
+| [39. RAM Card](b0039b_6502_RAM-Card.md) | [41. Serial Card Pro](b0041b_6502_Serial-Card-Pro.md) |

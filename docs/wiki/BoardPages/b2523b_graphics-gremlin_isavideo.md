@@ -1,4 +1,4 @@
-# 2523 isavideo
+# 2523. isavideo
 
 Board 2,523 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 24](../CorpusTestingPages/Corpus-Testing-24.md#2523-isavideo).
 
@@ -44,4 +44,4 @@ Board 2,523 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2522 GreengateDS3](b2522b_goodgreat-ds3_GreengateDS3.md) | [2524 SnarkBarker](b2524b_snark-barker_SnarkBarker.md) |
+| [2522. GreengateDS3](b2522b_goodgreat-ds3_GreengateDS3.md) | [2524. SnarkBarker](b2524b_snark-barker_SnarkBarker.md) |

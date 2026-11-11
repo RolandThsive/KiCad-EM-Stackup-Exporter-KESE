@@ -1,4 +1,4 @@
-# 2115 blade13
+# 2115. blade13
 
 Board 2,115 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 20](../CorpusTestingPages/Corpus-Testing-20.md#2115-blade13).
 
@@ -45,4 +45,4 @@ Board 2,115 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2114 blade12](b2114b_lumenpnp_blade12.md) | [2116 cal-fid](b2116b_lumenpnp_cal-fid.md) |
+| [2114. blade12](b2114b_lumenpnp_blade12.md) | [2116. cal-fid](b2116b_lumenpnp_cal-fid.md) |

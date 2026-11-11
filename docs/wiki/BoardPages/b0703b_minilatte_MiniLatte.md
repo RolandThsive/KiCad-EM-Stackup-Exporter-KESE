@@ -1,4 +1,4 @@
-# 703 MiniLatte
+# 703. MiniLatte
 
 Board 703 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 7](../CorpusTestingPages/Corpus-Testing-07.md#703-minilatte).
 
@@ -45,4 +45,4 @@ Board 703 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [702 MiniLatteLedArray](b0702b_minilatte_MiniLatteLedArray.md) | [704 hdmi-edp2](b0704b_reform-next-mirror_hdmi-edp2.md) |
+| [702. MiniLatteLedArray](b0702b_minilatte_MiniLatteLedArray.md) | [704. hdmi-edp2](b0704b_reform-next-mirror_hdmi-edp2.md) |

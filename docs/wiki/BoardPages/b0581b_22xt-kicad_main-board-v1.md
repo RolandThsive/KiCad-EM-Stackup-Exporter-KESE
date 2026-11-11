@@ -1,4 +1,4 @@
-# 581 main_board_v1
+# 581. main_board_v1
 
 Board 581 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 6](../CorpusTestingPages/Corpus-Testing-06.md#581-main_board_v1).
 
@@ -45,4 +45,4 @@ Board 581 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [580 main_board_peripheral_v3_1](b0580b_22xt-kicad_main-board-peripheral-v3-1.md) | [582 main_board_v2](b0582b_22xt-kicad_main-board-v2.md) |
+| [580. main_board_peripheral_v3_1](b0580b_22xt-kicad_main-board-peripheral-v3-1.md) | [582. main_board_v2](b0582b_22xt-kicad_main-board-v2.md) |

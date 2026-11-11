@@ -1,4 +1,4 @@
-# 2903 pref-keyboard-bezel-d6
+# 2903. pref-keyboard-bezel-d6
 
 Board 2,903 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 27](../CorpusTestingPages/Corpus-Testing-27.md#2903-pref-keyboard-bezel-d6).
 
@@ -46,4 +46,4 @@ Board 2,903 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2902 pref-keyboard-back-d1-fr4](b2902b_pocket-reform_pref-keyboard-back-d1-fr4.md) | [2904 pref-keyboard-bezel](b2904b_pocket-reform_pref-keyboard-bezel.md) |
+| [2902. pref-keyboard-back-d1-fr4](b2902b_pocket-reform_pref-keyboard-back-d1-fr4.md) | [2904. pref-keyboard-bezel](b2904b_pocket-reform_pref-keyboard-bezel.md) |

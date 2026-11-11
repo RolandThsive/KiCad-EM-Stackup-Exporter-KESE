@@ -1,4 +1,4 @@
-# 1917 LoRa_RevA
+# 1917. LoRa_RevA
 
 Board 1,917 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 18](../CorpusTestingPages/Corpus-Testing-18.md#1917-lora_reva).
 
@@ -45,4 +45,4 @@ Board 1,917 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1916 Lime2-SHIELD_RevC](b1916b_LIME2-SHIELD_Lime2-SHIELD-RevC.md) | [1918 LoRa_RevB](b1918b_LoRa-868-915_LoRa-RevB.md) |
+| [1916. Lime2-SHIELD_RevC](b1916b_LIME2-SHIELD_Lime2-SHIELD-RevC.md) | [1918. LoRa_RevB](b1918b_LoRa-868-915_LoRa-RevB.md) |

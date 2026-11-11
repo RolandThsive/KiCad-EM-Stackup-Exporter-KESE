@@ -1,4 +1,4 @@
-# 898 Thunderscope_Rev5.1
+# 898. Thunderscope_Rev5.1
 
 Board 898 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 9](../CorpusTestingPages/Corpus-Testing-09.md#898-thunderscope_rev51).
 
@@ -46,4 +46,4 @@ Board 898 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [897 TS_FPGA_Module_Rev2](b0897b_ts-hardware-archive_TS-FPGA-Module-Rev2.md) | [899 Thunderscope_Rev5.2](b0899b_ts-hardware-archive_Thunderscope-Rev5-2.md) |
+| [897. TS_FPGA_Module_Rev2](b0897b_ts-hardware-archive_TS-FPGA-Module-Rev2.md) | [899. Thunderscope_Rev5.2](b0899b_ts-hardware-archive_Thunderscope-Rev5-2.md) |

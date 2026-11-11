@@ -1,4 +1,4 @@
-# 1472 z2_io_test01
+# 1472. z2_io_test01
 
 Board 1,472 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 14](../CorpusTestingPages/Corpus-Testing-14.md#1472-z2_io_test01).
 
@@ -45,4 +45,4 @@ Board 1,472 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1471 z2_io](b1471b_ZX-Spectrum-diy_z2-io.md) | [1473 z2_io_test02](b1473b_ZX-Spectrum-diy_z2-io-test02.md) |
+| [1471. z2_io](b1471b_ZX-Spectrum-diy_z2-io.md) | [1473. z2_io_test02](b1473b_ZX-Spectrum-diy_z2-io-test02.md) |

@@ -1,4 +1,4 @@
-# 915 BB3plus USB hub test
+# 915. BB3plus USB hub test
 
 Board 915 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 9](../CorpusTestingPages/Corpus-Testing-09.md#915-bb3plus-usb-hub-test).
 
@@ -45,4 +45,4 @@ Board 915 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [914 BB3plus test mainboard](b0914b_eez-bb3plus_BB3plus-test-mainboard.md) | [916 DIB2 USB adapter front mask](b0916b_eez-bb3plus_DIB2-USB-adapter-front-mask.md) |
+| [914. BB3plus test mainboard](b0914b_eez-bb3plus_BB3plus-test-mainboard.md) | [916. DIB2 USB adapter front mask](b0916b_eez-bb3plus_DIB2-USB-adapter-front-mask.md) |

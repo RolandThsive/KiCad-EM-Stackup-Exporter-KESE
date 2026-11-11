@@ -1,4 +1,4 @@
-# 2680 Stationary_X_Panel
+# 2680. Stationary_X_Panel
 
 Board 2,680 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 25](../CorpusTestingPages/Corpus-Testing-25.md#2680-stationary_x_panel).
 
@@ -46,4 +46,4 @@ Board 2,680 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2679 RPi_interface](b2679b_samwise-avionics_RPi-interface.md) | [2681 Piramide_Del_Sol](b2681b_samwise-avionics_Piramide-Del-Sol.md) |
+| [2679. RPi_interface](b2679b_samwise-avionics_RPi-interface.md) | [2681. Piramide_Del_Sol](b2681b_samwise-avionics_Piramide-Del-Sol.md) |

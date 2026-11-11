@@ -1,4 +1,4 @@
-# 1090 librem5_usb-c_board
+# 1090. librem5_usb-c_board
 
 Board 1,090 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 11](../CorpusTestingPages/Corpus-Testing-11.md#1090-librem5_usb-c_board).
 
@@ -45,4 +45,4 @@ Board 1,090 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1089 librem5_mainboard](b1089b_l5-schematic_CAD-KiCad-librem5-mainboard_librem5-mainboard.md) | [1091 librem5_usb-c_fpc](b1091b_l5-schematic_librem5-usb-c-fpc.md) |
+| [1089. librem5_mainboard](b1089b_l5-schematic_CAD-KiCad-librem5-mainboard_librem5-mainboard.md) | [1091. librem5_usb-c_fpc](b1091b_l5-schematic_librem5-usb-c-fpc.md) |

@@ -1,4 +1,4 @@
-# 933 ice-prog-adapt
+# 933. ice-prog-adapt
 
 Board 933 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 9](../CorpusTestingPages/Corpus-Testing-09.md#933-ice-prog-adapt).
 
@@ -45,4 +45,4 @@ Board 933 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [932 ice-fpc-pmod](b0932b_ice-dongle_ice-fpc-pmod.md) | [934 icehat](b0934b_icehat_icehat.md) |
+| [932. ice-fpc-pmod](b0932b_ice-dongle_ice-fpc-pmod.md) | [934. icehat](b0934b_icehat_icehat.md) |

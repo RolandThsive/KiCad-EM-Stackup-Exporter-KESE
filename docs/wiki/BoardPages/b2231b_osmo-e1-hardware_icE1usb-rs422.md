@@ -1,4 +1,4 @@
-# 2231 icE1usb-rs422
+# 2231. icE1usb-rs422
 
 Board 2,231 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 21](../CorpusTestingPages/Corpus-Testing-21.md#2231-ice1usb-rs422).
 
@@ -45,4 +45,4 @@ Board 2,231 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2230 logicbone](b2230b_logicbone_logicbone.md) | [2232 icE1usb](b2232b_osmo-e1-hardware_hardware-icE1usb_icE1usb.md) |
+| [2230. logicbone](b2230b_logicbone_logicbone.md) | [2232. icE1usb](b2232b_osmo-e1-hardware_hardware-icE1usb_icE1usb.md) |

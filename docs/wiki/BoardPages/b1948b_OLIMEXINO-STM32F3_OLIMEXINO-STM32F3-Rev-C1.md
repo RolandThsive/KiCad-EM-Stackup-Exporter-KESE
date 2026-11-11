@@ -1,4 +1,4 @@
-# 1948 OLIMEXINO-STM32F3_Rev_C1
+# 1948. OLIMEXINO-STM32F3_Rev_C1
 
 Board 1,948 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 19](../CorpusTestingPages/Corpus-Testing-19.md#1948-olimexino-stm32f3_rev_c1).
 
@@ -45,4 +45,4 @@ Board 1,948 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1947 OLIMEXINO-STM32F3_RevC](b1947b_OLIMEXINO-STM32F3_OLIMEXINO-STM32F3-RevC.md) | [1949 OLIMEXINO-STM32F3_Rev_D](b1949b_OLIMEXINO-STM32F3_OLIMEXINO-STM32F3-Rev-D.md) |
+| [1947. OLIMEXINO-STM32F3_RevC](b1947b_OLIMEXINO-STM32F3_OLIMEXINO-STM32F3-RevC.md) | [1949. OLIMEXINO-STM32F3_Rev_D](b1949b_OLIMEXINO-STM32F3_OLIMEXINO-STM32F3-Rev-D.md) |

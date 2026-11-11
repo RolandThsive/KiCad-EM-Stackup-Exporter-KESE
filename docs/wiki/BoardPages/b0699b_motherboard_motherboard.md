@@ -1,4 +1,4 @@
-# 699 motherboard
+# 699. motherboard
 
 Board 699 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 7](../CorpusTestingPages/Corpus-Testing-07.md#699-motherboard).
 
@@ -45,4 +45,4 @@ Board 699 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [698 motherboard-stable](b0698b_motherboard_motherboard-stable.md) | [700 OBC Development Board](b0700b_cts-sat-2-obc-pcb_OBC-Development-Board.md) |
+| [698. motherboard-stable](b0698b_motherboard_motherboard-stable.md) | [700. OBC Development Board](b0700b_cts-sat-2-obc-pcb_OBC-Development-Board.md) |

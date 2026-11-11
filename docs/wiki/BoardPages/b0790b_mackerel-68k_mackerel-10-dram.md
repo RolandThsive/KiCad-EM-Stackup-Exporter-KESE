@@ -1,4 +1,4 @@
-# 790 mackerel-10-dram
+# 790. mackerel-10-dram
 
 Board 790 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 8](../CorpusTestingPages/Corpus-Testing-08.md#790-mackerel-10-dram).
 
@@ -45,4 +45,4 @@ Board 790 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [789 trhmsx](b0789b_trhmsx_trhmsx.md) | [791 mackerel-10-ide](b0791b_mackerel-68k_mackerel-10-ide.md) |
+| [789. trhmsx](b0789b_trhmsx_trhmsx.md) | [791. mackerel-10-ide](b0791b_mackerel-68k_mackerel-10-ide.md) |

@@ -1,4 +1,4 @@
-# 648 EinsteinTC01PS2Mini
+# 648. EinsteinTC01PS2Mini
 
 Board 648 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 6](../CorpusTestingPages/Corpus-Testing-06.md#648-einsteintc01ps2mini).
 
@@ -45,4 +45,4 @@ Board 648 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [647 EinsteinTC01PS2](b0647b_Einstein-TC-01_EinsteinTC01PS2.md) | [649 TC01AtariJoystick](b0649b_Einstein-TC-01_TC01AtariJoystick.md) |
+| [647. EinsteinTC01PS2](b0647b_Einstein-TC-01_EinsteinTC01PS2.md) | [649. TC01AtariJoystick](b0649b_Einstein-TC-01_TC01AtariJoystick.md) |

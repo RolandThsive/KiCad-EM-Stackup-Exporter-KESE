@@ -1,4 +1,4 @@
-# 356 gem-demo-board
+# 356. gem-demo-board
 
 Board 356 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 4](../CorpusTestingPages/Corpus-Testing-04.md#356-gem-demo-board).
 
@@ -44,4 +44,4 @@ Board 356 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [355 framos-csi-adapter](b0355b_framos-csi-adapter_framos-csi-adapter.md) | [357 zglue-gem1-adapter](b0357b_gem1-adapter_zglue-gem1-adapter.md) |
+| [355. framos-csi-adapter](b0355b_framos-csi-adapter_framos-csi-adapter.md) | [357. zglue-gem1-adapter](b0357b_gem1-adapter_zglue-gem1-adapter.md) |

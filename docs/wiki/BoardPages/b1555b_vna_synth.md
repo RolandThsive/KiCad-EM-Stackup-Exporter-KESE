@@ -1,4 +1,4 @@
-# 1555 synth
+# 1555. synth
 
 Board 1,555 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 15](../CorpusTestingPages/Corpus-Testing-15.md#1555-synth).
 
@@ -45,4 +45,4 @@ Board 1,555 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1554 switch_breakout](b1554b_vna_switch-breakout.md) | [1556 cpw_test](b1556b_vna_breakouts-ufl-test_cpw-test.md) |
+| [1554. switch_breakout](b1554b_vna_switch-breakout.md) | [1556. cpw_test](b1556b_vna_breakouts-ufl-test_cpw-test.md) |

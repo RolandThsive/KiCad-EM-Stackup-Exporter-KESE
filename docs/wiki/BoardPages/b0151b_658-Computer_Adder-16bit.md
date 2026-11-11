@@ -1,4 +1,4 @@
-# 151 Adder 16bit
+# 151. Adder 16bit
 
 Board 151 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 2](../CorpusTestingPages/Corpus-Testing-02.md#151-adder-16bit).
 
@@ -45,4 +45,4 @@ Board 151 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [150 Added 8bit](b0150b_658-Computer_Added-8bit.md) | [152 Address Buffer 16bit](b0152b_658-Computer_Address-Buffer-16bit.md) |
+| [150. Added 8bit](b0150b_658-Computer_Added-8bit.md) | [152. Address Buffer 16bit](b0152b_658-Computer_Address-Buffer-16bit.md) |

@@ -1,4 +1,4 @@
-# 1470 keyb2_nofill
+# 1470. keyb2_nofill
 
 Board 1,470 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 14](../CorpusTestingPages/Corpus-Testing-14.md#1470-keyb2_nofill).
 
@@ -45,4 +45,4 @@ Board 1,470 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1469 keyb2](b1469b_ZX-Spectrum-diy_keyb2.md) | [1471 z2_io](b1471b_ZX-Spectrum-diy_z2-io.md) |
+| [1469. keyb2](b1469b_ZX-Spectrum-diy_keyb2.md) | [1471. z2_io](b1471b_ZX-Spectrum-diy_z2-io.md) |

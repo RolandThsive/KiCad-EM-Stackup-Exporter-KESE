@@ -1,4 +1,4 @@
-# 274 Video Pixel Advance
+# 274. Video Pixel Advance
 
 Board 274 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 3](../CorpusTestingPages/Corpus-Testing-03.md#274-video-pixel-advance).
 
@@ -45,4 +45,4 @@ Board 274 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [273 Video Memory 2MB](b0273b_658-Computer_Video-Memory-2MB.md) | [275 Video Row Latch](b0275b_658-Computer_Video-Row-Latch.md) |
+| [273. Video Memory 2MB](b0273b_658-Computer_Video-Memory-2MB.md) | [275. Video Row Latch](b0275b_658-Computer_Video-Row-Latch.md) |

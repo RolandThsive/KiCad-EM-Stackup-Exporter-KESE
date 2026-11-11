@@ -1,4 +1,4 @@
-# 1763 pi-trenz-stack-concept
+# 1763. pi-trenz-stack-concept
 
 Board 1,763 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 17](../CorpusTestingPages/Corpus-Testing-17.md#1763-pi-trenz-stack-concept).
 
@@ -45,4 +45,4 @@ Board 1,763 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1762 groundlark-daqhat-01](b1762b_groundlark_groundlark-daqhat-01.md) | [1764 stack-exploded](b1764b_groundlark_stack-exploded.md) |
+| [1762. groundlark-daqhat-01](b1762b_groundlark_groundlark-daqhat-01.md) | [1764. stack-exploded](b1764b_groundlark_stack-exploded.md) |

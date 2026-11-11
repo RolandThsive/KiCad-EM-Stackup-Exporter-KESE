@@ -1,4 +1,4 @@
-# 2975 armory
+# 2975. armory
 
 Board 2,975 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 28](../CorpusTestingPages/Corpus-Testing-28.md#2975-armory).
 
@@ -45,4 +45,4 @@ Board 2,975 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2974 accessory](b2974b_usbarmory_accessory.md) | [2976 armory](b2976b_usbarmory_hardware-mark-two_armory.md) |
+| [2974. accessory](b2974b_usbarmory_accessory.md) | [2976. armory](b2976b_usbarmory_hardware-mark-two_armory.md) |

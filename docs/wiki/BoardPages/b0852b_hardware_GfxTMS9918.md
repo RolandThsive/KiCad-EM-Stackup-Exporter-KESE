@@ -1,4 +1,4 @@
-# 852 GfxTMS9918
+# 852. GfxTMS9918
 
 Board 852 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 8](../CorpusTestingPages/Corpus-Testing-08.md#852-gfxtms9918).
 
@@ -45,4 +45,4 @@ Board 852 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [851 Eth8019](b0851b_hardware_Eth8019.md) | [853 GfxV9958](b0853b_hardware_GfxV9958.md) |
+| [851. Eth8019](b0851b_hardware_Eth8019.md) | [853. GfxV9958](b0853b_hardware_GfxV9958.md) |

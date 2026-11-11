@@ -1,4 +1,4 @@
-# 1380 2000ATX
+# 1380. 2000ATX
 
 Board 1,380 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 13](../CorpusTestingPages/Corpus-Testing-13.md#1380-2000atx).
 
@@ -45,4 +45,4 @@ Board 1,380 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1379 VNA](b1379b_LibreVNA_VNA.md) | [1381 TICK](b1381b_Amiga-2000-EATX_TICK-TICK-Dual-0805_TICK.md) |
+| [1379. VNA](b1379b_LibreVNA_VNA.md) | [1381. TICK](b1381b_Amiga-2000-EATX_TICK-TICK-Dual-0805_TICK.md) |

@@ -1,4 +1,4 @@
-# 244 PS2 FIFO
+# 244. PS2 FIFO
 
 Board 244 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 3](../CorpusTestingPages/Corpus-Testing-03.md#244-ps2-fifo).
 
@@ -45,4 +45,4 @@ Board 244 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [243 PS2 Board](b0243b_658-Computer_PS2-Board.md) | [245 PS2 Timing](b0245b_658-Computer_PS2-Timing.md) |
+| [243. PS2 Board](b0243b_658-Computer_PS2-Board.md) | [245. PS2 Timing](b0245b_658-Computer_PS2-Timing.md) |

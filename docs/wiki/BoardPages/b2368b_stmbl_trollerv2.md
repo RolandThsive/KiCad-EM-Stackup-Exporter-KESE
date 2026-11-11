@@ -1,4 +1,4 @@
-# 2368 trollerv2
+# 2368. trollerv2
 
 Board 2,368 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 22](../CorpusTestingPages/Corpus-Testing-22.md#2368-trollerv2).
 
@@ -45,4 +45,4 @@ Board 2,368 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2367 to220_powerstage](b2367b_stmbl_to220-powerstage.md) | [2369 stmbl_4.0](b2369b_stmbl_stmbl-4-0.md) |
+| [2367. to220_powerstage](b2367b_stmbl_to220-powerstage.md) | [2369. stmbl_4.0](b2369b_stmbl_stmbl-4-0.md) |

@@ -1,4 +1,4 @@
-# 1655 IIsiA7_Mini
+# 1655. IIsiA7_Mini
 
 Board 1,655 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 16](../CorpusTestingPages/Corpus-Testing-16.md#1655-iisia7_mini).
 
@@ -45,4 +45,4 @@ Board 1,655 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1654 IIsi-to-ztex](b1654b_IIsiFPGA_IIsi-to-ztex.md) | [1656 nubus-to-ztex](b1656b_NuBusFPGA_nubus-to-ztex.md) |
+| [1654. IIsi-to-ztex](b1654b_IIsiFPGA_IIsi-to-ztex.md) | [1656. nubus-to-ztex](b1656b_NuBusFPGA_nubus-to-ztex.md) |

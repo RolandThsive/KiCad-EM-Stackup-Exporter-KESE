@@ -1,4 +1,4 @@
-# 2266 ownverter
+# 2266. ownverter
 
 Board 2,266 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 21](../CorpusTestingPages/Corpus-Testing-21.md#2266-ownverter).
 
@@ -45,4 +45,4 @@ Board 2,266 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2265 uVerter](b2265b_micro-inverter_uVerter.md) | [2267 heatsink_drawing](b2267b_twist_heatsink-drawing.md) |
+| [2265. uVerter](b2265b_micro-inverter_uVerter.md) | [2267. heatsink_drawing](b2267b_twist_heatsink-drawing.md) |

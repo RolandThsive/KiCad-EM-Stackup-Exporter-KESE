@@ -1,4 +1,4 @@
-# 406 sdi-fiber-adapter
+# 406. sdi-fiber-adapter
 
 Board 406 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 4](../CorpusTestingPages/Corpus-Testing-04.md#406-sdi-fiber-adapter).
 
@@ -44,4 +44,4 @@ Board 406 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [405 scalenode-cm4-baseboard](b0405b_scalenode-cm4-baseboard_scalenode-cm4-baseboard.md) | [407 sdi-mipi-bridge](b0407b_sdi-mipi-bridge-hw_sdi-mipi-bridge.md) |
+| [405. scalenode-cm4-baseboard](b0405b_scalenode-cm4-baseboard_scalenode-cm4-baseboard.md) | [407. sdi-mipi-bridge](b0407b_sdi-mipi-bridge-hw_sdi-mipi-bridge.md) |

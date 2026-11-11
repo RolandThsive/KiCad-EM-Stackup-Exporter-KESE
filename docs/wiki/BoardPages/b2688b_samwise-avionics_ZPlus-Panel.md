@@ -1,4 +1,4 @@
-# 2688 ZPlus_Panel
+# 2688. ZPlus_Panel
 
 Board 2,688 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 25](../CorpusTestingPages/Corpus-Testing-25.md#2688-zplus_panel).
 
@@ -46,4 +46,4 @@ Board 2,688 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2687 solar_charger](b2687b_samwise-avionics_solar-charger.md) | [2689 MegaDrive](b2689b_MegaDrive_MegaDrive.md) |
+| [2687. solar_charger](b2687b_samwise-avionics_solar-charger.md) | [2689. MegaDrive](b2689b_MegaDrive_MegaDrive.md) |

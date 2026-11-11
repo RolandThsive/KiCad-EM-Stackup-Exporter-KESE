@@ -1,4 +1,4 @@
-# 918 BB3plus DSI TFT display
+# 918. BB3plus DSI TFT display
 
 Board 918 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 9](../CorpusTestingPages/Corpus-Testing-09.md#918-bb3plus-dsi-tft-display).
 
@@ -45,4 +45,4 @@ Board 918 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [917 DIB2 USB adapter](b0917b_eez-bb3plus_DIB2-USB-adapter.md) | [919 BB3plus mainboard](b0919b_eez-bb3plus_BB3plus-mainboard.md) |
+| [917. DIB2 USB adapter](b0917b_eez-bb3plus_DIB2-USB-adapter.md) | [919. BB3plus mainboard](b0919b_eez-bb3plus_BB3plus-mainboard.md) |

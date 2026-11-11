@@ -1,4 +1,4 @@
-# 1225 FCCU-v21-schematic-pcb
+# 1225. FCCU-v21-schematic-pcb
 
 Board 1,225 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 12](../CorpusTestingPages/Corpus-Testing-12.md#1225-fccu-v21-schematic-pcb).
 
@@ -44,4 +44,4 @@ Board 1,225 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1224 FCCU-v2-schematic-pcb](b1224b_fuel-cell-control-unit-pcb-fccu-v2-1_FCCU-v2-schematic-pcb.md) | [1226 Amiga 2000R6](b1226b_Amiga-2000-KiCAD_Amiga-2000R6.md) |
+| [1224. FCCU-v2-schematic-pcb](b1224b_fuel-cell-control-unit-pcb-fccu-v2-1_FCCU-v2-schematic-pcb.md) | [1226. Amiga 2000R6](b1226b_Amiga-2000-KiCAD_Amiga-2000R6.md) |

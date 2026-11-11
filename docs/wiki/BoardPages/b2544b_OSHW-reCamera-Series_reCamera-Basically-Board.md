@@ -1,4 +1,4 @@
-# 2544 reCamera Basically Board
+# 2544. reCamera Basically Board
 
 Board 2,544 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 24](../CorpusTestingPages/Corpus-Testing-24.md#2544-recamera-basically-board).
 
@@ -45,4 +45,4 @@ Board 2,544 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2543 reCamera Gimbal](b2543b_OSHW-reCamera-Series_reCamera-Gimbal.md) | [2545 reCamera S101 v1.0](b2545b_OSHW-reCamera-Series_reCamera-S101-v1-0.md) |
+| [2543. reCamera Gimbal](b2543b_OSHW-reCamera-Series_reCamera-Gimbal.md) | [2545. reCamera S101 v1.0](b2545b_OSHW-reCamera-Series_reCamera-S101-v1-0.md) |

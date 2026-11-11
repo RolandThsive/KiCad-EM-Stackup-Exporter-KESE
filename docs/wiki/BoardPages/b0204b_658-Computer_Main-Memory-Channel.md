@@ -1,4 +1,4 @@
-# 204 Main Memory Channel
+# 204. Main Memory Channel
 
 Board 204 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 2](../CorpusTestingPages/Corpus-Testing-02.md#204-main-memory-channel).
 
@@ -45,4 +45,4 @@ Board 204 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [203 Default Board](b0203b_658-Computer_Default-Board.md) | [205 Main Memory Full Abort](b0205b_658-Computer_Main-Memory-Full-Abort.md) |
+| [203. Default Board](b0203b_658-Computer_Default-Board.md) | [205. Main Memory Full Abort](b0205b_658-Computer_Main-Memory-Full-Abort.md) |

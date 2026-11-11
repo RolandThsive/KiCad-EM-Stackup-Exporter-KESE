@@ -1,4 +1,4 @@
-# 4 Femto_tester_v1
+# 4. Femto_tester_v1
 
 Board 4 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 1](../CorpusTestingPages/Corpus-Testing-01.md#4-femto_tester_v1).
 
@@ -45,4 +45,4 @@ Board 4 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 
 
 | Previous | Next |
 |:---|---:|
-| [3 Femto_v1](b0003b_FEMTO_Femto-v1.md) | [5 Stroopwafel-LGA1151-CFL](b0005b_stroopwafel-lga1151-cfl_Stroopwafel-LGA1151-CFL.md) |
+| [3. Femto_v1](b0003b_FEMTO_Femto-v1.md) | [5. Stroopwafel-LGA1151-CFL](b0005b_stroopwafel-lga1151-cfl_Stroopwafel-LGA1151-CFL.md) |

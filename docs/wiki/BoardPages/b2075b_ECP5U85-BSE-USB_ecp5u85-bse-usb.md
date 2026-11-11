@@ -1,4 +1,4 @@
-# 2075 ecp5u85-bse-usb
+# 2075. ecp5u85-bse-usb
 
 Board 2,075 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 20](../CorpusTestingPages/Corpus-Testing-20.md#2075-ecp5u85-bse-usb).
 
@@ -45,4 +45,4 @@ Board 2,075 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2074 oe-commutator-controller](b2074b_commutators_oe-commutator-controller.md) | [2076 ecp5u85-bse-usb_io-tester](b2076b_ECP5U85-BSE-USB-IO-Tester_ecp5u85-bse-usb-io-tester.md) |
+| [2074. oe-commutator-controller](b2074b_commutators_oe-commutator-controller.md) | [2076. ecp5u85-bse-usb_io-tester](b2076b_ECP5U85-BSE-USB-IO-Tester_ecp5u85-bse-usb-io-tester.md) |

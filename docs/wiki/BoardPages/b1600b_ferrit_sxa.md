@@ -1,4 +1,4 @@
-# 1600 sxa
+# 1600. sxa
 
 Board 1,600 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 15](../CorpusTestingPages/Corpus-Testing-15.md#1600-sxa).
 
@@ -45,4 +45,4 @@ Board 1,600 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1599 sxy](b1599b_ferrit_sxy.md) | [1601 kaltstahl](b1601b_kaltstahl_kaltstahl.md) |
+| [1599. sxy](b1599b_ferrit_sxy.md) | [1601. kaltstahl](b1601b_kaltstahl_kaltstahl.md) |

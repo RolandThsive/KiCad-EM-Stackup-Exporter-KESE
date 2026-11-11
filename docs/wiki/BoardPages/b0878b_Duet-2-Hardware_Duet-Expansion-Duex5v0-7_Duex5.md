@@ -1,4 +1,4 @@
-# 878 Duex5
+# 878. Duex5
 
 Board 878 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 9](../CorpusTestingPages/Corpus-Testing-09.md#878-duex5).
 
@@ -45,4 +45,4 @@ Board 878 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [877 Duex5](b0877b_Duet-2-Hardware_Duet-Expansion-Duex5v0-11_Duex5.md) | [879 Duex5](b0879b_Duet-2-Hardware_Duet-Expansion-Duex5v0-8_Duex5.md) |
+| [877. Duex5](b0877b_Duet-2-Hardware_Duet-Expansion-Duex5v0-11_Duex5.md) | [879. Duex5](b0879b_Duet-2-Hardware_Duet-Expansion-Duex5v0-8_Duex5.md) |

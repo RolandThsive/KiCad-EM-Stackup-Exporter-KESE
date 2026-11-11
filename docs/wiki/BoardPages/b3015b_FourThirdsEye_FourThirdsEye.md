@@ -1,4 +1,4 @@
-# 3015 FourThirdsEye
+# 3015. FourThirdsEye
 
 Board 3,015 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 28](../CorpusTestingPages/Corpus-Testing-28.md#3015-fourthirdseye).
 
@@ -44,4 +44,4 @@ Board 3,015 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [3014 Driverino-Shield](b3014b_Driverino-Shield_Driverino-Shield.md) | [3016 IMUArray_BreakoutBoard](b3016b_IMU-Array_IMUArray-BreakoutBoard.md) |
+| [3014. Driverino-Shield](b3014b_Driverino-Shield_Driverino-Shield.md) | [3016. IMUArray_BreakoutBoard](b3016b_IMU-Array_IMUArray-BreakoutBoard.md) |

@@ -1,4 +1,4 @@
-# 1514 amp_cpw_hmc311
+# 1514. amp_cpw_hmc311
 
 Board 1,514 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 15](../CorpusTestingPages/Corpus-Testing-15.md#1514-amp_cpw_hmc311).
 
@@ -45,4 +45,4 @@ Board 1,514 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1513 amp_breakout](b1513b_vna_amp-breakout.md) | [1515 amp_macom](b1515b_vna_amp-macom.md) |
+| [1513. amp_breakout](b1513b_vna_amp-breakout.md) | [1515. amp_macom](b1515b_vna_amp-macom.md) |

@@ -1,4 +1,4 @@
-# 605 mainbox1.0
+# 605. mainbox1.0
 
 Board 605 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 6](../CorpusTestingPages/Corpus-Testing-06.md#605-mainbox10).
 
@@ -45,4 +45,4 @@ Board 605 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [604 wsg1.0](b0604b_bjr-kicad_wsg1-0.md) | [606 mainbox2.0](b0606b_bjr-kicad_21xt-02-mainbox-mainbox2-0_mainbox2-0.md) |
+| [604. wsg1.0](b0604b_bjr-kicad_wsg1-0.md) | [606. mainbox2.0](b0606b_bjr-kicad_21xt-02-mainbox-mainbox2-0_mainbox2-0.md) |

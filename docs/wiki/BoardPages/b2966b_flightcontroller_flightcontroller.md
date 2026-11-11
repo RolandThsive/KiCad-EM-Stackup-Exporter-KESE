@@ -1,4 +1,4 @@
-# 2966 flightcontroller
+# 2966. flightcontroller
 
 Board 2,966 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 28](../CorpusTestingPages/Corpus-Testing-28.md#2966-flightcontroller).
 
@@ -44,4 +44,4 @@ Board 2,966 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2965 Voltage_Measurement_KR](b2965b_circuits_Voltage-Measurement-KR.md) | [2967 uECG_v4_5](b2967b_uECG-pcb_uECG-v4-5.md) |
+| [2965. Voltage_Measurement_KR](b2965b_circuits_Voltage-Measurement-KR.md) | [2967. uECG_v4_5](b2967b_uECG-pcb_uECG-v4-5.md) |

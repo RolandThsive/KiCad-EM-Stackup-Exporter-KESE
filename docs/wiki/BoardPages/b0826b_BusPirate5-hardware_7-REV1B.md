@@ -1,4 +1,4 @@
-# 826 7-REV1B
+# 826. 7-REV1B
 
 Board 826 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 8](../CorpusTestingPages/Corpus-Testing-08.md#826-7-rev1b).
 
@@ -45,4 +45,4 @@ Board 826 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [825 7-REV1-freeze](b0825b_BusPirate5-hardware_7-REV1-freeze.md) | [827 7-REV2-vout-protection](b0827b_BusPirate5-hardware_bus-pirate-pcb-development-7-REV2-prototype3a_7-REV2-vout-protection.md) |
+| [825. 7-REV1-freeze](b0825b_BusPirate5-hardware_7-REV1-freeze.md) | [827. 7-REV2-vout-protection](b0827b_BusPirate5-hardware_bus-pirate-pcb-development-7-REV2-prototype3a_7-REV2-vout-protection.md) |

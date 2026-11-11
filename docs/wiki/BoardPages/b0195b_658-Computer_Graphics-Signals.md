@@ -1,4 +1,4 @@
-# 195 Graphics Signals
+# 195. Graphics Signals
 
 Board 195 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 2](../CorpusTestingPages/Corpus-Testing-02.md#195-graphics-signals).
 
@@ -45,4 +45,4 @@ Board 195 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [194 Graphics Main Data](b0194b_658-Computer_Graphics-Main-Data.md) | [196 Graphics Transparency](b0196b_658-Computer_Graphics-Transparency.md) |
+| [194. Graphics Main Data](b0194b_658-Computer_Graphics-Main-Data.md) | [196. Graphics Transparency](b0196b_658-Computer_Graphics-Transparency.md) |

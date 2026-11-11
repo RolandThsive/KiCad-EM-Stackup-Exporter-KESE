@@ -1,4 +1,4 @@
-# 2542 reCamera B101_B4_Gyro v0.1
+# 2542. reCamera B101_B4_Gyro v0.1
 
 Board 2,542 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 24](../CorpusTestingPages/Corpus-Testing-24.md#2542-recamera-b101_b4_gyro-v01).
 
@@ -45,4 +45,4 @@ Board 2,542 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2541 reCamera 2002 POE Board](b2541b_OSHW-reCamera-Series_reCamera-2002-POE-Board.md) | [2543 reCamera Gimbal](b2543b_OSHW-reCamera-Series_reCamera-Gimbal.md) |
+| [2541. reCamera 2002 POE Board](b2541b_OSHW-reCamera-Series_reCamera-2002-POE-Board.md) | [2543. reCamera Gimbal](b2543b_OSHW-reCamera-Series_reCamera-Gimbal.md) |

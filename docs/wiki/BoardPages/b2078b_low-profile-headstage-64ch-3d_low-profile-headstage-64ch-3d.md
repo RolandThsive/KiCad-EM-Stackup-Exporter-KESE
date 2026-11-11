@@ -1,4 +1,4 @@
-# 2078 low-profile-headstage-64ch-3d
+# 2078. low-profile-headstage-64ch-3d
 
 Board 2,078 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 20](../CorpusTestingPages/Corpus-Testing-20.md#2078-low-profile-headstage-64ch-3d).
 
@@ -45,4 +45,4 @@ Board 2,078 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2077 ephys-test-board](b2077b_ephys-test-board_ephys-test-board.md) | [2079 acquisition-board](b2079b_oe-acquisition-board-gen3_acquisition-board.md) |
+| [2077. ephys-test-board](b2077b_ephys-test-board_ephys-test-board.md) | [2079. acquisition-board](b2079b_oe-acquisition-board-gen3_acquisition-board.md) |

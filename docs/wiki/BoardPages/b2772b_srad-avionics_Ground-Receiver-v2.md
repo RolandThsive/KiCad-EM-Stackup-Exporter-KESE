@@ -1,4 +1,4 @@
-# 2772 Ground Receiver v2
+# 2772. Ground Receiver v2
 
 Board 2,772 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 26](../CorpusTestingPages/Corpus-Testing-26.md#2772-ground-receiver-v2).
 
@@ -45,4 +45,4 @@ Board 2,772 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2771 SensorBoardNoMCU](b2771b_srad-avionics_Spaceport-PCBs-Gerbers-Teensy-v3-0_SensorBoardNoMCU.md) | [2773 Ground Reciever](b2773b_srad-avionics_Ground-Reciever.md) |
+| [2771. SensorBoardNoMCU](b2771b_srad-avionics_Spaceport-PCBs-Gerbers-Teensy-v3-0_SensorBoardNoMCU.md) | [2773. Ground Reciever](b2773b_srad-avionics_Ground-Reciever.md) |

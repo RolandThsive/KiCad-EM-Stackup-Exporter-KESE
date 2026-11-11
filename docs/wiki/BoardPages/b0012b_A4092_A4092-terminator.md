@@ -1,4 +1,4 @@
-# 12 A4092-terminator
+# 12. A4092-terminator
 
 Board 12 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 1](../CorpusTestingPages/Corpus-Testing-01.md#12-a4092-terminator).
 
@@ -45,4 +45,4 @@ Board 12 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page
 
 | Previous | Next |
 |:---|---:|
-| [11 A4092-terminator-ds2107](b0011b_A4092_A4092-terminator-ds2107.md) | [13 A4770](b0013b_cheetah_A4770.md) |
+| [11. A4092-terminator-ds2107](b0011b_A4092_A4092-terminator-ds2107.md) | [13. A4770](b0013b_cheetah_A4770.md) |

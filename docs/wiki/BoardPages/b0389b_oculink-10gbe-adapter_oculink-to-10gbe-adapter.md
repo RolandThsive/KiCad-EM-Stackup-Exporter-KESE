@@ -1,4 +1,4 @@
-# 389 oculink-to-10gbe-adapter
+# 389. oculink-to-10gbe-adapter
 
 Board 389 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 4](../CorpusTestingPages/Corpus-Testing-04.md#389-oculink-to-10gbe-adapter).
 
@@ -44,4 +44,4 @@ Board 389 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [388 myra-sip-interposer](b0388b_myra-sip-interposer_myra-sip-interposer.md) | [390 oculink-to-pcie-adapter](b0390b_oculink-pcie-adapter_oculink-to-pcie-adapter.md) |
+| [388. myra-sip-interposer](b0388b_myra-sip-interposer_myra-sip-interposer.md) | [390. oculink-to-pcie-adapter](b0390b_oculink-pcie-adapter_oculink-to-pcie-adapter.md) |

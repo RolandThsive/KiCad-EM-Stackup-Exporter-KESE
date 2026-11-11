@@ -1,4 +1,4 @@
-# 2399 oldskool
+# 2399. oldskool
 
 Board 2,399 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 23](../CorpusTestingPages/Corpus-Testing-23.md#2399-oldskool).
 
@@ -45,4 +45,4 @@ Board 2,399 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2398 nyx](b2398b_frank_nyx.md) | [2400 turbosound](b2400b_frank_turbosound.md) |
+| [2398. nyx](b2398b_frank_nyx.md) | [2400. turbosound](b2400b_frank_turbosound.md) |

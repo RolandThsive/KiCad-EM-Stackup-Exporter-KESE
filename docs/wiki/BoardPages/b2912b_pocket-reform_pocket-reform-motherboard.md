@@ -1,4 +1,4 @@
-# 2912 pocket-reform-motherboard
+# 2912. pocket-reform-motherboard
 
 Board 2,912 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 27](../CorpusTestingPages/Corpus-Testing-27.md#2912-pocket-reform-motherboard).
 
@@ -45,4 +45,4 @@ Board 2,912 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2911 pocket-reform-keyboard-kailh-ortho](b2911b_pocket-reform_pocket-reform-keyboard-kailh-ortho.md) | [2913 nref-wifi-m2](b2913b_pocket-reform_nref-wifi-m2.md) |
+| [2911. pocket-reform-keyboard-kailh-ortho](b2911b_pocket-reform_pocket-reform-keyboard-kailh-ortho.md) | [2913. nref-wifi-m2](b2913b_pocket-reform_nref-wifi-m2.md) |

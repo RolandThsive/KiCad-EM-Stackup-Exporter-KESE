@@ -1,4 +1,4 @@
-# 1629 fmcw
+# 1629. fmcw
 
 Board 1,629 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 16](../CorpusTestingPages/Corpus-Testing-16.md#1629-fmcw).
 
@@ -45,4 +45,4 @@ Board 1,629 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1628 antenna_switch](b1628b_fmcw_antenna-switch.md) | [1630 fmcw](b1630b_fmcw_hardware-boards-rev2a_fmcw.md) |
+| [1628. antenna_switch](b1628b_fmcw_antenna-switch.md) | [1630. fmcw](b1630b_fmcw_hardware-boards-rev2a_fmcw.md) |

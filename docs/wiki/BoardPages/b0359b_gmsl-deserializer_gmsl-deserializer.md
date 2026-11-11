@@ -1,4 +1,4 @@
-# 359 gmsl-deserializer
+# 359. gmsl-deserializer
 
 Board 359 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 4](../CorpusTestingPages/Corpus-Testing-04.md#359-gmsl-deserializer).
 
@@ -44,4 +44,4 @@ Board 359 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [358 gem2-adapter](b0358b_gem2-adapter_gem2-adapter.md) | [360 gmsl-serializer](b0360b_gmsl-serializer_gmsl-serializer.md) |
+| [358. gem2-adapter](b0358b_gem2-adapter_gem2-adapter.md) | [360. gmsl-serializer](b0360b_gmsl-serializer_gmsl-serializer.md) |

@@ -1,4 +1,4 @@
-# 1609 Main_PDB
+# 1609. Main_PDB
 
 Board 1,609 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 15](../CorpusTestingPages/Corpus-Testing-15.md#1609-main_pdb).
 
@@ -44,4 +44,4 @@ Board 1,609 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1608 Main](b1608b_oomwoo-pcb_Main.md) | [1610 homebrew_486](b1610b_m8sbc-486_homebrew-486.md) |
+| [1608. Main](b1608b_oomwoo-pcb_Main.md) | [1610. homebrew_486](b1610b_m8sbc-486_homebrew-486.md) |

@@ -1,4 +1,4 @@
-# 985 Gigatron
+# 985. Gigatron
 
 Board 985 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 10](../CorpusTestingPages/Corpus-Testing-10.md#985-gigatron).
 
@@ -45,4 +45,4 @@ Board 985 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [984 VGAVDG](b0984b_Ace-2019_VGAVDG.md) | [986 NewBrain Keyboard A](b0986b_NewBrain_NewBrain-Keyboard-A.md) |
+| [984. VGAVDG](b0984b_Ace-2019_VGAVDG.md) | [986. NewBrain Keyboard A](b0986b_NewBrain_NewBrain-Keyboard-A.md) |

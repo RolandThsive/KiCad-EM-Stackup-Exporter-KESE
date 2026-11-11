@@ -1,4 +1,4 @@
-# 754 CIAA_K60
+# 754. CIAA_K60
 
 Board 754 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 7](../CorpusTestingPages/Corpus-Testing-07.md#754-ciaa_k60).
 
@@ -45,4 +45,4 @@ Board 754 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [753 CIAA_FSL_MINI](b0753b_Hardware_CIAA-FSL-MINI.md) | [755 ciaa-nxp](b0755b_Hardware_ciaa-nxp.md) |
+| [753. CIAA_FSL_MINI](b0753b_Hardware_CIAA-FSL-MINI.md) | [755. ciaa-nxp](b0755b_Hardware_ciaa-nxp.md) |

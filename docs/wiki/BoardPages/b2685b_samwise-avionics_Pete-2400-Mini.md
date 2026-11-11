@@ -1,4 +1,4 @@
-# 2685 Pete_2400_Mini
+# 2685. Pete_2400_Mini
 
 Board 2,685 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 25](../CorpusTestingPages/Corpus-Testing-25.md#2685-pete_2400_mini).
 
@@ -45,4 +45,4 @@ Board 2,685 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2684 FeatherRadioAdapter](b2684b_samwise-avionics_FeatherRadioAdapter.md) | [2686 reaction_wheel](b2686b_samwise-avionics_reaction-wheel.md) |
+| [2684. FeatherRadioAdapter](b2684b_samwise-avionics_FeatherRadioAdapter.md) | [2686. reaction_wheel](b2686b_samwise-avionics_reaction-wheel.md) |

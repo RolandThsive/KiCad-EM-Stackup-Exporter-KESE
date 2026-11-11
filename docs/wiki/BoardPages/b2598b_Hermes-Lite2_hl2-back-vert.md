@@ -1,4 +1,4 @@
-# 2598 hl2-back-vert
+# 2598. hl2-back-vert
 
 Board 2,598 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 25](../CorpusTestingPages/Corpus-Testing-25.md#2598-hl2-back-vert).
 
@@ -46,4 +46,4 @@ Board 2,598 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2597 hl2-back-horiz](b2597b_Hermes-Lite2_hl2-back-horiz.md) | [2599 hl2-back](b2599b_Hermes-Lite2_hl2-back.md) |
+| [2597. hl2-back-horiz](b2597b_Hermes-Lite2_hl2-back-horiz.md) | [2599. hl2-back](b2599b_Hermes-Lite2_hl2-back.md) |

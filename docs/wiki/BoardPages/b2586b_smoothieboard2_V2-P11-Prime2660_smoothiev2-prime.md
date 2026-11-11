@@ -1,4 +1,4 @@
-# 2586 smoothiev2-prime
+# 2586. smoothiev2-prime
 
 Board 2,586 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 24](../CorpusTestingPages/Corpus-Testing-24.md#2586-smoothiev2-prime).
 
@@ -45,4 +45,4 @@ Board 2,586 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2585 smoothiev2-prime-2660](b2585b_smoothieboard2_V2-P11-Prime2660_smoothiev2-prime-2660.md) | [2587 smoothiev2-prime](b2587b_smoothieboard2_V2-P12-Prime2590_smoothiev2-prime.md) |
+| [2585. smoothiev2-prime-2660](b2585b_smoothieboard2_V2-P11-Prime2660_smoothiev2-prime-2660.md) | [2587. smoothiev2-prime](b2587b_smoothieboard2_V2-P12-Prime2590_smoothiev2-prime.md) |

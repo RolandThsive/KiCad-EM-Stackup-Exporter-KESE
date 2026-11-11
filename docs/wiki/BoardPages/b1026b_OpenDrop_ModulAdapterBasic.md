@@ -1,4 +1,4 @@
-# 1026 ModulAdapterBasic
+# 1026. ModulAdapterBasic
 
 Board 1,026 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 10](../CorpusTestingPages/Corpus-Testing-10.md#1026-moduladapterbasic).
 
@@ -45,4 +45,4 @@ Board 1,026 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1025 DIMMCartridge_heaters](b1025b_OpenDrop_DIMMCartridge-heaters.md) | [1027 ModulAdapterMagnet](b1027b_OpenDrop_ModulAdapterMagnet.md) |
+| [1025. DIMMCartridge_heaters](b1025b_OpenDrop_DIMMCartridge-heaters.md) | [1027. ModulAdapterMagnet](b1027b_OpenDrop_ModulAdapterMagnet.md) |

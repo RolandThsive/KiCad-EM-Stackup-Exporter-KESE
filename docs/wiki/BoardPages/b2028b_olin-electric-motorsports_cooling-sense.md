@@ -1,4 +1,4 @@
-# 2028 cooling_sense
+# 2028. cooling_sense
 
 Board 2,028 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 19](../CorpusTestingPages/Corpus-Testing-19.md#2028-cooling_sense).
 
@@ -45,4 +45,4 @@ Board 2,028 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2027 bspd_brakelight](b2027b_olin-electric-motorsports_bspd-brakelight.md) | [2029 lv_interface](b2029b_olin-electric-motorsports_lv-interface.md) |
+| [2027. bspd_brakelight](b2027b_olin-electric-motorsports_bspd-brakelight.md) | [2029. lv_interface](b2029b_olin-electric-motorsports_lv-interface.md) |

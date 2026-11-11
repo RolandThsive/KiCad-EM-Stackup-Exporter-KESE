@@ -1,4 +1,4 @@
-# 31 Keyboard Encoder Helper
+# 31. Keyboard Encoder Helper
 
 Board 31 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 1](../CorpusTestingPages/Corpus-Testing-01.md#31-keyboard-encoder-helper).
 
@@ -45,4 +45,4 @@ Board 31 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page
 
 | Previous | Next |
 |:---|---:|
-| [30 Joystick Helper](b0030b_6502_Joystick-Helper.md) | [32 Keyboard Helper](b0032b_6502_Keyboard-Helper.md) |
+| [30. Joystick Helper](b0030b_6502_Joystick-Helper.md) | [32. Keyboard Helper](b0032b_6502_Keyboard-Helper.md) |

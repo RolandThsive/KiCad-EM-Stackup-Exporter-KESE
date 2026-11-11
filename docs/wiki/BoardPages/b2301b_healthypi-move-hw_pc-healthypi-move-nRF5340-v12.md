@@ -1,4 +1,4 @@
-# 2301 pc_healthypi_move_nRF5340_v12
+# 2301. pc_healthypi_move_nRF5340_v12
 
 Board 2,301 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 22](../CorpusTestingPages/Corpus-Testing-22.md#2301-pc_healthypi_move_nrf5340_v12).
 
@@ -45,4 +45,4 @@ Board 2,301 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2300 pc_healthypi_move_program_adapter_v7](b2300b_healthypi-move-hw_pc-healthypi-move-program-adapter-v7.md) | [2302 pc_healthypi_move_sensor_v9](b2302b_healthypi-move-hw_pc-healthypi-move-sensor-v9.md) |
+| [2300. pc_healthypi_move_program_adapter_v7](b2300b_healthypi-move-hw_pc-healthypi-move-program-adapter-v7.md) | [2302. pc_healthypi_move_sensor_v9](b2302b_healthypi-move-hw_pc-healthypi-move-sensor-v9.md) |

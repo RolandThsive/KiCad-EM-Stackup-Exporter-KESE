@@ -1,4 +1,4 @@
-# 584 AD5626BRMZ-kent
+# 584. AD5626BRMZ-kent
 
 Board 584 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 6](../CorpusTestingPages/Corpus-Testing-06.md#584-ad5626brmz-kent).
 
@@ -45,4 +45,4 @@ Board 584 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [583 main_board_v3](b0583b_22xt-kicad_main-board-v3.md) | [585 ADS1120IPWR](b0585b_22xt-kicad_ADS1120IPWR.md) |
+| [583. main_board_v3](b0583b_22xt-kicad_main-board-v3.md) | [585. ADS1120IPWR](b0585b_22xt-kicad_ADS1120IPWR.md) |

@@ -1,4 +1,4 @@
-# 453 probecard-mmcx
+# 453. probecard-mmcx
 
 Board 453 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 5](../CorpusTestingPages/Corpus-Testing-05.md#453-probecard-mmcx).
 
@@ -45,4 +45,4 @@ Board 453 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [452 iob-characterization-v02](b0452b_starshipraider_iob-characterization-v02.md) | [454 probecard-pinheader](b0454b_starshipraider_probecard-pinheader.md) |
+| [452. iob-characterization-v02](b0452b_starshipraider_iob-characterization-v02.md) | [454. probecard-pinheader](b0454b_starshipraider_probecard-pinheader.md) |

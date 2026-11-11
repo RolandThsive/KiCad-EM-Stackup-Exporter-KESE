@@ -1,4 +1,4 @@
-# 263 VIA Control
+# 263. VIA Control
 
 Board 263 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 3](../CorpusTestingPages/Corpus-Testing-03.md#263-via-control).
 
@@ -45,4 +45,4 @@ Board 263 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [262 VIA Breakout](b0262b_658-Computer_VIA-Breakout.md) | [264 Video Address Reader](b0264b_658-Computer_Video-Address-Reader.md) |
+| [262. VIA Breakout](b0262b_658-Computer_VIA-Breakout.md) | [264. Video Address Reader](b0264b_658-Computer_Video-Address-Reader.md) |

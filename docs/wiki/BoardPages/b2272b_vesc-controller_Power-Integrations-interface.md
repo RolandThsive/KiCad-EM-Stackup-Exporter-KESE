@@ -1,4 +1,4 @@
-# 2272 Power_Integrations_interface
+# 2272. Power_Integrations_interface
 
 Board 2,272 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 22](../CorpusTestingPages/Corpus-Testing-22.md#2272-power_integrations_interface).
 
@@ -45,4 +45,4 @@ Board 2,272 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2271 panel](b2271b_Bad-Thing-of-the-Edge-keyboard_panel.md) | [2273 VESC-controller](b2273b_vesc-controller_VESC-controller.md) |
+| [2271. panel](b2271b_Bad-Thing-of-the-Edge-keyboard_panel.md) | [2273. VESC-controller](b2273b_vesc-controller_VESC-controller.md) |

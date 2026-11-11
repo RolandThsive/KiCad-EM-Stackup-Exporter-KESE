@@ -1,4 +1,4 @@
-# 260 UART Signals
+# 260. UART Signals
 
 Board 260 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 3](../CorpusTestingPages/Corpus-Testing-03.md#260-uart-signals).
 
@@ -45,4 +45,4 @@ Board 260 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [259 UART Board](b0259b_658-Computer_UART-Board.md) | [261 VIA Board](b0261b_658-Computer_VIA-Board.md) |
+| [259. UART Board](b0259b_658-Computer_UART-Board.md) | [261. VIA Board](b0261b_658-Computer_VIA-Board.md) |

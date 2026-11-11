@@ -1,4 +1,4 @@
-# 1016 SE-030
+# 1016. SE-030
 
 Board 1,016 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 10](../CorpusTestingPages/Corpus-Testing-10.md#1016-se-030).
 
@@ -44,4 +44,4 @@ Board 1,016 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1015 RAM2E](b1015b_RAM2E_Hardware-MAX_RAM2E.md) | [1017 WarpSE](b1017b_WarpSE_WarpSE.md) |
+| [1015. RAM2E](b1015b_RAM2E_Hardware-MAX_RAM2E.md) | [1017. WarpSE](b1017b_WarpSE_WarpSE.md) |

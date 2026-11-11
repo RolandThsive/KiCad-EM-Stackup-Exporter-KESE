@@ -1,4 +1,4 @@
-# 889 k-1008-visable-memory
+# 889. k-1008-visable-memory
 
 Board 889 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 9](../CorpusTestingPages/Corpus-Testing-09.md#889-k-1008-visable-memory).
 
@@ -44,4 +44,4 @@ Board 889 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [888 Edgeberry](b0888b_Edgeberry-Baseboard_Edgeberry.md) | [890 k-1013-floppy-controller-replica](b0890b_k-1013-floppy-disk-controller-replica_k-1013-floppy-controller-replica.md) |
+| [888. Edgeberry](b0888b_Edgeberry-Baseboard_Edgeberry.md) | [890. k-1013-floppy-controller-replica](b0890b_k-1013-floppy-disk-controller-replica_k-1013-floppy-controller-replica.md) |

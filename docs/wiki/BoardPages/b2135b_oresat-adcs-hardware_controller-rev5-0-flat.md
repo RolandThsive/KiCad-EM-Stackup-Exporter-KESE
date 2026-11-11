@@ -1,4 +1,4 @@
-# 2135 controller_rev5.0_flat
+# 2135. controller_rev5.0_flat
 
 Board 2,135 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 20](../CorpusTestingPages/Corpus-Testing-20.md#2135-controller_rev50_flat).
 
@@ -45,4 +45,4 @@ Board 2,135 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2134 power-stage-rev8](b2134b_oresat-adcs-hardware_power-stage-rev8.md) | [2136 rev6.0_flat_controlstage](b2136b_oresat-adcs-hardware_rev6-0-flat-controlstage.md) |
+| [2134. power-stage-rev8](b2134b_oresat-adcs-hardware_power-stage-rev8.md) | [2136. rev6.0_flat_controlstage](b2136b_oresat-adcs-hardware_rev6-0-flat-controlstage.md) |

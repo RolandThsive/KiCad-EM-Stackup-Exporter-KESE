@@ -1,4 +1,4 @@
-# 2555 FlightPCB
+# 2555. FlightPCB
 
 Board 2,555 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 24](../CorpusTestingPages/Corpus-Testing-24.md#2555-flightpcb).
 
@@ -45,4 +45,4 @@ Board 2,555 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2554 FlightPCB](b2554b_tsar_v2_FlightPCB.md) | [2556 rp-micro](b2556b_rp-micro_rp-micro.md) |
+| [2554. FlightPCB](b2554b_tsar_v2_FlightPCB.md) | [2556. rp-micro](b2556b_rp-micro_rp-micro.md) |

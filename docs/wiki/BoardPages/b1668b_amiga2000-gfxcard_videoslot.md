@@ -1,4 +1,4 @@
-# 1668 videoslot
+# 1668. videoslot
 
 Board 1,668 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 16](../CorpusTestingPages/Corpus-Testing-16.md#1668-videoslot).
 
@@ -45,4 +45,4 @@ Board 1,668 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1667 amiga-gfxcard](b1667b_amiga2000-gfxcard_amiga-gfxcard.md) | [1669 adapter](b1669b_Glider_pcb-34p-adapter-a_adapter.md) |
+| [1667. amiga-gfxcard](b1667b_amiga2000-gfxcard_amiga-gfxcard.md) | [1669. adapter](b1669b_Glider_pcb-34p-adapter-a_adapter.md) |

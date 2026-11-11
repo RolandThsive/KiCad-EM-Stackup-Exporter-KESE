@@ -1,4 +1,4 @@
-# 2754 virgo-rpl-uph
+# 2754. virgo-rpl-uph
 
 Board 2,754 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 26](../CorpusTestingPages/Corpus-Testing-26.md#2754-virgo-rpl-uph).
 
@@ -45,4 +45,4 @@ Board 2,754 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2753 virgo-keyboard-test](b2753b_virgo_virgo-keyboard-test.md) | [2755 ZX80_Board](b2755b_ZX80_ZX80-Board.md) |
+| [2753. virgo-keyboard-test](b2753b_virgo_virgo-keyboard-test.md) | [2755. ZX80_Board](b2755b_ZX80_ZX80-Board.md) |

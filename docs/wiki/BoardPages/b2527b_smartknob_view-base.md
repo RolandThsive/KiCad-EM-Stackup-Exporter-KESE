@@ -1,4 +1,4 @@
-# 2527 view_base
+# 2527. view_base
 
 Board 2,527 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 24](../CorpusTestingPages/Corpus-Testing-24.md#2527-view_base).
 
@@ -45,4 +45,4 @@ Board 2,527 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2526 LevelShifterBreakout](b2526b_smartknob_LevelShifterBreakout.md) | [2528 view_screen](b2528b_smartknob_view-screen.md) |
+| [2526. LevelShifterBreakout](b2526b_smartknob_LevelShifterBreakout.md) | [2528. view_screen](b2528b_smartknob_view-screen.md) |

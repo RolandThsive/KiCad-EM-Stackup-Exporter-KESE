@@ -1,4 +1,4 @@
-# 2547 reCamera 2002 S4 GC2053 Sensor Board_V1.0_SCH&PCB_250905
+# 2547. reCamera 2002 S4 GC2053 Sensor Board_V1.0_SCH&PCB_250905
 
 Board 2,547 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 24](../CorpusTestingPages/Corpus-Testing-24.md#2547-recamera-2002-s4-gc2053-sensor-board_v10_schpcb_250905).
 
@@ -45,4 +45,4 @@ Board 2,547 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2546 reCamera S101 v1.1](b2546b_OSHW-reCamera-Series_reCamera-S101-v1-1.md) | [2548 SFUSat-Radio](b2548b_cubesat-radio_SFUSat-Radio.md) |
+| [2546. reCamera S101 v1.1](b2546b_OSHW-reCamera-Series_reCamera-S101-v1-1.md) | [2548. SFUSat-Radio](b2548b_cubesat-radio_SFUSat-Radio.md) |

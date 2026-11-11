@@ -1,4 +1,4 @@
-# 2802 ethernet-extension-poe
+# 2802. ethernet-extension-poe
 
 Board 2,802 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 26](../CorpusTestingPages/Corpus-Testing-26.md#2802-ethernet-extension-poe).
 
@@ -45,4 +45,4 @@ Board 2,802 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2801 HDMI2USB](b2801b_HDMI2USB-numato-opsis-hardware_HDMI2USB.md) | [2803 ethernet-extension-wopoe](b2803b_ethernet-extension_ethernet-extension-wopoe.md) |
+| [2801. HDMI2USB](b2801b_HDMI2USB-numato-opsis-hardware_HDMI2USB.md) | [2803. ethernet-extension-wopoe](b2803b_ethernet-extension_ethernet-extension-wopoe.md) |

@@ -1,4 +1,4 @@
-# 3000 CanardBoard
+# 3000. CanardBoard
 
 Board 3,000 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 28](../CorpusTestingPages/Corpus-Testing-28.md#3000-canardboard).
 
@@ -45,4 +45,4 @@ Board 3,000 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2999 AD_Breakout](b2999b_canhw_AD-Breakout.md) | [3001 DAQ CAN support](b3001b_canhw_DAQ-CAN-support.md) |
+| [2999. AD_Breakout](b2999b_canhw_AD-Breakout.md) | [3001. DAQ CAN support](b3001b_canhw_DAQ-CAN-support.md) |

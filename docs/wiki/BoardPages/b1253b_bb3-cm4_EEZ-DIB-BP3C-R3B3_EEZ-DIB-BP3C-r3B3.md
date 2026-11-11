@@ -1,4 +1,4 @@
-# 1253 EEZ_DIB_BP3C_r3B3
+# 1253. EEZ_DIB_BP3C_r3B3
 
 Board 1,253 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 12](../CorpusTestingPages/Corpus-Testing-12.md#1253-eez_dib_bp3c_r3b3).
 
@@ -45,4 +45,4 @@ Board 1,253 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1252 EEZ_BB3_CM4_SoM](b1252b_bb3-cm4_EEZ-BB3-CM4-SoM.md) | [1254 EEZ_DIB_MCU_r3B4](b1254b_bb3-cm4_EEZ-DIB-MCU-r3B4_EEZ-DIB-MCU-r3B4.md) |
+| [1252. EEZ_BB3_CM4_SoM](b1252b_bb3-cm4_EEZ-BB3-CM4-SoM.md) | [1254. EEZ_DIB_MCU_r3B4](b1254b_bb3-cm4_EEZ-DIB-MCU-r3B4_EEZ-DIB-MCU-r3B4.md) |

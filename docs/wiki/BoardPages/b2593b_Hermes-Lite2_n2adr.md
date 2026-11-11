@@ -1,4 +1,4 @@
-# 2593 n2adr
+# 2593. n2adr
 
 Board 2,593 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 25](../CorpusTestingPages/Corpus-Testing-25.md#2593-n2adr).
 
@@ -45,4 +45,4 @@ Board 2,593 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2592 io_jumper](b2592b_Hermes-Lite2_io-jumper.md) | [2594 Header2x20](b2594b_Hermes-Lite2_Header2x20.md) |
+| [2592. io_jumper](b2592b_Hermes-Lite2_io-jumper.md) | [2594. Header2x20](b2594b_Hermes-Lite2_Header2x20.md) |

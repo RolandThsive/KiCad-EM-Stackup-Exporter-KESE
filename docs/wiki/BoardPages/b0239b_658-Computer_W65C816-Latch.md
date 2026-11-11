@@ -1,4 +1,4 @@
-# 239 W65C816 Latch
+# 239. W65C816 Latch
 
 Board 239 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 3](../CorpusTestingPages/Corpus-Testing-03.md#239-w65c816-latch).
 
@@ -45,4 +45,4 @@ Board 239 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [238 W65C816 Debug Display](b0238b_658-Computer_W65C816-Debug-Display.md) | [240 W65C816 Minimal](b0240b_658-Computer_W65C816-Minimal.md) |
+| [238. W65C816 Debug Display](b0238b_658-Computer_W65C816-Debug-Display.md) | [240. W65C816 Minimal](b0240b_658-Computer_W65C816-Minimal.md) |

@@ -1,4 +1,4 @@
-# 554 bela_mini_multi_pb2_wing_bottom
+# 554. bela_mini_multi_pb2_wing_bottom
 
 Board 554 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 6](../CorpusTestingPages/Corpus-Testing-06.md#554-bela_mini_multi_pb2_wing_bottom).
 
@@ -45,4 +45,4 @@ Board 554 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [553 Bela_Gem_Multi](b0553b_bela-hardware_Bela-Gem-Multi.md) | [555 bela_mini_multi_pb2_wing_top](b0555b_bela-hardware_bela-mini-multi-pb2-wing-top.md) |
+| [553. Bela_Gem_Multi](b0553b_bela-hardware_Bela-Gem-Multi.md) | [555. bela_mini_multi_pb2_wing_top](b0555b_bela-hardware_bela-mini-multi-pb2-wing-top.md) |

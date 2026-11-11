@@ -1,4 +1,4 @@
-# 1740 keyboard_system
+# 1740. keyboard_system
 
 Board 1,740 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 17](../CorpusTestingPages/Corpus-Testing-17.md#1740-keyboard_system).
 
@@ -45,4 +45,4 @@ Board 1,740 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1739 Yellow](b1739b_yellow_Yellow.md) | [1741 LattePandaMu_Motherboard](b1741b_vohm_LattePandaMu-Motherboard.md) |
+| [1739. Yellow](b1739b_yellow_Yellow.md) | [1741. LattePandaMu_Motherboard](b1741b_vohm_LattePandaMu-Motherboard.md) |

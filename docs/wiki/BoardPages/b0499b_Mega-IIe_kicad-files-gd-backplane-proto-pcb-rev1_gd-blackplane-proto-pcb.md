@@ -1,4 +1,4 @@
-# 499 gd blackplane proto pcb
+# 499. gd blackplane proto pcb
 
 Board 499 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 5](../CorpusTestingPages/Corpus-Testing-05.md#499-gd-blackplane-proto-pcb).
 
@@ -45,4 +45,4 @@ Board 499 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [498 gd blackplane proto pcb](b0498b_Mega-IIe_kicad-files-gd-backplane-proto-pcb_gd-blackplane-proto-pcb.md) | [500 gd interdeswizzlepozer](b0500b_Mega-IIe_gd-interdeswizzlepozer.md) |
+| [498. gd blackplane proto pcb](b0498b_Mega-IIe_kicad-files-gd-backplane-proto-pcb_gd-blackplane-proto-pcb.md) | [500. gd interdeswizzlepozer](b0500b_Mega-IIe_gd-interdeswizzlepozer.md) |

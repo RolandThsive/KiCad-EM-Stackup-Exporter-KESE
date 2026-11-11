@@ -1,4 +1,4 @@
-# 1498 bms-c1
+# 1498. bms-c1
 
 Board 1,498 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 14](../CorpusTestingPages/Corpus-Testing-14.md#1498-bms-c1).
 
@@ -45,4 +45,4 @@ Board 1,498 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1497 bms-8s50-ic](b1497b_bms-8s50-ic_bms-8s50-ic.md) | [1499 mppt-1210-hus](b1499b_mppt-1210-hus_mppt-1210-hus.md) |
+| [1497. bms-8s50-ic](b1497b_bms-8s50-ic_bms-8s50-ic.md) | [1499. mppt-1210-hus](b1499b_mppt-1210-hus_mppt-1210-hus.md) |

@@ -1,4 +1,4 @@
-# 1000 ESC_Board
+# 1000. ESC_Board
 
 Board 1,000 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 10](../CorpusTestingPages/Corpus-Testing-10.md#1000-esc_board).
 
@@ -45,4 +45,4 @@ Board 1,000 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [999 DroneController](b0999b_DroneController_DroneController.md) | [1001 Expansion_Card](b1001b_ExpansionCards_Expansion-Card.md) |
+| [999. DroneController](b0999b_DroneController_DroneController.md) | [1001. Expansion_Card](b1001b_ExpansionCards_Expansion-Card.md) |

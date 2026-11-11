@@ -1,4 +1,4 @@
-# 2698 ModuleV450
+# 2698. ModuleV450
 
 Board 2,698 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 25](../CorpusTestingPages/Corpus-Testing-25.md#2698-modulev450).
 
@@ -45,4 +45,4 @@ Board 2,698 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2697 ModuleV440](b2697b_diybmsv4_ModuleV440.md) | [2699 Module_16S](b2699b_diybmsv4_Module-16S.md) |
+| [2697. ModuleV440](b2697b_diybmsv4_ModuleV440.md) | [2699. Module_16S](b2699b_diybmsv4_Module-16S.md) |

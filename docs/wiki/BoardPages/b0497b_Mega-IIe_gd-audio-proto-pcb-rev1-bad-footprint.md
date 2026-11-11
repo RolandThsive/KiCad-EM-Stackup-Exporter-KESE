@@ -1,4 +1,4 @@
-# 497 gd audio proto pcb-rev1 bad footprint
+# 497. gd audio proto pcb-rev1 bad footprint
 
 Board 497 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 5](../CorpusTestingPages/Corpus-Testing-05.md#497-gd-audio-proto-pcb-rev1-bad-footprint).
 
@@ -45,4 +45,4 @@ Board 497 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [496 gd 6502 proto pcb](b0496b_Mega-IIe_kicad-files-gd-6502-proto-pcb_gd-6502-proto-pcb.md) | [498 gd blackplane proto pcb](b0498b_Mega-IIe_kicad-files-gd-backplane-proto-pcb_gd-blackplane-proto-pcb.md) |
+| [496. gd 6502 proto pcb](b0496b_Mega-IIe_kicad-files-gd-6502-proto-pcb_gd-6502-proto-pcb.md) | [498. gd blackplane proto pcb](b0498b_Mega-IIe_kicad-files-gd-backplane-proto-pcb_gd-blackplane-proto-pcb.md) |

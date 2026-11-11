@@ -1,4 +1,4 @@
-# 1493 PowerDistributionUnit
+# 1493. PowerDistributionUnit
 
 Board 1,493 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 14](../CorpusTestingPages/Corpus-Testing-14.md#1493-powerdistributionunit).
 
@@ -45,4 +45,4 @@ Board 1,493 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1492 BPS-Leader](b1492b_ps-bpsleader_BPS-Leader.md) | [1494 PowerDistributionUnit_Mk1](b1494b_ps-powerdistributionunit_PowerDistributionUnit-Mk1.md) |
+| [1492. BPS-Leader](b1492b_ps-bpsleader_BPS-Leader.md) | [1494. PowerDistributionUnit_Mk1](b1494b_ps-powerdistributionunit_PowerDistributionUnit-Mk1.md) |

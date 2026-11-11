@@ -1,4 +1,4 @@
-# 1338 drone_power_2_screws_V2
+# 1338. drone_power_2_screws_V2
 
 Board 1,338 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 13](../CorpusTestingPages/Corpus-Testing-13.md#1338-drone_power_2_screws_v2).
 
@@ -45,4 +45,4 @@ Board 1,338 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1337 drone_power_2_screws](b1337b_iss-pcb_drone-power-2-screws.md) | [1339 drone_power_3_screws](b1339b_iss-pcb_drone-power-3-screws.md) |
+| [1337. drone_power_2_screws](b1337b_iss-pcb_drone-power-2-screws.md) | [1339. drone_power_3_screws](b1339b_iss-pcb_drone-power-3-screws.md) |

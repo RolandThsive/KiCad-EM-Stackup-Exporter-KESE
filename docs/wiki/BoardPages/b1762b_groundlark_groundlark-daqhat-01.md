@@ -1,4 +1,4 @@
-# 1762 groundlark-daqhat-01
+# 1762. groundlark-daqhat-01
 
 Board 1,762 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 17](../CorpusTestingPages/Corpus-Testing-17.md#1762-groundlark-daqhat-01).
 
@@ -45,4 +45,4 @@ Board 1,762 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1761 field_head](b1761b_groundlark_field-head.md) | [1763 pi-trenz-stack-concept](b1763b_groundlark_pi-trenz-stack-concept.md) |
+| [1761. field_head](b1761b_groundlark_field-head.md) | [1763. pi-trenz-stack-concept](b1763b_groundlark_pi-trenz-stack-concept.md) |

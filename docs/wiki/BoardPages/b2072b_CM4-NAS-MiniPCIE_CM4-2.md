@@ -1,4 +1,4 @@
-# 2072 CM4_2
+# 2072. CM4_2
 
 Board 2,072 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 20](../CorpusTestingPages/Corpus-Testing-20.md#2072-cm4_2).
 
@@ -44,4 +44,4 @@ Board 2,072 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2071 tsal-ail](b2071b_olin-electric-motorsports_tsal-ail.md) | [2073 acquisition-board](b2073b_acquisition-board_acquisition-board.md) |
+| [2071. tsal-ail](b2071b_olin-electric-motorsports_tsal-ail.md) | [2073. acquisition-board](b2073b_acquisition-board_acquisition-board.md) |

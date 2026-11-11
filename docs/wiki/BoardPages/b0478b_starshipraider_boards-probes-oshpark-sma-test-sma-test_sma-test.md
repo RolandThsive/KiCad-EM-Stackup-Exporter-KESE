@@ -1,4 +1,4 @@
-# 478 sma-test
+# 478. sma-test
 
 Board 478 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 5](../CorpusTestingPages/Corpus-Testing-05.md#478-sma-test).
 
@@ -45,4 +45,4 @@ Board 478 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [477 la-pod-mmcx](b0477b_starshipraider_la-pod-mmcx.md) | [479 probe-characterization](b0479b_starshipraider_probe-characterization.md) |
+| [477. la-pod-mmcx](b0477b_starshipraider_la-pod-mmcx.md) | [479. probe-characterization](b0479b_starshipraider_probe-characterization.md) |

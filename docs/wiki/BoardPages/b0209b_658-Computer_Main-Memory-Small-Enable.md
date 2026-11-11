@@ -1,4 +1,4 @@
-# 209 Main Memory Small Enable
+# 209. Main Memory Small Enable
 
 Board 209 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 2](../CorpusTestingPages/Corpus-Testing-02.md#209-main-memory-small-enable).
 
@@ -45,4 +45,4 @@ Board 209 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [208 Main Memory Small Abort](b0208b_658-Computer_Main-Memory-Small-Abort.md) | [210 Mainboard Full](b0210b_658-Computer_Mainboard-Full.md) |
+| [208. Main Memory Small Abort](b0208b_658-Computer_Main-Memory-Small-Abort.md) | [210. Mainboard Full](b0210b_658-Computer_Mainboard-Full.md) |

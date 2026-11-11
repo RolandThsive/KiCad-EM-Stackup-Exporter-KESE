@@ -1,4 +1,4 @@
-# 2977 milight-hub-base
+# 2977. milight-hub-base
 
 Board 2,977 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 28](../CorpusTestingPages/Corpus-Testing-28.md#2977-milight-hub-base).
 
@@ -44,4 +44,4 @@ Board 2,977 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2976 armory](b2976b_usbarmory_hardware-mark-two_armory.md) | [2978 uCM4](b2978b_ucm4_uCM4.md) |
+| [2976. armory](b2976b_usbarmory_hardware-mark-two_armory.md) | [2978. uCM4](b2978b_ucm4_uCM4.md) |

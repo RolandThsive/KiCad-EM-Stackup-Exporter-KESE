@@ -1,4 +1,4 @@
-# 1352 GATOR
+# 1352. GATOR
 
 Board 1,352 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 13](../CorpusTestingPages/Corpus-Testing-13.md#1352-gator).
 
@@ -45,4 +45,4 @@ Board 1,352 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1351 Motor-MK1](b1351b_iss-pcb_Motor-MK1.md) | [1353 555-Timer-Demo-Circuit](b1353b_iss-pcb_555-Timer-Demo-Circuit.md) |
+| [1351. Motor-MK1](b1351b_iss-pcb_Motor-MK1.md) | [1353. 555-Timer-Demo-Circuit](b1353b_iss-pcb_555-Timer-Demo-Circuit.md) |

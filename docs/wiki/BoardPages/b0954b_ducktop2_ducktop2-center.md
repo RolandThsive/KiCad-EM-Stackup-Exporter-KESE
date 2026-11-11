@@ -1,4 +1,4 @@
-# 954 ducktop2-center
+# 954. ducktop2-center
 
 Board 954 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 9](../CorpusTestingPages/Corpus-Testing-09.md#954-ducktop2-center).
 
@@ -44,4 +44,4 @@ Board 954 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [953 bms](b0953b_ducktop2_bms.md) | [955 12_keyboard_daughterboard](b0955b_ducktop2_12-keyboard-daughterboard.md) |
+| [953. bms](b0953b_ducktop2_bms.md) | [955. 12_keyboard_daughterboard](b0955b_ducktop2_12-keyboard-daughterboard.md) |

@@ -1,4 +1,4 @@
-# 1432 Lily58_Lite_Rev3
+# 1432. Lily58_Lite_Rev3
 
 Board 1,432 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 14](../CorpusTestingPages/Corpus-Testing-14.md#1432-lily58_lite_rev3).
 
@@ -45,4 +45,4 @@ Board 1,432 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1431 Lily58_Lite_Rev3_TOP_Case](b1431b_Lily58_Lily58-Lite-Rev3-TOP-Case.md) | [1433 Lily58](b1433b_Lily58_Lily58.md) |
+| [1431. Lily58_Lite_Rev3_TOP_Case](b1431b_Lily58_Lily58-Lite-Rev3-TOP-Case.md) | [1433. Lily58](b1433b_Lily58_Lily58.md) |

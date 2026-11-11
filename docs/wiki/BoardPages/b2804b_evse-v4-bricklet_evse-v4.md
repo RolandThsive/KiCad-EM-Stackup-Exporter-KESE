@@ -1,4 +1,4 @@
-# 2804 evse-v4
+# 2804. evse-v4
 
 Board 2,804 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 26](../CorpusTestingPages/Corpus-Testing-26.md#2804-evse-v4).
 
@@ -45,4 +45,4 @@ Board 2,804 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2803 ethernet-extension-wopoe](b2803b_ethernet-extension_ethernet-extension-wopoe.md) | [2805 evse-v4b](b2805b_evse-v4-bricklet_evse-v4b.md) |
+| [2803. ethernet-extension-wopoe](b2803b_ethernet-extension_ethernet-extension-wopoe.md) | [2805. evse-v4b](b2805b_evse-v4-bricklet_evse-v4b.md) |

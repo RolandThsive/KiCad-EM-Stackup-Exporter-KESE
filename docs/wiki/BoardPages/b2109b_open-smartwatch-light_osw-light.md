@@ -1,4 +1,4 @@
-# 2109 osw-light
+# 2109. osw-light
 
 Board 2,109 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 20](../CorpusTestingPages/Corpus-Testing-20.md#2109-osw-light).
 
@@ -44,4 +44,4 @@ Board 2,109 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2108 osw](b2108b_kicad-project_osw.md) | [2110 6ct-expander](b2110b_emon32_6ct-expander.md) |
+| [2108. osw](b2108b_kicad-project_osw.md) | [2110. 6ct-expander](b2110b_emon32_6ct-expander.md) |

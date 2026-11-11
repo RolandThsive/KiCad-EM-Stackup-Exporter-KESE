@@ -1,4 +1,4 @@
-# 439 CTRL_PWR
+# 439. CTRL_PWR
 
 Board 439 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 5](../CorpusTestingPages/Corpus-Testing-05.md#439-ctrl_pwr).
 
@@ -45,4 +45,4 @@ Board 439 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [438 CTRL_panelized](b0438b_4ds_CTRL-panelized.md) | [440 CTRL_R](b0440b_4ds_CTRL-R.md) |
+| [438. CTRL_panelized](b0438b_4ds_CTRL-panelized.md) | [440. CTRL_R](b0440b_4ds_CTRL-R.md) |

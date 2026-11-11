@@ -1,4 +1,4 @@
-# 2163 esi-minusz-end-card
+# 2163. esi-minusz-end-card
 
 Board 2,163 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 21](../CorpusTestingPages/Corpus-Testing-21.md#2163-esi-minusz-end-card).
 
@@ -45,4 +45,4 @@ Board 2,163 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2162 balun-eval-board](b2162b_oresat-end-cards_balun-eval-board.md) | [2164 esi-plusz-end-card](b2164b_oresat-end-cards_esi-plusz-end-card.md) |
+| [2162. balun-eval-board](b2162b_oresat-end-cards_balun-eval-board.md) | [2164. esi-plusz-end-card](b2164b_oresat-end-cards_esi-plusz-end-card.md) |

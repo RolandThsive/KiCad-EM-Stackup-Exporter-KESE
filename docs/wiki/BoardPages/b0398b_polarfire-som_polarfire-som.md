@@ -1,4 +1,4 @@
-# 398 polarfire-som
+# 398. polarfire-som
 
 Board 398 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 4](../CorpusTestingPages/Corpus-Testing-04.md#398-polarfire-som).
 
@@ -44,4 +44,4 @@ Board 398 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [397 antmicro-poe-to-usbc-pd-adapter](b0397b_poe-usb-c-pd-converter_antmicro-poe-to-usbc-pd-adapter.md) | [399 led-panel](b0399b_programmable-led-panel_led-panel.md) |
+| [397. antmicro-poe-to-usbc-pd-adapter](b0397b_poe-usb-c-pd-converter_antmicro-poe-to-usbc-pd-adapter.md) | [399. led-panel](b0399b_programmable-led-panel_led-panel.md) |

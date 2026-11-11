@@ -1,4 +1,4 @@
-# 141 Board 2x28 W15.24
+# 141. Board 2x28 W15.24
 
 Board 141 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 2](../CorpusTestingPages/Corpus-Testing-02.md#141-board-2x28-w1524).
 
@@ -46,4 +46,4 @@ Board 141 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [140 Board 2x24 W22.86](b0140b_658-Computer_Kicad-Boards-Pins-Board-2x24-W22-86_Board-2x24-W22-86.md) | [142 Board 2x28 W22.86](b0142b_658-Computer_Kicad-Boards-Pins-Board-2x28-W22-86_Board-2x28-W22-86.md) |
+| [140. Board 2x24 W22.86](b0140b_658-Computer_Kicad-Boards-Pins-Board-2x24-W22-86_Board-2x24-W22-86.md) | [142. Board 2x28 W22.86](b0142b_658-Computer_Kicad-Boards-Pins-Board-2x28-W22-86_Board-2x28-W22-86.md) |

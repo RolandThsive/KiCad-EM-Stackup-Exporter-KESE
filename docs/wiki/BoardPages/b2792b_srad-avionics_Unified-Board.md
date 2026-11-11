@@ -1,4 +1,4 @@
-# 2792 Unified_Board
+# 2792. Unified_Board
 
 Board 2,792 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 26](../CorpusTestingPages/Corpus-Testing-26.md#2792-unified_board).
 
@@ -45,4 +45,4 @@ Board 2,792 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2791 SensorBoard](b2791b_srad-avionics_SensorBoard.md) | [2793 CM4_MATX](b2793b_CM4-MATX_KiCad_CM4-MATX_2174.md) |
+| [2791. SensorBoard](b2791b_srad-avionics_SensorBoard.md) | [2793. CM4_MATX](b2793b_CM4-MATX_KiCad_CM4-MATX_2174.md) |

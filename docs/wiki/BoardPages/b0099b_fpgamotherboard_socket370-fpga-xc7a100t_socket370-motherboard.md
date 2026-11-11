@@ -1,4 +1,4 @@
-# 99 socket370-motherboard
+# 99. socket370-motherboard
 
 Board 99 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 1](../CorpusTestingPages/Corpus-Testing-01.md#99-socket370-motherboard).
 
@@ -45,4 +45,4 @@ Board 99 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page
 
 | Previous | Next |
 |:---|---:|
-| [98 socket370-motherboard](b0098b_fpgamotherboard_socket370-fpga-xc7a100t-routed_socket370-motherboard.md) | [100 socket7-ti180](b0100b_fpgamotherboard_socket7-fpga-ti180-hw_socket7-ti180.md) |
+| [98. socket370-motherboard](b0098b_fpgamotherboard_socket370-fpga-xc7a100t-routed_socket370-motherboard.md) | [100. socket7-ti180](b0100b_fpgamotherboard_socket7-fpga-ti180-hw_socket7-ti180.md) |

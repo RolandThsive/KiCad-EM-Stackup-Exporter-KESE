@@ -1,4 +1,4 @@
-# 251 SD Card Read Function
+# 251. SD Card Read Function
 
 Board 251 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 3](../CorpusTestingPages/Corpus-Testing-03.md#251-sd-card-read-function).
 
@@ -45,4 +45,4 @@ Board 251 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [250 SD Card Read Data](b0250b_658-Computer_SD-Card-Read-Data.md) | [252 SD Card Read Signals](b0252b_658-Computer_SD-Card-Read-Signals.md) |
+| [250. SD Card Read Data](b0250b_658-Computer_SD-Card-Read-Data.md) | [252. SD Card Read Signals](b0252b_658-Computer_SD-Card-Read-Signals.md) |

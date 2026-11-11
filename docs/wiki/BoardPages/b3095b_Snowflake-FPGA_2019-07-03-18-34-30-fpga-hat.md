@@ -1,4 +1,4 @@
-# 3095 2019-07-03_18:34:30_fpga_hat
+# 3095. 2019-07-03_18:34:30_fpga_hat
 
 Board 3,095 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 29](../CorpusTestingPages/Corpus-Testing-29.md#3095-2019-07-03_183430_fpga_hat).
 
@@ -45,4 +45,4 @@ Board 3,095 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [3094 2019-07-03_18:30:05_fpga_hat](b3094b_Snowflake-FPGA_2019-07-03-18-30-05-fpga-hat.md) | [3096 2019-07-05_20:45:15_fpga_hat](b3096b_Snowflake-FPGA_2019-07-05-20-45-15-fpga-hat.md) |
+| [3094. 2019-07-03_18:30:05_fpga_hat](b3094b_Snowflake-FPGA_2019-07-03-18-30-05-fpga-hat.md) | [3096. 2019-07-05_20:45:15_fpga_hat](b3096b_Snowflake-FPGA_2019-07-05-20-45-15-fpga-hat.md) |

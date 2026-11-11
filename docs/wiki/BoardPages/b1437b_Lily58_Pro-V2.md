@@ -1,4 +1,4 @@
-# 1437 Pro_V2
+# 1437. Pro_V2
 
 Board 1,437 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 14](../CorpusTestingPages/Corpus-Testing-14.md#1437-pro_v2).
 
@@ -45,4 +45,4 @@ Board 1,437 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1436 Lily58_Pro](b1436b_Lily58_Lily58-Pro.md) | [1438 Kilsyth](b1438b_Kilsyth_hardware-RevA_Kilsyth.md) |
+| [1436. Lily58_Pro](b1436b_Lily58_Lily58-Pro.md) | [1438. Kilsyth](b1438b_Kilsyth_hardware-RevA_Kilsyth.md) |

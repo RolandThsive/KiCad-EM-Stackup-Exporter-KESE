@@ -1,4 +1,4 @@
-# 906 Thunderscope_Rev5.1_Bed_Of_Nails
+# 906. Thunderscope_Rev5.1_Bed_Of_Nails
 
 Board 906 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 9](../CorpusTestingPages/Corpus-Testing-09.md#906-thunderscope_rev51_bed_of_nails).
 
@@ -45,4 +45,4 @@ Board 906 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [905 ThunderScope Muxboard](b0905b_ts-test-fixtures_ThunderScope-Muxboard.md) | [907 EEZ DIB DCP405plus front mask (Basic)](b0907b_dib-dcp405plus_EEZ-DIB-DCP405plus-front-mask-Basic.md) |
+| [905. ThunderScope Muxboard](b0905b_ts-test-fixtures_ThunderScope-Muxboard.md) | [907. EEZ DIB DCP405plus front mask (Basic)](b0907b_dib-dcp405plus_EEZ-DIB-DCP405plus-front-mask-Basic.md) |

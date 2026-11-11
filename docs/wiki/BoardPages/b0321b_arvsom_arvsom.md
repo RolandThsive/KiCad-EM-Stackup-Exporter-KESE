@@ -1,4 +1,4 @@
-# 321 arvsom
+# 321. arvsom
 
 Board 321 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 3](../CorpusTestingPages/Corpus-Testing-03.md#321-arvsom).
 
@@ -44,4 +44,4 @@ Board 321 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [320 arty-mpw-tester](b0320b_arty-mpw-tester_arty-mpw-tester.md) | [322 audio-latency-tester-board](b0322b_audio-latency-tester-board_audio-latency-tester-board.md) |
+| [320. arty-mpw-tester](b0320b_arty-mpw-tester_arty-mpw-tester.md) | [322. audio-latency-tester-board](b0322b_audio-latency-tester-board_audio-latency-tester-board.md) |

@@ -1,4 +1,4 @@
-# 763 fmcw3
+# 763. fmcw3
 
 Board 763 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 8](../CorpusTestingPages/Corpus-Testing-08.md#763-fmcw3).
 
@@ -44,4 +44,4 @@ Board 763 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [762 vme-wren](b0762b_kicad-demo-vme-wren_vme-wren.md) | [764 2021 Accumulator Base](b0764b_2021-accumulator-electronics_2021-Accumulator-Base.md) |
+| [762. vme-wren](b0762b_kicad-demo-vme-wren_vme-wren.md) | [764. 2021 Accumulator Base](b0764b_2021-accumulator-electronics_2021-Accumulator-Base.md) |

@@ -1,4 +1,4 @@
-# 2388 sun_sensor_test
+# 2388. sun_sensor_test
 
 Board 2,388 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 23](../CorpusTestingPages/Corpus-Testing-23.md#2388-sun_sensor_test).
 
@@ -45,4 +45,4 @@ Board 2,388 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2387 EPS](b2387b_1kcubesat-hardware_EPS.md) | [2389 frank](b2389b_frank_frank.md) |
+| [2387. EPS](b2387b_1kcubesat-hardware_EPS.md) | [2389. frank](b2389b_frank_frank.md) |

@@ -1,4 +1,4 @@
-# 2350 Wii PCB
+# 2350. Wii PCB
 
 Board 2,350 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 22](../CorpusTestingPages/Corpus-Testing-22.md#2350-wii-pcb).
 
@@ -45,4 +45,4 @@ Board 2,350 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2349 Arduino_Altair_8800](b2349b_Altair8800-Simulator-PCB_Arduino-Altair-8800.md) | [2351 AppleII](b2351b_Apple-II-R0_AppleII.md) |
+| [2349. Arduino_Altair_8800](b2349b_Altair8800-Simulator-PCB_Arduino-Altair-8800.md) | [2351. AppleII](b2351b_Apple-II-R0_AppleII.md) |

@@ -1,4 +1,4 @@
-# 3137 keypad_pcb
+# 3137. keypad_pcb
 
 Board 3,137 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 30](../CorpusTestingPages/Corpus-Testing-30.md#3137-keypad_pcb).
 
@@ -45,4 +45,4 @@ Board 3,137 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [3136 front_prototype](b3136b_ZeroPhone-PCBs_front-prototype.md) | [3138 speaker_adapter](b3138b_ZeroPhone-PCBs_speaker-adapter.md) |
+| [3136. front_prototype](b3136b_ZeroPhone-PCBs_front-prototype.md) | [3138. speaker_adapter](b3138b_ZeroPhone-PCBs_speaker-adapter.md) |

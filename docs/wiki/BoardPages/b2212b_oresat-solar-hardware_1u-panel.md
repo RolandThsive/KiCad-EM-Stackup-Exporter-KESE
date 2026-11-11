@@ -1,4 +1,4 @@
-# 2212 1u_panel
+# 2212. 1u_panel
 
 Board 2,212 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 21](../CorpusTestingPages/Corpus-Testing-21.md#2212-1u_panel).
 
@@ -46,4 +46,4 @@ Board 2,212 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2211 oresat-proto-card](b2211b_oresat-proto-card_mcxn-proto-card_oresat-proto-card.md) | [2213 solar-extension](b2213b_oresat-solar-hardware_solar-extension.md) |
+| [2211. oresat-proto-card](b2211b_oresat-proto-card_mcxn-proto-card_oresat-proto-card.md) | [2213. solar-extension](b2213b_oresat-solar-hardware_solar-extension.md) |

@@ -1,4 +1,4 @@
-# 2528 view_screen
+# 2528. view_screen
 
 Board 2,528 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 24](../CorpusTestingPages/Corpus-Testing-24.md#2528-view_screen).
 
@@ -45,4 +45,4 @@ Board 2,528 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2527 view_base](b2527b_smartknob_view-base.md) | [2529 chainlinkBase](b2529b_splitflap_chainlinkBase.md) |
+| [2527. view_base](b2527b_smartknob_view-base.md) | [2529. chainlinkBase](b2529b_splitflap_chainlinkBase.md) |

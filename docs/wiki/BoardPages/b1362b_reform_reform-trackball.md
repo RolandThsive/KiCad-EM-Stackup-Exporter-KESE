@@ -1,4 +1,4 @@
-# 1362 reform-trackball
+# 1362. reform-trackball
 
 Board 1,362 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 13](../CorpusTestingPages/Corpus-Testing-13.md#1362-reform-trackball).
 
@@ -45,4 +45,4 @@ Board 1,362 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1361 reform-motherboard](b1361b_reform_reform-motherboard.md) | [1363 reform2-batterypack-upstream](b1363b_reform_reform2-batterypack-upstream.md) |
+| [1361. reform-motherboard](b1361b_reform_reform-motherboard.md) | [1363. reform2-batterypack-upstream](b1363b_reform_reform2-batterypack-upstream.md) |

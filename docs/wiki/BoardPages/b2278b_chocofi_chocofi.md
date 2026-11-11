@@ -1,4 +1,4 @@
-# 2278 chocofi
+# 2278. chocofi
 
 Board 2,278 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 22](../CorpusTestingPages/Corpus-Testing-22.md#2278-chocofi).
 
@@ -45,4 +45,4 @@ Board 2,278 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2277 chocofi-topplate](b2277b_chocofi_chocofi-topplate.md) | [2279 pda6502v2](b2279b_pda6502v2_pda6502v2.md) |
+| [2277. chocofi-topplate](b2277b_chocofi_chocofi-topplate.md) | [2279. pda6502v2](b2279b_pda6502v2_pda6502v2.md) |

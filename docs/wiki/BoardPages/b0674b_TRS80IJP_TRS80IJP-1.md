@@ -1,4 +1,4 @@
-# 674 TRS80IJP_1
+# 674. TRS80IJP_1
 
 Board 674 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 7](../CorpusTestingPages/Corpus-Testing-07.md#674-trs80ijp_1).
 
@@ -45,4 +45,4 @@ Board 674 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [673 TRSG3Mod](b0673b_TRS80IJP_TRSG3Mod.md) | [675 TRS80ILCMod](b0675b_TRS80IUS_TRS80ILCMod.md) |
+| [673. TRSG3Mod](b0673b_TRS80IJP_TRSG3Mod.md) | [675. TRS80ILCMod](b0675b_TRS80IUS_TRS80ILCMod.md) |

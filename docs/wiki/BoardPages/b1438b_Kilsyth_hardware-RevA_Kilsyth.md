@@ -1,4 +1,4 @@
-# 1438 Kilsyth
+# 1438. Kilsyth
 
 Board 1,438 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 14](../CorpusTestingPages/Corpus-Testing-14.md#1438-kilsyth).
 
@@ -45,4 +45,4 @@ Board 1,438 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1437 Pro_V2](b1437b_Lily58_Pro-V2.md) | [1439 Kilsyth](b1439b_Kilsyth_hardware-RevB_Kilsyth.md) |
+| [1437. Pro_V2](b1437b_Lily58_Pro-V2.md) | [1439. Kilsyth](b1439b_Kilsyth_hardware-RevB_Kilsyth.md) |

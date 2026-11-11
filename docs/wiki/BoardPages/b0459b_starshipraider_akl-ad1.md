@@ -1,4 +1,4 @@
-# 459 akl-ad1
+# 459. akl-ad1
 
 Board 459 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 5](../CorpusTestingPages/Corpus-Testing-05.md#459-akl-ad1).
 
@@ -45,4 +45,4 @@ Board 459 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [458 active-probe-test](b0458b_starshipraider_active-probe-test.md) | [460 amplifier](b0460b_starshipraider_amplifier.md) |
+| [458. active-probe-test](b0458b_starshipraider_active-probe-test.md) | [460. amplifier](b0460b_starshipraider_amplifier.md) |

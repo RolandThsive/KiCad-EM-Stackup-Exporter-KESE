@@ -1,4 +1,4 @@
-# 37 Prototype Card
+# 37. Prototype Card
 
 Board 37 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 1](../CorpusTestingPages/Corpus-Testing-01.md#37-prototype-card).
 
@@ -45,4 +45,4 @@ Board 37 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page
 
 | Previous | Next |
 |:---|---:|
-| [36 Memory Card](b0036b_6502_Memory-Card.md) | [38 PS2 Helper](b0038b_6502_PS2-Helper.md) |
+| [36. Memory Card](b0036b_6502_Memory-Card.md) | [38. PS2 Helper](b0038b_6502_PS2-Helper.md) |

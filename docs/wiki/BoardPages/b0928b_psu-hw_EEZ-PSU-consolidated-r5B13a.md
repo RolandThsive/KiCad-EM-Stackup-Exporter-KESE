@@ -1,4 +1,4 @@
-# 928 EEZ PSU consolidated r5B13a
+# 928. EEZ PSU consolidated r5B13a
 
 Board 928 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 9](../CorpusTestingPages/Corpus-Testing-09.md#928-eez-psu-consolidated-r5b13a).
 
@@ -45,4 +45,4 @@ Board 928 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [927 EEZ DIB MCU r1B2](b0927b_modular-psu_EEZ-DIB-MCU-r1B2.md) | [929 PCIeDMA](b0929b_pciedma_PCIeDMA.md) |
+| [927. EEZ DIB MCU r1B2](b0927b_modular-psu_EEZ-DIB-MCU-r1B2.md) | [929. PCIeDMA](b0929b_pciedma_PCIeDMA.md) |

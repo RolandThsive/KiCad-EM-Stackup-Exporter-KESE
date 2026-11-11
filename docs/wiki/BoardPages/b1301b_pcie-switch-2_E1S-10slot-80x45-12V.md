@@ -1,4 +1,4 @@
-# 1301 E1S_10slot_80x45_12V
+# 1301. E1S_10slot_80x45_12V
 
 Board 1,301 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 13](../CorpusTestingPages/Corpus-Testing-13.md#1301-e1s_10slot_80x45_12v).
 
@@ -45,4 +45,4 @@ Board 1,301 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1300 arena_12-18](b1300b_led-display-g6-hardware-arena_arena-12-18-manual-route-v2-routed_arena-12-18.md) | [1302 Assembly_View](b1302b_pcie-switch-2_outputs-PCIe-3board-RevI-Assembly-View_Assembly-View.md) |
+| [1300. arena_12-18](b1300b_led-display-g6-hardware-arena_arena-12-18-manual-route-v2-routed_arena-12-18.md) | [1302. Assembly_View](b1302b_pcie-switch-2_outputs-PCIe-3board-RevI-Assembly-View_Assembly-View.md) |

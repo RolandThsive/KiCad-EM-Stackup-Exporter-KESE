@@ -1,4 +1,4 @@
-# 2992 altair-8800b-display-control-pcb
+# 2992. altair-8800b-display-control-pcb
 
 Board 2,992 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 28](../CorpusTestingPages/Corpus-Testing-28.md#2992-altair-8800b-display-control-pcb).
 
@@ -45,4 +45,4 @@ Board 2,992 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2991 altair-8800b-cpu-card](b2991b_altair-8800b-cpu-card_altair-8800b-cpu-card.md) | [2993 lisa-2mb-ram-card](b2993b_lisa-2mb-ram-card_lisa-2mb-ram-card.md) |
+| [2991. altair-8800b-cpu-card](b2991b_altair-8800b-cpu-card_altair-8800b-cpu-card.md) | [2993. lisa-2mb-ram-card](b2993b_lisa-2mb-ram-card_lisa-2mb-ram-card.md) |

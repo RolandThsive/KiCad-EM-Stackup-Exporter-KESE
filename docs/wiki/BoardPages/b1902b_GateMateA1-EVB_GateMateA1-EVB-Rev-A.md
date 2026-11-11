@@ -1,4 +1,4 @@
-# 1902 GateMateA1-EVB_Rev_A
+# 1902. GateMateA1-EVB_Rev_A
 
 Board 1,902 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 18](../CorpusTestingPages/Corpus-Testing-18.md#1902-gatematea1-evb_rev_a).
 
@@ -45,4 +45,4 @@ Board 1,902 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1901 FOSDEM-MUSIC-BOX_RevA](b1901b_FOSDEM-MUSIC-BOX_FOSDEM-MUSIC-BOX-RevA.md) | [1903 GateMateA1-EVB_Rev_B](b1903b_GateMateA1-EVB_GateMateA1-EVB-Rev-B.md) |
+| [1901. FOSDEM-MUSIC-BOX_RevA](b1901b_FOSDEM-MUSIC-BOX_FOSDEM-MUSIC-BOX-RevA.md) | [1903. GateMateA1-EVB_Rev_B](b1903b_GateMateA1-EVB_GateMateA1-EVB-Rev-B.md) |

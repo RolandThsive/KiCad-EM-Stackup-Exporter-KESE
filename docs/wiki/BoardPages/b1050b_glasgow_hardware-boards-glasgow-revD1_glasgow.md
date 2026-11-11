@@ -1,4 +1,4 @@
-# 1050 glasgow
+# 1050. glasgow
 
 Board 1,050 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 10](../CorpusTestingPages/Corpus-Testing-10.md#1050-glasgow).
 
@@ -45,4 +45,4 @@ Board 1,050 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1049 glasgow](b1049b_glasgow_hardware-boards-glasgow-revD0_glasgow.md) | [1051 test-jig](b1051b_glasgow_test-jig.md) |
+| [1049. glasgow](b1049b_glasgow_hardware-boards-glasgow-revD0_glasgow.md) | [1051. test-jig](b1051b_glasgow_test-jig.md) |

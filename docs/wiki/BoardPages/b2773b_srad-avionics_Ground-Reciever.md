@@ -1,4 +1,4 @@
-# 2773 Ground Reciever
+# 2773. Ground Reciever
 
 Board 2,773 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 26](../CorpusTestingPages/Corpus-Testing-26.md#2773-ground-reciever).
 
@@ -45,4 +45,4 @@ Board 2,773 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2772 Ground Receiver v2](b2772b_srad-avionics_Ground-Receiver-v2.md) | [2774 ground-receiver](b2774b_srad-avionics_ground-receiver.md) |
+| [2772. Ground Receiver v2](b2772b_srad-avionics_Ground-Receiver-v2.md) | [2774. ground-receiver](b2774b_srad-avionics_ground-receiver.md) |

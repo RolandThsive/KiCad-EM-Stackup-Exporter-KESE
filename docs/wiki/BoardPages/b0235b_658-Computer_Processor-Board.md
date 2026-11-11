@@ -1,4 +1,4 @@
-# 235 Processor Board
+# 235. Processor Board
 
 Board 235 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 3](../CorpusTestingPages/Corpus-Testing-03.md#235-processor-board).
 
@@ -45,4 +45,4 @@ Board 235 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [234 HCP65 MPU Timer](b0234b_658-Computer_HCP65-MPU-Timer.md) | [236 W65C816 Breakout](b0236b_658-Computer_W65C816-Breakout.md) |
+| [234. HCP65 MPU Timer](b0234b_658-Computer_HCP65-MPU-Timer.md) | [236. W65C816 Breakout](b0236b_658-Computer_W65C816-Breakout.md) |

@@ -1,4 +1,4 @@
-# 1890 ESP32-PoE-ISO_Rev_O
+# 1890. ESP32-PoE-ISO_Rev_O
 
 Board 1,890 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 18](../CorpusTestingPages/Corpus-Testing-18.md#1890-esp32-poe-iso_rev_o).
 
@@ -45,4 +45,4 @@ Board 1,890 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1889 ESP32-PoE-ISO_Rev_N1](b1889b_ESP32-POE-ISO_ESP32-PoE-ISO-Rev-N1.md) | [1891 ESP32-PoE2_Rev_B](b1891b_ESP32-POE2_ESP32-PoE2-Rev-B.md) |
+| [1889. ESP32-PoE-ISO_Rev_N1](b1889b_ESP32-POE-ISO_ESP32-PoE-ISO-Rev-N1.md) | [1891. ESP32-PoE2_Rev_B](b1891b_ESP32-POE2_ESP32-PoE2-Rev-B.md) |

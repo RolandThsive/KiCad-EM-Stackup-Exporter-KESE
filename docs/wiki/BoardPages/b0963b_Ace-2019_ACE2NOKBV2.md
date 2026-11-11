@@ -1,4 +1,4 @@
-# 963 ACE2NOKBV2
+# 963. ACE2NOKBV2
 
 Board 963 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 9](../CorpusTestingPages/Corpus-Testing-09.md#963-ace2nokbv2).
 
@@ -45,4 +45,4 @@ Board 963 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [962 ACE1](b0962b_Ace-2019_ACE1.md) | [964 ACE2NOKBV2MK2](b0964b_Ace-2019_ACE2NOKBV2MK2.md) |
+| [962. ACE1](b0962b_Ace-2019_ACE1.md) | [964. ACE2NOKBV2MK2](b0964b_Ace-2019_ACE2NOKBV2MK2.md) |

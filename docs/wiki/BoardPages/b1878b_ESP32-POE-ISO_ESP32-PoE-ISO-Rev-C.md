@@ -1,4 +1,4 @@
-# 1878 ESP32-PoE-ISO_Rev_C
+# 1878. ESP32-PoE-ISO_Rev_C
 
 Board 1,878 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 18](../CorpusTestingPages/Corpus-Testing-18.md#1878-esp32-poe-iso_rev_c).
 
@@ -45,4 +45,4 @@ Board 1,878 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1877 ESP32-PoE-ISO_Rev_B](b1877b_ESP32-POE-ISO_ESP32-PoE-ISO-Rev-B.md) | [1879 ESP32-PoE-ISO_Rev_D](b1879b_ESP32-POE-ISO_ESP32-PoE-ISO-Rev-D.md) |
+| [1877. ESP32-PoE-ISO_Rev_B](b1877b_ESP32-POE-ISO_ESP32-PoE-ISO-Rev-B.md) | [1879. ESP32-PoE-ISO_Rev_D](b1879b_ESP32-POE-ISO_ESP32-PoE-ISO-Rev-D.md) |

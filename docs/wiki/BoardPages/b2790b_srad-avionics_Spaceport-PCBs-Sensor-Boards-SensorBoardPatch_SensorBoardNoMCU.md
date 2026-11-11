@@ -1,4 +1,4 @@
-# 2790 SensorBoardNoMCU
+# 2790. SensorBoardNoMCU
 
 Board 2,790 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 26](../CorpusTestingPages/Corpus-Testing-26.md#2790-sensorboardnomcu).
 
@@ -45,4 +45,4 @@ Board 2,790 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2789 SensorBoardNoMCU](b2789b_srad-avionics_Spaceport-PCBs-Sensor-Boards-SensorBoardAirbrake_SensorBoardNoMCU.md) | [2791 SensorBoard](b2791b_srad-avionics_SensorBoard.md) |
+| [2789. SensorBoardNoMCU](b2789b_srad-avionics_Spaceport-PCBs-Sensor-Boards-SensorBoardAirbrake_SensorBoardNoMCU.md) | [2791. SensorBoard](b2791b_srad-avionics_SensorBoard.md) |

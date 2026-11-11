@@ -1,4 +1,4 @@
-# 2492 Stimulator
+# 2492. Stimulator
 
 Board 2,492 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 24](../CorpusTestingPages/Corpus-Testing-24.md#2492-stimulator).
 
@@ -45,4 +45,4 @@ Board 2,492 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2491 PowerSSO-24_breakout](b2491b_rusefi-hardware_PowerSSO-24-breakout.md) | [2493 Stimulator](b2493b_rusefi-hardware_classic-designs-rusefi-hardware-history-Stimulator-rev00-20_Stimulator.md) |
+| [2491. PowerSSO-24_breakout](b2491b_rusefi-hardware_PowerSSO-24-breakout.md) | [2493. Stimulator](b2493b_rusefi-hardware_classic-designs-rusefi-hardware-history-Stimulator-rev00-20_Stimulator.md) |

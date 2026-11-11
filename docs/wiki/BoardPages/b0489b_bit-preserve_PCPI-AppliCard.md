@@ -1,4 +1,4 @@
-# 489 PCPI_AppliCard
+# 489. PCPI_AppliCard
 
 Board 489 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 5](../CorpusTestingPages/Corpus-Testing-05.md#489-pcpi_applicard).
 
@@ -45,4 +45,4 @@ Board 489 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [488 ezcgi](b0488b_bit-preserve_ezcgi.md) | [490 KU-14194HB-REV-B-KiCad](b0490b_bit-preserve_KU-14194HB-REV-B-KiCad.md) |
+| [488. ezcgi](b0488b_bit-preserve_ezcgi.md) | [490. KU-14194HB-REV-B-KiCad](b0490b_bit-preserve_KU-14194HB-REV-B-KiCad.md) |

@@ -1,4 +1,4 @@
-# 2815 breakout-sky-qfn
+# 2815. breakout-sky-qfn
 
 Board 2,815 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 27](../CorpusTestingPages/Corpus-Testing-27.md#2815-breakout-sky-qfn).
 
@@ -45,4 +45,4 @@ Board 2,815 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2814 breakout-qfn](b2814b_breakout-pcb_breakout-qfn.md) | [2816 breakout-tt04-qfn-socket](b2816b_breakout-pcb_breakout-tt04-qfn-socket.md) |
+| [2814. breakout-qfn](b2814b_breakout-pcb_breakout-qfn.md) | [2816. breakout-tt04-qfn-socket](b2816b_breakout-pcb_breakout-tt04-qfn-socket.md) |

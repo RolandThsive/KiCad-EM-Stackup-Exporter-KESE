@@ -1,4 +1,4 @@
-# 1620 auxio_board
+# 1620. auxio_board
 
 Board 1,620 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 15](../CorpusTestingPages/Corpus-Testing-15.md#1620-auxio_board).
 
@@ -45,4 +45,4 @@ Board 1,620 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1619 aux_board](b1619b_hardware-csat_aux-board.md) | [1621 AVIONICS_BOARD](b1621b_hardware-csat_AVIONICS-BOARD.md) |
+| [1619. aux_board](b1619b_hardware-csat_aux-board.md) | [1621. AVIONICS_BOARD](b1621b_hardware-csat_AVIONICS-BOARD.md) |

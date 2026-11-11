@@ -1,4 +1,4 @@
-# 2471 DDPAK_breakout
+# 2471. DDPAK_breakout
 
 Board 2,471 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 23](../CorpusTestingPages/Corpus-Testing-23.md#2471-ddpak_breakout).
 
@@ -45,4 +45,4 @@ Board 2,471 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2470 O2_input_CJ125](b2470b_rusefi-hardware_O2-input-CJ125.md) | [2472 frankenso-PWR-Supply](b2472b_rusefi-hardware_classic-designs-rusefi-hardware-history-frankenso-power-supply-rev00-10-frankenso-PWR-Supply_frankenso-PWR-Supply.md) |
+| [2470. O2_input_CJ125](b2470b_rusefi-hardware_O2-input-CJ125.md) | [2472. frankenso-PWR-Supply](b2472b_rusefi-hardware_classic-designs-rusefi-hardware-history-frankenso-power-supply-rev00-10-frankenso-PWR-Supply_frankenso-PWR-Supply.md) |

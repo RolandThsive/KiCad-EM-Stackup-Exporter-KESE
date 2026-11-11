@@ -1,4 +1,4 @@
-# 2058 dashboard
+# 2058. dashboard
 
 Board 2,058 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 20](../CorpusTestingPages/Corpus-Testing-20.md#2058-dashboard).
 
@@ -45,4 +45,4 @@ Board 2,058 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2057 brakes](b2057b_olin-electric-motorsports_brakes.md) | [2059 nostril](b2059b_olin-electric-motorsports_nostril.md) |
+| [2057. brakes](b2057b_olin-electric-motorsports_brakes.md) | [2059. nostril](b2059b_olin-electric-motorsports_nostril.md) |

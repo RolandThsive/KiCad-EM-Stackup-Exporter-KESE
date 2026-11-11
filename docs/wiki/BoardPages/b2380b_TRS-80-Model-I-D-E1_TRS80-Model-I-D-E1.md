@@ -1,4 +1,4 @@
-# 2380 TRS80_Model_I_D_E1
+# 2380. TRS80_Model_I_D_E1
 
 Board 2,380 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 23](../CorpusTestingPages/Corpus-Testing-23.md#2380-trs80_model_i_d_e1).
 
@@ -45,4 +45,4 @@ Board 2,380 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2379 TRS80_Model_I_A_E1](b2379b_TRS-80-Model-I-A-E1_TRS80-Model-I-A-E1.md) | [2381 TRS80_Model_I_E_E1](b2381b_TRS-80-Model-I-E-E1_TRS80-Model-I-E-E1.md) |
+| [2379. TRS80_Model_I_A_E1](b2379b_TRS-80-Model-I-A-E1_TRS80-Model-I-A-E1.md) | [2381. TRS80_Model_I_E_E1](b2381b_TRS-80-Model-I-E-E1_TRS80-Model-I-E-E1.md) |

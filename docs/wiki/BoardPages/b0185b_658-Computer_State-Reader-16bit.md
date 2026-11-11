@@ -1,4 +1,4 @@
-# 185 State Reader 16bit
+# 185. State Reader 16bit
 
 Board 185 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 2](../CorpusTestingPages/Corpus-Testing-02.md#185-state-reader-16bit).
 
@@ -45,4 +45,4 @@ Board 185 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [184 Selector 18bit](b0184b_658-Computer_Selector-18bit.md) | [186 State Reader 8bit](b0186b_658-Computer_State-Reader-8bit.md) |
+| [184. Selector 18bit](b0184b_658-Computer_Selector-18bit.md) | [186. State Reader 8bit](b0186b_658-Computer_State-Reader-8bit.md) |

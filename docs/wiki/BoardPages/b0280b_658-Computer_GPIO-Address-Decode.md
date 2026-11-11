@@ -1,4 +1,4 @@
-# 280 GPIO Address Decode
+# 280. GPIO Address Decode
 
 Board 280 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 3](../CorpusTestingPages/Corpus-Testing-03.md#280-gpio-address-decode).
 
@@ -45,4 +45,4 @@ Board 280 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [279 GPIO 32bit Board](b0279b_658-Computer_GPIO-32bit-Board.md) | [281 GPIO Backplane Board](b0281b_658-Computer_GPIO-Backplane-Board.md) |
+| [279. GPIO 32bit Board](b0279b_658-Computer_GPIO-32bit-Board.md) | [281. GPIO Backplane Board](b0281b_658-Computer_GPIO-Backplane-Board.md) |

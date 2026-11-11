@@ -1,4 +1,4 @@
-# 1123 praline
+# 1123. praline
 
 Board 1,123 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 11](../CorpusTestingPages/Corpus-Testing-11.md#1123-praline).
 
@@ -44,4 +44,4 @@ Board 1,123 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1122 operacake](b1122b_hackrf_operacake.md) | [1124 swg_test](b1124b_lab-notes_swg-test.md) |
+| [1122. operacake](b1122b_hackrf_operacake.md) | [1124. swg_test](b1124b_lab-notes_swg-test.md) |

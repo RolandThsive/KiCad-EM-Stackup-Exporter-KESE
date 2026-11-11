@@ -1,4 +1,4 @@
-# 1418 quad-pmod
+# 1418. quad-pmod
 
 Board 1,418 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 14](../CorpusTestingPages/Corpus-Testing-14.md#1418-quad-pmod).
 
@@ -45,4 +45,4 @@ Board 1,418 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1417 octa-pmod](b1417b_ecp5-mini_breakouts-octa-pmod-horizontal-0-2_octa-pmod.md) | [1419 quad-pmod](b1419b_ecp5-mini_breakouts-quad-pmod-0-2_quad-pmod.md) |
+| [1417. octa-pmod](b1417b_ecp5-mini_breakouts-octa-pmod-horizontal-0-2_octa-pmod.md) | [1419. quad-pmod](b1419b_ecp5-mini_breakouts-quad-pmod-0-2_quad-pmod.md) |

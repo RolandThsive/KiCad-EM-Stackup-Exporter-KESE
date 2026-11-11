@@ -1,4 +1,4 @@
-# 500 gd interdeswizzlepozer
+# 500. gd interdeswizzlepozer
 
 Board 500 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 5](../CorpusTestingPages/Corpus-Testing-05.md#500-gd-interdeswizzlepozer).
 
@@ -45,4 +45,4 @@ Board 500 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [499 gd blackplane proto pcb](b0499b_Mega-IIe_kicad-files-gd-backplane-proto-pcb-rev1_gd-blackplane-proto-pcb.md) | [501 gd io proto pcb](b0501b_Mega-IIe_kicad-files-gd-io-proto-pcb_gd-io-proto-pcb.md) |
+| [499. gd blackplane proto pcb](b0499b_Mega-IIe_kicad-files-gd-backplane-proto-pcb-rev1_gd-blackplane-proto-pcb.md) | [501. gd io proto pcb](b0501b_Mega-IIe_kicad-files-gd-io-proto-pcb_gd-io-proto-pcb.md) |

@@ -1,4 +1,4 @@
-# 1328 BAGEL-MK1
+# 1328. BAGEL-MK1
 
 Board 1,328 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 13](../CorpusTestingPages/Corpus-Testing-13.md#1328-bagel-mk1).
 
@@ -45,4 +45,4 @@ Board 1,328 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1327 Main_10E1S](b1327b_pcie-switch-2_outputs-PCIe-Main-RevM-Main-10E1S_Main-10E1S.md) | [1329 BAGEL-MK1.1-Avocado](b1329b_iss-pcb_BAGEL-MK1-1-Avocado.md) |
+| [1327. Main_10E1S](b1327b_pcie-switch-2_outputs-PCIe-Main-RevM-Main-10E1S_Main-10E1S.md) | [1329. BAGEL-MK1.1-Avocado](b1329b_iss-pcb_BAGEL-MK1-1-Avocado.md) |

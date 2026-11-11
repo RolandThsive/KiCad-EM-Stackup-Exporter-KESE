@@ -1,4 +1,4 @@
-# 337 com-express-7-baseboard
+# 337. com-express-7-baseboard
 
 Board 337 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 4](../CorpusTestingPages/Corpus-Testing-04.md#337-com-express-7-baseboard).
 
@@ -45,4 +45,4 @@ Board 337 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [336 cm4-lvds-adapter](b0336b_cm4-baseboard-lvds-adapter_cm4-lvds-adapter.md) | [338 cvbs-mipi-bridge](b0338b_cvbs-mipi-bridge_cvbs-mipi-bridge.md) |
+| [336. cm4-lvds-adapter](b0336b_cm4-baseboard-lvds-adapter_cm4-lvds-adapter.md) | [338. cvbs-mipi-bridge](b0338b_cvbs-mipi-bridge_cvbs-mipi-bridge.md) |

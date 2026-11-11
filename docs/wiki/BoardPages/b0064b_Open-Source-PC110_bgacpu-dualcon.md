@@ -1,4 +1,4 @@
-# 64 bgacpu-dualcon
+# 64. bgacpu-dualcon
 
 Board 64 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 1](../CorpusTestingPages/Corpus-Testing-01.md#64-bgacpu-dualcon).
 
@@ -45,4 +45,4 @@ Board 64 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page
 
 | Previous | Next |
 |:---|---:|
-| [63 interposer](b0063b_Open-Source-PC110_interposer.md) | [65 pcb-bga-adapter-dualcon](b0065b_Open-Source-PC110_pcb-bga-adapter-dualcon.md) |
+| [63. interposer](b0063b_Open-Source-PC110_interposer.md) | [65. pcb-bga-adapter-dualcon](b0065b_Open-Source-PC110_pcb-bga-adapter-dualcon.md) |

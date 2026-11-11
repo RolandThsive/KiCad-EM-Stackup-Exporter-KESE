@@ -1,4 +1,4 @@
-# 2642 v0.4.4d
+# 2642. v0.4.4d
 
 Board 2,642 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 25](../CorpusTestingPages/Corpus-Testing-25.md#2642-v044d).
 
@@ -45,4 +45,4 @@ Board 2,642 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2641 Screw terminal interface](b2641b_hardware_Screw-terminal-interface.md) | [2643 v0.4.4b](b2643b_hardware_v0-4-4b.md) |
+| [2641. Screw terminal interface](b2641b_hardware_Screw-terminal-interface.md) | [2643. v0.4.4b](b2643b_hardware_v0-4-4b.md) |

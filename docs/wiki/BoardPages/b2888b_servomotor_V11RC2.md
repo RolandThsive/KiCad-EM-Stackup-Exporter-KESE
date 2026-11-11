@@ -1,4 +1,4 @@
-# 2888 V11RC2
+# 2888. V11RC2
 
 Board 2,888 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 27](../CorpusTestingPages/Corpus-Testing-27.md#2888-v11rc2).
 
@@ -45,4 +45,4 @@ Board 2,888 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2887 V11](b2887b_servomotor_PCB-Servomotor3-V11RC1_V11.md) | [2889 V11RC3](b2889b_servomotor_V11RC3.md) |
+| [2887. V11](b2887b_servomotor_PCB-Servomotor3-V11RC1_V11.md) | [2889. V11RC3](b2889b_servomotor_V11RC3.md) |

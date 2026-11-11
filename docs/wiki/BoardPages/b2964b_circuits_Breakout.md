@@ -1,4 +1,4 @@
-# 2964 Breakout
+# 2964. Breakout
 
 Board 2,964 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 28](../CorpusTestingPages/Corpus-Testing-28.md#2964-breakout).
 
@@ -45,4 +45,4 @@ Board 2,964 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2963 Pre-charge KiCAD](b2963b_circuits_Pre-charge-KiCAD.md) | [2965 Voltage_Measurement_KR](b2965b_circuits_Voltage-Measurement-KR.md) |
+| [2963. Pre-charge KiCAD](b2963b_circuits_Pre-charge-KiCAD.md) | [2965. Voltage_Measurement_KR](b2965b_circuits_Voltage-Measurement-KR.md) |

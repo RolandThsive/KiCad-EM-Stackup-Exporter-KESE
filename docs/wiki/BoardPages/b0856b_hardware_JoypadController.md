@@ -1,4 +1,4 @@
-# 856 JoypadController
+# 856. JoypadController
 
 Board 856 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 8](../CorpusTestingPages/Corpus-Testing-08.md#856-joypadcontroller).
 
@@ -45,4 +45,4 @@ Board 856 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [855 GfxVGA](b0855b_hardware_GfxVGA.md) | [857 yddraig](b0857b_hardware_yddraig.md) |
+| [855. GfxVGA](b0855b_hardware_GfxVGA.md) | [857. yddraig](b0857b_hardware_yddraig.md) |

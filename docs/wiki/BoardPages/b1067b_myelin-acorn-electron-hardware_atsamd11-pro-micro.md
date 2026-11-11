@@ -1,4 +1,4 @@
-# 1067 atsamd11_pro_micro
+# 1067. atsamd11_pro_micro
 
 Board 1,067 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 10](../CorpusTestingPages/Corpus-Testing-10.md#1067-atsamd11_pro_micro).
 
@@ -45,4 +45,4 @@ Board 1,067 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1066 archimedes_bus_scope](b1066b_myelin-acorn-electron-hardware_archimedes-bus-scope.md) | [1068 atsamd21_usb](b1068b_myelin-acorn-electron-hardware_atsamd21-usb.md) |
+| [1066. archimedes_bus_scope](b1066b_myelin-acorn-electron-hardware_archimedes-bus-scope.md) | [1068. atsamd21_usb](b1068b_myelin-acorn-electron-hardware_atsamd21-usb.md) |

@@ -1,4 +1,4 @@
-# 1850 ESP32-GATEWAY_Rev_E
+# 1850. ESP32-GATEWAY_Rev_E
 
 Board 1,850 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 18](../CorpusTestingPages/Corpus-Testing-18.md#1850-esp32-gateway_rev_e).
 
@@ -45,4 +45,4 @@ Board 1,850 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1849 ESP32-GATEWAY_Rev_D](b1849b_ESP32-GATEWAY_ESP32-GATEWAY-Rev-D.md) | [1851 ESP32-GATEWAY_Rev_F](b1851b_ESP32-GATEWAY_ESP32-GATEWAY-Rev-F.md) |
+| [1849. ESP32-GATEWAY_Rev_D](b1849b_ESP32-GATEWAY_ESP32-GATEWAY-Rev-D.md) | [1851. ESP32-GATEWAY_Rev_F](b1851b_ESP32-GATEWAY_ESP32-GATEWAY-Rev-F.md) |

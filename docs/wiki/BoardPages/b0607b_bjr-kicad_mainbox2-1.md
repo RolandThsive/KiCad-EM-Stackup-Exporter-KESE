@@ -1,4 +1,4 @@
-# 607 mainbox2.1
+# 607. mainbox2.1
 
 Board 607 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 6](../CorpusTestingPages/Corpus-Testing-06.md#607-mainbox21).
 
@@ -45,4 +45,4 @@ Board 607 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [606 mainbox2.0](b0606b_bjr-kicad_21xt-02-mainbox-mainbox2-0_mainbox2-0.md) | [608 Untitled](b0608b_bjr-kicad_Untitled.md) |
+| [606. mainbox2.0](b0606b_bjr-kicad_21xt-02-mainbox-mainbox2-0_mainbox2-0.md) | [608. Untitled](b0608b_bjr-kicad_Untitled.md) |

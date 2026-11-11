@@ -1,4 +1,4 @@
-# 2364 rectifier
+# 2364. rectifier
 
 Board 2,364 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 22](../CorpusTestingPages/Corpus-Testing-22.md#2364-rectifier).
 
@@ -45,4 +45,4 @@ Board 2,364 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2363 rectifier](b2363b_stmbl_hw-kicad-rectifier_rectifier.md) | [2365 rj45_breakout](b2365b_stmbl_rj45-breakout.md) |
+| [2363. rectifier](b2363b_stmbl_hw-kicad-rectifier_rectifier.md) | [2365. rj45_breakout](b2365b_stmbl_rj45-breakout.md) |

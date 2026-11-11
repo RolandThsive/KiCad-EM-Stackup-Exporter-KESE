@@ -1,4 +1,4 @@
-# 154 Audio DAC
+# 154. Audio DAC
 
 Board 154 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 2](../CorpusTestingPages/Corpus-Testing-02.md#154-audio-dac).
 
@@ -45,4 +45,4 @@ Board 154 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [153 Address Buffer 24bit](b0153b_658-Computer_Address-Buffer-24bit.md) | [155 Big Board](b0155b_658-Computer_Big-Board.md) |
+| [153. Address Buffer 24bit](b0153b_658-Computer_Address-Buffer-24bit.md) | [155. Big Board](b0155b_658-Computer_Big-Board.md) |

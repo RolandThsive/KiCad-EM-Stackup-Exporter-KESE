@@ -1,4 +1,4 @@
-# 2565 Omega-Mainboard
+# 2565. Omega-Mainboard
 
 Board 2,565 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 24](../CorpusTestingPages/Corpus-Testing-24.md#2565-omega-mainboard).
 
@@ -45,4 +45,4 @@ Board 2,565 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2564 Omega-Keyboard](b2564b_omega_Omega-Keyboard.md) | [2566 Tiny_Z80](b2566b_tiny-z80_Tiny-Z80.md) |
+| [2564. Omega-Keyboard](b2564b_omega_Omega-Keyboard.md) | [2566. Tiny_Z80](b2566b_tiny-z80_Tiny-Z80.md) |

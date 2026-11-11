@@ -1,4 +1,4 @@
-# 1522 coupler_test
+# 1522. coupler_test
 
 Board 1,522 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 15](../CorpusTestingPages/Corpus-Testing-15.md#1522-coupler_test).
 
@@ -45,4 +45,4 @@ Board 1,522 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1521 clk_lo_buffer](b1521b_vna_clk-lo-buffer.md) | [1523 cpw_test](b1523b_vna_breakouts-cpw-test_cpw-test.md) |
+| [1521. clk_lo_buffer](b1521b_vna_clk-lo-buffer.md) | [1523. cpw_test](b1523b_vna_breakouts-cpw-test_cpw-test.md) |

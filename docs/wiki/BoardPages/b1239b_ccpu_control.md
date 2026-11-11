@@ -1,4 +1,4 @@
-# 1239 control
+# 1239. control
 
 Board 1,239 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 12](../CorpusTestingPages/Corpus-Testing-12.md#1239-control).
 
@@ -45,4 +45,4 @@ Board 1,239 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1238 alu](b1238b_ccpu_alu.md) | [1240 eth](b1240b_ccpu_eth.md) |
+| [1238. alu](b1238b_ccpu_alu.md) | [1240. eth](b1240b_ccpu_eth.md) |

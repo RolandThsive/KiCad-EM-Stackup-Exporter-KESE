@@ -1,4 +1,4 @@
-# 1141 rf-switch-spdt
+# 1141. rf-switch-spdt
 
 Board 1,141 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 11](../CorpusTestingPages/Corpus-Testing-11.md#1141-rf-switch-spdt).
 
@@ -45,4 +45,4 @@ Board 1,141 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1140 rf-switch-sp4t](b1140b_misc_rf-switch-sp4t.md) | [1142 Si5351A](b1142b_misc_Si5351A.md) |
+| [1140. rf-switch-sp4t](b1140b_misc_rf-switch-sp4t.md) | [1142. Si5351A](b1142b_misc_Si5351A.md) |

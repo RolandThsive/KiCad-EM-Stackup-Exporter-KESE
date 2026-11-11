@@ -1,4 +1,4 @@
-# 2925 BigBoy
+# 2925. BigBoy
 
 Board 2,925 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 28](../CorpusTestingPages/Corpus-Testing-28.md#2925-bigboy).
 
@@ -45,4 +45,4 @@ Board 2,925 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2924 BigBoy-Frontpanel](b2924b_retroverse_BigBoy-Frontpanel.md) | [2926 BigBoy.stretch_bkup](b2926b_retroverse_BigBoy-stretch-bkup.md) |
+| [2924. BigBoy-Frontpanel](b2924b_retroverse_BigBoy-Frontpanel.md) | [2926. BigBoy.stretch_bkup](b2926b_retroverse_BigBoy-stretch-bkup.md) |

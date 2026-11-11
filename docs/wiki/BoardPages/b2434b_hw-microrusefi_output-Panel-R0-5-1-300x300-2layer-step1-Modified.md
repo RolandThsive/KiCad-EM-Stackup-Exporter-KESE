@@ -1,4 +1,4 @@
-# 2434 output.Panel_R0.5.1_300x300_2layer_step1_Modified
+# 2434. output.Panel_R0.5.1_300x300_2layer_step1_Modified
 
 Board 2,434 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 23](../CorpusTestingPages/Corpus-Testing-23.md#2434-outputpanel_r051_300x300_2layer_step1_modified).
 
@@ -47,4 +47,4 @@ Board 2,434 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2433 output.Panel_R0.5.1_300x300_2layer_step1](b2433b_hw-microrusefi_output-Panel-R0-5-1-300x300-2layer-step1.md) | [2435 output.Panel_R0.5.1_300x300_2layer_step1_Modified_1and5_only](b2435b_hw-microrusefi_output-Panel-R0-5-1-300x300-2layer-step1-Modified-1and5-only.md) |
+| [2433. output.Panel_R0.5.1_300x300_2layer_step1](b2433b_hw-microrusefi_output-Panel-R0-5-1-300x300-2layer-step1.md) | [2435. output.Panel_R0.5.1_300x300_2layer_step1_Modified_1and5_only](b2435b_hw-microrusefi_output-Panel-R0-5-1-300x300-2layer-step1-Modified-1and5-only.md) |

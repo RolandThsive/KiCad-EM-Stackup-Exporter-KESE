@@ -1,4 +1,4 @@
-# 2339 coco3
+# 2339. coco3
 
 Board 2,339 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 22](../CorpusTestingPages/Corpus-Testing-22.md#2339-coco3).
 
@@ -45,4 +45,4 @@ Board 2,339 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2338 mainboard](b2338b_hardware_mainboard-v05_mainboard.md) | [2340 qomu-board](b2340b_qomu-dev-board_qomu-board_1326.md) |
+| [2338. mainboard](b2338b_hardware_mainboard-v05_mainboard.md) | [2340. qomu-board](b2340b_qomu-dev-board_qomu-board_1326.md) |

@@ -1,4 +1,4 @@
-# 838 BPUv2a
+# 838. BPUv2a
 
 Board 838 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 8](../CorpusTestingPages/Corpus-Testing-08.md#838-bpuv2a).
 
@@ -45,4 +45,4 @@ Board 838 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [837 stemma-qwiic-grove-gravity-bog-plank](b0837b_BusPirate5-hardware_stemma-qwiic-grove-gravity-bog-plank.md) | [839 dragon64](b0839b_Dragon64_dragon64.md) |
+| [837. stemma-qwiic-grove-gravity-bog-plank](b0837b_BusPirate5-hardware_stemma-qwiic-grove-gravity-bog-plank.md) | [839. dragon64](b0839b_Dragon64_dragon64.md) |

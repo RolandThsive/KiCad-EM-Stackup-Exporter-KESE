@@ -1,4 +1,4 @@
-# 1393 PCB-11
+# 1393. PCB-11
 
 Board 1,393 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 13](../CorpusTestingPages/Corpus-Testing-13.md#1393-pcb-11).
 
@@ -46,4 +46,4 @@ Board 1,393 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1392 d1](b1392b_doppel-1_d1.md) | [1394 pong](b1394b_pong_pong.md) |
+| [1392. d1](b1392b_doppel-1_d1.md) | [1394. pong](b1394b_pong_pong.md) |

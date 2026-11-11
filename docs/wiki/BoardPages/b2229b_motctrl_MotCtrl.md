@@ -1,4 +1,4 @@
-# 2229 MotCtrl
+# 2229. MotCtrl
 
 Board 2,229 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 21](../CorpusTestingPages/Corpus-Testing-21.md#2229-motctrl).
 
@@ -45,4 +45,4 @@ Board 2,229 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2228 Edison_Motor_Servo](b2228b_reaction-wheels_Edison-Motor-Servo.md) | [2230 logicbone](b2230b_logicbone_logicbone.md) |
+| [2228. Edison_Motor_Servo](b2228b_reaction-wheels_Edison-Motor-Servo.md) | [2230. logicbone](b2230b_logicbone_logicbone.md) |

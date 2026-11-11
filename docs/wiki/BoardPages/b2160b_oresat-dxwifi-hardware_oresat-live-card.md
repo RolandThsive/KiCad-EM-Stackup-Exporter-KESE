@@ -1,4 +1,4 @@
-# 2160 oresat-live-card
+# 2160. oresat-live-card
 
 Board 2,160 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 20](../CorpusTestingPages/Corpus-Testing-20.md#2160-oresat-live-card).
 
@@ -45,4 +45,4 @@ Board 2,160 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2159 Bidirectional_Amp](b2159b_oresat-dxwifi-hardware_Bidirectional-Amp.md) | [2161 receive_Path](b2161b_oresat-dxwifi-hardware_receive-Path.md) |
+| [2159. Bidirectional_Amp](b2159b_oresat-dxwifi-hardware_Bidirectional-Amp.md) | [2161. receive_Path](b2161b_oresat-dxwifi-hardware_receive-Path.md) |

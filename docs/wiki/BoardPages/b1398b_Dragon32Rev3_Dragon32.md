@@ -1,4 +1,4 @@
-# 1398 Dragon32
+# 1398. Dragon32
 
 Board 1,398 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 13](../CorpusTestingPages/Corpus-Testing-13.md#1398-dragon32).
 
@@ -44,4 +44,4 @@ Board 1,398 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1397 Dragon32](b1397b_Dragon32Issue2_Dragon32.md) | [1399 cm4-carrier-net](b1399b_cm4-carriers_cm4-carrier-net.md) |
+| [1397. Dragon32](b1397b_Dragon32Issue2_Dragon32.md) | [1399. cm4-carrier-net](b1399b_cm4-carriers_cm4-carrier-net.md) |

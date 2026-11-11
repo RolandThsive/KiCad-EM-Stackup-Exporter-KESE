@@ -1,4 +1,4 @@
-# 1819 eduArdu_Rev_B
+# 1819. eduArdu_Rev_B
 
 Board 1,819 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 17](../CorpusTestingPages/Corpus-Testing-17.md#1819-eduardu_rev_b).
 
@@ -45,4 +45,4 @@ Board 1,819 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1818 eduArdu_Rev_A](b1818b_eduArdu_eduArdu-Rev-A.md) | [1820 ESP-PROG_Rev.C](b1820b_ESP-PROG_ESP-PROG-Rev-C.md) |
+| [1818. eduArdu_Rev_A](b1818b_eduArdu_eduArdu-Rev-A.md) | [1820. ESP-PROG_Rev.C](b1820b_ESP-PROG_ESP-PROG-Rev-C.md) |

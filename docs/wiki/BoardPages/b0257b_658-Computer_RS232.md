@@ -1,4 +1,4 @@
-# 257 RS232
+# 257. RS232
 
 Board 257 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 3](../CorpusTestingPages/Corpus-Testing-03.md#257-rs232).
 
@@ -45,4 +45,4 @@ Board 257 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [256 SNES Controller Reader](b0256b_658-Computer_SNES-Controller-Reader.md) | [258 TTL5V](b0258b_658-Computer_TTL5V.md) |
+| [256. SNES Controller Reader](b0256b_658-Computer_SNES-Controller-Reader.md) | [258. TTL5V](b0258b_658-Computer_TTL5V.md) |

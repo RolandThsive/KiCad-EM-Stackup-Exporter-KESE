@@ -1,4 +1,4 @@
-# 2222 sensor-board
+# 2222. sensor-board
 
 Board 2,222 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 21](../CorpusTestingPages/Corpus-Testing-21.md#2222-sensor-board).
 
@@ -45,4 +45,4 @@ Board 2,222 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2221 cree-xega-led-breakout](b2221b_oresat-solar-simulator-hardware_cree-xega-led-breakout.md) | [2223 star-tracker-card](b2223b_oresat-star-tracker-hardware_hardware-star-tracker-2-0-star-tracker-2-0-card_star-tracker-card.md) |
+| [2221. cree-xega-led-breakout](b2221b_oresat-solar-simulator-hardware_cree-xega-led-breakout.md) | [2223. star-tracker-card](b2223b_oresat-star-tracker-hardware_hardware-star-tracker-2-0-star-tracker-2-0-card_star-tracker-card.md) |

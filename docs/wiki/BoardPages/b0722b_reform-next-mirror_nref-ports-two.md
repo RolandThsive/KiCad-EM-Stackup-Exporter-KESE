@@ -1,4 +1,4 @@
-# 722 nref-ports-two
+# 722. nref-ports-two
 
 Board 722 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 7](../CorpusTestingPages/Corpus-Testing-07.md#722-nref-ports-two).
 
@@ -45,4 +45,4 @@ Board 722 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [721 nref-ports-one](b0721b_reform-next-mirror_nref-ports-one.md) | [723 Trackpad_IQS9150](b0723b_reform-next-mirror_Trackpad-IQS9150.md) |
+| [721. nref-ports-one](b0721b_reform-next-mirror_nref-ports-one.md) | [723. Trackpad_IQS9150](b0723b_reform-next-mirror_Trackpad-IQS9150.md) |

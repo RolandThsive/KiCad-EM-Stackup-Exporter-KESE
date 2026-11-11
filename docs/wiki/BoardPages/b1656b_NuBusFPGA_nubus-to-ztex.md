@@ -1,4 +1,4 @@
-# 1656 nubus-to-ztex
+# 1656. nubus-to-ztex
 
 Board 1,656 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 16](../CorpusTestingPages/Corpus-Testing-16.md#1656-nubus-to-ztex).
 
@@ -45,4 +45,4 @@ Board 1,656 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1655 IIsiA7_Mini](b1655b_IIsiFPGA_IIsiA7-Mini.md) | [1657 PicoBerry_V1.0](b1657b_PicoBerry_PicoBerry-V1-0.md) |
+| [1655. IIsiA7_Mini](b1655b_IIsiFPGA_IIsiA7-Mini.md) | [1657. PicoBerry_V1.0](b1657b_PicoBerry_PicoBerry-V1-0.md) |

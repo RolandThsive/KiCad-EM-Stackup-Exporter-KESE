@@ -1,4 +1,4 @@
-# 2152 amp-PA-GRF5504-with-detect
+# 2152. amp-PA-GRF5504-with-detect
 
 Board 2,152 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 20](../CorpusTestingPages/Corpus-Testing-20.md#2152-amp-pa-grf5504-with-detect).
 
@@ -45,4 +45,4 @@ Board 2,152 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2151 oresat-c3](b2151b_oresat-c3-hardware_oresat-c3.md) | [2153 cfc_emulator](b2153b_oresat-cfc-hardware_cfc-emulator.md) |
+| [2151. oresat-c3](b2151b_oresat-c3-hardware_oresat-c3.md) | [2153. cfc_emulator](b2153b_oresat-cfc-hardware_cfc-emulator.md) |

@@ -1,4 +1,4 @@
-# 688 C64-250469-KiCad
+# 688. C64-250469-KiCad
 
 Board 688 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 7](../CorpusTestingPages/Corpus-Testing-07.md#688-c64-250469-kicad).
 
@@ -45,4 +45,4 @@ Board 688 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [687 250407_](b0687b_C64-250407-Replica-KiCad_250407.md) | [689 audio](b0689b_laptop_audio.md) |
+| [687. 250407_](b0687b_C64-250407-Replica-KiCad_250407.md) | [689. audio](b0689b_laptop_audio.md) |

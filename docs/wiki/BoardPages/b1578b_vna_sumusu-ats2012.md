@@ -1,4 +1,4 @@
-# 1578 sumusu_ats2012
+# 1578. sumusu_ats2012
 
 Board 1,578 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 15](../CorpusTestingPages/Corpus-Testing-15.md#1578-sumusu_ats2012).
 
@@ -45,4 +45,4 @@ Board 1,578 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1577 mamx_011036](b1577b_vna_mamx-011036.md) | [1579 xx1000-qt](b1579b_vna_xx1000-qt.md) |
+| [1577. mamx_011036](b1577b_vna_mamx-011036.md) | [1579. xx1000-qt](b1579b_vna_xx1000-qt.md) |

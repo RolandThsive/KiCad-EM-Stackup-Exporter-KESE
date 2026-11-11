@@ -1,4 +1,4 @@
-# 2546 reCamera S101 v1.1
+# 2546. reCamera S101 v1.1
 
 Board 2,546 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 24](../CorpusTestingPages/Corpus-Testing-24.md#2546-recamera-s101-v11).
 
@@ -45,4 +45,4 @@ Board 2,546 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2545 reCamera S101 v1.0](b2545b_OSHW-reCamera-Series_reCamera-S101-v1-0.md) | [2547 reCamera 2002 S4 GC2053 Sensor Board_V1.0_SCH&PCB_250905](b2547b_OSHW-reCamera-Series_reCamera-2002-S4-GC2053-Sensor-Board-V1-0-SCH-PCB-250905.md) |
+| [2545. reCamera S101 v1.0](b2545b_OSHW-reCamera-Series_reCamera-S101-v1-0.md) | [2547. reCamera 2002 S4 GC2053 Sensor Board_V1.0_SCH&PCB_250905](b2547b_OSHW-reCamera-Series_reCamera-2002-S4-GC2053-Sensor-Board-V1-0-SCH-PCB-250905.md) |

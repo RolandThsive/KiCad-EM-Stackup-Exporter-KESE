@@ -1,4 +1,4 @@
-# 1254 EEZ_DIB_MCU_r3B4
+# 1254. EEZ_DIB_MCU_r3B4
 
 Board 1,254 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 12](../CorpusTestingPages/Corpus-Testing-12.md#1254-eez_dib_mcu_r3b4).
 
@@ -45,4 +45,4 @@ Board 1,254 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1253 EEZ_DIB_BP3C_r3B3](b1253b_bb3-cm4_EEZ-DIB-BP3C-R3B3_EEZ-DIB-BP3C-r3B3.md) | [1255 Intergalaktik_proto](b1255b_business-card-smd-proto_Intergalaktik-proto.md) |
+| [1253. EEZ_DIB_BP3C_r3B3](b1253b_bb3-cm4_EEZ-DIB-BP3C-R3B3_EEZ-DIB-BP3C-r3B3.md) | [1255. Intergalaktik_proto](b1255b_business-card-smd-proto_Intergalaktik-proto.md) |

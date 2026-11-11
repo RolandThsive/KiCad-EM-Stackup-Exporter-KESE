@@ -1,4 +1,4 @@
-# 543 PocketBeagle
+# 543. PocketBeagle
 
 Board 543 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 6](../CorpusTestingPages/Corpus-Testing-06.md#543-pocketbeagle).
 
@@ -45,4 +45,4 @@ Board 543 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [542 TechLab](b0542b_capes_TechLab.md) | [544 keyboard_pcb](b0544b_piantor_pcb-left_keyboard-pcb.md) |
+| [542. TechLab](b0542b_capes_TechLab.md) | [544. keyboard_pcb](b0544b_piantor_pcb-left_keyboard-pcb.md) |

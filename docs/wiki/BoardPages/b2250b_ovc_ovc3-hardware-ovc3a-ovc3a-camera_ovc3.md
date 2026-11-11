@@ -1,4 +1,4 @@
-# 2250 ovc3
+# 2250. ovc3
 
 Board 2,250 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 21](../CorpusTestingPages/Corpus-Testing-21.md#2250-ovc3).
 
@@ -45,4 +45,4 @@ Board 2,250 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2249 backpack](b2249b_ovc_backpack.md) | [2251 external_camera](b2251b_ovc_external-camera.md) |
+| [2249. backpack](b2249b_ovc_backpack.md) | [2251. external_camera](b2251b_ovc_external-camera.md) |

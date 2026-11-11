@@ -1,4 +1,4 @@
-# 490 KU-14194HB-REV-B-KiCad
+# 490. KU-14194HB-REV-B-KiCad
 
 Board 490 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 5](../CorpusTestingPages/Corpus-Testing-05.md#490-ku-14194hb-rev-b-kicad).
 
@@ -45,4 +45,4 @@ Board 490 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [489 PCPI_AppliCard](b0489b_bit-preserve_PCPI-AppliCard.md) | [491 Commodore Plus 4](b0491b_bit-preserve_Commodore-Plus-4.md) |
+| [489. PCPI_AppliCard](b0489b_bit-preserve_PCPI-AppliCard.md) | [491. Commodore Plus 4](b0491b_bit-preserve_Commodore-Plus-4.md) |

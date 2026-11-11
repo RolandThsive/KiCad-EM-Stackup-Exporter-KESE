@@ -1,4 +1,4 @@
-# 1095 cynthion
+# 1095. cynthion
 
 Board 1,095 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 11](../CorpusTestingPages/Corpus-Testing-11.md#1095-cynthion).
 
@@ -44,4 +44,4 @@ Board 1,095 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1094 cydonia](b1094b_cydonia_cydonia.md) | [1096 gig-e](b1096b_daisho_gig-e.md) |
+| [1094. cydonia](b1094b_cydonia_cydonia.md) | [1096. gig-e](b1096b_daisho_gig-e.md) |

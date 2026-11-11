@@ -1,4 +1,4 @@
-# 1792 m1
+# 1792. m1
 
 Board 1,792 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 17](../CorpusTestingPages/Corpus-Testing-17.md#1792-m1).
 
@@ -45,4 +45,4 @@ Board 1,792 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1791 m3](b1791b_rocket-flight-computer_m3-design-assembly-review_m3.md) | [1793 m3](b1793b_rocket-flight-computer_reference-m3-assy-r1_m3.md) |
+| [1791. m3](b1791b_rocket-flight-computer_m3-design-assembly-review_m3.md) | [1793. m3](b1793b_rocket-flight-computer_reference-m3-assy-r1_m3.md) |

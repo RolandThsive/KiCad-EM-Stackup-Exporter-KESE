@@ -1,4 +1,4 @@
-# 2594 Header2x20
+# 2594. Header2x20
 
 Board 2,594 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 25](../CorpusTestingPages/Corpus-Testing-25.md#2594-header2x20).
 
@@ -44,4 +44,4 @@ Board 2,594 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2593 n2adr](b2593b_Hermes-Lite2_n2adr.md) | [2595 psfeedback](b2595b_Hermes-Lite2_psfeedback.md) |
+| [2593. n2adr](b2593b_Hermes-Lite2_n2adr.md) | [2595. psfeedback](b2595b_Hermes-Lite2_psfeedback.md) |

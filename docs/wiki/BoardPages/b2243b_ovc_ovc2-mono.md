@@ -1,4 +1,4 @@
-# 2243 ovc2_mono
+# 2243. ovc2_mono
 
 Board 2,243 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 21](../CorpusTestingPages/Corpus-Testing-21.md#2243-ovc2_mono).
 
@@ -45,4 +45,4 @@ Board 2,243 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2242 mobof](b2242b_ovc_mobof.md) | [2244 mono_imu](b2244b_ovc_mono-imu.md) |
+| [2242. mobof](b2242b_ovc_mobof.md) | [2244. mono_imu](b2244b_ovc_mono-imu.md) |

@@ -1,4 +1,4 @@
-# 666 Oric-PS2USB
+# 666. Oric-PS2USB
 
 Board 666 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 7](../CorpusTestingPages/Corpus-Testing-07.md#666-oric-ps2usb).
 
@@ -45,4 +45,4 @@ Board 666 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [665 Oric](b0665b_Oric-Remix_Archive-IssueAv1-1_Oric.md) | [667 Oric](b0667b_Oric-Remix_Kicad_Oric.md) |
+| [665. Oric](b0665b_Oric-Remix_Archive-IssueAv1-1_Oric.md) | [667. Oric](b0667b_Oric-Remix_Kicad_Oric.md) |

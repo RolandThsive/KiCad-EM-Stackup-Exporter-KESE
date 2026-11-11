@@ -1,4 +1,4 @@
-# 1603 kuchen
+# 1603. kuchen
 
 Board 1,603 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 15](../CorpusTestingPages/Corpus-Testing-15.md#1603-kuchen).
 
@@ -45,4 +45,4 @@ Board 1,603 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1602 pmod_ethernet](b1602b_katze_pmod-ethernet.md) | [1604 lakritz](b1604b_lakritz_lakritz.md) |
+| [1602. pmod_ethernet](b1602b_katze_pmod-ethernet.md) | [1604. lakritz](b1604b_lakritz_lakritz.md) |

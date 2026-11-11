@@ -1,4 +1,4 @@
-# 1375 reform2-trackpad
+# 1375. reform2-trackpad
 
 Board 1,375 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 13](../CorpusTestingPages/Corpus-Testing-13.md#1375-reform2-trackpad).
 
@@ -45,4 +45,4 @@ Board 1,375 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1374 reform2-trackball2](b1374b_reform_reform2-trackball2.md) | [1376 bpm_dfe](b1376b_rfsocdfe-hw_bpm-dfe.md) |
+| [1374. reform2-trackball2](b1374b_reform_reform2-trackball2.md) | [1376. bpm_dfe](b1376b_rfsocdfe-hw_bpm-dfe.md) |

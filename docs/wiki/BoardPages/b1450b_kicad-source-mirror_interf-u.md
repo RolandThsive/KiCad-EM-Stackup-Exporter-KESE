@@ -1,4 +1,4 @@
-# 1450 interf_u
+# 1450. interf_u
 
 Board 1,450 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 14](../CorpusTestingPages/Corpus-Testing-14.md#1450-interf_u).
 
@@ -45,4 +45,4 @@ Board 1,450 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1449 ecc83-pp_v2](b1449b_kicad-source-mirror_ecc83-pp-v2.md) | [1451 kit-dev-coldfire-xilinx_5213](b1451b_kicad-source-mirror_kit-dev-coldfire-xilinx-5213.md) |
+| [1449. ecc83-pp_v2](b1449b_kicad-source-mirror_ecc83-pp-v2.md) | [1451. kit-dev-coldfire-xilinx_5213](b1451b_kicad-source-mirror_kit-dev-coldfire-xilinx-5213.md) |

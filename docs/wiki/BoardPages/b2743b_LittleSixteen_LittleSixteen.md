@@ -1,4 +1,4 @@
-# 2743 LittleSixteen
+# 2743. LittleSixteen
 
 Board 2,743 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 26](../CorpusTestingPages/Corpus-Testing-26.md#2743-littlesixteen).
 
@@ -44,4 +44,4 @@ Board 2,743 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2742 vcu](b2742b_pcb_vcu.md) | [2744 Raemixx500](b2744b_raemixx500_Raemixx500.md) |
+| [2742. vcu](b2742b_pcb_vcu.md) | [2744. Raemixx500](b2744b_raemixx500_Raemixx500.md) |

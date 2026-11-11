@@ -1,4 +1,4 @@
-# 27 GPIO Breadboard Helper
+# 27. GPIO Breadboard Helper
 
 Board 27 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 1](../CorpusTestingPages/Corpus-Testing-01.md#27-gpio-breadboard-helper).
 
@@ -45,4 +45,4 @@ Board 27 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page
 
 | Previous | Next |
 |:---|---:|
-| [26 DB25 Helper](b0026b_6502_DB25-Helper.md) | [28 GPIO Card](b0028b_6502_GPIO-Card.md) |
+| [26. DB25 Helper](b0026b_6502_DB25-Helper.md) | [28. GPIO Card](b0028b_6502_GPIO-Card.md) |

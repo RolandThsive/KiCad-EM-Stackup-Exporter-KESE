@@ -1,4 +1,4 @@
-# 2758 DDR4_SoC
+# 2758. DDR4_SoC
 
 Board 2,758 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 26](../CorpusTestingPages/Corpus-Testing-26.md#2758-ddr4_soc).
 
@@ -45,4 +45,4 @@ Board 2,758 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2757 TAPRX-888](b2757b_TAPRx888_TAPRX-888.md) | [2759 OpenInverter_20b](b2759b_Open-Inverter-2-0b-Kicad_OpenInverter-20b.md) |
+| [2757. TAPRX-888](b2757b_TAPRx888_TAPRX-888.md) | [2759. OpenInverter_20b](b2759b_Open-Inverter-2-0b-Kicad_OpenInverter-20b.md) |

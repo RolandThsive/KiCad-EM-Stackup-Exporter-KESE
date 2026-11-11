@@ -1,4 +1,4 @@
-# 2074 oe-commutator-controller
+# 2074. oe-commutator-controller
 
 Board 2,074 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 20](../CorpusTestingPages/Corpus-Testing-20.md#2074-oe-commutator-controller).
 
@@ -45,4 +45,4 @@ Board 2,074 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2073 acquisition-board](b2073b_acquisition-board_acquisition-board.md) | [2075 ecp5u85-bse-usb](b2075b_ECP5U85-BSE-USB_ecp5u85-bse-usb.md) |
+| [2073. acquisition-board](b2073b_acquisition-board_acquisition-board.md) | [2075. ecp5u85-bse-usb](b2075b_ECP5U85-BSE-USB_ecp5u85-bse-usb.md) |

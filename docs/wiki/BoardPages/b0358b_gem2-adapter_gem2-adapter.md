@@ -1,4 +1,4 @@
-# 358 gem2-adapter
+# 358. gem2-adapter
 
 Board 358 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 4](../CorpusTestingPages/Corpus-Testing-04.md#358-gem2-adapter).
 
@@ -44,4 +44,4 @@ Board 358 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [357 zglue-gem1-adapter](b0357b_gem1-adapter_zglue-gem1-adapter.md) | [359 gmsl-deserializer](b0359b_gmsl-deserializer_gmsl-deserializer.md) |
+| [357. zglue-gem1-adapter](b0357b_gem1-adapter_zglue-gem1-adapter.md) | [359. gmsl-deserializer](b0359b_gmsl-deserializer_gmsl-deserializer.md) |

@@ -1,4 +1,4 @@
-# 2002 mod-oled-128x64
+# 2002. mod-oled-128x64
 
 Board 2,002 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 19](../CorpusTestingPages/Corpus-Testing-19.md#2002-mod-oled-128x64).
 
@@ -45,4 +45,4 @@ Board 2,002 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2001 mod-gyro](b2001b_UEXT-MODULES_mod-gyro.md) | [2003 Ultra_Sound_Levitation_Rev_B](b2003b_Ultra-Sound-Levitation_Ultra-Sound-Levitation-Rev-B.md) |
+| [2001. mod-gyro](b2001b_UEXT-MODULES_mod-gyro.md) | [2003. Ultra_Sound_Levitation_Rev_B](b2003b_Ultra-Sound-Levitation_Ultra-Sound-Levitation-Rev-B.md) |

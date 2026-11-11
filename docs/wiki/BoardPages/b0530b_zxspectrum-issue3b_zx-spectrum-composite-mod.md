@@ -1,4 +1,4 @@
-# 530 zx_spectrum_composite_mod
+# 530. zx_spectrum_composite_mod
 
 Board 530 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 5](../CorpusTestingPages/Corpus-Testing-05.md#530-zx_spectrum_composite_mod).
 
@@ -45,4 +45,4 @@ Board 530 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [529 Spectrum 48K Video Mod](b0529b_zxspectrum-issue3b_Spectrum-48K-Video-Mod.md) | [531 dabao_v3c](b0531b_dabao_dabao-v3c.md) |
+| [529. Spectrum 48K Video Mod](b0529b_zxspectrum-issue3b_Spectrum-48K-Video-Mod.md) | [531. dabao_v3c](b0531b_dabao_dabao-v3c.md) |

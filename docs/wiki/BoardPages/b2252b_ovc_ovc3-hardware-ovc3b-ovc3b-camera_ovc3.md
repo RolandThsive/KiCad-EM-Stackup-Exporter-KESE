@@ -1,4 +1,4 @@
-# 2252 ovc3
+# 2252. ovc3
 
 Board 2,252 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 21](../CorpusTestingPages/Corpus-Testing-21.md#2252-ovc3).
 
@@ -45,4 +45,4 @@ Board 2,252 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2251 external_camera](b2251b_ovc_external-camera.md) | [2253 vectornav_carrier](b2253b_ovc_vectornav-carrier.md) |
+| [2251. external_camera](b2251b_ovc_external-camera.md) | [2253. vectornav_carrier](b2253b_ovc_vectornav-carrier.md) |

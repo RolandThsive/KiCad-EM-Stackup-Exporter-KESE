@@ -1,4 +1,4 @@
-# 1010 vera-module-rev3
+# 1010. vera-module-rev3
 
 Board 1,010 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 10](../CorpusTestingPages/Corpus-Testing-10.md#1010-vera-module-rev3).
 
@@ -45,4 +45,4 @@ Board 1,010 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1009 vera-module-rev2](b1009b_vera-module_vera-module-rev2.md) | [1011 vera-module-rev4](b1011b_vera-module_vera-module-rev4.md) |
+| [1009. vera-module-rev2](b1009b_vera-module_vera-module-rev2.md) | [1011. vera-module-rev4](b1011b_vera-module_vera-module-rev4.md) |

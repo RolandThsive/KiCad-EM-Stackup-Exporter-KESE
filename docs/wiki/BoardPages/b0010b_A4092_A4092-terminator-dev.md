@@ -1,4 +1,4 @@
-# 10 A4092-terminator-dev
+# 10. A4092-terminator-dev
 
 Board 10 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 1](../CorpusTestingPages/Corpus-Testing-01.md#10-a4092-terminator-dev).
 
@@ -45,4 +45,4 @@ Board 10 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page
 
 | Previous | Next |
 |:---|---:|
-| [9 Flipper](b0009b_A4092_Flipper.md) | [11 A4092-terminator-ds2107](b0011b_A4092_A4092-terminator-ds2107.md) |
+| [9. Flipper](b0009b_A4092_Flipper.md) | [11. A4092-terminator-ds2107](b0011b_A4092_A4092-terminator-ds2107.md) |

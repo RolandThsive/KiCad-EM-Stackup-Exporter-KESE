@@ -1,4 +1,4 @@
-# 2963 Pre-charge KiCAD
+# 2963. Pre-charge KiCAD
 
 Board 2,963 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 28](../CorpusTestingPages/Corpus-Testing-28.md#2963-pre-charge-kicad).
 
@@ -45,4 +45,4 @@ Board 2,963 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2962 PDU_KR](b2962b_circuits_PDU-KR.md) | [2964 Breakout](b2964b_circuits_Breakout.md) |
+| [2962. PDU_KR](b2962b_circuits_PDU-KR.md) | [2964. Breakout](b2964b_circuits_Breakout.md) |

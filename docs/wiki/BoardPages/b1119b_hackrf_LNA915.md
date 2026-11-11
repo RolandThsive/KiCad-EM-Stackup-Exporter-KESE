@@ -1,4 +1,4 @@
-# 1119 LNA915
+# 1119. LNA915
 
 Board 1,119 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 11](../CorpusTestingPages/Corpus-Testing-11.md#1119-lna915).
 
@@ -45,4 +45,4 @@ Board 1,119 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1118 hackrf-one](b1118b_hackrf_hackrf-one.md) | [1120 marzipan](b1120b_hackrf_marzipan.md) |
+| [1118. hackrf-one](b1118b_hackrf_hackrf-one.md) | [1120. marzipan](b1120b_hackrf_marzipan.md) |

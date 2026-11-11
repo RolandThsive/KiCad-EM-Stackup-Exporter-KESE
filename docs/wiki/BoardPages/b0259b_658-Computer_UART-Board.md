@@ -1,4 +1,4 @@
-# 259 UART Board
+# 259. UART Board
 
 Board 259 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 3](../CorpusTestingPages/Corpus-Testing-03.md#259-uart-board).
 
@@ -45,4 +45,4 @@ Board 259 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [258 TTL5V](b0258b_658-Computer_TTL5V.md) | [260 UART Signals](b0260b_658-Computer_UART-Signals.md) |
+| [258. TTL5V](b0258b_658-Computer_TTL5V.md) | [260. UART Signals](b0260b_658-Computer_UART-Signals.md) |

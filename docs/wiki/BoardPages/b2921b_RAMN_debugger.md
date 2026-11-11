@@ -1,4 +1,4 @@
-# 2921 debugger
+# 2921. debugger
 
 Board 2,921 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 28](../CorpusTestingPages/Corpus-Testing-28.md#2921-debugger).
 
@@ -45,4 +45,4 @@ Board 2,921 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2920 body](b2920b_RAMN_body.md) | [2922 6-Slot-Backplane](b2922b_retroverse_6-Slot-Backplane.md) |
+| [2920. body](b2920b_RAMN_body.md) | [2922. 6-Slot-Backplane](b2922b_retroverse_6-Slot-Backplane.md) |

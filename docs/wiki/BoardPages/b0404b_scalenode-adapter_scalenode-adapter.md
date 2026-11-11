@@ -1,4 +1,4 @@
-# 404 scalenode-adapter
+# 404. scalenode-adapter
 
 Board 404 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 4](../CorpusTestingPages/Corpus-Testing-04.md#404-scalenode-adapter).
 
@@ -44,4 +44,4 @@ Board 404 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [403 rpi-led-flex-board](b0403b_rpi-led-flex-board_rpi-led-flex-board.md) | [405 scalenode-cm4-baseboard](b0405b_scalenode-cm4-baseboard_scalenode-cm4-baseboard.md) |
+| [403. rpi-led-flex-board](b0403b_rpi-led-flex-board_rpi-led-flex-board.md) | [405. scalenode-cm4-baseboard](b0405b_scalenode-cm4-baseboard_scalenode-cm4-baseboard.md) |

@@ -1,4 +1,4 @@
-# 268 Video Clock
+# 268. Video Clock
 
 Board 268 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 3](../CorpusTestingPages/Corpus-Testing-03.md#268-video-clock).
 
@@ -45,4 +45,4 @@ Board 268 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [267 Video Board - Signals](b0267b_658-Computer_Video-Board-Signals.md) | [269 Video Counter 12bit](b0269b_658-Computer_Video-Counter-12bit.md) |
+| [267. Video Board - Signals](b0267b_658-Computer_Video-Board-Signals.md) | [269. Video Counter 12bit](b0269b_658-Computer_Video-Counter-12bit.md) |

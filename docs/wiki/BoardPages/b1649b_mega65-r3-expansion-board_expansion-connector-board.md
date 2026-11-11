@@ -1,4 +1,4 @@
-# 1649 expansion_connector_board
+# 1649. expansion_connector_board
 
 Board 1,649 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 16](../CorpusTestingPages/Corpus-Testing-16.md#1649-expansion_connector_board).
 
@@ -45,4 +45,4 @@ Board 1,649 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1648 mega65-kbd](b1648b_mega65-kbd-pcb_mega65-kbd.md) | [1650 external_drive_board](b1650b_mega65-r3-expansion-board_external-drive-board.md) |
+| [1648. mega65-kbd](b1648b_mega65-kbd-pcb_mega65-kbd.md) | [1650. external_drive_board](b1650b_mega65-r3-expansion-board_external-drive-board.md) |

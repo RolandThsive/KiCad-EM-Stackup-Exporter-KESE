@@ -1,4 +1,4 @@
-# 2352 11ua
+# 2352. 11ua
 
 Board 2,352 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 22](../CorpusTestingPages/Corpus-Testing-22.md#2352-11ua).
 
@@ -45,4 +45,4 @@ Board 2,352 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2351 AppleII](b2351b_Apple-II-R0_AppleII.md) | [2353 triple_adapter](b2353b_stmbl_triple-adapter.md) |
+| [2351. AppleII](b2351b_Apple-II-R0_AppleII.md) | [2353. triple_adapter](b2353b_stmbl_triple-adapter.md) |

@@ -1,4 +1,4 @@
-# 1991 STMP1-OLinuXino_Rev_A
+# 1991. STMP1-OLinuXino_Rev_A
 
 Board 1,991 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 19](../CorpusTestingPages/Corpus-Testing-19.md#1991-stmp1-olinuxino_rev_a).
 
@@ -45,4 +45,4 @@ Board 1,991 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1990 STMP1(A13)-SOM-EVB_Rev_B](b1990b_STMP1-A13-EVB_STMP1-A13-SOM-EVB-Rev-B.md) | [1992 STMP15x-BASE-SOM-EVB_Rev_B](b1992b_STMP157-BASE-SOM-EVB_STMP15x-BASE-SOM-EVB-Rev-B.md) |
+| [1990. STMP1(A13)-SOM-EVB_Rev_B](b1990b_STMP1-A13-EVB_STMP1-A13-SOM-EVB-Rev-B.md) | [1992. STMP15x-BASE-SOM-EVB_Rev_B](b1992b_STMP157-BASE-SOM-EVB_STMP15x-BASE-SOM-EVB-Rev-B.md) |

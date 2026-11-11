@@ -1,4 +1,4 @@
-# 1408 OSO-SWAB-B1-00 Sensor Watch Accelerometer
+# 1408. OSO-SWAB-B1-00 Sensor Watch Accelerometer
 
 Board 1,408 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 14](../CorpusTestingPages/Corpus-Testing-14.md#1408-oso-swab-b1-00-sensor-watch-accelerometer).
 
@@ -45,4 +45,4 @@ Board 1,408 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1407 OSO-SWAT-C1](b1407b_Sensor-Watch_OSO-SWAT-C1.md) | [1409 Q3Q-SWAB-A1-00 Temperature + Test Points + OPT3001](b1409b_Sensor-Watch_Q3Q-SWAB-A1-00-Temperature-Test-Points-OPT3001.md) |
+| [1407. OSO-SWAT-C1](b1407b_Sensor-Watch_OSO-SWAT-C1.md) | [1409. Q3Q-SWAB-A1-00 Temperature + Test Points + OPT3001](b1409b_Sensor-Watch_Q3Q-SWAB-A1-00-Temperature-Test-Points-OPT3001.md) |

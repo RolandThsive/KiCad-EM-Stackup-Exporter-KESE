@@ -1,4 +1,4 @@
-# 485 tip-holder-base
+# 485. tip-holder-base
 
 Board 485 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 5](../CorpusTestingPages/Corpus-Testing-05.md#485-tip-holder-base).
 
@@ -46,4 +46,4 @@ Board 485 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [484 solder-kf047-test](b0484b_starshipraider_solder-kf047-test.md) | [486 mch2022](b0486b_mch2022-badge-hardware_mch2022.md) |
+| [484. solder-kf047-test](b0484b_starshipraider_solder-kf047-test.md) | [486. mch2022](b0486b_mch2022-badge-hardware_mch2022.md) |

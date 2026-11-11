@@ -1,4 +1,4 @@
-# 842 IO_Riser
+# 842. IO_Riser
 
 Board 842 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 8](../CorpusTestingPages/Corpus-Testing-08.md#842-io_riser).
 
@@ -45,4 +45,4 @@ Board 842 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [841 CartRiser](b0841b_TI99-22_CartRiser.md) | [843 Keyboard](b0843b_TI99-22_Keyboard.md) |
+| [841. CartRiser](b0841b_TI99-22_CartRiser.md) | [843. Keyboard](b0843b_TI99-22_Keyboard.md) |

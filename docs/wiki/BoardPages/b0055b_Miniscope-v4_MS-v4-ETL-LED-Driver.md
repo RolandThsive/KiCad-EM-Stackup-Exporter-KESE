@@ -1,4 +1,4 @@
-# 55 MS_v4_ETL_LED_Driver
+# 55. MS_v4_ETL_LED_Driver
 
 Board 55 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 1](../CorpusTestingPages/Corpus-Testing-01.md#55-ms_v4_etl_led_driver).
 
@@ -45,4 +45,4 @@ Board 55 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page
 
 | Previous | Next |
 |:---|---:|
-| [54 BNO055_08092019](b0054b_Miniscope-v4_BNO055-08092019.md) | [56 Miniscope-v4-MCU](b0056b_Miniscope-v4_Miniscope-v4-MCU.md) |
+| [54. BNO055_08092019](b0054b_Miniscope-v4_BNO055-08092019.md) | [56. Miniscope-v4-MCU](b0056b_Miniscope-v4_Miniscope-v4-MCU.md) |

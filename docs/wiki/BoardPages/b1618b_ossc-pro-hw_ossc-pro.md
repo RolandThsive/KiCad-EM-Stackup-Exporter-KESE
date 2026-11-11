@@ -1,4 +1,4 @@
-# 1618 ossc_pro
+# 1618. ossc_pro
 
 Board 1,618 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 15](../CorpusTestingPages/Corpus-Testing-15.md#1618-ossc_pro).
 
@@ -45,4 +45,4 @@ Board 1,618 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1617 ram_board](b1617b_ossc-pro-hw_ram-board.md) | [1619 aux_board](b1619b_hardware-csat_aux-board.md) |
+| [1617. ram_board](b1617b_ossc-pro-hw_ram-board.md) | [1619. aux_board](b1619b_hardware-csat_aux-board.md) |

@@ -1,4 +1,4 @@
-# 3124 hw-openmower-sabo
+# 3124. hw-openmower-sabo
 
 Board 3,124 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 29](../CorpusTestingPages/Corpus-Testing-29.md#3124-hw-openmower-sabo).
 
@@ -44,4 +44,4 @@ Board 3,124 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [3123 CAT](b3123b_CAT-Board_CAT.md) | [3125 hw-openmower-universal](b3125b_hw-openmower-universal_hw-openmower-universal.md) |
+| [3123. CAT](b3123b_CAT-Board_CAT.md) | [3125. hw-openmower-universal](b3125b_hw-openmower-universal_hw-openmower-universal.md) |

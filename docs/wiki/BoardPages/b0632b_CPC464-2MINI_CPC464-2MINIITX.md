@@ -1,4 +1,4 @@
-# 632 CPC464-2MINIITX
+# 632. CPC464-2MINIITX
 
 Board 632 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 6](../CorpusTestingPages/Corpus-Testing-06.md#632-cpc464-2miniitx).
 
@@ -45,4 +45,4 @@ Board 632 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [631 Commodore PC10 III](b0631b_Commodore-PC10-III-Reproduction_312628-REV-6C_Commodore-PC10-III.md) | [633 CPC464-2MINI](b0633b_CPC464-2MINI_Archive-v1-Kicad_CPC464-2MINI.md) |
+| [631. Commodore PC10 III](b0631b_Commodore-PC10-III-Reproduction_312628-REV-6C_Commodore-PC10-III.md) | [633. CPC464-2MINI](b0633b_CPC464-2MINI_Archive-v1-Kicad_CPC464-2MINI.md) |

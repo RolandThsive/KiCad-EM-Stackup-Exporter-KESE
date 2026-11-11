@@ -1,4 +1,4 @@
-# 577 main_board_peripheral_v1
+# 577. main_board_peripheral_v1
 
 Board 577 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 6](../CorpusTestingPages/Corpus-Testing-06.md#577-main_board_peripheral_v1).
 
@@ -45,4 +45,4 @@ Board 577 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [576 DB44_breakout](b0576b_22xt-kicad_DB44-breakout.md) | [578 main_board_peripheral_v2](b0578b_22xt-kicad_main-board-peripheral-v2.md) |
+| [576. DB44_breakout](b0576b_22xt-kicad_DB44-breakout.md) | [578. main_board_peripheral_v2](b0578b_22xt-kicad_main-board-peripheral-v2.md) |

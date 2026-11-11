@@ -1,4 +1,4 @@
-# 262 VIA Breakout
+# 262. VIA Breakout
 
 Board 262 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 3](../CorpusTestingPages/Corpus-Testing-03.md#262-via-breakout).
 
@@ -45,4 +45,4 @@ Board 262 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [261 VIA Board](b0261b_658-Computer_VIA-Board.md) | [263 VIA Control](b0263b_658-Computer_VIA-Control.md) |
+| [261. VIA Board](b0261b_658-Computer_VIA-Board.md) | [263. VIA Control](b0263b_658-Computer_VIA-Control.md) |

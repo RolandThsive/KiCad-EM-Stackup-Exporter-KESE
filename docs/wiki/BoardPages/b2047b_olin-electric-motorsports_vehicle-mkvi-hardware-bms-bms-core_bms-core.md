@@ -1,4 +1,4 @@
-# 2047 bms_core
+# 2047. bms_core
 
 Board 2,047 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 19](../CorpusTestingPages/Corpus-Testing-19.md#2047-bms_core).
 
@@ -45,4 +45,4 @@ Board 2,047 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2046 service_section_controller](b2046b_olin-electric-motorsports_service-section-controller.md) | [2048 bms_csc](b2048b_olin-electric-motorsports_vehicle-mkvi-hardware-bms-bms-csc_bms-csc.md) |
+| [2046. service_section_controller](b2046b_olin-electric-motorsports_service-section-controller.md) | [2048. bms_csc](b2048b_olin-electric-motorsports_vehicle-mkvi-hardware-bms-bms-csc_bms-csc.md) |

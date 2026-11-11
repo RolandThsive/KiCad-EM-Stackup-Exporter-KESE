@@ -1,4 +1,4 @@
-# 1996 RPI-UEXT-MPQ_Rev_A
+# 1996. RPI-UEXT-MPQ_Rev_A
 
 Board 1,996 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 19](../CorpusTestingPages/Corpus-Testing-19.md#1996-rpi-uext-mpq_rev_a).
 
@@ -45,4 +45,4 @@ Board 1,996 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1995 UEXT-3TO5V_Rev_A](b1995b_UEXT-3TO5V_UEXT-3TO5V-Rev-A.md) | [1997 UEXT-MPQ_Rev_A](b1997b_UEXT-ADAPTERS_UEXT-MPQ-Rev-A.md) |
+| [1995. UEXT-3TO5V_Rev_A](b1995b_UEXT-3TO5V_UEXT-3TO5V-Rev-A.md) | [1997. UEXT-MPQ_Rev_A](b1997b_UEXT-ADAPTERS_UEXT-MPQ-Rev-A.md) |

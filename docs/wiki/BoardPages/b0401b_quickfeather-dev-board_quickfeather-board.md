@@ -1,4 +1,4 @@
-# 401 quickfeather-board
+# 401. quickfeather-board
 
 Board 401 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 4](../CorpusTestingPages/Corpus-Testing-04.md#401-quickfeather-board).
 
@@ -44,4 +44,4 @@ Board 401 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [400 qomu-board](b0400b_qomu-dev-board_qomu-board_1290.md) | [402 rpi-cm4-csi-adapter](b0402b_raspberry-pi-cm4-csi-adapter_rpi-cm4-csi-adapter.md) |
+| [400. qomu-board](b0400b_qomu-dev-board_qomu-board_1290.md) | [402. rpi-cm4-csi-adapter](b0402b_raspberry-pi-cm4-csi-adapter_rpi-cm4-csi-adapter.md) |

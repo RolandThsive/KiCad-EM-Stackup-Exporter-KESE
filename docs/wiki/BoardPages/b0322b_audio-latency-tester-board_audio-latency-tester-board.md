@@ -1,4 +1,4 @@
-# 322 audio-latency-tester-board
+# 322. audio-latency-tester-board
 
 Board 322 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 3](../CorpusTestingPages/Corpus-Testing-03.md#322-audio-latency-tester-board).
 
@@ -44,4 +44,4 @@ Board 322 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [321 arvsom](b0321b_arvsom_arvsom.md) | [323 caravel_breakout_QFN](b0323b_caravel-board_caravel-breakout-QFN.md) |
+| [321. arvsom](b0321b_arvsom_arvsom.md) | [323. caravel_breakout_QFN](b0323b_caravel-board_caravel-breakout-QFN.md) |

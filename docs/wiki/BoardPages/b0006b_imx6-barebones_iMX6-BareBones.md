@@ -1,4 +1,4 @@
-# 6 iMX6_BareBones
+# 6. iMX6_BareBones
 
 Board 6 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 1](../CorpusTestingPages/Corpus-Testing-01.md#6-imx6_barebones).
 
@@ -45,4 +45,4 @@ Board 6 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 
 
 | Previous | Next |
 |:---|---:|
-| [5 Stroopwafel-LGA1151-CFL](b0005b_stroopwafel-lga1151-cfl_Stroopwafel-LGA1151-CFL.md) | [7 A4092](b0007b_A4092_A4092.md) |
+| [5. Stroopwafel-LGA1151-CFL](b0005b_stroopwafel-lga1151-cfl_Stroopwafel-LGA1151-CFL.md) | [7. A4092](b0007b_A4092_A4092.md) |

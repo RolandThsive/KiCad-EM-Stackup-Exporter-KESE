@@ -1,4 +1,4 @@
-# 901 Thunderscope_Rev5_Mech_Model
+# 901. Thunderscope_Rev5_Mech_Model
 
 Board 901 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 9](../CorpusTestingPages/Corpus-Testing-09.md#901-thunderscope_rev5_mech_model).
 
@@ -45,4 +45,4 @@ Board 901 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [900 Thunderscope_Rev5](b0900b_ts-hardware-archive_Thunderscope-Rev5.md) | [902 HMCAD1520_Impedence_Checker](b0902b_ts-test-fixtures_HMCAD1520-Impedence-Checker.md) |
+| [900. Thunderscope_Rev5](b0900b_ts-hardware-archive_Thunderscope-Rev5.md) | [902. HMCAD1520_Impedence_Checker](b0902b_ts-test-fixtures_HMCAD1520-Impedence-Checker.md) |

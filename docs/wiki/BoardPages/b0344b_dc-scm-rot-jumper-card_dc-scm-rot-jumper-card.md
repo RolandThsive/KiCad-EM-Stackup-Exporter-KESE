@@ -1,4 +1,4 @@
-# 344 dc-scm-rot-jumper-card
+# 344. dc-scm-rot-jumper-card
 
 Board 344 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 4](../CorpusTestingPages/Corpus-Testing-04.md#344-dc-scm-rot-jumper-card).
 
@@ -44,4 +44,4 @@ Board 344 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [343 bmc-reference-carrier-board](b0343b_dc-scm-osm-l-carrier-card_bmc-reference-carrier-board.md) | [345 ddr4-spd-breakout](b0345b_ddr4-spd-breakout-board_ddr4-spd-breakout.md) |
+| [343. bmc-reference-carrier-board](b0343b_dc-scm-osm-l-carrier-card_bmc-reference-carrier-board.md) | [345. ddr4-spd-breakout](b0345b_ddr4-spd-breakout-board_ddr4-spd-breakout.md) |

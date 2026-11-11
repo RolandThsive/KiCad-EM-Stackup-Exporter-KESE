@@ -1,4 +1,4 @@
-# 2813 breakout-ihp-qfn
+# 2813. breakout-ihp-qfn
 
 Board 2,813 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 27](../CorpusTestingPages/Corpus-Testing-27.md#2813-breakout-ihp-qfn).
 
@@ -45,4 +45,4 @@ Board 2,813 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2812 breakout-dip-gf](b2812b_breakout-pcb_breakout-dip-gf.md) | [2814 breakout-qfn](b2814b_breakout-pcb_breakout-qfn.md) |
+| [2812. breakout-dip-gf](b2812b_breakout-pcb_breakout-dip-gf.md) | [2814. breakout-qfn](b2814b_breakout-pcb_breakout-qfn.md) |

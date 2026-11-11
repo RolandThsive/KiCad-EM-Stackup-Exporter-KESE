@@ -1,4 +1,4 @@
-# 2039 data_acquisition_1
+# 2039. data_acquisition_1
 
 Board 2,039 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 19](../CorpusTestingPages/Corpus-Testing-19.md#2039-data_acquisition_1).
 
@@ -45,4 +45,4 @@ Board 2,039 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2038 precharge](b2038b_olin-electric-motorsports_precharge.md) | [2040 data_acquisition_2](b2040b_olin-electric-motorsports_data-acquisition-2.md) |
+| [2038. precharge](b2038b_olin-electric-motorsports_precharge.md) | [2040. data_acquisition_2](b2040b_olin-electric-motorsports_data-acquisition-2.md) |

@@ -1,4 +1,4 @@
-# 1599 sxy
+# 1599. sxy
 
 Board 1,599 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 15](../CorpusTestingPages/Corpus-Testing-15.md#1599-sxy).
 
@@ -45,4 +45,4 @@ Board 1,599 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1598 ssu](b1598b_ferrit_ssu.md) | [1600 sxa](b1600b_ferrit_sxa.md) |
+| [1598. ssu](b1598b_ferrit_ssu.md) | [1600. sxa](b1600b_ferrit_sxa.md) |

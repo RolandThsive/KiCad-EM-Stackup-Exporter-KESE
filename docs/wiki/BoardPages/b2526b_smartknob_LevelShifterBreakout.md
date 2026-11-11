@@ -1,4 +1,4 @@
-# 2526 LevelShifterBreakout
+# 2526. LevelShifterBreakout
 
 Board 2,526 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 24](../CorpusTestingPages/Corpus-Testing-24.md#2526-levelshifterbreakout).
 
@@ -45,4 +45,4 @@ Board 2,526 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2525 BM28B0.6-24DSBreakout](b2525b_smartknob_BM28B0-6-24DSBreakout.md) | [2527 view_base](b2527b_smartknob_view-base.md) |
+| [2525. BM28B0.6-24DSBreakout](b2525b_smartknob_BM28B0-6-24DSBreakout.md) | [2527. view_base](b2527b_smartknob_view-base.md) |

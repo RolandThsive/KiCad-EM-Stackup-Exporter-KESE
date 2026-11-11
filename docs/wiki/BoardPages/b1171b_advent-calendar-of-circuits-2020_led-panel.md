@@ -1,4 +1,4 @@
-# 1171 led-panel
+# 1171. led-panel
 
 Board 1,171 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 11](../CorpusTestingPages/Corpus-Testing-11.md#1171-led-panel).
 
@@ -46,4 +46,4 @@ Board 1,171 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1170 jtag-programmer](b1170b_advent-calendar-of-circuits-2020_jtag-programmer.md) | [1172 meiji-led-ring](b1172b_advent-calendar-of-circuits-2020_meiji-led-ring.md) |
+| [1170. jtag-programmer](b1170b_advent-calendar-of-circuits-2020_jtag-programmer.md) | [1172. meiji-led-ring](b1172b_advent-calendar-of-circuits-2020_meiji-led-ring.md) |

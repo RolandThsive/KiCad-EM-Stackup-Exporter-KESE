@@ -1,4 +1,4 @@
-# 1152 vbus-switch
+# 1152. vbus-switch
 
 Board 1,152 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 11](../CorpusTestingPages/Corpus-Testing-11.md#1152-vbus-switch).
 
@@ -45,4 +45,4 @@ Board 1,152 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1151 ununs](b1151b_misc_ununs.md) | [1153 throwing-star-pro](b1153b_throwing-star-lan-tap_throwing-star-pro.md) |
+| [1151. ununs](b1151b_misc_ununs.md) | [1153. throwing-star-pro](b1153b_throwing-star-lan-tap_throwing-star-pro.md) |

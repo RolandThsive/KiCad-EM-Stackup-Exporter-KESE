@@ -1,4 +1,4 @@
-# 3022 NixieAtomicClock
+# 3022. NixieAtomicClock
 
 Board 3,022 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 28](../CorpusTestingPages/Corpus-Testing-28.md#3022-nixieatomicclock).
 
@@ -45,4 +45,4 @@ Board 3,022 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [3021 OneInchEye](b3021b_OneInchEye_OneInchEye.md) | [3023 StarlightEye](b3023b_StarlightEye_StarlightEye.md) |
+| [3021. OneInchEye](b3021b_OneInchEye_OneInchEye.md) | [3023. StarlightEye](b3023b_StarlightEye_StarlightEye.md) |

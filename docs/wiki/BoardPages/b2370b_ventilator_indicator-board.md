@@ -1,4 +1,4 @@
-# 2370 indicator-board
+# 2370. indicator-board
 
 Board 2,370 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 22](../CorpusTestingPages/Corpus-Testing-22.md#2370-indicator-board).
 
@@ -45,4 +45,4 @@ Board 2,370 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2369 stmbl_4.0](b2369b_stmbl_stmbl-4-0.md) | [2371 pressure_mpx5700ap,gp](b2371b_ventilator_pressure-mpx5700ap-gp.md) |
+| [2369. stmbl_4.0](b2369b_stmbl_stmbl-4-0.md) | [2371. pressure_mpx5700ap,gp](b2371b_ventilator_pressure-mpx5700ap-gp.md) |

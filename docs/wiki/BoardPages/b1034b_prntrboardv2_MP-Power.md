@@ -1,4 +1,4 @@
-# 1034 MP-Power
+# 1034. MP-Power
 
 Board 1,034 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 10](../CorpusTestingPages/Corpus-Testing-10.md#1034-mp-power).
 
@@ -45,4 +45,4 @@ Board 1,034 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1033 LcdFlip](b1033b_prntrboardv2_LcdFlip.md) | [1035 PrntrBoardV2](b1035b_prntrboardv2_PrntrBoardV2.md) |
+| [1033. LcdFlip](b1033b_prntrboardv2_LcdFlip.md) | [1035. PrntrBoardV2](b1035b_prntrboardv2_PrntrBoardV2.md) |

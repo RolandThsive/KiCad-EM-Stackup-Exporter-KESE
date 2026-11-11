@@ -1,4 +1,4 @@
-# 2459 inj_6ch
+# 2459. inj_6ch
 
 Board 2,459 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 23](../CorpusTestingPages/Corpus-Testing-23.md#2459-inj_6ch).
 
@@ -45,4 +45,4 @@ Board 2,459 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2458 PWR_buck_12V_switcher](b2458b_rusefi-hardware_classic-designs-power-supply-kb1gtt_PWR-buck-12V-switcher.md) | [2460 stm32f407_board](b2460b_rusefi-hardware_stm32f407-board.md) |
+| [2458. PWR_buck_12V_switcher](b2458b_rusefi-hardware_classic-designs-power-supply-kb1gtt_PWR-buck-12V-switcher.md) | [2460. stm32f407_board](b2460b_rusefi-hardware_stm32f407-board.md) |

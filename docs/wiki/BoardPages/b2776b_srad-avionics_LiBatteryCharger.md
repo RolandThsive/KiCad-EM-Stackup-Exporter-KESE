@@ -1,4 +1,4 @@
-# 2776 LiBatteryCharger
+# 2776. LiBatteryCharger
 
 Board 2,776 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 26](../CorpusTestingPages/Corpus-Testing-26.md#2776-libatterycharger).
 
@@ -45,4 +45,4 @@ Board 2,776 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2775 high-power-module](b2775b_srad-avionics_high-power-module.md) | [2777 live-video-multi-function-board](b2777b_srad-avionics_live-video-multi-function-board.md) |
+| [2775. high-power-module](b2775b_srad-avionics_high-power-module.md) | [2777. live-video-multi-function-board](b2777b_srad-avionics_live-video-multi-function-board.md) |

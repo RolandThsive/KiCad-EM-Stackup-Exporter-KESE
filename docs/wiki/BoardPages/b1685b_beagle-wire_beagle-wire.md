@@ -1,4 +1,4 @@
-# 1685 beagle-wire
+# 1685. beagle-wire
 
 Board 1,685 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 16](../CorpusTestingPages/Corpus-Testing-16.md#1685-beagle-wire).
 
@@ -44,4 +44,4 @@ Board 1,685 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1684 96boards-robomezzi](b1684b_96boards-robomezzi_96boards-robomezzi.md) | [1686 icebreaker++](b1686b_icecrusher_icebreaker.md) |
+| [1684. 96boards-robomezzi](b1684b_96boards-robomezzi_96boards-robomezzi.md) | [1686. icebreaker++](b1686b_icecrusher_icebreaker.md) |

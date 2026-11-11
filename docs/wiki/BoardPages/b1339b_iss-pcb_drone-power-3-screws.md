@@ -1,4 +1,4 @@
-# 1339 drone_power_3_screws
+# 1339. drone_power_3_screws
 
 Board 1,339 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 13](../CorpusTestingPages/Corpus-Testing-13.md#1339-drone_power_3_screws).
 
@@ -45,4 +45,4 @@ Board 1,339 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1338 drone_power_2_screws_V2](b1338b_iss-pcb_drone-power-2-screws-V2.md) | [1340 EAGLE-MK1-revA](b1340b_iss-pcb_EAGLE-MK1-revA.md) |
+| [1338. drone_power_2_screws_V2](b1338b_iss-pcb_drone-power-2-screws-V2.md) | [1340. EAGLE-MK1-revA](b1340b_iss-pcb_EAGLE-MK1-revA.md) |

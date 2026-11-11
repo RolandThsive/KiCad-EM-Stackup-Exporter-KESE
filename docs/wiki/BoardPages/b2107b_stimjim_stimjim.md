@@ -1,4 +1,4 @@
-# 2107 stimjim
+# 2107. stimjim
 
 Board 2,107 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 20](../CorpusTestingPages/Corpus-Testing-20.md#2107-stimjim).
 
@@ -45,4 +45,4 @@ Board 2,107 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2106 panel-front](b2106b_stimjim_panel-front.md) | [2108 osw](b2108b_kicad-project_osw.md) |
+| [2106. panel-front](b2106b_stimjim_panel-front.md) | [2108. osw](b2108b_kicad-project_osw.md) |

@@ -1,4 +1,4 @@
-# 855 GfxVGA
+# 855. GfxVGA
 
 Board 855 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 8](../CorpusTestingPages/Corpus-Testing-08.md#855-gfxvga).
 
@@ -45,4 +45,4 @@ Board 855 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [854 GfxV9990](b0854b_hardware_GfxV9990.md) | [856 JoypadController](b0856b_hardware_JoypadController.md) |
+| [854. GfxV9990](b0854b_hardware_GfxV9990.md) | [856. JoypadController](b0856b_hardware_JoypadController.md) |

@@ -1,4 +1,4 @@
-# 705 nref-batterypack-backside
+# 705. nref-batterypack-backside
 
 Board 705 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 7](../CorpusTestingPages/Corpus-Testing-07.md#705-nref-batterypack-backside).
 
@@ -45,4 +45,4 @@ Board 705 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [704 hdmi-edp2](b0704b_reform-next-mirror_hdmi-edp2.md) | [706 nref-batterypack](b0706b_reform-next-mirror_nref-batterypack-v3_nref-batterypack.md) |
+| [704. hdmi-edp2](b0704b_reform-next-mirror_hdmi-edp2.md) | [706. nref-batterypack](b0706b_reform-next-mirror_nref-batterypack-v3_nref-batterypack.md) |

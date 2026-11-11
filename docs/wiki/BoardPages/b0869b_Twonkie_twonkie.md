@@ -1,4 +1,4 @@
-# 869 twonkie
+# 869. twonkie
 
 Board 869 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 9](../CorpusTestingPages/Corpus-Testing-09.md#869-twonkie).
 
@@ -45,4 +45,4 @@ Board 869 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [868 nuco-v](b0868b_nuco-v_nuco-v.md) | [870 Domesday Duplicator](b0870b_domesdayduplicator_Domesday-Duplicator.md) |
+| [868. nuco-v](b0868b_nuco-v_nuco-v.md) | [870. Domesday Duplicator](b0870b_domesdayduplicator_Domesday-Duplicator.md) |

@@ -1,4 +1,4 @@
-# 1080 master_updateable_megarom
+# 1080. master_updateable_megarom
 
 Board 1,080 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 10](../CorpusTestingPages/Corpus-Testing-10.md#1080-master_updateable_megarom).
 
@@ -45,4 +45,4 @@ Board 1,080 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1079 fx2_tube_cartridge_adapter](b1079b_myelin-acorn-electron-hardware_fx2-tube-cartridge-adapter.md) | [1081 minus_one](b1081b_myelin-acorn-electron-hardware_minus-one.md) |
+| [1079. fx2_tube_cartridge_adapter](b1079b_myelin-acorn-electron-hardware_fx2-tube-cartridge-adapter.md) | [1081. minus_one](b1081b_myelin-acorn-electron-hardware_minus-one.md) |

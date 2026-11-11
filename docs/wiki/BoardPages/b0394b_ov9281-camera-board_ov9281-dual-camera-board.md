@@ -1,4 +1,4 @@
-# 394 ov9281-dual-camera-board
+# 394. ov9281-dual-camera-board
 
 Board 394 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 4](../CorpusTestingPages/Corpus-Testing-04.md#394-ov9281-dual-camera-board).
 
@@ -44,4 +44,4 @@ Board 394 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [393 OV5640-dual-camera-board](b0393b_ov5640-dual-camera-board_OV5640-dual-camera-board.md) | [395 pmod-i3c-driver](b0395b_pmod-i3c-driver_pmod-i3c-driver.md) |
+| [393. OV5640-dual-camera-board](b0393b_ov5640-dual-camera-board_OV5640-dual-camera-board.md) | [395. pmod-i3c-driver](b0395b_pmod-i3c-driver_pmod-i3c-driver.md) |

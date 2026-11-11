@@ -1,4 +1,4 @@
-# 1412 Blixten
+# 1412. Blixten
 
 Board 1,412 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 14](../CorpusTestingPages/Corpus-Testing-14.md#1412-blixten).
 
@@ -45,4 +45,4 @@ Board 1,412 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1411 gw](b1411b_blixten_gw.md) | [1413 clock-test](b1413b_ecp5-mini_clock-test.md) |
+| [1411. gw](b1411b_blixten_gw.md) | [1413. clock-test](b1413b_ecp5-mini_clock-test.md) |

@@ -1,4 +1,4 @@
-# 2056 mock-inverter
+# 2056. mock-inverter
 
 Board 2,056 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 20](../CorpusTestingPages/Corpus-Testing-20.md#2056-mock-inverter).
 
@@ -45,4 +45,4 @@ Board 2,056 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2055 imu_panelized](b2055b_olin-electric-motorsports_imu-panelized.md) | [2057 brakes](b2057b_olin-electric-motorsports_brakes.md) |
+| [2055. imu_panelized](b2055b_olin-electric-motorsports_imu-panelized.md) | [2057. brakes](b2057b_olin-electric-motorsports_brakes.md) |

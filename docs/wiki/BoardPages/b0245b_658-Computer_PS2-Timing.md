@@ -1,4 +1,4 @@
-# 245 PS2 Timing
+# 245. PS2 Timing
 
 Board 245 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 3](../CorpusTestingPages/Corpus-Testing-03.md#245-ps2-timing).
 
@@ -45,4 +45,4 @@ Board 245 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [244 PS2 FIFO](b0244b_658-Computer_PS2-FIFO.md) | [246 SD Card Board](b0246b_658-Computer_SD-Card-Board.md) |
+| [244. PS2 FIFO](b0244b_658-Computer_PS2-FIFO.md) | [246. SD Card Board](b0246b_658-Computer_SD-Card-Board.md) |

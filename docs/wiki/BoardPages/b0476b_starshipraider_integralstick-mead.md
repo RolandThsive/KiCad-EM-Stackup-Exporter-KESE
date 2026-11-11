@@ -1,4 +1,4 @@
-# 476 integralstick-mead
+# 476. integralstick-mead
 
 Board 476 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 5](../CorpusTestingPages/Corpus-Testing-05.md#476-integralstick-mead).
 
@@ -45,4 +45,4 @@ Board 476 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [475 fixture-akl-pt2](b0475b_starshipraider_fixture-akl-pt2.md) | [477 la-pod-mmcx](b0477b_starshipraider_la-pod-mmcx.md) |
+| [475. fixture-akl-pt2](b0475b_starshipraider_fixture-akl-pt2.md) | [477. la-pod-mmcx](b0477b_starshipraider_la-pod-mmcx.md) |

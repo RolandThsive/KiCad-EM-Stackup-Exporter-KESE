@@ -1,4 +1,4 @@
-# 822 6-REV2b
+# 822. 6-REV2b
 
 Board 822 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 8](../CorpusTestingPages/Corpus-Testing-08.md#822-6-rev2b).
 
@@ -45,4 +45,4 @@ Board 822 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [821 5XL-REV0](b0821b_BusPirate5-hardware_5XL-REV0.md) | [823 BusPirate-5-rev10](b0823b_BusPirate5-hardware_BusPirate-5-rev10.md) |
+| [821. 5XL-REV0](b0821b_BusPirate5-hardware_5XL-REV0.md) | [823. BusPirate-5-rev10](b0823b_BusPirate5-hardware_BusPirate-5-rev10.md) |

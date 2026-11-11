@@ -1,4 +1,4 @@
-# 1807 BB-PWR-8009_revA
+# 1807. BB-PWR-8009_revA
 
 Board 1,807 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 17](../CorpusTestingPages/Corpus-Testing-17.md#1807-bb-pwr-8009_reva).
 
@@ -44,4 +44,4 @@ Board 1,807 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1806 BB-PWR-3608_revA](b1806b_BB-PWR-3608_BB-PWR-3608-revA.md) | [1808 BB-PWR-8113_revA](b1808b_BB-PWR-8113_BB-PWR-8113-revA.md) |
+| [1806. BB-PWR-3608_revA](b1806b_BB-PWR-3608_BB-PWR-3608-revA.md) | [1808. BB-PWR-8113_revA](b1808b_BB-PWR-8113_BB-PWR-8113-revA.md) |

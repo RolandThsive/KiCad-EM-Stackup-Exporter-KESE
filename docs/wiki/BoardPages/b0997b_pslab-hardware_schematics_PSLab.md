@@ -1,4 +1,4 @@
-# 997 PSLab
+# 997. PSLab
 
 Board 997 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 10](../CorpusTestingPages/Corpus-Testing-10.md#997-pslab).
 
@@ -45,4 +45,4 @@ Board 997 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [996 PSLab](b0996b_pslab-hardware_archives-PSLab-KiCAD_PSLab.md) | [998 FABulous_board](b0998b_fabulous-board_FABulous-board.md) |
+| [996. PSLab](b0996b_pslab-hardware_archives-PSLab-KiCAD_PSLab.md) | [998. FABulous_board](b0998b_fabulous-board_FABulous-board.md) |

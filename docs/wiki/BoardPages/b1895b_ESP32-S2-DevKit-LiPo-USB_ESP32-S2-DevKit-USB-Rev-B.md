@@ -1,4 +1,4 @@
-# 1895 ESP32-S2-DevKit-USB_Rev_B
+# 1895. ESP32-S2-DevKit-USB_Rev_B
 
 Board 1,895 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 18](../CorpusTestingPages/Corpus-Testing-18.md#1895-esp32-s2-devkit-usb_rev_b).
 
@@ -45,4 +45,4 @@ Board 1,895 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1894 ESP32-S2-DevKit-Lipo_Rev_B1](b1894b_ESP32-S2-DevKit-LiPo_ESP32-S2-DevKit-Lipo-Rev-B1.md) | [1896 ESP32-S3-DevKit-LiPo_Rev_B_DIMM](b1896b_ESP32-S3-DevKit-LiPo_ESP32-S3-DevKit-LiPo-Rev-B-DIMM.md) |
+| [1894. ESP32-S2-DevKit-Lipo_Rev_B1](b1894b_ESP32-S2-DevKit-LiPo_ESP32-S2-DevKit-Lipo-Rev-B1.md) | [1896. ESP32-S3-DevKit-LiPo_Rev_B_DIMM](b1896b_ESP32-S3-DevKit-LiPo_ESP32-S3-DevKit-LiPo-Rev-B-DIMM.md) |

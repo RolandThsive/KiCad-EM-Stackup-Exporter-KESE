@@ -1,4 +1,4 @@
-# 1594 3D_Printer_Stepper_TMC2209
+# 1594. 3D_Printer_Stepper_TMC2209
 
 Board 1,594 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 15](../CorpusTestingPages/Corpus-Testing-15.md#1594-3d_printer_stepper_tmc2209).
 
@@ -45,4 +45,4 @@ Board 1,594 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1593 3D_Printer_Mainboard_STM32](b1593b_custom-3d-printer-controller_3D-Printer-Mainboard-STM32.md) | [1595 blaustahl](b1595b_blaustahl_blaustahl.md) |
+| [1593. 3D_Printer_Mainboard_STM32](b1593b_custom-3d-printer-controller_3D-Printer-Mainboard-STM32.md) | [1595. blaustahl](b1595b_blaustahl_blaustahl.md) |

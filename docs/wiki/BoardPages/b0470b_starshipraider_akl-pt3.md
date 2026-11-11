@@ -1,4 +1,4 @@
-# 470 akl-pt3
+# 470. akl-pt3
 
 Board 470 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 5](../CorpusTestingPages/Corpus-Testing-05.md#470-akl-pt3).
 
@@ -45,4 +45,4 @@ Board 470 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [469 akl-pt2](b0469b_starshipraider_akl-pt2.md) | [471 akl-pt5](b0471b_starshipraider_akl-pt5.md) |
+| [469. akl-pt2](b0469b_starshipraider_akl-pt2.md) | [471. akl-pt5](b0471b_starshipraider_akl-pt5.md) |

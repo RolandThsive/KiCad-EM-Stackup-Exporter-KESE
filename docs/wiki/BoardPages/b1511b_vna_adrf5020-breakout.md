@@ -1,4 +1,4 @@
-# 1511 adrf5020_breakout
+# 1511. adrf5020_breakout
 
 Board 1,511 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 14](../CorpusTestingPages/Corpus-Testing-14.md#1511-adrf5020_breakout).
 
@@ -45,4 +45,4 @@ Board 1,511 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1510 adc_dual](b1510b_vna_adc-dual.md) | [1512 ammp6120_breakout](b1512b_vna_ammp6120-breakout.md) |
+| [1510. adc_dual](b1510b_vna_adc-dual.md) | [1512. ammp6120_breakout](b1512b_vna_ammp6120-breakout.md) |

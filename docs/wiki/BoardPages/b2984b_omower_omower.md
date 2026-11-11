@@ -1,4 +1,4 @@
-# 2984 omower
+# 2984. omower
 
 Board 2,984 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 28](../CorpusTestingPages/Corpus-Testing-28.md#2984-omower).
 
@@ -45,4 +45,4 @@ Board 2,984 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2983 programming_interface](b2983b_8bit-cpu_programming-interface.md) | [2985 BLDC_4](b2985b_bldc-hardware_BLDC-4.md) |
+| [2983. programming_interface](b2983b_8bit-cpu_programming-interface.md) | [2985. BLDC_4](b2985b_bldc-hardware_BLDC-4.md) |

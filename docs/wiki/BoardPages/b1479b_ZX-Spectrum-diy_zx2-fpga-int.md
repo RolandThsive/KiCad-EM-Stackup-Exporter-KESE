@@ -1,4 +1,4 @@
-# 1479 zx2_fpga_int
+# 1479. zx2_fpga_int
 
 Board 1,479 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 14](../CorpusTestingPages/Corpus-Testing-14.md#1479-zx2_fpga_int).
 
@@ -45,4 +45,4 @@ Board 1,479 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1478 zx2_cpu_test01](b1478b_ZX-Spectrum-diy_zx2-cpu-test01.md) | [1480 zx2_keyb_conn](b1480b_ZX-Spectrum-diy_zx2-keyb-conn.md) |
+| [1478. zx2_cpu_test01](b1478b_ZX-Spectrum-diy_zx2-cpu-test01.md) | [1480. zx2_keyb_conn](b1480b_ZX-Spectrum-diy_zx2-keyb-conn.md) |

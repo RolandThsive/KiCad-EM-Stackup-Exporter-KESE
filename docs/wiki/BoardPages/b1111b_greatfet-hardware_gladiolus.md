@@ -1,4 +1,4 @@
-# 1111 gladiolus
+# 1111. gladiolus
 
 Board 1,111 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 11](../CorpusTestingPages/Corpus-Testing-11.md#1111-gladiolus).
 
@@ -45,4 +45,4 @@ Board 1,111 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1110 foxglove](b1110b_greatfet-hardware_foxglove.md) | [1112 jasmine](b1112b_greatfet-hardware_jasmine.md) |
+| [1110. foxglove](b1110b_greatfet-hardware_foxglove.md) | [1112. jasmine](b1112b_greatfet-hardware_jasmine.md) |

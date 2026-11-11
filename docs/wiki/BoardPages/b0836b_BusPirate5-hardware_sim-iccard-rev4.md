@@ -1,4 +1,4 @@
-# 836 sim-iccard-rev4
+# 836. sim-iccard-rev4
 
 Board 836 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 8](../CorpusTestingPages/Corpus-Testing-08.md#836-sim-iccard-rev4).
 
@@ -45,4 +45,4 @@ Board 836 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [835 ram-ddr5-1REV1](b0835b_BusPirate5-hardware_ram-ddr5-1REV1.md) | [837 stemma-qwiic-grove-gravity-bog-plank](b0837b_BusPirate5-hardware_stemma-qwiic-grove-gravity-bog-plank.md) |
+| [835. ram-ddr5-1REV1](b0835b_BusPirate5-hardware_ram-ddr5-1REV1.md) | [837. stemma-qwiic-grove-gravity-bog-plank](b0837b_BusPirate5-hardware_stemma-qwiic-grove-gravity-bog-plank.md) |

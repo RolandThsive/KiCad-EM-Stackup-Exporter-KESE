@@ -1,4 +1,4 @@
-# 1733 uMyriad7002-append
+# 1733. uMyriad7002-append
 
 Board 1,733 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 17](../CorpusTestingPages/Corpus-Testing-17.md#1733-umyriad7002-append).
 
@@ -45,4 +45,4 @@ Board 1,733 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1732 uMyriad6002](b1732b_reference-development-kit_uMyriad6002.md) | [1734 uMyriad7002](b1734b_reference-development-kit_uMyriad7002.md) |
+| [1732. uMyriad6002](b1732b_reference-development-kit_uMyriad6002.md) | [1734. uMyriad7002](b1734b_reference-development-kit_uMyriad7002.md) |

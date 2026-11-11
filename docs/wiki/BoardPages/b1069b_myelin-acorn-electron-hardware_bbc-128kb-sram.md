@@ -1,4 +1,4 @@
-# 1069 bbc_128kb_sram
+# 1069. bbc_128kb_sram
 
 Board 1,069 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 10](../CorpusTestingPages/Corpus-Testing-10.md#1069-bbc_128kb_sram).
 
@@ -45,4 +45,4 @@ Board 1,069 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1068 atsamd21_usb](b1068b_myelin-acorn-electron-hardware_atsamd21-usb.md) | [1070 bbc_power](b1070b_myelin-acorn-electron-hardware_bbc-power.md) |
+| [1068. atsamd21_usb](b1068b_myelin-acorn-electron-hardware_atsamd21-usb.md) | [1070. bbc_power](b1070b_myelin-acorn-electron-hardware_bbc-power.md) |

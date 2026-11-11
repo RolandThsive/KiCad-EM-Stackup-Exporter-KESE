@@ -1,4 +1,4 @@
-# 515 gd vga pico proto pcb
+# 515. gd vga pico proto pcb
 
 Board 515 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 5](../CorpusTestingPages/Corpus-Testing-05.md#515-gd-vga-pico-proto-pcb).
 
@@ -45,4 +45,4 @@ Board 515 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [514 gd slot extender](b0514b_Mega-IIe_gd-slot-extender.md) | [516 gd VGC proto pcb](b0516b_Mega-IIe_kicad-files-gd-VGC-proto-pcb_gd-VGC-proto-pcb.md) |
+| [514. gd slot extender](b0514b_Mega-IIe_gd-slot-extender.md) | [516. gd VGC proto pcb](b0516b_Mega-IIe_kicad-files-gd-VGC-proto-pcb_gd-VGC-proto-pcb.md) |

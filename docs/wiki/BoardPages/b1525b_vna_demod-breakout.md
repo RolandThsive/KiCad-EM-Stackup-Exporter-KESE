@@ -1,4 +1,4 @@
-# 1525 demod_breakout
+# 1525. demod_breakout
 
 Board 1,525 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 15](../CorpusTestingPages/Corpus-Testing-15.md#1525-demod_breakout).
 
@@ -45,4 +45,4 @@ Board 1,525 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1524 crystal_filter](b1524b_vna_crystal-filter.md) | [1526 filter_bank](b1526b_vna_filter-bank.md) |
+| [1524. crystal_filter](b1524b_vna_crystal-filter.md) | [1526. filter_bank](b1526b_vna_filter-bank.md) |

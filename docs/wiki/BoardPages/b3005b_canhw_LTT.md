@@ -1,4 +1,4 @@
-# 3005 LTT
+# 3005. LTT
 
 Board 3,005 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 28](../CorpusTestingPages/Corpus-Testing-28.md#3005-ltt).
 
@@ -45,4 +45,4 @@ Board 3,005 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [3004 telemetry_transmitter](b3004b_canhw_telemetry-transmitter.md) | [3006 power-splitter](b3006b_canhw_power-splitter.md) |
+| [3004. telemetry_transmitter](b3004b_canhw_telemetry-transmitter.md) | [3006. power-splitter](b3006b_canhw_power-splitter.md) |

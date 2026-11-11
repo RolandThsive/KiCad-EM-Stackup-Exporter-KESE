@@ -1,4 +1,4 @@
-# 501 gd io proto pcb
+# 501. gd io proto pcb
 
 Board 501 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 5](../CorpusTestingPages/Corpus-Testing-05.md#501-gd-io-proto-pcb).
 
@@ -45,4 +45,4 @@ Board 501 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [500 gd interdeswizzlepozer](b0500b_Mega-IIe_gd-interdeswizzlepozer.md) | [502 gd io proto pcb](b0502b_Mega-IIe_kicad-files-gd-io-proto-pcb-mk1_gd-io-proto-pcb.md) |
+| [500. gd interdeswizzlepozer](b0500b_Mega-IIe_gd-interdeswizzlepozer.md) | [502. gd io proto pcb](b0502b_Mega-IIe_kicad-files-gd-io-proto-pcb-mk1_gd-io-proto-pcb.md) |

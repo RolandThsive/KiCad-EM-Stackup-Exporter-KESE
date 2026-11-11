@@ -1,4 +1,4 @@
-# 2246 ovc2_stereo
+# 2246. ovc2_stereo
 
 Board 2,246 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 21](../CorpusTestingPages/Corpus-Testing-21.md#2246-ovc2_stereo).
 
@@ -45,4 +45,4 @@ Board 2,246 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2245 ovc2_mobo](b2245b_ovc_ovc2-hardware-ovc2a-mobo_ovc2-mobo.md) | [2247 ovc2_mobo](b2247b_ovc_ovc2-hardware-ovc2b-mobo_ovc2-mobo.md) |
+| [2245. ovc2_mobo](b2245b_ovc_ovc2-hardware-ovc2a-mobo_ovc2-mobo.md) | [2247. ovc2_mobo](b2247b_ovc_ovc2-hardware-ovc2b-mobo_ovc2-mobo.md) |

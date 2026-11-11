@@ -1,4 +1,4 @@
-# 1294 arena_12-18
+# 1294. arena_12-18
 
 Board 1,294 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 12](../CorpusTestingPages/Corpus-Testing-12.md#1294-arena_12-18).
 
@@ -45,4 +45,4 @@ Board 1,294 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1293 arena_10-10_v2r1](b1293b_led-display-g6-hardware-arena_arena-10-10-develop-without-reg-arena-10-10-v2r1_arena-10-10-v2r1.md) | [1295 arena_12-18](b1295b_led-display-g6-hardware-arena_arena-12-18-layout-tool_arena-12-18.md) |
+| [1293. arena_10-10_v2r1](b1293b_led-display-g6-hardware-arena_arena-10-10-develop-without-reg-arena-10-10-v2r1_arena-10-10-v2r1.md) | [1295. arena_12-18](b1295b_led-display-g6-hardware-arena_arena-12-18-layout-tool_arena-12-18.md) |

@@ -1,4 +1,4 @@
-# 2103 PCIexpress_x8_half
+# 2103. PCIexpress_x8_half
 
 Board 2,103 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 20](../CorpusTestingPages/Corpus-Testing-20.md#2103-pciexpress_x8_half).
 
@@ -45,4 +45,4 @@ Board 2,103 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2102 PCIexpress_x8_full](b2102b_PCIexpress-KiCad_PCIexpress-x8-full.md) | [2104 PCIexpress_x8_low](b2104b_PCIexpress-KiCad_PCIexpress-x8-low.md) |
+| [2102. PCIexpress_x8_full](b2102b_PCIexpress-KiCad_PCIexpress-x8-full.md) | [2104. PCIexpress_x8_low](b2104b_PCIexpress-KiCad_PCIexpress-x8-low.md) |

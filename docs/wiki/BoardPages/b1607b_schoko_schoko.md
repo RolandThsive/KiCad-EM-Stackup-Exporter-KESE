@@ -1,4 +1,4 @@
-# 1607 schoko
+# 1607. schoko
 
 Board 1,607 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 15](../CorpusTestingPages/Corpus-Testing-15.md#1607-schoko).
 
@@ -45,4 +45,4 @@ Board 1,607 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1606 riegel](b1606b_riegel_riegel.md) | [1608 Main](b1608b_oomwoo-pcb_Main.md) |
+| [1606. riegel](b1606b_riegel_riegel.md) | [1608. Main](b1608b_oomwoo-pcb_Main.md) |

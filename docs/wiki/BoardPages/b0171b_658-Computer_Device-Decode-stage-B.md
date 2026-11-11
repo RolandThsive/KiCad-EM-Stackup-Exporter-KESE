@@ -1,4 +1,4 @@
-# 171 Device Decode stage B
+# 171. Device Decode stage B
 
 Board 171 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 2](../CorpusTestingPages/Corpus-Testing-02.md#171-device-decode-stage-b).
 
@@ -45,4 +45,4 @@ Board 171 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [170 Device Decode stage A](b0170b_658-Computer_Device-Decode-stage-A.md) | [172 Dual Comparator 8bit](b0172b_658-Computer_Dual-Comparator-8bit.md) |
+| [170. Device Decode stage A](b0170b_658-Computer_Device-Decode-stage-A.md) | [172. Dual Comparator 8bit](b0172b_658-Computer_Dual-Comparator-8bit.md) |

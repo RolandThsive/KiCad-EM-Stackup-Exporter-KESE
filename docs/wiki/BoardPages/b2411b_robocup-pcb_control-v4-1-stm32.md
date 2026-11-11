@@ -1,4 +1,4 @@
-# 2411 control-v4.1-stm32
+# 2411. control-v4.1-stm32
 
 Board 2,411 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 23](../CorpusTestingPages/Corpus-Testing-23.md#2411-control-v41-stm32).
 
@@ -45,4 +45,4 @@ Board 2,411 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2410 control-v4.0](b2410b_robocup-pcb_control-v4-0.md) | [2412 kicker-v3.4](b2412b_robocup-pcb_kicker-v3-4.md) |
+| [2410. control-v4.0](b2410b_robocup-pcb_control-v4-0.md) | [2412. kicker-v3.4](b2412b_robocup-pcb_kicker-v3-4.md) |

@@ -1,4 +1,4 @@
-# 1961 LCD-DRIVER_Rev_C
+# 1961. LCD-DRIVER_Rev_C
 
 Board 1,961 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 19](../CorpusTestingPages/Corpus-Testing-19.md#1961-lcd-driver_rev_c).
 
@@ -45,4 +45,4 @@ Board 1,961 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1960 LCD-DRIVER_Rev_B](b1960b_OLINUXINO_LCD-DRIVER-Rev-B.md) | [1962 LCD-DRIVER_Rev_D](b1962b_OLINUXINO_LCD-DRIVER-Rev-D.md) |
+| [1960. LCD-DRIVER_Rev_B](b1960b_OLINUXINO_LCD-DRIVER-Rev-B.md) | [1962. LCD-DRIVER_Rev_D](b1962b_OLINUXINO_LCD-DRIVER-Rev-D.md) |

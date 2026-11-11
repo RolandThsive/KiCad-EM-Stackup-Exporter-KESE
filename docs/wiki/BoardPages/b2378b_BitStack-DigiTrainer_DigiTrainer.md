@@ -1,4 +1,4 @@
-# 2378 DigiTrainer
+# 2378. DigiTrainer
 
 Board 2,378 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 23](../CorpusTestingPages/Corpus-Testing-23.md#2378-digitrainer).
 
@@ -45,4 +45,4 @@ Board 2,378 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2377 Ventilator](b2377b_ventilator_Ventilator.md) | [2379 TRS80_Model_I_A_E1](b2379b_TRS-80-Model-I-A-E1_TRS80-Model-I-A-E1.md) |
+| [2377. Ventilator](b2377b_ventilator_Ventilator.md) | [2379. TRS80_Model_I_A_E1](b2379b_TRS-80-Model-I-A-E1_TRS80-Model-I-A-E1.md) |

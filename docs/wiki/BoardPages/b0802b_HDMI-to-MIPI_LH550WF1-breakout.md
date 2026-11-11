@@ -1,4 +1,4 @@
-# 802 LH550WF1-breakout
+# 802. LH550WF1-breakout
 
 Board 802 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 8](../CorpusTestingPages/Corpus-Testing-08.md#802-lh550wf1-breakout).
 
@@ -45,4 +45,4 @@ Board 802 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [801 HDMI-to-LH550WF1](b0801b_HDMI-to-MIPI_HDMI-to-LH550WF1.md) | [803 SSD2828QN4-breakout](b0803b_HDMI-to-MIPI_SSD2828QN4-breakout.md) |
+| [801. HDMI-to-LH550WF1](b0801b_HDMI-to-MIPI_HDMI-to-LH550WF1.md) | [803. SSD2828QN4-breakout](b0803b_HDMI-to-MIPI_SSD2828QN4-breakout.md) |

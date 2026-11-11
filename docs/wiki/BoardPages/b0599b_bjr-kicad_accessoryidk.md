@@ -1,4 +1,4 @@
-# 599 accessoryidk
+# 599. accessoryidk
 
 Board 599 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 6](../CorpusTestingPages/Corpus-Testing-06.md#599-accessoryidk).
 
@@ -45,4 +45,4 @@ Board 599 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [598 ad5689r](b0598b_bjr-kicad_ad5689r.md) | [600 mainbox1.0](b0600b_bjr-kicad_21xt-02-mainbox-bjr-kicad-aaren-copy-21xt-02-mainbox-mainbox1-0_mainbox1-0.md) |
+| [598. ad5689r](b0598b_bjr-kicad_ad5689r.md) | [600. mainbox1.0](b0600b_bjr-kicad_21xt-02-mainbox-bjr-kicad-aaren-copy-21xt-02-mainbox-mainbox1-0_mainbox1-0.md) |

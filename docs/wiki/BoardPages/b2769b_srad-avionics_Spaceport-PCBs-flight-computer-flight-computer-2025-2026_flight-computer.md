@@ -1,4 +1,4 @@
-# 2769 flight-computer
+# 2769. flight-computer
 
 Board 2,769 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 26](../CorpusTestingPages/Corpus-Testing-26.md#2769-flight-computer).
 
@@ -45,4 +45,4 @@ Board 2,769 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2768 flight-computer](b2768b_srad-avionics_Spaceport-PCBs-flight-computer-Alternate-layout-2025-2026_flight-computer.md) | [2770 mcu-board v2](b2770b_srad-avionics_mcu-board-v2.md) |
+| [2768. flight-computer](b2768b_srad-avionics_Spaceport-PCBs-flight-computer-Alternate-layout-2025-2026_flight-computer.md) | [2770. mcu-board v2](b2770b_srad-avionics_mcu-board-v2.md) |

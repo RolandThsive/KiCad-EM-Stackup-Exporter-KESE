@@ -1,4 +1,4 @@
-# 2524 SnarkBarker
+# 2524. SnarkBarker
 
 Board 2,524 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 24](../CorpusTestingPages/Corpus-Testing-24.md#2524-snarkbarker).
 
@@ -44,4 +44,4 @@ Board 2,524 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2523 isavideo](b2523b_graphics-gremlin_isavideo.md) | [2525 BM28B0.6-24DSBreakout](b2525b_smartknob_BM28B0-6-24DSBreakout.md) |
+| [2523. isavideo](b2523b_graphics-gremlin_isavideo.md) | [2525. BM28B0.6-24DSBreakout](b2525b_smartknob_BM28B0-6-24DSBreakout.md) |

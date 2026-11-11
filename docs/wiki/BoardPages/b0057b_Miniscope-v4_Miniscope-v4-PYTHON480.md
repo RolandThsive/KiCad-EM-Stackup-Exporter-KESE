@@ -1,4 +1,4 @@
-# 57 Miniscope-v4-PYTHON480
+# 57. Miniscope-v4-PYTHON480
 
 Board 57 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 1](../CorpusTestingPages/Corpus-Testing-01.md#57-miniscope-v4-python480).
 
@@ -45,4 +45,4 @@ Board 57 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page
 
 | Previous | Next |
 |:---|---:|
-| [56 Miniscope-v4-MCU](b0056b_Miniscope-v4_Miniscope-v4-MCU.md) | [58 Miniscope-v4-Ser-Pow](b0058b_Miniscope-v4_Miniscope-v4-Ser-Pow.md) |
+| [56. Miniscope-v4-MCU](b0056b_Miniscope-v4_Miniscope-v4-MCU.md) | [58. Miniscope-v4-Ser-Pow](b0058b_Miniscope-v4_Miniscope-v4-Ser-Pow.md) |

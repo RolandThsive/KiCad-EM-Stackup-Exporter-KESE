@@ -1,4 +1,4 @@
-# 2738 tem
+# 2738. tem
 
 Board 2,738 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 26](../CorpusTestingPages/Corpus-Testing-26.md#2738-tem).
 
@@ -45,4 +45,4 @@ Board 2,738 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2737 ss-relay](b2737b_pcb_ss-relay.md) | [2739 trc](b2739b_pcb_trc.md) |
+| [2737. ss-relay](b2737b_pcb_ss-relay.md) | [2739. trc](b2739b_pcb_trc.md) |

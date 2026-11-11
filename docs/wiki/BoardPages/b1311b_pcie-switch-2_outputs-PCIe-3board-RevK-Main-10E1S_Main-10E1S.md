@@ -1,4 +1,4 @@
-# 1311 Main_10E1S
+# 1311. Main_10E1S
 
 Board 1,311 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 13](../CorpusTestingPages/Corpus-Testing-13.md#1311-main_10e1s).
 
@@ -46,4 +46,4 @@ Board 1,311 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1310 Assembly_View](b1310b_pcie-switch-2_outputs-PCIe-3board-RevK-Assembly-View_Assembly-View.md) | [1312 Assembly_View](b1312b_pcie-switch-2_outputs-PCIe-3board-RevL-Assembly-View_Assembly-View.md) |
+| [1310. Assembly_View](b1310b_pcie-switch-2_outputs-PCIe-3board-RevK-Assembly-View_Assembly-View.md) | [1312. Assembly_View](b1312b_pcie-switch-2_outputs-PCIe-3board-RevL-Assembly-View_Assembly-View.md) |

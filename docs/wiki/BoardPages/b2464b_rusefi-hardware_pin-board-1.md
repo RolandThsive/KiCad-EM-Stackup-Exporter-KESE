@@ -1,4 +1,4 @@
-# 2464 pin_board_1
+# 2464. pin_board_1
 
 Board 2,464 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 23](../CorpusTestingPages/Corpus-Testing-23.md#2464-pin_board_1).
 
@@ -45,4 +45,4 @@ Board 2,464 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2463 brain_board_SD_Card_1](b2463b_rusefi-hardware_brain-board-SD-Card-1.md) | [2465 pin_board_1_x2](b2465b_rusefi-hardware_pin-board-1-x2.md) |
+| [2463. brain_board_SD_Card_1](b2463b_rusefi-hardware_brain-board-SD-Card-1.md) | [2465. pin_board_1_x2](b2465b_rusefi-hardware_pin-board-1-x2.md) |

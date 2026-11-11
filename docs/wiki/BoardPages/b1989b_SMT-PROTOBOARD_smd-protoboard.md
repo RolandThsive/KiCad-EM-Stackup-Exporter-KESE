@@ -1,4 +1,4 @@
-# 1989 smd-protoboard
+# 1989. smd-protoboard
 
 Board 1,989 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 19](../CorpusTestingPages/Corpus-Testing-19.md#1989-smd-protoboard).
 
@@ -44,4 +44,4 @@ Board 1,989 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1988 S3-OLinuXino_Rev_A](b1988b_S3-OLinuXino_HARDWARE-S3-OLinuXino-Rev-A-release_S3-OLinuXino-Rev-A.md) | [1990 STMP1(A13)-SOM-EVB_Rev_B](b1990b_STMP1-A13-EVB_STMP1-A13-SOM-EVB-Rev-B.md) |
+| [1988. S3-OLinuXino_Rev_A](b1988b_S3-OLinuXino_HARDWARE-S3-OLinuXino-Rev-A-release_S3-OLinuXino-Rev-A.md) | [1990. STMP1(A13)-SOM-EVB_Rev_B](b1990b_STMP1-A13-EVB_STMP1-A13-SOM-EVB-Rev-B.md) |

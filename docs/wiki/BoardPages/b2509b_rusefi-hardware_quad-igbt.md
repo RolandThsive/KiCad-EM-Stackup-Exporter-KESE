@@ -1,4 +1,4 @@
-# 2509 quad-igbt
+# 2509. quad-igbt
 
 Board 2,509 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 24](../CorpusTestingPages/Corpus-Testing-24.md#2509-quad-igbt).
 
@@ -45,4 +45,4 @@ Board 2,509 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2508 ncv1124-micro](b2508b_rusefi-hardware_ncv1124-micro.md) | [2510 superseal-igbt](b2510b_rusefi-hardware_superseal-igbt.md) |
+| [2508. ncv1124-micro](b2508b_rusefi-hardware_ncv1124-micro.md) | [2510. superseal-igbt](b2510b_rusefi-hardware_superseal-igbt.md) |

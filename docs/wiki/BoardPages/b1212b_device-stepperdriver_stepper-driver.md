@@ -1,4 +1,4 @@
-# 1212 stepper driver
+# 1212. stepper driver
 
 Board 1,212 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 12](../CorpusTestingPages/Corpus-Testing-12.md#1212-stepper-driver).
 
@@ -45,4 +45,4 @@ Board 1,212 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1211 stepper driver rear panel](b1211b_device-stepperdriver_stepper-driver-rear-panel.md) | [1213 HALMET](b1213b_halmet-hardware_HALMET.md) |
+| [1211. stepper driver rear panel](b1211b_device-stepperdriver_stepper-driver-rear-panel.md) | [1213. HALMET](b1213b_halmet-hardware_HALMET.md) |

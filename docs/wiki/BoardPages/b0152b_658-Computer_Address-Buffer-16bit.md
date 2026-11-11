@@ -1,4 +1,4 @@
-# 152 Address Buffer 16bit
+# 152. Address Buffer 16bit
 
 Board 152 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 2](../CorpusTestingPages/Corpus-Testing-02.md#152-address-buffer-16bit).
 
@@ -45,4 +45,4 @@ Board 152 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [151 Adder 16bit](b0151b_658-Computer_Adder-16bit.md) | [153 Address Buffer 24bit](b0153b_658-Computer_Address-Buffer-24bit.md) |
+| [151. Adder 16bit](b0151b_658-Computer_Adder-16bit.md) | [153. Address Buffer 24bit](b0153b_658-Computer_Address-Buffer-24bit.md) |

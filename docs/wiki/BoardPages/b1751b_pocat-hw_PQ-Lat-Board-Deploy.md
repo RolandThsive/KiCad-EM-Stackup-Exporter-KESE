@@ -1,4 +1,4 @@
-# 1751 PQ_Lat_Board_Deploy
+# 1751. PQ_Lat_Board_Deploy
 
 Board 1,751 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 17](../CorpusTestingPages/Corpus-Testing-17.md#1751-pq_lat_board_deploy).
 
@@ -45,4 +45,4 @@ Board 1,751 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1750 PQ_Lat_Board](b1750b_pocat-hw_PQ-Lat-Board.md) | [1752 pq_obc_comms](b1752b_pocat-hw_pq-obc-comms.md) |
+| [1750. PQ_Lat_Board](b1750b_pocat-hw_PQ-Lat-Board.md) | [1752. pq_obc_comms](b1752b_pocat-hw_pq-obc-comms.md) |

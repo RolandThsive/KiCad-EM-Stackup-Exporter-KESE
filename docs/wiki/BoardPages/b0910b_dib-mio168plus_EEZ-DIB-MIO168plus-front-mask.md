@@ -1,4 +1,4 @@
-# 910 EEZ DIB MIO168plus front mask
+# 910. EEZ DIB MIO168plus front mask
 
 Board 910 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 9](../CorpusTestingPages/Corpus-Testing-09.md#910-eez-dib-mio168plus-front-mask).
 
@@ -45,4 +45,4 @@ Board 910 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [909 EEZ DIB DCP405plus](b0909b_dib-dcp405plus_EEZ-DIB-DCP405plus.md) | [911 EEZ DIB MIO168plus](b0911b_dib-mio168plus_EEZ-DIB-MIO168plus.md) |
+| [909. EEZ DIB DCP405plus](b0909b_dib-dcp405plus_EEZ-DIB-DCP405plus.md) | [911. EEZ DIB MIO168plus](b0911b_dib-mio168plus_EEZ-DIB-MIO168plus.md) |

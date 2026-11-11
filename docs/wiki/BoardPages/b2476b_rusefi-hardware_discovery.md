@@ -1,4 +1,4 @@
-# 2476 discovery
+# 2476. discovery
 
 Board 2,476 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 23](../CorpusTestingPages/Corpus-Testing-23.md#2476-discovery).
 
@@ -46,4 +46,4 @@ Board 2,476 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2475 frankenso](b2475b_rusefi-hardware_classic-designs-rusefi-hardware-history-frankenso-rev00-50-frankenso_frankenso.md) | [2477 frankenstein](b2477b_rusefi-hardware_classic-designs-rusefi-hardware-history-frankenstein-rev00-10_frankenstein.md) |
+| [2475. frankenso](b2475b_rusefi-hardware_classic-designs-rusefi-hardware-history-frankenso-rev00-50-frankenso_frankenso.md) | [2477. frankenstein](b2477b_rusefi-hardware_classic-designs-rusefi-hardware-history-frankenstein-rev00-10_frankenstein.md) |

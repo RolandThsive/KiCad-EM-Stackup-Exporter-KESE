@@ -1,4 +1,4 @@
-# 70 DockingStation
+# 70. DockingStation
 
 Board 70 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 1](../CorpusTestingPages/Corpus-Testing-01.md#70-dockingstation).
 
@@ -45,4 +45,4 @@ Board 70 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page
 
 | Previous | Next |
 |:---|---:|
-| [69 PC110](b0069b_Open-Source-PC110_Mods-PC110-ITX_PC110.md) | [71 PC110_membrance](b0071b_Open-Source-PC110_PC110-membrance.md) |
+| [69. PC110](b0069b_Open-Source-PC110_Mods-PC110-ITX_PC110.md) | [71. PC110_membrance](b0071b_Open-Source-PC110_PC110-membrance.md) |

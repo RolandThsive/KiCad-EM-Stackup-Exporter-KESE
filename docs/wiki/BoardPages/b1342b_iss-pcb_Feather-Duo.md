@@ -1,4 +1,4 @@
-# 1342 Feather_Duo
+# 1342. Feather_Duo
 
 Board 1,342 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 13](../CorpusTestingPages/Corpus-Testing-13.md#1342-feather_duo).
 
@@ -45,4 +45,4 @@ Board 1,342 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1341 EAGLE-MK1-revB](b1341b_iss-pcb_EAGLE-MK1-revB.md) | [1343 MIDAS-MK1](b1343b_iss-pcb_boards-MIDAS-MK1-MIDAS-MK1-revA_MIDAS-MK1.md) |
+| [1341. EAGLE-MK1-revB](b1341b_iss-pcb_EAGLE-MK1-revB.md) | [1343. MIDAS-MK1](b1343b_iss-pcb_boards-MIDAS-MK1-MIDAS-MK1-revA_MIDAS-MK1.md) |

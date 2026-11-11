@@ -1,4 +1,4 @@
-# 814 adapter-ram-ddr5-1REV2
+# 814. adapter-ram-ddr5-1REV2
 
 Board 814 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 8](../CorpusTestingPages/Corpus-Testing-08.md#814-adapter-ram-ddr5-1rev2).
 
@@ -45,4 +45,4 @@ Board 814 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [813 wago kf141v adapter](b0813b_BusPirate5-hardware_wago-kf141v-adapter.md) | [815 rs232-dual-adapter](b0815b_BusPirate5-hardware_rs232-dual-adapter.md) |
+| [813. wago kf141v adapter](b0813b_BusPirate5-hardware_wago-kf141v-adapter.md) | [815. rs232-dual-adapter](b0815b_BusPirate5-hardware_rs232-dual-adapter.md) |

@@ -1,4 +1,4 @@
-# 1716 LC-RFE-Mini-RevA2
+# 1716. LC-RFE-Mini-RevA2
 
 Board 1,716 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 16](../CorpusTestingPages/Corpus-Testing-16.md#1716-lc-rfe-mini-reva2).
 
@@ -45,4 +45,4 @@ Board 1,716 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1715 LC-RFE-Mini-RevA1](b1715b_lc-rfe-mini_LC-RFE-Mini-RevA1.md) | [1717 Lime_RFE](b1717b_LimeRFE_archived-0v3-hardware-KiCad_Lime-RFE.md) |
+| [1715. LC-RFE-Mini-RevA1](b1715b_lc-rfe-mini_LC-RFE-Mini-RevA1.md) | [1717. Lime_RFE](b1717b_LimeRFE_archived-0v3-hardware-KiCad_Lime-RFE.md) |

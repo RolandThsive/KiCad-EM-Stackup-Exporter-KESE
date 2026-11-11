@@ -1,4 +1,4 @@
-# 698 motherboard-stable
+# 698. motherboard-stable
 
 Board 698 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 7](../CorpusTestingPages/Corpus-Testing-07.md#698-motherboard-stable).
 
@@ -44,4 +44,4 @@ Board 698 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [697 switch](b0697b_laptop_switch.md) | [699 motherboard](b0699b_motherboard_motherboard.md) |
+| [697. switch](b0697b_laptop_switch.md) | [699. motherboard](b0699b_motherboard_motherboard.md) |

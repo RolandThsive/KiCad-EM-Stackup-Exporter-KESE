@@ -1,4 +1,4 @@
-# 1184 syzygy-epc901
+# 1184. syzygy-epc901
 
 Board 1,184 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 11](../CorpusTestingPages/Corpus-Testing-11.md#1184-syzygy-epc901).
 
@@ -45,4 +45,4 @@ Board 1,184 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1183 syzygy-dual-atto320](b1183b_advent-calendar-of-circuits-2020_syzygy-dual-atto320.md) | [1185 syzygy-flir-boson](b1185b_advent-calendar-of-circuits-2020_syzygy-flir-boson.md) |
+| [1183. syzygy-dual-atto320](b1183b_advent-calendar-of-circuits-2020_syzygy-dual-atto320.md) | [1185. syzygy-flir-boson](b1185b_advent-calendar-of-circuits-2020_syzygy-flir-boson.md) |

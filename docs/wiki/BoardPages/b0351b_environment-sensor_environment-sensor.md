@@ -1,4 +1,4 @@
-# 351 environment-sensor
+# 351. environment-sensor
 
 Board 351 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 4](../CorpusTestingPages/Corpus-Testing-04.md#351-environment-sensor).
 
@@ -44,4 +44,4 @@ Board 351 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [350 ecp5-dc-scm](b0350b_ecp5-dc-scm_ecp5-dc-scm.md) | [352 environment-sensor-sip-baseboard](b0352b_environment-sensor-myra-baseboard_environment-sensor-sip-baseboard.md) |
+| [350. ecp5-dc-scm](b0350b_ecp5-dc-scm_ecp5-dc-scm.md) | [352. environment-sensor-sip-baseboard](b0352b_environment-sensor-myra-baseboard_environment-sensor-sip-baseboard.md) |

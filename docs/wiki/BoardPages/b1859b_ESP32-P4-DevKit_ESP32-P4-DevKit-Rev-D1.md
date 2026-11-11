@@ -1,4 +1,4 @@
-# 1859 ESP32-P4-DevKit_Rev_D1
+# 1859. ESP32-P4-DevKit_Rev_D1
 
 Board 1,859 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 18](../CorpusTestingPages/Corpus-Testing-18.md#1859-esp32-p4-devkit_rev_d1).
 
@@ -45,4 +45,4 @@ Board 1,859 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1858 ESP32-P4-DevKit_Rev_D](b1858b_ESP32-P4-DevKit_ESP32-P4-DevKit-Rev-D.md) | [1860 ESP32-P4-PC_Rev_B](b1860b_ESP32-P4-PC_ESP32-P4-PC-Rev-B.md) |
+| [1858. ESP32-P4-DevKit_Rev_D](b1858b_ESP32-P4-DevKit_ESP32-P4-DevKit-Rev-D.md) | [1860. ESP32-P4-PC_Rev_B](b1860b_ESP32-P4-PC_ESP32-P4-PC-Rev-B.md) |

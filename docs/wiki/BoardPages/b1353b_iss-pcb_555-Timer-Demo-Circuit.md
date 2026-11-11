@@ -1,4 +1,4 @@
-# 1353 555-Timer-Demo-Circuit
+# 1353. 555-Timer-Demo-Circuit
 
 Board 1,353 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 13](../CorpusTestingPages/Corpus-Testing-13.md#1353-555-timer-demo-circuit).
 
@@ -45,4 +45,4 @@ Board 1,353 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1352 GATOR](b1352b_iss-pcb_GATOR.md) | [1354 L1-Altimeter](b1354b_iss-pcb_L1-Altimeter.md) |
+| [1352. GATOR](b1352b_iss-pcb_GATOR.md) | [1354. L1-Altimeter](b1354b_iss-pcb_L1-Altimeter.md) |

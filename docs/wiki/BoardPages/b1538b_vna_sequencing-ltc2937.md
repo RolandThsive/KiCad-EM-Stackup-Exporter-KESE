@@ -1,4 +1,4 @@
-# 1538 sequencing_ltc2937
+# 1538. sequencing_ltc2937
 
 Board 1,538 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 15](../CorpusTestingPages/Corpus-Testing-15.md#1538-sequencing_ltc2937).
 
@@ -45,4 +45,4 @@ Board 1,538 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1537 trl_thru](b1537b_vna_breakouts-res-splitter_trl-thru.md) | [1539 sot89_amp_test](b1539b_vna_sot89-amp-test.md) |
+| [1537. trl_thru](b1537b_vna_breakouts-res-splitter_trl-thru.md) | [1539. sot89_amp_test](b1539b_vna_sot89-amp-test.md) |

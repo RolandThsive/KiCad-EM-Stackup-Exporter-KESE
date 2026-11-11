@@ -1,4 +1,4 @@
-# 18 Backplane Pro
+# 18. Backplane Pro
 
 Board 18 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 1](../CorpusTestingPages/Corpus-Testing-01.md#18-backplane-pro).
 
@@ -45,4 +45,4 @@ Board 18 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page
 
 | Previous | Next |
 |:---|---:|
-| [17 Backplane Pro](b0017b_6502_Hardware-Backplane-Pro-Rev-1-0_Backplane-Pro.md) | [19 Backplane](b0019b_6502_Backplane.md) |
+| [17. Backplane Pro](b0017b_6502_Hardware-Backplane-Pro-Rev-1-0_Backplane-Pro.md) | [19. Backplane](b0019b_6502_Backplane.md) |

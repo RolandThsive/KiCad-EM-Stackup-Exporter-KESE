@@ -1,4 +1,4 @@
-# 1825 ESP32-C5-DevKit-Lipo_Rev_A
+# 1825. ESP32-C5-DevKit-Lipo_Rev_A
 
 Board 1,825 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 17](../CorpusTestingPages/Corpus-Testing-17.md#1825-esp32-c5-devkit-lipo_rev_a).
 
@@ -45,4 +45,4 @@ Board 1,825 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1824 ESP32-C3-DevKit-Lipo_Rev_D](b1824b_ESP32-C3-DevKit-Lipo_ESP32-C3-DevKit-Lipo-Rev-D.md) | [1826 ESP32-C5-EVB_Rev_A](b1826b_ESP32-C5-EVB_ESP32-C5-EVB-Rev-A.md) |
+| [1824. ESP32-C3-DevKit-Lipo_Rev_D](b1824b_ESP32-C3-DevKit-Lipo_ESP32-C3-DevKit-Lipo-Rev-D.md) | [1826. ESP32-C5-EVB_Rev_A](b1826b_ESP32-C5-EVB_ESP32-C5-EVB-Rev-A.md) |

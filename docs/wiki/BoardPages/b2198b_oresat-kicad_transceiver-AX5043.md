@@ -1,4 +1,4 @@
-# 2198 transceiver-AX5043
+# 2198. transceiver-AX5043
 
 Board 2,198 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 21](../CorpusTestingPages/Corpus-Testing-21.md#2198-transceiver-ax5043).
 
@@ -45,4 +45,4 @@ Board 2,198 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2197 at86rf215-design-block](b2197b_oresat-kicad_at86rf215-design-block.md) | [2199 oresat-5V2A-regulator](b2199b_oresat-kicad_oresat-5V2A-regulator.md) |
+| [2197. at86rf215-design-block](b2197b_oresat-kicad_at86rf215-design-block.md) | [2199. oresat-5V2A-regulator](b2199b_oresat-kicad_oresat-5V2A-regulator.md) |

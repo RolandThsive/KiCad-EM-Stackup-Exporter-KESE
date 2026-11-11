@@ -1,4 +1,4 @@
-# 1194 kimchi_micro
+# 1194. kimchi_micro
 
 Board 1,194 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 12](../CorpusTestingPages/Corpus-Testing-12.md#1194-kimchi_micro).
 
@@ -45,4 +45,4 @@ Board 1,194 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1193 FreshTwinkie_v0.1_panel](b1193b_PD-sniffer_FreshTwinkie-v0-1-panel.md) | [1195 LevelShifter](b1195b_logicanalyzer_LevelShifter.md) |
+| [1193. FreshTwinkie_v0.1_panel](b1193b_PD-sniffer_FreshTwinkie-v0-1-panel.md) | [1195. LevelShifter](b1195b_logicanalyzer_LevelShifter.md) |

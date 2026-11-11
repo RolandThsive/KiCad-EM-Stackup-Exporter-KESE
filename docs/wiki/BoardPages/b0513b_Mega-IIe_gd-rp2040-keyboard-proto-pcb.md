@@ -1,4 +1,4 @@
-# 513 gd rp2040 keyboard proto pcb
+# 513. gd rp2040 keyboard proto pcb
 
 Board 513 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 5](../CorpusTestingPages/Corpus-Testing-05.md#513-gd-rp2040-keyboard-proto-pcb).
 
@@ -45,4 +45,4 @@ Board 513 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [512 gd rev3b](b0512b_Mega-IIe_gd-rev3b.md) | [514 gd slot extender](b0514b_Mega-IIe_gd-slot-extender.md) |
+| [512. gd rev3b](b0512b_Mega-IIe_gd-rev3b.md) | [514. gd slot extender](b0514b_Mega-IIe_gd-slot-extender.md) |

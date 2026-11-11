@@ -1,4 +1,4 @@
-# 701 CTS-SAT-2-OBC-PCB
+# 701. CTS-SAT-2-OBC-PCB
 
 Board 701 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 7](../CorpusTestingPages/Corpus-Testing-07.md#701-cts-sat-2-obc-pcb).
 
@@ -45,4 +45,4 @@ Board 701 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [700 OBC Development Board](b0700b_cts-sat-2-obc-pcb_OBC-Development-Board.md) | [702 MiniLatteLedArray](b0702b_minilatte_MiniLatteLedArray.md) |
+| [700. OBC Development Board](b0700b_cts-sat-2-obc-pcb_OBC-Development-Board.md) | [702. MiniLatteLedArray](b0702b_minilatte_MiniLatteLedArray.md) |

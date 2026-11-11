@@ -1,4 +1,4 @@
-# 2273 VESC-controller
+# 2273. VESC-controller
 
 Board 2,273 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 22](../CorpusTestingPages/Corpus-Testing-22.md#2273-vesc-controller).
 
@@ -45,4 +45,4 @@ Board 2,273 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2272 Power_Integrations_interface](b2272b_vesc-controller_Power-Integrations-interface.md) | [2274 meta_breakout](b2274b_parallella-hw_meta-breakout.md) |
+| [2272. Power_Integrations_interface](b2272b_vesc-controller_Power-Integrations-interface.md) | [2274. meta_breakout](b2274b_parallella-hw_meta-breakout.md) |

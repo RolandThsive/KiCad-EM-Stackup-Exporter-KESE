@@ -1,4 +1,4 @@
-# 1925 MOD-BME280_RevA
+# 1925. MOD-BME280_RevA
 
 Board 1,925 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 18](../CorpusTestingPages/Corpus-Testing-18.md#1925-mod-bme280_reva).
 
@@ -45,4 +45,4 @@ Board 1,925 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1924 MIPI-HDMI_Rev_B](b1924b_MIPI-HDMI_MIPI-HDMI-Rev-B.md) | [1926 MOD-BME280_RevB](b1926b_MOD-BME280_MOD-BME280-RevB.md) |
+| [1924. MIPI-HDMI_Rev_B](b1924b_MIPI-HDMI_MIPI-HDMI-Rev-B.md) | [1926. MOD-BME280_RevB](b1926b_MOD-BME280_MOD-BME280-RevB.md) |

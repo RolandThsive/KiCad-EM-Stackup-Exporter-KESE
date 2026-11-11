@@ -1,4 +1,4 @@
-# 2549 Cheap FOCer 2 60mm
+# 2549. Cheap FOCer 2 60mm
 
 Board 2,549 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 24](../CorpusTestingPages/Corpus-Testing-24.md#2549-cheap-focer-2-60mm).
 
@@ -45,4 +45,4 @@ Board 2,549 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2548 SFUSat-Radio](b2548b_cubesat-radio_SFUSat-Radio.md) | [2550 portapack_h1](b2550b_portapack-hackrf_portapack-h1.md) |
+| [2548. SFUSat-Radio](b2548b_cubesat-radio_SFUSat-Radio.md) | [2550. portapack_h1](b2550b_portapack-hackrf_portapack-h1.md) |

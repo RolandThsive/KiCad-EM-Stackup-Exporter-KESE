@@ -1,4 +1,4 @@
-# 837 stemma-qwiic-grove-gravity-bog-plank
+# 837. stemma-qwiic-grove-gravity-bog-plank
 
 Board 837 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 8](../CorpusTestingPages/Corpus-Testing-08.md#837-stemma-qwiic-grove-gravity-bog-plank).
 
@@ -45,4 +45,4 @@ Board 837 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [836 sim-iccard-rev4](b0836b_BusPirate5-hardware_sim-iccard-rev4.md) | [838 BPUv2a](b0838b_BusPirateUltraHardware_BPUv2a.md) |
+| [836. sim-iccard-rev4](b0836b_BusPirate5-hardware_sim-iccard-rev4.md) | [838. BPUv2a](b0838b_BusPirateUltraHardware_BPUv2a.md) |

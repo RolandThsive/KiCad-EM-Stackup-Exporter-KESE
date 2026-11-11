@@ -1,4 +1,4 @@
-# 3132 pcb
+# 3132. pcb
 
 Board 3,132 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 29](../CorpusTestingPages/Corpus-Testing-29.md#3132-pcb).
 
@@ -45,4 +45,4 @@ Board 3,132 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [3131 pcb](b3131b_nekoink_pcb-mainboard-gen1_pcb.md) | [3133 18650_pcb](b3133b_ZeroPhone-PCBs_18650-pcb.md) |
+| [3131. pcb](b3131b_nekoink_pcb-mainboard-gen1_pcb.md) | [3133. 18650_pcb](b3133b_ZeroPhone-PCBs_18650-pcb.md) |

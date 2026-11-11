@@ -1,4 +1,4 @@
-# 2693 ControllerCurrentShuntAddOn
+# 2693. ControllerCurrentShuntAddOn
 
 Board 2,693 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 25](../CorpusTestingPages/Corpus-Testing-25.md#2693-controllercurrentshuntaddon).
 
@@ -45,4 +45,4 @@ Board 2,693 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2692 ControllerCircuit](b2692b_diybmsv4_ControllerCircuit.md) | [2694 ESP8266ControllerCircuit](b2694b_diybmsv4_ESP8266ControllerCircuit.md) |
+| [2692. ControllerCircuit](b2692b_diybmsv4_ControllerCircuit.md) | [2694. ESP8266ControllerCircuit](b2694b_diybmsv4_ESP8266ControllerCircuit.md) |

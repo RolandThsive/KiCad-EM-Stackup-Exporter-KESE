@@ -1,4 +1,4 @@
-# 3024 macpro62_am5
+# 3024. macpro62_am5
 
 Board 3,024 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 28](../CorpusTestingPages/Corpus-Testing-28.md#3024-macpro62_am5).
 
@@ -45,4 +45,4 @@ Board 3,024 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [3023 StarlightEye](b3023b_StarlightEye_StarlightEye.md) | [3025 macpro62_am5](b3025b_the-mac-pro-project_kicad-macpro62-am5_macpro62-am5.md) |
+| [3023. StarlightEye](b3023b_StarlightEye_StarlightEye.md) | [3025. macpro62_am5](b3025b_the-mac-pro-project_kicad-macpro62-am5_macpro62-am5.md) |

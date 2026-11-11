@@ -1,4 +1,4 @@
-# 988 NewBrain PSU
+# 988. NewBrain PSU
 
 Board 988 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 10](../CorpusTestingPages/Corpus-Testing-10.md#988-newbrain-psu).
 
@@ -44,4 +44,4 @@ Board 988 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [987 NewBrain Original](b0987b_NewBrain_NewBrain-Original.md) | [989 NewBrain StoreBoard](b0989b_NewBrain_NewBrain-StoreBoard.md) |
+| [987. NewBrain Original](b0987b_NewBrain_NewBrain-Original.md) | [989. NewBrain StoreBoard](b0989b_NewBrain_NewBrain-StoreBoard.md) |

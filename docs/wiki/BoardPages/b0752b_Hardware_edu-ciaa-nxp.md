@@ -1,4 +1,4 @@
-# 752 edu-ciaa-nxp
+# 752. edu-ciaa-nxp
 
 Board 752 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 7](../CorpusTestingPages/Corpus-Testing-07.md#752-edu-ciaa-nxp).
 
@@ -45,4 +45,4 @@ Board 752 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [751 edk](b0751b_Hardware_edk.md) | [753 CIAA_FSL_MINI](b0753b_Hardware_CIAA-FSL-MINI.md) |
+| [751. edk](b0751b_Hardware_edk.md) | [753. CIAA_FSL_MINI](b0753b_Hardware_CIAA-FSL-MINI.md) |

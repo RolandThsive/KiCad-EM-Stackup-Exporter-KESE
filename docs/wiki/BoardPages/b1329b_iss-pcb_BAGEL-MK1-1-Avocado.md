@@ -1,4 +1,4 @@
-# 1329 BAGEL-MK1.1-Avocado
+# 1329. BAGEL-MK1.1-Avocado
 
 Board 1,329 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 13](../CorpusTestingPages/Corpus-Testing-13.md#1329-bagel-mk11-avocado).
 
@@ -45,4 +45,4 @@ Board 1,329 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1328 BAGEL-MK1](b1328b_iss-pcb_BAGEL-MK1.md) | [1330 BAGEL-MK1.1-Butter](b1330b_iss-pcb_BAGEL-MK1-1-Butter.md) |
+| [1328. BAGEL-MK1](b1328b_iss-pcb_BAGEL-MK1.md) | [1330. BAGEL-MK1.1-Butter](b1330b_iss-pcb_BAGEL-MK1-1-Butter.md) |

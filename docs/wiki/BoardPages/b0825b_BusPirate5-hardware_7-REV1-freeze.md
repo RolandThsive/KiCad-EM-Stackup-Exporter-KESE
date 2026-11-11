@@ -1,4 +1,4 @@
-# 825 7-REV1-freeze
+# 825. 7-REV1-freeze
 
 Board 825 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 8](../CorpusTestingPages/Corpus-Testing-08.md#825-7-rev1-freeze).
 
@@ -45,4 +45,4 @@ Board 825 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [824 7-REV0](b0824b_BusPirate5-hardware_7-REV0.md) | [826 7-REV1B](b0826b_BusPirate5-hardware_7-REV1B.md) |
+| [824. 7-REV0](b0824b_BusPirate5-hardware_7-REV0.md) | [826. 7-REV1B](b0826b_BusPirate5-hardware_7-REV1B.md) |

@@ -1,4 +1,4 @@
-# 3127 Prism
+# 3127. Prism
 
 Board 3,127 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 29](../CorpusTestingPages/Corpus-Testing-29.md#3127-prism).
 
@@ -44,4 +44,4 @@ Board 3,127 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [3126 hw-openmower-yardforce](b3126b_hw-openmower-yardforce_hw-openmower-yardforce.md) | [3128 2063-Z80](b3128b_2063-Z80_2063-Z80.md) |
+| [3126. hw-openmower-yardforce](b3126b_hw-openmower-yardforce_hw-openmower-yardforce.md) | [3128. 2063-Z80](b3128b_2063-Z80_2063-Z80.md) |

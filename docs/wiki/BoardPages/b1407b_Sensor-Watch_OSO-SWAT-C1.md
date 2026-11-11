@@ -1,4 +1,4 @@
-# 1407 OSO-SWAT-C1
+# 1407. OSO-SWAT-C1
 
 Board 1,407 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 14](../CorpusTestingPages/Corpus-Testing-14.md#1407-oso-swat-c1).
 
@@ -45,4 +45,4 @@ Board 1,407 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1406 OSO-SWAT-C1-rounded](b1406b_Sensor-Watch_OSO-SWAT-C1-rounded.md) | [1408 OSO-SWAB-B1-00 Sensor Watch Accelerometer](b1408b_Sensor-Watch_OSO-SWAB-B1-00-Sensor-Watch-Accelerometer.md) |
+| [1406. OSO-SWAT-C1-rounded](b1406b_Sensor-Watch_OSO-SWAT-C1-rounded.md) | [1408. OSO-SWAB-B1-00 Sensor Watch Accelerometer](b1408b_Sensor-Watch_OSO-SWAB-B1-00-Sensor-Watch-Accelerometer.md) |

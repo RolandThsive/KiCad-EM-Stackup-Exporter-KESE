@@ -1,4 +1,4 @@
-# 849 AudioSID
+# 849. AudioSID
 
 Board 849 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 8](../CorpusTestingPages/Corpus-Testing-08.md#849-audiosid).
 
@@ -45,4 +45,4 @@ Board 849 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [848 we816](b0848b_we816_we816.md) | [850 AudioYM2151](b0850b_hardware_AudioYM2151.md) |
+| [848. we816](b0848b_we816_we816.md) | [850. AudioYM2151](b0850b_hardware_AudioYM2151.md) |

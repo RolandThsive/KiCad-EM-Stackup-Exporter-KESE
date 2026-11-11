@@ -1,4 +1,4 @@
-# 617 in-shaft-wsg-mommy
+# 617. in-shaft-wsg-mommy
 
 Board 617 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 6](../CorpusTestingPages/Corpus-Testing-06.md#617-in-shaft-wsg-mommy).
 
@@ -45,4 +45,4 @@ Board 617 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [616 in-shaft-wsg-daughter](b0616b_bjr-kicad_in-shaft-wsg-daughter.md) | [618 main_bulkhead](b0618b_bjr-kicad_main-bulkhead.md) |
+| [616. in-shaft-wsg-daughter](b0616b_bjr-kicad_in-shaft-wsg-daughter.md) | [618. main_bulkhead](b0618b_bjr-kicad_main-bulkhead.md) |

@@ -1,4 +1,4 @@
-# 177 Main Data Buffer
+# 177. Main Data Buffer
 
 Board 177 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 2](../CorpusTestingPages/Corpus-Testing-02.md#177-main-data-buffer).
 
@@ -45,4 +45,4 @@ Board 177 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [176 Main Address Buffer](b0176b_658-Computer_Main-Address-Buffer.md) | [178 Memory 32KB with Output](b0178b_658-Computer_Memory-32KB-with-Output.md) |
+| [176. Main Address Buffer](b0176b_658-Computer_Main-Address-Buffer.md) | [178. Memory 32KB with Output](b0178b_658-Computer_Memory-32KB-with-Output.md) |

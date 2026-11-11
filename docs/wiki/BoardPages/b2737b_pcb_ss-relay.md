@@ -1,4 +1,4 @@
-# 2737 ss-relay
+# 2737. ss-relay
 
 Board 2,737 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 26](../CorpusTestingPages/Corpus-Testing-26.md#2737-ss-relay).
 
@@ -45,4 +45,4 @@ Board 2,737 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2736 8Ch-Sensor-Hub](b2736b_pcb_8Ch-Sensor-Hub.md) | [2738 tem](b2738b_pcb_tem.md) |
+| [2736. 8Ch-Sensor-Hub](b2736b_pcb_8Ch-Sensor-Hub.md) | [2738. tem](b2738b_pcb_tem.md) |

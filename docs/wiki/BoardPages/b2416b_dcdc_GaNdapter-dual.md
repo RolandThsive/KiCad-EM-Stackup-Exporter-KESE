@@ -1,4 +1,4 @@
-# 2416 GaNdapter-dual
+# 2416. GaNdapter-dual
 
 Board 2,416 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 23](../CorpusTestingPages/Corpus-Testing-23.md#2416-gandapter-dual).
 
@@ -45,4 +45,4 @@ Board 2,416 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2415 TINY-REFLOW-CONTROLLER](b2415b_TinyReflowController_TINY-REFLOW-CONTROLLER.md) | [2417 GaNdapter](b2417b_dcdc_GaNdapter.md) |
+| [2415. TINY-REFLOW-CONTROLLER](b2415b_TinyReflowController_TINY-REFLOW-CONTROLLER.md) | [2417. GaNdapter](b2417b_dcdc_GaNdapter.md) |

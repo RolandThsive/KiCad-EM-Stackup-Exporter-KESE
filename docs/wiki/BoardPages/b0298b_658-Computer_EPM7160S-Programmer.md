@@ -1,4 +1,4 @@
-# 298 EPM7160S Programmer
+# 298. EPM7160S Programmer
 
 Board 298 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 3](../CorpusTestingPages/Corpus-Testing-03.md#298-epm7160s-programmer).
 
@@ -45,4 +45,4 @@ Board 298 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [297 EPM7032S Programmer](b0297b_658-Computer_EPM7032S-Programmer.md) | [299 Speed](b0299b_658-Computer_Speed.md) |
+| [297. EPM7032S Programmer](b0297b_658-Computer_EPM7032S-Programmer.md) | [299. Speed](b0299b_658-Computer_Speed.md) |

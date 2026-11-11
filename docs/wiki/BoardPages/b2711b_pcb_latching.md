@@ -1,4 +1,4 @@
-# 2711 latching
+# 2711. latching
 
 Board 2,711 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 26](../CorpusTestingPages/Corpus-Testing-26.md#2711-latching).
 
@@ -45,4 +45,4 @@ Board 2,711 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2710 debug-board](b2710b_pcb_debug-board.md) | [2712 segment](b2712b_pcb_segment.md) |
+| [2710. debug-board](b2710b_pcb_debug-board.md) | [2712. segment](b2712b_pcb_segment.md) |

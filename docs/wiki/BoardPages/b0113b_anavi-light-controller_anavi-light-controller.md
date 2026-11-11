@@ -1,4 +1,4 @@
-# 113 anavi-light-controller
+# 113. anavi-light-controller
 
 Board 113 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 2](../CorpusTestingPages/Corpus-Testing-02.md#113-anavi-light-controller).
 
@@ -44,4 +44,4 @@ Board 113 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [112 AmigaPCI Mainboard](b0112b_AmigaPCI-MainBoard_AmigaPCI-Mainboard.md) | [114 Board 2x06 W15.24](b0114b_658-Computer_Kicad-Boards-Blank-Board-2x06-W15-24_Board-2x06-W15-24.md) |
+| [112. AmigaPCI Mainboard](b0112b_AmigaPCI-MainBoard_AmigaPCI-Mainboard.md) | [114. Board 2x06 W15.24](b0114b_658-Computer_Kicad-Boards-Blank-Board-2x06-W15-24_Board-2x06-W15-24.md) |

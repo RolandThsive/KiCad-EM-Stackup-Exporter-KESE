@@ -1,4 +1,4 @@
-# 2951 Battery Temperature Sensor
+# 2951. Battery Temperature Sensor
 
 Board 2,951 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 28](../CorpusTestingPages/Corpus-Testing-28.md#2951-battery-temperature-sensor).
 
@@ -45,4 +45,4 @@ Board 2,951 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2950 APPS final](b2950b_circuits_APPS-final.md) | [2952 LTC6812-15W](b2952b_circuits_ENNOID-BMS-Slave_LTC6812-15W.md) |
+| [2950. APPS final](b2950b_circuits_APPS-final.md) | [2952. LTC6812-15W](b2952b_circuits_ENNOID-BMS-Slave_LTC6812-15W.md) |

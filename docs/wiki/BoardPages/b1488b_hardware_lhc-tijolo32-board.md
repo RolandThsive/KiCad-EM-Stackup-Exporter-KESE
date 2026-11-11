@@ -1,4 +1,4 @@
-# 1488 lhc_tijolo32_board
+# 1488. lhc_tijolo32_board
 
 Board 1,488 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 14](../CorpusTestingPages/Corpus-Testing-14.md#1488-lhc_tijolo32_board).
 
@@ -45,4 +45,4 @@ Board 1,488 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1487 LHCbit](b1487b_hardware_LHCbit.md) | [1489 placas-kicad](b1489b_hardware_placas-kicad.md) |
+| [1487. LHCbit](b1487b_hardware_LHCbit.md) | [1489. placas-kicad](b1489b_hardware_placas-kicad.md) |

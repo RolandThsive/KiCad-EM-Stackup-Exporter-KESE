@@ -1,4 +1,4 @@
-# 835 ram-ddr5-1REV1
+# 835. ram-ddr5-1REV1
 
 Board 835 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 8](../CorpusTestingPages/Corpus-Testing-08.md#835-ram-ddr5-1rev1).
 
@@ -45,4 +45,4 @@ Board 835 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [834 ram-ddr5](b0834b_BusPirate5-hardware_ram-ddr5.md) | [836 sim-iccard-rev4](b0836b_BusPirate5-hardware_sim-iccard-rev4.md) |
+| [834. ram-ddr5](b0834b_BusPirate5-hardware_ram-ddr5.md) | [836. sim-iccard-rev4](b0836b_BusPirate5-hardware_sim-iccard-rev4.md) |

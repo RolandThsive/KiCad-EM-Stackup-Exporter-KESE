@@ -1,4 +1,4 @@
-# 161 Comparator 16bit
+# 161. Comparator 16bit
 
 Board 161 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 2](../CorpusTestingPages/Corpus-Testing-02.md#161-comparator-16bit).
 
@@ -45,4 +45,4 @@ Board 161 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [160 Comparator 10bit](b0160b_658-Computer_Comparator-10bit.md) | [162 Counter 16bit with IO](b0162b_658-Computer_Counter-16bit-with-IO.md) |
+| [160. Comparator 10bit](b0160b_658-Computer_Comparator-10bit.md) | [162. Counter 16bit with IO](b0162b_658-Computer_Counter-16bit-with-IO.md) |

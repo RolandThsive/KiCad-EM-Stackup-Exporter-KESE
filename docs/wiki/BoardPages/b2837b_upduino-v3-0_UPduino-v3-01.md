@@ -1,4 +1,4 @@
-# 2837 UPduino_v3.01
+# 2837. UPduino_v3.01
 
 Board 2,837 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 27](../CorpusTestingPages/Corpus-Testing-27.md#2837-upduino_v301).
 
@@ -45,4 +45,4 @@ Board 2,837 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2836 UPduino_v3.0](b2836b_upduino-v3-0_Board-v3-0_UPduino-v3-0.md) | [2838 Speeduino_base](b2838b_spectre_SPECTRE-V0-3_Speeduino-base.md) |
+| [2836. UPduino_v3.0](b2836b_upduino-v3-0_Board-v3-0_UPduino-v3-0.md) | [2838. Speeduino_base](b2838b_spectre_SPECTRE-V0-3_Speeduino-base.md) |

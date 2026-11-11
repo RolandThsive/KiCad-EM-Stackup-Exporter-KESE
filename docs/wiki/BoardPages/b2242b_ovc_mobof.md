@@ -1,4 +1,4 @@
-# 2242 mobof
+# 2242. mobof
 
 Board 2,242 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 21](../CorpusTestingPages/Corpus-Testing-21.md#2242-mobof).
 
@@ -45,4 +45,4 @@ Board 2,242 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2241 ovc](b2241b_ovc_ovc.md) | [2243 ovc2_mono](b2243b_ovc_ovc2-mono.md) |
+| [2241. ovc](b2241b_ovc_ovc.md) | [2243. ovc2_mono](b2243b_ovc_ovc2-mono.md) |

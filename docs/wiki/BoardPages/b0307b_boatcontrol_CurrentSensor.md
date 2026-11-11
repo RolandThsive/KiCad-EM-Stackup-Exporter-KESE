@@ -1,4 +1,4 @@
-# 307 CurrentSensor
+# 307. CurrentSensor
 
 Board 307 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 3](../CorpusTestingPages/Corpus-Testing-03.md#307-currentsensor).
 
@@ -45,4 +45,4 @@ Board 307 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [306 CommonCathode60A](b0306b_boatcontrol_CommonCathode60A.md) | [308 NonLatchingNO30A](b0308b_boatcontrol_NonLatchingNO30A.md) |
+| [306. CommonCathode60A](b0306b_boatcontrol_CommonCathode60A.md) | [308. NonLatchingNO30A](b0308b_boatcontrol_NonLatchingNO30A.md) |

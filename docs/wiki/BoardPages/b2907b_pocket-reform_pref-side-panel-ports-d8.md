@@ -1,4 +1,4 @@
-# 2907 pref-side-panel-ports-d8
+# 2907. pref-side-panel-ports-d8
 
 Board 2,907 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 27](../CorpusTestingPages/Corpus-Testing-27.md#2907-pref-side-panel-ports-d8).
 
@@ -46,4 +46,4 @@ Board 2,907 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2906 pref-side-panel-headphones-d8](b2906b_pocket-reform_pref-side-panel-headphones-d8.md) | [2908 pref-side-panel-ports](b2908b_pocket-reform_pref-side-panel-ports.md) |
+| [2906. pref-side-panel-headphones-d8](b2906b_pocket-reform_pref-side-panel-headphones-d8.md) | [2908. pref-side-panel-ports](b2908b_pocket-reform_pref-side-panel-ports.md) |

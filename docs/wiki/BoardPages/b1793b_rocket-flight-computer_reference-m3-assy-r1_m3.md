@@ -1,4 +1,4 @@
-# 1793 m3
+# 1793. m3
 
 Board 1,793 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 17](../CorpusTestingPages/Corpus-Testing-17.md#1793-m3).
 
@@ -45,4 +45,4 @@ Board 1,793 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1792 m1](b1792b_rocket-flight-computer_m1.md) | [1794 A20-CAN_Rev_A](b1794b_A20-CAN_A20-CAN-Rev-A.md) |
+| [1792. m1](b1792b_rocket-flight-computer_m1.md) | [1794. A20-CAN_Rev_A](b1794b_A20-CAN_A20-CAN-Rev-A.md) |

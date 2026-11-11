@@ -1,4 +1,4 @@
-# 433 TestSRAM
+# 433. TestSRAM
 
 Board 433 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 5](../CorpusTestingPages/Corpus-Testing-05.md#433-testsram).
 
@@ -45,4 +45,4 @@ Board 433 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [432 Printer+Sticks](b0432b_maxi030_Printer-Sticks.md) | [434 Video+Sound](b0434b_maxi030_Video-Sound.md) |
+| [432. Printer+Sticks](b0432b_maxi030_Printer-Sticks.md) | [434. Video+Sound](b0434b_maxi030_Video-Sound.md) |

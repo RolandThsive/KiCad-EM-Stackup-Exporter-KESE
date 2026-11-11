@@ -1,4 +1,4 @@
-# 1521 clk_lo_buffer
+# 1521. clk_lo_buffer
 
 Board 1,521 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 15](../CorpusTestingPages/Corpus-Testing-15.md#1521-clk_lo_buffer).
 
@@ -45,4 +45,4 @@ Board 1,521 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1520 boosterpack](b1520b_vna_boosterpack.md) | [1522 coupler_test](b1522b_vna_coupler-test.md) |
+| [1520. boosterpack](b1520b_vna_boosterpack.md) | [1522. coupler_test](b1522b_vna_coupler-test.md) |

@@ -1,4 +1,4 @@
-# 1186 syzygy-flir-tau2
+# 1186. syzygy-flir-tau2
 
 Board 1,186 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 11](../CorpusTestingPages/Corpus-Testing-11.md#1186-syzygy-flir-tau2).
 
@@ -45,4 +45,4 @@ Board 1,186 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1185 syzygy-flir-boson](b1185b_advent-calendar-of-circuits-2020_syzygy-flir-boson.md) | [1187 syzygy-pmod](b1187b_advent-calendar-of-circuits-2020_syzygy-pmod.md) |
+| [1185. syzygy-flir-boson](b1185b_advent-calendar-of-circuits-2020_syzygy-flir-boson.md) | [1187. syzygy-pmod](b1187b_advent-calendar-of-circuits-2020_syzygy-pmod.md) |

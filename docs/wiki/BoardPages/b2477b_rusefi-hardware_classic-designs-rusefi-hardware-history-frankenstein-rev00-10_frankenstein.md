@@ -1,4 +1,4 @@
-# 2477 frankenstein
+# 2477. frankenstein
 
 Board 2,477 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 23](../CorpusTestingPages/Corpus-Testing-23.md#2477-frankenstein).
 
@@ -45,4 +45,4 @@ Board 2,477 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2476 discovery](b2476b_rusefi-hardware_discovery.md) | [2478 frankenstein](b2478b_rusefi-hardware_classic-designs-rusefi-hardware-history-frankenstein-rev00-11_frankenstein.md) |
+| [2476. discovery](b2476b_rusefi-hardware_discovery.md) | [2478. frankenstein](b2478b_rusefi-hardware_classic-designs-rusefi-hardware-history-frankenstein-rev00-11_frankenstein.md) |

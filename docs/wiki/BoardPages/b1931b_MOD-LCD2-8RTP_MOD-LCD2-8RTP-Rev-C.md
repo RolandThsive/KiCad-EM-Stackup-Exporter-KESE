@@ -1,4 +1,4 @@
-# 1931 MOD-LCD2.8RTP_Rev_C
+# 1931. MOD-LCD2.8RTP_Rev_C
 
 Board 1,931 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 18](../CorpusTestingPages/Corpus-Testing-18.md#1931-mod-lcd28rtp_rev_c).
 
@@ -45,4 +45,4 @@ Board 1,931 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1930 MOD-LCD2.8RTP_RevB](b1930b_MOD-LCD2-8RTP_MOD-LCD2-8RTP-RevB.md) | [1932 MOD-LCD2.8RTP_Rev_D](b1932b_MOD-LCD2-8RTP_MOD-LCD2-8RTP-Rev-D.md) |
+| [1930. MOD-LCD2.8RTP_RevB](b1930b_MOD-LCD2-8RTP_MOD-LCD2-8RTP-RevB.md) | [1932. MOD-LCD2.8RTP_Rev_D](b1932b_MOD-LCD2-8RTP_MOD-LCD2-8RTP-Rev-D.md) |

@@ -1,4 +1,4 @@
-# 2024 dashboard
+# 2024. dashboard
 
 Board 2,024 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 19](../CorpusTestingPages/Corpus-Testing-19.md#2024-dashboard).
 
@@ -45,4 +45,4 @@ Board 2,024 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2023 throttle](b2023b_olin-electric-motorsports_vehicle-gokart-hardware-throttle_throttle.md) | [2025 interface](b2025b_olin-electric-motorsports_interface.md) |
+| [2023. throttle](b2023b_olin-electric-motorsports_vehicle-gokart-hardware-throttle_throttle.md) | [2025. interface](b2025b_olin-electric-motorsports_interface.md) |

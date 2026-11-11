@@ -1,4 +1,4 @@
-# 184 Selector 18bit
+# 184. Selector 18bit
 
 Board 184 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 2](../CorpusTestingPages/Corpus-Testing-02.md#184-selector-18bit).
 
@@ -45,4 +45,4 @@ Board 184 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [183 Selector 12bit](b0183b_658-Computer_Selector-12bit.md) | [185 State Reader 16bit](b0185b_658-Computer_State-Reader-16bit.md) |
+| [183. Selector 12bit](b0183b_658-Computer_Selector-12bit.md) | [185. State Reader 16bit](b0185b_658-Computer_State-Reader-16bit.md) |

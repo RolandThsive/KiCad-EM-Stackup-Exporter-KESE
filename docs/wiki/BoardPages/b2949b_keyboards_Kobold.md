@@ -1,4 +1,4 @@
-# 2949 Kobold
+# 2949. Kobold
 
 Board 2,949 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 28](../CorpusTestingPages/Corpus-Testing-28.md#2949-kobold).
 
@@ -45,4 +45,4 @@ Board 2,949 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2948 half-plate](b2948b_keyboards_half-plate.md) | [2950 APPS final](b2950b_circuits_APPS-final.md) |
+| [2948. half-plate](b2948b_keyboards_half-plate.md) | [2950. APPS final](b2950b_circuits_APPS-final.md) |

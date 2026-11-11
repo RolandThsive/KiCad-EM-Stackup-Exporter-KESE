@@ -1,4 +1,4 @@
-# 2285 carrier_template
+# 2285. carrier_template
 
 Board 2,285 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 22](../CorpusTestingPages/Corpus-Testing-22.md#2285-carrier_template).
 
@@ -45,4 +45,4 @@ Board 2,285 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2284 CM5_MINIMA_2](b2284b_CM5-MINIMA-REV2_CM5-MINIMA-2.md) | [2286 Zynq_SoM](b2286b_zynq-som_Zynq-SoM.md) |
+| [2284. CM5_MINIMA_2](b2284b_CM5-MINIMA-REV2_CM5-MINIMA-2.md) | [2286. Zynq_SoM](b2286b_zynq-som_Zynq-SoM.md) |

@@ -1,4 +1,4 @@
-# 488 ezcgi
+# 488. ezcgi
 
 Board 488 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 5](../CorpusTestingPages/Corpus-Testing-05.md#488-ezcgi).
 
@@ -45,4 +45,4 @@ Board 488 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [487 Platinum IIe keyboard](b0487b_bit-preserve_Platinum-IIe-keyboard.md) | [489 PCPI_AppliCard](b0489b_bit-preserve_PCPI-AppliCard.md) |
+| [487. Platinum IIe keyboard](b0487b_bit-preserve_Platinum-IIe-keyboard.md) | [489. PCPI_AppliCard](b0489b_bit-preserve_PCPI-AppliCard.md) |

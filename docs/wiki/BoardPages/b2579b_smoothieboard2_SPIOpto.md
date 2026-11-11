@@ -1,4 +1,4 @@
-# 2579 SPIOpto
+# 2579. SPIOpto
 
 Board 2,579 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 24](../CorpusTestingPages/Corpus-Testing-24.md#2579-spiopto).
 
@@ -45,4 +45,4 @@ Board 2,579 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2578 SPI Hub](b2578b_smoothieboard2_SPI-Hub.md) | [2580 SPI PT100](b2580b_smoothieboard2_SPI-PT100.md) |
+| [2578. SPI Hub](b2578b_smoothieboard2_SPI-Hub.md) | [2580. SPI PT100](b2580b_smoothieboard2_SPI-PT100.md) |

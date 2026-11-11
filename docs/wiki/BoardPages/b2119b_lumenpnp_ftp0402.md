@@ -1,4 +1,4 @@
-# 2119 ftp0402
+# 2119. ftp0402
 
 Board 2,119 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 20](../CorpusTestingPages/Corpus-Testing-20.md#2119-ftp0402).
 
@@ -45,4 +45,4 @@ Board 2,119 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2118 ftp](b2118b_lumenpnp_ftp.md) | [2120 mobo](b2120b_lumenpnp_mobo.md) |
+| [2118. ftp](b2118b_lumenpnp_ftp.md) | [2120. mobo](b2120b_lumenpnp_mobo.md) |

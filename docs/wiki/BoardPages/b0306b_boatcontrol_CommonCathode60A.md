@@ -1,4 +1,4 @@
-# 306 CommonCathode60A
+# 306. CommonCathode60A
 
 Board 306 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 3](../CorpusTestingPages/Corpus-Testing-03.md#306-commoncathode60a).
 
@@ -45,4 +45,4 @@ Board 306 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [305 W65C64](b0305b_658-Computer_W65C64.md) | [307 CurrentSensor](b0307b_boatcontrol_CurrentSensor.md) |
+| [305. W65C64](b0305b_658-Computer_W65C64.md) | [307. CurrentSensor](b0307b_boatcontrol_CurrentSensor.md) |

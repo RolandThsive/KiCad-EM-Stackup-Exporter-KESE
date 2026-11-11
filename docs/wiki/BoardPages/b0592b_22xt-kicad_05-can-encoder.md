@@ -1,4 +1,4 @@
-# 592 05-can_encoder
+# 592. 05-can_encoder
 
 Board 592 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 6](../CorpusTestingPages/Corpus-Testing-06.md#592-05-can_encoder).
 
@@ -45,4 +45,4 @@ Board 592 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [591 thermistor circuit](b0591b_22xt-kicad_thermistor-circuit.md) | [593 as5047p-atsm_breakout](b0593b_22xt-kicad_as5047p-atsm-breakout.md) |
+| [591. thermistor circuit](b0591b_22xt-kicad_thermistor-circuit.md) | [593. as5047p-atsm_breakout](b0593b_22xt-kicad_as5047p-atsm-breakout.md) |

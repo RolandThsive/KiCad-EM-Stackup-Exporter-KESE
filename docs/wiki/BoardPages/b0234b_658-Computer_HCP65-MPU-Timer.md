@@ -1,4 +1,4 @@
-# 234 HCP65 MPU Timer
+# 234. HCP65 MPU Timer
 
 Board 234 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 3](../CorpusTestingPages/Corpus-Testing-03.md#234-hcp65-mpu-timer).
 
@@ -45,4 +45,4 @@ Board 234 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [233 HCP65 MPU NMI](b0233b_658-Computer_HCP65-MPU-NMI.md) | [235 Processor Board](b0235b_658-Computer_Processor-Board.md) |
+| [233. HCP65 MPU NMI](b0233b_658-Computer_HCP65-MPU-NMI.md) | [235. Processor Board](b0235b_658-Computer_Processor-Board.md) |

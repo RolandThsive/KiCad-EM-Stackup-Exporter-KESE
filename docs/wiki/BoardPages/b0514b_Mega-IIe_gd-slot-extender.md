@@ -1,4 +1,4 @@
-# 514 gd slot extender
+# 514. gd slot extender
 
 Board 514 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 5](../CorpusTestingPages/Corpus-Testing-05.md#514-gd-slot-extender).
 
@@ -45,4 +45,4 @@ Board 514 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [513 gd rp2040 keyboard proto pcb](b0513b_Mega-IIe_gd-rp2040-keyboard-proto-pcb.md) | [515 gd vga pico proto pcb](b0515b_Mega-IIe_gd-vga-pico-proto-pcb.md) |
+| [513. gd rp2040 keyboard proto pcb](b0513b_Mega-IIe_gd-rp2040-keyboard-proto-pcb.md) | [515. gd vga pico proto pcb](b0515b_Mega-IIe_gd-vga-pico-proto-pcb.md) |

@@ -1,4 +1,4 @@
-# 1497 bms-8s50-ic
+# 1497. bms-8s50-ic
 
 Board 1,497 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 14](../CorpusTestingPages/Corpus-Testing-14.md#1497-bms-8s50-ic).
 
@@ -45,4 +45,4 @@ Board 1,497 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1496 LibreRouter_MegaBoard](b1496b_librerouter_LibreRouter-MegaBoard.md) | [1498 bms-c1](b1498b_bms-c1_bms-c1.md) |
+| [1496. LibreRouter_MegaBoard](b1496b_librerouter_LibreRouter-MegaBoard.md) | [1498. bms-c1](b1498b_bms-c1_bms-c1.md) |

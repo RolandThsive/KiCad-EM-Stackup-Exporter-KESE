@@ -1,4 +1,4 @@
-# 2970 OMGS3_Carrier_R1
+# 2970. OMGS3_Carrier_R1
 
 Board 2,970 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 28](../CorpusTestingPages/Corpus-Testing-28.md#2970-omgs3_carrier_r1).
 
@@ -45,4 +45,4 @@ Board 2,970 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2969 NanoS3_Carrier](b2969b_esp32s3_NanoS3-Carrier.md) | [2971 EdgeS3D_Carrier_P1](b2971b_esp32s3_EdgeS3D-Carrier-P1.md) |
+| [2969. NanoS3_Carrier](b2969b_esp32s3_NanoS3-Carrier.md) | [2971. EdgeS3D_Carrier_P1](b2971b_esp32s3_EdgeS3D-Carrier-P1.md) |

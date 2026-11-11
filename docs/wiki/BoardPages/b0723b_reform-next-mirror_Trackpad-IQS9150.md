@@ -1,4 +1,4 @@
-# 723 Trackpad_IQS9150
+# 723. Trackpad_IQS9150
 
 Board 723 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 7](../CorpusTestingPages/Corpus-Testing-07.md#723-trackpad_iqs9150).
 
@@ -45,4 +45,4 @@ Board 723 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [722 nref-ports-two](b0722b_reform-next-mirror_nref-ports-two.md) | [724 nref-trackpad](b0724b_reform-next-mirror_nref-trackpad.md) |
+| [722. nref-ports-two](b0722b_reform-next-mirror_nref-ports-two.md) | [724. nref-trackpad](b0724b_reform-next-mirror_nref-trackpad.md) |

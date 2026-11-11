@@ -1,4 +1,4 @@
-# 1139 rf-switch-sp3t
+# 1139. rf-switch-sp3t
 
 Board 1,139 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 11](../CorpusTestingPages/Corpus-Testing-11.md#1139-rf-switch-sp3t).
 
@@ -45,4 +45,4 @@ Board 1,139 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1138 rf-switch-dpdt](b1138b_misc_rf-switch-dpdt.md) | [1140 rf-switch-sp4t](b1140b_misc_rf-switch-sp4t.md) |
+| [1138. rf-switch-dpdt](b1138b_misc_rf-switch-dpdt.md) | [1140. rf-switch-sp4t](b1140b_misc_rf-switch-sp4t.md) |

@@ -1,4 +1,4 @@
-# 2767 dipole-breakout
+# 2767. dipole-breakout
 
 Board 2,767 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 26](../CorpusTestingPages/Corpus-Testing-26.md#2767-dipole-breakout).
 
@@ -45,4 +45,4 @@ Board 2,767 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2766 Blue Raven Extension](b2766b_srad-avionics_Blue-Raven-Extension.md) | [2768 flight-computer](b2768b_srad-avionics_Spaceport-PCBs-flight-computer-Alternate-layout-2025-2026_flight-computer.md) |
+| [2766. Blue Raven Extension](b2766b_srad-avionics_Blue-Raven-Extension.md) | [2768. flight-computer](b2768b_srad-avionics_Spaceport-PCBs-flight-computer-Alternate-layout-2025-2026_flight-computer.md) |

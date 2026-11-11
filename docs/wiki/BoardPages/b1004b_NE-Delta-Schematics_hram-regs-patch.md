@@ -1,4 +1,4 @@
-# 1004 hram_regs_patch
+# 1004. hram_regs_patch
 
 Board 1,004 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 10](../CorpusTestingPages/Corpus-Testing-10.md#1004-hram_regs_patch).
 
@@ -45,4 +45,4 @@ Board 1,004 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1003 Microcontroller](b1003b_ExpansionCards_Microcontroller.md) | [1005 NE_Delta](b1005b_NE-Delta-Schematics_LX780-Delta-fixed_NE-Delta.md) |
+| [1003. Microcontroller](b1003b_ExpansionCards_Microcontroller.md) | [1005. NE_Delta](b1005b_NE-Delta-Schematics_LX780-Delta-fixed_NE-Delta.md) |

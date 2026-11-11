@@ -1,4 +1,4 @@
-# 1734 uMyriad7002
+# 1734. uMyriad7002
 
 Board 1,734 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 17](../CorpusTestingPages/Corpus-Testing-17.md#1734-umyriad7002).
 
@@ -45,4 +45,4 @@ Board 1,734 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1733 uMyriad7002-append](b1733b_reference-development-kit_uMyriad7002-append.md) | [1735 Zipper](b1735b_reference-development-kit_Zipper.md) |
+| [1733. uMyriad7002-append](b1733b_reference-development-kit_uMyriad7002-append.md) | [1735. Zipper](b1735b_reference-development-kit_Zipper.md) |

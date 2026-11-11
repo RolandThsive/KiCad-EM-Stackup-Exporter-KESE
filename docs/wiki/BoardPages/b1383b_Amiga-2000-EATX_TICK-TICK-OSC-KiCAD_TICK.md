@@ -1,4 +1,4 @@
-# 1383 TICK
+# 1383. TICK
 
 Board 1,383 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 13](../CorpusTestingPages/Corpus-Testing-13.md#1383-tick).
 
@@ -45,4 +45,4 @@ Board 1,383 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1382 TICK_AC](b1382b_Amiga-2000-EATX_TICK-AC.md) | [1384 N2360](b1384b_Amiga-N2630_KiCAD-A2630-New-KiCAD-Rev410-PGA_N2360.md) |
+| [1382. TICK_AC](b1382b_Amiga-2000-EATX_TICK-AC.md) | [1384. N2360](b1384b_Amiga-N2630_KiCAD-A2630-New-KiCAD-Rev410-PGA_N2360.md) |

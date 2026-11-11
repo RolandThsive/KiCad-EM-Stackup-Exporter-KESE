@@ -1,4 +1,4 @@
-# 1017 WarpSE
+# 1017. WarpSE
 
 Board 1,017 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 10](../CorpusTestingPages/Corpus-Testing-10.md#1017-warpse).
 
@@ -44,4 +44,4 @@ Board 1,017 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1016 SE-030](b1016b_Warp-LC_SE-030.md) | [1018 ecp5_mainboard](b1018b_TrellisBoard_ecp5-mainboard.md) |
+| [1016. SE-030](b1016b_Warp-LC_SE-030.md) | [1018. ecp5_mainboard](b1018b_TrellisBoard_ecp5-mainboard.md) |

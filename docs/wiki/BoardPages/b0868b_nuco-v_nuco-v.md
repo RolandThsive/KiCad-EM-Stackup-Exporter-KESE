@@ -1,4 +1,4 @@
-# 868 nuco-v
+# 868. nuco-v
 
 Board 868 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 9](../CorpusTestingPages/Corpus-Testing-09.md#868-nuco-v).
 
@@ -44,4 +44,4 @@ Board 868 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [867 Nucleo2USB](b0867b_Nucleo2USB_Nucleo2USB.md) | [869 twonkie](b0869b_Twonkie_twonkie.md) |
+| [867. Nucleo2USB](b0867b_Nucleo2USB_Nucleo2USB.md) | [869. twonkie](b0869b_Twonkie_twonkie.md) |

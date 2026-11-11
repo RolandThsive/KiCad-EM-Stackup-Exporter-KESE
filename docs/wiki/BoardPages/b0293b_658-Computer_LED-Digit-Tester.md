@@ -1,4 +1,4 @@
-# 293 LED Digit Tester
+# 293. LED Digit Tester
 
 Board 293 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 3](../CorpusTestingPages/Corpus-Testing-03.md#293-led-digit-tester).
 
@@ -45,4 +45,4 @@ Board 293 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [292 HCP65 Wide Analyser](b0292b_658-Computer_HCP65-Wide-Analyser.md) | [294 SDRAM](b0294b_658-Computer_SDRAM.md) |
+| [292. HCP65 Wide Analyser](b0292b_658-Computer_HCP65-Wide-Analyser.md) | [294. SDRAM](b0294b_658-Computer_SDRAM.md) |

@@ -1,4 +1,4 @@
-# 2838 Speeduino_base
+# 2838. Speeduino_base
 
 Board 2,838 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 27](../CorpusTestingPages/Corpus-Testing-27.md#2838-speeduino_base).
 
@@ -45,4 +45,4 @@ Board 2,838 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2837 UPduino_v3.01](b2837b_upduino-v3-0_UPduino-v3-01.md) | [2839 Speeduino_base](b2839b_spectre_SPECTRE-V0-4_Speeduino-base.md) |
+| [2837. UPduino_v3.01](b2837b_upduino-v3-0_UPduino-v3-01.md) | [2839. Speeduino_base](b2839b_spectre_SPECTRE-V0-4_Speeduino-base.md) |

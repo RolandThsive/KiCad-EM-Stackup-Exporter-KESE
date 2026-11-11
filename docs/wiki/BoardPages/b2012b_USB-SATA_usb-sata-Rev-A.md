@@ -1,4 +1,4 @@
-# 2012 usb-sata_Rev.A
+# 2012. usb-sata_Rev.A
 
 Board 2,012 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 19](../CorpusTestingPages/Corpus-Testing-19.md#2012-usb-sata_reva).
 
@@ -45,4 +45,4 @@ Board 2,012 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2011 USB-NeoHUB_Rev_A](b2011b_USB-NeoHub_USB-NeoHUB-Rev-A.md) | [2013 USB-SERIAL-L_Rev_B](b2013b_USB-SERIAL-L_USB-SERIAL-L-Rev-B.md) |
+| [2011. USB-NeoHUB_Rev_A](b2011b_USB-NeoHub_USB-NeoHUB-Rev-A.md) | [2013. USB-SERIAL-L_Rev_B](b2013b_USB-SERIAL-L_USB-SERIAL-L-Rev-B.md) |

@@ -1,4 +1,4 @@
-# 3001 DAQ CAN support
+# 3001. DAQ CAN support
 
 Board 3,001 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 28](../CorpusTestingPages/Corpus-Testing-28.md#3001-daq-can-support).
 
@@ -45,4 +45,4 @@ Board 3,001 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [3000 CanardBoard](b3000b_canhw_CanardBoard.md) | [3002 gps_2](b3002b_canhw_gps-2.md) |
+| [3000. CanardBoard](b3000b_canhw_CanardBoard.md) | [3002. gps_2](b3002b_canhw_gps-2.md) |

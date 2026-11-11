@@ -1,4 +1,4 @@
-# 1683 Project NuXT
+# 1683. Project NuXT
 
 Board 1,683 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 16](../CorpusTestingPages/Corpus-Testing-16.md#1683-project-nuxt).
 
@@ -44,4 +44,4 @@ Board 1,683 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1682 pcb](b1682b_Lancer_pcb-usb-adapter-board_pcb.md) | [1684 96boards-robomezzi](b1684b_96boards-robomezzi_96boards-robomezzi.md) |
+| [1682. pcb](b1682b_Lancer_pcb-usb-adapter-board_pcb.md) | [1684. 96boards-robomezzi](b1684b_96boards-robomezzi_96boards-robomezzi.md) |

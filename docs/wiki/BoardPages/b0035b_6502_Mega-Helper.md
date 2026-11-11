@@ -1,4 +1,4 @@
-# 35 Mega Helper
+# 35. Mega Helper
 
 Board 35 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 1](../CorpusTestingPages/Corpus-Testing-01.md#35-mega-helper).
 
@@ -45,4 +45,4 @@ Board 35 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page
 
 | Previous | Next |
 |:---|---:|
-| [34 LCD Card](b0034b_6502_LCD-Card.md) | [36 Memory Card](b0036b_6502_Memory-Card.md) |
+| [34. LCD Card](b0034b_6502_LCD-Card.md) | [36. Memory Card](b0036b_6502_Memory-Card.md) |

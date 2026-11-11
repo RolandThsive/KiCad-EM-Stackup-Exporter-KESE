@@ -1,4 +1,4 @@
-# 212 Processor Full Device
+# 212. Processor Full Device
 
 Board 212 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 2](../CorpusTestingPages/Corpus-Testing-02.md#212-processor-full-device).
 
@@ -45,4 +45,4 @@ Board 212 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [211 Mainboard Small](b0211b_658-Computer_Mainboard-Small.md) | [213 Processor Reset Device](b0213b_658-Computer_Processor-Reset-Device.md) |
+| [211. Mainboard Small](b0211b_658-Computer_Mainboard-Small.md) | [213. Processor Reset Device](b0213b_658-Computer_Processor-Reset-Device.md) |

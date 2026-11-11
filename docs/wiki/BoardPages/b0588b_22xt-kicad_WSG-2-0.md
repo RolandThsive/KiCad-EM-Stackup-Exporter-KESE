@@ -1,4 +1,4 @@
-# 588 WSG_2.0
+# 588. WSG_2.0
 
 Board 588 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 6](../CorpusTestingPages/Corpus-Testing-06.md#588-wsg_20).
 
@@ -45,4 +45,4 @@ Board 588 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [587 W25Q02JVTBIM_breakout](b0587b_22xt-kicad_W25Q02JVTBIM-breakout.md) | [589 TC_kent](b0589b_22xt-kicad_TC-kent.md) |
+| [587. W25Q02JVTBIM_breakout](b0587b_22xt-kicad_W25Q02JVTBIM-breakout.md) | [589. TC_kent](b0589b_22xt-kicad_TC-kent.md) |

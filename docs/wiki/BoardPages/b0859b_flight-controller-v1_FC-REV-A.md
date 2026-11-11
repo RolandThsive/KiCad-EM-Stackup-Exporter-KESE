@@ -1,4 +1,4 @@
-# 859 FC_REV_A
+# 859. FC_REV_A
 
 Board 859 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 8](../CorpusTestingPages/Corpus-Testing-08.md#859-fc_rev_a).
 
@@ -45,4 +45,4 @@ Board 859 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [858 muon](b0858b_muon-kbd_muon.md) | [860 stm32_board](b0860b_stm32-devboard_stm32-board.md) |
+| [858. muon](b0858b_muon-kbd_muon.md) | [860. stm32_board](b0860b_stm32-devboard_stm32-board.md) |

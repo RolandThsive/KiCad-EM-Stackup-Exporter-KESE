@@ -1,4 +1,4 @@
-# 1464 reform-kintex
+# 1464. reform-kintex
 
 Board 1,464 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 14](../CorpusTestingPages/Corpus-Testing-14.md#1464-reform-kintex).
 
@@ -44,4 +44,4 @@ Board 1,464 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1463 reform-kintex-edp](b1463b_reform-kintex-som_reform-kintex-edp.md) | [1465 meko](b1465b_meko_meko.md) |
+| [1463. reform-kintex-edp](b1463b_reform-kintex-som_reform-kintex-edp.md) | [1465. meko](b1465b_meko_meko.md) |

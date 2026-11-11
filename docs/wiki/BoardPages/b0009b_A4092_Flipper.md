@@ -1,4 +1,4 @@
-# 9 Flipper
+# 9. Flipper
 
 Board 9 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 1](../CorpusTestingPages/Corpus-Testing-01.md#9-flipper).
 
@@ -45,4 +45,4 @@ Board 9 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 
 
 | Previous | Next |
 |:---|---:|
-| [8 A4092-backpanel](b0008b_A4092_A4092-backpanel.md) | [10 A4092-terminator-dev](b0010b_A4092_A4092-terminator-dev.md) |
+| [8. A4092-backpanel](b0008b_A4092_A4092-backpanel.md) | [10. A4092-terminator-dev](b0010b_A4092_A4092-terminator-dev.md) |

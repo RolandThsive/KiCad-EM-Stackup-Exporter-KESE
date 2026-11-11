@@ -1,4 +1,4 @@
-# 932 ice-fpc-pmod
+# 932. ice-fpc-pmod
 
 Board 932 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 9](../CorpusTestingPages/Corpus-Testing-09.md#932-ice-fpc-pmod).
 
@@ -45,4 +45,4 @@ Board 932 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [931 ice-dongle](b0931b_ice-dongle_ice-dongle.md) | [933 ice-prog-adapt](b0933b_ice-dongle_ice-prog-adapt.md) |
+| [931. ice-dongle](b0931b_ice-dongle_ice-dongle.md) | [933. ice-prog-adapt](b0933b_ice-dongle_ice-prog-adapt.md) |

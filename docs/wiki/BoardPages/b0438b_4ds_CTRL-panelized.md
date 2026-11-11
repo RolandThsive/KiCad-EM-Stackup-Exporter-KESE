@@ -1,4 +1,4 @@
-# 438 CTRL_panelized
+# 438. CTRL_panelized
 
 Board 438 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 5](../CorpusTestingPages/Corpus-Testing-05.md#438-ctrl_panelized).
 
@@ -46,4 +46,4 @@ Board 438 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [437 CTRL_L](b0437b_4ds_CTRL-L.md) | [439 CTRL_PWR](b0439b_4ds_CTRL-PWR.md) |
+| [437. CTRL_L](b0437b_4ds_CTRL-L.md) | [439. CTRL_PWR](b0439b_4ds_CTRL-PWR.md) |

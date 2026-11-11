@@ -1,4 +1,4 @@
-# 1183 syzygy-dual-atto320
+# 1183. syzygy-dual-atto320
 
 Board 1,183 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 11](../CorpusTestingPages/Corpus-Testing-11.md#1183-syzygy-dual-atto320).
 
@@ -45,4 +45,4 @@ Board 1,183 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1182 syzygy-breakout](b1182b_advent-calendar-of-circuits-2020_syzygy-breakout.md) | [1184 syzygy-epc901](b1184b_advent-calendar-of-circuits-2020_syzygy-epc901.md) |
+| [1182. syzygy-breakout](b1182b_advent-calendar-of-circuits-2020_syzygy-breakout.md) | [1184. syzygy-epc901](b1184b_advent-calendar-of-circuits-2020_syzygy-epc901.md) |

@@ -1,4 +1,4 @@
-# 207 Main Memory Select
+# 207. Main Memory Select
 
 Board 207 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 2](../CorpusTestingPages/Corpus-Testing-02.md#207-main-memory-select).
 
@@ -45,4 +45,4 @@ Board 207 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [206 Main Memory Full Enable](b0206b_658-Computer_Main-Memory-Full-Enable.md) | [208 Main Memory Small Abort](b0208b_658-Computer_Main-Memory-Small-Abort.md) |
+| [206. Main Memory Full Enable](b0206b_658-Computer_Main-Memory-Full-Enable.md) | [208. Main Memory Small Abort](b0208b_658-Computer_Main-Memory-Small-Abort.md) |

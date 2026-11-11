@@ -1,4 +1,4 @@
-# 1261 eduIO
+# 1261. eduIO
 
 Board 1,261 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 12](../CorpusTestingPages/Corpus-Testing-12.md#1261-eduio).
 
@@ -45,4 +45,4 @@ Board 1,261 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1260 dvi](b1260b_Extension-Boards-for-Olimex-GateMate_dvi.md) | [1262 ethIO](b1262b_Extension-Boards-for-Olimex-GateMate_ethIO.md) |
+| [1260. dvi](b1260b_Extension-Boards-for-Olimex-GateMate_dvi.md) | [1262. ethIO](b1262b_Extension-Boards-for-Olimex-GateMate_ethIO.md) |

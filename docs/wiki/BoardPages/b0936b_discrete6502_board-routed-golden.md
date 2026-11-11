@@ -1,4 +1,4 @@
-# 936 board_routed_golden
+# 936. board_routed_golden
 
 Board 936 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 9](../CorpusTestingPages/Corpus-Testing-09.md#936-board_routed_golden).
 
@@ -42,4 +42,4 @@ Board 936 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [935 board_presignal](b0935b_discrete6502_board-presignal.md) | [937 rv1106](b0937b_raven1106_pcb-v1-0_rv1106.md) |
+| [935. board_presignal](b0935b_discrete6502_board-presignal.md) | [937. rv1106](b0937b_raven1106_pcb-v1-0_rv1106.md) |

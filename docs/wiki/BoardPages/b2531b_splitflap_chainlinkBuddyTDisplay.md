@@ -1,4 +1,4 @@
-# 2531 chainlinkBuddyTDisplay
+# 2531. chainlinkBuddyTDisplay
 
 Board 2,531 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 24](../CorpusTestingPages/Corpus-Testing-24.md#2531-chainlinkbuddytdisplay).
 
@@ -45,4 +45,4 @@ Board 2,531 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2530 chainlinkBuddyBreadboard](b2530b_splitflap_chainlinkBuddyBreadboard.md) | [2532 chainlinkDriver](b2532b_splitflap_chainlinkDriver.md) |
+| [2530. chainlinkBuddyBreadboard](b2530b_splitflap_chainlinkBuddyBreadboard.md) | [2532. chainlinkDriver](b2532b_splitflap_chainlinkDriver.md) |

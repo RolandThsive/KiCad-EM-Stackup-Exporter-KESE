@@ -1,4 +1,4 @@
-# 2062 carrier-fix
+# 2062. carrier-fix
 
 Board 2,062 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 20](../CorpusTestingPages/Corpus-Testing-20.md#2062-carrier-fix).
 
@@ -45,4 +45,4 @@ Board 2,062 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2061 rkh](b2061b_olin-electric-motorsports_rkh.md) | [2063 power](b2063b_olin-electric-motorsports_power.md) |
+| [2061. rkh](b2061b_olin-electric-motorsports_rkh.md) | [2063. power](b2063b_olin-electric-motorsports_power.md) |

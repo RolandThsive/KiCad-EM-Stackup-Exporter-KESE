@@ -1,4 +1,4 @@
-# 3006 power-splitter
+# 3006. power-splitter
 
 Board 3,006 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 28](../CorpusTestingPages/Corpus-Testing-28.md#3006-power-splitter).
 
@@ -45,4 +45,4 @@ Board 3,006 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [3005 LTT](b3005b_canhw_LTT.md) | [3007 novatel_gps_breakout](b3007b_canhw_novatel-gps-breakout.md) |
+| [3005. LTT](b3005b_canhw_LTT.md) | [3007. novatel_gps_breakout](b3007b_canhw_novatel-gps-breakout.md) |

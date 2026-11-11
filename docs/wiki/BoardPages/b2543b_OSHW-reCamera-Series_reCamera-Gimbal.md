@@ -1,4 +1,4 @@
-# 2543 reCamera Gimbal
+# 2543. reCamera Gimbal
 
 Board 2,543 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 24](../CorpusTestingPages/Corpus-Testing-24.md#2543-recamera-gimbal).
 
@@ -45,4 +45,4 @@ Board 2,543 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2542 reCamera B101_B4_Gyro v0.1](b2542b_OSHW-reCamera-Series_reCamera-B101-B4-Gyro-v0-1.md) | [2544 reCamera Basically Board](b2544b_OSHW-reCamera-Series_reCamera-Basically-Board.md) |
+| [2542. reCamera B101_B4_Gyro v0.1](b2542b_OSHW-reCamera-Series_reCamera-B101-B4-Gyro-v0-1.md) | [2544. reCamera Basically Board](b2544b_OSHW-reCamera-Series_reCamera-Basically-Board.md) |

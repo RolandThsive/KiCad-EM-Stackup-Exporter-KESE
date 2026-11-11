@@ -1,4 +1,4 @@
-# 2502 IR2302-testboard
+# 2502. IR2302-testboard
 
 Board 2,502 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 24](../CorpusTestingPages/Corpus-Testing-24.md#2502-ir2302-testboard).
 
@@ -45,4 +45,4 @@ Board 2,502 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2501 GDI-STM](b2501b_rusefi-hardware_GDI-STM.md) | [2503 micro_rusEFI](b2503b_rusefi-hardware_micro-rusEFI.md) |
+| [2501. GDI-STM](b2501b_rusefi-hardware_GDI-STM.md) | [2503. micro_rusEFI](b2503b_rusefi-hardware_micro-rusEFI.md) |

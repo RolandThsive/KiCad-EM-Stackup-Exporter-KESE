@@ -1,4 +1,4 @@
-# 1129 CC-test
+# 1129. CC-test
 
 Board 1,129 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 11](../CorpusTestingPages/Corpus-Testing-11.md#1129-cc-test).
 
@@ -45,4 +45,4 @@ Board 1,129 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1128 BGA622H6820](b1128b_misc_BGA622H6820.md) | [1130 DC1722J5005AHF](b1130b_misc_DC1722J5005AHF.md) |
+| [1128. BGA622H6820](b1128b_misc_BGA622H6820.md) | [1130. DC1722J5005AHF](b1130b_misc_DC1722J5005AHF.md) |

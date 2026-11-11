@@ -1,4 +1,4 @@
-# 1729 DigiRED_v1.0
+# 1729. DigiRED_v1.0
 
 Board 1,729 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 17](../CorpusTestingPages/Corpus-Testing-17.md#1729-digired_v10).
 
@@ -45,4 +45,4 @@ Board 1,729 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1728 LMS8001_Companion](b1728b_LMS8001-Companion_hardware-3v2-KiCAD_LMS8001-Companion.md) | [1730 DigiRED](b1730b_RASDR_DigiRED.md) |
+| [1728. LMS8001_Companion](b1728b_LMS8001-Companion_hardware-3v2-KiCAD_LMS8001-Companion.md) | [1730. DigiRED](b1730b_RASDR_DigiRED.md) |

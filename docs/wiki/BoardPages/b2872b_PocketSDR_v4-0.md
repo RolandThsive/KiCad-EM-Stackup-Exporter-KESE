@@ -1,4 +1,4 @@
-# 2872 v4.0
+# 2872. v4.0
 
 Board 2,872 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 27](../CorpusTestingPages/Corpus-Testing-27.md#2872-v40).
 
@@ -45,4 +45,4 @@ Board 2,872 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2871 div_4px2](b2871b_PocketSDR_div-4px2.md) | [2873 v4.1](b2873b_PocketSDR_v4-1.md) |
+| [2871. div_4px2](b2871b_PocketSDR_div-4px2.md) | [2873. v4.1](b2873b_PocketSDR_v4-1.md) |

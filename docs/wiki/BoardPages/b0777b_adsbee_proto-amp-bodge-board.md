@@ -1,4 +1,4 @@
-# 777 proto_amp_bodge_board
+# 777. proto_amp_bodge_board
 
 Board 777 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 8](../CorpusTestingPages/Corpus-Testing-08.md#777-proto_amp_bodge_board).
 
@@ -45,4 +45,4 @@ Board 777 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [776 proto_ads_bee_rf_board](b0776b_adsbee_proto-ads-bee-rf-board.md) | [778 proto_data_slicer_board](b0778b_adsbee_proto-data-slicer-board.md) |
+| [776. proto_ads_bee_rf_board](b0776b_adsbee_proto-ads-bee-rf-board.md) | [778. proto_data_slicer_board](b0778b_adsbee_proto-data-slicer-board.md) |

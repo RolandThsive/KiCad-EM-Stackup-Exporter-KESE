@@ -1,4 +1,4 @@
-# 425 NxtPX4
+# 425. NxtPX4
 
 Board 425 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 4](../CorpusTestingPages/Corpus-Testing-04.md#425-nxtpx4).
 
@@ -45,4 +45,4 @@ Board 425 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [424 pcb](b0424b_axiom-micro-mainboard_pcb.md) | [426 Sparky2](b0426b_hardware_Sparky2.md) |
+| [424. pcb](b0424b_axiom-micro-mainboard_pcb.md) | [426. Sparky2](b0426b_hardware_Sparky2.md) |

@@ -1,4 +1,4 @@
-# 273 Video Memory 2MB
+# 273. Video Memory 2MB
 
 Board 273 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 3](../CorpusTestingPages/Corpus-Testing-03.md#273-video-memory-2mb).
 
@@ -45,4 +45,4 @@ Board 273 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [272 Video Device RAM Select](b0272b_658-Computer_Video-Device-RAM-Select.md) | [274 Video Pixel Advance](b0274b_658-Computer_Video-Pixel-Advance.md) |
+| [272. Video Device RAM Select](b0272b_658-Computer_Video-Device-RAM-Select.md) | [274. Video Pixel Advance](b0274b_658-Computer_Video-Pixel-Advance.md) |

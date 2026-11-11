@@ -1,4 +1,4 @@
-# 3040 tdr_coupon_c50
+# 3040. tdr_coupon_c50
 
 Board 3,040 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 29](../CorpusTestingPages/Corpus-Testing-29.md#3040-tdr_coupon_c50).
 
@@ -45,4 +45,4 @@ Board 3,040 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [3039 tdr_coupon_a25](b3039b_the-mac-pro-project_tdr-coupon-a25.md) | [3041 riser_a](b3041b_the-mac-pro-project_riser-a.md) |
+| [3039. tdr_coupon_a25](b3039b_the-mac-pro-project_tdr-coupon-a25.md) | [3041. riser_a](b3041b_the-mac-pro-project_riser-a.md) |

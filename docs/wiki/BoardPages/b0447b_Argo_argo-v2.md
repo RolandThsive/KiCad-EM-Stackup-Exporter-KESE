@@ -1,4 +1,4 @@
-# 447 argo-v2
+# 447. argo-v2
 
 Board 447 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 5](../CorpusTestingPages/Corpus-Testing-05.md#447-argo-v2).
 
@@ -45,4 +45,4 @@ Board 447 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [446 esp32-s3-spectrum](b0446b_esp32-zxspectrum-hardware_esp32-s3-spectrum.md) | [448 latentpink](b0448b_latentpacket_latentpink.md) |
+| [446. esp32-s3-spectrum](b0446b_esp32-zxspectrum-hardware_esp32-s3-spectrum.md) | [448. latentpink](b0448b_latentpacket_latentpink.md) |

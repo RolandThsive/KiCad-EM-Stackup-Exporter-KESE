@@ -1,4 +1,4 @@
-# 49 Video Card Pro
+# 49. Video Card Pro
 
 Board 49 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 1](../CorpusTestingPages/Corpus-Testing-01.md#49-video-card-pro).
 
@@ -45,4 +45,4 @@ Board 49 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page
 
 | Previous | Next |
 |:---|---:|
-| [48 VGA Card](b0048b_6502_VGA-Card.md) | [50 Video Card](b0050b_6502_Video-Card.md) |
+| [48. VGA Card](b0048b_6502_VGA-Card.md) | [50. Video Card](b0050b_6502_Video-Card.md) |

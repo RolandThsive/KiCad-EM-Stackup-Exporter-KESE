@@ -1,4 +1,4 @@
-# 1240 eth
+# 1240. eth
 
 Board 1,240 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 12](../CorpusTestingPages/Corpus-Testing-12.md#1240-eth).
 
@@ -45,4 +45,4 @@ Board 1,240 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1239 control](b1239b_ccpu_control.md) | [1241 io](b1241b_ccpu_io.md) |
+| [1239. control](b1239b_ccpu_control.md) | [1241. io](b1241b_ccpu_io.md) |

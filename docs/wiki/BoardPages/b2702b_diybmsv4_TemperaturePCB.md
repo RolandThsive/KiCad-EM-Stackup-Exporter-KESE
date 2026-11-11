@@ -1,4 +1,4 @@
-# 2702 TemperaturePCB
+# 2702. TemperaturePCB
 
 Board 2,702 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 26](../CorpusTestingPages/Corpus-Testing-26.md#2702-temperaturepcb).
 
@@ -45,4 +45,4 @@ Board 2,702 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2701 ProgrammingAdapter](b2701b_diybmsv4_ProgrammingAdapter.md) | [2703 TemperaturePCB_PANEL](b2703b_diybmsv4_TemperaturePCB-PANEL.md) |
+| [2701. ProgrammingAdapter](b2701b_diybmsv4_ProgrammingAdapter.md) | [2703. TemperaturePCB_PANEL](b2703b_diybmsv4_TemperaturePCB-PANEL.md) |

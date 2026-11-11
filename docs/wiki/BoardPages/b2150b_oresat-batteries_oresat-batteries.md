@@ -1,4 +1,4 @@
-# 2150 oresat-batteries
+# 2150. oresat-batteries
 
 Board 2,150 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 20](../CorpusTestingPages/Corpus-Testing-20.md#2150-oresat-batteries).
 
@@ -45,4 +45,4 @@ Board 2,150 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2149 oresat-backplane-3u](b2149b_oresat-backplane_oresat-backplane-3u.md) | [2151 oresat-c3](b2151b_oresat-c3-hardware_oresat-c3.md) |
+| [2149. oresat-backplane-3u](b2149b_oresat-backplane_oresat-backplane-3u.md) | [2151. oresat-c3](b2151b_oresat-c3-hardware_oresat-c3.md) |

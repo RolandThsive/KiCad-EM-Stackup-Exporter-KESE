@@ -1,4 +1,4 @@
-# 2493 Stimulator
+# 2493. Stimulator
 
 Board 2,493 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 24](../CorpusTestingPages/Corpus-Testing-24.md#2493-stimulator).
 
@@ -45,4 +45,4 @@ Board 2,493 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2492 Stimulator](b2492b_rusefi-hardware_classic-designs-rusefi-hardware-history-Stimulator-rev00-10_Stimulator.md) | [2494 thermocouple_module](b2494b_rusefi-hardware_thermocouple-module.md) |
+| [2492. Stimulator](b2492b_rusefi-hardware_classic-designs-rusefi-hardware-history-Stimulator-rev00-10_Stimulator.md) | [2494. thermocouple_module](b2494b_rusefi-hardware_thermocouple-module.md) |

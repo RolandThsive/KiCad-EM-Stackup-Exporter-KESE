@@ -1,4 +1,4 @@
-# 2706 controller
+# 2706. controller
 
 Board 2,706 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 26](../CorpusTestingPages/Corpus-Testing-26.md#2706-controller).
 
@@ -45,4 +45,4 @@ Board 2,706 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2705 racer](b2705b_Racer_racer.md) | [2707 ail-LED](b2707b_pcb_ail-LED.md) |
+| [2705. racer](b2705b_Racer_racer.md) | [2707. ail-LED](b2707b_pcb_ail-LED.md) |

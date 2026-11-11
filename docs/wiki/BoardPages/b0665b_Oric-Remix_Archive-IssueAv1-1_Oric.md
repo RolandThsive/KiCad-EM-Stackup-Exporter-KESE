@@ -1,4 +1,4 @@
-# 665 Oric
+# 665. Oric
 
 Board 665 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 7](../CorpusTestingPages/Corpus-Testing-07.md#665-oric).
 
@@ -45,4 +45,4 @@ Board 665 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [664 Neptune](b0664b_Neptune_Neptune.md) | [666 Oric-PS2USB](b0666b_Oric-Remix_Oric-PS2USB.md) |
+| [664. Neptune](b0664b_Neptune_Neptune.md) | [666. Oric-PS2USB](b0666b_Oric-Remix_Oric-PS2USB.md) |

@@ -1,4 +1,4 @@
-# 606 mainbox2.0
+# 606. mainbox2.0
 
 Board 606 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 6](../CorpusTestingPages/Corpus-Testing-06.md#606-mainbox20).
 
@@ -46,4 +46,4 @@ Board 606 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [605 mainbox1.0](b0605b_bjr-kicad_21xt-02-mainbox-mainbox1-0_mainbox1-0.md) | [607 mainbox2.1](b0607b_bjr-kicad_mainbox2-1.md) |
+| [605. mainbox1.0](b0605b_bjr-kicad_21xt-02-mainbox-mainbox1-0_mainbox1-0.md) | [607. mainbox2.1](b0607b_bjr-kicad_mainbox2-1.md) |

@@ -1,4 +1,4 @@
-# 361 gpu-cluster-backplane
+# 361. gpu-cluster-backplane
 
 Board 361 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 4](../CorpusTestingPages/Corpus-Testing-04.md#361-gpu-cluster-backplane).
 
@@ -44,4 +44,4 @@ Board 361 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [360 gmsl-serializer](b0360b_gmsl-serializer_gmsl-serializer.md) | [362 hdmi-edid-debug-board](b0362b_hdmi-edid-debug-board_hdmi-edid-debug-board.md) |
+| [360. gmsl-serializer](b0360b_gmsl-serializer_gmsl-serializer.md) | [362. hdmi-edid-debug-board](b0362b_hdmi-edid-debug-board_hdmi-edid-debug-board.md) |

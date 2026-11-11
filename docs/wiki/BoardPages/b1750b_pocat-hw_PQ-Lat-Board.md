@@ -1,4 +1,4 @@
-# 1750 PQ_Lat_Board
+# 1750. PQ_Lat_Board
 
 Board 1,750 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 17](../CorpusTestingPages/Corpus-Testing-17.md#1750-pq_lat_board).
 
@@ -45,4 +45,4 @@ Board 1,750 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1749 PQ_EPS](b1749b_pocat-hw_PQ-EPS.md) | [1751 PQ_Lat_Board_Deploy](b1751b_pocat-hw_PQ-Lat-Board-Deploy.md) |
+| [1749. PQ_EPS](b1749b_pocat-hw_PQ-EPS.md) | [1751. PQ_Lat_Board_Deploy](b1751b_pocat-hw_PQ-Lat-Board-Deploy.md) |

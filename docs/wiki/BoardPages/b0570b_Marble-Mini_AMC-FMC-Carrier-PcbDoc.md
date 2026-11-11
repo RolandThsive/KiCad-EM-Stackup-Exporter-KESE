@@ -1,4 +1,4 @@
-# 570 AMC_FMC_Carrier-PcbDoc
+# 570. AMC_FMC_Carrier-PcbDoc
 
 Board 570 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 6](../CorpusTestingPages/Corpus-Testing-06.md#570-amc_fmc_carrier-pcbdoc).
 
@@ -45,4 +45,4 @@ Board 570 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [569 Marble](b0569b_Marble_Marble.md) | [571 Obsidian](b0571b_Obsidian_Obsidian.md) |
+| [569. Marble](b0569b_Marble_Marble.md) | [571. Obsidian](b0571b_Obsidian_Obsidian.md) |

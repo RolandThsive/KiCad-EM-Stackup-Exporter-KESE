@@ -1,4 +1,4 @@
-# 2430 hellen1-vr-discrete
+# 2430. hellen1-vr-discrete
 
 Board 2,430 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 23](../CorpusTestingPages/Corpus-Testing-23.md#2430-hellen1-vr-discrete).
 
@@ -45,4 +45,4 @@ Board 2,430 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2429 hellen1-uaefi](b2429b_hellen-one_hellen1-uaefi.md) | [2431 hellen1-vr-max9924](b2431b_hellen-one_hellen1-vr-max9924.md) |
+| [2429. hellen1-uaefi](b2429b_hellen-one_hellen1-uaefi.md) | [2431. hellen1-vr-max9924](b2431b_hellen-one_hellen1-vr-max9924.md) |

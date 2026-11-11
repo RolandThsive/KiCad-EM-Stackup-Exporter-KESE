@@ -1,4 +1,4 @@
-# 421 video-booster-board
+# 421. video-booster-board
 
 Board 421 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 4](../CorpusTestingPages/Corpus-Testing-04.md#421-video-booster-board).
 
@@ -44,4 +44,4 @@ Board 421 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [420 video-latency-testing-probe](b0420b_video-latency-testing-probe_video-latency-testing-probe.md) | [422 vna-se-probe](b0422b_vna-se-probe_vna-se-probe.md) |
+| [420. video-latency-testing-probe](b0420b_video-latency-testing-probe_video-latency-testing-probe.md) | [422. vna-se-probe](b0422b_vna-se-probe_vna-se-probe.md) |

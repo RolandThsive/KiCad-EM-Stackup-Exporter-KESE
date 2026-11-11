@@ -1,4 +1,4 @@
-# 738 caravel-5V-dev-v6-M.2
+# 738. caravel-5V-dev-v6-M.2
 
 Board 738 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 7](../CorpusTestingPages/Corpus-Testing-07.md#738-caravel-5v-dev-v6-m2).
 
@@ -45,4 +45,4 @@ Board 738 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [737 caravel-M.2-card-WCSP](b0737b_caravel-board_caravel-M-2-card-WCSP.md) | [739 caravel_pcb_v3_FTDI_flexy](b0739b_caravel-board_hardware-development-archive-caravel-pcb-v3-FTDI-prev_caravel-pcb-v3-FTDI-flexy.md) |
+| [737. caravel-M.2-card-WCSP](b0737b_caravel-board_caravel-M-2-card-WCSP.md) | [739. caravel_pcb_v3_FTDI_flexy](b0739b_caravel-board_hardware-development-archive-caravel-pcb-v3-FTDI-prev_caravel-pcb-v3-FTDI-flexy.md) |

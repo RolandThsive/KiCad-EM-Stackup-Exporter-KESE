@@ -1,4 +1,4 @@
-# 1213 HALMET
+# 1213. HALMET
 
 Board 1,213 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 12](../CorpusTestingPages/Corpus-Testing-12.md#1213-halmet).
 
@@ -44,4 +44,4 @@ Board 1,213 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1212 stepper driver](b1212b_device-stepperdriver_stepper-driver.md) | [1214 HALPI2](b1214b_halpi2-hardware_HALPI2.md) |
+| [1212. stepper driver](b1212b_device-stepperdriver_stepper-driver.md) | [1214. HALPI2](b1214b_halpi2-hardware_HALPI2.md) |

@@ -1,4 +1,4 @@
-# 583 main_board_v3
+# 583. main_board_v3
 
 Board 583 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 6](../CorpusTestingPages/Corpus-Testing-06.md#583-main_board_v3).
 
@@ -45,4 +45,4 @@ Board 583 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [582 main_board_v2](b0582b_22xt-kicad_main-board-v2.md) | [584 AD5626BRMZ-kent](b0584b_22xt-kicad_AD5626BRMZ-kent.md) |
+| [582. main_board_v2](b0582b_22xt-kicad_main-board-v2.md) | [584. AD5626BRMZ-kent](b0584b_22xt-kicad_AD5626BRMZ-kent.md) |

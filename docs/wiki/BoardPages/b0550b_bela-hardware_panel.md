@@ -1,4 +1,4 @@
-# 550 panel
+# 550. panel
 
 Board 550 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 6](../CorpusTestingPages/Corpus-Testing-06.md#550-panel).
 
@@ -46,4 +46,4 @@ Board 550 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [549 analog_out_fix_c2](b0549b_bela-hardware_analog-out-fix-c2.md) | [551 bela_cape](b0551b_bela-hardware_cape-bela-cape-rev-C2_bela-cape.md) |
+| [549. analog_out_fix_c2](b0549b_bela-hardware_analog-out-fix-c2.md) | [551. bela_cape](b0551b_bela-hardware_cape-bela-cape-rev-C2_bela-cape.md) |

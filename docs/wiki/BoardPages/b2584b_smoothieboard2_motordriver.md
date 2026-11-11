@@ -1,4 +1,4 @@
-# 2584 motordriver
+# 2584. motordriver
 
 Board 2,584 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 24](../CorpusTestingPages/Corpus-Testing-24.md#2584-motordriver).
 
@@ -45,4 +45,4 @@ Board 2,584 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2583 V2 Core](b2583b_smoothieboard2_V2-Core.md) | [2585 smoothiev2-prime-2660](b2585b_smoothieboard2_V2-P11-Prime2660_smoothiev2-prime-2660.md) |
+| [2583. V2 Core](b2583b_smoothieboard2_V2-Core.md) | [2585. smoothiev2-prime-2660](b2585b_smoothieboard2_V2-P11-Prime2660_smoothiev2-prime-2660.md) |

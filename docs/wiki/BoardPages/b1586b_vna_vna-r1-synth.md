@@ -1,4 +1,4 @@
-# 1586 vna_r1_synth
+# 1586. vna_r1_synth
 
 Board 1,586 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 15](../CorpusTestingPages/Corpus-Testing-15.md#1586-vna_r1_synth).
 
@@ -45,4 +45,4 @@ Board 1,586 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1585 vna_r1_demod](b1585b_vna_vna-r1-demod.md) | [1587 [DFR1142]Lite Carrier for LattePanda Mu](b1587b_mubook_DFR1142-Lite-Carrier-for-LattePanda-Mu.md) |
+| [1585. vna_r1_demod](b1585b_vna_vna-r1-demod.md) | [1587. [DFR1142]Lite Carrier for LattePanda Mu](b1587b_mubook_DFR1142-Lite-Carrier-for-LattePanda-Mu.md) |

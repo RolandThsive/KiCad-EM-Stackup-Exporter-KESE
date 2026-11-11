@@ -1,4 +1,4 @@
-# 874 Duet2
+# 874. Duet2
 
 Board 874 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 9](../CorpusTestingPages/Corpus-Testing-09.md#874-duet2).
 
@@ -45,4 +45,4 @@ Board 874 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [873 DuetWifi](b0873b_Duet-2-Hardware_DuetWifi.md) | [875 Duet2](b0875b_Duet-2-Hardware_Duet2-Duet2v1-06_Duet2.md) |
+| [873. DuetWifi](b0873b_Duet-2-Hardware_DuetWifi.md) | [875. Duet2](b0875b_Duet-2-Hardware_Duet2-Duet2v1-06_Duet2.md) |

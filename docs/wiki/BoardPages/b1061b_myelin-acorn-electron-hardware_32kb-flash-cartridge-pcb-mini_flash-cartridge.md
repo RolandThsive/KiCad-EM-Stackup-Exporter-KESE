@@ -1,4 +1,4 @@
-# 1061 flash_cartridge
+# 1061. flash_cartridge
 
 Board 1,061 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 10](../CorpusTestingPages/Corpus-Testing-10.md#1061-flash_cartridge).
 
@@ -45,4 +45,4 @@ Board 1,061 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1060 MegaDrive](b1060b_Mega-Drive-model-1-schematic_MegaDrive.md) | [1062 flash_cartridge](b1062b_myelin-acorn-electron-hardware_32kb-flash-cartridge-pcb-standard_flash-cartridge.md) |
+| [1060. MegaDrive](b1060b_Mega-Drive-model-1-schematic_MegaDrive.md) | [1062. flash_cartridge](b1062b_myelin-acorn-electron-hardware_32kb-flash-cartridge-pcb-standard_flash-cartridge.md) |

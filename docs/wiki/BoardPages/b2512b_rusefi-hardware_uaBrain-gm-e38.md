@@ -1,4 +1,4 @@
-# 2512 uaBrain-gm-e38
+# 2512. uaBrain-gm-e38
 
 Board 2,512 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 24](../CorpusTestingPages/Corpus-Testing-24.md#2512-uabrain-gm-e38).
 
@@ -45,4 +45,4 @@ Board 2,512 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2511 tle9104-breakout](b2511b_rusefi-hardware_tle9104-breakout.md) | [2513 VR-Hall](b2513b_rusefi-hardware_VR-Hall.md) |
+| [2511. tle9104-breakout](b2511b_rusefi-hardware_tle9104-breakout.md) | [2513. VR-Hall](b2513b_rusefi-hardware_VR-Hall.md) |

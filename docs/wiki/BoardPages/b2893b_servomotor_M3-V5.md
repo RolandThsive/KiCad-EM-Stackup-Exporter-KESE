@@ -1,4 +1,4 @@
-# 2893 M3-V5
+# 2893. M3-V5
 
 Board 2,893 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 27](../CorpusTestingPages/Corpus-Testing-27.md#2893-m3-v5).
 
@@ -45,4 +45,4 @@ Board 2,893 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2892 M3-V4](b2892b_servomotor_M3-V4.md) | [2894 V8](b2894b_servomotor_V8.md) |
+| [2892. M3-V4](b2892b_servomotor_M3-V4.md) | [2894. V8](b2894b_servomotor_V8.md) |

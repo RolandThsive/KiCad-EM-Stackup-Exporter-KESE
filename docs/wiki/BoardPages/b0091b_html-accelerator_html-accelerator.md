@@ -1,4 +1,4 @@
-# 91 html_accelerator
+# 91. html_accelerator
 
 Board 91 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 1](../CorpusTestingPages/Corpus-Testing-01.md#91-html_accelerator).
 
@@ -45,4 +45,4 @@ Board 91 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page
 
 | Previous | Next |
 |:---|---:|
-| [90 reg4x16](b0090b_AOS16_reg4x16.md) | [92 i386sx-motherboard](b0092b_fpgamotherboard_i386sx-motherboard.md) |
+| [90. reg4x16](b0090b_AOS16_reg4x16.md) | [92. i386sx-motherboard](b0092b_fpgamotherboard_i386sx-motherboard.md) |

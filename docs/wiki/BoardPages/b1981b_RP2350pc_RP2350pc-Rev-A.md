@@ -1,4 +1,4 @@
-# 1981 RP2350pc_Rev_A
+# 1981. RP2350pc_Rev_A
 
 Board 1,981 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 19](../CorpusTestingPages/Corpus-Testing-19.md#1981-rp2350pc_rev_a).
 
@@ -45,4 +45,4 @@ Board 1,981 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1980 RP2350-PICO2-XXL_Rev_C](b1980b_RP2350-PICO2-XXL_RP2350-PICO2-XXL-Rev-C.md) | [1982 RT1010Py_Rev.C](b1982b_RT1010Py_RT1010Py-Rev-C.md) |
+| [1980. RP2350-PICO2-XXL_Rev_C](b1980b_RP2350-PICO2-XXL_RP2350-PICO2-XXL-Rev-C.md) | [1982. RT1010Py_Rev.C](b1982b_RT1010Py_RT1010Py-Rev-C.md) |

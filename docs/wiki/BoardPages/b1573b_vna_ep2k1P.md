@@ -1,4 +1,4 @@
-# 1573 ep2k1P
+# 1573. ep2k1P
 
 Board 1,573 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 15](../CorpusTestingPages/Corpus-Testing-15.md#1573-ep2k1p).
 
@@ -45,4 +45,4 @@ Board 1,573 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1572 ecp5](b1572b_vna_ecp5.md) | [1574 fpc07181](b1574b_vna_fpc07181.md) |
+| [1572. ecp5](b1572b_vna_ecp5.md) | [1574. fpc07181](b1574b_vna_fpc07181.md) |

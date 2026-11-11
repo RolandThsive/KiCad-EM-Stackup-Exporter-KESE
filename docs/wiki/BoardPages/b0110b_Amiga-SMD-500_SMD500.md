@@ -1,4 +1,4 @@
-# 110 SMD500
+# 110. SMD500
 
 Board 110 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 2](../CorpusTestingPages/Corpus-Testing-02.md#110-smd500).
 
@@ -44,4 +44,4 @@ Board 110 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [109 situacion1](b0109b_plusD-clone_situacion1.md) | [111 AmigaPCI 68040](b0111b_AmigaPCI-LBC040_AmigaPCI-68040.md) |
+| [109. situacion1](b0109b_plusD-clone_situacion1.md) | [111. AmigaPCI 68040](b0111b_AmigaPCI-LBC040_AmigaPCI-68040.md) |

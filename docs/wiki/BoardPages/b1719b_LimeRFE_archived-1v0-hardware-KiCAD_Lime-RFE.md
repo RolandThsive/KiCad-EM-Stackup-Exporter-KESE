@@ -1,4 +1,4 @@
-# 1719 Lime_RFE
+# 1719. Lime_RFE
 
 Board 1,719 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 16](../CorpusTestingPages/Corpus-Testing-16.md#1719-lime_rfe).
 
@@ -45,4 +45,4 @@ Board 1,719 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1718 Lime_RFE_fab](b1718b_LimeRFE_Lime-RFE-fab.md) | [1720 Lime_RFE](b1720b_LimeRFE_archived-1v2-hardware-KiCAD_Lime-RFE.md) |
+| [1718. Lime_RFE_fab](b1718b_LimeRFE_Lime-RFE-fab.md) | [1720. Lime_RFE](b1720b_LimeRFE_archived-1v2-hardware-KiCAD_Lime-RFE.md) |

@@ -1,4 +1,4 @@
-# 36 Memory Card
+# 36. Memory Card
 
 Board 36 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 1](../CorpusTestingPages/Corpus-Testing-01.md#36-memory-card).
 
@@ -45,4 +45,4 @@ Board 36 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page
 
 | Previous | Next |
 |:---|---:|
-| [35 Mega Helper](b0035b_6502_Mega-Helper.md) | [37 Prototype Card](b0037b_6502_Prototype-Card.md) |
+| [35. Mega Helper](b0035b_6502_Mega-Helper.md) | [37. Prototype Card](b0037b_6502_Prototype-Card.md) |

@@ -1,4 +1,4 @@
-# 2852 led_panel_3
+# 2852. led_panel_3
 
 Board 2,852 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 27](../CorpusTestingPages/Corpus-Testing-27.md#2852-led_panel_3).
 
@@ -46,4 +46,4 @@ Board 2,852 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2851 led_panel_2](b2851b_alu_led-panel-2.md) | [2853 main_control](b2853b_alu_main-control.md) |
+| [2851. led_panel_2](b2851b_alu_led-panel-2.md) | [2853. main_control](b2853b_alu_main-control.md) |

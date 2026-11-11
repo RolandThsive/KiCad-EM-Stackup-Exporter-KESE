@@ -1,4 +1,4 @@
-# 520 gd 6502 proto pcb
+# 520. gd 6502 proto pcb
 
 Board 520 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 5](../CorpusTestingPages/Corpus-Testing-05.md#520-gd-6502-proto-pcb).
 
@@ -45,4 +45,4 @@ Board 520 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [519 PLCC44 to DIP44 Adapter](b0519b_Mega-IIe_PLCC44-to-DIP44-Adapter.md) | [521 gd MegaII proto pcb](b0521b_Mega-IIe_kicad-files-rev1-gd-MegaII-proto-pcb_gd-MegaII-proto-pcb.md) |
+| [519. PLCC44 to DIP44 Adapter](b0519b_Mega-IIe_PLCC44-to-DIP44-Adapter.md) | [521. gd MegaII proto pcb](b0521b_Mega-IIe_kicad-files-rev1-gd-MegaII-proto-pcb_gd-MegaII-proto-pcb.md) |

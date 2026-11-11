@@ -1,4 +1,4 @@
-# 994 PSLab
+# 994. PSLab
 
 Board 994 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 10](../CorpusTestingPages/Corpus-Testing-10.md#994-pslab).
 
@@ -45,4 +45,4 @@ Board 994 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [993 PCBs](b0993b_pslab-hardware_PCBs.md) | [995 PSLab](b0995b_pslab-hardware_archives-PSLab-KiCAD-v3_PSLab.md) |
+| [993. PCBs](b0993b_pslab-hardware_PCBs.md) | [995. PSLab](b0995b_pslab-hardware_archives-PSLab-KiCAD-v3_PSLab.md) |

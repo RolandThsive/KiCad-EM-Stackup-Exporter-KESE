@@ -1,4 +1,4 @@
-# 683 ClassicIIRevB
+# 683. ClassicIIRevB
 
 Board 683 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 7](../CorpusTestingPages/Corpus-Testing-07.md#683-classiciirevb).
 
@@ -45,4 +45,4 @@ Board 683 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [682 ClassicIIReloaded](b0682b_ClassicII_ClassicIIReloaded.md) | [684 ButterStick](b0684b_butterstick-hardware_hardware-ButterStick-r0-1_ButterStick.md) |
+| [682. ClassicIIReloaded](b0682b_ClassicII_ClassicIIReloaded.md) | [684. ButterStick](b0684b_butterstick-hardware_hardware-ButterStick-r0-1_ButterStick.md) |

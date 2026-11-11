@@ -1,4 +1,4 @@
-# 771 panel_proto_lna_board
+# 771. panel_proto_lna_board
 
 Board 771 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 8](../CorpusTestingPages/Corpus-Testing-08.md#771-panel_proto_lna_board).
 
@@ -46,4 +46,4 @@ Board 771 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [770 panel_proto_data_slicer_board](b0770b_adsbee_panel-proto-data-slicer-board.md) | [772 panel_proto_tracking_comparator_board](b0772b_adsbee_panel-proto-tracking-comparator-board.md) |
+| [770. panel_proto_data_slicer_board](b0770b_adsbee_panel-proto-data-slicer-board.md) | [772. panel_proto_tracking_comparator_board](b0772b_adsbee_panel-proto-tracking-comparator-board.md) |

@@ -1,4 +1,4 @@
-# 576 DB44_breakout
+# 576. DB44_breakout
 
 Board 576 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 6](../CorpusTestingPages/Corpus-Testing-06.md#576-db44_breakout).
 
@@ -45,4 +45,4 @@ Board 576 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [575 AD5689RARUZ-RL7_breakboard](b0575b_22xt-kicad_AD5689RARUZ-RL7-breakboard.md) | [577 main_board_peripheral_v1](b0577b_22xt-kicad_main-board-peripheral-v1.md) |
+| [575. AD5689RARUZ-RL7_breakboard](b0575b_22xt-kicad_AD5689RARUZ-RL7-breakboard.md) | [577. main_board_peripheral_v1](b0577b_22xt-kicad_main-board-peripheral-v1.md) |

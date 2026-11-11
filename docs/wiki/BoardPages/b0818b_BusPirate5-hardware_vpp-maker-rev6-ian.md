@@ -1,4 +1,4 @@
-# 818 vpp-maker-rev6-ian
+# 818. vpp-maker-rev6-ian
 
 Board 818 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 8](../CorpusTestingPages/Corpus-Testing-08.md#818-vpp-maker-rev6-ian).
 
@@ -45,4 +45,4 @@ Board 818 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [817 stemma-qwiic-grove-gravity-bog-plank-1REV1](b0817b_BusPirate5-hardware_stemma-qwiic-grove-gravity-bog-plank-1REV1.md) | [819 REV10a](b0819b_BusPirate5-hardware_REV10a.md) |
+| [817. stemma-qwiic-grove-gravity-bog-plank-1REV1](b0817b_BusPirate5-hardware_stemma-qwiic-grove-gravity-bog-plank-1REV1.md) | [819. REV10a](b0819b_BusPirate5-hardware_REV10a.md) |

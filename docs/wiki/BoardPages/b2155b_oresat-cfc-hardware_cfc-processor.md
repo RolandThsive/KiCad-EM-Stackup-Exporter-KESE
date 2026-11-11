@@ -1,4 +1,4 @@
-# 2155 cfc-processor
+# 2155. cfc-processor
 
 Board 2,155 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 20](../CorpusTestingPages/Corpus-Testing-20.md#2155-cfc-processor).
 
@@ -45,4 +45,4 @@ Board 2,155 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2154 cfc-minibackplane](b2154b_oresat-cfc-hardware_cfc-minibackplane.md) | [2156 cfc-sensor-card](b2156b_oresat-cfc-hardware_cfc-sensor-card.md) |
+| [2154. cfc-minibackplane](b2154b_oresat-cfc-hardware_cfc-minibackplane.md) | [2156. cfc-sensor-card](b2156b_oresat-cfc-hardware_cfc-sensor-card.md) |

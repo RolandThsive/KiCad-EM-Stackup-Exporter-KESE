@@ -1,4 +1,4 @@
-# 1583 vna_mm_synth
+# 1583. vna_mm_synth
 
 Board 1,583 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 15](../CorpusTestingPages/Corpus-Testing-15.md#1583-vna_mm_synth).
 
@@ -46,4 +46,4 @@ Board 1,583 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1582 vna_mm_ref](b1582b_vna_vna-mm-ref.md) | [1584 vna_r1](b1584b_vna_vna-r1.md) |
+| [1582. vna_mm_ref](b1582b_vna_vna-mm-ref.md) | [1584. vna_r1](b1584b_vna_vna-r1.md) |

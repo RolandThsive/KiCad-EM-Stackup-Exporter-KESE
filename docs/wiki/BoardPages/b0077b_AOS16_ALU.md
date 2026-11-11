@@ -1,4 +1,4 @@
-# 77 ALU
+# 77. ALU
 
 Board 77 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 1](../CorpusTestingPages/Corpus-Testing-01.md#77-alu).
 
@@ -45,4 +45,4 @@ Board 77 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page
 
 | Previous | Next |
 |:---|---:|
-| [76 RAM-Module](b0076b_Open-Source-PC110_RAM-Module.md) | [78 AOS16 Double Buffer](b0078b_AOS16_AOS16-Double-Buffer.md) |
+| [76. RAM-Module](b0076b_Open-Source-PC110_RAM-Module.md) | [78. AOS16 Double Buffer](b0078b_AOS16_AOS16-Double-Buffer.md) |

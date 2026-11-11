@@ -1,4 +1,4 @@
-# 2709 ail
+# 2709. ail
 
 Board 2,709 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 26](../CorpusTestingPages/Corpus-Testing-26.md#2709-ail).
 
@@ -45,4 +45,4 @@ Board 2,709 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2708 ail-LED_handsolder](b2708b_pcb_ail-LED-handsolder.md) | [2710 debug-board](b2710b_pcb_debug-board.md) |
+| [2708. ail-LED_handsolder](b2708b_pcb_ail-LED-handsolder.md) | [2710. debug-board](b2710b_pcb_debug-board.md) |

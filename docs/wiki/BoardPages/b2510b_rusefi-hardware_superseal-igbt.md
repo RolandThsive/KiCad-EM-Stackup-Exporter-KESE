@@ -1,4 +1,4 @@
-# 2510 superseal-igbt
+# 2510. superseal-igbt
 
 Board 2,510 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 24](../CorpusTestingPages/Corpus-Testing-24.md#2510-superseal-igbt).
 
@@ -45,4 +45,4 @@ Board 2,510 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2509 quad-igbt](b2509b_rusefi-hardware_quad-igbt.md) | [2511 tle9104-breakout](b2511b_rusefi-hardware_tle9104-breakout.md) |
+| [2509. quad-igbt](b2509b_rusefi-hardware_quad-igbt.md) | [2511. tle9104-breakout](b2511b_rusefi-hardware_tle9104-breakout.md) |

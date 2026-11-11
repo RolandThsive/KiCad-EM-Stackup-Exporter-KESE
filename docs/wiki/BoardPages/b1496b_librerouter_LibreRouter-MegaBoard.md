@@ -1,4 +1,4 @@
-# 1496 LibreRouter_MegaBoard
+# 1496. LibreRouter_MegaBoard
 
 Board 1,496 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 14](../CorpusTestingPages/Corpus-Testing-14.md#1496-librerouter_megaboard).
 
@@ -45,4 +45,4 @@ Board 1,496 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1495 TestBoard_TPS27SA08-Q1](b1495b_ps-powerdistributionunit_TestBoard-TPS27SA08-Q1.md) | [1497 bms-8s50-ic](b1497b_bms-8s50-ic_bms-8s50-ic.md) |
+| [1495. TestBoard_TPS27SA08-Q1](b1495b_ps-powerdistributionunit_TestBoard-TPS27SA08-Q1.md) | [1497. bms-8s50-ic](b1497b_bms-8s50-ic_bms-8s50-ic.md) |

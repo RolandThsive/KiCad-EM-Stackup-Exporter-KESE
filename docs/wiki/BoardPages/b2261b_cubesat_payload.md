@@ -1,4 +1,4 @@
-# 2261 payload
+# 2261. payload
 
 Board 2,261 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 21](../CorpusTestingPages/Corpus-Testing-21.md#2261-payload).
 
@@ -45,4 +45,4 @@ Board 2,261 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2260 obc](b2260b_cubesat_obc.md) | [2262 usb_c](b2262b_cubesat_usb-c.md) |
+| [2260. obc](b2260b_cubesat_obc.md) | [2262. usb_c](b2262b_cubesat_usb-c.md) |

@@ -1,4 +1,4 @@
-# 1998 UEXT-P4Q_Rev_A
+# 1998. UEXT-P4Q_Rev_A
 
 Board 1,998 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 19](../CorpusTestingPages/Corpus-Testing-19.md#1998-uext-p4q_rev_a).
 
@@ -45,4 +45,4 @@ Board 1,998 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1997 UEXT-MPQ_Rev_A](b1997b_UEXT-ADAPTERS_UEXT-MPQ-Rev-A.md) | [1999 UEXT-PQ_Rev_A](b1999b_UEXT-ADAPTERS_UEXT-PQ-Rev-A.md) |
+| [1997. UEXT-MPQ_Rev_A](b1997b_UEXT-ADAPTERS_UEXT-MPQ-Rev-A.md) | [1999. UEXT-PQ_Rev_A](b1999b_UEXT-ADAPTERS_UEXT-PQ-Rev-A.md) |

@@ -1,4 +1,4 @@
-# 2595 psfeedback
+# 2595. psfeedback
 
 Board 2,595 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 25](../CorpusTestingPages/Corpus-Testing-25.md#2595-psfeedback).
 
@@ -45,4 +45,4 @@ Board 2,595 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2594 Header2x20](b2594b_Hermes-Lite2_Header2x20.md) | [2596 smallio](b2596b_Hermes-Lite2_smallio.md) |
+| [2594. Header2x20](b2594b_Hermes-Lite2_Header2x20.md) | [2596. smallio](b2596b_Hermes-Lite2_smallio.md) |

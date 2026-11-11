@@ -1,4 +1,4 @@
-# 959 right_io
+# 959. right_io
 
 Board 959 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 9](../CorpusTestingPages/Corpus-Testing-09.md#959-right_io).
 
@@ -45,4 +45,4 @@ Board 959 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [958 monolith_ducktop2](b0958b_ducktop2_monolith-ducktop2.md) | [960 ACE-COLOUR](b0960b_Ace-2019_ACE-COLOUR.md) |
+| [958. monolith_ducktop2](b0958b_ducktop2_monolith-ducktop2.md) | [960. ACE-COLOUR](b0960b_Ace-2019_ACE-COLOUR.md) |

@@ -1,4 +1,4 @@
-# 460 amplifier
+# 460. amplifier
 
 Board 460 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 5](../CorpusTestingPages/Corpus-Testing-05.md#460-amplifier).
 
@@ -45,4 +45,4 @@ Board 460 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [459 akl-ad1](b0459b_starshipraider_akl-ad1.md) | [461 tip](b0461b_starshipraider_tip.md) |
+| [459. akl-ad1](b0459b_starshipraider_akl-ad1.md) | [461. tip](b0461b_starshipraider_tip.md) |

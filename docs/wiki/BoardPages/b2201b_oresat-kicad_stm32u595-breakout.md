@@ -1,4 +1,4 @@
-# 2201 stm32u595-breakout
+# 2201. stm32u595-breakout
 
 Board 2,201 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 21](../CorpusTestingPages/Corpus-Testing-21.md#2201-stm32u595-breakout).
 
@@ -45,4 +45,4 @@ Board 2,201 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2200 synthesizer-IF-Si4112](b2200b_oresat-kicad_synthesizer-IF-Si4112.md) | [2202 amp-PA-TQP7M9105-with-detect](b2202b_oresat-kicad_amp-PA-TQP7M9105-with-detect.md) |
+| [2200. synthesizer-IF-Si4112](b2200b_oresat-kicad_synthesizer-IF-Si4112.md) | [2202. amp-PA-TQP7M9105-with-detect](b2202b_oresat-kicad_amp-PA-TQP7M9105-with-detect.md) |

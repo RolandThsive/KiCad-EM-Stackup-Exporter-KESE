@@ -1,4 +1,4 @@
-# 3046 macpro62-storage-face
+# 3046. macpro62-storage-face
 
 Board 3,046 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 29](../CorpusTestingPages/Corpus-Testing-29.md#3046-macpro62-storage-face).
 
@@ -46,4 +46,4 @@ Board 3,046 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [3045 macpro62-storage-face-2x](b3045b_the-mac-pro-project_macpro62-storage-face-2x.md) | [3047 fpga_hat](b3047b_Snowflake-FPGA_fpga-hat.md) |
+| [3045. macpro62-storage-face-2x](b3045b_the-mac-pro-project_macpro62-storage-face-2x.md) | [3047. fpga_hat](b3047b_Snowflake-FPGA_fpga-hat.md) |

@@ -1,4 +1,4 @@
-# 1675 adapter
+# 1675. adapter
 
 Board 1,675 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 16](../CorpusTestingPages/Corpus-Testing-16.md#1675-adapter).
 
@@ -45,4 +45,4 @@ Board 1,675 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1674 adapter](b1674b_Glider_pcb-40p-adapter-ab_adapter.md) | [1676 adapter](b1676b_Glider_pcb-50p-adapter-c_adapter.md) |
+| [1674. adapter](b1674b_Glider_pcb-40p-adapter-ab_adapter.md) | [1676. adapter](b1676b_Glider_pcb-50p-adapter-c_adapter.md) |

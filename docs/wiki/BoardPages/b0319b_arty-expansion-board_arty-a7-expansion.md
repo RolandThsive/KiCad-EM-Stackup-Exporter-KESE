@@ -1,4 +1,4 @@
-# 319 arty-a7-expansion
+# 319. arty-a7-expansion
 
 Board 319 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 3](../CorpusTestingPages/Corpus-Testing-03.md#319-arty-a7-expansion).
 
@@ -44,4 +44,4 @@ Board 319 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [318 artix-dc-scm](b0318b_artix-dc-scm_artix-dc-scm.md) | [320 arty-mpw-tester](b0320b_arty-mpw-tester_arty-mpw-tester.md) |
+| [318. artix-dc-scm](b0318b_artix-dc-scm_artix-dc-scm.md) | [320. arty-mpw-tester](b0320b_arty-mpw-tester_arty-mpw-tester.md) |

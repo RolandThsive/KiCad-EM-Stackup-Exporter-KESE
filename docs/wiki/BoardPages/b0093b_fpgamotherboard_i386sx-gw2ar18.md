@@ -1,4 +1,4 @@
-# 93 i386sx-gw2ar18
+# 93. i386sx-gw2ar18
 
 Board 93 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 1](../CorpusTestingPages/Corpus-Testing-01.md#93-i386sx-gw2ar18).
 
@@ -45,4 +45,4 @@ Board 93 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page
 
 | Previous | Next |
 |:---|---:|
-| [92 i386sx-motherboard](b0092b_fpgamotherboard_i386sx-motherboard.md) | [94 socket3-csg324](b0094b_fpgamotherboard_socket3-csg324.md) |
+| [92. i386sx-motherboard](b0092b_fpgamotherboard_i386sx-motherboard.md) | [94. socket3-csg324](b0094b_fpgamotherboard_socket3-csg324.md) |

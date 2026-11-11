@@ -1,4 +1,4 @@
-# 2200 synthesizer-IF-Si4112
+# 2200. synthesizer-IF-Si4112
 
 Board 2,200 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 21](../CorpusTestingPages/Corpus-Testing-21.md#2200-synthesizer-if-si4112).
 
@@ -45,4 +45,4 @@ Board 2,200 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2199 oresat-5V2A-regulator](b2199b_oresat-kicad_oresat-5V2A-regulator.md) | [2201 stm32u595-breakout](b2201b_oresat-kicad_stm32u595-breakout.md) |
+| [2199. oresat-5V2A-regulator](b2199b_oresat-kicad_oresat-5V2A-regulator.md) | [2201. stm32u595-breakout](b2201b_oresat-kicad_stm32u595-breakout.md) |

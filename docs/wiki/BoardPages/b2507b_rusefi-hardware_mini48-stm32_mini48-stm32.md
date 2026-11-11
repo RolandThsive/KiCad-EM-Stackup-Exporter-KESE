@@ -1,4 +1,4 @@
-# 2507 mini48-stm32
+# 2507. mini48-stm32
 
 Board 2,507 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 24](../CorpusTestingPages/Corpus-Testing-24.md#2507-mini48-stm32).
 
@@ -45,4 +45,4 @@ Board 2,507 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2506 MC33810-breakout](b2506b_rusefi-hardware_MC33810-breakout.md) | [2508 ncv1124-micro](b2508b_rusefi-hardware_ncv1124-micro.md) |
+| [2506. MC33810-breakout](b2506b_rusefi-hardware_MC33810-breakout.md) | [2508. ncv1124-micro](b2508b_rusefi-hardware_ncv1124-micro.md) |

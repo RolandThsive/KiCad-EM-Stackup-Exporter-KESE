@@ -1,4 +1,4 @@
-# 419 usb-c-power-adapter
+# 419. usb-c-power-adapter
 
 Board 419 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 4](../CorpusTestingPages/Corpus-Testing-04.md#419-usb-c-power-adapter).
 
@@ -44,4 +44,4 @@ Board 419 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [418 thunderbolt-pcie-adapter](b0418b_thunderbolt-pcie-adapter_thunderbolt-pcie-adapter.md) | [420 video-latency-testing-probe](b0420b_video-latency-testing-probe_video-latency-testing-probe.md) |
+| [418. thunderbolt-pcie-adapter](b0418b_thunderbolt-pcie-adapter_thunderbolt-pcie-adapter.md) | [420. video-latency-testing-probe](b0420b_video-latency-testing-probe_video-latency-testing-probe.md) |

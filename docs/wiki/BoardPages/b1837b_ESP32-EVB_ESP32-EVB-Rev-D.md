@@ -1,4 +1,4 @@
-# 1837 ESP32-EVB_Rev_D
+# 1837. ESP32-EVB_Rev_D
 
 Board 1,837 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 18](../CorpusTestingPages/Corpus-Testing-18.md#1837-esp32-evb_rev_d).
 
@@ -45,4 +45,4 @@ Board 1,837 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1836 ESP32-EVB_Rev_C](b1836b_ESP32-EVB_ESP32-EVB-Rev-C.md) | [1838 ESP32-EVB_Rev_F](b1838b_ESP32-EVB_ESP32-EVB-Rev-F.md) |
+| [1836. ESP32-EVB_Rev_C](b1836b_ESP32-EVB_ESP32-EVB-Rev-C.md) | [1838. ESP32-EVB_Rev_F](b1838b_ESP32-EVB_ESP32-EVB-Rev-F.md) |

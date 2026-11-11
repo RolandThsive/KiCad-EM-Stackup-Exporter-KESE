@@ -1,4 +1,4 @@
-# 1051 test-jig
+# 1051. test-jig
 
 Board 1,051 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 10](../CorpusTestingPages/Corpus-Testing-10.md#1051-test-jig).
 
@@ -45,4 +45,4 @@ Board 1,051 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1050 glasgow](b1050b_glasgow_hardware-boards-glasgow-revD1_glasgow.md) | [1052 gmm](b1052b_gmm7550-hardware_gmm.md) |
+| [1050. glasgow](b1050b_glasgow_hardware-boards-glasgow-revD1_glasgow.md) | [1052. gmm](b1052b_gmm7550-hardware_gmm.md) |

@@ -1,4 +1,4 @@
-# 953 bms
+# 953. bms
 
 Board 953 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 9](../CorpusTestingPages/Corpus-Testing-09.md#953-bms).
 
@@ -45,4 +45,4 @@ Board 953 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [952 Home Assistant Voice PE](b0952b_home-assistant-voice-pe_Home-Assistant-Voice-PE.md) | [954 ducktop2-center](b0954b_ducktop2_ducktop2-center.md) |
+| [952. Home Assistant Voice PE](b0952b_home-assistant-voice-pe_Home-Assistant-Voice-PE.md) | [954. ducktop2-center](b0954b_ducktop2_ducktop2-center.md) |

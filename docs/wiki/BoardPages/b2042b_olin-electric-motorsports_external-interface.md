@@ -1,4 +1,4 @@
-# 2042 external_interface
+# 2042. external_interface
 
 Board 2,042 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 19](../CorpusTestingPages/Corpus-Testing-19.md#2042-external_interface).
 
@@ -45,4 +45,4 @@ Board 2,042 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2041 bms_core](b2041b_olin-electric-motorsports_vehicle-mkv-hardware-service-section-controller_bms-core.md) | [2043 internal_interface](b2043b_olin-electric-motorsports_internal-interface.md) |
+| [2041. bms_core](b2041b_olin-electric-motorsports_vehicle-mkv-hardware-service-section-controller_bms-core.md) | [2043. internal_interface](b2043b_olin-electric-motorsports_internal-interface.md) |

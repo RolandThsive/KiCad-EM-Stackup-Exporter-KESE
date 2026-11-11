@@ -1,4 +1,4 @@
-# 2614 SparkFun_GNSS_Flex_Module_LG290P-Tilt_panelized
+# 2614. SparkFun_GNSS_Flex_Module_LG290P-Tilt_panelized
 
 Board 2,614 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 25](../CorpusTestingPages/Corpus-Testing-25.md#2614-sparkfun_gnss_flex_module_lg290p-tilt_panelized).
 
@@ -46,4 +46,4 @@ Board 2,614 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2613 SparkFun_GNSS_Flex_Module_DAN-F10N](b2613b_sparkfun-gnss-flex-system_SparkFun-GNSS-Flex-Module-DAN-F10N.md) | [2615 SparkFun_GNSS_Flex_Module_LG290P-Tilt](b2615b_sparkfun-gnss-flex-system_SparkFun-GNSS-Flex-Module-LG290P-Tilt.md) |
+| [2613. SparkFun_GNSS_Flex_Module_DAN-F10N](b2613b_sparkfun-gnss-flex-system_SparkFun-GNSS-Flex-Module-DAN-F10N.md) | [2615. SparkFun_GNSS_Flex_Module_LG290P-Tilt](b2615b_sparkfun-gnss-flex-system_SparkFun-GNSS-Flex-Module-LG290P-Tilt.md) |

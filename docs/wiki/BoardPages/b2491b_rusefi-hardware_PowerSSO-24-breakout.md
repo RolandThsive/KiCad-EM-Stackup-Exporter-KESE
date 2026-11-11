@@ -1,4 +1,4 @@
-# 2491 PowerSSO-24_breakout
+# 2491. PowerSSO-24_breakout
 
 Board 2,491 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 24](../CorpusTestingPages/Corpus-Testing-24.md#2491-powersso-24_breakout).
 
@@ -45,4 +45,4 @@ Board 2,491 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2490 PWR_buck_12V_switcher](b2490b_rusefi-hardware_classic-designs-rusefi-hardware-history-power-supply-kb1gtt-rev00-10_PWR-buck-12V-switcher.md) | [2492 Stimulator](b2492b_rusefi-hardware_classic-designs-rusefi-hardware-history-Stimulator-rev00-10_Stimulator.md) |
+| [2490. PWR_buck_12V_switcher](b2490b_rusefi-hardware_classic-designs-rusefi-hardware-history-power-supply-kb1gtt-rev00-10_PWR-buck-12V-switcher.md) | [2492. Stimulator](b2492b_rusefi-hardware_classic-designs-rusefi-hardware-history-Stimulator-rev00-10_Stimulator.md) |

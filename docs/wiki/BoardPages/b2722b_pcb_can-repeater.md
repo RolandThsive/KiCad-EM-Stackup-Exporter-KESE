@@ -1,4 +1,4 @@
-# 2722 can-repeater
+# 2722. can-repeater
 
 Board 2,722 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 26](../CorpusTestingPages/Corpus-Testing-26.md#2722-can-repeater).
 
@@ -45,4 +45,4 @@ Board 2,722 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2721 BSPD](b2721b_pcb_BSPD.md) | [2723 curr-amp](b2723b_pcb_curr-amp.md) |
+| [2721. BSPD](b2721b_pcb_BSPD.md) | [2723. curr-amp](b2723b_pcb_curr-amp.md) |

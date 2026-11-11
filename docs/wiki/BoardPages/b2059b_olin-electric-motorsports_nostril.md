@@ -1,4 +1,4 @@
-# 2059 nostril
+# 2059. nostril
 
 Board 2,059 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 20](../CorpusTestingPages/Corpus-Testing-20.md#2059-nostril).
 
@@ -45,4 +45,4 @@ Board 2,059 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2058 dashboard](b2058b_olin-electric-motorsports_vehicle-mkvi-hardware-nostril-dashboard_dashboard.md) | [2060 throttle](b2060b_olin-electric-motorsports_vehicle-mkvi-hardware-nostril-throttle_throttle.md) |
+| [2058. dashboard](b2058b_olin-electric-motorsports_vehicle-mkvi-hardware-nostril-dashboard_dashboard.md) | [2060. throttle](b2060b_olin-electric-motorsports_vehicle-mkvi-hardware-nostril-throttle_throttle.md) |

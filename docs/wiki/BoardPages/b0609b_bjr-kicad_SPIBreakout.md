@@ -1,4 +1,4 @@
-# 609 SPIBreakout
+# 609. SPIBreakout
 
 Board 609 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 6](../CorpusTestingPages/Corpus-Testing-06.md#609-spibreakout).
 
@@ -45,4 +45,4 @@ Board 609 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [608 Untitled](b0608b_bjr-kicad_Untitled.md) | [610 usb_c_daughter](b0610b_bjr-kicad_usb-c-daughter.md) |
+| [608. Untitled](b0608b_bjr-kicad_Untitled.md) | [610. usb_c_daughter](b0610b_bjr-kicad_usb-c-daughter.md) |

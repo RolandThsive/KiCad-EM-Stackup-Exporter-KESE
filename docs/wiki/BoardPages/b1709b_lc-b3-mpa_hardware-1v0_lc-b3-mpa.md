@@ -1,4 +1,4 @@
-# 1709 lc-b3-mpa
+# 1709. lc-b3-mpa
 
 Board 1,709 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 16](../CorpusTestingPages/Corpus-Testing-16.md#1709-lc-b3-mpa).
 
@@ -45,4 +45,4 @@ Board 1,709 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1708 lc-b3-mpa](b1708b_lc-b3-mpa_hardware-0v1_lc-b3-mpa.md) | [1710 CSAD10](b1710b_lc-clock_CSAD10.md) |
+| [1708. lc-b3-mpa](b1708b_lc-b3-mpa_hardware-0v1_lc-b3-mpa.md) | [1710. CSAD10](b1710b_lc-clock_CSAD10.md) |

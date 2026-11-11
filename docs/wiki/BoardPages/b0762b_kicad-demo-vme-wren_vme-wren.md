@@ -1,4 +1,4 @@
-# 762 vme-wren
+# 762. vme-wren
 
 Board 762 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 8](../CorpusTestingPages/Corpus-Testing-08.md#762-vme-wren).
 
@@ -45,4 +45,4 @@ Board 762 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [761 ciaa-z3r0](b0761b_Hardware_ciaa-z3r0.md) | [763 fmcw3](b0763b_fmcw3-kicad_fmcw3.md) |
+| [761. ciaa-z3r0](b0761b_Hardware_ciaa-z3r0.md) | [763. fmcw3](b0763b_fmcw3-kicad_fmcw3.md) |

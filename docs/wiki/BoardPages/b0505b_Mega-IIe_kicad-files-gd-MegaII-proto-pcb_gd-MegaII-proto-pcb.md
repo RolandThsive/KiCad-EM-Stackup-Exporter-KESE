@@ -1,4 +1,4 @@
-# 505 gd MegaII proto pcb
+# 505. gd MegaII proto pcb
 
 Board 505 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 5](../CorpusTestingPages/Corpus-Testing-05.md#505-gd-megaii-proto-pcb).
 
@@ -45,4 +45,4 @@ Board 505 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [504 gd MEGA-65c02 proto pcb](b0504b_Mega-IIe_gd-MEGA-65c02-proto-pcb.md) | [506 gd power supply board pcb](b0506b_Mega-IIe_kicad-files-gd-power-supply-board-pcb_gd-power-supply-board-pcb.md) |
+| [504. gd MEGA-65c02 proto pcb](b0504b_Mega-IIe_gd-MEGA-65c02-proto-pcb.md) | [506. gd power supply board pcb](b0506b_Mega-IIe_kicad-files-gd-power-supply-board-pcb_gd-power-supply-board-pcb.md) |

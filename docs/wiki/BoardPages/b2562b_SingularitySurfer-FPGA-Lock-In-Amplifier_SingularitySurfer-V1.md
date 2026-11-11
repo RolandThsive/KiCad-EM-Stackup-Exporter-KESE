@@ -1,4 +1,4 @@
-# 2562 SingularitySurfer_V1
+# 2562. SingularitySurfer_V1
 
 Board 2,562 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 24](../CorpusTestingPages/Corpus-Testing-24.md#2562-singularitysurfer_v1).
 
@@ -45,4 +45,4 @@ Board 2,562 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2561 Frontend_test](b2561b_SingularitySurfer-FPGA-Lock-In-Amplifier_Frontend-test.md) | [2563 AT386SX](b2563b_mb386sx-rc2016_AT386SX.md) |
+| [2561. Frontend_test](b2561b_SingularitySurfer-FPGA-Lock-In-Amplifier_Frontend-test.md) | [2563. AT386SX](b2563b_mb386sx-rc2016_AT386SX.md) |

@@ -1,4 +1,4 @@
-# 216 Triple MPU Clock Generator
+# 216. Triple MPU Clock Generator
 
 Board 216 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 2](../CorpusTestingPages/Corpus-Testing-02.md#216-triple-mpu-clock-generator).
 
@@ -45,4 +45,4 @@ Board 216 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [215 Status Device](b0215b_658-Computer_Status-Device.md) | [217 Memory 1MB](b0217b_658-Computer_Memory-1MB.md) |
+| [215. Status Device](b0215b_658-Computer_Status-Device.md) | [217. Memory 1MB](b0217b_658-Computer_Memory-1MB.md) |

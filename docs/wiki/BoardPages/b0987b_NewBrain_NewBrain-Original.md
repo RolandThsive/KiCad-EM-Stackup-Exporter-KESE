@@ -1,4 +1,4 @@
-# 987 NewBrain Original
+# 987. NewBrain Original
 
 Board 987 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 10](../CorpusTestingPages/Corpus-Testing-10.md#987-newbrain-original).
 
@@ -47,4 +47,4 @@ Board 987 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [986 NewBrain Keyboard A](b0986b_NewBrain_NewBrain-Keyboard-A.md) | [988 NewBrain PSU](b0988b_NewBrain_NewBrain-PSU.md) |
+| [986. NewBrain Keyboard A](b0986b_NewBrain_NewBrain-Keyboard-A.md) | [988. NewBrain PSU](b0988b_NewBrain_NewBrain-PSU.md) |

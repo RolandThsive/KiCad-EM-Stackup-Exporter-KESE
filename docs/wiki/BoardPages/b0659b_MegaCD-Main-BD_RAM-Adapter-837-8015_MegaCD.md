@@ -1,4 +1,4 @@
-# 659 MegaCD
+# 659. MegaCD
 
 Board 659 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 7](../CorpusTestingPages/Corpus-Testing-07.md#659-megacd).
 
@@ -45,4 +45,4 @@ Board 659 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [658 MegaCD](b0658b_MegaCD-Main-BD_RAM-Adapter-837-8015-01_MegaCD.md) | [660 NeoGeoAES3_5](b0660b_NeoGeoAES-3-5_NeoGeoAES3-5.md) |
+| [658. MegaCD](b0658b_MegaCD-Main-BD_RAM-Adapter-837-8015-01_MegaCD.md) | [660. NeoGeoAES3_5](b0660b_NeoGeoAES-3-5_NeoGeoAES3-5.md) |

@@ -1,4 +1,4 @@
-# 934 icehat
+# 934. icehat
 
 Board 934 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 9](../CorpusTestingPages/Corpus-Testing-09.md#934-icehat).
 
@@ -45,4 +45,4 @@ Board 934 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [933 ice-prog-adapt](b0933b_ice-dongle_ice-prog-adapt.md) | [935 board_presignal](b0935b_discrete6502_board-presignal.md) |
+| [933. ice-prog-adapt](b0933b_ice-dongle_ice-prog-adapt.md) | [935. board_presignal](b0935b_discrete6502_board-presignal.md) |

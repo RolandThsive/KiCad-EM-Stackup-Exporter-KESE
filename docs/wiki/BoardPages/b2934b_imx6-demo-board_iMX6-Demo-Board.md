@@ -1,4 +1,4 @@
-# 2934 iMX6 Demo Board
+# 2934. iMX6 Demo Board
 
 Board 2,934 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 28](../CorpusTestingPages/Corpus-Testing-28.md#2934-imx6-demo-board).
 
@@ -45,4 +45,4 @@ Board 2,934 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2933 trezor_v1.1](b2933b_trezor-hardware_trezor-v1-1.md) | [2935 iMX6 Demo Board_from_REF](b2935b_imx6-demo-board_iMX6-Demo-Board-from-REF.md) |
+| [2933. trezor_v1.1](b2933b_trezor-hardware_trezor-v1-1.md) | [2935. iMX6 Demo Board_from_REF](b2935b_imx6-demo-board_iMX6-Demo-Board-from-REF.md) |

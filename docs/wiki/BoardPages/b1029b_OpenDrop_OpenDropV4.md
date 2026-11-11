@@ -1,4 +1,4 @@
-# 1029 OpenDropV4
+# 1029. OpenDropV4
 
 Board 1,029 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 10](../CorpusTestingPages/Corpus-Testing-10.md#1029-opendropv4).
 
@@ -45,4 +45,4 @@ Board 1,029 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1028 ModulAdapter_universal](b1028b_OpenDrop_ModulAdapter-universal.md) | [1030 OpenFrame](b1030b_OpenDrop_OpenFrame.md) |
+| [1028. ModulAdapter_universal](b1028b_OpenDrop_ModulAdapter-universal.md) | [1030. OpenFrame](b1030b_OpenDrop_OpenFrame.md) |

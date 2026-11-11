@@ -1,4 +1,4 @@
-# 2186 oresat-flatsat-interface
+# 2186. oresat-flatsat-interface
 
 Board 2,186 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 21](../CorpusTestingPages/Corpus-Testing-21.md#2186-oresat-flatsat-interface).
 
@@ -45,4 +45,4 @@ Board 2,186 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2185 flatsat-breakout-main](b2185b_oresat-flatsat_flatsat-breakout-main.md) | [2187 swd-to-card-debug-3](b2187b_oresat-flatsat_swd-to-card-debug-3.md) |
+| [2185. flatsat-breakout-main](b2185b_oresat-flatsat_flatsat-breakout-main.md) | [2187. swd-to-card-debug-3](b2187b_oresat-flatsat_swd-to-card-debug-3.md) |

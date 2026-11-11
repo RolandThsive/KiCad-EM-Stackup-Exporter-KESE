@@ -1,4 +1,4 @@
-# 813 wago kf141v adapter
+# 813. wago kf141v adapter
 
 Board 813 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 8](../CorpusTestingPages/Corpus-Testing-08.md#813-wago-kf141v-adapter).
 
@@ -45,4 +45,4 @@ Board 813 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [812 wago kf141r adapter](b0812b_BusPirate5-hardware_wago-kf141r-adapter.md) | [814 adapter-ram-ddr5-1REV2](b0814b_BusPirate5-hardware_adapter-ram-ddr5-1REV2.md) |
+| [812. wago kf141r adapter](b0812b_BusPirate5-hardware_wago-kf141r-adapter.md) | [814. adapter-ram-ddr5-1REV2](b0814b_BusPirate5-hardware_adapter-ram-ddr5-1REV2.md) |

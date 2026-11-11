@@ -1,4 +1,4 @@
-# 864 Piunora
+# 864. Piunora
 
 Board 864 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 8](../CorpusTestingPages/Corpus-Testing-08.md#864-piunora).
 
@@ -45,4 +45,4 @@ Board 864 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [863 laptop_kbrd](b0863b_novenaX-kicad_laptop-kbrd.md) | [865 Nixie_proj](b0865b_tlnixie_Nixie-proj.md) |
+| [863. laptop_kbrd](b0863b_novenaX-kicad_laptop-kbrd.md) | [865. Nixie_proj](b0865b_tlnixie_Nixie-proj.md) |

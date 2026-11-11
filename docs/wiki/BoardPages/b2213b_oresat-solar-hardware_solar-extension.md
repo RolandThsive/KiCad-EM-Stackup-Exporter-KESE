@@ -1,4 +1,4 @@
-# 2213 solar-extension
+# 2213. solar-extension
 
 Board 2,213 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 21](../CorpusTestingPages/Corpus-Testing-21.md#2213-solar-extension).
 
@@ -45,4 +45,4 @@ Board 2,213 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2212 1u_panel](b2212b_oresat-solar-hardware_1u-panel.md) | [2214 solar-module-1u-gaas](b2214b_oresat-solar-hardware_solar-module-1u-gaas-MCXN_solar-module-1u-gaas.md) |
+| [2212. 1u_panel](b2212b_oresat-solar-hardware_1u-panel.md) | [2214. solar-module-1u-gaas](b2214b_oresat-solar-hardware_solar-module-1u-gaas-MCXN_solar-module-1u-gaas.md) |

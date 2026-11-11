@@ -1,4 +1,4 @@
-# 2398 nyx
+# 2398. nyx
 
 Board 2,398 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 23](../CorpusTestingPages/Corpus-Testing-23.md#2398-nyx).
 
@@ -45,4 +45,4 @@ Board 2,398 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2397 minifrank](b2397b_frank_minifrank.md) | [2399 oldskool](b2399b_frank_oldskool.md) |
+| [2397. minifrank](b2397b_frank_minifrank.md) | [2399. oldskool](b2399b_frank_oldskool.md) |

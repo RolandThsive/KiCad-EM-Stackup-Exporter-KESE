@@ -1,4 +1,4 @@
-# 1535 powerdet_breakout
+# 1535. powerdet_breakout
 
 Board 1,535 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 15](../CorpusTestingPages/Corpus-Testing-15.md#1535-powerdet_breakout).
 
@@ -45,4 +45,4 @@ Board 1,535 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1534 pe42543_breakout](b1534b_vna_pe42543-breakout.md) | [1536 refclk_breakout](b1536b_vna_refclk-breakout.md) |
+| [1534. pe42543_breakout](b1534b_vna_pe42543-breakout.md) | [1536. refclk_breakout](b1536b_vna_refclk-breakout.md) |

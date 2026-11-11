@@ -1,4 +1,4 @@
-# 3129 pcb
+# 3129. pcb
 
 Board 3,129 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 29](../CorpusTestingPages/Corpus-Testing-29.md#3129-pcb).
 
@@ -45,4 +45,4 @@ Board 3,129 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [3128 2063-Z80](b3128b_2063-Z80_2063-Z80.md) | [3130 adapter](b3130b_nekoink_adapter.md) |
+| [3128. 2063-Z80](b3128b_2063-Z80_2063-Z80.md) | [3130. adapter](b3130b_nekoink_adapter.md) |

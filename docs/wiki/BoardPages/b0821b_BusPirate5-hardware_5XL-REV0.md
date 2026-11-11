@@ -1,4 +1,4 @@
-# 821 5XL-REV0
+# 821. 5XL-REV0
 
 Board 821 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 8](../CorpusTestingPages/Corpus-Testing-08.md#821-5xl-rev0).
 
@@ -45,4 +45,4 @@ Board 821 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [820 BusPirate-5-rev8](b0820b_BusPirate5-hardware_BusPirate-5-rev8.md) | [822 6-REV2b](b0822b_BusPirate5-hardware_6-REV2b.md) |
+| [820. BusPirate-5-rev8](b0820b_BusPirate5-hardware_BusPirate-5-rev8.md) | [822. 6-REV2b](b0822b_BusPirate5-hardware_6-REV2b.md) |

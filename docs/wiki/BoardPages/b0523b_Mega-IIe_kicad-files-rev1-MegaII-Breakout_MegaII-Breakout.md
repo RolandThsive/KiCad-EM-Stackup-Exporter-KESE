@@ -1,4 +1,4 @@
-# 523 MegaII Breakout
+# 523. MegaII Breakout
 
 Board 523 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 5](../CorpusTestingPages/Corpus-Testing-05.md#523-megaii-breakout).
 
@@ -45,4 +45,4 @@ Board 523 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [522 gd VGC proto pcb](b0522b_Mega-IIe_kicad-files-rev1-gd-VGC-proto-pcb_gd-VGC-proto-pcb.md) | [524 ROM Interposer board](b0524b_Mega-IIe_kicad-files-rev1-ROM-Interposer-board_ROM-Interposer-board.md) |
+| [522. gd VGC proto pcb](b0522b_Mega-IIe_kicad-files-rev1-gd-VGC-proto-pcb_gd-VGC-proto-pcb.md) | [524. ROM Interposer board](b0524b_Mega-IIe_kicad-files-rev1-ROM-Interposer-board_ROM-Interposer-board.md) |

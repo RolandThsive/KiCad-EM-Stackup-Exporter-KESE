@@ -1,4 +1,4 @@
-# 876 DuetEthernet
+# 876. DuetEthernet
 
 Board 876 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 9](../CorpusTestingPages/Corpus-Testing-09.md#876-duetethernet).
 
@@ -45,4 +45,4 @@ Board 876 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [875 Duet2](b0875b_Duet-2-Hardware_Duet2-Duet2v1-06_Duet2.md) | [877 Duex5](b0877b_Duet-2-Hardware_Duet-Expansion-Duex5v0-11_Duex5.md) |
+| [875. Duet2](b0875b_Duet-2-Hardware_Duet2-Duet2v1-06_Duet2.md) | [877. Duex5](b0877b_Duet-2-Hardware_Duet-Expansion-Duex5v0-11_Duex5.md) |

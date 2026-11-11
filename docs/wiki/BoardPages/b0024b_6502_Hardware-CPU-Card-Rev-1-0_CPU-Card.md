@@ -1,4 +1,4 @@
-# 24 CPU Card
+# 24. CPU Card
 
 Board 24 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 1](../CorpusTestingPages/Corpus-Testing-01.md#24-cpu-card).
 
@@ -45,4 +45,4 @@ Board 24 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page
 
 | Previous | Next |
 |:---|---:|
-| [23 CPU Card Pro](b0023b_6502_CPU-Card-Pro.md) | [25 CPU Card](b0025b_6502_Hardware-CPU-Card-Rev-1-1_CPU-Card.md) |
+| [23. CPU Card Pro](b0023b_6502_CPU-Card-Pro.md) | [25. CPU Card](b0025b_6502_Hardware-CPU-Card-Rev-1-1_CPU-Card.md) |

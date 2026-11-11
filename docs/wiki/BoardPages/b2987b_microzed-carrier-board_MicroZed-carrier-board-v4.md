@@ -1,4 +1,4 @@
-# 2987 MicroZed_carrier_board_v4
+# 2987. MicroZed_carrier_board_v4
 
 Board 2,987 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 28](../CorpusTestingPages/Corpus-Testing-28.md#2987-microzed_carrier_board_v4).
 
@@ -45,4 +45,4 @@ Board 2,987 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2986 VB-IoT1_v1](b2986b_VB-IoT1_VB-IoT1-v1.md) | [2988 vimdrones_esc_development_board](b2988b_AM32-esc-development-board_vimdrones-esc-development-board.md) |
+| [2986. VB-IoT1_v1](b2986b_VB-IoT1_VB-IoT1-v1.md) | [2988. vimdrones_esc_development_board](b2988b_AM32-esc-development-board_vimdrones-esc-development-board.md) |

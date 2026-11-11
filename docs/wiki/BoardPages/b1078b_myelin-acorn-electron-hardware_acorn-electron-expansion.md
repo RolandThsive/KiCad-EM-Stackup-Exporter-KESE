@@ -1,4 +1,4 @@
-# 1078 acorn-electron-expansion
+# 1078. acorn-electron-expansion
 
 Board 1,078 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 10](../CorpusTestingPages/Corpus-Testing-10.md#1078-acorn-electron-expansion).
 
@@ -45,4 +45,4 @@ Board 1,078 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1077 elk_pi_tube_direct](b1077b_myelin-acorn-electron-hardware_elk-pi-tube-direct.md) | [1079 fx2_tube_cartridge_adapter](b1079b_myelin-acorn-electron-hardware_fx2-tube-cartridge-adapter.md) |
+| [1077. elk_pi_tube_direct](b1077b_myelin-acorn-electron-hardware_elk-pi-tube-direct.md) | [1079. fx2_tube_cartridge_adapter](b1079b_myelin-acorn-electron-hardware_fx2-tube-cartridge-adapter.md) |

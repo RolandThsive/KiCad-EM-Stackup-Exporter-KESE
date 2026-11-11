@@ -1,4 +1,4 @@
-# 628 Lynx-PS2
+# 628. Lynx-PS2
 
 Board 628 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 6](../CorpusTestingPages/Corpus-Testing-06.md#628-lynx-ps2).
 
@@ -45,4 +45,4 @@ Board 628 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [627 Lynx-MK1-MEM](b0627b_Camputers-Lynx_Lynx-96-Expansions-Lynx-MK1-MEM-Kicad_Lynx-MK1-MEM.md) | [629 lynx96](b0629b_Camputers-Lynx_lynx96.md) |
+| [627. Lynx-MK1-MEM](b0627b_Camputers-Lynx_Lynx-96-Expansions-Lynx-MK1-MEM-Kicad_Lynx-MK1-MEM.md) | [629. lynx96](b0629b_Camputers-Lynx_lynx96.md) |

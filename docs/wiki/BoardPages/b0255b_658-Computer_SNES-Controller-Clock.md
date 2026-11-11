@@ -1,4 +1,4 @@
-# 255 SNES Controller Clock
+# 255. SNES Controller Clock
 
 Board 255 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 3](../CorpusTestingPages/Corpus-Testing-03.md#255-snes-controller-clock).
 
@@ -45,4 +45,4 @@ Board 255 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [254 SD Card Write Signals](b0254b_658-Computer_SD-Card-Write-Signals.md) | [256 SNES Controller Reader](b0256b_658-Computer_SNES-Controller-Reader.md) |
+| [254. SD Card Write Signals](b0254b_658-Computer_SD-Card-Write-Signals.md) | [256. SNES Controller Reader](b0256b_658-Computer_SNES-Controller-Reader.md) |

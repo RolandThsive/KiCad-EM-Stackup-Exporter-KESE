@@ -1,4 +1,4 @@
-# 2379 TRS80_Model_I_A_E1
+# 2379. TRS80_Model_I_A_E1
 
 Board 2,379 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 23](../CorpusTestingPages/Corpus-Testing-23.md#2379-trs80_model_i_a_e1).
 
@@ -45,4 +45,4 @@ Board 2,379 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2378 DigiTrainer](b2378b_BitStack-DigiTrainer_DigiTrainer.md) | [2380 TRS80_Model_I_D_E1](b2380b_TRS-80-Model-I-D-E1_TRS80-Model-I-D-E1.md) |
+| [2378. DigiTrainer](b2378b_BitStack-DigiTrainer_DigiTrainer.md) | [2380. TRS80_Model_I_D_E1](b2380b_TRS-80-Model-I-D-E1_TRS80-Model-I-D-E1.md) |

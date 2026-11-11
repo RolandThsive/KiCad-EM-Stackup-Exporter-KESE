@@ -1,4 +1,4 @@
-# 2466 Breakout_TLE6244
+# 2466. Breakout_TLE6244
 
 Board 2,466 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 23](../CorpusTestingPages/Corpus-Testing-23.md#2466-breakout_tle6244).
 
@@ -45,4 +45,4 @@ Board 2,466 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2465 pin_board_1_x2](b2465b_rusefi-hardware_pin-board-1-x2.md) | [2467 denso079721_outline-append](b2467b_rusefi-hardware_denso079721-outline-append.md) |
+| [2465. pin_board_1_x2](b2465b_rusefi-hardware_pin-board-1-x2.md) | [2467. denso079721_outline-append](b2467b_rusefi-hardware_denso079721-outline-append.md) |

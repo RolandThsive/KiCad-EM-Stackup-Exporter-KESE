@@ -1,4 +1,4 @@
-# 2789 SensorBoardNoMCU
+# 2789. SensorBoardNoMCU
 
 Board 2,789 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 26](../CorpusTestingPages/Corpus-Testing-26.md#2789-sensorboardnomcu).
 
@@ -45,4 +45,4 @@ Board 2,789 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2788 PatchAntennaBreakout](b2788b_srad-avionics_PatchAntennaBreakout.md) | [2790 SensorBoardNoMCU](b2790b_srad-avionics_Spaceport-PCBs-Sensor-Boards-SensorBoardPatch_SensorBoardNoMCU.md) |
+| [2788. PatchAntennaBreakout](b2788b_srad-avionics_PatchAntennaBreakout.md) | [2790. SensorBoardNoMCU](b2790b_srad-avionics_Spaceport-PCBs-Sensor-Boards-SensorBoardPatch_SensorBoardNoMCU.md) |

@@ -1,4 +1,4 @@
-# 1987 S3-OLinuXino_Rev_A
+# 1987. S3-OLinuXino_Rev_A
 
 Board 1,987 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 19](../CorpusTestingPages/Corpus-Testing-19.md#1987-s3-olinuxino_rev_a).
 
@@ -46,4 +46,4 @@ Board 1,987 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1986 exposed_power_rails](b1986b_RVPC_exposed-power-rails.md) | [1988 S3-OLinuXino_Rev_A](b1988b_S3-OLinuXino_HARDWARE-S3-OLinuXino-Rev-A-release_S3-OLinuXino-Rev-A.md) |
+| [1986. exposed_power_rails](b1986b_RVPC_exposed-power-rails.md) | [1988. S3-OLinuXino_Rev_A](b1988b_S3-OLinuXino_HARDWARE-S3-OLinuXino-Rev-A-release_S3-OLinuXino-Rev-A.md) |

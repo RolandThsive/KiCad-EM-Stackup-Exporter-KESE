@@ -1,4 +1,4 @@
-# 1056 usb3-gmm7550
+# 1056. usb3-gmm7550
 
 Board 1,056 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 10](../CorpusTestingPages/Corpus-Testing-10.md#1056-usb3-gmm7550).
 
@@ -45,4 +45,4 @@ Board 1,056 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1055 ram-gmm7550_R5mm](b1055b_gmm7550-hardware_ram-gmm7550-R5mm.md) | [1057 V501](b1057b_yarc_V501.md) |
+| [1055. ram-gmm7550_R5mm](b1055b_gmm7550-hardware_ram-gmm7550-R5mm.md) | [1057. V501](b1057b_yarc_V501.md) |

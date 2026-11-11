@@ -1,4 +1,4 @@
-# 1263 extension_template
+# 1263. extension_template
 
 Board 1,263 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 12](../CorpusTestingPages/Corpus-Testing-12.md#1263-extension_template).
 
@@ -45,4 +45,4 @@ Board 1,263 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1262 ethIO](b1262b_Extension-Boards-for-Olimex-GateMate_ethIO.md) | [1264 GamePad_I2S_audio](b1264b_Extension-Boards-for-Olimex-GateMate_GamePad-I2S-audio-KiCad_GamePad-I2S-audio.md) |
+| [1262. ethIO](b1262b_Extension-Boards-for-Olimex-GateMate_ethIO.md) | [1264. GamePad_I2S_audio](b1264b_Extension-Boards-for-Olimex-GateMate_GamePad-I2S-audio-KiCad_GamePad-I2S-audio.md) |

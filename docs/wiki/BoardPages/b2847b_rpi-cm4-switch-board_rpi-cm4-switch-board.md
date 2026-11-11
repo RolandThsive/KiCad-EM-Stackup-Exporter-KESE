@@ -1,4 +1,4 @@
-# 2847 rpi-cm4-switch-board
+# 2847. rpi-cm4-switch-board
 
 Board 2,847 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 27](../CorpusTestingPages/Corpus-Testing-27.md#2847-rpi-cm4-switch-board).
 
@@ -45,4 +45,4 @@ Board 2,847 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2846 CM4IOv5](b2846b_rpi-cm4-switch-board_CM4IOv5.md) | [2848 add_sub](b2848b_alu_add-sub.md) |
+| [2846. CM4IOv5](b2846b_rpi-cm4-switch-board_CM4IOv5.md) | [2848. add_sub](b2848b_alu_add-sub.md) |

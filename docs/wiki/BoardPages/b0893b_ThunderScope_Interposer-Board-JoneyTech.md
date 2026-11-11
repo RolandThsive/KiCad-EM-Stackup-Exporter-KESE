@@ -1,4 +1,4 @@
-# 893 Interposer_Board_JoneyTech
+# 893. Interposer_Board_JoneyTech
 
 Board 893 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 9](../CorpusTestingPages/Corpus-Testing-09.md#893-interposer_board_joneytech).
 
@@ -45,4 +45,4 @@ Board 893 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [892 Interposer_Board_IOCrest](b0892b_ThunderScope_Interposer-Board-IOCrest.md) | [894 Thunderscope_Rev5.3](b0894b_ThunderScope_Thunderscope-Rev5-3.md) |
+| [892. Interposer_Board_IOCrest](b0892b_ThunderScope_Interposer-Board-IOCrest.md) | [894. Thunderscope_Rev5.3](b0894b_ThunderScope_Thunderscope-Rev5-3.md) |

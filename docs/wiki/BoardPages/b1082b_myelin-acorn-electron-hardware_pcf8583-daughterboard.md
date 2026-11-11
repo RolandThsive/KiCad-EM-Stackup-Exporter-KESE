@@ -1,4 +1,4 @@
-# 1082 pcf8583_daughterboard
+# 1082. pcf8583_daughterboard
 
 Board 1,082 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 11](../CorpusTestingPages/Corpus-Testing-11.md#1082-pcf8583_daughterboard).
 
@@ -45,4 +45,4 @@ Board 1,082 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1081 minus_one](b1081b_myelin-acorn-electron-hardware_minus-one.md) | [1083 post_box_usb](b1083b_myelin-acorn-electron-hardware_post-box-usb.md) |
+| [1081. minus_one](b1081b_myelin-acorn-electron-hardware_minus-one.md) | [1083. post_box_usb](b1083b_myelin-acorn-electron-hardware_post-box-usb.md) |

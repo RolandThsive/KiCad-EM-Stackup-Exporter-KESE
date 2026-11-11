@@ -1,4 +1,4 @@
-# 3025 macpro62_am5
+# 3025. macpro62_am5
 
 Board 3,025 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 29](../CorpusTestingPages/Corpus-Testing-29.md#3025-macpro62_am5).
 
@@ -45,4 +45,4 @@ Board 3,025 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [3024 macpro62_am5](b3024b_the-mac-pro-project_kicad-macpro62-am5-v3_macpro62-am5.md) | [3026 backplane](b3026b_the-mac-pro-project_kicad-macpro62-backplane-v2_backplane.md) |
+| [3024. macpro62_am5](b3024b_the-mac-pro-project_kicad-macpro62-am5-v3_macpro62-am5.md) | [3026. backplane](b3026b_the-mac-pro-project_kicad-macpro62-backplane-v2_backplane.md) |

@@ -1,4 +1,4 @@
-# 1039 TMC2660_Driver
+# 1039. TMC2660_Driver
 
 Board 1,039 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 10](../CorpusTestingPages/Corpus-Testing-10.md#1039-tmc2660_driver).
 
@@ -45,4 +45,4 @@ Board 1,039 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1038 TMC2209_Driver](b1038b_prntrboardv2_TMC2209-Driver.md) | [1040 WiFi-Addon](b1040b_prntrboardv2_WiFi-Addon.md) |
+| [1038. TMC2209_Driver](b1038b_prntrboardv2_TMC2209-Driver.md) | [1040. WiFi-Addon](b1040b_prntrboardv2_WiFi-Addon.md) |

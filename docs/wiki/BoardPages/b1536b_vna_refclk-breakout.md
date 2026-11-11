@@ -1,4 +1,4 @@
-# 1536 refclk_breakout
+# 1536. refclk_breakout
 
 Board 1,536 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 15](../CorpusTestingPages/Corpus-Testing-15.md#1536-refclk_breakout).
 
@@ -45,4 +45,4 @@ Board 1,536 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1535 powerdet_breakout](b1535b_vna_powerdet-breakout.md) | [1537 trl_thru](b1537b_vna_breakouts-res-splitter_trl-thru.md) |
+| [1535. powerdet_breakout](b1535b_vna_powerdet-breakout.md) | [1537. trl_thru](b1537b_vna_breakouts-res-splitter_trl-thru.md) |

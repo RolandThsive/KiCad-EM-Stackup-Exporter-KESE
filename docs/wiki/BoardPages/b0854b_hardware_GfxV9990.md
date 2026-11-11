@@ -1,4 +1,4 @@
-# 854 GfxV9990
+# 854. GfxV9990
 
 Board 854 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 8](../CorpusTestingPages/Corpus-Testing-08.md#854-gfxv9990).
 
@@ -45,4 +45,4 @@ Board 854 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [853 GfxV9958](b0853b_hardware_GfxV9958.md) | [855 GfxVGA](b0855b_hardware_GfxVGA.md) |
+| [853. GfxV9958](b0853b_hardware_GfxV9958.md) | [855. GfxVGA](b0855b_hardware_GfxVGA.md) |

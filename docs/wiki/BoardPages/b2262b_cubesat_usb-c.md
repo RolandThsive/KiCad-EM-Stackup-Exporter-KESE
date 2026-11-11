@@ -1,4 +1,4 @@
-# 2262 usb_c
+# 2262. usb_c
 
 Board 2,262 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 21](../CorpusTestingPages/Corpus-Testing-21.md#2262-usb_c).
 
@@ -45,4 +45,4 @@ Board 2,262 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2261 payload](b2261b_cubesat_payload.md) | [2263 daughterboard](b2263b_cubesat_daughterboard.md) |
+| [2261. payload](b2261b_cubesat_payload.md) | [2263. daughterboard](b2263b_cubesat_daughterboard.md) |

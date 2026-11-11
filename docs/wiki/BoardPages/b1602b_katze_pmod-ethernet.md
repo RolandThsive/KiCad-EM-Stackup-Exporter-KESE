@@ -1,4 +1,4 @@
-# 1602 pmod_ethernet
+# 1602. pmod_ethernet
 
 Board 1,602 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 15](../CorpusTestingPages/Corpus-Testing-15.md#1602-pmod_ethernet).
 
@@ -45,4 +45,4 @@ Board 1,602 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1601 kaltstahl](b1601b_kaltstahl_kaltstahl.md) | [1603 kuchen](b1603b_kuchen_kuchen.md) |
+| [1601. kaltstahl](b1601b_kaltstahl_kaltstahl.md) | [1603. kuchen](b1603b_kuchen_kuchen.md) |

@@ -1,4 +1,4 @@
-# 1214 HALPI2
+# 1214. HALPI2
 
 Board 1,214 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 12](../CorpusTestingPages/Corpus-Testing-12.md#1214-halpi2).
 
@@ -44,4 +44,4 @@ Board 1,214 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1213 HALMET](b1213b_halmet-hardware_HALMET.md) | [1215 HALSER](b1215b_halser-hardware_HALSER.md) |
+| [1213. HALMET](b1213b_halmet-hardware_HALMET.md) | [1215. HALSER](b1215b_halser-hardware_HALSER.md) |

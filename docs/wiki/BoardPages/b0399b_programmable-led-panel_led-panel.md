@@ -1,4 +1,4 @@
-# 399 led-panel
+# 399. led-panel
 
 Board 399 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 4](../CorpusTestingPages/Corpus-Testing-04.md#399-led-panel).
 
@@ -45,4 +45,4 @@ Board 399 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [398 polarfire-som](b0398b_polarfire-som_polarfire-som.md) | [400 qomu-board](b0400b_qomu-dev-board_qomu-board_1290.md) |
+| [398. polarfire-som](b0398b_polarfire-som_polarfire-som.md) | [400. qomu-board](b0400b_qomu-dev-board_qomu-board_1290.md) |

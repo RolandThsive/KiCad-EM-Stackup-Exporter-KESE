@@ -1,4 +1,4 @@
-# 2930 SystemBoardPLCC
+# 2930. SystemBoardPLCC
 
 Board 2,930 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 28](../CorpusTestingPages/Corpus-Testing-28.md#2930-systemboardplcc).
 
@@ -45,4 +45,4 @@ Board 2,930 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2929 MemBird - Woodcock](b2929b_retroverse_MemBird-Woodcock.md) | [2931 SystemBoardSMT](b2931b_retroverse_SystemBoardSMT.md) |
+| [2929. MemBird - Woodcock](b2929b_retroverse_MemBird-Woodcock.md) | [2931. SystemBoardSMT](b2931b_retroverse_SystemBoardSMT.md) |

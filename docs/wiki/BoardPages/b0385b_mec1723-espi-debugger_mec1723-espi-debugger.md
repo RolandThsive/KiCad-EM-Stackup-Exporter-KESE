@@ -1,4 +1,4 @@
-# 385 mec1723-espi-debugger
+# 385. mec1723-espi-debugger
 
 Board 385 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 4](../CorpusTestingPages/Corpus-Testing-04.md#385-mec1723-espi-debugger).
 
@@ -44,4 +44,4 @@ Board 385 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [384 machxo5-espi-debugger](b0384b_machx05-espi-debugger_machxo5-espi-debugger.md) | [386 microphone-board](b0386b_microphone-board_microphone-board.md) |
+| [384. machxo5-espi-debugger](b0384b_machx05-espi-debugger_machxo5-espi-debugger.md) | [386. microphone-board](b0386b_microphone-board_microphone-board.md) |

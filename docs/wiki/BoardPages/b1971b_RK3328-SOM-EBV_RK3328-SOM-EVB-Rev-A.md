@@ -1,4 +1,4 @@
-# 1971 RK3328-SOM-EVB_Rev_A
+# 1971. RK3328-SOM-EVB_Rev_A
 
 Board 1,971 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 19](../CorpusTestingPages/Corpus-Testing-19.md#1971-rk3328-som-evb_rev_a).
 
@@ -45,4 +45,4 @@ Board 1,971 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1970 POEv3_Rev_A](b1970b_POEv3_POEv3-Rev-A.md) | [1972 RP2040-PICO-PC_rev_B](b1972b_RP2040-PICO-PC_RP2040-PICO-PC-rev-B.md) |
+| [1970. POEv3_Rev_A](b1970b_POEv3_POEv3-Rev-A.md) | [1972. RP2040-PICO-PC_rev_B](b1972b_RP2040-PICO-PC_RP2040-PICO-PC-rev-B.md) |

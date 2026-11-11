@@ -1,4 +1,4 @@
-# 1113 lily
+# 1113. lily
 
 Board 1,113 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 11](../CorpusTestingPages/Corpus-Testing-11.md#1113-lily).
 
@@ -45,4 +45,4 @@ Board 1,113 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1112 jasmine](b1112b_greatfet-hardware_jasmine.md) | [1114 luckybamboo](b1114b_greatfet-hardware_luckybamboo.md) |
+| [1112. jasmine](b1112b_greatfet-hardware_jasmine.md) | [1114. luckybamboo](b1114b_greatfet-hardware_luckybamboo.md) |

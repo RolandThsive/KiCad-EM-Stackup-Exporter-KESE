@@ -1,4 +1,4 @@
-# 2000 UEXT-LVL-SHIFT_Rev_A
+# 2000. UEXT-LVL-SHIFT_Rev_A
 
 Board 2,000 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 19](../CorpusTestingPages/Corpus-Testing-19.md#2000-uext-lvl-shift_rev_a).
 
@@ -45,4 +45,4 @@ Board 2,000 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1999 UEXT-PQ_Rev_A](b1999b_UEXT-ADAPTERS_UEXT-PQ-Rev-A.md) | [2001 mod-gyro](b2001b_UEXT-MODULES_mod-gyro.md) |
+| [1999. UEXT-PQ_Rev_A](b1999b_UEXT-ADAPTERS_UEXT-PQ-Rev-A.md) | [2001. mod-gyro](b2001b_UEXT-MODULES_mod-gyro.md) |

@@ -1,4 +1,4 @@
-# 824 7-REV0
+# 824. 7-REV0
 
 Board 824 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 8](../CorpusTestingPages/Corpus-Testing-08.md#824-7-rev0).
 
@@ -45,4 +45,4 @@ Board 824 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [823 BusPirate-5-rev10](b0823b_BusPirate5-hardware_BusPirate-5-rev10.md) | [825 7-REV1-freeze](b0825b_BusPirate5-hardware_7-REV1-freeze.md) |
+| [823. BusPirate-5-rev10](b0823b_BusPirate5-hardware_BusPirate-5-rev10.md) | [825. 7-REV1-freeze](b0825b_BusPirate5-hardware_7-REV1-freeze.md) |

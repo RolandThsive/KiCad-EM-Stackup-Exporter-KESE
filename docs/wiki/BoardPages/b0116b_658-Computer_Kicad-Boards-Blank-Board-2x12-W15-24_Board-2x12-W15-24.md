@@ -1,4 +1,4 @@
-# 116 Board 2x12 W15.24
+# 116. Board 2x12 W15.24
 
 Board 116 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 2](../CorpusTestingPages/Corpus-Testing-02.md#116-board-2x12-w1524).
 
@@ -45,4 +45,4 @@ Board 116 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [115 Board 2x06 W22.86](b0115b_658-Computer_Kicad-Boards-Blank-Board-2x06-W22-86_Board-2x06-W22-86.md) | [117 Board 2x12 W22.86](b0117b_658-Computer_Kicad-Boards-Blank-Board-2x12-W22-86_Board-2x12-W22-86.md) |
+| [115. Board 2x06 W22.86](b0115b_658-Computer_Kicad-Boards-Blank-Board-2x06-W22-86_Board-2x06-W22-86.md) | [117. Board 2x12 W22.86](b0117b_658-Computer_Kicad-Boards-Blank-Board-2x12-W22-86_Board-2x12-W22-86.md) |

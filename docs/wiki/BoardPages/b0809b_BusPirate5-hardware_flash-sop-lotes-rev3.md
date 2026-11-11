@@ -1,4 +1,4 @@
-# 809 flash-sop-lotes-rev3
+# 809. flash-sop-lotes-rev3
 
 Board 809 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 8](../CorpusTestingPages/Corpus-Testing-08.md#809-flash-sop-lotes-rev3).
 
@@ -45,4 +45,4 @@ Board 809 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [808 flash-sop-rev3](b0808b_BusPirate5-hardware_flash-sop-rev3.md) | [810 flash-wson-rev3](b0810b_BusPirate5-hardware_flash-wson-rev3.md) |
+| [808. flash-sop-rev3](b0808b_BusPirate5-hardware_flash-sop-rev3.md) | [810. flash-wson-rev3](b0810b_BusPirate5-hardware_flash-wson-rev3.md) |

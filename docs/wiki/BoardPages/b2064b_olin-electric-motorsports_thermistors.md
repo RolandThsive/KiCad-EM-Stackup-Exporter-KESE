@@ -1,4 +1,4 @@
-# 2064 thermistors
+# 2064. thermistors
 
 Board 2,064 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 20](../CorpusTestingPages/Corpus-Testing-20.md#2064-thermistors).
 
@@ -45,4 +45,4 @@ Board 2,064 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2063 power](b2063b_olin-electric-motorsports_power.md) | [2065 sensing_carrier](b2065b_olin-electric-motorsports_sensing-carrier.md) |
+| [2063. power](b2063b_olin-electric-motorsports_power.md) | [2065. sensing_carrier](b2065b_olin-electric-motorsports_sensing-carrier.md) |

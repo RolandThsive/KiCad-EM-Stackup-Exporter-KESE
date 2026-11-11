@@ -1,4 +1,4 @@
-# 2806 red
+# 2806. red
 
 Board 2,806 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 26](../CorpusTestingPages/Corpus-Testing-26.md#2806-red).
 
@@ -45,4 +45,4 @@ Board 2,806 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2805 evse-v4b](b2805b_evse-v4-bricklet_evse-v4b.md) | [2807 TinyFPGA-BX](b2807b_TinyFPGA-BX_TinyFPGA-BX.md) |
+| [2805. evse-v4b](b2805b_evse-v4-bricklet_evse-v4b.md) | [2807. TinyFPGA-BX](b2807b_TinyFPGA-BX_TinyFPGA-BX.md) |

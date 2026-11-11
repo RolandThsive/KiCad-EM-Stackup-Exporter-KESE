@@ -1,4 +1,4 @@
-# 80 AOS16 Register
+# 80. AOS16 Register
 
 Board 80 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 1](../CorpusTestingPages/Corpus-Testing-01.md#80-aos16-register).
 
@@ -45,4 +45,4 @@ Board 80 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page
 
 | Previous | Next |
 |:---|---:|
-| [79 AOS16 GPU](b0079b_AOS16_AOS16-GPU.md) | [81 AOS16 Timer](b0081b_AOS16_AOS16-Timer.md) |
+| [79. AOS16 GPU](b0079b_AOS16_AOS16-GPU.md) | [81. AOS16 Timer](b0081b_AOS16_AOS16-Timer.md) |

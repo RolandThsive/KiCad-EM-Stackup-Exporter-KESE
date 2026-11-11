@@ -1,4 +1,4 @@
-# 2499 GDI-4ch
+# 2499. GDI-4ch
 
 Board 2,499 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 24](../CorpusTestingPages/Corpus-Testing-24.md#2499-gdi-4ch).
 
@@ -45,4 +45,4 @@ Board 2,499 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2498 frequency-divider](b2498b_rusefi-hardware_frequency-divider.md) | [2500 GDI-6ch](b2500b_rusefi-hardware_GDI-6ch.md) |
+| [2498. frequency-divider](b2498b_rusefi-hardware_frequency-divider.md) | [2500. GDI-6ch](b2500b_rusefi-hardware_GDI-6ch.md) |

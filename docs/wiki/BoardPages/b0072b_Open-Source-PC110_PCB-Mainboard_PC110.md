@@ -1,4 +1,4 @@
-# 72 PC110
+# 72. PC110
 
 Board 72 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 1](../CorpusTestingPages/Corpus-Testing-01.md#72-pc110).
 
@@ -46,4 +46,4 @@ Board 72 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page
 
 | Previous | Next |
 |:---|---:|
-| [71 PC110_membrance](b0071b_Open-Source-PC110_PC110-membrance.md) | [73 PC110](b0073b_Open-Source-PC110_PCB-Mainboard-Single-Sheet-Schematic_PC110.md) |
+| [71. PC110_membrance](b0071b_Open-Source-PC110_PC110-membrance.md) | [73. PC110](b0073b_Open-Source-PC110_PCB-Mainboard-Single-Sheet-Schematic_PC110.md) |

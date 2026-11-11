@@ -1,4 +1,4 @@
-# 1166 gpdi-serdes
+# 1166. gpdi-serdes
 
 Board 1,166 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 11](../CorpusTestingPages/Corpus-Testing-11.md#1166-gpdi-serdes).
 
@@ -45,4 +45,4 @@ Board 1,166 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1165 esp32s2-lepton](b1165b_advent-calendar-of-circuits-2020_esp32s2-lepton.md) | [1167 gpdi](b1167b_advent-calendar-of-circuits-2020_gpdi.md) |
+| [1165. esp32s2-lepton](b1165b_advent-calendar-of-circuits-2020_esp32s2-lepton.md) | [1167. gpdi](b1167b_advent-calendar-of-circuits-2020_gpdi.md) |

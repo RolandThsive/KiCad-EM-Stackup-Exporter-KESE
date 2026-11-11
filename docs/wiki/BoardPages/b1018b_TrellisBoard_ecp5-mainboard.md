@@ -1,4 +1,4 @@
-# 1018 ecp5_mainboard
+# 1018. ecp5_mainboard
 
 Board 1,018 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 10](../CorpusTestingPages/Corpus-Testing-10.md#1018-ecp5_mainboard).
 
@@ -45,4 +45,4 @@ Board 1,018 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1017 WarpSE](b1017b_WarpSE_WarpSE.md) | [1019 OpenDropV2](b1019b_OpenDrop_OpenDropV2.md) |
+| [1017. WarpSE](b1017b_WarpSE_WarpSE.md) | [1019. OpenDropV2](b1019b_OpenDrop_OpenDropV2.md) |

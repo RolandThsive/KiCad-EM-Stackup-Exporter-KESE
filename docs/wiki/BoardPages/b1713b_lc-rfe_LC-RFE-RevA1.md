@@ -1,4 +1,4 @@
-# 1713 LC_RFE-RevA1
+# 1713. LC_RFE-RevA1
 
 Board 1,713 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 16](../CorpusTestingPages/Corpus-Testing-16.md#1713-lc_rfe-reva1).
 
@@ -45,4 +45,4 @@ Board 1,713 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1712 B3LPD](b1712b_lc-filters_B3LPD.md) | [1714 LC_RFE-RevA2](b1714b_lc-rfe_LC-RFE-RevA2.md) |
+| [1712. B3LPD](b1712b_lc-filters_B3LPD.md) | [1714. LC_RFE-RevA2](b1714b_lc-rfe_LC-RFE-RevA2.md) |

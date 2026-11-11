@@ -1,4 +1,4 @@
-# 1679 adapter
+# 1679. adapter
 
 Board 1,679 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 16](../CorpusTestingPages/Corpus-Testing-16.md#1679-adapter).
 
@@ -45,4 +45,4 @@ Board 1,679 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1678 adapter](b1678b_Glider_pcb-mega-adapter_adapter.md) | [1680 pcb](b1680b_Lancer_pcb-epdc-poc-board_pcb.md) |
+| [1678. adapter](b1678b_Glider_pcb-mega-adapter_adapter.md) | [1680. pcb](b1680b_Lancer_pcb-epdc-poc-board_pcb.md) |

@@ -1,4 +1,4 @@
-# 487 Platinum IIe keyboard
+# 487. Platinum IIe keyboard
 
 Board 487 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 5](../CorpusTestingPages/Corpus-Testing-05.md#487-platinum-iie-keyboard).
 
@@ -45,4 +45,4 @@ Board 487 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [486 mch2022](b0486b_mch2022-badge-hardware_mch2022.md) | [488 ezcgi](b0488b_bit-preserve_ezcgi.md) |
+| [486. mch2022](b0486b_mch2022-badge-hardware_mch2022.md) | [488. ezcgi](b0488b_bit-preserve_ezcgi.md) |

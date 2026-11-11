@@ -1,4 +1,4 @@
-# 368 jetson-agx-thor-baseboard
+# 368. jetson-agx-thor-baseboard
 
 Board 368 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 4](../CorpusTestingPages/Corpus-Testing-04.md#368-jetson-agx-thor-baseboard).
 
@@ -45,4 +45,4 @@ Board 368 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [367 jetson-agx-csi-adapter](b0367b_jetson-agx-csi-adapter_jetson-agx-csi-adapter.md) | [369 jetson-nano-baseboard](b0369b_jetson-nano-baseboard_jetson-nano-baseboard.md) |
+| [367. jetson-agx-csi-adapter](b0367b_jetson-agx-csi-adapter_jetson-agx-csi-adapter.md) | [369. jetson-nano-baseboard](b0369b_jetson-nano-baseboard_jetson-nano-baseboard.md) |

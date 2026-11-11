@@ -1,4 +1,4 @@
-# 973 eBigRam
+# 973. eBigRam
 
 Board 973 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 10](../CorpusTestingPages/Corpus-Testing-10.md#973-ebigram).
 
@@ -45,4 +45,4 @@ Board 973 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [972 CFCARD](b0972b_Ace-2019_CFCARD.md) | [974 Edgeboard](b0974b_Ace-2019_Edgeboard.md) |
+| [972. CFCARD](b0972b_Ace-2019_CFCARD.md) | [974. Edgeboard](b0974b_Ace-2019_Edgeboard.md) |

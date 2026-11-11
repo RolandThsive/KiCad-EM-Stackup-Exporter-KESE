@@ -1,4 +1,4 @@
-# 1341 EAGLE-MK1-revB
+# 1341. EAGLE-MK1-revB
 
 Board 1,341 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 13](../CorpusTestingPages/Corpus-Testing-13.md#1341-eagle-mk1-revb).
 
@@ -45,4 +45,4 @@ Board 1,341 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1340 EAGLE-MK1-revA](b1340b_iss-pcb_EAGLE-MK1-revA.md) | [1342 Feather_Duo](b1342b_iss-pcb_Feather-Duo.md) |
+| [1340. EAGLE-MK1-revA](b1340b_iss-pcb_EAGLE-MK1-revA.md) | [1342. Feather_Duo](b1342b_iss-pcb_Feather-Duo.md) |

@@ -1,4 +1,4 @@
-# 572 zest
+# 572. zest
 
 Board 572 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 6](../CorpusTestingPages/Corpus-Testing-06.md#572-zest).
 
@@ -45,4 +45,4 @@ Board 572 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [571 Obsidian](b0571b_Obsidian_Obsidian.md) | [573 Crazyflie contol board](b0573b_crazyflie-electronics_Crazyflie-contol-board.md) |
+| [571. Obsidian](b0571b_Obsidian_Obsidian.md) | [573. Crazyflie contol board](b0573b_crazyflie-electronics_Crazyflie-contol-board.md) |

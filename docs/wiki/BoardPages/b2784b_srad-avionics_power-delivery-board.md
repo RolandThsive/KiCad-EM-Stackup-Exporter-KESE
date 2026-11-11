@@ -1,4 +1,4 @@
-# 2784 power-delivery-board
+# 2784. power-delivery-board
 
 Board 2,784 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 26](../CorpusTestingPages/Corpus-Testing-26.md#2784-power-delivery-board).
 
@@ -45,4 +45,4 @@ Board 2,784 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2783 pa-test-board](b2783b_srad-avionics_pa-test-board.md) | [2785 RF4463F30-test-board](b2785b_srad-avionics_RF4463F30-test-board.md) |
+| [2783. pa-test-board](b2783b_srad-avionics_pa-test-board.md) | [2785. RF4463F30-test-board](b2785b_srad-avionics_RF4463F30-test-board.md) |

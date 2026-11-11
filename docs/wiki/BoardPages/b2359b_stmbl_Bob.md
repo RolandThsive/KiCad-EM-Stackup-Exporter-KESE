@@ -1,4 +1,4 @@
-# 2359 Bob
+# 2359. Bob
 
 Board 2,359 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 22](../CorpusTestingPages/Corpus-Testing-22.md#2359-bob).
 
@@ -45,4 +45,4 @@ Board 2,359 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2358 ethernet_bob_base](b2358b_stmbl_ethernet-bob-base.md) | [2360 diff_driver](b2360b_stmbl_diff-driver.md) |
+| [2358. ethernet_bob_base](b2358b_stmbl_ethernet-bob-base.md) | [2360. diff_driver](b2360b_stmbl_diff-driver.md) |

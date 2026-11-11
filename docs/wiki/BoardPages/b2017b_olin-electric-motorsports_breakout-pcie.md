@@ -1,4 +1,4 @@
-# 2017 breakout_pcie
+# 2017. breakout_pcie
 
 Board 2,017 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 19](../CorpusTestingPages/Corpus-Testing-19.md#2017-breakout_pcie).
 
@@ -45,4 +45,4 @@ Board 2,017 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2016 hitl-primary](b2016b_olin-electric-motorsports_hitl-primary.md) | [2018 pcie_x1_passthrough](b2018b_olin-electric-motorsports_pcie-x1-passthrough.md) |
+| [2016. hitl-primary](b2016b_olin-electric-motorsports_hitl-primary.md) | [2018. pcie_x1_passthrough](b2018b_olin-electric-motorsports_pcie-x1-passthrough.md) |

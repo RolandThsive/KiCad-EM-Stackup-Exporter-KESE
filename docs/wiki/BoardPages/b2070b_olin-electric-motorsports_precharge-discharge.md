@@ -1,4 +1,4 @@
-# 2070 precharge_discharge
+# 2070. precharge_discharge
 
 Board 2,070 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 20](../CorpusTestingPages/Corpus-Testing-20.md#2070-precharge_discharge).
 
@@ -45,4 +45,4 @@ Board 2,070 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2069 motherboard](b2069b_olin-electric-motorsports_motherboard.md) | [2071 tsal-ail](b2071b_olin-electric-motorsports_tsal-ail.md) |
+| [2069. motherboard](b2069b_olin-electric-motorsports_motherboard.md) | [2071. tsal-ail](b2071b_olin-electric-motorsports_tsal-ail.md) |

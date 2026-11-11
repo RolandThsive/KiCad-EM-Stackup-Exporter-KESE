@@ -1,4 +1,4 @@
-# 2469 can_brd_1
+# 2469. can_brd_1
 
 Board 2,469 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 23](../CorpusTestingPages/Corpus-Testing-23.md#2469-can_brd_1).
 
@@ -45,4 +45,4 @@ Board 2,469 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2468 can_brd_1](b2468b_rusefi-hardware_classic-designs-rusefi-hardware-history-can-board-rev00-10_can-brd-1.md) | [2470 O2_input_CJ125](b2470b_rusefi-hardware_O2-input-CJ125.md) |
+| [2468. can_brd_1](b2468b_rusefi-hardware_classic-designs-rusefi-hardware-history-can-board-rev00-10_can-brd-1.md) | [2470. O2_input_CJ125](b2470b_rusefi-hardware_O2-input-CJ125.md) |

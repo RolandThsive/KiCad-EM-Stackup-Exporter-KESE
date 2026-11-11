@@ -1,4 +1,4 @@
-# 795 mackerel-30-proto
+# 795. mackerel-30-proto
 
 Board 795 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 8](../CorpusTestingPages/Corpus-Testing-08.md#795-mackerel-30-proto).
 
@@ -45,4 +45,4 @@ Board 795 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [794 mackerel-10-v1](b0794b_mackerel-68k_hardware-mackerel-10-v1_mackerel-10-v1.md) | [796 hdmi_adapter](b0796b_zynq-a9-mb_hdmi-adapter.md) |
+| [794. mackerel-10-v1](b0794b_mackerel-68k_hardware-mackerel-10-v1_mackerel-10-v1.md) | [796. hdmi_adapter](b0796b_zynq-a9-mb_hdmi-adapter.md) |

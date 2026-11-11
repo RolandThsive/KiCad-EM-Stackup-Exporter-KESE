@@ -1,4 +1,4 @@
-# 1846 ESP32-GATEWAY_Rev_A
+# 1846. ESP32-GATEWAY_Rev_A
 
 Board 1,846 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 18](../CorpusTestingPages/Corpus-Testing-18.md#1846-esp32-gateway_rev_a).
 
@@ -45,4 +45,4 @@ Board 1,846 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1845 ESP32-EVB_Rev_L](b1845b_ESP32-EVB_ESP32-EVB-Rev-L.md) | [1847 ESP32-GATEWAY_Rev_B](b1847b_ESP32-GATEWAY_ESP32-GATEWAY-Rev-B.md) |
+| [1845. ESP32-EVB_Rev_L](b1845b_ESP32-EVB_ESP32-EVB-Rev-L.md) | [1847. ESP32-GATEWAY_Rev_B](b1847b_ESP32-GATEWAY_ESP32-GATEWAY-Rev-B.md) |

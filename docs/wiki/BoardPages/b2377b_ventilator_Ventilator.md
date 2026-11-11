@@ -1,4 +1,4 @@
-# 2377 Ventilator
+# 2377. Ventilator
 
 Board 2,377 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 23](../CorpusTestingPages/Corpus-Testing-23.md#2377-ventilator).
 
@@ -45,4 +45,4 @@ Board 2,377 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2376 pressure_XGZP6897A](b2376b_ventilator_pressure-XGZP6897A.md) | [2378 DigiTrainer](b2378b_BitStack-DigiTrainer_DigiTrainer.md) |
+| [2376. pressure_XGZP6897A](b2376b_ventilator_pressure-XGZP6897A.md) | [2378. DigiTrainer](b2378b_BitStack-DigiTrainer_DigiTrainer.md) |

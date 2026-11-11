@@ -1,4 +1,4 @@
-# 2957 Cell Tap Fuse Board 2x
+# 2957. Cell Tap Fuse Board 2x
 
 Board 2,957 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 28](../CorpusTestingPages/Corpus-Testing-28.md#2957-cell-tap-fuse-board-2x).
 
@@ -45,4 +45,4 @@ Board 2,957 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2956 Discharge KiCAD](b2956b_circuits_Discharge-KiCAD.md) | [2958 Cell Tap Fuse Board 3x](b2958b_circuits_Cell-Tap-Fuse-Board-3x.md) |
+| [2956. Discharge KiCAD](b2956b_circuits_Discharge-KiCAD.md) | [2958. Cell Tap Fuse Board 3x](b2958b_circuits_Cell-Tap-Fuse-Board-3x.md) |

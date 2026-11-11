@@ -1,4 +1,4 @@
-# 3123 CAT
+# 3123. CAT
 
 Board 3,123 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 29](../CorpusTestingPages/Corpus-Testing-29.md#3123-cat).
 
@@ -45,4 +45,4 @@ Board 3,123 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [3122 2019-07-07_18:08:38_fpga_hat](b3122b_Snowflake-FPGA_2019-07-07-18-08-38-fpga-hat.md) | [3124 hw-openmower-sabo](b3124b_hw-openmower-sabo_hw-openmower-sabo.md) |
+| [3122. 2019-07-07_18:08:38_fpga_hat](b3122b_Snowflake-FPGA_2019-07-07-18-08-38-fpga-hat.md) | [3124. hw-openmower-sabo](b3124b_hw-openmower-sabo_hw-openmower-sabo.md) |

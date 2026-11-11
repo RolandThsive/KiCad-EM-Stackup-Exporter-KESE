@@ -1,4 +1,4 @@
-# 1401 astra_piNas
+# 1401. astra_piNas
 
 Board 1,401 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 13](../CorpusTestingPages/Corpus-Testing-13.md#1401-astra_pinas).
 
@@ -44,4 +44,4 @@ Board 1,401 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1400 cm4-carrier-template](b1400b_cm4-carriers_cm4-carrier-template.md) | [1402 RK3576 SBCv2](b1402b_open-source-sbc-board_RK3576-SBCv2.md) |
+| [1400. cm4-carrier-template](b1400b_cm4-carriers_cm4-carrier-template.md) | [1402. RK3576 SBCv2](b1402b_open-source-sbc-board_RK3576-SBCv2.md) |

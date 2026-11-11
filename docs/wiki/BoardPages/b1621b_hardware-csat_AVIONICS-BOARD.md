@@ -1,4 +1,4 @@
-# 1621 AVIONICS_BOARD
+# 1621. AVIONICS_BOARD
 
 Board 1,621 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 16](../CorpusTestingPages/Corpus-Testing-16.md#1621-avionics_board).
 
@@ -45,4 +45,4 @@ Board 1,621 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1620 auxio_board](b1620b_hardware-csat_auxio-board.md) | [1622 comm_board](b1622b_hardware-csat_comm-board.md) |
+| [1620. auxio_board](b1620b_hardware-csat_auxio-board.md) | [1622. comm_board](b1622b_hardware-csat_comm-board.md) |

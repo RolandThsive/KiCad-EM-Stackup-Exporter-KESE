@@ -1,4 +1,4 @@
-# 733 icepi-zero
+# 733. icepi-zero
 
 Board 733 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 7](../CorpusTestingPages/Corpus-Testing-07.md#733-icepi-zero).
 
@@ -45,4 +45,4 @@ Board 733 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [732 icepi-zero](b0732b_icepi-zero_hardware-v1-3_icepi-zero.md) | [734 breakout-tt04-qfn-openframe](b0734b_breakout-pcb-standalone_breakout-tt04-qfn-openframe.md) |
+| [732. icepi-zero](b0732b_icepi-zero_hardware-v1-3_icepi-zero.md) | [734. breakout-tt04-qfn-openframe](b0734b_breakout-pcb-standalone_breakout-tt04-qfn-openframe.md) |

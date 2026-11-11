@@ -1,4 +1,4 @@
-# 866 Nixie_proj_conflict-20171112-163801
+# 866. Nixie_proj_conflict-20171112-163801
 
 Board 866 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 9](../CorpusTestingPages/Corpus-Testing-09.md#866-nixie_proj_conflict-20171112-163801).
 
@@ -44,4 +44,4 @@ Board 866 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [865 Nixie_proj](b0865b_tlnixie_Nixie-proj.md) | [867 Nucleo2USB](b0867b_Nucleo2USB_Nucleo2USB.md) |
+| [865. Nixie_proj](b0865b_tlnixie_Nixie-proj.md) | [867. Nucleo2USB](b0867b_Nucleo2USB_Nucleo2USB.md) |

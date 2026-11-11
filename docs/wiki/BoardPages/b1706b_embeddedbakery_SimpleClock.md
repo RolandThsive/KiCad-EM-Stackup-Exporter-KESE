@@ -1,4 +1,4 @@
-# 1706 SimpleClock
+# 1706. SimpleClock
 
 Board 1,706 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 16](../CorpusTestingPages/Corpus-Testing-16.md#1706-simpleclock).
 
@@ -44,4 +44,4 @@ Board 1,706 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1705 16bit Banked Switches](b1705b_embeddedbakery_16bit-Banked-Switches.md) | [1707 LimeSDR_Sony](b1707b_front-end-modules_LimeSDR-Sony.md) |
+| [1705. 16bit Banked Switches](b1705b_embeddedbakery_16bit-Banked-Switches.md) | [1707. LimeSDR_Sony](b1707b_front-end-modules_LimeSDR-Sony.md) |

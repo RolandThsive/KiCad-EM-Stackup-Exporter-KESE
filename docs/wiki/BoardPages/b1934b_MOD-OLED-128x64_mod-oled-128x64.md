@@ -1,4 +1,4 @@
-# 1934 mod-oled-128x64
+# 1934. mod-oled-128x64
 
 Board 1,934 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 18](../CorpusTestingPages/Corpus-Testing-18.md#1934-mod-oled-128x64).
 
@@ -45,4 +45,4 @@ Board 1,934 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1933 mod-mpu9150](b1933b_MOD-MPU9150_mod-mpu9150.md) | [1935 MOD-RTC2_Rev_A](b1935b_MOD-RTC2_MOD-RTC2-Rev-A.md) |
+| [1933. mod-mpu9150](b1933b_MOD-MPU9150_mod-mpu9150.md) | [1935. MOD-RTC2_Rev_A](b1935b_MOD-RTC2_MOD-RTC2-Rev-A.md) |

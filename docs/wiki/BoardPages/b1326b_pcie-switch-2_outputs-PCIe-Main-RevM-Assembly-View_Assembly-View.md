@@ -1,4 +1,4 @@
-# 1326 Assembly_View
+# 1326. Assembly_View
 
 Board 1,326 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 13](../CorpusTestingPages/Corpus-Testing-13.md#1326-assembly_view).
 
@@ -46,4 +46,4 @@ Board 1,326 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1325 Main_10E1S](b1325b_pcie-switch-2_outputs-PCIe-E1S-Only-RevQ-Main-10E1S_Main-10E1S.md) | [1327 Main_10E1S](b1327b_pcie-switch-2_outputs-PCIe-Main-RevM-Main-10E1S_Main-10E1S.md) |
+| [1325. Main_10E1S](b1325b_pcie-switch-2_outputs-PCIe-E1S-Only-RevQ-Main-10E1S_Main-10E1S.md) | [1327. Main_10E1S](b1327b_pcie-switch-2_outputs-PCIe-Main-RevM-Main-10E1S_Main-10E1S.md) |

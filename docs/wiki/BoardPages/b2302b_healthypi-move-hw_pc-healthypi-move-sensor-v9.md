@@ -1,4 +1,4 @@
-# 2302 pc_healthypi_move_sensor_v9
+# 2302. pc_healthypi_move_sensor_v9
 
 Board 2,302 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 22](../CorpusTestingPages/Corpus-Testing-22.md#2302-pc_healthypi_move_sensor_v9).
 
@@ -45,4 +45,4 @@ Board 2,302 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2301 pc_healthypi_move_nRF5340_v12](b2301b_healthypi-move-hw_pc-healthypi-move-nRF5340-v12.md) | [2303 healthylink_compute_v5](b2303b_protocentral-healthypi6-hardware_healthylink-compute-v5.md) |
+| [2301. pc_healthypi_move_nRF5340_v12](b2301b_healthypi-move-hw_pc-healthypi-move-nRF5340-v12.md) | [2303. healthylink_compute_v5](b2303b_protocentral-healthypi6-hardware_healthylink-compute-v5.md) |

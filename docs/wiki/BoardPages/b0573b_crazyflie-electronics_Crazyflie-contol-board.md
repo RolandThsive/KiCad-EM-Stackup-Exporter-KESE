@@ -1,4 +1,4 @@
-# 573 Crazyflie contol board
+# 573. Crazyflie contol board
 
 Board 573 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 6](../CorpusTestingPages/Corpus-Testing-06.md#573-crazyflie-contol-board).
 
@@ -45,4 +45,4 @@ Board 573 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [572 zest](b0572b_zest_zest.md) | [574 ESP32S3](b0574b_22xt-kicad_ESP32S3.md) |
+| [572. zest](b0572b_zest_zest.md) | [574. ESP32S3](b0574b_22xt-kicad_ESP32S3.md) |

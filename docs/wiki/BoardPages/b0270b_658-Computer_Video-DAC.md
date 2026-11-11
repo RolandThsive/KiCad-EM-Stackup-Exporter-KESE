@@ -1,4 +1,4 @@
-# 270 Video DAC
+# 270. Video DAC
 
 Board 270 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 3](../CorpusTestingPages/Corpus-Testing-03.md#270-video-dac).
 
@@ -45,4 +45,4 @@ Board 270 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [269 Video Counter 12bit](b0269b_658-Computer_Video-Counter-12bit.md) | [271 Video Data Select](b0271b_658-Computer_Video-Data-Select.md) |
+| [269. Video Counter 12bit](b0269b_658-Computer_Video-Counter-12bit.md) | [271. Video Data Select](b0271b_658-Computer_Video-Data-Select.md) |

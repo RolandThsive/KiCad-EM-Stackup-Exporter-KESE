@@ -1,4 +1,4 @@
-# 2809 breakout-fpga-ICE40UP5K
+# 2809. breakout-fpga-ICE40UP5K
 
 Board 2,809 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 27](../CorpusTestingPages/Corpus-Testing-27.md#2809-breakout-fpga-ice40up5k).
 
@@ -45,4 +45,4 @@ Board 2,809 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2808 caravel-breakout-fpga-ICE40UP5K-TT3](b2808b_breakout-pcb_caravel-breakout-fpga-ICE40UP5K-TT3.md) | [2810 tt06-fpga-ICE40UP5k](b2810b_breakout-pcb_tt06-fpga-ICE40UP5k.md) |
+| [2808. caravel-breakout-fpga-ICE40UP5K-TT3](b2808b_breakout-pcb_caravel-breakout-fpga-ICE40UP5K-TT3.md) | [2810. tt06-fpga-ICE40UP5k](b2810b_breakout-pcb_tt06-fpga-ICE40UP5k.md) |

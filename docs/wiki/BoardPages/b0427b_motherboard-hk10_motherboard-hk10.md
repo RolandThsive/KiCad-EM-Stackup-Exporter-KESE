@@ -1,4 +1,4 @@
-# 427 motherboard-hk10
+# 427. motherboard-hk10
 
 Board 427 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 4](../CorpusTestingPages/Corpus-Testing-04.md#427-motherboard-hk10).
 
@@ -45,4 +45,4 @@ Board 427 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [426 Sparky2](b0426b_hardware_Sparky2.md) | [428 ICE40HXDevBoardHDMI](b0428b_ICE40HXDevBoard_ICE40HXDevBoardHDMI.md) |
+| [426. Sparky2](b0426b_hardware_Sparky2.md) | [428. ICE40HXDevBoardHDMI](b0428b_ICE40HXDevBoard_ICE40HXDevBoardHDMI.md) |

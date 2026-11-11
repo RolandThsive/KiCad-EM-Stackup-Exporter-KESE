@@ -1,4 +1,4 @@
-# 1030 OpenFrame
+# 1030. OpenFrame
 
 Board 1,030 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 10](../CorpusTestingPages/Corpus-Testing-10.md#1030-openframe).
 
@@ -46,4 +46,4 @@ Board 1,030 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1029 OpenDropV4](b1029b_OpenDrop_OpenDropV4.md) | [1031 gd rp2040 keyboard proto pcb](b1031b_Golden-Delicious_gd-rp2040-keyboard-proto-pcb.md) |
+| [1029. OpenDropV4](b1029b_OpenDrop_OpenDropV4.md) | [1031. gd rp2040 keyboard proto pcb](b1031b_Golden-Delicious_gd-rp2040-keyboard-proto-pcb.md) |

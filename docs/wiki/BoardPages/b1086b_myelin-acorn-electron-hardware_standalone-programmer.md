@@ -1,4 +1,4 @@
-# 1086 standalone_programmer
+# 1086. standalone_programmer
 
 Board 1,086 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 11](../CorpusTestingPages/Corpus-Testing-11.md#1086-standalone_programmer).
 
@@ -45,4 +45,4 @@ Board 1,086 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1085 bbc_1mhz_serial_sd](b1085b_myelin-acorn-electron-hardware_bbc-1mhz-serial-sd.md) | [1087 xc9500xl_44_breakout](b1087b_myelin-acorn-electron-hardware_xc9500xl-44-breakout.md) |
+| [1085. bbc_1mhz_serial_sd](b1085b_myelin-acorn-electron-hardware_bbc-1mhz-serial-sd.md) | [1087. xc9500xl_44_breakout](b1087b_myelin-acorn-electron-hardware_xc9500xl-44-breakout.md) |

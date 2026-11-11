@@ -1,4 +1,4 @@
-# 566 TMP117-ADXL345_section_5cm
+# 566. TMP117-ADXL345_section_5cm
 
 Board 566 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 6](../CorpusTestingPages/Corpus-Testing-06.md#566-tmp117-adxl345_section_5cm).
 
@@ -45,4 +45,4 @@ Board 566 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [565 sensor_board_outline](b0565b_DxP-sensor-probes_sensor-board-outline.md) | [567 TMP117_section_10cm](b0567b_DxP-sensor-probes_TMP117-section-10cm.md) |
+| [565. sensor_board_outline](b0565b_DxP-sensor-probes_sensor-board-outline.md) | [567. TMP117_section_10cm](b0567b_DxP-sensor-probes_TMP117-section-10cm.md) |

@@ -1,4 +1,4 @@
-# 2334 batteryboard
+# 2334. batteryboard
 
 Board 2,334 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 22](../CorpusTestingPages/Corpus-Testing-22.md#2334-batteryboard).
 
@@ -45,4 +45,4 @@ Board 2,334 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2333 batteryboard](b2333b_hardware_batteryboard-v01_batteryboard.md) | [2335 mainboard](b2335b_hardware_mainboard-v01_mainboard.md) |
+| [2333. batteryboard](b2333b_hardware_batteryboard-v01_batteryboard.md) | [2335. mainboard](b2335b_hardware_mainboard-v01_mainboard.md) |

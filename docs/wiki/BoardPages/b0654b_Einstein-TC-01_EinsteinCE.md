@@ -1,4 +1,4 @@
-# 654 EinsteinCE
+# 654. EinsteinCE
 
 Board 654 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 7](../CorpusTestingPages/Corpus-Testing-07.md#654-einsteince).
 
@@ -45,4 +45,4 @@ Board 654 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [653 EinsteinTC01](b0653b_Einstein-TC-01_Kicad_EinsteinTC01.md) | [655 MegaCD](b0655b_MegaCD-Main-BD_MegaCD-837-8015-01-Rev1-MCE2_MegaCD.md) |
+| [653. EinsteinTC01](b0653b_Einstein-TC-01_Kicad_EinsteinTC01.md) | [655. MegaCD](b0655b_MegaCD-Main-BD_MegaCD-837-8015-01-Rev1-MCE2_MegaCD.md) |

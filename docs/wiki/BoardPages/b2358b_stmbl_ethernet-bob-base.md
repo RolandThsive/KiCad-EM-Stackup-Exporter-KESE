@@ -1,4 +1,4 @@
-# 2358 ethernet_bob_base
+# 2358. ethernet_bob_base
 
 Board 2,358 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 22](../CorpusTestingPages/Corpus-Testing-22.md#2358-ethernet_bob_base).
 
@@ -45,4 +45,4 @@ Board 2,358 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2357 io_base](b2357b_stmbl_io-base.md) | [2359 Bob](b2359b_stmbl_Bob.md) |
+| [2357. io_base](b2357b_stmbl_io-base.md) | [2359. Bob](b2359b_stmbl_Bob.md) |

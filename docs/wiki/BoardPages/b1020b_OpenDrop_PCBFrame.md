@@ -1,4 +1,4 @@
-# 1020 PCBFrame
+# 1020. PCBFrame
 
 Board 1,020 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 10](../CorpusTestingPages/Corpus-Testing-10.md#1020-pcbframe).
 
@@ -46,4 +46,4 @@ Board 1,020 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1019 OpenDropV2](b1019b_OpenDrop_OpenDropV2.md) | [1021 OpenDropV3](b1021b_OpenDrop_OpenDropV3.md) |
+| [1019. OpenDropV2](b1019b_OpenDrop_OpenDropV2.md) | [1021. OpenDropV3](b1021b_OpenDrop_OpenDropV3.md) |

@@ -1,4 +1,4 @@
-# 1227 Daughterboard
+# 1227. Daughterboard
 
 Board 1,227 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 12](../CorpusTestingPages/Corpus-Testing-12.md#1227-daughterboard).
 
@@ -44,4 +44,4 @@ Board 1,227 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1226 Amiga 2000R6](b1226b_Amiga-2000-KiCAD_Amiga-2000R6.md) | [1228 A3000](b1228b_ReAmiga-3000-KiCAD_A3000.md) |
+| [1226. Amiga 2000R6](b1226b_Amiga-2000-KiCAD_Amiga-2000R6.md) | [1228. A3000](b1228b_ReAmiga-3000-KiCAD_A3000.md) |

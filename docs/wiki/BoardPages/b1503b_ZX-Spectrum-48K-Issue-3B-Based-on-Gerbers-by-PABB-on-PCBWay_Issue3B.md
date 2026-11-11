@@ -1,4 +1,4 @@
-# 1503 Issue3B
+# 1503. Issue3B
 
 Board 1,503 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 14](../CorpusTestingPages/Corpus-Testing-14.md#1503-issue3b).
 
@@ -44,4 +44,4 @@ Board 1,503 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1502 cantact](b1502b_cantact-hw_cantact.md) | [1504 dualpmod](b1504b_sonata-system_dualpmod.md) |
+| [1502. cantact](b1502b_cantact-hw_cantact.md) | [1504. dualpmod](b1504b_sonata-system_dualpmod.md) |

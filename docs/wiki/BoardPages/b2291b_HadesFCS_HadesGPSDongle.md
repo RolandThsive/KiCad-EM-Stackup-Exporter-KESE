@@ -1,4 +1,4 @@
-# 2291 HadesGPSDongle
+# 2291. HadesGPSDongle
 
 Board 2,291 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 22](../CorpusTestingPages/Corpus-Testing-22.md#2291-hadesgpsdongle).
 
@@ -45,4 +45,4 @@ Board 2,291 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2290 Hades](b2290b_HadesFCS_Hades.md) | [2292 HadesMicro](b2292b_HadesFCS_HadesMicro.md) |
+| [2290. Hades](b2290b_HadesFCS_Hades.md) | [2292. HadesMicro](b2292b_HadesFCS_HadesMicro.md) |

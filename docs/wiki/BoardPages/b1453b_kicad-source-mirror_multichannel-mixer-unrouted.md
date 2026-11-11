@@ -1,4 +1,4 @@
-# 1453 multichannel_mixer-unrouted
+# 1453. multichannel_mixer-unrouted
 
 Board 1,453 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 14](../CorpusTestingPages/Corpus-Testing-14.md#1453-multichannel_mixer-unrouted).
 
@@ -45,4 +45,4 @@ Board 1,453 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1452 microwave](b1452b_kicad-source-mirror_microwave.md) | [1454 multichannel_mixer](b1454b_kicad-source-mirror_multichannel-mixer.md) |
+| [1452. microwave](b1452b_kicad-source-mirror_microwave.md) | [1454. multichannel_mixer](b1454b_kicad-source-mirror_multichannel-mixer.md) |

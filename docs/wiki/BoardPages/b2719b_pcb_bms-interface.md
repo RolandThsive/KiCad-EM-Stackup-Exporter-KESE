@@ -1,4 +1,4 @@
-# 2719 bms-interface
+# 2719. bms-interface
 
 Board 2,719 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 26](../CorpusTestingPages/Corpus-Testing-26.md#2719-bms-interface).
 
@@ -45,4 +45,4 @@ Board 2,719 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2718 batak](b2718b_pcb_batak.md) | [2720 brake-light](b2720b_pcb_brake-light.md) |
+| [2718. batak](b2718b_pcb_batak.md) | [2720. brake-light](b2720b_pcb_brake-light.md) |

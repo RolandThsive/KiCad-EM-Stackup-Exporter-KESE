@@ -1,4 +1,4 @@
-# 1516 amp_macom_vga
+# 1516. amp_macom_vga
 
 Board 1,516 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 15](../CorpusTestingPages/Corpus-Testing-15.md#1516-amp_macom_vga).
 
@@ -45,4 +45,4 @@ Board 1,516 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1515 amp_macom](b1515b_vna_amp-macom.md) | [1517 attenuator](b1517b_vna_attenuator.md) |
+| [1515. amp_macom](b1515b_vna_amp-macom.md) | [1517. attenuator](b1517b_vna_attenuator.md) |

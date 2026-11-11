@@ -1,4 +1,4 @@
-# 2180 c3-proxy
+# 2180. c3-proxy
 
 Board 2,180 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 21](../CorpusTestingPages/Corpus-Testing-21.md#2180-c3-proxy).
 
@@ -45,4 +45,4 @@ Board 2,180 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2179 backplane-debug-breakout](b2179b_oresat-flatsat_backplane-debug-breakout.md) | [2181 oresat-c3-surrogate](b2181b_oresat-flatsat_oresat-c3-surrogate.md) |
+| [2179. backplane-debug-breakout](b2179b_oresat-flatsat_backplane-debug-breakout.md) | [2181. oresat-c3-surrogate](b2181b_oresat-flatsat_oresat-c3-surrogate.md) |

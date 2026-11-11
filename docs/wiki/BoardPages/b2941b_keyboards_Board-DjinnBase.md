@@ -1,4 +1,4 @@
-# 2941 Board-DjinnBase
+# 2941. Board-DjinnBase
 
 Board 2,941 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 28](../CorpusTestingPages/Corpus-Testing-28.md#2941-board-djinnbase).
 
@@ -45,4 +45,4 @@ Board 2,941 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2940 user_interface](b2940b_rp2040-motor-controller_user-interface.md) | [2942 Board-DjinnPlate](b2942b_keyboards_Board-DjinnPlate.md) |
+| [2940. user_interface](b2940b_rp2040-motor-controller_user-interface.md) | [2942. Board-DjinnPlate](b2942b_keyboards_Board-DjinnPlate.md) |

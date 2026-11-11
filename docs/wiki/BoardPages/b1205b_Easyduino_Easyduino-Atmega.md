@@ -1,4 +1,4 @@
-# 1205 Easyduino_Atmega
+# 1205. Easyduino_Atmega
 
 Board 1,205 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 12](../CorpusTestingPages/Corpus-Testing-12.md#1205-easyduino_atmega).
 
@@ -45,4 +45,4 @@ Board 1,205 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1204 Easyduino_Atmega_Nano](b1204b_Easyduino_Easyduino-Atmega-Nano.md) | [1206 Easyduino_ESP32](b1206b_Easyduino_Easyduino-ESP32.md) |
+| [1204. Easyduino_Atmega_Nano](b1204b_Easyduino_Easyduino-Atmega-Nano.md) | [1206. Easyduino_ESP32](b1206b_Easyduino_Easyduino-ESP32.md) |

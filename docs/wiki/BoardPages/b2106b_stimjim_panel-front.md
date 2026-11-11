@@ -1,4 +1,4 @@
-# 2106 panel-front
+# 2106. panel-front
 
 Board 2,106 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 20](../CorpusTestingPages/Corpus-Testing-20.md#2106-panel-front).
 
@@ -46,4 +46,4 @@ Board 2,106 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2105 panel-back](b2105b_stimjim_panel-back.md) | [2107 stimjim](b2107b_stimjim_stimjim.md) |
+| [2105. panel-back](b2105b_stimjim_panel-back.md) | [2107. stimjim](b2107b_stimjim_stimjim.md) |

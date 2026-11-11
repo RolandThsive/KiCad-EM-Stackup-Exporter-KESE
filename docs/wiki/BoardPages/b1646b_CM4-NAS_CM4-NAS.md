@@ -1,4 +1,4 @@
-# 1646 CM4_NAS
+# 1646. CM4_NAS
 
 Board 1,646 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 16](../CorpusTestingPages/Corpus-Testing-16.md#1646-cm4_nas).
 
@@ -44,4 +44,4 @@ Board 1,646 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1645 ai-camera-rev3](b1645b_tokay-lite-pcb_ai-camera-rev3.md) | [1647 ecp5-dev-board](b1647b_ecp5-dev-board_ecp5-dev-board.md) |
+| [1645. ai-camera-rev3](b1645b_tokay-lite-pcb_ai-camera-rev3.md) | [1647. ecp5-dev-board](b1647b_ecp5-dev-board_ecp5-dev-board.md) |

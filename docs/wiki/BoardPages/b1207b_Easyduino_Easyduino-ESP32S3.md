@@ -1,4 +1,4 @@
-# 1207 Easyduino_ESP32S3
+# 1207. Easyduino_ESP32S3
 
 Board 1,207 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 12](../CorpusTestingPages/Corpus-Testing-12.md#1207-easyduino_esp32s3).
 
@@ -45,4 +45,4 @@ Board 1,207 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1206 Easyduino_ESP32](b1206b_Easyduino_Easyduino-ESP32.md) | [1208 Easyduino_RP2040](b1208b_Easyduino_Easyduino-RP2040.md) |
+| [1206. Easyduino_ESP32](b1206b_Easyduino_Easyduino-ESP32.md) | [1208. Easyduino_RP2040](b1208b_Easyduino_Easyduino-RP2040.md) |

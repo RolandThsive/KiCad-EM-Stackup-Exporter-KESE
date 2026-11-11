@@ -1,4 +1,4 @@
-# 2560 mainboard
+# 2560. mainboard
 
 Board 2,560 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 24](../CorpusTestingPages/Corpus-Testing-24.md#2560-mainboard).
 
@@ -45,4 +45,4 @@ Board 2,560 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2559 mainboard_before_drastic](b2559b_mainboard-hardware_mainboard-before-drastic.md) | [2561 Frontend_test](b2561b_SingularitySurfer-FPGA-Lock-In-Amplifier_Frontend-test.md) |
+| [2559. mainboard_before_drastic](b2559b_mainboard-hardware_mainboard-before-drastic.md) | [2561. Frontend_test](b2561b_SingularitySurfer-FPGA-Lock-In-Amplifier_Frontend-test.md) |

@@ -1,4 +1,4 @@
-# 210 Mainboard Full
+# 210. Mainboard Full
 
 Board 210 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 2](../CorpusTestingPages/Corpus-Testing-02.md#210-mainboard-full).
 
@@ -45,4 +45,4 @@ Board 210 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [209 Main Memory Small Enable](b0209b_658-Computer_Main-Memory-Small-Enable.md) | [211 Mainboard Small](b0211b_658-Computer_Mainboard-Small.md) |
+| [209. Main Memory Small Enable](b0209b_658-Computer_Main-Memory-Small-Enable.md) | [211. Mainboard Small](b0211b_658-Computer_Mainboard-Small.md) |

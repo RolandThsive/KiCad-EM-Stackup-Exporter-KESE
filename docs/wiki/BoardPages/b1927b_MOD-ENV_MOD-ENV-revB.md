@@ -1,4 +1,4 @@
-# 1927 MOD-ENV_revB
+# 1927. MOD-ENV_revB
 
 Board 1,927 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 18](../CorpusTestingPages/Corpus-Testing-18.md#1927-mod-env_revb).
 
@@ -45,4 +45,4 @@ Board 1,927 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1926 MOD-BME280_RevB](b1926b_MOD-BME280_MOD-BME280-RevB.md) | [1928 MOD-ESP32-C5_Rev_A](b1928b_MOD-ESP32-C5_MOD-ESP32-C5-Rev-A.md) |
+| [1926. MOD-BME280_RevB](b1926b_MOD-BME280_MOD-BME280-RevB.md) | [1928. MOD-ESP32-C5_Rev_A](b1928b_MOD-ESP32-C5_MOD-ESP32-C5-Rev-A.md) |

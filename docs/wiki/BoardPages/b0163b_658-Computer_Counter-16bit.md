@@ -1,4 +1,4 @@
-# 163 Counter 16bit
+# 163. Counter 16bit
 
 Board 163 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 2](../CorpusTestingPages/Corpus-Testing-02.md#163-counter-16bit).
 
@@ -45,4 +45,4 @@ Board 163 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [162 Counter 16bit with IO](b0162b_658-Computer_Counter-16bit-with-IO.md) | [164 Counter 24bit with IO](b0164b_658-Computer_Counter-24bit-with-IO.md) |
+| [162. Counter 16bit with IO](b0162b_658-Computer_Counter-16bit-with-IO.md) | [164. Counter 24bit with IO](b0164b_658-Computer_Counter-24bit-with-IO.md) |

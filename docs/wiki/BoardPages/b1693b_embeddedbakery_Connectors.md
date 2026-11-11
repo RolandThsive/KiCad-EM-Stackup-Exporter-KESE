@@ -1,4 +1,4 @@
-# 1693 Connectors
+# 1693. Connectors
 
 Board 1,693 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 16](../CorpusTestingPages/Corpus-Testing-16.md#1693-connectors).
 
@@ -45,4 +45,4 @@ Board 1,693 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1692 OperationalAmplifierExamples](b1692b_embeddedbakery_OperationalAmplifierExamples.md) | [1694 Simple OpAmp](b1694b_embeddedbakery_Simple-OpAmp.md) |
+| [1692. OperationalAmplifierExamples](b1692b_embeddedbakery_OperationalAmplifierExamples.md) | [1694. Simple OpAmp](b1694b_embeddedbakery_Simple-OpAmp.md) |

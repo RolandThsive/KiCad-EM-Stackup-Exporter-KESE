@@ -1,4 +1,4 @@
-# 1965 LCD-OLinuXino-5TS_Rev.B
+# 1965. LCD-OLinuXino-5TS_Rev.B
 
 Board 1,965 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 19](../CorpusTestingPages/Corpus-Testing-19.md#1965-lcd-olinuxino-5ts_revb).
 
@@ -45,4 +45,4 @@ Board 1,965 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1964 LCD-OLinuXino-5TS](b1964b_OLINUXINO_LCD-OLinuXino-5TS.md) | [1966 Lime2-SATA_RevA](b1966b_OLINUXINO_Lime2-SATA-RevA.md) |
+| [1964. LCD-OLinuXino-5TS](b1964b_OLINUXINO_LCD-OLinuXino-5TS.md) | [1966. Lime2-SATA_RevA](b1966b_OLINUXINO_Lime2-SATA-RevA.md) |

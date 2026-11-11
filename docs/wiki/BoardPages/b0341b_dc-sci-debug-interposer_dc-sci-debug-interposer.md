@@ -1,4 +1,4 @@
-# 341 dc-sci-debug-interposer
+# 341. dc-sci-debug-interposer
 
 Board 341 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 4](../CorpusTestingPages/Corpus-Testing-04.md#341-dc-sci-debug-interposer).
 
@@ -44,4 +44,4 @@ Board 341 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [340 data-center-rdimm-ddr4-tester](b0340b_data-center-dram-tester_data-center-rdimm-ddr4-tester.md) | [342 dc-scm-breakout-board](b0342b_dc-scm-breakout-board_dc-scm-breakout-board.md) |
+| [340. data-center-rdimm-ddr4-tester](b0340b_data-center-dram-tester_data-center-rdimm-ddr4-tester.md) | [342. dc-scm-breakout-board](b0342b_dc-scm-breakout-board_dc-scm-breakout-board.md) |

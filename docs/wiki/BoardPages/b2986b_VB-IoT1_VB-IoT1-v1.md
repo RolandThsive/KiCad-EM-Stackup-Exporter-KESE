@@ -1,4 +1,4 @@
-# 2986 VB-IoT1_v1
+# 2986. VB-IoT1_v1
 
 Board 2,986 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 28](../CorpusTestingPages/Corpus-Testing-28.md#2986-vb-iot1_v1).
 
@@ -45,4 +45,4 @@ Board 2,986 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2985 BLDC_4](b2985b_bldc-hardware_BLDC-4.md) | [2987 MicroZed_carrier_board_v4](b2987b_microzed-carrier-board_MicroZed-carrier-board-v4.md) |
+| [2985. BLDC_4](b2985b_bldc-hardware_BLDC-4.md) | [2987. MicroZed_carrier_board_v4](b2987b_microzed-carrier-board_MicroZed-carrier-board-v4.md) |

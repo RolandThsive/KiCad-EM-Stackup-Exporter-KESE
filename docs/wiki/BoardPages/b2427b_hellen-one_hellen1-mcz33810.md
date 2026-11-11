@@ -1,4 +1,4 @@
-# 2427 hellen1-mcz33810
+# 2427. hellen1-mcz33810
 
 Board 2,427 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 23](../CorpusTestingPages/Corpus-Testing-23.md#2427-hellen1-mcz33810).
 
@@ -45,4 +45,4 @@ Board 2,427 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2426 xoseram](b2426b_XoseraBoard_xoseram.md) | [2428 hellen1-motor-driver](b2428b_hellen-one_hellen1-motor-driver.md) |
+| [2426. xoseram](b2426b_XoseraBoard_xoseram.md) | [2428. hellen1-motor-driver](b2428b_hellen-one_hellen1-motor-driver.md) |

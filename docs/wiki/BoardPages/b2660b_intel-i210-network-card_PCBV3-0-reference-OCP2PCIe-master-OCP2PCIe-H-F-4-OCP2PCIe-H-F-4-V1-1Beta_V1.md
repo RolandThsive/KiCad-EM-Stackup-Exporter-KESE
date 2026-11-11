@@ -1,4 +1,4 @@
-# 2660 V1
+# 2660. V1
 
 Board 2,660 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 25](../CorpusTestingPages/Corpus-Testing-25.md#2660-v1).
 
@@ -45,4 +45,4 @@ Board 2,660 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [2659 v1-cut10x10](b2659b_intel-i210-network-card_v1-cut10x10.md) | [2661 V1-cut10x10](b2661b_intel-i210-network-card_V1-cut10x10.md) |
+| [2659. v1-cut10x10](b2659b_intel-i210-network-card_v1-cut10x10.md) | [2661. V1-cut10x10](b2661b_intel-i210-network-card_V1-cut10x10.md) |

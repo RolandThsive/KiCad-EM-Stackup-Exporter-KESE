@@ -1,4 +1,4 @@
-# 891 kim-1
+# 891. kim-1
 
 Board 891 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 9](../CorpusTestingPages/Corpus-Testing-09.md#891-kim-1).
 
@@ -44,4 +44,4 @@ Board 891 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [890 k-1013-floppy-controller-replica](b0890b_k-1013-floppy-disk-controller-replica_k-1013-floppy-controller-replica.md) | [892 Interposer_Board_IOCrest](b0892b_ThunderScope_Interposer-Board-IOCrest.md) |
+| [890. k-1013-floppy-controller-replica](b0890b_k-1013-floppy-disk-controller-replica_k-1013-floppy-controller-replica.md) | [892. Interposer_Board_IOCrest](b0892b_ThunderScope_Interposer-Board-IOCrest.md) |

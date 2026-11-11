@@ -1,4 +1,4 @@
-# 143 Board 2x32 W15.24
+# 143. Board 2x32 W15.24
 
 Board 143 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 2](../CorpusTestingPages/Corpus-Testing-02.md#143-board-2x32-w1524).
 
@@ -46,4 +46,4 @@ Board 143 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [142 Board 2x28 W22.86](b0142b_658-Computer_Kicad-Boards-Pins-Board-2x28-W22-86_Board-2x28-W22-86.md) | [144 Board 2x32 W22.86](b0144b_658-Computer_Kicad-Boards-Pins-Board-2x32-W22-86_Board-2x32-W22-86.md) |
+| [142. Board 2x28 W22.86](b0142b_658-Computer_Kicad-Boards-Pins-Board-2x28-W22-86_Board-2x28-W22-86.md) | [144. Board 2x32 W22.86](b0144b_658-Computer_Kicad-Boards-Pins-Board-2x32-W22-86_Board-2x32-W22-86.md) |

@@ -1,4 +1,4 @@
-# 533 RoboMotor-GIM6010-V2-Encoder
+# 533. RoboMotor-GIM6010-V2-Encoder
 
 Board 533 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 5](../CorpusTestingPages/Corpus-Testing-05.md#533-robomotor-gim6010-v2-encoder).
 
@@ -45,4 +45,4 @@ Board 533 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [532 RoboMotor-DJI-M3508](b0532b_robomotor_RoboMotor-DJI-M3508.md) | [534 RoboMotor-GIM6010-V2](b0534b_robomotor_RoboMotor-GIM6010-V2.md) |
+| [532. RoboMotor-DJI-M3508](b0532b_robomotor_RoboMotor-DJI-M3508.md) | [534. RoboMotor-GIM6010-V2](b0534b_robomotor_RoboMotor-GIM6010-V2.md) |

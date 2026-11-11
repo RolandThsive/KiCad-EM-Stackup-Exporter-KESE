@@ -1,4 +1,4 @@
-# 71 PC110_membrance
+# 71. PC110_membrance
 
 Board 71 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 1](../CorpusTestingPages/Corpus-Testing-01.md#71-pc110_membrance).
 
@@ -46,4 +46,4 @@ Board 71 of the 3,138 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page
 
 | Previous | Next |
 |:---|---:|
-| [70 DockingStation](b0070b_Open-Source-PC110_PCB-DockingStation_DockingStation.md) | [72 PC110](b0072b_Open-Source-PC110_PCB-Mainboard_PC110.md) |
+| [70. DockingStation](b0070b_Open-Source-PC110_PCB-DockingStation_DockingStation.md) | [72. PC110](b0072b_Open-Source-PC110_PCB-Mainboard_PC110.md) |
