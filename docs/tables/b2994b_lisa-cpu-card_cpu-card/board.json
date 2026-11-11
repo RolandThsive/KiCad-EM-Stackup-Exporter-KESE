@@ -2,6 +2,7 @@
  "name": "cpu-card",
  "project": "warmech/lisa-cpu-card",
  "path": "warmech__lisa-cpu-card/cad/cpu-card.kicad_pcb",
+ "license": "No license found",
  "rank": 169,
  "complexity": {
   "grade": 397,

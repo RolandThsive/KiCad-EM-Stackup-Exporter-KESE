@@ -2,6 +2,7 @@
  "name": "HarleyGhostRider",
  "project": "osrf/ovc",
  "path": "osrf__ovc/ovc0/hardware/HarleyGhostRider/HarleyGhostRider.kicad_pcb",
+ "license": "Apache-2.0 (Apache License 2.0)",
  "rank": 413,
  "complexity": {
   "grade": 393,

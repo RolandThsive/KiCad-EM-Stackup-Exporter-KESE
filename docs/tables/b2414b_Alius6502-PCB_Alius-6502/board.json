@@ -2,6 +2,7 @@
  "name": "Alius_6502",
  "project": "robsonde/Alius6502_PCB",
  "path": "robsonde__Alius6502_PCB/Alius_6502.kicad_pcb",
+ "license": "No license found",
  "rank": 1117,
  "complexity": {
   "grade": 248,

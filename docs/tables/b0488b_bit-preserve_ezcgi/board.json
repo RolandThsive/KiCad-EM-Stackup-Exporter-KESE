@@ -2,6 +2,7 @@
  "name": "ezcgi",
  "project": "baldengineer/bit-preserve",
  "path": "baldengineer__bit-preserve/Apple/Peripherals/ezcgi/ezcgi.kicad_pcb",
+ "license": "CC-BY-4.0 (Creative Commons Attribution 4.0), in LICENSE.md",
  "rank": 1750,
  "complexity": {
   "grade": 232,

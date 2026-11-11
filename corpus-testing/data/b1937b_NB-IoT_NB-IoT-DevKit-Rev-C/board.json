@@ -14,6 +14,7 @@
  "path": "OLIMEX__NB-IoT/HARDWARE/NB-IoT-DevKit_Rev_C/NB-IoT-DevKit_Rev_C.kicad_pcb",
  "project": "OLIMEX/NB-IoT",
  "name": "NB-IoT-DevKit_Rev_C",
+ "license": "GPL-3.0 (GNU GPL v3.0)",
  "zip": "part13_of_17",
  "features": {
   "through_vias": 203,

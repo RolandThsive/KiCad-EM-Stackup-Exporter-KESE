@@ -2,6 +2,7 @@
  "name": "ESP32-EVB_Rev_C",
  "project": "OLIMEX/ESP32-EVB",
  "path": "OLIMEX__ESP32-EVB/HARDWARE/REV-C/ESP32-EVB_Rev_C.kicad_pcb",
+ "license": "Apache-2.0 (Apache License 2.0)",
  "rank": 666,
  "complexity": {
   "grade": 300,

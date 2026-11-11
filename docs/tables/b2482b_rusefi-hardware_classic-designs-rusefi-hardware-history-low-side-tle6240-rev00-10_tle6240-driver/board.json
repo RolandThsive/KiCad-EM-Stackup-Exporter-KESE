@@ -2,6 +2,7 @@
  "name": "tle6240_driver",
  "project": "rusefi/rusefi-hardware",
  "path": "rusefi__rusefi-hardware/classic-designs/rusefi_hardware_history/low_side_tle6240_rev00.10/tle6240_driver.kicad_pcb",
+ "license": "No license found",
  "rank": 2208,
  "complexity": {
   "grade": 181,

@@ -2,6 +2,7 @@
  "name": "pcb",
  "project": "zephray/Fobu",
  "path": "zephray__Fobu/hardware/pcb/pcb.kicad_pcb",
+ "license": "As README.md states it: \"If not otherwise specified, all the materials provided in this repository are licensed under MIT license.\"",
  "rank": 207,
  "complexity": {
   "grade": 465,

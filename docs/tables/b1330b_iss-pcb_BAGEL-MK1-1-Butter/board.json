@@ -2,6 +2,7 @@
  "name": "BAGEL-MK1.1-Butter",
  "project": "issuiuc/iss-pcb",
  "path": "issuiuc__iss-pcb/boards/BAGEL-MK1/BAGEL-MK1.1-Butter/BAGEL-MK1.1-Butter.kicad_pcb",
+ "license": "No license found",
  "rank": 1053,
  "complexity": {
   "grade": 391,

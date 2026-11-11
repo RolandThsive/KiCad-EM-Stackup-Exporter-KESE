@@ -14,6 +14,7 @@
  "path": "antmicro__agx-thor-baseboard-pcie-interposer/jetson-agx-thor-baseboard-pcie-x1-interposer.kicad_pcb",
  "project": "antmicro/agx-thor-baseboard-pcie-interposer",
  "name": "jetson-agx-thor-baseboard-pcie-x1-interposer",
+ "license": "Apache-2.0 (Apache License 2.0)",
  "zip": "part13_of_17",
  "features": {
   "through_vias": 1880,

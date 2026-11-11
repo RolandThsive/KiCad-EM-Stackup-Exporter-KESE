@@ -2,6 +2,7 @@
  "name": "ESP32-S3-DevKit-LiPo_Rev_B_DIMM",
  "project": "OLIMEX/ESP32-S3-DevKit-LiPo",
  "path": "OLIMEX__ESP32-S3-DevKit-LiPo/HARDWARE/Dimensions/ESP32-S3-DevKit-LiPo_Rev_B_DIMM.kicad_pcb",
+ "license": "GPL-3.0 (GNU GPL v3.0)",
  "rank": 1267,
  "complexity": {
   "grade": 237,

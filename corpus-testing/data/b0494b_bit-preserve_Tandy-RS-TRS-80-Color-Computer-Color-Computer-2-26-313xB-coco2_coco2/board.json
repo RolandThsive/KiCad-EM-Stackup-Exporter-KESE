@@ -14,6 +14,7 @@
  "path": "baldengineer__bit-preserve/Tandy-RS/TRS-80 Color Computer/Color Computer 2/26-313xB/coco2/coco2.kicad_pcb",
  "project": "baldengineer/bit-preserve",
  "name": "coco2",
+ "license": "CC-BY-4.0 (Creative Commons Attribution 4.0), in LICENSE.md",
  "zip": "part12_of_17",
  "features": {
   "through_vias": 215,

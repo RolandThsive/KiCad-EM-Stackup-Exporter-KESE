@@ -14,6 +14,7 @@
  "path": "OLIMEX__TuxCon-Kitty/HARDWARE/REV-A/TuxCon_Kitty_Rev_A.kicad_pcb",
  "project": "OLIMEX/TuxCon-Kitty",
  "name": "TuxCon_Kitty_Rev_A",
+ "license": "Apache-2.0 (Apache License 2.0)",
  "zip": "part16_of_17",
  "features": {
   "through_vias": 7,

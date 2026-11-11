@@ -2,6 +2,7 @@
  "name": "Driverino-Shield",
  "project": "weirdgyn/Driverino-Shield",
  "path": "weirdgyn__Driverino-Shield/PCB/Driverino-Shield.kicad_pcb",
+ "license": "GPL-3.0 (GNU GPL v3.0)",
  "rank": 2181,
  "complexity": {
   "grade": 241,

@@ -2,6 +2,7 @@
  "name": "RoboMotor-GIM6010",
  "project": "baoqi-zhong/robomotor",
  "path": "baoqi-zhong__robomotor/Hardware/RoboMotor-GIM6010/RoboMotor-GIM6010.kicad_pcb",
+ "license": "MIT (MIT License)",
  "rank": 916,
  "complexity": {
   "grade": 394,

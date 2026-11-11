@@ -14,6 +14,7 @@
  "path": "antmicro__stm32h7-hdmi-board-sodimm/stm32h7-hdmi-board-sodimm-module.kicad_pcb",
  "project": "antmicro/stm32h7-hdmi-board-sodimm",
  "name": "stm32h7-hdmi-board-sodimm-module",
+ "license": "Apache-2.0 (Apache License 2.0)",
  "zip": "part11_of_17",
  "features": {
   "through_vias": 494,

@@ -14,6 +14,7 @@
  "path": "OLIMEX__BB-PWR-8113/BB-PWR-8113_revA.kicad_pcb",
  "project": "OLIMEX/BB-PWR-8113",
  "name": "BB-PWR-8113_revA",
+ "license": "Apache-2.0 (Apache License 2.0)",
  "zip": "part16_of_17",
  "features": {
   "through_vias": 0,

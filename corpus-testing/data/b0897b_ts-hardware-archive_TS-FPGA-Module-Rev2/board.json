@@ -14,6 +14,7 @@
  "path": "EEVengers__ts_hardware_archive/KiCad/FPGA_Module_Rev2/TS_FPGA_Module_Rev2.kicad_pcb",
  "project": "EEVengers/ts_hardware_archive",
  "name": "TS_FPGA_Module_Rev2",
+ "license": "CERN-OHL-P-2.0 (CERN Open Hardware Licence v2, Permissive)",
  "zip": "part09_of_17",
  "features": {
   "through_vias": 669,

@@ -2,6 +2,7 @@
  "name": "2019-07-02_17:02:16_fpga_hat",
  "project": "Wren6991/Snowflake-FPGA",
  "path": "Wren6991__Snowflake-FPGA/timelapse/2019-07-02_17:02:16_fpga_hat.kicad_pcb",
+ "license": "Apache-2.0 (Apache License 2.0), in License",
  "rank": 1802,
  "complexity": {
   "grade": 271,

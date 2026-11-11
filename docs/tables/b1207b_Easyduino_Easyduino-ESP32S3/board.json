@@ -2,6 +2,7 @@
  "name": "Easyduino_ESP32S3",
  "project": "Hanqaqa/Easyduino",
  "path": "Hanqaqa__Easyduino/ESP32S3/Easyduino_ESP32S3.kicad_pcb",
+ "license": "CERN-OHL-P-2.0 (CERN Open Hardware Licence v2, Permissive)",
  "rank": 1584,
  "complexity": {
   "grade": 312,

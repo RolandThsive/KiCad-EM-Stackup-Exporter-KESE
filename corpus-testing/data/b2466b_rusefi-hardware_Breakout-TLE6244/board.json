@@ -14,6 +14,7 @@
  "path": "rusefi__rusefi-hardware/classic-designs/rusefi_hardware_history/Breakout_TLE6244_rev00.10/Breakout_TLE6244/Breakout_TLE6244.kicad_pcb",
  "project": "rusefi/rusefi-hardware",
  "name": "Breakout_TLE6244",
+ "license": "No license found",
  "zip": "part16_of_17",
  "features": {
   "through_vias": 100,

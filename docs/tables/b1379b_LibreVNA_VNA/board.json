@@ -2,6 +2,7 @@
  "name": "VNA",
  "project": "jankae/LibreVNA",
  "path": "jankae__LibreVNA/Hardware/Kicad/VNA.kicad_pcb",
+ "license": "GPL-3.0 (GNU GPL v3.0)",
  "rank": 153,
  "complexity": {
   "grade": 435,

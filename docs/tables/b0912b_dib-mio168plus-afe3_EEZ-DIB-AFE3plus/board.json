@@ -2,6 +2,7 @@
  "name": "EEZ DIB AFE3plus",
  "project": "eez-open/dib-mio168plus-afe3",
  "path": "eez-open__dib-mio168plus-afe3/KiCad/EEZ DIB AFE3plus.kicad_pcb",
+ "license": "TAPR-OHL-1.0 (TAPR Open Hardware License), in LICENSE.TXT",
  "rank": 903,
  "complexity": {
   "grade": 332,

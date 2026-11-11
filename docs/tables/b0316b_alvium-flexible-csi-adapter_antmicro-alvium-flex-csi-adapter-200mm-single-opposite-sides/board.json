@@ -2,6 +2,7 @@
  "name": "antmicro-alvium-flex-csi-adapter-200mm-single-opposite-sides",
  "project": "antmicro/alvium-flexible-csi-adapter",
  "path": "antmicro__alvium-flexible-csi-adapter/200mm-single-opposite-sides/antmicro-alvium-flex-csi-adapter-200mm-single-opposite-sides.kicad_pcb",
+ "license": "Apache-2.0 (Apache License 2.0)",
  "rank": 2378,
  "complexity": {
   "grade": 182,

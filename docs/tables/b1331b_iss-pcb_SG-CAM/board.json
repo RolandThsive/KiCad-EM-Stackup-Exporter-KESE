@@ -2,6 +2,7 @@
  "name": "SG_CAM",
  "project": "issuiuc/iss-pcb",
  "path": "issuiuc__iss-pcb/boards/CAM-MK1/SG_CAM.kicad_pcb",
+ "license": "No license found",
  "rank": 1729,
  "complexity": {
   "grade": 326,

@@ -14,6 +14,7 @@
  "path": "RetroStack__TRS-80-Model-I-D-E1/KiCAD/TRS80_Model_I_D_E1.kicad_pcb",
  "project": "RetroStack/TRS-80-Model-I-D-E1",
  "name": "TRS80_Model_I_D_E1",
+ "license": "MIT (MIT License)",
  "zip": "part09_of_17",
  "features": {
   "through_vias": 698,

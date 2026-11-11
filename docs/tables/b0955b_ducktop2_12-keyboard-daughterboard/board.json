@@ -2,6 +2,7 @@
  "name": "12_keyboard_daughterboard",
  "project": "ewoudvv/ducktop2",
  "path": "ewoudvv__ducktop2/keyboard/12_keyboard_daughterboard.kicad_pcb",
+ "license": "MIT (MIT License)",
  "rank": 436,
  "complexity": {
   "grade": 319,

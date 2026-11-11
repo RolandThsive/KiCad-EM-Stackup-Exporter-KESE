@@ -2,6 +2,7 @@
  "name": "Caravel_breakout_v2",
  "project": "antmicro/caravel_board",
  "path": "antmicro__caravel_board/hardware/caravel_breakout_v2/Caravel_breakout_v2.kicad_pcb",
+ "license": "No license found",
  "rank": 1932,
  "complexity": {
   "grade": 275,

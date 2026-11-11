@@ -14,6 +14,7 @@
  "path": "nalgonda-tiger__vohm/LattePandaMu_Motherboard-Main/LattePandaMu_Motherboard.kicad_pcb",
  "project": "nalgonda-tiger/vohm",
  "name": "LattePandaMu_Motherboard",
+ "license": "No license found",
  "zip": "part11_of_17",
  "features": {
   "through_vias": 1448,

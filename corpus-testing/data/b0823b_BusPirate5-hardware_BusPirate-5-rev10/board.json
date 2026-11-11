@@ -14,6 +14,7 @@
  "path": "DangerousPrototypes__BusPirate5-hardware/bus_pirate_pcb/development/5-REV10-PFET-bug/BusPirate-5-rev10.kicad_pcb",
  "project": "DangerousPrototypes/BusPirate5-hardware",
  "name": "BusPirate-5-rev10",
+ "license": "MIT (MIT License)",
  "zip": "part12_of_17",
  "features": {
   "through_vias": 548,

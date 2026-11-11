@@ -2,6 +2,7 @@
  "name": "ss-relay",
  "project": "sufst/pcb",
  "path": "sufst__pcb/ss-relay/ss-relay.kicad_pcb",
+ "license": "GPL-3.0 (GNU GPL v3.0)",
  "rank": 2907,
  "complexity": {
   "grade": 160,

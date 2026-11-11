@@ -2,6 +2,7 @@
  "name": "Zipper",
  "project": "myriadrf/reference-development-kit",
  "path": "myriadrf__reference-development-kit/zipper/hardware/v2/KiCAD/Zipper.kicad_pcb",
+ "license": "CC-BY-3.0 (Creative Commons Attribution 3.0), in myriadrf-8001/COPYING, umyriadrf-6002/COPYING, umyriadrf-7002/COPYING and others",
  "rank": 449,
  "complexity": {
   "grade": 350,

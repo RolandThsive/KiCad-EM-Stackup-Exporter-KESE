@@ -2,6 +2,7 @@
  "name": "frank_core2_proto",
  "project": "rh1tech/frank",
  "path": "rh1tech__frank/hardware/frank_core2_proto/frank_core2_proto.kicad_pcb",
+ "license": "GPL-3.0 (GNU GPL v3.0)",
  "rank": 994,
  "complexity": {
   "grade": 394,

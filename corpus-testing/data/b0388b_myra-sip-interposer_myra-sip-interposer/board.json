@@ -14,6 +14,7 @@
  "path": "antmicro__myra-sip-interposer/myra-sip-interposer.kicad_pcb",
  "project": "antmicro/myra-sip-interposer",
  "name": "myra-sip-interposer",
+ "license": "Apache-2.0 (Apache License 2.0)",
  "zip": "part15_of_17",
  "features": {
   "through_vias": 164,

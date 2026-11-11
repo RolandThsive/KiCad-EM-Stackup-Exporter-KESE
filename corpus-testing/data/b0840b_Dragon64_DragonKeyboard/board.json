@@ -14,6 +14,7 @@
  "path": "danwerner21__Dragon64/Dragon64Keyboard/DragonKeyboard.kicad_pcb",
  "project": "danwerner21/Dragon64",
  "name": "DragonKeyboard",
+ "license": "No license found",
  "zip": "part16_of_17",
  "features": {
   "through_vias": 27,

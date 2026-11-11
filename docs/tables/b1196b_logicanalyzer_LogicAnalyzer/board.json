@@ -2,6 +2,7 @@
  "name": "LogicAnalyzer",
  "project": "gusmanb/logicanalyzer",
  "path": "gusmanb__logicanalyzer/Electronics/LogicAnalyzer/LogicAnalyzer/LogicAnalyzer.kicad_pcb",
+ "license": "GPL-3.0 (GNU GPL v3.0)",
  "rank": 1646,
  "complexity": {
   "grade": 228,

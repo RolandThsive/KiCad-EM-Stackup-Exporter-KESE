@@ -2,6 +2,7 @@
  "name": "dualpmod",
  "project": "lowRISC/sonata-system",
  "path": "lowRISC__sonata-system/vendor/lowrisc_ip/ip/usbdev/pmod/dualpmod-kicad/dualpmod.kicad_pcb",
+ "license": "Apache-2.0 (Apache License 2.0)",
  "rank": 2558,
  "complexity": {
   "grade": 185,

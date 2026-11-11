@@ -2,6 +2,7 @@
  "name": "STMP15x-SHIELD_Rev_A",
  "project": "OLIMEX/STMP15X-SHIELD",
  "path": "OLIMEX__STMP15X-SHIELD/HARDWARE/STMP15x-SHIELD_Rev_A/STMP15x-SHIELD_Rev_A.kicad_pcb",
+ "license": "GPL-3.0 (GNU GPL v3.0)",
  "rank": 1318,
  "complexity": {
   "grade": 226,

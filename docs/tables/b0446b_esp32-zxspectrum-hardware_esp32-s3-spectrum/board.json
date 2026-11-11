@@ -2,6 +2,7 @@
  "name": "esp32-s3-spectrum",
  "project": "atomic14/esp32-zxspectrum-hardware",
  "path": "atomic14__esp32-zxspectrum-hardware/esp32-s3-spectrum.kicad_pcb",
+ "license": "GPL-3.0 (GNU GPL v3.0)",
  "rank": 962,
  "complexity": {
   "grade": 363,

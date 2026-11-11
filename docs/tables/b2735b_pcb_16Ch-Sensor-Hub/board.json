@@ -2,6 +2,7 @@
  "name": "16Ch-Sensor-Hub",
  "project": "sufst/pcb",
  "path": "sufst__pcb/sensor-hub/16Ch-Sensor-Hub.kicad_pcb",
+ "license": "GPL-3.0 (GNU GPL v3.0)",
  "rank": 1181,
  "complexity": {
   "grade": 375,

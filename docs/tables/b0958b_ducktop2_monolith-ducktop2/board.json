@@ -2,6 +2,7 @@
  "name": "monolith_ducktop2",
  "project": "ewoudvv/ducktop2",
  "path": "ewoudvv__ducktop2/reference/monolith/monolith_ducktop2.kicad_pcb",
+ "license": "MIT (MIT License)",
  "rank": 694,
  "complexity": {
   "grade": 420,

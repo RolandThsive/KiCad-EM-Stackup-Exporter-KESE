@@ -2,6 +2,7 @@
  "name": "Omega-Mainboard",
  "project": "skiselev/omega",
  "path": "skiselev__omega/Mainboard/KiCad/Omega-Mainboard.kicad_pcb",
+ "license": "GPL-3.0 (GNU GPL v3.0)",
  "rank": 351,
  "complexity": {
   "grade": 266,

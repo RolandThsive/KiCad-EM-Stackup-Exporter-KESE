@@ -14,6 +14,7 @@
  "path": "baldengineer__Mega-IIe/kicad files/servid-rp2040-hdmi proto rev1/servid-rp2040-hdmi proto rev1.kicad_pcb",
  "project": "baldengineer/Mega-IIe",
  "name": "servid-rp2040-hdmi proto rev1",
+ "license": "MIT (MIT License)",
  "zip": "part15_of_17",
  "features": {
   "through_vias": 196,

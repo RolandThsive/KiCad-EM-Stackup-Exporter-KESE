@@ -14,6 +14,7 @@
  "path": "baldengineer__Mega-IIe/kicad files/not_used/gd rev2 backplane/gd rev2 backplane.kicad_pcb",
  "project": "baldengineer/Mega-IIe",
  "name": "gd rev2 backplane",
+ "license": "MIT (MIT License)",
  "zip": "part16_of_17",
  "features": {
   "through_vias": 0,

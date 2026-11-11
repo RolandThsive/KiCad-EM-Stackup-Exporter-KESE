@@ -2,6 +2,7 @@
  "name": "fpc07181",
  "project": "loxodes/vna",
  "path": "loxodes__vna/hardware/mm_reflectometer/evalboards/fpc07181/fpc07181.kicad_pcb",
+ "license": "As README.md states it: \"Unless otherwise noted, all work is under a MIT license.\"",
  "rank": 2867,
  "complexity": {
   "grade": 215,

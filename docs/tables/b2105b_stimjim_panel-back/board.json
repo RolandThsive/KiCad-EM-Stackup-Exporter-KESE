@@ -2,6 +2,7 @@
  "name": "panel-back",
  "project": "open-ephys/stimjim",
  "path": "open-ephys__stimjim/PCB/panels/panel-back.kicad_pcb",
+ "license": "No license found",
  "rank": 3000,
  "complexity": {
   "grade": 101,

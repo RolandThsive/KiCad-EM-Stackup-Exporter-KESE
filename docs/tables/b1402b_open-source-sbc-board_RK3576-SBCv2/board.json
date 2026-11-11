@@ -2,6 +2,7 @@
  "name": "RK3576 SBCv2",
  "project": "joengineer656/open-source-sbc-board",
  "path": "joengineer656__open-source-sbc-board/RK3576 SBCv2.kicad_pcb",
+ "license": "CERN-OHL-P-2.0 (CERN Open Hardware Licence v2, Permissive), in LICENSE",
  "rank": 1108,
  "complexity": {
   "grade": 302,

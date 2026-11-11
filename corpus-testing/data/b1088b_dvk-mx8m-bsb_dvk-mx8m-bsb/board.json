@@ -14,6 +14,7 @@
  "path": "gralco__dvk-mx8m-bsb/dvk-mx8m-bsb.kicad_pcb",
  "project": "gralco/dvk-mx8m-bsb",
  "name": "dvk-mx8m-bsb",
+ "license": "GPL-3.0 (GNU GPL v3.0)",
  "zip": "part03_of_17",
  "features": {
   "through_vias": 1474,

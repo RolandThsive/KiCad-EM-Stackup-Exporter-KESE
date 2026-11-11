@@ -2,6 +2,7 @@
  "name": "scalenode-cm4-baseboard",
  "project": "antmicro/scalenode-cm4-baseboard",
  "path": "antmicro__scalenode-cm4-baseboard/scalenode-cm4-baseboard.kicad_pcb",
+ "license": "Apache-2.0 (Apache License 2.0)",
  "rank": 585,
  "complexity": {
   "grade": 358,

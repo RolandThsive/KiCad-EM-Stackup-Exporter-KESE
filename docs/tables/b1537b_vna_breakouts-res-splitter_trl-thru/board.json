@@ -2,6 +2,7 @@
  "name": "trl_thru",
  "project": "loxodes/vna",
  "path": "loxodes__vna/breakouts/res_splitter/trl_thru.kicad_pcb",
+ "license": "As README.md states it: \"Unless otherwise noted, all work is under a MIT license.\"",
  "rank": 2955,
  "complexity": {
   "grade": 147,

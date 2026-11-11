@@ -14,6 +14,7 @@
  "path": "olin-electric-motorsports__olin-electric-motorsports/vehicle/gokart/hardware/bms_core/bms_core.kicad_pcb",
  "project": "olin-electric-motorsports/olin-electric-motorsports",
  "name": "bms_core",
+ "license": "No license found",
  "zip": "part16_of_17",
  "features": {
   "through_vias": 36,

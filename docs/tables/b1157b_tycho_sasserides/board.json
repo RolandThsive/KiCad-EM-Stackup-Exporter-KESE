@@ -2,6 +2,7 @@
  "name": "sasserides",
  "project": "greatscottgadgets/tycho",
  "path": "greatscottgadgets__tycho/sasserides/sasserides.kicad_pcb",
+ "license": "CERN-OHL-P-2.0 (CERN Open Hardware Licence v2, Permissive)",
  "rank": 2285,
  "complexity": {
   "grade": 230,

@@ -2,6 +2,7 @@
  "name": "allwinner-h3",
  "project": "hvwyl/allwinner-h3-ddr3-16x1-kicad",
  "path": "hvwyl__allwinner-h3-ddr3-16x1-kicad/project/allwinner-h3.kicad_pcb",
+ "license": "No license found",
  "rank": 1215,
  "complexity": {
   "grade": 293,

@@ -2,6 +2,7 @@
  "name": "headstage-rhs2116",
  "project": "open-ephys/onix-headstage-rhs2116",
  "path": "open-ephys__onix-headstage-rhs2116/pcb/headstage-rhs2116.kicad_pcb",
+ "license": "No license found",
  "rank": 880,
  "complexity": {
   "grade": 425,

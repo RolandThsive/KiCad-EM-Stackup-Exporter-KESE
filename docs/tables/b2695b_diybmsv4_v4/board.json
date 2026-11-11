@@ -2,6 +2,7 @@
  "name": "v4",
  "project": "stuartpittaway/diybmsv4",
  "path": "stuartpittaway__diybmsv4/ModuleV400/v4.kicad_pcb",
+ "license": "CC-BY-NC-SA-2.0-UK (Creative Commons Attribution-NonCommercial-ShareAlike 2.0 UK: England & Wales), in LICENSE",
  "rank": 2062,
  "complexity": {
   "grade": 205,

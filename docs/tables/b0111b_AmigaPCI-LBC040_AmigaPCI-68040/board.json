@@ -2,6 +2,7 @@
  "name": "AmigaPCI 68040",
  "project": "AmigaPCI/AmigaPCI-LBC040",
  "path": "AmigaPCI__AmigaPCI-LBC040/KiCAD/AmigaPCI-LBC040-REV60/AmigaPCI 68040.kicad_pcb",
+ "license": "No license found",
  "rank": 415,
  "complexity": {
   "grade": 370,

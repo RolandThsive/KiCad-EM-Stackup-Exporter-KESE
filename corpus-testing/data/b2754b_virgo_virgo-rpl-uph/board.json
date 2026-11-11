@@ -14,6 +14,7 @@
  "path": "system76__virgo/pcb-rpl-uph/virgo-rpl-uph.kicad_pcb",
  "project": "system76/virgo",
  "name": "virgo-rpl-uph",
+ "license": "CERN-OHL-S-2.0 (CERN Open Hardware Licence v2, Strongly Reciprocal)",
  "zip": "part13_of_17",
  "features": {
   "through_vias": 292,

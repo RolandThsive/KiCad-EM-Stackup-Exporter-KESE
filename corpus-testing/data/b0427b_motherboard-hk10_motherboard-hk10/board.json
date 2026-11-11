@@ -14,6 +14,7 @@
  "path": "artemisamsx__motherboard-hk10/motherboard-hk10.kicad_pcb",
  "project": "artemisamsx/motherboard-hk10",
  "name": "motherboard-hk10",
+ "license": "TAPR-OHL-1.0 (TAPR Open Hardware License), in LICENSE.txt",
  "zip": "part16_of_17",
  "features": {
   "through_vias": 0,

@@ -2,6 +2,7 @@
  "name": "PCBFrame",
  "project": "GaudiLabs/OpenDrop",
  "path": "GaudiLabs__OpenDrop/OpenDropV3/Carrier/PCBFrame/PCBFrame.kicad_pcb",
+ "license": "GPL-3.0 (GNU GPL v3.0)",
  "rank": 3065,
  "complexity": {
   "grade": 69,

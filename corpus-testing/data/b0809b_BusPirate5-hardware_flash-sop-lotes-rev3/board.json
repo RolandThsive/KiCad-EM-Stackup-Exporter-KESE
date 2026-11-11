@@ -14,6 +14,7 @@
  "path": "DangerousPrototypes__BusPirate5-hardware/adapter-flash-sop-lotes-1REV3/flash-sop-lotes-rev3.kicad_pcb",
  "project": "DangerousPrototypes/BusPirate5-hardware",
  "name": "flash-sop-lotes-rev3",
+ "license": "MIT (MIT License)",
  "zip": "part16_of_17",
  "features": {
   "through_vias": 42,

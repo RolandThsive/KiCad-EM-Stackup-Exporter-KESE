@@ -14,6 +14,7 @@
  "path": "heev__motor-controller-2018/voltage-regulator-module/voltage-regulator-module.kicad_pcb",
  "project": "heev/motor-controller-2018",
  "name": "voltage-regulator-module",
+ "license": "No license found",
  "zip": "part16_of_17",
  "features": {
   "through_vias": 10,

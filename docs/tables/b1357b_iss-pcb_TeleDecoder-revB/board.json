@@ -2,6 +2,7 @@
  "name": "TeleDecoder-revB",
  "project": "issuiuc/iss-pcb",
  "path": "issuiuc__iss-pcb/boards/TeleDecoder/TeleDecoder-revB/TeleDecoder-revB.kicad_pcb",
+ "license": "No license found",
  "rank": 1999,
  "complexity": {
   "grade": 346,

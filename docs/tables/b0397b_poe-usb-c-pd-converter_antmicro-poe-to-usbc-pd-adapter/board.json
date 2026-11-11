@@ -2,6 +2,7 @@
  "name": "antmicro-poe-to-usbc-pd-adapter",
  "project": "antmicro/poe-usb-c-pd-converter",
  "path": "antmicro__poe-usb-c-pd-converter/antmicro-poe-to-usbc-pd-adapter.kicad_pcb",
+ "license": "Apache-2.0 (Apache License 2.0)",
  "rank": 586,
  "complexity": {
   "grade": 394,

@@ -2,6 +2,7 @@
  "name": "StackLink",
  "project": "gusmanb/logicanalyzer",
  "path": "gusmanb__logicanalyzer/Electronics/LogicAnalyzer/StackLink/StackLink/StackLink.kicad_pcb",
+ "license": "GPL-3.0 (GNU GPL v3.0)",
  "rank": 2920,
  "complexity": {
   "grade": 137,

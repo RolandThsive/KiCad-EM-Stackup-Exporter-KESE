@@ -2,6 +2,7 @@
  "name": "CAM-MK3-revA",
  "project": "issuiuc/iss-pcb",
  "path": "issuiuc__iss-pcb/boards/CAM-MK3/CAM-MK3-revA/CAM-MK3-revA.kicad_pcb",
+ "license": "No license found",
  "rank": 1426,
  "complexity": {
   "grade": 381,

@@ -14,6 +14,7 @@
  "path": "tmarhguy__alu/schematics/kicad/boards/led_panel/led_panel_1/led_panel_1.kicad_pcb",
  "project": "tmarhguy/alu",
  "name": "led_panel_1",
+ "license": "MIT (MIT License)",
  "zip": "part15_of_17",
  "features": {
   "through_vias": 184,

@@ -2,6 +2,7 @@
  "name": "proto_ads_bee_rf_board",
  "project": "CoolNamesAllTaken/adsbee",
  "path": "CoolNamesAllTaken__adsbee/kicad/prototyping/proto_ads_bee_rf_board/proto_ads_bee_rf_board.kicad_pcb",
+ "license": "GPL-3.0 (GNU GPL v3.0), in LICENSE",
  "rank": 2704,
  "complexity": {
   "grade": 218,

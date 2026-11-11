@@ -14,6 +14,7 @@
  "path": "belaplatform__bela-hardware/GemStereo/GemStereo_rev_A4/Bela_Gem_Stereo.kicad_pcb",
  "project": "belaplatform/bela-hardware",
  "name": "Bela_Gem_Stereo",
+ "license": "As README.md states it: \"The hardware designs in this repo are licensed under a Creative Commons Attribution Sharealike license, or CC-BY-SA. This means you are free edit and use these designs, as long as you agree to supply credit and release your results under the same license. Read about CC-BY-SA here.\"",
  "zip": "part16_of_17",
  "features": {
   "through_vias": 0,

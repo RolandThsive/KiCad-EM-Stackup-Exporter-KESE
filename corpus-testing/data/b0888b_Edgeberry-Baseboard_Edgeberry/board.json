@@ -14,6 +14,7 @@
  "path": "Edgeberry__Edgeberry-Baseboard/Edgeberry.kicad_pcb",
  "project": "Edgeberry/Edgeberry-Baseboard",
  "name": "Edgeberry",
+ "license": "CERN-OHL-W-2.0 (CERN Open Hardware Licence v2, Weakly Reciprocal)",
  "zip": "part16_of_17",
  "features": {
   "through_vias": 194,

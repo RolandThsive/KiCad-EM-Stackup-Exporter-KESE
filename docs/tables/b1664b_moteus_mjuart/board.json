@@ -2,6 +2,7 @@
  "name": "mjuart",
  "project": "mjbots/moteus",
  "path": "mjbots__moteus/hw/mjuart/mjuart.kicad_pcb",
+ "license": "Apache-2.0 (Apache License 2.0)",
  "rank": 2442,
  "complexity": {
   "grade": 245,

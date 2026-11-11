@@ -2,6 +2,7 @@
  "name": "nref-wifi-m2",
  "project": "torlye/pocket-reform",
  "path": "torlye__pocket-reform/pocket-reform-wifi/nref-wifi-m2.kicad_pcb",
+ "license": "CERN-OHL-S-2.0 (CERN Open Hardware Licence v2, Strongly Reciprocal), in LICENSE",
  "rank": 1892,
  "complexity": {
   "grade": 279,

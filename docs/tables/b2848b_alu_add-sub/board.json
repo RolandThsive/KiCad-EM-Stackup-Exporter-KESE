@@ -2,6 +2,7 @@
  "name": "add_sub",
  "project": "tmarhguy/alu",
  "path": "tmarhguy__alu/schematics/kicad/boards/add_sub/add_sub.kicad_pcb",
+ "license": "MIT (MIT License)",
  "rank": 2315,
  "complexity": {
   "grade": 84,

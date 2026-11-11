@@ -2,6 +2,7 @@
  "name": "amiga2000",
  "project": "rhaamo/kicad-amiga2000",
  "path": "rhaamo__kicad-amiga2000/amiga2000.kicad_pcb",
+ "license": "CC0-1.0 (Creative Commons Zero v1.0)",
  "rank": 73,
  "complexity": {
   "grade": 367,

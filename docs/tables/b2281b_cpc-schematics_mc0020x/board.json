@@ -2,6 +2,7 @@
  "name": "mc0020x",
  "project": "pelrun/cpc-schematics",
  "path": "pelrun__cpc-schematics/cpc6128/mc0020x.kicad_pcb",
+ "license": "No license found",
  "rank": 236,
  "complexity": {
   "grade": 313,

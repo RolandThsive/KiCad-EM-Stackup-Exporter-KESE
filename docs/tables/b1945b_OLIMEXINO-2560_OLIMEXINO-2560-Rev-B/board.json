@@ -2,6 +2,7 @@
  "name": "OLIMEXINO-2560_Rev_B",
  "project": "OLIMEX/OLIMEXINO-2560",
  "path": "OLIMEX__OLIMEXINO-2560/HARDWARE/OLIMEXINO-2560_Rev_B.kicad_pcb",
+ "license": "As README.md states it: \"Software Licensee is GPL 3.0; Hardware Licensee is CERN Open Hardware Licence v1.2; Documentation is released under CC BY-SA 3.0\"",
  "rank": 892,
  "complexity": {
   "grade": 287,

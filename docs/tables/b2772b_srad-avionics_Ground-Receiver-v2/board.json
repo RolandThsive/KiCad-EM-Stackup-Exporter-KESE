@@ -2,6 +2,7 @@
  "name": "Ground Receiver v2",
  "project": "terrapin-rocket-team/srad-avionics",
  "path": "terrapin-rocket-team__srad-avionics/Spaceport/PCBs/Ground Reciever/Ground Reciever v2/Ground Receiver v2.kicad_pcb",
+ "license": "No license found",
  "rank": 2343,
  "complexity": {
   "grade": 170,

@@ -2,6 +2,7 @@
  "name": "pressure_mpxv5004dp",
  "project": "respiraworks/ventilator",
  "path": "respiraworks__ventilator/pcb/sensor-daughterboards/pressure_mpxv5004dp/pressure_mpxv5004dp.kicad_pcb",
+ "license": "Apache-2.0 (Apache License 2.0)",
  "rank": 2761,
  "complexity": {
   "grade": 154,

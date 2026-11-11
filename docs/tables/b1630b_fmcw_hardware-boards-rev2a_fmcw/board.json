@@ -2,6 +2,7 @@
  "name": "fmcw",
  "project": "matthuszagh/fmcw",
  "path": "matthuszagh__fmcw/hardware/boards/rev2a/fmcw.kicad_pcb",
+ "license": "Apache-2.0 (Apache License 2.0)",
  "rank": 316,
  "complexity": {
   "grade": 400,

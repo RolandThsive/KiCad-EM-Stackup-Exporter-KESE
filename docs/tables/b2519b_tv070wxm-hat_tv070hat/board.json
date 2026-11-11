@@ -2,6 +2,7 @@
  "name": "tv070hat",
  "project": "ScandentLLC/tv070wxm-hat",
  "path": "ScandentLLC__tv070wxm-hat/tv070hat.kicad_pcb",
+ "license": "CC0-1.0 (Creative Commons Zero v1.0)",
  "rank": 1322,
  "complexity": {
   "grade": 286,

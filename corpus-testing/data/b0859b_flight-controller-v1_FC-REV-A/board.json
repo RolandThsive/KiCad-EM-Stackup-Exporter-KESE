@@ -14,6 +14,7 @@
  "path": "desanv01__flight-controller-v1/fabrication/jlcpcb/source/hardware/FC_REV_A.kicad_pcb",
  "project": "desanv01/flight-controller-v1",
  "name": "FC_REV_A",
+ "license": "CC-BY-SA-4.0 (Creative Commons Attribution-ShareAlike 4.0), in LICENSE.md",
  "zip": "part11_of_17",
  "features": {
   "through_vias": 1062,

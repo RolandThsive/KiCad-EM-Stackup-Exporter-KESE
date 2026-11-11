@@ -2,6 +2,7 @@
  "name": "EGSE",
  "project": "nanosatlab/pocat-hw",
  "path": "nanosatlab__pocat-hw/pq_egse/EGSE.kicad_pcb",
+ "license": "No license found",
  "rank": 886,
  "complexity": {
   "grade": 323,

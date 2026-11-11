@@ -2,6 +2,7 @@
  "name": "tip",
  "project": "azonenberg/starshipraider",
  "path": "azonenberg__starshipraider/boards/probes/akl-ad3/tip/tip.kicad_pcb",
+ "license": "BSD-3-Clause (BSD 3-Clause License)",
  "rank": 2110,
  "complexity": {
   "grade": 184,

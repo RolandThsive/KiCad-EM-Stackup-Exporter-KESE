@@ -2,6 +2,7 @@
  "name": "IMUArray_ProcessingBoard",
  "project": "will127534/IMU_Array",
  "path": "will127534__IMU_Array/IMUArray_ProcessingBoard/IMUArray_ProcessingBoard/IMUArray_ProcessingBoard.kicad_pcb",
+ "license": "MIT (MIT License)",
  "rank": 825,
  "complexity": {
   "grade": 338,

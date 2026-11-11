@@ -2,6 +2,7 @@
  "name": "smd-protoboard",
  "project": "OLIMEX/SMT-PROTOBOARD",
  "path": "OLIMEX__SMT-PROTOBOARD/smd-protoboard.kicad_pcb",
+ "license": "Apache-2.0 (Apache License 2.0)",
  "rank": 1059,
  "complexity": {
   "grade": 262,

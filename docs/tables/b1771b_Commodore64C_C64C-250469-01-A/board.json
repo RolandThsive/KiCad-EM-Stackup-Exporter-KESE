@@ -2,6 +2,7 @@
  "name": "C64C-250469-01-A",
  "project": "NeedfulThings/Commodore64C",
  "path": "NeedfulThings__Commodore64C/250469-RevA/C64C-250469-01-A.kicad_pcb",
+ "license": "CERN-OHL-S-2.0 (CERN Open Hardware Licence v2, Strongly Reciprocal), in LICENSE.txt",
  "rank": 779,
  "complexity": {
   "grade": 257,

@@ -2,6 +2,7 @@
  "name": "cantact",
  "project": "linklayer/cantact-hw",
  "path": "linklayer__cantact-hw/cantact.kicad_pcb",
+ "license": "CC-BY-SA-4.0 (Creative Commons Attribution-ShareAlike 4.0), in LICENSE.md",
  "rank": 2183,
  "complexity": {
   "grade": 228,

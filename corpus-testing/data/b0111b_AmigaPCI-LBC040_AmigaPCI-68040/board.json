@@ -14,6 +14,7 @@
  "path": "AmigaPCI__AmigaPCI-LBC040/KiCAD/AmigaPCI-LBC040-REV60/AmigaPCI 68040.kicad_pcb",
  "project": "AmigaPCI/AmigaPCI-LBC040",
  "name": "AmigaPCI 68040",
+ "license": "No license found",
  "zip": "part11_of_17",
  "features": {
   "through_vias": 1126,

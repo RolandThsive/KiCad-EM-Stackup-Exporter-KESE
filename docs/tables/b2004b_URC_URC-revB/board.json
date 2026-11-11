@@ -2,6 +2,7 @@
  "name": "URC_revB",
  "project": "OLIMEX/URC",
  "path": "OLIMEX__URC/HARDWARE/URC_revB.kicad_pcb",
+ "license": "GPL-3.0 (GNU GPL v3.0)",
  "rank": 2341,
  "complexity": {
   "grade": 204,

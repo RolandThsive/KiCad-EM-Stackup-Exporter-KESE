@@ -2,6 +2,7 @@
  "name": "comm_board",
  "project": "matthiasgeorgimhof/hardware_csat",
  "path": "matthiasgeorgimhof__hardware_csat/comm_board/comm_board.kicad_pcb",
+ "license": "CC-BY-NC-SA-4.0 (Creative Commons Attribution-NonCommercial-ShareAlike 4.0), in LICENSE, aux_board/LICENSE, auxio_board/LICENSE and others",
  "rank": 1052,
  "complexity": {
   "grade": 365,

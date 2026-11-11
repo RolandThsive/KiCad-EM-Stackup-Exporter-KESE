@@ -2,6 +2,7 @@
  "name": "Register 24bit with IO",
  "project": "andrewpaterson/658-Computer",
  "path": "andrewpaterson__658-Computer/Kicad/Computer/Component Boards/Register 24bit with IO/Register 24bit with IO.kicad_pcb",
+ "license": "No license found",
  "rank": 1587,
  "complexity": {
   "grade": 235,

@@ -2,6 +2,7 @@
  "name": "programming_pin_mount.v1.0",
  "project": "DangerousPrototypes/BusPirate5-hardware",
  "path": "DangerousPrototypes__BusPirate5-hardware/debug-station/programming_pin_mount.v1.0.kicad_pcb",
+ "license": "MIT (MIT License)",
  "rank": 3064,
  "complexity": {
   "grade": 47,

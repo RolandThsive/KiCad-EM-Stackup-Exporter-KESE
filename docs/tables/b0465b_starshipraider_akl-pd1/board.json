@@ -2,6 +2,7 @@
  "name": "akl-pd1",
  "project": "azonenberg/starshipraider",
  "path": "azonenberg__starshipraider/boards/probes/akl-pd1/akl-pd1.kicad_pcb",
+ "license": "BSD-3-Clause (BSD 3-Clause License)",
  "rank": 1580,
  "complexity": {
   "grade": 207,

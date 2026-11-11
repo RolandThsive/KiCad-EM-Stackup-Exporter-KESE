@@ -14,6 +14,7 @@
  "path": "kangyuzhe666__zynq7010-7020_ad9363/kicad/ZYNQ7020_AD9364_V2.kicad_pcb",
  "project": "kangyuzhe666/zynq7010-7020_ad9363",
  "name": "ZYNQ7020_AD9364_V2",
+ "license": "Apache-2.0 (Apache License 2.0)",
  "zip": "part08_of_17",
  "features": {
   "through_vias": 1628,

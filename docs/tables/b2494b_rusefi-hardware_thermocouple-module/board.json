@@ -2,6 +2,7 @@
  "name": "thermocouple_module",
  "project": "rusefi/rusefi-hardware",
  "path": "rusefi__rusefi-hardware/classic-designs/rusefi_hardware_history/thermocouiple_module_rev00.10/thermocouiple_module/thermocouple_module.kicad_pcb",
+ "license": "No license found",
  "rank": 2854,
  "complexity": {
   "grade": 137,

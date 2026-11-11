@@ -2,6 +2,7 @@
  "name": "wideband_controller",
  "project": "rusefi/rusefi-hardware",
  "path": "rusefi__rusefi-hardware/wideband-F103/wideband_controller.kicad_pcb",
+ "license": "No license found",
  "rank": 1146,
  "complexity": {
   "grade": 304,

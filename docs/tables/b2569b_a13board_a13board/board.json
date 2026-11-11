@@ -2,6 +2,7 @@
  "name": "a13board",
  "project": "slapin/a13board",
  "path": "slapin__a13board/a13board.kicad_pcb",
+ "license": "GPL-3.0 (GNU GPL v3.0)",
  "rank": 343,
  "complexity": {
   "grade": 329,

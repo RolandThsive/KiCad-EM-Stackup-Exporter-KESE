@@ -2,6 +2,7 @@
  "name": "hw-openmower-universal",
  "project": "xtech/hw-openmower-universal",
  "path": "xtech__hw-openmower-universal/hw-openmower-universal.kicad_pcb",
+ "license": "CC-BY-4.0 (Creative Commons Attribution 4.0)",
  "rank": 467,
  "complexity": {
   "grade": 358,

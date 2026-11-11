@@ -2,6 +2,7 @@
  "name": "battery_pcb_30pin",
  "project": "stanford-ssi/aerolotl_kicad",
  "path": "stanford-ssi__aerolotl_kicad/BatteryPCB_30pin/battery_pcb_30pin.kicad_pcb",
+ "license": "No license found",
  "rank": 2095,
  "complexity": {
   "grade": 240,

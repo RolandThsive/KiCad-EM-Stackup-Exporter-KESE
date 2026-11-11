@@ -2,6 +2,7 @@
  "name": "ai-camera-rev3.1",
  "project": "maxlab-io/tokay-lite-pcb",
  "path": "maxlab-io__tokay-lite-pcb/ai-camera-rev3.1/ai-camera-rev3.1.kicad_pcb",
+ "license": "CERN-OHL-P-2.0 (CERN Open Hardware Licence v2, Permissive)",
  "rank": 1006,
  "complexity": {
   "grade": 314,

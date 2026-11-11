@@ -14,6 +14,7 @@
  "path": "antmicro__scalenode-adapter/scalenode-adapter.kicad_pcb",
  "project": "antmicro/scalenode-adapter",
  "name": "scalenode-adapter",
+ "license": "Apache-2.0 (Apache License 2.0)",
  "zip": "part13_of_17",
  "features": {
   "through_vias": 319,

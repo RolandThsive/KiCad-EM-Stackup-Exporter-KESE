@@ -2,6 +2,7 @@
  "name": "mobof",
  "project": "osrf/ovc",
  "path": "osrf__ovc/ovc2/hardware/ovc2a/graveyard/mobof/mobof.kicad_pcb",
+ "license": "Apache-2.0 (Apache License 2.0)",
  "rank": 1566,
  "complexity": {
   "grade": 314,

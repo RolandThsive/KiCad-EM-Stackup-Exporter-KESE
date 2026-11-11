@@ -2,6 +2,7 @@
  "name": "skylark",
  "project": "naturalhazardscience/groundlark",
  "path": "naturalhazardscience__groundlark/hw/skylark-usb/layout/skylark/skylark.kicad_pcb",
+ "license": "MIT (MIT License)",
  "rank": 2425,
  "complexity": {
   "grade": 179,

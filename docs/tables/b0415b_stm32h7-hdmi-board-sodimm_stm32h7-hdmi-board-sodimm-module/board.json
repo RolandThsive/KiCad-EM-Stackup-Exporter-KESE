@@ -2,6 +2,7 @@
  "name": "stm32h7-hdmi-board-sodimm-module",
  "project": "antmicro/stm32h7-hdmi-board-sodimm",
  "path": "antmicro__stm32h7-hdmi-board-sodimm/stm32h7-hdmi-board-sodimm-module.kicad_pcb",
+ "license": "Apache-2.0 (Apache License 2.0)",
  "rank": 447,
  "complexity": {
   "grade": 389,

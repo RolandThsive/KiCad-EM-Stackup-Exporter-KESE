@@ -14,6 +14,7 @@
  "path": "nmikstas__asteroids-pcb/ROM_to_2716/ROM_To_2716.kicad_pcb",
  "project": "nmikstas/asteroids-pcb",
  "name": "ROM_To_2716",
+ "license": "No license found",
  "zip": "part16_of_17",
  "features": {
   "through_vias": 0,

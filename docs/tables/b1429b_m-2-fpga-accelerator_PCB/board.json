@@ -2,6 +2,7 @@
  "name": "PCB",
  "project": "kaipereira/m.2-fpga-accelerator",
  "path": "kaipereira__m.2-fpga-accelerator/PCB/PCB.kicad_pcb",
+ "license": "No license found",
  "rank": 257,
  "complexity": {
   "grade": 414,

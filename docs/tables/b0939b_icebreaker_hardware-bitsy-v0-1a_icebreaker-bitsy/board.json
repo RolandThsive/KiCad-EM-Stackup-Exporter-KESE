@@ -2,6 +2,7 @@
  "name": "icebreaker-bitsy",
  "project": "esden/icebreaker",
  "path": "esden__icebreaker/hardware/bitsy-v0.1a/icebreaker-bitsy.kicad_pcb",
+ "license": "No license found",
  "rank": 1720,
  "complexity": {
   "grade": 283,

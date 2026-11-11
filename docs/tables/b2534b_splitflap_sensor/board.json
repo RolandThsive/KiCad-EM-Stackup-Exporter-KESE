@@ -2,6 +2,7 @@
  "name": "sensor",
  "project": "scottbez1/splitflap",
  "path": "scottbez1__splitflap/electronics/sensor/sensor.kicad_pcb",
+ "license": "Apache-2.0 (Apache License 2.0), in LICENSE.txt",
  "rank": 3039,
  "complexity": {
   "grade": 60,

@@ -2,6 +2,7 @@
  "name": "maam-011132",
  "project": "loxodes/vna",
  "path": "loxodes__vna/hardware/mm_reflectometer/evalboards/maam-011132/maam-011132.kicad_pcb",
+ "license": "As README.md states it: \"Unless otherwise noted, all work is under a MIT license.\"",
  "rank": 1937,
  "complexity": {
   "grade": 290,

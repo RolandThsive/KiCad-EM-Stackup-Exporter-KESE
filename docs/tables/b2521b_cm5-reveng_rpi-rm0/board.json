@@ -2,6 +2,7 @@
  "name": "rpi-rm0",
  "project": "schlae/cm5-reveng",
  "path": "schlae__cm5-reveng/rpi-rm0/rpi-rm0.kicad_pcb",
+ "license": "As README.md states it: \"CC BY-SA 4.0\"",
  "rank": 1135,
  "complexity": {
   "grade": 413,

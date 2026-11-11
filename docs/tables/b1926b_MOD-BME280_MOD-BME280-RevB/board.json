@@ -2,6 +2,7 @@
  "name": "MOD-BME280_RevB",
  "project": "OLIMEX/MOD-BME280",
  "path": "OLIMEX__MOD-BME280/HARDWARE/MOD-BME280-Rev.B/MOD-BME280_RevB.kicad_pcb",
+ "license": "GPL-3.0 (GNU GPL v3.0)",
  "rank": 2705,
  "complexity": {
   "grade": 163,

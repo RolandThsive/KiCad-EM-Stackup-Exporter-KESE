@@ -2,6 +2,7 @@
  "name": "ac922interposer",
  "project": "antmicro/ac922interposer",
  "path": "antmicro__ac922interposer/ac922interposer.kicad_pcb",
+ "license": "Apache-2.0 (Apache License 2.0)",
  "rank": 2091,
  "complexity": {
   "grade": 212,

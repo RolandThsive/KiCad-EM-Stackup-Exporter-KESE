@@ -2,6 +2,7 @@
  "name": "Power",
  "project": "owntech-foundation/twist",
  "path": "owntech-foundation__twist/KiCAD_files/Power.kicad_pcb",
+ "license": "As README.md states it: \"This project is propelled by OwnTech Team under CERN-OHL-S open hardware Licence The documentation provided is placed under Creative Commons SA-BY\"",
  "rank": 637,
  "complexity": {
   "grade": 405,

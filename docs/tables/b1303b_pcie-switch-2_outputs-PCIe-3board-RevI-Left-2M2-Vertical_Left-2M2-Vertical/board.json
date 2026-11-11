@@ -2,6 +2,7 @@
  "name": "Left_2M2_Vertical",
  "project": "isarmg/pcie-switch-2",
  "path": "isarmg__pcie-switch-2/outputs/PCIe_3board_RevI/Left_2M2_Vertical/Left_2M2_Vertical.kicad_pcb",
+ "license": "No license found",
  "rank": 1312,
  "complexity": {
   "grade": 271,

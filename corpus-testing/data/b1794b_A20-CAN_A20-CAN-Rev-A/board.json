@@ -14,6 +14,7 @@
  "path": "OLIMEX__A20-CAN/A20-CAN_Rev_A.kicad_pcb",
  "project": "OLIMEX/A20-CAN",
  "name": "A20-CAN_Rev_A",
+ "license": "Apache-2.0 (Apache License 2.0)",
  "zip": "part16_of_17",
  "features": {
   "through_vias": 117,

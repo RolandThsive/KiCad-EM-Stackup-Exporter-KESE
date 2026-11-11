@@ -2,6 +2,7 @@
  "name": "frequency-divider",
  "project": "rusefi/rusefi-hardware",
  "path": "rusefi__rusefi-hardware/frequency-divider/frequency-divider.kicad_pcb",
+ "license": "No license found",
  "rank": 2585,
  "complexity": {
   "grade": 219,

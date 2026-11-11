@@ -2,6 +2,7 @@
  "name": "BAGEL-MK1.1-Avocado",
  "project": "issuiuc/iss-pcb",
  "path": "issuiuc__iss-pcb/boards/BAGEL-MK1/BAGEL-MK1.1-Avocado/BAGEL-MK1.1-Avocado.kicad_pcb",
+ "license": "No license found",
  "rank": 517,
  "complexity": {
   "grade": 411,

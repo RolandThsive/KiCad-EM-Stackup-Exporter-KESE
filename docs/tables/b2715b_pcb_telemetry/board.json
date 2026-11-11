@@ -2,6 +2,7 @@
  "name": "telemetry",
  "project": "sufst/pcb",
  "path": "sufst__pcb/archive/telemetry/telemetry.kicad_pcb",
+ "license": "GPL-3.0 (GNU GPL v3.0)",
  "rank": 2078,
  "complexity": {
   "grade": 246,

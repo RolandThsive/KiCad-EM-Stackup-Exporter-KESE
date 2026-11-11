@@ -2,6 +2,7 @@
  "name": "TRH9000",
  "project": "cristianoag/trh9000",
  "path": "cristianoag__trh9000/Hardware/Kicad/TRH9000_1.7/TRH9000.kicad_pcb",
+ "license": "CERN-OHL-S-2.0 (CERN Open Hardware Licence v2, Strongly Reciprocal)",
  "rank": 846,
  "complexity": {
   "grade": 345,

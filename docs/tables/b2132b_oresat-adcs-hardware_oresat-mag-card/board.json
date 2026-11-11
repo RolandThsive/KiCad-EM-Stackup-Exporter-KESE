@@ -2,6 +2,7 @@
  "name": "oresat-mag-card",
  "project": "oresat/oresat-adcs-hardware",
  "path": "oresat__oresat-adcs-hardware/oresat-mag-card/oresat-mag-card.kicad_pcb",
+ "license": "GPL-2.0 (GNU GPL v2.0)",
  "rank": 769,
  "complexity": {
   "grade": 376,

@@ -2,6 +2,7 @@
  "name": "NixieAtomicClock",
  "project": "will127534/RaspberryPiAtomicNixieClock",
  "path": "will127534__RaspberryPiAtomicNixieClock/PCB/NixieAtomicClock.kicad_pcb",
+ "license": "No license found",
  "rank": 274,
  "complexity": {
   "grade": 397,

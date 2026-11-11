@@ -2,6 +2,7 @@
  "name": "clock-test",
  "project": "joshajohnson/ecp5-mini",
  "path": "joshajohnson__ecp5-mini/breakouts/clock-test-0.1/clock-test.kicad_pcb",
+ "license": "CERN-OHL-S-2.0 (CERN Open Hardware Licence v2, Strongly Reciprocal), in LICENSE",
  "rank": 1328,
  "complexity": {
   "grade": 290,

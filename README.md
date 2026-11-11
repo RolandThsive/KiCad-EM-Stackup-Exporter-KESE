@@ -17,8 +17,8 @@ format a run, with the Verifier on.
 - [`corpus-testing/engine/maker/`](corpus-testing/engine/maker): makes a board's folders from its runs.
 - [`corpus-testing/data/`](corpus-testing/data): a folder per board, of the same name, with its counts from its
   `.kicad_pcb` (`board.json`) and the record of every run of it (`runs.jsonl`).
-- [`docs/wiki/Credits.md`](docs/wiki/Credits.md) and [`credits.txt`](credits.txt): the projects whose boards were
-  used, with their licenses.
+- [`docs/wiki/Credits.md`](docs/wiki/Credits.md) and [`credits.txt`](credits.txt): every board by its number, with
+  its project and the project's license, written by the engine.
 
 To add a board, push its two folders named `<repo>_<board>`; to take one out, delete them. The engine does the rest.
 

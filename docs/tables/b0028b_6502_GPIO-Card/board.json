@@ -2,6 +2,7 @@
  "name": "GPIO Card",
  "project": "acwright/6502",
  "path": "acwright__6502/Hardware/GPIO Card/Rev 1.0/GPIO Card.kicad_pcb",
+ "license": "CERN-OHL-P-2.0 (CERN Open Hardware Licence v2, Permissive), in LICENSE",
  "rank": 2069,
  "complexity": {
   "grade": 228,

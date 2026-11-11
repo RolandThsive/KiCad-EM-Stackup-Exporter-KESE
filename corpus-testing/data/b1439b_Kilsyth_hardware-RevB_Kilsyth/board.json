@@ -14,6 +14,7 @@
  "path": "kbeckmann__Kilsyth/hardware/RevB/Kilsyth.kicad_pcb",
  "project": "kbeckmann/Kilsyth",
  "name": "Kilsyth",
+ "license": "0BSD (BSD Zero Clause License)",
  "zip": "part13_of_17",
  "features": {
   "through_vias": 378,

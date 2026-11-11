@@ -2,6 +2,7 @@
  "name": "2000ATX",
  "project": "jasonsbeer/Amiga-2000-EATX",
  "path": "jasonsbeer__Amiga-2000-EATX/2000EATX-KiCAD-R31/2000ATX.kicad_pcb",
+ "license": "GPL-3.0 (GNU GPL v3.0)",
  "rank": 100,
  "complexity": {
   "grade": 403,

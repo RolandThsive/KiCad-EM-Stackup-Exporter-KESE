@@ -2,6 +2,7 @@
  "name": "Crazyflie contol board",
  "project": "bitcraze/crazyflie-electronics",
  "path": "bitcraze__crazyflie-electronics/ecad/Crazyflie contol board.kicad_pcb",
+ "license": "CC-BY-NC-SA-3.0 (Creative Commons Attribution-NonCommercial-ShareAlike 3.0), in LICENSE.md",
  "rank": 1185,
  "complexity": {
   "grade": 302,

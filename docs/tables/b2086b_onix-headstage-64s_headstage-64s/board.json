@@ -2,6 +2,7 @@
  "name": "headstage-64s",
  "project": "open-ephys/onix-headstage-64s",
  "path": "open-ephys__onix-headstage-64s/pcb/headstage-64s.kicad_pcb",
+ "license": "No license found",
  "rank": 833,
  "complexity": {
   "grade": 429,

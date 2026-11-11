@@ -2,6 +2,7 @@
  "name": "OSHW-GHOST_Rev_A",
  "project": "OLIMEX/OSHW-GHOST",
  "path": "OLIMEX__OSHW-GHOST/HARDWARE/OSHW-GHOST_Rev_A/OSHW-GHOST_Rev_A.kicad_pcb",
+ "license": "Apache-2.0 (Apache License 2.0)",
  "rank": 2277,
  "complexity": {
   "grade": 207,

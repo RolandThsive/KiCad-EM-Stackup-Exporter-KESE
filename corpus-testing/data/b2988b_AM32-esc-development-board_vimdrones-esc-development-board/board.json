@@ -14,6 +14,7 @@
  "path": "VimDrones__AM32_esc_development_board/vimdrones_esc_development_board.kicad_pcb",
  "project": "VimDrones/AM32_esc_development_board",
  "name": "vimdrones_esc_development_board",
+ "license": "GPL-3.0 (GNU GPL v3.0)",
  "zip": "part15_of_17",
  "features": {
   "through_vias": 584,

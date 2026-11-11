@@ -14,6 +14,7 @@
  "path": "malcollm__pdb/Main_PDB.kicad_pcb",
  "project": "malcollm/pdb",
  "name": "Main_PDB",
+ "license": "No license found",
  "zip": "part15_of_17",
  "features": {
   "through_vias": 432,

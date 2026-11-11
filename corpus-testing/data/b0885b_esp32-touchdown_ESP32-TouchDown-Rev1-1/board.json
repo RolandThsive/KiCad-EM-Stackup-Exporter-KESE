@@ -14,6 +14,7 @@
  "path": "DustinWatts__esp32-touchdown/Hardware/ESP32_TouchDown_Rev1.1/ESP32_TouchDown_Rev1.1.kicad_pcb",
  "project": "DustinWatts/esp32-touchdown",
  "name": "ESP32_TouchDown_Rev1.1",
+ "license": "MIT (MIT License)",
  "zip": "part15_of_17",
  "features": {
   "through_vias": 157,

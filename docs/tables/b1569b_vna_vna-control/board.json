@@ -2,6 +2,7 @@
  "name": "vna_control",
  "project": "loxodes/vna",
  "path": "loxodes__vna/hardware/archive/vna_r0/vna_control/vna_control.kicad_pcb",
+ "license": "As README.md states it: \"Unless otherwise noted, all work is under a MIT license.\"",
  "rank": 1261,
  "complexity": {
   "grade": 300,

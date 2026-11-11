@@ -14,6 +14,7 @@
  "path": "tinkerforge__evse-v4-bricklet/hardware/evse-v4.kicad_pcb",
  "project": "tinkerforge/evse-v4-bricklet",
  "name": "evse-v4",
+ "license": "No license found",
  "zip": "part13_of_17",
  "features": {
   "through_vias": 624,

@@ -2,6 +2,7 @@
  "name": "RVPC_Rev_B",
  "project": "OLIMEX/RVPC",
  "path": "OLIMEX__RVPC/HARDWARE/RVPC_Rev.B/RVPC_Rev_B.kicad_pcb",
+ "license": "GPL-3.0 (GNU GPL v3.0)",
  "rank": 2124,
  "complexity": {
   "grade": 258,

@@ -2,6 +2,7 @@
  "name": "nu8051-ufo-target-board",
  "project": "newaetech/chipwhisperer-target-cw308t",
  "path": "newaetech__chipwhisperer-target-cw308t/CW308T_NU8051_AT20/kicad_src/nu8051-ufo-target-board.kicad_pcb",
+ "license": "No license found",
  "rank": 2302,
  "complexity": {
   "grade": 241,

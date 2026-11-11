@@ -2,6 +2,7 @@
  "name": "debug-board",
  "project": "sufst/pcb",
  "path": "sufst__pcb/archive/debug-board/debug-board.kicad_pcb",
+ "license": "GPL-3.0 (GNU GPL v3.0)",
  "rank": 2205,
  "complexity": {
   "grade": 311,

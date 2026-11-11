@@ -2,6 +2,7 @@
  "name": "FeatherRadioAdapter",
  "project": "stanford-ssi/samwise-avionics",
  "path": "stanford-ssi__samwise-avionics/unused_boards/FeatherRadioAdapter/FeatherRadioAdapter.kicad_pcb",
+ "license": "No license found",
  "rank": 2667,
  "complexity": {
   "grade": 224,

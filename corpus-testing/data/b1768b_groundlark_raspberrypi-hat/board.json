@@ -14,6 +14,7 @@
  "path": "naturalhazardscience__groundlark/hw/shared/reference/raspberrypi_hat.kicad_pcb",
  "project": "naturalhazardscience/groundlark",
  "name": "raspberrypi_hat",
+ "license": "MIT (MIT License)",
  "zip": "part16_of_17",
  "features": {
   "through_vias": 0,

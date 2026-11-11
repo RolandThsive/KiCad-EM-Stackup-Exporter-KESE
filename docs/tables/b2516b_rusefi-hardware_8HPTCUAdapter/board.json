@@ -2,6 +2,7 @@
  "name": "8HPTCUAdapter",
  "project": "rusefi/rusefi-hardware",
  "path": "rusefi__rusefi-hardware/ZF8HP Transmission/8HPTCUAdapter.kicad_pcb",
+ "license": "No license found",
  "rank": 2952,
  "complexity": {
   "grade": 219,

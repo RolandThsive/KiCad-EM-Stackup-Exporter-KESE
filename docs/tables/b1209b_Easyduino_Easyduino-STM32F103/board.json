@@ -2,6 +2,7 @@
  "name": "Easyduino_STM32F103",
  "project": "Hanqaqa/Easyduino",
  "path": "Hanqaqa__Easyduino/STM32F103 Bluepill/Easyduino_STM32F103.kicad_pcb",
+ "license": "CERN-OHL-P-2.0 (CERN Open Hardware Licence v2, Permissive)",
  "rank": 1898,
  "complexity": {
   "grade": 313,

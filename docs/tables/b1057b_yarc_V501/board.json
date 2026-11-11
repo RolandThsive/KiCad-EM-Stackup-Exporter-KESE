@@ -2,6 +2,7 @@
  "name": "V501",
  "project": "gmofishsauce/yarc",
  "path": "gmofishsauce__yarc/pcb/V501/V501.kicad_pcb",
+ "license": "In LICENSE: \"Content of the yarc/ subdirectory is licensed as described there (AGPL). Everything else here has NO LICENSE and may not be used for any purpose.\"",
  "rank": 2450,
  "complexity": {
   "grade": 201,

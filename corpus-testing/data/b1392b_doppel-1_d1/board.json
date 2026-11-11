@@ -14,6 +14,7 @@
  "path": "jgw4__doppel-1/d1.kicad_pcb",
  "project": "jgw4/doppel-1",
  "name": "d1",
+ "license": "No license found",
  "zip": "part03_of_17",
  "features": {
   "through_vias": 598,

@@ -2,6 +2,7 @@
  "name": "kimchi_micro",
  "project": "groupgets/kimchi-micro",
  "path": "groupgets__kimchi-micro/hardware_sbc/kimchi_micro.kicad_pcb",
+ "license": "CERN-OHL-S-2.0 (CERN Open Hardware Licence v2, Strongly Reciprocal), in LICENSE",
  "rank": 125,
  "complexity": {
   "grade": 404,

@@ -2,6 +2,7 @@
  "name": "BPS-Minion",
  "project": "lhr-solar/bps-voltagepcb",
  "path": "lhr-solar__bps-voltagepcb/BPS-Minion.kicad_pcb",
+ "license": "No license found",
  "rank": 905,
  "complexity": {
   "grade": 365,

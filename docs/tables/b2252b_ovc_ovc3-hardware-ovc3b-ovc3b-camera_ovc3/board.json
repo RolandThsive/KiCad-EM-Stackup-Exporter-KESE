@@ -2,6 +2,7 @@
  "name": "ovc3",
  "project": "osrf/ovc",
  "path": "osrf__ovc/ovc3/hardware/ovc3b/ovc3b/camera/ovc3.kicad_pcb",
+ "license": "Apache-2.0 (Apache License 2.0)",
  "rank": 365,
  "complexity": {
   "grade": 411,

@@ -2,6 +2,7 @@
  "name": "Apple2Card",
  "project": "ThorstenBr/Apple2Card",
  "path": "ThorstenBr__Apple2Card/Apple2Card_x44/Apple2Card.kicad_pcb",
+ "license": "Zlib (zlib License), in README.md",
  "rank": 1298,
  "complexity": {
   "grade": 299,

@@ -2,6 +2,7 @@
  "name": "antenna_switch",
  "project": "matthuszagh/fmcw",
  "path": "matthuszagh__fmcw/hardware/antenna-switch/antenna_switch.kicad_pcb",
+ "license": "Apache-2.0 (Apache License 2.0)",
  "rank": 1282,
  "complexity": {
   "grade": 238,

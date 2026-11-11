@@ -2,6 +2,7 @@
  "name": "Debug_Adapter",
  "project": "bogdan8266/h616-board",
  "path": "bogdan8266__h616-board/Hardware/Debug_Adapter/Debug_Adapter.kicad_pcb",
+ "license": "CERN-OHL-P-2.0 (CERN Open Hardware Licence v2, Permissive)",
  "rank": 1891,
  "complexity": {
   "grade": 261,

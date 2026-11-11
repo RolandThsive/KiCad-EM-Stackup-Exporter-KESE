@@ -14,6 +14,7 @@
  "path": "oresat__oresat-adcs-hardware/mezzanine-flex-board/mezzanine-flex-board.kicad_pcb",
  "project": "oresat/oresat-adcs-hardware",
  "name": "mezzanine-flex-board",
+ "license": "GPL-2.0 (GNU GPL v2.0)",
  "zip": "part16_of_17",
  "features": {
   "through_vias": 80,

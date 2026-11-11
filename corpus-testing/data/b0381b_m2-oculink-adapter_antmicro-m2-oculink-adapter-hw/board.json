@@ -14,6 +14,7 @@
  "path": "antmicro__m2-oculink-adapter/antmicro-m2-oculink-adapter-hw.kicad_pcb",
  "project": "antmicro/m2-oculink-adapter",
  "name": "antmicro-m2-oculink-adapter-hw",
+ "license": "Apache-2.0 (Apache License 2.0)",
  "zip": "part15_of_17",
  "features": {
   "through_vias": 366,

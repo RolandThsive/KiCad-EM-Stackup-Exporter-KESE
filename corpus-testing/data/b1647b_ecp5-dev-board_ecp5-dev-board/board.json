@@ -14,6 +14,7 @@
  "path": "medhyal__ecp5-dev-board/v0.1/ecp5-dev-board.kicad_pcb",
  "project": "medhyal/ecp5-dev-board",
  "name": "ecp5-dev-board",
+ "license": "No license found",
  "zip": "part12_of_17",
  "features": {
   "through_vias": 336,

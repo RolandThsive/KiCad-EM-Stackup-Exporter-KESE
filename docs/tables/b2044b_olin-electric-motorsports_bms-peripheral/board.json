@@ -2,6 +2,7 @@
  "name": "bms_peripheral",
  "project": "olin-electric-motorsports/olin-electric-motorsports",
  "path": "olin-electric-motorsports__olin-electric-motorsports/vehicle/mkv/hardware/service_section/peripheral/bms_peripheral.kicad_pcb",
+ "license": "No license found",
  "rank": 1061,
  "complexity": {
   "grade": 302,

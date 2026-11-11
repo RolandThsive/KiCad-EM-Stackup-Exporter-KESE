@@ -2,6 +2,7 @@
  "name": "HCP65 MPU Timer",
  "project": "andrewpaterson/658-Computer",
  "path": "andrewpaterson__658-Computer/Kicad/Computer/Processor/HCP65 MPU Timer/HCP65 MPU Timer.kicad_pcb",
+ "license": "No license found",
  "rank": 1818,
  "complexity": {
   "grade": 230,

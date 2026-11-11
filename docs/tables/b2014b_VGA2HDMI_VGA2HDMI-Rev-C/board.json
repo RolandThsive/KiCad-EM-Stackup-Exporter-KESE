@@ -2,6 +2,7 @@
  "name": "VGA2HDMI_Rev_C",
  "project": "OLIMEX/VGA2HDMI",
  "path": "OLIMEX__VGA2HDMI/HARDWARE/VGA2HDMI-REV.C/VGA2HDMI_Rev_C.kicad_pcb",
+ "license": "GPL-3.0 (GNU GPL v3.0)",
  "rank": 1447,
  "complexity": {
   "grade": 312,

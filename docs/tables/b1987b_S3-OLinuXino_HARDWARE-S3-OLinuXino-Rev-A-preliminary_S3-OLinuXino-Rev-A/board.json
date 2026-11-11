@@ -2,6 +2,7 @@
  "name": "S3-OLinuXino_Rev_A",
  "project": "OLIMEX/S3-OLinuXino",
  "path": "OLIMEX__S3-OLinuXino/HARDWARE/S3-OLinuXino-Rev_A-preliminary/S3-OLinuXino_Rev_A.kicad_pcb",
+ "license": "GPL-3.0 (GNU GPL v3.0)",
  "rank": 1995,
  "complexity": {
   "grade": 176,

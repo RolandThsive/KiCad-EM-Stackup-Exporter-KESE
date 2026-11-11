@@ -2,6 +2,7 @@
  "name": "main_control",
  "project": "tmarhguy/alu",
  "path": "tmarhguy__alu/schematics/kicad/boards/main_control/main_control.kicad_pcb",
+ "license": "MIT (MIT License)",
  "rank": 2743,
  "complexity": {
   "grade": 68,

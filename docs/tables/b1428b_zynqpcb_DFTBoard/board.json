@@ -2,6 +2,7 @@
  "name": "DFTBoard",
  "project": "julianfl0w/zynqpcb",
  "path": "julianfl0w__zynqpcb/DFTBoard.kicad_pcb",
+ "license": "MIT (MIT License), in LICENSE",
  "rank": 113,
  "complexity": {
   "grade": 395,

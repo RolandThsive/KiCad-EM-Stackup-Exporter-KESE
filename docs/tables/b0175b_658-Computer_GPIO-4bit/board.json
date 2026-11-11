@@ -2,6 +2,7 @@
  "name": "GPIO 4bit",
  "project": "andrewpaterson/658-Computer",
  "path": "andrewpaterson__658-Computer/Kicad/Computer/Component Boards/GPIO 4bit/GPIO 4bit.kicad_pcb",
+ "license": "No license found",
  "rank": 1929,
  "complexity": {
   "grade": 225,

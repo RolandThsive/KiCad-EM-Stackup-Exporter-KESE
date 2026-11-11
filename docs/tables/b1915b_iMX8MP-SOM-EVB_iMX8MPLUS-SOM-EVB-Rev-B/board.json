@@ -2,6 +2,7 @@
  "name": "iMX8MPLUS-SOM-EVB_Rev_B",
  "project": "OLIMEX/iMX8MP-SOM-EVB",
  "path": "OLIMEX__iMX8MP-SOM-EVB/HARDWARE/iMX8MP-SOM-EVB-rev.b/iMX8MPLUS-SOM-EVB_Rev_B.kicad_pcb",
+ "license": "GPL-3.0 (GNU GPL v3.0)",
  "rank": 192,
  "complexity": {
   "grade": 364,

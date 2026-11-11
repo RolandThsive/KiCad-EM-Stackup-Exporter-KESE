@@ -2,6 +2,7 @@
  "name": "ESP-PROG_Rev.C",
  "project": "OLIMEX/ESP-PROG",
  "path": "OLIMEX__ESP-PROG/HARDWARE/ESP-PROG-Rev.C/ESP-PROG_Rev.C.kicad_pcb",
+ "license": "GPL-3.0 (GNU GPL v3.0)",
  "rank": 2441,
  "complexity": {
   "grade": 184,

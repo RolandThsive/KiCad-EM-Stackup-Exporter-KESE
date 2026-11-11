@@ -2,6 +2,7 @@
  "name": "altair-8800b-cpu-card",
  "project": "warmech/altair-8800b-cpu-card",
  "path": "warmech__altair-8800b-cpu-card/cad/altair-8800b-cpu-card.kicad_pcb",
+ "license": "CERN-OHL-S-2.0 (CERN Open Hardware Licence v2, Strongly Reciprocal)",
  "rank": 816,
  "complexity": {
   "grade": 261,

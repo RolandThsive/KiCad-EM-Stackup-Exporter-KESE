@@ -2,6 +2,7 @@
  "name": "led-bar-pcb",
  "project": "chipfoundry/caravel_board",
  "path": "chipfoundry__caravel_board/hardware/other/led-bar-pcb/led-bar-pcb.kicad_pcb",
+ "license": "No license found",
  "rank": 2783,
  "complexity": {
   "grade": 175,

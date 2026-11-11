@@ -14,6 +14,7 @@
  "path": "antmicro__arty-mpw-tester/arty-mpw-tester.kicad_pcb",
  "project": "antmicro/arty-mpw-tester",
  "name": "arty-mpw-tester",
+ "license": "Apache-2.0 (Apache License 2.0)",
  "zip": "part14_of_17",
  "features": {
   "through_vias": 294,

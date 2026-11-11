@@ -2,6 +2,7 @@
  "name": "Yellow",
  "project": "NabuCasa/yellow",
  "path": "NabuCasa__yellow/Yellow.kicad_pcb",
+ "license": "CERN-OHL-W-2.0 (CERN Open Hardware Licence v2, Weakly Reciprocal), in LICENSE.md",
  "rank": 256,
  "complexity": {
   "grade": 441,

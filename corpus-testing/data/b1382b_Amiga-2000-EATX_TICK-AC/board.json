@@ -14,6 +14,7 @@
  "path": "jasonsbeer__Amiga-2000-EATX/TICK/TICK_AC_KiCAD/TICK_AC.kicad_pcb",
  "project": "jasonsbeer/Amiga-2000-EATX",
  "name": "TICK_AC",
+ "license": "GPL-3.0 (GNU GPL v3.0)",
  "zip": "part16_of_17",
  "features": {
   "through_vias": 9,

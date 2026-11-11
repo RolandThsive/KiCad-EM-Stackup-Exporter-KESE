@@ -2,6 +2,7 @@
  "name": "kit-dev-coldfire-xilinx_5213",
  "project": "KiCad/kicad-source-mirror",
  "path": "KiCad__kicad-source-mirror/demos/kit-dev-coldfire-xilinx_5213/kit-dev-coldfire-xilinx_5213.kicad_pcb",
+ "license": "GPL-3.0 (GNU GPL v3.0)",
  "rank": 663,
  "complexity": {
   "grade": 384,

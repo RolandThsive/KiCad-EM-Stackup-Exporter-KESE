@@ -2,6 +2,7 @@
  "name": "boatcontrol",
  "project": "antevens/boatcontrol",
  "path": "antevens__boatcontrol/boatcontrol/boatcontrol.kicad_pcb",
+ "license": "SHL-2.1 (Solderpad Hardware License v2.1), in LICENSE",
  "rank": 102,
  "complexity": {
   "grade": 358,

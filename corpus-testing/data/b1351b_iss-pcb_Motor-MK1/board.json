@@ -14,6 +14,7 @@
  "path": "issuiuc__iss-pcb/boards/Motor-MK1/Motor-MK1.kicad_pcb",
  "project": "issuiuc/iss-pcb",
  "name": "Motor-MK1",
+ "license": "No license found",
  "zip": "part15_of_17",
  "features": {
   "through_vias": 480,

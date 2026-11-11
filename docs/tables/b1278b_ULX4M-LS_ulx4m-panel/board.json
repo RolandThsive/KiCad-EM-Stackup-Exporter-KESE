@@ -2,6 +2,7 @@
  "name": "ulx4m_panel",
  "project": "intergalaktik/ULX4M-LS",
  "path": "intergalaktik__ULX4M-LS/panel/ulx4m_panel.kicad_pcb",
+ "license": "CERN-OHL-S-2.0 (CERN Open Hardware Licence v2, Strongly Reciprocal), in LICENSE.md",
  "rank": 17,
  "complexity": {
   "grade": 432,

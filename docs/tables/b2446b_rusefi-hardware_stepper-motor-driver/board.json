@@ -2,6 +2,7 @@
  "name": "stepper_motor_driver",
  "project": "rusefi/rusefi-hardware",
  "path": "rusefi__rusefi-hardware/classic-designs/A4988_stepper_motor_driver/stepper_motor_driver.kicad_pcb",
+ "license": "No license found",
  "rank": 2989,
  "complexity": {
   "grade": 64,

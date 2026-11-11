@@ -2,6 +2,7 @@
  "name": "encoder",
  "project": "byrantech/laptop",
  "path": "byrantech__laptop/haptic/encoder/encoder.kicad_pcb",
+ "license": "MIT (MIT License)",
  "rank": 2995,
  "complexity": {
   "grade": 101,

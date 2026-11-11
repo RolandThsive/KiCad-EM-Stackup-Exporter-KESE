@@ -2,6 +2,7 @@
  "name": "usbdbg",
  "project": "waterloo-rocketry/canhw",
  "path": "waterloo-rocketry__canhw/usbdbg/usbdbg.kicad_pcb",
+ "license": "GPL-3.0 (GNU GPL v3.0)",
  "rank": 2267,
  "complexity": {
   "grade": 247,

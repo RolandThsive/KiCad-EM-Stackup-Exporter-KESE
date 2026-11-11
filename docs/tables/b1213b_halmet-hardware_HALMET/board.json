@@ -2,6 +2,7 @@
  "name": "HALMET",
  "project": "hatlabs/halmet-hardware",
  "path": "hatlabs__halmet-hardware/HALMET.kicad_pcb",
+ "license": "CC-BY-4.0 (Creative Commons Attribution 4.0)",
  "rank": 915,
  "complexity": {
   "grade": 369,

@@ -14,6 +14,7 @@
  "path": "rusefi__rusefi-hardware/GDI-6ch/GDI-6ch.kicad_pcb",
  "project": "rusefi/rusefi-hardware",
  "name": "GDI-6ch",
+ "license": "No license found",
  "zip": "part12_of_17",
  "features": {
   "through_vias": 1294,

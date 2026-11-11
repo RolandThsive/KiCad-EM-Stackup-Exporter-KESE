@@ -2,6 +2,7 @@
  "name": "frequency_synth",
  "project": "loxodes/vna",
  "path": "loxodes__vna/hardware/archive/frequency_synth/frequency_synth.kicad_pcb",
+ "license": "As README.md states it: \"Unless otherwise noted, all work is under a MIT license.\"",
  "rank": 1066,
  "complexity": {
   "grade": 297,

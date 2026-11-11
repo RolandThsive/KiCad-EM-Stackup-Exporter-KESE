@@ -2,6 +2,7 @@
  "name": "mppt",
  "project": "seandepagnier/mppt",
  "path": "seandepagnier__mppt/schematics/mppt.kicad_pcb",
+ "license": "No license found",
  "rank": 1370,
  "complexity": {
   "grade": 275,

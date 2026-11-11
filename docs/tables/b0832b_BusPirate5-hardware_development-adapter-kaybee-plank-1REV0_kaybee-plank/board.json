@@ -2,6 +2,7 @@
  "name": "kaybee-plank",
  "project": "DangerousPrototypes/BusPirate5-hardware",
  "path": "DangerousPrototypes__BusPirate5-hardware/development/adapter-kaybee-plank-1REV0/kaybee-plank.kicad_pcb",
+ "license": "MIT (MIT License)",
  "rank": 2449,
  "complexity": {
   "grade": 250,

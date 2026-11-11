@@ -2,6 +2,7 @@
  "name": "antmicro-hdmi-mipi-bridge-hw",
  "project": "antmicro/hdmi-mipi-bridge",
  "path": "antmicro__hdmi-mipi-bridge/antmicro-hdmi-mipi-bridge-hw.kicad_pcb",
+ "license": "Apache-2.0 (Apache License 2.0)",
  "rank": 770,
  "complexity": {
   "grade": 404,

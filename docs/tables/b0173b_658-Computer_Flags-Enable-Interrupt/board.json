@@ -2,6 +2,7 @@
  "name": "Flags Enable Interrupt",
  "project": "andrewpaterson/658-Computer",
  "path": "andrewpaterson__658-Computer/Kicad/Computer/Component Boards/Flags Enable Interrupt/Flags Enable Interrupt.kicad_pcb",
+ "license": "No license found",
  "rank": 1775,
  "complexity": {
   "grade": 230,

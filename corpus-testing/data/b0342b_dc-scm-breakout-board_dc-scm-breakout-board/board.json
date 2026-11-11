@@ -14,6 +14,7 @@
  "path": "antmicro__dc-scm-breakout-board/dc-scm-breakout-board.kicad_pcb",
  "project": "antmicro/dc-scm-breakout-board",
  "name": "dc-scm-breakout-board",
+ "license": "Apache-2.0 (Apache License 2.0)",
  "zip": "part11_of_17",
  "features": {
   "through_vias": 1164,

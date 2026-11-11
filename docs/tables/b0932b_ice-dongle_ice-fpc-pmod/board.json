@@ -2,6 +2,7 @@
  "name": "ice-fpc-pmod",
  "project": "emeb/ice-dongle",
  "path": "emeb__ice-dongle/Hardware/ice-fpc-pmod/ice-fpc-pmod.kicad_pcb",
+ "license": "MIT (MIT License)",
  "rank": 2793,
  "complexity": {
   "grade": 203,

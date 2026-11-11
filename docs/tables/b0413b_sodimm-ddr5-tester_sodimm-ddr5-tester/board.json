@@ -2,6 +2,7 @@
  "name": "sodimm-ddr5-tester",
  "project": "antmicro/sodimm-ddr5-tester",
  "path": "antmicro__sodimm-ddr5-tester/sodimm-ddr5-tester.kicad_pcb",
+ "license": "Apache-2.0 (Apache License 2.0)",
  "rank": 42,
  "complexity": {
   "grade": 538,

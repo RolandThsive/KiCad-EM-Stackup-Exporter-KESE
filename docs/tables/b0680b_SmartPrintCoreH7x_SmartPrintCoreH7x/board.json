@@ -2,6 +2,7 @@
  "name": "SmartPrintCoreH7x",
  "project": "BoltzRnD/SmartPrintCoreH7x",
  "path": "BoltzRnD__SmartPrintCoreH7x/SmartPrintCoreH7x/SmartPrintCoreH7x.kicad_pcb",
+ "license": "GPL-3.0 (GNU GPL v3.0), in LICENSE",
  "rank": 150,
  "complexity": {
   "grade": 410,

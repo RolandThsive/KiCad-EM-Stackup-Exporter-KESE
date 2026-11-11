@@ -14,6 +14,7 @@
  "path": "shamansystems__cheap-focer-2/source/Cheap FOCer 2 60mm.kicad_pcb",
  "project": "shamansystems/cheap-focer-2",
  "name": "Cheap FOCer 2 60mm",
+ "license": "As README.md states it: \"Cheap FOCer 2 is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit\"",
  "zip": "part12_of_17",
  "features": {
   "through_vias": 727,

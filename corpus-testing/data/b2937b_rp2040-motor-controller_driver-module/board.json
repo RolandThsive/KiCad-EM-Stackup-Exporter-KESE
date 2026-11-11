@@ -14,6 +14,7 @@
  "path": "twisted-fields__rp2040-motor-controller/driver_module/driver_module.kicad_pcb",
  "project": "twisted-fields/rp2040-motor-controller",
  "name": "driver_module",
+ "license": "CERN-OHL-P-2.0 (CERN Open Hardware Licence v2, Permissive), in LICENSE, debugger/LICENSE",
  "zip": "part15_of_17",
  "features": {
   "through_vias": 324,

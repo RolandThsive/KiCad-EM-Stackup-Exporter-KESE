@@ -2,6 +2,7 @@
  "name": "ciaa_acc",
  "project": "ciaa/Hardware",
  "path": "ciaa__Hardware/PCB/ACC/CIAA_ACC/ciaa_acc.kicad_pcb",
+ "license": "BSD-2-Clause (BSD 2-Clause License), in LICENSE, PCB/EDU-FPGA/LICENSE, PCB/Z3R0/LICENSE",
  "rank": 3,
  "complexity": {
   "grade": 422,

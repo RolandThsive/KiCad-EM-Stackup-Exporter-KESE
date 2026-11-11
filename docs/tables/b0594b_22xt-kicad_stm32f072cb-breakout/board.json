@@ -2,6 +2,7 @@
  "name": "stm32f072cb_breakout",
  "project": "bluejayracing/22xt_kicad",
  "path": "bluejayracing__22xt_kicad/05-can_encoder/stm32f072cb-breakout/stm32f072cb_breakout/stm32f072cb_breakout.kicad_pcb",
+ "license": "No license found",
  "rank": 2529,
  "complexity": {
   "grade": 233,

@@ -2,6 +2,7 @@
  "name": "battery_contact",
  "project": "osusat/cubesat",
  "path": "osusat__cubesat/eps/v1/battery_contact_l/battery_contact.kicad_pcb",
+ "license": "MIT (MIT License)",
  "rank": 2932,
  "complexity": {
   "grade": 161,

@@ -2,6 +2,7 @@
  "name": "praline",
  "project": "greatscottgadgets/hackrf-pro",
  "path": "greatscottgadgets__hackrf-pro/praline.kicad_pcb",
+ "license": "CERN-OHL-P-2.0 (CERN Open Hardware Licence v2, Permissive)",
  "rank": 282,
  "complexity": {
   "grade": 466,

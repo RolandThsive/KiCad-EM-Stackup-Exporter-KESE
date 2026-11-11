@@ -2,6 +2,7 @@
  "name": "ESP32-GATEWAY_Rev_G",
  "project": "OLIMEX/ESP32-GATEWAY",
  "path": "OLIMEX__ESP32-GATEWAY/HARDWARE/Hardware revision G/ESP32-GATEWAY_Rev_G.kicad_pcb",
+ "license": "Apache-2.0 (Apache License 2.0)",
  "rank": 854,
  "complexity": {
   "grade": 291,

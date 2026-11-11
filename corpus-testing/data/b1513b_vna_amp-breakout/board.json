@@ -14,6 +14,7 @@
  "path": "loxodes__vna/breakouts/amp_breakout/amp_breakout.kicad_pcb",
  "project": "loxodes/vna",
  "name": "amp_breakout",
+ "license": "As README.md states it: \"Unless otherwise noted, all work is under a MIT license.\"",
  "zip": "part16_of_17",
  "features": {
   "through_vias": 20,

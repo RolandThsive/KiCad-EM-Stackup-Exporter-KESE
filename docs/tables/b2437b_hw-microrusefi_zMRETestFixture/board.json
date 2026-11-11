@@ -2,6 +2,7 @@
  "name": "zMRETestFixture",
  "project": "rusefi/hw_microrusefi",
  "path": "rusefi__hw_microrusefi/zMRETestFixture.kicad_pcb",
+ "license": "No license found",
  "rank": 820,
  "complexity": {
   "grade": 249,

@@ -14,6 +14,7 @@
  "path": "OLIMEX__ESP32-H2-DevKit-Lipo/HARDWARE/ESP32-H2-DevKit-Lipo-Rev.A/ESP32-H2-DevKit-LiPo_Rev_A.kicad_pcb",
  "project": "OLIMEX/ESP32-H2-DevKit-Lipo",
  "name": "ESP32-H2-DevKit-LiPo_Rev_A",
+ "license": "GPL-3.0 (GNU GPL v3.0)",
  "zip": "part15_of_17",
  "features": {
   "through_vias": 124,

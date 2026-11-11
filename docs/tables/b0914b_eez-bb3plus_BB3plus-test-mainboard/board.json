@@ -2,6 +2,7 @@
  "name": "BB3plus test mainboard",
  "project": "eez-open/eez-bb3plus",
  "path": "eez-open__eez-bb3plus/Experimental/KiCad/BB3plus test mainboard.kicad_pcb",
+ "license": "TAPR-OHL-1.0 (TAPR Open Hardware License), in LICENSE.TXT",
  "rank": 286,
  "complexity": {
   "grade": 449,

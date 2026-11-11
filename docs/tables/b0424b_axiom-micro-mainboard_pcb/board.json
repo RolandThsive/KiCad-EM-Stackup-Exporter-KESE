@@ -2,6 +2,7 @@
  "name": "pcb",
  "project": "apertus-open-source-cinema/axiom-micro-mainboard",
  "path": "apertus-open-source-cinema__axiom-micro-mainboard/pcb/pcb.kicad_pcb",
+ "license": "CERN-OHL-S-2.0 (CERN Open Hardware Licence v2, Strongly Reciprocal), in LICENSE.txt",
  "rank": 735,
  "complexity": {
   "grade": 270,

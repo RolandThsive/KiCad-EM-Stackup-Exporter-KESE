@@ -2,6 +2,7 @@
  "name": "heatsink_drawing",
  "project": "owntech-foundation/twist",
  "path": "owntech-foundation__twist/KiCAD_files/heatsink_drawing.kicad_pcb",
+ "license": "As README.md states it: \"This project is propelled by OwnTech Team under CERN-OHL-S open hardware Licence The documentation provided is placed under Creative Commons SA-BY\"",
  "rank": 3052,
  "complexity": {
   "grade": 148,

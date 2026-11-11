@@ -14,6 +14,7 @@
  "path": "epatel__discrete6502/gen/board_routed_golden.kicad_pcb",
  "project": "epatel/discrete6502",
  "name": "board_routed_golden",
+ "license": "CC-BY-NC-SA-4.0 (Creative Commons Attribution-NonCommercial-ShareAlike 4.0), in LICENSE",
  "zip": "part01_of_17",
  "features": {
   "through_vias": 28908,

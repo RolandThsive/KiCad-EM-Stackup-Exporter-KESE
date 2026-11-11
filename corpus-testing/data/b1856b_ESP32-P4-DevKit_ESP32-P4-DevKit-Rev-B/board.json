@@ -14,6 +14,7 @@
  "path": "OLIMEX__ESP32-P4-DevKit/HARDWARE/ESP32-P4-DevKit-Rev.B/ESP32-P4-DevKit_Rev_B.kicad_pcb",
  "project": "OLIMEX/ESP32-P4-DevKit",
  "name": "ESP32-P4-DevKit_Rev_B",
+ "license": "GPL-3.0 (GNU GPL v3.0)",
  "zip": "part12_of_17",
  "features": {
   "through_vias": 213,

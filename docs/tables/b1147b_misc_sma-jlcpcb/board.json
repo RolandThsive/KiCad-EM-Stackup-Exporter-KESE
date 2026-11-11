@@ -2,6 +2,7 @@
  "name": "sma-jlcpcb",
  "project": "greatscottgadgets/misc",
  "path": "greatscottgadgets__misc/evaluation-boards/trace-width/sma-jlcpcb.kicad_pcb",
+ "license": "GPL-2.0 (GNU GPL v2.0)",
  "rank": 2366,
  "complexity": {
   "grade": 236,

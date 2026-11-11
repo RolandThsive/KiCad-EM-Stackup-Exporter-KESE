@@ -2,6 +2,7 @@
  "name": "io_base",
  "project": "rene-dev/stmbl",
  "path": "rene-dev__stmbl/hw/kicad/bob/ethernet_bob/io_base/io_base.kicad_pcb",
+ "license": "GPL-3.0 (GNU GPL v3.0)",
  "rank": 1895,
  "complexity": {
   "grade": 197,

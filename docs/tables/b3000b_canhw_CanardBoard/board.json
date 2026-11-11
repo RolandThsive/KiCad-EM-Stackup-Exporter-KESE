@@ -2,6 +2,7 @@
  "name": "CanardBoard",
  "project": "waterloo-rocketry/canhw",
  "path": "waterloo-rocketry__canhw/CanardBoard/CanardBoard.kicad_pcb",
+ "license": "GPL-3.0 (GNU GPL v3.0)",
  "rank": 509,
  "complexity": {
   "grade": 417,

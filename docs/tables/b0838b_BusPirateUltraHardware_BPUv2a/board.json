@@ -2,6 +2,7 @@
  "name": "BPUv2a",
  "project": "DangerousPrototypes/BusPirateUltraHardware",
  "path": "DangerousPrototypes__BusPirateUltraHardware/BPUv2a/BPUv2a.kicad_pcb",
+ "license": "GPL-3.0 (GNU GPL v3.0)",
  "rank": 385,
  "complexity": {
   "grade": 334,

@@ -14,6 +14,7 @@
  "path": "waterloo-rocketry__canhw/altimeter/altimeter.kicad_pcb",
  "project": "waterloo-rocketry/canhw",
  "name": "altimeter",
+ "license": "GPL-3.0 (GNU GPL v3.0)",
  "zip": "part14_of_17",
  "features": {
   "through_vias": 322,

@@ -2,6 +2,7 @@
  "name": "arduino_eeprom_programmer",
  "project": "vascofazza/8bit-cpu",
  "path": "vascofazza__8bit-cpu/eeprom_programmer/arduino_eeprom_programmer/arduino_eeprom_programmer.kicad_pcb",
+ "license": "MIT (MIT License)",
  "rank": 2464,
  "complexity": {
   "grade": 191,

@@ -2,6 +2,7 @@
  "name": "gladiolus",
  "project": "greatscottgadgets/greatfet-hardware",
  "path": "greatscottgadgets__greatfet-hardware/gladiolus/gladiolus.kicad_pcb",
+ "license": "BSD-3-Clause (BSD 3-Clause License)",
  "rank": 1365,
  "complexity": {
   "grade": 299,

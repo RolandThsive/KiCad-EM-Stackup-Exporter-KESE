@@ -2,6 +2,7 @@
  "name": "RASANT2400",
  "project": "tobias-dg3yev/ra-sentinel",
  "path": "tobias-dg3yev__ra-sentinel/RASANT2400/Hardware/KiCad/RASANT2400.kicad_pcb",
+ "license": "GPL-3.0 (GNU GPL v3.0)",
  "rank": 3128,
  "complexity": {
   "grade": 131,

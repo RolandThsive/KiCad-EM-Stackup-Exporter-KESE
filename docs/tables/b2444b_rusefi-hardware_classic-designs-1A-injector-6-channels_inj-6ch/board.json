@@ -2,6 +2,7 @@
  "name": "inj_6ch",
  "project": "rusefi/rusefi-hardware",
  "path": "rusefi__rusefi-hardware/classic-designs/1A_injector_6-channels/inj_6ch.kicad_pcb",
+ "license": "No license found",
  "rank": 1843,
  "complexity": {
   "grade": 210,

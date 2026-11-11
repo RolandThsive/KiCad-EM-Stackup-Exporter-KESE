@@ -2,6 +2,7 @@
  "name": "html_accelerator",
  "project": "akastanley/html_accelerator",
  "path": "akastanley__html_accelerator/PCB/html_accelerator/html_accelerator.kicad_pcb",
+ "license": "GPL-3.0 (GNU GPL v3.0)",
  "rank": 386,
  "complexity": {
   "grade": 440,

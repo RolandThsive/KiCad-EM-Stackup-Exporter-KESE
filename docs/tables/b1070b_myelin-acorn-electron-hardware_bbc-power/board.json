@@ -2,6 +2,7 @@
  "name": "bbc_power",
  "project": "google/myelin-acorn-electron-hardware",
  "path": "google__myelin-acorn-electron-hardware/bbc_power_distribution/pcb/bbc_power.kicad_pcb",
+ "license": "Apache-2.0 (Apache License 2.0)",
  "rank": 2770,
  "complexity": {
   "grade": 143,

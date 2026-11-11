@@ -2,6 +2,7 @@
  "name": "ESP32-PoE_Rev_G1",
  "project": "OLIMEX/ESP32-POE",
  "path": "OLIMEX__ESP32-POE/HARDWARE/ESP32-PoE-hardware-revision-G1/ESP32-PoE_Rev_G1.kicad_pcb",
+ "license": "Apache-2.0 (Apache License 2.0)",
  "rank": 733,
  "complexity": {
   "grade": 297,

@@ -14,6 +14,7 @@
  "path": "Duet3D__Duet-2-Hardware/Duet2/Duet2Maestro_v1.0/Duet2Maestro.kicad_pcb",
  "project": "Duet3D/Duet-2-Hardware",
  "name": "Duet2Maestro",
+ "license": "CERN-OHL-1.2 (CERN Open Hardware Licence v1.2), in LICENSE",
  "zip": "part10_of_17",
  "features": {
   "through_vias": 786,

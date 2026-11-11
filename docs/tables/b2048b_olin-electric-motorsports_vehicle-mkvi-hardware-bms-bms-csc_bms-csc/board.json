@@ -2,6 +2,7 @@
  "name": "bms_csc",
  "project": "olin-electric-motorsports/olin-electric-motorsports",
  "path": "olin-electric-motorsports__olin-electric-motorsports/vehicle/mkvi/hardware/bms/bms_csc/bms_csc.kicad_pcb",
+ "license": "No license found",
  "rank": 1083,
  "complexity": {
   "grade": 349,

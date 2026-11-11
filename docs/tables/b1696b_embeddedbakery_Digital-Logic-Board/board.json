@@ -2,6 +2,7 @@
  "name": "Digital Logic Board",
  "project": "mwwhited/embeddedbakery",
  "path": "mwwhited__embeddedbakery/circuits/Digital Tools/Digital Logic Board/Digital Logic Board.kicad_pcb",
+ "license": "MIT (MIT License), in LICENSE",
  "rank": 2523,
  "complexity": {
   "grade": 176,

@@ -14,6 +14,7 @@
  "path": "korken89__ovio_core/ovio_core.kicad_pcb",
  "project": "korken89/ovio_core",
  "name": "ovio_core",
+ "license": "As README.md states it: \"This hardware is open source. TODO: Find a proper license\"",
  "zip": "part10_of_17",
  "features": {
   "through_vias": 552,

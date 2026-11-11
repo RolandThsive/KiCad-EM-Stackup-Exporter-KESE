@@ -2,6 +2,7 @@
  "name": "TRS80_Model_I_G_E1",
  "project": "RetroStack/TRS-80-Model-I-G-E1",
  "path": "RetroStack__TRS-80-Model-I-G-E1/KiCAD/TRS80_Model_I_G_E1.kicad_pcb",
+ "license": "MIT (MIT License)",
  "rank": 222,
  "complexity": {
   "grade": 358,

@@ -2,6 +2,7 @@
  "name": "gd rp2040 keyboard proto pcb",
  "project": "geekbozu/Golden-Delicious",
  "path": "geekbozu__Golden-Delicious/kicad files/gd rp2040 keyboard proto pcb/kicad/gd rp2040 keyboard proto pcb.kicad_pcb",
+ "license": "MIT (MIT License)",
  "rank": 1669,
  "complexity": {
   "grade": 278,

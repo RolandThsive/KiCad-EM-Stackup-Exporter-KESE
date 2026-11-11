@@ -2,6 +2,7 @@
  "name": "chocofi-topplate",
  "project": "pashutk/chocofi",
  "path": "pashutk__chocofi/pcb/chocofi-topplate.kicad_pcb",
+ "license": "CERN-OHL-P-2.0 (CERN Open Hardware Licence v2, Permissive), in LICENSE.txt",
  "rank": 3115,
  "complexity": {
   "grade": 82,

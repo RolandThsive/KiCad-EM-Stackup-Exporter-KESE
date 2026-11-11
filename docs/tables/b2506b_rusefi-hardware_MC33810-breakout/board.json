@@ -2,6 +2,7 @@
  "name": "MC33810-breakout",
  "project": "rusefi/rusefi-hardware",
  "path": "rusefi__rusefi-hardware/MC33810-breakout/MC33810-breakout.kicad_pcb",
+ "license": "No license found",
  "rank": 1740,
  "complexity": {
   "grade": 252,

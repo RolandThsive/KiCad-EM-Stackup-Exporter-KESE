@@ -14,6 +14,7 @@
  "path": "isarmg__pcie-switch-2/outputs/PCIe_AllM2_RevO/Main_27M2/Main_27M2.kicad_pcb",
  "project": "isarmg/pcie-switch-2",
  "name": "Main_27M2",
+ "license": "No license found",
  "zip": "part14_of_17",
  "features": {
   "through_vias": 0,

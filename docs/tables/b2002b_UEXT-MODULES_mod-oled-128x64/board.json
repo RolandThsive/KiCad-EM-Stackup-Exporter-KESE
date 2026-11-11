@@ -2,6 +2,7 @@
  "name": "mod-oled-128x64",
  "project": "OLIMEX/UEXT-MODULES",
  "path": "OLIMEX__UEXT-MODULES/MOD-OLED-128x64/mod-oled-128x64.kicad_pcb",
+ "license": "No license found",
  "rank": 2541,
  "complexity": {
   "grade": 165,

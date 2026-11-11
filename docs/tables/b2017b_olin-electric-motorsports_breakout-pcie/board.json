@@ -2,6 +2,7 @@
  "name": "breakout_pcie",
  "project": "olin-electric-motorsports/olin-electric-motorsports",
  "path": "olin-electric-motorsports__olin-electric-motorsports/projects/PCIe Development/pcie_breakout/breakout_pcie.kicad_pcb",
+ "license": "No license found",
  "rank": 1388,
  "complexity": {
   "grade": 292,

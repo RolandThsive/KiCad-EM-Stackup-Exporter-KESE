@@ -2,6 +2,7 @@
  "name": "gpu-cluster-backplane",
  "project": "antmicro/gpu-cluster-backplane",
  "path": "antmicro__gpu-cluster-backplane/gpu-cluster-backplane.kicad_pcb",
+ "license": "Apache-2.0 (Apache License 2.0)",
  "rank": 110,
  "complexity": {
   "grade": 457,

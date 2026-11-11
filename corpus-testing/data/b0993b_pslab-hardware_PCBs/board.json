@@ -14,6 +14,7 @@
  "path": "fossasia__pslab-hardware/archives/Breakout_Boards/PCBs.kicad_pcb",
  "project": "fossasia/pslab-hardware",
  "name": "PCBs",
+ "license": "Apache-2.0 (Apache License 2.0)",
  "zip": "part16_of_17",
  "features": {
   "through_vias": 7,

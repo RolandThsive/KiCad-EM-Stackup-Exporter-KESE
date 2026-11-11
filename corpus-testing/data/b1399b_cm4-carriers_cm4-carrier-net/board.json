@@ -14,6 +14,7 @@
  "path": "jkiv__cm4-carriers/hardware/cm4-carrier-net/cm4-carrier-net.kicad_pcb",
  "project": "jkiv/cm4-carriers",
  "name": "cm4-carrier-net",
+ "license": "BSD-2-Clause (BSD 2-Clause License)",
  "zip": "part15_of_17",
  "features": {
   "through_vias": 107,

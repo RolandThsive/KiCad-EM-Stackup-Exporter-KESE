@@ -14,6 +14,7 @@
  "path": "GlasgowEmbedded__glasgow/hardware/boards/glasgow/revD0/glasgow.kicad_pcb",
  "project": "GlasgowEmbedded/glasgow",
  "name": "glasgow",
+ "license": "0BSD (BSD Zero Clause License)",
  "zip": "part07_of_17",
  "features": {
   "through_vias": 2858,

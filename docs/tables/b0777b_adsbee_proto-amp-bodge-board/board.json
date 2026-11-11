@@ -2,6 +2,7 @@
  "name": "proto_amp_bodge_board",
  "project": "CoolNamesAllTaken/adsbee",
  "path": "CoolNamesAllTaken__adsbee/kicad/prototyping/proto_amp_bodge_board/proto_amp_bodge_board.kicad_pcb",
+ "license": "GPL-3.0 (GNU GPL v3.0), in LICENSE",
  "rank": 2893,
  "complexity": {
   "grade": 131,

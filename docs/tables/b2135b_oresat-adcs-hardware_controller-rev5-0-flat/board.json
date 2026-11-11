@@ -2,6 +2,7 @@
  "name": "controller_rev5.0_flat",
  "project": "oresat/oresat-adcs-hardware",
  "path": "oresat__oresat-adcs-hardware/oresat-rw-board-rev5-flat/controller_rev5.0_flat.kicad_pcb",
+ "license": "GPL-2.0 (GNU GPL v2.0)",
  "rank": 375,
  "complexity": {
   "grade": 362,

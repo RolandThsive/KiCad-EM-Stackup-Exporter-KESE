@@ -14,6 +14,7 @@
  "path": "lhc__hardware/Oficinas/monte-sua-placa-kicad/Projeto Live/placas-kicad.kicad_pcb",
  "project": "lhc/hardware",
  "name": "placas-kicad",
+ "license": "MIT (MIT License), in Oficinas/monte-sua-placa-kicad/LICENSE",
  "zip": "part16_of_17",
  "features": {
   "through_vias": 50,

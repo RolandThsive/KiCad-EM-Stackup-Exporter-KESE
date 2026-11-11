@@ -2,6 +2,7 @@
  "name": "pods_panel",
  "project": "ToyotaInfoTech/RAMN",
  "path": "ToyotaInfoTech__RAMN/hardware/build/pods_panel.kicad_pcb",
+ "license": "CC-BY-SA-4.0 (Creative Commons Attribution-ShareAlike 4.0), in LICENSE.md",
  "rank": 1851,
  "complexity": {
   "grade": 233,

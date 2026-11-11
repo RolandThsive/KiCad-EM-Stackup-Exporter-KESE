@@ -2,6 +2,7 @@
  "name": "Commodore Plus 4",
  "project": "baldengineer/bit-preserve",
  "path": "baldengineer__bit-preserve/Commodore/Plus4/Commodore Plus 4.kicad_pcb",
+ "license": "CC-BY-4.0 (Creative Commons Attribution 4.0), in LICENSE.md",
  "rank": 2276,
  "complexity": {
   "grade": 110,

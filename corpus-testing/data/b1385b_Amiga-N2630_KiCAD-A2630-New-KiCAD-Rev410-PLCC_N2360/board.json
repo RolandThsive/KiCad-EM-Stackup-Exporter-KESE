@@ -14,6 +14,7 @@
  "path": "jasonsbeer__Amiga-N2630/KiCAD/A2630-New-KiCAD-Rev410-PLCC/N2360.kicad_pcb",
  "project": "jasonsbeer/Amiga-N2630",
  "name": "N2360",
+ "license": "As README.md states it: \"This work is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License .\"",
  "zip": "part09_of_17",
  "features": {
   "through_vias": 1690,

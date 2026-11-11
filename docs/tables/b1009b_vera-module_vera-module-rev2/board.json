@@ -2,6 +2,7 @@
  "name": "vera-module-rev2",
  "project": "fvdhoef/vera-module",
  "path": "fvdhoef__vera-module/pcb/rev2/vera-module-rev2.kicad_pcb",
+ "license": "MIT (MIT License)",
  "rank": 1074,
  "complexity": {
   "grade": 287,

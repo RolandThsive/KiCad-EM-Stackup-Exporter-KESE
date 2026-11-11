@@ -2,6 +2,7 @@
  "name": "LittleSixteen",
  "project": "SukkoPera/LittleSixteen",
  "path": "SukkoPera__LittleSixteen/LittleSixteen.kicad_pcb",
+ "license": "A license in LICENSE.pdf; as README.md states it: \"The LittleSixteen documentation, including the design itself, is copyright © SukkoPera 2019-2025 and is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License.\"",
  "rank": 303,
  "complexity": {
   "grade": 317,

@@ -14,6 +14,7 @@
  "path": "open-ephys__ECP5U85-BSE-USB-IO-Tester/pcb/ecp5u85-bse-usb_io-tester.kicad_pcb",
  "project": "open-ephys/ECP5U85-BSE-USB-IO-Tester",
  "name": "ecp5u85-bse-usb_io-tester",
+ "license": "CC-BY-NC-SA-4.0 (Creative Commons Attribution-NonCommercial-ShareAlike 4.0), in LICENSE.md",
  "zip": "part13_of_17",
  "features": {
   "through_vias": 414,

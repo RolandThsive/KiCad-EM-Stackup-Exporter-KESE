@@ -14,6 +14,7 @@
  "path": "antmicro__thunderbolt-pcie-adapter/thunderbolt-pcie-adapter.kicad_pcb",
  "project": "antmicro/thunderbolt-pcie-adapter",
  "name": "thunderbolt-pcie-adapter",
+ "license": "Apache-2.0 (Apache License 2.0)",
  "zip": "part11_of_17",
  "features": {
   "through_vias": 833,

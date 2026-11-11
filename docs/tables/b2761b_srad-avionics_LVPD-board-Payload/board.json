@@ -2,6 +2,7 @@
  "name": "LVPD-board_Payload",
  "project": "terrapin-rocket-team/srad-avionics",
  "path": "terrapin-rocket-team__srad-avionics/Side_Projects/ARC/PCBs/LVPD-board_Payload/LVPD-board_Payload.kicad_pcb",
+ "license": "No license found",
  "rank": 2668,
  "complexity": {
   "grade": 145,

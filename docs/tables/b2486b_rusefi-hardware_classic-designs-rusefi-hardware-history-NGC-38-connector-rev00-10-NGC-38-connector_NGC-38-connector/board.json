@@ -2,6 +2,7 @@
  "name": "NGC_38_connector",
  "project": "rusefi/rusefi-hardware",
  "path": "rusefi__rusefi-hardware/classic-designs/rusefi_hardware_history/NGC_38_connector_rev00.10/NGC_38_connector/NGC_38_connector.kicad_pcb",
+ "license": "No license found",
  "rank": 2481,
  "complexity": {
   "grade": 134,

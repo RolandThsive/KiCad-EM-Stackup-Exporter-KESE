@@ -14,6 +14,7 @@
  "path": "antmicro__cvbs-mipi-bridge/cvbs-mipi-bridge.kicad_pcb",
  "project": "antmicro/cvbs-mipi-bridge",
  "name": "cvbs-mipi-bridge",
+ "license": "Apache-2.0 (Apache License 2.0)",
  "zip": "part15_of_17",
  "features": {
   "through_vias": 295,

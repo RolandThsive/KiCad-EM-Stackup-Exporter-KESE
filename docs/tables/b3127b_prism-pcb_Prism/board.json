@@ -2,6 +2,7 @@
  "name": "Prism",
  "project": "y10-labs/prism-pcb",
  "path": "y10-labs__prism-pcb/Prism.kicad_pcb",
+ "license": "As README.md states it: \"© 2025 All Rights Reserved\"",
  "rank": 184,
  "complexity": {
   "grade": 422,

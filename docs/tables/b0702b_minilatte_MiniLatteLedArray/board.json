@@ -2,6 +2,7 @@
  "name": "MiniLatteLedArray",
  "project": "cath272/minilatte",
  "path": "cath272__minilatte/MiniLatteLedArray/MiniLatteLedArray.kicad_pcb",
+ "license": "GPL-3.0 (GNU GPL v3.0), in PCB/LICENSE",
  "rank": 883,
  "complexity": {
   "grade": 294,

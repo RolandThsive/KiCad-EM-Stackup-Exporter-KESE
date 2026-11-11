@@ -2,6 +2,7 @@
  "name": "Watchy",
  "project": "sqfmi/watchy-hardware",
  "path": "sqfmi__watchy-hardware/Watchy.kicad_pcb",
+ "license": "MIT (MIT License)",
  "rank": 1590,
  "complexity": {
   "grade": 344,

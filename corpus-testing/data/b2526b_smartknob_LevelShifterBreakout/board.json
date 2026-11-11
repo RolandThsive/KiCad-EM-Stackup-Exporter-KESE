@@ -14,6 +14,7 @@
  "path": "scottbez1__smartknob/electronics/LevelShifterBreakout/LevelShifterBreakout.kicad_pcb",
  "project": "scottbez1/smartknob",
  "name": "LevelShifterBreakout",
+ "license": "Apache-2.0 (Apache License 2.0), in LICENSE.txt",
  "zip": "part16_of_17",
  "features": {
   "through_vias": 11,

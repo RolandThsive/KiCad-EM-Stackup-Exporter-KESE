@@ -14,6 +14,7 @@
  "path": "BoltzRnD__SmartPrintCoreH7x/SmartPrintCoreH7x/SmartPrintCoreH7x.kicad_pcb",
  "project": "BoltzRnD/SmartPrintCoreH7x",
  "name": "SmartPrintCoreH7x",
+ "license": "GPL-3.0 (GNU GPL v3.0), in LICENSE",
  "zip": "part07_of_17",
  "features": {
   "through_vias": 1506,

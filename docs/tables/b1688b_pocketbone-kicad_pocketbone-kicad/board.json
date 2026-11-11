@@ -2,6 +2,7 @@
  "name": "pocketbone-kicad",
  "project": "mwelling/pocketbone-kicad",
  "path": "mwelling__pocketbone-kicad/pocketbone-kicad.kicad_pcb",
+ "license": "CERN-OHL-1.2 (CERN Open Hardware Licence v1.2), in LICENSE.txt",
  "rank": 1340,
  "complexity": {
   "grade": 292,

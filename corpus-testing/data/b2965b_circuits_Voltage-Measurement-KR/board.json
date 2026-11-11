@@ -14,6 +14,7 @@
  "path": "ucdfs__circuits/Kieran Care package/Voltage_Measurement_KR/Voltage_Measurement_KR.kicad_pcb",
  "project": "ucdfs/circuits",
  "name": "Voltage_Measurement_KR",
+ "license": "No license found",
  "zip": "part16_of_17",
  "features": {
   "through_vias": 14,

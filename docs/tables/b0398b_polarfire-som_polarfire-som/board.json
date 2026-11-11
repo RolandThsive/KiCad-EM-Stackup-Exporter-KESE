@@ -2,6 +2,7 @@
  "name": "polarfire-som",
  "project": "antmicro/polarfire-som",
  "path": "antmicro__polarfire-som/polarfire-som.kicad_pcb",
+ "license": "Apache-2.0 (Apache License 2.0)",
  "rank": 76,
  "complexity": {
   "grade": 517,

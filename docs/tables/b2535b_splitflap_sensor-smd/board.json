@@ -2,6 +2,7 @@
  "name": "sensor_smd",
  "project": "scottbez1/splitflap",
  "path": "scottbez1__splitflap/electronics/sensor_smd/sensor_smd.kicad_pcb",
+ "license": "Apache-2.0 (Apache License 2.0), in LICENSE.txt",
  "rank": 2921,
  "complexity": {
   "grade": 177,

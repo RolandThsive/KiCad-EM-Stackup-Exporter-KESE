@@ -14,6 +14,7 @@
  "path": "oresat__reaction-wheels/Edison_GPIO_Motor_via_servo/Edison_Motor_Servo.kicad_pcb",
  "project": "oresat/reaction-wheels",
  "name": "Edison_Motor_Servo",
+ "license": "No license found",
  "zip": "part16_of_17",
  "features": {
   "through_vias": 0,

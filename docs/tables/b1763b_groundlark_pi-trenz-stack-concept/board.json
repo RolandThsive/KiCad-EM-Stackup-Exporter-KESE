@@ -2,6 +2,7 @@
  "name": "pi-trenz-stack-concept",
  "project": "naturalhazardscience/groundlark",
  "path": "naturalhazardscience__groundlark/hw/groundlark-fpga-hat/boards/groundlark-daqhat-01/pi-trenz-stack-concept.kicad_pcb",
+ "license": "MIT (MIT License)",
  "rank": 130,
  "complexity": {
   "grade": 417,

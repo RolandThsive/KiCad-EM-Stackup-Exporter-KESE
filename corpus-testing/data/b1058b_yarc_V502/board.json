@@ -14,6 +14,7 @@
  "path": "gmofishsauce__yarc/pcb/V502/V502.kicad_pcb",
  "project": "gmofishsauce/yarc",
  "name": "V502",
+ "license": "In LICENSE: \"Content of the yarc/ subdirectory is licensed as described there (AGPL). Everything else here has NO LICENSE and may not be used for any purpose.\"",
  "zip": "part15_of_17",
  "features": {
   "through_vias": 127,

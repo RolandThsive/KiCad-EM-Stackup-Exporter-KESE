@@ -14,6 +14,7 @@
  "path": "SingularitySurfer__SingularitySurfer-FPGA-Lock-In-Amplifier/BOARD/SingularitySurfer_V1/SingularitySurfer_V1.kicad_pcb",
  "project": "SingularitySurfer/SingularitySurfer-FPGA-Lock-In-Amplifier",
  "name": "SingularitySurfer_V1",
+ "license": "MIT (MIT License), in LICENSE",
  "zip": "part14_of_17",
  "features": {
   "through_vias": 415,

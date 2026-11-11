@@ -14,6 +14,7 @@
  "path": "bluejayracing__bjr_kicad/21xt/serial_bulkhead/serial_bulkhead.kicad_pcb",
  "project": "bluejayracing/bjr_kicad",
  "name": "serial_bulkhead",
+ "license": "No license found",
  "zip": "part16_of_17",
  "features": {
   "through_vias": 2,

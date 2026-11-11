@@ -2,6 +2,7 @@
  "name": "Analog Converter",
  "project": "mwwhited/embeddedbakery",
  "path": "mwwhited__embeddedbakery/circuits/HelperBoards/Controller/Analog Converter/Analog Converter/Analog Converter.kicad_pcb",
+ "license": "MIT (MIT License), in LICENSE",
  "rank": 2573,
  "complexity": {
   "grade": 161,

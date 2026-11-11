@@ -2,6 +2,7 @@
  "name": "as5047p_breakout",
  "project": "oresat/oresat-adcs-hardware",
  "path": "oresat__oresat-adcs-hardware/oresat-rw-board-rev7/as5047p_breakout/as5047p_breakout.kicad_pcb",
+ "license": "GPL-2.0 (GNU GPL v2.0)",
  "rank": 2639,
  "complexity": {
   "grade": 172,

@@ -2,6 +2,7 @@
  "name": "[DFR1142]Lite Carrier for LattePanda Mu",
  "project": "ltbrain/mubook",
  "path": "ltbrain__mubook/hardware/v.1/[DFR1142]Lite Carrier for LattePanda Mu.kicad_pcb",
+ "license": "MIT (MIT License)",
  "rank": 337,
  "complexity": {
   "grade": 406,

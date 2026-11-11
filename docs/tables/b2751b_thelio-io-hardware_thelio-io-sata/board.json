@@ -2,6 +2,7 @@
  "name": "thelio-io-sata",
  "project": "system76/thelio-io-hardware",
  "path": "system76__thelio-io-hardware/pcb-thelio-io-sata/thelio-io-sata.kicad_pcb",
+ "license": "GPL-3.0 (GNU GPL v3.0)",
  "rank": 2506,
  "complexity": {
   "grade": 244,

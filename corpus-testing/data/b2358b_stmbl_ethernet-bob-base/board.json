@@ -14,6 +14,7 @@
  "path": "rene-dev__stmbl/hw/kicad/bob/ethernet_bob_base/ethernet_bob_base.kicad_pcb",
  "project": "rene-dev/stmbl",
  "name": "ethernet_bob_base",
+ "license": "GPL-3.0 (GNU GPL v3.0)",
  "zip": "part15_of_17",
  "features": {
   "through_vias": 92,

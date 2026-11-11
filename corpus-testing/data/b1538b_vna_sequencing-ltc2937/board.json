@@ -14,6 +14,7 @@
  "path": "loxodes__vna/breakouts/sequencing_ltc2937/sequencing_ltc2937.kicad_pcb",
  "project": "loxodes/vna",
  "name": "sequencing_ltc2937",
+ "license": "As README.md states it: \"Unless otherwise noted, all work is under a MIT license.\"",
  "zip": "part14_of_17",
  "features": {
   "through_vias": 292,

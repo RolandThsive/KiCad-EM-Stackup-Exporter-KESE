@@ -2,6 +2,7 @@
  "name": "led-panel",
  "project": "antmicro/programmable-led-panel",
  "path": "antmicro__programmable-led-panel/led-panel.kicad_pcb",
+ "license": "Apache-2.0 (Apache License 2.0)",
  "rank": 456,
  "complexity": {
   "grade": 441,

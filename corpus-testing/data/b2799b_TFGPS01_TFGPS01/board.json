@@ -14,6 +14,7 @@
  "path": "ThunderFly-aerospace__TFGPS01/hw/sch_pcb/TFGPS01.kicad_pcb",
  "project": "ThunderFly-aerospace/TFGPS01",
  "name": "TFGPS01",
+ "license": "GPL-3.0 (GNU GPL v3.0)",
  "zip": "part15_of_17",
  "features": {
   "through_vias": 400,

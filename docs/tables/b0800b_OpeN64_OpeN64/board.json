@@ -2,6 +2,7 @@
  "name": "OpeN64",
  "project": "cy-888/OpeN64",
  "path": "cy-888__OpeN64/OpeN64/OpeN64.kicad_pcb",
+ "license": "CERN-OHL-P-2.0 (CERN Open Hardware Licence v2, Permissive)",
  "rank": 486,
  "complexity": {
   "grade": 312,

@@ -2,6 +2,7 @@
  "name": "sci_board_wo_switches",
  "project": "matthiasgeorgimhof/hardware_csat",
  "path": "matthiasgeorgimhof__hardware_csat/sci_board_wo_switches/sci_board_wo_switches.kicad_pcb",
+ "license": "CC-BY-NC-SA-4.0 (Creative Commons Attribution-NonCommercial-ShareAlike 4.0), in LICENSE, aux_board/LICENSE, auxio_board/LICENSE and others",
  "rank": 807,
  "complexity": {
   "grade": 391,

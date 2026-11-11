@@ -14,6 +14,7 @@
  "path": "gralco__l5-schematic/CAD/KiCad/librem5_usb-c_board/librem5_usb-c_board.kicad_pcb",
  "project": "gralco/l5-schematic",
  "name": "librem5_usb-c_board",
+ "license": "GPL-3.0 (GNU GPL v3.0)",
  "zip": "part14_of_17",
  "features": {
   "through_vias": 462,

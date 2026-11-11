@@ -2,6 +2,7 @@
  "name": "SDRAM",
  "project": "andrewpaterson/658-Computer",
  "path": "andrewpaterson__658-Computer/Kicad/Pico/SDRAM/SDRAM.kicad_pcb",
+ "license": "No license found",
  "rank": 1564,
  "complexity": {
   "grade": 248,

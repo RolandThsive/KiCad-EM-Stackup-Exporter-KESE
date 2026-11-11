@@ -14,6 +14,7 @@
  "path": "OLIMEX__BB-CH340T/HARDWARE/BB-CH340T-Rev.A/bb-ch340t.kicad_pcb",
  "project": "OLIMEX/BB-CH340T",
  "name": "bb-ch340t",
+ "license": "GPL-3.0 (GNU GPL v3.0)",
  "zip": "part16_of_17",
  "features": {
   "through_vias": 12,

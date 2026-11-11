@@ -14,6 +14,7 @@
  "path": "osusat__cubesat/shared/kicad/subsheets/usb_c/usb_c.kicad_pcb",
  "project": "osusat/cubesat",
  "name": "usb_c",
+ "license": "MIT (MIT License)",
  "zip": "part16_of_17",
  "features": {
   "through_vias": 16,

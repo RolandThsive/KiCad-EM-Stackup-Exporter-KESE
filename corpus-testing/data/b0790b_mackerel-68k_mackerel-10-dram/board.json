@@ -14,6 +14,7 @@
  "path": "crmaykish__mackerel-68k/hardware/mack-10-proto/mackerel-10-dram/mackerel-10-dram.kicad_pcb",
  "project": "crmaykish/mackerel-68k",
  "name": "mackerel-10-dram",
+ "license": "MIT (MIT License)",
  "zip": "part16_of_17",
  "features": {
   "through_vias": 62,

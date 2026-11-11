@@ -14,6 +14,7 @@
  "path": "jack-mil__mcd-pcb/M68000.kicad_pcb",
  "project": "jack-mil/mcd-pcb",
  "name": "M68000",
+ "license": "No license found",
  "zip": "part13_of_17",
  "features": {
   "through_vias": 272,

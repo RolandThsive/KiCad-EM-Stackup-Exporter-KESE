@@ -2,6 +2,7 @@
  "name": "solar_charger",
  "project": "stanford-ssi/samwise-avionics",
  "path": "stanford-ssi__samwise-avionics/unused_boards/solar_charger/solar_charger.kicad_pcb",
+ "license": "No license found",
  "rank": 2575,
  "complexity": {
   "grade": 232,

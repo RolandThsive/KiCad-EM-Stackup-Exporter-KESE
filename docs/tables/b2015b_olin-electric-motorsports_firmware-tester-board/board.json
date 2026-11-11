@@ -2,6 +2,7 @@
  "name": "firmware_tester_board",
  "project": "olin-electric-motorsports/olin-electric-motorsports",
  "path": "olin-electric-motorsports__olin-electric-motorsports/projects/hitl/firmware_tester_board/firmware_tester_board.kicad_pcb",
+ "license": "No license found",
  "rank": 1557,
  "complexity": {
   "grade": 260,

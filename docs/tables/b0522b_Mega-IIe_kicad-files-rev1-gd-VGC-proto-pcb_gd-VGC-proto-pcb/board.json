@@ -2,6 +2,7 @@
  "name": "gd VGC proto pcb",
  "project": "baldengineer/Mega-IIe",
  "path": "baldengineer__Mega-IIe/kicad files/rev1/gd VGC proto pcb/gd VGC proto pcb.kicad_pcb",
+ "license": "MIT (MIT License)",
  "rank": 1519,
  "complexity": {
   "grade": 293,

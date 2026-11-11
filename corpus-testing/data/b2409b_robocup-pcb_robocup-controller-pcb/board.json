@@ -14,6 +14,7 @@
  "path": "robojackets__robocup-pcb/boards/development/controller/robocup-controller-pcb.kicad_pcb",
  "project": "robojackets/robocup-pcb",
  "name": "robocup-controller-pcb",
+ "license": "Apache-2.0 (Apache License 2.0)",
  "zip": "part15_of_17",
  "features": {
   "through_vias": 356,

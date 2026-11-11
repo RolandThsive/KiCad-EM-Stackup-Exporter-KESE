@@ -2,6 +2,7 @@
  "name": "homebrew_486",
  "project": "maniekx86/m8sbc-486",
  "path": "maniekx86__m8sbc-486/pcb/homebrew_486.kicad_pcb",
+ "license": "GPL-3.0 (GNU GPL v3.0), in pcb/LICENSE",
  "rank": 151,
  "complexity": {
   "grade": 393,

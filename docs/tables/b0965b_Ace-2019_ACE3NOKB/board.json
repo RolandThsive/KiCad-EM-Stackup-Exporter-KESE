@@ -2,6 +2,7 @@
  "name": "ACE3NOKB",
  "project": "flypie/Ace-2019",
  "path": "flypie__Ace-2019/KiCad/ACE3NOKB/ACE3NOKB.kicad_pcb",
+ "license": "GPL-3.0 (GNU GPL v3.0)",
  "rank": 423,
  "complexity": {
   "grade": 364,

@@ -14,6 +14,7 @@
  "path": "antmicro__signal-integrity-test-board/si-simulation-test-board.kicad_pcb",
  "project": "antmicro/signal-integrity-test-board",
  "name": "si-simulation-test-board",
+ "license": "Apache-2.0 (Apache License 2.0)",
  "zip": "part16_of_17",
  "features": {
   "through_vias": 252,

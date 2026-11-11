@@ -14,6 +14,7 @@
  "path": "ewoudvv__ducktop2/keyboard/12_keyboard_daughterboard.kicad_pcb",
  "project": "ewoudvv/ducktop2",
  "name": "12_keyboard_daughterboard",
+ "license": "MIT (MIT License)",
  "zip": "part11_of_17",
  "features": {
   "through_vias": 1660,

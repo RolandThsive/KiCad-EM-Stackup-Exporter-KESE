@@ -2,6 +2,7 @@
  "name": "ISA_CGA",
  "project": "hkzlab/CGA_Redux",
  "path": "hkzlab__CGA_Redux/ISA_CGA.kicad_pcb",
+ "license": "CC-BY-NC-SA-4.0 (Creative Commons Attribution-NonCommercial-ShareAlike 4.0), in LICENSE",
  "rank": 289,
  "complexity": {
   "grade": 307,

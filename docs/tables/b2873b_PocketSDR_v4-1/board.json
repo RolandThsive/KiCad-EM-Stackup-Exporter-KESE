@@ -2,6 +2,7 @@
  "name": "v4.1",
  "project": "tomojitakasu/PocketSDR",
  "path": "tomojitakasu__PocketSDR/FE_8CH/HW/v4.1/v4.1.kicad_pcb",
+ "license": "BSD-2-Clause (BSD 2-Clause License), in LICENSE.txt",
  "rank": 269,
  "complexity": {
   "grade": 403,

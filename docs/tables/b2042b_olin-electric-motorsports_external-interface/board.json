@@ -2,6 +2,7 @@
  "name": "external_interface",
  "project": "olin-electric-motorsports/olin-electric-motorsports",
  "path": "olin-electric-motorsports__olin-electric-motorsports/vehicle/mkv/hardware/service_section/interface/external/external_interface.kicad_pcb",
+ "license": "No license found",
  "rank": 2642,
  "complexity": {
   "grade": 157,

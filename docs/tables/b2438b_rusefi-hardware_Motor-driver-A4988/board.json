@@ -2,6 +2,7 @@
  "name": "Motor_driver_A4988",
  "project": "rusefi/rusefi-hardware",
  "path": "rusefi__rusefi-hardware/A4988_stepper_motor_driver/Motor_driver_A4988.kicad_pcb",
+ "license": "No license found",
  "rank": 2370,
  "complexity": {
   "grade": 255,

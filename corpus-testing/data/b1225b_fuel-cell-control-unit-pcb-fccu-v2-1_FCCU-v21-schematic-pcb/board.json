@@ -14,6 +14,7 @@
  "path": "hydrogreenpollub__fuel_cell_control_unit_pcb_fccu_v2_1/FCCU-v21-schematic-pcb.kicad_pcb",
  "project": "hydrogreenpollub/fuel_cell_control_unit_pcb_fccu_v2_1",
  "name": "FCCU-v21-schematic-pcb",
+ "license": "No license found",
  "zip": "part11_of_17",
  "features": {
   "through_vias": 1014,

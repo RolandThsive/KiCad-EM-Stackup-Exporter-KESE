@@ -14,6 +14,7 @@
  "path": "OLIMEX__GateMateA1-EVB/HARDWARE/GateMateA1-EVB-Rev.C/GateMateA1-EVB_Rev_C.kicad_pcb",
  "project": "OLIMEX/GateMateA1-EVB",
  "name": "GateMateA1-EVB_Rev_C",
+ "license": "GPL-3.0 (GNU GPL v3.0)",
  "zip": "part07_of_17",
  "features": {
   "through_vias": 1267,

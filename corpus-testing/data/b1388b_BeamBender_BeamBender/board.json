@@ -14,6 +14,7 @@
  "path": "jbilander__BeamBender/KiCad/A1200-A500/BeamBender.kicad_pcb",
  "project": "jbilander/BeamBender",
  "name": "BeamBender",
+ "license": "CC-BY-SA-4.0 (Creative Commons Attribution-ShareAlike 4.0)",
  "zip": "part14_of_17",
  "features": {
   "through_vias": 218,

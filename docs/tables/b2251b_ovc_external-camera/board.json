@@ -2,6 +2,7 @@
  "name": "external_camera",
  "project": "osrf/ovc",
  "path": "osrf__ovc/ovc3/hardware/ovc3a/ovc3a/external_camera/external_camera.kicad_pcb",
+ "license": "Apache-2.0 (Apache License 2.0)",
  "rank": 1276,
  "complexity": {
   "grade": 339,

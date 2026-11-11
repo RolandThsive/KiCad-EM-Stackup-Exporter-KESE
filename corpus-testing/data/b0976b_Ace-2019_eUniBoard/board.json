@@ -14,6 +14,7 @@
  "path": "flypie__Ace-2019/KiCad/eUniBoard/eUniBoard.kicad_pcb",
  "project": "flypie/Ace-2019",
  "name": "eUniBoard",
+ "license": "GPL-3.0 (GNU GPL v3.0)",
  "zip": "part16_of_17",
  "features": {
   "through_vias": 0,

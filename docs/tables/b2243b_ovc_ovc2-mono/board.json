@@ -2,6 +2,7 @@
  "name": "ovc2_mono",
  "project": "osrf/ovc",
  "path": "osrf__ovc/ovc2/hardware/ovc2a/graveyard/mono/ovc2_mono.kicad_pcb",
+ "license": "Apache-2.0 (Apache License 2.0)",
  "rank": 1652,
  "complexity": {
   "grade": 290,

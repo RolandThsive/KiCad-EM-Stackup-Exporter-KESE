@@ -14,6 +14,7 @@
  "path": "ts-manuel__imx6-demo-board/kicad/iMX6 Demo Board_from_REF.kicad_pcb",
  "project": "ts-manuel/imx6-demo-board",
  "name": "iMX6 Demo Board_from_REF",
+ "license": "GPL-3.0 (GNU GPL v3.0)",
  "zip": "part11_of_17",
  "features": {
   "through_vias": 666,

@@ -2,6 +2,7 @@
  "name": "EPS",
  "project": "rgw3d/1kcubesat_hardware",
  "path": "rgw3d__1kcubesat_hardware/eps_board/EPS.kicad_pcb",
+ "license": "GPL-3.0 (GNU GPL v3.0)",
  "rank": 240,
  "complexity": {
   "grade": 393,

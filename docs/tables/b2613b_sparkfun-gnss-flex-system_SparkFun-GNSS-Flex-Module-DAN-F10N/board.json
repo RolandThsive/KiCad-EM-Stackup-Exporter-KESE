@@ -2,6 +2,7 @@
  "name": "SparkFun_GNSS_Flex_Module_DAN-F10N",
  "project": "sparkfun/sparkfun_gnss_flex_system",
  "path": "sparkfun__sparkfun_gnss_flex_system/flex_boards/SparkPNT_GNSS_Flex_Module_DAN-F10N/hardware/SparkFun_GNSS_Flex_Module_DAN-F10N.kicad_pcb",
+ "license": "MIT (MIT License), in LICENSE.md",
  "rank": 2184,
  "complexity": {
   "grade": 270,

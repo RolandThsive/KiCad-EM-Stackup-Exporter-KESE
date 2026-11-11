@@ -14,6 +14,7 @@
  "path": "myriadrf__LMS6002-Pmod/board/KiCad/LMS6002-Pmod.kicad_pcb",
  "project": "myriadrf/LMS6002-Pmod",
  "name": "LMS6002-Pmod",
+ "license": "CC-BY-SA-3.0 (Creative Commons Attribution-ShareAlike 3.0), in board/KiCad/LICENSE.md",
  "zip": "part15_of_17",
  "features": {
   "through_vias": 65,

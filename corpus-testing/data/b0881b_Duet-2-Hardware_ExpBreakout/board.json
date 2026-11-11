@@ -14,6 +14,7 @@
  "path": "Duet3D__Duet-2-Hardware/Duet_Expansion/Expansion_Breakoutv1.1/ExpBreakout.kicad_pcb",
  "project": "Duet3D/Duet-2-Hardware",
  "name": "ExpBreakout",
+ "license": "CERN-OHL-1.2 (CERN Open Hardware Licence v1.2), in LICENSE",
  "zip": "part16_of_17",
  "features": {
   "through_vias": 37,

@@ -2,6 +2,7 @@
  "name": "ethernet-extension-poe",
  "project": "Tinkerforge/ethernet-extension",
  "path": "Tinkerforge__ethernet-extension/hardware/poe/ethernet-extension-poe.kicad_pcb",
+ "license": "No license found",
  "rank": 835,
  "complexity": {
   "grade": 300,

@@ -2,6 +2,7 @@
  "name": "Stroopwafel-LGA1151-CFL",
  "project": "a-little-wifi/stroopwafel-lga1151-cfl",
  "path": "a-little-wifi__stroopwafel-lga1151-cfl/Stroopwafel-LGA1151-CFL.kicad_pcb",
+ "license": "No license found",
  "rank": 1736,
  "complexity": {
   "grade": 256,

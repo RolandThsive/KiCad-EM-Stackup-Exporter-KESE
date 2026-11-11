@@ -2,6 +2,7 @@
  "name": "host-x1",
  "project": "azonenberg/starshipraider",
  "path": "azonenberg__starshipraider/boards/CLARKE/host-x1/host-x1.kicad_pcb",
+ "license": "BSD-3-Clause (BSD 3-Clause License)",
  "rank": 183,
  "complexity": {
   "grade": 346,

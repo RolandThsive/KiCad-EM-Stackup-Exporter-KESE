@@ -2,6 +2,7 @@
  "name": "BSPD KiCAD",
  "project": "ucdfs/circuits",
  "path": "ucdfs__circuits/Kieran Care package/BSPD_KR/BSPD KiCAD.kicad_pcb",
+ "license": "No license found",
  "rank": 2305,
  "complexity": {
   "grade": 239,

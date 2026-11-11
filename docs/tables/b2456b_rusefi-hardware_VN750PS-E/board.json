@@ -2,6 +2,7 @@
  "name": "VN750PS_E",
  "project": "rusefi/rusefi-hardware",
  "path": "rusefi__rusefi-hardware/classic-designs/HighSideSwitch/VN750PS_E.kicad_pcb",
+ "license": "No license found",
  "rank": 2479,
  "complexity": {
   "grade": 187,

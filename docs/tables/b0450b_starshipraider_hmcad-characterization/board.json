@@ -2,6 +2,7 @@
  "name": "hmcad-characterization",
  "project": "azonenberg/starshipraider",
  "path": "azonenberg__starshipraider/boards/BLONDEL/hmcad-characterization/hmcad-characterization.kicad_pcb",
+ "license": "BSD-3-Clause (BSD 3-Clause License)",
  "rank": 721,
  "complexity": {
   "grade": 286,

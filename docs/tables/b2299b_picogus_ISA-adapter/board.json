@@ -2,6 +2,7 @@
  "name": "ISA adapter",
  "project": "polpo/picogus",
  "path": "polpo__picogus/isa-hand386 adapter/ISA adapter.kicad_pcb",
+ "license": "CERN-OHL-P-2.0 (CERN Open Hardware Licence v2, Permissive), in hw-chipdown/LICENSE, hw-hand386/LICENSE, hw/LICENSE",
  "rank": 2030,
  "complexity": {
   "grade": 257,

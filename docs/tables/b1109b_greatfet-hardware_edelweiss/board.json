@@ -2,6 +2,7 @@
  "name": "edelweiss",
  "project": "greatscottgadgets/greatfet-hardware",
  "path": "greatscottgadgets__greatfet-hardware/edelweiss/edelweiss.kicad_pcb",
+ "license": "BSD-3-Clause (BSD 3-Clause License)",
  "rank": 2967,
  "complexity": {
   "grade": 96,

@@ -2,6 +2,7 @@
  "name": "ICE40HXDevBoard",
  "project": "aslak3/ICE40HXDevBoard",
  "path": "aslak3__ICE40HXDevBoard/ICE40HXDevBoard.kicad_pcb",
+ "license": "GPL-2.0 (GNU GPL v2.0)",
  "rank": 1037,
  "complexity": {
   "grade": 345,

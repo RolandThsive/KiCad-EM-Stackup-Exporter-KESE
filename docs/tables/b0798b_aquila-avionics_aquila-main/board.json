@@ -2,6 +2,7 @@
  "name": "aquila_main",
  "project": "cuspaceflight/aquila-avionics",
  "path": "cuspaceflight__aquila-avionics/schematics/aquila_main/aquila_main.kicad_pcb",
+ "license": "No license found",
  "rank": 999,
  "complexity": {
   "grade": 313,

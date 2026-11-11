@@ -14,6 +14,7 @@
  "path": "cetola__reform-next-mirror/nref-flex/nref-flex-usb3-one/nref-flex-usb3-one.kicad_pcb",
  "project": "cetola/reform-next-mirror",
  "name": "nref-flex-usb3-one",
+ "license": "As README.md states it: \"All hardware design work in this repository is © 2024 MNT Research GmbH, Berlin, Germany, and contributors (see Credits).\"",
  "zip": "part16_of_17",
  "features": {
   "through_vias": 162,

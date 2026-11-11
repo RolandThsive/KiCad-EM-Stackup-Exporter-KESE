@@ -2,7 +2,7 @@
 
 Makes each board's files from its runs in `corpus-testing/data/`, for the engine to build the pages from:
 
-    docs/tables/<repo>_<board>/board.json    name, project, path, complexity, features, status, bad design ...
+    docs/tables/<repo>_<board>/board.json    name, project, path, license, complexity, features, status ...
     docs/tables/<repo>_<board>/stages.md     seconds per stage, one row per mode and format
     docs/tables/<repo>_<board>/facts.md      repo, folder, complexity, layers, format, the Verifier's result ...
     docs/tables/<repo>_<board>/files.md      the file each run wrote and its peak memory
@@ -18,8 +18,8 @@ a new board's folders have no number, and the engine numbers and renames them. F
 Needs Python 3.11 or newer with matplotlib and Pillow.
 
 Each board's runs are in its folder in `corpus-testing/data/`, named as its tables folder: `board.json` (its counts
-from the `.kicad_pcb`, its KESE features, its path, and what makes it a bad design, if it is one) and `runs.jsonl`
-(every run of it in order, each with its date and source).
+from the `.kicad_pcb`, its KESE features, its path, its project's license, and what makes it a bad design, if it is
+one) and `runs.jsonl` (every run of it in order, each with its date and source).
 
 - **Add a board:** add its folder to `data/`, `<repo>_<board>/`, with its `board.json` (a rank no other board has)
   and `runs.jsonl`, then make it. Or add its two folders by hand, named `<repo>_<board>`.

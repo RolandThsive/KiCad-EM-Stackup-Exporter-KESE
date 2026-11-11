@@ -2,6 +2,7 @@
  "name": "cm4-lvds-adapter",
  "project": "antmicro/cm4-baseboard-lvds-adapter",
  "path": "antmicro__cm4-baseboard-lvds-adapter/cm4-lvds-adapter.kicad_pcb",
+ "license": "Apache-2.0 (Apache License 2.0)",
  "rank": 957,
  "complexity": {
   "grade": 408,

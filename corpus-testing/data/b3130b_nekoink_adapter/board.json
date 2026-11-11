@@ -14,6 +14,7 @@
  "path": "zephray__nekoink/pcb/34p-a-adapter/adapter.kicad_pcb",
  "project": "zephray/nekoink",
  "name": "adapter",
+ "license": "CERN-OHL-P-2.0 (CERN Open Hardware Licence v2, Permissive), in LICENSE",
  "zip": "part16_of_17",
  "features": {
   "through_vias": 43,

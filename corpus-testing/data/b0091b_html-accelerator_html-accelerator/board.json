@@ -14,6 +14,7 @@
  "path": "akastanley__html_accelerator/PCB/html_accelerator/html_accelerator.kicad_pcb",
  "project": "akastanley/html_accelerator",
  "name": "html_accelerator",
+ "license": "GPL-3.0 (GNU GPL v3.0)",
  "zip": "part11_of_17",
  "features": {
   "through_vias": 2610,

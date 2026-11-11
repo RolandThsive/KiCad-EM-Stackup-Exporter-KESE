@@ -14,6 +14,7 @@
  "path": "fpga-research__fabulous_board/hardware/kicad_files/project/FABulous_board.kicad_pcb",
  "project": "fpga-research/fabulous_board",
  "name": "FABulous_board",
+ "license": "Apache-2.0 (Apache License 2.0)",
  "zip": "part15_of_17",
  "features": {
   "through_vias": 260,

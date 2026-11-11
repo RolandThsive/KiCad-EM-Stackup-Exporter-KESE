@@ -2,6 +2,7 @@
  "name": "pico2-nx-module",
  "project": "tinyvision-ai-inc/pico2-nx",
  "path": "tinyvision-ai-inc__pico2-nx/board/Rev0/pico2-nx-module/pico2-nx-module.kicad_pcb",
+ "license": "MIT (MIT License)",
  "rank": 853,
  "complexity": {
   "grade": 347,

@@ -2,6 +2,7 @@
  "name": "CM4ClusterHat",
  "project": "will127534/Miniature-CM4-Cluster",
  "path": "will127534__Miniature-CM4-Cluster/ClusterHat/CM4ClusterHat.kicad_pcb",
+ "license": "MIT (MIT License)",
  "rank": 512,
  "complexity": {
   "grade": 377,

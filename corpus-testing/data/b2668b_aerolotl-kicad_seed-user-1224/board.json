@@ -14,6 +14,7 @@
  "path": "stanford-ssi__aerolotl_kicad/BatteryPCB_30pin/tools/layoutA/seed_user_1224.kicad_pcb",
  "project": "stanford-ssi/aerolotl_kicad",
  "name": "seed_user_1224",
+ "license": "No license found",
  "zip": "part16_of_17",
  "features": {
   "through_vias": 294,

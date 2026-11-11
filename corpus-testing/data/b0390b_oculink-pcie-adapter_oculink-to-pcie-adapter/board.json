@@ -14,6 +14,7 @@
  "path": "antmicro__oculink-pcie-adapter/oculink-to-pcie-adapter.kicad_pcb",
  "project": "antmicro/oculink-pcie-adapter",
  "name": "oculink-to-pcie-adapter",
+ "license": "Apache-2.0 (Apache License 2.0)",
  "zip": "part13_of_17",
  "features": {
   "through_vias": 1166,

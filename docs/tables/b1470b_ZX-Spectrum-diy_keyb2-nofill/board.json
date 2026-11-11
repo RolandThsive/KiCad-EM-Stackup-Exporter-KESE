@@ -2,6 +2,7 @@
  "name": "keyb2_nofill",
  "project": "krzys9876/ZX_Spectrum_diy",
  "path": "krzys9876__ZX_Spectrum_diy/Kicad4/keyb2/keyb2_nofill.kicad_pcb",
+ "license": "MIT (MIT License)",
  "rank": 2098,
  "complexity": {
   "grade": 172,

@@ -2,6 +2,7 @@
  "name": "CommonCathode60A",
  "project": "antevens/boatcontrol",
  "path": "antevens__boatcontrol/addon/CommonCathode60A/CommonCathode60A.kicad_pcb",
+ "license": "SHL-2.1 (Solderpad Hardware License v2.1), in LICENSE",
  "rank": 2368,
  "complexity": {
   "grade": 186,

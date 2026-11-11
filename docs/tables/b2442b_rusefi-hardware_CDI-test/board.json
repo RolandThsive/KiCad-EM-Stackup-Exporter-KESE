@@ -2,6 +2,7 @@
  "name": "CDI-test",
  "project": "rusefi/rusefi-hardware",
  "path": "rusefi__rusefi-hardware/CDI-test/CDI-test.kicad_pcb",
+ "license": "No license found",
  "rank": 2576,
  "complexity": {
   "grade": 186,

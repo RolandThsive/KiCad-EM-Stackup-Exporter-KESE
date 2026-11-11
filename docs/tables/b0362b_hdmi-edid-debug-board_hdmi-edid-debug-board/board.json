@@ -2,6 +2,7 @@
  "name": "hdmi-edid-debug-board",
  "project": "antmicro/hdmi-edid-debug-board",
  "path": "antmicro__hdmi-edid-debug-board/hdmi-edid-debug-board.kicad_pcb",
+ "license": "Apache-2.0 (Apache License 2.0)",
  "rank": 1165,
  "complexity": {
   "grade": 396,

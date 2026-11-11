@@ -14,6 +14,7 @@
  "path": "danwerner21__vic2020/vic2020keyboard/vic2020keyboard.kicad_pcb",
  "project": "danwerner21/vic2020",
  "name": "vic2020keyboard",
+ "license": "No license found",
  "zip": "part16_of_17",
  "features": {
   "through_vias": 19,

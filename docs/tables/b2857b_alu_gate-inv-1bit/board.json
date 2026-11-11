@@ -2,6 +2,7 @@
  "name": "gate_inv_1bit",
  "project": "tmarhguy/alu",
  "path": "tmarhguy__alu/schematics/kicad/modules/gates/gate_inv/gate_inv_1bit/gate_inv_1bit.kicad_pcb",
+ "license": "MIT (MIT License)",
  "rank": 3041,
  "complexity": {
   "grade": 65,

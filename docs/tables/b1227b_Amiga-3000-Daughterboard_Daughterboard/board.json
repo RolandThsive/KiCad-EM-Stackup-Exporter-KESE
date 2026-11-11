@@ -2,6 +2,7 @@
  "name": "Daughterboard",
  "project": "iansbremner/Amiga-3000-Daughterboard",
  "path": "iansbremner__Amiga-3000-Daughterboard/Daughterboard.kicad_pcb",
+ "license": "GPL-3.0 (GNU GPL v3.0)",
  "rank": 658,
  "complexity": {
   "grade": 253,

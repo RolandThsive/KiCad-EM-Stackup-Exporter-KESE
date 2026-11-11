@@ -2,6 +2,7 @@
  "name": "active-probe-test",
  "project": "azonenberg/starshipraider",
  "path": "azonenberg__starshipraider/boards/probes/active-probe-test/active-probe-test.kicad_pcb",
+ "license": "BSD-3-Clause (BSD 3-Clause License)",
  "rank": 2137,
  "complexity": {
   "grade": 214,

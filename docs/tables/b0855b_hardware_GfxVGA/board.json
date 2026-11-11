@@ -2,6 +2,7 @@
  "name": "GfxVGA",
  "project": "ddraig68k/hardware",
  "path": "ddraig68k__hardware/expansion/GfxVGA/GfxVGA.kicad_pcb",
+ "license": "MIT (MIT License)",
  "rank": 1060,
  "complexity": {
   "grade": 294,

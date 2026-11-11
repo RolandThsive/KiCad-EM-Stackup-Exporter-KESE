@@ -14,6 +14,7 @@
  "path": "dmitrystu__Nucleo2USB/Nucleo2USB.kicad_pcb",
  "project": "dmitrystu/Nucleo2USB",
  "name": "Nucleo2USB",
+ "license": "CERN-OHL-W-2.0 (CERN Open Hardware Licence v2, Weakly Reciprocal), in LICENSE.md",
  "zip": "part16_of_17",
  "features": {
   "through_vias": 41,

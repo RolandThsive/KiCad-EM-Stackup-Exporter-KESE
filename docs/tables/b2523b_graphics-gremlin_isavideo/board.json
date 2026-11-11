@@ -2,6 +2,7 @@
  "name": "isavideo",
  "project": "schlae/graphics-gremlin",
  "path": "schlae__graphics-gremlin/isavideo.kicad_pcb",
+ "license": "CC-BY-SA-4.0 (Creative Commons Attribution-ShareAlike 4.0)",
  "rank": 824,
  "complexity": {
   "grade": 329,

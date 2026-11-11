@@ -14,6 +14,7 @@
  "path": "stanford-ssi__aerolotl_kicad/BatteryPCB_30pin/battery_pcb_30pin.kicad_pcb",
  "project": "stanford-ssi/aerolotl_kicad",
  "name": "battery_pcb_30pin",
+ "license": "No license found",
  "zip": "part16_of_17",
  "features": {
   "through_vias": 244,

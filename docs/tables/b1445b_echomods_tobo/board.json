@@ -2,6 +2,7 @@
  "name": "tobo",
  "project": "kelu124/echomods",
  "path": "kelu124__echomods/retired/tobo/source/Kicad/tobo.kicad_pcb",
+ "license": "TAPR-OHL-1.0 (TAPR Open Hardware License), in LICENSE.txt, goblin/LICENSE.txt, retired/tobo/LICENSE.txt",
  "rank": 2446,
  "complexity": {
   "grade": 156,

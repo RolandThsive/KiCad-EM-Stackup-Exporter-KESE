@@ -2,6 +2,7 @@
  "name": "ephys-test-board",
  "project": "open-ephys/ephys-test-board",
  "path": "open-ephys__ephys-test-board/pcb/ephys-test-board.kicad_pcb",
+ "license": "CC-BY-NC-SA-4.0 (Creative Commons Attribution-NonCommercial-ShareAlike 4.0), in LICENSE.md",
  "rank": 267,
  "complexity": {
   "grade": 390,

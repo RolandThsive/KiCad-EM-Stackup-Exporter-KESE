@@ -2,6 +2,7 @@
  "name": "OpenDropV2",
  "project": "GaudiLabs/OpenDrop",
  "path": "GaudiLabs__OpenDrop/OpenDropV2/DesignFiles/OpenDropV2.kicad_pcb",
+ "license": "GPL-3.0 (GNU GPL v3.0)",
  "rank": 947,
  "complexity": {
   "grade": 292,

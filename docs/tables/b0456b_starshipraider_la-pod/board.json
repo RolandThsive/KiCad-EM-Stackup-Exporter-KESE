@@ -2,6 +2,7 @@
  "name": "la-pod",
  "project": "azonenberg/starshipraider",
  "path": "azonenberg__starshipraider/boards/MEAD/la-pod.kicad_pcb",
+ "license": "BSD-3-Clause (BSD 3-Clause License)",
  "rank": 312,
  "complexity": {
   "grade": 318,

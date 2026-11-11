@@ -2,6 +2,7 @@
  "name": "i386sx-motherboard",
  "project": "alphaonex86/fpgamotherboard",
  "path": "alphaonex86__fpgamotherboard/i386/fpga-ep4ce22/i386sx-motherboard.kicad_pcb",
+ "license": "GPL-3.0 (GNU GPL v3.0)",
  "rank": 317,
  "complexity": {
   "grade": 398,

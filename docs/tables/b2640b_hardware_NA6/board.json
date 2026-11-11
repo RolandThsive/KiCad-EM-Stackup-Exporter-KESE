@@ -2,6 +2,7 @@
  "name": "NA6",
  "project": "speeduino/hardware",
  "path": "speeduino__hardware/PNPs/Miata NA6/Prior versions/v1.2/NA6.kicad_pcb",
+ "license": "As README.md states it: \"These designs are release under the CERN Open Hardware License v2 Strong (CERN-OHL-S). This license is similar to the GPL, however is designed specifically for hardware design files, including PCB layouts and schematics.\"",
  "rank": 1359,
  "complexity": {
   "grade": 298,

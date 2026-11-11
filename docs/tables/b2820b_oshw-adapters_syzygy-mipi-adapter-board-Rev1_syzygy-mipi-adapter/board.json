@@ -2,6 +2,7 @@
  "name": "syzygy-mipi-adapter",
  "project": "tinyvision-ai-inc/oshw-adapters",
  "path": "tinyvision-ai-inc__oshw-adapters/syzygy-mipi-adapter/board/Rev1/syzygy-mipi-adapter.kicad_pcb",
+ "license": "MIT (MIT License)",
  "rank": 845,
  "complexity": {
   "grade": 386,

@@ -2,6 +2,7 @@
  "name": "7-REV1-freeze",
  "project": "DangerousPrototypes/BusPirate5-hardware",
  "path": "DangerousPrototypes__BusPirate5-hardware/bus_pirate_pcb/development/7-REV1-vout-protection/7-REV1-freeze.kicad_pcb",
+ "license": "MIT (MIT License)",
  "rank": 569,
  "complexity": {
   "grade": 390,

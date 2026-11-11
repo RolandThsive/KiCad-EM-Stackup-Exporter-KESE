@@ -14,6 +14,7 @@
  "path": "krzys9876__ZX_Spectrum_diy/Kicad5/zx2_keyb_idc/zx2_keyb_idc.kicad_pcb",
  "project": "krzys9876/ZX_Spectrum_diy",
  "name": "zx2_keyb_idc",
+ "license": "MIT (MIT License)",
  "zip": "part16_of_17",
  "features": {
   "through_vias": 0,

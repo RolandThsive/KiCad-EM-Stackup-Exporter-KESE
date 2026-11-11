@@ -2,6 +2,7 @@
  "name": "LCD Board",
  "project": "acwright/6502",
  "path": "acwright__6502/Hardware/LCD Board/Rev 1.0/LCD Board.kicad_pcb",
+ "license": "CERN-OHL-P-2.0 (CERN Open Hardware Licence v2, Permissive), in LICENSE",
  "rank": 2065,
  "complexity": {
   "grade": 230,

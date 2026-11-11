@@ -2,6 +2,7 @@
  "name": "socket370-ti180",
  "project": "alphaonex86/fpgamotherboard",
  "path": "alphaonex86__fpgamotherboard/socket370/fpga-ti180/routed/socket370-ti180.kicad_pcb",
+ "license": "GPL-3.0 (GNU GPL v3.0)",
  "rank": 28,
  "complexity": {
   "grade": 475,

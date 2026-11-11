@@ -14,6 +14,7 @@
  "path": "andrewpaterson__658-Computer/Kicad/Computer/SD Card/SD Card Write Signals/SD Card Write Signals.kicad_pcb",
  "project": "andrewpaterson/658-Computer",
  "name": "SD Card Write Signals",
+ "license": "No license found",
  "zip": "part16_of_17",
  "features": {
   "through_vias": 86,

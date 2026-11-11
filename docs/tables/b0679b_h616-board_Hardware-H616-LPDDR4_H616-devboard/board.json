@@ -2,6 +2,7 @@
  "name": "H616_devboard",
  "project": "bogdan8266/h616-board",
  "path": "bogdan8266__h616-board/Hardware/H616_LPDDR4/H616_devboard.kicad_pcb",
+ "license": "CERN-OHL-P-2.0 (CERN Open Hardware Licence v2, Permissive)",
  "rank": 278,
  "complexity": {
   "grade": 447,

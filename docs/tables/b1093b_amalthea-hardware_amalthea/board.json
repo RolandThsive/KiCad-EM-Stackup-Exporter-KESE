@@ -2,6 +2,7 @@
  "name": "amalthea",
  "project": "greatscottgadgets/amalthea-hardware",
  "path": "greatscottgadgets__amalthea-hardware/amalthea.kicad_pcb",
+ "license": "CERN-OHL-P-2.0 (CERN Open Hardware Licence v2, Permissive)",
  "rank": 1941,
  "complexity": {
   "grade": 334,

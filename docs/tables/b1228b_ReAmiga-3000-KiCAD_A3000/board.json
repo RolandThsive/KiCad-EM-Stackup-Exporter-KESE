@@ -2,6 +2,7 @@
  "name": "A3000",
  "project": "iansbremner/ReAmiga-3000---KiCAD",
  "path": "iansbremner__ReAmiga-3000---KiCAD/A3000.kicad_pcb",
+ "license": "No license found",
  "rank": 21,
  "complexity": {
   "grade": 400,

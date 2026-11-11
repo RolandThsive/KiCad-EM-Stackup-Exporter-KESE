@@ -14,6 +14,7 @@
  "path": "teknomadix__Open_Inverter_2.0b_Kicad/Hardware/OpenInverter_20b.kicad_pcb",
  "project": "teknomadix/Open_Inverter_2.0b_Kicad",
  "name": "OpenInverter_20b",
+ "license": "CC-BY-SA-4.0 (Creative Commons Attribution-ShareAlike 4.0), in LICENSE.md",
  "zip": "part16_of_17",
  "features": {
   "through_vias": 28,

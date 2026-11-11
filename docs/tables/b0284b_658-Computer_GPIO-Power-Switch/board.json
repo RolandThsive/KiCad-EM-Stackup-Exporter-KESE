@@ -2,6 +2,7 @@
  "name": "GPIO Power Switch",
  "project": "andrewpaterson/658-Computer",
  "path": "andrewpaterson__658-Computer/Kicad/Pico/GPIO Power Switch/GPIO Power Switch.kicad_pcb",
+ "license": "No license found",
  "rank": 2006,
  "complexity": {
   "grade": 264,

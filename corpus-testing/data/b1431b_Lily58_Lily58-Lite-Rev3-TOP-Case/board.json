@@ -14,6 +14,7 @@
  "path": "kata0510__Lily58/case/top-plate/Lily58_Lite_Rev3_TOP_Case.kicad_pcb",
  "project": "kata0510/Lily58",
  "name": "Lily58_Lite_Rev3_TOP_Case",
+ "license": "MIT (MIT License), in LICENSE",
  "zip": "part16_of_17",
  "features": {
   "through_vias": 0,

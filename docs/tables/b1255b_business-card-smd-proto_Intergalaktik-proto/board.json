@@ -2,6 +2,7 @@
  "name": "Intergalaktik_proto",
  "project": "intergalaktik/business-card-smd-proto",
  "path": "intergalaktik__business-card-smd-proto/KiCad/Intergalaktik_proto/Intergalaktik_proto.kicad_pcb",
+ "license": "GPL-3.0 (GNU GPL v3.0)",
  "rank": 3103,
  "complexity": {
   "grade": 183,

@@ -7,6 +7,7 @@ chart in docs/images/b<number>b_<repo>_<board>/stages.webp when it has one. From
     docs/wiki/CorpusTestingPages/Corpus-Testing-NN.md            Corpus Page NN, 108 boards each
     docs/wiki/CorpusTestingPages/CombinedCorpusTesting.md        every board on one page (not linked)
     docs/wiki/BoardPages/b<number>b_<repo>_<board>.md            one page per board
+    docs/wiki/Credits.md, credits.txt                            every board by number, with its project and license
 
 The boards are numbered 1 to n in order of project and then path, at every run. A board added comes as folders
 named <repo>_<board>, with no number: it goes into its place, and every board after it moves up by one. The engine
@@ -21,6 +22,7 @@ import collections
 import json
 import math
 import re
+import textwrap
 import sys
 from pathlib import Path
 
@@ -69,7 +71,7 @@ for i, m in enumerate(B, 1):
         renamed += 1
     if not (DATA / m["slug"] / "board.json").is_file():               # a board added by hand, with no runs recorded
         (DATA / m["slug"]).mkdir(parents=True, exist_ok=True)
-        stub = {k: m[k] for k in ("rank", "name", "project", "path") if k in m}
+        stub = {k: m[k] for k in ("rank", "name", "project", "path", "license") if m.get(k) is not None}
         stub["runs_recorded"] = False
         write(DATA / m["slug"] / "board.json", json.dumps(stub, indent=1, ensure_ascii=False) + "\n")
     m["chart"] = m["folder"] in have_chart
@@ -80,7 +82,7 @@ NPAGES = max(1, math.ceil(len(B) / PER_PAGE))
 page_file = lambda k: f"Corpus-Testing-{k:02d}"
 page_title = lambda k: f"Corpus Page {k}"
 heading = lambda m: f"{m['number']}. {m['name']}"
-anchor = lambda title: "#" + re.sub(r"[^a-z0-9 _-]", "", title.lower()).replace(" ", "-")   # as GitHub makes it
+anchor = lambda title: "#" + re.sub(r"[^\w\- ]", "", title.lower()).replace(" ", "-")   # as GitHub makes it
 
 
 def body(m):
@@ -245,5 +247,62 @@ idx.append("\n| Previous | Next |\n|:---|---:|\n| [Feature Test Collection](Feat
 text = re.sub(r"\]\(((?!CorpusTestingPages/|BoardPages/|Credits\.md)[A-Za-z0-9-]+)\.md(#[^)]*)?\)",
               lambda m: f"]({WIKI_URL}{m.group(1)}{m.group(2) or ''})", "\n".join(idx))
 write(WIKI / "Corpus-Testing.md", text + "\n")
+
+# ---- the Credits page and credits.txt: every board by its number, with its project and the project's license
+LOOKED_UP = "8 November 2026"
+NOT_YET = "Not looked up yet"
+known = {}
+for m in B:
+    if m.get("license"):
+        known.setdefault(m["project"], m["license"])
+lic = lambda m: m.get("license") or known.get(m["project"], NOT_YET)      # a board added by hand takes its project's
+esc = lambda s: re.sub(r"([\\`*_\[\]<>|&])", r"\\\1", s)
+gh = lambda p: f"https://github.com/{p}"
+CREDITS_TXT = "https://github.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/blob/corpus-testing/credits.txt"
+thanks = (f"KESE was checked on {len(B):,} KiCad boards from {len(projects):,} open hardware projects on GitHub. "
+          "Thank you to the authors and contributors of every one of them.")
+owners = ("Every board belongs to its authors, and so does its license: the rights in each design, and the terms it may "
+          "be used under, are theirs alone. Their boards were used only for checking KESE and verifying its determinism "
+          "(that the same board and settings give the same files, byte for byte). No board, nor any part of one, is "
+          "included in KESE or distributed with it.")
+how = ("The license is the one GitHub identifies in the repository (an SPDX identifier); where GitHub names none, it is "
+       "what the project's own license files or README say, with the file it is in. \"No license found\" means that "
+       "neither the repository's root, the folders of its boards nor its README names one, and the boards remain under "
+       "their authors' copyright. Each repository is the authority on its own terms. The licenses were looked up on "
+       f"{LOOKED_UP}" + (f"; \"{NOT_YET}\" marks a board added since, whose project's license is still to be looked "
+                         "up" if any(lic(m) == NOT_YET for m in B) else "") + ".")
+cr = ["# Credits\n", thanks + "\n", owners + "\n", "## The Licenses\n", how + "\n",
+      f"The repository's [`credits.txt`]({CREDITS_TXT}) holds the same list by project, with the path of each board in "
+      "its repository.\n",
+      "## The Boards\n",
+      f"The {len(B):,} boards by their number in [Corpus Testing](Corpus-Testing.md), in order of project and then path, "
+      "each with its project and the project's license. A board's name links to its section on its Corpus Page.\n",
+      "| No. | Board | Project | License |", "|---:|:---|:---|:---|"]
+for m in B:
+    cr.append(f"| {m['number']:,} | [{esc(m['name'])}](CorpusTestingPages/{page_file(m['page'])}.md{anchor(heading(m))}) "
+              f"| [{esc(m['project'])}]({gh(m['project'])}) | {esc(lic(m))} |")
+cr.append("\n| Previous | Next |\n|:---|---:|\n| [Corpus Testing](Corpus-Testing.md) | |")
+write(WIKI / "Credits.md", "\n".join(cr) + "\n")
+
+fill = lambda s, **k: textwrap.fill(s, 96, break_long_words=False, break_on_hyphens=False, **k)
+by_project = {}
+for m in B:
+    by_project.setdefault(m["project"], []).append(m)
+tx = ["Credits: the KiCad boards KESE was checked against", "=" * 51, "", fill(thanks), "", fill(owners), "",
+      fill("Below, for each project in the order of Corpus Testing: its repository, its license, and the boards used, "
+           "by their number in Corpus Testing, their name and their path in the repository. " + how), "", ""]
+for p, ms in by_project.items():
+    tx += [p, f"  {gh(p)}", fill(lic(ms[0]), initial_indent="  License: ", subsequent_indent=" " * 11),
+           f"  {'Board' if len(ms) == 1 else 'Boards'} ({len(ms)}):"]
+    tx += [f"    {m['number']}. {m['name']}  ({m['path'].split('/', 1)[-1]})" for m in ms]
+    tx.append("")
+write(TOP / "credits.txt", "\n".join(tx))
+
+# ---- the counts in this branch's README
+readme = TOP / "README.md"
+if readme.is_file():
+    t = re.sub(r"[\d,]+ KiCad boards from [\d,]+ open hardware projects",
+               f"{len(B):,} KiCad boards from {len(projects):,} open hardware projects", readme.read_text())
+    write(readme, re.sub(r"Corpus Page 1 to \d+", f"Corpus Page 1 to {NPAGES}", t))
 print(f"{renamed} folders renamed; {len(B):,} boards on {NPAGES} pages; {len(ok):,} pass all six runs; {len(bad)} bad design, {len(mem)} memory, "
       f"{len(other)} failed")

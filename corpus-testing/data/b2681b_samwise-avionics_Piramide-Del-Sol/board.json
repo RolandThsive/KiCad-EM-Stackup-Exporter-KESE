@@ -14,6 +14,7 @@
  "path": "stanford-ssi__samwise-avionics/sun_sensor_pyramid/Piramide_Del_Sol.kicad_pcb",
  "project": "stanford-ssi/samwise-avionics",
  "name": "Piramide_Del_Sol",
+ "license": "No license found",
  "zip": "part16_of_17",
  "features": {
   "through_vias": 90,

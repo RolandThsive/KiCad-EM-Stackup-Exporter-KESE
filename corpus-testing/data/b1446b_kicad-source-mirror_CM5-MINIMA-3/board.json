@@ -14,6 +14,7 @@
  "path": "KiCad__kicad-source-mirror/demos/cm5_minima/CM5_MINIMA_3.kicad_pcb",
  "project": "KiCad/kicad-source-mirror",
  "name": "CM5_MINIMA_3",
+ "license": "GPL-3.0 (GNU GPL v3.0)",
  "zip": "part13_of_17",
  "features": {
   "through_vias": 888,

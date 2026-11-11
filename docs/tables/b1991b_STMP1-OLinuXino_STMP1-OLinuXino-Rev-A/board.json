@@ -2,6 +2,7 @@
  "name": "STMP1-OLinuXino_Rev_A",
  "project": "OLIMEX/STMP1-OLinuXino",
  "path": "OLIMEX__STMP1-OLinuXino/HARDWARE/STMP1-OLinuXino-REV.A/STMP1-OLinuXino_Rev_A.kicad_pcb",
+ "license": "GPL-3.0 (GNU GPL v3.0)",
  "rank": 1222,
  "complexity": {
   "grade": 299,

@@ -2,6 +2,7 @@
  "name": "Neo6502_Rev_A",
  "project": "OLIMEX/Neo6502",
  "path": "OLIMEX__Neo6502/HARDWARE/New6502-Rev-A/Neo6502_Rev_A.kicad_pcb",
+ "license": "As README.md states it: \"Hardware is released under CERN Open Hardware Licence Version 2 - Strongly Reciprocal, all silkscreen credits to Olimex should remain;; Software is released under GPL3 Licensee; Documentation is released under CC BY-SA 3.0\"",
  "rank": 1702,
  "complexity": {
   "grade": 266,

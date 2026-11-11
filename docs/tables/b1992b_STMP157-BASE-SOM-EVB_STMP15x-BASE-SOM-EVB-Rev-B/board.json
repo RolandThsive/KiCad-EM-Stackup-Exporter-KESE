@@ -2,6 +2,7 @@
  "name": "STMP15x-BASE-SOM-EVB_Rev_B",
  "project": "OLIMEX/STMP157-BASE-SOM-EVB",
  "path": "OLIMEX__STMP157-BASE-SOM-EVB/HARDWARE/STMP157-BASE-SOM-EVB-Rev.B/STMP15x-BASE-SOM-EVB_Rev_B.kicad_pcb",
+ "license": "GPL-3.0 (GNU GPL v3.0)",
  "rank": 181,
  "complexity": {
   "grade": 363,

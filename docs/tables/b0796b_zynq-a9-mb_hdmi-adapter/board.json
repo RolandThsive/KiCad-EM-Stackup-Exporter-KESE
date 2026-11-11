@@ -2,6 +2,7 @@
  "name": "hdmi_adapter",
  "project": "cropinghigh/zynq_a9_mb",
  "path": "cropinghigh__zynq_a9_mb/hardware/hdmi_adapter/hdmi_adapter.kicad_pcb",
+ "license": "No license found",
  "rank": 2862,
  "complexity": {
   "grade": 158,

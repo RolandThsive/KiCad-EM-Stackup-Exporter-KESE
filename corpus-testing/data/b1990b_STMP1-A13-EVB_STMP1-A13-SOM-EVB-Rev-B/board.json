@@ -14,6 +14,7 @@
  "path": "OLIMEX__STMP1-A13-EVB/HARDWARE/STMP1(A13)-SOM-EVB-Rev-B/STMP1(A13)-SOM-EVB_Rev_B.kicad_pcb",
  "project": "OLIMEX/STMP1-A13-EVB",
  "name": "STMP1(A13)-SOM-EVB_Rev_B",
+ "license": "GPL-3.0 (GNU GPL v3.0)",
  "zip": "part12_of_17",
  "features": {
   "through_vias": 467,

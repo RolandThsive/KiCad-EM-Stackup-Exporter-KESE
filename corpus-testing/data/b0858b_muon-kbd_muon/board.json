@@ -14,6 +14,7 @@
  "path": "Dekanova__muon-kbd/pcb/muon.kicad_pcb",
  "project": "Dekanova/muon-kbd",
  "name": "muon",
+ "license": "CERN-OHL-S-2.0 (CERN Open Hardware Licence v2, Strongly Reciprocal), in LICENCE",
  "zip": "part16_of_17",
  "features": {
   "through_vias": 50,

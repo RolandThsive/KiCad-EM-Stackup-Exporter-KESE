@@ -2,6 +2,7 @@
  "name": "db9",
  "project": "softerhardware/Hermes-Lite2",
  "path": "softerhardware__Hermes-Lite2/hardware/companions/db9/db9.kicad_pcb",
+ "license": "No license found",
  "rank": 2645,
  "complexity": {
   "grade": 138,

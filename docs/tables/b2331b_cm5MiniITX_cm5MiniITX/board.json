@@ -2,6 +2,7 @@
  "name": "cm5MiniITX",
  "project": "pullobi/cm5MiniITX",
  "path": "pullobi__cm5MiniITX/cm5MiniITX.kicad_pcb",
+ "license": "As README.md states it: \"Files are open-source under your chosen license.; 3D models remain under their respective manufacturer’s terms.\"",
  "rank": 506,
  "complexity": {
   "grade": 346,

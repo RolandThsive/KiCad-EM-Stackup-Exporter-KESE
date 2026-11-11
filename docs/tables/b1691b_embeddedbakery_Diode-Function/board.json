@@ -2,6 +2,7 @@
  "name": "Diode Function",
  "project": "mwwhited/embeddedbakery",
  "path": "mwwhited__embeddedbakery/circuits/AnalogCalculator/Diode Function/Diode Function/Diode Function.kicad_pcb",
+ "license": "MIT (MIT License), in LICENSE",
  "rank": 2233,
  "complexity": {
   "grade": 173,

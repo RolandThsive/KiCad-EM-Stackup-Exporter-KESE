@@ -2,6 +2,7 @@
  "name": "backplane_fp6",
  "project": "winkleplex10-bit/the-mac-pro-project",
  "path": "winkleplex10-bit__the-mac-pro-project/kicad/macpro62-backplane/variants/fp6_floorplan_6L/backplane_fp6.kicad_pcb",
+ "license": "No license found",
  "rank": 2715,
  "complexity": {
   "grade": 191,

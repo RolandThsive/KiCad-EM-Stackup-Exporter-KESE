@@ -2,6 +2,7 @@
  "name": "mmc_usb_1",
  "project": "rusefi/rusefi-hardware",
  "path": "rusefi__rusefi-hardware/classic-designs/rusefi_hardware_history/usb_mmc_spi_rev00.30/usb_mmc_spi/mmc_usb_1.kicad_pcb",
+ "license": "No license found",
  "rank": 2066,
  "complexity": {
   "grade": 190,

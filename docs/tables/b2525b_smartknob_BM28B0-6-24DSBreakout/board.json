@@ -2,6 +2,7 @@
  "name": "BM28B0.6-24DSBreakout",
  "project": "scottbez1/smartknob",
  "path": "scottbez1__smartknob/electronics/BM28B0.6-24DSBreakout/BM28B0.6-24DSBreakout.kicad_pcb",
+ "license": "Apache-2.0 (Apache License 2.0), in LICENSE.txt",
  "rank": 2898,
  "complexity": {
   "grade": 105,

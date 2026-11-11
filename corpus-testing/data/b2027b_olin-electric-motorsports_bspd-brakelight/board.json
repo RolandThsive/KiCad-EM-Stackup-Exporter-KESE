@@ -14,6 +14,7 @@
  "path": "olin-electric-motorsports__olin-electric-motorsports/vehicle/mkv/hardware/lvbox/bspd/bspd_brakelight.kicad_pcb",
  "project": "olin-electric-motorsports/olin-electric-motorsports",
  "name": "bspd_brakelight",
+ "license": "No license found",
  "zip": "part15_of_17",
  "features": {
   "through_vias": 71,

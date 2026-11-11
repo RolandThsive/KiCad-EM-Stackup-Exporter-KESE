@@ -2,6 +2,7 @@
  "name": "HDMI-to-LH550WF1",
  "project": "cyrozap/HDMI-to-MIPI",
  "path": "cyrozap__HDMI-to-MIPI/HDMI-to-LH550WF1/HDMI-to-LH550WF1.kicad_pcb",
+ "license": "CERN-OHL-1.2 (CERN Open Hardware Licence v1.2), in LICENSE.txt",
  "rank": 897,
  "complexity": {
   "grade": 314,

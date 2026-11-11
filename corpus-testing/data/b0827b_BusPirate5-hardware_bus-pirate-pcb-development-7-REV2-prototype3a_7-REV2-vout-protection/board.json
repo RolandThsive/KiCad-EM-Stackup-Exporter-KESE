@@ -14,6 +14,7 @@
  "path": "DangerousPrototypes__BusPirate5-hardware/bus_pirate_pcb/development/7-REV2-prototype3a/7-REV2-vout-protection.kicad_pcb",
  "project": "DangerousPrototypes/BusPirate5-hardware",
  "name": "7-REV2-vout-protection",
+ "license": "MIT (MIT License)",
  "zip": "part11_of_17",
  "features": {
   "through_vias": 1074,

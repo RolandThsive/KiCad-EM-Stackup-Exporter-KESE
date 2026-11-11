@@ -2,6 +2,7 @@
  "name": "UniBoard",
  "project": "flypie/Ace-2019",
  "path": "flypie__Ace-2019/KiCad/UniBoard/UniBoard.kicad_pcb",
+ "license": "GPL-3.0 (GNU GPL v3.0)",
  "rank": 1285,
  "complexity": {
   "grade": 187,

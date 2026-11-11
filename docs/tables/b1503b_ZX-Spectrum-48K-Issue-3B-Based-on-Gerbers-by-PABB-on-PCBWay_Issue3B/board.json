@@ -2,6 +2,7 @@
  "name": "Issue3B",
  "project": "liveboxandy/ZX-Spectrum-48K-Issue-3B---Based-on-Gerbers-by-PABB-on-PCBWay",
  "path": "liveboxandy__ZX-Spectrum-48K-Issue-3B---Based-on-Gerbers-by-PABB-on-PCBWay/Issue3B.kicad_pcb",
+ "license": "CC0-1.0 (Creative Commons Zero v1.0)",
  "rank": 290,
  "complexity": {
   "grade": 277,

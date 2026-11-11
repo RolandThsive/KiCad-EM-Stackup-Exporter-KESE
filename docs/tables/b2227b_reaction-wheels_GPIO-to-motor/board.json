@@ -2,6 +2,7 @@
  "name": "GPIO to motor",
  "project": "oresat/reaction-wheels",
  "path": "oresat__reaction-wheels/Edison_GPIO_Motor_Board/GPIO to motor.kicad_pcb",
+ "license": "No license found",
  "rank": 2094,
  "complexity": {
   "grade": 193,

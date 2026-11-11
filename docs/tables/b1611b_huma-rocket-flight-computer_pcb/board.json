@@ -2,6 +2,7 @@
  "name": "pcb",
  "project": "manyetox/huma-rocket-flight-computer",
  "path": "manyetox__huma-rocket-flight-computer/hardware/pcb.kicad_pcb",
+ "license": "As README.md states it: \"The recovered archive does not contain an explicit open-hardware license. If the intention is genuinely to allow other people to continue, modify and manufacture the hardware, add a clear license before public release.\"",
  "rank": 731,
  "complexity": {
   "grade": 405,

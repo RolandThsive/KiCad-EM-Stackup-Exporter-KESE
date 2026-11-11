@@ -14,6 +14,7 @@
  "path": "rusefi__hw_microrusefi/zMRETestFixture.kicad_pcb",
  "project": "rusefi/hw_microrusefi",
  "name": "zMRETestFixture",
+ "license": "No license found",
  "zip": "part13_of_17",
  "features": {
   "through_vias": 431,

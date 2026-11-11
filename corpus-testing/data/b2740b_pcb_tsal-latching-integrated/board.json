@@ -14,6 +14,7 @@
  "path": "sufst__pcb/tsal-latching-integrated/tsal-latching-integrated.kicad_pcb",
  "project": "sufst/pcb",
  "name": "tsal-latching-integrated",
+ "license": "GPL-3.0 (GNU GPL v3.0)",
  "zip": "part16_of_17",
  "features": {
   "through_vias": 124,

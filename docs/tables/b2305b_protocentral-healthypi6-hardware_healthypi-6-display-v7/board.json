@@ -2,6 +2,7 @@
  "name": "healthypi_6_display_v7",
  "project": "protocentral/protocentral_healthypi6_hardware",
  "path": "protocentral__protocentral_healthypi6_hardware/hardware/healthypi_6_display_v7/healthypi_6_display_v7.kicad_pcb",
+ "license": "CERN-OHL-P-2.0 (CERN Open Hardware Licence v2, Permissive)",
  "rank": 2359,
  "complexity": {
   "grade": 232,

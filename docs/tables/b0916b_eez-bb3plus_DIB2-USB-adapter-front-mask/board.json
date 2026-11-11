@@ -2,6 +2,7 @@
  "name": "DIB2 USB adapter front mask",
  "project": "eez-open/eez-bb3plus",
  "path": "eez-open__eez-bb3plus/Experimental/KiCad/DIB2 USB adapter/DIB2 USB adapter front mask.kicad_pcb",
+ "license": "TAPR-OHL-1.0 (TAPR Open Hardware License), in LICENSE.TXT",
  "rank": 3098,
  "complexity": {
   "grade": 89,

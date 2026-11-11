@@ -2,6 +2,7 @@
  "name": "omower",
  "project": "vasimv/omower",
  "path": "vasimv__omower/hardware/OMower/omower.kicad_pcb",
+ "license": "GPL-3.0 (GNU GPL v3.0)",
  "rank": 384,
  "complexity": {
   "grade": 337,

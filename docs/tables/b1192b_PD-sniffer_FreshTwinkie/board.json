@@ -2,6 +2,7 @@
  "name": "FreshTwinkie",
  "project": "gregdavill/PD-sniffer",
  "path": "gregdavill__PD-sniffer/hw/FreshTwinkie_v0.1/FreshTwinkie.kicad_pcb",
+ "license": "CC-BY-4.0 (Creative Commons Attribution 4.0)",
  "rank": 1368,
  "complexity": {
   "grade": 325,

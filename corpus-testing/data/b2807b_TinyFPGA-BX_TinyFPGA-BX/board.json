@@ -14,6 +14,7 @@
  "path": "tinyfpga__TinyFPGA-BX/board/TinyFPGA-BX.kicad_pcb",
  "project": "tinyfpga/TinyFPGA-BX",
  "name": "TinyFPGA-BX",
+ "license": "CERN-OHL-1.2 (CERN Open Hardware Licence v1.2), in LICENSE",
  "zip": "part15_of_17",
  "features": {
   "through_vias": 77,

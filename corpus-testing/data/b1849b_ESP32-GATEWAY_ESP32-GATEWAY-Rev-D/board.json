@@ -14,6 +14,7 @@
  "path": "OLIMEX__ESP32-GATEWAY/HARDWARE/Hardware revision D/ESP32-GATEWAY_Rev_D.kicad_pcb",
  "project": "OLIMEX/ESP32-GATEWAY",
  "name": "ESP32-GATEWAY_Rev_D",
+ "license": "Apache-2.0 (Apache License 2.0)",
  "zip": "part14_of_17",
  "features": {
   "through_vias": 226,

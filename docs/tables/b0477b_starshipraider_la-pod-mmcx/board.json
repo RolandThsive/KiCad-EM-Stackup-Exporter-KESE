@@ -2,6 +2,7 @@
  "name": "la-pod-mmcx",
  "project": "azonenberg/starshipraider",
  "path": "azonenberg__starshipraider/boards/probes/la-pod-mmcx/la-pod-mmcx.kicad_pcb",
+ "license": "BSD-3-Clause (BSD 3-Clause License)",
  "rank": 1596,
  "complexity": {
   "grade": 211,

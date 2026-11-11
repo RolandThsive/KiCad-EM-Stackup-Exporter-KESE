@@ -2,6 +2,7 @@
  "name": "fpx",
  "project": "oxplot/fpx",
  "path": "oxplot__fpx/board/fpx.kicad_pcb",
+ "license": "BSD-3-Clause (BSD 3-Clause License)",
  "rank": 2392,
  "complexity": {
   "grade": 276,

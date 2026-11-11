@@ -2,6 +2,7 @@
  "name": "LHCbit",
  "project": "lhc/hardware",
  "path": "lhc__hardware/LHCbit/kicad/LHCbit.kicad_pcb",
+ "license": "MIT (MIT License), in Oficinas/monte-sua-placa-kicad/LICENSE",
  "rank": 1303,
  "complexity": {
   "grade": 402,

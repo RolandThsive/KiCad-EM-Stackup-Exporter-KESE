@@ -2,6 +2,7 @@
  "name": "AVIONICS_BOARD",
  "project": "rgw3d/1kcubesat_hardware",
  "path": "rgw3d__1kcubesat_hardware/avionics_board/AVIONICS_BOARD.kicad_pcb",
+ "license": "GPL-3.0 (GNU GPL v3.0)",
  "rank": 1041,
  "complexity": {
   "grade": 307,

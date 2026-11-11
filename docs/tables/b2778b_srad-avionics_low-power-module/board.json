@@ -2,6 +2,7 @@
  "name": "low_power_module",
  "project": "terrapin-rocket-team/srad-avionics",
  "path": "terrapin-rocket-team__srad-avionics/Spaceport/PCBs/low_power_module/low_power_module.kicad_pcb",
+ "license": "No license found",
  "rank": 2274,
  "complexity": {
   "grade": 200,

@@ -2,6 +2,7 @@
  "name": "star-tracker-camera-board",
  "project": "oresat/oresat-star-tracker-hardware",
  "path": "oresat__oresat-star-tracker-hardware/hardware/star-tracker-camera-board/star-tracker-camera-board.kicad_pcb",
+ "license": "No license found",
  "rank": 1953,
  "complexity": {
   "grade": 310,

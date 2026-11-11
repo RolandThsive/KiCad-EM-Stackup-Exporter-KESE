@@ -2,6 +2,7 @@
  "name": "x65-sbc-revB1",
  "project": "jsyk/x65",
  "path": "jsyk__x65/pcb/x65-sbc-revB1/x65-sbc-revB1.kicad_pcb",
+ "license": "MIT (MIT License)",
  "rank": 358,
  "complexity": {
   "grade": 442,

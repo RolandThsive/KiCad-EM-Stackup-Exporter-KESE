@@ -2,6 +2,7 @@
  "name": "sensing_module_interface",
  "project": "olin-electric-motorsports/olin-electric-motorsports",
  "path": "olin-electric-motorsports__olin-electric-motorsports/vehicle/mkv/hardware/sensing/controller/sensing_module_interface.kicad_pcb",
+ "license": "No license found",
  "rank": 2009,
  "complexity": {
   "grade": 200,

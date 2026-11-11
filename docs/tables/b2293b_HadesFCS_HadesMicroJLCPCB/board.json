@@ -2,6 +2,7 @@
  "name": "HadesMicroJLCPCB",
  "project": "pms67/HadesFCS",
  "path": "pms67__HadesFCS/Hardware/HadesMicroJLCPCB/HadesMicroJLCPCB.kicad_pcb",
+ "license": "BSD-3-Clause (BSD 3-Clause License)",
  "rank": 1351,
  "complexity": {
   "grade": 296,

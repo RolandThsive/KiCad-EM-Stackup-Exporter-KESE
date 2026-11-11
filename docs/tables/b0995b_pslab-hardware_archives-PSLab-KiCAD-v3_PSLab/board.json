@@ -2,6 +2,7 @@
  "name": "PSLab",
  "project": "fossasia/pslab-hardware",
  "path": "fossasia__pslab-hardware/archives/PSLab KiCAD v3/PSLab.kicad_pcb",
+ "license": "Apache-2.0 (Apache License 2.0)",
  "rank": 1011,
  "complexity": {
   "grade": 297,

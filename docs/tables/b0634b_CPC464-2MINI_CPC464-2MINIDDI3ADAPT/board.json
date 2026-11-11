@@ -2,6 +2,7 @@
  "name": "CPC464-2MINIDDI3ADAPT",
  "project": "Board-Folk/CPC464-2MINI",
  "path": "Board-Folk__CPC464-2MINI/Expansions/MINIDDI/Extras/MINIDDI3ADAPT/Kicad/CPC464-2MINIDDI3ADAPT.kicad_pcb",
+ "license": "No license found",
  "rank": 2966,
  "complexity": {
   "grade": 150,

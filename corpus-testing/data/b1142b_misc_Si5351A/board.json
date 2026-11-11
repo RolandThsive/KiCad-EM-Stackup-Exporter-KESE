@@ -14,6 +14,7 @@
  "path": "greatscottgadgets__misc/evaluation-boards/Si5351A/Si5351A.kicad_pcb",
  "project": "greatscottgadgets/misc",
  "name": "Si5351A",
+ "license": "GPL-2.0 (GNU GPL v2.0)",
  "zip": "part16_of_17",
  "features": {
   "through_vias": 69,

@@ -14,6 +14,7 @@
  "path": "LibreSolar__mppt-2420-hc/kicad/mppt-2420-hc.kicad_pcb",
  "project": "LibreSolar/mppt-2420-hc",
  "name": "mppt-2420-hc",
+ "license": "CERN-OHL-W-2.0 (CERN Open Hardware Licence v2, Weakly Reciprocal), in LICENCE",
  "zip": "part14_of_17",
  "features": {
   "through_vias": 282,

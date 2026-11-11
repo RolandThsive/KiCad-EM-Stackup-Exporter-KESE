@@ -14,6 +14,7 @@
  "path": "kelu124__echomods/retired/tobo/source/Kicad/tobo.kicad_pcb",
  "project": "kelu124/echomods",
  "name": "tobo",
+ "license": "TAPR-OHL-1.0 (TAPR Open Hardware License), in LICENSE.txt, goblin/LICENSE.txt, retired/tobo/LICENSE.txt",
  "zip": "part16_of_17",
  "features": {
   "through_vias": 6,

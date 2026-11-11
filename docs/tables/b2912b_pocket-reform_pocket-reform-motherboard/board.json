@@ -2,6 +2,7 @@
  "name": "pocket-reform-motherboard",
  "project": "torlye/pocket-reform",
  "path": "torlye__pocket-reform/pocket-reform-motherboard/pocket-reform-motherboard.kicad_pcb",
+ "license": "CERN-OHL-S-2.0 (CERN Open Hardware Licence v2, Strongly Reciprocal), in LICENSE",
  "rank": 193,
  "complexity": {
   "grade": 446,

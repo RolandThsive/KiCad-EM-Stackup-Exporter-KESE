@@ -2,6 +2,7 @@
  "name": "A4k-Replica-Acill",
  "project": "Acill/A4000RevB",
  "path": "Acill__A4000RevB/Kicad/A4k-Replica-Acill.kicad_pcb",
+ "license": "GPL-3.0 (GNU GPL v3.0)",
  "rank": 15,
  "complexity": {
   "grade": 381,

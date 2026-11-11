@@ -2,6 +2,7 @@
  "name": "icicle-hdmi-breakout",
  "project": "antmicro/icicle-hdmi-breakout",
  "path": "antmicro__icicle-hdmi-breakout/icicle-hdmi-breakout.kicad_pcb",
+ "license": "MIT (MIT License)",
  "rank": 1509,
  "complexity": {
   "grade": 254,

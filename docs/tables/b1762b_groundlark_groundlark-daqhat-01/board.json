@@ -2,6 +2,7 @@
  "name": "groundlark-daqhat-01",
  "project": "naturalhazardscience/groundlark",
  "path": "naturalhazardscience__groundlark/hw/groundlark-fpga-hat/boards/groundlark-daqhat-01/groundlark-daqhat-01.kicad_pcb",
+ "license": "MIT (MIT License)",
  "rank": 129,
  "complexity": {
   "grade": 417,

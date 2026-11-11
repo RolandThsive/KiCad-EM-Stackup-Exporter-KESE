@@ -14,6 +14,7 @@
  "path": "andrewpaterson__658-Computer/Kicad/Computer/Component Boards/GPIO 4bit/GPIO 4bit.kicad_pcb",
  "project": "andrewpaterson/658-Computer",
  "name": "GPIO 4bit",
+ "license": "No license found",
  "zip": "part16_of_17",
  "features": {
   "through_vias": 134,

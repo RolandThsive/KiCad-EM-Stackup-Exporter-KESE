@@ -14,6 +14,7 @@
  "path": "tinyvision-ai-inc__pico2-nx/board/Rev2/nx-module-breakout/nx-module-breakout.kicad_pcb",
  "project": "tinyvision-ai-inc/pico2-nx",
  "name": "nx-module-breakout",
+ "license": "MIT (MIT License)",
  "zip": "part15_of_17",
  "features": {
   "through_vias": 184,

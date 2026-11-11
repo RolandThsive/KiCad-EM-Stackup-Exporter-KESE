@@ -2,6 +2,7 @@
  "name": "BusPirate-5-rev8",
  "project": "DangerousPrototypes/BusPirate5-hardware",
  "path": "DangerousPrototypes__BusPirate5-hardware/bus_pirate_pcb/5-REV8/BusPirate-5-rev8.kicad_pcb",
+ "license": "MIT (MIT License)",
  "rank": 651,
  "complexity": {
   "grade": 355,

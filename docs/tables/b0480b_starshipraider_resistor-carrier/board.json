@@ -2,6 +2,7 @@
  "name": "resistor-carrier",
  "project": "azonenberg/starshipraider",
  "path": "azonenberg__starshipraider/boards/probes/resistor-carrier/resistor-carrier.kicad_pcb",
+ "license": "BSD-3-Clause (BSD 3-Clause License)",
  "rank": 3093,
  "complexity": {
   "grade": 97,

@@ -2,6 +2,7 @@
  "name": "bb-ch340t",
  "project": "OLIMEX/BB-CH340T",
  "path": "OLIMEX__BB-CH340T/HARDWARE/BB-CH340T-Rev.A/bb-ch340t.kicad_pcb",
+ "license": "GPL-3.0 (GNU GPL v3.0)",
  "rank": 2605,
  "complexity": {
   "grade": 179,

@@ -2,6 +2,7 @@
  "name": "k410t-devboard",
  "project": "antmicro/kintex-410t-devboard",
  "path": "antmicro__kintex-410t-devboard/k410t-devboard.kicad_pcb",
+ "license": "Apache-2.0 (Apache License 2.0)",
  "rank": 30,
  "complexity": {
   "grade": 497,

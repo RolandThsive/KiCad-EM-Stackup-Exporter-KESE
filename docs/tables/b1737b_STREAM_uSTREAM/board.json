@@ -2,6 +2,7 @@
  "name": "uSTREAM",
  "project": "myriadrf/STREAM",
  "path": "myriadrf__STREAM/hardware/uSTREAM/v2/KiCAD/uSTREAM.kicad_pcb",
+ "license": "CC-BY-3.0 (Creative Commons Attribution 3.0), in hardware/STREAM/COPYING, hardware/uSTREAM/COPYING",
  "rank": 263,
  "complexity": {
   "grade": 379,

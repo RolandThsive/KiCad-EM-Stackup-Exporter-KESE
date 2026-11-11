@@ -2,6 +2,7 @@
  "name": "rj45_breakout",
  "project": "rene-dev/stmbl",
  "path": "rene-dev__stmbl/hw/kicad/rj45_breakout/rj45_breakout.kicad_pcb",
+ "license": "GPL-3.0 (GNU GPL v3.0)",
  "rank": 2944,
  "complexity": {
   "grade": 114,

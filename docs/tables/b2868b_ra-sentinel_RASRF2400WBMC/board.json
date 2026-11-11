@@ -2,6 +2,7 @@
  "name": "RASRF2400WBMC",
  "project": "tobias-dg3yev/ra-sentinel",
  "path": "tobias-dg3yev__ra-sentinel/RASRF2400WBMC/Hardware/KiCad/RASRF2400WBMC.kicad_pcb",
+ "license": "GPL-3.0 (GNU GPL v3.0)",
  "rank": 326,
  "complexity": {
   "grade": 394,

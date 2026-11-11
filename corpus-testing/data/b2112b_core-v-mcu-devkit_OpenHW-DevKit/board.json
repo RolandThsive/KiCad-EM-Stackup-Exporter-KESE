@@ -14,6 +14,7 @@
  "path": "openhwgroup__core-v-mcu-devkit/kicad/OpenHW DevKit.kicad_pcb",
  "project": "openhwgroup/core-v-mcu-devkit",
  "name": "OpenHW DevKit",
+ "license": "SHL-2.0 (Solderpad Hardware License v2.0), in LICENSE.md",
  "zip": "part13_of_17",
  "features": {
   "through_vias": 286,

@@ -2,6 +2,7 @@
  "name": "bms",
  "project": "ewoudvv/ducktop2",
  "path": "ewoudvv__ducktop2/bms/bms.kicad_pcb",
+ "license": "MIT (MIT License)",
  "rank": 800,
  "complexity": {
   "grade": 392,

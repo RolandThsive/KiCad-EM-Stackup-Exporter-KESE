@@ -14,6 +14,7 @@
  "path": "terrapin-rocket-team__srad-avionics/Spaceport/PCBs/flight-computer/flight-computer-2025-2026/flight-computer.kicad_pcb",
  "project": "terrapin-rocket-team/srad-avionics",
  "name": "flight-computer",
+ "license": "No license found",
  "zip": "part15_of_17",
  "features": {
   "through_vias": 338,

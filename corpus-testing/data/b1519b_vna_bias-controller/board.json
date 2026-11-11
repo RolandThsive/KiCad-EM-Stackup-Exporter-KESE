@@ -14,6 +14,7 @@
  "path": "loxodes__vna/breakouts/bias_controller/bias_controller/bias_controller.kicad_pcb",
  "project": "loxodes/vna",
  "name": "bias_controller",
+ "license": "As README.md states it: \"Unless otherwise noted, all work is under a MIT license.\"",
  "zip": "part16_of_17",
  "features": {
   "through_vias": 0,

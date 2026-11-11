@@ -14,6 +14,7 @@
  "path": "TheGuyDanish__CM4_MATX/KiCad/CM4_MATX.kicad_pcb",
  "project": "TheGuyDanish/CM4_MATX",
  "name": "CM4_MATX",
+ "license": "CERN-OHL-P-2.0 (CERN Open Hardware Licence v2, Permissive), in LICENSE",
  "zip": "part16_of_17",
  "features": {
   "through_vias": 0,

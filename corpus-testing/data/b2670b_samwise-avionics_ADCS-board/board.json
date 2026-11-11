@@ -14,6 +14,7 @@
  "path": "stanford-ssi__samwise-avionics/ADCS/ADCS-v1-samwise/ADCS_board.kicad_pcb",
  "project": "stanford-ssi/samwise-avionics",
  "name": "ADCS_board",
+ "license": "No license found",
  "zip": "part13_of_17",
  "features": {
   "through_vias": 942,

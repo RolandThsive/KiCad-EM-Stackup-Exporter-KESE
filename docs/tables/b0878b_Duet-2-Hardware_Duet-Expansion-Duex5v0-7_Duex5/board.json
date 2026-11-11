@@ -2,6 +2,7 @@
  "name": "Duex5",
  "project": "Duet3D/Duet-2-Hardware",
  "path": "Duet3D__Duet-2-Hardware/Duet_Expansion/Duex5v0.7/Duex5.kicad_pcb",
+ "license": "CERN-OHL-1.2 (CERN Open Hardware Licence v1.2), in LICENSE",
  "rank": 362,
  "complexity": {
   "grade": 271,

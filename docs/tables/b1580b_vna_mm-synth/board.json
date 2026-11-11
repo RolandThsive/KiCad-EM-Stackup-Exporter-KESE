@@ -2,6 +2,7 @@
  "name": "mm_synth",
  "project": "loxodes/vna",
  "path": "loxodes__vna/hardware/mm_reflectometer/synth/mm_synth/mm_synth.kicad_pcb",
+ "license": "As README.md states it: \"Unless otherwise noted, all work is under a MIT license.\"",
  "rank": 914,
  "complexity": {
   "grade": 297,

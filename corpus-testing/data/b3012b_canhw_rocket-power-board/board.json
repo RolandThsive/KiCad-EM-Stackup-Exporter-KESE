@@ -14,6 +14,7 @@
  "path": "waterloo-rocketry__canhw/rocket_power_board/rocket_power_board.kicad_pcb",
  "project": "waterloo-rocketry/canhw",
  "name": "rocket_power_board",
+ "license": "GPL-3.0 (GNU GPL v3.0)",
  "zip": "part15_of_17",
  "features": {
   "through_vias": 272,

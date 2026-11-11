@@ -2,6 +2,7 @@
  "name": "eduIO",
  "project": "intergalaktik/Extension_Boards_for_Olimex_GateMate",
  "path": "intergalaktik__Extension_Boards_for_Olimex_GateMate/eduIO/eduIO.kicad_pcb",
+ "license": "CERN-OHL-S-2.0 (CERN Open Hardware Licence v2, Strongly Reciprocal), in LICENSE.md, GamePad_I2S_audio_Buttons/LICENSE.md, GamePad_I2S_audio/LICENSE.md and others; GPL-3.0 (GNU GPL v3.0), in ethIO/LICENSE.md",
  "rank": 2428,
  "complexity": {
   "grade": 257,

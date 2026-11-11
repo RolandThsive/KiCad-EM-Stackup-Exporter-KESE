@@ -2,6 +2,7 @@
  "name": "lhc_tijolo32_board",
  "project": "lhc/hardware",
  "path": "lhc__hardware/nodeLHC-ESP32/projeto/lhc_tijolo32_board.kicad_pcb",
+ "license": "MIT (MIT License), in Oficinas/monte-sua-placa-kicad/LICENSE",
  "rank": 1990,
  "complexity": {
   "grade": 239,

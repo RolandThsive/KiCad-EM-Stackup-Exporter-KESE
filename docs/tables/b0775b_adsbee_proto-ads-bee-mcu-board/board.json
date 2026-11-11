@@ -2,6 +2,7 @@
  "name": "proto_ads_bee_mcu_board",
  "project": "CoolNamesAllTaken/adsbee",
  "path": "CoolNamesAllTaken__adsbee/kicad/prototyping/proto_ads_bee_mcu_board/proto_ads_bee_mcu_board.kicad_pcb",
+ "license": "GPL-3.0 (GNU GPL v3.0), in LICENSE",
  "rank": 2520,
  "complexity": {
   "grade": 237,

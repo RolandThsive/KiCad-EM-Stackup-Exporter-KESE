@@ -2,6 +2,7 @@
  "name": "socket3-csg324",
  "project": "alphaonex86/fpgamotherboard",
  "path": "alphaonex86__fpgamotherboard/socket3/fpga-xc7a50t-csg324/hw/socket3-csg324.kicad_pcb",
+ "license": "GPL-3.0 (GNU GPL v3.0)",
  "rank": 2219,
  "complexity": {
   "grade": 206,

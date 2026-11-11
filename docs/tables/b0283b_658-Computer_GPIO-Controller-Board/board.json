@@ -2,6 +2,7 @@
  "name": "GPIO Controller Board",
  "project": "andrewpaterson/658-Computer",
  "path": "andrewpaterson__658-Computer/Kicad/Pico/GPIO Controller Board/GPIO Controller Board.kicad_pcb",
+ "license": "No license found",
  "rank": 1277,
  "complexity": {
   "grade": 240,

@@ -14,6 +14,7 @@
  "path": "oresat__oresat-cfc-hardware/cfc-minibackplane/cfc-minibackplane.kicad_pcb",
  "project": "oresat/oresat-cfc-hardware",
  "name": "cfc-minibackplane",
+ "license": "CERN-OHL-S-2.0 (CERN Open Hardware Licence v2, Strongly Reciprocal)",
  "zip": "part16_of_17",
  "features": {
   "through_vias": 19,

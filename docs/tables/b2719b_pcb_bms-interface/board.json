@@ -2,6 +2,7 @@
  "name": "bms-interface",
  "project": "sufst/pcb",
  "path": "sufst__pcb/bms-interface/bms-interface.kicad_pcb",
+ "license": "GPL-3.0 (GNU GPL v3.0)",
  "rank": 2559,
  "complexity": {
   "grade": 219,

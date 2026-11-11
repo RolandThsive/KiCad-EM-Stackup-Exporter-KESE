@@ -2,6 +2,7 @@
  "name": "CTRL_PWR",
  "project": "astronuat21/4ds",
  "path": "astronuat21__4ds/CTRL_PWR/CTRL_PWR.kicad_pcb",
+ "license": "AGPL-3.0 (GNU AGPL v3.0)",
  "rank": 2890,
  "complexity": {
   "grade": 137,

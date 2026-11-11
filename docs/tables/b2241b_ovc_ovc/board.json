@@ -2,6 +2,7 @@
  "name": "ovc",
  "project": "osrf/ovc",
  "path": "osrf__ovc/ovc1/hardware/ovc.kicad_pcb",
+ "license": "Apache-2.0 (Apache License 2.0)",
  "rank": 246,
  "complexity": {
   "grade": 358,

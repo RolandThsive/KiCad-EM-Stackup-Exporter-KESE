@@ -2,6 +2,7 @@
  "name": "GPIO Bus",
  "project": "andrewpaterson/658-Computer",
  "path": "andrewpaterson__658-Computer/Kicad/Pico/GPIO Bus/GPIO Bus.kicad_pcb",
+ "license": "No license found",
  "rank": 1996,
  "complexity": {
   "grade": 226,

@@ -14,6 +14,7 @@
  "path": "oresat__oresat-star-tracker-hardware/hardware/star-tracker-2.0/star-tracker-2.0-card/star-tracker-card.kicad_pcb",
  "project": "oresat/oresat-star-tracker-hardware",
  "name": "star-tracker-card",
+ "license": "No license found",
  "zip": "part12_of_17",
  "features": {
   "through_vias": 1136,

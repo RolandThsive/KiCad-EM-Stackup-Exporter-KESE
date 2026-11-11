@@ -2,6 +2,7 @@
  "name": "virgo-rpl-uph",
  "project": "system76/virgo",
  "path": "system76__virgo/pcb-rpl-uph/virgo-rpl-uph.kicad_pcb",
+ "license": "CERN-OHL-S-2.0 (CERN Open Hardware Licence v2, Strongly Reciprocal)",
  "rank": 796,
  "complexity": {
   "grade": 429,

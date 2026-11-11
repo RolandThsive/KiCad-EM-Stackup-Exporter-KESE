@@ -2,6 +2,7 @@
  "name": "Groundstation_433_Hat",
  "project": "stanford-ssi/samwise-avionics",
  "path": "stanford-ssi__samwise-avionics/Groundstation_433_Hat/Groundstation_433_Hat.kicad_pcb",
+ "license": "No license found",
  "rank": 2569,
  "complexity": {
   "grade": 237,

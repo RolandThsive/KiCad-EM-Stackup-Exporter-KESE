@@ -2,6 +2,7 @@
  "name": "rpi-cm4-csi-adapter",
  "project": "antmicro/raspberry-pi-cm4-csi-adapter",
  "path": "antmicro__raspberry-pi-cm4-csi-adapter/rpi-cm4-csi-adapter.kicad_pcb",
+ "license": "Apache-2.0 (Apache License 2.0)",
  "rank": 1913,
  "complexity": {
   "grade": 227,

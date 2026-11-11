@@ -2,6 +2,7 @@
  "name": "tulipcc",
  "project": "shorepine/tulipcc",
  "path": "shorepine__tulipcc/docs/pcbs/tulip4_board_v4r9/tulipcc.kicad_pcb",
+ "license": "MIT (MIT License), in LICENSE",
  "rank": 1001,
  "complexity": {
   "grade": 303,

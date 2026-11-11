@@ -14,6 +14,7 @@
  "path": "jsyk__x65/pcb/x65-sbc-revA1/x65-sbc-revA1.kicad_pcb",
  "project": "jsyk/x65",
  "name": "x65-sbc-revA1",
+ "license": "MIT (MIT License)",
  "zip": "part10_of_17",
  "features": {
   "through_vias": 625,

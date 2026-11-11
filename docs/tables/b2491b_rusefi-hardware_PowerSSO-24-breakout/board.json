@@ -2,6 +2,7 @@
  "name": "PowerSSO-24_breakout",
  "project": "rusefi/rusefi-hardware",
  "path": "rusefi__rusefi-hardware/classic-designs/rusefi_hardware_history/PowerSSO-24_breakout_rev00.10/PowerSSO-24_breakout/PowerSSO-24_breakout.kicad_pcb",
+ "license": "No license found",
  "rank": 2307,
  "complexity": {
   "grade": 178,

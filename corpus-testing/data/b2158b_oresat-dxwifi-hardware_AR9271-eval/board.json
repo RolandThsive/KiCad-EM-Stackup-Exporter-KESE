@@ -14,6 +14,7 @@
  "path": "oresat__oresat-dxwifi-hardware/AR9271_eval/AR9271_eval/AR9271_eval/AR9271_eval.kicad_pcb",
  "project": "oresat/oresat-dxwifi-hardware",
  "name": "AR9271_eval",
+ "license": "GPL-3.0 (GNU GPL v3.0)",
  "zip": "part14_of_17",
  "features": {
   "through_vias": 692,

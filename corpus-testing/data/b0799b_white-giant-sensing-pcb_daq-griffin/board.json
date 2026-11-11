@@ -14,6 +14,7 @@
  "path": "cuspaceflight__white-giant-sensing-pcb/daq_griffin/daq_griffin.kicad_pcb",
  "project": "cuspaceflight/white-giant-sensing-pcb",
  "name": "daq_griffin",
+ "license": "GPL-3.0 (GNU GPL v3.0)",
  "zip": "part15_of_17",
  "features": {
   "through_vias": 332,

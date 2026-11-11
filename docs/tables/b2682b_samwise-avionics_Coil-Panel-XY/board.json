@@ -2,6 +2,7 @@
  "name": "Coil_Panel_XY",
  "project": "stanford-ssi/samwise-avionics",
  "path": "stanford-ssi__samwise-avionics/Universal_XY_MagTorq/Coil_Panel_XY.kicad_pcb",
+ "license": "No license found",
  "rank": 1636,
  "complexity": {
   "grade": 245,

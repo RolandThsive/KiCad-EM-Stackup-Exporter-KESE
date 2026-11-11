@@ -2,6 +2,7 @@
  "name": "ramn",
  "project": "ToyotaInfoTech/RAMN",
  "path": "ToyotaInfoTech__RAMN/hardware/V1_revB/0_ramn/ramn.kicad_pcb",
+ "license": "CC-BY-SA-4.0 (Creative Commons Attribution-ShareAlike 4.0), in LICENSE.md",
  "rank": 946,
  "complexity": {
   "grade": 320,

@@ -2,6 +2,7 @@
  "name": "Piramide_Del_Sol",
  "project": "stanford-ssi/samwise-avionics",
  "path": "stanford-ssi__samwise-avionics/sun_sensor_pyramid/Piramide_Del_Sol.kicad_pcb",
+ "license": "No license found",
  "rank": 2432,
  "complexity": {
   "grade": 230,

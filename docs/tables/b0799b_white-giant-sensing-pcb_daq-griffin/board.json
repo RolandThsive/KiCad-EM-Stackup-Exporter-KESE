@@ -2,6 +2,7 @@
  "name": "daq_griffin",
  "project": "cuspaceflight/white-giant-sensing-pcb",
  "path": "cuspaceflight__white-giant-sensing-pcb/daq_griffin/daq_griffin.kicad_pcb",
+ "license": "GPL-3.0 (GNU GPL v3.0)",
  "rank": 1225,
  "complexity": {
   "grade": 311,

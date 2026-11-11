@@ -2,6 +2,7 @@
  "name": "ESP32-DevKit-Lipo_Rev_D",
  "project": "OLIMEX/ESP32-DevKit-LiPo",
  "path": "OLIMEX__ESP32-DevKit-LiPo/HARDWARE/ESP32-DevKit-LiPo-Rev.D/ESP32-DevKit-Lipo_Rev_D.kicad_pcb",
+ "license": "Apache-2.0 (Apache License 2.0)",
  "rank": 1355,
  "complexity": {
   "grade": 223,

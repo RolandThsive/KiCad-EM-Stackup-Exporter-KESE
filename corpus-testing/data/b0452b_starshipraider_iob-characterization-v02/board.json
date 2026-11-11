@@ -14,6 +14,7 @@
  "path": "azonenberg__starshipraider/boards/CLARKE/iob-characterization-v02/iob-characterization-v02.kicad_pcb",
  "project": "azonenberg/starshipraider",
  "name": "iob-characterization-v02",
+ "license": "BSD-3-Clause (BSD 3-Clause License)",
  "zip": "part14_of_17",
  "features": {
   "through_vias": 269,

@@ -14,6 +14,7 @@
  "path": "bluejayracing__22xt_kicad/02-wsg/WSG_2.0/WSG_2.0.kicad_pcb",
  "project": "bluejayracing/22xt_kicad",
  "name": "WSG_2.0",
+ "license": "No license found",
  "zip": "part15_of_17",
  "features": {
   "through_vias": 328,

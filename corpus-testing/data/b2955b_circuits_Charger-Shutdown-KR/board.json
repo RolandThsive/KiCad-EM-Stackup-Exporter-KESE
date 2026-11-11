@@ -14,6 +14,7 @@
  "path": "ucdfs__circuits/Kieran Care package/Charger_Shutdown_KR/Charger_Shutdown_KR.kicad_pcb",
  "project": "ucdfs/circuits",
  "name": "Charger_Shutdown_KR",
+ "license": "No license found",
  "zip": "part16_of_17",
  "features": {
   "through_vias": 20,

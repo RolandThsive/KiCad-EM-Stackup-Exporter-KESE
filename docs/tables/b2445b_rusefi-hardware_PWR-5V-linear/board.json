@@ -2,6 +2,7 @@
  "name": "PWR_5V_linear",
  "project": "rusefi/rusefi-hardware",
  "path": "rusefi__rusefi-hardware/classic-designs/5V-regulator/PWR_5V_linear.kicad_pcb",
+ "license": "No license found",
  "rank": 2514,
  "complexity": {
   "grade": 170,

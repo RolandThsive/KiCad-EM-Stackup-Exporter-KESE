@@ -2,6 +2,7 @@
  "name": "OBC Development Board",
  "project": "calgarytospace/cts-sat-2-obc-pcb",
  "path": "calgarytospace__cts-sat-2-obc-pcb/CTS-SAT-1 Hardware/OBC Development Board.kicad_pcb",
+ "license": "No license found",
  "rank": 630,
  "complexity": {
   "grade": 337,

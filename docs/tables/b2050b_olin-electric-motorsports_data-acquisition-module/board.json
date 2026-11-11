@@ -2,6 +2,7 @@
  "name": "data_acquisition_module",
  "project": "olin-electric-motorsports/olin-electric-motorsports",
  "path": "olin-electric-motorsports__olin-electric-motorsports/vehicle/mkvi/hardware/bms/data_acquisition_module/data_acquisition_module.kicad_pcb",
+ "license": "No license found",
  "rank": 1856,
  "complexity": {
   "grade": 256,

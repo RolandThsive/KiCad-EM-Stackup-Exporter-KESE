@@ -14,6 +14,7 @@
  "path": "01GOD__PCB-8-bit-Computer/8 Bit Computer.kicad_pcb",
  "project": "01GOD/PCB-8-bit-Computer",
  "name": "8 Bit Computer",
+ "license": "No license found",
  "zip": "part11_of_17",
  "features": {
   "through_vias": 117,

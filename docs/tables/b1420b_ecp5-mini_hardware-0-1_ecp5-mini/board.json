@@ -2,6 +2,7 @@
  "name": "ecp5-mini",
  "project": "joshajohnson/ecp5-mini",
  "path": "joshajohnson__ecp5-mini/hardware/0.1/ecp5-mini.kicad_pcb",
+ "license": "CERN-OHL-S-2.0 (CERN Open Hardware Licence v2, Strongly Reciprocal), in LICENSE",
  "rank": 496,
  "complexity": {
   "grade": 400,

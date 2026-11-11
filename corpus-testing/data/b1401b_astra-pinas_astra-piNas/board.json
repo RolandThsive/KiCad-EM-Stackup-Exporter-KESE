@@ -14,6 +14,7 @@
  "path": "jlcjak__astra_pinas/astra_piNas.kicad_pcb",
  "project": "jlcjak/astra_pinas",
  "name": "astra_piNas",
+ "license": "No license found",
  "zip": "part12_of_17",
  "features": {
   "through_vias": 1384,

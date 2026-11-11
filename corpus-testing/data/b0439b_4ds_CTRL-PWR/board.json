@@ -14,6 +14,7 @@
  "path": "astronuat21__4ds/CTRL_PWR/CTRL_PWR.kicad_pcb",
  "project": "astronuat21/4ds",
  "name": "CTRL_PWR",
+ "license": "AGPL-3.0 (GNU AGPL v3.0)",
  "zip": "part16_of_17",
  "features": {
   "through_vias": 16,

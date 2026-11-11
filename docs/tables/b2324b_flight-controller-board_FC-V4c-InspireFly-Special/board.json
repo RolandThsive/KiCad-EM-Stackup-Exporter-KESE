@@ -2,6 +2,7 @@
  "name": "FC_V4c_InspireFly_Special",
  "project": "proveskit/flight_controller_board",
  "path": "proveskit__flight_controller_board/FC_V4c_InspireFly_Special/FC_V4c_InspireFly_Special.kicad_pcb",
+ "license": "CERN-OHL-W-2.0 (CERN Open Hardware Licence v2, Weakly Reciprocal)",
  "rank": 918,
  "complexity": {
   "grade": 406,

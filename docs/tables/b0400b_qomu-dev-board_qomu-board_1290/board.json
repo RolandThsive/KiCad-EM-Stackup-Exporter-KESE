@@ -2,6 +2,7 @@
  "name": "qomu-board",
  "project": "antmicro/qomu-dev-board",
  "path": "antmicro__qomu-dev-board/qomu-board.kicad_pcb",
+ "license": "CC-BY-SA-4.0 (Creative Commons Attribution-ShareAlike 4.0)",
  "rank": 1290,
  "complexity": {
   "grade": 418,

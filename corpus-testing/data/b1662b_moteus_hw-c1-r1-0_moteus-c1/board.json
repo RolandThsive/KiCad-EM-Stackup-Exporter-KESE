@@ -14,6 +14,7 @@
  "path": "mjbots__moteus/hw/c1/r1.0/moteus_c1.kicad_pcb",
  "project": "mjbots/moteus",
  "name": "moteus_c1",
+ "license": "Apache-2.0 (Apache License 2.0)",
  "zip": "part14_of_17",
  "features": {
   "through_vias": 286,

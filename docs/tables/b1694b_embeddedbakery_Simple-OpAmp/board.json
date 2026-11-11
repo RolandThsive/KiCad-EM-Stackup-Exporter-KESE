@@ -2,6 +2,7 @@
  "name": "Simple OpAmp",
  "project": "mwwhited/embeddedbakery",
  "path": "mwwhited__embeddedbakery/circuits/AnalogCalculator/SimpleOpAmp/Simple OpAmp/Simple OpAmp.kicad_pcb",
+ "license": "MIT (MIT License), in LICENSE",
  "rank": 2380,
  "complexity": {
   "grade": 83,

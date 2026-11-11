@@ -2,6 +2,7 @@
  "name": "MyCPU",
  "project": "fortinsylvain/MyCpu",
  "path": "fortinsylvain__MyCpu/Kicad/MyCPU.kicad_pcb",
+ "license": "MIT (MIT License)",
  "rank": 522,
  "complexity": {
   "grade": 317,

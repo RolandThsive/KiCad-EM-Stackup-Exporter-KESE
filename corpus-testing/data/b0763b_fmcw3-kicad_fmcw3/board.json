@@ -14,6 +14,7 @@
  "path": "ckflight__fmcw3-kicad/fmcw3.kicad_pcb",
  "project": "ckflight/fmcw3-kicad",
  "name": "fmcw3",
+ "license": "As readme.md states it: \"This project is licensed under the GNU General Public License v3.0 (GPLv3). You are free to use, modify, and distribute this software under the terms of the GPLv3 license. Any distributed modifications or derivative works must also be released under the same license and include source code. For full license text: https://www.gnu.org/licenses/gpl-3.0.html\"",
  "zip": "part10_of_17",
  "features": {
   "through_vias": 2824,

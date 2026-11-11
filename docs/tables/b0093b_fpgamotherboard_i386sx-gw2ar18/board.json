@@ -2,6 +2,7 @@
  "name": "i386sx-gw2ar18",
  "project": "alphaonex86/fpgamotherboard",
  "path": "alphaonex86__fpgamotherboard/i386/fpga-gw2ar18/hw/i386sx-gw2ar18.kicad_pcb",
+ "license": "GPL-3.0 (GNU GPL v3.0)",
  "rank": 579,
  "complexity": {
   "grade": 373,

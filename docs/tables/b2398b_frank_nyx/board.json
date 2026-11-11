@@ -2,6 +2,7 @@
  "name": "nyx",
  "project": "rh1tech/frank",
  "path": "rh1tech__frank/hardware/nyx/nyx.kicad_pcb",
+ "license": "GPL-3.0 (GNU GPL v3.0)",
  "rank": 1382,
  "complexity": {
   "grade": 361,

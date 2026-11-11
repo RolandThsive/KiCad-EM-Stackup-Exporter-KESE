@@ -14,6 +14,7 @@
  "path": "sparkfun__sparkfun_gnssdo/Hardware/GNSSDO_Plus/Production/SparkPNT_GNSSDO_Plus_panelized.kicad_pcb",
  "project": "sparkfun/sparkfun_gnssdo",
  "name": "SparkPNT_GNSSDO_Plus_panelized",
+ "license": "MIT (MIT License), in LICENSE.md",
  "zip": "part11_of_17",
  "features": {
   "through_vias": 1760,

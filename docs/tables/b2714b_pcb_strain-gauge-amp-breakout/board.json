@@ -2,6 +2,7 @@
  "name": "strain-gauge-amp-breakout",
  "project": "sufst/pcb",
  "path": "sufst__pcb/archive/sensor-board/strain-gauge-amp-breakout/strain-gauge-amp-breakout.kicad_pcb",
+ "license": "GPL-3.0 (GNU GPL v3.0)",
  "rank": 2790,
  "complexity": {
   "grade": 188,

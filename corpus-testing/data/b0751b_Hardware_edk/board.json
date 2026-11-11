@@ -14,6 +14,7 @@
  "path": "ciaa__Hardware/PCB/EDU-INTEL/edk.kicad_pcb",
  "project": "ciaa/Hardware",
  "name": "edk",
+ "license": "BSD-2-Clause (BSD 2-Clause License), in LICENSE, PCB/EDU-FPGA/LICENSE, PCB/Z3R0/LICENSE",
  "zip": "part15_of_17",
  "features": {
   "through_vias": 110,

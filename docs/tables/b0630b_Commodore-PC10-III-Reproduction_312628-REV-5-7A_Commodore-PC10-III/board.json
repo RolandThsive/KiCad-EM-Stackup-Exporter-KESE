@@ -2,6 +2,7 @@
  "name": "Commodore PC10 III",
  "project": "Board-Folk/Commodore-PC10-III-Reproduction",
  "path": "Board-Folk__Commodore-PC10-III-Reproduction/312628-REV-5.7A/Commodore PC10 III.kicad_pcb",
+ "license": "CC0-1.0 (Creative Commons Zero v1.0), in 312628-REV-5.7A/LICENSE, 312628-REV-6C/LICENSE",
  "rank": 25,
  "complexity": {
   "grade": 384,

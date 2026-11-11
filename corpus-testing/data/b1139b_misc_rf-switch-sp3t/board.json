@@ -14,6 +14,7 @@
  "path": "greatscottgadgets__misc/evaluation-boards/rf-switch-sp3t/rf-switch-sp3t.kicad_pcb",
  "project": "greatscottgadgets/misc",
  "name": "rf-switch-sp3t",
+ "license": "GPL-2.0 (GNU GPL v2.0)",
  "zip": "part16_of_17",
  "features": {
   "through_vias": 114,

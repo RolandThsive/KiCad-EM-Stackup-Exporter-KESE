@@ -2,6 +2,7 @@
  "name": "breakout-dip-gf",
  "project": "TinyTapeout/breakout-pcb",
  "path": "TinyTapeout__breakout-pcb/breakout-dip-gf/breakout-dip-gf.kicad_pcb",
+ "license": "Apache-2.0 (Apache License 2.0)",
  "rank": 1429,
  "complexity": {
   "grade": 386,

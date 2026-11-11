@@ -2,6 +2,7 @@
  "name": "hvboard",
  "project": "nuclearfutureslab/ibxII-hardware",
  "path": "nuclearfutureslab__ibxII-hardware/hvboard/hvboard.kicad_pcb",
+ "license": "GPL-3.0 (GNU GPL v3.0)",
  "rank": 2145,
  "complexity": {
   "grade": 205,

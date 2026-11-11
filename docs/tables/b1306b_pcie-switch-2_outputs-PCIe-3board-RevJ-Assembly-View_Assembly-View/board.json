@@ -2,6 +2,7 @@
  "name": "Assembly_View",
  "project": "isarmg/pcie-switch-2",
  "path": "isarmg__pcie-switch-2/outputs/PCIe_3board_RevJ/Assembly_View/Assembly_View.kicad_pcb",
+ "license": "No license found",
  "rank": 1793,
  "complexity": {
   "grade": 143,

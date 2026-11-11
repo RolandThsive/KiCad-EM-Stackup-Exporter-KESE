@@ -2,6 +2,7 @@
  "name": "USB-4SERIAL_Rev_B",
  "project": "OLIMEX/USB-4SERIAL",
  "path": "OLIMEX__USB-4SERIAL/HARDWARE/USB-4SERIAL_Rev_B/USB-4SERIAL_Rev_B.kicad_pcb",
+ "license": "GPL-3.0 (GNU GPL v3.0)",
  "rank": 966,
  "complexity": {
   "grade": 288,

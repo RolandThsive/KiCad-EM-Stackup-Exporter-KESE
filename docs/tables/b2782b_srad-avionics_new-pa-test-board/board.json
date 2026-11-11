@@ -2,6 +2,7 @@
  "name": "new-pa-test-board",
  "project": "terrapin-rocket-team/srad-avionics",
  "path": "terrapin-rocket-team__srad-avionics/Spaceport/PCBs/new-pa-test-board/new-pa-test-board.kicad_pcb",
+ "license": "No license found",
  "rank": 2702,
  "complexity": {
   "grade": 228,

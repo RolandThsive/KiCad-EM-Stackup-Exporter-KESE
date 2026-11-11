@@ -14,6 +14,7 @@
  "path": "stanford-ssi__aerolotl_av/aerolotl_av.kicad_pcb",
  "project": "stanford-ssi/aerolotl_av",
  "name": "aerolotl_av",
+ "license": "No license found",
  "zip": "part12_of_17",
  "features": {
   "through_vias": 1278,

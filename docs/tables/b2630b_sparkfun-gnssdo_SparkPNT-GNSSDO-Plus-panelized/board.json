@@ -2,6 +2,7 @@
  "name": "SparkPNT_GNSSDO_Plus_panelized",
  "project": "sparkfun/sparkfun_gnssdo",
  "path": "sparkfun__sparkfun_gnssdo/Hardware/GNSSDO_Plus/Production/SparkPNT_GNSSDO_Plus_panelized.kicad_pcb",
+ "license": "MIT (MIT License), in LICENSE.md",
  "rank": 454,
  "complexity": {
   "grade": 430,

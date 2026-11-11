@@ -2,6 +2,7 @@
  "name": "gd io proto pcb",
  "project": "baldengineer/Mega-IIe",
  "path": "baldengineer__Mega-IIe/kicad files/gd io proto pcb/gd io proto pcb.kicad_pcb",
+ "license": "MIT (MIT License)",
  "rank": 1588,
  "complexity": {
   "grade": 296,

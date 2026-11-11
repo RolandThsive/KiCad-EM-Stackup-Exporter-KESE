@@ -14,6 +14,7 @@
  "path": "GaudiLabs__OpenDrop/OpenDropV3/Carrier/PCBFrame/PCBFrame.kicad_pcb",
  "project": "GaudiLabs/OpenDrop",
  "name": "PCBFrame",
+ "license": "GPL-3.0 (GNU GPL v3.0)",
  "zip": "part16_of_17",
  "features": {
   "through_vias": 0,

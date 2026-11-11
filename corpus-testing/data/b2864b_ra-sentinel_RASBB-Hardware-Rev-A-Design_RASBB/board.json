@@ -14,6 +14,7 @@
  "path": "tobias-dg3yev__ra-sentinel/RASBB/Hardware/Rev.A/Design/RASBB.kicad_pcb",
  "project": "tobias-dg3yev/ra-sentinel",
  "name": "RASBB",
+ "license": "GPL-3.0 (GNU GPL v3.0)",
  "zip": "part05_of_17",
  "features": {
   "through_vias": 3816,

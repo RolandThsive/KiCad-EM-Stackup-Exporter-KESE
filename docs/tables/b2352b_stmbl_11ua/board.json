@@ -2,6 +2,7 @@
  "name": "11ua",
  "project": "rene-dev/stmbl",
  "path": "rene-dev__stmbl/hw/kicad/11ua/11ua.kicad_pcb",
+ "license": "GPL-3.0 (GNU GPL v3.0)",
  "rank": 2335,
  "complexity": {
   "grade": 193,

@@ -2,6 +2,7 @@
  "name": "LC_RFE-RevA1",
  "project": "myriadrf/lc-rfe",
  "path": "myriadrf__lc-rfe/revisions/LC_RFE-RevA1/LC_RFE-RevA1.kicad_pcb",
+ "license": "SHL-2.1 (Solderpad Hardware License v2.1), in LICENSE",
  "rank": 453,
  "complexity": {
   "grade": 399,

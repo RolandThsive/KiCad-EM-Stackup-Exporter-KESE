@@ -14,6 +14,7 @@
  "path": "antmicro__caravel_board/hardware/caravel_breakout_v1/Caravel_breakout.kicad_pcb",
  "project": "antmicro/caravel_board",
  "name": "Caravel_breakout",
+ "license": "No license found",
  "zip": "part16_of_17",
  "features": {
   "through_vias": 28,

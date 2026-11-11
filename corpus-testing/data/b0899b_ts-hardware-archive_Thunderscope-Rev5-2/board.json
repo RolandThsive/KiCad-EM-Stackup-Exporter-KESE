@@ -14,6 +14,7 @@
  "path": "EEVengers__ts_hardware_archive/KiCad/Thunderscope_Rev5.2/Thunderscope_Rev5.2.kicad_pcb",
  "project": "EEVengers/ts_hardware_archive",
  "name": "Thunderscope_Rev5.2",
+ "license": "CERN-OHL-P-2.0 (CERN Open Hardware Licence v2, Permissive)",
  "zip": "part04_of_17",
  "features": {
   "through_vias": 7620,

@@ -2,6 +2,7 @@
  "name": "MotCtrl",
  "project": "osannolik/motctrl",
  "path": "osannolik__motctrl/hw/kicad/MotCtrl.kicad_pcb",
+ "license": "GPL-3.0 (GNU GPL v3.0)",
  "rank": 573,
  "complexity": {
   "grade": 319,

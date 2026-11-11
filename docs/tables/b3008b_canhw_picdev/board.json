@@ -2,6 +2,7 @@
  "name": "picdev",
  "project": "waterloo-rocketry/canhw",
  "path": "waterloo-rocketry__canhw/picdev/picdev/picdev.kicad_pcb",
+ "license": "GPL-3.0 (GNU GPL v3.0)",
  "rank": 2361,
  "complexity": {
   "grade": 185,

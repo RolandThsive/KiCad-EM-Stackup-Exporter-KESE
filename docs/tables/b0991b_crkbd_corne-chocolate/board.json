@@ -2,6 +2,7 @@
  "name": "corne-chocolate",
  "project": "foostan/crkbd",
  "path": "foostan__crkbd/pcbs/corne-chocolate/hotswap/corne-chocolate.kicad_pcb",
+ "license": "CC-BY-4.0 (Creative Commons Attribution 4.0)",
  "rank": 528,
  "complexity": {
   "grade": 377,

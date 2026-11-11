@@ -14,6 +14,7 @@
  "path": "antmicro__dc-sci-debug-interposer/dc-sci-debug-interposer.kicad_pcb",
  "project": "antmicro/dc-sci-debug-interposer",
  "name": "dc-sci-debug-interposer",
+ "license": "Apache-2.0 (Apache License 2.0)",
  "zip": "part11_of_17",
  "features": {
   "through_vias": 1358,

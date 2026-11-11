@@ -2,6 +2,7 @@
  "name": "CPC464-2MINIDOCK",
  "project": "Board-Folk/CPC464-2MINI",
  "path": "Board-Folk__CPC464-2MINI/Expansions/MINIDOCK/Kicad/CPC464-2MINIDOCK.kicad_pcb",
+ "license": "No license found",
  "rank": 1686,
  "complexity": {
   "grade": 245,

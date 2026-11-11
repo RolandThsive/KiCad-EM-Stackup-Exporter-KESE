@@ -2,6 +2,7 @@
  "name": "RS232",
  "project": "andrewpaterson/658-Computer",
  "path": "andrewpaterson__658-Computer/Kicad/Computer/UART/RS232/RS232.kicad_pcb",
+ "license": "No license found",
  "rank": 1773,
  "complexity": {
   "grade": 281,

@@ -2,6 +2,7 @@
  "name": "Connectors",
  "project": "mwwhited/embeddedbakery",
  "path": "mwwhited__embeddedbakery/circuits/AnalogCalculator/SimpleOpAmp/Connectors/Connectors/Connectors.kicad_pcb",
+ "license": "MIT (MIT License), in LICENSE",
  "rank": 2951,
  "complexity": {
   "grade": 120,

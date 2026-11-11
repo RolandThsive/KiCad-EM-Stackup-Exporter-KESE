@@ -2,6 +2,7 @@
  "name": "SD Card Board",
  "project": "andrewpaterson/658-Computer",
  "path": "andrewpaterson__658-Computer/Kicad/Computer/SD Card/SD Card Board/SD Card Board.kicad_pcb",
+ "license": "No license found",
  "rank": 700,
  "complexity": {
   "grade": 269,

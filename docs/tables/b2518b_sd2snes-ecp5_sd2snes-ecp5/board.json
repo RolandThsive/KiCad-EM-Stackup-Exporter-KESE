@@ -2,6 +2,7 @@
  "name": "sd2snes_ecp5",
  "project": "samlittlewood/sd2snes_ecp5",
  "path": "samlittlewood__sd2snes_ecp5/sd2snes_ecp5.kicad_pcb",
+ "license": "GPL-2.0 (GNU GPL v2.0)",
  "rank": 345,
  "complexity": {
   "grade": 390,

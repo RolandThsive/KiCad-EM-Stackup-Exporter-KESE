@@ -14,6 +14,7 @@
  "path": "andrewpaterson__658-Computer/Kicad/Computer/Component Boards/Dual Comparator 8bit/Dual Comparator 8bit.kicad_pcb",
  "project": "andrewpaterson/658-Computer",
  "name": "Dual Comparator 8bit",
+ "license": "No license found",
  "zip": "part16_of_17",
  "features": {
   "through_vias": 182,

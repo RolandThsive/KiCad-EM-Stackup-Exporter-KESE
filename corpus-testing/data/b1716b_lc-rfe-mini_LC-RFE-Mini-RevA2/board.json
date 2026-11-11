@@ -14,6 +14,7 @@
  "path": "myriadrf__lc-rfe-mini/revisions/LC-RFE-Mini-RevA2/LC-RFE-Mini-RevA2.kicad_pcb",
  "project": "myriadrf/lc-rfe-mini",
  "name": "LC-RFE-Mini-RevA2",
+ "license": "SHL-2.1 (Solderpad Hardware License v2.1), in LICENSE",
  "zip": "part15_of_17",
  "features": {
   "through_vias": 578,

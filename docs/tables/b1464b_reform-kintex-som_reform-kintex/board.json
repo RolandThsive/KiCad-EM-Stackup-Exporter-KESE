@@ -2,6 +2,7 @@
  "name": "reform-kintex",
  "project": "kitspace-forks/reform-kintex-som",
  "path": "kitspace-forks__reform-kintex-som/reform-kintex.kicad_pcb",
+ "license": "As README.md states it: \"All hardware design work in this repository is © 2021-2022 MNT Research GmbH, Berlin, Germany.\"",
  "rank": 86,
  "complexity": {
   "grade": 407,

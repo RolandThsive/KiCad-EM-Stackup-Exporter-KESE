@@ -14,6 +14,7 @@
  "path": "antmicro__data-center-dram-tester/data-center-rdimm-ddr4-tester.kicad_pcb",
  "project": "antmicro/data-center-dram-tester",
  "name": "data-center-rdimm-ddr4-tester",
+ "license": "Apache-2.0 (Apache License 2.0), in LICENSE",
  "zip": "part02_of_17",
  "features": {
   "through_vias": 2178,

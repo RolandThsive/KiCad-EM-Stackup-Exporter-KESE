@@ -2,6 +2,7 @@
  "name": "off-axis_end_connector",
  "project": "BerkeleyLab/DxP-sensor-probes",
  "path": "BerkeleyLab__DxP-sensor-probes/off-axis_end_connector/off-axis_end_connector.kicad_pcb",
+ "license": "CC-BY-NC-4.0 (Creative Commons Attribution-NonCommercial 4.0), in LICENSE.md",
  "rank": 2992,
  "complexity": {
   "grade": 155,

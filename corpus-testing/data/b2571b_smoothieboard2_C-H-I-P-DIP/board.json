@@ -14,6 +14,7 @@
  "path": "smoothieware__smoothieboard2/extension-boards/chip-dip-computer-carrier/C.H.I.P-DIP.kicad_pcb",
  "project": "smoothieware/smoothieboard2",
  "name": "C.H.I.P-DIP",
+ "license": "As README.md states it: \"Under the same license as v1 ( CERN OHL v1.2 or later and GPL v3 or later )\"",
  "zip": "part16_of_17",
  "features": {
   "through_vias": 9,

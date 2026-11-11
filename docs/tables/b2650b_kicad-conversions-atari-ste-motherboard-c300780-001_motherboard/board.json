@@ -2,6 +2,7 @@
  "name": "motherboard",
  "project": "sporniket/kicad-conversions--atari-ste-motherboard--c300780-001",
  "path": "sporniket__kicad-conversions--atari-ste-motherboard--c300780-001/motherboard.kicad_pcb",
+ "license": "CC0-1.0 (Creative Commons Zero v1.0)",
  "rank": 91,
  "complexity": {
   "grade": 383,

@@ -2,6 +2,7 @@
  "name": "GDI-6ch",
  "project": "rusefi/rusefi-hardware",
  "path": "rusefi__rusefi-hardware/GDI-6ch/GDI-6ch.kicad_pcb",
+ "license": "No license found",
  "rank": 584,
  "complexity": {
   "grade": 386,

@@ -2,6 +2,7 @@
  "name": "SparkFun_GNSS_Flex_Module_LG580P",
  "project": "sparkfun/sparkfun_gnss_flex_system",
  "path": "sparkfun__sparkfun_gnss_flex_system/flex_boards/SparkPNT_GNSS_Flex_Module_LG580P/hardware/SparkFun_GNSS_Flex_Module_LG580P.kicad_pcb",
+ "license": "MIT (MIT License), in LICENSE.md",
  "rank": 2108,
  "complexity": {
   "grade": 291,

@@ -14,6 +14,7 @@
  "path": "OLIMEX__Minibot/HARDWARE/charger/MiniBot_charger_RevA.kicad_pcb",
  "project": "OLIMEX/Minibot",
  "name": "MiniBot_charger_RevA",
+ "license": "Apache-2.0 (Apache License 2.0)",
  "zip": "part16_of_17",
  "features": {
   "through_vias": 3,

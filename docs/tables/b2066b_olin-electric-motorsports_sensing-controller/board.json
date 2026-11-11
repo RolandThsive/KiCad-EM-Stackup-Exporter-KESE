@@ -2,6 +2,7 @@
  "name": "sensing_controller",
  "project": "olin-electric-motorsports/olin-electric-motorsports",
  "path": "olin-electric-motorsports__olin-electric-motorsports/vehicle/mkvi/hardware/sensing/sensing_controller.kicad_pcb",
+ "license": "No license found",
  "rank": 2204,
  "complexity": {
   "grade": 282,

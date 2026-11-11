@@ -2,6 +2,7 @@
  "name": "LoRa_RevB",
  "project": "OLIMEX/LoRa-868-915",
  "path": "OLIMEX__LoRa-868-915/HARDWARE/LoRa-Rev-B/LoRa_RevB.kicad_pcb",
+ "license": "GPL-3.0 (GNU GPL v3.0)",
  "rank": 2197,
  "complexity": {
   "grade": 261,

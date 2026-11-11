@@ -2,6 +2,7 @@
  "name": "mackerel-10-v1",
  "project": "crmaykish/mackerel-68k",
  "path": "crmaykish__mackerel-68k/hardware/mack-10-proto/mackerel-10-v1/mackerel-10-v1.kicad_pcb",
+ "license": "MIT (MIT License)",
  "rank": 1177,
  "complexity": {
   "grade": 342,

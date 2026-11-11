@@ -2,6 +2,7 @@
  "name": "ESP32 Demo Project",
  "project": "gitRaksha/esp32-4layer-iot-board",
  "path": "gitRaksha__esp32-4layer-iot-board/ESP32 Demo Project.kicad_pcb",
+ "license": "MIT (MIT License)",
  "rank": 1592,
  "complexity": {
   "grade": 305,

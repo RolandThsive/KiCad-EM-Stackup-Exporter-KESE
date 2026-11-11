@@ -2,6 +2,7 @@
  "name": "pmod-i3c-driver",
  "project": "antmicro/pmod-i3c-driver",
  "path": "antmicro__pmod-i3c-driver/pmod-i3c-driver.kicad_pcb",
+ "license": "Apache-2.0 (Apache License 2.0)",
  "rank": 1769,
  "complexity": {
   "grade": 304,

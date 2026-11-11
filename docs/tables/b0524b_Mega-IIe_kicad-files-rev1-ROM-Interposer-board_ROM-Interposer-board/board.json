@@ -2,6 +2,7 @@
  "name": "ROM Interposer board",
  "project": "baldengineer/Mega-IIe",
  "path": "baldengineer__Mega-IIe/kicad files/rev1/ROM Interposer board/ROM Interposer board.kicad_pcb",
+ "license": "MIT (MIT License)",
  "rank": 2875,
  "complexity": {
   "grade": 114,

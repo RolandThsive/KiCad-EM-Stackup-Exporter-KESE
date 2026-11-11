@@ -14,6 +14,7 @@
  "path": "MEGA65__mega65-r3-expansion-board/expansion_connector_board/expansion_connector_board.kicad_pcb",
  "project": "MEGA65/mega65-r3-expansion-board",
  "name": "expansion_connector_board",
+ "license": "No license found",
  "zip": "part16_of_17",
  "features": {
   "through_vias": 94,

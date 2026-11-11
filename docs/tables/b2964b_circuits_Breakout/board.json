@@ -2,6 +2,7 @@
  "name": "Breakout",
  "project": "ucdfs/circuits",
  "path": "ucdfs__circuits/Kieran Care package/Teensy 4.1 Breakout Board/Breakout.kicad_pcb",
+ "license": "No license found",
  "rank": 2387,
  "complexity": {
   "grade": 235,

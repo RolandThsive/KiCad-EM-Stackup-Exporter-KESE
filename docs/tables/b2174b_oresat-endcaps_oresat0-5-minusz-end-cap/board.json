@@ -2,6 +2,7 @@
  "name": "oresat0.5-minusz-end-cap",
  "project": "oresat/oresat-endcaps",
  "path": "oresat__oresat-endcaps/oresat0.5-minusz-end-cap/oresat0.5-minusz-end-cap.kicad_pcb",
+ "license": "As README.md states it: \"Copyright the Portland State Aerospace Society, 2024. This source describes Open Hardware that is licensed under CERN-OHL-S v2, or any later version. You may redistribute and modify this source and make products using it under the terms of the CERN-OHL-S v2 (https://ohwr.org/cern ohl s v2.txt).\"",
  "rank": 1679,
  "complexity": {
   "grade": 271,

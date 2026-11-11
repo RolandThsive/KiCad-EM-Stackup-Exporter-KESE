@@ -14,6 +14,7 @@
  "path": "greatscottgadgets__hackrf/hardware/hackrf-one/hackrf-one.kicad_pcb",
  "project": "greatscottgadgets/hackrf",
  "name": "hackrf-one",
+ "license": "GPL-2.0 (GNU GPL v2.0)",
  "zip": "part11_of_17",
  "features": {
   "through_vias": 498,

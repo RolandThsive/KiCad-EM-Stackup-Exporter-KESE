@@ -2,6 +2,7 @@
  "name": "cm0",
  "project": "cheyao/icepi-sbc",
  "path": "cheyao__icepi-sbc/hardware/cm0.kicad_pcb",
+ "license": "SHL-2.1 (Solderpad Hardware License v2.1), in LICENSE",
  "rank": 287,
  "complexity": {
   "grade": 438,

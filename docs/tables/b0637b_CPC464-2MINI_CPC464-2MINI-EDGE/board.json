@@ -2,6 +2,7 @@
  "name": "CPC464-2MINI-EDGE",
  "project": "Board-Folk/CPC464-2MINI",
  "path": "Board-Folk__CPC464-2MINI/Expansions/MINIEDGE/Kicad/CPC464-2MINI-EDGE.kicad_pcb",
+ "license": "No license found",
  "rank": 2800,
  "complexity": {
   "grade": 185,

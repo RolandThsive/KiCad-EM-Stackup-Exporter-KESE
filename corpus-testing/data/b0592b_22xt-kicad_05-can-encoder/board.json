@@ -14,6 +14,7 @@
  "path": "bluejayracing__22xt_kicad/05-can_encoder/05-can_encoder.kicad_pcb",
  "project": "bluejayracing/22xt_kicad",
  "name": "05-can_encoder",
+ "license": "No license found",
  "zip": "part16_of_17",
  "features": {
   "through_vias": 40,

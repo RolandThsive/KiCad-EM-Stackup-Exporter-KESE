@@ -2,6 +2,7 @@
  "name": "mini48-stm32",
  "project": "rusefi/rusefi-hardware",
  "path": "rusefi__rusefi-hardware/mini48-stm32/mini48-stm32.kicad_pcb",
+ "license": "No license found",
  "rank": 1865,
  "complexity": {
   "grade": 259,

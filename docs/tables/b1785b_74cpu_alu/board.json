@@ -2,6 +2,7 @@
  "name": "alu",
  "project": "Noah1989/74cpu",
  "path": "Noah1989__74cpu/alu.kicad_pcb",
+ "license": "No license found",
  "rank": 1433,
  "complexity": {
   "grade": 205,

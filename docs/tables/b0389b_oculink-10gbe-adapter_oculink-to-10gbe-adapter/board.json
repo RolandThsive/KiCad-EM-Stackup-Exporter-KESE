@@ -2,6 +2,7 @@
  "name": "oculink-to-10gbe-adapter",
  "project": "antmicro/oculink-10gbe-adapter",
  "path": "antmicro__oculink-10gbe-adapter/oculink-to-10gbe-adapter.kicad_pcb",
+ "license": "Apache-2.0 (Apache License 2.0)",
  "rank": 380,
  "complexity": {
   "grade": 466,

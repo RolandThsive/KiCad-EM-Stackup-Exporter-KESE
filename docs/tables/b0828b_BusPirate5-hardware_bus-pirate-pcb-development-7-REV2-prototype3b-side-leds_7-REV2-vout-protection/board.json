@@ -2,6 +2,7 @@
  "name": "7-REV2-vout-protection",
  "project": "DangerousPrototypes/BusPirate5-hardware",
  "path": "DangerousPrototypes__BusPirate5-hardware/bus_pirate_pcb/development/7-REV2-prototype3b-side-leds/7-REV2-vout-protection.kicad_pcb",
+ "license": "MIT (MIT License)",
  "rank": 498,
  "complexity": {
   "grade": 393,

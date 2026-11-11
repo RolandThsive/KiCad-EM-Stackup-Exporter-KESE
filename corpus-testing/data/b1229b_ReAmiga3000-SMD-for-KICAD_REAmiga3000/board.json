@@ -14,6 +14,7 @@
  "path": "iansbremner__ReAmiga3000-SMD-for-KICAD/REAmiga3000.kicad_pcb",
  "project": "iansbremner/ReAmiga3000-SMD-for-KICAD",
  "name": "REAmiga3000",
+ "license": "No license found",
  "zip": "part02_of_17",
  "features": {
   "through_vias": 2572,

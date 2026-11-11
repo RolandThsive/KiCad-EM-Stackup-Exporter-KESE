@@ -2,6 +2,7 @@
  "name": "ESP32-SBC-FabGL_Rev_B",
  "project": "OLIMEX/ESP32-SBC-FabGL",
  "path": "OLIMEX__ESP32-SBC-FabGL/HARDWARE/Hardware-revision-B/ESP32-SBC-FabGL_Rev_B.kicad_pcb",
+ "license": "GPL-3.0 (GNU GPL v3.0)",
  "rank": 1030,
  "complexity": {
   "grade": 249,

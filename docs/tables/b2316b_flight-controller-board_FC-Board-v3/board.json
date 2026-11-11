@@ -2,6 +2,7 @@
  "name": "FC_Board_v3",
  "project": "proveskit/flight_controller_board",
  "path": "proveskit__flight_controller_board/Deprecated Versions/FC_External_v3/FC_Board_v3.kicad_pcb",
+ "license": "CERN-OHL-W-2.0 (CERN Open Hardware Licence v2, Weakly Reciprocal)",
  "rank": 1179,
  "complexity": {
   "grade": 348,

@@ -2,6 +2,7 @@
  "name": "daffodil",
  "project": "greatscottgadgets/greatfet-hardware",
  "path": "greatscottgadgets__greatfet-hardware/daffodil/daffodil.kicad_pcb",
+ "license": "BSD-3-Clause (BSD 3-Clause License)",
  "rank": 2858,
  "complexity": {
   "grade": 137,

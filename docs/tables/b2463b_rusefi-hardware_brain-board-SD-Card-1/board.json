@@ -2,6 +2,7 @@
  "name": "brain_board_SD_Card_1",
  "project": "rusefi/rusefi-hardware",
  "path": "rusefi__rusefi-hardware/classic-designs/rusefi_hardware_history/brain_board_SD_Card_1_rev00.10/brain_board_SD_Card_1.kicad_pcb",
+ "license": "No license found",
  "rank": 2853,
  "complexity": {
   "grade": 140,

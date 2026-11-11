@@ -2,6 +2,7 @@
  "name": "ethernet_bob_base",
  "project": "rene-dev/stmbl",
  "path": "rene-dev__stmbl/hw/kicad/bob/ethernet_bob_base/ethernet_bob_base.kicad_pcb",
+ "license": "GPL-3.0 (GNU GPL v3.0)",
  "rank": 1632,
  "complexity": {
   "grade": 279,

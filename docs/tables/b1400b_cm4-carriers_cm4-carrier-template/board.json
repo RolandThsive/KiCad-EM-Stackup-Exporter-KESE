@@ -2,6 +2,7 @@
  "name": "cm4-carrier-template",
  "project": "jkiv/cm4-carriers",
  "path": "jkiv__cm4-carriers/hardware/cm4-carrier-template/cm4-carrier-template.kicad_pcb",
+ "license": "BSD-2-Clause (BSD 2-Clause License)",
  "rank": 671,
  "complexity": {
   "grade": 273,

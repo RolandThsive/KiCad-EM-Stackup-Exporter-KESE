@@ -14,6 +14,7 @@
  "path": "cath272__minilatte/PCB/MiniLatte.kicad_pcb",
  "project": "cath272/minilatte",
  "name": "MiniLatte",
+ "license": "GPL-3.0 (GNU GPL v3.0), in PCB/LICENSE",
  "zip": "part06_of_17",
  "features": {
   "through_vias": 1472,

@@ -2,6 +2,7 @@
  "name": "imu",
  "project": "olin-electric-motorsports/olin-electric-motorsports",
  "path": "olin-electric-motorsports__olin-electric-motorsports/vehicle/mkvi/hardware/imu/imu.kicad_pcb",
+ "license": "No license found",
  "rank": 2040,
  "complexity": {
   "grade": 345,

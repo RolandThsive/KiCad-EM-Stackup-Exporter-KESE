@@ -14,6 +14,7 @@
  "path": "stanford-ssi__samwise-avionics/LT8491-mezzanine/LT8491-mezzanine.kicad_pcb",
  "project": "stanford-ssi/samwise-avionics",
  "name": "LT8491-mezzanine",
+ "license": "No license found",
  "zip": "part15_of_17",
  "features": {
   "through_vias": 330,

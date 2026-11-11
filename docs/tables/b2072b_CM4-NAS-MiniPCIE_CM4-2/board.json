@@ -2,6 +2,7 @@
  "name": "CM4_2",
  "project": "olvint/CM4-NAS-MiniPCIE",
  "path": "olvint__CM4-NAS-MiniPCIE/CM4_2.kicad_pcb",
+ "license": "No license found",
  "rank": 1451,
  "complexity": {
   "grade": 285,

@@ -2,6 +2,7 @@
  "name": "doj",
  "project": "kelu124/echomods",
  "path": "kelu124__echomods/doj/source/v1.1-kicad/doj.kicad_pcb",
+ "license": "TAPR-OHL-1.0 (TAPR Open Hardware License), in LICENSE.txt, goblin/LICENSE.txt, retired/tobo/LICENSE.txt",
  "rank": 2107,
  "complexity": {
   "grade": 197,

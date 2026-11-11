@@ -2,6 +2,7 @@
  "name": "Interposer_Board_JoneyTech",
  "project": "EEVengers/ThunderScope",
  "path": "EEVengers__ThunderScope/Hardware/Interposer_Board_JoneyTech/Interposer_Board_JoneyTech.kicad_pcb",
+ "license": "MIT (MIT License)",
  "rank": 955,
  "complexity": {
   "grade": 281,

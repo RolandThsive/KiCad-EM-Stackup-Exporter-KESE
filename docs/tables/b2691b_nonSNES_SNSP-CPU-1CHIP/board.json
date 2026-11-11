@@ -2,6 +2,7 @@
  "name": "SNSP-CPU-1CHIP",
  "project": "stonedDiscord/nonSNES",
  "path": "stonedDiscord__nonSNES/SNSP-CPU-1CHIP/SNSP-CPU-1CHIP.kicad_pcb",
+ "license": "GPL-3.0 (GNU GPL v3.0)",
  "rank": 393,
  "complexity": {
   "grade": 408,

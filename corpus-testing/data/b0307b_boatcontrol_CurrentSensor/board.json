@@ -14,6 +14,7 @@
  "path": "antevens__boatcontrol/addon/CurrentSensor/CurrentSensor.kicad_pcb",
  "project": "antevens/boatcontrol",
  "name": "CurrentSensor",
+ "license": "SHL-2.1 (Solderpad Hardware License v2.1), in LICENSE",
  "zip": "part16_of_17",
  "features": {
   "through_vias": 0,

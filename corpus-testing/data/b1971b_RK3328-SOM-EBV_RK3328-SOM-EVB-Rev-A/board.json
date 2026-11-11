@@ -14,6 +14,7 @@
  "path": "OLIMEX__RK3328-SOM-EBV/HARDWARE/RK3328-SOM-EVB_Rev-A/RK3328-SOM-EVB_Rev_A.kicad_pcb",
  "project": "OLIMEX/RK3328-SOM-EBV",
  "name": "RK3328-SOM-EVB_Rev_A",
+ "license": "GPL-3.0 (GNU GPL v3.0)",
  "zip": "part12_of_17",
  "features": {
   "through_vias": 520,

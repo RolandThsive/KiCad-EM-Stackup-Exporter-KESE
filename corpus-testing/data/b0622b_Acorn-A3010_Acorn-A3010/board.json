@@ -14,6 +14,7 @@
  "path": "Board-Folk__Acorn_A3010/Acorn-A3010.kicad_pcb",
  "project": "Board-Folk/Acorn_A3010",
  "name": "Acorn-A3010",
+ "license": "CC-BY-SA-4.0 (Creative Commons Attribution-ShareAlike 4.0), in LICENSE.md",
  "zip": "part07_of_17",
  "features": {
   "through_vias": 1654,

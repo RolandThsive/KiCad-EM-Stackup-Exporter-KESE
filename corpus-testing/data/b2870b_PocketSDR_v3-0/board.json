@@ -14,6 +14,7 @@
  "path": "tomojitakasu__PocketSDR/FE_4CH/HW/v3.0/v3.0.kicad_pcb",
  "project": "tomojitakasu/PocketSDR",
  "name": "v3.0",
+ "license": "BSD-2-Clause (BSD 2-Clause License), in LICENSE.txt",
  "zip": "part12_of_17",
  "features": {
   "through_vias": 1252,

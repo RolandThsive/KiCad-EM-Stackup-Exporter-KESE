@@ -2,6 +2,7 @@
  "name": "PQ_MagYBoard",
  "project": "nanosatlab/pocat-hw",
  "path": "nanosatlab__pocat-hw/pq_ymag_board/PQ_MAGY/PQ_MagYBoard/PQ_MagYBoard.kicad_pcb",
+ "license": "No license found",
  "rank": 2720,
  "complexity": {
   "grade": 226,

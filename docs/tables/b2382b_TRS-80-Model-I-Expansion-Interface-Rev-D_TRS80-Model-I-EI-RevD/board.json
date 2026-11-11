@@ -2,6 +2,7 @@
  "name": "TRS80_Model_I_EI_RevD",
  "project": "RetroStack/TRS-80-Model-I-Expansion-Interface-Rev-D",
  "path": "RetroStack__TRS-80-Model-I-Expansion-Interface-Rev-D/KiCAD/TRS80_Model_I_EI_RevD.kicad_pcb",
+ "license": "MIT (MIT License)",
  "rank": 265,
  "complexity": {
   "grade": 388,

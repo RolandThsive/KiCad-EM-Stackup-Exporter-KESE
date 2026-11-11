@@ -2,6 +2,7 @@
  "name": "filters",
  "project": "greatscottgadgets/misc",
  "path": "greatscottgadgets__misc/evaluation-boards/filters/filters.kicad_pcb",
+ "license": "GPL-2.0 (GNU GPL v2.0)",
  "rank": 2398,
  "complexity": {
   "grade": 218,

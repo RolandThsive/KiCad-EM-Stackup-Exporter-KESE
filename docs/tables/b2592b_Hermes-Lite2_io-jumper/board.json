@@ -2,6 +2,7 @@
  "name": "io_jumper",
  "project": "softerhardware/Hermes-Lite2",
  "path": "softerhardware__Hermes-Lite2/hardware/companions/io_jumper/io_jumper.kicad_pcb",
+ "license": "No license found",
  "rank": 2545,
  "complexity": {
   "grade": 165,

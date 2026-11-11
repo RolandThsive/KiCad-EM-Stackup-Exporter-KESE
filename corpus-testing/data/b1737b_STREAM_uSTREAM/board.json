@@ -14,6 +14,7 @@
  "path": "myriadrf__STREAM/hardware/uSTREAM/v2/KiCAD/uSTREAM.kicad_pcb",
  "project": "myriadrf/STREAM",
  "name": "uSTREAM",
+ "license": "CC-BY-3.0 (Creative Commons Attribution 3.0), in hardware/STREAM/COPYING, hardware/uSTREAM/COPYING",
  "zip": "part09_of_17",
  "features": {
   "through_vias": 992,

@@ -2,6 +2,7 @@
  "name": "Counter 24bit with IO",
  "project": "andrewpaterson/658-Computer",
  "path": "andrewpaterson__658-Computer/Kicad/Computer/Component Boards/Counter 24bit with IO/Counter 24bit with IO.kicad_pcb",
+ "license": "No license found",
  "rank": 860,
  "complexity": {
   "grade": 256,

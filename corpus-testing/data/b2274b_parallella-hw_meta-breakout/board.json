@@ -14,6 +14,7 @@
  "path": "parallella__parallella-hw/meta_breakout/src/meta_breakout.kicad_pcb",
  "project": "parallella/parallella-hw",
  "name": "meta_breakout",
+ "license": "CC-BY-SA-3.0 (Creative Commons Attribution-ShareAlike 3.0), in LICENSE",
  "zip": "part15_of_17",
  "features": {
   "through_vias": 120,

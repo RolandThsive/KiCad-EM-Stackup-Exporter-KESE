@@ -2,6 +2,7 @@
  "name": "ESP32-S2-DevKit-USB_Rev_B",
  "project": "OLIMEX/ESP32-S2-DevKit-LiPo-USB",
  "path": "OLIMEX__ESP32-S2-DevKit-LiPo-USB/HARDWARE/ESP32-S2-DevKit-USB-Rev-B/ESP32-S2-DevKit-USB_Rev_B.kicad_pcb",
+ "license": "GPL-3.0 (GNU GPL v3.0)",
  "rank": 1226,
  "complexity": {
   "grade": 250,

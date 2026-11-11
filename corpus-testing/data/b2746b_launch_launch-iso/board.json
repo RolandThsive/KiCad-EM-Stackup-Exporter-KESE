@@ -14,6 +14,7 @@
  "path": "system76__launch/pcb-iso/launch-iso.kicad_pcb",
  "project": "system76/launch",
  "name": "launch-iso",
+ "license": "GPL-3.0 (GNU GPL v3.0)",
  "zip": "part11_of_17",
  "features": {
   "through_vias": 723,

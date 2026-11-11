@@ -14,6 +14,7 @@
  "path": "OLIMEX__ESP32-P4-PC/HARDWARE/ESP32-P4-PC-Rev.C/ESP32-P4-PC_Rev_C.kicad_pcb",
  "project": "OLIMEX/ESP32-P4-PC",
  "name": "ESP32-P4-PC_Rev_C",
+ "license": "MIT (MIT License)",
  "zip": "part10_of_17",
  "features": {
   "through_vias": 553,

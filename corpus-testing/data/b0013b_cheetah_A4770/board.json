@@ -14,6 +14,7 @@
  "path": "A4091__cheetah/Kicad/A4770/A4770.kicad_pcb",
  "project": "A4091/cheetah",
  "name": "A4770",
+ "license": "No license found",
  "zip": "part09_of_17",
  "features": {
   "through_vias": 2448,

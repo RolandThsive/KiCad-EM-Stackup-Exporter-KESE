@@ -2,6 +2,7 @@
  "name": "switch",
  "project": "byrantech/laptop",
  "path": "byrantech__laptop/switch/switch.kicad_pcb",
+ "license": "MIT (MIT License)",
  "rank": 2861,
  "complexity": {
   "grade": 151,

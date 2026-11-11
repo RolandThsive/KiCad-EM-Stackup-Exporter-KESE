@@ -2,6 +2,7 @@
  "name": "stmbl_4.0",
  "project": "rene-dev/stmbl",
  "path": "rene-dev__stmbl/hw/kicad/v4.0/stmbl_4.0.kicad_pcb",
+ "license": "GPL-3.0 (GNU GPL v3.0)",
  "rank": 389,
  "complexity": {
   "grade": 326,

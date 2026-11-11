@@ -14,6 +14,7 @@
  "path": "Pakequis__Bad-Thing-of-the-Edge-keyboard/Hardware/Main-board/Bad Thing of the Edge Keyboard.kicad_pcb",
  "project": "Pakequis/Bad-Thing-of-the-Edge-keyboard",
  "name": "Bad Thing of the Edge Keyboard",
+ "license": "MIT (MIT License)",
  "zip": "part16_of_17",
  "features": {
   "through_vias": 99,

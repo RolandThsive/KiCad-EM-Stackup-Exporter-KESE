@@ -2,6 +2,7 @@
  "name": "zynq_test",
  "project": "cropinghigh/zynq_a9_mb",
  "path": "cropinghigh__zynq_a9_mb/hardware/zynq_test.kicad_pcb",
+ "license": "No license found",
  "rank": 51,
  "complexity": {
   "grade": 490,

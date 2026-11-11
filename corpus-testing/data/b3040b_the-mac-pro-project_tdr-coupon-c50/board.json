@@ -14,6 +14,7 @@
  "path": "winkleplex10-bit__the-mac-pro-project/kicad/macpro62-io-modules/tdr/tdr_coupon_c50/tdr_coupon_c50.kicad_pcb",
  "project": "winkleplex10-bit/the-mac-pro-project",
  "name": "tdr_coupon_c50",
+ "license": "No license found",
  "zip": "part16_of_17",
  "features": {
   "through_vias": 48,

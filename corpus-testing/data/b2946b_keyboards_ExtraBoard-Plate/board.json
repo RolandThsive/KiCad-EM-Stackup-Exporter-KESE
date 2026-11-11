@@ -14,6 +14,7 @@
  "path": "tzarc__keyboards/Djinn/Rev2a/ExtraBoard-Plate/ExtraBoard-Plate.kicad_pcb",
  "project": "tzarc/keyboards",
  "name": "ExtraBoard-Plate",
+ "license": "CERN-OHL-S-2.0 (CERN Open Hardware Licence v2, Strongly Reciprocal)",
  "zip": "part16_of_17",
  "features": {
   "through_vias": 0,

@@ -2,6 +2,7 @@
  "name": "swg_test",
  "project": "greatscottgadgets/lab-notes",
  "path": "greatscottgadgets__lab-notes/rf-testing/2023-05-16-swg-test-board/swg_test_kicad/swg_test.kicad_pcb",
+ "license": "No license found",
  "rank": 2256,
  "complexity": {
   "grade": 266,

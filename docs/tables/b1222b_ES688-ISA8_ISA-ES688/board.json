@@ -2,6 +2,7 @@
  "name": "ISA_ES688",
  "project": "hkzlab/ES688_ISA8",
  "path": "hkzlab__ES688_ISA8/ISA_ES688.kicad_pcb",
+ "license": "CC-BY-NC-SA-4.0 (Creative Commons Attribution-NonCommercial-ShareAlike 4.0), in LICENSE",
  "rank": 887,
  "complexity": {
   "grade": 335,

@@ -14,6 +14,7 @@
  "path": "andrewpaterson__658-Computer/Kicad/Computer/Video/Video Counter 12bit/Video Counter 12bit.kicad_pcb",
  "project": "andrewpaterson/658-Computer",
  "name": "Video Counter 12bit",
+ "license": "No license found",
  "zip": "part15_of_17",
  "features": {
   "through_vias": 208,

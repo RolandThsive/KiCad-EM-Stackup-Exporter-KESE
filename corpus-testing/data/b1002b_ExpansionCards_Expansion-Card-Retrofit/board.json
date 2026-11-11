@@ -14,6 +14,7 @@
  "path": "FrameworkComputer__ExpansionCards/Electrical/KiCad_templates/Expansion_Card_Retrofit/Expansion_Card_Retrofit.kicad_pcb",
  "project": "FrameworkComputer/ExpansionCards",
  "name": "Expansion_Card_Retrofit",
+ "license": "CC-BY-4.0 (Creative Commons Attribution 4.0)",
  "zip": "part16_of_17",
  "features": {
   "through_vias": 8,

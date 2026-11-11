@@ -2,6 +2,7 @@
  "name": "PowerDistributionUnit_Mk1",
  "project": "lhr-solar/ps-powerdistributionunit",
  "path": "lhr-solar__ps-powerdistributionunit/hardware/PowerDistributionUnit_Mk1/PowerDistributionUnit_Mk1.kicad_pcb",
+ "license": "No license found",
  "rank": 266,
  "complexity": {
   "grade": 440,

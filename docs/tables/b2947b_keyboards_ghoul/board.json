@@ -2,6 +2,7 @@
  "name": "ghoul",
  "project": "tzarc/keyboards",
  "path": "tzarc__keyboards/Ghoul/v1.0/ghoul.kicad_pcb",
+ "license": "CERN-OHL-S-2.0 (CERN Open Hardware Licence v2, Strongly Reciprocal)",
  "rank": 698,
  "complexity": {
   "grade": 326,

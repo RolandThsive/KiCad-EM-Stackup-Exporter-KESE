@@ -2,6 +2,7 @@
  "name": "ram-ddr5-1REV1",
  "project": "DangerousPrototypes/BusPirate5-hardware",
  "path": "DangerousPrototypes__BusPirate5-hardware/development/adapter-ram-ddr5-1REV1/ram-ddr5-1REV1.kicad_pcb",
+ "license": "MIT (MIT License)",
  "rank": 2299,
  "complexity": {
   "grade": 258,

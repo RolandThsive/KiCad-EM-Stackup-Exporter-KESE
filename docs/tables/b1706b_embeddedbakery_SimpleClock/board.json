@@ -2,6 +2,7 @@
  "name": "SimpleClock",
  "project": "mwwhited/embeddedbakery",
  "path": "mwwhited__embeddedbakery/circuits/SimpleClock/SimpleClock/SimpleClock.kicad_pcb",
+ "license": "MIT (MIT License), in LICENSE",
  "rank": 2787,
  "complexity": {
   "grade": 54,

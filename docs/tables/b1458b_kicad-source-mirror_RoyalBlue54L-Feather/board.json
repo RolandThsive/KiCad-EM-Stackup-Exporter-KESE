@@ -2,6 +2,7 @@
  "name": "RoyalBlue54L-Feather",
  "project": "KiCad/kicad-source-mirror",
  "path": "KiCad__kicad-source-mirror/demos/royalblue54L_feather/RoyalBlue54L-Feather.kicad_pcb",
+ "license": "GPL-3.0 (GNU GPL v3.0)",
  "rank": 1212,
  "complexity": {
   "grade": 500,

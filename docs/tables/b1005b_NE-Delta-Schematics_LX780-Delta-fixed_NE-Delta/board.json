@@ -2,6 +2,7 @@
  "name": "NE_Delta",
  "project": "frubem/NE_Delta_Schematics",
  "path": "frubem__NE_Delta_Schematics/LX780_Delta-fixed/NE_Delta.kicad_pcb",
+ "license": "No license found",
  "rank": 10,
  "complexity": {
   "grade": 422,

@@ -14,6 +14,7 @@
  "path": "andrewpaterson__658-Computer/Kicad/Pico/GPIO Address Decode/GPIO Address Decode.kicad_pcb",
  "project": "andrewpaterson/658-Computer",
  "name": "GPIO Address Decode",
+ "license": "No license found",
  "zip": "part15_of_17",
  "features": {
   "through_vias": 178,

@@ -2,6 +2,7 @@
  "name": "pocket-reform-keyboard-kailh-ortho",
  "project": "torlye/pocket-reform",
  "path": "torlye__pocket-reform/pocket-reform-keyboard-kailh-ortho/pocket-reform-keyboard-kailh-ortho.kicad_pcb",
+ "license": "CERN-OHL-S-2.0 (CERN Open Hardware Licence v2, Strongly Reciprocal), in LICENSE",
  "rank": 615,
  "complexity": {
   "grade": 360,

@@ -2,6 +2,7 @@
  "name": "Dragon32",
  "project": "jimbro1000/Dragon32Rev3",
  "path": "jimbro1000__Dragon32Rev3/Dragon32.kicad_pcb",
+ "license": "MIT (MIT License)",
  "rank": 330,
  "complexity": {
   "grade": 324,

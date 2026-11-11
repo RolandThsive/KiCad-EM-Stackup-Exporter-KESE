@@ -14,6 +14,7 @@
  "path": "Hanqaqa__Easyduino/STM32F103 Bluepill/Easyduino_STM32F103.kicad_pcb",
  "project": "Hanqaqa/Easyduino",
  "name": "Easyduino_STM32F103",
+ "license": "CERN-OHL-P-2.0 (CERN Open Hardware Licence v2, Permissive)",
  "zip": "part16_of_17",
  "features": {
   "through_vias": 150,

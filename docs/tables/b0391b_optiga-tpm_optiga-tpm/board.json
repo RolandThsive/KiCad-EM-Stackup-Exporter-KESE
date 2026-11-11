@@ -2,6 +2,7 @@
  "name": "optiga-tpm",
  "project": "antmicro/optiga-tpm",
  "path": "antmicro__optiga-tpm/optiga-tpm.kicad_pcb",
+ "license": "Apache-2.0 (Apache License 2.0)",
  "rank": 2349,
  "complexity": {
   "grade": 302,

@@ -14,6 +14,7 @@
  "path": "Board-Folk__CPC464-2MINI/Expansions/MINIRS232C/Kicad/CPC464-2MINIRS232C.kicad_pcb",
  "project": "Board-Folk/CPC464-2MINI",
  "name": "CPC464-2MINIRS232C",
+ "license": "No license found",
  "zip": "part15_of_17",
  "features": {
   "through_vias": 104,

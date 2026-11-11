@@ -2,6 +2,7 @@
  "name": "healthylink_gpio_v2",
  "project": "protocentral/protocentral_healthypi6_hardware",
  "path": "protocentral__protocentral_healthypi6_hardware/hardware/healthylink_gpio_v2/healthylink_gpio_v2.kicad_pcb",
+ "license": "CERN-OHL-P-2.0 (CERN Open Hardware Licence v2, Permissive)",
  "rank": 2251,
  "complexity": {
   "grade": 287,

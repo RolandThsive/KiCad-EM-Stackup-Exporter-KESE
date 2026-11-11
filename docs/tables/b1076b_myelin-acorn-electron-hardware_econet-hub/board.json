@@ -2,6 +2,7 @@
  "name": "econet_hub",
  "project": "google/myelin-acorn-electron-hardware",
  "path": "google__myelin-acorn-electron-hardware/econet_hub/pcb/econet_hub.kicad_pcb",
+ "license": "Apache-2.0 (Apache License 2.0)",
  "rank": 2407,
  "complexity": {
   "grade": 177,

@@ -2,6 +2,7 @@
  "name": "DockingStation",
  "project": "ahmadexp/Open-Source-PC110",
  "path": "ahmadexp__Open-Source-PC110/PCB/DockingStation/DockingStation.kicad_pcb",
+ "license": "CC-BY-NC-4.0 (Creative Commons Attribution-NonCommercial 4.0), in LICENSE",
  "rank": 582,
  "complexity": {
   "grade": 325,

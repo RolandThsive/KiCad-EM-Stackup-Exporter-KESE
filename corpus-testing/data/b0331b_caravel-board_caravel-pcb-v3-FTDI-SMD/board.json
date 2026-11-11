@@ -14,6 +14,7 @@
  "path": "antmicro__caravel_board/hardware/caravel_pcb_v3_FTDI/caravel_pcb_v3_FTDI_SMD.kicad_pcb",
  "project": "antmicro/caravel_board",
  "name": "caravel_pcb_v3_FTDI_SMD",
+ "license": "No license found",
  "zip": "part15_of_17",
  "features": {
   "through_vias": 131,

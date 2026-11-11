@@ -14,6 +14,7 @@
  "path": "rhaamo__kicad-amiga2000/amiga2000.kicad_pcb",
  "project": "rhaamo/kicad-amiga2000",
  "name": "amiga2000",
+ "license": "CC0-1.0 (Creative Commons Zero v1.0)",
  "zip": "part04_of_17",
  "features": {
   "through_vias": 999,

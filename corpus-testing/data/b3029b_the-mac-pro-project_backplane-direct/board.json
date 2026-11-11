@@ -14,6 +14,7 @@
  "path": "winkleplex10-bit__the-mac-pro-project/kicad/macpro62-backplane/backplane_direct.kicad_pcb",
  "project": "winkleplex10-bit/the-mac-pro-project",
  "name": "backplane_direct",
+ "license": "No license found",
  "zip": "part16_of_17",
  "features": {
   "through_vias": 0,

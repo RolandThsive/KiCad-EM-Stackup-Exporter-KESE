@@ -2,6 +2,7 @@
  "name": "iMX6_BareBones",
  "project": "a1wolfe/imx6-barebones",
  "path": "a1wolfe__imx6-barebones/Kicad/iMX6_BareBones.kicad_pcb",
+ "license": "No license found",
  "rank": 146,
  "complexity": {
   "grade": 449,

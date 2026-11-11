@@ -2,6 +2,7 @@
  "name": "EEZ DIB AUX-PS",
  "project": "eez-open/modular-psu",
  "path": "eez-open__modular-psu/aux-ps/EDA files/KiCad/EEZ DIB AUX-PS.kicad_pcb",
+ "license": "TAPR-OHL-1.0 (TAPR Open Hardware License), in LICENSE.TXT",
  "rank": 1538,
  "complexity": {
   "grade": 245,

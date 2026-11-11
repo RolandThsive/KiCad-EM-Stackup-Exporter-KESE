@@ -14,6 +14,7 @@
  "path": "antmicro__thunderbolt-gpu-adapter/thunderbolt-gpu-adapter.kicad_pcb",
  "project": "antmicro/thunderbolt-gpu-adapter",
  "name": "thunderbolt-gpu-adapter",
+ "license": "Apache-2.0 (Apache License 2.0)",
  "zip": "part10_of_17",
  "features": {
   "through_vias": 2184,

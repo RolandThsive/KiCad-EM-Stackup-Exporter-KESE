@@ -14,6 +14,7 @@
  "path": "OLIMEX__DIY-LAPTOP/HARDWARE/A64-TERES/TERES-PCB2-IO/Rev.B/TERES-PCB2-IO_Rev.B.kicad_pcb",
  "project": "OLIMEX/DIY-LAPTOP",
  "name": "TERES-PCB2-IO_Rev.B",
+ "license": "Apache-2.0 (Apache License 2.0)",
  "zip": "part16_of_17",
  "features": {
   "through_vias": 24,

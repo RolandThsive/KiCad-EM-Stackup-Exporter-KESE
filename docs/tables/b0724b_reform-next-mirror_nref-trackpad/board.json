@@ -2,6 +2,7 @@
  "name": "nref-trackpad",
  "project": "cetola/reform-next-mirror",
  "path": "cetola__reform-next-mirror/nref-trackpad/nref-trackpad.kicad_pcb",
+ "license": "As README.md states it: \"All hardware design work in this repository is © 2024 MNT Research GmbH, Berlin, Germany, and contributors (see Credits).\"",
  "rank": 2513,
  "complexity": {
   "grade": 243,

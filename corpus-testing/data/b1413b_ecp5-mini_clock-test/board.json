@@ -14,6 +14,7 @@
  "path": "joshajohnson__ecp5-mini/breakouts/clock-test-0.1/clock-test.kicad_pcb",
  "project": "joshajohnson/ecp5-mini",
  "name": "clock-test",
+ "license": "CERN-OHL-S-2.0 (CERN Open Hardware Licence v2, Strongly Reciprocal), in LICENSE",
  "zip": "part15_of_17",
  "features": {
   "through_vias": 99,

@@ -2,6 +2,7 @@
  "name": "BeagleConnect",
  "project": "beagleboard/beagleconnect",
  "path": "beagleboard__beagleconnect/hw/Leash/BeagleConnect.kicad_pcb",
+ "license": "No license found",
  "rank": 855,
  "complexity": {
   "grade": 353,

@@ -2,6 +2,7 @@
  "name": "remote_arming",
  "project": "waterloo-rocketry/canhw",
  "path": "waterloo-rocketry__canhw/remote_arming/remote_arming.kicad_pcb",
+ "license": "GPL-3.0 (GNU GPL v3.0)",
  "rank": 1759,
  "complexity": {
   "grade": 300,

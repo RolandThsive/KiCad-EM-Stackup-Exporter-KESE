@@ -14,6 +14,7 @@
  "path": "osrf__ovc/ovc0/hardware/HarleyTandem/HarleyTandem.kicad_pcb",
  "project": "osrf/ovc",
  "name": "HarleyTandem",
+ "license": "Apache-2.0 (Apache License 2.0)",
  "zip": "part10_of_17",
  "features": {
   "through_vias": 276,

@@ -2,6 +2,7 @@
  "name": "caravel-M.2-card-WCSP",
  "project": "chipfoundry/caravel_board",
  "path": "chipfoundry__caravel_board/hardware/breakout/caravel-M.2-card-WCSP/caravel-M.2-card-WCSP.kicad_pcb",
+ "license": "No license found",
  "rank": 1854,
  "complexity": {
   "grade": 309,

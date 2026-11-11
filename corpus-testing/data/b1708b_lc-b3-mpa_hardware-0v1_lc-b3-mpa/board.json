@@ -14,6 +14,7 @@
  "path": "myriadrf__lc-b3-mpa/hardware/0v1/lc-b3-mpa.kicad_pcb",
  "project": "myriadrf/lc-b3-mpa",
  "name": "lc-b3-mpa",
+ "license": "SHL-2.1 (Solderpad Hardware License v2.1), in LICENSE",
  "zip": "part16_of_17",
  "features": {
   "through_vias": 57,

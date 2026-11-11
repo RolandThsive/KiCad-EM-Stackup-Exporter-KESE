@@ -14,6 +14,7 @@
  "path": "CoolNamesAllTaken__adsbee/kicad/prototyping/panel_saw_eval_board/panel_saw_eval_board.kicad_pcb",
  "project": "CoolNamesAllTaken/adsbee",
  "name": "panel_saw_eval_board",
+ "license": "GPL-3.0 (GNU GPL v3.0), in LICENSE",
  "zip": "part16_of_17",
  "features": {
   "through_vias": 192,

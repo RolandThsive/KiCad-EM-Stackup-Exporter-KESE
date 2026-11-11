@@ -2,6 +2,7 @@
  "name": "mod-mpu9150",
  "project": "OLIMEX/MOD-MPU9150",
  "path": "OLIMEX__MOD-MPU9150/HARDWARE/MOD-MPU9150-Rev.A/mod-mpu9150.kicad_pcb",
+ "license": "Apache-2.0 (Apache License 2.0)",
  "rank": 2588,
  "complexity": {
   "grade": 163,

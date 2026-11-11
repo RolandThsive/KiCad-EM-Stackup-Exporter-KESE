@@ -2,6 +2,7 @@
  "name": "trl_line",
  "project": "loxodes/vna",
  "path": "loxodes__vna/hardware/archive/oshpark_4layer_trl_cal/trl_ustrip_test/trl_line.kicad_pcb",
+ "license": "As README.md states it: \"Unless otherwise noted, all work is under a MIT license.\"",
  "rank": 3050,
  "complexity": {
   "grade": 83,

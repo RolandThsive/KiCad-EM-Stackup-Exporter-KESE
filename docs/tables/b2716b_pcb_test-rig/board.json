@@ -2,6 +2,7 @@
  "name": "test-rig",
  "project": "sufst/pcb",
  "path": "sufst__pcb/archive/test-rig/test-rig.kicad_pcb",
+ "license": "GPL-3.0 (GNU GPL v3.0)",
  "rank": 2318,
  "complexity": {
   "grade": 264,

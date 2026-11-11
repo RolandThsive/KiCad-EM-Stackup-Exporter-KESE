@@ -2,6 +2,7 @@
  "name": "adc_amp_divider",
  "project": "rusefi/rusefi-hardware",
  "path": "rusefi__rusefi-hardware/classic-designs/adc_amp_divider/adc_amp_divider.kicad_pcb",
+ "license": "No license found",
  "rank": 1623,
  "complexity": {
   "grade": 215,

@@ -2,6 +2,7 @@
  "name": "FreeEEG32",
  "project": "neuroidss/freeeeg32",
  "path": "neuroidss__freeeeg32/KiCad/FreeEEG32.kicad_pcb",
+ "license": "AGPL-3.0 (GNU AGPL v3.0), in LICENSE",
  "rank": 459,
  "complexity": {
   "grade": 332,

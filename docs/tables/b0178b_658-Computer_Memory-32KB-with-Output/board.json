@@ -2,6 +2,7 @@
  "name": "Memory 32KB with Output",
  "project": "andrewpaterson/658-Computer",
  "path": "andrewpaterson__658-Computer/Kicad/Computer/Component Boards/Memory 32KB with Output/Memory 32KB with Output.kicad_pcb",
+ "license": "No license found",
  "rank": 2003,
  "complexity": {
   "grade": 220,

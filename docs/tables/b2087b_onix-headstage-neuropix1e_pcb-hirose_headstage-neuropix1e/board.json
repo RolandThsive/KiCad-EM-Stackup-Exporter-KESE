@@ -2,6 +2,7 @@
  "name": "headstage-neuropix1e",
  "project": "open-ephys/onix-headstage-neuropix1e",
  "path": "open-ephys__onix-headstage-neuropix1e/pcb-hirose/headstage-neuropix1e.kicad_pcb",
+ "license": "No license found",
  "rank": 1439,
  "complexity": {
   "grade": 360,

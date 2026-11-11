@@ -2,6 +2,7 @@
  "name": "lpddr5-testbed",
  "project": "antmicro/lpddr5-testbed",
  "path": "antmicro__lpddr5-testbed/lpddr5-testbed.kicad_pcb",
+ "license": "Apache-2.0 (Apache License 2.0)",
  "rank": 346,
  "complexity": {
   "grade": 417,

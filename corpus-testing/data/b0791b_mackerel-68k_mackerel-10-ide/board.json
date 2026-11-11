@@ -14,6 +14,7 @@
  "path": "crmaykish__mackerel-68k/hardware/mack-10-proto/mackerel-10-ide/mackerel-10-ide.kicad_pcb",
  "project": "crmaykish/mackerel-68k",
  "name": "mackerel-10-ide",
+ "license": "MIT (MIT License)",
  "zip": "part16_of_17",
  "features": {
   "through_vias": 0,

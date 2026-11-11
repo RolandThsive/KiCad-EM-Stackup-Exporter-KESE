@@ -14,6 +14,7 @@
  "path": "SukkoPera__LittleSixteen/LittleSixteen.kicad_pcb",
  "project": "SukkoPera/LittleSixteen",
  "name": "LittleSixteen",
+ "license": "A license in LICENSE.pdf; as README.md states it: \"The LittleSixteen documentation, including the design itself, is copyright © SukkoPera 2019-2025 and is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License.\"",
  "zip": "part10_of_17",
  "features": {
   "through_vias": 622,

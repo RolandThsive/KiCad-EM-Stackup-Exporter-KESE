@@ -2,6 +2,7 @@
  "name": "Easyduino_RP2040",
  "project": "Hanqaqa/Easyduino",
  "path": "Hanqaqa__Easyduino/Raspberry Pi Pico 2040/Easyduino_RP2040.kicad_pcb",
+ "license": "CERN-OHL-P-2.0 (CERN Open Hardware Licence v2, Permissive)",
  "rank": 1764,
  "complexity": {
   "grade": 325,

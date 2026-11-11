@@ -2,6 +2,7 @@
  "name": "AgonLight2-PROTO_Rev_A",
  "project": "OLIMEX/AgonLight2-Proto",
  "path": "OLIMEX__AgonLight2-Proto/HARDWARE/AgonLight2-PROTO_Rev_A/AgonLight2-PROTO_Rev_A.kicad_pcb",
+ "license": "GPL-3.0 (GNU GPL v3.0)",
  "rank": 2185,
  "complexity": {
   "grade": 224,

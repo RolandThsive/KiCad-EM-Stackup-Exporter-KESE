@@ -14,6 +14,7 @@
  "path": "issuiuc__iss-pcb/boards/MIDAS-MK1/MIDAS-MK1.1-revB/MIDAS-MK1.1.kicad_pcb",
  "project": "issuiuc/iss-pcb",
  "name": "MIDAS-MK1.1",
+ "license": "No license found",
  "zip": "part14_of_17",
  "features": {
   "through_vias": 279,

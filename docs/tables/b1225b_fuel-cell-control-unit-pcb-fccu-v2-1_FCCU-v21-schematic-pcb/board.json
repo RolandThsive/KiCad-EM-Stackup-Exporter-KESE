@@ -2,6 +2,7 @@
  "name": "FCCU-v21-schematic-pcb",
  "project": "hydrogreenpollub/fuel_cell_control_unit_pcb_fccu_v2_1",
  "path": "hydrogreenpollub__fuel_cell_control_unit_pcb_fccu_v2_1/FCCU-v21-schematic-pcb.kicad_pcb",
+ "license": "No license found",
  "rank": 463,
  "complexity": {
   "grade": 404,

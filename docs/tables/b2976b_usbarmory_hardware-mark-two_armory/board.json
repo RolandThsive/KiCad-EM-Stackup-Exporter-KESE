@@ -2,6 +2,7 @@
  "name": "armory",
  "project": "usbarmory/usbarmory",
  "path": "usbarmory__usbarmory/hardware/mark-two/armory.kicad_pcb",
+ "license": "CERN-OHL-1.2 (CERN Open Hardware Licence v1.2), in hardware/mark-one/LICENSE, hardware/mark-two-beta/LICENSE, hardware/mark-two-debug-accessory/LICENSE; CERN-OHL-S-2.0 (CERN Open Hardware Licence v2, Strongly Reciprocal), in hardware/mark-two-lan/LICENSE, hardware/mark-two/LICENSE",
  "rank": 83,
  "complexity": {
   "grade": 400,

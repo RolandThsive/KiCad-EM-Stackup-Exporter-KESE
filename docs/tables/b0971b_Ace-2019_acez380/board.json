@@ -2,6 +2,7 @@
  "name": "acez380",
  "project": "flypie/Ace-2019",
  "path": "flypie__Ace-2019/KiCad/ACEZ380/acez380.kicad_pcb",
+ "license": "GPL-3.0 (GNU GPL v3.0)",
  "rank": 2193,
  "complexity": {
   "grade": 134,

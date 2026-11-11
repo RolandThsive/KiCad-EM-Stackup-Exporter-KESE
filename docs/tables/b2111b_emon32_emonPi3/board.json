@@ -2,6 +2,7 @@
  "name": "emonPi3",
  "project": "openenergymonitor/emon32",
  "path": "openenergymonitor__emon32/pcb/emonpi3/emonPi3.kicad_pcb",
+ "license": "CC-BY-SA-4.0 (Creative Commons Attribution-ShareAlike 4.0)",
  "rank": 1148,
  "complexity": {
   "grade": 405,

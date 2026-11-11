@@ -2,6 +2,7 @@
  "name": "bms_core",
  "project": "olin-electric-motorsports/olin-electric-motorsports",
  "path": "olin-electric-motorsports__olin-electric-motorsports/vehicle/mkvi/hardware/bms/bms_core/bms_core.kicad_pcb",
+ "license": "No license found",
  "rank": 1815,
  "complexity": {
   "grade": 315,

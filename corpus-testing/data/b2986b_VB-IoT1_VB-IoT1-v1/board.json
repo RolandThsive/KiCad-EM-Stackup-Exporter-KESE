@@ -14,6 +14,7 @@
  "path": "venseytech__VB-IoT1/VB-IoT1_v1/VB-IoT1_v1.kicad_pcb",
  "project": "venseytech/VB-IoT1",
  "name": "VB-IoT1_v1",
+ "license": "CC-BY-SA-3.0 (Creative Commons Attribution-ShareAlike 3.0), in LICENSE",
  "zip": "part10_of_17",
  "features": {
   "through_vias": 533,

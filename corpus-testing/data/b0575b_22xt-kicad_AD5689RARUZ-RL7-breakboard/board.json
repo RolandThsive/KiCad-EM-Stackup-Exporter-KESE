@@ -14,6 +14,7 @@
  "path": "bluejayracing__22xt_kicad/01-main_board/AD5689RARUZ-RL7_breakboard/AD5689RARUZ-RL7_breakboard.kicad_pcb",
  "project": "bluejayracing/22xt_kicad",
  "name": "AD5689RARUZ-RL7_breakboard",
+ "license": "No license found",
  "zip": "part16_of_17",
  "features": {
   "through_vias": 24,

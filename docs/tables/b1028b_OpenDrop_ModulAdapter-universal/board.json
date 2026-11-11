@@ -2,6 +2,7 @@
  "name": "ModulAdapter_universal",
  "project": "GaudiLabs/OpenDrop",
  "path": "GaudiLabs__OpenDrop/OpenDropV4/Electronics/ModulAdapter_universal/PCB/ModulAdapter_universal.kicad_pcb",
+ "license": "GPL-3.0 (GNU GPL v3.0)",
  "rank": 751,
  "complexity": {
   "grade": 299,

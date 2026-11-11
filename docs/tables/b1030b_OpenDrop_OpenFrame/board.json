@@ -2,6 +2,7 @@
  "name": "OpenFrame",
  "project": "GaudiLabs/OpenDrop",
  "path": "GaudiLabs__OpenDrop/OpenDropV4/Electronics/OpenFrame/OpenFrame.kicad_pcb",
+ "license": "GPL-3.0 (GNU GPL v3.0)",
  "rank": 3067,
  "complexity": {
   "grade": 84,

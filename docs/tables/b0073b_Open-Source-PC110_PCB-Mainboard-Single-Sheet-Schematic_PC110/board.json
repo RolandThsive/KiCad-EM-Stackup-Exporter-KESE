@@ -2,6 +2,7 @@
  "name": "PC110",
  "project": "ahmadexp/Open-Source-PC110",
  "path": "ahmadexp__Open-Source-PC110/PCB/Mainboard/Single-Sheet-Schematic/PC110.kicad_pcb",
+ "license": "CC-BY-NC-4.0 (Creative Commons Attribution-NonCommercial 4.0), in LICENSE",
  "rank": 4,
  "complexity": {
   "grade": 563,

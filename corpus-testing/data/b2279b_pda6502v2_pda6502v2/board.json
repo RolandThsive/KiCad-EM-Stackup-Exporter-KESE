@@ -14,6 +14,7 @@
  "path": "pda__pda6502v2/kicad/pda6502v2.kicad_pcb",
  "project": "pda/pda6502v2",
  "name": "pda6502v2",
+ "license": "No license found",
  "zip": "part13_of_17",
  "features": {
   "through_vias": 321,

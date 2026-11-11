@@ -2,6 +2,7 @@
  "name": "gate_nor_2in",
  "project": "tmarhguy/alu",
  "path": "tmarhguy__alu/schematics/kicad/modules/gates/gate_nor/gate_nor_2in_1bit/gate_nor_2in.kicad_pcb",
+ "license": "MIT (MIT License)",
  "rank": 2945,
  "complexity": {
   "grade": 104,

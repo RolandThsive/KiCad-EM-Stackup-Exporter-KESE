@@ -2,6 +2,7 @@
  "name": "legacy_av_in",
  "project": "marqs85/ossc_pro_hw",
  "path": "marqs85__ossc_pro_hw/expansions/legacy_av_in/legacy_av_in.kicad_pcb",
+ "license": "CERN-OHL-P-2.0 (CERN Open Hardware Licence v2, Permissive)",
  "rank": 1032,
  "complexity": {
   "grade": 341,

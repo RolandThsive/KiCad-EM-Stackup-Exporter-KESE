@@ -2,6 +2,7 @@
  "name": "V1",
  "project": "ssmiao/intel-i210-network-card",
  "path": "ssmiao__intel-i210-network-card/PCBV3.0/reference/OCP2PCIe-master/OCP2PCIe-H-F-4/OCP2PCIe-H-F-4-V1.0Beta/V1.kicad_pcb",
+ "license": "MIT (MIT License)",
  "rank": 2135,
  "complexity": {
   "grade": 213,

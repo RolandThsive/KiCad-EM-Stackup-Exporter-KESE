@@ -2,6 +2,7 @@
  "name": "BAGEL-MK1",
  "project": "issuiuc/iss-pcb",
  "path": "issuiuc__iss-pcb/boards/BAGEL-MK1/BAGEL-MK1-revA/BAGEL-MK1.kicad_pcb",
+ "license": "No license found",
  "rank": 829,
  "complexity": {
   "grade": 402,

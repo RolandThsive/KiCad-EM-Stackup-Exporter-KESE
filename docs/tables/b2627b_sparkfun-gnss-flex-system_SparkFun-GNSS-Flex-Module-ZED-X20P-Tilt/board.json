@@ -2,6 +2,7 @@
  "name": "SparkFun_GNSS_Flex_Module_ZED-X20P_Tilt",
  "project": "sparkfun/sparkfun_gnss_flex_system",
  "path": "sparkfun__sparkfun_gnss_flex_system/flex_boards/SparkPNT_GNSS_Flex_Module_ZED-X20P-Tilt/hardware/SparkFun_GNSS_Flex_Module_ZED-X20P_Tilt.kicad_pcb",
+ "license": "MIT (MIT License), in LICENSE.md",
  "rank": 1924,
  "complexity": {
   "grade": 296,

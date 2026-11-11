@@ -2,6 +2,7 @@
  "name": "DuetEthernet",
  "project": "Duet3D/Duet-2-Hardware",
  "path": "Duet3D__Duet-2-Hardware/Duet2/EthernetModule/DuetEthernet.kicad_pcb",
+ "license": "CERN-OHL-1.2 (CERN Open Hardware Licence v1.2), in LICENSE",
  "rank": 1969,
  "complexity": {
   "grade": 246,

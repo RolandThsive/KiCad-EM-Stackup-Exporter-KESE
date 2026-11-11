@@ -14,6 +14,7 @@
  "path": "newaetech__sonata-pcb/sonata-one/sonata_kicad_project/SONATA-ONE.kicad_pcb",
  "project": "newaetech/sonata-pcb",
  "name": "SONATA-ONE",
+ "license": "Apache-2.0 (Apache License 2.0)",
  "zip": "part05_of_17",
  "features": {
   "through_vias": 2656,

@@ -2,6 +2,7 @@
  "name": "EEZ_BB3_CM4_R1B0",
  "project": "intergalaktik/bb3-cm4",
  "path": "intergalaktik__bb3-cm4/EEZ_BB3_CM4_R1B0/EEZ_BB3_CM4_R1B0.kicad_pcb",
+ "license": "CERN-OHL-S-2.0 (CERN Open Hardware Licence v2, Strongly Reciprocal), in LICENSE.md, EEZ_BB3_CM4_H7/LICENSE.md",
  "rank": 283,
  "complexity": {
   "grade": 376,

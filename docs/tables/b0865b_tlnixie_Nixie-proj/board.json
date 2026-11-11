@@ -2,6 +2,7 @@
  "name": "Nixie_proj",
  "project": "dm2lct/tlnixie",
  "path": "dm2lct__tlnixie/Nixie_proj.kicad_pcb",
+ "license": "GPL-3.0 (GNU GPL v3.0)",
  "rank": 1218,
  "complexity": {
   "grade": 300,

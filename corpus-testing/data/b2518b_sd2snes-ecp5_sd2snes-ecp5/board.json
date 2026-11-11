@@ -14,6 +14,7 @@
  "path": "samlittlewood__sd2snes_ecp5/sd2snes_ecp5.kicad_pcb",
  "project": "samlittlewood/sd2snes_ecp5",
  "name": "sd2snes_ecp5",
+ "license": "GPL-2.0 (GNU GPL v2.0)",
  "zip": "part10_of_17",
  "features": {
   "through_vias": 1021,

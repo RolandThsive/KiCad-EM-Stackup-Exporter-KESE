@@ -2,6 +2,7 @@
  "name": "HadesNT",
  "project": "pms67/HadesFCS",
  "path": "pms67__HadesFCS/Hardware/HadesNT/HadesNT.kicad_pcb",
+ "license": "BSD-3-Clause (BSD 3-Clause License)",
  "rank": 1170,
  "complexity": {
   "grade": 311,

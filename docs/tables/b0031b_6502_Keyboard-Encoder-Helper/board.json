@@ -2,6 +2,7 @@
  "name": "Keyboard Encoder Helper",
  "project": "acwright/6502",
  "path": "acwright__6502/Hardware/Keyboard Encoder Helper/Rev 1.0/Keyboard Encoder Helper.kicad_pcb",
+ "license": "CERN-OHL-P-2.0 (CERN Open Hardware Licence v2, Permissive), in LICENSE",
  "rank": 2023,
  "complexity": {
   "grade": 205,

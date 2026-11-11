@@ -2,6 +2,7 @@
  "name": "stimjim",
  "project": "open-ephys/stimjim",
  "path": "open-ephys__stimjim/PCB/stimjim.kicad_pcb",
+ "license": "No license found",
  "rank": 863,
  "complexity": {
   "grade": 359,

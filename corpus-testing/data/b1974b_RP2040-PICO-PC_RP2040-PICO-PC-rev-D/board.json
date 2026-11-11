@@ -14,6 +14,7 @@
  "path": "OLIMEX__RP2040-PICO-PC/HARDWARE/RP2040-PICO-PC hardware revision D/RP2040-PICO-PC_rev_D.kicad_pcb",
  "project": "OLIMEX/RP2040-PICO-PC",
  "name": "RP2040-PICO-PC_rev_D",
+ "license": "GPL-3.0 (GNU GPL v3.0)",
  "zip": "part15_of_17",
  "features": {
   "through_vias": 110,

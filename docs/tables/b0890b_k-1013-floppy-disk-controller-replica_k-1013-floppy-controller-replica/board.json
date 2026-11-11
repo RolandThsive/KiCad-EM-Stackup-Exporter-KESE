@@ -2,6 +2,7 @@
  "name": "k-1013-floppy-controller-replica",
  "project": "eduardocasino/k-1013-floppy-disk-controller-replica",
  "path": "eduardocasino__k-1013-floppy-disk-controller-replica/k-1013-floppy-controller-replica.kicad_pcb",
+ "license": "CC-BY-NC-4.0 (Creative Commons Attribution-NonCommercial 4.0), in LICENSE.md",
  "rank": 188,
  "complexity": {
   "grade": 380,

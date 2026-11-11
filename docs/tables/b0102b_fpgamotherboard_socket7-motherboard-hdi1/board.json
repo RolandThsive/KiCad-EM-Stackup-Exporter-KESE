@@ -2,6 +2,7 @@
  "name": "socket7-motherboard-hdi1",
  "project": "alphaonex86/fpgamotherboard",
  "path": "alphaonex86__fpgamotherboard/socket7/fpga-xc7a100t/hdi1/socket7-motherboard-hdi1.kicad_pcb",
+ "license": "GPL-3.0 (GNU GPL v3.0)",
  "rank": 123,
  "complexity": {
   "grade": 466,

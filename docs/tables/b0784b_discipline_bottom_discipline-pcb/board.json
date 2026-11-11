@@ -2,6 +2,7 @@
  "name": "discipline-pcb",
  "project": "coseyfannitutti/discipline",
  "path": "coseyfannitutti__discipline/bottom/discipline-pcb.kicad_pcb",
+ "license": "CC-BY-NC-4.0 (Creative Commons Attribution-NonCommercial 4.0), in LICENSE",
  "rank": 3095,
  "complexity": {
   "grade": 84,

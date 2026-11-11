@@ -2,6 +2,7 @@
  "name": "CYM1A113",
  "project": "trezor/trezor-hardware",
  "path": "trezor__trezor-hardware/electronics/trezor_model_t/kicad/CYM1A113.kicad_pcb",
+ "license": "AGPL-3.0 (GNU AGPL v3.0), in COPYING; CERN-OHL-S-2.0 (CERN Open Hardware Licence v2, Strongly Reciprocal), in LICENSE",
  "rank": 1284,
  "complexity": {
   "grade": 339,

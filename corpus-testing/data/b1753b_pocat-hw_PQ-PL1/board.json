@@ -14,6 +14,7 @@
  "path": "nanosatlab__pocat-hw/pq_pl1/PQ_PL1/PQ_PL1.kicad_pcb",
  "project": "nanosatlab/pocat-hw",
  "name": "PQ_PL1",
+ "license": "No license found",
  "zip": "part16_of_17",
  "features": {
   "through_vias": 0,

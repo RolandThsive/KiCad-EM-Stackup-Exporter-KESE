@@ -14,6 +14,7 @@
  "path": "rusefi__rusefi-hardware/classic-designs/rusefi_hardware_history/Stimulator_rev00.20/Stimulator.kicad_pcb",
  "project": "rusefi/rusefi-hardware",
  "name": "Stimulator",
+ "license": "No license found",
  "zip": "part16_of_17",
  "features": {
   "through_vias": 31,

@@ -2,6 +2,7 @@
  "name": "latching",
  "project": "sufst/pcb",
  "path": "sufst__pcb/archive/latching/latching.kicad_pcb",
+ "license": "GPL-3.0 (GNU GPL v3.0)",
  "rank": 2202,
  "complexity": {
   "grade": 257,

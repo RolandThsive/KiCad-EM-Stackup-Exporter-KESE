@@ -14,6 +14,7 @@
  "path": "rosco-m68k__rosco_m68k/design/r2030/kicad/rosco_m68k.kicad_pcb",
  "project": "rosco-m68k/rosco_m68k",
  "name": "rosco_m68k",
+ "license": "MIT (MIT License), in LICENSE",
  "zip": "part13_of_17",
  "features": {
   "through_vias": 109,

@@ -14,6 +14,7 @@
  "path": "olin-electric-motorsports__olin-electric-motorsports/projects/PCIe Development/x1_passthrough/pcie_x1_passthrough.kicad_pcb",
  "project": "olin-electric-motorsports/olin-electric-motorsports",
  "name": "pcie_x1_passthrough",
+ "license": "No license found",
  "zip": "part16_of_17",
  "features": {
   "through_vias": 0,

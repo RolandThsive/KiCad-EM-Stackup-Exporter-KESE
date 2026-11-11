@@ -14,6 +14,7 @@
  "path": "rootthecause__dcdc/extra/external-boards/GaNdapter/GaNdapter.kicad_pcb",
  "project": "rootthecause/dcdc",
  "name": "GaNdapter",
+ "license": "CERN-OHL-W-2.0 (CERN Open Hardware Licence v2, Weakly Reciprocal)",
  "zip": "part16_of_17",
  "features": {
   "through_vias": 0,

@@ -14,6 +14,7 @@
  "path": "mwwhited__embeddedbakery/circuits/Digital Tools/Digital Logic Board/Digital Logic Board.kicad_pcb",
  "project": "mwwhited/embeddedbakery",
  "name": "Digital Logic Board",
+ "license": "MIT (MIT License), in LICENSE",
  "zip": "part16_of_17",
  "features": {
   "through_vias": 16,

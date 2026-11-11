@@ -2,6 +2,7 @@
  "name": "LTT",
  "project": "waterloo-rocketry/canhw",
  "path": "waterloo-rocketry__canhw/live_telemetry/LTT/LTT.kicad_pcb",
+ "license": "GPL-3.0 (GNU GPL v3.0)",
  "rank": 899,
  "complexity": {
   "grade": 353,

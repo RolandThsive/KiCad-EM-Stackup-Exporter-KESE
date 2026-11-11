@@ -2,6 +2,7 @@
  "name": "battery",
  "project": "nzevh/barebones",
  "path": "nzevh__barebones/hardware/battery/battery.kicad_pcb",
+ "license": "CERN-OHL-S-2.0 (CERN Open Hardware Licence v2, Strongly Reciprocal)",
  "rank": 1853,
  "complexity": {
   "grade": 326,

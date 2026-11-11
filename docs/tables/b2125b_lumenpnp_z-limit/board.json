@@ -2,6 +2,7 @@
  "name": "z-limit",
  "project": "opulo-inc/lumenpnp",
  "path": "opulo-inc__lumenpnp/src/PCB/z-limit/z-limit.kicad_pcb",
+ "license": "In LICENSE: CERN-OHL-W-2.0 for the hardware designs, MPL-2.0 for the workflows, CC-BY-SA-4.0 for the KiCad libraries",
  "rank": 2912,
  "complexity": {
   "grade": 171,

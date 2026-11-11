@@ -14,6 +14,7 @@
  "path": "osrf__ovc/ovc3/hardware/ovc3a/ovc3a/backpack/backpack.kicad_pcb",
  "project": "osrf/ovc",
  "name": "backpack",
+ "license": "Apache-2.0 (Apache License 2.0)",
  "zip": "part15_of_17",
  "features": {
   "through_vias": 106,

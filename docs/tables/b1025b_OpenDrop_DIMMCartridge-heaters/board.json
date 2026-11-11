@@ -2,6 +2,7 @@
  "name": "DIMMCartridge_heaters",
  "project": "GaudiLabs/OpenDrop",
  "path": "GaudiLabs__OpenDrop/OpenDropV4/Electronics/DIMMCartridge_heaters/DIMMCartridge_heaters.kicad_pcb",
+ "license": "GPL-3.0 (GNU GPL v3.0)",
  "rank": 1249,
  "complexity": {
   "grade": 296,

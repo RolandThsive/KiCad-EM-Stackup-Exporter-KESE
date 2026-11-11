@@ -2,6 +2,7 @@
  "name": "socket7-motherboard",
  "project": "alphaonex86/fpgamotherboard",
  "path": "alphaonex86__fpgamotherboard/socket7/fpga-xc7a100t/routed/socket7-motherboard.kicad_pcb",
+ "license": "GPL-3.0 (GNU GPL v3.0)",
  "rank": 136,
  "complexity": {
   "grade": 418,

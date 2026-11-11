@@ -2,6 +2,7 @@
  "name": "gmsl-deserializer",
  "project": "antmicro/gmsl-deserializer",
  "path": "antmicro__gmsl-deserializer/gmsl-deserializer.kicad_pcb",
+ "license": "Apache-2.0 (Apache License 2.0)",
  "rank": 680,
  "complexity": {
   "grade": 420,

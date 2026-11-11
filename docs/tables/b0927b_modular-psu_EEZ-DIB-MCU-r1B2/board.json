@@ -2,6 +2,7 @@
  "name": "EEZ DIB MCU r1B2",
  "project": "eez-open/modular-psu",
  "path": "eez-open__modular-psu/previous designs/mcu/KiCad/EEZ DIB MCU r1B2.kicad_pcb",
+ "license": "TAPR-OHL-1.0 (TAPR Open Hardware License), in LICENSE.TXT",
  "rank": 198,
  "complexity": {
   "grade": 313,

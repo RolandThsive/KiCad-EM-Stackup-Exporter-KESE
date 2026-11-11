@@ -2,6 +2,7 @@
  "name": "Right_M2_Upstream",
  "project": "isarmg/pcie-switch-2",
  "path": "isarmg__pcie-switch-2/outputs/PCIe_3board_RevJ/Right_M2_Upstream/Right_M2_Upstream.kicad_pcb",
+ "license": "No license found",
  "rank": 1065,
  "complexity": {
   "grade": 342,

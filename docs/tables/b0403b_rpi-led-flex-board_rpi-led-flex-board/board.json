@@ -2,6 +2,7 @@
  "name": "rpi-led-flex-board",
  "project": "antmicro/rpi-led-flex-board",
  "path": "antmicro__rpi-led-flex-board/rpi-led-flex-board.kicad_pcb",
+ "license": "Apache-2.0 (Apache License 2.0)",
  "rank": 2216,
  "complexity": {
   "grade": 245,

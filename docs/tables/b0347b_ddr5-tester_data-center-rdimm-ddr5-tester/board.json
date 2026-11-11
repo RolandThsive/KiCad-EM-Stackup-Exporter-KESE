@@ -2,6 +2,7 @@
  "name": "data-center-rdimm-ddr5-tester",
  "project": "antmicro/ddr5-tester",
  "path": "antmicro__ddr5-tester/data-center-rdimm-ddr5-tester.kicad_pcb",
+ "license": "Apache-2.0 (Apache License 2.0), in LICENSE",
  "rank": 32,
  "complexity": {
   "grade": 560,

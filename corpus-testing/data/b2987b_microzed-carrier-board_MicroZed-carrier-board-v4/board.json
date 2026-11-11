@@ -14,6 +14,7 @@
  "path": "viktor-nikolov__microzed-carrier-board/KiCad_and_production_files/MicroZed_carrier_board_v4.kicad_pcb",
  "project": "viktor-nikolov/microzed-carrier-board",
  "name": "MicroZed_carrier_board_v4",
+ "license": "CC0-1.0 (Creative Commons Zero v1.0)",
  "zip": "part13_of_17",
  "features": {
   "through_vias": 296,

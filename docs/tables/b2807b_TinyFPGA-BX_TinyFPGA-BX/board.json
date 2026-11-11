@@ -2,6 +2,7 @@
  "name": "TinyFPGA-BX",
  "project": "tinyfpga/TinyFPGA-BX",
  "path": "tinyfpga__TinyFPGA-BX/board/TinyFPGA-BX.kicad_pcb",
+ "license": "CERN-OHL-1.2 (CERN Open Hardware Licence v1.2), in LICENSE",
  "rank": 1651,
  "complexity": {
   "grade": 223,

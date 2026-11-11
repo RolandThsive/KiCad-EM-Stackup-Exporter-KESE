@@ -14,6 +14,7 @@
  "path": "gralco__l5-schematic/CAD/PADS/librem5_mainboard/librem5_mainboard_kicad_conversion/librem5_mainboard.kicad_pcb",
  "project": "gralco/l5-schematic",
  "name": "librem5_mainboard",
+ "license": "GPL-3.0 (GNU GPL v3.0)",
  "zip": "part02_of_17",
  "features": {
   "through_vias": 10088,

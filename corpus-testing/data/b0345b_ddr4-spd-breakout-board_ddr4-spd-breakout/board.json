@@ -14,6 +14,7 @@
  "path": "antmicro__ddr4-spd-breakout-board/ddr4-spd-breakout.kicad_pcb",
  "project": "antmicro/ddr4-spd-breakout-board",
  "name": "ddr4-spd-breakout",
+ "license": "Apache-2.0 (Apache License 2.0)",
  "zip": "part14_of_17",
  "features": {
   "through_vias": 450,

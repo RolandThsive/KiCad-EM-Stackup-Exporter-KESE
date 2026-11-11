@@ -2,6 +2,7 @@
  "name": "tsal-led",
  "project": "sufst/pcb",
  "path": "sufst__pcb/tsal-led/tsal-led.kicad_pcb",
+ "license": "GPL-3.0 (GNU GPL v3.0)",
  "rank": 1643,
  "complexity": {
   "grade": 321,

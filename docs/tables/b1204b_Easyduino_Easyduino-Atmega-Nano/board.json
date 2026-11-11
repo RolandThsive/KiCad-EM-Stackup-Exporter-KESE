@@ -2,6 +2,7 @@
  "name": "Easyduino_Atmega_Nano",
  "project": "Hanqaqa/Easyduino",
  "path": "Hanqaqa__Easyduino/Atmega328p Arduino Nano/Easyduino_Atmega_Nano.kicad_pcb",
+ "license": "CERN-OHL-P-2.0 (CERN Open Hardware Licence v2, Permissive)",
  "rank": 2021,
  "complexity": {
   "grade": 304,

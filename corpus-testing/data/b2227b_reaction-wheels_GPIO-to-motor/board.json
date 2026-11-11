@@ -14,6 +14,7 @@
  "path": "oresat__reaction-wheels/Edison_GPIO_Motor_Board/GPIO to motor.kicad_pcb",
  "project": "oresat/reaction-wheels",
  "name": "GPIO to motor",
+ "license": "No license found",
  "zip": "part16_of_17",
  "features": {
   "through_vias": 85,

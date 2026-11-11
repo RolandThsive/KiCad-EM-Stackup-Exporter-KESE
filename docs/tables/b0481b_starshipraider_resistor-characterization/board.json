@@ -2,6 +2,7 @@
  "name": "resistor-characterization",
  "project": "azonenberg/starshipraider",
  "path": "azonenberg__starshipraider/boards/probes/resistor-characterization/resistor-characterization.kicad_pcb",
+ "license": "BSD-3-Clause (BSD 3-Clause License)",
  "rank": 2674,
  "complexity": {
   "grade": 229,

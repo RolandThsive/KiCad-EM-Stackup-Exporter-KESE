@@ -2,6 +2,7 @@
  "name": "PicoGUS Hand386",
  "project": "polpo/picogus",
  "path": "polpo__picogus/hw-hand386/PicoGUS Hand386.kicad_pcb",
+ "license": "CERN-OHL-P-2.0 (CERN Open Hardware Licence v2, Permissive), in hw-chipdown/LICENSE, hw-hand386/LICENSE, hw/LICENSE",
  "rank": 1263,
  "complexity": {
   "grade": 333,

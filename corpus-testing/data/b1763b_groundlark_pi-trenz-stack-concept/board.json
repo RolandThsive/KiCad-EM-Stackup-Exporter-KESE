@@ -14,6 +14,7 @@
  "path": "naturalhazardscience__groundlark/hw/groundlark-fpga-hat/boards/groundlark-daqhat-01/pi-trenz-stack-concept.kicad_pcb",
  "project": "naturalhazardscience/groundlark",
  "name": "pi-trenz-stack-concept",
+ "license": "MIT (MIT License)",
  "zip": "part06_of_17",
  "features": {
   "through_vias": 1490,

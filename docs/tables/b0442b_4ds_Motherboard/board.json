@@ -2,6 +2,7 @@
  "name": "Motherboard",
  "project": "astronuat21/4ds",
  "path": "astronuat21__4ds/Motherboard/Motherboard.kicad_pcb",
+ "license": "AGPL-3.0 (GNU AGPL v3.0)",
  "rank": 387,
  "complexity": {
   "grade": 435,

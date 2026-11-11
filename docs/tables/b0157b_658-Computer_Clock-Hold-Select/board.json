@@ -2,6 +2,7 @@
  "name": "Clock Hold Select",
  "project": "andrewpaterson/658-Computer",
  "path": "andrewpaterson__658-Computer/Kicad/Computer/Component Boards/Clock Hold Select/Clock Hold Select.kicad_pcb",
+ "license": "No license found",
  "rank": 1801,
  "complexity": {
   "grade": 233,

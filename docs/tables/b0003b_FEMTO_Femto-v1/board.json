@@ -2,6 +2,7 @@
  "name": "Femto_v1",
  "project": "32bitmicro/FEMTO",
  "path": "32bitmicro__FEMTO/source_files/Kicad/Module/Femto_v1.kicad_pcb",
+ "license": "A license in LICENSE.pdf; as readme.md states it: \"Project published as Open Source Hardware (OSHW) under CERN OHL v1.2 (Open Hardware Licence). Screenshot Project has been certified as Open Source Hardware by the Open Source Hardware Association (OSHWA). UID is: PL000009 Screenshot https://certification.oshwa.org/pl000009.html\"",
  "rank": 1871,
  "complexity": {
   "grade": 311,

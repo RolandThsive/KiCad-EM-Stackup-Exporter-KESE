@@ -2,6 +2,7 @@
  "name": "goblin",
  "project": "kelu124/echomods",
  "path": "kelu124__echomods/goblin/source/Kicad/goblin.kicad_pcb",
+ "license": "TAPR-OHL-1.0 (TAPR Open Hardware License), in LICENSE.txt, goblin/LICENSE.txt, retired/tobo/LICENSE.txt",
  "rank": 2086,
  "complexity": {
   "grade": 198,

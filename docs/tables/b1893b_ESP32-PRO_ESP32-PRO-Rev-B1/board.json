@@ -2,6 +2,7 @@
  "name": "ESP32-PRO_Rev_B1",
  "project": "OLIMEX/ESP32-PRO",
  "path": "OLIMEX__ESP32-PRO/HARDWARE/REV-B1/ESP32-PRO_Rev_B1.kicad_pcb",
+ "license": "Apache-2.0 (Apache License 2.0)",
  "rank": 551,
  "complexity": {
   "grade": 308,

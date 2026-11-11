@@ -14,6 +14,7 @@
  "path": "sqfmi__watchy-hardware/Watchy.kicad_pcb",
  "project": "sqfmi/watchy-hardware",
  "name": "Watchy",
+ "license": "MIT (MIT License)",
  "zip": "part15_of_17",
  "features": {
   "through_vias": 108,

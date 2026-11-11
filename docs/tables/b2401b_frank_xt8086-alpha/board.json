@@ -2,6 +2,7 @@
  "name": "xt8086_alpha",
  "project": "rh1tech/frank",
  "path": "rh1tech__frank/hardware/xt8086_alpha/xt8086_alpha.kicad_pcb",
+ "license": "GPL-3.0 (GNU GPL v3.0)",
  "rank": 1352,
  "complexity": {
   "grade": 309,

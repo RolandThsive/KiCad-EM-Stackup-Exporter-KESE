@@ -2,6 +2,7 @@
  "name": "TERES-PCB2-IO_Rev.B",
  "project": "OLIMEX/DIY-LAPTOP",
  "path": "OLIMEX__DIY-LAPTOP/HARDWARE/A64-TERES/TERES-PCB2-IO/Rev.B/TERES-PCB2-IO_Rev.B.kicad_pcb",
+ "license": "Apache-2.0 (Apache License 2.0)",
  "rank": 2223,
  "complexity": {
   "grade": 194,

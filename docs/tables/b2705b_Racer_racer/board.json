@@ -2,6 +2,7 @@
  "name": "racer",
  "project": "StuckAtPrototype/Racer",
  "path": "StuckAtPrototype__Racer/hardware/racer/racer.kicad_pcb",
+ "license": "Apache-2.0 (Apache License 2.0)",
  "rank": 1744,
  "complexity": {
   "grade": 325,

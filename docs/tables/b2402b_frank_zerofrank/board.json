@@ -2,6 +2,7 @@
  "name": "zerofrank",
  "project": "rh1tech/frank",
  "path": "rh1tech__frank/hardware/zerofrank/zerofrank.kicad_pcb",
+ "license": "GPL-3.0 (GNU GPL v3.0)",
  "rank": 1563,
  "complexity": {
   "grade": 371,

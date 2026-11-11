@@ -14,6 +14,7 @@
  "path": "gitRaksha__esp32-4layer-iot-board/ESP32 Demo Project.kicad_pcb",
  "project": "gitRaksha/esp32-4layer-iot-board",
  "name": "ESP32 Demo Project",
+ "license": "MIT (MIT License)",
  "zip": "part15_of_17",
  "features": {
   "through_vias": 246,

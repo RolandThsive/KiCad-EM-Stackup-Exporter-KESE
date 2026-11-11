@@ -2,6 +2,7 @@
  "name": "sensor_board_outline",
  "project": "BerkeleyLab/DxP-sensor-probes",
  "path": "BerkeleyLab__DxP-sensor-probes/sensor_board_outline/sensor_board_outline.kicad_pcb",
+ "license": "CC-BY-NC-4.0 (Creative Commons Attribution-NonCommercial 4.0), in LICENSE.md",
  "rank": 3062,
  "complexity": {
   "grade": 188,

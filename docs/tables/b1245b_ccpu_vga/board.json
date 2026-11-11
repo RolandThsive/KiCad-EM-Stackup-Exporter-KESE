@@ -2,6 +2,7 @@
  "name": "vga",
  "project": "imihajlow/ccpu",
  "path": "imihajlow__ccpu/boards/vga/vga.kicad_pcb",
+ "license": "GPL-3.0 (GNU GPL v3.0), in LICENSE.GPL; TAPR-OHL-1.0 (TAPR Open Hardware License), in LICENSE.txt",
  "rank": 490,
  "complexity": {
   "grade": 300,

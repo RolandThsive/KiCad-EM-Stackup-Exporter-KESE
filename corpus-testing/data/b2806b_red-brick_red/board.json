@@ -14,6 +14,7 @@
  "path": "Tinkerforge__red-brick/hardware/red.kicad_pcb",
  "project": "Tinkerforge/red-brick",
  "name": "red",
+ "license": "CERN-OHL-1.1 (CERN Open Hardware Licence v1.1), in hardware/LICENSE.txt",
  "zip": "part09_of_17",
  "features": {
   "through_vias": 754,

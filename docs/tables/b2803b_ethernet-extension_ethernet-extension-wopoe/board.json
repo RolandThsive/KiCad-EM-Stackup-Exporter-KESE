@@ -2,6 +2,7 @@
  "name": "ethernet-extension-wopoe",
  "project": "Tinkerforge/ethernet-extension",
  "path": "Tinkerforge__ethernet-extension/hardware/wo_poe/ethernet-extension-wopoe.kicad_pcb",
+ "license": "No license found",
  "rank": 1244,
  "complexity": {
   "grade": 268,

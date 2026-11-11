@@ -14,6 +14,7 @@
  "path": "sparkfun__sparkfun_gnss_flex_system/flex_boards/SparkPNT_GNSS_Flex_Module_DAN-F10N/hardware/SparkFun_GNSS_Flex_Module_DAN-F10N.kicad_pcb",
  "project": "sparkfun/sparkfun_gnss_flex_system",
  "name": "SparkFun_GNSS_Flex_Module_DAN-F10N",
+ "license": "MIT (MIT License), in LICENSE.md",
  "zip": "part16_of_17",
  "features": {
   "through_vias": 274,

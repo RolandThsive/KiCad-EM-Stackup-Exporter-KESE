@@ -14,6 +14,7 @@
  "path": "terrapin-rocket-team__srad-avionics/Spaceport/PCBs/ARCH/ARCH.kicad_pcb",
  "project": "terrapin-rocket-team/srad-avionics",
  "name": "ARCH",
+ "license": "No license found",
  "zip": "part16_of_17",
  "features": {
   "through_vias": 180,

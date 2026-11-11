@@ -2,6 +2,7 @@
  "name": "frank_next",
  "project": "rh1tech/frank",
  "path": "rh1tech__frank/hardware/frank_next/frank_next.kicad_pcb",
+ "license": "GPL-3.0 (GNU GPL v3.0)",
  "rank": 578,
  "complexity": {
   "grade": 415,

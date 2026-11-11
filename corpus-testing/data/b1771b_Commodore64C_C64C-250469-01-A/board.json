@@ -14,6 +14,7 @@
  "path": "NeedfulThings__Commodore64C/250469-RevA/C64C-250469-01-A.kicad_pcb",
  "project": "NeedfulThings/Commodore64C",
  "name": "C64C-250469-01-A",
+ "license": "CERN-OHL-S-2.0 (CERN Open Hardware Licence v2, Strongly Reciprocal), in LICENSE.txt",
  "zip": "part13_of_17",
  "features": {
   "through_vias": 241,

@@ -2,6 +2,7 @@
  "name": "Speeduino_base",
  "project": "tjeerdie/spectre",
  "path": "tjeerdie__spectre/SPECTRE_V0.5.1/Speeduino_base.kicad_pcb",
+ "license": "GPL-3.0 (GNU GPL v3.0)",
  "rank": 676,
  "complexity": {
   "grade": 264,

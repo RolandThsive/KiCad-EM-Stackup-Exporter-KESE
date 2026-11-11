@@ -2,6 +2,7 @@
  "name": "24pins_In_3conn",
  "project": "rusefi/rusefi-hardware",
  "path": "rusefi__rusefi-hardware/breakout-boards/Breakout-24pin/24pins_In_3conn.kicad_pcb",
+ "license": "No license found",
  "rank": 2780,
  "complexity": {
   "grade": 157,

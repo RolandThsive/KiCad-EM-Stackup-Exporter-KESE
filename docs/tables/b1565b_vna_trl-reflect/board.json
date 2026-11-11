@@ -2,6 +2,7 @@
  "name": "trl_reflect",
  "project": "loxodes/vna",
  "path": "loxodes__vna/hardware/archive/oshpark_4layer_trl_cal/trl_reflect/trl_reflect.kicad_pcb",
+ "license": "As README.md states it: \"Unless otherwise noted, all work is under a MIT license.\"",
  "rank": 3108,
  "complexity": {
   "grade": 84,

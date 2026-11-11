@@ -14,6 +14,7 @@
  "path": "epsilon0-dev__raven1106/pcb/v1.1/rv1106.kicad_pcb",
  "project": "epsilon0-dev/raven1106",
  "name": "rv1106",
+ "license": "No license found",
  "zip": "part13_of_17",
  "features": {
   "through_vias": 830,

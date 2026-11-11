@@ -2,6 +2,7 @@
  "name": "ssu",
  "project": "machdyne/ferrit",
  "path": "machdyne__ferrit/hw/ferrit-16/ssu.kicad_pcb",
+ "license": "The Lone Dynamics Open License, in LICENSE.md: \"Redistribution and use in source, binary or physical forms, with or without modification, is permitted\", provided redistributed source keeps the copyright notice; the README names its exceptions",
  "rank": 1470,
  "complexity": {
   "grade": 306,

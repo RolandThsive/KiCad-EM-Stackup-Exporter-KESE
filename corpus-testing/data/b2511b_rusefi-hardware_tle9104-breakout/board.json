@@ -14,6 +14,7 @@
  "path": "rusefi__rusefi-hardware/tle9104-breakout/tle9104-breakout.kicad_pcb",
  "project": "rusefi/rusefi-hardware",
  "name": "tle9104-breakout",
+ "license": "No license found",
  "zip": "part16_of_17",
  "features": {
   "through_vias": 86,

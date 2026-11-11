@@ -14,6 +14,7 @@
  "path": "joshajohnson__ecp5-mini/breakouts/quad-pmod-0.1/quad-pmod.kicad_pcb",
  "project": "joshajohnson/ecp5-mini",
  "name": "quad-pmod",
+ "license": "CERN-OHL-S-2.0 (CERN Open Hardware Licence v2, Strongly Reciprocal), in LICENSE",
  "zip": "part16_of_17",
  "features": {
   "through_vias": 0,

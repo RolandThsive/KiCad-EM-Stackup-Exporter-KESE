@@ -2,6 +2,7 @@
  "name": "Interposer_Board_IOCrest",
  "project": "EEVengers/ThunderScope",
  "path": "EEVengers__ThunderScope/Hardware/Interposer_Board_IOCrest/Interposer_Board_IOCrest.kicad_pcb",
+ "license": "MIT (MIT License)",
  "rank": 940,
  "complexity": {
   "grade": 282,

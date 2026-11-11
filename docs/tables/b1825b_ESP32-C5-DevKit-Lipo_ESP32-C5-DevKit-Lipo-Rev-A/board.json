@@ -2,6 +2,7 @@
  "name": "ESP32-C5-DevKit-Lipo_Rev_A",
  "project": "OLIMEX/ESP32-C5-DevKit-Lipo",
  "path": "OLIMEX__ESP32-C5-DevKit-Lipo/HARDWARE/ESP32-C5-DevKit-Lipo-Rev.A/ESP32-C5-DevKit-Lipo_Rev_A.kicad_pcb",
+ "license": "MIT (MIT License)",
  "rank": 973,
  "complexity": {
   "grade": 296,

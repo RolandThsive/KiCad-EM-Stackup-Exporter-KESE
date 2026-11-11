@@ -2,6 +2,7 @@
  "name": "pref-display-back-d5-gold",
  "project": "torlye/pocket-reform",
  "path": "torlye__pocket-reform/case-plate-pcbs/pref-display-back-d5-gold.kicad_pcb",
+ "license": "CERN-OHL-S-2.0 (CERN Open Hardware Licence v2, Strongly Reciprocal), in LICENSE",
  "rank": 3129,
  "complexity": {
   "grade": 37,

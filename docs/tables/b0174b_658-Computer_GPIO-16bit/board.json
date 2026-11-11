@@ -2,6 +2,7 @@
  "name": "GPIO 16bit",
  "project": "andrewpaterson/658-Computer",
  "path": "andrewpaterson__658-Computer/Kicad/Computer/Component Boards/GPIO 16bit/GPIO 16bit.kicad_pcb",
+ "license": "No license found",
  "rank": 890,
  "complexity": {
   "grade": 268,

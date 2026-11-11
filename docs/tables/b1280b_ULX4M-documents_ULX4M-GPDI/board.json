@@ -2,6 +2,7 @@
  "name": "ULX4M_GPDI",
  "project": "intergalaktik/ULX4M_documents",
  "path": "intergalaktik__ULX4M_documents/ULX4M_test/ULX4M_GPDI.kicad_pcb",
+ "license": "GPL-3.0 (GNU GPL v3.0)",
  "rank": 1600,
  "complexity": {
   "grade": 240,

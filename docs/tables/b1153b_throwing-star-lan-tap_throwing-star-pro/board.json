@@ -2,6 +2,7 @@
  "name": "throwing-star-pro",
  "project": "greatscottgadgets/throwing-star-lan-tap",
  "path": "greatscottgadgets__throwing-star-lan-tap/throwing-star-pro.kicad_pcb",
+ "license": "CERN-OHL-P-2.0 (CERN Open Hardware Licence v2, Permissive), in LICENSE",
  "rank": 2750,
  "complexity": {
   "grade": 152,

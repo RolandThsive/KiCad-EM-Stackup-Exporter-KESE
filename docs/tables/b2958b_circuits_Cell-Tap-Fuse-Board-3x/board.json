@@ -2,6 +2,7 @@
  "name": "Cell Tap Fuse Board 3x",
  "project": "ucdfs/circuits",
  "path": "ucdfs__circuits/Kieran Care package/ENNOID_BMS - Cell Tap Fuse Board 3x/Cell Tap Fuse Board 3x.kicad_pcb",
+ "license": "No license found",
  "rank": 2971,
  "complexity": {
   "grade": 131,

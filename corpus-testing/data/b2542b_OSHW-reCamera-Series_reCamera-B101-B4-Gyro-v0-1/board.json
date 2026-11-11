@@ -14,6 +14,7 @@
  "path": "Seeed-Studio__OSHW-reCamera-Series/hardware/recamera-2002/base/b401-can/PCB/B4_v0.1/reCamera B101_B4_Gyro v0.1.kicad_pcb",
  "project": "Seeed-Studio/OSHW-reCamera-Series",
  "name": "reCamera B101_B4_Gyro v0.1",
+ "license": "Apache-2.0 (Apache License 2.0)",
  "zip": "part16_of_17",
  "features": {
   "through_vias": 190,

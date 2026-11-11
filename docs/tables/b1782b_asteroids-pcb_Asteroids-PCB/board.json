@@ -2,6 +2,7 @@
  "name": "Asteroids_PCB",
  "project": "nmikstas/asteroids-pcb",
  "path": "nmikstas__asteroids-pcb/Asteroids_PCB/Asteroids_PCB.kicad_pcb",
+ "license": "No license found",
  "rank": 196,
  "complexity": {
   "grade": 286,

@@ -2,6 +2,7 @@
  "name": "main",
  "project": "snippyrow/-816-board",
  "path": "snippyrow__-816-board/EXP/RAM_SCH/main.kicad_pcb",
+ "license": "MIT (MIT License)",
  "rank": 1704,
  "complexity": {
   "grade": 217,

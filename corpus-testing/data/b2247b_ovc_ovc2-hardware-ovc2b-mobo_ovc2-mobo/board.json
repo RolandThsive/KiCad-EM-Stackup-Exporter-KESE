@@ -14,6 +14,7 @@
  "path": "osrf__ovc/ovc2/hardware/ovc2b/mobo/ovc2_mobo.kicad_pcb",
  "project": "osrf/ovc",
  "name": "ovc2_mobo",
+ "license": "Apache-2.0 (Apache License 2.0)",
  "zip": "part11_of_17",
  "features": {
   "through_vias": 442,

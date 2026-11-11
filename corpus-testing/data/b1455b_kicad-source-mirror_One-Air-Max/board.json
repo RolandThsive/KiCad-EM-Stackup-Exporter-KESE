@@ -14,6 +14,7 @@
  "path": "KiCad__kicad-source-mirror/demos/openair-max/One-Air-Max.kicad_pcb",
  "project": "KiCad/kicad-source-mirror",
  "name": "One-Air-Max",
+ "license": "GPL-3.0 (GNU GPL v3.0)",
  "zip": "part13_of_17",
  "features": {
   "through_vias": 820,

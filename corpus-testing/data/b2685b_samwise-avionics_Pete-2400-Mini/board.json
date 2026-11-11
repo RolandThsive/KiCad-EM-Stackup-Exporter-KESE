@@ -14,6 +14,7 @@
  "path": "stanford-ssi__samwise-avionics/unused_boards/Pete_2400_Mini/Pete_2400_Mini.kicad_pcb",
  "project": "stanford-ssi/samwise-avionics",
  "name": "Pete_2400_Mini",
+ "license": "No license found",
  "zip": "part16_of_17",
  "features": {
   "through_vias": 70,

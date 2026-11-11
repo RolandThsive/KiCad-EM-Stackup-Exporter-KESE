@@ -2,6 +2,7 @@
  "name": "laptop_kbrd",
  "project": "dileepvr/novenaX_kicad",
  "path": "dileepvr__novenaX_kicad/laptop_kbrd.kicad_pcb",
+ "license": "CERN-OHL-1.2 (CERN Open Hardware Licence v1.2), in LICENSE.txt",
  "rank": 535,
  "complexity": {
   "grade": 288,

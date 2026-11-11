@@ -2,6 +2,7 @@
  "name": "mch2022",
  "project": "badgeteam/mch2022-badge-hardware",
  "path": "badgeteam__mch2022-badge-hardware/mch2022.kicad_pcb",
+ "license": "CERN-OHL-P-2.0 (CERN Open Hardware Licence v2, Permissive), in LICENSE",
  "rank": 504,
  "complexity": {
   "grade": 379,

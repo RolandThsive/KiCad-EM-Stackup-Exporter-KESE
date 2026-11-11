@@ -14,6 +14,7 @@
  "path": "antmicro__com-express-7-baseboard/com-express-7-baseboard.kicad_pcb",
  "project": "antmicro/com-express-7-baseboard",
  "name": "com-express-7-baseboard",
+ "license": "Apache-2.0 (Apache License 2.0)",
  "zip": "part04_of_17",
  "features": {
   "through_vias": 5730,

@@ -2,6 +2,7 @@
  "name": "Eth8019",
  "project": "ddraig68k/hardware",
  "path": "ddraig68k__hardware/expansion/Eth8019/Eth8019.kicad_pcb",
+ "license": "MIT (MIT License)",
  "rank": 1617,
  "complexity": {
   "grade": 290,

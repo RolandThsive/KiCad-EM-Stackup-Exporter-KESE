@@ -14,6 +14,7 @@
  "path": "open-ephys__onix-fmc-host/mechanical/pcie-bracket-metal/bracket-led-pcb/bracket-led.kicad_pcb",
  "project": "open-ephys/onix-fmc-host",
  "name": "bracket-led",
+ "license": "CC-BY-NC-SA-4.0 (Creative Commons Attribution-NonCommercial-ShareAlike 4.0), in LICENSE.md",
  "zip": "part14_of_17",
  "features": {
   "through_vias": 336,

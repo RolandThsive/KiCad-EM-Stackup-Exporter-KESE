@@ -2,6 +2,7 @@
  "name": "8bit-computer",
  "project": "vascofazza/8bit-cpu",
  "path": "vascofazza__8bit-cpu/MK1_CPU/8bit-computer/8bit-computer.kicad_pcb",
+ "license": "MIT (MIT License)",
  "rank": 163,
  "complexity": {
   "grade": 387,

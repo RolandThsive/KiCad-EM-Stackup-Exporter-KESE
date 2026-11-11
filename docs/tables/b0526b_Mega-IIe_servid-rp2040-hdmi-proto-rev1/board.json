@@ -2,6 +2,7 @@
  "name": "servid-rp2040-hdmi proto rev1",
  "project": "baldengineer/Mega-IIe",
  "path": "baldengineer__Mega-IIe/kicad files/servid-rp2040-hdmi proto rev1/servid-rp2040-hdmi proto rev1.kicad_pcb",
+ "license": "MIT (MIT License)",
  "rank": 1280,
  "complexity": {
   "grade": 339,

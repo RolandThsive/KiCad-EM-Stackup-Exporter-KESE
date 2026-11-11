@@ -2,6 +2,7 @@
  "name": "gd power supply board pcb",
  "project": "baldengineer/Mega-IIe",
  "path": "baldengineer__Mega-IIe/kicad files/gd power supply board pcb/gd power supply board pcb.kicad_pcb",
+ "license": "MIT (MIT License)",
  "rank": 1534,
  "complexity": {
   "grade": 353,

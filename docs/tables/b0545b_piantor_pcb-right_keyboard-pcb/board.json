@@ -2,6 +2,7 @@
  "name": "keyboard_pcb",
  "project": "beekeeb/piantor",
  "path": "beekeeb__piantor/pcb/right/keyboard_pcb.kicad_pcb",
+ "license": "GPL-3.0 (GNU GPL v3.0)",
  "rank": 2403,
  "complexity": {
   "grade": 250,

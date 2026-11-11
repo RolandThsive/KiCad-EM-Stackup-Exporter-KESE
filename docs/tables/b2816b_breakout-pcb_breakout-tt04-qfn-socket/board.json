@@ -2,6 +2,7 @@
  "name": "breakout-tt04-qfn-socket",
  "project": "TinyTapeout/breakout-pcb",
  "path": "TinyTapeout__breakout-pcb/breakout-tt04-qfn-socket/breakout-tt04-qfn-socket.kicad_pcb",
+ "license": "Apache-2.0 (Apache License 2.0)",
  "rank": 1589,
  "complexity": {
   "grade": 316,

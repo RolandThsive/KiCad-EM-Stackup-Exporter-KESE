@@ -2,6 +2,7 @@
  "name": "GDI-STM",
  "project": "rusefi/rusefi-hardware",
  "path": "rusefi__rusefi-hardware/GDI-STM/GDI-STM.kicad_pcb",
+ "license": "No license found",
  "rank": 539,
  "complexity": {
   "grade": 357,

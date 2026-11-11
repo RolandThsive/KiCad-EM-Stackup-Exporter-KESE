@@ -14,6 +14,7 @@
  "path": "baldengineer__Mega-IIe/kicad files/gd rp2040 keyboard proto pcb/kicad/gd rp2040 keyboard proto pcb.kicad_pcb",
  "project": "baldengineer/Mega-IIe",
  "name": "gd rp2040 keyboard proto pcb",
+ "license": "MIT (MIT License)",
  "zip": "part15_of_17",
  "features": {
   "through_vias": 113,

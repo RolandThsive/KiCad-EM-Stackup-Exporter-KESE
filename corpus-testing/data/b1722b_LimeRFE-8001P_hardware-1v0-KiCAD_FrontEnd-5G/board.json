@@ -14,6 +14,7 @@
  "path": "myriadrf__LimeRFE-8001P/hardware/1v0/KiCAD/FrontEnd_5G.kicad_pcb",
  "project": "myriadrf/LimeRFE-8001P",
  "name": "FrontEnd_5G",
+ "license": "SHL-2.1 (Solderpad Hardware License v2.1), in hardware/LICENSE",
  "zip": "part02_of_17",
  "features": {
   "through_vias": 891,

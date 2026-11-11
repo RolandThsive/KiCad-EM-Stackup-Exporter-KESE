@@ -2,6 +2,7 @@
  "name": "zx2_backplane",
  "project": "krzys9876/ZX_Spectrum_diy",
  "path": "krzys9876__ZX_Spectrum_diy/Kicad5/zx2_backplane/zx2_backplane.kicad_pcb",
+ "license": "MIT (MIT License)",
  "rank": 2149,
  "complexity": {
   "grade": 187,

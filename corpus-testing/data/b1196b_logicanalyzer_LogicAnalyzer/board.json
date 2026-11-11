@@ -14,6 +14,7 @@
  "path": "gusmanb__logicanalyzer/Electronics/LogicAnalyzer/LogicAnalyzer/LogicAnalyzer.kicad_pcb",
  "project": "gusmanb/logicanalyzer",
  "name": "LogicAnalyzer",
+ "license": "GPL-3.0 (GNU GPL v3.0)",
  "zip": "part15_of_17",
  "features": {
   "through_vias": 1,

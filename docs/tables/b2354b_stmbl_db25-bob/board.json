@@ -2,6 +2,7 @@
  "name": "db25_bob",
  "project": "rene-dev/stmbl",
  "path": "rene-dev__stmbl/hw/kicad/bob/db25_bob/db25_bob.kicad_pcb",
+ "license": "GPL-3.0 (GNU GPL v3.0)",
  "rank": 1336,
  "complexity": {
   "grade": 221,

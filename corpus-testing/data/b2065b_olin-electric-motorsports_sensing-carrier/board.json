@@ -14,6 +14,7 @@
  "path": "olin-electric-motorsports__olin-electric-motorsports/vehicle/mkvi/hardware/sensing/sensing_carrier/sensing_carrier.kicad_pcb",
  "project": "olin-electric-motorsports/olin-electric-motorsports",
  "name": "sensing_carrier",
+ "license": "No license found",
  "zip": "part16_of_17",
  "features": {
   "through_vias": 20,

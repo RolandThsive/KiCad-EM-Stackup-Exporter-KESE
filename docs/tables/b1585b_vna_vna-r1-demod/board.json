@@ -2,6 +2,7 @@
  "name": "vna_r1_demod",
  "project": "loxodes/vna",
  "path": "loxodes__vna/hardware/vna_rev1/vna_r1_demod/vna_r1_demod.kicad_pcb",
+ "license": "As README.md states it: \"Unless otherwise noted, all work is under a MIT license.\"",
  "rank": 1506,
  "complexity": {
   "grade": 255,

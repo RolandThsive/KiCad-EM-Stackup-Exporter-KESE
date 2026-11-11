@@ -2,6 +2,7 @@
  "name": "fixture-akl-pt2",
  "project": "azonenberg/starshipraider",
  "path": "azonenberg__starshipraider/boards/probes/fixture-akl-pt2/fixture-akl-pt2.kicad_pcb",
+ "license": "BSD-3-Clause (BSD 3-Clause License)",
  "rank": 2641,
  "complexity": {
   "grade": 184,

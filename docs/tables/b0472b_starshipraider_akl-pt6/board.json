@@ -2,6 +2,7 @@
  "name": "akl-pt6",
  "project": "azonenberg/starshipraider",
  "path": "azonenberg__starshipraider/boards/probes/akl-pt6/akl-pt6.kicad_pcb",
+ "license": "BSD-3-Clause (BSD 3-Clause License)",
  "rank": 2903,
  "complexity": {
   "grade": 214,

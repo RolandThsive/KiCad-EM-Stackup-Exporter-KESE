@@ -14,6 +14,7 @@
  "path": "tzarc__keyboards/Ghoul/v1.0/ghoul.kicad_pcb",
  "project": "tzarc/keyboards",
  "name": "ghoul",
+ "license": "CERN-OHL-S-2.0 (CERN Open Hardware Licence v2, Strongly Reciprocal)",
  "zip": "part13_of_17",
  "features": {
   "through_vias": 497,

@@ -2,6 +2,7 @@
  "name": "display_eval",
  "project": "byrantech/laptop",
  "path": "byrantech__laptop/motherboard/display_eval/display_eval.kicad_pcb",
+ "license": "MIT (MIT License)",
  "rank": 1820,
  "complexity": {
   "grade": 296,

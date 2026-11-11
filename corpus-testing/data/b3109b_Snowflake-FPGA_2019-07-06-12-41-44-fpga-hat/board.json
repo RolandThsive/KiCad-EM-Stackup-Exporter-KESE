@@ -14,6 +14,7 @@
  "path": "Wren6991__Snowflake-FPGA/timelapse/2019-07-06_12:41:44_fpga_hat.kicad_pcb",
  "project": "Wren6991/Snowflake-FPGA",
  "name": "2019-07-06_12:41:44_fpga_hat",
+ "license": "Apache-2.0 (Apache License 2.0), in License",
  "zip": "part14_of_17",
  "features": {
   "through_vias": 122,

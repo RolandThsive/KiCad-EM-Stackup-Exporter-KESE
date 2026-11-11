@@ -2,6 +2,7 @@
  "name": "M3-V5",
  "project": "tomrodinger/servomotor",
  "path": "tomrodinger__servomotor/PCB/Servomotor3/V5/M3-V5.kicad_pcb",
+ "license": "MIT (MIT License)",
  "rank": 1311,
  "complexity": {
   "grade": 347,

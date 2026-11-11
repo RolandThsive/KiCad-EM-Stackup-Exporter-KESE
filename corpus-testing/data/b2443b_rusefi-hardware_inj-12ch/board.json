@@ -14,6 +14,7 @@
  "path": "rusefi__rusefi-hardware/classic-designs/1A_injector_12-channels/inj_12ch.kicad_pcb",
  "project": "rusefi/rusefi-hardware",
  "name": "inj_12ch",
+ "license": "No license found",
  "zip": "part15_of_17",
  "features": {
   "through_vias": 196,

@@ -14,6 +14,7 @@
  "path": "greatscottgadgets__greatfet-hardware/daffodil/daffodil.kicad_pcb",
  "project": "greatscottgadgets/greatfet-hardware",
  "name": "daffodil",
+ "license": "BSD-3-Clause (BSD 3-Clause License)",
  "zip": "part16_of_17",
  "features": {
   "through_vias": 0,

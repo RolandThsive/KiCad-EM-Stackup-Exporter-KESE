@@ -2,6 +2,7 @@
  "name": "m3",
  "project": "oak-wjr/rocket-flight-computer",
  "path": "oak-wjr__rocket-flight-computer/reference/m3_assy_r1/m3.kicad_pcb",
+ "license": "No license found",
  "rank": 787,
  "complexity": {
   "grade": 322,

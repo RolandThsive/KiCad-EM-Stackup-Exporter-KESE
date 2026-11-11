@@ -2,6 +2,7 @@
  "name": "Duet2Maestro",
  "project": "Duet3D/Duet-2-Hardware",
  "path": "Duet3D__Duet-2-Hardware/Duet2/Duet2Maestro_v1.0/Duet2Maestro.kicad_pcb",
+ "license": "CERN-OHL-1.2 (CERN Open Hardware Licence v1.2), in LICENSE",
  "rank": 319,
  "complexity": {
   "grade": 345,

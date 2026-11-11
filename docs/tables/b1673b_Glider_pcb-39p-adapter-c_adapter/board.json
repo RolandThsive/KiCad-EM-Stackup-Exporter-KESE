@@ -2,6 +2,7 @@
  "name": "adapter",
  "project": "Modos-Labs/Glider",
  "path": "Modos-Labs__Glider/pcb/39p-adapter-c/adapter.kicad_pcb",
+ "license": "CERN-OHL-S-2.0 (CERN Open Hardware Licence v2, Strongly Reciprocal), in LICENSE",
  "rank": 2679,
  "complexity": {
   "grade": 204,

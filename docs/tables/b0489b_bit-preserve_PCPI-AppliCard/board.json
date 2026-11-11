@@ -2,6 +2,7 @@
  "name": "PCPI_AppliCard",
  "project": "baldengineer/bit-preserve",
  "path": "baldengineer__bit-preserve/Apple/Peripherals/PCPI_AppliCard/PCPI_AppliCard.kicad_pcb",
+ "license": "CC-BY-4.0 (Creative Commons Attribution 4.0), in LICENSE.md",
  "rank": 650,
  "complexity": {
   "grade": 301,

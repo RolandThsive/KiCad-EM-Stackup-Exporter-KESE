@@ -2,6 +2,7 @@
  "name": "HCP65 Device Reset",
  "project": "andrewpaterson/658-Computer",
  "path": "andrewpaterson__658-Computer/Kicad/Computer/Processor/HCP65 Device Reset/HCP65 Device Reset.kicad_pcb",
+ "license": "No license found",
  "rank": 1813,
  "complexity": {
   "grade": 228,

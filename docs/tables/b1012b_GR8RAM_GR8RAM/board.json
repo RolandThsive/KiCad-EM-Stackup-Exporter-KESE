@@ -2,6 +2,7 @@
  "name": "GR8RAM",
  "project": "garrettsworkshop/GR8RAM",
  "path": "garrettsworkshop__GR8RAM/GR8RAM.kicad_pcb",
+ "license": "Garrett's Workshop's own terms, in LICENSE: \"You may elect to license this project under CC BY-NC-SA 4.0\", or under CC BY-SA 4.0 \"ONLY IF you remove all 'Garrett's Workshop' trademarks from the project\"",
  "rank": 818,
  "complexity": {
   "grade": 304,

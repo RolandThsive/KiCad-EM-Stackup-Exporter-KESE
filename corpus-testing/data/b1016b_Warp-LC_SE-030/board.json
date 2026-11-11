@@ -14,6 +14,7 @@
  "path": "garrettsworkshop__Warp-LC/SE-030.kicad_pcb",
  "project": "garrettsworkshop/Warp-LC",
  "name": "SE-030",
+ "license": "Garrett's Workshop's own terms, in LICENSE: \"You may elect to license this project under CC BY-NC-SA 4.0\", or under CC BY-SA 4.0 \"ONLY IF you remove all 'Garrett's Workshop' trademarks from the project\"",
  "zip": "part12_of_17",
  "features": {
   "through_vias": 604,

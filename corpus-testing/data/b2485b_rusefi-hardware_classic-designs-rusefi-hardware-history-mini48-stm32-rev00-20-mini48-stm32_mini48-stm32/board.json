@@ -14,6 +14,7 @@
  "path": "rusefi__rusefi-hardware/classic-designs/rusefi_hardware_history/mini48-stm32_rev00.20/mini48-stm32/mini48-stm32.kicad_pcb",
  "project": "rusefi/rusefi-hardware",
  "name": "mini48-stm32",
+ "license": "No license found",
  "zip": "part16_of_17",
  "features": {
   "through_vias": 45,

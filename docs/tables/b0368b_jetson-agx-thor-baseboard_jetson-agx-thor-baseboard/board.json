@@ -2,6 +2,7 @@
  "name": "jetson-agx-thor-baseboard",
  "project": "antmicro/jetson-agx-thor-baseboard",
  "path": "antmicro__jetson-agx-thor-baseboard/jetson-agx-thor-baseboard.kicad_pcb",
+ "license": "Apache-2.0 (Apache License 2.0)",
  "rank": 24,
  "complexity": {
   "grade": 526,

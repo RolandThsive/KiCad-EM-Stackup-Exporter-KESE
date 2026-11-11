@@ -14,6 +14,7 @@
  "path": "system76__launch/pcb-heavy/launch-heavy.kicad_pcb",
  "project": "system76/launch",
  "name": "launch-heavy",
+ "license": "GPL-3.0 (GNU GPL v3.0)",
  "zip": "part15_of_17",
  "features": {
   "through_vias": 202,

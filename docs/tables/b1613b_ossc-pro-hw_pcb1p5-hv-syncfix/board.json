@@ -2,6 +2,7 @@
  "name": "pcb1p5_hv_syncfix",
  "project": "marqs85/ossc_pro_hw",
  "path": "marqs85__ossc_pro_hw/adapters/pcb1p5_hv_syncfix/pcb1p5_hv_syncfix.kicad_pcb",
+ "license": "CERN-OHL-P-2.0 (CERN Open Hardware Licence v2, Permissive)",
  "rank": 2956,
  "complexity": {
   "grade": 170,

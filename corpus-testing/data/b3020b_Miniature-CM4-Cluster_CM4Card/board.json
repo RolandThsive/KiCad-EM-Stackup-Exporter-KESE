@@ -14,6 +14,7 @@
  "path": "will127534__Miniature-CM4-Cluster/CM4Card/CM4Card.kicad_pcb",
  "project": "will127534/Miniature-CM4-Cluster",
  "name": "CM4Card",
+ "license": "MIT (MIT License)",
  "zip": "part15_of_17",
  "features": {
   "through_vias": 252,

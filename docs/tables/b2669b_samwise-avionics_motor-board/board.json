@@ -2,6 +2,7 @@
  "name": "motor_board",
  "project": "stanford-ssi/samwise-avionics",
  "path": "stanford-ssi__samwise-avionics/ADCS/ADCS-motors-v1-samwise/motor_board.kicad_pcb",
+ "license": "No license found",
  "rank": 847,
  "complexity": {
   "grade": 359,

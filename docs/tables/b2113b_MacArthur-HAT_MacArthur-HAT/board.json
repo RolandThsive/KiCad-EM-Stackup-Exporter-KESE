@@ -2,6 +2,7 @@
  "name": "MacArthur-HAT",
  "project": "OpenMarine/MacArthur-HAT",
  "path": "OpenMarine__MacArthur-HAT/KiCad/MacArthur-HAT.kicad_pcb",
+ "license": "CERN-OHL-S-2.0 (CERN Open Hardware Licence v2, Strongly Reciprocal), in LICENSE",
  "rank": 1184,
  "complexity": {
   "grade": 312,

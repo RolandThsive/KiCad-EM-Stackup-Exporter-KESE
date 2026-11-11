@@ -14,6 +14,7 @@
  "path": "bluejayracing__bjr_kicad/21xt/01-accessory/accessory_v2/accessory_v2.kicad_pcb",
  "project": "bluejayracing/bjr_kicad",
  "name": "accessory_v2",
+ "license": "No license found",
  "zip": "part14_of_17",
  "features": {
   "through_vias": 390,

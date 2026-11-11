@@ -2,6 +2,7 @@
  "name": "usb_gps",
  "project": "oresat/oresat-gps-hardware",
  "path": "oresat__oresat-gps-hardware/GPS-USB_Front_End_Board/kicad_board_design/usb_gps.kicad_pcb",
+ "license": "CERN-OHL-S-2.0 (CERN Open Hardware Licence v2, Strongly Reciprocal)",
  "rank": 1445,
  "complexity": {
   "grade": 284,

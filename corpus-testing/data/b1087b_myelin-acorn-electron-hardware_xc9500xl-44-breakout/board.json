@@ -14,6 +14,7 @@
  "path": "google__myelin-acorn-electron-hardware/xc9500xl_44_breakout/pcb/xc9500xl_44_breakout.kicad_pcb",
  "project": "google/myelin-acorn-electron-hardware",
  "name": "xc9500xl_44_breakout",
+ "license": "Apache-2.0 (Apache License 2.0)",
  "zip": "part16_of_17",
  "features": {
   "through_vias": 40,

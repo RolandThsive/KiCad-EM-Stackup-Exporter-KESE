@@ -2,6 +2,7 @@
  "name": "reCamera S101 v1.1",
  "project": "Seeed-Studio/OSHW-reCamera-Series",
  "path": "Seeed-Studio__OSHW-reCamera-Series/hardware/recamera-2002/sensors/s101-ov5647/PCB/V1.1/reCamera S101 v1.1.kicad_pcb",
+ "license": "Apache-2.0 (Apache License 2.0)",
  "rank": 1241,
  "complexity": {
   "grade": 343,

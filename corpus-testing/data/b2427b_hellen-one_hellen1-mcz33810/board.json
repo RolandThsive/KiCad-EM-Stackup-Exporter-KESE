@@ -14,6 +14,7 @@
  "path": "rusefi__hellen-one/kicad/modules/hellen1-mcz33810/hellen1-mcz33810.kicad_pcb",
  "project": "rusefi/hellen-one",
  "name": "hellen1-mcz33810",
+ "license": "No license found",
  "zip": "part16_of_17",
  "features": {
   "through_vias": 72,

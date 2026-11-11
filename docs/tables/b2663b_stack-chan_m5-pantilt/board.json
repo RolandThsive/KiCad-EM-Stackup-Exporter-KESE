@@ -2,6 +2,7 @@
  "name": "m5-pantilt",
  "project": "stack-chan/stack-chan",
  "path": "stack-chan__stack-chan/schematics/m5-pantilt/m5-pantilt.kicad_pcb",
+ "license": "Apache-2.0 (Apache License 2.0)",
  "rank": 2013,
  "complexity": {
   "grade": 217,

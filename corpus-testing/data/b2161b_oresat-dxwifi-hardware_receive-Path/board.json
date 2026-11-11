@@ -14,6 +14,7 @@
  "path": "oresat__oresat-dxwifi-hardware/rf-receive-test/receive_Path.kicad_pcb",
  "project": "oresat/oresat-dxwifi-hardware",
  "name": "receive_Path",
+ "license": "GPL-3.0 (GNU GPL v3.0)",
  "zip": "part15_of_17",
  "features": {
   "through_vias": 634,

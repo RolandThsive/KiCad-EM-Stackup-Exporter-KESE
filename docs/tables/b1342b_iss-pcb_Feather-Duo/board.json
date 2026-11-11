@@ -2,6 +2,7 @@
  "name": "Feather_Duo",
  "project": "issuiuc/iss-pcb",
  "path": "issuiuc__iss-pcb/boards/Feather_Duo/Feather_Duo.kicad_pcb",
+ "license": "No license found",
  "rank": 2143,
  "complexity": {
   "grade": 285,

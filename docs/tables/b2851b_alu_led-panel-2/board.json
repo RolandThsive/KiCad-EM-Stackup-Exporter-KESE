@@ -2,6 +2,7 @@
  "name": "led_panel_2",
  "project": "tmarhguy/alu",
  "path": "tmarhguy__alu/schematics/kicad/boards/led_panel/led_panel_2/led_panel_2.kicad_pcb",
+ "license": "MIT (MIT License)",
  "rank": 2490,
  "complexity": {
   "grade": 80,

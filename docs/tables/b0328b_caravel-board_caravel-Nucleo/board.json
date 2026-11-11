@@ -2,6 +2,7 @@
  "name": "caravel_Nucleo",
  "project": "antmicro/caravel_board",
  "path": "antmicro__caravel_board/hardware/caravel_Nucleo/caravel_Nucleo.kicad_pcb",
+ "license": "No license found",
  "rank": 1186,
  "complexity": {
   "grade": 333,

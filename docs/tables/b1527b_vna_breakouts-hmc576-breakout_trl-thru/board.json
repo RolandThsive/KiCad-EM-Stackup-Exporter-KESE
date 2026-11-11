@@ -2,6 +2,7 @@
  "name": "trl_thru",
  "project": "loxodes/vna",
  "path": "loxodes__vna/breakouts/hmc576_breakout/trl_thru.kicad_pcb",
+ "license": "As README.md states it: \"Unless otherwise noted, all work is under a MIT license.\"",
  "rank": 2616,
  "complexity": {
   "grade": 185,

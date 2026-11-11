@@ -14,6 +14,7 @@
  "path": "OLIMEX__MOD-IR-TEMP/HARDWARE/REV.A/MOD-IR-TEMP_RevA.kicad_pcb",
  "project": "OLIMEX/MOD-IR-TEMP",
  "name": "MOD-IR-TEMP_RevA",
+ "license": "Apache-2.0 (Apache License 2.0)",
  "zip": "part16_of_17",
  "features": {
   "through_vias": 4,

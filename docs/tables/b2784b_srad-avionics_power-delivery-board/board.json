@@ -2,6 +2,7 @@
  "name": "power-delivery-board",
  "project": "terrapin-rocket-team/srad-avionics",
  "path": "terrapin-rocket-team__srad-avionics/Spaceport/PCBs/power-delivery-board/power-delivery-board/power-delivery-board.kicad_pcb",
+ "license": "No license found",
  "rank": 2136,
  "complexity": {
   "grade": 273,

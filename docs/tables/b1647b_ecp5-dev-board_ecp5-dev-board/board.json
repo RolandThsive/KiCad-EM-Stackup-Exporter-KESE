@@ -2,6 +2,7 @@
  "name": "ecp5-dev-board",
  "project": "medhyal/ecp5-dev-board",
  "path": "medhyal__ecp5-dev-board/v0.1/ecp5-dev-board.kicad_pcb",
+ "license": "No license found",
  "rank": 556,
  "complexity": {
   "grade": 331,

@@ -2,6 +2,7 @@
  "name": "FOSDEM-MUSIC-BOX_RevA",
  "project": "OLIMEX/FOSDEM-MUSIC-BOX",
  "path": "OLIMEX__FOSDEM-MUSIC-BOX/HARDWARE/FOSDEM-MUSIC-BOX_RevA/FOSDEM-MUSIC-BOX_RevA.kicad_pcb",
+ "license": "As README.md states it: \"Hardware is with CERN OHL v1.2 license; Software is released under GPL3 License; Documentation is released under CC BY-SA 3.0\"",
  "rank": 2601,
  "complexity": {
   "grade": 195,

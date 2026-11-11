@@ -2,6 +2,7 @@
  "name": "ice-prog-adapt",
  "project": "emeb/ice-dongle",
  "path": "emeb__ice-dongle/Hardware/ice-prog-adapt/ice-prog-adapt.kicad_pcb",
+ "license": "MIT (MIT License)",
  "rank": 2931,
  "complexity": {
   "grade": 132,

@@ -2,6 +2,7 @@
  "name": "Thunderscope_Rev5.3",
  "project": "EEVengers/ThunderScope",
  "path": "EEVengers__ThunderScope/Hardware/Thunderscope_Rev5.3/Thunderscope_Rev5.3.kicad_pcb",
+ "license": "MIT (MIT License)",
  "rank": 62,
  "complexity": {
   "grade": 535,

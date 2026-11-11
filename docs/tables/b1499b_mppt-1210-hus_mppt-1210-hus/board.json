@@ -2,6 +2,7 @@
  "name": "mppt-1210-hus",
  "project": "LibreSolar/mppt-1210-hus",
  "path": "LibreSolar__mppt-1210-hus/kicad/mppt-1210-hus.kicad_pcb",
+ "license": "CERN-OHL-W-2.0 (CERN Open Hardware Licence v2, Weakly Reciprocal), in LICENCE",
  "rank": 1202,
  "complexity": {
   "grade": 285,

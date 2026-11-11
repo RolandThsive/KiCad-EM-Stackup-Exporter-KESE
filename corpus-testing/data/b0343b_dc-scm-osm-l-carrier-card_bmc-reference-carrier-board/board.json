@@ -14,6 +14,7 @@
  "path": "antmicro__dc-scm-osm-l-carrier-card/bmc-reference-carrier-board.kicad_pcb",
  "project": "antmicro/dc-scm-osm-l-carrier-card",
  "name": "bmc-reference-carrier-board",
+ "license": "Apache-2.0 (Apache License 2.0)",
  "zip": "part07_of_17",
  "features": {
   "through_vias": 2710,

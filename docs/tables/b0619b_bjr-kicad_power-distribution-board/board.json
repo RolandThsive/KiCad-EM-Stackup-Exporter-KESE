@@ -2,6 +2,7 @@
  "name": "power_distribution_board",
  "project": "bluejayracing/bjr_kicad",
  "path": "bluejayracing__bjr_kicad/21xt/Power_distribution_board/power_distribution_board.kicad_pcb",
+ "license": "No license found",
  "rank": 2352,
  "complexity": {
   "grade": 218,

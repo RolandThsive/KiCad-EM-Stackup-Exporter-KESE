@@ -2,6 +2,7 @@
  "name": "esp32s3",
  "project": "bluejayracing/22xt_kicad",
  "path": "bluejayracing__22xt_kicad/02-wsg/esp32s3/esp32s3.kicad_pcb",
+ "license": "No license found",
  "rank": 2661,
  "complexity": {
   "grade": 106,

@@ -2,6 +2,7 @@
  "name": "UEXT-P4Q_Rev_A",
  "project": "OLIMEX/UEXT-ADAPTERS",
  "path": "OLIMEX__UEXT-ADAPTERS/UEXT-P4Q/Hardware/UEXT-P4Q_Rev_A.kicad_pcb",
+ "license": "No license found",
  "rank": 2595,
  "complexity": {
   "grade": 185,

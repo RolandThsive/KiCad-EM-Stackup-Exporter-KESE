@@ -2,6 +2,7 @@
  "name": "altair-8800b-display-control-pcb",
  "project": "warmech/altair-8800b-display-control-pcb",
  "path": "warmech__altair-8800b-display-control-pcb/cad/altair-8800b-display-control-pcb.kicad_pcb",
+ "license": "CERN-OHL-S-2.0 (CERN Open Hardware Licence v2, Strongly Reciprocal)",
  "rank": 502,
  "complexity": {
   "grade": 250,

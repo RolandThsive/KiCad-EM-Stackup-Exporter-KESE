@@ -14,6 +14,7 @@
  "path": "im-tomu__tomu-hardware/pcb/tomu.kicad_pcb",
  "project": "im-tomu/tomu-hardware",
  "name": "tomu",
+ "license": "CC-BY-SA-4.0 (Creative Commons Attribution-ShareAlike 4.0)",
  "zip": "part16_of_17",
  "features": {
   "through_vias": 25,

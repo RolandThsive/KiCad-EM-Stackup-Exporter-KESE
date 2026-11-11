@@ -14,6 +14,7 @@
  "path": "alphaonex86__fpgamotherboard/i386/fpga-ep4ce22/i386sx-motherboard.kicad_pcb",
  "project": "alphaonex86/fpgamotherboard",
  "name": "i386sx-motherboard",
+ "license": "GPL-3.0 (GNU GPL v3.0)",
  "zip": "part10_of_17",
  "features": {
   "through_vias": 1378,

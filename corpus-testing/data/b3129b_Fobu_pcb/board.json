@@ -14,6 +14,7 @@
  "path": "zephray__Fobu/hardware/pcb/pcb.kicad_pcb",
  "project": "zephray/Fobu",
  "name": "pcb",
+ "license": "As README.md states it: \"If not otherwise specified, all the materials provided in this repository are licensed under MIT license.\"",
  "zip": "part09_of_17",
  "features": {
   "through_vias": 920,

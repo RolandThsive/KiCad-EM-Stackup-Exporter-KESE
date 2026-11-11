@@ -2,6 +2,7 @@
  "name": "zglue-gem1-adapter",
  "project": "antmicro/gem1-adapter",
  "path": "antmicro__gem1-adapter/zglue-gem1-adapter.kicad_pcb",
+ "license": "Apache-2.0 (Apache License 2.0)",
  "rank": 716,
  "complexity": {
   "grade": 315,

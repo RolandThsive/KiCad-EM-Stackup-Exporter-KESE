@@ -2,6 +2,7 @@
  "name": "stack-exploded",
  "project": "naturalhazardscience/groundlark",
  "path": "naturalhazardscience__groundlark/hw/groundlark-fpga-hat/boards/groundlark-daqhat-01/stack-exploded.kicad_pcb",
+ "license": "MIT (MIT License)",
  "rank": 131,
  "complexity": {
   "grade": 417,

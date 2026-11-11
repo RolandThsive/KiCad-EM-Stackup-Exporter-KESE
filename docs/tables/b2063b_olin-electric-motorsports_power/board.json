@@ -2,6 +2,7 @@
  "name": "power",
  "project": "olin-electric-motorsports/olin-electric-motorsports",
  "path": "olin-electric-motorsports__olin-electric-motorsports/vehicle/mkvi/hardware/segment/power/power.kicad_pcb",
+ "license": "No license found",
  "rank": 1709,
  "complexity": {
   "grade": 310,

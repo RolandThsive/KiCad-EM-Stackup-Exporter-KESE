@@ -2,6 +2,7 @@
  "name": "PCB - VOLTAGE TAPS",
  "project": "sufst/pcb",
  "path": "sufst__pcb/PCB - VOLTAGE TAPS/PCB - VOLTAGE TAPS.kicad_pcb",
+ "license": "GPL-3.0 (GNU GPL v3.0)",
  "rank": 2675,
  "complexity": {
   "grade": 267,

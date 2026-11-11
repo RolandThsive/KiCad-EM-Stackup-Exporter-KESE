@@ -2,6 +2,7 @@
  "name": "frankenso",
  "project": "rusefi/rusefi-hardware",
  "path": "rusefi__rusefi-hardware/classic-designs/frankenso/frankenso.kicad_pcb",
+ "license": "No license found",
  "rank": 248,
  "complexity": {
   "grade": 356,

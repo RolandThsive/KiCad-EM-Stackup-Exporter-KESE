@@ -14,6 +14,7 @@
  "path": "antmicro__vna-se-probe/vna-se-probe.kicad_pcb",
  "project": "antmicro/vna-se-probe",
  "name": "vna-se-probe",
+ "license": "Apache-2.0 (Apache License 2.0)",
  "zip": "part16_of_17",
  "features": {
   "through_vias": 46,

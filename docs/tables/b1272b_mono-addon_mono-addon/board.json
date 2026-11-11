@@ -2,6 +2,7 @@
  "name": "mono_addon",
  "project": "intergalaktik/mono_addon",
  "path": "intergalaktik__mono_addon/KiCad/mono_addon/mono_addon.kicad_pcb",
+ "license": "No license found",
  "rank": 2089,
  "complexity": {
   "grade": 271,

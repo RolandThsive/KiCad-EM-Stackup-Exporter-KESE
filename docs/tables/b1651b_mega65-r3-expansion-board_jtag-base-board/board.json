@@ -2,6 +2,7 @@
  "name": "jtag_base_board",
  "project": "MEGA65/mega65-r3-expansion-board",
  "path": "MEGA65__mega65-r3-expansion-board/jtag_base_board/jtag_base_board.kicad_pcb",
+ "license": "No license found",
  "rank": 2492,
  "complexity": {
   "grade": 197,

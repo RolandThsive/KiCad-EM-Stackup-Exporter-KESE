@@ -14,6 +14,7 @@
  "path": "badgeteam__mch2022-badge-hardware/mch2022.kicad_pcb",
  "project": "badgeteam/mch2022-badge-hardware",
  "name": "mch2022",
+ "license": "CERN-OHL-P-2.0 (CERN Open Hardware Licence v2, Permissive), in LICENSE",
  "zip": "part11_of_17",
  "features": {
   "through_vias": 521,

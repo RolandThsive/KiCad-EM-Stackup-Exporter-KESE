@@ -2,6 +2,7 @@
  "name": "sim-iccard-rev4",
  "project": "DangerousPrototypes/BusPirate5-hardware",
  "path": "DangerousPrototypes__BusPirate5-hardware/development/adapter-sim-iccard-1REV4/sim-iccard-rev4.kicad_pcb",
+ "license": "MIT (MIT License)",
  "rank": 2160,
  "complexity": {
   "grade": 247,

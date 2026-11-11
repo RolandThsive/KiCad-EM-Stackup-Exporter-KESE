@@ -2,6 +2,7 @@
  "name": "GfxV9990",
  "project": "ddraig68k/hardware",
  "path": "ddraig68k__hardware/expansion/GfxV9990/GfxV9990.kicad_pcb",
+ "license": "MIT (MIT License)",
  "rank": 1099,
  "complexity": {
   "grade": 331,

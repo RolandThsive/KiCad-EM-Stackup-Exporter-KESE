@@ -2,6 +2,7 @@
  "name": "arty-mpw-tester",
  "project": "antmicro/arty-mpw-tester",
  "path": "antmicro__arty-mpw-tester/arty-mpw-tester.kicad_pcb",
+ "license": "Apache-2.0 (Apache License 2.0)",
  "rank": 1113,
  "complexity": {
   "grade": 378,

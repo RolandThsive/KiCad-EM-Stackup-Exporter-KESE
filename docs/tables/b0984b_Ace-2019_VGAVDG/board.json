@@ -2,6 +2,7 @@
  "name": "VGAVDG",
  "project": "flypie/Ace-2019",
  "path": "flypie__Ace-2019/VGA/VGAVDG.kicad_pcb",
+ "license": "GPL-3.0 (GNU GPL v3.0)",
  "rank": 2298,
  "complexity": {
   "grade": 128,

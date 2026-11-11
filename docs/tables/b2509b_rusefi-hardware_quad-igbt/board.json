@@ -2,6 +2,7 @@
  "name": "quad-igbt",
  "project": "rusefi/rusefi-hardware",
  "path": "rusefi__rusefi-hardware/quad-igbt/quad-igbt.kicad_pcb",
+ "license": "No license found",
  "rank": 2144,
  "complexity": {
   "grade": 233,

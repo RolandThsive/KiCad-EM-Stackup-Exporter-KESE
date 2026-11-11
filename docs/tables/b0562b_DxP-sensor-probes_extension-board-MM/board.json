@@ -2,6 +2,7 @@
  "name": "extension_board_MM",
  "project": "BerkeleyLab/DxP-sensor-probes",
  "path": "BerkeleyLab__DxP-sensor-probes/extension_board_MM/extension_board_MM.kicad_pcb",
+ "license": "CC-BY-NC-4.0 (Creative Commons Attribution-NonCommercial 4.0), in LICENSE.md",
  "rank": 3061,
  "complexity": {
   "grade": 168,

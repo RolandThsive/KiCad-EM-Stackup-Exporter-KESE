@@ -2,6 +2,7 @@
  "name": "BeagleConnect Freedom",
  "project": "beagleboard/beagleconnect",
  "path": "beagleboard__beagleconnect/hw/Freedom/BeagleConnect Freedom.kicad_pcb",
+ "license": "No license found",
  "rank": 786,
  "complexity": {
   "grade": 356,

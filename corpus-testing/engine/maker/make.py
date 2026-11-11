@@ -1,6 +1,6 @@
 """Makes each board's files from the run results in corpus-testing/data/:
 
-    docs/tables/<repo>_<board>/board.json   what the engine needs: name, project, path, complexity, status ...
+    docs/tables/<repo>_<board>/board.json   what the engine needs: name, project, path, license, complexity ...
     docs/tables/<repo>_<board>/stages.md    seconds per stage, one row per mode and format
     docs/tables/<repo>_<board>/facts.md     repo, folder, complexity, layers, format, the Verifier's result ...
     docs/tables/<repo>_<board>/files.md     the file each run wrote and its peak memory
@@ -49,7 +49,7 @@ for r in (only or sorted(BOARDS)):
     parts = board_parts(b)
     runs = [run_of(r, k) for k in KINDS]
     g = grade(b)
-    meta = dict(name=b["name"], project=b["project"], path=b["path"], rank=r,
+    meta = dict(name=b["name"], project=b["project"], path=b["path"], license=b.get("license"), rank=r,
                 complexity=dict(grade=g[0], size=g[1], features=g[2]),
                 features=[k for k, *_ in FEATURES if FEAT.get(r, {}).get(k, 0) > 0],
                 layers=b["layers"], status=status(b, parts), bad_design=BAD_DESIGN.get(r),

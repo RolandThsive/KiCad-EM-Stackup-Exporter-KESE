@@ -2,6 +2,7 @@
  "name": "SH-RPi",
  "project": "hatlabs/sh-rpi-hardware",
  "path": "hatlabs__sh-rpi-hardware/SH-RPi.kicad_pcb",
+ "license": "CC-BY-4.0 (Creative Commons Attribution 4.0), in LICENSE.md",
  "rank": 1058,
  "complexity": {
   "grade": 343,

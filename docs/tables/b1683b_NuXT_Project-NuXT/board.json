@@ -2,6 +2,7 @@
  "name": "Project NuXT",
  "project": "monotech/NuXT",
  "path": "monotech__NuXT/Project NuXT.kicad_pcb",
+ "license": "GPL-3.0 (GNU GPL v3.0)",
  "rank": 357,
  "complexity": {
   "grade": 302,

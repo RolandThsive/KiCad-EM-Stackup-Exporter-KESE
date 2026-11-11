@@ -2,6 +2,7 @@
  "name": "ACE-COLOUR",
  "project": "flypie/Ace-2019",
  "path": "flypie__Ace-2019/KiCad/ACE-COLOUR/ACE-COLOUR.kicad_pcb",
+ "license": "GPL-3.0 (GNU GPL v3.0)",
  "rank": 1362,
  "complexity": {
   "grade": 210,

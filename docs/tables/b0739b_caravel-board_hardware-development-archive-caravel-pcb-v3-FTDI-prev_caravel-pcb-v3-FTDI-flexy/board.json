@@ -2,6 +2,7 @@
  "name": "caravel_pcb_v3_FTDI_flexy",
  "project": "chipfoundry/caravel_board",
  "path": "chipfoundry__caravel_board/hardware/development/_archive/caravel_pcb_v3_FTDI_prev/caravel_pcb_v3_FTDI_flexy.kicad_pcb",
+ "license": "No license found",
  "rank": 1546,
  "complexity": {
   "grade": 311,

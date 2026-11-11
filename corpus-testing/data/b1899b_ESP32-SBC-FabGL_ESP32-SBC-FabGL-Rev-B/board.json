@@ -14,6 +14,7 @@
  "path": "OLIMEX__ESP32-SBC-FabGL/HARDWARE/Hardware-revision-B/ESP32-SBC-FabGL_Rev_B.kicad_pcb",
  "project": "OLIMEX/ESP32-SBC-FabGL",
  "name": "ESP32-SBC-FabGL_Rev_B",
+ "license": "GPL-3.0 (GNU GPL v3.0)",
  "zip": "part14_of_17",
  "features": {
   "through_vias": 266,

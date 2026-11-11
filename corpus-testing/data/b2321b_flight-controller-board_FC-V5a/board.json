@@ -14,6 +14,7 @@
  "path": "proveskit__flight_controller_board/Deprecated Versions/FC_V5a/FC_V5a.kicad_pcb",
  "project": "proveskit/flight_controller_board",
  "name": "FC_V5a",
+ "license": "CERN-OHL-W-2.0 (CERN Open Hardware Licence v2, Weakly Reciprocal)",
  "zip": "part12_of_17",
  "features": {
   "through_vias": 884,

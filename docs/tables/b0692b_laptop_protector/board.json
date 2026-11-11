@@ -2,6 +2,7 @@
  "name": "protector",
  "project": "byrantech/laptop",
  "path": "byrantech__laptop/keyboard/protector/protector.kicad_pcb",
+ "license": "MIT (MIT License)",
  "rank": 2562,
  "complexity": {
   "grade": 218,

@@ -2,6 +2,7 @@
  "name": "expansion_connector_board",
  "project": "MEGA65/mega65-r3-expansion-board",
  "path": "MEGA65__mega65-r3-expansion-board/expansion_connector_board/expansion_connector_board.kicad_pcb",
+ "license": "No license found",
  "rank": 1869,
  "complexity": {
   "grade": 284,

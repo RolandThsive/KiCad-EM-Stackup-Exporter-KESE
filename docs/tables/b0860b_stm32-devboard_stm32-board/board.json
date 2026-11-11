@@ -2,6 +2,7 @@
  "name": "stm32_board",
  "project": "devnithw/stm32-devboard",
  "path": "devnithw__stm32-devboard/stm32_board.kicad_pcb",
+ "license": "No license found",
  "rank": 2334,
  "complexity": {
   "grade": 280,

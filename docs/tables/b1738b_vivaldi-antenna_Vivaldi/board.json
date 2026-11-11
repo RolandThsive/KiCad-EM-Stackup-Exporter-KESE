@@ -2,6 +2,7 @@
  "name": "Vivaldi",
  "project": "myriadrf/vivaldi-antenna",
  "path": "myriadrf__vivaldi-antenna/hardware/KiCAD/Vivaldi.kicad_pcb",
+ "license": "CC-BY-3.0 (Creative Commons Attribution 3.0), in COPYING",
  "rank": 3051,
  "complexity": {
   "grade": 98,

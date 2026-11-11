@@ -14,6 +14,7 @@
  "path": "ShawnHymel__rpi-cm4-carrier-template/hardware/rpi-cm4-carrier-template/rpi-cm4-carrier-template.kicad_pcb",
  "project": "ShawnHymel/rpi-cm4-carrier-template",
  "name": "rpi-cm4-carrier-template",
+ "license": "As README.md states it: \"Schematic and PCB layout files are licensed under the CC BY 4.0 license. Individual components and footprints found in the CM4IO library are licensed as per the Design Files license found here. THE DESIGN IS PROVIDED \"AS IS\" AND THE AUTHOR DISCLAIMS ALL WARRANTIES WITH REGARD TO THIS DESIGN INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS.\"",
  "zip": "part16_of_17",
  "features": {
   "through_vias": 0,

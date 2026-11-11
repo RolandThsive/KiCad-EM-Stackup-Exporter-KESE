@@ -2,6 +2,7 @@
  "name": "ecpbreaker",
  "project": "gregdavill/advent-calendar-of-circuits-2020",
  "path": "gregdavill__advent-calendar-of-circuits-2020/ecpbreaker/kicad-src/ecpbreaker.kicad_pcb",
+ "license": "CERN-OHL-P-2.0 (CERN Open Hardware Licence v2, Permissive), in LICENCE-CERN-OHL-P-2.0",
  "rank": 530,
  "complexity": {
   "grade": 427,

@@ -2,6 +2,7 @@
  "name": "mod-gyro",
  "project": "OLIMEX/UEXT-MODULES",
  "path": "OLIMEX__UEXT-MODULES/MOD-MPU9150/mod-gyro.kicad_pcb",
+ "license": "No license found",
  "rank": 2582,
  "complexity": {
   "grade": 164,

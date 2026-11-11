@@ -2,6 +2,7 @@
  "name": "speaker_adapter",
  "project": "ZeroPhone/ZeroPhone-PCBs",
  "path": "ZeroPhone__ZeroPhone-PCBs/speaker_adapter/speaker_adapter.kicad_pcb",
+ "license": "GPL-3.0 (GNU GPL v3.0)",
  "rank": 3074,
  "complexity": {
   "grade": 98,

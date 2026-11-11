@@ -14,6 +14,7 @@
  "path": "orangecrab-fpga__orangecrab-hardware/hardware/orangecrab_r0.2.1/OrangeCrab.kicad_pcb",
  "project": "orangecrab-fpga/orangecrab-hardware",
  "name": "OrangeCrab",
+ "license": "CERN-OHL-1.2 (CERN Open Hardware Licence v1.2), in LICENCE-CERN-OHL",
  "zip": "part10_of_17",
  "features": {
   "through_vias": 441,

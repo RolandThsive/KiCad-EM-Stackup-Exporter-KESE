@@ -2,6 +2,7 @@
  "name": "EAGLE-MK1-revA",
  "project": "issuiuc/iss-pcb",
  "path": "issuiuc__iss-pcb/boards/EAGLE-MK1/EAGLE-MK1-revA/EAGLE-MK1-revA.kicad_pcb",
+ "license": "No license found",
  "rank": 1565,
  "complexity": {
   "grade": 314,

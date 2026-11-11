@@ -2,6 +2,7 @@
  "name": "EEZ PSU consolidated r5B13a",
  "project": "eez-open/psu-hw",
  "path": "eez-open__psu-hw/Consolidated/KiCad/EEZ PSU consolidated r5B13a.kicad_pcb",
+ "license": "TAPR-OHL-1.0 (TAPR Open Hardware License), in LICENSE.TXT, Consolidated/LICENSE.TXT",
  "rank": 251,
  "complexity": {
   "grade": 289,

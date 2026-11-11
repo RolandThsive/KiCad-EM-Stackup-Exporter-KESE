@@ -14,6 +14,7 @@
  "path": "antmicro__alvium-flexible-csi-adapter/100mm-single-same-side/antmicro-alvium-flex-csi-adapter_100mm-single-same-side.kicad_pcb",
  "project": "antmicro/alvium-flexible-csi-adapter",
  "name": "antmicro-alvium-flex-csi-adapter_100mm-single-same-side",
+ "license": "Apache-2.0 (Apache License 2.0)",
  "zip": "part16_of_17",
  "features": {
   "through_vias": 115,

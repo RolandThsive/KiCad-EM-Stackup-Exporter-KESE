@@ -2,6 +2,7 @@
  "name": "adapter",
  "project": "zephray/nekoink",
  "path": "zephray__nekoink/pcb/34p-a-adapter/adapter.kicad_pcb",
+ "license": "CERN-OHL-P-2.0 (CERN Open Hardware Licence v2, Permissive), in LICENSE",
  "rank": 2431,
  "complexity": {
   "grade": 211,

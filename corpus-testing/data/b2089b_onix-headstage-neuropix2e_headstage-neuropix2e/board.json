@@ -14,6 +14,7 @@
  "path": "open-ephys__onix-headstage-neuropix2e/pcb/headstage-neuropix2e.kicad_pcb",
  "project": "open-ephys/onix-headstage-neuropix2e",
  "name": "headstage-neuropix2e",
+ "license": "No license found",
  "zip": "part15_of_17",
  "features": {
   "through_vias": 155,

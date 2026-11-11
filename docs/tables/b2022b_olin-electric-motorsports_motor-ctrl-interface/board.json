@@ -2,6 +2,7 @@
  "name": "motor_ctrl_interface",
  "project": "olin-electric-motorsports/olin-electric-motorsports",
  "path": "olin-electric-motorsports__olin-electric-motorsports/vehicle/gokart/hardware/motor_ctrl_interface/motor_ctrl_interface.kicad_pcb",
+ "license": "No license found",
  "rank": 2029,
  "complexity": {
   "grade": 257,

@@ -2,6 +2,7 @@
  "name": "icepi-zero",
  "project": "cheyao/icepi-zero",
  "path": "cheyao__icepi-zero/hardware/v1.0/icepi-zero.kicad_pcb",
+ "license": "SHL-2.1 (Solderpad Hardware License v2.1), in LICENSE",
  "rank": 826,
  "complexity": {
   "grade": 397,

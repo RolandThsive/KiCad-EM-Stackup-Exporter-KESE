@@ -2,6 +2,7 @@
  "name": "GaNdapter-dual",
  "project": "rootthecause/dcdc",
  "path": "rootthecause__dcdc/extra/external-boards/GaNdapter-dual/GaNdapter-dual.kicad_pcb",
+ "license": "CERN-OHL-W-2.0 (CERN Open Hardware Licence v2, Weakly Reciprocal)",
  "rank": 2691,
  "complexity": {
   "grade": 241,

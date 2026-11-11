@@ -2,6 +2,7 @@
  "name": "Edgeberry",
  "project": "Edgeberry/Edgeberry-Baseboard",
  "path": "Edgeberry__Edgeberry-Baseboard/Edgeberry.kicad_pcb",
+ "license": "CERN-OHL-W-2.0 (CERN Open Hardware Licence v2, Weakly Reciprocal)",
  "rank": 2051,
  "complexity": {
   "grade": 248,

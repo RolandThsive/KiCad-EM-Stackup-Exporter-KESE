@@ -14,6 +14,7 @@
  "path": "google__myelin-acorn-electron-hardware/master_updateable_megarom/pcb/master_updateable_megarom.kicad_pcb",
  "project": "google/myelin-acorn-electron-hardware",
  "name": "master_updateable_megarom",
+ "license": "Apache-2.0 (Apache License 2.0)",
  "zip": "part16_of_17",
  "features": {
   "through_vias": 78,

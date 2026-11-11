@@ -2,6 +2,7 @@
  "name": "mcu-board v2",
  "project": "terrapin-rocket-team/srad-avionics",
  "path": "terrapin-rocket-team__srad-avionics/Spaceport/PCBs/Gerbers/Teensy v3.0/mcu-board v2.kicad_pcb",
+ "license": "No license found",
  "rank": 2730,
  "complexity": {
   "grade": 159,

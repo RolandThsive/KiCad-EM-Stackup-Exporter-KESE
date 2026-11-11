@@ -2,6 +2,7 @@
  "name": "CAT",
  "project": "xesscorp/CAT-Board",
  "path": "xesscorp__CAT-Board/pcb/CAT.kicad_pcb",
+ "license": "As README.md states it: \"License: CC BY 4.0 Documentation: CAT-Board.readthedocs.org\"",
  "rank": 907,
  "complexity": {
   "grade": 319,

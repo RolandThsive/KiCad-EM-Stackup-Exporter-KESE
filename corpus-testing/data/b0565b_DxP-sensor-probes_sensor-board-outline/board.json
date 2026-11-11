@@ -14,6 +14,7 @@
  "path": "BerkeleyLab__DxP-sensor-probes/sensor_board_outline/sensor_board_outline.kicad_pcb",
  "project": "BerkeleyLab/DxP-sensor-probes",
  "name": "sensor_board_outline",
+ "license": "CC-BY-NC-4.0 (Creative Commons Attribution-NonCommercial 4.0), in LICENSE.md",
  "zip": "part16_of_17",
  "features": {
   "through_vias": 12,

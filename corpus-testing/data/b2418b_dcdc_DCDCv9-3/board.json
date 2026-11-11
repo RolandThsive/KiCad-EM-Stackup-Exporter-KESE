@@ -14,6 +14,7 @@
  "path": "rootthecause__dcdc/kicad/DCDCv9-3.kicad_pcb",
  "project": "rootthecause/dcdc",
  "name": "DCDCv9-3",
+ "license": "CERN-OHL-W-2.0 (CERN Open Hardware Licence v2, Weakly Reciprocal)",
  "zip": "part13_of_17",
  "features": {
   "through_vias": 1488,

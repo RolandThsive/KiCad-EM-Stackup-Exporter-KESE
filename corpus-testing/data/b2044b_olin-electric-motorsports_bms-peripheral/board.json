@@ -14,6 +14,7 @@
  "path": "olin-electric-motorsports__olin-electric-motorsports/vehicle/mkv/hardware/service_section/peripheral/bms_peripheral.kicad_pcb",
  "project": "olin-electric-motorsports/olin-electric-motorsports",
  "name": "bms_peripheral",
+ "license": "No license found",
  "zip": "part14_of_17",
  "features": {
   "through_vias": 152,

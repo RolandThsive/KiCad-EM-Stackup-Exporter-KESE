@@ -2,6 +2,7 @@
  "name": "GfxTMS9918",
  "project": "ddraig68k/hardware",
  "path": "ddraig68k__hardware/expansion/GfxTMS9918/GfxTMS9918.kicad_pcb",
+ "license": "MIT (MIT License)",
  "rank": 1619,
  "complexity": {
   "grade": 280,

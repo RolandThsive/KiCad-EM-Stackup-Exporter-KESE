@@ -2,6 +2,7 @@
  "name": "Thunderscope_Rev5.1_Bed_Of_Nails",
  "project": "EEVengers/ts_test_fixtures",
  "path": "EEVengers__ts_test_fixtures/Thunderscope_Rev5.1_Bed_Of_Nails_Adaptor/Thunderscope_Rev5.1_Bed_Of_Nails.kicad_pcb",
+ "license": "CERN-OHL-P-2.0 (CERN Open Hardware Licence v2, Permissive)",
  "rank": 1401,
  "complexity": {
   "grade": 295,

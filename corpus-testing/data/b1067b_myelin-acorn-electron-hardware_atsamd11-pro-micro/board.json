@@ -14,6 +14,7 @@
  "path": "google__myelin-acorn-electron-hardware/atsamd11_pro_micro/pcb/atsamd11_pro_micro.kicad_pcb",
  "project": "google/myelin-acorn-electron-hardware",
  "name": "atsamd11_pro_micro",
+ "license": "Apache-2.0 (Apache License 2.0)",
  "zip": "part16_of_17",
  "features": {
   "through_vias": 15,

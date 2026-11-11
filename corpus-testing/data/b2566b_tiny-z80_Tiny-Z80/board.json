@@ -14,6 +14,7 @@
  "path": "skiselev__tiny_z80/KiCad/Tiny_Z80.kicad_pcb",
  "project": "skiselev/tiny_z80",
  "name": "Tiny_Z80",
+ "license": "GPL-3.0 (GNU GPL v3.0)",
  "zip": "part13_of_17",
  "features": {
   "through_vias": 213,

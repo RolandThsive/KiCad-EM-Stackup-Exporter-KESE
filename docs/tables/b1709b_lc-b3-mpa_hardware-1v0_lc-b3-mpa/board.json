@@ -2,6 +2,7 @@
  "name": "lc-b3-mpa",
  "project": "myriadrf/lc-b3-mpa",
  "path": "myriadrf__lc-b3-mpa/hardware/1v0/lc-b3-mpa.kicad_pcb",
+ "license": "SHL-2.1 (Solderpad Hardware License v2.1), in LICENSE",
  "rank": 2548,
  "complexity": {
   "grade": 209,

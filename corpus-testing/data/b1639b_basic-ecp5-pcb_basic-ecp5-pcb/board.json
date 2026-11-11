@@ -14,6 +14,7 @@
  "path": "mattvenn__basic-ecp5-pcb/hardware/basic-ecp5-pcb.kicad_pcb",
  "project": "mattvenn/basic-ecp5-pcb",
  "name": "basic-ecp5-pcb",
+ "license": "CC0-1.0 (Creative Commons Zero v1.0)",
  "zip": "part15_of_17",
  "features": {
   "through_vias": 130,

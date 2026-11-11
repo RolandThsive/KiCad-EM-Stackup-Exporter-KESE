@@ -14,6 +14,7 @@
  "path": "MelkhiorVintageComputing__IIsiFPGA/IIsi-to-ztex/IIsi-to-ztex.kicad_pcb",
  "project": "MelkhiorVintageComputing/IIsiFPGA",
  "name": "IIsi-to-ztex",
+ "license": "CC-BY-NC-SA-4.0 (Creative Commons Attribution-NonCommercial-ShareAlike 4.0), in LICENSE.md",
  "zip": "part13_of_17",
  "features": {
   "through_vias": 112,

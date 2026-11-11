@@ -14,6 +14,7 @@
  "path": "will127534__RaspberryPiAtomicNixieClock/PCB/NixieAtomicClock.kicad_pcb",
  "project": "will127534/RaspberryPiAtomicNixieClock",
  "name": "NixieAtomicClock",
+ "license": "No license found",
  "zip": "part10_of_17",
  "features": {
   "through_vias": 2132,

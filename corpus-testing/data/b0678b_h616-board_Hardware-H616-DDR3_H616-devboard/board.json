@@ -14,6 +14,7 @@
  "path": "bogdan8266__h616-board/Hardware/H616_DDR3/H616_devboard.kicad_pcb",
  "project": "bogdan8266/h616-board",
  "name": "H616_devboard",
+ "license": "CERN-OHL-P-2.0 (CERN Open Hardware Licence v2, Permissive)",
  "zip": "part13_of_17",
  "features": {
   "through_vias": 526,

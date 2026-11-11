@@ -2,6 +2,7 @@
  "name": "backpack",
  "project": "osrf/ovc",
  "path": "osrf__ovc/ovc3/hardware/ovc3a/ovc3a/backpack/backpack.kicad_pcb",
+ "license": "Apache-2.0 (Apache License 2.0)",
  "rank": 1668,
  "complexity": {
   "grade": 235,

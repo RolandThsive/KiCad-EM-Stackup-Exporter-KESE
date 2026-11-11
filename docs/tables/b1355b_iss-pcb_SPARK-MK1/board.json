@@ -2,6 +2,7 @@
  "name": "SPARK-MK1",
  "project": "issuiuc/iss-pcb",
  "path": "issuiuc__iss-pcb/boards/SPARK-MK1/SPARK-MK1.kicad_pcb",
+ "license": "No license found",
  "rank": 2190,
  "complexity": {
   "grade": 301,

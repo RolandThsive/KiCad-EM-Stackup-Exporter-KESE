@@ -14,6 +14,7 @@
  "path": "esp-rs__esp-rust-board/hardware/esp-rust-board/esp-rust-board.kicad_pcb",
  "project": "esp-rs/esp-rust-board",
  "name": "esp-rust-board",
+ "license": "CERN-OHL-P-2.0 (CERN Open Hardware Licence v2, Permissive), in LICENSE-CERN-OHL",
  "zip": "part15_of_17",
  "features": {
   "through_vias": 216,

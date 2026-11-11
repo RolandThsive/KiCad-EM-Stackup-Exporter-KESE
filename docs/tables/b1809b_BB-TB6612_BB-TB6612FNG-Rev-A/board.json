@@ -2,6 +2,7 @@
  "name": "BB-TB6612FNG-Rev_A",
  "project": "OLIMEX/BB-TB6612",
  "path": "OLIMEX__BB-TB6612/HARDWARE/BB-TB6612-Rev.A/BB-TB6612FNG-Rev_A.kicad_pcb",
+ "license": "GPL-3.0 (GNU GPL v3.0)",
  "rank": 2549,
  "complexity": {
   "grade": 167,

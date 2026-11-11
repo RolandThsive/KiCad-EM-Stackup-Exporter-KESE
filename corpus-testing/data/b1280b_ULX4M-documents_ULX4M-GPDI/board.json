@@ -14,6 +14,7 @@
  "path": "intergalaktik__ULX4M_documents/ULX4M_test/ULX4M_GPDI.kicad_pcb",
  "project": "intergalaktik/ULX4M_documents",
  "name": "ULX4M_GPDI",
+ "license": "GPL-3.0 (GNU GPL v3.0)",
  "zip": "part15_of_17",
  "features": {
   "through_vias": 156,

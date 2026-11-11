@@ -2,6 +2,7 @@
  "name": "argo-v2",
  "project": "azlan-works/Argo",
  "path": "azlan-works__Argo/KiCad/argo-v2.kicad_pcb",
+ "license": "CERN-OHL-S-2.0 (CERN Open Hardware Licence v2, Strongly Reciprocal)",
  "rank": 701,
  "complexity": {
   "grade": 325,

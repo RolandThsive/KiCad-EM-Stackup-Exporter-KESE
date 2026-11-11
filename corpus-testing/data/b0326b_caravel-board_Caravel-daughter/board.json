@@ -14,6 +14,7 @@
  "path": "antmicro__caravel_board/hardware/caravel_daughter/Caravel_daughter.kicad_pcb",
  "project": "antmicro/caravel_board",
  "name": "Caravel_daughter",
+ "license": "No license found",
  "zip": "part16_of_17",
  "features": {
   "through_vias": 0,

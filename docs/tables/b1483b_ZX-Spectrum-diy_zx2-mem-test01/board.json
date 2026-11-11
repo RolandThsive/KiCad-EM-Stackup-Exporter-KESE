@@ -2,6 +2,7 @@
  "name": "zx2_mem_test01",
  "project": "krzys9876/ZX_Spectrum_diy",
  "path": "krzys9876__ZX_Spectrum_diy/Kicad5/zx2_mem/zx2_mem_test01.kicad_pcb",
+ "license": "MIT (MIT License)",
  "rank": 2169,
  "complexity": {
   "grade": 176,

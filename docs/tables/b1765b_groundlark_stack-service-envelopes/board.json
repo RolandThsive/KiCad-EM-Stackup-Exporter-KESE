@@ -2,6 +2,7 @@
  "name": "stack-service-envelopes",
  "project": "naturalhazardscience/groundlark",
  "path": "naturalhazardscience__groundlark/hw/groundlark-fpga-hat/boards/groundlark-daqhat-01/stack-service-envelopes.kicad_pcb",
+ "license": "MIT (MIT License)",
  "rank": 132,
  "complexity": {
   "grade": 417,

@@ -2,6 +2,7 @@
  "name": "DDR4_8GB_UDIMM",
  "project": "dganin-hw/ddr4-8gb-udimm",
  "path": "dganin-hw__ddr4-8gb-udimm/kicad/DDR4_8GB_UDIMM.kicad_pcb",
+ "license": "CERN-OHL-S-2.0 (CERN Open Hardware Licence v2, Strongly Reciprocal), in LICENSES.md",
  "rank": 105,
  "complexity": {
   "grade": 478,

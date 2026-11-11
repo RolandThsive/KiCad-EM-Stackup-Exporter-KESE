@@ -2,6 +2,7 @@
  "name": "eduArdu_Rev_A",
  "project": "OLIMEX/eduArdu",
  "path": "OLIMEX__eduArdu/HARDWARE/eduArdu_Rev_A/eduArdu_Rev_A.kicad_pcb",
+ "license": "Apache-2.0 (Apache License 2.0)",
  "rank": 1143,
  "complexity": {
   "grade": 285,

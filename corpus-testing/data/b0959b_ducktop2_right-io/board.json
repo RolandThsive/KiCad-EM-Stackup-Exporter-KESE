@@ -14,6 +14,7 @@
  "path": "ewoudvv__ducktop2/right_io/right_io.kicad_pcb",
  "project": "ewoudvv/ducktop2",
  "name": "right_io",
+ "license": "MIT (MIT License)",
  "zip": "part16_of_17",
  "features": {
   "through_vias": 113,

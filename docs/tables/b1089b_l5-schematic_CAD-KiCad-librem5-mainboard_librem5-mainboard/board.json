@@ -2,6 +2,7 @@
  "name": "librem5_mainboard",
  "project": "gralco/l5-schematic",
  "path": "gralco__l5-schematic/CAD/KiCad/librem5_mainboard/librem5_mainboard.kicad_pcb",
+ "license": "GPL-3.0 (GNU GPL v3.0)",
  "rank": 23,
  "complexity": {
   "grade": 600,

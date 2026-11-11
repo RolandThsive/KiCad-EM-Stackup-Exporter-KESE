@@ -2,6 +2,7 @@
  "name": "ecp5_mainboard",
  "project": "gatecat/TrellisBoard",
  "path": "gatecat__TrellisBoard/hardware/ecp5_mainboard/ecp5_mainboard.kicad_pcb",
+ "license": "A modified ISC License \"to reflect hardware\", in COPYING",
  "rank": 9,
  "complexity": {
   "grade": 424,

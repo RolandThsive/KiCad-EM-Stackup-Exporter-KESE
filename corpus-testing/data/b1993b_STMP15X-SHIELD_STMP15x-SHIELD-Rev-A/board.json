@@ -14,6 +14,7 @@
  "path": "OLIMEX__STMP15X-SHIELD/HARDWARE/STMP15x-SHIELD_Rev_A/STMP15x-SHIELD_Rev_A.kicad_pcb",
  "project": "OLIMEX/STMP15X-SHIELD",
  "name": "STMP15x-SHIELD_Rev_A",
+ "license": "GPL-3.0 (GNU GPL v3.0)",
  "zip": "part15_of_17",
  "features": {
   "through_vias": 170,

@@ -14,6 +14,7 @@
  "path": "esphome__home-assistant-voice-pe/hardware/KiCad/Home Assistant Voice PE.kicad_pcb",
  "project": "esphome/home-assistant-voice-pe",
  "name": "Home Assistant Voice PE",
+ "license": "CERN-OHL-P-2.0 (CERN Open Hardware Licence v2, Permissive) for the hardware, in hardware/LICENSE.txt; the ESPHome License (MIT and GPL-3.0) for the code, in LICENSE",
  "zip": "part10_of_17",
  "features": {
   "through_vias": 1864,

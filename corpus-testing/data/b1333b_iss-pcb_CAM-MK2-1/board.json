@@ -14,6 +14,7 @@
  "path": "issuiuc__iss-pcb/boards/CAM-MK2/CAM-MK2.1-revA/CAM-MK2.1.kicad_pcb",
  "project": "issuiuc/iss-pcb",
  "name": "CAM-MK2.1",
+ "license": "No license found",
  "zip": "part15_of_17",
  "features": {
   "through_vias": 284,

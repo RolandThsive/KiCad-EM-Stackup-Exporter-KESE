@@ -2,6 +2,7 @@
  "name": "trezor_v1.1",
  "project": "trezor/trezor-hardware",
  "path": "trezor__trezor-hardware/electronics/trezor_one/kicad/trezor_v1.1.kicad_pcb",
+ "license": "AGPL-3.0 (GNU AGPL v3.0), in COPYING; CERN-OHL-S-2.0 (CERN Open Hardware Licence v2, Strongly Reciprocal), in LICENSE",
  "rank": 1798,
  "complexity": {
   "grade": 301,

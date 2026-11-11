@@ -14,6 +14,7 @@
  "path": "oresat__oresat-dxwifi-hardware/bi-directional-amp-board_V2/KiCad/Bidirectional_Amp.kicad_pcb",
  "project": "oresat/oresat-dxwifi-hardware",
  "name": "Bidirectional_Amp",
+ "license": "GPL-3.0 (GNU GPL v3.0)",
  "zip": "part15_of_17",
  "features": {
   "through_vias": 890,

@@ -14,6 +14,7 @@
  "path": "andrewpaterson__658-Computer/Kicad/Programmers/EPM570 Programmer/EPM570 Programmer.kicad_pcb",
  "project": "andrewpaterson/658-Computer",
  "name": "EPM570 Programmer",
+ "license": "No license found",
  "zip": "part16_of_17",
  "features": {
   "through_vias": 12,

@@ -2,6 +2,7 @@
  "name": "4in1",
  "project": "incutec-hw/openesc-30x30",
  "path": "incutec-hw__openesc-30x30/hardware/4in1.kicad_pcb",
+ "license": "CERN-OHL-S-2.0 (CERN Open Hardware Licence v2, Strongly Reciprocal), in LICENSE",
  "rank": 405,
  "complexity": {
   "grade": 415,

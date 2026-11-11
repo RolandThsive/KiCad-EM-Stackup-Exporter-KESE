@@ -2,6 +2,7 @@
  "name": "superseal-igbt",
  "project": "rusefi/rusefi-hardware",
  "path": "rusefi__rusefi-hardware/superseal-igbt/superseal-igbt.kicad_pcb",
+ "license": "No license found",
  "rank": 2101,
  "complexity": {
   "grade": 234,

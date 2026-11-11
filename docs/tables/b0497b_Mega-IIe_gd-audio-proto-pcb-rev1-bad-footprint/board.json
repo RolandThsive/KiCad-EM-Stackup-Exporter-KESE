@@ -2,6 +2,7 @@
  "name": "gd audio proto pcb-rev1 bad footprint",
  "project": "baldengineer/Mega-IIe",
  "path": "baldengineer__Mega-IIe/kicad files/gd audio proto pcb/gd audio proto pcb-rev1 bad footprint.kicad_pcb",
+ "license": "MIT (MIT License)",
  "rank": 2637,
  "complexity": {
   "grade": 211,

@@ -2,6 +2,7 @@
  "name": "gd blackplane proto pcb",
  "project": "baldengineer/Mega-IIe",
  "path": "baldengineer__Mega-IIe/kicad files/gd backplane proto pcb/gd blackplane proto pcb.kicad_pcb",
+ "license": "MIT (MIT License)",
  "rank": 1374,
  "complexity": {
   "grade": 230,

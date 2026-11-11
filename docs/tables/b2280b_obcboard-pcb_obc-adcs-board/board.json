@@ -2,6 +2,7 @@
  "name": "obc-adcs-board",
  "project": "peaksat/obcboard_pcb",
  "path": "peaksat__obcboard_pcb/obc-adcs-board.kicad_pcb",
+ "license": "GPL-3.0 (GNU GPL v3.0)",
  "rank": 461,
  "complexity": {
   "grade": 356,

@@ -2,6 +2,7 @@
  "name": "osw-light",
  "project": "Open-Smartwatch/open-smartwatch-light",
  "path": "Open-Smartwatch__open-smartwatch-light/osw-light.kicad_pcb",
+ "license": "GPL-3.0 (GNU GPL v3.0)",
  "rank": 1749,
  "complexity": {
   "grade": 253,

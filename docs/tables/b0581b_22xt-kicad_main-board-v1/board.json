@@ -2,6 +2,7 @@
  "name": "main_board_v1",
  "project": "bluejayracing/22xt_kicad",
  "path": "bluejayracing__22xt_kicad/01-main_board/main_board_v1/main_board_v1.kicad_pcb",
+ "license": "No license found",
  "rank": 805,
  "complexity": {
   "grade": 365,

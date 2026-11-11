@@ -2,6 +2,7 @@
  "name": "BeagleConnect Freedom C7",
  "project": "beagleboard/beagleconnect-freedom",
  "path": "beagleboard__beagleconnect-freedom/hw/KICAD/BeagleConnect Freedom C7.kicad_pcb",
+ "license": "CC-BY-4.0 (Creative Commons Attribution 4.0)",
  "rank": 683,
  "complexity": {
   "grade": 360,

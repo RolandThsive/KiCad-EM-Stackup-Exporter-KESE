@@ -14,6 +14,7 @@
  "path": "andrewpaterson__658-Computer/Kicad/Computer/Blitter/Blitter Board/Blitter Board.kicad_pcb",
  "project": "andrewpaterson/658-Computer",
  "name": "Blitter Board",
+ "license": "No license found",
  "zip": "part13_of_17",
  "features": {
   "through_vias": 460,

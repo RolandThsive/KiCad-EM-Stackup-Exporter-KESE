@@ -2,6 +2,7 @@
  "name": "headstage-neuropix2e",
  "project": "open-ephys/onix-headstage-neuropix2e-beta",
  "path": "open-ephys__onix-headstage-neuropix2e-beta/pcb/headstage-neuropix2e.kicad_pcb",
+ "license": "No license found",
  "rank": 1520,
  "complexity": {
   "grade": 366,

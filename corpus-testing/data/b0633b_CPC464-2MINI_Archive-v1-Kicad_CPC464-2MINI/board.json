@@ -14,6 +14,7 @@
  "path": "Board-Folk__CPC464-2MINI/Archive/v1/Kicad/CPC464-2MINI.kicad_pcb",
  "project": "Board-Folk/CPC464-2MINI",
  "name": "CPC464-2MINI",
+ "license": "No license found",
  "zip": "part10_of_17",
  "features": {
   "through_vias": 450,

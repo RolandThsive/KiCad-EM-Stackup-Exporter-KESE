@@ -2,6 +2,7 @@
  "name": "MultiUniBoard",
  "project": "flypie/Ace-2019",
  "path": "flypie__Ace-2019/KiCad/MultiUniBoard/MultiUniBoard.kicad_pcb",
+ "license": "GPL-3.0 (GNU GPL v3.0)",
  "rank": 2997,
  "complexity": {
   "grade": 36,

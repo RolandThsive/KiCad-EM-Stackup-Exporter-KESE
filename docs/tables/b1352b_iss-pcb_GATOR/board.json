@@ -2,6 +2,7 @@
  "name": "GATOR",
  "project": "issuiuc/iss-pcb",
  "path": "issuiuc__iss-pcb/boards/Motor-MK2 (GATOR)/GATOR.kicad_pcb",
+ "license": "No license found",
  "rank": 1115,
  "complexity": {
   "grade": 376,

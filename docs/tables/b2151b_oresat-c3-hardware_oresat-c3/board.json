@@ -2,6 +2,7 @@
  "name": "oresat-c3",
  "project": "oresat/oresat-c3-hardware",
  "path": "oresat__oresat-c3-hardware/oresat-c3-card/oresat-c3.kicad_pcb",
+ "license": "CERN-OHL-S-2.0 (CERN Open Hardware Licence v2, Strongly Reciprocal), in LICENSE.md",
  "rank": 310,
  "complexity": {
   "grade": 449,

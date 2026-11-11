@@ -2,6 +2,7 @@
  "name": "bspd_brakelight",
  "project": "olin-electric-motorsports/olin-electric-motorsports",
  "path": "olin-electric-motorsports__olin-electric-motorsports/vehicle/mkv/hardware/lvbox/bspd/bspd_brakelight.kicad_pcb",
+ "license": "No license found",
  "rank": 1461,
  "complexity": {
   "grade": 277,

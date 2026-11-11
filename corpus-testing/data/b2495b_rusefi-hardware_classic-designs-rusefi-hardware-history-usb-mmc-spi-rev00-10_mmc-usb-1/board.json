@@ -14,6 +14,7 @@
  "path": "rusefi__rusefi-hardware/classic-designs/rusefi_hardware_history/usb_mmc_spi_rev00.10/mmc_usb_1.kicad_pcb",
  "project": "rusefi/rusefi-hardware",
  "name": "mmc_usb_1",
+ "license": "No license found",
  "zip": "part16_of_17",
  "features": {
   "through_vias": 48,

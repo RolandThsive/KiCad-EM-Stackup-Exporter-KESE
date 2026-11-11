@@ -2,6 +2,7 @@
  "name": "GateMateA1-EVB_Rev_A",
  "project": "OLIMEX/GateMateA1-EVB",
  "path": "OLIMEX__GateMateA1-EVB/HARDWARE/GateMateA1-EVB-Rev.A/GateMateA1-EVB_Rev_A.kicad_pcb",
+ "license": "GPL-3.0 (GNU GPL v3.0)",
  "rank": 177,
  "complexity": {
   "grade": 427,

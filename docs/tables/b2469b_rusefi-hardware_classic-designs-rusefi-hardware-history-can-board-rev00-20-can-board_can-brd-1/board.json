@@ -2,6 +2,7 @@
  "name": "can_brd_1",
  "project": "rusefi/rusefi-hardware",
  "path": "rusefi__rusefi-hardware/classic-designs/rusefi_hardware_history/can_board_rev00.20/can_board/can_brd_1.kicad_pcb",
+ "license": "No license found",
  "rank": 2711,
  "complexity": {
   "grade": 151,

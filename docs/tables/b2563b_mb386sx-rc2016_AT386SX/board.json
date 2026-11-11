@@ -2,6 +2,7 @@
  "name": "AT386SX",
  "project": "skiselev/mb386sx-rc2016",
  "path": "skiselev__mb386sx-rc2016/KiCad/AT386SX.kicad_pcb",
+ "license": "No license found",
  "rank": 201,
  "complexity": {
   "grade": 359,

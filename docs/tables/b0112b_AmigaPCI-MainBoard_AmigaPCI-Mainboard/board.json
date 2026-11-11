@@ -2,6 +2,7 @@
  "name": "AmigaPCI Mainboard",
  "project": "AmigaPCI/AmigaPCI-MainBoard",
  "path": "AmigaPCI__AmigaPCI-MainBoard/KiCAD/AmigaPCI Mainboard-KiCAD REV 70/AmigaPCI Mainboard.kicad_pcb",
+ "license": "As README.md states it: \"Floppy interface modifications from Ian Steadman (noted in schematic) released under the GNU GENERAL PUBLIC LICENSE, Version 3. AmigaPCI by Jason Neus is licensed under Creative Commons Attribution-NonCommercial 4.0 International\"",
  "rank": 33,
  "complexity": {
   "grade": 493,

@@ -14,6 +14,7 @@
  "path": "rusefi__rusefi-hardware/classic-designs/rusefi_hardware_history/hi-lo_driver_rev00.10/hi-lo.kicad_pcb",
  "project": "rusefi/rusefi-hardware",
  "name": "hi-lo",
+ "license": "No license found",
  "zip": "part16_of_17",
  "features": {
   "through_vias": 14,

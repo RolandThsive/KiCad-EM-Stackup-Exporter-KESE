@@ -2,6 +2,7 @@
  "name": "motherboard",
  "project": "byrantech/laptop",
  "path": "byrantech__laptop/motherboard/motherboard.kicad_pcb",
+ "license": "MIT (MIT License)",
  "rank": 403,
  "complexity": {
   "grade": 417,

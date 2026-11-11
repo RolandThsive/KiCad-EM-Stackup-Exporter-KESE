@@ -2,6 +2,7 @@
  "name": "MyIOShield",
  "project": "mwwhited/embeddedbakery",
  "path": "mwwhited__embeddedbakery/circuits/MyIOShield/MyIOShield.kicad_pcb",
+ "license": "MIT (MIT License), in LICENSE",
  "rank": 2820,
  "complexity": {
   "grade": 52,

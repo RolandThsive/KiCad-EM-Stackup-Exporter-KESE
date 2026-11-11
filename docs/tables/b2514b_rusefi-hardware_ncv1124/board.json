@@ -2,6 +2,7 @@
  "name": "ncv1124",
  "project": "rusefi/rusefi-hardware",
  "path": "rusefi__rusefi-hardware/VR_ncv1124_test_module/ncv1124.kicad_pcb",
+ "license": "No license found",
  "rank": 2404,
  "complexity": {
   "grade": 201,

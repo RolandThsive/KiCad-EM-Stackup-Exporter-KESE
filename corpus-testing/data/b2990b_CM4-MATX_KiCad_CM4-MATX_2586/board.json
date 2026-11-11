@@ -14,6 +14,7 @@
  "path": "volkertb__CM4_MATX/KiCad/CM4_MATX.kicad_pcb",
  "project": "volkertb/CM4_MATX",
  "name": "CM4_MATX",
+ "license": "No license found",
  "zip": "part16_of_17",
  "features": {
   "through_vias": 0,

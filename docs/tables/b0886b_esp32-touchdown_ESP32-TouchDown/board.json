@@ -2,6 +2,7 @@
  "name": "ESP32_TouchDown",
  "project": "DustinWatts/esp32-touchdown",
  "path": "DustinWatts__esp32-touchdown/Hardware/ESP32_TouchDown_Rev1/ESP32_TouchDown.kicad_pcb",
+ "license": "MIT (MIT License)",
  "rank": 1460,
  "complexity": {
   "grade": 309,

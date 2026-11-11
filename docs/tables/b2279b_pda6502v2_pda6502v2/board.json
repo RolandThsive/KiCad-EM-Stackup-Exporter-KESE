@@ -2,6 +2,7 @@
  "name": "pda6502v2",
  "project": "pda/pda6502v2",
  "path": "pda__pda6502v2/kicad/pda6502v2.kicad_pcb",
+ "license": "No license found",
  "rank": 780,
  "complexity": {
   "grade": 316,

@@ -14,6 +14,7 @@
  "path": "stonedDiscord__nonSNES/SNSP-CPU-01/SNSP-CPU-01.kicad_pcb",
  "project": "stonedDiscord/nonSNES",
  "name": "SNSP-CPU-01",
+ "license": "GPL-3.0 (GNU GPL v3.0)",
  "zip": "part07_of_17",
  "features": {
   "through_vias": 2394,

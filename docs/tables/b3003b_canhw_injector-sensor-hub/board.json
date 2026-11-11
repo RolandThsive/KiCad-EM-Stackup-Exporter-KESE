@@ -2,6 +2,7 @@
  "name": "injector_sensor_hub",
  "project": "waterloo-rocketry/canhw",
  "path": "waterloo-rocketry__canhw/injector_sensor_hub/injector_sensor_hub.kicad_pcb",
+ "license": "GPL-3.0 (GNU GPL v3.0)",
  "rank": 2128,
  "complexity": {
   "grade": 215,

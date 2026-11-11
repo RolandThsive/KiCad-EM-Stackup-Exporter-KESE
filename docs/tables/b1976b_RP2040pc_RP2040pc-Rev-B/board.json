@@ -2,6 +2,7 @@
  "name": "RP2040pc_Rev_B",
  "project": "OLIMEX/RP2040pc",
  "path": "OLIMEX__RP2040pc/HARDWARE/RP2040pc-REV.B/RP2040pc_Rev_B.kicad_pcb",
+ "license": "MIT (MIT License)",
  "rank": 849,
  "complexity": {
   "grade": 372,

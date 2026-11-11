@@ -2,6 +2,7 @@
  "name": "adcboard",
  "project": "nuclearfutureslab/ibxII-hardware",
  "path": "nuclearfutureslab__ibxII-hardware/adcboard/adcboard.kicad_pcb",
+ "license": "GPL-3.0 (GNU GPL v3.0)",
  "rank": 1513,
  "complexity": {
   "grade": 219,

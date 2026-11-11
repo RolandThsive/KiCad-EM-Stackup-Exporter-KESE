@@ -2,6 +2,7 @@
  "name": "V10",
  "project": "tomrodinger/servomotor",
  "path": "tomrodinger__servomotor/PCB/Servomotor3/V10/V10.kicad_pcb",
+ "license": "MIT (MIT License)",
  "rank": 1472,
  "complexity": {
   "grade": 344,

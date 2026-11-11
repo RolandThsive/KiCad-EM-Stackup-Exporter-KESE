@@ -2,6 +2,7 @@
  "name": "PicoEVB",
  "project": "RHSResearchLLC/PicoEVB",
  "path": "RHSResearchLLC__PicoEVB/Hardware/board_design/PicoEVB.kicad_pcb",
+ "license": "GPL-3.0 (GNU GPL v3.0), in Hardware/LICENSE",
  "rank": 1200,
  "complexity": {
   "grade": 251,

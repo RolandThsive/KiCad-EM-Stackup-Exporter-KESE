@@ -14,6 +14,7 @@
  "path": "sparkfun__sparkfun_gnss_flex_system/flex_boards/SparkPNT_GNSS_Flex_Module_LG580P/hardware/production/SparkFun_GNSS_Flex_Module_LG580P_panelized.kicad_pcb",
  "project": "sparkfun/sparkfun_gnss_flex_system",
  "name": "SparkFun_GNSS_Flex_Module_LG580P_panelized",
+ "license": "MIT (MIT License), in LICENSE.md",
  "zip": "part13_of_17",
  "features": {
   "through_vias": 1572,

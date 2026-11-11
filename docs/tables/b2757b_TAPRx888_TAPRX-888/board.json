@@ -2,6 +2,7 @@
  "name": "TAPRX-888",
  "project": "TAPR/TAPRx888",
  "path": "TAPR__TAPRx888/TAPRX-888.kicad_pcb",
+ "license": "MIT (MIT License)",
  "rank": 609,
  "complexity": {
   "grade": 440,

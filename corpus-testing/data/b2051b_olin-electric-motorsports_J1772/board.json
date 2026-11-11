@@ -14,6 +14,7 @@
  "path": "olin-electric-motorsports__olin-electric-motorsports/vehicle/mkvi/hardware/charging-cart/J1772/J1772.kicad_pcb",
  "project": "olin-electric-motorsports/olin-electric-motorsports",
  "name": "J1772",
+ "license": "No license found",
  "zip": "part16_of_17",
  "features": {
   "through_vias": 72,

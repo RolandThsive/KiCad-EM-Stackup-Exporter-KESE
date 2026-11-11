@@ -2,6 +2,7 @@
  "name": "LTC6812-15W",
  "project": "ucdfs/circuits",
  "path": "ucdfs__circuits/Kieran Care package/ENNOID_BMS - Slave/LTC6812-15W.kicad_pcb",
+ "license": "No license found",
  "rank": 1098,
  "complexity": {
   "grade": 344,

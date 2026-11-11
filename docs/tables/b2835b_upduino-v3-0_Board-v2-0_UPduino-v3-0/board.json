@@ -2,6 +2,7 @@
  "name": "UPduino_v3.0",
  "project": "tinyvision-ai-inc/upduino-v3.0",
  "path": "tinyvision-ai-inc__upduino-v3.0/Board/v2.0/UPduino_v3.0.kicad_pcb",
+ "license": "MIT (MIT License)",
  "rank": 1086,
  "complexity": {
   "grade": 342,

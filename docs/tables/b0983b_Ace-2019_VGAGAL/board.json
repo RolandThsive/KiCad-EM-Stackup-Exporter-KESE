@@ -2,6 +2,7 @@
  "name": "VGAGAL",
  "project": "flypie/Ace-2019",
  "path": "flypie__Ace-2019/VGA/VGAGAL/VGAGAL.kicad_pcb",
+ "license": "GPL-3.0 (GNU GPL v3.0)",
  "rank": 613,
  "complexity": {
   "grade": 278,

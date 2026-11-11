@@ -2,6 +2,7 @@
  "name": "FPGA-BOARD",
  "project": "abdulajadi1/fpga-board",
  "path": "abdulajadi1__fpga-board/FPGA-BOARD.kicad_pcb",
+ "license": "No license found",
  "rank": 120,
  "complexity": {
   "grade": 460,

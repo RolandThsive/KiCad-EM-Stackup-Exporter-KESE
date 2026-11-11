@@ -14,6 +14,7 @@
  "path": "intergalaktik__bb3-cm4/EEZ_BB3_CM4_H7/H745 CM4 module.kicad_pcb",
  "project": "intergalaktik/bb3-cm4",
  "name": "H745 CM4 module",
+ "license": "CERN-OHL-S-2.0 (CERN Open Hardware Licence v2, Strongly Reciprocal), in LICENSE.md, EEZ_BB3_CM4_H7/LICENSE.md",
  "zip": "part12_of_17",
  "features": {
   "through_vias": 483,

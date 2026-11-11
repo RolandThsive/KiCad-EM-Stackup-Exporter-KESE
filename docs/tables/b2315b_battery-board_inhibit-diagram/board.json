@@ -2,6 +2,7 @@
  "name": "inhibit_diagram",
  "project": "proveskit/battery_board",
  "path": "proveskit__battery_board/inhibit_diagram/inhibit_diagram.kicad_pcb",
+ "license": "CERN-OHL-W-2.0 (CERN Open Hardware Licence v2, Weakly Reciprocal)",
  "rank": 3116,
  "complexity": {
   "grade": 106,

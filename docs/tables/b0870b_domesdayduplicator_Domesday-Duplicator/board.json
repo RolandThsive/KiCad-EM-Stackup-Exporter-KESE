@@ -2,6 +2,7 @@
  "name": "Domesday Duplicator",
  "project": "domesday86/domesdayduplicator",
  "path": "domesday86__domesdayduplicator/hardware/pcb/Domesday Duplicator.kicad_pcb",
+ "license": "GPL-3.0 (GNU GPL v3.0)",
  "rank": 1722,
  "complexity": {
   "grade": 208,

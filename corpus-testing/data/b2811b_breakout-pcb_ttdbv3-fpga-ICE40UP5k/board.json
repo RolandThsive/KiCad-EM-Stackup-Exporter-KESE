@@ -14,6 +14,7 @@
  "path": "TinyTapeout__breakout-pcb/ASIC-simulator/ttdbv3-fpga-ICE40UP5k/ttdbv3-fpga-ICE40UP5k.kicad_pcb",
  "project": "TinyTapeout/breakout-pcb",
  "name": "ttdbv3-fpga-ICE40UP5k",
+ "license": "Apache-2.0 (Apache License 2.0)",
  "zip": "part15_of_17",
  "features": {
   "through_vias": 338,

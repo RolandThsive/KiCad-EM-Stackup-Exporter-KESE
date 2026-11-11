@@ -2,6 +2,7 @@
  "name": "trenz_hat",
  "project": "naturalhazardscience/groundlark",
  "path": "naturalhazardscience__groundlark/hw/groundlark-fpga-hat/layout/trenz_hat/trenz_hat.kicad_pcb",
+ "license": "MIT (MIT License)",
  "rank": 2265,
  "complexity": {
   "grade": 199,

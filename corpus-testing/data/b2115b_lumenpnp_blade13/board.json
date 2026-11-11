@@ -14,6 +14,7 @@
  "path": "opulo-inc__lumenpnp/src/PCB/blade13/blade13.kicad_pcb",
  "project": "opulo-inc/lumenpnp",
  "name": "blade13",
+ "license": "In LICENSE: CERN-OHL-W-2.0 for the hardware designs, MPL-2.0 for the workflows, CC-BY-SA-4.0 for the KiCad libraries",
  "zip": "part15_of_17",
  "features": {
   "through_vias": 474,

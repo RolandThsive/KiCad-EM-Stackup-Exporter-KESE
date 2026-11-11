@@ -2,6 +2,7 @@
  "name": "stemma-qwiic-grove-gravity-bog-plank-1REV1",
  "project": "DangerousPrototypes/BusPirate5-hardware",
  "path": "DangerousPrototypes__BusPirate5-hardware/adapter-stemma-qwiic-grove-gravity-bog-plank-1REV1/stemma-qwiic-grove-gravity-bog-plank-1REV1.kicad_pcb",
+ "license": "MIT (MIT License)",
  "rank": 2322,
  "complexity": {
   "grade": 242,

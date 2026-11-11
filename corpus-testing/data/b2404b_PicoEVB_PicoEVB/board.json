@@ -14,6 +14,7 @@
  "path": "RHSResearchLLC__PicoEVB/Hardware/board_design/PicoEVB.kicad_pcb",
  "project": "RHSResearchLLC/PicoEVB",
  "name": "PicoEVB",
+ "license": "GPL-3.0 (GNU GPL v3.0), in Hardware/LICENSE",
  "zip": "part15_of_17",
  "features": {
   "through_vias": 304,

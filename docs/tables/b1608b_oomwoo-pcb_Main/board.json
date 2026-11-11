@@ -2,6 +2,7 @@
  "name": "Main",
  "project": "makerspet/oomwoo-pcb",
  "path": "makerspet__oomwoo-pcb/kicad/main/Main.kicad_pcb",
+ "license": "Apache-2.0 (Apache License 2.0)",
  "rank": 1896,
  "complexity": {
   "grade": 228,

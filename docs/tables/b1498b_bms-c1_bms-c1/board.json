@@ -2,6 +2,7 @@
  "name": "bms-c1",
  "project": "LibreSolar/bms-c1",
  "path": "LibreSolar__bms-c1/kicad/bms-c1.kicad_pcb",
+ "license": "CERN-OHL-W-2.0 (CERN Open Hardware Licence v2, Weakly Reciprocal), in LICENCE",
  "rank": 696,
  "complexity": {
   "grade": 383,

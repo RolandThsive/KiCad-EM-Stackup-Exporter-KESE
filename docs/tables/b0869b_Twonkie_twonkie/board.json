@@ -2,6 +2,7 @@
  "name": "twonkie",
  "project": "dojoe/Twonkie",
  "path": "dojoe__Twonkie/hw/twonkie.kicad_pcb",
+ "license": "CC-BY-4.0 (Creative Commons Attribution 4.0), in hw/LICENSE",
  "rank": 1491,
  "complexity": {
   "grade": 329,

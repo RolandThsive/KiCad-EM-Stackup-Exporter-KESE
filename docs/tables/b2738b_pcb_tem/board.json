@@ -2,6 +2,7 @@
  "name": "tem",
  "project": "sufst/pcb",
  "path": "sufst__pcb/tem/tem.kicad_pcb",
+ "license": "GPL-3.0 (GNU GPL v3.0)",
  "rank": 1415,
  "complexity": {
   "grade": 269,

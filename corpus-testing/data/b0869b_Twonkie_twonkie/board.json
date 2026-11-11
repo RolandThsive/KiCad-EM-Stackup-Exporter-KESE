@@ -14,6 +14,7 @@
  "path": "dojoe__Twonkie/hw/twonkie.kicad_pcb",
  "project": "dojoe/Twonkie",
  "name": "twonkie",
+ "license": "CC-BY-4.0 (Creative Commons Attribution 4.0), in hw/LICENSE",
  "zip": "part15_of_17",
  "features": {
   "through_vias": 240,

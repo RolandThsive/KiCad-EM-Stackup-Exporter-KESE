@@ -2,6 +2,7 @@
  "name": "ESP32-H2-DevKit-LiPo_Rev_A",
  "project": "OLIMEX/ESP32-H2-DevKit-Lipo",
  "path": "OLIMEX__ESP32-H2-DevKit-Lipo/HARDWARE/ESP32-H2-DevKit-Lipo-Rev.A/ESP32-H2-DevKit-LiPo_Rev_A.kicad_pcb",
+ "license": "GPL-3.0 (GNU GPL v3.0)",
  "rank": 1369,
  "complexity": {
   "grade": 282,

@@ -2,6 +2,7 @@
  "name": "iob-characterization-v02",
  "project": "azonenberg/starshipraider",
  "path": "azonenberg__starshipraider/boards/CLARKE/iob-characterization-v02/iob-characterization-v02.kicad_pcb",
+ "license": "BSD-3-Clause (BSD 3-Clause License)",
  "rank": 931,
  "complexity": {
   "grade": 299,

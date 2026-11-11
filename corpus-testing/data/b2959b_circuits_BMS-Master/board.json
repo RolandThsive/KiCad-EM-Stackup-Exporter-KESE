@@ -14,6 +14,7 @@
  "path": "ucdfs__circuits/Kieran Care package/ENNOID_BMS - Master/BMS-Master.kicad_pcb",
  "project": "ucdfs/circuits",
  "name": "BMS-Master",
+ "license": "No license found",
  "zip": "part14_of_17",
  "features": {
   "through_vias": 260,

@@ -2,6 +2,7 @@
  "name": "sdi-mipi-bridge",
  "project": "antmicro/sdi-mipi-bridge-hw",
  "path": "antmicro__sdi-mipi-bridge-hw/sdi-mipi-bridge.kicad_pcb",
+ "license": "Apache-2.0 (Apache License 2.0)",
  "rank": 410,
  "complexity": {
   "grade": 390,

@@ -2,6 +2,7 @@
  "name": "TINY-REFLOW-CONTROLLER",
  "project": "rocketscream/TinyReflowController",
  "path": "rocketscream__TinyReflowController/TINY-REFLOW-CONTROLLER.kicad_pcb",
+ "license": "No license found",
  "rank": 1641,
  "complexity": {
   "grade": 278,

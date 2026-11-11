@@ -14,6 +14,7 @@
  "path": "andrewpaterson__658-Computer/Kicad/Tester/LCD 14 Segment Tester/LCD 14 Segment Tester.kicad_pcb",
  "project": "andrewpaterson/658-Computer",
  "name": "LCD 14 Segment Tester",
+ "license": "No license found",
  "zip": "part16_of_17",
  "features": {
   "through_vias": 84,

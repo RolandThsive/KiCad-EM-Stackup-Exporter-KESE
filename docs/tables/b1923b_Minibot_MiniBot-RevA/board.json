@@ -2,6 +2,7 @@
  "name": "MiniBot_RevA",
  "project": "OLIMEX/Minibot",
  "path": "OLIMEX__Minibot/HARDWARE/MiniBot_RevA.kicad_pcb",
+ "license": "Apache-2.0 (Apache License 2.0)",
  "rank": 2364,
  "complexity": {
   "grade": 202,

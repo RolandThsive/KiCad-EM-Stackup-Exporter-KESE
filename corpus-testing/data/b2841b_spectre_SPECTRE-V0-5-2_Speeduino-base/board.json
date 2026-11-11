@@ -14,6 +14,7 @@
  "path": "tjeerdie__spectre/SPECTRE_V0.5.2/Speeduino_base.kicad_pcb",
  "project": "tjeerdie/spectre",
  "name": "Speeduino_base",
+ "license": "GPL-3.0 (GNU GPL v3.0)",
  "zip": "part12_of_17",
  "features": {
   "through_vias": 444,

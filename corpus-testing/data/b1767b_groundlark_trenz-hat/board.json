@@ -14,6 +14,7 @@
  "path": "naturalhazardscience__groundlark/hw/groundlark-fpga-hat/layout/trenz_hat/trenz_hat.kicad_pcb",
  "project": "naturalhazardscience/groundlark",
  "name": "trenz_hat",
+ "license": "MIT (MIT License)",
  "zip": "part16_of_17",
  "features": {
   "through_vias": 0,

@@ -14,6 +14,7 @@
  "path": "byrantech__laptop/audio/audio.kicad_pcb",
  "project": "byrantech/laptop",
  "name": "audio",
+ "license": "MIT (MIT License)",
  "zip": "part16_of_17",
  "features": {
   "through_vias": 116,

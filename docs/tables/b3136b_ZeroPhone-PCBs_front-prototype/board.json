@@ -2,6 +2,7 @@
  "name": "front_prototype",
  "project": "ZeroPhone/ZeroPhone-PCBs",
  "path": "ZeroPhone__ZeroPhone-PCBs/front_pcb/front_prototype.kicad_pcb",
+ "license": "GPL-3.0 (GNU GPL v3.0)",
  "rank": 891,
  "complexity": {
   "grade": 289,

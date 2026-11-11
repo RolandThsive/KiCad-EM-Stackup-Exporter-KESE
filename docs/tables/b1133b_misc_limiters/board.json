@@ -2,6 +2,7 @@
  "name": "limiters",
  "project": "greatscottgadgets/misc",
  "path": "greatscottgadgets__misc/evaluation-boards/limiters/limiters.kicad_pcb",
+ "license": "GPL-2.0 (GNU GPL v2.0)",
  "rank": 1864,
  "complexity": {
   "grade": 267,

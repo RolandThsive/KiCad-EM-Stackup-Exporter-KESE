@@ -2,6 +2,7 @@
  "name": "entry-afe-characterization",
  "project": "azonenberg/starshipraider",
  "path": "azonenberg__starshipraider/boards/BLONDEL/entry-afe-characterization/entry-afe-characterization.kicad_pcb",
+ "license": "BSD-3-Clause (BSD 3-Clause License)",
  "rank": 617,
  "complexity": {
   "grade": 333,

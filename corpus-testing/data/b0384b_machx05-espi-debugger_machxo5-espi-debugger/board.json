@@ -14,6 +14,7 @@
  "path": "antmicro__machx05-espi-debugger/machxo5-espi-debugger.kicad_pcb",
  "project": "antmicro/machx05-espi-debugger",
  "name": "machxo5-espi-debugger",
+ "license": "Apache-2.0 (Apache License 2.0)",
  "zip": "part12_of_17",
  "features": {
   "through_vias": 982,

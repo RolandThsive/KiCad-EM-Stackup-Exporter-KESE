@@ -2,6 +2,7 @@
  "name": "UEXT-LVL-SHIFT_Rev_A",
  "project": "OLIMEX/UEXT-LVL-SHIFT",
  "path": "OLIMEX__UEXT-LVL-SHIFT/HARDWARE/UEXT-LVL-SHIFT_Rev_A/UEXT-LVL-SHIFT_Rev_A.kicad_pcb",
+ "license": "MIT (MIT License)",
  "rank": 1609,
  "complexity": {
   "grade": 264,

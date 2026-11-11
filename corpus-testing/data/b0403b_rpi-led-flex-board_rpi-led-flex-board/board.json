@@ -14,6 +14,7 @@
  "path": "antmicro__rpi-led-flex-board/rpi-led-flex-board.kicad_pcb",
  "project": "antmicro/rpi-led-flex-board",
  "name": "rpi-led-flex-board",
+ "license": "Apache-2.0 (Apache License 2.0)",
  "zip": "part16_of_17",
  "features": {
   "through_vias": 43,

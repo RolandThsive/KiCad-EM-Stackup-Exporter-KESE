@@ -2,6 +2,7 @@
  "name": "icebreaker",
  "project": "esden/icebreaker",
  "path": "esden__icebreaker/hardware/v0.2a/icebreaker.kicad_pcb",
+ "license": "No license found",
  "rank": 1168,
  "complexity": {
   "grade": 308,

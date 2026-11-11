@@ -2,6 +2,7 @@
  "name": "job-ict-bottom-board",
  "project": "antmicro/job-ict-bottom-board",
  "path": "antmicro__job-ict-bottom-board/job-ict-bottom-board.kicad_pcb",
+ "license": "Apache-2.0 (Apache License 2.0)",
  "rank": 1857,
  "complexity": {
   "grade": 323,

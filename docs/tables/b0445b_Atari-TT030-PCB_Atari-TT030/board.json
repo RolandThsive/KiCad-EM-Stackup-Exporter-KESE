@@ -2,6 +2,7 @@
  "name": "Atari TT030",
  "project": "AtarianComputing/Atari-TT030-PCB",
  "path": "AtarianComputing__Atari-TT030-PCB/Atari TT030.kicad_pcb",
+ "license": "No license found",
  "rank": 1191,
  "complexity": {
   "grade": 184,

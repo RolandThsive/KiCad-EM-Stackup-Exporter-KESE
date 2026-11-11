@@ -14,6 +14,7 @@
  "path": "antmicro__job-ict-support-board/job-ict-support-board.kicad_pcb",
  "project": "antmicro/job-ict-support-board",
  "name": "job-ict-support-board",
+ "license": "Apache-2.0 (Apache License 2.0)",
  "zip": "part16_of_17",
  "features": {
   "through_vias": 0,

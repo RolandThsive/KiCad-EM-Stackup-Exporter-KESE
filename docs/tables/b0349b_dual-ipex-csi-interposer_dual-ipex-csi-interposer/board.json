@@ -2,6 +2,7 @@
  "name": "dual-ipex-csi-interposer",
  "project": "antmicro/dual-ipex-csi-interposer",
  "path": "antmicro__dual-ipex-csi-interposer/dual-ipex-csi-interposer.kicad_pcb",
+ "license": "Apache-2.0 (Apache License 2.0)",
  "rank": 1870,
  "complexity": {
   "grade": 267,

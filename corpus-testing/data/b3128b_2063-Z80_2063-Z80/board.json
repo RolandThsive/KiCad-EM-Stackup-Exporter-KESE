@@ -14,6 +14,7 @@
  "path": "Z80-Retro__2063-Z80/2063-Z80.kicad_pcb",
  "project": "Z80-Retro/2063-Z80",
  "name": "2063-Z80",
+ "license": "No license found",
  "zip": "part14_of_17",
  "features": {
   "through_vias": 244,

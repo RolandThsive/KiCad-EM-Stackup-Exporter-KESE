@@ -2,6 +2,7 @@
  "name": "amp-PA-GRF5504-with-detect",
  "project": "oresat/oresat-c3-rf",
  "path": "oresat__oresat-c3-rf/KiCad/amp-PA-GRF5504-with-detect.kicad_pcb",
+ "license": "MIT (MIT License)",
  "rank": 1741,
  "complexity": {
   "grade": 308,

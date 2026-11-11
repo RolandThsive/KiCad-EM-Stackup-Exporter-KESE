@@ -2,6 +2,7 @@
  "name": "gate_and_4in",
  "project": "tmarhguy/alu",
  "path": "tmarhguy__alu/schematics/kicad/modules/gates/gate_and/gate_and_4in/gate_and_4in.kicad_pcb",
+ "license": "MIT (MIT License)",
  "rank": 2923,
  "complexity": {
   "grade": 53,

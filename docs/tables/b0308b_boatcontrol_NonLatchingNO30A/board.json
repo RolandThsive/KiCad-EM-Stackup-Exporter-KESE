@@ -2,6 +2,7 @@
  "name": "NonLatchingNO30A",
  "project": "antevens/boatcontrol",
  "path": "antevens__boatcontrol/addon/NonLatchingNO30A/NonLatchingNO30A.kicad_pcb",
+ "license": "SHL-2.1 (Solderpad Hardware License v2.1), in LICENSE",
  "rank": 2168,
  "complexity": {
   "grade": 198,

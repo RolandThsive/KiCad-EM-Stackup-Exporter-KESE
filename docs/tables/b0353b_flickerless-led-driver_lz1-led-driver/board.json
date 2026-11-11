@@ -2,6 +2,7 @@
  "name": "lz1-led-driver",
  "project": "antmicro/flickerless-led-driver",
  "path": "antmicro__flickerless-led-driver/lz1-led-driver.kicad_pcb",
+ "license": "Apache-2.0 (Apache License 2.0)",
  "rank": 2161,
  "complexity": {
   "grade": 253,

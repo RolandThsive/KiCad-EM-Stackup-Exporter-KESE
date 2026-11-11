@@ -2,6 +2,7 @@
  "name": "bp5-ir-toy-v3-rev3",
  "project": "DangerousPrototypes/BusPirate5-hardware",
  "path": "DangerousPrototypes__BusPirate5-hardware/adapter-ir-toy-3REV3/bp5-ir-toy-v3-rev3.kicad_pcb",
+ "license": "MIT (MIT License)",
  "rank": 2375,
  "complexity": {
   "grade": 203,

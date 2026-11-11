@@ -2,6 +2,7 @@
  "name": "MemBird - Woodcock",
  "project": "transistorfet/retroverse",
  "path": "transistorfet__retroverse/components/membird/hardware/MemBird - Woodcock/MemBird - Woodcock.kicad_pcb",
+ "license": "In LICENSE: CERN-OHL-P-2.0 for hardware designs and programmable logic, Apache-2.0 or MIT for other source code, CC-BY-SA-4.0 for artwork and documentation",
  "rank": 842,
  "complexity": {
   "grade": 355,

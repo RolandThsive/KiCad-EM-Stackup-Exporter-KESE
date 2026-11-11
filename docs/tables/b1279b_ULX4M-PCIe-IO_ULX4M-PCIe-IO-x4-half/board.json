@@ -2,6 +2,7 @@
  "name": "ULX4M-PCIe-IO_x4_half",
  "project": "intergalaktik/ULX4M-PCIe-IO",
  "path": "intergalaktik__ULX4M-PCIe-IO/kicad/ULX4M-PCIe-IO_x4_half.kicad_pcb",
+ "license": "CERN-OHL-S-2.0 (CERN Open Hardware Licence v2, Strongly Reciprocal), in LICENSE.md",
  "rank": 340,
  "complexity": {
   "grade": 341,

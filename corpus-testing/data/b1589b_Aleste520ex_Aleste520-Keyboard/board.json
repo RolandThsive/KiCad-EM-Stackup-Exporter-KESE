@@ -14,6 +14,7 @@
  "path": "lucedoriente__Aleste520ex/keyboard/Aleste520_Keyboard.kicad_pcb",
  "project": "lucedoriente/Aleste520ex",
  "name": "Aleste520_Keyboard",
+ "license": "GPL-3.0 (GNU GPL v3.0)",
  "zip": "part05_of_17",
  "features": {
   "through_vias": 282,

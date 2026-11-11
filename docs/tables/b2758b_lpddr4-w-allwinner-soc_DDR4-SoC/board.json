@@ -2,6 +2,7 @@
  "name": "DDR4_SoC",
  "project": "tatakimon/lpddr4_w_allwinner_soc",
  "path": "tatakimon__lpddr4_w_allwinner_soc/DDR4_SoC/DDR4_SoC.kicad_pcb",
+ "license": "No license found",
  "rank": 279,
  "complexity": {
   "grade": 442,

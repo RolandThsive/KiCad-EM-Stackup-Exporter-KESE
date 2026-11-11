@@ -14,6 +14,7 @@
  "path": "Redherring32__OpenTendo/Board Files/Motherboard.kicad_pcb",
  "project": "Redherring32/OpenTendo",
  "name": "Motherboard",
+ "license": "TAPR-OHL-1.0 (TAPR Open Hardware License), in LICENSE",
  "zip": "part13_of_17",
  "features": {
   "through_vias": 774,

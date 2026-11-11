@@ -2,6 +2,7 @@
  "name": "caravel-5V-dev-v6-M.2",
  "project": "chipfoundry/caravel_board",
  "path": "chipfoundry__caravel_board/hardware/development/_archive/caravel-dev-gf180-v6-M.2/caravel-5V-dev-v6-M.2.kicad_pcb",
+ "license": "No license found",
  "rank": 1256,
  "complexity": {
   "grade": 327,

@@ -2,6 +2,7 @@
  "name": "edk",
  "project": "ciaa/Hardware",
  "path": "ciaa__Hardware/PCB/EDU-INTEL/edk.kicad_pcb",
+ "license": "BSD-2-Clause (BSD 2-Clause License), in LICENSE, PCB/EDU-FPGA/LICENSE, PCB/Z3R0/LICENSE",
  "rank": 1254,
  "complexity": {
   "grade": 271,

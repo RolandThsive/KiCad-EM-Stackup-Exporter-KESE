@@ -2,6 +2,7 @@
  "name": "CM5_MINIMA",
  "project": "piecol/CM5_MINIMA_REV1",
  "path": "piecol__CM5_MINIMA_REV1/CM5_MINIMA.kicad_pcb",
+ "license": "CERN-OHL-S-2.0 (CERN Open Hardware Licence v2, Strongly Reciprocal)",
  "rank": 1274,
  "complexity": {
   "grade": 351,

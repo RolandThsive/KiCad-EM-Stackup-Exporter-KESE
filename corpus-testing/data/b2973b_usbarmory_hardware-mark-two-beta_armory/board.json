@@ -14,6 +14,7 @@
  "path": "usbarmory__usbarmory/hardware/mark-two-beta/armory.kicad_pcb",
  "project": "usbarmory/usbarmory",
  "name": "armory",
+ "license": "CERN-OHL-1.2 (CERN Open Hardware Licence v1.2), in hardware/mark-one/LICENSE, hardware/mark-two-beta/LICENSE, hardware/mark-two-debug-accessory/LICENSE; CERN-OHL-S-2.0 (CERN Open Hardware Licence v2, Strongly Reciprocal), in hardware/mark-two-lan/LICENSE, hardware/mark-two/LICENSE",
  "zip": "part04_of_17",
  "features": {
   "through_vias": 423,

@@ -14,6 +14,7 @@
  "path": "andrewpaterson__658-Computer/Kicad/Computer/Coprocessor/Coprocessor Board - Main/Coprocessor Board - Main.kicad_pcb",
  "project": "andrewpaterson/658-Computer",
  "name": "Coprocessor Board - Main",
+ "license": "No license found",
  "zip": "part11_of_17",
  "features": {
   "through_vias": 1032,

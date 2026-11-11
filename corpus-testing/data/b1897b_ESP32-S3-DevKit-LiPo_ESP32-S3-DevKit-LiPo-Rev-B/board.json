@@ -14,6 +14,7 @@
  "path": "OLIMEX__ESP32-S3-DevKit-LiPo/HARDWARE/ESP32-S3-DevKit-LiPo_Rev_B/ESP32-S3-DevKit-LiPo_Rev_B.kicad_pcb",
  "project": "OLIMEX/ESP32-S3-DevKit-LiPo",
  "name": "ESP32-S3-DevKit-LiPo_Rev_B",
+ "license": "GPL-3.0 (GNU GPL v3.0)",
  "zip": "part15_of_17",
  "features": {
   "through_vias": 128,

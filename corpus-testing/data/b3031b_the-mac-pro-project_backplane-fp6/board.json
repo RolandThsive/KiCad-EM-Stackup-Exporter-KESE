@@ -14,6 +14,7 @@
  "path": "winkleplex10-bit__the-mac-pro-project/kicad/macpro62-backplane/variants/fp6_floorplan_6L/backplane_fp6.kicad_pcb",
  "project": "winkleplex10-bit/the-mac-pro-project",
  "name": "backplane_fp6",
+ "license": "No license found",
  "zip": "part16_of_17",
  "features": {
   "through_vias": 0,

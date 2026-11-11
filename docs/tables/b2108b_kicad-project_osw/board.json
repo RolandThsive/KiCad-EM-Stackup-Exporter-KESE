@@ -2,6 +2,7 @@
  "name": "osw",
  "project": "Open-Smartwatch/kicad-project",
  "path": "Open-Smartwatch__kicad-project/osw.kicad_pcb",
+ "license": "GPL-3.0 (GNU GPL v3.0), in LICENSE",
  "rank": 1486,
  "complexity": {
   "grade": 261,

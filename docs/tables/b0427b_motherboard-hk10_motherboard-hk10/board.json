@@ -2,6 +2,7 @@
  "name": "motherboard-hk10",
  "project": "artemisamsx/motherboard-hk10",
  "path": "artemisamsx__motherboard-hk10/motherboard-hk10.kicad_pcb",
+ "license": "TAPR-OHL-1.0 (TAPR Open Hardware License), in LICENSE.txt",
  "rank": 2540,
  "complexity": {
   "grade": 88,

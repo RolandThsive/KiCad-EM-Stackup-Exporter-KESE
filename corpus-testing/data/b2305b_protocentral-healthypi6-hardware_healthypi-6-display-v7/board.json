@@ -14,6 +14,7 @@
  "path": "protocentral__protocentral_healthypi6_hardware/hardware/healthypi_6_display_v7/healthypi_6_display_v7.kicad_pcb",
  "project": "protocentral/protocentral_healthypi6_hardware",
  "name": "healthypi_6_display_v7",
+ "license": "CERN-OHL-P-2.0 (CERN Open Hardware Licence v2, Permissive)",
  "zip": "part16_of_17",
  "features": {
   "through_vias": 100,

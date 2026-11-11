@@ -2,6 +2,7 @@
  "name": "precharge",
  "project": "sufst/pcb",
  "path": "sufst__pcb/precharge/precharge.kicad_pcb",
+ "license": "GPL-3.0 (GNU GPL v3.0)",
  "rank": 2508,
  "complexity": {
   "grade": 221,

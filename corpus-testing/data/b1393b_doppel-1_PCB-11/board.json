@@ -14,6 +14,7 @@
  "path": "jgw4__doppel-1/gerbers/PCB-11.kicad_pcb",
  "project": "jgw4/doppel-1",
  "name": "PCB-11",
+ "license": "No license found",
  "zip": "part16_of_17",
  "features": {
   "through_vias": 1720,

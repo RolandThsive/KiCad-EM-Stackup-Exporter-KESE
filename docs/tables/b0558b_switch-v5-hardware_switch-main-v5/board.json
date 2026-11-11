@@ -2,6 +2,7 @@
  "name": "switch-main-v5",
  "project": "ben5049/switch-v5-hardware",
  "path": "ben5049__switch-v5-hardware/pcbs/switch-main-v5/switch-main-v5.kicad_pcb",
+ "license": "AGPL-3.0 (GNU AGPL v3.0)",
  "rank": 170,
  "complexity": {
   "grade": 539,

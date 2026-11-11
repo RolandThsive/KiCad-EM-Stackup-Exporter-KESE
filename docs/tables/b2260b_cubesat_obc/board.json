@@ -2,6 +2,7 @@
  "name": "obc",
  "project": "osusat/cubesat",
  "path": "osusat__cubesat/obc/v1/hardware/obc.kicad_pcb",
+ "license": "MIT (MIT License)",
  "rank": 655,
  "complexity": {
   "grade": 397,

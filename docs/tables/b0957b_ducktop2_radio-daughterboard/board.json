@@ -2,6 +2,7 @@
  "name": "radio_daughterboard",
  "project": "ewoudvv/ducktop2",
  "path": "ewoudvv__ducktop2/radio_daughterboard/radio_daughterboard.kicad_pcb",
+ "license": "MIT (MIT License)",
  "rank": 2362,
  "complexity": {
   "grade": 142,

@@ -2,6 +2,7 @@
  "name": "jetson-orin-baseboard-oculink-expansion",
  "project": "antmicro/job-oculink-expansion",
  "path": "antmicro__job-oculink-expansion/jetson-orin-baseboard-oculink-expansion.kicad_pcb",
+ "license": "Apache-2.0 (Apache License 2.0)",
  "rank": 1090,
  "complexity": {
   "grade": 374,

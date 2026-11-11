@@ -2,6 +2,7 @@
  "name": "micro_rusEFI",
  "project": "rusefi/rusefi-hardware",
  "path": "rusefi__rusefi-hardware/L9779WD-breakout/micro_rusEFI.kicad_pcb",
+ "license": "No license found",
  "rank": 374,
  "complexity": {
   "grade": 342,

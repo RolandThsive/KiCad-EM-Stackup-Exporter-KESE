@@ -2,6 +2,7 @@
  "name": "NanoS3_Carrier",
  "project": "UnexpectedMaker/esp32s3",
  "path": "UnexpectedMaker__esp32s3/kicad/NanoS3 Carrier/NanoS3_Carrier.kicad_pcb",
+ "license": "CERN-OHL-1.2 (CERN Open Hardware Licence v1.2), in kicad/LICENSE",
  "rank": 2164,
  "complexity": {
   "grade": 267,

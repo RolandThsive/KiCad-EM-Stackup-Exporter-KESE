@@ -2,6 +2,7 @@
  "name": "ossc_pro",
  "project": "marqs85/ossc_pro_hw",
  "path": "marqs85__ossc_pro_hw/ossc_pro.kicad_pcb",
+ "license": "CERN-OHL-P-2.0 (CERN Open Hardware Licence v2, Permissive)",
  "rank": 1629,
  "complexity": {
   "grade": 154,

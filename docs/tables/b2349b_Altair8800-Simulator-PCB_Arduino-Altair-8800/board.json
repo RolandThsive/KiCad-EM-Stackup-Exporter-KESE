@@ -2,6 +2,7 @@
  "name": "Arduino_Altair_8800",
  "project": "Redlolz/Altair8800-Simulator-PCB",
  "path": "Redlolz__Altair8800-Simulator-PCB/Arduino_Altair_8800.kicad_pcb",
+ "license": "TAPR-OHL-1.0 (TAPR Open Hardware License), in LICENSE",
  "rank": 1381,
  "complexity": {
   "grade": 225,

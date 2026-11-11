@@ -14,6 +14,7 @@
  "path": "BerkeleyLab__DxP-sensor-probes/extension_board_MF/extension_board_MF.kicad_pcb",
  "project": "BerkeleyLab/DxP-sensor-probes",
  "name": "extension_board_MF",
+ "license": "CC-BY-NC-4.0 (Creative Commons Attribution-NonCommercial 4.0), in LICENSE.md",
  "zip": "part16_of_17",
  "features": {
   "through_vias": 12,

@@ -2,6 +2,7 @@
  "name": "tycho",
  "project": "greatscottgadgets/tycho",
  "path": "greatscottgadgets__tycho/tycho/tycho.kicad_pcb",
+ "license": "CERN-OHL-P-2.0 (CERN Open Hardware Licence v2, Permissive)",
  "rank": 841,
  "complexity": {
   "grade": 399,

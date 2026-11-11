@@ -14,6 +14,7 @@
  "path": "byrantech__laptop/keyboard/keyboard.kicad_pcb",
  "project": "byrantech/laptop",
  "name": "keyboard",
+ "license": "MIT (MIT License)",
  "zip": "part13_of_17",
  "features": {
   "through_vias": 1142,

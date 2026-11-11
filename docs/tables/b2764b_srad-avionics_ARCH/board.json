@@ -2,6 +2,7 @@
  "name": "ARCH",
  "project": "terrapin-rocket-team/srad-avionics",
  "path": "terrapin-rocket-team__srad-avionics/Spaceport/PCBs/ARCH/ARCH.kicad_pcb",
+ "license": "No license found",
  "rank": 1915,
  "complexity": {
   "grade": 306,

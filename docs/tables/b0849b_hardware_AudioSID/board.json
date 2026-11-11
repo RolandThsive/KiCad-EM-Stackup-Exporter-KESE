@@ -2,6 +2,7 @@
  "name": "AudioSID",
  "project": "ddraig68k/hardware",
  "path": "ddraig68k__hardware/expansion/AudioSID/AudioSID.kicad_pcb",
+ "license": "MIT (MIT License)",
  "rank": 1593,
  "complexity": {
   "grade": 308,

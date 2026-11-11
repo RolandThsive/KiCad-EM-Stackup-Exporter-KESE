@@ -2,6 +2,7 @@
  "name": "LevelShifter",
  "project": "gusmanb/logicanalyzer",
  "path": "gusmanb__logicanalyzer/Electronics/LogicAnalyzer/LevelShifter/LevelShifter.kicad_pcb",
+ "license": "GPL-3.0 (GNU GPL v3.0)",
  "rank": 1703,
  "complexity": {
   "grade": 224,

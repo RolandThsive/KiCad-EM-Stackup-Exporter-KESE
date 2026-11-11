@@ -2,6 +2,7 @@
  "name": "Expansion_Card",
  "project": "FrameworkComputer/ExpansionCards",
  "path": "FrameworkComputer__ExpansionCards/Electrical/KiCad_templates/Expansion_Card/Expansion_Card.kicad_pcb",
+ "license": "CC-BY-4.0 (Creative Commons Attribution 4.0)",
  "rank": 2928,
  "complexity": {
   "grade": 124,

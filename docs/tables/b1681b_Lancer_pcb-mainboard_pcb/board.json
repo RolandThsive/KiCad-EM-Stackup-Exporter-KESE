@@ -2,6 +2,7 @@
  "name": "pcb",
  "project": "Modos-Labs/Lancer",
  "path": "Modos-Labs__Lancer/pcb/mainboard/pcb.kicad_pcb",
+ "license": "CERN-OHL-S-2.0 (CERN Open Hardware Licence v2, Strongly Reciprocal), in LICENSE",
  "rank": 464,
  "complexity": {
   "grade": 385,

@@ -2,6 +2,7 @@
  "name": "test-board",
  "project": "open-ephys/onix-headstage-rhs2116",
  "path": "open-ephys__onix-headstage-rhs2116/test-board/test-board.kicad_pcb",
+ "license": "No license found",
  "rank": 2418,
  "complexity": {
   "grade": 229,

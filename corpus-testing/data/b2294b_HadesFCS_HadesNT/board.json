@@ -14,6 +14,7 @@
  "path": "pms67__HadesFCS/Hardware/HadesNT/HadesNT.kicad_pcb",
  "project": "pms67/HadesFCS",
  "name": "HadesNT",
+ "license": "BSD-3-Clause (BSD 3-Clause License)",
  "zip": "part14_of_17",
  "features": {
   "through_vias": 201,

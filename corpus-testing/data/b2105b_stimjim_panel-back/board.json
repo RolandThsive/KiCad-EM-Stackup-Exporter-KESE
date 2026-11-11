@@ -14,6 +14,7 @@
  "path": "open-ephys__stimjim/PCB/panels/panel-back.kicad_pcb",
  "project": "open-ephys/stimjim",
  "name": "panel-back",
+ "license": "No license found",
  "zip": "part16_of_17",
  "features": {
   "through_vias": 0,

@@ -14,6 +14,7 @@
  "path": "Board-Folk__Oric-Remix/Expansions/Oric-PS2USB/Kicad/Oric-PS2USB.kicad_pcb",
  "project": "Board-Folk/Oric-Remix",
  "name": "Oric-PS2USB",
+ "license": "As Readme.md states it: \"As the product of this project is a replica of a proprietary product, the the author makes no claim of copyright to the schematics nor PCB layouts and releases these into the public domain, solely for the purposes of study and historical preservation.\"",
  "zip": "part16_of_17",
  "features": {
   "through_vias": 52,

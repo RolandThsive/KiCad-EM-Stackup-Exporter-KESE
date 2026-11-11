@@ -14,6 +14,7 @@
  "path": "greatscottgadgets__hackrf/hardware/LNA915/LNA915.kicad_pcb",
  "project": "greatscottgadgets/hackrf",
  "name": "LNA915",
+ "license": "GPL-2.0 (GNU GPL v2.0)",
  "zip": "part16_of_17",
  "features": {
   "through_vias": 8,

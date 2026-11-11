@@ -14,6 +14,7 @@
  "path": "libresolar__bms-8s50-ic/kicad/bms-8s50-ic.kicad_pcb",
  "project": "libresolar/bms-8s50-ic",
  "name": "bms-8s50-ic",
+ "license": "CC-BY-SA-4.0 (Creative Commons Attribution-ShareAlike 4.0)",
  "zip": "part14_of_17",
  "features": {
   "through_vias": 275,

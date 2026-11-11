@@ -14,6 +14,7 @@
  "path": "heev__motor-controller-2018/MotorControllerPowerBoardRev2/MotorControllerPowerBoard/MotorControllerPowerBoard.kicad_pcb",
  "project": "heev/motor-controller-2018",
  "name": "MotorControllerPowerBoard",
+ "license": "No license found",
  "zip": "part15_of_17",
  "features": {
   "through_vias": 108,

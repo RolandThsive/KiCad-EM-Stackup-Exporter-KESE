@@ -2,6 +2,7 @@
  "name": "SparkFun_GNSS_Flex_Module_mosaic-X5_IM19",
  "project": "sparkfun/sparkfun_gnss_flex_system",
  "path": "sparkfun__sparkfun_gnss_flex_system/flex_boards/SparkPNT_GNSS_Flex_Module_mosaic-X5-Tilt/hardware/SparkFun_GNSS_Flex_Module_mosaic-X5_IM19.kicad_pcb",
+ "license": "MIT (MIT License), in LICENSE.md",
  "rank": 1478,
  "complexity": {
   "grade": 360,

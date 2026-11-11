@@ -2,6 +2,7 @@
  "name": "pc_healthypi_move_program_adapter_v7",
  "project": "Protocentral/healthypi-move-hw",
  "path": "Protocentral__healthypi-move-hw/pcbs/kicad_healthypi_move_program_adapter/pc_healthypi_move_program_adapter_v7.kicad_pcb",
+ "license": "MIT (MIT License)",
  "rank": 2400,
  "complexity": {
   "grade": 239,

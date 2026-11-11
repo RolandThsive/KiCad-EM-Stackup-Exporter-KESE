@@ -2,6 +2,7 @@
  "name": "oe-commutator-controller",
  "project": "open-ephys/commutators",
  "path": "open-ephys__commutators/pcb/oe-commutator-controller.kicad_pcb",
+ "license": "CC-BY-NC-SA-4.0 (Creative Commons Attribution-NonCommercial-ShareAlike 4.0), in LICENSE.TXT",
  "rank": 1105,
  "complexity": {
   "grade": 331,

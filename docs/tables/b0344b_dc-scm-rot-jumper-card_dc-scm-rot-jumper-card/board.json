@@ -2,6 +2,7 @@
  "name": "dc-scm-rot-jumper-card",
  "project": "antmicro/dc-scm-rot-jumper-card",
  "path": "antmicro__dc-scm-rot-jumper-card/dc-scm-rot-jumper-card.kicad_pcb",
+ "license": "Apache-2.0 (Apache License 2.0)",
  "rank": 2166,
  "complexity": {
   "grade": 188,

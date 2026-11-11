@@ -14,6 +14,7 @@
  "path": "will127534__IMU_Array/IMUArray_ProcessingBoard/IMUArray_ProcessingBoard/IMUArray_ProcessingBoard.kicad_pcb",
  "project": "will127534/IMU_Array",
  "name": "IMUArray_ProcessingBoard",
+ "license": "MIT (MIT License)",
  "zip": "part13_of_17",
  "features": {
   "through_vias": 1760,

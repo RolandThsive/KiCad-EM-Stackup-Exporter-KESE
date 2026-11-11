@@ -2,6 +2,7 @@
  "name": "BatteryCharger",
  "project": "terrapin-rocket-team/srad-avionics",
  "path": "terrapin-rocket-team__srad-avionics/Spaceport/PCBs/BatteryCharger/BatteryCharger/BatteryCharger.kicad_pcb",
+ "license": "No license found",
  "rank": 2768,
  "complexity": {
   "grade": 155,

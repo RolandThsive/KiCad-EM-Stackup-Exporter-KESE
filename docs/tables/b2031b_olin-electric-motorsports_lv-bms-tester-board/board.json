@@ -2,6 +2,7 @@
  "name": "lv_bms_tester_board",
  "project": "olin-electric-motorsports/olin-electric-motorsports",
  "path": "olin-electric-motorsports__olin-electric-motorsports/vehicle/mkv/hardware/lvbox/lvbms/tester_board/lv_bms_tester_board.kicad_pcb",
+ "license": "No license found",
  "rank": 2554,
  "complexity": {
   "grade": 202,

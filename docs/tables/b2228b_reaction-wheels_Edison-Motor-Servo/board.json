@@ -2,6 +2,7 @@
  "name": "Edison_Motor_Servo",
  "project": "oresat/reaction-wheels",
  "path": "oresat__reaction-wheels/Edison_GPIO_Motor_via_servo/Edison_Motor_Servo.kicad_pcb",
+ "license": "No license found",
  "rank": 2916,
  "complexity": {
   "grade": 130,

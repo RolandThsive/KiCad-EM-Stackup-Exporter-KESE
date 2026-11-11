@@ -2,6 +2,7 @@
  "name": "AnalyzerBoxPCB_fork",
  "project": "gusmanb/logicanalyzer",
  "path": "gusmanb__logicanalyzer/Electronics/LogicAnalyzer/LogicAnalyzer_JasonYANG170/KiCad 8/AnalyzerBoxPCB_fork.kicad_pcb",
+ "license": "GPL-3.0 (GNU GPL v3.0)",
  "rank": 1684,
  "complexity": {
   "grade": 250,

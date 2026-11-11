@@ -2,6 +2,7 @@
  "name": "microstrip_width_nightly",
  "project": "matthuszagh/fmcw",
  "path": "matthuszagh__fmcw/hardware/prototypes/microstrip_width/microstrip_width_nightly.kicad_pcb",
+ "license": "Apache-2.0 (Apache License 2.0)",
  "rank": 2088,
  "complexity": {
   "grade": 238,

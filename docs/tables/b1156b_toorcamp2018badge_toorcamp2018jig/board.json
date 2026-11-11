@@ -2,6 +2,7 @@
  "name": "toorcamp2018jig",
  "project": "greatscottgadgets/toorcamp2018badge",
  "path": "greatscottgadgets__toorcamp2018badge/hardware/jig/toorcamp2018jig.kicad_pcb",
+ "license": "BSD-3-Clause (BSD 3-Clause License)",
  "rank": 1807,
  "complexity": {
   "grade": 218,

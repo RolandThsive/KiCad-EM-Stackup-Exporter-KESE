@@ -14,6 +14,7 @@
  "path": "chipfoundry__caravel_board/hardware/breakout/caravel-M.2-card-QFN/Fab-Drawing-caravel-M.2-card-QFN.kicad_pcb",
  "project": "chipfoundry/caravel_board",
  "name": "Fab-Drawing-caravel-M.2-card-QFN",
+ "license": "No license found",
  "zip": "part16_of_17",
  "features": {
   "through_vias": 95,

@@ -2,6 +2,7 @@
  "name": "virgo-keyboard-test",
  "project": "system76/virgo",
  "path": "system76__virgo/pcb-keyboard/virgo-keyboard-test.kicad_pcb",
+ "license": "CERN-OHL-S-2.0 (CERN Open Hardware Licence v2, Strongly Reciprocal)",
  "rank": 732,
  "complexity": {
   "grade": 390,

@@ -2,6 +2,7 @@
  "name": "oresat-diode-test-card",
  "project": "oresat/oresat-diode-test-card",
  "path": "oresat__oresat-diode-test-card/oresat-diode-test-card/oresat-diode-test-card.kicad_pcb",
+ "license": "No license found",
  "rank": 1047,
  "complexity": {
   "grade": 301,

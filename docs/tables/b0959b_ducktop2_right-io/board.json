@@ -2,6 +2,7 @@
  "name": "right_io",
  "project": "ewoudvv/ducktop2",
  "path": "ewoudvv__ducktop2/right_io/right_io.kicad_pcb",
+ "license": "MIT (MIT License)",
  "rank": 1768,
  "complexity": {
   "grade": 382,

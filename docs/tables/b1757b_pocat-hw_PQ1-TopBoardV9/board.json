@@ -2,6 +2,7 @@
  "name": "PQ1_TopBoardV9",
  "project": "nanosatlab/pocat-hw",
  "path": "nanosatlab__pocat-hw/pq_topboard_lband/PQ1_TopBoardV9.kicad_pcb",
+ "license": "No license found",
  "rank": 2476,
  "complexity": {
   "grade": 251,

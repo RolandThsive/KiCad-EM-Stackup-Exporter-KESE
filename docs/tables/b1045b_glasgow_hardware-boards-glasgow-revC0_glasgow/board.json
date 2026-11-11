@@ -2,6 +2,7 @@
  "name": "glasgow",
  "project": "GlasgowEmbedded/glasgow",
  "path": "GlasgowEmbedded__glasgow/hardware/boards/glasgow/revC0/glasgow.kicad_pcb",
+ "license": "0BSD (BSD Zero Clause License)",
  "rank": 443,
  "complexity": {
   "grade": 341,

@@ -2,6 +2,7 @@
  "name": "LimeSDR_Breakout",
  "project": "myriadrf/LimeSDR_GPIO_Board",
  "path": "myriadrf__LimeSDR_GPIO_Board/hardware/0402_Variant/CAD2/LimeSDR_Breakout.kicad_pcb",
+ "license": "As README.md states it: \"LimeSDR GPIO Board copyright 2018 AB Open Ltd. This work is licensed under a Creative Commons Attribution 4.0 International License .\"",
  "rank": 741,
  "complexity": {
   "grade": 244,

@@ -14,6 +14,7 @@
  "path": "EEVengers__ThunderScope/Hardware/Interposer_Board_JoneyTech/Interposer_Board_JoneyTech.kicad_pcb",
  "project": "EEVengers/ThunderScope",
  "name": "Interposer_Board_JoneyTech",
+ "license": "MIT (MIT License)",
  "zip": "part14_of_17",
  "features": {
   "through_vias": 2382,

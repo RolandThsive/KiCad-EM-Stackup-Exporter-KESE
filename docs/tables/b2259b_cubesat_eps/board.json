@@ -2,6 +2,7 @@
  "name": "eps",
  "project": "osusat/cubesat",
  "path": "osusat__cubesat/eps/v1/hardware/eps.kicad_pcb",
+ "license": "MIT (MIT License)",
  "rank": 370,
  "complexity": {
   "grade": 426,

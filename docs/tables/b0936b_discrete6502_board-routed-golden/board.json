@@ -2,6 +2,7 @@
  "name": "board_routed_golden",
  "project": "epatel/discrete6502",
  "path": "epatel__discrete6502/gen/board_routed_golden.kicad_pcb",
+ "license": "CC-BY-NC-SA-4.0 (Creative Commons Attribution-NonCommercial-ShareAlike 4.0), in LICENSE",
  "rank": 1,
  "complexity": {
   "grade": 409,

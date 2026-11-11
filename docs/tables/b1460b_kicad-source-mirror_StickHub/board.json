@@ -2,6 +2,7 @@
  "name": "StickHub",
  "project": "KiCad/kicad-source-mirror",
  "path": "KiCad__kicad-source-mirror/demos/stickhub/StickHub.kicad_pcb",
+ "license": "GPL-3.0 (GNU GPL v3.0)",
  "rank": 1278,
  "complexity": {
   "grade": 366,

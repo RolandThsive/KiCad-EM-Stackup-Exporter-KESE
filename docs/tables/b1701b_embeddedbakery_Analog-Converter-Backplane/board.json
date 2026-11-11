@@ -2,6 +2,7 @@
  "name": "Analog Converter Backplane",
  "project": "mwwhited/embeddedbakery",
  "path": "mwwhited__embeddedbakery/circuits/HelperBoards/Controller/Analog Converter Backplane/Analog Converter Backplane/Analog Converter Backplane.kicad_pcb",
+ "license": "MIT (MIT License), in LICENSE",
  "rank": 2657,
  "complexity": {
   "grade": 138,

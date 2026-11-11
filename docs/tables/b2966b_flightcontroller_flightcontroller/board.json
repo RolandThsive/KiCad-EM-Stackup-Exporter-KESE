@@ -2,6 +2,7 @@
  "name": "flightcontroller",
  "project": "ukinori/flightcontroller",
  "path": "ukinori__flightcontroller/flightcontroller.kicad_pcb",
+ "license": "As README.md states it: \"No project-wide license has been added. Existing third-party library notices are retained in their source files.\"",
  "rank": 588,
  "complexity": {
   "grade": 348,

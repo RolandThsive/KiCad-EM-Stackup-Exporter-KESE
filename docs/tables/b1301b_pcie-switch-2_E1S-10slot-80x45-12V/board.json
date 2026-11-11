@@ -2,6 +2,7 @@
  "name": "E1S_10slot_80x45_12V",
  "project": "isarmg/pcie-switch-2",
  "path": "isarmg__pcie-switch-2/outputs/E1S_10slot_80x45_12V/E1S_10slot_80x45_12V.kicad_pcb",
+ "license": "No license found",
  "rank": 363,
  "complexity": {
   "grade": 406,

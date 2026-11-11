@@ -14,6 +14,7 @@
  "path": "jankae__LibreCAL/Hardware/LibreCAL/LibreCAL.kicad_pcb",
  "project": "jankae/LibreCAL",
  "name": "LibreCAL",
+ "license": "GPL-3.0 (GNU GPL v3.0)",
  "zip": "part12_of_17",
  "features": {
   "through_vias": 1196,

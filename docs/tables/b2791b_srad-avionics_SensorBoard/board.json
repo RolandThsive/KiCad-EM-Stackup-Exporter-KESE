@@ -2,6 +2,7 @@
  "name": "SensorBoard",
  "project": "terrapin-rocket-team/srad-avionics",
  "path": "terrapin-rocket-team__srad-avionics/Spaceport/PCBs/Sensor Boards/SensorBoardSTM32/SensorBoard.kicad_pcb",
+ "license": "No license found",
  "rank": 1930,
  "complexity": {
   "grade": 306,

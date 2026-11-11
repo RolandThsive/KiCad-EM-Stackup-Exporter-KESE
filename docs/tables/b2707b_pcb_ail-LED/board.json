@@ -2,6 +2,7 @@
  "name": "ail-LED",
  "project": "sufst/pcb",
  "path": "sufst__pcb/ail-LED/ail-LED.kicad_pcb",
+ "license": "GPL-3.0 (GNU GPL v3.0)",
  "rank": 2803,
  "complexity": {
   "grade": 221,

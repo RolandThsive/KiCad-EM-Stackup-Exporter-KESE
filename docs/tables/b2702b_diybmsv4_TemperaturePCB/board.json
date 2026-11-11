@@ -2,6 +2,7 @@
  "name": "TemperaturePCB",
  "project": "stuartpittaway/diybmsv4",
  "path": "stuartpittaway__diybmsv4/TemperaturePCB/TemperaturePCB.kicad_pcb",
+ "license": "CC-BY-NC-SA-2.0-UK (Creative Commons Attribution-NonCommercial-ShareAlike 2.0 UK: England & Wales), in LICENSE",
  "rank": 3029,
  "complexity": {
   "grade": 121,

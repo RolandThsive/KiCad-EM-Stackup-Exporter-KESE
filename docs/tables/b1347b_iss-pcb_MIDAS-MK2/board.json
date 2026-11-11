@@ -2,6 +2,7 @@
  "name": "MIDAS-MK2",
  "project": "issuiuc/iss-pcb",
  "path": "issuiuc__iss-pcb/boards/MIDAS-MK2/MIDAS-MK2-revA/MIDAS-MK2.kicad_pcb",
+ "license": "No license found",
  "rank": 896,
  "complexity": {
   "grade": 432,

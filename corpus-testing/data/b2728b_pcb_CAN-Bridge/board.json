@@ -14,6 +14,7 @@
  "path": "sufst__pcb/isolator/CAN_Bridge.kicad_pcb",
  "project": "sufst/pcb",
  "name": "CAN_Bridge",
+ "license": "GPL-3.0 (GNU GPL v3.0)",
  "zip": "part16_of_17",
  "features": {
   "through_vias": 32,

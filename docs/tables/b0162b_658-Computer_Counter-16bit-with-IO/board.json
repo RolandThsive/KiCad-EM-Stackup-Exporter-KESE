@@ -2,6 +2,7 @@
  "name": "Counter 16bit with IO",
  "project": "andrewpaterson/658-Computer",
  "path": "andrewpaterson__658-Computer/Kicad/Computer/Component Boards/Counter 16bit with IO/Counter 16bit with IO.kicad_pcb",
+ "license": "No license found",
  "rank": 1182,
  "complexity": {
   "grade": 246,

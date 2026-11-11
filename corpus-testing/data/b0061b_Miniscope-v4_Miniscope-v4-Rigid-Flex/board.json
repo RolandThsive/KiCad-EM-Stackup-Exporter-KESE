@@ -14,6 +14,7 @@
  "path": "Aharoni-Lab__Miniscope-v4/Miniscope-v4-Rigid-Flex/KiCad/Miniscope-v4-Rigid-Flex.kicad_pcb",
  "project": "Aharoni-Lab/Miniscope-v4",
  "name": "Miniscope-v4-Rigid-Flex",
+ "license": "GPL-3.0 (GNU GPL v3.0)",
  "zip": "part14_of_17",
  "features": {
   "through_vias": 328,

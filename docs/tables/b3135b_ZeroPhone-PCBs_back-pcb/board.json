@@ -2,6 +2,7 @@
  "name": "back_pcb",
  "project": "ZeroPhone/ZeroPhone-PCBs",
  "path": "ZeroPhone__ZeroPhone-PCBs/back_pcb/back_pcb.kicad_pcb",
+ "license": "GPL-3.0 (GNU GPL v3.0)",
  "rank": 1025,
  "complexity": {
   "grade": 248,

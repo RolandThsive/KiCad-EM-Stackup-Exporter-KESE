@@ -2,6 +2,7 @@
  "name": "bb-ads1220",
  "project": "OLIMEX/BB-ADS1220",
  "path": "OLIMEX__BB-ADS1220/HARDWARE/BB-ADS1220_Rev.A/bb-ads1220.kicad_pcb",
+ "license": "GPL-3.0 (GNU GPL v3.0)",
  "rank": 2739,
  "complexity": {
   "grade": 153,

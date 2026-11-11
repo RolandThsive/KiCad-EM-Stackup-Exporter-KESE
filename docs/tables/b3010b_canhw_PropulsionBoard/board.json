@@ -2,6 +2,7 @@
  "name": "PropulsionBoard",
  "project": "waterloo-rocketry/canhw",
  "path": "waterloo-rocketry__canhw/PropulsionBoard/PropulsionBoard.kicad_pcb",
+ "license": "GPL-3.0 (GNU GPL v3.0)",
  "rank": 1477,
  "complexity": {
   "grade": 237,

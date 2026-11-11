@@ -2,6 +2,7 @@
  "name": "inteli210AT",
  "project": "ssmiao/intel-i210-network-card",
  "path": "ssmiao__intel-i210-network-card/PCBV3.0/inteli210AT.kicad_pcb",
+ "license": "MIT (MIT License)",
  "rank": 972,
  "complexity": {
   "grade": 309,

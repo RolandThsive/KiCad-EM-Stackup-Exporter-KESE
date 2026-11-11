@@ -14,6 +14,7 @@
  "path": "oresat__oresat-adcs-hardware/oresat-rw-board-rev6/rev6.0_flat_powerstage/rev6.0_flat_powerstage.kicad_pcb",
  "project": "oresat/oresat-adcs-hardware",
  "name": "rev6.0_flat_powerstage",
+ "license": "GPL-2.0 (GNU GPL v2.0)",
  "zip": "part06_of_17",
  "features": {
   "through_vias": 4881,

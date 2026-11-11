@@ -14,6 +14,7 @@
  "path": "osusat__cubesat/eps/v1/battery_contact_panel/battery_contact_panel.kicad_pcb",
  "project": "osusat/cubesat",
  "name": "battery_contact_panel",
+ "license": "MIT (MIT License)",
  "zip": "part16_of_17",
  "features": {
   "through_vias": 100,

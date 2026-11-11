@@ -2,6 +2,7 @@
  "name": "M68000",
  "project": "jack-mil/mcd-pcb",
  "path": "jack-mil__mcd-pcb/M68000.kicad_pcb",
+ "license": "No license found",
  "rank": 888,
  "complexity": {
   "grade": 332,

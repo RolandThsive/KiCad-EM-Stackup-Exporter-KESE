@@ -14,6 +14,7 @@
  "path": "antmicro__optiga-tpm/optiga-tpm.kicad_pcb",
  "project": "antmicro/optiga-tpm",
  "name": "optiga-tpm",
+ "license": "Apache-2.0 (Apache License 2.0)",
  "zip": "part16_of_17",
  "features": {
   "through_vias": 54,

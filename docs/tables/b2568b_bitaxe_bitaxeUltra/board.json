@@ -2,6 +2,7 @@
  "name": "bitaxeUltra",
  "project": "skot/bitaxe",
  "path": "skot__bitaxe/bitaxeUltra.kicad_pcb",
+ "license": "CERN-OHL-S-2.0 (CERN Open Hardware Licence v2, Strongly Reciprocal)",
  "rank": 1308,
  "complexity": {
   "grade": 333,

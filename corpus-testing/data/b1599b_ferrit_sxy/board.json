@@ -14,6 +14,7 @@
  "path": "machdyne__ferrit/hw/ferrit-cy/sxy.kicad_pcb",
  "project": "machdyne/ferrit",
  "name": "sxy",
+ "license": "The Lone Dynamics Open License, in LICENSE.md: \"Redistribution and use in source, binary or physical forms, with or without modification, is permitted\", provided redistributed source keeps the copyright notice; the README names its exceptions",
  "zip": "part16_of_17",
  "features": {
   "through_vias": 128,

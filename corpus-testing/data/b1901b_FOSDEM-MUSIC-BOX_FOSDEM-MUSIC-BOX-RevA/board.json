@@ -14,6 +14,7 @@
  "path": "OLIMEX__FOSDEM-MUSIC-BOX/HARDWARE/FOSDEM-MUSIC-BOX_RevA/FOSDEM-MUSIC-BOX_RevA.kicad_pcb",
  "project": "OLIMEX/FOSDEM-MUSIC-BOX",
  "name": "FOSDEM-MUSIC-BOX_RevA",
+ "license": "As README.md states it: \"Hardware is with CERN OHL v1.2 license; Software is released under GPL3 License; Documentation is released under CC BY-SA 3.0\"",
  "zip": "part16_of_17",
  "features": {
   "through_vias": 0,

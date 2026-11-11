@@ -2,6 +2,7 @@
  "name": "CTRL_L",
  "project": "astronuat21/4ds",
  "path": "astronuat21__4ds/CTRL_L/CTRL_L.kicad_pcb",
+ "license": "AGPL-3.0 (GNU AGPL v3.0)",
  "rank": 2411,
  "complexity": {
   "grade": 189,

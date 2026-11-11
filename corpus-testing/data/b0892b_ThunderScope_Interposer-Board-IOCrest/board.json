@@ -14,6 +14,7 @@
  "path": "EEVengers__ThunderScope/Hardware/Interposer_Board_IOCrest/Interposer_Board_IOCrest.kicad_pcb",
  "project": "EEVengers/ThunderScope",
  "name": "Interposer_Board_IOCrest",
+ "license": "MIT (MIT License)",
  "zip": "part14_of_17",
  "features": {
   "through_vias": 2478,

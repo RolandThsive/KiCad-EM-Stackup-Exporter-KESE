@@ -14,6 +14,7 @@
  "path": "baldengineer__bit-preserve/Apple/Apple IIe/Apple IIe keyboard/Platinum IIe keyboard/Platinum IIe keyboard.kicad_pcb",
  "project": "baldengineer/bit-preserve",
  "name": "Platinum IIe keyboard",
+ "license": "CC-BY-4.0 (Creative Commons Attribution 4.0), in LICENSE.md",
  "zip": "part13_of_17",
  "features": {
   "through_vias": 156,

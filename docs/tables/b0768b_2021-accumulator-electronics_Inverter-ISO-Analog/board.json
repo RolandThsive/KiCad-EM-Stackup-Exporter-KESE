@@ -2,6 +2,7 @@
  "name": "Inverter ISO Analog",
  "project": "columbia-fsae/2021_accumulator_electronics",
  "path": "columbia-fsae__2021_accumulator_electronics/Inverter ISO Analog/Inverter ISO Analog.kicad_pcb",
+ "license": "No license found",
  "rank": 2914,
  "complexity": {
   "grade": 146,

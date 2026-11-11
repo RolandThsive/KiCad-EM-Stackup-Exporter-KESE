@@ -2,6 +2,7 @@
  "name": "Commodore-Vic-20",
  "project": "jimbro1000/Commodore-Vic-20",
  "path": "jimbro1000__Commodore-Vic-20/Commodore-Vic-20.kicad_pcb",
+ "license": "GPL-3.0 (GNU GPL v3.0)",
  "rank": 497,
  "complexity": {
   "grade": 265,

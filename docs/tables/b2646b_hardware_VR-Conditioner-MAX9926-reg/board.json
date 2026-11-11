@@ -2,6 +2,7 @@
  "name": "VR-Conditioner-MAX9926+reg",
  "project": "speeduino/hardware",
  "path": "speeduino__hardware/VR Conditioner/Latest/VR-Conditioner-MAX9926+reg.kicad_pcb",
+ "license": "As README.md states it: \"These designs are release under the CERN Open Hardware License v2 Strong (CERN-OHL-S). This license is similar to the GPL, however is designed specifically for hardware design files, including PCB layouts and schematics.\"",
  "rank": 2486,
  "complexity": {
   "grade": 193,

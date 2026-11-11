@@ -2,6 +2,7 @@
  "name": "MOD-IR-TEMP_RevA",
  "project": "OLIMEX/MOD-IR-TEMP",
  "path": "OLIMEX__MOD-IR-TEMP/HARDWARE/REV.A/MOD-IR-TEMP_RevA.kicad_pcb",
+ "license": "Apache-2.0 (Apache License 2.0)",
  "rank": 2840,
  "complexity": {
   "grade": 138,

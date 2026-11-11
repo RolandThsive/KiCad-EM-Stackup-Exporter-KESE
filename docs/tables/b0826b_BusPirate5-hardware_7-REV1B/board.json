@@ -2,6 +2,7 @@
  "name": "7-REV1B",
  "project": "DangerousPrototypes/BusPirate5-hardware",
  "path": "DangerousPrototypes__BusPirate5-hardware/bus_pirate_pcb/development/7-REV1B-prototype-2/7-REV1B.kicad_pcb",
+ "license": "MIT (MIT License)",
  "rank": 533,
  "complexity": {
   "grade": 390,

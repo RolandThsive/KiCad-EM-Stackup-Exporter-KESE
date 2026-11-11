@@ -14,6 +14,7 @@
  "path": "transistorfet__retroverse/components/bigboy/hardware/BigBoy/BigBoy.stretch_bkup.kicad_pcb",
  "project": "transistorfet/retroverse",
  "name": "BigBoy.stretch_bkup",
+ "license": "In LICENSE: CERN-OHL-P-2.0 for hardware designs and programmable logic, Apache-2.0 or MIT for other source code, CC-BY-SA-4.0 for artwork and documentation",
  "zip": "part14_of_17",
  "features": {
   "through_vias": 184,

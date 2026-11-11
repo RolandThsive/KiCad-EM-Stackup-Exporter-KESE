@@ -14,6 +14,7 @@
  "path": "jkiv__cm4-carriers/hardware/cm4-carrier-template/cm4-carrier-template.kicad_pcb",
  "project": "jkiv/cm4-carriers",
  "name": "cm4-carrier-template",
+ "license": "BSD-2-Clause (BSD 2-Clause License)",
  "zip": "part12_of_17",
  "features": {
   "through_vias": 107,

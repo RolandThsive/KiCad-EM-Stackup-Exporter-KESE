@@ -2,6 +2,7 @@
  "name": "ModulAdapterMagnet",
  "project": "GaudiLabs/OpenDrop",
  "path": "GaudiLabs__OpenDrop/OpenDropV4/Electronics/ModulAdapter_Magnet/PCB/ModulAdapterMagnet.kicad_pcb",
+ "license": "GPL-3.0 (GNU GPL v3.0)",
  "rank": 976,
  "complexity": {
   "grade": 285,

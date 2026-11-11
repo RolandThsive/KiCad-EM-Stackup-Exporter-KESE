@@ -14,6 +14,7 @@
  "path": "EEVengers__ts_test_fixtures/Interposer_Board_Test_Fixture/Interposer_Board_Test_Fixture.kicad_pcb",
  "project": "EEVengers/ts_test_fixtures",
  "name": "Interposer_Board_Test_Fixture",
+ "license": "CERN-OHL-P-2.0 (CERN Open Hardware Licence v2, Permissive)",
  "zip": "part15_of_17",
  "features": {
   "through_vias": 710,

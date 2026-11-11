@@ -2,6 +2,7 @@
  "name": "ZPlus_Panel",
  "project": "stanford-ssi/samwise-avionics",
  "path": "stanford-ssi__samwise-avionics/ZPlus_Panel/ZPlus_Panel.kicad_pcb",
+ "license": "No license found",
  "rank": 2158,
  "complexity": {
   "grade": 269,

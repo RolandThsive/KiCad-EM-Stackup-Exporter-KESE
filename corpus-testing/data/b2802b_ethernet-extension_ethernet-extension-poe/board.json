@@ -14,6 +14,7 @@
  "path": "Tinkerforge__ethernet-extension/hardware/poe/ethernet-extension-poe.kicad_pcb",
  "project": "Tinkerforge/ethernet-extension",
  "name": "ethernet-extension-poe",
+ "license": "No license found",
  "zip": "part13_of_17",
  "features": {
   "through_vias": 345,

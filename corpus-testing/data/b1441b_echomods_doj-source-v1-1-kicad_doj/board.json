@@ -14,6 +14,7 @@
  "path": "kelu124__echomods/doj/source/v1.1-kicad/doj.kicad_pcb",
  "project": "kelu124/echomods",
  "name": "doj",
+ "license": "TAPR-OHL-1.0 (TAPR Open Hardware License), in LICENSE.txt, goblin/LICENSE.txt, retired/tobo/LICENSE.txt",
  "zip": "part16_of_17",
  "features": {
   "through_vias": 8,

@@ -2,6 +2,7 @@
  "name": "ESP32-P4-PC_Rev_B",
  "project": "OLIMEX/ESP32-P4-PC",
  "path": "OLIMEX__ESP32-P4-PC/HARDWARE/ESP32-P4-PC-Rev.B/ESP32-P4-PC_Rev_B.kicad_pcb",
+ "license": "MIT (MIT License)",
  "rank": 350,
  "complexity": {
   "grade": 408,

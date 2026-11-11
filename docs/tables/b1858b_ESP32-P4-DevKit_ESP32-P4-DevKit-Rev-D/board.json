@@ -2,6 +2,7 @@
  "name": "ESP32-P4-DevKit_Rev_D",
  "project": "OLIMEX/ESP32-P4-DevKit",
  "path": "OLIMEX__ESP32-P4-DevKit/HARDWARE/ESP32-P4-DevKit-Rev.D/ESP32-P4-DevKit_Rev_D.kicad_pcb",
+ "license": "GPL-3.0 (GNU GPL v3.0)",
  "rank": 596,
  "complexity": {
   "grade": 375,

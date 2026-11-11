@@ -14,6 +14,7 @@
  "path": "ben5049__switch-v5-hardware/pcbs/switch-main-v5-test-rig/switch-main-v5-test-rig.kicad_pcb",
  "project": "ben5049/switch-v5-hardware",
  "name": "switch-main-v5-test-rig",
+ "license": "AGPL-3.0 (GNU AGPL v3.0)",
  "zip": "part16_of_17",
  "features": {
   "through_vias": 50,

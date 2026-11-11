@@ -14,6 +14,7 @@
  "path": "GaudiLabs__OpenDrop/OpenDropV4/Electronics/Cartridge_Connector/DIMMCartridge_connector/DIMMCartridgeConect.kicad_pcb",
  "project": "GaudiLabs/OpenDrop",
  "name": "DIMMCartridgeConect",
+ "license": "GPL-3.0 (GNU GPL v3.0)",
  "zip": "part16_of_17",
  "features": {
   "through_vias": 2,

@@ -14,6 +14,7 @@
  "path": "sqfmi__beepy-hardware/KiCad/beepy.kicad_pcb",
  "project": "sqfmi/beepy-hardware",
  "name": "beepy",
+ "license": "MIT (MIT License)",
  "zip": "part14_of_17",
  "features": {
   "through_vias": 157,

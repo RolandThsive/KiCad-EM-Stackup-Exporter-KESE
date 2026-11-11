@@ -14,6 +14,7 @@
  "path": "dileepvr__novenaX_kicad/laptop_kbrd.kicad_pcb",
  "project": "dileepvr/novenaX_kicad",
  "name": "laptop_kbrd",
+ "license": "CERN-OHL-1.2 (CERN Open Hardware Licence v1.2), in LICENSE.txt",
  "zip": "part12_of_17",
  "features": {
   "through_vias": 349,

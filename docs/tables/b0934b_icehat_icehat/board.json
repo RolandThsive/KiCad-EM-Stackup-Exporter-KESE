@@ -2,6 +2,7 @@
  "name": "icehat",
  "project": "emeb/icehat",
  "path": "emeb__icehat/kicad/icehat.kicad_pcb",
+ "license": "MIT (MIT License)",
  "rank": 1947,
  "complexity": {
   "grade": 262,

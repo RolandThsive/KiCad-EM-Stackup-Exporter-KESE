@@ -2,6 +2,7 @@
  "name": "saw_eval_board",
  "project": "CoolNamesAllTaken/adsbee",
  "path": "CoolNamesAllTaken__adsbee/kicad/prototyping/saw_eval_board/saw_eval_board.kicad_pcb",
+ "license": "GPL-3.0 (GNU GPL v3.0), in LICENSE",
  "rank": 2961,
  "complexity": {
   "grade": 137,

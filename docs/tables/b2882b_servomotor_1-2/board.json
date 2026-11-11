@@ -2,6 +2,7 @@
  "name": "1.2",
  "project": "tomrodinger/servomotor",
  "path": "tomrodinger__servomotor/PCB/Servomotor3/1.2/1.2.kicad_pcb",
+ "license": "MIT (MIT License)",
  "rank": 1334,
  "complexity": {
   "grade": 348,

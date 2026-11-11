@@ -2,6 +2,7 @@
  "name": "5XL-REV0",
  "project": "DangerousPrototypes/BusPirate5-hardware",
  "path": "DangerousPrototypes__BusPirate5-hardware/bus_pirate_pcb/5XL-REV0/5XL-REV0.kicad_pcb",
+ "license": "MIT (MIT License)",
  "rank": 591,
  "complexity": {
   "grade": 388,

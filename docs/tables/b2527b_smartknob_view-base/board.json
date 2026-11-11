@@ -2,6 +2,7 @@
  "name": "view_base",
  "project": "scottbez1/smartknob",
  "path": "scottbez1__smartknob/electronics/view_base/view_base.kicad_pcb",
+ "license": "Apache-2.0 (Apache License 2.0), in LICENSE.txt",
  "rank": 1431,
  "complexity": {
   "grade": 317,

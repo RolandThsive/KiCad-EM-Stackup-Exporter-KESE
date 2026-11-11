@@ -14,6 +14,7 @@
  "path": "mwrnd__opencapi-to-pcie_for_mnv303212a_reva2/OpenCAPI-to-PCIe_for_MNV303212A_RevA2.kicad_pcb",
  "project": "mwrnd/opencapi-to-pcie_for_mnv303212a_reva2",
  "name": "OpenCAPI-to-PCIe_for_MNV303212A_RevA2",
+ "license": "GPL-2.0 (GNU GPL v2.0)",
  "zip": "part15_of_17",
  "features": {
   "through_vias": 350,

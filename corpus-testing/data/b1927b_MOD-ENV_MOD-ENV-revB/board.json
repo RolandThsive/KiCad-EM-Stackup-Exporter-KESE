@@ -14,6 +14,7 @@
  "path": "OLIMEX__MOD-ENV/HARDWARE/REV-B/MOD-ENV_revB.kicad_pcb",
  "project": "OLIMEX/MOD-ENV",
  "name": "MOD-ENV_revB",
+ "license": "As README.md states it: \"Software License is GPL3; Hardware License is CERN OHL v1.2; Documentation is released under CC BY-SA 3.0\"",
  "zip": "part16_of_17",
  "features": {
   "through_vias": 15,

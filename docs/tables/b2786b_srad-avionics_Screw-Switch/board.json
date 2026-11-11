@@ -2,6 +2,7 @@
  "name": "Screw Switch",
  "project": "terrapin-rocket-team/srad-avionics",
  "path": "terrapin-rocket-team__srad-avionics/Spaceport/PCBs/Screw Switch/Screw Switch.kicad_pcb",
+ "license": "No license found",
  "rank": 2991,
  "complexity": {
   "grade": 90,

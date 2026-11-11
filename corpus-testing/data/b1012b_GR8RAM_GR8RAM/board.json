@@ -14,6 +14,7 @@
  "path": "garrettsworkshop__GR8RAM/GR8RAM.kicad_pcb",
  "project": "garrettsworkshop/GR8RAM",
  "name": "GR8RAM",
+ "license": "Garrett's Workshop's own terms, in LICENSE: \"You may elect to license this project under CC BY-NC-SA 4.0\", or under CC BY-SA 4.0 \"ONLY IF you remove all 'Garrett's Workshop' trademarks from the project\"",
  "zip": "part13_of_17",
  "features": {
   "through_vias": 476,

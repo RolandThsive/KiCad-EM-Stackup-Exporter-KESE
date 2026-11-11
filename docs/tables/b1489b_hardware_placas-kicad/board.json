@@ -2,6 +2,7 @@
  "name": "placas-kicad",
  "project": "lhc/hardware",
  "path": "lhc__hardware/Oficinas/monte-sua-placa-kicad/Projeto Live/placas-kicad.kicad_pcb",
+ "license": "MIT (MIT License), in Oficinas/monte-sua-placa-kicad/LICENSE",
  "rank": 2487,
  "complexity": {
   "grade": 220,

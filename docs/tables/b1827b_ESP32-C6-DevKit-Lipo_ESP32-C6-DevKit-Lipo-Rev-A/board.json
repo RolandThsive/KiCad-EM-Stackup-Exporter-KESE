@@ -2,6 +2,7 @@
  "name": "ESP32-C6-DevKit-Lipo_Rev_A",
  "project": "OLIMEX/ESP32-C6-DevKit-Lipo",
  "path": "OLIMEX__ESP32-C6-DevKit-Lipo/HARDWARE/ESP32-C6-DevKit-Lipo.Rev.A/ESP32-C6-DevKit-Lipo_Rev_A.kicad_pcb",
+ "license": "As README.md states it: \"Hardware is released under CERN Open Hardware Licence Version 2 - Strongly Reciprocal; Software is released under MIT Licensee; Documentation is released under CC BY-SA 4.0\"",
  "rank": 1490,
  "complexity": {
   "grade": 250,

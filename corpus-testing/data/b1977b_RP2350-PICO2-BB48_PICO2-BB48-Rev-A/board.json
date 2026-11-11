@@ -14,6 +14,7 @@
  "path": "OLIMEX__RP2350-PICO2-BB48/HARDWARE/RP2350-PICO2-BB48.REV.A/PICO2-BB48_Rev_A.kicad_pcb",
  "project": "OLIMEX/RP2350-PICO2-BB48",
  "name": "PICO2-BB48_Rev_A",
+ "license": "MIT (MIT License)",
  "zip": "part14_of_17",
  "features": {
   "through_vias": 126,

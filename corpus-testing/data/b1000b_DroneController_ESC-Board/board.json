@@ -14,6 +14,7 @@
  "path": "FPV-Drone-STM32F411__DroneController/KiCad/ESC_Board/ESC_Board.kicad_pcb",
  "project": "FPV-Drone-STM32F411/DroneController",
  "name": "ESC_Board",
+ "license": "As README.md states it: \"This project is released under the MIT License. All design files, including schematics, PCB layouts, and firmware modifications are open source and available for personal and commercial use with attribution.\"",
  "zip": "part15_of_17",
  "features": {
   "through_vias": 592,

@@ -2,6 +2,7 @@
  "name": "neighbor-template",
  "project": "greatscottgadgets/greatfet-hardware",
  "path": "greatscottgadgets__greatfet-hardware/neighbor-template/neighbor-template.kicad_pcb",
+ "license": "BSD-3-Clause (BSD 3-Clause License)",
  "rank": 2968,
  "complexity": {
   "grade": 96,

@@ -2,6 +2,7 @@
  "name": "KU-14194HB-REV-B-KiCad",
  "project": "baldengineer/bit-preserve",
  "path": "baldengineer__bit-preserve/Commodore/C64/KU-14194HB-RevB-KiCad/KU-14194HB-REV-B-KiCad.kicad_pcb",
+ "license": "CC-BY-4.0 (Creative Commons Attribution 4.0), in LICENSE.md",
  "rank": 292,
  "complexity": {
   "grade": 268,

@@ -2,6 +2,7 @@
  "name": "nref-batterypack",
  "project": "cetola/reform-next-mirror",
  "path": "cetola__reform-next-mirror/nref-batterypack-v3/nref-batterypack.kicad_pcb",
+ "license": "As README.md states it: \"All hardware design work in this repository is © 2024 MNT Research GmbH, Berlin, Germany, and contributors (see Credits).\"",
  "rank": 1385,
  "complexity": {
   "grade": 355,

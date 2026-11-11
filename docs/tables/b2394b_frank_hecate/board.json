@@ -2,6 +2,7 @@
  "name": "hecate",
  "project": "rh1tech/frank",
  "path": "rh1tech__frank/hardware/hecate/hecate.kicad_pcb",
+ "license": "GPL-3.0 (GNU GPL v3.0)",
  "rank": 2028,
  "complexity": {
   "grade": 337,

@@ -2,6 +2,7 @@
  "name": "div_4px2",
  "project": "tomojitakasu/PocketSDR",
  "path": "tomojitakasu__PocketSDR/FE_8CH/HW/div_4px2/div_4px2.kicad_pcb",
+ "license": "BSD-2-Clause (BSD 2-Clause License), in LICENSE.txt",
  "rank": 900,
  "complexity": {
   "grade": 294,

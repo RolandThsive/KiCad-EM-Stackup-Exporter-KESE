@@ -2,6 +2,7 @@
  "name": "ThunderScope Muxboard",
  "project": "EEVengers/ts_test_fixtures",
  "path": "EEVengers__ts_test_fixtures/ThunderScope MUXboard/ThunderScope Muxboard.kicad_pcb",
+ "license": "CERN-OHL-P-2.0 (CERN Open Hardware Licence v2, Permissive)",
  "rank": 803,
  "complexity": {
   "grade": 295,

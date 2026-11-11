@@ -2,6 +2,7 @@
  "name": "DDPAK_breakout",
  "project": "rusefi/rusefi-hardware",
  "path": "rusefi__rusefi-hardware/classic-designs/rusefi_hardware_history/DDPAK_breakout_rev00.10/DDPAK_breakout/DDPAK_breakout.kicad_pcb",
+ "license": "No license found",
  "rank": 2650,
  "complexity": {
   "grade": 165,

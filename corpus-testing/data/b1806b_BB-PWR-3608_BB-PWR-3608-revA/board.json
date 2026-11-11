@@ -14,6 +14,7 @@
  "path": "OLIMEX__BB-PWR-3608/BB-PWR-3608_revA.kicad_pcb",
  "project": "OLIMEX/BB-PWR-3608",
  "name": "BB-PWR-3608_revA",
+ "license": "Apache-2.0 (Apache License 2.0)",
  "zip": "part16_of_17",
  "features": {
   "through_vias": 3,

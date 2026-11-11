@@ -2,6 +2,7 @@
  "name": "lakritz",
  "project": "machdyne/lakritz",
  "path": "machdyne__lakritz/pcb/v0/lakritz.kicad_pcb",
+ "license": "The Lone Dynamics Open License, in LICENSE.md: \"Redistribution and use in source, binary or physical forms, with or without modification, is permitted\", provided redistributed source keeps the copyright notice; the README names its exceptions",
  "rank": 1031,
  "complexity": {
   "grade": 390,

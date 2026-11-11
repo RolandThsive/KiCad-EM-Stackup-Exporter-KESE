@@ -14,6 +14,7 @@
  "path": "Board-Folk__Neptune/helpers/Neptune-32x-315-5805-bypass/Neptune-32x-315-5805-bypass.kicad_pcb",
  "project": "Board-Folk/Neptune",
  "name": "Neptune-32x-315-5805-bypass",
+ "license": "As README.md states it: \"Derivative works must be released under similar Open Source terms such that all sources are publicly available. The original authors' names and copyright statements may not be removed.\"",
  "zip": "part16_of_17",
  "features": {
   "through_vias": 88,

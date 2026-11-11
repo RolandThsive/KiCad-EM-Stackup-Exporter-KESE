@@ -2,6 +2,7 @@
  "name": "HCP65 MPU Address Decode",
  "project": "andrewpaterson/658-Computer",
  "path": "andrewpaterson__658-Computer/Kicad/Computer/Processor/HCP65 MPU Address Decode/HCP65 MPU Address Decode.kicad_pcb",
+ "license": "No license found",
  "rank": 1251,
  "complexity": {
   "grade": 251,

@@ -14,6 +14,7 @@
  "path": "Spritetm__hadbadge2019_pcb/hadbadge2019.kicad_pcb",
  "project": "Spritetm/hadbadge2019_pcb",
  "name": "hadbadge2019",
+ "license": "CC-BY-SA-3.0 (Creative Commons Attribution-ShareAlike 3.0), in LICENSE",
  "zip": "part11_of_17",
  "features": {
   "through_vias": 393,

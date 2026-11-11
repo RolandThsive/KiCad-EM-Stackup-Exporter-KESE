@@ -2,6 +2,7 @@
  "name": "EEZ DIB DCP405plus front mask (Basic)",
  "project": "eez-open/dib-dcp405plus",
  "path": "eez-open__dib-dcp405plus/KiCad/EEZ DIB DCP405plus front mask (Basic).kicad_pcb",
+ "license": "TAPR-OHL-1.0 (TAPR Open Hardware License), in LICENSE.TXT",
  "rank": 2977,
  "complexity": {
   "grade": 103,

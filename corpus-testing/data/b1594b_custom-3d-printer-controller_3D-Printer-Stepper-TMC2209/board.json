@@ -14,6 +14,7 @@
  "path": "m47812__custom-3d-printer-controller/3D_Printer_Motor_Driver/3D_Printer_Stepper_TMC2209.kicad_pcb",
  "project": "m47812/custom-3d-printer-controller",
  "name": "3D_Printer_Stepper_TMC2209",
+ "license": "GPL-3.0 (GNU GPL v3.0)",
  "zip": "part16_of_17",
  "features": {
   "through_vias": 44,

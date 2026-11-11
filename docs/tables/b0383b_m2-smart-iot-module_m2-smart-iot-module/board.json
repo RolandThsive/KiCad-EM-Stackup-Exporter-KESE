@@ -2,6 +2,7 @@
  "name": "m2-smart-iot-module",
  "project": "antmicro/m2-smart-iot-module",
  "path": "antmicro__m2-smart-iot-module/m2-smart-iot-module.kicad_pcb",
+ "license": "Apache-2.0 (Apache License 2.0)",
  "rank": 794,
  "complexity": {
   "grade": 393,

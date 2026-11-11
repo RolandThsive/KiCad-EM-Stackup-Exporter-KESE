@@ -2,6 +2,7 @@
  "name": "serial_bulkhead",
  "project": "bluejayracing/bjr_kicad",
  "path": "bluejayracing__bjr_kicad/21xt/serial_bulkhead/serial_bulkhead.kicad_pcb",
+ "license": "No license found",
  "rank": 2753,
  "complexity": {
   "grade": 205,

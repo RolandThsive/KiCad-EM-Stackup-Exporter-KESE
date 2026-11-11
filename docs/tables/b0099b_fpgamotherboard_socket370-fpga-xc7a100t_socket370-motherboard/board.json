@@ -2,6 +2,7 @@
  "name": "socket370-motherboard",
  "project": "alphaonex86/fpgamotherboard",
  "path": "alphaonex86__fpgamotherboard/socket370/fpga-xc7a100t/socket370-motherboard.kicad_pcb",
+ "license": "GPL-3.0 (GNU GPL v3.0)",
  "rank": 179,
  "complexity": {
   "grade": 427,

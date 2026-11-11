@@ -2,6 +2,7 @@
  "name": "MagnetometerLayout",
  "project": "bluejayracing/bjr_kicad",
  "path": "bluejayracing__bjr_kicad/21xt/06-magnetometer/MagnetometerLayout.kicad_pcb",
+ "license": "No license found",
  "rank": 2633,
  "complexity": {
   "grade": 135,

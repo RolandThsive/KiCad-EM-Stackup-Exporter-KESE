@@ -2,6 +2,7 @@
  "name": "HDMI2USB",
  "project": "timvideos/HDMI2USB-numato-opsis-hardware",
  "path": "timvideos__HDMI2USB-numato-opsis-hardware/board/HDMI2USB.kicad_pcb",
+ "license": "CC-BY-SA-4.0 (Creative Commons Attribution-ShareAlike 4.0)",
  "rank": 77,
  "complexity": {
   "grade": 395,

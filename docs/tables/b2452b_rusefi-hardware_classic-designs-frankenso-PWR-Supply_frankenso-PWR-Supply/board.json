@@ -2,6 +2,7 @@
  "name": "frankenso-PWR-Supply",
  "project": "rusefi/rusefi-hardware",
  "path": "rusefi__rusefi-hardware/classic-designs/frankenso-PWR-Supply/frankenso-PWR-Supply.kicad_pcb",
+ "license": "No license found",
  "rank": 2538,
  "complexity": {
   "grade": 190,

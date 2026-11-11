@@ -2,6 +2,7 @@
  "name": "ACEKEYBOARD",
  "project": "flypie/Ace-2019",
  "path": "flypie__Ace-2019/KiCad/ACEKEYBOARD/ACEKEYBOARD.kicad_pcb",
+ "license": "GPL-3.0 (GNU GPL v3.0)",
  "rank": 2373,
  "complexity": {
   "grade": 209,

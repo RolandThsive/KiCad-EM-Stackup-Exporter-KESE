@@ -14,6 +14,7 @@
  "path": "andrewpaterson__658-Computer/Kicad/Computer/Processor/HCP65 MPU NMI/HCP65 MPU NMI.kicad_pcb",
  "project": "andrewpaterson/658-Computer",
  "name": "HCP65 MPU NMI",
+ "license": "No license found",
  "zip": "part15_of_17",
  "features": {
   "through_vias": 274,

@@ -2,6 +2,7 @@
  "name": "W65C816 Clock Hold",
  "project": "andrewpaterson/658-Computer",
  "path": "andrewpaterson__658-Computer/Kicad/Computer/Processor/W65C816 Clock Hold/W65C816 Clock Hold.kicad_pcb",
+ "license": "No license found",
  "rank": 2045,
  "complexity": {
   "grade": 225,

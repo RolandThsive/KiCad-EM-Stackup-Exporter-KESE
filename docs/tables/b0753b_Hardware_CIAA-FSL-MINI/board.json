@@ -2,6 +2,7 @@
  "name": "CIAA_FSL_MINI",
  "project": "ciaa/Hardware",
  "path": "ciaa__Hardware/PCB/FSL-MINI/CIAA_FSL_MINI.kicad_pcb",
+ "license": "BSD-2-Clause (BSD 2-Clause License), in LICENSE, PCB/EDU-FPGA/LICENSE, PCB/Z3R0/LICENSE",
  "rank": 776,
  "complexity": {
   "grade": 294,

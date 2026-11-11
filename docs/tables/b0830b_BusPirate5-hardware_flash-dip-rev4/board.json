@@ -2,6 +2,7 @@
  "name": "flash-dip-rev4",
  "project": "DangerousPrototypes/BusPirate5-hardware",
  "path": "DangerousPrototypes__BusPirate5-hardware/development/adapter-flash-dip-1REV4/flash-dip-rev4.kicad_pcb",
+ "license": "MIT (MIT License)",
  "rank": 2544,
  "complexity": {
   "grade": 201,

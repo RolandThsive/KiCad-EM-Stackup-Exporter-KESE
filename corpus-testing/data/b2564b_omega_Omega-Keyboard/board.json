@@ -14,6 +14,7 @@
  "path": "skiselev__omega/Keyboard/KiCad/Omega-Keyboard.kicad_pcb",
  "project": "skiselev/omega",
  "name": "Omega-Keyboard",
+ "license": "GPL-3.0 (GNU GPL v3.0)",
  "zip": "part15_of_17",
  "features": {
   "through_vias": 38,

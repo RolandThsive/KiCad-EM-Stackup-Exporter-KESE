@@ -2,6 +2,7 @@
  "name": "scalenode-adapter",
  "project": "antmicro/scalenode-adapter",
  "path": "antmicro__scalenode-adapter/scalenode-adapter.kicad_pcb",
+ "license": "Apache-2.0 (Apache License 2.0)",
  "rank": 784,
  "complexity": {
   "grade": 356,

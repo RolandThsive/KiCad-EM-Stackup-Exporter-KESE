@@ -2,6 +2,7 @@
  "name": "upsy-desky",
  "project": "tjhorner/upsy-desky",
  "path": "tjhorner__upsy-desky/pcb/upsy-desky.kicad_pcb",
+ "license": "CC-BY-NC-SA-4.0 (Creative Commons Attribution-NonCommercial-ShareAlike 4.0), in LICENSE-CC",
  "rank": 2025,
  "complexity": {
   "grade": 286,

@@ -2,6 +2,7 @@
  "name": "DubaiXTClone",
  "project": "spencer-uk/DubaiXTClone",
  "path": "spencer-uk__DubaiXTClone/DubaiXTClone.kicad_pcb",
+ "license": "CERN-OHL-W-2.0 (CERN Open Hardware Licence v2, Weakly Reciprocal), in LICENSE",
  "rank": 202,
  "complexity": {
   "grade": 360,

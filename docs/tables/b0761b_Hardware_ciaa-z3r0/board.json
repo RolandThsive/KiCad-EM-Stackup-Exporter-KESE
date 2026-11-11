@@ -2,6 +2,7 @@
  "name": "ciaa-z3r0",
  "project": "ciaa/Hardware",
  "path": "ciaa__Hardware/PCB/Z3R0/ciaa-z3r0.kicad_pcb",
+ "license": "BSD-2-Clause (BSD 2-Clause License), in LICENSE, PCB/EDU-FPGA/LICENSE, PCB/Z3R0/LICENSE",
  "rank": 1861,
  "complexity": {
   "grade": 238,

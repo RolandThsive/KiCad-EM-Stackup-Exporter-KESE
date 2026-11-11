@@ -2,6 +2,7 @@
  "name": "SwitchBlox",
  "project": "puyams/SwitchBlox",
  "path": "puyams__SwitchBlox/Hardware/Release Design Files/Source Kicad Files/SwitchBlox.kicad_pcb",
+ "license": "Creative Commons, in LICENSE.txt",
  "rank": 1136,
  "complexity": {
   "grade": 273,

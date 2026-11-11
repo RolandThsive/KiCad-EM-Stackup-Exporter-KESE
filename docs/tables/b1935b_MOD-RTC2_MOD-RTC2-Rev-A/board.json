@@ -2,6 +2,7 @@
  "name": "MOD-RTC2_Rev_A",
  "project": "OLIMEX/MOD-RTC2",
  "path": "OLIMEX__MOD-RTC2/Hardware/MOD-RTC2-A/MOD-RTC2_Rev_A.kicad_pcb",
+ "license": "Apache-2.0 (Apache License 2.0)",
  "rank": 2606,
  "complexity": {
   "grade": 170,

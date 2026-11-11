@@ -2,6 +2,7 @@
  "name": "Zephyr-80-IO",
  "project": "dumaiss/Zephyr-80",
  "path": "dumaiss__Zephyr-80/Schem/Zephyr-80-IO/Zephyr-80-IO.kicad_pcb",
+ "license": "As README.md states it: \"Zephyr-80 is licensed under the Solderpad Hardware License v2.1, with the option described there to treat the work as Apache License 2.0.\"",
  "rank": 856,
  "complexity": {
   "grade": 348,

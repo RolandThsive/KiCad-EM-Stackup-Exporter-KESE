@@ -14,6 +14,7 @@
  "path": "danwerner21__we816/Hardware/we816.kicad_pcb",
  "project": "danwerner21/we816",
  "name": "we816",
+ "license": "No license found",
  "zip": "part11_of_17",
  "features": {
   "through_vias": 183,

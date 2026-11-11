@@ -14,6 +14,7 @@
  "path": "ddraig68k__hardware/expansion/GfxTMS9918/GfxTMS9918.kicad_pcb",
  "project": "ddraig68k/hardware",
  "name": "GfxTMS9918",
+ "license": "MIT (MIT License)",
  "zip": "part15_of_17",
  "features": {
   "through_vias": 240,

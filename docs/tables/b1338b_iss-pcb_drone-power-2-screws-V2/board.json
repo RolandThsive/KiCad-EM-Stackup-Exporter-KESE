@@ -2,6 +2,7 @@
  "name": "drone_power_2_screws_V2",
  "project": "issuiuc/iss-pcb",
  "path": "issuiuc__iss-pcb/boards/Drone_Power/drone_power_2_screws_V2/drone_power_2_screws_V2.kicad_pcb",
+ "license": "No license found",
  "rank": 1985,
  "complexity": {
   "grade": 298,

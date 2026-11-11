@@ -14,6 +14,7 @@
  "path": "waterloo-rocketry__canhw/novatel_gps_breakout/novatel_gps_breakout.kicad_pcb",
  "project": "waterloo-rocketry/canhw",
  "name": "novatel_gps_breakout",
+ "license": "GPL-3.0 (GNU GPL v3.0)",
  "zip": "part16_of_17",
  "features": {
   "through_vias": 4,

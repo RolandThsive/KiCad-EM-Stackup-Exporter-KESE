@@ -2,6 +2,7 @@
  "name": "L1-Altimeter",
  "project": "issuiuc/iss-pcb",
  "path": "issuiuc__iss-pcb/boards/Onboarding/L1-Altimeter/L1-Altimeter.kicad_pcb",
+ "license": "No license found",
  "rank": 2072,
  "complexity": {
   "grade": 279,

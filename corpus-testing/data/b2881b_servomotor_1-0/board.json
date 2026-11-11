@@ -14,6 +14,7 @@
  "path": "tomrodinger__servomotor/PCB/Servomotor3/1.0/1.0.kicad_pcb",
  "project": "tomrodinger/servomotor",
  "name": "1.0",
+ "license": "MIT (MIT License)",
  "zip": "part15_of_17",
  "features": {
   "through_vias": 522,

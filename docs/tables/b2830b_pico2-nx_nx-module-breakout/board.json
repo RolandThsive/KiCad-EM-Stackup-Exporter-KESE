@@ -2,6 +2,7 @@
  "name": "nx-module-breakout",
  "project": "tinyvision-ai-inc/pico2-nx",
  "path": "tinyvision-ai-inc__pico2-nx/board/Rev2/nx-module-breakout/nx-module-breakout.kicad_pcb",
+ "license": "MIT (MIT License)",
  "rank": 1377,
  "complexity": {
   "grade": 320,

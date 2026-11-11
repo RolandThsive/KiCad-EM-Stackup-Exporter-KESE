@@ -14,6 +14,7 @@
  "path": "owntech-foundation__micro-inverter/KiCAD_Files/film_capacitors.kicad_pcb",
  "project": "owntech-foundation/micro-inverter",
  "name": "film_capacitors",
+ "license": "CERN-OHL-S-2.0 (CERN Open Hardware Licence v2, Strongly Reciprocal)",
  "zip": "part16_of_17",
  "features": {
   "through_vias": 0,

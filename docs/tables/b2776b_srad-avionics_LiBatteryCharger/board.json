@@ -2,6 +2,7 @@
  "name": "LiBatteryCharger",
  "project": "terrapin-rocket-team/srad-avionics",
  "path": "terrapin-rocket-team__srad-avionics/Spaceport/PCBs/LiBatteryCharger/LiBatteryCharger.kicad_pcb",
+ "license": "No license found",
  "rank": 2734,
  "complexity": {
   "grade": 159,

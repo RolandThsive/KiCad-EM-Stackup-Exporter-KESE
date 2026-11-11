@@ -2,6 +2,7 @@
  "name": "EMC_antenna",
  "project": "intergalaktik/EMC-experiments",
  "path": "intergalaktik__EMC-experiments/EMC_antenna/EMC_antenna.kicad_pcb",
+ "license": "GPL-3.0 (GNU GPL v3.0)",
  "rank": 3101,
  "complexity": {
   "grade": 69,

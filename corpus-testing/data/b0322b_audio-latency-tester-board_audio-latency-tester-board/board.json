@@ -14,6 +14,7 @@
  "path": "antmicro__audio-latency-tester-board/audio-latency-tester-board.kicad_pcb",
  "project": "antmicro/audio-latency-tester-board",
  "name": "audio-latency-tester-board",
+ "license": "Apache-2.0 (Apache License 2.0)",
  "zip": "part13_of_17",
  "features": {
   "through_vias": 604,

@@ -2,6 +2,7 @@
  "name": "mono_imu",
  "project": "osrf/ovc",
  "path": "osrf__ovc/ovc2/hardware/ovc2a/graveyard/mono_imu/mono_imu.kicad_pcb",
+ "license": "Apache-2.0 (Apache License 2.0)",
  "rank": 2924,
  "complexity": {
   "grade": 134,

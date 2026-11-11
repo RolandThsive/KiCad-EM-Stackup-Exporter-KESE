@@ -2,6 +2,7 @@
  "name": "PICO-EVB_Rev_A",
  "project": "OLIMEX/PICO-EVB",
  "path": "OLIMEX__PICO-EVB/HARDWARE/PICO-EVB_Rev_A/PICO-EVB_Rev_A.kicad_pcb",
+ "license": "MIT (MIT License)",
  "rank": 1190,
  "complexity": {
   "grade": 293,

@@ -2,6 +2,7 @@
  "name": "esp32s2-co2-monitor",
  "project": "gregdavill/advent-calendar-of-circuits-2020",
  "path": "gregdavill__advent-calendar-of-circuits-2020/esp32s2-co2-monitor/kicad-src/esp32s2-co2-monitor.kicad_pcb",
+ "license": "CERN-OHL-P-2.0 (CERN Open Hardware Licence v2, Permissive), in LICENCE-CERN-OHL-P-2.0",
  "rank": 1036,
  "complexity": {
   "grade": 360,

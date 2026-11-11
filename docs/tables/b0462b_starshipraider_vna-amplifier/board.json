@@ -2,6 +2,7 @@
  "name": "vna-amplifier",
  "project": "azonenberg/starshipraider",
  "path": "azonenberg__starshipraider/boards/probes/akl-ad3/vna-amplifier/vna-amplifier.kicad_pcb",
+ "license": "BSD-3-Clause (BSD 3-Clause License)",
  "rank": 2917,
  "complexity": {
   "grade": 152,

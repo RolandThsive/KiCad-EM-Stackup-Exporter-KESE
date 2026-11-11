@@ -2,6 +2,7 @@
  "name": "atsamd11_pro_micro",
  "project": "google/myelin-acorn-electron-hardware",
  "path": "google__myelin-acorn-electron-hardware/atsamd11_pro_micro/pcb/atsamd11_pro_micro.kicad_pcb",
+ "license": "Apache-2.0 (Apache License 2.0)",
  "rank": 2528,
  "complexity": {
   "grade": 176,

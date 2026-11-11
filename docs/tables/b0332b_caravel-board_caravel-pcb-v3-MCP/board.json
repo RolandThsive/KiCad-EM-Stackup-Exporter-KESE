@@ -2,6 +2,7 @@
  "name": "caravel_pcb_v3_MCP",
  "project": "antmicro/caravel_board",
  "path": "antmicro__caravel_board/hardware/caravel_pcb_v3_MCP/caravel_pcb_v3_MCP.kicad_pcb",
+ "license": "No license found",
  "rank": 2758,
  "complexity": {
   "grade": 76,

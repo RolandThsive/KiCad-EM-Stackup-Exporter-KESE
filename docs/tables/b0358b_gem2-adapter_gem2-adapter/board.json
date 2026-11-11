@@ -2,6 +2,7 @@
  "name": "gem2-adapter",
  "project": "antmicro/gem2-adapter",
  "path": "antmicro__gem2-adapter/gem2-adapter.kicad_pcb",
+ "license": "Apache-2.0 (Apache License 2.0)",
  "rank": 808,
  "complexity": {
   "grade": 313,

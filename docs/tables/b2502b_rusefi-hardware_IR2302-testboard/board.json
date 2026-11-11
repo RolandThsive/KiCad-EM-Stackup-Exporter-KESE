@@ -2,6 +2,7 @@
  "name": "IR2302-testboard",
  "project": "rusefi/rusefi-hardware",
  "path": "rusefi__rusefi-hardware/IR2302-testboard/IR2302-testboard.kicad_pcb",
+ "license": "No license found",
  "rank": 1958,
  "complexity": {
   "grade": 251,

@@ -14,6 +14,7 @@
  "path": "antmicro__ecp5-dc-scm/ecp5-dc-scm.kicad_pcb",
  "project": "antmicro/ecp5-dc-scm",
  "name": "ecp5-dc-scm",
+ "license": "Apache-2.0 (Apache License 2.0)",
  "zip": "part05_of_17",
  "features": {
   "through_vias": 1411,

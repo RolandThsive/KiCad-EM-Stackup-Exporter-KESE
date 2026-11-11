@@ -14,6 +14,7 @@
  "path": "tinyvision-ai-inc__pico2-nx/board/Rev0/pico2-nx/pico2-nx.kicad_pcb",
  "project": "tinyvision-ai-inc/pico2-nx",
  "name": "pico2-nx",
+ "license": "MIT (MIT License)",
  "zip": "part16_of_17",
  "features": {
   "through_vias": 0,

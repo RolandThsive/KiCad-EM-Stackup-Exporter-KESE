@@ -14,6 +14,7 @@
  "path": "oresat__oresat-gps-hardware/MicroSemi_FPGA_Dev_Board/kicad_switcher_board/switcher/switcher.kicad_pcb",
  "project": "oresat/oresat-gps-hardware",
  "name": "switcher",
+ "license": "CERN-OHL-S-2.0 (CERN Open Hardware Licence v2, Strongly Reciprocal)",
  "zip": "part16_of_17",
  "features": {
   "through_vias": 2,

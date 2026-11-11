@@ -2,6 +2,7 @@
  "name": "MS_v4_ETL_LED_Driver",
  "project": "Aharoni-Lab/Miniscope-v4",
  "path": "Aharoni-Lab__Miniscope-v4/Development Files/Individual PCBs/Miniscope-v4-LED-ETL-Driver/KiCad/MS_v4_ETL_LED_Driver.kicad_pcb",
+ "license": "GPL-3.0 (GNU GPL v3.0)",
  "rank": 2423,
  "complexity": {
   "grade": 201,

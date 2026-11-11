@@ -14,6 +14,7 @@
  "path": "eez-open__eez-bb3plus-cm5-mcu/KiCad/BB3plus CM5 STM32H7 module.kicad_pcb",
  "project": "eez-open/eez-bb3plus-cm5-mcu",
  "name": "BB3plus CM5 STM32H7 module",
+ "license": "TAPR-OHL-1.0 (TAPR Open Hardware License), in LICENSE.TXT",
  "zip": "part10_of_17",
  "features": {
   "through_vias": 1450,

@@ -14,6 +14,7 @@
  "path": "beagleboard__capes/pocketbeagle/TechLab/kicad/TechLab.kicad_pcb",
  "project": "beagleboard/capes",
  "name": "TechLab",
+ "license": "CC-BY-SA-4.0 (Creative Commons Attribution-ShareAlike 4.0), in pocketbeagle/TechLab/LICENSE",
  "zip": "part14_of_17",
  "features": {
   "through_vias": 580,

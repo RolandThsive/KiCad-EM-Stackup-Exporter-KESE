@@ -2,6 +2,7 @@
  "name": "ciaa-nxp",
  "project": "ciaa/Hardware",
  "path": "ciaa__Hardware/PCB/NXP/ciaa-nxp.kicad_pcb",
+ "license": "BSD-2-Clause (BSD 2-Clause License), in LICENSE, PCB/EDU-FPGA/LICENSE, PCB/Z3R0/LICENSE",
  "rank": 224,
  "complexity": {
   "grade": 332,

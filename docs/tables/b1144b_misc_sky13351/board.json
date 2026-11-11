@@ -2,6 +2,7 @@
  "name": "sky13351",
  "project": "greatscottgadgets/misc",
  "path": "greatscottgadgets__misc/evaluation-boards/sky13351/sky13351.kicad_pcb",
+ "license": "GPL-2.0 (GNU GPL v2.0)",
  "rank": 2725,
  "complexity": {
   "grade": 167,

@@ -2,6 +2,7 @@
  "name": "W65C816 Breakout",
  "project": "andrewpaterson/658-Computer",
  "path": "andrewpaterson__658-Computer/Kicad/Computer/Processor/W65C816 Breakout/W65C816 Breakout.kicad_pcb",
+ "license": "No license found",
  "rank": 894,
  "complexity": {
   "grade": 260,

@@ -2,6 +2,7 @@
  "name": "CM5IO",
  "project": "mibs510/openxtcm5-head-unit",
  "path": "mibs510__openxtcm5-head-unit/pcb/lib/RPI-CM5-IO/CM5IO.kicad_pcb",
+ "license": "MIT (MIT License)",
  "rank": 435,
  "complexity": {
   "grade": 347,

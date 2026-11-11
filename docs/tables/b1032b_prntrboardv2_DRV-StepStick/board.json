@@ -2,6 +2,7 @@
  "name": "DRV-StepStick",
  "project": "ghent360/prntrboardv2",
  "path": "ghent360__prntrboardv2/hardware/DRV-StepStick.kicad_pcb",
+ "license": "CC-BY-SA-3.0 (Creative Commons Attribution-ShareAlike 3.0), in LICENSE",
  "rank": 2269,
  "complexity": {
   "grade": 237,

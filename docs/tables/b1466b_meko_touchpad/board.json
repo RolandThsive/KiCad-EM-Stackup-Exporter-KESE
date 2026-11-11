@@ -2,6 +2,7 @@
  "name": "touchpad",
  "project": "koeglike/meko",
  "path": "koeglike__meko/hardware/pcb_touchpad/touchpad.kicad_pcb",
+ "license": "GPL-3.0 (GNU GPL v3.0)",
  "rank": 2526,
  "complexity": {
   "grade": 232,

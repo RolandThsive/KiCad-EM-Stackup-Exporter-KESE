@@ -2,6 +2,7 @@
  "name": "iCE40HX8K-EVB_Rev_B1",
  "project": "OLIMEX/iCE40HX8K-EVB",
  "path": "OLIMEX__iCE40HX8K-EVB/HARDWARE/REV-B1/iCE40HX8K-EVB_Rev_B1.kicad_pcb",
+ "license": "Apache-2.0 (Apache License 2.0)",
  "rank": 253,
  "complexity": {
   "grade": 314,

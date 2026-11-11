@@ -2,6 +2,7 @@
  "name": "helmholtz-controller",
  "project": "oresat/oresat-helmholtz",
  "path": "oresat__oresat-helmholtz/controller-v3/helmholtz-controller.kicad_pcb",
+ "license": "No license found",
  "rank": 1823,
  "complexity": {
   "grade": 273,

@@ -2,6 +2,7 @@
  "name": "corne-cherry",
  "project": "foostan/crkbd",
  "path": "foostan__crkbd/pcbs/corne-cherry/hotswap/corne-cherry.kicad_pcb",
+ "license": "CC-BY-4.0 (Creative Commons Attribution 4.0)",
  "rank": 558,
  "complexity": {
   "grade": 377,

@@ -2,6 +2,7 @@
  "name": "ir-irradiance-probe",
  "project": "antmicro/infrared-irradiance-probe",
  "path": "antmicro__infrared-irradiance-probe/ir-irradiance-probe.kicad_pcb",
+ "license": "Apache-2.0 (Apache License 2.0)",
  "rank": 1734,
  "complexity": {
   "grade": 282,

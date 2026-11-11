@@ -14,6 +14,7 @@
  "path": "heev__motor-controller-2018/motor-controller-hw/motor-controller-hw.kicad_pcb",
  "project": "heev/motor-controller-2018",
  "name": "motor-controller-hw",
+ "license": "No license found",
  "zip": "part13_of_17",
  "features": {
   "through_vias": 192,

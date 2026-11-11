@@ -2,6 +2,7 @@
  "name": "Main_10E1S",
  "project": "isarmg/pcie-switch-2",
  "path": "isarmg__pcie-switch-2/outputs/PCIe_3board_RevI/Main_10E1S/Main_10E1S.kicad_pcb",
+ "license": "No license found",
  "rank": 284,
  "complexity": {
   "grade": 425,

@@ -2,6 +2,7 @@
  "name": "LT8491-mezzanine",
  "project": "stanford-ssi/samwise-avionics",
  "path": "stanford-ssi__samwise-avionics/LT8491-mezzanine/LT8491-mezzanine.kicad_pcb",
+ "license": "No license found",
  "rank": 1489,
  "complexity": {
   "grade": 356,

@@ -14,6 +14,7 @@
  "path": "bradgrantham__other-m68k/kicad/release/other-m68k.kicad_pcb",
  "project": "bradgrantham/other-m68k",
  "name": "other-m68k",
+ "license": "No license found",
  "zip": "part10_of_17",
  "features": {
   "through_vias": 1330,

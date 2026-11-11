@@ -14,6 +14,7 @@
  "path": "DangerousPrototypes__BusPirate5-hardware/development/adapter-flash-dip-1REV4/flash-dip-rev4.kicad_pcb",
  "project": "DangerousPrototypes/BusPirate5-hardware",
  "name": "flash-dip-rev4",
+ "license": "MIT (MIT License)",
  "zip": "part16_of_17",
  "features": {
   "through_vias": 74,

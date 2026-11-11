@@ -2,6 +2,7 @@
  "name": "HGS_antenna_tester",
  "project": "oresat/oresat-live-handheld-ground-station",
  "path": "oresat__oresat-live-handheld-ground-station/PCB-Legos/Antenna tester/HGS_antenna_tester.kicad_pcb",
+ "license": "GPL-3.0 (GNU GPL v3.0)",
  "rank": 2491,
  "complexity": {
   "grade": 267,

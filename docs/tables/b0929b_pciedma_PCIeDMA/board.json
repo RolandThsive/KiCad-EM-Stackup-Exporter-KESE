@@ -2,6 +2,7 @@
  "name": "PCIeDMA",
  "project": "eggsampler/pciedma",
  "path": "eggsampler__pciedma/PCIeDMA.kicad_pcb",
+ "license": "MIT (MIT License)",
  "rank": 466,
  "complexity": {
   "grade": 452,

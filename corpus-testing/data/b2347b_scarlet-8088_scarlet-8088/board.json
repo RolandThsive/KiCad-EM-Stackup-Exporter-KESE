@@ -14,6 +14,7 @@
  "path": "Red-Lucy-Engineering__scarlet-8088/scarlet-8088.kicad_pcb",
  "project": "Red-Lucy-Engineering/scarlet-8088",
  "name": "scarlet-8088",
+ "license": "CC-BY-4.0 (Creative Commons Attribution 4.0)",
  "zip": "part07_of_17",
  "features": {
   "through_vias": 4702,

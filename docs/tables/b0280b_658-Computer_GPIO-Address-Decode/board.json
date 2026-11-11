@@ -2,6 +2,7 @@
  "name": "GPIO Address Decode",
  "project": "andrewpaterson/658-Computer",
  "path": "andrewpaterson__658-Computer/Kicad/Pico/GPIO Address Decode/GPIO Address Decode.kicad_pcb",
+ "license": "No license found",
  "rank": 1601,
  "complexity": {
   "grade": 239,

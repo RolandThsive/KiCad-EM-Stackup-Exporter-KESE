@@ -2,6 +2,7 @@
  "name": "SPIBreakout",
  "project": "bluejayracing/bjr_kicad",
  "path": "bluejayracing__bjr_kicad/21xt/03-wireless_strain_gauge/SPIBreakout/SPIBreakout.kicad_pcb",
+ "license": "No license found",
  "rank": 2895,
  "complexity": {
   "grade": 160,

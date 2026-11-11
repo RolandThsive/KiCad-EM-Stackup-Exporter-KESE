@@ -2,6 +2,7 @@
  "name": "h4n2rs485",
  "project": "mwwhited/embeddedbakery",
  "path": "mwwhited__embeddedbakery/circuits/h4n2rs485/h4n2rs485.kicad_pcb",
+ "license": "MIT (MIT License), in LICENSE",
  "rank": 2868,
  "complexity": {
   "grade": 58,

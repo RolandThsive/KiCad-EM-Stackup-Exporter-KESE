@@ -14,6 +14,7 @@
  "path": "proveskit__flight_controller_board/FC_V4c_InspireFly_Special/FC_V4c_InspireFly_Special.kicad_pcb",
  "project": "proveskit/flight_controller_board",
  "name": "FC_V4c_InspireFly_Special",
+ "license": "CERN-OHL-W-2.0 (CERN Open Hardware Licence v2, Weakly Reciprocal)",
  "zip": "part14_of_17",
  "features": {
   "through_vias": 568,

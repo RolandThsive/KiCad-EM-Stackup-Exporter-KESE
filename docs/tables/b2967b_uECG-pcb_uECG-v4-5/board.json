@@ -2,6 +2,7 @@
  "name": "uECG_v4_5",
  "project": "ultimaterobotics/uECG_pcb",
  "path": "ultimaterobotics__uECG_pcb/uECG_v4_5/uECG_v4_5.kicad_pcb",
+ "license": "CERN-OHL-P-2.0 (CERN Open Hardware Licence v2, Permissive)",
  "rank": 1524,
  "complexity": {
   "grade": 273,

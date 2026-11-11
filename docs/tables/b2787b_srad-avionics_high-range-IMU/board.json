@@ -2,6 +2,7 @@
  "name": "high-range-IMU",
  "project": "terrapin-rocket-team/srad-avionics",
  "path": "terrapin-rocket-team__srad-avionics/Spaceport/PCBs/Sensor Boards/high-range-IMU/high-range-IMU.kicad_pcb",
+ "license": "No license found",
  "rank": 2889,
  "complexity": {
   "grade": 156,

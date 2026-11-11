@@ -2,6 +2,7 @@
  "name": "iMX6 Demo Board_from_REF",
  "project": "ts-manuel/imx6-demo-board",
  "path": "ts-manuel__imx6-demo-board/kicad/iMX6 Demo Board_from_REF.kicad_pcb",
+ "license": "GPL-3.0 (GNU GPL v3.0)",
  "rank": 430,
  "complexity": {
   "grade": 433,

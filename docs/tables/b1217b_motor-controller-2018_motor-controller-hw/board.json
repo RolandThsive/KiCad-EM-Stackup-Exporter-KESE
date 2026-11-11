@@ -2,6 +2,7 @@
  "name": "motor-controller-hw",
  "project": "heev/motor-controller-2018",
  "path": "heev__motor-controller-2018/motor-controller-hw/motor-controller-hw.kicad_pcb",
+ "license": "No license found",
  "rank": 878,
  "complexity": {
   "grade": 318,

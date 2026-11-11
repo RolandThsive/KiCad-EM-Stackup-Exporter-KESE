@@ -2,6 +2,7 @@
  "name": "50_ohm_microstrip_experiment",
  "project": "oresat/oresat-live-handheld-ground-station",
  "path": "oresat__oresat-live-handheld-ground-station/PCB-Legos/Antenna tester/50_ohm_microstrip_experiment/50_ohm_microstrip_experiment.kicad_pcb",
+ "license": "GPL-3.0 (GNU GPL v3.0)",
  "rank": 2057,
  "complexity": {
   "grade": 240,

@@ -2,6 +2,7 @@
  "name": "oresat-gps-card",
  "project": "oresat/oresat-gps-hardware",
  "path": "oresat__oresat-gps-hardware/oresat-gps-card/oresat-gps-card.kicad_pcb",
+ "license": "CERN-OHL-S-2.0 (CERN Open Hardware Licence v2, Strongly Reciprocal)",
  "rank": 425,
  "complexity": {
   "grade": 438,

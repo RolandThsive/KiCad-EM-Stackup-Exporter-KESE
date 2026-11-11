@@ -2,6 +2,7 @@
  "name": "Fab-Drawing-clear-dev-v1",
  "project": "chipfoundry/caravel_board",
  "path": "chipfoundry__caravel_board/hardware/development/_archive/clear-dev-v1/Fab-Drawing-clear-dev-v1.kicad_pcb",
+ "license": "No license found",
  "rank": 1138,
  "complexity": {
   "grade": 333,

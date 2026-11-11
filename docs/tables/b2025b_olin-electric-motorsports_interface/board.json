@@ -2,6 +2,7 @@
  "name": "interface",
  "project": "olin-electric-motorsports/olin-electric-motorsports",
  "path": "olin-electric-motorsports__olin-electric-motorsports/vehicle/mkv/hardware/dashboard/dux_interface/interface.kicad_pcb",
+ "license": "No license found",
  "rank": 2132,
  "complexity": {
   "grade": 237,

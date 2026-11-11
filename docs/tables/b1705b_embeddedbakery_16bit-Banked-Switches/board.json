@@ -2,6 +2,7 @@
  "name": "16bit Banked Switches",
  "project": "mwwhited/embeddedbakery",
  "path": "mwwhited__embeddedbakery/circuits/Pmod16bitBanked/16bit Banked Switches.kicad_pcb",
+ "license": "MIT (MIT License), in LICENSE",
  "rank": 2531,
  "complexity": {
   "grade": 147,

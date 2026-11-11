@@ -2,6 +2,7 @@
  "name": "Coin_Cell_Tester",
  "project": "tomrodinger/servomotor",
  "path": "tomrodinger__servomotor/PCB/Coin_Cell_Tester/PCB/V2/Coin_Cell_Tester.kicad_pcb",
+ "license": "MIT (MIT License)",
  "rank": 1080,
  "complexity": {
   "grade": 322,

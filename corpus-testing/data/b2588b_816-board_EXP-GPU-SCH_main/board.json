@@ -14,6 +14,7 @@
  "path": "snippyrow__-816-board/EXP/GPU_SCH/main.kicad_pcb",
  "project": "snippyrow/-816-board",
  "name": "main",
+ "license": "MIT (MIT License)",
  "zip": "part13_of_17",
  "features": {
   "through_vias": 506,

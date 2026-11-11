@@ -2,6 +2,7 @@
  "name": "BB-PWR-3608_revA",
  "project": "OLIMEX/BB-PWR-3608",
  "path": "OLIMEX__BB-PWR-3608/BB-PWR-3608_revA.kicad_pcb",
+ "license": "Apache-2.0 (Apache License 2.0)",
  "rank": 2696,
  "complexity": {
   "grade": 163,

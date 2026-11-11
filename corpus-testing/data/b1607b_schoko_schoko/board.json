@@ -14,6 +14,7 @@
  "path": "machdyne__schoko/pcb/schoko_v2/schoko.kicad_pcb",
  "project": "machdyne/schoko",
  "name": "schoko",
+ "license": "The Lone Dynamics Open License, in LICENSE.md: \"Redistribution and use in source, binary or physical forms, with or without modification, is permitted\", provided redistributed source keeps the copyright notice; the README names its exceptions",
  "zip": "part14_of_17",
  "features": {
   "through_vias": 207,

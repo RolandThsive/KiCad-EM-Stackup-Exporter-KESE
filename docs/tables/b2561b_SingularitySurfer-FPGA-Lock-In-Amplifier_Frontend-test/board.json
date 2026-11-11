@@ -2,6 +2,7 @@
  "name": "Frontend_test",
  "project": "SingularitySurfer/SingularitySurfer-FPGA-Lock-In-Amplifier",
  "path": "SingularitySurfer__SingularitySurfer-FPGA-Lock-In-Amplifier/BOARD/Frontend_test/Frontend_test.kicad_pcb",
+ "license": "MIT (MIT License), in LICENSE",
  "rank": 2173,
  "complexity": {
   "grade": 213,

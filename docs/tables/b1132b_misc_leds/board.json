@@ -2,6 +2,7 @@
  "name": "leds",
  "project": "greatscottgadgets/misc",
  "path": "greatscottgadgets__misc/evaluation-boards/leds/leds.kicad_pcb",
+ "license": "GPL-2.0 (GNU GPL v2.0)",
  "rank": 1928,
  "complexity": {
   "grade": 247,

@@ -14,6 +14,7 @@
  "path": "danwerner21__Dragon64/Dragon64Board/dragon64.kicad_pcb",
  "project": "danwerner21/Dragon64",
  "name": "dragon64",
+ "license": "No license found",
  "zip": "part10_of_17",
  "features": {
   "through_vias": 226,

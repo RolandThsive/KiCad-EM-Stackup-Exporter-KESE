@@ -2,6 +2,7 @@
  "name": "CM4_MATX",
  "project": "TheGuyDanish/CM4_MATX",
  "path": "TheGuyDanish__CM4_MATX/KiCad/CM4_MATX.kicad_pcb",
+ "license": "CERN-OHL-P-2.0 (CERN Open Hardware Licence v2, Permissive), in LICENSE",
  "rank": 2174,
  "complexity": {
   "grade": 178,

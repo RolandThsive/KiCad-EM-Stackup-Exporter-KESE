@@ -2,6 +2,7 @@
  "name": "Audio DAC",
  "project": "andrewpaterson/658-Computer",
  "path": "andrewpaterson__658-Computer/Kicad/Computer/Component Boards/Audio DAC/Audio DAC.kicad_pcb",
+ "license": "No license found",
  "rank": 2082,
  "complexity": {
   "grade": 228,

@@ -2,6 +2,7 @@
  "name": "haasoscope_pro_adc_fpga_board",
  "project": "drandyhaas/HaasoscopePro",
  "path": "drandyhaas__HaasoscopePro/adc board/Kicad/haasoscope_pro_adc_fpga_board.kicad_pcb",
+ "license": "MIT (MIT License)",
  "rank": 189,
  "complexity": {
   "grade": 412,

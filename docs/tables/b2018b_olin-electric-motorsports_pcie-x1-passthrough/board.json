@@ -2,6 +2,7 @@
  "name": "pcie_x1_passthrough",
  "project": "olin-electric-motorsports/olin-electric-motorsports",
  "path": "olin-electric-motorsports__olin-electric-motorsports/projects/PCIe Development/x1_passthrough/pcie_x1_passthrough.kicad_pcb",
+ "license": "No license found",
  "rank": 2630,
  "complexity": {
   "grade": 143,

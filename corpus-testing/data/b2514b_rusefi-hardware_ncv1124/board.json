@@ -14,6 +14,7 @@
  "path": "rusefi__rusefi-hardware/VR_ncv1124_test_module/ncv1124.kicad_pcb",
  "project": "rusefi/rusefi-hardware",
  "name": "ncv1124",
+ "license": "No license found",
  "zip": "part16_of_17",
  "features": {
   "through_vias": 60,

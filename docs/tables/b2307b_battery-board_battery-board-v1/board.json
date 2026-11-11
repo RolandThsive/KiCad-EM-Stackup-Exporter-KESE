@@ -2,6 +2,7 @@
  "name": "battery_board_v1",
  "project": "proveskit/battery_board",
  "path": "proveskit__battery_board/battery_board_v2/battery_board_v1.kicad_pcb",
+ "license": "CERN-OHL-W-2.0 (CERN Open Hardware Licence v2, Weakly Reciprocal)",
  "rank": 1141,
  "complexity": {
   "grade": 318,

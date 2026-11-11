@@ -2,6 +2,7 @@
  "name": "rpi-cm4-LiM-board",
  "project": "l00nix/rpi-cm4-LiM-board",
  "path": "l00nix__rpi-cm4-LiM-board/hardware/rpi-cm4-LiM-board/KiCad Files/rpi-cm4-LiM-board.kicad_pcb",
+ "license": "CC0-1.0 (Creative Commons Zero v1.0)",
  "rank": 2462,
  "complexity": {
   "grade": 260,

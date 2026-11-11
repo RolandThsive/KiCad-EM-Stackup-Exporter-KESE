@@ -14,6 +14,7 @@
  "path": "UnexpectedMaker__esp32s3/kicad/NanoS3 Carrier/NanoS3_Carrier.kicad_pcb",
  "project": "UnexpectedMaker/esp32s3",
  "name": "NanoS3_Carrier",
+ "license": "CERN-OHL-1.2 (CERN Open Hardware Licence v1.2), in kicad/LICENSE",
  "zip": "part16_of_17",
  "features": {
   "through_vias": 83,

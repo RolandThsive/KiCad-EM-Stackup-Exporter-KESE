@@ -2,6 +2,7 @@
  "name": "kria-k26-devboard",
  "project": "antmicro/kria-k26-devboard",
  "path": "antmicro__kria-k26-devboard/kria-k26-devboard.kicad_pcb",
+ "license": "Apache-2.0 (Apache License 2.0)",
  "rank": 37,
  "complexity": {
   "grade": 491,

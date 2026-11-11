@@ -2,6 +2,7 @@
  "name": "pe42520_breakout",
  "project": "loxodes/vna",
  "path": "loxodes__vna/breakouts/pe42540_breakout/pe42520_breakout.kicad_pcb",
+ "license": "As README.md states it: \"Unless otherwise noted, all work is under a MIT license.\"",
  "rank": 2402,
  "complexity": {
   "grade": 210,

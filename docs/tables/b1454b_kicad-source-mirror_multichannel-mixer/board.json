@@ -2,6 +2,7 @@
  "name": "multichannel_mixer",
  "project": "KiCad/kicad-source-mirror",
  "path": "KiCad__kicad-source-mirror/demos/multichannel/multichannel_mixer.kicad_pcb",
+ "license": "GPL-3.0 (GNU GPL v3.0)",
  "rank": 1839,
  "complexity": {
   "grade": 230,

@@ -2,6 +2,7 @@
  "name": "launch",
  "project": "system76/launch",
  "path": "system76__launch/pcb/launch.kicad_pcb",
+ "license": "GPL-3.0 (GNU GPL v3.0)",
  "rank": 368,
  "complexity": {
   "grade": 393,

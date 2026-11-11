@@ -2,6 +2,7 @@
  "name": "yardstickone",
  "project": "greatscottgadgets/yardstick",
  "path": "greatscottgadgets__yardstick/yardstickone/yardstickone.kicad_pcb",
+ "license": "GPL-2.0 (GNU GPL v2.0)",
  "rank": 1671,
  "complexity": {
   "grade": 317,

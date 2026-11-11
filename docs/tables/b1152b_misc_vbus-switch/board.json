@@ -2,6 +2,7 @@
  "name": "vbus-switch",
  "project": "greatscottgadgets/misc",
  "path": "greatscottgadgets__misc/evaluation-boards/vbus-switch/vbus-switch.kicad_pcb",
+ "license": "GPL-2.0 (GNU GPL v2.0)",
  "rank": 1620,
  "complexity": {
   "grade": 282,

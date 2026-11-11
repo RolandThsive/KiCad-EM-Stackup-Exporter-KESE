@@ -2,6 +2,7 @@
  "name": "FC_V5e_Production_Rev1",
  "project": "proveskit/flight_controller_board",
  "path": "proveskit__flight_controller_board/FC_V5e_Production_Rev1/FC_V5e_Production_Rev1.kicad_pcb",
+ "license": "CERN-OHL-W-2.0 (CERN Open Hardware Licence v2, Weakly Reciprocal)",
  "rank": 563,
  "complexity": {
   "grade": 425,

@@ -2,6 +2,7 @@
  "name": "rosco_m68k",
  "project": "rosco-m68k/rosco_m68k",
  "path": "rosco-m68k__rosco_m68k/design/r2030/kicad/rosco_m68k.kicad_pcb",
+ "license": "MIT (MIT License), in LICENSE",
  "rank": 753,
  "complexity": {
   "grade": 380,

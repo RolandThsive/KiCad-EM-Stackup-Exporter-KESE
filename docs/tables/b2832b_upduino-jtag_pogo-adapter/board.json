@@ -2,6 +2,7 @@
  "name": "pogo_adapter",
  "project": "tinyvision-ai-inc/upduino-jtag",
  "path": "tinyvision-ai-inc__upduino-jtag/board/pogo_adapter/pogo_adapter.kicad_pcb",
+ "license": "MIT (MIT License)",
  "rank": 2883,
  "complexity": {
   "grade": 181,

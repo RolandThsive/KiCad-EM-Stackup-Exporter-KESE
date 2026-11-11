@@ -2,6 +2,7 @@
  "name": "Coil_Panel_Z",
  "project": "stanford-ssi/samwise-avionics",
  "path": "stanford-ssi__samwise-avionics/Universal_Z_MagTorq/Coil_Panel_Z_v1/Coil_Panel_Z.kicad_pcb",
+ "license": "No license found",
  "rank": 1993,
  "complexity": {
   "grade": 229,

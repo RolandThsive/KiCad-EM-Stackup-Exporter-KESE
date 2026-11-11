@@ -2,6 +2,7 @@
  "name": "zx2_fpga_int",
  "project": "krzys9876/ZX_Spectrum_diy",
  "path": "krzys9876__ZX_Spectrum_diy/Kicad5/zx2_fpga_int/zx2_fpga_int.kicad_pcb",
+ "license": "MIT (MIT License)",
  "rank": 1918,
  "complexity": {
   "grade": 209,

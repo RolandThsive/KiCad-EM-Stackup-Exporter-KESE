@@ -2,6 +2,7 @@
  "name": "AudioYM2151",
  "project": "ddraig68k/hardware",
  "path": "ddraig68k__hardware/expansion/AudioYM2151/AudioYM2151.kicad_pcb",
+ "license": "MIT (MIT License)",
  "rank": 1772,
  "complexity": {
   "grade": 301,

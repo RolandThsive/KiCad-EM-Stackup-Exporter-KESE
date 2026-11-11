@@ -2,6 +2,7 @@
  "name": "GPIO Backplane Board",
  "project": "andrewpaterson/658-Computer",
  "path": "andrewpaterson__658-Computer/Kicad/Pico/GPIO Backplane Board/GPIO Backplane Board.kicad_pcb",
+ "license": "No license found",
  "rank": 2172,
  "complexity": {
   "grade": 229,

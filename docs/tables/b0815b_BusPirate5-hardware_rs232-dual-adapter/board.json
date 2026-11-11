@@ -2,6 +2,7 @@
  "name": "rs232-dual-adapter",
  "project": "DangerousPrototypes/BusPirate5-hardware",
  "path": "DangerousPrototypes__BusPirate5-hardware/adapter-rs232-dual-1REV0/rs232-dual-adapter.kicad_pcb",
+ "license": "MIT (MIT License)",
  "rank": 2469,
  "complexity": {
   "grade": 238,

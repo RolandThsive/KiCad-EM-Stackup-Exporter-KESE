@@ -2,6 +2,7 @@
  "name": "extra_av_out",
  "project": "marqs85/ossc_pro_hw",
  "path": "marqs85__ossc_pro_hw/expansions/extra_av_out/extra_av_out.kicad_pcb",
+ "license": "CERN-OHL-P-2.0 (CERN Open Hardware Licence v2, Permissive)",
  "rank": 1204,
  "complexity": {
   "grade": 297,

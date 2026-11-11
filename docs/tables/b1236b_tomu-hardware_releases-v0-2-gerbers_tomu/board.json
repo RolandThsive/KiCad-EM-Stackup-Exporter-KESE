@@ -2,6 +2,7 @@
  "name": "tomu",
  "project": "im-tomu/tomu-hardware",
  "path": "im-tomu__tomu-hardware/releases/v0.2/gerbers/tomu.kicad_pcb",
+ "license": "CC-BY-SA-4.0 (Creative Commons Attribution-ShareAlike 4.0)",
  "rank": 2507,
  "complexity": {
   "grade": 210,

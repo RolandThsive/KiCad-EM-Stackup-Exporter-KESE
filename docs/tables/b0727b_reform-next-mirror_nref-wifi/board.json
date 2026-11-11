@@ -2,6 +2,7 @@
  "name": "nref-wifi",
  "project": "cetola/reform-next-mirror",
  "path": "cetola__reform-next-mirror/nref-wifi/nref-wifi.kicad_pcb",
+ "license": "As README.md states it: \"All hardware design work in this repository is © 2024 MNT Research GmbH, Berlin, Germany, and contributors (see Credits).\"",
  "rank": 2019,
  "complexity": {
   "grade": 232,

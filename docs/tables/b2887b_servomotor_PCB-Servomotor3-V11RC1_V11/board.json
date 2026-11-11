@@ -2,6 +2,7 @@
  "name": "V11",
  "project": "tomrodinger/servomotor",
  "path": "tomrodinger__servomotor/PCB/Servomotor3/V11RC1/V11.kicad_pcb",
+ "license": "MIT (MIT License)",
  "rank": 1416,
  "complexity": {
   "grade": 345,

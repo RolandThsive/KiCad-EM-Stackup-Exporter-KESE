@@ -14,6 +14,7 @@
  "path": "BerkeleyLab__DxP-sensor-probes/end_connector/end_connector.kicad_pcb",
  "project": "BerkeleyLab/DxP-sensor-probes",
  "name": "end_connector",
+ "license": "CC-BY-NC-4.0 (Creative Commons Attribution-NonCommercial 4.0), in LICENSE.md",
  "zip": "part16_of_17",
  "features": {
   "through_vias": 12,

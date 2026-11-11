@@ -2,6 +2,7 @@
  "name": "IMUArray_BreakoutBoard",
  "project": "will127534/IMU_Array",
  "path": "will127534__IMU_Array/IMUArray_BreakoutBoard/IMUArray_BreakoutBoard.kicad_pcb",
+ "license": "MIT (MIT License)",
  "rank": 2618,
  "complexity": {
   "grade": 240,

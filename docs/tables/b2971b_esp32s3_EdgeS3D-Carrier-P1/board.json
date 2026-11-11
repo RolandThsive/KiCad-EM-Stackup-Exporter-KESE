@@ -2,6 +2,7 @@
  "name": "EdgeS3D_Carrier_P1",
  "project": "UnexpectedMaker/esp32s3",
  "path": "UnexpectedMaker__esp32s3/series_d/KiCAD/EdgeS3D_Carrier_P1/EdgeS3D_Carrier_P1.kicad_pcb",
+ "license": "CERN-OHL-1.2 (CERN Open Hardware Licence v1.2), in kicad/LICENSE",
  "rank": 1882,
  "complexity": {
   "grade": 257,

@@ -14,6 +14,7 @@
  "path": "robojackets__robocup-pcb/boards/rev-2026/control-v4.0/control-v4.0.kicad_pcb",
  "project": "robojackets/robocup-pcb",
  "name": "control-v4.0",
+ "license": "Apache-2.0 (Apache License 2.0)",
  "zip": "part16_of_17",
  "features": {
   "through_vias": 90,

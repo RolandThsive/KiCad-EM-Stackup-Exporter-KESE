@@ -2,6 +2,7 @@
  "name": "video-booster-board",
  "project": "antmicro/video-signal-booster-board",
  "path": "antmicro__video-signal-booster-board/video-booster-board.kicad_pcb",
+ "license": "Apache-2.0 (Apache License 2.0)",
  "rank": 679,
  "complexity": {
   "grade": 361,

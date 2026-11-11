@@ -14,6 +14,7 @@
  "path": "acwright__6502/Hardware/RAM Card/Rev 1.0/RAM Card.kicad_pcb",
  "project": "acwright/6502",
  "name": "RAM Card",
+ "license": "CERN-OHL-P-2.0 (CERN Open Hardware Licence v2, Permissive), in LICENSE",
  "zip": "part15_of_17",
  "features": {
   "through_vias": 476,

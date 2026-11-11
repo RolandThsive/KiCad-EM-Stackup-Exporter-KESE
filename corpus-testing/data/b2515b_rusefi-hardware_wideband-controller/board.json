@@ -14,6 +14,7 @@
  "path": "rusefi__rusefi-hardware/wideband-F103/wideband_controller.kicad_pcb",
  "project": "rusefi/rusefi-hardware",
  "name": "wideband_controller",
+ "license": "No license found",
  "zip": "part14_of_17",
  "features": {
   "through_vias": 191,

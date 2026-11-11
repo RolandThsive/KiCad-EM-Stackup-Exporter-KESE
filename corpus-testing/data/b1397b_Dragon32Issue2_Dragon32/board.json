@@ -14,6 +14,7 @@
  "path": "jimbro1000__Dragon32Issue2/Dragon32.kicad_pcb",
  "project": "jimbro1000/Dragon32Issue2",
  "name": "Dragon32",
+ "license": "MIT (MIT License)",
  "zip": "part10_of_17",
  "features": {
   "through_vias": 1510,

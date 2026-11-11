@@ -2,6 +2,7 @@
  "name": "attenuator-test",
  "project": "azonenberg/starshipraider",
  "path": "azonenberg__starshipraider/boards/probes/attenuator-test/attenuator-test.kicad_pcb",
+ "license": "BSD-3-Clause (BSD 3-Clause License)",
  "rank": 2578,
  "complexity": {
   "grade": 185,

@@ -2,6 +2,7 @@
  "name": "LimeSDR_Sony",
  "project": "myriadrf/front-end-modules",
  "path": "myriadrf__front-end-modules/LimeSDR_PA_LNA/hardware/v1r3/KiCAD/LimeSDR_Sony.kicad_pcb",
+ "license": "CC-BY-3.0 (Creative Commons Attribution 3.0), in LimeSDR_PA_LNA/hardware/COPYING",
  "rank": 777,
  "complexity": {
   "grade": 319,

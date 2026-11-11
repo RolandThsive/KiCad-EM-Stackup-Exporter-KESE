@@ -2,6 +2,7 @@
  "name": "CTS-SAT-2-OBC-PCB",
  "project": "calgarytospace/cts-sat-2-obc-pcb",
  "path": "calgarytospace__cts-sat-2-obc-pcb/Hardware/CTS-SAT-2-OBC-PCB.kicad_pcb",
+ "license": "No license found",
  "rank": 739,
  "complexity": {
   "grade": 395,

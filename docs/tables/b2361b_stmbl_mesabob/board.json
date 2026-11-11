@@ -2,6 +2,7 @@
  "name": "mesabob",
  "project": "rene-dev/stmbl",
  "path": "rene-dev__stmbl/hw/kicad/mesabob/mesabob.kicad_pcb",
+ "license": "GPL-3.0 (GNU GPL v3.0)",
  "rank": 2090,
  "complexity": {
   "grade": 216,

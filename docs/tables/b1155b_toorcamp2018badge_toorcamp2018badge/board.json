@@ -2,6 +2,7 @@
  "name": "toorcamp2018badge",
  "project": "greatscottgadgets/toorcamp2018badge",
  "path": "greatscottgadgets__toorcamp2018badge/hardware/badge/toorcamp2018badge.kicad_pcb",
+ "license": "BSD-3-Clause (BSD 3-Clause License)",
  "rank": 2379,
  "complexity": {
   "grade": 202,

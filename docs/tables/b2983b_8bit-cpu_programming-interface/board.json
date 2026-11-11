@@ -2,6 +2,7 @@
  "name": "programming_interface",
  "project": "vascofazza/8bit-cpu",
  "path": "vascofazza__8bit-cpu/start9_programming_interface/programming_interface/programming_interface.kicad_pcb",
+ "license": "MIT (MIT License)",
  "rank": 1961,
  "complexity": {
   "grade": 247,

@@ -2,6 +2,7 @@
  "name": "RPi_interface",
  "project": "stanford-ssi/samwise-avionics",
  "path": "stanford-ssi__samwise-avionics/RPi_Interface/RPi_interface.kicad_pcb",
+ "license": "No license found",
  "rank": 1877,
  "complexity": {
   "grade": 272,

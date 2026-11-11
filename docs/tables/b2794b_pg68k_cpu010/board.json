@@ -2,6 +2,7 @@
  "name": "cpu010",
  "project": "thorpej/pg68k",
  "path": "thorpej__pg68k/cpu010/design-files/cpu010.kicad_pcb",
+ "license": "No license found",
  "rank": 93,
  "complexity": {
   "grade": 398,

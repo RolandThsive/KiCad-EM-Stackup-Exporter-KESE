@@ -2,6 +2,7 @@
  "name": "batteryboard",
  "project": "stanford-ssi/samwise-avionics",
  "path": "stanford-ssi__samwise-avionics/BatteryBoard/batteryboard-v02.3/batteryboard.kicad_pcb",
+ "license": "No license found",
  "rank": 1889,
  "complexity": {
   "grade": 270,

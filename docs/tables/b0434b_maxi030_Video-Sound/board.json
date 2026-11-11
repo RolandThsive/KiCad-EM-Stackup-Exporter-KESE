@@ -2,6 +2,7 @@
  "name": "Video+Sound",
  "project": "aslak3/maxi030",
  "path": "aslak3__maxi030/ExpansionCards/Video+Sound/Video+Sound.kicad_pcb",
+ "license": "GPL-2.0 (GNU GPL v2.0)",
  "rank": 920,
  "complexity": {
   "grade": 303,

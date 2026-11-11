@@ -14,6 +14,7 @@
  "path": "nmikstas__asteroids-pcb/Asteroids_PCB/Asteroids_PCB.kicad_pcb",
  "project": "nmikstas/asteroids-pcb",
  "name": "Asteroids_PCB",
+ "license": "No license found",
  "zip": "part08_of_17",
  "features": {
   "through_vias": 0,

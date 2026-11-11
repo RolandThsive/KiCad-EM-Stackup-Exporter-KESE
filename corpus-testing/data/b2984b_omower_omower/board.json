@@ -14,6 +14,7 @@
  "path": "vasimv__omower/hardware/OMower/omower.kicad_pcb",
  "project": "vasimv/omower",
  "name": "omower",
+ "license": "GPL-3.0 (GNU GPL v3.0)",
  "zip": "part11_of_17",
  "features": {
   "through_vias": 537,

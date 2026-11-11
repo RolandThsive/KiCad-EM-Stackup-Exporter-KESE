@@ -2,6 +2,7 @@
  "name": "RP2040-PICO-PC_rev_B",
  "project": "OLIMEX/RP2040-PICO-PC",
  "path": "OLIMEX__RP2040-PICO-PC/HARDWARE/RP2040-PICO-PC hardware revision B/RP2040-PICO-PC_rev_B.kicad_pcb",
+ "license": "GPL-3.0 (GNU GPL v3.0)",
  "rank": 1665,
  "complexity": {
   "grade": 219,

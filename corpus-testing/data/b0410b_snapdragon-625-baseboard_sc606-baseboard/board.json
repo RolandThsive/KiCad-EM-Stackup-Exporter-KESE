@@ -14,6 +14,7 @@
  "path": "antmicro__snapdragon-625-baseboard/sc606-baseboard.kicad_pcb",
  "project": "antmicro/snapdragon-625-baseboard",
  "name": "sc606-baseboard",
+ "license": "Apache-2.0 (Apache License 2.0)",
  "zip": "part08_of_17",
  "features": {
   "through_vias": 930,

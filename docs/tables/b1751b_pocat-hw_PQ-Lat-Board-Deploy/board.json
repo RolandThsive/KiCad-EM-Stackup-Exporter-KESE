@@ -2,6 +2,7 @@
  "name": "PQ_Lat_Board_Deploy",
  "project": "nanosatlab/pocat-hw",
  "path": "nanosatlab__pocat-hw/pq_latboard_deploy/PQ_Lat_Board_Deploy.kicad_pcb",
+ "license": "No license found",
  "rank": 1951,
  "complexity": {
   "grade": 271,

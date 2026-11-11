@@ -14,6 +14,7 @@
  "path": "kononenko-k__allwinner_h616_devboard/Hardware/H616_DDR3/H616_devboard.kicad_pcb",
  "project": "kononenko-k/allwinner_h616_devboard",
  "name": "H616_devboard",
+ "license": "CERN-OHL-P-2.0 (CERN Open Hardware Licence v2, Permissive)",
  "zip": "part11_of_17",
  "features": {
   "through_vias": 812,

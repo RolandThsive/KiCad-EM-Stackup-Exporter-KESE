@@ -2,6 +2,7 @@
  "name": "cm4-carrier-net",
  "project": "jkiv/cm4-carriers",
  "path": "jkiv__cm4-carriers/hardware/cm4-carrier-net/cm4-carrier-net.kicad_pcb",
+ "license": "BSD-2-Clause (BSD 2-Clause License)",
  "rank": 1201,
  "complexity": {
   "grade": 272,

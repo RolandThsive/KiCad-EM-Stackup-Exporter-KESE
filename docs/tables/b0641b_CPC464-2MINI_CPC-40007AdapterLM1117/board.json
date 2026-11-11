@@ -2,6 +2,7 @@
  "name": "CPC-40007AdapterLM1117",
  "project": "Board-Folk/CPC464-2MINI",
  "path": "Board-Folk__CPC464-2MINI/v4.1/Extras/CPC-40007Adapter/Kicad/CPC-40007AdapterLM1117.kicad_pcb",
+ "license": "No license found",
  "rank": 2064,
  "complexity": {
   "grade": 224,

@@ -2,6 +2,7 @@
  "name": "Regulator7913-1",
  "project": "mwwhited/embeddedbakery",
  "path": "mwwhited__embeddedbakery/circuits/ComdynaGP6/Regulator7913-1/Regulator7913-1.kicad_pcb",
+ "license": "MIT (MIT License), in LICENSE",
  "rank": 2415,
  "complexity": {
   "grade": 160,

@@ -2,6 +2,7 @@
  "name": "PROM",
  "project": "mwwhited/embeddedbakery",
  "path": "mwwhited__embeddedbakery/circuits/DiodeLogicBoards/PROM/PROM.kicad_pcb",
+ "license": "MIT (MIT License), in LICENSE",
  "rank": 2448,
  "complexity": {
   "grade": 71,

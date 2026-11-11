@@ -14,6 +14,7 @@
  "path": "antmicro__ov9281-camera-board/ov9281-dual-camera-board.kicad_pcb",
  "project": "antmicro/ov9281-camera-board",
  "name": "ov9281-dual-camera-board",
+ "license": "Apache-2.0 (Apache License 2.0)",
  "zip": "part14_of_17",
  "features": {
   "through_vias": 466,

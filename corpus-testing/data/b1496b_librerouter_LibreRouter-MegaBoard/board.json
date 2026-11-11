@@ -14,6 +14,7 @@
  "path": "libremesh__librerouter/designs/mega_board/LibreRouter_MegaBoard.kicad_pcb",
  "project": "libremesh/librerouter",
  "name": "LibreRouter_MegaBoard",
+ "license": "AGPL-3.0 (GNU AGPL v3.0), in LICENSE",
  "zip": "part09_of_17",
  "features": {
   "through_vias": 2552,

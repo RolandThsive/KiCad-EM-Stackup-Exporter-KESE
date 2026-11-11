@@ -2,6 +2,7 @@
  "name": "Zynq_SoM",
  "project": "pinguz97/zynq-som",
  "path": "pinguz97__zynq-som/Zynq_SoM.kicad_pcb",
+ "license": "CERN-OHL-S-2.0 (CERN Open Hardware Licence v2, Strongly Reciprocal)",
  "rank": 212,
  "complexity": {
   "grade": 476,

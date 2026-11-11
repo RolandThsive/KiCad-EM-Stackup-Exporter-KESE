@@ -2,6 +2,7 @@
  "name": "mainboard",
  "project": "greatscottgadgets/urti-mainboard",
  "path": "greatscottgadgets__urti-mainboard/mainboard.kicad_pcb",
+ "license": "CERN-OHL-P-2.0 (CERN Open Hardware Licence v2, Permissive)",
  "rank": 335,
  "complexity": {
   "grade": 465,

@@ -2,6 +2,7 @@
  "name": "indicator-board",
  "project": "respiraworks/ventilator",
  "path": "respiraworks__ventilator/pcb/indicator-board/indicator-board.kicad_pcb",
+ "license": "Apache-2.0 (Apache License 2.0)",
  "rank": 2677,
  "complexity": {
   "grade": 182,

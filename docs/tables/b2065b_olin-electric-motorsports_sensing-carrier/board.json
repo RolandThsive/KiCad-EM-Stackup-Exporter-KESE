@@ -2,6 +2,7 @@
  "name": "sensing_carrier",
  "project": "olin-electric-motorsports/olin-electric-motorsports",
  "path": "olin-electric-motorsports__olin-electric-motorsports/vehicle/mkvi/hardware/sensing/sensing_carrier/sensing_carrier.kicad_pcb",
+ "license": "No license found",
  "rank": 2495,
  "complexity": {
   "grade": 242,

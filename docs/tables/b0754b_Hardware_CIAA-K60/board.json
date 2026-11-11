@@ -2,6 +2,7 @@
  "name": "CIAA_K60",
  "project": "ciaa/Hardware",
  "path": "ciaa__Hardware/PCB/FSL/CIAA_K60/CIAA_K60.kicad_pcb",
+ "license": "BSD-2-Clause (BSD 2-Clause License), in LICENSE, PCB/EDU-FPGA/LICENSE, PCB/Z3R0/LICENSE",
  "rank": 390,
  "complexity": {
   "grade": 337,

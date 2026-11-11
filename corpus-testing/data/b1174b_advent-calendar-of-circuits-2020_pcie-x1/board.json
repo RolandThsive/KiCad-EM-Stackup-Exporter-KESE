@@ -14,6 +14,7 @@
  "path": "gregdavill__advent-calendar-of-circuits-2020/pcie_x1/kicad-src/pcie_x1.kicad_pcb",
  "project": "gregdavill/advent-calendar-of-circuits-2020",
  "name": "pcie_x1",
+ "license": "CERN-OHL-P-2.0 (CERN Open Hardware Licence v2, Permissive), in LICENCE-CERN-OHL-P-2.0",
  "zip": "part16_of_17",
  "features": {
   "through_vias": 37,

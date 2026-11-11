@@ -14,6 +14,7 @@
  "path": "andrewpaterson__658-Computer/Kicad/Computer/Main/Main Memory Full Abort/Main Memory Full Abort.kicad_pcb",
  "project": "andrewpaterson/658-Computer",
  "name": "Main Memory Full Abort",
+ "license": "No license found",
  "zip": "part15_of_17",
  "features": {
   "through_vias": 254,

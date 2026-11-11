@@ -14,6 +14,7 @@
  "path": "sparkfun__SparkFun_Thing_Plus_ESP32-S3/Hardware/SparkFun_Thing_Plus_ESP32-S3.kicad_pcb",
  "project": "sparkfun/SparkFun_Thing_Plus_ESP32-S3",
  "name": "SparkFun_Thing_Plus_ESP32-S3",
+ "license": "MIT (MIT License), in LICENSE.md",
  "zip": "part15_of_17",
  "features": {
   "through_vias": 260,

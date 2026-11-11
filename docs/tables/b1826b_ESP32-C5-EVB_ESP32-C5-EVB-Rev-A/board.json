@@ -2,6 +2,7 @@
  "name": "ESP32-C5-EVB_Rev_A",
  "project": "OLIMEX/ESP32-C5-EVB",
  "path": "OLIMEX__ESP32-C5-EVB/HARDWARE/ESP32-C5-EVB-Rev.A/ESP32-C5-EVB_Rev_A.kicad_pcb",
+ "license": "MIT (MIT License)",
  "rank": 1187,
  "complexity": {
   "grade": 291,

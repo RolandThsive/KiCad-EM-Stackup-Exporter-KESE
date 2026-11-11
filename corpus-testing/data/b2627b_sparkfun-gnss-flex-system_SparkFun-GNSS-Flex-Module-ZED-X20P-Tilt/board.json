@@ -14,6 +14,7 @@
  "path": "sparkfun__sparkfun_gnss_flex_system/flex_boards/SparkPNT_GNSS_Flex_Module_ZED-X20P-Tilt/hardware/SparkFun_GNSS_Flex_Module_ZED-X20P_Tilt.kicad_pcb",
  "project": "sparkfun/sparkfun_gnss_flex_system",
  "name": "SparkFun_GNSS_Flex_Module_ZED-X20P_Tilt",
+ "license": "MIT (MIT License), in LICENSE.md",
  "zip": "part16_of_17",
  "features": {
   "through_vias": 268,

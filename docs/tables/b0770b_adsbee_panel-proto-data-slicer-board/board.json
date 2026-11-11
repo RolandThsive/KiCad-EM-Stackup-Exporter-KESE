@@ -2,6 +2,7 @@
  "name": "panel_proto_data_slicer_board",
  "project": "CoolNamesAllTaken/adsbee",
  "path": "CoolNamesAllTaken__adsbee/kicad/prototyping/panel_proto_data_slicer_board/panel_proto_data_slicer_board.kicad_pcb",
+ "license": "GPL-3.0 (GNU GPL v3.0), in LICENSE",
  "rank": 1742,
  "complexity": {
   "grade": 234,

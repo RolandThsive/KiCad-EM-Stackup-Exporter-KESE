@@ -2,6 +2,7 @@
  "name": "nuco-v",
  "project": "dmitrystu/nuco-v",
  "path": "dmitrystu__nuco-v/nuco-v.kicad_pcb",
+ "license": "CERN-OHL-W-2.0 (CERN Open Hardware Licence v2, Weakly Reciprocal), in LICENSE.md",
  "rank": 910,
  "complexity": {
   "grade": 335,

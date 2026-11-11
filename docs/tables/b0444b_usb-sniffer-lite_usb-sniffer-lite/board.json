@@ -2,6 +2,7 @@
  "name": "usb-sniffer-lite",
  "project": "ataradov/usb-sniffer-lite",
  "path": "ataradov__usb-sniffer-lite/hardware/usb-sniffer-lite.kicad_pcb",
+ "license": "BSD-3-Clause (BSD 3-Clause License)",
  "rank": 2189,
  "complexity": {
   "grade": 288,

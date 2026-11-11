@@ -2,6 +2,7 @@
  "name": "pmod_ethernet",
  "project": "machdyne/katze",
  "path": "machdyne__katze/pcb/katze_v1/pmod_ethernet.kicad_pcb",
+ "license": "The Lone Dynamics Open License, in LICENSE.md: \"Redistribution and use in source, binary or physical forms, with or without modification, is permitted\", provided redistributed source keeps the copyright notice; the README names its exceptions",
  "rank": 2327,
  "complexity": {
   "grade": 248,

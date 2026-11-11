@@ -2,6 +2,7 @@
  "name": "zest",
  "project": "berkeleylab/zest",
  "path": "berkeleylab__zest/board/zest.kicad_pcb",
+ "license": "CERN-OHL-1.2 (CERN Open Hardware Licence v1.2), in License",
  "rank": 249,
  "complexity": {
   "grade": 380,

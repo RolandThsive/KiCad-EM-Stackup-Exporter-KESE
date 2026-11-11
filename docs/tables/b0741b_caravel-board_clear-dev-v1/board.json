@@ -2,6 +2,7 @@
  "name": "clear-dev-v1",
  "project": "chipfoundry/caravel_board",
  "path": "chipfoundry__caravel_board/hardware/development/_archive/clear-dev-v1/clear-dev-v1.kicad_pcb",
+ "license": "No license found",
  "rank": 1139,
  "complexity": {
   "grade": 328,

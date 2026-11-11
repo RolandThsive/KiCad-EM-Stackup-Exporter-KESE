@@ -2,6 +2,7 @@
  "name": "Obsidian",
  "project": "BerkeleyLab/Obsidian",
  "path": "BerkeleyLab__Obsidian/Obsidian/Obsidian.kicad_pcb",
+ "license": "CERN-OHL-W-2.0 (CERN Open Hardware Licence v2, Weakly Reciprocal)",
  "rank": 111,
  "complexity": {
   "grade": 515,

@@ -2,6 +2,7 @@
  "name": "TestBoard_TPS27SA08-Q1",
  "project": "lhr-solar/ps-powerdistributionunit",
  "path": "lhr-solar__ps-powerdistributionunit/hardware/TestBoard_TPS27SA08-Q1/TestBoard_TPS27SA08-Q1.kicad_pcb",
+ "license": "No license found",
  "rank": 1756,
  "complexity": {
   "grade": 310,

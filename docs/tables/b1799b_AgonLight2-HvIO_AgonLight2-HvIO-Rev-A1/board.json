@@ -2,6 +2,7 @@
  "name": "AgonLight2-HvIO_Rev_A1",
  "project": "OLIMEX/AgonLight2-HvIO",
  "path": "OLIMEX__AgonLight2-HvIO/HARDWARE/AgonLight2-HvIO_Rev_A1/AgonLight2-HvIO_Rev_A1.kicad_pcb",
+ "license": "GPL-3.0 (GNU GPL v3.0)",
  "rank": 1579,
  "complexity": {
   "grade": 267,

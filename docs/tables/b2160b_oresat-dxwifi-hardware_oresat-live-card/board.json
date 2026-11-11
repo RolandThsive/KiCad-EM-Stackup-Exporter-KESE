@@ -2,6 +2,7 @@
  "name": "oresat-live-card",
  "project": "oresat/oresat-dxwifi-hardware",
  "path": "oresat__oresat-dxwifi-hardware/oresat-live-card/oresat-live-card.kicad_pcb",
+ "license": "GPL-3.0 (GNU GPL v3.0)",
  "rank": 307,
  "complexity": {
   "grade": 472,

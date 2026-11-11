@@ -2,6 +2,7 @@
  "name": "lvbms-connector",
  "project": "sufst/pcb",
  "path": "sufst__pcb/lvbms-conn/lvbms-connector.kicad_pcb",
+ "license": "GPL-3.0 (GNU GPL v3.0)",
  "rank": 3057,
  "complexity": {
   "grade": 62,

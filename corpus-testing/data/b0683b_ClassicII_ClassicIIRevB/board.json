@@ -14,6 +14,7 @@
  "path": "btb__ClassicII/ClassicIIRevB/ClassicIIRevB.kicad_pcb",
  "project": "btb/ClassicII",
  "name": "ClassicIIRevB",
+ "license": "No license found",
  "zip": "part06_of_17",
  "features": {
   "through_vias": 2612,

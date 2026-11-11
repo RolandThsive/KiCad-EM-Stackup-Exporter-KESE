@@ -2,6 +2,7 @@
  "name": "paracard-template",
  "project": "parallella/parallella-hw",
  "path": "parallella__parallella-hw/paratemplate/paracard-template.kicad_pcb",
+ "license": "CC-BY-SA-3.0 (Creative Commons Attribution-ShareAlike 3.0), in LICENSE",
  "rank": 3028,
  "complexity": {
   "grade": 34,

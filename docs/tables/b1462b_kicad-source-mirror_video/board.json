@@ -2,6 +2,7 @@
  "name": "video",
  "project": "KiCad/kicad-source-mirror",
  "path": "KiCad__kicad-source-mirror/demos/video/video.kicad_pcb",
+ "license": "GPL-3.0 (GNU GPL v3.0)",
  "rank": 215,
  "complexity": {
   "grade": 405,

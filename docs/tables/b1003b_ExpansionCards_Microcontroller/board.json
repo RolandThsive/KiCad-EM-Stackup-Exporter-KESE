@@ -2,6 +2,7 @@
  "name": "Microcontroller",
  "project": "FrameworkComputer/ExpansionCards",
  "path": "FrameworkComputer__ExpansionCards/Electrical/Microcontroller/Microcontroller.kicad_pcb",
+ "license": "CC-BY-4.0 (Creative Commons Attribution 4.0)",
  "rank": 1770,
  "complexity": {
   "grade": 258,

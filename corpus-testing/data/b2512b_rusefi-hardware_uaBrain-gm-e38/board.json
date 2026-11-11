@@ -14,6 +14,7 @@
  "path": "rusefi__rusefi-hardware/uaBrain-gm-e38/uaBrain-gm-e38.kicad_pcb",
  "project": "rusefi/rusefi-hardware",
  "name": "uaBrain-gm-e38",
+ "license": "No license found",
  "zip": "part11_of_17",
  "features": {
   "through_vias": 1608,

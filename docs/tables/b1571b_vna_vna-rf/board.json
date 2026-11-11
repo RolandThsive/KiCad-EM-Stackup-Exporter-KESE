@@ -2,6 +2,7 @@
  "name": "vna_rf",
  "project": "loxodes/vna",
  "path": "loxodes__vna/hardware/archive/vna_r0/vna_rf/vna_rf.kicad_pcb",
+ "license": "As README.md states it: \"Unless otherwise noted, all work is under a MIT license.\"",
  "rank": 1231,
  "complexity": {
   "grade": 292,

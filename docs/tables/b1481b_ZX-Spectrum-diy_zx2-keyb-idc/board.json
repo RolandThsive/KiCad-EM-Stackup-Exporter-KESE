@@ -2,6 +2,7 @@
  "name": "zx2_keyb_idc",
  "project": "krzys9876/ZX_Spectrum_diy",
  "path": "krzys9876__ZX_Spectrum_diy/Kicad5/zx2_keyb_idc/zx2_keyb_idc.kicad_pcb",
+ "license": "MIT (MIT License)",
  "rank": 2827,
  "complexity": {
   "grade": 141,

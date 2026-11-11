@@ -2,6 +2,7 @@
  "name": "MAXI030",
  "project": "aslak3/maxi030",
  "path": "aslak3__maxi030/MAXI030.kicad_pcb",
+ "license": "GPL-2.0 (GNU GPL v2.0)",
  "rank": 213,
  "complexity": {
   "grade": 353,

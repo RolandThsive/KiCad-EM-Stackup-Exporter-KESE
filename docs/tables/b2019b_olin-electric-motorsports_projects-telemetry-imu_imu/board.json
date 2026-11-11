@@ -2,6 +2,7 @@
  "name": "imu",
  "project": "olin-electric-motorsports/olin-electric-motorsports",
  "path": "olin-electric-motorsports__olin-electric-motorsports/projects/telemetry/imu/imu.kicad_pcb",
+ "license": "No license found",
  "rank": 2016,
  "complexity": {
   "grade": 282,

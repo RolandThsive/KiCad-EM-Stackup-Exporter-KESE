@@ -2,6 +2,7 @@
  "name": "dfb1_r5",
  "project": "dh219/DFB",
  "path": "dh219__DFB/DFB1/kicad5/dfb1_r5/dfb1_r5.kicad_pcb",
+ "license": "GPL-2.0 (GNU GPL v2.0)",
  "rank": 602,
  "complexity": {
   "grade": 334,

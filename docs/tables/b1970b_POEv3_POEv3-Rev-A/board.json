@@ -2,6 +2,7 @@
  "name": "POEv3_Rev_A",
  "project": "OLIMEX/POEv3",
  "path": "OLIMEX__POEv3/Hardware/POEv3 hardware revision A/POEv3_Rev_A.kicad_pcb",
+ "license": "GPL-3.0 (GNU GPL v3.0)",
  "rank": 1211,
  "complexity": {
   "grade": 302,

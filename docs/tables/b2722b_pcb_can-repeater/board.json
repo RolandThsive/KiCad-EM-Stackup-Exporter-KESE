@@ -2,6 +2,7 @@
  "name": "can-repeater",
  "project": "sufst/pcb",
  "path": "sufst__pcb/can-repeater/can-repeater.kicad_pcb",
+ "license": "GPL-3.0 (GNU GPL v3.0)",
  "rank": 1968,
  "complexity": {
   "grade": 362,

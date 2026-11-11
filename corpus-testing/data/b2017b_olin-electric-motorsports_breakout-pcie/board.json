@@ -14,6 +14,7 @@
  "path": "olin-electric-motorsports__olin-electric-motorsports/projects/PCIe Development/pcie_breakout/breakout_pcie.kicad_pcb",
  "project": "olin-electric-motorsports/olin-electric-motorsports",
  "name": "breakout_pcie",
+ "license": "No license found",
  "zip": "part15_of_17",
  "features": {
   "through_vias": 74,

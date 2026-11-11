@@ -2,6 +2,7 @@
  "name": "nqvme_template",
  "project": "thorpej/pg68k",
  "path": "thorpej__pg68k/nqvme_template/design-files/nqvme_template.kicad_pcb",
+ "license": "No license found",
  "rank": 2934,
  "complexity": {
   "grade": 98,

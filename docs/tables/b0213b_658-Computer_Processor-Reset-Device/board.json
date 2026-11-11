@@ -2,6 +2,7 @@
  "name": "Processor Reset Device",
  "project": "andrewpaterson/658-Computer",
  "path": "andrewpaterson__658-Computer/Kicad/Computer/Main/Processor Reset Device/Processor Reset Device.kicad_pcb",
+ "license": "No license found",
  "rank": 2300,
  "complexity": {
   "grade": 216,

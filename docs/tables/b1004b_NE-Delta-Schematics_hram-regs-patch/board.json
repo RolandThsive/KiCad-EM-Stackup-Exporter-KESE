@@ -2,6 +2,7 @@
  "name": "hram_regs_patch",
  "project": "frubem/NE_Delta_Schematics",
  "path": "frubem__NE_Delta_Schematics/hram_regs_patch/hram_regs_patch.kicad_pcb",
+ "license": "No license found",
  "rank": 2885,
  "complexity": {
   "grade": 146,

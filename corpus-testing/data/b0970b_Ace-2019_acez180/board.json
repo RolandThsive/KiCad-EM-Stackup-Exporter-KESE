@@ -14,6 +14,7 @@
  "path": "flypie__Ace-2019/KiCad/ACEZ180/acez180.kicad_pcb",
  "project": "flypie/Ace-2019",
  "name": "acez180",
+ "license": "GPL-3.0 (GNU GPL v3.0)",
  "zip": "part11_of_17",
  "features": {
   "through_vias": 338,

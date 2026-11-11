@@ -2,6 +2,7 @@
  "name": "gate_xor_2in",
  "project": "tmarhguy/alu",
  "path": "tmarhguy__alu/schematics/kicad/modules/gates/gate_xor/gate_xor_2in/gate_xor_2in.kicad_pcb",
+ "license": "MIT (MIT License)",
  "rank": 2570,
  "complexity": {
   "grade": 146,

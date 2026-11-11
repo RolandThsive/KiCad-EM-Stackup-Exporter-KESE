@@ -14,6 +14,7 @@
  "path": "will127534__StarlightEye/StarlightEye.kicad_pcb",
  "project": "will127534/StarlightEye",
  "name": "StarlightEye",
+ "license": "MIT (MIT License)",
  "zip": "part14_of_17",
  "features": {
   "through_vias": 1048,

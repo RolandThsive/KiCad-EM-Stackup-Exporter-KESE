@@ -14,6 +14,7 @@
  "path": "openenergymonitor__emon32/pcb/6ct-expander/6ct-expander.kicad_pcb",
  "project": "openenergymonitor/emon32",
  "name": "6ct-expander",
+ "license": "CC-BY-SA-4.0 (Creative Commons Attribution-ShareAlike 4.0)",
  "zip": "part16_of_17",
  "features": {
   "through_vias": 90,

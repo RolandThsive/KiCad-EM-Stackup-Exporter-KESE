@@ -14,6 +14,7 @@
  "path": "jamesgossy__stm32-brushless-motor-controller/controller_hardware/bench_stm32_esc.kicad_pcb",
  "project": "jamesgossy/stm32-brushless-motor-controller",
  "name": "bench_stm32_esc",
+ "license": "As README.md states it: \"MIT licensed. Copyright © 2026 James Goss.\"",
  "zip": "part13_of_17",
  "features": {
   "through_vias": 1332,

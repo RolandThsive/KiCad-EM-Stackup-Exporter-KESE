@@ -2,6 +2,7 @@
  "name": "RASBB",
  "project": "tobias-dg3yev/ra-sentinel",
  "path": "tobias-dg3yev__ra-sentinel/RASBB/Hardware/Rev.C/Design/RASBB.kicad_pcb",
+ "license": "GPL-3.0 (GNU GPL v3.0)",
  "rank": 53,
  "complexity": {
   "grade": 485,

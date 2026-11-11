@@ -2,6 +2,7 @@
  "name": "bench_stm32_esc",
  "project": "jamesgossy/stm32-brushless-motor-controller",
  "path": "jamesgossy__stm32-brushless-motor-controller/controller_hardware/bench_stm32_esc.kicad_pcb",
+ "license": "As README.md states it: \"MIT licensed. Copyright © 2026 James Goss.\"",
  "rank": 840,
  "complexity": {
   "grade": 366,

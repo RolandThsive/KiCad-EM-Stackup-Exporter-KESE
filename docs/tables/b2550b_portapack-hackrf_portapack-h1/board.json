@@ -2,6 +2,7 @@
  "name": "portapack_h1",
  "project": "sharebrained/portapack-hackrf",
  "path": "sharebrained__portapack-hackrf/hardware/portapack_h1/portapack_h1.kicad_pcb",
+ "license": "GPL-2.0 (GNU GPL v2.0)",
  "rank": 828,
  "complexity": {
   "grade": 286,

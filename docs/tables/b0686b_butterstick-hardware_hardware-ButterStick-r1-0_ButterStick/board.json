@@ -2,6 +2,7 @@
  "name": "ButterStick",
  "project": "butterstick-fpga/butterstick-hardware",
  "path": "butterstick-fpga__butterstick-hardware/hardware/ButterStick_r1.0/ButterStick.kicad_pcb",
+ "license": "CERN-OHL-1.2 (CERN Open Hardware Licence v1.2), in LICENSE",
  "rank": 46,
  "complexity": {
   "grade": 491,

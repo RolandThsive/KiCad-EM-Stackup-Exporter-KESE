@@ -14,6 +14,7 @@
  "path": "OLIMEX__UEXT-LVL-SHIFT/HARDWARE/UEXT-LVL-SHIFT_Rev_A/UEXT-LVL-SHIFT_Rev_A.kicad_pcb",
  "project": "OLIMEX/UEXT-LVL-SHIFT",
  "name": "UEXT-LVL-SHIFT_Rev_A",
+ "license": "MIT (MIT License)",
  "zip": "part15_of_17",
  "features": {
   "through_vias": 260,

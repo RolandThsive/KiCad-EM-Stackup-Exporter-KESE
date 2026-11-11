@@ -2,6 +2,7 @@
  "name": "usb_c",
  "project": "osusat/cubesat",
  "path": "osusat__cubesat/shared/kicad/subsheets/usb_c/usb_c.kicad_pcb",
+ "license": "MIT (MIT License)",
  "rank": 2710,
  "complexity": {
   "grade": 228,

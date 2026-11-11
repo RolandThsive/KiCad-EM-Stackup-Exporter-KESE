@@ -14,6 +14,7 @@
  "path": "schlae__graphics-gremlin/isavideo.kicad_pcb",
  "project": "schlae/graphics-gremlin",
  "name": "isavideo",
+ "license": "CC-BY-SA-4.0 (Creative Commons Attribution-ShareAlike 4.0)",
  "zip": "part13_of_17",
  "features": {
   "through_vias": 258,

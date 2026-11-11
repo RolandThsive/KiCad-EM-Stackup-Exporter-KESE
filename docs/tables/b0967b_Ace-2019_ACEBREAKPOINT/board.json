@@ -2,6 +2,7 @@
  "name": "ACEBREAKPOINT",
  "project": "flypie/Ace-2019",
  "path": "flypie__Ace-2019/KiCad/ACEBREAKPOINT/ACEBREAKPOINT.kicad_pcb",
+ "license": "GPL-3.0 (GNU GPL v3.0)",
  "rank": 1916,
  "complexity": {
   "grade": 192,

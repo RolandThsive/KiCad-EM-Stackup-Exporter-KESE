@@ -2,6 +2,7 @@
  "name": "chassis",
  "project": "ToyotaInfoTech/RAMN",
  "path": "ToyotaInfoTech__RAMN/hardware/V1_revB/2_chassis/chassis.kicad_pcb",
+ "license": "CC-BY-SA-4.0 (Creative Commons Attribution-ShareAlike 4.0), in LICENSE.md",
  "rank": 2614,
  "complexity": {
   "grade": 200,

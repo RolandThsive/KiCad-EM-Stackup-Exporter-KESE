@@ -2,6 +2,7 @@
  "name": "com-express-7-baseboard",
  "project": "antmicro/com-express-7-baseboard",
  "path": "antmicro__com-express-7-baseboard/com-express-7-baseboard.kicad_pcb",
+ "license": "Apache-2.0 (Apache License 2.0)",
  "rank": 72,
  "complexity": {
   "grade": 525,

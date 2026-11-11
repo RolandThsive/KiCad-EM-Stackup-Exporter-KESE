@@ -2,6 +2,7 @@
  "name": "star-tracker-card",
  "project": "oresat/oresat-star-tracker-hardware",
  "path": "oresat__oresat-star-tracker-hardware/hardware/star-tracker-card/star-tracker-card.kicad_pcb",
+ "license": "No license found",
  "rank": 444,
  "complexity": {
   "grade": 408,

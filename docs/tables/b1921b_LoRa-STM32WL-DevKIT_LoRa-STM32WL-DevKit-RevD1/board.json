@@ -2,6 +2,7 @@
  "name": "LoRa-STM32WL-DevKit_RevD1",
  "project": "OLIMEX/LoRa-STM32WL-DevKIT",
  "path": "OLIMEX__LoRa-STM32WL-DevKIT/HARDWARE/LoRa-STM32WL-DevKIT/LoRa-STM32WL-DevKit-RevD1/LoRa-STM32WL-DevKit_RevD1.kicad_pcb",
+ "license": "GPL-3.0 (GNU GPL v3.0)",
  "rank": 1536,
  "complexity": {
   "grade": 271,

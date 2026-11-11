@@ -2,6 +2,7 @@
  "name": "macpro62-io-board",
  "project": "winkleplex10-bit/the-mac-pro-project",
  "path": "winkleplex10-bit__the-mac-pro-project/kicad/macpro62-io-board/macpro62-io-board.kicad_pcb",
+ "license": "No license found",
  "rank": 1659,
  "complexity": {
   "grade": 237,

@@ -2,6 +2,7 @@
  "name": "SparkPNT_GPSDO",
  "project": "sparkfun/sparkfun_gnssdo",
  "path": "sparkfun__sparkfun_gnssdo/Hardware/GNSSDO/SparkPNT_GPSDO.kicad_pcb",
+ "license": "MIT (MIT License), in LICENSE.md",
  "rank": 562,
  "complexity": {
   "grade": 408,

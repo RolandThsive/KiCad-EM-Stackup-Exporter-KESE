@@ -14,6 +14,7 @@
  "path": "mwwhited__embeddedbakery/circuits/HelperBoards/Wave Form Generator Amplifier/Wave Form Generator Amplifier.kicad_pcb",
  "project": "mwwhited/embeddedbakery",
  "name": "Wave Form Generator Amplifier",
+ "license": "MIT (MIT License), in LICENSE",
  "zip": "part16_of_17",
  "features": {
   "through_vias": 0,

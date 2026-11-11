@@ -2,6 +2,7 @@
  "name": "dipole-breakout",
  "project": "terrapin-rocket-team/srad-avionics",
  "path": "terrapin-rocket-team__srad-avionics/Spaceport/PCBs/dipole-breakout/dipole-breakout.kicad_pcb",
+ "license": "No license found",
  "rank": 2983,
  "complexity": {
   "grade": 135,

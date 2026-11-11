@@ -14,6 +14,7 @@
  "path": "ssmiao__intel-i210-network-card/PCBV3.0/inteli210AT.kicad_pcb",
  "project": "ssmiao/intel-i210-network-card",
  "name": "inteli210AT",
+ "license": "MIT (MIT License)",
  "zip": "part14_of_17",
  "features": {
   "through_vias": 111,

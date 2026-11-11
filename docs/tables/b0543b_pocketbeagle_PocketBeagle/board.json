@@ -2,6 +2,7 @@
  "name": "PocketBeagle",
  "project": "beagleboard/pocketbeagle",
  "path": "beagleboard__pocketbeagle/KiCAD/PocketBeagle.kicad_pcb",
+ "license": "CC-BY-4.0 (Creative Commons Attribution 4.0)",
  "rank": 1145,
  "complexity": {
   "grade": 292,

@@ -14,6 +14,7 @@
  "path": "Protocentral__healthypi-move-hw/pcbs/sensor board/kicad_pc_healthypi_move_sensor_v9/pc_healthypi_move_sensor_v9.kicad_pcb",
  "project": "Protocentral/healthypi-move-hw",
  "name": "pc_healthypi_move_sensor_v9",
+ "license": "MIT (MIT License)",
  "zip": "part15_of_17",
  "features": {
   "through_vias": 316,

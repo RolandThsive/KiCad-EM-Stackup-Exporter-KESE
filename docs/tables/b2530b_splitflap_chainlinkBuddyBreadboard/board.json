@@ -2,6 +2,7 @@
  "name": "chainlinkBuddyBreadboard",
  "project": "scottbez1/splitflap",
  "path": "scottbez1__splitflap/electronics/chainlinkBuddyBreadboard/chainlinkBuddyBreadboard.kicad_pcb",
+ "license": "Apache-2.0 (Apache License 2.0), in LICENSE.txt",
  "rank": 2990,
  "complexity": {
   "grade": 129,

@@ -2,6 +2,7 @@
  "name": "HCP65 64 Pin Tester",
  "project": "andrewpaterson/658-Computer",
  "path": "andrewpaterson__658-Computer/Kicad/Pico/HCP65 64 Pin Tester/HCP65 64 Pin Tester.kicad_pcb",
+ "license": "No license found",
  "rank": 713,
  "complexity": {
   "grade": 283,

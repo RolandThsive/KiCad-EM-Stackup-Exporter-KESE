@@ -2,6 +2,7 @@
  "name": "picubed_samwise",
  "project": "stanford-ssi/samwise-avionics",
  "path": "stanford-ssi__samwise-avionics/PiCubed/picubed_samwise/picubed_samwise.kicad_pcb",
+ "license": "No license found",
  "rank": 995,
  "complexity": {
   "grade": 380,

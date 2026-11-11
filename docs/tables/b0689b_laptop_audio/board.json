@@ -2,6 +2,7 @@
  "name": "audio",
  "project": "byrantech/laptop",
  "path": "byrantech__laptop/audio/audio.kicad_pcb",
+ "license": "MIT (MIT License)",
  "rank": 2146,
  "complexity": {
   "grade": 291,

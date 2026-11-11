@@ -14,6 +14,7 @@
  "path": "oresat__oresat-solar-simulator-hardware/boards/controller-board/controller-board.kicad_pcb",
  "project": "oresat/oresat-solar-simulator-hardware",
  "name": "controller-board",
+ "license": "CERN-OHL-S-2.0 (CERN Open Hardware Licence v2, Strongly Reciprocal)",
  "zip": "part11_of_17",
  "features": {
   "through_vias": 3374,

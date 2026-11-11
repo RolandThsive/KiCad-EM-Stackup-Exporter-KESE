@@ -2,6 +2,7 @@
  "name": "TMP117_section_10cm",
  "project": "BerkeleyLab/DxP-sensor-probes",
  "path": "BerkeleyLab__DxP-sensor-probes/TMP117_section_10cm/TMP117_section_10cm.kicad_pcb",
+ "license": "CC-BY-NC-4.0 (Creative Commons Attribution-NonCommercial 4.0), in LICENSE.md",
  "rank": 743,
  "complexity": {
   "grade": 262,

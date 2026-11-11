@@ -2,6 +2,7 @@
  "name": "meko",
  "project": "koeglike/meko",
  "path": "koeglike__meko/hardware/pcb/meko.kicad_pcb",
+ "license": "GPL-3.0 (GNU GPL v3.0)",
  "rank": 311,
  "complexity": {
   "grade": 479,

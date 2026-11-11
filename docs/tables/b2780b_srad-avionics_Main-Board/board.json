@@ -2,6 +2,7 @@
  "name": "Main Board",
  "project": "terrapin-rocket-team/srad-avionics",
  "path": "terrapin-rocket-team__srad-avionics/Spaceport/PCBs/MCU Boards/STM32 MCU Large/Main Board.kicad_pcb",
+ "license": "No license found",
  "rank": 1310,
  "complexity": {
   "grade": 367,

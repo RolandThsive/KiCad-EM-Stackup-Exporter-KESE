@@ -2,6 +2,7 @@
  "name": "display_interface",
  "project": "vascofazza/8bit-cpu",
  "path": "vascofazza__8bit-cpu/helix_display_interface/display_interface/display_interface.kicad_pcb",
+ "license": "MIT (MIT License)",
  "rank": 2106,
  "complexity": {
   "grade": 227,

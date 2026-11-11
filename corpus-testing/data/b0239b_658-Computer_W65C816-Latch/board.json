@@ -14,6 +14,7 @@
  "path": "andrewpaterson__658-Computer/Kicad/Computer/Processor/W65C816 Latch/W65C816 Latch.kicad_pcb",
  "project": "andrewpaterson/658-Computer",
  "name": "W65C816 Latch",
+ "license": "No license found",
  "zip": "part16_of_17",
  "features": {
   "through_vias": 24,

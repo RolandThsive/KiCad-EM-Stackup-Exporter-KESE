@@ -14,6 +14,7 @@
  "path": "sprhawk__leaf-rv1126/minipcie/leaf-minipcie.kicad_pcb",
  "project": "sprhawk/leaf-rv1126",
  "name": "leaf-minipcie",
+ "license": "As README.md states it: \"This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.\"",
  "zip": "part14_of_17",
  "features": {
   "through_vias": 173,

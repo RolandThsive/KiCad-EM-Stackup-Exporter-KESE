@@ -2,6 +2,7 @@
  "name": "exposed_power_rails",
  "project": "OLIMEX/RVPC",
  "path": "OLIMEX__RVPC/SOFTWARE/rvpc/tools/esp32s2-cookbook/hardware/exposed_power_rails/exposed_power_rails.kicad_pcb",
+ "license": "GPL-3.0 (GNU GPL v3.0)",
  "rank": 1779,
  "complexity": {
   "grade": 272,

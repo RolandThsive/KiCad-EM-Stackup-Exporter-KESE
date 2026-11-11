@@ -14,6 +14,7 @@
  "path": "MichaelPetry__2070-S-100-bus-analyzer/2070-S-100-bus-analyzer.kicad_pcb",
  "project": "MichaelPetry/2070-S-100-bus-analyzer",
  "name": "2070-S-100-bus-analyzer",
+ "license": "No license found",
  "zip": "part13_of_17",
  "features": {
   "through_vias": 1040,

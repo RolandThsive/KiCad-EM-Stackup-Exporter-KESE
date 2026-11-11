@@ -2,6 +2,7 @@
  "name": "SensorBoardNoMCU",
  "project": "terrapin-rocket-team/srad-avionics",
  "path": "terrapin-rocket-team__srad-avionics/Spaceport/PCBs/Sensor Boards/SensorBoardAirbrake/SensorBoardNoMCU.kicad_pcb",
+ "license": "No license found",
  "rank": 2631,
  "complexity": {
   "grade": 255,

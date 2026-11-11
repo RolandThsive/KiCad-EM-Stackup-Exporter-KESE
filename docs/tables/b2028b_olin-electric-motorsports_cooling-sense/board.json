@@ -2,6 +2,7 @@
  "name": "cooling_sense",
  "project": "olin-electric-motorsports/olin-electric-motorsports",
  "path": "olin-electric-motorsports__olin-electric-motorsports/vehicle/mkv/hardware/lvbox/cooling/cooling_sense.kicad_pcb",
+ "license": "No license found",
  "rank": 1846,
  "complexity": {
   "grade": 242,

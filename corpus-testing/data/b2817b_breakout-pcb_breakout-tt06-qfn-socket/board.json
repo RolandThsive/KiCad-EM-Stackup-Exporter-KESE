@@ -14,6 +14,7 @@
  "path": "TinyTapeout__breakout-pcb/breakout-tt06-qfn-socket/breakout-tt06-qfn-socket.kicad_pcb",
  "project": "TinyTapeout/breakout-pcb",
  "name": "breakout-tt06-qfn-socket",
+ "license": "Apache-2.0 (Apache License 2.0)",
  "zip": "part15_of_17",
  "features": {
   "through_vias": 198,

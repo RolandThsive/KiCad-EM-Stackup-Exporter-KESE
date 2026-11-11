@@ -2,6 +2,7 @@
  "name": "power-stage-rev8",
  "project": "oresat/oresat-adcs-hardware",
  "path": "oresat__oresat-adcs-hardware/oresat-rw-board-rev2-MCXN/power-stage-rev8/power-stage-rev8.kicad_pcb",
+ "license": "GPL-2.0 (GNU GPL v2.0)",
  "rank": 718,
  "complexity": {
   "grade": 435,

@@ -2,6 +2,7 @@
  "name": "LibreCAL",
  "project": "jankae/LibreCAL",
  "path": "jankae__LibreCAL/Hardware/LibreCAL/LibreCAL.kicad_pcb",
+ "license": "GPL-3.0 (GNU GPL v3.0)",
  "rank": 520,
  "complexity": {
   "grade": 350,

@@ -2,6 +2,7 @@
  "name": "vimdrones_esc_development_board",
  "project": "VimDrones/AM32_esc_development_board",
  "path": "VimDrones__AM32_esc_development_board/vimdrones_esc_development_board.kicad_pcb",
+ "license": "GPL-3.0 (GNU GPL v3.0)",
  "rank": 1295,
  "complexity": {
   "grade": 366,

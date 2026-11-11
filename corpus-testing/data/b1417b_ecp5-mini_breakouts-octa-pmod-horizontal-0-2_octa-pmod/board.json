@@ -14,6 +14,7 @@
  "path": "joshajohnson__ecp5-mini/breakouts/octa-pmod-horizontal-0.2/octa-pmod.kicad_pcb",
  "project": "joshajohnson/ecp5-mini",
  "name": "octa-pmod",
+ "license": "CERN-OHL-S-2.0 (CERN Open Hardware Licence v2, Strongly Reciprocal), in LICENSE",
  "zip": "part16_of_17",
  "features": {
   "through_vias": 6,

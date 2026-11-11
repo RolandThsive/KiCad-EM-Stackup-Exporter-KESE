@@ -2,6 +2,7 @@
  "name": "Console",
  "project": "danwerner21/TI99_22",
  "path": "danwerner21__TI99_22/mainboard/Console.kicad_pcb",
+ "license": "As README.md states it: \"The original project was licensed under the Creative Commons - Attribution - ShareAlike 3.0 License\"",
  "rank": 204,
  "complexity": {
   "grade": 294,

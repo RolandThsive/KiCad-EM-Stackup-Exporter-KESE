@@ -14,6 +14,7 @@
  "path": "mwelling__icecrusher/kicad-src/icebreaker++.kicad_pcb",
  "project": "mwelling/icecrusher",
  "name": "icebreaker++",
+ "license": "No license found",
  "zip": "part13_of_17",
  "features": {
   "through_vias": 284,

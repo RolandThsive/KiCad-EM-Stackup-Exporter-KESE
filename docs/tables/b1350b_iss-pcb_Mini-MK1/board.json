@@ -2,6 +2,7 @@
  "name": "Mini-MK1",
  "project": "issuiuc/iss-pcb",
  "path": "issuiuc__iss-pcb/boards/Mini-MK1/Mini-MK1.kicad_pcb",
+ "license": "No license found",
  "rank": 1188,
  "complexity": {
   "grade": 348,

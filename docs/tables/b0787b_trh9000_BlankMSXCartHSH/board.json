@@ -2,6 +2,7 @@
  "name": "BlankMSXCartHSH",
  "project": "cristianoag/trh9000",
  "path": "cristianoag__trh9000/Hardware/Kicad/MSX_Breadboard_Large_V9990/BlankMSXCartHSH.kicad_pcb",
+ "license": "CERN-OHL-S-2.0 (CERN Open Hardware Licence v2, Strongly Reciprocal)",
  "rank": 969,
  "complexity": {
   "grade": 270,

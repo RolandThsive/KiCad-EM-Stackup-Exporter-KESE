@@ -14,6 +14,7 @@
  "path": "seandepagnier__mppt/schematics/mppt.kicad_pcb",
  "project": "seandepagnier/mppt",
  "name": "mppt",
+ "license": "No license found",
  "zip": "part15_of_17",
  "features": {
   "through_vias": 117,

@@ -2,6 +2,7 @@
  "name": "RASRF",
  "project": "tobias-dg3yev/ra-sentinel",
  "path": "tobias-dg3yev__ra-sentinel/RASRF2400WB/Hardware/PCB_Design/RASRF.kicad_pcb",
+ "license": "GPL-3.0 (GNU GPL v3.0)",
  "rank": 873,
  "complexity": {
   "grade": 337,

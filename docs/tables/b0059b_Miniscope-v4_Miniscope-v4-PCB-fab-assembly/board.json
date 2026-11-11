@@ -2,6 +2,7 @@
  "name": "Miniscope-v4-PCB-fab-assembly",
  "project": "Aharoni-Lab/Miniscope-v4",
  "path": "Aharoni-Lab__Miniscope-v4/Development Files/Miniscope-v4-PCB-fab-assembly/Miniscope-v4-PCB-fab-assembly.kicad_pcb",
+ "license": "GPL-3.0 (GNU GPL v3.0)",
  "rank": 1458,
  "complexity": {
   "grade": 310,

@@ -2,6 +2,7 @@
  "name": "amulet_controller",
  "project": "nguyen-v/amulet_controller_kibot",
  "path": "nguyen-v__amulet_controller_kibot/amulet_controller.kicad_pcb",
+ "license": "No license found",
  "rank": 581,
  "complexity": {
   "grade": 457,

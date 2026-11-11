@@ -14,6 +14,7 @@
  "path": "lhc__hardware/Oficinas/monte-sua-placa-kicad/Projeto Referência/lhc-esp.kicad_pcb",
  "project": "lhc/hardware",
  "name": "lhc-esp",
+ "license": "MIT (MIT License), in Oficinas/monte-sua-placa-kicad/LICENSE",
  "zip": "part16_of_17",
  "member": "lhc__hardware/Oficinas/monte-sua-placa-kicad/Projeto Refer├¬ncia/lhc-esp.kicad_pcb",
  "features": {

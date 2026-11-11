@@ -14,6 +14,7 @@
  "path": "abdulajadi1__fpga-board/FPGA-BOARD.kicad_pcb",
  "project": "abdulajadi1/fpga-board",
  "name": "FPGA-BOARD",
+ "license": "No license found",
  "zip": "part06_of_17",
  "features": {
   "through_vias": 2804,

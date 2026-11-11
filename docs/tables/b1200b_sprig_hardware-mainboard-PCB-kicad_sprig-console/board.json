@@ -2,6 +2,7 @@
  "name": "sprig_console",
  "project": "hackclub/sprig",
  "path": "hackclub__sprig/hardware/mainboard_PCB/kicad/sprig_console.kicad_pcb",
+ "license": "MIT (MIT License)",
  "rank": 2367,
  "complexity": {
   "grade": 231,

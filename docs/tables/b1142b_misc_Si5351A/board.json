@@ -2,6 +2,7 @@
  "name": "Si5351A",
  "project": "greatscottgadgets/misc",
  "path": "greatscottgadgets__misc/evaluation-boards/Si5351A/Si5351A.kicad_pcb",
+ "license": "GPL-2.0 (GNU GPL v2.0)",
  "rank": 1912,
  "complexity": {
   "grade": 273,

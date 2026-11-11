@@ -2,6 +2,7 @@
  "name": "2063-Z80",
  "project": "Z80-Retro/2063-Z80",
  "path": "Z80-Retro__2063-Z80/2063-Z80.kicad_pcb",
+ "license": "No license found",
  "rank": 904,
  "complexity": {
   "grade": 286,

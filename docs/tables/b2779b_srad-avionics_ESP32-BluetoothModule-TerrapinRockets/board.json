@@ -2,6 +2,7 @@
  "name": "ESP32_BluetoothModule_TerrapinRockets",
  "project": "terrapin-rocket-team/srad-avionics",
  "path": "terrapin-rocket-team__srad-avionics/Spaceport/PCBs/MCU Boards/ESP32_BluetoothModule_TerrapinRockets/ESP32_BluetoothModule_TerrapinRockets.kicad_pcb",
+ "license": "No license found",
  "rank": 2686,
  "complexity": {
   "grade": 163,

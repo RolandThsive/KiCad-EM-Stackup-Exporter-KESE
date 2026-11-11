@@ -2,6 +2,7 @@
  "name": "LVPD-board",
  "project": "terrapin-rocket-team/srad-avionics",
  "path": "terrapin-rocket-team__srad-avionics/Side_Projects/ARC/PCBs/LVPD-board.kicad_pcb",
+ "license": "No license found",
  "rank": 2807,
  "complexity": {
   "grade": 117,

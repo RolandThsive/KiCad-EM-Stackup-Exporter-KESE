@@ -14,6 +14,7 @@
  "path": "andrewpaterson__658-Computer/Kicad/Pico/HCP65 Board Tester/HCP65 Board Tester.kicad_pcb",
  "project": "andrewpaterson/658-Computer",
  "name": "HCP65 Board Tester",
+ "license": "No license found",
  "zip": "part15_of_17",
  "features": {
   "through_vias": 176,

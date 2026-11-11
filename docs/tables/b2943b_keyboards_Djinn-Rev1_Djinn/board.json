@@ -2,6 +2,7 @@
  "name": "Djinn",
  "project": "tzarc/keyboards",
  "path": "tzarc__keyboards/Djinn/Rev1/Djinn.kicad_pcb",
+ "license": "CERN-OHL-S-2.0 (CERN Open Hardware Licence v2, Strongly Reciprocal)",
  "rank": 501,
  "complexity": {
   "grade": 345,

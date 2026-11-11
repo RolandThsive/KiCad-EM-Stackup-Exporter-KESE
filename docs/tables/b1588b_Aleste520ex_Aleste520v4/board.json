@@ -2,6 +2,7 @@
  "name": "Aleste520v4",
  "project": "lucedoriente/Aleste520ex",
  "path": "lucedoriente__Aleste520ex/board/Aleste520v4.kicad_pcb",
+ "license": "GPL-3.0 (GNU GPL v3.0)",
  "rank": 54,
  "complexity": {
   "grade": 318,

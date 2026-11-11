@@ -2,6 +2,7 @@
  "name": "Edgeboard",
  "project": "flypie/Ace-2019",
  "path": "flypie__Ace-2019/KiCad/Edgeboard/Edgeboard.kicad_pcb",
+ "license": "GPL-3.0 (GNU GPL v3.0)",
  "rank": 2845,
  "complexity": {
   "grade": 145,

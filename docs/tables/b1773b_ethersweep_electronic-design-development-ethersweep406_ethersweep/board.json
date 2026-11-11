@@ -2,6 +2,7 @@
  "name": "ethersweep",
  "project": "Neumi/ethersweep",
  "path": "Neumi__ethersweep/electronic_design/development/ethersweep406/ethersweep.kicad_pcb",
+ "license": "MIT (MIT License), in license.txt",
  "rank": 1183,
  "complexity": {
   "grade": 381,

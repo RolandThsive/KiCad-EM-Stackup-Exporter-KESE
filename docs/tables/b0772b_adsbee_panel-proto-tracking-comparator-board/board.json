@@ -2,6 +2,7 @@
  "name": "panel_proto_tracking_comparator_board",
  "project": "CoolNamesAllTaken/adsbee",
  "path": "CoolNamesAllTaken__adsbee/kicad/prototyping/panel_proto_tracking_comparator_board/panel_proto_tracking_comparator_board.kicad_pcb",
+ "license": "GPL-3.0 (GNU GPL v3.0), in LICENSE",
  "rank": 1690,
  "complexity": {
   "grade": 211,

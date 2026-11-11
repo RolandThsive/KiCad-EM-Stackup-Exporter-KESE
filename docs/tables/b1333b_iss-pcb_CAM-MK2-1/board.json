@@ -2,6 +2,7 @@
  "name": "CAM-MK2.1",
  "project": "issuiuc/iss-pcb",
  "path": "issuiuc__iss-pcb/boards/CAM-MK2/CAM-MK2.1-revA/CAM-MK2.1.kicad_pcb",
+ "license": "No license found",
  "rank": 1622,
  "complexity": {
   "grade": 337,

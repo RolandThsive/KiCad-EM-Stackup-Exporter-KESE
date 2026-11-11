@@ -14,6 +14,7 @@
  "path": "baldengineer__Mega-IIe/kicad files/gd slot extender/gd slot extender.kicad_pcb",
  "project": "baldengineer/Mega-IIe",
  "name": "gd slot extender",
+ "license": "MIT (MIT License)",
  "zip": "part16_of_17",
  "features": {
   "through_vias": 0,

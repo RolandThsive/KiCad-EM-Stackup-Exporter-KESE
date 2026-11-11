@@ -14,6 +14,7 @@
  "path": "antmicro__job-pcie-switch-expansion/jetson-orin-baseboard-pcie-switch-expansion.kicad_pcb",
  "project": "antmicro/job-pcie-switch-expansion",
  "name": "jetson-orin-baseboard-pcie-switch-expansion",
+ "license": "Apache-2.0 (Apache License 2.0)",
  "zip": "part10_of_17",
  "features": {
   "through_vias": 1558,

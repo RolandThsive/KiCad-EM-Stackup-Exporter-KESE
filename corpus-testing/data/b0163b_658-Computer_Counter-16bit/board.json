@@ -14,6 +14,7 @@
  "path": "andrewpaterson__658-Computer/Kicad/Computer/Component Boards/Counter 16bit/Counter 16bit.kicad_pcb",
  "project": "andrewpaterson/658-Computer",
  "name": "Counter 16bit",
+ "license": "No license found",
  "zip": "part16_of_17",
  "features": {
   "through_vias": 156,

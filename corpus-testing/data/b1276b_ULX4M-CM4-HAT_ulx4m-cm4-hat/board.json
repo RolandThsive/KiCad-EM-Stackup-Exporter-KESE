@@ -14,6 +14,7 @@
  "path": "intergalaktik__ULX4M-CM4-HAT/ulx4m-cm4-hat.kicad_pcb",
  "project": "intergalaktik/ULX4M-CM4-HAT",
  "name": "ulx4m-cm4-hat",
+ "license": "GPL-3.0 (GNU GPL v3.0)",
  "zip": "part15_of_17",
  "features": {
   "through_vias": 95,

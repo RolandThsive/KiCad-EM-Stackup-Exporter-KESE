@@ -14,6 +14,7 @@
  "path": "johnwinans__2057-ICE40HX4K-TQ144-breakout/2057-ICE40HX4K-TQ144-breakout.kicad_pcb",
  "project": "johnwinans/2057-ICE40HX4K-TQ144-breakout",
  "name": "2057-ICE40HX4K-TQ144-breakout",
+ "license": "No license found",
  "zip": "part14_of_17",
  "features": {
   "through_vias": 211,

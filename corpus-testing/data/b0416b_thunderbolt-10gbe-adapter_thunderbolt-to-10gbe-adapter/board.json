@@ -14,6 +14,7 @@
  "path": "antmicro__thunderbolt-10gbe-adapter/thunderbolt-to-10gbe-adapter.kicad_pcb",
  "project": "antmicro/thunderbolt-10gbe-adapter",
  "name": "thunderbolt-to-10gbe-adapter",
+ "license": "Apache-2.0 (Apache License 2.0)",
  "zip": "part09_of_17",
  "features": {
   "through_vias": 2822,

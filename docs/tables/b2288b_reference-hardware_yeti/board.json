@@ -2,6 +2,7 @@
  "name": "yeti",
  "project": "pionixpublic/reference-hardware",
  "path": "pionixpublic__reference-hardware/Yeti/yeti.kicad_pcb",
+ "license": "CERN-OHL-P-2.0 (CERN Open Hardware Licence v2, Permissive)",
  "rank": 491,
  "complexity": {
   "grade": 370,

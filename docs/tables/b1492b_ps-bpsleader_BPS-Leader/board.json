@@ -2,6 +2,7 @@
  "name": "BPS-Leader",
  "project": "lhr-solar/ps-bpsleader",
  "path": "lhr-solar__ps-bpsleader/Hardware/BPS-Leader.kicad_pcb",
+ "license": "MIT (MIT License)",
  "rank": 704,
  "complexity": {
   "grade": 344,

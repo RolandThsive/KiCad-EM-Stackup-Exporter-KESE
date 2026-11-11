@@ -14,6 +14,7 @@
  "path": "andrewpaterson__658-Computer/Kicad/W65C64/W65C64.kicad_pcb",
  "project": "andrewpaterson/658-Computer",
  "name": "W65C64",
+ "license": "No license found",
  "zip": "part13_of_17",
  "features": {
   "through_vias": 540,

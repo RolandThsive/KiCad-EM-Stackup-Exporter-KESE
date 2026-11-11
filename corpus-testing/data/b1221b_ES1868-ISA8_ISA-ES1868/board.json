@@ -14,6 +14,7 @@
  "path": "hkzlab__ES1868_ISA8/ISA_ES1868.kicad_pcb",
  "project": "hkzlab/ES1868_ISA8",
  "name": "ISA_ES1868",
+ "license": "CC-BY-NC-SA-4.0 (Creative Commons Attribution-NonCommercial-ShareAlike 4.0), in LICENSE",
  "zip": "part14_of_17",
  "features": {
   "through_vias": 85,

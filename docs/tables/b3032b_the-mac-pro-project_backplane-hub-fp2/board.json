@@ -2,6 +2,7 @@
  "name": "backplane_hub_fp2",
  "project": "winkleplex10-bit/the-mac-pro-project",
  "path": "winkleplex10-bit__the-mac-pro-project/kicad/macpro62-backplane/variants/hub_fp2_d30_assumed/backplane_hub_fp2.kicad_pcb",
+ "license": "No license found",
  "rank": 2712,
  "complexity": {
   "grade": 192,

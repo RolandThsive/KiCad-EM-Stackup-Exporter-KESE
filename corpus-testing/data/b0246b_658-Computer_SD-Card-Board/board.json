@@ -14,6 +14,7 @@
  "path": "andrewpaterson__658-Computer/Kicad/Computer/SD Card/SD Card Board/SD Card Board.kicad_pcb",
  "project": "andrewpaterson/658-Computer",
  "name": "SD Card Board",
+ "license": "No license found",
  "zip": "part13_of_17",
  "features": {
   "through_vias": 646,

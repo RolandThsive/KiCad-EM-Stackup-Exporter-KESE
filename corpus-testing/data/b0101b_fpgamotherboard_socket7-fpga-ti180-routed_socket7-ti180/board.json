@@ -14,6 +14,7 @@
  "path": "alphaonex86__fpgamotherboard/socket7/fpga-ti180/routed/socket7-ti180.kicad_pcb",
  "project": "alphaonex86/fpgamotherboard",
  "name": "socket7-ti180",
+ "license": "GPL-3.0 (GNU GPL v3.0)",
  "zip": "part03_of_17",
  "features": {
   "through_vias": 2124,

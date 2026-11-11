@@ -2,6 +2,7 @@
  "name": "JoypadController",
  "project": "ddraig68k/hardware",
  "path": "ddraig68k__hardware/expansion/JoypadController/JoypadController.kicad_pcb",
+ "license": "MIT (MIT License)",
  "rank": 1966,
  "complexity": {
   "grade": 265,

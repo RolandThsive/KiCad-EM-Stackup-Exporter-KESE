@@ -14,6 +14,7 @@
  "path": "tomrodinger__servomotor/PCB/Coin_Cell_Tester/PCB/V2/Coin_Cell_Tester.kicad_pcb",
  "project": "tomrodinger/servomotor",
  "name": "Coin_Cell_Tester",
+ "license": "MIT (MIT License)",
  "zip": "part14_of_17",
  "features": {
   "through_vias": 184,

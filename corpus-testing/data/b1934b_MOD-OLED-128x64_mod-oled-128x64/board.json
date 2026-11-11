@@ -14,6 +14,7 @@
  "path": "OLIMEX__MOD-OLED-128x64/HARDWARE/MOD-OLED-128x64_Rev.A/mod-oled-128x64.kicad_pcb",
  "project": "OLIMEX/MOD-OLED-128x64",
  "name": "mod-oled-128x64",
+ "license": "Apache-2.0 (Apache License 2.0)",
  "zip": "part16_of_17",
  "features": {
   "through_vias": 12,

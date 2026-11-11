@@ -2,6 +2,7 @@
  "name": "motherboard",
  "project": "olin-electric-motorsports/olin-electric-motorsports",
  "path": "olin-electric-motorsports__olin-electric-motorsports/vehicle/mkvi/hardware/service-section/motherboard/motherboard.kicad_pcb",
+ "license": "No license found",
  "rank": 1493,
  "complexity": {
   "grade": 300,

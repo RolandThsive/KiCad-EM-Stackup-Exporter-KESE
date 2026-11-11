@@ -14,6 +14,7 @@
  "path": "calgarytospace__cts-sat-2-obc-pcb/Hardware/CTS-SAT-2-OBC-PCB.kicad_pcb",
  "project": "calgarytospace/cts-sat-2-obc-pcb",
  "name": "CTS-SAT-2-OBC-PCB",
+ "license": "No license found",
  "zip": "part13_of_17",
  "features": {
   "through_vias": 866,

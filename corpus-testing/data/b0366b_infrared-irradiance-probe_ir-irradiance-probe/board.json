@@ -14,6 +14,7 @@
  "path": "antmicro__infrared-irradiance-probe/ir-irradiance-probe.kicad_pcb",
  "project": "antmicro/infrared-irradiance-probe",
  "name": "ir-irradiance-probe",
+ "license": "Apache-2.0 (Apache License 2.0)",
  "zip": "part16_of_17",
  "features": {
   "through_vias": 196,

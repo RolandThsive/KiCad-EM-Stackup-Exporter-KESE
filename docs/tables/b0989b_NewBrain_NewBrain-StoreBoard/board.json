@@ -2,6 +2,7 @@
  "name": "NewBrain StoreBoard",
  "project": "flypie/NewBrain",
  "path": "flypie__NewBrain/NewBrain StoreBoard/NewBrain StoreBoard.kicad_pcb",
+ "license": "GPL-3.0 (GNU GPL v3.0)",
  "rank": 2600,
  "complexity": {
   "grade": 75,

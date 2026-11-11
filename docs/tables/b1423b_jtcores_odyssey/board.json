@@ -2,6 +2,7 @@
  "name": "odyssey",
  "project": "jotego/jtcores",
  "path": "jotego__jtcores/cores/odyssey/sch/odyssey.kicad_pcb",
+ "license": "GPL-3.0 (GNU GPL v3.0)",
  "rank": 1203,
  "complexity": {
   "grade": 250,

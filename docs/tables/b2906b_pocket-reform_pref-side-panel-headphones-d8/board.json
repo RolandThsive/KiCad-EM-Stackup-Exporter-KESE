@@ -2,6 +2,7 @@
  "name": "pref-side-panel-headphones-d8",
  "project": "torlye/pocket-reform",
  "path": "torlye__pocket-reform/case-plate-pcbs/pref-side-panel-headphones-d8.kicad_pcb",
+ "license": "CERN-OHL-S-2.0 (CERN Open Hardware Licence v2, Strongly Reciprocal), in LICENSE",
  "rank": 3138,
  "complexity": {
   "grade": 62,

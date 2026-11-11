@@ -2,6 +2,7 @@
  "name": "pcb",
  "project": "zephray/nekoink",
  "path": "zephray__nekoink/pcb/mainboard_gen2/pcb.kicad_pcb",
+ "license": "CERN-OHL-P-2.0 (CERN Open Hardware Licence v2, Permissive), in LICENSE",
  "rank": 402,
  "complexity": {
   "grade": 398,

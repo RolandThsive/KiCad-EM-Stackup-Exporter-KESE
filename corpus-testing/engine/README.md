@@ -15,6 +15,10 @@ A board is two folders with the same name: `docs/tables/<name>/` (`board.json`, 
    its number and name; `CombinedCorpusTesting.md`, every board on one page; and
    `docs/wiki/BoardPages/b<number>b_<repo>_<board>.md`, one page per board.
 4. Writes the master page, `docs/wiki/Corpus-Testing.md`: the counts, the pages, the grades and what did not pass.
+5. Writes the Credits, `docs/wiki/Credits.md` (every board by its number, with its project and the project's license)
+   and `credits.txt` (the same by project, with each board's path), and the counts of boards and projects in this
+   branch's README. A board's license is in its `board.json`; a board added without one takes its project's, and a
+   board of a new project shows "Not looked up yet" until its license is added.
 
 A board whose folders are deleted is gone at the next run, with its board page (delete its data folder too).
 `features.json` holds the features and weights of the complexity grade, which the master page lists.

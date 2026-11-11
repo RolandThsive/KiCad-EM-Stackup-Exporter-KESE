@@ -2,6 +2,7 @@
  "name": "high-power-module",
  "project": "terrapin-rocket-team/srad-avionics",
  "path": "terrapin-rocket-team__srad-avionics/Spaceport/PCBs/high-power-module/high-power-module.kicad_pcb",
+ "license": "No license found",
  "rank": 1672,
  "complexity": {
   "grade": 343,

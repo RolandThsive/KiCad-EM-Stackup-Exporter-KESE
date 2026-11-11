@@ -2,6 +2,7 @@
  "name": "DCDC-50-5-12_Rev_A1",
  "project": "OLIMEX/DCDC-50-5-12",
  "path": "OLIMEX__DCDC-50-5-12/HARDWARE/DCDC50-5-12-Rev.A1/DCDC-50-5-12_Rev_A1.kicad_pcb",
+ "license": "GPL-3.0 (GNU GPL v3.0)",
  "rank": 1938,
  "complexity": {
   "grade": 233,

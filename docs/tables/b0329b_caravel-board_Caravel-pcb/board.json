@@ -2,6 +2,7 @@
  "name": "Caravel_pcb",
  "project": "antmicro/caravel_board",
  "path": "antmicro__caravel_board/hardware/caravel_pcb_v1/Caravel_pcb.kicad_pcb",
+ "license": "No license found",
  "rank": 1062,
  "complexity": {
   "grade": 290,

@@ -2,6 +2,7 @@
  "name": "ncv1124-micro",
  "project": "rusefi/rusefi-hardware",
  "path": "rusefi__rusefi-hardware/ncv1124-micro/ncv1124-micro.kicad_pcb",
+ "license": "No license found",
  "rank": 2452,
  "complexity": {
   "grade": 242,

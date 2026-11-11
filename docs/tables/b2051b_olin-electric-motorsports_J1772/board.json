@@ -2,6 +2,7 @@
  "name": "J1772",
  "project": "olin-electric-motorsports/olin-electric-motorsports",
  "path": "olin-electric-motorsports__olin-electric-motorsports/vehicle/mkvi/hardware/charging-cart/J1772/J1772.kicad_pcb",
+ "license": "No license found",
  "rank": 1902,
  "complexity": {
   "grade": 287,

@@ -2,6 +2,7 @@
  "name": "pcb-bga-adapter-dualcon",
  "project": "ahmadexp/Open-Source-PC110",
  "path": "ahmadexp__Open-Source-PC110/Mods/CPU Upgrade/pcb-bga-adapter-dualcon/pcb-bga-adapter-dualcon.kicad_pcb",
+ "license": "CC-BY-NC-4.0 (Creative Commons Attribution-NonCommercial 4.0), in LICENSE",
  "rank": 2235,
  "complexity": {
   "grade": 252,

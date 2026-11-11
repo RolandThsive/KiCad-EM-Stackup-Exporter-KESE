@@ -2,6 +2,7 @@
  "name": "CM4Card",
  "project": "will127534/Miniature-CM4-Cluster",
  "path": "will127534__Miniature-CM4-Cluster/CM4Card/CM4Card.kicad_pcb",
+ "license": "MIT (MIT License)",
  "rank": 1325,
  "complexity": {
   "grade": 288,

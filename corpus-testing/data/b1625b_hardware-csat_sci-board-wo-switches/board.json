@@ -14,6 +14,7 @@
  "path": "matthiasgeorgimhof__hardware_csat/sci_board_wo_switches/sci_board_wo_switches.kicad_pcb",
  "project": "matthiasgeorgimhof/hardware_csat",
  "name": "sci_board_wo_switches",
+ "license": "CC-BY-NC-SA-4.0 (Creative Commons Attribution-NonCommercial-ShareAlike 4.0), in LICENSE, aux_board/LICENSE, auxio_board/LICENSE and others",
  "zip": "part13_of_17",
  "features": {
   "through_vias": 728,

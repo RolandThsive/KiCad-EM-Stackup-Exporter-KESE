@@ -2,6 +2,7 @@
  "name": "gate_xnor_2in",
  "project": "tmarhguy/alu",
  "path": "tmarhguy__alu/schematics/kicad/modules/gates/gate_xnor/gate_xnor_2in/gate_xnor_2in.kicad_pcb",
+ "license": "MIT (MIT License)",
  "rank": 2560,
  "complexity": {
   "grade": 167,

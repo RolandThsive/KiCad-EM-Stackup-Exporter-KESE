@@ -2,6 +2,7 @@
  "name": "A4092-terminator",
  "project": "A4091/A4092",
  "path": "A4091__A4092/Kicad/Terminator-LT1118-2.85/A4092-terminator.kicad_pcb",
+ "license": "As README.md states it: \"License: CC BY-SA 4.0\"",
  "rank": 2627,
  "complexity": {
   "grade": 198,

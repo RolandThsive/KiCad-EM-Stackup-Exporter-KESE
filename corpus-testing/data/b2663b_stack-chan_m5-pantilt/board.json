@@ -14,6 +14,7 @@
  "path": "stack-chan__stack-chan/schematics/m5-pantilt/m5-pantilt.kicad_pcb",
  "project": "stack-chan/stack-chan",
  "name": "m5-pantilt",
+ "license": "Apache-2.0 (Apache License 2.0)",
  "zip": "part16_of_17",
  "features": {
   "through_vias": 114,

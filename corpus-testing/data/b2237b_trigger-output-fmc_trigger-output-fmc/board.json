@@ -14,6 +14,7 @@
  "path": "osprey-dcs__trigger-output-fmc/trigger-output-fmc.kicad_pcb",
  "project": "osprey-dcs/trigger-output-fmc",
  "name": "trigger-output-fmc",
+ "license": "As README.md states it: \"This design is Open Hardware created by Osprey DCS and published under the terms of the CERN Open Hardware Licence Version 2 - Strongly Reciprocal license.\"",
  "zip": "part11_of_17",
  "features": {
   "through_vias": 1086,

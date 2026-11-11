@@ -14,6 +14,7 @@
  "path": "andrewpaterson__658-Computer/Kicad/Computer/Video/Video Memory 2MB/Video Memory 2MB.kicad_pcb",
  "project": "andrewpaterson/658-Computer",
  "name": "Video Memory 2MB",
+ "license": "No license found",
  "zip": "part14_of_17",
  "features": {
   "through_vias": 544,

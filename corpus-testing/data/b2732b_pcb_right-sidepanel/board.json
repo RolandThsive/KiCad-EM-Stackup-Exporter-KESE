@@ -14,6 +14,7 @@
  "path": "sufst__pcb/right-sidepanel/right-sidepanel.kicad_pcb",
  "project": "sufst/pcb",
  "name": "right-sidepanel",
+ "license": "GPL-3.0 (GNU GPL v3.0)",
  "zip": "part16_of_17",
  "features": {
   "through_vias": 310,

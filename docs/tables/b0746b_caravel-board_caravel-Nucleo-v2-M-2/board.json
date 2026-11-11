@@ -2,6 +2,7 @@
  "name": "caravel-Nucleo-v2-M.2",
  "project": "chipfoundry/caravel_board",
  "path": "chipfoundry__caravel_board/hardware/nucleo/caravel-Nucleo-v2-M.2/caravel-Nucleo-v2-M.2.kicad_pcb",
+ "license": "No license found",
  "rank": 1234,
  "complexity": {
   "grade": 322,

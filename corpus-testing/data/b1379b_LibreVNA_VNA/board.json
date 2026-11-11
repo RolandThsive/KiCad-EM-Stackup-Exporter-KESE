@@ -14,6 +14,7 @@
  "path": "jankae__LibreVNA/Hardware/Kicad/VNA.kicad_pcb",
  "project": "jankae/LibreVNA",
  "name": "VNA",
+ "license": "GPL-3.0 (GNU GPL v3.0)",
  "zip": "part07_of_17",
  "features": {
   "through_vias": 5864,

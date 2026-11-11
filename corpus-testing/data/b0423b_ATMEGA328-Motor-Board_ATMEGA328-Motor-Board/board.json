@@ -14,6 +14,7 @@
  "path": "AntonioMR__ATMEGA328-Motor-Board/pcb/ATMEGA328_Motor_Board.kicad_pcb",
  "project": "AntonioMR/ATMEGA328-Motor-Board",
  "name": "ATMEGA328_Motor_Board",
+ "license": "As README.md states it: \"Este diseño es Software Libre; usted puede redistribuirlo y/o modificarlo bajo los términos de la \"GNU General Public License\" como lo publica la \"FSF Free Software Foundation\", o (a su elección) de cualquier versión posterior. Este diseño es distribuido con la esperanza de que le sea útil, pero SIN NINGUNA GARANTIA;\"",
  "zip": "part12_of_17",
  "features": {
   "through_vias": 136,

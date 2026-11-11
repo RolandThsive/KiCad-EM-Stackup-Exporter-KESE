@@ -2,6 +2,7 @@
  "name": "TS_Back_Endcap",
  "project": "EEVengers/ThunderScope",
  "path": "EEVengers__ThunderScope/Hardware/TS_Back_Endcap/TS_Back_Endcap.kicad_pcb",
+ "license": "MIT (MIT License)",
  "rank": 2809,
  "complexity": {
   "grade": 257,

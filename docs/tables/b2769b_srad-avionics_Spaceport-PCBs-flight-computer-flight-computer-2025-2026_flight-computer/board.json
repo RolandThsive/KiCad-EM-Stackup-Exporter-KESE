@@ -2,6 +2,7 @@
  "name": "flight-computer",
  "project": "terrapin-rocket-team/srad-avionics",
  "path": "terrapin-rocket-team__srad-avionics/Spaceport/PCBs/flight-computer/flight-computer-2025-2026/flight-computer.kicad_pcb",
+ "license": "No license found",
  "rank": 1235,
  "complexity": {
   "grade": 376,

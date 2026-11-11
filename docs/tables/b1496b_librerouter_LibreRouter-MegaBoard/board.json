@@ -2,6 +2,7 @@
  "name": "LibreRouter_MegaBoard",
  "project": "libremesh/librerouter",
  "path": "libremesh__librerouter/designs/mega_board/LibreRouter_MegaBoard.kicad_pcb",
+ "license": "AGPL-3.0 (GNU AGPL v3.0), in LICENSE",
  "rank": 242,
  "complexity": {
   "grade": 282,

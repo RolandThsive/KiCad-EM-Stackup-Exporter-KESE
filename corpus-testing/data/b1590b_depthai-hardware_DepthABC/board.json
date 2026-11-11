@@ -14,6 +14,7 @@
  "path": "luxonis__depthai-hardware/OSHW_KiCad_Community/Reference Designs (In Progress)/DepthABC/DepthABC.kicad_pcb",
  "project": "luxonis/depthai-hardware",
  "name": "DepthABC",
+ "license": "MIT (MIT License), in LICENSE",
  "zip": "part11_of_17",
  "features": {
   "through_vias": 450,

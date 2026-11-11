@@ -14,6 +14,7 @@
  "path": "mwelling__beagle-wire/beagle-wire.kicad_pcb",
  "project": "mwelling/beagle-wire",
  "name": "beagle-wire",
+ "license": "CERN-OHL-1.2 (CERN Open Hardware Licence v1.2), in LICENSE.txt",
  "zip": "part13_of_17",
  "features": {
   "through_vias": 289,

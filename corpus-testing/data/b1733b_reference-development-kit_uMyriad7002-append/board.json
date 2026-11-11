@@ -14,6 +14,7 @@
  "path": "myriadrf__reference-development-kit/umyriadrf-7002/v2/KiCAD/uMyriad7002-append.kicad_pcb",
  "project": "myriadrf/reference-development-kit",
  "name": "uMyriad7002-append",
+ "license": "CC-BY-3.0 (Creative Commons Attribution 3.0), in myriadrf-8001/COPYING, umyriadrf-6002/COPYING, umyriadrf-7002/COPYING and others",
  "zip": "part11_of_17",
  "features": {
   "through_vias": 701,

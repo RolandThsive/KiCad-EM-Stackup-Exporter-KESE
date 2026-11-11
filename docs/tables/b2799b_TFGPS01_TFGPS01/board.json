@@ -2,6 +2,7 @@
  "name": "TFGPS01",
  "project": "ThunderFly-aerospace/TFGPS01",
  "path": "ThunderFly-aerospace__TFGPS01/hw/sch_pcb/TFGPS01.kicad_pcb",
+ "license": "GPL-3.0 (GNU GPL v3.0)",
  "rank": 1573,
  "complexity": {
   "grade": 350,

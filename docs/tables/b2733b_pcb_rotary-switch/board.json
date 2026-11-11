@@ -2,6 +2,7 @@
  "name": "rotary-switch",
  "project": "sufst/pcb",
  "path": "sufst__pcb/rotary-switch/rotary-switch.kicad_pcb",
+ "license": "GPL-3.0 (GNU GPL v3.0)",
  "rank": 2767,
  "complexity": {
   "grade": 173,

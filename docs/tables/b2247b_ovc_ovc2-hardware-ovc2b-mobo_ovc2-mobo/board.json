@@ -2,6 +2,7 @@
  "name": "ovc2_mobo",
  "project": "osrf/ovc",
  "path": "osrf__ovc/ovc2/hardware/ovc2b/mobo/ovc2_mobo.kicad_pcb",
+ "license": "Apache-2.0 (Apache License 2.0)",
  "rank": 482,
  "complexity": {
   "grade": 341,

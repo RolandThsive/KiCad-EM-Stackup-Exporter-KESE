@@ -2,6 +2,7 @@
  "name": "555-Timer-Demo-Circuit",
  "project": "issuiuc/iss-pcb",
  "path": "issuiuc__iss-pcb/boards/Onboarding/555-Timer-Demo-Circuit/555-Timer-Demo-Circuit.kicad_pcb",
+ "license": "No license found",
  "rank": 2706,
  "complexity": {
   "grade": 168,

@@ -2,6 +2,7 @@
  "name": "pq_obc_comms",
  "project": "nanosatlab/pocat-hw",
  "path": "nanosatlab__pocat-hw/pq_obc_comms/pq_obc_comms/pq_obc_comms.kicad_pcb",
+ "license": "No license found",
  "rank": 1657,
  "complexity": {
   "grade": 346,

@@ -14,6 +14,7 @@
  "path": "MelkhiorVintageComputing__IIsiFPGA/IIsiA7_Mini/IIsiA7_Mini.kicad_pcb",
  "project": "MelkhiorVintageComputing/IIsiFPGA",
  "name": "IIsiA7_Mini",
+ "license": "CC-BY-NC-SA-4.0 (Creative Commons Attribution-NonCommercial-ShareAlike 4.0), in LICENSE.md",
  "zip": "part10_of_17",
  "features": {
   "through_vias": 1046,

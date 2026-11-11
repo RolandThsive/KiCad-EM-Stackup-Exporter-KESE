@@ -14,6 +14,7 @@
  "path": "OLIMEX__OLIMEXINO-STM32F3/HARDWARE/OLIMEXINO-STM32F3-revision-C1/OLIMEXINO-STM32F3_Rev_C1.kicad_pcb",
  "project": "OLIMEX/OLIMEXINO-STM32F3",
  "name": "OLIMEXINO-STM32F3_Rev_C1",
+ "license": "GPL-3.0 (GNU GPL v3.0)",
  "zip": "part14_of_17",
  "features": {
   "through_vias": 170,

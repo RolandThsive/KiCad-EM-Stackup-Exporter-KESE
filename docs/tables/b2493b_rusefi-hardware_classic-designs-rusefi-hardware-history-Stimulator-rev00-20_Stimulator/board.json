@@ -2,6 +2,7 @@
  "name": "Stimulator",
  "project": "rusefi/rusefi-hardware",
  "path": "rusefi__rusefi-hardware/classic-designs/rusefi_hardware_history/Stimulator_rev00.20/Stimulator.kicad_pcb",
+ "license": "No license found",
  "rank": 1728,
  "complexity": {
   "grade": 211,

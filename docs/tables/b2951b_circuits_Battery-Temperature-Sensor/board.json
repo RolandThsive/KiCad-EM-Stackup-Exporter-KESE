@@ -2,6 +2,7 @@
  "name": "Battery Temperature Sensor",
  "project": "ucdfs/circuits",
  "path": "ucdfs__circuits/Archive/Battery Temperature Sensor_KR/Battery Temperature Sensor.kicad_pcb",
+ "license": "No license found",
  "rank": 1917,
  "complexity": {
   "grade": 257,

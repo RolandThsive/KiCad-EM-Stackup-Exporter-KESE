@@ -14,6 +14,7 @@
  "path": "ahmadexp__Open-Source-PC110/PCB/Keyboard/Membrane/PC110_membrance.kicad_pcb",
  "project": "ahmadexp/Open-Source-PC110",
  "name": "PC110_membrance",
+ "license": "CC-BY-NC-4.0 (Creative Commons Attribution-NonCommercial 4.0), in LICENSE",
  "zip": "part16_of_17",
  "features": {
   "through_vias": 64,

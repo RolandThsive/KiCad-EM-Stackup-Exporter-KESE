@@ -2,6 +2,7 @@
  "name": "panel-front",
  "project": "open-ephys/stimjim",
  "path": "open-ephys__stimjim/PCB/panels/panel-front.kicad_pcb",
+ "license": "No license found",
  "rank": 3027,
  "complexity": {
   "grade": 129,

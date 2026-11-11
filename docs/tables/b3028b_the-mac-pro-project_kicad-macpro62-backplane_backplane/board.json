@@ -2,6 +2,7 @@
  "name": "backplane",
  "project": "winkleplex10-bit/the-mac-pro-project",
  "path": "winkleplex10-bit__the-mac-pro-project/kicad/macpro62-backplane/backplane.kicad_pcb",
+ "license": "No license found",
  "rank": 209,
  "complexity": {
   "grade": 370,

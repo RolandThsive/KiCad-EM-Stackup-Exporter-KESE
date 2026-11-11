@@ -2,6 +2,7 @@
  "name": "bmc-reference-carrier-board",
  "project": "antmicro/dc-scm-osm-l-carrier-card",
  "path": "antmicro__dc-scm-osm-l-carrier-card/bmc-reference-carrier-board.kicad_pcb",
+ "license": "Apache-2.0 (Apache License 2.0)",
  "rank": 152,
  "complexity": {
   "grade": 527,

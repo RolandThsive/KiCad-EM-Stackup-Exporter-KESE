@@ -2,6 +2,7 @@
  "name": "d1600e-psu-breakout-board",
  "project": "antmicro/d1600e-psu-breakout",
  "path": "antmicro__d1600e-psu-breakout/d1600e-psu-breakout-board.kicad_pcb",
+ "license": "Apache-2.0 (Apache License 2.0)",
  "rank": 661,
  "complexity": {
   "grade": 405,

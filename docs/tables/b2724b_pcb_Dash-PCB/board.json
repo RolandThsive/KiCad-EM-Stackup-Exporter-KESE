@@ -2,6 +2,7 @@
  "name": "Dash-PCB",
  "project": "sufst/pcb",
  "path": "sufst__pcb/dash/Dash-PCB.kicad_pcb",
+ "license": "GPL-3.0 (GNU GPL v3.0)",
  "rank": 1738,
  "complexity": {
   "grade": 336,

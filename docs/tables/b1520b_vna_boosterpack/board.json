@@ -2,6 +2,7 @@
  "name": "boosterpack",
  "project": "loxodes/vna",
  "path": "loxodes__vna/breakouts/boosterpack/boosterpack.kicad_pcb",
+ "license": "As README.md states it: \"Unless otherwise noted, all work is under a MIT license.\"",
  "rank": 2437,
  "complexity": {
   "grade": 177,

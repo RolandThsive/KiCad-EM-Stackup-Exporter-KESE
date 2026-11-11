@@ -14,6 +14,7 @@
  "path": "Aharoni-Lab__Miniscope-v4/Miniscope-v4-VDD-PIX-FC/Miniscope-v4-VDD-PIX-FC/Miniscope-v4-VDD-PIX-FC.kicad_pcb",
  "project": "Aharoni-Lab/Miniscope-v4",
  "name": "Miniscope-v4-VDD-PIX-FC",
+ "license": "GPL-3.0 (GNU GPL v3.0)",
  "zip": "part16_of_17",
  "features": {
   "through_vias": 0,

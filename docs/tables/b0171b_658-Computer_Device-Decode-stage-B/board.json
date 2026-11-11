@@ -2,6 +2,7 @@
  "name": "Device Decode stage B",
  "project": "andrewpaterson/658-Computer",
  "path": "andrewpaterson__658-Computer/Kicad/Computer/Component Boards/Device Decode stage B/Device Decode stage B.kicad_pcb",
+ "license": "No license found",
  "rank": 1890,
  "complexity": {
   "grade": 227,

@@ -14,6 +14,7 @@
  "path": "ToyotaInfoTech__RAMN/hardware/V1_revB/2_chassis/chassis.kicad_pcb",
  "project": "ToyotaInfoTech/RAMN",
  "name": "chassis",
+ "license": "CC-BY-SA-4.0 (Creative Commons Attribution-ShareAlike 4.0), in LICENSE.md",
  "zip": "part16_of_17",
  "features": {
   "through_vias": 12,

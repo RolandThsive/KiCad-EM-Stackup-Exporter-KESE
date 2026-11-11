@@ -2,6 +2,7 @@
  "name": "Header2x20",
  "project": "softerhardware/Hermes-Lite2",
  "path": "softerhardware__Hermes-Lite2/hardware/companions/n2adr_jumper/Header2x20.kicad_pcb",
+ "license": "No license found",
  "rank": 3004,
  "complexity": {
   "grade": 85,

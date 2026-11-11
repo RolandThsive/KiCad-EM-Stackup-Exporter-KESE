@@ -2,6 +2,7 @@
  "name": "amplifier",
  "project": "azonenberg/starshipraider",
  "path": "azonenberg__starshipraider/boards/probes/akl-ad3/amplifier/amplifier.kicad_pcb",
+ "license": "BSD-3-Clause (BSD 3-Clause License)",
  "rank": 1591,
  "complexity": {
   "grade": 221,

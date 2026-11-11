@@ -2,6 +2,7 @@
  "name": "data-center-rdimm-ddr4-tester",
  "project": "antmicro/data-center-dram-tester",
  "path": "antmicro__data-center-dram-tester/data-center-rdimm-ddr4-tester.kicad_pcb",
+ "license": "Apache-2.0 (Apache License 2.0), in LICENSE",
  "rank": 31,
  "complexity": {
   "grade": 559,

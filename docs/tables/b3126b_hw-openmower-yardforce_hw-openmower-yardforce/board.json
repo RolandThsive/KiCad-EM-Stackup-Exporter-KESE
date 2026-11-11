@@ -2,6 +2,7 @@
  "name": "hw-openmower-yardforce",
  "project": "xtech/hw-openmower-yardforce",
  "path": "xtech__hw-openmower-yardforce/hw-openmower-yardforce.kicad_pcb",
+ "license": "CC-BY-4.0 (Creative Commons Attribution 4.0)",
  "rank": 540,
  "complexity": {
   "grade": 356,

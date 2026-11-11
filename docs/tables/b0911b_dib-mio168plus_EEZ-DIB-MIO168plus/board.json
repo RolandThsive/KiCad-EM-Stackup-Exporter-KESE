@@ -2,6 +2,7 @@
  "name": "EEZ DIB MIO168plus",
  "project": "eez-open/dib-mio168plus",
  "path": "eez-open__dib-mio168plus/KiCad/EEZ DIB MIO168plus.kicad_pcb",
+ "license": "TAPR-OHL-1.0 (TAPR Open Hardware License), in LICENSE.TXT",
  "rank": 470,
  "complexity": {
   "grade": 409,

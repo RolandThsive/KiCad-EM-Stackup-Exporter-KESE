@@ -2,6 +2,7 @@
  "name": "MPPT_addon_board",
  "project": "stanford-ssi/samwise-avionics",
  "path": "stanford-ssi__samwise-avionics/PiCubed/MPPT_addon_board/MPPT_addon_board.kicad_pcb",
+ "license": "No license found",
  "rank": 1887,
  "complexity": {
   "grade": 257,

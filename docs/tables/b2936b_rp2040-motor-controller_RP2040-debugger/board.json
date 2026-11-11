@@ -2,6 +2,7 @@
  "name": "RP2040_debugger",
  "project": "twisted-fields/rp2040-motor-controller",
  "path": "twisted-fields__rp2040-motor-controller/debugger/RP2040_debugger.kicad_pcb",
+ "license": "CERN-OHL-P-2.0 (CERN Open Hardware Licence v2, Permissive), in LICENSE, debugger/LICENSE",
  "rank": 1757,
  "complexity": {
   "grade": 322,

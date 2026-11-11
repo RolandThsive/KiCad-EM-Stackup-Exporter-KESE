@@ -2,6 +2,7 @@
  "name": "ICE40-ADC_Rev_A",
  "project": "OLIMEX/iCE40-ADC",
  "path": "OLIMEX__iCE40-ADC/ICE40-ADC_Rev_A.kicad_pcb",
+ "license": "Apache-2.0 (Apache License 2.0)",
  "rank": 1237,
  "complexity": {
   "grade": 216,

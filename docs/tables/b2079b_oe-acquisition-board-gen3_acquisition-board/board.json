@@ -2,6 +2,7 @@
  "name": "acquisition-board",
  "project": "open-ephys/oe-acquisition-board-gen3",
  "path": "open-ephys__oe-acquisition-board-gen3/Hardware/PCB/acquisition-board.kicad_pcb",
+ "license": "Creative Commons, in LICENSE",
  "rank": 320,
  "complexity": {
   "grade": 332,

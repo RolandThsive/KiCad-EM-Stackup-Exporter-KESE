@@ -2,6 +2,7 @@
  "name": "cooling-board",
  "project": "olin-electric-motorsports/olin-electric-motorsports",
  "path": "olin-electric-motorsports__olin-electric-motorsports/vehicle/mkvi/hardware/cooling-board/cooling-board.kicad_pcb",
+ "license": "No license found",
  "rank": 2147,
  "complexity": {
   "grade": 284,

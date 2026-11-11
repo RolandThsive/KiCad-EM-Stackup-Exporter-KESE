@@ -2,6 +2,7 @@
  "name": "Thunderscope Digital Test",
  "project": "EEVengers/ts_test_fixtures",
  "path": "EEVengers__ts_test_fixtures/Thunderscope Digital Test Fixture/Thunderscope Digital Test/Thunderscope Digital Test.kicad_pcb",
+ "license": "CERN-OHL-P-2.0 (CERN Open Hardware Licence v2, Permissive)",
  "rank": 1614,
  "complexity": {
   "grade": 322,

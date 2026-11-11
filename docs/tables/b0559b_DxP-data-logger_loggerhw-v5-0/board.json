@@ -2,6 +2,7 @@
  "name": "loggerhw_v5.0",
  "project": "BerkeleyLab/DxP-data-logger",
  "path": "BerkeleyLab__DxP-data-logger/loggerhw_v5.0.kicad_pcb",
+ "license": "CC-BY-NC-4.0 (Creative Commons Attribution-NonCommercial 4.0), in LICENSE.md",
  "rank": 1063,
  "complexity": {
   "grade": 298,

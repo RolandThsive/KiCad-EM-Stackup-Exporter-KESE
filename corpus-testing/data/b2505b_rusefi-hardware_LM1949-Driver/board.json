@@ -14,6 +14,7 @@
  "path": "rusefi__rusefi-hardware/Low-Z_LM1949/LM1949_Driver.kicad_pcb",
  "project": "rusefi/rusefi-hardware",
  "name": "LM1949_Driver",
+ "license": "No license found",
  "zip": "part16_of_17",
  "features": {
   "through_vias": 129,

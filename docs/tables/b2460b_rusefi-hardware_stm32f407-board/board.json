@@ -2,6 +2,7 @@
  "name": "stm32f407_board",
  "project": "rusefi/rusefi-hardware",
  "path": "rusefi__rusefi-hardware/classic-designs/rusefi_hardware_history/brain_board_rev00.10/stm32f407_board.kicad_pcb",
+ "license": "No license found",
  "rank": 1409,
  "complexity": {
   "grade": 255,

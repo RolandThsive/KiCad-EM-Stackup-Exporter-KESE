@@ -14,6 +14,7 @@
  "path": "antmicro__gmsl-serializer/gmsl-serializer.kicad_pcb",
  "project": "antmicro/gmsl-serializer",
  "name": "gmsl-serializer",
+ "license": "Apache-2.0 (Apache License 2.0)",
  "zip": "part15_of_17",
  "features": {
   "through_vias": 412,

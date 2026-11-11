@@ -14,6 +14,7 @@
  "path": "ultimaterobotics__uECG_pcb/uECG_v4_52_lsm_tlv/uECG_v4_52_lsm_tlv.kicad_pcb",
  "project": "ultimaterobotics/uECG_pcb",
  "name": "uECG_v4_52_lsm_tlv",
+ "license": "CERN-OHL-P-2.0 (CERN Open Hardware Licence v2, Permissive)",
  "zip": "part15_of_17",
  "features": {
   "through_vias": 147,

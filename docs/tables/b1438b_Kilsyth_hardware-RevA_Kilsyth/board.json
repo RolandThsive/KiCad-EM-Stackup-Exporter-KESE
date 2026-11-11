@@ -2,6 +2,7 @@
  "name": "Kilsyth",
  "project": "kbeckmann/Kilsyth",
  "path": "kbeckmann__Kilsyth/hardware/RevA/Kilsyth.kicad_pcb",
+ "license": "0BSD (BSD Zero Clause License)",
  "rank": 625,
  "complexity": {
   "grade": 344,

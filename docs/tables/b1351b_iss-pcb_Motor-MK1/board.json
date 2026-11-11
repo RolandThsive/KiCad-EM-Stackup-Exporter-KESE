@@ -2,6 +2,7 @@
  "name": "Motor-MK1",
  "project": "issuiuc/iss-pcb",
  "path": "issuiuc__iss-pcb/boards/Motor-MK1/Motor-MK1.kicad_pcb",
+ "license": "No license found",
  "rank": 1497,
  "complexity": {
   "grade": 336,

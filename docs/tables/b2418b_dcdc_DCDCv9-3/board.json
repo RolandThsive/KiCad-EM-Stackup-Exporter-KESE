@@ -2,6 +2,7 @@
  "name": "DCDCv9-3",
  "project": "rootthecause/dcdc",
  "path": "rootthecause__dcdc/kicad/DCDCv9-3.kicad_pcb",
+ "license": "CERN-OHL-W-2.0 (CERN Open Hardware Licence v2, Weakly Reciprocal)",
  "rank": 812,
  "complexity": {
   "grade": 361,

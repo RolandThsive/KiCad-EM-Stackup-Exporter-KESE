@@ -2,6 +2,7 @@
  "name": "SNES Controller Reader",
  "project": "andrewpaterson/658-Computer",
  "path": "andrewpaterson__658-Computer/Kicad/Computer/SNES/SNES Controller Reader/SNES Controller Reader.kicad_pcb",
+ "license": "No license found",
  "rank": 2237,
  "complexity": {
   "grade": 215,

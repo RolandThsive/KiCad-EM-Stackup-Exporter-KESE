@@ -2,6 +2,7 @@
  "name": "Slave Board",
  "project": "columbia-fsae/2021_accumulator_electronics",
  "path": "columbia-fsae__2021_accumulator_electronics/Battery Monitoring Board/09-07-2020 BMB/Slave Board.kicad_pcb",
+ "license": "No license found",
  "rank": 1003,
  "complexity": {
   "grade": 252,

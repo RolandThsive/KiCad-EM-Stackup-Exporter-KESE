@@ -2,6 +2,7 @@
  "name": "HALPI2",
  "project": "hatlabs/halpi2-hardware",
  "path": "hatlabs__halpi2-hardware/HALPI2.kicad_pcb",
+ "license": "CERN-OHL-S-2.0 (CERN Open Hardware Licence v2, Strongly Reciprocal), in LICENSE.md",
  "rank": 195,
  "complexity": {
   "grade": 495,

@@ -2,6 +2,7 @@
  "name": "io",
  "project": "imihajlow/ccpu",
  "path": "imihajlow__ccpu/boards/io/io.kicad_pcb",
+ "license": "GPL-3.0 (GNU GPL v3.0), in LICENSE.GPL; TAPR-OHL-1.0 (TAPR Open Hardware License), in LICENSE.txt",
  "rank": 785,
  "complexity": {
   "grade": 306,

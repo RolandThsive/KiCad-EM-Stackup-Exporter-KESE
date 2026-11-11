@@ -2,6 +2,7 @@
  "name": "flash-sop-rev3",
  "project": "DangerousPrototypes/BusPirate5-hardware",
  "path": "DangerousPrototypes__BusPirate5-hardware/adapter-flash-sop-1REV3/flash-sop-rev3.kicad_pcb",
+ "license": "MIT (MIT License)",
  "rank": 2397,
  "complexity": {
   "grade": 207,

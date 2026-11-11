@@ -2,6 +2,7 @@
  "name": "AD5626_Breakout",
  "project": "bluejayracing/bjr_kicad",
  "path": "bluejayracing__bjr_kicad/21xt/02-mainbox/bjr_kicad_aaren_copy/21xt/03-wireless_strain_gauge/AD5626_Breakout/AD5626_Breakout.kicad_pcb",
+ "license": "No license found",
  "rank": 2876,
  "complexity": {
   "grade": 149,

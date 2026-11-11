@@ -2,6 +2,7 @@
  "name": "thermistors",
  "project": "olin-electric-motorsports/olin-electric-motorsports",
  "path": "olin-electric-motorsports__olin-electric-motorsports/vehicle/mkvi/hardware/segment/thermistors/thermistors.kicad_pcb",
+ "license": "No license found",
  "rank": 1016,
  "complexity": {
   "grade": 308,

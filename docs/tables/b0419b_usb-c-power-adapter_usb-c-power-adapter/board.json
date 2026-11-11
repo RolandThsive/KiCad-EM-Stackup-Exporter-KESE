@@ -2,6 +2,7 @@
  "name": "usb-c-power-adapter",
  "project": "antmicro/usb-c-power-adapter",
  "path": "antmicro__usb-c-power-adapter/usb-c-power-adapter.kicad_pcb",
+ "license": "Apache-2.0 (Apache License 2.0)",
  "rank": 1437,
  "complexity": {
   "grade": 332,

@@ -2,6 +2,7 @@
  "name": "jetson-agx-csi-adapter",
  "project": "antmicro/jetson-agx-csi-adapter",
  "path": "antmicro__jetson-agx-csi-adapter/jetson-agx-csi-adapter.kicad_pcb",
+ "license": "Apache-2.0 (Apache License 2.0)",
  "rank": 715,
  "complexity": {
   "grade": 345,

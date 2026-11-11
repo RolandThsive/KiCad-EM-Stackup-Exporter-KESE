@@ -2,6 +2,7 @@
  "name": "GDI-4ch",
  "project": "rusefi/rusefi-hardware",
  "path": "rusefi__rusefi-hardware/GDI-4ch/GDI-4ch.kicad_pcb",
+ "license": "No license found",
  "rank": 500,
  "complexity": {
   "grade": 390,

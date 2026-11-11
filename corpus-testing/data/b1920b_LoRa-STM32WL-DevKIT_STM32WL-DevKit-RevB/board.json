@@ -14,6 +14,7 @@
  "path": "OLIMEX__LoRa-STM32WL-DevKIT/HARDWARE/LoRa-STM32WL-DevKIT/LoRa-STM32WL-DevKit-RevB/STM32WL-DevKit_RevB.kicad_pcb",
  "project": "OLIMEX/LoRa-STM32WL-DevKIT",
  "name": "STM32WL-DevKit_RevB",
+ "license": "GPL-3.0 (GNU GPL v3.0)",
  "zip": "part15_of_17",
  "features": {
   "through_vias": 110,

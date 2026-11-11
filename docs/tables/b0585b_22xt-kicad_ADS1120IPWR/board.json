@@ -2,6 +2,7 @@
  "name": "ADS1120IPWR",
  "project": "bluejayracing/22xt_kicad",
  "path": "bluejayracing__22xt_kicad/02-wsg/ADS1120IPWR/ADS1120IPWR.kicad_pcb",
+ "license": "No license found",
  "rank": 2744,
  "complexity": {
   "grade": 201,

@@ -2,6 +2,7 @@
  "name": "sensor-board",
  "project": "sufst/pcb",
  "path": "sufst__pcb/archive/sensor-board/sensor-board.kicad_pcb",
+ "license": "GPL-3.0 (GNU GPL v3.0)",
  "rank": 1661,
  "complexity": {
   "grade": 319,

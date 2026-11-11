@@ -14,6 +14,7 @@
  "path": "open-ephys__ephys-test-board/pcb/ephys-test-board.kicad_pcb",
  "project": "open-ephys/ephys-test-board",
  "name": "ephys-test-board",
+ "license": "CC-BY-NC-SA-4.0 (Creative Commons Attribution-NonCommercial-ShareAlike 4.0), in LICENSE.md",
  "zip": "part10_of_17",
  "features": {
   "through_vias": 2290,

@@ -2,6 +2,7 @@
  "name": "main_board_peripheral_v3_1",
  "project": "bluejayracing/22xt_kicad",
  "path": "bluejayracing__22xt_kicad/01-main_board/main_board_peripheral_v3_1/main_board_peripheral_v3_1.kicad_pcb",
+ "license": "No license found",
  "rank": 2358,
  "complexity": {
   "grade": 284,

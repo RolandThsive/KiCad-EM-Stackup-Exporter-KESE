@@ -14,6 +14,7 @@
  "path": "Diodes-Delight__Piunora-Hardware/KiCad/Piunora.kicad_pcb",
  "project": "Diodes-Delight/Piunora-Hardware",
  "name": "Piunora",
+ "license": "CERN-OHL-1.2 (CERN Open Hardware Licence v1.2), in LICENSE.txt",
  "zip": "part13_of_17",
  "features": {
   "through_vias": 0,

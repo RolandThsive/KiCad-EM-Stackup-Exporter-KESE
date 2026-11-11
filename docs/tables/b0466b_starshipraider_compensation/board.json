@@ -2,6 +2,7 @@
  "name": "compensation",
  "project": "azonenberg/starshipraider",
  "path": "azonenberg__starshipraider/boards/probes/akl-pr1/compensation/compensation.kicad_pcb",
+ "license": "BSD-3-Clause (BSD 3-Clause License)",
  "rank": 3021,
  "complexity": {
   "grade": 134,

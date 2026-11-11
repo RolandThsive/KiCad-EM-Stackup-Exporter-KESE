@@ -2,6 +2,7 @@
  "name": "head",
  "project": "azonenberg/starshipraider",
  "path": "azonenberg__starshipraider/boards/probes/akl-pr1/head/head.kicad_pcb",
+ "license": "BSD-3-Clause (BSD 3-Clause License)",
  "rank": 2894,
  "complexity": {
   "grade": 216,

@@ -14,6 +14,7 @@
  "path": "ddraig68k__hardware/expansion/JoypadController/JoypadController.kicad_pcb",
  "project": "ddraig68k/hardware",
  "name": "JoypadController",
+ "license": "MIT (MIT License)",
  "zip": "part16_of_17",
  "features": {
   "through_vias": 132,

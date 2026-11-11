@@ -14,6 +14,7 @@
  "path": "rusefi__rusefi-hardware/classic-designs/rusefi_hardware_history/Map_MPX_rev00.20/Map_MPX/Map_MPX.kicad_pcb",
  "project": "rusefi/rusefi-hardware",
  "name": "Map_MPX",
+ "license": "No license found",
  "zip": "part16_of_17",
  "features": {
   "through_vias": 2,

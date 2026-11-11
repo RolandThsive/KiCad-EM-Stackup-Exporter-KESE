@@ -2,6 +2,7 @@
  "name": "FABulous_board",
  "project": "fpga-research/fabulous_board",
  "path": "fpga-research__fabulous_board/hardware/kicad_files/project/FABulous_board.kicad_pcb",
+ "license": "Apache-2.0 (Apache License 2.0)",
  "rank": 1449,
  "complexity": {
   "grade": 332,

@@ -14,6 +14,7 @@
  "path": "Board-Folk__Camputers-Lynx/Lynx 128/Kicad/lynx128.kicad_pcb",
  "project": "Board-Folk/Camputers-Lynx",
  "name": "lynx128",
+ "license": "As README.md states it: \"As the product of this project is a replica of a proprietary product, the the author makes no claim of copyright to the schematics nor PCB layouts and releases these into the public domain, solely for the purposes of study and historical preservation.\"",
  "zip": "part04_of_17",
  "features": {
   "through_vias": 786,

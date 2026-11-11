@@ -2,6 +2,7 @@
  "name": "rf-switch-spdt",
  "project": "greatscottgadgets/misc",
  "path": "greatscottgadgets__misc/evaluation-boards/rf-switch-spdt/rf-switch-spdt.kicad_pcb",
+ "license": "GPL-2.0 (GNU GPL v2.0)",
  "rank": 2454,
  "complexity": {
   "grade": 259,

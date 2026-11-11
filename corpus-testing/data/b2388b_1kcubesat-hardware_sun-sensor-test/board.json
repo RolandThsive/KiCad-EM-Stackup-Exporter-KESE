@@ -14,6 +14,7 @@
  "path": "rgw3d__1kcubesat_hardware/sun_sensor_test/sun_sensor_test.kicad_pcb",
  "project": "rgw3d/1kcubesat_hardware",
  "name": "sun_sensor_test",
+ "license": "GPL-3.0 (GNU GPL v3.0)",
  "zip": "part14_of_17",
  "features": {
   "through_vias": 250,

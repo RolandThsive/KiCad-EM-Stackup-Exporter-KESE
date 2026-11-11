@@ -14,6 +14,7 @@
  "path": "amigalisa__Amiga-SMD-500/SMD500.kicad_pcb",
  "project": "amigalisa/Amiga-SMD-500",
  "name": "SMD500",
+ "license": "CERN-OHL-S-2.0 (CERN Open Hardware Licence v2, Strongly Reciprocal)",
  "zip": "part03_of_17",
  "features": {
   "through_vias": 1862,

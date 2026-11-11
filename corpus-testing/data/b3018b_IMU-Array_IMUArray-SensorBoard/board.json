@@ -14,6 +14,7 @@
  "path": "will127534__IMU_Array/IMUArray_SensorBoard/IMUArray_SensorBoard.kicad_pcb",
  "project": "will127534/IMU_Array",
  "name": "IMUArray_SensorBoard",
+ "license": "MIT (MIT License)",
  "zip": "part13_of_17",
  "features": {
   "through_vias": 558,

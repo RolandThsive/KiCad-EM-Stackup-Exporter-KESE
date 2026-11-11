@@ -14,6 +14,7 @@
  "path": "smoothieware__smoothieboard2/V2_P11_Prime2660/motordriver/motordriver.kicad_pcb",
  "project": "smoothieware/smoothieboard2",
  "name": "motordriver",
+ "license": "As README.md states it: \"Under the same license as v1 ( CERN OHL v1.2 or later and GPL v3 or later )\"",
  "zip": "part11_of_17",
  "features": {
   "through_vias": 958,

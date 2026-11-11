@@ -14,6 +14,7 @@
  "path": "stanford-ssi__samwise-avionics/ZPlus_Panel/ZPlus_Panel.kicad_pcb",
  "project": "stanford-ssi/samwise-avionics",
  "name": "ZPlus_Panel",
+ "license": "No license found",
  "zip": "part16_of_17",
  "features": {
   "through_vias": 214,

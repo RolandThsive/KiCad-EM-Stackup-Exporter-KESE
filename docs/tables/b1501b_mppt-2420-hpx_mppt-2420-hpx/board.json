@@ -2,6 +2,7 @@
  "name": "mppt-2420-hpx",
  "project": "libresolar/mppt-2420-hpx",
  "path": "libresolar__mppt-2420-hpx/kicad/mppt-2420-hpx.kicad_pcb",
+ "license": "CC-BY-SA-4.0 (Creative Commons Attribution-ShareAlike 4.0)",
  "rank": 963,
  "complexity": {
   "grade": 301,

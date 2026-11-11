@@ -2,6 +2,7 @@
  "name": "RF4463F30-test-board",
  "project": "terrapin-rocket-team/srad-avionics",
  "path": "terrapin-rocket-team__srad-avionics/Spaceport/PCBs/RF4463F30-test-board/RF4463F30-test-board.kicad_pcb",
+ "license": "No license found",
  "rank": 2611,
  "complexity": {
   "grade": 211,

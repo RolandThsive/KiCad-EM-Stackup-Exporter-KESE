@@ -2,6 +2,7 @@
  "name": "Register 8bit with IO",
  "project": "andrewpaterson/658-Computer",
  "path": "andrewpaterson__658-Computer/Kicad/Computer/Component Boards/Register 8bit with IO/Register 8bit with IO.kicad_pcb",
+ "license": "No license found",
  "rank": 2316,
  "complexity": {
   "grade": 210,

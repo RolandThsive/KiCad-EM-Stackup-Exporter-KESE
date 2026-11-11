@@ -14,6 +14,7 @@
  "path": "proveskit__battery_board/Battery_Board_V3a/Battery_Board_V3a.kicad_pcb",
  "project": "proveskit/battery_board",
  "name": "Battery_Board_V3a",
+ "license": "CERN-OHL-W-2.0 (CERN Open Hardware Licence v2, Weakly Reciprocal)",
  "zip": "part14_of_17",
  "features": {
   "through_vias": 470,

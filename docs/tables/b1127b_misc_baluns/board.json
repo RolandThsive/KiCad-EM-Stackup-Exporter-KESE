@@ -2,6 +2,7 @@
  "name": "baluns",
  "project": "greatscottgadgets/misc",
  "path": "greatscottgadgets__misc/evaluation-boards/baluns/baluns.kicad_pcb",
+ "license": "GPL-2.0 (GNU GPL v2.0)",
  "rank": 2210,
  "complexity": {
   "grade": 232,

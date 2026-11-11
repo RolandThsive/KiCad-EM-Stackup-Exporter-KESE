@@ -2,6 +2,7 @@
  "name": "GfxV9958",
  "project": "ddraig68k/hardware",
  "path": "ddraig68k__hardware/expansion/GfxV9958/GfxV9958.kicad_pcb",
+ "license": "MIT (MIT License)",
  "rank": 1320,
  "complexity": {
   "grade": 298,

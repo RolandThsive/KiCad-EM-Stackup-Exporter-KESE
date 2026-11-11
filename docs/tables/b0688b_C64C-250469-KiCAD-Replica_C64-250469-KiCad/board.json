@@ -2,6 +2,7 @@
  "name": "C64-250469-KiCad",
  "project": "bwack/C64C-250469-KiCAD-Replica",
  "path": "bwack__C64C-250469-KiCAD-Replica/C64-250469-KiCad.kicad_pcb",
+ "license": "CERN-OHL-1.2 (CERN Open Hardware Licence v1.2), in LICENSE",
  "rank": 229,
  "complexity": {
   "grade": 322,

@@ -2,6 +2,7 @@
  "name": "Omega-Keyboard",
  "project": "skiselev/omega",
  "path": "skiselev__omega/Keyboard/KiCad/Omega-Keyboard.kicad_pcb",
+ "license": "GPL-3.0 (GNU GPL v3.0)",
  "rank": 1562,
  "complexity": {
   "grade": 225,

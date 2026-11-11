@@ -14,6 +14,7 @@
  "path": "antmicro__caravel_board/hardware/caravel_pcb_v3_MCP/caravel_pcb_v3_MCP.kicad_pcb",
  "project": "antmicro/caravel_board",
  "name": "caravel_pcb_v3_MCP",
+ "license": "No license found",
  "zip": "part16_of_17",
  "features": {
   "through_vias": 0,

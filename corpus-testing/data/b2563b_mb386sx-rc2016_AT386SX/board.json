@@ -14,6 +14,7 @@
  "path": "skiselev__mb386sx-rc2016/KiCad/AT386SX.kicad_pcb",
  "project": "skiselev/mb386sx-rc2016",
  "name": "AT386SX",
+ "license": "No license found",
  "zip": "part08_of_17",
  "features": {
   "through_vias": 700,

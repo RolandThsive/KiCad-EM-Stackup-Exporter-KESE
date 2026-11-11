@@ -2,6 +2,7 @@
  "name": "Motherboard",
  "project": "Redherring32/OpenTendo",
  "path": "Redherring32__OpenTendo/Board Files/Motherboard.kicad_pcb",
+ "license": "TAPR-OHL-1.0 (TAPR Open Hardware License), in LICENSE",
  "rank": 674,
  "complexity": {
   "grade": 297,

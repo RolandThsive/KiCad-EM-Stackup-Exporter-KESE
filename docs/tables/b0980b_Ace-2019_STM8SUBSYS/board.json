@@ -2,6 +2,7 @@
  "name": "STM8SUBSYS",
  "project": "flypie/Ace-2019",
  "path": "flypie__Ace-2019/KiCad/STM8SUBSYS/STM8SUBSYS.kicad_pcb",
+ "license": "GPL-3.0 (GNU GPL v3.0)",
  "rank": 2417,
  "complexity": {
   "grade": 162,

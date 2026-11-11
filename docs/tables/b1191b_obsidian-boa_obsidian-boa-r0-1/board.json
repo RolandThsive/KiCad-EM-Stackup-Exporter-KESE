@@ -2,6 +2,7 @@
  "name": "obsidian-boa-r0.1",
  "project": "gregdavill/obsidian-boa",
  "path": "gregdavill__obsidian-boa/hw/obsidian-boa-r0.1/obsidian-boa-r0.1.kicad_pcb",
+ "license": "As README.md states it: \"Hardware in this repository is licenced under Creative Commons BY-SA\"",
  "rank": 1402,
  "complexity": {
   "grade": 364,

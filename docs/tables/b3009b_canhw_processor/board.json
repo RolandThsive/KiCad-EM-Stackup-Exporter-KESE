@@ -2,6 +2,7 @@
  "name": "processor",
  "project": "waterloo-rocketry/canhw",
  "path": "waterloo-rocketry__canhw/processor/processor.kicad_pcb",
+ "license": "GPL-3.0 (GNU GPL v3.0)",
  "rank": 1394,
  "complexity": {
   "grade": 352,

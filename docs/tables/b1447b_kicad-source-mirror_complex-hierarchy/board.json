@@ -2,6 +2,7 @@
  "name": "complex_hierarchy",
  "project": "KiCad/kicad-source-mirror",
  "path": "KiCad__kicad-source-mirror/demos/complex_hierarchy/complex_hierarchy.kicad_pcb",
+ "license": "GPL-3.0 (GNU GPL v3.0)",
  "rank": 2213,
  "complexity": {
   "grade": 244,

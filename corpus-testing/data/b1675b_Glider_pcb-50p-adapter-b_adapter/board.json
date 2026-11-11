@@ -14,6 +14,7 @@
  "path": "Modos-Labs__Glider/pcb/50p-adapter-b/adapter.kicad_pcb",
  "project": "Modos-Labs/Glider",
  "name": "adapter",
+ "license": "CERN-OHL-S-2.0 (CERN Open Hardware Licence v2, Strongly Reciprocal), in LICENSE",
  "zip": "part16_of_17",
  "features": {
   "through_vias": 88,

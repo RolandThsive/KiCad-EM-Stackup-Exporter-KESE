@@ -14,6 +14,7 @@
  "path": "makerspet__oomwoo-pcb/kicad/main/Main.kicad_pcb",
  "project": "makerspet/oomwoo-pcb",
  "name": "Main",
+ "license": "Apache-2.0 (Apache License 2.0)",
  "zip": "part16_of_17",
  "features": {
   "through_vias": 0,

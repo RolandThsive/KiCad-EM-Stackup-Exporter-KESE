@@ -2,6 +2,7 @@
  "name": "OLIMEXINO-STM32F3_Rev_D",
  "project": "OLIMEX/OLIMEXINO-STM32F3",
  "path": "OLIMEX__OLIMEXINO-STM32F3/HARDWARE/OLIMEXINO-STM32F3-revision-D/OLIMEXINO-STM32F3_Rev_D.kicad_pcb",
+ "license": "GPL-3.0 (GNU GPL v3.0)",
  "rank": 960,
  "complexity": {
   "grade": 310,

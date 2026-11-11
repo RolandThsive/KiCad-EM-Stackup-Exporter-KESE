@@ -2,6 +2,7 @@
  "name": "sma-test",
  "project": "azonenberg/starshipraider",
  "path": "azonenberg__starshipraider/boards/probes/sma-test/sma-test.kicad_pcb",
+ "license": "BSD-3-Clause (BSD 3-Clause License)",
  "rank": 1468,
  "complexity": {
   "grade": 214,

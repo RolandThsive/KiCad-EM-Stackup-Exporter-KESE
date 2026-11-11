@@ -2,6 +2,7 @@
  "name": "Breakout-24pin-superseal",
  "project": "rusefi/rusefi-hardware",
  "path": "rusefi__rusefi-hardware/breakout-boards/Breakout-24pin-superseal/Breakout-24pin-superseal.kicad_pcb",
+ "license": "No license found",
  "rank": 2897,
  "complexity": {
   "grade": 149,

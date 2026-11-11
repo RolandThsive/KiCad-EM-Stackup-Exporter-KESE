@@ -14,6 +14,7 @@
  "path": "protocentral__protocentral_healthypi6_hardware/hardware/healthylink_compute_v5/healthylink_compute_v5.kicad_pcb",
  "project": "protocentral/protocentral_healthypi6_hardware",
  "name": "healthylink_compute_v5",
+ "license": "CERN-OHL-P-2.0 (CERN Open Hardware Licence v2, Permissive)",
  "zip": "part14_of_17",
  "features": {
   "through_vias": 474,

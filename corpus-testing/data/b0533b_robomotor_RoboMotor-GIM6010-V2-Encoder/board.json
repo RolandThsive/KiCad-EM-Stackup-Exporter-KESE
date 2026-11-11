@@ -14,6 +14,7 @@
  "path": "baoqi-zhong__robomotor/Hardware/RoboMotor-GIM6010-V2-Encoder/RoboMotor-GIM6010-V2-Encoder.kicad_pcb",
  "project": "baoqi-zhong/robomotor",
  "name": "RoboMotor-GIM6010-V2-Encoder",
+ "license": "MIT (MIT License)",
  "zip": "part16_of_17",
  "features": {
   "through_vias": 84,

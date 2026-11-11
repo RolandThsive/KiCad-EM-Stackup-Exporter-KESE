@@ -2,6 +2,7 @@
  "name": "dvk-mx8m-bsb",
  "project": "gralco/dvk-mx8m-bsb",
  "path": "gralco__dvk-mx8m-bsb/dvk-mx8m-bsb.kicad_pcb",
+ "license": "GPL-3.0 (GNU GPL v3.0)",
  "rank": 48,
  "complexity": {
   "grade": 407,

@@ -14,6 +14,7 @@
  "path": "fossasia__pslab-hardware/archives/PSLab KiCAD/PSLab.kicad_pcb",
  "project": "fossasia/pslab-hardware",
  "name": "PSLab",
+ "license": "Apache-2.0 (Apache License 2.0)",
  "zip": "part15_of_17",
  "features": {
   "through_vias": 126,

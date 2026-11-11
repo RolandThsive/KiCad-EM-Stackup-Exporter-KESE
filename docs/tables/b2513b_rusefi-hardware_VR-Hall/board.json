@@ -2,6 +2,7 @@
  "name": "VR-Hall",
  "project": "rusefi/rusefi-hardware",
  "path": "rusefi__rusefi-hardware/VR-Hall/VR-Hall.kicad_pcb",
+ "license": "No license found",
  "rank": 2093,
  "complexity": {
   "grade": 257,

@@ -2,6 +2,7 @@
  "name": "greybadge_pcb",
  "project": "NUSGreyhats/greybadge25",
  "path": "NUSGreyhats__greybadge25/hardware/greybadge_pcb/greybadge_pcb.kicad_pcb",
+ "license": "No license found",
  "rank": 927,
  "complexity": {
   "grade": 386,

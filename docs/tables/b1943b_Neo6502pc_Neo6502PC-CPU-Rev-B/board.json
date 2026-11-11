@@ -2,6 +2,7 @@
  "name": "Neo6502PC-CPU_Rev_B",
  "project": "OLIMEX/Neo6502pc",
  "path": "OLIMEX__Neo6502pc/HARDWARE/Neo6502pc-CPU-rev.B/Neo6502PC-CPU_Rev_B.kicad_pcb",
+ "license": "GPL-3.0 (GNU GPL v3.0)",
  "rank": 424,
  "complexity": {
   "grade": 378,

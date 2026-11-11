@@ -2,6 +2,7 @@
  "name": "SSD2828QN4-breakout",
  "project": "cyrozap/HDMI-to-MIPI",
  "path": "cyrozap__HDMI-to-MIPI/SSD2828QN4-breakout/SSD2828QN4-breakout.kicad_pcb",
+ "license": "CERN-OHL-1.2 (CERN Open Hardware Licence v1.2), in LICENSE.txt",
  "rank": 1424,
  "complexity": {
   "grade": 207,

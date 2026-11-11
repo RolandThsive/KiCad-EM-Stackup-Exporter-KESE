@@ -2,6 +2,7 @@
  "name": "moteus_x1",
  "project": "mjbots/moteus",
  "path": "mjbots__moteus/hw/x1/moteus_x1.kicad_pcb",
+ "license": "Apache-2.0 (Apache License 2.0)",
  "rank": 514,
  "complexity": {
   "grade": 408,

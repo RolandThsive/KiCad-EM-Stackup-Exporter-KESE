@@ -2,6 +2,7 @@
  "name": "sc606-baseboard",
  "project": "antmicro/snapdragon-625-baseboard",
  "path": "antmicro__snapdragon-625-baseboard/sc606-baseboard.kicad_pcb",
+ "license": "Apache-2.0 (Apache License 2.0)",
  "rank": 180,
  "complexity": {
   "grade": 470,

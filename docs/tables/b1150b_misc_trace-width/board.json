@@ -2,6 +2,7 @@
  "name": "trace-width",
  "project": "greatscottgadgets/misc",
  "path": "greatscottgadgets__misc/evaluation-boards/trace-width/trace-width.kicad_pcb",
+ "license": "GPL-2.0 (GNU GPL v2.0)",
  "rank": 2779,
  "complexity": {
   "grade": 132,

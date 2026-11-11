@@ -2,6 +2,7 @@
  "name": "evse-v4",
  "project": "tinkerforge/evse-v4-bricklet",
  "path": "tinkerforge__evse-v4-bricklet/hardware/evse-v4.kicad_pcb",
+ "license": "No license found",
  "rank": 876,
  "complexity": {
   "grade": 353,

@@ -2,6 +2,7 @@
  "name": "ram_board",
  "project": "marqs85/ossc_pro_hw",
  "path": "marqs85__ossc_pro_hw/expansions/ram_board/ram_board.kicad_pcb",
+ "license": "CERN-OHL-P-2.0 (CERN Open Hardware Licence v2, Permissive)",
  "rank": 1943,
  "complexity": {
   "grade": 254,

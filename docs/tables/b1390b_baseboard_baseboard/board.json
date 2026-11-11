@@ -2,6 +2,7 @@
  "name": "baseboard",
  "project": "jescarri/baseboard",
  "path": "jescarri__baseboard/baseboard.kicad_pcb",
+ "license": "No license found",
  "rank": 2998,
  "complexity": {
   "grade": 93,

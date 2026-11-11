@@ -14,6 +14,7 @@
  "path": "issuiuc__iss-pcb/boards/BAGEL-MK1/BAGEL-MK1.1-Butter/BAGEL-MK1.1-Butter.kicad_pcb",
  "project": "issuiuc/iss-pcb",
  "name": "BAGEL-MK1.1-Butter",
+ "license": "No license found",
  "zip": "part14_of_17",
  "features": {
   "through_vias": 756,

@@ -14,6 +14,7 @@
  "path": "scottbez1__splitflap/electronics/chainlinkBuddyTDisplay/chainlinkBuddyTDisplay.kicad_pcb",
  "project": "scottbez1/splitflap",
  "name": "chainlinkBuddyTDisplay",
+ "license": "Apache-2.0 (Apache License 2.0), in LICENSE.txt",
  "zip": "part16_of_17",
  "features": {
   "through_vias": 0,

@@ -2,6 +2,7 @@
  "name": "ecp5-dc-scm",
  "project": "antmicro/ecp5-dc-scm",
  "path": "antmicro__ecp5-dc-scm/ecp5-dc-scm.kicad_pcb",
+ "license": "Apache-2.0 (Apache License 2.0)",
  "rank": 89,
  "complexity": {
   "grade": 508,

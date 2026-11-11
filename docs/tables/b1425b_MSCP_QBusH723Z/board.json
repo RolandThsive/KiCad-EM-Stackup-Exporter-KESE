@@ -2,6 +2,7 @@
  "name": "QBusH723Z",
  "project": "jrengdahl/MSCP",
  "path": "jrengdahl__MSCP/QBusH723Z-JLCPCB-0.1/QBusH723Z.kicad_pcb",
+ "license": "BSD-2-Clause (BSD 2-Clause License), in LICENSE",
  "rank": 489,
  "complexity": {
   "grade": 402,

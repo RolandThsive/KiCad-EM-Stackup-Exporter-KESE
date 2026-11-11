@@ -2,6 +2,7 @@
  "name": "USB-gLINK_Rev_C",
  "project": "OLIMEX/USB-gLINK",
  "path": "OLIMEX__USB-gLINK/HARDWARE/USB-gLINK_Rev.C/USB-gLINK_Rev_C.kicad_pcb",
+ "license": "GPL-3.0 (GNU GPL v3.0)",
  "rank": 544,
  "complexity": {
   "grade": 338,

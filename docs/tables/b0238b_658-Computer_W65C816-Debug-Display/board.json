@@ -2,6 +2,7 @@
  "name": "W65C816 Debug Display",
  "project": "andrewpaterson/658-Computer",
  "path": "andrewpaterson__658-Computer/Kicad/Computer/Processor/W65C816 Debug Display/W65C816 Debug Display.kicad_pcb",
+ "license": "No license found",
  "rank": 934,
  "complexity": {
   "grade": 273,

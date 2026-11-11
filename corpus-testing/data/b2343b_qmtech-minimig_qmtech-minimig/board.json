@@ -14,6 +14,7 @@
  "path": "ranzbak__qmtech_minimig/qmtech-minimig.kicad_pcb",
  "project": "ranzbak/qmtech_minimig",
  "name": "qmtech-minimig",
+ "license": "No license found",
  "zip": "part06_of_17",
  "features": {
   "through_vias": 316,

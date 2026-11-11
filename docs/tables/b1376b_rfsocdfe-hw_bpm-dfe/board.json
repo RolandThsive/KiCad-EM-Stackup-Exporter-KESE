@@ -2,6 +2,7 @@
  "name": "bpm_dfe",
  "project": "jamead/rfsocdfe-hw",
  "path": "jamead__rfsocdfe-hw/bpm_dfe.kicad_pcb",
+ "license": "No license found",
  "rank": 13,
  "complexity": {
   "grade": 548,

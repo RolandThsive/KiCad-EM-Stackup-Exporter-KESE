@@ -2,6 +2,7 @@
  "name": "Easyduino_Atmega",
  "project": "Hanqaqa/Easyduino",
  "path": "Hanqaqa__Easyduino/Atmega328p Arduino Uno/Easyduino_Atmega.kicad_pcb",
+ "license": "CERN-OHL-P-2.0 (CERN Open Hardware Licence v2, Permissive)",
  "rank": 1888,
  "complexity": {
   "grade": 320,

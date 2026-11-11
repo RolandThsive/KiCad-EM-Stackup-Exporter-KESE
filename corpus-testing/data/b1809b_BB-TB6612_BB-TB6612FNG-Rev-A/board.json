@@ -14,6 +14,7 @@
  "path": "OLIMEX__BB-TB6612/HARDWARE/BB-TB6612-Rev.A/BB-TB6612FNG-Rev_A.kicad_pcb",
  "project": "OLIMEX/BB-TB6612",
  "name": "BB-TB6612FNG-Rev_A",
+ "license": "GPL-3.0 (GNU GPL v3.0)",
  "zip": "part16_of_17",
  "features": {
   "through_vias": 7,

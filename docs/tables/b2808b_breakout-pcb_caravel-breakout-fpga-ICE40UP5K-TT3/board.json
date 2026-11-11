@@ -2,6 +2,7 @@
  "name": "caravel-breakout-fpga-ICE40UP5K-TT3",
  "project": "TinyTapeout/breakout-pcb",
  "path": "TinyTapeout__breakout-pcb/ASIC-simulator/tt03-fpga-ICE40UP5k/caravel-breakout-fpga-ICE40UP5K-TT3.kicad_pcb",
+ "license": "Apache-2.0 (Apache License 2.0)",
  "rank": 1530,
  "complexity": {
   "grade": 319,

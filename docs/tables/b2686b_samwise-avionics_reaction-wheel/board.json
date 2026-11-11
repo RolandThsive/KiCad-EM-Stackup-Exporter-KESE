@@ -2,6 +2,7 @@
  "name": "reaction_wheel",
  "project": "stanford-ssi/samwise-avionics",
  "path": "stanford-ssi__samwise-avionics/unused_boards/reaction_wheel_board/reaction_wheel.kicad_pcb",
+ "license": "No license found",
  "rank": 2350,
  "complexity": {
   "grade": 269,

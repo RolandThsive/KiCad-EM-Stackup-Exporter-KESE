@@ -2,6 +2,7 @@
  "name": "payload",
  "project": "osusat/cubesat",
  "path": "osusat__cubesat/payload/v1/hardware/payload.kicad_pcb",
+ "license": "MIT (MIT License)",
  "rank": 893,
  "complexity": {
   "grade": 387,

@@ -14,6 +14,7 @@
  "path": "open-ephys__commutators/pcb/oe-commutator-controller.kicad_pcb",
  "project": "open-ephys/commutators",
  "name": "oe-commutator-controller",
+ "license": "CC-BY-NC-SA-4.0 (Creative Commons Attribution-NonCommercial-ShareAlike 4.0), in LICENSE.TXT",
  "zip": "part14_of_17",
  "features": {
   "through_vias": 782,

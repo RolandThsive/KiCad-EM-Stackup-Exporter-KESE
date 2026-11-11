@@ -2,6 +2,7 @@
  "name": "sa800u-baseboard-hw",
  "project": "antmicro/snapdragon-845-baseboard",
  "path": "antmicro__snapdragon-845-baseboard/sa800u-baseboard-hw.kicad_pcb",
+ "license": "Apache-2.0 (Apache License 2.0)",
  "rank": 112,
  "complexity": {
   "grade": 459,

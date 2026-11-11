@@ -2,6 +2,7 @@
  "name": "arty-a7-expansion",
  "project": "antmicro/arty-expansion-board",
  "path": "antmicro__arty-expansion-board/arty-a7-expansion.kicad_pcb",
+ "license": "Apache-2.0 (Apache License 2.0)",
  "rank": 657,
  "complexity": {
   "grade": 325,

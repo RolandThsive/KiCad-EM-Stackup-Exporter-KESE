@@ -14,6 +14,7 @@
  "path": "mwwhited__embeddedbakery/circuits/AnalogCalculator/Diode Function/Diode Function/Diode Function.kicad_pcb",
  "project": "mwwhited/embeddedbakery",
  "name": "Diode Function",
+ "license": "MIT (MIT License), in LICENSE",
  "zip": "part16_of_17",
  "features": {
   "through_vias": 14,

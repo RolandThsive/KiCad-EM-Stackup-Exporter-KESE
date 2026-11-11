@@ -2,6 +2,7 @@
  "name": "tle9104-breakout",
  "project": "rusefi/rusefi-hardware",
  "path": "rusefi__rusefi-hardware/tle9104-breakout/tle9104-breakout.kicad_pcb",
+ "license": "No license found",
  "rank": 2266,
  "complexity": {
   "grade": 207,

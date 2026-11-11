@@ -2,6 +2,7 @@
  "name": "EEZ DIB B3C",
  "project": "eez-open/modular-psu",
  "path": "eez-open__modular-psu/bp3c/EDA files/KiCad/EEZ DIB B3C.kicad_pcb",
+ "license": "TAPR-OHL-1.0 (TAPR Open Hardware License), in LICENSE.TXT",
  "rank": 1585,
  "complexity": {
   "grade": 231,

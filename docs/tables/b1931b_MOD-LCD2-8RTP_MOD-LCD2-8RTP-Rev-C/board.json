@@ -2,6 +2,7 @@
  "name": "MOD-LCD2.8RTP_Rev_C",
  "project": "OLIMEX/MOD-LCD2.8RTP",
  "path": "OLIMEX__MOD-LCD2.8RTP/HARDWARE/SCHEMATICS/Hardware-revision-C/MOD-LCD2.8RTP_Rev_C.kicad_pcb",
+ "license": "Apache-2.0 (Apache License 2.0)",
  "rank": 1305,
  "complexity": {
   "grade": 229,

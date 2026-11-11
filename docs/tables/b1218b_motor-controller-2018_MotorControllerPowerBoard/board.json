@@ -2,6 +2,7 @@
  "name": "MotorControllerPowerBoard",
  "project": "heev/motor-controller-2018",
  "path": "heev__motor-controller-2018/MotorControllerPowerBoardRev2/MotorControllerPowerBoard/MotorControllerPowerBoard.kicad_pcb",
+ "license": "No license found",
  "rank": 1528,
  "complexity": {
   "grade": 271,

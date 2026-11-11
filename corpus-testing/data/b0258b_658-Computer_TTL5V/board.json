@@ -14,6 +14,7 @@
  "path": "andrewpaterson__658-Computer/Kicad/Computer/UART/TTL5V/TTL5V.kicad_pcb",
  "project": "andrewpaterson/658-Computer",
  "name": "TTL5V",
+ "license": "No license found",
  "zip": "part16_of_17",
  "features": {
   "through_vias": 138,

@@ -2,6 +2,7 @@
  "name": "mod_hdmi",
  "project": "winkleplex10-bit/the-mac-pro-project",
  "path": "winkleplex10-bit__the-mac-pro-project/kicad/macpro62-io-modules/mod_hdmi/mod_hdmi.kicad_pcb",
+ "license": "No license found",
  "rank": 2636,
  "complexity": {
   "grade": 196,

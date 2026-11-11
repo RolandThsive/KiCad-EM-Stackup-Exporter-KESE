@@ -2,6 +2,7 @@
  "name": "adapter",
  "project": "Modos-Labs/Glider",
  "path": "Modos-Labs__Glider/pcb/mega_adapter/adapter.kicad_pcb",
+ "license": "CERN-OHL-S-2.0 (CERN Open Hardware Licence v2, Strongly Reciprocal), in LICENSE",
  "rank": 1221,
  "complexity": {
   "grade": 261,

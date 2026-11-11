@@ -14,6 +14,7 @@
  "path": "rusefi__rusefi-hardware/classic-designs/adc_amp_divider/adc_amp_divider.kicad_pcb",
  "project": "rusefi/rusefi-hardware",
  "name": "adc_amp_divider",
+ "license": "No license found",
  "zip": "part15_of_17",
  "features": {
   "through_vias": 66,

@@ -2,6 +2,7 @@
  "name": "tmp",
  "project": "neuroidss/freeeeg32",
  "path": "neuroidss__freeeeg32/KiCad/tmp.kicad_pcb",
+ "license": "AGPL-3.0 (GNU AGPL v3.0), in LICENSE",
  "rank": 2022,
  "complexity": {
   "grade": 209,

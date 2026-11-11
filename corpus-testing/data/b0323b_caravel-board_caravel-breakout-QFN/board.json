@@ -14,6 +14,7 @@
  "path": "antmicro__caravel_board/hardware/caravel_breakout_QFN/caravel_breakout_QFN.kicad_pcb",
  "project": "antmicro/caravel_board",
  "name": "caravel_breakout_QFN",
+ "license": "No license found",
  "zip": "part15_of_17",
  "features": {
   "through_vias": 99,

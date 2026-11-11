@@ -14,6 +14,7 @@
  "path": "greatscottgadgets__hackrf/hardware/neapolitan/neapolitan.kicad_pcb",
  "project": "greatscottgadgets/hackrf",
  "name": "neapolitan",
+ "license": "GPL-2.0 (GNU GPL v2.0)",
  "zip": "part13_of_17",
  "features": {
   "through_vias": 272,

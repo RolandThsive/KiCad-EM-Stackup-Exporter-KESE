@@ -2,6 +2,7 @@
  "name": "Interposer_Board_Test_Fixture",
  "project": "EEVengers/ts_test_fixtures",
  "path": "EEVengers__ts_test_fixtures/Interposer_Board_Test_Fixture/Interposer_Board_Test_Fixture.kicad_pcb",
+ "license": "CERN-OHL-P-2.0 (CERN Open Hardware Licence v2, Permissive)",
  "rank": 1701,
  "complexity": {
   "grade": 266,

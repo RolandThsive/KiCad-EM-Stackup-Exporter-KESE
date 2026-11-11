@@ -2,6 +2,7 @@
  "name": "passives",
  "project": "greatscottgadgets/misc",
  "path": "greatscottgadgets__misc/evaluation-boards/passives/passives.kicad_pcb",
+ "license": "GPL-2.0 (GNU GPL v2.0)",
  "rank": 2414,
  "complexity": {
   "grade": 239,

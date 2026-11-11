@@ -2,6 +2,7 @@
  "name": "magnetometer_extern",
  "project": "stanford-ssi/samwise-avionics",
  "path": "stanford-ssi__samwise-avionics/magnetometer_extern/magnetometer_extern/magnetometer_extern.kicad_pcb",
+ "license": "No license found",
  "rank": 2975,
  "complexity": {
   "grade": 106,

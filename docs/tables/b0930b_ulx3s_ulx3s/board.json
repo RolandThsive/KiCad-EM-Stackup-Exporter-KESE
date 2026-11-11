@@ -2,6 +2,7 @@
  "name": "ulx3s",
  "project": "emard/ulx3s",
  "path": "emard__ulx3s/ulx3s.kicad_pcb",
+ "license": "MIT (MIT License), in LICENSE.md",
  "rank": 372,
  "complexity": {
   "grade": 365,

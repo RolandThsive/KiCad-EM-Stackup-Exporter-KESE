@@ -14,6 +14,7 @@
  "path": "rh1tech__frank/hardware/frank_next/frank_next.kicad_pcb",
  "project": "rh1tech/frank",
  "name": "frank_next",
+ "license": "GPL-3.0 (GNU GPL v3.0)",
  "zip": "part12_of_17",
  "features": {
   "through_vias": 962,

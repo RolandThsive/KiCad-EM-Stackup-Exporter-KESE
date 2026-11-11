@@ -2,6 +2,7 @@
  "name": "beepy",
  "project": "sqfmi/beepy-hardware",
  "path": "sqfmi__beepy-hardware/KiCad/beepy.kicad_pcb",
+ "license": "MIT (MIT License)",
  "rank": 1119,
  "complexity": {
   "grade": 377,

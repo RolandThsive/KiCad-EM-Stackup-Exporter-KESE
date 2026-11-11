@@ -2,6 +2,7 @@
  "name": "usb-c-breakout",
  "project": "kbeckmann/Kilsyth",
  "path": "kbeckmann__Kilsyth/hardware/usb-c-breakout/usb-c-breakout.kicad_pcb",
+ "license": "0BSD (BSD Zero Clause License)",
  "rank": 1926,
  "complexity": {
   "grade": 245,

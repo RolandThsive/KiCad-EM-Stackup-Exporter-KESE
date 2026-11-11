@@ -2,6 +2,7 @@
  "name": "CAN_relay",
  "project": "waterloo-rocketry/canhw",
  "path": "waterloo-rocketry__canhw/CAN_relay/CAN_relay.kicad_pcb",
+ "license": "GPL-3.0 (GNU GPL v3.0)",
  "rank": 2010,
  "complexity": {
   "grade": 318,

@@ -14,6 +14,7 @@
  "path": "Acill__A4000RevB/Kicad/A4k-Replica-Acill.kicad_pcb",
  "project": "Acill/A4000RevB",
  "name": "A4k-Replica-Acill",
+ "license": "GPL-3.0 (GNU GPL v3.0)",
  "zip": "part01_of_17",
  "features": {
   "through_vias": 5396,

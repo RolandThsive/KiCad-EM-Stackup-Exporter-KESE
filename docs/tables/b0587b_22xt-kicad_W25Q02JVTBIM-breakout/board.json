@@ -2,6 +2,7 @@
  "name": "W25Q02JVTBIM_breakout",
  "project": "bluejayracing/22xt_kicad",
  "path": "bluejayracing__22xt_kicad/02-wsg/W25Q02JVTBIM_breakout/W25Q02JVTBIM_breakout.kicad_pcb",
+ "license": "No license found",
  "rank": 2881,
  "complexity": {
   "grade": 146,

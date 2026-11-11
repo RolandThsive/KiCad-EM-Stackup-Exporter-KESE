@@ -2,6 +2,7 @@
  "name": "uVerter",
  "project": "owntech-foundation/micro-inverter",
  "path": "owntech-foundation__micro-inverter/KiCAD_Files/uVerter.kicad_pcb",
+ "license": "CERN-OHL-S-2.0 (CERN Open Hardware Licence v2, Strongly Reciprocal)",
  "rank": 720,
  "complexity": {
   "grade": 453,

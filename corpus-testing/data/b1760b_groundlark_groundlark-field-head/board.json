@@ -14,6 +14,7 @@
  "path": "naturalhazardscience__groundlark/hw/burrowlark-usb/boards/groundlark-field-head/groundlark-field-head.kicad_pcb",
  "project": "naturalhazardscience/groundlark",
  "name": "groundlark-field-head",
+ "license": "MIT (MIT License)",
  "zip": "part16_of_17",
  "features": {
   "through_vias": 92,

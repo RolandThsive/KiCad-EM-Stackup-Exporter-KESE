@@ -14,6 +14,7 @@
  "path": "Board-Folk__CPC464-2MINI/Expansions/MINIDDI/Extras/MINIDDI3ADAPT/Kicad/CPC464-2MINIDDI3ADAPT.kicad_pcb",
  "project": "Board-Folk/CPC464-2MINI",
  "name": "CPC464-2MINIDDI3ADAPT",
+ "license": "No license found",
  "zip": "part16_of_17",
  "features": {
   "through_vias": 0,

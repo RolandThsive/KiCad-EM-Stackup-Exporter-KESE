@@ -2,6 +2,7 @@
  "name": "accelerometer",
  "project": "olin-electric-motorsports/olin-electric-motorsports",
  "path": "olin-electric-motorsports__olin-electric-motorsports/vehicle/mkv/hardware/sensing/accelerometer/accelerometer.kicad_pcb",
+ "license": "No license found",
  "rank": 1832,
  "complexity": {
   "grade": 263,

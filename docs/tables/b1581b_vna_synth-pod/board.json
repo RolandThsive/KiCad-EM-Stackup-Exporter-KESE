@@ -2,6 +2,7 @@
  "name": "synth_pod",
  "project": "loxodes/vna",
  "path": "loxodes__vna/hardware/mm_reflectometer/synth/synth_pod/synth_pod.kicad_pcb",
+ "license": "As README.md states it: \"Unless otherwise noted, all work is under a MIT license.\"",
  "rank": 1106,
  "complexity": {
   "grade": 281,

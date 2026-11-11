@@ -2,6 +2,7 @@
  "name": "azalea",
  "project": "greatscottgadgets/greatfet-hardware",
  "path": "greatscottgadgets__greatfet-hardware/azalea/azalea.kicad_pcb",
+ "license": "BSD-3-Clause (BSD 3-Clause License)",
  "rank": 1116,
  "complexity": {
   "grade": 300,

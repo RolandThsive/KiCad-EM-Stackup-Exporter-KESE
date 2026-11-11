@@ -2,6 +2,7 @@
  "name": "qca7000",
  "project": "damienmaguire/foccci",
  "path": "damienmaguire__foccci/pcb/qca7000.kicad_pcb",
+ "license": "Apache-2.0 (Apache License 2.0)",
  "rank": 750,
  "complexity": {
   "grade": 379,

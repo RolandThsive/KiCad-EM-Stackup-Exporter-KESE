@@ -14,6 +14,7 @@
  "path": "isarmg__pcie-switch-2/outputs/PCIe_Main_RevM/Assembly_View/Assembly_View.kicad_pcb",
  "project": "isarmg/pcie-switch-2",
  "name": "Assembly_View",
+ "license": "No license found",
  "zip": "part15_of_17",
  "features": {
   "through_vias": 0,

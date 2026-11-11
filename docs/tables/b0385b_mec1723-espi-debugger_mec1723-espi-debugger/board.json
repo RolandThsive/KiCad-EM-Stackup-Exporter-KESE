@@ -2,6 +2,7 @@
  "name": "mec1723-espi-debugger",
  "project": "antmicro/mec1723-espi-debugger",
  "path": "antmicro__mec1723-espi-debugger/mec1723-espi-debugger.kicad_pcb",
+ "license": "Apache-2.0 (Apache License 2.0)",
  "rank": 492,
  "complexity": {
   "grade": 471,

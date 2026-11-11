@@ -14,6 +14,7 @@
  "path": "azonenberg__starshipraider/boards/probes/attenuator-test/attenuator-test.kicad_pcb",
  "project": "azonenberg/starshipraider",
  "name": "attenuator-test",
+ "license": "BSD-3-Clause (BSD 3-Clause License)",
  "zip": "part16_of_17",
  "features": {
   "through_vias": 90,

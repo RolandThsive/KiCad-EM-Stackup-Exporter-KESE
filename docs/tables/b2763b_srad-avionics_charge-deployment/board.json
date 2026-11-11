@@ -2,6 +2,7 @@
  "name": "charge_deployment",
  "project": "terrapin-rocket-team/srad-avionics",
  "path": "terrapin-rocket-team__srad-avionics/Side_Projects/Charge Deployment/Circuits/charge_deployment.kicad_pcb",
+ "license": "No license found",
  "rank": 2839,
  "complexity": {
   "grade": 119,

@@ -2,6 +2,7 @@
  "name": "zx2_keyb_conn",
  "project": "krzys9876/ZX_Spectrum_diy",
  "path": "krzys9876__ZX_Spectrum_diy/Kicad5/zx2_keyb_conn/zx2_keyb_conn.kicad_pcb",
+ "license": "MIT (MIT License)",
  "rank": 2178,
  "complexity": {
   "grade": 200,

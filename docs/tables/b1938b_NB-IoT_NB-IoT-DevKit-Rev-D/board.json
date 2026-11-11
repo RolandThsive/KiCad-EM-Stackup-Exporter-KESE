@@ -2,6 +2,7 @@
  "name": "NB-IoT-DevKit_Rev_D",
  "project": "OLIMEX/NB-IoT",
  "path": "OLIMEX__NB-IoT/HARDWARE/NB-IoT-DevKit_Rev_D/NB-IoT-DevKit_Rev_D.kicad_pcb",
+ "license": "GPL-3.0 (GNU GPL v3.0)",
  "rank": 748,
  "complexity": {
   "grade": 307,

@@ -14,6 +14,7 @@
  "path": "stonedDiscord__MegaDrive/MegaDrive.kicad_pcb",
  "project": "stonedDiscord/MegaDrive",
  "name": "MegaDrive",
+ "license": "No license found",
  "zip": "part08_of_17",
  "features": {
   "through_vias": 1570,

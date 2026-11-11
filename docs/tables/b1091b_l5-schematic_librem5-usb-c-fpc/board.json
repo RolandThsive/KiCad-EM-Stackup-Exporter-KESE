@@ -2,6 +2,7 @@
  "name": "librem5_usb-c_fpc",
  "project": "gralco/l5-schematic",
  "path": "gralco__l5-schematic/CAD/KiCad/librem5_usb-c_fpc/librem5_usb-c_fpc.kicad_pcb",
+ "license": "GPL-3.0 (GNU GPL v3.0)",
  "rank": 2699,
  "complexity": {
   "grade": 203,

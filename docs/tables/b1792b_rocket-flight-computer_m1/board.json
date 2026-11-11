@@ -2,6 +2,7 @@
  "name": "m1",
  "project": "oak-wjr/rocket-flight-computer",
  "path": "oak-wjr__rocket-flight-computer/reference/m1_power_actuator/m1.kicad_pcb",
+ "license": "No license found",
  "rank": 2333,
  "complexity": {
   "grade": 212,

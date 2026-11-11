@@ -14,6 +14,7 @@
  "path": "softerhardware__Hermes-Lite2/hardware/enclosure/endcaps/kf7o/hl2_55b/endcap.kicad_pcb",
  "project": "softerhardware/Hermes-Lite2",
  "name": "endcap",
+ "license": "No license found",
  "zip": "part16_of_17",
  "features": {
   "through_vias": 19,

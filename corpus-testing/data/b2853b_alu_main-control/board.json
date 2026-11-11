@@ -14,6 +14,7 @@
  "path": "tmarhguy__alu/schematics/kicad/boards/main_control/main_control.kicad_pcb",
  "project": "tmarhguy/alu",
  "name": "main_control",
+ "license": "MIT (MIT License)",
  "zip": "part16_of_17",
  "features": {
   "through_vias": 0,

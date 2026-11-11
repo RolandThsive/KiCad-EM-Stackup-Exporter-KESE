@@ -2,6 +2,7 @@
  "name": "pmod-quad-7segment",
  "project": "gregdavill/advent-calendar-of-circuits-2020",
  "path": "gregdavill__advent-calendar-of-circuits-2020/pmod-quad-7segment/kicad-src/pmod-quad-7segment.kicad_pcb",
+ "license": "CERN-OHL-P-2.0 (CERN Open Hardware Licence v2, Permissive), in LICENCE-CERN-OHL-P-2.0",
  "rank": 2084,
  "complexity": {
   "grade": 244,

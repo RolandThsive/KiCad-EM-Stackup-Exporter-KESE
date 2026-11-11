@@ -2,6 +2,7 @@
  "name": "dabao_v3c",
  "project": "baochip/dabao",
  "path": "baochip__dabao/dabao_v3c.kicad_pcb",
+ "license": "CERN-OHL-W-2.0 (CERN Open Hardware Licence v2, Weakly Reciprocal)",
  "rank": 1692,
  "complexity": {
   "grade": 383,

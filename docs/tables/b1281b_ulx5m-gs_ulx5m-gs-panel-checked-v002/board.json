@@ -2,6 +2,7 @@
  "name": "ulx5m-gs_panel_checked_v002",
  "project": "intergalaktik/ulx5m-gs",
  "path": "intergalaktik__ulx5m-gs/hardware/panel/ulx5m-gs_panel_checked_v002.kicad_pcb",
+ "license": "CERN-OHL-S-2.0 (CERN Open Hardware Licence v2, Strongly Reciprocal), in LICENSE.md",
  "rank": 18,
  "complexity": {
   "grade": 501,

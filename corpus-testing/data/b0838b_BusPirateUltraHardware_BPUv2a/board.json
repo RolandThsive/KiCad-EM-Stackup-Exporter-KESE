@@ -14,6 +14,7 @@
  "path": "DangerousPrototypes__BusPirateUltraHardware/BPUv2a/BPUv2a.kicad_pcb",
  "project": "DangerousPrototypes/BusPirateUltraHardware",
  "name": "BPUv2a",
+ "license": "GPL-3.0 (GNU GPL v3.0)",
  "zip": "part11_of_17",
  "features": {
   "through_vias": 509,

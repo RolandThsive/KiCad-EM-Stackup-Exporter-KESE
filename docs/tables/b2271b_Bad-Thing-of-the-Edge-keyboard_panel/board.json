@@ -2,6 +2,7 @@
  "name": "panel",
  "project": "Pakequis/Bad-Thing-of-the-Edge-keyboard",
  "path": "Pakequis__Bad-Thing-of-the-Edge-keyboard/Hardware/Panel-board/panel.kicad_pcb",
+ "license": "MIT (MIT License)",
  "rank": 3068,
  "complexity": {
   "grade": 113,

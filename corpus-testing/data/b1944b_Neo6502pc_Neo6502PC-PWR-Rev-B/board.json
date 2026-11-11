@@ -14,6 +14,7 @@
  "path": "OLIMEX__Neo6502pc/HARDWARE/Neo6502pc-PWR-rev.B/Neo6502PC-PWR_Rev_B.kicad_pcb",
  "project": "OLIMEX/Neo6502pc",
  "name": "Neo6502PC-PWR_Rev_B",
+ "license": "GPL-3.0 (GNU GPL v3.0)",
  "zip": "part13_of_17",
  "features": {
   "through_vias": 491,

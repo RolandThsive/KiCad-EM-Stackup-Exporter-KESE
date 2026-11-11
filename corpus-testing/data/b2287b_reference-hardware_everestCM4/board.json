@@ -14,6 +14,7 @@
  "path": "pionixpublic__reference-hardware/Yak/everestCM4.kicad_pcb",
  "project": "pionixpublic/reference-hardware",
  "name": "everestCM4",
+ "license": "CERN-OHL-P-2.0 (CERN Open Hardware Licence v2, Permissive)",
  "zip": "part11_of_17",
  "features": {
   "through_vias": 540,

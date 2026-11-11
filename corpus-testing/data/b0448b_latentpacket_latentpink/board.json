@@ -14,6 +14,7 @@
  "path": "azonenberg__latentpacket/latentpink/pcb/latentpink.kicad_pcb",
  "project": "azonenberg/latentpacket",
  "name": "latentpink",
+ "license": "BSD-3-Clause (BSD 3-Clause License)",
  "zip": "part02_of_17",
  "features": {
   "through_vias": 4034,

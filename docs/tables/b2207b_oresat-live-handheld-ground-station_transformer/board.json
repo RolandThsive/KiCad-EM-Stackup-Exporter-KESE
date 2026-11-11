@@ -2,6 +2,7 @@
  "name": "transformer",
  "project": "oresat/oresat-live-handheld-ground-station",
  "path": "oresat__oresat-live-handheld-ground-station/PCB-Legos/transformer/transformer.kicad_pcb",
+ "license": "GPL-3.0 (GNU GPL v3.0)",
  "rank": 2906,
  "complexity": {
   "grade": 244,

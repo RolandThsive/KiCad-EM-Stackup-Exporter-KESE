@@ -2,6 +2,7 @@
  "name": "thelio-io",
  "project": "system76/thelio-io-hardware",
  "path": "system76__thelio-io-hardware/pcb-thelio-io/thelio-io.kicad_pcb",
+ "license": "GPL-3.0 (GNU GPL v3.0)",
  "rank": 1719,
  "complexity": {
   "grade": 326,

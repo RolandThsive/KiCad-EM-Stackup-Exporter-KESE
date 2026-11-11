@@ -2,6 +2,7 @@
  "name": "GPIO 32bit Board",
  "project": "andrewpaterson/658-Computer",
  "path": "andrewpaterson__658-Computer/Kicad/Pico/GPIO 32bit Board/GPIO 32bit Board.kicad_pcb",
+ "license": "No license found",
  "rank": 1830,
  "complexity": {
   "grade": 226,

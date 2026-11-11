@@ -2,6 +2,7 @@
  "name": "SensorBoardNoMCU",
  "project": "terrapin-rocket-team/srad-avionics",
  "path": "terrapin-rocket-team__srad-avionics/Spaceport/PCBs/Gerbers/Teensy v3.0/SensorBoardNoMCU.kicad_pcb",
+ "license": "No license found",
  "rank": 2240,
  "complexity": {
   "grade": 266,

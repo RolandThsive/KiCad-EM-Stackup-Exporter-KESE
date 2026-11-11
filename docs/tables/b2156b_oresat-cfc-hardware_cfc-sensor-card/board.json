@@ -2,6 +2,7 @@
  "name": "cfc-sensor-card",
  "project": "oresat/oresat-cfc-hardware",
  "path": "oresat__oresat-cfc-hardware/cfc-sensor-card-v2/cfc-sensor-card.kicad_pcb",
+ "license": "CERN-OHL-S-2.0 (CERN Open Hardware Licence v2, Strongly Reciprocal)",
  "rank": 961,
  "complexity": {
   "grade": 330,

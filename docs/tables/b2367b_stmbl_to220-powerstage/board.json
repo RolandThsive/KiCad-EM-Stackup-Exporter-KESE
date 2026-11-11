@@ -2,6 +2,7 @@
  "name": "to220_powerstage",
  "project": "rene-dev/stmbl",
  "path": "rene-dev__stmbl/hw/kicad/troller/to220_powerstage.kicad_pcb",
+ "license": "GPL-3.0 (GNU GPL v3.0)",
  "rank": 993,
  "complexity": {
   "grade": 297,

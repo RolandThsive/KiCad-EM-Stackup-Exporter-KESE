@@ -2,6 +2,7 @@
  "name": "ICE40-DAC_Rev_A1",
  "project": "OLIMEX/iCE40-DAC",
  "path": "OLIMEX__iCE40-DAC/Hardware revision A1/ICE40-DAC_Rev_A1.kicad_pcb",
+ "license": "Apache-2.0 (Apache License 2.0)",
  "rank": 1383,
  "complexity": {
   "grade": 212,

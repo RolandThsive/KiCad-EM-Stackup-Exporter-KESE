@@ -2,6 +2,7 @@
  "name": "OrangeCrab",
  "project": "orangecrab-fpga/orangecrab-hardware",
  "path": "orangecrab-fpga__orangecrab-hardware/hardware/orangecrab_r0.1/OrangeCrab.kicad_pcb",
+ "license": "CERN-OHL-1.2 (CERN Open Hardware Licence v1.2), in LICENCE-CERN-OHL",
  "rank": 285,
  "complexity": {
   "grade": 403,

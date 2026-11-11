@@ -2,6 +2,7 @@
  "name": "PWR_buck_12V_switcher",
  "project": "rusefi/rusefi-hardware",
  "path": "rusefi__rusefi-hardware/classic-designs/rusefi_hardware_history/power_supply_kb1gtt_rev00.10/PWR_buck_12V_switcher.kicad_pcb",
+ "license": "No license found",
  "rank": 2579,
  "complexity": {
   "grade": 166,

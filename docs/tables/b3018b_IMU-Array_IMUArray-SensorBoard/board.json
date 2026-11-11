@@ -2,6 +2,7 @@
  "name": "IMUArray_SensorBoard",
  "project": "will127534/IMU_Array",
  "path": "will127534__IMU_Array/IMUArray_SensorBoard/IMUArray_SensorBoard.kicad_pcb",
+ "license": "MIT (MIT License)",
  "rank": 843,
  "complexity": {
   "grade": 353,

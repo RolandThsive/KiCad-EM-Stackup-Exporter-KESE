@@ -2,6 +2,7 @@
  "name": "SparkFun_GNSS_Flex_Module_LG290P",
  "project": "sparkfun/sparkfun_gnss_flex_system",
  "path": "sparkfun__sparkfun_gnss_flex_system/flex_boards/SparkPNT_GNSS_Flex_Module_LG290P/hardware/SparkFun_GNSS_Flex_Module_LG290P.kicad_pcb",
+ "license": "MIT (MIT License), in LICENSE.md",
  "rank": 2176,
  "complexity": {
   "grade": 285,

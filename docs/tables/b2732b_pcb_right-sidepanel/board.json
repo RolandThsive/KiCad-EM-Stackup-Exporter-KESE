@@ -2,6 +2,7 @@
  "name": "right-sidepanel",
  "project": "sufst/pcb",
  "path": "sufst__pcb/right-sidepanel/right-sidepanel.kicad_pcb",
+ "license": "GPL-3.0 (GNU GPL v3.0)",
  "rank": 2049,
  "complexity": {
   "grade": 230,

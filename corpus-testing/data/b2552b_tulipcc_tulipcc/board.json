@@ -14,6 +14,7 @@
  "path": "shorepine__tulipcc/docs/pcbs/tulip4_board_v4r9/tulipcc.kicad_pcb",
  "project": "shorepine/tulipcc",
  "name": "tulipcc",
+ "license": "MIT (MIT License), in LICENSE",
  "zip": "part14_of_17",
  "features": {
   "through_vias": 474,

@@ -2,6 +2,7 @@
  "name": "DIB2 USB adapter",
  "project": "eez-open/eez-bb3plus",
  "path": "eez-open__eez-bb3plus/Experimental/KiCad/DIB2 USB adapter/DIB2 USB adapter.kicad_pcb",
+ "license": "TAPR-OHL-1.0 (TAPR Open Hardware License), in LICENSE.TXT",
  "rank": 2139,
  "complexity": {
   "grade": 273,

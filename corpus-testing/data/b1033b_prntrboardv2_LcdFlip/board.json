@@ -14,6 +14,7 @@
  "path": "ghent360__prntrboardv2/hardware/LcdFlip.kicad_pcb",
  "project": "ghent360/prntrboardv2",
  "name": "LcdFlip",
+ "license": "CC-BY-SA-3.0 (Creative Commons Attribution-ShareAlike 3.0), in LICENSE",
  "zip": "part16_of_17",
  "features": {
   "through_vias": 0,

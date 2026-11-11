@@ -2,6 +2,7 @@
  "name": "triple_adapter",
  "project": "rene-dev/stmbl",
  "path": "rene-dev__stmbl/hw/kicad/11ua/triple_adapter.kicad_pcb",
+ "license": "GPL-3.0 (GNU GPL v3.0)",
  "rank": 1495,
  "complexity": {
   "grade": 236,

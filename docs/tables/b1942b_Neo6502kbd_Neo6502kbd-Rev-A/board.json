@@ -2,6 +2,7 @@
  "name": "Neo6502kbd_Rev_A",
  "project": "OLIMEX/Neo6502kbd",
  "path": "OLIMEX__Neo6502kbd/HARDWARE/Neo6502kbd-Rev.A/Neo6502kbd_Rev_A.kicad_pcb",
+ "license": "MIT (MIT License)",
  "rank": 521,
  "complexity": {
   "grade": 377,

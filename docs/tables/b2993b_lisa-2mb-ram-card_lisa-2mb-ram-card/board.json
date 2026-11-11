@@ -2,6 +2,7 @@
  "name": "lisa-2mb-ram-card",
  "project": "warmech/lisa-2mb-ram-card",
  "path": "warmech__lisa-2mb-ram-card/cad/lisa-2mb-ram-card.kicad_pcb",
+ "license": "CERN-OHL-S-2.0 (CERN Open Hardware Licence v2, Strongly Reciprocal)",
  "rank": 765,
  "complexity": {
   "grade": 288,

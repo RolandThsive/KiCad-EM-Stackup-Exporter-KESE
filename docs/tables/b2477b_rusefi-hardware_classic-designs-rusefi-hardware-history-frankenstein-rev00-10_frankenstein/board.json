@@ -2,6 +2,7 @@
  "name": "frankenstein",
  "project": "rusefi/rusefi-hardware",
  "path": "rusefi__rusefi-hardware/classic-designs/rusefi_hardware_history/frankenstein_rev00.10/frankenstein.kicad_pcb",
+ "license": "No license found",
  "rank": 652,
  "complexity": {
   "grade": 246,

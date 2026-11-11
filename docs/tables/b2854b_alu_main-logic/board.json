@@ -2,6 +2,7 @@
  "name": "main_logic",
  "project": "tmarhguy/alu",
  "path": "tmarhguy__alu/schematics/kicad/boards/main_logic/main_logic.kicad_pcb",
+ "license": "MIT (MIT License)",
  "rank": 2511,
  "complexity": {
   "grade": 79,

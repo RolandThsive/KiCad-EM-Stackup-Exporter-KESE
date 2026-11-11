@@ -2,6 +2,7 @@
  "name": "SFUSat-Radio",
  "project": "sfusatclub/cubesat-radio",
  "path": "sfusatclub__cubesat-radio/SFUSat-Radio.kicad_pcb",
+ "license": "No license found",
  "rank": 611,
  "complexity": {
   "grade": 264,

@@ -2,6 +2,7 @@
  "name": "hackrf-one",
  "project": "greatscottgadgets/hackrf",
  "path": "greatscottgadgets__hackrf/hardware/hackrf-one/hackrf-one.kicad_pcb",
+ "license": "GPL-2.0 (GNU GPL v2.0)",
  "rank": 440,
  "complexity": {
   "grade": 396,

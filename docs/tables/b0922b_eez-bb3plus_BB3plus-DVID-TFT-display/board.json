@@ -2,6 +2,7 @@
  "name": "BB3plus DVID TFT display",
  "project": "eez-open/eez-bb3plus",
  "path": "eez-open__eez-bb3plus/KiCad/TFT module/BB3plus DVID TFT display.kicad_pcb",
+ "license": "TAPR-OHL-1.0 (TAPR Open Hardware License), in LICENSE.TXT",
  "rank": 1281,
  "complexity": {
   "grade": 358,

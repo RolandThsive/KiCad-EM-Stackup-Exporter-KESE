@@ -2,6 +2,7 @@
  "name": "gig-e",
  "project": "greatscottgadgets/daisho",
  "path": "greatscottgadgets__daisho/hw/de2-115-frontend/gig-e/gig-e.kicad_pcb",
+ "license": "As hw/main_board/README states it: \"This is a free hardware design; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 2, or (at your option) any later version. This design is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;\"",
  "rank": 623,
  "complexity": {
   "grade": 307,

@@ -2,6 +2,7 @@
  "name": "headstage-16stim",
  "project": "open-ephys/onix-headstage-16stim",
  "path": "open-ephys__onix-headstage-16stim/pcb/headstage-16stim.kicad_pcb",
+ "license": "No license found",
  "rank": 859,
  "complexity": {
   "grade": 427,

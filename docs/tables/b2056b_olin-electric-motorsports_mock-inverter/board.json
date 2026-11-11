@@ -2,6 +2,7 @@
  "name": "mock-inverter",
  "project": "olin-electric-motorsports/olin-electric-motorsports",
  "path": "olin-electric-motorsports__olin-electric-motorsports/vehicle/mkvi/hardware/mock-inverter/mock-inverter.kicad_pcb",
+ "license": "No license found",
  "rank": 1790,
  "complexity": {
   "grade": 311,

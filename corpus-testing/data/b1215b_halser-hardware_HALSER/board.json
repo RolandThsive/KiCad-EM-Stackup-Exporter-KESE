@@ -14,6 +14,7 @@
  "path": "hatlabs__halser-hardware/HALSER.kicad_pcb",
  "project": "hatlabs/halser-hardware",
  "name": "HALSER",
+ "license": "CC-BY-4.0 (Creative Commons Attribution 4.0)",
  "zip": "part14_of_17",
  "features": {
   "through_vias": 708,

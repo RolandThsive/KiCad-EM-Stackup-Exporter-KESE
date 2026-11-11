@@ -2,6 +2,7 @@
  "name": "sensor-board",
  "project": "oresat/oresat-solar-simulator-hardware",
  "path": "oresat__oresat-solar-simulator-hardware/boards/sensor-board/sensor-board.kicad_pcb",
+ "license": "CERN-OHL-S-2.0 (CERN Open Hardware Licence v2, Strongly Reciprocal)",
  "rank": 2388,
  "complexity": {
   "grade": 229,

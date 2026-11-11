@@ -2,6 +2,7 @@
  "name": "vme-wren",
  "project": "circuitly/kicad-demo-vme-wren",
  "path": "circuitly__kicad-demo-vme-wren/vme-wren.kicad_pcb",
+ "license": "No license found",
  "rank": 19,
  "complexity": {
   "grade": 523,

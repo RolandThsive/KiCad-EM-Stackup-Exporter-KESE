@@ -2,6 +2,7 @@
  "name": "motherboard-stable",
  "project": "c4puter/motherboard",
  "path": "c4puter__motherboard/motherboard-stable.kicad_pcb",
+ "license": "CC0-1.0 (Creative Commons Zero v1.0)",
  "rank": 34,
  "complexity": {
   "grade": 402,

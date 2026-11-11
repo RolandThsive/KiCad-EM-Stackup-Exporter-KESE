@@ -14,6 +14,7 @@
  "path": "maniekx86__m8sbc-486/pcb/homebrew_486.kicad_pcb",
  "project": "maniekx86/m8sbc-486",
  "name": "homebrew_486",
+ "license": "GPL-3.0 (GNU GPL v3.0), in pcb/LICENSE",
  "zip": "part07_of_17",
  "features": {
   "through_vias": 2300,

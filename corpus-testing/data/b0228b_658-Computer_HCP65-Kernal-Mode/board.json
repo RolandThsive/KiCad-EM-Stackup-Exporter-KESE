@@ -14,6 +14,7 @@
  "path": "andrewpaterson__658-Computer/Kicad/Computer/Processor/HCP65 Kernal Mode/HCP65 Kernal Mode.kicad_pcb",
  "project": "andrewpaterson/658-Computer",
  "name": "HCP65 Kernal Mode",
+ "license": "No license found",
  "zip": "part14_of_17",
  "features": {
   "through_vias": 484,

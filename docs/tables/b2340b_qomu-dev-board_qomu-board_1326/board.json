@@ -2,6 +2,7 @@
  "name": "qomu-board",
  "project": "QuickLogic-Corp/qomu-dev-board",
  "path": "QuickLogic-Corp__qomu-dev-board/qomu-board.kicad_pcb",
+ "license": "CC-BY-SA-4.0 (Creative Commons Attribution-ShareAlike 4.0)",
  "rank": 1326,
  "complexity": {
   "grade": 340,

@@ -14,6 +14,7 @@
  "path": "kaipereira__m.2-fpga-accelerator/PCB/PCB.kicad_pcb",
  "project": "kaipereira/m.2-fpga-accelerator",
  "name": "PCB",
+ "license": "No license found",
  "zip": "part09_of_17",
  "features": {
   "through_vias": 1658,

@@ -2,6 +2,7 @@
  "name": "Blue Raven Extension",
  "project": "terrapin-rocket-team/srad-avionics",
  "path": "terrapin-rocket-team__srad-avionics/Spaceport/PCBs/Blue Raven Extension/Blue Raven Extension.kicad_pcb",
+ "license": "No license found",
  "rank": 2965,
  "complexity": {
   "grade": 147,

@@ -2,6 +2,7 @@
  "name": "BLDC_4",
  "project": "vedderb/bldc-hardware",
  "path": "vedderb__bldc-hardware/design/BLDC_4.kicad_pcb",
+ "license": "As README.md states it: \"VESC Hardware is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.\"",
  "rank": 983,
  "complexity": {
   "grade": 303,

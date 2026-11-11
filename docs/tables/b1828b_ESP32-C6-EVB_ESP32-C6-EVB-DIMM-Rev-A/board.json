@@ -2,6 +2,7 @@
  "name": "ESP32-C6-EVB_DIMM_Rev_A",
  "project": "OLIMEX/ESP32-C6-EVB",
  "path": "OLIMEX__ESP32-C6-EVB/HARDWARE/Dimensions/ESP32-C6-EVB_DIMM_Rev_A.kicad_pcb",
+ "license": "GPL-3.0 (GNU GPL v3.0)",
  "rank": 1299,
  "complexity": {
   "grade": 252,

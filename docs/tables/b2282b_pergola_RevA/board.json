@@ -2,6 +2,7 @@
  "name": "RevA",
  "project": "pergola-fpga/pergola",
  "path": "pergola-fpga__pergola/hardware/RevA/RevA.kicad_pcb",
+ "license": "MIT (MIT License)",
  "rank": 874,
  "complexity": {
   "grade": 334,

@@ -14,6 +14,7 @@
  "path": "tinyvision-ai-inc__oshw-adapters/syzygy-mipi-adapter/board/Rev1/syzygy-mipi-adapter.kicad_pcb",
  "project": "tinyvision-ai-inc/oshw-adapters",
  "name": "syzygy-mipi-adapter",
+ "license": "MIT (MIT License)",
  "zip": "part13_of_17",
  "features": {
   "through_vias": 408,

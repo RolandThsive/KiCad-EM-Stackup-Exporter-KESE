@@ -2,6 +2,7 @@
  "name": "live-video-multi-function-board",
  "project": "terrapin-rocket-team/srad-avionics",
  "path": "terrapin-rocket-team__srad-avionics/Spaceport/PCBs/live-video-multi-function-board/live-video-multi-function-board.kicad_pcb",
+ "license": "No license found",
  "rank": 2060,
  "complexity": {
   "grade": 275,

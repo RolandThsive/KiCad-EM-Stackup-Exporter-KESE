@@ -2,6 +2,7 @@
  "name": "ducktop2-center",
  "project": "ewoudvv/ducktop2",
  "path": "ewoudvv__ducktop2/ducktop2-center.kicad_pcb",
+ "license": "MIT (MIT License)",
  "rank": 206,
  "complexity": {
   "grade": 481,

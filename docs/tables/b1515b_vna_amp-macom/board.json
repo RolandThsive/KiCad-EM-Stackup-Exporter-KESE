@@ -2,6 +2,7 @@
  "name": "amp_macom",
  "project": "loxodes/vna",
  "path": "loxodes__vna/breakouts/amp_macom/amp_macom.kicad_pcb",
+ "license": "As README.md states it: \"Unless otherwise noted, all work is under a MIT license.\"",
  "rank": 2788,
  "complexity": {
   "grade": 160,

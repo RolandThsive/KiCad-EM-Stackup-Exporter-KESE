@@ -2,6 +2,7 @@
  "name": "machxo5-espi-debugger",
  "project": "antmicro/machx05-espi-debugger",
  "path": "antmicro__machx05-espi-debugger/machxo5-espi-debugger.kicad_pcb",
+ "license": "Apache-2.0 (Apache License 2.0)",
  "rank": 631,
  "complexity": {
   "grade": 461,

@@ -2,6 +2,7 @@
  "name": "MOD-ENV_revB",
  "project": "OLIMEX/MOD-ENV",
  "path": "OLIMEX__MOD-ENV/HARDWARE/REV-B/MOD-ENV_revB.kicad_pcb",
+ "license": "As README.md states it: \"Software License is GPL3; Hardware License is CERN OHL v1.2; Documentation is released under CC BY-SA 3.0\"",
  "rank": 2522,
  "complexity": {
   "grade": 188,

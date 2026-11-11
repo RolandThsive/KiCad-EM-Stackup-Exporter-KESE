@@ -14,6 +14,7 @@
  "path": "mibs510__openxtcm5-head-unit/pcb/lib/RPI-CM5-IO/CM5IO.kicad_pcb",
  "project": "mibs510/openxtcm5-head-unit",
  "name": "CM5IO",
+ "license": "MIT (MIT License)",
  "zip": "part11_of_17",
  "features": {
   "through_vias": 1406,

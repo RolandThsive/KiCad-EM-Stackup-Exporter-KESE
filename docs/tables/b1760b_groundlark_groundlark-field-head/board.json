@@ -2,6 +2,7 @@
  "name": "groundlark-field-head",
  "project": "naturalhazardscience/groundlark",
  "path": "naturalhazardscience__groundlark/hw/burrowlark-usb/boards/groundlark-field-head/groundlark-field-head.kicad_pcb",
+ "license": "MIT (MIT License)",
  "rank": 1991,
  "complexity": {
   "grade": 321,

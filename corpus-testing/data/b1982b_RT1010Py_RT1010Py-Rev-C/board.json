@@ -14,6 +14,7 @@
  "path": "OLIMEX__RT1010Py/HARDWARE/RT1010-Py-Rev-C/RT1010Py_Rev.C.kicad_pcb",
  "project": "OLIMEX/RT1010Py",
  "name": "RT1010Py_Rev.C",
+ "license": "GPL-3.0 (GNU GPL v3.0)",
  "zip": "part15_of_17",
  "features": {
   "through_vias": 114,

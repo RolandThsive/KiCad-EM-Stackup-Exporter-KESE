@@ -2,6 +2,7 @@
  "name": "RT1010Py-DevKit_RevB",
  "project": "OLIMEX/RT1010Py-DevKit",
  "path": "OLIMEX__RT1010Py-DevKit/HARDWARE/RT1010Py-DevKit-B/RT1010Py-DevKit_RevB.kicad_pcb",
+ "license": "GPL-3.0 (GNU GPL v3.0)",
  "rank": 1419,
  "complexity": {
   "grade": 231,

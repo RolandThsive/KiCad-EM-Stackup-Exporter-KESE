@@ -14,6 +14,7 @@
  "path": "tinyvision-ai-inc__upduino-jtag/board/pogo_adapter/pogo_adapter.kicad_pcb",
  "project": "tinyvision-ai-inc/upduino-jtag",
  "name": "pogo_adapter",
+ "license": "MIT (MIT License)",
  "zip": "part16_of_17",
  "features": {
   "through_vias": 64,

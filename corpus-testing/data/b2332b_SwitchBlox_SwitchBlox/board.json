@@ -14,6 +14,7 @@
  "path": "puyams__SwitchBlox/Hardware/Release Design Files/Source Kicad Files/SwitchBlox.kicad_pcb",
  "project": "puyams/SwitchBlox",
  "name": "SwitchBlox",
+ "license": "Creative Commons, in LICENSE.txt",
  "zip": "part14_of_17",
  "features": {
   "through_vias": 105,

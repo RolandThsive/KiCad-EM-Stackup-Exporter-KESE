@@ -2,6 +2,7 @@
  "name": "thermistor circuit",
  "project": "bluejayracing/22xt_kicad",
  "path": "bluejayracing__22xt_kicad/04-dyno_daq/THC_su/thermistor circuit.kicad_pcb",
+ "license": "No license found",
  "rank": 2682,
  "complexity": {
   "grade": 162,

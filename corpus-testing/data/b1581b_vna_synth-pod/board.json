@@ -14,6 +14,7 @@
  "path": "loxodes__vna/hardware/mm_reflectometer/synth/synth_pod/synth_pod.kicad_pcb",
  "project": "loxodes/vna",
  "name": "synth_pod",
+ "license": "As README.md states it: \"Unless otherwise noted, all work is under a MIT license.\"",
  "zip": "part14_of_17",
  "features": {
   "through_vias": 0,

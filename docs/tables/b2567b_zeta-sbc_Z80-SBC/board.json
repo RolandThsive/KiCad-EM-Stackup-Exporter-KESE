@@ -2,6 +2,7 @@
  "name": "Z80-SBC",
  "project": "skiselev/zeta_sbc",
  "path": "skiselev__zeta_sbc/KiCad/Z80-SBC.kicad_pcb",
+ "license": "GPL-3.0 (GNU GPL v3.0)",
  "rank": 746,
  "complexity": {
   "grade": 252,

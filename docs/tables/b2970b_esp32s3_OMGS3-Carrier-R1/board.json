@@ -2,6 +2,7 @@
  "name": "OMGS3_Carrier_R1",
  "project": "UnexpectedMaker/esp32s3",
  "path": "UnexpectedMaker__esp32s3/kicad/OMGS3 Carrier/OMGS3_Carrier_R1.kicad_pcb",
+ "license": "CERN-OHL-1.2 (CERN Open Hardware Licence v1.2), in kicad/LICENSE",
  "rank": 2313,
  "complexity": {
   "grade": 269,

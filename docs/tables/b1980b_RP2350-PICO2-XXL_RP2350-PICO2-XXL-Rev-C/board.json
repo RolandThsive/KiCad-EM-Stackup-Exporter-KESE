@@ -2,6 +2,7 @@
  "name": "RP2350-PICO2-XXL_Rev_C",
  "project": "OLIMEX/RP2350-PICO2-XXL",
  "path": "OLIMEX__RP2350-PICO2-XXL/HARDWARE/RP2350-PICO2-XXL-Rev.C/RP2350-PICO2-XXL_Rev_C.kicad_pcb",
+ "license": "GPL-3.0 (GNU GPL v3.0)",
  "rank": 749,
  "complexity": {
   "grade": 358,

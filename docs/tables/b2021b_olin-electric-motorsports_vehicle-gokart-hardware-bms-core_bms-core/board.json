@@ -2,6 +2,7 @@
  "name": "bms_core",
  "project": "olin-electric-motorsports/olin-electric-motorsports",
  "path": "olin-electric-motorsports__olin-electric-motorsports/vehicle/gokart/hardware/bms_core/bms_core.kicad_pcb",
+ "license": "No license found",
  "rank": 2037,
  "complexity": {
   "grade": 258,

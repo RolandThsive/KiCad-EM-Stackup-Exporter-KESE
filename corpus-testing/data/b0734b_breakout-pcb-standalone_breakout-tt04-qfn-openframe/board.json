@@ -14,6 +14,7 @@
  "path": "chipfoundry__breakout-pcb-standalone/breakout-tt04-qfn-openframe/breakout-tt04-qfn-openframe.kicad_pcb",
  "project": "chipfoundry/breakout-pcb-standalone",
  "name": "breakout-tt04-qfn-openframe",
+ "license": "Apache-2.0 (Apache License 2.0)",
  "zip": "part16_of_17",
  "features": {
   "through_vias": 186,

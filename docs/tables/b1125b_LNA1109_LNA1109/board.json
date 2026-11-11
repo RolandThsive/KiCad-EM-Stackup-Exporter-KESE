@@ -2,6 +2,7 @@
  "name": "LNA1109",
  "project": "greatscottgadgets/LNA1109",
  "path": "greatscottgadgets__LNA1109/LNA1109.kicad_pcb",
+ "license": "CERN-OHL-P-2.0 (CERN Open Hardware Licence v2, Permissive), in LICENSE",
  "rank": 2565,
  "complexity": {
   "grade": 186,

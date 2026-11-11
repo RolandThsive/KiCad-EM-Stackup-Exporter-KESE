@@ -14,6 +14,7 @@
  "path": "oresat__oresat-c3-rf/KiCad/amp-PA-GRF5504-with-detect.kicad_pcb",
  "project": "oresat/oresat-c3-rf",
  "name": "amp-PA-GRF5504-with-detect",
+ "license": "MIT (MIT License)",
  "zip": "part16_of_17",
  "features": {
   "through_vias": 440,

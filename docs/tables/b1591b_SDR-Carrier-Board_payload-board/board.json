@@ -2,6 +2,7 @@
  "name": "payload_board",
  "project": "M2I-CySat/SDR-Carrier-Board",
  "path": "M2I-CySat__SDR-Carrier-Board/schematics/breakoutBoard/payload_board.kicad_pcb",
+ "license": "No license found",
  "rank": 2596,
  "complexity": {
   "grade": 164,

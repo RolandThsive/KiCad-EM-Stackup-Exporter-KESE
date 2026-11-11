@@ -2,6 +2,7 @@
  "name": "CTRL_panelized",
  "project": "astronuat21/4ds",
  "path": "astronuat21__4ds/CTRL_Panelized/CTRL_panelized.kicad_pcb",
+ "license": "AGPL-3.0 (GNU AGPL v3.0)",
  "rank": 1841,
  "complexity": {
   "grade": 197,

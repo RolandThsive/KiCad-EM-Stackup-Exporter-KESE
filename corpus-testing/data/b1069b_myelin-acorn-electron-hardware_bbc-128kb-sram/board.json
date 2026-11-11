@@ -14,6 +14,7 @@
  "path": "google__myelin-acorn-electron-hardware/bbc_128kb_sram/pcb/bbc_128kb_sram.kicad_pcb",
  "project": "google/myelin-acorn-electron-hardware",
  "name": "bbc_128kb_sram",
+ "license": "Apache-2.0 (Apache License 2.0)",
  "zip": "part16_of_17",
  "features": {
   "through_vias": 20,

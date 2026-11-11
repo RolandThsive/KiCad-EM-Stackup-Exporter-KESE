@@ -2,6 +2,7 @@
  "name": "OV5640-dual-camera-board",
  "project": "antmicro/ov5640-dual-camera-board",
  "path": "antmicro__ov5640-dual-camera-board/OV5640-dual-camera-board.kicad_pcb",
+ "license": "Apache-2.0 (Apache License 2.0)",
  "rank": 1273,
  "complexity": {
   "grade": 308,

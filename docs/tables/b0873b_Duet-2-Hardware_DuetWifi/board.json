@@ -2,6 +2,7 @@
  "name": "DuetWifi",
  "project": "Duet3D/Duet-2-Hardware",
  "path": "Duet3D__Duet-2-Hardware/Duet2/Duet2v1.04/DuetWifi.kicad_pcb",
+ "license": "CERN-OHL-1.2 (CERN Open Hardware Licence v1.2), in LICENSE",
  "rank": 223,
  "complexity": {
   "grade": 293,
