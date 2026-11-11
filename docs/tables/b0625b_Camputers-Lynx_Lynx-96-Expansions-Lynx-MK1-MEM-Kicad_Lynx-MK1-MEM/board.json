@@ -1,0 +1,48 @@
+{
+ "name": "Lynx-MK1-MEM",
+ "project": "Board-Folk/Camputers-Lynx",
+ "path": "Board-Folk__Camputers-Lynx/Lynx 96/Expansions/Lynx-MK1-MEM/Kicad/Lynx-MK1-MEM.kicad_pcb",
+ "license": "As README.md states it: \"As the product of this project is a replica of a proprietary product, the the author makes no claim of copyright to the schematics nor PCB layouts and releases these into the public domain, solely for the purposes of study and historical preservation.\"",
+ "license_checked": "2026-11-08",
+ "rank": 1587,
+ "score": 1188,
+ "level": "MEDIUM",
+ "complexity": {
+  "grade": 194,
+  "size": 169,
+  "features": 25
+ },
+ "features": [
+  "through_vias",
+  "copper_text"
+ ],
+ "layers": 2,
+ "status": "pass",
+ "bad_design": null,
+ "chart_alt": "Lynx-MK1-MEM: stages 4 and 6 take 53% to 84% of a run. Simulation, GLB takes 13 s. Simulation, STEP takes 16 s. Simulation, STL takes 13 s. Simulation, OBJ takes 19 s. Visual, GLB takes 17 s. Visual, OBJ takes 20 s",
+ "rerun": {},
+ "tested": [
+  "2026-11-09",
+  "2026-11-09"
+ ],
+ "kese": [
+  "22fd70c"
+ ],
+ "kese_version": [
+  "2.4.0"
+ ],
+ "runs": [
+  [
+   "corpus",
+   "2026-11-09",
+   11000000000.0,
+   5400.0
+  ]
+ ],
+ "machine": {
+  "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz, 4 cores, 15 GB",
+  "geos": "3.14.1",
+  "python": "3.13.18",
+  "shapely": "2.2.0"
+ }
+}

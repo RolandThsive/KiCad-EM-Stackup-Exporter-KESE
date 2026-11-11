@@ -1,0 +1,51 @@
+{
+ "name": "telemetry_transmitter",
+ "project": "waterloo-rocketry/canhw",
+ "path": "waterloo-rocketry__canhw/live_telemetry/ARCHIVE/old_telemetry_transmitter/telemetry_transmitter.kicad_pcb",
+ "license": "GPL-3.0 (GNU GPL v3.0)",
+ "license_checked": "2026-11-08",
+ "rank": 2021,
+ "score": 661,
+ "level": "LOW",
+ "complexity": {
+  "grade": 232,
+  "size": 162,
+  "features": 70
+ },
+ "features": [
+  "through_vias",
+  "shaped_pads",
+  "arc_tracks",
+  "filled_zones",
+  "curved_outline"
+ ],
+ "layers": 2,
+ "status": "pass",
+ "bad_design": null,
+ "chart_alt": "telemetry_transmitter: stages 4 and 6 take 52% to 85% of a run. Simulation, GLB takes 9.5 s. Simulation, STEP takes 12 s. Simulation, STL takes 9.3 s. Simulation, OBJ takes 14 s. Visual, GLB takes 14 s. Visual, OBJ takes 17 s",
+ "rerun": {},
+ "tested": [
+  "2026-11-10",
+  "2026-11-10"
+ ],
+ "kese": [
+  "22fd70c"
+ ],
+ "kese_version": [
+  "2.4.0"
+ ],
+ "runs": [
+  [
+   "corpus",
+   "2026-11-10",
+   11000000000.0,
+   5400.0
+  ]
+ ],
+ "machine": {
+  "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz, 4 cores, 15 GB",
+  "geos": "3.14.1",
+  "python": "3.13.18",
+  "shapely": "2.2.0"
+ }
+}

@@ -1,0 +1,77 @@
+{
+ "name": "AmigaPCI Mainboard",
+ "project": "AmigaPCI/AmigaPCI-MainBoard",
+ "path": "AmigaPCI__AmigaPCI-MainBoard/KiCAD/AmigaPCI Mainboard-KiCAD REV 70/AmigaPCI Mainboard.kicad_pcb",
+ "license": "As README.md states it: \"Floppy interface modifications from Ian Steadman (noted in schematic) released under the GNU GENERAL PUBLIC LICENSE, Version 3. AmigaPCI by Jason Neus is licensed under Creative Commons Attribution-NonCommercial 4.0 International\"",
+ "license_checked": "2026-11-08",
+ "rank": 26,
+ "score": 29804,
+ "level": "EXTREME",
+ "complexity": {
+  "grade": 493,
+  "size": 343,
+  "features": 150
+ },
+ "features": [
+  "through_vias",
+  "slotted_holes",
+  "custom_pads",
+  "shaped_pads",
+  "arc_tracks",
+  "filled_zones",
+  "copper_graphics",
+  "copper_text",
+  "stackup",
+  "dielectric_properties",
+  "copper_finish"
+ ],
+ "layers": 6,
+ "status": "pass",
+ "bad_design": null,
+ "chart_alt": "AmigaPCI Mainboard: stages 4 and 6 take 46% to 87% of a run. Simulation, GLB takes 9 min. Simulation, STEP takes 12 min. Simulation, STL takes 10 min. Simulation, OBJ takes 17 min. Visual, GLB takes 16 min. Visual, OBJ takes 12 min",
+ "rerun": {
+  "cap": [
+   "Visual, OBJ"
+  ],
+  "nocap": [
+   "Simulation, OBJ"
+  ]
+ },
+ "tested": [
+  "2026-11-09",
+  "2026-11-11"
+ ],
+ "kese": [
+  "22fd70c",
+  "39950e6"
+ ],
+ "kese_version": [
+  "2.4.0"
+ ],
+ "runs": [
+  [
+   "cap",
+   "2026-11-10",
+   14500000000.0,
+   5400.0
+  ],
+  [
+   "corpus",
+   "2026-11-09",
+   11000000000.0,
+   5400.0
+  ],
+  [
+   "nocap",
+   "2026-11-11",
+   null,
+   null
+  ]
+ ],
+ "machine": {
+  "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz, 4 cores, 15 GB",
+  "geos": "3.14.1",
+  "python": "3.13.18",
+  "shapely": "2.2.0"
+ }
+}

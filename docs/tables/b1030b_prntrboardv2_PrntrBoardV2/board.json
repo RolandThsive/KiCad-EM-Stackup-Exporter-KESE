@@ -1,0 +1,54 @@
+{
+ "name": "PrntrBoardV2",
+ "project": "ghent360/prntrboardv2",
+ "path": "ghent360__prntrboardv2/hardware/PrntrBoardV2.kicad_pcb",
+ "license": "CC-BY-SA-3.0 (Creative Commons Attribution-ShareAlike 3.0), in LICENSE",
+ "license_checked": "2026-11-08",
+ "rank": 378,
+ "score": 6839,
+ "level": "HIGH",
+ "complexity": {
+  "grade": 366,
+  "size": 261,
+  "features": 105
+ },
+ "features": [
+  "through_vias",
+  "shaped_pads",
+  "filled_zones",
+  "curved_outline",
+  "stackup",
+  "dielectric_properties",
+  "copper_finish",
+  "mask_silk_colours"
+ ],
+ "layers": 2,
+ "status": "pass",
+ "bad_design": null,
+ "chart_alt": "PrntrBoardV2: stages 4 and 6 take 54% to 85% of a run. Simulation, GLB takes 61 s. Simulation, STEP takes 76 s. Simulation, STL takes 60 s. Simulation, OBJ takes 89 s. Visual, GLB takes 98 s. Visual, OBJ takes 2 min",
+ "rerun": {},
+ "tested": [
+  "2026-11-09",
+  "2026-11-09"
+ ],
+ "kese": [
+  "22fd70c"
+ ],
+ "kese_version": [
+  "2.4.0"
+ ],
+ "runs": [
+  [
+   "corpus",
+   "2026-11-09",
+   11000000000.0,
+   5400.0
+  ]
+ ],
+ "machine": {
+  "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz, 4 cores, 15 GB",
+  "geos": "3.14.1",
+  "python": "3.13.18",
+  "shapely": "2.2.0"
+ }
+}

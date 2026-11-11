@@ -1,0 +1,53 @@
+{
+ "name": "k-1008-visable-memory",
+ "project": "eduardocasino/k-1008-visable-memory-card-replica",
+ "path": "eduardocasino__k-1008-visable-memory-card-replica/k-1008-visable-memory.kicad_pcb",
+ "license": "CC-BY-NC-4.0 (Creative Commons Attribution-NonCommercial 4.0), in LICENSE.md",
+ "license_checked": "2026-11-08",
+ "rank": 747,
+ "score": 3540,
+ "level": "HIGH",
+ "complexity": {
+  "grade": 303,
+  "size": 203,
+  "features": 100
+ },
+ "features": [
+  "through_vias",
+  "shaped_pads",
+  "filled_zones",
+  "curved_outline",
+  "stackup",
+  "dielectric_properties",
+  "copper_finish"
+ ],
+ "layers": 2,
+ "status": "pass",
+ "bad_design": null,
+ "chart_alt": "k-1008-visable-memory: stages 4 and 6 take 63% to 89% of a run. Simulation, GLB takes 80 s. Simulation, STEP takes 96 s. Simulation, STL takes 81 s. Simulation, OBJ takes 2 min. Visual, GLB takes 96 s. Visual, OBJ takes 2 min",
+ "rerun": {},
+ "tested": [
+  "2026-11-09",
+  "2026-11-09"
+ ],
+ "kese": [
+  "22fd70c"
+ ],
+ "kese_version": [
+  "2.4.0"
+ ],
+ "runs": [
+  [
+   "corpus",
+   "2026-11-09",
+   11000000000.0,
+   5400.0
+  ]
+ ],
+ "machine": {
+  "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz, 4 cores, 15 GB",
+  "geos": "3.14.1",
+  "python": "3.13.18",
+  "shapely": "2.2.0"
+ }
+}

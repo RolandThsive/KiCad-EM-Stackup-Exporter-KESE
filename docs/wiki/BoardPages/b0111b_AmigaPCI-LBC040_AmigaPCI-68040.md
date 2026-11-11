@@ -1,6 +1,6 @@
 # 111. AmigaPCI 68040
 
-Board 111 of the 3,117 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 2](../CorpusTestingPages/Corpus-Testing-02.md#111-amigapci-68040).
+Board 111 of the 3,118 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 2](../CorpusTestingPages/Corpus-Testing-02.md#111-amigapci-68040).
 
 ![AmigaPCI 68040: stages 4 and 6 take 48% to 82% of a run. Simulation, GLB takes 64 s. Simulation, STEP takes 78 s. Simulation, STL takes 63 s. Simulation, OBJ takes 95 s. Visual, GLB takes 93 s. Visual, OBJ takes 2 min](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b0111b_AmigaPCI-LBC040_AmigaPCI-68040/stages.webp)
 
@@ -45,4 +45,4 @@ Board 111 of the 3,117 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Pag
 
 | Previous | Next |
 |:---|---:|
-| [110. SMD500](b0110b_Amiga-SMD-500_SMD500.md) | [112. anavi-light-controller](b0112b_anavi-light-controller_anavi-light-controller.md) |
+| [110. SMD500](b0110b_Amiga-SMD-500_SMD500.md) | [112. AmigaPCI Mainboard](b0112b_AmigaPCI-MainBoard_AmigaPCI-Mainboard.md) |

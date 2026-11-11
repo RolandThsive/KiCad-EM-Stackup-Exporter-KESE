@@ -1,0 +1,47 @@
+{
+ "name": "h4n2rs485",
+ "project": "mwwhited/embeddedbakery",
+ "path": "mwwhited__embeddedbakery/circuits/h4n2rs485/h4n2rs485.kicad_pcb",
+ "license": "MIT (MIT License), in LICENSE",
+ "license_checked": "2026-11-08",
+ "rank": 2840,
+ "score": 34,
+ "level": "SIMPLE",
+ "complexity": {
+  "grade": 58,
+  "size": 48,
+  "features": 10
+ },
+ "features": [
+  "shaped_pads"
+ ],
+ "layers": 2,
+ "status": "pass",
+ "bad_design": null,
+ "chart_alt": "h4n2rs485: stages 4 and 6 take 50% to 78% of a run. Simulation, GLB takes 2.9 s. Simulation, STEP takes 4.1 s. Simulation, STL takes 3.0 s. Simulation, OBJ takes 4.4 s. Visual, GLB takes 3.5 s. Visual, OBJ takes 4.3 s",
+ "rerun": {},
+ "tested": [
+  "2026-11-09",
+  "2026-11-09"
+ ],
+ "kese": [
+  "22fd70c"
+ ],
+ "kese_version": [
+  "2.4.0"
+ ],
+ "runs": [
+  [
+   "corpus",
+   "2026-11-09",
+   11000000000.0,
+   5400.0
+  ]
+ ],
+ "machine": {
+  "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz, 4 cores, 15 GB",
+  "geos": "3.14.1",
+  "python": "3.13.18",
+  "shapely": "2.2.0"
+ }
+}

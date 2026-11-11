@@ -1,0 +1,53 @@
+{
+ "name": "Bad Thing of the Edge Keyboard",
+ "project": "Pakequis/Bad-Thing-of-the-Edge-keyboard",
+ "path": "Pakequis__Bad-Thing-of-the-Edge-keyboard/Hardware/Main-board/Bad Thing of the Edge Keyboard.kicad_pcb",
+ "license": "MIT (MIT License)",
+ "license_checked": "2026-11-08",
+ "rank": 1895,
+ "score": 800,
+ "level": "LOW",
+ "complexity": {
+  "grade": 267,
+  "size": 167,
+  "features": 100
+ },
+ "features": [
+  "through_vias",
+  "shaped_pads",
+  "drill_offsets",
+  "filled_zones",
+  "truetype_text",
+  "stackup",
+  "dielectric_properties"
+ ],
+ "layers": 2,
+ "status": "pass",
+ "bad_design": null,
+ "chart_alt": "Stages 4 and 6 take 52% to 80% of a run. Simulation, GLB takes 9.4 s. Simulation, STEP takes 12 s. Simulation, STL takes 9.3 s. Simulation, OBJ takes 14 s. Visual, GLB takes 14 s. Visual, OBJ takes 18 s",
+ "rerun": {},
+ "tested": [
+  "2026-11-09",
+  "2026-11-09"
+ ],
+ "kese": [
+  "22fd70c"
+ ],
+ "kese_version": [
+  "2.4.0"
+ ],
+ "runs": [
+  [
+   "corpus",
+   "2026-11-09",
+   11000000000.0,
+   5400.0
+  ]
+ ],
+ "machine": {
+  "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz, 4 cores, 15 GB",
+  "geos": "3.14.1",
+  "python": "3.13.18",
+  "shapely": "2.2.0"
+ }
+}

@@ -1,0 +1,56 @@
+{
+ "name": "TechLab",
+ "project": "beagleboard/capes",
+ "path": "beagleboard__capes/pocketbeagle/TechLab/kicad/TechLab.kicad_pcb",
+ "license": "CC-BY-SA-4.0 (Creative Commons Attribution-ShareAlike 4.0), in pocketbeagle/TechLab/LICENSE",
+ "license_checked": "2026-11-08",
+ "rank": 1017,
+ "score": 2388,
+ "level": "MEDIUM",
+ "complexity": {
+  "grade": 317,
+  "size": 192,
+  "features": 125
+ },
+ "features": [
+  "through_vias",
+  "slotted_holes",
+  "shaped_pads",
+  "drill_offsets",
+  "filled_zones",
+  "curved_outline",
+  "truetype_text",
+  "stackup",
+  "dielectric_properties",
+  "mask_silk_colours"
+ ],
+ "layers": 2,
+ "status": "pass",
+ "bad_design": null,
+ "chart_alt": "TechLab: stages 4 and 6 take 57% to 83% of a run. Simulation, GLB takes 20 s. Simulation, STEP takes 25 s. Simulation, STL takes 20 s. Simulation, OBJ takes 27 s. Visual, GLB takes 31 s. Visual, OBJ takes 38 s",
+ "rerun": {},
+ "tested": [
+  "2026-11-09",
+  "2026-11-09"
+ ],
+ "kese": [
+  "22fd70c"
+ ],
+ "kese_version": [
+  "2.4.0"
+ ],
+ "runs": [
+  [
+   "corpus",
+   "2026-11-09",
+   11000000000.0,
+   5400.0
+  ]
+ ],
+ "machine": {
+  "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz, 4 cores, 15 GB",
+  "geos": "3.14.1",
+  "python": "3.13.18",
+  "shapely": "2.2.0"
+ }
+}

@@ -1,0 +1,54 @@
+{
+ "name": "milight-hub-base",
+ "project": "usimd/milight-hub",
+ "path": "usimd__milight-hub/milight-hub-base.kicad_pcb",
+ "license": "CERN-OHL-S-2.0 (CERN Open Hardware Licence v2, Strongly Reciprocal)",
+ "license_checked": "2026-11-08",
+ "rank": 2382,
+ "score": 321,
+ "level": "LOW",
+ "complexity": {
+  "grade": 248,
+  "size": 143,
+  "features": 105
+ },
+ "features": [
+  "through_vias",
+  "shaped_pads",
+  "drill_offsets",
+  "filled_zones",
+  "stackup",
+  "dielectric_properties",
+  "copper_finish",
+  "mask_silk_colours"
+ ],
+ "layers": 2,
+ "status": "pass",
+ "bad_design": null,
+ "chart_alt": "milight-hub-base: stages 4 and 6 take 47% to 76% of a run. Simulation, GLB takes 2.3 s. Simulation, STEP takes 3.1 s. Simulation, STL takes 2.0 s. Simulation, OBJ takes 2.9 s. Visual, GLB takes 3.1 s. Visual, OBJ takes 3.7 s",
+ "rerun": {},
+ "tested": [
+  "2026-11-09",
+  "2026-11-09"
+ ],
+ "kese": [
+  "22fd70c"
+ ],
+ "kese_version": [
+  "2.4.0"
+ ],
+ "runs": [
+  [
+   "corpus",
+   "2026-11-09",
+   11000000000.0,
+   5400.0
+  ]
+ ],
+ "machine": {
+  "cpu": "Intel(R) Xeon(R) Processor @ 2.30GHz, 4 cores, 15 GB",
+  "geos": "3.14.1",
+  "python": "3.13.18",
+  "shapely": "2.2.0"
+ }
+}

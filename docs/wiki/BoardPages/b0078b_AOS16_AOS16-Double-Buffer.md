@@ -1,6 +1,6 @@
 # 78. AOS16 Double Buffer
 
-Board 78 of the 3,117 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 1](../CorpusTestingPages/Corpus-Testing-01.md#78-aos16-double-buffer).
+Board 78 of the 3,118 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 1](../CorpusTestingPages/Corpus-Testing-01.md#78-aos16-double-buffer).
 
 ![AOS16 Double Buffer: stages 4 and 6 take 49% to 84% of a run. Simulation, GLB takes 16 s. Simulation, STEP takes 21 s. Simulation, STL takes 16 s. Simulation, OBJ takes 26 s. Visual, GLB takes 22 s. Visual, OBJ takes 28 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b0078b_AOS16_AOS16-Double-Buffer/stages.webp)
 

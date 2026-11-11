@@ -1,6 +1,6 @@
 # 88. Memory Controller
 
-Board 88 of the 3,117 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 1](../CorpusTestingPages/Corpus-Testing-01.md#88-memory-controller).
+Board 88 of the 3,118 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 1](../CorpusTestingPages/Corpus-Testing-01.md#88-memory-controller).
 
 ![Memory Controller: stages 4 and 6 take 46% to 84% of a run. Simulation, GLB takes 17 s. Simulation, STEP takes 22 s. Simulation, STL takes 18 s. Simulation, OBJ takes 30 s. Visual, GLB takes 25 s. Visual, OBJ takes 32 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b0088b_AOS16_Memory-Controller/stages.webp)
 

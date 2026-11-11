@@ -1,0 +1,55 @@
+{
+ "name": "7-REV2-vout-protection",
+ "project": "DangerousPrototypes/BusPirate5-hardware",
+ "path": "DangerousPrototypes__BusPirate5-hardware/bus_pirate_pcb/development/7-REV2-prototype3a/7-REV2-vout-protection.kicad_pcb",
+ "license": "MIT (MIT License)",
+ "license_checked": "2026-11-08",
+ "rank": 482,
+ "score": 5359,
+ "level": "HIGH",
+ "complexity": {
+  "grade": 393,
+  "size": 273,
+  "features": 120
+ },
+ "features": [
+  "through_vias",
+  "slotted_holes",
+  "custom_pads",
+  "shaped_pads",
+  "filled_zones",
+  "copper_graphics",
+  "curved_outline",
+  "stackup",
+  "dielectric_properties"
+ ],
+ "layers": 4,
+ "status": "pass",
+ "bad_design": null,
+ "chart_alt": "7-REV2-vout-protection: stages 4 and 6 take 29% to 39% of a run. Simulation, GLB takes 4.0 s. Simulation, STEP takes 4.5 s. Simulation, STL takes 3.8 s. Simulation, OBJ takes 4.6 s. Visual, GLB takes 4.4 s. Visual, OBJ takes 4.8 s",
+ "rerun": {},
+ "tested": [
+  "2026-11-09",
+  "2026-11-09"
+ ],
+ "kese": [
+  "22fd70c"
+ ],
+ "kese_version": [
+  "2.4.0"
+ ],
+ "runs": [
+  [
+   "corpus",
+   "2026-11-09",
+   11000000000.0,
+   5400.0
+  ]
+ ],
+ "machine": {
+  "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz, 4 cores, 15 GB",
+  "geos": "3.14.1",
+  "python": "3.13.18",
+  "shapely": "2.2.0"
+ }
+}

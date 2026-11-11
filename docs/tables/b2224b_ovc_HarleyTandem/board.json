@@ -1,0 +1,49 @@
+{
+ "name": "HarleyTandem",
+ "project": "osrf/ovc",
+ "path": "osrf__ovc/ovc0/hardware/HarleyTandem/HarleyTandem.kicad_pcb",
+ "license": "Apache-2.0 (Apache License 2.0)",
+ "license_checked": "2026-11-08",
+ "rank": 323,
+ "score": 7697,
+ "level": "HIGH",
+ "complexity": {
+  "grade": 334,
+  "size": 289,
+  "features": 45
+ },
+ "features": [
+  "through_vias",
+  "filled_zones",
+  "curved_outline"
+ ],
+ "layers": 6,
+ "status": "pass",
+ "bad_design": null,
+ "chart_alt": "HarleyTandem: stages 4 and 6 take 49% to 81% of a run. Simulation, GLB takes 23 s. Simulation, STEP takes 28 s. Simulation, STL takes 24 s. Simulation, OBJ takes 36 s. Visual, GLB takes 36 s. Visual, OBJ takes 43 s",
+ "rerun": {},
+ "tested": [
+  "2026-11-09",
+  "2026-11-09"
+ ],
+ "kese": [
+  "22fd70c"
+ ],
+ "kese_version": [
+  "2.4.0"
+ ],
+ "runs": [
+  [
+   "corpus",
+   "2026-11-09",
+   11000000000.0,
+   5400.0
+  ]
+ ],
+ "machine": {
+  "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz, 4 cores, 15 GB",
+  "geos": "3.14.1",
+  "python": "3.13.18",
+  "shapely": "2.2.0"
+ }
+}

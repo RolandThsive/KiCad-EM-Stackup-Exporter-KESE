@@ -1,0 +1,49 @@
+{
+ "name": "2019-07-03_17:57:53_fpga_hat",
+ "project": "Wren6991/Snowflake-FPGA",
+ "path": "Wren6991__Snowflake-FPGA/timelapse/2019-07-03_17:57:53_fpga_hat.kicad_pcb",
+ "license": "Apache-2.0 (Apache License 2.0), in License",
+ "license_checked": "2026-11-08",
+ "rank": 1412,
+ "score": 1504,
+ "level": "MEDIUM",
+ "complexity": {
+  "grade": 287,
+  "size": 252,
+  "features": 35
+ },
+ "features": [
+  "through_vias",
+  "shaped_pads",
+  "curved_outline"
+ ],
+ "layers": 4,
+ "status": "pass",
+ "bad_design": null,
+ "chart_alt": "2019-07-03_17:57:53_fpga_hat: stages 4 and 6 take 58% to 84% of a run. Simulation, GLB takes 12 s. Simulation, STEP takes 14 s. Simulation, STL takes 12 s. Simulation, OBJ takes 16 s. Visual, GLB takes 16 s. Visual, OBJ takes 19 s",
+ "rerun": {},
+ "tested": [
+  "2026-11-09",
+  "2026-11-09"
+ ],
+ "kese": [
+  "22fd70c"
+ ],
+ "kese_version": [
+  "2.4.0"
+ ],
+ "runs": [
+  [
+   "corpus",
+   "2026-11-09",
+   11000000000.0,
+   5400.0
+  ]
+ ],
+ "machine": {
+  "cpu": "Intel(R) Xeon(R) Processor @ 2.30GHz, 4 cores, 15 GB",
+  "geos": "3.14.1",
+  "python": "3.13.18",
+  "shapely": "2.2.0"
+ }
+}

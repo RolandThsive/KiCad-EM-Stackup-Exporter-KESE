@@ -1,0 +1,52 @@
+{
+ "name": "OSO-SWAT-C1",
+ "project": "joeycastillo/Sensor-Watch",
+ "path": "joeycastillo__Sensor-Watch/PCB/Main Boards/OSO-SWAT-C1/OSO-SWAT-C1.kicad_pcb",
+ "license": "CC-BY-SA-4.0 (Creative Commons Attribution-ShareAlike 4.0), in LICENSE.md",
+ "license_checked": "2026-11-08",
+ "rank": 1769,
+ "score": 950,
+ "level": "LOW",
+ "complexity": {
+  "grade": 301,
+  "size": 221,
+  "features": 80
+ },
+ "features": [
+  "through_vias",
+  "shaped_pads",
+  "filled_zones",
+  "stackup",
+  "dielectric_properties",
+  "mask_silk_colours"
+ ],
+ "layers": 4,
+ "status": "pass",
+ "bad_design": null,
+ "chart_alt": "OSO-SWAT-C1: stages 4 and 6 take 48% to 77% of a run. Simulation, GLB takes 7.6 s. Simulation, STEP takes 9.3 s. Simulation, STL takes 7.5 s. Simulation, OBJ takes 11 s. Visual, GLB takes 11 s. Visual, OBJ takes 14 s",
+ "rerun": {},
+ "tested": [
+  "2026-11-09",
+  "2026-11-09"
+ ],
+ "kese": [
+  "22fd70c"
+ ],
+ "kese_version": [
+  "2.4.0"
+ ],
+ "runs": [
+  [
+   "corpus",
+   "2026-11-09",
+   11000000000.0,
+   5400.0
+  ]
+ ],
+ "machine": {
+  "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz, 4 cores, 15 GB",
+  "geos": "3.14.1",
+  "python": "3.13.18",
+  "shapely": "2.2.0"
+ }
+}
