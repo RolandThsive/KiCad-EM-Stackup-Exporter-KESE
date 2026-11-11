@@ -16,7 +16,9 @@ format a run, with the Verifier on.
   their folders, by itself on each push.
 - [`corpus-testing/engine/maker/`](corpus-testing/engine/maker): makes a board's folders from its runs.
 - [`corpus-testing/data/`](corpus-testing/data): the record of every run and the boards' complexity list.
+- [`docs/wiki/Credits.md`](docs/wiki/Credits.md) and [`credits.txt`](credits.txt): the projects whose boards were
+  used, with their licenses.
 
 To add a board, push its two folders named `<repo>_<board>`; to take one out, delete them. The engine does the rest.
 
-No board, nor any part of one, is in this branch: the boards belong to their authors ([Credits](https://github.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/wiki/Credits)).
+No board, nor any part of one, is in this branch: the boards belong to their authors ([Credits](docs/wiki/Credits.md)).

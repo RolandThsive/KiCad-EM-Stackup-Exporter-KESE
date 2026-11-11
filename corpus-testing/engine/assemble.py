@@ -235,7 +235,7 @@ if other:
 idx.append("\n| Previous | Next |\n|:---|---:|\n| [Feature Test Collection](Feature-Test-Collection.md) "
            "| [Parameter Reference](Parameter-Reference.md) |")
 # the pages of KESE's wiki live on the main branch, not beside this one: linked there
-text = re.sub(r"\]\(((?!CorpusTestingPages/|BoardPages/)[A-Za-z0-9-]+)\.md(#[^)]*)?\)",
+text = re.sub(r"\]\(((?!CorpusTestingPages/|BoardPages/|Credits\.md)[A-Za-z0-9-]+)\.md(#[^)]*)?\)",
               lambda m: f"]({WIKI_URL}{m.group(1)}{m.group(2) or ''})", "\n".join(idx))
 write(WIKI / "Corpus-Testing.md", text + "\n")
 print(f"{renamed} folders renamed; {len(B):,} boards on {NPAGES} pages; {len(ok):,} pass all six runs; {len(bad)} bad design, {len(mem)} memory, "
