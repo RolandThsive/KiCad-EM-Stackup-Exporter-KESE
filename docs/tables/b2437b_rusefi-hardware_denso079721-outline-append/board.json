@@ -1,0 +1,55 @@
+{
+ "name": "denso079721_outline-append",
+ "project": "rusefi/rusefi-hardware",
+ "path": "rusefi__rusefi-hardware/classic-designs/rusefi_hardware_history/Breakout_TLE6244_rev00.10/rusefi_lib/outlines/denso079721_outline-append.kicad_pcb",
+ "license": "No license found",
+ "license_checked": "2026-11-08",
+ "rank": 482,
+ "score": 5132,
+ "level": "HIGH",
+ "complexity": {
+  "grade": 302,
+  "size": 257,
+  "features": 45
+ },
+ "features": [
+  "through_vias",
+  "filled_zones",
+  "curved_outline"
+ ],
+ "layers": 2,
+ "status": "bad_design",
+ "bad_design": "a plated hole with no net overlaps a GND plated hole at (214.30, 108.84) mm",
+ "chart_alt": "denso079721_outline-append: stages 4 and 6 take 58% to 83% of a run. Simulation, GLB takes 46 s. Simulation, STEP takes 54 s. Simulation, STL takes 46 s. Simulation, OBJ takes 62 s. Visual, GLB takes 64 s. Visual, OBJ takes 77 s",
+ "rerun": {},
+ "tested": [
+  "2026-11-09",
+  "2026-11-09"
+ ],
+ "kese": [
+  "22fd70c"
+ ],
+ "kese_version": [
+  "2.4.0"
+ ],
+ "runs": [
+  [
+   "corpus",
+   "2026-11-09",
+   11000000000.0,
+   5400.0
+  ],
+  [
+   "fixed",
+   "2026-11-10",
+   11000000000.0,
+   5400.0
+  ]
+ ],
+ "machine": {
+  "cpu": "Intel(R) Xeon(R) Processor @ 2.30GHz, 4 cores, 15 GB",
+  "geos": "3.14.1",
+  "python": "3.13.18",
+  "shapely": "2.2.0"
+ }
+}

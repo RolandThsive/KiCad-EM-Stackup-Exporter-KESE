@@ -1,6 +1,6 @@
 # 334. cm4-lvds-adapter
 
-Board 334 of the 3,105 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 4](../CorpusTestingPages/Corpus-Testing-04.md#334-cm4-lvds-adapter).
+Board 334 of the 3,106 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 4](../CorpusTestingPages/Corpus-Testing-04.md#334-cm4-lvds-adapter).
 
 ![cm4-lvds-adapter: stages 4 and 6 take 42% to 75% of a run. Simulation, GLB takes 19 s. Simulation, STEP takes 23 s. Simulation, STL takes 19 s. Simulation, OBJ takes 30 s. Visual, GLB takes 29 s. Visual, OBJ takes 36 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b0334b_cm4-baseboard-lvds-adapter_cm4-lvds-adapter/stages.webp)
 

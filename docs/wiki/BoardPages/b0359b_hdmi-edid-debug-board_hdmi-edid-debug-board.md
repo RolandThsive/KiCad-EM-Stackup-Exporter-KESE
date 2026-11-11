@@ -1,6 +1,6 @@
 # 359. hdmi-edid-debug-board
 
-Board 359 of the 3,105 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 4](../CorpusTestingPages/Corpus-Testing-04.md#359-hdmi-edid-debug-board).
+Board 359 of the 3,106 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 4](../CorpusTestingPages/Corpus-Testing-04.md#359-hdmi-edid-debug-board).
 
 ![hdmi-edid-debug-board: stages 4 and 6 take 47% to 78% of a run. Simulation, GLB takes 14 s. Simulation, STEP takes 17 s. Simulation, STL takes 14 s. Simulation, OBJ takes 21 s. Visual, GLB takes 20 s. Visual, OBJ takes 25 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b0359b_hdmi-edid-debug-board_hdmi-edid-debug-board/stages.webp)
 

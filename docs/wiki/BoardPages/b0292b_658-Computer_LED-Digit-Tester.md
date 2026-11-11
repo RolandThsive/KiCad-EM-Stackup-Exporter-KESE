@@ -1,6 +1,6 @@
 # 292. LED Digit Tester
 
-Board 292 of the 3,105 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 3](../CorpusTestingPages/Corpus-Testing-03.md#292-led-digit-tester).
+Board 292 of the 3,106 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 3](../CorpusTestingPages/Corpus-Testing-03.md#292-led-digit-tester).
 
 ![LED Digit Tester: stages 4 and 6 take 49% to 83% of a run. Simulation, GLB takes 5.6 s. Simulation, STEP takes 6.9 s. Simulation, STL takes 5.6 s. Simulation, OBJ takes 8.6 s. Visual, GLB takes 9.1 s. Visual, OBJ takes 11 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b0292b_658-Computer_LED-Digit-Tester/stages.webp)
 

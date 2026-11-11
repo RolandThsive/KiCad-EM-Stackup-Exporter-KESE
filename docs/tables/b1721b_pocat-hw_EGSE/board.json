@@ -1,0 +1,53 @@
+{
+ "name": "EGSE",
+ "project": "nanosatlab/pocat-hw",
+ "path": "nanosatlab__pocat-hw/pq_egse/EGSE.kicad_pcb",
+ "license": "No license found",
+ "license_checked": "2026-11-08",
+ "rank": 853,
+ "score": 2967,
+ "level": "MEDIUM",
+ "complexity": {
+  "grade": 323,
+  "size": 223,
+  "features": 100
+ },
+ "features": [
+  "through_vias",
+  "shaped_pads",
+  "filled_zones",
+  "curved_outline",
+  "truetype_text",
+  "stackup",
+  "dielectric_properties"
+ ],
+ "layers": 6,
+ "status": "pass",
+ "bad_design": null,
+ "chart_alt": "EGSE: stages 4 and 6 take 47% to 80% of a run. Simulation, GLB takes 65 s. Simulation, STEP takes 79 s. Simulation, STL takes 64 s. Simulation, OBJ takes 2 min. Visual, GLB takes 85 s. Visual, OBJ takes 2 min",
+ "rerun": {},
+ "tested": [
+  "2026-11-09",
+  "2026-11-09"
+ ],
+ "kese": [
+  "22fd70c"
+ ],
+ "kese_version": [
+  "2.4.0"
+ ],
+ "runs": [
+  [
+   "corpus",
+   "2026-11-09",
+   11000000000.0,
+   5400.0
+  ]
+ ],
+ "machine": {
+  "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz, 4 cores, 15 GB",
+  "geos": "3.14.1",
+  "python": "3.13.18",
+  "shapely": "2.2.0"
+ }
+}

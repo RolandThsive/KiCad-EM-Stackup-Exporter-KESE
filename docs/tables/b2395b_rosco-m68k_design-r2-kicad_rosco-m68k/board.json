@@ -1,0 +1,57 @@
+{
+ "name": "rosco_m68k",
+ "project": "rosco-m68k/rosco_m68k",
+ "path": "rosco-m68k__rosco_m68k/design/r2/kicad/rosco_m68k.kicad_pcb",
+ "license": "MIT (MIT License), in LICENSE",
+ "license_checked": "2026-11-08",
+ "rank": 474,
+ "score": 5298,
+ "level": "HIGH",
+ "complexity": {
+  "grade": 422,
+  "size": 272,
+  "features": 150
+ },
+ "features": [
+  "through_vias",
+  "slotted_holes",
+  "custom_pads",
+  "shaped_pads",
+  "filled_zones",
+  "copper_graphics",
+  "curved_outline",
+  "knockout_text",
+  "truetype_text",
+  "stackup",
+  "dielectric_properties"
+ ],
+ "layers": 4,
+ "status": "pass",
+ "bad_design": null,
+ "chart_alt": "rosco_m68k: stages 4 and 6 take 49% to 80% of a run. Simulation, GLB takes 43 s. Simulation, STEP takes 52 s. Simulation, STL takes 43 s. Simulation, OBJ takes 66 s. Visual, GLB takes 66 s. Visual, OBJ takes 83 s",
+ "rerun": {},
+ "tested": [
+  "2026-11-09",
+  "2026-11-09"
+ ],
+ "kese": [
+  "22fd70c"
+ ],
+ "kese_version": [
+  "2.4.0"
+ ],
+ "runs": [
+  [
+   "corpus",
+   "2026-11-09",
+   11000000000.0,
+   5400.0
+  ]
+ ],
+ "machine": {
+  "cpu": "Intel(R) Xeon(R) Processor @ 2.30GHz, 4 cores, 15 GB",
+  "geos": "3.14.1",
+  "python": "3.13.18",
+  "shapely": "2.2.0"
+ }
+}

@@ -1,0 +1,73 @@
+{
+ "name": "Marble",
+ "project": "BerkeleyLab/Marble",
+ "path": "BerkeleyLab__Marble/design/Marble.kicad_pcb",
+ "license": "As README.md states it: \"Marble Copyright (c) 2019-2023, The Regents of the University of California, through Lawrence Berkeley National Laboratory (subject to receipt of any required approvals from the U.S. Department of Energy). All rights reserved. This documentation describes Marble and is licensed under the CERN OHL v1.2. NOTICE. This documentation was developed under funding from the U.S.\"",
+ "license_checked": "2026-11-08",
+ "rank": 8,
+ "score": 50534,
+ "level": "EXTREME",
+ "complexity": {
+  "grade": 455,
+  "size": 365,
+  "features": 90
+ },
+ "features": [
+  "through_vias",
+  "slotted_holes",
+  "shaped_pads",
+  "filled_zones",
+  "stackup",
+  "dielectric_properties",
+  "mask_silk_colours"
+ ],
+ "layers": 12,
+ "status": "pass",
+ "bad_design": null,
+ "chart_alt": "Marble: stages 4 and 6 take 33% to 81% of a run. Simulation, GLB takes 5 min. Simulation, STEP takes 7 min. Simulation, STL takes 6 min. Simulation, OBJ takes 16 min. Visual, GLB takes 8 min. Visual, OBJ takes 8 min",
+ "rerun": {
+  "cap": [
+   "Visual, OBJ"
+  ],
+  "nocap": [
+   "Simulation, OBJ"
+  ]
+ },
+ "tested": [
+  "2026-11-09",
+  "2026-11-11"
+ ],
+ "kese": [
+  "22fd70c",
+  "39950e6"
+ ],
+ "kese_version": [
+  "2.4.0"
+ ],
+ "runs": [
+  [
+   "cap",
+   "2026-11-10",
+   14500000000.0,
+   5400.0
+  ],
+  [
+   "corpus",
+   "2026-11-09",
+   11000000000.0,
+   5400.0
+  ],
+  [
+   "nocap",
+   "2026-11-11",
+   null,
+   null
+  ]
+ ],
+ "machine": {
+  "cpu": "Intel(R) Xeon(R) Processor @ 2.30GHz, 4 cores, 15 GB",
+  "geos": "3.14.1",
+  "python": "3.13.18",
+  "shapely": "2.2.0"
+ }
+}

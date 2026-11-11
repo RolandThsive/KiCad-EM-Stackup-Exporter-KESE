@@ -1,6 +1,6 @@
 # 268. Video Counter 12bit
 
-Board 268 of the 3,105 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 3](../CorpusTestingPages/Corpus-Testing-03.md#268-video-counter-12bit).
+Board 268 of the 3,106 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 3](../CorpusTestingPages/Corpus-Testing-03.md#268-video-counter-12bit).
 
 ![Video Counter 12bit: stages 4 and 6 take 50% to 83% of a run. Simulation, GLB takes 6.8 s. Simulation, STEP takes 8.2 s. Simulation, STL takes 6.4 s. Simulation, OBJ takes 9.7 s. Visual, GLB takes 9.3 s. Visual, OBJ takes 12 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b0268b_658-Computer_Video-Counter-12bit/stages.webp)
 

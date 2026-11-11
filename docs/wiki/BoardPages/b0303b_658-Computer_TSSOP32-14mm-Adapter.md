@@ -1,6 +1,6 @@
 # 303. TSSOP32-14mm Adapter
 
-Board 303 of the 3,105 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 3](../CorpusTestingPages/Corpus-Testing-03.md#303-tssop32-14mm-adapter).
+Board 303 of the 3,106 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 3](../CorpusTestingPages/Corpus-Testing-03.md#303-tssop32-14mm-adapter).
 
 ![TSSOP32-14mm Adapter: stages 4 and 6 take 50% to 80% of a run. Simulation, GLB takes 2.6 s. Simulation, STEP takes 3.4 s. Simulation, STL takes 2.5 s. Simulation, OBJ takes 3.4 s. Visual, GLB takes 3.5 s. Visual, OBJ takes 4.3 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b0303b_658-Computer_TSSOP32-14mm-Adapter/stages.webp)
 

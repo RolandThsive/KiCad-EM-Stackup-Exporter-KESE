@@ -1,0 +1,49 @@
+{
+ "name": "TRS80I-Charmap",
+ "project": "Board-Folk/TRS80IJP",
+ "path": "Board-Folk__TRS80IJP/Extras/Charmap/Kicad/TRS80I-Charmap.kicad_pcb",
+ "license": "As README.md states it: \"As the product of this project is a replica of a proprietary product, the the author makes no claim of copyright to the schematics nor PCB layouts and releases these into the public domain, solely for the purposes of study and historical preservation.\"",
+ "license_checked": "2026-11-08",
+ "rank": 2667,
+ "score": 103,
+ "level": "SIMPLE",
+ "complexity": {
+  "grade": 163,
+  "size": 123,
+  "features": 40
+ },
+ "features": [
+  "shaped_pads",
+  "stackup",
+  "dielectric_properties"
+ ],
+ "layers": 2,
+ "status": "pass",
+ "bad_design": null,
+ "chart_alt": "TRS80I-Charmap: stages 4 and 6 take 48% to 81% of a run. Simulation, GLB takes 3.5 s. Simulation, STEP takes 4.6 s. Simulation, STL takes 3.4 s. Simulation, OBJ takes 5.1 s. Visual, GLB takes 4.9 s. Visual, OBJ takes 5.7 s",
+ "rerun": {},
+ "tested": [
+  "2026-11-09",
+  "2026-11-09"
+ ],
+ "kese": [
+  "22fd70c"
+ ],
+ "kese_version": [
+  "2.4.0"
+ ],
+ "runs": [
+  [
+   "corpus",
+   "2026-11-09",
+   11000000000.0,
+   5400.0
+  ]
+ ],
+ "machine": {
+  "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz, 4 cores, 15 GB",
+  "geos": "3.14.1",
+  "python": "3.13.18",
+  "shapely": "2.2.0"
+ }
+}
