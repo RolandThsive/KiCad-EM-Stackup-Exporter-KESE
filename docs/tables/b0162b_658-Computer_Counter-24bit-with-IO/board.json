@@ -1,0 +1,51 @@
+{
+ "name": "Counter 24bit with IO",
+ "project": "andrewpaterson/658-Computer",
+ "path": "andrewpaterson__658-Computer/Kicad/Computer/Component Boards/Counter 24bit with IO/Counter 24bit with IO.kicad_pcb",
+ "license": "No license found",
+ "license_checked": "2026-11-08",
+ "rank": 824,
+ "score": 3089,
+ "level": "HIGH",
+ "complexity": {
+  "grade": 256,
+  "size": 186,
+  "features": 70
+ },
+ "features": [
+  "through_vias",
+  "shaped_pads",
+  "knockout_text",
+  "stackup",
+  "dielectric_properties"
+ ],
+ "layers": 2,
+ "status": "pass",
+ "bad_design": null,
+ "chart_alt": "Counter 24bit with IO: stages 4 and 6 take 56% to 83% of a run. Simulation, GLB takes 13 s. Simulation, STEP takes 15 s. Simulation, STL takes 13 s. Simulation, OBJ takes 17 s. Visual, GLB takes 19 s. Visual, OBJ takes 23 s",
+ "rerun": {},
+ "tested": [
+  "2026-11-09",
+  "2026-11-09"
+ ],
+ "kese": [
+  "22fd70c"
+ ],
+ "kese_version": [
+  "2.4.0"
+ ],
+ "runs": [
+  [
+   "corpus",
+   "2026-11-09",
+   11000000000.0,
+   5400.0
+  ]
+ ],
+ "machine": {
+  "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz, 4 cores, 15 GB",
+  "geos": "3.14.1",
+  "python": "3.13.18",
+  "shapely": "2.2.0"
+ }
+}

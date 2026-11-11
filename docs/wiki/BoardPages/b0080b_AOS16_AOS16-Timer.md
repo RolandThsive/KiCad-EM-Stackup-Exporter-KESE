@@ -1,0 +1,48 @@
+# 80. AOS16 Timer
+
+Board 80 of the 3,103 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 1](../CorpusTestingPages/Corpus-Testing-01.md#80-aos16-timer).
+
+![AOS16 Timer: stages 4 and 6 take 50% to 81% of a run. Simulation, GLB takes 3.2 s. Simulation, STEP takes 4.3 s. Simulation, STL takes 2.8 s. Simulation, OBJ takes 4.0 s. Visual, GLB takes 4.0 s. Visual, OBJ takes 5.3 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b0080b_AOS16_AOS16-Timer/stages.webp)
+
+| Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
+|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
+| Simulation, GLB | 0.2 | 0.2 | 0.8 | 0.2&nbsp;ms | 1.5 | 56&nbsp;ms | 0.1 | 0.3 | 3.2 |
+| Simulation, STEP | 0.2 | 0.2 | 0.9 | 0.2&nbsp;ms | 1.2 | 1.5 | 0.1 | 0.2 | 4.3 |
+| Simulation, STL | 0.2 | 0.2 | 0.7 | 0.2&nbsp;ms | 1.3 | 74&nbsp;ms | 0.1 | 0.2 | 2.8 |
+| Simulation, OBJ | 0.2 | 0.2 | 0.9 | 0.2&nbsp;ms | 1.3 | 1.1 | 0.1 | 0.2 | 4.0 |
+| Visual, GLB | 0.1 | 0.2 | 0.8 | 0.3&nbsp;ms | 2.4 | 29&nbsp;ms | 0.2 | 0.2 | 4.0 |
+| Visual, OBJ | 0.1 | 0.2 | 0.8 | 0.3&nbsp;ms | 2.5 | 1.0 | 0.3 | 0.2 | 5.3 |
+
+<table align="center"><tr><td valign="top">
+
+| Board | Repo: [AJain9199/AOS16](https://github.com/AJain9199/AOS16)<br>Board: `AOS16 Timer.kicad_pcb` |
+|---|---|
+| Folder | AOS16 Timer |
+| Complexity | 201&nbsp;/&nbsp;1000 (size&nbsp;146, features&nbsp;55) |
+| KESE&nbsp;features | through vias, rounded,<br>trapezoid or chamfered pads,<br>filled zones, curved board outline |
+| Tested | 9th November 2026 |
+| Copper&nbsp;layers | 2 |
+| File&nbsp;format | KiCad 8 (20240108) |
+| Parts,&nbsp;tracks,&nbsp;vias | 30, 198, 25 |
+| Triangles,&nbsp;simulation | 250,036 in 39 parts |
+| Verifier | PASS in all six runs |
+
+</td><td valign="top">
+
+<table>
+<tr><th>File<br>type</th><th>File<br>size</th><th>Peak memory<br>used</th></tr>
+<tr><th colspan="3" align="left">Simulation</th></tr>
+<tr><td>GLB</td><td align="right">8.6&nbsp;MB</td><td align="right">240&nbsp;MB</td></tr>
+<tr><td>STEP</td><td align="right">39&nbsp;MB</td><td align="right">255&nbsp;MB</td></tr>
+<tr><td>STL</td><td align="right">13&nbsp;MB</td><td align="right">234&nbsp;MB</td></tr>
+<tr><td>OBJ</td><td align="right">25&nbsp;MB</td><td align="right">237&nbsp;MB</td></tr>
+<tr><th colspan="3" align="left">Visual</th></tr>
+<tr><td>GLB</td><td align="right">6.8&nbsp;MB</td><td align="right">241&nbsp;MB</td></tr>
+<tr><td>OBJ</td><td align="right">20&nbsp;MB</td><td align="right">244&nbsp;MB</td></tr>
+</table>
+
+</td></tr></table>
+
+| Previous | Next |
+|:---|---:|
+| [79. AOS16 Register](b0079b_AOS16_AOS16-Register.md) | [81. Bus Connector](b0081b_AOS16_Bus-Connector.md) |

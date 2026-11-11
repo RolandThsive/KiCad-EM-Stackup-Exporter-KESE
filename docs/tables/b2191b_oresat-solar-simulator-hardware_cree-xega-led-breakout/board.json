@@ -1,0 +1,48 @@
+{
+ "name": "cree-xega-led-breakout",
+ "project": "oresat/oresat-solar-simulator-hardware",
+ "path": "oresat__oresat-solar-simulator-hardware/boards/cree-xega-led-breakout/cree-xega-led-breakout.kicad_pcb",
+ "license": "CERN-OHL-S-2.0 (CERN Open Hardware Licence v2, Strongly Reciprocal)",
+ "license_checked": "2026-11-08",
+ "rank": 2931,
+ "score": 8,
+ "level": "SIMPLE",
+ "complexity": {
+  "grade": 100,
+  "size": 70,
+  "features": 30
+ },
+ "features": [
+  "filled_zones",
+  "curved_outline"
+ ],
+ "layers": 2,
+ "status": "pass",
+ "bad_design": null,
+ "chart_alt": "cree-xega-led-breakout: stages 4 and 6 take 44% to 57% of a run. Simulation, GLB takes 0.8 s. Simulation, STEP takes 1.0 s. Simulation, STL takes 0.7 s. Simulation, OBJ takes 1.0 s. Visual, GLB takes 0.9 s. Visual, OBJ takes 1.0 s",
+ "rerun": {},
+ "tested": [
+  "2026-11-09",
+  "2026-11-09"
+ ],
+ "kese": [
+  "22fd70c"
+ ],
+ "kese_version": [
+  "2.4.0"
+ ],
+ "runs": [
+  [
+   "corpus",
+   "2026-11-09",
+   11000000000.0,
+   5400.0
+  ]
+ ],
+ "machine": {
+  "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz, 4 cores, 15 GB",
+  "geos": "3.14.1",
+  "python": "3.13.18",
+  "shapely": "2.2.0"
+ }
+}

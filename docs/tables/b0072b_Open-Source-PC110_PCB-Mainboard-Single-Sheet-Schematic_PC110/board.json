@@ -1,0 +1,78 @@
+{
+ "name": "PC110",
+ "project": "ahmadexp/Open-Source-PC110",
+ "path": "ahmadexp__Open-Source-PC110/PCB/Mainboard/Single-Sheet-Schematic/PC110.kicad_pcb",
+ "license": "CC-BY-NC-4.0 (Creative Commons Attribution-NonCommercial 4.0), in LICENSE",
+ "license_checked": "2026-11-08",
+ "rank": 3,
+ "score": 65812,
+ "level": "EXTREME",
+ "complexity": {
+  "grade": 563,
+  "size": 378,
+  "features": 185
+ },
+ "features": [
+  "through_vias",
+  "blind_buried_vias",
+  "slotted_holes",
+  "custom_pads",
+  "shaped_pads",
+  "filled_zones",
+  "copper_graphics",
+  "copper_text",
+  "curved_outline",
+  "knockout_text",
+  "stackup",
+  "dielectric_properties"
+ ],
+ "layers": 10,
+ "status": "pass",
+ "bad_design": null,
+ "chart_alt": "PC110: stages 4 and 6 take 41% to 84% of a run. Simulation, GLB takes 6 min. Simulation, STEP takes 6 min. Simulation, STL takes 5 min. Simulation, OBJ takes 9 min. Visual, GLB takes 9 min. Visual, OBJ takes 9 min",
+ "rerun": {
+  "cap": [
+   "Visual, OBJ"
+  ],
+  "nocap": [
+   "Simulation, OBJ"
+  ]
+ },
+ "tested": [
+  "2026-11-09",
+  "2026-11-11"
+ ],
+ "kese": [
+  "22fd70c",
+  "39950e6"
+ ],
+ "kese_version": [
+  "2.4.0"
+ ],
+ "runs": [
+  [
+   "cap",
+   "2026-11-10",
+   14500000000.0,
+   5400.0
+  ],
+  [
+   "corpus",
+   "2026-11-09",
+   11000000000.0,
+   5400.0
+  ],
+  [
+   "nocap",
+   "2026-11-11",
+   null,
+   null
+  ]
+ ],
+ "machine": {
+  "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz, 4 cores, 15 GB",
+  "geos": "3.14.1",
+  "python": "3.13.18",
+  "shapely": "2.2.0"
+ }
+}

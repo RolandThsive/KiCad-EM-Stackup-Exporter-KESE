@@ -1,0 +1,49 @@
+{
+ "name": "PicoEVB",
+ "project": "RHSResearchLLC/PicoEVB",
+ "path": "RHSResearchLLC__PicoEVB/Hardware/board_design/PicoEVB.kicad_pcb",
+ "license": "GPL-3.0 (GNU GPL v3.0), in Hardware/LICENSE",
+ "license_checked": "2026-11-08",
+ "rank": 1165,
+ "score": 1957,
+ "level": "MEDIUM",
+ "complexity": {
+  "grade": 251,
+  "size": 206,
+  "features": 45
+ },
+ "features": [
+  "through_vias",
+  "filled_zones",
+  "curved_outline"
+ ],
+ "layers": 4,
+ "status": "pass",
+ "bad_design": null,
+ "chart_alt": "PicoEVB: stages 4 and 6 take 56% to 87% of a run. Simulation, GLB takes 20 s. Simulation, STEP takes 25 s. Simulation, STL takes 21 s. Simulation, OBJ takes 30 s. Visual, GLB takes 35 s. Visual, OBJ takes 42 s",
+ "rerun": {},
+ "tested": [
+  "2026-11-09",
+  "2026-11-09"
+ ],
+ "kese": [
+  "22fd70c"
+ ],
+ "kese_version": [
+  "2.4.0"
+ ],
+ "runs": [
+  [
+   "corpus",
+   "2026-11-09",
+   11000000000.0,
+   5400.0
+  ]
+ ],
+ "machine": {
+  "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz, 4 cores, 15 GB",
+  "geos": "3.14.1",
+  "python": "3.13.18",
+  "shapely": "2.2.0"
+ }
+}

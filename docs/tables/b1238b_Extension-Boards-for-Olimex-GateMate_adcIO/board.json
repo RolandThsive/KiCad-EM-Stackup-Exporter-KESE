@@ -1,0 +1,54 @@
+{
+ "name": "adcIO",
+ "project": "intergalaktik/Extension_Boards_for_Olimex_GateMate",
+ "path": "intergalaktik__Extension_Boards_for_Olimex_GateMate/adcIO/adcIO.kicad_pcb",
+ "license": "CERN-OHL-S-2.0 (CERN Open Hardware Licence v2, Strongly Reciprocal), in LICENSE.md, GamePad_I2S_audio_Buttons/LICENSE.md, GamePad_I2S_audio/LICENSE.md and others; GPL-3.0 (GNU GPL v3.0), in ethIO/LICENSE.md",
+ "license_checked": "2026-11-08",
+ "rank": 2188,
+ "score": 482,
+ "level": "LOW",
+ "complexity": {
+  "grade": 286,
+  "size": 171,
+  "features": 115
+ },
+ "features": [
+  "through_vias",
+  "shaped_pads",
+  "filled_zones",
+  "curved_outline",
+  "knockout_text",
+  "stackup",
+  "dielectric_properties",
+  "copper_finish"
+ ],
+ "layers": 4,
+ "status": "pass",
+ "bad_design": null,
+ "chart_alt": "adcIO: stages 4 and 6 take 46% to 80% of a run. Simulation, GLB takes 5.4 s. Simulation, STEP takes 7.1 s. Simulation, STL takes 5.3 s. Simulation, OBJ takes 8.2 s. Visual, GLB takes 8.3 s. Visual, OBJ takes 10 s",
+ "rerun": {},
+ "tested": [
+  "2026-11-09",
+  "2026-11-09"
+ ],
+ "kese": [
+  "22fd70c"
+ ],
+ "kese_version": [
+  "2.4.0"
+ ],
+ "runs": [
+  [
+   "corpus",
+   "2026-11-09",
+   11000000000.0,
+   5400.0
+  ]
+ ],
+ "machine": {
+  "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz, 4 cores, 15 GB",
+  "geos": "3.14.1",
+  "python": "3.13.18",
+  "shapely": "2.2.0"
+ }
+}

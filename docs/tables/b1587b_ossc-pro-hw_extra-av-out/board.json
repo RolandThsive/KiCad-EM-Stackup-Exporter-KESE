@@ -1,0 +1,50 @@
+{
+ "name": "extra_av_out",
+ "project": "marqs85/ossc_pro_hw",
+ "path": "marqs85__ossc_pro_hw/expansions/extra_av_out/extra_av_out.kicad_pcb",
+ "license": "CERN-OHL-P-2.0 (CERN Open Hardware Licence v2, Permissive)",
+ "license_checked": "2026-11-08",
+ "rank": 1168,
+ "score": 1954,
+ "level": "MEDIUM",
+ "complexity": {
+  "grade": 297,
+  "size": 242,
+  "features": 55
+ },
+ "features": [
+  "through_vias",
+  "slotted_holes",
+  "shaped_pads",
+  "filled_zones"
+ ],
+ "layers": 4,
+ "status": "pass",
+ "bad_design": null,
+ "chart_alt": "extra_av_out: stages 4 and 6 take 48% to 83% of a run. Simulation, GLB takes 18 s. Simulation, STEP takes 22 s. Simulation, STL takes 18 s. Simulation, OBJ takes 28 s. Visual, GLB takes 25 s. Visual, OBJ takes 32 s",
+ "rerun": {},
+ "tested": [
+  "2026-11-09",
+  "2026-11-09"
+ ],
+ "kese": [
+  "22fd70c"
+ ],
+ "kese_version": [
+  "2.4.0"
+ ],
+ "runs": [
+  [
+   "corpus",
+   "2026-11-09",
+   11000000000.0,
+   5400.0
+  ]
+ ],
+ "machine": {
+  "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz, 4 cores, 15 GB",
+  "geos": "3.14.1",
+  "python": "3.13.18",
+  "shapely": "2.2.0"
+ }
+}

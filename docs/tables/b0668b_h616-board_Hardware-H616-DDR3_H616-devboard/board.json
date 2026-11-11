@@ -1,0 +1,55 @@
+{
+ "name": "H616_devboard",
+ "project": "bogdan8266/h616-board",
+ "path": "bogdan8266__h616-board/Hardware/H616_DDR3/H616_devboard.kicad_pcb",
+ "license": "CERN-OHL-P-2.0 (CERN Open Hardware Licence v2, Permissive)",
+ "license_checked": "2026-11-08",
+ "rank": 763,
+ "score": 3404,
+ "level": "HIGH",
+ "complexity": {
+  "grade": 412,
+  "size": 297,
+  "features": 115
+ },
+ "features": [
+  "through_vias",
+  "slotted_holes",
+  "shaped_pads",
+  "drill_offsets",
+  "arc_tracks",
+  "copper_text",
+  "stackup",
+  "dielectric_properties",
+  "copper_finish"
+ ],
+ "layers": 8,
+ "status": "pass",
+ "bad_design": null,
+ "chart_alt": "H616_devboard: stages 4 and 6 take 48% to 87% of a run. Simulation, GLB takes 30 s. Simulation, STEP takes 38 s. Simulation, STL takes 31 s. Simulation, OBJ takes 50 s. Visual, GLB takes 55 s. Visual, OBJ takes 67 s",
+ "rerun": {},
+ "tested": [
+  "2026-11-09",
+  "2026-11-09"
+ ],
+ "kese": [
+  "22fd70c"
+ ],
+ "kese_version": [
+  "2.4.0"
+ ],
+ "runs": [
+  [
+   "corpus",
+   "2026-11-09",
+   11000000000.0,
+   5400.0
+  ]
+ ],
+ "machine": {
+  "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz, 4 cores, 15 GB",
+  "geos": "3.14.1",
+  "python": "3.13.18",
+  "shapely": "2.2.0"
+ }
+}
