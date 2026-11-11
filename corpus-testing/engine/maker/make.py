@@ -36,7 +36,8 @@ def status(b, parts):
     if b["rank"] in BAD_DESIGN: return "bad_design"
     runs = [run_of(b["rank"], k) for k in KINDS]
     if any(d and not d["ok"] and (d.get("capped") or d["rc"] == -9) for d in runs): return "memory"
-    return "failed"
+    if any(d and not d["ok"] and d["timeout"] for d in runs): return "timeout"
+    return "failed"                                   # a fault of KESE: neither the file nor a limit of the measurement
 
 
 def limits(x):

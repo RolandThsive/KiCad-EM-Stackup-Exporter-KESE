@@ -299,20 +299,26 @@ for k in range(1, NPAGES + 1):
                    f"| {len({m['project'] for m in g})} | {sum(1 for m in g if m['status'] == 'pass')} |")
 bad = [m for m in B if m["status"] == "bad_design"]
 mem = [m for m in B if m["status"] == "memory"]
+slow = [m for m in B if m["status"] == "timeout"]
 other = [m for m in B if m["status"] == "failed"]
+boards = lambda g: f"{len(g):,} board" + ("" if len(g) == 1 else "s")
+listed = lambda g: ", ".join(where(m) for m in sorted(g, key=lambda m: m["rank"]))
 idx += ["\n## What Did Not Pass\n",
         f"Of the {len(B):,} boards, {len(B) - len(ok)} did not pass in all six runs"
         + (", none of them for a fault of KESE" if not other else "") + " (each board's section says what stopped it):\n"]
 if bad:
-    idx.append(f"- **Bad design according to KESE ({len(bad)} boards):** the file puts copper of two nets on top of each "
+    idx.append(f"- **Bad design according to KESE ({boards(bad)}):** the file puts copper of two nets on top of each "
                "other, a short KiCad's DRC reports. KESE models what the file says, so the Verifier rightly finds the "
-               "two nets' solids overlapping: " + ", ".join(where(m) for m in sorted(bad, key=lambda m: m["rank"])) + ".")
+               "two nets' solids overlapping: " + listed(bad) + ".")
 if mem:
-    idx.append(f"- **Stopped for memory ({len(mem)} boards):** a run passed the memory the test machines allow, and again "
-               "when run again; they will be run again on a machine with more memory: "
-               + ", ".join(where(m) for m in sorted(mem, key=lambda m: m["rank"])) + ".")
-if other:
-    idx.append(f"- **Failed ({len(other)} boards):** " + ", ".join(where(m) for m in sorted(other, key=lambda m: m["rank"])) + ".")
+    idx.append(f"- **Stopped for memory ({boards(mem)}):** a run passed the memory the test machines allow, and again "
+               "when run again; they will be run again on a machine with more memory: " + listed(mem) + ".")
+if slow:
+    idx.append(f"- **Stopped at the time limit ({boards(slow)}):** a run took longer than the time limit of the "
+               "measurement: " + listed(slow) + ".")
+# always there, so that the page says outright when no board failed because of KESE
+idx.append(f"- **Failed because of KESE ({boards(other)}):** KESE stopped with an error, or the Verifier failed with "
+           "nothing wrong found in the file: " + listed(other) + "." if other else "- **Failed because of KESE:** none.")
 # no Previous and Next row: the wiki's reading order goes from Feature Test Collection straight to Parameter Reference,
 # so that this page can vanish with the branch (main keeps a page saying the branch was not found) and break nothing
 # the pages of KESE's wiki live on the main branch, not beside this one: linked there
@@ -385,5 +391,5 @@ if taken_out:
     print(f"{len(taken_out)} boards taken out (their data folder is gone): " + ", ".join(taken_out))
 if waiting:
     print(f"{len(waiting)} data folders with no board made from them (the maker says why): " + ", ".join(waiting))
-print(f"{renamed} folders renamed; {len(B):,} boards on {NPAGES} pages; {len(ok):,} pass all six runs; {len(bad)} bad design, {len(mem)} memory, "
+print(f"{renamed} folders renamed; {len(B):,} boards on {NPAGES} pages; {len(ok):,} pass all six runs; {len(bad)} bad design, {len(mem)} memory, {len(slow)} time limit, "
       f"{len(other)} failed")
