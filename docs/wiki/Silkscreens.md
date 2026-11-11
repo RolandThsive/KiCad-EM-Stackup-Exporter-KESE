@@ -1,4 +1,4 @@
-# 15. Silkscreens
+# 16. Silkscreens
 
 The silkscreen is the legend ink printed on top of the solder mask: reference designators,
 values, logos and outlines. `kese/s4_geometry/silkscreen.py` builds it from the ink that
@@ -8,13 +8,13 @@ False`): turn it on to have it in the files.
 
 ![The same board eight times from the top in a simulation-mode GLB, once in each silkscreen colour: white and yellow silk on black mask, and black, not set, green, red, blue and purple silk on white mask, each labelled with its colour and hex value](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Silkscreens/silk_1_colors_simulation.webp)
 
-## 15.1 What Is Drawn
+## 16.1 What Is Drawn
 
 Items on the layers in `Silkscreen.SILK_LAYERS` (`F.SilkS` and `B.SilkS` by default):
 
 | Item | Shape |
 |---|---|
-| graphics (`gr_line`, `gr_arc`, `gr_circle`, `gr_rect`, `gr_poly`, `gr_curve`, and the `fp_*` versions inside footprints) | the stroke thickened by its width; filled shapes filled; hatched ones (KiCad 10) hatched as on copper ([Copper And Traces](Copper-And-Traces.md#1212-hatched-fills)) |
+| graphics (`gr_line`, `gr_arc`, `gr_circle`, `gr_rect`, `gr_poly`, `gr_curve`, and the `fp_*` versions inside footprints) | the stroke thickened by its width; filled shapes filled; hatched ones (KiCad 10) hatched as on copper ([Copper And Traces](Copper-And-Traces.md#1312-hatched-fills)) |
 | text (`gr_text`, `fp_text`, footprint `property` fields such as Reference and Value) | glyphs of the stroke font, laid out as KiCad lays them out |
 | zone fills on a silk layer | the stored polygons |
 
@@ -32,12 +32,12 @@ Everything is clipped to the outline, pulled back from the edge by the same
 is open (pads, exposed copper, bare laminate in openings), which is what fabricators do: silk is
 clipped off the pads. With `True` the ink is kept there as drawn in KiCad. Either way no ink is
 left on the slivers of mask on the copper the mask leaves out, where an opening's outline follows a
-pad's edge with other points ([Solder Masks](Solder-Masks.md#162-conformal-mask)): it would stand on
+pad's edge with other points ([Solder Masks](Solder-Masks.md#172-conformal-mask)): it would stand on
 mask that is not there.
 
 ![U1, J1 and the text OPEN on board 17b_silk_over_copper with SILKSCREEN_OVER_COPPER False and True: from the top with a numbered key, U1 at an angle, and a true-scale cut along U1's outline across pad 2](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Silkscreens/silk_4_mask_subtract.webp)
 
-## 15.2 Text Rendering
+## 16.2 Text Rendering
 
 KESE ships KiCad's own stroke font, **newstroke**, converted to JSON Lines, one glyph per line
 (`kese/assets/fonts/kicad_newstroke.json.gz`, with its notice in `LICENSE_fonts.txt`), and parses
@@ -50,17 +50,17 @@ sixteen texts against KiCad 7.0.11's plot to 5 µm, and the two references below
 
 ![TP7 from featureTest/11_zones and J2 at 45 degrees from featureTest/01_holes_slotted, each three times at the same scale: KiCad 7.0.11's plot with its strokes, KESE's silk region with its vertices, and KiCad's outline on KESE's ink, with a close-up of the join in P where they differ most, 2.0 µm where KESE draws KiCad's round corner as one chord, and a table of the outlines, centroids and areas of both](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Silkscreens/silk_5_kicad_text.webp)
 
-### 15.2.1 Layout Of One Line
+### 16.2.1 Layout Of One Line
 
 Each character moves the pen on by its glyph width, which takes in the glyph's side bearings, and
 a tab moves it to the next tab stop, one every four columns of width $`W`$:
 
 ```math
-x_{j+1} = x_j + a_j W, \qquad a_j = \begin{cases} w_{g} & \text{a glyph } g \\ w_{\mathrm{sp}} & \text{a space} \end{cases} \qquad (15.1)
+x_{j+1} = x_j + a_j W, \qquad a_j = \begin{cases} w_{g} & \text{a glyph } g \\ w_{\mathrm{sp}} & \text{a space} \end{cases} \qquad (16.1)
 ```
 
 ```math
-x_{j+1} = \left( 4m - 1 + w_{\mathrm{sp}} \right) W \ \text{after a tab}, \quad m \ \text{the least with} \ 4m - 1 \ge c_j \ \text{and} \ \left( 4m - 1 + w_{\mathrm{sp}} \right) W > x_j \qquad (15.2)
+x_{j+1} = \left( 4m - 1 + w_{\mathrm{sp}} \right) W \ \text{after a tab}, \quad m \ \text{the least with} \ 4m - 1 \ge c_j \ \text{and} \ \left( 4m - 1 + w_{\mathrm{sp}} \right) W > x_j \qquad (16.2)
 ```
 
 $`c_j`$ counts the columns before character $`j`$: one for each glyph or space, and a tab counts
@@ -72,13 +72,13 @@ the layout, leaves out $`0.2 W`$ of it.
 A stroke point $`(u, v)`$ of a glyph (in units of the text size, $`v`$ down) is placed at
 
 ```math
-x = x_j + \left( u - \tau v \right) W, \qquad y = v H \qquad (15.3)
+x = x_j + \left( u - \tau v \right) W, \qquad y = v H \qquad (16.3)
 ```
 
-### 15.2.2 Lines And Justification
+### 16.2.2 Lines And Justification
 
 ```math
-p = H \cdot \pi_\ell \cdot \kappa_\ell \qquad (15.4)
+p = H \cdot \pi_\ell \cdot \kappa_\ell \qquad (16.4)
 ```
 
 This is the pitch of KiCad 8 to 10, $`1.6099 H`$; KiCad 7 writes it $`1.61 H`$, which puts each
@@ -87,28 +87,28 @@ left out, as KiCad 7 to 10 leave it out of their plots and so of the Gerbers: th
 lines by this pitch alone (`EDA_TEXT::GetInterline`).
 
 ```math
-\hat{H} = 1.17 H + (n_\ell - 1) p \qquad (15.5)
+\hat{H} = 1.17 H + (n_\ell - 1) p \qquad (16.5)
 ```
 
 ```math
-o_x = \frac{T}{1.52}, \qquad o_y = H - 0.052 T - \begin{cases} 0 & \text{top} \\ \hat{H} & \text{bottom} \\ \hat{H}/2 & \text{centre} \end{cases} \qquad (15.6)
+o_x = \frac{T}{1.52}, \qquad o_y = H - 0.052 T - \begin{cases} 0 & \text{top} \\ \hat{H} & \text{bottom} \\ \hat{H}/2 & \text{centre} \end{cases} \qquad (16.6)
 ```
 
 ```math
-x_{\mathrm{start},i} = \begin{cases} o_x & \text{left} \\ -\left( \lambda_i + o_x \right) & \text{right} \\ -\lambda_i / 2 & \text{centre} \end{cases}, \qquad y_{\mathrm{start},i} = o_y + i p \qquad (15.7)
+x_{\mathrm{start},i} = \begin{cases} o_x & \text{left} \\ -\left( \lambda_i + o_x \right) & \text{right} \\ -\lambda_i / 2 & \text{centre} \end{cases}, \qquad y_{\mathrm{start},i} = o_y + i p \qquad (16.7)
 ```
 
 A centred line is centred on its advance alone: KiCad sets the offset to $`-\lambda_i / 2`$ there
 instead of adding it to $`o_x`$.
 
-### 15.2.3 Placement And Stroke
+### 16.2.3 Placement And Stroke
 
 Every local point $`(x, y)`$ is mirrored when the text is marked `(justify mirror)` in the file
 ($`x \to -x`$; KiCad sets this on back-side text), then rotated by the
 text angle $`\theta`$ about the anchor $`(X_0, Y_0)`$, in KiCad's frame (Y down):
 
 ```math
-X = X_0 + x \cos\theta + y \sin\theta, \qquad Y = Y_0 - x \sin\theta + y \cos\theta \qquad (15.8)
+X = X_0 + x \cos\theta + y \sin\theta, \qquad Y = Y_0 - x \sin\theta + y \cos\theta \qquad (16.8)
 ```
 
 $`\theta`$ is the angle in the file, which KiCad stores absolute, also for the text of a turned
@@ -119,7 +119,7 @@ turned by half turns into $`-90° < \theta \le 90°`$, so that the text never re
 The strokes are then thickened to the stroke width:
 
 ```math
-T = \min\left( \begin{cases} T_{\mathrm{file}} & \text{if the file gives one} \\ \rho_b W & \text{bold} \\ \rho_n W & \text{normal} \end{cases},\ 0.25 \min(W, H) \right), \qquad \text{glyph region} = \bigcup \text{strokes} \oplus \frac{T}{2} \qquad (15.9)
+T = \min\left( \begin{cases} T_{\mathrm{file}} & \text{if the file gives one} \\ \rho_b W & \text{bold} \\ \rho_n W & \text{normal} \end{cases},\ 0.25 \min(W, H) \right), \qquad \text{glyph region} = \bigcup \text{strokes} \oplus \frac{T}{2} \qquad (16.9)
 ```
 
 | Symbol | Meaning | Parameter |
@@ -185,7 +185,7 @@ whose project defines `DATE`. KESE expands it as the KiCad that saved the board 
 
 Text the file marks hidden (`(hide yes)`) is skipped unless `DRAW_HIDDEN_TEXT = True`.
 
-### 15.2.4 Fonts And Faces
+### 16.2.4 Fonts And Faces
 
 A board's text is in one of three kinds of font, and for none of them does KESE need a font file
 from the user:
@@ -215,22 +215,22 @@ on, read glyph by glyph; `python tools/font_lines.py` turns the first into the s
 Hershey `.jhf` file. If the file is missing, newstroke is used and `report.txt` says so on its
 `font:` note.
 
-## 15.3 Ink Geometry
+## 16.3 Ink Geometry
 
 ![Board 17b_silk_over_copper from the top with a dashed box where a silk line crosses a 0.5 mm track, and the boxed region cut along the silk line: the ink on the mask over the laminate, climbing the mask's wall, and on the mask over the track](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Silkscreens/silk_2_conformal.webp)
 
 ![Board 17b_silk_over_copper cut along the silk lines across a 1 mm track at true scale with all seven layers labelled, and the top face at the track's edge close up with rulers for the height of every surface above the laminate](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Silkscreens/silk_3_height.webp)
 
 The ink follows the mask surface, which is flat over laminate and raised over copper. First the
-silk region $`S`$ is split against the mask region $`M`$ of equation (16.1), then the part on the
+silk region $`S`$ is split against the mask region $`M`$ of equation (17.1), then the part on the
 mask is split against the raised mask over copper, $`K = C \oplus m_L`$:
 
 ```math
-S^{\mathrm{off}} = S \setminus \left( M \oplus s \right), \qquad S^{\mathrm{on}} = S \cap M, \qquad S^{\mathrm{step}} = S \cap \left( \left( M \oplus s \right) \setminus M \right) \qquad (15.10)
+S^{\mathrm{off}} = S \setminus \left( M \oplus s \right), \qquad S^{\mathrm{on}} = S \cap M, \qquad S^{\mathrm{step}} = S \cap \left( \left( M \oplus s \right) \setminus M \right) \qquad (16.10)
 ```
 
 ```math
-S^{\mathrm{flat}} = S^{\mathrm{on}} \setminus \left( K \oplus s \right), \qquad S^{\mathrm{top}} = S^{\mathrm{on}} \cap K, \qquad S^{\mathrm{wall}} = S^{\mathrm{on}} \cap \left( \left( K \oplus s \right) \setminus K \right) \qquad (15.11)
+S^{\mathrm{flat}} = S^{\mathrm{on}} \setminus \left( K \oplus s \right), \qquad S^{\mathrm{top}} = S^{\mathrm{on}} \cap K, \qquad S^{\mathrm{wall}} = S^{\mathrm{on}} \cap \left( \left( K \oplus s \right) \setminus K \right) \qquad (16.11)
 ```
 
 On the `F` side, with $`h = L/2`$ the laminate face, these are extruded over:
@@ -259,7 +259,7 @@ it.
 | Symbol | Meaning | Parameter |
 |---|---|---|
 | $`S`$ | silk region after clipping to the outline, the edge pull-back and the bores | |
-| $`M`$ | mask region, equation (16.1) | |
+| $`M`$ | mask region, equation (17.1) | |
 | $`C`$ | outer copper of that side, every net | |
 | $`s`$ | ink thickness | `Silkscreen.SILK_THICKNESS_MM` (0.010) |
 | $`m_L`$, $`m_C`$ | mask thickness over laminate and over copper | `SolderMask.MASK_OVER_LAMINATE_MM`, `SolderMask.MASK_OVER_COPPER_MM` |
@@ -268,13 +268,13 @@ it.
 Each side is one part, `Top Silkscreen` or `Bottom Silkscreen`, with `side` and `thickness_mm`
 in `materials.json`.
 
-## 15.4 Settings
+## 16.4 Settings
 
 | Name | Default | Range | Meaning |
 |---|---|---|---|
 | `SILK_THICKNESS_MM` | `0.010` | mm > 0 | Ink thickness (typical 0.010 to 0.020) |
 | `SILKSCREEN_OVER_COPPER` | `False` | bool | Keep ink where the mask is open, on the pads and the bare laminate (the finish is left out under it); `False` clips it off as fabricators do |
-| `FONT_FILE` | `None` | None or a file name in `kese/assets/fonts/` | Custom stroke font ([15.2.4](#1524-fonts-and-faces)); `None` = KiCad newstroke |
+| `FONT_FILE` | `None` | None or a file name in `kese/assets/fonts/` | Custom stroke font ([15.2.4](#1624-fonts-and-faces)); `None` = KiCad newstroke |
 | `DRAW_TRUETYPE_TEXT_WITH_STROKE_FONT` | `True` | bool | Draw TrueType-face text that has no usable render cache with the stroke font, with a warning; `False` leaves it out |
 | `INTERLINE_PITCH`, `INTERLINE_LEGACY_FACTOR` | `1.68`, `0.9583` | > 0 | KiCad's line pitch and stroke-font correction |
 | `ITALIC_TILT` | `0.125` | ≥ 0 | x shift per unit of y for italic text |

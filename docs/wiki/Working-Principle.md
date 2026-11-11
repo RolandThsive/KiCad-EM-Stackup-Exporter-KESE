@@ -65,10 +65,10 @@ parts[off] = shapely.set_precision(parts[off], grid())      # Geometry.SNAP_GRID
   the thinner piece round after round, each cut moving its edge a little, until the mask's edge had
   walked a few tenths of a micrometre into the copper beside it.
 - One known exception, where parts can overlap or leave a gap: the wedge beside a sloped copper
-  wall (`Copper.ETCH_FACTOR > 0`, see [Copper And Traces](Copper-And-Traces.md#125-etch-factor)).
+  wall (`Copper.ETCH_FACTOR > 0`, see [Copper And Traces](Copper-And-Traces.md#135-etch-factor)).
 - The price: curves are polygons in the meshes. The STEP file turns them back into true arcs and
   cylinders where a run of vertices lies on one circle (`Step.STEP_EXACT_ARCS`, the default; see
-  [Parameter Reference](Parameter-Reference.md#1710-step-parameterssteppy)).
+  [Parameter Reference](Parameter-Reference.md#1910-step-parameterssteppy)).
 
 ## 7.2 How A Part Becomes A Closed Solid
 
@@ -182,7 +182,7 @@ be mapped back to the layout.
 
 `Parallel.WORKERS` threads or processes work at once (`0`: one per processor thread the run may
 use; `1`: everything in turn, in one process), and at most `Parallel.PROCESS_WORKERS` processes
-([Parameter Reference](Parameter-Reference.md#179-parallel-parametersparallelpy)).
+([Parameter Reference](Parameter-Reference.md#199-parallel-parametersparallelpy)).
 `kese/core/parallel.py` holds both kinds:
 
 | Stage | What runs at once | In |
@@ -241,7 +241,7 @@ use; `1`: everything in turn, in one process), and at most `Parallel.PROCESS_WOR
 - Where the system stops a worker, or one runs out of memory, the parts left go to half as many
   processes, and to the main process, one after another, once that would be one; where the
   processes cannot start, the main process builds the parts. `report.txt` says so each time
-  ([Checks, Errors And Warnings](Checks-Errors-And-Warnings.md#1813-notes-worth-knowing)). An
+  ([Checks, Errors And Warnings](Checks-Errors-And-Warnings.md#2013-notes-worth-knowing)). An
   error in a part's own work stops the run at once and ends the other workers.
 - Ctrl-C, or the end of the main process however it ends, ends the workers too. On Linux the
   system's out-of-memory killer takes a worker before the main process. Inside a

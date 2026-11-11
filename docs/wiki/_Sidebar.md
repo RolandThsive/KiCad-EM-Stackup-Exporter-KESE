@@ -11,6 +11,7 @@
 - [Stack-Up Model](Stack-Up-Model.md)
 - [Output Modes](Output-Modes.md)
 - [Choosing An Export](Choosing-An-Export.md)
+- [Project Output Organization](Project-Output-Organization.md)
 
 **Features**
 - [Board](Board.md)
@@ -20,19 +21,19 @@
 - [Silkscreens](Silkscreens.md)
 - [Solder Masks](Solder-Masks.md)
 
-**Reference**
-- [Parameter Reference](Parameter-Reference.md)
-- [Checks, Errors And Warnings](Checks-Errors-And-Warnings.md)
-- [Material Properties](Material-Properties.md)
-- [Project Output Organization](Project-Output-Organization.md)
-- [KiCad And Solver Compatibility](Compatibility.md)
-- [openEMS Workflow](OpenEMS-Workflow.md)
+**Tests**
 - [Feature Test Collection](Feature-Test-Collection.md)
 - [Corpus Testing](Corpus-Testing.md)
 
+**References And Compatibilities**
+- [Parameter Reference](Parameter-Reference.md)
+- [Checks, Errors And Warnings](Checks-Errors-And-Warnings.md)
+- [Material Properties](Material-Properties.md)
+- [KiCad And Solver Compatibility](Compatibility.md)
+- [openEMS Workflow](OpenEMS-Workflow.md)
+
 **Research And Community**
 - [Glossary](Glossary.md)
-- [Immediate Next Steps](Immediate-Next-Steps.md)
 - [Future Upgrades And Planning](Future-Upgrades-And-Planning.md)
 - [Credits](Credits.md)
 - [License](License.md)

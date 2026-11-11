@@ -1,6 +1,18 @@
-# 26. Future Upgrades And Planning
+# 25. Future Upgrades And Planning
 
-Planned directions, in no fixed order:
+The project will be upgraded substantially with new features as they are identified along the
+way.
+
+## 25.1 Immediate Next Steps
+
+Already known:
+
+- **Validation against measurements is pending.** The models have not yet been compared with
+  measured boards or with reference solver results.
+
+## 25.2 Planned Directions
+
+In no fixed order:
 
 - **A web application.**
 - **A desktop application.**
@@ -21,4 +33,4 @@ Planned directions, in no fixed order:
 
 | Previous | Next |
 |:---|---:|
-| [Immediate Next Steps](Immediate-Next-Steps.md) | [Credits](Credits.md) |
+| [Glossary](Glossary.md) | [Credits](Credits.md) |

@@ -3,7 +3,7 @@
 Every board in [Credits](https://github.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/wiki/Credits), 3,138 KiCad boards from 819 open hardware projects, exported by the current KESE once for every file format each mode writes, board by board, in the style of the [Feature Test Collection](https://github.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/wiki/Feature-Test-Collection):
 
 - Each board was run six times, **one file format a run**: in simulation mode with GLB, with STEP, with STL and with OBJ, and in visual mode with GLB and with OBJ (visual mode is a surface, not solids, so KESE does not write STEP or STL in it). One format a run gives each format its own time, file size and peak memory.
-- Every run had the Verifier, the solder mask and the silkscreen on. Each bar of a board's chart is one stage's seconds in that run, from the `timing` block of [`report.txt`](https://github.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/wiki/Project-Output-Organization#2022-reporttxt).
+- Every run had the Verifier, the solder mask and the silkscreen on. Each bar of a board's chart is one stage's seconds in that run, from the `timing` block of [`report.txt`](https://github.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/wiki/Project-Output-Organization#1122-reporttxt).
 - Beside each board's facts, the file each run wrote (STL: all the part files of the run together) and the run's peak memory: the proportional set size (PSS) of KESE and its four workers summed, so shared memory is counted once, sampled every 0.05 s.
 - No picture of any board is shown: the boards belong to their authors ([Credits](https://github.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/wiki/Credits)), and none of them, nor any part of one, is included in KESE.
 - The commands, for a board B and a format F (glb, step, stl or obj in simulation mode; glb or obj in visual mode):
@@ -96,45 +96,48 @@ In this corpus the grades run from 17 to 651, half the boards below 274: the top
 
 ## The Boards, By Project
 
-| Page | Projects | Boards | Boards run | Passed all six runs |
-|---|---|---:|---:|---:|
-| [Corpus Page 1](CorpusTesting/Corpus-Testing-01.md) | 14 | 104 | 104 | 102 |
-| [Corpus Page 2](CorpusTesting/Corpus-Testing-02.md) | 6 | 201 | 201 | 200 |
-| [Corpus Page 3](CorpusTesting/Corpus-Testing-03.md) | 81 | 100 | 100 | 95 |
-| [Corpus Page 4](CorpusTesting/Corpus-Testing-04.md) | 35 | 121 | 121 | 117 |
-| [Corpus Page 5](CorpusTesting/Corpus-Testing-05.md) | 22 | 103 | 103 | 102 |
-| [Corpus Page 6](CorpusTesting/Corpus-Testing-06.md) | 26 | 104 | 104 | 102 |
-| [Corpus Page 7](CorpusTesting/Corpus-Testing-07.md) | 19 | 104 | 104 | 101 |
-| [Corpus Page 8](CorpusTesting/Corpus-Testing-08.md) | 43 | 101 | 101 | 99 |
-| [Corpus Page 9](CorpusTesting/Corpus-Testing-09.md) | 24 | 103 | 103 | 101 |
-| [Corpus Page 10](CorpusTesting/Corpus-Testing-10.md) | 19 | 111 | 111 | 109 |
-| [Corpus Page 11](CorpusTesting/Corpus-Testing-11.md) | 34 | 102 | 102 | 99 |
-| [Corpus Page 12](CorpusTesting/Corpus-Testing-12.md) | 16 | 103 | 103 | 97 |
-| [Corpus Page 13](CorpusTesting/Corpus-Testing-13.md) | 36 | 105 | 105 | 102 |
-| [Corpus Page 14](CorpusTesting/Corpus-Testing-14.md) | 20 | 124 | 124 | 124 |
-| [Corpus Page 15](CorpusTesting/Corpus-Testing-15.md) | 42 | 100 | 100 | 100 |
-| [Corpus Page 16](CorpusTesting/Corpus-Testing-16.md) | 34 | 101 | 101 | 99 |
-| [Corpus Page 17](CorpusTesting/Corpus-Testing-17.md) | 34 | 103 | 103 | 103 |
-| [Corpus Page 18](CorpusTesting/Corpus-Testing-18.md) | 53 | 100 | 100 | 100 |
-| [Corpus Page 19](CorpusTesting/Corpus-Testing-19.md) | 32 | 100 | 100 | 100 |
-| [Corpus Page 20](CorpusTesting/Corpus-Testing-20.md) | 22 | 104 | 104 | 104 |
-| [Corpus Page 21](CorpusTesting/Corpus-Testing-21.md) | 33 | 100 | 100 | 100 |
-| [Corpus Page 22](CorpusTesting/Corpus-Testing-22.md) | 31 | 108 | 108 | 108 |
-| [Corpus Page 23](CorpusTesting/Corpus-Testing-23.md) | 12 | 114 | 114 | 109 |
-| [Corpus Page 24](CorpusTesting/Corpus-Testing-24.md) | 30 | 111 | 111 | 110 |
-| [Corpus Page 25](CorpusTesting/Corpus-Testing-25.md) | 21 | 115 | 115 | 114 |
-| [Corpus Page 26](CorpusTesting/Corpus-Testing-26.md) | 29 | 102 | 102 | 101 |
-| [Corpus Page 27](CorpusTesting/Corpus-Testing-27.md) | 13 | 105 | 105 | 105 |
-| [Corpus Page 28](CorpusTesting/Corpus-Testing-28.md) | 29 | 173 | 173 | 173 |
-| [Corpus Page 29](CorpusTesting/Corpus-Testing-29.md) | 9 | 16 | 16 | 16 |
+The boards are numbered in order of project and then path, 108 to a page.
+
+| Page | Boards | Projects | Passed all six runs |
+|---|---|---:|---:|
+| [Corpus Page 1](CorpusTestingPages/Corpus-Testing-01.md) | 1 to 108 | 15 | 106 |
+| [Corpus Page 2](CorpusTestingPages/Corpus-Testing-02.md) | 109 to 216 | 6 | 107 |
+| [Corpus Page 3](CorpusTestingPages/Corpus-Testing-03.md) | 217 to 324 | 11 | 107 |
+| [Corpus Page 4](CorpusTestingPages/Corpus-Testing-04.md) | 325 to 432 | 96 | 103 |
+| [Corpus Page 5](CorpusTestingPages/Corpus-Testing-05.md) | 433 to 540 | 17 | 105 |
+| [Corpus Page 6](CorpusTestingPages/Corpus-Testing-06.md) | 541 to 648 | 20 | 106 |
+| [Corpus Page 7](CorpusTestingPages/Corpus-Testing-07.md) | 649 to 756 | 27 | 106 |
+| [Corpus Page 8](CorpusTestingPages/Corpus-Testing-08.md) | 757 to 864 | 30 | 106 |
+| [Corpus Page 9](CorpusTestingPages/Corpus-Testing-09.md) | 865 to 972 | 35 | 106 |
+| [Corpus Page 10](CorpusTestingPages/Corpus-Testing-10.md) | 973 to 1,080 | 26 | 106 |
+| [Corpus Page 11](CorpusTestingPages/Corpus-Testing-11.md) | 1,081 to 1,188 | 20 | 106 |
+| [Corpus Page 12](CorpusTestingPages/Corpus-Testing-12.md) | 1,189 to 1,296 | 43 | 102 |
+| [Corpus Page 13](CorpusTestingPages/Corpus-Testing-13.md) | 1,297 to 1,404 | 26 | 102 |
+| [Corpus Page 14](CorpusTestingPages/Corpus-Testing-14.md) | 1,405 to 1,512 | 34 | 108 |
+| [Corpus Page 15](CorpusTestingPages/Corpus-Testing-15.md) | 1,513 to 1,620 | 22 | 108 |
+| [Corpus Page 16](CorpusTestingPages/Corpus-Testing-16.md) | 1,621 to 1,728 | 37 | 106 |
+| [Corpus Page 17](CorpusTestingPages/Corpus-Testing-17.md) | 1,729 to 1,836 | 47 | 108 |
+| [Corpus Page 18](CorpusTestingPages/Corpus-Testing-18.md) | 1,837 to 1,944 | 41 | 108 |
+| [Corpus Page 19](CorpusTestingPages/Corpus-Testing-19.md) | 1,945 to 2,052 | 37 | 108 |
+| [Corpus Page 20](CorpusTestingPages/Corpus-Testing-20.md) | 2,053 to 2,160 | 33 | 108 |
+| [Corpus Page 21](CorpusTestingPages/Corpus-Testing-21.md) | 2,161 to 2,268 | 23 | 108 |
+| [Corpus Page 22](CorpusTestingPages/Corpus-Testing-22.md) | 2,269 to 2,376 | 36 | 108 |
+| [Corpus Page 23](CorpusTestingPages/Corpus-Testing-23.md) | 2,377 to 2,484 | 23 | 103 |
+| [Corpus Page 24](CorpusTestingPages/Corpus-Testing-24.md) | 2,485 to 2,592 | 30 | 107 |
+| [Corpus Page 25](CorpusTestingPages/Corpus-Testing-25.md) | 2,593 to 2,700 | 21 | 107 |
+| [Corpus Page 26](CorpusTestingPages/Corpus-Testing-26.md) | 2,701 to 2,808 | 24 | 107 |
+| [Corpus Page 27](CorpusTestingPages/Corpus-Testing-27.md) | 2,809 to 2,916 | 17 | 108 |
+| [Corpus Page 28](CorpusTestingPages/Corpus-Testing-28.md) | 2,917 to 3,024 | 34 | 108 |
+| [Corpus Page 29](CorpusTestingPages/Corpus-Testing-29.md) | 3,025 to 3,132 | 10 | 108 |
+| [Corpus Page 30](CorpusTestingPages/Corpus-Testing-30.md) | 3,133 to 3,138 | 1 | 6 |
 
 ## What Did Not Pass
 
 Of the 3,138 boards, 46 did not pass in all six runs, none of them for a fault of KESE (each board's section says what stopped it):
 
-- **Bad design according to KESE (7 boards):** the file puts copper of two nets on top of each other, a short KiCad's DRC reports. KESE models what the file says, so the Verifier rightly finds the two nets' solids overlapping: [librem5_mainboard](CorpusTesting/Corpus-Testing-10.md#1051-librem5_mainboard), [CM5RevEng](CorpusTesting/Corpus-Testing-24.md#244-cm5reveng), [denso079721_outline-append](CorpusTesting/Corpus-Testing-23.md#2365-denso079721_outline-append), [scalenode-cm4-baseboard](CorpusTesting/Corpus-Testing-03.md#3100-scalenode-cm4-baseboard), [gd VGC proto pcb](CorpusTesting/Corpus-Testing-04.md#4117-gd-vgc-proto-pcb), [.kicad_pcb](CorpusTesting/Corpus-Testing-07.md#725-kicad_pcb), [NewBrain Original](CorpusTesting/Corpus-Testing-09.md#949-newbrain-original).
-- **Stopped for memory (39 boards):** a run passed the 11 GB cap of the test machines, and again the 14.3 GB the 16 GB machines allow when run again; they will be run again on a machine with more memory: [board_routed_golden](CorpusTesting/Corpus-Testing-08.md#899-board_routed_golden), [maxwell-main](CorpusTesting/Corpus-Testing-04.md#450-maxwell-main), [ciaa_acc](CorpusTesting/Corpus-Testing-07.md#715-ciaa_acc), [PC110](CorpusTesting/Corpus-Testing-01.md#173-pc110), [PC110](CorpusTesting/Corpus-Testing-01.md#172-pc110), [output.Panel_R0.5.1_300x300_2layer_step1](CorpusTesting/Corpus-Testing-23.md#2331-outputpanel_r051_300x300_2layer_step1), [output.Panel_R0.5.1_300x300_2layer_step1_Modified](CorpusTesting/Corpus-Testing-23.md#2332-outputpanel_r051_300x300_2layer_step1_modified), [Panel_R0.5.1_300x300_2layer_step1](CorpusTesting/Corpus-Testing-23.md#2334-panel_r051_300x300_2layer_step1), [ecp5_mainboard](CorpusTesting/Corpus-Testing-09.md#980-ecp5_mainboard), [Marble](CorpusTesting/Corpus-Testing-05.md#543-marble), [bpm_dfe](CorpusTesting/Corpus-Testing-13.md#1319-bpm_dfe), [ulx4m-panel](CorpusTesting/Corpus-Testing-12.md#1219-ulx4m-panel), [ulx4m_panel](CorpusTesting/Corpus-Testing-12.md#1224-ulx4m_panel), [ulx5m-gs_panel_checked_v002](CorpusTesting/Corpus-Testing-12.md#1227-ulx5m-gs_panel_checked_v002), [vme-wren](CorpusTesting/Corpus-Testing-07.md#729-vme-wren), [A3000](CorpusTesting/Corpus-Testing-11.md#1176-a3000), [REAmiga3000](CorpusTesting/Corpus-Testing-11.md#1177-reamiga3000), [librem5_mainboard](CorpusTesting/Corpus-Testing-10.md#1048-librem5_mainboard), [jetson-agx-thor-baseboard](CorpusTesting/Corpus-Testing-03.md#363-jetson-agx-thor-baseboard), [Commodore PC10 III](CorpusTesting/Corpus-Testing-06.md#61-commodore-pc10-iii), [latentpink](CorpusTesting/Corpus-Testing-04.md#443-latentpink), [FrontEnd_5G](CorpusTesting/Corpus-Testing-16.md#1636-frontend_5g), [k410t-devboard](CorpusTesting/Corpus-Testing-03.md#371-k410t-devboard), [data-center-rdimm-ddr4-tester](CorpusTesting/Corpus-Testing-03.md#335-data-center-rdimm-ddr4-tester), [AmigaPCI Mainboard](CorpusTesting/Corpus-Testing-02.md#28-amigapci-mainboard), [motherboard-stable](CorpusTesting/Corpus-Testing-06.md#669-motherboard-stable), [board_presignal](CorpusTesting/Corpus-Testing-08.md#898-board_presignal), [FrontEnd_5G](CorpusTesting/Corpus-Testing-16.md#1637-frontend_5g), [Amiga 2000R6](CorpusTesting/Corpus-Testing-11.md#1174-amiga-2000r6), [sodimm-ddr5-tester](CorpusTesting/Corpus-Testing-04.md#48-sodimm-ddr5-tester), [Main_12E1S](CorpusTesting/Corpus-Testing-12.md#1270-main_12e1s), [amiga2000](CorpusTesting/Corpus-Testing-23.md#231-amiga2000), [Open128](CorpusTesting/Corpus-Testing-13.md#1334-open128), [motherboard](CorpusTesting/Corpus-Testing-25.md#2523-motherboard), [cpu010](CorpusTesting/Corpus-Testing-26.md#2652-cpu010), [Main_12E1S](CorpusTesting/Corpus-Testing-12.md#1269-main_12e1s), [2000ATX](CorpusTesting/Corpus-Testing-13.md#1323-2000atx), [boatcontrol](CorpusTesting/Corpus-Testing-03.md#34-boatcontrol), [Main_12E1S](CorpusTesting/Corpus-Testing-12.md#1268-main_12e1s).
+- **Bad design according to KESE (7 boards):** the file puts copper of two nets on top of each other, a short KiCad's DRC reports. KESE models what the file says, so the Verifier rightly finds the two nets' solids overlapping: [librem5_mainboard](CorpusTestingPages/Corpus-Testing-11.md#1092-librem5_mainboard), [CM5RevEng](CorpusTestingPages/Corpus-Testing-24.md#2520-cm5reveng), [denso079721_outline-append](CorpusTestingPages/Corpus-Testing-23.md#2467-denso079721_outline-append), [scalenode-cm4-baseboard](CorpusTestingPages/Corpus-Testing-04.md#405-scalenode-cm4-baseboard), [gd VGC proto pcb](CorpusTestingPages/Corpus-Testing-05.md#522-gd-vgc-proto-pcb), [.kicad_pcb](CorpusTestingPages/Corpus-Testing-08.md#758-kicad_pcb), [NewBrain Original](CorpusTestingPages/Corpus-Testing-10.md#987-newbrain-original).
+- **Stopped for memory (39 boards):** a run passed the memory the test machines allow, and again when run again; they will be run again on a machine with more memory: [board_routed_golden](CorpusTestingPages/Corpus-Testing-09.md#936-board_routed_golden), [maxwell-main](CorpusTestingPages/Corpus-Testing-05.md#455-maxwell-main), [ciaa_acc](CorpusTestingPages/Corpus-Testing-07.md#748-ciaa_acc), [PC110](CorpusTestingPages/Corpus-Testing-01.md#73-pc110), [PC110](CorpusTestingPages/Corpus-Testing-01.md#72-pc110), [output.Panel_R0.5.1_300x300_2layer_step1](CorpusTestingPages/Corpus-Testing-23.md#2433-outputpanel_r051_300x300_2layer_step1), [output.Panel_R0.5.1_300x300_2layer_step1_Modified](CorpusTestingPages/Corpus-Testing-23.md#2434-outputpanel_r051_300x300_2layer_step1_modified), [Panel_R0.5.1_300x300_2layer_step1](CorpusTestingPages/Corpus-Testing-23.md#2436-panel_r051_300x300_2layer_step1), [ecp5_mainboard](CorpusTestingPages/Corpus-Testing-10.md#1018-ecp5_mainboard), [Marble](CorpusTestingPages/Corpus-Testing-06.md#569-marble), [bpm_dfe](CorpusTestingPages/Corpus-Testing-13.md#1376-bpm_dfe), [ulx4m-panel](CorpusTestingPages/Corpus-Testing-12.md#1273-ulx4m-panel), [ulx4m_panel](CorpusTestingPages/Corpus-Testing-12.md#1278-ulx4m_panel), [ulx5m-gs_panel_checked_v002](CorpusTestingPages/Corpus-Testing-12.md#1281-ulx5m-gs_panel_checked_v002), [vme-wren](CorpusTestingPages/Corpus-Testing-08.md#762-vme-wren), [A3000](CorpusTestingPages/Corpus-Testing-12.md#1228-a3000), [REAmiga3000](CorpusTestingPages/Corpus-Testing-12.md#1229-reamiga3000), [librem5_mainboard](CorpusTestingPages/Corpus-Testing-11.md#1089-librem5_mainboard), [jetson-agx-thor-baseboard](CorpusTestingPages/Corpus-Testing-04.md#368-jetson-agx-thor-baseboard), [Commodore PC10 III](CorpusTestingPages/Corpus-Testing-06.md#630-commodore-pc10-iii), [latentpink](CorpusTestingPages/Corpus-Testing-05.md#448-latentpink), [FrontEnd_5G](CorpusTestingPages/Corpus-Testing-16.md#1722-frontend_5g), [k410t-devboard](CorpusTestingPages/Corpus-Testing-04.md#376-k410t-devboard), [data-center-rdimm-ddr4-tester](CorpusTestingPages/Corpus-Testing-04.md#340-data-center-rdimm-ddr4-tester), [AmigaPCI Mainboard](CorpusTestingPages/Corpus-Testing-02.md#112-amigapci-mainboard), [motherboard-stable](CorpusTestingPages/Corpus-Testing-07.md#698-motherboard-stable), [board_presignal](CorpusTestingPages/Corpus-Testing-09.md#935-board_presignal), [FrontEnd_5G](CorpusTestingPages/Corpus-Testing-16.md#1723-frontend_5g), [Amiga 2000R6](CorpusTestingPages/Corpus-Testing-12.md#1226-amiga-2000r6), [sodimm-ddr5-tester](CorpusTestingPages/Corpus-Testing-04.md#413-sodimm-ddr5-tester), [Main_12E1S](CorpusTestingPages/Corpus-Testing-13.md#1324-main_12e1s), [amiga2000](CorpusTestingPages/Corpus-Testing-23.md#2403-amiga2000), [Open128](CorpusTestingPages/Corpus-Testing-13.md#1391-open128), [motherboard](CorpusTestingPages/Corpus-Testing-25.md#2650-motherboard), [cpu010](CorpusTestingPages/Corpus-Testing-26.md#2794-cpu010), [Main_12E1S](CorpusTestingPages/Corpus-Testing-13.md#1323-main_12e1s), [2000ATX](CorpusTestingPages/Corpus-Testing-13.md#1380-2000atx), [boatcontrol](CorpusTestingPages/Corpus-Testing-03.md#309-boatcontrol), [Main_12E1S](CorpusTestingPages/Corpus-Testing-13.md#1322-main_12e1s).
 
 | Previous | Next |
 |:---|---:|
-| [Feature Test Collection](https://github.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/wiki/Feature-Test-Collection) | [Glossary](https://github.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/wiki/Glossary) |
+| [Feature Test Collection](https://github.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/wiki/Feature-Test-Collection) | [Parameter Reference](https://github.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/wiki/Parameter-Reference) |

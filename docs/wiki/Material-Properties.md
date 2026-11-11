@@ -1,10 +1,10 @@
-# 19. Material Properties
+# 21. Material Properties
 
 Geometry files carry shapes, not physics. Everything a solver needs that the geometry cannot
 carry goes into `materials.json`, written next to the outputs (`Run.WRITE_MATERIALS_JSON`, on by
 default). This page says what the numbers are and where each one comes from.
 
-## 19.1 The File
+## 21.1 The File
 
 ```json
 {
@@ -55,7 +55,7 @@ Per part:
 
 `z_range_mm` is always in mm; the geometry files are in `units_of_files`.
 
-## 19.2 Properties Per Role
+## 21.2 Properties Per Role
 
 | Role | Properties | Source |
 |---|---|---|
@@ -74,7 +74,7 @@ defaults can make layers differ. The per-layer bands are in `report.txt`. With
 `Board.DIELECTRIC_GROUPING = "merged"`, the single `Board` part carries the values of the first
 dielectric only.
 
-## 19.3 The Default Numbers
+## 21.3 The Default Numbers
 
 | Value | Default | What it is |
 |---|---|---|
@@ -99,7 +99,7 @@ them must be given them by hand.
 > several plies (or sub-layers), it becomes one solid with the summed thickness and the first
 > ply's kind, material, εr and tanδ. Research underway.
 
-## 19.4 Using The File
+## 21.4 Using The File
 
 - **openEMS**: read `parts`, create one material per part from `properties`, and import the file
   named in `file_names.stl`. See [openEMS Workflow](OpenEMS-Workflow.md).
@@ -110,4 +110,4 @@ them must be given them by hand.
 
 | Previous | Next |
 |:---|---:|
-| [Checks, Errors And Warnings](Checks-Errors-And-Warnings.md) | [Project Output Organization](Project-Output-Organization.md) |
+| [Checks, Errors And Warnings](Checks-Errors-And-Warnings.md) | [KiCad And Solver Compatibility](Compatibility.md) |

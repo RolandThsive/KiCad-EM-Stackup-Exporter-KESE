@@ -1,6 +1,6 @@
-# 20. Project Output Organization
+# 11. Project Output Organization
 
-## 20.1 The Repository
+## 11.1 The Repository
 
 ```text
 KiCad-EM-Stackup-Exporter-KESE/
@@ -56,7 +56,7 @@ Everything KESE is made of is in `Generator/`; the root holds what belongs to th
 The paths on every other page of this wiki, such as `parameters/` or `kese/s2_collect/`, are
 inside `Generator/`.
 
-## 20.2 Run Folders
+## 11.2 Run Folders
 
 Every run writes to:
 
@@ -75,7 +75,7 @@ parallel, into the same output root) each get a folder of their own: a name is t
 folder, so the second run moves on to the next name. The terminal line at the end of every board
 names the folder that was written.
 
-### 20.2.1 Files In A Run Folder
+### 11.2.1 Files In A Run Folder
 
 | File | Written when | Content |
 |---|---|---|
@@ -92,13 +92,13 @@ cannot be written), the file being written is removed, an OBJ with its MTL, and 
 when nothing in it was written whole (and the board's folder, when it holds no other run). The
 error that comes out is the one that stopped the write, even when a file or folder cannot be
 removed after it (that one is left)
-([Checks, Errors And Warnings](Checks-Errors-And-Warnings.md#1811-errors)). While a big board's
+([Checks, Errors And Warnings](Checks-Errors-And-Warnings.md#2011-errors)). While a big board's
 STEP file is written in worker processes, its parts are first written into a hidden folder beside
 it, `.<board>.step.parts` (`<board>.step` cut to its first 40 characters), which is removed once
 the file is done or the write fails
 ([Working Principle](Working-Principle.md#74-work-done-in-parallel)).
 
-### 20.2.2 `report.txt`
+### 11.2.2 `report.txt`
 
 `Input/rf_module.kicad_pcb` in simulation mode with the solder mask and silkscreen turned on
 (`--set SolderMask.SOLDER_MASK_ENABLED=True --set Silkscreen.SILKSCREEN_ENABLED=True`) and
@@ -204,10 +204,10 @@ Verifier: PASS
 | `timing` | seconds per stage, to 0.1 ms (verify only when the Verifier ran) |
 | Verifier | only with `--verify` or `Verifier.VERIFY = True`; see [Checks, Errors And Warnings](Checks-Errors-And-Warnings.md) |
 
-## 20.3 Part Names
+## 11.3 Part Names
 
 The GLB node, the STEP solid and the `materials.json` key carry the part name exactly. The STL
-file name and the OBJ object and material names carry it sanitised (the rule in section 20.2.1).
+file name and the OBJ object and material names carry it sanitised (the rule in section 11.2.1).
 
 | Role | Names |
 |---|---|
@@ -231,7 +231,7 @@ Two part names that sanitise to the same string (for example nets `/SDA` and `~{
 `VCC(3V3)` and `VCC_3V3`) get a counter on the second, `Copper__SDA_2`, compared without regard to
 case as Windows and macOS file systems do, so no file replaces another.
 
-## 20.4 Tests Output
+## 11.4 Tests Output
 
 `tests/test_boards.py` writes its runs to `tests/out/`, which is deleted at the start of every
 test run and ignored by git. `tests/test_layout.py`, `tests/test_colors.py`,
@@ -245,4 +245,4 @@ and `tests/test_full_disk.py` write only in a temporary folder that they remove.
 
 | Previous | Next |
 |:---|---:|
-| [Material Properties](Material-Properties.md) | [KiCad And Solver Compatibility](Compatibility.md) |
+| [Choosing An Export](Choosing-An-Export.md) | [Board](Board.md) |
