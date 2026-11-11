@@ -1,6 +1,6 @@
 # 1222. FCCU-v21-schematic-pcb
 
-Board 1,222 of the 3,121 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 12](../CorpusTestingPages/Corpus-Testing-12.md#1222-fccu-v21-schematic-pcb).
+Board 1,222 of the 3,122 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 12](../CorpusTestingPages/Corpus-Testing-12.md#1222-fccu-v21-schematic-pcb).
 
 ![FCCU-v21-schematic-pcb: stages 4 and 6 take 54% to 85% of a run. Simulation, GLB takes 59 s. Simulation, STEP takes 71 s. Simulation, STL takes 62 s. Simulation, OBJ takes 90 s. Visual, GLB takes 82 s. Visual, OBJ takes 97 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b1222b_fuel-cell-control-unit-pcb-fccu-v2-1_FCCU-v21-schematic-pcb/stages.webp)
 
@@ -44,4 +44,4 @@ Board 1,222 of the 3,121 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1221. FCCU-v2-schematic-pcb](b1221b_fuel-cell-control-unit-pcb-fccu-v2-1_FCCU-v2-schematic-pcb.md) | [1223. Daughterboard](b1223b_Amiga-3000-Daughterboard_Daughterboard.md) |
+| [1221. FCCU-v2-schematic-pcb](b1221b_fuel-cell-control-unit-pcb-fccu-v2-1_FCCU-v2-schematic-pcb.md) | [1223. Amiga 2000R6](b1223b_Amiga-2000-KiCAD_Amiga-2000R6.md) |

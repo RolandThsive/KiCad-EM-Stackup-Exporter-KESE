@@ -1,0 +1,56 @@
+{
+ "name": "ownverter",
+ "project": "owntech-foundation/ownverter",
+ "path": "owntech-foundation__ownverter/KiCAD_files/ownverter.kicad_pcb",
+ "license": "As README.md states it: \"This project is propelled by OwnTech Team under CERN-OHL-S open hardware Licence The documentation provided is placed under Creative Commons SA-BY\"",
+ "license_checked": "2026-11-08",
+ "rank": 532,
+ "score": 4901,
+ "level": "HIGH",
+ "complexity": {
+  "grade": 384,
+  "size": 244,
+  "features": 140
+ },
+ "features": [
+  "through_vias",
+  "slotted_holes",
+  "shaped_pads",
+  "drill_offsets",
+  "filled_zones",
+  "stackup",
+  "dielectric_properties",
+  "copper_finish",
+  "mask_silk_colours",
+  "castellated_pads"
+ ],
+ "layers": 6,
+ "status": "pass",
+ "bad_design": null,
+ "chart_alt": "ownverter: stages 4 and 6 take 52% to 85% of a run. Simulation, GLB takes 60 s. Simulation, STEP takes 74 s. Simulation, STL takes 65 s. Simulation, OBJ takes 2 min. Visual, GLB takes 84 s. Visual, OBJ takes 2 min",
+ "rerun": {},
+ "tested": [
+  "2026-11-09",
+  "2026-11-09"
+ ],
+ "kese": [
+  "22fd70c"
+ ],
+ "kese_version": [
+  "2.4.0"
+ ],
+ "runs": [
+  [
+   "corpus",
+   "2026-11-09",
+   11000000000.0,
+   5400.0
+  ]
+ ],
+ "machine": {
+  "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz, 4 cores, 15 GB",
+  "geos": "3.14.1",
+  "python": "3.13.18",
+  "shapely": "2.2.0"
+ }
+}

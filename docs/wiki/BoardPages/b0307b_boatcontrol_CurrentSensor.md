@@ -1,6 +1,6 @@
 # 307. CurrentSensor
 
-Board 307 of the 3,121 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 3](../CorpusTestingPages/Corpus-Testing-03.md#307-currentsensor).
+Board 307 of the 3,122 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 3](../CorpusTestingPages/Corpus-Testing-03.md#307-currentsensor).
 
 ![CurrentSensor: stages 4 and 6 take 47% to 74% of a run. Simulation, GLB takes 3.2 s. Simulation, STEP takes 4.2 s. Simulation, STL takes 3.0 s. Simulation, OBJ takes 4.4 s. Visual, GLB takes 4.0 s. Visual, OBJ takes 4.7 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b0307b_boatcontrol_CurrentSensor/stages.webp)
 

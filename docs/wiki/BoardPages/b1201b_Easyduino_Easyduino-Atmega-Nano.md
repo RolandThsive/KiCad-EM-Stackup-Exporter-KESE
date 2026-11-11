@@ -1,6 +1,6 @@
 # 1201. Easyduino_Atmega_Nano
 
-Board 1,201 of the 3,121 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 12](../CorpusTestingPages/Corpus-Testing-12.md#1201-easyduino_atmega_nano).
+Board 1,201 of the 3,122 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 12](../CorpusTestingPages/Corpus-Testing-12.md#1201-easyduino_atmega_nano).
 
 ![Easyduino_Atmega_Nano: stages 4 and 6 take 46% to 80% of a run. Simulation, GLB takes 4.5 s. Simulation, STEP takes 6.1 s. Simulation, STL takes 4.7 s. Simulation, OBJ takes 6.9 s. Visual, GLB takes 6.9 s. Visual, OBJ takes 8.3 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b1201b_Easyduino_Easyduino-Atmega-Nano/stages.webp)
 

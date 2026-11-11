@@ -1,6 +1,6 @@
 # 1015. ecp5_mainboard
 
-Board 1,015 of the 3,121 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 10](../CorpusTestingPages/Corpus-Testing-10.md#1015-ecp5_mainboard).
+Board 1,015 of the 3,122 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 10](../CorpusTestingPages/Corpus-Testing-10.md#1015-ecp5_mainboard).
 
 ![ecp5_mainboard: stages 4 and 6 take 49% to 84% of a run. Simulation, GLB takes 5 min. Simulation, STEP takes 6 min. Simulation, STL takes 5 min. Simulation, OBJ takes 9 min. Visual, GLB takes 8 min. Visual, OBJ takes 9 min](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b1015b_TrellisBoard_ecp5-mainboard/stages.webp)
 

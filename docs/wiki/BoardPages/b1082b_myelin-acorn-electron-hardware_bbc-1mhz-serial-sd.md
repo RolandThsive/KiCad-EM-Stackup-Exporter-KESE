@@ -1,6 +1,6 @@
 # 1082. bbc_1mhz_serial_sd
 
-Board 1,082 of the 3,121 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 11](../CorpusTestingPages/Corpus-Testing-11.md#1082-bbc_1mhz_serial_sd).
+Board 1,082 of the 3,122 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 11](../CorpusTestingPages/Corpus-Testing-11.md#1082-bbc_1mhz_serial_sd).
 
 ![bbc_1mhz_serial_sd: stages 4 and 6 take 52% to 85% of a run. Simulation, GLB takes 8.0 s. Simulation, STEP takes 10 s. Simulation, STL takes 8.0 s. Simulation, OBJ takes 12 s. Visual, GLB takes 11 s. Visual, OBJ takes 14 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b1082b_myelin-acorn-electron-hardware_bbc-1mhz-serial-sd/stages.webp)
 

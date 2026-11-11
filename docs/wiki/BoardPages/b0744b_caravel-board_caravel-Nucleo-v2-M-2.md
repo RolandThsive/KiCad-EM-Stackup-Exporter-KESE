@@ -1,6 +1,6 @@
 # 744. caravel-Nucleo-v2-M.2
 
-Board 744 of the 3,121 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 7](../CorpusTestingPages/Corpus-Testing-07.md#744-caravel-nucleo-v2-m2).
+Board 744 of the 3,122 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 7](../CorpusTestingPages/Corpus-Testing-07.md#744-caravel-nucleo-v2-m2).
 
 ![caravel-Nucleo-v2-M.2: stages 4 and 6 take 55% to 85% of a run. Simulation, GLB takes 23 s. Simulation, STEP takes 29 s. Simulation, STL takes 23 s. Simulation, OBJ takes 34 s. Visual, GLB takes 34 s. Visual, OBJ takes 41 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b0744b_caravel-board_caravel-Nucleo-v2-M-2/stages.webp)
 

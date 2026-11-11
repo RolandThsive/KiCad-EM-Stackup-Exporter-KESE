@@ -1,6 +1,6 @@
 # 283. GPIO Controller Board
 
-Board 283 of the 3,121 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 3](../CorpusTestingPages/Corpus-Testing-03.md#283-gpio-controller-board).
+Board 283 of the 3,122 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 3](../CorpusTestingPages/Corpus-Testing-03.md#283-gpio-controller-board).
 
 ![GPIO Controller Board: stages 4 and 6 take 55% to 86% of a run. Simulation, GLB takes 17 s. Simulation, STEP takes 21 s. Simulation, STL takes 17 s. Simulation, OBJ takes 25 s. Visual, GLB takes 27 s. Visual, OBJ takes 33 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b0283b_658-Computer_GPIO-Controller-Board/stages.webp)
 

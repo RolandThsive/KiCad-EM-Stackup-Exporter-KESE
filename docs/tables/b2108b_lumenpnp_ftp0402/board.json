@@ -1,0 +1,50 @@
+{
+ "name": "ftp0402",
+ "project": "opulo-inc/lumenpnp",
+ "path": "opulo-inc__lumenpnp/src/PCB/ftp/ftp0402/ftp0402.kicad_pcb",
+ "license": "In LICENSE: CERN-OHL-W-2.0 for the hardware designs, MPL-2.0 for the workflows, CC-BY-SA-4.0 for the KiCad libraries",
+ "license_checked": "2026-11-08",
+ "rank": 2475,
+ "score": 253,
+ "level": "LOW",
+ "complexity": {
+  "grade": 199,
+  "size": 139,
+  "features": 60
+ },
+ "features": [
+  "shaped_pads",
+  "filled_zones",
+  "stackup",
+  "dielectric_properties"
+ ],
+ "layers": 2,
+ "status": "pass",
+ "bad_design": null,
+ "chart_alt": "ftp0402: stages 4 and 6 take 59% to 82% of a run. Simulation, GLB takes 6.5 s. Simulation, STEP takes 8.7 s. Simulation, STL takes 6.7 s. Simulation, OBJ takes 9.2 s. Visual, GLB takes 7.4 s. Visual, OBJ takes 9.3 s",
+ "rerun": {},
+ "tested": [
+  "2026-11-09",
+  "2026-11-09"
+ ],
+ "kese": [
+  "22fd70c"
+ ],
+ "kese_version": [
+  "2.4.0"
+ ],
+ "runs": [
+  [
+   "corpus",
+   "2026-11-09",
+   11000000000.0,
+   5400.0
+  ]
+ ],
+ "machine": {
+  "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz, 4 cores, 15 GB",
+  "geos": "3.14.1",
+  "python": "3.13.18",
+  "shapely": "2.2.0"
+ }
+}

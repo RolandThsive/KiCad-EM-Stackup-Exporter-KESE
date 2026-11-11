@@ -1,6 +1,6 @@
 # 495. gd audio proto pcb-rev1 bad footprint
 
-Board 495 of the 3,121 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 5](../CorpusTestingPages/Corpus-Testing-05.md#495-gd-audio-proto-pcb-rev1-bad-footprint).
+Board 495 of the 3,122 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 5](../CorpusTestingPages/Corpus-Testing-05.md#495-gd-audio-proto-pcb-rev1-bad-footprint).
 
 ![Stages 4 and 6 take 43% to 77% of a run. Simulation, GLB takes 2.6 s. Simulation, STEP takes 3.6 s. Simulation, STL takes 2.5 s. Simulation, OBJ takes 3.8 s. Visual, GLB takes 4.3 s. Visual, OBJ takes 5.2 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b0495b_Mega-IIe_gd-audio-proto-pcb-rev1-bad-footprint/stages.webp)
 

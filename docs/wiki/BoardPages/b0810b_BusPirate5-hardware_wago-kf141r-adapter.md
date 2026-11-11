@@ -1,6 +1,6 @@
 # 810. wago kf141r adapter
 
-Board 810 of the 3,121 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 8](../CorpusTestingPages/Corpus-Testing-08.md#810-wago-kf141r-adapter).
+Board 810 of the 3,122 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 8](../CorpusTestingPages/Corpus-Testing-08.md#810-wago-kf141r-adapter).
 
 ![wago kf141r adapter: stages 4 and 6 take 47% to 74% of a run. Simulation, GLB takes 1.7 s. Simulation, STEP takes 2.5 s. Simulation, STL takes 1.7 s. Simulation, OBJ takes 2.3 s. Visual, GLB takes 2.0 s. Visual, OBJ takes 2.4 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b0810b_BusPirate5-hardware_wago-kf141r-adapter/stages.webp)
 
