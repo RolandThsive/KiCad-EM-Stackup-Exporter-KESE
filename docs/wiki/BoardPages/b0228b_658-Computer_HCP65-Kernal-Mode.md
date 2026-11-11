@@ -1,6 +1,6 @@
 # 228. HCP65 Kernal Mode
 
-Board 228 of the 3,120 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 3](../CorpusTestingPages/Corpus-Testing-03.md#228-hcp65-kernal-mode).
+Board 228 of the 3,121 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 3](../CorpusTestingPages/Corpus-Testing-03.md#228-hcp65-kernal-mode).
 
 ![HCP65 Kernal Mode: stages 4 and 6 take 52% to 84% of a run. Simulation, GLB takes 12 s. Simulation, STEP takes 16 s. Simulation, STL takes 12 s. Simulation, OBJ takes 19 s. Visual, GLB takes 19 s. Visual, OBJ takes 25 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b0228b_658-Computer_HCP65-Kernal-Mode/stages.webp)
 

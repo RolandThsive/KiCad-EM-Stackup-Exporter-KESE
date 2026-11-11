@@ -1,6 +1,6 @@
 # 1476. lhc_tijolo32_board
 
-Board 1,476 of the 3,120 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 14](../CorpusTestingPages/Corpus-Testing-14.md#1476-lhc_tijolo32_board).
+Board 1,476 of the 3,121 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 14](../CorpusTestingPages/Corpus-Testing-14.md#1476-lhc_tijolo32_board).
 
 ![lhc_tijolo32_board: stages 4 and 6 take 52% to 84% of a run. Simulation, GLB takes 8.9 s. Simulation, STEP takes 12 s. Simulation, STL takes 8.8 s. Simulation, OBJ takes 14 s. Visual, GLB takes 13 s. Visual, OBJ takes 16 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b1476b_hardware_lhc-tijolo32-board/stages.webp)
 

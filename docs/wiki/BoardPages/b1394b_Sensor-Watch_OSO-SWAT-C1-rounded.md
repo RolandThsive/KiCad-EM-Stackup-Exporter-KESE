@@ -1,6 +1,6 @@
 # 1394. OSO-SWAT-C1-rounded
 
-Board 1,394 of the 3,120 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 13](../CorpusTestingPages/Corpus-Testing-13.md#1394-oso-swat-c1-rounded).
+Board 1,394 of the 3,121 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 13](../CorpusTestingPages/Corpus-Testing-13.md#1394-oso-swat-c1-rounded).
 
 ![OSO-SWAT-C1-rounded: stages 4 and 6 take 49% to 78% of a run. Simulation, GLB takes 9.9 s. Simulation, STEP takes 13 s. Simulation, STL takes 11 s. Simulation, OBJ takes 14 s. Visual, GLB takes 16 s. Visual, OBJ takes 19 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b1394b_Sensor-Watch_OSO-SWAT-C1-rounded/stages.webp)
 

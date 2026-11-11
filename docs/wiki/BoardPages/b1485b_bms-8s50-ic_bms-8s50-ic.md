@@ -1,6 +1,6 @@
 # 1485. bms-8s50-ic
 
-Board 1,485 of the 3,120 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 14](../CorpusTestingPages/Corpus-Testing-14.md#1485-bms-8s50-ic).
+Board 1,485 of the 3,121 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 14](../CorpusTestingPages/Corpus-Testing-14.md#1485-bms-8s50-ic).
 
 ![bms-8s50-ic: stages 4 and 6 take 57% to 84% of a run. Simulation, GLB takes 19 s. Simulation, STEP takes 23 s. Simulation, STL takes 19 s. Simulation, OBJ takes 27 s. Visual, GLB takes 26 s. Visual, OBJ takes 32 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b1485b_bms-8s50-ic_bms-8s50-ic/stages.webp)
 

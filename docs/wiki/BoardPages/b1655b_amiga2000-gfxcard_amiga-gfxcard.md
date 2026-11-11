@@ -1,6 +1,6 @@
 # 1655. amiga-gfxcard
 
-Board 1,655 of the 3,120 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 16](../CorpusTestingPages/Corpus-Testing-16.md#1655-amiga-gfxcard).
+Board 1,655 of the 3,121 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 16](../CorpusTestingPages/Corpus-Testing-16.md#1655-amiga-gfxcard).
 
 ![amiga-gfxcard: stages 4 and 6 take 55% to 83% of a run. Simulation, GLB takes 9.3 s. Simulation, STEP takes 11 s. Simulation, STL takes 9.2 s. Simulation, OBJ takes 13 s. Visual, GLB takes 14 s. Visual, OBJ takes 17 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b1655b_amiga2000-gfxcard_amiga-gfxcard/stages.webp)
 

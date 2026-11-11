@@ -1,6 +1,6 @@
 # 1480. BPS-Leader
 
-Board 1,480 of the 3,120 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 14](../CorpusTestingPages/Corpus-Testing-14.md#1480-bps-leader).
+Board 1,480 of the 3,121 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 14](../CorpusTestingPages/Corpus-Testing-14.md#1480-bps-leader).
 
 ![BPS-Leader: stages 4 and 6 take 54% to 81% of a run. Simulation, GLB takes 36 s. Simulation, STEP takes 44 s. Simulation, STL takes 36 s. Simulation, OBJ takes 53 s. Visual, GLB takes 56 s. Visual, OBJ takes 69 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b1480b_ps-bpsleader_BPS-Leader/stages.webp)
 

@@ -1,6 +1,6 @@
 # 1460. z2_io_test01
 
-Board 1,460 of the 3,120 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 14](../CorpusTestingPages/Corpus-Testing-14.md#1460-z2_io_test01).
+Board 1,460 of the 3,121 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 14](../CorpusTestingPages/Corpus-Testing-14.md#1460-z2_io_test01).
 
 ![z2_io_test01: stages 4 and 6 take 52% to 85% of a run. Simulation, GLB takes 16 s. Simulation, STEP takes 20 s. Simulation, STL takes 17 s. Simulation, OBJ takes 26 s. Visual, GLB takes 24 s. Visual, OBJ takes 30 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b1460b_ZX-Spectrum-diy_z2-io-test01/stages.webp)
 

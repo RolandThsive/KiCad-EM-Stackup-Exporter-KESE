@@ -1,6 +1,6 @@
 # 826. 7-REV2-vout-protection
 
-Board 826 of the 3,120 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 8](../CorpusTestingPages/Corpus-Testing-08.md#826-7-rev2-vout-protection).
+Board 826 of the 3,121 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 8](../CorpusTestingPages/Corpus-Testing-08.md#826-7-rev2-vout-protection).
 
 ![Reading, start-up and exit take 42% to 47% of a run. Simulation, GLB takes 2.6 s. Simulation, STEP takes 2.5 s. Simulation, STL takes 2.6 s. Simulation, OBJ takes 2.4 s. Visual, GLB takes 2.6 s. Visual, OBJ takes 2.6 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b0826b_BusPirate5-hardware_bus-pirate-pcb-development-7-REV2-prototype3b-side-leds_7-REV2-vout-protection/stages.webp)
 

@@ -4,7 +4,7 @@
  "path": "jackhumbert__reform/reform2-batterypack-pcb/reform2-batterypack.kicad_pcb",
  "license": "As README.md states it: \"Copyright 2018-2020 MNT Research GmbH. The following licenses are used in the project, unless specified differently in a particular subfolder:; Schematics, PCBs: CERN-OHL-S v2; Other documentation, artwork, photos and drawings that are not trademarks (see below): CC-BY-SA 4.0; Software, firmware: Various. GPL 3.0 if not specified otherwise in the file/subdirectory.\"",
  "license_checked": "2026-11-08",
- "rank": 2824,
+ "rank": 2825,
  "score": 37,
  "level": "SIMPLE",
  "complexity": {

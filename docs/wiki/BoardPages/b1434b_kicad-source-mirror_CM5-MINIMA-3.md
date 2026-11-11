@@ -1,6 +1,6 @@
 # 1434. CM5_MINIMA_3
 
-Board 1,434 of the 3,120 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 14](../CorpusTestingPages/Corpus-Testing-14.md#1434-cm5_minima_3).
+Board 1,434 of the 3,121 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 14](../CorpusTestingPages/Corpus-Testing-14.md#1434-cm5_minima_3).
 
 ![CM5_MINIMA_3: stages 4 and 6 take 50% to 85% of a run. Simulation, GLB takes 38 s. Simulation, STEP takes 45 s. Simulation, STL takes 38 s. Simulation, OBJ takes 61 s. Visual, GLB takes 50 s. Visual, OBJ takes 62 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b1434b_kicad-source-mirror_CM5-MINIMA-3/stages.webp)
 

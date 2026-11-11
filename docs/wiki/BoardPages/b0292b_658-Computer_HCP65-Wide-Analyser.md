@@ -1,6 +1,6 @@
 # 292. HCP65 Wide Analyser
 
-Board 292 of the 3,120 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 3](../CorpusTestingPages/Corpus-Testing-03.md#292-hcp65-wide-analyser).
+Board 292 of the 3,121 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 3](../CorpusTestingPages/Corpus-Testing-03.md#292-hcp65-wide-analyser).
 
 ![HCP65 Wide Analyser: stages 4 and 6 take 55% to 87% of a run. Simulation, GLB takes 13 s. Simulation, STEP takes 16 s. Simulation, STL takes 13 s. Simulation, OBJ takes 19 s. Visual, GLB takes 15 s. Visual, OBJ takes 18 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b0292b_658-Computer_HCP65-Wide-Analyser/stages.webp)
 

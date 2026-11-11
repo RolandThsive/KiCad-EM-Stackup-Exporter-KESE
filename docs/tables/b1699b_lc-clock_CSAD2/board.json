@@ -4,7 +4,7 @@
  "path": "myriadrf__lc-clock/csad2/CSAD2.kicad_pcb",
  "license": "As README.rst states it: \"LibreCelluar Reference Clock Designs is copyright 2023 AB Open Ltd and provided under the Solderpad Hardware License v2.1. .. LibreCellular Documentation: https://librecellular.org/developer/hardware/ci/csad10.html\"",
  "license_checked": "2026-11-08",
- "rank": 2380,
+ "rank": 2381,
  "score": 324,
  "level": "LOW",
  "complexity": {
