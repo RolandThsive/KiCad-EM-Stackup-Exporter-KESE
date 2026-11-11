@@ -1,0 +1,66 @@
+{
+ "name": "ciaa_acc",
+ "project": "ciaa/Hardware",
+ "path": "ciaa__Hardware/PCB/ACC/CIAA_ACC/ciaa_acc.kicad_pcb",
+ "license": "BSD-2-Clause (BSD 2-Clause License), in LICENSE, PCB/EDU-FPGA/LICENSE, PCB/Z3R0/LICENSE",
+ "license_checked": "2026-11-08",
+ "rank": 2,
+ "score": 66799,
+ "level": "EXTREME",
+ "complexity": {
+  "grade": 422,
+  "size": 377,
+  "features": 45
+ },
+ "features": [
+  "through_vias",
+  "slotted_holes",
+  "filled_zones"
+ ],
+ "layers": 12,
+ "status": "pass",
+ "bad_design": null,
+ "chart_alt": "ciaa_acc: stages 4 and 6 take 38% to 80% of a run. Simulation, GLB takes 4 min. Simulation, STEP takes 4 min. Simulation, STL takes 4 min. Simulation, OBJ takes 7 min. Visual, GLB takes 4 min. Visual, OBJ takes 5 min",
+ "rerun": {
+  "nocap": [
+   "Simulation, OBJ"
+  ]
+ },
+ "tested": [
+  "2026-11-09",
+  "2026-11-11"
+ ],
+ "kese": [
+  "22fd70c",
+  "39950e6"
+ ],
+ "kese_version": [
+  "2.4.0"
+ ],
+ "runs": [
+  [
+   "cap",
+   "2026-11-10",
+   14500000000.0,
+   5400.0
+  ],
+  [
+   "corpus",
+   "2026-11-09",
+   11000000000.0,
+   5400.0
+  ],
+  [
+   "nocap",
+   "2026-11-11",
+   null,
+   null
+  ]
+ ],
+ "machine": {
+  "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz, 4 cores, 15 GB",
+  "geos": "3.14.1",
+  "python": "3.13.18",
+  "shapely": "2.2.0"
+ }
+}

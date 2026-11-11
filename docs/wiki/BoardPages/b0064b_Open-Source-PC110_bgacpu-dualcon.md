@@ -1,6 +1,6 @@
 # 64. bgacpu-dualcon
 
-Board 64 of the 3,101 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 1](../CorpusTestingPages/Corpus-Testing-01.md#64-bgacpu-dualcon).
+Board 64 of the 3,102 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 1](../CorpusTestingPages/Corpus-Testing-01.md#64-bgacpu-dualcon).
 
 ![bgacpu-dualcon: stages 4 and 6 take 51% to 83% of a run. Simulation, GLB takes 5.6 s. Simulation, STEP takes 7.5 s. Simulation, STL takes 5.2 s. Simulation, OBJ takes 7.7 s. Visual, GLB takes 8.6 s. Visual, OBJ takes 11 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b0064b_Open-Source-PC110_bgacpu-dualcon/stages.webp)
 

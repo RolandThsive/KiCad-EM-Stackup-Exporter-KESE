@@ -1,6 +1,6 @@
 # 246. SD Card Micro Socket
 
-Board 246 of the 3,101 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 3](../CorpusTestingPages/Corpus-Testing-03.md#246-sd-card-micro-socket).
+Board 246 of the 3,102 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 3](../CorpusTestingPages/Corpus-Testing-03.md#246-sd-card-micro-socket).
 
 ![SD Card Micro Socket: stages 4 and 6 take 48% to 79% of a run. Simulation, GLB takes 2.8 s. Simulation, STEP takes 4.2 s. Simulation, STL takes 3.1 s. Simulation, OBJ takes 4.5 s. Visual, GLB takes 4.3 s. Visual, OBJ takes 5.9 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b0246b_658-Computer_SD-Card-Micro-Socket/stages.webp)
 

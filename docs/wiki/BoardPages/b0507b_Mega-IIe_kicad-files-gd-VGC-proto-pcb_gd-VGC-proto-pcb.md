@@ -1,6 +1,6 @@
 # 507. gd VGC proto pcb
 
-Board 507 of the 3,101 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 5](../CorpusTestingPages/Corpus-Testing-05.md#507-gd-vgc-proto-pcb).
+Board 507 of the 3,102 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 5](../CorpusTestingPages/Corpus-Testing-05.md#507-gd-vgc-proto-pcb).
 
 ![gd VGC proto pcb: stages 4 and 6 take 49% to 83% of a run. Simulation, GLB takes 29 s. Simulation, STEP takes 35 s. Simulation, STL takes 28 s. Simulation, OBJ takes 46 s. Visual, GLB takes 44 s. Visual, OBJ takes 53 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b0507b_Mega-IIe_kicad-files-gd-VGC-proto-pcb_gd-VGC-proto-pcb/stages.webp)
 

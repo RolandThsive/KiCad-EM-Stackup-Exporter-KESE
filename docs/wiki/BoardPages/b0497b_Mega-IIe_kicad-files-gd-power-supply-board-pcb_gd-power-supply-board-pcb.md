@@ -1,6 +1,6 @@
 # 497. gd power supply board pcb
 
-Board 497 of the 3,101 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 5](../CorpusTestingPages/Corpus-Testing-05.md#497-gd-power-supply-board-pcb).
+Board 497 of the 3,102 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 5](../CorpusTestingPages/Corpus-Testing-05.md#497-gd-power-supply-board-pcb).
 
 ![gd power supply board pcb: stages 4 and 6 take 49% to 80% of a run. Simulation, GLB takes 10 s. Simulation, STEP takes 13 s. Simulation, STL takes 11 s. Simulation, OBJ takes 15 s. Visual, GLB takes 15 s. Visual, OBJ takes 18 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b0497b_Mega-IIe_kicad-files-gd-power-supply-board-pcb_gd-power-supply-board-pcb/stages.webp)
 

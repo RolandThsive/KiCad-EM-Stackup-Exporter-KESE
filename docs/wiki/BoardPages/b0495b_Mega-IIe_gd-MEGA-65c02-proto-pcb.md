@@ -1,6 +1,6 @@
 # 495. gd MEGA-65c02 proto pcb
 
-Board 495 of the 3,101 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 5](../CorpusTestingPages/Corpus-Testing-05.md#495-gd-mega-65c02-proto-pcb).
+Board 495 of the 3,102 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 5](../CorpusTestingPages/Corpus-Testing-05.md#495-gd-mega-65c02-proto-pcb).
 
 ![gd MEGA-65c02 proto pcb: stages 4 and 6 take 53% to 83% of a run. Simulation, GLB takes 26 s. Simulation, STEP takes 33 s. Simulation, STL takes 27 s. Simulation, OBJ takes 40 s. Visual, GLB takes 39 s. Visual, OBJ takes 44 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b0495b_Mega-IIe_gd-MEGA-65c02-proto-pcb/stages.webp)
 

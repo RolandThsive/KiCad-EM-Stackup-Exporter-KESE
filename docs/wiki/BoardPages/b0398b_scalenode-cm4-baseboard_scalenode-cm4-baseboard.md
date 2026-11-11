@@ -1,6 +1,6 @@
 # 398. scalenode-cm4-baseboard
 
-Board 398 of the 3,101 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 4](../CorpusTestingPages/Corpus-Testing-04.md#398-scalenode-cm4-baseboard).
+Board 398 of the 3,102 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 4](../CorpusTestingPages/Corpus-Testing-04.md#398-scalenode-cm4-baseboard).
 
 ![scalenode-cm4-baseboard: stages 4 and 6 take 45% to 77% of a run. Simulation, GLB takes 23 s. Simulation, STEP takes 27 s. Simulation, STL takes 23 s. Simulation, OBJ takes 34 s. Visual, GLB takes 39 s. Visual, OBJ takes 47 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b0398b_scalenode-cm4-baseboard_scalenode-cm4-baseboard/stages.webp)
 

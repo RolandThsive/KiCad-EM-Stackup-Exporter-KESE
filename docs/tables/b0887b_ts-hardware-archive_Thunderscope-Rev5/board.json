@@ -1,0 +1,67 @@
+{
+ "name": "Thunderscope_Rev5",
+ "project": "EEVengers/ts_hardware_archive",
+ "path": "EEVengers__ts_hardware_archive/KiCad/Thunderscope_Rev5/Thunderscope_Rev5.kicad_pcb",
+ "license": "CERN-OHL-P-2.0 (CERN Open Hardware Licence v2, Permissive)",
+ "license_checked": "2026-11-08",
+ "rank": 40,
+ "score": 21602,
+ "level": "EXTREME",
+ "complexity": {
+  "grade": 488,
+  "size": 323,
+  "features": 165
+ },
+ "features": [
+  "through_vias",
+  "padstacks",
+  "slotted_holes",
+  "shaped_pads",
+  "arc_tracks",
+  "filled_zones",
+  "copper_text",
+  "curved_outline",
+  "truetype_text",
+  "stackup",
+  "dielectric_properties"
+ ],
+ "layers": 6,
+ "status": "pass",
+ "bad_design": null,
+ "chart_alt": "Thunderscope_Rev5: stages 4 and 6 take 47% to 83% of a run. Simulation, GLB takes 3 min. Simulation, STEP takes 4 min. Simulation, STL takes 3 min. Simulation, OBJ takes 5 min. Visual, GLB takes 5 min. Visual, OBJ takes 6 min",
+ "rerun": {
+  "cap": [
+   "Simulation, OBJ"
+  ]
+ },
+ "tested": [
+  "2026-11-09",
+  "2026-11-10"
+ ],
+ "kese": [
+  "22fd70c"
+ ],
+ "kese_version": [
+  "2.4.0"
+ ],
+ "runs": [
+  [
+   "cap",
+   "2026-11-10",
+   14500000000.0,
+   5400.0
+  ],
+  [
+   "corpus",
+   "2026-11-09",
+   11000000000.0,
+   5400.0
+  ]
+ ],
+ "machine": {
+  "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz, 4 cores, 15 GB",
+  "geos": "3.14.1",
+  "python": "3.13.18",
+  "shapely": "2.2.0"
+ }
+}
