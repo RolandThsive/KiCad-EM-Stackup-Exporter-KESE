@@ -1,6 +1,6 @@
 # 766. proto_amp_bodge_board
 
-Board 766 of the 3,104 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 8](../CorpusTestingPages/Corpus-Testing-08.md#766-proto_amp_bodge_board).
+Board 766 of the 3,105 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 8](../CorpusTestingPages/Corpus-Testing-08.md#766-proto_amp_bodge_board).
 
 ![proto_amp_bodge_board: stages 4 and 6 take 48% to 68% of a run. Simulation, GLB takes 1.0 s. Simulation, STEP takes 1.3 s. Simulation, STL takes 0.9 s. Simulation, OBJ takes 1.1 s. Visual, GLB takes 0.9 s. Visual, OBJ takes 1.1 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b0766b_adsbee_proto-amp-bodge-board/stages.webp)
 

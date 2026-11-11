@@ -1,0 +1,54 @@
+{
+ "name": "controller-board",
+ "project": "oresat/oresat-solar-simulator-hardware",
+ "path": "oresat__oresat-solar-simulator-hardware/boards/controller-board/controller-board.kicad_pcb",
+ "license": "CERN-OHL-S-2.0 (CERN Open Hardware Licence v2, Strongly Reciprocal)",
+ "license_checked": "2026-11-08",
+ "rank": 437,
+ "score": 5709,
+ "level": "HIGH",
+ "complexity": {
+  "grade": 329,
+  "size": 224,
+  "features": 105
+ },
+ "features": [
+  "through_vias",
+  "shaped_pads",
+  "filled_zones",
+  "curved_outline",
+  "stackup",
+  "dielectric_properties",
+  "copper_finish",
+  "mask_silk_colours"
+ ],
+ "layers": 4,
+ "status": "pass",
+ "bad_design": null,
+ "chart_alt": "controller-board: stages 4 and 6 take 53% to 85% of a run. Simulation, GLB takes 52 s. Simulation, STEP takes 61 s. Simulation, STL takes 53 s. Simulation, OBJ takes 80 s. Visual, GLB takes 67 s. Visual, OBJ takes 82 s",
+ "rerun": {},
+ "tested": [
+  "2026-11-09",
+  "2026-11-09"
+ ],
+ "kese": [
+  "22fd70c"
+ ],
+ "kese_version": [
+  "2.4.0"
+ ],
+ "runs": [
+  [
+   "corpus",
+   "2026-11-09",
+   11000000000.0,
+   5400.0
+  ]
+ ],
+ "machine": {
+  "cpu": "Intel(R) Xeon(R) Processor @ 2.30GHz, 4 cores, 15 GB",
+  "geos": "3.14.1",
+  "python": "3.13.18",
+  "shapely": "2.2.0"
+ }
+}

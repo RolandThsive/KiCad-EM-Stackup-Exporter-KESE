@@ -1,6 +1,6 @@
 # 977. corne-cherry
 
-Board 977 of the 3,104 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 10](../CorpusTestingPages/Corpus-Testing-10.md#977-corne-cherry).
+Board 977 of the 3,105 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 10](../CorpusTestingPages/Corpus-Testing-10.md#977-corne-cherry).
 
 ![corne-cherry: stages 4 and 6 take 54% to 83% of a run. Simulation, GLB takes 31 s. Simulation, STEP takes 40 s. Simulation, STL takes 33 s. Simulation, OBJ takes 47 s. Visual, GLB takes 53 s. Visual, OBJ takes 64 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b0977b_crkbd_corne-cherry/stages.webp)
 

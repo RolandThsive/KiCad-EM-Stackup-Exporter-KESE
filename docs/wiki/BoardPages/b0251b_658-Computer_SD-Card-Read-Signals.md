@@ -1,6 +1,6 @@
 # 251. SD Card Read Signals
 
-Board 251 of the 3,104 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 3](../CorpusTestingPages/Corpus-Testing-03.md#251-sd-card-read-signals).
+Board 251 of the 3,105 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 3](../CorpusTestingPages/Corpus-Testing-03.md#251-sd-card-read-signals).
 
 ![SD Card Read Signals: stages 4 and 6 take 51% to 81% of a run. Simulation, GLB takes 5.9 s. Simulation, STEP takes 8.3 s. Simulation, STL takes 6.3 s. Simulation, OBJ takes 10 s. Visual, GLB takes 9.9 s. Visual, OBJ takes 14 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b0251b_658-Computer_SD-Card-Read-Signals/stages.webp)
 

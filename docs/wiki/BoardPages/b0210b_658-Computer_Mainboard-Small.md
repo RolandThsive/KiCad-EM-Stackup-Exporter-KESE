@@ -1,6 +1,6 @@
 # 210. Mainboard Small
 
-Board 210 of the 3,104 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 2](../CorpusTestingPages/Corpus-Testing-02.md#210-mainboard-small).
+Board 210 of the 3,105 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 2](../CorpusTestingPages/Corpus-Testing-02.md#210-mainboard-small).
 
 ![Mainboard Small: stages 4 and 6 take 55% to 86% of a run. Simulation, GLB takes 76 s. Simulation, STEP takes 92 s. Simulation, STL takes 77 s. Simulation, OBJ takes 2 min. Visual, GLB takes 2 min. Visual, OBJ takes 2 min](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b0210b_658-Computer_Mainboard-Small/stages.webp)
 

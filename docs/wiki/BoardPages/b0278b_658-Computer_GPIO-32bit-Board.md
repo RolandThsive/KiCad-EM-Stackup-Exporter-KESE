@@ -1,6 +1,6 @@
 # 278. GPIO 32bit Board
 
-Board 278 of the 3,104 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 3](../CorpusTestingPages/Corpus-Testing-03.md#278-gpio-32bit-board).
+Board 278 of the 3,105 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 3](../CorpusTestingPages/Corpus-Testing-03.md#278-gpio-32bit-board).
 
 ![GPIO 32bit Board: stages 4 and 6 take 52% to 85% of a run. Simulation, GLB takes 12 s. Simulation, STEP takes 15 s. Simulation, STL takes 12 s. Simulation, OBJ takes 19 s. Visual, GLB takes 15 s. Visual, OBJ takes 19 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b0278b_658-Computer_GPIO-32bit-Board/stages.webp)
 

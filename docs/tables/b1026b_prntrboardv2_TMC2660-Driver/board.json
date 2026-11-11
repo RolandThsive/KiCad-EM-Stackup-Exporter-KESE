@@ -1,0 +1,54 @@
+{
+ "name": "TMC2660_Driver",
+ "project": "ghent360/prntrboardv2",
+ "path": "ghent360__prntrboardv2/hardware/TMC2660_Driver.kicad_pcb",
+ "license": "CC-BY-SA-3.0 (Creative Commons Attribution-ShareAlike 3.0), in LICENSE",
+ "license_checked": "2026-11-08",
+ "rank": 1883,
+ "score": 798,
+ "level": "LOW",
+ "complexity": {
+  "grade": 283,
+  "size": 178,
+  "features": 105
+ },
+ "features": [
+  "through_vias",
+  "shaped_pads",
+  "filled_zones",
+  "curved_outline",
+  "stackup",
+  "dielectric_properties",
+  "copper_finish",
+  "mask_silk_colours"
+ ],
+ "layers": 4,
+ "status": "pass",
+ "bad_design": null,
+ "chart_alt": "TMC2660_Driver: stages 4 and 6 take 42% to 79% of a run. Simulation, GLB takes 4.9 s. Simulation, STEP takes 6.7 s. Simulation, STL takes 5.1 s. Simulation, OBJ takes 8.2 s. Visual, GLB takes 7.4 s. Visual, OBJ takes 9.4 s",
+ "rerun": {},
+ "tested": [
+  "2026-11-09",
+  "2026-11-09"
+ ],
+ "kese": [
+  "22fd70c"
+ ],
+ "kese_version": [
+  "2.4.0"
+ ],
+ "runs": [
+  [
+   "corpus",
+   "2026-11-09",
+   11000000000.0,
+   5400.0
+  ]
+ ],
+ "machine": {
+  "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz, 4 cores, 15 GB",
+  "geos": "3.14.1",
+  "python": "3.13.18",
+  "shapely": "2.2.0"
+ }
+}

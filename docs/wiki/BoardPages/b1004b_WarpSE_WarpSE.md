@@ -1,6 +1,6 @@
 # 1004. WarpSE
 
-Board 1,004 of the 3,104 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 10](../CorpusTestingPages/Corpus-Testing-10.md#1004-warpse).
+Board 1,004 of the 3,105 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 10](../CorpusTestingPages/Corpus-Testing-10.md#1004-warpse).
 
 ![WarpSE: stages 4 and 6 take 52% to 82% of a run. Simulation, GLB takes 69 s. Simulation, STEP takes 79 s. Simulation, STL takes 67 s. Simulation, OBJ takes 98 s. Visual, GLB takes 95 s. Visual, OBJ takes 2 min](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b1004b_WarpSE_WarpSE/stages.webp)
 
@@ -44,4 +44,4 @@ Board 1,004 of the 3,104 of [Corpus Testing](../Corpus-Testing.md), on [Corpus P
 
 | Previous | Next |
 |:---|---:|
-| [1003. SE-030](b1003b_Warp-LC_SE-030.md) | [1005. OpenDropV2](b1005b_OpenDrop_OpenDropV2.md) |
+| [1003. SE-030](b1003b_Warp-LC_SE-030.md) | [1005. ecp5_mainboard](b1005b_TrellisBoard_ecp5-mainboard.md) |

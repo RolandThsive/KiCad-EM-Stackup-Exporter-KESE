@@ -1,0 +1,51 @@
+{
+ "name": "v0.4.4d",
+ "project": "speeduino/hardware",
+ "path": "speeduino__hardware/v0.4/SMD/Latest/v0.4.4d.kicad_pcb",
+ "license": "As README.md states it: \"These designs are release under the CERN Open Hardware License v2 Strong (CERN-OHL-S). This license is similar to the GPL, however is designed specifically for hardware design files, including PCB layouts and schematics.\"",
+ "license_checked": "2026-11-08",
+ "rank": 1202,
+ "score": 1883,
+ "level": "MEDIUM",
+ "complexity": {
+  "grade": 262,
+  "size": 192,
+  "features": 70
+ },
+ "features": [
+  "through_vias",
+  "custom_pads",
+  "shaped_pads",
+  "filled_zones",
+  "copper_graphics"
+ ],
+ "layers": 2,
+ "status": "pass",
+ "bad_design": null,
+ "chart_alt": "v0.4.4d: stages 4 and 6 take 60% to 84% of a run. Simulation, GLB takes 45 s. Simulation, STEP takes 56 s. Simulation, STL takes 48 s. Simulation, OBJ takes 65 s. Visual, GLB takes 65 s. Visual, OBJ takes 77 s",
+ "rerun": {},
+ "tested": [
+  "2026-11-09",
+  "2026-11-09"
+ ],
+ "kese": [
+  "22fd70c"
+ ],
+ "kese_version": [
+  "2.4.0"
+ ],
+ "runs": [
+  [
+   "corpus",
+   "2026-11-09",
+   11000000000.0,
+   5400.0
+  ]
+ ],
+ "machine": {
+  "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz, 4 cores, 15 GB",
+  "geos": "3.14.1",
+  "python": "3.13.18",
+  "shapely": "2.2.0"
+ }
+}

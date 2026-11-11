@@ -1,6 +1,6 @@
 # 148. Blitter Board
 
-Board 148 of the 3,104 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 2](../CorpusTestingPages/Corpus-Testing-02.md#148-blitter-board).
+Board 148 of the 3,105 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 2](../CorpusTestingPages/Corpus-Testing-02.md#148-blitter-board).
 
 ![Blitter Board: stages 4 and 6 take 51% to 85% of a run. Simulation, GLB takes 35 s. Simulation, STEP takes 43 s. Simulation, STL takes 35 s. Simulation, OBJ takes 58 s. Visual, GLB takes 57 s. Visual, OBJ takes 72 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b0148b_658-Computer_Blitter-Board/stages.webp)
 

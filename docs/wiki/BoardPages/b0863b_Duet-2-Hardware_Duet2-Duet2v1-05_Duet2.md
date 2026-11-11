@@ -1,6 +1,6 @@
 # 863. Duet2
 
-Board 863 of the 3,104 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 8](../CorpusTestingPages/Corpus-Testing-08.md#863-duet2).
+Board 863 of the 3,105 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 8](../CorpusTestingPages/Corpus-Testing-08.md#863-duet2).
 
 ![Duet2: stages 4 and 6 take 52% to 85% of a run. Simulation, GLB takes 82 s. Simulation, STEP takes 99 s. Simulation, STL takes 85 s. Simulation, OBJ takes 2 min. Visual, GLB takes 2 min. Visual, OBJ takes 3 min](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b0863b_Duet-2-Hardware_Duet2-Duet2v1-05_Duet2/stages.webp)
 

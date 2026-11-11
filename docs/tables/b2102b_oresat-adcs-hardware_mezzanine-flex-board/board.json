@@ -1,0 +1,53 @@
+{
+ "name": "mezzanine-flex-board",
+ "project": "oresat/oresat-adcs-hardware",
+ "path": "oresat__oresat-adcs-hardware/mezzanine-flex-board/mezzanine-flex-board.kicad_pcb",
+ "license": "GPL-2.0 (GNU GPL v2.0)",
+ "license_checked": "2026-11-08",
+ "rank": 2851,
+ "score": 28,
+ "level": "SIMPLE",
+ "complexity": {
+  "grade": 204,
+  "size": 109,
+  "features": 95
+ },
+ "features": [
+  "through_vias",
+  "shaped_pads",
+  "filled_zones",
+  "stackup",
+  "dielectric_properties",
+  "copper_finish",
+  "mask_silk_colours"
+ ],
+ "layers": 2,
+ "status": "pass",
+ "bad_design": null,
+ "chart_alt": "mezzanine-flex-board: stages 4 and 6 take 38% to 69% of a run. Simulation, GLB takes 1.3 s. Simulation, STEP takes 2.0 s. Simulation, STL takes 1.3 s. Simulation, OBJ takes 1.7 s. Visual, GLB takes 1.8 s. Visual, OBJ takes 2.1 s",
+ "rerun": {},
+ "tested": [
+  "2026-11-09",
+  "2026-11-09"
+ ],
+ "kese": [
+  "22fd70c"
+ ],
+ "kese_version": [
+  "2.4.0"
+ ],
+ "runs": [
+  [
+   "corpus",
+   "2026-11-09",
+   11000000000.0,
+   5400.0
+  ]
+ ],
+ "machine": {
+  "cpu": "Intel(R) Xeon(R) Processor @ 2.30GHz, 4 cores, 15 GB",
+  "geos": "3.14.1",
+  "python": "3.13.18",
+  "shapely": "2.2.0"
+ }
+}

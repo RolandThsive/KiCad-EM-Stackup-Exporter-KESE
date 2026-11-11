@@ -1,0 +1,49 @@
+{
+ "name": "amp_macom_vga",
+ "project": "loxodes/vna",
+ "path": "loxodes__vna/breakouts/amp_macom_vga/amp_macom_vga.kicad_pcb",
+ "license": "As README.md states it: \"Unless otherwise noted, all work is under a MIT license.\"",
+ "license_checked": "2026-11-08",
+ "rank": 2202,
+ "score": 470,
+ "level": "LOW",
+ "complexity": {
+  "grade": 218,
+  "size": 173,
+  "features": 45
+ },
+ "features": [
+  "through_vias",
+  "filled_zones",
+  "curved_outline"
+ ],
+ "layers": 4,
+ "status": "pass",
+ "bad_design": null,
+ "chart_alt": "amp_macom_vga: stages 4 and 6 take 51% to 81% of a run. Simulation, GLB takes 5.0 s. Simulation, STEP takes 6.5 s. Simulation, STL takes 4.8 s. Simulation, OBJ takes 7.5 s. Visual, GLB takes 7.4 s. Visual, OBJ takes 8.9 s",
+ "rerun": {},
+ "tested": [
+  "2026-11-09",
+  "2026-11-09"
+ ],
+ "kese": [
+  "22fd70c"
+ ],
+ "kese_version": [
+  "2.4.0"
+ ],
+ "runs": [
+  [
+   "corpus",
+   "2026-11-09",
+   11000000000.0,
+   5400.0
+  ]
+ ],
+ "machine": {
+  "cpu": "Intel(R) Xeon(R) Processor @ 2.30GHz, 4 cores, 15 GB",
+  "geos": "3.14.1",
+  "python": "3.13.18",
+  "shapely": "2.2.0"
+ }
+}

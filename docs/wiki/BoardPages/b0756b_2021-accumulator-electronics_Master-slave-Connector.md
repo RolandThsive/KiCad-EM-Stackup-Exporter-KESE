@@ -1,6 +1,6 @@
 # 756. Master_slave Connector
 
-Board 756 of the 3,104 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 7](../CorpusTestingPages/Corpus-Testing-07.md#756-master_slave-connector).
+Board 756 of the 3,105 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 7](../CorpusTestingPages/Corpus-Testing-07.md#756-master_slave-connector).
 
 ![Master_slave Connector: stages 4 and 6 take 50% to 82% of a run. Simulation, GLB takes 5.8 s. Simulation, STEP takes 7.5 s. Simulation, STL takes 5.4 s. Simulation, OBJ takes 8.7 s. Visual, GLB takes 8.6 s. Visual, OBJ takes 10 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b0756b_2021-accumulator-electronics_Master-slave-Connector/stages.webp)
 

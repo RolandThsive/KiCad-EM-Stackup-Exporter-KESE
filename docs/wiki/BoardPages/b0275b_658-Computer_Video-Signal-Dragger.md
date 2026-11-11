@@ -1,6 +1,6 @@
 # 275. Video Signal Dragger
 
-Board 275 of the 3,104 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 3](../CorpusTestingPages/Corpus-Testing-03.md#275-video-signal-dragger).
+Board 275 of the 3,105 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 3](../CorpusTestingPages/Corpus-Testing-03.md#275-video-signal-dragger).
 
 ![Video Signal Dragger: stages 4 and 6 take 54% to 81% of a run. Simulation, GLB takes 4.8 s. Simulation, STEP takes 6.3 s. Simulation, STL takes 5.0 s. Simulation, OBJ takes 6.9 s. Visual, GLB takes 7.6 s. Visual, OBJ takes 9.1 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b0275b_658-Computer_Video-Signal-Dragger/stages.webp)
 

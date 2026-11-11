@@ -1,6 +1,6 @@
 # 266. Video Board - Signals
 
-Board 266 of the 3,104 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 3](../CorpusTestingPages/Corpus-Testing-03.md#266-video-board---signals).
+Board 266 of the 3,105 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 3](../CorpusTestingPages/Corpus-Testing-03.md#266-video-board---signals).
 
 ![Video Board - Signals: stages 4 and 6 take 54% to 85% of a run. Simulation, GLB takes 60 s. Simulation, STEP takes 72 s. Simulation, STL takes 59 s. Simulation, OBJ takes 91 s. Visual, GLB takes 2 min. Visual, OBJ takes 2 min](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b0266b_658-Computer_Video-Board-Signals/stages.webp)
 

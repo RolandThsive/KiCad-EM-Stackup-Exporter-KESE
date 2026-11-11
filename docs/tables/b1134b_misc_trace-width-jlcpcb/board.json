@@ -1,0 +1,50 @@
+{
+ "name": "trace-width-jlcpcb",
+ "project": "greatscottgadgets/misc",
+ "path": "greatscottgadgets__misc/evaluation-boards/trace-width/trace-width-jlcpcb.kicad_pcb",
+ "license": "GPL-2.0 (GNU GPL v2.0)",
+ "license_checked": "2026-11-08",
+ "rank": 2403,
+ "score": 292,
+ "level": "LOW",
+ "complexity": {
+  "grade": 230,
+  "size": 165,
+  "features": 65
+ },
+ "features": [
+  "through_vias",
+  "filled_zones",
+  "stackup",
+  "dielectric_properties"
+ ],
+ "layers": 6,
+ "status": "pass",
+ "bad_design": null,
+ "chart_alt": "trace-width-jlcpcb: stages 4 and 6 take 53% to 83% of a run. Simulation, GLB takes 12 s. Simulation, STEP takes 14 s. Simulation, STL takes 12 s. Simulation, OBJ takes 18 s. Visual, GLB takes 12 s. Visual, OBJ takes 14 s",
+ "rerun": {},
+ "tested": [
+  "2026-11-09",
+  "2026-11-09"
+ ],
+ "kese": [
+  "22fd70c"
+ ],
+ "kese_version": [
+  "2.4.0"
+ ],
+ "runs": [
+  [
+   "corpus",
+   "2026-11-09",
+   11000000000.0,
+   5400.0
+  ]
+ ],
+ "machine": {
+  "cpu": "Intel(R) Xeon(R) Processor @ 2.30GHz, 4 cores, 15 GB",
+  "geos": "3.14.1",
+  "python": "3.13.18",
+  "shapely": "2.2.0"
+ }
+}

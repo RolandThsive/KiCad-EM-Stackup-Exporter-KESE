@@ -1,6 +1,6 @@
 # 473. resistor-carrier
 
-Board 473 of the 3,104 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 5](../CorpusTestingPages/Corpus-Testing-05.md#473-resistor-carrier).
+Board 473 of the 3,105 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 5](../CorpusTestingPages/Corpus-Testing-05.md#473-resistor-carrier).
 
 ![resistor-carrier: reading, start-up and exit take 55% to 70% of a run. Simulation, GLB takes 0.5 s. Simulation, STEP takes 0.5 s. Simulation, STL takes 0.4 s. Simulation, OBJ takes 0.5 s. Visual, GLB takes 0.5 s. Visual, OBJ takes 0.6 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b0473b_starshipraider_resistor-carrier/stages.webp)
 

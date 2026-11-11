@@ -1,0 +1,49 @@
+{
+ "name": "LimeSDR_Sony",
+ "project": "myriadrf/front-end-modules",
+ "path": "myriadrf__front-end-modules/LimeSDR_PA_LNA/hardware/v1r3/KiCAD/LimeSDR_Sony.kicad_pcb",
+ "license": "CC-BY-3.0 (Creative Commons Attribution 3.0), in LimeSDR_PA_LNA/hardware/COPYING",
+ "license_checked": "2026-11-08",
+ "rank": 743,
+ "score": 3524,
+ "level": "HIGH",
+ "complexity": {
+  "grade": 319,
+  "size": 274,
+  "features": 45
+ },
+ "features": [
+  "through_vias",
+  "slotted_holes",
+  "filled_zones"
+ ],
+ "layers": 6,
+ "status": "pass",
+ "bad_design": null,
+ "chart_alt": "LimeSDR_Sony: stages 4 and 6 take 50% to 81% of a run. Simulation, GLB takes 43 s. Simulation, STEP takes 51 s. Simulation, STL takes 43 s. Simulation, OBJ takes 64 s. Visual, GLB takes 64 s. Visual, OBJ takes 80 s",
+ "rerun": {},
+ "tested": [
+  "2026-11-09",
+  "2026-11-09"
+ ],
+ "kese": [
+  "22fd70c"
+ ],
+ "kese_version": [
+  "2.4.0"
+ ],
+ "runs": [
+  [
+   "corpus",
+   "2026-11-09",
+   11000000000.0,
+   5400.0
+  ]
+ ],
+ "machine": {
+  "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz, 4 cores, 15 GB",
+  "geos": "3.14.1",
+  "python": "3.13.18",
+  "shapely": "2.2.0"
+ }
+}
