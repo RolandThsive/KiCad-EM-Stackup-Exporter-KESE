@@ -43,6 +43,7 @@ All pages of this wiki, in reading order.
 
 - [Glossary](Glossary.md)
 - [Future Upgrades And Planning](Future-Upgrades-And-Planning.md)
+- [Real PCB Stackup](Real-PCB-Stackup.md)
 - [License](License.md)
 
 | Previous | Next |

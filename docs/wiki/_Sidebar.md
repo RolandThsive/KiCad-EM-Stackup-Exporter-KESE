@@ -35,4 +35,5 @@
 **Research And Community**
 - [Glossary](Glossary.md)
 - [Future Upgrades And Planning](Future-Upgrades-And-Planning.md)
+- [Real PCB Stackup](Real-PCB-Stackup.md)
 - [License](License.md)
