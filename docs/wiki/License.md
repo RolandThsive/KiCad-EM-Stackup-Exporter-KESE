@@ -1,4 +1,4 @@
-# 26. License
+# 27. License
 
 KESE is free software, licensed under the **GNU General Public License, version 3 or later**
 (SPDX `GPL-3.0-or-later`). The repository's
@@ -6,7 +6,7 @@ KESE is free software, licensed under the **GNU General Public License, version 
 and [`NOTICE.md`](https://github.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/blob/main/NOTICE.md)
 files are the authority; this page summarises them.
 
-## 26.1 Why The GPL
+## 27.1 Why The GPL
 
 KESE includes material derived from KiCad, which is licensed under the GPL:
 
@@ -21,7 +21,7 @@ KiCad's original copyright headers and its `AUTHORS.txt` are kept word for word 
 repository's `licenses/` folder, listed in `NOTICE.md` and
 [`LICENSE_fonts.txt`](https://github.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/blob/main/Generator/kese/assets/fonts/LICENSE_fonts.txt).
 
-## 26.2 What You May Do
+## 27.2 What You May Do
 
 | You May | As Long As |
 |---|---|
@@ -32,19 +32,19 @@ repository's `licenses/` folder, listed in `NOTICE.md` and
 The GPL covers the program. The 3D models KESE writes from your own board are generally not
 covered by it, in the same way a document printed by a GPL program is not.
 
-## 26.3 Contributing
+## 27.3 Contributing
 
 Contributions are accepted under the same license, GPL-3.0-or-later; you keep the copyright in
 your contribution. If it includes someone else's work, say where it comes from and keep its
 notice. See
 [`CONTRIBUTING.md`](https://github.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/blob/main/CONTRIBUTING.md).
 
-## 26.4 No Warranty
+## 27.4 No Warranty
 
 KESE is provided as is, without any warranty; see sections 15 and 16 of the GPL. The models have
 not yet been validated against measured boards; see
-[Immediate Next Steps](Future-Upgrades-And-Planning.md#251-immediate-next-steps).
+[Where The Project Stands](Future-Upgrades-And-Planning.md#251-where-the-project-stands).
 
 | Previous | Next |
 |:---|---:|
-| [Future Upgrades And Planning](Future-Upgrades-And-Planning.md) |  |
+| [Real PCB Stackup](Real-PCB-Stackup.md) |  |
