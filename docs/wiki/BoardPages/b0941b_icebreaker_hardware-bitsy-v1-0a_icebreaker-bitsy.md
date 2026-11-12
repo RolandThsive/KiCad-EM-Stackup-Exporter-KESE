@@ -1,6 +1,6 @@
 # 941. icebreaker-bitsy
 
-Board 941 of the 3,131 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 9](../CorpusTestingPages/Corpus-Testing-09.md#941-icebreaker-bitsy).
+Board 941 of the 3,132 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 9](../CorpusTestingPages/Corpus-Testing-09.md#941-icebreaker-bitsy).
 
 ![icebreaker-bitsy: stages 4 and 6 take 53% to 84% of a run. Simulation, GLB takes 11 s. Simulation, STEP takes 14 s. Simulation, STL takes 11 s. Simulation, OBJ takes 17 s. Visual, GLB takes 16 s. Visual, OBJ takes 19 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b0941b_icebreaker_hardware-bitsy-v1-0a_icebreaker-bitsy/stages.webp)
 

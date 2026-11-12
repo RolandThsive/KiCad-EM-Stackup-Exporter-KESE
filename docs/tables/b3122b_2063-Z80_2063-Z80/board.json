@@ -1,0 +1,52 @@
+{
+ "name": "2063-Z80",
+ "project": "Z80-Retro/2063-Z80",
+ "path": "Z80-Retro__2063-Z80/2063-Z80.kicad_pcb",
+ "license": "No license found",
+ "license_checked": "2026-11-08",
+ "rank": 897,
+ "score": 2889,
+ "level": "MEDIUM",
+ "complexity": {
+  "grade": 286,
+  "size": 211,
+  "features": 75
+ },
+ "features": [
+  "through_vias",
+  "slotted_holes",
+  "shaped_pads",
+  "drill_offsets",
+  "filled_zones",
+  "curved_outline"
+ ],
+ "layers": 4,
+ "status": "pass",
+ "bad_design": null,
+ "chart_alt": "2063-Z80: stages 4 and 6 take 49% to 85% of a run. Simulation, GLB takes 66 s. Simulation, STEP takes 78 s. Simulation, STL takes 67 s. Simulation, OBJ takes 2 min. Visual, GLB takes 92 s. Visual, OBJ takes 2 min",
+ "rerun": {},
+ "tested": [
+  "2026-11-09",
+  "2026-11-09"
+ ],
+ "kese": [
+  "22fd70c"
+ ],
+ "kese_version": [
+  "2.4.0"
+ ],
+ "runs": [
+  [
+   "corpus",
+   "2026-11-09",
+   11000000000.0,
+   5400.0
+  ]
+ ],
+ "machine": {
+  "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz, 4 cores, 15 GB",
+  "geos": "3.14.1",
+  "python": "3.13.18",
+  "shapely": "2.2.0"
+ }
+}

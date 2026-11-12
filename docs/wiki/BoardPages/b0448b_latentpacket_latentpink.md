@@ -1,6 +1,6 @@
 # 448. latentpink
 
-Board 448 of the 3,131 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 5](../CorpusTestingPages/Corpus-Testing-05.md#448-latentpink).
+Board 448 of the 3,132 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 5](../CorpusTestingPages/Corpus-Testing-05.md#448-latentpink).
 
 ![latentpink: stages 4 and 6 take 40% to 89% of a run. Simulation, GLB takes 7 min. Simulation, STEP takes 8 min. Simulation, STL takes 7 min. Simulation, OBJ takes 14 min. Visual, GLB takes 13 min. Visual, OBJ takes 14 min](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b0448b_latentpacket_latentpink/stages.webp)
 

@@ -1,6 +1,6 @@
 # 1227. Issue 4
 
-Board 1,227 of the 3,131 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 12](../CorpusTestingPages/Corpus-Testing-12.md#1227-issue-4).
+Board 1,227 of the 3,132 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 12](../CorpusTestingPages/Corpus-Testing-12.md#1227-issue-4).
 
 ![Issue 4: stages 4 and 6 take 57% to 87% of a run. Simulation, GLB takes 68 s. Simulation, STEP takes 84 s. Simulation, STL takes 70 s. Simulation, OBJ takes 2 min. Visual, GLB takes 96 s. Visual, OBJ takes 2 min](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b1227b_ZX-Spectrum-Issue-4B-KiCAD_Issue-4/stages.webp)
 

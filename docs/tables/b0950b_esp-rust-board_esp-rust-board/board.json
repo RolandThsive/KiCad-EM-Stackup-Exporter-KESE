@@ -4,7 +4,7 @@
  "path": "esp-rs__esp-rust-board/hardware/esp-rust-board/esp-rust-board.kicad_pcb",
  "license": "CERN-OHL-P-2.0 (CERN Open Hardware Licence v2, Permissive), in LICENSE-CERN-OHL",
  "license_checked": "2026-11-08",
- "rank": 1540,
+ "rank": 1541,
  "score": 1299,
  "level": "MEDIUM",
  "complexity": {

@@ -1,6 +1,6 @@
 # 309. boatcontrol
 
-Board 309 of the 3,131 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 3](../CorpusTestingPages/Corpus-Testing-03.md#309-boatcontrol).
+Board 309 of the 3,132 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 3](../CorpusTestingPages/Corpus-Testing-03.md#309-boatcontrol).
 
 ![boatcontrol: stages 4 and 6 take 55% to 87% of a run. Simulation, GLB takes 7 min. Simulation, STEP takes 9 min. Simulation, STL takes 8 min. Simulation, OBJ takes 12 min. Visual, GLB takes 11 min. Visual, OBJ takes 12 min](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b0309b_boatcontrol_boatcontrol/stages.webp)
 

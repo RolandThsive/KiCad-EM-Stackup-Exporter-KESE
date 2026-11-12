@@ -1,6 +1,6 @@
 # 935. board_presignal
 
-Board 935 of the 3,131 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 9](../CorpusTestingPages/Corpus-Testing-09.md#935-board_presignal).
+Board 935 of the 3,132 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 9](../CorpusTestingPages/Corpus-Testing-09.md#935-board_presignal).
 
 ![board_presignal: stages 4 and 6 take 50% to 85% of a run. Simulation, GLB takes 6 min. Simulation, STEP takes 9 min. Simulation, STL takes 7 min. Simulation, OBJ takes 16 min. Visual, GLB takes 12 min. Visual, OBJ takes 19 min](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b0935b_discrete6502_board-presignal/stages.webp)
 

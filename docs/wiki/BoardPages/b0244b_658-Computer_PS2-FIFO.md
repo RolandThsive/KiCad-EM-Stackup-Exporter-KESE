@@ -1,6 +1,6 @@
 # 244. PS2 FIFO
 
-Board 244 of the 3,131 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 3](../CorpusTestingPages/Corpus-Testing-03.md#244-ps2-fifo).
+Board 244 of the 3,132 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 3](../CorpusTestingPages/Corpus-Testing-03.md#244-ps2-fifo).
 
 ![PS2 FIFO: stages 4 and 6 take 53% to 82% of a run. Simulation, GLB takes 6.1 s. Simulation, STEP takes 8.1 s. Simulation, STL takes 6.4 s. Simulation, OBJ takes 8.7 s. Visual, GLB takes 11 s. Visual, OBJ takes 12 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b0244b_658-Computer_PS2-FIFO/stages.webp)
 

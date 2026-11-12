@@ -1,6 +1,6 @@
 # 859. FC_REV_A
 
-Board 859 of the 3,131 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 8](../CorpusTestingPages/Corpus-Testing-08.md#859-fc_rev_a).
+Board 859 of the 3,132 of [Corpus Testing](../Corpus-Testing.md), on [Corpus Page 8](../CorpusTestingPages/Corpus-Testing-08.md#859-fc_rev_a).
 
 ![FC_REV_A: stages 4 and 6 take 54% to 83% of a run. Simulation, GLB takes 41 s. Simulation, STEP takes 49 s. Simulation, STL takes 41 s. Simulation, OBJ takes 61 s. Visual, GLB takes 57 s. Visual, OBJ takes 66 s](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/corpus-testing/docs/images/b0859b_flight-controller-v1_FC-REV-A/stages.webp)
 
