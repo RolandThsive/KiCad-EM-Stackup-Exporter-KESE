@@ -121,15 +121,29 @@ the board:
 
 ```python
 PLIES_BY_HAND = {
-    "14_stackup_full": {
+    "05_vias_micro": {
         ("F.Cu", "In1.Cu"): [
             {"type": "prepreg", "thickness_mm": 0.100, "material": "1080", "epsilon_r": 3.8, "loss_tangent": 0.015},
             {"type": "prepreg", "thickness_mm": 0.120, "material": "2116", "epsilon_r": 4.1, "loss_tangent": 0.017},
         ],
         ("In1.Cu", "In2.Cu"): [
-            {"type": "core",    "thickness_mm": 1.000, "material": "FR4 core", "epsilon_r": 4.6, "loss_tangent": 0.018},
+            {"type": "core",    "thickness_mm": 0.200, "material": "FR4 core", "epsilon_r": 4.6, "loss_tangent": 0.018},
         ],
-        ("In2.Cu", "B.Cu"): [
+        ("In2.Cu", "In3.Cu"): [
+            {"type": "prepreg", "thickness_mm": 0.100, "material": "1080", "epsilon_r": 3.8, "loss_tangent": 0.015},
+            {"type": "prepreg", "thickness_mm": 0.120, "material": "2116", "epsilon_r": 4.1, "loss_tangent": 0.017},
+        ],
+        ("In3.Cu", "In4.Cu"): [
+            {"type": "core",    "thickness_mm": 0.200, "material": "FR4 core", "epsilon_r": 4.6, "loss_tangent": 0.018},
+        ],
+        ("In4.Cu", "In5.Cu"): [
+            {"type": "prepreg", "thickness_mm": 0.120, "material": "2116", "epsilon_r": 4.1, "loss_tangent": 0.017},
+            {"type": "prepreg", "thickness_mm": 0.100, "material": "1080", "epsilon_r": 3.8, "loss_tangent": 0.015},
+        ],
+        ("In5.Cu", "In6.Cu"): [
+            {"type": "core",    "thickness_mm": 0.200, "material": "FR4 core", "epsilon_r": 4.6, "loss_tangent": 0.018},
+        ],
+        ("In6.Cu", "B.Cu"): [
             {"type": "prepreg", "thickness_mm": 0.120, "material": "2116", "epsilon_r": 4.1, "loss_tangent": 0.017},
             {"type": "prepreg", "thickness_mm": 0.100, "material": "1080", "epsilon_r": 3.8, "loss_tangent": 0.015},
         ],
@@ -137,9 +151,9 @@ PLIES_BY_HAND = {
 }
 ```
 
-This example writes a whole four-layer board: its three gaps, from the top copper down to the
-bottom. `Board.py` holds it as a comment; with the `#` in front of its lines removed, board
-`14_stackup_full` is built with these five plies.
+This example writes a whole eight-layer board: its seven gaps, from the top copper down to the
+bottom, prepreg and core in turn. `Board.py` holds it as a comment; with the `#` in front of its
+lines removed, board `05_vias_micro` is built with these eleven plies.
 
 The first key is the board file's name without `.kicad_pcb`, so other boards are not touched.
 Under it, each gap to change is named by its two copper layers, the upper one first, and gets
@@ -152,7 +166,7 @@ hand keep their plies and the rest of the laminate is split evenly between the o
 KESE checks the list before it builds anything. The two copper layers must be neighbours on that
 board, every thickness must be more than 0, εr 1 or more and tan δ 0 or more, and a ply may have
 no other keys. A mistake stops the run with a message that names the entry, as
-`Board.PLIES_BY_HAND['14_stackup_full'][('F.Cu', 'In2.Cu')]: ('F.Cu', 'In2.Cu') is not two
+`Board.PLIES_BY_HAND['05_vias_micro'][('F.Cu', 'In2.Cu')]: ('F.Cu', 'In2.Cu') is not two
 neighbouring copper layers of this board, the upper one first; its gaps are ...`.
 
 ### 12.1.5 The Whole Laminate As One Solid

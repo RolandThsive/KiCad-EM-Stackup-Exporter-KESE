@@ -63,17 +63,32 @@ PLY_MIN_THICKNESS_MM = 0.001
 #   "frequency_hz", "model"   optional; left out, the defaults in Material below
 # KESE checks the list before it builds anything: the two copper layers must be neighbours on that
 # board, and every thickness above 0.
-# The example is a whole four-layer board: its three gaps, from the top copper down to the bottom.
+# The example is a whole eight-layer board: its seven gaps, from the top copper down to the bottom,
+# prepreg and core in turn.
 PLIES_BY_HAND = {
-    # "14_stackup_full": {
+    # "05_vias_micro": {
     #     ("F.Cu", "In1.Cu"): [
     #         {"type": "prepreg", "thickness_mm": 0.100, "material": "1080", "epsilon_r": 3.8, "loss_tangent": 0.015},
     #         {"type": "prepreg", "thickness_mm": 0.120, "material": "2116", "epsilon_r": 4.1, "loss_tangent": 0.017},
     #     ],
     #     ("In1.Cu", "In2.Cu"): [
-    #         {"type": "core",    "thickness_mm": 1.000, "material": "FR4 core", "epsilon_r": 4.6, "loss_tangent": 0.018},
+    #         {"type": "core",    "thickness_mm": 0.200, "material": "FR4 core", "epsilon_r": 4.6, "loss_tangent": 0.018},
     #     ],
-    #     ("In2.Cu", "B.Cu"): [
+    #     ("In2.Cu", "In3.Cu"): [
+    #         {"type": "prepreg", "thickness_mm": 0.100, "material": "1080", "epsilon_r": 3.8, "loss_tangent": 0.015},
+    #         {"type": "prepreg", "thickness_mm": 0.120, "material": "2116", "epsilon_r": 4.1, "loss_tangent": 0.017},
+    #     ],
+    #     ("In3.Cu", "In4.Cu"): [
+    #         {"type": "core",    "thickness_mm": 0.200, "material": "FR4 core", "epsilon_r": 4.6, "loss_tangent": 0.018},
+    #     ],
+    #     ("In4.Cu", "In5.Cu"): [
+    #         {"type": "prepreg", "thickness_mm": 0.120, "material": "2116", "epsilon_r": 4.1, "loss_tangent": 0.017},
+    #         {"type": "prepreg", "thickness_mm": 0.100, "material": "1080", "epsilon_r": 3.8, "loss_tangent": 0.015},
+    #     ],
+    #     ("In5.Cu", "In6.Cu"): [
+    #         {"type": "core",    "thickness_mm": 0.200, "material": "FR4 core", "epsilon_r": 4.6, "loss_tangent": 0.018},
+    #     ],
+    #     ("In6.Cu", "B.Cu"): [
     #         {"type": "prepreg", "thickness_mm": 0.120, "material": "2116", "epsilon_r": 4.1, "loss_tangent": 0.017},
     #         {"type": "prepreg", "thickness_mm": 0.100, "material": "1080", "epsilon_r": 3.8, "loss_tangent": 0.015},
     #     ],
