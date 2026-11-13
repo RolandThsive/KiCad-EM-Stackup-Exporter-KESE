@@ -126,9 +126,20 @@ PLIES_BY_HAND = {
             {"type": "prepreg", "thickness_mm": 0.100, "material": "1080", "epsilon_r": 3.8, "loss_tangent": 0.015},
             {"type": "prepreg", "thickness_mm": 0.120, "material": "2116", "epsilon_r": 4.1, "loss_tangent": 0.017},
         ],
+        ("In1.Cu", "In2.Cu"): [
+            {"type": "core",    "thickness_mm": 1.000, "material": "FR4 core", "epsilon_r": 4.6, "loss_tangent": 0.018},
+        ],
+        ("In2.Cu", "B.Cu"): [
+            {"type": "prepreg", "thickness_mm": 0.120, "material": "2116", "epsilon_r": 4.1, "loss_tangent": 0.017},
+            {"type": "prepreg", "thickness_mm": 0.100, "material": "1080", "epsilon_r": 3.8, "loss_tangent": 0.015},
+        ],
     },
 }
 ```
+
+This example writes a whole four-layer board: its three gaps, from the top copper down to the
+bottom. `Board.py` holds it as a comment; with the `#` in front of its lines removed, board
+`14_stackup_full` is built with these five plies.
 
 The first key is the board file's name without `.kicad_pcb`, so other boards are not touched.
 Under it, each gap to change is named by its two copper layers, the upper one first, and gets
