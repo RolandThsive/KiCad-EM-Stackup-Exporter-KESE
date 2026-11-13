@@ -1,5 +1,5 @@
 """
-parameters/geometry.py - numerical quality of the geometry.
+parameters/Run_KESE/Geometry.py - numerical quality of the geometry.
 
 These control how finely curves are faceted and how neighbouring layers are made to share
 exact edges.  They do not change dimensions.

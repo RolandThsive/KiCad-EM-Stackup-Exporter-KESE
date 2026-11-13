@@ -20,20 +20,21 @@ or the files in `parameters/` change any single value.
 | A single body for the whole laminate | `--set Board.DIELECTRIC_GROUPING=merged` | one `Board` solid instead of one per dielectric |
 
 > [!NOTE]
-> Every format and both modes hold the same parts: the ones switched on with
-> `Board.BOARD_ENABLED`, `Copper.COPPER_ENABLED` (copper and plated barrels),
-> `Finish.FINISH_ENABLED`, `SolderMask.SOLDER_MASK_ENABLED` and `Silkscreen.SILKSCREEN_ENABLED`,
-> the board, copper and finish on by default, the solder mask and silkscreen off. Switch the mask
-> and silkscreen on when the solver or the render must see them:
-> `--set SolderMask.SOLDER_MASK_ENABLED=True --set Silkscreen.SILKSCREEN_ENABLED=True`. A STEP file
+> Every format and both modes hold the same parts: the lines of the stack-up in
+> `parameters/PCB_elements/Stackup.py` that are `True` ([Stack-Up Model](Stack-Up-Model.md)). The
+> laminate, the copper, the plated holes and the finish are on by default, the solder mask and the
+> silkscreen off. Switch the mask and silkscreen on when the solver or the render must see them:
+> `--set Stackup.solder_mask=True --set Stackup.silkscreen=True`. A STEP file
 > with them is 1.4 to 1.9 times as big (the PCIe card in `Input/`, in mm: 151 MB and 1,024 solids
 > against 81 MB and 788 solids, measured with `Geometry.CIRCLE_CHORD_TOLERANCE_MM = 0.002`).
 
 ## 10.2 The Presets
 
-`Presets.PRESETS` (in `parameters/presets.py`); `--for <name>` applies these overrides before any `--set`, and
+`Presets.PRESETS` (in `parameters/Run_KESE/Presets.py`); `--for <name>` applies these overrides before any `--set`, and
 `parameters.txt` records the preset and every value it changed. Each name in a preset is checked as a
-`--set` is, and a new entry in the file is a new preset. None of these routes has been tried with
+`--set` is, and a new entry in the file is a new preset. A preset leaves `Stackup.FUSION_BUILD` as
+`Stackup.py` has it, so each of them works with the plies fused and with the plies separate
+(`--for freecad --set Stackup.FUSION_BUILD=PLIES_SEPARATE`). None of these routes has been tried with
 KESE output yet: they follow each tool's documented import formats.
 
 | Preset | `MODE` | `FILE_FORMAT` | `UNITS` | `ORIGIN` | `COPPER_GROUPING` | `DIELECTRIC_GROUPING` | `WRITE_MATERIALS_JSON` | Also |
@@ -43,10 +44,10 @@ KESE output yet: they follow each tool's documented import formats.
 | `calculix` | simulation | step | mm | kicad | layer | layer | True | no finish |
 | `openems` | simulation | stl | mm | kicad | net | layer | True | no finish |
 | `viewer` | visual | glb | m | center | (unchanged) | (unchanged) | (unchanged) | |
-| `blender_glb` | visual | glb | m | center | (unchanged) | (unchanged) | (unchanged) | `ORIENTATION` flat, solder mask and silkscreen on |
-| `blender_obj` | visual | obj | m | center | (unchanged) | (unchanged) | (unchanged) | `ORIENTATION` flat, solder mask and silkscreen on |
+| `blender_glb` | visual | glb | m | center | (unchanged) | (unchanged) | (unchanged) | `ORIENTATION` flat, `Stackup.solder_mask` and `Stackup.silkscreen` `True` |
+| `blender_obj` | visual | obj | m | center | (unchanged) | (unchanged) | (unchanged) | `ORIENTATION` flat, `Stackup.solder_mask` and `Stackup.silkscreen` `True` |
 
-"No finish" is `Finish.FINISH_ENABLED = False`: 80 nm of gold (the default ENIG's) is far below any
+"No finish" is `Stackup.finish = False`, the three finish lines of the stack-up: 80 nm of gold (the default ENIG's) is far below any
 FDTD cell of openEMS, and would force the volume mesh of Elmer or CalculiX down to cells of that size.
 
 - **Elmer**: neither ElmerGrid nor ElmerSolver reads STEP or STL. Mesh the STEP file with gmsh, whose
@@ -108,7 +109,7 @@ For an EM simulation of a board in the solver's own units:
 | `Verifier.VERIFY` or `--verify` | on, for the first export of a new board |
 
 That is the `freecad` preset with `--verify`. Then set the fabricator's values in
-`parameters/copper.py`, `parameters/solder_mask.py` and `parameters/board.py` before trusting the
+`parameters/PCB_elements/Copper.py`, `SolderMask.py` and `Board.py` before trusting the
 results; see [Parameter Reference](Parameter-Reference.md).
 
 | Previous | Next |

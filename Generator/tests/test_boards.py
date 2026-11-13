@@ -1,6 +1,7 @@
 """Regression suite: every board in tests/boards, featureTest/ and Input/ through every output with
 the Verifier on: simulation mode written as GLB and STEP, visual mode as GLB.  Every board runs with
-the parameters in parameters/, but for the changes SETTINGS lists for it.
+the parameters in parameters/, but for the changes SETTINGS lists for it; the boards of SEPARATE_TOO
+run a second time with the plies of the laminate built apart.
 
     python -m pytest tests                 (or:  python tests/test_boards.py)
     python tests/test_boards.py --accept   re-record tests/baseline.json after an intended geometry change
@@ -55,22 +56,31 @@ FORMATS = {"simulation": ["glb", "step"], "visual": ["glb"]}
 # The boards whose stack-up names a finish other than ENIG (Finish.FINISH_TYPE's default) run with
 # FINISH_TYPE = "file", so that their own finish is built and the names are read from the file.
 FILE_FINISH = {"Finish.FINISH_TYPE": "file"}
-ALL_PARTS = {"SolderMask.SOLDER_MASK_ENABLED": True, "Silkscreen.SILKSCREEN_ENABLED": True}
+ALL_PARTS = {"Stackup.solder_mask": True, "Stackup.silkscreen": True}
 SETTINGS = {"16_edge_plating_castellation": FILE_FINISH, "17_mask_silk": FILE_FINISH, "18_finishes": FILE_FINISH,
             "22_hdi_module": FILE_FINISH, "23_pcie_card": FILE_FINISH,
-            "17b_silk_over_copper": {"Silkscreen.SILKSCREEN_OVER_COPPER": True},
+            "17b_silk_over_copper": {"SilkScreen.SILKSCREEN_OVER_COPPER": True},
             "18c_finish_before_mask": {"Finish.FINISH_BEFORE_SOLDER_MASK": True, **FILE_FINISH}}
+# The boards that run a second time with the plies separate (Stackup.FUSION_BUILD), recorded as
+# "<board>+plies_separate": those whose gaps are laid up of plies, and boards whose laminate is cut
+# by what ends inside it (blind vias, backdrills, counterbores, countersinks, via plugs)
+PLIES_SEPARATE = {"Stackup.FUSION_BUILD": "PLIES_SEPARATE"}
+VARIANT = "+plies_separate"
+SEPARATE_TOO = ("04_vias_blind_buried", "14_stackup_full", "22_hdi_module", "24_backdrills", "25_post_machining",
+                "26_via_protection", "29_stackup_plies", "29b_stackup_plies_machined", "29c_stackup_frequency",
+                "29d_stackup_real")
+RUNS = [(p, "") for p in BOARDS] + [(p, VARIANT) for p in BOARDS if p.stem in SEPARATE_TOO]
 
 
-def run_board(pcb, mode, audit=step_audit):
+def run_board(pcb, mode, audit=step_audit, variant=""):
     """-> (verifier ok, verifier lines, {part: volume mm3}, what `audit` gave for the STEP file or
     None).  The suite's own loop passes an `audit` that hands the file's parts to background
-    processes."""
+    processes.  variant: "" or VARIANT, the run with the plies separate, written to a folder of its own."""
     formats = FORMATS[mode]
-    changes = {**ALL_PARTS, **SETTINGS.get(pcb.stem, {})}
+    changes = {**ALL_PARTS, **SETTINGS.get(pcb.stem, {}), **(PLIES_SEPARATE if variant else {})}
     with settings(changes):
-        out_dir, model = generate(pcb, mode=mode, formats=formats, out_root=OUT, overrides=tuple(changes.items()),
-                                  verify=False, log=lambda s: None)
+        out_dir, model = generate(pcb, mode=mode, formats=formats, out_root=OUT / variant.strip("+"),
+                                  overrides=tuple(changes.items()), verify=False, log=lambda s: None)
         ok, lines = every_check(model)
     scale = 1000.0 if model.units == "m" else 1.0
     with np.errstate(divide="ignore", invalid="ignore"):     # a skin part with no volume has no centre either
@@ -89,12 +99,12 @@ def step_problems(step):
     return [f"STEP: {step[0]} invalid solids, {step[1]} free edges"] if step and step[:2] != (0, 0) else []
 
 
-def check(pcb, mode, baseline, audit=step_audit):
+def check(pcb, mode, baseline, audit=step_audit, variant=""):
     """-> (problems but the STEP file's, {part: volume mm3}, what `audit` gave for the STEP file)"""
-    ok, lines, volumes, step = run_board(pcb, mode, audit)
+    ok, lines, volumes, step = run_board(pcb, mode, audit, variant)
     problems = [] if ok else [l.strip() for l in lines[1:] if "False" in l or "worst" in l or "alternate" in l] \
         or ["Verifier: FAIL"]
-    key = f"{pcb.stem}/{mode}"
+    key = f"{pcb.stem}{variant}/{mode}"
     for part, vol in baseline.get(key, {}).items():
         now = volumes.get(part)
         if now is None:
@@ -114,12 +124,12 @@ def load_baseline():
 def pytest_generate_tests(metafunc):
     shutil.rmtree(OUT, ignore_errors=True)
     if "pcb" in metafunc.fixturenames:
-        metafunc.parametrize("pcb,mode", [(p, m) for p in BOARDS for m in MODES],
-                             ids=[f"{p.stem}-{m}" for p in BOARDS for m in MODES])
+        metafunc.parametrize("pcb,mode,variant", [(p, m, v) for p, v in RUNS for m in MODES],
+                             ids=[f"{p.stem}{v}-{m}" for p, v in RUNS for m in MODES])
 
 
-def test_board(pcb, mode):
-    problems, _, step = check(pcb, mode, load_baseline())
+def test_board(pcb, mode, variant):
+    problems, _, step = check(pcb, mode, load_baseline(), variant=variant)
     problems += step_problems(step)
     assert not problems, "\n".join(problems)
 
@@ -164,13 +174,13 @@ def main(args):
     shutil.rmtree(OUT, ignore_errors=True)
     baseline, queue, failed = load_baseline(), [], 0
     with ProcessPoolExecutor(AUDITORS, mp_context=multiprocessing.get_context("spawn")) as pool:
-        for pcb in [p for p in BOARDS if p.stem in named] if named else BOARDS:
+        for pcb, variant in [(p, v) for p, v in RUNS if p.stem in named] if named else RUNS:
             for mode in MODES:
-                key = f"{pcb.stem}/{mode}"
+                key = f"{pcb.stem}{variant}/{mode}"
                 record = accept or (add and key not in baseline)
                 t0 = time.perf_counter()
                 problems, volumes, step = check(pcb, mode, {} if record else baseline, lambda path: [
-                    pool.submit(audit_part, job, healed) for job in parts(path)])
+                    pool.submit(audit_part, job, healed) for job in parts(path)], variant)
                 if record:
                     baseline[key] = {k: round(v, 9) for k, v in sorted(volumes.items())}
                 queue.append((key, problems, time.perf_counter() - t0, step))

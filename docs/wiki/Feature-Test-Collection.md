@@ -9,18 +9,23 @@ run goes:
   the Verifier, the solder mask and the silkscreen on and the board's own settings, as the
   regression suite (`Generator/tests/test_boards.py`) sets them.
 - Each bar is the median of the three runs for that stage, from the `timing` block of
-  [`report.txt`](Project-Output-Organization.md#1122-reporttxt). All 720 runs passed the Verifier.
+  [`report.txt`](Project-Output-Organization.md#1122-reporttxt). All 792 runs passed the Verifier.
 - Beside each board's facts, a second table gives, for each of the six runs, the size of the model
   file it writes and the most memory it used at once: the proportional set size (PSS) of KESE's
   process and its workers, summed and sampled every 10 ms, the median of three more runs. The STL
   size is that of the `stl/` folder, one file a part, and the OBJ size includes its `.mtl`. MB is a
   million bytes.
+- Boards 29 to 29d came with the stack-up changes of
+  [25.2](Future-Upgrades-And-Planning.md#252-model-accuracy) and were timed after them; the other
+  boards were timed before. A rerun of those 40 boards in simulation GLB and visual GLB, before and
+  after the changes one right after the other, gave the same model files byte for byte and the same
+  times: the sum of the medians went from 144.0 s to 143.5 s.
 - The command for board 11, simulation mode with GLB; the other five runs differ only in
   `--format step`, `stl` or `obj`, or in `--mode visual` with `--format glb` or `obj`:
 
 ```text
 python run_KESE.py ../featureTest/11_zones.kicad_pcb --mode simulation --format glb --verify \
-    --set SolderMask.SOLDER_MASK_ENABLED=True --set Silkscreen.SILKSCREEN_ENABLED=True
+    --set Stackup.solder_mask=True --set Stackup.silkscreen=True
 ```
 
 **The runs used the default parameters otherwise, on one Linux machine with 4 cores (an Intel Xeon
@@ -1144,6 +1149,210 @@ with GLB or STL is the quickest of the six runs on every board but 09 and 27, wh
 <tr><th colspan="3" align="left">Visual</th></tr>
 <tr><td>GLB</td><td align="right">203 kB</td><td align="right">84 MB</td></tr>
 <tr><td>OBJ</td><td align="right">501 kB</td><td align="right">85 MB</td></tr>
+</table>
+
+</td>
+</tr>
+</table>
+
+### 18.7.3 29 Plies In The Stack-Up
+
+<p align="center">
+<img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Feature-Test-Collection/29_stackup_plies/top_straight_visual.webp" width="49.5%" alt="29 Plies in the stack-up straight from above in visual mode">
+<img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Feature-Test-Collection/29_stackup_plies/bottom_straight_visual.webp" width="49.5%" alt="29 Plies in the stack-up straight from below in visual mode, mirrored as KiCad flips the board">
+</p>
+
+![29 Plies in the stack-up: stacked bars of seconds per stage, one format a run; stages 4 and 6 take 38% to 60% of a run. Simulation with GLB takes 0.6 s: read 63 ms, resolve 52 ms, geometry 77 ms, materials 0.1 ms, assemble 0.2, write 7 ms, verify 28 ms, start-up and exit 0.2. Simulation with STEP takes 0.8 s: read 62 ms, resolve 52 ms, geometry 69 ms, materials 0.1 ms, assemble 0.2, write 0.2, verify 27 ms, start-up and exit 0.2. Simulation with STL takes 0.7 s: read 68 ms, resolve 55 ms, geometry 79 ms, materials 0.1 ms, assemble 0.3, write 11 ms, verify 26 ms, start-up and exit 0.2. Simulation with OBJ takes 0.8 s: read 70 ms, resolve 63 ms, geometry 82 ms, materials 0.2 ms, assemble 0.3, write 0.1, verify 25 ms, start-up and exit 0.2. Visual with GLB takes 0.9 s: read 69 ms, resolve 58 ms, geometry 75 ms, materials 0.1 ms, assemble 0.5, write 4 ms, verify 36 ms, start-up and exit 0.2. Visual with OBJ takes 0.9 s: read 65 ms, resolve 56 ms, geometry 77 ms, materials 0.2 ms, assemble 0.5, write 48 ms, verify 34 ms, start-up and exit 0.2](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Feature-Test-Collection/feature_29_stackup_plies.webp)
+
+| Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
+|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
+| Simulation, GLB | 63&nbsp;ms | 52&nbsp;ms | 77&nbsp;ms | 0.1&nbsp;ms | 0.2 | 7&nbsp;ms | 28&nbsp;ms | 0.2 | 0.6 |
+| Simulation, STEP | 62&nbsp;ms | 52&nbsp;ms | 69&nbsp;ms | 0.1&nbsp;ms | 0.2 | 0.2 | 27&nbsp;ms | 0.2 | 0.8 |
+| Simulation, STL | 68&nbsp;ms | 55&nbsp;ms | 79&nbsp;ms | 0.1&nbsp;ms | 0.3 | 11&nbsp;ms | 26&nbsp;ms | 0.2 | 0.7 |
+| Simulation, OBJ | 70&nbsp;ms | 63&nbsp;ms | 82&nbsp;ms | 0.2&nbsp;ms | 0.3 | 0.1 | 25&nbsp;ms | 0.2 | 0.8 |
+| Visual, GLB | 69&nbsp;ms | 58&nbsp;ms | 75&nbsp;ms | 0.1&nbsp;ms | 0.5 | 4&nbsp;ms | 36&nbsp;ms | 0.2 | 0.9 |
+| Visual, OBJ | 65&nbsp;ms | 56&nbsp;ms | 77&nbsp;ms | 0.2&nbsp;ms | 0.5 | 48&nbsp;ms | 34&nbsp;ms | 0.2 | 0.9 |
+
+<table align="center">
+<tr>
+<td valign="top">
+
+| Board | `featureTest/`<br>`29_stackup_plies.kicad_pcb` |
+|---|---|
+| Outline | 36 × 22 mm |
+| Thickness | 1.46 mm |
+| Copper&nbsp;layers | 6 |
+| Dielectric&nbsp;plies | 10 in 5 gaps |
+| Vias | 5: 4 blind and buried, 1 through |
+| Board&nbsp;edge | Plain |
+| Mask,&nbsp;silkscreen,&nbsp;finish | Not set (drawn green and white),<br>ENIG |
+
+</td>
+<td valign="top">
+
+<table>
+<tr><th>File<br>type</th><th>File<br>size</th><th>Peak memory<br>used</th></tr>
+<tr><th colspan="3" align="left">Simulation</th></tr>
+<tr><td>GLB</td><td align="right">860 kB</td><td align="right">63 MB</td></tr>
+<tr><td>STEP</td><td align="right">2.2 MB</td><td align="right">62 MB</td></tr>
+<tr><td>STL</td><td align="right">1.3 MB</td><td align="right">63 MB</td></tr>
+<tr><td>OBJ</td><td align="right">2.4 MB</td><td align="right">66 MB</td></tr>
+<tr><th colspan="3" align="left">Visual</th></tr>
+<tr><td>GLB</td><td align="right">374 kB</td><td align="right">85 MB</td></tr>
+<tr><td>OBJ</td><td align="right">961 kB</td><td align="right">86 MB</td></tr>
+</table>
+
+</td>
+</tr>
+</table>
+
+### 18.7.4 29b Machining Through Plies
+
+<p align="center">
+<img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Feature-Test-Collection/29b_stackup_plies_machined/top_straight_visual.webp" width="49.5%" alt="29b Machining through plies straight from above in visual mode">
+<img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Feature-Test-Collection/29b_stackup_plies_machined/bottom_straight_visual.webp" width="49.5%" alt="29b Machining through plies straight from below in visual mode, mirrored as KiCad flips the board">
+</p>
+
+![29b Machining through plies: stacked bars of seconds per stage, one format a run; stages 4 and 6 take 40% to 82% of a run. Simulation with GLB takes 1.1 s: read 69 ms, resolve 0.1, geometry 0.2, materials 0.1 ms, assemble 0.5, write 12 ms, verify 66 ms, start-up and exit 0.2. Simulation with STEP takes 1.9 s: read 71 ms, resolve 0.1, geometry 0.2, materials 0.1 ms, assemble 0.5, write 0.7, verify 62 ms, start-up and exit 0.2. Simulation with STL takes 1.2 s: read 70 ms, resolve 0.1, geometry 0.2, materials 0.1 ms, assemble 0.5, write 21 ms, verify 63 ms, start-up and exit 0.2. Simulation with OBJ takes 1.4 s: read 68 ms, resolve 0.1, geometry 0.2, materials 0.1 ms, assemble 0.5, write 0.3, verify 64 ms, start-up and exit 0.2. Visual with GLB takes 2.4 s: read 70 ms, resolve 0.1, geometry 0.2, materials 0.1 ms, assemble 1.8, write 10 ms, verify 62 ms, start-up and exit 0.2. Visual with OBJ takes 2.5 s: read 72 ms, resolve 0.1, geometry 0.2, materials 0.2 ms, assemble 1.7, write 0.2, verify 57 ms, start-up and exit 0.2](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Feature-Test-Collection/feature_29b_stackup_plies_machined.webp)
+
+| Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
+|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
+| Simulation, GLB | 69&nbsp;ms | 0.1 | 0.2 | 0.1&nbsp;ms | 0.5 | 12&nbsp;ms | 66&nbsp;ms | 0.2 | 1.1 |
+| Simulation, STEP | 71&nbsp;ms | 0.1 | 0.2 | 0.1&nbsp;ms | 0.5 | 0.7 | 62&nbsp;ms | 0.2 | 1.9 |
+| Simulation, STL | 70&nbsp;ms | 0.1 | 0.2 | 0.1&nbsp;ms | 0.5 | 21&nbsp;ms | 63&nbsp;ms | 0.2 | 1.2 |
+| Simulation, OBJ | 68&nbsp;ms | 0.1 | 0.2 | 0.1&nbsp;ms | 0.5 | 0.3 | 64&nbsp;ms | 0.2 | 1.4 |
+| Visual, GLB | 70&nbsp;ms | 0.1 | 0.2 | 0.1&nbsp;ms | 1.8 | 10&nbsp;ms | 62&nbsp;ms | 0.2 | 2.4 |
+| Visual, OBJ | 72&nbsp;ms | 0.1 | 0.2 | 0.2&nbsp;ms | 1.7 | 0.2 | 57&nbsp;ms | 0.2 | 2.5 |
+
+<table align="center">
+<tr>
+<td valign="top">
+
+| Board | `featureTest/`<br>`29b_stackup_plies_machined.kicad_pcb` |
+|---|---|
+| Outline | 60 × 30 mm |
+| Thickness | 1.59 mm |
+| Copper&nbsp;layers | 4 |
+| Dielectric&nbsp;plies | 5 in 3 gaps |
+| Vias | 7: 3 blind and buried, 4 through |
+| Board&nbsp;edge | Plain |
+| Mask,&nbsp;silkscreen,&nbsp;finish | Not set (drawn green and white),<br>ENIG |
+
+</td>
+<td valign="top">
+
+<table>
+<tr><th>File<br>type</th><th>File<br>size</th><th>Peak memory<br>used</th></tr>
+<tr><th colspan="3" align="left">Simulation</th></tr>
+<tr><td>GLB</td><td align="right">2.0 MB</td><td align="right">167 MB</td></tr>
+<tr><td>STEP</td><td align="right">4.0 MB</td><td align="right">170 MB</td></tr>
+<tr><td>STL</td><td align="right">2.9 MB</td><td align="right">166 MB</td></tr>
+<tr><td>OBJ</td><td align="right">5.7 MB</td><td align="right">167 MB</td></tr>
+<tr><th colspan="3" align="left">Visual</th></tr>
+<tr><td>GLB</td><td align="right">1.5 MB</td><td align="right">150 MB</td></tr>
+<tr><td>OBJ</td><td align="right">4.1 MB</td><td align="right">149 MB</td></tr>
+</table>
+
+</td>
+</tr>
+</table>
+
+### 18.7.5 29c Dielectric Values By Frequency
+
+<p align="center">
+<img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Feature-Test-Collection/29c_stackup_frequency/top_straight_visual.webp" width="49.5%" alt="29c Dielectric values by frequency straight from above in visual mode">
+<img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Feature-Test-Collection/29c_stackup_frequency/bottom_straight_visual.webp" width="49.5%" alt="29c Dielectric values by frequency straight from below in visual mode, mirrored as KiCad flips the board">
+</p>
+
+![29c Dielectric values by frequency: stacked bars of seconds per stage, one format a run; reading, start-up and exit take 34% to 49% of a run. Simulation with GLB takes 0.5 s: read 65 ms, resolve 33 ms, geometry 65 ms, materials 0.1 ms, assemble 0.1, write 6 ms, verify 16 ms, start-up and exit 0.2. Simulation with STEP takes 0.6 s: read 64 ms, resolve 33 ms, geometry 67 ms, materials 0.1 ms, assemble 0.1, write 0.1, verify 19 ms, start-up and exit 0.2. Simulation with STL takes 0.5 s: read 64 ms, resolve 33 ms, geometry 62 ms, materials 0.1 ms, assemble 0.1, write 8 ms, verify 17 ms, start-up and exit 0.2. Simulation with OBJ takes 0.5 s: read 63 ms, resolve 31 ms, geometry 59 ms, materials 0.1 ms, assemble 0.1, write 63 ms, verify 17 ms, start-up and exit 0.2. Visual with GLB takes 0.7 s: read 64 ms, resolve 34 ms, geometry 63 ms, materials 0.1 ms, assemble 0.3, write 4 ms, verify 31 ms, start-up and exit 0.2. Visual with OBJ takes 0.7 s: read 66 ms, resolve 32 ms, geometry 67 ms, materials 0.1 ms, assemble 0.3, write 40 ms, verify 29 ms, start-up and exit 0.2](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Feature-Test-Collection/feature_29c_stackup_frequency.webp)
+
+| Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
+|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
+| Simulation, GLB | 65&nbsp;ms | 33&nbsp;ms | 65&nbsp;ms | 0.1&nbsp;ms | 0.1 | 6&nbsp;ms | 16&nbsp;ms | 0.2 | 0.5 |
+| Simulation, STEP | 64&nbsp;ms | 33&nbsp;ms | 67&nbsp;ms | 0.1&nbsp;ms | 0.1 | 0.1 | 19&nbsp;ms | 0.2 | 0.6 |
+| Simulation, STL | 64&nbsp;ms | 33&nbsp;ms | 62&nbsp;ms | 0.1&nbsp;ms | 0.1 | 8&nbsp;ms | 17&nbsp;ms | 0.2 | 0.5 |
+| Simulation, OBJ | 63&nbsp;ms | 31&nbsp;ms | 59&nbsp;ms | 0.1&nbsp;ms | 0.1 | 63&nbsp;ms | 17&nbsp;ms | 0.2 | 0.5 |
+| Visual, GLB | 64&nbsp;ms | 34&nbsp;ms | 63&nbsp;ms | 0.1&nbsp;ms | 0.3 | 4&nbsp;ms | 31&nbsp;ms | 0.2 | 0.7 |
+| Visual, OBJ | 66&nbsp;ms | 32&nbsp;ms | 67&nbsp;ms | 0.1&nbsp;ms | 0.3 | 40&nbsp;ms | 29&nbsp;ms | 0.2 | 0.7 |
+
+<table align="center">
+<tr>
+<td valign="top">
+
+| Board | `featureTest/`<br>`29c_stackup_frequency.kicad_pcb` |
+|---|---|
+| Outline | 30 × 20 mm |
+| Thickness | 1.59 mm |
+| Copper&nbsp;layers | 4 |
+| Dielectric&nbsp;plies | 5 in 3 gaps |
+| Vias | 1 through |
+| Board&nbsp;edge | Plain |
+| Mask,&nbsp;silkscreen,&nbsp;finish | Green, white, ENIG |
+
+</td>
+<td valign="top">
+
+<table>
+<tr><th>File<br>type</th><th>File<br>size</th><th>Peak memory<br>used</th></tr>
+<tr><th colspan="3" align="left">Simulation</th></tr>
+<tr><td>GLB</td><td align="right">472 kB</td><td align="right">62 MB</td></tr>
+<tr><td>STEP</td><td align="right">1.5 MB</td><td align="right">62 MB</td></tr>
+<tr><td>STL</td><td align="right">683 kB</td><td align="right">60 MB</td></tr>
+<tr><td>OBJ</td><td align="right">1.3 MB</td><td align="right">64 MB</td></tr>
+<tr><th colspan="3" align="left">Visual</th></tr>
+<tr><td>GLB</td><td align="right">313 kB</td><td align="right">77 MB</td></tr>
+<tr><td>OBJ</td><td align="right">799 kB</td><td align="right">78 MB</td></tr>
+</table>
+
+</td>
+</tr>
+</table>
+
+### 18.7.6 29d A Fabricator's Four-Layer Build
+
+<p align="center">
+<img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Feature-Test-Collection/29d_stackup_real/top_straight_visual.webp" width="49.5%" alt="29d A fabricator's four-layer build straight from above in visual mode">
+<img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Feature-Test-Collection/29d_stackup_real/bottom_straight_visual.webp" width="49.5%" alt="29d A fabricator's four-layer build straight from below in visual mode, mirrored as KiCad flips the board">
+</p>
+
+![29d A fabricator's four-layer build: stacked bars of seconds per stage, one format a run; stages 4 and 6 take 39% to 66% of a run. Simulation with GLB takes 1.1 s: read 78 ms, resolve 77 ms, geometry 0.2, materials 0.1 ms, assemble 0.5, write 11 ms, verify 41 ms, start-up and exit 0.2. Simulation with STEP takes 1.8 s: read 73 ms, resolve 81 ms, geometry 0.2, materials 0.1 ms, assemble 0.5, write 0.7, verify 37 ms, start-up and exit 0.2. Simulation with STL takes 1.1 s: read 79 ms, resolve 81 ms, geometry 0.2, materials 0.2 ms, assemble 0.5, write 18 ms, verify 40 ms, start-up and exit 0.2. Simulation with OBJ takes 1.3 s: read 73 ms, resolve 75 ms, geometry 0.2, materials 0.1 ms, assemble 0.5, write 0.3, verify 43 ms, start-up and exit 0.2. Visual with GLB takes 1.1 s: read 75 ms, resolve 82 ms, geometry 0.2, materials 0.2 ms, assemble 0.6, write 8 ms, verify 48 ms, start-up and exit 0.2. Visual with OBJ takes 1.2 s: read 73 ms, resolve 76 ms, geometry 0.2, materials 0.1 ms, assemble 0.6, write 0.2, verify 41 ms, start-up and exit 0.2](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Feature-Test-Collection/feature_29d_stackup_real.webp)
+
+| Mode and format | 1–2 read | 3 resolve | 4 geometry | 5 materials | 6 assemble | 7 write | 8 verify | start-up and exit | Total |
+|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
+| Simulation, GLB | 78&nbsp;ms | 77&nbsp;ms | 0.2 | 0.1&nbsp;ms | 0.5 | 11&nbsp;ms | 41&nbsp;ms | 0.2 | 1.1 |
+| Simulation, STEP | 73&nbsp;ms | 81&nbsp;ms | 0.2 | 0.1&nbsp;ms | 0.5 | 0.7 | 37&nbsp;ms | 0.2 | 1.8 |
+| Simulation, STL | 79&nbsp;ms | 81&nbsp;ms | 0.2 | 0.2&nbsp;ms | 0.5 | 18&nbsp;ms | 40&nbsp;ms | 0.2 | 1.1 |
+| Simulation, OBJ | 73&nbsp;ms | 75&nbsp;ms | 0.2 | 0.1&nbsp;ms | 0.5 | 0.3 | 43&nbsp;ms | 0.2 | 1.3 |
+| Visual, GLB | 75&nbsp;ms | 82&nbsp;ms | 0.2 | 0.2&nbsp;ms | 0.6 | 8&nbsp;ms | 48&nbsp;ms | 0.2 | 1.1 |
+| Visual, OBJ | 73&nbsp;ms | 76&nbsp;ms | 0.2 | 0.1&nbsp;ms | 0.6 | 0.2 | 41&nbsp;ms | 0.2 | 1.2 |
+
+<table align="center">
+<tr>
+<td valign="top">
+
+| Board | `featureTest/`<br>`29d_stackup_real.kicad_pcb` |
+|---|---|
+| Outline | 40 × 24 mm |
+| Thickness | 1.59 mm |
+| Copper&nbsp;layers | 4 |
+| Dielectric&nbsp;plies | 5 in 3 gaps |
+| Vias | 19 through |
+| Board&nbsp;edge | Plain |
+| Mask,&nbsp;silkscreen,&nbsp;finish | Green, white, ENIG |
+
+</td>
+<td valign="top">
+
+<table>
+<tr><th>File<br>type</th><th>File<br>size</th><th>Peak memory<br>used</th></tr>
+<tr><th colspan="3" align="left">Simulation</th></tr>
+<tr><td>GLB</td><td align="right">2.3 MB</td><td align="right">71 MB</td></tr>
+<tr><td>STEP</td><td align="right">6.1 MB</td><td align="right">179 MB</td></tr>
+<tr><td>STL</td><td align="right">3.4 MB</td><td align="right">74 MB</td></tr>
+<tr><td>OBJ</td><td align="right">6.5 MB</td><td align="right">96 MB</td></tr>
+<tr><th colspan="3" align="left">Visual</th></tr>
+<tr><td>GLB</td><td align="right">1.3 MB</td><td align="right">96 MB</td></tr>
+<tr><td>OBJ</td><td align="right">3.5 MB</td><td align="right">97 MB</td></tr>
 </table>
 
 </td>
@@ -2308,6 +2517,30 @@ Seconds, the median of three runs for each stage, unless marked ms; the total is
 | 28 Machining at a plated edge | simulation, OBJ | 68&nbsp;ms | 74&nbsp;ms | 0.3 | 0.1&nbsp;ms | 0.6 | 0.1 | 47&nbsp;ms | 0.2 | 1.4 |
 | 28 Machining at a plated edge | visual, GLB | 67&nbsp;ms | 69&nbsp;ms | 0.3 | 0.1&nbsp;ms | 0.9 | 7&nbsp;ms | 38&nbsp;ms | 0.2 | 1.5 |
 | 28 Machining at a plated edge | visual, OBJ | 78&nbsp;ms | 75&nbsp;ms | 0.3 | 0.2&nbsp;ms | 0.9 | 76&nbsp;ms | 35&nbsp;ms | 0.2 | 1.6 |
+| 29 Plies in the stack-up | simulation, GLB | 63&nbsp;ms | 52&nbsp;ms | 77&nbsp;ms | 0.1&nbsp;ms | 0.2 | 7&nbsp;ms | 28&nbsp;ms | 0.2 | 0.6 |
+| 29 Plies in the stack-up | simulation, STEP | 62&nbsp;ms | 52&nbsp;ms | 69&nbsp;ms | 0.1&nbsp;ms | 0.2 | 0.2 | 27&nbsp;ms | 0.2 | 0.8 |
+| 29 Plies in the stack-up | simulation, STL | 68&nbsp;ms | 55&nbsp;ms | 79&nbsp;ms | 0.1&nbsp;ms | 0.3 | 11&nbsp;ms | 26&nbsp;ms | 0.2 | 0.7 |
+| 29 Plies in the stack-up | simulation, OBJ | 70&nbsp;ms | 63&nbsp;ms | 82&nbsp;ms | 0.2&nbsp;ms | 0.3 | 0.1 | 25&nbsp;ms | 0.2 | 0.8 |
+| 29 Plies in the stack-up | visual, GLB | 69&nbsp;ms | 58&nbsp;ms | 75&nbsp;ms | 0.1&nbsp;ms | 0.5 | 4&nbsp;ms | 36&nbsp;ms | 0.2 | 0.9 |
+| 29 Plies in the stack-up | visual, OBJ | 65&nbsp;ms | 56&nbsp;ms | 77&nbsp;ms | 0.2&nbsp;ms | 0.5 | 48&nbsp;ms | 34&nbsp;ms | 0.2 | 0.9 |
+| 29b Machining through plies | simulation, GLB | 69&nbsp;ms | 0.1 | 0.2 | 0.1&nbsp;ms | 0.5 | 12&nbsp;ms | 66&nbsp;ms | 0.2 | 1.1 |
+| 29b Machining through plies | simulation, STEP | 71&nbsp;ms | 0.1 | 0.2 | 0.1&nbsp;ms | 0.5 | 0.7 | 62&nbsp;ms | 0.2 | 1.9 |
+| 29b Machining through plies | simulation, STL | 70&nbsp;ms | 0.1 | 0.2 | 0.1&nbsp;ms | 0.5 | 21&nbsp;ms | 63&nbsp;ms | 0.2 | 1.2 |
+| 29b Machining through plies | simulation, OBJ | 68&nbsp;ms | 0.1 | 0.2 | 0.1&nbsp;ms | 0.5 | 0.3 | 64&nbsp;ms | 0.2 | 1.4 |
+| 29b Machining through plies | visual, GLB | 70&nbsp;ms | 0.1 | 0.2 | 0.1&nbsp;ms | 1.8 | 10&nbsp;ms | 62&nbsp;ms | 0.2 | 2.4 |
+| 29b Machining through plies | visual, OBJ | 72&nbsp;ms | 0.1 | 0.2 | 0.2&nbsp;ms | 1.7 | 0.2 | 57&nbsp;ms | 0.2 | 2.5 |
+| 29c Dielectric values by frequency | simulation, GLB | 65&nbsp;ms | 33&nbsp;ms | 65&nbsp;ms | 0.1&nbsp;ms | 0.1 | 6&nbsp;ms | 16&nbsp;ms | 0.2 | 0.5 |
+| 29c Dielectric values by frequency | simulation, STEP | 64&nbsp;ms | 33&nbsp;ms | 67&nbsp;ms | 0.1&nbsp;ms | 0.1 | 0.1 | 19&nbsp;ms | 0.2 | 0.6 |
+| 29c Dielectric values by frequency | simulation, STL | 64&nbsp;ms | 33&nbsp;ms | 62&nbsp;ms | 0.1&nbsp;ms | 0.1 | 8&nbsp;ms | 17&nbsp;ms | 0.2 | 0.5 |
+| 29c Dielectric values by frequency | simulation, OBJ | 63&nbsp;ms | 31&nbsp;ms | 59&nbsp;ms | 0.1&nbsp;ms | 0.1 | 63&nbsp;ms | 17&nbsp;ms | 0.2 | 0.5 |
+| 29c Dielectric values by frequency | visual, GLB | 64&nbsp;ms | 34&nbsp;ms | 63&nbsp;ms | 0.1&nbsp;ms | 0.3 | 4&nbsp;ms | 31&nbsp;ms | 0.2 | 0.7 |
+| 29c Dielectric values by frequency | visual, OBJ | 66&nbsp;ms | 32&nbsp;ms | 67&nbsp;ms | 0.1&nbsp;ms | 0.3 | 40&nbsp;ms | 29&nbsp;ms | 0.2 | 0.7 |
+| 29d A fabricator's four-layer build | simulation, GLB | 78&nbsp;ms | 77&nbsp;ms | 0.2 | 0.1&nbsp;ms | 0.5 | 11&nbsp;ms | 41&nbsp;ms | 0.2 | 1.1 |
+| 29d A fabricator's four-layer build | simulation, STEP | 73&nbsp;ms | 81&nbsp;ms | 0.2 | 0.1&nbsp;ms | 0.5 | 0.7 | 37&nbsp;ms | 0.2 | 1.8 |
+| 29d A fabricator's four-layer build | simulation, STL | 79&nbsp;ms | 81&nbsp;ms | 0.2 | 0.2&nbsp;ms | 0.5 | 18&nbsp;ms | 40&nbsp;ms | 0.2 | 1.1 |
+| 29d A fabricator's four-layer build | simulation, OBJ | 73&nbsp;ms | 75&nbsp;ms | 0.2 | 0.1&nbsp;ms | 0.5 | 0.3 | 43&nbsp;ms | 0.2 | 1.3 |
+| 29d A fabricator's four-layer build | visual, GLB | 75&nbsp;ms | 82&nbsp;ms | 0.2 | 0.2&nbsp;ms | 0.6 | 8&nbsp;ms | 48&nbsp;ms | 0.2 | 1.1 |
+| 29d A fabricator's four-layer build | visual, OBJ | 73&nbsp;ms | 76&nbsp;ms | 0.2 | 0.1&nbsp;ms | 0.6 | 0.2 | 41&nbsp;ms | 0.2 | 1.2 |
 
 | Previous | Next |
 |:---|---:|

@@ -10,7 +10,10 @@ KiCad-EM-Stackup-Exporter-KESE/
 │   ├── pyproject.toml           for pip install -e . (the kese command), unpinned
 │   ├── README.md                what is in this folder, and the first commands
 │   ├── parameters/              every setting, one file per subject (the only files you edit)
-│   │   └── run.py, board.py, copper.py, solder_mask.py, silkscreen.py, finish.py, geometry.py, color.py, parallel.py, step.py, verifier.py, presets.py
+│   │   ├── PCB_elements/        the board: Stackup.py (what is built, line by line), Board.py, Copper.py,
+│   │   │                        Finish.py, SolderMask.py, SilkScreen.py
+│   │   ├── Run_KESE/            the run: Run.py, Geometry.py, Parallel.py, Verifier.py, Presets.py
+│   │   └── Fileformats/         the files written: Step.py, Mesh.py
 │   ├── kese/                    the program
 │   │   ├── pipeline.py          runs the nine stages in order
 │   │   ├── cli.py, job.py, progress.py   command-line options, one run's request, the live status line
@@ -81,7 +84,7 @@ names the folder that was written.
 | `<board>.glb` | `glb` requested | binary glTF 2.0; one node and one mesh per part, named after the part; PBR materials; no glTF extensions |
 | `<board>.obj` + `<board>.mtl` | `obj` requested | one `o <name>` object per part with vertices, normals and faces; the `.mtl` has one material per part (`Kd`, `d`); object and material names are sanitised as for STL (`Top_Solder_Mask`) |
 | `stl/<name>.stl` | `stl` requested | one binary STL per part, in a `stl/` sub-folder; the name is the part name with every run of characters other than letters (of any script), digits and `_ . + -` replaced by `_`, and leading or trailing `_` and `.` removed (`Top_Solder_Mask.stl`, `Board_dielectric_1.stl`, `Copper__RESET.stl` for net `~{RESET}`); a name Windows reserves, such as `CON`, gets a `_` after it |
-| `<board>.step` | `step` requested (simulation mode) | STEP AP214 assembly named after the board, one named shape per part, with colours: the part's closed solids, one per separate body, in `Run.UNITS`. The parts are the ones switched on (`BOARD_ENABLED`, `COPPER_ENABLED`, `FINISH_ENABLED`, `SOLDER_MASK_ENABLED`, `SILKSCREEN_ENABLED`), as in every other file. It is written straight into the file one part at a time |
+| `<board>.step` | `step` requested (simulation mode) | STEP AP214 assembly named after the board, one named shape per part, with colours: the part's closed solids, one per separate body, in `Run.UNITS`. The parts are the ones whose lines of the stack-up are `True` (`parameters/PCB_elements/Stackup.py`), as in every other file. It is written straight into the file one part at a time |
 | `materials.json` | `Run.WRITE_MATERIALS_JSON` | per part: role, layer, net, z range, properties, look, file names ([Material Properties](Material-Properties.md)) |
 | `parameters.txt` | always | every parameter of every `parameters/` file as it stood for the run; when `--for`, `--set`, `--mode`, `--format` or `--verify` was used, the first line lists those overrides (`--out` is not recorded) |
 | `report.txt` | always | see below |
@@ -100,7 +103,7 @@ the file is done or the write fails
 ### 11.2.2 `report.txt`
 
 `Input/rf_module.kicad_pcb` in simulation mode with the solder mask and silkscreen turned on
-(`--set SolderMask.SOLDER_MASK_ENABLED=True --set Silkscreen.SILKSCREEN_ENABLED=True`) and
+(`--set Stackup.solder_mask=True --set Stackup.silkscreen=True`) and
 `Geometry.CIRCLE_CHORD_TOLERANCE_MM = 0.002`, the default until 0.005, `...` where lines are left out:
 
 ```text
@@ -108,7 +111,9 @@ rf_module  (rf_module.kicad_pcb)   generated 2026-11-06 09:17
 mode: simulation   formats: glb, stl, obj   units: m
 KiCad format 20221018 (KiCad 7), generator pcbnew
 
-stack-up
+stack-up   built: PLIES_FUSED (parameters/PCB_elements/Stackup.py)
+  lines built: top_silkscreen, top_solder_mask, top_finish, top_copper, board, resin_between_traces, inner_copper, bottom_copper, bottom_finish, bottom_solder_mask, bottom_silkscreen, plated_holes, hole_finish, via_resin
+  lines left out: none
   copper layers: F.Cu, In1.Cu, In2.Cu, B.Cu
   laminate 1.5300 mm (stackup dielectrics (+ inner copper); board total in file 1.6 mm)
   F.Cu     z +0.7650 .. +0.8000 mm  (foil 0.035 mm)
@@ -195,7 +200,7 @@ Verifier: PASS
 |---|---|
 | header | board, file, time of the run, mode, formats, units, KiCad format and generator, the title from the title block |
 | warnings | the warnings from reading the file, if any |
-| `stack-up` | laminate thickness and its source, the z band and foil of every copper layer, every dielectric with type, material, thickness, εr, tanδ and z range, the via tenting source, the pad-to-mask clearance, the silk-over-copper setting, the origin used |
+| `stack-up` | the stack-up built (`PLIES_FUSED` or `PLIES_SEPARATE`) with the lines built and the lines left out, laminate thickness and its source, the z band and foil of every copper layer, every dielectric with type, material, thickness, εr, tanδ and z range (with the plies fused, under a gap of several plies a `fused from` line for each; with the plies separate, a line for each ply and each resin fill), the via tenting source, the pad-to-mask clearance, the silk-over-copper setting, the origin used |
 | `read` | a count of every kind of item read from the file (non-plated holes are counted here even when `Board.INCLUDE_NON_PLATED_HOLES = False` leaves them out) |
 | `skipped` | a count of the items left out, with the reason (hidden text and text on layers that are not drawn are left out without a count) |
 | `notes` | the font, the mask thickness and its source, finish, resin fill, castellation and edge plating notes, warnings raised while building (in the parts' order, however many worker processes ran), and the notes when worker processes failed and fewer processes, or the main process, did the parts left |
@@ -210,7 +215,7 @@ file name and the OBJ object and material names carry it sanitised (the rule in 
 
 | Role | Names |
 |---|---|
-| board | `Board_dielectric 1`, `Board_dielectric 2`, ... or `Board`; a gap of several stack-up dielectrics: `Board_dielectric 1 + dielectric 2` |
+| board | `Board_dielectric 1`, `Board_dielectric 2`, ... or `Board`; a gap of several stack-up dielectrics: `Board_dielectric 1 + dielectric 2`. With the plies separate: `Board_dielectric 1 ply 1`, `Board_dielectric 1 ply 2` for the plies of a gap, `Board_dielectric 2` for a core or a gap of one ply, `Board_dielectric 3 ply 2-3` for equal plies joined, and `Board_resin In1.Cu` for the resin beside an inner copper layer |
 | copper | `Copper_<net>` (`Copper_GND`, `Copper_no_net`, `Copper_~{RESET}`), or `Copper_F.Cu` ... and `Plating`, or `Copper` |
 | via resin | `Via Resin`: the plugs and resin fills of KiCad 10's protected vias |
 | mask | `Top Solder Mask`, `Bottom Solder Mask`; visual mode also `Top Mask over Copper`, `Bottom Mask over Copper` |
@@ -234,13 +239,14 @@ case as Windows and macOS file systems do, so no file replaces another.
 
 `tests/test_boards.py` writes its runs to `tests/out/`, which is deleted at the start of every
 test run and ignored by git. `tests/test_layout.py`, `tests/test_colors.py`,
-`tests/test_kicad_version.py`, `tests/test_enabled.py`, `tests/test_verifier.py`,
+`tests/test_kicad_version.py`, `tests/test_stackup_lines.py`, `tests/test_parameters.py`,
+`tests/test_plies.py`, `tests/test_material_models.py`, `tests/test_verifier.py`,
 `tests/test_boundary.py`, `tests/test_copper_union.py`, `tests/test_finish_shells.py`,
 `tests/test_mask.py`, `tests/test_pairs.py`, `tests/test_hatch.py`, `tests/test_machining.py`,
 `tests/test_tall_walls.py`, `tests/test_via_protection.py` and `tests/test_threads.py` write nothing, and
 `tests/test_step_native.py`, `tests/test_step_arcs.py`, `tests/test_text_layout.py`, `tests/test_font.py`,
-`tests/test_text_vars.py`, `tests/test_bad_input.py`, `tests/test_same_result.py`, `tests/test_workers.py`
-and `tests/test_full_disk.py` write only in a temporary folder that they remove.
+`tests/test_text_vars.py`, `tests/test_bad_input.py`, `tests/test_same_result.py`, `tests/test_workers.py`,
+`tests/test_plies_built.py` and `tests/test_full_disk.py` write only in a temporary folder that they remove.
 
 | Previous | Next |
 |:---|---:|

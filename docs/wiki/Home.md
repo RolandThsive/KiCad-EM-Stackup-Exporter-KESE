@@ -16,7 +16,11 @@ conductivity. An EM solver needs each dielectric as its own body with its own ε
 at its real thickness, and one closed solid per net so that ports and excitations can be
 assigned, with the material values alongside. KESE reads the `.kicad_pcb` file directly (KiCad
 itself does not need to be installed), rebuilds the stack-up layer by layer and writes it out as
-closed solids for solvers, or as the visible surface for viewers. Almost every number that
+closed solids for solvers, or as the visible surface for viewers. What is built is a list of
+the board's layers in `parameters/PCB_elements/Stackup.py`, top silkscreen to bottom silkscreen,
+each line on or off, and the laminate is built with the plies of each gap fused into one solid or
+with every ply, every core and the resin between the inner traces as a solid of its own
+([Stack-Up Model](Stack-Up-Model.md)). Almost every number that
 shapes the model lives in `parameters/`, down to the 1.6 mm board used when the file gives no
 thickness (`Board.DEFAULT_BOARD_THICKNESS_MM`; `Board.BOARD_THICKNESS_MM` overrides the file), and
 each output comes with a `parameters.txt` that lists the parameter values behind it.

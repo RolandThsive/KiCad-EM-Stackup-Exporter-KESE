@@ -5,6 +5,7 @@ plated edge and in the castellations is finish_shells.py, the finish in the hole
 from kese.core import shapes2d as sh
 from kese.core.conformal import grow
 from kese.core.shapes2d import EMPTY
+from kese.s4_geometry.switches import built
 from parameters import P
 
 SIDES = (("F", "F.Cu", 1, "Top"), ("B", "B.Cu", -1, "Bottom"))    # (side, its copper, z's sign, part prefix)
@@ -32,7 +33,7 @@ def finish_type(st):
         raise ValueError("FINISH ERROR: Finish.FINISH_TYPE = \"file\" but no finish was found in the KiCad file "
                          "(no stack-up, or its Copper finish is empty). Change Finish.FINISH_TYPE to one of "
                          f"{', '.join(F.FINISH_TYPES)}, or set the finish in KiCad (Board Setup > Physical Stackup "
-                         "> Copper finish), or turn the finish off (Finish.FINISH_ENABLED = False)")
+                         "> Copper finish), or leave the finish out (the three finish lines of Stackup.py False)")
     if name == "none":
         return None                                      # the board says: no finish
     for key in list(F.FINISH_TYPES) + list(F.FINISH_NAME_ALIASES):
@@ -45,9 +46,9 @@ def finish_type(st):
 
 def finish_layers(st):
     """(layers, type): [(metal, mm)] of the finish the board gets, bottom to top, and its key of
-    FINISH_TYPES; (None, None) when the finish is off or the file says "None"."""
+    FINISH_TYPES; (None, None) when no finish line of the stack-up is built or the file says "None"."""
     F = P.Finish
-    if not F.FINISH_ENABLED:
+    if not built("finish"):
         return None, None
     kind = finish_type(st)
     return (F.FINISH_TYPES[kind] if kind is not None else None), kind
@@ -79,7 +80,7 @@ def exposed(r, side, cu, take=lambda g: g):
     if P.Finish.FINISH_BEFORE_SOLDER_MASK:
         return cu
     bare = sh.inter(cu, take(r.mask_open[side]))
-    if P.Silkscreen.SILKSCREEN_OVER_COPPER:
+    if P.SilkScreen.SILKSCREEN_OVER_COPPER:
         inked = take(r.silk.get(side, EMPTY))
         if not inked.is_empty:
             bare = sh.diff(bare, inked)
@@ -101,7 +102,7 @@ def build(r, ps):
     """The finish on the faces of the top and bottom copper, stacked upward from the copper.  The
     walls, the holes, the plated edge and the castellations are finish_shells.build."""
     F, st = P.Finish, r.stackup
-    if not F.FINISH_ENABLED:
+    if not built("finish"):
         return
     layers, kind = finish_layers(st)
     if kind is None:

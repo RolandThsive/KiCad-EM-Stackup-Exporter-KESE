@@ -12,7 +12,7 @@ class Prism:
     z1: float
     layer: str = ""      # KiCad layer or dielectric name
     net: str = ""        # net name for copper
-    material: str = ""   # key into Color.MATERIALS (set by stage 5, materials)
+    material: str = ""   # the name of its look (set by stage 5, materials)
     props: dict = field(default_factory=dict)   # EM / physical properties for materials.json
 
 

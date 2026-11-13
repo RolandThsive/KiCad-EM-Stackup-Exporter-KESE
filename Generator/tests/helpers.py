@@ -1,6 +1,7 @@
 """What the test files share: the folders, KESE's own folder on the import path, settings changed
 for a block and put back after it, a board run through the first stages in this process, and the
 plain-python run of a file's tests (python tests/test_x.py), which pytest does not need."""
+import copy
 import importlib
 import inspect
 import sys
@@ -23,9 +24,13 @@ def setting(key):
 
 @contextmanager
 def settings(changes):
-    """The settings {"Module.NAME": value} for the block, put back after it."""
-    from parameters import P
-    saved = {key: setting(key) for key in changes}
+    """The settings {"Module.NAME": value} for the block, put back after it.  A line of the stack-ups
+    ("Stackup.top_finish") or a short name for several ("Stackup.finish") is set in both stack-ups,
+    and both are put back whole."""
+    from parameters import STACKUPS, P
+    lines = [key for key in changes if key.startswith("Stackup.") and not key.split(".")[1].isupper()]
+    saved = {key: setting(key) for key in changes if key not in lines}
+    stackups = {name: copy.deepcopy(getattr(P.Stackup, name)) for name in STACKUPS} if lines else {}
     try:
         for key, value in changes.items():
             P.override(key, value)
@@ -33,6 +38,12 @@ def settings(changes):
     finally:
         for key, value in saved.items():
             P.override(key, value)
+        for name, stackup in stackups.items():
+            if isinstance(getattr(P.Stackup, name), dict):      # (a test may have set the whole stack-up to something else)
+                getattr(P.Stackup, name).clear()
+                getattr(P.Stackup, name).update(stackup)
+            else:
+                setattr(P.Stackup, name, stackup)
 
 
 def run_stages(pcb, last, mode="simulation", formats=("glb",), verify=False, out_root=None):

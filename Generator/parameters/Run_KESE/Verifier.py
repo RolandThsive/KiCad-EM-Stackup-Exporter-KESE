@@ -1,5 +1,5 @@
 """
-parameters/verifier.py - the Verifier (stage 8): whether it runs, and what it lets pass.
+parameters/Run_KESE/Verifier.py - the Verifier (stage 8): whether it runs, and what it lets pass.
 
 Every value here is recorded in parameters.txt next to each output.  How many triangles its rays
 test at once is Parallel.VERIFY_TRIANGLES_AT_A_TIME.

@@ -8,5 +8,5 @@ Each picture is the board's visual-mode GLB drawn with three.js through an ortho
 saved as a lossless WebP: top_straight_visual.webp looks straight down at the top, bottom_straight_visual.webp
 straight up at the bottom, as the board is seen when turned over left to right. Boards whose
 stack-up names no mask colour are drawn with a green mask and white silkscreen
-(Color.STACKUP_MASK_COLORS["green"], STACKUP_SILK_COLORS["white"]); the others in their own
-colours.
+(SolderMask.STACKUP_MASK_COLORS["green"], SilkScreen.STACKUP_SILK_COLORS["white"]); the others in
+their own colours.

@@ -25,7 +25,7 @@ STAGES = (read, collect, resolve, geometry, materials, assemble, write, verify, 
 
 
 def generate(pcb_path, mode=None, formats=None, out_root=None, overrides=(), verify=None, log=print):
-    """One board -> (output folder, Model).  What is left as None comes from parameters/run.py."""
+    """One board -> (output folder, Model).  What is left as None comes from parameters/Run_KESE/Run.py."""
     job = start(mode, formats, out_root, overrides, verify, log)
     out = pcb_path
     try:

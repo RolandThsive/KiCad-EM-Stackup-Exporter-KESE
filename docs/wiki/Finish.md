@@ -4,13 +4,31 @@ The surface finish is the metal a fabricator deposits on the bare copper of a bo
 exposed traces, test points, the walls of the plated holes, the plated board edge and the
 castellations. `kese/s4_geometry/finish.py` builds it on the faces, `finish_shells.py` on the
 walls and on the edge, and `finish_bores.py` in the holes (`shells.py` lays each shell); the settings are in
-`parameters/finish.py`.
+`parameters/PCB_elements/Finish.py`.
 
 ## 15.1 On By Default
 
-`Finish.FINISH_ENABLED = True`: the finish adds its own thin solids on the copper, in every format
-and both modes; it never changes the copper itself. `False` builds none, so the copper is bare as
-KiCad draws it.
+Whether the finish is built is in `parameters/PCB_elements/Stackup.py`
+([Stack-Up Model](Stack-Up-Model.md)), in three lines, all `True` by default:
+
+| Line | What it builds | Parts |
+|---|---|---|
+| `top_finish` | the finish on the top copper the mask leaves bare, its tops and its side walls | `Top Finish <metal>` |
+| `bottom_finish` | the same on the bottom copper | `Bottom Finish <metal>` |
+| `hole_finish` | the finish inside the plated holes, on the plated board edge and the castellations, and on inner copper the board edge cuts | `Hole Finish <metal>`, `Edge Finish <metal>` |
+
+The finish adds its own thin solids on the copper, in every format and both modes; it never
+changes the copper itself. A line set to `False` leaves its parts out, and the short name
+`finish` sets all three, so the copper is bare as KiCad draws it:
+
+```bash
+python run_KESE.py board.kicad_pcb --set Stackup.finish=False              # no finish anywhere
+python run_KESE.py board.kicad_pcb --set Stackup.hole_finish=False         # none in the holes and on the edge
+```
+
+The finish is worked out before a line is left out, so what stays is as it is with all three
+lines on. The old name `Finish.FINISH_ENABLED` still sets the three lines together, with a note
+in `report.txt`.
 
 ## 15.2 Where The Finish Goes
 
@@ -31,7 +49,7 @@ mask over bare copper"; no finish deposits through the cured mask). So KESE puts
 | inside the bore of every plated hole open at a face | a shell over the barrel's whole length | `Hole Finish <metal>` |
 
 Copper under the mask gets no finish, and a wall the mask touches none either. Neither does copper
-under silkscreen ink kept in an opening (`Silkscreen.SILKSCREEN_OVER_COPPER = True`): the legend is
+under silkscreen ink kept in an opening (`SilkScreen.SILKSCREEN_OVER_COPPER = True`): the legend is
 taken as printed before the finish. A hole closed at both faces gets no finish inside: a buried
 hole, or a via tented on both faces (the mask closes it, so no liquid gets in); a via tented on one
 face is finished from the other. On the face the finish layers are stacked from the top of the
@@ -52,7 +70,7 @@ On the `B` side every z is mirrored.
 | $`X_\sigma`$ | finished face of side $`\sigma`$ (per net with `FINISH_GROUPING = "net"`) | |
 | $`C_\sigma`$ | outer copper of side $`\sigma`$ | |
 | $`Q_\sigma`$ | mask openings of side $`\sigma`$, equation (17.2), with the slivers of mask on the copper the mask leaves out ([Solder Masks](Solder-Masks.md#172-conformal-mask)) | `SolderMask.MASK_OVER_COPPER_HAIRLINE_MM` |
-| $`S_\sigma`$ | silkscreen ink of side $`\sigma`$ kept in the openings; empty unless `SILKSCREEN_OVER_COPPER = True` | `Silkscreen.SILKSCREEN_OVER_COPPER` |
+| $`S_\sigma`$ | silkscreen ink of side $`\sigma`$ kept in the openings; empty unless `SILKSCREEN_OVER_COPPER = True` | `SilkScreen.SILKSCREEN_OVER_COPPER` |
 | $`z_j`$ | z range of finish layer $`j`$ ($`j = 1`$ is the layer on the copper) | |
 | $`\tau_i`$ | thickness of finish layer $`i`$ | `Finish.FINISH_TYPES` |
 | $`L`$, $`t_{\mathrm{out}}`$ | laminate thickness and finished outer copper, equations (8.1) and (8.3) | |
@@ -185,7 +203,7 @@ datasheet. `report.txt` names the type it applied and its layers, for example
 `finish: ENIG Nickel 0.005 mm + Gold 8e-05 mm`. A `FINISH_TYPE` that is neither `"file"` nor a
 key stops the run with an error.
 
-Each finish below is shown on board 18b (`featureTest/18b_finish_pads`) with `FINISH_ENABLED = True`
+Each finish below is shown on board 18b (`featureTest/18b_finish_pads`) with the finish built
 and its key in `FINISH_TYPE`: 1 how it looks (visual mode), 2 a cut-away of the 3 mm pad TP1 at its
 left edge (simulation mode), 3 the side profile at true scale with the height of every surface above
 the laminate, and 4 the thin layers enlarged (HASL and HASL_LF need no part 4). Board 18b has 35 µm
@@ -313,7 +331,7 @@ In `materials.json` each finish part has the layer `F.Finish`, `B.Finish`, `Edge
 `thickness_mm` and `conductivity_S_per_m`, and on the shells `drawn_thickness_mm` (section 15.2.1); the conductivities come
 from `Finish.FINISH_CONDUCTIVITY_S_PER_M` (Nickel 1.4 × 10⁷, Gold 4.1 × 10⁷, Palladium 9.5 × 10⁶,
 Tin 9.1 × 10⁶, Silver 6.3 × 10⁷ S/m, OSP 0 since it is organic). Colours come from the metal's entry
-in `Color.MATERIALS` ([Colorizing](Colorizing.md)).
+in `Finish.FINISH_COLORS` ([Colorizing](Colorizing.md)).
 
 In STEP, finish parts are written as every other part, each as the closed solids stage 6 built,
 one per connected piece.
@@ -322,23 +340,31 @@ one per connected piece.
 > The gold of ENIG is 80 nm thick and that of ENEPIG 50 nm. Heights are not snapped to the
 > 0.1 µm grid (only the 2D shapes are), so in simulation mode each is built as a real solid, but
 > an FDTD or FEM mesher may not resolve a body that thin. Solvers that struggle can take the finish
-> as a surface impedance instead and leave `FINISH_ENABLED` off. In visual mode only the surface
+> as a surface impedance instead and leave the finish out (`--set Stackup.finish=False`). In visual mode only the surface
 > between material and air is kept ([Output Modes](Output-Modes.md)): the faces where two layers
 > touch are dropped, so a pad's top and walls show the outermost layer alone, and the layers under
 > it show only where a cut opens them.
 
 ## 15.5 Settings
 
+All in `parameters/PCB_elements/Finish.py`, by the file's sections. The three finish lines of
+`Stackup.py` (15.1) say whether the finish is built; there is no `FINISH_ENABLED` setting any more.
+
 | Name | Default | Range | Meaning |
 |---|---|---|---|
-| `FINISH_ENABLED` | `True` | bool | Build the finish and write it to every file |
+| **1. Parts** | | | |
 | `FINISH_TYPE` | `"ENIG"` | `"file"` or a key of `FINISH_TYPES` | The type, or `"file"` for the stack-up's (an error when the file names none) |
+| `FINISH_NAME_ALIASES` | `HAL SnPb` → `HASL`, `HAL lead-free` → `HASL_LF`, `Hard gold` → `HardGold`, `Immersion tin` → `ImmersionTin`, `Immersion silver` → `ImmersionSilver`, `HT_OSP` → `OSP` | `{KiCad name: key}` | KiCad's finish names that differ from a key |
 | `FINISH_GROUPING` | `"metal"` | `"metal"` / `"net"` | Part per metal, or per metal and net |
+| **2. Thickness** | | | |
+| `FINISH_TYPES` | table above | `{key: [(metal, mm), ...]}` | Layers of each finish |
+| **3. Shape** | | | |
 | `FINISH_BEFORE_SOLDER_MASK` | `False` | bool | Finish on all the outer copper, under the mask (section 15.2.2), instead of only where the mask leaves it bare |
 | `FINISH_MITRE_LIMIT` | `2.0` | ≥ 1 | How far the finish's outer side keeps the copper's sharp corners: out to this many times its thickness from the corner, then cut straight across (section 15.2.1) |
-| `FINISH_TYPES` | table above | `{key: [(metal, mm), ...]}` | Layers of each finish |
-| `FINISH_NAME_ALIASES` | `HAL SnPb` → `HASL`, `HAL lead-free` → `HASL_LF`, `Hard gold` → `HardGold`, `Immersion tin` → `ImmersionTin`, `Immersion silver` → `ImmersionSilver`, `HT_OSP` → `OSP` | `{KiCad name: key}` | KiCad's finish names that differ from a key |
+| **4. Material** | | | |
 | `FINISH_CONDUCTIVITY_S_PER_M` | table above | `{metal: S/m}` | Written to `materials.json` |
+| **5. Color** | | | |
+| `FINISH_COLORS` | the finish rows of the table on [Colorizing](Colorizing.md#141-materials) | `{metal: {color, alpha, metallic, roughness}}` | The look of each finish metal in GLB, OBJ and STEP |
 
 | Previous | Next |
 |:---|---:|

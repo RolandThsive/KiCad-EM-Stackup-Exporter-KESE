@@ -1,4 +1,4 @@
-"""Work cut up any way gives the same result (parameters/parallel.py): batches of any size (the
+"""Work cut up any way gives the same result (parameters/Run_KESE/Parallel.py): batches of any size (the
 skin's probes, the Verifier's rays and the STEP writer's slices, the last to the byte), a STEP file
 written part by part in worker processes, to the byte and with the same notes (a part whose worker
 is lost in its second round written again here), and the copper layers joined in worker processes,
@@ -24,7 +24,7 @@ from parameters import P
 
 
 def test_batches_of_any_size_give_the_same_result():
-    # the batch sizes of parameters/parallel.py set how much is held at once, not what comes out
+    # the batch sizes of parameters/Run_KESE/Parallel.py set how much is held at once, not what comes out
     rng = np.random.default_rng(1)
     v, f = rng.random((60, 3)), rng.integers(0, 60, (40, 3))
     material = shapely.box(0.2, 0.2, 0.7, 0.9)

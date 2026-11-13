@@ -45,7 +45,7 @@ def dialect(tree):
 
 
 def tested_range_warning(d, lo, hi):
-    """A warning when the file's format is outside lo..hi (parameters/run.py), or None."""
+    """A warning when the file's format is outside lo..hi (parameters/Run_KESE/Run.py), or None."""
     if not d.stated:
         return f"file has no (version ...): read as format {NO_VERSION}, as KiCad does"
     if d.format < lo or d.format > hi:

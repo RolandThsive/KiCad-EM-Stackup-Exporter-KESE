@@ -351,20 +351,32 @@ each side, 1.61 mm.
 
 ## 26.13 What KESE Builds From These Layers
 
-| Real layer | In a KESE model today |
-|---|---|
-| Legend ink | One part per side, off by default ([Silkscreens](Silkscreens.md)) |
-| Solder mask | One part per side that follows the copper, with one thickness on the laminate and one on copper; off by default ([Solder Masks](Solder-Masks.md)) |
-| Nickel, gold | One part per side and metal, on the copper the mask leaves open ([Finish](Finish.md)) |
-| Outer foil, plated copper, via barrels, inner copper | One solid per net by default ([Copper And Traces](Copper-And-Traces.md)) |
-| Seed | Not built |
-| The prepreg plies of one gap between two copper layers | One solid, with the first ply's material, εr and tanδ ([Stack-Up Model](Stack-Up-Model.md)) |
-| Resin between traces | Part of the dielectric solid beside it: the prepreg's, where one of the two is a prepreg |
-| Core | One solid |
-| The glass cloth inside a ply or a core | Not built: each dielectric solid is one uniform material |
+KESE builds the laminate one of two ways, chosen with `Stackup.FUSION_BUILD` in
+`parameters/PCB_elements/Stackup.py`. The same file lists the layers of a board from the top
+legend to the bottom legend, one line each, and a line set to `False` is left out of the model
+([Stack-Up Model](Stack-Up-Model.md#84-what-is-built-the-lines-of-stackuppy)).
 
-Building every ply, every core and the resin between the traces as solids of their own is planned
-in [25.2.1](Future-Upgrades-And-Planning.md#2521-every-ply-as-its-own-solid).
+| Real layer | Plies fused (the default) | Plies separate | Line of `Stackup.py` |
+|---|---|---|---|
+| Legend ink | One part per side, off by default ([Silkscreens](Silkscreens.md)) | The same | `top_silkscreen`, `bottom_silkscreen` |
+| Solder mask | One part per side that follows the copper, with one thickness on the laminate and one on copper; off by default ([Solder Masks](Solder-Masks.md)) | The same | `top_solder_mask`, `bottom_solder_mask` |
+| Nickel, gold | One part per side and metal, on the copper the mask leaves open ([Finish](Finish.md)) | The same | `top_finish`, `bottom_finish`, `hole_finish` |
+| Outer foil, plated copper, via barrels, inner copper | One solid per net by default; `materials.json` gives the foil and the plating of each layer ([Copper And Traces](Copper-And-Traces.md)) | The same | `top_copper`, `inner_copper`, `bottom_copper`, `plated_holes` |
+| Seed | Not built | Not built | |
+| The prepreg plies of one gap between two copper layers | One solid, with the first ply's material, εr and tanδ, or with the plies in series (`Board.FUSED_PROPERTIES`); `materials.json` lists the plies under it | One solid for each ply, with its own thickness, material, εr and tanδ | `board`; `prepreg_plies` |
+| Resin between traces | Part of the dielectric solid beside it: the prepreg's, where one of the two is a prepreg | One solid for each inner copper layer, `Board_resin In1.Cu`, with the εr and tanδ of the resin without its glass | `resin_between_traces` |
+| Core | One solid | One solid | `board`; `cores` |
+| The glass cloth inside a ply or a core | Not built: each dielectric solid is one uniform material | Not built | |
+
+The four-layer board of [26.6](#266-four-layers), built both ways:
+
+![JLCPCB's four-layer board JLC04161H-2116C as KESE builds it with the plies fused: three laminate solids, each in its own colour. Board_dielectric 1 is one solid of the 2116 and the 1080 ply and the resin beside In1.Cu; Board_dielectric 2 is the core; Board_dielectric 3 is one solid of the 1080 and the 2116 ply and the resin beside In2.Cu](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Stack-Up-Model/stackup_2_plies_fused.webp)
+
+![The same board with the plies separate: seven laminate solids, the two plies of each prepreg gap, the core, and the resin between the traces of In1.Cu and of In2.Cu, each with its own thickness and εr](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Stack-Up-Model/stackup_3_plies_separate.webp)
+
+That board is in the feature tests as `featureTest/29d_stackup_real`
+([Feature Test Collection](Feature-Test-Collection.md)); [Board](Board.md#121-dielectric-solids)
+describes the two builds in full.
 
 ## 26.14 Sources
 

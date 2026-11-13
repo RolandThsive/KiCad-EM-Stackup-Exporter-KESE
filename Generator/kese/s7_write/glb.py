@@ -57,7 +57,7 @@ class _Store:
 
 def glb_bytes(model, normals, targets):
     """The file in pieces of bytes: header, JSON, the binary chunk's header, the arrays.  `normals`:
-    Run.EXPORT_INCLUDE_NORMALS, `targets`: Run.EXPORT_SET_BUFFERVIEW_TARGETS."""
+    Mesh.EXPORT_INCLUDE_NORMALS, `targets`: Mesh.EXPORT_SET_BUFFERVIEW_TARGETS."""
     store, meshes, materials, mat_index, nodes = _Store(), [], [], {}, []
     for part, mesh in model.meshes.items():
         if not len(mesh.faces) or not len(mesh.vertices):
@@ -105,6 +105,6 @@ def glb_bytes(model, normals, targets):
 
 def write(model, path):
     with whole(path), open(path, "wb") as f:
-        for piece in glb_bytes(model, P.Run.EXPORT_INCLUDE_NORMALS, P.Run.EXPORT_SET_BUFFERVIEW_TARGETS):
+        for piece in glb_bytes(model, P.Mesh.EXPORT_INCLUDE_NORMALS, P.Mesh.EXPORT_SET_BUFFERVIEW_TARGETS):
             f.write(piece)
     return path

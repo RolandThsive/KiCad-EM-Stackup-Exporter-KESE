@@ -1,5 +1,6 @@
 The colour boxes the wiki (docs/wiki/) shows in front of a hex colour code, one per colour of
-Generator/parameters/color.py, named by the colour: CD803E.webp is #CD803E.
+the Color sections of the element files in
+Generator/parameters/PCB_elements/, named by the colour: CD803E.webp is #CD803E.
 
 GitHub shows its own colour preview for a `#hex` code only in issues, pull requests and
 discussions, not on wiki pages, so each box is a small picture: a lossless WebP of 24 x 24 px,
@@ -8,6 +9,6 @@ main):
 
 <img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Colorizing/ColorSwatches/CD803E.webp" width="12" height="12" align="absmiddle" alt=""> `#CD803E`
 
-After a colour in parameters/color.py changes, make the boxes again (from Generator/):
+After a colour in one of those files changes, make the boxes again (from Generator/):
 
 python tools/make_swatches.py

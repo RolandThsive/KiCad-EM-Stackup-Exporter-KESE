@@ -62,7 +62,8 @@ python run_KESE.py board.kicad_pcb --set Copper.VIA_WALL_MM=0.02
 ```
 
 Run every command from `Generator/`, which holds the program, its settings, `Input/` and `Output/`. Edit only the
-files in `Generator/parameters/`, or override one value for a single run with `--set`. Each run writes a new folder,
+files in `Generator/parameters/` (`PCB_elements/Stackup.py` says which parts of the board are built, and each element
+has a file of its own beside it), or override one value for a single run with `--set`. Each run writes a new folder,
 `Output/<board>/<mode>_<FORMATS>/`, with the model files, `materials.json` (role, layer, net, z range, εr, tanδ and
 conductivity of every part), `parameters.txt` and `report.txt`, and never overwrites an earlier one. The pinned
 packages need Python 3.12 or later. `python -m pip install .` gives a `kese` command that works
@@ -71,27 +72,36 @@ from any folder. Full walk-through: [Getting Started](https://github.com/RolandT
 ## What Works
 
 - **Input:** `.kicad_pcb` files from KiCad 4 to 10, 1 to 8 copper layers, stack-up read from Board Setup (thickness,
-  εr and tanδ of every core and prepreg, copper and mask thickness, colours, finish). Footprints are read from the
-  board file, so no libraries are needed.
+  εr and tanδ of every core and of every prepreg ply, copper and mask thickness, the mask's material, colours,
+  finish). Footprints are read from the board file, so no libraries are needed.
 - **Copper:** tracks, arcs, pads of every shape, zone fills, copper graphics (solid or hatched) and text; one solid per
   net (default), per layer, or all merged; through, blind, buried and micro vias with plated barrels; KiCad 10's
   backdrills and covered, plugged, capped and filled vias; castellated holes and edge plating; optional etch trapezoid.
 - **Board:** one solid per dielectric with its own εr and tanδ, resin filling the space beside inner copper, any
   outline from `Edge.Cuts` with cut-outs and boards inside them, plated and non-plated round and slotted holes,
   KiCad 10's counterbores and countersinks.
+- **Plies:** with `Stackup.FUSION_BUILD = "PLIES_SEPARATE"` the laminate is built as it is pressed: one solid for
+  every prepreg ply, one for every core and one for the resin between the traces of each inner copper layer, each
+  with its own thickness, εr and tanδ. The default, `"PLIES_FUSED"`, keeps one solid per gap between two copper
+  layers and lists its plies in `materials.json`.
+- **What is built:** `parameters/PCB_elements/Stackup.py` lists the board from the top silkscreen down to the bottom
+  silkscreen, and each line is `True` (built) or `False` (left out), the top and the bottom side apart.
+- **For the solver:** `materials.json` also gives the frequency each εr and tanδ holds at, a Djordjevic-Sarkar or
+  tabulated model of how they change with frequency, the copper's roughness (Hammerstad or Huray values), and for
+  every copper part the foil, plating, etch factor and treated face of each layer it lies on.
 - **Mask, silk and finish:** solder mask conformal over every trace, pulled back from the edge and open over every
   bore that no via protection shuts; silkscreen in KiCad's own stroke font and text layout, clipped off the pads;
   ENIG, ENEPIG, HASL, lead-free HASL, OSP, immersion silver and tin, and hard gold, each metal its own layer (on by
-  default; `Finish.FINISH_ENABLED`).
+  default; the `top_finish`, `bottom_finish` and `hole_finish` lines of `Stackup.py`).
 - **Two modes:** `simulation` writes closed solids that touch exactly and never overlap, as GLB, STEP, STL and OBJ;
   `visual` writes only the surface you can see, as GLB and OBJ, so nothing z-fights in a viewer.
 - **STEP without a CAD kernel, meshes without a mesh library:** KESE builds its own meshes and writes STEP AP214,
   GLB, STL and OBJ itself, every part under its own name; it needs only `numpy`, `shapely` and `mapbox_earcut`.
   Holes, vias, round pads and arcs go into STEP as true circles and cylinders (`Step.STEP_EXACT_ARCS`, on by
   default), in files 2.5 to 3 times smaller than flat facets.
-- **Presets:** `--for freecad`, `elmer`, `calculix`, `openems`, `viewer`, `blender_glb` or `blender_obj` set mode, formats, units, origin and grouping in one go (`parameters/presets.py`).
+- **Presets:** `--for freecad`, `elmer`, `calculix`, `openems`, `viewer`, `blender_glb` or `blender_obj` set mode, formats, units, origin and grouping in one go (`parameters/Run_KESE/Presets.py`).
 - **Checks:** an opt-in Verifier (closed solids, the same volume found four ways, no overlaps, one visible surface)
-  and a regression suite that runs 43 boards through every output before a pull request.
+  and a regression suite that runs 47 boards through every output before a pull request.
 - **Not modelled yet:** component 3D models, text boxes, dimensions, images, rigid-flex.
 
 Every feature and every parameter is in the wiki:
@@ -106,7 +116,7 @@ Every feature and every parameter is in the wiki:
 
 <p align="center"><sub>24 of the feature test boards of <code>featureTest/</code>, each labelled with the KiCad features it
 tests and exported in visual mode. Boards whose stack-up sets no colours are given a green mask and white silkscreen
-for this picture. Left out are the boards of items KESE skips (19 and 19b), the same board in five KiCad formats (20a to 20e), the boards added after the picture was made (18c and 24 to 28), and the example boards of the
+for this picture. Left out are the boards of items KESE skips (19 and 19b), the same board in five KiCad formats (20a to 20e), the boards added after the picture was made (18c and 24 to 29d), and the example boards of the
 <a href="https://github.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/wiki/Examples">Examples</a> page.</sub></p>
 
 ## Status And Next Steps

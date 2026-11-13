@@ -1,5 +1,5 @@
 """Silkscreen: the ink clipped to the outline and off the open bores, off the mask openings too
-unless Silkscreen.SILKSCREEN_OVER_COPPER, and kept as far from the edge as the mask."""
+unless SilkScreen.SILKSCREEN_OVER_COPPER, and kept as far from the edge as the mask."""
 from kese.core import shapes2d as sh
 from kese.core.shapes2d import union
 from kese.s3_resolve.holes import bores
@@ -13,7 +13,7 @@ def clip_silk(r, items, outline_k, openings):
     for side in ("F", "B"):
         silk = union(items.silk_items[side]).intersection(outline_k).difference(
             bores(r, lambda h: h.i == 0) if side == "F" else bores(r, lambda h: h.j == last))
-        if not P.Silkscreen.SILKSCREEN_OVER_COPPER:      # no ink where there is no mask (openings, bare copper)
+        if not P.SilkScreen.SILKSCREEN_OVER_COPPER:      # no ink where there is no mask (openings, bare copper)
             silk = silk.difference(openings[side])
         silk = r.to_board_T(silk)
         if P.SolderMask.MASK_EDGE_PULLBACK_MM > 0 and not silk.is_empty:   # the same edge clearance as the mask

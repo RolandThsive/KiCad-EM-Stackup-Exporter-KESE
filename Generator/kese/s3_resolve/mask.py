@@ -1,5 +1,5 @@
 """Solder mask: the openings (the pads' openings from the file, plus the vias that are not
-tented, Copper.VIA_TENTING), and the region the mask covers."""
+tented, SolderMask.VIA_TENTING), and the region the mask covers."""
 import numpy as np
 import shapely
 
@@ -13,11 +13,11 @@ from parameters import P
 
 def via_openings(items):
     """Mask openings over the vias that are not tented, KiCad frame."""
-    C = P.Copper
+    M = P.SolderMask
     out = {"F": [], "B": []}
     for pad, span, tent in items.via_tenting:
         for side, layer in (("F", "F.Cu"), ("B", "B.Cu")):
-            tented = {"file": tent[side], "tented": True, "open": False}[C.VIA_TENTING]
+            tented = {"file": tent[side], "tented": True, "open": False}[M.VIA_TENTING]
             if layer in span and not tented:
                 out[side].append(pad.buffer(items.mask_clearance) if items.mask_clearance else pad)
     return out

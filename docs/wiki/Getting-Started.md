@@ -75,7 +75,7 @@ the command is run from.
    The repository already holds example runs of `rf_module` in `Output/rf_module/`, and a run
    never overwrites a folder, so this board's first run goes to `simulation_GLB__1`.  The three
    simulation examples use the default settings with the finish turned off
-   (`--set Finish.FINISH_ENABLED=False`): with the finish, this board's STEP file is over 100 MB,
+   (`--set Stackup.finish=False`): with the finish, this board's STEP file is over 100 MB,
    more than GitHub takes in one file.  The visual example has the finish, the solder mask and
    the silkscreen on.
 
@@ -98,6 +98,8 @@ python run_KESE.py board.kicad_pcb --for freecad     # a preset: freecad, elmer,
 python run_KESE.py board.kicad_pcb --verify          # run the Verifier; results in report.txt
 python run_KESE.py board.kicad_pcb --out /some/dir   # output root other than Output/
 python run_KESE.py board.kicad_pcb --set Copper.VIA_WALL_MM=0.02 --set Board.BOARD_THICKNESS_MM=0.8
+python run_KESE.py board.kicad_pcb --set Stackup.solder_mask=True --set Stackup.silkscreen=True   # also build the mask and the silkscreen
+python run_KESE.py board.kicad_pcb --set Stackup.FUSION_BUILD=PLIES_SEPARATE   # every ply, core and resin fill a solid of its own
 python run_KESE.py --version
 ```
 
@@ -106,10 +108,10 @@ python run_KESE.py --version
 | `boards` | One or more `.kicad_pcb` paths. With none, every board in `Run.INPUT_DIR` (`Input/`) is exported. |
 | `--mode` | `simulation` or `visual`. Default: `Run.MODE`. |
 | `--format` | Any of `glb`, `stl`, `obj`, `step`, several at once. Default: `Run.FILE_FORMAT` (`["glb"]`). Visual mode allows only `glb` and `obj`. |
-| `--for` | Applies a preset from `parameters/presets.py` before any `--set`: `freecad`, `elmer`, `calculix`, `openems`, `viewer`, `blender_glb`, `blender_obj`. See [Choosing An Export](Choosing-An-Export.md). |
+| `--for` | Applies a preset from `parameters/Run_KESE/Presets.py` before any `--set`: `freecad`, `elmer`, `calculix`, `openems`, `viewer`, `blender_glb`, `blender_obj`. See [Choosing An Export](Choosing-An-Export.md). |
 | `--verify` | Runs the Verifier after the model files are written (at most about 1.5 s more on the example boards). See [Checks, Errors And Warnings](Checks-Errors-And-Warnings.md). |
 | `--out` | Output root. Default: `Run.OUTPUT_DIR` (`Output/`). |
-| `--set Module.NAME=value` | Overrides one parameter for this run. `Module` is the short name of the parameter file (`Run`, `Board`, `Copper`, `SolderMask`, `Silkscreen`, `Finish`, `Geometry`, `Color`, `Parallel`, `Step`, `Verifier`, `Presets`). The value is parsed as a Python literal (`0.02`, `True`); anything that does not parse, such as `net`, is kept as a string (so `false` is the word, and stops the run where the setting takes `True` or `False`). Quote a list for the shell, as in `--set 'Run.FILE_FORMAT=["glb","stl"]'`: unquoted, the shell strips its inner quotes and the run stops. An unknown module or name, or a `--set` without `=`, stops the run before it starts, naming the closest setting ([Checks, Errors And Warnings](Checks-Errors-And-Warnings.md#2011-errors)). |
+| `--set Module.NAME=value` | Overrides one parameter for this run. `Module` is the name of the parameter file (`Stackup`, `Board`, `Copper`, `Finish`, `SolderMask`, `SilkScreen`, `Run`, `Geometry`, `Parallel`, `Verifier`, `Presets`, `Step`, `Mesh`). A line of the stack-up is set the same way, `--set Stackup.top_solder_mask=True`, and four short names set several lines at once: `Stackup.silkscreen`, `Stackup.solder_mask`, `Stackup.finish` and `Stackup.copper` ([Stack-Up Model](Stack-Up-Model.md#84-what-is-built-the-lines-of-stackuppy)). A name from before the parameters were sorted by element, such as `Finish.FINISH_ENABLED`, is still understood, with a note in `report.txt` ([Parameter Reference](Parameter-Reference.md#1914-names-of-before-252)). The value is parsed as a Python literal (`0.02`, `True`); anything that does not parse, such as `net`, is kept as a string (so `false` is the word, and stops the run where the setting takes `True` or `False`). Quote a list for the shell, as in `--set 'Run.FILE_FORMAT=["glb","stl"]'`: unquoted, the shell strips its inner quotes and the run stops. An unknown module or name, or a `--set` without `=`, stops the run before it starts, naming the closest setting ([Checks, Errors And Warnings](Checks-Errors-And-Warnings.md#2011-errors)). |
 | `--version` | Prints `kese 2.4.0`. |
 
 Every preset, `--set`, `--mode`, `--format` and `--verify` is applied as an override of the
@@ -131,6 +133,8 @@ in its values. Only `--out` is not recorded there; the run folder's path shows i
 ## 3.4 Next
 
 - Decide what to export for your solver: [Choosing An Export](Choosing-An-Export.md).
+- Choose what is built, line by line, and whether the plies of a gap are fused or separate:
+  [Stack-Up Model](Stack-Up-Model.md#84-what-is-built-the-lines-of-stackuppy).
 - Set your fabricator's thicknesses: [Parameter Reference](Parameter-Reference.md).
 - See what the model contains: [Board](Board.md) and [Copper And Traces](Copper-And-Traces.md).
 - See what happens in a run, stage by stage: [Working Principle](Working-Principle.md).

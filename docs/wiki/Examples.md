@@ -97,7 +97,7 @@ What this board shows:
   colour and the copper under the mask reads through it in the lighter blue.
 - **Keep-outs and finish.** Three rule areas are counted under `skipped` and make no copper, as
   intended. The stack-up's finish is ENIG: the nickel and the gold go on the bare copper
-  (`--set Finish.FINISH_ENABLED=False` leaves them out)
+  (`--set Stackup.finish=False` leaves them out)
   ([ENIG](Finish.md#1531-enig)).
 
 

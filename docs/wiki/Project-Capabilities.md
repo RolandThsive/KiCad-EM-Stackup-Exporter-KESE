@@ -10,17 +10,19 @@ solvers and CAD, and a **visual model** of the visible surface for viewers.
 |---|---|
 | Board file | `.kicad_pcb` from KiCad 4 to 10 (file formats 3 to 20260206), each version read by KiCad's own rules for it (`kese/s1_read/parse_kicad_version.py`); older and newer files are read with a warning. KiCad itself is not needed. |
 | Copper layers | 1 to 8 in the test boards. Above 8, KESE warns but still models the board. `F.Cu` and `B.Cu` must be declared. |
-| Stack-up | From Board Setup: every core and prepreg with its thickness, εr and tanδ, the copper and mask thicknesses, the mask and silk colours, the finish. Defaults from `parameters/` when the file has none. |
+| Stack-up | From Board Setup: every core and prepreg, and every ply of a prepreg that has several, with its thickness, material, εr and tanδ, the copper and mask thicknesses, the mask's material, the mask and silk colours, the finish. Defaults from `parameters/` when the file has none. |
+| What is built | A list of the board's layers in `parameters/PCB_elements/Stackup.py`, from the top silkscreen down to the bottom silkscreen: each line is `True` or `False`, and a line set to `False` is left out of every file ([Stack-Up Model](Stack-Up-Model.md)) |
 | Outline | `Edge.Cuts` of any shape, with cut-outs and boards inside them |
 | Copper | Tracks, arc tracks, pads (circle, rect, oval, roundrect, trapezoid, custom), zone fills, copper graphics (solid or hatched) and text |
 | Vias | Through, blind, buried and micro vias with plated barrels; rings on unconnected layers dropped as KiCad does; KiCad 10's covered, plugged, capped and filled vias, the plugs and resin fills a part of their own |
 | Holes | Plated and non-plated, round and slotted; plated walls on the plated ones; KiCad 10's backdrills, counterbores and countersinks cut into them |
 | Board edge | Castellated holes and edge plating; a blind or buried via, backdrill, counterbore or countersink at a plated edge cuts the plating only between its own heights |
-| Dielectrics | One solid per gap between copper layers with its own εr and tanδ; resin fills the space beside inner copper |
-| Solder mask | Openings as KiCad draws them (pads, drawn openings, untented vias, and tracks and copper drawings the mask leaves bare); conformal over every trace; pulled back from the board edge; open over every bore, so on a tented via it covers only the ring, unless the via is covered, plugged, capped or filled (KiCad 10). Off by default (`SolderMask.SOLDER_MASK_ENABLED`). |
-| Silkscreen | KiCad's stroke font and text layout (TrueType text from the glyphs KiCad saves with it, else in the stroke font; a custom stroke or Hershey font is optional); removed inside mask openings, as fabricators do. Off by default (`Silkscreen.SILKSCREEN_ENABLED`). |
-| Surface finish | ENIG, ENEPIG, HASL, lead-free HASL, OSP, immersion silver, immersion tin, hard gold: each metal its own layer on the bare copper, taken from KiCad's finish name. On by default (`Finish.FINISH_ENABLED`). |
-| Etching | Optional sloped copper walls (`Copper.ETCH_FACTOR`) |
+| Dielectrics | With the plies fused (the default): one solid per gap between copper layers with its own εr and tanδ, the resin beside the inner copper a part of it. With the plies separate (`Stackup.FUSION_BUILD = "PLIES_SEPARATE"`): every prepreg ply, every core and the resin beside each inner copper layer a solid of its own, with its own material ([Board](Board.md#121-dielectric-solids)) |
+| Material data | For every dielectric the frequency its εr and tanδ hold at and how they change with frequency: constant, the Djordjevic-Sarkar model or a table. For the copper of every layer its foil, its plating, its etch factor and its treated face, with a roughness model (Hammerstad or Huray). An εr and tanδ for the solder mask, the silkscreen and the via resin ([Material Properties](Material-Properties.md)) |
+| Solder mask | Openings as KiCad draws them (pads, drawn openings, untented vias, and tracks and copper drawings the mask leaves bare); conformal over every trace; pulled back from the board edge; open over every bore, so on a tented via it covers only the ring, unless the via is covered, plugged, capped or filled (KiCad 10). Off by default (the lines `top_solder_mask` and `bottom_solder_mask` of `Stackup.py`); its εr and tan δ are in `materials.json`. |
+| Silkscreen | KiCad's stroke font and text layout (TrueType text from the glyphs KiCad saves with it, else in the stroke font; a custom stroke or Hershey font is optional); removed inside mask openings, as fabricators do. Off by default (the lines `top_silkscreen` and `bottom_silkscreen` of `Stackup.py`). |
+| Surface finish | ENIG, ENEPIG, HASL, lead-free HASL, OSP, immersion silver, immersion tin, hard gold: each metal its own layer on the bare copper, taken from KiCad's finish name. On by default (the lines `top_finish`, `bottom_finish` and `hole_finish` of `Stackup.py`). |
+| Etching | Optional sloped copper walls, with a factor each for the top, the inner and the bottom copper (`Copper.TOP_ETCH_FACTOR`, `INNER_ETCH_FACTOR`, `BOTTOM_ETCH_FACTOR`) |
 | Colours | One material per part; KiCad's mask and silk colour names honoured |
 
 ## 4.2 Simulation Model And Visual Model
@@ -32,8 +34,8 @@ solvers and CAD, and a **visual model** of the visible surface for viewers.
 | Formats | GLB, STEP, STL, OBJ | GLB, OBJ |
 | Copper | One part per net: its tracks on every layer and its vias (or one per layer, or one for all) | All copper in the bare-copper colour |
 | Solder mask | Translucent, one part per side | Opaque; lighter where it lies on copper, so traces show through |
-| Other parts | Each dielectric, plating, silkscreen, finish | The same; a part with nothing in sight is left out |
-| Physical data | εr, tanδ, conductivity, thickness and z range per part in `materials.json` | The same file |
+| Other parts | Each dielectric (or each ply, core and resin fill), plating, silkscreen, finish | The same; a part with nothing in sight is left out |
+| Physical data | εr, tanδ and how they change with frequency, conductivity, roughness, thickness and z range per part in `materials.json` | The same file |
 | What-if | Change plating, via wall, mask thickness or etch factor in `parameters/` and export again | |
 | Verifier (`--verify`) | Every part closed and consistently wound; its volume the same from its faces, slices, mesh and prisms; no two parts sharing material, every slice against every other | Along 3,000 vertical rays the faces take turns, into the material and out of it |
 | 4-layer PCIe card example | GLB 30.2 MB, 881,514 triangles | GLB 9.1 MB, 290,836 triangles |
@@ -46,10 +48,10 @@ More in [Output Modes](Output-Modes.md).
 | File | What it holds |
 |---|---|
 | GLB | One mesh per part with its colour; metres by default (`Run.UNITS`) |
-| STEP | Written by KESE itself, no CAD kernel needed: every part under its own name, as closed solids with true circular arcs and cylinders (`Step.STEP_EXACT_ARCS`, the default; files 2.5 to 3 times smaller than flat faces with curves as polygons); the same parts as every other format, as the part switches set them |
+| STEP | Written by KESE itself, no CAD kernel needed: every part under its own name, as closed solids with true circular arcs and cylinders (`Step.STEP_EXACT_ARCS`, the default; files 2.5 to 3 times smaller than flat faces with curves as polygons); the same parts as every other format, as the lines of the stack-up set them |
 | STL | One closed file per part, in `stl/` |
 | OBJ | One object per part, colours in an `.mtl` |
-| `materials.json` | Per part: role, layer, net, z range, εr, tanδ, conductivity, colour, file names |
+| `materials.json` | Per part: role, layer, net, z range, εr, tanδ and their frequency model, the plies of a gap, conductivity and roughness, colour, file names |
 | `parameters.txt` | Every setting of the run, with what was changed for it |
 | `report.txt` | Stack-up heights, what was read and what was skipped, parts and triangles, timings, the Verifier's result |
 | Options | mm or m; centred or at KiCad's origin; board upright or flat |

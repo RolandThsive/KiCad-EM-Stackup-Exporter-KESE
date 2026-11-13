@@ -4,13 +4,13 @@
     kese Input/board.kicad_pcb                   one board
     kese board.kicad_pcb --mode visual           simulation (solids) or visual (surface for viewers)
     kese board.kicad_pcb --format glb step stl
-    kese board.kicad_pcb --for freecad           a preset: units, origin, grouping, formats (parameters/presets.py)
+    kese board.kicad_pcb --for freecad           a preset: units, origin, grouping, formats (parameters/Run_KESE/Presets.py)
     kese board.kicad_pcb --verify
     kese board.kicad_pcb --set Copper.VIA_WALL_MM=0.02 --set Board.BOARD_THICKNESS_MM=0.8
     kese --version
 
 Without `pip install .` run it as  python run_KESE.py ...  from the Generator/ folder.
-Every parameter lives in parameters/*.py; --for and --set override values for this run and the
+Every parameter lives in a file of parameters/ (PCB_elements/, Run_KESE/, Fileformats/); --for and --set override values for this run and the
 overrides are recorded in the output's parameters.txt.  Outputs go to Output/<board>/<mode>_<FORMATS>/,
 numbered __1, __2, ... when the folder already exists.
 """
@@ -53,7 +53,7 @@ def overrides_of(ap, args):
         overrides.append(("PRESET", args.preset))
         preset = P.Presets.PRESETS[args.preset]
         if not isinstance(preset, dict):
-            ap.error(f"--for {args.preset}: parameters/presets.py gives it {preset!r}, not {{\"Module.NAME\": value}}")
+            ap.error(f"--for {args.preset}: parameters/Run_KESE/Presets.py gives it {preset!r}, not {{\"Module.NAME\": value}}")
         for key, value in preset.items():
             apply(key, value, f"--for {args.preset}")
     for item in args.set:
@@ -69,6 +69,7 @@ def overrides_of(ap, args):
         if value is not None:                             # command-line choices are overrides too
             P.override(key, value)
             overrides.append((key, value))
+    P.settle()
     return overrides
 
 
@@ -91,11 +92,11 @@ def main():
     ap.add_argument("boards", nargs="*", help=".kicad_pcb files (default: all in Input/)")
     ap.add_argument("--mode", choices=["simulation", "visual"])
     ap.add_argument("--format", nargs="+", metavar="FMT", help="glb stl obj step")
-    ap.add_argument("--for", dest="preset", choices=sorted(P.Presets.PRESETS), help="apply a preset from parameters/presets.py")
+    ap.add_argument("--for", dest="preset", choices=sorted(P.Presets.PRESETS), help="apply a preset from parameters/Run_KESE/Presets.py")
     ap.add_argument("--verify", action="store_true", help="run the Verifier (opt-in)")
     ap.add_argument("--out", help="output root (default Run.OUTPUT_DIR)")
     ap.add_argument("--set", action="append", default=[], metavar="Module.NAME=value",
-                    help="override a parameter, e.g. Copper.ETCH_FACTOR=0.5")
+                    help="override a parameter, e.g. Copper.TOP_ETCH_FACTOR=0.5 or Stackup.solder_mask=True")
     ap.add_argument("--version", action="version", version=f"kese {__version__}")
     args = ap.parse_args()
 

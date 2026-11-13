@@ -1,5 +1,5 @@
 """2D shape helpers (shapely): circles, strokes and set operations on the snapping grid.  All
-tolerances come from parameters/geometry.py; nothing numeric is defined here."""
+tolerances come from parameters/Run_KESE/Geometry.py; nothing numeric is defined here."""
 import math
 
 import numpy as np
