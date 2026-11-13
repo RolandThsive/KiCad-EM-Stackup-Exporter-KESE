@@ -6,9 +6,9 @@ way.
 The work is in three groups, in this order: how exact the model is, how fast and how large the
 exports are, and the tools around the generator. Two parts of the first group are built: every
 ply as its own solid ([25.2.1](#2521-every-ply-as-its-own-solid)) and material data that depends
-on frequency ([25.2.3](#2523-material-data-that-depends-on-frequency)). The rest is not built yet.
-An EM solver of KESE's own is not planned: the geometry and the materials have to be shown
-correct first.
+on frequency ([25.2.3](#2523-material-data-that-depends-on-frequency)). They stay on this page,
+struck through. The rest is not built yet. An EM solver of KESE's own is not planned: the geometry
+and the materials have to be shown correct first.
 
 ## 25.1 Where The Project Stands
 
@@ -25,30 +25,33 @@ is the work that closes this gap.
 
 ## 25.2 Model Accuracy
 
-### 25.2.1 Every Ply As Its Own Solid
+### ~~25.2.1 Every Ply As Its Own Solid~~
 
-**Built.** `Stackup.FUSION_BUILD` in `parameters/PCB_elements/Stackup.py` picks one of two
-stack-ups ([Stack-Up Model](Stack-Up-Model.md), [Board](Board.md#121-dielectric-solids)):
+**Built in version 3.4.0**, and struck through for that reason.
 
-- **`"PLIES_FUSED"`:** a gap between two copper layers is one dielectric solid, as
-  before, so with it every board gives the files it gave before. The plies it was fused from are now
-  listed under it in `materials.json` and `report.txt`, and `Board.FUSED_PROPERTIES = "series"`
-  gives the solid the εr and tanδ of its plies in series instead of the first ply's.
-- **`"PLIES_SEPARATE"`, the default:** one solid per prepreg ply and per core, each with its own thickness,
-  material, εr and tanδ, and one solid for the resin beside each inner copper layer.
-  `Board.JOIN_EQUAL_PLIES = True` joins neighbouring plies of the same material and values, to
-  keep the part count down.
-- **The two open questions:** the resin beside an inner copper layer flows from the prepreg next
-  to it (the one below when a core is above, else the one above) and, with the plies separate, is
-  a solid of its own with the values of the resin without its glass (`Board.RESIN_EPSILON_R`,
-  `Board.RESIN_LOSS_TANGENT`). A ply thinner than `Board.PLY_MIN_THICKNESS_MM` (1 µm) is joined
-  to its thicker neighbour, with a warning.
-- **Plies the board file does not hold** can be written by hand for one board in
-  `Board.PLIES_BY_HAND`.
-- **Checked by** the feature test boards 29, 29b, 29c and 29d
+~~`Stackup.FUSION_BUILD` in `parameters/PCB_elements/Stackup.py` picks one of two
+stack-ups ([Stack-Up Model](Stack-Up-Model.md), [Board](Board.md#121-dielectric-solids)):~~
+
+- ~~**`"PLIES_FUSED"`:** a gap between two copper layers is one dielectric solid, as
+  before, so with it every board gives the files it gave before. The plies it was fused from are
+  now listed under it in `materials.json` and `report.txt`, and
+  `Board.FUSED_PROPERTIES = "series"` gives the solid the εr and tanδ of its plies in series
+  instead of the first ply's.~~
+- ~~**`"PLIES_SEPARATE"`, the default:** one solid per prepreg ply and per core, each with its
+  own thickness, material, εr and tanδ, and one solid for the resin beside each inner copper
+  layer. `Board.JOIN_EQUAL_PLIES = True` joins neighbouring plies of the same material and
+  values, to keep the part count down.~~
+- ~~**The two open questions:** the resin beside an inner copper layer flows from the prepreg
+  next to it (the one below when a core is above, else the one above) and, with the plies
+  separate, is a solid of its own with the values of the resin without its glass
+  (`Board.RESIN_EPSILON_R`, `Board.RESIN_LOSS_TANGENT`). A ply thinner than
+  `Board.PLY_MIN_THICKNESS_MM` (1 µm) is joined to its thicker neighbour, with a warning.~~
+- ~~**Plies the board file does not hold** can be written by hand for one board in
+  `Board.PLIES_BY_HAND`.~~
+- ~~**Checked by** the feature test boards 29, 29b, 29c and 29d
   ([Feature Test Collection](Feature-Test-Collection.md)): each exports one solid per ply, the
   Verifier passes it, and the plies' thicknesses add up to their gap (`tests/test_plies.py`,
-  `tests/test_plies_built.py`).
+  `tests/test_plies_built.py`).~~
 
 ### 25.2.2 Comparison With Measured Boards And Reference Solvers
 
@@ -70,21 +73,23 @@ stack-ups ([Stack-Up Model](Stack-Up-Model.md), [Board](Board.md#121-dielectric-
   the repository, and each disagreement beyond the uncertainty is either corrected in KESE or
   written down as a known limit.
 
-### 25.2.3 Material Data That Depends On Frequency
+### ~~25.2.3 Material Data That Depends On Frequency~~
 
-**Built**, as data handed to the solver: KESE does not apply any of it itself
-([Material Properties](Material-Properties.md)).
+**Built in version 3.4.0**, and struck through for that reason. The last point is still open.
 
-- **Dielectrics:** `materials.json` carries, for every laminate solid and every ply, the
+~~Built as data handed to the solver: KESE does not apply any of it itself
+([Material Properties](Material-Properties.md)).~~
+
+- ~~**Dielectrics:** `materials.json` carries, for every laminate solid and every ply, the
   frequency its εr and tanδ are given at (`spec_frequency_hz`) and a `dielectric_model`:
   `constant`, the fitted parameters of the Djordjevic-Sarkar model, or a table of εr and tanδ
-  over frequency (`Board.DIELECTRIC_MODEL`, or the board file's own model and frequency).
-- **Copper:** for every layer of a copper part its foil, its plating, its etch factor and which
+  over frequency (`Board.DIELECTRIC_MODEL`, or the board file's own model and frequency).~~
+- ~~**Copper:** for every layer of a copper part its foil, its plating, its etch factor and which
   face is the treated one, and a roughness model with its parameters for the treated and the
-  other face: Hammerstad or Huray (`Copper.COPPER_ROUGHNESS_MODEL`).
-- **Also:** an εr and tanδ for the solder mask (the board file's, else `SolderMask.MASK_EPSILON_R`
-  and `MASK_LOSS_TANGENT`), for the silkscreen (`SilkScreen.SILK_EPSILON_R`, `SILK_LOSS_TANGENT`)
-  and for the resin beside inner copper.
+  other face: Hammerstad or Huray (`Copper.COPPER_ROUGHNESS_MODEL`).~~
+- ~~**Also:** an εr and tanδ for the solder mask (the board file's, else
+  `SolderMask.MASK_EPSILON_R` and `MASK_LOSS_TANGENT`), for the silkscreen
+  (`SilkScreen.SILK_EPSILON_R`, `SILK_LOSS_TANGENT`) and for the resin beside inner copper.~~
 - **Still open:** the numbers are typical values or best guesses. The resin's, the ink's and the
   roughness parameters have no maker's data sheet behind them yet, and nothing is measured:
   the values measured in [25.2.2](#2522-comparison-with-measured-boards-and-reference-solvers)
