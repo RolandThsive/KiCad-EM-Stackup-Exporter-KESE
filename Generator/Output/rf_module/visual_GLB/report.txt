@@ -1,8 +1,10 @@
-rf_module  (rf_module.kicad_pcb)   generated 2026-11-08 15:51
+rf_module  (rf_module.kicad_pcb)   generated 2026-11-13 08:09
 mode: visual   formats: glb   units: m
 KiCad format 20221018 (KiCad 7), generator pcbnew
 
-stack-up
+stack-up   built: PLIES_FUSED (parameters/PCB_elements/Stackup.py)
+  lines built: top_silkscreen, top_solder_mask, top_finish, top_copper, board, resin_between_traces, inner_copper, bottom_copper, bottom_finish, bottom_solder_mask, bottom_silkscreen, plated_holes, hole_finish, via_resin
+  lines left out: none
   copper layers: F.Cu, In1.Cu, In2.Cu, B.Cu
   laminate 1.5300 mm (stackup dielectrics (+ inner copper); board total in file 1.6 mm)
   F.Cu     z +0.7650 .. +0.8000 mm  (foil 0.035 mm)
@@ -71,25 +73,25 @@ parts
   Copper_SDA                                704 triangles  material Copper_exposed #DEBA60 alpha 1.0
   Copper_SDA2                              1408 triangles  material Copper_exposed #DEBA60 alpha 1.0
   Copper_TX                                 704 triangles  material Copper_exposed #DEBA60 alpha 1.0
-  Top Solder Mask                        127501 triangles  material Top Solder Mask #14328C alpha 1.0
+  Top Solder Mask                        128445 triangles  material Top Solder Mask #14328C alpha 1.0
   Top Mask over Copper                    54759 triangles  material Top Mask over Copper #3C5AB4 alpha 1.0
-  Bottom Solder Mask                      56302 triangles  material Bottom Solder Mask #14328C alpha 1.0
+  Bottom Solder Mask                      56490 triangles  material Bottom Solder Mask #14328C alpha 1.0
   Bottom Mask over Copper                 49581 triangles  material Bottom Mask over Copper #3C5AB4 alpha 1.0
-  Top Silkscreen                          35944 triangles  material Top Silkscreen #F0F0EC alpha 1.0
-  Bottom Silkscreen                       11689 triangles  material Bottom Silkscreen #F0F0EC alpha 1.0
-  Top Finish Gold                         60601 triangles  material Gold #E6C15A alpha 1.0
+  Top Silkscreen                          36342 triangles  material Top Silkscreen #F0F0EC alpha 1.0
+  Bottom Silkscreen                       11698 triangles  material Bottom Silkscreen #F0F0EC alpha 1.0
+  Top Finish Gold                         60872 triangles  material Gold #E6C15A alpha 1.0
   Top Finish Nickel                        1328 triangles  material Nickel #B8B8B0 alpha 1.0
-  Bottom Finish Gold                      13755 triangles  material Gold #E6C15A alpha 1.0
+  Bottom Finish Gold                      13972 triangles  material Gold #E6C15A alpha 1.0
   Bottom Finish Nickel                      376 triangles  material Nickel #B8B8B0 alpha 1.0
-  Edge Finish Gold                        10368 triangles  material Gold #E6C15A alpha 1.0
+  Edge Finish Gold                        10472 triangles  material Gold #E6C15A alpha 1.0
   Hole Finish Gold                       175576 triangles  material Gold #E6C15A alpha 1.0
   Hole Finish Nickel                       2112 triangles  material Nickel #B8B8B0 alpha 1.0
 
 timing
-  read              0.0749 s
-  collect           0.2000 s
-  resolve           1.8032 s
-  geometry          7.3010 s
-  materials         0.0003 s
-  assemble          9.9981 s
-  write             0.1017 s
+  read              0.0828 s
+  collect           0.1548 s
+  resolve           1.3835 s
+  geometry          6.1606 s
+  materials         0.0004 s
+  assemble         12.5364 s
+  write             0.0789 s

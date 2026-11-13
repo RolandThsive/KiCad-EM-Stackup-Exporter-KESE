@@ -88,7 +88,9 @@ def test_the_frequency_and_the_model_of_a_ply():
     said = []
     got = [(p.frequency_hz, p.model) for p in stack(text, ["F.Cu", "B.Cu"], said=said).dielectrics[0].plies]
     assert got == [(1e10, "djordjevic_sarkar"), (5e9, "constant"), (1e9, "constant"), (1e9, "constant"), (100.0, "constant")], got
-    assert said == ["warning: dielectric 1 ply 5: the Djordjevic-Sarkar model needs its spec frequency (100 Hz) between "
+    assert said == ["warning: stackup layer dielectric 1 ply 3: KESE does not know the dielectric_model 'debye' (it knows "
+                    "constant, djordjevic_sarkar): Board.DIELECTRIC_MODEL is used",
+                    "warning: dielectric 1 ply 5: the Djordjevic-Sarkar model needs its spec frequency (100 Hz) between "
                     "Board.DS_LOW_FREQUENCY_HZ (1000) and Board.DS_HIGH_FREQUENCY_HZ (1e+12): written with constant values"], said
     with settings({"Board.DIELECTRIC_MODEL": "djordjevic_sarkar", "Board.DEFAULT_SPEC_FREQUENCY_HZ": 2e9}):
         got = [(p.frequency_hz, p.model) for p in stack(text, ["F.Cu", "B.Cu"]).dielectrics[0].plies]
@@ -147,6 +149,55 @@ def test_a_stack_up_that_cannot_be_used_is_split_evenly():
     assert all("joined to dielectric 1 ply 1" in s for s in said[1:]) and len(said) == 3, said
 
 
+def test_a_ply_that_cannot_be_used_as_given():
+    # er 0 cannot be put in series: the gap keeps its first ply's values, with a warning
+    zero = '(thickness 0.1) (material "X") (epsilon_r 0) (loss_tangent 0.01)'
+    text = " ".join([TOP, gap(1, "prepreg", P2116, zero), IN1, CORE, IN2, gap(3, "prepreg", P1080, P2116), BOTTOM])
+    with settings({"Board.FUSED_PROPERTIES": "series"}):
+        said = []
+        d1, _, d3 = stack(text, said=said).dielectrics
+    assert (d1.material, d1.epsilon_r, d1.loss_tangent) == ("2116", 4.16, 0.02) and d3.material == "1080 + 2116"
+    assert (d1.fused_properties, d3.fused_properties) == ("first", "series")       # as materials.json then says
+    assert said == ["warning: dielectric 1: a ply with er 0 or less cannot be put in series (Board.FUSED_PROPERTIES): "
+                    "the gap keeps its first ply's values"], said
+    # the model "table" with no table: constant values, with a warning; with a table it stays
+    table = REAL.replace('(material "1080")', '(material "1080") (dielectric_model table)', 1)
+    said = []
+    assert [p.model for p in stack(table, said=said).dielectrics[0].plies] == ["constant", "constant"]
+    assert said == ['warning: dielectric 1 ply 2: its dielectric model is "table" but Board.DIELECTRIC_TABLE is empty: '
+                    "written with constant values"], said
+    with settings({"Board.DIELECTRIC_TABLE": ((1e9, 4.5, 0.02),)}):
+        said = []
+        assert [p.model for p in stack(table, said=said).dielectrics[0].plies] == ["constant", "table"] and not said
+    # a model KESE does not know, in any case of letters, and one left empty: the parameters' model
+    for given, model, warned in (("Djordjevic_Sarkar", "djordjevic_sarkar", 0), ("debye", "constant", 1), ("", "constant", 0)):
+        said = []
+        text = REAL.replace('(material "1080")', f'(material "1080") (dielectric_model {given})', 1)
+        assert stack(text, said=said).dielectrics[0].plies[1].model == model, given
+        assert said == ["warning: stackup layer dielectric 1 ply 2: KESE does not know the dielectric_model 'debye' (it knows "
+                        "constant, djordjevic_sarkar): Board.DIELECTRIC_MODEL is used"][:warned], said
+    # a value left empty is as one left out; a number left empty is refused as KiCad refuses it
+    empty = REAL.replace('(material "1080")', "(material)", 1).replace('(type "prepreg")', "(type)", 1).replace('(color "Green")', "(color)")
+    d1 = stack(empty).dielectrics[0]
+    assert (d1.kind, d1.plies[1].material) == (P.Board.DEFAULT_DIELECTRIC_TYPE, P.Board.DEFAULT_DIELECTRIC_MATERIAL)
+    for full, bare in (("(epsilon_r 4.16)", "(epsilon_r)"), ("(thickness 0.035)", "(thickness)"),      # a ply, the top copper
+                       ("(thickness 0.01)", "(thickness)")):                                         # and the top mask
+        try:
+            stack(REAL.replace(full, bare, 1))
+        except ValueError as e:
+            assert str(e).startswith(f"nothing where a number belongs, in {bare[:-1]} ...)"), e
+        else:
+            raise AssertionError(f"{bare} with nothing in it was taken")
+    # a ply of no thickness is joined to its neighbour whatever Board.PLY_MIN_THICKNESS_MM is
+    none = '(thickness 0) (material "Film") (epsilon_r 3.2) (loss_tangent 0.02)'
+    text = " ".join([TOP, gap(1, "prepreg", P2116, none), IN1, CORE, IN2, gap(3, "prepreg", P1080, P2116), BOTTOM])
+    with settings({**SEPARATE, "Board.PLY_MIN_THICKNESS_MM": 0}):
+        said = []
+        d1 = stack(text, said=said).dielectrics[0]
+    assert [(p.name, p.thickness, p.holds) for p in d1.solids] == [("dielectric 1", 0.124, ["dielectric 1 ply 1", "dielectric 1 ply 2"])]
+    assert said == ["warning: dielectric 1 ply 2 has no thickness: joined to dielectric 1 ply 1"], said
+
+
 def test_several_dielectrics_in_one_gap_are_one():
     text = " ".join([TOP, '(layer "dielectric 1" (type "prepreg") (thickness 0.1) (material "A") (epsilon_r 4.0))',
                      '(layer "dielectric 2" (type "core") (thickness 0.3) (material "B") (epsilon_r 4.5) addsublayer (thickness 0.2) (material "C"))',
@@ -194,6 +245,7 @@ def test_plies_given_by_hand():
             ({("F.Cu", "In1.Cu"): [{**good, "loss_tangent": -0.1}]}, f"{where}[0]: 'loss_tangent' must be 0 or more"),
             ({("F.Cu", "In1.Cu"): [{**good, "frequency_hz": 0}]}, f"{where}[0]: 'frequency_hz' must be more than 0"),
             ({("F.Cu", "In1.Cu"): [{**good, "model": "debye"}]}, f"{where}[0]: 'model' must be one of 'constant', 'djordjevic_sarkar', 'table'"),
+            ({("F.Cu", "In1.Cu"): [{**good, "model": "table"}]}, f"{where}[0]: 'model' may be 'table' only when Board.DIELECTRIC_TABLE has rows"),
             ([good], "Board.PLIES_BY_HAND['mine'] must be {(copper above, copper below): [plies]}")):
         with settings({"Board.PLIES_BY_HAND": {"mine": wrong}}):
             refused(lambda: stack(REAL, board="mine"), said)
@@ -228,6 +280,38 @@ def test_plies_built_apart_thin_ones_and_equal_ones_joined():
             assert names(d3) == [("dielectric 3", 0.3)]
     with settings({"Board.JOIN_EQUAL_PLIES": True}):
         assert not stack(text).dielectrics[0].solids                 # fused: nothing is built ply by ply
+
+
+def test_the_report_lists_the_laminate_as_it_is_built():
+    from kese.s9_report.report import laminate_lines
+    thin = '(thickness 0.0006) (material "Film") (epsilon_r 3.2) (loss_tangent 0.02)'
+    text = " ".join([TOP, gap(1, "prepreg", P2116, P1080), IN1, gap(2, "core", '(thickness 1.066) (material "FR4 core")', thin),
+                     IN2, gap(3, "prepreg", P1080, P2116), BOTTOM])
+    st = stack(text)
+    finished_bands(st)
+    assert laminate_lines(st) == [
+        "  dielectric 1             prepreg  2116       0.2004 mm  er 4.16  tan d 0.02   z +0.5485 .. +0.7489",
+        "    fused from dielectric 1 ply 1: prepreg 2116 0.1240 mm  er 4.16  tan d 0.02",
+        "    fused from dielectric 1 ply 2: prepreg 1080 0.0764 mm  er 3.91  tan d 0.018",
+        "  dielectric 2             core     FR4 core   1.0666 mm  er 4.5  tan d 0.02   z -0.5333 .. +0.5333",
+        "    fused from dielectric 2 ply 1: core FR4 core 1.0660 mm  er 4.5  tan d 0.02",
+        "    fused from dielectric 2 ply 2: core Film 0.0006 mm  er 3.2  tan d 0.02",
+        "  dielectric 3             prepreg  1080       0.2004 mm  er 3.91  tan d 0.018   z -0.7489 .. -0.5485",
+        "    fused from dielectric 3 ply 1: prepreg 1080 0.0764 mm  er 3.91  tan d 0.018",
+        "    fused from dielectric 3 ply 2: prepreg 2116 0.1240 mm  er 4.16  tan d 0.02"], laminate_lines(st)
+    with settings(SEPARATE):
+        st = stack(text)
+        finished_bands(st)
+        lines = laminate_lines(st)
+    assert lines == [
+        "  dielectric 1 ply 1       prepreg  2116       0.1240 mm  er 4.16  tan d 0.02   z +0.6249 .. +0.7489",
+        "  dielectric 1 ply 2       prepreg  1080       0.0764 mm  er 3.91  tan d 0.018   z +0.5485 .. +0.6249",
+        "  resin In1.Cu             resin    resin      0.0152 mm  er 3.5  tan d 0.02   z +0.5333 .. +0.5485   (flowed from dielectric 1 ply 2)",
+        "  dielectric 2             core     FR4 core   1.0666 mm  er 4.5  tan d 0.02   z -0.5333 .. +0.5333"
+        "   (holds dielectric 2 ply 1, dielectric 2 ply 2)",
+        "  resin In2.Cu             resin    resin      0.0152 mm  er 3.5  tan d 0.02   z -0.5485 .. -0.5333   (flowed from dielectric 3 ply 1)",
+        "  dielectric 3 ply 1       prepreg  1080       0.0764 mm  er 3.91  tan d 0.018   z -0.6249 .. -0.5485",
+        "  dielectric 3 ply 2       prepreg  2116       0.1240 mm  er 4.16  tan d 0.02   z -0.7489 .. -0.6249"], lines
 
 
 def test_the_plies_of_a_gap_add_up_to_the_gap():

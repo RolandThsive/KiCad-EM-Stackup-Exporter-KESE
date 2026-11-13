@@ -69,8 +69,37 @@ def test_the_old_etch_switch_gives_the_inner_copper_the_tops_factor():
     lines = []
     with settings({key: P.value(key) for key in keys}):
         start("simulation", None, None, ((INNER_ETCH, True),), False, lines.append).status.stop()
-    assert lines == [f"  {INNER_ETCH} is now Copper.INNER_ETCH_FACTOR (parameters/PCB_elements/Copper.py): the value "
-                     f"given for {INNER_ETCH} is used as Copper.INNER_ETCH_FACTOR"], lines
+    assert lines == [f"  {INNER_ETCH} is now Copper.INNER_ETCH_FACTOR (parameters/PCB_elements/Copper.py): True gives "
+                     "the inner copper the top copper's etch factor, False gives it 0"], lines
+    for bad in ("true", 1, None):                                       # --set ...=true gives the word, not True
+        try:
+            P.override(INNER_ETCH, bad)
+        except ValueError as e:
+            assert str(e) == f"{INNER_ETCH} must be True or False, not {bad!r}", e
+        else:
+            raise AssertionError(f"{INNER_ETCH} = {bad!r} was taken")
+
+
+def test_a_name_of_the_color_file_that_is_gone_says_where_the_colours_are():
+    for name in ("Color.VISUAL_MASK", "Color.MASK_COLOR"):              # not a setting of before: nothing to map it to
+        try:
+            P.override(name, True)
+        except ValueError as e:
+            assert str(e).startswith(f"{name} is not a parameter: parameters/color.py is gone, and every colour is now in "
+                                     "its element's file of parameters/PCB_elements/"), e
+        else:
+            raise AssertionError(f"{name} was taken")
+
+
+def test_the_corner_frequencies_of_the_model_must_be_in_order():
+    for low, high in ((1e12, 1e12), (1e13, 1e12)):
+        with settings({"Board.DS_LOW_FREQUENCY_HZ": low, "Board.DS_HIGH_FREQUENCY_HZ": high}):
+            try:
+                check_settings()
+            except ValueError as e:
+                assert str(e) == f"Board.DS_LOW_FREQUENCY_HZ must be less than Board.DS_HIGH_FREQUENCY_HZ, not {low!r} and {high!r}", e
+            else:
+                raise AssertionError(f"corner frequencies {low} and {high} were taken")
 
 
 def test_an_old_name_that_is_now_several_says_so():

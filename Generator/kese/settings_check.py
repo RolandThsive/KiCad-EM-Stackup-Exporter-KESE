@@ -113,6 +113,9 @@ def check_settings():
         if not number(value) or not 0 < value <= 1:
             raise ValueError(f"{key} must be a number more than 0 and at most 1, not {value!r}")
     check_table()
+    low, high = P.Board.DS_LOW_FREQUENCY_HZ, P.Board.DS_HIGH_FREQUENCY_HZ
+    if not low < high:                                    # the two corner frequencies of the Djordjevic-Sarkar model
+        raise ValueError(f"Board.DS_LOW_FREQUENCY_HZ must be less than Board.DS_HIGH_FREQUENCY_HZ, not {low!r} and {high!r}")
     for key, kind in {**KINDS, **NONE_OR}.items():        # every other setting: of the kind its file gives it
         value = P.value(key, None)
         if kind in KIND_WORDS and key not in ("Run.FILE_FORMAT", *OR_NONE) and not of_kind(value, kind) \

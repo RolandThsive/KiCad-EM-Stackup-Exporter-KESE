@@ -195,8 +195,9 @@ def test_tolerances_and_limits_must_be_in_their_range():
             refused = started({key: x})
             assert refused == f"{key} must be a number, {least} or more, not {x!r}", (key, x, refused)
     for key in MORE_THAN_ZERO:                                      # the longest arc
+        beside = {"Board.DS_LOW_FREQUENCY_HZ": 1e-6} if key == "Board.DS_HIGH_FREQUENCY_HZ" else {}    # the corners stay in order
         for x in (1e-3, 90, 181.0, 400):
-            assert not isinstance(started({key: x}), str), (key, x)
+            assert not isinstance(started({**beside, key: x}), str), (key, x)
         for x in (0, 0.0, -90, float("nan"), "90", None, True):
             refused = started({key: x})
             assert refused == f"{key} must be a number more than 0, not {x!r}", (key, x, refused)

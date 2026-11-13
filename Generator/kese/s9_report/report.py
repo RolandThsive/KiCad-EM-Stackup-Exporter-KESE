@@ -76,8 +76,9 @@ def laminate_lines(st):
     fused from; with the plies separate each ply and core as built."""
     how = lambda x: {"constant": "", "table": "   (table: Board.DIELECTRIC_TABLE)"}.get(
         x.model, f"   ({x.model}, values given at {x.frequency_hz / 1e9:g} GHz)")
+    held = lambda x: f"   (holds {', '.join(x.holds)})" if len(getattr(x, "holds", ())) > 1 else ""    # plies joined
     row = lambda x, t, lo, hi: (f"  {x.name:24s} {x.kind:8s} {x.material:10s} {t:.4f} mm  er {x.epsilon_r}"
-                                f"  tan d {x.loss_tangent}   z {lo:+.4f} .. {hi:+.4f}{how(x)}")
+                                f"  tan d {x.loss_tangent}   z {lo:+.4f} .. {hi:+.4f}{how(x)}{held(x)}")
     L = []
     for i, d in enumerate(st.dielectrics):
         lo, hi = dielectric_z(st, i)

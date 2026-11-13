@@ -58,7 +58,7 @@ def build(r, ps):
         if not separate:
             lo, hi = dielectric_z(st, i)
             add(d.name, d.name, r.slab[i], lo, hi, r.slab_cuts.get(i, []),
-                values(d, lo, hi, fused_properties=B.FUSED_PROPERTIES, **model_of(d), between=between,
+                values(d, lo, hi, fused_properties=d.fused_properties, **model_of(d), between=between,
                        plies=[{"name": ply.name, **values(ply, 0.0, ply.thickness), **model_of(ply)} for ply in d.plies]))
     if not resin:
         ps.notes.append('inner copper pockets left empty ("resin_between_traces" is False)')

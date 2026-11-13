@@ -1,8 +1,9 @@
 """Stack-up: read from (setup (stackup ...)), or made from the parameters when the board has none.
 What each gap between two copper layers is made of, ply by ply, is plies.py."""
-from kese.core.sexp import child, children, num, number
+from kese.core.dielectric import check_models
+from kese.core.sexp import child, children, num, number, word
 from kese.model.stackup import Ply, Stackup
-from kese.s2_collect.plies import by_hand, check_models, file_plies, fused, of_plies, solids
+from kese.s2_collect.plies import by_hand, file_plies, fused, of_plies, solids
 from parameters import P
 
 
@@ -16,10 +17,10 @@ def read_stackup(setup, copper_layers, file_thickness, log, board=""):
     gaps = []                          # dielectric layers between consecutive copper layers
     if st:
         cu_t, colors, mask_t, gaps, mask_materials = stackup_layers(st, log)
-        cf = child(st, "copper_finish")
-        if cf:
-            finish = str(cf[1])
-        flags = {k: str((child(st, k) or [None, "no"])[1]).lower() == "yes" for k in ("edge_plating", "castellated_pads")}
+        cf = word(st, "copper_finish")
+        if cf is not None:
+            finish = str(cf)
+        flags = {k: str(word(st, k, "no")).lower() == "yes" for k in ("edge_plating", "castellated_pads")}
     n = len(copper_layers)
     for l in copper_layers:
         if l not in cu_t:
@@ -60,7 +61,7 @@ def read_stackup(setup, copper_layers, file_thickness, log, board=""):
         each = (laminate - inner_cu - given) / (n - 1 - len(hand))
         gaps = [gaps[k] if k in hand else [default_dielectric(f"dielectric {k + 1}", each)] for k in range(n - 1)]
     note = f"(laminate {laminate:.4f} mm from {source}, {inner_cu:.4f} mm of it inner copper)"
-    dielectrics = one_per_gap(gaps, copper_layers, note)
+    dielectrics = one_per_gap(gaps, copper_layers, note, log)
     check_models(dielectrics, log)
     if P.Stackup.FUSION_BUILD == "PLIES_SEPARATE":
         for d in dielectrics:
@@ -88,14 +89,14 @@ def stackup_layers(st, log):
     acc, seen_cu = [], False
     for l in children(st, "layer"):
         name = str(l[1])
-        typ = (child(l, "type") or [None, ""])[1].lower()
-        col = child(l, "color")
-        if col:
-            colors[name] = str(col[1])
+        typ = str(word(l, "type", "")).lower()
+        col = word(l, "color")
+        if col is not None:
+            colors[name] = str(col)
         if seen_cu and not name.endswith((".Cu", ".Mask")) and (typ in ("core", "prepreg", "dielectric") or name.startswith("dielectric")):
             acc.append(of_plies(name, file_plies(l, name, typ if typ in ("core", "prepreg") else B.DEFAULT_DIELECTRIC_TYPE, log)))
             continue
-        t = sum(number(c[1], c) for c in children(l, "thickness")) or None
+        t = sum(number(c[1] if len(c) > 1 else None, c) for c in children(l, "thickness")) or None
         if t is not None and t < 0:
             log(f"warning: stackup layer {name}: thickness {t} mm is less than 0: read as not given")
             t = None
@@ -108,19 +109,19 @@ def stackup_layers(st, log):
         elif name.endswith(".Mask"):
             if t and M.USE_STACKUP_MASK_THICKNESS and mask_t is None:
                 mask_t = t
-            given = {"material": (child(l, "material") or [None, None])[1], "epsilon_r": num(l, "epsilon_r"),
+            given = {"material": word(l, "material"), "epsilon_r": num(l, "epsilon_r"),
                      "loss_tangent": num(l, "loss_tangent")}
             mask_materials[name] = {k: v for k, v in given.items() if v is not None}
     return cu_t, colors, mask_t, gaps, mask_materials
 
 
-def one_per_gap(gaps, copper_layers, laminate_note):
+def one_per_gap(gaps, copper_layers, laminate_note, log):
     """One Dielectric per gap between two copper layers (a gap made of several dielectrics is one of
     the summed thickness, plies.py fused()), with the copper above and below it and its plies;
     `laminate_note` explains a gap that comes out too thin."""
     dielectrics = []
     for k, g in enumerate(gaps):
-        d = fused(g)
+        d = fused(g, log)
         d.above, d.below = copper_layers[k], copper_layers[k + 1]
         if d.thickness <= 0:             # a board too thin for its copper: every part would be turned inside out
             raise ValueError(f"the dielectric between {d.above} and {d.below} comes out {d.thickness:.4f} mm thick "

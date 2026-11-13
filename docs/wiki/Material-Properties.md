@@ -122,7 +122,9 @@ development version (file format 20260511 on) writes it for each dielectric as
 `(spec_frequency ...)`, with `(dielectric_model constant)` or `(dielectric_model djordjevic_sarkar)`
 beside it; KESE reads both (`Board.USE_STACKUP_SPEC_FREQUENCY`,
 `Board.USE_STACKUP_DIELECTRIC_MODEL`) and uses `Board.DEFAULT_SPEC_FREQUENCY_HZ` (1 GHz) and
-`Board.DIELECTRIC_MODEL` where the file gives none, as every file of KiCad 4 to 10 does. Every
+`Board.DIELECTRIC_MODEL` where the file gives none, as every file of KiCad 4 to 10 does. The
+model's name is read in small or capital letters; a name KESE does not know takes
+`Board.DIELECTRIC_MODEL`, with a warning. Every
 laminate part gets `spec_frequency_hz` and `dielectric_model`:
 
 ![Two charts of one dielectric with εr 4.5 and tan δ 0.02 given at 1 GHz, from 1 MHz to 100 GHz, for the three dielectric models: constant keeps both values at every frequency; Djordjevic-Sarkar lets εr fall by 0.132 for each decade, from 4.90 at 1 MHz to 4.24 at 100 GHz, while tan δ stays between 0.018 and 0.021; the table model is the three rows of the example table, at 100 MHz, 1 GHz and 10 GHz. All three pass through the given values at 1 GHz](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Material-Properties/materials_1_dielectric_models.webp)
@@ -131,7 +133,7 @@ laminate part gets `spec_frequency_hz` and `dielectric_model`:
 |---|---|---|
 | `"constant"` (the default) | `{"model": "constant"}` | εr and tan δ are the same at every frequency: KiCad's default, and what KESE wrote before 25.2 |
 | `"djordjevic_sarkar"` | `{"model": "djordjevic_sarkar", "spec_frequency_hz", "low_frequency_hz", "high_frequency_hz", "epsilon_inf", "delta_epsilon"}` | the wideband model usual for glass-epoxy laminates, fitted to εr and tan δ at the spec frequency |
-| `"table"` | `{"model": "table", "table": [[Hz, εr, tan δ], ...]}` | the rows of `Board.DIELECTRIC_TABLE`, written as given; an empty table is an error before the board is read |
+| `"table"` | `{"model": "table", "table": [[Hz, εr, tan δ], ...]}` | the rows of `Board.DIELECTRIC_TABLE`, written as given; an empty table is an error before the board is read (a ply the board file gives the table model is then written with constant values, with a warning) |
 
 The Djordjevic-Sarkar model (Djordjevic, Biljic, Likar-Smiljanic and Sarkar, IEEE Transactions on
 Electromagnetic Compatibility 43(4), 2001) is one complex permittivity, causal over the whole band:

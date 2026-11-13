@@ -1,8 +1,10 @@
-rf_module  (rf_module.kicad_pcb)   generated 2026-11-08 12:55
+rf_module  (rf_module.kicad_pcb)   generated 2026-11-13 08:09
 mode: simulation   formats: step   units: m
 KiCad format 20221018 (KiCad 7), generator pcbnew
 
-stack-up
+stack-up   built: PLIES_FUSED (parameters/PCB_elements/Stackup.py)
+  lines built: top_copper, board, resin_between_traces, inner_copper, bottom_copper, plated_holes, via_resin
+  lines left out: top_silkscreen, top_solder_mask, top_finish, bottom_finish, bottom_solder_mask, bottom_silkscreen, hole_finish
   copper layers: F.Cu, In1.Cu, In2.Cu, B.Cu
   laminate 1.5300 mm (stackup dielectrics (+ inner copper); board total in file 1.6 mm)
   F.Cu     z +0.7650 .. +0.8000 mm  (foil 0.035 mm)
@@ -54,7 +56,7 @@ skipped
 notes
   font: KiCad newstroke (kicad_newstroke.json.gz)
   solder mask: 0.01 mm over laminate, 0.01 mm over copper (stackup)
-  left out of every file: Finish.FINISH_ENABLED, Silkscreen.SILKSCREEN_ENABLED, SolderMask.SOLDER_MASK_ENABLED = False
+  left out of every file: top_silkscreen, top_solder_mask, top_finish, bottom_finish, bottom_solder_mask, bottom_silkscreen, hole_finish (False in PLIES_FUSED, parameters/PCB_elements/Stackup.py)
 
 parts
   Board_dielectric 1                      53000 triangles  material Board_prepreg #A89C66 alpha 1.0
@@ -97,10 +99,10 @@ parts
   Copper_no_net                            2660 triangles  material Copper #CD803E alpha 1.0
 
 timing
-  read              0.0753 s
-  collect           0.1989 s
-  resolve           1.8724 s
-  geometry          1.3603 s
+  read              0.0709 s
+  collect           0.1883 s
+  resolve           1.4688 s
+  geometry          1.2124 s
   materials         0.0005 s
-  assemble          7.0469 s
-  write             3.0206 s
+  assemble          4.9363 s
+  write             2.3586 s

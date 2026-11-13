@@ -87,6 +87,9 @@ GONE = {
                        "SolderMask.TOP_MASK_COLOR, SolderMask.BOTTOM_MASK_COLOR, SolderMask.TOP_MASK_OVER_COPPER_COLOR, "
                        "SolderMask.BOTTOM_MASK_OVER_COPPER_COLOR, SilkScreen.TOP_SILK_COLOR, SilkScreen.BOTTOM_SILK_COLOR",
 }
+# old modules with no new one: where their settings are now
+GONE_MODULES = {"Color": "parameters/color.py is gone, and every colour is now in its element's file of "
+                         "parameters/PCB_elements/ (Board.py, Copper.py, Finish.py, SolderMask.py, SilkScreen.py)"}
 INNER_ETCH = "Copper.ETCH_APPLY_TO_INNER_LAYERS"      # old: True gives the inner copper the top's etch factor
 # the parameter files of before 25.2, which lay in parameters/ itself: where each one's settings are now
 OLD_FILES = {"board": "PCB_elements/Board.py", "color": "the element files of PCB_elements/ (each has a Color section)",
@@ -131,12 +134,17 @@ class _Params(types.SimpleNamespace):
                     self.override(new, value)
                 return
             if dotted == INNER_ETCH:
+                if type(value) is not bool:                             # as its file had it: True or False
+                    raise ValueError(f"{dotted} must be True or False, not {value!r}")
                 self.inner_etch_as_top = value                          # settled once every override is in (settle)
                 return
             if dotted in GONE:
                 raise ValueError(f"{dotted} is no longer a parameter: {GONE[dotted]}")
+            if short in GONE_MODULES:
+                raise ValueError(f"{dotted} is not a parameter: {GONE_MODULES[short]}")
             if short in OLD_MODULES and dot:
-                return self.override(f"{OLD_MODULES[short]}.{name}", value)
+                self.override(f"{OLD_MODULES[short]}.{name}", value)
+                return
         if not (dot and short and name):
             where = [f"{s}.{dotted}" for s in _MODULES if dotted in self.names(s)]
             raise ValueError(f"{dotted} is not Module.NAME" + (f" (did you mean {where[0]}?)" if len(where) == 1 else
@@ -160,7 +168,7 @@ class _Params(types.SimpleNamespace):
         """After every override: the old Copper.ETCH_APPLY_TO_INNER_LAYERS, where it was given."""
         given = getattr(self, "inner_etch_as_top", None)
         if given is not None:
-            self.Copper.INNER_ETCH_FACTOR = self.Copper.TOP_ETCH_FACTOR if given is True else 0.0
+            self.Copper.INNER_ETCH_FACTOR = self.Copper.TOP_ETCH_FACTOR if given else 0.0
             self.inner_etch_as_top = None
 
     def now(self, dotted):

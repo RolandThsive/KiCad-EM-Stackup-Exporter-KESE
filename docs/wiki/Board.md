@@ -108,7 +108,10 @@ A joined solid has the summed thickness and the values of the ply the others wer
 first of equal plies, the thicker neighbour of a thin one). Its name is the ply's own, the
 dielectric's when it holds all of the dielectric's plies, or first to last, as
 `Board_dielectric 1 ply 2-3`. `materials.json` lists the file's plies it holds under
-`joined_plies`.
+`joined_plies`, and its row in `report.txt` ends with them:
+`(holds dielectric 4 ply 1, dielectric 4 ply 2)`. A ply the file gives no thickness is joined
+to its neighbour whatever `Board.PLY_MIN_THICKNESS_MM` is, with the warning
+`dielectric 4 ply 2 has no thickness: joined to dielectric 4 ply 1`.
 
 ### 12.1.4 Plies Written By Hand
 
@@ -353,7 +356,7 @@ still work with `--set`; see
 | `USE_STACKUP_EPSILON_R`, `USE_STACKUP_LOSS_TANGENT`, `USE_STACKUP_SPEC_FREQUENCY` | `True` | bool | Stack-up values win over the defaults when present |
 | `DIELECTRIC_MODEL` | `"constant"` | `"constant"` / `"djordjevic_sarkar"` / `"table"` | How εr and tan δ change with frequency ([Material Properties](Material-Properties.md#214-how-εr-and-tan-δ-change-with-frequency)) |
 | `USE_STACKUP_DIELECTRIC_MODEL` | `True` | bool | The file's `(dielectric_model ...)` wins when present |
-| `DS_LOW_FREQUENCY_HZ`, `DS_HIGH_FREQUENCY_HZ` | `1e3`, `1e12` | Hz > 0 | Corner frequencies of the Djordjevic-Sarkar model |
+| `DS_LOW_FREQUENCY_HZ`, `DS_HIGH_FREQUENCY_HZ` | `1e3`, `1e12` | Hz > 0, the low one below the high one | Corner frequencies of the Djordjevic-Sarkar model |
 | `DIELECTRIC_TABLE` | `()` | rows of (Hz, εr, tan δ) | The table of `DIELECTRIC_MODEL = "table"` |
 | `FUSED_PROPERTIES` | `"first"` | `"first"` / `"series"` | Plies fused: the values of a gap whose plies differ (section 12.1.1) |
 | `RESIN_MATERIAL` | `"resin"` | text | Plies separate: the material name of the resin solids (section 12.2) |

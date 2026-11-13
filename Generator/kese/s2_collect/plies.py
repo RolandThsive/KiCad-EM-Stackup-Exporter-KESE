@@ -7,8 +7,7 @@ fused (Stackup.FUSION_BUILD) a gap is one solid, with its first ply's values or 
 (Board.PLY_MIN_THICKNESS_MM) and, on request, equal neighbours (Board.JOIN_EQUAL_PLIES) are joined."""
 from dataclasses import replace
 
-from kese.core.dielectric import ds_fits
-from kese.core.sexp import child, num
+from kese.core.sexp import num, word
 from kese.model.stackup import Dielectric, Ply
 from parameters import P
 
@@ -41,9 +40,12 @@ def file_plies(layer, name, kind, log):
             log(f"warning: stackup layer {own}: thickness {t} mm is less than 0: read as not given")
             t = None
         f = num(node, "spec_frequency") if B.USE_STACKUP_SPEC_FREQUENCY else None
-        model = (child(node, "dielectric_model") or [None, None])[1] if B.USE_STACKUP_DIELECTRIC_MODEL else None
+        model = str(word(node, "dielectric_model", "")).lower() if B.USE_STACKUP_DIELECTRIC_MODEL else ""
+        if model and model not in MODELS:
+            log(f"warning: stackup layer {own}: KESE does not know the dielectric_model {model!r} (it knows "
+                f"{', '.join(MODELS[:2])}): Board.DIELECTRIC_MODEL is used")
         plies.append(Ply(
-            name=own, kind=kind, material=(child(node, "material") or [None, B.DEFAULT_DIELECTRIC_MATERIAL])[1],
+            name=own, kind=kind, material=word(node, "material", B.DEFAULT_DIELECTRIC_MATERIAL),
             thickness=t or 0.0,
             epsilon_r=num(node, "epsilon_r", B.DEFAULT_EPSILON_R) if B.USE_STACKUP_EPSILON_R else B.DEFAULT_EPSILON_R,
             loss_tangent=num(node, "loss_tangent", B.DEFAULT_LOSS_TANGENT) if B.USE_STACKUP_LOSS_TANGENT else B.DEFAULT_LOSS_TANGENT,
@@ -73,7 +75,9 @@ def hand_ply(given, where, name, of):
                         (not given["epsilon_r"] >= 1, "'epsilon_r' must be 1 or more"),
                         (not given["loss_tangent"] >= 0, "'loss_tangent' must be 0 or more"),
                         (not f > 0, "'frequency_hz' must be more than 0"),
-                        (model not in MODELS, f"'model' must be one of {', '.join(map(repr, MODELS))}")):
+                        (model not in MODELS, f"'model' must be one of {', '.join(map(repr, MODELS))}"),
+                        (model == "table" and not B.DIELECTRIC_TABLE,
+                         "'model' may be 'table' only when Board.DIELECTRIC_TABLE has rows")):
         if wrong:
             raise ValueError(f"{where}: {what}, not as in {given!r}")
     return Ply(name=name, kind=given["type"], material=given["material"], thickness=float(given["thickness_mm"]),
@@ -112,7 +116,7 @@ def of_plies(name, plies):
                       first.loss_tangent, frequency_hz=first.frequency_hz, model=first.model, plies=plies)
 
 
-def fused(dielectrics):
+def fused(dielectrics, log):
     """The one Dielectric of a gap, from the dielectrics the board file puts in it: its plies fused
     (a gap of several is one solid of the summed thickness).  It has its first ply's material, er and
     tan d, or with Board.FUSED_PROPERTIES = "series" its plies' in series, as a field straight across
@@ -122,8 +126,12 @@ def fused(dielectrics):
                                                     thickness=sum(x.thickness for x in dielectrics), plies=plies)
     for n, p in enumerate(plies, start=1):
         p.number, p.count = n, len(plies)
-    h = sum(p.thickness for p in plies)
-    if P.Board.FUSED_PROPERTIES == "series" and len(plies) > 1 and h > 0:
+    h, d.fused_properties = sum(p.thickness for p in plies), P.Board.FUSED_PROPERTIES
+    if P.Board.FUSED_PROPERTIES == "series" and len(plies) > 1 and h > 0 and not all(p.epsilon_r > 0 for p in plies):
+        log(f"warning: {d.name}: a ply with er 0 or less cannot be put in series (Board.FUSED_PROPERTIES): "
+            "the gap keeps its first ply's values")
+        d.fused_properties = "first"
+    elif P.Board.FUSED_PROPERTIES == "series" and len(plies) > 1 and h > 0:
         d.epsilon_r = round(h / sum(p.thickness / p.epsilon_r for p in plies), 6)
         d.loss_tangent = round(d.epsilon_r / h * sum(p.thickness * p.loss_tangent / p.epsilon_r for p in plies), 6)
         d.material = " + ".join(dict.fromkeys(str(p.material) for p in plies))
@@ -139,11 +147,12 @@ def solids(d, log):
     while len(out) > 1:
         k = min(range(len(out)), key=lambda i: out[i][0].thickness)
         thin = out[k][0]
-        if thin.thickness >= B.PLY_MIN_THICKNESS_MM:
+        if thin.thickness >= B.PLY_MIN_THICKNESS_MM and thin.thickness > 0:
             break
         into = max((i for i in (k - 1, k + 1) if 0 <= i < len(out)), key=lambda i: out[i][0].thickness)
-        log(f"warning: {thin.name} is {thin.thickness:.6g} mm thick, less than Board.PLY_MIN_THICKNESS_MM "
-            f"({B.PLY_MIN_THICKNESS_MM} mm): joined to {out[into][0].name}")
+        log(f"warning: {thin.name} " + (f"is {thin.thickness:.6g} mm thick, less than Board.PLY_MIN_THICKNESS_MM "
+                                        f"({B.PLY_MIN_THICKNESS_MM} mm)" if thin.thickness > 0 else "has no thickness")
+            + f": joined to {out[into][0].name}")
         out[into][0].thickness += thin.thickness
         out[into][1][len(out[into][1]) * (into < k):0] = out[k][1]        # the plies it holds, still top to bottom
         del out[k]
@@ -174,16 +183,3 @@ def joined_name(held, plies):
         return " + ".join(names if whole else [p.name for p in held])
     return f"{held[0].name}-{held[-1].name.rsplit(' ', 1)[-1]}"
 
-
-def check_models(dielectrics, log):
-    """A ply whose Djordjevic-Sarkar model cannot be fitted (its spec frequency is not between the
-    corner frequencies) is written with constant values, with a warning, as KiCad falls back."""
-    B = P.Board
-    for d in dielectrics:
-        for ply in d.plies:
-            if ply.model == "djordjevic_sarkar" and not ds_fits(ply.frequency_hz, B.DS_LOW_FREQUENCY_HZ, B.DS_HIGH_FREQUENCY_HZ):
-                log(f"warning: {ply.name}: the Djordjevic-Sarkar model needs its spec frequency ({ply.frequency_hz:g} Hz) "
-                    f"between Board.DS_LOW_FREQUENCY_HZ ({B.DS_LOW_FREQUENCY_HZ:g}) and Board.DS_HIGH_FREQUENCY_HZ "
-                    f"({B.DS_HIGH_FREQUENCY_HZ:g}): written with constant values")
-                ply.model = "constant"
-        d.model = d.plies[0].model

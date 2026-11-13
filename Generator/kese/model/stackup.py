@@ -32,6 +32,7 @@ class Dielectric:
     below: str = ""           # copper layer below
     frequency_hz: float = 1e9   # as its plies
     model: str = "constant"
+    fused_properties: str = "first"   # the plies fused: whose values it has, "first" / "series" (Board.FUSED_PROPERTIES)
     plies: list = field(default_factory=list)    # Ply, top to bottom: what the board file makes the gap of
     solids: list = field(default_factory=list)   # Ply, top to bottom: the plies as built with the plies separate
 

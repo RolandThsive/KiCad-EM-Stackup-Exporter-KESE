@@ -146,6 +146,31 @@ def test_a_stack_up_that_cannot_be_built_is_refused():
             raise AssertionError("start() accepted Stackup.FUSION_BUILD = 'FUSED'")
 
 
+def test_a_line_of_the_other_stack_up_says_it_changes_nothing():
+    for built, line, other in (("PLIES_FUSED", "cores", "PLIES_SEPARATE"), ("PLIES_SEPARATE", "board", "PLIES_FUSED")):
+        lines = []
+        with settings({"Stackup.FUSION_BUILD": built}):
+            given = ((f"Stackup.{line}", False), ("Stackup.top_copper", True), ("Stackup.finish", True))
+            start("simulation", ["glb"], None, given, False, lines.append).status.stop()
+        assert lines == [f'  warning: Stackup.{line} changes nothing in this run: "{line}" is a line of {other}, '
+                         f"and {built} is built"], lines
+
+
+def test_a_board_with_no_part_of_the_lines_built_is_written_empty(tmp_path):
+    from kese.pipeline import generate
+    only = {f"Stackup.{line}": line == "inner_copper" for line in P.lines()}      # a board of two layers has no inner copper
+    for mode, formats in (("simulation", ["glb", "step", "stl", "obj"]), ("visual", ["glb", "obj"])):
+        said = []
+        with settings(only):
+            out, model = generate(FEATURES / "17_mask_silk.kicad_pcb", mode, formats, tmp_path, (), True, said.append)
+        assert not model.meshes and "  Verifier: PASS" in said, said
+        assert any(s.startswith("  warning: nothing was built: this board has no part of the lines that are True") for s in said), said
+        report = (out / "report.txt").read_text(encoding="utf-8")
+        assert "lines built: inner_copper\n" in report and "Verifier: PASS" in report
+        if mode == "visual":
+            assert "no surface to check (nothing was built)" in report
+
+
 def test_plies_fused_is_what_is_built_unless_asked():
     assert P.Stackup.FUSION_BUILD == "PLIES_FUSED"
     assert {name: tuple(getattr(P.Stackup, name)) for name in STACKUPS} == LINES     # the lines, in the file's order

@@ -6,7 +6,7 @@ from dataclasses import dataclass, field
 
 from kese.progress import Status
 from kese.settings_check import check_settings
-from parameters import P, described
+from parameters import INNER_ETCH, LINES, STACKUPS, P, described
 
 MODES = ("simulation", "visual")
 VISUAL_FORMATS = {"glb", "obj"}
@@ -59,8 +59,15 @@ def start(mode=None, formats=None, out_root=None, overrides=(), verify=None, log
               verify=P.Verifier.VERIFY if verify is None else verify, log=log, status=Status(R.SHOW_PROGRESS))
     for old in sorted({key for key, _ in overrides if key != "PRESET" and P.now(key)}):
         new = P.now(old)
-        job.note(f"{old} is now {described(new)}: the value given for {old} is used "
-                 + (f"as {new[0]}" if len(new) == 1 else "for each of them"))
+        job.note(f"{old} is now {described(new)}: " + (
+            "True gives the inner copper the top copper's etch factor, False gives it 0" if old == INNER_ETCH else
+            f"the value given for {old} is used " + (f"as {new[0]}" if len(new) == 1 else "for each of them")))
+    built = P.Stackup.FUSION_BUILD
+    for key in dict.fromkeys(key for key, _ in overrides if key.startswith("Stackup.")):
+        line = key.partition(".")[2]
+        if line in P.lines() and line not in LINES[built]:                  # a line of the other stack-up only
+            job.note(f"warning: {key} changes nothing in this run: \"{line}\" is a line of "
+                     f"{next(s for s in STACKUPS if line in LINES[s])}, and {built} is built")
     return job
 
 

@@ -47,3 +47,22 @@ def model_props(model, epsilon_r, loss_tangent, f_spec):
     if model == "table":
         return {"model": model, "table": [list(row) for row in B.DIELECTRIC_TABLE]}
     return {"model": "constant"}
+
+
+def check_models(dielectrics, log):
+    """A ply whose model cannot be written as asked is written with constant values, with a warning:
+    a Djordjevic-Sarkar model that cannot be fitted (its spec frequency is not between the corner
+    frequencies), as KiCad falls back, and a table where Board.DIELECTRIC_TABLE is empty."""
+    B = P.Board
+    for d in dielectrics:
+        for ply in d.plies:
+            if ply.model == "djordjevic_sarkar" and not ds_fits(ply.frequency_hz, B.DS_LOW_FREQUENCY_HZ, B.DS_HIGH_FREQUENCY_HZ):
+                log(f"warning: {ply.name}: the Djordjevic-Sarkar model needs its spec frequency ({ply.frequency_hz:g} Hz) "
+                    f"between Board.DS_LOW_FREQUENCY_HZ ({B.DS_LOW_FREQUENCY_HZ:g}) and Board.DS_HIGH_FREQUENCY_HZ "
+                    f"({B.DS_HIGH_FREQUENCY_HZ:g}): written with constant values")
+                ply.model = "constant"
+            if ply.model == "table" and not B.DIELECTRIC_TABLE:
+                log(f"warning: {ply.name}: its dielectric model is \"table\" but Board.DIELECTRIC_TABLE is empty: "
+                    "written with constant values")
+                ply.model = "constant"
+        d.model = d.plies[0].model

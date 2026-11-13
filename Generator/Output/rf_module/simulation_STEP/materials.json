@@ -18,9 +18,28 @@
         "thickness_mm": 0.2,
         "epsilon_r": 4.5,
         "loss_tangent": 0.02,
+        "fused_properties": "first",
+        "spec_frequency_hz": 1000000000.0,
+        "dielectric_model": {
+          "model": "constant"
+        },
         "between": [
           "F.Cu",
           "In1.Cu"
+        ],
+        "plies": [
+          {
+            "name": "dielectric 1",
+            "kind": "prepreg",
+            "material": "FR4",
+            "thickness_mm": 0.2,
+            "epsilon_r": 4.5,
+            "loss_tangent": 0.02,
+            "spec_frequency_hz": 1000000000.0,
+            "dielectric_model": {
+              "model": "constant"
+            }
+          }
         ]
       },
       "look": {
@@ -47,9 +66,28 @@
         "thickness_mm": 1.095,
         "epsilon_r": 4.5,
         "loss_tangent": 0.02,
+        "fused_properties": "first",
+        "spec_frequency_hz": 1000000000.0,
+        "dielectric_model": {
+          "model": "constant"
+        },
         "between": [
           "In1.Cu",
           "In2.Cu"
+        ],
+        "plies": [
+          {
+            "name": "dielectric 2",
+            "kind": "core",
+            "material": "FR4",
+            "thickness_mm": 1.095,
+            "epsilon_r": 4.5,
+            "loss_tangent": 0.02,
+            "spec_frequency_hz": 1000000000.0,
+            "dielectric_model": {
+              "model": "constant"
+            }
+          }
         ]
       },
       "look": {
@@ -76,9 +114,28 @@
         "thickness_mm": 0.2,
         "epsilon_r": 4.5,
         "loss_tangent": 0.02,
+        "fused_properties": "first",
+        "spec_frequency_hz": 1000000000.0,
+        "dielectric_model": {
+          "model": "constant"
+        },
         "between": [
           "In2.Cu",
           "B.Cu"
+        ],
+        "plies": [
+          {
+            "name": "dielectric 3",
+            "kind": "prepreg",
+            "material": "FR4",
+            "thickness_mm": 0.2,
+            "epsilon_r": 4.5,
+            "loss_tangent": 0.02,
+            "spec_frequency_hz": 1000000000.0,
+            "dielectric_model": {
+              "model": "constant"
+            }
+          }
         ]
       },
       "look": {
@@ -104,7 +161,22 @@
         "conductivity_S_per_m": 58000000.0,
         "surface_roughness_um": 0.0,
         "foil_mm": 0.035,
-        "plating_added_mm": 0.0
+        "plating_added_mm": 0.0,
+        "material": "copper",
+        "roughness": {
+          "model": "none"
+        },
+        "layers": [
+          {
+            "layer": "F.Cu",
+            "position": "top",
+            "thickness_mm": 0.035,
+            "foil_mm": 0.035,
+            "plating_added_mm": 0.0,
+            "etch_factor": 0.0,
+            "treated_face": "lower"
+          }
+        ]
       },
       "look": {
         "color": "#CD803E",
@@ -129,7 +201,22 @@
         "conductivity_S_per_m": 58000000.0,
         "surface_roughness_um": 0.0,
         "foil_mm": 0.035,
-        "plating_added_mm": 0.0
+        "plating_added_mm": 0.0,
+        "material": "copper",
+        "roughness": {
+          "model": "none"
+        },
+        "layers": [
+          {
+            "layer": "F.Cu",
+            "position": "top",
+            "thickness_mm": 0.035,
+            "foil_mm": 0.035,
+            "plating_added_mm": 0.0,
+            "etch_factor": 0.0,
+            "treated_face": "lower"
+          }
+        ]
       },
       "look": {
         "color": "#CD803E",
@@ -154,7 +241,22 @@
         "conductivity_S_per_m": 58000000.0,
         "surface_roughness_um": 0.0,
         "foil_mm": 0.035,
-        "plating_added_mm": 0.0
+        "plating_added_mm": 0.0,
+        "material": "copper",
+        "roughness": {
+          "model": "none"
+        },
+        "layers": [
+          {
+            "layer": "F.Cu",
+            "position": "top",
+            "thickness_mm": 0.035,
+            "foil_mm": 0.035,
+            "plating_added_mm": 0.0,
+            "etch_factor": 0.0,
+            "treated_face": "lower"
+          }
+        ]
       },
       "look": {
         "color": "#CD803E",
@@ -179,7 +281,22 @@
         "conductivity_S_per_m": 58000000.0,
         "surface_roughness_um": 0.0,
         "foil_mm": 0.035,
-        "plating_added_mm": 0.0
+        "plating_added_mm": 0.0,
+        "material": "copper",
+        "roughness": {
+          "model": "none"
+        },
+        "layers": [
+          {
+            "layer": "F.Cu",
+            "position": "top",
+            "thickness_mm": 0.035,
+            "foil_mm": 0.035,
+            "plating_added_mm": 0.0,
+            "etch_factor": 0.0,
+            "treated_face": "lower"
+          }
+        ]
       },
       "look": {
         "color": "#CD803E",
@@ -204,7 +321,22 @@
         "conductivity_S_per_m": 58000000.0,
         "surface_roughness_um": 0.0,
         "foil_mm": 0.035,
-        "plating_added_mm": 0.0
+        "plating_added_mm": 0.0,
+        "material": "copper",
+        "roughness": {
+          "model": "none"
+        },
+        "layers": [
+          {
+            "layer": "F.Cu",
+            "position": "top",
+            "thickness_mm": 0.035,
+            "foil_mm": 0.035,
+            "plating_added_mm": 0.0,
+            "etch_factor": 0.0,
+            "treated_face": "lower"
+          }
+        ]
       },
       "look": {
         "color": "#CD803E",
@@ -229,7 +361,49 @@
         "conductivity_S_per_m": 58000000.0,
         "surface_roughness_um": 0.0,
         "foil_mm": 0.035,
-        "plating_added_mm": 0.0
+        "plating_added_mm": 0.0,
+        "material": "copper",
+        "roughness": {
+          "model": "none"
+        },
+        "layers": [
+          {
+            "layer": "F.Cu",
+            "position": "top",
+            "thickness_mm": 0.035,
+            "foil_mm": 0.035,
+            "plating_added_mm": 0.0,
+            "etch_factor": 0.0,
+            "treated_face": "lower"
+          },
+          {
+            "layer": "In1.Cu",
+            "position": "inner",
+            "thickness_mm": 0.0175,
+            "foil_mm": 0.0175,
+            "plating_added_mm": 0.0,
+            "etch_factor": 0.0,
+            "treated_face": "lower"
+          },
+          {
+            "layer": "In2.Cu",
+            "position": "inner",
+            "thickness_mm": 0.0175,
+            "foil_mm": 0.0175,
+            "plating_added_mm": 0.0,
+            "etch_factor": 0.0,
+            "treated_face": "upper"
+          },
+          {
+            "layer": "B.Cu",
+            "position": "bottom",
+            "thickness_mm": 0.035,
+            "foil_mm": 0.035,
+            "plating_added_mm": 0.0,
+            "etch_factor": 0.0,
+            "treated_face": "upper"
+          }
+        ]
       },
       "look": {
         "color": "#CD803E",
@@ -254,7 +428,49 @@
         "conductivity_S_per_m": 58000000.0,
         "surface_roughness_um": 0.0,
         "foil_mm": 0.035,
-        "plating_added_mm": 0.0
+        "plating_added_mm": 0.0,
+        "material": "copper",
+        "roughness": {
+          "model": "none"
+        },
+        "layers": [
+          {
+            "layer": "F.Cu",
+            "position": "top",
+            "thickness_mm": 0.035,
+            "foil_mm": 0.035,
+            "plating_added_mm": 0.0,
+            "etch_factor": 0.0,
+            "treated_face": "lower"
+          },
+          {
+            "layer": "In1.Cu",
+            "position": "inner",
+            "thickness_mm": 0.0175,
+            "foil_mm": 0.0175,
+            "plating_added_mm": 0.0,
+            "etch_factor": 0.0,
+            "treated_face": "lower"
+          },
+          {
+            "layer": "In2.Cu",
+            "position": "inner",
+            "thickness_mm": 0.0175,
+            "foil_mm": 0.0175,
+            "plating_added_mm": 0.0,
+            "etch_factor": 0.0,
+            "treated_face": "upper"
+          },
+          {
+            "layer": "B.Cu",
+            "position": "bottom",
+            "thickness_mm": 0.035,
+            "foil_mm": 0.035,
+            "plating_added_mm": 0.0,
+            "etch_factor": 0.0,
+            "treated_face": "upper"
+          }
+        ]
       },
       "look": {
         "color": "#CD803E",
@@ -279,7 +495,49 @@
         "conductivity_S_per_m": 58000000.0,
         "surface_roughness_um": 0.0,
         "foil_mm": 0.035,
-        "plating_added_mm": 0.0
+        "plating_added_mm": 0.0,
+        "material": "copper",
+        "roughness": {
+          "model": "none"
+        },
+        "layers": [
+          {
+            "layer": "F.Cu",
+            "position": "top",
+            "thickness_mm": 0.035,
+            "foil_mm": 0.035,
+            "plating_added_mm": 0.0,
+            "etch_factor": 0.0,
+            "treated_face": "lower"
+          },
+          {
+            "layer": "In1.Cu",
+            "position": "inner",
+            "thickness_mm": 0.0175,
+            "foil_mm": 0.0175,
+            "plating_added_mm": 0.0,
+            "etch_factor": 0.0,
+            "treated_face": "lower"
+          },
+          {
+            "layer": "In2.Cu",
+            "position": "inner",
+            "thickness_mm": 0.0175,
+            "foil_mm": 0.0175,
+            "plating_added_mm": 0.0,
+            "etch_factor": 0.0,
+            "treated_face": "upper"
+          },
+          {
+            "layer": "B.Cu",
+            "position": "bottom",
+            "thickness_mm": 0.035,
+            "foil_mm": 0.035,
+            "plating_added_mm": 0.0,
+            "etch_factor": 0.0,
+            "treated_face": "upper"
+          }
+        ]
       },
       "look": {
         "color": "#CD803E",
@@ -304,7 +562,22 @@
         "conductivity_S_per_m": 58000000.0,
         "surface_roughness_um": 0.0,
         "foil_mm": 0.035,
-        "plating_added_mm": 0.0
+        "plating_added_mm": 0.0,
+        "material": "copper",
+        "roughness": {
+          "model": "none"
+        },
+        "layers": [
+          {
+            "layer": "F.Cu",
+            "position": "top",
+            "thickness_mm": 0.035,
+            "foil_mm": 0.035,
+            "plating_added_mm": 0.0,
+            "etch_factor": 0.0,
+            "treated_face": "lower"
+          }
+        ]
       },
       "look": {
         "color": "#CD803E",
@@ -329,7 +602,49 @@
         "conductivity_S_per_m": 58000000.0,
         "surface_roughness_um": 0.0,
         "foil_mm": 0.035,
-        "plating_added_mm": 0.0
+        "plating_added_mm": 0.0,
+        "material": "copper",
+        "roughness": {
+          "model": "none"
+        },
+        "layers": [
+          {
+            "layer": "F.Cu",
+            "position": "top",
+            "thickness_mm": 0.035,
+            "foil_mm": 0.035,
+            "plating_added_mm": 0.0,
+            "etch_factor": 0.0,
+            "treated_face": "lower"
+          },
+          {
+            "layer": "In1.Cu",
+            "position": "inner",
+            "thickness_mm": 0.0175,
+            "foil_mm": 0.0175,
+            "plating_added_mm": 0.0,
+            "etch_factor": 0.0,
+            "treated_face": "lower"
+          },
+          {
+            "layer": "In2.Cu",
+            "position": "inner",
+            "thickness_mm": 0.0175,
+            "foil_mm": 0.0175,
+            "plating_added_mm": 0.0,
+            "etch_factor": 0.0,
+            "treated_face": "upper"
+          },
+          {
+            "layer": "B.Cu",
+            "position": "bottom",
+            "thickness_mm": 0.035,
+            "foil_mm": 0.035,
+            "plating_added_mm": 0.0,
+            "etch_factor": 0.0,
+            "treated_face": "upper"
+          }
+        ]
       },
       "look": {
         "color": "#CD803E",
@@ -354,7 +669,49 @@
         "conductivity_S_per_m": 58000000.0,
         "surface_roughness_um": 0.0,
         "foil_mm": 0.035,
-        "plating_added_mm": 0.0
+        "plating_added_mm": 0.0,
+        "material": "copper",
+        "roughness": {
+          "model": "none"
+        },
+        "layers": [
+          {
+            "layer": "F.Cu",
+            "position": "top",
+            "thickness_mm": 0.035,
+            "foil_mm": 0.035,
+            "plating_added_mm": 0.0,
+            "etch_factor": 0.0,
+            "treated_face": "lower"
+          },
+          {
+            "layer": "In1.Cu",
+            "position": "inner",
+            "thickness_mm": 0.0175,
+            "foil_mm": 0.0175,
+            "plating_added_mm": 0.0,
+            "etch_factor": 0.0,
+            "treated_face": "lower"
+          },
+          {
+            "layer": "In2.Cu",
+            "position": "inner",
+            "thickness_mm": 0.0175,
+            "foil_mm": 0.0175,
+            "plating_added_mm": 0.0,
+            "etch_factor": 0.0,
+            "treated_face": "upper"
+          },
+          {
+            "layer": "B.Cu",
+            "position": "bottom",
+            "thickness_mm": 0.035,
+            "foil_mm": 0.035,
+            "plating_added_mm": 0.0,
+            "etch_factor": 0.0,
+            "treated_face": "upper"
+          }
+        ]
       },
       "look": {
         "color": "#CD803E",
@@ -379,7 +736,22 @@
         "conductivity_S_per_m": 58000000.0,
         "surface_roughness_um": 0.0,
         "foil_mm": 0.035,
-        "plating_added_mm": 0.0
+        "plating_added_mm": 0.0,
+        "material": "copper",
+        "roughness": {
+          "model": "none"
+        },
+        "layers": [
+          {
+            "layer": "F.Cu",
+            "position": "top",
+            "thickness_mm": 0.035,
+            "foil_mm": 0.035,
+            "plating_added_mm": 0.0,
+            "etch_factor": 0.0,
+            "treated_face": "lower"
+          }
+        ]
       },
       "look": {
         "color": "#CD803E",
@@ -404,7 +776,22 @@
         "conductivity_S_per_m": 58000000.0,
         "surface_roughness_um": 0.0,
         "foil_mm": 0.035,
-        "plating_added_mm": 0.0
+        "plating_added_mm": 0.0,
+        "material": "copper",
+        "roughness": {
+          "model": "none"
+        },
+        "layers": [
+          {
+            "layer": "F.Cu",
+            "position": "top",
+            "thickness_mm": 0.035,
+            "foil_mm": 0.035,
+            "plating_added_mm": 0.0,
+            "etch_factor": 0.0,
+            "treated_face": "lower"
+          }
+        ]
       },
       "look": {
         "color": "#CD803E",
@@ -429,7 +816,49 @@
         "conductivity_S_per_m": 58000000.0,
         "surface_roughness_um": 0.0,
         "foil_mm": 0.035,
-        "plating_added_mm": 0.0
+        "plating_added_mm": 0.0,
+        "material": "copper",
+        "roughness": {
+          "model": "none"
+        },
+        "layers": [
+          {
+            "layer": "F.Cu",
+            "position": "top",
+            "thickness_mm": 0.035,
+            "foil_mm": 0.035,
+            "plating_added_mm": 0.0,
+            "etch_factor": 0.0,
+            "treated_face": "lower"
+          },
+          {
+            "layer": "In1.Cu",
+            "position": "inner",
+            "thickness_mm": 0.0175,
+            "foil_mm": 0.0175,
+            "plating_added_mm": 0.0,
+            "etch_factor": 0.0,
+            "treated_face": "lower"
+          },
+          {
+            "layer": "In2.Cu",
+            "position": "inner",
+            "thickness_mm": 0.0175,
+            "foil_mm": 0.0175,
+            "plating_added_mm": 0.0,
+            "etch_factor": 0.0,
+            "treated_face": "upper"
+          },
+          {
+            "layer": "B.Cu",
+            "position": "bottom",
+            "thickness_mm": 0.035,
+            "foil_mm": 0.035,
+            "plating_added_mm": 0.0,
+            "etch_factor": 0.0,
+            "treated_face": "upper"
+          }
+        ]
       },
       "look": {
         "color": "#CD803E",
@@ -454,7 +883,22 @@
         "conductivity_S_per_m": 58000000.0,
         "surface_roughness_um": 0.0,
         "foil_mm": 0.035,
-        "plating_added_mm": 0.0
+        "plating_added_mm": 0.0,
+        "material": "copper",
+        "roughness": {
+          "model": "none"
+        },
+        "layers": [
+          {
+            "layer": "F.Cu",
+            "position": "top",
+            "thickness_mm": 0.035,
+            "foil_mm": 0.035,
+            "plating_added_mm": 0.0,
+            "etch_factor": 0.0,
+            "treated_face": "lower"
+          }
+        ]
       },
       "look": {
         "color": "#CD803E",
@@ -479,7 +923,22 @@
         "conductivity_S_per_m": 58000000.0,
         "surface_roughness_um": 0.0,
         "foil_mm": 0.035,
-        "plating_added_mm": 0.0
+        "plating_added_mm": 0.0,
+        "material": "copper",
+        "roughness": {
+          "model": "none"
+        },
+        "layers": [
+          {
+            "layer": "F.Cu",
+            "position": "top",
+            "thickness_mm": 0.035,
+            "foil_mm": 0.035,
+            "plating_added_mm": 0.0,
+            "etch_factor": 0.0,
+            "treated_face": "lower"
+          }
+        ]
       },
       "look": {
         "color": "#CD803E",
@@ -504,7 +963,22 @@
         "conductivity_S_per_m": 58000000.0,
         "surface_roughness_um": 0.0,
         "foil_mm": 0.035,
-        "plating_added_mm": 0.0
+        "plating_added_mm": 0.0,
+        "material": "copper",
+        "roughness": {
+          "model": "none"
+        },
+        "layers": [
+          {
+            "layer": "F.Cu",
+            "position": "top",
+            "thickness_mm": 0.035,
+            "foil_mm": 0.035,
+            "plating_added_mm": 0.0,
+            "etch_factor": 0.0,
+            "treated_face": "lower"
+          }
+        ]
       },
       "look": {
         "color": "#CD803E",
@@ -529,7 +1003,22 @@
         "conductivity_S_per_m": 58000000.0,
         "surface_roughness_um": 0.0,
         "foil_mm": 0.035,
-        "plating_added_mm": 0.0
+        "plating_added_mm": 0.0,
+        "material": "copper",
+        "roughness": {
+          "model": "none"
+        },
+        "layers": [
+          {
+            "layer": "F.Cu",
+            "position": "top",
+            "thickness_mm": 0.035,
+            "foil_mm": 0.035,
+            "plating_added_mm": 0.0,
+            "etch_factor": 0.0,
+            "treated_face": "lower"
+          }
+        ]
       },
       "look": {
         "color": "#CD803E",
@@ -554,7 +1043,22 @@
         "conductivity_S_per_m": 58000000.0,
         "surface_roughness_um": 0.0,
         "foil_mm": 0.035,
-        "plating_added_mm": 0.0
+        "plating_added_mm": 0.0,
+        "material": "copper",
+        "roughness": {
+          "model": "none"
+        },
+        "layers": [
+          {
+            "layer": "F.Cu",
+            "position": "top",
+            "thickness_mm": 0.035,
+            "foil_mm": 0.035,
+            "plating_added_mm": 0.0,
+            "etch_factor": 0.0,
+            "treated_face": "lower"
+          }
+        ]
       },
       "look": {
         "color": "#CD803E",
@@ -579,7 +1083,22 @@
         "conductivity_S_per_m": 58000000.0,
         "surface_roughness_um": 0.0,
         "foil_mm": 0.035,
-        "plating_added_mm": 0.0
+        "plating_added_mm": 0.0,
+        "material": "copper",
+        "roughness": {
+          "model": "none"
+        },
+        "layers": [
+          {
+            "layer": "F.Cu",
+            "position": "top",
+            "thickness_mm": 0.035,
+            "foil_mm": 0.035,
+            "plating_added_mm": 0.0,
+            "etch_factor": 0.0,
+            "treated_face": "lower"
+          }
+        ]
       },
       "look": {
         "color": "#CD803E",
@@ -604,7 +1123,22 @@
         "conductivity_S_per_m": 58000000.0,
         "surface_roughness_um": 0.0,
         "foil_mm": 0.035,
-        "plating_added_mm": 0.0
+        "plating_added_mm": 0.0,
+        "material": "copper",
+        "roughness": {
+          "model": "none"
+        },
+        "layers": [
+          {
+            "layer": "F.Cu",
+            "position": "top",
+            "thickness_mm": 0.035,
+            "foil_mm": 0.035,
+            "plating_added_mm": 0.0,
+            "etch_factor": 0.0,
+            "treated_face": "lower"
+          }
+        ]
       },
       "look": {
         "color": "#CD803E",
@@ -629,7 +1163,22 @@
         "conductivity_S_per_m": 58000000.0,
         "surface_roughness_um": 0.0,
         "foil_mm": 0.035,
-        "plating_added_mm": 0.0
+        "plating_added_mm": 0.0,
+        "material": "copper",
+        "roughness": {
+          "model": "none"
+        },
+        "layers": [
+          {
+            "layer": "F.Cu",
+            "position": "top",
+            "thickness_mm": 0.035,
+            "foil_mm": 0.035,
+            "plating_added_mm": 0.0,
+            "etch_factor": 0.0,
+            "treated_face": "lower"
+          }
+        ]
       },
       "look": {
         "color": "#CD803E",
@@ -654,7 +1203,22 @@
         "conductivity_S_per_m": 58000000.0,
         "surface_roughness_um": 0.0,
         "foil_mm": 0.035,
-        "plating_added_mm": 0.0
+        "plating_added_mm": 0.0,
+        "material": "copper",
+        "roughness": {
+          "model": "none"
+        },
+        "layers": [
+          {
+            "layer": "F.Cu",
+            "position": "top",
+            "thickness_mm": 0.035,
+            "foil_mm": 0.035,
+            "plating_added_mm": 0.0,
+            "etch_factor": 0.0,
+            "treated_face": "lower"
+          }
+        ]
       },
       "look": {
         "color": "#CD803E",
@@ -679,7 +1243,22 @@
         "conductivity_S_per_m": 58000000.0,
         "surface_roughness_um": 0.0,
         "foil_mm": 0.035,
-        "plating_added_mm": 0.0
+        "plating_added_mm": 0.0,
+        "material": "copper",
+        "roughness": {
+          "model": "none"
+        },
+        "layers": [
+          {
+            "layer": "F.Cu",
+            "position": "top",
+            "thickness_mm": 0.035,
+            "foil_mm": 0.035,
+            "plating_added_mm": 0.0,
+            "etch_factor": 0.0,
+            "treated_face": "lower"
+          }
+        ]
       },
       "look": {
         "color": "#CD803E",
@@ -704,7 +1283,49 @@
         "conductivity_S_per_m": 58000000.0,
         "surface_roughness_um": 0.0,
         "foil_mm": 0.035,
-        "plating_added_mm": 0.0
+        "plating_added_mm": 0.0,
+        "material": "copper",
+        "roughness": {
+          "model": "none"
+        },
+        "layers": [
+          {
+            "layer": "F.Cu",
+            "position": "top",
+            "thickness_mm": 0.035,
+            "foil_mm": 0.035,
+            "plating_added_mm": 0.0,
+            "etch_factor": 0.0,
+            "treated_face": "lower"
+          },
+          {
+            "layer": "In1.Cu",
+            "position": "inner",
+            "thickness_mm": 0.0175,
+            "foil_mm": 0.0175,
+            "plating_added_mm": 0.0,
+            "etch_factor": 0.0,
+            "treated_face": "lower"
+          },
+          {
+            "layer": "In2.Cu",
+            "position": "inner",
+            "thickness_mm": 0.0175,
+            "foil_mm": 0.0175,
+            "plating_added_mm": 0.0,
+            "etch_factor": 0.0,
+            "treated_face": "upper"
+          },
+          {
+            "layer": "B.Cu",
+            "position": "bottom",
+            "thickness_mm": 0.035,
+            "foil_mm": 0.035,
+            "plating_added_mm": 0.0,
+            "etch_factor": 0.0,
+            "treated_face": "upper"
+          }
+        ]
       },
       "look": {
         "color": "#CD803E",
@@ -729,7 +1350,49 @@
         "conductivity_S_per_m": 58000000.0,
         "surface_roughness_um": 0.0,
         "foil_mm": 0.035,
-        "plating_added_mm": 0.0
+        "plating_added_mm": 0.0,
+        "material": "copper",
+        "roughness": {
+          "model": "none"
+        },
+        "layers": [
+          {
+            "layer": "F.Cu",
+            "position": "top",
+            "thickness_mm": 0.035,
+            "foil_mm": 0.035,
+            "plating_added_mm": 0.0,
+            "etch_factor": 0.0,
+            "treated_face": "lower"
+          },
+          {
+            "layer": "In1.Cu",
+            "position": "inner",
+            "thickness_mm": 0.0175,
+            "foil_mm": 0.0175,
+            "plating_added_mm": 0.0,
+            "etch_factor": 0.0,
+            "treated_face": "lower"
+          },
+          {
+            "layer": "In2.Cu",
+            "position": "inner",
+            "thickness_mm": 0.0175,
+            "foil_mm": 0.0175,
+            "plating_added_mm": 0.0,
+            "etch_factor": 0.0,
+            "treated_face": "upper"
+          },
+          {
+            "layer": "B.Cu",
+            "position": "bottom",
+            "thickness_mm": 0.035,
+            "foil_mm": 0.035,
+            "plating_added_mm": 0.0,
+            "etch_factor": 0.0,
+            "treated_face": "upper"
+          }
+        ]
       },
       "look": {
         "color": "#CD803E",
@@ -754,7 +1417,49 @@
         "conductivity_S_per_m": 58000000.0,
         "surface_roughness_um": 0.0,
         "foil_mm": 0.035,
-        "plating_added_mm": 0.0
+        "plating_added_mm": 0.0,
+        "material": "copper",
+        "roughness": {
+          "model": "none"
+        },
+        "layers": [
+          {
+            "layer": "F.Cu",
+            "position": "top",
+            "thickness_mm": 0.035,
+            "foil_mm": 0.035,
+            "plating_added_mm": 0.0,
+            "etch_factor": 0.0,
+            "treated_face": "lower"
+          },
+          {
+            "layer": "In1.Cu",
+            "position": "inner",
+            "thickness_mm": 0.0175,
+            "foil_mm": 0.0175,
+            "plating_added_mm": 0.0,
+            "etch_factor": 0.0,
+            "treated_face": "lower"
+          },
+          {
+            "layer": "In2.Cu",
+            "position": "inner",
+            "thickness_mm": 0.0175,
+            "foil_mm": 0.0175,
+            "plating_added_mm": 0.0,
+            "etch_factor": 0.0,
+            "treated_face": "upper"
+          },
+          {
+            "layer": "B.Cu",
+            "position": "bottom",
+            "thickness_mm": 0.035,
+            "foil_mm": 0.035,
+            "plating_added_mm": 0.0,
+            "etch_factor": 0.0,
+            "treated_face": "upper"
+          }
+        ]
       },
       "look": {
         "color": "#CD803E",
@@ -779,7 +1484,49 @@
         "conductivity_S_per_m": 58000000.0,
         "surface_roughness_um": 0.0,
         "foil_mm": 0.035,
-        "plating_added_mm": 0.0
+        "plating_added_mm": 0.0,
+        "material": "copper",
+        "roughness": {
+          "model": "none"
+        },
+        "layers": [
+          {
+            "layer": "F.Cu",
+            "position": "top",
+            "thickness_mm": 0.035,
+            "foil_mm": 0.035,
+            "plating_added_mm": 0.0,
+            "etch_factor": 0.0,
+            "treated_face": "lower"
+          },
+          {
+            "layer": "In1.Cu",
+            "position": "inner",
+            "thickness_mm": 0.0175,
+            "foil_mm": 0.0175,
+            "plating_added_mm": 0.0,
+            "etch_factor": 0.0,
+            "treated_face": "lower"
+          },
+          {
+            "layer": "In2.Cu",
+            "position": "inner",
+            "thickness_mm": 0.0175,
+            "foil_mm": 0.0175,
+            "plating_added_mm": 0.0,
+            "etch_factor": 0.0,
+            "treated_face": "upper"
+          },
+          {
+            "layer": "B.Cu",
+            "position": "bottom",
+            "thickness_mm": 0.035,
+            "foil_mm": 0.035,
+            "plating_added_mm": 0.0,
+            "etch_factor": 0.0,
+            "treated_face": "upper"
+          }
+        ]
       },
       "look": {
         "color": "#CD803E",
@@ -804,7 +1551,22 @@
         "conductivity_S_per_m": 58000000.0,
         "surface_roughness_um": 0.0,
         "foil_mm": 0.035,
-        "plating_added_mm": 0.0
+        "plating_added_mm": 0.0,
+        "material": "copper",
+        "roughness": {
+          "model": "none"
+        },
+        "layers": [
+          {
+            "layer": "F.Cu",
+            "position": "top",
+            "thickness_mm": 0.035,
+            "foil_mm": 0.035,
+            "plating_added_mm": 0.0,
+            "etch_factor": 0.0,
+            "treated_face": "lower"
+          }
+        ]
       },
       "look": {
         "color": "#CD803E",
@@ -829,7 +1591,22 @@
         "conductivity_S_per_m": 58000000.0,
         "surface_roughness_um": 0.0,
         "foil_mm": 0.035,
-        "plating_added_mm": 0.0
+        "plating_added_mm": 0.0,
+        "material": "copper",
+        "roughness": {
+          "model": "none"
+        },
+        "layers": [
+          {
+            "layer": "F.Cu",
+            "position": "top",
+            "thickness_mm": 0.035,
+            "foil_mm": 0.035,
+            "plating_added_mm": 0.0,
+            "etch_factor": 0.0,
+            "treated_face": "lower"
+          }
+        ]
       },
       "look": {
         "color": "#CD803E",
@@ -854,7 +1631,22 @@
         "conductivity_S_per_m": 58000000.0,
         "surface_roughness_um": 0.0,
         "foil_mm": 0.035,
-        "plating_added_mm": 0.0
+        "plating_added_mm": 0.0,
+        "material": "copper",
+        "roughness": {
+          "model": "none"
+        },
+        "layers": [
+          {
+            "layer": "F.Cu",
+            "position": "top",
+            "thickness_mm": 0.035,
+            "foil_mm": 0.035,
+            "plating_added_mm": 0.0,
+            "etch_factor": 0.0,
+            "treated_face": "lower"
+          }
+        ]
       },
       "look": {
         "color": "#CD803E",
@@ -879,7 +1671,22 @@
         "conductivity_S_per_m": 58000000.0,
         "surface_roughness_um": 0.0,
         "foil_mm": 0.035,
-        "plating_added_mm": 0.0
+        "plating_added_mm": 0.0,
+        "material": "copper",
+        "roughness": {
+          "model": "none"
+        },
+        "layers": [
+          {
+            "layer": "F.Cu",
+            "position": "top",
+            "thickness_mm": 0.035,
+            "foil_mm": 0.035,
+            "plating_added_mm": 0.0,
+            "etch_factor": 0.0,
+            "treated_face": "lower"
+          }
+        ]
       },
       "look": {
         "color": "#CD803E",
@@ -904,7 +1711,22 @@
         "conductivity_S_per_m": 58000000.0,
         "surface_roughness_um": 0.0,
         "foil_mm": 0.035,
-        "plating_added_mm": 0.0
+        "plating_added_mm": 0.0,
+        "material": "copper",
+        "roughness": {
+          "model": "none"
+        },
+        "layers": [
+          {
+            "layer": "F.Cu",
+            "position": "top",
+            "thickness_mm": 0.035,
+            "foil_mm": 0.035,
+            "plating_added_mm": 0.0,
+            "etch_factor": 0.0,
+            "treated_face": "lower"
+          }
+        ]
       },
       "look": {
         "color": "#CD803E",
@@ -929,7 +1751,22 @@
         "conductivity_S_per_m": 58000000.0,
         "surface_roughness_um": 0.0,
         "foil_mm": 0.035,
-        "plating_added_mm": 0.0
+        "plating_added_mm": 0.0,
+        "material": "copper",
+        "roughness": {
+          "model": "none"
+        },
+        "layers": [
+          {
+            "layer": "F.Cu",
+            "position": "top",
+            "thickness_mm": 0.035,
+            "foil_mm": 0.035,
+            "plating_added_mm": 0.0,
+            "etch_factor": 0.0,
+            "treated_face": "lower"
+          }
+        ]
       },
       "look": {
         "color": "#CD803E",
@@ -954,7 +1791,22 @@
         "conductivity_S_per_m": 58000000.0,
         "surface_roughness_um": 0.0,
         "foil_mm": 0.035,
-        "plating_added_mm": 0.0
+        "plating_added_mm": 0.0,
+        "material": "copper",
+        "roughness": {
+          "model": "none"
+        },
+        "layers": [
+          {
+            "layer": "B.Cu",
+            "position": "bottom",
+            "thickness_mm": 0.035,
+            "foil_mm": 0.035,
+            "plating_added_mm": 0.0,
+            "etch_factor": 0.0,
+            "treated_face": "upper"
+          }
+        ]
       },
       "look": {
         "color": "#CD803E",
