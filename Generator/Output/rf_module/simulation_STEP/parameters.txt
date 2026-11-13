@@ -1,7 +1,7 @@
-# command-line overrides applied: Stackup.finish=False, Run.MODE='simulation', Run.FILE_FORMAT=['step']
+# command-line overrides applied: Stackup.finish=False
 
 [parameters/PCB_elements/Stackup.py]
-FUSION_BUILD = 'PLIES_FUSED'
+FUSION_BUILD = 'PLIES_SEPARATE'
 PLIES_FUSED = {'top_silkscreen': False, 'top_solder_mask': False, 'top_finish': False, 'top_copper': True, 'board': True, 'resin_between_traces': True, 'inner_copper': True, 'bottom_copper': True, 'bottom_finish': False, 'bottom_solder_mask': False, 'bottom_silkscreen': False, 'plated_holes': True, 'hole_finish': False, 'via_resin': True}
 PLIES_SEPARATE = {'top_silkscreen': False, 'top_solder_mask': False, 'top_finish': False, 'top_copper': True, 'prepreg_plies': True, 'resin_between_traces': True, 'inner_copper': True, 'cores': True, 'bottom_copper': True, 'bottom_finish': False, 'bottom_solder_mask': False, 'bottom_silkscreen': False, 'plated_holes': True, 'hole_finish': False, 'via_resin': True}
 
@@ -18,7 +18,7 @@ DEFAULT_EPSILON_R = 4.5
 DEFAULT_LOSS_TANGENT = 0.02
 DEFAULT_SPEC_FREQUENCY_HZ = 1000000000.0
 DIELECTRIC_GROUPING = 'layer'
-DIELECTRIC_MODEL = 'constant'
+DIELECTRIC_MODEL = 'djordjevic_sarkar'
 DIELECTRIC_SPLIT = 'even'
 DIELECTRIC_TABLE = ()
 DS_HIGH_FREQUENCY_HZ = 1000000000000.0
@@ -54,10 +54,10 @@ COPPER_CONDUCTIVITY_S_PER_M = 58000000.0
 COPPER_GROUPING = 'net'
 COPPER_HURAY_RADIUS_OTHER_UM = 0.5
 COPPER_HURAY_RADIUS_TREATED_UM = 0.5
-COPPER_HURAY_SURFACE_RATIO_OTHER = 1.0
-COPPER_HURAY_SURFACE_RATIO_TREATED = 1.0
+COPPER_HURAY_SURFACE_RATIO_OTHER = 2.9
+COPPER_HURAY_SURFACE_RATIO_TREATED = 2.9
 COPPER_MATERIAL = 'copper'
-COPPER_ROUGHNESS_MODEL = 'none'
+COPPER_ROUGHNESS_MODEL = 'huray'
 COPPER_ROUGHNESS_RMS_OTHER_UM = 0.0
 COPPER_ROUGHNESS_RMS_TREATED_UM = 0.0
 DEFAULT_BOTTOM_FOIL_MM = 0.035
@@ -94,7 +94,7 @@ FINISH_CONDUCTIVITY_S_PER_M = {'Nickel': 14000000.0, 'Gold': 41000000.0, 'Pallad
 FINISH_GROUPING = 'metal'
 FINISH_MITRE_LIMIT = 2.0
 FINISH_NAME_ALIASES = {'HAL SnPb': 'HASL', 'HAL lead-free': 'HASL_LF', 'Hard gold': 'HardGold', 'Immersion tin': 'ImmersionTin', 'Immersion silver': 'ImmersionSilver', 'HT_OSP': 'OSP'}
-FINISH_TYPE = 'ENIG'
+FINISH_TYPE = 'file'
 FINISH_TYPES = {'ENIG': [('Nickel', 0.005), ('Gold', 8e-05)], 'ENEPIG': [('Nickel', 0.005), ('Palladium', 0.0001), ('Gold', 5e-05)], 'HASL': [('Tin', 0.01)], 'HASL_LF': [('Tin', 0.01)], 'OSP': [('OSP', 0.0003)], 'ImmersionSilver': [('Silver', 0.0002)], 'ImmersionTin': [('Tin', 0.001)], 'HardGold': [('Nickel', 0.005), ('Gold', 0.001)]}
 
 [parameters/PCB_elements/SolderMask.py]
@@ -152,11 +152,11 @@ KICAD_VERSION_MAX = 20260206
 KICAD_VERSION_MIN = 3
 MODE = 'simulation'
 ORIENTATION = 'upright'
-ORIGIN = 'center'
+ORIGIN = 'kicad'
 OUTPUT_DIR = 'Output'
 SHOW_PROGRESS = True
 TESTED_COPPER_LAYERS = 8
-UNITS = 'm'
+UNITS = 'mm'
 WRITE_MATERIALS_JSON = True
 
 [parameters/Run_KESE/Geometry.py]
@@ -206,7 +206,7 @@ WORKERS = 0
 WORKER_STOP_WAIT_S = 10
 
 [parameters/Run_KESE/Verifier.py]
-VERIFY = False
+VERIFY = True
 VERIFY_GONE_AREA_MM2 = 0.0001
 VERIFY_MERGE_EXTRA_DIGITS = 2
 VERIFY_OPENED_VOLUME_MM3 = 0.001

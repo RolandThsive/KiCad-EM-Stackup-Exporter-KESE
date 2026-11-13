@@ -12,11 +12,13 @@ Sections, as in every element's file:  1 Parts  2 Thickness  3 Shape  4 Material
 # ==================================================================================================
 # 1. Parts
 # ==================================================================================================
-# A key of FINISH_TYPES, or "file" to take the type from the board file (KiCad: Board Setup >
-# Physical Stackup > Copper finish).  With "file" the run stops with an error when the board file
-# names no finish (it has no stack-up, or the field is left empty) or one KESE does not know:
-# change FINISH_TYPE or set the finish in KiCad.  A board file whose finish is "None" gets no finish.
-FINISH_TYPE = "ENIG"
+# "file" takes the type from the board file (KiCad: Board Setup > Physical Stackup > Copper finish),
+# or a key of FINISH_TYPES gives every board that finish.  With "file" a board file whose finish is
+# "None" gets no finish, and the run stops with an error, before any work, when the board file names
+# no finish (it has no stack-up, or the field is left empty) or one KESE does not know: set the
+# finish in KiCad, or name one here (on the command line: --set Finish.FINISH_TYPE=ENIG), or leave
+# the finish out (--set Stackup.finish=False).
+FINISH_TYPE = "file"
 
 # KiCad's copper_finish names (board setup > physical stackup) -> keys of FINISH_TYPES.
 # Matching ignores case, spaces, '-' and '_'.  "None" means no finish at all (nothing is built).

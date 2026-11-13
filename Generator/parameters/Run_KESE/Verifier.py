@@ -5,10 +5,11 @@ Every value here is recorded in parameters.txt next to each output.  How many tr
 test at once is Parallel.VERIFY_TRIANGLES_AT_A_TIME.
 """
 
-# Run the Verifier after generation (also: kese --verify).  It adds at most about 1.5 s per board on
-# the example boards (the checks stage 6 makes of each part included), more on dense boards.  Results
-# go in report.txt.
-VERIFY = False
+# Run the Verifier after generation, so that every model handed to a solver has been checked
+# (kese --no-verify leaves it out for one run, kese --verify puts it in).  It adds at most about
+# 1.5 s per board on the example boards (the checks stage 6 makes of each part included), more on
+# dense boards.  Results go in report.txt.
+VERIFY = True
 VERIFY_RAYS = 3000                     # rays the Verifier casts through a visual model, along the board's normal
                                        # (vertical when upright), to test its surfaces
 VERIFY_VOLUME_TOLERANCE = 1e-7         # a part's volumes from its faces, slices and mesh may differ by this share

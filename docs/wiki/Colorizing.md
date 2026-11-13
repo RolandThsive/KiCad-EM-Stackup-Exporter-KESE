@@ -50,7 +50,7 @@ finds its setting (`_key()` in `kese/s5_materials/materials.py`):
 A laminate solid of a kind with no setting of its own, and a finish metal that
 `Finish.FINISH_COLORS` does not hold, take `Board.BOARD_COLOR`. With the plies fused the resin
 beside the inner copper is a part of its prepreg's solid and has that solid's colour;
-`Board_resin` is a part of its own only with `Stackup.FUSION_BUILD = "PLIES_SEPARATE"`
+`Board_resin` is a part of its own with the plies separate (`Stackup.FUSION_BUILD = "PLIES_SEPARATE"`, the default)
 ([Board](Board.md#122-resin-between-the-traces-of-the-inner-copper)).
 
 One setting of a colour is changed for one run with `--set` and the whole dict:

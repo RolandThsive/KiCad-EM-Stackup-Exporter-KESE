@@ -22,7 +22,7 @@ proportional set size (PSS) of KESE's process and its workers, summed and sample
 median of three more runs. The STL size is that of the `stl/` folder, one file a part, and the OBJ
 size includes its `.mtl`. MB is a million bytes.
 
-**The runs used the default parameters on one Linux machine with 4 cores (an Intel Xeon at 2.1 GHz)
+**The runs used the parameters of that time (the plies fused, ENIG, metres, the board centred) on one Linux machine with 4 cores (an Intel Xeon at 2.1 GHz)
 and 16 GB of RAM, so `Parallel.WORKERS = 0` gave four workers
 ([Work Done In Parallel](Working-Principle.md#74-work-done-in-parallel)). On another machine the
 seconds differ.**

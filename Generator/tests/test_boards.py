@@ -1,7 +1,8 @@
 """Regression suite: every board in tests/boards, featureTest/ and Input/ through every output with
 the Verifier on: simulation mode written as GLB and STEP, visual mode as GLB.  Every board runs with
-the parameters in parameters/, but for the changes SETTINGS lists for it; the boards of SEPARATE_TOO
-run a second time with the plies of the laminate built apart.
+the settings the tests start from (helpers.TEST_SETTINGS: the plies fused, ENIG, metres, the board
+centred, as tests/baseline.json was recorded) and the changes SETTINGS lists for it; the boards of
+SEPARATE_TOO run a second time with the plies of the laminate built apart.
 
     python -m pytest tests                 (or:  python tests/test_boards.py)
     python tests/test_boards.py --accept   re-record tests/baseline.json after an intended geometry change
@@ -50,11 +51,12 @@ BOARDS = (sorted(helpers.BOARDS.glob("*.kicad_pcb")) + FEATURES
           + [p for p in sorted((ROOT / "Input").glob("*.kicad_pcb")) if p.read_bytes() not in COPIES])
 MODES = ("simulation", "visual")
 FORMATS = {"simulation": ["glb", "step"], "visual": ["glb"]}
-# Boards run with other values than parameters/ has, as {board stem: {"Module.NAME": value}}: the
-# boards made for a setting that is off by default.  Every board also runs with ALL_PARTS: the solder
-# mask and silkscreen are off by default, but the suite checks every part.
-# The boards whose stack-up names a finish other than ENIG (Finish.FINISH_TYPE's default) run with
-# FINISH_TYPE = "file", so that their own finish is built and the names are read from the file.
+# Boards run with other values than the tests start from, as {board stem: {"Module.NAME": value}}:
+# the boards made for a setting that is off by default.  Every board also runs with ALL_PARTS: the
+# solder mask and silkscreen are off by default, but the suite checks every part.
+# The boards whose stack-up names a finish other than ENIG (the tests' Finish.FINISH_TYPE) run with
+# FINISH_TYPE = "file", the parameter files' own value, so that their own finish is built and the
+# names are read from the file.
 FILE_FINISH = {"Finish.FINISH_TYPE": "file"}
 ALL_PARTS = {"Stackup.solder_mask": True, "Stackup.silkscreen": True}
 SETTINGS = {"16_edge_plating_castellation": FILE_FINISH, "17_mask_silk": FILE_FINISH, "18_finishes": FILE_FINISH,

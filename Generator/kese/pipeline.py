@@ -7,7 +7,7 @@
     s5 materials  PrismSet        -> PrismSet   with a material for every part
     s6 assemble   PrismSet        -> Model      meshes, in output units and orientation
     s7 write      Model           -> Files      glb, obj, stl, step, materials.json
-    s8 verify     Files           -> Files      the opt-in checks
+    s8 verify     Files           -> Files      the Verifier's checks
     s9 report     Files           -> Files      report.txt and parameters.txt"""
 from kese.job import start
 from kese.progress import hms

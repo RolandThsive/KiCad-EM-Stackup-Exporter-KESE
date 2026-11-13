@@ -17,8 +17,8 @@ says what the laminate becomes:
 
 | `Stackup.FUSION_BUILD` | The laminate becomes | Names |
 |---|---|---|
-| `"PLIES_FUSED"` (the default) | one solid for each gap between two copper layers | `Board_dielectric 1`, `Board_dielectric 2`, ... from the `F.Cu` side |
-| `"PLIES_SEPARATE"` | one solid for each prepreg ply, one for each core, and one for the resin beside each inner copper layer | `Board_dielectric 1 ply 1`, `Board_dielectric 2`, `Board_resin In1.Cu` |
+| `"PLIES_FUSED"` | one solid for each gap between two copper layers | `Board_dielectric 1`, `Board_dielectric 2`, ... from the `F.Cu` side |
+| `"PLIES_SEPARATE"` (the default) | one solid for each prepreg ply, one for each core, and one for the resin beside each inner copper layer | `Board_dielectric 1 ply 1`, `Board_dielectric 2`, `Board_resin In1.Cu` |
 
 ![Board 29_stackup_plies cut at true scale through its buried via, built three ways, each with the list of its laminate solids: plies fused gives five solids, one for each gap, the prepreg ones holding the resin beside the inner copper; plies separate gives thirteen, one for each ply and core and one for the resin beside each inner copper layer; plies separate with JOIN_EQUAL_PLIES gives eleven, the three 7628 plies of dielectric 3 joined into one](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Board/board_4_plies.webp)
 
@@ -90,8 +90,9 @@ prepreg plies without the cores, or the laminate without the resin
 ([Stack-Up Model](Stack-Up-Model.md#84-what-is-built-the-lines-of-stackuppy)):
 
 ```bash
-python run_KESE.py board.kicad_pcb --set Stackup.FUSION_BUILD=PLIES_SEPARATE
-python run_KESE.py board.kicad_pcb --set Stackup.FUSION_BUILD=PLIES_SEPARATE --set Stackup.cores=False
+python run_KESE.py board.kicad_pcb                                # the plies separate: the default
+python run_KESE.py board.kicad_pcb --set Stackup.cores=False      # the prepreg plies and the resin, without the cores
+python run_KESE.py board.kicad_pcb --set Stackup.FUSION_BUILD=PLIES_FUSED   # one solid for each gap
 ```
 
 ### 12.1.3 Equal Plies And Thin Plies
@@ -379,7 +380,7 @@ still work with `--set`; see
 | `DEFAULT_EPSILON_R`, `DEFAULT_LOSS_TANGENT` | `4.5`, `0.02` | ≥ 1; ≥ 0 | Typical FR4 at 1 GHz, used when the stack-up gives none |
 | `DEFAULT_SPEC_FREQUENCY_HZ` | `1e9` | Hz > 0 | The frequency εr and tan δ are given at, when the stack-up gives none |
 | `USE_STACKUP_EPSILON_R`, `USE_STACKUP_LOSS_TANGENT`, `USE_STACKUP_SPEC_FREQUENCY` | `True` | bool | Stack-up values win over the defaults when present |
-| `DIELECTRIC_MODEL` | `"constant"` | `"constant"` / `"djordjevic_sarkar"` / `"table"` | How εr and tan δ change with frequency ([Material Properties](Material-Properties.md#214-how-εr-and-tan-δ-change-with-frequency)) |
+| `DIELECTRIC_MODEL` | `"djordjevic_sarkar"` | `"constant"` / `"djordjevic_sarkar"` / `"table"` | How εr and tan δ change with frequency ([Material Properties](Material-Properties.md#214-how-εr-and-tan-δ-change-with-frequency)) |
 | `USE_STACKUP_DIELECTRIC_MODEL` | `True` | bool | The file's `(dielectric_model ...)` wins when present |
 | `DS_LOW_FREQUENCY_HZ`, `DS_HIGH_FREQUENCY_HZ` | `1e3`, `1e12` | Hz > 0, the low one below the high one | Corner frequencies of the Djordjevic-Sarkar model |
 | `DIELECTRIC_TABLE` | `()` | rows of (Hz, εr, tan δ) | The table of `DIELECTRIC_MODEL = "table"` |

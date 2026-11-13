@@ -21,8 +21,8 @@ sensibly; "None" means the program works the value out itself. Any value can be 
 one run with `--set Module.NAME=value`, where `Module` is the file's name without `.py`, the short
 name in the heading of each section (`Copper`, `SolderMask`, `Step`). A line of `Stackup.py` is set
 with `--set Stackup.<line>=True` or `False`. The `parameters.txt` written next to each output records
-every value as it stood for the run, file by file: `--for`, `--set`, `--mode`, `--format` and
-`--verify` are all applied as overrides first, and listed on its first line.
+every value as it stood for the run, file by file: `--for`, `--set`, `--mode`, `--format`,
+`--verify` and `--no-verify` are all applied as overrides first, and listed on its first line.
 
 > [!NOTE]
 > Defaults are those of the parameter files on `main`. Before the board is read, the run checks
@@ -39,8 +39,8 @@ every value as it stood for the run, file by file: `--for`, `--set`, `--mode`, `
 > It also stops when a parameter file still holds a setting under an old name, or a parameter file
 > of before 25.2 still lies in `parameters/` itself ([19.14](#1914-names-of-before-252)). It stops
 > with an error that names the setting.
-> `FINISH_TYPE` and `DIELECTRIC_SPLIT` are checked where they are used (an error or a warning),
-> `PLIES_BY_HAND` when the board's stack-up is read, and `FONT_FILE` gives a note in `report.txt`.
+> `DIELECTRIC_SPLIT` is checked where it is used (a warning), `FINISH_TYPE` and `PLIES_BY_HAND`
+> when the board's stack-up is read (an error), and `FONT_FILE` gives a note in `report.txt`.
 > For the rest, a value outside the range below produces a wrong model or a plain Python error, not
 > a named check.
 
@@ -55,8 +55,8 @@ format. It holds no thickness, material or colour: those are in each element's o
 
 | Name | Default | Range | Meaning |
 |---|---|---|---|
-| `FUSION_BUILD` | `"PLIES_FUSED"` | `"PLIES_FUSED"` / `"PLIES_SEPARATE"` | Which of the two stack-ups below is built |
-| `PLIES_FUSED` | 14 lines | `{line: True / False}` | The laminate as one solid for each gap between two copper layers. The prepreg plies of a gap are fused into that solid, and so is the resin between the traces of the inner copper beside it |
+| `FUSION_BUILD` | `"PLIES_SEPARATE"` | `"PLIES_FUSED"` / `"PLIES_SEPARATE"` | Which of the two stack-ups below is built |
+| `PLIES_FUSED` | 14 lines | `{line: True / False}` | The laminate as KESE built it up to version 3.3: one solid for each gap between two copper layers. The prepreg plies of a gap are fused into that solid, and so is the resin between the traces of the inner copper beside it |
 | `PLIES_SEPARATE` | 15 lines | `{line: True / False}` | The laminate as a fabricator builds it: every prepreg ply, every core and the resin between the traces of each inner copper layer is its own solid, with its own thickness and material ([Board](Board.md#121-dielectric-solids)) |
 
 ### 19.1.2 The Lines
@@ -113,7 +113,7 @@ built. Four short names set several lines at once, on the command line and in a 
 | `Stackup.copper` | `top_copper`, `inner_copper`, `bottom_copper`, `plated_holes` |
 
 ```
-python run_KESE.py board.kicad_pcb --set Stackup.FUSION_BUILD=PLIES_SEPARATE
+python run_KESE.py board.kicad_pcb --set Stackup.FUSION_BUILD=PLIES_FUSED
 python run_KESE.py board.kicad_pcb --set Stackup.solder_mask=True --set Stackup.silkscreen=True
 python run_KESE.py board.kicad_pcb --set Stackup.bottom_copper=False
 ```
@@ -169,7 +169,7 @@ these changes a solid.
 | `DEFAULT_SPEC_FREQUENCY_HZ` | `1e9` | Hz > 0 | The frequency εr and tan δ are given at, when the file gives none (KiCad's default) |
 | `USE_STACKUP_EPSILON_R`, `USE_STACKUP_LOSS_TANGENT` | `True`, `True` | bool | Stack-up values win over the defaults when present |
 | `USE_STACKUP_SPEC_FREQUENCY` | `True` | bool | A ply's `(spec_frequency ...)` in the file wins over the default (KiCad's development version writes it, file format 20260511 on) |
-| `DIELECTRIC_MODEL` | `"constant"` | `"constant"` / `"djordjevic_sarkar"` / `"table"` | How εr and tan δ change with frequency, written to `materials.json` as `dielectric_model`: the same at every frequency; the wideband Djordjevic-Sarkar model, fitted to εr and tan δ at the spec frequency, with its fitted parameters; or `DIELECTRIC_TABLE`, written as given ([Material Properties](Material-Properties.md#214-how-εr-and-tan-δ-change-with-frequency)) |
+| `DIELECTRIC_MODEL` | `"djordjevic_sarkar"` | `"constant"` / `"djordjevic_sarkar"` / `"table"` | How εr and tan δ change with frequency, written to `materials.json` as `dielectric_model`: the same at every frequency (KiCad's default, and KESE's up to version 3.3); the wideband Djordjevic-Sarkar model, fitted to εr and tan δ at the spec frequency, with its fitted parameters beside εr and tan δ; or `DIELECTRIC_TABLE`, written as given ([Material Properties](Material-Properties.md#214-how-εr-and-tan-δ-change-with-frequency)) |
 | `USE_STACKUP_DIELECTRIC_MODEL` | `True` | bool | A ply's `(dielectric_model constant)` or `(dielectric_model djordjevic_sarkar)` in the file wins over `DIELECTRIC_MODEL` |
 | `DS_LOW_FREQUENCY_HZ`, `DS_HIGH_FREQUENCY_HZ` | `1e3`, `1e12` | Hz > 0, the low one below the high one | The Djordjevic-Sarkar model's lower and upper corner frequencies. A ply whose spec frequency is not between them cannot be fitted: it is written with constant values, with a warning, as KiCad falls back |
 | `DIELECTRIC_TABLE` | `()` | `((frequency Hz, εr, tan δ), ...)` by rising frequency | The rows of the `"table"` model, for example `((1e8, 4.6, 0.016), (1e9, 4.5, 0.02), (1e10, 4.4, 0.022))`; empty with `DIELECTRIC_MODEL = "table"` stops the run |
@@ -257,10 +257,10 @@ Written to `materials.json` for the solver; none of these changes a solid.
 |---|---|---|---|
 | `COPPER_MATERIAL` | `"copper"` | text | The material name of every copper part: foils, plating, barrels, castellations and edge plating |
 | `COPPER_CONDUCTIVITY_S_PER_M` | `5.8e7` | S/m | Written for every copper part (annealed copper at 20 °C) |
-| `COPPER_ROUGHNESS_MODEL` | `"none"` | `"none"` / `"hammerstad"` / `"huray"` | The surface roughness model for the solver's conductor loss, written as `roughness`: smooth; one RMS height per face; or the "snowball" model, a nodule radius and a surface ratio per face. Each copper layer has two faces: the treated face, pressed into the dielectric the foil was laminated on, and the other; a copper part says which is which, layer by layer, in `treated_face` ([Material Properties](Material-Properties.md#216-copper-by-layer)) |
+| `COPPER_ROUGHNESS_MODEL` | `"huray"` | `"none"` / `"hammerstad"` / `"huray"` | The surface roughness model for the solver's conductor loss, written as `roughness`: smooth (KESE up to version 3.3); one RMS height per face; or the "snowball" model, a nodule radius and a surface ratio per face. Each copper layer has two faces: the treated face, pressed into the dielectric the foil was laminated on, and the other; a copper part says which is which, layer by layer, in `treated_face` ([Material Properties](Material-Properties.md#216-copper-by-layer)) |
 | `COPPER_ROUGHNESS_RMS_TREATED_UM`, `COPPER_ROUGHNESS_RMS_OTHER_UM` | `0.0`, `0.0` | µm ≥ 0 | `"hammerstad"`: the RMS height of the treated face and of the other. Foil makers quote Rz (peak to valley), which is larger: standard foil 3 to 6 µm, RTF 1 to 1.5, VLP and HVLP 0.3 to 1 |
-| `COPPER_HURAY_RADIUS_TREATED_UM`, `COPPER_HURAY_RADIUS_OTHER_UM` | `0.5`, `0.5` | µm ≥ 0 | `"huray"`: the nodule radius on each face |
-| `COPPER_HURAY_SURFACE_RATIO_TREATED`, `COPPER_HURAY_SURFACE_RATIO_OTHER` | `1.0`, `1.0` | ≥ 0 | `"huray"`: the nodules' surface over the flat surface, on each face |
+| `COPPER_HURAY_RADIUS_TREATED_UM`, `COPPER_HURAY_RADIUS_OTHER_UM` | `0.5`, `0.5` | µm ≥ 0 | `"huray"`: the nodule radius on each face. The defaults of the radius and of the surface ratio are the values Ansys's tools start with on every face (the layer defaults of PyEDB); they describe no particular foil |
+| `COPPER_HURAY_SURFACE_RATIO_TREATED`, `COPPER_HURAY_SURFACE_RATIO_OTHER` | `2.9`, `2.9` | ≥ 0 | `"huray"`: the nodules' surface over the flat surface, on each face |
 | `VIA_RESIN_MATERIAL` | `"via resin"` | text | The material name of the `Via Resin` part |
 | `VIA_RESIN_EPSILON_R`, `VIA_RESIN_LOSS_TANGENT` | `4.4`, `0.02` | ≥ 1, ≥ 0 | The plug and fill resin (San-Ei Kagaku PHP-900 IR-6P at 1 GHz) |
 
@@ -283,7 +283,7 @@ and `hole_finish`. Details in [Finish](Finish.md).
 
 | Name | Default | Range | Meaning |
 |---|---|---|---|
-| `FINISH_TYPE` | `"ENIG"` | `"file"` or a key of `FINISH_TYPES` | The finish type, or `"file"` to take it from the stack-up's `(copper_finish ...)` (KiCad's `None` builds no finish; no finish in the file, or a name that matches no key and no alias, stops the run with an error) |
+| `FINISH_TYPE` | `"file"` | `"file"` or a key of `FINISH_TYPES` | `"file"` takes the finish type from the stack-up's `(copper_finish ...)` (KiCad's `None` builds no finish; no finish in the file, or a name that matches no key and no alias, stops the run with an error, before any work); a key gives every board that finish |
 | `FINISH_NAME_ALIASES` | 6 KiCad names (`HAL SnPb` → `HASL`, `HAL lead-free` → `HASL_LF`, `Hard gold`, `Immersion tin`, `Immersion silver`, `HT_OSP` → `OSP`) | `{KiCad name: key of FINISH_TYPES}` | KiCad finish names that differ from a key; matching ignores case, spaces, `-` and `_` |
 | `FINISH_GROUPING` | `"metal"` | `"metal"` / `"net"` | One part per side and metal, or per side, metal and net |
 
@@ -424,9 +424,9 @@ What to make, where, and in which formats.
 |---|---|---|---|
 | `MODE` | `"simulation"` | `"simulation"` / `"visual"` | Closed solids for solvers, or the visible surface for viewers ([Output Modes](Output-Modes.md)) |
 | `INPUT_DIR`, `OUTPUT_DIR` | `"Input"`, `"Output"` | paths relative to the current working directory (run from the `Generator/` folder) | Where boards are looked for and outputs written |
-| `FILE_FORMAT` | `["glb"]` | any of `"glb"`, `"stl"`, `"obj"`, `"step"` | Files to write; visual mode allows only glb and obj |
-| `UNITS` | `"m"` | `"mm"` / `"m"` | Units of the written files. Use `"mm"` for STEP, as CAD tools and solvers expect; the STEP file declares the units it is written in |
-| `ORIGIN` | `"center"` | `"center"` / `"kicad"` | Outline centre at (0, 0), or KiCad's page origin kept |
+| `FILE_FORMAT` | `["step"]` | any of `"glb"`, `"stl"`, `"obj"`, `"step"` | Files to write; visual mode allows only glb and obj, so a visual run names its format (`--mode visual --format glb`, or `--for viewer`) |
+| `UNITS` | `"mm"` | `"mm"` / `"m"` | Units of the written files: `"mm"` as CAD tools and solvers expect (the STEP file declares the units it is written in), `"m"` for glTF viewers, which expect metres |
+| `ORIGIN` | `"kicad"` | `"center"` / `"kicad"` | KiCad's page origin kept, so that coordinates match the layout and the Gerbers, or the outline's centre at (0, 0) |
 | `ORIENTATION` | `"upright"` | `"upright"` / `"flat"` | Board in XY with `F.Cu` toward +Z, or in XZ with `F.Cu` toward +Y |
 
 ### 19.7.2 Run Behaviour
@@ -556,7 +556,7 @@ How many triangles its rays test at once is `Parallel.VERIFY_TRIANGLES_AT_A_TIME
 
 | Name | Default | Range | Meaning |
 |---|---|---|---|
-| `VERIFY` | `False` | bool | Run the Verifier after generation, as `--verify` does (at most about 1.5 s more on the example boards, the checks stage 6 makes of each part included; longer on dense boards) |
+| `VERIFY` | `True` | bool | Run the Verifier after generation (`--no-verify` leaves it out for one run, `--verify` puts it in; at most about 1.5 s more on the example boards, the checks stage 6 makes of each part included; longer on dense boards) |
 | `VERIFY_RAYS` | `3000` | int ≥ 1 | Rays the Verifier casts through a visual model, along the board's normal, to test its surfaces |
 | `VERIFY_VOLUME_TOLERANCE` | `1e-7` | ≥ 0 | How far a part's volumes from its faces, its slices and its mesh may differ, as a share of its volume (the numerical noise of areas and meshes), and still pass |
 | `VERIFY_VOLUME_NOISE_MM3` | `1e-9` | mm³ ≥ 0 | and by this many mm³ more, whatever the volume |

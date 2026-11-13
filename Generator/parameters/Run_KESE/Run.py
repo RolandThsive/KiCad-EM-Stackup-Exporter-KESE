@@ -24,17 +24,19 @@ OUTPUT_DIR = "Output"
 #   "obj"  - Wavefront OBJ, one object per solid, colours in an .mtl            (Blender)
 #   "step" - STEP AP214 with one named exact solid per part                     (FreeCAD, gmsh, and
 #            through gmsh Elmer and CalculiX)
-# "visual" mode can only produce "glb" and "obj" (its skin is a surface, not solids).
+# "visual" mode can only produce "glb" and "obj" (its skin is a surface, not solids), so a visual
+# run names its format: `kese board.kicad_pcb --for viewer`, or `--mode visual --format glb`.
 # `kese --for <tool>` sets the mode, formats, units, origin and more for one of these tools (Presets.py).
-FILE_FORMAT = ["glb"]
+FILE_FORMAT = ["step"]
 
 # Units of the written files: "mm" (EM solvers, CAD) or "m" (glTF viewers expect metres)
-UNITS = "m"
+UNITS = "mm"
 
 # Where the origin is:
-#   "center" - the board outline's centre is at (0, 0)
-#   "kicad"  - KiCad's own page origin is kept, so coordinates match the layout and Gerbers
-ORIGIN = "center"
+#   "kicad"  - KiCad's own page origin is kept, so coordinates match the layout and Gerbers: a port
+#              is placed where the layout editor says it is
+#   "center" - the board outline's centre is at (0, 0) (web viewers)
+ORIGIN = "kicad"
 
 # "upright": board in the XY plane, F.Cu facing +Z, Y up, KiCad's top view not mirrored
 # "flat"   : board in the XZ plane, F.Cu facing +Y

@@ -9,7 +9,7 @@
       "layer": "dielectric 1",
       "net": null,
       "z_range_mm": [
-        0.5475,
+        0.565,
         0.765
       ],
       "properties": {
@@ -18,29 +18,21 @@
         "thickness_mm": 0.2,
         "epsilon_r": 4.5,
         "loss_tangent": 0.02,
-        "fused_properties": "first",
         "spec_frequency_hz": 1000000000.0,
         "dielectric_model": {
-          "model": "constant"
+          "model": "djordjevic_sarkar",
+          "spec_frequency_hz": 1000000000.0,
+          "low_frequency_hz": 1000.0,
+          "high_frequency_hz": 1000000000000.0,
+          "epsilon_inf": 4.103962,
+          "delta_epsilon": 1.188113
         },
         "between": [
           "F.Cu",
           "In1.Cu"
         ],
-        "plies": [
-          {
-            "name": "dielectric 1",
-            "kind": "prepreg",
-            "material": "FR4",
-            "thickness_mm": 0.2,
-            "epsilon_r": 4.5,
-            "loss_tangent": 0.02,
-            "spec_frequency_hz": 1000000000.0,
-            "dielectric_model": {
-              "model": "constant"
-            }
-          }
-        ]
+        "ply": 1,
+        "plies_in_gap": 1
       },
       "look": {
         "color": "#A89C66",
@@ -66,29 +58,21 @@
         "thickness_mm": 1.095,
         "epsilon_r": 4.5,
         "loss_tangent": 0.02,
-        "fused_properties": "first",
         "spec_frequency_hz": 1000000000.0,
         "dielectric_model": {
-          "model": "constant"
+          "model": "djordjevic_sarkar",
+          "spec_frequency_hz": 1000000000.0,
+          "low_frequency_hz": 1000.0,
+          "high_frequency_hz": 1000000000000.0,
+          "epsilon_inf": 4.103962,
+          "delta_epsilon": 1.188113
         },
         "between": [
           "In1.Cu",
           "In2.Cu"
         ],
-        "plies": [
-          {
-            "name": "dielectric 2",
-            "kind": "core",
-            "material": "FR4",
-            "thickness_mm": 1.095,
-            "epsilon_r": 4.5,
-            "loss_tangent": 0.02,
-            "spec_frequency_hz": 1000000000.0,
-            "dielectric_model": {
-              "model": "constant"
-            }
-          }
-        ]
+        "ply": 1,
+        "plies_in_gap": 1
       },
       "look": {
         "color": "#968A58",
@@ -106,7 +90,7 @@
       "net": null,
       "z_range_mm": [
         -0.765,
-        -0.5475
+        -0.565
       ],
       "properties": {
         "kind": "prepreg",
@@ -114,29 +98,21 @@
         "thickness_mm": 0.2,
         "epsilon_r": 4.5,
         "loss_tangent": 0.02,
-        "fused_properties": "first",
         "spec_frequency_hz": 1000000000.0,
         "dielectric_model": {
-          "model": "constant"
+          "model": "djordjevic_sarkar",
+          "spec_frequency_hz": 1000000000.0,
+          "low_frequency_hz": 1000.0,
+          "high_frequency_hz": 1000000000000.0,
+          "epsilon_inf": 4.103962,
+          "delta_epsilon": 1.188113
         },
         "between": [
           "In2.Cu",
           "B.Cu"
         ],
-        "plies": [
-          {
-            "name": "dielectric 3",
-            "kind": "prepreg",
-            "material": "FR4",
-            "thickness_mm": 0.2,
-            "epsilon_r": 4.5,
-            "loss_tangent": 0.02,
-            "spec_frequency_hz": 1000000000.0,
-            "dielectric_model": {
-              "model": "constant"
-            }
-          }
-        ]
+        "ply": 1,
+        "plies_in_gap": 1
       },
       "look": {
         "color": "#A89C66",
@@ -146,6 +122,78 @@
         "stl": "Board_dielectric_3.stl",
         "glb_node": "Board_dielectric 3",
         "step_solid": "Board_dielectric 3"
+      }
+    },
+    "Board_resin In1.Cu": {
+      "role": "board",
+      "layer": "In1.Cu",
+      "net": null,
+      "z_range_mm": [
+        0.5475,
+        0.565
+      ],
+      "properties": {
+        "kind": "resin",
+        "material": "resin",
+        "thickness_mm": 0.0175,
+        "epsilon_r": 3.5,
+        "loss_tangent": 0.02,
+        "spec_frequency_hz": 1000000000.0,
+        "dielectric_model": {
+          "model": "djordjevic_sarkar",
+          "spec_frequency_hz": 1000000000.0,
+          "low_frequency_hz": 1000.0,
+          "high_frequency_hz": 1000000000000.0,
+          "epsilon_inf": 3.191971,
+          "delta_epsilon": 0.924088
+        },
+        "resin_fill_beside": "In1.Cu",
+        "flowed_from": "dielectric 1"
+      },
+      "look": {
+        "color": "#B8AC78",
+        "alpha": 1.0
+      },
+      "file_names": {
+        "stl": "Board_resin_In1.Cu.stl",
+        "glb_node": "Board_resin In1.Cu",
+        "step_solid": "Board_resin In1.Cu"
+      }
+    },
+    "Board_resin In2.Cu": {
+      "role": "board",
+      "layer": "In2.Cu",
+      "net": null,
+      "z_range_mm": [
+        -0.565,
+        -0.5475
+      ],
+      "properties": {
+        "kind": "resin",
+        "material": "resin",
+        "thickness_mm": 0.0175,
+        "epsilon_r": 3.5,
+        "loss_tangent": 0.02,
+        "spec_frequency_hz": 1000000000.0,
+        "dielectric_model": {
+          "model": "djordjevic_sarkar",
+          "spec_frequency_hz": 1000000000.0,
+          "low_frequency_hz": 1000.0,
+          "high_frequency_hz": 1000000000000.0,
+          "epsilon_inf": 3.191971,
+          "delta_epsilon": 0.924088
+        },
+        "resin_fill_beside": "In2.Cu",
+        "flowed_from": "dielectric 3"
+      },
+      "look": {
+        "color": "#B8AC78",
+        "alpha": 1.0
+      },
+      "file_names": {
+        "stl": "Board_resin_In2.Cu.stl",
+        "glb_node": "Board_resin In2.Cu",
+        "step_solid": "Board_resin In2.Cu"
       }
     },
     "Copper_SCK": {
@@ -164,7 +212,11 @@
         "plating_added_mm": 0.0,
         "material": "copper",
         "roughness": {
-          "model": "none"
+          "model": "huray",
+          "radius_treated_um": 0.5,
+          "radius_other_um": 0.5,
+          "surface_ratio_treated": 2.9,
+          "surface_ratio_other": 2.9
         },
         "layers": [
           {
@@ -204,7 +256,11 @@
         "plating_added_mm": 0.0,
         "material": "copper",
         "roughness": {
-          "model": "none"
+          "model": "huray",
+          "radius_treated_um": 0.5,
+          "radius_other_um": 0.5,
+          "surface_ratio_treated": 2.9,
+          "surface_ratio_other": 2.9
         },
         "layers": [
           {
@@ -244,7 +300,11 @@
         "plating_added_mm": 0.0,
         "material": "copper",
         "roughness": {
-          "model": "none"
+          "model": "huray",
+          "radius_treated_um": 0.5,
+          "radius_other_um": 0.5,
+          "surface_ratio_treated": 2.9,
+          "surface_ratio_other": 2.9
         },
         "layers": [
           {
@@ -284,7 +344,11 @@
         "plating_added_mm": 0.0,
         "material": "copper",
         "roughness": {
-          "model": "none"
+          "model": "huray",
+          "radius_treated_um": 0.5,
+          "radius_other_um": 0.5,
+          "surface_ratio_treated": 2.9,
+          "surface_ratio_other": 2.9
         },
         "layers": [
           {
@@ -324,7 +388,11 @@
         "plating_added_mm": 0.0,
         "material": "copper",
         "roughness": {
-          "model": "none"
+          "model": "huray",
+          "radius_treated_um": 0.5,
+          "radius_other_um": 0.5,
+          "surface_ratio_treated": 2.9,
+          "surface_ratio_other": 2.9
         },
         "layers": [
           {
@@ -364,7 +432,11 @@
         "plating_added_mm": 0.0,
         "material": "copper",
         "roughness": {
-          "model": "none"
+          "model": "huray",
+          "radius_treated_um": 0.5,
+          "radius_other_um": 0.5,
+          "surface_ratio_treated": 2.9,
+          "surface_ratio_other": 2.9
         },
         "layers": [
           {
@@ -431,7 +503,11 @@
         "plating_added_mm": 0.0,
         "material": "copper",
         "roughness": {
-          "model": "none"
+          "model": "huray",
+          "radius_treated_um": 0.5,
+          "radius_other_um": 0.5,
+          "surface_ratio_treated": 2.9,
+          "surface_ratio_other": 2.9
         },
         "layers": [
           {
@@ -498,7 +574,11 @@
         "plating_added_mm": 0.0,
         "material": "copper",
         "roughness": {
-          "model": "none"
+          "model": "huray",
+          "radius_treated_um": 0.5,
+          "radius_other_um": 0.5,
+          "surface_ratio_treated": 2.9,
+          "surface_ratio_other": 2.9
         },
         "layers": [
           {
@@ -565,7 +645,11 @@
         "plating_added_mm": 0.0,
         "material": "copper",
         "roughness": {
-          "model": "none"
+          "model": "huray",
+          "radius_treated_um": 0.5,
+          "radius_other_um": 0.5,
+          "surface_ratio_treated": 2.9,
+          "surface_ratio_other": 2.9
         },
         "layers": [
           {
@@ -605,7 +689,11 @@
         "plating_added_mm": 0.0,
         "material": "copper",
         "roughness": {
-          "model": "none"
+          "model": "huray",
+          "radius_treated_um": 0.5,
+          "radius_other_um": 0.5,
+          "surface_ratio_treated": 2.9,
+          "surface_ratio_other": 2.9
         },
         "layers": [
           {
@@ -672,7 +760,11 @@
         "plating_added_mm": 0.0,
         "material": "copper",
         "roughness": {
-          "model": "none"
+          "model": "huray",
+          "radius_treated_um": 0.5,
+          "radius_other_um": 0.5,
+          "surface_ratio_treated": 2.9,
+          "surface_ratio_other": 2.9
         },
         "layers": [
           {
@@ -739,7 +831,11 @@
         "plating_added_mm": 0.0,
         "material": "copper",
         "roughness": {
-          "model": "none"
+          "model": "huray",
+          "radius_treated_um": 0.5,
+          "radius_other_um": 0.5,
+          "surface_ratio_treated": 2.9,
+          "surface_ratio_other": 2.9
         },
         "layers": [
           {
@@ -779,7 +875,11 @@
         "plating_added_mm": 0.0,
         "material": "copper",
         "roughness": {
-          "model": "none"
+          "model": "huray",
+          "radius_treated_um": 0.5,
+          "radius_other_um": 0.5,
+          "surface_ratio_treated": 2.9,
+          "surface_ratio_other": 2.9
         },
         "layers": [
           {
@@ -819,7 +919,11 @@
         "plating_added_mm": 0.0,
         "material": "copper",
         "roughness": {
-          "model": "none"
+          "model": "huray",
+          "radius_treated_um": 0.5,
+          "radius_other_um": 0.5,
+          "surface_ratio_treated": 2.9,
+          "surface_ratio_other": 2.9
         },
         "layers": [
           {
@@ -886,7 +990,11 @@
         "plating_added_mm": 0.0,
         "material": "copper",
         "roughness": {
-          "model": "none"
+          "model": "huray",
+          "radius_treated_um": 0.5,
+          "radius_other_um": 0.5,
+          "surface_ratio_treated": 2.9,
+          "surface_ratio_other": 2.9
         },
         "layers": [
           {
@@ -926,7 +1034,11 @@
         "plating_added_mm": 0.0,
         "material": "copper",
         "roughness": {
-          "model": "none"
+          "model": "huray",
+          "radius_treated_um": 0.5,
+          "radius_other_um": 0.5,
+          "surface_ratio_treated": 2.9,
+          "surface_ratio_other": 2.9
         },
         "layers": [
           {
@@ -966,7 +1078,11 @@
         "plating_added_mm": 0.0,
         "material": "copper",
         "roughness": {
-          "model": "none"
+          "model": "huray",
+          "radius_treated_um": 0.5,
+          "radius_other_um": 0.5,
+          "surface_ratio_treated": 2.9,
+          "surface_ratio_other": 2.9
         },
         "layers": [
           {
@@ -1006,7 +1122,11 @@
         "plating_added_mm": 0.0,
         "material": "copper",
         "roughness": {
-          "model": "none"
+          "model": "huray",
+          "radius_treated_um": 0.5,
+          "radius_other_um": 0.5,
+          "surface_ratio_treated": 2.9,
+          "surface_ratio_other": 2.9
         },
         "layers": [
           {
@@ -1046,7 +1166,11 @@
         "plating_added_mm": 0.0,
         "material": "copper",
         "roughness": {
-          "model": "none"
+          "model": "huray",
+          "radius_treated_um": 0.5,
+          "radius_other_um": 0.5,
+          "surface_ratio_treated": 2.9,
+          "surface_ratio_other": 2.9
         },
         "layers": [
           {
@@ -1086,7 +1210,11 @@
         "plating_added_mm": 0.0,
         "material": "copper",
         "roughness": {
-          "model": "none"
+          "model": "huray",
+          "radius_treated_um": 0.5,
+          "radius_other_um": 0.5,
+          "surface_ratio_treated": 2.9,
+          "surface_ratio_other": 2.9
         },
         "layers": [
           {
@@ -1126,7 +1254,11 @@
         "plating_added_mm": 0.0,
         "material": "copper",
         "roughness": {
-          "model": "none"
+          "model": "huray",
+          "radius_treated_um": 0.5,
+          "radius_other_um": 0.5,
+          "surface_ratio_treated": 2.9,
+          "surface_ratio_other": 2.9
         },
         "layers": [
           {
@@ -1166,7 +1298,11 @@
         "plating_added_mm": 0.0,
         "material": "copper",
         "roughness": {
-          "model": "none"
+          "model": "huray",
+          "radius_treated_um": 0.5,
+          "radius_other_um": 0.5,
+          "surface_ratio_treated": 2.9,
+          "surface_ratio_other": 2.9
         },
         "layers": [
           {
@@ -1206,7 +1342,11 @@
         "plating_added_mm": 0.0,
         "material": "copper",
         "roughness": {
-          "model": "none"
+          "model": "huray",
+          "radius_treated_um": 0.5,
+          "radius_other_um": 0.5,
+          "surface_ratio_treated": 2.9,
+          "surface_ratio_other": 2.9
         },
         "layers": [
           {
@@ -1246,7 +1386,11 @@
         "plating_added_mm": 0.0,
         "material": "copper",
         "roughness": {
-          "model": "none"
+          "model": "huray",
+          "radius_treated_um": 0.5,
+          "radius_other_um": 0.5,
+          "surface_ratio_treated": 2.9,
+          "surface_ratio_other": 2.9
         },
         "layers": [
           {
@@ -1286,7 +1430,11 @@
         "plating_added_mm": 0.0,
         "material": "copper",
         "roughness": {
-          "model": "none"
+          "model": "huray",
+          "radius_treated_um": 0.5,
+          "radius_other_um": 0.5,
+          "surface_ratio_treated": 2.9,
+          "surface_ratio_other": 2.9
         },
         "layers": [
           {
@@ -1353,7 +1501,11 @@
         "plating_added_mm": 0.0,
         "material": "copper",
         "roughness": {
-          "model": "none"
+          "model": "huray",
+          "radius_treated_um": 0.5,
+          "radius_other_um": 0.5,
+          "surface_ratio_treated": 2.9,
+          "surface_ratio_other": 2.9
         },
         "layers": [
           {
@@ -1420,7 +1572,11 @@
         "plating_added_mm": 0.0,
         "material": "copper",
         "roughness": {
-          "model": "none"
+          "model": "huray",
+          "radius_treated_um": 0.5,
+          "radius_other_um": 0.5,
+          "surface_ratio_treated": 2.9,
+          "surface_ratio_other": 2.9
         },
         "layers": [
           {
@@ -1487,7 +1643,11 @@
         "plating_added_mm": 0.0,
         "material": "copper",
         "roughness": {
-          "model": "none"
+          "model": "huray",
+          "radius_treated_um": 0.5,
+          "radius_other_um": 0.5,
+          "surface_ratio_treated": 2.9,
+          "surface_ratio_other": 2.9
         },
         "layers": [
           {
@@ -1554,7 +1714,11 @@
         "plating_added_mm": 0.0,
         "material": "copper",
         "roughness": {
-          "model": "none"
+          "model": "huray",
+          "radius_treated_um": 0.5,
+          "radius_other_um": 0.5,
+          "surface_ratio_treated": 2.9,
+          "surface_ratio_other": 2.9
         },
         "layers": [
           {
@@ -1594,7 +1758,11 @@
         "plating_added_mm": 0.0,
         "material": "copper",
         "roughness": {
-          "model": "none"
+          "model": "huray",
+          "radius_treated_um": 0.5,
+          "radius_other_um": 0.5,
+          "surface_ratio_treated": 2.9,
+          "surface_ratio_other": 2.9
         },
         "layers": [
           {
@@ -1634,7 +1802,11 @@
         "plating_added_mm": 0.0,
         "material": "copper",
         "roughness": {
-          "model": "none"
+          "model": "huray",
+          "radius_treated_um": 0.5,
+          "radius_other_um": 0.5,
+          "surface_ratio_treated": 2.9,
+          "surface_ratio_other": 2.9
         },
         "layers": [
           {
@@ -1674,7 +1846,11 @@
         "plating_added_mm": 0.0,
         "material": "copper",
         "roughness": {
-          "model": "none"
+          "model": "huray",
+          "radius_treated_um": 0.5,
+          "radius_other_um": 0.5,
+          "surface_ratio_treated": 2.9,
+          "surface_ratio_other": 2.9
         },
         "layers": [
           {
@@ -1714,7 +1890,11 @@
         "plating_added_mm": 0.0,
         "material": "copper",
         "roughness": {
-          "model": "none"
+          "model": "huray",
+          "radius_treated_um": 0.5,
+          "radius_other_um": 0.5,
+          "surface_ratio_treated": 2.9,
+          "surface_ratio_other": 2.9
         },
         "layers": [
           {
@@ -1754,7 +1934,11 @@
         "plating_added_mm": 0.0,
         "material": "copper",
         "roughness": {
-          "model": "none"
+          "model": "huray",
+          "radius_treated_um": 0.5,
+          "radius_other_um": 0.5,
+          "surface_ratio_treated": 2.9,
+          "surface_ratio_other": 2.9
         },
         "layers": [
           {
@@ -1794,7 +1978,11 @@
         "plating_added_mm": 0.0,
         "material": "copper",
         "roughness": {
-          "model": "none"
+          "model": "huray",
+          "radius_treated_um": 0.5,
+          "radius_other_um": 0.5,
+          "surface_ratio_treated": 2.9,
+          "surface_ratio_other": 2.9
         },
         "layers": [
           {

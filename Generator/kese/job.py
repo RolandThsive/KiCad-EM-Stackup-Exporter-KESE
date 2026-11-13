@@ -80,4 +80,5 @@ def check_request(mode, formats):
         raise ValueError(f"unknown FILE_FORMAT entries {bad}")
     if mode == "visual" and set(formats) - VISUAL_FORMATS:
         raise ValueError("visual mode is a surface, not solids: FILE_FORMAT may only contain glb / obj "
-                         f"(asked for {sorted(set(formats) - VISUAL_FORMATS)})")
+                         f"(asked for {sorted(set(formats) - VISUAL_FORMATS)}); give the format with the mode, "
+                         "as in --mode visual --format glb, or use --for viewer")

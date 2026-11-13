@@ -26,9 +26,10 @@ mask colour of its own, saved by KiCad 7. Between them they use most of what KES
 | Visual GLB with `--verify` | 15 s, 10.5 MB | 9 s, 5.6 MB | 13 s, 9.1 MB |
 
 The numbers on this page were measured with `Geometry.CIRCLE_CHORD_TOLERANCE_MM = 0.002`, the default
-until 0.005. The times are the ones the run prints, with the default parameters otherwise (the
-finish on, the solder mask and silkscreen off, true arcs in the STEP files) on one Linux machine
-with 4 cores. The STEP
+until 0.005. The times are the ones the run prints, with the parameters of that time otherwise (the
+plies fused, ENIG on every board, the solder mask and silkscreen off, true arcs in the STEP files) on
+one Linux machine with 4 cores. With today's defaults the laminate is more parts, one for each ply,
+and each board has its own finish. The STEP
 files were made with `--for freecad --verify`: millimetres and KiCad's origin
 ([Project Capabilities](Project-Capabilities.md#45-tested-sizes) gives them with the mask and
 silkscreen too). The finish makes most of the solids: each pad's and each hole's finish is a solid
@@ -161,7 +162,7 @@ What this board shows:
   <img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Colorizing/ColorSwatches/121214.webp" width="12" height="12" align="absmiddle" alt=""> `#121214`,
   and over copper in visual mode
   <img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Colorizing/ColorSwatches/2E2E30.webp" width="12" height="12" align="absmiddle" alt=""> `#2E2E30`.
-  The finish is immersion silver (built with `--set Finish.FINISH_TYPE=file`; ENIG by default)
+  The finish is immersion silver, as the board file says (`Finish.FINISH_TYPE = "file"`, the default)
   ([ImmersionSilver](Finish.md#1536-immersionsilver)).
 
 <p align="center">
@@ -196,7 +197,7 @@ What this board shows:
   and joined by a single trace, no plane runs under the fingers, and the mask is open over all of
   them. Each finger is a pad of its net, so the lane pairs, `+12V`, `+3V3` and GND end in the
   fingers.
-- **Hard gold.** The stack-up's finish is hard gold. With `--set Finish.FINISH_TYPE=file` it
+- **Hard gold.** The stack-up's finish is hard gold, and with the default `Finish.FINISH_TYPE = "file"` it
   covers all the exposed copper, fingers and pads alike, since KiCad gives a board one finish
   ([HardGold](Finish.md#1538-hardgold)).
 - **The bevel is not modelled.** Board Setup's `(edge_connector bevelled)` asks the fabricator to
@@ -220,10 +221,10 @@ What this board shows:
 
 ```bash
 cd Generator
-python run_KESE.py                                                             # all three: simulation, GLB in metres, centred
-python run_KESE.py Input/rf_module.kicad_pcb --for freecad                     # STEP in mm with KiCad's origin
+python run_KESE.py                                                             # all three: simulation, STEP in mm with KiCad's origin
+python run_KESE.py Input/rf_module.kicad_pcb --format glb                      # a GLB of the solids, in mm
 python run_KESE.py Input/hdi_module.kicad_pcb --for viewer                     # visual mode for <model-viewer>
-python run_KESE.py Input/pcie_card.kicad_pcb --set Finish.FINISH_TYPE=file      # the stack-up's hard gold
+python run_KESE.py Input/pcie_card.kicad_pcb --set Finish.FINISH_TYPE=ENIG      # ENIG in place of the stack-up's hard gold
 python run_KESE.py Input/rf_module.kicad_pcb --set Copper.COPPER_GROUPING=layer # a copper part per layer
 ```
 

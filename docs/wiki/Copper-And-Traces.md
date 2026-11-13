@@ -524,9 +524,9 @@ geometry:
 
 | `Copper.COPPER_ROUGHNESS_MODEL` | Written as `roughness` | Settings |
 |---|---|---|
-| `"none"` (default) | `{"model": "none"}`: smooth | |
+| `"none"` | `{"model": "none"}`: smooth | |
 | `"hammerstad"` | one RMS height for each face: `rms_treated_um`, `rms_other_um` | `COPPER_ROUGHNESS_RMS_TREATED_UM`, `COPPER_ROUGHNESS_RMS_OTHER_UM` |
-| `"huray"` | the "snowball" model, a nodule radius and a surface ratio for each face: `radius_treated_um`, `radius_other_um`, `surface_ratio_treated`, `surface_ratio_other` | `COPPER_HURAY_RADIUS_TREATED_UM`, `COPPER_HURAY_RADIUS_OTHER_UM`, `COPPER_HURAY_SURFACE_RATIO_TREATED`, `COPPER_HURAY_SURFACE_RATIO_OTHER` |
+| `"huray"` (default) | the "snowball" model, a nodule radius and a surface ratio for each face: `radius_treated_um`, `radius_other_um`, `surface_ratio_treated`, `surface_ratio_other` | `COPPER_HURAY_RADIUS_TREATED_UM`, `COPPER_HURAY_RADIUS_OTHER_UM`, `COPPER_HURAY_SURFACE_RATIO_TREATED`, `COPPER_HURAY_SURFACE_RATIO_OTHER` |
 
 A separate `Plating` part (with `Copper.COPPER_GROUPING = "layer"`) carries only `material` and
 `conductivity_S_per_m`. See [Material Properties](Material-Properties.md#216-copper-by-layer) for
@@ -572,10 +572,10 @@ still work with `--set`; see [Parameter Reference](Parameter-Reference.md#1914-n
 | **6 Material** | | | |
 | `COPPER_MATERIAL` | `"copper"` | text | The material's name in `materials.json` |
 | `COPPER_CONDUCTIVITY_S_PER_M` | `5.8e7` | S/m > 0 | Written to `materials.json` |
-| `COPPER_ROUGHNESS_MODEL` | `"none"` | `"none"` / `"hammerstad"` / `"huray"` | The surface roughness model (section 13.8) |
+| `COPPER_ROUGHNESS_MODEL` | `"huray"` | `"none"` / `"hammerstad"` / `"huray"` | The surface roughness model (section 13.8) |
 | `COPPER_ROUGHNESS_RMS_TREATED_UM`, `COPPER_ROUGHNESS_RMS_OTHER_UM` | `0.0`, `0.0` | µm ≥ 0 | `"hammerstad"`: RMS height of the treated face and of the other face |
 | `COPPER_HURAY_RADIUS_TREATED_UM`, `COPPER_HURAY_RADIUS_OTHER_UM` | `0.5`, `0.5` | µm > 0 | `"huray"`: nodule radius of each face |
-| `COPPER_HURAY_SURFACE_RATIO_TREATED`, `COPPER_HURAY_SURFACE_RATIO_OTHER` | `1.0`, `1.0` | ≥ 0 | `"huray"`: nodule surface over flat surface, of each face |
+| `COPPER_HURAY_SURFACE_RATIO_TREATED`, `COPPER_HURAY_SURFACE_RATIO_OTHER` | `2.9`, `2.9` | ≥ 0 | `"huray"`: nodule surface over flat surface, of each face. With the radius of 0.5 µm, the values Ansys's tools start with; they describe no particular foil |
 | `VIA_RESIN_MATERIAL` | `"via resin"` | text | The plug and fill resin's name |
 | `VIA_RESIN_EPSILON_R`, `VIA_RESIN_LOSS_TANGENT` | `4.4`, `0.02` | ≥ 1, ≥ 0 | The plug and fill resin, written to `materials.json` |
 | **7 Color** | | | |

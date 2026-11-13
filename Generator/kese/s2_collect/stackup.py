@@ -4,7 +4,7 @@ from kese.core.dielectric import check_models
 from kese.core.sexp import child, children, num, number, word
 from kese.model.stackup import Ply, Stackup
 from kese.s2_collect.plies import by_hand, file_plies, fused, of_plies, solids
-from parameters import P
+from parameters import GROUPS, P
 
 
 def read_stackup(setup, copper_layers, file_thickness, log, board=""):
@@ -66,10 +66,13 @@ def read_stackup(setup, copper_layers, file_thickness, log, board=""):
     if P.Stackup.FUSION_BUILD == "PLIES_SEPARATE":
         for d in dielectrics:
             d.solids = solids(d, log)
-    return Stackup(copper_layers=copper_layers, copper_thickness=cu_t, dielectrics=dielectrics,
-                   laminate_thickness=laminate, thickness_source=source, mask_thickness=mask_t,
-                   colors=colors, copper_finish=finish, mask_materials=mask_materials,
-                   edge_plating=flags["edge_plating"], castellated_pads=flags["castellated_pads"])
+    stackup = Stackup(copper_layers=copper_layers, copper_thickness=cu_t, dielectrics=dielectrics,
+                      laminate_thickness=laminate, thickness_source=source, mask_thickness=mask_t,
+                      colors=colors, copper_finish=finish, mask_materials=mask_materials,
+                      edge_plating=flags["edge_plating"], castellated_pads=flags["castellated_pads"])
+    if any(P.value(f"Stackup.{line}") for line in GROUPS["finish"]):
+        finish_type(stackup)                           # a finish that cannot be built stops the run here
+    return stackup
 
 
 def default_dielectric(name, thickness):
@@ -129,3 +132,31 @@ def one_per_gap(gaps, copper_layers, laminate_note, log):
                              "the board is too thin for its copper; set Board.BOARD_THICKNESS_MM (parameters/PCB_elements/Board.py)")
         dielectrics.append(d)
     return dielectrics
+
+
+def finish_type(st):
+    """The key of FINISH_TYPES the board gets, or None when its stack-up says "None".  Raises
+    ValueError for an unknown FINISH_TYPE, and with "file" for a board that names no finish or one
+    KESE does not know."""
+    F = P.Finish
+    if F.FINISH_TYPE != "file":
+        if F.FINISH_TYPE not in F.FINISH_TYPES:
+            raise ValueError(f"FINISH ERROR: Finish.FINISH_TYPE = {F.FINISH_TYPE!r} is not a finish KESE knows; "
+                             f"use \"file\" or one of {', '.join(F.FINISH_TYPES)}")
+        return F.FINISH_TYPE
+    fold = lambda s: s.lower().replace(" ", "").replace("-", "").replace("_", "")
+    name = fold(st.copper_finish or "")
+    if not name:
+        raise ValueError("FINISH ERROR: Finish.FINISH_TYPE = \"file\" but no finish was found in the KiCad file "
+                         "(no stack-up, or its Copper finish is empty). Change Finish.FINISH_TYPE to one of "
+                         f"{', '.join(F.FINISH_TYPES)}, or set the finish in KiCad (Board Setup > Physical Stackup "
+                         "> Copper finish), or leave the finish out (the three finish lines of Stackup.py False). "
+                         "On the command line: --set Finish.FINISH_TYPE=ENIG, or --set Stackup.finish=False")
+    if name == "none":
+        return None                                      # the board says: no finish
+    for key in list(F.FINISH_TYPES) + list(F.FINISH_NAME_ALIASES):
+        if fold(key) == name:
+            return F.FINISH_NAME_ALIASES.get(key, key)
+    raise ValueError(f"FINISH ERROR: the KiCad file's finish {st.copper_finish!r} is not one KESE knows. Change "
+                     f"Finish.FINISH_TYPE to one of {', '.join(F.FINISH_TYPES)}, or add the name to "
+                     "Finish.FINISH_NAME_ALIASES, or correct the finish in KiCad")

@@ -134,11 +134,14 @@ USE_STACKUP_LOSS_TANGENT = True
 USE_STACKUP_SPEC_FREQUENCY = True       # (spec_frequency ...), KiCad's development version (format 20260511 on)
 
 # --- How er and tan d change with frequency ---
-#   "constant"          - the same at every frequency: what KESE writes today, and KiCad's default
 #   "djordjevic_sarkar" - the wideband model usual for glass-epoxy laminates, fitted to er and tan d
-#                         at the spec frequency; materials.json gets the fitted parameters
+#                         at the spec frequency; materials.json gets the fitted parameters beside
+#                         er and tan d.  It is causal, which one er and tan d for every frequency
+#                         are not, and it is the model HFSS puts on a material given by one er
+#                         and tan d when its option "automatically use causal materials" is on
+#   "constant"          - the same at every frequency: KiCad's default, and KESE's up to version 3.3
 #   "table"             - DIELECTRIC_TABLE, written as given
-DIELECTRIC_MODEL = "constant"
+DIELECTRIC_MODEL = "djordjevic_sarkar"
 USE_STACKUP_DIELECTRIC_MODEL = True     # (dielectric_model constant / djordjevic_sarkar), as above
 DS_LOW_FREQUENCY_HZ = 1e3               # Djordjevic-Sarkar: lower corner frequency
 DS_HIGH_FREQUENCY_HZ = 1e12             # Djordjevic-Sarkar: upper corner frequency

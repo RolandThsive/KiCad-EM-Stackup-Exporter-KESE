@@ -22,7 +22,7 @@ for stage in STAGES:
 | 5 | `s5_materials` | `PrismSet` | `PrismSet` | A material for every part ([Colorizing](Colorizing.md)) |
 | 6 | `s6_assemble` | `PrismSet` | `Model` | Closed solids (simulation mode) or the visible surface (visual mode), in the output units and orientation (7.2) |
 | 7 | `s7_write` | `Model` | `Files` | GLB, STEP, STL, OBJ and `materials.json` in a new run folder |
-| 8 | `s8_verify` | `Files` | `Files` | Only with `--verify`: every part closed and consistently wound, its volume the same four ways, no two parts overlapping ([Checks, Errors And Warnings](Checks-Errors-And-Warnings.md)) |
+| 8 | `s8_verify` | `Files` | `Files` | Unless `--no-verify` leaves it out: every part closed and consistently wound, its volume the same four ways, no two parts overlapping ([Checks, Errors And Warnings](Checks-Errors-And-Warnings.md)) |
 | 9 | `s9_report` | `Files` | `Files` | `report.txt` and `parameters.txt` |
 
 Nothing is rebuilt per output format: stage 7 writes every file from the one `Model`. The files are
@@ -161,7 +161,7 @@ mesh = mesh_of_boundary(boundary)                  # faces cut into triangles, t
 | Frame | Where | Units and axes | Origin |
 |---|---|---|---|
 | KiCad | the `.kicad_pcb` file | mm; X right, Y **down** | the page's top left corner |
-| Board | inside KESE, stages 3 to 6 | mm; X right, Y **up**; `F.Cu` toward +Z | the outline's centre (`Run.ORIGIN = "center"`) or KiCad's origin (`"kicad"`); z = 0 at the laminate's mid-plane |
+| Board | inside KESE, stages 3 to 6 | mm; X right, Y **up**; `F.Cu` toward +Z | KiCad's origin (`Run.ORIGIN = "kicad"`, the default) or the outline's centre (`"center"`); z = 0 at the laminate's mid-plane |
 | Output | the written files | mm or m (`Run.UNITS`); the board in the XY plane with `F.Cu` toward +Z (`Run.ORIENTATION = "upright"`) or in the XZ plane with `F.Cu` toward +Y (`"flat"`) | as the board frame |
 
 ```python
@@ -174,9 +174,10 @@ if R.ORIENTATION == "flat":      # board in XZ, F.Cu toward +Y
     rot = np.array([[1, 0, 0, 0], [0, 0, 1, 0], [0, -1, 0, 0], [0, 0, 0, 1]], dtype=float)
 ```
 
-`report.txt` names the origin used, for example
-`origin: outline centre (112.0000, 108.0000) in KiCad coordinates`, so a position in the model can
-be mapped back to the layout.
+`report.txt` names the origin used: `origin: KiCad page origin` with the default
+`Run.ORIGIN = "kicad"`, where the model's x is the layout's x and its y the layout's y negated, or,
+with `"center"`, for example `origin: outline centre (112.0000, 108.0000) in KiCad coordinates`, so a
+position in the model can be mapped back to the layout.
 
 ## 7.4 Work Done In Parallel
 

@@ -5,6 +5,7 @@ plated edge and in the castellations is finish_shells.py, the finish in the hole
 from kese.core import shapes2d as sh
 from kese.core.conformal import grow
 from kese.core.shapes2d import EMPTY
+from kese.s2_collect.stackup import finish_type
 from kese.s4_geometry.switches import built
 from parameters import P
 
@@ -15,33 +16,6 @@ def mitre():
     """How the finish follows the copper's corners (Finish.FINISH_MITRE_LIMIT): a shell's outer side
     (shells.py) and the copper the mask wraps."""
     return {"join_style": "mitre", "mitre_limit": P.Finish.FINISH_MITRE_LIMIT}
-
-
-def finish_type(st):
-    """The key of FINISH_TYPES the board gets, or None when its stack-up says "None".  Raises
-    ValueError for an unknown FINISH_TYPE, and with "file" for a board that names no finish or one
-    KESE does not know."""
-    F = P.Finish
-    if F.FINISH_TYPE != "file":
-        if F.FINISH_TYPE not in F.FINISH_TYPES:
-            raise ValueError(f"FINISH ERROR: Finish.FINISH_TYPE = {F.FINISH_TYPE!r} is not a finish KESE knows; "
-                             f"use \"file\" or one of {', '.join(F.FINISH_TYPES)}")
-        return F.FINISH_TYPE
-    fold = lambda s: s.lower().replace(" ", "").replace("-", "").replace("_", "")
-    name = fold(st.copper_finish or "")
-    if not name:
-        raise ValueError("FINISH ERROR: Finish.FINISH_TYPE = \"file\" but no finish was found in the KiCad file "
-                         "(no stack-up, or its Copper finish is empty). Change Finish.FINISH_TYPE to one of "
-                         f"{', '.join(F.FINISH_TYPES)}, or set the finish in KiCad (Board Setup > Physical Stackup "
-                         "> Copper finish), or leave the finish out (the three finish lines of Stackup.py False)")
-    if name == "none":
-        return None                                      # the board says: no finish
-    for key in list(F.FINISH_TYPES) + list(F.FINISH_NAME_ALIASES):
-        if fold(key) == name:
-            return F.FINISH_NAME_ALIASES.get(key, key)
-    raise ValueError(f"FINISH ERROR: the KiCad file's finish {st.copper_finish!r} is not one KESE knows. Change "
-                     f"Finish.FINISH_TYPE to one of {', '.join(F.FINISH_TYPES)}, or add the name to "
-                     "Finish.FINISH_NAME_ALIASES, or correct the finish in KiCad")
 
 
 def finish_layers(st):

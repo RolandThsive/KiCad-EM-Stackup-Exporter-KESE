@@ -33,7 +33,7 @@ the stage before it made and hands its own result to the next:
 | `s5_materials` | `PrismSet` | the same, with a material for every part |
 | `s6_assemble` | `PrismSet` | `Model`: meshes in output units and orientation |
 | `s7_write` | `Model` | `Files`: GLB, OBJ, STL, STEP, `materials.json` |
-| `s8_verify` | `Files` | the same, with the Verifier's result (opt-in) |
+| `s8_verify` | `Files` | the same, with the Verifier's result (unless left out) |
 | `s9_report` | `Files` | `report.txt` and `parameters.txt` |
 
 Below the stages, `kese/core/` holds the tools that know nothing about stages (parser, 2D shapes,
@@ -106,6 +106,7 @@ python tests/test_text_vars.py   # variables inside variables, as each KiCad ver
 python tests/test_kicad_version.py # the rules of each KiCad version and the file's tokens, against KiCad's own parser
 python tests/test_stackup_lines.py # each line of Stackup.py leaves out or builds its own parts and nothing else, in both stack-ups
 python tests/test_parameters.py  # every setting of before 25.2 still has a home; old files and old names refused or carried over
+python tests/test_defaults.py    # the parameter files' own values, for RF work: a board runs with them and is verified
 python tests/test_plies.py       # the plies of the board file: sub-layers, frequency and model, plies by hand, fused or built apart
 python tests/test_plies_built.py # the laminate ply by ply: a real four-layer build, the same volume as fused, materials.json
 python tests/test_material_models.py # Djordjevic-Sarkar as KiCad fits it, the table, copper roughness, copper by top, inner and bottom

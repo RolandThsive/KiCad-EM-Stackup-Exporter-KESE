@@ -7,32 +7,32 @@ the geometry: they are section 4, Material, of each element's parameter file.
 
 ## 21.1 The File
 
+Two of the parts of board `featureTest/29_stackup_plies`, from a run with the default settings: the
+first prepreg ply of the gap under `F.Cu`, and the copper of one net.
+
 ```json
 {
   "board": "29_stackup_plies",
   "mode": "simulation",
-  "units_of_files": "m",
+  "units_of_files": "mm",
   "orientation": "board in XY, F.Cu toward +Z, Y up",
   "parts": {
-    "Board_dielectric 1": {
+    "Board_dielectric 1 ply 1": {
       "role": "board",
       "layer": "dielectric 1",
       "net": null,
-      "z_range_mm": [0.46775, 0.68525],
+      "z_range_mm": [0.60525, 0.68525],
       "properties": {
-        "kind": "prepreg", "material": "1080", "thickness_mm": 0.2,
-        "epsilon_r": 3.9, "loss_tangent": 0.018, "fused_properties": "first",
-        "spec_frequency_hz": 1000000000.0, "dielectric_model": {"model": "constant"},
+        "kind": "prepreg", "material": "1080", "thickness_mm": 0.08,
+        "epsilon_r": 3.9, "loss_tangent": 0.018, "spec_frequency_hz": 1000000000.0,
+        "dielectric_model": {"model": "djordjevic_sarkar", "spec_frequency_hz": 1000000000.0,
+                             "low_frequency_hz": 1000.0, "high_frequency_hz": 1000000000000.0,
+                             "epsilon_inf": 3.591091, "delta_epsilon": 0.926728},
         "between": ["F.Cu", "In1.Cu"],
-        "plies": [
-          {"name": "dielectric 1 ply 1", "kind": "prepreg", "material": "1080", "thickness_mm": 0.08,
-           "epsilon_r": 3.9, "loss_tangent": 0.018, "spec_frequency_hz": 1000000000.0, "dielectric_model": {"model": "constant"}},
-          {"name": "dielectric 1 ply 2", "kind": "prepreg", "material": "2116", "thickness_mm": 0.12,
-           "epsilon_r": 4.2, "loss_tangent": 0.016, "spec_frequency_hz": 1000000000.0, "dielectric_model": {"model": "constant"}}
-        ]
+        "ply": 1, "plies_in_gap": 2
       },
       "look": {"color": "#A89C66", "alpha": 1.0},
-      "file_names": {"stl": "Board_dielectric_1.stl", "glb_node": "Board_dielectric 1", "step_solid": "Board_dielectric 1"}
+      "file_names": {"stl": "Board_dielectric_1_ply_1.stl", "glb_node": "Board_dielectric 1 ply 1", "step_solid": "Board_dielectric 1 ply 1"}
     },
     "Copper_IN1": {
       "role": "copper",
@@ -41,7 +41,9 @@ the geometry: they are section 4, Material, of each element's parameter file.
       "z_range_mm": [0.46775, 0.48525],
       "properties": {
         "thickness_mm": 0.0175, "conductivity_S_per_m": 58000000.0, "surface_roughness_um": 0.0,
-        "foil_mm": 0.0175, "plating_added_mm": 0.0, "material": "copper", "roughness": {"model": "none"},
+        "foil_mm": 0.0175, "plating_added_mm": 0.0, "material": "copper",
+        "roughness": {"model": "huray", "radius_treated_um": 0.5, "radius_other_um": 0.5,
+                      "surface_ratio_treated": 2.9, "surface_ratio_other": 2.9},
         "layers": [
           {"layer": "In1.Cu", "position": "inner", "thickness_mm": 0.0175, "foil_mm": 0.0175,
            "plating_added_mm": 0.0, "etch_factor": 0.0, "treated_face": "lower"}
@@ -99,7 +101,7 @@ solid only: the first gap's with the plies fused, the first ply's with the plies
 | spec frequency of a dielectric | 1 GHz | the frequency εr and tan δ are given at; `Board.DEFAULT_SPEC_FREQUENCY_HZ` |
 | εr and tan δ of the resin between the traces (plies separate) | 3.5, 0.02 | a best guess for FR-4 epoxy without its glass: published figures give εr 3.0 to 3.57 and tan δ 0.021 for the resin, 6.2 and 0.002 for E-glass; no resin maker's sheet has been read; `Board.RESIN_EPSILON_R`, `Board.RESIN_LOSS_TANGENT` |
 | copper conductivity | 5.8 × 10⁷ S/m | annealed copper at 20 °C; `Copper.COPPER_CONDUCTIVITY_S_PER_M` |
-| copper surface roughness | none (smooth) | a solver-side correction (Hammerstad, Huray), section 21.6; `Copper.COPPER_ROUGHNESS_MODEL` |
+| copper surface roughness | the Huray model with a nodule radius of 0.5 µm and a surface ratio of 2.9 on both faces | the values Ansys's tools start with, for no particular foil: a solver-side correction, section 21.6; `Copper.COPPER_ROUGHNESS_MODEL` and the `COPPER_HURAY_*` settings |
 | nickel, gold, palladium, tin, silver conductivity | 1.4 × 10⁷, 4.1 × 10⁷, 9.5 × 10⁶, 9.1 × 10⁶, 6.3 × 10⁷ S/m | bulk values; `Finish.FINISH_CONDUCTIVITY_S_PER_M` |
 | OSP conductivity | 0 | organic coating |
 | εr and tan δ of the via resin | 4.4, 0.02 | San-Ei Kagaku PHP-900 IR-6P hole plugging ink at 1 GHz, from its technical specifications; `Copper.VIA_RESIN_EPSILON_R`, `Copper.VIA_RESIN_LOSS_TANGENT` |
@@ -131,8 +133,8 @@ laminate part gets `spec_frequency_hz` and `dielectric_model`:
 
 | `Board.DIELECTRIC_MODEL` | Written as `dielectric_model` | Meaning |
 |---|---|---|
-| `"constant"` (the default) | `{"model": "constant"}` | εr and tan δ are the same at every frequency: KiCad's default, and what KESE wrote before 25.2 |
-| `"djordjevic_sarkar"` | `{"model": "djordjevic_sarkar", "spec_frequency_hz", "low_frequency_hz", "high_frequency_hz", "epsilon_inf", "delta_epsilon"}` | the wideband model usual for glass-epoxy laminates, fitted to εr and tan δ at the spec frequency |
+| `"djordjevic_sarkar"` (the default) | `{"model": "djordjevic_sarkar", "spec_frequency_hz", "low_frequency_hz", "high_frequency_hz", "epsilon_inf", "delta_epsilon"}` | the wideband model usual for glass-epoxy laminates, fitted to εr and tan δ at the spec frequency. It is causal, which one εr and tan δ for every frequency are not, and it is the model HFSS puts on a material given by one εr and tan δ when its option "automatically use causal materials" is on. `epsilon_r` and `loss_tangent` stay beside it, for a solver that takes constants |
+| `"constant"` | `{"model": "constant"}` | εr and tan δ are the same at every frequency: KiCad's default, and what KESE wrote up to version 3.3 |
 | `"table"` | `{"model": "table", "table": [[Hz, εr, tan δ], ...]}` | the rows of `Board.DIELECTRIC_TABLE`, written as given; an empty table is an error before the board is read (a ply the board file gives the table model is then written with constant values, with a warning) |
 
 The Djordjevic-Sarkar model (Djordjevic, Biljic, Likar-Smiljanic and Sarkar, IEEE Transactions on
@@ -183,7 +185,7 @@ With the plies fused, a gap pressed from plies of different glass styles is one 
 `Board.FUSED_PROPERTIES` says which values it has:
 
 - `"first"` (the default): the first ply's material, εr and tan δ, counted from the top, as KESE
-  has always done;
+  did when it knew no other build;
 - `"series"`: the plies in series, as a field that runs straight across the gap sees them (the
   field between a trace and the plane under it):
 
@@ -231,9 +233,13 @@ the models stand for, with the skin depth $`\delta`$:
 
 | `Copper.COPPER_ROUGHNESS_MODEL` | `roughness` |
 |---|---|
-| `"none"` (the default) | `{"model": "none"}` |
+| `"huray"` (the default) | `{"model": "huray", "radius_treated_um": 0.5, "radius_other_um": 0.5, "surface_ratio_treated": 2.9, "surface_ratio_other": 2.9}` |
 | `"hammerstad"` | `{"model": "hammerstad", "rms_treated_um": 1.2, "rms_other_um": 0.4}` |
-| `"huray"` | `{"model": "huray", "radius_treated_um": 0.5, "radius_other_um": 0.5, "surface_ratio_treated": 1.0, "surface_ratio_other": 1.0}` |
+| `"none"` | `{"model": "none"}`: smooth copper, what KESE wrote up to version 3.3 |
+
+The default Huray values, a nodule radius of 0.5 µm and a surface ratio of 2.9 on both faces, are
+the ones Ansys's tools start with (the layer defaults of PyEDB, its Python library for layouts).
+They describe no particular foil: for lab work, put in the values of the foil your fabricator uses.
 
 Foil makers quote Rz, the peak-to-valley height, which is larger than the RMS height: standard
 foil 3 to 6 µm, reverse-treated foil 1 to 1.5 µm, very-low-profile foils 0.3 to 1 µm. The

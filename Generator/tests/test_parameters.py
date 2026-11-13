@@ -168,7 +168,7 @@ def test_the_snapshot_names_every_file_and_setting():
     for module in P.modules():
         assert f"[{file_of(module)}]" in text
         assert all(f"\n{name} = " in text for name in P.names(module)), module
-    assert "\nFUSION_BUILD = 'PLIES_FUSED'\n" in text
+    assert f"\nFUSION_BUILD = {P.Stackup.FUSION_BUILD!r}\n" in text
 
 
 if __name__ == "__main__":

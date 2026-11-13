@@ -20,12 +20,21 @@ run goes:
   boards were timed before. A rerun of those 40 boards in simulation GLB and visual GLB, before and
   after the changes one right after the other, gave the same model files byte for byte and the same
   times: the sum of the medians went from 144.0 s to 143.5 s.
-- The command for board 11, simulation mode with GLB; the other five runs differ only in
+- Boards 15 and 19b name no finish in their file, so with the default settings
+  (`Finish.FINISH_TYPE = "file"`) they stop until a finish is named
+  (`--set Finish.FINISH_TYPE=ENIG`) or left out (`--set Stackup.finish=False`)
+  ([Finish](Finish.md#153-finish-types)).
+- The runs were made with the settings the regression suite starts from (`TEST_SETTINGS` in
+  `Generator/tests/helpers.py`), which were the defaults then: the plies fused, ENIG on every board
+  whose own settings name no other finish, and the files in metres with the board centred. The
+  command for board 11 as it is today, simulation mode with GLB; the other five runs differ only in
   `--format step`, `stl` or `obj`, or in `--mode visual` with `--format glb` or `obj`:
 
 ```text
 python run_KESE.py ../featureTest/11_zones.kicad_pcb --mode simulation --format glb --verify \
-    --set Stackup.solder_mask=True --set Stackup.silkscreen=True
+    --set Stackup.solder_mask=True --set Stackup.silkscreen=True \
+    --set Stackup.FUSION_BUILD=PLIES_FUSED --set Finish.FINISH_TYPE=ENIG \
+    --set Run.UNITS=m --set Run.ORIGIN=center
 ```
 
 **The runs used the default parameters otherwise, on one Linux machine with 4 cores (an Intel Xeon

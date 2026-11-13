@@ -148,16 +148,19 @@ COPPER_CONDUCTIVITY_S_PER_M = 5.8e7     # annealed copper at 20 C
 # face, pressed into the dielectric the foil was laminated on (the lower face of the top copper, the
 # upper face of the bottom copper, the face of an inner layer that lies on its core), and the other
 # face.
-#   "none"       - smooth (KESE today)
-#   "hammerstad" - one RMS height per face
 #   "huray"      - the "snowball" model: nodule radius and surface ratio per face
-COPPER_ROUGHNESS_MODEL = "none"
-COPPER_ROUGHNESS_RMS_TREATED_UM = 0.0   # "hammerstad": RMS height.  Foil makers quote Rz (peak to valley), which
-COPPER_ROUGHNESS_RMS_OTHER_UM = 0.0     #   is larger: standard foil 3 to 6 um, RTF 1 to 1.5, VLP and HVLP 0.3 to 1 (JLCPCB)
+#   "hammerstad" - one RMS height per face
+#   "none"       - smooth (KESE up to version 3.3): the conductor loss comes out too low above about 1 GHz
+# The Huray values below are the ones Ansys's tools start with on every face (the layer defaults of
+# PyEDB: nodule radius 0.5 um, Hall-Huray surface ratio 2.9).  They describe no particular foil:
+# replace them with your foil's values for lab work.
+COPPER_ROUGHNESS_MODEL = "huray"
 COPPER_HURAY_RADIUS_TREATED_UM = 0.5    # "huray": nodule radius
 COPPER_HURAY_RADIUS_OTHER_UM = 0.5
-COPPER_HURAY_SURFACE_RATIO_TREATED = 1.0  # "huray": nodule surface over flat surface
-COPPER_HURAY_SURFACE_RATIO_OTHER = 1.0
+COPPER_HURAY_SURFACE_RATIO_TREATED = 2.9  # "huray": nodule surface over flat surface (Hall-Huray surface ratio)
+COPPER_HURAY_SURFACE_RATIO_OTHER = 2.9
+COPPER_ROUGHNESS_RMS_TREATED_UM = 0.0   # "hammerstad": RMS height.  Foil makers quote Rz (peak to valley), which
+COPPER_ROUGHNESS_RMS_OTHER_UM = 0.0     #   is larger: standard foil 3 to 6 um, RTF 1 to 1.5, VLP and HVLP 0.3 to 1 (JLCPCB)
 
 # --- Via resin: plugged and resin-filled vias ---
 # San-Ei Kagaku PHP-900 IR-6P, a permanent hole plugging ink, from its technical specifications

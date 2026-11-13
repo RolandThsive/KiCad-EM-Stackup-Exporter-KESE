@@ -1,14 +1,14 @@
 # 20. Checks, Errors And Warnings
 
 KESE reports in three places: the terminal while it runs, `report.txt` next to every output,
-and the opt-in Verifier whose lines are appended to `report.txt`. Most items the model leaves
+and the Verifier, whose lines are appended to `report.txt`. Most items the model leaves
 out are counted under `skipped` with the reason. A few are left out without a count: text,
 text boxes and dimensions on non-physical layers (such as the Value fields on `F.Fab`, or a
 dimension on `Dwgs.User`), hidden text, pad paste layers, and images or groups inside footprints.
 
 ```bash
 cd Generator                                    # the program folder
-python run_KESE.py board.kicad_pcb --verify     # generate, then run the Verifier
+python run_KESE.py board.kicad_pcb              # generate, then run the Verifier (--no-verify leaves it out)
 python tests/test_boards.py                     # the regression suite over every board
 ```
 
@@ -50,7 +50,7 @@ python tests/test_boards.py                     # the regression suite over ever
 | `Verifier.VERIFY_VOLUME_TOLERANCE must be a number, 0 or more, not ...` (or `Verifier.VERIFY_OPENED_VOLUME_MM3`, `Verifier.VERIFY_GONE_AREA_MM2`, `Verifier.VERIFY_VOLUME_NOISE_MM3`, `Step.STEP_TANGENT_MM`, `Step.STEP_ARC_CHECK_FACTOR`, `Parallel.WORKER_STOP_WAIT_S`, `Copper.VIA_RESIN_LOSS_TANGENT`; `Finish.FINISH_MITRE_LIMIT` and `Copper.VIA_RESIN_EPSILON_R`, 1 or more) | A tolerance, a wait or a loss tangent is negative or not a number, the finish's mitre limit is below 1, where the finish would be thinner at a sharp corner than its thickness, or the via resin's εr is below that of vacuum. |
 | `Copper.VIA_PLUG_DEPTH_FRACTION must be a number more than 0 and at most 1, not ...` | A plug reaches into its hole by this share of the hole's length; past 1 it would stick out of the board. |
 | `Step.STEP_ARC_MAX_SWEEP_DEG must be a number more than 0, not ...` (or `Step.STEP_STRIP_MAX_TURN_DEG`, `Geometry.SMOOTH_FACET_AREA_DIVISOR`, `Board.COUNTERSINK_STEP_TOLERANCE_MM`) | The longest arc a STEP file may hold (arcs are cut in pieces no longer than this), the widest step of the strip kept clear around an arc, what a part's area is divided by, and how far a countersink's steps may stray from its cone (the steps' height is set by it): each is divided by, or cut into pieces of. |
-| `visual mode is a surface, not solids: FILE_FORMAT may only contain glb / obj` | STL and STEP need closed solids; use simulation mode. |
+| `visual mode is a surface, not solids: FILE_FORMAT may only contain glb / obj` | STL and STEP need closed solids; use simulation mode. `Run.FILE_FORMAT` is `["step"]` by default, so a visual run names its format: `--mode visual --format glb`, or `--for viewer`. |
 | `no Edge.Cuts outline and OUTLINE_FALLBACK is 'error'` | Draw a closed outline, or set `Board.OUTLINE_FALLBACK = "copper_hull"`. |
 | `missing Python package(s): ...` | Printed before anything runs, with the `pip install` line to use. |
 | `Python package(s) too old: shapely 2.0.7 (2.1 or newer)` | shapely 2.0 lacks the constrained Delaunay triangulation the faces are cut with; printed before anything runs, with the `pip install --upgrade` line to use. |
@@ -109,7 +109,7 @@ python tests/test_boards.py                     # the regression suite over ever
 | `step: <part>: N edges are not shared by two faces (the solid is open there)` | The STEP writer found the part open. It is still written, and a CAD tool will report free edges on it. |
 | `step: <part>: written without arcs (...)` | With `Step.STEP_EXACT_ARCS`, finding the part's arcs failed (a bug: please report it with the board). The part is written with flat faces only, as with the parameter off; the rest of the file keeps its arcs. |
 | `step: no part has a solid; STEP skipped` | None of the parts has a solid, so no `<board>.step` is written. |
-| `FINISH ERROR: Finish.FINISH_TYPE = "file" but no finish was found in the KiCad file ...` | `FINISH_TYPE = "file"` and the board has no stack-up or its Copper finish is empty; also `FINISH ERROR: the KiCad file's finish '...' is not one KESE knows` and `FINISH ERROR: Finish.FINISH_TYPE = '...' is not a finish KESE knows`. Change `Finish.FINISH_TYPE`, or set the finish in KiCad (Board Setup > Physical Stackup > Copper finish). |
+| `FINISH ERROR: Finish.FINISH_TYPE = "file" but no finish was found in the KiCad file ...` | `FINISH_TYPE = "file"`, the default, and the board has no stack-up or its Copper finish is empty; also `FINISH ERROR: the KiCad file's finish '...' is not one KESE knows` and `FINISH ERROR: Finish.FINISH_TYPE = '...' is not a finish KESE knows`. The run stops when the stack-up is read, before any work. Set the finish in KiCad (Board Setup > Physical Stackup > Copper finish), or name one (`--set Finish.FINISH_TYPE=ENIG`, or in `Finish.py`), or leave the finish out (`--set Stackup.finish=False`); a run that builds no finish line does not look at the type ([Finish](Finish.md#153-finish-types)). |
 
 ## 20.2 What `report.txt` Counts
 
@@ -146,7 +146,8 @@ can write it, is KiCad's stroke font, and its text counts as text.
 
 ## 20.3 The Verifier
 
-`kese/s8_verify/`, run with `--verify` or `Verifier.VERIFY = True`. It checks the meshes that
+`kese/s8_verify/`, run at the end of every run (`Verifier.VERIFY = True`, the default) unless
+`--no-verify` or `Verifier.VERIFY = False` leaves it out; `--verify` puts it back for one run. It checks the meshes that
 GLB, STL and OBJ are written from and, in simulation mode, the faces that the STEP file is
 written from, not the input. The STEP file itself is not read back at run time (the regression
 suite reads it back with OCP). In simulation mode each part's own checks (closed, wound, its
@@ -416,6 +417,15 @@ Djordjevic-Sarkar model with the given values at the spec frequency and fitted a
 formula says, the model entry of `materials.json`, the copper roughness models, and the copper's
 foil, plating, etch factor and treated face by top, inner and bottom, listed for every layer a
 part lies on (`python tests/test_material_models.py`);
+`tests/test_defaults.py`, which finds the parameter files giving the defaults for RF work (a STEP
+file in mm with KiCad's origin, the plies separate, the mask and the silkscreen left out, the finish
+from the board file, the Djordjevic-Sarkar and the Huray model, the Verifier on), a board running
+with them and passing the Verifier, a board that names no finish stopped before any work with the
+two ways on, a visual run told to name its format, and `--no-verify` leaving the Verifier out, in
+about a second (`python tests/test_defaults.py`; every other test file starts from the settings in
+`TEST_SETTINGS` of `tests/helpers.py`, the ones the tests and `tests/baseline.json` were written
+for: a GLB in metres with the board centred, the plies fused, ENIG, constant εr and tan δ, smooth
+copper and no Verifier);
 `tests/test_bad_input.py`, which gives settings outside their values or of another kind than their
 file gives them (`"false"` for `False`), misspelt `--set` items and a misspelt preset, every setting by its old name (`Run.WORKERS`, `Run.VERIFY`, ...) and a damaged board
 file and finds an error before any work, a note or a warning, not a Python error, and finds every

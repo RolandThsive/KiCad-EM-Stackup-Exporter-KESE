@@ -21,12 +21,12 @@ The layers a board is made of and the numbers that describe them.
 |---|---|---|
 | **Core** | A dielectric sheet that comes with copper already bonded to it; stiff, fixed thickness. | [8.1.4](Stack-Up-Model.md#814-dielectrics) |
 | **Dielectric** | A non-conducting layer of the laminate: a core or a prepreg, with εr and tanδ. With the plies fused KESE makes one solid for each gap between two copper layers; with the plies separate, one for each ply. | [12.1](Board.md#121-dielectric-solids), [21.2](Material-Properties.md#212-properties-per-role) |
-| **Djordjevic-Sarkar model** | A wideband model of how a laminate's εr and tanδ change with frequency, fitted to one εr and tanδ at one frequency. `materials.json` carries its parameters with `Board.DIELECTRIC_MODEL = "djordjevic_sarkar"`, or when the board file names the model. | [21.4](Material-Properties.md#214-how-εr-and-tan-δ-change-with-frequency) |
+| **Djordjevic-Sarkar model** | A wideband model of how a laminate's εr and tanδ change with frequency, fitted to one εr and tanδ at one frequency. `materials.json` carries its parameters with `Board.DIELECTRIC_MODEL = "djordjevic_sarkar"` (the default), or when the board file names the model. | [21.4](Material-Properties.md#214-how-εr-and-tan-δ-change-with-frequency) |
 | **Foil** | The base copper thickness of a layer, before plating (1 oz = 35 µm). | [13.4](Copper-And-Traces.md#134-copper-thickness-and-plating) |
 | **Laminate** | The stack of dielectrics and inner copper between the two outer copper layers. | [8.1.1](Stack-Up-Model.md#811-laminate-and-faces) |
 | **Mid-plane** | The height half-way through the laminate; z = 0 in KESE. | [8.1.1](Stack-Up-Model.md#811-laminate-and-faces) |
-| **Plies fused** | The default build of the laminate (`Stackup.FUSION_BUILD = "PLIES_FUSED"`): each gap between two copper layers is one solid, its plies and the resin beside the inner copper a part of it. | [12.1.1](Board.md#1211-plies-fused) |
-| **Plies separate** | The other build (`"PLIES_SEPARATE"`): every prepreg ply, every core and the resin beside each inner copper layer is a solid of its own, with its own material. | [12.1.2](Board.md#1212-plies-separate) |
+| **Plies fused** | The build of the laminate KESE had up to version 3.3 (`Stackup.FUSION_BUILD = "PLIES_FUSED"`): each gap between two copper layers is one solid, its plies and the resin beside the inner copper a part of it. | [12.1.1](Board.md#1211-plies-fused) |
+| **Plies separate** | The default build of the laminate (`Stackup.FUSION_BUILD = "PLIES_SEPARATE"`): every prepreg ply, every core and the resin beside each inner copper layer is a solid of its own, with its own material. | [12.1.2](Board.md#1212-plies-separate) |
 | **Ply** | One sheet of prepreg, or one core, in the gap between two copper layers. A gap pressed from two or three sheets has two or three plies; KiCad stores them as the sub-layers of a dielectric. | [8.3](Stack-Up-Model.md#83-the-plies-of-a-gap-fused-or-separate) |
 | **Prepreg** | A resin-impregnated glass sheet that bonds cores together under heat; its resin flows into the gaps between inner traces, which KESE models as resin fill. | [12.2](Board.md#122-resin-between-the-traces-of-the-inner-copper) |
 | **Resin fill** | The prepreg's resin between the traces of an inner copper layer. With the plies fused it is a part of the dielectric solid beside it; with the plies separate it is a solid of its own, `Board_resin <layer>`, with the resin's own εr and tanδ. | [12.2](Board.md#122-resin-between-the-traces-of-the-inner-copper) |
@@ -77,7 +77,7 @@ How traces, zones and plating become copper solids.
 | **Huray model** | A roughness model for copper loss that counts the copper nodules on a face as small spheres: their radius and how much surface they add (`Copper.COPPER_ROUGHNESS_MODEL = "huray"`). | [21.6](Material-Properties.md#216-copper-by-layer) |
 | **Net** | A set of electrically connected copper items; with the default `Copper.COPPER_GROUPING = "net"`, KESE makes one solid per net. | [13.1.1](Copper-And-Traces.md#1311-nets) |
 | **Outer plating** | The copper electroplating adds to the outer layers while it plates the holes (`Copper.TOP_PLATING_ADDED_MM` and `Copper.BOTTOM_PLATING_ADDED_MM`, typically 20 µm on real boards, 0 by default so the geometry matches KiCad). | [13.4](Copper-And-Traces.md#134-copper-thickness-and-plating) |
-| **Surface roughness** | The roughness of the copper's faces, which raises its loss at high frequency; written to `materials.json` for the solver with the model to use, Hammerstad or Huray (`Copper.COPPER_ROUGHNESS_MODEL`, `"none"` by default). | [13.8](Copper-And-Traces.md#138-electrical-properties) |
+| **Surface roughness** | The roughness of the copper's faces, which raises its loss at high frequency; written to `materials.json` for the solver with the model to use, Huray (the default) or Hammerstad (`Copper.COPPER_ROUGHNESS_MODEL`). | [13.8](Copper-And-Traces.md#138-electrical-properties) |
 | **Treated face** | The face of a copper foil that is roughened so the laminate grips it: the wider face of an etched trace, toward the dielectric the foil was bonded to. `materials.json` names it for every layer, `lower` or `upper`, with a roughness of its own. | [21.6](Material-Properties.md#216-copper-by-layer) |
 
 ## 24.4 Solder Mask, Silkscreen And Finish
@@ -109,7 +109,7 @@ The words the Working Principle and the checks use.
 | **Slice** | The material of one part between two neighbouring heights where its prisms start or end; stage 6 builds a part's surface from its slices. | [7.2](Working-Principle.md#72-how-a-part-becomes-a-closed-solid) |
 | **Snap grid** | The 0.1 µm grid every 2D shape is rounded to, so neighbouring layers share exact vertices (`Geometry.SNAP_GRID_MM`). | [19.8](Parameter-Reference.md#198-geometry-parametersrun_kesegeometrypy) |
 | **Stage** | One of the nine steps of KESE's pipeline, from reading the file (1) to writing the report (9); each is a folder in `kese/`. | [7](Working-Principle.md) |
-| **Verifier** | KESE's opt-in check (`--verify`) that every solid is closed and holds the volume of its prisms, no parts overlap, and the skin is one surface. | [20.3](Checks-Errors-And-Warnings.md#203-the-verifier) |
+| **Verifier** | KESE's check at the end of a run (`Verifier.VERIFY`, on by default; `--no-verify` leaves it out) that every solid is closed and holds the volume of its prisms, no parts overlap, and the skin is one surface. | [20.3](Checks-Errors-And-Warnings.md#203-the-verifier) |
 
 ## 24.6 Output And Files
 

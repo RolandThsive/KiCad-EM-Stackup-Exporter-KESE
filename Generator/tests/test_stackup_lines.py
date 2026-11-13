@@ -171,8 +171,7 @@ def test_a_board_with_no_part_of_the_lines_built_is_written_empty(tmp_path):
             assert "no surface to check (nothing was built)" in report
 
 
-def test_plies_fused_is_what_is_built_unless_asked():
-    assert P.Stackup.FUSION_BUILD == "PLIES_FUSED"
+def test_each_stackup_has_its_lines_in_the_files_order():
     assert {name: tuple(getattr(P.Stackup, name)) for name in STACKUPS} == LINES     # the lines, in the file's order
 
 

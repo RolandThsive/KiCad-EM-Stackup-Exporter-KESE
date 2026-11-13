@@ -121,7 +121,7 @@ Across a wall the shells are 2D shapes, so each metal is drawn a whole number of
 across a wall (its height on the face stays 0.08 µm). `report.txt` says so, for example
 `finish: also on the plated edge (Gold 8e-05 mm drawn 0.0001 mm thick across the edge, the snapping
 grid)`, and `materials.json` gives each shell part both `thickness_mm` and `drawn_thickness_mm`.
-The finish is on by default, so every board of `featureTest/` runs with it in the regression suite.
+The finish is on by default, and every board of `featureTest/` runs with it in the regression suite (with ENIG, or its own finish where it names another).
 
 The air the shells fill, $`(E \oplus o_J) \setminus B`$ for the outermost metal $`J`$, is cut on the
 grid once, and then split between the metals along their outer sides $`E \oplus o_j`$, each put on
@@ -163,14 +163,23 @@ the walls. `report.txt` notes it on the `finish:` and `solder mask:` lines. Boar
 
 ## 15.3 Finish Types
 
-`Finish.FINISH_TYPE` is a key of the table below, `"ENIG"` by default, or `"file"` to take the type
-from the stack-up's `(copper_finish "...")`. With `"file"` the name is compared, ignoring case,
-spaces, `-` and `_`, with the keys of `FINISH_TYPES` and with the KiCad names in
-`Finish.FINISH_NAME_ALIASES`. `None` means the board has no finish: nothing is built and
-`report.txt` notes `finish: the board's stackup says None, nothing applied`. A board that names no
-finish (no stack-up, or the field left empty), or a name that matches nothing, stops the run with
-an error (`FINISH ERROR: ... no finish was found in the KiCad file ...`): change `FINISH_TYPE` or
-set the finish in KiCad (Board Setup > Physical Stackup > Copper finish).
+`Finish.FINISH_TYPE` is `"file"` by default: the type is the one the stack-up's
+`(copper_finish "...")` names. A key of the table below gives every board that finish instead. With
+`"file"` the name is compared, ignoring case, spaces, `-` and `_`, with the keys of `FINISH_TYPES`
+and with the KiCad names in `Finish.FINISH_NAME_ALIASES`. `None` means the board has no finish:
+nothing is built and `report.txt` notes `finish: the board's stackup says None, nothing applied`.
+A board that names no finish (no stack-up, or the field left empty), or a name that matches
+nothing, stops the run with an error, when the stack-up is read and before any work
+(`FINISH ERROR: ... no finish was found in the KiCad file ...`). There are three ways on:
+
+```bash
+# set the finish in KiCad (Board Setup > Physical Stackup > Copper finish) and save, or
+python run_KESE.py board.kicad_pcb --set Finish.FINISH_TYPE=ENIG           # name the finish for this run
+python run_KESE.py board.kicad_pcb --set Stackup.finish=False              # or leave the finish out
+```
+
+A finish named in `Finish.py` or left out in `Stackup.py` holds for every run. A run that builds
+no finish line does not look at the type, so a board that names none runs.
 
 With KiCad's own finish names (the list in Board Setup's stack-up) this gives:
 
@@ -353,7 +362,7 @@ All in `parameters/PCB_elements/Finish.py`, by the file's sections. The three fi
 | Name | Default | Range | Meaning |
 |---|---|---|---|
 | **1. Parts** | | | |
-| `FINISH_TYPE` | `"ENIG"` | `"file"` or a key of `FINISH_TYPES` | The type, or `"file"` for the stack-up's (an error when the file names none) |
+| `FINISH_TYPE` | `"file"` | `"file"` or a key of `FINISH_TYPES` | `"file"` for the stack-up's type (an error when the file names none), or a key for that type on every board |
 | `FINISH_NAME_ALIASES` | `HAL SnPb` → `HASL`, `HAL lead-free` → `HASL_LF`, `Hard gold` → `HardGold`, `Immersion tin` → `ImmersionTin`, `Immersion silver` → `ImmersionSilver`, `HT_OSP` → `OSP` | `{KiCad name: key}` | KiCad's finish names that differ from a key |
 | `FINISH_GROUPING` | `"metal"` | `"metal"` / `"net"` | Part per metal, or per metal and net |
 | **2. Thickness** | | | |

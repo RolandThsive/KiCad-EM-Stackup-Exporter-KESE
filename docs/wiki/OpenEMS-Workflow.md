@@ -14,7 +14,7 @@ were measured at, how they change with frequency, and the copper's conductivity.
 
 ```bash
 cd Generator
-python run_KESE.py Input/board.kicad_pcb --for openems --verify
+python run_KESE.py Input/board.kicad_pcb --for openems
 ```
 
 gives `Output/board/simulation_STL/`:
@@ -46,10 +46,10 @@ Consider before exporting:
   ink's a best guess of 5.0 and 0.03 ([Silkscreens](Silkscreens.md#164-material-for-the-solver)).
 - The finish is off in the preset (`Stackup.finish = False`): 80 nm gold cannot be resolved by an
   FDTD mesh.
-- `--set Stackup.FUSION_BUILD=PLIES_SEPARATE` if the plies of a gap differ and the solver should
-  see each one: every ply, every core and the resin beside each inner copper layer is then its
-  own STL with its own εr and tan δ ([Board](Board.md#121-dielectric-solids)). With the plies
-  fused, the default, each gap is one STL.
+- The plies are separate, as by default: every ply, every core and the resin beside each inner
+  copper layer is its own STL with its own εr and tan δ ([Board](Board.md#121-dielectric-solids)).
+  `--set Stackup.FUSION_BUILD=PLIES_FUSED` if one STL for each gap between two copper layers is
+  enough, or if a ply is too thin for the mesh.
 
 ## 23.2 Building The CSXCAD Model
 
@@ -180,8 +180,9 @@ In Octave the STL is read only when openEMS runs, from inside the simulation fol
   `materials.json` (a part whose mesh came out empty has an entry but no file).
 - View the structure with AppCSXCAD before running: every net should be a separate colour, and
   the vias should pass through the dielectrics.
-- Run `--verify` on the export first: an STL that is not closed (`closed=False` in the Verifier)
-  will not voxelize correctly.
+- Read the Verifier's lines in `report.txt` first (it runs at the end of every export unless
+  `--no-verify` leaves it out): an STL that is not closed (`closed=False` in the Verifier) will not
+  voxelize correctly.
 
 | Previous | Next |
 |:---|---:|

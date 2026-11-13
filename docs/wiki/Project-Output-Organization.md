@@ -32,7 +32,7 @@ KiCad-EM-Stackup-Exporter-KESE/
 │   │   ├── s5_materials/        a material (the look) per part
 │   │   ├── s6_assemble/         meshes: closed solids or the visible skin, in output units
 │   │   ├── s7_write/            glb, obj, stl, step, materials.json, and the run folder
-│   │   ├── s8_verify/           the opt-in Verifier
+│   │   ├── s8_verify/           the Verifier
 │   │   ├── s9_report/           report.txt and parameters.txt
 │   │   └── assets/fonts/        kicad_newstroke.json.gz and its notice; custom fonts go here
 │   ├── Input/                   boards to export (three examples included)
@@ -69,10 +69,11 @@ Every run writes to:
 - `<mode>` is `simulation` or `visual`.
 - `<FORMATS>` are the requested formats, in upper case, joined by `_`, in the order given by
   `--format` or `Run.FILE_FORMAT` (not sorted; a format given twice appears twice):
-  `--format glb stl obj` gives `simulation_GLB_STL_OBJ`, `--format step stl` gives `simulation_STEP_STL`.
+  the default gives `simulation_STEP`, `--format glb stl obj` gives `simulation_GLB_STL_OBJ`, `--format step stl`
+  gives `simulation_STEP_STL`.
 
 **No run overwrites another.** When the folder already exists, the new one gets a suffix:
-`simulation_GLB__1`, `simulation_GLB__2`, ... Runs started together (a batch of boards in
+`simulation_STEP__1`, `simulation_STEP__2`, ... Runs started together (a batch of boards in
 parallel, into the same output root) each get a folder of their own: a name is taken by making the
 folder, so the second run moves on to the next name. The terminal line at the end of every board
 names the folder that was written.
@@ -86,7 +87,7 @@ names the folder that was written.
 | `stl/<name>.stl` | `stl` requested | one binary STL per part, in a `stl/` sub-folder; the name is the part name with every run of characters other than letters (of any script), digits and `_ . + -` replaced by `_`, and leading or trailing `_` and `.` removed (`Top_Solder_Mask.stl`, `Board_dielectric_1.stl`, `Copper__RESET.stl` for net `~{RESET}`); a name Windows reserves, such as `CON`, gets a `_` after it |
 | `<board>.step` | `step` requested (simulation mode) | STEP AP214 assembly named after the board, one named shape per part, with colours: the part's closed solids, one per separate body, in `Run.UNITS`. The parts are the ones whose lines of the stack-up are `True` (`parameters/PCB_elements/Stackup.py`), as in every other file. It is written straight into the file one part at a time |
 | `materials.json` | `Run.WRITE_MATERIALS_JSON` | per part: role, layer, net, z range, properties, look, file names ([Material Properties](Material-Properties.md)) |
-| `parameters.txt` | always | every parameter of every `parameters/` file as it stood for the run; when `--for`, `--set`, `--mode`, `--format` or `--verify` was used, the first line lists those overrides (`--out` is not recorded) |
+| `parameters.txt` | always | every parameter of every `parameters/` file as it stood for the run; when `--for`, `--set`, `--mode`, `--format`, `--verify` or `--no-verify` was used, the first line lists those overrides (`--out` is not recorded) |
 | `report.txt` | always | see below |
 
 A file is written whole or not at all: when writing fails on the way (a full disk, or a part that
@@ -103,8 +104,10 @@ the file is done or the write fails
 ### 11.2.2 `report.txt`
 
 `Input/rf_module.kicad_pcb` in simulation mode with the solder mask and silkscreen turned on
-(`--set Stackup.solder_mask=True --set Stackup.silkscreen=True`) and
-`Geometry.CIRCLE_CHORD_TOLERANCE_MM = 0.002`, the default until 0.005, `...` where lines are left out:
+(`--set Stackup.solder_mask=True --set Stackup.silkscreen=True`), the plies fused, three mesh formats
+in metres with the board centred, and `Geometry.CIRCLE_CHORD_TOLERANCE_MM = 0.002`, the default until
+0.005, `...` where lines are left out. With the plies separate, the default, the `stack-up` block
+lists every ply and every resin fill on a line of its own ([Board](Board.md#1212-plies-separate)):
 
 ```text
 rf_module  (rf_module.kicad_pcb)   generated 2026-11-06 09:17
@@ -206,7 +209,7 @@ Verifier: PASS
 | `notes` | the font, the mask thickness and its source, finish, resin fill, castellation and edge plating notes, warnings raised while building (in the parts' order, however many worker processes ran), and the notes when worker processes failed and fewer processes, or the main process, did the parts left |
 | `parts` | every part with its triangle count, material key, colour and alpha |
 | `timing` | seconds per stage, to 0.1 ms (verify only when the Verifier ran) |
-| Verifier | only with `--verify` or `Verifier.VERIFY = True`; see [Checks, Errors And Warnings](Checks-Errors-And-Warnings.md) |
+| Verifier | unless `--no-verify` or `Verifier.VERIFY = False` leaves it out; see [Checks, Errors And Warnings](Checks-Errors-And-Warnings.md) |
 
 ## 11.3 Part Names
 
@@ -246,7 +249,7 @@ test run and ignored by git. `tests/test_layout.py`, `tests/test_colors.py`,
 `tests/test_tall_walls.py`, `tests/test_via_protection.py` and `tests/test_threads.py` write nothing, and
 `tests/test_step_native.py`, `tests/test_step_arcs.py`, `tests/test_text_layout.py`, `tests/test_font.py`,
 `tests/test_text_vars.py`, `tests/test_bad_input.py`, `tests/test_same_result.py`, `tests/test_workers.py`,
-`tests/test_plies_built.py` and `tests/test_full_disk.py` write only in a temporary folder that they remove.
+`tests/test_plies_built.py`, `tests/test_defaults.py` and `tests/test_full_disk.py` write only in a temporary folder that they remove.
 
 | Previous | Next |
 |:---|---:|

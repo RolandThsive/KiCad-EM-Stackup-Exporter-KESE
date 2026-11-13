@@ -1,9 +1,9 @@
-rf_module  (rf_module.kicad_pcb)   generated 2026-11-13 08:09
-mode: simulation   formats: step   units: m
+rf_module  (rf_module.kicad_pcb)   generated 2026-11-13 13:42
+mode: simulation   formats: step   units: mm
 KiCad format 20221018 (KiCad 7), generator pcbnew
 
-stack-up   built: PLIES_FUSED (parameters/PCB_elements/Stackup.py)
-  lines built: top_copper, board, resin_between_traces, inner_copper, bottom_copper, plated_holes, via_resin
+stack-up   built: PLIES_SEPARATE (parameters/PCB_elements/Stackup.py)
+  lines built: top_copper, prepreg_plies, resin_between_traces, inner_copper, cores, bottom_copper, plated_holes, via_resin
   lines left out: top_silkscreen, top_solder_mask, top_finish, bottom_finish, bottom_solder_mask, bottom_silkscreen, hole_finish
   copper layers: F.Cu, In1.Cu, In2.Cu, B.Cu
   laminate 1.5300 mm (stackup dielectrics (+ inner copper); board total in file 1.6 mm)
@@ -11,11 +11,13 @@ stack-up   built: PLIES_FUSED (parameters/PCB_elements/Stackup.py)
   In1.Cu   z +0.5475 .. +0.5650 mm  (foil 0.0175 mm)
   In2.Cu   z -0.5650 .. -0.5475 mm  (foil 0.0175 mm)
   B.Cu     z -0.8000 .. -0.7650 mm  (foil 0.035 mm)
-  dielectric 1             prepreg  FR4        0.2000 mm  er 4.5  tan d 0.02   z +0.5650 .. +0.7650
-  dielectric 2             core     FR4        1.0950 mm  er 4.5  tan d 0.02   z -0.5475 .. +0.5475
-  dielectric 3             prepreg  FR4        0.2000 mm  er 4.5  tan d 0.02   z -0.7650 .. -0.5650
+  dielectric 1             prepreg  FR4        0.2000 mm  er 4.5  tan d 0.02   z +0.5650 .. +0.7650   (djordjevic_sarkar, values given at 1 GHz)
+  resin In1.Cu             resin    resin      0.0175 mm  er 3.5  tan d 0.02   z +0.5475 .. +0.5650   (flowed from dielectric 1)
+  dielectric 2             core     FR4        1.0950 mm  er 4.5  tan d 0.02   z -0.5475 .. +0.5475   (djordjevic_sarkar, values given at 1 GHz)
+  resin In2.Cu             resin    resin      0.0175 mm  er 3.5  tan d 0.02   z -0.5650 .. -0.5475   (flowed from dielectric 3)
+  dielectric 3             prepreg  FR4        0.2000 mm  er 4.5  tan d 0.02   z -0.7650 .. -0.5650   (djordjevic_sarkar, values given at 1 GHz)
   vias: plot setting viasonmask; pad-to-mask clearance 0.05 mm; silkscreen over copper (mask openings): False
-  origin: outline centre (132.0000, 122.0000) in KiCad coordinates
+  origin: KiCad page origin
 
 read
        9  arc tracks on B.Cu
@@ -56,12 +58,14 @@ skipped
 notes
   font: KiCad newstroke (kicad_newstroke.json.gz)
   solder mask: 0.01 mm over laminate, 0.01 mm over copper (stackup)
-  left out of every file: top_silkscreen, top_solder_mask, top_finish, bottom_finish, bottom_solder_mask, bottom_silkscreen, hole_finish (False in PLIES_FUSED, parameters/PCB_elements/Stackup.py)
+  left out of every file: top_silkscreen, top_solder_mask, top_finish, bottom_finish, bottom_solder_mask, bottom_silkscreen, hole_finish (False in PLIES_SEPARATE, parameters/PCB_elements/Stackup.py)
 
 parts
-  Board_dielectric 1                      53000 triangles  material Board_prepreg #A89C66 alpha 1.0
+  Board_dielectric 1                      43396 triangles  material Board_prepreg #A89C66 alpha 1.0
   Board_dielectric 2                      43396 triangles  material Board_core #968A58 alpha 1.0
-  Board_dielectric 3                      87348 triangles  material Board_prepreg #A89C66 alpha 1.0
+  Board_dielectric 3                      43396 triangles  material Board_prepreg #A89C66 alpha 1.0
+  Board_resin In1.Cu                       9564 triangles  material Board_resin #B8AC78 alpha 1.0
+  Board_resin In2.Cu                      44240 triangles  material Board_resin #B8AC78 alpha 1.0
   Copper_+3V3                             40344 triangles  material Copper #CD803E alpha 1.0
   Copper_+5V                              10024 triangles  material Copper #CD803E alpha 1.0
   Copper_CS                                 268 triangles  material Copper #CD803E alpha 1.0
@@ -69,7 +73,7 @@ parts
   Copper_FMISO                              364 triangles  material Copper #CD803E alpha 1.0
   Copper_FMOSI                              316 triangles  material Copper #CD803E alpha 1.0
   Copper_FSCK                               316 triangles  material Copper #CD803E alpha 1.0
-  Copper_GND                             330524 triangles  material Copper #CD803E alpha 1.0
+  Copper_GND                             330620 triangles  material Copper #CD803E alpha 1.0
   Copper_INT2                               284 triangles  material Copper #CD803E alpha 1.0
   Copper_IRQ                                268 triangles  material Copper #CD803E alpha 1.0
   Copper_LED1                               316 triangles  material Copper #CD803E alpha 1.0
@@ -99,10 +103,94 @@ parts
   Copper_no_net                            2660 triangles  material Copper #CD803E alpha 1.0
 
 timing
-  read              0.0709 s
-  collect           0.1883 s
-  resolve           1.4688 s
-  geometry          1.2124 s
+  read              0.0663 s
+  collect           0.1762 s
+  resolve           1.5157 s
+  geometry          1.1769 s
   materials         0.0005 s
-  assemble          4.9363 s
-  write             2.3586 s
+  assemble          5.5398 s
+  write             1.7329 s
+  verify            0.2925 s
+
+Verifier: PASS
+  Board_dielectric 1                   closed=True winding=True volume=536.9337 mm3
+  Board_dielectric 2                   closed=True winding=True volume=2939.7118 mm3
+  Board_dielectric 3                   closed=True winding=True volume=536.9337 mm3
+  Board_resin In1.Cu                   closed=True winding=True volume=1.0703 mm3
+  Board_resin In2.Cu                   closed=True winding=True volume=8.1293 mm3
+  Copper_+3V3                          closed=True winding=True volume=30.0641 mm3
+  Copper_+5V                           closed=True winding=True volume=5.4073 mm3
+  Copper_CS                            closed=True winding=True volume=0.1159 mm3
+  Copper_FCS                           closed=True winding=True volume=0.1509 mm3
+  Copper_FMISO                         closed=True winding=True volume=0.1717 mm3
+  Copper_FMOSI                         closed=True winding=True volume=0.1147 mm3
+  Copper_FSCK                          closed=True winding=True volume=0.1094 mm3
+  Copper_GND                           closed=True winding=True volume=233.5886 mm3
+  Copper_INT2                          closed=True winding=True volume=0.1418 mm3
+  Copper_IRQ                           closed=True winding=True volume=0.1173 mm3
+  Copper_LED1                          closed=True winding=True volume=0.0985 mm3
+  Copper_LED2                          closed=True winding=True volume=0.1055 mm3
+  Copper_LED3                          closed=True winding=True volume=0.1160 mm3
+  Copper_LEDA1                         closed=True winding=True volume=0.0487 mm3
+  Copper_LEDA2                         closed=True winding=True volume=0.0487 mm3
+  Copper_LEDA3                         closed=True winding=True volume=0.0487 mm3
+  Copper_MISO                          closed=True winding=True volume=0.1159 mm3
+  Copper_MOSI                          closed=True winding=True volume=0.1159 mm3
+  Copper_NRST                          closed=True winding=True volume=0.3038 mm3
+  Copper_PWRLED                        closed=True winding=True volume=0.0438 mm3
+  Copper_RF                            closed=True winding=True volume=0.1196 mm3
+  Copper_RF2                           closed=True winding=True volume=0.2520 mm3
+  Copper_RX                            closed=True winding=True volume=0.5169 mm3
+  Copper_SCK                           closed=True winding=True volume=0.1159 mm3
+  Copper_SCL                           closed=True winding=True volume=0.5436 mm3
+  Copper_SCL2                          closed=True winding=True volume=0.5173 mm3
+  Copper_SDA                           closed=True winding=True volume=0.5720 mm3
+  Copper_SDA2                          closed=True winding=True volume=0.4844 mm3
+  Copper_SWCLK                         closed=True winding=True volume=0.0545 mm3
+  Copper_SWDIO                         closed=True winding=True volume=0.0453 mm3
+  Copper_TX                            closed=True winding=True volume=0.5286 mm3
+  Copper_VBAT                          closed=True winding=True volume=0.2821 mm3
+  Copper_XIN                           closed=True winding=True volume=0.1477 mm3
+  Copper_XOUT                          closed=True winding=True volume=0.1367 mm3
+  Copper_no_net                        closed=True winding=True volume=0.2705 mm3
+  overlap between different parts, every slice against the others: none
+  Board_dielectric 1                   volume from faces 536.933658 mesh 536.933658 slices 536.933658 prisms 536.933658 mm3 closed=True whole=True
+  Board_dielectric 2                   volume from faces 2939.711778 mesh 2939.711778 slices 2939.711778 prisms 2939.711778 mm3 closed=True whole=True
+  Board_dielectric 3                   volume from faces 536.933658 mesh 536.933658 slices 536.933658 prisms 536.933658 mm3 closed=True whole=True
+  Board_resin In1.Cu                   volume from faces 1.070269 mesh 1.070269 slices 1.070269 prisms 1.070269 mm3 closed=True whole=True
+  Board_resin In2.Cu                   volume from faces 8.129254 mesh 8.129254 slices 8.129254 prisms 8.129254 mm3 closed=True whole=True
+  Copper_+3V3                          volume from faces 30.064070 mesh 30.064070 slices 30.064070 prisms 30.064070 mm3 closed=True whole=True
+  Copper_+5V                           volume from faces 5.407253 mesh 5.407253 slices 5.407253 prisms 5.407253 mm3 closed=True whole=True
+  Copper_CS                            volume from faces 0.115851 mesh 0.115851 slices 0.115851 prisms 0.115851 mm3 closed=True whole=True
+  Copper_FCS                           volume from faces 0.150911 mesh 0.150911 slices 0.150911 prisms 0.150911 mm3 closed=True whole=True
+  Copper_FMISO                         volume from faces 0.171701 mesh 0.171701 slices 0.171701 prisms 0.171701 mm3 closed=True whole=True
+  Copper_FMOSI                         volume from faces 0.114745 mesh 0.114745 slices 0.114745 prisms 0.114745 mm3 closed=True whole=True
+  Copper_FSCK                          volume from faces 0.109355 mesh 0.109355 slices 0.109355 prisms 0.109355 mm3 closed=True whole=True
+  Copper_GND                           volume from faces 233.588560 mesh 233.588560 slices 233.588560 prisms 233.588289 mm3 closed=True whole=True
+  Copper_INT2                          volume from faces 0.141849 mesh 0.141849 slices 0.141849 prisms 0.141849 mm3 closed=True whole=True
+  Copper_IRQ                           volume from faces 0.117300 mesh 0.117300 slices 0.117300 prisms 0.117300 mm3 closed=True whole=True
+  Copper_LED1                          volume from faces 0.098458 mesh 0.098458 slices 0.098458 prisms 0.098458 mm3 closed=True whole=True
+  Copper_LED2                          volume from faces 0.105458 mesh 0.105458 slices 0.105458 prisms 0.105458 mm3 closed=True whole=True
+  Copper_LED3                          volume from faces 0.115958 mesh 0.115958 slices 0.115958 prisms 0.115958 mm3 closed=True whole=True
+  Copper_LEDA1                         volume from faces 0.048700 mesh 0.048700 slices 0.048700 prisms 0.048700 mm3 closed=True whole=True
+  Copper_LEDA2                         volume from faces 0.048700 mesh 0.048700 slices 0.048700 prisms 0.048700 mm3 closed=True whole=True
+  Copper_LEDA3                         volume from faces 0.048700 mesh 0.048700 slices 0.048700 prisms 0.048700 mm3 closed=True whole=True
+  Copper_MISO                          volume from faces 0.115851 mesh 0.115851 slices 0.115851 prisms 0.115851 mm3 closed=True whole=True
+  Copper_MOSI                          volume from faces 0.115851 mesh 0.115851 slices 0.115851 prisms 0.115851 mm3 closed=True whole=True
+  Copper_NRST                          volume from faces 0.303806 mesh 0.303806 slices 0.303806 prisms 0.303806 mm3 closed=True whole=True
+  Copper_PWRLED                        volume from faces 0.043800 mesh 0.043800 slices 0.043800 prisms 0.043800 mm3 closed=True whole=True
+  Copper_RF                            volume from faces 0.119557 mesh 0.119557 slices 0.119557 prisms 0.119557 mm3 closed=True whole=True
+  Copper_RF2                           volume from faces 0.251972 mesh 0.251972 slices 0.251972 prisms 0.251972 mm3 closed=True whole=True
+  Copper_RX                            volume from faces 0.516879 mesh 0.516879 slices 0.516879 prisms 0.516879 mm3 closed=True whole=True
+  Copper_SCK                           volume from faces 0.115851 mesh 0.115851 slices 0.115851 prisms 0.115851 mm3 closed=True whole=True
+  Copper_SCL                           volume from faces 0.543633 mesh 0.543633 slices 0.543633 prisms 0.543633 mm3 closed=True whole=True
+  Copper_SCL2                          volume from faces 0.517257 mesh 0.517257 slices 0.517257 prisms 0.517257 mm3 closed=True whole=True
+  Copper_SDA                           volume from faces 0.571982 mesh 0.571982 slices 0.571982 prisms 0.571982 mm3 closed=True whole=True
+  Copper_SDA2                          volume from faces 0.484357 mesh 0.484357 slices 0.484357 prisms 0.484357 mm3 closed=True whole=True
+  Copper_SWCLK                         volume from faces 0.054498 mesh 0.054498 slices 0.054498 prisms 0.054498 mm3 closed=True whole=True
+  Copper_SWDIO                         volume from faces 0.045267 mesh 0.045267 slices 0.045267 prisms 0.045267 mm3 closed=True whole=True
+  Copper_TX                            volume from faces 0.528616 mesh 0.528616 slices 0.528616 prisms 0.528616 mm3 closed=True whole=True
+  Copper_VBAT                          volume from faces 0.282120 mesh 0.282120 slices 0.282120 prisms 0.282120 mm3 closed=True whole=True
+  Copper_XIN                           volume from faces 0.147740 mesh 0.147740 slices 0.147740 prisms 0.147740 mm3 closed=True whole=True
+  Copper_XOUT                          volume from faces 0.136705 mesh 0.136705 slices 0.136705 prisms 0.136705 mm3 closed=True whole=True
+  Copper_no_net                        volume from faces 0.270548 mesh 0.270548 slices 0.270548 prisms 0.270548 mm3 closed=True whole=True

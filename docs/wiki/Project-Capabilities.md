@@ -17,7 +17,7 @@ solvers and CAD, and a **visual model** of the visible surface for viewers.
 | Vias | Through, blind, buried and micro vias with plated barrels; rings on unconnected layers dropped as KiCad does; KiCad 10's covered, plugged, capped and filled vias, the plugs and resin fills a part of their own |
 | Holes | Plated and non-plated, round and slotted; plated walls on the plated ones; KiCad 10's backdrills, counterbores and countersinks cut into them |
 | Board edge | Castellated holes and edge plating; a blind or buried via, backdrill, counterbore or countersink at a plated edge cuts the plating only between its own heights |
-| Dielectrics | With the plies fused (the default): one solid per gap between copper layers with its own εr and tanδ, the resin beside the inner copper a part of it. With the plies separate (`Stackup.FUSION_BUILD = "PLIES_SEPARATE"`): every prepreg ply, every core and the resin beside each inner copper layer a solid of its own, with its own material ([Board](Board.md#121-dielectric-solids)) |
+| Dielectrics | With the plies separate (the default): every prepreg ply, every core and the resin beside each inner copper layer a solid of its own, with its own thickness, material, εr and tanδ. With the plies fused (`Stackup.FUSION_BUILD = "PLIES_FUSED"`): one solid per gap between copper layers, the resin beside the inner copper a part of it, and the plies it was fused from listed in `materials.json` ([Board](Board.md#121-dielectric-solids)) |
 | Material data | For every dielectric the frequency its εr and tanδ hold at and how they change with frequency: constant, the Djordjevic-Sarkar model or a table. For the copper of every layer its foil, its plating, its etch factor and its treated face, with a roughness model (Hammerstad or Huray). An εr and tanδ for the solder mask, the silkscreen and the via resin ([Material Properties](Material-Properties.md)) |
 | Solder mask | Openings as KiCad draws them (pads, drawn openings, untented vias, and tracks and copper drawings the mask leaves bare); conformal over every trace; pulled back from the board edge; open over every bore, so on a tented via it covers only the ring, unless the via is covered, plugged, capped or filled (KiCad 10). Off by default (the lines `top_solder_mask` and `bottom_solder_mask` of `Stackup.py`); its εr and tan δ are in `materials.json`. |
 | Silkscreen | KiCad's stroke font and text layout (TrueType text from the glyphs KiCad saves with it, else in the stroke font; a custom stroke or Hershey font is optional); removed inside mask openings, as fabricators do. Off by default (the lines `top_silkscreen` and `bottom_silkscreen` of `Stackup.py`). |
@@ -37,7 +37,7 @@ solvers and CAD, and a **visual model** of the visible surface for viewers.
 | Other parts | Each dielectric (or each ply, core and resin fill), plating, silkscreen, finish | The same; a part with nothing in sight is left out |
 | Physical data | εr, tanδ and how they change with frequency, conductivity, roughness, thickness and z range per part in `materials.json` | The same file |
 | What-if | Change plating, via wall, mask thickness or etch factor in `parameters/` and export again | |
-| Verifier (`--verify`) | Every part closed and consistently wound; its volume the same from its faces, slices, mesh and prisms; no two parts sharing material, every slice against every other | Along 3,000 vertical rays the faces take turns, into the material and out of it |
+| Verifier (on by default) | Every part closed and consistently wound; its volume the same from its faces, slices, mesh and prisms; no two parts sharing material, every slice against every other | Along 3,000 vertical rays the faces take turns, into the material and out of it |
 | 4-layer PCIe card example | GLB 30.2 MB, 881,514 triangles | GLB 9.1 MB, 290,836 triangles |
 | Presets | `--for freecad`, `elmer`, `calculix`, `openems` | `--for viewer`, `blender_glb`, `blender_obj` |
 
@@ -47,7 +47,7 @@ More in [Output Modes](Output-Modes.md).
 
 | File | What it holds |
 |---|---|
-| GLB | One mesh per part with its colour; metres by default (`Run.UNITS`) |
+| GLB | One mesh per part with its colour; in `Run.UNITS`, metres with the `viewer` and Blender presets |
 | STEP | Written by KESE itself, no CAD kernel needed: every part under its own name, as closed solids with true circular arcs and cylinders (`Step.STEP_EXACT_ARCS`, the default; files 2.5 to 3 times smaller than flat faces with curves as polygons); the same parts as every other format, as the lines of the stack-up set them |
 | STL | One closed file per part, in `stl/` |
 | OBJ | One object per part, colours in an `.mtl` |
@@ -80,8 +80,8 @@ The full list is in [Checks, Errors And Warnings](Checks-Errors-And-Warnings.md)
 | `pcie_card` | 4 | 226 tracks, 239 vias, 19 zone fills | 9 s, 30.2 MB | 11 s, 80.9 MB; with mask and silk 14 s, 150.6 MB | 13 s, 9.1 MB |
 | `six_layer` | 6 | 6 tracks, 6 vias, 2 zone fills | 1 s, 0.76 MB | 1 s, 0.94 MB; with mask and silk 1 s, 2.4 MB | 1 s, 0.21 MB |
 
-Default parameters, GLB and STEP runs with the Verifier, on one Linux machine with 4 cores: what
-to expect, not a limit. These numbers, and the PCIe card's in section 4.2, were measured with
+GLB and STEP runs with the Verifier, the plies fused and ENIG on every board (the defaults of that
+time), on one Linux machine with 4 cores: what to expect, not a limit. These numbers, and the PCIe card's in section 4.2, were measured with
 `Geometry.CIRCLE_CHORD_TOLERANCE_MM = 0.002`, the default until 0.005. The times are the ones the run prints (`in 0m 21s`); starting Python and
 loading its packages adds about 1.5 s to each command.
 

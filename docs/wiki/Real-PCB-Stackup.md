@@ -356,7 +356,7 @@ KESE builds the laminate one of two ways, chosen with `Stackup.FUSION_BUILD` in
 legend to the bottom legend, one line each, and a line set to `False` is left out of the model
 ([Stack-Up Model](Stack-Up-Model.md#84-what-is-built-the-lines-of-stackuppy)).
 
-| Real layer | Plies fused (the default) | Plies separate | Line of `Stackup.py` |
+| Real layer | Plies fused | Plies separate (the default) | Line of `Stackup.py` |
 |---|---|---|---|
 | Legend ink | One part per side, off by default ([Silkscreens](Silkscreens.md)) | The same | `top_silkscreen`, `bottom_silkscreen` |
 | Solder mask | One part per side that follows the copper, with one thickness on the laminate and one on copper; off by default ([Solder Masks](Solder-Masks.md)) | The same | `top_solder_mask`, `bottom_solder_mask` |

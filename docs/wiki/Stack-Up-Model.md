@@ -131,7 +131,7 @@ three example boards have one, `featureTest/15_stackup_none` has none). KESE rea
 | `(thickness ...)` of the first `*.Mask` layer that has one | the mask thickness, over laminate and over copper | `SolderMask.USE_STACKUP_MASK_THICKNESS` |
 | `(material ...)`, `(epsilon_r ...)`, `(loss_tangent ...)` of `F.Mask` and of `B.Mask` | the material of the top and of the bottom mask in `materials.json`, each side its own | `SolderMask.USE_STACKUP_MASK_MATERIAL` |
 | `(color ...)` of `F.Mask`, `B.Mask`, `F.SilkS`, `B.SilkS` | the colours in GLB, OBJ and the `look` of `materials.json`, and in STEP | `SolderMask.USE_STACKUP_MASK_COLOR`, `SilkScreen.USE_STACKUP_SILK_COLOR` |
-| `(copper_finish "...")` | the finish type, with `Finish.FINISH_TYPE = "file"` (the default is `"ENIG"`; with `"file"` a board that names no finish is an error) | `Finish.FINISH_TYPE` |
+| `(copper_finish "...")` | the finish type, with `Finish.FINISH_TYPE = "file"` (the default; a board that names no finish is then an error, and a key such as `"ENIG"` gives every board that finish) | `Finish.FINISH_TYPE` |
 | `(edge_plating yes)`, `(castellated_pads yes)` | edge plating and castellations | `Copper.EDGE_PLATING = "file"`, `Copper.CASTELLATION = "file"` |
 
 A stack-up is **usable** when it has exactly one group of dielectric layers between every pair of
@@ -244,7 +244,7 @@ whole: the same volume, cut by the same holes.
 
 ### 8.3.1 Plies Fused
 
-`FUSION_BUILD = "PLIES_FUSED"`, the default: one solid for each gap between two copper layers,
+`FUSION_BUILD = "PLIES_FUSED"`: one solid for each gap between two copper layers,
 from equations (8.8) and (8.9). The plies of the gap are fused into it, and so is the resin between
 the traces of the inner copper beside it, which belongs to the prepreg next to it (the dielectric
 above, where both or neither are prepreg).
@@ -261,8 +261,8 @@ written as sub-layers of one stack-up dielectric keep that dielectric's name (`d
 
 ### 8.3.2 Plies Separate
 
-`FUSION_BUILD = "PLIES_SEPARATE"`: every layer of the laminate that a fabricator makes separately is
-its own solid, with its own thickness and material.
+`FUSION_BUILD = "PLIES_SEPARATE"`, the default: every layer of the laminate that a fabricator makes
+separately is its own solid, with its own thickness and material.
 
 ![The same four-layer board with the plies separate: seven laminate solids. Board_dielectric 1 ply 1, the 2116 prepreg ply of 0.124 mm with εr 4.16; Board_dielectric 1 ply 2, the 1080 ply of 0.0764 mm with εr 3.91; Board_resin In1.Cu, the resin between the traces of In1.Cu, 0.0152 mm; Board_dielectric 2, the core of 1.065 mm; Board_resin In2.Cu; Board_dielectric 3 ply 1, the 1080 ply; and Board_dielectric 3 ply 2, the 2116 ply](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Stack-Up-Model/stackup_3_plies_separate.webp)
 
@@ -325,7 +325,7 @@ top silkscreen down to the bottom silkscreen, once for each of the two stack-ups
 `True` (built, and written to every file in every mode and format) or `False` (left out):
 
 ```python
-FUSION_BUILD = "PLIES_FUSED"
+FUSION_BUILD = "PLIES_SEPARATE"
 
 PLIES_FUSED = {
     # ---- the top side, from the outside in ----

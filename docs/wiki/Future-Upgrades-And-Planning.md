@@ -17,7 +17,7 @@ correct first.
 | Reading the board file | tested | The [Feature Test Collection](Feature-Test-Collection.md), KiCad 4 to 10 ([Compatibility](Compatibility.md)), and the open hardware boards of [Corpus Testing](Corpus-Testing.md) |
 | The solids | tested | The Verifier on every run: closed, wound one way, no two parts overlapping, volumes agreeing ([Checks, Errors And Warnings](Checks-Errors-And-Warnings.md)) |
 | The EM result a solver gets from the model | **not yet checked** | No model has been compared with a measured board or with a reference solver result |
-| The material numbers | typical values, with their frequency and a model of how they change with it | The stack-up's or the defaults of [Material Properties](Material-Properties.md#213-the-default-numbers); they are not measured values, and copper roughness is left out unless a model is set |
+| The material numbers | typical values, with their frequency and a model of how they change with it | The stack-up's or the defaults of [Material Properties](Material-Properties.md#213-the-default-numbers); they are not measured values, and the copper roughness is a solver's starting values, not a foil's |
 
 So a model from KESE is known to be the geometry the board file describes, as closed solids. It is
 not yet known how close a simulation of it comes to the fabricated board. [25.2](#252-model-accuracy)
@@ -30,11 +30,11 @@ is the work that closes this gap.
 **Built.** `Stackup.FUSION_BUILD` in `parameters/PCB_elements/Stackup.py` picks one of two
 stack-ups ([Stack-Up Model](Stack-Up-Model.md), [Board](Board.md#121-dielectric-solids)):
 
-- **`"PLIES_FUSED"`, the default:** a gap between two copper layers is one dielectric solid, as
-  before, so every board gives the files it gave before. The plies it was fused from are now
+- **`"PLIES_FUSED"`:** a gap between two copper layers is one dielectric solid, as
+  before, so with it every board gives the files it gave before. The plies it was fused from are now
   listed under it in `materials.json` and `report.txt`, and `Board.FUSED_PROPERTIES = "series"`
   gives the solid the εr and tanδ of its plies in series instead of the first ply's.
-- **`"PLIES_SEPARATE"`:** one solid per prepreg ply and per core, each with its own thickness,
+- **`"PLIES_SEPARATE"`, the default:** one solid per prepreg ply and per core, each with its own thickness,
   material, εr and tanδ, and one solid for the resin beside each inner copper layer.
   `Board.JOIN_EQUAL_PLIES = True` joins neighbouring plies of the same material and values, to
   keep the part count down.

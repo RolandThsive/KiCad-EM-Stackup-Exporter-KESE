@@ -8,12 +8,12 @@ Finish.py, Copper.py, Board.py).
 
 There are two stack-ups, and FUSION_BUILD says which one is built:
 
-    PLIES_FUSED     the laminate as KESE has always built it: one solid for each gap between two
-                    copper layers.  The prepreg plies of a gap are fused into that solid, and so is
-                    the resin between the traces of the inner copper beside it.
     PLIES_SEPARATE  the laminate as a fabricator builds it: every prepreg ply, every core and the
                     resin between the traces of each inner copper layer is its own solid, with its
-                    own thickness and material.
+                    own thickness and material.  This is the default.
+    PLIES_FUSED     the laminate as KESE built it up to version 3.3: one solid for each gap between
+                    two copper layers.  The prepreg plies of a gap are fused into that solid, and so
+                    is the resin between the traces of the inner copper beside it.  Fewer solids.
 
 Each line of a stack-up is one layer of the board, or one kind of layer where a board has several.
 True builds it and writes it to every output file, in every mode and format; False leaves it out.
@@ -26,7 +26,7 @@ the board, the bottom side from the inside out, and last what goes through the b
 is for reading and changes nothing: how many copper layers a board has, and the plies between
 them, come from the board file.  The lines of the inside stand for every inner layer the board has.
 
-On the command line:   --set Stackup.FUSION_BUILD=PLIES_SEPARATE   picks the stack-up
+On the command line:   --set Stackup.FUSION_BUILD=PLIES_FUSED      picks the stack-up
                        --set Stackup.top_solder_mask=True          sets that line, in both stack-ups
                        --set Stackup.solder_mask=True              sets the top and the bottom line
 The short names that set several lines at once:
@@ -37,7 +37,7 @@ The short names that set several lines at once:
 """
 
 # Which of the two stack-ups below KESE builds: "PLIES_FUSED" or "PLIES_SEPARATE"
-FUSION_BUILD = "PLIES_FUSED"
+FUSION_BUILD = "PLIES_SEPARATE"
 
 # --------------------------------------------------------------------------------------------------
 # The plies fused: one laminate solid for each gap between two copper layers
