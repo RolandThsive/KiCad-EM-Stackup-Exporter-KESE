@@ -10,7 +10,10 @@
 Copper is what the model is for: one closed solid per net, with every layer's traces, pads and
 zone fills joined to its vias and plated holes. `kese/s2_collect/` collects the copper per layer
 and net and `kese/s3_resolve/` resolves it; `kese/s4_geometry/copper.py` and `plating.py` turn it
-into prisms; the settings are in `parameters/copper.py`.
+into prisms. The settings are in `parameters/PCB_elements/Copper.py`, in seven sections: all copper,
+the top copper, the inner copper, the bottom copper, the plated holes with the vias and the board
+edge, the material, and the color. Whether the copper is built is in
+`parameters/PCB_elements/Stackup.py`, section 13.2.1.
 
 ## 13.1 What Makes Copper
 
@@ -27,7 +30,7 @@ Per copper layer, these items are collected with their net (text always as no ne
 | `via` | a disc of the via's size on every layer it spans, except rings dropped by KiCad's "remove unused layers" (see 13.3) |
 | `pad` | the pad shape (circle, rect, oval, roundrect, trapezoid, custom with anchor and primitives; a chamfered rectangle has the corners its `chamfer` lists cut straight, legs `chamfer_ratio` x the shorter side, and those corners not rounded) at its position and angle, with the drill offset, on each copper layer the pad lists (`*.Cu`, `F&B.Cu` expanded), except inner rings of a through-hole pad dropped by "remove unused layers" (see 13.3.1); an NPTH pad gives its hole, and a copper ring only where KiCad flashes it (`PAD::FlashLayer`): not for a round (or oval) pad no bigger than its round (or oval) drill and not offset |
 | `zone` fill | the `filled_polygon` polygons stored in the file; a fill KiCad 5 drew with a pen (a file older than format 20250210 without `(filled_areas_thickness no)`) grows by half the zone's `min_thickness`, round at the corners, as KiCad does when it opens such a file; a KiCad 4 or 5 zone stored only as `fill_segments` is those segments, each drawn with a pen of `min_thickness` |
-| `gr_*` / `fp_*` graphics on a copper layer | lines and arcs thickened by their stroke width; filled shapes filled (with no `fill` in the file, as KiCad reads it: a circle or rectangle of width 0, and a polygon off Edge.Cuts); a self-crossing polygon keeps every lobe; unfilled closed shapes as their outline stroke; rectangles with their rounded corners (KiCad 10); a hatched circle, rectangle or polygon (KiCad 10) as its outline and the hatch inside it (12.1.2); a drawing left bare by the solder mask (KiCad 9 and later) also opens the mask, as a track does |
+| `gr_*` / `fp_*` graphics on a copper layer | lines and arcs thickened by their stroke width; filled shapes filled (with no `fill` in the file, as KiCad reads it: a circle or rectangle of width 0, and a polygon off Edge.Cuts); a self-crossing polygon keeps every lobe; unfilled closed shapes as their outline stroke; rectangles with their rounded corners (KiCad 10); a hatched circle, rectangle or polygon (KiCad 10) as its outline and the hatch inside it (13.1.2); a drawing left bare by the solder mask (KiCad 9 and later) also opens the mask, as a track does |
 | text on a copper layer | the stroke-font glyphs, as on silkscreen; knockout text (`(layer "F.Cu" knockout)`) is the text's box, square to the text and grown by max(pen / 2, height / 9), with the letters cut out |
 
 Then, per layer and per net: union, simplify, clip to the outline, subtract the holes, move to
@@ -140,6 +143,31 @@ barrel, joined into one closed body where the copper connects in the file (`Copp
 holds many separate bodies). That is what a solver needs to assign one port or one conductor to a
 net.
 
+### 13.2.1 The Copper Lines Of Stackup.py
+
+Five lines of `Stackup.py` say which copper goes into the files. KESE works all the copper out
+first and then leaves out the lines set to `False`, so what stays is exactly as it is with every
+line `True`:
+
+| Line | Default | What it holds |
+|---|---|---|
+| `top_copper` | `True` | `F.Cu`: the foil and the copper plated on it |
+| `inner_copper` | `True` | `In1.Cu`, `In2.Cu`, ...: every inner layer |
+| `bottom_copper` | `True` | `B.Cu` |
+| `plated_holes` | `True` | the plated walls of the vias and the through-hole pads, the copper in filled vias, castellations and the plated edge |
+| `via_resin` | `True` | the resin in plugged and resin-filled vias, the part `Via Resin` |
+
+```bash
+python run_KESE.py board.kicad_pcb --set Stackup.bottom_copper=False
+python run_KESE.py board.kicad_pcb --set Stackup.copper=False
+```
+
+The short name `copper` sets the first four at once. With `"net"` grouping a net's part then
+holds only the layers that are built: with `inner_copper` left out, `Copper_GND` is its top and
+bottom copper and the walls of its holes. A net whose copper is all left out has no part.
+Before 25.2 one switch, `Copper.COPPER_ENABLED`, did what `copper` does now; it still works with
+`--set` ([Parameter Reference](Parameter-Reference.md#1914-names-of-before-252)).
+
 ## 13.3 Vias And Plated Holes
 
 A via contributes:
@@ -149,7 +177,7 @@ A via contributes:
   span);
 - a **hole** of the via's drill through the same span;
 - a plated **barrel**: the ring between the drill and the drill shrunk by the plating wall,
-  running between the copper layers it joins, equations (13.4) to (12.6).
+  running between the copper layers it joins, equations (13.4) to (13.6).
 
 ![A through via on board 04_vias_blind_buried cut through its centre with its drill, bore and 25 µm wall, close-ups of the top and of an inner layer, and a through, a blind and a buried via side by side](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Copper-And-Traces/copper_3_via_section.webp)
 
@@ -228,7 +256,8 @@ rings included).
 
 Tenting decides whether the solder mask covers the via's annular ring or leaves it open; the
 bore (the drill minus the plating wall) is left open through the mask unless the via's protection
-shuts it (12.3.4), see [Solder Masks](Solder-Masks.md#174-over-holes). `Copper.VIA_TENTING`:
+shuts it (13.3.4), see [Solder Masks](Solder-Masks.md#174-over-holes). The setting is with the
+mask's, `SolderMask.VIA_TENTING` (`Copper.VIA_TENTING` before 25.2, which still works with `--set`):
 
 | Value | Meaning |
 |---|---|
@@ -280,7 +309,8 @@ plugging are per face, capping and filling for the whole via. With `Copper.VIA_P
 
 - The resin is its own part, `Via Resin`, with `Copper.VIA_RESIN_EPSILON_R` (4.4) and
   `Copper.VIA_RESIN_LOSS_TANGENT` (0.02) in `materials.json`, the values of San-Ei Kagaku's
-  PHP-900 IR-6P plugging ink; `Copper.VIA_RESIN_ENABLED = False` leaves it out of the files.
+  PHP-900 IR-6P plugging ink; the line `via_resin` of `Stackup.py` set to `False` leaves it out
+  of the files.
 - Only an end on a face can be covered, plugged or capped; a blind or buried via's end inside the
   board cannot, and `report.txt` counts that under `skipped`.
 - An end that a backdrill, counterbore or countersink opens stays open, plug included, and a fill
@@ -294,34 +324,54 @@ a warning. `report.txt` counts `covered vias, front`, `plugged vias, back`, `fil
 
 ## 13.4 Copper Thickness And Plating
 
-![Board 14_stackup_full cut across its four traces at true scale, with close-ups of F.Cu 35 µm, In1.Cu 17.5 µm, In2.Cu 17.5 µm and B.Cu 70 µm](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Copper-And-Traces/copper_5_thickness.webp)
+![Board 14_stackup_full cut across its four traces at true scale, with a close-up of each: the top copper F.Cu 35 µm on the laminate's top face under the mask, the inner copper In1.Cu and In2.Cu 17.5 µm on the two faces of the core with resin beside them, and the bottom copper B.Cu 70 µm on the bottom face; each close-up names the setting that gives the foil when the stack-up has none: DEFAULT_TOP_FOIL_MM, DEFAULT_INNER_FOIL_MM, DEFAULT_BOTTOM_FOIL_MM](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Copper-And-Traces/copper_5_thickness.webp)
 
-![The plated hole of board 14_stackup_full at the top and bottom faces, without outer plating and with 20 µm of it, the foil, the outer plating and the hole's wall plating each in its own shade](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Copper-And-Traces/copper_6_plating.webp)
+Copper is set by where it lies: the top copper (`F.Cu`), the inner copper (`In1.Cu`, `In2.Cu`,
+...) and the bottom copper (`B.Cu`) each have their own section of `Copper.py`, because a
+fabricator makes them differently. The outer layers are plated up with the holes; the inner
+layers are bare foil, etched on their core before the board is pressed.
+
+![The plated hole of board 14_stackup_full at the top and bottom faces, with no plating added and with TOP_PLATING_ADDED_MM 0.020 and BOTTOM_PLATING_ADDED_MM 0.010: the foil, the plating added to the top and to the bottom copper and the hole's wall plating each in its own shade; F.Cu grows from 35 to 55 µm and B.Cu from 70 to 80 µm on their free faces, and the laminate and the hole's wall do not move](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Copper-And-Traces/copper_6_plating.webp)
 
 ```math
-t_k = \begin{cases} t_{\mathrm{foil},k} + t_{\mathrm{plate}} & k = 0 \text{ or } k = N-1 \ \ \text{(outer)} \\ t_{\mathrm{foil},k} & 0 < k < N-1 \ \ \text{(inner)} \end{cases} \qquad (13.9)
+t_k = \begin{cases} t_{\mathrm{foil},0} + t_{\mathrm{plate,top}} & k = 0 \ \ \text{(top copper)} \\ t_{\mathrm{foil},k} & 0 < k < N-1 \ \ \text{(inner copper)} \\ t_{\mathrm{foil},N-1} + t_{\mathrm{plate,bottom}} & k = N-1 \ \ \text{(bottom copper)} \end{cases} \qquad (13.9)
 ```
 
 | Symbol | Meaning | Parameter |
 |---|---|---|
 | $`t_k`$ | copper thickness of layer $`l_k`$ | |
-| $`t_{\mathrm{foil},k}`$ | foil thickness | stack-up, else `Copper.DEFAULT_OUTER_FOIL_MM` / `Copper.DEFAULT_INNER_FOIL_MM` |
-| $`t_{\mathrm{plate}}`$ | plating added to outer layers | `Copper.OUTER_PLATING_ADDED_MM` |
+| $`t_{\mathrm{foil},k}`$ | foil thickness | stack-up, else `Copper.DEFAULT_TOP_FOIL_MM`, `Copper.DEFAULT_INNER_FOIL_MM` or `Copper.DEFAULT_BOTTOM_FOIL_MM` |
+| $`t_{\mathrm{plate,top}}`$ | plating added to the top copper | `Copper.TOP_PLATING_ADDED_MM` |
+| $`t_{\mathrm{plate,bottom}}`$ | plating added to the bottom copper | `Copper.BOTTOM_PLATING_ADDED_MM` |
 
-$`t_{\mathrm{plate}}`$ is the copper that electroplating adds to the outer layers during hole
-plating ("finished copper"), typically 20 µm. It is 0 by default so that the geometry matches
-KiCad; set it for an as-fabricated model. Each copper part records `foil_mm` and
-`plating_added_mm` in `materials.json`.
+The plating added is the copper that electroplating puts on the outer layers while it plates the
+holes ("finished copper"), typically 20 µm. Both values are 0 by default so that the geometry
+matches KiCad; set them for an as-fabricated model. They are two settings because the two sides
+need not be alike: a board plated on one side more than the other, or a model of the top side
+only. Each copper part records `foil_mm` and `plating_added_mm` for every layer it has in
+`materials.json`, section 13.8.
+
+Before 25.2 the two outer layers shared `DEFAULT_OUTER_FOIL_MM` and `OUTER_PLATING_ADDED_MM`.
+Both names still work with `--set` and set the top and the bottom value together.
 
 ## 13.5 Etch Factor
 
-![Board 10_tracks_arcs cut across its 0.25 mm track at true scale with ETCH_FACTOR 0 and 0.5 (four slices), and close-ups of an etched wall on F.Cu and on B.Cu with the inset of every slice](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Copper-And-Traces/copper_10_etch_factor.webp)
+![Board 14_stackup_full cut across its 0.3 mm traces at true scale: the top trace with TOP_ETCH_FACTOR 0, a rectangle, and with 0.5, four stacked slices each set in more than the one below; then the right wall of the trace on each layer with all three etch factors at 0.5 and the inset of every slice: on the top copper the foot is on the laminate at the bottom, on the inner copper above the middle at the bottom on the core, on the inner copper below the middle at the top on the core, on the bottom copper at the top on the laminate](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Copper-And-Traces/copper_10_etch_factor.webp)
 
 Real traces are trapezoids: etching undercuts the resist, so a trace is narrower at its free
-face than at its foot. `Copper.ETCH_FACTOR` (0 by default, a rectangle as in KiCad) leans each
-side wall in over the copper height. The trapezoid is built as `Copper.ETCH_STEPS` stacked
-slices, each inset a little more than the one nearer the foot. Slice $`s`$ of $`m`$
-($`s = 0 \dots m-1`$, counted from the bottom of the copper band) is:
+face than at its foot. The etch factor (0 by default, a rectangle as in KiCad) leans each side
+wall in over the copper height. There is one for each position, since the top, inner and bottom
+copper are etched in different steps:
+
+| Setting | Copper | Where the foot is |
+|---|---|---|
+| `Copper.TOP_ETCH_FACTOR` | `F.Cu` | on the laminate: the bottom of the copper |
+| `Copper.INNER_ETCH_FACTOR` | `In1.Cu`, `In2.Cu`, ... | toward the board's centre: the bottom for the layers of the upper half, the top for those of the lower half |
+| `Copper.BOTTOM_ETCH_FACTOR` | `B.Cu` | on the laminate: the top of the copper |
+
+The trapezoid is built as `Copper.ETCH_STEPS` stacked slices, each inset a little more than the
+one nearer the foot. Slice $`s`$ of $`m`$ ($`s = 0 \dots m-1`$, counted from the bottom of the
+copper band) is:
 
 ```math
 z_s \in \left[ z_0 + \frac{s}{m} t,\ z_0 + \frac{s+1}{m} t \right] \qquad (13.10)
@@ -339,9 +389,9 @@ f_s = \begin{cases} \frac{s + 0.5}{m} & \text{foot at the bottom} \\ 1 - \frac{s
 |---|---|---|
 | $`m`$ | number of slices | `Copper.ETCH_STEPS` (4) |
 | $`C_{k,n}`$ | copper of net $`n`$ on layer $`l_k`$, equation (13.1) | |
-| $`z_0`$, $`t`$ | bottom and thickness of the copper band | equations (8.4) to (8.7), (12.9) |
+| $`z_0`$, $`t`$ | bottom and thickness of the copper band | equations (8.4) to (8.7), (13.9) |
 | $`f_s`$ | height fraction of the middle of slice $`s`$, measured from the foot | |
-| $`e`$ | etch factor | `Copper.ETCH_FACTOR` |
+| $`e`$ | etch factor of the layer's position | `Copper.TOP_ETCH_FACTOR`, `Copper.INNER_ETCH_FACTOR`, `Copper.BOTTOM_ETCH_FACTOR` |
 | $`\delta_s`$ | inward offset of slice $`s`$ on every side | |
 | $`U_k`$ | the edges layer $`l_k`$ is not etched along: the drill walls of the holes through it and the board outline | |
 | $`\rho`$ | how far from those edges, in insets, the copper keeps its drawn outline | `Copper.ETCH_UNETCHED_REACH` (1.5) |
@@ -350,19 +400,25 @@ f_s = \begin{cases} \frac{s + 0.5}{m} & \text{foot at the bottom} \\ 1 - \frac{s
 The wall therefore leans in by close to $`e \cdot t`$ across the copper height: the slice at
 the free face is inset by $`e \cdot t \cdot (m - 0.5)/m`$.
 
-- On `F.Cu` the foot is at the bottom (on the laminate), on `B.Cu` at the top.
-- Inner layers are etched only with `Copper.ETCH_APPLY_TO_INNER_LAYERS = True`; their foot faces
-  the board centre (layers in the upper half have it at the bottom, layers in the lower half at
-  the top), whichever dielectric is on that side.
+- The foot of an inner layer faces the board's centre whichever dielectric is on that side. A
+  layer is etched on its core, and on a board built core-prepreg-core the cores are the outer
+  ones, so check which face your fabricator etches from before you rely on the lean of an inner
+  trace.
 - Copper is not etched along a hole wall or the board edge, where it is plated or cut: there it
   keeps its drawn outline out to $`\rho \, \delta_s`$ from the edge
   (`Copper.ETCH_UNETCHED_REACH`), so a via or pad ring still meets its barrel, and the edge
   plating and castellations still meet the copper.
-- Only the copper is etched: the solder mask, the resin fill beside inner copper and the finish
-  still follow the drawn outline, so the wedge between them and the sloped wall stays empty (air).
+- Only the copper is etched: the solder mask, the resin between the traces of the inner copper
+  and the finish still follow the drawn outline, so the wedge between them and the sloped wall
+  stays empty (air).
 
 Example: $`e = 0.5`$, $`t = 35`$ µm, $`m = 4`$ gives offsets of 2.19, 6.56, 10.94 and 15.31 µm
 from the foot to the free face.
+
+Before 25.2 there was one `Copper.ETCH_FACTOR` for the two outer layers and a switch
+`Copper.ETCH_APPLY_TO_INNER_LAYERS` for the inner ones. Both still work with `--set`:
+`ETCH_FACTOR` sets the top and the bottom factor, and the switch set to `True` gives the inner
+copper the top copper's factor.
 
 ## 13.6 Castellated Holes
 
@@ -411,7 +467,7 @@ Edge plating is copper on the routed board edge (edge-card connectors, RF shield
   everything that reaches the edge; `report.txt` lists what was moved;
 - on the inner layers the band runs through the copper band as a barrel runs through its drill:
   the inner copper, by then all of it the edge net's, stops at the band and touches it, and the
-  resin fill beside the inner copper stops there too.
+  resin between the traces of the inner copper stops there too.
 
 ```math
 E = \left( O \setminus \left( O \ominus w_e \right) \right) \setminus \bigcup_{h \in T} H_h \qquad (13.14)
@@ -432,41 +488,98 @@ n^{*} = \arg\max_{n \in S} \sum_{k=0}^{N-1} \mathrm{area}\left( C_{k,n} \cap E \
 
 ## 13.8 Electrical Properties
 
-Every copper part carries `conductivity_S_per_m` (`Copper.COPPER_CONDUCTIVITY_S_PER_M`,
-5.8 × 10⁷ S/m) and `surface_roughness_um` (`Copper.COPPER_SURFACE_ROUGHNESS_UM`, 0 = ignore; a
-solver setting, not geometry) in `materials.json`. A separate `Plating` part (with
-`Copper.COPPER_GROUPING = "layer"`) carries only `conductivity_S_per_m`. `thickness_mm`, `foil_mm`
-and `plating_added_mm` are those of the part's first layer. See
-[Material Properties](Material-Properties.md).
+Every copper part carries, in `materials.json`:
+
+| Key | Meaning | From |
+|---|---|---|
+| `material` | the material's name | `Copper.COPPER_MATERIAL` (`"copper"`) |
+| `conductivity_S_per_m` | bulk conductivity | `Copper.COPPER_CONDUCTIVITY_S_PER_M` (5.8 × 10⁷ S/m) |
+| `roughness` | the surface roughness model and its numbers, for the solver's conductor loss | `Copper.COPPER_ROUGHNESS_MODEL` and the settings below |
+| `layers` | one entry for each copper layer the part has: `layer`, `position` (`top` / `inner` / `bottom`), `thickness_mm`, `foil_mm`, `plating_added_mm`, `etch_factor` and `treated_face` | the stack-up and sections 2 to 4 of `Copper.py` |
+| `thickness_mm`, `foil_mm`, `plating_added_mm`, `surface_roughness_um` | those of the part's first layer, and the treated face's RMS height: kept as they were before 25.2 | |
+
+A net's copper is one part across its layers, so the per-layer numbers are in `layers`:
+
+```json
+"Copper_GND": {
+  "properties": {
+    "material": "copper",
+    "conductivity_S_per_m": 58000000.0,
+    "roughness": {"model": "hammerstad", "rms_treated_um": 1.2, "rms_other_um": 0.4},
+    "layers": [
+      {"layer": "F.Cu",   "position": "top",    "thickness_mm": 0.055,  "foil_mm": 0.035,  "plating_added_mm": 0.02, "etch_factor": 0.5, "treated_face": "lower"},
+      {"layer": "In1.Cu", "position": "inner",  "thickness_mm": 0.0175, "foil_mm": 0.0175, "plating_added_mm": 0.0,  "etch_factor": 0.3, "treated_face": "lower"},
+      {"layer": "In2.Cu", "position": "inner",  "thickness_mm": 0.0175, "foil_mm": 0.0175, "plating_added_mm": 0.0,  "etch_factor": 0.3, "treated_face": "upper"},
+      {"layer": "B.Cu",   "position": "bottom", "thickness_mm": 0.07,   "foil_mm": 0.07,   "plating_added_mm": 0.0,  "etch_factor": 0.0, "treated_face": "upper"}
+    ]
+  }
+}
+```
+
+A copper layer has two faces. The **treated** face is the rough one the foil maker gives the foil
+so that it grips the dielectric it is laminated on: the lower face of the top copper, the upper
+face of the bottom copper, and the face of an inner layer that its etch foot is on (section
+13.5). `treated_face` says which it is. The roughness is a solver setting; it changes no
+geometry:
+
+| `Copper.COPPER_ROUGHNESS_MODEL` | Written as `roughness` | Settings |
+|---|---|---|
+| `"none"` | `{"model": "none"}`: smooth | |
+| `"hammerstad"` | one RMS height for each face: `rms_treated_um`, `rms_other_um` | `COPPER_ROUGHNESS_RMS_TREATED_UM`, `COPPER_ROUGHNESS_RMS_OTHER_UM` |
+| `"huray"` (default) | the "snowball" model, a nodule radius and a surface ratio for each face: `radius_treated_um`, `radius_other_um`, `surface_ratio_treated`, `surface_ratio_other` | `COPPER_HURAY_RADIUS_TREATED_UM`, `COPPER_HURAY_RADIUS_OTHER_UM`, `COPPER_HURAY_SURFACE_RATIO_TREATED`, `COPPER_HURAY_SURFACE_RATIO_OTHER` |
+
+A separate `Plating` part (with `Copper.COPPER_GROUPING = "layer"`) carries only `material` and
+`conductivity_S_per_m`. See [Material Properties](Material-Properties.md#216-copper-by-layer) for
+the formulas a solver applies to these numbers.
 
 ## 13.9 Settings
 
+All in `parameters/PCB_elements/Copper.py`, in the file's seven sections. Whether copper is
+built is not here: it is the lines of `Stackup.py`, section 13.2.1. The names of before 25.2
+still work with `--set`; see [Parameter Reference](Parameter-Reference.md#1914-names-of-before-252).
+
 | Name | Default | Range | Meaning |
 |---|---|---|---|
-| `DEFAULT_OUTER_FOIL_MM`, `DEFAULT_INNER_FOIL_MM` | `0.035`, `0.035` | mm > 0 | Foil thickness when the stack-up gives none (1 oz = 0.035, 0.5 oz = 0.0175) |
+| **1 All copper** | | | |
+| `COPPER_GROUPING` | `"net"` | `"net"` / `"layer"` / `"merged"` | One part per net, per layer, or all copper in one (section 13.2) |
+| `NO_NET_NAME` | `"no_net"` | text | Name of copper that belongs to no net |
 | `USE_STACKUP_COPPER_THICKNESS` | `True` | bool | Stack-up copper thickness wins when present |
-| `OUTER_PLATING_ADDED_MM` | `0.0` | mm ≥ 0 | Plating added to the outer layers (typical 0.020) |
-| `VIA_WALL_MM`, `PTH_WALL_MM` | `0.025`, `0.025` | mm > 0 | Plated wall of vias and through-hole pads (typical 0.020 to 0.025) |
-| `ETCH_FACTOR` | `0.0` | ≥ 0 | Side-wall lean per unit of copper thickness; 0 = rectangular |
 | `ETCH_STEPS` | `4` | int ≥ 1 | Slices per trapezoid |
-| `ETCH_APPLY_TO_INNER_LAYERS` | `False` | bool | Etch the inner layers too |
-| `ETCH_UNETCHED_REACH` | `1.5` | ≥ 0 | Copper within this × the etch inset of a hole wall or the board edge keeps its outline (12.5) |
+| `ETCH_UNETCHED_REACH` | `1.5` | ≥ 0 | Copper within this × the etch inset of a hole wall or the board edge keeps its outline (13.5) |
+| `HAIRLINE_HOLE_MM` | `1e-3` | mm ≥ 0 | A hole in one net's copper narrower than this on average (2 × area / perimeter) is filled (13.1) |
+| `HONOUR_REMOVE_UNUSED_LAYERS` | `True` | bool | Drop via and through-hole pad rings on layers nothing connects to |
+| **2 Top copper** | | | |
+| `DEFAULT_TOP_FOIL_MM` | `0.035` | mm > 0 | Foil thickness of `F.Cu` when the stack-up gives none (1 oz = 0.035, 0.5 oz = 0.0175) |
+| `TOP_PLATING_ADDED_MM` | `0.0` | mm ≥ 0 | Plating added to the top copper (typical 0.020) |
+| `TOP_ETCH_FACTOR` | `0.0` | ≥ 0 | Side-wall lean per unit of copper thickness, the foot on the laminate; 0 = rectangular |
+| **3 Inner copper** | | | |
+| `DEFAULT_INNER_FOIL_MM` | `0.035` | mm > 0 | Foil thickness of the inner layers when the stack-up gives none |
+| `INNER_ETCH_FACTOR` | `0.0` | ≥ 0 | Side-wall lean of the inner copper, the foot toward the board's centre |
+| **4 Bottom copper** | | | |
+| `DEFAULT_BOTTOM_FOIL_MM` | `0.035` | mm > 0 | Foil thickness of `B.Cu` when the stack-up gives none |
+| `BOTTOM_PLATING_ADDED_MM` | `0.0` | mm ≥ 0 | Plating added to the bottom copper |
+| `BOTTOM_ETCH_FACTOR` | `0.0` | ≥ 0 | Side-wall lean of the bottom copper, the foot on the laminate |
+| **5 Plated holes, vias and the board edge** | | | |
+| `VIA_WALL_MM`, `PTH_WALL_MM` | `0.025`, `0.025` | mm > 0 | Plated wall of vias and through-hole pads (typical 0.020 to 0.025) |
 | `CASTELLATION` | `"auto"` | `"auto"` / `"file"` / `"off"` | How plated holes crossing the edge are treated |
 | `CASTELLATION_WALL_MM` | `0.025` | mm > 0 | Plated wall of a castellation |
 | `EDGE_PLATING` | `"file"` | `"file"` / `"yes"` / `"no"` | Copper on the board edge |
 | `EDGE_PLATING_WALL_MM` | `0.025` | mm > 0 | Width of the edge band |
 | `EDGE_PLATING_NET` | `"auto"` | `"auto"` or a net name | Which net the edge copper belongs to |
-| `VIA_TENTING` | `"file"` | `"file"` / `"tented"` / `"open"` | Mask over vias |
-| `VIA_PROTECTION` | `"file"` | `"file"` / `"off"` | KiCad 10's covered, plugged, capped and filled vias (12.3.4) |
+| `VIA_PROTECTION` | `"file"` | `"file"` / `"off"` | KiCad 10's covered, plugged, capped and filled vias (13.3.4) |
 | `VIA_FILL` | `"copper"` | `"copper"` / `"resin"` | What a filled via is filled with |
 | `VIA_PLUG_DEPTH_FRACTION` | `0.5` | > 0, ≤ 1 | How far a plug reaches into the hole, as a share of its length |
+| **6 Material** | | | |
+| `COPPER_MATERIAL` | `"copper"` | text | The material's name in `materials.json` |
+| `COPPER_CONDUCTIVITY_S_PER_M` | `5.8e7` | S/m > 0 | Written to `materials.json` |
+| `COPPER_ROUGHNESS_MODEL` | `"huray"` | `"none"` / `"hammerstad"` / `"huray"` | The surface roughness model (section 13.8) |
+| `COPPER_ROUGHNESS_RMS_TREATED_UM`, `COPPER_ROUGHNESS_RMS_OTHER_UM` | `0.0`, `0.0` | µm ≥ 0 | `"hammerstad"`: RMS height of the treated face and of the other face |
+| `COPPER_HURAY_RADIUS_TREATED_UM`, `COPPER_HURAY_RADIUS_OTHER_UM` | `0.5`, `0.5` | µm > 0 | `"huray"`: nodule radius of each face |
+| `COPPER_HURAY_SURFACE_RATIO_TREATED`, `COPPER_HURAY_SURFACE_RATIO_OTHER` | `2.9`, `2.9` | ≥ 0 | `"huray"`: nodule surface over flat surface, of each face. With the radius of 0.5 µm, the values Ansys's tools start with; they describe no particular foil |
+| `VIA_RESIN_MATERIAL` | `"via resin"` | text | The plug and fill resin's name |
 | `VIA_RESIN_EPSILON_R`, `VIA_RESIN_LOSS_TANGENT` | `4.4`, `0.02` | ≥ 1, ≥ 0 | The plug and fill resin, written to `materials.json` |
-| `VIA_RESIN_ENABLED` | `True` | bool | Build the `Via Resin` part and write it to the files |
-| `HONOUR_REMOVE_UNUSED_LAYERS` | `True` | bool | Drop via and through-hole pad rings on layers nothing connects to |
-| `COPPER_CONDUCTIVITY_S_PER_M` | `5.8e7` | S/m | Written to `materials.json` |
-| `COPPER_SURFACE_ROUGHNESS_UM` | `0.0` | µm ≥ 0 | Written to `materials.json`; 0 = ignore |
-| `NO_NET_NAME` | `"no_net"` | text | Name of copper that belongs to no net |
-| `HAIRLINE_HOLE_MM` | `1e-3` | mm ≥ 0 | A hole in one net's copper narrower than this on average (2 × area / perimeter) is filled (12.1) |
+| **7 Color** | | | |
+| `COPPER_COLOR`, `PLATING_COLOR`, `EXPOSED_COPPER_COLOR`, `VIA_RESIN_COLOR` | see the file | color, alpha, metallic, roughness | The look of the copper, of a separate `Plating` part, of the copper that shows in visual mode, and of the via resin ([Colorizing](Colorizing.md)) |
 
 | Previous | Next |
 |:---|---:|

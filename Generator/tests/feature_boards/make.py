@@ -6,9 +6,9 @@
 Boards in KiCad 7's format are read back by KiCad 7 when its Python module (pcbnew) is installed:
 KiCad fills their zones, adds the outlines of TrueType text and saves them, so the files are
 KiCad's own and come out the same on every run.  Without pcbnew they are written as built here,
-with unfilled zones.  Boards in KiCad 6, 8, 9 or 10's format are written by hand, token for token
-as that KiCad's file writer does; their zone fills are the ones KiCad 7 makes for the same zone,
-and are left out without pcbnew."""
+with unfilled zones.  Boards in KiCad 6, 8, 9 or 10's format, and one in the format after KiCad 10
+(10.99), are written by hand, token for token as that KiCad's file writer does; their zone fills are
+the ones KiCad 7 makes for the same zone, and are left out without pcbnew."""
 import sys
 import tempfile
 from pathlib import Path
@@ -21,6 +21,8 @@ import boards_holes_vias as hv  # noqa: E402
 import boards_k10 as k10  # noqa: E402
 import boards_later as later  # noqa: E402
 import boards_pads_copper as pc  # noqa: E402
+import boards_plies as pl  # noqa: E402
+import boards_plies_later as pll  # noqa: E402
 import boards_skipped as sk  # noqa: E402
 import boards_stackup_mask as sm  # noqa: E402
 import boards_zones_outline as zo  # noqa: E402
@@ -37,9 +39,10 @@ ORDER = [("01", hv.holes_slotted), ("02", hv.holes_round), ("03", hv.vias_throug
          ("18", sm.finishes), ("18b", sm.finish_pads), ("18c", sm.finish_before_mask), ("19", sk.skipped_items),
          ("19b", sk.skipped_items_k10), *[(f"20{c}", fn) for c, fn in later.VERSIONS],
          ("24", k10.backdrills), ("25", k10.post_machining), ("26", k10.via_protection), ("27", k10.hatched_fills),
-         ("28", k10.plated_edge_machining)]
+         ("28", k10.plated_edge_machining), ("29", pl.stackup_plies), ("29b", pll.stackup_plies_machined),
+         ("29c", pll.stackup_frequency), ("29d", pl.stackup_real)]
 FORMATS = {20211014: "KiCad 6", 20221018: "KiCad 7", 20240108: "KiCad 8", 20241229: "KiCad 9",
-           20260206: "KiCad 10"}
+           20260206: "KiCad 10", 20260511: "KiCad 10.99"}
 
 
 def kicad_save(pcbnew, src, dst, unfilled):
@@ -74,7 +77,7 @@ def main():
             how = "unfilled, KiCad 7 not installed" if version == 20221018 else "hand-written"
         doc = " ".join((build.__doc__ or "").split())
         rows.append(f"| `{name}` | {FORMATS[version]} ({how}) | {doc} |")
-        print(f"{name:42s} {FORMATS[version]:8s} {how}")
+        print(f"{name:42s} {FORMATS[version]:11s} {how}")
         if "--drc" in sys.argv and kicad and version <= 20221018:
             for line in drc(kicad, OUT / name):
                 print("    " + line)
@@ -104,10 +107,12 @@ output; after changing a board, run `python tests/test_boards.py --accept` to re
 Boards in KiCad 7's format were read back, zone-filled and saved by KiCad 7 itself, so they are
 exactly what KiCad writes, including the outlines of TrueType text. That needs KiCad 7's Python
 module (`pcbnew`): without it, `make.py` writes the boards as built, with unfilled zones, over the
-saved ones (on a machine without KiCad, 29 files change). Run it where KiCad 7 is installed, or
+saved ones (on a machine without KiCad, 31 files change). Run it where KiCad 7 is installed, or
 put the saved boards back with `git checkout featureTest`. Features that only KiCad 8, 9 or 10
 have are on hand-written boards in that version's format, written from KiCad's own file writer
-source; open those once in that KiCad to confirm they load.
+source; open those once in that KiCad to confirm they load. One board (`29c`) is in the format
+after KiCad 10, which a development build (10.99) writes: KESE reads it with a warning that the
+format is newer than the ones it is tested with.
 
 | File | Format | What it covers |
 |---|---|---|

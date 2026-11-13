@@ -3,6 +3,10 @@
 The stack-up decides the height of every layer. It is read once per board
 (`kese/s2_collect/stackup.py`), its heights are computed once (`kese/s4_geometry/heights.py`), and
 it is printed at the top of `report.txt`, so every z value in the model can be checked against it.
+Which of its layers go into the files is said in one place, `parameters/PCB_elements/Stackup.py`
+([8.4](#84-what-is-built-the-lines-of-stackuppy)), and the laminate is built in one of two ways: its
+plies fused, one solid for each gap between two copper layers, or its plies separate
+([8.3](#83-the-plies-of-a-gap-fused-or-separate)).
 
 ![Board tests/boards/six_layer cut through pad 1 of J1 at true scale: the silkscreen on the mask, the mask on the laminate faces, the ENIG finish on the pad, the outer copper on the faces, the four inner copper layers between five dielectrics, the plated barrel; every layer listed with its thickness and its heights from the laminate mid-plane, and close-ups of the silk on the mask and of the pad's top edge, then two closer still: the finish at the pad's edge, 5 µm of nickel under 0.08 µm of gold beside the mask, and the 80 nm of gold alone](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Stack-Up-Model/stackup_1_cross_section.webp)
 
@@ -52,8 +56,8 @@ z_{\mathrm{B.Cu}} \in \left[ -\frac{L}{2} - t_{\mathrm{out},B},\ -\frac{L}{2} \r
 | Symbol | Meaning | Parameter |
 |---|---|---|
 | $`t_{\mathrm{out}}`$ | finished outer copper thickness ($`t_{\mathrm{out},F}`$ for `F.Cu`, $`t_{\mathrm{out},B}`$ for `B.Cu`) | |
-| $`t_{\mathrm{foil}}`$ | foil thickness of the outer layer | stack-up, else `Copper.DEFAULT_OUTER_FOIL_MM` |
-| $`t_{\mathrm{plate}}`$ | copper added to the outer layers by plating | `Copper.OUTER_PLATING_ADDED_MM` |
+| $`t_{\mathrm{foil}}`$ | foil thickness of the outer layer | stack-up, else `Copper.DEFAULT_TOP_FOIL_MM` for `F.Cu` and `Copper.DEFAULT_BOTTOM_FOIL_MM` for `B.Cu` |
+| $`t_{\mathrm{plate}}`$ | copper added to the outer layer by plating, each side with its own value | `Copper.TOP_PLATING_ADDED_MM`, `Copper.BOTTOM_PLATING_ADDED_MM` |
 | $`z_{\mathrm{F.Cu}}`$, $`z_{\mathrm{B.Cu}}`$ | z range of the outer copper | |
 
 ### 8.1.3 Inner Copper
@@ -122,18 +126,20 @@ three example boards have one, `featureTest/15_stackup_none` has none). KESE rea
 | From the stack-up | Used for | Switch |
 |---|---|---|
 | `(thickness ...)` of each `*.Cu` layer | the foil thickness of that layer | `Copper.USE_STACKUP_COPPER_THICKNESS` |
-| `(thickness ...)`, `(type "core" / "prepreg")`, `(material ...)`, `(epsilon_r ...)`, `(loss_tangent ...)` of each `dielectric N` layer | one `Dielectric` per gap between copper layers | `Board.USE_STACKUP_EPSILON_R`, `Board.USE_STACKUP_LOSS_TANGENT` |
+| `(thickness ...)`, `(type "core" / "prepreg")`, `(material ...)`, `(epsilon_r ...)`, `(loss_tangent ...)` of each `dielectric N` layer, sub-layer by sub-layer | the plies of the gap between two copper layers: each sub-layer of a dielectric is one ply, with its own thickness and material | `Board.USE_STACKUP_EPSILON_R`, `Board.USE_STACKUP_LOSS_TANGENT` |
+| `(spec_frequency ...)` and `(dielectric_model ...)` of each sub-layer (KiCad's development version, file format 20260511 on) | the frequency a ply's εr and tan δ are given at, and how they change with frequency ([Material Properties](Material-Properties.md#214-how-εr-and-tan-δ-change-with-frequency)) | `Board.USE_STACKUP_SPEC_FREQUENCY`, `Board.USE_STACKUP_DIELECTRIC_MODEL` |
 | `(thickness ...)` of the first `*.Mask` layer that has one | the mask thickness, over laminate and over copper | `SolderMask.USE_STACKUP_MASK_THICKNESS` |
-| `(color ...)` of `F.Mask`, `B.Mask`, `F.SilkS`, `B.SilkS` | the colours in GLB, OBJ and the `look` of `materials.json`, and in STEP | `Color.USE_STACKUP_COLORS` |
-| `(copper_finish "...")` | the finish type, with `Finish.FINISH_TYPE = "file"` (the default is `"ENIG"`; with `"file"` a board that names no finish is an error) | `Finish.FINISH_TYPE` |
+| `(material ...)`, `(epsilon_r ...)`, `(loss_tangent ...)` of `F.Mask` and of `B.Mask` | the material of the top and of the bottom mask in `materials.json`, each side its own | `SolderMask.USE_STACKUP_MASK_MATERIAL` |
+| `(color ...)` of `F.Mask`, `B.Mask`, `F.SilkS`, `B.SilkS` | the colours in GLB, OBJ and the `look` of `materials.json`, and in STEP | `SolderMask.USE_STACKUP_MASK_COLOR`, `SilkScreen.USE_STACKUP_SILK_COLOR` |
+| `(copper_finish "...")` | the finish type, with `Finish.FINISH_TYPE = "file"` (the default; a board that names no finish is then an error, and a key such as `"ENIG"` gives every board that finish) | `Finish.FINISH_TYPE` |
 | `(edge_plating yes)`, `(castellated_pads yes)` | edge plating and castellations | `Copper.EDGE_PLATING = "file"`, `Copper.CASTELLATION = "file"` |
 
 A stack-up is **usable** when it has exactly one group of dielectric layers between every pair of
-consecutive copper layers and every group has a thickness above zero. A gap made of several plies
-(two prepregs, or prepreg + core + prepreg) becomes **one** dielectric solid with the summed
-thickness and the first ply's type, material, εr and tanδ. Plies written as sub-layers of one
-stack-up dielectric keep that dielectric's name (`dielectric 3` in `six_layer`); separate stack-up
-dielectrics in one gap give a joined name (`dielectric 1 + dielectric 2`):
+consecutive copper layers and every group has a thickness above zero. A gap can be made of several
+plies: two prepregs pressed together, or prepreg + core + prepreg. KiCad writes them as sub-layers of
+one stack-up dielectric (the word `addsublayer` between them), and KESE reads every one as a ply
+with its own thickness, type, material, εr and tan δ. The thickness of the gap is the sum of its
+plies, whichever way the laminate is built:
 
 ```math
 h_i = \sum_{p=1}^{P_i} h_{i,p} \qquad (8.10)
@@ -141,7 +147,7 @@ h_i = \sum_{p=1}^{P_i} h_{i,p} \qquad (8.10)
 
 | Symbol | Meaning |
 |---|---|
-| $`h_i`$ | thickness of the dielectric solid in gap $`i`$ |
+| $`h_i`$ | thickness of the dielectric in gap $`i`$ |
 | $`P_i`$ | number of plies in gap $`i`$ |
 | $`h_{i,p}`$ | thickness of ply $`p`$ of gap $`i`$, from the stack-up |
 
@@ -151,9 +157,12 @@ that number from the stack-up as all copper + all dielectrics + both masks, so f
 saved from Board Setup it equals the laminate plus the two outer foils and the two masks.)
 
 Any value the stack-up leaves out falls back to the parameter defaults:
-`Copper.DEFAULT_OUTER_FOIL_MM`, `Copper.DEFAULT_INNER_FOIL_MM`, `Board.DEFAULT_DIELECTRIC_MATERIAL`,
-`Board.DEFAULT_DIELECTRIC_TYPE`, `Board.DEFAULT_EPSILON_R`, `Board.DEFAULT_LOSS_TANGENT`,
-`SolderMask.MASK_OVER_LAMINATE_MM` / `MASK_OVER_COPPER_MM`.
+`Copper.DEFAULT_TOP_FOIL_MM`, `Copper.DEFAULT_INNER_FOIL_MM`, `Copper.DEFAULT_BOTTOM_FOIL_MM`,
+`Board.DEFAULT_DIELECTRIC_MATERIAL`, `Board.DEFAULT_DIELECTRIC_TYPE`, `Board.DEFAULT_EPSILON_R`,
+`Board.DEFAULT_LOSS_TANGENT`, `Board.DEFAULT_SPEC_FREQUENCY_HZ`, `Board.DIELECTRIC_MODEL`,
+`SolderMask.MASK_OVER_LAMINATE_MM` / `MASK_OVER_COPPER_MM`, and `SolderMask.MASK_MATERIAL`,
+`MASK_EPSILON_R` and `MASK_LOSS_TANGENT`. A gap can also be given other plies than the file's, for
+one board, in `Board.PLIES_BY_HAND` ([Board](Board.md#1214-plies-written-by-hand)).
 
 ### 8.2.2 Without A Stack-Up
 
@@ -183,7 +192,7 @@ h_i = \frac{L - \sum_{k=1}^{N-2} t_k}{N - 1} \qquad (8.11)
 | $`h_i`$ | thickness of every dielectric | |
 | $`L`$ | laminate thickness, equation (8.10b) | |
 | $`T`$ | the file's board thickness, else `Board.DEFAULT_BOARD_THICKNESS_MM` (1.6 mm) | `(general (thickness ...))` |
-| $`t_{l_0}`$, $`t_{l_{N-1}}`$ | foil of the outer copper layers | `Copper.DEFAULT_OUTER_FOIL_MM` |
+| $`t_{l_0}`$, $`t_{l_{N-1}}`$ | foil of the outer copper layers | `Copper.DEFAULT_TOP_FOIL_MM`, `Copper.DEFAULT_BOTTOM_FOIL_MM` |
 | $`m`$ | mask thickness over copper: the stack-up's mask thickness when an unusable stack-up block gives one, else the parameter | `SolderMask.MASK_OVER_COPPER_MM` |
 | $`t_k`$ | foil of inner copper layer $`l_k`$ | `Copper.DEFAULT_INNER_FOIL_MM` |
 | $`N`$ | number of copper layers | |
@@ -227,17 +236,159 @@ h_i^{*} = s \cdot h_i \qquad (8.13)
 > when the stack-up is missing. They are typical, not your fabricator's. For lab work, enter the
 > fabricator's stack-up in KiCad's Board Setup or set the defaults in `parameters/`.
 
-## 8.3 How The Heights Feed The Model
+## 8.3 The Plies Of A Gap: Fused Or Separate
+
+`Stackup.FUSION_BUILD` says how the laminate is built from the plies the file gives. The copper,
+the masks, the silkscreen and the finish are the same either way, and so is the laminate as a
+whole: the same volume, cut by the same holes.
+
+### 8.3.1 Plies Fused
+
+`FUSION_BUILD = "PLIES_FUSED"`: one solid for each gap between two copper layers,
+from equations (8.8) and (8.9). The plies of the gap are fused into it, and so is the resin between
+the traces of the inner copper beside it, which belongs to the prepreg next to it (the dielectric
+above, where both or neither are prepreg).
+
+![A real four-layer board, JLCPCB's JLC04161H-2116C, cut through as KESE builds it with the plies fused: three laminate solids, each in its own colour. Board_dielectric 1 is one solid of the 2116 and the 1080 ply and the resin beside In1.Cu, 0.2004 mm in all with the 2116 ply's values; Board_dielectric 2 is the core, 1.065 mm; Board_dielectric 3 is one solid of the 1080 and the 2116 ply and the resin beside In2.Cu. Copper is one solid per net, the mask and the silkscreen one solid per side, the finish one per metal and side](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Stack-Up-Model/stackup_2_plies_fused.webp)
+
+The solid takes its **first** ply's type, material, εr and tan δ, top to bottom
+(`Board.FUSED_PROPERTIES = "first"`), or its plies' values in series
+(`"series"`, [Material Properties](Material-Properties.md#215-a-gap-whose-plies-differ)). Either way
+`materials.json` lists every ply of the gap under `plies`, so nothing the file says is lost. Plies
+written as sub-layers of one stack-up dielectric keep that dielectric's name (`dielectric 3` in
+`six_layer`); separate stack-up dielectrics in one gap give a joined name
+(`dielectric 1 + dielectric 2`).
+
+### 8.3.2 Plies Separate
+
+`FUSION_BUILD = "PLIES_SEPARATE"`, the default: every layer of the laminate that a fabricator makes
+separately is its own solid, with its own thickness and material.
+
+![The same four-layer board with the plies separate: seven laminate solids. Board_dielectric 1 ply 1, the 2116 prepreg ply of 0.124 mm with εr 4.16; Board_dielectric 1 ply 2, the 1080 ply of 0.0764 mm with εr 3.91; Board_resin In1.Cu, the resin between the traces of In1.Cu, 0.0152 mm; Board_dielectric 2, the core of 1.065 mm; Board_resin In2.Cu; Board_dielectric 3 ply 1, the 1080 ply; and Board_dielectric 3 ply 2, the 2116 ply](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Stack-Up-Model/stackup_3_plies_separate.webp)
+
+The plies of gap $`i`$ are stacked down from the top of the gap, the last one ending at its bottom:
+
+```math
+z_{\mathrm{top}}(d_{i,p}) = z_{\mathrm{top}}(d_i) - \sum_{q=1}^{p-1} h_{i,q} \qquad (8.14)
+```
+
+```math
+z_{\mathrm{bot}}(d_{i,p}) = \begin{cases} z_{\mathrm{bot}}(d_i) & p = P_i \\ z_{\mathrm{top}}(d_{i,p}) - h_{i,p} & p < P_i \end{cases} \qquad (8.15)
+```
+
+| Symbol | Meaning |
+|---|---|
+| $`d_{i,p}`$ | ply $`p`$ of gap $`i`$, counted from the top |
+| $`z_{\mathrm{top}}(d_i)`$, $`z_{\mathrm{bot}}(d_i)`$ | top and bottom of the gap, equations (8.8) and (8.9) |
+| $`h_{i,q}`$ | thickness of ply $`q`$ of gap $`i`$, from the stack-up |
+| $`P_i`$ | number of plies in gap $`i`$ |
+
+The resin between the traces of inner copper layer $`l_k`$ fills that layer's own band, from
+$`z_{\mathrm{bot}}(l_k)`$ to $`z_{\mathrm{top}}(l_k)`$, wherever the layer has no copper. A ply
+is named `dielectric N ply M` where its dielectric has several and `dielectric N` where it has one;
+the resin is `resin In1.Cu`. What happens to a ply too thin to build, to equal neighbours, and to
+plies given by hand is in [Board](Board.md#1213-equal-plies-and-thin-plies).
+
+`report.txt` prints the laminate as it is built, under a heading that names the stack-up and its
+lines. With the plies fused, a gap of several plies says what it was fused from
+(`featureTest/29d_stackup_real`, the board of the two pictures):
+
+```text
+stack-up   built: PLIES_FUSED (parameters/PCB_elements/Stackup.py)
+  lines built: top_finish, top_copper, board, resin_between_traces, inner_copper, bottom_copper, bottom_finish, plated_holes, hole_finish, via_resin
+  lines left out: top_silkscreen, top_solder_mask, bottom_solder_mask, bottom_silkscreen
+  ...
+  dielectric 1             prepreg  2116       0.2004 mm  er 4.16  tan d 0.02   z +0.5477 .. +0.7481
+    fused from dielectric 1 ply 1: prepreg 2116 0.1240 mm  er 4.16  tan d 0.02
+    fused from dielectric 1 ply 2: prepreg 1080 0.0764 mm  er 3.91  tan d 0.02
+  dielectric 2             core     FR4 core   1.0650 mm  er 4.6  tan d 0.02   z -0.5325 .. +0.5325
+```
+
+With the plies separate every ply and every resin band has its own row:
+
+```text
+stack-up   built: PLIES_SEPARATE (parameters/PCB_elements/Stackup.py)
+  ...
+  dielectric 1 ply 1       prepreg  2116       0.1240 mm  er 4.16  tan d 0.02   z +0.6241 .. +0.7481
+  dielectric 1 ply 2       prepreg  1080       0.0764 mm  er 3.91  tan d 0.02   z +0.5477 .. +0.6241
+  resin In1.Cu             resin    resin      0.0152 mm  er 3.5  tan d 0.02   z +0.5325 .. +0.5477   (flowed from dielectric 1 ply 2)
+  dielectric 2             core     FR4 core   1.0650 mm  er 4.6  tan d 0.02   z -0.5325 .. +0.5325
+  resin In2.Cu             resin    resin      0.0152 mm  er 3.5  tan d 0.02   z -0.5477 .. -0.5325   (flowed from dielectric 3 ply 1)
+  dielectric 3 ply 1       prepreg  1080       0.0764 mm  er 3.91  tan d 0.02   z -0.6241 .. -0.5477
+  dielectric 3 ply 2       prepreg  2116       0.1240 mm  er 4.16  tan d 0.02   z -0.7481 .. -0.6241
+```
+
+## 8.4 What Is Built: The Lines Of Stackup.py
+
+`parameters/PCB_elements/Stackup.py` lists the board's layers as they lie in a real board, from the
+top silkscreen down to the bottom silkscreen, once for each of the two stack-ups. Each line is
+`True` (built, and written to every file in every mode and format) or `False` (left out):
+
+```python
+FUSION_BUILD = "PLIES_SEPARATE"
+
+PLIES_FUSED = {
+    # ---- the top side, from the outside in ----
+    "top_silkscreen":          False,  # the legend ink on the top solder mask
+    "top_solder_mask":         False,  # the solder mask on the top face
+    "top_finish":              True,   # ENIG, HASL ... on the top copper the mask leaves bare
+    "top_copper":              True,   # F.Cu: the foil and the copper plated on it
+    # ---- the inside of the board ----
+    "board":                   True,   # the laminate: one solid for each gap, its plies fused
+    "resin_between_traces":    True,   # the board solids also fill the space between the inner traces
+    "inner_copper":            True,   # In1.Cu, In2.Cu ...
+    # ---- the bottom side, from the inside out ----
+    "bottom_copper":           True,
+    "bottom_finish":           True,
+    "bottom_solder_mask":      False,
+    "bottom_silkscreen":       False,
+    # ---- through the board ----
+    "plated_holes":            True,   # the plated walls of vias and holes, castellations, the plated edge
+    "hole_finish":             True,   # the finish inside the plated holes and on the board's edge
+    "via_resin":               True,   # the resin in plugged and resin-filled vias
+}
+```
+
+`PLIES_SEPARATE` has the same lines, with `prepreg_plies` and `cores` in place of `board`. The file
+holds no thickness, material or colour: those are in each element's own file beside it
+([Parameter Reference](Parameter-Reference.md#191-stackup-parameterspcb_elementsstackuppy) has
+every line and what it builds).
+
+![A four-layer board cut through six times at the same place, thin layers drawn thicker: with every line of Stackup.py True, both silkscreens, both masks, the finish, the copper, the laminate and the plated walls are all there; with the file's defaults the masks and the silkscreens are left out and the finish is still only on the pads; with Stackup.finish False copper and laminate are left; with the four lines of the bottom side False the top side and the inside are unchanged; with resin_between_traces False the space beside the inner copper is empty; and with only board and resin_between_traces True the laminate stands alone, with its holes and the pockets of the inner copper](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Stack-Up-Model/stackup_4_lines.webp)
+
+Three rules hold for every line:
+
+- **A line left out changes no other part.** KESE works every line out first and then leaves out
+  the ones set to `False`, so what stays is exactly as it is with every line `True`. With the top
+  solder mask left out, the top finish still ends where the mask would begin; with `top_copper`
+  left out, a net's copper is the same solid less its `F.Cu` layer, and the laminate under it is
+  not changed. `tests/test_stackup_lines.py` holds every line to this, in both stack-ups and both
+  modes.
+- **The lines of the inside stand for every inner layer.** How many copper layers a board has, and
+  the plies between them, come from the board file; `inner_copper` is `In1.Cu`, `In2.Cu` and every
+  other, and `board` (or `prepreg_plies` and `cores`) every gap.
+- **Something must be built.** A stack-up with every line `False`, a line missing or a line
+  misspelt stops the run before the board is read, with the closest name offered
+  ([Checks, Errors And Warnings](Checks-Errors-And-Warnings.md#2011-errors)). A
+  board that has no part on any line that is `True` (only `top_silkscreen` on a board with no
+  silkscreen) is written empty, with a warning.
+
+On the command line `--set Stackup.top_solder_mask=True` sets that line in both stack-ups, and four
+short names set several lines at once: `Stackup.silkscreen`, `Stackup.solder_mask`,
+`Stackup.finish` (the top, the bottom and the hole finish) and `Stackup.copper` (the three copper
+lines and the plated holes).
+
+## 8.5 How The Heights Feed The Model
 
 | Feature | Height used |
 |---|---|
-| Dielectric $`d_i`$ | equations (8.8) and (8.9) |
-| Resin beside inner copper | the inner copper's own band, filled from the adjacent prepreg, else from the dielectric above (box 2 of the picture; [Board](Board.md)) |
+| Dielectric $`d_i`$ | equations (8.8) and (8.9); with the plies separate each ply of it, equations (8.14) and (8.15) |
+| Resin beside inner copper | the inner copper's own band: with the plies fused a part of the adjacent prepreg's solid, else of the dielectric above (box 2 of the picture at the top); with the plies separate a solid of its own ([Board](Board.md#122-resin-between-the-traces-of-the-inner-copper)) |
 | Copper of layer $`l_k`$ | its band, equations (8.4) to (8.7) |
 | Via barrel from layer $`l_i`$ to $`l_j`$ | between the copper layers it joins; outer copper caps it, inner copper is drilled through, so the barrel passes through inner bands ([Copper And Traces](Copper-And-Traces.md)) |
 | Solder mask | from the laminate face: mask thickness over laminate, copper + mask thickness over copper ([Solder Masks](Solder-Masks.md)) |
 | Silkscreen | on top of the mask surface ([Silkscreens](Silkscreens.md)) |
-| Surface finish | on every copper face the air reaches: stacked on the outer copper where the mask is open, and a thin shell on the copper's walls, in the plated holes and on the plated edge (boxes 4 and 5 of the picture; [Finish](Finish.md)) |
+| Surface finish | on every copper face the air reaches: stacked on the outer copper where the mask is open, and a thin shell on the copper's walls, in the plated holes and on the plated edge (boxes 4 and 5 of the picture at the top; [Finish](Finish.md)) |
 
 | Previous | Next |
 |:---|---:|

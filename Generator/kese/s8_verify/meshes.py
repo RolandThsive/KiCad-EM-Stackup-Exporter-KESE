@@ -29,6 +29,8 @@ def check_meshes(model, glb_path):
             f"worst {found[0][0]:.3e} mm3, {found[0][1]} and {found[0][2]} at z {found[0][3]:+.4f} .. "
             f"{found[0][4]:+.4f} mm ({len(found)} place{'s' * (len(found) > 1)})" if found else "none"))
         ok &= not found
+    elif not any(len(m.faces) for m in meshes.values()):     # every line built is one this board has no part of
+        lines.append("  visible surfaces per vertical ray: no surface to check (nothing was built)")
     else:
         met, wrong = _skin_surfaces(meshes, P.Verifier.VERIFY_RAYS, model.transform)
         lines.append(f"  visible surfaces per vertical ray: faces met {met}; rays where in and out do not alternate: {wrong}")

@@ -115,7 +115,7 @@ def test_the_fill_word_is_read_as_kicad_10_writes_it():
 
 
 def test_the_hatches_are_what_kicad_draws():
-    with settings({"SolderMask.SOLDER_MASK_ENABLED": True, "Silkscreen.SILKSCREEN_ENABLED": True}):
+    with settings({"Stackup.solder_mask": True, "Stackup.silkscreen": True}):
         r, _ = run_stages(BOARD, resolve)
     mine = {"F.Cu": r.copper_all["F.Cu"], "B.Cu": r.copper_all["B.Cu"], "F.SilkS": r.silk["F"],
             "F.Mask": r.mask_open["F"], "B.Mask": r.mask_open["B"]}

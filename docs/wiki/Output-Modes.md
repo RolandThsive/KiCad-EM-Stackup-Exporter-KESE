@@ -6,10 +6,16 @@ KESE writes the same geometry in two modes, chosen with `Run.MODE` or `--mode`.
 
 ## 9.1 Simulation Mode
 
-`--mode simulation`: the physical board as it leaves the factory. **Every part is a closed solid**:
-each dielectric between two copper layers (core or prepreg), each net's copper with all of its
-layers and vias joined into one body, via and hole plating, the surface finish and, if enabled
-(they are off by default), solder mask conformal over the copper and silkscreen.
+`--mode simulation`, the default: the physical board as it leaves the factory. **Every part is a closed solid**:
+each ply of the laminate (every core and every prepreg ply), each net's copper with all of its
+layers and vias joined into one body, via and hole plating, the surface finish and, if their
+lines of the stack-up are on (they are off by default), solder mask conformal over the copper
+and silkscreen. Which of these a run holds is the list of lines in
+`parameters/PCB_elements/Stackup.py` ([Stack-Up Model](Stack-Up-Model.md)); it is the same in
+both modes and every format. The laminate is built as it is pressed
+(`Stackup.FUSION_BUILD = "PLIES_SEPARATE"`, the default): every prepreg ply, every core and the
+resin beside each inner copper layer is a solid of its own; with `"PLIES_FUSED"` each gap between
+two copper layers is one solid ([Board](Board.md#121-dielectric-solids)).
 
 ![Side profile of the 4-layer board featureTest/14_stackup_full in simulation mode, cut through its plated pad J1 at true scale: the three dielectrics, the mask on both faces and the pad's copper fill the cut, the pad's ring on each of the four copper layers joined by the 25 µm plated barrel into the one part Copper_GND; a table gives each layer's thickness and the part it is in](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Output-Modes/modes_2_simulation_side.webp)
 
@@ -24,7 +30,7 @@ Part names in simulation mode, with the default grouping:
 
 | Role | Parts | Example |
 |---|---|---|
-| `board` | one per dielectric (`Board.DIELECTRIC_GROUPING = "layer"`) or one `Board` (`"merged"`) | `Board_dielectric 1` |
+| `board` | one per ply, per core and per resin fill (`Board.DIELECTRIC_GROUPING = "layer"`, the plies separate) or one `Board` (`"merged"`); with the plies fused, one per gap between two copper layers | `Board_dielectric 1 ply 2`, `Board_dielectric 2`, `Board_resin In1.Cu`; `Board_dielectric 1` |
 | `copper` | one per net (`Copper.COPPER_GROUPING = "net"`), per layer (`"layer"`), or one `Copper` (`"merged"`) | `Copper_GND`, `Copper_no_net` |
 | `plating` | its own `Plating` part only with `"layer"` grouping; otherwise the barrels belong to the copper parts | `Plating` |
 | `via_resin` | the plugs and resin fills of KiCad 10's protected vias, one part ([Copper And Traces](Copper-And-Traces.md#1334-via-protection)) | `Via Resin` |
@@ -34,7 +40,7 @@ Part names in simulation mode, with the default grouping:
 
 ## 9.2 Visual Mode
 
-`--mode visual`: **only the visible surface** of the same geometry, for web viewers such as
+`--mode visual --format glb`, or the `viewer` preset (`--for viewer`): **only the visible surface** of the same geometry, for web viewers such as
 `<model-viewer>` and three.js, and for renders. It is found in 2D, as the solids of simulation
 mode are, but for all parts at once (`kese/s6_assemble/skin_faces.py`): at every height, a face
 that looks up is one part's material below minus every part's material above, and a face that
@@ -91,7 +97,7 @@ Differences from simulation mode:
   surface, not solids.
 - The mask on top of copper becomes its own part, `Top Mask over Copper` / `Bottom Mask over
   Copper`, with its own colour, so traces read through the mask the way they do on a real board.
-- The mask is drawn opaque whatever its alpha (`Color.VISUAL_MASK_OPAQUE`), since a translucent
+- The mask is drawn opaque whatever its alpha (`SolderMask.VISUAL_MASK_OPAQUE`), since a translucent
   surface with nothing behind it would look wrong.
 - All copper and plating take the `Copper_exposed` colour, since only bare copper is visible.
 - The parts are not closed solids: the Verifier's closed-solid and winding checks do not apply (the

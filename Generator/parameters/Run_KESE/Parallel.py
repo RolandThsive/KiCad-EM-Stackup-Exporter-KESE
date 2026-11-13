@@ -1,5 +1,5 @@
 """
-parameters/parallel.py - how many processor cores work at once, and how much the work holds in
+parameters/Run_KESE/Parallel.py - how many processor cores work at once, and how much the work holds in
 memory at once.
 
 Every value here is recorded in parameters.txt next to each output.  None of them changes the

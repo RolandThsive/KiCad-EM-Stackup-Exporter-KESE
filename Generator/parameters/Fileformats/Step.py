@@ -1,9 +1,14 @@
 """
-parameters/step.py - the STEP files: true arcs and cylinders, and what counts as an arc.
+parameters/Fileformats/Step.py - the STEP files: true arcs and cylinders, and what counts as an arc.
 
 Every value here is recorded in parameters.txt next to each output.  The file's units are
 Run.UNITS; STEP is written only when Run.FILE_FORMAT holds "step".  How many rows the writer turns
 into text at once is Parallel.STEP_ROWS_AT_A_TIME.
+
+Which layers of the board go into the file is set in PCB_elements/Stackup.py; the solder mask and
+the silkscreen are left out by default.  STEP with mask and silk is bigger (the PCIe card in
+Input/, in mm: 151 MB and 1,024 solids written in 2.9 s, against 81 MB and 788 solids in 1.9 s
+without them).
 """
 
 # Every part is written as the closed solid stage 6 built, one body per connected piece, with its
@@ -35,10 +40,3 @@ STEP_STRIP_MAX_TURN_DEG = 45.0         # the strip kept clear around an arc is d
 STEP_TANGENT_MM = 5e-8                 # an edge that leaves an arc's end and cuts into its circle by less only
                                        # touches the arc, as a line along its tangent does (OpenCascade takes two
                                        # curves within about 2e-7 of the file's unit for touching: in mm, 2e-7 mm)
-#
-# Which parts are made, in every format and mode alike, is set by one switch per kind of part:
-#   Board.BOARD_ENABLED, Copper.COPPER_ENABLED (copper and plated barrels), Copper.VIA_RESIN_ENABLED,
-#   Finish.FINISH_ENABLED, SolderMask.SOLDER_MASK_ENABLED, Silkscreen.SILKSCREEN_ENABLED; mask and silk
-#   are off by default.
-#   STEP with mask and silk is bigger (the PCIe card in Input/, in mm: 151 MB and 1,024 solids written
-#   in 2.9 s, against 81 MB and 788 solids in 1.9 s without them).

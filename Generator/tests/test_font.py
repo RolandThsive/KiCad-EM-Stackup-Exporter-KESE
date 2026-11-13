@@ -1,6 +1,6 @@
 """The stroke font and the faces a board's text can name (kese/core/font_file.py, kese/s2_collect/text.py):
 KiCad's newstroke is read glyph by glyph and is the font it was, all three font layouts give the same
-glyphs, a broken line names its file and line, a board with no text reads no font, Silkscreen.FONT_FILE
+glyphs, a broken line names its file and line, a board with no text reads no font, SilkScreen.FONT_FILE
 picks a custom JSON or Hershey font and a changed one takes effect, and text in a TrueType face is drawn
 from its render cache, or with the stroke font and a warning, or left out, while (face "KiCad Font") is
 the stroke font itself.  Takes a few seconds.
@@ -67,7 +67,7 @@ def test_every_layout_gives_the_same_glyphs():
 
 
 def test_only_the_glyphs_drawn_are_parsed():
-    with settings({"Silkscreen.FONT_FILE": None}):
+    with settings({"SilkScreen.FONT_FILE": None}):
         font_file._fonts.clear()
         assert not font.render("   ", (0, 0), 0, 1.0, 1.0, 0.1).area and not font_file._fonts   # blank: no font read
         assert font.render("AB 12 A", (0, 0), 0, 1.0, 1.0, 0.1).area > 0
@@ -91,7 +91,7 @@ def test_a_broken_line_names_the_file_and_the_line():
 
 def collected(board_text, changes=None):
     """Stages 1 and 2 on a board written from board_text, with the settings `changes`
-    ({"Silkscreen.X": value}) for the run: (Items, the run's notes and warnings)."""
+    ({"SilkScreen.X": value}) for the run: (Items, the run's notes and warnings)."""
     with settings(changes or {}), tempfile.TemporaryDirectory() as tmp:
         path = Path(tmp) / "fonts.kicad_pcb"
         path.write_text(board_text, encoding="utf-8")
@@ -142,7 +142,7 @@ def test_text_in_a_truetype_face_is_drawn_from_its_cache_else_with_the_stroke_fo
         "no render cache for them, or one made for other words or another angle (open the board in KiCad and "
         "save it)"]
     items, lines = collected(board(("TTF", "Some Font Nobody Has", None)),
-                             {"Silkscreen.DRAW_TRUETYPE_TEXT_WITH_STROKE_FONT": False})
+                             {"SilkScreen.DRAW_TRUETYPE_TEXT_WITH_STROKE_FONT": False})
     assert faces(items) == {"TrueType text on F.Cu (DRAW_TRUETYPE_TEXT_WITH_STROKE_FONT is False)": 1}
     assert not copper(items) and not any("stroke font, in other" in s for s in lines)
 
@@ -173,14 +173,14 @@ def test_a_cache_differing_only_where_kese_cannot_know_the_words_is_drawn():
 
 def test_the_face_kicad_font_is_the_stroke_font():
     plain, _ = collected(board(("R12", None, None)))
-    for changes in ({}, {"Silkscreen.DRAW_TRUETYPE_TEXT_WITH_STROKE_FONT": False}):
+    for changes in ({}, {"SilkScreen.DRAW_TRUETYPE_TEXT_WITH_STROKE_FONT": False}):
         items, lines = collected(board(("R12", "KiCad Font", None)), changes)
         assert not faces(items) and not any("TrueType" in s for s in lines), changes
         assert copper(items)[0].symmetric_difference(copper(plain)[0]).area < 1e-12
 
 
 def test_font_file_picks_a_custom_font_and_a_changed_one_takes_effect():
-    saved = font_file.FONTS_DIR, P.Silkscreen.FONT_FILE
+    saved = font_file.FONTS_DIR, P.SilkScreen.FONT_FILE
     with tempfile.TemporaryDirectory() as tmp:
         try:
             font_file.FONTS_DIR = Path(tmp)
@@ -189,7 +189,7 @@ def test_font_file_picks_a_custom_font_and_a_changed_one_takes_effect():
             (Path(tmp) / "hershey.jhf").write_text(HERSHEY, encoding="latin-1")
             widths = {}
             for name in (None, "small.json", "hershey.jhf", "missing.jhf"):
-                P.override("Silkscreen.FONT_FILE", name)
+                P.override("SilkScreen.FONT_FILE", name)
                 _, note = font_file.load()
                 widths[name] = font.render("!", (0, 0), 0, 1.0, 1.0, 0.1, ["left"]).bounds
                 assert note == font_file.note()
@@ -200,7 +200,7 @@ def test_font_file_picks_a_custom_font_and_a_changed_one_takes_effect():
             assert len(h[2]["s"]) == 2                                          # a pen-up splits the strokes
         finally:
             font_file.FONTS_DIR = saved[0]
-            P.override("Silkscreen.FONT_FILE", saved[1])
+            P.override("SilkScreen.FONT_FILE", saved[1])
             font_file._fonts.clear()
 
 
