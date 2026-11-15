@@ -41,7 +41,7 @@ Elmer is the main solver of these encoder boards: at 3 to 5 MHz the boards are a
 
 Elmer, magnetic (WhitneyAVHarmonicSolver with edge elements), every coil a massive coil of the circuit module: the driven TX carries 1 A, every other coil is open. One solve gives the TX's impedance (L and R, with skin, proximity and the rotor's loss) and each open coil's voltage, so its mutual inductance M. The rotor's 35 µm copper is meshed through its thickness (the skin depth at these frequencies is 32 to 38 µm).
 
-Solves: 20. Per coil set, the rotor away (C1, C3), the rotor at the eight angles of C4 (set 1: 0, 45, 90, 135, 180, 225, 270, 315° mechanical) (set 2: 0, 2.8125, 5.625, 8.4375, 11.25, 14.0625, 16.875, 19.6875° mechanical) and one more: the rotor at one electrical period (360/N) for C4's period check, where N > 1. The stator's mesh is the same in every solve; only the air around the rotor is meshed again for each angle.
+Solves: 18. Per coil set, the rotor away (C1, C3), the rotor at the eight angles of C4 (set 1: 0, 45, 90, 135, 180, 225, 270, 315° mechanical) (set 2: 0, 2.8125, 5.625, 8.4375, 11.25, 14.0625, 16.875, 19.6875° mechanical) (C2, C4 to C6, C10). The rotor repeats itself after 360/N, so the coupling's period is exact by construction and needs no solve of its own. The stator's mesh is the same in every solve; only the air between the boards is meshed again for each angle.
 
 The checks are the Elmer brief's (`../Things to test in ELMER.md`, section 5), with the five pass marks reviewed on 16 November (see `../README.md`): C0 (the mesh study, on S1), C1 to C6, C7 on the dual boards, and C10. C9 (air gap sweep), C11 (rotor off-centre and tilted) and C12 (surface-impedance rotor) are optional.
 
@@ -58,7 +58,7 @@ Not run yet. When it runs, `results.md` in this folder gets every number, the ru
 | C2 | TX_1: spread of L over the eight C4 angles | none, by symmetry | | within 0.5 % of their mean |
 | C3 | TX_1: M0 to SIN / COS, rotor away | -0.031 nH / -0.042 nH | | M0 / A below 3 %; the sign judged only where resolved |
 | C4 | TX_1: amplitude A to SIN / COS | 37.04 / 37.04 nH | | within 15 % |
-| C4 | TX_1: even harmonic h2 | below 1 % of A | | below 1 % of A |
+| C4 | TX_1: even harmonic h2 (SIN / COS) | below 1 % of A | | below 1 % of A |
 | C4 | TX_1: third harmonic h3 (SIN / COS) | 2.21 % / 2.21 % | | within 2×, or within 0.3 % of A |
 | C5 | TX_1: phase difference SIN − COS | +90.0° (either sign) | | 90 ± 1° |
 | C5 | TX_1: amplitude ratio SIN / COS | 1.000 | | 1.00 ± 0.02 |
@@ -69,7 +69,7 @@ Not run yet. When it runs, `results.md` in this folder gets every number, the ru
 | C2 | TX_2: spread of L over the eight C4 angles | none, by symmetry | | within 0.5 % of their mean |
 | C3 | TX_2: M0 to SIN / COS, rotor away | +0.026 nH / -0.009 nH | | M0 / A below 3 %; the sign judged only where resolved |
 | C4 | TX_2: amplitude A to SIN / COS | 59.86 / 59.86 nH | | within 15 % |
-| C4 | TX_2: period, M at 22.5° against M at 0° | equal (period 22.5°) | | within 1 % of A; h2 below 1 % of A |
+| C4 | TX_2: even harmonic h2 (SIN / COS) | below 1 % of A | | below 1 % of A |
 | C4 | TX_2: third harmonic h3 (SIN / COS) | 0.12 % / 0.12 % | | within 2×, or within 0.3 % of A |
 | C5 | TX_2: phase difference SIN − COS | +90.0° (either sign) | | 90 ± 1° |
 | C5 | TX_2: amplitude ratio SIN / COS | 1.000 | | 1.00 ± 0.02 |

@@ -12,16 +12,16 @@ The most important single number is C2: how much the rotor lowers the TX's induc
 
 | # | Board | What it tests | Stator copper | Solves | Memory, first guess | Runs on | Status |
 |---|---|---|---|---|---|---|---|
-| 1 | [S2_4x_OD40_2L_small](S2_4x_OD40_2L_small/) | the smallest single board, the cheapest model: first | 0.96 m | 10 | about 11 GB | the test machine | not run yet |
-| 2 | [S1_1x_OD54_2L_baseline](S1_1x_OD54_2L_baseline/) | the generator's default, the simplest geometry; Elmer's mesh study C0 | 0.92 m | 10 | about 10 GB | the test machine | not run yet |
-| 3 | [D2_1x8x_OD40_small](D2_1x8x_OD40_small/) | the smallest dual board, tight spacing between the sets | 1.56 m | 20 | about 17 GB | 32 GB | not run yet |
-| 4 | [S3_8x_OD59_4L_series_wideband](S3_8x_OD59_4L_series_wideband/) | TX on the inner layers, far from the rotor; a wide band | 1.91 m | 10 | about 20 GB | 32 GB | not run yet |
-| 5 | [S4_16x_OD54_2L_fingers](S4_16x_OD54_2L_fingers/) | the finest single pitch, and the bridging fingers | 1.30 m | 10 | about 14 GB | 32 GB | not run yet |
-| 6 | [S5_4x_OD98_cosine_r_2subcoils_spiralTX](S5_4x_OD98_cosine_r_2subcoils_spiralTX/) | the other RX profile, sub-coils, a spiral TX, the biggest board | 3.41 m | 10 | about 35 GB | 64 GB | not run yet |
-| 7 | [D1_1x16x_OD54_Renesas_R145_size](D1_1x16x_OD54_Renesas_R145_size/) | the dual default, a 3.2 mm board | 3.14 m | 20 | about 32 GB | 64 GB | not run yet |
-| 8 | [D3_1x16x_OD59_fitted_bands](D3_1x16x_OD59_fitted_bands/) | a typical dual board | 3.07 m | 20 | about 32 GB | 64 GB | not run yet |
-| 9 | [D4_2x8x_OD59_parallel_TX](D4_2x8x_OD59_parallel_TX/) | parallel TX wiring, a 2-period set | 2.74 m | 20 | about 28 GB | 32 GB | not run yet |
-| 10 | [D5_1x16x_OD74_ID40_large](D5_1x16x_OD74_ID40_large/) | a large thin ring | 3.96 m | 20 | about 41 GB | 64 GB | not run yet |
+| 1 | [S2_4x_OD40_2L_small](S2_4x_OD40_2L_small/) | the smallest single board, the cheapest model: first | 0.96 m | 9 | about 11 GB | the test machine | not run yet |
+| 2 | [S1_1x_OD54_2L_baseline](S1_1x_OD54_2L_baseline/) | the generator's default, the simplest geometry; Elmer's mesh study C0 | 0.92 m | 9 | about 10 GB | the test machine | not run yet |
+| 3 | [D2_1x8x_OD40_small](D2_1x8x_OD40_small/) | the smallest dual board, tight spacing between the sets | 1.56 m | 18 | about 17 GB | 32 GB | not run yet |
+| 4 | [S3_8x_OD59_4L_series_wideband](S3_8x_OD59_4L_series_wideband/) | TX on the inner layers, far from the rotor; a wide band | 1.91 m | 9 | about 20 GB | 32 GB | not run yet |
+| 5 | [S4_16x_OD54_2L_fingers](S4_16x_OD54_2L_fingers/) | the finest single pitch, and the bridging fingers | 1.30 m | 9 | about 14 GB | 32 GB | not run yet |
+| 6 | [S5_4x_OD98_cosine_r_2subcoils_spiralTX](S5_4x_OD98_cosine_r_2subcoils_spiralTX/) | the other RX profile, sub-coils, a spiral TX, the biggest board | 3.41 m | 9 | about 35 GB | 64 GB | not run yet |
+| 7 | [D1_1x16x_OD54_Renesas_R145_size](D1_1x16x_OD54_Renesas_R145_size/) | the dual default, a 3.2 mm board | 3.14 m | 18 | about 32 GB | 64 GB | not run yet |
+| 8 | [D3_1x16x_OD59_fitted_bands](D3_1x16x_OD59_fitted_bands/) | a typical dual board | 3.07 m | 18 | about 32 GB | 64 GB | not run yet |
+| 9 | [D4_2x8x_OD59_parallel_TX](D4_2x8x_OD59_parallel_TX/) | parallel TX wiring, a 2-period set | 2.74 m | 18 | about 28 GB | 32 GB | not run yet |
+| 10 | [D5_1x16x_OD74_ID40_large](D5_1x16x_OD74_ID40_large/) | a large thin ring | 3.96 m | 18 | about 41 GB | 64 GB | not run yet |
 
 The memory figures are a first guess, about 10 GB per metre of copper with the mesh the brief asks for; S2's mesh study measures the real figure, and this table is corrected before any large board runs. Boards that need more than the test machine's 16 GB are held for a bigger PC.
 
@@ -31,8 +31,8 @@ The brief's marks stand, except five that as written either cannot fail or canno
 
 | Check | In the brief | Now |
 |---|---|---|
-| C2, angle independence | L at 0° and a second angle within 0.5 % | L at all eight C4 angles within 0.5 % of their mean (the second angle was already one of the eight) |
-| C4, period | exactly 360/N | M at 360/N equals M at 0° within 1 % of the amplitude A, and h2 below 1 % of A (a fit over one assumed period cannot show another period) |
+| C2, angle independence | L at 0° and a second angle within 0.5 % | L at all eight C4 angles within 0.5 % of their mean (the second angle was already one of the eight, so its solve is dropped) |
+| C4, period | exactly 360/N | dropped: the rotor repeats itself after 360/N, so the period is exact by construction in any solver; instead the even harmonic h2 stays below 1 % of the amplitude A |
 | C4, h3 | within 2× | within 2×, or within 0.3 % of A, whichever is looser, with the stator's mesh the same at every angle |
 | C3, sign pattern | the same sign pattern | M0 / A below 3 % stays; the sign is judged only where M0 is at least 3 times its change between the two finest meshes |
 | C6 | the same order of magnitude | within 3 times the prediction, or below 0.5 electrical degree, whichever is looser |
