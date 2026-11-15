@@ -1,0 +1,17 @@
+== D3_1x16x_OD59_fitted_bands  (air gap 1.0 mm, 4 layers, board 1.6 mm)
+   rotor ring r 9.03 ... 16.05 mm, 1 sector(s), duty 0.500
+   rotor ring r 19.05 ... 28.80 mm, 16 sector(s), duty 0.500
+   TX_1: L 2.609 uH rotor away, 2.426 uH with rotor (-7.0 %)
+   TX_2: L 4.695 uH rotor away, 4.477 uH with rotor (-4.6 %)
+   TX_1->COS_1      M0   -0.042 nH   amplitude  37.040 nH  period 360.00 deg  phase   +90.8  h2 0.01% h3 2.21% h5 0.11%
+   TX_1->COS_2      M0   -0.019 nH   amplitude  20.872 nH  period 22.50 deg  phase   -89.3  h2 0.00% h3 0.19% h5 0.00%
+   TX_1->SIN_1      M0   -0.031 nH   amplitude  37.040 nH  period 360.00 deg  phase  -179.2  h2 0.01% h3 2.21% h5 0.11%
+   TX_1->SIN_2      M0   +0.012 nH   amplitude  20.872 nH  period 22.50 deg  phase    +0.7  h2 0.00% h3 0.19% h5 0.00%
+   TX_2->COS_1      M0   +0.002 nH   amplitude  16.290 nH  period 360.00 deg  phase   +90.9  h2 0.01% h3 2.09% h5 0.10%
+   TX_2->COS_2      M0   -0.009 nH   amplitude  59.865 nH  period 22.50 deg  phase   +89.4  h2 0.01% h3 0.12% h5 0.01%
+   TX_2->SIN_1      M0   +0.002 nH   amplitude  16.290 nH  period 360.00 deg  phase  -179.1  h2 0.01% h3 2.09% h5 0.10%
+   TX_2->SIN_2      M0   +0.026 nH   amplitude  59.865 nH  period 22.50 deg  phase  +179.4  h2 0.01% h3 0.12% h5 0.01%
+   TX_1:SIN_1/COS_1: dphi +90.0 deg, sin/cos 1.000, offset/amp -0.001 / -0.001, err 1.33 el.deg (raw 1.36), Vrx/Vtx 0.0153
+   TX_1:SIN_2/COS_2: dphi +90.0 deg, sin/cos 1.000, offset/amp +0.001 / -0.001, err 0.11 el.deg (raw 0.17), Vrx/Vtx 0.0086
+   TX_2:SIN_1/COS_1: dphi +90.0 deg, sin/cos 1.000, offset/amp +0.000 / +0.000, err 1.26 el.deg (raw 1.31), Vrx/Vtx 0.0036
+   TX_2:SIN_2/COS_2: dphi +90.0 deg, sin/cos 1.000, offset/amp +0.000 / -0.000, err 0.08 el.deg (raw 0.10), Vrx/Vtx 0.0134

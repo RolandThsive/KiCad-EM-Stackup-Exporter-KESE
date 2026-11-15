@@ -1,0 +1,6 @@
+== S5_4x_OD98_cosine_r_2subcoils_spiralTX  (air gap 1.0 mm, 2 layers, board 1.6 mm)
+   rotor ring r 29.33 ... 46.70 mm, 4 sector(s), duty 0.500
+   TX: L 6.192 uH rotor away, 5.786 uH with rotor (-6.6 %)
+   TX->1            M0   +2.191 nH   amplitude 206.329 nH  period 90.00 deg  phase  +177.6  h2 0.01% h3 0.18% h5 0.03%
+   TX->2            M0   +0.427 nH   amplitude 206.329 nH  period 90.00 deg  phase   -92.4  h2 0.01% h3 0.18% h5 0.03%
+   TX:2/1: dphi +90.0 deg, sin/cos 1.000, offset/amp +0.002 / +0.011, err 0.10 el.deg (raw 0.68), Vrx/Vtx 0.0357

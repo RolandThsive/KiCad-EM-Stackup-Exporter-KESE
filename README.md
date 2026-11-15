@@ -17,9 +17,30 @@ Results section, what was expected and what came out.  The inductive encoder coi
 | `3D_Geometry/` | Empty on purpose: copy KESE's `Generator/` in from `main` by hand (see its README) |
 | `Solver_OpenEMS/` | Empty on purpose: build openEMS in here by hand (see its README) |
 | `bridge/` | The bridge, in Python (coming) |
-| `Examples/` | One folder per example (coming) |
+| `Examples/Inductive Coils/` | The ten inductive encoder boards from the Sinusoidal Coil Generator, one folder each (non-commercial licence, see its LICENSE.md) |
+| `Examples/` | The 50 examples, one folder each (coming) |
+
+## Boards tested
+
+None yet. Each board that runs gets a `results.md` in its folder, and a line here.
+
+| Board | Checks | Result | Machine | Date |
+|---|---|---|---|---|
+
+## Left to test on a more powerful PC
+
+Every coil board's self-resonance check (C8) is a run of many hours (about 540,000 time steps): 7 hours for S2 and 45
+for S5 on the 4-core test machine. These wait for a machine that can run them unattended. Memory, with openEMS's new CPU engine:
+
+| Board | Memory | Fits |
+|---|---|---|
+| S2, D2 | about 2 GB | 8 GB |
+| S1, S4, D1, D3, D4, S3 | 3.8 to 4.5 GB | 8 GB, just |
+| D5_1x16x_OD74_ID40_large | about 7 GB | 16 GB |
+| S5_4x_OD98_cosine_r_2subcoils_spiralTX | about 13 GB | 32 GB |
 
 ## Licence
 
 GPL-3.0, as KESE and openEMS.  openEMS is not part of this repository; it is built from its own
-source in `Solver_OpenEMS/`.
+source in `Solver_OpenEMS/`. The coil boards in `Examples/Inductive Coils/` keep the Sinusoidal Coil
+Generator's non-commercial licences (see that folder's LICENSE.md).

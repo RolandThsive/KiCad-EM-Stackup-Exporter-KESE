@@ -1,0 +1,390 @@
+{
+ "board": "D3_1x16x_OD59_fitted_bands",
+ "generator": "Dual",
+ "units": "mm, H, Hz, ohm, degrees",
+ "files": {
+  "stator": "Stator.kicad_pcb",
+  "rotor": "Rotor.kicad_pcb",
+  "parameters": "Parameters.txt",
+  "expected": "expected_results.json"
+ },
+ "coordinates": {
+  "kicad_axis_xy": [
+   100.0,
+   100.0
+  ],
+  "model_origin": "the rotation axis, at the top face of the stator's F.Cu copper",
+  "kicad_y": "KiCad y points down. A model with y up uses y_model = -(y_kicad - 100); then every rotation sense below flips (KiCad 'counter-clockwise' = clockwise seen from +z in a y-up model)",
+  "z": "z up, from the stator towards the rotor. Stator F.Cu top face at z = 0; deeper layers at negative z"
+ },
+ "stator": {
+  "layers": [
+   "F.Cu",
+   "In1.Cu",
+   "In2.Cu",
+   "B.Cu"
+  ],
+  "layer_z_mm": {
+   "F.Cu": 0.0,
+   "In1.Cu": -0.2,
+   "In2.Cu": -1.4,
+   "B.Cu": -1.6
+  },
+  "board_thickness_mm": 1.6,
+  "copper_thickness_mm": 0.035,
+  "copper": "each layer's copper is 35 um thick and sits just below its z value (F.Cu: -0.035 ... 0)",
+  "fr4_eps_r": 4.4,
+  "bore_and_outer_radius_mm": [
+   8.5,
+   29.5
+  ]
+ },
+ "rotor": {
+  "board_thickness_mm": 1.6,
+  "copper_layer": "F.Cu of Rotor.kicad_pcb (gr_poly sectors)",
+  "placement": "copper side towards the stator, NOT mirrored: take Rotor.kicad_pcb as drawn, put its copper face (facing down) at z = +air_gap, its FR-4 above it",
+  "rotation": "turn by theta about the axis: (x, y) -> (x cos t - y sin t, x sin t + y cos t) in KiCad coordinates (y down). theta = 0 is the rotor exactly as drawn",
+  "rings": [
+   {
+    "r_in": 9.03,
+    "r_out": 16.05,
+    "sectors": 1,
+    "duty": 0.5,
+    "start": 0.7853981633974483
+   },
+   {
+    "r_in": 19.05,
+    "r_out": 28.8,
+    "sectors": 16,
+    "duty": 0.4999999809070041,
+    "start": 0.24539329438344637
+   }
+  ]
+ },
+ "air_gap_mm": 1.0,
+ "air_gap_definition": "stator F.Cu top face to rotor copper face (copper to copper). The solder mask lies inside this gap: air between the two mask faces = gap - 2 x mask thickness",
+ "solder_mask": {
+  "thickness_mm": 0.02,
+  "eps_r": 3.8,
+  "loss_tangent": 0.02,
+  "where": "both faces of the stator AND both faces of the rotor, over all copper and bare FR-4, no openings (vias tented). Conformal over the copper: 20 um on top of each trace and on the FR-4 between traces",
+  "note": "no solder mask is set in the KiCad stackup of these boards, so this is a typical LPI value; the mask is a non-magnetic insulator: no effect on L, M or eddy currents, it changes only the stray capacitance and self resonance (openEMS C8)"
+ },
+ "air_box": {
+  "radius_or_half_width_mm": 88.5,
+  "z_range_mm": [
+   -90.1,
+   91.1
+  ],
+  "note": "about 3 x the board radius around everything (Elmer: zero tangential A on the outside; openEMS: MUR / PML at least 2.5 x the radius)"
+ },
+ "nets": {
+  "COS_1": "COS",
+  "COS_2": "COS",
+  "SIN_1": "SIN",
+  "SIN_2": "SIN",
+  "TX_1": "TX",
+  "TX_2": "TX"
+ },
+ "sets": [
+  {
+   "set": 1,
+   "tx": "TX_1",
+   "sin": "SIN_1",
+   "cos": "COS_1",
+   "f_Hz": 3000000.0,
+   "loops": 1,
+   "electrical_period_mech_deg": 360.0,
+   "c4_angles_mech_deg": [
+    0.0,
+    45.0,
+    90.0,
+    135.0,
+    180.0,
+    225.0,
+    270.0,
+    315.0
+   ],
+   "c2_second_angle_mech_deg": 90.0
+  },
+  {
+   "set": 2,
+   "tx": "TX_2",
+   "sin": "SIN_2",
+   "cos": "COS_2",
+   "f_Hz": 4300000.0,
+   "loops": 16,
+   "electrical_period_mech_deg": 22.5,
+   "c4_angles_mech_deg": [
+    0.0,
+    2.8125,
+    5.625,
+    8.4375,
+    11.25,
+    14.0625,
+    16.875,
+    19.6875
+   ],
+   "c2_second_angle_mech_deg": 5.625
+  }
+ ],
+ "terminals": {
+  "TX_1": {
+   "kind": "TX ends",
+   "source": "Parameters.txt lead-cutting suggestion",
+   "ends_xy_kicad": [
+    81.35,
+    100.0
+   ],
+   "ends_xy_axis": [
+    -18.65,
+    0.0
+   ],
+   "layers": [
+    "F.Cu",
+    "In2.Cu"
+   ],
+   "z_mm": [
+    0.0,
+    -1.4
+   ],
+   "lead_vias_xy_kicad": [
+    [
+     81.2018,
+     98.3065
+    ],
+    [
+     81.2018,
+     101.6935
+    ]
+   ],
+   "how": "the two coil ends lie stacked at this point on the two layers; the terminal (port / circuit electrode pair) goes between the two ends"
+  },
+  "TX_2": {
+   "kind": "TX ends",
+   "source": "Parameters.txt lead-cutting suggestion",
+   "ends_xy_kicad": [
+    128.8,
+    100.0
+   ],
+   "ends_xy_axis": [
+    28.8,
+    0.0
+   ],
+   "layers": [
+    "F.Cu",
+    "In2.Cu"
+   ],
+   "z_mm": [
+    0.0,
+    -1.4
+   ],
+   "lead_vias_xy_kicad": [
+    [
+     128.8784,
+     100.8966
+    ],
+    [
+     128.8784,
+     99.1034
+    ]
+   ],
+   "how": "the two coil ends lie stacked at this point on the two layers; the terminal (port / circuit electrode pair) goes between the two ends"
+  },
+  "SIN_1": {
+   "kind": "RX cut",
+   "source": "Parameters.txt lead-cutting suggestion",
+   "cut_xy_kicad": [
+    90.2616,
+    102.9722
+   ],
+   "cut_xy_axis": [
+    -9.7384,
+    2.9722
+   ],
+   "layer": "F.Cu",
+   "z_mm": 0.0,
+   "lead_vias_xy_kicad": [
+    [
+     89.9835,
+     102.4406
+    ],
+    [
+     90.5397,
+     103.5039
+    ]
+   ],
+   "how": "cut the F.Cu trace at this point (a gap of about 0.2 mm across the trace); the two cut faces are the coil's terminals (Elmer: electrode pair; openEMS: a lumped port across the gap)"
+  },
+  "COS_1": {
+   "kind": "RX cut",
+   "source": "Parameters.txt lead-cutting suggestion",
+   "cut_xy_kicad": [
+    87.5881,
+    106.717
+   ],
+   "cut_xy_axis": [
+    -12.4119,
+    6.717
+   ],
+   "layer": "F.Cu",
+   "z_mm": 0.0,
+   "lead_vias_xy_kicad": [
+    [
+     87.2115,
+     106.2499
+    ],
+    [
+     87.9647,
+     107.1841
+    ]
+   ],
+   "how": "cut the F.Cu trace at this point (a gap of about 0.2 mm across the trace); the two cut faces are the coil's terminals (Elmer: electrode pair; openEMS: a lumped port across the gap)"
+  },
+  "SIN_2": {
+   "kind": "RX via (fallback)",
+   "source": "the generator found no cut spot on this board; tools/kicad_to_openems.py takes the layer-change via farthest from the TX copper",
+   "via_xy_axis": [
+    23.469,
+    -3.899
+   ],
+   "via_xy_kicad": [
+    123.469,
+    96.101
+   ],
+   "z_mm": [
+    -0.2,
+    0.0
+   ],
+   "how": "leave this via out (opens the loop); the terminal goes between its two pads"
+  },
+  "COS_2": {
+   "kind": "RX via (fallback)",
+   "source": "the generator found no cut spot on this board; tools/kicad_to_openems.py takes the layer-change via farthest from the TX copper",
+   "via_xy_axis": [
+    -23.7382,
+    1.5799
+   ],
+   "via_xy_kicad": [
+    76.2618,
+    101.5799
+   ],
+   "z_mm": [
+    -0.2,
+    0.0
+   ],
+   "how": "leave this via out (opens the loop); the terminal goes between its two pads"
+  }
+ },
+ "expected": {
+  "tx": {
+   "TX_1": {
+    "L_away_gen_H": 2.612e-06,
+    "L_rotor_gen_H": 2.0769999999999998e-06,
+    "L_away_ref_H": 2.6090827997018287e-06,
+    "L_rotor_ref_H": 2.426367835176789e-06,
+    "drop_ref_percent": -7.003034343943433,
+    "R_dc_ohm": 1.62,
+    "note": null
+   },
+   "TX_2": {
+    "L_away_gen_H": 4.702e-06,
+    "L_rotor_gen_H": 3.721e-06,
+    "L_away_ref_H": 4.695167613569448e-06,
+    "L_rotor_ref_H": 4.477322422326803e-06,
+    "drop_ref_percent": -4.639774533566253,
+    "R_dc_ohm": 2.57,
+    "note": null
+   }
+  },
+  "coupling": {
+   "TX_1->COS_1": {
+    "M0_no_rotor_H": -4.211855244989308e-11,
+    "amplitude_H": 3.704011193627057e-08,
+    "period_mech_deg": 360.0,
+    "h3_rel": 0.022051788834172588,
+    "curve": "expected_results.json: coupling['TX_1->COS_1'] theta_mech_deg / M_total_H"
+   },
+   "TX_1->COS_2": {
+    "M0_no_rotor_H": -1.875583043143618e-11,
+    "amplitude_H": 2.0871612353789723e-08,
+    "period_mech_deg": 22.5,
+    "h3_rel": 0.0018650412238517065,
+    "curve": "expected_results.json: coupling['TX_1->COS_2'] theta_mech_deg / M_total_H"
+   },
+   "TX_1->SIN_1": {
+    "M0_no_rotor_H": -3.1427241496819745e-11,
+    "amplitude_H": 3.7040111736746635e-08,
+    "period_mech_deg": 360.0,
+    "h3_rel": 0.022051795738137037,
+    "curve": "expected_results.json: coupling['TX_1->SIN_1'] theta_mech_deg / M_total_H"
+   },
+   "TX_1->SIN_2": {
+    "M0_no_rotor_H": 1.1971043469567177e-11,
+    "amplitude_H": 2.087163378274911e-08,
+    "period_mech_deg": 22.5,
+    "h3_rel": 0.001865009809367145,
+    "curve": "expected_results.json: coupling['TX_1->SIN_2'] theta_mech_deg / M_total_H"
+   },
+   "TX_2->COS_1": {
+    "M0_no_rotor_H": 2.4567522035236154e-12,
+    "amplitude_H": 1.629015338291064e-08,
+    "period_mech_deg": 360.0,
+    "h3_rel": 0.020864371926732524,
+    "curve": "expected_results.json: coupling['TX_2->COS_1'] theta_mech_deg / M_total_H"
+   },
+   "TX_2->COS_2": {
+    "M0_no_rotor_H": -8.560313307137513e-12,
+    "amplitude_H": 5.986497863635095e-08,
+    "period_mech_deg": 22.5,
+    "h3_rel": 0.0012383502622348144,
+    "curve": "expected_results.json: coupling['TX_2->COS_2'] theta_mech_deg / M_total_H"
+   },
+   "TX_2->SIN_1": {
+    "M0_no_rotor_H": 2.36174456457805e-12,
+    "amplitude_H": 1.6290153288722653e-08,
+    "period_mech_deg": 360.0,
+    "h3_rel": 0.020864376678658245,
+    "curve": "expected_results.json: coupling['TX_2->SIN_1'] theta_mech_deg / M_total_H"
+   },
+   "TX_2->SIN_2": {
+    "M0_no_rotor_H": 2.5981177952196753e-11,
+    "amplitude_H": 5.986499309015951e-08,
+    "period_mech_deg": 22.5,
+    "h3_rel": 0.001238514334993753,
+    "curve": "expected_results.json: coupling['TX_2->SIN_2'] theta_mech_deg / M_total_H"
+   }
+  },
+  "pairs": {
+   "TX_1:SIN_1/COS_1": {
+    "phase_difference_deg": 89.99999227805444,
+    "amplitude_ratio_sin_over_cos": 0.9999999946133009,
+    "vrx_over_vtx_amplitude": 0.015265662196699798,
+    "angle_error_pk_elec_deg": 1.3322992531001578,
+    "angle_error_pk_elec_deg_raw": 1.3607627090653058
+   },
+   "TX_1:SIN_2/COS_2": {
+    "phase_difference_deg": 90.00003427644492,
+    "amplitude_ratio_sin_over_cos": 1.0000010267035926,
+    "vrx_over_vtx_amplitude": 0.008602007280247502,
+    "angle_error_pk_elec_deg": 0.11026198085302126,
+    "angle_error_pk_elec_deg_raw": 0.1658867676068547
+   },
+   "TX_2:SIN_1/COS_1": {
+    "phase_difference_deg": 89.99999193798726,
+    "amplitude_ratio_sin_over_cos": 0.9999999942181031,
+    "vrx_over_vtx_amplitude": 0.0036383694878638836,
+    "angle_error_pk_elec_deg": 1.261886360526916,
+    "angle_error_pk_elec_deg_raw": 1.3109513487817657
+   },
+   "TX_2:SIN_2/COS_2": {
+    "phase_difference_deg": 90.000000463177,
+    "amplitude_ratio_sin_over_cos": 1.0000002414401357,
+    "vrx_over_vtx_amplitude": 0.013370712993916685,
+    "angle_error_pk_elec_deg": 0.07575508864907253,
+    "angle_error_pk_elec_deg_raw": 0.09559864450180429
+   }
+  },
+  "source": "tools/quasistatic_reference.py (ref) and Parameters.txt (gen)"
+ }
+}
