@@ -16,13 +16,13 @@ for stage in STAGES:
 | # | Stage | Gets | Gives | What it does |
 |---|---|---|---|---|
 | 1 | `s1_read` | `.kicad_pcb` file | `RawBoard` | Parses the file and lists the copper layers, the board thickness and the file format; every rule that depends on the KiCad version is in `parse_kicad_version.py`. Warns outside the tested file formats (the 2013 builds before KiCad 4 to KiCad 10) and above eight copper layers; stops if `F.Cu` or `B.Cu` is missing |
-| 2 | `s2_collect` | `RawBoard` | `Items` | Every track, pad, zone fill, graphic, text and via as a flat shape on its layer, with its net, in KiCad's frame; the stack-up from Board Setup; counts of what was read and what was skipped |
+| 2 | `s2_collect` | `RawBoard` | `Items` | Every track, pad, zone fill, graphic, text and via as a flat shape on its layer, with its net, in KiCad's frame; the stack-up from Board Setup, every dielectric with its plies; counts of what was read and what was skipped |
 | 3 | `s3_resolve` | `Items` | `Regions` | The outline; the copper joined per layer and net, clipped and drilled; barrels, edge plating, mask openings and silkscreen; everything moved to the board frame and snapped to the grid |
-| 4 | `s4_geometry` | `Regions` | `PrismSet` | The heights from the stack-up, once; every part as prisms, each a flat region between two heights |
+| 4 | `s4_geometry` | `Regions` | `PrismSet` | The heights from the stack-up, once; every part as prisms, each a flat region between two heights, the laminate with its plies fused or separate (`Stackup.FUSION_BUILD`). Every line of the stack-up is worked out, and the prisms of the lines set to `False` in `parameters/PCB_elements/Stackup.py` are then left out, so what stays is as it is with every line on ([Stack-Up Model](Stack-Up-Model.md#84-what-is-built-the-lines-of-stackuppy)) |
 | 5 | `s5_materials` | `PrismSet` | `PrismSet` | A material for every part ([Colorizing](Colorizing.md)) |
 | 6 | `s6_assemble` | `PrismSet` | `Model` | Closed solids (simulation mode) or the visible surface (visual mode), in the output units and orientation (7.2) |
 | 7 | `s7_write` | `Model` | `Files` | GLB, STEP, STL, OBJ and `materials.json` in a new run folder |
-| 8 | `s8_verify` | `Files` | `Files` | Only with `--verify`: every part closed and consistently wound, its volume the same four ways, no two parts overlapping ([Checks, Errors And Warnings](Checks-Errors-And-Warnings.md)) |
+| 8 | `s8_verify` | `Files` | `Files` | Unless `--no-verify` leaves it out: every part closed and consistently wound, its volume the same four ways, no two parts overlapping ([Checks, Errors And Warnings](Checks-Errors-And-Warnings.md)) |
 | 9 | `s9_report` | `Files` | `Files` | `report.txt` and `parameters.txt` |
 
 Nothing is rebuilt per output format: stage 7 writes every file from the one `Model`. The files are
@@ -65,10 +65,10 @@ parts[off] = shapely.set_precision(parts[off], grid())      # Geometry.SNAP_GRID
   the thinner piece round after round, each cut moving its edge a little, until the mask's edge had
   walked a few tenths of a micrometre into the copper beside it.
 - One known exception, where parts can overlap or leave a gap: the wedge beside a sloped copper
-  wall (`Copper.ETCH_FACTOR > 0`, see [Copper And Traces](Copper-And-Traces.md#135-etch-factor)).
+  wall (an etch factor above 0, see [Copper And Traces](Copper-And-Traces.md#135-etch-factor)).
 - The price: curves are polygons in the meshes. The STEP file turns them back into true arcs and
   cylinders where a run of vertices lies on one circle (`Step.STEP_EXACT_ARCS`, the default; see
-  [Parameter Reference](Parameter-Reference.md#1910-step-parameterssteppy)).
+  [Parameter Reference](Parameter-Reference.md#1912-step-parametersfileformatssteppy)).
 
 ## 7.2 How A Part Becomes A Closed Solid
 
@@ -161,7 +161,7 @@ mesh = mesh_of_boundary(boundary)                  # faces cut into triangles, t
 | Frame | Where | Units and axes | Origin |
 |---|---|---|---|
 | KiCad | the `.kicad_pcb` file | mm; X right, Y **down** | the page's top left corner |
-| Board | inside KESE, stages 3 to 6 | mm; X right, Y **up**; `F.Cu` toward +Z | the outline's centre (`Run.ORIGIN = "center"`) or KiCad's origin (`"kicad"`); z = 0 at the laminate's mid-plane |
+| Board | inside KESE, stages 3 to 6 | mm; X right, Y **up**; `F.Cu` toward +Z | KiCad's origin (`Run.ORIGIN = "kicad"`, the default) or the outline's centre (`"center"`); z = 0 at the laminate's mid-plane |
 | Output | the written files | mm or m (`Run.UNITS`); the board in the XY plane with `F.Cu` toward +Z (`Run.ORIENTATION = "upright"`) or in the XZ plane with `F.Cu` toward +Y (`"flat"`) | as the board frame |
 
 ```python
@@ -174,15 +174,16 @@ if R.ORIENTATION == "flat":      # board in XZ, F.Cu toward +Y
     rot = np.array([[1, 0, 0, 0], [0, 0, 1, 0], [0, -1, 0, 0], [0, 0, 0, 1]], dtype=float)
 ```
 
-`report.txt` names the origin used, for example
-`origin: outline centre (112.0000, 108.0000) in KiCad coordinates`, so a position in the model can
-be mapped back to the layout.
+`report.txt` names the origin used: `origin: KiCad page origin` with the default
+`Run.ORIGIN = "kicad"`, where the model's x is the layout's x and its y the layout's y negated, or,
+with `"center"`, for example `origin: outline centre (112.0000, 108.0000) in KiCad coordinates`, so a
+position in the model can be mapped back to the layout.
 
 ## 7.4 Work Done In Parallel
 
 `Parallel.WORKERS` threads or processes work at once (`0`: one per processor thread the run may
 use; `1`: everything in turn, in one process), and at most `Parallel.PROCESS_WORKERS` processes
-([Parameter Reference](Parameter-Reference.md#199-parallel-parametersparallelpy)).
+([Parameter Reference](Parameter-Reference.md#199-parallel-parametersrun_keseparallelpy)).
 `kese/core/parallel.py` holds both kinds:
 
 | Stage | What runs at once | In |

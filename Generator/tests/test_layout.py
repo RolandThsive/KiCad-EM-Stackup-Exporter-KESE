@@ -1,6 +1,6 @@
 """Layout rules of kese/ (CONTRIBUTING.md explains them): what may import what, model/ holds data
-only, one run() per stage, no import cycles, short files, lowercase names, and no code outside
-Generator/.  Reads the source; no board is run, so it takes a second.
+only, one run() per stage, no import cycles, short files, lowercase names (but the parameter
+files, named as their modules), and no code outside Generator/.  Reads the source; no board is run, so it takes a second.
 
     python -m pytest tests/test_layout.py        (or:  python tests/test_layout.py)"""
 import ast
@@ -185,10 +185,25 @@ def test_version_checks_stay_in_parse_kicad_version():
 
 
 def test_names_are_lowercase():
-    paths = [p for top in ("kese", "parameters", "tests") for p in sorted((ROOT / top).rglob("*"))
+    paths = [p for top in ("kese", "tests") for p in sorted((ROOT / top).rglob("*"))
              if (p.suffix == ".py" or (p.is_dir() and (p / "__init__.py").exists())) and "__pycache__" not in p.parts]
     bad = [rel(p) for p in paths if not LOWERCASE.fullmatch(p.stem if p.is_file() else p.name)]
     assert not bad, "\n".join(bad)
+
+
+def test_the_parameter_files_are_named_as_their_modules():
+    """parameters/ is the one place with capitals: its three folders (PCB_elements, Run_KESE,
+    Fileformats) hold one file per module, named as the module is (Copper.py is P.Copper, the Module
+    of --set Copper.NAME=value), and nothing else lies there: a parameter file anywhere else would
+    not be read."""
+    import parameters
+    listed = {f"parameters/{folder}/{name}.py" for folder, names in parameters._FOLDERS.items() for name in names}
+    listed |= {f"parameters/{folder}/__init__.py" for folder in parameters._FOLDERS} | {"parameters/__init__.py"}
+    found = {rel(p) for p in (ROOT / "parameters").rglob("*.py")}
+    assert found == listed, f"not a parameter file: {sorted(found - listed)}; missing: {sorted(listed - found)}"
+    names = [name for names in parameters._FOLDERS.values() for name in names]
+    assert all(CAMELCASE.fullmatch(name) for name in names) and len(set(names)) == len(names), names
+    assert set(parameters.P.modules()) == set(names)
 
 
 def test_kese_stays_in_generator():

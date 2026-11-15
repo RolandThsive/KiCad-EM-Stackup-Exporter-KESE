@@ -1,7 +1,7 @@
 """Stroke-font text, laid out the way KiCad lays it out.
 
 Default font: KiCad's own "newstroke" (kese/assets/fonts/kicad_newstroke.json.gz).  Custom fonts:
-this project's JSON or a Hershey .jhf file, named in Silkscreen.FONT_FILE (kese/core/font_file.py
+this project's JSON or a Hershey .jhf file, named in SilkScreen.FONT_FILE (kese/core/font_file.py
 reads them).
 
 Glyph coordinates are fractions of the text height, y DOWN (KiCad's convention), baseline near 0.
@@ -41,7 +41,7 @@ def render(text, anchor, angle_deg, size_h, size_w, thickness, justify=(), mirro
            italic=False):
     """Text as a shapely polygon in board coordinates (mm, Y down), laid out as KiCad's STROKE_FONT /
     FONT::getLinePositions lays it out: advance, interline pitch and justification offsets."""
-    S = P.Silkscreen
+    S = P.SilkScreen
     if not text.strip():
         return EMPTY
     f, _ = load()

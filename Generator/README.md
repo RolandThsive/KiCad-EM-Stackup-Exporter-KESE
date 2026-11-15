@@ -8,7 +8,7 @@ What KESE does, its examples and its licence are in the [main README](../README.
 |---|---|
 | `run_KESE.py` | Runs KESE from this folder without installing it |
 | `kese/` | The program: nine stages that run in order, plus `core/` and `model/` |
-| `parameters/` | Every setting, one file per subject (the only files you edit) |
+| `parameters/` | Every setting (the only files you edit), in three folders: `PCB_elements/` for what the board is made of, with `Stackup.py` saying which parts are built, `Run_KESE/` for how KESE runs, and `Fileformats/` for the files it writes |
 | `Input/` | Boards to export (three examples included) |
 | `Output/` | One folder per board and run |
 | `tests/` | The layout rules, the regression suite with its test boards and baseline, the other tests, and `feature_boards/`, which makes the boards in `featureTest/` |

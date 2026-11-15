@@ -72,7 +72,7 @@ def bare_only_where_rounded(cu, finish):
 
 def test_on_a_board_the_finish_and_the_mask_leave_no_copper_face_bare():
     """07_pad_shapes, the mask on: three of its pads' openings follow their edges with other points."""
-    with settings({"SolderMask.SOLDER_MASK_ENABLED": True}):
+    with settings({"Stackup.solder_mask": True}):
         r, _ = run_stages(FEATURES / "07_pad_shapes.kicad_pcb", resolve)
         ps = geometry.geometry(r, "simulation")
     assert "solder mask: 3 slivers on the copper narrower than 0.002 mm left out (F.Mask)" in ps.notes

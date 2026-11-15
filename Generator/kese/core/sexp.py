@@ -115,7 +115,7 @@ def number(atom, node=None):
     if math.isfinite(x):
         return x
     where = f", in ({' '.join(str(a) for a in node if not isinstance(a, list))[:60]} ...)" if node else ""
-    raise NotANumber(f"{str(atom)!r} where a number belongs{where}: KiCad refuses such a file too (a damaged file?)")
+    raise NotANumber(f"{'nothing' if atom is None else repr(str(atom))} where a number belongs{where}: KiCad refuses such a file too (a damaged file?)")
 
 
 def numbers(node):
@@ -130,8 +130,16 @@ def pt(node):
 
 
 def num(node, name, default=None):
+    """The number of child `name`, or `default` where the node has no such child; (thickness) with
+    nothing in it is no number, as for KiCad."""
     c = child(node, name) if node is not None else None
-    return number(c[1], c) if c else default
+    return number(c[1] if len(c) > 1 else None, c) if c else default
+
+
+def word(node, name, default=None):
+    """The first value of child `name`, or `default` where the node has no such child or it is empty."""
+    c = child(node, name)
+    return c[1] if c and len(c) > 1 else default
 
 
 def layer_of(node):

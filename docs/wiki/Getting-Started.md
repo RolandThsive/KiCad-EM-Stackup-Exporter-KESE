@@ -53,8 +53,9 @@ the command is run from.
    [Examples](Examples.md)). Make sure every copper zone in the board has been filled in KiCad
    (press **B**) and the file saved: KESE takes the zone fill polygons stored in the file, and a
    zone without a stored fill produces no copper.
-2. Run the default export: every board in `Input/`, simulation mode, one GLB in metres with
-   the board centred at the origin:
+2. Run the default export: every board in `Input/`, simulation mode, one STEP file in mm with
+   KiCad's origin, every ply of the laminate a solid of its own, the finish the board file names,
+   and the Verifier's checks at the end:
 
    ```bash
    python run_KESE.py
@@ -65,24 +66,34 @@ the command is run from.
 
    ```text
    hdi_module: KiCad format 20221018 (KiCad 7), 6 copper layers, mode simulation
-     -> Output/hdi_module/simulation_GLB  (hdi_module.glb, materials.json)  in 0m 09s
+     Verifier: PASS
+     -> Output/hdi_module/simulation_STEP  (hdi_module.step, materials.json)  in 0m 07s
    pcie_card: KiCad format 20221018 (KiCad 7), 4 copper layers, mode simulation
-     -> Output/pcie_card/simulation_GLB  (pcie_card.glb, materials.json)  in 0m 11s
+     Verifier: PASS
+     -> Output/pcie_card/simulation_STEP  (pcie_card.step, materials.json)  in 0m 09s
    rf_module: KiCad format 20221018 (KiCad 7), 4 copper layers, mode simulation
-     -> Output/rf_module/simulation_GLB__1  (rf_module.glb, materials.json)  in 0m 21s
+     Verifier: PASS
+     -> Output/rf_module/simulation_STEP__1  (rf_module.step, materials.json)  in 0m 16s
    ```
 
-   The repository already holds example runs of `rf_module` in `Output/rf_module/`, and a run
-   never overwrites a folder, so this board's first run goes to `simulation_GLB__1`.  The three
-   simulation examples use the default settings with the finish turned off
-   (`--set Finish.FINISH_ENABLED=False`): with the finish, this board's STEP file is over 100 MB,
-   more than GitHub takes in one file.  The visual example has the finish, the solder mask and
-   the silkscreen on.
+   The three STEP files are 38, 58 and 112 MB: each board has the finish its file names
+   (immersion silver, hard gold and ENIG), and the finish on every pad and in every hole is a
+   solid of its own.  A board of your own whose file names no finish stops here with a
+   `FINISH ERROR` that says how to go on: name a finish (`--set Finish.FINISH_TYPE=ENIG`), or leave
+   the finish out (`--set Stackup.finish=False`), which also makes the files much smaller.
 
-4. Open `Output/<board>/simulation_GLB/report.txt`. It lists the stack-up heights, every item that
-   was read, every item that was skipped and why (hidden text and text on layers that are not drawn
-   are left out without a count), and the triangle count of every part. See
-   [Project Output Organization](Project-Output-Organization.md).
+   The repository already holds example runs of `rf_module` in `Output/rf_module/`, and a run
+   never overwrites a folder, so this board's first run goes to `simulation_STEP__1`.  The three
+   simulation examples (`simulation_STEP`, `simulation_GLB` with `--format glb` and
+   `simulation_STL` with `--format stl`) use the default settings with the finish turned off
+   (`--set Stackup.finish=False`): with the finish, this board's STEP file is over 100 MB,
+   more than GitHub takes in one file.  The visual example (`visual_GLB`, made with
+   `--for viewer`) has the finish, the solder mask and the silkscreen on.
+
+4. Open `Output/<board>/simulation_STEP/report.txt`. It lists the stack-up heights with every ply,
+   every item that was read, every item that was skipped and why (hidden text and text on layers
+   that are not drawn are left out without a count), the triangle count of every part, and the
+   Verifier's result. See [Project Output Organization](Project-Output-Organization.md).
 
 5. Bring the model into your solver or viewer: [Choosing An Export](Choosing-An-Export.md) and
    [KiCad And Solver Compatibility](Compatibility.md).
@@ -92,12 +103,16 @@ the command is run from.
 ```bash
 python run_KESE.py                                   # every .kicad_pcb in Input/, settings from parameters/
 python run_KESE.py Input/board.kicad_pcb             # one board (several paths are allowed)
-python run_KESE.py board.kicad_pcb --mode visual     # simulation (solids) or visual (surface for viewers)
-python run_KESE.py board.kicad_pcb --format glb step stl obj --set Run.UNITS=mm   # mm for CAD and solvers
+python run_KESE.py board.kicad_pcb --format step stl glb obj   # the files to write (default: STEP, in mm)
+python run_KESE.py board.kicad_pcb --for viewer      # a visual model for web viewers: the surface, GLB, metres, centred
+python run_KESE.py board.kicad_pcb --mode visual --format glb   # simulation (solids) or visual (surface); a visual run names its format
 python run_KESE.py board.kicad_pcb --for freecad     # a preset: freecad, elmer, calculix, openems, viewer, blender_glb, blender_obj
-python run_KESE.py board.kicad_pcb --verify          # run the Verifier; results in report.txt
+python run_KESE.py board.kicad_pcb --no-verify       # without the Verifier (it runs by default; results in report.txt)
 python run_KESE.py board.kicad_pcb --out /some/dir   # output root other than Output/
 python run_KESE.py board.kicad_pcb --set Copper.VIA_WALL_MM=0.02 --set Board.BOARD_THICKNESS_MM=0.8
+python run_KESE.py board.kicad_pcb --set Stackup.solder_mask=True --set Stackup.silkscreen=True   # also build the mask and the silkscreen
+python run_KESE.py board.kicad_pcb --set Stackup.FUSION_BUILD=PLIES_FUSED   # one laminate solid for each gap, its plies fused
+python run_KESE.py board.kicad_pcb --set Finish.FINISH_TYPE=ENIG   # a finish for a board whose file names none
 python run_KESE.py --version
 ```
 
@@ -105,16 +120,16 @@ python run_KESE.py --version
 |---|---|
 | `boards` | One or more `.kicad_pcb` paths. With none, every board in `Run.INPUT_DIR` (`Input/`) is exported. |
 | `--mode` | `simulation` or `visual`. Default: `Run.MODE`. |
-| `--format` | Any of `glb`, `stl`, `obj`, `step`, several at once. Default: `Run.FILE_FORMAT` (`["glb"]`). Visual mode allows only `glb` and `obj`. |
-| `--for` | Applies a preset from `parameters/presets.py` before any `--set`: `freecad`, `elmer`, `calculix`, `openems`, `viewer`, `blender_glb`, `blender_obj`. See [Choosing An Export](Choosing-An-Export.md). |
-| `--verify` | Runs the Verifier after the model files are written (at most about 1.5 s more on the example boards). See [Checks, Errors And Warnings](Checks-Errors-And-Warnings.md). |
+| `--format` | Any of `glb`, `stl`, `obj`, `step`, several at once. Default: `Run.FILE_FORMAT` (`["step"]`). Visual mode allows only `glb` and `obj`, so `--mode visual` goes with `--format glb` or `--format obj`. |
+| `--for` | Applies a preset from `parameters/Run_KESE/Presets.py` before any `--set`: `freecad`, `elmer`, `calculix`, `openems`, `viewer`, `blender_glb`, `blender_obj`. See [Choosing An Export](Choosing-An-Export.md). |
+| `--verify`, `--no-verify` | Runs the Verifier after the model files are written (at most about 1.5 s more on the example boards), or leaves it out. Default: `Verifier.VERIFY` (`True`). See [Checks, Errors And Warnings](Checks-Errors-And-Warnings.md). |
 | `--out` | Output root. Default: `Run.OUTPUT_DIR` (`Output/`). |
-| `--set Module.NAME=value` | Overrides one parameter for this run. `Module` is the short name of the parameter file (`Run`, `Board`, `Copper`, `SolderMask`, `Silkscreen`, `Finish`, `Geometry`, `Color`, `Parallel`, `Step`, `Verifier`, `Presets`). The value is parsed as a Python literal (`0.02`, `True`); anything that does not parse, such as `net`, is kept as a string (so `false` is the word, and stops the run where the setting takes `True` or `False`). Quote a list for the shell, as in `--set 'Run.FILE_FORMAT=["glb","stl"]'`: unquoted, the shell strips its inner quotes and the run stops. An unknown module or name, or a `--set` without `=`, stops the run before it starts, naming the closest setting ([Checks, Errors And Warnings](Checks-Errors-And-Warnings.md#2011-errors)). |
-| `--version` | Prints `kese 2.4.0`. |
+| `--set Module.NAME=value` | Overrides one parameter for this run. `Module` is the name of the parameter file (`Stackup`, `Board`, `Copper`, `Finish`, `SolderMask`, `SilkScreen`, `Run`, `Geometry`, `Parallel`, `Verifier`, `Presets`, `Step`, `Mesh`). A line of the stack-up is set the same way, `--set Stackup.top_solder_mask=True`, and four short names set several lines at once: `Stackup.silkscreen`, `Stackup.solder_mask`, `Stackup.finish` and `Stackup.copper` ([Stack-Up Model](Stack-Up-Model.md#84-what-is-built-the-lines-of-stackuppy)). A name from before the parameters were sorted by element, such as `Finish.FINISH_ENABLED`, is still understood, with a note in `report.txt` ([Parameter Reference](Parameter-Reference.md#1914-names-of-before-252)). The value is parsed as a Python literal (`0.02`, `True`); anything that does not parse, such as `net`, is kept as a string (so `false` is the word, and stops the run where the setting takes `True` or `False`). Quote a list for the shell, as in `--set 'Run.FILE_FORMAT=["glb","stl"]'`: unquoted, the shell strips its inner quotes and the run stops. An unknown module or name, or a `--set` without `=`, stops the run before it starts, naming the closest setting ([Checks, Errors And Warnings](Checks-Errors-And-Warnings.md#2011-errors)). |
+| `--version` | Prints `kese 3.4.0`. |
 
-Every preset, `--set`, `--mode`, `--format` and `--verify` is applied as an override of the
-parameters (`--mode` sets `Run.MODE`, `--format` sets `Run.FILE_FORMAT`, `--verify` sets
-`Verifier.VERIFY`), so all of them are listed on the first line of the run's `parameters.txt` and show
+Every preset, `--set`, `--mode`, `--format`, `--verify` and `--no-verify` is applied as an override
+of the parameters (`--mode` sets `Run.MODE`, `--format` sets `Run.FILE_FORMAT`, `--verify` and
+`--no-verify` set `Verifier.VERIFY`), so all of them are listed on the first line of the run's `parameters.txt` and show
 in its values. Only `--out` is not recorded there; the run folder's path shows it.
 
 > [!NOTE]
@@ -131,6 +146,8 @@ in its values. Only `--out` is not recorded there; the run folder's path shows i
 ## 3.4 Next
 
 - Decide what to export for your solver: [Choosing An Export](Choosing-An-Export.md).
+- Choose what is built, line by line, and whether the plies of a gap are fused or separate:
+  [Stack-Up Model](Stack-Up-Model.md#84-what-is-built-the-lines-of-stackuppy).
 - Set your fabricator's thicknesses: [Parameter Reference](Parameter-Reference.md).
 - See what the model contains: [Board](Board.md) and [Copper And Traces](Copper-And-Traces.md).
 - See what happens in a run, stage by stage: [Working Principle](Working-Principle.md).

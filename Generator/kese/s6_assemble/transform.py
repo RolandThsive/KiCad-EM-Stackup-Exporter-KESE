@@ -28,7 +28,7 @@ def finish_mesh(mesh, mat):
     if not len(mesh.faces):
         return None
     mesh.apply_transform(mat)
-    v, f, normals = smooth_shaded(mesh, np.radians(P.Run.SMOOTH_SHADE_ANGLE_DEG))
+    v, f, normals = smooth_shaded(mesh, np.radians(P.Mesh.SMOOTH_SHADE_ANGLE_DEG))
     # a fresh mesh with only its normals: what the shading left cached on the old one is three
     # times the mesh itself
     return Mesh(v, f, vertex_normals=normals)

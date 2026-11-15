@@ -60,9 +60,9 @@ class Context:
             items.copper_items[layer].append((geom, net or P.Copper.NO_NET_NAME))
         elif layer in ("F.Mask", "B.Mask"):
             items.mask_open_items[layer[0]].append(geom)
-        elif layer in P.Silkscreen.SILK_LAYERS:
+        elif layer in P.SilkScreen.SILK_LAYERS:
             items.silk_items[layer[0]].append(geom)
 
     def physical(self, layer):
         """Whether KESE builds anything for this layer: copper, mask or silkscreen."""
-        return layer in self.layers or layer in ("F.Mask", "B.Mask") or layer in P.Silkscreen.SILK_LAYERS
+        return layer in self.layers or layer in ("F.Mask", "B.Mask") or layer in P.SilkScreen.SILK_LAYERS

@@ -2,8 +2,18 @@
 
 The solder mask is the lacquer (LPI) over both faces of the board. `kese/s4_geometry/solder_mask.py`
 builds it around the openings that `kese/s3_resolve/mask.py` works out; the settings are in
-`parameters/solder_mask.py`. It is off by default (`SolderMask.SOLDER_MASK_ENABLED = False`): turn
-it on to have it in the files. The openings still decide where the finish goes either way.
+`parameters/PCB_elements/SolderMask.py`. Whether it is built is not in that file: it is the two
+lines `top_solder_mask` and `bottom_solder_mask` of `parameters/PCB_elements/Stackup.py`
+([Stack-Up Model](Stack-Up-Model.md)), and both are `False` by default, because the mask is many
+more solids, which make a STEP file much bigger and slower to open, and most EM work leaves it
+out. Turn them on to have the mask in the files:
+
+```bash
+python run_KESE.py board.kicad_pcb --set Stackup.solder_mask=True          # both faces
+python run_KESE.py board.kicad_pcb --set Stackup.top_solder_mask=True      # the top face only
+```
+
+The openings still decide where the finish goes either way.
 
 ![The board featureTest/17_mask_silk from the top in a simulation-mode GLB, once in each solder mask colour KESE knows and once with none set, each labelled with its name and hex value](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Solder-Masks/mask_1_colors_simulation.webp)
 
@@ -21,7 +31,7 @@ M_\sigma = \left( \left( O \setminus B_\sigma \right) \setminus Q_\sigma \right)
 |---|---|---|
 | $`M_\sigma`$ | mask region on side $`\sigma`$ (`F` or `B`) | |
 | $`O`$ | board outline, equation (12.3) | |
-| $`B_\sigma`$ | bores of every hole that reaches side $`\sigma`$, equation (13.4), except those a via's protection shuts there (16.4) | |
+| $`B_\sigma`$ | bores of every hole that reaches side $`\sigma`$, equation (13.4), except those a via's protection shuts there (17.4) | |
 | $`Q_\sigma`$ | the mask openings on side $`\sigma`$, equation (17.2) | |
 | $`p`$ | edge pull-back | `SolderMask.MASK_EDGE_PULLBACK_MM` |
 
@@ -63,7 +73,7 @@ openings are grown by $`w/2`$ (less 1 nm), joined, shrunk back with chamfered co
 exact openings added back:
 
 ```math
-Q'_\sigma = Q_\sigma \cup \left( \left( Q_\sigma \oplus \tfrac{w}{2} \right) \ominus \tfrac{w}{2} \right) \qquad (16.2b)
+Q'_\sigma = Q_\sigma \cup \left( \left( Q_\sigma \oplus \tfrac{w}{2} \right) \ominus \tfrac{w}{2} \right) \qquad (17.2b)
 ```
 
 Only the webs this fills are added; the hairlines where the grown and shrunk curves miss the exact
@@ -177,20 +187,61 @@ covered via has the mask over its bore on that side even when its ring is left o
 then a ring around it. An end that a backdrill, counterbore or countersink opens stays open, and
 the copper a counterbore or countersink knocks out is a hole like any other.
 
-## 17.5 Settings
+## 17.5 Material For The Solver
+
+The mask is a dielectric a field solver can count in: a microstrip under mask has a lower
+impedance than a bare one. `materials.json` gives each mask part what a solver needs
+([Material Properties](Material-Properties.md#212-properties-per-role)):
+
+```json
+"Top Solder Mask": {
+  "role": "mask",
+  "layer": "F.Mask",
+  "z_range_mm": [0.755, 0.8],
+  "properties": {
+    "side": "F",
+    "thickness_over_laminate_mm": 0.01,
+    "thickness_over_copper_mm": 0.01,
+    "material": "LPI",
+    "epsilon_r": 3.8,
+    "loss_tangent": 0.03
+  }
+}
+```
+
+The three values are `MASK_MATERIAL`, `MASK_EPSILON_R` and `MASK_LOSS_TANGENT`. A generic LPI
+mask has an εr of 3.8 to 3.9 and a tan δ near 0.03 (JLCPCB gives 3.8, OSH Park 3.9 and 0.033,
+Taiyo PSR-4000BN 0.029 at 1 MHz). With `USE_STACKUP_MASK_MATERIAL = True` (the default) a mask
+layer that has a material, an εr or a tan δ of its own in the board's stack-up keeps it, each
+side by its own layer; the settings fill only what the board leaves out. They change no
+geometry.
+
+## 17.6 Settings
+
+All in `parameters/PCB_elements/SolderMask.py`, by the file's sections. Section 1, Parts, holds
+no setting: the two solder mask lines of `Stackup.py` say whether the mask is built. Section 5,
+Color, is on the [Colorizing](Colorizing.md) page.
 
 | Name | Default | Range | Meaning |
 |---|---|---|---|
+| **2. Thickness** | | | |
 | `MASK_OVER_LAMINATE_MM` | `0.010` | mm > 0 | Mask thickness over bare laminate |
 | `MASK_OVER_COPPER_MM` | `0.010` | mm > 0 | Mask thickness on top of copper |
 | `USE_STACKUP_MASK_THICKNESS` | `True` | bool | The first mask thickness found in the stack-up (normally `F.Mask`'s) wins, for both values on both faces |
+| **3. Shape** | | | |
+| `VIA_TENTING` | `"file"` | `"file"`, `"tented"`, `"open"` | Mask over the vias: as the board file says, over every via, or open over every via ([Copper And Traces](Copper-And-Traces.md#1332-via-tenting)). The old name `Copper.VIA_TENTING` is still understood |
 | `MASK_EDGE_PULLBACK_MM` | `0.005` | mm ≥ 0 | Mask and silk stop this far from the edge |
 | `PAD_TO_MASK_CLEARANCE_MM` | `None` | None or mm ≥ 0 | Board-wide clearance around pads; `None` follows Board Setup. A pad's or footprint's own `solder_mask_margin` still wins |
 | `MASK_MIN_WIDTH_MM` | `None` | None or mm ≥ 0 | Narrowest web of mask kept between two openings, equation (17.2b); `None` follows Board Setup (`solder_mask_min_width`), 0 keeps every web |
-| `MASK_WEB_HAIRLINE_MM` | `1e-3` | mm ≥ 0 | A web the minimum width adds that is narrower than twice this is dropped (16.2b) |
+| `MASK_WEB_HAIRLINE_MM` | `1e-3` | mm ≥ 0 | A web the minimum width adds that is narrower than twice this is dropped, equation (17.2b) |
 | `MASK_WALL_QUAD_SEGS` | `4` | int ≥ 1 | Curve quality of the walls beside traces |
-| `MASK_OVER_COPPER_HAIRLINE_MM` | `1e-3` | mm ≥ 0 | A piece of mask on top of copper narrower than twice this is left out, and the finish covers it instead (16.2); 0 keeps every one |
-| `MASK_OPENING_HAIRLINE_MM` | `1e-3` | mm ≥ 0 | A mask opening narrower than twice this everywhere is left out, the mask kept over it (16.2); 0 keeps every one |
+| `MASK_OVER_COPPER_HAIRLINE_MM` | `1e-3` | mm ≥ 0 | A piece of mask on top of copper narrower than twice this is left out, and the finish covers it instead (17.2); 0 keeps every one |
+| `MASK_OPENING_HAIRLINE_MM` | `1e-3` | mm ≥ 0 | A mask opening narrower than twice this everywhere is left out, the mask kept over it (17.1); 0 keeps every one |
+| **4. Material** | | | |
+| `MASK_MATERIAL` | `"LPI"` | text | The mask's material name in `materials.json` |
+| `MASK_EPSILON_R` | `3.8` | ≥ 1 | The mask's εr |
+| `MASK_LOSS_TANGENT` | `0.03` | ≥ 0 | The mask's tan δ |
+| `USE_STACKUP_MASK_MATERIAL` | `True` | bool | A mask layer's own material, εr and tan δ in the board's stack-up win over the three settings above |
 
 | Previous | Next |
 |:---|---:|

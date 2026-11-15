@@ -15,8 +15,8 @@ from kese.core.conformal import conformal_regions, without_hairlines
 from kese.core.parallel import in_parallel
 from kese.core.shape_copies import own
 from kese.s4_geometry.finish import SIDES, under_mask_copper, under_mask_mm
-from kese.s4_geometry.heights import mask_thicknesses
-from kese.s4_geometry.switches import enabled
+from kese.s4_geometry.heights import mask_material, mask_thicknesses
+from kese.s4_geometry.switches import FACE, built
 from parameters import P
 
 
@@ -45,14 +45,15 @@ def build(r, ps, mode):
         if slivers:                                # each joined to the opening beside it, for the finish
             r.mask_open[side] = sh.joined(list(shapely.get_parts(r.mask_open[side])) + slivers)
             r.silk[side] = without(r.silk.get(side, sh.EMPTY), slivers)
-        if slivers and enabled("mask"):            # (with the mask off, it is built but left out of the files)
+        if slivers and built(f"{FACE[side]}_solder_mask"):     # (a mask left out is built, but not in the files)
             ps.notes.append(f"solder mask: {len(slivers)} slivers on the copper narrower than "
                             f"{2 * M.MASK_OVER_COPPER_HAIRLINE_MM:g} mm left out ({side}.Mask)")
         cu_t = st.band[layer][1] - st.band[layer][0] + lift
         base = st.half                         # laminate face
         part = f"{tb} Solder Mask"
         over = f"{tb} Mask over Copper" if mode == "visual" else part
-        props = {"side": side, "thickness_over_laminate_mm": t_lam, "thickness_over_copper_mm": t_cu}
+        props = {"side": side, "thickness_over_laminate_mm": t_lam, "thickness_over_copper_mm": t_cu,
+                 **mask_material(st, f"{side}.Mask")}
         z = lambda v: sign * v
         ps.add(part, "mask", flat, z(base), z(base + t_lam), layer=f"{side}.Mask", props=props)
         ps.add(over, "mask_over_copper", top, z(base + cu_t), z(base + cu_t + t_cu), layer=f"{side}.Mask", props=props)

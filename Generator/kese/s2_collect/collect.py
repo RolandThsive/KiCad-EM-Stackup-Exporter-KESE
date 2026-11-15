@@ -39,7 +39,7 @@ def collect(raw, log):
     tree = raw.tree
     setup = child(tree, "setup") or []
     items = Items(raw=raw, name=raw.name, layers=raw.copper_layers,
-                  stackup=read_stackup(setup, raw.copper_layers, raw.file_thickness, log))
+                  stackup=read_stackup(setup, raw.copper_layers, raw.file_thickness, log, raw.name))
     read_setup(items, setup)
     read_nets(items, tree)
     ctx = Context(items)
@@ -71,7 +71,7 @@ def collect(raw, log):
     unfilled = items.skipped.get(UNFILLED, 0)
     if unfilled:
         log(f"warning: {unfilled} copper zone(s) have no fill stored in the file and are ignored "
-            "(fill the zones in KiCad, press B, and save; see parameters/copper.py)")
+            "(fill the zones in KiCad, press B, and save; see parameters/PCB_elements/Copper.py)")
     if items.skipped.get(OFF_BOARD):
         log(f"warning: {items.skipped[OFF_BOARD]} via(s) name a copper layer the board does not have and are left out")
     warn(items, log)

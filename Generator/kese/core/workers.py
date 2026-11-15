@@ -53,13 +53,13 @@ def main_left_out():
 
 
 def settings():
-    """Every value of parameters/*.py as this run has it (--for and --set included)."""
+    """Every value of the files of parameters/ as this run has it (--for and --set included)."""
     return {f"{short}.{name}": getattr(module, name) for short, module in P.modules().items()
             for name in dir(module) if name.isupper()}
 
 
 def use_settings(values):
-    """A worker process takes the run's settings (it read parameters/*.py afresh), and stops when the
+    """A worker process takes the run's settings (it read the files of parameters/ afresh), and stops when the
     main process does, however it stopped.  Ctrl-C ends it at once, without a traceback of its own
     (the main process prints one).  Where memory runs out, Linux's OOM killer takes a worker before
     the main process, which then hands the parts left to fewer workers, or builds them itself: the

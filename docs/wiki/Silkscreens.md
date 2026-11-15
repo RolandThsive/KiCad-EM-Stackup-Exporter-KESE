@@ -3,14 +3,25 @@
 The silkscreen is the legend ink printed on top of the solder mask: reference designators,
 values, logos and outlines. `kese/s4_geometry/silkscreen.py` builds it from the ink that
 `kese/s3_resolve/silk.py` clips off the pads, and `kese/core/font.py` renders the text; the
-settings are in `parameters/silkscreen.py`. It is off by default (`Silkscreen.SILKSCREEN_ENABLED =
-False`): turn it on to have it in the files.
+settings are in `parameters/PCB_elements/SilkScreen.py`. Whether it is built is not in that file:
+it is the two lines `top_silkscreen` and `bottom_silkscreen` of `parameters/PCB_elements/Stackup.py`
+([Stack-Up Model](Stack-Up-Model.md)), and both are `False` by default, like the solder mask's.
+Turn them on to have the ink in the files:
+
+```bash
+python run_KESE.py board.kicad_pcb --set Stackup.silkscreen=True           # both faces
+python run_KESE.py board.kicad_pcb --set Stackup.top_silkscreen=True       # the top face only
+```
+
+The ink is printed on the mask, so a silkscreen without its solder mask stands where the mask
+would be, at the mask's height: turn the mask of that face on with it
+(`--set Stackup.solder_mask=True`) for a model with no gap under the ink.
 
 ![The same board eight times from the top in a simulation-mode GLB, once in each silkscreen colour: white and yellow silk on black mask, and black, not set, green, red, blue and purple silk on white mask, each labelled with its colour and hex value](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Silkscreens/silk_1_colors_simulation.webp)
 
 ## 16.1 What Is Drawn
 
-Items on the layers in `Silkscreen.SILK_LAYERS` (`F.SilkS` and `B.SilkS` by default):
+Items on the layers in `SilkScreen.SILK_LAYERS` (`F.SilkS` and `B.SilkS` by default):
 
 | Item | Shape |
 |---|---|
@@ -28,7 +39,7 @@ modelled and are counted under `skipped`.
 
 Everything is clipped to the outline, pulled back from the edge by the same
 `SolderMask.MASK_EDGE_PULLBACK_MM` as the mask, and cut away over open hole bores. Then, with
-`Silkscreen.SILKSCREEN_OVER_COPPER = False` (the default), the ink is removed wherever the mask
+`SilkScreen.SILKSCREEN_OVER_COPPER = False` (the default), the ink is removed wherever the mask
 is open (pads, exposed copper, bare laminate in openings), which is what fabricators do: silk is
 clipped off the pads. With `True` the ink is kept there as drawn in KiCad. Either way no ink is
 left on the slivers of mask on the copper the mask leaves out, where an opening's outline follows a
@@ -130,19 +141,19 @@ T = \min\left( \begin{cases} T_{\mathrm{file}} & \text{if the file gives one} \\
 | $`c_j`$ | columns before character $`j`$ ($`c_0 = 0`$) | |
 | $`m`$ | the tab stop a tab moves to | |
 | $`\lambda`$, $`\lambda_i`$ | width of a line, of line $`i`$ | |
-| $`\tau`$ | italic tilt (0 for upright text) | `Silkscreen.ITALIC_TILT` (0.125) |
+| $`\tau`$ | italic tilt (0 for upright text) | `SilkScreen.ITALIC_TILT` (0.125) |
 | $`p`$ | line pitch | |
-| $`\pi_\ell`$, $`\kappa_\ell`$ | interline pitch and legacy factor | `Silkscreen.INTERLINE_PITCH` (1.68), `Silkscreen.INTERLINE_LEGACY_FACTOR` (0.9583) |
+| $`\pi_\ell`$, $`\kappa_\ell`$ | interline pitch and legacy factor | `SilkScreen.INTERLINE_PITCH` (1.68), `SilkScreen.INTERLINE_LEGACY_FACTOR` (0.9583) |
 | $`n_\ell`$ | number of lines (`\n` breaks) | |
 | $`\hat{H}`$ | block height | |
 | $`o_x`$, $`o_y`$ | KiCad's stroke-font offsets | |
-| $`T`$ | stroke width | the file's `(thickness ...)`, else $`\rho_b W`$ for bold text or $`\rho_n W`$ otherwise, with `Silkscreen.BOLD_THICKNESS_RATIO` $`\rho_b`$ (0.2) and `Silkscreen.NORMAL_THICKNESS_RATIO` $`\rho_n`$ (0.125); either way at most $`0.25 \min(W, H)`$ (`Silkscreen.MAX_PEN_RATIO`), as KiCad clamps it (`ClampTextPenSize`) |
+| $`T`$ | stroke width | the file's `(thickness ...)`, else $`\rho_b W`$ for bold text or $`\rho_n W`$ otherwise, with `SilkScreen.BOLD_THICKNESS_RATIO` $`\rho_b`$ (0.2) and `SilkScreen.NORMAL_THICKNESS_RATIO` $`\rho_n`$ (0.125); either way at most $`0.25 \min(W, H)`$ (`SilkScreen.MAX_PEN_RATIO`), as KiCad clamps it (`ClampTextPenSize`) |
 | $`\theta`$, $`(X_0, Y_0)`$ | text angle and anchor | the file's `(at x y angle)` |
 
 Stroke ends are round with `TEXT_STROKE_QUAD_SEGS` segments per quarter circle.
 
 KiCad's markup is drawn, not printed (`kese/core/markup.py`, after KiCad's `markup_parser.h`):
-`~{...}` draws a bar over its text, $`1.23 H`$ above the line's baseline ($`v = 0`$ in (15.3)) and
+`~{...}` draws a bar over its text, $`1.23 H`$ above the line's baseline ($`v = 0`$ in (16.3)) and
 trimmed by $`0.1 W`$ at each end; `^{...}` and `_{...}` draw their text at 0.8 of the size, raised
 by 0.35 or lowered by 0.15 of that smaller height (a subscript wins where the two are nested). A marker whose closing `}` never comes is
 plain text, as in KiCad. Files older than format 20210606 (KiCad 5 and early 6) wrote an overbar
@@ -253,7 +264,7 @@ it.
 
 > [!NOTE]
 > With `SILKSCREEN_OVER_COPPER = True` the ink in an opening lies on the bare copper, and a
-> surface finish (`Finish.FINISH_ENABLED = True`) is left out under it, as when the legend is
+> surface finish (the finish lines of `Stackup.py`, on by default) is left out under it, as when the legend is
 > printed before the finish. So the ink overlaps no other part with either setting.
 
 | Symbol | Meaning | Parameter |
@@ -261,28 +272,66 @@ it.
 | $`S`$ | silk region after clipping to the outline, the edge pull-back and the bores | |
 | $`M`$ | mask region, equation (17.1) | |
 | $`C`$ | outer copper of that side, every net | |
-| $`s`$ | ink thickness | `Silkscreen.SILK_THICKNESS_MM` (0.010) |
+| $`s`$ | ink thickness | `SilkScreen.SILK_THICKNESS_MM` (0.010) |
 | $`m_L`$, $`m_C`$ | mask thickness over laminate and over copper | `SolderMask.MASK_OVER_LAMINATE_MM`, `SolderMask.MASK_OVER_COPPER_MM` |
 | $`t`$ | finished outer copper thickness, equation (8.3) | |
 
-Each side is one part, `Top Silkscreen` or `Bottom Silkscreen`, with `side` and `thickness_mm`
-in `materials.json`.
+Each side is one part, `Top Silkscreen` or `Bottom Silkscreen`.
 
-## 16.4 Settings
+## 16.4 Material For The Solver
+
+`materials.json` gives each silkscreen part its side, its thickness and a material
+([Material Properties](Material-Properties.md#212-properties-per-role)):
+
+```json
+"Top Silkscreen": {
+  "role": "silk",
+  "layer": "F.SilkS",
+  "z_range_mm": [0.765, 0.775],
+  "properties": {
+    "side": "F",
+    "thickness_mm": 0.01,
+    "material": "epoxy ink",
+    "epsilon_r": 5.0,
+    "loss_tangent": 0.03
+  }
+}
+```
+
+A board file gives the silkscreen no material (KiCad's own default εr for it is 1.0, as if it
+were air), so the three values are always the settings `SILK_MATERIAL`, `SILK_EPSILON_R` and
+`SILK_LOSS_TANGENT`. Neither number is a maker's figure: no data sheet of a legend ink that
+states εr and tan δ has been read yet. 5.0 is a best guess for white ink, whose pigment lifts
+εr above the mask's 3.8, and 0.03 is the solder mask's value. The ink is thin and covers little
+of a board, so it changes a field solution far less than the mask does; give your own values
+when a line runs under a large printed area.
+
+## 16.5 Settings
+
+All in `parameters/PCB_elements/SilkScreen.py`, by the file's sections. The two silkscreen lines of
+`Stackup.py` say whether the ink is built. Section 5, Color, is on the [Colorizing](Colorizing.md)
+page.
 
 | Name | Default | Range | Meaning |
 |---|---|---|---|
+| **1. Parts** | | | |
+| `SILK_LAYERS` | `["F.SilkS", "B.SilkS"]` | list of `F.*` / `B.*` layer names | Layers drawn as silkscreen, on the side their first letter names; any other name stops the run with a `KeyError` when the board has graphics on that layer |
+| `DRAW_HIDDEN_TEXT` | `False` | bool | Draw text marked hidden |
+| **2. Thickness** | | | |
 | `SILK_THICKNESS_MM` | `0.010` | mm > 0 | Ink thickness (typical 0.010 to 0.020) |
+| **3. Shape** | | | |
 | `SILKSCREEN_OVER_COPPER` | `False` | bool | Keep ink where the mask is open, on the pads and the bare laminate (the finish is left out under it); `False` clips it off as fabricators do |
-| `FONT_FILE` | `None` | None or a file name in `kese/assets/fonts/` | Custom stroke font ([15.2.4](#1624-fonts-and-faces)); `None` = KiCad newstroke |
+| `FONT_FILE` | `None` | None or a file name in `kese/assets/fonts/` | Custom stroke font ([16.2.4](#1624-fonts-and-faces)); `None` = KiCad newstroke |
 | `DRAW_TRUETYPE_TEXT_WITH_STROKE_FONT` | `True` | bool | Draw TrueType-face text that has no usable render cache with the stroke font, with a warning; `False` leaves it out |
 | `INTERLINE_PITCH`, `INTERLINE_LEGACY_FACTOR` | `1.68`, `0.9583` | > 0 | KiCad's line pitch and stroke-font correction |
 | `ITALIC_TILT` | `0.125` | ≥ 0 | x shift per unit of y for italic text |
 | `BOLD_THICKNESS_RATIO`, `NORMAL_THICKNESS_RATIO` | `0.2`, `0.125` | > 0 | Stroke = ratio × text width when the file gives none |
 | `MAX_PEN_RATIO` | `0.25` | > 0 | A stroke is at most this × the smaller of the text's width and height |
 | `TEXT_STROKE_QUAD_SEGS` | `4` | int ≥ 1 | Roundness of stroke ends |
-| `DRAW_HIDDEN_TEXT` | `False` | bool | Draw text marked hidden |
-| `SILK_LAYERS` | `["F.SilkS", "B.SilkS"]` | list of `F.*` / `B.*` layer names | Layers drawn as silkscreen, on the side their first letter names; any other name stops the run with a `KeyError` when the board has graphics on that layer |
+| **4. Material** | | | |
+| `SILK_MATERIAL` | `"epoxy ink"` | text | The ink's material name in `materials.json` |
+| `SILK_EPSILON_R` | `5.0` | ≥ 1 | The ink's εr, a best guess |
+| `SILK_LOSS_TANGENT` | `0.03` | ≥ 0 | The ink's tan δ, a best guess |
 
 | Previous | Next |
 |:---|---:|

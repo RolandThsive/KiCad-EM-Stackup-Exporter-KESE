@@ -77,16 +77,17 @@ class Board:
 def stackup(b, dielectrics, copper_t=0.035, mask_t=0.01, mask_color=None, silk_color=None,
             finish="None", mask=None, constraints=False, extra=()):
     """(stackup ...) for b's copper layers.  dielectrics[i] lies between copper i and i + 1: a dict
-    (kind, t, material, er, tand) or a list of them for sublayers.  copper_t: one value or a list.
-    mask: a dict (material, er, tand) for the solder mask.  extra: more fields at the end, such as
-    "(castellated_pads yes)"."""
+    (kind, t, material, er, tand, and after KiCad 10 f and model) or a list of them for sublayers.
+    copper_t: one value or a list.  mask: a dict (material, er, tand) for the solder mask, or one for
+    each side (front, back).  extra: more fields at the end, such as "(castellated_pads yes)"."""
     cu = copper_names(b.copper)
     cu_t = copper_t if isinstance(copper_t, (list, tuple)) else [copper_t] * len(cu)
     color = lambda c: f" (color {q(c)})" if c else ""
-    mask_s = f"(thickness {f(mask_t)})" if not mask else dielectric(dict(mask, t=mask_t))
+    masks = mask if isinstance(mask, (list, tuple)) else (mask, mask)
+    mask_f, mask_b = (dielectric(dict(m, t=mask_t)) if m else f"(thickness {f(mask_t)})" for m in masks)
     out = [f'(layer "F.SilkS" (type "Top Silk Screen"){color(silk_color)})',
            '(layer "F.Paste" (type "Top Solder Paste"))',
-           f'(layer "F.Mask" (type "Top Solder Mask"){color(mask_color)} {mask_s})']
+           f'(layer "F.Mask" (type "Top Solder Mask"){color(mask_color)} {mask_f})']
     for i, name in enumerate(cu):
         out.append(f'(layer {q(name)} (type "copper") (thickness {f(cu_t[i])}))')
         if i < len(cu) - 1:
@@ -94,7 +95,7 @@ def stackup(b, dielectrics, copper_t=0.035, mask_t=0.01, mask_color=None, silk_c
             first, rest = subs[0], subs[1:]
             body = dielectric(first) + "".join(" addsublayer " + dielectric(d) for d in rest)
             out.append(f'(layer "dielectric {i + 1}" (type {q(first.get("kind", "core"))}) {body})')
-    out += [f'(layer "B.Mask" (type "Bottom Solder Mask"){color(mask_color)} {mask_s})',
+    out += [f'(layer "B.Mask" (type "Bottom Solder Mask"){color(mask_color)} {mask_b})',
             '(layer "B.Paste" (type "Bottom Solder Paste"))',
             f'(layer "B.SilkS" (type "Bottom Silk Screen"){color(silk_color)})',
             f"(copper_finish {q(finish)})", f"(dielectric_constraints {'yes' if constraints else 'no'})", *extra]
@@ -109,15 +110,17 @@ def dielectric(d):
         s += f" (epsilon_r {f(d['er'])})"
     if "tand" in d:
         s += f" (loss_tangent {f(d['tand'])})"
+    if "f" in d:                         # after KiCad 10: the frequency the values hold at, and the model
+        s += f" (spec_frequency {d['f']:.10g}) (dielectric_model {d.get('model', 'constant')})"
     return s
 
 
-def core(t, er=4.5, tand=0.02, material="FR4"):
-    return {"kind": "core", "t": t, "material": material, "er": er, "tand": tand}
+def core(t, er=4.5, tand=0.02, material="FR4", **more):
+    return {"kind": "core", "t": t, "material": material, "er": er, "tand": tand, **more}
 
 
-def prepreg(t, er=4.5, tand=0.02, material="FR4"):
-    return {"kind": "prepreg", "t": t, "material": material, "er": er, "tand": tand}
+def prepreg(t, er=4.5, tand=0.02, material="FR4", **more):
+    return {"kind": "prepreg", "t": t, "material": material, "er": er, "tand": tand, **more}
 
 
 # ---- drawings -------------------------------------------------------------------------------------

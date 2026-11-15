@@ -45,7 +45,7 @@ def knockout_kind(node, in_footprint):
 
 def add_text(ctx, node, T=lambda p: p, subst=None, in_footprint=False, fp=None):
     """A text on its layer; `fp`: the footprint it belongs to (an id), for hatch knockouts."""
-    S = P.Silkscreen
+    S = P.SilkScreen
     items = ctx.items
     layer = layer_of(node)
     if not (layer in ctx.layers or layer in ("F.SilkS", "B.SilkS", "F.Mask", "B.Mask")):
@@ -101,7 +101,7 @@ def add_text(ctx, node, T=lambda p: p, subst=None, in_footprint=False, fp=None):
 def pen_width(fnt, h, w, d):
     """KiCad's pen for a stroke-font text (EDA_TEXT::GetEffectiveTextPenWidth): the file's, else a fifth
     (bold) or an eighth of the text width, and at most a quarter of its smaller size (ClampTextPenSize)."""
-    S = P.Silkscreen
+    S = P.SilkScreen
     thick = text_pen(fnt, d)
     if thick is None:
         thick = (S.BOLD_THICKNESS_RATIO if flag(fnt, "bold") else S.NORMAL_THICKNESS_RATIO) * abs(w)

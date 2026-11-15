@@ -8,7 +8,8 @@ import uuid
 from kicad7 import NAMESPACE, NON_COPPER, copper_names, f, pts, q, xy
 
 K6, K7, K8, K9, K10 = 20211014, 20221018, 20240108, 20241229, 20260206
-GENERATOR = {K8: "8.0", K9: "9.0", K10: "10.0"}
+AFTER_K10 = 20260511          # KiCad 10.99, the first format with a frequency and a model for each dielectric
+GENERATOR = {K8: "8.0", K9: "9.0", K10: "10.0", AFTER_K10: "10.99"}
 OLD_IDS = {"F.Cu": 0, "B.Cu": 31, **{f"In{i}.Cu": i for i in range(1, 31)}, **{n: i for i, n, _ in NON_COPPER}}
 NEW_IDS = {"F.Cu": 0, "B.Cu": 2, **{f"In{i}.Cu": 2 * i + 2 for i in range(1, 31)},
            "F.Mask": 1, "B.Mask": 3, "F.SilkS": 5, "B.SilkS": 7, "F.Adhes": 9, "B.Adhes": 11, "F.Paste": 13,

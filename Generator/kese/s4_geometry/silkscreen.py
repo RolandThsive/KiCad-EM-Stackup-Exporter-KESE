@@ -10,7 +10,9 @@ from parameters import P
 
 def build(r, ps):
     for (side, _, sign, tb), pieces in zip(SIDES, in_parallel(lambda s: ink(r, *s[:2]), SIDES)):   # both at once
-        props = {"side": side, "thickness_mm": P.Silkscreen.SILK_THICKNESS_MM}
+        S = P.SilkScreen
+        props = {"side": side, "thickness_mm": S.SILK_THICKNESS_MM, "material": S.SILK_MATERIAL,
+                 "epsilon_r": S.SILK_EPSILON_R, "loss_tangent": S.SILK_LOSS_TANGENT}
         for region, z0, z1 in pieces:
             ps.add(f"{tb} Silkscreen", "silk", region, sign * z0, sign * z1, layer=f"{side}.SilkS", props=props)
 
@@ -19,7 +21,7 @@ def ink(r, side, layer):
     """[(region, z0, z1)] of one side's ink, heights from the board's middle outward.  In a thread: the
     ink, the copper and the mask are this thread's own copies (kese/core/shape_copies.py)."""
     st, M = r.stackup, P.SolderMask
-    t_silk = P.Silkscreen.SILK_THICKNESS_MM
+    t_silk = P.SilkScreen.SILK_THICKNESS_MM
     t_lam, t_cu, _ = mask_thicknesses(st)
     lift = under_mask_mm(st)                    # finish applied before the mask: on the copper, under the mask
     silk = own(r.silk.get(side, sh.EMPTY))

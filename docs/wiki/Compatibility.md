@@ -13,7 +13,7 @@
 | 8 | 20240108 | 25 public boards; `tests/boards/one_layer` and `featureTest/20c_format_kicad8`, small hand-written files in KiCad 8's format |
 | 9 | 20241229 | 25 public boards; `tests/boards/six_layer` and `featureTest/20d_format_kicad9`, likewise hand-written; per-via `(tenting front back)` is parsed; tracks and drawings left bare by the solder mask, `(layers "F.Cu" "F.Mask")` with an optional `(solder_mask_margin ...)`, are read (in `featureTest/08b_copper_graphics_nets`) |
 | 10 | 20260206 | the upper end of the tested range (`Run.KICAD_VERSION_MAX`); ten hand-written feature boards (`03b_vias_k10`, `06_padstacks`, `08b_copper_graphics_nets`, `19b_skipped_items_k10`, `20e_format_kicad10`, `24_backdrills`, `25_post_machining`, `26_via_protection`, `27_hatched_fills`, `28_plated_edge_machining`); net names stored directly on items and per-via `(tenting (front yes) (back no))` are read |
-| newer | above 20260206 | read best-effort with a warning; raise `Run.KICAD_VERSION_MAX` once checked. A bold text's thickness from format 20260826 on is read as its base pen, drawn 1.6 times as wide, as KiCad's development version does |
+| newer | above 20260206 | read best-effort with a warning; raise `Run.KICAD_VERSION_MAX` once checked. A bold text's thickness from format 20260826 on is read as its base pen, drawn 1.6 times as wide, as KiCad's development version does. From format 20260511 on, a dielectric's `(spec_frequency ...)` and `(dielectric_model ...)` are read (`featureTest/29c_stackup_frequency`, hand-written in that format) |
 
 The 150 public boards (25 for each release from 4 to 9, six of the "KiCad 4" ones saved by the builds before it) were downloaded for testing and are not kept
 in the repository; every complete one of them runs, and the Verifier passes on all but one, whose file
@@ -43,7 +43,7 @@ KiCad itself is not needed, only the `.kicad_pcb` file. Footprints are read from
 | Board feature | Support |
 |---|---|
 | Copper layers | boards with 2, 4, 6 and 8 declared copper layers are in the repository (one of them single-sided: tracks only on `F.Cu`, and on `B.Cu` only its two through-hole pads); more than 8 are modelled with a warning; `F.Cu` and `B.Cu` must be declared. Copper layers are read as KiCad reads them, by their place in the list: the first is `F.Cu`, the last `B.Cu`, and the ones between `In1.Cu`, `In2.Cu`, ... unless already named so; a file whose copper layers the user renamed (`(0 TOP_L1.Sig mixed)`, `(1 GND.Cu power)`) gets a warning that lists the names; a signal-typed `User.n` layer after the copper is not copper |
-| Stack-up from Board Setup | thickness, type, material, εr, tanδ per dielectric; copper thickness per layer; mask thickness; mask and silk colours; copper finish; edge plating and castellated pads flags |
+| Stack-up from Board Setup | thickness, type, material, εr, tanδ per dielectric, and per ply where a dielectric is laid up of several (KiCad's sub-layers, `addsublayer`); the frequency εr and tanδ hold at and the dielectric model (KiCad's development version); copper thickness per layer; mask thickness, material, εr and tanδ; mask and silk colours; copper finish; edge plating and castellated pads flags |
 | Tracks, arc tracks, vias (through, blind, buried, micro) | yes; "remove unused layers" with KiCad 7+'s `zone_layer_connections`, and KiCad 10's `start_end_only`; a track the solder mask leaves bare (KiCad 9 and later) opens the mask over itself, grown by its own mask margin or the board's pad-to-mask clearance |
 | Pads: circle, rect, oval, roundrect, trapezoid, custom | yes; round and oval drills, drill offsets (which move the copper, not the hole), a drill that gives no size taken as KiCad's default of 30 mils (none on an SMD pad), per-pad mask margins; chamfered corners; copper rings on non-plated holes where KiCad flashes them; "remove unused layers" on through-hole pads |
 | Zones | stored fills only (fill in KiCad first); rule areas skipped; KiCad 5 fills drawn with a pen of `min_thickness` grown by half of it, as KiCad does on reading |
@@ -73,7 +73,7 @@ Visual mode writes GLB and OBJ only.
 ## 22.3 Tools
 
 None of these imports has been tried with KESE output yet: the routes follow each tool's
-documented import formats and the presets in `parameters/presets.py`, and are to be confirmed.
+documented import formats and the presets in `parameters/Run_KESE/Presets.py`, and are to be confirmed.
 Research underway.
 
 | Tool | Route | Notes |

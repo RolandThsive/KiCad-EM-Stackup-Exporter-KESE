@@ -92,7 +92,7 @@ def test_rays_through_the_faces_a_board_s_skin_left_flat_on_their_own_take_turns
         np.maximum.at(high, shell, z.max(axis=1))
         flat.append(v[f[(low == high)[shell]]].mean(axis=1)[:, :2])
         return kept(v, f)
-    parts = {"Finish.FINISH_ENABLED": True, "SolderMask.SOLDER_MASK_ENABLED": True, "Silkscreen.SILKSCREEN_ENABLED": True}
+    parts = {"Stackup.finish": True, "Stackup.solder_mask": True, "Stackup.silkscreen": True}
     skin_mesh.sealed = spy
     try:
         with settings(parts):

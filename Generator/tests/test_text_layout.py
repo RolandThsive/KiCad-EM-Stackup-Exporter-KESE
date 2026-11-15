@@ -4,7 +4,7 @@ tabs, an angle, italic, bold, a wide font, an escaped quote, mirrored text on th
 reference of a footprint turned so that KiCad keeps it upright) goes through stages 1 and 2, and
 every text's ink must have the bounds KiCad 7.0.11 plots for it (kicad-cli pcb export svg, the
 stroked text thickened as the SVG draws it), to 5 µm: KESE draws round ends with
-Silkscreen.TEXT_STROKE_QUAD_SEGS segments per quarter circle.  Takes a moment.
+SilkScreen.TEXT_STROKE_QUAD_SEGS segments per quarter circle.  Takes a moment.
 
     python -m pytest tests/test_text_layout.py           (or:  python tests/test_text_layout.py)"""
 import tempfile

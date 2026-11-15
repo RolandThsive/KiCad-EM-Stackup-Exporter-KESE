@@ -2,13 +2,19 @@
 the laminate, copper, plating, via fills, solder mask, silkscreen and finish."""
 from kese.core import shapes2d as sh
 from kese.model.prisms import PrismSet
+from kese.s3_resolve.heights import ply_z
 from kese.s4_geometry import copper, finish, finish_shells, laminate, plating, silkscreen, solder_mask, via_fill
-from kese.s4_geometry.switches import enabled, switched_off
+from kese.s4_geometry.switches import leave_out
+from parameters import P
 
 
 def run(regions, job):
     with job.stage("geometry", "geometry (prisms for laminate, copper, mask, silk)"):
-        return geometry(regions, job.mode)
+        ps = geometry(regions, job.mode)
+    if not ps.prisms:
+        job.note(f"warning: nothing was built: this board has no part of the lines that are True in "
+                 f"{P.Stackup.FUSION_BUILD} (parameters/PCB_elements/Stackup.py)")
+    return ps
 
 
 def geometry(regions, mode):
@@ -28,21 +34,23 @@ def geometry(regions, mode):
 
 def free_levels(r, ps):
     """The heights only post machining and via plugs bring (KiCad 10): the steps of the cuts in the
-    laminate and the barrels, and the plugs' ends, but no copper layer's or dielectric's own heights.
+    laminate and the barrels, and the plugs' ends, but no copper layer's, dielectric's or ply's own heights.
     A wall runs on across them where nothing stops it (kese/core/tall_walls.py)."""
     st, d = r.stackup, sh.G().HEIGHT_DIGITS
     cut = {z for into in (r.slab_cuts, r.band_cuts) for cuts in into.values() for z0, z1, _ in cuts for z in (z0, z1)}
     cut |= {z for _, z0, z1, *_ in r.barrel_pieces for z in (z0, z1)}
     cut |= {z for p in ps.prisms if p.role == "via_resin" for z in (p.z0, p.z1)}
     own = {z for band in st.band.values() for z in band}
+    own |= {z for i in range(len(st.dielectrics)) for _, lo, hi in ply_z(st, i) for z in (lo, hi)}
     return frozenset(round(z, d) for z in cut) - {round(z, d) for z in own}
 
 
 def leave_out_disabled(ps):
-    """Drop the prisms of every part switched off.  Everything is built first, so what stays is
-    exactly as it would be with every switch on (the mask still steps over copper left out)."""
-    off = switched_off()
+    """Drop the prisms of every line of the stack-up that is False.  Everything is built first, so
+    what stays is exactly as it would be with every line True (the mask still steps over copper
+    left out)."""
+    ps.prisms, off = leave_out(ps.prisms)
     if off:
-        ps.prisms = [p for p in ps.prisms if enabled(p.role)]
-        ps.notes.append(f"left out of every file: {', '.join(off)} = False")
+        ps.notes.append(f"left out of every file: {', '.join(off)} "
+                        f"(False in {P.Stackup.FUSION_BUILD}, parameters/PCB_elements/Stackup.py)")
     return ps

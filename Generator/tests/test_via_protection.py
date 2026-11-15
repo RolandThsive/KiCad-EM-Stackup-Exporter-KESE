@@ -103,7 +103,7 @@ def test_fills_and_plugs_are_as_long_as_the_rules_say():
 
 
 def test_a_cap_or_a_copper_fill_closes_the_outer_copper_and_a_covering_the_mask():
-    r, _ = run({"SolderMask.SOLDER_MASK_ENABLED": True})
+    r, _ = run({"Stackup.solder_mask": True})
     found = vias(r)
     centre = {n: r.to_board_T(Point(h.drill.centroid).buffer(0.01)) for n, h in found.items()}
     for net in ("T5_FILL", "T7_FILL_CAP", "CAP_ONLY", "T5B_FILL_OPEN"):
@@ -140,9 +140,9 @@ def test_protection_switched_off_leaves_every_via_open():
 
 
 def test_the_resin_switch_leaves_the_resin_out_of_the_files_only():
-    _, ps = run({"Copper.VIA_RESIN_ENABLED": False})
+    _, ps = run({"Stackup.via_resin": False})
     assert not any(p.role == "via_resin" for p in ps.prisms)
-    assert any("Copper.VIA_RESIN_ENABLED" in n for n in ps.notes)
+    assert any("via_resin" in n for n in ps.notes)
 
 
 def test_what_shuts_an_end():

@@ -89,8 +89,12 @@ def assemble(ps, mode, log, check):
 
 def props_of(prisms):
     """A part's properties: its first prism's, then its role, layer and net, its heights and how many
-    prisms it has."""
-    p0 = prisms[0]
-    return {**p0.props, "role": p0.role, "layer": p0.layer, "net": p0.net,
+    prisms it has.  A copper part lists every copper layer it lies on, each with its own values."""
+    p0, layers = prisms[0], {}
+    for p in prisms:                                     # the layers built: a line left out is not in the part
+        if p.role == "copper":
+            layers.setdefault(p.layer, p.props["layers"][0])
+    return {**p0.props, **({"layers": list(layers.values())} if layers else {}),
+            "role": p0.role, "layer": p0.layer, "net": p0.net,
             "z_min_mm": round(min(p.z0 for p in prisms), 6), "z_max_mm": round(max(p.z1 for p in prisms), 6),
             "prisms": len(prisms)}

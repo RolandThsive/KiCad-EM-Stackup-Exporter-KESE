@@ -1,4 +1,4 @@
-"""Stroke-font files: which one Silkscreen.FONT_FILE picks, and reading it.
+"""Stroke-font files: which one SilkScreen.FONT_FILE picks, and reading it.
 
 A font is a dict: the header (name, units, first_codepoint, line pitch, italic tilt) and "glyphs",
 the glyphs from first_codepoint on, each {"w": advance, "s": strokes}.  Three layouts are read:
@@ -98,8 +98,8 @@ def read_jhf(path):
 
 
 def chosen():
-    """The font file Silkscreen.FONT_FILE picks, and the report's note on it."""
-    name = P.Silkscreen.FONT_FILE
+    """The font file SilkScreen.FONT_FILE picks, and the report's note on it."""
+    name = P.SilkScreen.FONT_FILE
     if not name:
         return FONTS_DIR / DEFAULT_FONT, f"font: KiCad newstroke ({DEFAULT_FONT})"
     custom = FONTS_DIR / name
@@ -114,7 +114,7 @@ def note():
 
 
 def load():
-    """The font Silkscreen.FONT_FILE picks, read once per file; returns (font, note)."""
+    """The font SilkScreen.FONT_FILE picks, read once per file; returns (font, note)."""
     path, text = chosen()
     if path not in _fonts:
         _fonts[path] = read_jhf(path) if path.suffix.lower() == ".jhf" else read_json(path)

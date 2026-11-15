@@ -69,9 +69,10 @@ def build(r, ps):
     for (part, role, z0, z1, span, net), regions in groups.items():
         region = sh.snap(sh.inter(r.to_board_T(union(regions)), r.outline))
         if role == "plating":
-            props = {"layer": span, "net": net, "conductivity_S_per_m": C.COPPER_CONDUCTIVITY_S_PER_M}
+            props = {"layer": span, "net": net, "conductivity_S_per_m": C.COPPER_CONDUCTIVITY_S_PER_M,
+                     "material": C.COPPER_MATERIAL}
             ps.add(part, role, region, z0, z1, layer=span, net=net, props=props)
         else:
-            props = {"material": "via resin", "epsilon_r": C.VIA_RESIN_EPSILON_R,
+            props = {"material": C.VIA_RESIN_MATERIAL, "epsilon_r": C.VIA_RESIN_EPSILON_R,
                      "loss_tangent": C.VIA_RESIN_LOSS_TANGENT, "layer": span}
             ps.add(part, role, region, z0, z1, layer=span, props=props)

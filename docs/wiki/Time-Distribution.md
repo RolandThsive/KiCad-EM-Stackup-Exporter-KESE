@@ -22,7 +22,7 @@ proportional set size (PSS) of KESE's process and its workers, summed and sample
 median of three more runs. The STL size is that of the `stl/` folder, one file a part, and the OBJ
 size includes its `.mtl`. MB is a million bytes.
 
-**The runs used the default parameters on one Linux machine with 4 cores (an Intel Xeon at 2.1 GHz)
+**The runs used the parameters of that time (the plies fused, ENIG, metres, the board centred) on one Linux machine with 4 cores (an Intel Xeon at 2.1 GHz)
 and 16 GB of RAM, so `Parallel.WORKERS = 0` gave four workers
 ([Work Done In Parallel](Working-Principle.md#74-work-done-in-parallel)). On another machine the
 seconds differ.**
@@ -32,7 +32,7 @@ seconds differ.**
 | 1–2 read | 1 read, 2 collect | The file parsed; every track, pad, zone, graphic and text as a flat shape; the stroke font unpacked and split into lines (about 0.06 s), and the glyphs the text uses parsed |
 | 3 resolve | 3 | The copper joined per layer and net, clipped and drilled; barrels, edge plating, mask openings and silkscreen |
 | 4 geometry | 4 | Every part as prisms, between the heights of the stack-up |
-| 5 materials | 5 | A material for every part, from `parameters/color.py` and the stack-up's colours: 0.2 to 0.3 ms |
+| 5 materials | 5 | A material for every part, from the colour settings of the element files in `parameters/PCB_elements/` and the stack-up's colours: 0.2 to 0.3 ms |
 | 6 assemble | 6 | Closed solids in simulation mode, the visible skin in visual mode; with `--verify`, each solid is also checked here by the worker that built it |
 | 7 write | 7 | The files, the one stage the format changes much. On the three boards GLB takes 0.11 to 0.19 s in simulation mode and 33 to 53 ms in visual mode, STL 0.15 to 0.32 s, STEP 1.7 to 2.5 s, and OBJ 3.6 to 6.9 s in simulation mode and 0.9 to 1.7 s in visual mode |
 | 8 verify | 8 | The Verifier's checks of the written files ([Checks, Errors And Warnings](Checks-Errors-And-Warnings.md)) |

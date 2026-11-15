@@ -16,13 +16,14 @@ from pathlib import Path
 
 from helpers import FEATURES, run_tests, settings
 from kese.core.sexp import parse
-from kese.job import (AT_LEAST, CHOICES, KIND_WORDS, MORE_THAN_ZERO, NUMBER_AT_LEAST, ONE_OR_MORE, SHARES,
-                      WHOLE_NUMBERS, start)
+from kese.job import start
+from kese.settings_check import (AT_LEAST, CHOICES, KIND_WORDS, MORE_THAN_ZERO, NUMBER_AT_LEAST, ONE_OR_MORE, OR_NONE,
+                                 SHARES, WHOLE_NUMBERS)
 from kese.s1_read import parse_kicad_version as kv
 from kese.s1_read import read
 from kese.s2_collect import collect
 from kese.s2_collect.vias import OFF_BOARD
-from parameters import KINDS, MOVED, P
+from parameters import KINDS, LINES, MOVED, P
 
 VIAS = FEATURES / "03b_vias_k10.kicad_pcb"      # two copper layers
 
@@ -45,9 +46,16 @@ def test_every_setting_with_a_few_values_is_checked():
     assert not isinstance(started({}), str)                                # the defaults pass
     for key, words in CHOICES.items():
         for word in words:
-            assert not isinstance(started({key: word}), str), (key, word)
+            more = {"Board.DIELECTRIC_TABLE": ((1e9, 4.5, 0.02),)} if word == "table" else {}      # "table" needs one
+            assert not isinstance(started({key: word, **more}), str), (key, word)
         refused = started({key: "bogus"})
         assert isinstance(refused, str) and key in refused, (key, refused)
+    refused = started({"Board.DIELECTRIC_MODEL": "table"})
+    assert refused == ("Board.DIELECTRIC_MODEL is 'table' but Board.DIELECTRIC_TABLE is empty: give it rows of "
+                       "(frequency in Hz, er, tan d)"), refused
+    for table in ("1e9", ((1e9, 4.5),), ((1e9, 4.5, 0.02), (1e8, 4.6, 0.02)), ((0, 4.5, 0.02),), [(1e9, 0.5, 0.02)]):
+        refused = started({"Board.DIELECTRIC_TABLE": table})
+        assert isinstance(refused, str) and refused.startswith("Board.DIELECTRIC_TABLE must be rows of"), (table, refused)
 
 
 def test_the_parallel_settings_are_checked():
@@ -74,32 +82,43 @@ def test_the_old_name_of_workers_still_works():
         start("simulation", None, None, (("Run.WORKERS", 3),), False, lines.append)
     finally:
         P.override("Parallel.WORKERS", saved)
-    assert lines == ["  Run.WORKERS is now Parallel.WORKERS (parameters/parallel.py): the value given for "
+    assert lines == ["  Run.WORKERS is now Parallel.WORKERS (parameters/Run_KESE/Parallel.py): the value given for "
                      "Run.WORKERS is used as Parallel.WORKERS"], lines
-    P.Run.WORKERS = 2                                                   # left in an old parameters/run.py
+    P.Run.WORKERS = 2                                                   # left in a Run.py kept through an update
     try:
         refused = started({})
     finally:
         del P.Run.WORKERS
-    assert refused == ("parameters/run.py sets WORKERS, which is now Parallel.WORKERS in parameters/parallel.py: "
-                       "set it there"), refused
+    assert refused == ("parameters/Run_KESE/Run.py sets WORKERS, which is now Parallel.WORKERS "
+                       "(parameters/Run_KESE/Parallel.py): set it there"), refused
+
+
+def everywhere(name):
+    """The values a setting of today has: its own, or for a line of the stack-ups that line in each
+    stack-up that has it."""
+    module, name = name.split(".")
+    if module == "Stackup" and not name.isupper():
+        return [getattr(P.Stackup, stackup)[name] for stackup in LINES if name in LINES[stackup]]
+    return [getattr(getattr(P, module), name)]
 
 
 def test_every_moved_setting_still_works_by_its_old_name():
-    # run.py's STEP, Verifier and preset settings moved to step.py, verifier.py and presets.py
+    # one old name may stand for several settings of today, or for lines of the two stack-ups
     for old, new in MOVED.items():
-        (old_module, name), (new_module, new_name) = old.split("."), new.split(".")
-        value = getattr(getattr(P, new_module), new_name)
-        P.override(old, value)                                          # as --set Run.VERIFY=... does
-        assert getattr(getattr(P, new_module), new_name) is value and not hasattr(getattr(P, old_module), name), old
-    P.Run.VERIFY, P.Run.STEP_EXACT_ARCS = True, False                   # left in an old parameters/run.py
+        old_module, name = old.split(".")
+        for value in ([True, False] if type(everywhere(new[0])[0]) is bool else [everywhere(new[0])[0]]):
+            with settings(dict.fromkeys(new, P.value(new[0]))):             # put back after
+                P.override(old, value)                                      # as --set Run.VERIFY=... does
+                assert all(now is value for n in new for now in everywhere(n)), (old, value)
+        assert old_module not in P.modules() or not hasattr(getattr(P, old_module), name), old
+    P.Run.VERIFY, P.Run.STEP_EXACT_ARCS = True, False                   # left in a Run.py kept through an update
     try:
         refused = started({})
     finally:
         del P.Run.VERIFY, P.Run.STEP_EXACT_ARCS
-    assert refused == ("parameters/run.py sets STEP_EXACT_ARCS, which is now Step.STEP_EXACT_ARCS in parameters/step.py; "
-                       "parameters/run.py sets VERIFY, which is now Verifier.VERIFY in parameters/verifier.py: "
-                       "set them there"), refused
+    assert refused == ("parameters/Run_KESE/Run.py sets STEP_EXACT_ARCS, which is now Step.STEP_EXACT_ARCS "
+                       "(parameters/Fileformats/Step.py); parameters/Run_KESE/Run.py sets VERIFY, which is now "
+                       "Verifier.VERIFY (parameters/Run_KESE/Verifier.py): set them there"), refused
 
 
 def test_every_preset_names_real_settings_and_passes_the_checks():
@@ -114,8 +133,8 @@ def test_a_misspelt_preset_is_named_before_the_run():
     from kese.cli import main
     units = P.Run.UNITS
     for preset, said in (({"Run.UNITS": "mm", "Copper.VIA_WAL_MM": 0.02},
-                          "--for misspelt: parameters/copper.py has no parameter VIA_WAL_MM (did you mean VIA_WALL_MM?)"),
-                         (["Run.UNITS", "mm"], "--for misspelt: parameters/presets.py gives it ['Run.UNITS', 'mm'], not")):
+                          "--for misspelt: parameters/PCB_elements/Copper.py has no parameter VIA_WAL_MM (did you mean VIA_WALL_MM?)"),
+                         (["Run.UNITS", "mm"], "--for misspelt: parameters/Run_KESE/Presets.py gives it ['Run.UNITS', 'mm'], not")):
         err, argv = io.StringIO(), sys.argv
         P.Presets.PRESETS["misspelt"] = preset
         sys.argv = ["kese", "--for", "misspelt"]
@@ -145,12 +164,17 @@ def test_rounds_and_batches_must_be_one_or_more():
 
 
 def test_every_setting_must_be_of_the_kind_its_file_gives_it():
-    # --set Board.BOARD_ENABLED=false gives the word "false", which Python takes as true
+    # --set Stackup.top_copper=false gives the word "false", which Python takes as true
     wrong = {bool: "false", int: "10", float: "0.02mm", str: 5, list: "F.SilkS", dict: "freecad"}
-    said = {"Board.BOARD_ENABLED": "Board.BOARD_ENABLED must be True or False, not 'false'",
+    said = {"Stackup.top_copper": "Stackup.top_copper must be True or False, not 'false'",
+            "Stackup.cores": "Stackup.cores must be True or False, not 'false'",      # a line of the other stack-up
+            "Stackup.PLIES_FUSED": "Stackup.PLIES_FUSED must be a dict, not 'freecad'",
+            "Board.JOIN_EQUAL_PLIES": "Board.JOIN_EQUAL_PLIES must be True or False, not 'false'",
+            "Board.RESIN_EPSILON_R": "Board.RESIN_EPSILON_R must be a number, 1 or more, or None, not '0.02mm'",
             "Copper.VIA_WALL_MM": "Copper.VIA_WALL_MM must be a number, not '0.02mm'",
             "Copper.NO_NET_NAME": "Copper.NO_NET_NAME must be text, in quotes, not 5",
-            "Silkscreen.SILK_LAYERS": "Silkscreen.SILK_LAYERS must be a list, not 'F.SilkS'"}
+            "SilkScreen.SILK_LAYERS": "SilkScreen.SILK_LAYERS must be a list, not 'F.SilkS'"}
+    assert set(said) <= set(KINDS)
     for key, kind in KINDS.items():
         if kind not in KIND_WORDS or key == "Run.FILE_FORMAT":
             continue
@@ -158,8 +182,9 @@ def test_every_setting_must_be_of_the_kind_its_file_gives_it():
         assert isinstance(refused, str) and refused.startswith(f"{key} must be"), (key, refused)
         if key in said:
             assert refused == said[key], (key, refused)
-    for key, value in (("Copper.VIA_WALL_MM", 1), ("Board.BOARD_THICKNESS_MM", 1.2), ("Silkscreen.SILK_LAYERS", ("F.SilkS",))):
-        assert not isinstance(started({key: value}), str), (key, value)     # a whole number, None's setting, a tuple
+    for key, value in (("Copper.VIA_WALL_MM", 1), ("Board.BOARD_THICKNESS_MM", 1.2), ("SilkScreen.SILK_LAYERS", ("F.SilkS",)),
+                       *dict.fromkeys(OR_NONE).items()):
+        assert not isinstance(started({key: value}), str), (key, value)     # a whole number, None's setting, a tuple, None
 
 
 def test_tolerances_and_limits_must_be_in_their_range():
@@ -170,8 +195,9 @@ def test_tolerances_and_limits_must_be_in_their_range():
             refused = started({key: x})
             assert refused == f"{key} must be a number, {least} or more, not {x!r}", (key, x, refused)
     for key in MORE_THAN_ZERO:                                      # the longest arc
+        beside = {"Board.DS_LOW_FREQUENCY_HZ": 1e-6} if key == "Board.DS_HIGH_FREQUENCY_HZ" else {}    # the corners stay in order
         for x in (1e-3, 90, 181.0, 400):
-            assert not isinstance(started({key: x}), str), (key, x)
+            assert not isinstance(started({**beside, key: x}), str), (key, x)
         for x in (0, 0.0, -90, float("nan"), "90", None, True):
             refused = started({key: x})
             assert refused == f"{key} must be a number more than 0, not {x!r}", (key, x, refused)
@@ -214,12 +240,15 @@ def test_a_misspelt_set_is_named_before_the_run():
     from kese.cli import main
     for item, said in (("Coper.VIA_WALL_MM=0.02", "no parameter module Coper (did you mean Copper?)"),
                        ("copper.VIA_WALL_MM=0.02", "(did you mean Copper?)"),
-                       ("Copper.VIA_WAL_MM=0.02", "copper.py has no parameter VIA_WAL_MM (did you mean VIA_WALL_MM?)"),
+                       ("Copper.VIA_WAL_MM=0.02", "PCB_elements/Copper.py has no parameter VIA_WAL_MM (did you mean VIA_WALL_MM?)"),
                        ("Copper.via_wall_mm=0.02", "(did you mean VIA_WALL_MM?)"),
                        ("WORKERS=2", "WORKERS is not Module.NAME (did you mean Parallel.WORKERS?)"),
                        ("Parallel.WORKERS", "give it a value, as in Parallel.WORKERS=value"),
-                       ("Parallel.PROCESS_WORKER=2", "parallel.py has no parameter PROCESS_WORKER (did you mean PROCESS_WORKERS?)"),
-                       ("Run.WORKER=2", "run.py has no parameter WORKER (did you mean Parallel.WORKERS?)"),
+                       ("Parallel.PROCESS_WORKER=2", "Run_KESE/Parallel.py has no parameter PROCESS_WORKER (did you mean PROCESS_WORKERS?)"),
+                       ("Run.WORKER=2", "Run_KESE/Run.py has no parameter WORKER (did you mean Parallel.WORKERS?)"),
+                       ("Stackup.top_coper=False", "PCB_elements/Stackup.py has no parameter top_coper (did you mean top_copper?)"),
+                       ("Stackup.soldermask=True", "PCB_elements/Stackup.py has no parameter soldermask (did you mean solder_mask?)"),
+                       ("Color.MATERIALS={}", "Color.MATERIALS is no longer a parameter: every colour is now a setting of its own"),
                        ("snapshot.X=1", "no parameter module snapshot")):
         err, argv = io.StringIO(), sys.argv
         sys.argv = ["kese", "--set", item]
@@ -301,7 +330,7 @@ def test_a_thickness_below_zero_is_read_as_not_given():
     # the copper came out -0.2 mm thick, every part turned inside out, with no word but the Verifier's FAIL
     items, lines = board_variant("negative.kicad_pcb", lambda t: t.replace("(thickness 0.035)", "(thickness -0.2)"))
     assert not isinstance(items, str), items
-    assert items.stackup.copper_thickness["F.Cu"] == items.stackup.copper_thickness["B.Cu"] == P.Copper.DEFAULT_OUTER_FOIL_MM
+    assert items.stackup.copper_thickness["F.Cu"] == items.stackup.copper_thickness["B.Cu"] == P.Copper.DEFAULT_TOP_FOIL_MM
     assert all(d.thickness > 0 for d in items.stackup.dielectrics)
     assert sum("thickness -0.2 mm is less than 0: read as not given" in line for line in lines) == 2, lines
     items, lines = board_variant("negative.kicad_pcb", lambda t: t.replace("(thickness 1.6)", "(thickness -1.6)", 1))
@@ -314,7 +343,7 @@ def test_a_board_too_thin_for_its_copper_is_refused():
     no_stackup = lambda t: re.sub(r"\(stackup\b.*?\n\t\t\)", "", t, count=1, flags=re.S).replace("(thickness 1.6)", "(thickness 0.05)", 1)
     said, _ = board_variant("thin.kicad_pcb", no_stackup)
     assert isinstance(said, str) and said.startswith("the dielectric between F.Cu and In1.Cu comes out -") \
-        and said.endswith("the board is too thin for its copper; set Board.BOARD_THICKNESS_MM (parameters/board.py)"), said
+        and said.endswith("the board is too thin for its copper; set Board.BOARD_THICKNESS_MM (parameters/PCB_elements/Board.py)"), said
 
 
 def test_a_drill_that_gives_no_size_takes_kicads_default():
