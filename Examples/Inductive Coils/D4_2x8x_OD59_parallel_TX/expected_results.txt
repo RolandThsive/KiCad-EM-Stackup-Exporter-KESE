@@ -1,0 +1,17 @@
+== D4_2x8x_OD59_parallel_TX  (air gap 1.0 mm, 4 layers, board 1.6 mm)
+   rotor ring r 9.03 ... 16.05 mm, 2 sector(s), duty 0.500
+   rotor ring r 19.05 ... 28.80 mm, 8 sector(s), duty 0.500
+   TX_1: parallel TX: not one path; L not computed here (use the generator value in Parameters.txt)
+   TX_2: parallel TX: not one path; L not computed here (use the generator value in Parameters.txt)
+   TX_1->COS_1      M0   -1.769 nH   amplitude  18.454 nH  period 180.00 deg  phase   +90.7  h2 0.01% h3 1.85% h5 0.08%
+   TX_1->COS_2      M0   +0.408 nH   amplitude  12.149 nH  period 45.00 deg  phase   -89.6  h2 0.00% h3 0.34% h5 0.03%
+   TX_1->SIN_1      M0   -1.754 nH   amplitude  18.454 nH  period 180.00 deg  phase  -179.3  h2 0.01% h3 1.85% h5 0.08%
+   TX_1->SIN_2      M0   +0.509 nH   amplitude  12.149 nH  period 45.00 deg  phase    +0.4  h2 0.00% h3 0.34% h5 0.03%
+   TX_2->COS_1      M0   -0.159 nH   amplitude   8.254 nH  period 180.00 deg  phase   +90.8  h2 0.01% h3 1.75% h5 0.07%
+   TX_2->COS_2      M0   -0.885 nH   amplitude  35.132 nH  period 45.00 deg  phase   +89.5  h2 0.00% h3 0.35% h5 0.02%
+   TX_2->SIN_1      M0   -0.152 nH   amplitude   8.254 nH  period 180.00 deg  phase  -179.2  h2 0.01% h3 1.75% h5 0.07%
+   TX_2->SIN_2      M0   -0.864 nH   amplitude  35.132 nH  period 45.00 deg  phase  +179.5  h2 0.00% h3 0.35% h5 0.02%
+   TX_1:SIN_1/COS_1: dphi +90.0 deg, sin/cos 1.000, offset/amp -0.095 / -0.096, err 1.11 el.deg (raw 8.22), Vrx/Vtx nan
+   TX_1:SIN_2/COS_2: dphi +90.0 deg, sin/cos 1.000, offset/amp +0.042 / +0.034, err 0.21 el.deg (raw 3.15), Vrx/Vtx nan
+   TX_2:SIN_1/COS_1: dphi +90.0 deg, sin/cos 1.000, offset/amp -0.018 / -0.019, err 1.05 el.deg (raw 2.41), Vrx/Vtx nan
+   TX_2:SIN_2/COS_2: dphi +90.0 deg, sin/cos 1.000, offset/amp -0.025 / -0.025, err 0.21 el.deg (raw 2.12), Vrx/Vtx nan

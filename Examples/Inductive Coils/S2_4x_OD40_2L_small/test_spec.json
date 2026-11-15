@@ -1,0 +1,203 @@
+{
+ "board": "S2_4x_OD40_2L_small",
+ "generator": "Single",
+ "units": "mm, H, Hz, ohm, degrees",
+ "files": {
+  "stator": "Stator.kicad_pcb",
+  "rotor": "Rotor.kicad_pcb",
+  "parameters": "Parameters.txt",
+  "expected": "expected_results.json"
+ },
+ "coordinates": {
+  "kicad_axis_xy": [
+   100.0,
+   100.0
+  ],
+  "model_origin": "the rotation axis, at the top face of the stator's F.Cu copper",
+  "kicad_y": "KiCad y points down. A model with y up uses y_model = -(y_kicad - 100); then every rotation sense below flips (KiCad 'counter-clockwise' = clockwise seen from +z in a y-up model)",
+  "z": "z up, from the stator towards the rotor. Stator F.Cu top face at z = 0; deeper layers at negative z"
+ },
+ "stator": {
+  "layers": [
+   "F.Cu",
+   "B.Cu"
+  ],
+  "layer_z_mm": {
+   "F.Cu": 0.0,
+   "B.Cu": -1.6
+  },
+  "board_thickness_mm": 1.6,
+  "copper_thickness_mm": 0.035,
+  "copper": "each layer's copper is 35 um thick and sits just below its z value (F.Cu: -0.035 ... 0)",
+  "fr4_eps_r": 4.4,
+  "bore_and_outer_radius_mm": [
+   10.0,
+   20.0
+  ]
+ },
+ "rotor": {
+  "board_thickness_mm": 1.6,
+  "copper_layer": "F.Cu of Rotor.kicad_pcb (gr_poly sectors)",
+  "placement": "copper side towards the stator, NOT mirrored: take Rotor.kicad_pcb as drawn, put its copper face (facing down) at z = +air_gap, its FR-4 above it",
+  "rotation": "turn by theta about the axis: (x, y) -> (x cos t - y sin t, x sin t + y cos t) in KiCad coordinates (y down). theta = 0 is the rotor exactly as drawn",
+  "rings": [
+   {
+    "r_in": 10.53,
+    "r_out": 17.3,
+    "sectors": 4,
+    "duty": 0.5,
+    "start": -1.564205209803049e-09
+   }
+  ]
+ },
+ "air_gap_mm": 1.0,
+ "air_gap_definition": "stator F.Cu top face to rotor copper face (copper to copper). The solder mask lies inside this gap: air between the two mask faces = gap - 2 x mask thickness",
+ "solder_mask": {
+  "thickness_mm": 0.02,
+  "eps_r": 3.8,
+  "loss_tangent": 0.02,
+  "where": "both faces of the stator AND both faces of the rotor, over all copper and bare FR-4, no openings (vias tented). Conformal over the copper: 20 um on top of each trace and on the FR-4 between traces",
+  "note": "no solder mask is set in the KiCad stackup of these boards, so this is a typical LPI value; the mask is a non-magnetic insulator: no effect on L, M or eddy currents, it changes only the stray capacitance and self resonance (openEMS C8)"
+ },
+ "air_box": {
+  "radius_or_half_width_mm": 60.0,
+  "z_range_mm": [
+   -61.6,
+   62.6
+  ],
+  "note": "about 3 x the board radius around everything (Elmer: zero tangential A on the outside; openEMS: MUR / PML at least 2.5 x the radius)"
+ },
+ "nets": {
+  "1": "COS",
+  "2": "SIN",
+  "TX": "TX"
+ },
+ "sets": [
+  {
+   "set": 1,
+   "tx": "TX",
+   "sin": "2",
+   "cos": "1",
+   "f_Hz": 3500000.0,
+   "loops": 4,
+   "electrical_period_mech_deg": 90.0,
+   "c4_angles_mech_deg": [
+    0.0,
+    11.25,
+    22.5,
+    33.75,
+    45.0,
+    56.25,
+    67.5,
+    78.75
+   ],
+   "c2_second_angle_mech_deg": 22.5
+  }
+ ],
+ "terminals": {
+  "TX": {
+   "kind": "TX ends",
+   "source": "Parameters.txt lead-cutting suggestion",
+   "ends_xy_kicad": [
+    119.3,
+    100.0
+   ],
+   "ends_xy_axis": [
+    19.3,
+    0.0
+   ],
+   "layers": [
+    "F.Cu",
+    "B.Cu"
+   ],
+   "z_mm": [
+    0.0,
+    -1.6
+   ],
+   "lead_vias_xy_kicad": [
+    [
+     119.0153,
+     101.0625
+    ],
+    [
+     119.0153,
+     98.9375
+    ]
+   ],
+   "how": "the two coil ends lie stacked at this point on the two layers; the terminal (port / circuit electrode pair) goes between the two ends"
+  },
+  "2": {
+   "kind": "RX via (fallback)",
+   "source": "the generator found no cut spot on this board; tools/kicad_to_openems.py takes the layer-change via farthest from the TX copper",
+   "via_xy_axis": [
+    10.9848,
+    -2.185
+   ],
+   "via_xy_kicad": [
+    110.9848,
+    97.815
+   ],
+   "z_mm": [
+    -1.6,
+    0.0
+   ],
+   "how": "leave this via out (opens the loop); the terminal goes between its two pads"
+  },
+  "1": {
+   "kind": "RX via (fallback)",
+   "source": "the generator found no cut spot on this board; tools/kicad_to_openems.py takes the layer-change via farthest from the TX copper",
+   "via_xy_axis": [
+    10.9848,
+    2.185
+   ],
+   "via_xy_kicad": [
+    110.9848,
+    102.185
+   ],
+   "z_mm": [
+    -1.6,
+    0.0
+   ],
+   "how": "leave this via out (opens the loop); the terminal goes between its two pads"
+  }
+ },
+ "expected": {
+  "tx": {
+   "TX": {
+    "L_away_gen_H": 2.311e-06,
+    "L_rotor_gen_H": 1.883e-06,
+    "L_away_ref_H": 2.3107646377715313e-06,
+    "L_rotor_ref_H": 2.1836294395511892e-06,
+    "drop_ref_percent": -5.501867050507993,
+    "R_dc_ohm": 1.51,
+    "note": null
+   }
+  },
+  "coupling": {
+   "TX->1": {
+    "M0_no_rotor_H": -6.003266391519937e-11,
+    "amplitude_H": 1.7626810554741245e-08,
+    "period_mech_deg": 90.0,
+    "h3_rel": 0.004865679267809478,
+    "curve": "expected_results.json: coupling['TX->1'] theta_mech_deg / M_total_H"
+   },
+   "TX->2": {
+    "M0_no_rotor_H": -5.4660372703432664e-11,
+    "amplitude_H": 1.7626765586394918e-08,
+    "period_mech_deg": 90.0,
+    "h3_rel": 0.004866644206657517,
+    "curve": "expected_results.json: coupling['TX->2'] theta_mech_deg / M_total_H"
+   }
+  },
+  "pairs": {
+   "TX:2/1": {
+    "phase_difference_deg": 90.00052011095505,
+    "amplitude_ratio_sin_over_cos": 0.9999974488665327,
+    "vrx_over_vtx_amplitude": 0.008072232983824318,
+    "angle_error_pk_elec_deg": 0.3171146134137536,
+    "angle_error_pk_elec_deg_raw": 0.729389466428529
+   }
+  },
+  "source": "tools/quasistatic_reference.py (ref) and Parameters.txt (gen)"
+ }
+}

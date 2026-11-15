@@ -1,0 +1,6 @@
+== S3_8x_OD59_4L_series_wideband  (air gap 1.0 mm, 4 layers, board 1.6 mm)
+   rotor ring r 11.33 ... 26.90 mm, 8 sector(s), duty 0.500
+   TX: L 4.935 uH rotor away, 4.724 uH with rotor (-4.3 %)
+   TX->1            M0   -0.004 nH   amplitude  89.247 nH  period 45.00 deg  phase  -134.9  h2 0.00% h3 0.46% h5 0.02%
+   TX->2            M0   +0.004 nH   amplitude  89.247 nH  period 45.00 deg  phase   -44.9  h2 0.00% h3 0.46% h5 0.02%
+   TX:2/1: dphi +90.0 deg, sin/cos 1.000, offset/amp +0.000 / -0.000, err 0.27 el.deg (raw 0.28), Vrx/Vtx 0.0189

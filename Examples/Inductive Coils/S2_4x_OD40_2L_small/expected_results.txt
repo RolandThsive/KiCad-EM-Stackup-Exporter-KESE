@@ -1,0 +1,6 @@
+== S2_4x_OD40_2L_small  (air gap 1.0 mm, 2 layers, board 1.6 mm)
+   rotor ring r 10.53 ... 17.30 mm, 4 sector(s), duty 0.500
+   TX: L 2.311 uH rotor away, 2.184 uH with rotor (-5.5 %)
+   TX->1            M0   -0.060 nH   amplitude  17.627 nH  period 90.00 deg  phase  -141.8  h2 0.11% h3 0.49% h5 0.01%
+   TX->2            M0   -0.055 nH   amplitude  17.627 nH  period 90.00 deg  phase   -51.8  h2 0.11% h3 0.49% h5 0.01%
+   TX:2/1: dphi +90.0 deg, sin/cos 1.000, offset/amp -0.003 / -0.003, err 0.32 el.deg (raw 0.73), Vrx/Vtx 0.0081
