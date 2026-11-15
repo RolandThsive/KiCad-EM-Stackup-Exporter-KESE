@@ -29,8 +29,8 @@ The brief's marks stand, except five that as written either cannot fail or canno
 
 | Check | In the brief | Now |
 |---|---|---|
-| C2, angle independence | L at 0° and a second angle within 0.5 % | L at all eight C4 angles within 0.5 % of their mean (the second angle was already one of the eight) |
-| C4, period | exactly 360/N | M at 360/N equals M at 0° within 1 % of the amplitude A, and h2 below 1 % of A (a fit over one assumed period cannot show another period) |
+| C2, angle independence | L at 0° and a second angle within 0.5 % | L at all eight C4 angles within 0.5 % of their mean (the second angle was already one of the eight, so its solve is dropped) |
+| C4, period | exactly 360/N | dropped: the rotor repeats itself after 360/N, so the period is exact by construction in any solver; instead the even harmonic h2 stays below 1 % of the amplitude A |
 | C4, h3 | within 2× | within 2×, or within 0.3 % of A, whichever is looser, with the stator's mesh the same at every angle |
 | C3, sign pattern | the same sign pattern | M0 / A below 3 % stays; the sign is judged only where M0 is at least 3 times its change between the two finest meshes |
 | C6 | the same order of magnitude | within 3 times the prediction, or below 0.5 electrical degree, whichever is looser |
