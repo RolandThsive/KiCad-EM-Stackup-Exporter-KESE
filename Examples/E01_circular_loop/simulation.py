@@ -37,7 +37,8 @@ SETTINGS = dict(
     domain_half_height_mm=60.0,
     freqs_hz=[1e4, 3.5e6],         # uniform current (10 kHz, skin depth 0.66 mm) and the coils' frequency
     order=1,
-    levels=[1.0, 1.5, 2.0],        # the mesh ladder: each level divides the copper's mesh sizes by this
+    levels=[0.75, 1.0, 1.3],       # the mesh ladder: each level divides the copper's mesh sizes by this (1.5 and up
+                                   # do not fit in 15 GB with the iterative solver)
     mesh=dict(h_edge=0.09, h_in=0.18, h_max=6.0, grade=0.5, dz_copper=0.018, dz_max=0.4,
               tet_max=8.0, tet_grade=0.7),
     threads=4,

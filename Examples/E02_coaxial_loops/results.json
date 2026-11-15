@@ -1,0 +1,126 @@
+{
+ "board": "E02_coaxial_loops.kicad_pcb",
+ "settings": {
+  "board": "E02_coaxial_loops.kicad_pcb",
+  "centre": [
+   100.0,
+   -100.0
+  ],
+  "radius_mm": 10.0,
+  "width_mm": 0.5,
+  "gap_mm": 0.2,
+  "gap_box": [
+   109.75,
+   -100.35,
+   110.25,
+   -99.65
+  ],
+  "sigma": 58000000.0,
+  "insulators": false,
+  "domain_radius_mm": 60.0,
+  "domain_half_height_mm": 60.0,
+  "freqs_hz": [
+   10000.0,
+   3500000.0
+  ],
+  "order": 1,
+  "levels": [
+   1.0,
+   1.5
+  ],
+  "mesh": {
+   "h_edge": 0.09,
+   "h_in": 0.18,
+   "h_max": 6.0,
+   "grade": 0.5,
+   "dz_copper": 0.018,
+   "dz_max": 0.4,
+   "tet_max": 8.0,
+   "tet_grade": 0.7
+  },
+  "threads": 4,
+  "tol": 1e-07,
+  "max_iter": 1500
+ },
+ "versions": {
+  "python": "3.13.18",
+  "kese": "kese 3.4.0",
+  "gmsh": "4.15.2",
+  "numpy": "2.5.3",
+  "scipy": "1.18.1",
+  "shapely": "2.2.0",
+  "trimesh": "5.2.1",
+  "elmer": "26.2-unknown (a19504a,)"
+ },
+ "runs": [
+  {
+   "level": 1.0,
+   "order": 1,
+   "max_iter": 1500,
+   "mesh_seconds": 11.3,
+   "nodes": 119559,
+   "wedges": 202788,
+   "tetrahedra": 93292,
+   "solves": [
+    {
+     "frequency_hz": 10000.0,
+     "seconds": 1317.2,
+     "peak_memory_gb": 6.74,
+     "iterations": 1500,
+     "residual": 2.874e-06,
+     "field_energy_j": 2.711694102395e-08,
+     "dc_resistance_ohm": {
+      "TX": 0.06135500353906,
+      "RX": 0.06135500353906
+     },
+     "coils": {
+      "TX": {
+       "V": [
+        0.06153445262952,
+        0.003404243336387
+       ],
+       "I": [
+        1.0,
+        -3.308722450212e-24
+       ],
+       "Z": [
+        0.06153445262952,
+        0.003404243336387
+       ],
+       "R": 0.06153445262952,
+       "L": 5.4180215447363686e-08
+      },
+      "RX": {
+       "V": [
+        4.068611648069e-08,
+        0.00146916610696
+       ],
+       "I": [
+        -3.308722450212e-24,
+        -2.64697796017e-23
+       ],
+       "Z": null,
+       "R": null,
+       "L": null,
+       "Zm": [
+        4.068611648069e-08,
+        0.00146916610696
+       ],
+       "M": 2.338250481457602e-08,
+       "Rm": 4.068611648069e-08,
+       "driven_by": "TX"
+      }
+     },
+     "L_from_energy_h": 5.42338820479e-08
+    }
+   ]
+  }
+ ],
+ "references": {
+  "dz_mm": 1.565,
+  "M_filament_h": 2.451260824332185e-08,
+  "M_closed_h": 2.440457208089235e-08,
+  "arc_share": 0.9888568781393898,
+  "M_open_h": 2.4132628960238923e-08
+ }
+}
