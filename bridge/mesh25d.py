@@ -40,7 +40,7 @@ class Part:
     """One solid: a name, its body name in the mesh, and its triangle surface (trimesh) in model coordinates."""
     name: str
     body: str
-    role: str                 # copper, board, mask, bridge
+    role: str                 # copper, board, mask, bridge, or void (air that overrides copper: a via left out)
     mesh: object = None       # trimesh.Trimesh, closed
     priority: int = 0         # where two parts claim one wedge, the higher one wins (copper over mask over board)
     polys: dict = field(default_factory=dict)       # slab index -> shapely geometry of its section there
@@ -272,6 +272,7 @@ class Settings:
     simplify: float = 0.0005      # mm, copper outlines simplified this much before meshing
     dz_copper: float = 0.012      # mm, the thickest wedge layer in a slab with copper (delta / 3 at 3.5 MHz)
     dz_max: float = 0.25          # mm, the thickest wedge layer elsewhere in the board and the gap
+    foil_max: float = 0.15        # mm, the thickest slab still treated as a copper foil (thicker: vias only)
     pads: tuple = (0.03, 0.08)    # mm, wedge layers of air above and below the boards, before the tetrahedra
     tet_max: float = 8.0          # mm, the largest tetrahedron in the air
     tet_grade: float = 0.7        # mm of tetrahedron size per mm of height above (below) the wedges
@@ -436,12 +437,17 @@ def relabel(m, layout, log=print):
     return out
 
 
-def build_mesh(layout, st=Settings(), extra_lines=(), log=print):
+def build_mesh(layout, st=Settings(), extra_lines=(), extra_fine=(), log=print):
     """The mesh of the layout: wedges through the boards (one triangle mesh of the whole footprint, every copper
     edge of every slab in it), a few wedge layers of air above and below, then tetrahedra out to the domain's top
-    and bottom. Returns dict(nodes, cells [(type, conn, body)], names, ...)."""
+    and bottom. extra_lines: lines drawn into the triangle mesh (port sheets, a rotor's outline at other
+    angles). extra_fine: shapes meshed as finely as copper (the rotor's copper at other angles), so that a
+    relabelled mesh is as fine at the rotor's edges at every angle. Returns dict(nodes, cells, names, ...)."""
     copper_parts = [p for p in layout.parts if p.role in ('copper', 'bridge')]
-    copper_slabs = {k for p in copper_parts for k in p.polys}
+    # a slab gets the thin copper layers only where it is a copper foil: a slab through the board that holds copper
+    # only as via barrels carries its current along z, where the skin depth plays no part in the layers' height
+    copper_slabs = {k for p in copper_parts for k in p.polys
+                    if layout.slabs[k][1] - layout.slabs[k][0] <= st.foil_max + 1e-9}
     rings, fine = [], []
     for p in layout.parts:
         for k, g in p.polys.items():
@@ -458,6 +464,7 @@ def build_mesh(layout, st=Settings(), extra_lines=(), log=print):
     region = shapely.set_precision(layout.region, st.grid)
     keep = region.buffer(st.grid)
     lines = [l for l in lines if keep.covers(l)]
+    fine += [g.simplify(st.simplify) if st.simplify else g for g in extra_fine]
     size = size_raster(fine, layout.region, st.h_edge, st.h_in, st.h_max, st.grade, st.box_margin)
     xy, tri = triangulate(region, lines, size, st.grid, log)
     nt, n2 = len(tri), len(xy)

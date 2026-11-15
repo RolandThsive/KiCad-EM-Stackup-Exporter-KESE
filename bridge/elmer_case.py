@@ -250,4 +250,15 @@ def coil_results(scalars, coils, freq_hz):
         v, i = get('v'), get('i')
         z = v / i if (v is not None and i and abs(i) > 1e-12) else None
         out[c.name] = dict(V=v, I=i, Z=z, R=z.real if z else None, L=z.imag / omega if z else None)
+    # an undriven coil (0 A) next to one driven coil: its open-circuit voltage over the driving current is the
+    # mutual impedance, and its imaginary part over omega the mutual inductance (positive when both coils run
+    # the same way from t_low to t_high)
+    driven = [c for c in coils if abs(complex(c.current)) > 0]
+    if len(driven) == 1:
+        i_d = out[driven[0].name]['I']
+        for c in coils:
+            r = out[c.name]
+            if c is not driven[0] and r['V'] is not None and i_d:
+                zm = r['V'] / i_d
+                r.update(Zm=zm, M=zm.imag / omega, Rm=zm.real, driven_by=driven[0].name)
     return out
