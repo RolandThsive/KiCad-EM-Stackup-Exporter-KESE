@@ -29,6 +29,7 @@ SETTINGS = dict(
     centre=(100.0, -100.0),        # the loop's centre in model coordinates (KiCad (100, 100), y up)
     radius_mm=10.0,                # the trace's centre line
     width_mm=0.5,
+    gap_mm=0.2,
     copper_mm=0.035,
     gap_box=(109.75, -100.35, 110.25, -99.65),   # holds the 0.2 mm gap between the two round ends
     sigma=5.8e7,                   # copper, S/m
@@ -68,15 +69,20 @@ def build(export, level, st, log=print):
 
 
 def references():
+    """Grover's ring formula for the closed ring, at DC (the rectangle's GMD) and with the current crowded to the
+    strip's edges (w / 4), then scaled by the share of the circle the current runs round: the loop is open, and by
+    symmetry each piece of its arc links the closed path (copper plus the sheet across the gap) alike, so to
+    first order L_open = L_ring theta / 2 pi. R_dc is the annular sector's resistance between its two ends."""
     r, w, t = SETTINGS['radius_mm'], SETTINGS['width_mm'], SETTINGS['copper_mm']
     g_dc = 0.2235 * (w + t)                            # GMD of a w x t rectangle (Grover)
     g_hf = w / 4                                        # GMD of a thin strip with its edge-crowded current
-    x1, y1, x2, y2 = SETTINGS['gap_box']
-    half_gap = math.asin((0.2 + w) / 2 / r)             # the round ends' centres sit (gap + w) apart
+    half_gap = math.asin((SETTINGS['gap_mm'] + w) / 2 / r)   # the round ends' centres sit (gap + w) apart
     theta = 2 * math.pi - 2 * half_gap
+    share = theta / (2 * math.pi)
     r_dc = theta / (SETTINGS['sigma'] * t * 1e-3 * math.log((r + w / 2) / (r - w / 2)))
-    return dict(L_ring_dc_h=S.ring_inductance(r, g_dc), L_ring_hf_h=S.ring_inductance(r, g_hf),
-                R_dc_ohm=r_dc, gmd_dc_mm=g_dc, gmd_hf_mm=g_hf)
+    l_dc, l_hf = S.ring_inductance(r, g_dc), S.ring_inductance(r, g_hf)
+    return dict(L_ring_dc_h=l_dc, L_ring_hf_h=l_hf, arc_share=share, L_open_dc_h=l_dc * share,
+                L_open_hf_h=l_hf * share, R_dc_ohm=r_dc, gmd_dc_mm=g_dc, gmd_hf_mm=g_hf)
 
 
 def main():
@@ -85,6 +91,9 @@ def main():
     ap.add_argument('--freqs', type=float, nargs='+', default=SETTINGS['freqs_hz'])
     ap.add_argument('--order', type=int, default=SETTINGS['order'])
     ap.add_argument('--out', default=str(HERE / 'case'))
+    ap.add_argument('--max-iter', type=int, default=SETTINGS['max_iter'],
+                    help='the linear solver\'s iteration cap (the iteration check runs at half and full)')
+    ap.add_argument('--results', default=None, help='the results file (default results.json beside this file)')
     a = ap.parse_args()
     out = Path(a.out)
     out.mkdir(parents=True, exist_ok=True)
@@ -97,7 +106,10 @@ def main():
     export = S.kese_export(HERE / SETTINGS['board'], out / 'kese', log=log)
     ref = references()
     result = dict(board=SETTINGS['board'], settings=SETTINGS, references=ref, versions=S.versions(), runs=[])
-    res_file = HERE / ('results.json' if a.order == 1 else f'results_order{a.order}.json')
+    res_file = Path(a.results) if a.results else HERE / ('results.json' if a.order == 1 else
+                                                       f'results_order{a.order}.json')
+    if res_file.exists():                  # keep the runs already there (S.merge_run replaces a rerun)
+        result['runs'] = json.loads(res_file.read_text()).get('runs', [])
     for level in a.levels:
         t0 = time.time()
         m, lay, bnds = build(export, level, SETTINGS['mesh'], log)
@@ -107,10 +119,10 @@ def main():
         cu = E.Material('Copper', sigma=SETTINGS['sigma'])
         bodies = {n: (cu if n == 'LOOP' else E.Material('Air' if n == 'AIR' else n.title())) for n in m['names']}
         case = E.Case(mesh_dir=folder / 'mesh_files', bodies=bodies, order=a.order, tol=SETTINGS['tol'],
-                      max_iter=SETTINGS['max_iter'],
+                      max_iter=a.max_iter,
                       coils=[E.Coil('LOOP', 'LOOP', 'T1', 'T2', 'SHEET', 1.0)])
         rows = S.solve(case, a.freqs, folder, threads=SETTINGS['threads'], log=log)
-        result['runs'].append(dict(level=level, order=a.order, mesh_seconds=round(mesh_s, 1),
+        S.merge_run(result, dict(level=level, order=a.order, max_iter=a.max_iter, mesh_seconds=round(mesh_s, 1),
                                    nodes=len(m['nodes']), wedges=len(m['wedges']), tetrahedra=len(m['tets']),
                                    solves=rows))
         res_file.write_text(json.dumps(result, indent=1))

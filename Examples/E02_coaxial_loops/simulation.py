@@ -105,6 +105,9 @@ def main():
     ap.add_argument('--freqs', type=float, nargs='+', default=SETTINGS['freqs_hz'])
     ap.add_argument('--order', type=int, default=SETTINGS['order'])
     ap.add_argument('--out', default=str(HERE / 'case'))
+    ap.add_argument('--max-iter', type=int, default=SETTINGS['max_iter'],
+                    help='the linear solver\'s iteration cap (the iteration check runs at half and full)')
+    ap.add_argument('--results', default=None, help='the results file (default results.json beside this file)')
     a = ap.parse_args()
     out = Path(a.out)
     out.mkdir(parents=True, exist_ok=True)
@@ -116,7 +119,10 @@ def main():
         logf.flush()
     export = S.kese_export(HERE / SETTINGS['board'], out / 'kese', log=log)
     result = dict(board=SETTINGS['board'], settings=SETTINGS, versions=S.versions(), runs=[])
-    res_file = HERE / ('results.json' if a.order == 1 else f'results_order{a.order}.json')
+    res_file = Path(a.results) if a.results else HERE / ('results.json' if a.order == 1 else
+                                                       f'results_order{a.order}.json')
+    if res_file.exists():                  # keep the runs already there (S.merge_run replaces a rerun)
+        result['runs'] = json.loads(res_file.read_text()).get('runs', [])
     for level in a.levels:
         t0 = time.time()
         m, lay, bnds = build(export, level, SETTINGS['mesh'], log)
@@ -131,11 +137,11 @@ def main():
         bodies = {n: (cu if n in ('TX', 'RX') else E.Material('Air' if n == 'AIR' else n.title()))
                   for n in m['names']}
         case = E.Case(mesh_dir=folder / 'mesh_files', bodies=bodies, order=a.order, tol=SETTINGS['tol'],
-                      max_iter=SETTINGS['max_iter'],
+                      max_iter=a.max_iter,
                       coils=[E.Coil('TX', 'TX', 'TX_T1', 'TX_T2', 'TX_SHEET', 1.0),
                              E.Coil('RX', 'RX', 'RX_T1', 'RX_T2', 'RX_SHEET', 0.0)])
         rows = S.solve(case, a.freqs, folder, threads=SETTINGS['threads'], log=log)
-        result['runs'].append(dict(level=level, order=a.order, mesh_seconds=round(mesh_s, 1),
+        S.merge_run(result, dict(level=level, order=a.order, max_iter=a.max_iter, mesh_seconds=round(mesh_s, 1),
                                    nodes=len(m['nodes']), wedges=len(m['wedges']), tetrahedra=len(m['tets']),
                                    solves=rows))
         res_file.write_text(json.dumps(result, indent=1))

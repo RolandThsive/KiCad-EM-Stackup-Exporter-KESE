@@ -1,0 +1,8 @@
+# The bridge's Python packages, at the versions the test boards ran with.
+# KESE's own packages (Generator/requirements.txt on main) go into the same environment.
+numpy==2.5.3
+scipy==1.18.1
+shapely==2.2.0
+trimesh==5.2.1
+gmsh==4.15.2
+mapbox_earcut==2.1.0

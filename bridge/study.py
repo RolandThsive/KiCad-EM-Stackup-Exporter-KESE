@@ -46,13 +46,14 @@ def solve(case, freqs, folder, threads=4, log=print, tag='f'):
         name = f'{tag}{f:.6g}'.replace('+', '')
         sif = E.write_sif(case, folder, f, name)
         t0 = time.time()
-        E.run(sif, threads=threads, log=log)
+        _, _, peak_gb = E.run(sif, threads=threads, log=log)
         dt = time.time() - t0
         sc = E.read_scalars(folder, name)
         coils = E.coil_results(sc, case.coils, f)
         it, res = iterations(sif.with_suffix('.log'))
         energy = next((v for k, v in sc.items() if 'field energy' in k), None)
-        row = dict(frequency_hz=f, seconds=round(dt, 1), iterations=it, residual=res, field_energy_j=energy,
+        row = dict(frequency_hz=f, seconds=round(dt, 1), peak_memory_gb=round(peak_gb, 2), iterations=it,
+                   residual=res, field_energy_j=energy,
                    dc_resistance_ohm={c.name: sc.get(f'res: r_component({n})') for n, c in enumerate(case.coils, 1)},
                    coils={})
         for c in case.coils:
@@ -63,7 +64,7 @@ def solve(case, freqs, folder, threads=4, log=print, tag='f'):
             i = abs(complex(driven[0].current))
             row['L_from_energy_h'] = 2 * energy / i ** 2
         rows.append(row)
-        log(json.dumps({k: row[k] for k in ('frequency_hz', 'seconds', 'iterations', 'residual')}))
+        log(json.dumps({k: row[k] for k in ('frequency_hz', 'seconds', 'peak_memory_gb', 'iterations', 'residual')}))
     return rows
 
 
@@ -99,3 +100,18 @@ def ring_inductance(radius_mm, gmd_mm):
     """A circular loop's inductance from the geometric mean distance of its cross-section (Grover):
     mu0 R (ln(8R / g) - 2)."""
     return mu0() * radius_mm * 1e-3 * (math.log(8 * radius_mm / gmd_mm) - 2)
+
+
+def merge_run(result, run):
+    """Add a run (a dict with level, order and solves) to result['runs']. A run of the same mesh (level and order)
+    already there keeps its solves at other frequencies; a solve at the same frequency is replaced."""
+    for old in result['runs']:
+        if (old['level'], old['order']) == (run['level'], run['order']):
+            freqs = {s['frequency_hz'] for s in run['solves']}
+            solves = [s for s in old['solves'] if s['frequency_hz'] not in freqs] + run['solves']
+            old.update({k: v for k, v in run.items() if k != 'solves'})
+            old['solves'] = sorted(solves, key=lambda s: s['frequency_hz'])
+            return result
+    result['runs'].append(run)
+    result['runs'].sort(key=lambda r: (r['order'], r['level']))
+    return result

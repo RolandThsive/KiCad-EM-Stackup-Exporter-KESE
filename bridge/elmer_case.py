@@ -202,8 +202,19 @@ def write_sif(case: Case, folder, freq_hz, name='case'):
     return sif
 
 
+def _peak_kb(pid):
+    """The peak resident memory of a running process, in kB (Linux), or 0 where /proc has no answer."""
+    try:
+        for line in open(f'/proc/{pid}/status'):
+            if line.startswith('VmHWM:'):
+                return int(line.split()[1])
+    except OSError:
+        pass
+    return 0
+
+
 def run(sif, threads=4, log=print, timeout=None):
-    """Run ElmerSolver on a sif in its folder. Returns (seconds, log path)."""
+    """Run ElmerSolver on a sif in its folder. Returns (seconds, log path, peak memory in GB)."""
     import time
     sif = Path(sif)
     env = dict(os.environ)
@@ -211,16 +222,26 @@ def run(sif, threads=4, log=print, timeout=None):
     env['OMP_NUM_THREADS'] = str(threads)
     logf = sif.with_suffix('.log')
     t0 = time.time()
+    peak = 0
     with open(logf, 'w') as fh:
-        r = subprocess.run([str(ELMER_BIN / 'ElmerSolver'), sif.name], cwd=sif.parent, stdout=fh,
-                           stderr=subprocess.STDOUT, env=env, timeout=timeout)
+        p = subprocess.Popen([str(ELMER_BIN / 'ElmerSolver'), sif.name], cwd=sif.parent, stdout=fh,
+                             stderr=subprocess.STDOUT, env=env)
+        while True:
+            try:
+                p.wait(timeout=1.0)
+                break
+            except subprocess.TimeoutExpired:
+                peak = max(peak, _peak_kb(p.pid))
+                if timeout and time.time() - t0 > timeout:
+                    p.kill()
+                    raise
     dt = time.time() - t0
     text = logf.read_text(errors='replace')
-    if r.returncode or 'ERROR' in text:
+    if p.returncode or 'ERROR' in text:
         err = [l for l in text.splitlines() if 'ERROR' in l or 'Fatal' in l]
-        raise RuntimeError(f'ElmerSolver failed ({r.returncode}) on {sif}: ' + '; '.join(err[-3:]))
-    log(f'ElmerSolver {sif.name}: {dt:.0f} s')
-    return dt, logf
+        raise RuntimeError(f'ElmerSolver failed ({p.returncode}) on {sif}: ' + '; '.join(err[-3:]))
+    log(f'ElmerSolver {sif.name}: {dt:.0f} s, peak memory {peak / 1048576:.2f} GB')
+    return dt, logf, peak / 1048576
 
 
 def read_scalars(folder, name='case'):
