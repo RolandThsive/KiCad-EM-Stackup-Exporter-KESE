@@ -5,14 +5,15 @@ cut into slabs at every height any part has, each part is sectioned in the middl
 triangle mesh is made of the whole domain with every copper edge of every slab as a line of it. That triangle
 mesh is swept through all the slabs as wedges (Elmer's 706 elements), each wedge given the body whose section
 holds its triangle's centre. Copper slabs get several wedge layers through their thickness, so the skin depth is
-resolved; the air above and below grows layer by layer to the domain's top and bottom.
+resolved; a few wedge layers of air sit above and below, then tetrahedra take over.
 
 Because every slab shares one triangle mesh, a part that only moves in its own slabs (the rotor turning between
 runs) can have every one of its positions drawn into the triangle mesh at once: then the mesh is the same at
 every rotor angle and only the rotor's wedges change body. The stator's mesh is identical in every run.
 
-No 3D Booleans and no tetrahedra: 35 um copper and a 1.6 mm board in a 100 mm air box would need tens of
-millions of tetrahedra, and the wedges follow the layers exactly.
+No 3D Booleans: the wedges follow the layers exactly, where tetrahedra through 35 um copper and a 1.6 mm board
+would number in the tens of millions. Tetrahedra fill only the air above and below the wedge block, out to the
+domain's top and bottom, growing away from it.
 
 The same idea as the layered mesh of kicad2ems-fem (github.com/lowprocess/kicad2ems-fem, elmer/layered.py),
 which sweeps a board's triangles through its stack for DC and heat; this one adds the air, several layers
@@ -560,6 +561,46 @@ def body_faces(m, body_ids, select=None):
             k = select(c[:, 0], c[:, 1], c[:, 2])
             quads, qpar = quads[k], qpar[k]
     return (tris, tpar), (quads, qpar)
+
+
+def level_faces(m, z, select):
+    """The horizontal faces at height z (a level of the wedge layers) whose triangle centre passes
+    select(x, y) -> bool array: (tris, (wedge below, wedge above)). A port sheet is made of these."""
+    levels = np.asarray(m['levels'])
+    k = int(np.argmin(np.abs(levels - z)))
+    if abs(levels[k] - z) > 1e-6 or k == 0 or k == len(levels) - 1:
+        raise ValueError(f'z = {z} is not an inner level of the wedge layers')
+    nt, n2, tri = m['nt'], len(m['xy']), m['tri']
+    c = m['xy'][tri].mean(axis=1)
+    t = np.flatnonzero(select(c[:, 0], c[:, 1]))
+    return tri[t] + k * n2, np.c_[(k - 1) * nt + t, k * nt + t]
+
+
+def vertical_faces(m, z0, z1, line, tol=1e-6):
+    """The vertical faces between z0 and z1 on the triangle edges that lie along `line` (a shapely LineString in
+    xy, embedded in the triangle mesh): (quads, (wedge, wedge)). A port sheet across a gap through the board."""
+    levels = np.asarray(m['levels'])
+    nt, n2, tri, xy = m['nt'], len(m['xy']), m['tri'], m['xy']
+    e = np.sort(np.vstack([tri[:, [0, 1]], tri[:, [1, 2]], tri[:, [2, 0]]]), axis=1)
+    et = np.tile(np.arange(nt), 3)
+    o = np.lexsort((e[:, 1], e[:, 0]))
+    e, et = e[o], et[o]
+    pair = np.flatnonzero(np.r_[(e[1:] == e[:-1]).all(1), False])
+    a, b, ed = et[pair], et[pair + 1], e[pair]
+    mid = xy[ed].mean(axis=1)
+    on = shapely.distance(line, shapely.points(mid)) < tol
+    on &= (shapely.distance(line, shapely.points(xy[ed[:, 0]])) < tol)
+    on &= (shapely.distance(line, shapely.points(xy[ed[:, 1]])) < tol)
+    quads, par = [], []
+    for k in range(len(levels) - 1):
+        if levels[k] < z0 - 1e-9 or levels[k + 1] > z1 + 1e-9:
+            continue
+        q = np.c_[ed[on, 0] + k * n2, ed[on, 1] + k * n2, ed[on, 1] + (k + 1) * n2, ed[on, 0] + (k + 1) * n2]
+        quads.append(q)
+        par.append(np.c_[a[on] + k * nt, b[on] + k * nt])
+    if not quads or not len(quads[0]):
+        raise ValueError('no triangle edges along the line: embed it in the mesh (extra_lines)')
+    return np.vstack(quads), np.vstack(par)
 
 
 def write_elmer(m, folder, boundaries, log=print):
