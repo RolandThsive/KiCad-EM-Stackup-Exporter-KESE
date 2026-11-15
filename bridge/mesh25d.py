@@ -94,13 +94,18 @@ class Layout:
     zbox: tuple                     # (z bottom, z top) of the air domain
     slabs: list = field(default_factory=list)       # [(z0, z1)] bottom to top, inside the parts' heights
 
-    def build(self, log=print, merge_outside=True):
+    def build(self, log=print, merge_outside=True, insulators=True):
         """Section every part in every slab it spans. merge_outside: a board or mask part lying wholly outside
         the copper's span of heights (the FR-4 behind a one-sided board, the mask on its far side) is left out:
         in Elmer it is air in all but name (sigma 0, mu_r 1), and leaving it out keeps its layers out of the
-        wedges. The parts left out are listed in self.merged."""
+        wedges. insulators=False leaves out every board and mask part: for the magneto-quasi-static solve an
+        insulator with mu_r 1 is air (the A-V solver has no displacement current, so eps_r plays no part), and
+        their heights then add no layers. The parts left out are listed in self.merged."""
         self.merged = []
-        if merge_outside:
+        if not insulators:
+            self.merged = [p.name for p in self.parts if p.role in ('board', 'mask')]
+            self.parts = [p for p in self.parts if p.role not in ('board', 'mask')]
+        elif merge_outside:
             cu = [p.zrange for p in self.parts if p.role in ('copper', 'bridge')]
             spans = _merge_spans(cu)
             keep = []
@@ -152,7 +157,12 @@ def _rings(g):
             yield from p.interiors
 
 
-def disc(centre, radius, n=256):
+def disc(centre, radius, h=None, n=None):
+    """The domain's footprint: a regular polygon round centre. Give h (mm), the mesh size at the rim, and its
+    sides are about h long, so the side band and the air's tetrahedra meet it at their own size (a fine rim
+    under coarse tetrahedra makes slivers); or give n sides."""
+    if n is None:
+        n = max(32, int(math.ceil(2 * math.pi * radius / h))) if h else 256
     a = np.linspace(0, 2 * np.pi, n, endpoint=False)
     return Polygon(np.c_[centre[0] + radius * np.cos(a), centre[1] + radius * np.sin(a)])
 
@@ -365,6 +375,10 @@ def tet_fill(nodes, tris, h_max, size=None, log=print):
         gmsh.option.setNumber('Mesh.Algorithm3D', 1)
         gmsh.option.setNumber('Mesh.Optimize', 1)
         gmsh.model.mesh.generate(3)
+        # slivers (four nearly coplanar corners) stall the iterative solvers of the edge-element system: Netgen's
+        # optimiser swaps and smooths them away without touching the surface
+        gmsh.model.mesh.optimize('Netgen')
+        gmsh.model.mesh.optimize('')
         tags, xyz, _ = gmsh.model.mesh.getNodes(3, vol)
         et, en = gmsh.model.mesh.getElementsByType(4)
     finally:
@@ -382,6 +396,44 @@ def tet_fill(nodes, tris, h_max, size=None, log=print):
     if (out < 0).any():
         raise RuntimeError('a tetrahedron names an unknown node')
     return xyz.reshape(-1, 3), out
+
+
+def _label(layout, cen, slab_of, names=None):
+    """The body of every wedge: in each slab, the part of highest priority whose section holds the triangle's
+    centre (later parts win ties), air elsewhere. Returns (names, body [layers, triangles])."""
+    nt = len(cen)
+    names = list(names) if names else ['AIR']
+    body_of_slab = np.zeros((len(layout.slabs), nt), np.int32)
+    best = np.full((len(layout.slabs), nt), -1, np.int32)
+    for p in sorted(layout.parts, key=lambda p: p.priority):
+        if p.body not in names:
+            names.append(p.body)
+        b = names.index(p.body)
+        for k, g in p.polys.items():
+            hit = shapely.contains_xy(g, cen[:, 0], cen[:, 1])
+            win = hit & (p.priority >= best[k])
+            body_of_slab[k, win] = b
+            best[k, win] = p.priority
+    body = np.zeros((len(slab_of), nt), np.int32)
+    for k, s in enumerate(slab_of):
+        if s >= 0:
+            body[k] = body_of_slab[s]
+    return names, body
+
+
+def relabel(m, layout, log=print):
+    """The mesh m with its wedges' bodies taken from another layout of the same slabs: the rotor turned to a
+    new angle, when every angle's outline was drawn into the triangle mesh (extra_lines). The nodes and
+    elements are untouched, so every angle is solved on one mesh. Body names keep their numbers."""
+    old = m['layout']
+    if [tuple(np.round(s, 6)) for s in old.slabs] != [tuple(np.round(s, 6)) for s in layout.slabs]:
+        raise ValueError('the new layout has other slabs: its parts moved in z')
+    cen = m['xy'][m['tri']].mean(axis=1)
+    names, body = _label(layout, cen, m['slab_of'], names=m['names'])
+    out = dict(m)
+    out.update(names=names, body_layers=body, body=body.reshape(-1), layout=layout)
+    log(f'relabelled: ' + ', '.join(f'{n} {int((body == i).sum()):,}' for i, n in enumerate(names)))
+    return out
 
 
 def build_mesh(layout, st=Settings(), extra_lines=(), log=print):
@@ -412,25 +464,9 @@ def build_mesh(layout, st=Settings(), extra_lines=(), log=print):
     cen = xy[tri].mean(axis=1)
     log(f'2D mesh: {nt:,} triangles, {n2:,} nodes')
 
-    names = ['AIR']
-    body_of_slab = np.zeros((len(layout.slabs), nt), np.int32)
-    best = np.full((len(layout.slabs), nt), -1, np.int32)
-    for p in sorted(layout.parts, key=lambda p: p.priority):
-        if p.body not in names:
-            names.append(p.body)
-        b = names.index(p.body)
-        for k, g in p.polys.items():
-            hit = shapely.contains_xy(g, cen[:, 0], cen[:, 1])
-            win = hit & (p.priority >= best[k])
-            body_of_slab[k, win] = b
-            best[k, win] = p.priority
-
     levels, slab_of = _levels(layout, st, copper_slabs)
     nk = len(levels) - 1
-    body = np.zeros((nk, nt), np.int32)
-    for k in range(nk):
-        if slab_of[k] >= 0:
-            body[k] = body_of_slab[slab_of[k]]
+    names, body = _label(layout, cen, slab_of)
     nodes = np.c_[np.tile(xy, (nk + 1, 1)), np.repeat(levels, n2)]
     wk = np.repeat(np.arange(nk), nt)
     wt = np.tile(np.arange(nt), nk)
