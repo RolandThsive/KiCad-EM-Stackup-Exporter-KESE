@@ -17,9 +17,10 @@ section, what was expected and what came out.  The inductive encoder coils are i
 |---|---|
 | `3D_Geometry/` | Empty on purpose: copy KESE's `Generator/` in from `main` by hand (see its README) |
 | `Solver_Elmer/` | Empty on purpose: build Elmer in here by hand (see its README) |
-| `bridge/` | The bridge, in Python: `geometry.py` (KESE's parts), `mesh25d.py` (the 2.5D mesh), `ports.py` (each coil's electrodes and port sheet), `elmer_case.py` (the case and its circuits), `study.py` (running Elmer and reading it back), `kicad_writer.py` (the example boards) |
+| `bridge/` | The bridge, in Python, general to any board: `geometry.py` (KESE's parts), `mesh25d.py` (the 2.5D mesh), `ports.py` (each coil's electrodes and port sheet), `elmer_case.py` (the case and its circuits), `study.py` (running Elmer and reading it back). Its [README](bridge/README.md) says what it does, how to call it and where it stops |
 | `Examples/E01_circular_loop/`, `Examples/E02_coaxial_loops/` | The two proof boards, each with its board, `make_board.py`, `simulation.py`, `README.md` and `results.md` |
 | `Examples/Inductive Coils/` | The ten inductive encoder boards from the Sinusoidal Coil Generator, one folder each (non-commercial licence, see its LICENSE.md) |
+| `Examples/kicad_writer.py`, `Examples/references.py` | Shared by the proof boards, and not part of the bridge: a small KiCad 7 board writer for their `make_board.py`, and the textbook values they are checked against |
 | `Examples/` | More examples, one folder each, to come |
 
 ## Boards tested

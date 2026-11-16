@@ -3,7 +3,6 @@ from __future__ import annotations
 
 import hashlib
 import json
-import math
 import re
 import time
 from pathlib import Path
@@ -90,16 +89,6 @@ def versions():
     except Exception:                    # noqa: BLE001
         out['elmer'] = 'unknown'
     return out
-
-
-def mu0():
-    return E.MU0
-
-
-def ring_inductance(radius_mm, gmd_mm):
-    """A circular loop's inductance from the geometric mean distance of its cross-section (Grover):
-    mu0 R (ln(8R / g) - 2)."""
-    return mu0() * radius_mm * 1e-3 * (math.log(8 * radius_mm / gmd_mm) - 2)
 
 
 def merge_run(result, run):

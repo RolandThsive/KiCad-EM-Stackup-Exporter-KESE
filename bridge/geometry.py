@@ -67,12 +67,15 @@ def kese_version():
         return f'unknown ({e})'
 
 
-def load_parts(export_dir, z_shift=0.0, flip=False, rotate_deg=0.0, axis=(100.0, -100.0), prefix='',
+def load_parts(export_dir, z_shift=0.0, flip=False, rotate_deg=0.0, axis=None, prefix='',
                body_of=None, drop_roles=()):
     """KESE's solids as Parts in model coordinates.
     z_shift: added to z (after flip). flip: z -> -z, the board turned copper side down without mirroring its
-    pattern (the rotor). rotate_deg: turned about the axis by this angle in KiCad's sense (KiCad's y is down, so
-    it is -rotate_deg in these y-up coordinates). body_of(name, info) -> the body name (default by role / net)."""
+    pattern (a rotor). rotate_deg: turned about `axis`, (x, y) in model coordinates, by this angle in KiCad's sense
+    (KiCad's y is down, so it is -rotate_deg in these y-up coordinates); the caller says where the axis is.
+    body_of(name, info) -> the body name (default by role / net)."""
+    if rotate_deg and axis is None:
+        raise ValueError('load_parts: rotate_deg needs the axis it turns about')
     import trimesh
     export_dir = Path(export_dir)
     mats = json.loads((export_dir / 'materials.json').read_text())

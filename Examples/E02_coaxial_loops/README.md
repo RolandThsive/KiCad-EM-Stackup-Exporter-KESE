@@ -18,7 +18,7 @@ gap shows on the left.
 | Board | 30 mm × 30 mm, two copper layers, 1.6 mm, no stack-up |
 | Copper | E01's loop on F.Cu, net `TX`, and the same loop on B.Cu, net `RX`, directly under it: 10 mm radius to the centre line, 0.5 mm wide, 35 µm thick, each opened at +x by a 0.2 mm gap |
 | Loop to loop | 1.565 mm between the two coppers' middles (1.6 mm less one copper thickness) |
-| Made by | `make_board.py`, with the bridge's `kicad_writer.py` |
+| Made by | `make_board.py`, with [`../kicad_writer.py`](../kicad_writer.py) |
 
 ## What Elmer Checks
 

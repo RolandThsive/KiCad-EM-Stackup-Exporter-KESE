@@ -18,7 +18,7 @@ Rendered by KESE's static renderer from the board's own export.
 | Board | 30 mm × 30 mm, two copper layers, 1.6 mm, no stack-up |
 | Copper | one trace on F.Cu, net `LOOP`: a circle of 10 mm radius to its centre line, 0.5 mm wide, 35 µm thick, opened at +x by a 0.2 mm gap between its two round ends |
 | B.Cu | empty |
-| Made by | `make_board.py`, with the bridge's `kicad_writer.py` |
+| Made by | `make_board.py`, with [`../kicad_writer.py`](../kicad_writer.py) |
 
 The gap is where the terminals sit: the bridge puts an electrode on each round end's face and a
 sheet across the gap, and Elmer's circuit drives 1 A between them.

@@ -30,7 +30,9 @@ from shapely.geometry import box
 
 HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE.parent.parent))
+sys.path.insert(0, str(HERE.parent))                  # Examples/references.py
 from bridge import elmer_case as E, geometry as G, mesh25d as M, ports as P, study as S   # noqa: E402
+from references import ring_inductance   # noqa: E402
 
 SETTINGS = dict(
     board='E01_circular_loop.kicad_pcb',
@@ -89,7 +91,7 @@ def references():
     theta = 2 * math.pi - 2 * half_gap
     share = theta / (2 * math.pi)
     r_dc = theta / (SETTINGS['sigma'] * t * 1e-3 * math.log((r + w / 2) / (r - w / 2)))
-    l_dc, l_hf = S.ring_inductance(r, g_dc), S.ring_inductance(r, g_hf)
+    l_dc, l_hf = ring_inductance(r, g_dc), ring_inductance(r, g_hf)
     return dict(L_ring_dc_h=l_dc, L_ring_hf_h=l_hf, arc_share=share, L_open_dc_h=l_dc * share,
                 L_open_hf_h=l_hf * share, R_dc_ohm=r_dc, gmd_dc_mm=g_dc, gmd_hf_mm=g_hf)
 

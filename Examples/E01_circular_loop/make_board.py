@@ -9,7 +9,7 @@ import os
 import sys
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-sys.path.insert(0, os.path.join(HERE, "..", "..", "bridge"))
+sys.path.insert(0, os.path.join(HERE, ".."))                # Examples/kicad_writer.py
 from kicad_writer import Board  # noqa: E402
 
 R_MM, W_MM, GAP_MM = 10.0, 0.5, 0.2          # loop radius (to the trace's centre), trace width, copper gap
