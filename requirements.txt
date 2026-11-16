@@ -1,0 +1,10 @@
+# The bridge's Python packages, in the same environment as openEMS's own modules (openEMS and CSXCAD come
+# from openEMS's build, not from pip). Versions as on the test machine.
+numpy==2.5.3
+scipy==1.18.1
+shapely==2.2.0
+trimesh==5.2.1
+matplotlib==3.11.2
+h5py==3.16.0
+# KESE's own needs, when it runs in this environment
+mapbox_earcut==2.1.0
