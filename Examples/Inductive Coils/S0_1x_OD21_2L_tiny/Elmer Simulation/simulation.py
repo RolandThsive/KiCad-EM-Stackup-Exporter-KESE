@@ -1,6 +1,8 @@
 """A coil set from the Sinusoidal Coil Generator in Elmer: the SIN and COS curves against the rotor's angle, at any
 air gap. Everything that belongs to the board is in test_spec.json beside this file, so the same script runs every
-single-set board that new_coil.py (one folder up) sets up; this folder's README says what this board is.
+single-set board that new_coil.py sets up; the board's README, one folder up, says what this board is. A board folder
+holds Boards/ (straight from the generator), Elmer Simulation/ (this script, test_spec.json, angle_error.py and the
+runs under case/) and Results/ (what the runs give, and what was expected).
 
     python simulation.py                          the rotor away, then every angle in test_spec.json
     python simulation.py --gap 0.5                the same at a 0.5 mm air gap (copper to copper)
@@ -16,10 +18,10 @@ so the curves are drawn over that span: a full turn on a one-sector rotor.
 Every angle gets its own mesh, the rotor's copper at that angle drawn into it. The stator's mesh then differs a
 little between angles, which shows as small noise on the curves; the fit written with the results says how much.
 
-Writes results_gap<gap>mm.json, a table (.csv) and the curves (.png) beside this file, and SINCOS_Results.md: every
-gap's curves with a caption, the fit, the angle error and every solve, and SINCOS_gaps.png with all the gaps on one
-chart once two are solved. The runs go under case/ (not committed). This script is GPL-3.0 as the bridge; the boards beside it keep their own licence (see
-../LICENSE.md).
+Writes into ../Results: results_gap<gap>mm.json, a table (.csv) and the curves (.png), and SINCOS_Results.md: every
+gap's curves with a caption, the fit, the angle error at each angle (angle_error.py beside this file) and every
+solve, and SINCOS_gaps.png with all the gaps on one chart once two are solved. The runs go under case/ here (not
+committed). This script is GPL-3.0 as the bridge; the boards keep their own licence (see ../../LICENSE.md).
 """
 from __future__ import annotations
 
@@ -34,11 +36,17 @@ from pathlib import Path
 import numpy as np
 from shapely.geometry import LineString, Point
 
-HERE = Path(__file__).resolve().parent
-sys.path.insert(0, str(HERE.parents[2]))
+HERE = Path(__file__).resolve().parent              # <board>/Elmer Simulation
+BOARD = HERE.parent                                 # <board>: README.md, Boards/, Elmer Simulation/, Results/
+RESULTS = BOARD / 'Results'
+sys.path.insert(0, str(HERE.parents[3]))
+sys.path.insert(0, str(HERE))
+from angle_error import METHOD, angle_error, sine_fit   # noqa: E402
 from bridge import elmer_case as E, geometry as G, mesh25d as M, ports as P, study as S   # noqa: E402
 
 SPEC = json.loads((HERE / 'test_spec.json').read_text())
+EXPECTED = (json.loads((RESULTS / 'expected_results.json').read_text())
+            if (RESULTS / 'expected_results.json').exists() else {})
 AXIS = (100.0, -100.0)                 # KiCad (100, 100) in model coordinates, y up
 
 
@@ -50,8 +58,8 @@ def model_xy(xy_kicad):
 SET = SPEC['sets'][0]
 SIN_NET, COS_NET = str(SET['sin']), str(SET['cos'])
 SETTINGS = dict(
-    stator='Stator.kicad_pcb',
-    rotor='Rotor.kicad_pcb',
+    stator=SPEC['files']['stator'],    # paths from the board folder
+    rotor=SPEC['files']['rotor'],
     names={str(k): v for k, v in SPEC['nets'].items()},   # KESE's copper part per net -> the coil's name
     sigma=5.8e7,
     freq_hz=SET['f_Hz'],
@@ -163,15 +171,8 @@ def build(stator_export, rotor_export, angle, gap, level, log=print):
 
 
 def fit(angles, values):
-    """The best fit a + b sin(t) + c cos(t), t the angle over the rotor's period as a full circle: offset, amplitude,
-    phase (degrees) and the rms of what is left."""
-    t = np.radians(np.asarray(angles, float) * 360.0 / SETTINGS['period_deg'])
-    y = np.asarray(values, float)
-    A = np.c_[np.ones_like(t), np.sin(t), np.cos(t)]
-    (a, b, c), *_ = np.linalg.lstsq(A, y, rcond=None)
-    rest = y - A @ np.array([a, b, c])
-    return dict(offset=a, amplitude=math.hypot(b, c), phase_deg=math.degrees(math.atan2(c, b)),
-                rms_left=float(np.sqrt(np.mean(rest ** 2))) if len(y) > 3 else None)
+    """The best sine over the rotor's period (angle_error.sine_fit): offset, amplitude, phase and the rms left."""
+    return sine_fit(angles, values, SETTINGS['period_deg'])
 
 
 def through_points(angles, values, tt):
@@ -195,28 +196,11 @@ def through_points(angles, values, tt):
     return f['offset'] + f['amplitude'] * np.sin(t + np.radians(f['phase_deg'])), 'best sine fit'
 
 
-def angle_error(ang, msin, mcos):
-    """What a decoder would read from SIN and COS once the offset and gain of each are calibrated out (each from its
-    best sine fit), less the true angle: rms and peak in electrical degrees, its mean taken off (a fixed offset only
-    moves where zero is). Also the phase between the two fits, 90 degrees for perfect quadrature."""
-    if len(ang) < 5:
-        return None
-    fs, fc = fit(ang, msin), fit(ang, mcos)
-    u = np.radians(np.asarray(ang, float) * 360.0 / SETTINGS['period_deg'] + fs['phase_deg'])
-    s = (np.asarray(msin, float) - fs['offset']) / fs['amplitude']          # sin(u)
-    c = (np.asarray(mcos, float) - fc['offset']) / fc['amplitude']          # sin(u + d), d near +90 or -90
-    d = math.radians(fc['phase_deg'] - fs['phase_deg'])
-    e = np.angle(np.exp(1j * (np.arctan2(s, math.copysign(1.0, math.sin(d)) * c) - u)))
-    e = np.degrees(np.angle(np.exp(1j * (e - np.angle(np.mean(np.exp(1j * e)))))))
-    return dict(rms=float(np.sqrt(np.mean(e ** 2))), peak=float(np.abs(e).max()),
-                sin_to_cos_deg=abs((math.degrees(d) + 180) % 360 - 180), points=len(e))
-
-
 def report(log=print):
-    """SINCOS_Results.md beside this file: for every air gap solved, the curves with a caption, the fit, the angle
+    """../Results/SINCOS_Results.md: for every air gap solved, the curves with a caption, the fit, the angle
     error and every solve; then the boards. Rewritten after every solve, so it is as current as the results."""
     import re
-    gaps = sorted(((float(m.group(1)), p) for p in HERE.glob('results_gap*mm.json')
+    gaps = sorted(((float(m.group(1)), p) for p in RESULTS.glob('results_gap*mm.json')
                    if (m := re.fullmatch(r'results_gap([0-9.]+)mm\.json', p.name))), key=lambda x: -x[0])
     if not gaps:
         return
@@ -227,7 +211,7 @@ def report(log=print):
     st, ring, n_per = SPEC['stator'], SPEC['rotor']['rings'][0], SET['loops']
     rotor = ('a half-ring rotor' if ring['sectors'] == 1 and abs(ring['duty'] - 0.5) < 1e-6
              else f"a rotor of {ring['sectors']} copper sectors")
-    summary, sections, curves = [], [], []
+    summary, sections, curves, lt_all = [], [], [], []
     for i, (gap, path) in enumerate(gaps, 1):
         res = json.loads(path.read_text())
         runs = sorted((r for r in res['runs'] if r['rotor_deg'] != 'away'), key=lambda r: r['rotor_deg'])
@@ -239,7 +223,7 @@ def report(log=print):
         planned = max(len(SETTINGS['angles_deg']), len(ang))
         full = len(ang) >= planned
         fs, fc = (fit(ang, ms), fit(ang, mc)) if len(ang) >= 3 else (None, None)
-        err = angle_error(ang, ms, mc)
+        err = angle_error(ang, ms, mc, per)
         if fs:
             curves.append((gap, ang, ms, mc, fs, fc))
         so_far = '' if full else ' so far'
@@ -249,7 +233,7 @@ def report(log=print):
                        + (f" {err['rms']:.1f}° rms, {err['peak']:.1f}° peak{so_far} |" if err else ' |'))
         sec = [f'## {gap:g} mm air gap', '']
         png = path.with_suffix('.png').name
-        if (HERE / png).exists() and fs:
+        if (RESULTS / png).exists() and fs:
             how = ('interpolated through them' if through_points(ang, ms, [0.0])[1] != 'best sine fit'
                    else 'a sine fit, drawn only between the solved angles while few are in')
             sec += [f'![SIN and COS against the rotor angle at a {gap:g} mm air gap]({png})', '',
@@ -261,18 +245,20 @@ def report(log=print):
                     f"{fs['phase_deg']:.1f}°; COS amplitude {fc['amplitude']:.3f} nH, offset {fc['offset']:.3f} nH, "
                     f"phase {fc['phase_deg']:.1f}°.")
             if err:
-                line += (f" Angle error{so_far}, with the offset and gain of each channel calibrated out: "
+                line += (f" Angle error{so_far}, with the offset and gain of each channel calibrated out (worked out as below): "
                          f"{err['rms']:.1f}° rms and {err['peak']:.1f}° at worst, in electrical degrees{deg}. SIN and "
                          f"COS are {err['sin_to_cos_deg']:.1f}° apart, against 90° for perfect quadrature.")
             sec += [line, '']
         elif not runs:
             sec += ['The first angle is solving; the curves appear here as the angles finish.', '']
-        rows = ['| Rotor | M SIN (nH) | M COS (nH) | L TX (nH) | R TX (mΩ) | Iterations | Residual | Memory | Time |',
-                '|---|---|---|---|---|---|---|---|---|']
+        rows = ['| Rotor | M SIN (nH) | M COS (nH) | Angle error | L TX (nH) | R TX (mΩ) | Iterations | Residual | '
+                'Memory | Time |', '|---|---|---|---|---|---|---|---|---|---|']
         for r in away + runs:
             s, c = r['solve'], r['solve']['coils']
+            e = err['per_angle'].get(float(r['rotor_deg'])) if err and r['rotor_deg'] != 'away' else None
             rows.append(f"| {'away' if r['rotor_deg'] == 'away' else format(r['rotor_deg'], 'g') + '°'} | "
-                        f"{c['SIN']['M'] * 1e9:.4f} | {c['COS']['M'] * 1e9:.4f} | {c['TX']['L'] * 1e9:.3f} | "
+                        f"{c['SIN']['M'] * 1e9:.4f} | {c['COS']['M'] * 1e9:.4f} | "
+                        f"{'' if e is None else f'{e:+.2f}°'} | {c['TX']['L'] * 1e9:.3f} | "
                         f"{c['TX']['R'] * 1e3:.2f} | {s['iterations']} | {s['residual']:.1e} | "
                         f"{s['peak_memory_gb']:.1f} GB | {s['seconds'] / 60:.0f} min |")
         if len(rows) > 2:
@@ -285,18 +271,37 @@ def report(log=print):
                     f"asked for. The TX is round, so turning the rotor should not change its inductance: its spread "
                     f"here, {min(lt):.1f} to {max(lt):.1f} nH, is a measure of what the solver leaves.", '']
         sections.append('\n'.join(sec))
-    pic = next((p.name for p in [HERE / f'{HERE.name}_stator_and_rotor.png'] if p.exists()),
-               next((p.name for p in sorted(HERE.glob('*_Representative.svg'))), None))
+        lt_all.append((gap, lt, [r['solve']['coils']['TX']['L'] * 1e9 for r in away]))
+    boards_dir = BOARD / 'Boards'
+    pic = next((p.name for p in [boards_dir / f'{BOARD.name}_stator_and_rotor.png'] if p.exists()),
+               next((p.name for p in sorted(boards_dir.glob('*_Representative.svg'))), None))
     tx, rs, rc = (SPEC['terminals'][k] for k in ('TX', SIN_NET, COS_NET))
     xy = lambda t: '({:g}, {:g})'.format(*(round(v, 2) for v in t.get('via_xy_kicad') or t.get('ends_xy_kicad')))
     boards = ['## The boards', '']
     if pic:
-        boards += [f'![stator and rotor]({pic})', '']
+        boards += [f'![stator and rotor](../Boards/{pic})', '']
     boards += [f"*Drawn by the generator. Red is the top layer, blue the bottom; the dots are vias. In Elmer, SIN is "
                f"opened at {xy(rs)} and COS at {xy(rc)}, the TX at its ends at {xy(tx)} (KiCad mm). The "
-               f"[README](README.md) has the board and how it was made.*", '']
+               f"[README](../README.md) has the board and how it was made.*", '']
+    expect = []
+    tx_exp = EXPECTED.get('tx', {})
+    if tx_exp.get('L_away_gen_H') and lt_all:
+        got = []
+        aw = next((a[0] for _, _, a in lt_all if a), None)
+        if aw:
+            got.append(f'{aw:.1f} nH with the rotor away')
+        for gap, lt, _ in lt_all:
+            if lt:
+                got.append(f'{min(lt):.1f} to {max(lt):.1f} nH with the rotor at {gap:g} mm')
+        expect = ['## Against the expectation', '',
+                  f"The generator estimates the TX at {tx_exp['L_away_gen_H'] * 1e9:.0f} nH with the rotor away and "
+                  f"{tx_exp['L_rotor_gen_H'] * 1e9:.0f} nH with it (its drop with the rotor is an upper estimate). Elmer "
+                  "gives "
+                  + ', and '.join(got) + '. The expected values are in '
+                  '[expected_results.json](expected_results.json).', '']
+    method = ['## How the angle error is worked out', '', METHOD, '']
     text = '\n'.join([
-        f'# {HERE.name}: SIN and COS over the rotor\'s turn in Elmer', '',
+        f'# {BOARD.name}: SIN and COS over the rotor\'s turn in Elmer', '',
         f"A coil set made with the [Sinusoidal Coil Generator](https://github.com/RolandThsive/Sinusoidal-Inductive-"
         f"Encoders-Coil-Generator): {2 * st['bore_and_outer_radius_mm'][1]:g} mm across, {len(st['layers'])} copper "
         f"layers, {'one electrical period' if n_per == 1 else f'{n_per} electrical periods'} per turn and {rotor}. The TX carries 1 A at "
@@ -304,8 +309,8 @@ def report(log=print):
         f"(1 nH is {w:.0f} mV of EMF). Each angle is one Elmer solve with its own mesh. This page is rewritten by "
         f"`simulation.py` after every solve.", '',
         '| Air gap | Angles solved | Amplitude SIN / COS | Angle error |', '|---|---|---|---|', *summary, '',
-        *sections, *gaps_figure(curves, len(sections) + 1), *boards])
-    (HERE / 'SINCOS_Results.md').write_text(text)
+        *sections, *gaps_figure(curves, len(sections) + 1), *expect, *method, *boards])
+    (RESULTS / 'SINCOS_Results.md').write_text(text)
     log('wrote SINCOS_Results.md')
 
 
@@ -346,7 +351,7 @@ def gaps_figure(curves, number):
     ax.xaxis.set_major_formatter(matplotlib.ticker.FormatStrFormatter('%g'))
     ax.set_xlabel('rotor angle (degrees)', color=ink2)
     ax.set_ylabel('M from the TX (nH)', color=ink2)
-    ax.set_title(f'{HERE.name}: SIN and COS at each air gap', color=ink, fontsize=11, loc='left', pad=20)
+    ax.set_title(f'{BOARD.name}: SIN and COS at each air gap', color=ink, fontsize=11, loc='left', pad=20)
     ax.text(0, 1.015, f'1 A at {SETTINGS["freq_hz"] / 1e6:g} MHz in the TX; dots: one solve each; the smallest gap '
             'in full colour', transform=ax.transAxes, fontsize=8, color=ink2, va='bottom')
     ax.grid(True, color='#e4e3df', lw=0.6)
@@ -356,7 +361,7 @@ def gaps_figure(curves, number):
     ax.legend(frameon=False, fontsize=8, labelcolor=ink, loc='upper center', bbox_to_anchor=(0.5, -0.14),
               ncol=2 * len(curves))
     fig.tight_layout()
-    fig.savefig(HERE / 'SINCOS_gaps.png', facecolor=surface)
+    fig.savefig(RESULTS / 'SINCOS_gaps.png', facecolor=surface)
     plt.close(fig)
     (g0, *_, fs0, fc0), (g1, *_, fs1, fc1) = curves[0], curves[-1]
     return ['## The air gaps together', '', '![SIN and COS at each air gap](SINCOS_gaps.png)', '',
@@ -383,7 +388,7 @@ def plot(res_file, log=print):
             f.write(f'{a:g},{s:.5f},{c:.5f},{lt:.5f},{w * s * 1e-6:.4f},{w * c * 1e-6:.4f}\n')
     fits = {'SIN': fit(ang, msin), 'COS': fit(ang, mcos)}
     result['fit_nH'] = fits
-    result['angle_error_deg'] = angle_error(ang, msin, mcos)
+    result['angle_error_deg'] = angle_error(ang, msin, mcos, SETTINGS['period_deg'])
     res_file.write_text(json.dumps(result, indent=1))
 
     import matplotlib
@@ -454,7 +459,8 @@ def main():
     a = ap.parse_args()
     tagg = (f'gap{a.gap:g}mm' + ('' if a.level == SETTINGS['level'] else f'_level{a.level:g}')
             + ('' if a.ilu == SETTINGS['ilu_order'] else f'_ilu{a.ilu}'))
-    res_file = HERE / f'results_{tagg}.json'
+    RESULTS.mkdir(exist_ok=True)
+    res_file = RESULTS / f'results_{tagg}.json'
     if a.plot:
         plot(res_file)
         return
@@ -472,10 +478,10 @@ def main():
         print(msg, flush=True)
         logf.write(f'{time.strftime("%H:%M:%S")} {msg}\n')
         logf.flush()
-    se = S.kese_export(HERE / SETTINGS['stator'], out / 'kese', log=log)
-    re_ = S.kese_export(HERE / SETTINGS['rotor'], out / 'kese', log=log)
+    se = S.kese_export(BOARD / SETTINGS['stator'], out / 'kese', log=log)
+    re_ = S.kese_export(BOARD / SETTINGS['rotor'], out / 'kese', log=log)
     result = json.loads(res_file.read_text()) if res_file.exists() else dict(
-        board=HERE.name, gap_mm=a.gap, level=a.level, ilu_order=a.ilu, settings=SETTINGS, expected=SPEC['expected'],
+        board=BOARD.name, gap_mm=a.gap, level=a.level, ilu_order=a.ilu, settings=SETTINGS, expected=EXPECTED,
         versions=S.versions(), runs=[])
     done = {r['rotor_deg'] for r in result['runs']}
     runs = ([] if a.no_away else [None]) + angles

@@ -3,7 +3,8 @@
  "generator": "Single",
  "purpose": "the smallest board that still is a whole sensor: the SIN and COS curves over a full turn of the rotor, at any air gap, on a 16 GB machine",
  "units": "mm, H, Hz, ohm, degrees",
- "files": {"stator": "Stator.kicad_pcb", "rotor": "Rotor.kicad_pcb", "parameters": "Parameters.txt"},
+ "files": {"stator": "Boards/Stator.kicad_pcb", "rotor": "Boards/Rotor.kicad_pcb", "parameters": "Boards/Parameters.txt",
+           "expected": "Results/expected_results.json", "note": "paths from the board folder"},
  "coordinates": {
   "kicad_axis_xy": [100.0, 100.0],
   "model_origin": "the rotation axis, at the top face of the stator's F.Cu copper",
@@ -28,8 +29,5 @@
         "how": "leave this via out (opens the loop); the terminal goes between its two pads"}
  },
  "sets": [{"set": 1, "tx": "TX", "sin": "2", "cos": "1", "f_Hz": 3500000.0, "loops": 1, "electrical_period_mech_deg": 360.0,
-           "sweep_angles_mech_deg": [0, 45, 90, 135, 180, 225, 270, 315]}],
- "expected": {"tx": {"L_away_gen_H": 1.32e-07, "L_rotor_gen_H": 1.09e-07, "R_dc_ohm": 0.23,
-                     "note": "the generator's estimate; its drop with the rotor is an upper estimate"},
-              "coupling": "SIN and COS follow sin and cos of the rotor angle, one period per turn, 90 degrees apart"}
+           "sweep_angles_mech_deg": [0, 45, 90, 135, 180, 225, 270, 315]}]
 }

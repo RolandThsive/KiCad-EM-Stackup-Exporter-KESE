@@ -6,17 +6,22 @@ a folder here that simulation.py runs as it is.
     python new_coil.py <folder> <name> --angles 16 --level 1.0 --no-estimate
 
 <folder> is what the generator's Single Coil Set Generator wrote (Stator.kicad_pcb, Rotor.kicad_pcb, Parameters.txt
-and the two SVG pictures). <name> is the new folder beside this file. It gets:
+and the two SVG pictures). <name> is the new folder beside this file, laid out as S0_1x_OD21_2L_tiny is:
 
-    the boards, Parameters.txt and the pictures, copied (the local path in Parameters.txt replaced by
-        <your checkout>), and parameter_files/ with the generator's parameter files, taken from Parameters.txt
-    test_spec.json   every board fact simulation.py needs, read from Parameters.txt and Stator.kicad_pcb:
-                     the nets, the frequency, the air gap, the air box (3 x the board's radius), the rotor's period,
-                     the sweep's angles, and where each coil is opened (the TX at its stacked ends, each RX coil at
-                     the layer-change via nearest the generator's suggested cut, or farthest from the TX copper
-                     where it found no cut spot)
-    simulation.py    S0_1x_OD21_2L_tiny's, unchanged: it reads everything from test_spec.json
-    README.md        the board, its terminals, the generator's warnings, the memory a solve needs and how to run it
+    README.md            the board, its terminals, the generator's warnings, the memory a solve needs and how to run it
+    Boards/              straight from the generator: the boards, Parameters.txt (the local path in it replaced by
+                         <your checkout>), the pictures, and parameter_files/ with the generator's parameter files,
+                         taken from Parameters.txt
+    Elmer Simulation/
+      test_spec.json     every board fact simulation.py needs, read from Parameters.txt and Stator.kicad_pcb: the
+                         nets, the frequency, the air gap, the air box (3 x the board's radius), the rotor's period,
+                         the sweep's angles, and where each coil is opened (the TX at its stacked ends, each RX coil
+                         at the layer-change via nearest the generator's suggested cut, or farthest from the TX copper
+                         where it found no cut spot)
+      simulation.py, angle_error.py   S0_1x_OD21_2L_tiny's, unchanged: they read everything from test_spec.json
+    Results/
+      expected_results.json   the generator's estimates (the TX's inductance and resistance); the runs add their
+                         results, the curves and SINCOS_Results.md here
 
 Unless --no-estimate is given, it builds the mesh at one angle and says its size and the memory a solve needs, at
 57 kB a node (measured on E01, E02 and S0). Single-set boards only: a dual board (DualCoil_...) has two coil sets.
@@ -34,7 +39,8 @@ import sys
 from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
-TEMPLATE = HERE / 'S0_1x_OD21_2L_tiny' / 'simulation.py'
+TEMPLATE = HERE / 'S0_1x_OD21_2L_tiny' / 'Elmer Simulation' / 'simulation.py'
+SCRIPTS = ('simulation.py', 'angle_error.py')    # copied from TEMPLATE's folder
 KB_PER_NODE = 57.0                         # Elmer's memory a node, E01, E02 and S0 (S0: 11.42 GB at 203,669 nodes)
 AXIS = (100.0, 100.0)                      # the generator puts the sensor's axis at KiCad (100, 100)
 
@@ -185,7 +191,9 @@ def spec_from(src, name, text, n_angles, level):
         board=name, generator='Single', made_from=made,
         purpose='the SIN and COS curves against the rotor angle, at any air gap',
         units='mm, H, Hz, ohm, degrees',
-        files={'stator': 'Stator.kicad_pcb', 'rotor': 'Rotor.kicad_pcb', 'parameters': 'Parameters.txt'},
+        files={'stator': 'Boards/Stator.kicad_pcb', 'rotor': 'Boards/Rotor.kicad_pcb',
+               'parameters': 'Boards/Parameters.txt', 'expected': 'Results/expected_results.json',
+               'note': 'paths from the board folder'},
         coordinates={'kicad_axis_xy': list(AXIS),
                      'model_origin': "the rotation axis, at the top face of the stator's F.Cu copper",
                      'z': f'z up, from the stator towards the rotor. Stator F.Cu top face at z = 0, B.Cu at z = -{thick:g}'},
@@ -237,7 +245,7 @@ def readme(spec, src, warns, mesh, pics):
     s, t, r = spec['stator'], spec['terminals'], spec['rotor']['rings'][0]
     st = spec['sets'][0]
     sin, cos = st['sin'], st['cos']
-    picture = f'![stator and rotor]({pics[0]})\n\n*Drawn by the generator.*\n\n' if pics else ''
+    picture = f'![stator and rotor](Boards/{pics[0]})\n\n*Drawn by the generator.*\n\n' if pics else ''
     mem = ''
     if mesh:
         gb = mesh['nodes'] * KB_PER_NODE / 1e6
@@ -264,17 +272,27 @@ Bore and outer radius {s['bore_and_outer_radius_mm'][0]:g} and {s['bore_and_oute
 The generator's warnings for this board:
 
 {w}
+## The folder
+
+| Folder | What is in it |
+|---|---|
+| [`Boards/`](Boards/) | straight from the generator: the stator and rotor boards, `Parameters.txt`, the pictures and the parameter files it was run with |
+| [`Elmer Simulation/`](Elmer%20Simulation/) | `test_spec.json` (every board fact the simulation needs), `simulation.py` and `angle_error.py` (S0's, unchanged), and the runs under `case/`, which git ignores |
+| [`Results/`](Results/) | `expected_results.json` (the generator's estimates), and from the runs `results_gap<gap>mm.json`, `.csv` and `.png` and [`SINCOS_Results.md`](Results/SINCOS_Results.md), every gap on one page |
+
 ## Running it
 
-{mem}    python simulation.py                   # the rotor away, then {angles} degrees
+{mem}    cd "Elmer Simulation"
+    python simulation.py                   # the rotor away, then {angles} degrees
     python simulation.py --gap 0.5         # the same at a 0.5 mm air gap
-    python simulation.py --plot            # redraw the table and the curves
+    python simulation.py --plot            # redraw the table, the curves and SINCOS_Results.md
+    python angle_error.py                  # print the angle error at each angle, and rewrite SINCOS_Results.md
 
-Each gap writes `results_gap<gap>mm.json`, `.csv` and `.png` beside this file, and `SINCOS_Results.md` gathers every gap's curves, fit, angle error and solves on one page. Every board fact is in `test_spec.json`; `simulation.py` is S0's, unchanged.
+`SINCOS_Results.md` is rewritten after every solve: each gap's graph with a caption, the fit, the angle error at each angle and every solve.
 
 ## Licence
 
-These boards are output of the Sinusoidal Coil Generator, for non-commercial use only. See [../LICENSE.md](../LICENSE.md); this branch's GPL-3.0 covers `simulation.py` only.
+These boards are output of the Sinusoidal Coil Generator, for non-commercial use only. See [../LICENSE.md](../LICENSE.md); this branch's GPL-3.0 covers `simulation.py` and `angle_error.py` only.
 """
 
 
@@ -294,33 +312,40 @@ def main():
             raise SystemExit(f'{src / f} is missing')
     if dst.exists() and not a.force:
         raise SystemExit(f'{dst} exists (--force writes into it)')
-    dst.mkdir(parents=True, exist_ok=True)
+    boards, sim, results = dst / 'Boards', dst / 'Elmer Simulation', dst / 'Results'
+    for d in (boards, sim, results):
+        d.mkdir(parents=True, exist_ok=True)
     text = (src / 'Parameters.txt').read_text()
     spec = spec_from(src, a.name, text, a.angles, a.level)
+    expected = spec.pop('expected')
     for f in ('Stator.kicad_pcb', 'Stator.kicad_pro', 'Rotor.kicad_pcb', 'Rotor.kicad_pro'):
         if (src / f).exists():
-            shutil.copy2(src / f, dst / f)
+            shutil.copy2(src / f, boards / f)
     pics = sorted(p.name for p in src.glob('*_Representative.svg')) + sorted(p.name for p in src.glob('*_Actual.svg'))
     for p in pics:
-        shutil.copy2(src / p, dst / p)
-    (dst / 'Parameters.txt').write_text(re.sub(r'^(folder\s+).*?(/Output/)',
-                                               r'\1<your checkout>/Generators/Single Coil Set Generator\2', text,
-                                               count=1, flags=re.M))
+        shutil.copy2(src / p, boards / p)
+    (boards / 'Parameters.txt').write_text(re.sub(r'^(folder\s+).*?(/Output/)',
+                                                  r'\1<your checkout>/Generators/Single Coil Set Generator\2', text,
+                                                  count=1, flags=re.M))
     files = parameter_files(text)
     if files:
-        (dst / 'parameter_files').mkdir(exist_ok=True)
+        (boards / 'parameter_files').mkdir(exist_ok=True)
         for fname, body in files.items():
-            (dst / 'parameter_files' / fname).write_text(body)
-    (dst / 'test_spec.json').write_text(json.dumps(spec, indent=1) + '\n')
-    if TEMPLATE.resolve() != (dst / 'simulation.py').resolve():
-        shutil.copy2(TEMPLATE, dst / 'simulation.py')
-    print(f'wrote {dst}: boards, Parameters.txt, {len(files)} parameter files, {len(pics)} pictures, '
-          f'test_spec.json, simulation.py')
+            (boards / 'parameter_files' / fname).write_text(body)
+    (sim / 'test_spec.json').write_text(json.dumps(spec, indent=1) + '\n')
+    (results / 'expected_results.json').write_text(json.dumps(
+        dict(board=a.name, source="the generator's estimates, from Parameters.txt (Boards/Parameters.txt)",
+             units='H, ohm', **expected), indent=1) + '\n')
+    if TEMPLATE.parent.resolve() != sim.resolve():
+        for f in SCRIPTS:
+            shutil.copy2(TEMPLATE.parent / f, sim / f)
+    print(f'wrote {dst}: Boards/ (the boards, Parameters.txt, {len(files)} parameter files, {len(pics)} pictures), '
+          f'Elmer Simulation/ (test_spec.json, {", ".join(SCRIPTS)}), Results/ (expected_results.json)')
     mesh = None
     if not a.no_estimate:
-        out = dst / 'case' / 'estimate'
-        r = subprocess.run([sys.executable, str(dst / 'simulation.py'), '--angles', '0', '--no-away', '--mesh-only',
-                            '--out', str(out)], capture_output=True, text=True, cwd=dst, check=False)
+        out = sim / 'case' / 'estimate'
+        r = subprocess.run([sys.executable, str(sim / 'simulation.py'), '--angles', '0', '--no-away', '--mesh-only',
+                            '--out', str(out)], capture_output=True, text=True, cwd=sim, check=False)
         m = re.search(r"mesh (\{.*\})", r.stdout)
         if m:
             mesh = json.loads(m.group(1).replace("'", '"'))
@@ -328,7 +353,7 @@ def main():
         else:
             print('the mesh estimate failed:\n' + (r.stdout + r.stderr)[-2000:])
         shutil.rmtree(out, ignore_errors=True)
-    if not (dst / 'README.md').exists() or (a.force and TEMPLATE.parent != dst):
+    if not (dst / 'README.md').exists() or (a.force and TEMPLATE.parent.parent != dst):
         (dst / 'README.md').write_text(readme(spec, src, warnings(text), mesh, pics[:1]))
         print(f'wrote {dst / "README.md"}')
 
