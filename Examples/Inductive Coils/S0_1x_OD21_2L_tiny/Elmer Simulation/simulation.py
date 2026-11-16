@@ -18,9 +18,10 @@ so the curves are drawn over that span: a full turn on a one-sector rotor.
 Every angle gets its own mesh, the rotor's copper at that angle drawn into it. The stator's mesh then differs a
 little between angles, which shows as small noise on the curves; the fit written with the results says how much.
 
-Writes into ../Results: results_gap<gap>mm.json, a table (.csv) and the curves (.png), and SINCOS_Results.md: every
+Writes into ../Results: results_gap<gap>mm.json, a table (.csv) and the chart (.webp, by make_charts.py beside this
+file), and SINCOS_Results.md: every
 gap's curves with a caption, the fit, the angle error at each angle (angle_error.py beside this file) and every
-solve, and SINCOS_gaps.png with all the gaps on one chart once two are solved. The runs go under case/ here (not
+solve, and SINCOS_gaps.webp with all the gaps on one chart once two are solved. The runs go under case/ here (not
 committed). This script is GPL-3.0 as the bridge; the boards keep their own licence (see ../../LICENSE.md).
 """
 from __future__ import annotations
@@ -42,6 +43,7 @@ RESULTS = BOARD / 'Results'
 sys.path.insert(0, str(HERE.parents[3]))
 sys.path.insert(0, str(HERE))
 from angle_error import METHOD, angle_error, sine_fit   # noqa: E402
+import make_charts as charts   # noqa: E402
 from bridge import elmer_case as E, geometry as G, mesh25d as M, ports as P, study as S   # noqa: E402
 
 SPEC = json.loads((HERE / 'test_spec.json').read_text())
@@ -175,27 +177,6 @@ def fit(angles, values):
     return sine_fit(angles, values, SETTINGS['period_deg'])
 
 
-def through_points(angles, values, tt):
-    """The smooth periodic curve through every point: with the angles evenly spread over the rotor's period, the
-    trigonometric interpolation (the lowest harmonics that pass through every point exactly); otherwise the best
-    sine fit."""
-    a = np.asarray(angles, float)
-    y = np.asarray(values, float)
-    n = len(a)
-    per = SETTINGS['period_deg']
-    if n >= 3 and np.allclose(a, np.arange(n) * per / n):
-        c = np.fft.rfft(y) / n
-        t = np.radians(np.asarray(tt) * 360.0 / per)
-        out = np.full_like(t, c[0].real)
-        for k in range(1, len(c)):
-            w = 1.0 if (n % 2 == 0 and k == n // 2) else 2.0
-            out += w * (c[k] * np.exp(1j * k * t)).real
-        return out, 'interpolated through the points'
-    f = fit(angles, values)
-    t = np.radians(np.asarray(tt) * 360.0 / per)
-    return f['offset'] + f['amplitude'] * np.sin(t + np.radians(f['phase_deg'])), 'best sine fit'
-
-
 def report(log=print):
     """../Results/SINCOS_Results.md: for every air gap solved, the curves with a caption, the fit, the angle
     error and every solve; then the boards. Rewritten after every solve, so it is as current as the results."""
@@ -232,15 +213,15 @@ def report(log=print):
                           f"{w * fc['amplitude']:.0f} mV) |" if fs else '| ')
                        + (f" {err['rms']:.1f}° rms, {err['peak']:.1f}° peak{so_far} |" if err else ' |'))
         sec = [f'## {gap:g} mm air gap', '']
-        png = path.with_suffix('.png').name
+        png = path.with_suffix('.webp').name
         if (RESULTS / png).exists() and fs:
-            how = ('interpolated through them' if through_points(ang, ms, [0.0])[1] != 'best sine fit'
-                   else 'the best sine fit' if max(ang) - min(ang) >= 0.75 * per
-                   else 'a sine fit, drawn only between the solved angles while few are in')
+            how = ('' if max(ang) - min(ang) >= 0.75 * per else ', drawn only between the solved angles while few '
+                   'are in')
             sec += [f'![SIN and COS against the rotor angle at a {gap:g} mm air gap]({png})', '',
                     f"*Figure {i}. SIN (blue) and COS (orange) at a {gap:g} mm air gap: the mutual inductance from "
                     f"the TX against the rotor's angle, {len(ang)} of {planned} angles solved. Each dot is one Elmer "
-                    f"solve; the dashes are {how}. SIN swings ±{fs['amplitude']:.2f} nH and COS ±{fc['amplitude']:.2f} nH, that is "
+                    f"solve and the solid line joins them; the dashes are the ideal sine and cosine, each channel's "
+                    f"best sine fit{how}, which is what the angle error is measured against. SIN swings ±{fs['amplitude']:.2f} nH and COS ±{fc['amplitude']:.2f} nH, that is "
                     f"±{w * fs['amplitude']:.0f} and ±{w * fc['amplitude']:.0f} mV of EMF.*", '']
             line = (f"Best sine fit: SIN amplitude {fs['amplitude']:.3f} nH, offset {fs['offset']:.3f} nH, phase "
                     f"{fs['phase_deg']:.1f}°; COS amplitude {fc['amplitude']:.3f} nH, offset {fc['offset']:.3f} nH, "
@@ -274,7 +255,7 @@ def report(log=print):
         sections.append('\n'.join(sec))
         lt_all.append((gap, lt, [r['solve']['coils']['TX']['L'] * 1e9 for r in away]))
     boards_dir = BOARD / 'Boards'
-    pic = next((p.name for p in [BOARD / f'{BOARD.name}_stator_and_rotor.png'] if p.exists()), None)  # beside README
+    pic = next((p.name for p in [BOARD / f'{BOARD.name}_stator_and_rotor.webp'] if p.exists()), None)  # beside README
     if not pic:                                                                   # else the generator's own picture
         pic = next(('Boards/' + p.name for p in sorted(boards_dir.glob('*_Representative.svg'))), None)
     tx, rs, rc = (SPEC['terminals'][k] for k in ('TX', SIN_NET, COS_NET))
@@ -311,69 +292,25 @@ def report(log=print):
         f"(1 nH is {w:.0f} mV of EMF). Each angle is one Elmer solve with its own mesh. This page is rewritten by "
         f"`simulation.py` after every solve.", '',
         '| Air gap | Angles solved | Amplitude SIN / COS | Angle error |', '|---|---|---|---|', *summary, '',
-        *sections, *gaps_figure(curves, len(sections) + 1), *expect, *method, *boards])
+        *sections, *gaps_section(curves, [p for _, p in gaps], len(sections) + 1), *expect, *method, *boards])
     (RESULTS / 'SINCOS_Results.md').write_text(text)
     log('wrote SINCOS_Results.md')
 
 
-def gaps_figure(curves, number):
-    """With two air gaps or more solved, SINCOS_gaps.png: every gap's SIN and COS on one chart, the smallest gap in
-    full colour and the larger ones lighter; returns its section for SINCOS_Results.md."""
-    if len(curves) < 2:
+def gaps_section(curves, files, number):
+    """With two air gaps or more solved, SINCOS_gaps.webp (make_charts.py) and its section for SINCOS_Results.md."""
+    if len(curves) < 2 or not charts.gaps_chart(files):
         return []
-    import matplotlib
-    matplotlib.use('Agg')
-    import matplotlib.pyplot as plt
-    import matplotlib.ticker
-    ink, ink2, surface = '#0b0b0b', '#52514e', '#fcfcfb'
-    base = {'SIN': (0x2a, 0x78, 0xd6), 'COS': (0xeb, 0x68, 0x34)}
-    tint = lambda rgb, k: '#' + ''.join(f'{round(c * k + s * (1 - k)):02x}' for c, s in zip(rgb, (0xfc, 0xfc, 0xfb), strict=True))
-    per = SETTINGS['period_deg']
-    tt = np.linspace(0, per, 721)
     curves = sorted(curves, key=lambda c: c[0])
-    fig, ax = plt.subplots(figsize=(8, 4.6), dpi=200)
-    fig.patch.set_facecolor(surface)
-    ax.set_facecolor(surface)
-    for j, (gap, ang, ms, mc, _, _) in enumerate(curves):
-        k = 1.0 - 0.5 * j / (len(curves) - 1)
-        for name, y in (('SIN', ms), ('COS', mc)):
-            col = tint(base[name], k)
-            yy, how = through_points(ang, y, tt)
-            keep = (np.ones_like(tt, bool) if how != 'best sine fit' or max(ang) - min(ang) >= 0.75 * per
-                    else (tt >= min(ang)) & (tt <= max(ang)))
-            ax.plot(tt[keep], yy[keep], color=col, lw=1.6, ls=(0, (5, 3)), zorder=2)
-            ax.plot(ang, y, ls='none', color=col, marker='o', ms=6, mec=surface, mew=1.2, zorder=3,
-                    label=f'{name}, {gap:g} mm')
-            if keep[-1]:
-                ax.annotate(f'{name} {gap:g} mm', (tt[-1], yy[-1]), xytext=(6, 0), textcoords='offset points',
-                            va='center', color=ink, fontsize=8, annotation_clip=False)
-    ax.axhline(0, color=ink2, lw=0.8, zorder=1)
-    ax.set_xlim(0, per)
-    ax.set_xticks(np.linspace(0, per, 9))
-    ax.xaxis.set_major_formatter(matplotlib.ticker.FormatStrFormatter('%g'))
-    ax.set_xlabel('rotor angle (degrees)', color=ink2)
-    ax.set_ylabel('M from the TX (nH)', color=ink2)
-    ax.set_title(f'{BOARD.name}: SIN and COS at each air gap', color=ink, fontsize=11, loc='left', pad=20)
-    ax.text(0, 1.015, f'1 A at {SETTINGS["freq_hz"] / 1e6:g} MHz in the TX; dots: one solve each; the smallest gap '
-            'in full colour', transform=ax.transAxes, fontsize=8, color=ink2, va='bottom')
-    ax.grid(True, color='#e4e3df', lw=0.6)
-    for s in ax.spines.values():
-        s.set_visible(False)
-    ax.tick_params(colors=ink2, labelsize=8)
-    ax.legend(frameon=False, fontsize=8, labelcolor=ink, loc='upper center', bbox_to_anchor=(0.5, -0.14),
-              ncol=2 * len(curves))
-    fig.tight_layout()
-    fig.savefig(RESULTS / 'SINCOS_gaps.png', facecolor=surface)
-    plt.close(fig)
     (g0, *_, fs0, fc0), (g1, *_, fs1, fc1) = curves[0], curves[-1]
-    return ['## The air gaps together', '', '![SIN and COS at each air gap](SINCOS_gaps.png)', '',
-            f"*Figure {number}. Every air gap on one chart, the {g0:g} mm gap in full colour. Going from {g1:g} to "
-            f"{g0:g} mm makes SIN {fs0['amplitude'] / fs1['amplitude']:.2f} times and COS "
-            f"{fc0['amplitude'] / fc1['amplitude']:.2f} times larger.*", '']
+    return ['## The air gaps together', '', '![SIN and COS at each air gap](SINCOS_gaps.webp)', '',
+            f"*Figure {number}. Every air gap on one chart, the {g0:g} mm gap in full colour, the solves of each joined "
+            f"by a solid line. Going from {g1:g} to {g0:g} mm makes SIN {fs0['amplitude'] / fs1['amplitude']:.2f} "
+            f"times and COS {fc0['amplitude'] / fc1['amplitude']:.2f} times larger.*", '']
 
 
 def plot(res_file, log=print):
-    """The table and the curves of one results file: M of SIN and COS (nH) against the rotor's angle."""
+    """The table, the fit and the angle error of one results file, its chart (make_charts.py) and the page."""
     result = json.loads(res_file.read_text())
     runs = sorted((r for r in result['runs'] if r['rotor_deg'] != 'away'), key=lambda r: r['rotor_deg'])
     if not runs:
@@ -392,56 +329,8 @@ def plot(res_file, log=print):
     result['fit_nH'] = fits
     result['angle_error_deg'] = angle_error(ang, msin, mcos, SETTINGS['period_deg'])
     res_file.write_text(json.dumps(result, indent=1))
-
-    import matplotlib
-    matplotlib.use('Agg')
-    import matplotlib.pyplot as plt
-    import matplotlib.ticker
-    ink, ink2, grid, surface = '#0b0b0b', '#52514e', '#e4e3df', '#fcfcfb'
-    blue, orange = '#2a78d6', '#eb6834'                  # categorical slots 1 and 2 of the house palette
-    fig, ax = plt.subplots(figsize=(8, 4.6), dpi=200)
-    fig.patch.set_facecolor(surface)
-    ax.set_facecolor(surface)
-    per = SETTINGS['period_deg']
-    tt = np.linspace(0, per, 721)
-    how = None
-    for name, y, col in (('SIN', msin, blue), ('COS', mcos, orange)):
-        if len(y) >= 3:
-            yy, how = through_points(ang, y, tt)
-            whole = how != 'best sine fit' or max(ang) - min(ang) >= 0.75 * per
-            if not whole:                                # no guessing past the solved angles while few are in
-                keep = (tt >= min(ang)) & (tt <= max(ang))
-                tt_, yy = tt[keep], yy[keep]
-                how = 'a sine fit, only between the solved angles for now'
-            else:
-                tt_ = tt
-            ax.plot(tt_, yy, color=col, lw=1.6, ls=(0, (5, 3)), zorder=2)
-            if whole:
-                ax.annotate(name, (tt_[-1], yy[-1]), xytext=(6, 0), textcoords='offset points', va='center',
-                            color=ink, fontsize=9, annotation_clip=False)
-        ax.plot(ang, y, ls='none', color=col, marker='o', ms=7, mec=surface, mew=1.5, label=f'{name}, one Elmer solve',
-                zorder=3)
-    ax.axhline(0, color=ink2, lw=0.8, zorder=1)
-    ax.set_xlim(0, per)
-    ax.set_xticks(np.linspace(0, per, 9))
-    ax.xaxis.set_major_formatter(matplotlib.ticker.FormatStrFormatter('%g'))
-    ax.set_xlabel('rotor angle (degrees)', color=ink2)
-    ax.set_ylabel('M from the TX (nH)', color=ink2)
-    gap, level = result['gap_mm'], result['level']
-    ax.set_title(f'{result["board"]}: SIN and COS against the rotor angle, {gap:g} mm air gap', color=ink,
-                 fontsize=11, loc='left', pad=20)
-    ax.text(0, 1.015, f'1 A at {SETTINGS["freq_hz"] / 1e6:g} MHz in the TX; dots: one solve each; dashes: '
-            f'{how or "drawn once three angles are solved"}; mesh level {level:g}', transform=ax.transAxes,
-            fontsize=8, color=ink2, va='bottom')
-    ax.grid(True, color=grid, lw=0.6)
-    for s in ax.spines.values():
-        s.set_visible(False)
-    ax.tick_params(colors=ink2, labelsize=8)
-    ax.legend(frameon=False, fontsize=8, labelcolor=ink, loc='upper center', bbox_to_anchor=(0.5, -0.14), ncol=2)
-    fig.tight_layout()
-    fig.savefig(f'{stem}.png', facecolor=surface)
-    plt.close(fig)
-    log(f'wrote {stem}.csv and {stem}.png; fit (nH): ' + '; '.join(
+    charts.gap_chart(res_file)
+    log(f'wrote {stem.name}.csv and {stem.name}.webp; fit (nH): ' + '; '.join(
         f"{k} amplitude {v['amplitude']:.3f}, offset {v['offset']:.3f}, phase {v['phase_deg']:.1f} deg"
         + (f", rms left {v['rms_left']:.4f}" if v['rms_left'] is not None else '') for k, v in fits.items()))
     report(log)
@@ -455,14 +344,22 @@ def main():
     ap.add_argument('--no-away', action='store_true', help='skip the run with the rotor away')
     ap.add_argument('--level', type=float, default=SETTINGS['level'])
     ap.add_argument('--ilu', type=int, default=SETTINGS['ilu_order'], help='ILU order for the preconditioner')
+    ap.add_argument('--method', default='BiCGStabL', choices=('BiCGStabL', 'GCR'), help='the Krylov method')
+    ap.add_argument('--degree', type=int, default=4, help="BiCGStabL's polynomial degree")
+    ap.add_argument('--restart', type=int, default=50, help="GCR's restart (it keeps twice this many vectors)")
+    ap.add_argument('--max-iter', type=int, default=SETTINGS['max_iter'])
     ap.add_argument('--mesh-only', action='store_true', help='build and write the meshes, solve nothing')
     ap.add_argument('--plot', action='store_true', help='only redraw the table and the curves')
     ap.add_argument('--out', default=str(HERE / 'case'))
     a = ap.parse_args()
     tagg = (f'gap{a.gap:g}mm' + ('' if a.level == SETTINGS['level'] else f'_level{a.level:g}')
-            + ('' if a.ilu == SETTINGS['ilu_order'] else f'_ilu{a.ilu}'))
+            + ('' if a.ilu == SETTINGS['ilu_order'] else f'_ilu{a.ilu}')
+            + ('' if a.method == 'BiCGStabL' else f'_{a.method.lower()}{a.restart}')
+            + ('' if a.degree == 4 or a.method != 'BiCGStabL' else f'_deg{a.degree}')
+            + ('' if a.max_iter == SETTINGS['max_iter'] else f'_it{a.max_iter}'))
+    trial = tagg != f'gap{a.gap:g}mm'                   # another level or solver setting: a trial, kept in case/
     RESULTS.mkdir(exist_ok=True)
-    res_file = RESULTS / f'results_{tagg}.json'
+    res_file = (Path(a.out) if trial else RESULTS) / f'results_{tagg}.json'
     if a.plot:
         plot(res_file)
         return
@@ -484,6 +381,7 @@ def main():
     re_ = S.kese_export(BOARD / SETTINGS['rotor'], out / 'kese', log=log)
     result = json.loads(res_file.read_text()) if res_file.exists() else dict(
         board=BOARD.name, gap_mm=a.gap, level=a.level, ilu_order=a.ilu, settings=SETTINGS, expected=EXPECTED,
+        solver=dict(method=a.method, degree=a.degree, restart=a.restart, max_iter=a.max_iter),
         versions=S.versions(), runs=[])
     done = {r['rotor_deg'] for r in result['runs']}
     runs = ([] if a.no_away else [None]) + angles
@@ -506,7 +404,8 @@ def main():
         bodies = {n: (cu if n in ('TX', 'SIN', 'COS', 'ROTOR') else E.Material('Air' if n == 'AIR' else n.title()))
                   for n in m['names']}
         case = E.Case(mesh_dir=folder / 'mesh_files', bodies=bodies, order=1, tol=SETTINGS['tol'],
-                      max_iter=SETTINGS['max_iter'], ilu_order=a.ilu,
+                      max_iter=a.max_iter, ilu_order=a.ilu, method=a.method, bicg_degree=a.degree,
+                      restart=a.restart,
                       coils=[E.Coil('TX', 'TX', 'TX_T1', 'TX_T2', 'TX_SHEET', 1.0),
                              E.Coil('SIN', 'SIN', 'SIN_T1', 'SIN_T2', 'SIN_SHEET', 0.0),
                              E.Coil('COS', 'COS', 'COS_T1', 'COS_T2', 'COS_SHEET', 0.0)])

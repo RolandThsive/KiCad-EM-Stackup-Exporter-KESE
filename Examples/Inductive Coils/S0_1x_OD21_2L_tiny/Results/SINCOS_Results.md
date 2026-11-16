@@ -8,9 +8,9 @@ A coil set made with the [Sinusoidal Coil Generator](https://github.com/RolandTh
 
 ## 1 mm air gap
 
-![SIN and COS against the rotor angle at a 1 mm air gap](results_gap1mm.png)
+![SIN and COS against the rotor angle at a 1 mm air gap](results_gap1mm.webp)
 
-*Figure 1. SIN (blue) and COS (orange) at a 1 mm air gap: the mutual inductance from the TX against the rotor's angle, 8 of 8 angles solved. Each dot is one Elmer solve; the dashes are interpolated through them. SIN swings ±2.15 nH and COS ±2.07 nH, that is ±47 and ±45 mV of EMF.*
+*Figure 1. SIN (blue) and COS (orange) at a 1 mm air gap: the mutual inductance from the TX against the rotor's angle, 8 of 8 angles solved. Each dot is one Elmer solve and the solid line joins them; the dashes are the ideal sine and cosine, each channel's best sine fit, which is what the angle error is measured against. SIN swings ±2.15 nH and COS ±2.07 nH, that is ±47 and ±45 mV of EMF.*
 
 Best sine fit: SIN amplitude 2.151 nH, offset -0.077 nH, phase -133.8°; COS amplitude 2.069 nH, offset -0.124 nH, phase 135.0°. Angle error, with the offset and gain of each channel calibrated out (worked out as below): 4.6° rms and 7.1° at worst, in electrical degrees, the same as mechanical degrees here. SIN and COS are 91.2° apart, against 90° for perfect quadrature.
 
@@ -37,6 +37,6 @@ Each channel gets its best sine over the rotor's period, M = offset + amplitude 
 
 ## The boards
 
-![stator and rotor](../S0_1x_OD21_2L_tiny_stator_and_rotor.png)
+![stator and rotor](../S0_1x_OD21_2L_tiny_stator_and_rotor.webp)
 
 *Drawn by the generator. Red is the top layer, blue the bottom; the dots are vias. In Elmer, SIN is opened at (97.74, 102.26) and COS at (97.74, 97.74), the TX at its ends at (109.8, 100) (KiCad mm). The [README](../README.md) has the board and how it was made.*

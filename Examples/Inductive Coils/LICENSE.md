@@ -13,7 +13,7 @@ commercial terms in the generator's [LICENSE.md](https://github.com/RolandThsive
 | `parameter_files/` (the generator's parameter files) | PolyForm Noncommercial 1.0.0, [`licenses/PolyForm-Noncommercial-1.0.0`](licenses/PolyForm-Noncommercial-1.0.0) |
 | The test brief (`Things to test in ELMER.md`) | CC BY-NC-SA 4.0, [`licenses/CC-BY-NC-SA-4.0`](licenses/CC-BY-NC-SA-4.0) |
 | The READMEs in the board folders and this folder's README, written for this branch from the generator's board cards and briefs | CC BY-NC-SA 4.0, as adaptations of that documentation |
-| The scripts written for this branch: `new_coil.py`, and each board's `simulation.py` and `angle_error.py` | GPL-3.0, as the bridge's code |
+| The scripts written for this branch: `new_coil.py`, and each board's `simulation.py`, `angle_error.py` and `make_charts.py` | GPL-3.0, as the bridge's code |
 
 Results files that the bridge writes here (`results.md`, CSVs, plots) describe these boards and are shared under
 the same non-commercial terms.
