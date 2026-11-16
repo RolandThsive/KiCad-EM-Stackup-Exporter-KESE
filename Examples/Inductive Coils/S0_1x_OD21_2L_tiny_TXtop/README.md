@@ -37,8 +37,10 @@ Every angle at every gap, one Elmer solve each, run in parallel: 25 machines for
 |---|---|---|---|---|---|---|---|---|
 | 2 mm | S0 (TX: 1 turn on each layer) | 8 of 8 | 0.89 / 0.84 nH (19 / 18 mV) | 3.3° rms, 5.1° peak | 91.5° | 106 to 111 nH | 2.8e-04 to 4.2e-04 | 0 of 8 |
 | 2 mm | this board (21 mm, 2 TX turns on top) | 8 of 8 | 0.89 / 0.88 nH (19 / 19 mV) | 2.1° rms, 3.9° peak | 91.9° | 111 to 113 nH | 2.8e-04 to 3.7e-04 | 0 of 8 |
+| 2 mm | 22 mm, 2 TX turns on top, S0's RX | 8 of 8 | 1.41 / 1.41 nH (31 / 31 mV) | 1.8° rms, 2.8° peak | 92.0° | 124 to 127 nH | 2.0e-04 to 2.8e-04 | 0 of 8 |
 | 1.5 mm | S0 (TX: 1 turn on each layer) | 8 of 8 | 1.37 / 1.32 nH (30 / 29 mV) | 3.6° rms, 5.6° peak | 91.8° | 103 to 110 nH | 2.8e-04 to 4.7e-04 | 0 of 8 |
 | 1.5 mm | this board (21 mm, 2 TX turns on top) | 8 of 8 | 1.40 / 1.37 nH (31 / 30 mV) | 2.4° rms, 4.0° peak | 92.5° | 109 to 112 nH | 2.8e-04 to 4.1e-04 | 0 of 8 |
+| 1.5 mm | 22 mm, 2 TX turns on top, S0's RX | 8 of 8 | 2.12 / 2.09 nH (47 / 46 mV) | 2.2° rms, 3.3° peak | 91.9° | 122 to 125 nH | 1.9e-04 to 3.3e-04 | 0 of 8 |
 | 1 mm | S0 (TX: 1 turn on each layer) | 8 of 8 | 2.15 / 2.07 nH (47 / 45 mV) | 4.6° rms, 7.1° peak | 91.2° | 99 to 108 nH | 2.7e-04 to 4.8e-04 | 0 of 8 |
 | 1 mm | this board (21 mm, 2 TX turns on top) | 8 of 8 | 2.24 / 2.15 nH (49 / 47 mV) | 3.2° rms, 5.6° peak | 92.7° | 105 to 110 nH | 2.6e-04 to 4.9e-04 | 0 of 8 |
 | 1 mm | 22 mm, 2 TX turns on top, S0's RX | 8 of 8 | 3.25 / 3.14 nH (72 / 69 mV) | 3.0° rms, 4.7° peak | 92.6° | 118 to 123 nH | 1.9e-04 to 6.1e-04 | 1 of 8 |
@@ -49,7 +51,7 @@ Every angle at every gap, one Elmer solve each, run in parallel: 25 machines for
 | 0.1 mm | this board (21 mm, 2 TX turns on top) | 8 of 8 | 5.12 / 4.86 nH (113 / 107 mV) | 17.5° rms, 44.0° peak | 70.6° | 67 to 125 nH | 5.2e-04 to 4.5e-03 | 8 of 8 |
 | 0.1 mm | 22 mm, 2 TX turns on top, S0's RX | 8 of 8 | 3.82 / 6.46 nH (84 / 142 mV) | 58.5° rms, 159.3° peak | 66.0° | 43 to 118 nH | 4.1e-04 to 5.8e-03 | 7 of 8 |
 
-* **At 1.5 and 2 mm every solve on both boards stays below 5e-4.** The signal falls to 1.40 / 1.37 nH at 1.5 mm and 0.89 / 0.88 nH at 2 mm, within 6 % of S0's (at 2 mm the SIN amplitudes are the same, 0.885 nH), and the angle error stays lower than S0's at every gap: 2.4° and 2.1° rms against 3.6° and 3.3°.
+* **At 1.5 and 2 mm every solve on all three boards stays below 5e-4.** The signal falls to 1.40 / 1.37 nH at 1.5 mm and 0.89 / 0.88 nH at 2 mm, within 6 % of S0's (at 2 mm the SIN amplitudes are the same, 0.885 nH), and the angle error stays lower than S0's at every gap: 2.4° and 2.1° rms against 3.6° and 3.3°.
 * **The solver copes better with this TX.** At 1 and 0.5 mm every solve stops below 5e-4 and the angle error is about 3° rms at both gaps; on S0 three of the 0.5 mm solves stalled higher and its 0.5 mm curve is off by 14° rms. At 0.1 mm both boards stall too high to read, this one less so.
 * **The signal is about the same at 1 mm** (2.2 nH against 2.1, about 48 mV of EMF at 1 A) although the RX band is narrower, and it grows to about 3.2 nH at 0.5 mm.
 * **SIN and COS are matched in amplitude** within 5 % at 1 and 0.5 mm (S0: 4 % at 1 mm, 16 % at 0.5 mm).

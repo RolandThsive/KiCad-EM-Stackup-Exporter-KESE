@@ -30,10 +30,16 @@ The generator's warnings for this board:
 
 ## Against S0
 
-Every angle at every gap, one Elmer solve each, run in parallel on 25 machines (24 angles and the rotor taken away). The numbers are from [`Results/SINCOS_Results.md`](Results/SINCOS_Results.md) and the other two boards' pages. "Not converged" counts the solves that stopped above a residual of 5e-4 or give the TX a negative resistance.
+Every angle at every gap, one Elmer solve each, run in parallel: 25 machines for 1, 0.5 and 0.1 mm (24 angles and the rotor taken away), and 16 more for 1.5 and 2 mm. The numbers are from [`Results/SINCOS_Results.md`](Results/SINCOS_Results.md) and the other two boards' pages. "Not converged" counts the solves that stopped above a residual of 5e-4 or give the TX a negative resistance.
 
 | Air gap | Board | Angles | Amplitude SIN / COS | Angle error | SIN to COS | L TX over the turn | Residual | Not converged |
 |---|---|---|---|---|---|---|---|---|
+| 2 mm | S0 (TX: 1 turn on each layer) | 8 of 8 | 0.89 / 0.84 nH (19 / 18 mV) | 3.3° rms, 5.1° peak | 91.5° | 106 to 111 nH | 2.8e-04 to 4.2e-04 | 0 of 8 |
+| 2 mm | 21 mm, 2 TX turns on top | 8 of 8 | 0.89 / 0.88 nH (19 / 19 mV) | 2.1° rms, 3.9° peak | 91.9° | 111 to 113 nH | 2.8e-04 to 3.7e-04 | 0 of 8 |
+| 2 mm | this board (22 mm, 2 TX turns on top, S0's RX) | 8 of 8 | 1.41 / 1.41 nH (31 / 31 mV) | 1.8° rms, 2.8° peak | 92.0° | 124 to 127 nH | 2.0e-04 to 2.8e-04 | 0 of 8 |
+| 1.5 mm | S0 (TX: 1 turn on each layer) | 8 of 8 | 1.37 / 1.32 nH (30 / 29 mV) | 3.6° rms, 5.6° peak | 91.8° | 103 to 110 nH | 2.8e-04 to 4.7e-04 | 0 of 8 |
+| 1.5 mm | 21 mm, 2 TX turns on top | 8 of 8 | 1.40 / 1.37 nH (31 / 30 mV) | 2.4° rms, 4.0° peak | 92.5° | 109 to 112 nH | 2.8e-04 to 4.1e-04 | 0 of 8 |
+| 1.5 mm | this board (22 mm, 2 TX turns on top, S0's RX) | 8 of 8 | 2.12 / 2.09 nH (47 / 46 mV) | 2.2° rms, 3.3° peak | 91.9° | 122 to 125 nH | 1.9e-04 to 3.3e-04 | 0 of 8 |
 | 1 mm | S0 (TX: 1 turn on each layer) | 8 of 8 | 2.15 / 2.07 nH (47 / 45 mV) | 4.6° rms, 7.1° peak | 91.2° | 99 to 108 nH | 2.7e-04 to 4.8e-04 | 0 of 8 |
 | 1 mm | 21 mm, 2 TX turns on top | 8 of 8 | 2.24 / 2.15 nH (49 / 47 mV) | 3.2° rms, 5.6° peak | 92.7° | 105 to 110 nH | 2.6e-04 to 4.9e-04 | 0 of 8 |
 | 1 mm | this board (22 mm, 2 TX turns on top, S0's RX) | 8 of 8 | 3.25 / 3.14 nH (72 / 69 mV) | 3.0° rms, 4.7° peak | 92.6° | 118 to 123 nH | 1.9e-04 to 6.1e-04 | 1 of 8 |
@@ -44,6 +50,7 @@ Every angle at every gap, one Elmer solve each, run in parallel on 25 machines (
 | 0.1 mm | 21 mm, 2 TX turns on top | 8 of 8 | 5.12 / 4.86 nH (113 / 107 mV) | 17.5° rms, 44.0° peak | 70.6° | 67 to 125 nH | 5.2e-04 to 4.5e-03 | 8 of 8 |
 | 0.1 mm | this board (22 mm, 2 TX turns on top, S0's RX) | 8 of 8 | 3.82 / 6.46 nH (84 / 142 mV) | 58.5° rms, 159.3° peak | 66.0° | 43 to 118 nH | 4.1e-04 to 5.8e-03 | 7 of 8 |
 
+* **At 1.5 and 2 mm every solve on all three boards stays below 5e-4.** This board gives 2.12 / 2.09 nH at 1.5 mm and 1.41 / 1.41 nH at 2 mm, about 1.6 times S0's (1.37 and 0.89 nH for SIN), with the cleanest curves of the three: 2.2° and 1.8° rms of angle error.
 * **The signal is half as large again as S0's.** 3.2 nH at 1 mm (about 70 mV of EMF at 1 A) against S0's 2.1, and 4.6 nH at 0.5 mm against 3.0: the same RX coils with the second TX turn around them.
 * **The curves are clean at 1 and 0.5 mm.** The angle error is 3.0° rms at 1 mm and 2.3° rms at 0.5 mm (S0: 4.6° and 14.3°), and SIN and COS match in amplitude within 4 % at 1 mm and 1 % at 0.5 mm. One solve at each of these gaps (45° both times) stopped just above 5e-4 (6.1e-4 and 5.4e-4), and both still sit near their sine.
 * **At 0.1 mm the solver still stalls too high to read**, as on the other two boards.
@@ -55,13 +62,15 @@ Every angle at every gap, one Elmer solve each, run in parallel on 25 machines (
 | [`Boards/`](Boards/) | straight from the generator: the stator and rotor boards, `Parameters.txt`, the pictures and the parameter files it was run with |
 | [`3D_Geometry/`](3D_Geometry/) | KESE's export of the stator and rotor (STL solids, `materials.json`, STEP, KESE's report), written by the first run; `source.json` records the board's hash, so a changed board is exported again |
 | [`Elmer Simulation/`](Elmer%20Simulation/) | `test_spec.json` (every board fact the simulation needs), `simulation.py`, `angle_error.py`, `make_charts.py`, `rig_picture.py` and `angle_setup.py` (S0's, unchanged; `python rig_picture.py` draws how the boards sit in Elmer), [`RotorStator_AngleSetup/`](Elmer%20Simulation/RotorStator_AngleSetup/) (the rotor over the stator at each angle, drawn by `python angle_setup.py`), and the runs under `case/`, which git ignores |
-| [`Results/`](Results/) | `expected_results.json` (the generator's estimates), [`SINCOS_Results.md`](Results/SINCOS_Results.md) with every gap on one page, and a folder for each air gap (`1mm_AirGap`, `0d5mm_AirGap`, the point written as d) with the runs' `results_gap<gap>mm.json`, `.csv` and `.webp` |
+| [`Results/`](Results/) | `expected_results.json` (the generator's estimates), [`SINCOS_Results.md`](Results/SINCOS_Results.md) with every gap on one page, the charts of every gap together (`SINCOS_gaps.webp`, and `_SIN` and `_COS` apart), and a folder for each air gap (`0d1mm_AirGap`, `0d5mm_AirGap`, `1mm_AirGap`, `1d5mm_AirGap`, `2mm_AirGap`, the point written as d) with the runs' `results_gap<gap>mm.json`, `.csv` and `.webp` |
 
 ## Running it
 
-| Mesh level | Nodes | Memory a solve |
-|---|---|---|
-| 0.75 | 227,275 | about 13.0 GB (at 57 kB a node) |
+| Air gap | Mesh level | Nodes | Memory a solve |
+|---|---|---|---|
+| 1 mm | 0.75 | 227,275 | about 13.0 GB (at 57 kB a node) |
+| 1.5 mm | 0.75 | about 241,000 | more than a 15 GB machine gives one process: the solves ran with an 8 GB swapfile, on the same mesh |
+| 2 mm | 0.75 | about 255,000 | as for 1.5 mm |
 
 If that does not fit the machine, `--level` below the one above makes the mesh coarser and the solve smaller (the memory goes about with the number of nodes).
 
