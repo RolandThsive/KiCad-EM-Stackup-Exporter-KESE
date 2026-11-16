@@ -1,16 +1,34 @@
 # 38. OpenEMS Implementation Test Board Results
 
 What openEMS gave on each board of [OpenEMS Implementation Test Boards](OpenEMS-Implementation-Test-Boards.md),
-against numbers known without any solver. Every chart and picture here is drawn from openEMS's own
-output by the example's `make_pictures.py`; nothing is drawn by hand. The numbers are in each
+against numbers known without any solver. Every chart and field picture here is drawn from openEMS's
+own output by the example's `make_pictures.py`; nothing is drawn by hand. The board picture is drawn
+from the board's KiCad file. The numbers are in each
 example's `results.json` on the `OpenEMS_Integration` branch, with the versions and the hashes of
 the code that made them, and each example's `results.md` has the full tables.
 
 ## 38.1 O01 Microstrip
 
-One straight 2.9 mm microstrip on a 1.53 mm FR-4 core (εr 4.4) over a solid ground: a 50 Ω line by
-Hammerstad and Jensen's formulas. Port 1 is excited and port 2 ends the line in 50 Ω, so one run
-gives S11 and S21, and each port measures Z0 and the propagation constant from its own probes.
+![O01 drawn from above and in section: a 50 by 30 mm FR-4 board with a 2.9 mm strip on Top running its whole length over a ground plane on Bottom; dashed boxes mark the 10 mm ports at each end and lines their measurement planes, 38 mm apart](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/OpenEMS-Implementation-Test-Boards/O01_microstrip/oemsboards_1_board.webp)
+
+### In Short
+
+O01 is the simplest high-frequency test there is: one copper strip over a ground plane, 2.9 mm wide
+on 1.53 mm of FR-4, which makes it a 50 Ω line. openEMS sends a signal in at port 1 on the left; the
+signal runs along the strip to port 2 on the right, where a 50 Ω end takes it, and almost nothing
+should come back. Textbook formulas say what the line's impedance is, how fast the signal travels and
+how much of its power the FR-4 soaks up on the way. openEMS lands within 2 % of each:
+
+| What | What it means | The formulas | openEMS |
+|---|---|---|---|
+| Z0, the line's impedance | the ratio of voltage to current in the travelling signal; a 50 Ω source and end must match it, or part of the signal bounces back | 49.83 Ω | 50.69 Ω at 1 GHz, +1.7 % |
+| εeff, the effective permittivity | sets the signal's speed along the line, c/√εeff: about 0.54 times the speed of light here | 3.318 to 3.397 (1 to 4 GHz) | 3.364 to 3.421, +1.4 to +0.7 % |
+| Power that reaches port 2 | what is left after the 38 mm between the two measurement planes | 92.4 to 92.3 % (the FR-4's loss) | 92.4 to 91.7 % |
+| Power that comes back | what bounces off port 2 because the line is not exactly 50 Ω | almost none | under 0.08 % (S11 −31 to −53 dB) |
+
+A wrong εr, a wrong core thickness, a port in the wrong place or a broken read-back would each move at
+least one of these numbers well past 2 %: the five bugs O01 found ([What O01 Found](#what-o01-found))
+showed as a Z0 of 76 Ω and an εeff 11 % high.
 
 | Item | Value |
 |---|---|
@@ -21,6 +39,18 @@ gives S11 and S21, and each port measures Z0 and the propagation constant from i
 | Time and memory | 88 s and 0.15 GB on 4 cores, sharing the machine with an Elmer solve |
 | Preflight | all 16 lines pass |
 
+### What the Line Looks Like Inside
+
+![Two panels, the field across the line halfway along it at 3 GHz, from openEMS. Top: the electric field, darkest in the FR-4 under the 2.9 mm strip and at the strip's edges, its arrows running from the strip down to the ground and fringing out through the air beside the strip. Bottom: the magnetic field, strongest under the strip, its lines circling the strip](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/OpenEMS-Implementation-Test-Board-Results/O01_microstrip/oemsresults_4_section.webp)
+
+The signal is a wave of electric and magnetic field that travels along the strip. Across the line,
+the electric field (top) runs from the strip down to the ground, packed into the FR-4 under the strip
+and fringing out at its edges; the magnetic field (bottom) circles the strip. From openEMS's own field
+in this picture, about nine tenths of the electric field's energy sits in the FR-4 and a tenth in the
+air. The signal therefore travels at a speed between that in FR-4 (εr 4.4) and that in air (1): εeff
+is 3.4. The width of the strip against the height of the FR-4 sets how much field crowds under it,
+and so the line's impedance: a wider strip or a thinner core gives a lower Z0.
+
 ### Expected Against What Came Out
 
 | f | Z0, openEMS | Z0, Hammerstad–Jensen | εeff from S21 | εeff, Kirschning–Jansen | Difference | S21 | S21 from the dielectric's loss alone | S11 |
@@ -30,28 +60,41 @@ gives S11 and S21, and each port measures Z0 and the propagation constant from i
 | 3 GHz | 51.31 Ω | 49.83 Ω | 3.395 | 3.368 | +0.8 % | −0.368 dB | −0.347 dB | −31.2 dB |
 | 4 GHz | 51.70 Ω | 49.83 Ω | 3.421 | 3.397 | +0.7 % | −0.376 dB | −0.349 dB | −31.0 dB |
 
-openEMS is within 2 % of the closed forms everywhere: Z0 +1.7 % at 1 GHz, εeff +0.7 to +1.4 %. That
-is more than the formulas' own error (0.2 to 0.6 % for εeff, about 1 % for Z0), so the rest belongs
-to the FDTD model; [OpenEMS Implementation Accuracy](OpenEMS-Implementation-Accuracy.md) takes it
-apart.
+S21 and S11 are the signal that arrives at port 2 and the signal that comes back to port 1, each as a
+share of what went in, in decibels: −0.37 dB is 92 % of the power, −31 dB is 0.08 %. openEMS is within
+2 % of the closed forms everywhere: Z0 +1.7 % at 1 GHz, εeff +0.7 to +1.4 %. That is more than the
+formulas' own error (0.2 to 0.6 % for εeff, about 1 % for Z0), so the rest belongs to the FDTD model;
+[OpenEMS Implementation Accuracy](OpenEMS-Implementation-Accuracy.md) takes it apart.
 
-![εeff against frequency, 1 to 5 GHz: Kirschning and Jansen's curve rises from 3.318 to 3.43; openEMS from S21 runs parallel to it and 0.02 to 0.05 above, with the h 0.1 mm run's points on top of it; port 1's probes run another 0.02 to 0.05 higher](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/OpenEMS-Implementation-Test-Board-Results/O01_microstrip/oemsresults_1_eps_eff.webp)
+![Z0 against frequency: openEMS rises from 50.7 Ω at 1 GHz to 52.2 Ω at 5 GHz, labelled 1.7 % above the formula at 1 GHz; Hammerstad and Jensen's static Z0 is a flat dashed line at 49.83 Ω; a note says that a real line's Z0 rises a little with frequency as more of the field draws into the FR-4](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/OpenEMS-Implementation-Test-Board-Results/O01_microstrip/oemsresults_2_z0.webp)
 
-εeff from S21 follows Kirschning and Jansen's dispersion with an offset that shrinks from 1.4 to
-0.7 % across the band. The finer mesh (points) lands on the standard one. εeff from port 1's own
-probes is 0.6 to 1.5 % above the S21 value: the port takes its derivative over three probes 1.8 mm
-apart, S21 its phase over 38 mm, so the S21 value is the one to quote.
+Z0 is what the line was drawn for. Hammerstad and Jensen's formula gives the static value, 49.83 Ω,
+for this strip's width and thickness on this core. A real microstrip's impedance rises a little with
+frequency as the field draws further into the FR-4, so the fair comparison is at the lowest
+frequency: 50.7 Ω at 1 GHz, +1.7 %.
 
-![Z0 against frequency: openEMS rises from 50.7 Ω at 1 GHz to 52.2 Ω at 5 GHz; Hammerstad and Jensen's static Z0 is a flat line at 49.83 Ω](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/OpenEMS-Implementation-Test-Board-Results/O01_microstrip/oemsresults_2_z0.webp)
+![εeff against frequency, 1 to 5 GHz: the textbook formula of Kirschning and Jansen rises from 3.318 to 3.43; openEMS from S21's phase runs parallel to it and 0.02 to 0.05 above, with the finer mesh's points on top of it; port 1's probes run another 0.02 to 0.05 higher; a note says that at 3 GHz εeff 3.39 means the signal runs at 0.54 times the speed of light, 163 mm a nanosecond](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/OpenEMS-Implementation-Test-Board-Results/O01_microstrip/oemsresults_1_eps_eff.webp)
 
-Hammerstad and Jensen's Z0 is the static one. A microstrip's impedance does rise with frequency as
-the field draws into the substrate, so the fair comparison is at 1 GHz, +1.7 %.
+εeff is the line's speed: the signal covers 163 mm a nanosecond at 3 GHz, 0.54 times the speed of
+light. openEMS gets it from the phase of S21 over the 38 mm between the measurement planes, and it
+follows Kirschning and Jansen's formula with an offset that shrinks from 1.4 to 0.7 % across the band.
+The finer mesh (points) lands on the standard one. Port 1's own probes, 1.8 mm apart, give a value 0.6
+to 1.5 % higher, so the S21 value is the one to quote.
+
+![Where the power sent into port 1 goes, at 1, 2, 3 and 4 GHz, as bars of 100 %: 92.4, 92.0, 91.9 and 91.7 % arrives at port 2; 7.6 to 8.2 % is lost on the way; the share reflected is under 0.001 to 0.079 %; a black tick on each bar marks what the FR-4's loss alone would leave, 92.3 to 92.4 %](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/OpenEMS-Implementation-Test-Board-Results/O01_microstrip/oemsresults_5_power.webp)
+
+Of the power that crosses port 1's measurement plane, 92 % arrives at port 2's. About 8 % is lost on
+the way, nearly all of it as heat in the FR-4 (tan δ 0.02): the black ticks are what that loss alone
+would leave, by Pozar's formula. openEMS loses a further 0.3 to 0.6 % of the power from 2 to 4 GHz,
+which is the line's ends and ports radiating a little into the air around the board; the copper is lossless
+in this model. What comes back is too small to see on the bars: under 0.001 % at 1 GHz and under
+0.08 % up to 4 GHz.
 
 ![An animation of Ez in the plane halfway through the FR-4 core, seen from above, over the whole domain: the pulse's lobes enter at port 1 on the left, run along the strip to port 2 on the right and are absorbed there, with almost nothing reflected back](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/OpenEMS-Implementation-Test-Board-Results/O01_microstrip/oemsresults_3_field.webp)
 
-Ez halfway through the core, from openEMS's field dump of the same run (87 samples on its own mesh).
-The field stays under the strip, the line's quasi-TEM mode, and the 50 Ω end at port 2 takes the
-pulse with almost no echo, which is the −31 to −53 dB of S11.
+The same run seen from above: Ez halfway through the core, from openEMS's field dump (87 samples on its
+own mesh). The pulse enters at port 1, stays under the strip as it runs along it, and the 50 Ω end at
+port 2 takes it with almost no echo, which is the −31 to −53 dB of S11.
 
 ### The Mesh Study
 
