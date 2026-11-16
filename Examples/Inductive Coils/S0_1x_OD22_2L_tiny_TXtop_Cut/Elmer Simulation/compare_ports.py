@@ -22,7 +22,7 @@ from make_charts import COLOURS, FREQ, INK, INK2, LOOSE, PERIOD, SURFACE, _style
 HERE = Path(__file__).resolve().parent
 CUT = HERE.parent / 'Results'
 VIA = HERE.parent.parent / 'S0_1x_OD22_2L_tiny_TXtop' / 'Results'
-GAPS = (1.0, 0.5, 0.1)
+GAPS = (2.0, 1.5, 1.0, 0.5, 0.1)
 
 
 def load(results, gap):
