@@ -63,6 +63,7 @@ def model_xy(xy_kicad):
 
 SET = SPEC['sets'][0]
 SIN_NET, COS_NET = str(SET['sin']), str(SET['cos'])
+LOOSE = 5e-4   # above this residual the iterative solves here drift off the sine (every 1 mm solve stopped below)
 SETTINGS = dict(
     stator=SPEC['files']['stator'],    # paths from the board folder
     rotor=SPEC['files']['rotor'],
@@ -254,6 +255,13 @@ def report(log=print):
                     f"the residual between {min(res_):.1e} and {max(res_):.1e} rather than the {SETTINGS['tol']:.0e} "
                     f"asked for. The TX is round, so turning the rotor should not change its inductance: its spread "
                     f"here, {min(lt):.1f} to {max(lt):.1f} nH, is a measure of what the solver leaves.", '']
+        loose = [r for r in runs if r['solve']['residual'] > LOOSE or r['solve']['coils']['TX']['R'] < 0]
+        if loose:
+            sec += [f"**Not converged enough to read:** {len(loose)} of {len(runs)} solves "
+                    f"({', '.join(format(r['rotor_deg'], 'g') + '°' for r in loose)}) stopped above a residual of "
+                    f"{LOOSE:.0e} or give the TX a negative resistance. Every 1 mm solve stopped below it; the 0.5 mm "
+                    f"solves above it are the ones that fall off the sine. Read this gap's curve with that in mind.",
+                    '']
         sections.append('\n'.join(sec))
         lt_all.append((gap, lt, [r['solve']['coils']['TX']['L'] * 1e9 for r in away]))
     boards_dir = BOARD / 'Boards'
