@@ -141,7 +141,7 @@ def chart_reference(out, plt):
     e02 = sorted((run['nodes'], solve(run, 1e4)['coils']['RX']['M']) for run in r2['runs'] if solve(run, 1e4))
     fig, ax = plt.subplots(figsize=(6.4, 5.6))
     fig.patch.set_facecolor(SURFACE)
-    ax.axhline(0, color=INK2, lw=1.5, ls=':', label='the reference')
+    ax.axhline(0, color=INK2, lw=1.5, ls=':', label="the textbook value (0 %): Grover's formula for L, Maxwell's for M")
     st = r1['settings']                    # the current stopped at the round ends' centres (0) or at the gap's faces
     c = 2 * np.pi * st['radius_mm']
     top = ((c - st['gap_mm']) / (c - st['gap_mm'] - st['width_mm']) - 1) * 100
@@ -173,11 +173,20 @@ def chart_reference(out, plt):
                     ax.plot(run['nodes'] / 1e3, (s['coils'][coil[0]][coil[1]] / ref - 1) * 100, lw=0, color=color,
                             marker=marker, ms=9, markeredgecolor=SURFACE, markeredgewidth=2, label=label)
                     label = None
-    style(ax, 'mesh nodes (thousands)', 'difference from the reference (%)')
+    style(ax, 'mesh nodes (thousands): more nodes, a finer mesh', "Elmer's value against the textbook's (%)")
     lo = min(-4.5, ax.get_ylim()[0])
     ax.set_ylim(lo, 1.3)
-    ax.set_title('Elmer against the closed forms at 10 kHz, as the mesh is refined', color=INK, fontsize=10.5,
-                 loc='left')
+    ax.set_title('How close Elmer gets to the textbook inductance as the mesh gets finer (10 kHz)', color=INK,
+                 fontsize=10.5, loc='left')
+    n1, v1 = e01[-1]
+    ax.annotate('a finer mesh in the copper alone\nlevels off about 3 % low', xy=(n1 / 1e3, (v1 / l_ref - 1) * 100),
+                xytext=(n1 / 1e3 - 2, -4.2), fontsize=8, color=INK2, ha='right',
+                arrowprops=dict(arrowstyle='-', color=INK2, lw=0.8))
+    if finer:
+        nf, vf = sorted(finer)[-1]
+        ax.annotate('a finer mesh in the air round the copper\ncloses most of the gap', xy=(nf / 1e3, (vf / l_ref - 1) * 100),
+                    xytext=(nf / 1e3, -2.2), fontsize=8, color=INK2, ha='right',
+                    arrowprops=dict(arrowstyle='-', color=INK2, lw=0.8))
     ax.legend(frameon=False, fontsize=8.5, labelcolor=INK2, loc='upper left', bbox_to_anchor=(0, -0.14), ncol=1)
     fig.tight_layout()
     save(fig, out / 'elmerresults_1_against_reference.webp')
@@ -195,9 +204,9 @@ def chart_residual(out, plt, data):
             ax.semilogy(it, res, color=color, lw=2, ls=ls, label=label)
     ax.axhline(1e-7, color=INK2, lw=1, ls=':')
     ax.text(3000, 1.15e-7, 'tolerance 1e-7', color=INK2, fontsize=8, ha='right', va='bottom')
-    style(ax, 'iteration', 'relative residual')
-    ax.set_title('E01: the linear solve stalls at 10 kHz and converges at 3.5 MHz', color=INK, fontsize=10.5,
-                 loc='left')
+    style(ax, 'iteration', 'relative residual: how far from solved (lower is better)')
+    ax.set_title('E01: how the solver closes in on the answer: done at 3.5 MHz, stalls at 10 kHz', color=INK,
+                 fontsize=10.5, loc='left')
     ax.legend(frameon=False, fontsize=8.5, labelcolor=INK2, loc='upper right')
     fig.tight_layout()
     (out / 'E01_circular_loop').mkdir(parents=True, exist_ok=True)
@@ -278,8 +287,9 @@ def chart_fields(out, plt):
     cb.set_label('|B| (µT)', color=INK2, fontsize=9)
     cb.ax.tick_params(colors=INK2, labelsize=8)
     centre = mag[np.argmin(np.abs(z)), np.argmin(np.abs(y - cy))]
-    ax.set_title(f'|B| at 3.5 MHz for 1 A, cut through the axis; {centre:.0f} µT at the centre', color=INK,
-                 fontsize=9.5, loc='left')
+    ax.set_title(f'The magnetic field B round the loop, 1 A at 3.5 MHz, cut through its middle:\nit circles the '
+                 f'trace (orange) and threads the loop, {centre:.0f} µT at the centre', color=INK, fontsize=9.5,
+                 loc='left')
 
     yc = cy + r                                               # the trace crosses x = cx here, inner edge first
     across = np.linspace(yc - w / 2 + 0.002, yc + w / 2 - 0.002, 81)
@@ -301,7 +311,8 @@ def chart_fields(out, plt):
     bx.set_xlim(0, w)
     bx.set_ylim(0, None)
     bx.legend(frameon=False, fontsize=8.5, labelcolor=INK2, loc='upper center')
-    bx.set_title('|J| across the trace, mid-copper', color=INK, fontsize=9.5, loc='left')
+    bx.set_title('The current across the 0.5 mm trace:\neven at 10 kHz, at the edges at 3.5 MHz',
+                 color=INK, fontsize=9.5, loc='left')
     (out / 'E01_circular_loop').mkdir(parents=True, exist_ok=True)
     save(fig, out / 'E01_circular_loop' / 'elmerresults_3_fields.webp')
     plt.close(fig)
