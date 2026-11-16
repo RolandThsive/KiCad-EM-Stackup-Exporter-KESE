@@ -38,7 +38,7 @@ import time
 from pathlib import Path
 
 import numpy as np
-from shapely.geometry import LineString, Point
+from shapely.geometry import LineString, Point, Polygon
 
 HERE = Path(__file__).resolve().parent              # <board>/Elmer Simulation
 BOARD = HERE.parent                                 # <board>: README.md, Boards/, Elmer Simulation/, Results/
@@ -81,6 +81,10 @@ SETTINGS = dict(
     rx_vias={'SIN': model_xy(SPEC['terminals'][SIN_NET]['via_xy_kicad']),
              'COS': model_xy(SPEC['terminals'][COS_NET]['via_xy_kicad'])},
     via_void_radius_mm=SPEC['terminals'][SIN_NET].get('void_radius_mm', 0.3),   # the barrel left out inside this
+    rx_cuts={name: dict(xy=model_xy(c['xy_kicad']), along=(c['along_kicad'][0], -c['along_kicad'][1]),
+                        gap_mm=c['gap_mm'], half_width_mm=c['half_width_mm'])
+             for name, net in (('SIN', SIN_NET), ('COS', COS_NET))
+             if (c := SPEC['terminals'][net].get('cut'))},    # with rx_port 'cut': where each top trace is cut
     sheet_half_mm=0.8 * SPEC['terminals']['TX'].get('end_radius_mm', 0.1),    # half a TX sheet's line
     rx_sheet_half_mm=0.25 / 0.3 * SPEC['terminals'][SIN_NET].get('void_radius_mm', 0.3),   # half an RX sheet's
     level=SPEC.get('mesh_level', 0.75),   # the copper's mesh sizes divided by this (S2's checks used 1.0)
@@ -117,9 +121,36 @@ def rotor_parts(export, angle_deg, gap, body='ROTOR'):
     return parts
 
 
+RX_PORT = SPEC.get('rx_port', 'via')   # how SIN and COS are opened: 'via' (a via left out) or 'cut' (a gap cut
+                                       # across a top trace, at test_spec.json's 'cut' of each)
+assert RX_PORT == 'via' or len(SETTINGS['rx_cuts']) == 2, "rx_port 'cut' needs a 'cut' for SIN and COS in test_spec.json"
+
+
+def cut_box(name):
+    """The cut across SIN's or COS's top trace (model coordinates): gap_mm along the trace, wider than it."""
+    c = SETTINGS['rx_cuts'][name]
+    d = np.asarray(c['along'], float) / np.linalg.norm(c['along'])
+    n = np.array([-d[1], d[0]])
+    o, hl, hw = np.asarray(c['xy']), c['gap_mm'] / 2, c['half_width_mm']
+    return Polygon([o - hl * d - hw * n, o + hl * d - hw * n, o + hl * d + hw * n, o - hl * d + hw * n])
+
+
+def top_copper(stator, name):
+    """The z span of a coil's top copper (F.Cu)."""
+    lo, hi = next(p.zrange for p in stator if p.body == name)
+    lv = sorted({z for p in stator if p.body == name for z in p.levels()})
+    return max(z for z in lv if lo < z < hi), hi
+
+
 def voids(stator):
-    """Air parts that leave the two RX vias' barrels out (priority over copper), through the dielectric."""
+    """Air parts (priority over copper) that open SIN and COS: each RX via's barrel left out through the dielectric,
+    or with RX_PORT 'cut', a gap cut through the top copper of each."""
     out = []
+    if RX_PORT == 'cut':
+        for name in ('SIN', 'COS'):
+            out.append(M.Part(name=f'{name}_cut', body='AIR', role='void', priority=4,
+                              fixed={top_copper(stator, name): cut_box(name)}))
+        return out
     for name, xy in SETTINGS['rx_vias'].items():
         lo, hi = next(p.zrange for p in stator if p.body == name)
         lv = sorted({z for p in stator if p.body == name for z in p.levels()})
@@ -152,15 +183,26 @@ def build(stator_export, rotor_export, angle, gap, level, log=print):
     sheets['TX'] = LineString([(tx[0] - h, tx[1]), (tx[0] + h, tx[1])])
     for name, xy in SETTINGS['rx_vias'].items():
         h2 = SETTINGS['rx_sheet_half_mm']
-        sheets[name] = LineString([(xy[0] - h2, xy[1]), (xy[0] + h2, xy[1])])
+        if RX_PORT == 'via':
+            sheets[name] = LineString([(xy[0] - h2, xy[1]), (xy[0] + h2, xy[1])])
     s = dict(st)
     for k in ('h_edge', 'h_in', 'dz_copper'):
         s[k] = st[k] / level
-    m = M.build_mesh(lay, M.Settings(**s), extra_lines=list(sheets.values()), log=log)
+    cuts = ([LineString(cut_box(n).exterior.coords) for n in ('SIN', 'COS')] if RX_PORT == 'cut' else [])
+    m = M.build_mesh(lay, M.Settings(**s), extra_lines=list(sheets.values()) + cuts, log=log)   # cuts: drawn in
     t, tp, q, qp = M.outer_faces(m)
     bnds = [('OUTER', t, tp, q, qp)]
     for name in ('TX', 'SIN', 'COS'):
         k = m['names'].index(name)
+        if name != 'TX' and RX_PORT == 'cut':           # E01's port: the two cut faces, the sheet across the gap's floor
+            box = cut_box(name)
+            f0, f1 = top_copper([p for p in lay.parts if p.role != 'void'], name)
+            e1, e2 = P.electrodes(m, k, box, f0, f1)
+            ts, tsp = P.sheet_at_level(m, box, f0)
+            bnds += [(f'{name}_T1', *e1), (f'{name}_T2', *e2), (f'{name}_SHEET', ts, tsp, q[:0], qp[:0])]
+            log(f'{name}: cut electrodes {len(e1[0]) + len(e1[2])} and {len(e2[0]) + len(e2[2])} faces, sheet '
+                f'{len(ts)} faces at z {f0:.4f}')
+            continue
         if name == 'TX':
             hole = Point(tx).buffer(SETTINGS['tx_end_radius_mm'], 32)
         else:
@@ -369,12 +411,13 @@ def merge(res_file, others, log=print):
     res_file, then redraw. An angle already in res_file keeps its solve; a file with another gap, mesh level or
     solver setting is refused, so that only like solves share a curve."""
     result = json.loads(res_file.read_text()) if res_file.exists() else None
-    same = ('gap_mm', 'level', 'ilu_order')
+    same = ('gap_mm', 'level', 'ilu_order', 'rx_port')
     for f in others:
         other = json.loads(f.read_text())
         if result is None:
             result = dict(other, runs=[])
-        bad = [k for k in same if other.get(k) != result.get(k)]
+        dflt = dict(rx_port='via')                       # results from before rx_port was recorded
+        bad = [k for k in same if other.get(k, dflt.get(k)) != result.get(k, dflt.get(k))]
         if bad or solver_key(other) != solver_key(result):
             log(f'{f.name}: not merged, its ' + (', '.join(bad) or 'solver setting') + ' differs')
             continue
@@ -450,7 +493,8 @@ def main():
     se = S.kese_geometry(BOARD / SETTINGS['stator'], GEOMETRY, log=log)   # exported again only if the board changed
     re_ = S.kese_geometry(BOARD / SETTINGS['rotor'], GEOMETRY, log=log)
     result = json.loads(res_file.read_text()) if res_file.exists() else dict(
-        board=BOARD.name, gap_mm=a.gap, level=a.level, ilu_order=a.ilu, settings=SETTINGS, expected=EXPECTED,
+        board=BOARD.name, gap_mm=a.gap, level=a.level, ilu_order=a.ilu, rx_port=RX_PORT, settings=SETTINGS,
+        expected=EXPECTED,
         solver=dict(method=a.method, degree=a.degree, restart=a.restart, max_iter=a.max_iter, lines=lines,
                     elmer_bin=str(E.ELMER_BIN)),
         versions=S.versions(), runs=[])
