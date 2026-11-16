@@ -28,8 +28,8 @@ question needs.
 | Memory | 4.9 GB | 0.15 GB |
 | Against the reference | L 3 % under Grover's open ring at level 1, rising with the mesh (a lower bound) | εeff within 1.5 % of Kirschning–Jansen, Z0 within 2 % of Hammerstad–Jensen |
 
-Elmer pays for its unstructured mesh and its iterative solve with about 57 to 60 kB per node; openEMS
-needs only a few hundred bytes per cell, but its cells must resolve the copper's edges and its run
+Elmer pays for its unstructured mesh and its iterative solve with about 59 kB per node; openEMS
+needs only 60 to 103 bytes per cell (its CPU and default engines), but its cells must resolve the copper's edges and its run
 must last until the field has died away. Elmer's run time grows with the number of frequencies,
 openEMS's with the length of the ring-down: a resonance of high Q takes openEMS hundreds of thousands
 of time steps.

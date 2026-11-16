@@ -56,7 +56,9 @@ FDTD cell of openEMS, and would force the volume mesh of Elmer or CalculiX down 
   `BooleanFragments` make the touching solids share their faces, export the mesh in gmsh's format, and
   convert it with `ElmerGrid 14 2 board.msh -autoclean`. Elmer takes coordinates as they come, so with a
   mesh in mm set `Coordinate Scaling = 0.001` (Model > Setup in ElmerGUI) for SI units. gmsh reads STEP
-  in mm unless `Geometry.OCCTargetUnit` says otherwise.
+  in mm unless `Geometry.OCCTargetUnit` says otherwise. The Elmer bridge on the `Elmer_Integration`
+  branch takes another way: it asks the `elmer` preset for STL files as well and builds a 2.5D mesh
+  of its own from them ([Elmer FEM Workflow](Elmer-FEM-Workflow.md)).
 - **CalculiX**: gmsh meshes the STEP file and saves an Abaqus `.inp` (`Mesh.Format = 39`), which `ccx`
   runs; or CalculiX's own pre-processor cgx imports the STEP file. CalculiX does heat and stress, not
   electromagnetics; its units are the ones you keep consistent (the mesh is in mm).

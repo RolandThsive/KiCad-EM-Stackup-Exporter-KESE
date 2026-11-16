@@ -49,7 +49,7 @@ generator and 2 to 7 % by the quasi-static reference.
 
 S2 runs first. Its mesh is built and checked: 17 layers of wedges through the stator, 1,781,549
 wedges and 479,322 tetrahedra, 979,420 nodes, and every coil's electrodes found (TX 24 and 24 faces,
-SIN 233 and 233, COS 203 and 203). Elmer needs 57 to 60 kB of memory per node on the test boards
+SIN 233 and 233, COS 203 and 203). Elmer needs about 59 kB of memory per node on the test boards
 ([Elmer FEM Hardware](Elmer-FEM-Hardware.md)), so S2 needs about 59 GB, four times the test
 machine's 15 GB. Every coil board is therefore held for a bigger PC; the memory below scales S2's
 mesh by each stator's length of copper, about 61 GB per metre.

@@ -51,7 +51,7 @@ driven coil or 0.0 for a sensing one. The electrodes and the sheet are found in 
 | `domain_half_height_mm` | `60.0` | The air reaches this far above and below z = 0 |
 | `freqs_hz` | `[1e4, 3.5e6]` | One solve per frequency. Choose one low enough that the current is uniform (here 10 kHz, skin depth 0.66 mm) and the working frequency |
 | `order` | `1` | Edge element order. `--order 2` uses second-order (quadratic) elements, with several times the unknowns and the memory |
-| `levels` | `[1.0, 1.5, 2.0]` | The mesh ladder: each level divides `h_edge`, `h_in` and `dz_copper` by itself. A run of two or three levels shows how far the answer still moves with the mesh |
+| `levels` | `[0.75, 1.0, 1.3]` | The mesh ladder: each level divides `h_edge`, `h_in` and `dz_copper` by itself; the air's sizes and grading stay as they are. A run of two or three levels shows how far the answer still moves with the copper's mesh |
 
 ## 27.4 The Mesh
 
@@ -82,12 +82,22 @@ These go to `mesh25d.Settings` (in `SETTINGS['mesh']`):
 
 | Option | What it does |
 |---|---|
-| `--levels 1 1.5` | Only these mesh levels |
+| `--levels 1 1.3` | Only these mesh levels |
 | `--freqs 1e4` | Only these frequencies |
 | `--order 2` | Second-order elements, written to `results_order2.json` |
 | `--max-iter 1500` | Another iteration cap |
 | `--out DIR` | Working files somewhere else than `case/` |
 | `--results FILE` | Results somewhere else than `results.json` |
+
+E01's script has four more, for studies of the model itself; copy them into a script of your own when
+you need them:
+
+| Option | What it does |
+|---|---|
+| `--mesh KEY=VALUE` | Changes one setting of `SETTINGS['mesh']` for this run, such as `--mesh grade=0.25`; repeat it for more. Give the run its own `--results` and `--out` |
+| `--domain-mm R` | The air domain's radius and half height, mm |
+| `--fields` | Also writes the fields as VTU files, for pictures (large) |
+| `--mesh-only` | Builds the meshes and prints their size, and solves nothing |
 
 A rerun of the same level adds to `results.json`: a solve at a frequency already there is replaced,
 the others are kept.
@@ -95,7 +105,7 @@ the others are kept.
 ## 27.7 Before A Large Board
 
 Check the memory first ([Elmer FEM Hardware](Elmer-FEM-Hardware.md)): build the mesh alone (the S2
-script has `--mesh-only`), read its node count from the log, and multiply by the measured memory per
+and E01 scripts have `--mesh-only`), read its node count from the log, and multiply by the measured memory per
 node. A run that does not fit is better held for a larger machine than run on a coarser mesh whose
 error is unknown.
 

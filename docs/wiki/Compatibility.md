@@ -78,9 +78,9 @@ Research underway.
 
 | Tool | Route | Notes |
 |---|---|---|
-| openEMS / CSXCAD | STL per part, mm (`--for openems`) with `materials.json` | [openEMS Workflow](OpenEMS-Workflow.md) |
+| openEMS / CSXCAD | STL per part, mm (`--for openems`) with `materials.json` | [openEMS Workflow](OpenEMS-Workflow.md) by hand, or the openEMS bridge ([OpenEMS Implementation Introduction](OpenEMS-Implementation-Introduction.md)) |
 | FreeCAD | STEP, mm, KiCad origin (`--for freecad`) | one solid per net and dielectric, each under its own name, to assign materials; holes and round edges as true circles and cylinders. Its FEM workbench meshes the solids and runs Elmer or CalculiX |
-| Elmer (ElmerFEM) | STEP, mm, KiCad origin, no finish (`--for elmer`), meshed by gmsh | neither ElmerGrid nor ElmerSolver reads STEP or STL: gmsh meshes the solids (`BooleanFragments` for shared faces), `ElmerGrid 14 2` converts the mesh, and `Coordinate Scaling = 0.001` makes mm SI ([Choosing An Export](Choosing-An-Export.md#102-the-presets)) |
+| Elmer (ElmerFEM) | STEP, mm, KiCad origin, no finish (`--for elmer`), meshed by gmsh | neither ElmerGrid nor ElmerSolver reads STEP or STL: gmsh meshes the solids (`BooleanFragments` for shared faces), `ElmerGrid 14 2` converts the mesh, and `Coordinate Scaling = 0.001` makes mm SI ([Choosing An Export](Choosing-An-Export.md#102-the-presets)); the Elmer bridge builds its own mesh from the preset's STL files instead ([Elmer FEM Introduction](Elmer-FEM-Introduction.md)) |
 | CalculiX | STEP, mm, KiCad origin, no finish, copper per layer (`--for calculix`) | heat and stress, no electromagnetics; gmsh meshes the solids into an Abaqus `.inp`, or cgx imports the STEP file |
 | gmsh | STEP, mm | meshes the solids for a solver |
 | Blender | GLB (`--for blender_glb`) or OBJ with its `.mtl` (`--for blender_obj`): visual mode, metres, centred, `flat`, solder mask and silkscreen on | the importers turn Y-up into Z-up, so the board lies with `F.Cu` up |

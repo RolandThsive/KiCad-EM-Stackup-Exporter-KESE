@@ -59,8 +59,11 @@ stack-ups ([Stack-Up Model](Stack-Up-Model.md), [Board](Board.md#121-dielectric-
 <a name="2522-comparison-with-measured-boards-and-reference-solvers"></a>
 ### 44.2.2 Comparison With Measured Boards And Reference Solvers
 
-- **Today:** not done. The routes into openEMS, and into Elmer and CalculiX through FreeCAD, are
-  also still to be confirmed on each tool ([openEMS Workflow](OpenEMS-Workflow.md)).
+- **Today:** against reference formulas only. The Elmer bridge has run two proof boards against
+  Grover's and Maxwell's inductance formulas ([Elmer FEM Test Board Results](Elmer-FEM-Test-Board-Results.md)),
+  and the openEMS bridge one microstrip against Hammerstad and Jensen's and Kirschning and Jansen's
+  ([OpenEMS Implementation Test Board Results](OpenEMS-Implementation-Test-Board-Results.md)). No
+  measured board yet, and the route into CalculiX through FreeCAD is still to be confirmed.
 - **Planned:** a small set of test structures, designed in KiCad, exported by KESE, simulated, and
   compared with two things: the same structure in an independent reference solver, and the
   fabricated board measured with a vector network analyser (S-parameters) and, for impedance, a
@@ -148,8 +151,11 @@ In no fixed order:
 - **A web application.**
 - **A desktop application.**
 - **Maybe a KiCad add-on.**
-- **Integration with openEMS** ([openEMS Workflow](OpenEMS-Workflow.md) describes today's manual
-  route) **or other solvers.** One way: an openEMS model whose overlapping primitives are settled
+- **Integration with openEMS** ([openEMS Workflow](OpenEMS-Workflow.md) describes the manual
+  route) **or other solvers.** Begun: the Elmer and openEMS bridges run KESE as it is and live on
+  their own branches ([Elmer FEM Introduction](Elmer-FEM-Introduction.md),
+  [OpenEMS Implementation Introduction](OpenEMS-Implementation-Introduction.md)); FastHenry is to
+  follow on a third. Another way, still open: an openEMS model whose overlapping primitives are settled
   by CSXCAD's priorities, with no booleans, which would skip stages 3, 4 and 6 for openEMS users. It
   is a new output with its own physics checks, and the finish shells and the conformal mask do not
   map onto priorities.

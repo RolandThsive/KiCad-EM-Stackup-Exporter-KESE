@@ -6,9 +6,11 @@ dielectric, in mm, on KiCad's origin, with `materials.json` carrying εr, tanδ,
 were measured at, how they change with frequency, and the copper's conductivity.
 
 > [!NOTE]
-> This page describes the intended route and a script skeleton built from the CSXCAD Python
-> API. A full openEMS simulation of a KESE export, compared against a measurement, is planned
-> but has not been done yet. Research underway.
+> This page describes the manual route and a script skeleton built from the CSXCAD Python API.
+> The openEMS bridge on the `OpenEMS_Integration` branch automates it (mesh, ports, preflight,
+> read-back) and has been checked on a microstrip against closed-form references; see
+> [OpenEMS Implementation Introduction](OpenEMS-Implementation-Introduction.md). A comparison
+> against a measured board is still planned.
 
 ## 23.1 Export
 
