@@ -10,6 +10,9 @@ runs under case/) and Results/ (what the runs give, and what was expected).
     python simulation.py --step 10                every 10 degrees over one turn of the rotor's pattern
     python simulation.py --plot                   only redraw the curves from the results already written
     python simulation.py --angles 0 --mesh-only   build one mesh and say its size, to judge the memory
+    python simulation.py --gap 0.5 --merge a.json b.json
+                                                  add the solves in results files from other machines (each one
+                                                  ran some angles of this gap) to this gap's results, and redraw
 
 The TX carries 1 A; SIN and COS carry none, so their voltages are the EMFs the TX induces in them, given as mutual
 inductances (EMF = 2 pi f M x 1 A: 1 nH is 22 mV at 3.5 MHz). The rotor repeats itself every 360 / sectors degrees,
@@ -342,6 +345,43 @@ def plot(res_file, log=print):
     report(log)
 
 
+def solver_key(result):
+    """What makes two solves alike: the Krylov method and its settings and any extra solver lines (not where Elmer
+    is installed)."""
+    d = result.get('solver') or {}
+    return (d.get('method', 'BiCGStabL'), d.get('degree', 4), d.get('restart', 50),
+            d.get('max_iter', SETTINGS['max_iter']), tuple(d.get('lines', [])))
+
+
+def merge(res_file, others, log=print):
+    """Add the solves of other results files of the same gap (say, one angle each from machines run in parallel) to
+    res_file, then redraw. An angle already in res_file keeps its solve; a file with another gap, mesh level or
+    solver setting is refused, so that only like solves share a curve."""
+    result = json.loads(res_file.read_text()) if res_file.exists() else None
+    same = ('gap_mm', 'level', 'ilu_order')
+    for f in others:
+        other = json.loads(f.read_text())
+        if result is None:
+            result = dict(other, runs=[])
+        bad = [k for k in same if other.get(k) != result.get(k)]
+        if bad or solver_key(other) != solver_key(result):
+            log(f'{f.name}: not merged, its ' + (', '.join(bad) or 'solver setting') + ' differs')
+            continue
+        if other.get('versions', {}).get('elmer') != result.get('versions', {}).get('elmer'):
+            log(f"{f.name}: Elmer {other.get('versions', {}).get('elmer')} against "
+                f"{result.get('versions', {}).get('elmer')} here; merged, but say so")
+        have = {r['rotor_deg'] for r in result['runs']}
+        new = [r for r in other['runs'] if r['rotor_deg'] not in have]
+        result['runs'] += new
+        log(f'{f.name}: added ' + (', '.join(str(r['rotor_deg']) for r in new) or 'nothing new'))
+    if result is None:
+        return
+    result['runs'].sort(key=lambda r: -1 if r['rotor_deg'] == 'away' else r['rotor_deg'])
+    res_file.parent.mkdir(parents=True, exist_ok=True)
+    res_file.write_text(json.dumps(result, indent=1))
+    plot(res_file, log)
+
+
 def main():
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument('--angles', type=float, nargs='*', default=None)
@@ -360,6 +400,8 @@ def main():
     ap.add_argument('--trial', default='', help='a name for a trial setting: its results stay in case/')
     ap.add_argument('--mesh-only', action='store_true', help='build and write the meshes, solve nothing')
     ap.add_argument('--plot', action='store_true', help='only redraw the table and the curves')
+    ap.add_argument('--merge', nargs='+', metavar='JSON', default=None,
+                    help="other machines' results files of this gap: their solves are added to this gap's results")
     ap.add_argument('--out', default=str(HERE / 'case'))
     a = ap.parse_args()
     tagg = (f'gap{a.gap:g}mm' + ('' if a.level == SETTINGS['level'] else f'_level{a.level:g}')
@@ -374,6 +416,9 @@ def main():
     trial = tagg != f'gap{a.gap:g}mm'                   # another level or solver setting: a trial, kept in case/
     res_file = (Path(a.out) if trial else RESULTS / gap_folder(a.gap)) / f'results_{tagg}.json'
     res_file.parent.mkdir(parents=True, exist_ok=True)
+    if a.merge:
+        merge(res_file, [Path(f) for f in a.merge])
+        return
     if a.plot:
         plot(res_file)
         return
