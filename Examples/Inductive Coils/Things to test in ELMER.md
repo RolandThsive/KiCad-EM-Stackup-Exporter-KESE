@@ -41,22 +41,7 @@ tools/
 SOLVER_VALIDATION_GUIDE.md            the long background document (physics, method, sources)
 ```
 
-The ten boards, in the order to bring the bridge up (smallest mesh first):
-
-| Board | Set(s) | OD / bore (mm) | Layers, board | Why it is in the pack |
-|---|---|---|---|---|
-| S2_4x_OD40_2L_small | 4x | 40 / 20 | 2, 1.6 mm | the smallest single board: **start here** |
-| S1_1x_OD54_2L_baseline | 1x | 54 / 30 | 2, 1.6 mm | the generator's default; simplest geometry; used for the mesh study |
-| D2_1x8x_OD40_small | 1x + 8x | 40 / 10 | 4, 1.6 mm | the smallest dual board |
-| S3_8x_OD59_4L_series_wideband | 8x | 59 / 22 | 4, 1.6 mm | TX on inner layers, series TX |
-| S4_16x_OD54_2L_fingers | 16x | 54 / 30 | 2, 1.6 mm | finest pitch, bridging fingers |
-| S5_4x_OD98_cosine_r_2subcoils_spiralTX | 4x | 98 / 58 | 2, 1.6 mm | biggest board, spiral TX |
-| D1_1x16x_OD54_Renesas_R145_size | 1x + 16x | 54 / 15 | 4, 3.2 mm | the dual default, thick board |
-| D3_1x16x_OD59_fitted_bands | 1x + 16x | 59 / 17 | 4, 1.6 mm | typical dual |
-| D4_2x8x_OD59_parallel_TX | 2x + 8x | 59 / 17 | 4, 1.6 mm | parallel TX wiring |
-| D5_1x16x_OD74_ID40_large | 1x + 16x | 74 / 40 | 4, 1.6 mm | large thin ring |
-
-The 16x boards have 9,000 ... 15,000 trace segments; their meshes are the big ones.
+The ten boards this brief was written for (S1 to S5 and D1 to D5) were taken out of the branch on 16 November and will be added back later. The checks below apply to any board here; the boards now in the branch are listed in [README.md](README.md).
 
 ## 2. What the KESE model must contain for Elmer
 

@@ -1,6 +1,6 @@
 # Inductive Coils
 
-Ten inductive angle-encoder boards from the [Sinusoidal Coil Generator](https://github.com/RolandThsive/Sinusoidal-Inductive-Encoders-Coil-Generator), one folder each. A **stator** board carries one TX coil and two RX coils (SIN and COS) per coil set; the single boards (S) have one set, the dual boards (D) two, set 1 inside and set 2 outside. A **rotor** board with copper sectors sits 1.0 mm above it. The TX is driven at 3 to 5 MHz, the rotor's eddy currents change how much of the TX's field reaches each RX coil, and the two RX voltages follow the sine and cosine of the rotor's angle.
+Inductive angle-encoder boards from the [Sinusoidal Coil Generator](https://github.com/RolandThsive/Sinusoidal-Inductive-Encoders-Coil-Generator), one folder each. A **stator** board carries one TX coil and two RX coils (SIN and COS). A **rotor** board with copper sectors sits 1.0 mm above it by default. The TX is driven at 3 to 5 MHz, the rotor's eddy currents change how much of the TX's field reaches each RX coil, and the two RX voltages follow the sine and cosine of the rotor's angle.
 
 ## What this branch checks
 
@@ -8,26 +8,23 @@ At 3 to 5 MHz the boards are about 1/2000 of a wavelength across, so the physics
 
 The most important single number is C2: how much the rotor lowers the TX's inductance. The generator says 12 to 21 %, the quasi-static reference 2 to 7 %. Elmer settles it, after it has proved itself on eddy-current cases with known answers (TEAM Problem 7, and a coil above a copper plate against the exact Dodd and Deeds solution).
 
-## The ten boards, in the order they run
+## The boards here
 
-| # | Board | What it tests | Stator copper | Solves | Memory | Runs on | Status |
-|---|---|---|---|---|---|---|---|
-| 1 | [S2_4x_OD40_2L_small](S2_4x_OD40_2L_small/) | the smallest single board, the cheapest model: first | 0.96 m | 9 | about 59 GB (measured mesh) | 64 GB | held for a bigger PC |
-| 2 | [S1_1x_OD54_2L_baseline](S1_1x_OD54_2L_baseline/) | the generator's default, the simplest geometry; Elmer's mesh study C0 | 0.92 m | 9 | about 55 GB | 64 GB | held for a bigger PC |
-| 3 | [D2_1x8x_OD40_small](D2_1x8x_OD40_small/) | the smallest dual board, tight spacing between the sets | 1.56 m | 18 | about 95 GB | 128 GB | held for a bigger PC |
-| 4 | [S3_8x_OD59_4L_series_wideband](S3_8x_OD59_4L_series_wideband/) | TX on the inner layers, far from the rotor; a wide band | 1.91 m | 9 | about 115 GB | 128 GB | held for a bigger PC |
-| 5 | [S4_16x_OD54_2L_fingers](S4_16x_OD54_2L_fingers/) | the finest single pitch, and the bridging fingers | 1.30 m | 9 | about 80 GB | 128 GB | held for a bigger PC |
-| 6 | [S5_4x_OD98_cosine_r_2subcoils_spiralTX](S5_4x_OD98_cosine_r_2subcoils_spiralTX/) | the other RX profile, sub-coils, a spiral TX, the biggest board | 3.41 m | 9 | about 210 GB | 256 GB | held for a bigger PC |
-| 7 | [D1_1x16x_OD54_Renesas_R145_size](D1_1x16x_OD54_Renesas_R145_size/) | the dual default, a 3.2 mm board | 3.14 m | 18 | about 190 GB | 256 GB | held for a bigger PC |
-| 8 | [D3_1x16x_OD59_fitted_bands](D3_1x16x_OD59_fitted_bands/) | a typical dual board | 3.07 m | 18 | about 190 GB | 256 GB | held for a bigger PC |
-| 9 | [D4_2x8x_OD59_parallel_TX](D4_2x8x_OD59_parallel_TX/) | parallel TX wiring, a 2-period set | 2.74 m | 18 | about 170 GB | 256 GB | held for a bigger PC |
-| 10 | [D5_1x16x_OD74_ID40_large](D5_1x16x_OD74_ID40_large/) | a large thin ring | 3.96 m | 18 | about 240 GB | 256 GB | held for a bigger PC |
+All of them are S0 and boards made from it, small enough that a solve runs on a 15 GB machine (the 1.5 and 2 mm gaps and the three-turn board with a swapfile):
 
-The memory rests on measurements: S2's mesh at level 1 has 979,420 nodes, and the proof boards E01 and E02 measured about 59 kB per node with the iterative solver, so S2 needs about 59 GB. The other boards scale S2 by their length of copper, about 61 GB per metre. Every board needs more than the 4-core, 15 GB test machine and is held for a bigger PC.
+| Board | What it is |
+|---|---|
+| [S0_1x_OD21_2L_tiny](S0_1x_OD21_2L_tiny/) | S0: 21 mm across, one period per turn, the TX one turn on each layer, a half-ring rotor |
+| [S0_1x_OD21_2L_tiny_TXtop](S0_1x_OD21_2L_tiny_TXtop/) | the same board with the TX two turns on the top layer (the generator narrows the RX band to fit them) |
+| [S0_1x_OD22_2L_tiny_TXtop](S0_1x_OD22_2L_tiny_TXtop/) | the TX two turns on the top layer around S0's own RX coils, the board grown to 22.2 mm |
+| [S0_1x_OD22_2L_tiny_TXtop_Cut](S0_1x_OD22_2L_tiny_TXtop_Cut/) | the 22 mm board with SIN and COS opened by a cut in a top trace instead of a left-out via |
+| [S0_1x_OD23_2L_tiny_TX3top_Cut](S0_1x_OD23_2L_tiny_TX3top_Cut/) | the TX three turns on the top layer around S0's RX coils, 23.4 mm, opened by cuts |
+
+The ten larger generator boards (S1 to S5 and D1 to D5) were taken out on 16 November and will be added back later. Measured before that: S2's mesh at level 1 had 979,420 nodes, about 59 GB a solve, and the others scaled at about 61 GB per metre of stator copper, so every one of them needs a bigger PC than the test machine.
 
 ## A small board for the SIN and COS curves
 
-[S0_1x_OD21_2L_tiny](S0_1x_OD21_2L_tiny/) is not one of the ten: it is the smallest coil set the generator makes that is still a whole sensor (OD 21 mm, one period per turn, a TX of one turn per layer, a half-ring rotor), made so that the SIN and COS curves over a full turn of the rotor, at any air gap, run on the 15 GB test machine (about 12 GB a solve). Its README says how it was made and how to run it.
+[S0_1x_OD21_2L_tiny](S0_1x_OD21_2L_tiny/) is the smallest coil set the generator makes that is still a whole sensor (OD 21 mm, one period per turn, a TX of one turn per layer, a half-ring rotor), made so that the SIN and COS curves over a full turn of the rotor, at any air gap, run on the 15 GB test machine (about 12 GB a solve). Its README says how it was made and how to run it.
 
 Any other single coil set from the generator is set up the same way, in one command: [`new_coil.py`](new_coil.py) turns the generator's output folder into a folder here laid out as S0's (`Boards/` straight from the generator, `Elmer Simulation/` with S0's `simulation.py`, `angle_error.py`, `make_charts.py` and `rig_picture.py`, which run it as they are, `Results/`, and `3D_Geometry/` with KESE's export of the boards once the first run makes it), and prints the memory a solve needs. The steps are in [S0's README](S0_1x_OD21_2L_tiny/README.md#the-workflow-for-any-generated-coil).
 
@@ -48,7 +45,7 @@ The brief's marks stand, except five that as written either cannot fail or canno
 * The rotation axis is KiCad's point (100, 100), z points up from the stator towards the rotor, and the top face of the stator's F.Cu copper is z = 0. KiCad's y axis points down, which flips every rotation sense in a y-up model; each results file says which convention the run used.
 * The rotor is `Rotor.kicad_pcb` as drawn, not mirrored, copper side down, its copper face at z = +1.0 mm. Rotor angle θ turns it about the axis by (x, y) → (x cos θ − y sin θ, x sin θ + y cos θ) in KiCad's coordinates.
 * Both boards get solder mask on both faces: 20 µm, εr 3.8, tan δ 0.02, vias tented.
-* Each coil is opened where the real board gets its leads (`test_spec.json` → `terminals`): the TX at its two stacked ends, an RX at its cut point, or, on S2, S4 and some dual sets, by leaving one via out.
+* Each coil is opened where the real board gets its leads (`test_spec.json` → `terminals`): the TX at its two stacked ends, an RX by leaving one layer-change via out, or, in the `_Cut` folders, by a 0.2 mm cut across a top trace.
 
 ## What is not here
 
@@ -56,4 +53,4 @@ The generator pack's tools (`quasistatic_reference.py`, `kicad_to_openems.py` an
 
 ## Licence
 
-These boards are output of the Sinusoidal Coil Generator, for non-commercial use only. See [LICENSE.md](LICENSE.md); this branch's GPL-3.0 covers only the scripts here (`new_coil.py`, and each board's `simulation.py`, `angle_error.py`, `make_charts.py` and `rig_picture.py`).
+These boards are output of the Sinusoidal Coil Generator, for non-commercial use only. See [LICENSE.md](LICENSE.md); this branch's GPL-3.0 covers only the scripts here (`new_coil.py`, and each board's `simulation.py`, `angle_error.py`, `make_charts.py`, `rig_picture.py` and `angle_setup.py`).

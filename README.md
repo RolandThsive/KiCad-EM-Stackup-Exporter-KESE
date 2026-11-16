@@ -19,7 +19,7 @@ section, what was expected and what came out.  The inductive encoder coils are i
 | `Solver_Elmer/` | Empty on purpose: build Elmer in here by hand (see its README) |
 | `bridge/` | The bridge, in Python, general to any board: `geometry.py` (KESE's parts), `mesh25d.py` (the 2.5D mesh), `ports.py` (each coil's electrodes and port sheet), `elmer_case.py` (the case and its circuits), `study.py` (running Elmer and reading it back). Its [README](bridge/README.md) says what it does, how to call it and where it stops |
 | `Examples/E01_circular_loop/`, `Examples/E02_coaxial_loops/` | The two proof boards, each with its board, `make_board.py`, `simulation.py`, `README.md` and `results.md` |
-| `Examples/Inductive Coils/` | The ten inductive encoder boards from the Sinusoidal Coil Generator, one folder each (non-commercial licence, see its LICENSE.md) |
+| `Examples/Inductive Coils/` | Inductive encoder boards from the Sinusoidal Coil Generator, one folder each: S0 and the boards made from it (non-commercial licence, see its LICENSE.md) |
 | `Examples/kicad_writer.py`, `Examples/references.py` | Shared by the proof boards, and not part of the bridge: a small KiCad 7 board writer for their `make_board.py`, and the textbook values they are checked against |
 | `Examples/` | More examples, one folder each, to come |
 
@@ -32,22 +32,11 @@ section, what was expected and what came out.  The inductive encoder coils are i
 
 ## Left to test on a more powerful PC
 
-Every coil board. S2, the smallest, was meshed: 979,420 nodes at level 1. The proof boards measured
-about 59 kB per node with the iterative solver, so S2 needs about 59 GB, four times the test
-machine's 15 GB. The others scale S2 by each stator's length of copper, about 61 GB per metre.
-
-| Board | Stator copper | Solves | Memory | Needs |
-|---|---|---|---|---|
-| S2_4x_OD40_2L_small | 0.96 m | 9 | about 59 GB (measured mesh) | 64 GB |
-| S1_1x_OD54_2L_baseline | 0.92 m | 9 | about 55 GB | 64 GB |
-| D2_1x8x_OD40_small | 1.56 m | 18 | about 95 GB | 128 GB |
-| S3_8x_OD59_4L_series_wideband | 1.91 m | 9 | about 115 GB | 128 GB |
-| S4_16x_OD54_2L_fingers | 1.30 m | 9 | about 80 GB | 128 GB |
-| S5_4x_OD98_cosine_r_2subcoils_spiralTX | 3.41 m | 9 | about 210 GB | 256 GB |
-| D1_1x16x_OD54_Renesas_R145_size | 3.14 m | 18 | about 190 GB | 256 GB |
-| D3_1x16x_OD59_fitted_bands | 3.07 m | 18 | about 190 GB | 256 GB |
-| D4_2x8x_OD59_parallel_TX | 2.74 m | 18 | about 170 GB | 256 GB |
-| D5_1x16x_OD74_ID40_large | 3.96 m | 18 | about 240 GB | 256 GB |
+The ten larger coil boards from the generator (S1 to S5 and D1 to D5) were taken out of the branch on
+16 November and will be added back later. Before that, S2, the smallest, was meshed: 979,420 nodes at
+level 1. The proof boards measured about 59 kB per node with the iterative solver, so S2 needs about
+59 GB, four times the test machine's 15 GB, and the others scale with each stator's length of copper,
+about 61 GB per metre.
 
 A coarser mesh or a direct solver on a machine with more memory changes these numbers; the wiki's
 *Elmer FEM Hardware* page has the details.

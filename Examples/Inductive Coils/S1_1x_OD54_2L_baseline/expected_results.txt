@@ -1,6 +1,0 @@
-== S1_1x_OD54_2L_baseline  (air gap 1.0 mm, 2 layers, board 1.6 mm)
-   rotor ring r 15.53 ... 24.30 mm, 1 sector(s), duty 0.500
-   TX: L 1.149 uH rotor away, 1.101 uH with rotor (-4.1 %)
-   TX->1            M0   +0.276 nH   amplitude  16.645 nH  period 360.00 deg  phase  -137.7  h2 0.02% h3 1.09% h5 0.03%
-   TX->2            M0   +0.271 nH   amplitude  16.645 nH  period 360.00 deg  phase   -47.7  h2 0.02% h3 1.09% h5 0.03%
-   TX:2/1: dphi +90.0 deg, sin/cos 1.000, offset/amp +0.016 / +0.017, err 0.66 el.deg (raw 1.78), Vrx/Vtx 0.0151

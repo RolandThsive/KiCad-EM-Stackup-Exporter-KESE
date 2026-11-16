@@ -1,6 +1,0 @@
-== S4_16x_OD54_2L_fingers  (air gap 1.0 mm, 2 layers, board 1.6 mm)
-   rotor ring r 15.53 ... 24.30 mm, 16 sector(s), duty 0.500
-   TX: L 1.149 uH rotor away, 1.129 uH with rotor (-1.7 %)
-   TX->1            M0   +0.102 nH   amplitude  10.620 nH  period 22.50 deg  phase  +125.1  h2 0.12% h3 0.24% h5 0.01%
-   TX->2            M0   -0.029 nH   amplitude  10.620 nH  period 22.50 deg  phase  -144.9  h2 0.12% h3 0.24% h5 0.01%
-   TX:2/1: dphi +90.0 deg, sin/cos 1.000, offset/amp -0.003 / +0.010, err 0.23 el.deg (raw 0.65), Vrx/Vtx 0.0094
