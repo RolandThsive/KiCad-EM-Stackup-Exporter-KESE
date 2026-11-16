@@ -292,7 +292,7 @@ def preflight(lines, parts, ports, spec, info, log=print):
             rows.append((f'largest {name} cell in the air under lambda0/15', big_out <= lam0 / 15,
                          f'{big_out:.3f} mm, lambda0 {lam0:.2f} mm (lambda0/15 = {lam0 / 15:.3f})'))
         r = np.maximum(d[1:] / d[:-1], d[:-1] / d[1:]).max() if len(d) > 1 else 1.0
-        rows.append((f'neighbouring {name} cells within 2:1', r <= 2.0, f'largest ratio {r:.2f}'))
+        rows.append((f'neighbouring {name} cells within 2:1', r <= 2.005, f'largest ratio {r:.2f}'))   # 2.00 as printed: lines are kept to 1 nm
     cells = int(np.prod([len(l) - 1 for l in lines.values()]))
     rows.append(('cells', True, f'{cells:,} ({" x ".join(str(len(l) - 1) for l in lines.values())})'))
     for pt in ports:
@@ -401,14 +401,17 @@ def thick_strip_probes(port, pt):
 
 
 def run(FDTD, sim_path, threads=4, engine='cpu', log=print):
-    """Run openEMS, quietly, in sim_path. Returns the seconds taken."""
+    """Run openEMS, quietly, in sim_path. Returns (seconds taken, peak memory of this process in GB). openEMS
+    runs inside this Python process, so the peak includes Python and the model's set-up as well as the solver."""
+    import resource
     import time
     t0 = time.time()
     kw = dict(engine=engine) if engine else {}
     FDTD.Run(str(sim_path), cleanup=True, verbose=0, numThreads=threads, **kw)
     dt = time.time() - t0
-    log(f'openEMS: {dt:.0f} s')
-    return dt
+    peak = resource.getrusage(resource.RUSAGE_SELF).ru_maxrss / 1048576     # kB on Linux
+    log(f'openEMS: {dt:.0f} s, peak memory {peak:.2f} GB')
+    return dt, peak
 
 
 def port_results(port_objs, sim_path, freqs, excited, ref_impedance=None):

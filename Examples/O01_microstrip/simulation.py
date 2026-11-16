@@ -2,8 +2,11 @@
 characteristic impedance and effective permittivity from openEMS, against Hammerstad and Jensen's formulas with
 the strip's thickness, and Kirschning and Jansen's dispersion of eps_eff.
 
-    python simulation.py                 the run (a few minutes on 4 cores)
-    python simulation.py --h-edge 0.1    a finer mesh at the strip's edges
+    python simulation.py                   the run (a few minutes on 4 cores)
+    python simulation.py --h-edge 0.1      a finer mesh at the strip's edges, written to results_h0.1.json
+    python simulation.py --dielectric-cells 12   twice the cells through the core, to results_h0.2_z12.json
+    python simulation.py --engine default  openEMS's default engine instead of its CPU engine
+    python simulation.py --reuse           read the last run again without running openEMS
 
 Each port measures its line's impedance and propagation constant from its own probes, so the line is checked
 without any reference impedance. Port 1 is excited; S11 and S21 are the one column that run gives.
@@ -77,6 +80,8 @@ def kirschning_jansen_eps(eps0, w, h, er, f_hz):
 def main():
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument('--h-edge', type=float, default=SETTINGS['mesh']['h_edge'])
+    ap.add_argument('--dielectric-cells', type=int, default=SETTINGS['mesh']['dielectric_cells'],
+                    help='cells through the core, at least')
     ap.add_argument('--out', default=str(HERE / 'case'))
     ap.add_argument('--reuse', action='store_true', help='read the last run again instead of running openEMS')
     ap.add_argument('--engine', default=SETTINGS['engine'] or 'default',
@@ -110,19 +115,23 @@ def main():
                            fs, ms, fr, top, pad),
              F.MSLPortSpec(2, 'RF', gnd.net, (x1, cy - w / 2, z_strip), (x1 - pl, cy + w / 2, z_ref), 'x', 0.0,
                            fs, ms, fr, top, pad)]
-    spec = F.MeshSpec(**{**SETTINGS['mesh'], 'h_edge': a.h_edge})
+    spec = F.MeshSpec(**{**SETTINGS['mesh'], 'h_edge': a.h_edge, 'dielectric_cells': a.dielectric_cells})
     spec.extra = {0: [x0, x1, x0 + ms, x1 - ms]}
     lines, info = F.make_mesh(parts, spec)
     checks = F.preflight(lines, parts, ports, spec, info, log=log)
     FDTD, CSX, pobj = F.build(parts, lines, ports, SETTINGS['f0_hz'], SETTINGS['fc_hz'], SETTINGS['boundaries'],
                               end_criteria=SETTINGS['end_criteria'], max_steps=SETTINGS['max_steps'])
-    tag = f'h{a.h_edge:g}' + ('' if a.engine == (SETTINGS['engine'] or 'default') else f'_{a.engine}')
+    tag = (f'h{a.h_edge:g}' + ('' if a.dielectric_cells == SETTINGS['mesh']['dielectric_cells'] else
+                               f'_z{a.dielectric_cells}')
+           + ('' if a.engine == (SETTINGS['engine'] or 'default') else f'_{a.engine}'))
     sim = out / tag
+    name = 'results.json' if tag == f"h{SETTINGS['mesh']['h_edge']:g}" else f'results_{tag}.json'
     if a.reuse and (sim / 'port_ut_1B').exists():
-        seconds = json.loads((HERE / 'results.json').read_text()).get('seconds', 0.0) if (HERE / 'results.json').exists() else 0.0
+        last = json.loads((HERE / name).read_text()) if (HERE / name).exists() else {}
+        seconds, peak_gb = last.get('seconds', 0.0), last.get('peak_memory_gb')
         log(f'reusing the run in {sim}')
     else:
-        seconds = F.run(FDTD, sim, threads=SETTINGS['threads'], engine=engine, log=log)
+        seconds, peak_gb = F.run(FDTD, sim, threads=SETTINGS['threads'], engine=engine, log=log)
     freqs = np.linspace(1e9, 5e9, 41)
     res = F.port_results(pobj, sim, freqs, excited=1)
 
@@ -137,8 +146,14 @@ def main():
     res['eps_eff_from_S21'] = [float(v) for v in eps_s21]
     res['line_between_planes_mm'] = l_planes * 1e3
     z0_hj, eps_hj = hammerstad_jensen(w, h, t, er)
-    ref = dict(h_mm=h, t_mm=t, eps_r=er, Z0_ohm=z0_hj, eps_eff_static=eps_hj,
-               eps_eff=[kirschning_jansen_eps(eps_hj, w, h, er, f) for f in freqs])
+    eps_kj = [kirschning_jansen_eps(eps_hj, w, h, er, f) for f in freqs]
+    # the dielectric's loss over the line between the planes (Pozar, Microwave Engineering, section 3.8). The bridge
+    # gives the dielectric a conductivity that matches its tan delta at f0, so at f its tan delta is tan_d f0 / f
+    td = board.props.get('loss_tangent', 0.0)
+    loss_db = [8.686 * l_planes * (2 * math.pi * f / F.C0) * er * (e - 1) * (td * SETTINGS['f0_hz'] / f)
+               / (2 * math.sqrt(e) * (er - 1)) for f, e in zip(freqs, eps_kj)]
+    ref = dict(h_mm=h, t_mm=t, eps_r=er, tan_d=td, Z0_ohm=z0_hj, eps_eff_static=eps_hj, eps_eff=eps_kj,
+               dielectric_loss_db=loss_db)
     report = []
     for f in SETTINGS['f_report_hz']:
         k = int(np.argmin(abs(freqs - f)))
@@ -147,18 +162,20 @@ def main():
         report.append(dict(f_hz=float(freqs[k]), Z0_ohm=zl[k][0] if zl else None, eps_eff=ee[k] if ee else None,
                            eps_eff_from_S21=float(eps_s21[k]),
                            Z0_ref_ohm=z0_hj, eps_eff_ref=ref['eps_eff'][k],
-                           S21_db=20 * math.log10(abs(complex(*res['S']['S21'][k]))),
+                           S21_db=20 * math.log10(abs(complex(*res['S']['S21'][k]))), S21_ref_db=-loss_db[k],
                            S11_db=20 * math.log10(max(abs(complex(*res['S']['S11'][k])), 1e-12))))
         r = report[-1]
         log(f"{r['f_hz'] / 1e9:.2f} GHz: Z0 {r['Z0_ohm']:.2f} ohm (ref {z0_hj:.2f}), eps_eff {r['eps_eff']:.4f} from "
-            f"the port, {r['eps_eff_from_S21']:.4f} from S21 (ref {r['eps_eff_ref']:.4f}), S21 {r['S21_db']:.3f} dB, "
+            f"the port, {r['eps_eff_from_S21']:.4f} from S21 (ref {r['eps_eff_ref']:.4f}), S21 {r['S21_db']:.3f} dB "
+            f"(dielectric loss alone {r['S21_ref_db']:.3f} dB), "
             f"S11 {r['S11_db']:.1f} dB")
-    result = dict(board=SETTINGS['board'], settings=SETTINGS, h_edge_mm=a.h_edge, engine=a.engine, versions=F.versions(),
+    result = dict(board=SETTINGS['board'], settings=SETTINGS, h_edge_mm=a.h_edge,
+                  dielectric_cells=a.dielectric_cells, engine=a.engine, versions=F.versions(),
                   code=F.code_hashes(__file__), preflight=[dict(check=c, ok=bool(o), detail=d) for c, o, d in checks],
                   mesh=dict(cells={n: len(lines[i]) - 1 for i, n in enumerate('xyz')}, **{k: v for k, v in info.items()
                                                                                          if k != 'box'}),
-                  seconds=round(seconds, 1), references=ref, report=report, data=res)
-    name = 'results.json' if tag == f"h{SETTINGS['mesh']['h_edge']:g}" else f'results_{tag}.json'
+                  seconds=round(seconds, 1), peak_memory_gb=peak_gb and round(peak_gb, 2), references=ref,
+                  report=report, data=res)
     (HERE / name).write_text(json.dumps(result, indent=1))
     log(f'wrote {HERE / name}')
 
