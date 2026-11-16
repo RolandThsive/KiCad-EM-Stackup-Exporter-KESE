@@ -4,8 +4,10 @@
 #
 #     bash bridge/setup_machine.sh            (JOBS=2 bash bridge/setup_machine.sh to build with fewer jobs)
 #
-# Safe to run again: Elmer is built only if Solver_Elmer/install/bin/ElmerSolver is missing. KESE is not needed for a
-# board whose 3D_Geometry/ is committed. This script is GPL-3.0 as the bridge.
+# Safe to run again: Elmer is set up only if Solver_Elmer/install/bin/ElmerSolver is missing. If ELMER_TARBALL names a
+# packed Solver_Elmer/install of the same release built on Ubuntu 24.04 (tar -czf ... install), it is unpacked
+# instead of building (the install finds its libraries relative to itself). KESE is not needed for a board whose
+# 3D_Geometry/ is committed. This script is GPL-3.0 as the bridge.
 set -euo pipefail
 ROOT="$(cd "$(dirname "$0")/.." && pwd)"
 E="$ROOT/Solver_Elmer"
@@ -16,6 +18,11 @@ if [ ! -x "$E/install/bin/ElmerSolver" ]; then
   $SUDO apt-get update -q
   $SUDO apt-get install -y -q build-essential cmake git gfortran libopenmpi-dev libblas-dev liblapack-dev \
     libopenblas-dev libmumps-dev libparmetis-dev libscalapack-openmpi-dev python3-venv
+  if [ -n "${ELMER_TARBALL:-}" ] && [ -f "$ELMER_TARBALL" ]; then
+    tar -xzf "$ELMER_TARBALL" -C "$E"
+  fi
+fi
+if [ ! -x "$E/install/bin/ElmerSolver" ]; then
   [ -d "$E/elmerfem" ] || git clone -q --depth 1 --branch release-26.2.1 https://github.com/ElmerCSC/elmerfem.git \
     "$E/elmerfem"
   mkdir -p "$E/build"
