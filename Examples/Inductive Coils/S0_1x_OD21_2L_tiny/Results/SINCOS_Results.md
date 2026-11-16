@@ -16,6 +16,7 @@ Best sine fit: SIN amplitude 2.151 nH, offset -0.077 nH, phase -133.8°; COS amp
 
 | Rotor | M SIN (nH) | M COS (nH) | Angle error | L TX (nH) | R TX (mΩ) | Iterations | Residual | Memory | Time |
 |---|---|---|---|---|---|---|---|---|---|
+| away | 0.0591 | -0.1012 |  | 110.885 | 438.92 | 1500 | 4.5e-04 | 11.4 GB | 28 min |
 | 0° | -1.4155 | 1.4914 | -7.07° | 103.084 | 358.78 | 1500 | 4.0e-04 | 11.4 GB | 25 min |
 | 45° | -2.5211 | 0.0766 | -5.50° | 108.283 | 332.80 | 1500 | 2.8e-04 | 11.4 GB | 26 min |
 | 90° | -1.6190 | -1.6767 | +0.69° | 107.701 | 333.28 | 1500 | 2.7e-04 | 11.5 GB | 24 min |
@@ -29,7 +30,7 @@ Best sine fit: SIN amplitude 2.151 nH, offset -0.077 nH, phase -133.8°; COS amp
 
 ## Against the expectation
 
-The generator estimates the TX at 132 nH with the rotor away and 109 nH with it (its drop with the rotor is an upper estimate). Elmer gives 98.6 to 108.3 nH with the rotor at 1 mm. The expected values are in [expected_results.json](expected_results.json).
+The generator estimates the TX at 132 nH with the rotor away and 109 nH with it (its drop with the rotor is an upper estimate). Elmer gives 110.9 nH with the rotor away, and 98.6 to 108.3 nH with the rotor at 1 mm. The expected values are in [expected_results.json](expected_results.json).
 
 ## How the angle error is worked out
 
