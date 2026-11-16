@@ -171,8 +171,11 @@ def kicad_to_model(x, y):
 
 # ------------------------------------------------------------------------------------------------ mesh
 def edge_lines(parts, h_edge, axis):
-    """Mesh lines at the copper's straight edges along one axis (0: x, 1: y), by the thirds rule: a line h/3
-    outside the metal and one 2h/3 inside, so the field's edge singularity falls between them."""
+    """Mesh lines at the copper's straight edges along one axis (0: x, 1: y), by the thirds rule of openEMS's
+    tutorials: a line h/3 inside the metal and one 2h/3 outside, so the field's edge singularity falls between
+    them and the metal ends cleanly on the inner line. The other way round (h/3 outside, 2h/3 inside) the metal
+    snaps onto the outer line through a half-covered cell, and a microstrip in vacuum then reads eps_eff 1.07 to
+    1.16 where it must read 1 (measured on a shielded strip; the openEMS way gives 0.99 to 1.03)."""
     out = []
     for p in parts:
         if p.role != 'copper' or p.polys is None:
@@ -192,7 +195,7 @@ def edge_lines(parts, h_edge, axis):
                     probe[axis] += 1e-4
                     inside_plus = poly.contains(shapely.Point(probe))
                     s = 1.0 if inside_plus else -1.0                  # the metal's side
-                    out += [a[axis] - s * h_edge / 3, a[axis] + s * 2 * h_edge / 3]
+                    out += [a[axis] + s * h_edge / 3, a[axis] - s * 2 * h_edge / 3]
     return out
 
 
