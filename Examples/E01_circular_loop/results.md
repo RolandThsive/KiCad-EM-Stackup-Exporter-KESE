@@ -78,6 +78,7 @@ level 0.75, at 10 kHz and 3000 iterations:
 | The ladder's level 0.75 | `results.json` | 59,782 | 53.91 nH | −3.7 % | 25 min, 3.39 GB, residual 5.9e-7 |
 | The air graded twice as finely: `grade` 0.25, `tet_grade` 0.35 | `results_grade.json` | 88,760 | 55.12 nH | −1.55 % | 18 min, 5.11 GB, residual 2.2e-7 |
 | Four times as finely: `grade` 0.125, `tet_grade` 0.175 | `results_grade2.json` | 166,471 | 55.73 nH | −0.46 % | 36 min, 9.73 GB, residual 1.5e-6 |
+| The air domain twice as big: 120 mm in radius and half height, the ladder's grading | `results_domain120.json` | 86,518 | 54.05 nH | −3.5 % | 18 min, 4.91 GB, residual 6.7e-7 |
 
 * **The air's mesh holds most of the gap.** Grading the air twice as finely raised L by 2.3 %, with
   about as many nodes as level 1 (85,712), whose L is 3.2 % low. Most of a thin trace's inductance is
@@ -85,6 +86,9 @@ level 0.75, at 10 kHz and 3000 iterations:
 * **Each halving of the grading halves the change**: +2.3 %, then +1.1 %. The air's mesh is
   converging, but at four times as fine it is not done: if the pattern holds, the next halving adds
   about 0.5 %. The copper's ladder adds its own +0.7 % from level 0.75 to 1.3.
+* **The domain holds L down by about 0.3 %.** Doubling it raised L by 0.26 %. Outside the loop the
+  field falls off as a dipole's, so the energy beyond the boundary goes as its radius cubed: the
+  120 mm domain keeps about an eighth of the 60 mm domain's error.
 * **The reference can no longer tell the rest apart.** Its open loop's share stops the current at the
   round ends' centres; the current runs on into the half-discs, so the open loop's L lies between
   55.99 nH and 56.44 nH (the current taken to the gap's faces). At −0.46 % Elmer's L is just under
