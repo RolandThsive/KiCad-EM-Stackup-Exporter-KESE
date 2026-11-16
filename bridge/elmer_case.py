@@ -74,6 +74,8 @@ class Case:
     restart: int = 50
     tol: float = 1e-9
     max_iter: int = 6000
+    ilu_order: int | None = None      # None: the circuit preconditioner as in Elmer's tests (no ILU); 0, 1, 2: an ILU
+                                      # of that order on the field's block (Linear System ILU Order), more memory
     save_fields: bool = False         # write the VTU (big); the scalars are always saved
     extra_calc: list = field(default_factory=list)
 
@@ -178,6 +180,8 @@ def write_sif(case: Case, folder, freq_hz, name='case'):
               '  Linear System Preconditioning = Circuit', f'  Linear System Convergence Tolerance = {case.tol!r}',
               f'  Linear System Max Iterations = {case.max_iter}', '  Linear System Residual Output = 50',
               '  Linear System Abort Not Converged = False']
+        if case.ilu_order is not None:
+            L.append(f'  Linear System ILU Order = {int(case.ilu_order)}')
     L += ['  Steady State Convergence Tolerance = 1e-6', 'End', '',
           'Solver 4', '  Equation = "MGDynamicsCalc"', '  Procedure = "MagnetoDynamics" "MagnetoDynamicsCalcFields"',
           '  Potential Variable = String "A"', '  Calculate Current Density = Logical True',

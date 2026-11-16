@@ -46,7 +46,7 @@ The generator's two warnings, both expected: the TX tank's parallel resistance w
 
 Elmer, magnetic (WhitneyAVHarmonicSolver with edge elements), every coil a massive coil of the circuit module, the same case as S2: the TX carries 1 A at 3.5 MHz, SIN and COS are open, and their voltages over the TX's current give their mutual inductances M. The EMF is 2πfM × 1 A: 1 nH is 22 mV at 3.5 MHz.
 
-One solve per rotor angle, 0 to 330° in 30° steps by default (`--step 10` for every 10°), and one with the rotor away. The rotor is a half ring, so its outline turns with it and every angle gets its own mesh; the stator's mesh therefore differs a little between angles, which shows as small noise on the curves. The best sine fit and the rms of what it leaves are written with the results, so that noise is measured, not guessed.
+One solve per rotor angle, 0 to 315° in 45° steps by default (8 angles; `--step 10` for every 10°), and one with the rotor away. The rotor is a half ring, so its outline turns with it and every angle gets its own mesh; the stator's mesh therefore differs a little between angles, which shows as small noise on the curves. The best sine fit and the rms of what it leaves are written with the results, so that noise is measured, not guessed.
 
 | Mesh level | Nodes | Memory a solve | Fits |
 |---|---|---|---|
@@ -55,7 +55,7 @@ One solve per rotor angle, 0 to 330° in 30° steps by default (`--step 10` for 
 
 ## Running it
 
-    python simulation.py                   # the rotor away, then 0 to 330 degrees every 30, at a 1 mm gap
+    python simulation.py                   # the rotor away, then 0 to 315 degrees every 45, at a 1 mm gap
     python simulation.py --gap 0.5         # the same at 0.5 mm
     python simulation.py --step 10         # every 10 degrees
     python simulation.py --plot            # redraw the table and the curves from the results

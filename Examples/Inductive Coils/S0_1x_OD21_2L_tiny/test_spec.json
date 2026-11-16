@@ -28,7 +28,7 @@
         "how": "leave this via out (opens the loop); the terminal goes between its two pads"}
  },
  "sets": [{"set": 1, "tx": "TX", "sin": "2", "cos": "1", "f_Hz": 3500000.0, "loops": 1, "electrical_period_mech_deg": 360.0,
-           "sweep_angles_mech_deg": [0, 30, 60, 90, 120, 150, 180, 210, 240, 270, 300, 330]}],
+           "sweep_angles_mech_deg": [0, 45, 90, 135, 180, 225, 270, 315]}],
  "expected": {"tx": {"L_away_gen_H": 1.32e-07, "L_rotor_gen_H": 1.09e-07, "R_dc_ohm": 0.23,
                      "note": "the generator's estimate; its drop with the rotor is an upper estimate"},
               "coupling": "SIN and COS follow sin and cos of the rotor angle, one period per turn, 90 degrees apart"}

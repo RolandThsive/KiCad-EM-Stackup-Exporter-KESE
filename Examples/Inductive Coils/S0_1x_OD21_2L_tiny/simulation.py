@@ -3,7 +3,7 @@
     python simulation.py                          the rotor away, then every angle in SETTINGS['angles_deg']
     python simulation.py --gap 0.5                the same at a 0.5 mm air gap (copper to copper)
     python simulation.py --angles 0 90 --no-away  the rotor at 0 and 90 degrees only
-    python simulation.py --step 10                every 10 degrees from 0 to 350
+    python simulation.py --step 10                every 10 degrees from 0 to 350 instead of every 45
     python simulation.py --plot                   only redraw the curves from the results already written
 
 The board is one electrical period per turn, so a full turn of the rotor gives one period of each curve: SIN
@@ -68,6 +68,7 @@ SETTINGS = dict(
     threads=4,
     tol=1e-7,
     max_iter=1500,
+    ilu_order=None,                    # None: the circuit preconditioner alone, as in Elmer's tests; 0: with ILU0
 )
 
 
@@ -165,6 +166,24 @@ def fit(angles, values):
                 rms_left=float(np.sqrt(np.mean(rest ** 2))) if len(y) > 3 else None)
 
 
+def through_points(angles, values, tt):
+    """The smooth periodic curve through every point: with the angles evenly spread over a turn, the trigonometric
+    interpolation (the lowest harmonics that pass through every point exactly); otherwise the best sine fit."""
+    a = np.asarray(angles, float)
+    y = np.asarray(values, float)
+    n = len(a)
+    if n >= 3 and np.allclose(a, np.arange(n) * 360.0 / n):
+        c = np.fft.rfft(y) / n
+        t = np.radians(tt)
+        out = np.full_like(t, c[0].real)
+        for k in range(1, len(c)):
+            w = 1.0 if (n % 2 == 0 and k == n // 2) else 2.0
+            out += w * (c[k] * np.exp(1j * k * t)).real
+        return out, 'interpolated through the points'
+    f = fit(angles, values)
+    return f['offset'] + f['amplitude'] * np.sin(np.radians(tt) + np.radians(f['phase_deg'])), 'best sine fit'
+
+
 def plot(res_file, log=print):
     """The table and the curves of one results file: M of SIN and COS (nH) against the rotor's angle."""
     result = json.loads(res_file.read_text())
@@ -193,16 +212,16 @@ def plot(res_file, log=print):
     fig, ax = plt.subplots(figsize=(8, 4.6), dpi=200)
     fig.patch.set_facecolor(surface)
     ax.set_facecolor(surface)
-    tt = np.linspace(0, 360, 361)
+    tt = np.linspace(0, 360, 721)
+    how = None
     for name, y, col in (('SIN', msin, blue), ('COS', mcos, orange)):
-        fz = fits[name]
         if len(y) >= 3:
-            ax.plot(tt, fz['offset'] + fz['amplitude'] * np.sin(np.radians(tt) + np.radians(fz['phase_deg'])),
-                    color=col, lw=1.0, alpha=0.45, zorder=2)
-        ax.plot(ang, y, color=col, lw=2, marker='o', ms=6, mec=surface, mew=1.5, label=f'{name} (Elmer)',
+            yy, how = through_points(ang, y, tt)
+            ax.plot(tt, yy, color=col, lw=1.6, ls=(0, (5, 3)), zorder=2)
+            ax.annotate(name, (360, yy[-1]), xytext=(6, 0), textcoords='offset points', va='center', color=ink,
+                        fontsize=9, annotation_clip=False)
+        ax.plot(ang, y, ls='none', color=col, marker='o', ms=7, mec=surface, mew=1.5, label=f'{name}, one Elmer solve',
                 zorder=3)
-        ax.annotate(name, (ang[-1], y[-1]), xytext=(8, 0), textcoords='offset points', va='center', color=ink,
-                    fontsize=9)
     ax.axhline(0, color=ink2, lw=0.8, zorder=1)
     ax.set_xlim(0, 360)
     ax.set_xticks(range(0, 361, 45))
@@ -210,14 +229,15 @@ def plot(res_file, log=print):
     ax.set_ylabel('M from the TX (nH)', color=ink2)
     gap, level = result['gap_mm'], result['level']
     ax.set_title(f'{result["board"]}: SIN and COS against the rotor angle, {gap:g} mm air gap', color=ink,
-                 fontsize=11, loc='left')
-    ax.text(0, 1.01, f'1 A at {SETTINGS["freq_hz"] / 1e6:g} MHz in the TX; thin lines: the best sine fit; '
-            f'mesh level {level:g}', transform=ax.transAxes, fontsize=8, color=ink2, va='bottom')
+                 fontsize=11, loc='left', pad=20)
+    ax.text(0, 1.015, f'1 A at {SETTINGS["freq_hz"] / 1e6:g} MHz in the TX; dots: one solve each; dashes: '
+            f'{how or "drawn once three angles are solved"}; mesh level {level:g}', transform=ax.transAxes,
+            fontsize=8, color=ink2, va='bottom')
     ax.grid(True, color=grid, lw=0.6)
     for s in ax.spines.values():
         s.set_visible(False)
     ax.tick_params(colors=ink2, labelsize=8)
-    ax.legend(frameon=False, fontsize=8, labelcolor=ink, loc='upper right')
+    ax.legend(frameon=False, fontsize=8, labelcolor=ink, loc='upper center', bbox_to_anchor=(0.5, -0.14), ncol=2)
     fig.tight_layout()
     fig.savefig(f'{stem}.png', facecolor=surface)
     plt.close(fig)
@@ -233,11 +253,13 @@ def main():
     ap.add_argument('--gap', type=float, default=SETTINGS['air_gap_mm'], help='air gap, copper to copper (mm)')
     ap.add_argument('--no-away', action='store_true', help='skip the run with the rotor away')
     ap.add_argument('--level', type=float, default=SETTINGS['level'])
+    ap.add_argument('--ilu', type=int, default=SETTINGS['ilu_order'], help='ILU order for the preconditioner')
     ap.add_argument('--mesh-only', action='store_true', help='build and write the meshes, solve nothing')
     ap.add_argument('--plot', action='store_true', help='only redraw the table and the curves')
     ap.add_argument('--out', default=str(HERE / 'case'))
     a = ap.parse_args()
-    tagg = f'gap{a.gap:g}mm' + ('' if a.level == SETTINGS['level'] else f'_level{a.level:g}')
+    tagg = (f'gap{a.gap:g}mm' + ('' if a.level == SETTINGS['level'] else f'_level{a.level:g}')
+            + ('' if a.ilu == SETTINGS['ilu_order'] else f'_ilu{a.ilu}'))
     res_file = HERE / f'results_{tagg}.json'
     if a.plot:
         plot(res_file)
@@ -259,7 +281,7 @@ def main():
     se = S.kese_export(HERE / SETTINGS['stator'], out / 'kese', log=log)
     re_ = S.kese_export(HERE / SETTINGS['rotor'], out / 'kese', log=log)
     result = json.loads(res_file.read_text()) if res_file.exists() else dict(
-        board=HERE.name, gap_mm=a.gap, level=a.level, settings=SETTINGS, expected=SPEC['expected'],
+        board=HERE.name, gap_mm=a.gap, level=a.level, ilu_order=a.ilu, settings=SETTINGS, expected=SPEC['expected'],
         versions=S.versions(), runs=[])
     done = {r['rotor_deg'] for r in result['runs']}
     runs = ([] if a.no_away else [None]) + angles
@@ -282,7 +304,7 @@ def main():
         bodies = {n: (cu if n in ('TX', 'SIN', 'COS', 'ROTOR') else E.Material('Air' if n == 'AIR' else n.title()))
                   for n in m['names']}
         case = E.Case(mesh_dir=folder / 'mesh_files', bodies=bodies, order=1, tol=SETTINGS['tol'],
-                      max_iter=SETTINGS['max_iter'],
+                      max_iter=SETTINGS['max_iter'], ilu_order=a.ilu,
                       coils=[E.Coil('TX', 'TX', 'TX_T1', 'TX_T2', 'TX_SHEET', 1.0),
                              E.Coil('SIN', 'SIN', 'SIN_T1', 'SIN_T2', 'SIN_SHEET', 0.0),
                              E.Coil('COS', 'COS', 'COS_T1', 'COS_T2', 'COS_SHEET', 0.0)])
