@@ -186,4 +186,4 @@ In Octave the STL is read only when openEMS runs, from inside the simulation fol
 
 | Previous | Next |
 |:---|---:|
-| [KiCad And Solver Compatibility](Compatibility.md) | [Glossary](Glossary.md) |
+| [KiCad And Solver Compatibility](Compatibility.md) | [Elmer FEM Introduction](Elmer-FEM-Introduction.md) |

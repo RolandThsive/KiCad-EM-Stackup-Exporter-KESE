@@ -1,4 +1,4 @@
-# 24. Glossary
+# 43. Glossary
 
 The words this wiki uses, grouped by subject, each with the section that explains it in full.
 Terms from KiCad and PCB manufacturing keep their usual meaning; names in `code` are KESE's own
@@ -6,14 +6,15 @@ parameters, roles and files.
 
 | Subject | Terms |
 |---|---|
-| [24.1 Board And Stack-Up](#241-board-and-stack-up) | Core, Dielectric, Djordjevic-Sarkar model, εr (epsilon_r), tanδ (loss tangent), Foil, Laminate, Mid-plane, Plies fused, Plies separate, Ply, Prepreg, Resin fill, Spec frequency, Stack-up, Stack-up line |
-| [24.2 Holes And Vias](#242-holes-and-vias) | Annular ring, Backdrill, Barrel, Blind / buried via, Bore, Capped via, Castellation, Counterbore, Countersink, Covered via, Filled via, IPC-4761, Microvia, NPTH, Plugged via, PTH, Tenting, Through via, Via resin |
-| [24.3 Copper](#243-copper) | Conductivity, Copper grouping, Edge plating, Etch factor, Hammerstad model, Hatched fill, Huray model, Net, Outer plating, Surface roughness, Treated face |
-| [24.4 Solder Mask, Silkscreen And Finish](#244-solder-mask-silkscreen-and-finish) | Conformal mask, Finish, LPI, Mask opening, Mask web, Pull-back, Silkscreen |
-| [24.5 How KESE Builds A Model](#245-how-kese-builds-a-model) | Board frame, Part, Pinch point, Prism, Role, Skin, Slice, Snap grid, Stage, Verifier |
-| [24.6 Output And Files](#246-output-and-files) | GLB, materials.json, OBJ, Preset, report.txt, Run folder, Simulation mode, STEP, STL, Visual mode, Z-fighting |
+| [43.1 Board And Stack-Up](#431-board-and-stack-up) | Core, Dielectric, Djordjevic-Sarkar model, εr (epsilon_r), tanδ (loss tangent), Foil, Laminate, Mid-plane, Plies fused, Plies separate, Ply, Prepreg, Resin fill, Spec frequency, Stack-up, Stack-up line |
+| [43.2 Holes And Vias](#432-holes-and-vias) | Annular ring, Backdrill, Barrel, Blind / buried via, Bore, Capped via, Castellation, Counterbore, Countersink, Covered via, Filled via, IPC-4761, Microvia, NPTH, Plugged via, PTH, Tenting, Through via, Via resin |
+| [43.3 Copper](#433-copper) | Conductivity, Copper grouping, Edge plating, Etch factor, Hammerstad model, Hatched fill, Huray model, Net, Outer plating, Surface roughness, Treated face |
+| [43.4 Solder Mask, Silkscreen And Finish](#434-solder-mask-silkscreen-and-finish) | Conformal mask, Finish, LPI, Mask opening, Mask web, Pull-back, Silkscreen |
+| [43.5 How KESE Builds A Model](#435-how-kese-builds-a-model) | Board frame, Part, Pinch point, Prism, Role, Skin, Slice, Snap grid, Stage, Verifier |
+| [43.6 Output And Files](#436-output-and-files) | GLB, materials.json, OBJ, Preset, report.txt, Run folder, Simulation mode, STEP, STL, Visual mode, Z-fighting |
 
-## 24.1 Board And Stack-Up
+<a name="241-board-and-stack-up"></a>
+## 43.1 Board And Stack-Up
 
 The layers a board is made of and the numbers that describe them.
 
@@ -36,7 +37,8 @@ The layers a board is made of and the numbers that describe them.
 | **tanδ (loss tangent)** | Dielectric loss of a material: the share of a signal's energy it turns into heat each cycle. | [21.3](Material-Properties.md#213-the-default-numbers) |
 | **εr (epsilon_r)** | Relative permittivity of a dielectric: how much it slows a signal and adds capacitance. From the stack-up, else a default. | [21.3](Material-Properties.md#213-the-default-numbers) |
 
-## 24.2 Holes And Vias
+<a name="242-holes-and-vias"></a>
+## 43.2 Holes And Vias
 
 Every kind of hole KESE models, including the via options KiCad 10 added.
 
@@ -62,7 +64,8 @@ Every kind of hole KESE models, including the via options KiCad 10 added.
 | **Through via** | A via from `F.Cu` to `B.Cu`. | [13.3](Copper-And-Traces.md#133-vias-and-plated-holes) |
 | **Via resin** | The resin inside a plugged or filled via; its own part with the role `via_resin`, carrying `Copper.VIA_RESIN_EPSILON_R` and `Copper.VIA_RESIN_LOSS_TANGENT`. | [21.2](Material-Properties.md#212-properties-per-role) |
 
-## 24.3 Copper
+<a name="243-copper"></a>
+## 43.3 Copper
 
 How traces, zones and plating become copper solids.
 
@@ -80,7 +83,8 @@ How traces, zones and plating become copper solids.
 | **Surface roughness** | The roughness of the copper's faces, which raises its loss at high frequency; written to `materials.json` for the solver with the model to use, Huray (the default) or Hammerstad (`Copper.COPPER_ROUGHNESS_MODEL`). | [13.8](Copper-And-Traces.md#138-electrical-properties) |
 | **Treated face** | The face of a copper foil that is roughened so the laminate grips it: the wider face of an etched trace, toward the dielectric the foil was bonded to. `materials.json` names it for every layer, `lower` or `upper`, with a roughness of its own. | [21.6](Material-Properties.md#216-copper-by-layer) |
 
-## 24.4 Solder Mask, Silkscreen And Finish
+<a name="244-solder-mask-silkscreen-and-finish"></a>
+## 43.4 Solder Mask, Silkscreen And Finish
 
 The layers on top of the outer copper.
 
@@ -94,7 +98,8 @@ The layers on top of the outer copper.
 | **Pull-back** | The distance the mask and silk stop short of the board edge. | [17.3](Solder-Masks.md#173-edge-pull-back) |
 | **Silkscreen** | The printed ink on top of the mask: KiCad's lines, shapes and text, drawn by KESE with KiCad's own stroke font. | [16.1](Silkscreens.md#161-what-is-drawn), [16.2](Silkscreens.md#162-text-rendering) |
 
-## 24.5 How KESE Builds A Model
+<a name="245-how-kese-builds-a-model"></a>
+## 43.5 How KESE Builds A Model
 
 The words the Working Principle and the checks use.
 
@@ -111,7 +116,8 @@ The words the Working Principle and the checks use.
 | **Stage** | One of the nine steps of KESE's pipeline, from reading the file (1) to writing the report (9); each is a folder in `kese/`. | [7](Working-Principle.md) |
 | **Verifier** | KESE's check at the end of a run (`Verifier.VERIFY`, on by default; `--no-verify` leaves it out) that every solid is closed and holds the volume of its prisms, no parts overlap, and the skin is one surface. | [20.3](Checks-Errors-And-Warnings.md#203-the-verifier) |
 
-## 24.6 Output And Files
+<a name="246-output-and-files"></a>
+## 43.6 Output And Files
 
 What a run writes and how to pick it.
 
@@ -130,4 +136,4 @@ What a run writes and how to pick it.
 | **Z-fighting** | Flicker in a 3D viewer when two surfaces lie at almost the same depth; the reason visual mode exists. | [9.2](Output-Modes.md#92-visual-mode) |
 | Previous | Next |
 |:---|---:|
-| [openEMS Workflow](OpenEMS-Workflow.md) | [Future Upgrades And Planning](Future-Upgrades-And-Planning.md) |
+| [Elmer vs openEMS](Elmer-vs-OpenEMS.md) | [Future Upgrades And Planning](Future-Upgrades-And-Planning.md) |
