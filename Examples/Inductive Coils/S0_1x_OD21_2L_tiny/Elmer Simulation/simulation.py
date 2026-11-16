@@ -18,8 +18,8 @@ so the curves are drawn over that span: a full turn on a one-sector rotor.
 Every angle gets its own mesh, the rotor's copper at that angle drawn into it. The stator's mesh then differs a
 little between angles, which shows as small noise on the curves; the fit written with the results says how much.
 
-Writes into ../Results: results_gap<gap>mm.json, a table (.csv) and the chart (.webp, by make_charts.py beside this
-file), and SINCOS_Results.md: every
+Writes into ../Results/<gap>_AirGap (1mm_AirGap, 0d5mm_AirGap): results_gap<gap>mm.json, a table (.csv) and the
+chart (.webp, by make_charts.py beside this file); and into ../Results, SINCOS_Results.md: every
 gap's curves with a caption, the fit, the angle error at each angle (angle_error.py beside this file) and every
 solve, and SINCOS_gaps.webp with all the gaps on one chart once two are solved. The runs go under case/ here (not
 committed). This script is GPL-3.0 as the bridge; the boards keep their own licence (see ../../LICENSE.md).
@@ -42,7 +42,7 @@ BOARD = HERE.parent                                 # <board>: README.md, Boards
 RESULTS = BOARD / 'Results'
 sys.path.insert(0, str(HERE.parents[3]))
 sys.path.insert(0, str(HERE))
-from angle_error import METHOD, angle_error, sine_fit   # noqa: E402
+from angle_error import METHOD, angle_error, gap_folder, results_files, sine_fit   # noqa: E402
 import make_charts as charts   # noqa: E402
 from bridge import elmer_case as E, geometry as G, mesh25d as M, ports as P, study as S   # noqa: E402
 
@@ -180,9 +180,7 @@ def fit(angles, values):
 def report(log=print):
     """../Results/SINCOS_Results.md: for every air gap solved, the curves with a caption, the fit, the angle
     error and every solve; then the boards. Rewritten after every solve, so it is as current as the results."""
-    import re
-    gaps = sorted(((float(m.group(1)), p) for p in RESULTS.glob('results_gap*mm.json')
-                   if (m := re.fullmatch(r'results_gap([0-9.]+)mm\.json', p.name))), key=lambda x: -x[0])
+    gaps = results_files(RESULTS)
     if not gaps:
         return
     w = 2 * math.pi * SETTINGS['freq_hz'] * 1e-6                     # mV of EMF per nH at 1 A
@@ -213,8 +211,8 @@ def report(log=print):
                           f"{w * fc['amplitude']:.0f} mV) |" if fs else '| ')
                        + (f" {err['rms']:.1f}° rms, {err['peak']:.1f}° peak{so_far} |" if err else ' |'))
         sec = [f'## {gap:g} mm air gap', '']
-        png = path.with_suffix('.webp').name
-        if (RESULTS / png).exists() and fs:
+        png = f'{path.parent.name}/{path.with_suffix(".webp").name}'
+        if path.with_suffix('.webp').exists() and fs:
             how = ('' if max(ang) - min(ang) >= 0.75 * per else ', drawn only between the solved angles while few '
                    'are in')
             sec += [f'![SIN and COS against the rotor angle at a {gap:g} mm air gap]({png})', '',
@@ -358,8 +356,8 @@ def main():
             + ('' if a.degree == 4 or a.method != 'BiCGStabL' else f'_deg{a.degree}')
             + ('' if a.max_iter == SETTINGS['max_iter'] else f'_it{a.max_iter}'))
     trial = tagg != f'gap{a.gap:g}mm'                   # another level or solver setting: a trial, kept in case/
-    RESULTS.mkdir(exist_ok=True)
-    res_file = (Path(a.out) if trial else RESULTS) / f'results_{tagg}.json'
+    res_file = (Path(a.out) if trial else RESULTS / gap_folder(a.gap)) / f'results_{tagg}.json'
+    res_file.parent.mkdir(parents=True, exist_ok=True)
     if a.plot:
         plot(res_file)
         return

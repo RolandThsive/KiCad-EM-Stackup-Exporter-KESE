@@ -1,9 +1,10 @@
 """The angle error of a SIN and COS pair: how far the angle a decoder reads from the two curves is from the true rotor
 angle. simulation.py calls it after every solve and writes the result into ../Results/SINCOS_Results.md; run on its own
-it prints every air gap's errors and rewrites that page.
+it prints every air gap's errors and rewrites that page. Each air gap's results sit in their own folder in ../Results,
+named for the gap with the point written as d: 1mm_AirGap, 0d5mm_AirGap.
 
-    python angle_error.py                      every results_gap*mm.json in ../Results, then the page rewritten
-    python angle_error.py ../Results/results_gap1mm.json
+    python angle_error.py                      every gap's results in ../Results, then the page rewritten
+    python angle_error.py ../Results/1mm_AirGap/results_gap1mm.json
 
 How it is worked out, for the angles solved so far:
 
@@ -24,6 +25,7 @@ from __future__ import annotations
 
 import json
 import math
+import re
 import sys
 from pathlib import Path
 
@@ -37,6 +39,21 @@ METHOD = ("Each channel gets its best sine over the rotor's period, M = offset +
           "only moves where zero is. The rms and the worst of them are the angle error. The fit uses the same points "
           "as the error, so it measures how far the solves are from a perfect sine and cosine pair. "
           "[`angle_error.py`](../Elmer%20Simulation/angle_error.py) does it.")
+
+
+def gap_folder(gap):
+    """The folder of one air gap's results inside Results/: 1mm_AirGap, 0d5mm_AirGap (the point written as d)."""
+    return f'{gap:g}mm_AirGap'.replace('.', 'd')
+
+
+def results_files(results):
+    """Every air gap's results file in Results/ (the default mesh and solver), as (gap, path), the largest gap first."""
+    out = []
+    for p in Path(results).glob('*_AirGap/results_gap*mm.json'):
+        m = re.fullmatch(r'results_gap([0-9.]+)mm\.json', p.name)
+        if m:
+            out.append((float(m.group(1)), p))
+    return sorted(out, key=lambda x: -x[0])
 
 
 def sine_fit(angles, values, period=360.0):
@@ -82,7 +99,7 @@ def from_results(path, period=360.0):
 def main():
     spec = json.loads((HERE / 'test_spec.json').read_text())
     period = spec['sets'][0].get('rotor_period_mech_deg', 360.0)
-    files = [Path(p) for p in sys.argv[1:]] or sorted((HERE.parent / 'Results').glob('results_gap*mm.json'))
+    files = [Path(p) for p in sys.argv[1:]] or [p for _, p in results_files(HERE.parent / 'Results')]
     for f in files:
         ang, _, _, err = from_results(f, period)
         print(f'{f.name}: {len(ang)} angles')

@@ -8,7 +8,7 @@ A coil set made with the [Sinusoidal Coil Generator](https://github.com/RolandTh
 
 ## 1 mm air gap
 
-![SIN and COS against the rotor angle at a 1 mm air gap](results_gap1mm.webp)
+![SIN and COS against the rotor angle at a 1 mm air gap](1mm_AirGap/results_gap1mm.webp)
 
 *Figure 1. SIN (blue) and COS (orange) at a 1 mm air gap: the mutual inductance from the TX against the rotor's angle, 8 of 8 angles solved. Each dot is one Elmer solve and the solid line joins them; the dashes are the ideal sine and cosine, each channel's best sine fit, which is what the angle error is measured against. SIN swings ±2.15 nH and COS ±2.07 nH, that is ±47 and ±45 mV of EMF.*
 

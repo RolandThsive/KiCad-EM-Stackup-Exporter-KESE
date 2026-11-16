@@ -1,4 +1,5 @@
-"""The charts of the results, as lossless WebP in ../Results. simulation.py calls it after every solve; run on its own
+"""The charts of the results, as lossless WebP: each air gap's beside its results in ../Results/<gap>_AirGap, the
+chart of every gap together in ../Results. simulation.py calls it after every solve; run on its own
 it redraws every chart from the results already there and rewrites SINCOS_Results.md.
 
     python make_charts.py
@@ -22,7 +23,7 @@ HERE = Path(__file__).resolve().parent
 BOARD = HERE.parent
 RESULTS = BOARD / 'Results'
 sys.path.insert(0, str(HERE))
-from angle_error import sine_fit   # noqa: E402
+from angle_error import results_files, sine_fit   # noqa: E402
 
 SPEC = json.loads((HERE / 'test_spec.json').read_text())
 PERIOD = SPEC['sets'][0].get('rotor_period_mech_deg', 360.0)
@@ -140,9 +141,7 @@ def gaps_chart(results):
 
 def all_results():
     """The results files of the default mesh and solver, one per air gap, the largest gap first."""
-    import re
-    return sorted((p for p in RESULTS.glob('results_gap*mm.json') if re.fullmatch(r'results_gap[0-9.]+mm\.json', p.name)),
-                  key=lambda p: -float(re.search(r'gap([0-9.]+)mm', p.name).group(1)))
+    return [p for _, p in results_files(RESULTS)]
 
 
 def main():

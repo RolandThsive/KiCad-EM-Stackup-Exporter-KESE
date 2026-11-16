@@ -21,8 +21,9 @@ and the two SVG pictures). <name> is the new folder beside this file, laid out a
       simulation.py, angle_error.py, make_charts.py   S0_1x_OD21_2L_tiny's, unchanged: they read everything from
                          test_spec.json
     Results/
-      expected_results.json   the generator's estimates (the TX's inductance and resistance); the runs add their
-                         results, the curves and SINCOS_Results.md here
+      expected_results.json   the generator's estimates (the TX's inductance and resistance); the runs add
+                         SINCOS_Results.md here, and their results and charts in a folder per air gap
+                         (1mm_AirGap, 0d5mm_AirGap)
 
 Unless --no-estimate is given, it builds the mesh at one angle and says its size and the memory a solve needs, at
 57 kB a node (measured on E01, E02 and S0). Single-set boards only: a dual board (DualCoil_...) has two coil sets.
@@ -279,7 +280,7 @@ The generator's warnings for this board:
 |---|---|
 | [`Boards/`](Boards/) | straight from the generator: the stator and rotor boards, `Parameters.txt`, the pictures and the parameter files it was run with |
 | [`Elmer Simulation/`](Elmer%20Simulation/) | `test_spec.json` (every board fact the simulation needs), `simulation.py`, `angle_error.py` and `make_charts.py` (S0's, unchanged), and the runs under `case/`, which git ignores |
-| [`Results/`](Results/) | `expected_results.json` (the generator's estimates), and from the runs `results_gap<gap>mm.json`, `.csv` and `.webp` and [`SINCOS_Results.md`](Results/SINCOS_Results.md), every gap on one page |
+| [`Results/`](Results/) | `expected_results.json` (the generator's estimates), [`SINCOS_Results.md`](Results/SINCOS_Results.md) with every gap on one page, and a folder for each air gap (`1mm_AirGap`, `0d5mm_AirGap`, the point written as d) with the runs' `results_gap<gap>mm.json`, `.csv` and `.webp` |
 
 ## Running it
 
