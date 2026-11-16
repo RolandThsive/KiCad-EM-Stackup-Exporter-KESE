@@ -47,7 +47,7 @@ Solves: 18. Per coil set, the rotor away (C1, C3), the rotor at the eight angles
 
 The checks are the Elmer brief's (`../Things to test in ELMER.md`, section 5), with the five pass marks reviewed on 16 November (see `../README.md`): C0 (the mesh study, on S1), C1 to C6, C7 on the dual boards, and C10. C9 (air gap sweep), C11 (rotor off-centre and tilted) and C12 (surface-impedance rotor) are optional.
 
-Size: about 28 GB of memory, a first guess from its 2.74 m of copper; it runs on a PC with 32 GB. The S2 mesh study measures the real figure and this line is corrected then.
+Size: about 170 GB of memory with the iterative solver, S2's measured mesh scaled by this stator's 2.74 m of copper (about 61 GB per metre). It is held for a PC with 256 GB.
 
 ## Results
 

@@ -1,8 +1,11 @@
 """E01: one circular trace, 20 mm across, opened by a 0.2 mm gap: its inductance and resistance from Elmer, against
 Grover's ring formula and the resistance of an annular sector.
 
-    python simulation.py                 the mesh ladder at every frequency (about 40 minutes on 4 cores)
+    python simulation.py                 the mesh ladder at every frequency (about 2 hours on 4 cores)
     python simulation.py --levels 1      one mesh only
+    python simulation.py --levels 0.75 --mesh grade=0.35 --results results_grade.json
+                                         one mesh setting changed for this run, to its own results file
+    python simulation.py --mesh-only     build the meshes and print their size, solve nothing
     python simulation.py --order 2       second-order edge elements
 
 Writes results.json beside this file and the runs under case/ (not committed). Every setting is in SETTINGS.
@@ -95,7 +98,19 @@ def main():
     ap.add_argument('--max-iter', type=int, default=SETTINGS['max_iter'],
                     help='the linear solver\'s iteration cap (the iteration check runs at half and full)')
     ap.add_argument('--results', default=None, help='the results file (default results.json beside this file)')
+    ap.add_argument('--mesh', action='append', default=[], metavar='KEY=VALUE',
+                    help="change one of SETTINGS['mesh'] for this run, e.g. --mesh grade=0.35 (repeatable)")
+    ap.add_argument('--mesh-only', action='store_true', help='build and write the meshes, solve nothing')
+    ap.add_argument('--domain-mm', type=float, default=None,
+                    help="the air domain's radius and half height, mm (default SETTINGS, 60)")
     a = ap.parse_args()
+    if a.domain_mm:
+        SETTINGS['domain_radius_mm'] = SETTINGS['domain_half_height_mm'] = a.domain_mm
+    for kv in a.mesh:                      # recorded in the results through SETTINGS
+        k, v = kv.split('=', 1)
+        if k not in SETTINGS['mesh']:
+            ap.error(f'--mesh {k}: not one of {sorted(SETTINGS["mesh"])}')
+        SETTINGS['mesh'][k] = float(v)
     out = Path(a.out)
     out.mkdir(parents=True, exist_ok=True)
     logf = open(out / 'run.log', 'a')
@@ -117,6 +132,9 @@ def main():
         folder = out / f'order{a.order}_level{level:g}'
         M.write_elmer(m, folder / 'mesh_files', bnds, log=log)
         mesh_s = time.time() - t0
+        if a.mesh_only:
+            log(f"level {level:g}: {len(m['nodes'])} nodes, {len(m['wedges'])} wedges, {len(m['tets'])} tetrahedra")
+            continue
         cu = E.Material('Copper', sigma=SETTINGS['sigma'])
         bodies = {n: (cu if n == 'LOOP' else E.Material('Air' if n == 'AIR' else n.title())) for n in m['names']}
         case = E.Case(mesh_dir=folder / 'mesh_files', bodies=bodies, order=a.order, tol=SETTINGS['tol'],
@@ -132,7 +150,8 @@ def main():
             log(f"level {level:g} f {r['frequency_hz']:.4g} Hz: L {c['L'] * 1e9:.3f} nH (energy "
                 f"{r.get('L_from_energy_h', float('nan')) * 1e9:.3f}), R {c['R'] * 1e3:.3f} mOhm, R_dc "
                 f"{r['dc_resistance_ohm']['LOOP'] * 1e3:.3f} mOhm, {r['iterations']} it, res {r['residual']}")
-    log(f'wrote {res_file}')
+    if not a.mesh_only:
+        log(f'wrote {res_file}')
 
 
 if __name__ == '__main__':

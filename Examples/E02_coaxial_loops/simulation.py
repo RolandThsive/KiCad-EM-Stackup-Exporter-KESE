@@ -38,7 +38,7 @@ SETTINGS = dict(
     domain_half_height_mm=60.0,
     freqs_hz=[1e4, 3.5e6],
     order=1,
-    levels=[1.0, 1.5],
+    levels=[0.75, 1.0],            # level 1.5 does not fit in 15 GB (level 1 took 6.7 GB)
     mesh=dict(h_edge=0.09, h_in=0.18, h_max=6.0, grade=0.5, dz_copper=0.018, dz_max=0.4,
               tet_max=8.0, tet_grade=0.7),
     threads=4,

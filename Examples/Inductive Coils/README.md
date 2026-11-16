@@ -10,20 +10,20 @@ The most important single number is C2: how much the rotor lowers the TX's induc
 
 ## The ten boards, in the order they run
 
-| # | Board | What it tests | Stator copper | Solves | Memory, first guess | Runs on | Status |
+| # | Board | What it tests | Stator copper | Solves | Memory | Runs on | Status |
 |---|---|---|---|---|---|---|---|
-| 1 | [S2_4x_OD40_2L_small](S2_4x_OD40_2L_small/) | the smallest single board, the cheapest model: first | 0.96 m | 9 | about 11 GB | the test machine | not run yet |
-| 2 | [S1_1x_OD54_2L_baseline](S1_1x_OD54_2L_baseline/) | the generator's default, the simplest geometry; Elmer's mesh study C0 | 0.92 m | 9 | about 10 GB | the test machine | not run yet |
-| 3 | [D2_1x8x_OD40_small](D2_1x8x_OD40_small/) | the smallest dual board, tight spacing between the sets | 1.56 m | 18 | about 17 GB | 32 GB | not run yet |
-| 4 | [S3_8x_OD59_4L_series_wideband](S3_8x_OD59_4L_series_wideband/) | TX on the inner layers, far from the rotor; a wide band | 1.91 m | 9 | about 20 GB | 32 GB | not run yet |
-| 5 | [S4_16x_OD54_2L_fingers](S4_16x_OD54_2L_fingers/) | the finest single pitch, and the bridging fingers | 1.30 m | 9 | about 14 GB | 32 GB | not run yet |
-| 6 | [S5_4x_OD98_cosine_r_2subcoils_spiralTX](S5_4x_OD98_cosine_r_2subcoils_spiralTX/) | the other RX profile, sub-coils, a spiral TX, the biggest board | 3.41 m | 9 | about 35 GB | 64 GB | not run yet |
-| 7 | [D1_1x16x_OD54_Renesas_R145_size](D1_1x16x_OD54_Renesas_R145_size/) | the dual default, a 3.2 mm board | 3.14 m | 18 | about 32 GB | 64 GB | not run yet |
-| 8 | [D3_1x16x_OD59_fitted_bands](D3_1x16x_OD59_fitted_bands/) | a typical dual board | 3.07 m | 18 | about 32 GB | 64 GB | not run yet |
-| 9 | [D4_2x8x_OD59_parallel_TX](D4_2x8x_OD59_parallel_TX/) | parallel TX wiring, a 2-period set | 2.74 m | 18 | about 28 GB | 32 GB | not run yet |
-| 10 | [D5_1x16x_OD74_ID40_large](D5_1x16x_OD74_ID40_large/) | a large thin ring | 3.96 m | 18 | about 41 GB | 64 GB | not run yet |
+| 1 | [S2_4x_OD40_2L_small](S2_4x_OD40_2L_small/) | the smallest single board, the cheapest model: first | 0.96 m | 9 | about 59 GB (measured mesh) | 64 GB | held for a bigger PC |
+| 2 | [S1_1x_OD54_2L_baseline](S1_1x_OD54_2L_baseline/) | the generator's default, the simplest geometry; Elmer's mesh study C0 | 0.92 m | 9 | about 55 GB | 64 GB | held for a bigger PC |
+| 3 | [D2_1x8x_OD40_small](D2_1x8x_OD40_small/) | the smallest dual board, tight spacing between the sets | 1.56 m | 18 | about 95 GB | 128 GB | held for a bigger PC |
+| 4 | [S3_8x_OD59_4L_series_wideband](S3_8x_OD59_4L_series_wideband/) | TX on the inner layers, far from the rotor; a wide band | 1.91 m | 9 | about 115 GB | 128 GB | held for a bigger PC |
+| 5 | [S4_16x_OD54_2L_fingers](S4_16x_OD54_2L_fingers/) | the finest single pitch, and the bridging fingers | 1.30 m | 9 | about 80 GB | 128 GB | held for a bigger PC |
+| 6 | [S5_4x_OD98_cosine_r_2subcoils_spiralTX](S5_4x_OD98_cosine_r_2subcoils_spiralTX/) | the other RX profile, sub-coils, a spiral TX, the biggest board | 3.41 m | 9 | about 210 GB | 256 GB | held for a bigger PC |
+| 7 | [D1_1x16x_OD54_Renesas_R145_size](D1_1x16x_OD54_Renesas_R145_size/) | the dual default, a 3.2 mm board | 3.14 m | 18 | about 190 GB | 256 GB | held for a bigger PC |
+| 8 | [D3_1x16x_OD59_fitted_bands](D3_1x16x_OD59_fitted_bands/) | a typical dual board | 3.07 m | 18 | about 190 GB | 256 GB | held for a bigger PC |
+| 9 | [D4_2x8x_OD59_parallel_TX](D4_2x8x_OD59_parallel_TX/) | parallel TX wiring, a 2-period set | 2.74 m | 18 | about 170 GB | 256 GB | held for a bigger PC |
+| 10 | [D5_1x16x_OD74_ID40_large](D5_1x16x_OD74_ID40_large/) | a large thin ring | 3.96 m | 18 | about 240 GB | 256 GB | held for a bigger PC |
 
-The memory figures are a first guess, about 10 GB per metre of copper with the mesh the brief asks for; S2's mesh study measures the real figure, and this table is corrected before any large board runs. Boards that need more than the test machine's 16 GB are held for a bigger PC.
+The memory rests on measurements: S2's mesh at level 1 has 979,420 nodes, and the proof boards E01 and E02 measured about 57 to 60 kB per node with the iterative solver, so S2 needs about 59 GB. The other boards scale S2 by their length of copper, about 61 GB per metre. Every board needs more than the 4-core, 15 GB test machine and is held for a bigger PC.
 
 ## Pass marks, as reviewed on 16 November
 
