@@ -28,8 +28,9 @@ Linux while it runs and writes it into `results.json`.
 | E01, level 0.75 with the air graded twice as finely | 88,760 | 5.11 GB | 60 kB |
 | E01, level 0.75 with the air graded four times as finely | 166,471 | 9.73 GB | 61 kB |
 | E02, level 0.75 with the air graded twice as finely | 134,840 | 7.66 GB | 60 kB |
+| E01, level 0.75 in an air domain twice as big | 86,518 | 4.91 GB | 60 kB |
 
-Eight meshes from 60,000 to 166,000 nodes cost 59 to 61 kB per node, at both frequencies (Linux
+Nine meshes from 60,000 to 166,000 nodes cost 59 to 61 kB per node, at both frequencies (Linux
 counts in kibibytes, so a GB here is 1,073,741,824 bytes). The memory does not depend on the
 frequency or on the number of iterations: BiCGStab(l) keeps a fixed number of vectors.
 
@@ -45,6 +46,7 @@ frequency or on the number of iterations: BiCGStab(l) keeps a fixed number of ve
 | E01, level 0.75 with the air graded twice as finely | 15 s | 18 min, 3000 iterations (the cap) | |
 | E01, level 0.75 with the air graded four times as finely | 44 s | 36 min, 3000 iterations (the cap) | |
 | E02, level 0.75 with the air graded twice as finely | 17 s | 15 min, 1500 iterations (the cap) | |
+| E01, level 0.75 in an air domain twice as big | 20 s | 18 min, 3000 iterations (the cap) | |
 
 Most runs shared the machine with openEMS runs or with each other's meshing, so their times are what
 they took, not what the machine can do: E02 at level 0.75, with the machine to itself, needed 3.9 µs

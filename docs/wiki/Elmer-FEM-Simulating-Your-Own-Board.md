@@ -47,7 +47,7 @@ driven coil or 0.0 for a sensing one. The electrodes and the sheet are found in 
 
 | Setting | Example | What it is |
 |---|---|---|
-| `domain_radius_mm` | `60.0` | Radius of the air disc. At 6 coil radii the outer boundary (n × A = 0) costs about 0.2 % of L |
+| `domain_radius_mm` | `60.0` | Radius of the air disc. At 6 coil radii the outer boundary (n × A = 0) holds L down by about 0.3 %: twice as big, E01's L rose 0.26 % |
 | `domain_half_height_mm` | `60.0` | The air reaches this far above and below z = 0 |
 | `freqs_hz` | `[1e4, 3.5e6]` | One solve per frequency. Choose one low enough that the current is uniform (here 10 kHz, skin depth 0.66 mm) and the working frequency |
 | `order` | `1` | Edge element order. `--order 2` uses second-order (quadratic) elements, with several times the unknowns and the memory |

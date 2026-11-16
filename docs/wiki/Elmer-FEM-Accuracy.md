@@ -2,7 +2,7 @@
 
 Where the Elmer bridge's errors come from, how big each one measured on E01 and E02, and what the
 bridge leaves out of the physics. Every number here is from the runs on the `Elmer_Integration`
-branch (`Examples/E01_circular_loop/results*.json`, `Examples/E02_coaxial_loops/results.json`).
+branch (`Examples/E01_circular_loop/results*.json`, `Examples/E02_coaxial_loops/results*.json`).
 
 ## 30.1 The Error Budget On E01
 
@@ -13,6 +13,7 @@ Each line changes one thing and keeps the rest; all are L at 10 kHz.
 | The copper's mesh | level 0.75 → 1 → 1.3 (59,782, 85,712, 125,043 nodes) | +0.54 %, then +0.12 % |
 | The iterative solve | level 1 at 1500 and at 3000 iterations | +0.17 % with the doubled cap |
 | The air's mesh | level 0.75 with the air graded twice as finely (`grade` 0.25, `tet_grade` 0.35; 88,760 nodes against 59,782), then four times (0.125 and 0.175; 166,471 nodes) | **+2.3 %, then +1.1 %** |
+| The air domain | level 0.75 in a domain twice as big (120 mm in radius and half height instead of 60) | +0.26 %: the 60 mm domain holds L down by about 0.3 %, since the bigger one keeps about an eighth of that |
 | The reference's open-loop share | with the sheet across the gap, the coil's voltage is the flux through the whole circle, so L is the closed ring's L times the share of the circle the current runs in; the reference ends that share at the round ends' centres, but the current runs on into the half-discs | the reference is a lower bound: up to 0.8 % higher (56.44 nH) with the current taken on to the gap's faces |
 | **Elmer against the reference** | Grover's ring formula with the trace's GMD | **−3.1 % at level 1.3; −0.46 % at level 0.75 with the air four times as fine** |
 
@@ -35,7 +36,8 @@ On E02 the same change raised M by 2.3 % as well, from 3.3 % to 1.1 % under Maxw
 air holds L and M down alike. Graded four times as finely, the air brings E01's L to 0.46 % under the
 reference, with 166,471 nodes.
 Each halving of the grading halved the change, so the air's mesh is converging but not done, and the
-copper's ladder showed another +0.7 % from level 0.75 to 1.3. Against that stands the reference's
+copper's ladder showed another +0.7 % from level 0.75 to 1.3; the domain holds L down by about
+0.3 % more. Against that stands the reference's
 own band, from 0 to +0.8 %: what is left is of the same size, and E01 cannot measure it. A ladder that
 refines the air with the copper is the fix this points to; it is not yet in the bridge
 ([Future Upgrades And Planning](Future-Upgrades-And-Planning.md)).
