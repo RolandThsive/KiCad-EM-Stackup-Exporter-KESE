@@ -270,7 +270,7 @@ The generator's warnings for this board:
     python simulation.py --gap 0.5         # the same at a 0.5 mm air gap
     python simulation.py --plot            # redraw the table and the curves
 
-Each gap writes `results_gap<gap>mm.json`, `.csv` and `.png` beside this file. Every board fact is in `test_spec.json`; `simulation.py` is S0's, unchanged.
+Each gap writes `results_gap<gap>mm.json`, `.csv` and `.png` beside this file, and `SINCOS_Results.md` gathers every gap's curves, fit, angle error and solves on one page. Every board fact is in `test_spec.json`; `simulation.py` is S0's, unchanged.
 
 ## Licence
 
