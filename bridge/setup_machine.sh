@@ -31,6 +31,10 @@ if [ ! -x "$E/install/bin/ElmerSolver" ]; then
     -DWITH_OpenMP:BOOL=TRUE -DWITH_Mumps:BOOL=TRUE -DCMAKE_INSTALL_PREFIX="$E/install" > "$E/build/cmake.log"
   make -j"$JOBS" install > "$E/build/make.log"
 fi
+# gmsh's wheel needs these system libraries even without a display
+if ! ldconfig -p | grep -q libGLU.so.1; then
+  $SUDO apt-get install -y -q libglu1-mesa libgl1 libxcursor1 libxft2 libxinerama1 libxrender1 libxfixes3
+fi
 if [ ! -x "$ROOT/.venv/bin/python" ]; then
   python3 -m venv "$ROOT/.venv" || { $SUDO apt-get install -y -q python3-venv && python3 -m venv "$ROOT/.venv"; }
 fi
