@@ -72,7 +72,7 @@ converges, none of this applies.
 | L and M at 10 kHz | 3 to 4 % low with the examples' air grading, 1.55 % low (E01) with the air graded twice as finely; rising with every refinement: a lower bound |
 | L and M at 3.5 MHz | the same mesh error; the iterative solve converges, so no iteration error on top |
 | R at 10 kHz | within 0.5 % |
-| R at 3.5 MHz, skin and proximity effect | no exact reference; the change against 10 kHz (+29 %) and the RX's share on E02 (+1.5 mΩ) behave as they should |
+| R at 3.5 MHz, skin and proximity effect | no exact reference, and not yet settled with the mesh: it fell 1.2 % from level 0.75 to level 1; the change against 10 kHz (+29 %) and the RX's share on E02 (+1.5 mΩ) behave as they should |
 | L from the circuit against L from the energy | within 0.05 %: a check on every run, at no cost |
 
 The coil boards' most important number, C2, is a ratio: how much the rotor lowers the TX's L. Errors

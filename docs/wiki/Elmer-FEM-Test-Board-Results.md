@@ -3,7 +3,7 @@
 What Elmer gave on each board of [Elmer FEM Test Boards](Elmer-FEM-Test-Boards.md), against numbers
 known without any solver. Every chart and picture here is drawn from Elmer's own output by
 `Examples/E01_circular_loop/make_pictures.py`; nothing is drawn by hand. The numbers are in each
-example's `results.json` on the `Elmer_Integration` branch, with the settings, the versions, the
+example's `results*.json` on the `Elmer_Integration` branch, with the settings, the versions, the
 mesh's size, the time, the memory and the solver's last residual of every solve, and each example's
 `results.md` has the full tables.
 
@@ -39,7 +39,7 @@ thickness, and no formula is exact there.
 
 L rises as the mesh is refined, as it should with first-order edge elements, but along the ladder it
 levels off about 3 % under the reference. The ladder refines only the copper's mesh. Grading the air
-twice as finely at level 0.75 (the green diamond) brings L to 1.55 % under the reference, with about
+twice as finely at level 0.75 (the diamond) brings L to 1.55 % under the reference, with about
 as many nodes as level 1: the air's mesh round the copper holds most of the gap
 ([Elmer FEM Accuracy](Elmer-FEM-Accuracy.md#301-the-error-budget-on-e01)). The circuit's L and the
 field energy's agree within 0.05 % at every level, so the electrodes, the sheet across the gap and
@@ -63,8 +63,8 @@ check only; L, from the energy of the whole field, is the bridge's number. Acros
 current at 10 kHz is nearly even and a little denser at the inner edge, as the 1/r of a ring's DC
 current gives. At 3.5 MHz it crowds to both edges, most to the inner one, and the middle carries less
 than an even share: the edge effect behind R's rise at 3.5 MHz (+29 % at level 1, +30 % at level
-0.75). The line follows the level 0.75
-triangles, only a few across the width, so its shape is coarse.
+0.75). The line follows the level 0.75 triangles, only a few across the width, so its shape is
+coarse.
 
 ## 29.2 E02 Coaxial Loops
 
