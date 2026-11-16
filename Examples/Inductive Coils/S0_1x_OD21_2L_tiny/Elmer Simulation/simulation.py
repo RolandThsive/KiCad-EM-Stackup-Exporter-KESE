@@ -235,6 +235,7 @@ def report(log=print):
         png = path.with_suffix('.png').name
         if (RESULTS / png).exists() and fs:
             how = ('interpolated through them' if through_points(ang, ms, [0.0])[1] != 'best sine fit'
+                   else 'the best sine fit' if max(ang) - min(ang) >= 0.75 * per
                    else 'a sine fit, drawn only between the solved angles while few are in')
             sec += [f'![SIN and COS against the rotor angle at a {gap:g} mm air gap]({png})', '',
                     f"*Figure {i}. SIN (blue) and COS (orange) at a {gap:g} mm air gap: the mutual inductance from "

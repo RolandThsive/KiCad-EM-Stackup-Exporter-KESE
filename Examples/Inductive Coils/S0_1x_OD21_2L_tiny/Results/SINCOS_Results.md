@@ -10,7 +10,7 @@ A coil set made with the [Sinusoidal Coil Generator](https://github.com/RolandTh
 
 ![SIN and COS against the rotor angle at a 1 mm air gap](results_gap1mm.png)
 
-*Figure 1. SIN (blue) and COS (orange) at a 1 mm air gap: the mutual inductance from the TX against the rotor's angle, 7 of 8 angles solved. Each dot is one Elmer solve; the dashes are a sine fit, drawn only between the solved angles while few are in. SIN swings ±2.15 nH and COS ±2.20 nH, that is ±47 and ±48 mV of EMF.*
+*Figure 1. SIN (blue) and COS (orange) at a 1 mm air gap: the mutual inductance from the TX against the rotor's angle, 7 of 8 angles solved. Each dot is one Elmer solve; the dashes are the best sine fit. SIN swings ±2.15 nH and COS ±2.20 nH, that is ±47 and ±48 mV of EMF.*
 
 Best sine fit: SIN amplitude 2.153 nH, offset -0.106 nH, phase -132.3°; COS amplitude 2.197 nH, offset -0.059 nH, phase 135.0°. Angle error so far, with the offset and gain of each channel calibrated out (worked out as below): 3.9° rms and 5.4° at worst, in electrical degrees, the same as mechanical degrees here. SIN and COS are 92.7° apart, against 90° for perfect quadrature.
 
