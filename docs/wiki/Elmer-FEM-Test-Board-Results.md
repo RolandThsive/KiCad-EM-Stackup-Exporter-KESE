@@ -12,6 +12,23 @@ mesh's size, the time, the memory and the solver's last residual of every solve,
 One circular trace, 10 mm in radius to its centre line, 0.5 mm wide and 35 µm thick, opened by a
 0.2 mm gap where the bridge puts its two electrodes. Elmer's circuit drives 1 A through it.
 
+### In Short
+
+E01 is one copper loop on a board, the simplest coil there is. Its inductance L (how much magnetic
+field 1 A makes, which sets the voltage a changing current induces) and its resistance R have textbook
+formulas. Elmer drives 1 A through the loop and reads both back:
+
+| What | What it means | The formula | Elmer |
+|---|---|---|---|
+| L at 10 kHz | the loop's inductance | 55.99 nH | 54.27 nH on the finest mesh, −3.1 %; −0.46 % with a finer mesh in the air round the copper |
+| R at 10 kHz | its resistance, the current spread evenly through the copper | 61.20 mΩ | 61.52 mΩ, +0.5 % |
+| R at 3.5 MHz | the current crowds to the trace's edges, so R rises | no exact formula | 79.25 mΩ, 29 % above the 10 kHz value |
+| L, two ways | from the circuit's voltage and from the energy of the whole field | the two must agree | within 0.05 % |
+
+The 3 % is the mesh in the air round the copper, not the bridge: a finer air mesh takes L to within
+0.5 % of the formula, and the two ways of reading L agree, so the electrodes and Elmer's circuit
+measure what the field holds.
+
 | Item | Value |
 |---|---|
 | Run | 15 and 16 November 2026, Elmer 26.2 (`a19504a`), gmsh 4.15.2, KESE 3.4.0 |
@@ -73,6 +90,20 @@ coarse.
 
 E01's loop twice, TX on F.Cu and RX on B.Cu, 1.565 mm apart. TX carries 1 A, RX is open, so the
 voltage across RX's gap gives M. E02 runs at most 1500 iterations.
+
+### In Short
+
+E02 puts a second loop right under the first. A current in the top loop (TX) induces a voltage in
+the bottom one (RX), and the ratio is their mutual inductance M: the same coupling that carries the
+coil boards' signal from the TX to SIN and COS.
+
+| What | What it means | The formula | Elmer |
+|---|---|---|---|
+| M at 10 kHz | how strongly the two loops couple | 24.13 nH (Maxwell) | 23.38 nH, −3.1 %; −1.1 % with a finer mesh in the air |
+| TX's L beside the open RX | an open loop carries no current, so it must leave L alone | E01's 54.20 nH | 54.18 nH |
+| TX's R at 3.5 MHz | eddy currents in the RX trace take a little power from the TX | a little above E01's 79.25 mΩ | 80.75 mΩ |
+
+### Expected Against What Came Out
 
 | Quantity | Reference | Level 0.75 | Level 1 |
 |---|---|---|---|
