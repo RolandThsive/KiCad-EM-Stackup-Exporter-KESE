@@ -32,7 +32,7 @@ section, what was expected and what came out.  The inductive encoder coils are i
 ## Left to test on a more powerful PC
 
 Every coil board. S2, the smallest, was meshed: 979,420 nodes at level 1. The proof boards measured
-about 57 to 60 kB per node with the iterative solver, so S2 needs about 59 GB, four times the test
+about 59 kB per node with the iterative solver, so S2 needs about 59 GB, four times the test
 machine's 15 GB. The others scale S2 by each stator's length of copper, about 61 GB per metre.
 
 | Board | Stator copper | Solves | Memory | Needs |

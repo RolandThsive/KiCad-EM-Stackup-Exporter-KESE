@@ -23,7 +23,7 @@ The most important single number is C2: how much the rotor lowers the TX's induc
 | 9 | [D4_2x8x_OD59_parallel_TX](D4_2x8x_OD59_parallel_TX/) | parallel TX wiring, a 2-period set | 2.74 m | 18 | about 170 GB | 256 GB | held for a bigger PC |
 | 10 | [D5_1x16x_OD74_ID40_large](D5_1x16x_OD74_ID40_large/) | a large thin ring | 3.96 m | 18 | about 240 GB | 256 GB | held for a bigger PC |
 
-The memory rests on measurements: S2's mesh at level 1 has 979,420 nodes, and the proof boards E01 and E02 measured about 57 to 60 kB per node with the iterative solver, so S2 needs about 59 GB. The other boards scale S2 by their length of copper, about 61 GB per metre. Every board needs more than the 4-core, 15 GB test machine and is held for a bigger PC.
+The memory rests on measurements: S2's mesh at level 1 has 979,420 nodes, and the proof boards E01 and E02 measured about 59 kB per node with the iterative solver, so S2 needs about 59 GB. The other boards scale S2 by their length of copper, about 61 GB per metre. Every board needs more than the 4-core, 15 GB test machine and is held for a bigger PC.
 
 ## Pass marks, as reviewed on 16 November
 

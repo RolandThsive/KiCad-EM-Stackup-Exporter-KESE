@@ -40,7 +40,7 @@ Solves: 9. Per coil set, the rotor away (C1, C3), the rotor at the eight angles 
 
 The checks are the Elmer brief's (`../Things to test in ELMER.md`, section 5), with the five pass marks reviewed on 16 November (see `../README.md`): C0 (the mesh study, on S1), C1 to C6, C7 on the dual boards, and C10. C9 (air gap sweep), C11 (rotor off-centre and tilted) and C12 (surface-impedance rotor) are optional.
 
-Size: about 59 GB of memory with the iterative solver. Its mesh at level 1 was built and measured: 979,420 nodes, and the proof boards E01 and E02 measured about 57 to 60 kB per node. That is four times the 4-core, 15 GB test machine, so the board is held for a PC with 64 GB.
+Size: about 59 GB of memory with the iterative solver. Its mesh at level 1 was built and measured: 979,420 nodes, and the proof boards E01 and E02 measured about 59 kB per node. That is four times the 4-core, 15 GB test machine, so the board is held for a PC with 64 GB.
 
 ## Results
 

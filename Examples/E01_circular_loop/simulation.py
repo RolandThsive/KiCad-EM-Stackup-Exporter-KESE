@@ -101,6 +101,7 @@ def main():
     ap.add_argument('--mesh', action='append', default=[], metavar='KEY=VALUE',
                     help="change one of SETTINGS['mesh'] for this run, e.g. --mesh grade=0.35 (repeatable)")
     ap.add_argument('--mesh-only', action='store_true', help='build and write the meshes, solve nothing')
+    ap.add_argument('--fields', action='store_true', help='also write the fields as VTU, for make_pictures.py')
     ap.add_argument('--domain-mm', type=float, default=None,
                     help="the air domain's radius and half height, mm (default SETTINGS, 60)")
     a = ap.parse_args()
@@ -138,7 +139,7 @@ def main():
         cu = E.Material('Copper', sigma=SETTINGS['sigma'])
         bodies = {n: (cu if n == 'LOOP' else E.Material('Air' if n == 'AIR' else n.title())) for n in m['names']}
         case = E.Case(mesh_dir=folder / 'mesh_files', bodies=bodies, order=a.order, tol=SETTINGS['tol'],
-                      max_iter=a.max_iter,
+                      max_iter=a.max_iter, save_fields=a.fields,
                       coils=[E.Coil('LOOP', 'LOOP', 'T1', 'T2', 'SHEET', 1.0)])
         rows = S.solve(case, a.freqs, folder, threads=SETTINGS['threads'], log=log)
         S.merge_run(result, dict(level=level, order=a.order, max_iter=a.max_iter, mesh_seconds=round(mesh_s, 1),
