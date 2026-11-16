@@ -264,6 +264,13 @@ def report(log=print):
     boards += [f"*Drawn by the generator. Red is the top layer, blue the bottom; the dots are vias. In Elmer, SIN is "
                f"opened at {xy(rs)} and COS at {xy(rc)}, the TX at its ends at {xy(tx)} (KiCad mm). The "
                f"[README](../README.md) has the board and how it was made.*", '']
+    if (HERE / 'elmer_rig.webp').exists():
+        boards += ['![how the stator and rotor are set up in Elmer](../Elmer%20Simulation/elmer_rig.webp)',
+                   '', "*How the boards are set up in Elmer, drawn by "
+                   "[`rig_picture.py`](../Elmer%20Simulation/rig_picture.py) from the geometry the mesh is built "
+                   "from: the rotor copper side down over the stator, each receiver opened at a left-out via (its two pads and the gap between them are the terminal, held at 0 A, so "
+                   "the voltage across it is the open-circuit EMF), and the TX opened between its two stacked ends, "
+                   "where 1 A is driven.*", '']
     expect = []
     tx_exp = EXPECTED.get('tx', {})
     if tx_exp.get('L_away_gen_H') and lt_all:
