@@ -22,18 +22,20 @@ the versions, the mesh's size, the time, the memory and the solver's last residu
 The reference is Maxwell's formula for two coaxial circular filaments,
 μ0 √(ab) ((2/k − k) K(k) − (2/k) E(k)) with k² = 4ab / ((a + b)² + d²), averaged over 41 × 41
 filaments across both traces' widths (24.40 nH), times the share of the circle the TX's copper
-covers (0.989). The two filaments alone, at the traces' centre lines, give 24.51 nH.
+covers (0.989) up to the round ends' centres. The current runs on into the half-discs past them,
+so this share is a lower bound: taken on to the gap's faces it gives 24.32 nH, 0.8 % more (see E01's
+results.md). The two filaments alone, at the traces' centre lines, give 24.51 nH.
 
 | Quantity | The reference's own accuracy | Elmer against it |
 |---|---|---|
-| M at 10 kHz | Maxwell's formula is exact for filaments; the average over the widths assumes uniform current, right at 10 kHz; the open loop's share is a first-order estimate | −3.1 % at level 1, rising with the mesh |
+| M at 10 kHz | Maxwell's formula is exact for filaments; the average over the widths assumes uniform current, right at 10 kHz; the open loop's share is a lower bound, by up to 0.8 % | −3.1 % at level 1, rising with the mesh |
 | M at 3.5 MHz | the current crowds to each trace's edges, which moves M little: the loops are 1.565 mm apart, three times a trace's width | −3.4 % |
 
 What came out:
 
 * **M is 3.1 % low and rises with the mesh**, as E01's L does, and by about the same amount at the
-  same mesh size, most likely for the same reason: E01's diagnostic runs found that the air's mesh
-  round the copper, which the ladder does not refine, holds most of E01's gap (see E01's results.md).
+  same mesh size, for the same reason: the air's mesh round the copper, which the ladder does not
+  refine (see the diagnostic run below and E01's results.md).
 * **The open RX leaves the TX's L alone**: 54.18 nH against E01's 54.20 nH at level 1. A loop with no
   current in it adds no field. At level 0.75 the TX's L is 0.3 % above E01's. The two meshes are not
   the same at the same level (E02 has wedge layers through its second copper as well, and more nodes)
@@ -45,6 +47,20 @@ What came out:
 * **M falls 0.3 % from 10 kHz to 3.5 MHz**, while the TX's L falls 1.6 %: the internal inductance
   that the skin effect removes belongs to each trace's own field, not to the field that links the
   other loop.
+
+## Diagnostic Run
+
+As on E01, level 0.75 again with the air graded twice as finely (`grade` 0.25, `tet_grade` 0.35), at
+10 kHz and 1500 iterations:
+
+| Run | File | Nodes | M | Against the reference | TX's L | Solve |
+|---|---|---|---|---|---|---|
+| The ladder's level 0.75 | `results.json` | 92,120 | 23.33 nH | −3.3 % | 54.06 nH | 9 min, 5.19 GB, residual 1.6e-6 |
+| The air graded twice as finely | `results_grade.json` | 134,840 | 23.87 nH | −1.1 % | 54.94 nH | 15 min, 7.66 GB, residual 2.1e-6 |
+
+M rose 2.3 %, as much as E01's L did with the same change (from 3.7 % to 1.55 % under its
+reference): the air's coarse mesh round the copper held E01's L and E02's M down alike. The TX's L
+rose 1.6 %, and its L from the field's energy agrees with the circuit's within 0.04 %.
 
 ## Problems Met
 

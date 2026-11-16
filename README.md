@@ -27,7 +27,7 @@ section, what was expected and what came out.  The inductive encoder coils are i
 | Board | Checks | Result | Machine | Date |
 |---|---|---|---|---|
 | [E01_circular_loop](Examples/E01_circular_loop/results.md) | L and R of one loop at 10 kHz and 3.5 MHz, a three-level mesh ladder, the iteration check | L 3.1 % under Grover's ring formula at the finest mesh of the ladder, 0.46 % under it with the air graded four times as finely: the air's mesh held most of the gap; R +0.5 %; the circuit's L and the field energy's agree within 0.05 % | 4 cores, 15 GB; 7.1 GB at the finest mesh | 15 to 16 Nov 2026 |
-| [E02_coaxial_loops](Examples/E02_coaxial_loops/results.md) | M between two coaxial loops, the TX's L beside an open loop | M 3.1 % under Maxwell's formula at level 1 and rising with the mesh; the open RX leaves the TX's L alone; the RX's proximity loss shows in the TX's R at 3.5 MHz | 4 cores, 15 GB; 6.7 GB | 15 to 16 Nov 2026 |
+| [E02_coaxial_loops](Examples/E02_coaxial_loops/results.md) | M between two coaxial loops, the TX's L beside an open loop | M 3.1 % under Maxwell's formula at level 1 and rising with the mesh, 1.1 % under it with the air graded twice as finely; the open RX leaves the TX's L alone; the RX's proximity loss shows in the TX's R at 3.5 MHz | 4 cores, 15 GB; 6.7 GB | 15 to 16 Nov 2026 |
 
 ## Left to test on a more powerful PC
 

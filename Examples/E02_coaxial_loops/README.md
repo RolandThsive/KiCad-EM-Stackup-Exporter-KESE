@@ -37,6 +37,7 @@ in it.
 ```bash
 python simulation.py                          # levels 0.75 and 1 at both frequencies, about 1.5 hours on 4 cores
 python simulation.py --levels 1 --freqs 1e4   # one mesh, one frequency
+python simulation.py --levels 0.75 --freqs 1e4 --mesh grade=0.25 --mesh tet_grade=0.35 --results results_grade.json --out case_grade
 ```
 
 Every setting is in `SETTINGS` at the top of `simulation.py`. They are E01's, with two differences:
