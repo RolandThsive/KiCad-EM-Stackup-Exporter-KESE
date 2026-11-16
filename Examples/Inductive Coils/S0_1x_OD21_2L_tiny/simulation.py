@@ -1,23 +1,24 @@
-"""S0_1x_OD21_2L_tiny in Elmer: the SIN and COS curves over a full turn of the rotor, at any air gap.
+"""A coil set from the Sinusoidal Coil Generator in Elmer: the SIN and COS curves against the rotor's angle, at any
+air gap. Everything that belongs to the board is in test_spec.json beside this file, so the same script runs every
+single-set board that new_coil.py (one folder up) sets up; this folder's README says what this board is.
 
-    python simulation.py                          the rotor away, then every angle in SETTINGS['angles_deg']
+    python simulation.py                          the rotor away, then every angle in test_spec.json
     python simulation.py --gap 0.5                the same at a 0.5 mm air gap (copper to copper)
     python simulation.py --angles 0 90 --no-away  the rotor at 0 and 90 degrees only
-    python simulation.py --step 10                every 10 degrees from 0 to 350 instead of every 45
+    python simulation.py --step 10                every 10 degrees over one turn of the rotor's pattern
     python simulation.py --plot                   only redraw the curves from the results already written
+    python simulation.py --angles 0 --mesh-only   build one mesh and say its size, to judge the memory
 
-The board is one electrical period per turn, so a full turn of the rotor gives one period of each curve: SIN
-follows the sine of the rotor's angle and COS its cosine. The TX carries 1 A at 3.5 MHz; SIN and COS carry none,
-so their voltages are the EMFs the TX induces in them, given here as mutual inductances (EMF = 2 pi f M x 1 A:
-1 nH is 22 mV at 3.5 MHz).
+The TX carries 1 A; SIN and COS carry none, so their voltages are the EMFs the TX induces in them, given as mutual
+inductances (EMF = 2 pi f M x 1 A: 1 nH is 22 mV at 3.5 MHz). The rotor repeats itself every 360 / sectors degrees,
+so the curves are drawn over that span: a full turn on a one-sector rotor.
 
-The rotor is a half ring, so its outline turns with it and every angle gets its own mesh (S2 draws its four
-sectors' few positions into one mesh instead). The stator's mesh then differs a little between angles, which
-shows as small noise on the curves; the fit printed at the end says how much.
+Every angle gets its own mesh, the rotor's copper at that angle drawn into it. The stator's mesh then differs a
+little between angles, which shows as small noise on the curves; the fit written with the results says how much.
 
 Writes results_gap<gap>mm.json, a table (.csv) and the curves (.png) beside this file, and the runs under case/
-(not committed). Every setting is in SETTINGS. This script is GPL-3.0 as the bridge; the boards beside it keep
-their own licence (see ../LICENSE.md).
+(not committed). This script is GPL-3.0 as the bridge; the boards beside it keep their own licence (see
+../LICENSE.md).
 """
 from __future__ import annotations
 
@@ -45,24 +46,28 @@ def model_xy(xy_kicad):
     return round(xy_kicad[0] * 2000) / 2000, round(-xy_kicad[1] * 2000) / 2000
 
 
+SET = SPEC['sets'][0]
+SIN_NET, COS_NET = str(SET['sin']), str(SET['cos'])
 SETTINGS = dict(
     stator='Stator.kicad_pcb',
     rotor='Rotor.kicad_pcb',
-    names={'TX': 'TX', '1': 'COS', '2': 'SIN'},    # KESE's copper part per net -> the coil's name
+    names={str(k): v for k, v in SPEC['nets'].items()},   # KESE's copper part per net -> the coil's name
     sigma=5.8e7,
-    freq_hz=SPEC['sets'][0]['f_Hz'],
+    freq_hz=SET['f_Hz'],
     air_gap_mm=SPEC['air_gap_mm'],     # stator F.Cu top to rotor copper face; --gap sets another
     insulators=False,                  # FR-4 and mask are air to the magneto-quasi-static solve
-    angles_deg=SPEC['sets'][0]['sweep_angles_mech_deg'],
+    angles_deg=SET['sweep_angles_mech_deg'],
+    period_deg=SET.get('rotor_period_mech_deg', 360.0),   # the rotor repeats itself after this
     domain_radius_mm=SPEC['air_box']['radius_or_half_width_mm'],
     domain_margin_mm=SPEC['air_box']['radius_or_half_width_mm'],   # air above the rotor and below the stator
     tx_end=model_xy(SPEC['terminals']['TX']['ends_xy_kicad']),
-    tx_end_radius_mm=0.1,              # the trace ends' round caps (0.2 mm traces)
-    rx_vias={'SIN': model_xy(SPEC['terminals']['2']['via_xy_kicad']),
-             'COS': model_xy(SPEC['terminals']['1']['via_xy_kicad'])},
-    via_void_radius_mm=0.3,            # the barrel (drill 0.4 mm) is left out inside this radius; the pad is 0.4
-    sheet_half_mm=0.08,                # half the length of a TX sheet's line; an RX sheet's is 0.25
-    level=0.75,                        # 0.75: about 12 GB a solve; 1.0 (S2's) about 16 GB
+    tx_end_radius_mm=SPEC['terminals']['TX'].get('end_radius_mm', 0.1),     # the trace ends' round caps
+    rx_vias={'SIN': model_xy(SPEC['terminals'][SIN_NET]['via_xy_kicad']),
+             'COS': model_xy(SPEC['terminals'][COS_NET]['via_xy_kicad'])},
+    via_void_radius_mm=SPEC['terminals'][SIN_NET].get('void_radius_mm', 0.3),   # the barrel left out inside this
+    sheet_half_mm=0.8 * SPEC['terminals']['TX'].get('end_radius_mm', 0.1),    # half a TX sheet's line
+    rx_sheet_half_mm=0.25 / 0.3 * SPEC['terminals'][SIN_NET].get('void_radius_mm', 0.3),   # half an RX sheet's
+    level=SPEC.get('mesh_level', 0.75),   # the copper's mesh sizes divided by this (S2's checks used 1.0)
     mesh=dict(h_edge=0.1, h_in=0.2, h_max=6.0, grade=0.5, dz_copper=0.018, dz_max=0.4,
               tet_max=8.0, tet_grade=0.7),
     threads=4,
@@ -130,7 +135,8 @@ def build(stator_export, rotor_export, angle, gap, level, log=print):
     h = SETTINGS['sheet_half_mm']
     sheets['TX'] = LineString([(tx[0] - h, tx[1]), (tx[0] + h, tx[1])])
     for name, xy in SETTINGS['rx_vias'].items():
-        sheets[name] = LineString([(xy[0] - 0.25, xy[1]), (xy[0] + 0.25, xy[1])])
+        h2 = SETTINGS['rx_sheet_half_mm']
+        sheets[name] = LineString([(xy[0] - h2, xy[1]), (xy[0] + h2, xy[1])])
     s = dict(st)
     for k in ('h_edge', 'h_in', 'dz_copper'):
         s[k] = st[k] / level
@@ -156,8 +162,9 @@ def build(stator_export, rotor_export, angle, gap, level, log=print):
 
 
 def fit(angles, values):
-    """The best fit a + b sin(t) + c cos(t): offset, amplitude, phase (degrees) and the rms of what is left."""
-    t = np.radians(np.asarray(angles, float))
+    """The best fit a + b sin(t) + c cos(t), t the angle over the rotor's period as a full circle: offset, amplitude,
+    phase (degrees) and the rms of what is left."""
+    t = np.radians(np.asarray(angles, float) * 360.0 / SETTINGS['period_deg'])
     y = np.asarray(values, float)
     A = np.c_[np.ones_like(t), np.sin(t), np.cos(t)]
     (a, b, c), *_ = np.linalg.lstsq(A, y, rcond=None)
@@ -167,21 +174,24 @@ def fit(angles, values):
 
 
 def through_points(angles, values, tt):
-    """The smooth periodic curve through every point: with the angles evenly spread over a turn, the trigonometric
-    interpolation (the lowest harmonics that pass through every point exactly); otherwise the best sine fit."""
+    """The smooth periodic curve through every point: with the angles evenly spread over the rotor's period, the
+    trigonometric interpolation (the lowest harmonics that pass through every point exactly); otherwise the best
+    sine fit."""
     a = np.asarray(angles, float)
     y = np.asarray(values, float)
     n = len(a)
-    if n >= 3 and np.allclose(a, np.arange(n) * 360.0 / n):
+    per = SETTINGS['period_deg']
+    if n >= 3 and np.allclose(a, np.arange(n) * per / n):
         c = np.fft.rfft(y) / n
-        t = np.radians(tt)
+        t = np.radians(np.asarray(tt) * 360.0 / per)
         out = np.full_like(t, c[0].real)
         for k in range(1, len(c)):
             w = 1.0 if (n % 2 == 0 and k == n // 2) else 2.0
             out += w * (c[k] * np.exp(1j * k * t)).real
         return out, 'interpolated through the points'
     f = fit(angles, values)
-    return f['offset'] + f['amplitude'] * np.sin(np.radians(tt) + np.radians(f['phase_deg'])), 'best sine fit'
+    t = np.radians(np.asarray(tt) * 360.0 / per)
+    return f['offset'] + f['amplitude'] * np.sin(t + np.radians(f['phase_deg'])), 'best sine fit'
 
 
 def plot(res_file, log=print):
@@ -207,24 +217,27 @@ def plot(res_file, log=print):
     import matplotlib
     matplotlib.use('Agg')
     import matplotlib.pyplot as plt
+    import matplotlib.ticker
     ink, ink2, grid, surface = '#0b0b0b', '#52514e', '#e4e3df', '#fcfcfb'
     blue, orange = '#2a78d6', '#eb6834'                  # categorical slots 1 and 2 of the house palette
     fig, ax = plt.subplots(figsize=(8, 4.6), dpi=200)
     fig.patch.set_facecolor(surface)
     ax.set_facecolor(surface)
-    tt = np.linspace(0, 360, 721)
+    per = SETTINGS['period_deg']
+    tt = np.linspace(0, per, 721)
     how = None
     for name, y, col in (('SIN', msin, blue), ('COS', mcos, orange)):
         if len(y) >= 3:
             yy, how = through_points(ang, y, tt)
             ax.plot(tt, yy, color=col, lw=1.6, ls=(0, (5, 3)), zorder=2)
-            ax.annotate(name, (360, yy[-1]), xytext=(6, 0), textcoords='offset points', va='center', color=ink,
+            ax.annotate(name, (per, yy[-1]), xytext=(6, 0), textcoords='offset points', va='center', color=ink,
                         fontsize=9, annotation_clip=False)
         ax.plot(ang, y, ls='none', color=col, marker='o', ms=7, mec=surface, mew=1.5, label=f'{name}, one Elmer solve',
                 zorder=3)
     ax.axhline(0, color=ink2, lw=0.8, zorder=1)
-    ax.set_xlim(0, 360)
-    ax.set_xticks(range(0, 361, 45))
+    ax.set_xlim(0, per)
+    ax.set_xticks(np.linspace(0, per, 9))
+    ax.xaxis.set_major_formatter(matplotlib.ticker.FormatStrFormatter('%g'))
     ax.set_xlabel('rotor angle (degrees)', color=ink2)
     ax.set_ylabel('M from the TX (nH)', color=ink2)
     gap, level = result['gap_mm'], result['level']
@@ -249,7 +262,7 @@ def plot(res_file, log=print):
 def main():
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument('--angles', type=float, nargs='*', default=None)
-    ap.add_argument('--step', type=float, default=None, help='every STEP degrees from 0 to below 360')
+    ap.add_argument('--step', type=float, default=None, help="every STEP degrees over the rotor's period")
     ap.add_argument('--gap', type=float, default=SETTINGS['air_gap_mm'], help='air gap, copper to copper (mm)')
     ap.add_argument('--no-away', action='store_true', help='skip the run with the rotor away')
     ap.add_argument('--level', type=float, default=SETTINGS['level'])
@@ -267,7 +280,7 @@ def main():
     if a.angles is not None:
         angles = list(a.angles)
     elif a.step:
-        angles = [float(x) for x in np.arange(0.0, 360.0 - 1e-9, a.step)]
+        angles = [float(x) for x in np.arange(0.0, SETTINGS['period_deg'] - 1e-9, a.step)]
     else:
         angles = [float(x) for x in SETTINGS['angles_deg']]
     out = Path(a.out)

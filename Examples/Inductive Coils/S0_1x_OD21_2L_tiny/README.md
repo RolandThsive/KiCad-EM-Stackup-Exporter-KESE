@@ -62,6 +62,22 @@ One solve per rotor angle, 0 to 315° in 45° steps by default (8 angles; `--ste
 
 Each gap writes `results_gap<gap>mm.json` (every solve, the fit), `results_gap<gap>mm.csv` (angle, M of SIN and COS in nH, the TX's L, and the EMFs in mV) and `results_gap<gap>mm.png` (the two curves against the rotor's angle). An angle already in the results is skipped, so a stopped sweep picks up where it was.
 
+## The workflow for any generated coil
+
+Any coil set from the generator's Single Coil Set Generator goes through the same five steps, and S0 was made this way. [`../new_coil.py`](../new_coil.py) does the setting up, and this folder's `simulation.py` runs every board it sets up without a change, because it reads each board fact from `test_spec.json`.
+
+1. **Make the coil.** In the generator's checkout, set the parameters in `Generators/Single Coil Set Generator/Parameters/` (S0's are in [`parameter_files`](parameter_files/)) and run `python Generator/Run/RunCoilGenerator.py` from `Generators/Single Coil Set Generator`. It writes `Output/Coil_<...>/`: the two boards, `Parameters.txt` and two pictures. `Generators/resources` must sit beside it, as it does in a full checkout, or the lead-cutting suggestion and the pictures are missing. Read the warnings it prints: a via too close to other copper means the board is not right yet (S0 needed `OUTER_EDGE_RADIUS_MM` 10.5 for that), while the TX tank warning does not matter to the simulation.
+2. **Set it up for Elmer.** In this folder's parent:
+
+       python new_coil.py "<checkout>/Generators/Single Coil Set Generator/Output/Coil_..." S6_my_board
+
+   It makes `S6_my_board/` with the boards, `Parameters.txt`, the parameter files, the pictures, `test_spec.json`, `simulation.py` and a README. Then it builds the mesh at one angle and prints its size and the memory a solve needs. `--angles 16` gives more angles over the rotor's period, `--level` another mesh level, and `--no-estimate` skips the mesh.
+3. **Check it.** A solve needs about 57 kB a node, so about 230,000 nodes is the most that fits in 15 GB and about 500,000 in 32 GB. If the estimate is too big, make the coil smaller (fewer loops, fewer TX turns, a smaller or thinner board each shrink the mesh) or use a lower `--level`. Then check the terminals in the new README against the picture. The TX is opened at its two stacked ends. Each RX coil is opened at one of its layer-change vias: the one nearest the generator's suggested cut, or, where it found no cut spot, the one farthest from the TX copper.
+4. **Run it.** `python simulation.py` in the new folder solves the rotor away, then each angle of `test_spec.json`. `--gap 0.5` sets another air gap and `--step 10` solves every 10 degrees over the rotor's period. A stopped sweep picks up where it was. An angle of S0's size takes about 25 minutes on 4 cores.
+5. **Read the results.** `results_gap<gap>mm.json` has every solve and the best sine fit, `.csv` the curves in nH and mV, and `.png` the curves, with a dot for each solve and dashes between them. `python simulation.py --plot` redraws them. Commit the folder without `case/`, which git ignores.
+
+The limits: single coil sets only, since a `DualCoil_` board has two sets. `simulation.py` has solved S0 (two layers); `new_coil.py` also sets up S1 to S5 (two and four layers) with their TX ends found where their own specs have them, but none of those has been solved this way yet.
+
 ## Licence
 
 These boards are output of the Sinusoidal Coil Generator, for non-commercial use only. See [../LICENSE.md](../LICENSE.md); this branch's GPL-3.0 covers `simulation.py` only.
