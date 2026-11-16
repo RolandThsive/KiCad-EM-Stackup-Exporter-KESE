@@ -264,8 +264,8 @@ def report(log=print):
     boards += [f"*Drawn by the generator. Red is the top layer, blue the bottom; the dots are vias. In Elmer, SIN is "
                f"opened at {xy(rs)} and COS at {xy(rc)}, the TX at its ends at {xy(tx)} (KiCad mm). The "
                f"[README](../README.md) has the board and how it was made.*", '']
-    if (HERE / 'elmer_rig.webp').exists():
-        boards += ['![how the stator and rotor are set up in Elmer](../Elmer%20Simulation/elmer_rig.webp)',
+    if (BOARD / f'{BOARD.name}_elmer_setup.webp').exists():
+        boards += [f'![how the stator and rotor are set up in Elmer](../{BOARD.name}_elmer_setup.webp)',
                    '', "*How the boards are set up in Elmer, drawn by "
                    "[`rig_picture.py`](../Elmer%20Simulation/rig_picture.py) from the geometry the mesh is built "
                    "from: the rotor copper side down over the stator, each receiver opened at a left-out via (its two pads and the gap between them are the terminal, held at 0 A, so "
@@ -353,6 +353,10 @@ def main():
     ap.add_argument('--degree', type=int, default=4, help="BiCGStabL's polynomial degree")
     ap.add_argument('--restart', type=int, default=50, help="GCR's restart (it keeps twice this many vectors)")
     ap.add_argument('--max-iter', type=int, default=SETTINGS['max_iter'])
+    ap.add_argument('--tree-gauge', action='store_true', help='gauge A with a spanning tree (Use Tree Gauge)')
+    ap.add_argument('--sif', action='append', default=[], metavar='LINE',
+                    help="another 'Keyword = value' line for the A-V solver (with --trial); repeat for more")
+    ap.add_argument('--trial', default='', help='a name for a trial setting: its results stay in case/')
     ap.add_argument('--mesh-only', action='store_true', help='build and write the meshes, solve nothing')
     ap.add_argument('--plot', action='store_true', help='only redraw the table and the curves')
     ap.add_argument('--out', default=str(HERE / 'case'))
@@ -361,7 +365,11 @@ def main():
             + ('' if a.ilu == SETTINGS['ilu_order'] else f'_ilu{a.ilu}')
             + ('' if a.method == 'BiCGStabL' else f'_{a.method.lower()}{a.restart}')
             + ('' if a.degree == 4 or a.method != 'BiCGStabL' else f'_deg{a.degree}')
-            + ('' if a.max_iter == SETTINGS['max_iter'] else f'_it{a.max_iter}'))
+            + ('' if a.max_iter == SETTINGS['max_iter'] else f'_it{a.max_iter}')
+            + ('_tg' if a.tree_gauge else '') + (f'_{a.trial}' if a.trial else ''))
+    if a.sif and not a.trial:
+        ap.error('--sif needs --trial NAME, so its results are kept apart')
+    lines = (['Use Tree Gauge = Logical True'] if a.tree_gauge else []) + a.sif
     trial = tagg != f'gap{a.gap:g}mm'                   # another level or solver setting: a trial, kept in case/
     res_file = (Path(a.out) if trial else RESULTS / gap_folder(a.gap)) / f'results_{tagg}.json'
     res_file.parent.mkdir(parents=True, exist_ok=True)
@@ -386,7 +394,8 @@ def main():
     re_ = S.kese_export(BOARD / SETTINGS['rotor'], out / 'kese', log=log)
     result = json.loads(res_file.read_text()) if res_file.exists() else dict(
         board=BOARD.name, gap_mm=a.gap, level=a.level, ilu_order=a.ilu, settings=SETTINGS, expected=EXPECTED,
-        solver=dict(method=a.method, degree=a.degree, restart=a.restart, max_iter=a.max_iter),
+        solver=dict(method=a.method, degree=a.degree, restart=a.restart, max_iter=a.max_iter, lines=lines,
+                    elmer_bin=str(E.ELMER_BIN)),
         versions=S.versions(), runs=[])
     done = {r['rotor_deg'] for r in result['runs']}
     runs = ([] if a.no_away else [None]) + angles
@@ -410,7 +419,7 @@ def main():
                   for n in m['names']}
         case = E.Case(mesh_dir=folder / 'mesh_files', bodies=bodies, order=1, tol=SETTINGS['tol'],
                       max_iter=a.max_iter, ilu_order=a.ilu, method=a.method, bicg_degree=a.degree,
-                      restart=a.restart,
+                      restart=a.restart, solver_lines=lines,
                       coils=[E.Coil('TX', 'TX', 'TX_T1', 'TX_T2', 'TX_SHEET', 1.0),
                              E.Coil('SIN', 'SIN', 'SIN_T1', 'SIN_T2', 'SIN_SHEET', 0.0),
                              E.Coil('COS', 'COS', 'COS_T1', 'COS_T2', 'COS_SHEET', 0.0)])

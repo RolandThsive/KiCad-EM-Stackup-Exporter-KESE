@@ -35,7 +35,8 @@ import subprocess
 from dataclasses import dataclass, field
 from pathlib import Path
 
-ELMER_BIN = Path(__file__).resolve().parent.parent / 'Solver_Elmer' / 'install' / 'bin'
+ELMER_BIN = Path(os.environ.get('ELMER_BIN') or
+                 Path(__file__).resolve().parent.parent / 'Solver_Elmer' / 'install' / 'bin')   # another build
 MU0 = 1.25663706212e-6
 EPS0 = 8.8541878128e-12
 
@@ -77,6 +78,8 @@ class Case:
     ilu_order: int | None = None      # None: the circuit preconditioner as in Elmer's tests (no ILU); 0, 1, 2: an ILU
                                       # of that order on the field's block (Linear System ILU Order), more memory
     save_fields: bool = False         # write the VTU (big); the scalars are always saved
+    solver_lines: list = field(default_factory=list)   # more 'Keyword = value' lines for the A-V solver; one
+                                      # naming a keyword already there replaces it (a gauge, another preconditioner)
     extra_calc: list = field(default_factory=list)
 
 
@@ -182,6 +185,14 @@ def write_sif(case: Case, folder, freq_hz, name='case'):
               '  Linear System Abort Not Converged = False']
         if case.ilu_order is not None:
             L.append(f'  Linear System ILU Order = {int(case.ilu_order)}')
+    av = max(i for i, x in enumerate(L) if x == 'Solver 3')
+    for line in case.solver_lines:
+        key = line.split('=')[0].strip().lower()
+        hit = [i for i in range(av, len(L)) if L[i].split('=')[0].strip().lower() == key]
+        if hit:
+            L[hit[0]] = '  ' + line.strip()
+        else:
+            L.append('  ' + line.strip())
     L += ['  Steady State Convergence Tolerance = 1e-6', 'End', '',
           'Solver 4', '  Equation = "MGDynamicsCalc"', '  Procedure = "MagnetoDynamics" "MagnetoDynamicsCalcFields"',
           '  Potential Variable = String "A"', '  Calculate Current Density = Logical True',
