@@ -20,10 +20,11 @@ Each line changes one thing and keeps the rest; all are L at 10 kHz.
 The ladder in the first line refines only the copper's mesh: a level divides `h_edge`, `h_in` and
 `dz_copper` and leaves the air's grading as it is. Its small last step made the answer look
 converged, but it measured the copper alone. Grading the air twice as finely, at the coarsest copper
-mesh, moved L three and a half times as far as the whole ladder did, with about as many nodes as level 1. Most of
-a thin trace's inductance is in the field close round it, and with `grade` 0.5 the elements there
-grow from 0.12 mm at the copper's edge to 0.62 mm a millimetre away (the size is `h_edge` + `grade` ×
-distance); the tetrahedra above and below grow by `tet_grade` per mm of height in the same way. R did
+mesh, moved L three and a half times as far as the whole ladder did, with about as many nodes as
+level 1. Most of a thin trace's inductance is in the field close round it, and with `grade` 0.5 the
+elements there
+grow from 0.12 mm at the copper's edge to 0.62 mm a millimetre away (the size is `h_edge` +
+`grade` × distance); the tetrahedra above and below grow by `tet_grade` per mm of height in the same way. R did
 not move, since it depends on the copper's mesh alone, and the circuit's L and the field energy's
 still agreed. The board under the copper is not meshed apart from the air: a board or mask part that
 lies wholly outside the copper's heights is merged into it
@@ -34,12 +35,11 @@ covers it too.
 
 On E02 the same change raised M by 2.3 % as well, from 3.3 % to 1.1 % under Maxwell's formula: the
 air holds L and M down alike. Graded four times as finely, the air brings E01's L to 0.46 % under the
-reference, with 166,471 nodes.
-Each halving of the grading halved the change, so the air's mesh is converging but not done, and the
-copper's ladder showed another +0.7 % from level 0.75 to 1.3; the domain holds L down by about
-0.3 % more. Against that stands the reference's
-own band, from 0 to +0.8 %: what is left is of the same size, and E01 cannot measure it. A ladder that
-refines the air with the copper is the fix this points to; it is not yet in the bridge
+reference, with 166,471 nodes. Each halving of the grading halved the change, so the air's mesh is
+converging but not done, and the copper's ladder showed another +0.7 % from level 0.75 to 1.3; the
+domain holds L down by about 0.3 % more. Against that stands the reference's own band, from 0 to
++0.8 %: what is left is of the same size, and E01 cannot measure it. A ladder that refines the air
+with the copper is the fix this points to; it is not yet in the bridge
 ([Future Upgrades And Planning](Future-Upgrades-And-Planning.md)).
 
 ## 30.2 The Iterative Solve
@@ -76,7 +76,7 @@ converges, none of this applies.
 
 | Quantity | On boards like E01 and E02 |
 |---|---|
-| L and M at 10 kHz | 3 to 4 % low with the examples' air grading; 0.46 % low on E01 with the air graded four times as finely, which is within the reference's own uncertainty; rising with every refinement: a lower bound |
+| L and M at 10 kHz | 3 to 4 % low with the examples' air grading; 0.46 % low on E01 with the air graded four times as finely, of the size of the reference's own uncertainty; rising with every refinement: a lower bound |
 | L and M at 3.5 MHz | the same mesh error; the iterative solve converges, so no iteration error on top |
 | R at 10 kHz | within 0.5 % |
 | R at 3.5 MHz, skin and proximity effect | no exact reference, and not yet settled with the mesh: it fell 1.2 % from level 0.75 to level 1; the change against 10 kHz (+29 %) and the RX's share on E02 (+1.5 mΩ) behave as they should |
@@ -84,7 +84,7 @@ converges, none of this applies.
 
 The coil boards' most important number, C2, is a ratio: how much the rotor lowers the TX's L. Errors
 that lower L and M alike may largely cancel in such a ratio, but that is not shown yet; the first coil
-board to run should be run at two mesh levels to show it.
+board to run should be run with two air gradings as well as two mesh levels to show it.
 
 | Previous | Next |
 |:---|---:|
