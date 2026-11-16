@@ -5,7 +5,7 @@ receiver and the TX are opened for their terminals.
     python rig_picture.py                 the rotor at 0 degrees and the spec's air gap
     python rig_picture.py --gap 0.5 --angle 45
 
-Writes elmer_rig.webp beside this file. Nothing here is solved: it reads KESE's export (the same cache simulation.py
+Writes <board>_elmer_setup.webp beside the board's README. Nothing here is solved: it reads KESE's export (the same cache simulation.py
 uses) and the terminals in test_spec.json, and draws them.
 This script is GPL-3.0 as the bridge.
 """
@@ -231,7 +231,7 @@ def main():
     ap = argparse.ArgumentParser(description=__doc__.split('\n\n')[0])
     ap.add_argument('--gap', type=float, default=sim.SETTINGS['air_gap_mm'])
     ap.add_argument('--angle', type=float, default=0.0)
-    ap.add_argument('--out', default=str(HERE / 'elmer_rig.webp'))
+    ap.add_argument('--out', default=str(sim.BOARD / f'{sim.BOARD.name}_elmer_setup.webp'))
     a = ap.parse_args()
     import matplotlib
     matplotlib.use('Agg')

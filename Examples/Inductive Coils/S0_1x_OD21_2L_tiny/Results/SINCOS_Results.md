@@ -41,6 +41,6 @@ Each channel gets its best sine over the rotor's period, M = offset + amplitude 
 
 *Drawn by the generator. Red is the top layer, blue the bottom; the dots are vias. In Elmer, SIN is opened at (97.74, 102.26) and COS at (97.74, 97.74), the TX at its ends at (109.8, 100) (KiCad mm). The [README](../README.md) has the board and how it was made.*
 
-![how the stator and rotor are set up in Elmer](../Elmer%20Simulation/elmer_rig.webp)
+![how the stator and rotor are set up in Elmer](../S0_1x_OD21_2L_tiny_elmer_setup.webp)
 
 *How the boards are set up in Elmer, drawn by [`rig_picture.py`](../Elmer%20Simulation/rig_picture.py) from the geometry the mesh is built from: the rotor copper side down over the stator, each receiver opened at a left-out via (its two pads and the gap between them are the terminal, held at 0 A, so the voltage across it is the open-circuit EMF), and the TX opened between its two stacked ends, where 1 A is driven.*

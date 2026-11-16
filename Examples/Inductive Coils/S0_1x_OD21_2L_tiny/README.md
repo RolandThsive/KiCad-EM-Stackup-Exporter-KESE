@@ -11,10 +11,10 @@ This layout is the template: [`../new_coil.py`](../new_coil.py) makes the same t
 | Folder | What is in it |
 |---|---|
 | [`Boards/`](Boards/) | straight from the generator: `Stator.kicad_pcb` and `Rotor.kicad_pcb` with their `.kicad_pro` files, `Parameters.txt` (its record of the run), its two pictures (`_Representative.svg` and `_Actual.svg`), and [`parameter_files/`](Boards/parameter_files/), the six files it was run with |
-| [`Elmer Simulation/`](Elmer%20Simulation/) | [`test_spec.json`](Elmer%20Simulation/test_spec.json) (every board fact the simulation needs: layers, gap, terminals, angles), [`simulation.py`](Elmer%20Simulation/simulation.py) (meshes and solves each angle and writes the results), [`angle_error.py`](Elmer%20Simulation/angle_error.py) (the angle error at each angle) [`make_charts.py`](Elmer%20Simulation/make_charts.py) (the charts, as WebP) and [`rig_picture.py`](Elmer%20Simulation/rig_picture.py), which draws [`elmer_rig.webp`](Elmer%20Simulation/elmer_rig.webp), how the boards are set up in Elmer. The runs go under `case/` here, which git ignores |
+| [`Elmer Simulation/`](Elmer%20Simulation/) | [`test_spec.json`](Elmer%20Simulation/test_spec.json) (every board fact the simulation needs: layers, gap, terminals, angles), [`simulation.py`](Elmer%20Simulation/simulation.py) (meshes and solves each angle and writes the results), [`angle_error.py`](Elmer%20Simulation/angle_error.py) (the angle error at each angle) [`make_charts.py`](Elmer%20Simulation/make_charts.py) (the charts, as WebP) and [`rig_picture.py`](Elmer%20Simulation/rig_picture.py), which draws the picture of how the boards are set up in Elmer. The runs go under `case/` here, which git ignores |
 | [`Results/`](Results/) | [`expected_results.json`](Results/expected_results.json) (the generator's estimates), [`SINCOS_Results.md`](Results/SINCOS_Results.md) gathering every gap on one page, and a folder for each air gap ([`1mm_AirGap/`](Results/1mm_AirGap/), [`0d5mm_AirGap/`](Results/0d5mm_AirGap/)) with the runs' `results_gap<gap>mm.json` (every solve and the fit), `.csv` (the curves in nH and mV) and `.webp` (the chart) |
 
-Beside this README, `S0_1x_OD21_2L_tiny_stator_and_rotor.webp` is the generator's Representative SVG as a lossless WebP: the picture below.
+Beside this README, `S0_1x_OD21_2L_tiny_stator_and_rotor.webp` is the generator's Representative SVG as a lossless WebP (the picture below), and `S0_1x_OD21_2L_tiny_elmer_setup.webp` shows how the stator, rotor and terminals are set up in Elmer (under "What the solver does").
 
 ## The board
 
@@ -60,7 +60,7 @@ The generator's two warnings, both expected: the TX tank's parallel resistance w
 
 Elmer, magnetic (WhitneyAVHarmonicSolver with edge elements), every coil a massive coil of the circuit module, the same case as S2: the TX carries 1 A at 3.5 MHz, SIN and COS are open, and their voltages over the TX's current give their mutual inductances M. The EMF is 2πfM × 1 A: 1 nH is 22 mV at 3.5 MHz.
 
-![How the stator and rotor are set up in Elmer](Elmer%20Simulation/elmer_rig.webp)
+![How the stator and rotor are set up in Elmer](S0_1x_OD21_2L_tiny_elmer_setup.webp)
 
 *How the boards are set up in Elmer, drawn by [`rig_picture.py`](Elmer%20Simulation/rig_picture.py) from the same geometry the mesh is built from. The rotor sits over the stator copper side down, its copper 1 mm above the stator's top copper, and turns about the board's centre. No trace is cut: the generator found no spot on this small board to cut a receiver's trace, so each receiver is opened by leaving out one of its layer-change vias, the one farthest from the TX copper. Its two pads stay, and the gap between them through the board is the terminal: the electrodes are the pads' faces toward the gap, and the port sheet across it is where Elmer's circuit takes the voltage. SIN and COS are held at 0 A, so that voltage is their open-circuit EMF. The TX is opened where its two ends lie stacked on the two layers, and 1 A is driven across that gap. FR-4 and solder mask are air to this solve.*
 
