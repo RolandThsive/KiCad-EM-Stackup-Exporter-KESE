@@ -12,7 +12,7 @@ it redraws every chart from the results already there and rewrites SINCOS_Result
                               one channel alone at one air gap, on its own scale, and below it each solve's
                               distance from the ideal curve; a ring marks a solve that did not converge
     SINCOS_gaps_SIN.webp, SINCOS_gaps_COS.webp
-                              one channel at every air gap, the same way
+                              one channel at every air gap, the same way, each gap in its own colour
 
 The one-channel charts are for judging the solves closely; SINCOS_Results.md shows only the first two kinds.
 
@@ -37,6 +37,13 @@ PERIOD = SPEC['sets'][0].get('rotor_period_mech_deg', 360.0)
 FREQ = SPEC['sets'][0]['f_Hz']
 INK, INK2, GRID, SURFACE = '#0b0b0b', '#52514e', '#e4e3df', '#fcfcfb'
 COLOURS = {'SIN': (0x2a, 0x78, 0xd6), 'COS': (0xeb, 0x68, 0x34)}    # categorical slots 1 and 2 of the house palette
+# Each air gap's own colour in the one-channel charts of every gap, the same gap the same colour on every board:
+# red, blue, green, yellow and aqua of the house palette, in this order of gap so that neighbouring curves differ
+# most (checked with the palette validator: every neighbouring pair clears the colour-blind and normal-vision
+# floors). A gap not listed takes the next unused of violet, magenta and orange, in order of gap.
+GAP_COLOURS = {0.1: (0xe3, 0x49, 0x48), 0.5: (0x2a, 0x78, 0xd6), 1.0: (0x00, 0x83, 0x00), 1.5: (0xed, 0xa1, 0x00),
+               2.0: (0x1b, 0xaf, 0x7a)}
+MORE_GAP_COLOURS = ((0x62, 0x50, 0xd6), (0xe8, 0x7b, 0xa4), (0xeb, 0x68, 0x34))
 DOTS = (0, (1, 2.2))                  # the ideal curves: dotted, so they never read as solves
 LOOSE = 5e-4      # a solve that stopped above this residual, or gives the TX a negative resistance, is not converged
           # enough to read (on S0 every 1 mm solve stopped below it); simulation.py uses it too
@@ -45,6 +52,16 @@ LOOSE = 5e-4      # a solve that stopped above this residual, or gives the TX a 
 def tint(rgb, k):
     """The colour mixed with the chart's surface: k = 1 is the colour itself."""
     return '#' + ''.join(f'{round(c * k + s * (1 - k)):02x}' for c, s in zip(rgb, (0xfc, 0xfc, 0xfb), strict=True))
+
+
+def gap_colours(gaps):
+    """{gap: colour} for these air gaps: a listed gap its colour in GAP_COLOURS, any other the next of
+    MORE_GAP_COLOURS in order of gap (past those, the listed colours again, which the end labels tell apart)."""
+    out, more = {}, list(MORE_GAP_COLOURS) + list(GAP_COLOURS.values())
+    for g in sorted(gaps):
+        hit = next((c for k, c in GAP_COLOURS.items() if abs(k - g) < 1e-9), None)
+        out[g] = hit if hit else more.pop(0)
+    return out
 
 
 def curves_of(res_file):
@@ -256,8 +273,8 @@ def channel_chart(res_file, name):
 
 
 def channel_gaps_chart(results, name):
-    """SINCOS_gaps_<name>.webp: SIN or COS at every air gap, the smallest gap in full colour, and below it each
-    solve's distance from its own gap's ideal curve. None with fewer than two gaps of four angles or more."""
+    """SINCOS_gaps_<name>.webp: SIN or COS at every air gap, each gap in its own colour (GAP_COLOURS), and below
+    it each solve's distance from its own gap's ideal curve. None with fewer than two gaps of four angles or more."""
     data = []
     for f in results:
         res, ang, ms, mc = curves_of(f)
@@ -268,10 +285,11 @@ def channel_gaps_chart(results, name):
     data.sort(key=lambda d: d[0])
     plt, fig, ax, dx = _panels(f'{BOARD.name}: {name} at each air gap',
                                f'1 A at {FREQ / 1e6:g} MHz in the TX; a dot for each solve, joined; dotted: each gap\'s '
-                               'ideal curve; the smallest gap in full colour')
+                               'ideal curve; each air gap its own colour')
     ends, any_loose = [], False
-    for j, (gap, ang, y, loose) in enumerate(data):
-        col = tint(COLOURS[name], 1.0 - 0.5 * j / (len(data) - 1))
+    cols = gap_colours([d[0] for d in data])
+    for gap, ang, y, loose in data:
+        col = tint(cols[gap], 1.0)
         whole = max(ang) - min(ang) >= 0.75 * PERIOD
         ideal, _ = _ideal(ang, y)
         ends.append(_draw(ax, ang, y, name, col, whole, label=f'{name}, {gap:g} mm', end_label=f'{gap:g} mm'))
