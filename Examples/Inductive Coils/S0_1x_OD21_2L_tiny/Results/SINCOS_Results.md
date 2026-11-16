@@ -36,6 +36,6 @@ Each channel gets its best sine over the rotor's period, M = offset + amplitude 
 
 ## The boards
 
-![stator and rotor](../Boards/S0_1x_OD21_2L_tiny_stator_and_rotor.png)
+![stator and rotor](../Boards/Coil_2_10.5_1_1_1_Series_SteppedDiagonal_Representative.svg)
 
 *Drawn by the generator. Red is the top layer, blue the bottom; the dots are vias. In Elmer, SIN is opened at (97.74, 102.26) and COS at (97.74, 97.74), the TX at its ends at (109.8, 100) (KiCad mm). The [README](../README.md) has the board and how it was made.*

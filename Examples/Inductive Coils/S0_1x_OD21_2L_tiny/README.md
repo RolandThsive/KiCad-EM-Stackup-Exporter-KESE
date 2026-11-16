@@ -10,7 +10,7 @@ This layout is the template: [`../new_coil.py`](../new_coil.py) makes the same t
 
 | Folder | What is in it |
 |---|---|
-| [`Boards/`](Boards/) | straight from the generator: `Stator.kicad_pcb` and `Rotor.kicad_pcb` with their `.kicad_pro` files, `Parameters.txt` (its record of the run), the two pictures (`_Representative.svg`, `_Actual.svg`, and the PNG below), and [`parameter_files/`](Boards/parameter_files/), the six files it was run with |
+| [`Boards/`](Boards/) | straight from the generator: `Stator.kicad_pcb` and `Rotor.kicad_pcb` with their `.kicad_pro` files, `Parameters.txt` (its record of the run), its two pictures (`_Representative.svg`, shown below, and `_Actual.svg`), and [`parameter_files/`](Boards/parameter_files/), the six files it was run with |
 | [`Elmer Simulation/`](Elmer%20Simulation/) | [`test_spec.json`](Elmer%20Simulation/test_spec.json) (every board fact the simulation needs: layers, gap, terminals, angles), [`simulation.py`](Elmer%20Simulation/simulation.py) (meshes and solves each angle and writes the results) and [`angle_error.py`](Elmer%20Simulation/angle_error.py) (the angle error at each angle). The runs go under `case/` here, which git ignores |
 | [`Results/`](Results/) | [`expected_results.json`](Results/expected_results.json) (the generator's estimates), and from the runs `results_gap<gap>mm.json` (every solve and the fit), `.csv` (the curves in nH and mV) and `.png` (the graph), with [`SINCOS_Results.md`](Results/SINCOS_Results.md) gathering every gap on one page |
 
@@ -18,7 +18,7 @@ This layout is the template: [`../new_coil.py`](../new_coil.py) makes the same t
 
 Outline 21.0 mm, bore 4.0 mm, 2 copper layers, board 0.8 mm, air gap 1.0 mm by default (any other with `--gap`). One coil set: a TX of one turn on each layer in series, and two RX coils, SIN and COS, of one period per turn. The rotor is a half ring of copper, so a full turn of it gives one period of each curve: SIN follows the sine of the rotor's angle and COS its cosine.
 
-![stator and rotor](Boards/S0_1x_OD21_2L_tiny_stator_and_rotor.png)
+![stator and rotor](Boards/Coil_2_10.5_1_1_1_Series_SteppedDiagonal_Representative.svg)
 
 *Drawn by the generator (`Coil_2_10.5_1_1_1_Series_SteppedDiagonal_Representative.svg`; the `_Actual.svg` beside it is the copper at its true size).*
 
