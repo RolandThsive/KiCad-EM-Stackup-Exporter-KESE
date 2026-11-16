@@ -25,6 +25,10 @@ The most important single number is C2: how much the rotor lowers the TX's induc
 
 The memory rests on measurements: S2's mesh at level 1 has 979,420 nodes, and the proof boards E01 and E02 measured about 59 kB per node with the iterative solver, so S2 needs about 59 GB. The other boards scale S2 by their length of copper, about 61 GB per metre. Every board needs more than the 4-core, 15 GB test machine and is held for a bigger PC.
 
+## A small board for the SIN and COS curves
+
+[S0_1x_OD21_2L_tiny](S0_1x_OD21_2L_tiny/) is not one of the ten: it is the smallest coil set the generator makes that is still a whole sensor (OD 21 mm, one period per turn, a TX of one turn per layer, a half-ring rotor), made so that the SIN and COS curves over a full turn of the rotor, at any air gap, run on the 15 GB test machine (about 12 GB a solve). Its README says how it was made and how to run it.
+
 ## Pass marks, as reviewed on 16 November
 
 The brief's marks stand, except five that as written either cannot fail or cannot be resolved by a solver. Where this table and the brief differ, this table holds.
