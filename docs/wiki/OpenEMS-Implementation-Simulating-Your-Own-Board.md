@@ -24,7 +24,7 @@ the board's geometry; for a board of your own, set each port's corners there (se
 |---|---|---|
 | `board` | `'O01_microstrip.kicad_pcb'` | The KiCad board, beside the script |
 | `length_mm`, `width_mm`, `centre_kicad` | `50.0`, `2.9`, `(100.0, 100.0)` | O01's line, used to place its ports; a board of your own has its own way to name where its ports are |
-| `f0_hz`, `fc_hz` | `3e9`, `2e9` | The Gaussian pulse: centre f0 and half-width fc, so it covers f0 − fc to f0 + fc (here 1 to 5 GHz). Keep f0 − fc above zero: a pulse that reaches down to DC leaves charge behind on copper that has no path to ground |
+| `f0_hz`, `fc_hz` | `3e9`, `2e9` | The Gaussian pulse: centre f0 and fc, the distance to its 20 dB corners, so it covers f0 − fc to f0 + fc (here 1 to 5 GHz) |
 | `f_report_hz` | `[1e9, 2e9, 3e9, 4e9]` | The frequencies written to the log and to the `report` table of `results.json`; the data are kept at 41 frequencies over the band |
 | `end_criteria` | `1e-4` | Stop when the field energy has fallen this far below its peak (40 dB) |
 | `max_steps` | `80000` | Stop after this many time steps at most |

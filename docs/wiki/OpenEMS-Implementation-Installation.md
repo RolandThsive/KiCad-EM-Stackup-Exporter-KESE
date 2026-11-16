@@ -23,10 +23,11 @@ cd openEMS-Project && git checkout e4cd015 && git submodule update --init --recu
 
 This leaves the solver in `Solver_OpenEMS/install/bin/openEMS` and a Python environment with the
 `openEMS` and `CSXCAD` modules in `Solver_OpenEMS/install/venv`. The bridge's own packages and
-KESE's go into that same environment:
+KESE's go into that same environment, from the repository's root:
 
 ```bash
-Solver_OpenEMS/install/venv/bin/pip install trimesh shapely scipy matplotlib
+cd ../..
+Solver_OpenEMS/install/venv/bin/pip install -r requirements.txt     # numpy, scipy, shapely, trimesh, ...
 Solver_OpenEMS/install/venv/bin/pip install -r <your KESE>/Generator/requirements.txt
 ```
 
@@ -67,8 +68,8 @@ start that may lag behind the source and recommends Linux for production runs. T
 |---|---|
 | OS | Ubuntu 24.04, 4 cores, 15 GB of memory |
 | openEMS | openEMS-Project master `e4cd015` (openEMS `fc00235`, CSXCAD `fdff4b5`) |
-| Python | 3.13, with numpy 2.5.4 in openEMS's environment |
-| trimesh, shapely, scipy | 5.2.1, 2.2.0, 1.18.1 |
+| Python | 3.13 |
+| numpy, scipy, shapely, trimesh, matplotlib, h5py | 2.5.3, 1.18.1, 2.2.0, 5.2.1, 3.11.2, 3.16.0 (the branch's `requirements.txt`) |
 
 Each example writes the versions and the hashes of the code it ran with into its `results.json`.
 
