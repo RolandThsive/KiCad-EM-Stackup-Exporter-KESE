@@ -155,7 +155,9 @@ In no fixed order:
   route) **or other solvers.** Begun: the Elmer and openEMS bridges run KESE as it is and live on
   their own branches ([Elmer FEM Introduction](Elmer-FEM-Introduction.md),
   [OpenEMS Implementation Introduction](OpenEMS-Implementation-Introduction.md)); FastHenry is to
-  follow on a third. Another way, still open: an openEMS model whose overlapping primitives are settled
+  follow on a third. The Elmer bridge's mesh ladder should refine the air round the copper as well as
+  the copper, which its first runs showed holds most of its error
+  ([Elmer FEM Accuracy](Elmer-FEM-Accuracy.md#301-the-error-budget-on-e01)). Another way, still open: an openEMS model whose overlapping primitives are settled
   by CSXCAD's priorities, with no booleans, which would skip stages 3, 4 and 6 for openEMS users. It
   is a new output with its own physics checks, and the finish shells and the conformal mask do not
   map onto priorities.

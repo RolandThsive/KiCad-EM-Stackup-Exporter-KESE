@@ -51,7 +51,7 @@ driven coil or 0.0 for a sensing one. The electrodes and the sheet are found in 
 | `domain_half_height_mm` | `60.0` | The air reaches this far above and below z = 0 |
 | `freqs_hz` | `[1e4, 3.5e6]` | One solve per frequency. Choose one low enough that the current is uniform (here 10 kHz, skin depth 0.66 mm) and the working frequency |
 | `order` | `1` | Edge element order. `--order 2` uses second-order (quadratic) elements, with several times the unknowns and the memory |
-| `levels` | `[0.75, 1.0, 1.3]` | The mesh ladder: each level divides `h_edge`, `h_in` and `dz_copper` by itself; the air's sizes and grading stay as they are. A run of two or three levels shows how far the answer still moves with the copper's mesh |
+| `levels` | `[0.75, 1.0, 1.3]` | The mesh ladder: each level divides `h_edge`, `h_in` and `dz_copper` by itself; the air's sizes and grading stay as they are. A run of two or three levels shows how far the answer still moves with the copper's mesh, not with the air's: check the air with `grade` and `tet_grade` halved as well |
 
 ## 27.4 The Mesh
 
@@ -62,7 +62,7 @@ These go to `mesh25d.Settings` (in `SETTINGS['mesh']`):
 | `h_edge` | `0.09` | Element size at copper edges, mm. At least three elements across the narrowest trace is a good start |
 | `h_in` | `0.18` | Largest element inside copper, mm |
 | `h_max` | `6.0` | Largest triangle anywhere, mm (the far field) |
-| `grade` | `0.5` | How fast the size grows away from copper, mm per mm |
+| `grade` | `0.5` | How fast the size grows away from copper, mm per mm. Halved to 0.25 (with `tet_grade` 0.35), E01's L rose 2.3 % with half again the nodes ([Elmer FEM Accuracy](Elmer-FEM-Accuracy.md#301-the-error-budget-on-e01)) |
 | `dz_copper` | `0.018` | Thickest wedge layer in a copper foil, mm. Half the skin depth or less at the highest frequency (copper: 35 µm at 3.5 MHz) |
 | `dz_max` | `0.4` | Thickest wedge layer elsewhere (through the board, in an air gap), mm |
 | `tet_max` | `8.0` | Largest tetrahedron in the air above and below, mm |

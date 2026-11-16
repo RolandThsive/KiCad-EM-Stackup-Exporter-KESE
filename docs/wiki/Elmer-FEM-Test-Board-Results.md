@@ -27,19 +27,21 @@ One circular trace, 10 mm in radius to its centre line, 0.5 mm wide and 35 µm t
 | L at 10 kHz | 55.99 nH | 53.91 nH (−3.7 %) | 54.20 nH (−3.2 %) | 54.27 nH (−3.1 %) |
 | L from the field's energy, 10 kHz | 55.99 nH | 53.91 nH | 54.18 nH | 54.29 nH |
 | R at 10 kHz | 61.20 mΩ | 61.53 mΩ (+0.5 %) | 61.53 mΩ (+0.5 %) | 61.52 mΩ (+0.5 %) |
-| L at 3.5 MHz | about 55.44 nH (an estimate) | | 53.26 nH (−3.9 %) | L13HF |
-| R at 3.5 MHz | | | 79.25 mΩ | R13HF |
+| L at 3.5 MHz | about 55.44 nH (an estimate) | 52.93 nH (−4.5 %) | 53.26 nH (−3.9 %) | |
+| R at 3.5 MHz | | 80.19 mΩ | 79.25 mΩ | |
 
 The reference L is Grover's ring formula μ0 R (ln(8R / g) − 2), with the rectangle's geometric mean
 distance g = 0.2235 (w + t), times the share of the circle the copper covers (0.989). The reference
 R is the annular sector's DC resistance. At 3.5 MHz the skin depth (35 µm) equals the copper's
 thickness, and no formula is exact there.
 
-![E01's L and E02's M at 10 kHz, as a percentage off their references, against the mesh's nodes in thousands: E01 rises from −3.7 % at 60,000 nodes to −3.2 % at 86,000 and −3.1 % at 125,000; E02 rises from −3.3 % at 92,000 nodes to −3.1 % at 120,000](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Elmer-FEM-Test-Board-Results/elmerresults_1_against_reference.webp)
+![E01's L and E02's M at 10 kHz, as a percentage off their references, against the mesh's nodes in thousands: E01 rises from −3.7 % at 60,000 nodes to −3.2 % at 86,000 and −3.1 % at 125,000; E02 rises from −3.3 % at 92,000 nodes to −3.1 % at 120,000; E01 with the air graded twice as finely sits at −1.55 % with 89,000 nodes](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Elmer-FEM-Test-Board-Results/elmerresults_1_against_reference.webp)
 
-L rises as the mesh is refined, as it should with first-order edge elements, but it levels off about
-3 % under the reference. Refining the copper alone does not close that gap;
-[Elmer FEM Accuracy](Elmer-FEM-Accuracy.md) follows where it comes from. The circuit's L and the
+L rises as the mesh is refined, as it should with first-order edge elements, but along the ladder it
+levels off about 3 % under the reference. The ladder refines only the copper's mesh. Grading the air
+twice as finely at level 0.75 (the green diamond) brings L to 1.55 % under the reference, with about
+as many nodes as level 1: the air's mesh round the copper holds most of the gap
+([Elmer FEM Accuracy](Elmer-FEM-Accuracy.md#301-the-error-budget-on-e01)). The circuit's L and the
 field energy's agree within 0.05 % at every level, so the electrodes, the sheet across the gap and
 Elmer's circuit read back the inductance the field holds. R is 0.5 % high, as it should be: the
 reference stops at the round ends' centres, and the current also runs through the two half-discs
@@ -51,7 +53,18 @@ At 10 kHz the conduction term jωσ is too small, next to the curl-curl term, to
 and the iterative solve stalls; at 3.5 MHz, 350 times higher, it converges. Doubling the cap from 1500 to 3000 iterations moved
 level 1's L by 0.17 %, about as much as going from level 1 to 1.3.
 
-FIELDS_SECTION
+![Left: the magnitude of B at 3.5 MHz for 1 A, on a log colour scale from 10 to 1000 µT, in the plane through the loop's axis, with field lines circling the trace's two crossings at y = −110 and −90 mm and threading the loop; 66 µT at the centre. Right: the magnitude of the current density across the trace's 0.5 mm width, halfway through the copper: about 57 A/mm² everywhere at 10 kHz, slightly more at the inner edge; at 3.5 MHz about 153 A/mm² at the inner edge, about 45 in the middle and 87 at the outer edge](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Elmer-FEM-Test-Board-Results/E01_circular_loop/elmerresults_3_fields.webp)
+
+The fields themselves, at level 0.75, read from the VTU files that `simulation.py --fields` writes.
+The field circles each crossing of the trace and threads the loop. At the loop's centre it is 66 µT
+for 1 A, against μ0 I / 2R = 63 µT for a closed ring: a value at one point, in elements several
+millimetres across, where first-order elements hold B constant in each element, so it is a rough
+check only; L, from the energy of the whole field, is the bridge's number. Across the trace, the
+current at 10 kHz is nearly even and a little denser at the inner edge, as the 1/r of a ring's DC
+current gives. At 3.5 MHz it crowds to both edges, most to the inner one, and the middle carries less
+than an even share: the edge effect behind R's rise at 3.5 MHz (+29 % at level 1, +30 % at level
+0.75). The line follows the level 0.75
+triangles, only a few across the width, so its shape is coarse.
 
 ## 29.2 E02 Coaxial Loops
 
@@ -70,7 +83,7 @@ The reference M is Maxwell's formula for two coaxial circular filaments, average
 filaments across both traces' widths, times the share of the circle the TX's copper covers.
 
 * **M is 3.1 % low and rises with the mesh** (−3.3 % at level 0.75), the same as E01's L at this mesh
-  size: whatever holds E01's L down holds M down alike.
+  size, most likely for the same reason: the coarse air round the copper.
 * **The open RX leaves the TX's L alone** at 10 kHz (54.18 against 54.20 nH): a loop with no current
   in it adds no field.
 * **At 3.5 MHz the RX adds 1.5 mΩ to the TX's R.** RX carries no net current, but eddy currents

@@ -46,7 +46,7 @@ angles) are drawn in too.
 
 ## 26.4 Stack The Wedges, Fill The Air
 
-The triangle mesh is repeated at every **level** in z and joined into wedges (prisms):
+The triangle mesh is repeated at a series of heights in z and joined into wedges (prisms):
 
 | Slab | Layer height |
 |---|---|

@@ -12,12 +12,28 @@ Each line changes one thing and keeps the rest; all are L at 10 kHz.
 |---|---|---|
 | The copper's mesh | level 0.75 → 1 → 1.3 (59,782, 85,712, 125,043 nodes) | +0.54 %, then +0.12 % |
 | The iterative solve | level 1 at 1500 and at 3000 iterations | +0.17 % with the doubled cap |
-| The air's mesh | level 0.75 with the air graded twice as finely (`grade` 0.25, `tet_grade` 0.35) | GRADE_EFFECT |
-| The air domain | level 0.75 in a domain twice as big (120 mm instead of 60) | DOMAIN_EFFECT |
+| The air's mesh | level 0.75 with the air graded twice as finely (`grade` 0.25, `tet_grade` 0.35): 88,760 nodes against 59,782 | **+2.3 %** |
 | The reference's open-loop share | the gap is 1.1 % of the circle; the share is a first-order estimate | a small part of the 1.1 %, either way |
-| **Elmer against the reference** | Grover's ring formula with the trace's GMD | **−3.1 % at level 1.3** |
+| **Elmer against the reference** | Grover's ring formula with the trace's GMD | **−3.1 % at level 1.3; −1.55 % at level 0.75 with the finer air** |
 
-ACCURACY_READING
+The ladder in the first line refines only the copper's mesh: a level divides `h_edge`, `h_in` and
+`dz_copper` and leaves the air's grading as it is. Its small last step made the answer look
+converged, but it measured the copper alone. Grading the air twice as finely, at the coarsest copper
+mesh, moved L three and a half times as far as the whole ladder did, with about as many nodes as level 1. Most of
+a thin trace's inductance is in the field close round it, and with `grade` 0.5 the elements there
+grow from 0.12 mm at the copper's edge to 0.62 mm a millimetre away (the size is `h_edge` + `grade` ×
+distance); the tetrahedra above and below grow by `tet_grade` per mm of height in the same way. R did
+not move, since it depends on the copper's mesh alone, and the circuit's L and the field energy's
+still agreed. The board under the copper is not meshed apart from the air: a board or mask part that
+lies wholly outside the copper's heights is merged into it
+([Elmer FEM Workflow](Elmer-FEM-Workflow.md#262-section-the-parts-into-slabs)), so the air's grading
+covers it too.
+
+![E01's mesh at level 0.75, cut through the loop's axis, 4 mm by 4 mm round one crossing of the trace. Left, the examples' grading (grade 0.5, tet_grade 0.7; 59,782 nodes, L 3.7 % low): the tetrahedra above and below the thin band of wedges grow to about a millimetre within a millimetre of the copper. Right, twice as fine (grade 0.25, tet_grade 0.35; 88,760 nodes, L 1.55 % low): the elements stay smaller round the trace](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Elmer-FEM-Accuracy/E01_circular_loop/elmeraccuracy_1_air_mesh.webp)
+
+What is left, 1.55 %, has not yet been split between the air's mesh, the iterations and the domain.
+A ladder that refines the air with the copper is the fix this points to; it is not yet in the bridge
+([Future Upgrades And Planning](Future-Upgrades-And-Planning.md)).
 
 ## 30.2 The Iterative Solve
 
@@ -53,7 +69,7 @@ converges, none of this applies.
 
 | Quantity | On boards like E01 and E02 |
 |---|---|
-| L and M at 10 kHz | 3 to 4 % low at the meshes this machine can hold, rising with the mesh: a lower bound |
+| L and M at 10 kHz | 3 to 4 % low with the examples' air grading, 1.55 % low (E01) with the air graded twice as finely; rising with every refinement: a lower bound |
 | L and M at 3.5 MHz | the same mesh error; the iterative solve converges, so no iteration error on top |
 | R at 10 kHz | within 0.5 % |
 | R at 3.5 MHz, skin and proximity effect | no exact reference; the change against 10 kHz (+29 %) and the RX's share on E02 (+1.5 mΩ) behave as they should |

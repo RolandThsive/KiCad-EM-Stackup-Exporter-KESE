@@ -29,6 +29,7 @@ a case changed by hand.
 | Symptom | Cause | Fix |
 |---|---|---|
 | Very slow convergence, many sliver tetrahedra | The disc's rim was much finer than the far-field size, and the tetrahedra were not optimised | The rim is sized to `h_max` (`disc(..., h=h_max)`) and gmsh's Netgen optimiser runs after the 3D mesh; together they cut the tetrahedra four-fold |
+| L or M a few percent low, while the mesh ladder's last step is small | The ladder divides only the copper's sizes; the air's grading (`grade`, `tet_grade`) stays as it is, and the elements round the copper grow too fast | Run one level again with both halved (`--mesh grade=0.25 --mesh tet_grade=0.35` for the examples) and its own `--results`: on E01 L rose 2.3 %, from 3.7 % to 1.55 % under the reference ([Elmer FEM Accuracy](Elmer-FEM-Accuracy.md#301-the-error-budget-on-e01)) |
 | A board with vias gets dozens of wedge layers through the board | The dielectric slab held copper (the via barrels), so it was given the copper's thin layers | Only slabs up to `foil_max` (0.15 mm) count as copper foils; S2 went from 96 layers to 17 |
 | `the new layout has other slabs: its parts moved in z` | `relabel()` was given a layout whose parts start or end at other heights | Only move parts in the plane (a rotor turned about the axis) between relabelled runs |
 
