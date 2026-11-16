@@ -9,7 +9,7 @@ a geometry exporter, and is never changed by the bridge.
 > [!NOTE]
 > This category describes work in progress. Two proof boards have run (see
 > [Elmer FEM Test Board Results](Elmer-FEM-Test-Board-Results.md)); the ten inductive encoder
-> boards are built and meshed but need more memory than the test machine has, and are marked
+> boards are built, and the smallest meshed, but they need more memory than the test machine has, and are marked
 > **YET TO BE RUN** on [Elmer FEM Test Boards](Elmer-FEM-Test-Boards.md).
 
 ## 24.1 What Elmer Is Used For Here

@@ -50,13 +50,17 @@ Generator>`. KESE runs inside the bridge's Python, so its own packages (`require
 package(s)* and the `pip install` line to fix it.
 
 **Check the whole chain** with the first proof board, on its coarsest mesh at 3.5 MHz, where the
-solve converges (several minutes on 4 cores; a 10 kHz solve runs to its iteration cap and takes about
-25 minutes):
+solve converges (3 minutes and 579 iterations on the 4-core test machine; a 10 kHz solve runs to its
+iteration cap of 3000 instead, which took 25 minutes on a shared machine):
 
 ```bash
 cd Examples/E01_circular_loop
-../../.venv/bin/python simulation.py --levels 0.75 --freqs 3.5e6
+../../.venv/bin/python simulation.py --levels 0.75 --freqs 3.5e6 --out case_check --results check.json
 ```
+
+It should print L about 52.93 nH and R about 80.19 mOhm, the level 0.75 values of
+[Elmer FEM Test Board Results](Elmer-FEM-Test-Board-Results.md#291-e01-circular-loop); its own
+`--results` file keeps the committed `results.json` as it is.
 
 ## 25.2 Windows
 
