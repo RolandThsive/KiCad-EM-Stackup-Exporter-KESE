@@ -63,7 +63,7 @@ def model_xy(xy_kicad):
 
 SET = SPEC['sets'][0]
 SIN_NET, COS_NET = str(SET['sin']), str(SET['cos'])
-LOOSE = 5e-4   # above this residual the iterative solves here drift off the sine (every 1 mm solve stopped below)
+LOOSE = charts.LOOSE   # above this residual the iterative solves here drift off the sine
 SETTINGS = dict(
     stator=SPEC['files']['stator'],    # paths from the board folder
     rotor=SPEC['files']['rotor'],
