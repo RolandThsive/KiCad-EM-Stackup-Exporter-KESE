@@ -4,6 +4,22 @@ The smallest coil set that is still a whole angle sensor, made with the [Sinusoi
 
 The curves, the fits and the angle error are in [Results/SINCOS_Results.md](Results/SINCOS_Results.md), one page for every air gap solved.
 
+## Results at each air gap
+
+| Air gap | Amplitude SIN / COS | Angle error | Solves below the residual limit | L TX over the turn |
+|---|---|---|---|---|
+| 2 mm | 0.89 / 0.84 nH (19 / 18 mV) | 3.3° rms, 5.1° peak | 8 of 8 | 106 to 111 nH |
+| 1.5 mm | 1.37 / 1.32 nH (30 / 29 mV) | 3.6° rms, 5.6° peak | 8 of 8 | 103 to 110 nH |
+| 1 mm | 2.15 / 2.07 nH (47 / 45 mV) | 4.6° rms, 7.1° peak | 8 of 8 | 99 to 108 nH |
+| 0.5 mm | 3.26 / 2.81 nH (72 / 62 mV) | 14.3° rms, 28.3° peak | 5 of 8 | 79 to 106 nH |
+| 0.1 mm | 2.45 / 5.04 nH (54 / 111 mV) | 67.6° rms, 172.9° peak | 0 of 8 | 31 to 109 nH |
+
+![SIN at each air gap](Results/SINCOS_gaps_SIN.webp)
+
+*SIN at each air gap, one dot per solve; rings mark the solves that stopped above a residual of 5e-4 or give the TX a negative resistance. [`SINCOS_gaps_COS.webp`](Results/SINCOS_gaps_COS.webp) is the same for COS, and [`SINCOS_gaps.webp`](Results/SINCOS_gaps.webp) has both.*
+
+From 1 mm out every solve stays below the residual limit and the curves are close to a sine and cosine: the signal falls by about a third for each half millimetre (2.15, 1.37 and 0.89 nH for SIN at 1, 1.5 and 2 mm) and the angle error drops a little as the gap grows. Below 1 mm the solver stalls at several angles (3 of 8 at 0.5 mm, all 8 at 0.1 mm), so those two rows are not yet the board's answer. The 1.5 and 2 mm meshes have 16 and 17 layers against 15 at 1 mm (about 215,000 and 227,000 nodes) and needed 12.0 to 12.8 GB a solve.
+
 ## The folder
 
 This layout is the template: [`../new_coil.py`](../new_coil.py) makes the same folders for any other single coil set from the generator (`3D_Geometry/` is filled by the first run), and the scripts in `Elmer Simulation/` run it without a change.
@@ -13,7 +29,7 @@ This layout is the template: [`../new_coil.py`](../new_coil.py) makes the same f
 | [`Boards/`](Boards/) | straight from the generator: `Stator.kicad_pcb` and `Rotor.kicad_pcb` with their `.kicad_pro` files, `Parameters.txt` (its record of the run), its two pictures (`_Representative.svg` and `_Actual.svg`), and [`parameter_files/`](Boards/parameter_files/), the six files it was run with |
 | [`3D_Geometry/`](3D_Geometry/) | what KESE made from the two boards, the geometry the mesh is built from: for each of [`Stator/`](3D_Geometry/Stator/) and [`Rotor/`](3D_Geometry/Rotor/), one STL per solid in `stl/` (each coil net's copper, the laminate, the solder mask), `materials.json` (each solid's role, net, layer and heights), the board as a STEP file, and KESE's `report.txt` and `parameters.txt`. `source.json` records the board file's hash, KESE's version and the settings; `simulation.py` reuses the export while the board is unchanged and runs KESE again when it changes. (This is KESE's output; the `3D_Geometry/` at the branch's root is where KESE itself goes.) |
 | [`Elmer Simulation/`](Elmer%20Simulation/) | [`test_spec.json`](Elmer%20Simulation/test_spec.json) (every board fact the simulation needs: layers, gap, terminals, angles), [`simulation.py`](Elmer%20Simulation/simulation.py) (meshes and solves each angle and writes the results), [`angle_error.py`](Elmer%20Simulation/angle_error.py) (the angle error at each angle) [`make_charts.py`](Elmer%20Simulation/make_charts.py) (the charts, as WebP), [`rig_picture.py`](Elmer%20Simulation/rig_picture.py), which draws the picture of how the boards are set up in Elmer, and [`angle_setup.py`](Elmer%20Simulation/angle_setup.py), which draws the rotor over the stator at each angle into [`RotorStator_AngleSetup/`](Elmer%20Simulation/RotorStator_AngleSetup/). The runs go under `case/` here, which git ignores |
-| [`Results/`](Results/) | [`expected_results.json`](Results/expected_results.json) (the generator's estimates), [`SINCOS_Results.md`](Results/SINCOS_Results.md) gathering every gap on one page, and a folder for each air gap ([`1mm_AirGap/`](Results/1mm_AirGap/), [`0d5mm_AirGap/`](Results/0d5mm_AirGap/)) with the runs' `results_gap<gap>mm.json` (every solve and the fit), `.csv` (the curves in nH and mV) and `.webp` (the chart) |
+| [`Results/`](Results/) | [`expected_results.json`](Results/expected_results.json) (the generator's estimates), [`SINCOS_Results.md`](Results/SINCOS_Results.md) gathering every gap on one page, the charts of every gap together (`SINCOS_gaps.webp`, and `_SIN` and `_COS` apart), and a folder for each air gap ([`0d1mm_AirGap/`](Results/0d1mm_AirGap/), [`0d5mm_AirGap/`](Results/0d5mm_AirGap/), [`1mm_AirGap/`](Results/1mm_AirGap/), [`1d5mm_AirGap/`](Results/1d5mm_AirGap/), [`2mm_AirGap/`](Results/2mm_AirGap/)) with the runs' `results_gap<gap>mm.json` (every solve and the fit), `.csv` (the curves in nH and mV) and `.webp` (the chart) |
 
 Beside this README, `S0_1x_OD21_2L_tiny_stator_and_rotor.webp` is the generator's Representative SVG as a lossless WebP (the picture below), and `S0_1x_OD21_2L_tiny_elmer_setup.webp` shows how the stator, rotor and terminals are set up in Elmer (under "What the solver does").
 
