@@ -17,7 +17,7 @@ with its KiCad files, its `simulation.py` and its `README.md`.
 | Copper | F.Cu: one trace of net `RF`, 2.9 mm wide and 35 µm thick, along the whole board. B.Cu: one filled polygon with no net |
 | What openEMS checks | Z0 and εeff from the ports' own probes, εeff again from S21's phase, S21 against the dielectric's loss, S11 |
 | References | Hammerstad and Jensen (Z0 with the strip's thickness, static εeff), Kirschning and Jansen (εeff's dispersion), Pozar (the dielectric's loss) |
-| Run | a few minutes on 4 cores, 411,424 cells |
+| Run | 88 s on 4 cores, 411,424 cells |
 | Status | **run**: [OpenEMS Implementation Test Board Results](OpenEMS-Implementation-Test-Board-Results.md#381-o01-microstrip) |
 
 ## 37.2 The Ten Inductive Encoder Boards

@@ -26,7 +26,8 @@ the board's geometry; for a board of your own, set each port's corners there (se
 | `length_mm`, `width_mm`, `centre_kicad` | `50.0`, `2.9`, `(100.0, 100.0)` | O01's line, used to place its ports; a board of your own has its own way to name where its ports are |
 | `f0_hz`, `fc_hz` | `3e9`, `2e9` | The Gaussian pulse: centre f0 and fc, the distance to its 20 dB corners, so it covers f0 − fc to f0 + fc (here 1 to 5 GHz) |
 | `f_report_hz` | `[1e9, 2e9, 3e9, 4e9]` | The frequencies written to the log and to the `report` table of `results.json`; the data are kept at 41 frequencies over the band |
-| `end_criteria` | `1e-4` | Stop when the field energy has fallen this far below its peak (40 dB) |
+| `dc_free` | `True` | The pulse's sine carrier, which has no DC part. openEMS's default cosine carrier has a small one, which leaves static charge on the copper so that the field energy never falls below about −40 dB. An openEMS build older than the option falls back to the cosine |
+| `end_criteria` | `1e-5` | Stop when the field energy has fallen this far below its peak (50 dB) |
 | `max_steps` | `80000` | Stop after this many time steps at most |
 | `threads` | `4` | Threads for openEMS |
 | `engine` | `'cpu'` | openEMS's CPU engine; `None` uses the default engine, for a build that does not have it |
@@ -67,10 +68,25 @@ These go to `F.MeshSpec` (in `SETTINGS['mesh']`):
 A cell of 35 µm through the copper makes the time step small (openEMS warns *the timestep seems to
 be very small*); the run is still right, only longer.
 
-## 36.5 Before A Large Board
+## 36.5 The Command Line
 
-The preflight prints the number of cells before anything runs. openEMS needs roughly a hundred
-bytes per cell and its run time grows with the number of cells times the number of time steps; see
+| Option | What it does |
+|---|---|
+| (none) | The run with `SETTINGS` as they are, to `results.json` |
+| `--h-edge MM` | Another thirds-rule spacing at the copper's edges, to `results_h<MM>.json` |
+| `--dielectric-cells N` | At least N cells through each dielectric, to `results_h<MM>_z<N>.json` |
+| `--engine NAME` | `cpu` (the default here), `multithreaded`, `basic`, or `default` for openEMS's own choice; any other than `cpu` adds `_<NAME>` to the results' name |
+| `--dump` | Also writes E in the plane halfway through the core as HDF5 under `case/`, sampled at the rate openEMS picks from the pulse's band (for the field pictures); adds `_dump` to the results' name |
+| `--out DIR` | The working folder instead of `case/` |
+| `--reuse` | Reads the last run's probe files again, without running openEMS: for a change to the read-back only |
+
+The options combine: `--h-edge 0.1 --engine default` writes `results_h0.1_default.json`.
+
+## 36.6 Before A Large Board
+
+The preflight prints the number of cells before anything runs. openEMS needs about 60 bytes per cell
+with its CPU engine and about 100 with its default engine, and its run time grows with the number of
+cells times the number of time steps; see
 [OpenEMS Implementation Hardware](OpenEMS-Implementation-Hardware.md) for what was measured.
 
 | Previous | Next |
