@@ -18,8 +18,8 @@ and the two SVG pictures). <name> is the new folder beside this file, laid out a
                          the sweep's angles, and where each coil is opened (the TX at its stacked ends, each RX coil
                          at the layer-change via nearest the generator's suggested cut, or farthest from the TX copper
                          where it found no cut spot)
-      simulation.py, angle_error.py, make_charts.py   S0_1x_OD21_2L_tiny's, unchanged: they read everything from
-                         test_spec.json
+      simulation.py, angle_error.py, make_charts.py, rig_picture.py
+                         S0_1x_OD21_2L_tiny's, unchanged: they read everything from test_spec.json
     Results/
       expected_results.json   the generator's estimates (the TX's inductance and resistance); the runs add
                          SINCOS_Results.md here, and their results and charts in a folder per air gap
@@ -42,7 +42,7 @@ from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
 TEMPLATE = HERE / 'S0_1x_OD21_2L_tiny' / 'Elmer Simulation' / 'simulation.py'
-SCRIPTS = ('simulation.py', 'angle_error.py', 'make_charts.py')    # copied from TEMPLATE's folder
+SCRIPTS = ('simulation.py', 'angle_error.py', 'make_charts.py', 'rig_picture.py')    # copied from TEMPLATE's folder
 KB_PER_NODE = 57.0                         # Elmer's memory a node, E01, E02 and S0 (S0: 11.42 GB at 203,669 nodes)
 AXIS = (100.0, 100.0)                      # the generator puts the sensor's axis at KiCad (100, 100)
 
@@ -279,7 +279,7 @@ The generator's warnings for this board:
 | Folder | What is in it |
 |---|---|
 | [`Boards/`](Boards/) | straight from the generator: the stator and rotor boards, `Parameters.txt`, the pictures and the parameter files it was run with |
-| [`Elmer Simulation/`](Elmer%20Simulation/) | `test_spec.json` (every board fact the simulation needs), `simulation.py`, `angle_error.py` and `make_charts.py` (S0's, unchanged), and the runs under `case/`, which git ignores |
+| [`Elmer Simulation/`](Elmer%20Simulation/) | `test_spec.json` (every board fact the simulation needs), `simulation.py`, `angle_error.py`, `make_charts.py` and `rig_picture.py` (S0's, unchanged; `python rig_picture.py` draws how the boards sit in Elmer), and the runs under `case/`, which git ignores |
 | [`Results/`](Results/) | `expected_results.json` (the generator's estimates), [`SINCOS_Results.md`](Results/SINCOS_Results.md) with every gap on one page, and a folder for each air gap (`1mm_AirGap`, `0d5mm_AirGap`, the point written as d) with the runs' `results_gap<gap>mm.json`, `.csv` and `.webp` |
 
 ## Running it
@@ -295,7 +295,7 @@ The generator's warnings for this board:
 
 ## Licence
 
-These boards are output of the Sinusoidal Coil Generator, for non-commercial use only. See [../LICENSE.md](../LICENSE.md); this branch's GPL-3.0 covers `simulation.py`, `angle_error.py` and `make_charts.py` only.
+These boards are output of the Sinusoidal Coil Generator, for non-commercial use only. See [../LICENSE.md](../LICENSE.md); this branch's GPL-3.0 covers `simulation.py`, `angle_error.py`, `make_charts.py` and `rig_picture.py` only.
 """
 
 
