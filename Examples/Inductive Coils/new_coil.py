@@ -20,6 +20,8 @@ and the two SVG pictures). <name> is the new folder beside this file, laid out a
                          where it found no cut spot)
       simulation.py, angle_error.py, make_charts.py, rig_picture.py
                          S0_1x_OD21_2L_tiny's, unchanged: they read everything from test_spec.json
+    3D_Geometry/         KESE's export of each board (STL solids, materials.json, STEP, KESE's report), written by
+                         the first run and reused while the board is unchanged
     Results/
       expected_results.json   the generator's estimates (the TX's inductance and resistance); the runs add
                          SINCOS_Results.md here, and their results and charts in a folder per air gap
@@ -279,6 +281,7 @@ The generator's warnings for this board:
 | Folder | What is in it |
 |---|---|
 | [`Boards/`](Boards/) | straight from the generator: the stator and rotor boards, `Parameters.txt`, the pictures and the parameter files it was run with |
+| [`3D_Geometry/`](3D_Geometry/) | KESE's export of the stator and rotor (STL solids, `materials.json`, STEP, KESE's report), written by the first run; `source.json` records the board's hash, so a changed board is exported again |
 | [`Elmer Simulation/`](Elmer%20Simulation/) | `test_spec.json` (every board fact the simulation needs), `simulation.py`, `angle_error.py`, `make_charts.py` and `rig_picture.py` (S0's, unchanged; `python rig_picture.py` draws how the boards sit in Elmer), and the runs under `case/`, which git ignores |
 | [`Results/`](Results/) | `expected_results.json` (the generator's estimates), [`SINCOS_Results.md`](Results/SINCOS_Results.md) with every gap on one page, and a folder for each air gap (`1mm_AirGap`, `0d5mm_AirGap`, the point written as d) with the runs' `results_gap<gap>mm.json`, `.csv` and `.webp` |
 

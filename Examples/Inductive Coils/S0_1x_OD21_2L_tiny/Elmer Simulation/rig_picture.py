@@ -5,8 +5,8 @@ receiver and the TX are opened for their terminals.
     python rig_picture.py                 the rotor at 0 degrees and the spec's air gap
     python rig_picture.py --gap 0.5 --angle 45
 
-Writes <board>_elmer_setup.webp beside the board's README. Nothing here is solved: it reads KESE's export (the same cache simulation.py
-uses) and the terminals in test_spec.json, and draws them.
+Writes <board>_elmer_setup.webp beside the board's README. Nothing here is solved: it reads KESE's export in
+../3D_Geometry (what simulation.py meshes) and the terminals in test_spec.json, and draws them.
 This script is GPL-3.0 as the bridge.
 """
 from __future__ import annotations
@@ -29,8 +29,8 @@ ROTOR = '#8a8984'
 
 def model_layout(gap, angle):
     """The parts as simulation.py places them (insulators left out, as in the solve), sectioned in every slab."""
-    se = S.kese_export(sim.BOARD / sim.SETTINGS['stator'], HERE / 'case' / 'kese', log=lambda *_: None)
-    re_ = S.kese_export(sim.BOARD / sim.SETTINGS['rotor'], HERE / 'case' / 'kese', log=lambda *_: None)
+    se = S.kese_geometry(sim.BOARD / sim.SETTINGS['stator'], sim.GEOMETRY, log=lambda *_: None)
+    re_ = S.kese_geometry(sim.BOARD / sim.SETTINGS['rotor'], sim.GEOMETRY, log=lambda *_: None)
     stator = sim.stator_parts(se)
     rot = sim.rotor_parts(re_, angle, gap)
     lay = M.Layout(stator + sim.voids(stator) + rot, M.disc(sim.AXIS, 30.0, n=64), (-5, 5))

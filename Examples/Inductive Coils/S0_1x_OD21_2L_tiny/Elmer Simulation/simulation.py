@@ -40,6 +40,7 @@ from shapely.geometry import LineString, Point
 HERE = Path(__file__).resolve().parent              # <board>/Elmer Simulation
 BOARD = HERE.parent                                 # <board>: README.md, Boards/, Elmer Simulation/, Results/
 RESULTS = BOARD / 'Results'
+GEOMETRY = BOARD / '3D_Geometry'                     # KESE's export of each board, kept in the repo
 sys.path.insert(0, str(HERE.parents[3]))
 sys.path.insert(0, str(HERE))
 from angle_error import METHOD, angle_error, gap_folder, results_files, sine_fit   # noqa: E402
@@ -390,8 +391,8 @@ def main():
         print(msg, flush=True)
         logf.write(f'{time.strftime("%H:%M:%S")} {msg}\n')
         logf.flush()
-    se = S.kese_export(BOARD / SETTINGS['stator'], out / 'kese', log=log)
-    re_ = S.kese_export(BOARD / SETTINGS['rotor'], out / 'kese', log=log)
+    se = S.kese_geometry(BOARD / SETTINGS['stator'], GEOMETRY, log=log)   # exported again only if the board changed
+    re_ = S.kese_geometry(BOARD / SETTINGS['rotor'], GEOMETRY, log=log)
     result = json.loads(res_file.read_text()) if res_file.exists() else dict(
         board=BOARD.name, gap_mm=a.gap, level=a.level, ilu_order=a.ilu, settings=SETTINGS, expected=EXPECTED,
         solver=dict(method=a.method, degree=a.degree, restart=a.restart, max_iter=a.max_iter, lines=lines,

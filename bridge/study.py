@@ -26,6 +26,36 @@ def kese_export(board, cache_root, mask=True, log=print):
     return G.run_kese(board, out, mask=mask, log=log)
 
 
+def kese_geometry(board, folder, mask=True, log=print):
+    """KESE's export of a board kept in folder/<board name>: materials.json, the STL solids, the STEP and KESE's
+    report and parameters, meant to be committed beside the board. source.json there records the board file's hash,
+    KESE's version and the settings; the board is exported again only when its file changes. Returns that folder."""
+    import shutil
+    import tempfile
+    board = Path(board)
+    dst = Path(folder) / board.stem
+    rec = dst / 'source.json'
+    h = file_hash(board)
+    if rec.exists() and (dst / 'materials.json').exists() and json.loads(rec.read_text()).get('board_hash') == h:
+        log(f'KESE geometry reused: {dst}')
+        return dst
+    with tempfile.TemporaryDirectory() as tmp:
+        src = G.run_kese(board, Path(tmp), mask=mask, log=log)
+        if dst.exists():
+            shutil.rmtree(dst)
+        shutil.copytree(src, dst)
+    write_source(dst, board, mask)
+    return dst
+
+
+def write_source(dst, board, mask=True):
+    """source.json in a kept KESE export: which board file (by its hash), KESE's version and the settings used."""
+    Path(dst, 'source.json').write_text(json.dumps(dict(
+        board=Path(board).name, board_hash=file_hash(board), hash='the first 16 hex digits of the file\'s SHA-256',
+        kese=G.kese_version(), preset='elmer', formats=['step', 'stl'],
+        settings=G.MASK_SETTINGS if mask else []), indent=1) + '\n')
+
+
 def iterations(logfile):
     """The last linear solve of the A-V system in an ElmerSolver log: (iterations, relative residual)."""
     text = Path(logfile).read_text(errors='replace')

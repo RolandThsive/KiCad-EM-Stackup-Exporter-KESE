@@ -6,7 +6,7 @@ KESE stays a geometry exporter. The bridge runs it as a program and reads what i
 
 ## What happens to a board
 
-1. **Export** (`study.kese_export`, `geometry.run_kese`): KESE exports the `.kicad_pcb` for Elmer, as one STL per solid and a `materials.json`. The export is cached by the board file's hash, so an unchanged board is not exported twice.
+1. **Export** (`study.kese_geometry` or `study.kese_export`, `geometry.run_kese`): KESE exports the `.kicad_pcb` for Elmer, as one STL per solid and a `materials.json`, plus a STEP and its report. `kese_geometry` keeps the export in a folder of its own, meant to be committed beside the board (the coil examples use `3D_Geometry/`), with a `source.json` holding the board file's hash; `kese_export` keeps it in a scratch cache named by that hash. Either way an unchanged board is not exported twice.
 2. **Parts** (`geometry.load_parts`): each solid becomes a part in model coordinates (x and y as KiCad's with y up, z = 0 at the top of the top copper), named by its net or its role. A board can be flipped copper side down, moved up by an air gap and turned about an axis the caller gives: that is how a rotor is placed over a stator.
 3. **Mesh** (`mesh25d`): the 2.5D mesh. One triangle mesh holds every copper edge of every layer, and it is swept through the stack as prism (wedge) layers, several through each copper layer so the skin depth is resolved. Tetrahedra fill the air above and below, out to the domain's edge. No 3D Booleans, so 35 µm copper on a 1.6 mm board stays a few hundred thousand nodes.
 4. **Ports** (`ports`): each coil is opened at two faces of its copper (the two ends of a cut trace, or the two pads of a left-out via), its electrodes, with a small sheet across the gap between them that pins the voltage.
@@ -21,7 +21,7 @@ KESE stays a geometry exporter. The bridge runs it as a program and reads what i
 | [`mesh25d.py`](mesh25d.py) | the 2.5D mesh, its boundaries, and writing it in Elmer's format | `Layout`, `Settings`, `build_mesh`, `relabel`, `outer_faces`, `write_elmer` |
 | [`ports.py`](ports.py) | a coil's two electrodes and its port sheet | `electrodes`, `sheet_at_level`, `sheet_vertical` |
 | [`elmer_case.py`](elmer_case.py) | the case (`.sif`), its circuit, running ElmerSolver and reading its scalars | `Coil`, `Material`, `Case`, `write_sif`, `run` |
-| [`study.py`](study.py) | a study: the cached export, one solve per frequency, the numbers back, the versions used | `kese_export`, `solve`, `merge_run`, `versions` |
+| [`study.py`](study.py) | a study: KESE's export (kept or cached), one solve per frequency, the numbers back, the versions used | `kese_geometry`, `kese_export`, `solve`, `merge_run`, `versions` |
 
 ## Using it
 

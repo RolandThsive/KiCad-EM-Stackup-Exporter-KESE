@@ -29,7 +29,7 @@ The memory rests on measurements: S2's mesh at level 1 has 979,420 nodes, and th
 
 [S0_1x_OD21_2L_tiny](S0_1x_OD21_2L_tiny/) is not one of the ten: it is the smallest coil set the generator makes that is still a whole sensor (OD 21 mm, one period per turn, a TX of one turn per layer, a half-ring rotor), made so that the SIN and COS curves over a full turn of the rotor, at any air gap, run on the 15 GB test machine (about 12 GB a solve). Its README says how it was made and how to run it.
 
-Any other single coil set from the generator is set up the same way, in one command: [`new_coil.py`](new_coil.py) turns the generator's output folder into a folder here laid out as S0's (`Boards/` straight from the generator, `Elmer Simulation/` with S0's `simulation.py`, `angle_error.py`, `make_charts.py` and `rig_picture.py`, which run it as they are, and `Results/`), and prints the memory a solve needs. The steps are in [S0's README](S0_1x_OD21_2L_tiny/README.md#the-workflow-for-any-generated-coil).
+Any other single coil set from the generator is set up the same way, in one command: [`new_coil.py`](new_coil.py) turns the generator's output folder into a folder here laid out as S0's (`Boards/` straight from the generator, `Elmer Simulation/` with S0's `simulation.py`, `angle_error.py`, `make_charts.py` and `rig_picture.py`, which run it as they are, `Results/`, and `3D_Geometry/` with KESE's export of the boards once the first run makes it), and prints the memory a solve needs. The steps are in [S0's README](S0_1x_OD21_2L_tiny/README.md#the-workflow-for-any-generated-coil).
 
 ## Pass marks, as reviewed on 16 November
 
