@@ -31,16 +31,19 @@ One circular trace, 10 mm in radius to its centre line, 0.5 mm wide and 35 µm t
 | R at 3.5 MHz | | 80.19 mΩ | 79.25 mΩ | |
 
 The reference L is Grover's ring formula μ0 R (ln(8R / g) − 2), with the rectangle's geometric mean
-distance g = 0.2235 (w + t), times the share of the circle the copper covers (0.989). The reference
-R is the annular sector's DC resistance. At 3.5 MHz the skin depth (35 µm) equals the copper's
+distance g = 0.2235 (w + t), times the share of the circle the copper covers (0.989) up to the round
+ends' centres; since the current runs on into the half-discs, it is a lower bound, by up to 0.8 %.
+The reference R is the annular sector's DC resistance. At 3.5 MHz the skin depth (35 µm) equals the copper's
 thickness, and no formula is exact there.
 
-![E01's L and E02's M at 10 kHz, as a percentage off their references, against the mesh's nodes in thousands: E01 rises from −3.7 % at 60,000 nodes to −3.2 % at 86,000 and −3.1 % at 125,000; E02 rises from −3.3 % at 92,000 nodes to −3.1 % at 120,000; E01 with the air graded twice as finely sits at −1.55 % with 89,000 nodes](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Elmer-FEM-Test-Board-Results/elmerresults_1_against_reference.webp)
+![E01's L and E02's M at 10 kHz, as a percentage off their references, against the mesh's nodes in thousands: E01 rises from −3.7 % at 60,000 nodes to −3.2 % at 86,000 and −3.1 % at 125,000; E02 rises from −3.3 % at 92,000 nodes to −3.1 % at 120,000; E01 with the air graded twice and four times as finely rises from −1.55 % at 89,000 nodes to −0.46 % at 166,000; a grey band from 0 to +0.8 % shows the reference's own uncertainty](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Elmer-FEM-Test-Board-Results/elmerresults_1_against_reference.webp)
 
 L rises as the mesh is refined, as it should with first-order edge elements, but along the ladder it
 levels off about 3 % under the reference. The ladder refines only the copper's mesh. Grading the air
-twice as finely at level 0.75 (the diamond) brings L to 1.55 % under the reference, with about
-as many nodes as level 1: the air's mesh round the copper holds most of the gap
+twice and four times as finely at level 0.75 (the diamonds) brings L to 1.55 % and then 0.46 % under
+the reference: the air's mesh round the copper holds most of the gap. The grey band is the
+reference's own uncertainty: it ends the current at the round ends' centres, and with the current
+taken on to the gap's faces it is 0.8 % higher
 ([Elmer FEM Accuracy](Elmer-FEM-Accuracy.md#301-the-error-budget-on-e01)). The circuit's L and the
 field energy's agree within 0.05 % at every level, so the electrodes, the sheet across the gap and
 Elmer's circuit read back the inductance the field holds. R is 0.5 % high, as it should be: the

@@ -26,7 +26,7 @@ question needs.
 | Model size | 85,712 nodes (level 1) | 411,424 cells |
 | Run | 17 minutes at 10 kHz (3000 iterations), 6 minutes at 3.5 MHz | under 2 minutes for 1 to 5 GHz at once |
 | Memory | 4.9 GB | 0.15 GB |
-| Against the reference | L 3 % under Grover's open ring at level 1, 1.55 % with the air graded twice as finely; rising with the mesh (a lower bound) | εeff within 1.5 % of Kirschning–Jansen, Z0 within 2 % of Hammerstad–Jensen |
+| Against the reference | L 3 % under Grover's open ring at level 1, 0.46 % with the air graded four times as finely; rising with the mesh (a lower bound) | εeff within 1.5 % of Kirschning–Jansen, Z0 within 2 % of Hammerstad–Jensen |
 
 Elmer pays for its unstructured mesh and its iterative solve with about 59 kB per node; openEMS
 needs only 60 to 103 bytes per cell (its CPU and default engines), but its cells must resolve the copper's edges and its run

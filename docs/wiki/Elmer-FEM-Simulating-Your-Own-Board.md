@@ -62,7 +62,7 @@ These go to `mesh25d.Settings` (in `SETTINGS['mesh']`):
 | `h_edge` | `0.09` | Element size at copper edges, mm. At least three elements across the narrowest trace is a good start |
 | `h_in` | `0.18` | Largest element inside copper, mm |
 | `h_max` | `6.0` | Largest triangle anywhere, mm (the far field) |
-| `grade` | `0.5` | How fast the size grows away from copper, mm per mm. Halved to 0.25 (with `tet_grade` 0.35), E01's L rose 2.3 % with half again the nodes ([Elmer FEM Accuracy](Elmer-FEM-Accuracy.md#301-the-error-budget-on-e01)) |
+| `grade` | `0.5` | How fast the size grows away from copper, mm per mm. Halved to 0.25 (with `tet_grade` 0.35), E01's L rose 2.3 % with half again the nodes; quartered, another 1.1 % with 2.8 times the nodes ([Elmer FEM Accuracy](Elmer-FEM-Accuracy.md#301-the-error-budget-on-e01)) |
 | `dz_copper` | `0.018` | Thickest wedge layer in a copper foil, mm. Half the skin depth or less at the highest frequency (copper: 35 µm at 3.5 MHz) |
 | `dz_max` | `0.4` | Thickest wedge layer elsewhere (through the board, in an air gap), mm |
 | `tet_max` | `8.0` | Largest tetrahedron in the air above and below, mm |

@@ -26,8 +26,9 @@ Linux while it runs and writes it into `results.json`.
 | E02, level 1 | 119,559 | 6.74 GB | 59 kB |
 | E01, level 1.3 | 125,043 | 7.09 GB | 59 kB |
 | E01, level 0.75 with the air graded twice as finely | 88,760 | 5.11 GB | 60 kB |
+| E01, level 0.75 with the air graded four times as finely | 166,471 | 9.73 GB | 61 kB |
 
-Six meshes from 60,000 to 125,000 nodes cost 59 to 60 kB per node, at both frequencies (Linux
+Seven meshes from 60,000 to 166,000 nodes cost 59 to 61 kB per node, at both frequencies (Linux
 counts in kibibytes, so a GB here is 1,073,741,824 bytes). The memory does not depend on the
 frequency or on the number of iterations: BiCGStab(l) keeps a fixed number of vectors.
 
@@ -41,6 +42,7 @@ frequency or on the number of iterations: BiCGStab(l) keeps a fixed number of ve
 | E02, level 1 | 12 s | 22 min, 1500 iterations (the cap) | 10 min, 1147 iterations |
 | E01, level 1.3 | 16 s | 45 min, 3000 iterations (the cap) | |
 | E01, level 0.75 with the air graded twice as finely | 15 s | 18 min, 3000 iterations (the cap) | |
+| E01, level 0.75 with the air graded four times as finely | 44 s | 36 min, 3000 iterations (the cap) | |
 
 Most runs shared the machine with openEMS runs or with each other's meshing, so their times are what
 they took, not what the machine can do: E02 at level 0.75, with the machine to itself, needed 3.9 µs
@@ -81,7 +83,7 @@ stator's length of copper, about 61 GB per metre. Every one needs more than the 
 ([Elmer FEM Test Boards](Elmer-FEM-Test-Boards.md#283-the-ten-inductive-encoder-boards)). These are
 for the examples' air grading; with the air graded twice as finely, as E01's accuracy calls for
 ([Elmer FEM Accuracy](Elmer-FEM-Accuracy.md#301-the-error-budget-on-e01)), E01's mesh grew by half,
-and a coil board's growth has not been measured.
+and 2.8 times at four times as fine; a coil board's growth has not been measured.
 
 Three ways would bring them closer, none of them tried yet:
 
