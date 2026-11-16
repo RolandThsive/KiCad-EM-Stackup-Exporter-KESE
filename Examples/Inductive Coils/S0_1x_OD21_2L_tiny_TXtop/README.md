@@ -8,9 +8,13 @@ A coil set from the [Sinusoidal Coil Generator](https://github.com/RolandThsive/
 
 Bore and outer radius 2 and 10.5 mm, 2 copper layers, board 0.8 mm, air gap 1 mm by default (any other with `--gap`). 1 electrical period(s) per turn; the rotor has 1 sector(s) and repeats itself every 360°.
 
-![stator and rotor](Boards/Coil_2_10.5_1_1_2_Single_SteppedDiagonal_Representative.svg)
+![stator and rotor](S0_1x_OD21_2L_tiny_TXtop_stator_and_rotor.webp)
 
 *Drawn by the generator.*
+
+![how the stator and rotor are set up in Elmer](S0_1x_OD21_2L_tiny_TXtop_elmer_setup.webp)
+
+*How the boards sit in Elmer, drawn by `rig_picture.py` from the geometry the mesh is built from: the rotor copper side down over the stator, each receiver opened at a left-out via (0 A, so the voltage across it is the open-circuit EMF), and the TX opened between its two stacked ends, where 1 A is driven.*
 
 | Coil | Net | Opened at (KiCad mm) | How |
 |---|---|---|---|
@@ -24,6 +28,23 @@ The generator's warnings for this board:
 * the tank's parallel resistance at the nominal air gap may be as low as 12 ohm (if the AC resistance is 2 x the DC value); the IPS2550 needs at least 250 ohm.  More TX turns, wider TX traces, thicker copper or a higher EXCITATION_FREQ_HZ raise it
 * no spot on 2 within 30 deg of 0 deg, 4 mm from the other marks, has room for two vias (layers F.Cu, B.Cu); widen SILKSCREEN_SEARCH_SPAN_DEG, lower SILKSCREEN_BREAK_SEPARATION_MM, or cut the coil by hand
 * no spot on 1 within 30 deg of 0 deg, 4 mm from the other marks, has room for two vias (layers F.Cu, B.Cu); widen SILKSCREEN_SEARCH_SPAN_DEG, lower SILKSCREEN_BREAK_SEPARATION_MM, or cut the coil by hand
+
+## Against S0
+
+Every angle at every gap, one Elmer solve each, run in parallel on 25 machines (24 angles and the rotor taken away). The numbers are from [`Results/SINCOS_Results.md`](Results/SINCOS_Results.md) and S0's. "Not converged" counts the solves that stopped above a residual of 5e-4 or give the TX a negative resistance.
+
+| Air gap | Board | Angles | Amplitude SIN / COS | Angle error | SIN to COS | L TX over the turn | Residual | Not converged |
+|---|---|---|---|---|---|---|---|---|
+| 1 mm | S0 (TX: 1 turn on each layer) | 8 of 8 | 2.15 / 2.07 nH (47 / 45 mV) | 4.6° rms, 7.1° peak | 91.2° | 99 to 108 nH | 2.7e-04 to 4.8e-04 | 0 of 8 |
+| 1 mm | this board (TX: 2 turns on top) | 8 of 8 | 2.24 / 2.15 nH (49 / 47 mV) | 3.2° rms, 5.6° peak | 92.7° | 105 to 110 nH | 2.6e-04 to 4.9e-04 | 0 of 8 |
+| 0.5 mm | S0 (TX: 1 turn on each layer) | 8 of 8 | 3.26 / 2.81 nH (72 / 62 mV) | 14.3° rms, 28.3° peak | 89.3° | 79 to 106 nH | 2.4e-04 to 1.0e-03 | 3 of 8 |
+| 0.5 mm | this board (TX: 2 turns on top) | 8 of 8 | 3.32 / 3.18 nH (73 / 70 mV) | 3.2° rms, 5.7° peak | 90.1° | 93 to 104 nH | 2.9e-04 to 4.9e-04 | 0 of 8 |
+| 0.1 mm | S0 (TX: 1 turn on each layer) | 8 of 8 | 2.45 / 5.04 nH (54 / 111 mV) | 67.6° rms, 172.9° peak | 81.5° | 31 to 109 nH | 6.9e-04 to 4.4e-03 | 8 of 8 |
+| 0.1 mm | this board (TX: 2 turns on top) | 8 of 8 | 5.12 / 4.86 nH (113 / 107 mV) | 17.5° rms, 44.0° peak | 70.6° | 67 to 125 nH | 5.2e-04 to 4.5e-03 | 8 of 8 |
+
+* **The solver copes better with this TX.** At 1 and 0.5 mm every solve stops below 5e-4 and the angle error is about 3° rms at both gaps; on S0 three of the 0.5 mm solves stalled higher and its 0.5 mm curve is off by 14° rms. At 0.1 mm both boards stall too high to read, this one less so.
+* **The signal is about the same at 1 mm** (2.2 nH against 2.1, about 48 mV of EMF at 1 A) although the RX band is narrower, and it grows to about 3.2 nH at 0.5 mm.
+* **SIN and COS are matched in amplitude** within 5 % at 1 and 0.5 mm (S0: 4 % at 1 mm, 16 % at 0.5 mm).
 
 ## The folder
 

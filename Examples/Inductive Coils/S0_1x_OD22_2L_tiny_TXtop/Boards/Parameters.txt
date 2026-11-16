@@ -1,0 +1,763 @@
+COIL GENERATION RECORD
+======================
+
+generated   2026-11-16 16:18:10
+folder      <your checkout>/Generators/Single Coil Set Generator/Output/Coil_2_11.1_1_1_2_Single_SteppedDiagonal
+files       Stator.kicad_pcb, Stator.kicad_pro, Rotor.kicad_pcb, Rotor.kicad_pro
+command     python Generator/Run/RunCoilGenerator.py --no-color
+name        Coil_2_11.1_1_1_2_Single_SteppedDiagonal  = Coil_<board inside radius>_<board outside radius>_<RX loops>_<RX sub-coils>_<TX turns>_<TX wiring>_<TX shape>
+rotation    225.00 deg: the board is turned by this so that the TX terminal sits at 0 deg (the right); the RX pattern's zero is at this angle
+
+WARNINGS OF THIS RUN
+--------------------
+  the tank's parallel resistance at the nominal air gap may be as low as 13 ohm (if the AC resistance is 2 x the DC value); the IPS2550 needs at least 250 ohm.  More TX turns, wider TX traces, thicker copper or a higher EXCITATION_FREQ_HZ raise it
+
+STATOR
+------
+Stator: 1 loop(s) -> 1 electrical period(s) per turn, unique range 360 deg
+  RX band r = 3.2 ... 6.1 mm, profile = equal_area, 192 segments per period (RX chord tolerance 0.001 mm); TX 200 points per turn
+  PCB layers 2: RX rising edges on F.Cu, falling edges on B.Cu, layer-swap vias at 90.0 electrical deg (RX_VIA_ELECTRICAL_DEG 90)
+  RX sub-coils per coil: 1
+  TX (single layer): 2 turns on F.Cu, inner tail on B.Cu, stepped_diagonal turns
+  TX steps: 45 deg to the turns (TX_STEPPED_ANGLE_DEG), 0.60 mm along the turn each, 0.224 mm between neighbouring steps
+  TX copper: gap between different turns not measured (no window or stitching via; the nominal pitch gives 0.400 mm), TX via to RX copper 0.624 mm
+  RX segments 768, RX vias 12 (+1 TX), TX segments 400
+  RX bridging fingers: none
+  TX ring r = 7.2 ... 7.8 mm (tail end 10.4 mm); terminal via 0.3 mm inside the first turn (TX_INSIDE_VIA_DISTANCE_MM), 0.204 mm from the other turns
+  board edge: bore r = 2 mm, outer r = 11.1 mm
+  TX terminal: found at 135.00 deg of the RX pattern (0.624 mm from the nearest RX copper); the board is turned by 225.00 deg so that it sits at 0 deg (the right, horizontal axis); the RX pattern's zero is at 225.00 deg
+  board bore as given (RX band and board edge both set)
+  smallest via-to-copper clearance 0.274 mm
+
+ROTOR
+-----
+Rotor (according_to_stator): 1 sector(s), metal fraction 0.5 (180.00 deg mechanical each)
+  copper r = 2.52 ... 8.40 mm on F.Cu, 102 chords per arc
+  RX band r = 3.2 ... 6.1 mm: the copper reaches 0.68 mm past the band at the inner edge and 2.30 mm past the band at the outer edge
+  TX turns r = 7.1 ... 7.9 mm (copper): the rotor copper covers the TX turns and ends 0.50 mm past the outermost one
+  solder mask: stays over the copper (ROTOR_SOLDER_MASK_EXPANSION_MM = -1), no mask openings
+  outline r = 11.099999999999998, bore r = 2.0
+  copper skin depth at 3.5 MHz = 35 um; 35 um copper (1 oz) screens the TX field by about 96-98 %, 70 um (2 oz) by about 98-99 % (thin-sheet estimate): thicker copper adds little signal
+  note: 1 sector (half disc) is mechanically unbalanced: add a non-metal counterweight if the shaft turns fast.
+  note: spatial period at mid radius 29.2 mm -> signal falls about exp(-2*pi*gap/period) = 0.81 at the nominal 1 mm gap
+
+ELECTRICAL ESTIMATE  (receiver IC IPS2550; model only, not checked on hardware)
+  TX coil     L = 0.144 uH with the rotor away
+              L = 0.116 uH with the rotor at the 1 mm air gap (-19.6 %: an upper estimate of the drop)
+              R = 0.25 ohm DC (2 turn(s), 0.10 m of 0.2 mm x 35 um copper), up to about 2x that at 3.5 MHz
+  tank        for 3.5 MHz with the rotor in place: 2 x 35.7 nF, from TX1 and from TX2 to ground (= 17.8 nF across the coil)
+              nearest standard C0G (E12): 2 x 33 nF -> 3.64 MHz (3.26 rotor away);  2 x 39 nF -> 3.35 MHz (3.00 rotor away)
+              oscillator with the exact capacitors: 3.14 MHz with the rotor away, 3.50 MHz with it  (IPS2550 range 2 ... 5.6 MHz: OK)
+              (the true frequency with the rotor lies between the two: the drop is an upper estimate)
+              Q = 5 ... 10, parallel resistance 13 ohm ... 26 ohm  (IPS2550 needs >= 250 ohm: TOO LOW)
+  WARNING the tank's parallel resistance at the nominal air gap may be as low as 13 ohm (if the AC resistance is 2 x the DC value); the IPS2550 needs at least 250 ohm.  More TX turns, wider TX traces, thicker copper or a higher EXCITATION_FREQ_HZ raise it
+
+PARAMETER VALUES USED
+---------------------
+[Board_Parameters.py]
+  OUTPUT_DIR                = 'Output'
+  STATOR_FILE               = 'Stator.kicad_pcb'
+  ROTOR_FILE                = 'Rotor.kicad_pcb'
+  CENTER_X_MM               = 100.0
+  CENTER_Y_MM               = 100.0
+  PAGE_SIZE_MM              = (200, 200)
+  PCB_LAYERS                = 2
+  VIA_DIAMETER_MM           = 0.8
+  VIA_DRILL_MM              = 0.4
+  VIA_TYPE                  = 'through'
+  MIN_CLEARANCE_MM          = 0.2
+  INNER_EDGE_INSET_MM       = 1.2
+  INNER_EDGE_RADIUS_MM      = 2.0
+  OUTER_EDGE_OFFSET_MM      = 4.0
+  OUTER_EDGE_RADIUS_MM      = None
+  OUTER_EDGE_TAIL_MARGIN_MM = 0.7
+  EDGE_LINE_WIDTH_MM        = 0.05
+  AIR_GAP_MM                = 1.0
+  PCB_THICKNESS_MM          = 0.8
+  EXCITATION_FREQ_HZ        = 3500000.0
+  COPPER_THICKNESS_UM       = 35
+  COPPER_CONDUCTIVITY_S_M   = 58000000.0
+  TX_AC_RESISTANCE_FACTOR   = 2.0
+  STACKUP_PREPREG_MM        = 0.2   (not used with the current settings)
+  TANK_CAP_SERIES           = 'E12'
+  GENERATOR_MODE            = 'normal'
+
+[RX_Parameters.py]
+  LOOPS                     = 1
+  INSIDE_RADIUS_MM          = 3.2
+  OUTSIDE_RADIUS_MM         = 6.1
+  RX_R_BASE_MM              = None
+  RX_A_MM                   = None
+  RX_TRACE_WIDTH_MM         = 0.2
+  RX_NET_PHASE_0_2          = '2'
+  RX_NET_PHASE_1_3          = '1'
+  RX_PROFILE                = 'equal_area'
+  STEPS_PER_LOOP            = 'auto'
+  RX_CHORD_TOLERANCE_MM     = 0.001
+  RX_SUBCOILS               = 1
+  RX_SUBCOIL_SPLIT_ELEC_DEG = 45.0   (not used with the current settings)
+  RX_LAYER_A                = 1   (not used with the current settings)
+  RX_LAYER_B                = 2   (not used with the current settings)
+  RX_RISING_EDGE_LAYER      = 'F.Cu'
+  RX_VIA_ELECTRICAL_DEG     = 90.0
+  RX_TABS                   = 'none'
+  RX_TAB_LENGTH_MM          = 3.0   (not used with the current settings)
+  RX_TAB_WIDTH_MM           = 1.0   (not used with the current settings)
+  RX_TAB_LAYER              = 'auto'
+
+[TX_Parameters.py]
+  TX_NET                    = 'TX'
+  TX_TURNS                  = 2
+  TX_OFFSET_MM              = 1.1
+  TX_PITCH_MM               = 0.6
+  TX_TRACE_WIDTH_MM         = 0.2
+  TX_STEPS                  = 'auto'
+  TX_CHORD_TOLERANCE_MM     = 0.001
+  TX_TAIL_EXTRA_MM          = 2.0
+  TX_SHAPE                  = 'stepped_diagonal'
+  TX_INSIDE_VIA_DISTANCE_MM = 0.3
+  TX_STEPPED_ANGLE_DEG      = 45
+  TX_STEPPED_ARC_RADIUS_MM  = 'auto'   (not used with the current settings)
+  TX_WIRING                 = 'single'
+  TX_LAYER_A                = 1
+  TX_LAYER_B                = 1   (not used with the current settings)
+  TX_SERIES_UNDERPASS_LAYER = 'auto'
+  TX_PARALLEL_BREAK_STYLE   = 'stitched'   (not used with the current settings)
+
+[Rotor_Parameters.py]
+  ROTOR_MODE                     = 'according_to_stator'
+  ROTOR_AUTO_DUTY                = 0.5
+  ROTOR_AUTO_START_ANGLE_DEG     = 0.0
+  ROTOR_AUTO_EXTENSION_MM        = None
+  ROTOR_AUTO_EXTENSION_INNER_MM  = None
+  ROTOR_AUTO_EXTENSION_OUTER_MM  = None   (not used with the current settings)
+  ROTOR_AUTO_TX_CLEARANCE_MM     = 0.1   (not used with the current settings)
+  ROTOR_AUTO_COVER_TX            = True
+  ROTOR_AUTO_TX_OVERHANG_MM      = 0.5
+  ROTOR_AUTO_EDGE_CLEARANCE_MM   = 0.5
+  ROTOR_AUTO_COPPER_LAYERS       = ['F.Cu']
+  ROTOR_CUSTOM_SECTORS           = 1   (not used with the current settings)
+  ROTOR_CUSTOM_DUTY              = 0.5   (not used with the current settings)
+  ROTOR_CUSTOM_START_ANGLE_DEG   = 0.0   (not used with the current settings)
+  ROTOR_CUSTOM_INNER_RADIUS_MM   = 15.53   (not used with the current settings)
+  ROTOR_CUSTOM_OUTER_RADIUS_MM   = 24.3   (not used with the current settings)
+  ROTOR_CUSTOM_COPPER_LAYERS     = ['F.Cu']   (not used with the current settings)
+  ROTOR_CUSTOM_OUTLINE_RADIUS_MM = 27.0   (not used with the current settings)
+  ROTOR_CUSTOM_BORE_RADIUS_MM    = 15.0   (not used with the current settings)
+  ROTOR_PCB_THICKNESS_MM         = None
+  ROTOR_ARC_STEPS_PER_SECTOR     = 'auto'
+  ROTOR_CHORD_TOLERANCE_MM       = 0.001
+  ROTOR_SOLDER_MASK_EXPANSION_MM = -1
+
+[IC_Parameters.py]
+  IC_NAME            = 'IPS2550'
+  IC_OSC_MIN_MHZ     = 2.0
+  IC_OSC_MAX_MHZ     = 5.6
+  IC_MIN_RP_OHM      = 250
+  IC_SPLIT_TANK_CAPS = True
+
+PARAMETER FILES (verbatim copies)
+---------------------------------
+########## Board_Parameters.py #########################################
+"""
+Board_Parameters.py  -  board, stack-up, via and output settings shared by every generator.
+
+Units: millimetres, degrees, hertz unless a name says otherwise.
+Nothing in this file is computed - edit values only.
+"""
+
+# =============================================================================
+# OUTPUT
+# =============================================================================
+# RunCoilGenerator.py makes a NEW folder inside OUTPUT_DIR for every run (OutputFolders.py):
+#     Coil_<board inside radius>_<board outside radius>_<RX loops>_<RX sub-coils>_<TX turns>_<TX wiring>_<TX shape>
+#     TX wiring = Single (one TX layer), Series or Parallel (two TX layers);
+#     TX shape  = SteppedDiagonal, SteppedArc or Spiral (TX_SHAPE)
+# e.g. Coil_15_27_1_1_3_Single_SteppedDiagonal; if it exists already: ..._SteppedDiagonal__1, __2, ...
+# It holds the two boards below and Parameters.txt (every value used for that run).
+# "Output" = the Output folder in "Single Coil Set Generator" (next to Parameters and Generator), whatever
+# folder you run the program from.  A relative path is always taken from "Single Coil Set Generator"; a full path
+# (e.g. "C:/Boards") is used as it is.
+OUTPUT_DIR   = "Output"             # folder in which the Coil_... folders are made
+STATOR_FILE  = "Stator.kicad_pcb"   # file names inside each Coil_... folder
+ROTOR_FILE   = "Rotor.kicad_pcb"
+# GENERATOR_MODE = what a warning about the finished boards (clearances, outline, page, rotor) does
+# (any letter case):
+#   "normal" : it stays a warning; the boards are written.
+#   "strict" : every such warning is an error; nothing is written.
+# Copper that overlaps copper of another net (a short) is always an error.  Warnings about the
+# parameters themselves (ranges, estimates) stay warnings in both modes.
+GENERATOR_MODE = "normal"
+
+CENTER_X_MM  = 100.0                # sensor axis position on the KiCad page
+CENTER_Y_MM  = 100.0
+PAGE_SIZE_MM = (200, 200)           # smallest KiCad "User" page (width, height); grown to the right and down
+                                    # when the board or the title block needs more room.  A board too close to
+                                    # the top or left edge is only warned about (raise CENTER_X_MM / CENTER_Y_MM)
+
+
+# =============================================================================
+# STATOR BOARD
+# =============================================================================
+# PCB_LAYERS = number of copper layers of the STATOR board.  Only 2 or 4.
+#   2 : the RX coils use Top and Bottom (the proven layout).
+#   4 : the RX coils use the layers named by RX_LAYER_A / RX_LAYER_B
+#       (see RX_Parameters.py).
+# With either layer count the TX can use one or two layers (TX_Parameters.py; a 2-layer board
+# offers 1 and 4).
+# VIA_TYPE says what the vias are (below).
+# Keep the layers that carry no coil free of copper pours under the coil area -
+# a plane there acts like an extra target and weakens the signal.
+PCB_LAYERS = 2
+
+# Via / copper-to-copper rules the generator must respect when it places vias.
+VIA_DIAMETER_MM   = 0.8
+VIA_DRILL_MM      = 0.4
+MIN_CLEARANCE_MM  = 0.2
+
+# VIA_TYPE = what every via the generator places is:
+#   "through" : a plated hole through the whole board (every via, on 2 and on 4 layers).
+#   "blind"   : 4-layer boards only.  Every via is written as a blind via between the two copper layers it
+#               actually joins (an RX tip via: the two RX layers; a TX via: the two TX layers, or the TX layer
+#               and the layer of the inner tail / the go-around brackets).  Common fabs laser-drill blind vias
+#               only between an outer layer and its neighbour (Top + Inner 1, Inner 2 + Bottom) and at most
+#               about 0.15 mm wide, so set VIA_DRILL_MM / VIA_DIAMETER_MM to such sizes; the checker warns about a
+#               pair that skips a layer (Top + Inner 2, Inner 1 + Bottom), tells when a pair is the two inner
+#               layers (a buried via, mechanically drilled) and when it is Top + Bottom (a through via after all).
+#               On a 2-layer board "blind" is an error.
+# The clearance checks treat every via as a through via on either setting.
+VIA_TYPE = "through"
+
+# ---- board outline (Edge.Cuts circles) --------------------------------------
+INNER_EDGE_INSET_MM   = 1.2         # centre hole radius = RX band start - this ...
+INNER_EDGE_RADIUS_MM  = 2.0   # ... or set a fixed radius here: the hole gets exactly this radius.
+                                    # RX band given (RX_Parameters.py): both are used as given - the hole
+                                    #   must be at least INNER_EDGE_INSET_MM inside the band.
+                                    # RX band None: the band starts INNER_EDGE_INSET_MM outside the hole.
+                                    # None = the formula above.
+OUTER_EDGE_OFFSET_MM  = 4.0         # outer edge = RX band end + this ...
+OUTER_EDGE_RADIUS_MM  = None   # ... or set a fixed radius here: the board edge gets exactly this radius.
+                                    # RX band given (RX_Parameters.py): both are used as given - the edge
+                                    #   must leave at least the room the rule below needs.
+                                    # RX band None: the band ends where the rule below would have put this
+                                    #   edge, so the TX turns, the TX tail and the bridging fingers fit
+                                    #   inside it with the usual margins.
+                                    # None = the largest of the formula above,
+                                    # (TX tail end + OUTER_EDGE_TAIL_MARGIN_MM) and
+                                    # (bridging finger tip + half an RX trace + OUTER_EDGE_TAIL_MARGIN_MM)
+OUTER_EDGE_TAIL_MARGIN_MM = 0.7
+EDGE_LINE_WIDTH_MM    = 0.05
+
+
+# =============================================================================
+# STACK-UP AND AIR GAP  (the rotor, the electrical estimate)
+# =============================================================================
+AIR_GAP_MM           = 1.0          # stator top copper -> rotor copper
+PCB_THICKNESS_MM     = 0.8   # stator board thickness
+EXCITATION_FREQ_HZ   = 3.5e6        # TX oscillator frequency aimed for, with the rotor in place
+                                    # (in hertz: 3.5e6 = 3.5 MHz).  The electrical estimate sizes the
+                                    # tank capacitors for it; the rotor summary uses it for the skin depth.
+
+
+# =============================================================================
+# ELECTRICAL ESTIMATE  (TX_Electrics.py, printed by RunCoilGenerator.py: TX inductance, tank
+# capacitors, oscillator frequency.  These values never change a board.  The receiver IC the coil is
+# checked against: IC_Parameters.py.)
+# =============================================================================
+COPPER_THICKNESS_UM  = 35           # stator copper thickness in micrometres (35 = 1 oz): TX resistance and Q
+COPPER_CONDUCTIVITY_S_M = 5.8e7     # copper conductivity in S/m (5.8e7 = annealed copper at 20 C; it drops
+                                    # about 0.39 % per K above that): TX resistance, and the rotor's skin
+                                    # depth and screening in the rotor summary
+TX_AC_RESISTANCE_FACTOR = 2.0       # at the TX frequency skin and proximity effects raise the TX resistance
+                                    # above the DC value: the estimate allows for up to this x the DC value
+                                    # (Q, tank resistance and the IC check use the worst case)
+STACKUP_PREPREG_MM   = 0.2          # 4-layer stator: distance from an outer copper layer to its inner
+                                    # neighbour (the inner layers' depth for the TX inductance; on a board
+                                    # thinner than twice this, a third of PCB_THICKNESS_MM is used)
+TANK_CAP_SERIES      = "E12"        # standard capacitor values the estimate suggests for the tank: "E6",
+                                    # "E12" or "E24" (any letter case)
+
+########## RX_Parameters.py ############################################
+"""
+RX_Parameters.py  -  receiver (RX) coils: the SIN and COS coils of the stator.
+
+Units: millimetres, degrees.  Nothing in this file is computed - edit values only.
+"""
+
+# =============================================================================
+# SIZE AND PERIODICITY
+# =============================================================================
+# LOOPS = number of electrical periods (sine waves) per mechanical turn (1 ... 16).
+#   - It is also the number of metal sectors the rotor must have.
+#   - Unique absolute range of the sensor = 360 / LOOPS degrees.
+#   - 1 loop gives true 0-360 deg absolute output; higher counts give
+#     proportionally finer angular resolution/accuracy per degree.
+#   (1 loop = 1 full sine period = 2 lobes: one positive and one negative.)
+LOOPS = 1   
+
+# Radial band occupied by the RX copper (centre line of the traces): the RX coils swing between
+# its inside and outside radius.  Give it in ONE of two ways (the other pair = None):
+#
+#   INSIDE_RADIUS_MM / OUTSIDE_RADIUS_MM : the two radii of the band
+#   RX_R_BASE_MM / RX_A_MM               : its centre (r_base) and how far the coils swing in and out
+#                                          from it (A): band = RX_R_BASE_MM - RX_A_MM ... RX_R_BASE_MM + RX_A_MM
+#                                          e.g. 18.8 / 2.6 = a 16.2 ... 21.4 mm band.  Signal grows about
+#                                          with r_base x A (the band area); a wider band spreads over a less
+#                                          uniform TX field (see RX_PROFILE)
+#
+# Each pair goes together (both numbers or both None).  Both pairs None: the band is fitted to the
+# board edges (INNER_EDGE_RADIUS_MM and OUTER_EDGE_RADIUS_MM, Board_Parameters.py, must then be set).
+# With the band given, a board edge that is None is calculated from it; a board edge that is set is
+# used as given (it must leave the usual margins - the checker says how much is needed).
+INSIDE_RADIUS_MM  = 3.2
+OUTSIDE_RADIUS_MM = 6.1
+RX_R_BASE_MM      = None
+RX_A_MM           = None
+
+RX_TRACE_WIDTH_MM = 0.2
+
+# Net names. Phases 0 and 2 (sine, +/-) form one coil, phases 1 and 3
+# (cosine, +/-) form the other.
+RX_NET_PHASE_0_2 = "2"
+RX_NET_PHASE_1_3 = "1"
+
+
+# =============================================================================
+# SHAPE OF THE RX BOUNDARY  r(angle)
+# =============================================================================
+#   "equal_area"         r^2 = mean(r^2) + amp * sin(...)   (the default)
+#                        The flux weight of a single curve is an exact sine for a
+#                        uniform field.
+#   "cosine_r"           r = mean(r) + amp * sin(...)       (a limacon).  For an
+#                        antiphase pair (which is what every coil here is) the flux
+#                        weight is also an exact sine for a uniform field.
+RX_PROFILE = "equal_area"
+
+# Polyline resolution of one electrical period.
+#   "auto"  -> smallest multiple of 8 whose chord error is <= RX_CHORD_TOLERANCE_MM
+#   integer -> fixed value (a multiple of 8 from 48 to 4096).
+# RX_CHORD_TOLERANCE_MM = how far a straight chord may lie from the true curve: 0.001 mm = 1 micron, which is
+#   also the smallest value allowed (finer only adds points, not accuracy: the generator stops at 1024 chords
+#   per loop and warns if that is not enough).  (The TX coil and the rotor have their own:
+#   TX_CHORD_TOLERANCE_MM in TX_Parameters.py, ROTOR_CHORD_TOLERANCE_MM in Rotor_Parameters.py.)
+STEPS_PER_LOOP         = "auto"
+RX_CHORD_TOLERANCE_MM  = 0.001
+
+
+# =============================================================================
+# SUB-COILS  (distributed winding)
+# =============================================================================
+# Every RX coil (SIN and COS) is built from RX_SUBCOILS sub-coils.  A sub-coil is
+# one antiphase pair of curves - exactly what a single coil is today.  The
+# sub-coils of one coil are spread RX_SUBCOIL_SPLIT_ELEC_DEG apart (electrical
+# degrees: one loop = 360) and wired in series, so each coil still is ONE closed
+# series loop that you break out where you like.
+#
+#   RX_SUBCOILS = 1 : today's layout (the split is ignored)
+#   RX_SUBCOILS = 2 : 2 sub-coils per coil (use split = 45)
+#   RX_SUBCOILS = 3 : three sub-coils, centred on the coil axis (use split = 30, which spaces the curves
+#                     evenly; 45 puts two curves on top of each other.  Crowded: needs a wide RX band
+#                     or small vias; watch the clearance warnings)
+#
+# Effect of a split d between two sub-coils (relative to ONE sub-coil):
+#     signal      x 2*cos(d/2)            (d = 45 -> 1.85x)
+#     harmonic h  x 2*cos(h*d/2)          (d = 45 -> 3rd and 5th down ~59 %,
+#                                          d = 60 -> 3rd removed,  d = 36 -> 5th removed)
+# The split is rounded to a whole even number of polyline nodes (with STEPS_PER_LOOP =
+# "auto" the resolution is chosen so that the requested value is reproduced; the summary
+# prints the value actually used).
+# Geometry limits: with 2 sub-coils the curve tips of the SIN and COS coils are spaced
+# split and (90 - split) apart, so 45 is the uniform, roomiest choice; much above 50 or below
+# 35 crowds the tip vias.  Whether the junction vias of the sub-coils fit depends on the
+# circumference per loop: the checker estimates it and warns, and the generator stops with a
+# message when they do not fit (then widen the RX band, use fewer loops or 1 sub-coil).
+RX_SUBCOILS               = 1
+RX_SUBCOIL_SPLIT_ELEC_DEG = 45.0
+
+
+# =============================================================================
+# LAYERS  (which copper layers carry the RX coils)
+# =============================================================================
+# PCB_LAYERS = 2 (Board_Parameters.py): Top and Bottom are used;
+#                RX_RISING_EDGE_LAYER chooses which one carries the rising edges.
+# PCB_LAYERS = 4: RX_LAYER_A / RX_LAYER_B name the two layers
+#         1 = Top (F.Cu)   2 = Inner 1 (In1.Cu)   3 = Inner 2 (In2.Cu)   4 = Bottom (B.Cu)
+#   They must differ.  Typical choice: 1 and 2 (Top + Inner 1), which sit closest
+#   together in a standard 4-layer stack-up.  A carries the rising edges, B the
+#   falling edges.
+RX_LAYER_A = 1
+RX_LAYER_B = 2
+RX_RISING_EDGE_LAYER  = "F.Cu"      # 2-layer boards only: "F.Cu" or "B.Cu"
+
+# Layer scheme.  Every phase carries its RISING edges (radius growing with
+# angle) on one layer and its FALLING edges on the other, so that at every
+# azimuth the two strands of a coil sit on opposite layers (equal air-gap
+# exposure for sine and cosine, no layer-induced gain/harmonic mismatch).
+# The layer swap (via) happens near the outer and inner tip of every lobe:
+# RX_VIA_ELECTRICAL_DEG is the electrical angle of the outer-tip via
+# (90 = exactly on the tip; the check accepts 50 ... 130).  Away from 90 the vias come
+# close to the neighbouring curves: with the example band about 58 ... 122 builds
+# cleanly for LOOPS 1 ... 4, less with more loops (LOOPS 16: about 80 ... 100).  A
+# value outside 45 + 720 / STEPS_PER_LOOP ... 135 - 720 / STEPS_PER_LOOP is moved
+# inside it, with a warning.
+# With RX_SUBCOILS = 2 the via that joins the sub-coils needs it near 90: at most about
+# 57 + split / 2 ... 123 - split / 2 (80 ... 100 for a split of 45).  A large split may fit
+# at no angle at all: with the example band, 0.8 mm vias and 0.2 mm traces and clearance
+# the limit is a split of about 47 (a wider band or smaller vias allow more).
+RX_VIA_ELECTRICAL_DEG = 90.0
+
+
+# =============================================================================
+# BRIDGING FINGERS
+# =============================================================================
+# At the outer tip of every lobe of every phase the trace leaves the RX band
+# radially, crosses OVER the TX turns and comes back, so the RX coils can be broken
+# out outside the TX ring.  The finger sits on the RX layer nearest the top that is
+# not a TX layer.  No terminals are created: the coils are broken out by hand.
+#   "all"    = a finger at every outer tip of every phase
+#   "single" = one finger per RX coil (one for sin, one for cos), on two neighbouring
+#              outer tips (the sin+ tip of the first loop and the cos tip after it): the
+#              coils are broken out side by side, and the TX terminal settles as close to
+#              them as the clearances allow (TX_Parameters.py, "where the TX terminal goes")
+#   "none"   = plain RX band, no fingers
+# In a model "single" was as accurate as "none" and, untuned, more accurate than "all" from
+# 4 loops up (the many fingers distort the coil shape); once the rotor is tuned for each,
+# the three are within about 20 %.
+RX_TABS           = "none"
+# RX_TAB_LAYER = layer of the fingers: "auto" = the RX layer nearest the top that carries
+# no TX turn - or, when both RX layers carry TX turns (e.g. a series TX on
+# [1, 4]), the RX layer nearest the top - or 1 (Top), 2 (Inner 1), 3 (Inner 2), 4 (Bottom).
+# On a layer with TX turns the TX makes way for every finger (go-around or stitched,
+# TX_Parameters.py).
+RX_TAB_LAYER      = "auto"
+RX_TAB_LENGTH_MM  = 3.0     # finger reaches OUTSIDE_RADIUS + this (r = 24.4 mm on the example
+                            # board).  It must clear the outermost TX turn (and, when the TX goes
+                            # around the fingers, the outermost bracket): the checks say how long
+RX_TAB_WIDTH_MM   = 1.0     # spacing of the two finger legs (snapped to polyline nodes).
+                            # The finger adds a small flux sliver to the coil; a narrower
+                            # finger disturbs the sin/cos signal less (matters most at
+                            # high LOOPS). Keep >= about 0.6 for etching.
+
+########## TX_Parameters.py ############################################
+"""
+TX_Parameters.py  -  transmitter (TX) coil: concentric turns outside the RX band.
+
+Units: millimetres, degrees.  Nothing in this file is computed - edit values only.
+Layers are numbered 1 = Top, 2 = Inner 1, 3 = Inner 2, 4 = Bottom (a 2-layer board has 1 and 4).
+"""
+
+TX_NET             = "TX"
+
+TX_TURNS           = 2   # complete turns PER TX LAYER
+TX_OFFSET_MM       = 1.1            # first turn radius = RX outside radius + this
+TX_PITCH_MM        = 0.6            # radial pitch between turns
+TX_TRACE_WIDTH_MM  = 0.2
+# Points per TX turn (every turn is a polyline):
+#   TX_STEPS = "auto" : as many as TX_CHORD_TOLERANCE_MM needs on the outermost turn (a multiple of 8, at least 48)
+#   TX_STEPS = number : that many (12 ... 20000).
+# TX_CHORD_TOLERANCE_MM = how far a straight chord of a TX turn may lie from the true circle: 0.001 mm = 1 micron,
+#   also the smallest value allowed.
+TX_STEPS           = "auto"
+TX_CHORD_TOLERANCE_MM = 0.001
+TX_TAIL_EXTRA_MM   = 2.0            # radial tail that carries the TX terminal
+# TX_SHAPE = shape of the turns (any letter case):
+#   "stepped_diagonal" : concentric circles joined by short straight steps just before the TX terminal, at
+#                        TX_STEPPED_ANGLE_DEG.
+#   "stepped_arc"      : concentric circles joined by arcs centred on the TX terminal via.  The via sits on
+#                        the first turn; arc n (radius
+#                        TX_STEPPED_ARC_RADIUS_MM + n x TX_PITCH_MM) leaves turn n on one side of the via, runs
+#                        round it and lands on turn n + 1 on the other side, with sharp corners.  The arcs are one
+#                        pitch apart, so the copper gap between them is the same as between the turns, and the
+#                        outer tail leaves from the outermost point of the last arc.  TX_STEPPED_ANGLE_DEG and
+#                        TX_INSIDE_VIA_DISTANCE_MM are not used.
+#   "spiral"           : one smooth Archimedean spiral, the gap between turns equals the pitch
+#                        everywhere.  Use it when TX_PITCH_MM is tight (pitch - trace width close
+#                        to the clearance), e.g. a 0.4 mm pitch.  Its last turn
+#                        ends one pitch farther out, and the fingers must reach past it (RX_TAB_LENGTH_MM
+#                        at least 3.5 with the values in these files).
+TX_SHAPE           = "stepped_diagonal"
+# TX_STEPPED_ARC_RADIUS_MM = radius of the innermost arc of a "stepped_arc" TX (mm, measured from the centre of the
+#   terminal via); the other arcs follow at TX_PITCH_MM.
+#     "auto" : the smallest radius that keeps MIN_CLEARANCE_MM from the via (via radius + half a TX trace +
+#              clearance) and is larger than TX_PITCH_MM (each arc must reach the next turn), plus 0.02 mm:
+#              0.72 mm with the defaults.
+#     number : that radius; it must be larger than TX_PITCH_MM and smaller than TX_PITCH_MM + TX_TAIL_EXTRA_MM.
+#   Only used by "stepped_arc".
+TX_STEPPED_ARC_RADIUS_MM = "auto"
+# TX_STEPPED_ANGLE_DEG = the angle of the steps of a "stepped_diagonal" TX (where each turn steps out to the next one,
+#   just before the TX terminal), measured from the turn: 90 = straight out (radial), 45 = diagonal, smaller =
+#   a longer, gentler slope.  Each step is one straight piece, and the run down to the terminal via
+#   (TX_INSIDE_VIA_DISTANCE_MM) takes the same angle.
+#     5 ... 90 : the angle.  Neighbouring steps are parallel, so their copper gap is
+#              TX_PITCH_MM * cos(angle) - TX_TRACE_WIDTH_MM; at steep angles (above about 45 deg with the
+#              defaults) that is less than MIN_CLEARANCE_MM, and each step then starts a little before the one
+#              inside it to keep the clearance.  The generator prints the gap it got.
+#   Only used by "stepped_diagonal" (a "stepped_arc" TX has arcs, a "spiral" TX no steps).
+TX_STEPPED_ANGLE_DEG = 45
+# TX_INSIDE_VIA_DISTANCE_MM = where the via at the TX terminal sits (the via that joins the inner tail
+#   to the first turn, or the two spirals of a series TX).  0 = on the trace ends - only one pitch from the
+#   next turn, which with a 0.8 mm via and a 0.6 mm pitch is closer than MIN_CLEARANCE_MM.  A positive value moves it that far towards the centre (a negative one: away from
+#   it); every turn that starts at the terminal then leaves its circle a little earlier and runs down to
+#   the via at the slope of the TX's own steps (TX_STEPPED_ANGLE_DEG for "stepped_diagonal"; 45 deg for "spiral"),
+#   with a short flat piece into the via.  Keep it below
+#   TX_OFFSET_MM - via radius - half an RX trace - MIN_CLEARANCE_MM (0.4 mm with the defaults), or the
+#   via comes too close to the RX coils.  The generator measures it and warns.
+#   Not used by "stepped_arc" (its via always sits on the first turn, at the centre of the arcs).
+TX_INSIDE_VIA_DISTANCE_MM = 0.3
+# Where the TX terminal goes: there is no setting.  The TX looks for the place around the ring where its
+# terminal (tail, via, steps or arcs, windows) keeps the largest gap from the RX copper (vias, curves,
+# fingers, junction vias); with RX_TABS = "single" it takes the place nearest the two fingers that keeps
+# MIN_CLEARANCE_MM.  The whole board is then turned so that the terminal ends up at 0 deg (the right,
+# on the horizontal axis).  The angle it was turned by is printed and written into Parameters.txt.
+
+# =============================================================================
+# TX LAYERS
+# =============================================================================
+# TX_WIRING = how many layers carry TX turns and how they are joined (any letter case):
+#   "single"   : TX_TURNS turns on TX_LAYER_A (TX_LAYER_B is not used); the inner tail runs on the
+#                underpass layer (TX_SERIES_UNDERPASS_LAYER).
+#   "series"   : TX_TURNS turns on TX_LAYER_A and TX_TURNS turns on TX_LAYER_B in series - two spirals
+#                joined by one via at the inner end (2 x TX_TURNS turns; both run the same way round,
+#                so their fields add).  Both terminals leave radially at the terminal.  TX_LAYER_A
+#                is the spiral that runs inwards from the terminal, TX_LAYER_B the one that runs back out.
+#   "parallel" : the same turns on TX_LAYER_A and TX_LAYER_B in parallel, stitched together through
+#                vias around the TX terminal: about 6 % more receiver signal than the Top layer alone
+#                and about 1.2 - 1.6x the Q in the model (about 0.6x the resistance, but also a lower
+#                inductance; more on thin boards and with the staggered break style).  Put TX_LAYER_A on
+#                the Top layer.
+# TX_LAYER_A / TX_LAYER_B : 1 = Top, 2 = Inner 1, 3 = Inner 2, 4 = Bottom (a 2-layer board has 1
+#   and 4); they must differ.  Examples:
+#     TX_WIRING = "single", TX_LAYER_A = 4                  : on the Bottom layer, the inner tail on the
+#                                                             Top layer (the default)
+#     TX_WIRING = "single", TX_LAYER_A = 1                  : on the Top layer, next to the rotor: about
+#                                                             15 % (0.8 mm board) to 30 % (1.6 mm board)
+#                                                             more receiver signal per TX volt in the model
+#     TX_WIRING = "series", TX_LAYER_A = 1, TX_LAYER_B = 4  : the fingers run on the Top layer and the
+#                                                             Top turns go around them
+#     TX_WIRING = "series", TX_LAYER_A = 1, TX_LAYER_B = 3  : a 4-layer board with the RX on layers 1
+#                                                             and 2
+#
+# Where an RX bridging finger (RX_TAB_LAYER, RX_Parameters.py) runs on a layer that carries
+# TX turns, the TX makes way for it:
+#   "staggered" (go-around): every turn ends a little before the finger - the outer turns farther
+#        away than the inner ones, a staircase - and runs straight out, parallel to the finger, to a
+#        via just outside the TX ring.  On another layer a bracket (the innermost turn on the innermost
+#        bracket) carries it around the end of the finger to the matching via on the other side.  The
+#        fingers must reach past the outermost bracket (about 2 mm longer with the defaults; the checker
+#        gives the minimum RX_TAB_LENGTH_MM), which can push the outer board edge out.
+#   "stitched" (parallel TX only): the turns on the finger's layer stop at a via on each side
+#        of the finger and the turns of the other layer carry the current past it.
+# All TX turns are one net, so KiCad's DRC cannot see a via touching another turn: the
+# generator checks that itself and warns.
+TX_WIRING  = "single"
+TX_LAYER_A = 1
+TX_LAYER_B = 1
+
+# ---- SERIES block (TX_WIRING = "single" or "series") ---------------------------------------
+# A series TX always makes way for the fingers with "staggered" (go-around).
+# TX_SERIES_UNDERPASS_LAYER = "auto" or a layer number:
+#   "single" : the layer of the inner tail and of the go-around brackets.  "auto": Top for a
+#              Bottom TX, Bottom (2-layer) or Inner 1 (4-layer) for a Top TX.
+#   "series" : the layer of the go-around brackets.  "auto": the other TX layer, outside its turns.
+TX_SERIES_UNDERPASS_LAYER = "auto"
+
+# ---- PARALLEL block (TX_WIRING = "parallel") -----------------------------------------------
+# TX_PARALLEL_BREAK_STYLE = how the turns make way for a finger on one of the two layers:
+#   "stitched"  : the turns on the finger's layer stop at a via on each side of the finger; the
+#                 other layer carries the current past it (no copper outside the TX ring).
+#   "staggered" : the turns on the finger's layer go around the finger (go-around), with the
+#                 brackets on the other TX layer outside its turns; both layers stay complete.
+TX_PARALLEL_BREAK_STYLE = "stitched"
+
+########## Rotor_Parameters.py #########################################
+"""
+Rotor_Parameters.py  -  the rotor (the metal "target") made by RotorBuilder.py.
+
+Units: millimetres, degrees.  Nothing in this file is computed - edit values only.
+"""
+
+# "according_to_stator" : everything below ROTOR_AUTO_* is applied on top of
+#                         the stator settings (sector count = LOOPS, radial
+#                         extent from the RX band and the TX ring, ...).
+# "custom"              : only the ROTOR_CUSTOM_* values are used.
+ROTOR_MODE = "according_to_stator"
+
+# ---- according_to_stator ----------------------------------------------------
+ROTOR_AUTO_DUTY             = 0.5   # metal fraction of each period (0.5 = 180 deg electrical).  A
+                                    # copper pattern of fraction k/h has no h-th harmonic (1/3: no
+                                    # 3rd), but the field it leaves has: the eddy currents crowd the
+                                    # field at the copper edges, which moves the fraction that removes
+                                    # the 3rd harmonic of the field above 1/3 and changes the signal.
+                                    # The best value for a coil needs a model of the eddy currents
+                                    # or a test rotor.
+ROTOR_AUTO_START_ANGLE_DEG  = 0.0   # mechanical angle of the first sector edge
+
+# ---- outer edge of the copper: over the TX turns (default) -----------------
+# True: the copper runs over the TX turns and ends ROTOR_AUTO_TX_OVERHANG_MM past the outer edge
+# of the outermost TX turn.  Every sector is a shorted turn
+# driven by the TX flux it encloses, and that flux is densest right beside the TX conductors: in
+# an eddy-current model that gave 5-8 % more receiver signal than ending the copper inside the
+# TX ring; most of the gain is reached 0.5 mm past the outer turn.  Whether it also lowers the
+# angle error depends on the coil (in the model it did for 1 loop and not for 16).
+# False: the copper ends inside the TX ring (ROTOR_AUTO_EXTENSION_OUTER_MM, ROTOR_AUTO_TX_CLEARANCE_MM below).
+ROTOR_AUTO_COVER_TX         = True
+ROTOR_AUTO_TX_OVERHANG_MM   = 0.5   # mm past the outer edge of the outermost TX turn (negative = ends
+                                    # over the TX turns).  The copper always stays
+                                    # ROTOR_AUTO_EDGE_CLEARANCE_MM inside the board outline.
+
+# How far the rotor copper reaches past the RX band, in mm: positive = past the band,
+# negative = stops short of it.  None = not set (see each line).  The copper always stays
+# ROTOR_AUTO_EDGE_CLEARANCE_MM away from the bore (and, with ROTOR_AUTO_COVER_TX = False,
+# ROTOR_AUTO_TX_CLEARANCE_MM inside the TX ring); a value that does not fit is cut back to
+# that limit and reported.
+ROTOR_AUTO_EXTENSION_MM       = None  # both edges (the outer one only with ROTOR_AUTO_COVER_TX = False).
+                                      # None = AIR_GAP_MM
+ROTOR_AUTO_EXTENSION_INNER_MM = None  # inner edge only.  None = ROTOR_AUTO_EXTENSION_MM.
+                                      # Not critical; the bore limits it.
+ROTOR_AUTO_EXTENSION_OUTER_MM = None  # outer edge only, used only with ROTOR_AUTO_COVER_TX = False.
+                                      # None = ROTOR_AUTO_EXTENSION_MM.
+
+ROTOR_AUTO_TX_CLEARANCE_MM  = 0.1   # ROTOR_AUTO_COVER_TX = False only: copper stays this far inside the TX ring
+ROTOR_AUTO_EDGE_CLEARANCE_MM = 0.5  # rotor copper stays this far from the bore edge and from the outline
+ROTOR_AUTO_COPPER_LAYERS    = ["F.Cu"]   # layer(s) carrying the metal sectors;
+                                         # mount the copper side towards the stator
+
+# ---- custom -----------------------------------------------------------------
+ROTOR_CUSTOM_SECTORS            = 1
+ROTOR_CUSTOM_DUTY               = 0.5
+ROTOR_CUSTOM_START_ANGLE_DEG    = 0.0
+ROTOR_CUSTOM_INNER_RADIUS_MM    = 15.53  # (these values match the example stator: RX band 16.2 ... 21.4,
+ROTOR_CUSTOM_OUTER_RADIUS_MM    = 24.3   #  TX turns to 23.8, bore 15, outer edge 27)
+ROTOR_CUSTOM_COPPER_LAYERS      = ["F.Cu"]
+ROTOR_CUSTOM_OUTLINE_RADIUS_MM  = 27.0   # outer board edge (None = no outline)
+ROTOR_CUSTOM_BORE_RADIUS_MM     = 15.0   # centre hole (None = no hole)
+
+# ---- both modes -------------------------------------------------------------
+ROTOR_PCB_THICKNESS_MM = None   # thickness of the rotor board written into the KiCad file (mm); None = the
+                                # stator's PCB_THICKNESS_MM.  It changes nothing in the copper.
+
+# Chords (straight pieces) on every circular arc of a rotor sector (an arc with n chords has n + 1 points):
+#   ROTOR_ARC_STEPS_PER_SECTOR = "auto" : as many as ROTOR_CHORD_TOLERANCE_MM needs (at least 8)
+#   ROTOR_ARC_STEPS_PER_SECTOR = number : that many (8 ... 5000).
+# ROTOR_CHORD_TOLERANCE_MM = how far the polygon may lie outside the true circle: 0.001 mm = 1 micron, also the
+#   smallest value allowed.  (The polygon vertices sit slightly outside the nominal radius, so the OUTER edge of the
+#   copper is never smaller than requested; this is the largest overshoot.  The inner edge may lie up to the same
+#   chord sag outside the nominal inner radius.  The outer vertices are kept inside the board outline limit.)
+ROTOR_ARC_STEPS_PER_SECTOR = "auto"
+ROTOR_CHORD_TOLERANCE_MM   = 0.001
+
+# Solder mask expansion ("SolderMaskExpansion") over the rotor copper; the same for every copper
+# layer of the rotor, in both modes:
+#   -1    no opening: the solder mask stays over the copper (the default, recommended: the copper
+#         stays pristine and protected against oxidation; some signal may be lost)
+#   0.05  the solder mask is removed over the copper: the opening is 0.05 mm wider than the copper
+#         on every side (any value above 0 works the same way, with that margin)
+#   0     the opening is exactly the copper outline
+# No other negative value is accepted.  The openings are drawn on F.Mask / B.Mask (a shape on a
+# mask layer is an opening in KiCad), so they are part of the rotor file.
+ROTOR_SOLDER_MASK_EXPANSION_MM = -1    # recommended: keeps the copper pristine and protected against oxidation;
+                                        # some signal may be lost
+
+########## IC_Parameters.py ############################################
+"""
+IC_Parameters.py  -  the receiver IC the TX coil is checked against.
+
+The electrical estimate (TX_Electrics.py, printed by RunCoilGenerator.py and written into Parameters.txt) checks
+the TX tank against these limits.  They never change a board.  Take them from the datasheet of your IC (check
+your revision) and keep a margin: the estimate is a model, not a measurement.
+
+Units: as the names say.  Nothing in this file is computed - edit values only.
+"""
+
+# =============================================================================
+# RECEIVER IC  (defaults: the IPS2550, from its datasheet)
+# =============================================================================
+IC_NAME            = "IPS2550"  # shown in the electrical estimate; any text, or None ("the receiver IC")
+IC_OSC_MIN_MHZ     = 2.0        # lowest LC oscillator frequency (MHz)                 IPS2550: f_LC min 2.0
+IC_OSC_MAX_MHZ     = 5.6        # highest LC oscillator frequency (MHz)                IPS2550: f_LC max 5.6
+IC_MIN_RP_OHM      = 250        # smallest parallel (loss) resistance of the TX tank   IPS2550: R_Peq 250
+                                # that the oscillator can drive (ohm): R_Peq = L / (C x R_series)
+IC_SPLIT_TANK_CAPS = True       # True: the tank capacitance C goes in two halves, 2 C from TX1 and 2 C from
+                                # TX2 to ground (IPS2550: recommended for EMC); False: one C across the coil
+# Set IC_OSC_MIN_MHZ and IC_OSC_MAX_MHZ to None to skip the frequency check, IC_MIN_RP_OHM to None to skip the
+# resistance check; with all three None there are no IC checks.
+
+LEAD CUTTING SILKSCREEN SUGGESTION
+----------------------------------
+  1 suggestion(s) drawn into the stator file: break each RX coil between its two dots (a via at each dot, down to the bottom layer); extend each TX end to the dot of its name
+  WARNING no spot on 2 within 30 deg of 0 deg, 4 mm from the other marks, has room for two vias (layers F.Cu, B.Cu); widen SILKSCREEN_SEARCH_SPAN_DEG, lower SILKSCREEN_BREAK_SEPARATION_MM, or cut the coil by hand
+  WARNING no spot on 1 within 30 deg of 0 deg, 4 mm from the other marks, has room for two vias (layers F.Cu, B.Cu); widen SILKSCREEN_SEARCH_SPAN_DEG, lower SILKSCREEN_BREAK_SEPARATION_MM, or cut the coil by hand
+  marks on F.SilkS and B.SilkS, colour #FFFFFF, labels on; a via of the suggestion keeps 0.2 mm from copper on every layer and 0.25 mm from the board edges
+  TX (TX): both ends at (110.4, 100) (r = 10.40 mm, 0.0 deg), Top and Bottom; extend the Top end to a via TX_1 at (110.0238, 101.0337) and the Bottom end to a via TX_2 at (110.0238, 98.9663), clearance 0.53 mm (at least 0.2 needed)
+
+########## SilkScreenSuggestion_Parameters.py ##########################
+"""
+SilkScreenSuggestion_Parameters.py  -  the silkscreen suggestion for cutting the leads: where to break each RX
+coil and where the two ends of the TX coil get their vias.
+
+The generator's coils have no terminals: every RX coil (SIN and COS) is one closed loop, and the two ends of the
+TX coil lie on top of each other at the end of its tail (one on each of its two layers).  The user breaks each
+RX loop at one place and sets a via at each side of the cut, and extends each TX end to a via of its own, then
+routes from those vias to the IC.  This last step of the generation (LeadCutting_SilkscreenSuggestion.py, run
+after the stator file is written) looks for a spot on each coil
+where the vias have room on every layer and draws the suggestion on the silkscreen of the finished stator file:
+
+    RX coil   a dashed box around the break, a dot at each of the two via sites, the name of each lead
+              (SIN_1, SIN_2, COS_1, COS_2)
+    TX coil   a dot at each of the two via sites beside the stacked end, a dashed line from the end to each site,
+              the name of each lead with its layer (TX_1 TOP, TX_2 BOT, ...)
+
+It changes no copper: the marks are drawings on F.SilkS and B.SilkS (the bottom text mirrored), and the
+coordinates are printed in the run and appended to Parameters.txt.  Nothing in this file changes a coil.
+
+Units: mm unless the name says otherwise.  Nothing in this file is computed - edit values only.
+"""
+
+# =============================================================================
+# THE SUGGESTION
+# =============================================================================
+SILKSCREEN_SUGGESTION = True        # False: the stator file is left as the assembler wrote it (no silkscreen)
+SILKSCREEN_SIDES      = "both"      # "both": F.SilkS and B.SilkS;  "top": F.SilkS only;  "bottom": B.SilkS only
+
+# Colour of every mark (lines, boxes, dots and the lettering), as a hex RGB string ("#RRGGBB").  KiCad keeps a
+# colour per graphic item (it is written into each item's stroke); the fab prints the silkscreen in its own ink
+# regardless.
+SILKSCREEN_COLOR      = "#FFFFFF"
+
+SILKSCREEN_LABELS     = True        # True: write the lead names (SIN_1, SIN_2, TX_1, TX_2, ...) next to the via sites
+SILKSCREEN_DOT_ON_ALL_VIAS = False  # True: also a dot on every via the generator placed (both sides);  False: only
+                                    # the via sites of the suggestion
+
+# =============================================================================
+# GEOMETRY OF THE MARKS
+# =============================================================================
+SILKSCREEN_LINE_WIDTH_MM  = 0.12    # line width of the boxes, lines and dot outlines
+# The lead names are drawn with the repository's own stroke font (Generators/resources/SilkscreenFont.py, next to the
+# generators: capitals, digits, a few signs; no KiCad font), as lines on the silkscreen, each name placed where it
+# covers no other mark, name or via.
+SILKSCREEN_TEXT_SIZE_MM   = 0.5     # height of a capital (mm); a glyph is 2/3 as wide, the letter pitch 5/6 of the height
+SILKSCREEN_TEXT_STROKE_MM = 0.1     # line width of the lettering.  Most fabs print silkscreen lines down to about
+                                    # 0.1 ... 0.15 mm and text down to about 0.8 mm height; smaller may come out unreadable
+SILKSCREEN_DOT_RADIUS_MM  = 0.16    # radius of the filled dot at a via site
+SILKSCREEN_BOX_MARGIN_MM  = 0.5     # the dashed box around an RX break reaches this far past the two via sites
+
+# =============================================================================
+# WHERE THE BREAK GOES  (the search; the result is printed in the run and in Parameters.txt)
+# =============================================================================
+# The two vias of an RX break sit on the coil this far apart (centre to centre, along the trace); the trace between
+# them is what the user cuts.  At least VIA_DIAMETER_MM + MIN_CLEARANCE_MM.
+SILKSCREEN_BREAK_VIA_GAP_MM   = 1.2
+# The break is looked for on the coil's traces within this many degrees of the TX terminal (the board is turned
+# so that it sits at 0 deg, the right), where the TX ends are, so that all leads come together.  Larger = more candidates, further from the TX ends.
+SILKSCREEN_SEARCH_SPAN_DEG    = 30.0
+# The two breaks and the TX end stay at least this far apart (centre to centre), so that the marks and
+# the lead names do not land on each other.
+SILKSCREEN_BREAK_SEPARATION_MM = 4.0
+# The coil layers tried for the break, in this order; the first layer with a spot that has room is used.
+SILKSCREEN_BREAK_LAYERS       = ["F.Cu", "B.Cu"]
+# A via of the suggestion keeps MIN_CLEARANCE_MM (Board_Parameters.py) from every copper on every layer, and
+# this much from the bore and the outline.
+SILKSCREEN_VIA_EDGE_CLEARANCE_MM = 0.25
+# The two via sites of a TX end are looked for up to this far from the stacked end (mm).
+SILKSCREEN_TX_SITE_REACH_MM   = 2.0
+
