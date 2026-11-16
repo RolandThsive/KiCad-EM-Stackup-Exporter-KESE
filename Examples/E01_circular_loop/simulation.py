@@ -3,8 +3,13 @@ Grover's ring formula and the resistance of an annular sector.
 
     python simulation.py                 the mesh ladder at every frequency (about 2 hours on 4 cores)
     python simulation.py --levels 1      one mesh only
-    python simulation.py --levels 0.75 --mesh grade=0.35 --results results_grade.json
-                                         one mesh setting changed for this run, to its own results file
+    python simulation.py --levels 0.75 --freqs 1e4 --mesh grade=0.25 --mesh tet_grade=0.35 --out case_grade \
+                         --results results_grade.json
+                                         mesh settings changed for this run, to its own results file and folder
+    python simulation.py --levels 0.75 --domain-mm 120 --out case_domain120 --results results_domain120.json
+                                         the air domain's radius and half height, in mm
+    python simulation.py --levels 0.75 --fields --out case_fields --results results_fields.json
+                                         also write the fields as VTU files (about 23 MB a solve at level 0.75)
     python simulation.py --mesh-only     build the meshes and print their size, solve nothing
     python simulation.py --order 2       second-order edge elements
 

@@ -1,0 +1,139 @@
+{
+ "board": "E01_circular_loop.kicad_pcb",
+ "settings": {
+  "board": "E01_circular_loop.kicad_pcb",
+  "centre": [
+   100.0,
+   -100.0
+  ],
+  "radius_mm": 10.0,
+  "width_mm": 0.5,
+  "gap_mm": 0.2,
+  "copper_mm": 0.035,
+  "gap_box": [
+   109.75,
+   -100.35,
+   110.25,
+   -99.65
+  ],
+  "sigma": 58000000.0,
+  "domain_radius_mm": 60.0,
+  "domain_half_height_mm": 60.0,
+  "freqs_hz": [
+   10000.0,
+   3500000.0
+  ],
+  "order": 1,
+  "levels": [
+   0.75,
+   1.0,
+   1.3
+  ],
+  "mesh": {
+   "h_edge": 0.09,
+   "h_in": 0.18,
+   "h_max": 6.0,
+   "grade": 0.5,
+   "dz_copper": 0.018,
+   "dz_max": 0.4,
+   "tet_max": 8.0,
+   "tet_grade": 0.7
+  },
+  "threads": 4,
+  "tol": 1e-07,
+  "max_iter": 3000
+ },
+ "references": {
+  "L_ring_dc_h": 5.662229455907937e-08,
+  "L_ring_hf_h": 5.606446261875009e-08,
+  "arc_share": 0.9888568781393898,
+  "L_open_dc_h": 5.599134543078018e-08,
+  "L_open_hf_h": 5.5439729479739736e-08,
+  "R_dc_ohm": 0.06120075252410377,
+  "gmd_dc_mm": 0.11957250000000001,
+  "gmd_hf_mm": 0.125
+ },
+ "versions": {
+  "python": "3.13.18",
+  "kese": "kese 3.4.0",
+  "gmsh": "4.15.2",
+  "numpy": "2.5.3",
+  "scipy": "1.18.1",
+  "shapely": "2.2.0",
+  "trimesh": "5.2.1",
+  "elmer": "26.2-unknown (a19504a,)"
+ },
+ "runs": [
+  {
+   "level": 0.75,
+   "order": 1,
+   "max_iter": 1500,
+   "mesh_seconds": 8.8,
+   "nodes": 59782,
+   "wedges": 90363,
+   "tetrahedra": 74309,
+   "solves": [
+    {
+     "frequency_hz": 3500000.0,
+     "seconds": 187.5,
+     "peak_memory_gb": 3.39,
+     "iterations": 579,
+     "residual": 9.443e-08,
+     "field_energy_j": 2.646378096949e-08,
+     "dc_resistance_ohm": {
+      "LOOP": 0.06134007731686
+     },
+     "coils": {
+      "LOOP": {
+       "V": [
+        0.08019216562121,
+        1.163938472657
+       ],
+       "I": [
+        1.0,
+        1.1223657829e-15
+       ],
+       "Z": [
+        0.0801921656212113,
+        1.163938472657
+       ],
+       "R": 0.0801921656212113,
+       "L": 5.292758896519783e-08
+      }
+     },
+     "L_from_energy_h": 5.292756193898e-08
+    },
+    {
+     "frequency_hz": 10000.0,
+     "seconds": 371.4,
+     "peak_memory_gb": 3.39,
+     "iterations": 1500,
+     "residual": 1.068e-06,
+     "field_energy_j": 2.695205380977e-08,
+     "dc_resistance_ohm": {
+      "LOOP": 0.06134007731686
+     },
+     "coils": {
+      "LOOP": {
+       "V": [
+        0.06153112715939,
+        0.003386246995674
+       ],
+       "I": [
+        1.0,
+        3.74547381364e-21
+       ],
+       "Z": [
+        0.06153112715939,
+        0.003386246995674
+       ],
+       "R": 0.06153112715939,
+       "L": 5.3893794789159706e-08
+      }
+     },
+     "L_from_energy_h": 5.390410761954e-08
+    }
+   ]
+  }
+ ]
+}

@@ -32,8 +32,8 @@ covers (0.989). The two filaments alone, at the traces' centre lines, give 24.51
 What came out:
 
 * **M is 3.1 % low and rises with the mesh**, as E01's L does, and by about the same amount at the
-  same mesh size: whatever holds E01's L down holds M down alike (see E01's results.md for the
-  diagnostic runs).
+  same mesh size, most likely for the same reason: E01's diagnostic runs found that the air's mesh
+  round the copper, which the ladder does not refine, holds most of E01's gap (see E01's results.md).
 * **The open RX leaves the TX's L alone**: 54.18 nH against E01's 54.20 nH at level 1. A loop with no
   current in it adds no field. At level 0.75 the TX's L is 0.3 % above E01's. The two meshes are not
   the same at the same level (E02 has wedge layers through its second copper as well, and more nodes)

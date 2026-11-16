@@ -4,6 +4,8 @@ inductance from Elmer, against Maxwell's formula for coaxial circles averaged ov
     python simulation.py                 the mesh ladder at every frequency
     python simulation.py --levels 1      one mesh only
     python simulation.py --order 2       second-order edge elements
+    python simulation.py --levels 0.75 --mesh grade=0.25 --mesh tet_grade=0.35 --results results_grade.json
+                                         one mesh setting changed for this run, to its own results file
 
 TX carries 1 A; RX carries none, so its voltage is the EMF the TX induces in it and M = Im(V_RX / I_TX) / omega.
 Writes results.json beside this file and the runs under case/ (not committed). Every setting is in SETTINGS.
@@ -108,7 +110,15 @@ def main():
     ap.add_argument('--max-iter', type=int, default=SETTINGS['max_iter'],
                     help='the linear solver\'s iteration cap (the iteration check runs at half and full)')
     ap.add_argument('--results', default=None, help='the results file (default results.json beside this file)')
+    ap.add_argument('--mesh', action='append', default=[], metavar='KEY=VALUE',
+                    help="change one of SETTINGS['mesh'] for this run, e.g. --mesh grade=0.25 (repeatable)")
+    ap.add_argument('--mesh-only', action='store_true', help='build and write the meshes, solve nothing')
     a = ap.parse_args()
+    for kv in a.mesh:                      # recorded in the results through SETTINGS
+        k, v = kv.split('=', 1)
+        if k not in SETTINGS['mesh']:
+            ap.error(f'--mesh {k}: not one of {sorted(SETTINGS["mesh"])}')
+        SETTINGS['mesh'][k] = float(v)
     out = Path(a.out)
     out.mkdir(parents=True, exist_ok=True)
     logf = open(out / 'run.log', 'a')
@@ -133,6 +143,9 @@ def main():
         folder = out / f'order{a.order}_level{level:g}'
         M.write_elmer(m, folder / 'mesh_files', bnds, log=log)
         mesh_s = time.time() - t0
+        if a.mesh_only:
+            log(f"level {level:g}: {len(m['nodes'])} nodes, {len(m['wedges'])} wedges, {len(m['tets'])} tetrahedra")
+            continue
         cu = E.Material('Copper', sigma=SETTINGS['sigma'])
         bodies = {n: (cu if n in ('TX', 'RX') else E.Material('Air' if n == 'AIR' else n.title()))
                   for n in m['names']}
@@ -149,7 +162,8 @@ def main():
             tx, rx = r['coils']['TX'], r['coils']['RX']
             log(f"level {level:g} f {r['frequency_hz']:.4g} Hz: M {rx['M'] * 1e9:.3f} nH, L_TX {tx['L'] * 1e9:.3f} nH, "
                 f"R_TX {tx['R'] * 1e3:.3f} mOhm, {r['iterations']} it, res {r['residual']}")
-    log(f'wrote {res_file}')
+    if not a.mesh_only:
+        log(f'wrote {res_file}')
 
 
 if __name__ == '__main__':
