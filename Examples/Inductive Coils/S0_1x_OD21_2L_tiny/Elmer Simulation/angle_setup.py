@@ -79,12 +79,14 @@ def picture(angle, a_zero, gap, path):
             color=INK2, ha='center', va='center', zorder=8)
     # the three ports, ringed, named outside the board so that no rotor position covers a name
     ports = [('TX', sim.SETTINGS['tx_end'])] + list(sim.SETTINGS['rx_vias'].items())
+    if sim.RX_PORT == 'cut':                              # SIN and COS are opened by a cut in a top trace instead
+        ports = ports[:1] + [(n, c['xy']) for n, c in sim.SETTINGS['rx_cuts'].items()]
     for name, xy in ports:
         ax.add_patch(Circle(xy, 0.5, fc='none', ec=INK, lw=1.1, zorder=8))
         d = math.atan2(xy[1] - cy, xy[0] - cx)
         rt = outer + 1.25
         at = (cx + rt * math.cos(d), cy + rt * math.sin(d))
-        ax.annotate(f'{name} port', xy, xytext=at, textcoords='data', fontsize=7.5, color=INK, zorder=8,
+        ax.annotate(f'{name} port' + ('\n(cut)' if name != 'TX' and sim.RX_PORT == 'cut' else ''), xy, xytext=at, textcoords='data', fontsize=7.5, color=INK, zorder=8,
                     ha='center', va='center', arrowprops=dict(arrowstyle='-', color=INK, lw=0.7, shrinkA=1,
                                                               shrinkB=7))
     ax.set_xlim(cx - R, cx + R)

@@ -132,8 +132,11 @@ def top_view(ax, lay, angle, gap):
     R = sim.SPEC['stator']['bore_and_outer_radius_mm'][1] + 1.2
     labels = [(tx, 'TX port: its two ends,\nstacked on F.Cu and B.Cu', (tx[0] - 1.6, tx[1] - 2.6))]
     for name, xy in sim.SETTINGS['rx_vias'].items():
-        labels.append((xy, f'{name} port: one via\nleft out',
-                       (cx - R + 0.1, xy[1] + (4.4 if xy[1] > cy else -4.6))))
+        if sim.RX_PORT == 'cut':                            # the cut, not the via, is the port
+            xy = sim.SETTINGS['rx_cuts'][name]['xy']
+        text = (f'{name} port: a {sim.SETTINGS["rx_cuts"][name]["gap_mm"]:g} mm cut\nacross the top trace'
+                if sim.RX_PORT == 'cut' else f'{name} port: one via\nleft out')
+        labels.append((xy, text, (cx - R + 0.1, xy[1] + (4.4 if xy[1] > cy else -4.6))))
     for xy, text, at in labels:
         ax.add_patch(Circle(xy, 0.55, fc='none', ec=INK, lw=1.4, zorder=8))
         ax.annotate(text, xy, xytext=at, textcoords='data', fontsize=8, color=INK, zorder=8, va='center',
@@ -227,6 +230,39 @@ def port_view(ax, lay, name, xy, half, hole_r, title, note):
     ax.set_title(title, color=INK, fontsize=9, loc='left')
 
 
+def cut_view(ax, lay, name, title, note):
+    """A section along the trace through a cut, heights stretched: the top copper either side of the gap, the
+    electrodes on the two cut faces, and the port sheet across the gap's floor (the copper's lower face)."""
+    from matplotlib.patches import Rectangle
+    style(ax)
+    c = sim.SETTINGS['rx_cuts'][name]
+    d = np.asarray(c['along'], float) / np.linalg.norm(c['along'])
+    o, w, g = np.asarray(c['xy']), 0.6, c['gap_mm']
+    f0, f1 = sim.top_copper([p for p in lay.parts if p.role != 'void'], name)
+    t = f1 - f0
+    for _, s0, s1, z0, z1 in section_rects(lay, LineString([o - w * d, o + w * d]), (name,)):
+        if z0 >= f0 - 1e-9:                                # the top copper only: the cut is in it
+            ax.add_patch(Rectangle((s0 - w, z0), s1 - s0, z1 - z0, fc=COIL[name], ec='none', zorder=3))
+    for u in (-g / 2, g / 2):                              # the electrodes: the two cut faces
+        ax.plot([u, u], [f0, f1], color=INK, lw=3.2, solid_capstyle='butt', zorder=5)
+    ax.plot([-g / 2, g / 2], [f0, f0], color=INK, lw=1.6, ls=(0, (2, 1.2)), zorder=6)
+    ax.annotate('electrode', (-g / 2, f1), xytext=(-g / 2 - 0.12, f1 + 1.3 * t), fontsize=7.5, color=INK,
+                ha='right', va='center', arrowprops=dict(arrowstyle='-', color=INK, lw=0.7, shrinkB=2))
+    ax.annotate('electrode', (g / 2, f1), xytext=(g / 2 + 0.12, f1 + 1.3 * t), fontsize=7.5, color=INK,
+                ha='left', va='center', arrowprops=dict(arrowstyle='-', color=INK, lw=0.7, shrinkB=2))
+    ax.annotate('port sheet (dashed): the\ngap\'s floor, its full width', (0, f0), xytext=(0, f0 - 1.5 * t),
+                fontsize=7.5, color=INK, ha='center', va='center',
+                arrowprops=dict(arrowstyle='-', color=INK, lw=0.7, shrinkB=2))
+    ax.text(-w + 0.02, f0 - 2.75 * t, note, fontsize=7.5, color=INK2, va='top')
+    ax.set_xlim(-w, w)
+    ax.set_ylim(f0 - 4.2 * t, f1 + 2.0 * t)
+    ax.set_box_aspect(1.3)                                 # narrow, as the via close-up is, clear of the TX label
+    ax.set_anchor('E')
+    ax.set_xlabel(f'along the trace (mm), the cut {g:g} mm wide at 0', color=INK2, fontsize=8)
+    ax.set_ylabel('z (mm), stretched', color=INK2, fontsize=8)
+    ax.set_title(title, color=INK, fontsize=9, loc='left')
+
+
 def main():
     ap = argparse.ArgumentParser(description=__doc__.split('\n\n')[0])
     ap.add_argument('--gap', type=float, default=sim.SETTINGS['air_gap_mm'])
@@ -245,9 +281,13 @@ def main():
     sub = gs[1, 1].subgridspec(1, 2, wspace=0.22)
     s = sim.SETTINGS
     rx = 'SIN'
-    port_view(fig.add_subplot(sub[0, 0]), lay, rx, s['rx_vias'][rx], s['rx_sheet_half_mm'], s['via_void_radius_mm'],
-              f'{rx} port (COS the same): the via left out',
-              f'0 A is forced through {rx}, so the voltage\nacross the sheet is its open-circuit EMF')
+    if sim.RX_PORT == 'cut':
+        cut_view(fig.add_subplot(sub[0, 0]), lay, rx, f'{rx} port (COS the same): the cut in its top trace',
+                 f'0 A is forced through {rx}, so the voltage\nacross the cut is its open-circuit EMF')
+    else:
+        port_view(fig.add_subplot(sub[0, 0]), lay, rx, s['rx_vias'][rx], s['rx_sheet_half_mm'],
+                  s['via_void_radius_mm'], f'{rx} port (COS the same): the via left out',
+                  f'0 A is forced through {rx}, so the voltage\nacross the sheet is its open-circuit EMF')
     port_view(fig.add_subplot(sub[0, 1]), lay, 'TX', s['tx_end'], s['sheet_half_mm'], s['tx_end_radius_mm'],
               'TX port: between its two stacked ends', '1 A is driven through the TX across\nthis gap, at '
               f'{s["freq_hz"] / 1e6:g} MHz')
