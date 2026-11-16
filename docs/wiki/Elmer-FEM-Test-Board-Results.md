@@ -36,7 +36,7 @@ ends' centres; since the current runs on into the half-discs, it is a lower boun
 The reference R is the annular sector's DC resistance. At 3.5 MHz the skin depth (35 µm) equals the copper's
 thickness, and no formula is exact there.
 
-![E01's L and E02's M at 10 kHz, as a percentage off their references, against the mesh's nodes in thousands: E01 rises from −3.7 % at 60,000 nodes to −3.2 % at 86,000 and −3.1 % at 125,000; E02 rises from −3.3 % at 92,000 nodes to −3.1 % at 120,000; E01 with the air graded twice and four times as finely rises from −1.55 % at 89,000 nodes to −0.46 % at 166,000; a grey band from 0 to +0.8 % shows the reference's own uncertainty](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Elmer-FEM-Test-Board-Results/elmerresults_1_against_reference.webp)
+![E01's L and E02's M at 10 kHz, as a percentage off their references, against the mesh's nodes in thousands: E01 rises from −3.7 % at 60,000 nodes to −3.2 % at 86,000 and −3.1 % at 125,000; E02 rises from −3.3 % at 92,000 nodes to −3.1 % at 120,000; E01 with the air graded twice and four times as finely rises from −1.55 % at 89,000 nodes to −0.46 % at 166,000, and E02's M with the air graded twice as finely sits at −1.1 % with 135,000 nodes; a grey band from 0 to +0.8 % shows the reference's own uncertainty](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Elmer-FEM-Test-Board-Results/elmerresults_1_against_reference.webp)
 
 L rises as the mesh is refined, as it should with first-order edge elements, but along the ladder it
 levels off about 3 % under the reference. The ladder refines only the copper's mesh. Grading the air
@@ -83,10 +83,12 @@ voltage across RX's gap gives M. E02 runs at most 1500 iterations.
 | TX's R at 3.5 MHz | E01's R at the same level | | 80.75 mΩ (E01: 79.25 mΩ) |
 
 The reference M is Maxwell's formula for two coaxial circular filaments, averaged over 41 × 41
-filaments across both traces' widths, times the share of the circle the TX's copper covers.
+filaments across both traces' widths, times the share of the circle the TX's copper covers: like
+E01's, a lower bound by up to 0.8 %.
 
 * **M is 3.1 % low and rises with the mesh** (−3.3 % at level 0.75), the same as E01's L at this mesh
-  size, most likely for the same reason: the coarse air round the copper.
+  size, and for the same reason: with the air graded twice as finely, M rose 2.3 % to 1.1 % under the
+  reference (the orange diamond), as much as E01's L did.
 * **The open RX leaves the TX's L alone** at 10 kHz (54.18 against 54.20 nH): a loop with no current
   in it adds no field.
 * **At 3.5 MHz the RX adds 1.5 mΩ to the TX's R.** RX carries no net current, but eddy currents

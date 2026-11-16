@@ -31,7 +31,9 @@ covers it too.
 
 ![E01's mesh at level 0.75, cut through the loop's axis, 4 mm by 4 mm round one crossing of the trace. Left, the examples' grading (grade 0.5, tet_grade 0.7; 59,782 nodes, L 3.7 % low): the tetrahedra above and below the thin band of wedges grow to about a millimetre within a millimetre of the copper. Right, twice as fine (grade 0.25, tet_grade 0.35; 88,760 nodes, L 1.55 % low): the elements stay smaller round the trace](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Elmer-FEM-Accuracy/E01_circular_loop/elmeraccuracy_1_air_mesh.webp)
 
-Graded four times as finely, the air brings L to 0.46 % under the reference, with 166,471 nodes.
+On E02 the same change raised M by 2.3 % as well, from 3.3 % to 1.1 % under Maxwell's formula: the
+air holds L and M down alike. Graded four times as finely, the air brings E01's L to 0.46 % under the
+reference, with 166,471 nodes.
 Each halving of the grading halved the change, so the air's mesh is converging but not done, and the
 copper's ladder showed another +0.7 % from level 0.75 to 1.3. Against that stands the reference's
 own band, from 0 to +0.8 %: what is left is of the same size, and E01 cannot measure it. A ladder that
