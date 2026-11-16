@@ -16,3 +16,10 @@ their path in the repository.
 
 One colour per copper layer or per net everywhere, true-to-scale line widths, 200 dpi,
 board or outline edges as thick black lines.
+
+The test boards of the Elmer and openEMS pages (Elmer-FEM-Test-Boards/, OpenEMS-Implementation-
+Test-Boards/) are drawn in the Sinusoidal Coil Generator's own style instead: the coil boards by its
+RepresentativeSVGMaker.py (the stator beside the rotor, Top red, Inner 1 green, Inner 2 yellow,
+Bottom blue, copper under Top drawn wider so that it shows as an edge, the vias as dots), and E01,
+E02 and O01 in the same colours, from above beside a section through the board, rendered at 2240
+pixels wide.
