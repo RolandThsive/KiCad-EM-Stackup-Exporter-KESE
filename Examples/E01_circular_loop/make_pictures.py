@@ -139,9 +139,13 @@ def chart_reference(out, plt):
     l_ref, m_ref = r1['references']['L_open_dc_h'], r2['references']['M_open_h']
     e01 = sorted((run['nodes'], solve(run, 1e4)['coils']['LOOP']['L']) for run in r1['runs'] if solve(run, 1e4))
     e02 = sorted((run['nodes'], solve(run, 1e4)['coils']['RX']['M']) for run in r2['runs'] if solve(run, 1e4))
-    fig, ax = plt.subplots(figsize=(6.4, 4.6))
+    fig, ax = plt.subplots(figsize=(6.4, 5.6))
     fig.patch.set_facecolor(SURFACE)
     ax.axhline(0, color=INK2, lw=1.5, ls=':', label='the reference')
+    st = r1['settings']                    # the current stopped at the round ends' centres (0) or at the gap's faces
+    c = 2 * np.pi * st['radius_mm']
+    top = ((c - st['gap_mm']) / (c - st['gap_mm'] - st['width_mm']) - 1) * 100
+    ax.axhspan(0, top, color=GRID, lw=0, label=f"up to +{top:.1f} %: the reference with the current taken on to the gap's faces")
     n, v = zip(*e01)
     ax.plot(np.array(n) / 1e3, (np.array(v) / l_ref - 1) * 100, color=BLUE, lw=2, marker='o', ms=8,
             markeredgecolor=SURFACE, markeredgewidth=2, label="E01: L against Grover's ring formula, the ladder")
@@ -171,10 +175,10 @@ def chart_reference(out, plt):
                     label = None
     style(ax, 'mesh nodes (thousands)', 'difference from the reference (%)')
     lo = min(-4.5, ax.get_ylim()[0])
-    ax.set_ylim(lo, 0.8)
+    ax.set_ylim(lo, 1.3)
     ax.set_title('Elmer against the closed forms at 10 kHz, as the mesh is refined', color=INK, fontsize=10.5,
                  loc='left')
-    ax.legend(frameon=False, fontsize=8.5, labelcolor=INK2, loc='upper center', bbox_to_anchor=(0.5, -0.16), ncol=2)
+    ax.legend(frameon=False, fontsize=8.5, labelcolor=INK2, loc='upper left', bbox_to_anchor=(0, -0.14), ncol=1)
     fig.tight_layout()
     save(fig, out / 'elmerresults_1_against_reference.webp')
     plt.close(fig)

@@ -27,7 +27,7 @@ sheet across the gap, and Elmer's circuit drives 1 A between them.
 
 | Check | How | Reference |
 |---|---|---|
-| L at 10 kHz | Im(V / I) / ω of the loop; the skin depth (0.66 mm) is far above the copper's 35 µm, so the current is uniform | Grover's ring formula μ0 R (ln(8R / g) − 2) with the rectangle's geometric mean distance g = 0.2235 (w + t), times the share of the circle the copper covers (0.989): 55.99 nH |
+| L at 10 kHz | Im(V / I) / ω of the loop; the skin depth (0.66 mm) is far above the copper's 35 µm, so the current is uniform | Grover's ring formula μ0 R (ln(8R / g) − 2) with the rectangle's geometric mean distance g = 0.2235 (w + t), times the share of the circle the copper covers (0.989): 55.99 nH, a lower bound by up to 0.8 % (see results.md) |
 | L from the field's energy | 2W / I² from Elmer's field energy | the same L, as a check on the circuit's read-back |
 | R at 10 kHz | Re(V / I) | the DC resistance of an annular sector, θ / (σ t ln(r_out / r_in)): 61.20 mΩ |
 | R_dc | Elmer's own DC solve of the coil's current direction | the same 61.20 mΩ |

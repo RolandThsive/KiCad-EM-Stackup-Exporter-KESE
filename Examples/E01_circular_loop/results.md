@@ -22,7 +22,7 @@ the mesh's size, the time, the memory and the solver's last residual of every so
 
 | Quantity | The reference's own accuracy | Elmer against it |
 |---|---|---|
-| L at 10 kHz | Grover's formula is exact for a thin ring (here R / g = 84); the open loop's share of the closed ring is a first-order estimate, good to a fraction of the gap's 1.1 % of the circle | −3.1 % at the finest mesh, rising with the mesh |
+| L at 10 kHz | Grover's formula is exact for a thin ring (here R / g = 84). The open loop's share is a lower bound: it stops the current at the round ends' centres, but the current runs on into the half-discs, and taken to the gap's faces the share gives 56.44 nH, 0.8 % more | −3.1 % at the ladder's finest mesh; −0.46 % with the air graded four times as finely |
 | L from the energy | the same | within 0.05 % of the circuit's L at every level |
 | R at 10 kHz | exact for the annular sector; the two round ends past the sector's ends are left out | +0.5 % |
 | L at 3.5 MHz | none exact: the skin depth equals the copper's thickness, so the current is neither uniform nor crowded to the surface | −3.9 % against the thin strip's estimate |
@@ -77,13 +77,22 @@ level 0.75, at 10 kHz and 3000 iterations:
 |---|---|---|---|---|---|
 | The ladder's level 0.75 | `results.json` | 59,782 | 53.91 nH | −3.7 % | 25 min, 3.39 GB, residual 5.9e-7 |
 | The air graded twice as finely: `grade` 0.25, `tet_grade` 0.35 | `results_grade.json` | 88,760 | 55.12 nH | −1.55 % | 18 min, 5.11 GB, residual 2.2e-7 |
+| Four times as finely: `grade` 0.125, `tet_grade` 0.175 | `results_grade2.json` | 166,471 | 55.73 nH | −0.46 % | 36 min, 9.73 GB, residual 1.5e-6 |
 
 * **The air's mesh holds most of the gap.** Grading the air twice as finely raised L by 2.3 %, with
   about as many nodes as level 1 (85,712), whose L is 3.2 % low. Most of a thin trace's inductance is
   in the field close round it, and the default grading lets the elements there grow too fast.
-* **R did not move** (61.54 mΩ against 61.53 mΩ): the resistance depends on the copper's mesh alone.
-* **The circuit and the field's energy still agree** (55.124 against 55.123 nH), and the solve came
-  closer to its tolerance than on the ladder's mesh.
+* **Each halving of the grading halves the change**: +2.3 %, then +1.1 %. The air's mesh is
+  converging, but at four times as fine it is not done: if the pattern holds, the next halving adds
+  about 0.5 %. The copper's ladder adds its own +0.7 % from level 0.75 to 1.3.
+* **The reference can no longer tell the rest apart.** Its open loop's share stops the current at the
+  round ends' centres; the current runs on into the half-discs, so the open loop's L lies between
+  55.99 nH and 56.44 nH (the current taken to the gap's faces). At −0.46 % Elmer's L is just under
+  that band, with the air and the copper both still rising: what is left is of the size of the
+  reference's own uncertainty, so this board cannot measure it.
+* **R did not move** (61.53 to 61.54 mΩ on all three meshes): the resistance depends on the
+  copper's mesh alone.
+* **The circuit and the field's energy still agree**, within 0.01 % on both finer meshes.
 
 The ladder's settings stay as they are, so that `results.json` can be run again as published; the
 coil boards' estimates in the wiki's *Elmer FEM Hardware* page are for those settings too.
