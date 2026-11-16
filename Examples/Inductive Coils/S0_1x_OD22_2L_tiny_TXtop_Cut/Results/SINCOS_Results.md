@@ -145,7 +145,3 @@ Each channel gets its best sine over the rotor's period, M = offset + amplitude 
 ![how the stator and rotor are set up in Elmer](../S0_1x_OD22_2L_tiny_TXtop_Cut_elmer_setup.webp)
 
 *How the boards are set up in Elmer, drawn by [`rig_picture.py`](../Elmer%20Simulation/rig_picture.py) from the geometry the mesh is built from: the rotor copper side down over the stator, each receiver opened by a 0.2 mm cut across a top trace (the two cut faces are the terminal, held at 0 A, so the voltage across the cut is the open-circuit EMF), and the TX opened between its two stacked ends, where 1 A is driven.*
-
-![the cut against the via port](SINCOS_cut_vs_via.webp)
-
-*The same board with its receivers opened at a left-out via (dashed, hollow) and by the cut (solid, filled), solve by solve, drawn by [`compare_ports.py`](../Elmer%20Simulation/compare_ports.py). Which cut face counts as plus is a convention, so the via board's SIN is drawn with its sign turned. Rings: solves that are not converged.*

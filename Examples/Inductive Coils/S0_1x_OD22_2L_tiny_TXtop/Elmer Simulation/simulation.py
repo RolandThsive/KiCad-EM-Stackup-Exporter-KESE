@@ -332,12 +332,6 @@ def report(log=print):
                       "at a left-out via (its two pads and the gap between them are the terminal, held at 0 A, so "
                       "the voltage across it is the open-circuit EMF)")
                    + ", and the TX opened between its two stacked ends, where 1 A is driven.*", '']
-    if (RESULTS / 'SINCOS_cut_vs_via.webp').exists():                 # the _Cut folder: drawn by compare_ports.py
-        boards += ['![the cut against the via port](SINCOS_cut_vs_via.webp)', '',
-                   '*The same board with its receivers opened at a left-out via (dashed, hollow) and by the cut '
-                   '(solid, filled), solve by solve, drawn by [`compare_ports.py`](../Elmer%20Simulation/compare_ports.py). '
-                   'Which cut face counts as plus is a convention, so the via board\'s SIN is drawn with its sign '
-                   'turned. Rings: solves that are not converged.*', '']
     expect = []
     tx_exp = EXPECTED.get('tx', {})
     if tx_exp.get('L_away_gen_H') and lt_all:

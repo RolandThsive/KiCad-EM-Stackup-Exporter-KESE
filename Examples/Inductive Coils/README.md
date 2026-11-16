@@ -12,15 +12,15 @@ The most important single number is C2: how much the rotor lowers the TX's induc
 
 All of them are S0 and boards made from it, small enough that a solve runs on a 15 GB machine (the 1.5 and 2 mm gaps and the three-turn board with a swapfile):
 
-| Board | What it is | SIN amplitude at 0.5 / 1 / 1.5 / 2 mm |
-|---|---|---|
-| [S0_1x_OD21_2L_tiny](S0_1x_OD21_2L_tiny/) | S0: 21 mm across, one period per turn, the TX one turn on each layer, a half-ring rotor | 3.3 to 4.0 / 2.15 / 1.37 / 0.89 nH |
-| [S0_1x_OD21_2L_tiny_TXtop](S0_1x_OD21_2L_tiny_TXtop/) | the same board with the TX two turns on the top layer (the generator narrows the RX band to fit them) | 3.32 / 2.24 / 1.40 / 0.89 nH |
-| [S0_1x_OD22_2L_tiny_TXtop](S0_1x_OD22_2L_tiny_TXtop/) | the TX two turns on the top layer around S0's own RX coils, the board grown to 22.2 mm | 4.70 / 3.05 / 2.12 / 1.41 nH |
-| [S0_1x_OD22_2L_tiny_TXtop_Cut](S0_1x_OD22_2L_tiny_TXtop_Cut/) | the 22 mm board with SIN and COS opened by a cut in a top trace instead of a left-out via | 4.32 / 3.05 / 2.21 / 1.42 nH |
-| [S0_1x_OD23_2L_tiny_TX3top_Cut](S0_1x_OD23_2L_tiny_TX3top_Cut/) | the TX three turns on the top layer around S0's RX coils, 23.4 mm, opened by cuts | 6.32 / 4.39 / 3.03 / 2.18 nH |
+| Board | What it is |
+|---|---|
+| [S0_1x_OD21_2L_tiny](S0_1x_OD21_2L_tiny/) | S0: 21 mm across, one period per turn, the TX one turn on each layer, a half-ring rotor |
+| [S0_1x_OD21_2L_tiny_TXtop](S0_1x_OD21_2L_tiny_TXtop/) | the same board with the TX two turns on the top layer (the generator narrows the RX band to fit them) |
+| [S0_1x_OD22_2L_tiny_TXtop](S0_1x_OD22_2L_tiny_TXtop/) | the TX two turns on the top layer around S0's own RX coils, the board grown to 22.2 mm |
+| [S0_1x_OD22_2L_tiny_TXtop_Cut](S0_1x_OD22_2L_tiny_TXtop_Cut/) | the 22 mm board with SIN and COS opened by a cut in a top trace instead of a left-out via |
+| [S0_1x_OD23_2L_tiny_TX3top_Cut](S0_1x_OD23_2L_tiny_TX3top_Cut/) | the TX three turns on the top layer around S0's RX coils, 23.4 mm, opened by cuts |
 
-The amplitude is the best sine through the solves that converged (residual below 5e-4 and a positive TX resistance), with 1 A at 3.5 MHz in the TX: 1 nH is 22 mV of EMF. S0's 0.5 mm curve has 3 of its 8 solves above the limit, so its fit lies between 3.3 (all solves) and 4.0 nH (the converged five). 0.1 mm is left out, because the solver stalls there on every board. Each board's README has the full table.
+Every board folder holds the same files and stands on its own: its README has the board, its results at each air gap and how to run it. [`Comparisons/`](Comparisons/) sets the boards side by side (the TX on top against S0, the cut against the via, three TX turns against two, and every board's signal), with the scripts that print those tables and draw the charts.
 
 The ten larger generator boards (S1 to S5 and D1 to D5) were taken out on 16 November and will be added back later. Measured before that: S2's mesh at level 1 had 979,420 nodes, about 59 GB a solve, and the others scaled at about 61 GB per metre of stator copper, so every one of them needs a bigger PC than the test machine.
 
@@ -55,4 +55,4 @@ The generator pack's tools (`quasistatic_reference.py`, `kicad_to_openems.py` an
 
 ## Licence
 
-These boards are output of the Sinusoidal Coil Generator, for non-commercial use only. See [LICENSE.md](LICENSE.md); this branch's GPL-3.0 covers only the scripts here (`new_coil.py`, and each board's `simulation.py`, `angle_error.py`, `make_charts.py`, `rig_picture.py` and `angle_setup.py`).
+These boards are output of the Sinusoidal Coil Generator, for non-commercial use only. See [LICENSE.md](LICENSE.md); this branch's GPL-3.0 covers only the scripts here (`new_coil.py`, each board's `simulation.py`, `angle_error.py`, `make_charts.py`, `rig_picture.py` and `angle_setup.py`, and the three in `Comparisons/`).

@@ -1,8 +1,7 @@
-"""This board (three TX turns on the top layer) against the two-turn board it grew from
-(../../S0_1x_OD22_2L_tiny_TXtop_Cut), both opened by the same cuts, at every air gap both have.
+"""The board with three TX turns on the top layer (../S0_1x_OD23_2L_tiny_TX3top_Cut) against the two-turn board it
+grew from (../S0_1x_OD22_2L_tiny_TXtop_Cut), both opened by the same cuts, at every air gap both have.
 
-    python compare_turns.py      prints the comparison as a Markdown table and draws
-                                 ../Results/SINCOS_2_vs_3_turns.webp
+    python compare_turns.py      prints the comparison as a Markdown table and draws SINCOS_2_vs_3_turns.webp here
 
 The signal is each channel's amplitude, the best sine through the solves. Where at least five solves of a gap
 converged, the fit goes through those alone; with fewer, through all of them, and the chart draws that point hollow
@@ -13,16 +12,18 @@ from __future__ import annotations
 
 import json
 import math
+import sys
 from pathlib import Path
 
 import numpy as np
 
-from angle_error import sine_fit
-from make_charts import COLOURS, FREQ, INK, INK2, LOOSE, PERIOD, SURFACE, _style, tint
-
 HERE = Path(__file__).resolve().parent
-THREE = HERE.parent / 'Results'
-TWO = HERE.parent.parent / 'S0_1x_OD22_2L_tiny_TXtop_Cut' / 'Results'
+BOARDS = HERE.parent
+THREE = BOARDS / 'S0_1x_OD23_2L_tiny_TX3top_Cut' / 'Results'
+TWO = BOARDS / 'S0_1x_OD22_2L_tiny_TXtop_Cut' / 'Results'
+sys.path.insert(0, str(THREE.parent / 'Elmer Simulation'))       # the boards' own fit and chart style
+from angle_error import sine_fit  # noqa: E402
+from make_charts import COLOURS, FREQ, INK, INK2, LOOSE, PERIOD, SURFACE, _style, tint  # noqa: E402
 GAPS = (0.1, 0.5, 1.0, 1.5, 2.0)
 
 
@@ -147,7 +148,7 @@ def main():
     print()
     for gap, s, c, L in ratios():
         print(f'{gap:g} mm: three turns over two, SIN {s:.2f}, COS {c:.2f}, L TX {L:.2f}')
-    print('wrote', chart(THREE / 'SINCOS_2_vs_3_turns.webp'))
+    print('wrote', chart(HERE / 'SINCOS_2_vs_3_turns.webp'))
 
 
 if __name__ == '__main__':

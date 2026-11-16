@@ -1,8 +1,7 @@
-"""This board (SIN and COS opened by a cut in a top trace) against the same board opened at a left-out via
-(../../S0_1x_OD22_2L_tiny_TXtop), solve by solve at every air gap both have.
+"""The 22 mm board opened by a cut in a top trace (../S0_1x_OD22_2L_tiny_TXtop_Cut) against the same board opened
+at a left-out via (../S0_1x_OD22_2L_tiny_TXtop), solve by solve at every air gap both have.
 
-    python compare_ports.py      prints the comparison as a Markdown table and draws
-                                 ../Results/SINCOS_cut_vs_via.webp
+    python compare_ports.py      prints the comparison as a Markdown table and draws SINCOS_cut_vs_via.webp here
 
 Which cut face counts as plus is a convention, and the cut's is the other way round from the via's for SIN: the via
 board's SIN is shown with its sign turned, which moves its curve by half a turn and changes nothing else.
@@ -12,16 +11,18 @@ from __future__ import annotations
 
 import json
 import math
+import sys
 from pathlib import Path
 
 import numpy as np
 
-from angle_error import sine_fit
-from make_charts import COLOURS, FREQ, INK, INK2, LOOSE, PERIOD, SURFACE, _style, tint
-
 HERE = Path(__file__).resolve().parent
-CUT = HERE.parent / 'Results'
-VIA = HERE.parent.parent / 'S0_1x_OD22_2L_tiny_TXtop' / 'Results'
+BOARDS = HERE.parent
+CUT = BOARDS / 'S0_1x_OD22_2L_tiny_TXtop_Cut' / 'Results'
+VIA = BOARDS / 'S0_1x_OD22_2L_tiny_TXtop' / 'Results'
+sys.path.insert(0, str(CUT.parent / 'Elmer Simulation'))         # the boards' own fit and chart style
+from angle_error import sine_fit  # noqa: E402
+from make_charts import COLOURS, FREQ, INK, INK2, LOOSE, PERIOD, SURFACE, _style, tint  # noqa: E402
 GAPS = (2.0, 1.5, 1.0, 0.5, 0.1)
 
 
@@ -78,7 +79,7 @@ def table():
                 amp = summary(rv, sv)['fit'][n]['amplitude']
                 d.append(f'{n} {np.mean([abs(sc[a][i] - sv[a][i]) for a in both]) / amp * 100:.1f} %')
         cmp = (f'{len(both)} angle{"s" if len(both) > 1 else ""}; mean difference {", ".join(d)} of the amplitude' if both else 'no angle')
-        for port, res, s in (('via (left out)', rv, sv), ('cut (this board)', rc, sc)):
+        for port, res, s in (('via (left out)', rv, sv), ('cut', rc, sc)):
             m = summary(res, s)
             a = m['fit']
             ok = m['fit_ok']
@@ -142,7 +143,7 @@ def chart(path):
 
 def main():
     print(table())
-    print('wrote', chart(CUT / 'SINCOS_cut_vs_via.webp'))
+    print('wrote', chart(HERE / 'SINCOS_cut_vs_via.webp'))
 
 
 if __name__ == '__main__':

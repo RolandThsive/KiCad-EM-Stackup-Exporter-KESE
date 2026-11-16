@@ -18,7 +18,7 @@ and the two SVG pictures). <name> is the new folder beside this file, laid out a
                          the sweep's angles, and where each coil is opened (the TX at its stacked ends, each RX coil
                          at the layer-change via nearest the generator's suggested cut, or farthest from the TX copper
                          where it found no cut spot)
-      simulation.py, angle_error.py, make_charts.py, rig_picture.py
+      simulation.py, angle_error.py, make_charts.py, rig_picture.py, angle_setup.py
                          S0_1x_OD21_2L_tiny's, unchanged: they read everything from test_spec.json
     3D_Geometry/         KESE's export of each board (STL solids, materials.json, STEP, KESE's report), written by
                          the first run and reused while the board is unchanged
@@ -44,7 +44,7 @@ from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
 TEMPLATE = HERE / 'S0_1x_OD21_2L_tiny' / 'Elmer Simulation' / 'simulation.py'
-SCRIPTS = ('simulation.py', 'angle_error.py', 'make_charts.py', 'rig_picture.py')    # copied from TEMPLATE's folder
+SCRIPTS = ('simulation.py', 'angle_error.py', 'make_charts.py', 'rig_picture.py', 'angle_setup.py')  # from TEMPLATE's folder
 KB_PER_NODE = 57.0                         # Elmer's memory a node, E01, E02 and S0 (S0: 11.42 GB at 203,669 nodes)
 AXIS = (100.0, 100.0)                      # the generator puts the sensor's axis at KiCad (100, 100)
 
@@ -245,7 +245,7 @@ def warnings(text):
     return list(dict.fromkeys(ln.removeprefix('WARNING ').strip() for ln in lines))
 
 
-def readme(spec, src, warns, mesh, pics):
+def readme(spec, src, warns, mesh, pics, expected=None):
     s, t, r = spec['stator'], spec['terminals'], spec['rotor']['rings'][0]
     st = spec['sets'][0]
     sin, cos = st['sin'], st['cos']
@@ -258,6 +258,15 @@ def readme(spec, src, warns, mesh, pics):
                "If that does not fit the machine, `--level` below the one above makes the mesh coarser and the "
                "solve smaller (the memory goes about with the number of nodes).\n\n")
     w = ''.join(f'* {x}\n' for x in warns) or '* none\n'
+    tx = (expected or {}).get('tx', {})
+    est = ''
+    if tx.get('L_away_gen_H') and tx.get('L_rotor_gen_H') and tx.get('R_dc_ohm') is not None:
+        est = (f"The generator's estimate for the TX: {tx['L_away_gen_H'] * 1e6:.2f} µH with the rotor away and "
+               f"{tx['L_rotor_gen_H'] * 1e6:.2f} µH with it, {tx['R_dc_ohm']:g} Ω DC. Its warnings for this board:")
+    else:
+        est = "The generator's warnings for this board:"
+    n, k = st['loops'], r['sectors']
+    per = f"{n} electrical period{'s' if n != 1 else ''} per turn; the rotor has {k} sector{'s' if k != 1 else ''}"
     angles = ', '.join(f'{a:g}' for a in st['sweep_angles_mech_deg'])
     return f"""# {spec['board']}
 
@@ -265,7 +274,7 @@ A coil set from the [Sinusoidal Coil Generator](https://github.com/RolandThsive/
 
 ## The board
 
-Bore and outer radius {s['bore_and_outer_radius_mm'][0]:g} and {s['bore_and_outer_radius_mm'][1]:g} mm, {len(s['layers'])} copper layers, board {s['board_thickness_mm']:g} mm, air gap {spec['air_gap_mm']:g} mm by default (any other with `--gap`). {st['loops']} electrical period(s) per turn; the rotor has {r['sectors']} sector(s) and repeats itself every {st['rotor_period_mech_deg']:g}°.
+Bore and outer radius {s['bore_and_outer_radius_mm'][0]:g} and {s['bore_and_outer_radius_mm'][1]:g} mm, {len(s['layers'])} copper layers, board {s['board_thickness_mm']:g} mm, air gap {spec['air_gap_mm']:g} mm by default (any other with `--gap`). {per} and repeats itself every {st['rotor_period_mech_deg']:g}°.
 
 {picture}| Coil | Net | Opened at (KiCad mm) | How |
 |---|---|---|---|
@@ -273,17 +282,21 @@ Bore and outer radius {s['bore_and_outer_radius_mm'][0]:g} and {s['bore_and_oute
 | SIN | `{sin}` | via at ({t[sin]['via_xy_kicad'][0]:.3f}, {t[sin]['via_xy_kicad'][1]:.3f}) | {t[sin]['source']}; the via is left out |
 | COS | `{cos}` | via at ({t[cos]['via_xy_kicad'][0]:.3f}, {t[cos]['via_xy_kicad'][1]:.3f}) | {t[cos]['source']}; the via is left out |
 
-The generator's warnings for this board:
+{est}
 
 {w}
+## Results at each air gap
+
+Not solved yet. After `python simulation.py` (and `--gap` for each other air gap), this section gets the table of each gap from [`Results/SINCOS_Results.md`](Results/SINCOS_Results.md): the amplitude of SIN and COS, the angle error, the solves below the residual limit and L TX over the turn, then the chart of SIN at every gap, `Results/SINCOS_gaps_SIN.webp`.
+
 ## The folder
 
 | Folder | What is in it |
 |---|---|
 | [`Boards/`](Boards/) | straight from the generator: the stator and rotor boards, `Parameters.txt`, the pictures and the parameter files it was run with |
 | [`3D_Geometry/`](3D_Geometry/) | KESE's export of the stator and rotor (STL solids, `materials.json`, STEP, KESE's report), written by the first run; `source.json` records the board's hash, so a changed board is exported again |
-| [`Elmer Simulation/`](Elmer%20Simulation/) | `test_spec.json` (every board fact the simulation needs), `simulation.py`, `angle_error.py`, `make_charts.py` and `rig_picture.py` (S0's, unchanged; `python rig_picture.py` draws how the boards sit in Elmer), and the runs under `case/`, which git ignores |
-| [`Results/`](Results/) | `expected_results.json` (the generator's estimates), [`SINCOS_Results.md`](Results/SINCOS_Results.md) with every gap on one page, and a folder for each air gap (`1mm_AirGap`, `0d5mm_AirGap`, the point written as d) with the runs' `results_gap<gap>mm.json`, `.csv` and `.webp` |
+| [`Elmer Simulation/`](Elmer%20Simulation/) | `test_spec.json` (every board fact the simulation needs), `simulation.py`, `angle_error.py`, `make_charts.py`, `rig_picture.py` and `angle_setup.py` (S0's, unchanged), `RotorStator_AngleSetup/` (the rotor over the stator at each angle), and the runs under `case/`, which git ignores |
+| [`Results/`](Results/) | `expected_results.json` (the generator's estimates), [`SINCOS_Results.md`](Results/SINCOS_Results.md) with every gap on one page, the charts of every gap together (`SINCOS_gaps.webp`, and `_SIN` and `_COS` apart), and a folder for each air gap (`1mm_AirGap`, `0d5mm_AirGap`, the point written as d) with the runs' `results_gap<gap>mm.json`, `.csv` and `.webp` |
 
 ## Running it
 
@@ -293,12 +306,14 @@ The generator's warnings for this board:
     python simulation.py --plot            # redraw the table, the curves and SINCOS_Results.md
     python angle_error.py                  # print the angle error at each angle, and rewrite SINCOS_Results.md
     python make_charts.py                  # redraw every chart (WebP) and rewrite SINCOS_Results.md
+    python rig_picture.py                  # redraw how the boards sit in Elmer
+    python angle_setup.py                  # redraw the rotor at each angle
 
 `SINCOS_Results.md` is rewritten after every solve: each gap's graph with a caption, the fit, the angle error at each angle and every solve.
 
 ## Licence
 
-These boards are output of the Sinusoidal Coil Generator, for non-commercial use only. See [../LICENSE.md](../LICENSE.md); this branch's GPL-3.0 covers `simulation.py`, `angle_error.py`, `make_charts.py` and `rig_picture.py` only.
+These boards are output of the Sinusoidal Coil Generator, for non-commercial use only. See [../LICENSE.md](../LICENSE.md); this branch's GPL-3.0 covers `simulation.py`, `angle_error.py`, `make_charts.py`, `rig_picture.py` and `angle_setup.py` only.
 """
 
 
@@ -360,7 +375,7 @@ def main():
             print('the mesh estimate failed:\n' + (r.stdout + r.stderr)[-2000:])
         shutil.rmtree(out, ignore_errors=True)
     if not (dst / 'README.md').exists() or (a.force and TEMPLATE.parent.parent != dst):
-        (dst / 'README.md').write_text(readme(spec, src, warnings(text), mesh, pics[:1]))
+        (dst / 'README.md').write_text(readme(spec, src, warnings(text), mesh, pics[:1], expected))
         print(f'wrote {dst / "README.md"}')
 
 

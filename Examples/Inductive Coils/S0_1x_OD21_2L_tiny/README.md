@@ -97,6 +97,8 @@ One solve per rotor angle, 0 to 315° in 45° steps by default (8 angles; `--ste
     python simulation.py --plot            # redraw the table, the curves and SINCOS_Results.md
     python angle_error.py                  # print the angle error at each angle, and rewrite SINCOS_Results.md
     python make_charts.py                  # redraw every chart (WebP) and rewrite SINCOS_Results.md
+    python rig_picture.py                  # redraw how the boards sit in Elmer
+    python angle_setup.py                  # redraw the rotor at each angle
 
 Each gap writes into its own folder in `Results/`, named for the gap with the point written as d (`1mm_AirGap`, `0d5mm_AirGap`): `results_gap<gap>mm.json` (every solve, the fit, the angle error), `results_gap<gap>mm.csv` (angle, M of SIN and COS in nH, the TX's L, and the EMFs in mV) and `results_gap<gap>mm.webp` (the chart, drawn by [`make_charts.py`](Elmer%20Simulation/make_charts.py): a dot for each solve, a solid line joining them, and dashes for the ideal sine and cosine). [`SINCOS_Results.md`](Results/SINCOS_Results.md) puts every gap on one page: each graph with a caption, the fit, the angle error at each angle, every solve and the generator's expectation, and once two gaps are solved, a chart with both. An angle already in the results is skipped, so a stopped sweep picks up where it was.
 
