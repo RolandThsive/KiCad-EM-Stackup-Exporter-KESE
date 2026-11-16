@@ -223,8 +223,9 @@ def report(log=print):
             sec += [f'![SIN and COS against the rotor angle at a {gap:g} mm air gap]({png})', '',
                     f"*Figure {i}. SIN (blue) and COS (orange) at a {gap:g} mm air gap: the mutual inductance from "
                     f"the TX against the rotor's angle, {len(ang)} of {planned} angles solved. Each dot is one Elmer "
-                    f"solve and the solid line joins them; the dashes are the ideal sine and cosine, each channel's "
-                    f"best sine fit{how}, which is what the angle error is measured against. SIN swings ±{fs['amplitude']:.2f} nH and COS ±{fc['amplitude']:.2f} nH, that is "
+                    f"solve and the solid line joins them; the dotted lines are the ideal sine and cosine, each "
+                    f"channel's best sine fit{how}, which is what the angle error is measured against. SIN swings "
+                    f"±{fs['amplitude']:.2f} nH and COS ±{fc['amplitude']:.2f} nH, that is "
                     f"±{w * fs['amplitude']:.0f} and ±{w * fc['amplitude']:.0f} mV of EMF.*", '']
             line = (f"Best sine fit: SIN amplitude {fs['amplitude']:.3f} nH, offset {fs['offset']:.3f} nH, phase "
                     f"{fs['phase_deg']:.1f}°; COS amplitude {fc['amplitude']:.3f} nH, offset {fc['offset']:.3f} nH, "
@@ -322,7 +323,8 @@ def gaps_section(curves, files, number):
     (g0, *_, fs0, fc0), (g1, *_, fs1, fc1) = curves[0], curves[-1]
     return ['## The air gaps together', '', '![SIN and COS at each air gap](SINCOS_gaps.webp)', '',
             f"*Figure {number}. Every air gap on one chart, the {g0:g} mm gap in full colour, the solves of each joined "
-            f"by a solid line. Going from {g1:g} to {g0:g} mm makes SIN {fs0['amplitude'] / fs1['amplitude']:.2f} "
+            f"by a solid line, and each gap's ideal sine and cosine dotted. Going from {g1:g} to {g0:g} mm makes "
+            f"SIN {fs0['amplitude'] / fs1['amplitude']:.2f} "
             f"times and COS {fc0['amplitude'] / fc1['amplitude']:.2f} times larger.*", '']
 
 

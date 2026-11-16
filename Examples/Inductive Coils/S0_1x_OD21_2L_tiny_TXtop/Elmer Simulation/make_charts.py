@@ -5,8 +5,8 @@ it redraws every chart from the results already there and rewrites SINCOS_Result
     python make_charts.py
 
     results_gap<gap>mm.webp   SIN and COS against the rotor's angle at one air gap: a dot for each Elmer solve, a
-                              solid line joining them, and dashes for the ideal sine and cosine (each channel's best
-                              sine fit, what the angle error is measured against)
+                              solid line joining them, and a dotted line for the ideal sine and cosine (each
+                              channel's best sine fit, what the angle error is measured against)
     SINCOS_gaps.webp          every air gap on one chart, once two are solved
 
 This script is GPL-3.0 as the bridge.
@@ -30,7 +30,7 @@ PERIOD = SPEC['sets'][0].get('rotor_period_mech_deg', 360.0)
 FREQ = SPEC['sets'][0]['f_Hz']
 INK, INK2, GRID, SURFACE = '#0b0b0b', '#52514e', '#e4e3df', '#fcfcfb'
 COLOURS = {'SIN': (0x2a, 0x78, 0xd6), 'COS': (0xeb, 0x68, 0x34)}    # categorical slots 1 and 2 of the house palette
-DASH = (0, (5, 3))
+DOTS = (0, (1, 2.2))                  # the ideal curves: dotted, so they never read as solves
 
 
 def tint(rgb, k):
@@ -79,22 +79,45 @@ def _save(plt, fig, ax, path, ncol):
 
 
 def _draw(ax, ang, y, name, col, whole, ideal=True, label=None, end_label=None):
-    """One channel: the ideal curve dashed (its best sine), the solves joined by a solid line, a dot for each."""
+    """One channel: the ideal curve dotted (its best sine), the solves joined by a solid line, a dot for each."""
     tt = np.linspace(0, PERIOD, 721)
     if ideal and len(y) >= 3:
         f = sine_fit(ang, y, PERIOD)
         keep = np.ones_like(tt, bool) if whole else (tt >= min(ang)) & (tt <= max(ang))
         yy = f['offset'] + f['amplitude'] * np.sin(np.radians(tt[keep] * 360.0 / PERIOD + f['phase_deg']))
-        ax.plot(tt[keep], yy, color=col, lw=1.3, ls=DASH, alpha=0.75, zorder=2)
+        ax.plot(tt[keep], yy, color=col, lw=1.3, ls=DOTS, alpha=0.75, zorder=2)
     xs, ys = list(ang), list(y)                      # round to the start of the period once the turn is covered
     if whole and min(ang) == 0:
         xs, ys = xs + [PERIOD], ys + [y[0]]
     ax.plot(xs, ys, color=col, lw=1.6, zorder=3)
     ax.plot(ang, y, ls='none', color=col, marker='o', ms=6.5, mec=SURFACE, mew=1.4, zorder=4)
     ax.plot([], [], color=col, lw=1.6, marker='o', ms=6, mec=SURFACE, label=label or name)
-    if whole and end_label:
-        ax.annotate(end_label, (xs[-1], ys[-1]), xytext=(6, 0), textcoords='offset points', va='center',
-                    color=INK, fontsize=8.5, annotation_clip=False)
+    return (xs[-1], ys[-1], end_label, col) if whole and end_label else None
+
+
+def _end_labels(ax, labels):
+    """Each curve's name just right of its end, spread apart so that no two overlap: the names keep their order
+    from bottom to top, stay at least one line apart, and sit as near their ends as that allows; a thin line in
+    the curve's colour joins each name to its curve's end."""
+    labels = [x for x in labels if x]
+    if not labels:
+        return
+    lo, hi = ax.get_ylim()
+    line = 0.06 * (hi - lo)                              # one line of 8.5 pt text on these 4.6 in tall charts
+    labels.sort(key=lambda x: x[1])
+    ys = [y for _, y, _, _ in labels]
+    placed = list(ys)
+    for i in range(1, len(placed)):                      # push each name up clear of the one below it
+        placed[i] = max(placed[i], placed[i - 1] + line)
+    shift = (sum(placed) - sum(ys)) / len(ys)            # then move the block back so that, on average, the names
+    placed = [y - shift for y in placed]                 # sit on their ends
+    over, under = placed[-1] - (hi - 0.02 * (hi - lo)), (lo + 0.02 * (hi - lo)) - placed[0]
+    placed = [y - over for y in placed] if over > 0 else [y + under for y in placed] if under > 0 else placed
+    dx = 0.035 * PERIOD
+    for (x, y, text, col), yt in zip(labels, placed, strict=True):
+        ax.annotate(text, (x, y), xytext=(x + dx, yt), textcoords='data', va='center', ha='left', color=INK,
+                    fontsize=8.5, annotation_clip=False,
+                    arrowprops=dict(arrowstyle='-', color=col, lw=0.7, shrinkA=0, shrinkB=2))
 
 
 def gap_chart(res_file):
@@ -105,14 +128,13 @@ def gap_chart(res_file):
     whole = len(ang) >= 3 and max(ang) - min(ang) >= 0.75 * PERIOD
     gap, level = res['gap_mm'], res['level']
     plt, fig, ax = _axes(f'{res["board"]}: SIN and COS against the rotor angle, {gap:g} mm air gap',
-                         f'1 A at {FREQ / 1e6:g} MHz in the TX; solid: the solves joined; dashes: the ideal curves, '
+                         f'1 A at {FREQ / 1e6:g} MHz in the TX; solid: the solves joined; dotted: the ideal curves, '
                          f'each channel\'s best sine{"" if whole else ", between the solved angles for now"}; '
                          f'mesh level {level:g}')
-    for name, y in (('SIN', ms), ('COS', mc)):
-        _draw(ax, ang, y, name, tint(COLOURS[name], 1.0), whole, label=f'{name}: one Elmer solve per dot',
-              end_label=name)
+    _end_labels(ax, [_draw(ax, ang, y, name, tint(COLOURS[name], 1.0), whole, label=f'{name}: one Elmer solve per dot',
+                           end_label=name) for name, y in (('SIN', ms), ('COS', mc))])
     if len(ang) >= 3:
-        ax.plot([], [], color=INK2, lw=1.3, ls=DASH, label='ideal sine and cosine (best fit)')
+        ax.plot([], [], color=INK2, lw=1.3, ls=DOTS, label='ideal sine and cosine (best fit)')
     return _save(plt, fig, ax, Path(res_file).with_suffix('.webp'), 3)
 
 
@@ -128,15 +150,18 @@ def gaps_chart(results):
         return None
     data.sort(key=lambda d: d[0])
     plt, fig, ax = _axes(f'{BOARD.name}: SIN and COS at each air gap',
-                         f'1 A at {FREQ / 1e6:g} MHz in the TX; a dot for each solve, joined; the smallest gap in '
-                         'full colour')
+                         f'1 A at {FREQ / 1e6:g} MHz in the TX; a dot for each solve, joined; dotted: each gap\'s '
+                         'ideal curves; the smallest gap in full colour')
+    ends = []
     for j, (gap, ang, ms, mc) in enumerate(data):
         k = 1.0 - 0.5 * j / (len(data) - 1)
         whole = max(ang) - min(ang) >= 0.75 * PERIOD
         for name, y in (('SIN', ms), ('COS', mc)):
-            _draw(ax, ang, y, name, tint(COLOURS[name], k), whole, ideal=False, label=f'{name}, {gap:g} mm',
-                  end_label=f'{name} {gap:g} mm')
-    return _save(plt, fig, ax, RESULTS / 'SINCOS_gaps.webp', 2 * len(data))
+            ends.append(_draw(ax, ang, y, name, tint(COLOURS[name], k), whole, label=f'{name}, {gap:g} mm',
+                              end_label=f'{name} {gap:g} mm'))
+    _end_labels(ax, ends)
+    ax.plot([], [], color=INK2, lw=1.3, ls=DOTS, label='ideal sine and cosine (best fit)')
+    return _save(plt, fig, ax, RESULTS / 'SINCOS_gaps.webp', min(2 * len(data) + 1, 4))   # at most 4 a row
 
 
 def all_results():
