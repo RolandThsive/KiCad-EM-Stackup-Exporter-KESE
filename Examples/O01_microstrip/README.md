@@ -42,7 +42,8 @@ python simulation.py                   # about 1.5 minutes on 4 cores
 python simulation.py --h-edge 0.1      # a finer mesh at the copper's edges, to results_h0.1.json
 python simulation.py --engine default  # openEMS's default engine, to results_h0.2_default.json
 python simulation.py --dump            # also dump E halfway through the core, for make_pictures.py
-python make_pictures.py                # the wiki's charts and field animation, into pictures/
+python simulation.py --section         # also dump E and H across the line at 1 and 3 GHz, for make_pictures.py
+python make_pictures.py                # the wiki's charts, the field across the line and the animation, into pictures/
 python simulation.py --reuse           # read the last run again without running openEMS
 ```
 

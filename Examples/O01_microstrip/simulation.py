@@ -7,6 +7,8 @@ the strip's thickness, and Kirschning and Jansen's dispersion of eps_eff.
     python simulation.py --dielectric-cells 12   twice the cells through the core, to results_h0.2_z12.json
     python simulation.py --engine default  openEMS's default engine instead of its CPU engine
     python simulation.py --dump            also dump E halfway through the core, for make_pictures.py
+    python simulation.py --section         also dump E and H at 1 and 3 GHz across the line at its middle (a yz plane),
+                                           for make_pictures.py's picture of the line's field
     python simulation.py --reuse           read the last run again without running openEMS
 
 Each port measures its line's impedance and propagation constant from its own probes, so the line is checked
@@ -88,6 +90,9 @@ def main():
     ap.add_argument('--reuse', action='store_true', help='read the last run again instead of running openEMS')
     ap.add_argument('--dump', action='store_true',
                     help='also dump E in the plane halfway through the core, for make_pictures.py (to case/<mesh>_dump)')
+    ap.add_argument('--section', action='store_true',
+                    help='also dump E and H at 1 and 3 GHz in the plane across the line at its middle, for '
+                         'make_pictures.py (to case/<mesh>_section)')
     ap.add_argument('--engine', default=SETTINGS['engine'] or 'default',
                     help="openEMS engine: cpu, multithreaded, basic, or default (openEMS's own choice)")
     a = ap.parse_args()
@@ -128,12 +133,18 @@ def main():
                               dc_free=SETTINGS['dc_free'])
     tag = (f'h{a.h_edge:g}' + ('' if a.dielectric_cells == SETTINGS['mesh']['dielectric_cells'] else
                                f'_z{a.dielectric_cells}')
-           + ('' if a.engine == (SETTINGS['engine'] or 'default') else f'_{a.engine}') + ('_dump' if a.dump else ''))
+           + ('' if a.engine == (SETTINGS['engine'] or 'default') else f'_{a.engine}') + ('_dump' if a.dump else '')
+           + ('_section' if a.section else ''))
     sim = out / tag
     if a.dump:                           # E in the core's middle plane, over the whole domain, every sample
         box = info['box']
         zmid = 0.5 * (board.z[0] + board.z[1])
         CSX.AddDump('Et_core', dump_type=0, file_type=1).AddBox([box[0], box[2], zmid], [box[1], box[3], zmid])
+    if a.section:                        # E and H in the frequency domain, across the line halfway along it
+        box = info['box']
+        for name_, kind in (('Ef_section', 10), ('Hf_section', 11)):
+            CSX.AddDump(name_, dump_type=kind, dump_mode=2, file_type=1, frequency=[1e9, 3e9]).AddBox(
+                [cx, box[2], box[4]], [cx, box[3], box[5]])
     name = 'results.json' if tag == f"h{SETTINGS['mesh']['h_edge']:g}" else f'results_{tag}.json'
     if a.reuse and (sim / 'port_ut_1B').exists():
         last = json.loads((HERE / name).read_text()) if (HERE / name).exists() else {}
