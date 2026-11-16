@@ -34,6 +34,7 @@ sheet across the gap, and Elmer's circuit drives 1 A between them.
 | L and R at 3.5 MHz | as above, at the coil boards' frequency, where the skin depth (35 µm) equals the copper's thickness | no exact reference: Grover's formula with the thin strip's high-frequency GMD w / 4 gives 55.44 nH, an estimate |
 | The mesh | the same at three mesh levels, 0.75, 1 and 1.3 | L should rise towards the reference as the mesh is refined (first-order edge elements with the current imposed give a lower bound) |
 | The iterative solve | level 1 at 1500 and at 3000 iterations | L should not move |
+| The air's mesh and domain | level 0.75 with `grade` and `tet_grade` halved; level 0.75 in a domain twice as big | L should not move much: the mesh ladder leaves the air as it is |
 
 ## How It Runs
 
@@ -41,8 +42,10 @@ sheet across the gap, and Elmer's circuit drives 1 A between them.
 python simulation.py                          # the mesh ladder at both frequencies, about 2 hours on 4 cores
 python simulation.py --levels 1 --freqs 1e4   # one mesh, one frequency
 python simulation.py --levels 1 --freqs 1e4 --max-iter 1500 --results results_iter1500.json --out case_iter1500
-python simulation.py --levels 0.75 --mesh grade=0.25 --mesh tet_grade=0.35 --results results_grade.json --out case_grade
+python simulation.py --levels 0.75 --freqs 1e4 --mesh grade=0.25 --mesh tet_grade=0.35 --results results_grade.json --out case_grade
 python simulation.py --levels 0.75 --domain-mm 120 --results results_domain120.json --out case_domain120
+python simulation.py --levels 0.75 --max-iter 1500 --fields --results results_fields.json --out case_fields
+python make_pictures.py                       # the wiki's charts and pictures, from the results and case_*/
 python simulation.py --mesh-only              # build the meshes and print their size, solve nothing
 ```
 

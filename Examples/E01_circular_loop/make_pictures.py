@@ -13,7 +13,7 @@ without them. Writes lossless WebP files into DIR (default pictures/), laid out 
     E01_circular_loop/elmeraccuracy_1_air_mesh.webp           the mesh round the trace, two air gradings (Accuracy page)
 
 The mesh picture needs the meshes under case/ and case_grade/, the fields picture the VTU files that
-`simulation.py --levels 0.75 --fields --out case_fields --results results_fields.json` writes; neither is committed, and
+`simulation.py --levels 0.75 --max-iter 1500 --fields --out case_fields --results results_fields.json` writes; neither is committed, and
 each picture is skipped without them.
 """
 from __future__ import annotations

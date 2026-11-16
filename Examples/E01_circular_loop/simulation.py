@@ -8,7 +8,7 @@ Grover's ring formula and the resistance of an annular sector.
                                          mesh settings changed for this run, to its own results file and folder
     python simulation.py --levels 0.75 --domain-mm 120 --out case_domain120 --results results_domain120.json
                                          the air domain's radius and half height, in mm
-    python simulation.py --levels 0.75 --fields --out case_fields --results results_fields.json
+    python simulation.py --levels 0.75 --max-iter 1500 --fields --out case_fields --results results_fields.json
                                          also write the fields as VTU files (about 23 MB a solve at level 0.75)
     python simulation.py --mesh-only     build the meshes and print their size, solve nothing
     python simulation.py --order 2       second-order edge elements
