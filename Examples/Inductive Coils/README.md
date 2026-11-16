@@ -21,7 +21,7 @@ openEMS's job on these boards is what Elmer cannot do: the coils' self resonance
 | 9 | [D4_2x8x_OD59_parallel_TX](D4_2x8x_OD59_parallel_TX/) | parallel TX wiring, a 2-period set | 74 M | about 4.4 GB | about 16 h | 8 GB | not run yet |
 | 10 | [D5_1x16x_OD74_ID40_large](D5_1x16x_OD74_ID40_large/) | a large thin ring | 119 M | about 7.1 GB | about 25 h | 16 GB | not run yet |
 
-Cells and the 540,000 time steps per run are the pack's dry run; memory and time use openEMS's new CPU engine as measured on the 4-core, 16 GB test machine (60 bytes a cell, 701 million cell updates a second). Each C8 run takes hours, so these runs are held until a machine can run them unattended.
+Cells and the 540,000 time steps per run are the pack's dry run; memory and time use openEMS's new CPU engine as measured on the 4-core, 15 GB test machine (60 bytes a cell, 701 million cell updates a second). Each C8 run takes hours, so these runs are held until a machine can run them unattended.
 
 ## Pass marks, as reviewed on 16 November
 

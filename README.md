@@ -28,7 +28,7 @@ Each board that runs gets a `results.md` in its folder, and a line here.
 
 | Board | Checks | Result | Machine | Date |
 |---|---|---|---|---|
-| [O01_microstrip](Examples/O01_microstrip/results.md) | Z0, εeff (two ways), S21 loss, S11, mesh study, engines | Z0 +1.8 %, εeff +0.7 to +1.5 % against the closed-form references; mesh converged to 0.02 %; CPU and default engines agree to four digits | 4 cores, 15 GB, 79 s, 0.15 GB | 16 Nov 2026 |
+| [O01_microstrip](Examples/O01_microstrip/results.md) | Z0, εeff (two ways), S21 loss, S11, mesh study, engines | Z0 +1.7 %, εeff +0.7 to +1.4 % against the closed-form references; mesh converged to 0.03 %; CPU and default engines agree within 0.005 % | 4 cores, 15 GB, 88 s, 0.15 GB | 16 Nov 2026 |
 
 ## How to run
 

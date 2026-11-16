@@ -339,13 +339,20 @@ class MSLPortSpec:
     probe_pad: float = 0.0    # mm added to each side of the current probes across the strip
 
 
-def build(parts, lines, ports, f0, fc, boundaries, end_criteria=1e-4, max_steps=200000, kappa_at=None):
+def build(parts, lines, ports, f0, fc, boundaries, end_criteria=1e-4, max_steps=200000, kappa_at=None,
+          dc_free=True):
     """The FDTD and CSX objects: the dielectrics with their eps_r and the loss of their tan delta at kappa_at Hz
-    (default f0), copper as PEC from KESE's STL files, the mesh and the MSL ports. Returns (FDTD, CSX, ports)."""
+    (default f0), copper as PEC from KESE's STL files, the mesh and the MSL ports. Returns (FDTD, CSX, ports).
+    dc_free: a sine carrier for the Gaussian pulse, which has no DC part. openEMS's usual cosine carrier leaves a
+    little static charge behind, and its field energy then settles near -40 dB instead of dying away (on O01 a run
+    with the finer mesh never reached the -40 dB stop). Builds of openEMS older than the option get the cosine."""
     from CSXCAD import ContinuousStructure
     from openEMS import openEMS
     FDTD = openEMS(NrTS=max_steps, EndCriteria=end_criteria)
-    FDTD.SetGaussExcite(f0, fc)
+    try:
+        FDTD.SetGaussExcite(f0, fc, dc_free) if dc_free else FDTD.SetGaussExcite(f0, fc)
+    except TypeError:                    # an openEMS without dc_free
+        FDTD.SetGaussExcite(f0, fc)
     FDTD.SetBoundaryCond(boundaries)
     CSX = ContinuousStructure()
     FDTD.SetCSX(CSX)

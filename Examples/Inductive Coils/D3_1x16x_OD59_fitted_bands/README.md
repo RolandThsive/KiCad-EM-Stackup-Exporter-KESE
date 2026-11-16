@@ -43,7 +43,7 @@ openEMS, FDTD, excited by a Gaussian pulse up to 400 MHz: each TX driven through
 
 The checks are the openEMS brief's (`../Things to test in OpenEMS.md`, section 6): C8 on every board; C1 to C7 as a cross-check with Elmer only on S2 and D2, where a run is affordable.
 
-Size: about 74 million cells at 0.05 mm (the pack's dry run), so about 4.4 GB with openEMS's new CPU engine, and about 16 hours a run on the 4-core test machine (701 million cell updates a second, measured). It fits an 8 GB PC (such as an i9-14900K with 8 GB) and the 16 GB test machine; runs of this length are held until a machine can run them unattended.
+Size: about 74 million cells at 0.05 mm (the pack's dry run), so about 4.4 GB with openEMS's new CPU engine, and about 16 hours a run on the 4-core test machine (701 million cell updates a second, measured). It fits an 8 GB PC (such as an i9-14900K with 8 GB) and the 15 GB test machine; runs of this length are held until a machine can run them unattended.
 
 ## Results
 

@@ -41,6 +41,8 @@ symmetry.
 python simulation.py                   # about 1.5 minutes on 4 cores
 python simulation.py --h-edge 0.1      # a finer mesh at the copper's edges, to results_h0.1.json
 python simulation.py --engine default  # openEMS's default engine, to results_h0.2_default.json
+python simulation.py --dump            # also dump E halfway through the core, for make_pictures.py
+python make_pictures.py                # the wiki's charts and field animation, into pictures/
 python simulation.py --reuse           # read the last run again without running openEMS
 ```
 
@@ -48,12 +50,12 @@ Every setting is in `SETTINGS` at the top of `simulation.py`:
 
 | Setting | Value | Why |
 |---|---|---|
-| Pulse | f0 3 GHz, fc 2 GHz: 1 to 5 GHz | f0 − fc above zero, so the pulse leaves no charge on the copper |
+| Pulse | f0 3 GHz, fc 2 GHz: 1 to 5 GHz, DC-free (`dc_free=True`, a sine carrier) | the band the line is checked over; the DC-free pulse leaves no static charge on the copper |
 | Ports | 10 mm long at each end of the line, measurement plane 6 mm in, 50 Ω at the end | the probes sit away from the feed's near field |
 | Mesh | λ/30 in the FR-4 at 5 GHz, thirds rule with h 0.2 mm at the copper's edges, 6 cells through the core, 1 through each copper, neighbours within 1.4 | 411,424 cells |
 | Boundaries | MUR on all six sides, 15 mm (a quarter wavelength at 5 GHz) from the board | |
-| Stop | the field energy 40 dB under its peak | about 20,000 time steps |
-| Engine | openEMS's CPU engine | the same numbers as the default engine to four digits, and faster |
+| Stop | the field energy 50 dB under its peak | about 23,000 time steps |
+| Engine | openEMS's CPU engine | the same numbers as the default engine within 0.005 %, faster and with less memory |
 
 The dielectric's loss is a conductivity κ = 2πf0 ε₀ εr tan δ, which gives tan δ exactly at f0 (3 GHz)
 and tan δ · f0 / f at another frequency; the S21 reference uses the same.

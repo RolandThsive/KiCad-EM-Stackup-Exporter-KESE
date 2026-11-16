@@ -2,10 +2,11 @@
 characteristic impedance and effective permittivity from openEMS, against Hammerstad and Jensen's formulas with
 the strip's thickness, and Kirschning and Jansen's dispersion of eps_eff.
 
-    python simulation.py                   the run (a few minutes on 4 cores)
+    python simulation.py                   the run (about 1.5 minutes on 4 cores)
     python simulation.py --h-edge 0.1      a finer mesh at the strip's edges, written to results_h0.1.json
     python simulation.py --dielectric-cells 12   twice the cells through the core, to results_h0.2_z12.json
     python simulation.py --engine default  openEMS's default engine instead of its CPU engine
+    python simulation.py --dump            also dump E halfway through the core, for make_pictures.py
     python simulation.py --reuse           read the last run again without running openEMS
 
 Each port measures its line's impedance and propagation constant from its own probes, so the line is checked
@@ -30,13 +31,14 @@ from bridge import fdtd as F   # noqa: E402
 SETTINGS = dict(
     board='O01_microstrip.kicad_pcb',
     length_mm=50.0, width_mm=2.9, centre_kicad=(100.0, 100.0),
-    f0_hz=3e9, fc_hz=2e9,                # Gaussian pulse: 1 to 5 GHz, with almost no DC (see the README)
+    f0_hz=3e9, fc_hz=2e9,                # Gaussian pulse: 1 to 5 GHz
+    dc_free=True,                        # its sine carrier, with no DC part to leave charge behind
     f_report_hz=[1e9, 2e9, 3e9, 4e9],
     port_len_mm=10.0, feed_shift_mm=0.0, meas_shift_mm=6.0, feed_r_ohm=50.0,
     mesh=dict(f_max=5e9, res_div=30, h_edge=0.2, dielectric_cells=6, copper_cells=1, ratio=1.4,
               air_mm=(15.0, 15.0, 15.0)),
     boundaries=['MUR'] * 6,           # a quarter wavelength of air at 5 GHz all round the board
-    end_criteria=1e-4,                   # -40 dB of the peak energy
+    end_criteria=1e-5,                   # -50 dB of the peak energy (the DC-free pulse leaves nothing behind)
     max_steps=80000,
     threads=4,
     engine='cpu',                        # openEMS's CPU engine; None for the default engine of an older build
@@ -84,6 +86,8 @@ def main():
                     help='cells through the core, at least')
     ap.add_argument('--out', default=str(HERE / 'case'))
     ap.add_argument('--reuse', action='store_true', help='read the last run again instead of running openEMS')
+    ap.add_argument('--dump', action='store_true',
+                    help='also dump E in the plane halfway through the core, for make_pictures.py (to case/<mesh>_dump)')
     ap.add_argument('--engine', default=SETTINGS['engine'] or 'default',
                     help="openEMS engine: cpu, multithreaded, basic, or default (openEMS's own choice)")
     a = ap.parse_args()
@@ -120,11 +124,16 @@ def main():
     lines, info = F.make_mesh(parts, spec)
     checks = F.preflight(lines, parts, ports, spec, info, log=log)
     FDTD, CSX, pobj = F.build(parts, lines, ports, SETTINGS['f0_hz'], SETTINGS['fc_hz'], SETTINGS['boundaries'],
-                              end_criteria=SETTINGS['end_criteria'], max_steps=SETTINGS['max_steps'])
+                              end_criteria=SETTINGS['end_criteria'], max_steps=SETTINGS['max_steps'],
+                              dc_free=SETTINGS['dc_free'])
     tag = (f'h{a.h_edge:g}' + ('' if a.dielectric_cells == SETTINGS['mesh']['dielectric_cells'] else
                                f'_z{a.dielectric_cells}')
-           + ('' if a.engine == (SETTINGS['engine'] or 'default') else f'_{a.engine}'))
+           + ('' if a.engine == (SETTINGS['engine'] or 'default') else f'_{a.engine}') + ('_dump' if a.dump else ''))
     sim = out / tag
+    if a.dump:                           # E in the core's middle plane, over the whole domain, every sample
+        box = info['box']
+        zmid = 0.5 * (board.z[0] + board.z[1])
+        CSX.AddDump('Et_core', dump_type=0, file_type=1).AddBox([box[0], box[2], zmid], [box[1], box[3], zmid])
     name = 'results.json' if tag == f"h{SETTINGS['mesh']['h_edge']:g}" else f'results_{tag}.json'
     if a.reuse and (sim / 'port_ut_1B').exists():
         last = json.loads((HERE / name).read_text()) if (HERE / name).exists() else {}
