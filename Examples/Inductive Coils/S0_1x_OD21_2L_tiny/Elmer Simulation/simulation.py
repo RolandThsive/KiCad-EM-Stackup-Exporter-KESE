@@ -274,12 +274,14 @@ def report(log=print):
         sections.append('\n'.join(sec))
         lt_all.append((gap, lt, [r['solve']['coils']['TX']['L'] * 1e9 for r in away]))
     boards_dir = BOARD / 'Boards'
-    pic = next((p.name for p in sorted(boards_dir.glob('*_Representative.svg'))), None)    # the generator's picture
+    pic = next((p.name for p in [BOARD / f'{BOARD.name}_stator_and_rotor.png'] if p.exists()), None)  # beside README
+    if not pic:                                                                   # else the generator's own picture
+        pic = next(('Boards/' + p.name for p in sorted(boards_dir.glob('*_Representative.svg'))), None)
     tx, rs, rc = (SPEC['terminals'][k] for k in ('TX', SIN_NET, COS_NET))
     xy = lambda t: '({:g}, {:g})'.format(*(round(v, 2) for v in t.get('via_xy_kicad') or t.get('ends_xy_kicad')))
     boards = ['## The boards', '']
     if pic:
-        boards += [f'![stator and rotor](../Boards/{pic})', '']
+        boards += [f'![stator and rotor](../{pic})', '']
     boards += [f"*Drawn by the generator. Red is the top layer, blue the bottom; the dots are vias. In Elmer, SIN is "
                f"opened at {xy(rs)} and COS at {xy(rc)}, the TX at its ends at {xy(tx)} (KiCad mm). The "
                f"[README](../README.md) has the board and how it was made.*", '']
