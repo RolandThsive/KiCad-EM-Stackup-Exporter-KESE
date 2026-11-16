@@ -32,9 +32,27 @@ Bore and outer radius 2 and 11.1 mm, 2 copper layers, board 0.8 mm, air gap 1 mm
 
 *Drawn by the generator.*
 
-## Results
+## Results: the cut against the via
 
-The sweep at 1, 0.5 and 0.1 mm is being solved; this section gets its numbers, set against the board opened at a via, when it lands.
+Every angle at every gap, one Elmer solve each on the same mesh as the board opened at a via, run in parallel on 25 machines (24 angles and the rotor taken away). Each gap's curves, fits and angle errors are in [`Results/SINCOS_Results.md`](Results/SINCOS_Results.md); `python compare_ports.py` prints the table below and draws the chart.
+
+![the cut against the via port](Results/SINCOS_cut_vs_via.webp)
+
+*Solve by solve: the cut solid and filled, the via dashed and hollow. Which cut face counts as plus is a convention, so the via board's SIN is drawn with its sign turned, which moves its curve by half a turn and changes nothing else. Rings: solves that stopped above a residual of 5e-4 or give the TX a negative resistance.*
+
+| Air gap | Port | Amplitude SIN / COS, all solves | Converged solves only | Angle error | SIN to COS | L TX over the turn | Not converged |
+|---|---|---|---|---|---|---|---|
+| 1 mm | via | 3.25 / 3.14 nH (72 / 69 mV) | 3.05 / 3.14 nH | 3.0° rms, 4.7° peak | 92.6° | 118 to 123 nH | 1 of 8 |
+| 1 mm | cut | 2.81 / 3.14 nH (62 / 69 mV) | 3.05 / 3.14 nH | 4.8° rms, 11.3° peak | 92.6° | 117 to 121 nH | 1 of 8 |
+| 0.5 mm | via | 4.62 / 4.59 nH (102 / 101 mV) | 4.70 / 4.59 nH | 2.3° rms, 4.6° peak | 89.2° | 107 to 117 nH | 1 of 8 |
+| 0.5 mm | cut | 4.39 / 4.46 nH (97 / 98 mV) | 4.32 / 4.46 nH | 1.8° rms, 3.5° peak | 90.4° | 107 to 113 nH | 1 of 8 |
+| 0.1 mm | via | 3.82 / 6.46 nH (84 / 142 mV) | too few converged | 58.5° rms, 159.3° peak | 66.0° | 43 to 118 nH | 7 of 8 |
+| 0.1 mm | cut | 5.98 / 6.22 nH (131 / 137 mV) | too few converged | 10.9° rms, 24.6° peak | 81.1° | 91 to 122 nH | 6 of 8 |
+
+* **At 1 mm the two ports give the same answer.** At the 7 angles where both converged, the cut and the via differ by 0.8 % (SIN) and 0.7 % (COS) of the amplitude on average, and the fits through those 7 angles are the same to the hundredth: 3.05 / 3.14 nH. The one angle that differs is 45°, which is not converged in either and falls off the sine the opposite way in each. That one solve alone pulls the cut's all-solve SIN amplitude down to 2.81 nH and its angle error up to 4.8° rms.
+* **At 0.5 mm they agree within 2 % at 5 of the 7 angles both converged** (135° to 315°). At 0° and 90° they differ by up to 0.8 nH although both are below the limit, so the solver's scatter at this gap is about that big. The cut's curve comes out a little cleaner: 1.8° rms against 2.3°.
+* **At 0.1 mm both still stall:** 6 of 8 cut solves and 7 of 8 via solves are not converged, so neither curve can be read yet. The cut's looks less wild (10.9° rms against 58.5°), but with that many unconverged solves this says nothing about the port. It waits for the solver fix.
+* **The rotor taken away** gives L TX 130.2 nH with the cut and 129.7 nH with the via.
 
 ## The folder
 
@@ -42,8 +60,8 @@ The sweep at 1, 0.5 and 0.1 mm is being solved; this section gets its numbers, s
 |---|---|
 | [`Boards/`](Boards/) | the generator's boards, copied unchanged from the folder without cuts |
 | [`3D_Geometry/`](3D_Geometry/) | KESE's export of the stator and rotor, copied unchanged |
-| [`Elmer Simulation/`](Elmer%20Simulation/) | `test_spec.json` (with `"rx_port": "cut"` and each receiver's `cut`), `simulation.py`, `angle_error.py`, `make_charts.py`, `rig_picture.py` and `angle_setup.py` (the same files as in the other S0 folders), `RotorStator_AngleSetup/`, and the runs under `case/`, which git ignores |
-| [`Results/`](Results/) | `expected_results.json` (the generator's estimates), and the sweep's results once it lands |
+| [`Elmer Simulation/`](Elmer%20Simulation/) | `test_spec.json` (with `"rx_port": "cut"` and each receiver's `cut`), `simulation.py`, `angle_error.py`, `make_charts.py`, `rig_picture.py` and `angle_setup.py` (the same files as in the other S0 folders), `compare_ports.py` (this board against the via board), `RotorStator_AngleSetup/`, and the runs under `case/`, which git ignores |
+| [`Results/`](Results/) | `expected_results.json` (the generator's estimates), [`SINCOS_Results.md`](Results/SINCOS_Results.md) with every gap on one page, `SINCOS_cut_vs_via.webp`, and a folder for each air gap (`1mm_AirGap`, `0d5mm_AirGap`, `0d1mm_AirGap`) with the runs' `results_gap<gap>mm.json`, `.csv` and `.webp` |
 
 ## Running it
 
@@ -57,7 +75,8 @@ The sweep at 1, 0.5 and 0.1 mm is being solved; this section gets its numbers, s
     python rig_picture.py                  # redraw how the boards sit in Elmer
     python angle_setup.py                  # redraw the rotor at each angle
     python make_charts.py                  # redraw every chart (WebP) and rewrite SINCOS_Results.md
+    python compare_ports.py                # the cut against the via board: the table above and the chart
 
 ## Licence
 
-These boards are output of the Sinusoidal Coil Generator, for non-commercial use only. See [../LICENSE.md](../LICENSE.md); this branch's GPL-3.0 covers `simulation.py`, `angle_error.py`, `make_charts.py`, `rig_picture.py` and `angle_setup.py` only.
+These boards are output of the Sinusoidal Coil Generator, for non-commercial use only. See [../LICENSE.md](../LICENSE.md); this branch's GPL-3.0 covers `simulation.py`, `angle_error.py`, `make_charts.py`, `rig_picture.py`, `angle_setup.py` and `compare_ports.py` only.

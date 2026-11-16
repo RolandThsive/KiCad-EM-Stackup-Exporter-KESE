@@ -313,20 +313,31 @@ def report(log=print):
     if not pic:                                                                   # else the generator's own picture
         pic = next(('Boards/' + p.name for p in sorted(boards_dir.glob('*_Representative.svg'))), None)
     tx, rs, rc = (SPEC['terminals'][k] for k in ('TX', SIN_NET, COS_NET))
-    xy = lambda t: '({:g}, {:g})'.format(*(round(v, 2) for v in t.get('via_xy_kicad') or t.get('ends_xy_kicad')))
+    xy = lambda t: '({:g}, {:g})'.format(*(round(v, 2) for v in (t['cut']['xy_kicad'] if RX_PORT == 'cut' and 'cut' in t
+                                                                 else t.get('via_xy_kicad') or t.get('ends_xy_kicad'))))
+    opened = 'by a cut in its top trace ' if RX_PORT == 'cut' else ''
     boards = ['## The boards', '']
     if pic:
         boards += [f'![stator and rotor](../{pic})', '']
     boards += [f"*Drawn by the generator. Red is the top layer, blue the bottom; the dots are vias. In Elmer, SIN is "
-               f"opened at {xy(rs)} and COS at {xy(rc)}, the TX at its ends at {xy(tx)} (KiCad mm). The "
+               f"opened {opened}at {xy(rs)} and COS at {xy(rc)}, the TX at its ends at {xy(tx)} (KiCad mm). The "
                f"[README](../README.md) has the board and how it was made.*", '']
     if (BOARD / f'{BOARD.name}_elmer_setup.webp').exists():
         boards += [f'![how the stator and rotor are set up in Elmer](../{BOARD.name}_elmer_setup.webp)',
                    '', "*How the boards are set up in Elmer, drawn by "
                    "[`rig_picture.py`](../Elmer%20Simulation/rig_picture.py) from the geometry the mesh is built "
-                   "from: the rotor copper side down over the stator, each receiver opened at a left-out via (its two pads and the gap between them are the terminal, held at 0 A, so "
-                   "the voltage across it is the open-circuit EMF), and the TX opened between its two stacked ends, "
-                   "where 1 A is driven.*", '']
+                   "from: the rotor copper side down over the stator, each receiver opened "
+                   + ("by a 0.2 mm cut across a top trace (the two cut faces are the terminal, held at 0 A, so the "
+                      "voltage across the cut is the open-circuit EMF)" if RX_PORT == 'cut' else
+                      "at a left-out via (its two pads and the gap between them are the terminal, held at 0 A, so "
+                      "the voltage across it is the open-circuit EMF)")
+                   + ", and the TX opened between its two stacked ends, where 1 A is driven.*", '']
+    if (RESULTS / 'SINCOS_cut_vs_via.webp').exists():                 # the _Cut folder: drawn by compare_ports.py
+        boards += ['![the cut against the via port](SINCOS_cut_vs_via.webp)', '',
+                   '*The same board with its receivers opened at a left-out via (dashed, hollow) and by the cut '
+                   '(solid, filled), solve by solve, drawn by [`compare_ports.py`](../Elmer%20Simulation/compare_ports.py). '
+                   'Which cut face counts as plus is a convention, so the via board\'s SIN is drawn with its sign '
+                   'turned. Rings: solves that are not converged.*', '']
     expect = []
     tx_exp = EXPECTED.get('tx', {})
     if tx_exp.get('L_away_gen_H') and lt_all:
