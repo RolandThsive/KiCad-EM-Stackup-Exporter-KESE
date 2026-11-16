@@ -12,6 +12,7 @@ parameters, roles and files.
 | [43.4 Solder Mask, Silkscreen And Finish](#434-solder-mask-silkscreen-and-finish) | Conformal mask, Finish, LPI, Mask opening, Mask web, Pull-back, Silkscreen |
 | [43.5 How KESE Builds A Model](#435-how-kese-builds-a-model) | Board frame, Part, Pinch point, Prism, Role, Skin, Slice, Snap grid, Stage, Verifier |
 | [43.6 Output And Files](#436-output-and-files) | GLB, materials.json, OBJ, Preset, report.txt, Run folder, Simulation mode, STEP, STL, Visual mode, Z-fighting |
+| [43.7 Solvers](#437-solvers) | A-V formulation, DC-free pulse, Edge element, Electrode, εeff (effective permittivity), FDTD, GMD (geometric mean distance), Magneto-quasi-static, Mesh level, MUR, PML, PEC, Preflight, Proximity effect, S-parameters, Self resonance, Skin depth, Thirds rule, Z0 (characteristic impedance) |
 
 <a name="241-board-and-stack-up"></a>
 ## 43.1 Board And Stack-Up
@@ -134,6 +135,32 @@ What a run writes and how to pick it.
 | **STL** | Binary STL, one file per part: triangles only, no colour or units. | [22.2](Compatibility.md#222-output-formats) |
 | **Visual mode** | Output as the visible skin only, for viewers and renders. | [9.2](Output-Modes.md#92-visual-mode) |
 | **Z-fighting** | Flicker in a 3D viewer when two surfaces lie at almost the same depth; the reason visual mode exists. | [9.2](Output-Modes.md#92-visual-mode) |
+
+## 43.7 Solvers
+
+The words of the Elmer and openEMS pages.
+
+| Term | Meaning | See |
+|---|---|---|
+| **A-V formulation** | Elmer's time-harmonic eddy-current formulation: a magnetic vector potential A on the mesh's edges and an electric scalar potential V in the conductors, with no displacement current (`WhitneyAVHarmonicSolver`). | [24.1](Elmer-FEM-Introduction.md#241-what-elmer-is-used-for-here) |
+| **DC-free pulse** | openEMS's Gaussian pulse with a sine carrier (`dc_free=True`): it has no DC part, so it leaves no static charge on the copper. | [36.2](OpenEMS-Implementation-Simulating-Your-Own-Board.md#362-the-board-and-the-band) |
+| **Edge element** | A finite element whose unknowns sit on the mesh's edges (Whitney elements); Elmer's A lives on them. First order: one unknown per edge. | [24.1](Elmer-FEM-Introduction.md#241-what-elmer-is-used-for-here) |
+| **Electrode** | A face of a coil's copper where Elmer's circuit fixes the potential; the bridge opens each coil at its port and puts one electrode on each side of the gap. | [26.5](Elmer-FEM-Workflow.md#265-open-each-coil-at-its-port) |
+| **εeff (effective permittivity)** | The single permittivity that would give a line its measured speed: c₀²/v², between 1 and the substrate's εr for a microstrip. | [38.1](OpenEMS-Implementation-Test-Board-Results.md#381-o01-microstrip) |
+| **FDTD** | Finite differences in the time domain: Maxwell's equations marched in time on a rectilinear grid, openEMS's method. | [33.1](OpenEMS-Implementation-Introduction.md#331-what-openems-is-used-for-here) |
+| **GMD (geometric mean distance)** | The distance that stands for a conductor's cross-section in an inductance formula: 0.2235 (w + t) for a rectangle carrying uniform current. | [29.1](Elmer-FEM-Test-Board-Results.md#291-e01-circular-loop) |
+| **Magneto-quasi-static** | Currents and magnetic fields without waves: right when the board is a tiny fraction of a wavelength across, as coils at kHz to a few MHz are. | [24.1](Elmer-FEM-Introduction.md#241-what-elmer-is-used-for-here) |
+| **Mesh level** | The Elmer bridge's knob for the copper's mesh: a level divides the sizes at and inside the copper by itself; the air's grading stays. | [27.3](Elmer-FEM-Simulating-Your-Own-Board.md#273-the-domain-and-the-frequencies) |
+| **MUR, PML** | openEMS's absorbing boundaries: MUR, a first-order absorbing condition, cheap; PML, absorbing layers, better at oblique angles and dearer. | [36.4](OpenEMS-Implementation-Simulating-Your-Own-Board.md#364-the-mesh) |
+| **PEC** | Perfect electric conductor: copper with no loss and no skin depth, as the openEMS bridge models it. | [42.1](Elmer-vs-OpenEMS.md#421-the-two-solvers) |
+| **Preflight** | The openEMS bridge's checks of the grid and the ports before a run: cell sizes against the wavelength, neighbours within 2:1, each port on its copper. | [41.4](OpenEMS-Implementation-Troubleshooting.md#414-the-preflight) |
+| **Proximity effect** | Current pushed around inside a conductor by a neighbour's field; it adds loss even to a conductor that carries no net current. | [29.2](Elmer-FEM-Test-Board-Results.md#292-e02-coaxial-loops) |
+| **S-parameters** | The ratios of the waves leaving a board's ports to the wave sent into one of them: S11 (reflection), S21 (transmission). | [33.1](OpenEMS-Implementation-Introduction.md#331-what-openems-is-used-for-here) |
+| **Self resonance** | The frequency where a coil's own capacitance between its turns resonates with its inductance; above about a fifth of it, a quasi-static L no longer holds. | [37.2](OpenEMS-Implementation-Test-Boards.md#372-the-ten-inductive-encoder-boards) |
+| **Skin depth** | How deep an AC current reaches into a conductor, δ = √(2 / (ωμσ)): 35 µm in copper at 3.5 MHz, 0.66 mm at 10 kHz. | [29.1](Elmer-FEM-Test-Board-Results.md#291-e01-circular-loop) |
+| **Thirds rule** | openEMS's way of meshing a metal edge: one line a third of the spacing inside the metal and one two thirds outside. | [35.3](OpenEMS-Implementation-Workflow.md#353-place-the-mesh-lines) |
+| **Z0 (characteristic impedance)** | The ratio of voltage to current of a wave running along a line; a line ended in its Z0 does not reflect. | [38.1](OpenEMS-Implementation-Test-Board-Results.md#381-o01-microstrip) |
+
 | Previous | Next |
 |:---|---:|
 | [Elmer vs openEMS](Elmer-vs-OpenEMS.md) | [Future Upgrades And Planning](Future-Upgrades-And-Planning.md) |

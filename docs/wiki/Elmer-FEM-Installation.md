@@ -49,11 +49,13 @@ Generator>`. KESE runs inside the bridge's Python, so its own packages (`require
 `Generator/`) must be in the same environment; a missing one stops the export with *missing Python
 package(s)* and the `pip install` line to fix it.
 
-**Check the whole chain** with the first proof board, on its coarsest mesh (a few minutes):
+**Check the whole chain** with the first proof board, on its coarsest mesh at 3.5 MHz, where the
+solve converges (several minutes on 4 cores; a 10 kHz solve runs to its iteration cap and takes about
+25 minutes):
 
 ```bash
 cd Examples/E01_circular_loop
-../../.venv/bin/python simulation.py --levels 0.75 --freqs 1e4
+../../.venv/bin/python simulation.py --levels 0.75 --freqs 3.5e6
 ```
 
 ## 25.2 Windows

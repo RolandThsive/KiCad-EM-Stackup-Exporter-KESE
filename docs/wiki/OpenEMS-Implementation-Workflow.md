@@ -58,7 +58,7 @@ Every line of the check, passed or failed, is written to the log and to `results
 |---|---|
 | Copper | PEC, every copper STL imported as a polyhedron (`AddPolyhedronReader`) |
 | Dielectrics | each STL as a material with its εr, and a conductivity κ = 2πf ε₀ εr tan δ that gives its tan δ at the pulse's centre frequency |
-| Excitation | a Gaussian pulse over the band (`f0`, `fc`) |
+| Excitation | a Gaussian pulse over the band (`f0`, `fc`), DC-free (a sine carrier) so that it leaves no static charge behind |
 | Boundaries | MUR (first-order absorbing) on all six sides by default, a quarter wavelength from the board |
 | Ports | openEMS microstrip ports (`AddMSLPort`): a strip, a feed, three voltage probes and two current probes at the measurement plane, and a resistor (`feed_r`) that ends the line |
 
@@ -71,8 +71,8 @@ stretches each current probe to enclose the whole strip, from its underside to i
 ## 35.6 Run
 
 `run()` starts openEMS in the case folder with the CPU engine (`engine='cpu'`) and the number of
-threads given, and stops when the field energy has fallen by `end_criteria` (10⁻⁴, that is 40 dB) or
-after `max_steps` time steps.
+threads given, and stops when the field energy has fallen by `end_criteria` (10⁻⁵, that is 50 dB, in
+O01) or after `max_steps` time steps.
 
 ## 35.7 Read Back
 

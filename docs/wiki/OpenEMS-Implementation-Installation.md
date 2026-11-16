@@ -39,7 +39,7 @@ git -C <your KESE clone> archive main Generator | tar -x --strip-components=1 -C
 
 or point the bridge at any KESE with `export KESE_PATH=<path to Generator>`.
 
-**Check the whole chain** with the first proof board (a few minutes on 4 cores):
+**Check the whole chain** with the first proof board (about 1.5 minutes on 4 cores):
 
 ```bash
 cd Examples/O01_microstrip

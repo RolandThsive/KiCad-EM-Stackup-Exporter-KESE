@@ -22,10 +22,11 @@ Linux while it runs and writes it into `results.json`.
 |---|---|---|---|
 | E01, level 0.75 | 59,782 | 3.39 GB | 59 kB |
 | E01, level 1 | 85,712 | 4.86 GB | 59 kB |
+| E02, level 0.75 | 92,120 | 5.19 GB | 59 kB |
 | E02, level 1 | 119,559 | 6.74 GB | 59 kB |
 | E01, level 1.3 | 125,043 | 7.09 GB | 59 kB |
 
-Four meshes from 60,000 to 125,000 nodes cost the same 59 kB per node, at both frequencies (Linux
+Five meshes from 60,000 to 125,000 nodes cost the same 59 kB per node, at both frequencies (Linux
 counts in kibibytes, so a GB here is 1,073,741,824 bytes). The memory does not depend on the
 frequency or on the number of iterations: BiCGStab(l) keeps a fixed number of vectors.
 
@@ -35,11 +36,13 @@ frequency or on the number of iterations: BiCGStab(l) keeps a fixed number of ve
 |---|---|---|---|
 | E01, level 0.75 | 9 s | 25 min, 3000 iterations (the cap) | |
 | E01, level 1 | 11 s | 17 min, 3000 iterations (the cap); 13 min for 1500 | 6 min, 864 iterations |
-| E02, level 1 | 11 s | 22 min, 1500 iterations (the cap) | 10 min, 1147 iterations |
+| E02, level 0.75 | 9 s | 9 min, 1500 iterations (the cap), the machine to itself | |
+| E02, level 1 | 12 s | 22 min, 1500 iterations (the cap) | 10 min, 1147 iterations |
 | E01, level 1.3 | 16 s | 45 min, 3000 iterations (the cap) | |
 
-The runs shared the machine with openEMS runs and with each other's meshing, so their times are what
-they took, not what the machine can do. Two things are certain from them: meshing takes seconds and
+All but one run shared the machine with openEMS runs or with each other's meshing, so their times
+are what they took, not what the machine can do: E02 at level 0.75, with the machine to itself,
+needed 3.9 µs per node and iteration, the shared E02 at level 1 7.3 µs. Two things are certain from them: meshing takes seconds and
 the solve takes minutes, and a 10 kHz solve runs to its iteration cap while a 3.5 MHz one stops on
 its own ([Elmer FEM Accuracy](Elmer-FEM-Accuracy.md#302-the-iterative-solve)). The time of one solve
 grows with the nodes times the iterations.
@@ -51,7 +54,7 @@ grows with the nodes times the iterations.
 | Nodes | build the mesh alone: the S2 script has `--mesh-only`, and E01 too; the log prints the nodes | 85,712 |
 | Memory | nodes × 59 kB, plus a few GB for the system | 4.9 GB |
 | Solves | one per frequency, and one per rotor angle on the coil boards | 2 |
-| Time | minutes per 100,000 nodes and 1000 iterations, from 31.3 | 23 min for both |
+| Time | about 4 µs per node and iteration with the machine to itself, from 31.3 | 17 min at 10 kHz (3000 iterations), 5 min at 3.5 MHz (864) |
 
 The nodes come mostly from the copper: the mesh is finest at the copper's edges and through its
 thickness (18 µm wedge layers at level 1, half the skin depth at 3.5 MHz) and coarse in the air.

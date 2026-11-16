@@ -35,7 +35,7 @@ distance g = 0.2235 (w + t), times the share of the circle the copper covers (0.
 R is the annular sector's DC resistance. At 3.5 MHz the skin depth (35 µm) equals the copper's
 thickness, and no formula is exact there.
 
-![E01's L and E02's M at 10 kHz, as a percentage off their references, against the mesh's nodes in thousands: E01 rises from −3.7 % at 60,000 nodes to −3.2 % at 86,000 and −3.1 % at 125,000; E02 sits at −3.1 % at 120,000 nodes](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Elmer-FEM-Test-Board-Results/elmerresults_1_against_reference.webp)
+![E01's L and E02's M at 10 kHz, as a percentage off their references, against the mesh's nodes in thousands: E01 rises from −3.7 % at 60,000 nodes to −3.2 % at 86,000 and −3.1 % at 125,000; E02 rises from −3.3 % at 92,000 nodes to −3.1 % at 120,000](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Elmer-FEM-Test-Board-Results/elmerresults_1_against_reference.webp)
 
 L rises as the mesh is refined, as it should with first-order edge elements, but it levels off about
 3 % under the reference. Refining the copper alone does not close that gap;
@@ -60,17 +60,17 @@ voltage across RX's gap gives M. E02 runs at most 1500 iterations.
 
 | Quantity | Reference | Level 0.75 | Level 1 |
 |---|---|---|---|
-| Nodes | | E02N075 | 119,559 |
-| M at 10 kHz | 24.13 nH | E02M075 | 23.38 nH (−3.1 %) |
+| Nodes | | 92,120 | 119,559 |
+| M at 10 kHz | 24.13 nH | 23.33 nH (−3.3 %) | 23.38 nH (−3.1 %) |
 | M at 3.5 MHz | 24.13 nH (an estimate) | | 23.32 nH (−3.4 %) |
-| TX's L at 10 kHz | E01's L at the same level | E02L075 | 54.18 nH (E01: 54.20 nH) |
+| TX's L at 10 kHz | E01's L at the same level | 54.06 nH (E01: 53.91 nH) | 54.18 nH (E01: 54.20 nH) |
 | TX's R at 3.5 MHz | E01's R at the same level | | 80.75 mΩ (E01: 79.25 mΩ) |
 
 The reference M is Maxwell's formula for two coaxial circular filaments, averaged over 41 × 41
 filaments across both traces' widths, times the share of the circle the TX's copper covers.
 
-* **M is 3.1 % low**, the same as E01's L at this mesh size: whatever holds E01's L down holds M down
-  alike.
+* **M is 3.1 % low and rises with the mesh** (−3.3 % at level 0.75), the same as E01's L at this mesh
+  size: whatever holds E01's L down holds M down alike.
 * **The open RX leaves the TX's L alone** at 10 kHz (54.18 against 54.20 nH): a loop with no current
   in it adds no field.
 * **At 3.5 MHz the RX adds 1.5 mΩ to the TX's R.** RX carries no net current, but eddy currents
