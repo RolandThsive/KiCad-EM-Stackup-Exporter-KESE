@@ -39,7 +39,7 @@ INK, INK2, GRID, SURFACE = '#0b0b0b', '#52514e', '#e4e3df', '#fcfcfb'
 COLOURS = {'SIN': (0x2a, 0x78, 0xd6), 'COS': (0xeb, 0x68, 0x34)}    # categorical slots 1 and 2 of the house palette
 DOTS = (0, (1, 2.2))                  # the ideal curves: dotted, so they never read as solves
 LOOSE = 5e-4      # a solve that stopped above this residual, or gives the TX a negative resistance, is not converged
-          # enough to read (every 1 mm solve stopped below it); simulation.py uses it too
+          # enough to read (on S0 every 1 mm solve stopped below it); simulation.py uses it too
 
 
 def tint(rgb, k):

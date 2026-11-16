@@ -51,7 +51,7 @@ Best sine fit: SIN amplitude 3.257 nH, offset -0.271 nH, phase -137.5°; COS amp
 
 8 of 8 solves stopped at the 1500-iteration cap, with the residual between 2.4e-04 and 1.0e-03 rather than the 1e-07 asked for. The TX is round, so turning the rotor should not change its inductance: its spread here, 78.9 to 106.0 nH, is a measure of what the solver leaves.
 
-**Not converged enough to read:** 3 of 8 solves (225°, 270°, 315°) stopped above a residual of 5e-04 or give the TX a negative resistance. Every 1 mm solve stopped below it; the 0.5 mm solves above it are the ones that fall off the sine. Read this gap's curve with that in mind.
+**Not converged enough to read:** 3 of 8 solves (225°, 270°, 315°) stopped above a residual of 5e-04 or give the TX a negative resistance. On S0, every 1 mm solve stopped below it and the 0.5 mm solves above it are the ones that fall off the sine. Read this gap's curve with that in mind.
 
 ## 0.1 mm air gap
 
@@ -74,7 +74,7 @@ Best sine fit: SIN amplitude 2.447 nH, offset -1.646 nH, phase -144.6°; COS amp
 
 8 of 8 solves stopped at the 1500-iteration cap, with the residual between 6.9e-04 and 4.4e-03 rather than the 1e-07 asked for. The TX is round, so turning the rotor should not change its inductance: its spread here, 30.5 to 108.8 nH, is a measure of what the solver leaves.
 
-**Not converged enough to read:** 8 of 8 solves (0°, 45°, 90°, 135°, 180°, 225°, 270°, 315°) stopped above a residual of 5e-04 or give the TX a negative resistance. Every 1 mm solve stopped below it; the 0.5 mm solves above it are the ones that fall off the sine. Read this gap's curve with that in mind.
+**Not converged enough to read:** 8 of 8 solves (0°, 45°, 90°, 135°, 180°, 225°, 270°, 315°) stopped above a residual of 5e-04 or give the TX a negative resistance. On S0, every 1 mm solve stopped below it and the 0.5 mm solves above it are the ones that fall off the sine. Read this gap's curve with that in mind.
 
 ## The air gaps together
 

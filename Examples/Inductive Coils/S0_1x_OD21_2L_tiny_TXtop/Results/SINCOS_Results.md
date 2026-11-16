@@ -72,7 +72,7 @@ Best sine fit: SIN amplitude 5.117 nH, offset 1.153 nH, phase -153.5°; COS ampl
 
 8 of 8 solves stopped at the 1500-iteration cap, with the residual between 5.2e-04 and 4.5e-03 rather than the 1e-07 asked for. The TX is round, so turning the rotor should not change its inductance: its spread here, 67.0 to 125.1 nH, is a measure of what the solver leaves.
 
-**Not converged enough to read:** 8 of 8 solves (0°, 45°, 90°, 135°, 180°, 225°, 270°, 315°) stopped above a residual of 5e-04 or give the TX a negative resistance. Every 1 mm solve stopped below it; the 0.5 mm solves above it are the ones that fall off the sine. Read this gap's curve with that in mind.
+**Not converged enough to read:** 8 of 8 solves (0°, 45°, 90°, 135°, 180°, 225°, 270°, 315°) stopped above a residual of 5e-04 or give the TX a negative resistance. On S0, every 1 mm solve stopped below it and the 0.5 mm solves above it are the ones that fall off the sine. Read this gap's curve with that in mind.
 
 ## The air gaps together
 

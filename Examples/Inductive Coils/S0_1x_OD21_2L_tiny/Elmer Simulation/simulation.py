@@ -260,8 +260,9 @@ def report(log=print):
         if loose:
             sec += [f"**Not converged enough to read:** {len(loose)} of {len(runs)} solves "
                     f"({', '.join(format(r['rotor_deg'], 'g') + '°' for r in loose)}) stopped above a residual of "
-                    f"{LOOSE:.0e} or give the TX a negative resistance. Every 1 mm solve stopped below it; the 0.5 mm "
-                    f"solves above it are the ones that fall off the sine. Read this gap's curve with that in mind.",
+                    f"{LOOSE:.0e} or give the TX a negative resistance. On S0, every 1 mm solve stopped below it and "
+                    f"the 0.5 mm solves above it are the ones that fall off the sine. Read this gap's curve with that "
+                    f"in mind.",
                     '']
         sections.append('\n'.join(sec))
         lt_all.append((gap, lt, [r['solve']['coils']['TX']['L'] * 1e9 for r in away]))

@@ -28,6 +28,26 @@ The generator's warnings for this board:
 * no spot on 2 within 30 deg of 0 deg, 4 mm from the other marks, has room for two vias (layers F.Cu, B.Cu); widen SILKSCREEN_SEARCH_SPAN_DEG, lower SILKSCREEN_BREAK_SEPARATION_MM, or cut the coil by hand
 * no spot on 1 within 30 deg of 0 deg, 4 mm from the other marks, has room for two vias (layers F.Cu, B.Cu); widen SILKSCREEN_SEARCH_SPAN_DEG, lower SILKSCREEN_BREAK_SEPARATION_MM, or cut the coil by hand
 
+## Against S0
+
+Every angle at every gap, one Elmer solve each, run in parallel on 25 machines (24 angles and the rotor taken away). The numbers are from [`Results/SINCOS_Results.md`](Results/SINCOS_Results.md) and the other two boards' pages. "Not converged" counts the solves that stopped above a residual of 5e-4 or give the TX a negative resistance.
+
+| Air gap | Board | Angles | Amplitude SIN / COS | Angle error | SIN to COS | L TX over the turn | Residual | Not converged |
+|---|---|---|---|---|---|---|---|---|
+| 1 mm | S0 (TX: 1 turn on each layer) | 8 of 8 | 2.15 / 2.07 nH (47 / 45 mV) | 4.6° rms, 7.1° peak | 91.2° | 99 to 108 nH | 2.7e-04 to 4.8e-04 | 0 of 8 |
+| 1 mm | 21 mm, 2 TX turns on top | 8 of 8 | 2.24 / 2.15 nH (49 / 47 mV) | 3.2° rms, 5.6° peak | 92.7° | 105 to 110 nH | 2.6e-04 to 4.9e-04 | 0 of 8 |
+| 1 mm | this board (22 mm, 2 TX turns on top, S0's RX) | 8 of 8 | 3.25 / 3.14 nH (72 / 69 mV) | 3.0° rms, 4.7° peak | 92.6° | 118 to 123 nH | 1.9e-04 to 6.1e-04 | 1 of 8 |
+| 0.5 mm | S0 (TX: 1 turn on each layer) | 8 of 8 | 3.26 / 2.81 nH (72 / 62 mV) | 14.3° rms, 28.3° peak | 89.3° | 79 to 106 nH | 2.4e-04 to 1.0e-03 | 3 of 8 |
+| 0.5 mm | 21 mm, 2 TX turns on top | 8 of 8 | 3.32 / 3.18 nH (73 / 70 mV) | 3.2° rms, 5.7° peak | 90.1° | 93 to 104 nH | 2.9e-04 to 4.9e-04 | 0 of 8 |
+| 0.5 mm | this board (22 mm, 2 TX turns on top, S0's RX) | 8 of 8 | 4.62 / 4.59 nH (102 / 101 mV) | 2.3° rms, 4.6° peak | 89.2° | 107 to 117 nH | 2.2e-04 to 5.4e-04 | 1 of 8 |
+| 0.1 mm | S0 (TX: 1 turn on each layer) | 8 of 8 | 2.45 / 5.04 nH (54 / 111 mV) | 67.6° rms, 172.9° peak | 81.5° | 31 to 109 nH | 6.9e-04 to 4.4e-03 | 8 of 8 |
+| 0.1 mm | 21 mm, 2 TX turns on top | 8 of 8 | 5.12 / 4.86 nH (113 / 107 mV) | 17.5° rms, 44.0° peak | 70.6° | 67 to 125 nH | 5.2e-04 to 4.5e-03 | 8 of 8 |
+| 0.1 mm | this board (22 mm, 2 TX turns on top, S0's RX) | 8 of 8 | 3.82 / 6.46 nH (84 / 142 mV) | 58.5° rms, 159.3° peak | 66.0° | 43 to 118 nH | 4.1e-04 to 5.8e-03 | 7 of 8 |
+
+* **The signal is half as large again as S0's.** 3.2 nH at 1 mm (about 70 mV of EMF at 1 A) against S0's 2.1, and 4.6 nH at 0.5 mm against 3.0: the same RX coils with the second TX turn around them.
+* **The curves are clean at 1 and 0.5 mm.** The angle error is 3.0° rms at 1 mm and 2.3° rms at 0.5 mm (S0: 4.6° and 14.3°), and SIN and COS match in amplitude within 4 % at 1 mm and 1 % at 0.5 mm. One solve at each of these gaps (45° both times) stopped just above 5e-4 (6.1e-4 and 5.4e-4), and both still sit near their sine.
+* **At 0.1 mm the solver still stalls too high to read**, as on the other two boards.
+
 ## The folder
 
 | Folder | What is in it |
