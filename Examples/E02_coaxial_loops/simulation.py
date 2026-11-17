@@ -36,7 +36,7 @@ SETTINGS = dict(
     gap_box=(109.75, -100.35, 110.25, -99.65),   # holds both loops' 0.2 mm gaps, one above the other
     sigma=5.8e7,                   # copper, S/m
     freqs_hz=[1e4, 3.5e6],
-    voxels_mm=[0.1, 0.05, 0.025],  # the voxel ladder: the voxels' size in the board's plane
+    voxels_mm=[0.1, 0.05],         # the voxel ladder: the voxels' size in the board's plane (0.025: 30 M voxels, 9 GB)
     n_cu=1,                        # voxel layers through each copper sheet
     threads=4,
 )

@@ -6,7 +6,15 @@ Inductive angle-encoder boards from the [Sinusoidal Coil Generator](https://gith
 
 At 3 to 5 MHz the boards are about 1/2000 of a wavelength across, so the physics is magneto-quasi-static, which is what PyPEEC solves. Per board it gives the TX's inductance and resistance with the rotor away and over the stator, the coupling from the TX to SIN and COS against the rotor's angle at each air gap, and what follows from it: how well SIN and COS match and the angle error. Every solve is checked by working the TX's L and R out two ways, from its voltage and from the stored energy and the losses; a solve is read when both agree within 1 %.
 
-PyPEEC draws the copper as voxels on one uniform grid: 50 µm in the board's plane on these boards (a 0.2 mm trace is 4 voxels across), and one voxel layer of about 35 µm through each copper sheet. The air needs no voxels, so there is no air box. Going to 35 µm voxels on S0_1x_OD23_2L_tiny_TX3top_Cut at a 1 mm gap moved L TX by 0.35 % and M by 0.3 % at twice the memory and 2.6 times the time, so 50 µm is what every board here is solved with.
+PyPEEC draws the copper as voxels on one uniform grid: 50 µm in the board's plane on these boards (a 0.2 mm trace is 4 voxels across), and one voxel layer of about 35 µm through each copper sheet. The air needs no voxels, so there is no air box. On S0_1x_OD23_2L_tiny_TX3top_Cut at a 1 mm gap and 0°, smaller voxels moved the numbers by less than half a percent, except R, whose traces' stepped edges take longer to settle:
+
+| Voxels | Grid | L TX | R TX | M SIN | M COS | Memory | Time on 4 cores |
+|---|---|---|---|---|---|---|---|
+| 50 µm | 7.4 million | 266.15 nH | 492.8 mΩ | 3.167 nH | 3.781 nH | 2.3 GB | 5 min |
+| 35 µm | 15.1 million | 265.23 nH (−0.35 %) | 480.5 mΩ (−2.5 %) | 3.176 nH (+0.27 %) | 3.786 nH (+0.14 %) | 4.6 GB | 13 min |
+| 25 µm | 29.5 million | 264.56 nH (−0.60 %) | 470.8 mΩ (−4.5 %) | 3.177 nH (+0.32 %) | 3.768 nH (−0.35 %) | 9.1 GB | 26 min |
+
+So 50 µm is what every board here is solved with: it reads M and L TX to about half a percent, while R TX reads at least 5 % high (it is still falling at 25 µm). `simulation.py --voxel 0.035` runs another size as a trial, kept in `case/`.
 
 ## The boards here
 

@@ -400,6 +400,9 @@ def merge(res_file, others, log=print):
         log(f'{f.name}: added ' + (', '.join(str(r['rotor_deg']) for r in new) or 'nothing new'))
     if result is None:
         return
+    v = result.setdefault('versions', {})
+    if str(v.get('kese', 'unknown')).startswith('unknown'):  # solved where KESE was not installed: the export's own
+        v['kese'] = S.versions([GEOMETRY / Path(SETTINGS[k]).stem for k in ('stator', 'rotor')])['kese']
     result['runs'].sort(key=lambda r: -1 if r['rotor_deg'] == 'away' else r['rotor_deg'])
     res_file.parent.mkdir(parents=True, exist_ok=True)
     res_file.write_text(json.dumps(result, indent=1))
@@ -454,7 +457,7 @@ def main():
         board=BOARD.name, gap_mm=a.gap, voxel_mm=a.voxel, rx_port=RX_PORT, settings=SETTINGS, expected=EXPECTED,
         solver=dict(kind='PyPEEC, FFT-accelerated PEEC, GMRES with its own preconditioner', voxel_mm=a.voxel,
                     n_cu=a.n_cu, tolerance=SETTINGS['tolerance'], tolerance_file=in_repo(C.TOLERANCE)),
-        versions=S.versions(), runs=[])
+        versions=S.versions((se, re_)), runs=[])
     done = {r['rotor_deg'] for r in result['runs']}
     runs = ([] if a.no_away else [None]) + angles
     for angle in runs:

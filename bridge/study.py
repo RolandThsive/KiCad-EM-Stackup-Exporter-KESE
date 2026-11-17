@@ -91,28 +91,18 @@ def solve(case, freqs, folder, threads=4, log=print, tag='f'):
     return rows
 
 
-def versions():
-    """The versions a result depends on."""
+def versions(exports=()):
+    """The versions a result depends on. Where KESE is not installed (a board whose export is committed needs it
+    not), KESE's version is the one that made the exports, from their source.json."""
     import platform
     out = {'python': platform.python_version(), 'kese': G.kese_version()}
+    made = sorted({json.loads(Path(e, 'source.json').read_text()).get('kese', '') for e in exports
+                   if Path(e, 'source.json').exists()} - {''})
+    if made and out['kese'].startswith('unknown'):
+        out['kese'] = ', '.join(made) + ' (made the export; not installed where this ran)'
     for mod in ('pypeec', 'scisave', 'numpy', 'scipy', 'shapely', 'trimesh'):
         try:
             out[mod] = __import__(mod).__version__
         except Exception:                # noqa: BLE001
             pass
     return out
-
-
-def merge_run(result, run):
-    """Add a run (a dict with level, order and solves) to result['runs']. A run of the same mesh (level and order)
-    already there keeps its solves at other frequencies; a solve at the same frequency is replaced."""
-    for old in result['runs']:
-        if (old['level'], old['order']) == (run['level'], run['order']):
-            freqs = {s['frequency_hz'] for s in run['solves']}
-            solves = [s for s in old['solves'] if s['frequency_hz'] not in freqs] + run['solves']
-            old.update({k: v for k, v in run.items() if k != 'solves'})
-            old['solves'] = sorted(solves, key=lambda s: s['frequency_hz'])
-            return result
-    result['runs'].append(run)
-    result['runs'].sort(key=lambda r: (r['order'], r['level']))
-    return result
