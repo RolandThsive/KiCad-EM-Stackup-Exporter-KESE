@@ -66,9 +66,13 @@ class Model:
     geometry: list = field(default_factory=list)      # (body, kind, (x0, y0, z0), (x1, y1, z1), w, h) for pictures
     where: dict = field(default_factory=dict)         # node name -> (x, y, z)
 
+    made: int = 0                                     # nodes ever made: the next node's number
+    origin: tuple = (0.0, 0.0)                        # the point (mm) model.inp's x and y are written about
+
     def node(self, key, x, y, z):
         if key not in self.nodes:
-            name = f'N{len(self.nodes)}'
+            name = f'N{self.made}'
+            self.made += 1
             self.nodes[key] = (name, float(x), float(y), float(z))
             self.where[name] = (float(x), float(y), float(z))
         return self.nodes[key][0]
@@ -93,8 +97,20 @@ class Model:
         self.ports.append((name, a, b))
 
     def text(self, freq_hz, sigma=SIGMA_CU):
-        lines = [f'* {self.title}', '.units mm', f'.default sigma={sigma * 1e-3:g}', '']
-        lines += [f'{n} x={x:.6f} y={y:.6f} z={z:.6f}' for n, x, y, z in self.nodes.values()]
+        # x and y are written about the middle of the model, rounded to the whole millimetre, and to 12 significant
+        # digits. FastHenry takes two filaments as parallel when their cosine is 1 to within 1e-13, an absolute
+        # test, and for filaments a few widths apart it adds four side filaments, each the filament moved half its
+        # width or height, keeping its length. 100 mm from the origin (where KiCad puts the boards) moving a point
+        # rounds it by up to 1.4e-17 m, 2e-13 of a 0.06 mm rotor bar: two bars on one line (the two halves of
+        # S0d2's rotor, on opposite rays) then failed the test, went to FastHenry's formula for skew filaments,
+        # which is infinite for two on one line, and the whole impedance matrix came out NaN. About the middle,
+        # every point is within 12 mm of the origin and the rounding is ten times smaller
+        xs = [v[1] for v in self.nodes.values()] or [0.0]
+        ys = [v[2] for v in self.nodes.values()] or [0.0]
+        ox, oy = self.origin = (float(round((min(xs) + max(xs)) / 2)), float(round((min(ys) + max(ys)) / 2)))
+        lines = [f'* {self.title}', f'* x and y in mm from ({ox:g}, {oy:g}), the model\'s middle', '.units mm',
+                 f'.default sigma={sigma * 1e-3:g}', '']
+        lines += [f'{n} x={x - ox:.12g} y={y - oy:.12g} z={z:.12g}' for n, x, y, z in self.nodes.values()]
         lines += [''] + self.segs + ['']
         lines += [f'.external {a} {b} {name}' for name, a, b in self.ports]
         lines += [f'.freq fmin={freq_hz:g} fmax={freq_hz:g} ndec=1', '.end']
@@ -122,6 +138,48 @@ def _seg_box_clip(p0, p1, centre, u, n, half_len, half_wid):
     return (t0, t1) if t1 > t0 else None
 
 
+MERGE_DEG = 0.01   # consecutive pieces of a trace closer than this to a straight line become one segment
+
+
+def merge_collinear(pieces, model, keep, max_deg=MERGE_DEG):
+    """Join consecutive pieces of a trace that are straight to within max_deg degrees into one segment, dropping the
+    node between them from the model. FastHenry takes two filaments that meet end to end as parallel only if they
+    are exactly so; at a few ten-thousandths of a degree apart (a straight track the generator split in two, its
+    points rounded to KiCad's nanometre) it computes their mutual inductance with its non-parallel formula, which
+    is infinite for filaments that touch, and the whole impedance matrix comes out NaN. pieces: [body, a, b, w, h,
+    nwinc, nhinc, rw, rh] with node names a and b; keep: node names never dropped (ports, cuts, vias)."""
+    def angle(n, p, q):
+        (x, y, _), (px, py, _), (qx, qy, _) = model.xyz(n), model.xyz(p), model.xyz(q)
+        u, v = (x - px, y - py), (qx - x, qy - y)
+        c = (u[0] * v[0] + u[1] * v[1]) / (math.hypot(*u) * math.hypot(*v))
+        return math.degrees(math.acos(max(-1.0, min(1.0, c))))
+
+    dropped = 0
+    while True:
+        at = {}
+        for i, s in enumerate(pieces):
+            for n in (s[1], s[2]):
+                at.setdefault(n, []).append(i)
+        for n, ii in at.items():
+            if len(ii) != 2 or n in keep:
+                continue
+            s, t = pieces[ii[0]], pieces[ii[1]]
+            if s[0] != t[0] or s[3:] != t[3:] or model.xyz(n)[2] != model.xyz(s[1])[2]:
+                continue
+            p = s[1] if s[2] == n else s[2]
+            q = t[1] if t[2] == n else t[2]
+            if p == q or angle(n, p, q) >= max_deg:
+                continue
+            pieces[ii[0]] = [s[0], p, q] + s[3:]
+            del pieces[ii[1]]
+            key = next(k for k, v in model.nodes.items() if v[0] == n)
+            del model.nodes[key]
+            dropped += 1
+            break
+        else:
+            return dropped
+
+
 def add_board(model, board, zlayers, bodies, nwinc=1, nhinc=1, rw=None, rh=None, open_vias=(), cuts=(),
               via_bar_mm=None, max_deg=5.0, plating_mm=0.025, log=print):
     """The tracks and vias of the nets in `bodies` ({net name: body}) as segments at their layers' mid-heights
@@ -133,6 +191,7 @@ def add_board(model, board, zlayers, bodies, nwinc=1, nhinc=1, rw=None, rh=None,
     zmid = {k: (a + b) / 2 for k, (a, b) in zlayers.items()}
     thick = {k: b - a for k, (a, b) in zlayers.items()}
     cut_ends = {i: [] for i in range(len(cuts))}
+    straight = []                                        # the tracks' straight pieces, before they are joined
     for t in board.tracks:
         body = bodies.get(t.net)
         if body is None or t.layer not in zmid:
@@ -164,7 +223,18 @@ def add_board(model, board, zlayers, bodies, nwinc=1, nhinc=1, rw=None, rh=None,
                 q0, q1 = p0 + (p1 - p0) * a, p0 + (p1 - p0) * b
                 na = model.node((t.net, t.layer, round(q0[0], 5), round(q0[1], 5)), q0[0], q0[1], zmid[t.layer])
                 nb = model.node((t.net, t.layer, round(q1[0], 5), round(q1[1], 5)), q1[0], q1[1], zmid[t.layer])
-                model.segment(body, na, nb, t.width, thick[t.layer], nwinc, nhinc, rw, rh)
+                straight.append([body, na, nb, t.width, thick[t.layer], nwinc, nhinc, rw, rh])
+    keep = {model.nodes[(c['net'], c['layer'], round(x, 5), round(y, 5))][0]
+            for ci, c in enumerate(cuts) for x, y in cut_ends[ci]}
+    for v in board.vias:                                 # where vias land, and where left-out vias were
+        if bodies.get(v.net) is not None:
+            keep |= {name for key, (name, nx, ny, _) in model.nodes.items()
+                     if key[0] == v.net and math.hypot(nx - v.at[0], ny + v.at[1]) <= max(v.size / 2 + 0.05, 0.45)}
+    dropped = merge_collinear(straight, model, keep)
+    if dropped:
+        log(f'{dropped} track joints straight to within {MERGE_DEG} degrees: their pieces joined')
+    for p in straight:
+        model.segment(*p)
     for v in board.vias:
         body = bodies.get(v.net)
         if body is None:
@@ -269,7 +339,7 @@ def add_polygon(model, body, pts, axis, angle_deg, z, h, h_edge=0.05, h_max=0.3,
 
         def xy(i, j):
             return cx + rc[i] * math.cos(tc[j] + th), -(cy + rc[i] * math.sin(tc[j] + th))
-        tag = f'{body}{len(model.nodes)}_'
+        tag = f'{body}{model.made}_'
         names = {(i, j): model.node((tag, i, j), *xy(i, j), z) for i in range(len(rc)) for j in range(len(tc))}
         for (i, j), n in names.items():
             for di, dj in ((0, 1), (1, 0)):
@@ -290,7 +360,7 @@ def add_polygon(model, body, pts, axis, angle_deg, z, h, h_edge=0.05, h_max=0.3,
     inside = shapely.contains_xy(poly, X, Y)
     dx, dy = X - cx, Y - cy
     Xr, Yr = cx + dx * math.cos(th) - dy * math.sin(th), cy + dx * math.sin(th) + dy * math.cos(th)
-    tag = f'{body}{len(model.nodes)}_'
+    tag = f'{body}{model.made}_'
     names = {(i, j): model.node((tag, i, j), Xr[i, j], -Yr[i, j], z) for i, j in zip(*np.nonzero(inside))}
     for (i, j), n in names.items():
         for di, dj in ((1, 0), (0, 1)):
