@@ -328,7 +328,8 @@ def main():
         hole = Point(s['rx_vias'][rx]).buffer(s['via_void_radius_mm'], 64)
         port_section(fig.add_subplot(sub[0, 0]), case, codes, rx, s['rx_vias'][rx], hole, bottom['z1'], top['z0'],
                      f'{rx} port (COS the same): the via left out',
-                     f'0 A is forced through {rx}, so the voltage\nbetween its terminals is its open-circuit EMF')
+                     f'0 A is forced through {rx}, so the voltage\nbetween its terminals, one voxel on the via' + chr(39) + 's\n'
+                     'axis in each pad, is its open-circuit EMF')
     hole = Point(s['tx_end']).buffer(s['tx_end_radius_mm'], 32)
     ax = fig.add_subplot(sub[0, 1])
     port_section(ax, case, codes, 'TX', s['tx_end'], hole, bottom['z1'], top['z0'],

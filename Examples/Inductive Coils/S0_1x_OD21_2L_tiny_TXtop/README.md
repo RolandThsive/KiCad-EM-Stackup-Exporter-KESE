@@ -14,7 +14,7 @@ Bore and outer radius 2 and 10.5 mm, 2 copper layers, board 0.8 mm, air gap 1 mm
 
 ![how the stator and rotor are set up in PyPEEC](S0_1x_OD21_2L_tiny_TXtop_pypeec_setup.webp)
 
-*How the boards sit in PyPEEC, drawn by `rig_picture.py` from the voxels simulation.py solves: the rotor copper side down over the stator, every piece of copper in voxels of 50 µm across and about 35 µm high, each receiver opened at a left-out via (its voxels that border the gap are its two terminals, held at 0 A, so the voltage between them is the open-circuit EMF), and the TX opened between its two stacked ends, where 1 A is driven.*
+*How the boards sit in PyPEEC, drawn by `rig_picture.py` from the voxels simulation.py solves: the rotor copper side down over the stator, every piece of copper in voxels of 50 µm across and about 35 µm high, each receiver opened at a left-out via: its two pads are filled over the drill hole and the one voxel on the via's axis in each pad is a terminal, held at 0 A, so the voltage between them is the open-circuit EMF. The TX is opened between its two stacked ends, where 1 A is driven.*
 
 | Coil | Net | Opened at (KiCad mm) | How |
 |---|---|---|---|
@@ -35,19 +35,19 @@ Every angle at every gap, one PyPEEC solve each: 8 angles at each of 5 gaps, and
 
 | Air gap | Amplitude SIN / COS | Angle error | Solves passing both checks | L TX over the turn |
 |---|---|---|---|---|
-| 2 mm | 0.93 / 0.94 nH (21 / 21 mV) | 0.4° rms, 0.7° peak | 8 of 8 | 128.6 to 128.8 nH |
-| 1.5 mm | 1.45 / 1.45 nH (32 / 32 mV) | 0.4° rms, 0.8° peak | 8 of 8 | 126.9 to 127.2 nH |
-| 1 mm | 2.31 / 2.32 nH (51 / 51 mV) | 0.5° rms, 0.9° peak | 8 of 8 | 122.6 to 123.2 nH |
-| 0.5 mm | 3.70 / 3.71 nH (81 / 82 mV) | 0.8° rms, 1.2° peak | 8 of 8 | 114.8 to 116.0 nH |
-| 0.1 mm | 5.12 / 5.13 nH (113 / 113 mV) | 1.6° rms, 1.9° peak | 8 of 8 | 101.6 to 104.0 nH |
+| 2 mm | 0.99 / 1.00 nH (22 / 22 mV) | 0.4° rms, 0.5° peak | 8 of 8 | 129.0 to 129.1 nH |
+| 1.5 mm | 1.53 / 1.54 nH (34 / 34 mV) | 0.4° rms, 0.5° peak | 8 of 8 | 127.4 to 127.5 nH |
+| 1 mm | 2.43 / 2.44 nH (53 / 54 mV) | 0.4° rms, 0.6° peak | 8 of 8 | 123.3 to 123.5 nH |
+| 0.5 mm | 3.85 / 3.86 nH (85 / 85 mV) | 0.7° rms, 0.9° peak | 8 of 8 | 116.1 to 116.4 nH |
+| 0.1 mm | 5.23 / 5.24 nH (115 / 115 mV) | 1.5° rms, 1.8° peak | 8 of 8 | 104.0 to 104.3 nH |
 
 ![SIN at each air gap](Results/SINCOS_gaps_SIN.webp)
 
 *SIN at each air gap, one dot per solve; a ring would mark a solve that fails the two checks (none does). [`SINCOS_gaps_COS.webp`](Results/SINCOS_gaps_COS.webp) is the same for COS, and [`SINCOS_gaps.webp`](Results/SINCOS_gaps.webp) has both.*
 
-Every solve passes both checks: the TX's L and R from its voltage agree with the L from the stored energy and the R from the losses within 0.001 %, where 1 % is allowed. At every gap SIN and COS are within 0.3 % of each other in amplitude and 89.7° to 90.3° apart. The signal is 5.12 nH for SIN at 0.1 mm and falls to 3.70, 2.31, 1.45 and 0.93 nH at 0.5, 1, 1.5 and 2 mm (113 down to 21 mV of EMF at 1 A). The angle error is 1.6° rms at 0.1 mm, 0.8° at 0.5 mm, 0.5° at 1 mm and 0.4° from 1.5 to 2 mm. At 0.1 mm it alternates in sign from one angle to the next: a ripple at four periods per electrical period, the fastest that eight angles a period can show. It is the fourth harmonic that sensors with two receiver coils typically show, which the third and fifth harmonics of the sine and cosine both give (Kuntz, Gerlach and Fella, arXiv 2503.14627), and those fade with the gap faster than the sine itself. L TX moves by 2.4 nH at most over the turn and rises from 102.8 nH at 0.1 mm to 128.7 nH at 2 mm; with the rotor away it is 133.3 nH, where the generator estimated 106 nH with the rotor and 130 nH without.
+Every solve passes both checks: the TX's L and R from its voltage agree with the L from the stored energy and the R from the losses within 0.001 %, where 1 % is allowed. At every gap SIN and COS are within 0.3 % of each other in amplitude and 90.0° apart. The signal is 5.23 nH for SIN at 0.1 mm and falls to 3.85, 2.43, 1.53 and 0.99 nH at 0.5, 1, 1.5 and 2 mm (115 down to 22 mV of EMF at 1 A). The angle error is 1.5° rms at 0.1 mm, 0.7° at 0.5 mm and 0.4° from 1 to 2 mm. At 0.1 mm it alternates in sign from one angle to the next: a ripple at four periods per electrical period, the fastest that eight angles a period can show. It is the fourth harmonic that sensors with two receiver coils typically show, which the third and fifth harmonics of the sine and cosine both give (Kuntz, Gerlach and Fella, arXiv 2503.14627), and those fade with the gap faster than the sine itself. L TX moves by 0.3 nH at most over the turn and rises from 104.2 nH at 0.1 mm to 129.1 nH at 2 mm; with the rotor away it is 133.7 nH, where the generator estimated 106 nH with the rotor and 130 nH without.
 
-Against the Elmer branch, which solves the same board from the same export ([`../Comparisons`](../Comparisons/)): SIN's amplitude differs by +1.3 %, -0.1 %, -1.4 %, -2.4 % and -3.2 % at 0.1, 0.5, 1, 1.5 and 2 mm, and the angle error is 1.6° against 1.5°, 0.8° against 0.7°, 0.5° against 0.4°, 0.4° against 0.4° and 0.4° against 0.4° rms. L TX is 10 to 12 % higher here than in Elmer at every gap; [S0](../S0_1x_OD21_2L_tiny/README.md#results-at-each-air-gap) checks its TX against a hand calculation, which sides with PyPEEC.
+Against the Elmer branch, which solves the same board from the same export ([`../Comparisons`](../Comparisons/)): SIN's amplitude differs by +3.3 %, +3.8 %, +3.5 %, +3.1 % and +2.9 % at 0.1, 0.5, 1, 1.5 and 2 mm, and the angle error is 1.5° against 1.5°, 0.7° against 0.7°, 0.4° against 0.4°, 0.4° against 0.4° and 0.4° against 0.4° rms. L TX is 10 to 13 % higher here than in Elmer at every gap; [S0](../S0_1x_OD21_2L_tiny/README.md#results-at-each-air-gap) checks its TX against a hand calculation, which sides with PyPEEC. On the boards opened at a via, PyPEEC's M sits a few percent above Elmer's, more than on the boards opened by a cut, where the two agree within about 2.5 %: in PyPEEC a terminal is a set of voxels held at one potential, and where it sits moves the port's voltage by a few percent ([S0](../S0_1x_OD21_2L_tiny/README.md#results-at-each-air-gap) has how).
 
 ## The folder
 
@@ -64,11 +64,11 @@ Beside this README, `S0_1x_OD21_2L_tiny_TXtop_stator_and_rotor.webp` is the gene
 
 | Air gap | Grid (voxels of 50 µm) | dz | Memory a solve | Time a solve |
 |---|---|---|---|---|
-| 0.1 mm | 358 × 306 × 33 = 3.6 million | 26.9 µm | 1.2 to 1.3 GB | 3 to 4 min |
+| 0.1 mm | 358 × 306 × 33 = 3.6 million | 26.9 µm | 1.2 to 1.3 GB | 2 to 4 min |
 | 0.5 mm | 358 × 306 × 34 = 3.7 million | 38.2 µm | 1.2 to 1.3 GB | 2 to 3 min |
-| 1 mm | 358 × 306 × 52 = 5.7 million | 34.5 µm | 1.7 to 1.8 GB | 3 to 4 min |
-| 1.5 mm | 358 × 306 × 79 = 8.7 million | 29.0 µm | 2.5 to 2.6 GB | 6 to 8 min |
-| 2 mm | 358 × 306 × 81 = 8.9 million | 34.5 µm | 2.5 to 2.6 GB | 5 to 6 min |
+| 1 mm | 358 × 306 × 52 = 5.7 million | 34.5 µm | 1.7 to 1.8 GB | 4 to 6 min |
+| 1.5 mm | 358 × 306 × 79 = 8.7 million | 29.0 µm | 2.5 to 2.6 GB | 5 to 7 min |
+| 2 mm | 358 × 306 × 81 = 8.9 million | 34.5 µm | 2.5 to 2.6 GB | 4 to 6 min |
 
 Each solve is PyPEEC's, on 4 cores, at PyPEEC's default tolerances: GMRES in 2 to 4 iterations. The grid grows taller with the gap, and the memory and time with it; a machine with 8 GB runs every gap. Voxels of 50 µm read M and L TX to about half a percent (see the [coils' README](../README.md)); `--voxel 0.035` tries smaller ones as a trial, kept in `case/`.
 
