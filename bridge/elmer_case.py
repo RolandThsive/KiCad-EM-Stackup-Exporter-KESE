@@ -269,6 +269,7 @@ def run(sif, threads=4, log=print, timeout=None):
     env = dict(os.environ)
     env['PATH'] = f'{ELMER_BIN}:{env.get("PATH", "")}'
     env['OMP_NUM_THREADS'] = str(threads)
+    env.setdefault('ELMER_HOME', str(ELMER_BIN.parent))   # Elmer finds its own files there, wherever it is unpacked
     logf = sif.with_suffix('.log')
     t0 = time.time()
     peak = 0

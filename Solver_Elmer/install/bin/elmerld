@@ -1,0 +1,19 @@
+#!/bin/sh -f
+
+if test "$ELMER_LIB" = ""; then
+  if  test "$ELMER_HOME" = ""; then
+     LIBDIR=/home/user/Elmer_Integration/Solver_Elmer/install/lib
+  else
+     LIBDIR=$ELMER_HOME/lib
+  fi
+else
+  LIBDIR=$ELMER_LIB
+fi
+
+LD=/usr/bin/f95
+cmd="$LD  -fopenmp -fallow-argument-mismatch -fPIC -shared $* -L/home/user/Elmer_Integration/Solver_Elmer/install/lib/elmersolver -L$LIBDIR -lelmersolver"
+printf "%s " $cmd
+printf "\n"
+$LD  -fopenmp -fallow-argument-mismatch -fPIC -shared $* -L/home/user/Elmer_Integration/Solver_Elmer/install/lib/elmersolver -L$LIBDIR -lelmersolver
+#      $* -L$LIBDIR -lelmersolver
+#      $*

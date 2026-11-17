@@ -1,6 +1,7 @@
-# Elmer is built here by hand and never committed
+# Elmer: the build the examples ran on is committed (install/); its source and build folders are not
 Solver_Elmer/*
 !Solver_Elmer/README.md
+!Solver_Elmer/install/
 # KESE is copied here by hand from main and never committed
 3D_Geometry/*
 !3D_Geometry/README.md

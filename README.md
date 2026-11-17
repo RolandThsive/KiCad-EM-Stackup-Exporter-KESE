@@ -16,7 +16,7 @@ section, what was expected and what came out.  The inductive encoder coils are i
 | Folder | What it holds |
 |---|---|
 | `3D_Geometry/` | Empty on purpose: copy KESE's `Generator/` in from `main` by hand (see its README) |
-| `Solver_Elmer/` | Empty on purpose: build Elmer in here by hand (see its README) |
+| `Solver_Elmer/` | `install/`: the Elmer 26.2.1 build every simulation here ran on, for Ubuntu 24.04 (see its README for the libraries it needs, and how to build it yourself) |
 | `bridge/` | The bridge, in Python, general to any board: `geometry.py` (KESE's parts), `mesh25d.py` (the 2.5D mesh), `ports.py` (each coil's electrodes and port sheet), `elmer_case.py` (the case and its circuits), `study.py` (running Elmer and reading it back). Its [README](bridge/README.md) says what it does, how to call it and where it stops |
 | `Examples/E01_circular_loop/`, `Examples/E02_coaxial_loops/` | The two proof boards, each with its board, `make_board.py`, `simulation.py`, `README.md` and `results.md` |
 | `Examples/Inductive Coils/` | Inductive encoder boards from the Sinusoidal Coil Generator, one folder each: S0 and the boards made from it (non-commercial licence, see its LICENSE.md) |
@@ -50,6 +50,6 @@ A coarser mesh or a direct solver on a machine with more memory changes these nu
 
 ## Licence
 
-GPL-3.0, as KESE.  Elmer itself is GPL-2.0 or later (its library LGPL-2.1) and is not part of this
-repository; it is built from its own source in `Solver_Elmer/`. The coil boards in `Examples/Inductive Coils/`
+GPL-3.0, as KESE.  Elmer itself is GPL-2.0 or later (its library LGPL-2.1): the build in `Solver_Elmer/install/`
+is made from its unmodified release 26.2.1 source, and keeps Elmer's licences (see `Solver_Elmer/README.md`). The coil boards in `Examples/Inductive Coils/`
 keep the Sinusoidal Coil Generator's non-commercial licences (see that folder's LICENSE.md).

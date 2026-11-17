@@ -1,10 +1,11 @@
 #!/bin/bash
-# Sets up a fresh Ubuntu 24.04 machine for the bridge: Elmer 26.2.1 built into Solver_Elmer/install, and the Python
-# packages of requirements.txt in .venv, at the versions the examples ran with. Run it from anywhere in the branch:
+# Sets up a fresh Ubuntu 24.04 machine for the bridge: the libraries the committed Elmer 26.2.1 in Solver_Elmer/install
+# needs, and the Python packages of requirements.txt in .venv, at the versions the examples ran with. Run it from
+# anywhere in the branch:
 #
 #     bash bridge/setup_machine.sh            (JOBS=2 bash bridge/setup_machine.sh to build with fewer jobs)
 #
-# Safe to run again: Elmer is set up only if Solver_Elmer/install/bin/ElmerSolver is missing. If ELMER_TARBALL names a
+# Safe to run again: Elmer is built only if Solver_Elmer/install/bin/ElmerSolver is missing. If ELMER_TARBALL names a
 # packed Solver_Elmer/install of the same release built on Ubuntu 24.04 (tar -czf ... install), it is unpacked
 # instead of building (the install finds its libraries relative to itself). KESE is not needed for a board whose
 # 3D_Geometry/ is committed. This script is GPL-3.0 as the bridge.
@@ -14,6 +15,10 @@ E="$ROOT/Solver_Elmer"
 JOBS="${JOBS:-$(nproc)}"
 SUDO=""
 [ "$(id -u)" = 0 ] || SUDO=sudo
+if [ -x "$E/install/bin/ElmerSolver" ] && ldd "$E/install/lib/elmersolver/libelmersolver.so" | grep -q 'not found'; then
+  $SUDO apt-get update -q                          # the committed build: only the libraries it runs with
+  $SUDO apt-get install -y -q libgfortran5 libgomp1 libopenblas0 libopenmpi3t64 libmumps-5.6t64
+fi
 if [ ! -x "$E/install/bin/ElmerSolver" ]; then
   $SUDO apt-get update -q
   $SUDO apt-get install -y -q build-essential cmake git gfortran libopenmpi-dev libblas-dev liblapack-dev \

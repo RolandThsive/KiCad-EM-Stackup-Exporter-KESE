@@ -50,7 +50,7 @@ rows = S.solve(case, [3.5e6], 'case/run')                                 # L, R
 ## What it needs
 
 * KESE: its `Generator/` copied into [`../3D_Geometry`](../3D_Geometry) from `main`, or its path in `KESE_PATH`.
-* Elmer, built into [`../Solver_Elmer/install`](../Solver_Elmer).
+* Elmer, in [`../Solver_Elmer/install`](../Solver_Elmer): committed, for Ubuntu 24.04, with the libraries its README lists.
 * The Python packages in [`../requirements.txt`](../requirements.txt) (numpy, scipy, shapely, trimesh, gmsh, mapbox_earcut).
 
 `run_kese(mask=True)`, the default, asks KESE for a 20 µm solder mask over copper and laminate with tented vias, as the coil boards' brief does; `mask=False` leaves it out.
