@@ -14,7 +14,8 @@ it redraws every chart from the results already there and rewrites SINCOS_Result
     SINCOS_gaps_SIN.webp, SINCOS_gaps_COS.webp
                               one channel at every air gap, the same way, each gap in its own colour
 
-The one-channel charts are for judging the solves closely; SINCOS_Results.md shows only the first two kinds.
+The one-channel charts are for judging the solves closely; SINCOS_Results.md shows only the first two kinds. Every
+chart runs over the whole turn, 0 to 360 degrees, whatever the rotor's period.
 
 This script is GPL-3.0 as the bridge.
 """
@@ -34,6 +35,7 @@ from angle_error import results_files, sine_fit   # noqa: E402
 
 SPEC = json.loads((HERE / 'test_spec.json').read_text())
 PERIOD = SPEC['sets'][0].get('rotor_period_mech_deg', 360.0)
+SPAN = 360.0      # every chart runs over the whole turn, 0 to 360 degrees, whatever the rotor's period
 FREQ = SPEC['sets'][0]['f_Hz']
 INK, INK2, GRID, SURFACE = '#0b0b0b', '#52514e', '#e4e3df', '#fcfcfb'
 COLOURS = {'SIN': (0x2a, 0x78, 0xd6), 'COS': (0xeb, 0x68, 0x34)}    # categorical slots 1 and 2 of the house palette
@@ -89,8 +91,8 @@ def _axes(title, subtitle):
 def _style(ax, matplotlib, title=None, subtitle=None):
     ax.set_facecolor(SURFACE)
     ax.axhline(0, color=INK2, lw=0.8, zorder=1)
-    ax.set_xlim(0, PERIOD)
-    ax.set_xticks(np.linspace(0, PERIOD, 9))
+    ax.set_xlim(0, SPAN)
+    ax.set_xticks(np.linspace(0, SPAN, 9))
     ax.xaxis.set_major_formatter(matplotlib.ticker.FormatStrFormatter('%g'))
     ax.set_ylabel('M from the TX (nH)', color=INK2)
     if title:
@@ -130,15 +132,15 @@ def _save(plt, fig, ax, path, ncol):
 
 def _draw(ax, ang, y, name, col, whole, ideal=True, label=None, end_label=None):
     """One channel: the ideal curve dotted (its best sine), the solves joined by a solid line, a dot for each."""
-    tt = np.linspace(0, PERIOD, 721)
+    tt = np.linspace(0, SPAN, 721)
     if ideal and len(y) >= 3:
         f = sine_fit(ang, y, PERIOD)
         keep = np.ones_like(tt, bool) if whole else (tt >= min(ang)) & (tt <= max(ang))
         yy = f['offset'] + f['amplitude'] * np.sin(np.radians(tt[keep] * 360.0 / PERIOD + f['phase_deg']))
         ax.plot(tt[keep], yy, color=col, lw=1.3, ls=DOTS, alpha=0.75, zorder=2)
-    xs, ys = list(ang), list(y)                      # round to the start of the period once the turn is covered
+    xs, ys = list(ang), list(y)                      # back round to 0 degrees once the turn is covered
     if whole and min(ang) == 0:
-        xs, ys = xs + [PERIOD], ys + [y[0]]
+        xs, ys = xs + [SPAN], ys + [y[0]]
     ax.plot(xs, ys, color=col, lw=1.6, zorder=3)
     ax.plot(ang, y, ls='none', color=col, marker='o', ms=6.5, mec=SURFACE, mew=1.4, zorder=4)
     ax.plot([], [], color=col, lw=1.6, marker='o', ms=6, mec=SURFACE, label=label or name)
@@ -163,7 +165,7 @@ def _end_labels(ax, labels):
     placed = [y - shift for y in placed]                 # sit on their ends
     over, under = placed[-1] - (hi - 0.02 * (hi - lo)), (lo + 0.02 * (hi - lo)) - placed[0]
     placed = [y - over for y in placed] if over > 0 else [y + under for y in placed] if under > 0 else placed
-    dx = 0.035 * PERIOD
+    dx = 0.035 * SPAN
     for (x, y, text, col), yt in zip(labels, placed, strict=True):
         ax.annotate(text, (x, y), xytext=(x + dx, yt), textcoords='data', va='center', ha='left', color=INK,
                     fontsize=8.5, annotation_clip=False,
@@ -175,7 +177,7 @@ def gap_chart(res_file):
     res, ang, ms, mc = curves_of(res_file)
     if not ang:
         return None
-    whole = len(ang) >= 3 and max(ang) - min(ang) >= 0.75 * PERIOD
+    whole = len(ang) >= 3 and max(ang) - min(ang) >= 0.75 * SPAN
     gap, d = res['gap_mm'], res['voxel_mm']
     plt, fig, ax = _axes(f'{res["board"]}: SIN and COS against the rotor angle, {gap:g} mm air gap',
                          f'1 A at {FREQ / 1e6:g} MHz in the TX; solid: the solves joined; dotted: the ideal curves, '
@@ -207,7 +209,7 @@ def gaps_chart(results):
     ends = []
     for j, (gap, ang, ms, mc) in enumerate(data):
         k = 1.0 - 0.5 * j / (len(data) - 1)
-        whole = max(ang) - min(ang) >= 0.75 * PERIOD
+        whole = max(ang) - min(ang) >= 0.75 * SPAN
         for name, y in (('SIN', ms), ('COS', mc)):
             ends.append(_draw(ax, ang, y, name, tint(COLOURS[name], k), whole, label=f'{name}, {gap:g} mm',
                               end_label=f'{name} {gap:g} mm'))
@@ -265,7 +267,7 @@ def channel_chart(res_file, name):
     if len(ang) < 4:
         return None
     y = np.asarray(ms if name == 'SIN' else mc)
-    whole = max(ang) - min(ang) >= 0.75 * PERIOD
+    whole = max(ang) - min(ang) >= 0.75 * SPAN
     gap, loose = res['gap_mm'], _loose(res)
     ideal, f = _ideal(ang, y)
     rms = f['rms_left']
@@ -302,7 +304,7 @@ def channel_gaps_chart(results, name):
     cols = gap_colours([d[0] for d in data])
     for gap, ang, y, loose in data:
         col = tint(cols[gap], 1.0)
-        whole = max(ang) - min(ang) >= 0.75 * PERIOD
+        whole = max(ang) - min(ang) >= 0.75 * SPAN
         ideal, _ = _ideal(ang, y)
         ends.append(_draw(ax, ang, y, name, col, whole, label=f'{name}, {gap:g} mm', end_label=f'{gap:g} mm'))
         dx.plot(ang, y - ideal, color=col, lw=1.3, marker='o', ms=5.5, mec=SURFACE, mew=1.2, zorder=3)
