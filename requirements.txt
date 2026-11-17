@@ -1,0 +1,9 @@
+# The bridge's Python packages, at the versions the test boards ran with (Python 3.12 or 3.13: numpy 2.5 and scipy 1.18 need 3.12
+# or newer). FastHenry itself is a program, not a package: see Solver_FastHenry.
+# KESE's own packages (Generator/requirements.txt on main) go into the same environment, only to export a board.
+numpy==2.5.5
+scipy==1.18.1
+shapely==2.2.0
+# the charts and pictures of the coil examples (make_charts.py, rig_picture.py, angle_setup.py)
+matplotlib==3.11.2
+pillow==13.0.0

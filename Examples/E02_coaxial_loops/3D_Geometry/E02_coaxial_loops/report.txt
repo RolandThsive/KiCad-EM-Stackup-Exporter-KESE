@@ -1,0 +1,56 @@
+E02_coaxial_loops  (E02_coaxial_loops.kicad_pcb)   generated 2026-11-15 23:21
+mode: simulation   formats: step, stl   units: mm
+KiCad format 20221018 (KiCad 7), generator pcbnew
+
+stack-up   built: PLIES_SEPARATE (parameters/PCB_elements/Stackup.py)
+  lines built: top_solder_mask, top_copper, prepreg_plies, resin_between_traces, inner_copper, cores, bottom_copper, bottom_solder_mask, plated_holes, via_resin
+  lines left out: top_silkscreen, top_finish, bottom_finish, bottom_silkscreen, hole_finish
+  copper layers: F.Cu, B.Cu
+  laminate 1.5300 mm (stackup dielectrics (+ inner copper); board total in file 1.6 mm)
+  F.Cu     z +0.7650 .. +0.8000 mm  (foil 0.035 mm)
+  B.Cu     z -0.8000 .. -0.7650 mm  (foil 0.035 mm)
+  dielectric 1             core     FR4        1.5300 mm  er 4.4  tan d 0.02   z -0.7650 .. +0.7650   (djordjevic_sarkar, values given at 1 GHz)
+  vias: KiCad default (vias tented); pad-to-mask clearance 0.0 mm; silkscreen over copper (mask openings): False
+  origin: KiCad page origin
+
+read
+       2  arc tracks on B.Cu
+       2  arc tracks on F.Cu
+       1  outline shapes on Edge.Cuts
+skipped
+  nothing
+
+notes
+  font: KiCad newstroke (kicad_newstroke.json.gz)
+  solder mask: 0.02 mm over laminate, 0.02 mm over copper (parameters/PCB_elements/SolderMask.py)
+  left out of every file: top_silkscreen, top_finish, bottom_finish, bottom_silkscreen, hole_finish (False in PLIES_SEPARATE, parameters/PCB_elements/Stackup.py)
+
+parts
+  Board_dielectric 1                         12 triangles  material Board_core #968A58 alpha 1.0
+  Copper_RX                                1028 triangles  material Copper #CD803E alpha 1.0
+  Copper_TX                                1028 triangles  material Copper #CD803E alpha 1.0
+  Top Solder Mask                          3936 triangles  material Top Solder Mask #EBEBE6 alpha 0.8
+  Bottom Solder Mask                       3936 triangles  material Bottom Solder Mask #EBEBE6 alpha 0.8
+
+timing
+  read              0.0008 s
+  collect           0.0012 s
+  resolve           0.0093 s
+  geometry          0.0349 s
+  materials         0.0001 s
+  assemble          0.1346 s
+  write             0.0843 s
+  verify            0.0091 s
+
+Verifier: PASS
+  Board_dielectric 1                   closed=True winding=True volume=1377.0000 mm3
+  Copper_RX                            closed=True winding=True volume=1.0935 mm3
+  Copper_TX                            closed=True winding=True volume=1.0935 mm3
+  Top Solder Mask                      closed=True winding=True volume=18.0761 mm3
+  Bottom Solder Mask                   closed=True winding=True volume=18.0761 mm3
+  overlap between different parts, every slice against the others: none
+  Board_dielectric 1                   volume from faces 1377.000000 mesh 1377.000000 slices 1377.000000 prisms 1377.000000 mm3 closed=True whole=True
+  Copper_RX                            volume from faces 1.093531 mesh 1.093531 slices 1.093531 prisms 1.093531 mm3 closed=True whole=True
+  Copper_TX                            volume from faces 1.093531 mesh 1.093531 slices 1.093531 prisms 1.093531 mm3 closed=True whole=True
+  Top Solder Mask                      volume from faces 18.076098 mesh 18.076098 slices 18.076098 prisms 18.076098 mm3 closed=True whole=True
+  Bottom Solder Mask                   volume from faces 18.076098 mesh 18.076098 slices 18.076098 prisms 18.076098 mm3 closed=True whole=True

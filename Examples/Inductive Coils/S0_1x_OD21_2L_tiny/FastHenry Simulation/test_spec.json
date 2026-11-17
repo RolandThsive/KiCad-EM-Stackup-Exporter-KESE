@@ -1,0 +1,32 @@
+{
+ "board": "S0_1x_OD21_2L_tiny",
+ "generator": "Single",
+ "purpose": "the smallest board that still is a whole sensor: the SIN and COS curves over a full turn of the rotor, at any air gap, on a 16 GB machine",
+ "units": "mm, H, Hz, ohm, degrees",
+ "files": {"stator": "Boards/Stator.kicad_pcb", "rotor": "Boards/Rotor.kicad_pcb", "parameters": "Boards/Parameters.txt",
+           "expected": "Results/expected_results.json", "note": "paths from the board folder"},
+ "coordinates": {
+  "kicad_axis_xy": [100.0, 100.0],
+  "model_origin": "the rotation axis, at the top face of the stator's F.Cu copper",
+  "z": "z up, from the stator towards the rotor. Stator F.Cu top face at z = 0, B.Cu at z = -0.8"
+ },
+ "stator": {"layers": ["F.Cu", "B.Cu"], "board_thickness_mm": 0.8, "copper_thickness_mm": 0.035,
+            "bore_and_outer_radius_mm": [2.0, 10.5], "rx_band_mm": [3.2, 6.1], "tx_ring_mm": 7.2},
+ "rotor": {"copper_layer": "F.Cu of Rotor.kicad_pcb (one gr_poly: a half ring)",
+           "placement": "copper side towards the stator, not mirrored, its copper face at z = +air_gap",
+           "rings": [{"r_in": 2.52, "r_out": 7.8, "sectors": 1, "duty": 0.5}]},
+ "air_gap_mm": 1.0,
+ "air_gap_definition": "stator F.Cu top face to rotor copper face (copper to copper)",
+ "nets": {"1": "COS", "2": "SIN", "TX": "TX"},
+ "terminals": {
+  "TX": {"kind": "TX ends", "source": "Parameters.txt lead-cutting suggestion", "ends_xy_kicad": [109.8, 100.0],
+         "layers": ["F.Cu", "B.Cu"],
+         "how": "the two coil ends lie stacked at this point on the two layers; the terminal goes between them"},
+  "2": {"kind": "RX via (fallback)", "source": "the generator found no cut spot on this board; the layer-change via farthest from the TX copper (4.0 mm), of the two such on the far side from the TX terminal",
+        "via_xy_kicad": [97.737258, 102.262742], "how": "leave this via out (opens the loop); the terminal goes between its two pads"},
+  "1": {"kind": "RX via (fallback)", "source": "as for 2", "via_xy_kicad": [97.737258, 97.737258],
+        "how": "leave this via out (opens the loop); the terminal goes between its two pads"}
+ },
+ "sets": [{"set": 1, "tx": "TX", "sin": "2", "cos": "1", "f_Hz": 3500000.0, "loops": 1, "electrical_period_mech_deg": 360.0,
+           "sweep_angles_mech_deg": [0, 45, 90, 135, 180, 225, 270, 315]}]
+}

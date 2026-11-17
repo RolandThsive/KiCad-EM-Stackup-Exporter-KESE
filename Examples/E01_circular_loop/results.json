@@ -1,0 +1,257 @@
+{
+ "board": "E01_circular_loop.kicad_pcb",
+ "settings": {
+  "board": "E01_circular_loop.kicad_pcb",
+  "radius_mm": 10.0,
+  "width_mm": 0.5,
+  "gap_mm": 0.2,
+  "ends_mm": [
+   [
+    109.993873,
+    -100.35
+   ],
+   [
+    109.993873,
+    -99.65
+   ]
+  ],
+  "sigma": 58000000.0,
+  "freqs_hz": [
+   10000.0,
+   3500000.0
+  ],
+  "ladder": [
+   [
+    1,
+    1
+   ],
+   [
+    3,
+    1
+   ],
+   [
+    5,
+    1
+   ],
+   [
+    9,
+    1
+   ],
+   [
+    9,
+    3
+   ],
+   [
+    15,
+    3
+   ]
+  ],
+  "rw": 2.0,
+  "chord_deg": 5.0,
+  "options": [
+   "-s",
+   "ludecomp",
+   "-m",
+   "direct",
+   "-a",
+   "off"
+  ]
+ },
+ "copper_mm": 0.03500000000000003,
+ "references": {
+  "L_arc_dc_h": 5.558979180727529e-08,
+  "L_arc_hf_h": 5.503934033647907e-08,
+  "L_ring_dc_h": 5.662229455907937e-08,
+  "L_ring_hf_h": 5.606446261875009e-08,
+  "arc_share": 0.9888568781393898,
+  "L_ring_share_dc_h": 5.599134543078018e-08,
+  "L_ring_share_hf_h": 5.5439729479739736e-08,
+  "R_dc_ohm": 0.06120075252410373,
+  "theta_rad": 6.213171007628889,
+  "gmd_dc_mm": 0.11957250000000001,
+  "gmd_hf_mm": 0.125
+ },
+ "versions": {
+  "python": "3.13.18",
+  "kese": "kese 3.4.0 (made the export; not installed where this ran)",
+  "fasthenry": "3.0.1",
+  "numpy": "2.5.5",
+  "shapely": "2.2.0"
+ },
+ "runs": [
+  {
+   "nwinc": 1,
+   "nhinc": 1,
+   "chord_deg": 5.0,
+   "segments": 126,
+   "filaments": 126,
+   "solves": [
+    {
+     "frequency_hz": 10000.0,
+     "L_h": 5.534278920640168e-08,
+     "R_ohm": 0.0612073,
+     "seconds": 0.01,
+     "peak_memory_gb": 0.079,
+     "size": {
+      "filaments": 126
+     }
+    },
+    {
+     "frequency_hz": 3500000.0,
+     "L_h": 5.534272099714035e-08,
+     "R_ohm": 0.0612073,
+     "seconds": 0.01,
+     "peak_memory_gb": 0.079,
+     "size": {
+      "filaments": 126
+     }
+    }
+   ]
+  },
+  {
+   "nwinc": 3,
+   "nhinc": 1,
+   "chord_deg": 5.0,
+   "segments": 126,
+   "filaments": 378,
+   "solves": [
+    {
+     "frequency_hz": 10000.0,
+     "L_h": 5.547441034433867e-08,
+     "R_ohm": 0.0612075,
+     "seconds": 0.03,
+     "peak_memory_gb": 0.079,
+     "size": {
+      "filaments": 378
+     }
+    },
+    {
+     "frequency_hz": 3500000.0,
+     "L_h": 5.489890607011838e-08,
+     "R_ohm": 0.0699461,
+     "seconds": 0.03,
+     "peak_memory_gb": 0.079,
+     "size": {
+      "filaments": 378
+     }
+    }
+   ]
+  },
+  {
+   "nwinc": 5,
+   "nhinc": 1,
+   "chord_deg": 5.0,
+   "segments": 126,
+   "filaments": 630,
+   "solves": [
+    {
+     "frequency_hz": 10000.0,
+     "L_h": 5.5516268094371837e-08,
+     "R_ohm": 0.0612076,
+     "seconds": 0.09,
+     "peak_memory_gb": 0.079,
+     "size": {
+      "filaments": 630
+     }
+    },
+    {
+     "frequency_hz": 3500000.0,
+     "L_h": 5.4783405054274544e-08,
+     "R_ohm": 0.0743509,
+     "seconds": 0.09,
+     "peak_memory_gb": 0.079,
+     "size": {
+      "filaments": 630
+     }
+    }
+   ]
+  },
+  {
+   "nwinc": 9,
+   "nhinc": 1,
+   "chord_deg": 5.0,
+   "segments": 126,
+   "filaments": 1134,
+   "solves": [
+    {
+     "frequency_hz": 10000.0,
+     "L_h": 5.5538390631461616e-08,
+     "R_ohm": 0.0612076,
+     "seconds": 0.56,
+     "peak_memory_gb": 0.079,
+     "size": {
+      "filaments": 1134
+     }
+    },
+    {
+     "frequency_hz": 3500000.0,
+     "L_h": 5.4771127387236026e-08,
+     "R_ohm": 0.0750994,
+     "seconds": 0.55,
+     "peak_memory_gb": 0.079,
+     "size": {
+      "filaments": 1134
+     }
+    }
+   ]
+  },
+  {
+   "nwinc": 9,
+   "nhinc": 3,
+   "chord_deg": 5.0,
+   "segments": 126,
+   "filaments": 3402,
+   "solves": [
+    {
+     "frequency_hz": 10000.0,
+     "L_h": 5.557849767712077e-08,
+     "R_ohm": 0.0612076,
+     "seconds": 29.39,
+     "peak_memory_gb": 0.312,
+     "size": {
+      "filaments": 3402
+     }
+    },
+    {
+     "frequency_hz": 3500000.0,
+     "L_h": 5.480113946221908e-08,
+     "R_ohm": 0.0753751,
+     "seconds": 28.27,
+     "peak_memory_gb": 0.312,
+     "size": {
+      "filaments": 3402
+     }
+    }
+   ]
+  },
+  {
+   "nwinc": 15,
+   "nhinc": 3,
+   "chord_deg": 5.0,
+   "segments": 126,
+   "filaments": 5670,
+   "solves": [
+    {
+     "frequency_hz": 10000.0,
+     "L_h": 5.5580248381494784e-08,
+     "R_ohm": 0.0612076,
+     "seconds": 169.19,
+     "peak_memory_gb": 0.824,
+     "size": {
+      "filaments": 5670
+     }
+    },
+    {
+     "frequency_hz": 3500000.0,
+     "L_h": 5.479659217813073e-08,
+     "R_ohm": 0.0754333,
+     "seconds": 189.93,
+     "peak_memory_gb": 0.824,
+     "size": {
+      "filaments": 5670
+     }
+    }
+   ]
+  }
+ ]
+}
