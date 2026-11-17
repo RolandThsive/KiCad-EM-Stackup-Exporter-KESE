@@ -6,7 +6,7 @@ products with FFTs on the grid. Each conductor is a domain with copper's resisti
 voxels.py). Each coil has two terminals (ports.py): a current source drives its current into the first and a 0 V
 source takes it out of the second, so the coil's voltage is the first terminal's. A receiver is driven with 0 A, so
 its voltage is the open-circuit EMF the driven coil induces in it. A conductor with no terminals (a rotor, a shield)
-carries eddy currents only; PyPEEC needs a source on every piece of copper, so one of its voxels is held at 0 V, which
+carries eddy currents only; PyPEEC needs a source on every piece of copper, so one voxel of each piece is held at 0 V, which
 lets no current in or out (it is the piece's only connection).
 
 PyPEEC runs in a process of its own for each solve (run), as the Elmer branch runs ElmerSolver, so that its peak
@@ -48,7 +48,7 @@ class Case:
     vox: dict                         # body -> {'sheet k' | 'between': indices}, the terminals already taken out
     coils: list
     sigma: dict = field(default_factory=dict)   # body -> S/m (copper's 5.8e7 where missing)
-    floating: list = field(default_factory=list)   # bodies with no terminals: one voxel each held at 0 V
+    floating: list = field(default_factory=list)   # bodies with no terminals: one voxel of each piece held at 0 V
     tolerance: dict = field(default_factory=dict)  # changes to tolerance.yaml for this case (nested keys)
 
 
@@ -66,6 +66,19 @@ def _sheet_key(case, idx):
     s = case.grid.sheet_of_layer[iz]
     s = s[s >= 0]
     return f'sheet {np.bincount(s).argmax()}' if len(s) else 'between'
+
+
+def _piece_refs(case, idx):
+    """One voxel of each separate piece of a body (voxels joined face to face are one piece), the first of each piece
+    in idx's order: PyPEEC needs a source on every piece of copper, and a piece held at 0 V at one voxel and nowhere
+    else carries eddy currents only. A body in one piece gets idx[0], as before pieces were told apart."""
+    from scipy import ndimage
+    g = case.grid
+    m = np.zeros(g.nx * g.ny * g.nz, bool)
+    m[idx] = True
+    lab, _ = ndimage.label(m.reshape(g.nz, g.ny, g.nx))
+    _, first = np.unique(lab.ravel()[idx], return_index=True)
+    return np.asarray(idx)[np.sort(first)]
 
 
 def inputs(case, freq_hz):
@@ -95,16 +108,18 @@ def inputs(case, freq_hz):
         allv = flat(case.vox[b])
         if not len(allv):
             continue
-        ref = allv[:1]
+        refs = _piece_refs(case, allv)                   # a rotor of several sectors is several pieces of copper
         names = []
         for k, idx in case.vox[b].items():
-            idx = np.setdiff1d(idx, ref)
+            idx = np.setdiff1d(idx, refs)
             if len(idx):
                 add(f'{b}|{k}', idx, b, k)
                 names.append(f'{b}|{k}')
-        add(f'{b}_REF', ref, b, _sheet_key(case, ref))
-        srcs[f'{b}_REF'] = dict(kind='voltage', value=0j)
-        insulated.append([f'{b}_REF'])
+        for i, r in enumerate(refs):
+            ref = f'{b}_REF' if i == 0 else f'{b}_REF{i + 1}'
+            add(ref, [r], b, _sheet_key(case, [r]))
+            srcs[ref] = dict(kind='voltage', value=0j)
+            insulated.append([ref])
     if len(insulated) > 1:
         groups['insulation'] = {'domain_group': insulated, 'connected': False}
     geometry = {
