@@ -16,12 +16,12 @@ what came out. The inductive encoder coils are in `Examples/Inductive Coils/`, l
 | Folder | What it holds |
 |---|---|
 | `3D_Geometry/` | Empty on purpose: copy KESE's `Generator/` in from `main` by hand (see its README), only to export a board whose `3D_Geometry/` is not committed |
-| `Solver_PyPEEC/` | How PyPEEC is installed (it is pure Python, from PyPI, at the version every simulation here ran with), what it runs on and what it needs (see its README) |
+| `Solver_PyPEEC/` | The PyPEEC build every simulation here ran with: PyPEEC 5.8.0 and every package under it as committed wheels for 64-bit Linux and Python 3.13, with `install.sh`, which installs them into `.venv` without the internet; what it runs on and what it needs (see its README) |
 | `bridge/` | The bridge, in Python, general to any board: `geometry.py` (KESE's parts), `layers.py` (the board's slabs and sections), `voxels.py` (the grid and the copper drawn onto it), `ports.py` (each coil's two terminals), `pypeec_case.py` (PyPEEC's input, running it, each coil's V, I, Z and M), `study.py` (one solve per frequency and the numbers back). Its [README](bridge/README.md) says what it does, how to call it and where it stops |
 | `Examples/E01_circular_loop/`, `Examples/E02_coaxial_loops/` | The two proof boards (the Elmer branch's boards), each with its board, `make_board.py`, `simulation.py`, `README.md` and `results.md` |
 | `Examples/Inductive Coils/` | Inductive encoder boards from the Sinusoidal Coil Generator, one folder each: S0 and the boards made from it (non-commercial licence, see its LICENSE.md) |
 | `Examples/kicad_writer.py`, `Examples/references.py` | Shared by the proof boards, and not part of the bridge: a small KiCad 7 board writer for their `make_board.py`, and the textbook values they are checked against |
-| `requirements.txt` | The Python packages, PyPEEC among them, at the versions every simulation here ran with; `bash bridge/setup_machine.sh` puts them in `.venv` |
+| `requirements.txt` | The Python packages the bridge asks for by name, PyPEEC among them, at the versions every simulation here ran with (every package of the environment is in `Solver_PyPEEC/requirements-lock.txt`); `bash bridge/setup_machine.sh` puts them in `.venv` |
 
 ## Boards tested
 
