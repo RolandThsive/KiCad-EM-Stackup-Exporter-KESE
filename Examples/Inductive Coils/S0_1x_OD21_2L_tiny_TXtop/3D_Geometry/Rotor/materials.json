@@ -1,0 +1,144 @@
+{
+  "board": "Rotor",
+  "mode": "simulation",
+  "units_of_files": "mm",
+  "orientation": "board in XY, F.Cu toward +Z, Y up",
+  "parts": {
+    "Board_dielectric 1": {
+      "role": "board",
+      "layer": "dielectric 1",
+      "net": null,
+      "z_range_mm": [
+        -0.345,
+        0.345
+      ],
+      "properties": {
+        "kind": "core",
+        "material": "FR4",
+        "thickness_mm": 0.69,
+        "epsilon_r": 4.5,
+        "loss_tangent": 0.02,
+        "spec_frequency_hz": 1000000000.0,
+        "dielectric_model": {
+          "model": "djordjevic_sarkar",
+          "spec_frequency_hz": 1000000000.0,
+          "low_frequency_hz": 1000.0,
+          "high_frequency_hz": 1000000000000.0,
+          "epsilon_inf": 4.103962,
+          "delta_epsilon": 1.188113
+        },
+        "between": [
+          "F.Cu",
+          "B.Cu"
+        ],
+        "ply": 1,
+        "plies_in_gap": 1
+      },
+      "look": {
+        "color": "#968A58",
+        "alpha": 1.0
+      },
+      "file_names": {
+        "stl": "Board_dielectric_1.stl",
+        "glb_node": "Board_dielectric 1",
+        "step_solid": "Board_dielectric 1"
+      }
+    },
+    "Copper_no_net": {
+      "role": "copper",
+      "layer": "F.Cu",
+      "net": "no_net",
+      "z_range_mm": [
+        0.345,
+        0.38
+      ],
+      "properties": {
+        "thickness_mm": 0.035,
+        "conductivity_S_per_m": 58000000.0,
+        "surface_roughness_um": 0.0,
+        "foil_mm": 0.035,
+        "plating_added_mm": 0.0,
+        "material": "copper",
+        "roughness": {
+          "model": "huray",
+          "radius_treated_um": 0.5,
+          "radius_other_um": 0.5,
+          "surface_ratio_treated": 2.9,
+          "surface_ratio_other": 2.9
+        },
+        "layers": [
+          {
+            "layer": "F.Cu",
+            "position": "top",
+            "thickness_mm": 0.035,
+            "foil_mm": 0.035,
+            "plating_added_mm": 0.0,
+            "etch_factor": 0.0,
+            "treated_face": "lower"
+          }
+        ]
+      },
+      "look": {
+        "color": "#CD803E",
+        "alpha": 1.0
+      },
+      "file_names": {
+        "stl": "Copper_no_net.stl",
+        "glb_node": "Copper_no_net",
+        "step_solid": "Copper_no_net"
+      }
+    },
+    "Top Solder Mask": {
+      "role": "mask",
+      "layer": "F.Mask",
+      "net": null,
+      "z_range_mm": [
+        0.345,
+        0.4
+      ],
+      "properties": {
+        "side": "F",
+        "thickness_over_laminate_mm": 0.02,
+        "thickness_over_copper_mm": 0.02,
+        "material": "LPI",
+        "epsilon_r": 3.8,
+        "loss_tangent": 0.03
+      },
+      "look": {
+        "color": "#EBEBE6",
+        "alpha": 0.8
+      },
+      "file_names": {
+        "stl": "Top_Solder_Mask.stl",
+        "glb_node": "Top Solder Mask",
+        "step_solid": "Top Solder Mask"
+      }
+    },
+    "Bottom Solder Mask": {
+      "role": "mask",
+      "layer": "B.Mask",
+      "net": null,
+      "z_range_mm": [
+        -0.365,
+        -0.345
+      ],
+      "properties": {
+        "side": "B",
+        "thickness_over_laminate_mm": 0.02,
+        "thickness_over_copper_mm": 0.02,
+        "material": "LPI",
+        "epsilon_r": 3.8,
+        "loss_tangent": 0.03
+      },
+      "look": {
+        "color": "#EBEBE6",
+        "alpha": 0.8
+      },
+      "file_names": {
+        "stl": "Bottom_Solder_Mask.stl",
+        "glb_node": "Bottom Solder Mask",
+        "step_solid": "Bottom Solder Mask"
+      }
+    }
+  }
+}

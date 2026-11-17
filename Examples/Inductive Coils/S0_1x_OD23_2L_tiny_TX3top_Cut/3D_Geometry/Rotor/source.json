@@ -1,0 +1,18 @@
+{
+ "board": "Rotor.kicad_pcb",
+ "board_hash": "3e1b8068f8789ef6",
+ "hash": "the first 16 hex digits of the file's SHA-256",
+ "kese": "kese 3.4.0",
+ "preset": "elmer",
+ "formats": [
+  "step",
+  "stl"
+ ],
+ "settings": [
+  "Stackup.solder_mask=True",
+  "SolderMask.USE_STACKUP_MASK_THICKNESS=False",
+  "SolderMask.MASK_OVER_COPPER_MM=0.020",
+  "SolderMask.MASK_OVER_LAMINATE_MM=0.020",
+  "SolderMask.VIA_TENTING=tented"
+ ]
+}

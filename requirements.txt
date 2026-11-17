@@ -1,0 +1,13 @@
+# The bridge's Python packages, at the versions the test boards ran with (Python 3.12 or 3.13: numpy 2.5 and
+# scipy 1.18 need 3.12 or newer, PyPEEC 5.8 runs on 3.10 and up).
+# KESE's own packages (Generator/requirements.txt on main) go into the same environment, only to export a board.
+pypeec==5.8.0
+scisave==1.6.0
+numpy==2.5.5
+scipy==1.18.1
+shapely==2.2.0
+trimesh==5.2.1
+mapbox_earcut==2.1.0
+# the charts and pictures of the coil examples (make_charts.py, rig_picture.py, angle_setup.py)
+matplotlib==3.11.2
+pillow==13.0.0

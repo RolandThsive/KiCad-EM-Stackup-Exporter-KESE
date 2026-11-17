@@ -1,0 +1,11 @@
+# KESE is copied here by hand from main and never committed
+3D_Geometry/*
+!3D_Geometry/README.md
+# Python and run output
+__pycache__/
+*.pyc
+.venv/
+venv/
+Examples/**/case/
+Examples/**/case_*/
+Examples/**/pictures/
