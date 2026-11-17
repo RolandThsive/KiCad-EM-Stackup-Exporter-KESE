@@ -170,11 +170,11 @@ The [Elmer branch](https://github.com/RolandThsive/KiCad-EM-Stackup-Exporter-KES
 | [23 mm, 3 TX turns on top, cuts](../S0_1x_OD23_2L_tiny_TX3top_Cut/) | 1 mm | 8 / 8 | 4.98 / 4.88 nH (+2.1 %) | 4.99 / 4.88 nH (+2.1 %) | 0.3° / 0.3° | 266.4 / 245.1 nH (+8.7 %) |
 | [23 mm, 3 TX turns on top, cuts](../S0_1x_OD23_2L_tiny_TX3top_Cut/) | 0.5 mm | 8 / 8 | 7.25 / 7.10 nH (+2.2 %) | 7.26 / 7.10 nH (+2.2 %) | 0.5° / 0.6° | 249.4 / 229.0 nH (+8.9 %) |
 | [23 mm, 3 TX turns on top, cuts](../S0_1x_OD23_2L_tiny_TX3top_Cut/) | 0.1 mm | 8 / 8 | 9.28 / 9.12 nH (+1.7 %) | 9.28 / 9.12 nH (+1.7 %) | 1.2° / 1.2° | 224.9 / 203.1 nH (+10.8 %) |
-| [23 mm, 3 TX turns, cuts, 2 periods](../S0d2_1x_OD23_2L_tiny_TX3top_Cut/) | 2 mm | 16 / 8 | 1.89 / 1.86 nH (+1.9 %) | 1.90 / 1.85 nH (+2.4 %) | 0.2° / 0.2° | 284.2 / 262.6 nH (+8.2 %) |
-| [23 mm, 3 TX turns, cuts, 2 periods](../S0d2_1x_OD23_2L_tiny_TX3top_Cut/) | 1.5 mm | 16 / 8 | 2.94 / 2.88 nH (+2.0 %) | 2.95 / 2.88 nH (+2.4 %) | 0.2° / 0.2° | 280.3 / 257.9 nH (+8.7 %) |
-| [23 mm, 3 TX turns, cuts, 2 periods](../S0d2_1x_OD23_2L_tiny_TX3top_Cut/) | 1 mm | 16 / 8 | 4.61 / 4.51 nH (+2.3 %) | 4.63 / 4.51 nH (+2.6 %) | 0.2° / 0.2° | 271.8 / 250.3 nH (+8.6 %) |
-| [23 mm, 3 TX turns, cuts, 2 periods](../S0d2_1x_OD23_2L_tiny_TX3top_Cut/) | 0.5 mm | 16 / 8 | 7.14 / 6.97 nH (+2.3 %) | 7.16 / 6.97 nH (+2.6 %) | 0.4° / 0.4° | 257.4 / 236.6 nH (+8.8 %) |
-| [23 mm, 3 TX turns, cuts, 2 periods](../S0d2_1x_OD23_2L_tiny_TX3top_Cut/) | 0.1 mm | 16 / 8 | 9.60 / 9.44 nH (+1.8 %) | 9.62 / 9.43 nH (+2.0 %) | 0.9° / 0.9° | 236.1 / 213.6 nH (+10.6 %) |
+| [23 mm, 3 TX turns, cuts, 2 periods](../S0d2_1x_OD23_2L_tiny_TX3top_Cut/) | 2 mm | 16 / 16 | 1.89 / 1.86 nH (+1.9 %) | 1.90 / 1.86 nH (+2.2 %) | 0.2° / 0.2° | 284.2 / 262.6 nH (+8.2 %) |
+| [23 mm, 3 TX turns, cuts, 2 periods](../S0d2_1x_OD23_2L_tiny_TX3top_Cut/) | 1.5 mm | 16 / 16 | 2.94 / 2.88 nH (+2.0 %) | 2.95 / 2.88 nH (+2.3 %) | 0.2° / 0.2° | 280.3 / 257.9 nH (+8.7 %) |
+| [23 mm, 3 TX turns, cuts, 2 periods](../S0d2_1x_OD23_2L_tiny_TX3top_Cut/) | 1 mm | 16 / 16 | 4.61 / 4.51 nH (+2.2 %) | 4.63 / 4.51 nH (+2.5 %) | 0.2° / 0.2° | 271.8 / 250.3 nH (+8.6 %) |
+| [23 mm, 3 TX turns, cuts, 2 periods](../S0d2_1x_OD23_2L_tiny_TX3top_Cut/) | 0.5 mm | 16 / 16 | 7.14 / 6.97 nH (+2.3 %) | 7.16 / 6.98 nH (+2.6 %) | 0.4° / 0.4° | 257.4 / 236.6 nH (+8.8 %) |
+| [23 mm, 3 TX turns, cuts, 2 periods](../S0d2_1x_OD23_2L_tiny_TX3top_Cut/) | 0.1 mm | 16 / 16 | 9.60 / 9.44 nH (+1.8 %) | 9.62 / 9.44 nH (+2.0 %) | 0.9° / 0.9° | 236.1 / 213.6 nH (+10.6 %) |
 
 | Board | L TX, rotor away: PyPEEC | Elmer | PyPEEC against Elmer | The generator's estimate |
 |---|---|---|---|---|
@@ -189,7 +189,7 @@ The [Elmer branch](https://github.com/RolandThsive/KiCad-EM-Stackup-Exporter-KES
 * **PyPEEC's signal is a few percent higher.** On the three boards opened by a cut, where both solvers take the voltage across the same small gap, SIN's amplitude is 1.7 to 2.6 % higher than Elmer's at every gap. On the three opened at a via it is 2.9 to 4.6 % higher; the extra percent or so is the via port in PyPEEC (see "The cut against the via").
 * **L TX is 8 to 14 % higher in PyPEEC at every gap,** and 8 to 11 % higher with the rotor away. On S0 a hand calculation settles which is nearer: two coaxial rings of 7.2 mm radius 0.765 mm apart, in series, have 132.5 nH by Grover's and Maxwell's formulas, before the leads to the terminal add theirs. PyPEEC's 136.5 nH is 3.0 % over that, Elmer's 122.6 nH 7.5 % under it. The generator's own estimates with the rotor away (130 to 292 nH) sit 1.5 to 3.5 % under PyPEEC's on every board, and 6.5 to 8 % over Elmer's.
 * **A separate study of other solvers on these boards points the same way.** Against exact references (Maxwell's formula, Dodd and Deeds, an axisymmetric solve of a rotor ring), it found the PEEC codes within 0.1 to 1.6 % and the finite-element codes 0.9 to 4 % off, limited by the air's mesh, with their TX inductance 4 to 10 % low against theory. On the 22 mm board at 1 mm, FastHenry, a second PEEC code, gives a SIN amplitude of 3.46 nH, PyPEEC here 3.38 nH and Elmer 3.26 nH.
-* **S0d2 is compared over Elmer's first half turn**, 0 to 157.5°, the 8 angles the Elmer branch has so far; PyPEEC's second half turn repeats its first exactly, so the comparison stands as it is.
+* **S0d2 is compared over the whole turn,** 16 angles in each solver, every 22.5° from 0 to 337.5°: PyPEEC's second half turn repeats its first exactly, and Elmer's within 0.03 nH.
 
 ## Running it
 
