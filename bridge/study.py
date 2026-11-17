@@ -59,7 +59,7 @@ def solve(case, freqs, folder, threads=4, log=print, tag='f'):
     """One PyPEEC solve per frequency. Returns a list of dicts: frequency, seconds, peak memory, the iterative
     solver's iterations and residual, the stored magnetic energy and the losses, each coil's V, I, Z (complex as
     [re, im]), R and L, and PyPEEC's own checks. With one coil driven, L from the energy (4 W / |I|^2) and R from the
-    losses (2 P / |I|^2) are given beside the coil's own, as the Elmer branch gives them (PyPEEC's phasors are peak
+    losses (2 P / |I|^2) are given beside the coil's own (PyPEEC's phasors are peak
     values: W is the time-averaged energy and P the average loss)."""
     folder = Path(folder)
     rows = []

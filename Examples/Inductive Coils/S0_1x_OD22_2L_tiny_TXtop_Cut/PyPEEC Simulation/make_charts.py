@@ -48,7 +48,7 @@ GAP_COLOURS = {0.1: (0xe3, 0x49, 0x48), 0.5: (0x2a, 0x78, 0xd6), 1.0: (0x00, 0x8
 MORE_GAP_COLOURS = ((0x62, 0x50, 0xd6), (0xe8, 0x7b, 0xa4), (0xeb, 0x68, 0x34))
 DOTS = (0, (1, 2.2))                  # the ideal curves: dotted, so they never read as solves
 AGREE = 0.01      # a solve is read only if the TX's L and R from its voltage are within 1 % of L from the stored energy
-                  # and R from the losses (readable(); simulation.py uses it too), as on the Elmer branch
+                  # and R from the losses (readable(); simulation.py uses it too)
 LOOSE = 5e-4      # a solve with no energy or loss read back: not read above this residual
 
 
@@ -223,8 +223,7 @@ def gaps_chart(results):
 def readable(s):
     """Whether a solve has gone far enough to read. For an exact discrete solution the TX's L from its voltage equals
     L from the stored energy (4W/|I|^2, PyPEEC's phasors being peak values), and its R from the voltage equals R
-    from the losses (2P/|I|^2); a solve is read when both pairs agree within AGREE and R_TX is positive, the same
-    rule as on the Elmer branch."""
+    from the losses (2P/|I|^2); a solve is read when both pairs agree within AGREE and R_TX is positive."""
     tx = s['coils']['TX']
     rp, lw = s.get('R_from_power_ohm'), s.get('L_from_energy_h')
     if rp is None or lw is None:

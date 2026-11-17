@@ -11,8 +11,7 @@ commercial terms in the generator's [LICENSE.md](https://github.com/RolandThsive
 |---|---|
 | The boards and everything the generator made for them: `Stator.kicad_pcb`, `Rotor.kicad_pcb`, their `.kicad_pro`, `Parameters.txt`, `run_log.txt`, `test_spec.json`, `expected_results.*`, the pictures | The generator's terms for its output: non-commercial research, study, education and personal use; keep the attribution and say that it was made with the Sinusoidal Coil Generator, with a link to its repository |
 | `parameter_files/` (the generator's parameter files) | PolyForm Noncommercial 1.0.0, [`licenses/PolyForm-Noncommercial-1.0.0`](licenses/PolyForm-Noncommercial-1.0.0) |
-| The test brief (`Things to test in ELMER.md`) | CC BY-NC-SA 4.0, [`licenses/CC-BY-NC-SA-4.0`](licenses/CC-BY-NC-SA-4.0) |
-| The READMEs in the board folders and this folder's README, written for this branch from the generator's board cards and briefs | CC BY-NC-SA 4.0, as adaptations of that documentation |
+| The READMEs in the board folders and this folder's README, written for this branch from the generator's board cards and briefs | CC BY-NC-SA 4.0, as adaptations of that documentation, [`licenses/CC-BY-NC-SA-4.0`](licenses/CC-BY-NC-SA-4.0) |
 | The scripts written for this branch: `new_coil.py`, and each board's `simulation.py`, `angle_error.py`, `make_charts.py` and `rig_picture.py` | GPL-3.0, as the bridge's code |
 
 Results files that the bridge writes here (`results.md`, CSVs, plots) describe these boards and are shared under

@@ -2,8 +2,7 @@
 
 A KiCad board is layered: every solid KESE writes is a stack of prisms, flat at a few heights. So the model is cut
 into slabs at every height any part has, and each part is sectioned in the middle of each slab it spans. The voxels
-(voxels.py) are drawn from those sections. The same code as the Elmer branch's mesh25d.py, which builds its prism
-mesh from the same slabs; this branch needs no mesh, so it keeps only the parts and their sections.
+(voxels.py) are drawn from those sections; no mesh is built, so only the parts and their sections are kept.
 """
 from __future__ import annotations
 
@@ -25,7 +24,7 @@ class Part:
     body: str
     role: str                 # copper, board, mask, bridge, or void (air that overrides copper: a via left out)
     mesh: object = None       # trimesh.Trimesh, closed
-    priority: int = 0         # where two parts claim one wedge, the higher one wins (copper over mask over board)
+    priority: int = 0         # where two parts claim one voxel, the higher one wins (copper over mask over board)
     polys: dict = field(default_factory=dict)       # slab index -> shapely geometry of its section there
     fixed: dict = field(default_factory=dict)       # (z0, z1) -> geometry: a part given in 2D (a bridge), not cut
 
@@ -78,8 +77,8 @@ class Layout:
     def build(self, log=print, merge_outside=True, insulators=True):
         """Section every part in every slab it spans. merge_outside: a board or mask part lying wholly outside
         the copper's span of heights (the FR-4 behind a one-sided board, the mask on its far side) is left out:
-        in Elmer it is air in all but name (sigma 0, mu_r 1), and leaving it out keeps its layers out of the
-        wedges. insulators=False leaves out every board and mask part: for the magneto-quasi-static solve an
+        to the solve it is air in all but name (sigma 0, mu_r 1), and leaving it out keeps its heights out of the
+        slabs. insulators=False leaves out every board and mask part: for the magneto-quasi-static solve an
         insulator with mu_r 1 is air (the A-V solver has no displacement current, so eps_r plays no part), and
         their heights then add no layers. The parts left out are listed in self.merged."""
         self.merged = []

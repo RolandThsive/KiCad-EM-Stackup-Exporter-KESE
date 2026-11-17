@@ -12,15 +12,15 @@ KESE stays a geometry exporter. The bridge runs it as a program and reads what i
 2. **Parts** (`geometry.load_parts`): each solid becomes a part in model coordinates (x and y as KiCad's with y up, z = 0 at the top of the top copper), named by its net or its role. A board can be flipped copper side down, moved up by an air gap and turned about an axis the caller gives: that is how a rotor is placed over a stator.
 3. **Layers** (`layers.Layout`): the model is cut into slabs at every height any part has, and each part is sectioned in the middle of each slab. FR-4 and solder mask are left out: to a magneto-quasi-static solve an insulator with μr 1 is air.
 4. **Voxels** (`voxels.build`): every conductor drawn onto one uniform grid, d in the board's plane (50 µm on the coil boards) and dz through it. A voxel is copper when its centre lies in the part's section. The grid's z follows the copper: each copper sheet is one voxel thick (or `n_cu`), centred on its own height, and dz (close to the copper's 35 µm) is chosen so that the distance between any two sheets is a whole number of voxels to within a micron or so. Each sheet's resistivity is scaled by its voxels' thickness over the copper's, so it keeps its sheet resistance. A via's barrel is drawn as a solid column of its outer diameter.
-5. **Ports** (`ports`): each coil is opened at a gap (a cut across a trace, a via left out, or two trace ends stacked on two layers). Its two terminals are its voxels that share a face with the gap, one group each side, as the Elmer branch's electrodes are the copper faces that border the gap.
+5. **Ports** (`ports`): each coil is opened at a gap (a cut across a trace, a via left out, or two trace ends stacked on two layers). Its two terminals are its voxels that share a face with the gap, one group each side: the copper faces that border the gap.
 6. **Case and solve** (`pypeec_case`, `study.solve`): every coil gets a current source on its first terminal (1 A in the driven coil, 0 A in a receiver, whose voltage is then its open-circuit EMF) and a 0 V source on its second. A conductor with no terminals (a rotor) carries eddy currents only; one of its voxels is held at 0 V, as PyPEEC needs a source on every piece of copper, and no current can flow through it. PyPEEC's mesher (here only its checks: every coil in one piece, no two conductors touching) and solver run in a process of their own, so the peak memory is measured. The bridge reads back each coil's V, I and impedance, so L, R and the mutual inductance M of each receiver, plus the stored energy and the losses, the iterative solver's iterations and residual, PyPEEC's own checks, the peak memory and the time.
 
 ## The modules
 
 | File | What it does | Called as |
 |---|---|---|
-| [`geometry.py`](geometry.py) | runs KESE, reads its solids and `materials.json`, places them (the Elmer branch's, unchanged but for where `Part` comes from) | `run_kese`, `load_parts`, `copper_top` |
-| [`layers.py`](layers.py) | the parts, their sections and the slabs they make (the Elmer branch's `mesh25d.py` without the mesh) | `Part`, `Layout`, `section` |
+| [`geometry.py`](geometry.py) | runs KESE, reads its solids and `materials.json`, places them | `run_kese`, `load_parts`, `copper_top` |
+| [`layers.py`](layers.py) | the parts, their sections and the slabs they make | `Part`, `Layout`, `section` |
 | [`voxels.py`](voxels.py) | the grid and every conductor drawn onto it | `Grid`, `build`, `choose_dz`, `copper_sheets` |
 | [`ports.py`](ports.py) | where a coil is opened and its two terminals | `cut`, `terminals`, `groups` |
 | [`pypeec_case.py`](pypeec_case.py) | PyPEEC's input (geometry and problem), running it, each coil's V, I, Z and M | `Coil`, `Case`, `inputs`, `run`, `coil_results` |

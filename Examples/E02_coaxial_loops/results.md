@@ -35,7 +35,7 @@ What came out:
 * **At 3.5 MHz the RX takes a little from the TX**: the TX's L falls by 0.09 % and its R rises by 0.8 % against
   E01's, and M by 1 % against 10 kHz. The RX carries no net current, but eddy currents circulate across its trace,
   driven by the TX's field; their loss shows in the TX's R and in the real part of the mutual impedance (3.2 mΩ at
-  50 µm). The Elmer branch's E02 shows the same proximity loss in the TX's R at 3.5 MHz.
+  50 µm).
 * **The z step fits the board**: the two copper sheets' middles are 1.565 mm apart, and with 45 steps of 34.8 µm the
   sheets land within 1 µm of where they are; each sheet's resistivity is scaled by 0.994 so that its 34.8 µm of voxels
   keep the 35 µm copper's sheet resistance.

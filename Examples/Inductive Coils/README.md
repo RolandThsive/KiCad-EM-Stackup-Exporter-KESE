@@ -1,6 +1,6 @@
 # Inductive Coils
 
-Inductive angle-encoder boards from the [Sinusoidal Coil Generator](https://github.com/RolandThsive/Sinusoidal-Inductive-Encoders-Coil-Generator), one folder each, the same boards as on the Elmer branch and laid out the same way. A **stator** board carries one TX coil and two RX coils (SIN and COS). A **rotor** board with copper sectors sits 1.0 mm above it by default. The TX is driven at 3 to 5 MHz, the rotor's eddy currents change how much of the TX's field reaches each RX coil, and the two RX voltages follow the sine and cosine of the rotor's angle.
+Inductive angle-encoder boards from the [Sinusoidal Coil Generator](https://github.com/RolandThsive/Sinusoidal-Inductive-Encoders-Coil-Generator), one folder each. A **stator** board carries one TX coil and two RX coils (SIN and COS). A **rotor** board with copper sectors sits 1.0 mm above it by default. The TX is driven at 3 to 5 MHz, the rotor's eddy currents change how much of the TX's field reaches each RX coil, and the two RX voltages follow the sine and cosine of the rotor's angle.
 
 ## What this branch checks
 
@@ -29,7 +29,7 @@ All of them are S0 and boards made from it. A solve takes 2 to 4 GB and 4 to 10 
 | [S0_1x_OD23_2L_tiny_TX3top_Cut](S0_1x_OD23_2L_tiny_TX3top_Cut/) | the TX three turns on the top layer around S0's RX coils, 23.4 mm, opened by cuts |
 | [S0d2_1x_OD23_2L_tiny_TX3top_Cut](S0d2_1x_OD23_2L_tiny_TX3top_Cut/) | the three-turn board with two electrical periods per turn and a rotor of two sectors, so the curves repeat every 180°; solved at 16 angles over the whole turn |
 
-Every board folder holds the same files and stands on its own: its README has the board, its results at each air gap and how to run it. [`Comparisons/`](Comparisons/) sets the boards side by side, and PyPEEC beside Elmer, with the scripts that print those tables and draw the charts.
+Every board folder holds the same files and stands on its own: its README has the board, its results at each air gap and how to run it. [`Comparisons/`](Comparisons/) sets the boards side by side, with the scripts that print those tables and draw the charts.
 
 ## Results in short
 
@@ -44,7 +44,7 @@ Every board is solved at 0.1, 0.5, 1, 1.5 and 2 mm, at 8 angles over the turn (S
 | [23 mm, 3 TX turns on top, opened by cuts](S0_1x_OD23_2L_tiny_TX3top_Cut/) | 9.28 nH | 7.25 nH | 4.98 nH | 3.39 nH | 2.33 nH |
 | [23 mm, 3 TX turns on top, opened by cuts, 2 periods per turn](S0d2_1x_OD23_2L_tiny_TX3top_Cut/) | 9.60 nH | 7.14 nH | 4.61 nH | 2.94 nH | 1.89 nH |
 
-SIN and COS match within 0.4 % and sit 90° apart on every board. The angle error is 0.1° to 0.5° rms from 0.5 to 2 mm and up to 1.5° at 0.1 mm, where every board shows the fourth-harmonic ripple that two-coil sensors typically have. Against the Elmer branch the curves have the same shape and angle error; PyPEEC's signal is 1.7 to 2.6 % higher on the boards opened by a cut and 2.9 to 4.6 % on those opened at a via, and its L TX 8 to 14 % higher, where a hand calculation on S0 sides with PyPEEC (3.0 % over it, Elmer 7.5 % under). [`Comparisons/`](Comparisons/README.md) has the details.
+SIN and COS match within 0.4 % and sit 90° apart on every board. The angle error is 0.1° to 0.5° rms from 0.5 to 2 mm and up to 1.5° at 0.1 mm, where every board shows the fourth-harmonic ripple that two-coil sensors typically have. On S0, L TX with the rotor away is 3.0 % over a hand calculation (two coaxial rings in series, by Grover's and Maxwell's formulas). [`Comparisons/`](Comparisons/README.md) sets the boards side by side.
 
 ## A small board for the SIN and COS curves
 
@@ -56,7 +56,7 @@ Any other single coil set from the generator is set up the same way, in one comm
 
 * The rotation axis is KiCad's point (100, 100), z points up from the stator towards the rotor, and the top face of the stator's F.Cu copper is z = 0. KiCad's y axis points down, which flips every rotation sense in a y-up model; each results file says which convention the run used.
 * The rotor is `Rotor.kicad_pcb` as drawn, not mirrored, copper side down, its copper face at z = +1.0 mm. Rotor angle θ turns it about the axis by (x, y) → (x cos θ − y sin θ, x sin θ + y cos θ) in KiCad's coordinates.
-* KESE exports both boards with solder mask on both faces, as on the Elmer branch; FR-4 and mask are insulators with μr 1, which to a magneto-quasi-static solve are air, so only the copper is drawn.
+* KESE exports both boards with solder mask on both faces; FR-4 and mask are insulators with μr 1, which to a magneto-quasi-static solve are air, so only the copper is drawn.
 * Each coil is opened where the real board gets its leads (`test_spec.json` → `terminals`): the TX at its two stacked ends, an RX by leaving one layer-change via out, or, in the `_Cut` folders, by a 0.2 mm cut across a top trace. At the TX's ends and at a cut, its two terminals are its voxels that share a face with the gap, one group each side; at a left-out via, the two pads are filled over the drill hole and each terminal is the one voxel on the via's axis in its pad (the pads' whole inner rings, tried first, let current circle through them and loaded the TX). 1 A is driven into the TX's first terminal and taken out of its second (held at 0 V); SIN and COS carry 0 A, so the voltage between their terminals is the open-circuit EMF. The rotor carries eddy currents only: one voxel of each separate piece of it is held at 0 V, which lets no current in or out.
 
 ## Licence

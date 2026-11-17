@@ -9,7 +9,7 @@ its voltage is the open-circuit EMF the driven coil induces in it. A conductor w
 carries eddy currents only; PyPEEC needs a source on every piece of copper, so one voxel of each piece is held at 0 V, which
 lets no current in or out (it is the piece's only connection).
 
-PyPEEC runs in a process of its own for each solve (run), as the Elmer branch runs ElmerSolver, so that its peak
+PyPEEC runs in a process of its own for each solve (run), so that its peak
 memory is measured and given back after every solve.
 """
 from __future__ import annotations

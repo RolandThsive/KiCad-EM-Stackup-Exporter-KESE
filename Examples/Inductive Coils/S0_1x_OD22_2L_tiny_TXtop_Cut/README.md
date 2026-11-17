@@ -52,8 +52,6 @@ Every angle at every gap, one PyPEEC solve each: 8 angles at each of 5 gaps, and
 
 Every solve passes both checks: the TX's L and R from its voltage agree with the L from the stored energy and the R from the losses within 0.001 %, where 1 % is allowed. At every gap SIN and COS are within 0.1 % of each other in amplitude and 89.9° to 90.1° apart. The signal is 6.60 nH for SIN at 0.1 mm and falls to 5.04, 3.34, 2.20 and 1.47 nH at 0.5, 1, 1.5 and 2 mm (145 down to 32 mV of EMF at 1 A). The angle error is 1.0° rms at 0.1 mm, 0.3° at 0.5 mm and 0.2° from 1 to 2 mm. At 0.1 mm it alternates in sign from one angle to the next: a ripple at four periods per electrical period, the fastest that eight angles a period can show. It is the fourth harmonic that sensors with two receiver coils typically show, which the third and fifth harmonics of the sine and cosine both give (Kuntz, Gerlach and Fella, arXiv 2503.14627), and those fade with the gap faster than the sine itself. L TX moves by 0.3 nH at most over the turn and rises from 113.9 nH at 0.1 mm to 142.2 nH at 2 mm; with the rotor away it is 148.2 nH, where the generator estimated 116 nH with the rotor and 144 nH without.
 
-Against the Elmer branch, which solves the same board from the same export ([`../Comparisons`](../Comparisons/)): SIN's amplitude differs by +2.1 %, +2.6 %, +2.5 %, +2.3 % and +2.2 % at 0.1, 0.5, 1, 1.5 and 2 mm, and the angle error is 1.0° against 1.1°, 0.3° against 0.4°, 0.2° against 0.2°, 0.2° against 0.2° and 0.2° against 0.3° rms. L TX is 10 to 13 % higher here than in Elmer at every gap; [S0](../S0_1x_OD21_2L_tiny/README.md#results-at-each-air-gap) checks its TX against a hand calculation, which sides with PyPEEC.
-
 ## The folder
 
 | Folder | What is in it |

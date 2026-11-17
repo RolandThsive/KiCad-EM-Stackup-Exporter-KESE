@@ -60,10 +60,10 @@ def groups(grid, idx, corners=False):
 def terminals(grid, vox, body, region, z0, z1, tol=1e-6):
     """The two terminals of `body` at a gap: the gap's cells are the grid cells whose centres lie in region (in the
     plane) between heights z0 and z1 and hold none of the body's copper, and a terminal voxel is one of the body's
-    that shares a face with a gap cell, as the Elmer branch's electrodes are the copper faces that border the gap.
+    that shares a face with a gap cell: the copper faces that border the gap.
     They must fall in exactly two groups (touching at a face, an edge or a corner). They are taken out of the body's
-    own voxels (a terminal is a domain of its own in PyPEEC) and returned ordered by the mean of (x, y, z), as the
-    Elmer branch orders its electrodes, so a coil's sense is the same in both."""
+    own voxels (a terminal is a domain of its own in PyPEEC) and returned ordered by the mean of (x, y, z), so a
+    coil's sense follows from where its terminals sit."""
     allv = flat(vox[body])
     own = set(allv.tolist())
     near = region.buffer(1.5 * max(grid.d, grid.dz))

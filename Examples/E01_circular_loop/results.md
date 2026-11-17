@@ -44,13 +44,11 @@ What came out:
   field and the losses hold.
 * **R converges at first order**: its excess over the annular sector is 8.05, 4.03, 2.00 and 1.10 mΩ, halving with
   each halving of the voxels. Taken to zero voxel size, the last two give 61.4 mΩ, 0.3 % over the sector, which is
-  what the two half-discs past the sector's ends add (the Elmer branch's E01 has its R 0.5 % over the sector for the
-  same reason).
+  what the two half-discs past the sector's ends add.
 * **At 3.5 MHz** L falls by 2 % and R rises by 28 % against 10 kHz at 12.5 µm: the current crowds to the trace's
   edges. With one voxel layer through the copper the current is uniform through its thickness, so only the crowding
   across the width is drawn, and the finer the voxels across the trace, the more of it shows (R rises from 1.20 to
-  1.28 times its 10 kHz value along the ladder). The Elmer branch, which resolves the copper's thickness with two
-  wedge layers, gives 1.29.
+  1.28 times its 10 kHz value along the ladder).
 
 ## Two Voxel Layers Through the Copper
 

@@ -1,6 +1,6 @@
 # Comparisons
 
-Each board folder beside this one stands on its own and holds the same files: its boards, its geometry, the same five scripts, and its own results. This folder is extra, for our own understanding: it sets the boards side by side, and sets PyPEEC beside Elmer. Nothing here is solved; the five scripts read each board's `Results/` (and, for the last, the Elmer branch's) and print the tables below, and four of them draw the charts.
+Each board folder beside this one stands on its own and holds the same files: its boards, its geometry, the same five scripts, and its own results. This folder is extra, for our own understanding: it sets the boards side by side. Nothing here is solved; the four scripts read each board's `Results/` and print the tables below, and three of them draw the charts.
 
 The signal is each receiver's mutual inductance from the TX, M = V / (jωI), with 1 A at 3.5 MHz in the TX, so 1 nH is 22 mV of EMF. Every solve is PyPEEC's, on voxels of 50 µm. A solve is **readable** when the TX's L and R from its voltage agree with the L from the stored energy and the R from the losses within 1 % (`readable()` in the boards' `make_charts.py`); every solve here does, within 0.001 %. Every chart runs over the whole turn, 0 to 360°.
 
@@ -41,7 +41,7 @@ The three boards opened at a via were solved twice. The first time, each receive
 * **On S0's 21 mm board, moving the TX to the top layer costs about a sixth of the signal.** Where the generator narrows the RX band to make room, SIN is 0.81 to 0.83 times S0's at every gap (2.43 nH against 2.94 at 1 mm), with more angle error (0.4° rms from 1 to 2 mm, against 0.1°).
 * **Where S0's RX coils are kept and the board grows to 22 mm, the signal rises,** from 1.03 times S0's at 0.1 mm to 1.21 times at 2 mm (3.38 nH against 2.94 at 1 mm, 74 mV of EMF at 1 A), with 0.2° to 0.4° rms of angle error from 0.5 to 2 mm.
 * **S0 has the cleanest curves:** 0.1° rms of angle error from 0.5 to 2 mm.
-* **At 0.1 mm the angle error rises on every board** (0.5°, 1.5° and 1.1° rms) and alternates in sign from one angle to the next: a ripple at four periods per turn. That is the fourth harmonic two-coil sensors typically show, which the third and fifth harmonics of the sine and cosine both give (Kuntz, Gerlach and Fella, arXiv 2503.14627), and it fades with the gap faster than the sine itself. Elmer finds the same ripple at the same size.
+* **At 0.1 mm the angle error rises on every board** (0.5°, 1.5° and 1.1° rms) and alternates in sign from one angle to the next: a ripple at four periods per turn. That is the fourth harmonic two-coil sensors typically show, which the third and fifth harmonics of the sine and cosine both give (Kuntz, Gerlach and Fella, arXiv 2503.14627), and it fades with the gap faster than the sine itself.
 
 ## The cut against the via
 
@@ -66,7 +66,7 @@ The 22 mm board opened two ways: [`S0_1x_OD22_2L_tiny_TXtop`](../S0_1x_OD22_2L_t
 
 * **The two ports give the same curves within a few percent, with the via a little higher.** Its amplitude is 1.2 to 1.4 % above the cut's at every gap; solve by solve they differ by 0.08 to 0.18 nH at most, which is 2.7 % of the amplitude at 0.1 mm and 6 % at 2 mm, since part of the difference is a small offset that stays as the signal falls.
 * **SIN to COS is 89.9° to 90.0° on both,** the angle error is the same within 0.1° at every gap, and L TX is the same: 148.21 nH with the rotor away on both.
-* **Elmer finds the two ports within 0.5 % of each other.** In PyPEEC a terminal is a set of voxels held at one potential, and where those voxels sit moves the port's voltage by a percent or more: the via's two axis voxels, 0.8 mm apart through the board, close the receiver's loop differently from the cut's two faces, 0.2 mm apart along the top. The pads' whole rings, the first terminals, read 1.5 to 6 % lower than the axis voxels, and below the cut too (3.23 nH at 1 mm against the cut's 3.34). So the cut, the way the real board is opened, is the port to trust, and the via boards' signals carry a percent or so of uncertainty from the port alone.
+* **Where a port's voxels sit moves its voltage.** In PyPEEC a terminal is a set of voxels held at one potential, and where those voxels sit moves the port's voltage by a percent or more: the via's two axis voxels, 0.8 mm apart through the board, close the receiver's loop differently from the cut's two faces, 0.2 mm apart along the top. The pads' whole rings, the first terminals, read 1.5 to 6 % lower than the axis voxels, and below the cut too (3.23 nH at 1 mm against the cut's 3.34). So the cut, the way the real board is opened, is the port to trust, and the via boards' signals carry a percent or so of uncertainty from the port alone.
 
 ## Three TX turns against two
 
@@ -135,62 +135,6 @@ The 22 mm board opened two ways: [`S0_1x_OD22_2L_tiny_TXtop`](../S0_1x_OD22_2L_t
 
 The two three-turn boards give the most signal. With one period per turn it is 1.43 times S0's at 0.1 mm and 1.89 times at 2 mm, the most at every gap from 0.5 mm out; with two periods it is a little more at 0.1 mm (9.60 nH) and falls faster after that, to 1.89 nH at 2 mm. The 21 mm board with the TX on top gives the least.
 
-## PyPEEC against Elmer
-
-The [Elmer branch](https://github.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/tree/Elmer_Integration/Examples/Inductive%20Coils) solves the same six boards from the same KESE export, at the same angles and gaps, with the same ports, by finite elements in a meshed air box (a direct MUMPS solve, mesh level 0.25). `python compare_solvers.py --chart` prints the two tables and draws the chart; it reads the Elmer results from git.
-
-![SIN amplitude against the air gap, PyPEEC and Elmer](SINCOS_PyPEEC_vs_Elmer.webp)
-
-*SIN's amplitude at each air gap on every board: PyPEEC solid and filled, Elmer dashed and hollow.*
-
-| Board | Air gap | Angles PyPEEC / Elmer | SIN amplitude PyPEEC / Elmer | COS amplitude PyPEEC / Elmer | Angle error rms PyPEEC / Elmer | L TX over the turn PyPEEC / Elmer |
-|---|---|---|---|---|---|---|
-| [S0](../S0_1x_OD21_2L_tiny/) | 2 mm | 8 / 8 | 1.23 / 1.18 nH (+4.4 %) | 1.23 / 1.18 nH (+4.2 %) | 0.1° / 0.3° | 132.3 / 118.8 nH (+11.4 %) |
-| [S0](../S0_1x_OD21_2L_tiny/) | 1.5 mm | 8 / 8 | 1.87 / 1.80 nH (+4.2 %) | 1.88 / 1.80 nH (+4.1 %) | 0.1° / 0.2° | 131.1 / 117.1 nH (+12.0 %) |
-| [S0](../S0_1x_OD21_2L_tiny/) | 1 mm | 8 / 8 | 2.94 / 2.81 nH (+4.4 %) | 2.94 / 2.82 nH (+4.4 %) | 0.1° / 0.1° | 127.8 / 114.3 nH (+11.8 %) |
-| [S0](../S0_1x_OD21_2L_tiny/) | 0.5 mm | 8 / 8 | 4.66 / 4.45 nH (+4.6 %) | 4.67 / 4.46 nH (+4.6 %) | 0.1° / 0.1° | 122.1 / 109.2 nH (+11.8 %) |
-| [S0](../S0_1x_OD21_2L_tiny/) | 0.1 mm | 8 / 8 | 6.48 / 6.22 nH (+4.1 %) | 6.49 / 6.23 nH (+4.1 %) | 0.5° / 0.5° | 113.1 / 99.4 nH (+13.8 %) |
-| [21 mm, 2 TX turns on top](../S0_1x_OD21_2L_tiny_TXtop/) | 2 mm | 8 / 8 | 0.99 / 0.96 nH (+2.9 %) | 1.00 / 0.96 nH (+3.5 %) | 0.4° / 0.4° | 129.1 / 117.1 nH (+10.3 %) |
-| [21 mm, 2 TX turns on top](../S0_1x_OD21_2L_tiny_TXtop/) | 1.5 mm | 8 / 8 | 1.53 / 1.49 nH (+3.1 %) | 1.54 / 1.49 nH (+3.5 %) | 0.4° / 0.4° | 127.5 / 115.0 nH (+10.8 %) |
-| [21 mm, 2 TX turns on top](../S0_1x_OD21_2L_tiny_TXtop/) | 1 mm | 8 / 8 | 2.43 / 2.35 nH (+3.5 %) | 2.44 / 2.35 nH (+3.8 %) | 0.4° / 0.4° | 123.4 / 111.6 nH (+10.6 %) |
-| [21 mm, 2 TX turns on top](../S0_1x_OD21_2L_tiny_TXtop/) | 0.5 mm | 8 / 8 | 3.85 / 3.71 nH (+3.8 %) | 3.86 / 3.71 nH (+4.0 %) | 0.7° / 0.7° | 116.2 / 105.0 nH (+10.7 %) |
-| [21 mm, 2 TX turns on top](../S0_1x_OD21_2L_tiny_TXtop/) | 0.1 mm | 8 / 8 | 5.23 / 5.06 nH (+3.3 %) | 5.24 / 5.06 nH (+3.5 %) | 1.5° / 1.5° | 104.2 / 92.1 nH (+13.0 %) |
-| [22 mm, 2 TX turns on top](../S0_1x_OD22_2L_tiny_TXtop/) | 2 mm | 8 / 8 | 1.49 / 1.44 nH (+3.2 %) | 1.49 / 1.44 nH (+3.5 %) | 0.2° / 0.3° | 142.2 / 129.1 nH (+10.1 %) |
-| [22 mm, 2 TX turns on top](../S0_1x_OD22_2L_tiny_TXtop/) | 1.5 mm | 8 / 8 | 2.22 / 2.15 nH (+3.3 %) | 2.23 / 2.15 nH (+3.5 %) | 0.2° / 0.2° | 140.2 / 126.7 nH (+10.7 %) |
-| [22 mm, 2 TX turns on top](../S0_1x_OD22_2L_tiny_TXtop/) | 1 mm | 8 / 8 | 3.38 / 3.26 nH (+3.5 %) | 3.38 / 3.26 nH (+3.7 %) | 0.2° / 0.2° | 135.6 / 122.7 nH (+10.5 %) |
-| [22 mm, 2 TX turns on top](../S0_1x_OD22_2L_tiny_TXtop/) | 0.5 mm | 8 / 8 | 5.10 / 4.92 nH (+3.7 %) | 5.10 / 4.92 nH (+3.8 %) | 0.4° / 0.4° | 127.4 / 115.2 nH (+10.6 %) |
-| [22 mm, 2 TX turns on top](../S0_1x_OD22_2L_tiny_TXtop/) | 0.1 mm | 8 / 8 | 6.68 / 6.47 nH (+3.2 %) | 6.68 / 6.47 nH (+3.3 %) | 1.1° / 1.1° | 113.9 / 100.9 nH (+12.9 %) |
-| [22 mm, 2 TX turns on top, cuts](../S0_1x_OD22_2L_tiny_TXtop_Cut/) | 2 mm | 8 / 8 | 1.47 / 1.44 nH (+2.2 %) | 1.48 / 1.45 nH (+2.0 %) | 0.2° / 0.3° | 142.2 / 129.1 nH (+10.1 %) |
-| [22 mm, 2 TX turns on top, cuts](../S0_1x_OD22_2L_tiny_TXtop_Cut/) | 1.5 mm | 8 / 8 | 2.20 / 2.15 nH (+2.3 %) | 2.20 / 2.16 nH (+2.0 %) | 0.2° / 0.2° | 140.2 / 126.7 nH (+10.7 %) |
-| [22 mm, 2 TX turns on top, cuts](../S0_1x_OD22_2L_tiny_TXtop_Cut/) | 1 mm | 8 / 8 | 3.34 / 3.26 nH (+2.5 %) | 3.34 / 3.27 nH (+2.3 %) | 0.2° / 0.2° | 135.6 / 122.7 nH (+10.5 %) |
-| [22 mm, 2 TX turns on top, cuts](../S0_1x_OD22_2L_tiny_TXtop_Cut/) | 0.5 mm | 8 / 8 | 5.04 / 4.91 nH (+2.6 %) | 5.04 / 4.92 nH (+2.4 %) | 0.3° / 0.4° | 127.4 / 115.2 nH (+10.6 %) |
-| [22 mm, 2 TX turns on top, cuts](../S0_1x_OD22_2L_tiny_TXtop_Cut/) | 0.1 mm | 8 / 8 | 6.60 / 6.47 nH (+2.1 %) | 6.60 / 6.48 nH (+1.9 %) | 1.0° / 1.1° | 113.9 / 100.9 nH (+12.9 %) |
-| [23 mm, 3 TX turns on top, cuts](../S0_1x_OD23_2L_tiny_TX3top_Cut/) | 2 mm | 8 / 8 | 2.33 / 2.29 nH (+1.9 %) | 2.33 / 2.29 nH (+1.9 %) | 0.3° / 0.3° | 281.5 / 260.1 nH (+8.2 %) |
-| [23 mm, 3 TX turns on top, cuts](../S0_1x_OD23_2L_tiny_TX3top_Cut/) | 1.5 mm | 8 / 8 | 3.39 / 3.32 nH (+1.9 %) | 3.39 / 3.32 nH (+1.9 %) | 0.3° / 0.3° | 276.5 / 254.3 nH (+8.7 %) |
-| [23 mm, 3 TX turns on top, cuts](../S0_1x_OD23_2L_tiny_TX3top_Cut/) | 1 mm | 8 / 8 | 4.98 / 4.88 nH (+2.1 %) | 4.99 / 4.88 nH (+2.1 %) | 0.3° / 0.3° | 266.4 / 245.1 nH (+8.7 %) |
-| [23 mm, 3 TX turns on top, cuts](../S0_1x_OD23_2L_tiny_TX3top_Cut/) | 0.5 mm | 8 / 8 | 7.25 / 7.10 nH (+2.2 %) | 7.26 / 7.10 nH (+2.2 %) | 0.5° / 0.6° | 249.4 / 229.0 nH (+8.9 %) |
-| [23 mm, 3 TX turns on top, cuts](../S0_1x_OD23_2L_tiny_TX3top_Cut/) | 0.1 mm | 8 / 8 | 9.28 / 9.12 nH (+1.7 %) | 9.28 / 9.12 nH (+1.7 %) | 1.2° / 1.2° | 224.9 / 203.1 nH (+10.8 %) |
-| [23 mm, 3 TX turns, cuts, 2 periods](../S0d2_1x_OD23_2L_tiny_TX3top_Cut/) | 2 mm | 16 / 16 | 1.89 / 1.86 nH (+1.9 %) | 1.90 / 1.86 nH (+2.2 %) | 0.2° / 0.2° | 284.2 / 262.6 nH (+8.2 %) |
-| [23 mm, 3 TX turns, cuts, 2 periods](../S0d2_1x_OD23_2L_tiny_TX3top_Cut/) | 1.5 mm | 16 / 16 | 2.94 / 2.88 nH (+2.0 %) | 2.95 / 2.88 nH (+2.3 %) | 0.2° / 0.2° | 280.3 / 257.9 nH (+8.7 %) |
-| [23 mm, 3 TX turns, cuts, 2 periods](../S0d2_1x_OD23_2L_tiny_TX3top_Cut/) | 1 mm | 16 / 16 | 4.61 / 4.51 nH (+2.2 %) | 4.63 / 4.51 nH (+2.5 %) | 0.2° / 0.2° | 271.8 / 250.3 nH (+8.6 %) |
-| [23 mm, 3 TX turns, cuts, 2 periods](../S0d2_1x_OD23_2L_tiny_TX3top_Cut/) | 0.5 mm | 16 / 16 | 7.14 / 6.97 nH (+2.3 %) | 7.16 / 6.98 nH (+2.6 %) | 0.4° / 0.4° | 257.4 / 236.6 nH (+8.8 %) |
-| [23 mm, 3 TX turns, cuts, 2 periods](../S0d2_1x_OD23_2L_tiny_TX3top_Cut/) | 0.1 mm | 16 / 16 | 9.60 / 9.44 nH (+1.8 %) | 9.62 / 9.44 nH (+2.0 %) | 0.9° / 0.9° | 236.1 / 213.6 nH (+10.6 %) |
-
-| Board | L TX, rotor away: PyPEEC | Elmer | PyPEEC against Elmer | The generator's estimate |
-|---|---|---|---|---|
-| [S0](../S0_1x_OD21_2L_tiny/) | 136.5 nH | 122.6 nH | +11.3 % | 132 nH |
-| [21 mm, 2 TX turns on top](../S0_1x_OD21_2L_tiny_TXtop/) | 133.7 nH | 121.2 nH | +10.4 % | 130 nH |
-| [22 mm, 2 TX turns on top](../S0_1x_OD22_2L_tiny_TXtop/) | 148.2 nH | 134.6 nH | +10.1 % | 144 nH |
-| [22 mm, 2 TX turns on top, cuts](../S0_1x_OD22_2L_tiny_TXtop_Cut/) | 148.2 nH | 134.6 nH | +10.1 % | 144 nH |
-| [23 mm, 3 TX turns on top, cuts](../S0_1x_OD23_2L_tiny_TX3top_Cut/) | 296.7 nH | 273.3 nH | +8.6 % | 292 nH |
-| [23 mm, 3 TX turns, cuts, 2 periods](../S0d2_1x_OD23_2L_tiny_TX3top_Cut/) | 296.4 nH | 274.2 nH | +8.1 % | 292 nH |
-
-* **The curves agree in shape everywhere:** SIN and COS 90° apart in both, and the same angle error within 0.1° rms at every gap on five boards (on S0 from 1.5 mm out, Elmer's is 0.2° to 0.3° and PyPEEC's 0.1°), the fourth-harmonic ripple at 0.1 mm included.
-* **PyPEEC's signal is a few percent higher.** On the three boards opened by a cut, where both solvers take the voltage across the same small gap, SIN's amplitude is 1.7 to 2.6 % higher than Elmer's at every gap. On the three opened at a via it is 2.9 to 4.6 % higher; the extra percent or so is the via port in PyPEEC (see "The cut against the via").
-* **L TX is 8 to 14 % higher in PyPEEC at every gap,** and 8 to 11 % higher with the rotor away. On S0 a hand calculation settles which is nearer: two coaxial rings of 7.2 mm radius 0.765 mm apart, in series, have 132.5 nH by Grover's and Maxwell's formulas, before the leads to the terminal add theirs. PyPEEC's 136.5 nH is 3.0 % over that, Elmer's 122.6 nH 7.5 % under it. The generator's own estimates with the rotor away (130 to 292 nH) sit 1.5 to 3.5 % under PyPEEC's on every board, and 6.5 to 8 % over Elmer's.
-* **A separate study of other solvers on these boards points the same way.** Against exact references (Maxwell's formula, Dodd and Deeds, an axisymmetric solve of a rotor ring), it found the PEEC codes within 0.1 to 1.6 % and the finite-element codes 0.9 to 4 % off, limited by the air's mesh, with their TX inductance 4 to 10 % low against theory. On the 22 mm board at 1 mm, FastHenry, a second PEEC code, gives a SIN amplitude of 3.46 nH, PyPEEC here 3.38 nH and Elmer 3.26 nH.
-* **S0d2 is compared over the whole turn,** 16 angles in each solver, every 22.5° from 0 to 337.5°: PyPEEC's second half turn repeats its first exactly, and Elmer's within 0.03 nH.
-
 ## Running it
 
 From this folder, with the boards' results in place:
@@ -199,10 +143,9 @@ From this folder, with the boards' results in place:
     python compare_ports.py        # the cut against the via: the table and SINCOS_cut_vs_via.webp
     python compare_turns.py        # three TX turns against two: the table, the ratios and SINCOS_2_vs_3_turns.webp
     python compare_periods.py      # two periods per turn against one: the table, the ratios and SINCOS_1_vs_2_periods.webp
-    python compare_solvers.py --chart   # PyPEEC against Elmer: the tables and SINCOS_PyPEEC_vs_Elmer.webp
 
-`compare_solvers.py` takes the Elmer results from git (`origin/Elmer_Integration`), or from a checkout of that branch with `--elmer <folder>`. The others borrow the sine fit and the chart style from a board's `PyPEEC Simulation/angle_error.py` and `make_charts.py`, so the charts look like the boards' own.
+`compare_ports.py`, `compare_turns.py` and `compare_periods.py` borrow the sine fit and the chart style from a board's `PyPEEC Simulation/angle_error.py` and `make_charts.py`, so the charts look like the boards' own.
 
 ## Licence
 
-This branch's GPL-3.0 covers the five scripts here. The boards they read are output of the Sinusoidal Coil Generator, for non-commercial use only; see [../LICENSE.md](../LICENSE.md).
+This branch's GPL-3.0 covers the four scripts here. The boards they read are output of the Sinusoidal Coil Generator, for non-commercial use only; see [../LICENSE.md](../LICENSE.md).

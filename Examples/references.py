@@ -1,8 +1,8 @@
-"""Textbook values the examples check Elmer against. Not part of the bridge: the bridge only turns a board into an
-Elmer case and reads it back; what a result is compared with belongs to each example."""
+"""Textbook values the examples check PyPEEC against. Not part of the bridge: the bridge only turns a board into a
+PyPEEC case and reads it back; what a result is compared with belongs to each example."""
 import math
 
-MU0 = 1.25663706212e-6               # H/m, the value the bridge gives Elmer (CODATA 2018)
+MU0 = 1.25663706212e-6               # H/m, CODATA 2018
 
 
 def ring_inductance(radius_mm, gmd_mm):

@@ -41,7 +41,8 @@ def kese_script():
 
 
 def run_kese(board, out, mask=True, extra=(), log=print):
-    """Export one .kicad_pcb with KESE's elmer preset plus STL. Returns the folder with materials.json."""
+    """Export one .kicad_pcb with KESE's solver preset (--for elmer: solids and materials.json) plus STL. Returns
+    the folder with materials.json."""
     cmd = [sys.executable, str(kese_script()), str(board), '--for', 'elmer', '--format', 'step', 'stl',
            '--out', str(out)]
     for s in (MASK_SETTINGS if mask else []) + list(extra):

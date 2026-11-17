@@ -2,7 +2,7 @@
 
 The second proof board of the PyPEEC bridge: E01's loop twice, one on each face of the board, so that the mutual
 inductance between two coils (the number every encoder check rests on) is checked against a formula known without
-any solver. It is the Elmer branch's E02, board for board.
+any solver.
 
 | Top | Bottom |
 |:---:|:---:|

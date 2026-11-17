@@ -2,8 +2,7 @@
 
 The first proof board of the PyPEEC bridge: one circular trace, opened by a small gap for its terminals, so that
 every part of the chain (KESE's export, the slabs, the voxels, the terminals, PyPEEC's sources and the read-back) is
-checked against an inductance and a resistance known without any solver. It is the Elmer branch's E01, board for
-board.
+checked against an inductance and a resistance known without any solver.
 
 | Top | Bottom |
 |:---:|:---:|
