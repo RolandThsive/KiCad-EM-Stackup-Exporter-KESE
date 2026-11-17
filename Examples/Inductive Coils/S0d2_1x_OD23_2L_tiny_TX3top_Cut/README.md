@@ -40,10 +40,11 @@ Every angle at every gap, one Elmer solve each: 8 angles over the rotor's 180° 
 
 | Air gap | Amplitude SIN / COS | Angle error (electrical) | Solves passing both checks | L TX over the turn |
 |---|---|---|---|---|
+| 1.5 mm | 2.88 / 2.88 nH (63 / 63 mV) | 0.2° rms, 0.4° peak | 8 of 8 | 257.6 to 258.1 nH |
 | 0.5 mm | 6.97 / 6.97 nH (153 / 153 mV) | 0.4° rms, 0.6° peak | 8 of 8 | 236.3 to 237.0 nH |
 | 0.1 mm | 9.44 / 9.43 nH (207 / 207 mV) | 0.9° rms, 1.2° peak | 8 of 8 | 213.1 to 214.2 nH |
 
-1, 1.5 and 2 mm are still solving. Each solve is direct (MUMPS), and every one so far passes both checks: the TX's L and R from its voltage agree with the L from the field energy and the R from the eddy power within 0.004 %, where 1 % is allowed. At both gaps the curves are close to a sine and cosine, 90.04° apart and equal in amplitude within 0.02 %. The signal is 9.44 nH at 0.1 mm and 6.97 nH at 0.5 mm (207 and 153 mV of EMF at 1 A). The angle error is 0.9° rms and 1.2° at worst at 0.1 mm, and 0.4° rms and 0.6° at worst at 0.5 mm, in electrical degrees; in mechanical degrees that is 0.46° and 0.61°, then 0.19° and 0.32°. At 0.1 mm it alternates in sign from one angle to the next: a ripple at four periods per electrical period, the fastest eight angles can show, which fades with the gap faster than the sine. L TX moves by 1.1 nH at most over the turn and rises from 213.6 nH at 0.1 mm to 236.6 nH at 0.5 mm.
+1 and 2 mm are still solving. Each solve is direct (MUMPS), and every one so far passes both checks: the TX's L and R from its voltage agree with the L from the field energy and the R from the eddy power within 0.004 %, where 1 % is allowed. At every gap so far the curves are close to a sine and cosine, 90.04 to 90.07° apart and equal in amplitude within 0.02 %. The signal is 9.44 nH at 0.1 mm, 6.97 nH at 0.5 mm and 2.88 nH at 1.5 mm (207, 153 and 63 mV of EMF at 1 A). The angle error is 0.9°, 0.4° and 0.2° rms (1.2°, 0.6° and 0.4° at worst) in electrical degrees, so 0.46°, 0.19° and 0.09° rms in mechanical degrees. At 0.1 mm it alternates in sign from one angle to the next: a ripple at four periods per electrical period, the fastest eight angles can show, which fades with the gap faster than the sine. L TX moves by 1.1 nH at most over the turn and rises from 213.6 nH at 0.1 mm to 257.9 nH at 1.5 mm.
 
 ## The folder
 
@@ -63,6 +64,7 @@ Beside this README, `S0d2_1x_OD23_2L_tiny_TX3top_Cut_stator_and_rotor.webp` is t
 | 0.1 mm | 0.25 | 118,416 to 119,266 | 10 | 3 to 4 min |
 | 0.5 mm | 0.25 | 128,812 to 129,731 | 11 | 4 to 5 min |
 | 1 mm | 0.25 | 139,848 at 0° | 12 | still solving |
+| 1.5 mm | 0.25 | 149,604 to 150,661 | 13 | 7 to 8 min |
 
 A direct solve (MUMPS) at level 0.25 needs about 28 GB at 1 mm (roughly 200 kB a node) and more at wider gaps, so on a 16 GB machine add a swap file first (on Linux, `sudo fallocate -l 26G /swapfile && sudo chmod 600 /swapfile && sudo mkswap /swapfile && sudo swapon /swapfile`). `--level` above 0.25 makes the mesh finer at more memory, and `--solver iterative` (GCR) needs far less memory, about 57 kB a node, but on these boards at 3.5 MHz it converges too slowly to read M.
 
