@@ -4,16 +4,36 @@ A coil set made with the [Sinusoidal Coil Generator](https://github.com/RolandTh
 
 | Air gap | Angles solved | Amplitude SIN / COS | Angle error |
 |---|---|---|---|
+| 2 mm | 8 of 8 | 1.86 / 1.85 nH (41 / 41 mV) | 0.2° rms, 0.4° peak |
 | 1.5 mm | 8 of 8 | 2.88 / 2.88 nH (63 / 63 mV) | 0.2° rms, 0.4° peak |
 | 1 mm | 8 of 8 | 4.51 / 4.51 nH (99 / 99 mV) | 0.2° rms, 0.4° peak |
 | 0.5 mm | 8 of 8 | 6.97 / 6.97 nH (153 / 153 mV) | 0.4° rms, 0.6° peak |
 | 0.1 mm | 8 of 8 | 9.44 / 9.43 nH (207 / 207 mV) | 0.9° rms, 1.2° peak |
 
+## 2 mm air gap
+
+![SIN and COS against the rotor angle at a 2 mm air gap](2mm_AirGap/results_gap2mm.webp)
+
+*Figure 1. SIN (blue) and COS (orange) at a 2 mm air gap: the mutual inductance from the TX against the rotor's angle, 8 of 8 angles solved. Each dot is one Elmer solve and the solid line joins them; the dotted lines are the ideal sine and cosine, each channel's best sine fit, which is what the angle error is measured against. SIN swings ±1.86 nH and COS ±1.85 nH, that is ±41 and ±41 mV of EMF.*
+
+Best sine fit: SIN amplitude 1.855 nH, offset 0.103 nH, phase -137.0°; COS amplitude 1.854 nH, offset 0.041 nH, phase -46.9°. Angle error, with the offset and gain of each channel calibrated out (worked out as below): 0.2° rms and 0.4° at worst, in electrical degrees (0.5 of a mechanical degree each). SIN and COS are 90.1° apart, against 90° for perfect quadrature.
+
+| Rotor | M SIN (nH) | M COS (nH) | Angle error | L TX (nH) | R TX (mΩ) | Solve | L and R checks | Memory | Time |
+|---|---|---|---|---|---|---|---|---|---|
+| 0° | -1.1601 | -1.3136 | -0.10° | 262.661 | 449.92 | direct | L -0.002 %, R +0.000 % | 13.3 GB | 8 min |
+| 22.5° | -1.7661 | -0.0142 | +0.22° | 262.668 | 449.62 | direct | L -0.003 %, R +0.000 % | 13.3 GB | 8 min |
+| 45° | -1.2449 | 1.3038 | +0.06° | 262.689 | 449.51 | direct | L -0.003 %, R +0.000 % | 13.3 GB | 8 min |
+| 67.5° | 0.0394 | 1.8998 | -0.04° | 262.785 | 449.12 | direct | L -0.002 %, R +0.000 % | 13.3 GB | 8 min |
+| 90° | 1.3725 | 1.3898 | +0.17° | 262.820 | 449.14 | direct | L -0.002 %, R +0.000 % | 13.3 GB | 8 min |
+| 112.5° | 1.9544 | 0.1011 | +0.06° | 262.687 | 449.27 | direct | L -0.003 %, R +0.000 % | 13.3 GB | 10 min |
+| 135° | 1.4505 | -1.2205 | +0.04° | 262.418 | 449.23 | direct | L -0.002 %, R +0.000 % | 13.3 GB | 9 min |
+| 157.5° | 0.1785 | -1.8175 | -0.41° | 262.414 | 449.31 | direct | L -0.004 %, R +0.000 % | 13.3 GB | 10 min |
+
 ## 1.5 mm air gap
 
 ![SIN and COS against the rotor angle at a 1.5 mm air gap](1d5mm_AirGap/results_gap1.5mm.webp)
 
-*Figure 1. SIN (blue) and COS (orange) at a 1.5 mm air gap: the mutual inductance from the TX against the rotor's angle, 8 of 8 angles solved. Each dot is one Elmer solve and the solid line joins them; the dotted lines are the ideal sine and cosine, each channel's best sine fit, which is what the angle error is measured against. SIN swings ±2.88 nH and COS ±2.88 nH, that is ±63 and ±63 mV of EMF.*
+*Figure 2. SIN (blue) and COS (orange) at a 1.5 mm air gap: the mutual inductance from the TX against the rotor's angle, 8 of 8 angles solved. Each dot is one Elmer solve and the solid line joins them; the dotted lines are the ideal sine and cosine, each channel's best sine fit, which is what the angle error is measured against. SIN swings ±2.88 nH and COS ±2.88 nH, that is ±63 and ±63 mV of EMF.*
 
 Best sine fit: SIN amplitude 2.882 nH, offset 0.100 nH, phase -137.0°; COS amplitude 2.882 nH, offset 0.035 nH, phase -46.9°. Angle error, with the offset and gain of each channel calibrated out (worked out as below): 0.2° rms and 0.4° at worst, in electrical degrees (0.5 of a mechanical degree each). SIN and COS are 90.1° apart, against 90° for perfect quadrature.
 
@@ -32,7 +52,7 @@ Best sine fit: SIN amplitude 2.882 nH, offset 0.100 nH, phase -137.0°; COS ampl
 
 ![SIN and COS against the rotor angle at a 1 mm air gap](1mm_AirGap/results_gap1mm.webp)
 
-*Figure 2. SIN (blue) and COS (orange) at a 1 mm air gap: the mutual inductance from the TX against the rotor's angle, 8 of 8 angles solved. Each dot is one Elmer solve and the solid line joins them; the dotted lines are the ideal sine and cosine, each channel's best sine fit, which is what the angle error is measured against. SIN swings ±4.51 nH and COS ±4.51 nH, that is ±99 and ±99 mV of EMF.*
+*Figure 3. SIN (blue) and COS (orange) at a 1 mm air gap: the mutual inductance from the TX against the rotor's angle, 8 of 8 angles solved. Each dot is one Elmer solve and the solid line joins them; the dotted lines are the ideal sine and cosine, each channel's best sine fit, which is what the angle error is measured against. SIN swings ±4.51 nH and COS ±4.51 nH, that is ±99 and ±99 mV of EMF.*
 
 Best sine fit: SIN amplitude 4.511 nH, offset 0.099 nH, phase -137.5°; COS amplitude 4.512 nH, offset 0.022 nH, phase -47.4°. Angle error, with the offset and gain of each channel calibrated out (worked out as below): 0.2° rms and 0.4° at worst, in electrical degrees (0.5 of a mechanical degree each). SIN and COS are 90.0° apart, against 90° for perfect quadrature.
 
@@ -52,7 +72,7 @@ Best sine fit: SIN amplitude 4.511 nH, offset 0.099 nH, phase -137.5°; COS ampl
 
 ![SIN and COS against the rotor angle at a 0.5 mm air gap](0d5mm_AirGap/results_gap0.5mm.webp)
 
-*Figure 3. SIN (blue) and COS (orange) at a 0.5 mm air gap: the mutual inductance from the TX against the rotor's angle, 8 of 8 angles solved. Each dot is one Elmer solve and the solid line joins them; the dotted lines are the ideal sine and cosine, each channel's best sine fit, which is what the angle error is measured against. SIN swings ±6.97 nH and COS ±6.97 nH, that is ±153 and ±153 mV of EMF.*
+*Figure 4. SIN (blue) and COS (orange) at a 0.5 mm air gap: the mutual inductance from the TX against the rotor's angle, 8 of 8 angles solved. Each dot is one Elmer solve and the solid line joins them; the dotted lines are the ideal sine and cosine, each channel's best sine fit, which is what the angle error is measured against. SIN swings ±6.97 nH and COS ±6.97 nH, that is ±153 and ±153 mV of EMF.*
 
 Best sine fit: SIN amplitude 6.973 nH, offset 0.111 nH, phase -138.8°; COS amplitude 6.974 nH, offset -0.009 nH, phase -48.7°. Angle error, with the offset and gain of each channel calibrated out (worked out as below): 0.4° rms and 0.6° at worst, in electrical degrees (0.5 of a mechanical degree each). SIN and COS are 90.0° apart, against 90° for perfect quadrature.
 
@@ -71,7 +91,7 @@ Best sine fit: SIN amplitude 6.973 nH, offset 0.111 nH, phase -138.8°; COS ampl
 
 ![SIN and COS against the rotor angle at a 0.1 mm air gap](0d1mm_AirGap/results_gap0.1mm.webp)
 
-*Figure 4. SIN (blue) and COS (orange) at a 0.1 mm air gap: the mutual inductance from the TX against the rotor's angle, 8 of 8 angles solved. Each dot is one Elmer solve and the solid line joins them; the dotted lines are the ideal sine and cosine, each channel's best sine fit, which is what the angle error is measured against. SIN swings ±9.44 nH and COS ±9.43 nH, that is ±207 and ±207 mV of EMF.*
+*Figure 5. SIN (blue) and COS (orange) at a 0.1 mm air gap: the mutual inductance from the TX against the rotor's angle, 8 of 8 angles solved. Each dot is one Elmer solve and the solid line joins them; the dotted lines are the ideal sine and cosine, each channel's best sine fit, which is what the angle error is measured against. SIN swings ±9.44 nH and COS ±9.43 nH, that is ±207 and ±207 mV of EMF.*
 
 Best sine fit: SIN amplitude 9.435 nH, offset 0.140 nH, phase -140.9°; COS amplitude 9.435 nH, offset -0.049 nH, phase -50.9°. Angle error, with the offset and gain of each channel calibrated out (worked out as below): 0.9° rms and 1.2° at worst, in electrical degrees (0.5 of a mechanical degree each). SIN and COS are 90.0° apart, against 90° for perfect quadrature.
 
@@ -90,11 +110,11 @@ Best sine fit: SIN amplitude 9.435 nH, offset 0.140 nH, phase -140.9°; COS ampl
 
 ![SIN and COS at each air gap](SINCOS_gaps.webp)
 
-*Figure 5. Every air gap on one chart, the 0.1 mm gap in full colour, the solves of each joined by a solid line, and each gap's ideal sine and cosine dotted. Going from 1.5 to 0.1 mm makes SIN 3.27 times and COS 3.27 times larger.*
+*Figure 6. Every air gap on one chart, the 0.1 mm gap in full colour, the solves of each joined by a solid line, and each gap's ideal sine and cosine dotted. Going from 2 to 0.1 mm makes SIN 5.09 times and COS 5.09 times larger.*
 
 ## Against the expectation
 
-The generator estimates the TX at 292 nH with the rotor away and 226 nH with it (its drop with the rotor is an upper estimate). Elmer gives 274.2 nH with the rotor away, and 257.6 to 258.1 nH with the rotor at 1.5 mm, and 250.0 to 250.6 nH with the rotor at 1 mm, and 236.3 to 237.0 nH with the rotor at 0.5 mm, and 213.1 to 214.2 nH with the rotor at 0.1 mm. The expected values are in [expected_results.json](expected_results.json).
+The generator estimates the TX at 292 nH with the rotor away and 226 nH with it (its drop with the rotor is an upper estimate). Elmer gives 274.2 nH with the rotor away, and 262.4 to 262.8 nH with the rotor at 2 mm, and 257.6 to 258.1 nH with the rotor at 1.5 mm, and 250.0 to 250.6 nH with the rotor at 1 mm, and 236.3 to 237.0 nH with the rotor at 0.5 mm, and 213.1 to 214.2 nH with the rotor at 0.1 mm. The expected values are in [expected_results.json](expected_results.json).
 
 ## How the angle error is worked out
 
