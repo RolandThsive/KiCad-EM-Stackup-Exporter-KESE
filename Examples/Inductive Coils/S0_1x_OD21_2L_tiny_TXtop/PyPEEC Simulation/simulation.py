@@ -131,6 +131,36 @@ def cut_box(name):
     return Polygon([o - hl * d - hw * n, o + hl * d - hw * n, o + hl * d + hw * n, o - hl * d + hw * n])
 
 
+def via_terminals(grid, vox, name, t1, t2):
+    """A via port's two terminals, one voxel each on the via's axis: each of the left-out via's two pads is filled
+    solid over its drill hole, and its terminal is its voxel nearest the axis, the rest of it copper. PyPEEC holds all
+    of a terminal's voxels at one potential, and a terminal as wide as the pad's half-millimetre ring, this close to
+    the TX, lets current circle through the ring and the terminal: it loaded the TX (L TX fell by up to 2 % at a
+    0.1 mm gap, and turned with the rotor) and took about 3 % off M. One voxel has no room for that."""
+    x0, y0 = SETTINGS['rx_vias'][name]
+    r = SETTINGS['via_void_radius_mm']
+    taken = np.concatenate([V.flat(v) for v in vox.values()])
+    n = int(math.ceil(r / grid.d)) + 1
+    cx, cy = int((x0 - grid.x0) // grid.d), int((y0 - grid.y0) // grid.d)
+    xs, ys = (a.ravel() for a in np.meshgrid(np.arange(cx - n, cx + n + 1), np.arange(cy - n, cy + n + 1)))
+    keep = (xs >= 0) & (xs < grid.nx) & (ys >= 0) & (ys < grid.ny)
+    xs, ys = xs[keep], ys[keep]
+    keep = (grid.x0 + (xs + 0.5) * grid.d - x0) ** 2 + (grid.y0 + (ys + 0.5) * grid.d - y0) ** 2 <= r * r
+    xs, ys = xs[keep], ys[keep]
+    out, filled = [], []
+    for t in (t1, t2):
+        z = int(np.bincount(grid.ijk(t)[2]).argmax())
+        fill = np.setdiff1d(np.asarray(grid.index(xs, ys, z), int), np.concatenate([taken, t]))
+        pad = np.concatenate([t, fill])
+        px, py, _ = grid.xyz(pad)
+        centre = pad[np.argmin((px - x0) ** 2 + (py - y0) ** 2)]
+        key = f'sheet {int(grid.sheet_of_layer[z])}'
+        vox[name][key] = np.union1d(vox[name].get(key, np.array([], int)), np.setdiff1d(pad, [centre])).astype(int)
+        out.append(np.array([centre], int))
+        filled.append(len(fill))
+    return out[0], out[1], filled
+
+
 def build(stator_export, rotor_export, angle, gap, d, log=print):
     """The voxels with the rotor at `angle` (degrees, KiCad's sense), or away (None), each coil opened at its port,
     as a case for PyPEEC."""
@@ -157,7 +187,9 @@ def build(stator_export, rotor_export, angle, gap, d, log=print):
             hole = Point(SETTINGS['rx_vias'][name]).buffer(SETTINGS['via_void_radius_mm'], 64)
             n = P.cut(grid, vox, name, hole, bottom['z1'], f0)
             t1, t2 = P.terminals(grid, vox, name, hole, bottom['z1'], f0)
-            log(f'{name}: via left out, {n} voxels')
+            t1, t2, filled = via_terminals(grid, vox, name, t1, t2)
+            log(f'{name}: via left out, {n} voxels; its pads filled over the drill hole ({filled[0]} and {filled[1]} '
+                'voxels), each terminal the voxel on the via\'s axis')
         log(f'{name}: terminals of {len(t1)} and {len(t2)} voxels')
         coils.append(C.Coil(name, name, t1, t2, 1.0 if name == 'TX' else 0.0))
     case = C.Case(grid=grid, vox=vox, coils=coils, sigma={b: SETTINGS['sigma'] for b in vox},
@@ -370,10 +402,11 @@ def plot(res_file, log=print):
 
 
 def solver_key(result):
-    """What makes two solves alike: the voxels (their size in the plane and through the copper) and the changes to
-    the solver's tolerances."""
+    """What makes two solves alike: the voxels (their size in the plane and through the copper), the changes to the
+    solver's tolerances, and, on a via port, its terminals."""
     d = result.get('solver') or {}
-    return (d.get('voxel_mm'), d.get('n_cu'), json.dumps(d.get('tolerance', {}), sort_keys=True))
+    return (d.get('voxel_mm'), d.get('n_cu'), json.dumps(d.get('tolerance', {}), sort_keys=True),
+            d.get('via_terminal'))
 
 
 def merge(res_file, others, log=print):
@@ -456,7 +489,9 @@ def main():
     result = json.loads(res_file.read_text()) if res_file.exists() else dict(
         board=BOARD.name, gap_mm=a.gap, voxel_mm=a.voxel, rx_port=RX_PORT, settings=SETTINGS, expected=EXPECTED,
         solver=dict(kind='PyPEEC, FFT-accelerated PEEC, GMRES with its own preconditioner', voxel_mm=a.voxel,
-                    n_cu=a.n_cu, tolerance=SETTINGS['tolerance'], tolerance_file=in_repo(C.TOLERANCE)),
+                    n_cu=a.n_cu, tolerance=SETTINGS['tolerance'], tolerance_file=in_repo(C.TOLERANCE),
+                    **(dict(via_terminal='one voxel on the axis of each pad, filled over its drill hole')
+                       if RX_PORT == 'via' else {})),
         versions=S.versions((se, re_)), runs=[])
     done = {r['rotor_deg'] for r in result['runs']}
     runs = ([] if a.no_away else [None]) + angles
