@@ -36,7 +36,13 @@ The generator's estimate for the TX: 0.29 µH with the rotor away and 0.23 µH w
 
 ## Results at each air gap
 
-Not solved yet: the direct solves at level 0.25 are running, at 0.1, 0.5, 1, 1.5 and 2 mm with 8 angles over the rotor's 180° period each, and the rotor taken away once (with the 1 mm results). Each gap's curves, fits and angle error will be in [`Results/SINCOS_Results.md`](Results/SINCOS_Results.md).
+Every angle at every gap, one Elmer solve each: 8 angles over the rotor's 180° period at each of 5 gaps, and the rotor taken away once (with the 1 mm results). Each gap's curves, fits and angle error are in [`Results/SINCOS_Results.md`](Results/SINCOS_Results.md). The angle error is in electrical degrees; with two periods per turn, a mechanical degree is two electrical ones, so the error in mechanical degrees is half.
+
+| Air gap | Amplitude SIN / COS | Angle error (electrical) | Solves passing both checks | L TX over the turn |
+|---|---|---|---|---|
+| 0.1 mm | 9.44 / 9.43 nH (207 / 207 mV) | 0.9° rms, 1.2° peak | 8 of 8 | 213.1 to 214.2 nH |
+
+0.5, 1, 1.5 and 2 mm are still solving. Each solve is direct (MUMPS), and every one so far passes both checks: the TX's L and R from its voltage agree with the L from the field energy and the R from the eddy power within 0.004 %, where 1 % is allowed. At 0.1 mm the curves are close to a sine and cosine, 90.04° apart and equal in amplitude. The signal is 9.44 nH (207 mV of EMF at 1 A). The angle error is 0.9° rms and 1.2° at worst in electrical degrees, 0.46° and 0.61° mechanical. It alternates in sign from one angle to the next: a ripple at four periods per electrical period, the fastest eight angles can show.
 
 ## The folder
 
@@ -51,9 +57,10 @@ Beside this README, `S0d2_1x_OD23_2L_tiny_TX3top_Cut_stator_and_rotor.webp` is t
 
 ## Running it
 
-| Air gap | Mesh level | Nodes | Layers through the gap |
-|---|---|---|---|
-| 1 mm | 0.25 | 139,848 at 0° | 12 |
+| Air gap | Mesh level | Nodes | Layers through the gap | Time a solve |
+|---|---|---|---|---|
+| 0.1 mm | 0.25 | 118,416 to 119,266 | 10 | 3 to 4 min |
+| 1 mm | 0.25 | 139,848 at 0° | 12 | still solving |
 
 A direct solve (MUMPS) at level 0.25 needs about 28 GB at 1 mm (roughly 200 kB a node) and more at wider gaps, so on a 16 GB machine add a swap file first (on Linux, `sudo fallocate -l 26G /swapfile && sudo chmod 600 /swapfile && sudo mkswap /swapfile && sudo swapon /swapfile`). `--level` above 0.25 makes the mesh finer at more memory, and `--solver iterative` (GCR) needs far less memory, about 57 kB a node, but on these boards at 3.5 MHz it converges too slowly to read M.
 
