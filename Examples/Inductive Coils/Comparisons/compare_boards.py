@@ -1,23 +1,24 @@
 """The S0 boards side by side, from each board's own results (../<board>/Results).
 
     python compare_boards.py     prints two Markdown tables: S0 against the two boards with the TX on the top layer,
-                                 gap by gap; and every board's SIN amplitude from 0.5 to 2 mm
+                                 gap by gap; and every board's SIN amplitude from 0.1 to 2 mm
 
 In the first table the amplitude is each board's best sine through all its solves, as on its own results page. In
-the second it goes through the converged solves alone where at least five converged (a solve converged when it
-stopped below a residual of 5e-4 with a positive TX resistance), and is marked with ? where fewer did.
+the second it goes through the readable solves alone where at least five are readable, and is marked with ? where
+fewer are. A solve is readable when the TX's L and R from its voltage agree with L from the field energy and R from
+the eddy power and R is positive (readable() in the boards' make_charts.py).
 Nothing here is solved. This script is GPL-3.0 as the bridge.
 """
 from __future__ import annotations
 
 import json
 import math
+import sys
 from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
 BOARDS = HERE.parent
 FREQ = 3.5e6
-LOOSE = 5e-4
 GAPS = (2.0, 1.5, 1.0, 0.5, 0.1)
 TX_ON_TOP = (('S0_1x_OD21_2L_tiny', 'S0 (21 mm, TX one turn on each layer)'),
              ('S0_1x_OD21_2L_tiny_TXtop', '21 mm, 2 TX turns on top'),
@@ -26,6 +27,10 @@ ALL = (('S0_1x_OD21_2L_tiny', 'S0'), ('S0_1x_OD21_2L_tiny_TXtop', '21 mm, 2 TX t
        ('S0_1x_OD22_2L_tiny_TXtop', '22 mm, 2 TX turns on top'),
        ('S0_1x_OD22_2L_tiny_TXtop_Cut', '22 mm, 2 TX turns on top, opened by cuts'),
        ('S0_1x_OD23_2L_tiny_TX3top_Cut', '23 mm, 3 TX turns on top, opened by cuts'))
+
+
+sys.path.insert(0, str(BOARDS / 'S0_1x_OD21_2L_tiny' / 'Elmer Simulation'))   # the boards' own check
+from make_charts import readable
 
 
 def load(board, gap):
@@ -38,7 +43,18 @@ def runs_of(res):
 
 
 def loose(r):
-    return r['solve']['residual'] > LOOSE or r['solve']['coils']['TX']['R'] < 0
+    return not readable(r['solve'])
+
+
+def checks(runs):
+    """The worst disagreement of L (voltage against field energy) and R (voltage against eddy power) over the solves."""
+    worst = 0.0
+    for r in runs:
+        s, tx = r['solve'], r['solve']['coils']['TX']
+        if s.get('L_from_energy_h') is None or s.get('R_from_power_ohm') is None:
+            return 'not checked'
+        worst = max(worst, abs(s['L_from_energy_h'] - tx['L']) / tx['L'], abs(s['R_from_power_ohm'] - tx['R']) / abs(tx['R']))
+    return f'within {worst * 100:.3f} %'
 
 
 def mv(nh):
@@ -55,8 +71,8 @@ def sine_amplitude(ang, y):
 
 
 def tx_on_top_table():
-    rows = ['| Air gap | Board | Angles | Amplitude SIN / COS | Angle error | SIN to COS | L TX over the turn | Residual | '
-            'Not converged |', '|---|---|---|---|---|---|---|---|---|']
+    rows = ['| Air gap | Board | Angles | Amplitude SIN / COS | Angle error | SIN to COS | L TX over the turn | '
+            'L and R checks | Not readable |', '|---|---|---|---|---|---|---|---|---|']
     for gap in GAPS:
         for board, label in TX_ON_TOP:
             r = load(board, gap)
@@ -66,15 +82,14 @@ def tx_on_top_table():
             fs, fc = r['fit_nH']['SIN']['amplitude'], r['fit_nH']['COS']['amplitude']
             ae = r['angle_error_deg']
             L = [x['solve']['coils']['TX']['L'] * 1e9 for x in runs]
-            res = [x['solve']['residual'] for x in runs]
             rows.append(f"| {gap:g} mm | {label} | {len(runs)} of 8 | {fs:.2f} / {fc:.2f} nH ({mv(fs):.0f} / {mv(fc):.0f} mV) "
                         f"| {ae['rms']:.1f}° rms, {ae['peak']:.1f}° peak | {ae['sin_to_cos_deg']:.1f}° | "
-                        f"{min(L):.0f} to {max(L):.0f} nH | {min(res):.1e} to {max(res):.1e} | "
+                        f"{min(L):.1f} to {max(L):.1f} nH | {checks(runs)} | "
                         f"{sum(loose(x) for x in runs)} of {len(runs)} |")
     return '\n'.join(rows)
 
 
-def signal_table(gaps=(0.5, 1.0, 1.5, 2.0)):
+def signal_table(gaps=(0.1, 0.5, 1.0, 1.5, 2.0)):
     rows = ['| Board | ' + ' | '.join(f'SIN at {g:g} mm' for g in gaps) + ' |', '|---|' + '---|' * len(gaps)]
     for board, label in ALL:
         cells = []
@@ -88,7 +103,7 @@ def signal_table(gaps=(0.5, 1.0, 1.5, 2.0)):
             use = ok if len(ok) >= 5 else runs
             a = sine_amplitude([x['rotor_deg'] for x in use], [x['solve']['coils']['SIN']['M'] * 1e9 for x in use])
             cells.append(f'{a:.2f} nH' + ('' if len(ok) >= 5 else ' ?')
-                         + (f' ({len(runs) - len(ok)} of {len(runs)} not converged)' if len(ok) < len(runs) else ''))
+                         + (f' ({len(runs) - len(ok)} of {len(runs)} not readable)' if len(ok) < len(runs) else ''))
         rows.append(f'| [{label}](../{board}/) | ' + ' | '.join(cells) + ' |')
     return '\n'.join(rows)
 

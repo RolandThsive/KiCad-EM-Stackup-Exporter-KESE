@@ -1,136 +1,120 @@
 # S0_1x_OD22_2L_tiny_TXtop: SIN and COS over the rotor's turn in Elmer
 
-A coil set made with the [Sinusoidal Coil Generator](https://github.com/RolandThsive/Sinusoidal-Inductive-Encoders-Coil-Generator): 22.2 mm across, 2 copper layers, one electrical period per turn and a half-ring rotor. The TX carries 1 A at 3.5 MHz; the curves are the mutual inductance from the TX to SIN and to COS (1 nH is 22 mV of EMF). Each angle is one Elmer solve with its own mesh. This page is rewritten by `simulation.py` after every solve.
+A coil set made with the [Sinusoidal Coil Generator](https://github.com/RolandThsive/Sinusoidal-Inductive-Encoders-Coil-Generator): 22.2 mm across, 2 copper layers, one electrical period per turn and a half-ring rotor. The TX carries 1 A at 3.5 MHz; the curves are the mutual inductance from the TX to SIN and to COS (1 nH is 22 mV of EMF). Each angle is one Elmer solve with its own mesh, checked by working the TX's L and R out two ways: from its voltage, and from the field energy and the eddy power (the L and R checks in each table give how far apart they are; a solve is read when both are within 1 %). This page is rewritten by `simulation.py` after every solve.
 
 | Air gap | Angles solved | Amplitude SIN / COS | Angle error |
 |---|---|---|---|
-| 2 mm | 8 of 8 | 1.41 / 1.41 nH (31 / 31 mV) | 1.8° rms, 2.8° peak |
-| 1.5 mm | 8 of 8 | 2.12 / 2.09 nH (47 / 46 mV) | 2.2° rms, 3.3° peak |
-| 1 mm | 8 of 8 | 3.25 / 3.14 nH (72 / 69 mV) | 3.0° rms, 4.7° peak |
-| 0.5 mm | 8 of 8 | 4.62 / 4.59 nH (102 / 101 mV) | 2.3° rms, 4.6° peak |
-| 0.1 mm | 8 of 8 | 3.82 / 6.46 nH (84 / 142 mV) | 58.5° rms, 159.3° peak |
+| 2 mm | 8 of 8 | 1.44 / 1.44 nH (32 / 32 mV) | 0.3° rms, 0.6° peak |
+| 1.5 mm | 8 of 8 | 2.15 / 2.15 nH (47 / 47 mV) | 0.2° rms, 0.5° peak |
+| 1 mm | 8 of 8 | 3.26 / 3.26 nH (72 / 72 mV) | 0.2° rms, 0.4° peak |
+| 0.5 mm | 8 of 8 | 4.92 / 4.92 nH (108 / 108 mV) | 0.4° rms, 0.5° peak |
+| 0.1 mm | 8 of 8 | 6.47 / 6.47 nH (142 / 142 mV) | 1.1° rms, 1.3° peak |
 
 ## 2 mm air gap
 
 ![SIN and COS against the rotor angle at a 2 mm air gap](2mm_AirGap/results_gap2mm.webp)
 
-*Figure 1. SIN (blue) and COS (orange) at a 2 mm air gap: the mutual inductance from the TX against the rotor's angle, 8 of 8 angles solved. Each dot is one Elmer solve and the solid line joins them; the dotted lines are the ideal sine and cosine, each channel's best sine fit, which is what the angle error is measured against. SIN swings ±1.41 nH and COS ±1.41 nH, that is ±31 and ±31 mV of EMF.*
+*Figure 1. SIN (blue) and COS (orange) at a 2 mm air gap: the mutual inductance from the TX against the rotor's angle, 8 of 8 angles solved. Each dot is one Elmer solve and the solid line joins them; the dotted lines are the ideal sine and cosine, each channel's best sine fit, which is what the angle error is measured against. SIN swings ±1.44 nH and COS ±1.44 nH, that is ±32 and ±32 mV of EMF.*
 
-Best sine fit: SIN amplitude 1.406 nH, offset 0.082 nH, phase -135.5°; COS amplitude 1.414 nH, offset 0.118 nH, phase 132.5°. Angle error, with the offset and gain of each channel calibrated out (worked out as below): 1.8° rms and 2.8° at worst, in electrical degrees, the same as mechanical degrees here. SIN and COS are 92.0° apart, against 90° for perfect quadrature.
+Best sine fit: SIN amplitude 1.445 nH, offset 0.081 nH, phase -134.3°; COS amplitude 1.443 nH, offset -0.006 nH, phase 135.5°. Angle error, with the offset and gain of each channel calibrated out (worked out as below): 0.3° rms and 0.6° at worst, in electrical degrees, the same as mechanical degrees here. SIN and COS are 90.1° apart, against 90° for perfect quadrature.
 
-| Rotor | M SIN (nH) | M COS (nH) | Angle error | L TX (nH) | R TX (mΩ) | Iterations | Residual | Memory | Time |
+| Rotor | M SIN (nH) | M COS (nH) | Angle error | L TX (nH) | R TX (mΩ) | Solve | L and R checks | Memory | Time |
 |---|---|---|---|---|---|---|---|---|---|
-| 0° | -0.8462 | 1.1607 | -1.68° | 124.499 | 320.58 | 1500 | 2.6e-04 | 13.3 GB | 27 min |
-| 45° | -1.4489 | 0.2297 | -2.65° | 126.687 | 317.10 | 1500 | 2.8e-04 | 13.3 GB | 28 min |
-| 90° | -0.8827 | -0.8834 | +2.41° | 125.892 | 327.85 | 1500 | 2.3e-04 | 13.3 GB | 37 min |
-| 135° | 0.1145 | -1.3119 | +2.80° | 126.037 | 329.68 | 1500 | 2.1e-04 | 13.3 GB | 33 min |
-| 180° | 1.0710 | -0.8884 | +1.12° | 126.153 | 330.75 | 1500 | 2.0e-04 | 13.3 GB | 31 min |
-| 225° | 1.4388 | 0.0728 | -0.43° | 124.875 | 330.62 | 1500 | 2.3e-04 | 13.3 GB | 28 min |
-| 270° | 1.0715 | 1.0375 | -0.78° | 125.009 | 320.96 | 1500 | 2.3e-04 | 13.3 GB | 28 min |
-| 315° | 0.1375 | 1.5303 | -0.78° | 124.965 | 316.24 | 1500 | 2.5e-04 | 13.3 GB | 25 min |
-
-8 of 8 solves stopped at the 1500-iteration cap, with the residual between 2.0e-04 and 2.8e-04 rather than the 1e-07 asked for. The TX is round, so turning the rotor should not change its inductance: its spread here, 124.5 to 126.7 nH, is a measure of what the solver leaves.
+| 0° | -0.9530 | 1.0053 | -0.00° | 129.133 | 281.59 | direct | L -0.002 %, R +0.000 % | 13.3 GB | 5 min |
+| 45° | -1.3755 | -0.0164 | -0.21° | 129.215 | 281.60 | direct | L -0.002 %, R +0.000 % | 13.3 GB | 5 min |
+| 90° | -0.9136 | -1.0436 | +0.63° | 129.225 | 281.44 | direct | L -0.002 %, R +0.000 % | 13.3 GB | 5 min |
+| 135° | 0.0965 | -1.4461 | +0.02° | 129.062 | 281.33 | direct | L -0.002 %, R +0.000 % | 13.3 GB | 5 min |
+| 180° | 1.1032 | -1.0132 | -0.19° | 129.114 | 281.22 | direct | L -0.002 %, R +0.000 % | 13.3 GB | 5 min |
+| 225° | 1.5347 | 0.0005 | -0.33° | 129.055 | 281.20 | direct | L -0.003 %, R +0.000 % | 13.3 GB | 5 min |
+| 270° | 1.0867 | 1.0271 | +0.20° | 129.213 | 281.39 | direct | L -0.003 %, R +0.000 % | 13.3 GB | 5 min |
+| 315° | 0.0685 | 1.4359 | -0.11° | 129.140 | 281.48 | direct | L -0.002 %, R +0.000 % | 13.3 GB | 6 min |
 
 ## 1.5 mm air gap
 
 ![SIN and COS against the rotor angle at a 1.5 mm air gap](1d5mm_AirGap/results_gap1.5mm.webp)
 
-*Figure 2. SIN (blue) and COS (orange) at a 1.5 mm air gap: the mutual inductance from the TX against the rotor's angle, 8 of 8 angles solved. Each dot is one Elmer solve and the solid line joins them; the dotted lines are the ideal sine and cosine, each channel's best sine fit, which is what the angle error is measured against. SIN swings ±2.12 nH and COS ±2.09 nH, that is ±47 and ±46 mV of EMF.*
+*Figure 2. SIN (blue) and COS (orange) at a 1.5 mm air gap: the mutual inductance from the TX against the rotor's angle, 8 of 8 angles solved. Each dot is one Elmer solve and the solid line joins them; the dotted lines are the ideal sine and cosine, each channel's best sine fit, which is what the angle error is measured against. SIN swings ±2.15 nH and COS ±2.15 nH, that is ±47 and ±47 mV of EMF.*
 
-Best sine fit: SIN amplitude 2.121 nH, offset 0.036 nH, phase -135.7°; COS amplitude 2.094 nH, offset 0.132 nH, phase 132.3°. Angle error, with the offset and gain of each channel calibrated out (worked out as below): 2.2° rms and 3.3° at worst, in electrical degrees, the same as mechanical degrees here. SIN and COS are 91.9° apart, against 90° for perfect quadrature.
+Best sine fit: SIN amplitude 2.153 nH, offset 0.076 nH, phase -134.7°; COS amplitude 2.153 nH, offset -0.004 nH, phase 135.2°. Angle error, with the offset and gain of each channel calibrated out (worked out as below): 0.2° rms and 0.5° at worst, in electrical degrees, the same as mechanical degrees here. SIN and COS are 90.1° apart, against 90° for perfect quadrature.
 
-| Rotor | M SIN (nH) | M COS (nH) | Angle error | L TX (nH) | R TX (mΩ) | Iterations | Residual | Memory | Time |
+| Rotor | M SIN (nH) | M COS (nH) | Angle error | L TX (nH) | R TX (mΩ) | Solve | L and R checks | Memory | Time |
 |---|---|---|---|---|---|---|---|---|---|
-| 0° | -1.3373 | 1.6664 | -1.88° | 122.482 | 322.68 | 1500 | 2.7e-04 | 13.3 GB | 27 min |
-| 45° | -2.3239 | 0.3345 | -3.30° | 125.382 | 304.39 | 1500 | 3.3e-04 | 13.3 GB | 26 min |
-| 90° | -1.4103 | -1.3670 | +3.07° | 124.114 | 326.04 | 1500 | 2.2e-04 | 13.3 GB | 26 min |
-| 135° | 0.0985 | -1.9923 | +3.34° | 123.918 | 332.07 | 1500 | 2.0e-04 | 13.3 GB | 25 min |
-| 180° | 1.5177 | -1.3538 | +1.23° | 123.741 | 330.76 | 1500 | 1.9e-04 | 13.3 GB | 26 min |
-| 225° | 2.0615 | 0.0571 | -0.46° | 122.386 | 330.74 | 1500 | 2.2e-04 | 13.3 GB | 27 min |
-| 270° | 1.5315 | 1.4934 | -0.64° | 122.661 | 321.96 | 1500 | 2.4e-04 | 13.3 GB | 29 min |
-| 315° | 0.1475 | 2.2155 | -1.36° | 122.436 | 317.61 | 1500 | 2.7e-04 | 13.3 GB | 25 min |
-
-8 of 8 solves stopped at the 1500-iteration cap, with the residual between 1.9e-04 and 3.3e-04 rather than the 1e-07 asked for. The TX is round, so turning the rotor should not change its inductance: its spread here, 122.4 to 125.4 nH, is a measure of what the solver leaves.
+| 0° | -1.4507 | 1.5098 | +0.03° | 126.679 | 283.64 | direct | L -0.002 %, R +0.000 % | 13.3 GB | 4 min |
+| 45° | -2.0956 | -0.0060 | -0.17° | 126.775 | 283.62 | direct | L -0.003 %, R +0.000 % | 13.3 GB | 4 min |
+| 90° | -1.4181 | -1.5353 | +0.47° | 126.794 | 283.41 | direct | L -0.002 %, R +0.000 % | 13.3 GB | 4 min |
+| 135° | 0.0838 | -2.1601 | -0.02° | 126.638 | 283.29 | direct | L -0.002 %, R +0.000 % | 13.3 GB | 4 min |
+| 180° | 1.5933 | -1.5120 | -0.03° | 126.704 | 283.10 | direct | L -0.002 %, R +0.000 % | 13.3 GB | 4 min |
+| 225° | 2.2392 | -0.0078 | -0.30° | 126.629 | 283.12 | direct | L -0.002 %, R +0.000 % | 13.2 GB | 4 min |
+| 270° | 1.5841 | 1.5253 | +0.20° | 126.781 | 283.31 | direct | L -0.004 %, R +0.000 % | 13.3 GB | 4 min |
+| 315° | 0.0754 | 2.1500 | -0.19° | 126.702 | 283.47 | direct | L -0.002 %, R +0.000 % | 13.3 GB | 4 min |
 
 ## 1 mm air gap
 
 ![SIN and COS against the rotor angle at a 1 mm air gap](1mm_AirGap/results_gap1mm.webp)
 
-*Figure 3. SIN (blue) and COS (orange) at a 1 mm air gap: the mutual inductance from the TX against the rotor's angle, 8 of 8 angles solved. Each dot is one Elmer solve and the solid line joins them; the dotted lines are the ideal sine and cosine, each channel's best sine fit, which is what the angle error is measured against. SIN swings ±3.25 nH and COS ±3.14 nH, that is ±72 and ±69 mV of EMF.*
+*Figure 3. SIN (blue) and COS (orange) at a 1 mm air gap: the mutual inductance from the TX against the rotor's angle, 8 of 8 angles solved. Each dot is one Elmer solve and the solid line joins them; the dotted lines are the ideal sine and cosine, each channel's best sine fit, which is what the angle error is measured against. SIN swings ±3.26 nH and COS ±3.26 nH, that is ±72 and ±72 mV of EMF.*
 
-Best sine fit: SIN amplitude 3.252 nH, offset -0.038 nH, phase -136.2°; COS amplitude 3.141 nH, offset 0.178 nH, phase 131.2°. Angle error, with the offset and gain of each channel calibrated out (worked out as below): 3.0° rms and 4.7° at worst, in electrical degrees, the same as mechanical degrees here. SIN and COS are 92.6° apart, against 90° for perfect quadrature.
+Best sine fit: SIN amplitude 3.261 nH, offset 0.076 nH, phase -135.6°; COS amplitude 3.263 nH, offset 0.005 nH, phase 134.4°. Angle error, with the offset and gain of each channel calibrated out (worked out as below): 0.2° rms and 0.4° at worst, in electrical degrees, the same as mechanical degrees here. SIN and COS are 90.0° apart, against 90° for perfect quadrature.
 
-| Rotor | M SIN (nH) | M COS (nH) | Angle error | L TX (nH) | R TX (mΩ) | Iterations | Residual | Memory | Time |
+| Rotor | M SIN (nH) | M COS (nH) | Angle error | L TX (nH) | R TX (mΩ) | Solve | L and R checks | Memory | Time |
 |---|---|---|---|---|---|---|---|---|---|
-| away | 0.1975 | 0.1600 |  | 129.733 | 329.78 | 1500 | 2.9e-04 | 12.7 GB | 27 min |
-| 0° | -2.0914 | 2.5177 | -2.30° | 119.086 | 321.91 | 1500 | 2.7e-04 | 12.7 GB | 24 min |
-| 45° | -3.7977 | 0.6223 | -4.56° | 123.352 | 246.30 | 1500 | 6.1e-04 | 12.8 GB | 27 min |
-| 90° | -2.1877 | -2.0750 | +4.75° | 120.499 | 328.39 | 1500 | 2.1e-04 | 12.8 GB | 26 min |
-| 135° | 0.0661 | -3.0214 | +4.22° | 120.032 | 337.67 | 1500 | 1.9e-04 | 12.8 GB | 25 min |
-| 180° | 2.2027 | -2.0828 | +1.17° | 119.652 | 338.34 | 1500 | 2.1e-04 | 12.7 GB | 25 min |
-| 225° | 3.0105 | 0.0248 | -0.55° | 117.828 | 333.89 | 1500 | 2.2e-04 | 12.7 GB | 25 min |
-| 270° | 2.2801 | 2.1917 | -0.61° | 118.609 | 324.74 | 1500 | 2.4e-04 | 12.7 GB | 24 min |
-| 315° | 0.2134 | 3.2436 | -2.11° | 118.213 | 315.22 | 1500 | 2.5e-04 | 12.7 GB | 26 min |
-
-8 of 8 solves stopped at the 1500-iteration cap, with the residual between 1.9e-04 and 6.1e-04 rather than the 1e-07 asked for. The TX is round, so turning the rotor should not change its inductance: its spread here, 117.8 to 123.4 nH, is a measure of what the solver leaves.
-
-**Not converged enough to read:** 1 of 8 solves (45°) stopped above a residual of 5e-04 or give the TX a negative resistance. On S0, every 1 mm solve stopped below it and the 0.5 mm solves above it are the ones that fall off the sine. Read this gap's curve with that in mind.
+| 0° | -2.2026 | 2.3294 | +0.07° | 122.644 | 286.83 | direct | L -0.002 %, R +0.000 % | 13.3 GB | 3 min |
+| 45° | -3.2155 | 0.0508 | -0.18° | 122.759 | 286.80 | direct | L -0.002 %, R +0.000 % | 13.3 GB | 3 min |
+| 90° | -2.2247 | -2.2773 | +0.37° | 122.792 | 286.49 | direct | L -0.002 %, R +0.000 % | 13.3 GB | 3 min |
+| 135° | 0.0375 | -3.2710 | -0.05° | 122.640 | 286.39 | direct | L -0.001 %, R +0.000 % | 13.3 GB | 3 min |
+| 180° | 2.3476 | -2.3087 | +0.12° | 122.734 | 286.07 | direct | L -0.002 %, R +0.000 % | 13.3 GB | 3 min |
+| 225° | 3.3460 | -0.0474 | -0.29° | 122.634 | 286.16 | direct | L -0.001 %, R +0.000 % | 13.3 GB | 3 min |
+| 270° | 2.3936 | 2.2910 | +0.22° | 122.782 | 286.32 | direct | L -0.002 %, R +0.000 % | 13.3 GB | 3 min |
+| 315° | 0.1261 | 3.2710 | -0.26° | 122.693 | 286.58 | direct | L -0.002 %, R +0.000 % | 13.3 GB | 3 min |
 
 ## 0.5 mm air gap
 
 ![SIN and COS against the rotor angle at a 0.5 mm air gap](0d5mm_AirGap/results_gap0.5mm.webp)
 
-*Figure 4. SIN (blue) and COS (orange) at a 0.5 mm air gap: the mutual inductance from the TX against the rotor's angle, 8 of 8 angles solved. Each dot is one Elmer solve and the solid line joins them; the dotted lines are the ideal sine and cosine, each channel's best sine fit, which is what the angle error is measured against. SIN swings ±4.62 nH and COS ±4.59 nH, that is ±102 and ±101 mV of EMF.*
+*Figure 4. SIN (blue) and COS (orange) at a 0.5 mm air gap: the mutual inductance from the TX against the rotor's angle, 8 of 8 angles solved. Each dot is one Elmer solve and the solid line joins them; the dotted lines are the ideal sine and cosine, each channel's best sine fit, which is what the angle error is measured against. SIN swings ±4.92 nH and COS ±4.92 nH, that is ±108 and ±108 mV of EMF.*
 
-Best sine fit: SIN amplitude 4.620 nH, offset -0.058 nH, phase -138.5°; COS amplitude 4.587 nH, offset 0.099 nH, phase 132.3°. Angle error, with the offset and gain of each channel calibrated out (worked out as below): 2.3° rms and 4.6° at worst, in electrical degrees, the same as mechanical degrees here. SIN and COS are 89.2° apart, against 90° for perfect quadrature.
+Best sine fit: SIN amplitude 4.916 nH, offset 0.094 nH, phase -137.4°; COS amplitude 4.919 nH, offset 0.037 nH, phase 132.6°. Angle error, with the offset and gain of each channel calibrated out (worked out as below): 0.4° rms and 0.5° at worst, in electrical degrees, the same as mechanical degrees here. SIN and COS are 90.0° apart, against 90° for perfect quadrature.
 
-| Rotor | M SIN (nH) | M COS (nH) | Angle error | L TX (nH) | R TX (mΩ) | Iterations | Residual | Memory | Time |
+| Rotor | M SIN (nH) | M COS (nH) | Angle error | L TX (nH) | R TX (mΩ) | Solve | L and R checks | Memory | Time |
 |---|---|---|---|---|---|---|---|---|---|
-| 0° | -3.3981 | 3.9626 | -1.27° | 114.906 | 319.12 | 1500 | 3.4e-04 | 12.0 GB | 24 min |
-| 45° | -4.4681 | 0.2419 | +1.22° | 113.543 | 311.95 | 1500 | 5.4e-04 | 12.0 GB | 24 min |
-| 90° | -3.8296 | -3.2204 | -0.37° | 117.227 | 383.16 | 1500 | 4.8e-04 | 12.1 GB | 23 min |
-| 135° | -0.0734 | -4.4790 | +2.89° | 112.221 | 361.02 | 1500 | 2.2e-04 | 12.0 GB | 25 min |
-| 180° | 3.1234 | -3.0906 | +2.81° | 110.837 | 363.39 | 1500 | 2.4e-04 | 12.0 GB | 21 min |
-| 225° | 4.2326 | -0.1195 | +0.15° | 107.287 | 361.01 | 1500 | 3.1e-04 | 12.0 GB | 23 min |
-| 270° | 3.4289 | 3.1146 | -0.86° | 110.299 | 338.91 | 1500 | 2.7e-04 | 12.0 GB | 27 min |
-| 315° | 0.5229 | 4.3824 | -4.58° | 107.501 | 330.19 | 1500 | 3.1e-04 | 12.0 GB | 24 min |
-
-8 of 8 solves stopped at the 1500-iteration cap, with the residual between 2.2e-04 and 5.4e-04 rather than the 1e-07 asked for. The TX is round, so turning the rotor should not change its inductance: its spread here, 107.3 to 117.2 nH, is a measure of what the solver leaves.
-
-**Not converged enough to read:** 1 of 8 solves (45°) stopped above a residual of 5e-04 or give the TX a negative resistance. On S0, every 1 mm solve stopped below it and the 0.5 mm solves above it are the ones that fall off the sine. Read this gap's curve with that in mind.
+| 0° | -3.2471 | 3.6396 | +0.24° | 115.050 | 293.30 | direct | L -0.002 %, R +0.000 % | 13.3 GB | 2 min |
+| 45° | -4.8556 | 0.2746 | -0.37° | 115.177 | 293.37 | direct | L -0.001 %, R +0.000 % | 13.3 GB | 2 min |
+| 90° | -3.4779 | -3.3069 | +0.47° | 115.235 | 292.89 | direct | L -0.003 %, R +0.000 % | 13.3 GB | 2 min |
+| 135° | -0.1311 | -4.9001 | -0.23° | 115.077 | 292.90 | direct | L -0.002 %, R +0.000 % | 13.3 GB | 2 min |
+| 180° | 3.4369 | -3.5450 | +0.42° | 115.225 | 292.36 | direct | L -0.002 %, R +0.000 % | 13.3 GB | 2 min |
+| 225° | 4.9965 | -0.2049 | -0.44° | 115.094 | 292.54 | direct | L -0.002 %, R +0.000 % | 13.3 GB | 2 min |
+| 270° | 3.6914 | 3.3950 | +0.40° | 115.250 | 292.57 | direct | L -0.002 %, R +0.000 % | 13.3 GB | 3 min |
+| 315° | 0.3408 | 4.9407 | -0.50° | 115.141 | 293.02 | direct | L -0.002 %, R +0.000 % | 13.2 GB | 2 min |
 
 ## 0.1 mm air gap
 
 ![SIN and COS against the rotor angle at a 0.1 mm air gap](0d1mm_AirGap/results_gap0.1mm.webp)
 
-*Figure 5. SIN (blue) and COS (orange) at a 0.1 mm air gap: the mutual inductance from the TX against the rotor's angle, 8 of 8 angles solved. Each dot is one Elmer solve and the solid line joins them; the dotted lines are the ideal sine and cosine, each channel's best sine fit, which is what the angle error is measured against. SIN swings ±3.82 nH and COS ±6.46 nH, that is ±84 and ±142 mV of EMF.*
+*Figure 5. SIN (blue) and COS (orange) at a 0.1 mm air gap: the mutual inductance from the TX against the rotor's angle, 8 of 8 angles solved. Each dot is one Elmer solve and the solid line joins them; the dotted lines are the ideal sine and cosine, each channel's best sine fit, which is what the angle error is measured against. SIN swings ±6.47 nH and COS ±6.47 nH, that is ±142 and ±142 mV of EMF.*
 
-Best sine fit: SIN amplitude 3.818 nH, offset -0.827 nH, phase -160.6°; COS amplitude 6.456 nH, offset 0.430 nH, phase 133.4°. Angle error, with the offset and gain of each channel calibrated out (worked out as below): 58.5° rms and 159.3° at worst, in electrical degrees, the same as mechanical degrees here. SIN and COS are 66.0° apart, against 90° for perfect quadrature.
+Best sine fit: SIN amplitude 6.470 nH, offset 0.141 nH, phase -140.3°; COS amplitude 6.471 nH, offset 0.094 nH, phase 129.7°. Angle error, with the offset and gain of each channel calibrated out (worked out as below): 1.1° rms and 1.3° at worst, in electrical degrees, the same as mechanical degrees here. SIN and COS are 90.0° apart, against 90° for perfect quadrature.
 
-| Rotor | M SIN (nH) | M COS (nH) | Angle error | L TX (nH) | R TX (mΩ) | Iterations | Residual | Memory | Time |
+| Rotor | M SIN (nH) | M COS (nH) | Angle error | L TX (nH) | R TX (mΩ) | Solve | L and R checks | Memory | Time |
 |---|---|---|---|---|---|---|---|---|---|
-| 0° | -2.5514 | 4.9203 | +0.38° | 93.393 | 301.52 | 1500 | 4.1e-04 | 11.2 GB | 22 min |
-| 45° | -6.0232 | -0.3623 | +17.53° | 99.049 | 415.19 | 1500 | 1.0e-03 | 11.3 GB | 23 min |
-| 90° | -4.9876 | -3.4961 | -3.46° | 110.749 | 532.38 | 1500 | 1.2e-03 | 11.3 GB | 21 min |
-| 135° | -0.5510 | -5.8787 | +16.61° | 101.342 | 409.13 | 1500 | 5.7e-04 | 11.3 GB | 22 min |
-| 180° | 3.3318 | -3.8467 | +26.08° | 94.977 | 426.42 | 1500 | 6.2e-04 | 11.2 GB | 23 min |
-| 225° | -4.3247 | -0.4347 | -159.31° | 43.494 | -2060.56 | 1500 | 5.8e-03 | 11.2 GB | 22 min |
-| 270° | 6.2075 | 4.3431 | -14.41° | 111.998 | -647.30 | 1500 | 2.9e-03 | 11.2 GB | 22 min |
-| 315° | 2.2834 | 8.1924 | -21.74° | 117.564 | 53.50 | 1500 | 1.3e-03 | 11.2 GB | 22 min |
-
-8 of 8 solves stopped at the 1500-iteration cap, with the residual between 4.1e-04 and 5.8e-03 rather than the 1e-07 asked for. The TX is round, so turning the rotor should not change its inductance: its spread here, 43.5 to 117.6 nH, is a measure of what the solver leaves.
-
-**Not converged enough to read:** 7 of 8 solves (45°, 90°, 135°, 180°, 225°, 270°, 315°) stopped above a residual of 5e-04 or give the TX a negative resistance. On S0, every 1 mm solve stopped below it and the 0.5 mm solves above it are the ones that fall off the sine. Read this gap's curve with that in mind.
+| away | 0.0875 | 0.0058 |  | 134.585 | 280.10 | direct | L -0.001 %, R +0.000 % | 13.3 GB | 3 min |
+| 0° | -4.0790 | 5.0096 | +0.93° | 100.763 | 313.46 | direct | L -0.002 %, R +0.000 % | 13.3 GB | 2 min |
+| 45° | -6.3369 | 0.8179 | -1.09° | 100.813 | 314.23 | direct | L -0.001 %, R +0.000 % | 13.2 GB | 2 min |
+| 90° | -4.7352 | -4.1235 | +1.13° | 100.955 | 313.08 | direct | L -0.002 %, R +0.000 % | 13.3 GB | 3 min |
+| 135° | -0.5616 | -6.3745 | -0.92° | 100.727 | 313.72 | direct | L -0.002 %, R +0.000 % | 13.3 GB | 2 min |
+| 180° | 4.3789 | -4.7852 | +1.26° | 100.982 | 312.67 | direct | L -0.003 %, R +0.000 % | 13.2 GB | 2 min |
+| 225° | 6.5291 | -0.6230 | -1.13° | 100.816 | 313.22 | direct | L -0.002 %, R +0.000 % | 13.2 GB | 3 min |
+| 270° | 5.0566 | 4.3449 | +1.13° | 101.055 | 312.50 | direct | L -0.002 %, R +0.000 % | 13.2 GB | 3 min |
+| 315° | 0.8786 | 6.4871 | -1.30° | 100.867 | 313.69 | direct | L -0.001 %, R +0.000 % | 13.2 GB | 2 min |
 
 ## The air gaps together
 
 ![SIN and COS at each air gap](SINCOS_gaps.webp)
 
-*Figure 6. Every air gap on one chart, the 0.1 mm gap in full colour, the solves of each joined by a solid line, and each gap's ideal sine and cosine dotted. Going from 2 to 0.1 mm makes SIN 2.71 times and COS 4.57 times larger.*
+*Figure 6. Every air gap on one chart, the 0.1 mm gap in full colour, the solves of each joined by a solid line, and each gap's ideal sine and cosine dotted. Going from 2 to 0.1 mm makes SIN 4.48 times and COS 4.48 times larger.*
 
 ## Against the expectation
 
-The generator estimates the TX at 144 nH with the rotor away and 116 nH with it (its drop with the rotor is an upper estimate). Elmer gives 129.7 nH with the rotor away, and 124.5 to 126.7 nH with the rotor at 2 mm, and 122.4 to 125.4 nH with the rotor at 1.5 mm, and 117.8 to 123.4 nH with the rotor at 1 mm, and 107.3 to 117.2 nH with the rotor at 0.5 mm, and 43.5 to 117.6 nH with the rotor at 0.1 mm. The expected values are in [expected_results.json](expected_results.json).
+The generator estimates the TX at 144 nH with the rotor away and 116 nH with it (its drop with the rotor is an upper estimate). Elmer gives 134.6 nH with the rotor away, and 129.1 to 129.2 nH with the rotor at 2 mm, and 126.6 to 126.8 nH with the rotor at 1.5 mm, and 122.6 to 122.8 nH with the rotor at 1 mm, and 115.1 to 115.3 nH with the rotor at 0.5 mm, and 100.7 to 101.1 nH with the rotor at 0.1 mm. The expected values are in [expected_results.json](expected_results.json).
 
 ## How the angle error is worked out
 

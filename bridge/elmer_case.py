@@ -14,8 +14,9 @@ What makes the voltage unique: with electrodes inside the domain, a gradient add
 energy) can carry the coil voltage instead of the circuit's V, and the system is singular. Elmer's own examples
 avoid it by putting the electrodes on the outer boundary, where n x A = 0. The bridge does the same in small: a
 port sheet, a few faces across the gap from one electrode to the other with n x A = 0 on them (the lumped port
-of a circuit model), pins it. The coil's scalar potential is on (Activate Constraint) and held at 0 on both
-electrodes, as Elmer's automatic electrode condition does on outer electrodes.
+of a circuit model), pins it. The coils carry no scalar potential of their own (Activate Constraint off, Elmer's
+default for coils): the edge elements carry the electric potential in the copper, and with a potential block the
+Krylov solve stalls at its first iterate (Case.constraint turns it back on).
 
 What the voltage holds: then the circuit voltage is I R plus j omega times the line integral of A round the
 whole loop, the copper and the sheet (where A along it is 0): the loop's EMF, gap included. The sheet forces
@@ -23,7 +24,8 @@ the field's normal component through itself to 0; it is a fraction of a square m
 in the third decimal.
 
 Conductors that are not coils (a rotor's copper, a plate) are ordinary conducting bodies: eddy currents flow in
-them, with their scalar potential, and nothing drives them.
+them and nothing drives them. Elmer gives each its own scalar potential, which stalls the solve the same way; the
+bridge fixes it to 0 there (Case.conductor_potential), and the edge elements carry it instead.
 """
 from __future__ import annotations
 
@@ -75,8 +77,22 @@ class Case:
     restart: int = 50
     tol: float = 1e-9
     max_iter: int = 6000
+    constraint: bool = False          # Activate Constraint on the massive coils. True adds each coil's own scalar
+                                      # potential, whose rows (current conservation) couple to A with j w sigma while
+                                      # A's rows couple back with sigma: after Elmer's diagonal scaling they swamp the
+                                      # residual, and the Krylov solve stays at its first iterate (S0 at 3.5 MHz).
+                                      # False is Elmer's default, and CalcFields' massive-coil E leaves out grad v,
+                                      # so the eddy power and J are only right with False.
+    conductor_potential: bool = False # Elmer always gives a conductor that is not a coil (a rotor, a target) its own
+                                      # scalar potential: the same rows, and the solve stalls on them the same way.
+                                      # False fixes it to 0 there, so E = -j w A, which the edge elements carry in
+                                      # full (a direct solve gives the same L and M either way); True leaves Elmer's
+                                      # default.
     ilu_order: int | None = None      # None: the circuit preconditioner as in Elmer's tests (no ILU); 0, 1, 2: an ILU
                                       # of that order on the field's block (Linear System ILU Order), more memory
+    ilu_factor: float | None = None   # with an ILU: factor the matrix with its diagonal times (1 + this) (Linear System
+                                      # ILU Factor), the shifted incomplete factorization. The air's curl-curl block
+                                      # is singular, and an unshifted ILU of it has near-zero pivots; 0.1 works
     save_fields: bool = False         # write the VTU (big); the scalars are always saved
     solver_lines: list = field(default_factory=list)   # more 'Keyword = value' lines for the A-V solver; one
                                       # naming a keyword already there replaces it (a gauge, another preconditioner)
@@ -138,6 +154,8 @@ def write_sif(case: Case, folder, freq_hz, name='case'):
               f'  Material = {mats.index(m) + 1}']
         if bname in coil_of:
             L.append(f'  Body Force = {coil_of[bname]}')
+        elif m.sigma > 0 and not case.conductor_potential:
+            L.append(f'  Body Force = {len(case.coils) + 1}')
         L += ['End', '']
     for i, m in enumerate(mats, 1):
         L += [f'Material {i}', f'  Name = "{m.name}"', f'  Electric Conductivity = {m.sigma!r}',
@@ -146,9 +164,11 @@ def write_sif(case: Case, folder, freq_hz, name='case'):
     for n, c in enumerate(case.coils, 1):
         cur = complex(c.current)
         L += [f'Component {n}', f'  Name = "{c.name}"', f'  Master Bodies Name = {c.body}',
-              '  Coil Type = "Massive"', '  Activate Constraint = Logical True', 'End', '',
+              '  Coil Type = "Massive"', f'  Activate Constraint = Logical {case.constraint}', 'End', '',
               f'Body Force {n}', f'  I{n}_Source re = Real {cur.real!r}', f'  I{n}_Source im = Real {cur.imag!r}',
               'End', '']
+    if not case.conductor_potential and any(m.sigma > 0 and b not in coil_of for b, m in case.bodies.items()):
+        L += [f'Body Force {len(case.coils) + 1}', '  A re = Real 0', '  A im = Real 0', 'End', '']
     bcs = [(case.outer, ['  A re {e} = Real 0', '  A im {e} = Real 0'])]
     for c in case.coils:
         bcs += [(c.t_low, ['  W = Real 0', '  A re = Real 0', '  A im = Real 0']),
@@ -162,10 +182,8 @@ def write_sif(case: Case, folder, freq_hz, name='case'):
           'Equation 2', f'  Active Solvers({len(e2)}) = ' + ' '.join(map(str, e2)), 'End', '']
     L += ['Solver 1', '  Exec Solver = Before All', '  Equation = "W potential"',
           '  Procedure = "WPotentialSolver" "Wsolve"', '  Variable = W',
-          '  Linear System Solver = Iterative', '  Linear System Iterative Method = CG',
-          '  Linear System Preconditioning = ILU0', '  Linear System Max Iterations = 10000',
-          '  Linear System Convergence Tolerance = 1.0e-12', '  Linear System Abort Not Converged = True',
-          '  Linear System Residual Output = 1000', 'End', '',
+          # a direct solve: CG with ILU0 stalls near 1e-4 on some coarse meshes (the three-turn board at level 0.25)
+          '  Linear System Solver = Direct', '  Linear System Direct Method = umfpack', 'End', '',
           'Solver 2', '  Exec Solver = Always', '  Equation = Circuits', '  Variable = X',
           '  No Matrix = Logical True', '  Procedure = "CircuitsAndDynamics" "CircuitsAndDynamicsHarmonic"',
           'End', '',
@@ -175,7 +193,12 @@ def write_sif(case: Case, folder, freq_hz, name='case'):
     if case.order == 2:
         L.append('  Quadratic Approximation = Logical True')
     if case.solver == 'mumps':
-        L += ['  Linear System Solver = Direct', '  Linear System Direct Method = MUMPS']
+        # Elmer turns its tree gauge on for a direct solver. Its tree runs through the conductors, which is wrong
+        # where a conductor has no potential of its own, and with the port sheets it gave a circuit voltage of 0 on
+        # S0 even with every potential in. So A stays ungauged and MUMPS fixes the null pivots of the gradients
+        # (serial MUMPS only; it needs ulimit -s unlimited, which run() sets).
+        L += ['  Linear System Solver = Direct', '  Linear System Direct Method = mumpslocal',
+              '  Use Tree Gauge = Logical False', '  Mumps Solve Singular = Logical True']
     else:
         L += ['  Linear System Symmetric = Logical True', '  Linear System Complex = Logical True',
               '  Linear System Solver = Iterative', f'  Linear System Iterative Method = {case.method}',
@@ -185,6 +208,8 @@ def write_sif(case: Case, folder, freq_hz, name='case'):
               '  Linear System Abort Not Converged = False']
         if case.ilu_order is not None:
             L.append(f'  Linear System ILU Order = {int(case.ilu_order)}')
+            if case.ilu_factor:
+                L.append(f'  Linear System ILU Factor = Real {float(case.ilu_factor)!r}')
     av = max(i for i, x in enumerate(L) if x == 'Solver 3')
     for line in case.solver_lines:
         key = line.split('=')[0].strip().lower()
@@ -228,6 +253,15 @@ def _peak_kb(pid):
     return 0
 
 
+def _big_stack():
+    """No stack limit for ElmerSolver: serial MUMPS (mumpslocal) segfaults under the usual 8 MB."""
+    import resource
+    try:
+        resource.setrlimit(resource.RLIMIT_STACK, (resource.RLIM_INFINITY, resource.RLIM_INFINITY))
+    except (ValueError, OSError):
+        pass
+
+
 def run(sif, threads=4, log=print, timeout=None):
     """Run ElmerSolver on a sif in its folder. Returns (seconds, log path, peak memory in GB)."""
     import time
@@ -240,7 +274,7 @@ def run(sif, threads=4, log=print, timeout=None):
     peak = 0
     with open(logf, 'w') as fh:
         p = subprocess.Popen([str(ELMER_BIN / 'ElmerSolver'), sif.name], cwd=sif.parent, stdout=fh,
-                             stderr=subprocess.STDOUT, env=env)
+                             stderr=subprocess.STDOUT, env=env, preexec_fn=_big_stack)
         while True:
             try:
                 p.wait(timeout=1.0)

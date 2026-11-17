@@ -27,8 +27,9 @@ and the two SVG pictures). <name> is the new folder beside this file, laid out a
                          SINCOS_Results.md here, and their results and charts in a folder per air gap
                          (1mm_AirGap, 0d5mm_AirGap)
 
-Unless --no-estimate is given, it builds the mesh at one angle and says its size and the memory a solve needs, at
-57 kB a node (measured on E01, E02 and S0). Single-set boards only: a dual board (DualCoil_...) has two coil sets.
+Unless --no-estimate is given, it builds the mesh at one angle and says its size and the memory a direct solve
+needs, at roughly 200 kB a node (S0 at level 0.25: 13 to 17 GB at 80,000 to 95,000 nodes; it grows faster than the
+nodes). Single-set boards only: a dual board (DualCoil_...) has two coil sets.
 This script is GPL-3.0 as the bridge.
 """
 from __future__ import annotations
@@ -45,7 +46,9 @@ from pathlib import Path
 HERE = Path(__file__).resolve().parent
 TEMPLATE = HERE / 'S0_1x_OD21_2L_tiny' / 'Elmer Simulation' / 'simulation.py'
 SCRIPTS = ('simulation.py', 'angle_error.py', 'make_charts.py', 'rig_picture.py', 'angle_setup.py')  # from TEMPLATE's folder
-KB_PER_NODE = 57.0                         # Elmer's memory a node, E01, E02 and S0 (S0: 11.42 GB at 203,669 nodes)
+KB_PER_NODE = 200.0                        # a direct solve's memory a node, roughly: S0 at level 0.25 took 13 to 17 GB
+                                           # (in memory and swap) at 80,000 to 95,000 nodes, and more per node on
+                                           # bigger meshes (about 40 to 55 GB at 204,000); the iterative solve 57 kB
 AXIS = (100.0, 100.0)                      # the generator puts the sensor's axis at KiCad (100, 100)
 
 
@@ -254,9 +257,11 @@ def readme(spec, src, warns, mesh, pics, expected=None):
     if mesh:
         gb = mesh['nodes'] * KB_PER_NODE / 1e6
         mem = (f"| Mesh level | Nodes | Memory a solve |\n|---|---|---|\n| {spec['mesh_level']:g} | {mesh['nodes']:,} | "
-               f"about {gb:.1f} GB (at {KB_PER_NODE:g} kB a node) |\n\n"
-               "If that does not fit the machine, `--level` below the one above makes the mesh coarser and the "
-               "solve smaller (the memory goes about with the number of nodes).\n\n")
+               f"about {gb:.1f} GB for the direct solve (at roughly {KB_PER_NODE:g} kB a node) |\n\n"
+               "Past what the machine has, add a swap file (13.3 GB in memory and the rest in swap ran every S0 "
+               "board); if it is far more, `--level` below the one above makes the mesh coarser and the solve "
+               "smaller. `--solver iterative` (GCR) needs about 57 kB a node, but on the S0 boards at 3.5 MHz it "
+               "converges too slowly to read M.\n\n")
     w = ''.join(f'* {x}\n' for x in warns) or '* none\n'
     tx = (expected or {}).get('tx', {})
     est = ''
@@ -287,7 +292,7 @@ Bore and outer radius {s['bore_and_outer_radius_mm'][0]:g} and {s['bore_and_oute
 {w}
 ## Results at each air gap
 
-Not solved yet. After `python simulation.py` (and `--gap` for each other air gap), this section gets the table of each gap from [`Results/SINCOS_Results.md`](Results/SINCOS_Results.md): the amplitude of SIN and COS, the angle error, the solves below the residual limit and L TX over the turn, then the chart of SIN at every gap, `Results/SINCOS_gaps_SIN.webp`.
+Not solved yet. After `python simulation.py` (and `--gap` for each other air gap), this section gets the table of each gap from [`Results/SINCOS_Results.md`](Results/SINCOS_Results.md): the amplitude of SIN and COS, the angle error, the solves passing both checks (the TX's L and R from its voltage against those from the field energy and the eddy power) and L TX over the turn, then the chart of SIN at every gap, `Results/SINCOS_gaps_SIN.webp`.
 
 ## The folder
 
@@ -322,7 +327,7 @@ def main():
     ap.add_argument('source', help="the generator's output folder (Stator.kicad_pcb, Rotor.kicad_pcb, Parameters.txt)")
     ap.add_argument('name', help='the new folder, beside this script')
     ap.add_argument('--angles', type=int, default=8, help="angles over one period of the rotor (default 8)")
-    ap.add_argument('--level', type=float, default=0.75, help="the mesh level written into test_spec.json")
+    ap.add_argument('--level', type=float, default=0.25, help="the mesh level written into test_spec.json")
     ap.add_argument('--no-estimate', action='store_true', help='skip building the mesh to estimate the memory')
     ap.add_argument('--force', action='store_true', help='write into a folder that exists')
     a = ap.parse_args()
@@ -370,7 +375,8 @@ def main():
         m = re.search(r"mesh (\{.*\})", r.stdout)
         if m:
             mesh = json.loads(m.group(1).replace("'", '"'))
-            print(f"one angle's mesh: {mesh['nodes']:,} nodes, about {mesh['nodes'] * KB_PER_NODE / 1e6:.1f} GB a solve")
+            print(f"one angle's mesh: {mesh['nodes']:,} nodes, about {mesh['nodes'] * KB_PER_NODE / 1e6:.1f} GB a direct "
+                  "solve")
         else:
             print('the mesh estimate failed:\n' + (r.stdout + r.stderr)[-2000:])
         shutil.rmtree(out, ignore_errors=True)

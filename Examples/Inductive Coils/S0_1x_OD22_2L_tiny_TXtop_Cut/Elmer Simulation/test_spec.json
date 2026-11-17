@@ -145,6 +145,6 @@
       ]
     }
   ],
-  "mesh_level": 0.75,
+  "mesh_level": 0.25,
   "rx_port": "cut"
 }

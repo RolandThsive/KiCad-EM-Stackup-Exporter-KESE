@@ -36,21 +36,21 @@ The generator's estimate for the TX: 0.14 µH with the rotor away and 0.12 µH w
 
 ## Results at each air gap
 
-Every angle at every gap, one Elmer solve each: 8 angles at each of 5 gaps, and the rotor taken away at 1 mm. Each gap's curves, fits and angle error are in [`Results/SINCOS_Results.md`](Results/SINCOS_Results.md).
+Every angle at every gap, one Elmer solve each: 8 angles at each of 5 gaps, and the rotor taken away once (with the 0.1 mm results). Each gap's curves, fits and angle error are in [`Results/SINCOS_Results.md`](Results/SINCOS_Results.md).
 
-| Air gap | Amplitude SIN / COS | Angle error | Solves below the residual limit | L TX over the turn |
+| Air gap | Amplitude SIN / COS | Angle error | Solves passing both checks | L TX over the turn |
 |---|---|---|---|---|
-| 2 mm | 1.42 / 1.42 nH (31 / 31 mV) | 2.2° rms, 3.4° peak | 8 of 8 | 125 to 127 nH |
-| 1.5 mm | 2.21 / 2.10 nH (49 / 46 mV) | 3.2° rms, 5.9° peak | 8 of 8 | 122 to 126 nH |
-| 1 mm | 2.81 / 3.14 nH (62 / 69 mV) | 4.8° rms, 11.3° peak | 7 of 8 | 117 to 121 nH |
-| 0.5 mm | 4.39 / 4.46 nH (97 / 98 mV) | 1.8° rms, 3.5° peak | 7 of 8 | 107 to 113 nH |
-| 0.1 mm | 5.98 / 6.22 nH (131 / 137 mV) | 10.9° rms, 24.6° peak | 2 of 8 | 91 to 122 nH |
+| 2 mm | 1.44 / 1.45 nH (32 / 32 mV) | 0.3° rms, 0.4° peak | 8 of 8 | 129.0 to 129.2 nH |
+| 1.5 mm | 2.15 / 2.16 nH (47 / 47 mV) | 0.2° rms, 0.3° peak | 8 of 8 | 126.6 to 126.8 nH |
+| 1 mm | 3.26 / 3.27 nH (72 / 72 mV) | 0.2° rms, 0.3° peak | 8 of 8 | 122.6 to 122.8 nH |
+| 0.5 mm | 4.91 / 4.92 nH (108 / 108 mV) | 0.4° rms, 0.5° peak | 8 of 8 | 115.1 to 115.2 nH |
+| 0.1 mm | 6.47 / 6.48 nH (142 / 142 mV) | 1.1° rms, 1.3° peak | 8 of 8 | 100.7 to 101.0 nH |
 
 ![SIN at each air gap](Results/SINCOS_gaps_SIN.webp)
 
-*SIN at each air gap, one dot per solve; rings mark the solves that stopped above a residual of 5e-4 or give the TX a negative resistance. [`SINCOS_gaps_COS.webp`](Results/SINCOS_gaps_COS.webp) is the same for COS, and [`SINCOS_gaps.webp`](Results/SINCOS_gaps.webp) has both.*
+*SIN at each air gap, one dot per solve; a ring would mark a solve that fails the two checks (none does). [`SINCOS_gaps_COS.webp`](Results/SINCOS_gaps_COS.webp) is the same for COS, and [`SINCOS_gaps.webp`](Results/SINCOS_gaps.webp) has both.*
 
-Every 1.5 and 2 mm solve stays below the residual limit, and at 1 and 0.5 mm one solve each (45° both times) stops above it (6.0e-4 and 9.7e-4). At 1 mm that one solve falls well off the sine: it pulls the SIN amplitude through all eight solves down to 2.81 nH and the angle error up to 4.8° rms, where through the other seven SIN is 3.05 nH. Elsewhere the curves are close to a sine and cosine, with 1.8° rms of angle error at 0.5 mm, 3.2° at 1.5 mm and 2.2° at 2 mm, and the signal is 4.39 nH for SIN at 0.5 mm, 2.21 at 1.5 mm and 1.42 at 2 mm. At 0.1 mm the solver stalls at 6 of the 8 angles, so that row is not yet the board's answer. With the rotor away L TX is 130.2 nH.
+Each solve is direct (MUMPS), and every one passes both checks: the TX's L and R from its voltage agree with the L from the field energy and the R from the eddy power within 0.005 %, where 1 % is allowed. At every gap the curves are close to a sine and cosine, with SIN and COS within 0.5 % of each other in amplitude. The angle error is 0.2° to 0.4° rms from 0.5 to 2 mm and 1.1° at 0.1 mm, where it alternates in sign from one angle to the next: a ripple at four periods per turn, the fastest eight angles can show, which third or fifth harmonics of the coupling would give, and those fade faster with the gap than the sine. The signal is 6.47 nH for SIN at 0.1 mm and falls to 4.91, 3.26, 2.15 and 1.44 nH at 0.5, 1, 1.5 and 2 mm (142 down to 32 mV of EMF at 1 A). L TX moves by 0.3 nH at most over the turn and rises from 100.9 nH at 0.1 mm to 129.1 nH at 2 mm; with the rotor away it is 134.6 nH, where the generator estimated 116 nH with the rotor and 144 nH without.
 
 ## The folder
 
@@ -65,17 +65,20 @@ Beside this README, `S0_1x_OD22_2L_tiny_TXtop_Cut_stator_and_rotor.webp` is the 
 
 ## Running it
 
-| Air gap | Mesh level | Nodes | Memory a solve |
-|---|---|---|---|
-| 1 mm | 0.75 | 227,569 | about 13.0 GB (at 57 kB a node) |
-| 1.5 mm | 0.75 | about 242,000 | more than a 15 GB machine gives one process: the solves ran with an 8 GB swapfile, on the same mesh |
-| 2 mm | 0.75 | about 256,000 | as for 1.5 mm |
+| Air gap | Mesh level | Nodes | Layers through the gap | Time a solve |
+|---|---|---|---|---|
+| 0.1 mm | 0.25 | 88,898 to 89,479 | 10 | 2 min |
+| 0.5 mm | 0.25 | 96,674 to 97,303 | 11 | 3 min |
+| 1 mm | 0.25 | 104,450 to 105,127 | 12 | 3 min |
+| 1.5 mm | 0.25 | 112,226 to 112,951 | 13 | 4 min |
+| 2 mm | 0.25 | 120,002 to 120,775 | 14 | 6 min |
 
-If that does not fit the machine, `--level` below the one above makes the mesh coarser and the solve smaller (the memory goes about with the number of nodes).
+Each solve is direct (MUMPS) and needs more than 13 GB: every one here held 13.3 GB in memory and put the rest in a 12 GB swap file, so on a 16 GB machine add one first (on Linux, `sudo fallocate -l 12G /swapfile && sudo chmod 600 /swapfile && sudo mkswap /swapfile && sudo swapon /swapfile`). Level 0.25 reads M and the angle to a few tenths of a percent and of a degree; L TX reads about 1 % low against level 0.4. `--level` above 0.25 makes the mesh finer at more memory, and `--solver iterative` (GCR) needs far less memory, about 57 kB a node, but on this board at 3.5 MHz it converges too slowly to read M.
 
     cd "Elmer Simulation"
     python simulation.py                   # the rotor away, then 0, 45, 90, 135, 180, 225, 270, 315 degrees
     python simulation.py --gap 0.5         # the same at a 0.5 mm air gap
+    python simulation.py --level 0.4       # a finer mesh, at more memory
     python simulation.py --plot            # redraw the table, the curves and SINCOS_Results.md
     python angle_error.py                  # print the angle error at each angle, and rewrite SINCOS_Results.md
     python make_charts.py                  # redraw every chart (WebP) and rewrite SINCOS_Results.md

@@ -60,7 +60,7 @@ rows = S.solve(case, [3.5e6], 'case/run')                                 # L, R
 * **Boards, not arbitrary 3D.** The mesh is 2.5D: it needs a layered stack, flat at a few heights, which every KiCad board is. A board over another (a rotor over a stator) works; a part tilted out of the board's plane does not.
 * **Magnetic, harmonic.** Elmer's magneto-quasi-static A-V solver (`WhitneyAVHarmonicSolver`) at a given frequency: inductance, resistance, mutual inductance and eddy currents. Capacitance, temperature and stress are not in it yet. Full-wave fields (S-parameters, radiation) are the openEMS branch's job.
 * **The caller places the ports.** The bridge does not guess where a coil is opened; each example says so (S0's `test_spec.json` holds it for the coil boards).
-* **Its linear solver.** On large coil boards at 3.5 MHz, the iterative solver with the circuit preconditioner stops at a residual of a few 1e-4 rather than the 1e-7 asked for; S0's results say what that costs.
+* **Its linear solver.** With no scalar-potential blocks (the default) and GCR with the shifted ILU(1), E01 converges to 1e-10 in 400 iterations. On large coil boards at 3.5 MHz (S0) the iterative solve no longer stalls but converges too slowly to read M. A direct solve (`Case.solver = 'mumps'`) is exact there: about 2.5 minutes and 13 to 17 GB on S0's coarser mesh (level 0.25; more at wider gaps, so add a swap file on a 16 GB machine), and roughly 40 to 55 GB on its production mesh (level 0.75).
 
 ## Licence
 

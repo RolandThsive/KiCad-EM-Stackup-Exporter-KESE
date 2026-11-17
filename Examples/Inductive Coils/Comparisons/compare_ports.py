@@ -22,7 +22,7 @@ CUT = BOARDS / 'S0_1x_OD22_2L_tiny_TXtop_Cut' / 'Results'
 VIA = BOARDS / 'S0_1x_OD22_2L_tiny_TXtop' / 'Results'
 sys.path.insert(0, str(CUT.parent / 'Elmer Simulation'))         # the boards' own fit and chart style
 from angle_error import sine_fit  # noqa: E402
-from make_charts import COLOURS, FREQ, INK, INK2, LOOSE, PERIOD, SURFACE, _style, tint  # noqa: E402
+from make_charts import COLOURS, FREQ, INK, INK2, PERIOD, SURFACE, _style, readable, tint  # noqa: E402
 GAPS = (2.0, 1.5, 1.0, 0.5, 0.1)
 
 
@@ -32,19 +32,19 @@ def load(results, gap):
 
 
 def solves(res, flip_sin=False):
-    """{angle: (M_SIN nH, M_COS nH, L_TX nH, R_TX ohm, residual)} for the solved angles (the rotor away left out)."""
+    """{angle: (M_SIN nH, M_COS nH, L_TX nH, R_TX ohm, readable)} for the solved angles (the rotor away left out)."""
     out = {}
     for r in res['runs']:
         if r['rotor_deg'] == 'away':
             continue
         c, s = r['solve']['coils'], r['solve']
         out[r['rotor_deg']] = ((-1 if flip_sin else 1) * c['SIN']['M'] * 1e9, c['COS']['M'] * 1e9, c['TX']['L'] * 1e9,
-                               c['TX']['R'], s['residual'])
+                               c['TX']['R'], readable(s))
     return out
 
 
 def loose(v):
-    return v[4] > LOOSE or v[3] < 0
+    return not v[4]
 
 
 def summary(res, s):
@@ -56,7 +56,7 @@ def summary(res, s):
     ae = res.get('angle_error_deg') or {}
     L = [s[a][2] for a in ang]
     return dict(n=len(ang), loose=len(ang) - len(ok), fit=fit, fit_ok=fit_ok, rms=ae.get('rms'), peak=ae.get('peak'),
-                q=ae.get('sin_to_cos_deg'), L=(min(L), max(L)), res=(min(s[a][4] for a in ang), max(s[a][4] for a in ang)))
+                q=ae.get('sin_to_cos_deg'), L=(min(L), max(L)))
 
 
 def mv(nh):
@@ -64,8 +64,8 @@ def mv(nh):
 
 
 def table():
-    rows = ['| Air gap | Port | Amplitude SIN / COS, all solves | The same, converged solves only | Angle error | SIN to '
-            'COS | L TX over the turn | Not converged | Cut against via, where both converged |',
+    rows = ['| Air gap | Port | Amplitude SIN / COS, all solves | The same, readable solves only | Angle error | SIN to '
+            'COS | L TX over the turn | Not readable | Cut against via, where both are readable |',
             '|---|---|---|---|---|---|---|---|---|']
     for gap in GAPS:
         rc, rv = load(CUT, gap), load(VIA, gap)
@@ -84,10 +84,10 @@ def table():
             a = m['fit']
             ok = m['fit_ok']
             okt = (f"{ok['SIN']['amplitude']:.2f} / {ok['COS']['amplitude']:.2f} nH ({m['n'] - m['loose']} solves)"
-                   if ok else 'fewer than 5 converged')
+                   if ok else 'fewer than 5 readable')
             rows.append(f"| {gap:g} mm | {port} | {a['SIN']['amplitude']:.2f} / {a['COS']['amplitude']:.2f} nH "
                         f"({mv(a['SIN']['amplitude']):.0f} / {mv(a['COS']['amplitude']):.0f} mV) | {okt} | "
-                        f"{m['rms']:.1f}° rms, {m['peak']:.1f}° peak | {m['q']:.1f}° | {m['L'][0]:.0f} to {m['L'][1]:.0f} nH "
+                        f"{m['rms']:.1f}° rms, {m['peak']:.1f}° peak | {m['q']:.1f}° | {m['L'][0]:.1f} to {m['L'][1]:.1f} nH "
                         f"| {m['loose']} of {m['n']} | {cmp if port.startswith('cut') else ''} |")
     return '\n'.join(rows)
 
@@ -120,7 +120,7 @@ def chart(path):
         nc = sum(loose(v) for v in sc.values())
         nv = sum(loose(v) for v in sv.values())
         ax.set_title(f'{gap:g} mm air gap', color=INK, fontsize=10, loc='left')
-        ax.text(1, 1.02, f'not converged: cut {nc} of {len(sc)}, via {nv} of {len(sv)}', transform=ax.transAxes,
+        ax.text(1, 1.02, f'not readable: cut {nc} of {len(sc)}, via {nv} of {len(sv)}', transform=ax.transAxes,
                 ha='right', va='bottom', fontsize=8, color=INK2)
         ax.margins(y=0.12)
     axes[-1].set_xlabel('rotor angle (degrees)', color=INK2)
@@ -134,7 +134,7 @@ def chart(path):
                  label='COS, cut'),
           Line2D([], [], color=tint(COLOURS['COS'], 1.0), lw=1.2, ls=(0, (4, 2)), marker='o', mfc=SURFACE,
                  label='COS, via'),
-          Line2D([], [], ls='none', marker='o', ms=11, mfc='none', mec=INK2, label='not converged')]
+          Line2D([], [], ls='none', marker='o', ms=11, mfc='none', mec=INK2, label='not readable')]
     fig.legend(handles=hs, frameon=False, fontsize=8, labelcolor=INK, loc='outside lower center', ncol=5)
     fig.savefig(path, facecolor=SURFACE, pil_kwargs={'lossless': True, 'method': 6})
     plt.close(fig)

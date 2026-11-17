@@ -1,24 +1,24 @@
 # S0_1x_OD21_2L_tiny
 
-The smallest coil set that is still a whole angle sensor, made with the [Sinusoidal Coil Generator](https://github.com/RolandThsive/Sinusoidal-Inductive-Encoders-Coil-Generator) for one job: the SIN and COS curves over a full turn of the rotor, at any air gap, on a machine with 16 GB. It is not one of the ten boards of the brief, and it is not meant to be built: its TX is too small for the IPS2550's tank (the generator warns about it, see below).
+The smallest coil set that is still a whole angle sensor, made with the [Sinusoidal Coil Generator](https://github.com/RolandThsive/Sinusoidal-Inductive-Encoders-Coil-Generator) for one job: the SIN and COS curves over a full turn of the rotor, at any air gap, on a machine with 16 GB and a swap file. It is not one of the ten boards of the brief, and it is not meant to be built: its TX is too small for the IPS2550's tank (the generator warns about it, see below).
 
 The curves, the fits and the angle error are in [Results/SINCOS_Results.md](Results/SINCOS_Results.md), one page for every air gap solved.
 
 ## Results at each air gap
 
-| Air gap | Amplitude SIN / COS | Angle error | Solves below the residual limit | L TX over the turn |
+| Air gap | Amplitude SIN / COS | Angle error | Solves passing both checks | L TX over the turn |
 |---|---|---|---|---|
-| 2 mm | 0.89 / 0.84 nH (19 / 18 mV) | 3.3° rms, 5.1° peak | 8 of 8 | 106 to 111 nH |
-| 1.5 mm | 1.37 / 1.32 nH (30 / 29 mV) | 3.6° rms, 5.6° peak | 8 of 8 | 103 to 110 nH |
-| 1 mm | 2.15 / 2.07 nH (47 / 45 mV) | 4.6° rms, 7.1° peak | 8 of 8 | 99 to 108 nH |
-| 0.5 mm | 3.26 / 2.81 nH (72 / 62 mV) | 14.3° rms, 28.3° peak | 5 of 8 | 79 to 106 nH |
-| 0.1 mm | 2.45 / 5.04 nH (54 / 111 mV) | 67.6° rms, 172.9° peak | 0 of 8 | 31 to 109 nH |
+| 2 mm | 1.18 / 1.18 nH (26 / 26 mV) | 0.3° rms, 0.6° peak | 8 of 8 | 118.7 to 118.8 nH |
+| 1.5 mm | 1.80 / 1.80 nH (40 / 40 mV) | 0.2° rms, 0.4° peak | 8 of 8 | 117.0 to 117.2 nH |
+| 1 mm | 2.81 / 2.82 nH (62 / 62 mV) | 0.1° rms, 0.3° peak | 8 of 8 | 114.2 to 114.4 nH |
+| 0.5 mm | 4.45 / 4.46 nH (98 / 98 mV) | 0.1° rms, 0.2° peak | 8 of 8 | 109.1 to 109.3 nH |
+| 0.1 mm | 6.22 / 6.23 nH (137 / 137 mV) | 0.5° rms, 0.6° peak | 8 of 8 | 99.3 to 99.6 nH |
 
 ![SIN at each air gap](Results/SINCOS_gaps_SIN.webp)
 
-*SIN at each air gap, one dot per solve; rings mark the solves that stopped above a residual of 5e-4 or give the TX a negative resistance. [`SINCOS_gaps_COS.webp`](Results/SINCOS_gaps_COS.webp) is the same for COS, and [`SINCOS_gaps.webp`](Results/SINCOS_gaps.webp) has both.*
+*SIN at each air gap, one dot per solve; a ring would mark a solve that fails the two checks under "What the solver does" (none does). [`SINCOS_gaps_COS.webp`](Results/SINCOS_gaps_COS.webp) is the same for COS, and [`SINCOS_gaps.webp`](Results/SINCOS_gaps.webp) has both.*
 
-From 1 mm out every solve stays below the residual limit and the curves are close to a sine and cosine: the signal falls by about a third for each half millimetre (2.15, 1.37 and 0.89 nH for SIN at 1, 1.5 and 2 mm) and the angle error drops a little as the gap grows. Below 1 mm the solver stalls at several angles (3 of 8 at 0.5 mm, all 8 at 0.1 mm), so those two rows are not yet the board's answer. The 1.5 and 2 mm meshes have 16 and 17 layers against 15 at 1 mm (about 215,000 and 227,000 nodes) and needed 12.0 to 12.8 GB a solve.
+Every solve passes both checks, and at every gap the curves are a clean sine and cosine: 0.1° to 0.5° rms of angle error, with SIN and COS within 0.5 % of each other in amplitude. The signal is 6.22 nH for SIN at 0.1 mm and falls by about a third for each half millimetre after that: 4.45, 2.81, 1.80 and 1.18 nH at 0.5, 1, 1.5 and 2 mm (137 down to 26 mV of EMF at 1 A). At 0.1 mm the angle error alternates in sign from one angle to the next: a ripple at four periods per turn, the fastest eight angles can show, which third or fifth harmonics of the coupling would give, and those fade faster with the gap than the sine itself. L TX moves by 0.3 nH at most over the turn, and rises from 99.5 nH at 0.1 mm to 118.8 nH at 2 mm; with the rotor away it is 122.6 nH, where the generator estimated 109 nH with the rotor and 132 nH without. The meshes have 10 layers through the gap at 0.1 mm and 14 at 2 mm (80,000 to 109,000 nodes), and each solve took 2 to 5 minutes.
 
 ## The folder
 
@@ -81,12 +81,16 @@ Elmer, magnetic (WhitneyAVHarmonicSolver with edge elements), every coil a massi
 
 *How the boards are set up in Elmer, drawn by [`rig_picture.py`](Elmer%20Simulation/rig_picture.py) from the same geometry the mesh is built from. The rotor sits over the stator copper side down, its copper 1 mm above the stator's top copper, and turns about the board's centre. No trace is cut: the generator found no spot on this small board to cut a receiver's trace, so each receiver is opened by leaving out one of its layer-change vias, the one farthest from the TX copper. Its two pads stay, and the gap between them through the board is the terminal: the electrodes are the pads' faces toward the gap, and the port sheet across it is where Elmer's circuit takes the voltage. SIN and COS are held at 0 A, so that voltage is their open-circuit EMF. The TX is opened where its two ends lie stacked on the two layers, and 1 A is driven across that gap. FR-4 and solder mask are air to this solve.*
 
+Each angle is solved directly, with MUMPS (a sparse LU factorisation), so a result is the exact solution of the mesh's equations, not wherever an iteration stopped. No conductor carries a scalar potential of its own: the coils' constraint is off (Elmer's default) and the rotor's potential is held at 0, so the edge elements carry the electric field in the copper and the matrix has none of the rows that stalled the earlier iterative solve at its first step. Two checks say whether a solve can be read: the TX's inductance from its voltage must equal the one from the field energy (2W/|I|²), and its resistance from the voltage the one from the eddy-current power (2P/|I|²), each within 1 %. Every solve in `Results/` meets both within 0.005 %. The results before 17 November came from that iterative solve (GCR), whose residual test passed solves that had hardly moved from their start; these replace them, and git keeps the old ones.
+
 One solve per rotor angle, 0 to 315° in 45° steps by default (8 angles; `--step 10` for every 10°), and one with the rotor away. The rotor is a half ring, so its outline turns with it and every angle gets its own mesh; the stator's mesh therefore differs a little between angles, which shows as small noise on the curves. The best sine fit and the rms of what it leaves are written with the results, so that noise is measured, not guessed.
 
 | Mesh level | Nodes | Memory a solve | Fits |
 |---|---|---|---|
-| 0.75 (the default here) | 203,669 | 11.4 GB seen while solving the first angle (57 kB a node, as E01 and E02) | the 15 GB test machine |
-| 1.0 (S2's) | about 280,000 | about 16 GB | a 32 GB machine |
+| 0.25 (the default here) | 80,014 at 0.1 mm to 108,939 at 2 mm, 10 to 14 layers through the gap | 13 to 17 GB measured from 0.1 to 1 mm (in memory and swap together), more at 1.5 and 2 mm | a 16 GB machine with a 12 GB swap file: every result here was solved in 13.3 GB of memory and the rest in swap |
+| 0.75 (the earlier iterative solves') | 203,669 at 1 mm | about 40 to 55 GB (estimated) | a 64 GB machine |
+
+Level 0.25 is coarser than the 0.75 used before. Refined to 0.4, M moves by 0.3 % at most and the angle by 0.25° at most, while L TX rises about 1 %, so L TX here reads about 1 % low. `--solver iterative` (GCR) needs far less memory, about 57 kB a node, but on these boards at 3.5 MHz it converges too slowly to read M.
 
 ## Running it
 
@@ -94,11 +98,15 @@ One solve per rotor angle, 0 to 315° in 45° steps by default (8 angles; `--ste
     python simulation.py                   # the rotor away, then 0 to 315 degrees every 45, at a 1 mm gap
     python simulation.py --gap 0.5         # the same at 0.5 mm
     python simulation.py --step 10         # every 10 degrees
+    python simulation.py --level 0.4       # a finer mesh, at more memory
+    python simulation.py --solver iterative # GCR instead of the direct solve: less memory, too slow to read M here
     python simulation.py --plot            # redraw the table, the curves and SINCOS_Results.md
     python angle_error.py                  # print the angle error at each angle, and rewrite SINCOS_Results.md
     python make_charts.py                  # redraw every chart (WebP) and rewrite SINCOS_Results.md
     python rig_picture.py                  # redraw how the boards sit in Elmer
     python angle_setup.py                  # redraw the rotor at each angle
+
+A direct solve here needs 13 GB or more, so on a 16 GB machine add a swap file first; on Linux, `sudo fallocate -l 12G /swapfile && sudo chmod 600 /swapfile && sudo mkswap /swapfile && sudo swapon /swapfile`.
 
 Each gap writes into its own folder in `Results/`, named for the gap with the point written as d (`1mm_AirGap`, `0d5mm_AirGap`): `results_gap<gap>mm.json` (every solve, the fit, the angle error), `results_gap<gap>mm.csv` (angle, M of SIN and COS in nH, the TX's L, and the EMFs in mV) and `results_gap<gap>mm.webp` (the chart, drawn by [`make_charts.py`](Elmer%20Simulation/make_charts.py): a dot for each solve, a solid line joining them, and dashes for the ideal sine and cosine). [`SINCOS_Results.md`](Results/SINCOS_Results.md) puts every gap on one page: each graph with a caption, the fit, the angle error at each angle, every solve and the generator's expectation, and once two gaps are solved, a chart with both. An angle already in the results is skipped, so a stopped sweep picks up where it was.
 
@@ -116,8 +124,8 @@ Any coil set from the generator's Single Coil Set Generator goes through the sam
        python new_coil.py "<checkout>/Generators/Single Coil Set Generator/Output/Coil_..." S6_my_board
 
    It makes `S6_my_board/` laid out as this folder: `Boards/` with the boards, `Parameters.txt`, the parameter files and the pictures; `Elmer Simulation/` with `test_spec.json`, `simulation.py`, `angle_error.py`, `make_charts.py` and `rig_picture.py`; `Results/` with `expected_results.json`; and a README beside them. The first run fills `3D_Geometry/` with KESE's export of the two boards. Then it builds the mesh at one angle and prints its size and the memory a solve needs. `--angles 16` gives more angles over the rotor's period, `--level` another mesh level, and `--no-estimate` skips the mesh.
-3. **Check it.** A solve needs about 57 kB a node, so about 230,000 nodes is the most that fits in 15 GB and about 500,000 in 32 GB. If the estimate is too big, make the coil smaller (fewer loops, fewer TX turns, a smaller or thinner board each shrink the mesh) or use a lower `--level`. Then check the terminals in the new README against the picture. The TX is opened at its two stacked ends. Each RX coil is opened at one of its layer-change vias: the one nearest the generator's suggested cut, or, where it found no cut spot, the one farthest from the TX copper.
-4. **Run it.** `python simulation.py` in the new folder's `Elmer Simulation/` solves the rotor away, then each angle of `test_spec.json`. `--gap 0.5` sets another air gap and `--step 10` solves every 10 degrees over the rotor's period. A stopped sweep picks up where it was. An angle of S0's size takes about 25 minutes on 4 cores.
+3. **Check it.** A direct solve needs roughly 200 kB a node, and more per node as the mesh grows: S0's level-0.25 meshes of 80,000 to 109,000 nodes need 13 to 17 GB from 0.1 to 1 mm and more at wider gaps, which a 16 GB machine runs with a 12 GB swap file, and its level-0.75 mesh of 204,000 nodes about 40 to 55 GB. If the estimate is too big, make the coil smaller (fewer loops, fewer TX turns, a smaller or thinner board each shrink the mesh) or use a lower `--level`. Then check the terminals in the new README against the picture. The TX is opened at its two stacked ends. Each RX coil is opened at one of its layer-change vias: the one nearest the generator's suggested cut, or, where it found no cut spot, the one farthest from the TX copper.
+4. **Run it.** `python simulation.py` in the new folder's `Elmer Simulation/` solves the rotor away, then each angle of `test_spec.json`. `--gap 0.5` sets another air gap and `--step 10` solves every 10 degrees over the rotor's period. A stopped sweep picks up where it was. An angle of S0's size takes 2 to 5 minutes on 4 cores.
 5. **Read the results.** In `Results/<gap>_AirGap/`, `results_gap<gap>mm.json` has every solve, the best sine fit and the angle error, `.csv` the curves in nH and mV, and `.webp` the chart, with a dot for each solve, a solid line joining them and dashes for the ideal sine and cosine. `SINCOS_Results.md` gathers all of it, every gap on one page, and is rewritten after every solve. `python simulation.py --plot` or `python make_charts.py` redraws them. Commit the folder without `case/`, which git ignores.
 
 The limits: single coil sets only, since a `DualCoil_` board has two sets. `simulation.py` has solved S0 (two layers); `new_coil.py` also sets up S1 to S5 (two and four layers) with their TX ends found where their own specs have them, but none of those has been solved this way yet.

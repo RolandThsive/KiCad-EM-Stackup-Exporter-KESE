@@ -45,8 +45,10 @@ GAP_COLOURS = {0.1: (0xe3, 0x49, 0x48), 0.5: (0x2a, 0x78, 0xd6), 1.0: (0x00, 0x8
                2.0: (0x1b, 0xaf, 0x7a)}
 MORE_GAP_COLOURS = ((0x62, 0x50, 0xd6), (0xe8, 0x7b, 0xa4), (0xeb, 0x68, 0x34))
 DOTS = (0, (1, 2.2))                  # the ideal curves: dotted, so they never read as solves
-LOOSE = 5e-4      # a solve that stopped above this residual, or gives the TX a negative resistance, is not converged
-          # enough to read (on S0 every 1 mm solve stopped below it); simulation.py uses it too
+AGREE = 0.01      # a solve is read only if the TX's L and R from its voltage are within 1 % of L from the field energy
+                  # and R from the eddy power (readable(); simulation.py uses it too). The residual alone says little:
+                  # A = 0 with V = R_DC I, doing nothing at all, already gives about 5e-5 on S0
+LOOSE = 5e-4      # results from before those checks (no eddy-power R): not read above this residual, as before
 
 
 def tint(rgb, k):
@@ -217,10 +219,23 @@ def gaps_chart(results):
     return _save(plt, fig, ax, RESULTS / 'SINCOS_gaps.webp', min(2 * len(data) + 1, 4))   # at most 4 a row
 
 
+def readable(s):
+    """Whether a solve has gone far enough to read. For an exact discrete solution the TX's L from its voltage equals
+    L from the field energy (2W/|I|^2), and its R from the voltage equals R from the eddy power (2P/|I|^2); a solve
+    is read when both pairs agree within AGREE and R_TX is positive. Both checks are needed, as neither tracks the
+    other (the R check alone has passed a stalled S0 solve whose L was 9 % off). Results from before these checks,
+    which have no eddy-power R (Activate Constraint runs, where CalcFields leaves out grad v), keep the old rule: R_TX
+    positive and the residual at most LOOSE."""
+    tx = s['coils']['TX']
+    rp, lw = s.get('R_from_power_ohm'), s.get('L_from_energy_h')
+    if rp is None or lw is None:
+        return tx['R'] > 0 and s.get('residual') is not None and s['residual'] <= LOOSE
+    return tx['R'] > 0 and abs(rp - tx['R']) <= AGREE * tx['R'] and abs(lw - tx['L']) <= AGREE * tx['L']
+
+
 def _loose(res):
-    """The rotor angles of a results file whose solves are not converged enough to read (see LOOSE)."""
-    return {r['rotor_deg'] for r in res['runs'] if r['rotor_deg'] != 'away'
-            and (r['solve']['residual'] > LOOSE or r['solve']['coils']['TX']['R'] < 0)}
+    """The rotor angles of a results file whose solves are not converged enough to read (readable())."""
+    return {r['rotor_deg'] for r in res['runs'] if r['rotor_deg'] != 'away' and not readable(r['solve'])}
 
 
 def _ideal(ang, y):
@@ -268,7 +283,7 @@ def channel_chart(res_file, name):
     ax.plot([], [], color=INK2, lw=1.3, ls=DOTS, label='ideal (best sine fit)')
     if loose:
         ax.plot([], [], ls='none', marker='o', ms=10, mfc='none', mec=INK, mew=1.0,
-                label=f'not converged (residual above {LOOSE:.0e} or R_TX below 0)')
+                label='not converged enough to read')
     return _save2(plt, fig, ax, dx, Path(res_file).with_name(f'results_gap{gap:g}mm_{name}.webp'), 3)
 
 
@@ -300,7 +315,7 @@ def channel_gaps_chart(results, name):
     ax.plot([], [], color=INK2, lw=1.3, ls=DOTS, label='ideal (best sine fit)')
     if any_loose:
         ax.plot([], [], ls='none', marker='o', ms=10, mfc='none', mec=INK, mew=1.0,
-                label=f'not converged (residual above {LOOSE:.0e} or R_TX below 0)')
+                label='not converged enough to read')
     return _save2(plt, fig, ax, dx, RESULTS / f'SINCOS_gaps_{name}.webp', 3)
 
 

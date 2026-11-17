@@ -61,6 +61,7 @@ def iterations(logfile):
     text = Path(logfile).read_text(errors='replace')
     part = text.split('WhitneyAVHarmonicSolver: Solving', 1)[-1]
     rows = re.findall(r'^\s*(\d+)\s+([0-9.]+E[+-]\d+)\s*$', part, re.M)
+    rows = rows or re.findall(r'^\s*gcrz:\s+(\d+)\s+([0-9.]+E[+-]\d+)', part, re.M)   # GCR prints its own lines
     if not rows:
         return None, None
     return int(rows[-1][0]), float(rows[-1][1])
@@ -81,8 +82,9 @@ def solve(case, freqs, folder, threads=4, log=print, tag='f'):
         coils = E.coil_results(sc, case.coils, f)
         it, res = iterations(sif.with_suffix('.log'))
         energy = next((v for k, v in sc.items() if 'field energy' in k), None)
+        eddy = re.findall(r'Eddy current power:\s*([0-9.E+-]+)', sif.with_suffix('.log').read_text(errors='replace'))
         row = dict(frequency_hz=f, seconds=round(dt, 1), peak_memory_gb=round(peak_gb, 2), iterations=it,
-                   residual=res, field_energy_j=energy,
+                   residual=res, field_energy_j=energy, eddy_power_w=float(eddy[-1]) if eddy else None,
                    dc_resistance_ohm={c.name: sc.get(f'res: r_component({n})') for n, c in enumerate(case.coils, 1)},
                    coils={})
         for c in case.coils:
@@ -92,6 +94,8 @@ def solve(case, freqs, folder, threads=4, log=print, tag='f'):
         if energy is not None and len(driven) == 1:
             i = abs(complex(driven[0].current))
             row['L_from_energy_h'] = 2 * energy / i ** 2
+            if row['eddy_power_w'] is not None:      # right only without Activate Constraint (CalcFields leaves out grad v)
+                row['R_from_power_ohm'] = 2 * row['eddy_power_w'] / i ** 2
         rows.append(row)
         log(json.dumps({k: row[k] for k in ('frequency_hz', 'seconds', 'peak_memory_gb', 'iterations', 'residual')}))
     return rows

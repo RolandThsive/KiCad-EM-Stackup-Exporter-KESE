@@ -36,21 +36,21 @@ The generator's estimate for the TX: 0.29 µH with the rotor away and 0.23 µH w
 
 ## Results at each air gap
 
-Every angle at every gap, one Elmer solve each: 8 angles at each of 5 gaps, and the rotor taken away at 1 mm. Each gap's curves, fits and angle error are in [`Results/SINCOS_Results.md`](Results/SINCOS_Results.md).
+Every angle at every gap, one Elmer solve each: 8 angles at each of 5 gaps, and the rotor taken away once (with the 0.1 mm results). Each gap's curves, fits and angle error are in [`Results/SINCOS_Results.md`](Results/SINCOS_Results.md).
 
-| Air gap | Amplitude SIN / COS | Angle error | Solves below the residual limit | L TX over the turn |
+| Air gap | Amplitude SIN / COS | Angle error | Solves passing both checks | L TX over the turn |
 |---|---|---|---|---|
-| 2 mm | 2.18 / 2.19 nH (48 / 48 mV) | 1.7° rms, 2.6° peak | 8 of 8 | 248 to 252 nH |
-| 1.5 mm | 3.26 / 3.17 nH (72 / 70 mV) | 2.8° rms, 4.3° peak | 6 of 8 | 241 to 250 nH |
-| 1 mm | 4.28 / 4.62 nH (94 / 102 mV) | 3.5° rms, 6.8° peak | 6 of 8 | 229 to 243 nH |
-| 0.5 mm | 6.43 / 6.27 nH (141 / 138 mV) | 2.9° rms, 5.4° peak | 6 of 8 | 205 to 231 nH |
-| 0.1 mm | 8.94 / 8.15 nH (197 / 179 mV) | 7.4° rms, 10.6° peak | 1 of 8 | 177 to 291 nH |
+| 2 mm | 2.29 / 2.29 nH (50 / 50 mV) | 0.3° rms, 0.6° peak | 8 of 8 | 260.0 to 260.3 nH |
+| 1.5 mm | 3.32 / 3.32 nH (73 / 73 mV) | 0.3° rms, 0.5° peak | 8 of 8 | 254.2 to 254.5 nH |
+| 1 mm | 4.88 / 4.88 nH (107 / 107 mV) | 0.3° rms, 0.6° peak | 8 of 8 | 245.0 to 245.3 nH |
+| 0.5 mm | 7.10 / 7.10 nH (156 / 156 mV) | 0.6° rms, 0.8° peak | 8 of 8 | 228.8 to 229.2 nH |
+| 0.1 mm | 9.12 / 9.12 nH (201 / 201 mV) | 1.2° rms, 1.5° peak | 8 of 8 | 202.8 to 203.3 nH |
 
 ![SIN at each air gap](Results/SINCOS_gaps_SIN.webp)
 
-*SIN at each air gap, one dot per solve; rings mark the solves that stopped above a residual of 5e-4 or give the TX a negative resistance. [`SINCOS_gaps_COS.webp`](Results/SINCOS_gaps_COS.webp) is the same for COS, and [`SINCOS_gaps.webp`](Results/SINCOS_gaps.webp) has both.*
+*SIN at each air gap, one dot per solve; a ring would mark a solve that fails the two checks (none does). [`SINCOS_gaps_COS.webp`](Results/SINCOS_gaps_COS.webp) is the same for COS, and [`SINCOS_gaps.webp`](Results/SINCOS_gaps.webp) has both.*
 
-From 0.5 mm out the curves are close to a sine and cosine, with 1.7° to 3.5° rms of angle error, and SIN and COS match in amplitude within 8 %. Every 2 mm solve stays below the residual limit; at 0.5, 1 and 1.5 mm two of the eight stop just above it, none above 7.2e-4. The signal is 6.43 nH for SIN at 0.5 mm and falls to 4.28, 3.26 and 2.18 nH at 1, 1.5 and 2 mm (141 down to 48 mV of EMF at 1 A). L TX is 205 to 252 nH with the rotor between 0.5 and 2 mm and 261.4 nH with it away, where the generator estimated 226 and 292 nH. At 0.1 mm the solver stalls at 7 of the 8 angles, so that row is not yet the board's answer.
+Each solve is direct (MUMPS), and every one passes both checks: the TX's L and R from its voltage agree with the L from the field energy and the R from the eddy power within 0.007 %, where 1 % is allowed. At every gap the curves are close to a sine and cosine, with SIN and COS within 0.1 % of each other in amplitude. The angle error is 0.3° rms from 1 to 2 mm, 0.6° at 0.5 mm and 1.2° at 0.1 mm, where it alternates in sign from one angle to the next: a ripple at four periods per turn, the fastest eight angles can show, which third or fifth harmonics of the coupling would give, and those fade faster with the gap than the sine. The signal is 9.12 nH for SIN at 0.1 mm and falls to 7.10, 4.88, 3.32 and 2.29 nH at 0.5, 1, 1.5 and 2 mm (201 down to 50 mV of EMF at 1 A). L TX moves by 0.5 nH at most over the turn and rises from 203.1 nH at 0.1 mm to 260.2 nH at 2 mm; with the rotor away it is 273.3 nH, where the generator estimated 226 nH with the rotor and 292 nH without.
 
 ## The folder
 
@@ -65,16 +65,20 @@ Beside this README, `S0_1x_OD23_2L_tiny_TX3top_Cut_stator_and_rotor.webp` is the
 
 ## Running it
 
-| Air gap | Mesh level | Nodes | Memory a solve |
-|---|---|---|---|
-| 1 mm | 0.75 | 257,362 | about 14.7 GB (at 57 kB a node) |
-| 2 mm | 0.75 | 288,278 | about 16.4 GB |
+| Air gap | Mesh level | Nodes | Layers through the gap | Time a solve |
+|---|---|---|---|---|
+| 0.1 mm | 0.25 | 99,520 to 100,119 | 10 | 3 min |
+| 0.5 mm | 0.25 | 108,220 to 108,864 | 11 | 3 to 4 min |
+| 1 mm | 0.25 | 116,920 to 117,609 | 12 | 4 to 5 min |
+| 1.5 mm | 0.25 | 125,620 to 126,354 | 13 | 5 to 7 min |
+| 2 mm | 0.25 | 134,320 to 135,099 | 14 | 6 to 7 min |
 
-A larger gap adds air layers to the mesh, so it needs more memory. Where that does not fit, a swapfile lets the solve finish on the same mesh, which is how every solve here ran: on 15 GB machines each held 13.3 GB in memory and put the rest in an 8 GB swapfile. If that does not fit the machine either, `--level` below the one above makes the mesh coarser and the solve smaller (the memory goes about with the number of nodes).
+Each solve is direct (MUMPS) and needs more than 13 GB: every one here held 13.3 GB in memory and put the rest in a swap file. From 0.1 to 1 mm 11 GB of swap was enough; at 1.5 mm a solve with 11 GB was stopped for memory, so the 1.5 and 2 mm solves ran with 26 GB. On Linux, `sudo fallocate -l 26G /swapfile && sudo chmod 600 /swapfile && sudo mkswap /swapfile && sudo swapon /swapfile` adds one. Level 0.25 reads M and the angle to a few tenths of a percent and of a degree; L TX reads about 1 % low against level 0.4. `--level` above 0.25 makes the mesh finer at more memory, and `--solver iterative` (GCR) needs far less memory, about 57 kB a node, but on this board at 3.5 MHz it converges too slowly to read M.
 
     cd "Elmer Simulation"
     python simulation.py                   # the rotor away, then 0, 45, 90, 135, 180, 225, 270, 315 degrees
     python simulation.py --gap 0.5         # the same at a 0.5 mm air gap
+    python simulation.py --level 0.4       # a finer mesh, at more memory
     python simulation.py --plot            # redraw the table, the curves and SINCOS_Results.md
     python angle_error.py                  # print the angle error at each angle, and rewrite SINCOS_Results.md
     python make_charts.py                  # redraw every chart (WebP) and rewrite SINCOS_Results.md

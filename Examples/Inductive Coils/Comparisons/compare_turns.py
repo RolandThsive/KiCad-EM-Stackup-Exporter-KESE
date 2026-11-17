@@ -4,7 +4,8 @@ grew from (../S0_1x_OD22_2L_tiny_TXtop_Cut), both opened by the same cuts, at ev
     python compare_turns.py      prints the comparison as a Markdown table and draws SINCOS_2_vs_3_turns.webp here
 
 The signal is each channel's amplitude, the best sine through the solves. Where at least five solves of a gap
-converged, the fit goes through those alone; with fewer, through all of them, and the chart draws that point hollow
+are readable (make_charts.readable: the TX's L and R from its voltage agree with the field energy's and the eddy
+power's), the fit goes through those alone; with fewer, through all of them, and the chart draws that point hollow
 and ringed, as one not to read. L TX is the mean over the turn. Nothing here is solved. This script is GPL-3.0 as
 the bridge.
 """
@@ -23,7 +24,7 @@ THREE = BOARDS / 'S0_1x_OD23_2L_tiny_TX3top_Cut' / 'Results'
 TWO = BOARDS / 'S0_1x_OD22_2L_tiny_TXtop_Cut' / 'Results'
 sys.path.insert(0, str(THREE.parent / 'Elmer Simulation'))       # the boards' own fit and chart style
 from angle_error import sine_fit  # noqa: E402
-from make_charts import COLOURS, FREQ, INK, INK2, LOOSE, PERIOD, SURFACE, _style, tint  # noqa: E402
+from make_charts import COLOURS, FREQ, INK, INK2, PERIOD, SURFACE, _style, readable, tint  # noqa: E402
 GAPS = (0.1, 0.5, 1.0, 1.5, 2.0)
 
 
@@ -33,11 +34,11 @@ def load(results, gap):
 
 
 def loose(r):
-    return r['solve']['residual'] > LOOSE or r['solve']['coils']['TX']['R'] < 0
+    return not readable(r['solve'])
 
 
 def summary(res):
-    """The amplitudes (converged solves alone where five or more converged), the angle error, L TX and the count."""
+    """The amplitudes (readable solves alone where five or more are), the angle error, L TX and the count."""
     runs = sorted((r for r in res['runs'] if r['rotor_deg'] != 'away'), key=lambda r: r['rotor_deg'])
     ok = [r for r in runs if not loose(r)]
     use = ok if len(ok) >= 5 else runs
@@ -66,14 +67,14 @@ def rows():
 
 
 def table():
-    lines = ['| Air gap | TX | Amplitude SIN / COS | Fitted through | Angle error | L TX over the turn | Not converged |',
+    lines = ['| Air gap | TX | Amplitude SIN / COS | Fitted through | Angle error | L TX over the turn | Not readable |',
              '|---|---|---|---|---|---|---|']
     for gap, s2, s3 in sorted(rows(), key=lambda x: -x[0]):
         for turns, s in (('2 turns', s2), ('3 turns', s3)):
             a = s['amp']
             lines.append(f"| {gap:g} mm | {turns} | {a['SIN']:.2f} / {a['COS']:.2f} nH ({mv(a['SIN']):.0f} / "
-                         f"{mv(a['COS']):.0f} mV) | {'the converged solves' if s['readable'] else 'all solves (fewer than 5 converged)'} | "
-                         f"{s['rms']:.1f}° rms, {s['peak']:.1f}° peak | {s['Lr'][0]:.0f} to {s['Lr'][1]:.0f} nH | "
+                         f"{mv(a['COS']):.0f} mV) | {'the readable solves' if s['readable'] else 'all solves (fewer than 5 readable)'} | "
+                         f"{s['rms']:.1f}° rms, {s['peak']:.1f}° peak | {s['Lr'][0]:.1f} to {s['Lr'][1]:.1f} nH | "
                          f"{s['loose']} of {s['n']} |")
     return '\n'.join(lines)
 
@@ -135,7 +136,7 @@ def chart(path):
                  label='COS, 3 turns'),
           Line2D([], [], color=tint(COLOURS['COS'], 1.0), lw=1.2, ls=(0, (4, 2)), marker='o', mfc=SURFACE,
                  label='COS, 2 turns'),
-          Line2D([], [], ls='none', marker='o', ms=11, mfc='none', mec=INK2, label='fewer than 5 solves converged'),
+          Line2D([], [], ls='none', marker='o', ms=11, mfc='none', mec=INK2, label='fewer than 5 solves readable'),
           Line2D([], [], ls='none', marker='D', ms=5.5, mfc='none', mec=INK2, label='L TX, rotor away')]
     fig.legend(handles=hs, frameon=False, fontsize=8, labelcolor=INK, loc='outside lower center', ncol=3)
     fig.savefig(path, facecolor=SURFACE, pil_kwargs={'lossless': True, 'method': 6})

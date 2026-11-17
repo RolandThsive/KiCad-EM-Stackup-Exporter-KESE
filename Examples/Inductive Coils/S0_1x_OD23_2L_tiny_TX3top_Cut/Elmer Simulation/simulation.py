@@ -10,6 +10,8 @@ runs under case/) and Results/ (what the runs give, and what was expected).
     python simulation.py --step 10                every 10 degrees over one turn of the rotor's pattern
     python simulation.py --plot                   only redraw the curves from the results already written
     python simulation.py --angles 0 --mesh-only   build one mesh and say its size, to judge the memory
+    python simulation.py --solver iterative       the iterative solve (GCR) instead of the direct one: less memory,
+                                                  but on the S0 boards at 3.5 MHz it converges too slowly to read M
     python simulation.py --gap 0.5 --merge a.json b.json
                                                   add the solves in results files from other machines (each one
                                                   ran some angles of this gap) to this gap's results, and redraw
@@ -63,7 +65,8 @@ def model_xy(xy_kicad):
 
 SET = SPEC['sets'][0]
 SIN_NET, COS_NET = str(SET['sin']), str(SET['cos'])
-LOOSE = charts.LOOSE   # above this residual the iterative solves here drift off the sine
+AGREE = charts.AGREE   # how far the TX's L and R from its voltage may be from the field energy's and the eddy
+                       # power's for a solve to be read (make_charts.readable)
 SETTINGS = dict(
     stator=SPEC['files']['stator'],    # paths from the board folder
     rotor=SPEC['files']['rotor'],
@@ -87,13 +90,20 @@ SETTINGS = dict(
              if (c := SPEC['terminals'][net].get('cut'))},    # with rx_port 'cut': where each top trace is cut
     sheet_half_mm=0.8 * SPEC['terminals']['TX'].get('end_radius_mm', 0.1),    # half a TX sheet's line
     rx_sheet_half_mm=0.25 / 0.3 * SPEC['terminals'][SIN_NET].get('void_radius_mm', 0.3),   # half an RX sheet's
-    level=SPEC.get('mesh_level', 0.75),   # the copper's mesh sizes divided by this (S2's checks used 1.0)
+    level=SPEC.get('mesh_level', 0.25),   # the copper's mesh sizes divided by this (S2's checks used 1.0)
     mesh=dict(h_edge=0.1, h_in=0.2, h_max=6.0, grade=0.5, dz_copper=0.018, dz_max=0.4,
               tet_max=8.0, tet_grade=0.7),
     threads=4,
     tol=1e-7,
     max_iter=1500,
-    ilu_order=None,                    # None: the circuit preconditioner alone, as in Elmer's tests; 0: with ILU0
+    solver='mumps',                    # a direct solve (serial MUMPS), exact: 2 to 5 min and 13 to 25 GB a solve at level
+                                       # 0.25 (more at wider gaps; past about 13 GB a swap file); 'iterative' (GCR) needs
+                                       # less memory but converges too slowly on these boards at 3.5 MHz to read M
+    method='GCR',                      # GCR(50) falls slowly but steadily; BiCGStabL wanders on these boards
+    ilu_order=1,                       # ILU(1) of the field under the circuit preconditioner; None leaves every
+                                       # field row bare (the circuit preconditioner alone), ten times slower here
+    ilu_factor=0.1,                    # the ILU factors the matrix with its diagonal times 1.1: the air's curl-curl
+                                       # block is singular, and an unshifted ILU of it breaks down on tiny pivots
 )
 
 
@@ -279,7 +289,7 @@ def report(log=print):
             sec += [line, '']
         elif not runs:
             sec += ['The first angle is solving; the curves appear here as the angles finish.', '']
-        rows = ['| Rotor | M SIN (nH) | M COS (nH) | Angle error | L TX (nH) | R TX (mΩ) | Iterations | Residual | '
+        rows = ['| Rotor | M SIN (nH) | M COS (nH) | Angle error | L TX (nH) | R TX (mΩ) | Solve | L and R checks | '
                 'Memory | Time |', '|---|---|---|---|---|---|---|---|---|---|']
         for r in away + runs:
             s, c = r['solve'], r['solve']['coils']
@@ -287,24 +297,24 @@ def report(log=print):
             rows.append(f"| {'away' if r['rotor_deg'] == 'away' else format(r['rotor_deg'], 'g') + '°'} | "
                         f"{c['SIN']['M'] * 1e9:.4f} | {c['COS']['M'] * 1e9:.4f} | "
                         f"{'' if e is None else f'{e:+.2f}°'} | {c['TX']['L'] * 1e9:.3f} | "
-                        f"{c['TX']['R'] * 1e3:.2f} | {s['iterations']} | {s['residual']:.1e} | "
+                        f"{c['TX']['R'] * 1e3:.2f} | {solve_cell(s)} | {checks_cell(s)} | "
                         f"{s['peak_memory_gb']:.1f} GB | {s['seconds'] / 60:.0f} min |")
         if len(rows) > 2:
             sec += rows + ['']
-        capped = [r for r in runs if r['solve']['iterations'] >= SETTINGS['max_iter']]
+        capped = [r for r in runs if (r['solve']['iterations'] or 0) >= SETTINGS['max_iter']]
         if capped and len(lt) >= 2:
             res_ = [r['solve']['residual'] for r in capped]
             sec += [f"{len(capped)} of {len(runs)} solves stopped at the {SETTINGS['max_iter']}-iteration cap, with "
                     f"the residual between {min(res_):.1e} and {max(res_):.1e} rather than the {SETTINGS['tol']:.0e} "
                     f"asked for. The TX is round, so turning the rotor should not change its inductance: its spread "
                     f"here, {min(lt):.1f} to {max(lt):.1f} nH, is a measure of what the solver leaves.", '']
-        loose = [r for r in runs if r['solve']['residual'] > LOOSE or r['solve']['coils']['TX']['R'] < 0]
+        loose = [r for r in runs if not charts.readable(r['solve'])]
         if loose:
             sec += [f"**Not converged enough to read:** {len(loose)} of {len(runs)} solves "
-                    f"({', '.join(format(r['rotor_deg'], 'g') + '°' for r in loose)}) stopped above a residual of "
-                    f"{LOOSE:.0e} or give the TX a negative resistance. On S0, every 1 mm solve stopped below it and "
-                    f"the 0.5 mm solves above it are the ones that fall off the sine. Read this gap's curve with that "
-                    f"in mind.",
+                    f"({', '.join(format(r['rotor_deg'], 'g') + '°' for r in loose)}) give the TX a negative "
+                    f"resistance, or an L or R from its voltage more than {AGREE * 100:g} % away from the L from the field "
+                    f"energy or the R from the eddy power (solves from before those checks: a residual above "
+                    f"{charts.LOOSE:.0e}). Read this gap's curve with that in mind.",
                     '']
         sections.append('\n'.join(sec))
         lt_all.append((gap, lt, [r['solve']['coils']['TX']['L'] * 1e9 for r in away]))
@@ -355,12 +365,36 @@ def report(log=print):
         f"Encoders-Coil-Generator): {2 * st['bore_and_outer_radius_mm'][1]:g} mm across, {len(st['layers'])} copper "
         f"layers, {'one electrical period' if n_per == 1 else f'{n_per} electrical periods'} per turn and {rotor}. The TX carries 1 A at "
         f"{SETTINGS['freq_hz'] / 1e6:g} MHz; the curves are the mutual inductance from the TX to SIN and to COS "
-        f"(1 nH is {w:.0f} mV of EMF). Each angle is one Elmer solve with its own mesh. This page is rewritten by "
-        f"`simulation.py` after every solve.", '',
+        f"(1 nH is {w:.0f} mV of EMF). Each angle is one Elmer solve with its own mesh, checked by working the TX's L "
+        f"and R out two ways: from its voltage, and from the field energy and the eddy power (the L and R checks in "
+        f"each table give how far apart they are; a solve is read when both are within {AGREE * 100:g} %). This page is "
+        f"rewritten by `simulation.py` after every solve.", '',
         '| Air gap | Angles solved | Amplitude SIN / COS | Angle error |', '|---|---|---|---|', *summary, '',
         *sections, *gaps_section(curves, [p for _, p in gaps], len(sections) + 1), *expect, *method, *boards])
     (RESULTS / 'SINCOS_Results.md').write_text(text)
     log('wrote SINCOS_Results.md')
+
+
+def in_repo(path):
+    """A path inside the repository relative to its root, so the results name no machine's folders."""
+    p, root = Path(path).resolve(), HERE.parents[3]
+    return str(p.relative_to(root)) if p.is_relative_to(root) else str(path)
+
+
+def solve_cell(s):
+    """How a solve was done, for the tables: direct, or the iterations and the residual it stopped at."""
+    if s['iterations'] is None:
+        return 'direct'
+    return f"{s['iterations']} iterations" + ('' if s['residual'] is None else f", {s['residual']:.1e}")
+
+
+def checks_cell(s):
+    """How far the TX's L and R from its voltage are from L from the field energy and R from the eddy power, in %."""
+    tx, lw, rp = s['coils']['TX'], s.get('L_from_energy_h'), s.get('R_from_power_ohm')
+    if lw is None or rp is None:
+        return 'not checked'
+    dl, dr = (round(100 * (x - y) / y, 3) + 0.0 for x, y in ((tx['L'], lw), (tx['R'], rp)))   # + 0.0: no -0.000
+    return f"L {dl:+.3f} %, R {dr:+.3f} %"
 
 
 def gaps_section(curves, files, number):
@@ -404,10 +438,11 @@ def plot(res_file, log=print):
 
 
 def solver_key(result):
-    """What makes two solves alike: the Krylov method and its settings and any extra solver lines (not where Elmer
-    is installed)."""
+    """What makes two solves alike: iterative or direct, the Krylov method and its settings and any extra solver
+    lines (not where Elmer is installed)."""
     d = result.get('solver') or {}
-    return (d.get('method', 'BiCGStabL'), d.get('degree', 4), d.get('restart', 50),
+    return (d.get('kind', 'iterative'), d.get('method', 'BiCGStabL'), d.get('degree', 4),   # older files: iterative,
+            d.get('restart', 50),                                                            # BiCGStabL
             d.get('max_iter', SETTINGS['max_iter']), tuple(d.get('lines', [])))
 
 
@@ -449,7 +484,11 @@ def main():
     ap.add_argument('--no-away', action='store_true', help='skip the run with the rotor away')
     ap.add_argument('--level', type=float, default=SETTINGS['level'])
     ap.add_argument('--ilu', type=int, default=SETTINGS['ilu_order'], help='ILU order for the preconditioner')
-    ap.add_argument('--method', default='BiCGStabL', choices=('BiCGStabL', 'GCR'), help='the Krylov method')
+    ap.add_argument('--ilu-factor', type=float, default=SETTINGS['ilu_factor'],
+                    help="the ILU's diagonal shift (Linear System ILU Factor)")
+    ap.add_argument('--solver', default=SETTINGS['solver'], choices=('iterative', 'mumps'),
+                    help='iterative (the Krylov method below) or mumps (a direct solve: exact, but needs the memory)')
+    ap.add_argument('--method', default=SETTINGS['method'], choices=('BiCGStabL', 'GCR'), help='the Krylov method')
     ap.add_argument('--degree', type=int, default=4, help="BiCGStabL's polynomial degree")
     ap.add_argument('--restart', type=int, default=50, help="GCR's restart (it keeps twice this many vectors)")
     ap.add_argument('--max-iter', type=int, default=SETTINGS['max_iter'])
@@ -464,8 +503,10 @@ def main():
     ap.add_argument('--out', default=str(HERE / 'case'))
     a = ap.parse_args()
     tagg = (f'gap{a.gap:g}mm' + ('' if a.level == SETTINGS['level'] else f'_level{a.level:g}')
+            + ('' if a.solver == SETTINGS['solver'] else f'_{a.solver}')
             + ('' if a.ilu == SETTINGS['ilu_order'] else f'_ilu{a.ilu}')
-            + ('' if a.method == 'BiCGStabL' else f'_{a.method.lower()}{a.restart}')
+            + ('' if a.ilu_factor == SETTINGS['ilu_factor'] else f'_iluf{a.ilu_factor:g}')
+            + ('' if a.method == SETTINGS['method'] else f'_{a.method.lower()}{a.restart}')
             + ('' if a.degree == 4 or a.method != 'BiCGStabL' else f'_deg{a.degree}')
             + ('' if a.max_iter == SETTINGS['max_iter'] else f'_it{a.max_iter}')
             + ('_tg' if a.tree_gauge else '') + (f'_{a.trial}' if a.trial else ''))
@@ -498,10 +539,11 @@ def main():
     se = S.kese_geometry(BOARD / SETTINGS['stator'], GEOMETRY, log=log)   # exported again only if the board changed
     re_ = S.kese_geometry(BOARD / SETTINGS['rotor'], GEOMETRY, log=log)
     result = json.loads(res_file.read_text()) if res_file.exists() else dict(
-        board=BOARD.name, gap_mm=a.gap, level=a.level, ilu_order=a.ilu, rx_port=RX_PORT, settings=SETTINGS,
-        expected=EXPECTED,
-        solver=dict(method=a.method, degree=a.degree, restart=a.restart, max_iter=a.max_iter, lines=lines,
-                    elmer_bin=str(E.ELMER_BIN)),
+        board=BOARD.name, gap_mm=a.gap, level=a.level, ilu_order=a.ilu, ilu_factor=a.ilu_factor, rx_port=RX_PORT,
+        settings=SETTINGS, expected=EXPECTED,
+        solver=dict(kind=a.solver, method=a.method, degree=a.degree, restart=a.restart, max_iter=a.max_iter,
+                    lines=lines,
+                    elmer_bin=in_repo(E.ELMER_BIN)),
         versions=S.versions(), runs=[])
     done = {r['rotor_deg'] for r in result['runs']}
     runs = ([] if a.no_away else [None]) + angles
@@ -523,8 +565,9 @@ def main():
         cu = E.Material('Copper', sigma=SETTINGS['sigma'])
         bodies = {n: (cu if n in ('TX', 'SIN', 'COS', 'ROTOR') else E.Material('Air' if n == 'AIR' else n.title()))
                   for n in m['names']}
-        case = E.Case(mesh_dir=folder / 'mesh_files', bodies=bodies, order=1, tol=SETTINGS['tol'],
-                      max_iter=a.max_iter, ilu_order=a.ilu, method=a.method, bicg_degree=a.degree,
+        case = E.Case(mesh_dir=folder / 'mesh_files', bodies=bodies, order=1, tol=SETTINGS['tol'], solver=a.solver,
+                      max_iter=a.max_iter, ilu_order=a.ilu, ilu_factor=a.ilu_factor, method=a.method,
+                      bicg_degree=a.degree,
                       restart=a.restart, solver_lines=lines,
                       coils=[E.Coil('TX', 'TX', 'TX_T1', 'TX_T2', 'TX_SHEET', 1.0),
                              E.Coil('SIN', 'SIN', 'SIN_T1', 'SIN_T2', 'SIN_SHEET', 0.0),

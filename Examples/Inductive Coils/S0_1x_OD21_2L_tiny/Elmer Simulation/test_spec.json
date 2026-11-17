@@ -16,6 +16,7 @@
            "placement": "copper side towards the stator, not mirrored, its copper face at z = +air_gap",
            "rings": [{"r_in": 2.52, "r_out": 7.8, "sectors": 1, "duty": 0.5}]},
  "air_gap_mm": 1.0,
+ "mesh_level": 0.25,
  "air_gap_definition": "stator F.Cu top face to rotor copper face (copper to copper)",
  "air_box": {"radius_or_half_width_mm": 31.5, "note": "3 x the board radius, as on the other boards; its height follows the gap"},
  "nets": {"1": "COS", "2": "SIN", "TX": "TX"},
