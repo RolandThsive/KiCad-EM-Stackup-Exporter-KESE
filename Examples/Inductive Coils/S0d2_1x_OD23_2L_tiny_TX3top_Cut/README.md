@@ -20,7 +20,7 @@ Bore and outer radius 2 and 11.7 mm, 2 copper layers, board 0.8 mm, air gap 1 mm
 
 ![how the stator and rotor are set up in Elmer](S0d2_1x_OD23_2L_tiny_TX3top_Cut_elmer_setup.webp)
 
-*How the boards sit in Elmer, drawn by `rig_picture.py` from the geometry the mesh is built from: the rotor copper side down over the stator, each receiver opened by the cut, and the TX opened between its two stacked ends, where 1 A is driven. The copper inside each cut box is air. The two copper faces that border the gap are the terminal's electrodes, and the port sheet spans the gap at the copper's lower face, as in Elmer's E01 example. SIN and COS carry 0 A, so the voltage across the gap is the open-circuit EMF. The outline of each cut is drawn into the 2D mesh, so both cut faces are meshed exactly. [`Elmer Simulation/RotorStator_AngleSetup/`](Elmer%20Simulation/RotorStator_AngleSetup/) has the rotor over the stator at each of the 8 angles, with the two cuts and the TX port ringed (`python angle_setup.py`).*
+*How the boards sit in Elmer, drawn by `rig_picture.py` from the geometry the mesh is built from: the rotor copper side down over the stator, each receiver opened by the cut, and the TX opened between its two stacked ends, where 1 A is driven. The copper inside each cut box is air. The two copper faces that border the gap are the terminal's electrodes, and the port sheet spans the gap at the copper's lower face, as in Elmer's E01 example. SIN and COS carry 0 A, so the voltage across the gap is the open-circuit EMF. The outline of each cut is drawn into the 2D mesh, so both cut faces are meshed exactly. [`Elmer Simulation/RotorStator_AngleSetup/`](Elmer%20Simulation/RotorStator_AngleSetup/) has the rotor over the stator at each of the 16 angles, with the two cuts and the TX port ringed (`python angle_setup.py`).*
 
 | Coil | Net | Opened at (KiCad mm) | How |
 |---|---|---|---|
@@ -36,21 +36,21 @@ The generator's estimate for the TX: 0.29 µH with the rotor away and 0.23 µH w
 
 ## Results at each air gap
 
-Every angle at every gap, one Elmer solve each: 8 angles over the rotor's 180° period at each of 5 gaps, and the rotor taken away once (with the 1 mm results). Each gap's curves, fits and angle error are in [`Results/SINCOS_Results.md`](Results/SINCOS_Results.md). The angle error is in electrical degrees; with two periods per turn, a mechanical degree is two electrical ones, so the error in mechanical degrees is half.
+Every angle at every gap, one Elmer solve each: 16 angles over the whole turn, every 22.5° from 0 to 337.5° (two of the rotor's 180° periods), at each of 5 gaps, and the rotor taken away once (with the 1 mm results). Each gap's curves, fits and angle error are in [`Results/SINCOS_Results.md`](Results/SINCOS_Results.md). The angle error is in electrical degrees; with two periods per turn, a mechanical degree is two electrical ones, so the error in mechanical degrees is half.
 
 | Air gap | Amplitude SIN / COS | Angle error (electrical) | Solves passing both checks | L TX over the turn |
 |---|---|---|---|---|
-| 2 mm | 1.86 / 1.85 nH (41 / 41 mV) | 0.2° rms, 0.4° peak | 8 of 8 | 262.4 to 262.8 nH |
-| 1.5 mm | 2.88 / 2.88 nH (63 / 63 mV) | 0.2° rms, 0.4° peak | 8 of 8 | 257.6 to 258.1 nH |
-| 1 mm | 4.51 / 4.51 nH (99 / 99 mV) | 0.2° rms, 0.4° peak | 8 of 8 | 250.0 to 250.6 nH |
-| 0.5 mm | 6.97 / 6.97 nH (153 / 153 mV) | 0.4° rms, 0.6° peak | 8 of 8 | 236.3 to 237.0 nH |
-| 0.1 mm | 9.44 / 9.43 nH (207 / 207 mV) | 0.9° rms, 1.2° peak | 8 of 8 | 213.1 to 214.2 nH |
+| 2 mm | 1.86 / 1.86 nH (41 / 41 mV) | 0.2° rms, 0.4° peak | 16 of 16 | 262.4 to 262.8 nH |
+| 1.5 mm | 2.88 / 2.88 nH (63 / 63 mV) | 0.2° rms, 0.4° peak | 16 of 16 | 257.6 to 258.1 nH |
+| 1 mm | 4.51 / 4.51 nH (99 / 99 mV) | 0.2° rms, 0.4° peak | 16 of 16 | 250.0 to 250.6 nH |
+| 0.5 mm | 6.97 / 6.98 nH (153 / 153 mV) | 0.4° rms, 0.6° peak | 16 of 16 | 236.3 to 237.0 nH |
+| 0.1 mm | 9.44 / 9.44 nH (208 / 208 mV) | 0.9° rms, 1.2° peak | 16 of 16 | 213.1 to 214.2 nH |
 
 ![SIN at each air gap](Results/SINCOS_gaps_SIN.webp)
 
 *SIN at each air gap, one dot per solve; a ring would mark a solve that fails the two checks (none does). [`SINCOS_gaps_COS.webp`](Results/SINCOS_gaps_COS.webp) is the same for COS, and [`SINCOS_gaps.webp`](Results/SINCOS_gaps.webp) has both.*
 
-Each solve is direct (MUMPS), and every one passes both checks: the TX's L and R from its voltage agree with the L from the field energy and the R from the eddy power within 0.004 %, where 1 % is allowed. At every gap the curves are close to a sine and cosine, 90.04 to 90.09° apart and equal in amplitude within 0.05 %. The signal is 9.44 nH for SIN at 0.1 mm and falls to 6.97, 4.51, 2.88 and 1.86 nH at 0.5, 1, 1.5 and 2 mm (207 down to 41 mV of EMF at 1 A). The angle error is 0.9° rms at 0.1 mm, 0.4° at 0.5 mm and 0.2° from 1 to 2 mm, in electrical degrees; in mechanical degrees it is half that, from 0.46° down to 0.09° rms. At 0.1 mm it alternates in sign from one angle to the next: a ripple at four periods per electrical period, the fastest eight angles can show, which fades with the gap faster than the sine. L TX moves by 1.1 nH at most over the turn and rises from 213.6 nH at 0.1 mm to 262.6 nH at 2 mm; with the rotor away it is 274.2 nH, where the generator estimated 226 nH with the rotor and 292 nH without.
+Each solve is direct (MUMPS), and every one passes both checks: the TX's L and R from its voltage agree with the L from the field energy and the R from the eddy power within 0.004 %, where 1 % is allowed. At every gap the curves are close to a sine and cosine, 90.06 to 90.18° apart and equal in amplitude within 0.06 %. The signal is 9.44 nH for SIN at 0.1 mm and falls to 6.97, 4.51, 2.88 and 1.86 nH at 0.5, 1, 1.5 and 2 mm (208 down to 41 mV of EMF at 1 A). The angle error is 0.9° rms at 0.1 mm, 0.4° at 0.5 mm and 0.2° from 1 to 2 mm, in electrical degrees; in mechanical degrees it is half that, from 0.46° down to 0.09° rms. At 0.1 mm it alternates in sign from one angle to the next: a ripple at four periods per electrical period, the fastest that eight angles a period can show, which fades with the gap faster than the sine. The second half turn repeats the first: at six of its eight angles each solve gives the same M, to the last digit, as the one 180° before it, and at 225° and 315°, where the 2D mesh comes out a few triangles different, it is within 0.03 nH. L TX moves by 1.1 nH at most over the turn and rises from 213.6 nH at 0.1 mm to 262.6 nH at 2 mm; with the rotor away it is 274.2 nH, where the generator estimated 226 nH with the rotor and 292 nH without.
 
 ## The folder
 
@@ -68,15 +68,15 @@ Beside this README, `S0d2_1x_OD23_2L_tiny_TX3top_Cut_stator_and_rotor.webp` is t
 | Air gap | Mesh level | Nodes | Layers through the gap | Time a solve |
 |---|---|---|---|---|
 | 0.1 mm | 0.25 | 118,416 to 119,266 | 10 | 3 to 4 min |
-| 0.5 mm | 0.25 | 128,812 to 129,731 | 11 | 4 to 5 min |
+| 0.5 mm | 0.25 | 128,812 to 129,731 | 11 | 4 to 6 min |
 | 1 mm | 0.25 | 139,208 to 140,196 | 12 | 6 to 7 min |
-| 1.5 mm | 0.25 | 149,604 to 150,661 | 13 | 7 to 8 min |
-| 2 mm | 0.25 | 160,000 to 161,126 | 14 | 8 to 10 min |
+| 1.5 mm | 0.25 | 149,604 to 150,661 | 13 | 7 to 9 min |
+| 2 mm | 0.25 | 160,000 to 161,126 | 14 | 8 to 15 min |
 
-Each solve is direct (MUMPS) and needs more than 13 GB: every one here held 13.3 GB in memory and ran with a swap file of 20 GB or more for the rest. On Linux, `sudo fallocate -l 26G /swapfile && sudo chmod 600 /swapfile && sudo mkswap /swapfile && sudo swapon /swapfile` adds one. `--level` above 0.25 makes the mesh finer at more memory, and `--solver iterative` (GCR) needs far less memory, about 57 kB a node, but on these boards at 3.5 MHz it converges too slowly to read M.
+Each solve is direct (MUMPS) and needs more than 13 GB: every one here held 13.3 GB in memory and put the rest in swap. At 0.1 mm an 8 GB swap file was enough; from 0.5 mm on it was not, and the solve was stopped for want of memory, so those ran on 16 GB machines with about 24 GB of swap, 40 GB of memory and swap together. On Linux, `sudo fallocate -l 26G /swapfile && sudo chmod 600 /swapfile && sudo mkswap /swapfile && sudo swapon /swapfile` adds one. `--level` above 0.25 makes the mesh finer at more memory, and `--solver iterative` (GCR) needs far less memory, about 57 kB a node, but on these boards at 3.5 MHz it converges too slowly to read M.
 
     cd "Elmer Simulation"
-    python simulation.py                   # the rotor away, then 0, 22.5, 45, 67.5, 90, 112.5, 135, 157.5 degrees
+    python simulation.py                   # the rotor away, then 0 to 337.5 degrees every 22.5
     python simulation.py --gap 0.5         # the same at a 0.5 mm air gap
     python simulation.py --level 0.4       # a finer mesh, at more memory
     python simulation.py --plot            # redraw the table, the curves and SINCOS_Results.md

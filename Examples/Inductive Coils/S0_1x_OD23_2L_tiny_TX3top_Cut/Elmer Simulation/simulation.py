@@ -7,7 +7,7 @@ runs under case/) and Results/ (what the runs give, and what was expected).
     python simulation.py                          the rotor away, then every angle in test_spec.json
     python simulation.py --gap 0.5                the same at a 0.5 mm air gap (copper to copper)
     python simulation.py --angles 0 90 --no-away  the rotor at 0 and 90 degrees only
-    python simulation.py --step 10                every 10 degrees over one turn of the rotor's pattern
+    python simulation.py --step 10                every 10 degrees over the whole turn
     python simulation.py --plot                   only redraw the curves from the results already written
     python simulation.py --angles 0 --mesh-only   build one mesh and say its size, to judge the memory
     python simulation.py --solver iterative       the iterative solve (GCR) instead of the direct one: less memory,
@@ -270,7 +270,7 @@ def report(log=print):
         sec = [f'## {gap:g} mm air gap', '']
         png = f'{path.parent.name}/{path.with_suffix(".webp").name}'
         if path.with_suffix('.webp').exists() and fs:
-            how = ('' if max(ang) - min(ang) >= 0.75 * per else ', drawn only between the solved angles while few '
+            how = ('' if max(ang) - min(ang) >= 270 else ', drawn only between the solved angles while few '
                    'are in')
             sec += [f'![SIN and COS against the rotor angle at a {gap:g} mm air gap]({png})', '',
                     f"*Figure {i}. SIN (blue) and COS (orange) at a {gap:g} mm air gap: the mutual inductance from "
@@ -479,7 +479,7 @@ def merge(res_file, others, log=print):
 def main():
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument('--angles', type=float, nargs='*', default=None)
-    ap.add_argument('--step', type=float, default=None, help="every STEP degrees over the rotor's period")
+    ap.add_argument('--step', type=float, default=None, help='every STEP degrees over the whole turn')
     ap.add_argument('--gap', type=float, default=SETTINGS['air_gap_mm'], help='air gap, copper to copper (mm)')
     ap.add_argument('--no-away', action='store_true', help='skip the run with the rotor away')
     ap.add_argument('--level', type=float, default=SETTINGS['level'])
@@ -525,7 +525,7 @@ def main():
     if a.angles is not None:
         angles = list(a.angles)
     elif a.step:
-        angles = [float(x) for x in np.arange(0.0, SETTINGS['period_deg'] - 1e-9, a.step)]
+        angles = [float(x) for x in np.arange(0.0, 360.0 - 1e-9, a.step)]
     else:
         angles = [float(x) for x in SETTINGS['angles_deg']]
     out = Path(a.out)

@@ -4,8 +4,8 @@ gap both have.
 
     python compare_periods.py    prints the comparison as a Markdown table and draws SINCOS_1_vs_2_periods.webp here
 
-The signal is each channel's amplitude, the best sine through the solves over the rotor's period (360 degrees for
-one period per turn, 180 for two). Where at least five solves of a gap are readable (make_charts.readable: the TX's
+The signal is each channel's amplitude, the best sine through the solves over the turn, with the rotor's period
+(360 degrees for one period per turn, 180 for two). Where at least five solves of a gap are readable (make_charts.readable: the TX's
 L and R from its voltage agree with the field energy's and the eddy power's), the fit goes through those alone;
 with fewer, through all of them. The angle error is each board's own (angle_error.py), in electrical degrees, and
 in mechanical degrees: the same for one period, half for two. L TX is the mean over the turn. Nothing here is

@@ -100,25 +100,25 @@ The 22 mm board opened two ways: [`S0_1x_OD22_2L_tiny_TXtop`](../S0_1x_OD22_2L_t
 
 ![one period per turn against two](SINCOS_1_vs_2_periods.webp)
 
-*Above, the amplitude of SIN and COS at each air gap (SIN lies under COS: the two match within 0.05 %); below, the angle error in mechanical degrees. Two periods solid and filled, one period dashed and hollow. Each amplitude is the best sine through the readable solves, all eight on both boards at every gap.*
+*Above, the amplitude of SIN and COS at each air gap (SIN lies under COS: the two match within 0.08 %); below, the angle error in mechanical degrees. Two periods solid and filled, one period dashed and hollow. Each amplitude is the best sine through the readable solves, all of them at every gap: eight over the turn on the one-period board, sixteen on the two-period one.*
 
 | Air gap | Periods per turn | Amplitude SIN / COS | Angle error, electrical | Angle error, mechanical | L TX over the turn | Not readable |
 |---|---|---|---|---|---|---|
 | 2 mm | 1 | 2.29 / 2.29 nH (50 / 50 mV) | 0.3° rms, 0.6° peak | 0.31° rms, 0.56° peak | 260.0 to 260.3 nH | 0 of 8 |
-| 2 mm | 2 | 1.86 / 1.85 nH (41 / 41 mV) | 0.2° rms, 0.4° peak | 0.09° rms, 0.20° peak | 262.4 to 262.8 nH | 0 of 8 |
+| 2 mm | 2 | 1.86 / 1.86 nH (41 / 41 mV) | 0.2° rms, 0.4° peak | 0.10° rms, 0.21° peak | 262.4 to 262.8 nH | 0 of 16 |
 | 1.5 mm | 1 | 3.32 / 3.32 nH (73 / 73 mV) | 0.3° rms, 0.5° peak | 0.30° rms, 0.54° peak | 254.2 to 254.5 nH | 0 of 8 |
-| 1.5 mm | 2 | 2.88 / 2.88 nH (63 / 63 mV) | 0.2° rms, 0.4° peak | 0.09° rms, 0.20° peak | 257.6 to 258.1 nH | 0 of 8 |
+| 1.5 mm | 2 | 2.88 / 2.88 nH (63 / 63 mV) | 0.2° rms, 0.4° peak | 0.09° rms, 0.20° peak | 257.6 to 258.1 nH | 0 of 16 |
 | 1 mm | 1 | 4.88 / 4.88 nH (107 / 107 mV) | 0.3° rms, 0.6° peak | 0.34° rms, 0.56° peak | 245.0 to 245.3 nH | 0 of 8 |
-| 1 mm | 2 | 4.51 / 4.51 nH (99 / 99 mV) | 0.2° rms, 0.4° peak | 0.10° rms, 0.22° peak | 250.0 to 250.6 nH | 0 of 8 |
+| 1 mm | 2 | 4.51 / 4.51 nH (99 / 99 mV) | 0.2° rms, 0.4° peak | 0.11° rms, 0.22° peak | 250.0 to 250.6 nH | 0 of 16 |
 | 0.5 mm | 1 | 7.10 / 7.10 nH (156 / 156 mV) | 0.6° rms, 0.8° peak | 0.57° rms, 0.79° peak | 228.8 to 229.2 nH | 0 of 8 |
-| 0.5 mm | 2 | 6.97 / 6.97 nH (153 / 153 mV) | 0.4° rms, 0.6° peak | 0.19° rms, 0.32° peak | 236.3 to 237.0 nH | 0 of 8 |
+| 0.5 mm | 2 | 6.97 / 6.98 nH (153 / 153 mV) | 0.4° rms, 0.6° peak | 0.19° rms, 0.32° peak | 236.3 to 237.0 nH | 0 of 16 |
 | 0.1 mm | 1 | 9.12 / 9.12 nH (201 / 201 mV) | 1.2° rms, 1.5° peak | 1.24° rms, 1.51° peak | 202.8 to 203.3 nH | 0 of 8 |
-| 0.1 mm | 2 | 9.44 / 9.43 nH (207 / 207 mV) | 0.9° rms, 1.2° peak | 0.46° rms, 0.61° peak | 213.1 to 214.2 nH | 0 of 8 |
+| 0.1 mm | 2 | 9.44 / 9.44 nH (208 / 208 mV) | 0.9° rms, 1.2° peak | 0.46° rms, 0.61° peak | 213.1 to 214.2 nH | 0 of 16 |
 
 * **The signal is about the same up close and falls faster with the gap:** two periods give 1.03 times the one-period signal at 0.1 mm, 0.92 times at 1 mm and 0.81 times at 2 mm (1.86 nH against 2.29). A pattern with twice the periods is finer, and a finer field pattern fades faster with distance.
-* **In mechanical degrees, the angle error is about a third:** 0.46° rms against 1.24° at 0.1 mm, and 0.09 to 0.10° against 0.30 to 0.34° from 1 to 2 mm, 0.28 to 0.37 times the one-period board's. In electrical degrees it is a little lower as well (0.2° against 0.3° from 1 to 2 mm), and each electrical degree is half a mechanical one.
+* **In mechanical degrees, the angle error is about a third:** 0.46° rms against 1.24° at 0.1 mm, and 0.09 to 0.11° against 0.30 to 0.34° from 1 to 2 mm, 0.30 to 0.37 times the one-period board's. In electrical degrees it is a little lower as well (0.2° against 0.3° from 1 to 2 mm), and each electrical degree is half a mechanical one.
 * **The TX hardly changes:** L TX is 1.01 to 1.05 times the one-period board's.
-* **What two periods give up:** the reading repeats every 180°, so the sensor alone cannot tell which half of the turn the rotor is in. What they should gain beyond these centred solves: a rotor off-centre moves a one-period board's curves directly, while with two periods that first-order effect cancels.
+* **What two periods give up:** the reading repeats every 180°, so the sensor alone cannot tell which half of the turn the rotor is in: solved over the whole turn, every 22.5° from 0 to 337.5°, the second half repeats the first within 0.03 nH. What they should gain beyond these centred solves: a rotor off-centre moves a one-period board's curves directly, while with two periods that first-order effect cancels.
 
 ## The signal on every board
 
