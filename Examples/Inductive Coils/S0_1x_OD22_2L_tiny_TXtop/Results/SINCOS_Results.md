@@ -4,117 +4,117 @@ A coil set made with the [Sinusoidal Coil Generator](https://github.com/RolandTh
 
 | Air gap | Angles solved | Amplitude SIN / COS | Angle error |
 |---|---|---|---|
-| 2 mm | 8 of 8 | 1.41 / 1.41 nH (31 / 31 mV) | 0.3° rms, 0.5° peak |
-| 1.5 mm | 8 of 8 | 2.11 / 2.12 nH (46 / 47 mV) | 0.3° rms, 0.6° peak |
-| 1 mm | 8 of 8 | 3.23 / 3.24 nH (71 / 71 mV) | 0.3° rms, 0.6° peak |
-| 0.5 mm | 8 of 8 | 4.92 / 4.93 nH (108 / 108 mV) | 0.5° rms, 0.8° peak |
-| 0.1 mm | 8 of 8 | 6.55 / 6.55 nH (144 / 144 mV) | 1.2° rms, 1.5° peak |
+| 2 mm | 8 of 8 | 1.49 / 1.49 nH (33 / 33 mV) | 0.2° rms, 0.3° peak |
+| 1.5 mm | 8 of 8 | 2.22 / 2.23 nH (49 / 49 mV) | 0.2° rms, 0.3° peak |
+| 1 mm | 8 of 8 | 3.38 / 3.38 nH (74 / 74 mV) | 0.2° rms, 0.3° peak |
+| 0.5 mm | 8 of 8 | 5.10 / 5.10 nH (112 / 112 mV) | 0.4° rms, 0.5° peak |
+| 0.1 mm | 8 of 8 | 6.68 / 6.68 nH (147 / 147 mV) | 1.1° rms, 1.3° peak |
 
 ## 2 mm air gap
 
 ![SIN and COS against the rotor angle at a 2 mm air gap](2mm_AirGap/results_gap2mm.webp)
 
-*Figure 1. SIN (blue) and COS (orange) at a 2 mm air gap: the mutual inductance from the TX against the rotor's angle, 8 of 8 angles solved. Each dot is one PyPEEC solve and the solid line joins them; the dotted lines are the ideal sine and cosine, each channel's best sine fit, which is what the angle error is measured against. SIN swings ±1.41 nH and COS ±1.41 nH, that is ±31 and ±31 mV of EMF.*
+*Figure 1. SIN (blue) and COS (orange) at a 2 mm air gap: the mutual inductance from the TX against the rotor's angle, 8 of 8 angles solved. Each dot is one PyPEEC solve and the solid line joins them; the dotted lines are the ideal sine and cosine, each channel's best sine fit, which is what the angle error is measured against. SIN swings ±1.49 nH and COS ±1.49 nH, that is ±33 and ±33 mV of EMF.*
 
-Best sine fit: SIN amplitude 1.409 nH, offset 0.336 nH, phase -134.6°; COS amplitude 1.413 nH, offset 0.246 nH, phase 135.4°. Angle error, with the offset and gain of each channel calibrated out (worked out as below): 0.3° rms and 0.5° at worst, in electrical degrees, the same as mechanical degrees here. SIN and COS are 90.0° apart, against 90° for perfect quadrature.
+Best sine fit: SIN amplitude 1.490 nH, offset 0.094 nH, phase -134.7°; COS amplitude 1.494 nH, offset 0.022 nH, phase 135.3°. Angle error, with the offset and gain of each channel calibrated out (worked out as below): 0.2° rms and 0.3° at worst, in electrical degrees, the same as mechanical degrees here. SIN and COS are 90.0° apart, against 90° for perfect quadrature.
 
 | Rotor | M SIN (nH) | M COS (nH) | Angle error | L TX (nH) | R TX (mΩ) | Solve | L and R checks | Memory | Time |
 |---|---|---|---|---|---|---|---|---|---|
-| 0° | -0.6667 | 1.2315 | +0.17° | 141.796 | 310.16 | 4 iterations, 4.9e-08 | L +0.000 %, R +0.000 % | 2.9 GB | 7 min |
-| 45° | -1.0808 | 0.2334 | +0.12° | 141.788 | 310.58 | 4 iterations, 5.9e-08 | L +0.000 %, R +0.000 % | 2.9 GB | 7 min |
-| 90° | -0.6394 | -0.7542 | +0.26° | 141.721 | 310.82 | 3 iterations, 2.9e-07 | L +0.000 %, R +0.000 % | 3.0 GB | 6 min |
-| 135° | 0.3369 | -1.1701 | -0.36° | 141.808 | 310.49 | 3 iterations, 2.9e-07 | L +0.000 %, R +0.000 % | 2.9 GB | 6 min |
-| 180° | 1.3358 | -0.7364 | +0.16° | 141.888 | 309.96 | 4 iterations, 5.3e-08 | L +0.000 %, R +0.000 % | 2.9 GB | 6 min |
-| 225° | 1.7524 | 0.2431 | -0.54° | 141.960 | 309.49 | 3 iterations, 2.5e-07 | L +0.000 %, R +0.000 % | 2.9 GB | 6 min |
-| 270° | 1.3226 | 1.2564 | +0.19° | 141.968 | 309.17 | 3 iterations, 2.6e-07 | L +0.000 %, R +0.000 % | 3.0 GB | 6 min |
-| 315° | 0.3254 | 1.6673 | +0.01° | 141.925 | 309.56 | 4 iterations, 5.1e-08 | L +0.000 %, R +0.000 % | 2.9 GB | 6 min |
+| 0° | -0.9632 | 1.0682 | +0.08° | 142.152 | 308.23 | 4 iterations, 5.3e-08 | L +0.000 %, R +0.000 % | 2.9 GB | 6 min |
+| 45° | -1.4083 | 0.0192 | -0.18° | 142.204 | 308.31 | 4 iterations, 5.5e-08 | L +0.000 %, R +0.000 % | 2.9 GB | 6 min |
+| 90° | -0.9449 | -1.0382 | +0.23° | 142.188 | 308.26 | 3 iterations, 2.7e-07 | L +0.000 %, R +0.000 % | 3.0 GB | 6 min |
+| 135° | 0.0988 | -1.4810 | -0.08° | 142.224 | 308.21 | 3 iterations, 2.7e-07 | L +0.000 %, R +0.000 % | 2.9 GB | 5 min |
+| 180° | 1.1519 | -1.0197 | +0.25° | 142.245 | 308.03 | 4 iterations, 5.0e-08 | L +0.000 %, R +0.000 % | 2.9 GB | 6 min |
+| 225° | 1.5861 | 0.0226 | -0.24° | 142.247 | 307.93 | 4 iterations, 4.9e-08 | L +0.000 %, R +0.000 % | 2.9 GB | 6 min |
+| 270° | 1.1359 | 1.0842 | +0.21° | 142.209 | 307.92 | 4 iterations, 5.2e-08 | L +0.000 %, R +0.000 % | 2.9 GB | 6 min |
+| 315° | 0.0937 | 1.5179 | -0.27° | 142.211 | 308.01 | 3 iterations, 2.8e-07 | L +0.000 %, R +0.000 % | 2.9 GB | 5 min |
 
 ## 1.5 mm air gap
 
 ![SIN and COS against the rotor angle at a 1.5 mm air gap](1d5mm_AirGap/results_gap1.5mm.webp)
 
-*Figure 2. SIN (blue) and COS (orange) at a 1.5 mm air gap: the mutual inductance from the TX against the rotor's angle, 8 of 8 angles solved. Each dot is one PyPEEC solve and the solid line joins them; the dotted lines are the ideal sine and cosine, each channel's best sine fit, which is what the angle error is measured against. SIN swings ±2.11 nH and COS ±2.12 nH, that is ±46 and ±47 mV of EMF.*
+*Figure 2. SIN (blue) and COS (orange) at a 1.5 mm air gap: the mutual inductance from the TX against the rotor's angle, 8 of 8 angles solved. Each dot is one PyPEEC solve and the solid line joins them; the dotted lines are the ideal sine and cosine, each channel's best sine fit, which is what the angle error is measured against. SIN swings ±2.22 nH and COS ±2.23 nH, that is ±49 and ±49 mV of EMF.*
 
-Best sine fit: SIN amplitude 2.113 nH, offset 0.334 nH, phase -135.0°; COS amplitude 2.118 nH, offset 0.249 nH, phase 135.0°. Angle error, with the offset and gain of each channel calibrated out (worked out as below): 0.3° rms and 0.6° at worst, in electrical degrees, the same as mechanical degrees here. SIN and COS are 90.0° apart, against 90° for perfect quadrature.
+Best sine fit: SIN amplitude 2.223 nH, offset 0.090 nH, phase -135.1°; COS amplitude 2.228 nH, offset 0.023 nH, phase 134.9°. Angle error, with the offset and gain of each channel calibrated out (worked out as below): 0.2° rms and 0.3° at worst, in electrical degrees, the same as mechanical degrees here. SIN and COS are 90.0° apart, against 90° for perfect quadrature.
 
 | Rotor | M SIN (nH) | M COS (nH) | Angle error | L TX (nH) | R TX (mΩ) | Solve | L and R checks | Memory | Time |
 |---|---|---|---|---|---|---|---|---|---|
-| 0° | -1.1581 | 1.7368 | +0.10° | 139.750 | 312.08 | 4 iterations, 5.4e-08 | L +0.000 %, R +0.000 % | 2.9 GB | 9 min |
-| 45° | -1.7921 | 0.2416 | +0.16° | 139.732 | 312.71 | 3 iterations, 2.8e-07 | L +0.000 %, R +0.000 % | 2.9 GB | 9 min |
-| 90° | -1.1379 | -1.2396 | +0.23° | 139.627 | 313.08 | 4 iterations, 4.9e-08 | L +0.000 %, R +0.000 % | 3.0 GB | 11 min |
-| 135° | 0.3212 | -1.8759 | -0.38° | 139.757 | 312.58 | 4 iterations, 5.2e-08 | L +0.000 %, R +0.000 % | 2.9 GB | 10 min |
-| 180° | 1.8241 | -1.2320 | +0.20° | 139.883 | 311.78 | 3 iterations, 2.7e-07 | L +0.000 %, R +0.000 % | 2.9 GB | 9 min |
-| 225° | 2.4591 | 0.2298 | -0.57° | 139.989 | 311.13 | 3 iterations, 2.8e-07 | L +0.000 %, R +0.000 % | 2.8 GB | 9 min |
-| 270° | 1.8231 | 1.7533 | +0.17° | 140.014 | 310.61 | 4 iterations, 4.7e-08 | L +0.000 %, R +0.000 % | 2.9 GB | 9 min |
-| 315° | 0.3288 | 2.3806 | +0.08° | 139.943 | 311.24 | 3 iterations, 2.5e-07 | L +0.000 %, R +0.000 % | 2.8 GB | 7 min |
+| 0° | -1.4755 | 1.5930 | +0.05° | 140.152 | 309.90 | 4 iterations, 5.0e-08 | L +0.000 %, R +0.000 % | 2.9 GB | 8 min |
+| 45° | -2.1520 | 0.0327 | -0.17° | 140.226 | 309.99 | 3 iterations, 2.7e-07 | L +0.000 %, R +0.000 % | 2.9 GB | 8 min |
+| 90° | -1.4677 | -1.5457 | +0.22° | 140.205 | 309.91 | 3 iterations, 2.9e-07 | L +0.000 %, R +0.000 % | 3.0 GB | 8 min |
+| 135° | 0.0847 | -2.2191 | -0.07° | 140.251 | 309.87 | 4 iterations, 5.0e-08 | L +0.000 %, R +0.000 % | 2.9 GB | 9 min |
+| 180° | 1.6580 | -1.5376 | +0.26° | 140.285 | 309.60 | 3 iterations, 2.6e-07 | L +0.000 %, R +0.000 % | 2.9 GB | 8 min |
+| 225° | 2.3167 | 0.0116 | -0.24° | 140.285 | 309.50 | 3 iterations, 2.6e-07 | L +0.000 %, R +0.000 % | 2.8 GB | 7 min |
+| 270° | 1.6535 | 1.5975 | +0.20° | 140.236 | 309.47 | 3 iterations, 2.8e-07 | L +0.000 %, R -0.001 % | 2.9 GB | 8 min |
+| 315° | 0.1022 | 2.2553 | -0.25° | 140.240 | 309.61 | 4 iterations, 5.3e-08 | L +0.000 %, R +0.000 % | 2.8 GB | 8 min |
 
 ## 1 mm air gap
 
 ![SIN and COS against the rotor angle at a 1 mm air gap](1mm_AirGap/results_gap1mm.webp)
 
-*Figure 3. SIN (blue) and COS (orange) at a 1 mm air gap: the mutual inductance from the TX against the rotor's angle, 8 of 8 angles solved. Each dot is one PyPEEC solve and the solid line joins them; the dotted lines are the ideal sine and cosine, each channel's best sine fit, which is what the angle error is measured against. SIN swings ±3.23 nH and COS ±3.24 nH, that is ±71 and ±71 mV of EMF.*
+*Figure 3. SIN (blue) and COS (orange) at a 1 mm air gap: the mutual inductance from the TX against the rotor's angle, 8 of 8 angles solved. Each dot is one PyPEEC solve and the solid line joins them; the dotted lines are the ideal sine and cosine, each channel's best sine fit, which is what the angle error is measured against. SIN swings ±3.38 nH and COS ±3.38 nH, that is ±74 and ±74 mV of EMF.*
 
-Best sine fit: SIN amplitude 3.230 nH, offset 0.340 nH, phase -135.8°; COS amplitude 3.236 nH, offset 0.261 nH, phase 134.2°. Angle error, with the offset and gain of each channel calibrated out (worked out as below): 0.3° rms and 0.6° at worst, in electrical degrees, the same as mechanical degrees here. SIN and COS are 90.0° apart, against 90° for perfect quadrature.
+Best sine fit: SIN amplitude 3.377 nH, offset 0.091 nH, phase -135.8°; COS amplitude 3.383 nH, offset 0.032 nH, phase 134.1°. Angle error, with the offset and gain of each channel calibrated out (worked out as below): 0.2° rms and 0.3° at worst, in electrical degrees, the same as mechanical degrees here. SIN and COS are 90.0° apart, against 90° for perfect quadrature.
 
 | Rotor | M SIN (nH) | M COS (nH) | Angle error | L TX (nH) | R TX (mΩ) | Solve | L and R checks | Memory | Time |
 |---|---|---|---|---|---|---|---|---|---|
-| away | 0.3644 | 0.2635 |  | 147.877 | 305.04 | 2 iterations, 2.0e-07 | L +0.000 %, R +0.000 % | 0.9 GB | 1 min |
-| 0° | -1.9057 | 2.5686 | +0.03° | 134.926 | 315.57 | 4 iterations, 5.1e-08 | L +0.000 %, R +0.000 % | 2.0 GB | 6 min |
-| 45° | -2.9084 | 0.2938 | +0.19° | 134.874 | 316.66 | 4 iterations, 4.7e-08 | L +0.000 %, R +0.000 % | 2.0 GB | 6 min |
-| 90° | -1.9418 | -1.9818 | +0.23° | 134.697 | 317.29 | 4 iterations, 5.0e-08 | L +0.000 %, R +0.000 % | 2.1 GB | 6 min |
-| 135° | 0.2719 | -2.9868 | -0.43° | 134.905 | 316.48 | 4 iterations, 5.2e-08 | L +0.000 %, R +0.000 % | 2.0 GB | 6 min |
-| 180° | 2.5899 | -2.0315 | +0.29° | 135.122 | 315.12 | 4 iterations, 4.3e-08 | L +0.000 %, R +0.000 % | 2.0 GB | 5 min |
-| 225° | 3.5862 | 0.1814 | -0.63° | 135.297 | 314.12 | 3 iterations, 2.9e-07 | L +0.000 %, R +0.000 % | 2.0 GB | 4 min |
-| 270° | 2.6498 | 2.5277 | +0.18° | 135.366 | 313.14 | 3 iterations, 2.6e-07 | L +0.000 %, R -0.001 % | 2.0 GB | 5 min |
-| 315° | 0.3760 | 3.5141 | +0.13° | 135.240 | 314.27 | 3 iterations, 2.8e-07 | L +0.000 %, R +0.000 % | 2.0 GB | 4 min |
+| away | 0.1129 | 0.0295 |  | 148.213 | 303.22 | 2 iterations, 2.9e-07 | L +0.000 %, R +0.000 % | 0.9 GB | 1 min |
+| 0° | -2.2545 | 2.4484 | +0.05° | 135.445 | 312.68 | 4 iterations, 4.7e-08 | L +0.000 %, R +0.000 % | 2.0 GB | 5 min |
+| 45° | -3.3154 | 0.0943 | -0.19° | 135.549 | 312.82 | 4 iterations, 4.5e-08 | L +0.000 %, R +0.000 % | 2.0 GB | 5 min |
+| 90° | -2.3074 | -2.3179 | +0.22° | 135.520 | 312.68 | 4 iterations, 5.2e-08 | L +0.000 %, R +0.000 % | 2.0 GB | 5 min |
+| 135° | 0.0356 | -3.3753 | -0.08° | 135.580 | 312.64 | 4 iterations, 5.3e-08 | L +0.000 %, R +0.000 % | 2.0 GB | 5 min |
+| 180° | 2.4423 | -2.3701 | +0.30° | 135.640 | 312.24 | 3 iterations, 2.9e-07 | L +0.000 %, R +0.000 % | 2.0 GB | 4 min |
+| 225° | 3.4712 | -0.0342 | -0.26° | 135.634 | 312.14 | 3 iterations, 2.8e-07 | L +0.000 %, R +0.000 % | 1.9 GB | 4 min |
+| 270° | 2.4997 | 2.3908 | +0.21° | 135.570 | 312.08 | 3 iterations, 2.5e-07 | L +0.000 %, R +0.000 % | 2.0 GB | 5 min |
+| 315° | 0.1569 | 3.4185 | -0.26° | 135.577 | 312.30 | 3 iterations, 2.7e-07 | L +0.000 %, R +0.000 % | 1.9 GB | 4 min |
 
 ## 0.5 mm air gap
 
 ![SIN and COS against the rotor angle at a 0.5 mm air gap](0d5mm_AirGap/results_gap0.5mm.webp)
 
-*Figure 4. SIN (blue) and COS (orange) at a 0.5 mm air gap: the mutual inductance from the TX against the rotor's angle, 8 of 8 angles solved. Each dot is one PyPEEC solve and the solid line joins them; the dotted lines are the ideal sine and cosine, each channel's best sine fit, which is what the angle error is measured against. SIN swings ±4.92 nH and COS ±4.93 nH, that is ±108 and ±108 mV of EMF.*
+*Figure 4. SIN (blue) and COS (orange) at a 0.5 mm air gap: the mutual inductance from the TX against the rotor's angle, 8 of 8 angles solved. Each dot is one PyPEEC solve and the solid line joins them; the dotted lines are the ideal sine and cosine, each channel's best sine fit, which is what the angle error is measured against. SIN swings ±5.10 nH and COS ±5.10 nH, that is ±112 and ±112 mV of EMF.*
 
-Best sine fit: SIN amplitude 4.921 nH, offset 0.355 nH, phase -137.5°; COS amplitude 4.927 nH, offset 0.277 nH, phase 132.5°. Angle error, with the offset and gain of each channel calibrated out (worked out as below): 0.5° rms and 0.8° at worst, in electrical degrees, the same as mechanical degrees here. SIN and COS are 90.0° apart, against 90° for perfect quadrature.
+Best sine fit: SIN amplitude 5.098 nH, offset 0.110 nH, phase -137.6°; COS amplitude 5.104 nH, offset 0.062 nH, phase 132.4°. Angle error, with the offset and gain of each channel calibrated out (worked out as below): 0.4° rms and 0.5° at worst, in electrical degrees, the same as mechanical degrees here. SIN and COS are 90.0° apart, against 90° for perfect quadrature.
 
 | Rotor | M SIN (nH) | M COS (nH) | Angle error | L TX (nH) | R TX (mΩ) | Solve | L and R checks | Memory | Time |
 |---|---|---|---|---|---|---|---|---|---|
-| 0° | -2.9722 | 3.8952 | +0.11° | 126.400 | 322.78 | 3 iterations, 2.5e-07 | L +0.000 %, R +0.000 % | 1.4 GB | 3 min |
-| 45° | -4.5790 | 0.4881 | +0.03° | 126.237 | 325.01 | 3 iterations, 2.7e-07 | L +0.000 %, R +0.000 % | 1.4 GB | 2 min |
-| 90° | -3.2212 | -3.0528 | +0.40° | 125.908 | 326.21 | 3 iterations, 2.4e-07 | L +0.000 %, R +0.000 % | 1.5 GB | 3 min |
-| 135° | 0.0852 | -4.6571 | -0.67° | 126.274 | 324.79 | 3 iterations, 2.5e-07 | L +0.000 %, R +0.000 % | 1.4 GB | 3 min |
-| 180° | 3.7054 | -3.3011 | +0.61° | 126.684 | 322.21 | 3 iterations, 2.3e-07 | L +0.000 %, R +0.000 % | 1.4 GB | 2 min |
-| 225° | 5.2764 | -0.0062 | -0.82° | 127.026 | 320.46 | 3 iterations, 2.7e-07 | L +0.000 %, R -0.001 % | 1.4 GB | 3 min |
-| 270° | 3.9770 | 3.6476 | +0.38° | 127.206 | 318.35 | 3 iterations, 1.9e-07 | L +0.000 %, R -0.001 % | 1.4 GB | 3 min |
-| 315° | 0.5721 | 5.2055 | -0.05° | 126.959 | 320.64 | 4 iterations, 4.4e-08 | L +0.000 %, R +0.000 % | 1.4 GB | 3 min |
+| 0° | -3.3380 | 3.8103 | +0.21° | 127.198 | 318.16 | 4 iterations, 4.6e-08 | L +0.000 %, R +0.000 % | 1.4 GB | 4 min |
+| 45° | -5.0203 | 0.3274 | -0.39° | 127.336 | 318.47 | 3 iterations, 2.9e-07 | L +0.000 %, R +0.000 % | 1.4 GB | 3 min |
+| 90° | -3.6102 | -3.3906 | +0.39° | 127.298 | 318.18 | 3 iterations, 2.7e-07 | L +0.000 %, R +0.000 % | 1.5 GB | 3 min |
+| 135° | -0.1411 | -5.0698 | -0.24° | 127.371 | 318.25 | 3 iterations, 2.8e-07 | L +0.000 %, R +0.000 % | 1.4 GB | 3 min |
+| 180° | 3.5729 | -3.6598 | +0.54° | 127.480 | 317.62 | 3 iterations, 2.3e-07 | L +0.000 %, R +0.000 % | 1.4 GB | 3 min |
+| 225° | 5.1888 | -0.2045 | -0.43° | 127.471 | 317.55 | 3 iterations, 2.4e-07 | L +0.000 %, R -0.001 % | 1.4 GB | 3 min |
+| 270° | 3.8507 | 3.5337 | +0.40° | 127.393 | 317.36 | 3 iterations, 2.6e-07 | L +0.000 %, R -0.001 % | 1.4 GB | 3 min |
+| 315° | 0.3798 | 5.1482 | -0.47° | 127.404 | 317.74 | 3 iterations, 2.8e-07 | L +0.000 %, R +0.000 % | 1.4 GB | 3 min |
 
 ## 0.1 mm air gap
 
 ![SIN and COS against the rotor angle at a 0.1 mm air gap](0d1mm_AirGap/results_gap0.1mm.webp)
 
-*Figure 5. SIN (blue) and COS (orange) at a 0.1 mm air gap: the mutual inductance from the TX against the rotor's angle, 8 of 8 angles solved. Each dot is one PyPEEC solve and the solid line joins them; the dotted lines are the ideal sine and cosine, each channel's best sine fit, which is what the angle error is measured against. SIN swings ±6.55 nH and COS ±6.55 nH, that is ±144 and ±144 mV of EMF.*
+*Figure 5. SIN (blue) and COS (orange) at a 0.1 mm air gap: the mutual inductance from the TX against the rotor's angle, 8 of 8 angles solved. Each dot is one PyPEEC solve and the solid line joins them; the dotted lines are the ideal sine and cosine, each channel's best sine fit, which is what the angle error is measured against. SIN swings ±6.68 nH and COS ±6.68 nH, that is ±147 and ±147 mV of EMF.*
 
-Best sine fit: SIN amplitude 6.549 nH, offset 0.351 nH, phase -140.2°; COS amplitude 6.549 nH, offset 0.242 nH, phase 130.0°. Angle error, with the offset and gain of each channel calibrated out (worked out as below): 1.2° rms and 1.5° at worst, in electrical degrees, the same as mechanical degrees here. SIN and COS are 89.8° apart, against 90° for perfect quadrature.
+Best sine fit: SIN amplitude 6.680 nH, offset 0.157 nH, phase -140.4°; COS amplitude 6.684 nH, offset 0.117 nH, phase 129.6°. Angle error, with the offset and gain of each channel calibrated out (worked out as below): 1.1° rms and 1.3° at worst, in electrical degrees, the same as mechanical degrees here. SIN and COS are 90.0° apart, against 90° for perfect quadrature.
 
 | Rotor | M SIN (nH) | M COS (nH) | Angle error | L TX (nH) | R TX (mΩ) | Solve | L and R checks | Memory | Time |
 |---|---|---|---|---|---|---|---|---|---|
-| 0° | -3.9165 | 5.2126 | +0.77° | 112.352 | 344.88 | 3 iterations, 2.4e-07 | L +0.000 %, R -0.001 % | 1.4 GB | 3 min |
-| 45° | -6.1771 | 0.9088 | -0.71° | 111.884 | 349.95 | 3 iterations, 2.1e-07 | L +0.000 %, R +0.000 % | 1.4 GB | 3 min |
-| 90° | -4.5798 | -4.0483 | +1.14° | 111.306 | 352.22 | 3 iterations, 2.3e-07 | L +0.000 %, R +0.000 % | 1.4 GB | 3 min |
-| 135° | -0.3950 | -6.2835 | -1.40° | 111.918 | 349.72 | 3 iterations, 2.1e-07 | L +0.000 %, R -0.001 % | 1.4 GB | 3 min |
-| 180° | 4.6666 | -4.6639 | +1.46° | 112.675 | 344.58 | 3 iterations, 1.7e-07 | L +0.000 %, R -0.001 % | 1.4 GB | 3 min |
-| 225° | 6.8215 | -0.5052 | -1.46° | 113.371 | 341.17 | 3 iterations, 2.1e-07 | L +0.000 %, R -0.001 % | 1.4 GB | 3 min |
-| 270° | 5.3458 | 4.5907 | +1.17° | 113.811 | 336.22 | 3 iterations, 2.0e-07 | L +0.000 %, R -0.001 % | 1.4 GB | 3 min |
-| 315° | 1.0443 | 6.7213 | -0.98° | 113.304 | 341.35 | 3 iterations, 2.3e-07 | L +0.000 %, R -0.001 % | 1.4 GB | 3 min |
+| 0° | -4.1831 | 5.2043 | +0.88° | 113.702 | 336.20 | 3 iterations, 2.3e-07 | L +0.000 %, R -0.001 % | 1.4 GB | 2 min |
+| 45° | -6.5311 | 0.8794 | -1.11° | 113.806 | 337.20 | 4 iterations, 3.4e-08 | L +0.000 %, R +0.000 % | 1.4 GB | 3 min |
+| 90° | -4.8903 | -4.2247 | +1.07° | 113.801 | 336.31 | 3 iterations, 2.5e-07 | L +0.000 %, R -0.001 % | 1.4 GB | 3 min |
+| 135° | -0.5800 | -6.5719 | -0.90° | 113.839 | 336.99 | 3 iterations, 2.5e-07 | L +0.000 %, R -0.001 % | 1.4 GB | 3 min |
+| 180° | 4.5282 | -4.9262 | +1.32° | 114.023 | 335.95 | 3 iterations, 2.0e-07 | L +0.000 %, R -0.001 % | 1.4 GB | 3 min |
+| 225° | 6.7473 | -0.6359 | -1.13° | 114.028 | 336.14 | 3 iterations, 1.8e-07 | L +0.000 %, R -0.001 % | 1.4 GB | 2 min |
+| 270° | 5.2418 | 4.4982 | +1.12° | 113.981 | 335.31 | 3 iterations, 1.9e-07 | L +0.000 %, R -0.001 % | 1.4 GB | 3 min |
+| 315° | 0.9251 | 6.7163 | -1.25° | 113.960 | 336.32 | 3 iterations, 1.8e-07 | L +0.000 %, R -0.001 % | 1.4 GB | 2 min |
 
 ## The air gaps together
 
 ![SIN and COS at each air gap](SINCOS_gaps.webp)
 
-*Figure 6. Every air gap on one chart, the 0.1 mm gap in full colour, the solves of each joined by a solid line, and each gap's ideal sine and cosine dotted. Going from 2 to 0.1 mm makes SIN 4.65 times and COS 4.64 times larger.*
+*Figure 6. Every air gap on one chart, the 0.1 mm gap in full colour, the solves of each joined by a solid line, and each gap's ideal sine and cosine dotted. Going from 2 to 0.1 mm makes SIN 4.48 times and COS 4.47 times larger.*
 
 ## Against the expectation
 
-The generator estimates the TX at 144 nH with the rotor away and 116 nH with it (its drop with the rotor is an upper estimate). PyPEEC gives 147.9 nH with the rotor away, and 141.7 to 142.0 nH with the rotor at 2 mm, and 139.6 to 140.0 nH with the rotor at 1.5 mm, and 134.7 to 135.4 nH with the rotor at 1 mm, and 125.9 to 127.2 nH with the rotor at 0.5 mm, and 111.3 to 113.8 nH with the rotor at 0.1 mm. The expected values are in [expected_results.json](expected_results.json).
+The generator estimates the TX at 144 nH with the rotor away and 116 nH with it (its drop with the rotor is an upper estimate). PyPEEC gives 148.2 nH with the rotor away, and 142.2 to 142.2 nH with the rotor at 2 mm, and 140.2 to 140.3 nH with the rotor at 1.5 mm, and 135.4 to 135.6 nH with the rotor at 1 mm, and 127.2 to 127.5 nH with the rotor at 0.5 mm, and 113.7 to 114.0 nH with the rotor at 0.1 mm. The expected values are in [expected_results.json](expected_results.json).
 
 ## How the angle error is worked out
 
