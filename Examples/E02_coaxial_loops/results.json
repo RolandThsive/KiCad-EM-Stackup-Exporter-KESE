@@ -1,0 +1,266 @@
+{
+ "board": "E02_coaxial_loops.kicad_pcb",
+ "settings": {
+  "board": "E02_coaxial_loops.kicad_pcb",
+  "radius_mm": 10.0,
+  "width_mm": 0.5,
+  "gap_mm": 0.2,
+  "ends_mm": [
+   [
+    109.993873,
+    -100.35
+   ],
+   [
+    109.993873,
+    -99.65
+   ]
+  ],
+  "layers": {
+   "TX": "F.Cu",
+   "RX": "B.Cu"
+  },
+  "sigma": 58000000.0,
+  "freqs_hz": [
+   10000.0,
+   3500000.0
+  ],
+  "ladder": [
+   [
+    1,
+    1
+   ],
+   [
+    3,
+    1
+   ],
+   [
+    5,
+    1
+   ],
+   [
+    9,
+    1
+   ],
+   [
+    9,
+    3
+   ]
+  ],
+  "rw": 2.0,
+  "chord_deg": 5.0,
+  "options": [
+   "-s",
+   "ludecomp",
+   "-m",
+   "direct",
+   "-a",
+   "off"
+  ]
+ },
+ "stackup": {
+  "F.Cu": [
+   -0.03500000000000003,
+   0.0
+  ],
+  "B.Cu": [
+   -1.6,
+   -1.565
+  ]
+ },
+ "references": {
+  "dz_mm": 1.565,
+  "theta_rad": 6.213171007628889,
+  "M_open_h": 2.388630876856698e-08,
+  "M_closed_h": 2.439953697036839e-08,
+  "M_filament_open_h": 2.399713114817716e-08
+ },
+ "versions": {
+  "python": "3.13.18",
+  "kese": "kese 3.4.0 (made the export; not installed where this ran)",
+  "fasthenry": "3.0.1",
+  "numpy": "2.5.5",
+  "shapely": "2.2.0"
+ },
+ "runs": [
+  {
+   "nwinc": 1,
+   "nhinc": 1,
+   "segments": 252,
+   "filaments": 252,
+   "solves": [
+    {
+     "frequency_hz": 10000.0,
+     "M_h": 2.3891385127296776e-08,
+     "M_reverse_h": 2.3891385127296776e-08,
+     "L_TX_h": 5.534278920640168e-08,
+     "R_TX_ohm": 0.0612073,
+     "L_RX_h": 5.534278920640168e-08,
+     "R_RX_ohm": 0.0612073,
+     "seconds": 0.04,
+     "peak_memory_gb": 0.079,
+     "size": {
+      "filaments": 252
+     }
+    },
+    {
+     "frequency_hz": 3500000.0,
+     "M_h": 2.3891339654455895e-08,
+     "M_reverse_h": 2.3891339654455895e-08,
+     "L_TX_h": 5.534272099714035e-08,
+     "R_TX_ohm": 0.0612073,
+     "L_RX_h": 5.534272099714035e-08,
+     "R_RX_ohm": 0.0612073,
+     "seconds": 0.04,
+     "peak_memory_gb": 0.079,
+     "size": {
+      "filaments": 252
+     }
+    }
+   ]
+  },
+  {
+   "nwinc": 3,
+   "nhinc": 1,
+   "segments": 252,
+   "filaments": 756,
+   "solves": [
+    {
+     "frequency_hz": 10000.0,
+     "M_h": 2.3892021747069143e-08,
+     "M_reverse_h": 2.3892021747069143e-08,
+     "L_TX_h": 5.547441034433867e-08,
+     "R_TX_ohm": 0.0612075,
+     "L_RX_h": 5.547441034433867e-08,
+     "R_RX_ohm": 0.0612075,
+     "seconds": 0.17,
+     "peak_memory_gb": 0.079,
+     "size": {
+      "filaments": 756
+     }
+    },
+    {
+     "frequency_hz": 3500000.0,
+     "M_h": 2.3864874461061753e-08,
+     "M_reverse_h": 2.3864874461061753e-08,
+     "L_TX_h": 5.4897996613300715e-08,
+     "R_TX_ohm": 0.0699552,
+     "L_RX_h": 5.4897996613300715e-08,
+     "R_RX_ohm": 0.0699552,
+     "seconds": 0.17,
+     "peak_memory_gb": 0.079,
+     "size": {
+      "filaments": 756
+     }
+    }
+   ]
+  },
+  {
+   "nwinc": 5,
+   "nhinc": 1,
+   "segments": 252,
+   "filaments": 1260,
+   "solves": [
+    {
+     "frequency_hz": 10000.0,
+     "M_h": 2.3892021747069143e-08,
+     "M_reverse_h": 2.3892021747069143e-08,
+     "L_TX_h": 5.5516268094371837e-08,
+     "R_TX_ohm": 0.0612076,
+     "L_RX_h": 5.5516268094371837e-08,
+     "R_RX_ohm": 0.0612076,
+     "seconds": 0.74,
+     "peak_memory_gb": 0.079,
+     "size": {
+      "filaments": 1260
+     }
+    },
+    {
+     "frequency_hz": 3500000.0,
+     "M_h": 2.385855373617896e-08,
+     "M_reverse_h": 2.385855373617896e-08,
+     "L_TX_h": 5.478249559745688e-08,
+     "R_TX_ohm": 0.0743615,
+     "L_RX_h": 5.478249559745688e-08,
+     "R_RX_ohm": 0.0743615,
+     "seconds": 0.74,
+     "peak_memory_gb": 0.079,
+     "size": {
+      "filaments": 1260
+     }
+    }
+   ]
+  },
+  {
+   "nwinc": 9,
+   "nhinc": 1,
+   "segments": 252,
+   "filaments": 2268,
+   "solves": [
+    {
+     "frequency_hz": 10000.0,
+     "M_h": 2.3892021747069143e-08,
+     "M_reverse_h": 2.3892021747069143e-08,
+     "L_TX_h": 5.5538390631461616e-08,
+     "R_TX_ohm": 0.0612076,
+     "L_RX_h": 5.5538390631461616e-08,
+     "R_RX_ohm": 0.0612076,
+     "seconds": 6.63,
+     "peak_memory_gb": 0.116,
+     "size": {
+      "filaments": 2268
+     }
+    },
+    {
+     "frequency_hz": 3500000.0,
+     "M_h": 2.3856871241066277e-08,
+     "M_reverse_h": 2.3856871241066277e-08,
+     "L_TX_h": 5.476976320200953e-08,
+     "R_TX_ohm": 0.0751101,
+     "L_RX_h": 5.476976320200953e-08,
+     "R_RX_ohm": 0.0751101,
+     "seconds": 6.91,
+     "peak_memory_gb": 0.117,
+     "size": {
+      "filaments": 2268
+     }
+    }
+   ]
+  },
+  {
+   "nwinc": 9,
+   "nhinc": 3,
+   "segments": 252,
+   "filaments": 6804,
+   "solves": [
+    {
+     "frequency_hz": 10000.0,
+     "M_h": 2.3892021747069143e-08,
+     "M_reverse_h": 2.3892021747069143e-08,
+     "L_TX_h": 5.557849767712077e-08,
+     "R_TX_ohm": 0.0612076,
+     "L_RX_h": 5.557849767712077e-08,
+     "R_RX_ohm": 0.0612076,
+     "seconds": 317.26,
+     "peak_memory_gb": 1.102,
+     "size": {
+      "filaments": 6804
+     }
+    },
+    {
+     "frequency_hz": 3500000.0,
+     "M_h": 2.385637103981656e-08,
+     "M_reverse_h": 2.385637103981656e-08,
+     "L_TX_h": 5.4800230005401405e-08,
+     "R_TX_ohm": 0.0754232,
+     "L_RX_h": 5.4800230005401405e-08,
+     "R_RX_ohm": 0.0754232,
+     "seconds": 313.05,
+     "peak_memory_gb": 1.102,
+     "size": {
+      "filaments": 6804
+     }
+    }
+   ]
+  }
+ ]
+}
