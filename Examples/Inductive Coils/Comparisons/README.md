@@ -1,6 +1,6 @@
 # Comparisons
 
-Each board folder beside this one stands on its own and holds the same files: its boards, its geometry, the same five scripts, and its own results. This folder is extra, for our own understanding: it sets the boards side by side. Nothing here is solved; the three scripts read each board's `Results/` and print the tables below, and two of them draw the charts.
+Each board folder beside this one stands on its own and holds the same files: its boards, its geometry, the same five scripts, and its own results. This folder is extra, for our own understanding: it sets the boards side by side. Nothing here is solved; the four scripts read each board's `Results/` and print the tables below, and three of them draw the charts.
 
 The signal is each receiver's mutual inductance from the TX, M = V / (jωI), with 1 A at 3.5 MHz in the TX, so 1 nH is 22 mV of EMF. Every solve is direct (MUMPS, mesh level 0.25). A solve is **readable** when the TX's L and R from its voltage agree with the L from the field energy and the R from the eddy power within 1 % (`readable()` in the boards' `make_charts.py`); every solve here does, within 0.007 %.
 
@@ -11,6 +11,7 @@ The signal is each receiver's mutual inductance from the TX, M = V / (jωI), wit
 | [S0_1x_OD22_2L_tiny_TXtop](../S0_1x_OD22_2L_tiny_TXtop/) | the TX two turns on the top layer around S0's own RX coils, the board grown to 22.2 mm |
 | [S0_1x_OD22_2L_tiny_TXtop_Cut](../S0_1x_OD22_2L_tiny_TXtop_Cut/) | the 22 mm board with SIN and COS opened by a 0.2 mm cut in a top trace instead of a left-out via |
 | [S0_1x_OD23_2L_tiny_TX3top_Cut](../S0_1x_OD23_2L_tiny_TX3top_Cut/) | the TX three turns on the top layer around S0's RX coils, 23.4 mm, opened by the same cuts |
+| [S0d2_1x_OD23_2L_tiny_TX3top_Cut](../S0d2_1x_OD23_2L_tiny_TX3top_Cut/) | the three-turn board with two periods per turn instead of one: the RX coils and a rotor of two sectors, opened by cuts |
 
 ## The TX on the top layer against S0
 
@@ -93,6 +94,32 @@ The 22 mm board opened two ways: [`S0_1x_OD22_2L_tiny_TXtop`](../S0_1x_OD22_2L_t
 * **So per ampere in the TX the signal grows by a half or more, but per volt across it, it shrinks:** at a fixed TX voltage the current falls with L (V = 2πf L I), so the EMF goes with M / L, 0.70 of the two-turn board's at 0.1 mm and 0.79 at 2 mm. Which of the two counts depends on what the drive holds fixed.
 * **Both boards' curves are clean at every gap:** three turns 0.3° rms of angle error from 1 to 2 mm, 0.6° at 0.5 mm and 1.2° at 0.1 mm; two turns 0.2° to 0.4° from 0.5 to 2 mm and 1.1° at 0.1 mm.
 
+## Two periods per turn against one
+
+[`S0d2_1x_OD23_2L_tiny_TX3top_Cut`](../S0d2_1x_OD23_2L_tiny_TX3top_Cut/) against [`S0_1x_OD23_2L_tiny_TX3top_Cut`](../S0_1x_OD23_2L_tiny_TX3top_Cut/): the same TX of three turns on the top layer and the same 23.4 mm board, both opened by cuts, but the RX coils have two periods per turn instead of one, and the rotor two copper sectors, so its period is 180°. `python compare_periods.py` prints the table and the ratios and draws the chart.
+
+![one period per turn against two](SINCOS_1_vs_2_periods.webp)
+
+*Above, the amplitude of SIN and COS at each air gap (SIN lies under COS: the two match within 0.05 %); below, the angle error in mechanical degrees. Two periods solid and filled, one period dashed and hollow. Each amplitude is the best sine through the readable solves, all eight on both boards at every gap.*
+
+| Air gap | Periods per turn | Amplitude SIN / COS | Angle error, electrical | Angle error, mechanical | L TX over the turn | Not readable |
+|---|---|---|---|---|---|---|
+| 2 mm | 1 | 2.29 / 2.29 nH (50 / 50 mV) | 0.3° rms, 0.6° peak | 0.31° rms, 0.56° peak | 260.0 to 260.3 nH | 0 of 8 |
+| 2 mm | 2 | 1.86 / 1.85 nH (41 / 41 mV) | 0.2° rms, 0.4° peak | 0.09° rms, 0.20° peak | 262.4 to 262.8 nH | 0 of 8 |
+| 1.5 mm | 1 | 3.32 / 3.32 nH (73 / 73 mV) | 0.3° rms, 0.5° peak | 0.30° rms, 0.54° peak | 254.2 to 254.5 nH | 0 of 8 |
+| 1.5 mm | 2 | 2.88 / 2.88 nH (63 / 63 mV) | 0.2° rms, 0.4° peak | 0.09° rms, 0.20° peak | 257.6 to 258.1 nH | 0 of 8 |
+| 1 mm | 1 | 4.88 / 4.88 nH (107 / 107 mV) | 0.3° rms, 0.6° peak | 0.34° rms, 0.56° peak | 245.0 to 245.3 nH | 0 of 8 |
+| 1 mm | 2 | 4.51 / 4.51 nH (99 / 99 mV) | 0.2° rms, 0.4° peak | 0.10° rms, 0.22° peak | 250.0 to 250.6 nH | 0 of 8 |
+| 0.5 mm | 1 | 7.10 / 7.10 nH (156 / 156 mV) | 0.6° rms, 0.8° peak | 0.57° rms, 0.79° peak | 228.8 to 229.2 nH | 0 of 8 |
+| 0.5 mm | 2 | 6.97 / 6.97 nH (153 / 153 mV) | 0.4° rms, 0.6° peak | 0.19° rms, 0.32° peak | 236.3 to 237.0 nH | 0 of 8 |
+| 0.1 mm | 1 | 9.12 / 9.12 nH (201 / 201 mV) | 1.2° rms, 1.5° peak | 1.24° rms, 1.51° peak | 202.8 to 203.3 nH | 0 of 8 |
+| 0.1 mm | 2 | 9.44 / 9.43 nH (207 / 207 mV) | 0.9° rms, 1.2° peak | 0.46° rms, 0.61° peak | 213.1 to 214.2 nH | 0 of 8 |
+
+* **The signal is about the same up close and falls faster with the gap:** two periods give 1.03 times the one-period signal at 0.1 mm, 0.92 times at 1 mm and 0.81 times at 2 mm (1.86 nH against 2.29). A pattern with twice the periods is finer, and a finer field pattern fades faster with distance.
+* **In mechanical degrees, the angle error is about a third:** 0.46° rms against 1.24° at 0.1 mm, and 0.09 to 0.10° against 0.30 to 0.34° from 1 to 2 mm, 0.28 to 0.37 times the one-period board's. In electrical degrees it is a little lower as well (0.2° against 0.3° from 1 to 2 mm), and each electrical degree is half a mechanical one.
+* **The TX hardly changes:** L TX is 1.01 to 1.05 times the one-period board's.
+* **What two periods give up:** the reading repeats every 180°, so the sensor alone cannot tell which half of the turn the rotor is in. What they should gain beyond these centred solves: a rotor off-centre moves a one-period board's curves directly, while with two periods that first-order effect cancels.
+
 ## The signal on every board
 
 `python compare_boards.py` prints this table second. Here the amplitude is the best sine through the readable solves where at least five are readable; where fewer are it goes through all of them and is marked with ?. Every solve is readable, so none is marked.
@@ -104,8 +131,9 @@ The 22 mm board opened two ways: [`S0_1x_OD22_2L_tiny_TXtop`](../S0_1x_OD22_2L_t
 | [22 mm, 2 TX turns on top](../S0_1x_OD22_2L_tiny_TXtop/) | 6.47 nH | 4.92 nH | 3.26 nH | 2.15 nH | 1.44 nH |
 | [22 mm, 2 TX turns on top, opened by cuts](../S0_1x_OD22_2L_tiny_TXtop_Cut/) | 6.47 nH | 4.91 nH | 3.26 nH | 2.15 nH | 1.44 nH |
 | [23 mm, 3 TX turns on top, opened by cuts](../S0_1x_OD23_2L_tiny_TX3top_Cut/) | 9.12 nH | 7.10 nH | 4.88 nH | 3.32 nH | 2.29 nH |
+| [23 mm, 3 TX turns on top, opened by cuts, 2 periods per turn](../S0d2_1x_OD23_2L_tiny_TX3top_Cut/) | 9.44 nH | 6.97 nH | 4.51 nH | 2.88 nH | 1.86 nH |
 
-The three-turn board gives the most signal at every gap, 1.47 times S0's at 0.1 mm and 1.94 times at 2 mm; the 21 mm board with the TX on top gives the least.
+The two three-turn boards give the most signal. With one period per turn it is 1.47 times S0's at 0.1 mm and 1.94 times at 2 mm, the most at every gap from 0.5 mm out; with two periods it is a little more at 0.1 mm (9.44 nH) and falls faster after that, to 1.86 nH at 2 mm. The 21 mm board with the TX on top gives the least.
 
 ## Running it
 
@@ -114,9 +142,10 @@ From this folder, with the boards' results in place:
     python compare_boards.py       # the TX on top against S0, and every board's SIN amplitude
     python compare_ports.py        # the cut against the via: the table and SINCOS_cut_vs_via.webp
     python compare_turns.py        # three TX turns against two: the table, the ratios and SINCOS_2_vs_3_turns.webp
+    python compare_periods.py      # two periods per turn against one: the table, the ratios and SINCOS_1_vs_2_periods.webp
 
-`compare_ports.py` and `compare_turns.py` borrow the sine fit and the chart style from a board's `Elmer Simulation/angle_error.py` and `make_charts.py`, so the charts look like the boards' own.
+`compare_ports.py`, `compare_turns.py` and `compare_periods.py` borrow the sine fit and the chart style from a board's `Elmer Simulation/angle_error.py` and `make_charts.py`, so the charts look like the boards' own.
 
 ## Licence
 
-This branch's GPL-3.0 covers the three scripts here. The boards they read are output of the Sinusoidal Coil Generator, for non-commercial use only; see [../LICENSE.md](../LICENSE.md).
+This branch's GPL-3.0 covers the four scripts here. The boards they read are output of the Sinusoidal Coil Generator, for non-commercial use only; see [../LICENSE.md](../LICENSE.md).

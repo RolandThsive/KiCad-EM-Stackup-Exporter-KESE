@@ -26,7 +26,8 @@ TX_ON_TOP = (('S0_1x_OD21_2L_tiny', 'S0 (21 mm, TX one turn on each layer)'),
 ALL = (('S0_1x_OD21_2L_tiny', 'S0'), ('S0_1x_OD21_2L_tiny_TXtop', '21 mm, 2 TX turns on top'),
        ('S0_1x_OD22_2L_tiny_TXtop', '22 mm, 2 TX turns on top'),
        ('S0_1x_OD22_2L_tiny_TXtop_Cut', '22 mm, 2 TX turns on top, opened by cuts'),
-       ('S0_1x_OD23_2L_tiny_TX3top_Cut', '23 mm, 3 TX turns on top, opened by cuts'))
+       ('S0_1x_OD23_2L_tiny_TX3top_Cut', '23 mm, 3 TX turns on top, opened by cuts'),
+       ('S0d2_1x_OD23_2L_tiny_TX3top_Cut', '23 mm, 3 TX turns on top, opened by cuts, 2 periods per turn'))
 
 
 sys.path.insert(0, str(BOARDS / 'S0_1x_OD21_2L_tiny' / 'Elmer Simulation'))   # the boards' own check
@@ -61,10 +62,11 @@ def mv(nh):
     return 2 * math.pi * FREQ * nh * 1e-9 * 1e3
 
 
-def sine_amplitude(ang, y):
-    """The amplitude of the best sine of one period per turn through (ang, y), by least squares."""
+def sine_amplitude(ang, y, period=360.0):
+    """The amplitude of the best sine through (ang, y) over the rotor's period (360 degrees for one period per
+    turn, 180 for two), by least squares."""
     import numpy as np
-    t = np.radians(np.asarray(ang, float))
+    t = np.radians(np.asarray(ang, float) * 360.0 / period)
     a = np.column_stack([np.ones_like(t), np.sin(t), np.cos(t)])
     c = np.linalg.lstsq(a, np.asarray(y, float), rcond=None)[0]
     return float(math.hypot(c[1], c[2]))
@@ -101,7 +103,9 @@ def signal_table(gaps=(0.1, 0.5, 1.0, 1.5, 2.0)):
             runs = runs_of(r)
             ok = [x for x in runs if not loose(x)]
             use = ok if len(ok) >= 5 else runs
-            a = sine_amplitude([x['rotor_deg'] for x in use], [x['solve']['coils']['SIN']['M'] * 1e9 for x in use])
+            period = 360.0 * (r.get('angle_error_deg') or {}).get('mechanical_per_electrical', 1.0)
+            a = sine_amplitude([x['rotor_deg'] for x in use], [x['solve']['coils']['SIN']['M'] * 1e9 for x in use],
+                               period)
             cells.append(f'{a:.2f} nH' + ('' if len(ok) >= 5 else ' ?')
                          + (f' ({len(runs) - len(ok)} of {len(runs)} not readable)' if len(ok) < len(runs) else ''))
         rows.append(f'| [{label}](../{board}/) | ' + ' | '.join(cells) + ' |')
