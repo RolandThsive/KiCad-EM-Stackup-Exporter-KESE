@@ -87,6 +87,10 @@ def spread(ax, items, x, dx_pt=6, sep_pt=10.5):
     pos = [p + shift for p in pos]
     for i in range(1, len(pos)):             # the shift may have pushed the lowest label under its neighbour's floor
         pos[i] = max(pos[i], pos[i - 1] + sep)
+    if pos[0] < sep / 2:                     # keep the group inside the axes, clear of the axis line
+        pos = [p + sep / 2 - pos[0] for p in pos]
+    elif pos[-1] > 1 - sep / 2:
+        pos = [p - (pos[-1] - 1 + sep / 2) for p in pos]
     tr = offset_copy(blended_transform_factory(ax.transData, ax.transAxes), fig=ax.figure, x=dx_pt, y=0, units='points')
     for f, (_, s) in zip(pos, items):
         ax.text(x, f, s, transform=tr, va='center', ha='left', fontsize=8, color=INK, clip_on=False)
