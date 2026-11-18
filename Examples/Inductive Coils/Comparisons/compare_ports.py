@@ -3,8 +3,9 @@ at a left-out via (../S0_1x_OD22_2L_tiny_TXtop), solve by solve at every air gap
 
     python compare_ports.py      prints the comparison as a Markdown table and draws SINCOS_cut_vs_via.webp here
 
-Which cut face counts as plus is a convention, and the cut's is the other way round from the via's for SIN: the via
-board's SIN is shown with its sign turned, which moves its curve by half a turn and changes nothing else.
+Which side of a port counts as plus is a convention, and it need not be the same at the cut as at the via: where a
+receiver of the via board reads the cut's curve turned over (the two best sines more than 90 degrees apart), the via's
+is shown with its sign turned, which moves its curve by half a turn and changes nothing else.
 Nothing here is solved. This script is GPL-3.0 as the bridge.
 """
 from __future__ import annotations
@@ -31,16 +32,35 @@ def load(results, gap):
     return json.loads(f.read_text()) if f.exists() else None
 
 
-def solves(res, flip_sin=False):
-    """{angle: (M_SIN nH, M_COS nH, L_TX nH, R_TX ohm, readable)} for the solved angles (the rotor away left out)."""
+def solves(res, flip=()):
+    """{angle: (M_SIN nH, M_COS nH, L_TX nH, R_TX ohm, readable)} for the solved angles (the rotor away left out),
+    with the sign of the receivers named in flip turned."""
     out = {}
     for r in res['runs']:
         if r['rotor_deg'] == 'away':
             continue
         c, s = r['solve']['coils'], r['solve']
-        out[r['rotor_deg']] = ((-1 if flip_sin else 1) * c['SIN']['M'] * 1e9, c['COS']['M'] * 1e9, c['TX']['L'] * 1e9,
+        out[r['rotor_deg']] = ((-1 if 'SIN' in flip else 1) * c['SIN']['M'] * 1e9,
+                               (-1 if 'COS' in flip else 1) * c['COS']['M'] * 1e9, c['TX']['L'] * 1e9,
                                c['TX']['R'], readable(s))
     return out
+
+
+def turned():
+    """The via board's receivers whose curve is the cut's turned over, judged at 1 mm (or the first gap both boards
+    have): their best sines more than 90 degrees apart."""
+    for gap in (1.0,) + GAPS:
+        rc, rv = load(CUT, gap), load(VIA, gap)
+        if rc and rv:
+            sc, sv = solves(rc), solves(rv)
+            out = []
+            for i, n in enumerate(('SIN', 'COS')):
+                pc = sine_fit(sorted(sc), [sc[a][i] for a in sorted(sc)], PERIOD)['phase_deg']
+                pv = sine_fit(sorted(sv), [sv[a][i] for a in sorted(sv)], PERIOD)['phase_deg']
+                if abs((pc - pv + 180) % 360 - 180) > 90:
+                    out.append(n)
+            return tuple(out)
+    return ()
 
 
 def loose(v):
@@ -67,11 +87,12 @@ def table():
     rows = ['| Air gap | Port | Amplitude SIN / COS, all solves | The same, readable solves only | Angle error | SIN to '
             'COS | L TX over the turn | Not readable | Cut against via, where both are readable |',
             '|---|---|---|---|---|---|---|---|---|']
+    flip = turned()
     for gap in GAPS:
         rc, rv = load(CUT, gap), load(VIA, gap)
         if not rc or not rv:
             continue
-        sc, sv = solves(rc), solves(rv, flip_sin=True)
+        sc, sv = solves(rc), solves(rv, flip)
         both = [a for a in sorted(sc) if a in sv and not loose(sc[a]) and not loose(sv[a])]
         d = []
         for i, n in enumerate(('SIN', 'COS')):
@@ -102,10 +123,11 @@ def chart(path):
                              layout='constrained')
     fig.patch.set_facecolor(SURFACE)
     axes = np.atleast_1d(axes)
+    flip = turned()
     for k, (ax, gap) in enumerate(zip(axes, gaps)):
         _style(ax, matplotlib)
         ax.set_ylabel('M (nH)', color=INK2)
-        sc, sv = solves(load(CUT, gap)), solves(load(VIA, gap), flip_sin=True)
+        sc, sv = solves(load(CUT, gap)), solves(load(VIA, gap), flip)
         for i, n in enumerate(('SIN', 'COS')):
             col = tint(COLOURS[n], 1.0)
             for s, ls, fill, z in ((sv, (0, (4, 2)), SURFACE, 3), (sc, '-', col, 4)):
@@ -129,11 +151,11 @@ def chart(path):
     hs = [Line2D([], [], color=tint(COLOURS['SIN'], 1.0), lw=1.6, marker='o', mfc=tint(COLOURS['SIN'], 1.0),
                  label='SIN, cut'),
           Line2D([], [], color=tint(COLOURS['SIN'], 1.0), lw=1.2, ls=(0, (4, 2)), marker='o', mfc=SURFACE,
-                 label='SIN, via (sign turned)'),
+                 label='SIN, via' + (' (sign turned)' if 'SIN' in flip else '')),
           Line2D([], [], color=tint(COLOURS['COS'], 1.0), lw=1.6, marker='o', mfc=tint(COLOURS['COS'], 1.0),
                  label='COS, cut'),
           Line2D([], [], color=tint(COLOURS['COS'], 1.0), lw=1.2, ls=(0, (4, 2)), marker='o', mfc=SURFACE,
-                 label='COS, via'),
+                 label='COS, via' + (' (sign turned)' if 'COS' in flip else '')),
           Line2D([], [], ls='none', marker='o', ms=11, mfc='none', mec=INK2, label='not readable')]
     fig.legend(handles=hs, frameon=False, fontsize=8, labelcolor=INK, loc='outside lower center', ncol=5)
     fig.savefig(path, facecolor=SURFACE, pil_kwargs={'lossless': True, 'method': 6})
