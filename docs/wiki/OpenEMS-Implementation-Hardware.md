@@ -47,11 +47,8 @@ was 1.6 times as fast with 42 % less memory.
 | Time | cells × time steps ÷ speed | 88 s, with half the machine |
 
 A board that rings needs far more time steps than a line ended in its own impedance: a resonance of
-high Q holds the field for a long time after the pulse has gone. The coil boards' self resonance
-checks (C8) need about 540,000 time steps each, 23 times O01's run.
-
-A worked example, S2's C8 run: 34 million cells × 60 bytes is 2.0 GB, and 34 million × 540,000 ÷ 701
-million a second is 26,000 s, about 7 hours on the test machine with the machine to itself.
+high Q holds the field for a long time after the pulse has gone. A coil's self-resonance run needs
+about 540,000 time steps, 23 times O01's run.
 
 ## 40.4 What Fits Where
 
@@ -59,13 +56,12 @@ The tables leave a third or more of a machine's memory to the system and to Pyth
 
 | Machine | Boards that fit, CPU engine | Example |
 |---|---|---|
-| 8 GB | up to about 75 million cells | O01, and the coil boards S1 to S4, D1 to D4 |
-| 16 GB | up to about 120 million cells | D5 (119 M, 7.1 GB) |
-| 32 GB | up to about 250 million cells | S5 (212 M, 12.7 GB) |
+| 8 GB | up to about 75 million cells | O01 |
+| 16 GB | up to about 120 million cells | |
+| 32 GB | up to about 250 million cells | |
 
-Time is the harder limit. Every coil board fits an 8 GB or 16 GB machine except S5, but each C8 run
-takes 7 to 45 hours on 4 cores, so all ten wait for a machine that can run them unattended
-([OpenEMS Implementation Test Boards](OpenEMS-Implementation-Test-Boards.md#372-the-ten-inductive-encoder-boards)).
+Time is the harder limit: at 701 million cell updates a second, a self-resonance run of 540,000 time
+steps on 34 million cells takes about 7 hours on 4 cores, and longer in proportion to the cells.
 
 ## 40.5 The GPU Engine
 

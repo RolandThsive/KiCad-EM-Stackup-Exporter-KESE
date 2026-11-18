@@ -26,13 +26,13 @@ which is what the rest of this page is about.
 
 ## 67.2 The Linear Solve's Tolerance
 
-The tolerance was chosen on S0, the smallest coil board on the branch, at 1 mm and 0°: a residual of 1e-10 instead of
+The tolerance was chosen on the branch's smallest coil board, at 1 mm and 0°: a residual of 1e-10 instead of
 1e-8 moved L, R and M by under 3e-7 of themselves, and 1e-6 by under 4e-5. At 1e-8 the solve's own error is far below
 the mesh's.
 
 ## 67.3 The Mesh
 
-The coil board's mesh settings were settled on S0 at 1 mm and 0°, one setting changed at a time from the bridge's
+The coil board's mesh settings were settled on the branch's smallest coil board at 1 mm and 0°, one setting changed at a time from the bridge's
 defaults. The air close round the thin tracks holds most of what a coarse mesh misses: grading it four times as
 finely (`grade` 0.5 → 0.125, `tet_grade` 0.7 → 0.175) raised M by 3 to 4 % and L TX by 2 %, while the copper's own
 mesh, twice as fine, moved M by under 1 %. With the air graded four times as finely and wedge layers half as thick
@@ -67,7 +67,7 @@ a real harmonic, so these are upper bounds on the noise.
 | Item | Effect |
 |---|---|
 | Receivers' ports at 1 MΩ | the receivers are open to within \|Z\| / 1 MΩ, a few parts in a million |
-| A port sheet over a via's drill hole | measured on S0: a sheet standing over the hole of a left-out via does not end on copper where it crosses the hole, and read M 13 % low when the mesh resolved it. The bridge fills a left-out via's pads over the hole; the sheet then reads the same M in pieces as drawn whole, within 0.5 %. `S0d2_1x_OD23_2L_tiny_TX3top_Cut` is opened by cuts and keeps its vias, so this does not arise on it |
+| A port sheet over a via's drill hole | measured on the branch's smallest coil board: a sheet standing over the hole of a left-out via does not end on copper where it crosses the hole, and read M 13 % low when the mesh resolved it. The bridge fills a left-out via's pads over the hole; the sheet then reads the same M in pieces as drawn whole, within 0.5 %. `S0d2_1x_OD23_2L_tiny_TX3top_Cut` is opened by cuts and keeps its vias, so this does not arise on it |
 | Where the coil is opened | the cut sits 0.86 mm from the via, where the real board is opened; the voltage across it is the coil's EMF round the whole loop |
 
 ## 67.6 What The Model Leaves Out

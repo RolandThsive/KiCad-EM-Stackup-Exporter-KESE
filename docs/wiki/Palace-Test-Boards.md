@@ -62,7 +62,7 @@ the sine and cosine of the rotor's angle.
 
 The two cuts are 45° apart about the axis, a quarter of the electrical period, as SIN and COS are.
 
-The branch solves five more coil boards in the same way (S0, the smallest coil set, and boards made from it); they are in
+The branch solves five more coil boards in the same way; they are in
 [`Examples/Inductive Coils/`](https://github.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/tree/Palace_Integration/Examples/Inductive%20Coils).
 
 | Previous | Next |

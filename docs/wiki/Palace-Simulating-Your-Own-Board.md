@@ -111,10 +111,10 @@ Any single coil set from the generator's Single Coil Set Generator is set up the
 2. **Set it up for Palace**, in `Examples/Inductive Coils/`:
 
    ```bash
-   python new_coil.py "<checkout>/Generators/Single Coil Set Generator/Output/Coil_..." S6_my_board
+   python new_coil.py "<checkout>/Generators/Single Coil Set Generator/Output/Coil_..." my_board
    ```
 
-   It makes `S6_my_board/` with `Boards/` (straight from the generator), `Palace Simulation/` (`test_spec.json` and
+   It makes `my_board/` with `Boards/` (straight from the generator), `Palace Simulation/` (`test_spec.json` and
    the five scripts, unchanged), `Results/` (`expected_results.json`, the generator's estimates) and a README, then
    builds the mesh at one angle and prints its size and the memory a solve needs. `--angles N` sets the angles over
    one rotor period (default 8), `--level` the mesh level, `--no-estimate` skips the mesh, `--force` writes into a

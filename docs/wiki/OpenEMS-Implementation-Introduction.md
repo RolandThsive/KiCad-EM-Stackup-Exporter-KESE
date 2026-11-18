@@ -12,9 +12,7 @@ by hand.
 > [!NOTE]
 > This category describes work in progress. The bridge and its first proof board, a microstrip,
 > are on the branch; see [OpenEMS Implementation Test Board Results](OpenEMS-Implementation-Test-Board-Results.md)
-> for what it gave. The inductive encoder boards' self-resonance runs (check C8) take many hours
-> each and are marked **YET TO BE RUN** on
-> [OpenEMS Implementation Test Boards](OpenEMS-Implementation-Test-Boards.md).
+> for what it gave.
 
 ## 33.1 What openEMS Is Used For Here
 
@@ -25,7 +23,7 @@ waves in it, where the quasi-static solve of [Elmer](Elmer-FEM-Introduction.md) 
 |---|---|
 | S-parameters of a board between its ports | the incident and reflected waves at each port, from one run per excited port |
 | Characteristic impedance and effective permittivity of a line | each microstrip port's own voltage and current probes (no reference impedance needed) |
-| Self-resonance and stray capacitance of a coil | the ring-down of the coil's impedance after a pulse (planned, check C8 of the coil boards) |
+| Self-resonance and stray capacitance of a coil | the ring-down of the coil's impedance after a pulse (planned) |
 | Crosstalk, TDR, resonances of a board | time signals and S-parameters (planned examples) |
 
 ## 33.2 How It Fits Together
@@ -74,7 +72,6 @@ The two solvers are compared on [Elmer vs openEMS](Elmer-vs-OpenEMS.md).
 |---|---|
 | `bridge/` | `fdtd.py` (export, model, mesh, preflight, run, results) and `kicad_writer.py` |
 | `Examples/O01_microstrip/` | The first proof board, with its board, `make_board.py`, `simulation.py`, `README.md` and `results.md` |
-| `Examples/Inductive Coils/` | The ten inductive encoder boards (non-commercial licence, see that folder's `LICENSE.md`) |
 | `Solver_OpenEMS/` | Empty on purpose: openEMS is built here (see [OpenEMS Implementation Installation](OpenEMS-Implementation-Installation.md)) |
 | `3D_Geometry/` | Empty on purpose: KESE's `Generator/` is copied here from `main`, or `KESE_PATH` points at it |
 

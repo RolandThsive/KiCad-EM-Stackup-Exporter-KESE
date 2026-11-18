@@ -12,7 +12,7 @@ right-hand column says; this page is for reading a failed run of your own, or a 
 | `no copper faces of X border the gap` | The gap region lies away from the coil, or the height range given to `electrodes()` misses the copper's faces | Check the gap's position in model coordinates (y = −y_KiCad) and the z range |
 | `no two copper vertices face each other across the gap` | `ports.facing_vertices` found no pair of outline vertices on opposite sides of the gap sharing their coordinate across `axis` | Check `gap_box` and `axis` (0 for a gap across x, 1 across y) |
 | `X: no mesh faces on the port line` | The port's line is not in the triangle mesh | Pass it in `extra_lines`, with its ends on the grid |
-| M about 13 % low at a left-out via (found on S0) | KESE exports a via with its drill hole through the pads, and a port sheet standing over the hole does not end on copper where it crosses it | Fill the left-out via's pads over the hole (`voids()` in the coil board's `simulation.py`): a via that is left out is not drilled |
+| M about 13 % low at a left-out via (found on another coil board) | KESE exports a via with its drill hole through the pads, and a port sheet standing over the hole does not end on copper where it crosses it | Fill the left-out via's pads over the hole (`voids()` in the coil board's `simulation.py`): a via that is left out is not drilled |
 | A receiver should be opened by a cut, as the real board is, without editing the board files | `new_coil.py` opens each receiver at a left-out via | Set `"rx_port": "cut"` and each receiver's `cut` in `test_spec.json`; `simulation.py` takes the copper in the cut box out as a `void` part and draws the box's outline into the mesh, so both cut faces are meshed exactly |
 
 ## 69.2 The Linear Solver

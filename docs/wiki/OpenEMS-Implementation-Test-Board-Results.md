@@ -118,15 +118,6 @@ rule's direction, the 2:1 check's rounding, and the static charge of openEMS's d
 [OpenEMS Implementation Troubleshooting](OpenEMS-Implementation-Troubleshooting.md#411-wrong-numbers-that-look-right)
 lists what each looked like, and section 41.2 the chain of single runs that found the thirds rule.
 
-## 38.2 The Ten Inductive Encoder Boards
-
-**YET TO BE RUN.** openEMS's job on these boards is each TX coil's self resonance (check C8), and
-the inductance and coupling checks again on S2 and D2 as a cross-check of Elmer. A C8 run rings the
-coil down for about 540,000 time steps, 7 to 45 hours on the 4-core test machine, so all ten wait
-for a machine that can run unattended
-([OpenEMS Implementation Test Boards](OpenEMS-Implementation-Test-Boards.md#372-the-ten-inductive-encoder-boards),
-[OpenEMS Implementation Hardware](OpenEMS-Implementation-Hardware.md#404-what-fits-where)).
-
 | Previous | Next |
 |:---|---:|
 | [OpenEMS Implementation Test Boards](OpenEMS-Implementation-Test-Boards.md) | [OpenEMS Implementation Accuracy](OpenEMS-Implementation-Accuracy.md) |

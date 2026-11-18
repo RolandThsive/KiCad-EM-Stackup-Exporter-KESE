@@ -45,16 +45,6 @@ of time steps.
 | A coil's self resonance and stray capacitance | openEMS | Elmer's quasi-static solve has no capacitance between turns |
 | Conductor loss at GHz | neither yet | openEMS's copper is PEC; Elmer has no waves |
 
-## 42.4 Where They Meet: The Coil Boards
-
-The ten inductive encoder boards are the one place both solvers work on the same boards. Elmer
-answers the inductance and coupling checks (C1 to C7, C10) at 3 to 5 MHz; openEMS answers the self
-resonance (C8), which tells whether those MHz answers hold at all, and repeats C1 to C7 on S2 and D2
-as a cross-check of Elmer. Neither has run them yet: S2's Elmer mesh needs about 59 GB and an openEMS
-C8 run on S2 about 7 hours, so both wait for a bigger, unattended machine
-([Elmer FEM Test Boards](Elmer-FEM-Test-Boards.md),
-[OpenEMS Implementation Test Boards](OpenEMS-Implementation-Test-Boards.md#372-the-ten-inductive-encoder-boards)).
-
 | Previous | Next |
 |:---|---:|
 | [OpenEMS Implementation Troubleshooting](OpenEMS-Implementation-Troubleshooting.md) | [PyPEEC Introduction](PyPEEC-Introduction.md) |
