@@ -9,20 +9,21 @@
 | Elmer | 5 | 40 | 40 |
 | PyPEEC | 5 | 40 | 40 |
 | FastHenry | 5 | 40 | 40 |
-| Palace | 0 (still solving) | 0 | 0 |
+| Palace | 5 | 40 | 40 |
 | Theory | worked out from the copper by hand formulas, nothing to solve | — | — |
 
 Against FastHenry, the yardstick (the closest to the reference on the proof boards):
 
 - **Elmer** (FEM): the coupling (SIN's and COS's amplitude) is 3.7 % under FastHenry's on average over the 5 gaps both have finished (−4.0 to −3.0 %); L TX is 7.3 % under (−8.4 to −6.8 %); the rms angle error is within 0.09° of FastHenry's (electrical degrees).
 - **PyPEEC** (PEEC): the coupling (SIN's and COS's amplitude) is 1.8 % under FastHenry's on average over the 5 gaps both have finished (−2.2 to −1.4 %); L TX is 1.1 % over (+0.8 to +1.5 %); the rms angle error is within 0.02° of FastHenry's (electrical degrees).
-- **Palace** has not finished a gap of this board yet; it is still solving.
+- **Palace** (FEM): the coupling (SIN's and COS's amplitude) is 0.7 % under FastHenry's on average over the 5 gaps both have finished (−0.9 to −0.3 %); L TX is 4.9 % under (−5.8 to −4.5 %); the rms angle error is within 0.07° of FastHenry's (electrical degrees).
 
 Against the hand values (the Theory rows, worked out in [Formulas](#formulas)): with the rotor away, L TX has to lie between about 289.2 nH (all the current at the copper's surface) and 295.6 nH (its DC value, the most it can be at any frequency), and R TX can be no less than its DC resistance, 379.4 mΩ.
 
 - **Elmer**: L TX with the rotor away 273.3 nH, 5.5 % under the high-frequency limit; R TX 438 mΩ, 15.6 % over its DC value.
 - **PyPEEC**: L TX with the rotor away 296.7 nH, 0.4 % over the DC value, the most it can be; R TX 472 mΩ, 24.5 % over its DC value.
 - **FastHenry**: L TX with the rotor away 294.6 nH, inside the hand values; R TX 413 mΩ, 8.9 % over its DC value.
+- **Palace**: L TX with the rotor away 281.4 nH, 2.7 % under the high-frequency limit; R TX 441 mΩ, 16.3 % over its DC value.
 
 ![OD23 Cut against the air gap](../charts/S0_1x_OD23_2L_tiny_TX3top_Cut.webp)
 
@@ -38,6 +39,7 @@ Against the hand values (the Theory rows, worked out in [Formulas](#formulas)): 
 | Elmer | 4.879 | 4.882 | 245.1 | 273.3 | 455 | 0.344 | 0.560 | 8 |
 | PyPEEC | 4.984 | 4.986 | 266.4 | 296.7 | 493 | 0.318 | 0.489 | 8 |
 | FastHenry | 5.074 | 5.081 | 263.8 | 294.6 | 436 | 0.300 | 0.418 | 8 |
+| Palace | 5.031 | 5.037 | 251.2 | 281.4 | 463 | 0.350 | 0.450 | 8 |
 
 ## Every air gap
 
@@ -45,65 +47,65 @@ In the Theory column: L TX can be no more than its DC value and R TX no less tha
 
 **SIN's amplitude (nH)**
 
-| Air gap | Elmer | PyPEEC | FastHenry | Theory |
-|---|---|---|---|---|
-| 0.1 mm | 9.123 | 9.276 | 9.407 | — |
-| 0.5 mm | 7.099 | 7.255 | 7.361 | — |
-| 1 mm | 4.879 | 4.984 | 5.074 | — |
-| 1.5 mm | 3.321 | 3.386 | 3.457 | — |
-| 2 mm | 2.286 | 2.329 | 2.377 | — |
+| Air gap | Elmer | PyPEEC | FastHenry | Palace | Theory |
+|---|---|---|---|---|---|
+| 0.1 mm | 9.123 | 9.276 | 9.407 | 9.381 | — |
+| 0.5 mm | 7.099 | 7.255 | 7.361 | 7.309 | — |
+| 1 mm | 4.879 | 4.984 | 5.074 | 5.031 | — |
+| 1.5 mm | 3.321 | 3.386 | 3.457 | 3.427 | — |
+| 2 mm | 2.286 | 2.329 | 2.377 | 2.360 | — |
 
 **COS's amplitude (nH)**
 
-| Air gap | Elmer | PyPEEC | FastHenry | Theory |
-|---|---|---|---|---|
-| 0.1 mm | 9.125 | 9.276 | 9.410 | — |
-| 0.5 mm | 7.101 | 7.256 | 7.367 | — |
-| 1 mm | 4.882 | 4.986 | 5.081 | — |
-| 1.5 mm | 3.324 | 3.387 | 3.462 | — |
-| 2 mm | 2.287 | 2.330 | 2.382 | — |
+| Air gap | Elmer | PyPEEC | FastHenry | Palace | Theory |
+|---|---|---|---|---|---|
+| 0.1 mm | 9.125 | 9.276 | 9.410 | 9.385 | — |
+| 0.5 mm | 7.101 | 7.256 | 7.367 | 7.315 | — |
+| 1 mm | 4.882 | 4.986 | 5.081 | 5.037 | — |
+| 1.5 mm | 3.324 | 3.387 | 3.462 | 3.434 | — |
+| 2 mm | 2.287 | 2.330 | 2.382 | 2.365 | — |
 
 **L TX, mean over the turn (nH)**
 
-| Air gap | Elmer | PyPEEC | FastHenry | Theory |
-|---|---|---|---|---|
-| 0.1 mm | 203.1 | 224.9 | 221.6 | ≤ 295.6 |
-| 0.5 mm | 229.0 | 249.4 | 247.4 | ≤ 295.6 |
-| 1 mm | 245.1 | 266.4 | 263.8 | ≤ 295.6 |
-| 1.5 mm | 254.3 | 276.5 | 273.2 | ≤ 295.6 |
-| 2 mm | 260.1 | 281.5 | 279.1 | ≤ 295.6 |
+| Air gap | Elmer | PyPEEC | FastHenry | Palace | Theory |
+|---|---|---|---|---|---|
+| 0.1 mm | 203.1 | 224.9 | 221.6 | 208.8 | ≤ 295.6 |
+| 0.5 mm | 229.0 | 249.4 | 247.4 | 234.9 | ≤ 295.6 |
+| 1 mm | 245.1 | 266.4 | 263.8 | 251.2 | ≤ 295.6 |
+| 1.5 mm | 254.3 | 276.5 | 273.2 | 260.7 | ≤ 295.6 |
+| 2 mm | 260.1 | 281.5 | 279.1 | 266.5 | ≤ 295.6 |
 
 **R TX, mean over the turn (mΩ)**
 
-| Air gap | Elmer | PyPEEC | FastHenry | Theory |
-|---|---|---|---|---|
-| 0.1 mm | 498 | 532 | 472 | ≥ 379.4 |
-| 0.5 mm | 467 | 504 | 446 | ≥ 379.4 |
-| 1 mm | 455 | 493 | 436 | ≥ 379.4 |
-| 1.5 mm | 449 | 487 | 430 | ≥ 379.4 |
-| 2 mm | 446 | 483 | 426 | ≥ 379.4 |
+| Air gap | Elmer | PyPEEC | FastHenry | Palace | Theory |
+|---|---|---|---|---|---|
+| 0.1 mm | 498 | 532 | 472 | 505 | ≥ 379.4 |
+| 0.5 mm | 467 | 504 | 446 | 474 | ≥ 379.4 |
+| 1 mm | 455 | 493 | 436 | 463 | ≥ 379.4 |
+| 1.5 mm | 449 | 487 | 430 | 458 | ≥ 379.4 |
+| 2 mm | 446 | 483 | 426 | 454 | ≥ 379.4 |
 
 **Angle error, rms (electrical °)**
 
-| Air gap | Elmer | PyPEEC | FastHenry | Theory |
-|---|---|---|---|---|
-| 0.1 mm | 1.236 | 1.175 | 1.151 | 0 |
-| 0.5 mm | 0.569 | 0.533 | 0.512 | 0 |
-| 1 mm | 0.344 | 0.318 | 0.300 | 0 |
-| 1.5 mm | 0.304 | 0.274 | 0.260 | 0 |
-| 2 mm | 0.311 | 0.269 | 0.257 | 0 |
+| Air gap | Elmer | PyPEEC | FastHenry | Palace | Theory |
+|---|---|---|---|---|---|
+| 0.1 mm | 1.236 | 1.175 | 1.151 | 1.226 | 0 |
+| 0.5 mm | 0.569 | 0.533 | 0.512 | 0.575 | 0 |
+| 1 mm | 0.344 | 0.318 | 0.300 | 0.350 | 0 |
+| 1.5 mm | 0.304 | 0.274 | 0.260 | 0.299 | 0 |
+| 2 mm | 0.311 | 0.269 | 0.257 | 0.286 | 0 |
 
 ## Against FastHenry, gap by gap
 
 Each solver's value over FastHenry's at the same gap: SIN's amplitude, and in brackets L TX. In the Theory column, in brackets, the most L TX can be (its DC value) over FastHenry's L TX; there is no hand value for the amplitude.
 
-| Air gap | Elmer | PyPEEC | Theory |
-|---|---|---|---|
-| 0.1 mm | 0.970 (0.916) | 0.986 (1.015) | — (≤ 1.334) |
-| 0.5 mm | 0.964 (0.926) | 0.986 (1.008) | — (≤ 1.195) |
-| 1 mm | 0.962 (0.929) | 0.982 (1.010) | — (≤ 1.121) |
-| 1.5 mm | 0.961 (0.931) | 0.980 (1.012) | — (≤ 1.082) |
-| 2 mm | 0.962 (0.932) | 0.980 (1.009) | — (≤ 1.059) |
+| Air gap | Elmer | PyPEEC | Palace | Theory |
+|---|---|---|---|---|
+| 0.1 mm | 0.970 (0.916) | 0.986 (1.015) | 0.997 (0.942) | — (≤ 1.334) |
+| 0.5 mm | 0.964 (0.926) | 0.986 (1.008) | 0.993 (0.949) | — (≤ 1.195) |
+| 1 mm | 0.962 (0.929) | 0.982 (1.010) | 0.991 (0.952) | — (≤ 1.121) |
+| 1.5 mm | 0.961 (0.931) | 0.980 (1.012) | 0.992 (0.954) | — (≤ 1.082) |
+| 2 mm | 0.962 (0.932) | 0.980 (1.009) | 0.993 (0.955) | — (≤ 1.059) |
 
 ## The hand values and the generator's estimates
 
@@ -116,6 +118,7 @@ The Theory row is worked out from the TX copper alone (see [Formulas](#formulas)
 | Elmer | 273.3 | 5.5 % under the high-frequency limit | −6.4 % | 203.1 | 245.1 | 438 |
 | PyPEEC | 296.7 | 0.4 % over the DC value, the most it can be | +1.6 % | 224.9 | 266.4 | 472 |
 | FastHenry | 294.6 | inside the hand values | +0.9 % | 221.6 | 263.8 | 413 |
+| Palace | 281.4 | 2.7 % under the high-frequency limit | −3.6 % | 208.8 | 251.2 | 441 |
 
 ## Time and memory
 
@@ -126,9 +129,10 @@ Each branch records the wall time and the peak memory of every solve. They all r
 | Elmer | 279 | 160 to 392 | 13.3 |
 | PyPEEC | 384 | 212 to 639 | 1.6 to 3.4 |
 | FastHenry | 143 | 142 to 145 | 0.9 |
+| Palace | 188 | 134 to 306 | 6.9 to 11.4 |
 | Theory | 45 (once for the board: both of Neumann's sums) | — | 2.0 |
 
-A receiver whose plus terminal sits on the other side in one branch comes out turned over; here Elmer COS, PyPEEC COS is turned back to match FastHenry. Amplitudes and angle errors are the same either way.
+A receiver whose plus terminal sits on the other side in one branch comes out turned over; here Elmer COS, Palace COS, Palace SIN, PyPEEC COS is turned back to match FastHenry. Amplitudes and angle errors are the same either way.
 
 ## Formulas
 

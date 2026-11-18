@@ -7,7 +7,7 @@ KESE exports a KiCad board's copper and stackup for electromagnetic solvers. Fou
 | Elmer | FEM (finite elements, the A-V eddy-current formulation) | `Elmer_Integration` | 6 | 280 | 280 |
 | PyPEEC | PEEC (partial elements on voxels, FFT-accelerated) | `PyPEEC_Integration` | 6 | 280 | 280 |
 | FastHenry | PEEC (partial elements on filaments, direct solve) | `FastHenry_Integration` | 6 | 280 | 280 |
-| Palace | FEM (finite elements, the frequency-domain Maxwell solver) | `Palace_Integration` | 4 (still solving; 20 of 30 gaps) | 160 | 160 |
+| Palace | FEM (finite elements, the frequency-domain Maxwell solver) | `Palace_Integration` | 5 (still solving; 25 of 30 gaps) | 200 | 200 |
 | Theory | hand formulas: Neumann's integral over the TX copper, its DC resistance ([Formulas](#formulas)) | this one (`scripts/theory.py`) | 6 | — | — |
 
 Each integration branch keeps its own solver's results, settings and checks, and knows nothing of the others. The numbers here are read from those branches unchanged by `scripts/collect.py`. The two FEM solvers mesh the air around the copper and close it at an outer boundary; the two PEEC solvers model only the copper, and the air's field comes from the free-space formulas, with no mesh and no boundary.
@@ -20,7 +20,7 @@ This page shows one board, S0d2_1x_OD23_2L_tiny_TX3top_Cut. Every board has its 
 | [S0_1x_OD21_2L_tiny_TXtop](Comparisons/S0_1x_OD21_2L_tiny_TXtop.md) | S0 TXtop: S0 with the TX two turns on the top layer (the generator narrows the RX band to fit them) | 2.35 / 2.43 / 2.48 / 2.42 | 129.1 to 133.0 |
 | [S0_1x_OD22_2L_tiny_TXtop](Comparisons/S0_1x_OD22_2L_tiny_TXtop.md) | OD22 TXtop: the TX two turns on the top layer around S0's own RX coils, the board grown to 22.2 mm | 3.26 / 3.38 / 3.43 / 3.37 | 143.2 to 147.4 |
 | [S0_1x_OD22_2L_tiny_TXtop_Cut](Comparisons/S0_1x_OD22_2L_tiny_TXtop_Cut.md) | OD22 Cut: the 22 mm board with SIN and COS opened by a 0.2 mm cut in a top trace instead of a left-out via | 3.26 / 3.34 / 3.40 / 3.37 | 143.2 to 147.4 |
-| [S0_1x_OD23_2L_tiny_TX3top_Cut](Comparisons/S0_1x_OD23_2L_tiny_TX3top_Cut.md) | OD23 Cut: the TX three turns on the top layer around S0's RX coils, 23.4 mm, opened by cuts | 4.88 / 4.98 / 5.07 / — | 289.2 to 295.6 |
+| [S0_1x_OD23_2L_tiny_TX3top_Cut](Comparisons/S0_1x_OD23_2L_tiny_TX3top_Cut.md) | OD23 Cut: the TX three turns on the top layer around S0's RX coils, 23.4 mm, opened by cuts | 4.88 / 4.98 / 5.07 / 5.03 | 289.2 to 295.6 |
 | [S0d2_1x_OD23_2L_tiny_TX3top_Cut](Comparisons/S0d2_1x_OD23_2L_tiny_TX3top_Cut.md) | S0d2: the three-turn 23 mm board with two electrical periods per turn and a rotor of two sectors, so the curves repeat every 180°; solved at 16 angles over the whole turn | 4.51 / 4.61 / 4.73 / — | 289.2 to 295.6 |
 
 There is no hand formula for the SIN amplitude; the Theory column gives the range L TX must lie in with the rotor away (see [Formulas](#formulas)).
