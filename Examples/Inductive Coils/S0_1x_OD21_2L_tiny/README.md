@@ -90,7 +90,7 @@ One solve per rotor angle, 0 to 315° in 45° steps by default (8 angles; `--ste
 | 0.25 (the default here) | 80,014 at 0.1 mm to 108,939 at 2 mm, 10 to 14 layers through the gap | 13 to 17 GB measured from 0.1 to 1 mm (in memory and swap together), more at 1.5 and 2 mm | a 16 GB machine with a 12 GB swap file: every result here was solved in 13.3 GB of memory and the rest in swap |
 | 0.75 (the earlier iterative solves') | 203,669 at 1 mm | about 40 to 55 GB (estimated) | a 64 GB machine |
 
-Level 0.25 is coarser than the 0.75 used before. Refined to 0.4, M moves by 0.3 % at most and the angle by 0.25° at most, while L TX rises about 1 %, so L TX here reads about 1 % low. `--solver iterative` (GCR) needs far less memory, about 57 kB a node, but on these boards at 3.5 MHz it converges too slowly to read M.
+Level 0.25 is coarser than the 0.75 used before. Refined to 0.4, M moves by 0.3 % at most and the angle by 0.25° at most, while L TX rises about 1 %. The level refines only the copper, though: on the proof boards, grading the air twice as finely raised E01's L and E02's M by about 2.3 % each, and four times as finely raised E01's L by 3.4 %, so L TX and M here read low by more than the level ladder shows. `--solver iterative` (GCR) needs far less memory, about 57 kB a node, but on these boards at 3.5 MHz it converges too slowly to read M.
 
 ## Running it
 
