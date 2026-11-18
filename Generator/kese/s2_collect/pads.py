@@ -137,6 +137,8 @@ def padstack_layers(pad, copper):
         rest = [c for c in pad[4:] if not (isinstance(c, list) and c and c[0] in SHAPE_KEYS)]
         if child(entry, "size") is None:
             body.append(child(pad, "size"))
+        # a padstack layer starts from no rounding and no chamfer, never the front's (PADSTACK::CopperLayer)
+        body += [[key, "0"] for key in ("roundrect_rratio", "chamfer_ratio") if child(entry, key) is None]
         node = ["pad", pad[1], pad[2], str(sh[1]) if sh else pad[3], *body, *rest]
         out.update((l, node) for l in layers)
     return out

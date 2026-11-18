@@ -523,6 +523,9 @@ their margins and which items knock out which hatch (another footprint's courtya
 drawing's side among them, on a board of two footprints, one courtyard drawn as four lines), the
 fill word as KiCad 10 writes it, and the copper, silkscreen and mask of featureTest/27 round each
 hatched drawing as KiCad 10 draws them, to 0.3 %, in under a second (`python tests/test_hatch.py`);
+`tests/test_pad_rules.py`, which reads pads and vias as KiCad's parser does: a chamfer making a pad
+of any shape word a chamfered rectangle, with KiCad's ratios where the file gives none (0.25
+rounding and 0.2 chamfer on the front, none on a padstack layer), in a moment (`python tests/test_pad_rules.py`);
 `tests/test_machining.py`, which cuts KiCad 10's backdrills, counterbores and countersinks: a
 counterbore to its depth from the copper face (a floor inside an inner copper layer too), a
 countersink within its tolerance of the cone and with the cone's volume, the copper knocked out
